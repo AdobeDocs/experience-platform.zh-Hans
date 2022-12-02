@@ -4,9 +4,9 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务来探索和处理在Experience Platform中为配置文件、区段和目标功能板提供动力的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
+source-git-commit: 4826731682bcaf5a43c7ce047220c1805d97243a
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过启用标
 
 要了解每个配置文件快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![](images/query/profile-attribute.png)
+![配置文件快照导出数据集的预览。](images/query/profile-attribute.png)
 
 #### 将配置文件属性数据集映射到合并策略ID
 
@@ -72,7 +72,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过启用标
 
 要了解每个区段定义快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![](images/query/segment-metadata.png)
+![Segmentdefinition-Snapshot-Export数据集的预览。](images/query/segment-metadata.png)
 
 ### 目标元数据数据集
 
@@ -82,7 +82,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过启用标
 
 要了解DIM目标数据集的完整架构，您可以预览和浏览该数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![](images/query/destinations-metadata.png)
+![DIM_Destination数据集的预览。](images/query/destinations-metadata.png)
 
 ## （测试版）客户数据平台(CDP)分析报表
 

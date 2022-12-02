@@ -4,9 +4,9 @@ title: 许可证使用功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 255de9b9e83c11aeed747a3c0cdb7bd7a7949bd2
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '935'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >默认情况下，许可证使用功能板未启用。 用户必须获得“查看许可证使用情况功能板”权限，才能查看功能板。 有关授予访问权限以查看许可证使用功能板的步骤，请参阅 [功能板权限指南](../permissions.md).
 
-![](../images/license-usage/dashboard-overview.png)
+![许可证使用功能板概述选项卡。](../images/license-usage/dashboard-overview.png)
 
 ### 选择沙盒
 
@@ -41,7 +41,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 沙箱的使用情况报表是同一类型所有沙箱的累计使用情况。 换句话说，选择 [!UICONTROL 生产] 或 [!UICONTROL 开发] 分别为所有生产沙箱或开发沙箱提供使用情况报表。
 
-![](../images/license-usage/select-sandbox.png)
+![许可证使用功能板概述选项卡，其中沙盒选择器突出显示。](../images/license-usage/select-sandbox.png)
 
 >[!WARNING]
 >
@@ -56,11 +56,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 选择沙盒后，您可以使用日期范围下拉列表选择要在功能板中显示的时间段。 有多个可用选项，包括最近30天的默认值。
 
-![](../images/license-usage/select-date-range.png)
+![许可证使用情况功能板概述选项卡，其中突出显示了日期范围下拉列表。](../images/license-usage/select-date-range.png)
 
 您还可以选择 **[!UICONTROL 自定义日期]** ，以选择显示的时间段。
 
-![](../images/license-usage/select-custom-date.png)
+![“许可证使用情况”功能板“概述”选项卡，其中突出显示了自定义日期范围选项。](../images/license-usage/select-custom-date.png)
 
 ## 小组件
 
@@ -68,7 +68,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 每个小组件都会显示一个折线图，用于比较贵组织的实际数字与贵组织许可时的可用总数，并提供总使用量的百分比。
 
-![](../images/license-usage/widgets.png)
+![许可证使用情况功能板概述选项卡，其中突出显示示例许可证使用情况量度小组件的折线图。](../images/license-usage/widgets.png)
 
 ## 可用量度
 

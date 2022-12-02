@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform Insights数据模型
 description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型结合使用，以针对您的营销和KPI用例自定义您自己的Real-Time CDP报表。
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
+source-git-commit: 9f33ad0146b72f820530233b651370c43fafe713
 workflow-type: tm+mt
-source-wordcount: '1105'
+source-wordcount: '1109'
 ht-degree: 0%
 
 ---
@@ -81,10 +81,10 @@ GROUP BY adwh_dim_merge_policies.merge_policy_name;
 
 命名空间模型由以下数据集组成：
 
-- `adwh_fact_profile_by_namespace`
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_fact_profile_by_namespace`
 - `adwh_dim_merge_policies`
+- `adwh_dim_namespaces`
 
 下图包含每个数据集中的相关数据字段。
 
@@ -149,9 +149,9 @@ GROUP BY
 区段模型由以下数据集组成：
 
 - `adwh_dim_date`
+- `adwh_fact_profile_by_segment`
 - `adwh_dim_merge_policies`
 - `adwh_dim_segments`
-- `adwh_fact_profile_by_segment`
 - `adwh_dim_br_segment_destinations`
 - `adwh_dim_destination`
 - `adwh_dim_destination_platform`
@@ -260,9 +260,9 @@ ORDER BY create_time desc, segment LIMIT 5;
 命名空间区段模型由以下数据集组成：
 
 - `adwh_dim_date`
-- `adwh_dim_merge_policies`
 - `adwh_dim_namespaces`
 - `adwh_fact_profile_by_segment_and_namespace`
+- `adwh_dim_merge_policies`
 - `adwh_dim_segments`
 - `adwh_dim_br_segment_destinations`
 - `adwh_dim_destination`
@@ -270,7 +270,7 @@ ORDER BY create_time desc, segment LIMIT 5;
 
 下图包含每个数据集中的相关数据字段。
 
-![区段模型的ERD。](./images/cdp-insights/namespace-segment-model.png)
+![命名空间区段模型的ERD。](./images/cdp-insights/namespace-segment-model.png)
 
 #### 按区段用例标识的用户档案
 
@@ -300,13 +300,13 @@ GROUP BY adwh_dim_namespaces.namespace_description;
 重叠命名空间模型由以下数据集组成：
 
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_dim_overlap_namespaces`
 - `adwh_fact_profile_overlap_of_namespace`
 - `adwh_dim_merge_policies`
 
 下图包含每个数据集中的相关数据字段。
 
-![区段模型的ERD。](./images/cdp-insights/overlap-namespace-model.png)
+![重叠命名空间模型的ERD。](./images/cdp-insights/overlap-namespace-model.png)
 
 #### 身份重叠（用户档案）用例
 
@@ -364,7 +364,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 按区段模型划分的重叠命名空间由以下数据集组成：
 
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_dim_overlap_namespaces`
 - `adwh_fact_profile_overlap_of_namespace_by_segment`
 - `adwh_dim_merge_policies`
 - `adwh_dim_segments`
@@ -374,7 +374,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 下图包含每个数据集中的相关数据字段。
 
-![区段模型的ERD。](./images/cdp-insights/overlap-namespace-by-segment-model.png)
+![按区段模型划分的重叠命名空间的ERD。](./images/cdp-insights/overlap-namespace-by-segment-model.png)
 
 #### 身份重叠（区段）用例
 

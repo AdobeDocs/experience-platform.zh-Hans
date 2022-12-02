@@ -3,9 +3,9 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 在UI中修改平台功能板
 description: 本指南提供了有关自定义贵组织的Adobe Experience Platform数据在功能板中显示方式的分步说明。
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
-source-git-commit: d5acc317a48aef94dd4d6e3ccea89d0d674c8b34
+source-git-commit: 338aa6849f58b3c0fd6c871f1e199ebf6a73d115
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ ht-degree: 0%
 
 在任何功能板(例如， [!UICONTROL 用户档案] 功能板) **[!UICONTROL 修改功能板]** 以调整现有小组件的大小和重新排序。
 
-![](../images/customization/modify-dashboard.png)
+![突出显示了“修改”功能板的“配置文件”功能板。](../images/customization/modify-dashboard.png)
 
 ## 重新排序小组件
 
 选择修改功能板后，您可以通过选择小组件标题并将小组件拖放到所需的顺序来重新排序小组件。 在本例中， **[!UICONTROL 用户档案计数趋势]** 小组件会移至顶行，并且 **[!UICONTROL 用户档案计数]** 小组件现在显示在第二行中。
 
-![](../images/customization/move-widget.png)
+![“用户档案”功能板中突出显示了两个重新排序的小组件。](../images/customization/move-widget.png)
 
 ## 调整小组件大小
 
@@ -40,13 +40,13 @@ ht-degree: 0%
 >
 >小组件大小调整后，周围的小组件会动态地重新定位。 这可能会导致某些小组件被移动到其他行中，从而要求您滚动才能看到所有小组件。
 
-![](../images/customization/resize-widget.png)
+![突出显示了大小调整小组件的“配置文件”功能板。](../images/customization/resize-widget.png)
 
 ## 保存功能板更新
 
 移动和调整小组件大小后，请选择 **[!UICONTROL 保存并退出]** 保存更改并返回到主功能板视图。 如果您不希望保留更改，请选择 **[!UICONTROL 取消]** 重置功能板并返回到主功能板视图。
 
-![](../images/customization/save-changes.png)
+![同时突出显示“取消”和“保存并退出”的“配置文件”功能板。](../images/customization/save-changes.png)
 
 ## 构件库
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 有关如何访问和使用的分步说明 [!UICONTROL 构件库]，请参阅 [小组件库指南](widget-library.md).
 
-![](../images/customization/widget-library.png)
+![突出显示了“标准”和“自定义”的小组件库工作区。](../images/customization/widget-library.png)
 
 ## 后续步骤
 

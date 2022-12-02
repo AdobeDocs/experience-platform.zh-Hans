@@ -4,9 +4,9 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
+source-git-commit: c4457d82c66be382ebb8619ce248f282fb45ed3a
 workflow-type: tm+mt
-source-wordcount: '3385'
+source-wordcount: '3416'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则不会显示“配置文件”功能板。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用实时客户配置文件的链接和文档。
 
-![](../images/profiles/dashboard-overview.png)
+![Experience Platform配置文件功能板，其中突出显示了配置文件和概述。](../images/profiles/dashboard-overview.png)
 
 ### 修改用户档案仪表板
 
@@ -142,7 +142,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >
 >另一个常见原因是，拍摄功能板快照的时间与为 [!UICONTROL 浏览] 选项卡。 您可以查看 [!UICONTROL 用户档案计数] 小组件上次更新时间戳是查看小组件上的时间戳。 要详细了解如何在 [!UICONTROL 浏览] 选项卡，请参阅 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
 
-![](../images/profiles/profile-count.png)
+![突出显示了“Experience Platform配置文件”功能板，其中“配置文件计数”小组件突出显示。](../images/profiles/profile-count.png)
 
 ### [!UICONTROL 用户档案计数趋势] {#profile-count-trend}
 
@@ -230,7 +230,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
-![](../images/profiles/identity-overlap.png)
+![突出显示了身份重叠小组件的用户档案功能板概述。](../images/profiles/identity-overlap.png)
 
 ### [!UICONTROL 单个身份配置文件] {#single-identity-profiles}
 

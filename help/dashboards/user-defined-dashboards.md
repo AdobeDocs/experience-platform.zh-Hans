@@ -2,9 +2,9 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5d9428c4323e65c2605fd116160e160af7d9086d
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '956'
 ht-degree: 0%
 
 ---
@@ -118,8 +118,12 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 为确保Adobe Real-time Customer Data Platform分析功能板的每个查询都拥有足够的资源来高效执行，API通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理四个并发查询，因此在任何给定时间都有四个并发查询槽。 查询将基于并发插槽放入队列中，然后在队列中等待足够的并发插槽可用。
 
-## 后续步骤
+## 后续步骤和其他资源
 
 通过阅读本文档，您可以更好地了解如何创建自定义功能板，以及如何为该功能板创建、编辑和更新自定义小组件。
 
 要了解 [用户档案](./guides/profiles.md#standard-widgets), [区段](./guides/segments.md#standard-widgets)和 [目标](./guides/destinations.md#standard-widgets) 功能板中，请参阅相应文档中的标准小组件列表。
+
+要加深您对Experience Platform中用户定义的功能板的了解，请观看以下视频：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

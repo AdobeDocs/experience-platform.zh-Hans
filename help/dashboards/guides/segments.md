@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 23df35d7d90b6674b089a842818dba83283a1646
+source-git-commit: e5a4fddbd7f5b14280e283871d8b66a2e2f2407d
 workflow-type: tm+mt
-source-wordcount: '2092'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 区段] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用分段的链接和文档。
 
-![区段功能板概述选项卡。](../images/segments/dashboard-overview.png)
+![区段功能板概述选项卡，其中区段和概述突出显示。](../images/segments/dashboard-overview.png)
 
 ### 修改 [!UICONTROL 区段] 仪表板 {#modify}
 
@@ -204,7 +204,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
 
-![“按身份显示的用户档案”字幕对话框。](../images/segments/profiles-by-identity.png)
+![“区段”功能板概述，其中突出显示了“按身份构件划分的配置文件”和“字幕”选项。](../images/segments/profiles-by-identity.png)
 
 机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
 
