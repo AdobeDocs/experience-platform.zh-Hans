@@ -2,9 +2,9 @@
 title: Microsoft Azure扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的Microsoft Azure扩展。
 exl-id: 2337d99d-861e-44e7-94ed-ba21ef28d815
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 8b972841c8412d510fce4c970a09d9c1eecd401e
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '938'
 ht-degree: 4%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 4%
 
 ## 配置事件转发规则 {#rule}
 
-开始创建新的事件转发规则，并根据需要配置其条件。 为规则选择操作时，选择 **[!UICONTROL Microsoft Azure]** 对于扩展，选择 **[!UICONTROL 将数据发送到事件中心]** ，用于操作类型。
+开始创建新的事件转发规则，并根据需要配置其条件。 为规则选择操作时，选择 **[!UICONTROL Microsoft Azure]** 对于扩展，选择 **[!UICONTROL 将数据发送到事件中心]** （对于操作类型）。
 
 ![的 [!UICONTROL 将数据发送到事件中心] 在数据收集UI中为规则选择的操作类型。](../../../images/extensions/server/azure/select-action-type.png)
 
