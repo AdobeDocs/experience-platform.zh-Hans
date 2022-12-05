@@ -5,7 +5,7 @@ title: 自动策略实施
 topic-legacy: guide
 description: 本文档介绍了在将区段激活到Experience Platform中的目标时如何自动强制实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
 workflow-type: tm+mt
 source-wordcount: '1700'
 ht-degree: 0%
@@ -13,6 +13,10 @@ ht-degree: 0%
 ---
 
 # 自动策略执行
+
+>[!IMPORTANT]
+>
+>自动策略实施仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
 在标记数据并定义使用策略后，您可以强制数据使用符合策略。 在将受众区段激活到目标时，如果发生任何违规，Adobe Experience Platform会自动实施使用策略。
 
@@ -107,10 +111,6 @@ ht-degree: 0%
 ![](../images/enforcement/list-view.png)
 
 ### 同意策略评估 {#consent-policy-evaluation}
-
->[!IMPORTANT]
->
->同意策略当前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
 如果 [创建同意策略](../policies/user-guide.md#consent-policy) 将区段激活到目标后，您可以查看您的同意策略对激活中包含的用户档案百分比有何影响。
 
