@@ -5,9 +5,9 @@ title: 将DbVisualizer连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将DbVisualizer与Adobe Experience Platform查询服务连接的步骤。
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
+source-git-commit: 640a89231abf96a966f55dce2e3a7242c739538f
 workflow-type: tm+mt
-source-wordcount: '754'
+source-wordcount: '805'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ ht-degree: 0%
 | ------ | ------ |
 | `PGHOST` | 的主机名 [!DNL PostgreSQL] 服务器。 此值是您的Experience Platform [!UICONTROL 主机] 凭据。 |
 | `ssl` | 定义SSL值 `1` 启用SSL。 |
-| `sslmode` | 这控制SSL要求的使用。 您 **必须** 使用值 `require` 以启用此要求。 |
+| `sslmode` | 这控制SSL保护的级别。 建议您使用 `require` 将第三方客户端连接到Adobe Experience Platform时的SSL模式。 的 `require` 模式可确保在所有通信上都需要加密，并且网络可靠地连接到正确的服务器。 不需要服务器SSL证书验证。 有关更多信息，请参阅 [用于连接第三方客户端的SSL选项](./ssl-modes.md) to [!DNL Query Service]. |
 | `user` | 连接到数据库的用户名是您的组织ID。 它是以 `@adobe.org` |
 
 >[!IMPORTANT]
