@@ -6,10 +6,10 @@ description: 本文说明了通过临时激活API激活受众区段的端到端�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 8d67d89db6a8c179935b4fe709f91279860d464e
+source-git-commit: cdf96088be27cba1fb92f1348f002123614285fe
 workflow-type: tm+mt
-source-wordcount: '1531'
-ht-degree: 2%
+source-wordcount: '1563'
+ht-degree: 1%
 
 ---
 
@@ -25,13 +25,13 @@ ht-degree: 2%
 
 临时激活API允许营销人员以编程方式快速高效地将受众区段激活到目标，以应对需要立即激活的情况。
 
+使用临时激活API将完整文件导出到所需的文件接收系统。 Ad-hoc audience激活仅受 [批量基于文件的目标](../destination-types.md#file-based).
+
 下图说明了通过临时激活API激活区段的端到端工作流程，包括每24小时在Platform中发生一次的分段作业。
 
 ![临时激活](../assets/api/ad-hoc-activation/ad-hoc-activation-overview.png)
 
->[!NOTE]
->
->Ad-hoc audience激活仅受 [批量基于文件的目标](../destination-types.md#file-based).
+
 
 ## 用例 {#use-cases}
 
@@ -129,7 +129,7 @@ Adobe Experience Platform每24小时运行一次计划分段作业。 临时激�
 >
 >请注意以下一次性约束：在运行临时激活作业之前，请确保从根据您在 [步骤3 — 在Platform UI中创建激活流程](#activation-flow).
 
-在运行临时激活作业之前，请确保区段的计划区段导出作业已完成。 请参阅 [目标数据流监控](../../dataflows/ui/monitor-destinations.md) 有关如何监控激活流状态的信息。 例如，如果激活数据流显示 **[!UICONTROL 处理]** 状态，请等待其完成后再运行临时激活作业。
+在运行临时激活作业之前，请确保区段的计划区段导出作业已完成。 请参阅 [目标数据流监控](../../dataflows/ui/monitor-destinations.md) 有关如何监控激活流状态的信息。 例如，如果激活数据流显示 **[!UICONTROL 处理]** 状态，请等待其完成，然后再运行ad-hoc激活作业以导出完整文件。
 
 区段导出作业完成后，您可以触发激活。
 
@@ -250,3 +250,4 @@ Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 
 ## 相关信息 {#related-information}
 
 * [连接到批处理目标，并使用流量服务API激活数据](/help/destinations/api/connect-activate-batch-destinations.md)
+* [（测试版）使用Experience PlatformUI将文件按需导出到批量目标](/help/destinations/ui/export-file-now.md)
