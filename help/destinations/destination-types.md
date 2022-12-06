@@ -3,9 +3,9 @@ keywords: 目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: c140e68467065d17f143850bfb8eefb3ac46443a
+source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
 workflow-type: tm+mt
-source-wordcount: '675'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
@@ -97,4 +97,4 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 
 中的连接和扩展 [目标目录](https://platform.adobe.com/destination/catalog) 按目标类别(**广告**, **云存储**, **调查平台**, **电子邮件营销**&#x200B;等)，具体取决于他们帮助您实现的营销操作。 有关每个类别以及每个类别中包含的目标的更多信息，请参阅 [目标目录文档](./catalog/overview.md).
 
-![目标类别](./assets/destination-types/destination-categories-menu.png)
+![目录页面中突出显示的目标类别。](./assets/destination-types/destination-categories-menu.png)

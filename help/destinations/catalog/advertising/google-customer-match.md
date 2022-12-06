@@ -3,7 +3,7 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google拥有和运营的资产(如搜索、购物、Gmail和YouTube)来访问客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: b189f1b0fe29ebefb3cba9c4f820022a772ce297
 workflow-type: tm+mt
 source-wordcount: '1778'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [Google客户匹配](https://support.google.com/google-ads/answer/6379332?hl=en) 允许您使用在线和离线数据，跨Google拥有和运营的资产访问客户并与其重新互动，例如： [!DNL Search], [!DNL Shopping], [!DNL Gmail]和 [!DNL YouTube].
 
-![GoogleAdobe Experience Platform UI中的“客户匹配”目标](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![GoogleAdobe Experience Platform UI中的“客户匹配”目标。](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
 ## 用例 {#use-cases}
 

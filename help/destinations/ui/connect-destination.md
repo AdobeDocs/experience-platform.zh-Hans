@@ -4,9 +4,9 @@ title: 创建新目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报，以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 434b9ed4f64320b5fd73b752716cb34a8e48aec9
+source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1107'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 ![该图像显示了在连接到交易台目标时所需的和可选的输入参数。](../assets/ui/connect-destinations/connect-destination-trade-desk-example.png)
 
-### 为导出的文件设置文件格式选项 {#file-formatting-and-compression-options}
+### （测试版）为导出的文件设置文件格式选项 {#file-formatting-and-compression-options}
 
 对于基于文件的目标，您可以配置与导出文件的格式和压缩方式相关的各种设置。 有关所有可用格式和压缩选项的更多信息，请阅读 [为基于文件的目标配置文件格式选项教程](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
