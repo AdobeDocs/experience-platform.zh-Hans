@@ -5,7 +5,7 @@ title: 数据准备概述
 topic-legacy: overview
 description: 本文档介绍了Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
+source-git-commit: 61603d7516dbd859b0cce6c167c75aab42ca7171
 workflow-type: tm+mt
 source-wordcount: '788'
 ht-degree: 0%
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 要了解有关计算字段的更多信息，请阅读 [计算字段指南](./functions.md#calculated-fields).
 
-### 转义特殊字符
+### 转义特殊字符 {#escape-special-characters}
 
 您可以使用 `${...}`. 但是，包含带有句点(`.`)不受此机制支持。 在与层级进行交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)以转义特殊字符。 例如， `address` 是包含属性的对象 `street.name`，这可称为 `address.street\.name` 而不是 `address.street.name`.
 
