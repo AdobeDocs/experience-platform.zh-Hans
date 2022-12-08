@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '923'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 >* 如果您尚未为 **[!UICONTROL Azure Blob]** 目标，请使用新 **[!UICONTROL Azure Blob测试版]** 将文件导出到卡 **[!UICONTROL Azure Blob]**.
 
 
-![并排视图中两个Azure Blob目标卡的图像。](/help/destinations/assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
+![并排视图中两个Azure Blob目标卡的图像。](../../assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
 
 改进了新 [!DNL Azure Blob] 目标卡包括：
 
@@ -93,6 +93,8 @@ ht-degree: 1%
 * **[!UICONTROL 描述]**:输入此目标的描述。
 * **[!UICONTROL 文件夹路径]**:输入将托管导出文件的目标文件夹的路径。
 * **[!UICONTROL 容器]**:输入 [!DNL Azure Blob Storage] 容器。
+* **[!UICONTROL 文件类型]**:选择导出文件应使用的Experience Platform格式。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 压缩格式]**:选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
 
 ### 启用警报 {#enable-alerts}
 

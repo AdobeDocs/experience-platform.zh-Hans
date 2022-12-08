@@ -2,9 +2,9 @@
 title: （测试版）Google云存储连接
 description: 了解如何连接到Google云存储并激活区段或导出数据集。
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '867'
+source-wordcount: '908'
 ht-degree: 0%
 
 ---
@@ -34,15 +34,15 @@ ht-degree: 0%
 
 要将Platform连接到 [!DNL Google Cloud Storage]您必须首先为 [!DNL Google Cloud Storage] 帐户。 要访问互操作性设置，请打开 [!DNL Google Cloud Platform] 选择 **[!UICONTROL 设置]** 从 **[!UICONTROL 云存储]** 选项。
 
-![Google云平台功能板中突出显示了云存储和设置。](/help/sources/images/tutorials/create/google-cloud-storage/nav.png)
+![Google云平台功能板中突出显示了云存储和设置。](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
 的 **[!UICONTROL 设置]** 页面。 从此处，您可以看到与 [!DNL Google] 项目ID和有关您的 [!DNL Google Cloud Storage] 帐户。 要访问互操作性设置，请选择 **[!UICONTROL 互操作性]** 中。
 
-![Google Cloud Platform功能板中突出显示的互操作性选项卡。](/help/sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![Google Cloud Platform功能板中突出显示的互操作性选项卡。](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 的 **[!UICONTROL 互操作性]** 页面包含有关身份验证、访问密钥以及与您的服务帐户关联的默认项目的信息。 要为服务帐户生成新的访问密钥ID和密钥访问密钥，请选择 **[!UICONTROL 为服务帐户创建密钥]**.
 
-![在Google Cloud Platform功能板中突出显示的为服务帐户控件创建密钥。](/help/sources/images/tutorials/create/google-cloud-storage/interoperability.png)
+![在Google Cloud Platform功能板中突出显示的为服务帐户控件创建密钥。](../../../sources/images/tutorials/create/google-cloud-storage/interoperability.png)
 
 您可以使用新生成的访问密钥ID和密钥访问密钥来连接 [!DNL Google Cloud Storage] 帐户到平台。
 
@@ -74,6 +74,8 @@ ht-degree: 0%
 * **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
 * **[!UICONTROL 存储段名称]**:输入 [!DNL Google Cloud Storage] 存储段供此目标使用。
 * **[!UICONTROL 文件夹路径]**:输入将托管导出文件的目标文件夹的路径。
+* **[!UICONTROL 文件类型]**:选择导出文件应使用的Experience Platform格式。 选择 [!UICONTROL CSV] 选项，您还 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 压缩格式]**:选择Experience Platform应用于导出文件的压缩类型。
 
 ### 启用警报 {#enable-alerts}
 

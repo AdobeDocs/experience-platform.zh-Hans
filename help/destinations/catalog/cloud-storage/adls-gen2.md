@@ -2,9 +2,9 @@
 title: （测试版）Azure数据湖存储第2代连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活区段和导出数据集。
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '683'
 ht-degree: 1%
 
 ---
@@ -59,6 +59,8 @@ ht-degree: 1%
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
 * **[!UICONTROL 文件夹路径]**:输入将托管导出文件的目标文件夹的路径。
+* **[!UICONTROL 文件类型]**:选择导出文件应使用的Experience Platform格式。 选择 [!UICONTROL CSV] 选项，您还 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 压缩格式]**:选择Experience Platform应用于导出文件的压缩类型。
 
 ### 启用警报 {#enable-alerts}
 
