@@ -5,10 +5,10 @@ title: Privacy ServiceUI概述
 topic-legacy: UI guide
 description: 开始使用Privacy Service用户界面来协调和监视各种Experience Cloud应用程序中的隐私请求。
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 8814c8a7e8feac4901917663d5cbeb5dddb8c288
+source-git-commit: 76e431301f961484436fe47d28079ee47dbcc8ed
 workflow-type: tm+mt
-source-wordcount: '206'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -31,9 +31,7 @@ Privacy ServiceUI [!DNL Privacy Service] 允许您跨各种Adobe Experience Clou
 >
 >您必须具有Adobe ID才能对 [!DNL Privacy Service] UI。 此外，您必须在IMS组织内拥有系统管理员权限。
 
-要访问UI，请登录到 [Adobe Experience Cloud](https://experience.adobe.com/)
-
-登录后，选择 **[!UICONTROL 隐私UI]**.
+要访问UI，请登录到 [Adobe Experience Cloud](https://experience.adobe.com/) 选择 **[!UICONTROL 隐私UI]** 下。
 
 ![](../images/ui-overview/quick-access.png)
 
