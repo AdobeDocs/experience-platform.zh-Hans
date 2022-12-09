@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: bf665a0041db8a44c39c787bb1f0f1100f61e135
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '837'
 ht-degree: 1%
 
 ---
@@ -44,6 +44,7 @@ ht-degree: 1%
 | `password` | 您的密码 [!DNL SFTP] 服务器。 |
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
 | `passPhrase` | 如果密钥文件或密钥内容受密码短语的保护，则解密私钥的密码短语或密码。 如果 `privateKeyContent` 受密码保护，此参数需要与私钥内容的密码短语一起用作值。 |
+| `maxConcurrentConnections` | 此参数允许您为平台在连接到SFTP服务器时将创建的并发连接数指定最大限制。 您必须将此值设置为小于SFTP设置的限制。 **注意**:为现有SFTP帐户启用此设置后，它只会影响将来的数据流，而不会影响现有的数据流。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL SFTP] 为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
 
 ### 使用Platform API
@@ -54,69 +55,9 @@ ht-degree: 1%
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
+的 [!DNL SFTP] 源支持通过SSH公钥进行基本身份验证和身份验证。
+
 要创建基本连接ID，请向 `/connections` 提供 [!DNL SFTP] 身份验证凭据作为请求参数的一部分。
-
-### 创建 [!DNL SFTP] 基本连接使用基本身份验证
-
-创建 [!DNL SFTP] 基本连接使用基本身份验证，向POST请求 [!DNL Flow Service] API，同时为连接的 `host`, `userName`和 `password`.
-
-**API格式**
-
-```http
-POST /connections
-```
-
-**请求**
-
-以下请求会为 [!DNL SFTP] 使用基本身份验证：
-
-```shell
-curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d  '{
-        "name": "SFTP connector with password",
-        "description": "SFTP connector password",
-        "auth": {
-            "specName": "Basic Authentication for sftp",
-            "params": {
-                "host": "{HOST}",
-                "userName": "{USERNAME}",
-                "password": "{PASSWORD}"
-            }
-        },
-        "connectionSpec": {
-            "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
-            "version": "1.0"
-        }
-    }'
-```
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `auth.params.host` | SFTP服务器的主机名。 |
-| `auth.params.username` | 与SFTP服务器关联的用户名。 |
-| `auth.params.password` | 与SFTP服务器关联的密码。 |
-| `connectionSpec.id` | SFTP服务器连接规范ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
-
-**响应**
-
-成功的响应会返回唯一标识符(`id`)。 在下一个教程中，浏览SFTP服务器时需要此ID。
-
-```json
-{
-    "id": "bf367b0d-3d9b-4060-b67b-0d3d9bd06094",
-    "etag": "\"1700cc7b-0000-0200-0000-5e3b3fba0000\""
-}
-```
-
-### 创建 [!DNL SFTP] 使用SSH公钥身份验证的基本连接
-
-创建 [!DNL SFTP] 基本连接使用SSH公钥身份验证，向发出POST请求 [!DNL Flow Service] API，同时为连接的 `host`, `userName`, `privateKeyContent`和 `passPhrase`.
 
 >[!IMPORTANT]
 >
@@ -130,46 +71,96 @@ POST /connections
 
 **请求**
 
-以下请求会为 [!DNL SFTP] 使用SSH公钥身份验证：
+以下请求会为 [!DNL SFTP]:
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "SFTP connector with SSH authentication",
-        "description": "SFTP connector with SSH authentication",
-        "auth": {
-            "specName": "SSH PublicKey Authentication for sftp",
-            "params": {
-                "host": "{HOST}",
-                "userName": "{USERNAME}",
-                "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
-                "passPhrase": "{PASSPHRASE}"
-            }
-        },
-        "connectionSpec": {
-            "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d  '{
+      "name": "SFTP connector with password",
+      "description": "SFTP connector password",
+      "auth": {
+          "specName": "Basic Authentication for sftp",
+          "params": {
+              "host": "{HOST}",
+              "port": 22,
+              "userName": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "maxConcurrentConnections": 1
+          }
+      },
+      "connectionSpec": {
+          "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `auth.params.host` | SFTP服务器的主机名。 |
+| `auth.params.port` | SFTP服务器的端口。 此整数值默认为22。 |
+| `auth.params.username` | 与SFTP服务器关联的用户名。 |
+| `auth.params.password` | 与SFTP服务器关联的密码。 |
+| `auth.params.maxConcurrentConnections` | 将平台连接到SFTP时指定的并发连接数上限。 启用后，此值必须至少设置为1。 |
+| `connectionSpec.id` | SFTP服务器连接规范ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+
+>[!TAB SSH公钥身份验证]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "SFTP connector with SSH authentication",
+      "description": "SFTP connector with SSH authentication",
+      "auth": {
+          "specName": "SSH PublicKey Authentication for sftp",
+          "params": {
+              "host": "{HOST}",
+              "port": 22,
+              "userName": "{USERNAME}",
+              "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
+              "passPhrase": "{PASSPHRASE}",
+              "maxConcurrentConnections": 1
+
+          }
+      },
+      "connectionSpec": {
+          "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
 | `auth.params.host` | 的主机名 [!DNL SFTP] 服务器。 |
+| `auth.params.port` | SFTP服务器的端口。 此整数值默认为22。 |
 | `auth.params.username` | 与您的 [!DNL SFTP] 服务器。 |
 | `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码短语的保护，则解密私钥的密码短语或密码。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语一起用作值。 |
+| `auth.params.maxConcurrentConnections` | 将平台连接到SFTP时指定的并发连接数上限。 启用后，此值必须至少设置为1。 |
 | `connectionSpec.id` | 的 [!DNL SFTP] 服务器连接规范ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+
+>[!ENDTABS]
 
 **响应**
 
-成功的响应会返回唯一标识符(`id`)。 需要此ID才能浏览您的 [!DNL SFTP] 服务器。
+成功的响应会返回唯一标识符(`id`)。 在下一个教程中，浏览SFTP服务器时需要此ID。
 
 ```json
 {
