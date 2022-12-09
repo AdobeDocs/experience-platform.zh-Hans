@@ -5,9 +5,9 @@ title: 查询服务凭据指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 344602a0e828d140ea386daf30a25b8f595f8d04
+source-git-commit: f52e1d49fd090c398d34a3d9c2b5d1746c319eb4
 workflow-type: tm+mt
-source-wordcount: '1225'
+source-wordcount: '1317'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,15 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 - **[!UICONTROL 用户名]**:用于连接到查询服务的用户名。
 - **[!UICONTROL 密码]**:用于连接到查询服务的密码。
 - **[!UICONTROL PSQL命令]**:命令自动插入所有相关信息，以便您使用命令行上的PSQL连接到查询服务。
-- **[!UICONTROL 过期]**:过期凭据的到期日期。 凭据在生成后24小时过期。
+- **[!UICONTROL 过期]**:过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中对其进行更改。
+
+>[!TIP]
+>
+>要更改与查询服务的过期凭据连接的会话寿命，请导航到 [Admin Console](https://adminconsole.adobe.com/) ，然后在屏幕上选择以下选项： **设置** > **隐私和安全** > **身份验证设置** > **高级设置** > **最大会话寿命**.
+>
+>![突出显示了“Admin Console设置”选项卡，其中“隐私和安全”、“身份验证设置”和“最大会话寿命”。](../images/ui/credentials/max-session-life.png)
+>
+>有关 [高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) 由管理控制台提供。
 
 ## 未过期的凭据 {#non-expiring-credentials}
 
