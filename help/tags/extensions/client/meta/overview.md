@@ -1,9 +1,9 @@
 ---
 title: 元像素扩展概述
 description: 了解Adobe Experience Platform中的Meta Pixel标记扩展。
-source-git-commit: 87376172f89858bfa883084461544a2c50ba5009
+source-git-commit: a47e35a1b8c7ce2b0fa4ffe30fcdc7d22fc0f4c5
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '760'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,9 @@ ht-degree: 0%
 
 的 [!DNL Meta Pixel] 标记扩展允许您利用 [!DNL Pixel] 功能。 本文档介绍如何在 [规则](../../../ui/managing-resources/rules.md).
 
-<!-- (To include when Conversions API extension doc is published)
 >[!NOTE]
 >
->If you are trying to send server-side events to [!DNL Meta] rather than from the client side, use the [[!DNL Meta Conversions API] extension](../../server/meta/overview.md) instead.
--->
+>如果您尝试将服务器端事件发送到 [!DNL Meta] 而不是从客户端，请使用 [[!DNL Meta Conversions API] 扩展](../../server/meta/overview.md) 中。
 
 ## 先决条件
 
