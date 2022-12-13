@@ -5,10 +5,10 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: bd40388d710f8b135c0d36716b0ec59c8c9b78ee
 workflow-type: tm+mt
 source-wordcount: '4103'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 了解模式
 
-架构是一组规则，用于表示和验证数据的结构和格式。 在高级别上，架构提供了真实世界对象（如人）的抽象定义，并概述了该对象的每个实例中应包含哪些数据（如名字、姓氏、生日等）。
+架构是一组规则，用于表示和验证数据的结构和格式。在高层面上，架构提供了真实世界对象（如人）的抽象定义，并概括了该对象的每个实例中应包含哪些数据（如名字、姓氏、生日等）。
 
 除了描述数据结构之外，架构还对数据应用约束和期望，这样当数据在系统之间移动时，便可对其进行验证。 这些标准定义允许对数据进行一致的解释（无论其来源如何），并且无需跨应用程序进行翻译。
 
@@ -253,7 +253,7 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 
 >[!NOTE]
 >
->“map”字段类型允许使用键值对数据，包括单个键的多个值。 映射可在标准XDM类和字段组中找到，但您也可以使用架构注册表API定义自定义映射。 请参阅 [定义自定义字段](../tutorials/custom-fields-api.md#maps) 以了解更多信息。
+>“map”字段类型允许使用键值对数据，包括单个键的多个值。 映射可在标准XDM类和字段组中找到，但您也可以使用架构注册表API定义自定义映射。 请参阅 [定义自定义字段](../tutorials/custom-fields-api.md#custom-maps) 以了解更多信息。
 
 ## 组合示例
 

@@ -2,9 +2,9 @@
 title: 在架构注册API中定义XDM字段
 description: 了解在架构注册API中创建自定义体验数据模型(XDM)资源时如何定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 4ce9e53ec420a8c9ba07cdfd75e66d854989f8d2
+source-git-commit: 0947eb38bdb18cb3783723cb11be79d3d32a3b76
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '1200'
 ht-degree: 0%
 
 ---
@@ -15,156 +15,345 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->`meta:xdmType` 是系统生成的值，因此在使用API时，您无需将此属性添加到字段的JSON中(除非 [创建自定义映射类型](#maps))。 最佳实践是使用JSON架构类型(例如 `string` 和 `integer`)，并且具有下表中定义的相应最小/最大约束。
+>`meta:xdmType` 是系统生成的值，因此在使用API时，您无需将此属性添加到字段的JSON中(除非 [创建自定义映射类型](#custom-maps))。 最佳实践是使用JSON架构类型(例如 `string` 和 `integer`)，并且具有下表中定义的相应最小/最大约束。
 
-下表概述了用于定义不同字段类型（包括具有可选属性的字段类型）的相应格式。 有关可选属性和特定类型关键词的更多信息，请通过 [JSON模式文档](https://json-schema.org/understanding-json-schema/reference/type.html).
+本指南概述了用于定义不同字段类型（包括具有可选属性的字段类型）的相应格式。 有关可选属性和特定类型关键词的更多信息，请通过 [JSON模式文档](https://json-schema.org/understanding-json-schema/reference/type.html).
 
 要开始，请找到所需的字段类型，然后使用提供的示例代码来构建 [创建字段组](../api/field-groups.md#create) 或 [创建数据类型](../api/data-types.md#create).
 
-<table style="table-layout:auto">
-  <tr>
-    <th>XDM类型</th>
-    <th>可选属性</th>
-    <th>示例</th>
-  </tr>
-  <tr>
-    <td>[!UICONTROL字符串]</td>
-    <td>
-      <ul>
-        <li><code>pattern</code></li>
-        <li><code>minLength</code></li>
-        <li><code>maxLength</code></li>
-      </ul>
-    </td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"string", "pattern":"^[A-Z]{2}$", "maxLength":2 }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL URI]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"string", "format":"uri" }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Enum]</td>
-    <td>
-      <ul>
-        <li><code>default</code></li>
-        <li><code>meta:enum</code></li>
-      </ul>
-    </td>
-    <td>约束枚举值在 <code>enum</code> 数组中，而每个值的可选面向客户的标签可以在 <code>meta:enum</code>:
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"string", "enum":[ "value1"、"value2"、"value3" ]、"meta:enum":{ "value1":"Value 1"、"value2":"Value 2"、"value3":"Value 3" }, "default":"value1" }</pre>
-    <br>请注意， <code>meta:enum</code> 值 <strong>not</strong> 声明枚举或自行驱动任何数据验证。 在大多数情况下， <code>meta:enum</code> 此外， <code>enum</code> 以确保数据受到约束。 但是，在某些用例中， <code>meta:enum</code> 没有相应的 <code>enum</code> 数组。 请参阅 <a href="../tutorials/suggested-values.md">定义建议值</a> 以了解更多信息。
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Number]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"number" }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Long]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"integer", "minimum":-9007199254740992, "maximum":9007199254740992 }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL整数]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"integer", "minimum":-2147483648, "maximum":2147483648 }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Short]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"integer", "minimum":-32768, "maximum":32768 }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Byte]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"integer", "minimum":-128，“最大值”：128 }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL布尔值]</td>
-    <td>
-      <ul>
-        <li><code>default</code></li>
-      </ul>
-    </td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"boolean", "default":false }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL日期]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"string", "format":"date"、"examples":["2004-10-23"] }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL DateTime]</td>
-    <td></td>
-    <td>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"string", "format":"date-time"、"examples":["2004-10-23T12:00:00-06:00"] }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL Array]</td>
-    <td></td>
-    <td>基本标量类型（例如字符串）的数组：
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"array", "items":{ "type":"string" } }</pre>
-      由其他模式定义的对象数组：<br/>
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"array", "items":{“$ref”："https://ns.adobe.com/xdm/data/paymentitem } }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL对象]</td>
-    <td></td>
-    <td>的 <code>type</code> 下定义的每个子字段的属性 <code>properties</code> 可以使用任何标量类型定义：
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"object"、"properties":{ "field1":{ "type":"string" }, "field2":{ "type":"number" } } }</pre>
-      可通过引用 <code>$id</code> 数据类型：
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"object", "$ref":"https://ns.adobe.com/xdm/common/phoneinteraction" }</pre>
-    </td>
-  </tr>
-  <tr>
-    <td>[!UICONTROL映射]</td>
-    <td></td>
-    <td>映射类型字段本质上是具有不受约束键集的对象类型字段。 与对象一样，映射具有 <code>type</code> 值 <code>object</code>但是 <code>meta:xdmType</code> 显式设置为 <code>map</code>.<br><br>地图 <strong>必须</strong> 定义任何属性。 它 <strong>必须</strong> 定义单个 <code>additionalProperties</code> 用于描述映射中包含的值类型的架构（每个映射只能包含单个数据类型）。 的 <code>type</code> 值必须为 <code>string</code> 或 <code>integer</code>.<br/><br/>具有字符串类型值的映射字段：
-      <pre class="JSON language-JSON hljs">
-"sampleField":{ "type":"object", "meta:xdmType":"map", "additionalProperties":{ "type":"string" } }</pre>
-    有关在XDM中创建自定义映射类型的更多信息，请参阅以下部分。
-    </td>
-  </tr>
-</table>
+## [!UICONTROL 字符串] {#string}
 
-## 创建自定义映射类型 {#maps}
+[!UICONTROL 字符串] 字段的指示方式为 `type: string`.
+
+```json
+"sampleField": {
+  "title": "Sample String Field",
+  "description": "An example string field.",
+  "type": "string"
+}
+```
+
+您可以选择通过以下附加属性来限制可为字符串输入的值类型：
+
+* `pattern`:要约束的正则表达式模式。
+* `minLength`:字符串的最小长度。
+* `maxLength`:字符串的最大长度。
+
+```json
+"sampleField": {
+  "title": "Sample String Field",
+  "description": "An example string field with added constraints.",
+  "type": "string",
+  "pattern": "^[A-Z]{2}$",
+  "maxLength": 2
+}
+```
+
+## [!UICONTROL URI] {#uri}
+
+[!UICONTROL URI] 字段的指示方式为 `type: string` 带有 `format` 属性设置为 `uri`. 不接受其他资产。
+
+```json
+"sampleField": {
+  "title": "Sample URI Field",
+  "description": "An example URI field.",
+  "type": "string",
+  "format": "uri"
+}
+```
+
+## [!UICONTROL 枚举] {#enum}
+
+[!UICONTROL 枚举] 字段必须使用 `type: string`，其中枚举值本身在 `enum` 数组：
+
+```json
+"sampleField": {
+  "title": "Sample Enum Field",
+  "description": "An example enum field.",
+  "type": "string",
+  "enum": [
+      "value1",
+      "value2",
+      "value3"
+  ]
+}
+```
+
+您可以在 `meta:enum` 属性，每个标签均键控到相应的 `enum` 值。
+
+```json
+"sampleField": {
+  "title": "Sample Enum Field",
+  "description": "An example enum field with customer-facing labels.",
+  "type": "string",
+  "enum": [
+      "value1",
+      "value2",
+      "value3"
+  ],
+  "meta:enum": {
+      "value1": "Value 1",
+      "value2": "Value 2",
+      "value3": "Value 3"
+  }
+}
+```
+
+>[!NOTE]
+>
+>的 `meta:enum` 值 **not** 声明枚举或自行驱动任何数据验证。 在大多数情况下， `meta:enum` 此外， `enum` 以确保数据受到约束。 但是，在某些用例中， `meta:enum` 没有相应的 `enum` 数组。 请参阅 [定义建议值](../tutorials/suggested-values.md) 以了解更多信息。
+
+您可以选择提供 `default` 用于指示默认值的属性 `enum` 值（如果未提供值）。
+
+```json
+"sampleField": {
+  "title": "Sample Enum Field",
+  "description": "An example enum field with customer-facing labels and a default value.",
+  "type": "string",
+  "enum": [
+      "value1",
+      "value2",
+      "value3"
+  ],
+  "meta:enum": {
+      "value1": "Value 1",
+      "value2": "Value 2",
+      "value3": "Value 3"
+  },
+  "default": "value1"
+}
+```
+
+>[!IMPORTANT]
+>
+>如果否 `default` 值，并且枚举字段设置为 `required`，则任何缺少此字段已接受值的记录在摄取时将无法通过验证。
+
+## [!UICONTROL 数值] {#number}
+
+数字字段由 `type: number` 并且没有其他必需的属性。
+
+```json
+"sampleField": {
+  "title": "Sample Number Field",
+  "description": "An example number field.",
+  "type": "number"
+}
+```
+
+>[!NOTE]
+>
+>`number` 类型用于任何数字类型（整数或浮点数），而 [`integer` 类型](#integer) 专门用于整数。 请参阅 [有关数字类型的JSON模式文档](https://json-schema.org/understanding-json-schema/reference/numeric.html) 以详细了解每种类型的用例。
+
+## [!UICONTROL 整数] {#integer}
+
+[!UICONTROL 整数] 字段的指示方式为 `type: integer` 没有其他必填字段。
+
+```json
+"sampleField": {
+  "title": "Sample Integer Field",
+  "description": "An example integer field.",
+  "type": "integer"
+}
+```
+
+>[!NOTE]
+>
+>While `integer` 类型具体指整数， [`number` 类型](#number) 用于任何数字类型，即整数或浮点数。 请参阅 [有关数字类型的JSON模式文档](https://json-schema.org/understanding-json-schema/reference/numeric.html) 以详细了解每种类型的用例。
+
+您可以选择通过添加 `minimum` 和 `maximum` 属性。 架构生成器UI支持的其他一些数字类型只是 `integer` 类型 `minimum` 和 `maximum` 约束，例如 [[!UICONTROL 长]](#long), [[!UICONTROL 短]](#short)和 [[!UICONTROL 字节]](#byte).
+
+```json
+"sampleField": {
+  "title": "Sample Integer Field",
+  "description": "An example integer field with added constraints.",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 100
+}
+```
+
+## [!UICONTROL 长] {#long}
+
+等同于 [!UICONTROL 长] 通过架构生成器UI创建的字段是 [`integer` 类型字段](#integer) 特定 `minimum` 和 `maximum` 值(`-9007199254740992` 和 `9007199254740992`，分别)。
+
+```json
+"sampleField": {
+  "title": "Sample Long Field",
+  "description": "An example long field.",
+  "type": "integer",
+  "minimum": -9007199254740992,
+  "maximum": 9007199254740992
+}
+```
+
+## [!UICONTROL 短] {#short}
+
+等同于 [!UICONTROL 短] 通过架构生成器UI创建的字段是 [`integer` 类型字段](#integer) 特定 `minimum` 和 `maximum` 值(`-32768` 和 `32768`，分别)。
+
+```json
+"sampleField": {
+  "title": "Sample Short Field",
+  "description": "An example short field.",
+  "type": "integer",
+  "minimum": -32768,
+  "maximum": 32768
+}
+```
+
+## [!UICONTROL 字节] {#byte}
+
+等同于 [!UICONTROL 字节] 通过架构生成器UI创建的字段是 [`integer` 类型字段](#integer) 特定 `minimum` 和 `maximum` 值(`-128` 和 `128`，分别)。
+
+```json
+"sampleField": {
+  "title": "Sample Byte Field",
+  "description": "An example byte field.",
+  "type": "integer",
+  "minimum": -128,
+  "maximum": 128
+}
+```
+
+## [!UICONTROL 布尔型] {#boolean}
+
+[!UICONTROL 布尔值] 字段的指示方式为 `type: boolean`.
+
+```json
+"sampleField": {
+  "title": "Sample Boolean Field",
+  "description": "An example boolean field.",
+  "type": "boolean"
+}
+```
+
+您可以选择提供 `default` 在摄取期间未提供任何显式值时字段将使用的值。
+
+```json
+"sampleField": {
+  "title": "Sample Boolean Field",
+  "description": "An example boolean field with a default value.",
+  "type": "boolean",
+  "default": false
+}
+```
+
+>[!IMPORTANT]
+>
+>如果否 `default` 值，并将布尔字段设置为 `required`，则任何缺少此字段已接受值的记录在摄取时将无法通过验证。
+
+## [!UICONTROL 日期] {#date}
+
+[!UICONTROL 日期] 字段的指示方式为 `type: string` 和 `format: date`. 您还可以选择提供 `examples` ，以便为手动输入数据的用户显示示例日期字符串。
+
+```json
+"sampleField": {
+  "title": "Sample Date Field",
+  "description": "An example date field with an example array item.",
+  "type": "string",
+  "format": "date",
+  "examples": ["2004-10-23"]
+}
+```
+
+## [!UICONTROL DateTime] {#date-time}
+
+[!UICONTROL DateTime] 字段的指示方式为 `type: string` 和 `format: date-time`. 您还可以选择提供 `examples` ，以便为手动输入数据的用户显示日期时间字符串示例。
+
+```json
+"sampleField": {
+  "title": "Sample Datetime Field",
+  "description": "An example datetime field with an example array item.",
+  "type": "string",
+  "format": "date-time",
+  "examples": ["2004-10-23T12:00:00-06:00"]
+}
+```
+
+## [!UICONTROL 数组] {#array}
+
+[!UICONTROL 数组] 字段的指示方式为 `type: array` 和 `items` 用于定义数组将接受的项目模式的对象。
+
+您可以使用基元类型定义数组项目，如字符串数组：
+
+```json
+"sampleField": {
+  "title": "Sample Array Field",
+  "description": "An example array field using a primitive type.",
+  "type": "array",
+  "items": {
+    "type": "string"
+  }
+}
+```
+
+您还可以通过引用 `$id` 通过 `$ref` 属性。 以下是 [!UICONTROL 付款项] 对象：
+
+```json
+"sampleField": {
+  "title": "Sample Array Field",
+  "description": "An example array field using a data type reference.",
+  "type": "array",
+  "items": {
+    "$ref": "https://ns.adobe.com/xdm/data/paymentitem"
+  }
+}
+```
+
+## [!UICONTROL 对象] {#object}
+
+[!UICONTROL 对象] 字段的指示方式为 `type: object` 和 `properties` 为架构字段定义子属性的对象。
+
+定义的每个子字段 `properties` 可以使用任何基元进行定义 `type` 或通过 `$ref` 指向的属性 `$id` 数据类型中的以下项：
+
+```json
+"sampleField": {
+  "title": "Sample Object Field",
+  "description": "An example object field.",
+  "type": "object",
+  "properties": {
+    "field1": {
+      "type": "string"
+    },
+    "field2": {
+      "$ref": "https://ns.adobe.com/xdm/common/measure"
+    }
+  }
+}
+```
+
+您还可以通过引用数据类型来定义整个对象，前提是相关数据类型本身定义为 `type: object`:
+
+```json
+"sampleField": {
+  "title": "Sample Object Field",
+  "description": "An example object field using a data type reference.",
+  "$ref": "https://ns.adobe.com/xdm/common/phoneinteraction"
+}
+```
+
+## [!UICONTROL 地图] {#map}
+
+映射字段本质上是 [`object`-type字段](#object) 的值。 与对象一样，映射具有 `type` 值 `object`但是 `meta:xdmType` 显式设置为 `map`.
+
+地图 **必须** 定义任何属性。 它 **必须** 定义单个 `additionalProperties` 用于描述映射中包含的值类型的架构（每个映射只能包含单个数据类型）。 的 `type` 值必须为 `string` 或 `integer`.
+
+例如，将定义一个具有字符串类型值的映射字段，如下所示：
+
+```json
+"sampleField": {
+  "title": "Sample Map Field",
+  "description": "An example map field.",
+  "type": "object",
+  "meta:xdmType": "map",
+  "additionalProperties": {
+    "type": "string"
+  }
+}
+```
+
+有关创建自定义映射字段的更多详细信息，请参阅以下部分。
+
+### 创建自定义映射类型 {#custom-maps}
 
 为了在XDM中高效地支持“类似地图”数据，可以使用 `meta:xdmType` 设置为 `map` 要明确说明应当像对键集不受约束一样管理对象。 摄取到映射字段中的数据必须使用字符串键，并且只能使用字符串或整数值(由 `additionalProperties.type`)。
 
@@ -176,7 +365,7 @@ XDM对使用此存储提示施加了以下限制：
 
 请确保您只在绝对必要时才使用映射类型字段，因为这些字段存在以下性能缺陷：
 
-* 对于1亿条记录，Adobe Experience Platform查询服务的响应时间会从3秒降为10秒。
+* 响应时间 [Adobe Experience Platform查询服务](../../query-service/home.md) 在1亿条记录中，从3秒降为10秒。
 * 地图必须少于16个键值，否则就有进一步退化的风险。
 
 平台用户界面在如何提取映射类型字段的键值方面也存在限制。 对象类型字段可以展开，而映射显示为单个字段。

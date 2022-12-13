@@ -5,7 +5,7 @@ title: XDM字段类型约束
 topic-legacy: overview
 description: 体验数据模型(XDM)中字段类型约束的引用，包括可映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: a3b4dd65b22bb04bcba52c44a09030f51454a9c8
+source-git-commit: bd40388d710f8b135c0d36716b0ec59c8c9b78ee
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 6%
@@ -130,7 +130,7 @@ XDM是基于JSON架构构建的，因此，XDM字段在定义其类型时会继�
 >
 >在下表中列出的标准XDM类型中， [!UICONTROL 地图] 类型。 当数据表示为映射到某些值的键时，或者当静态架构中不能合理地包含键并且必须将其视为数据值时，标准架构中会使用映射。
 >
->许多标准XDM组件都使用映射类型，您还可以 [定义自定义映射字段](../tutorials/custom-fields-api.md#maps) 。 下表中包含的映射类型旨在帮助您确定如果现有数据当前以下面列出的任何格式存储，则如何将现有数据映射到XDM。
+>许多标准XDM组件都使用映射类型，您还可以 [定义自定义映射字段](../tutorials/custom-fields-api.md#custom-maps) 。 下表中包含的映射类型旨在帮助您确定如果现有数据当前以下面列出的任何格式存储，则如何将现有数据映射到XDM。
 
 ### Parquet、Spark SQL和Java {#parquet}
 
