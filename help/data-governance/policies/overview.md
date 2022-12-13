@@ -3,12 +3,12 @@ keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 数据使用策略概述
 topic-legacy: policies
-description: 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您可以或限制在 Experience Platform 内对数据执行的营销操作类型的规则。
+description: 数据使用策略是描述您允许或限制对Adobe Experience Platform中的数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1180'
-ht-degree: 2%
+source-wordcount: '1164'
+ht-degree: 0%
 
 ---
 

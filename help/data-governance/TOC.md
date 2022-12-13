@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform 数据管理帮助
 breadcrumb-title: Data Governance 指南
-user-guide-description: 通过使用标签、营销操作和策略实施数据使用限制。
+user-guide-description: 通过使用标签、营销操作和管理策略来实施数据使用限制。
 feature: Data Governance
-source-git-commit: c84926fe88ab02503220ca377170521077dc517e
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '96'
-ht-degree: 35%
+source-wordcount: '97'
+ht-degree: 21%
 
 ---
 

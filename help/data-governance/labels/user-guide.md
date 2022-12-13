@@ -5,18 +5,22 @@ title: 在UI中管理数据使用情况标签
 topic-legacy: labels
 description: 本指南介绍了在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '1229'
+source-wordcount: '1306'
 ht-degree: 0%
 
 ---
 
 # 在UI中管理数据使用情况标签
 
-本用户指南介绍了在 [!DNL Experience Platform] 用户界面。 在使用指南之前，请参阅 [数据管理概述](../home.md) 以更加可靠地介绍数据管理框架。
+本用户指南介绍了在 [!DNL Experience Platform] 用户界面。
 
 ## 在数据集级别管理标签
+
+>[!IMPORTANT]
+>
+>仅支持在数据集级别应用标签用于数据管理用例。 如果您尝试为数据创建访问策略，则必须 [将标签应用到架构](../../xdm/tutorials/labels.md) 数据集所基于的信息。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
 
 要在数据集级别管理数据使用情况标签，您必须选择一个现有数据集或创建一个新数据集。 登录Adobe Experience Platform后，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 工作区。 此页面列出了属于贵组织的所有已创建数据集，以及与每个数据集相关的有用详细信息。
 
@@ -75,6 +79,10 @@ ht-degree: 0%
 ![隐藏继承的标签](../images/labels/inherited-labels.png)
 
 ## 在数据集字段级别管理标签
+
+>[!IMPORTANT]
+>
+>仅在数据管理用例支持在数据集字段级别应用标签。 如果您尝试为数据创建访问策略，则必须 [将标签应用到架构](../../xdm/tutorials/labels.md) 数据集所基于的信息。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
 
 继续工作流 [在数据集级别添加和编辑数据使用情况标签](#add-labels)，您还可以在 **[!UICONTROL 数据管理]** 工作区。
 

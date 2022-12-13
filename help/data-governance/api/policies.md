@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；策略执行；基于API的执行；数据管理
 solution: Experience Platform
-title: 数据使用策略API端点
+title: 数据管理策略API端点
 topic-legacy: developer guide
-description: 数据使用策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。 /policys端点用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
+description: 数据管理策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。 /policys端点用于与查看、创建、更新或删除数据管理策略相关的所有API调用。
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1840'
+source-wordcount: '1865'
 ht-degree: 2%
 
 ---
 
-# 数据使用策略端点
+# 数据管理策略端点
 
-数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform]. 的 `/policies` 的端点 [!DNL Policy Service API] 允许您以编程方式管理贵组织的数据使用策略。
+数据管理策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform]. 的 `/policies` 的端点 [!DNL Policy Service API] 允许您以编程方式管理贵组织的数据管理策略。
 
 >[!IMPORTANT]
 >
->不要将此端点与 `/policies` 的端点 [访问控制API](../../access-control/abac/api/policies.md)，用于管理访问控制策略。
+>管理策略不要与访问控制策略混淆，这些策略可确定贵组织中某些Platform用户可以访问的特定数据属性。 请参阅 `/policies` 适用于的端点指南 [访问控制API](../../access-control/abac/api/policies.md) 有关如何以编程方式管理访问控制策略的详细信息。
 
 ## 快速入门
 
@@ -611,7 +611,7 @@ curl -X DELETE \
 
 ## 检索已启用的核心策略列表 {#list-enabled-core}
 
-默认情况下，只有启用的数据使用策略才会参与评估。 您可以通过向 `/enabledCorePolicies` 端点。
+默认情况下，只有启用的数据管理策略才会参与评估。 您可以通过向 `/enabledCorePolicies` 端点。
 
 **API格式**
 
@@ -663,7 +663,7 @@ curl -X GET \
 
 ## 更新已启用的核心策略列表 {#update-enabled-core}
 
-默认情况下，只有启用的数据使用策略才会参与评估。 通过向 `/enabledCorePolicies` 端点，您可以使用一次调用来更新贵组织已启用的核心策略列表。
+默认情况下，只有启用的数据管理策略才会参与评估。 通过向 `/enabledCorePolicies` 端点，您可以使用一次调用来更新贵组织已启用的核心策略列表。
 
 >[!NOTE]
 >

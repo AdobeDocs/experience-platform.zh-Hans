@@ -5,9 +5,9 @@ title: 自动策略实施
 topic-legacy: guide
 description: 本文档介绍了在将区段激活到Experience Platform中的目标时如何自动强制实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1727'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,11 @@ ht-degree: 0%
 >
 >自动策略实施仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
-在标记数据并定义使用策略后，您可以强制数据使用符合策略。 在将受众区段激活到目标时，如果发生任何违规，Adobe Experience Platform会自动实施使用策略。
+在标记数据并定义数据使用策略后，您可以强制数据使用符合策略。 在将受众区段激活到目标时，如果发生任何违规，Adobe Experience Platform会自动实施使用策略。
+
+>[!NOTE]
+>
+>本文档重点介绍数据管理和同意策略的实施情况。 有关访问控制策略的信息，请参阅 [基于属性的访问控制](../../access-control/abac/overview.md).
 
 ## 先决条件
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 访问控制策略API端点
 description: 基于属性的访问控制API中的/policys端点允许您以编程方式管理Adobe Experience Platform中的策略。
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '1412'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->不要将此端点与 `/policies` 的端点 [数据管理API](../../../data-governance/api/policies.md)，用于管理数据使用策略。
+>不要将此端点与 `/policies` 的端点 [策略服务API](../../../data-governance/api/policies.md)，用于管理数据使用策略。
 
 ## 快速入门
 

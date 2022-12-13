@@ -5,16 +5,16 @@ title: 策略评估API端点
 topic-legacy: developer guide
 description: 创建营销操作并定义策略后，可以使用策略服务API来评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1540'
+source-wordcount: '1542'
 ht-degree: 1%
 
 ---
 
 # 策略评估端点
 
-创建营销操作并定义策略后，您可以使用 [!DNL Policy Service] 用于评估某些操作是否违反了任何策略的API。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
+创建营销操作并定义数据使用策略后，您可以使用 [!DNL Policy Service] 用于评估某些操作是否违反了任何策略的API。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
 
 默认情况下，只有状态设置为 `ENABLED` 参与评价。 但是，您可以使用查询参数 `?includeDraft=true` 包含 `DRAFT` 评估中的策略。
 

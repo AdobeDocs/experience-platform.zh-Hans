@@ -5,16 +5,16 @@ title: 数据集概述
 topic-legacy: datasets
 description: 本文档全面概述了 Experience Platform 中的数据集。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 02002c9530074b8b05664ff9eab5bc2fe4b7d5d4
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '736'
-ht-degree: 7%
+source-wordcount: '784'
+ht-degree: 8%
 
 ---
 
 # 数据集概述
 
-成功摄取到Adobe Experience Platform的所有数据都将保留在 [!DNL Data Lake] 作为数据集。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储数据各个方面的元数据。
+成功摄取到Adobe Experience Platform的所有数据都将保留在 [!DNL Data Lake] 作为数据集。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各方面特性的元数据。
 
 本文档提供了 [!DNL Experience Platform].
 
@@ -41,6 +41,10 @@ Adobe Experience Platform数据摄取表示通过 [!DNL Platform] 从各种源�
 ## 将使用情况标签应用于数据集
 
 Adobe Experience Platform数据管理允许您管理客户数据，以确保遵守适用于数据使用的法规、限制和政策。 数据管理框架允许您应用使用标签，以根据应用于该数据的使用策略对数据进行分类。
+
+>[!IMPORTANT]
+>
+>仅支持在数据集级别应用标签用于数据管理用例。 如果您尝试为数据创建访问策略，则必须 [将标签应用到架构](../../xdm/tutorials/labels.md) 数据集所基于的信息。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
 
 数据使用情况标签可以应用于整个数据集或单个数据集字段。 数据集级别添加的标签将由该数据集内的所有字段继承。
 

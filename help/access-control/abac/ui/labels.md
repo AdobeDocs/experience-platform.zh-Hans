@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理标签
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理标签的信息
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
 
 # 管理标签
 
-标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 标签可随时应用，从而在您选择如何管理数据方面提供了灵活性。 最佳实践是鼓励在将数据摄取到平台后立即为数据设置标签，或者在数据可用于平台后立即为数据设置标签。
+标签允许您根据使用情况对数据集和字段进行分类，并访问应用于该数据的策略。 标签可随时应用，从而在您选择如何管理数据方面提供了灵活性。 最佳实践是鼓励在将数据摄取到平台后立即为数据设置标签，或者在数据可用于平台后立即为数据设置标签。
 
 ## 创建新标签 {#create-new-label}
 

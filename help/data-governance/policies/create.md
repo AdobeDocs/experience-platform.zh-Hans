@@ -1,23 +1,27 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用策略
 solution: Experience Platform
-title: 在API中创建数据使用策略
+title: 在API中创建数据管理策略
 topic-legacy: policies
 type: Tutorial
-description: 策略服务API允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据执行哪些营销操作。 本文档提供了使用策略服务API创建策略的分步教程。
+description: 了解如何使用策略服务API创建数据管理策略。
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1200'
 ht-degree: 2%
 
 ---
 
-# 在API中创建数据使用策略
+# 在API中创建数据管理策略
 
-的 [策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据执行哪些营销操作。
+的 [策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 允许您创建和管理数据管理策略，以确定可以对包含某些数据使用标签的数据执行哪些营销操作。
 
-本文档提供了使用 [!DNL Policy Service] API。 有关API中可用的不同操作的更全面指南，请参阅 [策略服务开发人员指南](../api/getting-started.md).
+本文档分步介绍了如何使用 [!DNL Policy Service] API。
+
+>[!NOTE]
+>
+>有关如何创建访问控制策略的步骤，请参阅 `/policies` 适用于的端点指南 [访问控制API](../../access-control/abac/api/policies.md). 要了解如何创建同意策略，请参阅 [策略UI指南](./user-guide.md#consent-policy).
 
 ## 快速入门
 

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据集API；管理数据使用情况；数据使用API
 solution: Experience Platform
-title: '使用API管理数据集的数据使用标签 '
+title: 使用API管理数据集的数据使用标签
 topic-legacy: developer guide
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '816'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 1%
 # 使用API管理数据集的数据使用标签
 
 的 [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) 允许您应用和编辑数据集的使用情况标签。 它是Adobe Experience Platform数据目录功能的一部分，但与 [!DNL Catalog Service] 管理数据集元数据的API。
+
+>[!IMPORTANT]
+>
+>仅支持在数据集级别应用标签用于数据管理用例。 如果您尝试为数据创建访问策略，则必须 [将标签应用到架构](../../xdm/tutorials/labels.md) 数据集所基于的信息。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
 
 本文档介绍如何使用 [!DNL Dataset Service API]. 有关如何使用API调用管理数据使用情况标签本身的步骤，请参阅 [标签端点指南](../api/labels.md) 对于 [!DNL Policy Service API].
 
@@ -155,10 +159,6 @@ curl -X PUT \
 
 ## 后续步骤
 
-通过阅读本文档，您了解了如何使用 [!DNL Dataset Service] API。
-
-在数据集和字段级别添加数据使用情况标签后，您可以开始将数据摄取到 [!DNL Experience Platform]. 要了解更多信息，请首先阅读 [数据获取文档](../../ingestion/home.md).
-
-您现在还可以根据已应用的标签定义数据使用策略。 有关更多信息，请参阅 [数据使用策略概述](../policies/overview.md).
+通过阅读本文档，您了解了如何使用 [!DNL Dataset Service] API。 您现在可以定义 [数据使用策略](../policies/overview.md) 和 [访问控制策略](../../access-control/abac/ui/policies.md) 基于您应用的标签。
 
 有关管理 [!DNL Experience Platform]，请参阅 [数据集概述](../../catalog/datasets/overview.md).

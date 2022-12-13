@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；API；基于属性的访问控制；基于属性的访问控制
 solution: Experience Platform
 title: 基于属性的访问控制API指南
-description: 基于属性的访问控制API允许您以编程方式管理Adobe Experience Platform中的角色和策略。 参阅本指南，了解如何使用 API 执行关键操作。
+description: 基于属性的访问控制API允许您以编程方式管理Adobe Experience Platform中的角色和访问策略。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '450'
 ht-degree: 4%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 4%
 基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
 
 基于属性的访问控制API用于在Adobe Experience Platform中访问角色、产品、权限类别和权限集，从而提供可从中访问所有可用库资源的用户界面和RESTful API。
+
+>[!IMPORTANT]
+>
+>基于属性的访问控制不要与Experience Platform的数据管理功能混淆，这些功能允许您使用标签和策略来控制数据在Platform中的使用方式，而不是让组织中的哪些用户有权访问数据。 请参阅 [策略服务API指南](../../../data-governance/api/overview.md) 了解如何以编程方式利用这些功能的步骤。
 
 下面概述了这些端点。 有关详细信息，请访问各个端点指南，并参阅 [入门指南](./getting-started.md) 有关所需标头、读取示例API调用等的重要信息。
 

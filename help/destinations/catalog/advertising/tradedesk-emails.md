@@ -1,13 +1,13 @@
 ---
 title: （测试版）交易台 — CRM连接
 description: 将用户档案激活到交易台帐户，以便根据CRM数据定位和抑制受众。
-source-git-commit: b186a1a4b7417503ffa08a66136411ccff495510
+exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '1041'
 ht-degree: 2%
 
 ---
-
 
 # （测试版） [!DNL Trade Desk] - CRM连接
 
@@ -90,7 +90,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
 * **[!UICONTROL 广告商ID]**:您的 [!DNL Trade Desk Advertiser ID]，可由 [!DNL Trade Desk] 客户经理或可在 [!DNL Advertiser Preferences] 在 [!DNL Trade Desk] UI。
 
-连接到目标时，设置“数据管理”策略是完全可选的。 请查看Experience Platform [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=en) 以了解更多详细信息。
+连接到目标时，设置数据管理策略是完全可选的。 请查看Experience Platform [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=en) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
 

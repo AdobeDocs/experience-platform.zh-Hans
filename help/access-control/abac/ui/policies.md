@@ -1,18 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
-title: 基于属性的访问控制创建策略
-description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理策略的信息
+title: 管理访问控制策略
+description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理访问控制策略的信息。
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 1a755fa5480e036bde50617f01440cfabbaf64c2
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '726'
 ht-degree: 0%
 
 ---
 
-# 管理策略
+# 管理访问控制策略
 
-政策是将属性集合在一起以确立允许和不允许的行动的声明。 策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。
+访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 访问策略可以是本地策略或全局策略，也可以覆盖其他策略。
+
+>[!IMPORTANT]
+>
+>访问策略不要与数据使用策略混淆，该策略控制数据在Adobe Experience Platform中的使用方式，而不是由组织中的哪些用户有权访问。 请参阅创建指南 [数据使用策略](../../../data-governance/policies/create.md) 以了解更多信息。
 
 ## 创建新策略
 

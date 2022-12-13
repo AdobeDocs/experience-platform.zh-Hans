@@ -1,9 +1,10 @@
 ---
 title: 《数据管理端到端指南》
 description: 按照对Adobe Experience Platform中的字段和数据集实施数据使用限制的完整流程进行操作。
-source-git-commit: c8b2dba9b1e305f826830b8341bf1a6dde4e2da2
+exl-id: f18ae032-027a-4c97-868b-e04753237c81
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 1. [配置并启用数据管理策略](#policy) 确定哪些类型的标记数据可用于特定营销操作。
 1. [将营销操作应用到您的目标](#destinations) 以指示哪些策略适用于发送到这些目标的数据。
 
-配置完标签、策略和营销操作后，您可以 [测试策略实施](#test) 以确保它按预期运行。
+配置完标签、管理策略和营销操作后，您便可以 [测试策略实施](#test) 以确保它按预期运行。
 
 本指南将指导在Platform UI中配置和实施数据管理策略的完整过程。 有关本指南中所用功能的更多详细信息，请参阅以下主题的概述文档：
 
@@ -24,6 +25,10 @@ ht-degree: 0%
 * [数据使用标签](./labels/overview.md)
 * [数据使用策略](./policies/overview.md)
 * [策略执行](./enforcement/overview.md)
+
+>[!NOTE]
+>
+>本指南重点介绍如何设置和实施策略，以了解如何在Experience Platform中使用或激活数据。 如果您试图限制 **访问** 要了解贵组织中某些Platform用户的数据本身，请参阅 [基于属性的访问控制](../access-control/abac/end-to-end-guide.md) 中。 基于属性的访问控制还使用标签和策略，但是用于与数据管理不同的用例。
 
 ## 应用标签 {#labels}
 

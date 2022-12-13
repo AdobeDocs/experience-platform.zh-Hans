@@ -3,18 +3,18 @@ keywords: Experience Platform；主页；热门主题；有效策略；访问控
 solution: Experience Platform
 title: 有效的策略API端点
 topic-legacy: developer guide
-description: 通过Adobe Experience Platform中的访问控制，您可以使用Adobe Admin Console管理各种平台功能的角色和权限。 本文档是有关如何使用Adobe Experience Platform的访问控制API查看有效策略的指南。
+description: 了解如何使用Adobe Experience Platform的访问控制API查看有效的访问策略。
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '320'
-ht-degree: 1%
+source-wordcount: '295'
+ht-degree: 2%
 
 ---
 
 # 有效策略端点
 
-要查看当前用户的有效策略，请向 `/acl/effective-policies` 的端点 [!DNL Access Control] API。 您要检索的权限和资源类型必须以数组形式在请求有效负载中提供。 以下示例API调用中演示了这一点。
+要查看当前用户的有效访问控制策略，请向 `/acl/effective-policies` 的端点 [!DNL Access Control] API。 您要检索的权限和资源类型必须以数组形式在请求有效负载中提供。 以下示例API调用中演示了这一点。
 
 **API格式**
 
@@ -65,7 +65,7 @@ curl -X POST \
 
 ## 后续步骤
 
-本文档介绍了如何调用 [!DNL Access Control] 用于返回有关资源类型的活动权限和相关策略的信息的API。 有关的访问控制的详细信息 [!DNL Experience Platform]，请参阅 [访问控制概述](../home.md).
+本文档介绍了如何调用 [!DNL Access Control] 用于返回有关资源类型的活动权限和相关访问策略的信息的API。 有关的访问控制的详细信息 [!DNL Experience Platform]，请参阅 [访问控制概述](../home.md).
 
 ## 附录
 

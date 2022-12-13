@@ -5,9 +5,9 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b9b33a6c1df0810db32f3253205221fed8957dd5
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '7435'
+source-wordcount: '7433'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ ht-degree: 0%
 
 **控制台**:在 [!DNL Query Service]，则控制台会提供有关查询状态和操作的信息。 控制台将显示与 [!DNL Query Service]、正在执行的查询操作以及从这些查询产生的任何错误消息。
 
-**合同(&quot;C&quot;)标签**:合同(“C”)数据使用标签用于对具有合同义务或与客户数据管理策略相关的数据进行分类。
+**合同(&quot;C&quot;)标签**:合同(“C”)数据使用标签用于对具有合同义务或与贵组织的数据管理策略相关的数据进行分类。
 
 **C1合同标签**:A `C1` 合同数据使用标签指定只能以聚合形式从Adobe Experience Cloud导出数据，而不包含单个或设备标识符。 例如，源自社交网络的数据。
 
@@ -502,7 +502,7 @@ ht-degree: 0%
 
 **源连接器**:源连接器（也称为源）可帮助用户轻松从多个源摄取数据，从而允许使用Experience Platform服务来构建、标记和增强数据。 可以从多种源摄取数据，如基于云的存储、第三方软件和CRM系统。
 
-**流连接**:流连接是由Adobe提供的唯一端点，它绑定到客户的IMS组织以将数据流式传输到Experience Platform中。
+**流连接**:流连接是由Adobe提供的唯一端点，它绑定到您的组织以将数据流式传输到Experience Platform。
 
 **标准身份命名空间**:标准身份命名空间是由Adobe提供的预定义身份命名空间，它代表通常用于识别客户的行业标准解决方案。
 

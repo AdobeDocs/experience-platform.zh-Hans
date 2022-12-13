@@ -5,16 +5,20 @@ title: 在UI中管理数据使用策略
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了可在策略工作区中通过Experience Platform用户界面执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1411'
 ht-degree: 0%
 
 ---
 
 # 在UI中管理数据使用策略
 
-Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在 **策略** 工作区 [!DNL Experience Platform] 用户界面。
+本文档介绍如何使用 **[!UICONTROL 策略]** 工作区，以创建和管理数据使用策略。
+
+>[!NOTE]
+>
+>有关如何在UI中管理访问控制策略的信息，请参阅 [基于属性的访问控制UI指南](../../access-control/abac/ui/policies.md) 中。
 
 >[!IMPORTANT]
 >
@@ -24,7 +28,7 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 本指南需要对以下内容有一定的了解 [!DNL Experience Platform] 概念：
 
-* [数据治理](../home.md)
+* [数据管理](../home.md)
 * [数据使用策略](./overview.md)
 
 ## 查看现有策略 {#view-policies}

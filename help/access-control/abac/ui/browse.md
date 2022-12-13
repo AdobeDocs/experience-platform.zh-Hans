@@ -3,22 +3,22 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制浏览
 description: 本文档提供了有关在Adobe Experience Cloud中使用权限界面的信息
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '347'
 ht-degree: 4%
 
 ---
 
 # 权限指南
 
-权限是Adobe Experience Cloud的一个区域，管理员可以在该区域定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
+[!UICONTROL 权限] 是Adobe Experience Cloud的区域，在该区域，管理员可以定义用户角色和访问策略以管理产品应用程序中功能和对象的访问权限。
 
-通过权限，您可以配置：
+使用 [!UICONTROL 权限]，您可以配置：
 
+* [访问策略](./policies.md)
 * [标签](./labels.md)
 * [权限](./permissions.md)
-* [支持](./permissions.md)
 * [角色](./roles.md)
 * [沙盒](./sandboxes.md)
 * [用户](./users.md)

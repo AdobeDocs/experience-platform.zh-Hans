@@ -5,9 +5,9 @@ title: 数据管理概述
 topic-legacy: overview
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 它在Experience Platform的各个级别中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略，以及控制数据在营销操作中的使用
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1431'
+source-wordcount: '1479'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 Adobe Experience Platform的核心功能之一是将多个企业系统中的数据整合在一起，以便营销人员更好地识别、了解和吸引客户。 此数据可能受贵组织或法律法规定义的使用限制的约束。 因此，务必确保在 [!DNL Platform] 符合数据使用策略。
 
 Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 它在 [!DNL Experience Platform] 在不同级别，包括编目、数据谱系、数据使用标签、数据使用策略，以及控制营销操作数据的使用。
+
+>[!NOTE]
+>
+>在Experience Platform中，数据管理仅与数据的使用或激活方式有关，而与用户执行操作无关。 有关如何控制组织内特定Platform用户对特定数据字段的访问的信息，请参阅 [基于属性的访问控制](../access-control/abac/overview.md) 中。
 
 ## 数据管理角色
 

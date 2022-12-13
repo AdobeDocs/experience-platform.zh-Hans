@@ -3,12 +3,12 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 策略服务API指南
 topic-legacy: developer guide
-description: 策略服务API允许开发人员管理Experience Platform中的数据使用标签和策略。 请阅读本指南，了解如何使用API执行关键操作。
+description: 策略服务API允许开发人员管理Experience Platform中的数据使用标签和策略。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 0%
+source-wordcount: '545'
+ht-degree: 3%
 
 ---
 
@@ -30,7 +30,13 @@ Adobe Experience Platform数据管理允许您管理客户数据，并确保遵�
 
 ## 支持
 
-数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform]. 策略由以下项定义：
+数据管理策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform].
+
+>[!NOTE]
+>
+>数据管理策略不要与访问控制策略混淆，这些策略可确定贵组织中某些Platform用户可以访问的特定数据属性。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
+
+数据管理策略由以下各项定义：
 
 1. 特定营销操作
 1. 限制对其执行操作的数据使用标签

@@ -5,9 +5,9 @@ title: Access Control API指南
 topic-legacy: developer guide
 description: 通过Adobe Experience Platform中的访问控制，您可以使用Adobe Admin Console管理各种平台功能的角色和权限。 以下部分提供了开发人员成功调用架构注册表API所需了解的其他信息。
 exl-id: 6fd956fb-ade4-48d3-843f-4c9a605945c9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '386'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 本开发人员指南提供了有关如何对 [[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/)、和涵盖以下操作：
 
 - [权限和资源类型的列表名称](./permissions-and-resource-types.md)
-- [查看当前用户的有效策略](./effective-policies.md)
+- [查看当前用户的有效访问策略](./effective-policies.md)
 
 ## 快速入门
 
