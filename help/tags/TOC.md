@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: f6c11fadc0d8019044fbdd2923af00ce18ce39e1
+source-git-commit: bf5346214fad66b3f470c74620b608d71639b85a
 workflow-type: tm+mt
-source-wordcount: '976'
-ht-degree: 30%
+source-wordcount: '971'
+ht-degree: 31%
 
 ---
 
@@ -155,7 +155,6 @@ ht-degree: 30%
       * [差异隐私](https://exchange.adobe.com/apps/ec/104535)
       * [Dynamic Media 查看器](https://exchange.adobe.com/apps/ec/103048)
       * [EDDL助手](https://exchange.adobe.com/apps/ec/107691)
-      * [Facebook Pixel](https://exchange.adobe.com/apps/ec/102804)
       * [Flashtaking OneTag](https://exchange.adobe.com/apps/ec/101392)
       * [ForeSee](https://exchange.adobe.com/apps/ec/100164)
       * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)
@@ -173,6 +172,8 @@ ht-degree: 30%
          * [概述](./extensions/client/marketo/overview.md)
          * [发行说明](./extensions/client/marketo/release-notes.md)
       * [主控属性管理器](https://exchange.adobe.com/apps/ec/102992)
+      * [!DNL Meta Pixel] {#meta}
+         * [概述](./extensions/client/meta/overview.md)
       * [监测](https://exchange.adobe.com/apps/ec/106544)
       * [Nielsen Digital SDK](https://exchange.adobe.com/apps/ec/101361)
       * [Cookie的OneTrust同意管理](https://exchange.adobe.com/apps/ec/100340)
@@ -300,3 +301,4 @@ ht-degree: 30%
    * [2020 年发行说明](./release-notes/2020.md)
    * [2019 年发行说明](./release-notes/2019.md)
    * [2018 版发行说明](./release-notes/2018.md)
+
