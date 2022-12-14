@@ -2,9 +2,9 @@
 title: 在架构注册API中定义XDM字段
 description: 了解在架构注册API中创建自定义体验数据模型(XDM)资源时如何定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 0947eb38bdb18cb3783723cb11be79d3d32a3b76
+source-git-commit: 6277725cd69bc94325d3584177742df1a7fd4f95
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1199'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ ht-degree: 0%
 }
 ```
 
-您可以在 `meta:enum` 属性，每个标签均键控到相应的 `enum` 值。
+您可以选择在 `meta:enum` 属性，每个标签键入到 `enum`.
 
 ```json
 "sampleField": {
