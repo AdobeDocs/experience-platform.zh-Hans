@@ -4,9 +4,9 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c4457d82c66be382ebb8619ce248f282fb45ed3a
+source-git-commit: af01ac288a8afe59105be5859b2d40de5e346963
 workflow-type: tm+mt
-source-wordcount: '3416'
+source-wordcount: '3381'
 ht-degree: 0%
 
 ---
@@ -275,14 +275,19 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 按身份划分的未分段用户档案] {#unsegmented-profiles-by-identity}
 
+>!![NOTE]
+自2022年10月起，已弃用按身份构件划分的未分段用户档案，且不再可用。
+
+<!-- 
+
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilesbyidentity"
->title="按身份划分的未分段用户档案"
->abstract="此小组件按其唯一标识符对未分段的用户档案总数进行分类。"
+>title="Unsegmented profiles by identity"
+>abstract="This widget categorizes the total number of unsegmented profiles by their unique identifier."
 
-的 [!UICONTROL 按身份划分的未分段用户档案] 小组件按其唯一标识符对未分段的用户档案总数进行分类。 数据以条形图形式显示，以便于比较。
+The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total number of unsegmented profiles by their unique identifier. The data is visualized in a bar chart for ease of comparison. 
 
-![按身份小组件划分的未分段用户档案。](../images/profiles/unsegmented-profiles-by-identity.png)
+![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) -->
 
 ### [!UICONTROL 受众] {#audiences}
 
@@ -318,8 +323,7 @@ The visualization allows you to monitor the overall health of audiences within A
 ![受众重叠报表对话框。](../images/profiles/profiles-audience-overlap-report-dialog.png)
 
 >[!NOTE]
->
->选择 **[!UICONTROL 重叠]** 列标题，以将结果的排名从最高更改为最低或从最低更改为最高。
+选择 **[!UICONTROL 重叠]** 列标题，以将结果的排名从最高更改为最低或从最低更改为最高。
 
 要以PDF格式下载整个报表，请选择选项菜单(**`...`**)后跟 **[!UICONTROL 下载]**.
 
