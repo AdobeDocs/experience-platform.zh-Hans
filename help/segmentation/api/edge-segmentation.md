@@ -5,9 +5,9 @@ title: 使用API进行边缘分段
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: d2196d4d9cae4bdec160ce0c028d354a0db21cb5
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1187'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,11 @@ ht-degree: 0%
 | 引用映射的查询 | 引用属性映射的任何区段定义。 | 基于外部区段数据添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
 
 此外，区段 **必须** 绑定到边缘上处于活动状态的合并策略。 有关合并策略的更多信息，请阅读 [合并策略指南](../../profile/api/merge-policies.md).
+
+区段定义将 **not** 在以下情况下启用边缘分段：
+
+- 区段定义包括单个事件和 `inSegment` 事件。
+   - 但是，如果 `inSegment` 事件仅用于用户档案，区段定义 **will** 启用边缘分段。
 
 ## 检索为边缘分段启用的所有区段
 

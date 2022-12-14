@@ -5,9 +5,9 @@ title: 边缘分段UI指南
 topic-legacy: ui guide
 description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 95ffd09b81b49c8c7d65695a2fbc0fcd97b12c9e
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '939'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,9 @@ ht-degree: 0%
 >
 > 此外，边缘分段引擎将仅执行存在的边缘上的请求 **one** 主标记标识，与非基于边缘的主标识一致。
 
-## 边缘分段查询类型
+## 边缘分段查询类型 {#query-types}
 
 目前，只能通过边缘分段来评估选定的查询类型。 以下各节提供了一系列查询类型，这些类型可通过边缘分段进行评估，而这些类型当前不受支持。
-
-### 支持的查询类型 {#query-types}
 
 如果查询符合下表中所述的任何标准，则可以使用边缘分段来评估查询。
 
@@ -54,6 +52,11 @@ ht-degree: 0%
 | 在24小时的时间范围内使用用户档案进行多个事件 | 任何区段定义，指在24小时内发生的一个或多个用户档案属性和多个事件。 | 访问主页的美国人 **和** 在过去24小时内访问了结帐页面。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
 | 区段 | 包含一个或多个批处理或流式处理区段的任何区段定义。 | 居住在美国且位于区段“现有区段”中的人员。 | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
 | 引用映射的查询 | 引用属性映射的任何区段定义。 | 基于外部区段数据添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
+
+区段定义将 **not** 在以下情况下启用边缘分段：
+
+- 区段定义包括单个事件和 `inSegment` 事件。
+   - 但是，如果 `inSegment` 事件仅用于用户档案，区段定义 **will** 启用边缘分段。
 
 ## 后续步骤
 

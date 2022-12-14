@@ -5,9 +5,9 @@ title: 利用流分段快速实时评估事件
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 30a12fee487609b4c85ba342963bb915e8152195
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '1938'
+source-wordcount: '1971'
 ht-degree: 1%
 
 ---
@@ -87,6 +87,8 @@ ht-degree: 1%
 
 - 区段定义包括Adobe Audience Manager(AAM)区段或特征。
 - 区段定义包括多个实体（多实体查询）。
+- 区段定义包括单个事件和 `inSegment` 事件。
+   - 但是，如果 `inSegment` 事件仅用于用户档案，区段定义 **will** 启用流分段。
 
 请注意，执行流式分段时应遵循以下准则：
 
