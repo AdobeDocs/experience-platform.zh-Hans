@@ -3,9 +3,9 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: d48b746b477ffa6977ce04b72fe77e8ddb95d691
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '996'
 ht-degree: 8%
 
 ---
@@ -89,7 +89,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 #### 规则的操作顺序 {#action-sequencing}
 
-的 [!UICONTROL 操作] 事件转发规则的部分始终按顺序执行。 您在保存规则时，应确保操作顺序正确。无法像使用标记一样异步执行此执行序列。
+的 [!UICONTROL 操作] 事件转发规则的部分始终按顺序执行。 例如，如果规则具有两个操作，则第二个操作将在上一个操作完成后才开始执行（如果需要端点响应，则该端点已响应）。 您在保存规则时，应确保操作顺序正确。无法像使用标记规则一样异步执行此执行序列。
 
 ## 秘密 {#secrets}
 
