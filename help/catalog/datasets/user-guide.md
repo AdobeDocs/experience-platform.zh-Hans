@@ -5,7 +5,7 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 3e25bd111d7a5cb482fa8e872452b352676b29ad
+source-git-commit: 28b6944a14c07f14d8177e3f8ae1c1a83c4c9c86
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 0%

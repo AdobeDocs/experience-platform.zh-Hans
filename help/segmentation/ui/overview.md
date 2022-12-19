@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
 workflow-type: tm+mt
-source-wordcount: '2375'
+source-wordcount: '2397'
 ht-degree: 1%
 
 ---
@@ -66,11 +66,11 @@ ht-degree: 1%
 
 ![](../images/ui/overview/segment-browse-all.png)
 
-此视图列出有关区段定义的信息，包括划分、流失率、用户档案计数、评估方法、创建日期和上次修改日期。
+此视图列出有关区段定义的信息，包括配置文件计数、创建日期和上次修改日期。
 
-划分会显示一个条形图，其中概述了属于以下每种状态的用户档案百分比： [!UICONTROL 已实现], [!UICONTROL 现有]和 [!UICONTROL 正在退出]. 此外， [!UICONTROL 浏览] 选项卡是区段状态的最准确划分。 如果此数字与 [!UICONTROL 概述] 选项卡，您应使用 [!UICONTROL 浏览] 选项卡作为正确的信息源，因为 [!UICONTROL 概述] 选项卡号每天只更新一次。
+您可以通过选择“图像”向此显示屏添加其他字段。 这些附加字段包括划分、流失率、评估方法和作业ID。
 
-![](../images/ui/overview/segment-browse-breakdown.png)
+如果选择了划分，则显示一个条形图，其中概述了属于以下每种状态的用户档案百分比： [!UICONTROL 已实现], [!UICONTROL 现有]和 [!UICONTROL 正在退出]. 此外， [!UICONTROL 浏览] 选项卡是区段状态的最准确划分。 如果此数字与 [!UICONTROL 概述] 选项卡，您应使用 [!UICONTROL 浏览] 选项卡作为正确的信息源，因为 [!UICONTROL 概述] 选项卡号每天只更新一次。
 
 | 状态 | 描述 |
 | ------ | ----------- |
