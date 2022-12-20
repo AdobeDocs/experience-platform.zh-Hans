@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 3764418c5c8a6159ec23f3cc7ba77792c9f15106
+source-git-commit: b8c2a9ab44274e2719e7178119a58f14d0442955
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '232'
 ht-degree: 16%
 
 ---
@@ -28,6 +28,7 @@ ht-degree: 16%
    - [机器人过滤](use-cases/bot-filtering.md)
    - [Web和移动分析分析](use-cases/analytics-insights.md)
    - [倾向得分](use-cases/propensity-score.md)
+   - [SQLAlchemy](use-cases/sqlalchemy.md)
 - 查询服务API {#api}
    - [快速入门](api/getting-started.md)
    - [查询](api/queries.md)
@@ -80,7 +81,7 @@ ht-degree: 16%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [塔布洛](clients/tableau.md)
-- 数据管理 {#data-governance}
+- 数据治理 {#data-governance}
    - [概述](data-governance/overview.md)
    - [审核日志指南](data-governance/audit-log-guide.md)
    - [临时架构数据集中的身份](data-governance/ad-hoc-schema-identities.md)
