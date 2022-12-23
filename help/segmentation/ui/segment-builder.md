@@ -5,9 +5,9 @@ title: 区段生成器UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 1d70aee1bd225268b8f2a2d1dc24d446bb4ce633
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '3082'
+source-wordcount: '3101'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ![区段生成器字段的属性部分会突出显示。](../images/ui/segment-builder/attributes.png)
 
-### 活动
+### 事件
 
 的 **[!UICONTROL 事件]** 选项卡，用于根据使用 [!DNL XDM ExperienceEvent] 数据元素。 您还可以在 **[!UICONTROL 事件]** 选项卡，这是常用事件的集合，可让您更快地创建区段。
 
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 默认情况下，仅显示数据存储中填充的架构字段。 这包括“[!UICONTROL 事件类型]&quot; 如果[!UICONTROL 事件类型]“ ”列表不可见，或者您只能选择“[!UICONTROL 任意]&quot;作为&quot;[!UICONTROL 事件类型]&quot;，选择 **齿轮图标** 下一页 **[!UICONTROL 字段]**，然后选择 **[!UICONTROL 显示完整的XDM架构]** 在 **[!UICONTROL 可用字段]**. 选择 **齿轮图标** 再次返回 **[!UICONTROL 字段]** 选项卡，此时您应该能够查看多个“[!UICONTROL 事件类型]“ ”和架构字段，无论它们是否包含数据。
 
-![](../images/ui/segment-builder/show-populated.png)
+![允许您选择是仅显示包含数据的字段还是显示所有XDM字段的单选按钮会高亮显示。](../images/ui/segment-builder/show-populated.png)
 
 #### Adobe Analytics报表包数据集
 
@@ -76,7 +76,7 @@ ht-degree: 1%
 | eVar3 | URL | 页面名称 |
 | eVar4 | 搜索词 | 产品名称 |
 | event1 | 单击次数 | Page Views |
-| event2 | 页面查看次数 | 购物车加货 |
+| event2 | Page Views | 购物车加货 |
 | event3 | 购物车加货 | 结账 |
 | event4 | 购买 | 购买 |
 

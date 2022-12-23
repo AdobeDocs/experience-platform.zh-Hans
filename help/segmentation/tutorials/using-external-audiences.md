@@ -5,9 +5,9 @@ title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 13fd1e372a63b55c41893f41d1590d9dab9f7903
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1621'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 要创建身份命名空间，请按照 [identity namespace指南](../../identity-service/namespaces.md#manage-namespaces). 创建身份命名空间时，将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
 
-![](../images/tutorials/external-audiences/identity-namespace-info.png)
+![非人员标识符在创建身份命名空间模式中突出显示。](../images/tutorials/external-audiences/identity-namespace-info.png)
 
 ## 为区段元数据创建架构
 
@@ -52,19 +52,19 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL 浏览]** 以查看可用架构类型的完整选择。
 
-![](../images/tutorials/external-audiences/create-schema-browse.png)
+![“创建架构”和“浏览”都会突出显示。](../images/tutorials/external-audiences/create-schema-browse.png)
 
 由于您创建的区段定义是预定义的类，因此请选择 **[!UICONTROL 使用现有类]**. 现在，选择 **[!UICONTROL 区段定义]** 类，后跟 **[!UICONTROL 分配类]**.
 
-![](../images/tutorials/external-audiences/assign-class.png)
+![区段定义类会突出显示。](../images/tutorials/external-audiences/assign-class.png)
 
 现在，您的架构已创建，接下来将需要指定包含区段ID的字段。 此字段应标记为主标识，并分配给您之前创建的命名空间。
 
-![](../images/tutorials/external-audiences/mark-primary-identifier.png)
+![将选定字段标记为主标识的复选框在架构编辑器中突出显示。](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
 在将 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换开关 **[!UICONTROL 用户档案]**. 选择 **[!UICONTROL 启用]** 为 [!DNL Real-time Customer Profile].
 
-![](../images/tutorials/external-audiences/schema-profile.png)
+![用于为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/schema-profile.png)
 
 现在，已为用户档案启用此架构，并将主标识分配给您创建的非人员标识命名空间。 因此，这意味着使用此架构导入到平台的区段元数据将被摄取到用户档案，而不会与其他与人员相关的用户档案数据合并。
 
@@ -74,11 +74,11 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
 
-![](../images/tutorials/external-audiences/select-schema.png)
+![您要将数据集基于的架构会突出显示。](../images/tutorials/external-audiences/select-schema.png)
 
 创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
 
-![](../images/tutorials/external-audiences/dataset-profile.png)
+![用于启用配置文件架构的切换开关在“数据集”活动页面中突出显示。](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## 设置和导入受众数据
 
@@ -94,7 +94,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![流连接的流端点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## 受众元数据结构
 
@@ -151,7 +151,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 设置导入的受众后，即可将其用作分段流程的一部分。 要查找外部受众，请转到区段生成器，然后选择 **[!UICONTROL 受众]** 选项卡 **[!UICONTROL 字段]** 中。
 
-![](../images/tutorials/external-audiences/external-audiences.png)
+![区段生成器中的外部受众选择器会突出显示。](../images/tutorials/external-audiences/external-audiences.png)
 
 ## 后续步骤
 
@@ -165,15 +165,15 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL XDM个人配置文件]**.
 
-![](../images/tutorials/external-audiences/create-schema-profile.png)
+![“XDM Individual Profile”区域会突出显示。](../images/tutorials/external-audiences/create-schema-profile.png)
 
 现在，架构已创建完成，接下来您需要将区段成员资格字段组添加为架构的一部分。 要执行此操作，请选择 [!UICONTROL 区段成员资格详细信息]，后跟 [!UICONTROL 添加字段组].
 
-![](../images/tutorials/external-audiences/segment-membership-details.png)
+![区段成员资格详细信息字段组将突出显示。](../images/tutorials/external-audiences/segment-membership-details.png)
 
 此外，请确保架构已标记为 **[!UICONTROL 用户档案]**. 要实现此目的，您需要将字段标记为主标识。
 
-![](../images/tutorials/external-audiences/external-segment-profile.png)
+![用于为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/external-segment-profile.png)
 
 ### 设置数据集
 
@@ -181,11 +181,11 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
 
-![](../images/tutorials/external-audiences/select-schema.png)
+![突出显示了用于创建数据库的架构。](../images/tutorials/external-audiences/select-schema.png)
 
 创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
 
-![](../images/tutorials/external-audiences/dataset-profile.png)
+![在创建数据集工作流中，突出显示了用于启用用户档案架构的切换开关。](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## 设置和导入外部受众成员资格数据
 
@@ -201,7 +201,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![流连接的流端点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## 区段成员结构
 

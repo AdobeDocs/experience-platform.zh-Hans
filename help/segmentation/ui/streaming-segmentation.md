@@ -5,9 +5,9 @@ title: 流分段UI指南
 topic-legacy: ui guide
 description: 通过Adobe Experience Platform上的流式分段，您可以近乎实时地进行分段，同时重点关注数据的丰富性。 使用流式分段，区段鉴别现在会在数据登陆平台时进行，从而缓解了计划和运行分段作业的需求。 借助此功能，大多数区段规则现在都可以在数据传递到平台时进行评估，这意味着区段成员资格将保持为最新状态，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
@@ -36,14 +36,14 @@ ht-degree: 0%
 
 | 查询类型 | 详细信息 | 示例 |
 | ---------- | ------- | ------- |
-| 单个事件 | 任何引用无时间限制的单个传入事件的区段定义。 | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
-| 相对时间窗口内的单个事件 | 引用单个传入事件的任何区段定义。 | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
-| 包含时间窗口的单个事件 | 引用带有时间窗口的单个传入事件的任何区段定义。 | ![](../images/ui/streaming-segmentation/historic-time-window.png) |
+| 单个事件 | 任何引用无时间限制的单个传入事件的区段定义。 | ![显示了单个事件的示例。](../images/ui/streaming-segmentation/incoming-hit.png) |
+| 相对时间窗口内的单个事件 | 引用单个传入事件的任何区段定义。 | ![显示了相对时间窗口内单个事件的示例。](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| 包含时间窗口的单个事件 | 引用带有时间窗口的单个传入事件的任何区段定义。 | ![此时会显示带时间窗口的单个事件的示例。](../images/ui/streaming-segmentation/historic-time-window.png) |
 | 仅配置文件 | 仅引用配置文件属性的任何区段定义。 |  |
-| 具有配置文件属性的单个事件 | 任何引用单个传入事件（无时间限制）和一个或多个用户档案属性的区段定义。 **注意：** 事件发生时，将立即评估查询。 但是，对于用户档案事件，必须等待24小时才能合并。 | ![](../images/ui/streaming-segmentation/profile-hit.png) |
-| 相对时间窗口内具有配置文件属性的单个事件 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| 区段 | 包含一个或多个批处理或流式处理区段的任何区段定义。 **注意：** 如果使用区段区段，则会发生配置文件取消资格事件 **每24小时**. | ![](../images/ui/streaming-segmentation/two-batches.png) |
-| 具有配置文件属性的多个事件 | 引用多个事件的任何区段定义 **过去24小时内** 和（可选）具有一个或多个配置文件属性。 | ![](../images/ui/streaming-segmentation/event-history-success.png) |
+| 具有配置文件属性的单个事件 | 任何引用单个传入事件（无时间限制）和一个或多个用户档案属性的区段定义。 **注意：** 事件发生时，将立即评估查询。 但是，对于用户档案事件，必须等待24小时才能合并。 | ![此处显示了具有配置文件属性的单个事件的示例。](../images/ui/streaming-segmentation/profile-hit.png) |
+| 相对时间窗口内具有配置文件属性的单个事件 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 | ![此处显示了在相对时间窗口内具有配置文件属性的单个事件的示例。](../images/ui/streaming-segmentation/profile-relative-success.png) |
+| 区段 | 包含一个或多个批处理或流式处理区段的任何区段定义。 **注意：** 如果使用区段区段，则会发生配置文件取消资格事件 **每24小时**. | ![显示区段的示例。](../images/ui/streaming-segmentation/two-batches.png) |
+| 具有配置文件属性的多个事件 | 引用多个事件的任何区段定义 **过去24小时内** 和（可选）具有一个或多个配置文件属性。 | ![显示了具有配置文件属性的多个事件的示例。](../images/ui/streaming-segmentation/event-history-success.png) |
 
 区段定义将 **not** 在以下情况下启用流分段：
 
@@ -67,7 +67,7 @@ ht-degree: 0%
 
 创建启用流式传输的区段后，您可以查看该区段的详细信息。
 
-![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
+![此时会显示区段详细信息页面。](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
 具体而言， **[!UICONTROL 合格总数]** 量度，该量度会根据此区段的批量评估和流评估显示符合条件的受众总数。
 
@@ -79,11 +79,11 @@ ht-degree: 0%
 >
 >有关这些状态的更多信息，请参阅 [分段概述](./overview.md#browse).
 
-![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
+![随时间推移的用户档案卡会突出显示，显示一段时间内用户档案的折线图。](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
 通过选择旁边的信息气泡，可以找到有关最后一个区段评估的其他信息 **[!UICONTROL 合格总数]**.
 
-![](../images/ui/streaming-segmentation/info-bubble.png)
+![已选择“合计合格用户档案”的信息气泡。 这会显示有关上次区段评估时间的信息。](../images/ui/streaming-segmentation/info-bubble.png)
 
 有关区段定义的更多信息，请阅读 [区段定义详细信息](#segment-details).
 

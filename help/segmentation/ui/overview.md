@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '2397'
+source-wordcount: '2647'
 ht-degree: 1%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 1%
 
 要了解更多信息，请访问 [区段仪表板指南](../../dashboards/guides/segments.md).
 
-![](../../dashboards/images/segments/dashboard-overview.png)
+![随即会显示区段功能板。 它显示了各种小组件，包括受众大小、按身份划分的用户档案、身份叠加以及受众大小更改趋势。](../../dashboards/images/segments/dashboard-overview.png)
 
 ## 浏览 {#browse}
 
@@ -60,15 +60,15 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_addallsegmentstoschedule"
 >title="添加所有要计划的区段"
->abstract="启用，以在每日计划更新（UTC下午3:30）中包含所有批次评估区段。 禁用可从计划更新中删除所有区段。"
+>abstract="允许在每日计划更新中包含所有批次评估区段。 禁用可从计划更新中删除所有区段。"
 
 选择 **[!UICONTROL 浏览]** 选项卡，以查看组织的所有区段定义列表。
 
-![](../images/ui/overview/segment-browse-all.png)
+![将显示区段浏览屏幕。 将显示属于组织的所有区段的列表。](../images/ui/overview/segment-browse-all.png)
 
 此视图列出有关区段定义的信息，包括配置文件计数、创建日期和上次修改日期。
 
-您可以通过选择“图像”向此显示屏添加其他字段。 这些附加字段包括划分、流失率、评估方法和作业ID。
+您可以通过选择 ![过滤器属性图标](../images/ui/overview/filter-attribute.png). 这些附加字段包括划分、流失率、评估方法和作业ID。
 
 如果选择了划分，则显示一个条形图，其中概述了属于以下每种状态的用户档案百分比： [!UICONTROL 已实现], [!UICONTROL 现有]和 [!UICONTROL 正在退出]. 此外， [!UICONTROL 浏览] 选项卡是区段状态的最准确划分。 如果此数字与 [!UICONTROL 概述] 选项卡，您应使用 [!UICONTROL 浏览] 选项卡作为正确的信息源，因为 [!UICONTROL 概述] 选项卡号每天只更新一次。
 
@@ -82,7 +82,7 @@ ht-degree: 1%
 
 评估方法可以是流、批处理或边缘。 当数据进入系统时，会不断评估流区段。 批区段将根据设置的计划进行评估。 边缘区段会进行实时评估，以便支持同一页面和下一页个性化用例。
 
-![](../images/ui/overview/segment-browse-segments.png)
+![区段浏览页面中的区段会突出显示。](../images/ui/overview/segment-browse-segments.png)
 
 页面顶部提供了用于向计划添加所有区段和创建新区段的选项。
 
@@ -90,11 +90,11 @@ ht-degree: 1%
 
 选择 **[!UICONTROL 创建区段]** 会将您转到区段生成器。 要了解有关创建区段的更多信息，请阅读 [在用户指南中创建区段](#create-segment).
 
-![](../images/ui/overview/segment-browse-top.png)
+![区段浏览页面上的顶部导航栏会突出显示。 此栏包含用于向计划添加所有区段的切换开关，以及用于创建区段的按钮。](../images/ui/overview/segment-browse-top.png)
 
 右侧的侧栏包含有关组织内所有区段的信息，列出区段总数、上次评估日期、下次评估日期以及按评估方法划分区段。
 
-![](../images/ui/overview/segment-browse-segment-info.png)
+![区段浏览页面上的右侧侧栏会突出显示。 此时会显示有关组织中区段的信息。 这包括区段总数、上次评估时间、下次评估时间以及不同区段类型的划分等信息。](../images/ui/overview/segment-browse-segment-info.png)
 
 选择区段定义的行可提供区段定义的摘要，包括用于编辑或删除区段、将区段激活到目标、区段的合格受众、总受众大小的选项，以及区段的名称、描述、评估方法、创建日期和上次修改日期的选项。
 
@@ -102,7 +102,7 @@ ht-degree: 1%
 >
 > 您将 **not** 能够删除目标激活中使用的区段。
 
-![](../images/ui/overview/segment-browse-details.png)
+![此时会显示有关选定区段的详细信息。 这包括有关符合条件的用户档案数量、符合条件的用户档案与总用户档案的百分比划分、上次评估日期的详细信息。](../images/ui/overview/segment-browse-details.png)
 
 ## 区段定义详细信息 {#segment-details}
 
@@ -110,7 +110,7 @@ ht-degree: 1%
 
 此时将显示区段详细信息页面。 在顶部，提供了区段定义的摘要、有关符合条件的受众大小以及区段激活的目标的信息。
 
-![](../images/ui/overview/segment-details-summary.png)
+![将显示区段定义详细信息页面。 区段摘要、区段中的总受众和激活的目标卡会突出显示。](../images/ui/overview/segment-details-summary.png)
 
 ### 区段摘要 {#segment-summary}
 
@@ -118,7 +118,7 @@ ht-degree: 1%
 
 此外，您还可以选择将区段激活到目标或编辑区段。 选择 **[!UICONTROL 激活到目标]** 将允许您将区段激活到目标。 有关将区段激活到目标的更多详细信息，请阅读 [激活概述](../../destinations/ui/activation-overview.md).
 
-![](../images/ui/overview/segment-details-activate.png)
+![激活到目标按钮会突出显示。](../images/ui/overview/segment-details-activate.png)
 
 选择 **[!UICONTROL 编辑区段]** 会带你去 [!DNL Segment Builder]. 有关使用 [!DNL Segment Builder] 工作区，请阅读 [[!DNL Segment Builder] 用户指南](./segment-builder.md).
 
@@ -158,13 +158,13 @@ ht-degree: 1%
 
 有关每个 [!DNL Profile] 可通过选择 [!DNL Profile] ID。 要进一步了解用户档案的详细信息，请阅读 [[!DNL Real-time Customer Profile] 用户指南](../../profile/ui/user-guide.md#profile-detail).
 
-![](../images/ui/overview/segment-details-profiles.png)
+![区段定义的示例用户档案会突出显示。 示例用户档案信息包括用户档案ID、名字、姓氏和人员电子邮件。](../images/ui/overview/segment-details-profiles.png)
 
 ## 创建区段 {#create-segment}
 
 选择 **[!UICONTROL 创建区段]** 在右上角，打开 [!DNL Segment Builder] 工作区中，您可以开始创建区段定义。
 
-![](../images/ui/overview/segment-browse-create.png)
+![在区段浏览页面上，创建区段按钮会突出显示。](../images/ui/overview/segment-browse-create.png)
 
 ### [!DNL Segment Builder] 工作区
 
@@ -172,7 +172,7 @@ ht-degree: 1%
 
 有关使用 [!DNL Segment Builder] 工作区，请阅读 [[!DNL Segment Builder] 用户指南](./segment-builder.md).
 
-![](../images/ui/overview/segment-builder.png)
+![将显示区段生成器工作区。](../images/ui/overview/segment-builder.png)
 
 ## 计划分段 {#scheduled-segmentation}
 
@@ -190,7 +190,7 @@ ht-degree: 1%
 
 当前只能使用API创建计划。 有关使用API创建、编辑和使用计划的详细步骤，请按照有关评估和访问区段结果的教程(特别是 [使用API进行计划评估](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
-![](../images/ui/overview/segment-browse-scheduled.png)
+![在“区段浏览”页面上，“向计划添加所有区段”切换会突出显示。](../images/ui/overview/segment-browse-scheduled.png)
 
 ## 受众 {#audiences}
 
@@ -290,7 +290,7 @@ ht-degree: 1%
 
 创建完区段后，Adobe Experience Platform数据管理将对该区段进行分析，以确保该区段内没有违反策略的情况。 请参阅 [数据管理概述](../../data-governance/home.md) 以了解更多信息。
 
-![](../images/ui/overview/segment-dule-policy-violations.png)
+![将显示区段的策略违规。](../images/ui/overview/segment-dule-policy-violations.png)
 
 ## 后续步骤和其他资源 {#next-steps}
 

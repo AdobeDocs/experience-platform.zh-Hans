@@ -4,9 +4,9 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1776'
+source-wordcount: '1951'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 要了解更多信息，请访问 [配置文件仪表板指南](../../dashboards/guides/profiles.md).
 
-![](../../dashboards/images/profiles/dashboard-overview.png)
+![随即会显示“配置文件”功能板。](../../dashboards/images/profiles/dashboard-overview.png)
 
 ## [!UICONTROL 浏览] 选项卡量度
 
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 除了这些量度之外，此部分还提供上次更新的日期和时间，以显示上次评估量度的时间。
 
-![](../images/user-guide/browse-metrics.png)
+![此时会显示并突出显示配置文件量度。](../images/user-guide/browse-metrics.png)
 
 ### 用户档案计数 {#profile-count}
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 在 **[!UICONTROL 浏览]** 选项卡，您可以使用合并策略查看示例配置文件，或使用身份命名空间和值查找特定配置文件。
 
-![](../images/user-guide/none-selected.png)
+![此时会显示属于组织的用户档案。](../images/user-guide/none-selected.png)
 
 ### 浏览者 [!UICONTROL 合并策略]
 
@@ -85,36 +85,35 @@ ht-degree: 0%
 >
 >如果未选择合并策略，请使用 **[!UICONTROL 合并策略]** 字段以打开选择对话框。
 
-![](../images/user-guide/browse-by-merge-policy.png)
+![合并策略选择器会突出显示。](../images/user-guide/browse-by-merge-policy.png)
 
 从 **[!UICONTROL 选择合并策略]** 对话框中，选择策略名称旁边的单选按钮，然后使用 **[!UICONTROL 选择]** 返回 [!UICONTROL 浏览] 选项卡。 然后，您可以选择 **[!UICONTROL 查看]** 刷新示例用户档案，并查看应用了新合并策略的用户档案采样。
 
-![](../images/user-guide/select-merge-policy.png)
+![此时将显示一个对话框，您可以在其中选择要筛选的合并策略。](../images/user-guide/select-merge-policy.png)
 
 显示的用户档案表示在应用所选合并策略后，您组织的用户档案存储中最多有20个用户档案的样例。 将新数据添加到贵组织的配置文件存储区后，将刷新选定合并策略的示例配置文件。
 
 要查看其中一个示例用户档案的详细信息，请选择 **[!UICONTROL 配置文件ID]**. 有关更多信息，请参阅本指南后面部分的 [查看配置文件详细信息](#profile-detail).
 
-![](../images/user-guide/sample-profiles.png)
+![将显示与合并策略匹配的示例用户档案。](../images/user-guide/sample-profiles.png)
 
 要进一步了解合并策略及其在Platform中的角色，请参阅 [合并策略概述](../merge-policies/overview.md).
-
 
 ### 浏览者 [!UICONTROL 身份] {#browse-identity}
 
 在 **[!UICONTROL 浏览]** 选项卡中，您可以使用标识命名空间来按标识值查找特定的配置文件。 按身份浏览需要您提供合并策略、身份命名空间和身份值。
 
-![](../images/user-guide/browse-by-merge-policy.png)
+![合并策略选择器会突出显示。](../images/user-guide/browse-by-merge-policy.png)
 
 如有必要，请使用 **[!UICONTROL 合并策略]** 用于打开的选择器 **[!UICONTROL 选择合并策略]** 对话框，然后选择要使用的合并策略。
 
-![](../images/user-guide/select-merge-policy.png)
+![此时将显示一个对话框，您可以在其中选择要筛选的合并策略。](../images/user-guide/select-merge-policy.png)
 
 然后，使用 **[!UICONTROL 身份命名空间]** 用于打开的选择器 **[!UICONTROL 选择身份命名空间]** 对话框，然后选择要搜索的命名空间。 如果贵组织具有多个命名空间，则可以使用对话框中的搜索栏开始键入命名空间的名称。
 
 您可以选择命名空间以查看其他详细信息，或选择单选按钮以选择命名空间。 然后，您可以使用 **[!UICONTROL 选择]** 继续。
 
-![](../images/user-guide/select-identity-namespace.png)
+![此时将显示一个对话框，您可以在其中选择要筛选的身份命名空间。](../images/user-guide/select-identity-namespace.png)
 
 选择 [!UICONTROL 身份命名空间] 然后回到 [!UICONTROL 浏览] 选项卡，您可以输入 **[!UICONTROL 标识值]** 与您选择的命名空间相关。
 
@@ -122,11 +121,11 @@ ht-degree: 0%
 >
 >此值特定于单个客户配置文件，并且必须是提供的命名空间的有效条目。 例如，选择身份命名空间“Email”将需要有效电子邮件地址形式的身份值。
 
-![](../images/user-guide/filter-identity-value.png)
+![要过滤的标识值会突出显示。](../images/user-guide/filter-identity-value.png)
 
 输入值后，选择 **[!UICONTROL 查看]** 并返回与值匹配的单个用户档案。 选择 **[!UICONTROL 配置文件ID]** 查看配置文件详细信息。
 
-![](../images/user-guide/filtered-identity-value.png)
+![与标识值匹配的配置文件会突出显示。](../images/user-guide/filtered-identity-value.png)
 
 ## 查看配置文件详细信息 {#profile-detail}
 
@@ -134,7 +133,7 @@ ht-degree: 0%
 
 显示的默认字段也可以在组织级别更改，以显示首选的用户档案属性。 要了解有关自定义这些字段的更多信息，包括有关添加和删除属性以及调整功能板面板大小的分步说明，请阅读 [配置文件详细自定义指南](profile-customization.md).
 
-![](../images/user-guide/profile-detail.png)
+![“详细信息”(Details)选项卡突出显示。 此时会显示配置文件详细信息。](../images/user-guide/profile-detail.png)
 
 您可以通过选择其他可用选项卡，查看与单个客户用户档案相关的其他信息。 这些选项卡包括属性、事件和区段成员资格选项卡，用于显示配置文件当前符合条件的区段。
 
@@ -144,7 +143,7 @@ ht-degree: 0%
 
 通过选择 **[!UICONTROL 查看JSON]**. 对于希望更好地了解如何将配置文件属性摄取到平台的任何用户而言，此功能非常有用。
 
-![](../images/user-guide/attributes.png)
+![“属性”选项卡会突出显示。 此时会显示配置文件属性。](../images/user-guide/attributes.png)
 
 ### “事件”选项卡
 
@@ -152,7 +151,7 @@ ht-degree: 0%
 
 通过选择 **[!UICONTROL 查看JSON]**. 这有助于了解如何在平台中捕获事件。
 
-![](../images/user-guide/events.png)
+![“事件”选项卡会突出显示。 将显示用户档案事件。](../images/user-guide/events.png)
 
 ### “区段成员资格”选项卡
 
@@ -160,7 +159,7 @@ ht-degree: 0%
 
 有关Experience Platform中分段的更多信息，请参阅 [AdobeExperience Platform分段服务文档](../../segmentation/home.md).
 
-![](../images/user-guide/segment-membership.png)
+![区段成员资格选项卡会突出显示。 此时会显示配置文件区段成员资格详细信息。](../images/user-guide/segment-membership.png)
 
 ## 合并策略
 
@@ -168,7 +167,7 @@ ht-degree: 0%
 
 有关合并策略的更多信息，请参阅 [合并策略概述](../merge-policies/overview.md).
 
-![](../images/user-guide/merge-policies.png)
+![“合并策略”选项卡会突出显示。 将显示属于组织的合并策略。](../images/user-guide/merge-policies.png)
 
 ## 并集模式 {#union-schema}
 
@@ -176,7 +175,7 @@ ht-degree: 0%
 
 有关合并模式的更多信息，请访问 [并集架构UI指南](union-schema.md).
 
-![](../images/user-guide/union-schema.png)
+![“并集架构”选项卡突出显示。 将显示属于组织的并集架构。](../images/user-guide/union-schema.png)
 
 ## 后续步骤
 
