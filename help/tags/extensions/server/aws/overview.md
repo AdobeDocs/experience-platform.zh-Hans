@@ -2,9 +2,9 @@
 title: AWS扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的AWS扩展。
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: b4ff3dbc9c62dceefdf2b842cafa65132dde41fc
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '847'
 ht-degree: 4%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 4%
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-[[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) 是一个云计算平台，可提供多种服务，如分布式计算、数据库存储、内容交付和客户关系管理(CRM)。
+[[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) 是一个云计算平台，为客户关系管理(CRM)和企业资源规划(ERP)提供多种服务，如分布式计算、数据库存储、内容交付和软件即服务(SaaS)集成服务。
 
 的 [!DNL AWS] [事件转发](../../../ui/event-forwarding/overview.md) 扩展利用 [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) 将事件从Adobe Experience Platform边缘网络发送到 [!DNL AWS] 以进一步处理。 本指南介绍如何安装扩展并在事件转发规则中使用其功能。
 
