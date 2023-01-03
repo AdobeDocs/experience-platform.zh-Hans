@@ -5,7 +5,7 @@ title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 3fc498de60256006d27ada72a7b5f4fff71c4472
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3156'
 ht-degree: 0%

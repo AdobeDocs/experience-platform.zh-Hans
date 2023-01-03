@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 2%
@@ -485,7 +485,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您创建了一个数据流，用于从流连接器收集流数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程之后，您创建了一个数据流，用于从流连接器收集流数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 - [实时客户资料概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)

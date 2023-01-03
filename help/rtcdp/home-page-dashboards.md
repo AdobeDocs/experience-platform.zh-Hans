@@ -3,7 +3,7 @@ keywords: 量度概述；rtcdp量度概述
 title: Real-time Customer Data Platform主页和功能板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 2%
@@ -28,14 +28,14 @@ ht-degree: 2%
 
 * **排行榜** 位于功能板顶部。 排行榜显示系统中的数据集、用户档案、区段和目标的数量。
 
-   ![图像](assets/leaderboard.png)
+   ![image](assets/leaderboard.png)
 
 <!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
     ![image](assets/home-metrics.jpg)
 Some information is shown in different ways on both the leaderboard and metric cards. -->
 * **近期项目** 列出添加到系统中的五个最新数据集、源、区段和目标。
 
-   ![图像](assets/recent.png)
+   ![image](assets/recent.png)
 
 其他量度（例如，用户档案和区段）在Real-time Customer Data Platform的其他部分中可用。
 
@@ -47,7 +47,7 @@ Some information is shown in different ways on both the leaderboard and metric c
 
 ### 用户档案
 
-的 **[!UICONTROL 用户档案]** count显示 [!DNL Real-time Customer Profile]. 它不包括配置文件片段。 这是您的可寻址受众总数。
+的 **[!UICONTROL 用户档案]** count显示 [!DNL Real-Time Customer Profile]. 它不包括配置文件片段。 这是您的可寻址受众总数。
 
 此计数使用默认 [合并策略](profile/merge-policies.md) 在统一配置文件的合并策略配置中设置。
 

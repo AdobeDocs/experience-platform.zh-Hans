@@ -6,7 +6,7 @@ topic-legacy: policies
 type: Tutorial
 description: 了解如何使用策略服务API创建数据管理策略。
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1200'
 ht-degree: 2%
@@ -423,6 +423,6 @@ curl -X PATCH \
 
 通过阅读本教程，您已成功为营销操作创建了数据使用策略。 您现在可以继续阅读 [强制实施数据使用策略](../enforcement/api-enforcement.md) 了解如何检查是否存在策略违规，并在您的体验应用程序中处理这些违规。
 
-有关 [!DNL Policy Service] API，请参阅 [策略服务开发人员指南](../api/getting-started.md). 有关如何执行 [!DNL Real-time Customer Profile] 数据，请参阅 [为受众区段强制实施数据使用合规性](../../segmentation/tutorials/governance.md).
+有关 [!DNL Policy Service] API，请参阅 [策略服务开发人员指南](../api/getting-started.md). 有关如何执行 [!DNL Real-Time Customer Profile] 数据，请参阅 [为受众区段强制实施数据使用合规性](../../segmentation/tutorials/governance.md).
 
 了解如何在 [!DNL Experience Platform] 用户界面，请参阅 [策略用户指南](user-guide.md).

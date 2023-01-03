@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API为受众区段强制实施数据使用合规性
 topic-legacy: tutorial
 type: Tutorial
-description: 本教程介绍了使用API为实时客户资料受众区段强制实施数据使用合规性的步骤。
+description: 本教程介绍了使用API强制实时客户资料受众区段符合数据使用要求的步骤。
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 1%
@@ -15,15 +15,15 @@ ht-degree: 1%
 
 # 使用API为受众区段强制实施数据使用合规性
 
-本教程介绍了实施 [!DNL Real-time Customer Profile] 受众区段。
+本教程介绍了实施 [!DNL Real-Time Customer Profile] 受众区段。
 
 ## 快速入门
 
 本教程需要对的以下组件有一定的了解 [!DNL Adobe Experience Platform]:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用的查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 数据内 [!DNL Platform]. 配置文件可跨各种企业数据资产合并数据，并以统一的形式提供对该数据的访问。
-   - [合并策略](../../profile/api/merge-policies.md):使用的规则 [!DNL Real-time Customer Profile] 以确定在特定条件下哪些数据可以合并到统一视图中。 可以为“数据管理”目的配置合并策略。
-- [[!DNL Segmentation]](../home.md):如何 [!DNL Real-time Customer Profile] 将配置文件存储中包含的大量个人划分为具有相似特征且响应类似营销策略的较小群组。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): [!DNL Real-Time Customer Profile] 是通用的查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 数据内 [!DNL Platform]. 配置文件可跨各种企业数据资产合并数据，并以统一的形式提供对该数据的访问。
+   - [合并策略](../../profile/api/merge-policies.md):使用的规则 [!DNL Real-Time Customer Profile] 以确定在特定条件下哪些数据可以合并到统一视图中。 可以为“数据管理”目的配置合并策略。
+- [[!DNL Segmentation]](../home.md):如何 [!DNL Real-Time Customer Profile] 将配置文件存储中包含的大量个人划分为具有相似特征且响应类似营销策略的较小群组。
 - [数据管理](../../data-governance/home.md):“数据管理”使用以下组件为数据使用标签和执行提供了基础架构：
    - [数据使用标签](../../data-governance/labels/user-guide.md):标签用于根据处理数据集和字段各自数据的敏感程度来描述数据集和字段。
    - [数据使用策略](../../data-governance/policies/overview.md):配置，用于指示允许对按特定数据使用标签分类的数据执行哪些营销操作。
@@ -58,7 +58,7 @@ ht-degree: 1%
 
 ## 查找区段定义的合并策略 {#merge-policy}
 
-此工作流从访问已知的受众区段开始。 已启用以供在 [!DNL Real-time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
+此工作流从访问已知的受众区段开始。 已启用以供在 [!DNL Real-Time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
 
 使用 [!DNL Segmentation] API中，您可以通过其ID查找区段定义，以查找其关联的合并策略。
 

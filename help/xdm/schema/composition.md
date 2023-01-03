@@ -5,7 +5,7 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: bd40388d710f8b135c0d36716b0ec59c8c9b78ee
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '4103'
 ht-degree: 2%
@@ -58,7 +58,7 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 
 架构用于将数据摄取到 [!DNL Experience Platform]. 此数据可跨多项服务使用，以创建单个实体的单个统一视图。 因此，在考虑架构时，请务必考虑客户身份以及哪些字段可用于标识主题，而不管数据来自何处。
 
-为了帮助完成此过程，可以将架构中的关键字段标记为标识。 在摄取数据时，这些字段中的数据将插入到“[!UICONTROL 身份图]”。 然后，可以访问图形数据 [[!DNL Real-time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 服务，以提供每个客户的拼合视图。
+为了帮助完成此过程，可以将架构中的关键字段标记为标识。 在摄取数据时，这些字段中的数据将插入到“[!UICONTROL 身份图]”。 然后，可以访问图形数据 [[!DNL Real-Time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 服务，以提供每个客户的拼合视图。
 
 通常标记为“”的字段[!UICONTROL 身份]“包括：电子邮件地址，电话号码， [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 您还应考虑特定于贵组织的任何唯一标识符，因为它们可能是好的。[!UICONTROL 身份]”字段。
 
@@ -114,7 +114,7 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 
 >[!NOTE]
 >
->一个布尔值，用于确定值是否为主标识(`primary`)，也可以为每个标识值提供。 只需为要在 [!DNL Real-time Customer Profile]. 请参阅 [合并模式](#union) 以了解更多信息。
+>一个布尔值，用于确定值是否为主标识(`primary`)，也可以为每个标识值提供。 只需为要在 [!DNL Real-Time Customer Profile]. 请参阅 [合并模式](#union) 以了解更多信息。
 
 ### 模式演化原则 {#evolution}
 
@@ -273,7 +273,7 @@ While [!DNL Experience Platform] 允许您为特定用例编写架构，它还�
 
 ![](../images/schema-composition/union.png)
 
-通过启用模式以与 [!DNL Real-time Customer Profile]，则它将包含在该类型的并集中。 [!DNL Profile] 提供客户属性的可靠、集中的配置文件，以及客户在与集成的任何系统中发生的每个事件的时间戳帐户 [!DNL Platform]. [!DNL Profile] 使用并集视图来表示此数据，并提供每个客户的整体视图。
+通过启用模式以与 [!DNL Real-Time Customer Profile]，则它将包含在该类型的并集中。 [!DNL Profile] 提供客户属性的可靠、集中的配置文件，以及客户在与集成的任何系统中发生的每个事件的时间戳帐户 [!DNL Platform]. [!DNL Profile] 使用并集视图来表示此数据，并提供每个客户的整体视图。
 
 有关使用的更多信息 [!DNL Profile]，请参阅 [实时客户资料概述](../../profile/home.md).
 

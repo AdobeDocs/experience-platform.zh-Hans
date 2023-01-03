@@ -5,7 +5,7 @@ title: 架构注册API快速入门
 description: 本文档简要介绍在尝试调用架构注册表API之前需要了解的核心概念。
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1356'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    * [架构组合的基础知识](../schema/composition.md):了解XDM模式的基本构建块。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 XDM使用JSON模式格式来描述和验证摄取的客户体验数据的结构。 因此，强烈建议您查看 [官方JSON模式文档](https://json-schema.org/) 以更好地了解这项基础技术。

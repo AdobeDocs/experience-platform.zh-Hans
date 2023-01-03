@@ -2,7 +2,7 @@
 title: 基于数据集的派生属性用例
 description: 本指南演示了使用查询服务创建基于文件的派生属性以用于用户档案数据所需的步骤。
 exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
-source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 派生属性有助于分析数据湖中的数据的复杂用例，这些数据湖可用于其他下游平台服务或发布到您的实时客户资料数据中。
 
-此示例用例演示了如何创建基于数据的派生属性，以便与实时客户资料数据结合使用。 以航空公司忠诚度方案为例，本指南会告知您如何创建使用类别数据进行分段的数据集，以及如何根据排名属性创建受众。
+此示例用例演示了如何创建基于数据的派生属性，以用于实时客户资料数据。 以航空公司忠诚度方案为例，本指南会告知您如何创建使用类别数据进行分段的数据集，以及如何根据排名属性创建受众。
 
 下列主要概念如下所示：
 
@@ -84,7 +84,7 @@ ht-degree: 2%
 
 被摄取到Experience Platform以供实时客户资料使用的数据必须符合 [为用户档案启用的体验数据模型(XDM)架构](../../xdm/ui/resources/schemas.md). 要为配置文件启用架构，必须实施XDM个人配置文件或XDM ExperienceEvent类。
 
-[使用架构注册API，启用您的架构以在实时客户资料中使用](../../xdm/tutorials/create-schema-api.md) 或 [架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md).  有关如何为用户档案启用架构的详细说明，请参阅其各自的文档。
+[使用架构注册API启用您的架构，以便在实时客户资料中使用](../../xdm/tutorials/create-schema-api.md) 或 [架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md).  有关如何为用户档案启用架构的详细说明，请参阅其各自的文档。
 
 接下来，创建一个数据类型，以便重新用于所有与文件相关的字段组。 创建decile字段组是每个沙盒的一个步骤。 它还可以重复用于所有与文件相关的架构。
 
@@ -299,4 +299,4 @@ GROUP BY rankings.membershipNumber
 
 ## 后续步骤
 
-上面提供的示例用例重点介绍了如何在“实时客户资料”中提供详细属性的步骤。 这允许Segmentation Service通过用户界面或RESTful API，能够根据这些数据存储段生成受众。 请参阅 [Segmentation Service概述](../../segmentation/home.md) 有关如何创建、评估和访问区段的信息。
+上面提供的示例用例重点介绍了如何在实时客户资料中提供文档属性的步骤。 这允许Segmentation Service通过用户界面或RESTful API，能够根据这些数据存储段生成受众。 请参阅 [Segmentation Service概述](../../segmentation/home.md) 有关如何创建、评估和访问区段的信息。

@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 配置文件导出作业API端点
 topic-legacy: guide
 type: Documentation
-description: 实时客户配置文件允许您通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
+description: 实时客户配置文件允许您通过汇集来自多个来源的数据（包括属性数据和行为数据），在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1519'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 配置文件导出作业端点
 
-[!DNL Real-time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。 例如，受众区段来自 [!DNL Profile] 可以导出数据以进行激活，也可以导出配置文件属性以进行报告。
+[!DNL Real-Time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。 例如，受众区段来自 [!DNL Profile] 可以导出数据以进行激活，也可以导出配置文件属性以进行报告。
 
 本文档提供了使用创建和管理导出作业的分步说明 [配置文件API](https://www.adobe.com/go/profile-apis-en).
 
@@ -26,11 +26,11 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的API端点是 [!DNL Real-time Customer Profile] API。 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [!DNL Real-Time Customer Profile] API。 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 创建导出作业
 
-导出 [!DNL Profile] 数据需要先创建一个要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience PlatformAPI来实现，前者使用目录服务API，后者使用实时客户资料API。 有关完成每个步骤的详细说明，请参见下面的章节。
+导出 [!DNL Profile] 数据需要先创建一个要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience PlatformAPI来实现，前者使用目录服务API，后者使用实时客户配置文件API。 有关完成每个步骤的详细说明，请参见下面的章节。
 
 ### 创建目标数据集
 

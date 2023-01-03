@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Cloud Services。
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: b9f032c903da2bdb9f37179b1693119bf7b0029d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1149'
 ht-degree: 1%
@@ -137,7 +137,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了一个数据流，以将Campaign v8投放日志和跟踪日志数据引入平台。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已成功创建了一个数据流，以将Campaign v8投放日志和跟踪日志数据引入平台。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](../../../../../profile/home.md)
-* [[!DNL Data Science Workspace]概述](../../../../../data-science-workspace/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将演示创建数据集所需的步骤，数据集可用于使用Experience PlatformUI导出受众区段。
 exl-id: 1cd16e43-b050-42ba-a894-d7ea477b65f3
-source-git-commit: f7d204442c8bc2355671ba2adffff4c40ce08784
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '757'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->选择搜索栏旁边的过滤器图标，以使用过滤功能仅查看为 [!DNL Real-time Customer Profile].
+>选择搜索栏旁边的过滤器图标，以使用过滤功能仅查看为 [!DNL Real-Time Customer Profile].
 
 ![将显示数据集工作区。](../images/tutorials/segment-export-dataset/browse.png)
 

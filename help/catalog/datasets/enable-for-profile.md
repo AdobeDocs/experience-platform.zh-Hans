@@ -2,9 +2,9 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；启用数据集
 title: 使用API为配置文件和Identity服务启用数据集
 type: Tutorial
-description: 本教程将向您展示如何使用Adobe Experience Platform API启用数据集，以便与实时客户资料和Identity Service结合使用。
+description: 本教程将向您展示如何使用Adobe Experience Platform API启用数据集以与实时客户资料和Identity Service结合使用。
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1073'
 ht-degree: 1%
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 # 为 [!DNL Profile] 和 [!DNL Identity Service] 使用API
 
-本教程介绍如何启用数据集以供在中使用 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service]，分为以下步骤：
+本教程介绍如何启用数据集以供在中使用 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]，分为以下步骤：
 
-1. 启用数据集以在中使用 [!DNL Real-time Customer Profile]，使用以下两个选项之一：
+1. 启用数据集以在中使用 [!DNL Real-Time Customer Profile]，使用以下两个选项之一：
    - [创建新数据集](#create-a-dataset-enabled-for-profile-and-identity)
    - [配置现有数据集](#configure-an-existing-dataset)
 1. [将数据摄取到数据集中](#ingest-data-into-the-dataset)
@@ -26,9 +26,9 @@ ht-degree: 1%
 
 本教程需要对管理启用了用户档案的数据集时涉及的多项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查阅这些相关文档 [!DNL Platform] 服务：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-- [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-time Customer Profile] 通过将来自不同数据源的身份桥接到 [!DNL Platform].
-- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service].
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-Time Customer Profile] 通过将来自不同数据源的身份桥接到 [!DNL Platform].
+- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 以下部分提供了成功调用平台API所需了解的其他信息。
@@ -51,7 +51,7 @@ ht-degree: 1%
 
 ## 创建为“配置文件和身份”启用的数据集 {#create-a-dataset-enabled-for-profile-and-identity}
 
-您可以在创建时立即或在创建数据集后的任何时间点为实时客户配置文件和Identity服务启用数据集。 如果要启用已创建的数据集，请按照 [配置现有数据集](#configure-an-existing-dataset) 在本文档的后面部分找到。
+您可以在创建时立即或在创建数据集后的任何时间点，为实时客户配置文件和Identity服务启用数据集。 如果要启用已创建的数据集，请按照 [配置现有数据集](#configure-an-existing-dataset) 在本文档的后面部分找到。
 
 >[!NOTE]
 >
@@ -107,11 +107,11 @@ curl -X POST \
 
 ## 配置现有数据集 {#configure-an-existing-dataset}
 
-以下步骤介绍如何为启用之前创建的数据集 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service]. 如果已创建启用了用户档案的数据集，请继续执行 [摄取数据](#ingest-data-into-the-dataset).
+以下步骤介绍如何为启用之前创建的数据集 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 如果已创建启用了用户档案的数据集，请继续执行 [摄取数据](#ingest-data-into-the-dataset).
 
 ### 检查数据集是否已启用 {#check-if-the-dataset-is-enabled}
 
-使用 [!DNL Catalog] API中，您可以检查现有数据集以确定它是否已启用以供在中使用 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service]. 以下调用按ID检索数据集的详细信息。
+使用 [!DNL Catalog] API中，您可以检查现有数据集以确定它是否已启用以供在中使用 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 以下调用按ID检索数据集的详细信息。
 
 **API格式**
 
@@ -185,7 +185,7 @@ curl -X GET \
 }
 ```
 
-在 `tags` 属性，您可以看到 `unifiedProfile` 和 `unifiedIdentity` 都与值一起存在 `enabled:true`. 因此， [!DNL Real-time Customer Profile] 和 [!DNL Identity Service] 已分别为此数据集启用。
+在 `tags` 属性，您可以看到 `unifiedProfile` 和 `unifiedIdentity` 都与值一起存在 `enabled:true`. 因此， [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 已分别为此数据集启用。
 
 ### 启用数据集 {#enable-the-dataset}
 
@@ -230,14 +230,14 @@ curl -X PATCH \
 
 ## 将数据摄取到数据集中 {#ingest-data-into-the-dataset}
 
-两者兼有 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service] 在将XDM数据摄取到数据集时使用XDM数据。 有关如何将数据上载到数据集的说明，请参阅 [使用API创建数据集](../../catalog/datasets/create.md). 规划要发送给您的 [!DNL Profile]启用的数据集，请考虑以下最佳实践：
+两者兼有 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 在将XDM数据摄取到数据集时使用XDM数据。 有关如何将数据上载到数据集的说明，请参阅 [使用API创建数据集](../../catalog/datasets/create.md). 规划要发送给您的 [!DNL Profile]启用的数据集，请考虑以下最佳实践：
 
 - 包括要用作分段标准的任何数据。
 - 根据用户档案数据确定的尽可能多的标识符，以最大化身份图。 这允许 [!DNL Identity Service] 更有效地跨数据集拼合身份。
 
-## 确认数据摄取方式 [!DNL Real-time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
+## 确认数据摄取方式 [!DNL Real-Time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
 
-首次将数据上传到新数据集时，或在涉及新ETL或数据源的流程中，建议仔细检查数据，以确保数据已按预期上传。 使用 [!DNL Real-time Customer Profile] 访问API时，您可以在批量数据加载到数据集中时对其进行检索。 如果无法检索您期望的任何实体，则可能未为 [!DNL Real-time Customer Profile]. 确认您的数据集已启用后，请确保源数据格式和标识符支持您的预期。 有关如何使用 [!DNL Real-time Customer Profile] 用于访问的API [!DNL Profile] 数据，请参阅 [entities endpoint指南](../../profile/api/entities.md)，也称为“[!DNL Profile Access]&quot; API.
+首次将数据上传到新数据集时，或在涉及新ETL或数据源的流程中，建议仔细检查数据，以确保数据已按预期上传。 使用 [!DNL Real-Time Customer Profile] 访问API时，您可以在批量数据加载到数据集中时对其进行检索。 如果无法检索您期望的任何实体，则可能未为 [!DNL Real-Time Customer Profile]. 确认您的数据集已启用后，请确保源数据格式和标识符支持您的预期。 有关如何使用 [!DNL Real-Time Customer Profile] 用于访问的API [!DNL Profile] 数据，请参阅 [entities endpoint指南](../../profile/api/entities.md)，也称为“[!DNL Profile Access]&quot; API.
 
 ## 确认由Identity服务摄取数据 {#confirm-data-ingest-by-identity-service}
 

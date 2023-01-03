@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1352'
 ht-degree: 4%

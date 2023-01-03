@@ -5,7 +5,7 @@ title: 区段导出作业API端点
 topic-legacy: developer guide
 description: 导出作业是用于将受众区段成员保留到数据集的异步进程。 您可以在Adobe Experience Platform Segmentation Service API中使用/export/jobs端点，该端点允许您以编程方式检索、创建和取消导出作业。
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1682'
 ht-degree: 2%
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->本指南介绍如何在 [!DNL Segmentation API]. 有关如何管理的导出作业的信息 [!DNL Real-time Customer Profile] 数据，请参阅 [导出配置文件API中的作业](../../profile/api/export-jobs.md)
+>本指南介绍如何在 [!DNL Segmentation API]. 有关如何管理的导出作业的信息 [!DNL Real-Time Customer Profile] 数据，请参阅 [导出配置文件API中的作业](../../profile/api/export-jobs.md)
 
 ## 快速入门
 

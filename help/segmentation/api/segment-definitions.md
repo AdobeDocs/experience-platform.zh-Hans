@@ -5,7 +5,7 @@ title: 区段定义API端点
 topic-legacy: developer guide
 description: Adobe Experience Platform Segmentation Service API中的区段定义端点允许您以编程方式管理贵组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # 区段定义端点
 
-Adobe Experience Platform允许您从一组用户档案创建用于定义一组特定属性或行为的区段。 区段定义是封装在中写入的查询的对象 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与提供给的任何记录或时间序列数据相关的条件定义区段规则 [!DNL Real-time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
+Adobe Experience Platform允许您从一组用户档案创建用于定义一组特定属性或行为的区段。 区段定义是封装在中写入的查询的对象 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与提供给的任何记录或时间序列数据相关的条件定义区段规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
 
 本指南提供了相关信息，以帮助您更好地了解区段定义，并包含用于使用API执行基本操作的示例API调用。
 

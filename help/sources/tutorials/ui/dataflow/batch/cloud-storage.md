@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；数据流；数据流
 title: 在UI中配置数据流以从云存储源中摄取批量数据
 description: 本教程提供了有关如何在UI中配置新数据流以从云存储源摄取批量数据的步骤
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 0910de76d817eea7c7c3cb2b988d81268b3e5812
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1795'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ### 支持的文件格式
 
@@ -183,10 +183,10 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过阅读本教程，您成功创建了一个数据流以从外部云存储中导入数据，并获得了有关监控数据集的洞察信息。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，现在下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您成功创建了一个数据流以从外部云存储中导入数据，并获得了有关监控数据集的洞察信息。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，现在下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](../../../../../profile/home.md)
-* [[!DNL Data Science Workspace]概述](../../../../../data-science-workspace/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >

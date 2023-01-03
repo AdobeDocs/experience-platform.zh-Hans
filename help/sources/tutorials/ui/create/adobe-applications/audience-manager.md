@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；Audience Manager源连�
 title: 在UI中创建Adobe Audience Manager源连接
 description: 本教程将指导您完成为Adobe Audience Manager创建源连接的步骤，以便使用用户界面将消费者体验事件数据导入Platform。
 exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
-source-git-commit: 9cdb8933d166445bf41ed314d7ffc7d5762e1adb
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '583'
 ht-degree: 0%

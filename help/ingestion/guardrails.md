@@ -3,7 +3,7 @@ keywords: Experience Platform；故障诊断；护栏；准则；
 title: 数据摄取的防护
 description: 本文档提供了有关在Adobe Experience Platform中摄取数据的防护的指导
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: fa0ddc4c0053018d013c14c568ebb2fd231f4bd2
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 1%

@@ -5,7 +5,7 @@ title: XDM系统疑难解答指南
 description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 5ffc93c8715d1184b2a239c1d631b117a531e5c1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2060'
 ht-degree: 0%
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 ### 架构何时开始阻止中断更改？
 
-只要架构从未在创建数据集时使用过或启用以供在中使用，就可以对其进行重大更改 [[!DNL Real-time Customer Profile]](../profile/home.md). 在数据集创建中使用架构或启用架构以与结合使用后 [!DNL Real-time Customer Profile]，规则 [模式演变](schema/composition.md#evolution) 被制度严格执行。
+只要架构从未在创建数据集时使用过或启用以供在中使用，就可以对其进行重大更改 [[!DNL Real-Time Customer Profile]](../profile/home.md). 在数据集创建中使用架构或启用架构以与结合使用后 [!DNL Real-Time Customer Profile]，规则 [模式演变](schema/composition.md#evolution) 被制度严格执行。
 
 ### 长字段类型的最大大小是多少？
 
@@ -72,24 +72,24 @@ ht-degree: 0%
 
 ### 我的架构是否需要主标识？
 
-主标识是可选的，因为架构可能具有零个或其中一个标识。 但是，架构必须具有主标识，才能在中启用该架构 [!DNL Real-time Customer Profile]. 请参阅 [身份](./tutorials/create-schema-ui.md#identity-field) 章节，以了解更多信息。
+主标识是可选的，因为架构可能具有零个或其中一个标识。 但是，架构必须具有主标识，才能在中启用该架构 [!DNL Real-Time Customer Profile]. 请参阅 [身份](./tutorials/create-schema-ui.md#identity-field) 章节，以了解更多信息。
 
-### 如何启用在中使用的架构 [!DNL Real-time Customer Profile]?
+### 如何启用在中使用的架构 [!DNL Real-Time Customer Profile]?
 
-已启用架构以用于 [[!DNL Real-time Customer Profile]](../profile/home.md) 通过在 `meta:immutableTags` 架构的属性。 启用模式以便与 [!DNL Profile] 可以使用API或用户界面完成。
+已启用架构以用于 [[!DNL Real-Time Customer Profile]](../profile/home.md) 通过在 `meta:immutableTags` 架构的属性。 启用模式以便与 [!DNL Profile] 可以使用API或用户界面完成。
 
 #### 为启用现有模式 [!DNL Profile] 使用API
 
 发出PATCH请求以更新架构并添加 `meta:immutableTags` 属性作为包含值“union”的数组。 如果更新成功，则响应将显示更新的架构，该架构现在包含并集标记。
 
-有关使用API启用架构以在中使用的更多信息 [!DNL Real-time Customer Profile]，请参阅 [工会](./api/unions.md) 文档 [!DNL Schema Registry] 开发人员指南。
+有关使用API启用架构以在中使用的更多信息 [!DNL Real-Time Customer Profile]，请参阅 [工会](./api/unions.md) 文档 [!DNL Schema Registry] 开发人员指南。
 
 #### 为启用现有模式 [!DNL Profile] 使用UI
 
 在 [!DNL Experience Platform]，选择 **[!UICONTROL 模式]** 在左侧导航中，从架构列表中选择要启用的架构的名称。 然后，在编辑器右侧的 **[!UICONTROL 架构属性]**，选择 **[!UICONTROL 用户档案]** 以将其打开。
 
 
-有关更多信息，请参阅 [在实时客户资料中使用](./tutorials/create-schema-ui.md#profile) 在 [!UICONTROL 架构编辑器] 教程。
+有关更多信息，请参阅 [在实时客户用户档案中使用](./tutorials/create-schema-ui.md#profile) 在 [!UICONTROL 架构编辑器] 教程。
 
 ### 能否直接编辑并集架构？
 
@@ -230,9 +230,9 @@ GET请求 [!DNL Schema Registry] API需要 `Accept` 标头，以便系统确定�
 
 有关不同API请求的兼容Accept标头列表，请参阅 [架构注册开发人员指南](./api/overview.md).
 
-### [!DNL Real-time Customer Profile] 错误
+### [!DNL Real-Time Customer Profile] 错误
 
-以下错误消息与启用架构中涉及的操作相关联 [!DNL Real-time Customer Profile]. 请参阅 [工会](./api/unions.md) 部分 [!DNL Schema Registry] API指南以了解更多信息。
+以下错误消息与启用架构中涉及的操作相关联 [!DNL Real-Time Customer Profile]. 请参阅 [工会](./api/unions.md) 部分 [!DNL Schema Registry] API指南以了解更多信息。
 
 #### 必须有引用标识描述符
 

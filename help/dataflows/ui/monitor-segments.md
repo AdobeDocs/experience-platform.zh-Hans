@@ -4,7 +4,8 @@ description: 利用分段，可根据实时客户资料数据创建区段和受�
 title: 在UI中监控区段的数据流
 topic-legacy: overview
 type: Tutorial
-source-git-commit: cec27197d47d2dd979bdf29f16fef77e8ff855e3
+exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1923'
 ht-degree: 1%

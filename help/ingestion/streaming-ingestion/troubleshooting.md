@@ -5,7 +5,7 @@ title: 流摄取疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档提供了有关在Adobe Experience Platform上流式引入的常见问题解答。
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 0%
@@ -46,9 +46,9 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供可用于将数据摄取�
 
 [!DNL Experience Platform] 支持安全数据收集。 启用经过身份验证的数据收集后，客户端必须发送JSON Web令牌(JWT)及其IMS组织ID作为请求标头。 有关如何将经过身份验证的数据发送到的更多信息 [!DNL Platform]，请参阅 [经过验证的数据收集](../tutorials/create-authenticated-streaming-connection.md).
 
-### 将数据流式传输到的滞后时间是多少 [!DNL Real-time Customer Profile]?
+### 将数据流式传输到的滞后时间是多少 [!DNL Real-Time Customer Profile]?
 
-流式处理事件通常反映在 [!DNL Real-time Customer Profile] 在60秒内。 实际延迟可能会因数据量、消息大小和带宽限制而有所不同。
+流式处理事件通常反映在 [!DNL Real-Time Customer Profile] 在60秒内。 实际延迟可能会因数据量、消息大小和带宽限制而有所不同。
 
 ### 我是否可以在同一API请求中包含多条消息？
 
@@ -94,9 +94,9 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供可用于将数据摄取�
 }
 ```
 
-### 为什么我的已发送消息未被 [!DNL Real-time Customer Profile]?
+### 为什么我的已发送消息未被 [!DNL Real-Time Customer Profile]?
 
-如果 [!DNL Real-time Customer Profile] 拒绝消息，很可能是因为身份信息不正确。 这可能是为身份提供无效值或命名空间的结果。
+如果 [!DNL Real-Time Customer Profile] 拒绝消息，很可能是因为身份信息不正确。 这可能是为身份提供无效值或命名空间的结果。
 
 身份命名空间有两种类型：默认和自定义。 使用自定义命名空间时，请确保命名空间已在中注册 [!DNL Identity Service]. 请参阅 [身份命名空间概述](../../identity-service/namespaces.md) 有关使用默认和自定义命名空间的更多信息。
 

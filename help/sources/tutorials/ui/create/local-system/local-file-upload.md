@@ -6,10 +6,10 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何为本地系统创建源连接以将本地文件引入平台
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
-source-git-commit: 08805ed0d89d3d6908ddccdafda55d2f862e727e
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '770'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ## 将本地文件上传到平台
 
@@ -86,10 +86,10 @@ ht-degree: 0%
 
 ![映射](../../../../images/tutorials/create/local/mapping.png)
 
-## 监控数据摄取
+## 监测数据提取
 
 映射和创建CSV文件后，您可以使用监控仪表板监控通过其摄取的数据。 有关更多信息，请参阅 [在UI中监控源数据流](../../../../../dataflows/ui/monitor-sources.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到平台。 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile]. 请参阅 [[!DNL Real-time Customer Profile]](../../../../../profile/home.md) 以了解更多信息。
+通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到平台。 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile]. 请参阅 [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md) 以了解更多信息。

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区课程
 description: 本文档提供了Adobe Experience Platform数据科学工作区课程的链接和描述。
 exl-id: d814846e-52a9-46c6-831a-3399241959f2
-source-git-commit: 7733fe16984cacf04c1070e92673a7ee19eaea47
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '439'
 ht-degree: 1%

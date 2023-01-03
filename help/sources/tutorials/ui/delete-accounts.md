@@ -6,7 +6,7 @@ title: 在UI中删除源连接帐户
 topic-legacy: overview
 type: Tutorial
 exl-id: 7cb65d17-d99d-46ff-b28f-7469d0b57d07
-source-git-commit: 609f7a5de51840fe657ca72df99c90da56c8f466
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部源数�
 - [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    - [架构组合的基础知识](../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    - [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL Real-time Customer Profile]](../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Real-Time Customer Profile]](../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ## 使用UI删除帐户
 

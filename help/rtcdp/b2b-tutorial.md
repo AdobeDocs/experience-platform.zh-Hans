@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Real-time Customer Data Platform B2B版快速入门
 description: 使用此情景作为示例，来设置Adobe Real-time Customer Data Platform B2B Edition的实施。
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1206'
 ht-degree: 0%

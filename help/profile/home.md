@@ -4,26 +4,26 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: d2182b48e21de059f12ad8923bb3b420ed87bcfc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2046'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile]概述
+# [!DNL Real-Time Customer Profile] 概述
 
-Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 使用 [!DNL Real-time Customer Profile]，您可以通过合并来自多个渠道（包括在线、离线、CRM和第三方）的数据，来全面了解每个客户。 [!DNL Profile] 允许您将客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。 此概述将帮助您了解的角色和用法 [!DNL Real-time Customer Profile] in [!DNL Experience Platform].
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 使用 [!DNL Real-Time Customer Profile]，您可以通过合并来自多个渠道（包括在线、离线、CRM和第三方）的数据，来全面了解每个客户。 [!DNL Profile] 允许您将客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。 此概述将帮助您了解的角色和用法 [!DNL Real-Time Customer Profile] in [!DNL Experience Platform].
 
 ## [!DNL Profile] Experience Platform
 
-下图突出显示了Experience Platform内实时客户资料与其他服务之间的关系：
+下图突出显示了“实时客户资料”与Experience Platform内其他服务之间的关系：
 
 ![实时客户资料与Adobe Experience Platform中其他服务之间的关系。 此图表显示，配置文件是Adobe Experience Platform的核心组件之一。](images/profile-overview/profile-in-platform.png)
 
 ## 了解用户档案
 
-[!DNL Real-time Customer Profile] 合并来自各种企业系统的数据，然后通过相关时间序列事件以客户配置文件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。 以下部分重点介绍为了在Platform中有效构建和维护用户档案，您必须了解的一些核心概念。
+[!DNL Real-Time Customer Profile] 合并来自各种企业系统的数据，然后通过相关时间序列事件以客户配置文件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。 以下部分重点介绍为了在Platform中有效构建和维护用户档案，您必须了解的一些核心概念。
 
 ### 用户档案实体组合
 
@@ -40,7 +40,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 ### 配置文件数据存储
 
-尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 要通过身份映射合并相关数据，它会在 [!DNL Profile] 数据存储。 的 [!DNL Profile] 存储与数据湖中的目录数据分开，并且 [!DNL Identity Service] 标识图中的数据。
+尽管 [!DNL Real-Time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 要通过身份映射合并相关数据，它会在 [!DNL Profile] 数据存储。 的 [!DNL Profile] 存储与数据湖中的目录数据分开，并且 [!DNL Identity Service] 标识图中的数据。
 
 配置文件存储使用Microsoft Azure Cosmos DB基础架构，而平台数据湖使用Microsoft Azure Data Lake存储。
 
@@ -82,7 +82,7 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 ### 并集模式 {#profile-fragments-and-union-schemas}
 
-的主要功能之一 [!DNL Real-time Customer Profile] 是统一多渠道数据的功能。 When [!DNL Real-time Customer Profile] 用于访问实体，它可以为您提供跨数据集的该实体所有配置文件片段的合并视图（称为“合并视图”），并通过称为合并架构的架构实现该视图。
+的主要功能之一 [!DNL Real-Time Customer Profile] 是统一多渠道数据的功能。 When [!DNL Real-Time Customer Profile] 用于访问实体，它可以为您提供跨数据集的该实体所有配置文件片段的合并视图（称为“合并视图”），并通过称为合并架构的架构实现该视图。
 
 要进一步了解并集模式，包括如何在UI中访问并集模式，请访问 [并集架构UI指南](ui/union-schema.md).
 
@@ -96,15 +96,15 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 ## 用户档案和区段
 
-Adobe Experience Platform [!DNL Segmentation Service] 会生成为各个客户提供体验所需的受众。 创建受众区段后，该区段的ID会添加到所有符合条件的用户档案的区段成员资格列表。 区段规则的生成和应用于 [!DNL Real-time Customer Profile] 使用RESTful API和区段生成器用户界面的数据。 要了解有关分段的更多信息，请首先阅读 [Segmentation Service概述](../segmentation/home.md).
+Adobe Experience Platform [!DNL Segmentation Service] 会生成为各个客户提供体验所需的受众。 创建受众区段后，该区段的ID会添加到所有符合条件的用户档案的区段成员资格列表。 区段规则的生成和应用于 [!DNL Real-Time Customer Profile] 使用RESTful API和区段生成器用户界面的数据。 要了解有关分段的更多信息，请首先阅读 [Segmentation Service概述](../segmentation/home.md).
 
 ### 流式摄取和流式分段
 
-通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间系列数据时， [!DNL Real-time Customer Profile] 在将数据与现有数据合并并更新并集视图之前，自动决定通过称为流分段的持续流程，将该数据包含或排除在区段中。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证操作的更多信息，请首先阅读 [数据摄取质量概述](../ingestion/quality/overview.md).
+通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间系列数据时， [!DNL Real-Time Customer Profile] 在将数据与现有数据合并并更新并集视图之前，自动决定通过称为流分段的持续流程，将该数据包含或排除在区段中。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证操作的更多信息，请首先阅读 [数据摄取质量概述](../ingestion/quality/overview.md).
 
 ## 边缘投影
 
-为了跨多个渠道为客户实时提供协调、一致和个性化的体验，需要随时提供适当的数据，并在发生更改时不断更新。 Adobe Experience Platform允许通过使用称为边缘的内容来实时访问数据。 边缘是位于地理位置的服务器，用于存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，其中，投影目标定义要向其发送数据的边缘，以及投影配置定义将在边缘上提供的特定信息。 要了解更多信息并开始使用 [!DNL Real-time Customer Profile] API，请参阅 [边缘投影端点指南](api/edge-projections.md).
+为了跨多个渠道为客户实时提供协调、一致和个性化的体验，需要随时提供适当的数据，并在发生更改时不断更新。 Adobe Experience Platform允许通过使用称为边缘的内容来实时访问数据。 边缘是位于地理位置的服务器，用于存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，其中，投影目标定义要向其发送数据的边缘，以及投影配置定义将在边缘上提供的特定信息。 要了解更多信息并开始使用 [!DNL Real-Time Customer Profile] API，请参阅 [边缘投影端点指南](api/edge-projections.md).
 
 ## 将数据摄取到 [!DNL Profile]
 
@@ -136,7 +136,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 会生成为各个客户�
 
 ### 处理选择禁用和数据隐私请求
 
-[!DNL Experience Platform] 允许您的客户发送与其数据在 [!DNL Real-time Customer Profile]. 有关如何处理选择退出请求的更多信息，请参阅 [响应选择退出请求](../segmentation/consents.md).
+[!DNL Experience Platform] 允许您的客户发送与其数据在 [!DNL Real-Time Customer Profile]. 有关如何处理选择退出请求的更多信息，请参阅 [响应选择退出请求](../segmentation/consents.md).
 
 ## 后续步骤和其他资源
 

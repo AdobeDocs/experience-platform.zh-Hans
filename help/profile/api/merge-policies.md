@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2472'
 ht-degree: 1%
@@ -24,7 +24,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
@@ -194,7 +194,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ## 访问合并策略 {#access-merge-policies}
 
-使用 [!DNL Real-time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求以按其ID查看特定合并策略，或访问IMS组织中按特定条件过滤的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
+使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求以按其ID查看特定合并策略，或访问IMS组织中按特定条件过滤的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
 
 ### 按ID访问单个合并策略
 
@@ -762,6 +762,6 @@ curl -X DELETE \
 
 ## 后续步骤
 
-现在，您已了解如何为组织创建和配置合并策略，接下来可以使用这些策略来调整Platform中客户配置文件的视图，并从 [!DNL Real-time Customer Profile] 数据。
+现在，您已了解如何为组织创建和配置合并策略，接下来可以使用这些策略来调整Platform中客户配置文件的视图，并从 [!DNL Real-Time Customer Profile] 数据。
 
 请参阅 [Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md) 以开始定义和使用区段。

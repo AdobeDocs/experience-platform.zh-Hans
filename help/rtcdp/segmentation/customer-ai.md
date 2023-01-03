@@ -3,7 +3,7 @@ keywords: rtcdp区段；区段生成器rtcdp;rtcdp区段；客户ai rtcdp
 title: Real-time Customer Data Platform中的客户人工智能
 description: Customer AI的概述，以及它如何帮助为特定结果（如转化或流失率）生成分数。
 exl-id: 40210196-3c02-4d82-8692-628f2a46b3b5
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 6%

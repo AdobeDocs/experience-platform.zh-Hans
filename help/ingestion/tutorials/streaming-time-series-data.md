@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: cedc53b78ea8eb8f3e93178b60ebe49b90c11650
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1204'
 ht-degree: 2%
@@ -22,7 +22,7 @@ ht-degree: 2%
 本教程需要对各种Adobe Experience Platform服务有一定的工作知识。 在开始本教程之前，请查阅以下服务的文档：
 
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织体验数据。
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
 - [架构注册开发人员指南](../../xdm/api/getting-started.md):涵盖 [!DNL Schema Registry] API以及如何对其进行调用。 这包括了解您的 `{TENANT_ID}`，此过程会显示在本教程中的调用中，并且了解如何创建模式（用于创建用于摄取的数据集）。
 
 此外，本教程还要求您已创建流连接。 有关创建流连接的更多信息，请阅读 [创建流连接教程](./create-streaming-connection.md).
@@ -78,7 +78,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | 要用于架构的名称。 此名称必须唯一。 |
 | `description` | 对要创建的架构进行有意义的描述。 |
-| `meta:immutableTags` | 在本例中， `union` 标记，用于将数据保留到 [[!DNL Real-time Customer Profile]](../../profile/home.md). |
+| `meta:immutableTags` | 在本例中， `union` 标记，用于将数据保留到 [[!DNL Real-Time Customer Profile]](../../profile/home.md). |
 
 **响应**
 
@@ -156,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 有关租户ID的详细信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 有关租户ID的更多信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
 
 请注意 `$id` 以及 `version` 属性，因为创建数据集时将同时使用这两个属性。
 
@@ -166,7 +166,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 1. 工作电子邮件地址将成为必填字段。 这意味着在未使用此字段的情况下发送的消息将验证失败且不会被摄取。
 
-2. [!DNL Real-time Customer Profile] 将使用工作电子邮件地址作为标识符，以帮助拼合有关该个人的更多信息。
+2. [!DNL Real-Time Customer Profile] 将使用工作电子邮件地址作为标识符，以帮助拼合有关该个人的更多信息。
 
 ### 请求
 
@@ -226,7 +226,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->此数据集将启用 **[!DNL Real-time Customer Profile]** 和 **[!DNL Identity]** 设置相应的标记。
+>此数据集将启用 **[!DNL Real-Time Customer Profile]** 和 **[!DNL Identity]** 设置相应的标记。
 
 **API格式**
 

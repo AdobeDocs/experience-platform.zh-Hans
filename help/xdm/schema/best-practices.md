@@ -5,7 +5,7 @@ title: 数据建模的最佳实践
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2699'
 ht-degree: 2%
@@ -86,8 +86,8 @@ ht-degree: 2%
 | --- | --- | --- | --- | --- |
 | 1234567 | Add | 275098 | 2 | 10月1日，上午10点32分 |
 | 1234567 | 删除 | 275098 | 1 | 10月1日，上午10点33分 |
-| 1234567 | 添加 | 486502 | 1 | 10月1日，上午10点41分 |
-| 1234567 | 添加 | 910482 | 5 | 10月3日，下午2:15 |
+| 1234567 | Add | 486502 | 1 | 10月1日，上午10点41分 |
+| 1234567 | Add | 910482 | 5 | 10月3日，下午2:15 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -205,7 +205,7 @@ ht-degree: 2%
 
 ### 标识字段
 
-在Experience Platform中，标记为身份的XDM字段用于拼合有关来自多个数据源的各个客户的信息。 虽然架构可以具有多个标记为标识的字段，但必须定义单个主标识，才能在中启用该架构 [!DNL Real-time Customer Profile]. 请参阅 [身份字段](./composition.md#identity) 有关这些字段用例的更多详细信息，请参阅架构组合基础知识。
+在Experience Platform中，标记为身份的XDM字段用于拼合有关来自多个数据源的各个客户的信息。 虽然架构可以具有多个标记为标识的字段，但必须定义单个主标识，才能在中启用该架构 [!DNL Real-Time Customer Profile]. 请参阅 [身份字段](./composition.md#identity) 有关这些字段用例的更多详细信息，请参阅架构组合基础知识。
 
 在设计架构时，关系数据库表中的任何主键都可能是主标识的候选项。 适用身份字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和 [ECID](../../identity-service/ecid.md).
 

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从营销自动化系统检索数据以及使用源连接器和API将数据导入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 1%
@@ -656,7 +656,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建一个源连接器，以按计划从营销自动化系统收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已创建一个源连接器，以按计划从营销自动化系统收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 * [实时客户资料概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)

@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1143'
 ht-degree: 6%
@@ -27,7 +27,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Destinations]](#destinations)
 - [[!DNL Experience Data Model (XDM) System]](#xdm)
 - [[!DNL Identity Service]](#identity)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## （测试版）功能板 {#dashboards}
@@ -56,7 +56,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 在Adobe Experience Platform中，从各种来源摄取数据，在Experience Platform内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
 
-数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后数据集会被利用 [!DNL Identity Service] 和 [!DNL Real-time Customer Profile] 最终激活 [!DNL Destinations].
+数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活 [!DNL Destinations].
 
 **新增功能**
 
@@ -106,7 +106,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 有关 [!DNL Identity Service]，请参阅 [Identity Service概述](../../identity-service/home.md).
 
-## 实时客户个人资料 {#profile}
+## 实时客户资料 {#profile}
 
 Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 [!DNL Profile] 允许您将客户数据整合到统一视图中，为每次客户交互提供一个可操作且带有时间戳的帐户。
 

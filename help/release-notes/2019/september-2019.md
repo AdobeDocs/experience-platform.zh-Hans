@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 exl-id: 7f503046-a3b4-4fdb-833c-4205b6e9fa04
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 5%
@@ -36,7 +36,7 @@ Adobe Experience Platform提供丰富的功能集，用于摄取任何类型的�
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] 是 [!DNL Experience Platform] 通过构建和运行机器学习模型，数据科学家能够跨Adobe解决方案和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与 [!DNL Platform] 并支持端到端数据科学的生命周期，包括探索和准备XDM数据，随后开发和实施模型以自动丰富 [!DNL Real-time Customer Profile] 和机器学习分析。
+Adobe Experience Platform [!DNL Data Science Workspace] 是 [!DNL Experience Platform] 通过构建和运行机器学习模型，数据科学家能够跨Adobe解决方案和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与 [!DNL Platform] 并支持端到端数据科学的生命周期，包括探索和准备XDM数据，随后开发和实施模型以自动丰富 [!DNL Real-Time Customer Profile] 和机器学习分析。
 
 **新增功能**
 
@@ -56,7 +56,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 是 [!DNL Experience Pla
 
 ## [!DNL Query Service] {#query}
 
-[!DNL Query Service] 提供使用标准SQL在Adobe Experience Platform中查询数据的功能，以支持各种分析和数据管理用例。 它是一个无服务器工具，允许您连接 [!DNL Data Lake] 并将查询结果捕获为新数据集以用于报表， [!DNL Data Science Workspace]或 [!DNL Real-time Customer Profile].
+[!DNL Query Service] 提供使用标准SQL在Adobe Experience Platform中查询数据的功能，以支持各种分析和数据管理用例。 它是一个无服务器工具，允许您连接 [!DNL Data Lake] 并将查询结果捕获为新数据集以用于报表， [!DNL Data Science Workspace]或 [!DNL Real-Time Customer Profile].
 
 您可以使用 [!DNL Query Service] 构建数据分析生态系统，创建客户在各种交互渠道中的全景图。 这些渠道可能包括销售点系统、Web、移动设备或CRM系统。
 

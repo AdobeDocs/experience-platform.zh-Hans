@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 exl-id: cc78e48a-3578-4c55-ae86-1946d62bddb9
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '888'
-ht-degree: 10%
+ht-degree: 12%
 
 ---
 
@@ -47,7 +47,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
-“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
+“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 借助此功能，营销分析人员可使用商业级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
 
 ### 客户人工智能
 
@@ -73,7 +73,7 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 ## 分段服务 {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-time Customer Profile] 数据。 这些区段在平台上进行集中配置和维护，使任何Adobe应用程序都可轻松访问它们。
+Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-Time Customer Profile] 数据。 这些区段在平台上进行集中配置和维护，使任何Adobe应用程序都可轻松访问它们。
 
 [!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
 

@@ -5,7 +5,7 @@ title: 数据摄取通知
 topic-legacy: overview
 description: 为了帮助监控摄取过程，Adobe Experience Platform允许订阅一组在该过程的每个步骤发布的事件，并通知您摄取数据的状态以及任何可能的失败。
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '677'
 ht-degree: 1%
@@ -16,13 +16,13 @@ ht-degree: 1%
 
 将数据摄取到Adobe Experience Platform的过程由多个步骤组成。 确定需要摄取到的数据文件后 [!DNL Platform]，则摄取过程会开始，并且每个步骤都会连续进行，直到成功摄取或失败数据为止。 可以使用 [Adobe Experience Platform数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) 或使用 [!DNL Experience Platform] 用户界面。
 
-数据加载到 [!DNL Platform] 必须执行多个步骤才能到达目标， [!DNL Data Lake] 或 [!DNL Real-time Customer Profile] 数据存储。 每个步骤都包括处理数据、验证数据，然后存储数据，然后再将其传递到下一步。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且该过程始终可能因验证、语义或处理错误而失败。 在失败时，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
+数据加载到 [!DNL Platform] 必须执行多个步骤才能到达目标， [!DNL Data Lake] 或 [!DNL Real-Time Customer Profile] 数据存储。 每个步骤都包括处理数据、验证数据，然后存储数据，然后再将其传递到下一步。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且该过程始终可能因验证、语义或处理错误而失败。 在失败时，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 
 为协助监控摄取过程， [!DNL Experience Platform] 使订阅一组在流程的每个步骤中发布的事件，并通知您所摄取数据的状态以及任何可能的失败。
 
 ## 为数据摄取通知注册Web挂接
 
-要接收数据摄取通知，您必须使用 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 注册webhook以集成您的Experience Platform。
+要接收数据摄取通知，您必须使用 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 注册webhook以集成您的Experience Platform。
 
 请阅读本教程 [订阅 [!DNL Adobe I/O Event] 通知](../../observability/alerts/subscribe.md) 以详细了解如何完成此操作。
 
@@ -86,9 +86,9 @@ ht-degree: 1%
 | --- | ---------------- | ------ | ----------------- |
 | `ing_load_success` | [!DNL Data Ingestion] | success | 已成功将批量摄取到 [!DNL Data Lake]. |
 | `ing_load_failure` | [!DNL Data Ingestion] | 失败 | 无法将批量摄取到 [!DNL Data Lake]. |
-| `ps_load_success` | [!DNL Real-time Customer Profile] | 成功 | 已成功将批次摄取到 [!DNL Profile] 数据存储。 |
-| `ps_load_failure` | [!DNL Real-time Customer Profile] | 失败 | 未能将批次摄取到 [!DNL Profile] 数据存储。 |
-| `ig_load_success` | [!DNL Identity Service] | 成功 | 数据已成功加载到身份图中。 |
+| `ps_load_success` | [!DNL Real-Time Customer Profile] | success | 已成功将批次摄取到 [!DNL Profile] 数据存储。 |
+| `ps_load_failure` | [!DNL Real-Time Customer Profile] | 失败 | 未能将批次摄取到 [!DNL Profile] 数据存储。 |
+| `ig_load_success` | [!DNL Identity Service] | success | 数据已成功加载到身份图中。 |
 | `ig_load_failure` | [!DNL Identity Service] | 失败 | 数据无法加载到身份图中。 |
 
 >[!NOTE]

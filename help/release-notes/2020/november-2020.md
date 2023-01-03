@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2184'
 ht-degree: 5%
@@ -29,7 +29,7 @@ Adobe Experience Platform的新增功能：
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations] 服务](#destinations)
 - [[!DNL Intelligent Services]](#intelligent-services)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## Adobe Experience Platform Data Lake迁移 {#migration}
@@ -60,7 +60,7 @@ Adobe Experience Platform的新增功能：
 | 功能 | 描述 |
 | ------- | ----------- |
 | 集中化优惠库 | 在该界面中，您可以创建和管理构成选件的不同元素，并定义其规则和约束。 |
-| 优惠决策引擎 | 选件决策引擎可利用 [!DNL Platform] 数据和 [!DNL Real-time Customer Profiles]，以及选件库一起选择要将选件交付到的正确时间、客户和渠道。 |
+| 优惠决策引擎 | 选件决策引擎可利用 [!DNL Platform] 数据和 [!DNL Real-Time Customer Profiles]，以及选件库一起选择要将选件交付到的正确时间、客户和渠道。 |
 
 有关详细信息，请参阅 [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=zh-Hans) 文档。
 
@@ -179,7 +179,7 @@ Customer AI是Intelligent Services的一部分，它为营销人员提供了在�
 
 欲知更多信息，请阅读 [Customer AI概述](../../intelligent-services/customer-ai/overview.md).
 
-## 实时客户个人资料 {#profile}
+## 实时客户资料 {#profile}
 
 Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 [!DNL Profile] 允许您将不同的客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。
 

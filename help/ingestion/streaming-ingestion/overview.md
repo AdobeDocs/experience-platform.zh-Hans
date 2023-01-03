@@ -5,7 +5,7 @@ title: 流摄取概述
 topic-legacy: overview
 description: Adobe Experience Platform的流式摄取为用户提供了一种方法，可将数据从客户端和服务器端设备实时发送到Experience Platform。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '348'
 ht-degree: 2%
@@ -18,7 +18,7 @@ Adobe Experience Platform的流式摄取为用户提供了一种将数据从客�
 
 ## 使用流式引入可以执行哪些操作？
 
-Adobe Experience Platform让您能够通过生成 [!DNL Real-time Customer Profile] 针对每个客户。 流式摄取通过使您能够交付 [!DNL Profile] 数据 [!DNL Data Lake] 尽可能少的延迟。
+Adobe Experience Platform让您能够通过生成 [!DNL Real-Time Customer Profile] 针对每个客户。 流式摄取通过使您能够交付 [!DNL Profile] 数据 [!DNL Data Lake] 尽可能少的延迟。
 
 以下视频旨在帮助支持您了解流摄取，并概述了上述概念。
 
@@ -32,7 +32,7 @@ Adobe Experience Platform让您能够通过生成 [!DNL Real-time Customer Profi
 
 ### 流到数据集
 
-确定数据是干净的后，您便可以为 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service].
+确定数据是干净的后，您便可以为 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service].
 
 有关为 [!DNL Profile] 和 [!DNL Identity Service]，请阅读 [配置数据集指南](../../profile/tutorials/dataset-configuration.md).
 
@@ -40,7 +40,7 @@ Adobe Experience Platform让您能够通过生成 [!DNL Real-time Customer Profi
 
 | 目标 | 预期滞后 |
 | --------- | ---------------- |
-| 实时客户个人资料 | &lt; 1分钟 |
+| 实时客户资料 | &lt; 1分钟 |
 | 数据湖 | &lt; 60 分钟 |
 
 ## 流摄取的每秒请求(RPS)指南

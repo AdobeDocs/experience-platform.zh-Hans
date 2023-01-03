@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK支持客户同意首选项
 description: 了解如何通过Adobe Experience Platform Web SDK支持同意首选项。
 keywords: 同意；默认同意；默认同意；setConsent；配置文件隐私字段组；体验事件隐私字段组；隐私字段组；
 exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
-source-git-commit: 16c8972333fa67fa2e308445f4ad6282510370d1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 0%
@@ -138,7 +138,7 @@ alloy("setConsent", {
 });
 ```
 
-以这种方式设置同意后，实时客户资料会更新以包含同意信息。 要使此功能正常工作，配置文件XDM架构需要包含 [配置文件隐私架构字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). 发送事件时，需要将IAB同意信息手动添加到事件XDM对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息，请 [体验事件隐私字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) 需要将添加到体验事件架构。
+以这种方式设置同意后，实时客户资料将更新以包含同意信息。 要使此功能正常工作，配置文件XDM架构需要包含 [配置文件隐私架构字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). 发送事件时，需要将IAB同意信息手动添加到事件XDM对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息，请 [体验事件隐私字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) 需要将添加到体验事件架构。
 
 ## 在一个请求中发送多个标准
 

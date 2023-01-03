@@ -5,7 +5,7 @@ title: 自动策略实施
 topic-legacy: guide
 description: 本文档介绍了在将区段激活到Experience Platform中的目标时如何自动强制实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1727'
 ht-degree: 0%

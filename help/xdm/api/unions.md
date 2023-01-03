@@ -5,7 +5,7 @@ title: Unions API端点
 description: 架构注册表API中的/unions端点允许您以编程方式管理体验应用程序中的XDM并集架构。
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '911'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Unions端点
 
-联合（或联合视图）是系统生成的只读架构，用于聚合共享同一类的所有架构的字段([!DNL XDM ExperienceEvent] 或 [!DNL XDM Individual Profile])和 [[!DNL Real-time Customer Profile]](../../profile/home.md).
+联合（或联合视图）是系统生成的只读架构，用于聚合共享同一类的所有架构的字段([!DNL XDM ExperienceEvent] 或 [!DNL XDM Individual Profile])和 [[!DNL Real-Time Customer Profile]](../../profile/home.md).
 
 本文档介绍了在架构注册表API中与工会合作的基本概念，包括各种操作的示例调用。 有关XDM中工会的更多常规信息，请参阅 [架构组合基础知识](../schema/composition.md#union).
 

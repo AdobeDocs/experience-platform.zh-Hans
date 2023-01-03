@@ -5,7 +5,7 @@ title: Segmentation Service概述
 topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Segmentation Service] 概述
 
-Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RESTful API，允许您从中构建区段并生成受众 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，并且任何Adobe解决方案都可随时访问。
+Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RESTful API，允许您从中构建区段并生成受众 [!DNL Real-Time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，并且任何Adobe解决方案都可随时访问。
 
 本文档提供了 [!DNL Segmentation Service] 以及它在Adobe Experience Platform的作用。
 
@@ -63,7 +63,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 
 ### 流分段 {#streaming}
 
-流式客户细分是一种持续的数据选择流程，可根据用户活动更新您的区段。 生成并保存区段后，会将区段定义应用于 [!DNL Real-time Customer Profile]. 会定期处理区段添加和移除，以确保您的目标受众仍然相关。
+流式客户细分是一种持续的数据选择流程，可根据用户活动更新您的区段。 生成并保存区段后，会将区段定义应用于 [!DNL Real-Time Customer Profile]. 会定期处理区段添加和移除，以确保您的目标受众仍然相关。
 
 要了解有关流式分段的更多信息，请阅读 [流分段文档](./api/streaming-segmentation.md).
 
@@ -160,7 +160,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 
 ## 多实体分段 {#multi-entity}
 
-借助高级多实体分段功能，您可以 [!DNL Real-time Customer Profile] 基于产品、商店或其他非人员（也称为“维度”实体）的附加数据。 因此， [!DNL Segmentation Service] 可以在区段定义期间访问其他字段，就像它们是 [!DNL Profile] 数据存储。 在根据与您的独特业务需求相关的数据确定受众时，多实体分段可提供了更大的灵活性。 有关更多信息（包括用例和工作流），请参阅 [多实体分段指南](multi-entity-segmentation.md).
+借助高级多实体分段功能，您可以 [!DNL Real-Time Customer Profile] 基于产品、商店或其他非人员（也称为“维度”实体）的附加数据。 因此， [!DNL Segmentation Service] 可以在区段定义期间访问其他字段，就像它们是 [!DNL Profile] 数据存储。 在根据与您的独特业务需求相关的数据确定受众时，多实体分段可提供了更大的灵活性。 有关更多信息（包括用例和工作流），请参阅 [多实体分段指南](multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] 数据类型
 
@@ -168,7 +168,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 
 ## 后续步骤
 
-[!DNL Segmentation Service] 提供了从构建区段的统一工作流 [!DNL Real-time Customer Profile] 数据。 总之：
+[!DNL Segmentation Service] 提供了从构建区段的统一工作流 [!DNL Real-Time Customer Profile] 数据。 总之：
 
 - [!DNL Segmentation] 是从用户档案库定义用户档案子集的过程，用于表示所需可销售群组的行为或属性。 [!DNL Segmentation Service] 使这个过程成为可能。
 - 在规划区段时，请记住，可以从任何其他区段中引用区段并将其与其组合。

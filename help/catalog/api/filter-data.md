@@ -5,7 +5,7 @@ title: 使用查询参数筛选目录数据
 topic-legacy: developer guide
 description: 目录服务API允许通过使用请求查询参数过滤响应数据。 “目录”的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API上的负载并帮助提高整体性能。
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2121'
 ht-degree: 1%
@@ -210,7 +210,7 @@ curl -X GET \
 * 标记名称对您的IMS组织是唯一的。
 * Adobe流程可能会对某些行为使用标记。 这些标记的名称以“adobe”作为标准前缀。 因此，在声明标记名称时，应避免出现此约定。
 * 以下标记名称是保留的，供在 [!DNL Experience Platform]，因此无法声明为贵组织的标记名称：
-   * `unifiedProfile`:此标记名称是为要摄取的数据集保留的 [[!DNL Real-time Customer Profile]](../../profile/home.md).
+   * `unifiedProfile`:此标记名称是为要摄取的数据集保留的 [[!DNL Real-Time Customer Profile]](../../profile/home.md).
    * `unifiedIdentity`:此标记名称是为要摄取的数据集保留的 [[!DNL Identity Service]](../../identity-service/home.md).
 
 以下是包含 `tags` 属性。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：

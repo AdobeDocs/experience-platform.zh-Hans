@@ -6,7 +6,7 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '3342'
 ht-degree: 0%
@@ -236,7 +236,7 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 
 ### 配置文件切换
 
-“用户档案”切换开关允许Customer AI将评分结果导出到“实时客户资料”。 禁用此切换开关会阻止将模型评分结果添加到用户档案。 禁用此功能后，仍可使用客户AI评分结果。
+“用户档案”切换开关允许Customer AI将评分结果导出到“实时客户档案”。 禁用此切换开关会阻止将模型评分结果添加到用户档案。 禁用此功能后，仍可使用客户AI评分结果。
 
 首次使用Customer AI时，您可以关闭此功能，直到您对模型输出结果满意为止。 这样可防止在微调模型时将多个评分数据集上传到客户用户档案。 标定完模型后，可以使用 [克隆选项](#set-up-your-instance) 从 **服务实例** 页面。 这允许您创建模型副本并打开配置文件。
 

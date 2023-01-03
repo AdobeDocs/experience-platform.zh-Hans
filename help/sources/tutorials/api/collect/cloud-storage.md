@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: e4853c61848bec20eb8a6902365b97c3a9d0b3b3
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1736'
 ht-degree: 1%
@@ -681,7 +681,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程中，您创建了一个源连接器，用于按计划从云存储中收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程中，您创建了一个源连接器，用于按计划从云存储中收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 - [实时客户资料概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)

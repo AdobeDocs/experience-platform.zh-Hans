@@ -5,7 +5,7 @@ description: “共享设备检测”可识别同一设备的经过身份验证�
 hide: true
 hidefromtoc: true
 exl-id: 36318163-ba07-4209-b1be-dc193ab7ba41
-source-git-commit: 75362c67e1a8a31a449cb4c9dd618515325d36f0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1363'
 ht-degree: 0%
@@ -92,7 +92,7 @@ When [!DNL Shared Device Detection] 启用， [!DNL Profile] 根据体验事件�
 
 安 **经过验证的体验事件** 是用户在登录到设备时完成的操作。 对于已验证的体验事件，主标识是 **用户身份命名空间** （登录ID）。 安 **未经身份验证的体验事件** 是未登录到设备的用户完成的一项操作。 对于未经身份验证的体验事件，主标识为 **共享身份命名空间** (ECID)。
 
-有关更多信息，请参阅  [[!DNL Real-time Customer Profile] 概述](../../profile/home.md).
+有关更多信息，请参阅  [[!DNL Real-Time Customer Profile] 概述](../../profile/home.md).
 
 ## 共享设备UI
 

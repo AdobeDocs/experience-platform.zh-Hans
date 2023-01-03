@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 以下指南介绍了创建和发布机器学习模型所需的步骤。
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: ff8a3612f34d6547577564ba40261052cd78ef01
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1076'
 ht-degree: 0%
@@ -96,6 +96,6 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Data Science Workspace] 提供用于创建、评估和利用机器学习模型生成数据预测和分析的工具和资源。 将机器学习分析引入 [!DNL Profile]启用的数据集，该数据也被摄取为 [!DNL Profile] 随后可使用 [!DNL Adobe Experience Platform Segmentation Service].
 
-在摄取配置文件和时间系列数据时，实时客户配置文件会自动决定通过称为流分段的持续过程，在将其与现有数据合并并更新并集视图之前，将该数据包含或排除在区段中。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。
+在摄取配置文件和时间系列数据时，实时客户配置文件会自动决定通过称为流分段的持续过程，将数据与现有数据合并并更新并集视图，从区段中包含或排除该数据。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。
 
 请访问 [利用机器学习洞察扩充实时客户档案](./enrich-profile.md) 以进一步了解如何利用机器学习分析。

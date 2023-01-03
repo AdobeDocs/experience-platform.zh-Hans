@@ -4,7 +4,7 @@ title: Real-time Customer Data Platform B2B版的默认护栏
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认使用和速率限制，以帮助您使用Adobe Real-time Customer Data Platform B2B Edition为数据建模以获得最佳系统性能。
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1602'
 ht-degree: 2%
@@ -39,7 +39,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 ## 数据模型限制
 
-以下护栏在对实时客户资料数据进行建模时提供了建议的限制。 要了解有关主要实体和维度实体的更多信息，请参阅 [实体类型](#entity-types) 中。
+以下护栏在建模实时客户资料数据时提供了建议的限制。 要了解有关主要实体和维度实体的更多信息，请参阅 [实体类型](#entity-types) 中。
 
 ### 主实体护栏
 
@@ -119,9 +119,9 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 的 [!DNL Profile] 存储数据模型由两种核心实体类型组成：
 
-* **主要实体：** 主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
+* **主要实体：** 主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-Time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
 
-   与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
+   与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-Time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
 
    ![](../profile/images/guardrails/profile-entity.png)
 

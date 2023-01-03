@@ -5,7 +5,7 @@ title: 架构注册API指南附录
 description: 本文档提供了与使用架构注册表API相关的补充信息。
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: 2871108b67d3d84f1578e80e9c087444ff407820
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '984'
 ht-degree: 1%
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # 架构注册API指南附录
 
-本文档提供了与使用[!DNL Schema Registry] API相关的补充信息。
+本文档提供了与使用 [!DNL Schema Registry] API。
 
 ## 使用查询参数 {#query}
 
-[!DNL Schema Registry]支持在列出资源时使用查询参数来筛选页面和结果。
+的 [!DNL Schema Registry] 支持在列出资源时使用查询参数来筛选页面和结果。
 
 >[!NOTE]
 >
->组合多个查询参数时，必须用与号(`&`)分隔。
+>组合多个查询参数时，必须用与号(`&`)。
 
 ### 分页 {#paging}
 
@@ -30,15 +30,15 @@ ht-degree: 1%
 
 | 参数 | 描述 |
 | --- | --- |
-| `orderby` | 按特定属性对结果排序。 示例：`orderby=title`将按标题以升序(A-Z)对结果排序。 在参数值(`orderby=-title`)之前添加`-`将按标题以降序(Z-A)对项目进行排序。 |
-| `limit` | 与`orderby`参数结合使用时，`limit`会限制为给定请求返回的最大项目数。 如果没有`orderby`参数，则无法使用此参数。<br><br>参 `limit` 数指定一个正整数(介于 `0` 和 `500`之间)作为 ** 应返回项目最大数的提示。例如，`limit=5`只返回列表中的5个资源。 但是，此值并不严格遵循。 如果提供了一个参数，则实际响应大小可以小于或大于由于需要提供`start`参数的可靠操作而受到的约束。 |
-| `start` | 与`orderby`参数一起使用时，`start`指定项目子集列表的开始位置。 如果没有`orderby`参数，则无法使用此参数。 此值可从列表响应的`_page.next`属性中获取，并用于访问下一页结果。 如果`_page.next`值为null，则没有其他页面可用。<br><br>通常，为获取结果的第一页，会忽略此参数。之后，应将`start`设置为在上一页中收到的`orderby`字段的主排序属性的最大值。 然后，API响应会返回以以下条目开头的条目：具有`orderby`中严格大于（升序）或严格小于（降序）指定值的主排序属性的条目。<br><br>例如，如果将参 `orderby` 数设置为，则 `orderby=name,firstname`参数 `start` 将包含属性的 `name` 值。在这种情况下，如果您希望在名称“Miller”后立即显示资源的后20个条目，则可以使用：`?orderby=name,firstname&start=Miller&limit=20`。 |
+| `orderby` | 按特定属性对结果排序。 示例： `orderby=title` 将按标题以升序(A-Z)对结果进行排序。 添加 `-` 在参数值(`orderby=-title`)将按标题以降序(Z-A)对项目进行排序。 |
+| `limit` | 与 `orderby` 参数， `limit` 限制为给定请求应返回的最大项目数。 如果没有 `orderby` 参数存在。<br><br>的 `limit` 参数指定正整数(介于 `0` 和 `500`)as a *提示* 至应返回的最大项目数。 例如， `limit=5` 仅返回列表中的5个资源。 但是，此值并不严格遵循。 实际响应尺寸可以是小于或大于，因为需要提供可靠的操作 `start` 参数（如果提供）。 |
+| `start` | 与 `orderby` 参数， `start` 指定项目子集列表的开始位置。 如果没有 `orderby` 参数存在。 此值可从 `_page.next` 列表响应的属性，用于访问结果的下一页。 如果 `_page.next` 值为null，则没有其他页面可用。<br><br>通常，为获取结果的第一页，会忽略此参数。 之后， `start` 应设置为 `orderby` 字段。 然后，API响应会返回以具有中主排序属性的条目开头的条目 `orderby` 严格大于（升序）或严格小于（降序）指定值。<br><br>例如，如果 `orderby` 参数设置为 `orderby=name,firstname`, `start` 参数将包含 `name` 属性。 在这种情况下，如果您希望在名称“Miller”后立即显示资源的后20个条目，则可以使用： `?orderby=name,firstname&start=Miller&limit=20`. |
 
 {style=&quot;table-layout:auto&quot;}
 
-### 筛选 {#filtering}
+### 正在筛选 {#filtering}
 
-您可以使用`property`参数筛选结果，该参数用于对检索资源中的给定JSON属性应用特定运算符。 支持的运算符包括：
+您可以使用 `property` 参数，用于在检索的资源中对给定JSON属性应用特定运算符。 支持的运算符包括：
 
 | 运算符 | 描述 | 示例 |
 | --- | --- | --- |
@@ -55,13 +55,13 @@ ht-degree: 1%
 
 >[!TIP]
 >
->可以使用`property`参数按其兼容类筛选架构字段组。 例如，`property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile`只返回与[!DNL XDM Individual Profile]类兼容的字段组。
+>您可以使用 `property` 用于按其兼容类筛选架构字段组的参数。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与兼容的字段组 [!DNL XDM Individual Profile] 类。
 
 ## 兼容性模式 {#compatibility}
 
-[!DNL Experience Data Model] (XDM)是一项公开记录的规范，由Adobe驱动，旨在提高数字体验的互操作性、表现力和功能。Adobe在GitHub](https://github.com/adobe/xdm/)上的[开源项目中维护源代码和正式的XDM定义。 这些定义以XDM标准符号编写，使用JSON-LD（链接数据的JavaScript对象符号）和JSON模式作为定义XDM模式的语法。
+[!DNL Experience Data Model] (XDM)是一项公开记录的规范，由Adobe驱动，旨在提高数字体验的互操作性、表现力和功能。 Adobe在 [GitHub上的开源项目](https://github.com/adobe/xdm/). 这些定义以XDM标准符号编写，使用JSON-LD（链接数据的JavaScript对象符号）和JSON模式作为定义XDM模式的语法。
 
-在公共存储库中查看正式的XDM定义时，您可以看到标准XDM与在Adobe Experience Platform中看到的不同。 您在[!DNL Experience Platform]中看到的内容称为兼容模式，它在标准XDM与在[!DNL Platform]中使用方式之间提供了简单的映射。
+在公共存储库中查看正式的XDM定义时，您可以看到标准XDM与在Adobe Experience Platform中看到的不同。 您在中看到的内容 [!DNL Experience Platform] 称为兼容模式，它提供了标准XDM与内部使用方式之间的简单映射 [!DNL Platform].
 
 ### 兼容性模式的工作原理
 
@@ -77,52 +77,12 @@ ht-degree: 1%
   <tr>
   <td>
   <pre class=" language-json">
-{
-  "xdm:birthDate":{
-    "title":"出生日期",
-    "type":"string",
-    "format":"date"
-  },
-  "xdm:birthDayAndMonth":{
-    "title":"出生日期",
-    "type":"string",
-    "pattern":"[0-1][0-9]-[0-9][0-9]"
-  },
-  "xdm:birthYear":{
-    "title":"出生年"
-    "type":"integer",
-    "minimum":1,
-    "maximum":32767
-  }
-}
+{ "xdm:birthDate":{ "title":“出生日期”、“类型”："string", "format":"date" }, "xdm:birthDayAndMonth":{ "title":“出生日期”、“类型”："string", "pattern":"[0-1][0-9]-[0-9][0-9]" }, "xdm:pirthYear":{ "title":“出生年”、“类型”："integer", "minimum":1, "maximum":32767 }
   </pre>
   </td>
   <td>
   <pre class=" language-json">
-{
-  "birthDate":{
-    "title":"出生日期",
-    "type":"string",
-    "format":"date",
-    "meta:xdmField":"xdm:birthDate",
-    "meta:xdmType":"date"
-  },
-  "birthDayAndMonth":{
-    "title":"出生日期",
-    "type":"string",
-    "pattern":"[0-1][0-9]-[0-9][0-9]",
-    "meta:xdmField":"xdm:birthDayAndMonth",
-    "meta:xdmType":"string"
-  },
-  "birthYear":{
-    "title":"出生年"
-    "type":"integer",
-    "minimum":1,
-    "maximum":32767,
-    "meta:xdmField":"xdm:birthYear",
-    "meta:xdmType":"short"
-  }
-}
+{ "birthDate":{ "title":“出生日期”、“类型”："string", "format":"date", "meta:xdmField":"xdm:birthDate", "meta:xdmType":"date" }, "birthDayAndMonth":{ "title":“出生日期”、“类型”："string", "pattern":“[0-1][0-9]-[0-9][0-9]”，“meta:xdmField”："xdm:birthDayAndMonth", "meta:xdmType":"string" }, "birthYear":{ "title":“出生年”、“类型”："integer", "minimum":1, "maximum":32767, "meta:xdmField":"xdm:birthYear", "meta:xdmType":"short" }
       </pre>
   </td>
   </tr>
@@ -132,8 +92,8 @@ ht-degree: 1%
 
 Adobe Experience Platform旨在与多个解决方案和服务结合使用，每个解决方案和服务都有各自的技术挑战和限制（例如，某些技术如何处理特殊字符）。 为了克服这些限制，开发了兼容性模式。
 
-大多数[!DNL Experience Platform]服务（包括[!DNL Catalog]、[!DNL Data Lake]和[!DNL Real-time Customer Profile]）使用[!DNL Compatibility Mode]代替标准XDM。 [!DNL Schema Registry] API还使用[!DNL Compatibility Mode]，本文档中的示例全部使用[!DNL Compatibility Mode]显示。
+最多 [!DNL Experience Platform] 服务包括 [!DNL Catalog], [!DNL Data Lake]和 [!DNL Real-Time Customer Profile] use [!DNL Compatibility Mode] 代替标准XDM。 的 [!DNL Schema Registry] API还使用 [!DNL Compatibility Mode]，本文档中的示例全部使用 [!DNL Compatibility Mode].
 
-您应该知道，标准XDM与在[!DNL Experience Platform]中运行它的方式之间存在映射，但这不应影响您对[!DNL Platform]服务的使用。
+有必要知道，标准XDM与其在中的操作方式之间存在映射 [!DNL Experience Platform]，但不应影响您的使用 [!DNL Platform] 服务。
 
-开源项目可供您使用，但是当涉及通过[!DNL Schema Registry]与资源交互时，本文档中的API示例提供了您应该了解和遵循的最佳实践。
+您可以使用开源项目，但是当涉及通过与资源交互时， [!DNL Schema Registry]，本文档中的API示例提供了您应了解和遵循的最佳实践。

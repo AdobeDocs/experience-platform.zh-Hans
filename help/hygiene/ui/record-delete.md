@@ -2,7 +2,7 @@
 title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1184'
 ht-degree: 0%

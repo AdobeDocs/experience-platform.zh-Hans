@@ -1,7 +1,8 @@
 ---
 title: XDM Business Campaign成员详细信息架构字段组
 description: 本文档概述了XDM Business Campaign成员详细信息架构字段组。
-source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
+exl-id: 597629c8-7f41-4c1c-95b6-aed5e16cee72
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '360'
 ht-degree: 4%

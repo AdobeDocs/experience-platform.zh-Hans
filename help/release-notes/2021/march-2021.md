@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 exl-id: 027cd7b1-1651-4939-bc97-968a41824117
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '425'
 ht-degree: 6%
@@ -35,7 +35,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## 分段服务 {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
+Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-Time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
 
 [!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
 

@@ -5,10 +5,10 @@ topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用平台UI查看和探索并集模式的详细信息。
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1199'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
 
@@ -20,15 +20,15 @@ ht-degree: 3%
 
 此UI指南需要了解 [!DNL Experience Platform] 与管理实时客户资料数据有关的服务。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
-* [[!DNL Real-time Customer Profile]](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-time Customer Profile] 通过在引入时桥接来自不同数据源的身份 [!DNL Platform].
+* [[!DNL Real-Time Customer Profile]](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-Time Customer Profile] 通过在引入时桥接来自不同数据源的身份 [!DNL Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 ## 了解并集模式
 
-通过实时客户资料，您可以跨与Adobe Experience Platform集成的系统创建强大、集中的资料，其中包含客户属性和加盖时间戳的事件。 此数据的格式和结构由体验数据模型(XDM)架构提供，每个架构都基于XDM类，并包含与该类兼容的字段。
+实时客户资料让您能够跨与Adobe Experience Platform集成的系统创建强大、集中的资料，其中包含客户属性和加盖时间戳的事件。 此数据的格式和结构由体验数据模型(XDM)架构提供，每个架构都基于XDM类，并包含与该类兼容的字段。
 
-可以为多个用例创建架构，引用相同的类，但包含特定于其使用的字段。 在为用户档案启用架构后，该架构将成为并集架构的一部分。 换言之，合并架构由多个架构组成，这些架构共享相同的类并已为用户档案启用。 合并模式使您能够看到共享同一类的模式中包含的所有字段的合并。实时客户配置文件使用合并模式创建每个客户的整体视图。
+可以为多个用例创建架构，引用相同的类，但包含特定于其使用的字段。 在为用户档案启用架构后，该架构将成为并集架构的一部分。 换言之，合并架构由多个架构组成，这些架构共享相同的类并已为用户档案启用。 合并模式使您能够看到共享同一类的模式中包含的所有字段的合并。实时客户资料使用联合架构为每个客户创建整体视图。
 
 使用并集模式需要深入了解XDM模式。 欲知更多信息，请首先阅读 [架构组合基础知识](../../xdm/schema/composition.md).
 

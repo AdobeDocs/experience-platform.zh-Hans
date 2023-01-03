@@ -6,7 +6,7 @@ description: 使用流程服务API在Experience Platform中创建批量云存储
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 183830318a3dd5012f27a73a8dd2753638aff83f
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3420'
 ht-degree: 2%
@@ -36,7 +36,7 @@ ht-degree: 2%
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] 允许您在 [!DNL Adobe Experience Platform] 从 [!DNL Real-time Customer Profile] 数据。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] 允许您在 [!DNL Adobe Experience Platform] 从 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了在平台中将数据激活到批处理目标所需了解的其他信息。

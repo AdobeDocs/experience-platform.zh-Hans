@@ -6,7 +6,7 @@ title: 在Customer AI中下载分数
 topic-legacy: Downloading scores
 description: Customer AI允许您下载Parquet文件格式的分数。
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 2%
@@ -286,7 +286,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 >[!IMPORTANT]
 >
->要利用这种导出方法，需要为数据集启用实时客户资料。
+>要利用这种导出方法，需要为数据集启用“实时客户资料”。
 
 的 [导出区段](../../../segmentation/tutorials/evaluate-a-segment.md) 区段评估指南中的部分介绍了导出受众数据集所需的步骤。 该指南概述了并提供了以下示例：
 

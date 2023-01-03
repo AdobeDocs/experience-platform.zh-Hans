@@ -5,7 +5,7 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2647'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 使用区段定义需要了解 [!DNL Experience Platform] 涉及分段的服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
 - [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] 允许您将存储在 [!DNL Experience Platform] 与属于较小群组的个人（例如客户、潜在客户、用户或组织）相关。
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md):通过将来自被摄取到的不同数据源的身份桥接到 [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
 
@@ -156,7 +156,7 @@ ht-degree: 1%
 | 1到2000万 | 100万 |
 | 2000多万 | 总共5% |
 
-有关每个 [!DNL Profile] 可通过选择 [!DNL Profile] ID。 要进一步了解用户档案的详细信息，请阅读 [[!DNL Real-time Customer Profile] 用户指南](../../profile/ui/user-guide.md#profile-detail).
+有关每个 [!DNL Profile] 可通过选择 [!DNL Profile] ID。 要进一步了解用户档案的详细信息，请阅读 [[!DNL Real-Time Customer Profile] 用户指南](../../profile/ui/user-guide.md#profile-detail).
 
 ![区段定义的示例用户档案会突出显示。 示例用户档案信息包括用户档案ID、名字、姓氏和人员电子邮件。](../images/ui/overview/segment-details-profiles.png)
 
@@ -176,7 +176,7 @@ ht-degree: 1%
 
 ## 计划分段 {#scheduled-segmentation}
 
-创建区段定义后，您可以通过按需或计划（连续）评估来评估区段定义。 评估手段移动 [!DNL Real-time Customer Profile] 通过区段定义获取数据，以生成相应的受众。 创建受众后，将保存并存储受众，以便使用 [!DNL Experience Platform] API。
+创建区段定义后，您可以通过按需或计划（连续）评估来评估区段定义。 评估手段移动 [!DNL Real-Time Customer Profile] 通过区段定义获取数据，以生成相应的受众。 创建受众后，将保存并存储受众，以便使用 [!DNL Experience Platform] API。
 
 按需评估包括使用API执行评估并根据需要构建受众，而计划评估（也称为“计划分段”）则允许您创建定期计划以在特定时间（最多每天一次）评估区段定义。
 
@@ -294,6 +294,6 @@ ht-degree: 1%
 
 ## 后续步骤和其他资源 {#next-steps}
 
-的 [!DNL Segmentation Service] UI提供了一个丰富的工作流，允许您将可销售的受众与 [!DNL Real-time Customer Profile] 数据。
+的 [!DNL Segmentation Service] UI提供了一个丰富的工作流，允许您将可销售的受众与 [!DNL Real-Time Customer Profile] 数据。
 
 详细了解 [!DNL Segmentation Service]，请继续阅读文档。 了解如何使用 [!DNL Segmentation Service] API，请阅读 [[!DNL Segmentation Service] 开发人员指南](../api/overview.md).

@@ -2,7 +2,7 @@
 title: 通过Offer decisioning进行个性化
 description: 了解如何使用服务器API通过Offer decisioning提供和呈现个性化体验。
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '555'
 ht-degree: 2%
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 的 [!DNL Offer Decision Engine] 使用Adobe Experience Platform数据和 [实时客户用户档案](../profile/home.md)，以及 [!DNL Offer Library]，以便在适当的时间向适当的客户和渠道提供优惠。
 
-要进一步了解 [!DNL Offer Decisioning Engine]，请参阅 [文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html).
+要进一步了解 [!DNL Offer Decisioning Engine]，请参阅 [文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans).
 
 之后 [配置数据流](#configure-your-datastream)，则必须定义要在个性化营销活动中使用的决策范围。
 

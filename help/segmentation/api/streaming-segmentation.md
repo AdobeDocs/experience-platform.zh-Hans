@@ -5,7 +5,7 @@ title: 利用流分段快速实时评估事件
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1971'
 ht-degree: 1%
@@ -32,8 +32,8 @@ ht-degree: 1%
 
 本开发人员指南需要对 [!DNL Adobe Experience Platform] 流分段涉及的服务。 在开始本教程之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户资料。
-- [[!DNL Segmentation]](../home.md):提供从 [!DNL Real-time Customer Profile] 数据。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户资料。
+- [[!DNL Segmentation]](../home.md):提供从 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 以下部分提供了成功调用所需了解的其他信息 [!DNL Platform] API。

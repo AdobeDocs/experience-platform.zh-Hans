@@ -2,7 +2,7 @@
 title: XDM业务营销列表类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List类。
 exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '311'
 ht-degree: 3%

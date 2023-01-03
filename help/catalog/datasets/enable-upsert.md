@@ -4,7 +4,7 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1050'
 ht-degree: 1%
@@ -23,8 +23,8 @@ ht-degree: 1%
 
 本教程需要对管理启用了用户档案的数据集时涉及的多项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查阅这些相关文档 [!DNL Platform] 服务：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service].
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 - [批量摄取](../../ingestion/batch-ingestion/overview.md):批量摄取API允许您将数据作为批处理文件导入到Experience Platform中。
 
@@ -119,7 +119,7 @@ curl -X POST \
 
 ### 检查数据集是否已为“配置文件”启用
 
-使用 [!DNL Catalog] API中，您可以检查现有数据集以确定它是否已启用以供在中使用 [!DNL Real-time Customer Profile]. 以下调用按ID检索数据集的详细信息。
+使用 [!DNL Catalog] API中，您可以检查现有数据集以确定它是否已启用以供在中使用 [!DNL Real-Time Customer Profile]. 以下调用按ID检索数据集的详细信息。
 
 **API格式**
 
@@ -192,7 +192,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27
 }
 ```
 
-在 `tags` 属性，您可以看到 `unifiedProfile` 值存在 `enabled:true`. 因此， [!DNL Real-time Customer Profile] 已为此数据集启用。
+在 `tags` 属性，您可以看到 `unifiedProfile` 值存在 `enabled:true`. 因此， [!DNL Real-Time Customer Profile] 已为此数据集启用。
 
 ### 禁用配置文件的数据集
 

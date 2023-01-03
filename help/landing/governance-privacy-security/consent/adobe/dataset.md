@@ -5,7 +5,7 @@ title: 配置数据集以捕获同意和首选项数据
 topic-legacy: getting started
 description: 了解如何配置体验数据模型(XDM)架构和数据集，以在Adobe Experience Platform中捕获同意和首选项数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 配置数据集以捕获同意和首选项数据
 
-为了让Adobe Experience Platform处理您的客户同意/首选项数据，必须将该数据发送到架构中包含与同意和其他权限相关字段的数据集。 具体而言，此数据集必须基于 [!DNL XDM Individual Profile] 类，并启用以在中使用 [!DNL Real-time Customer Profile].
+为了让Adobe Experience Platform处理您的客户同意/首选项数据，必须将该数据发送到架构中包含与同意和其他权限相关字段的数据集。 具体而言，此数据集必须基于 [!DNL XDM Individual Profile] 类，并启用以在中使用 [!DNL Real-Time Customer Profile].
 
 本文档提供了配置数据集以处理Experience Platform中的同意数据的步骤。 有关在平台中处理同意/首选项数据的完整工作流程的概述，请参阅 [同意处理概述](./overview.md).
 
@@ -133,7 +133,7 @@ ht-degree: 0%
 
 ## 根据您的同意架构创建数据集 {#dataset}
 
-在创建包含同意字段的架构后，您必须创建一个数据集，以最终摄取客户的同意数据。 必须为 [!DNL Real-time Customer Profile].
+在创建包含同意字段的架构后，您必须创建一个数据集，以最终摄取客户的同意数据。 必须为 [!DNL Real-Time Customer Profile].
 
 要开始，请选择 **[!UICONTROL 数据集]** 在左侧导航中，选择 **[!UICONTROL 创建数据集]** 中。
 
@@ -151,7 +151,7 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/dataset-details.png)
 
-此时会显示新创建数据集的详细信息页面。 如果数据集基于您的时间系列架构，则该过程会完成。 如果数据集基于您的记录架构，则此过程的最后一步是启用该数据集以在中使用 [!DNL Real-time Customer Profile].
+此时会显示新创建数据集的详细信息页面。 如果数据集基于您的时间系列架构，则该过程会完成。 如果数据集基于您的记录架构，则此过程的最后一步是启用该数据集以在中使用 [!DNL Real-Time Customer Profile].
 
 在右边栏中，选择 **[!UICONTROL 用户档案]** 切换。
 

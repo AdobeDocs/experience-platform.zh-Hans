@@ -5,7 +5,7 @@ title: 架构注册API指南
 description: 架构注册表API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关的Experience Data Model(XDM)资源。 参阅本指南，了解如何使用 API 执行关键操作。
 topic-legacy: developer guide
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1084'
 ht-degree: 2%

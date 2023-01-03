@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 本教程需要对 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md):允许您根据实时客户资料数据构建受众区段。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 ## 开发区段定义
 
-分段的第一步是定义区段，在称为区段定义的结构中表示。 区段定义是封装在中写入的查询的对象 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义区段规则 [!DNL Real-time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
+分段的第一步是定义区段，在称为区段定义的结构中表示。 区段定义是封装在中写入的查询的对象 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义区段规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
 
 您可以通过向 `/segment/definitions` 的端点 [!DNL Segmentation] API。 以下示例概述了如何设置定义请求的格式，包括为成功定义区段需要哪些信息。
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ## 评估和预览受众 {#estimate-and-preview-an-audience}
 
-在开发区段定义时，您可以在 [!DNL Real-time Customer Profile] 查看摘要级别的信息，以帮助确保隔离预期受众。 估计可提供有关区段定义的统计信息，如预计受众规模和置信区间。 “预览”为区段定义提供符合条件的用户档案的分页列表，允许您将结果与预期结果进行比较。
+在开发区段定义时，您可以在 [!DNL Real-Time Customer Profile] 查看摘要级别的信息，以帮助确保隔离预期受众。 估计可提供有关区段定义的统计信息，如预计受众规模和置信区间。 “预览”为区段定义提供符合条件的用户档案的分页列表，允许您将结果与预期结果进行比较。
 
 通过估算和预览受众，您可以测试和优化PQL谓词，直到它们产生所需的结果为止，然后在更新的区段定义中使用它们。
 

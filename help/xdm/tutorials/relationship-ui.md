@@ -6,7 +6,7 @@ description: 本文档提供了一个教程，用于使用Experience Platform用
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1173'
 ht-degree: 0%
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
-而架构关系可以通过使用并集架构和 [!DNL Real-time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
+而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
 
 本文档提供了一个教程，用于使用 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅 [使用模式注册表API定义关系](relationship-api.md).
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-ui.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
+>要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-Time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-ui.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
 
 架构关系由 **源模式** 是指 **目标架构**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作目标架构。
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 ### [!DNL Loyalty Members] 模式
 
-源架构“[!DNL Loyalty Members]“ ”基于 [!DNL XDM Individual Profile] 类，是在教程中构建的架构 [在UI中创建架构](create-schema-ui.md). 它包括 `loyalty` 对象 `_tenantId` 命名空间，其中包含多个特定于忠诚度的字段。 其中一个领域， `loyaltyId`，用作下架构的主标识 [!UICONTROL 电子邮件] 命名空间。 如 **[!UICONTROL 架构属性]**，此架构已启用，可在中使用 [!DNL Real-time Customer Profile].
+源架构“[!DNL Loyalty Members]“ ”基于 [!DNL XDM Individual Profile] 类，是在教程中构建的架构 [在UI中创建架构](create-schema-ui.md). 它包括 `loyalty` 对象 `_tenantId` 命名空间，其中包含多个特定于忠诚度的字段。 其中一个领域， `loyaltyId`，用作下架构的主标识 [!UICONTROL 电子邮件] 命名空间。 如 **[!UICONTROL 架构属性]**，此架构已启用，可在中使用 [!DNL Real-Time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 >
 >要了解如何创建自定义身份命名空间，请参阅 [Identity Service文档](../../identity-service/namespaces.md#manage-namespaces).
 
-设置主标识后，必须为 [!DNL Real-time Customer Profile].
+设置主标识后，必须为 [!DNL Real-Time Customer Profile].
 
 ![为配置文件启用](../images/tutorials/relationship/hotel-profile.png)
 

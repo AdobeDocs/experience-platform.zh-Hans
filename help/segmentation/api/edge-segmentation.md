@@ -5,7 +5,7 @@ title: 使用API进行边缘分段
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1187'
 ht-degree: 0%
@@ -32,8 +32,8 @@ ht-degree: 0%
 
 本开发人员指南需要对 [!DNL Adobe Experience Platform] 与边缘分段相关的服务。 在开始本教程之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
-- [[!DNL Segmentation]](../home.md):提供从 [!DNL Real-time Customer Profile] 数据。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
+- [[!DNL Segmentation]](../home.md):提供从 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 要成功调用任何Experience PlatformAPI端点，请阅读 [Platform API快速入门](../../landing/api-guide.md) 以了解所需的标头以及如何读取示例API调用。

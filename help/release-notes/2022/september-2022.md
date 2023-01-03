@@ -1,7 +1,8 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
+exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2934'
 ht-degree: 5%

@@ -5,7 +5,7 @@ title: Audience Manager源概述
 topic-legacy: overview
 description: Adobe Audience Manager源将在Audience Manager中收集的第一方数据流到Adobe Experience Platform。
 exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
-source-git-commit: 37e810ce6faf40f9980841b2c9d6eb29e8b0e82a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 0%
@@ -82,6 +82,6 @@ Adobe Audience Manager在目录中创建一个连接：Audience Manager连接。
 
 | Audience Manager数据 | 类型 | 延迟 | 注释 |
 | --- | --- | --- | --- |
-| 实时数据 | 活动 | &lt;25 分钟 | 从在Audience Manager边缘节点捕获到在数据湖中显示的时间。 |
+| 实时数据 | 事件 | &lt;25 分钟 | 从在Audience Manager边缘节点捕获到在数据湖中显示的时间。 |
 | 实时数据 | 配置文件更新 | &lt;10 分钟 | 实时客户资料登陆的时间。 |
 | 实时数据和载入的数据 | 配置文件更新 | 24至36小时 | 从通过DCS/PCS Edge数据和载入的数据捕获的时间，处理到用户配置文件，然后显示在实时客户配置文件中。 目前，此数据不会直接登陆数据湖。 可以为Audience Manager配置文件数据集启用配置文件切换，以便将此数据直接摄取到实时客户配置文件。 |

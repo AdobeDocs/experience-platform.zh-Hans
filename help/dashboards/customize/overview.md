@@ -3,7 +3,7 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 功能板自定义概述
 description: 进一步了解自定义在Adobe Experience Platform功能板中显示的数据的方式。
 exl-id: efabdb61-4148-4b0e-b7a1-6e788b5e43a8
-source-git-commit: 27252d547afd30acc7b334d5054f1350dc0031b7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%

@@ -5,7 +5,7 @@ breadcrumb-title: Data Science Workspace 指南
 user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和配方，并进行评分。
 feature: Data Science Workspace
 solution: Experience Platform
-source-git-commit: ec69c859a7b40f3d527c73405b358862ebdb92e7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 15%

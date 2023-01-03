@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform中，计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南演示了如何使用实时客户配置文件API创建、查看、更新和删除计算属性。
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2275'
 ht-degree: 2%
@@ -142,7 +142,7 @@ curl -X POST \
 | `positionPath` | 包含被解构的数组 `path` 到请求中发送的字段。 |
 | `returnSchema.meta:xdmType` | 存储计算属性的字段类型。 |
 | `definedOn` | 一个数组，用于显示已定义计算属性的并集架构。 每个并集架构包含一个对象，这意味着如果计算的属性已基于不同类添加到多个架构，则数组中可能有多个对象。 |
-| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为 `true`. |
+| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，该值为 `true`。 |
 | `type` | 创建的资源类型，在此例中，“ComputedAttribute”是默认值。 |
 | `createEpoch` 和 `updateEpoch` | 分别创建和上次更新计算属性的时间。 |
 
@@ -270,7 +270,7 @@ curl -X POST \
 | `positionPath` | 包含被解构的数组 `path` 到请求中发送的字段。 |
 | `returnSchema.meta:xdmType` | 存储计算属性的字段类型。 |
 | `definedOn` | 一个数组，用于显示已定义计算属性的并集架构。 每个并集架构包含一个对象，这意味着如果计算的属性已基于不同类添加到多个架构，则数组中可能有多个对象。 |
-| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为 `true`. |
+| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，该值为 `true`。 |
 | `type` | 创建的资源类型，在此例中，“ComputedAttribute”是默认值。 |
 | `createEpoch` 和 `updateEpoch` | 分别创建和上次更新计算属性的时间。 |
 

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为CRM源创建数据流的步骤。
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 0%
@@ -29,7 +29,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Data Prep]](../../../../data-prep/home.md):允许数据工程师映射、转换和验证来自体验数据模型(XDM)的数据。
 
 ## 添加数据
@@ -143,9 +143,9 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了一个数据流，以将数据从CRM源引入平台。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已成功创建了一个数据流，以将数据从CRM源引入平台。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile] 概述](../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../data-science-workspace/home.md)
 
 

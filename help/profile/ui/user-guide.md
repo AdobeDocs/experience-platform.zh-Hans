@@ -1,26 +1,26 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件；联合架构；联合配置文件；联合配置文件
-title: Real-time Customer Profile UI指南
+title: Real-Time Customer Profile UI指南
 topic-legacy: guide
-description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
+description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而全面了解您的每位客户。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile] UI指南
+# [!DNL Real-Time Customer Profile] UI指南
 
-[!DNL Real-time Customer Profile] 通过整合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据，创建每个客户的整体视图。 本文档是与交互的指南 [!DNL Real-time Customer Profile] Adobe Experience Platform用户界面(UI)中的数据。
+[!DNL Real-Time Customer Profile] 通过整合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据，创建每个客户的整体视图。 本文档是与交互的指南 [!DNL Real-Time Customer Profile] Adobe Experience Platform用户界面(UI)中的数据。
 
 ## 快速入门
 
-此UI指南需要了解 [!DNL Experience Platform] 管理涉及的服务 [!DNL Real-time Customer Profiles]. 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
+此UI指南需要了解 [!DNL Experience Platform] 管理涉及的服务 [!DNL Real-Time Customer Profiles]. 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
-* [[!DNL Real-time Customer Profile] 概述](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-time Customer Profile] 通过在引入时桥接来自不同数据源的身份 [!DNL Platform].
+* [[!DNL Real-Time Customer Profile] 概述](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-Time Customer Profile] 通过在引入时桥接来自不同数据源的身份 [!DNL Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 ## [!UICONTROL 概述]
@@ -171,7 +171,7 @@ ht-degree: 0%
 
 ## 并集模式 {#union-schema}
 
-从主 **[!UICONTROL 用户档案]** 菜单，选择 **[!UICONTROL 并集架构]** 选项卡，以查看所摄取数据的可用合并架构。 联盟模式是所有 [!DNL Experience Data Model] (XDM)同一类下的字段，其架构已启用以供在中使用 [!DNL Real-time Customer Profile].
+从主 **[!UICONTROL 用户档案]** 菜单，选择 **[!UICONTROL 并集架构]** 选项卡，以查看所摄取数据的可用合并架构。 联盟模式是所有 [!DNL Experience Data Model] (XDM)同一类下的字段，其架构已启用以供在中使用 [!DNL Real-Time Customer Profile].
 
 有关合并模式的更多信息，请访问 [并集架构UI指南](union-schema.md).
 

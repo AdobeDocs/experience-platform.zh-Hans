@@ -5,7 +5,7 @@ title: 事件架构的IAB TCF 2.0同意字段组
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类的IAB TCF 2.0同意架构字段组。
 exl-id: c236d0d4-27bd-45d7-a912-d0e93a609254
-source-git-commit: 046486d5e154b45fc2c2f5408eee235dddf46a4d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 1%

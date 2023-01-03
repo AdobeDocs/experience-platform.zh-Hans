@@ -6,7 +6,7 @@ title: 在UI中监视源的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: ed88ebe7822f60ace2babd7d5a04d2d92d83cf49
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1069'
 ht-degree: 0%

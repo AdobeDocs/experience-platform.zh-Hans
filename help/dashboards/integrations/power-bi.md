@@ -1,17 +1,17 @@
 ---
 title: 平台功能板的Power BI报表模板
 description: 使用报表模板来探索使用Experience Platform的Power BI。
-source-git-commit: 19b0ce2c8125fa5253cbba34adbd2884e27b5133
+exl-id: fb98a79f-3d82-4e11-b08a-b7cb06414462
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
 
 ---
 
-
 # Power BI功能板报表模板
 
-利用Power BI报表模板功能，可创建填充了Adobe Experience Platform数据的引人入胜的报表。 简化的安装过程会自动安装用于实时客户资料、分段和目标的标准小组件。 安装过程还会将Power BI与数据模型相关联，以便您可以轻松自定义和扩展报表模板。 这些报表可以在您的整个组织之间共享，而无需在Platform上为您的IMS组织提供凭据的收件人。
+利用Power BI报表模板功能，可创建填充了Adobe Experience Platform数据的引人入胜的报表。 简化的安装过程会自动安装用于实时客户配置文件、分段和目标的标准小组件。 安装过程还会将Power BI与数据模型相关联，以便您可以轻松自定义和扩展报表模板。 这些报表可以在您的整个组织之间共享，而无需在Platform上为您的IMS组织提供凭据的收件人。
 
 本文档提供了有关如何将Adobe Experience Platform与Power BI应用程序连接以及使用报表模板与外部用户共享关键平台数据分析的说明。
 

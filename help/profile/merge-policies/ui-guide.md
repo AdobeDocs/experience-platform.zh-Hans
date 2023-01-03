@@ -4,7 +4,7 @@ title: 合并策略UI指南
 type: Documentation
 description: 在Experience Platform中将来自多个源的数据汇集在一起时，合并策略是Platform用来确定数据优先级和合并哪些数据以创建统一视图的规则。 本指南提供了使用Adobe Experience Platform用户界面使用合并策略的分步说明。
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: e94756254a24ecadd7359589cd14cfb0745c789c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 本指南需要对以下几个重要事项有充分的了解 [!DNL Experience Platform] 功能。 在阅读本指南之前，请查阅以下服务的文档：
 
 * [实时客户资料](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md):通过将来自不同数据源的身份桥接到中，从而支持实时客户资料 [!DNL Platform].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md):通过将来自不同数据源的身份桥接到中，从而实现实时客户资料 [!DNL Platform].
 * [体验数据模型(XDM)](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 ## 查看合并策略 {#view-merge-policies}

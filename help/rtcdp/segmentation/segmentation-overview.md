@@ -3,7 +3,7 @@ keywords: 分段；分段rtcdp；实时客户数据平台分段
 title: Real-time Customer Data Platform中的Segmentation Service
 description: Adobe实时客户数据平台是以Adobe Experience Platform为基础构建的，它利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 4%

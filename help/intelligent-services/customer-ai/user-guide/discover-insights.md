@@ -6,7 +6,7 @@ title: 通过客户人工智能发现洞察
 topic-legacy: Discovering insights
 description: 本文档是与Intelligent Services Customer AI用户界面中的服务实例分析交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: 417b3f885f75f107d2db06331053917a76c904c4
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '2079'
 ht-degree: 1%
@@ -151,7 +151,7 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 >[!NOTE]
 >
->的 **[!UICONTROL 创建区段]** 按钮仅在为数据集启用“实时客户配置文件”时可用。 有关如何启用实时客户资料的更多信息，请访问 [实时客户资料概述](../../../rtcdp/overview.md).
+>的 **[!UICONTROL 创建区段]** 按钮仅在为数据集启用“实时客户配置文件”时可用。 有关如何启用实时客户用户档案的更多信息，请访问 [实时客户资料概述](../../../rtcdp/overview.md).
 
 ![单击创建区段](../images/insights/influential-factors-create-segment.png)
 

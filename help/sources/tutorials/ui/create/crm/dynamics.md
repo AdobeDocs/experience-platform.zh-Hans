@@ -1,89 +1,88 @@
 ---
-keywords: Experience Platform；主页；热门主题；Microsoft Dynamics;microsoft Dynamics;Dynamics;Dynamics
+keywords: Experience Platform；主页；热门主题；Microsoft Dynamics;Microsoft Dynamics;Dynamics;Dynamics
 solution: Experience Platform
 title: 在UI中创建Microsoft Dynamics源连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建Microsoft Dynamics源连接。
+description: 了解如何使用Microsoft UI创建Adobe Experience Platform Dynamics源连接。
 exl-id: 1a7a66de-dc57-4a72-8fdd-5fd80175db69
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '596'
 ht-degree: 1%
 
 ---
 
-# 在UI中创建[!DNL Microsoft Dynamics]源连接
+# 创建 [!DNL Microsoft Dynamics] UI中的源连接
 
-本教程提供了使用Adobe Experience Platform UI创建[!DNL Microsoft Dynamics]（以下称“[!DNL Dynamics]”）源连接的步骤。
+本教程提供了创建 [!DNL Microsoft Dynamics] (以下简称“[!DNL Dynamics]&quot;)使用Adobe Experience Platform UI进行源连接。
 
-## 入门指南
+## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [模式合成的基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建基块，包括模式构成的主要原则和最佳做法。
+   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
-如果您已经有有效的[!DNL Dynamics]帐户，则可以跳过此文档的其余部分，继续学习有关[为CRM源](../../dataflow/crm.md)配置数据流的教程。
+如果您已经拥有 [!DNL Dynamics] 帐户，您可以跳过本文档的其余部分，并继续阅读本教程 [为CRM源配置数据流](../../dataflow/crm.md).
 
-### 收集所需凭据
+### 收集所需的凭据
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `serviceUri` | [!DNL Dynamics]实例的服务URL。 |
-| `username` | [!DNL Dynamics]用户帐户的用户名。 |
-| `password` | [!DNL Dynamics]帐户的密码。 |
-| `servicePrincipalId` | [!DNL Dynamics]帐户的客户端ID。 使用服务主体和基于密钥的身份验证时需要此ID。 |
+| `serviceUri` | 您的 [!DNL Dynamics] 实例。 |
+| `username` | 您的用户名 [!DNL Dynamics] 用户帐户。 |
+| `password` | 您的密码 [!DNL Dynamics] 帐户。 |
+| `servicePrincipalId` | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
 | `servicePrincipalKey` | 服务主密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
 
-有关快速入门的详细信息，请参阅[this [!DNL Dynamics] 文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth)。
+有关入门的更多信息，请参阅 [此 [!DNL Dynamics] 文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
-## 连接您的[!DNL Dynamics]帐户
+## 连接 [!DNL Dynamics] 帐户
 
-收集所需凭据后，您可以按照以下步骤将您的[!DNL Dynamics]帐户链接到平台。
+收集所需的凭据后，您可以按照以下步骤链接 [!DNL Dynamics] 帐户到平台。
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示了可为其创建帐户的各种源。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 **[!UICONTROL 目录]** 屏幕会显示您可为其创建帐户的各种源。
 
-您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
 
-在&#x200B;**[!UICONTROL CRM]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Microsoft Dynamics]**。 如果这是您首次使用此连接器，请选择&#x200B;**[!UICONTROL Configure]**。 否则，选择&#x200B;**[!UICONTROL Add data]**&#x200B;以创建新[!DNL Dynamics]连接器。
+在 **[!UICONTROL CRM]** 类别，选择 **[!UICONTROL Microsoft Dynamics]**. 如果这是您首次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，请选择 **[!UICONTROL 添加数据]** 创建新 [!DNL Dynamics] 连接器。
 
 ![目录](../../../../images/tutorials/create/ms-dynamics/catalog.png)
 
-将显示&#x200B;**[!UICONTROL Connect to Dynamics]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+的 **[!UICONTROL 连接到Dynamics]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择&#x200B;**[!UICONTROL New account]**。 在显示的输入表单上，为新[!DNL Dynamics]帐户提供名称和可选说明。
+如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体上，为您的新 [!DNL Dynamics] 帐户。
 
-[!DNL Dynamics]连接器为您提供了不同的访问身份验证类型。 在[!UICONTROL Account authentication]下，选择&#x200B;**[!UICONTROL Basic authentication]**&#x200B;以使用基于密码的凭据。
+的 [!DNL Dynamics] 连接器为您提供不同的访问身份验证类型。 在 [!UICONTROL 帐户身份验证] 选择 **[!UICONTROL 基本身份验证]** 使用基于密码的凭据。
 
-完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后为新帐户建立留出一些时间。
+完成后，选择 **[!UICONTROL 连接到源]** 然后再给新帐户留些时间。
 
 ![基本身份验证](../../../../images/tutorials/create/ms-dynamics/basic-auth.png)
 
-或者，您也可以选择&#x200B;**[!UICONTROL Service-principal and key authentication]**&#x200B;并使用[!UICONTROL Service principal ID]和[!UICONTROL Service principal key]的组合连接您的[!DNL Dynamics]帐户。
+或者，您也可以选择 **[!UICONTROL 服务主体和密钥验证]** 连接 [!DNL Dynamics] 帐户使用 [!UICONTROL 服务主体ID] 和 [!UICONTROL 服务主密钥].
 
 >[!IMPORTANT]
 >
-> [!DNL Dynamics]中的基本身份验证可能会被双因素身份验证阻止，而平台当前不支持双因素身份验证。 在这种情况下，建议使用基于密钥的身份验证来创建使用[!DNL Dynamics]的源连接器。
+> 中的基本身份验证 [!DNL Dynamics] 可能会被双重身份验证阻止，而Platform当前不支持此身份验证。 在这种情况下，建议使用基于密钥的身份验证来创建源连接器，该连接器使用 [!DNL Dynamics].
 
 ![基于密钥的身份验证](../../../../images/tutorials/create/ms-dynamics/key-based-auth.png)
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| [!UICONTROL Service principal ID] | [!DNL Dynamics]帐户的客户端ID。 使用服务主体和基于密钥的身份验证时需要此ID。 |
-| [!UICONTROL Service principal key] | 服务主密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
+| [!UICONTROL 服务主体ID] | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
+| [!UICONTROL 服务主密钥] | 服务主密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
 
 ### 现有帐户
 
-要连接现有帐户，请选择要连接的[!DNL Dynamics]帐户，然后选择右上角的&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+要连接现有帐户，请选择 [!DNL Dynamics] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 的问题。
 
 ![现有](../../../../images/tutorials/create/ms-dynamics/existing.png)
 
 ## 后续步骤
 
-按照本教程，您已建立了与[!DNL Dynamics]帐户的连接。 您现在可以继续下一个教程，并[配置一个数据流以将数据导入Platform](../../dataflow/crm.md)。
+通过阅读本教程，您已经与 [!DNL Dynamics] 帐户。 您现在可以继续下一个教程和 [配置数据流以将数据导入平台](../../dataflow/crm.md).

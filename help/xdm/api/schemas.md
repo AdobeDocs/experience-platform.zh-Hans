@@ -5,7 +5,7 @@ title: 架构API端点
 description: 架构注册表API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 topic-legacy: developer guide
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 4%

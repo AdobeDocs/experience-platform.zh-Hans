@@ -5,7 +5,8 @@ solution: Experience Platform
 product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用和速率限制的更多信息。
-source-git-commit: 69496d2e00ce866413786160d4524cabd03ae350
+exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1198'
 ht-degree: 3%
@@ -121,5 +122,5 @@ ht-degree: 3%
 
 * 的护栏 [数据摄取](/help/ingestion/guardrails.md)
 * 的护栏 [[!DNL Identity Service] 数据](/help/identity-service/guardrails.md)
-* 的护栏 [[!DNL Real-time Customer Profile] 数据](/help/profile/guardrails.md)
+* 的护栏 [[!DNL Real-Time Customer Profile] 数据](/help/profile/guardrails.md)
 * 的护栏 [[!DNL Query Service] 数据](/help/query-service/guardrails.md)

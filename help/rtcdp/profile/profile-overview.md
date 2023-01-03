@@ -3,7 +3,7 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 了解Real-Time CDP中的实时客户资料
 description: 了解Adobe Real-time Customer Data Platform如何让您使用实时客户资料为客户提供协调一致的相关体验。
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%

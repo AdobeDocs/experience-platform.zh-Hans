@@ -5,7 +5,7 @@ title: 策略服务API快速入门
 topic-legacy: developer guide
 description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用策略服务API之前需要了解的核心概念。
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 * [数据管理](../home.md):框架 [!DNL Experience Platform] 强制实施数据使用合规性。
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ## 读取示例API调用

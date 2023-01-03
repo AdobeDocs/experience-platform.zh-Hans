@@ -5,7 +5,7 @@ title: 身份命名空间概述
 topic-legacy: overview
 description: 身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1642'
 ht-degree: 2%
@@ -20,13 +20,13 @@ ht-degree: 2%
 
 使用身份命名空间需要了解所涉及的各种Adobe Experience Platform服务。 开始使用命名空间之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNL Real-Time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 - [[!DNL Identity Service]](./home.md):通过跨设备和系统桥接身份，更好地了解各个客户及其行为。
 - [[!DNL Privacy Service]](../privacy-service/home.md):身份命名空间用于法律隐私法规(如《通用数据保护条例》(GDPR))的合规请求中。 每个隐私请求都是相对于命名空间发出的，以便确定哪些消费者的数据应受到影响。
 
 ## 了解身份命名空间
 
-完全限定的标识包括ID值和命名空间。 在配置文件片段之间匹配记录数据时，如 [!DNL Real-time Customer Profile] 合并配置文件数据，标识值和命名空间必须匹配。
+完全限定的标识包括ID值和命名空间。 在配置文件片段之间匹配记录数据时，如 [!DNL Real-Time Customer Profile] 合并配置文件数据，标识值和命名空间必须匹配。
 
 例如，两个配置文件片段可能包含不同的主ID，但它们共享“Email”命名空间的相同值，因此 [!DNL Platform] 能够了解这些片段实际上是同一个人，并将数据汇总到个人的标识图中。
 

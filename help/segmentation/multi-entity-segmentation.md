@@ -5,7 +5,7 @@ title: 多实体分段概述
 topic-legacy: overview
 description: 多实体分段功能可以根据产品、商店或其他非用户档案类使用附加数据扩展用户档案数据。 连接后，来自其他类的数据将变得可用，就像它们是配置文件架构的本机数据一样。
 exl-id: 01a37fdc-2abe-4a84-b7da-fcbd141ff51f
-source-git-commit: d036ca8c3a378494f776c2bbb05e9d687bd2e201
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '699'
 ht-degree: 0%
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # 多实体分段概述
 
-多实体分段是作为Adobe Experience Platform的一部分提供的一项高级功能 [!DNL Segmentation Service]. 此功能允许您扩展 [!DNL Real-time Customer Profile] 您的组织可能定义的附加“非人员”数据（也称为“维度实体”）的数据，例如与产品或商店相关的数据。 在根据与您的独特业务需求相关的数据定义受众区段时，多实体分段提供了灵活性，并且可以在没有查询数据库专业知识的情况下执行。 通过多实体分段，您可以向区段添加关键数据，而无需对数据流进行成本高昂的更改或等待后端数据合并。
+多实体分段是作为Adobe Experience Platform的一部分提供的一项高级功能 [!DNL Segmentation Service]. 此功能允许您扩展 [!DNL Real-Time Customer Profile] 您的组织可能定义的附加“非人员”数据（也称为“维度实体”）的数据，例如与产品或商店相关的数据。 在根据与您的独特业务需求相关的数据定义受众区段时，多实体分段提供了灵活性，并且可以在没有查询数据库专业知识的情况下执行。 通过多实体分段，您可以向区段添加关键数据，而无需对数据流进行成本高昂的更改或等待后端数据合并。
 
 ## 快速入门
 
 多实体分段需要对分段中涉及的各种Adobe Experience Platform服务有一定的了解。 在继续阅读本指南之前，请查阅以下文档：
 
-* [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户资料。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户资料。
    * [配置文件护栏](../profile/guardrails.md):创建受 [!DNL Profile].
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md):允许您从 [!DNL Real-time Customer Profile] 数据。
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md):允许您从 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../xdm/schema/composition.md#union):了解合成架构以用于Experience Platform的最佳实践。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../xdm/schema/best-practices.md).
 

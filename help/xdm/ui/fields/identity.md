@@ -1,58 +1,57 @@
 ---
-keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；标识；字段；
+keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；身份；字段；
 solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '575'
 ht-degree: 0%
 
 ---
 
 # 在UI中定义标识字段
 
-在体验数据模型(XDM)中，标识字段表示一个字段，可用于标识与记录或时间序列事件相关的个人。 本文档介绍如何在Adobe Experience Platform UI中定义标识字段。
+在体验数据模型(XDM)中，标识字段表示一个字段，用于标识与记录或时间系列事件相关的个人人员。 本文档介绍如何在Adobe Experience Platform UI中定义标识字段。
 
 ## 先决条件
 
-身份字段是在平台中构建客户身份图的关键组件，它最终影响实时客户用户档案将不同数据片段合并到一起以获得客户的完整视图。 在模式中定义标识字段之前，请参阅以下文档，了解与标识字段相关的主要服务和概念：
+身份字段是在Platform中构建客户身份图形的关键组件，这最终会影响实时客户资料如何将不同的数据片段合并在一起，以获得客户的完整视图。 在架构中定义标识字段之前，请参阅以下文档，了解有关标识字段相关的关键服务和概念的信息：
 
-* [Adobe Experience Platform Identity Service](../../../identity-service/home.md):跨设备和系统构建身份桥梁，根据符合的XDM模式定义的身份字段将数据集链接在一起。
-   * [身份命名空间](../../../identity-service/namespaces.md):身份命名空间定义可与单个人相关的不同类型的身份信息，这些信息是每个身份字段的必需组件。
-* [实时客户用户档案](../../../profile/home.md):利用客户身份图，根据来自多个来源的汇总数据提供统一的消费者用户档案，这些数据几乎实时更新。
+* [Adobe Experience Platform Identity Service](../../../identity-service/home.md):跨设备和系统构建身份桥梁，根据数据集符合的XDM架构定义的身份字段，将数据集链接在一起。
+   * [身份命名空间](../../../identity-service/namespaces.md):身份命名空间定义可与单个人员关联的不同身份信息类型，这些信息是每个身份字段的必需组件。
+* [实时客户资料](../../../profile/home.md):利用客户身份图以基于来自多个来源的汇总数据提供统一的客户配置文件，这些数据近乎实时地更新。
 
 ## 定义标识字段
 
-当[在UI中定义新字段](./overview.md#define)时，可以通过选中右边栏中的&#x200B;**[!UICONTROL Identity]**&#x200B;复选框将其设置为标识字段。
+When [定义新字段](./overview.md#define) 在UI中，您可以通过选择 **[!UICONTROL 身份]** 复选框。
 
 ![](../../images/ui/fields/special/identity.png)
 
-选中此复选框后会显示其他控件。 如果希望此字段是模式的主要标识，请选中&#x200B;**[!UICONTROL Primary identity]**&#x200B;复选框。
+选中此复选框后，将显示其他控件。 如果希望此字段作为架构的主标识，请选择 **[!UICONTROL 主标识]** 复选框。
 
 >[!NOTE]
 >
->单个模式可能定义了多个标识字段，但只能有一个主标识。 所有标识字段（主要或其他）都会为单个客户的标识图贡献内容，但实时客户用户档案在合并数据碎片时仅使用主标识作为真相来源。 如果要启用模式以在用户档案中使用，则模式必须定义主标识。
+>单个架构可能定义了多个标识字段，但只能具有一个主标识。 所有身份字段（主标识或其他标识字段）都会为单个客户的身份图贡献内容，但实时客户配置文件在将数据片段合并到一起时，只使用主标识作为真实来源。 如果要启用架构以在配置文件中使用，则架构必须定义主标识。
 
-在&#x200B;**[!UICONTROL Identity namespace]**&#x200B;下，使用下拉菜单为标识字段选择适当的命名空间。 将列出Adobe提供的标准命名空间以及您的组织定义的任何自定义命名空间。
+在 **[!UICONTROL 身份命名空间]**，请使用下拉菜单为标识字段选择相应的命名空间。 将列出Adobe提供的标准命名空间，以及您的组织定义的任何自定义命名空间。
 
-完成后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用到模式。
+完成后，选择 **[!UICONTROL 应用]** 将更改应用到架构。
 
 ![](../../images/ui/fields/special/identity-config.png)
 
-画布更新以反映更改，所选字段获得指纹符号(![](../../images/ui/fields/special/identity-symbol.png))以将其指定为标识。 在左边栏中，标识字段现在列在为模式提供字段的类或模式字段组的名称下。
+画布会更新以反映所做更改，所选字段会获得指纹符号(![](../../images/ui/fields/special/identity-symbol.png))将其指定为标识。 在左边栏中，标识字段现在列在为架构提供字段的类或架构字段组的名称下。
 
-由于默认情况下所有标识字段都是必填字段，因此该字段现在列在左边栏的&#x200B;**[!UICONTROL Required fields]**&#x200B;下。 如果标识字段嵌套在模式结构中，则所有父字段也将按要求列出。
+由于所有标识字段都是默认必填字段，因此该字段现在列在 **[!UICONTROL 必填字段]** 中。 如果标识字段嵌套在架构结构中，则所有父字段也将按需要列出。
 
 ![](../../images/ui/fields/special/identity-applied.png)
 
-如果您为模式定义了主标识，您现在可以继续[启用模式以在实时客户用户档案](../resources/schemas.md#profile)中使用。
+如果您为架构定义了主标识，则现在可以继续 [启用架构以在实时客户资料中使用](../resources/schemas.md#profile).
 
 ## 后续步骤
 
-本指南介绍如何在UI中定义标识字段。 使用此模式摄取数据时，您的客户身份图将更新以反映模式的身份字段。 请参阅[标识图查看器](../../../identity-service/ui/identity-graph-viewer.md)中的指南，了解如何在UI中浏览组织的专用图。
+本指南介绍了如何在UI中定义身份字段。 使用此架构摄取数据时，您的客户身份图将进行更新，以反映架构的身份字段。 请参阅 [身份图查看器](../../../identity-service/ui/identity-graph-viewer.md) 了解如何在UI中浏览贵组织的专用图。
 
-有关在UI](./overview.md#special)中定义字段的概述，请参阅[，以了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
+请参阅 [在UI中定义字段](./overview.md#special) 了解如何在 [!DNL Schema Editor].

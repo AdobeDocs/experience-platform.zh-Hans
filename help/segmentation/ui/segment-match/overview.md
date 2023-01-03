@@ -5,14 +5,14 @@ title: 区段匹配概述
 topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 2329065b938d97f48a23be5250fec535355db770
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1998'
 ht-degree: 0%
 
 ---
 
-# [!DNL Segment Match]概述
+# [!DNL Segment Match] 概述
 
 Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。 [!DNL Segment Match] 使用平台隐私标准和个人标识符，如经过哈希处理的电子邮件、经过哈希处理的电话号码，以及设备标识符（如IDFA和GAID）。
 
@@ -37,7 +37,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 身份命名空间是 [Adobe Experience Platform Identity Service](../../../identity-service/home.md). 每个客户身份都包含一个指示身份上下文的关联命名空间。 例如，命名空间可以区分“name”的值<span>@email.com”作为电子邮件地址，或“443522”作为数字CRM ID。
 
-完全限定的标识包括ID值和命名空间。 在配置文件片段之间匹配记录数据时(例如， [!DNL Real-time Customer Profile] 合并配置文件数据)，标识值和命名空间必须匹配。
+完全限定的标识包括ID值和命名空间。 在配置文件片段之间匹配记录数据时(例如， [!DNL Real-Time Customer Profile] 合并配置文件数据)，标识值和命名空间必须匹配。
 
 在 [!DNL Segment Match]，则共享数据时会在重叠过程中使用命名空间。
 
@@ -204,4 +204,4 @@ A **馈送** 是一组数据（区段）、用于显示或使用该数据的规�
 
 * [[!DNL Segmentation Service]](../../home.md)
 * [[!DNL Identity Service]](../../../identity-service/home.md)
-* [[!DNL Real-time Customer Profile]概述](../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../profile/home.md)

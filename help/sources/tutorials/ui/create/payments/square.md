@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；正方形；正方形
 title: 在UI中创建正方形源连接
 description: 了解如何使用Adobe Experience Platform UI创建正方形源连接。
-source-git-commit: e905b11040c8de33aa757bd5743605bb36a8009b
+exl-id: 7cdfeb36-c989-4875-bb94-e6594ddf30da
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '455'
 ht-degree: 1%
@@ -20,7 +21,7 @@ ht-degree: 1%
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ### 收集所需的凭据
 

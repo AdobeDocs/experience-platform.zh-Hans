@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；用户界面；UI；自定义；配置文件详细信息；详细信息
 title: UI中的配置文件详细信息自定义
-description: 本指南提供了关于自定义在Adobe Experience Platform UI中显示实时客户资料数据的方式的分步说明。
+description: 本指南提供了关于自定义在Adobe Experience Platform UI中显示实时客户配置文件数据的方式的分步说明。
 topic-legacy: guide
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1350'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile] 详细自定义 {#profile-detail-customization}
+# [!DNL Real-Time Customer Profile] 详细自定义 {#profile-detail-customization}
 
-在Adobe Experience Platform用户界面中，您可以查看和交互 [!DNL Real-time Customer Profile] 以客户用户档案形式提供的数据。 UI中显示的配置文件信息已从多个配置文件片段合并到一起，以形成每个客户的单个视图。 这包括基本属性、链接的身份和渠道首选项等详细信息。 用户档案中显示的默认字段也可以在组织级别更改以显示首选字段 [!DNL Profile] 属性。 本指南提供了自定义 [!DNL Profile] 数据显示在平台UI中。
+在Adobe Experience Platform用户界面中，您可以查看和交互 [!DNL Real-Time Customer Profile] 以客户用户档案形式提供的数据。 UI中显示的配置文件信息已从多个配置文件片段合并到一起，以形成每个客户的单个视图。 这包括基本属性、链接的身份和渠道首选项等详细信息。 用户档案中显示的默认字段也可以在组织级别更改以显示首选字段 [!DNL Profile] 属性。 本指南提供了自定义 [!DNL Profile] 数据显示在平台UI中。
 
 有关用户档案UI的完整指南，请访问 [配置文件UI指南](user-guide.md).
 

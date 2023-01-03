@@ -3,7 +3,7 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 编辑架构以创建自定义功能板小组件
 description: 本指南提供了有关选择属性和配置贵组织架构以便为Adobe Experience Platform功能板创建自定义小组件的分步说明。
 exl-id: a744eb24-5ba7-4971-9183-3f891e807863
-source-git-commit: 9b89effa6f90fb513fac9d0b826722ab05020036
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 0%

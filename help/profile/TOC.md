@@ -1,17 +1,17 @@
 ---
 audience: user
-user-guide-title: Real-time Customer Profile 指南
+user-guide-title: 实时客户资料指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: Profiles
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '135'
-ht-degree: 22%
+ht-degree: 20%
 
 ---
 
 
-# [!DNL Real-time Customer Profile] {#profile}
+# [!DNL Real-Time Customer Profile] {#profile}
 
 * [[!DNL Profile] 概述](home.md)
 * [配置文件概述（视频）](video/profile-overview.md)

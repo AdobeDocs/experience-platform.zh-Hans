@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2131'
 ht-degree: 7%
@@ -140,7 +140,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
-## 实时客户个人资料 {#profile}
+## 实时客户资料 {#profile}
 
 Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 利用用户档案，可将客户数据整合到统一视图中，为每次客户互动提供一个加盖时间戳的可操作帐户。
 
@@ -151,7 +151,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 {style=&quot;table-layout:auto&quot;}
 
-要了解有关实时客户资料的更多信息，包括有关使用资料数据的教程和最佳实践，请首先阅读 [实时客户资料概述](../../profile/home.md).
+要了解有关实时客户用户档案的更多信息，包括有关使用用户档案数据的教程和最佳实践，请首先阅读 [实时客户资料概述](../../profile/home.md).
 
 ## 分段服务 {#segmentation}
 

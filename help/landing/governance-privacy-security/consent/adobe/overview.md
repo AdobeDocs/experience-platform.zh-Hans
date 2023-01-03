@@ -5,7 +5,7 @@ title: 在Adobe Experience Platform中处理同意
 topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中使用Adobe2.0标准处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1567'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 * [实时客户资料](../../../../profile/home.md):使用 [!DNL Identity Service] 功能从数据集实时创建详细的客户用户档案。 实时客户资料从数据湖中提取数据，并将客户资料保留在其单独的数据存储中。
 * [Adobe Experience Platform Web SDK](../../../../edge/home.md):客户端JavaScript库，允许您将各种平台服务集成到面向客户的网站中。
    * [SDK同意命令](../../../../edge/consent/supporting-consent.md):本指南中显示的与同意相关的SDK命令的用例概述。
-* [Adobe Experience Platform Segmentation Service](../../../../segmentation/home.md):允许您将实时客户资料数据划分为一组具有相似特征并将对营销策略做出类似响应的个人。
+* [Adobe Experience Platform Segmentation Service](../../../../segmentation/home.md):允许您将实时客户资料数据划分为一组具有相似特征且对营销策略具有相似响应的个人。
 
 ## 同意处理流程摘要 {#summary}
 

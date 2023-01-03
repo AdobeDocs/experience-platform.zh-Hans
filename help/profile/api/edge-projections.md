@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform让您能够在多个渠道中实时为客户提供协调、一致的个性化体验，方法是随时提供正确的数据，并在发生更改时不断更新这些数据。 这是通过使用边缘来完成的，边缘是一个地理上放置的服务器，用于存储数据并使应用程序能够轻松访问数据。
 exl-id: ce429164-8e87-412d-9a9d-e0d4738c7815
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1959'
 ht-degree: 2%
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致和个性化的体验，需要随时提供适当的数据，并在发生更改时不断更新。 Adobe Experience Platform允许通过使用称为边缘的内容来实时访问数据。 边缘是位于地理位置的服务器，用于存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，其中，投影目标定义要向其发送数据的边缘，以及投影配置定义将在边缘上提供的特定信息。 本指南提供了有关使用 [!DNL Real-time Customer Profile] 用于处理边缘投影的API，包括目标和配置。
+为了跨多个渠道为客户实时提供协调、一致和个性化的体验，需要随时提供适当的数据，并在发生更改时不断更新。 Adobe Experience Platform允许通过使用称为边缘的内容来实时访问数据。 边缘是位于地理位置的服务器，用于存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，其中，投影目标定义要向其发送数据的边缘，以及投影配置定义将在边缘上提供的特定信息。 本指南提供了有关使用 [!DNL Real-Time Customer Profile] 用于处理边缘投影的API，包括目标和配置。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 >[!NOTE]
 >

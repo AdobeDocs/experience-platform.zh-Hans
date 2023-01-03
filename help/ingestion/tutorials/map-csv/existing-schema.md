@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到现有XDM架构。
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
-source-git-commit: 160a75a1811afa002717e167887550715eee5471
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '945'
 ht-degree: 1%
@@ -121,4 +121,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到 [!DNL Platform]. 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile]. 请参阅 [[!DNL Real-time Customer Profile]](../../../profile/home.md) 以了解更多信息。
+通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到 [!DNL Platform]. 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile]. 请参阅 [[!DNL Real-Time Customer Profile]](../../../profile/home.md) 以了解更多信息。

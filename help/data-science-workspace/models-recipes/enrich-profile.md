@@ -6,25 +6,25 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本文档提供了有关如何利用机器学习分析扩充实时客户资料的指南。
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: 89a9b64f2fb238c08a281f29a035ce0b24b34804
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 0%
 
 ---
 
-# 丰富 [!DNL Real-time Customer Profile] 使用机器学习分析
+# 丰富 [!DNL Real-Time Customer Profile] 使用机器学习分析
 
 Adobe Experience Platform [!DNL Data Science Workspace] 提供用于创建、评估和利用机器学习模型生成数据预测和分析的工具和资源。 将机器学习分析引入 [!DNL Profile]启用的数据集，该数据也被摄取为 [!DNL Profile] 随后可使用 [!DNL Adobe Experience Platform Segmentation Service].
 
-本文档提供了教程的链接，这些教程使您能够丰富 [!DNL Real-time Customer Profile] 学习机器知识。
+本文档提供了教程的链接，这些教程使您能够丰富 [!DNL Real-Time Customer Profile] 学习机器知识。
 
 ## 快速入门
 
 要完成以下教程，您需要对摄取有一定的了解 [!DNL Profile] 数据和创建区段。 在开始本教程之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，为每个客户提供完整、统一的表示形式。
-- [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-time Customer Profile] 通过将来自不同数据源的身份桥接到平台中。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，为每个客户提供完整、统一的表示形式。
+- [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-Time Customer Profile] 通过将来自不同数据源的身份桥接到平台中。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。
 
 除了上述文档之外，还强烈建议您查看以下架构和架构编辑器指南：
@@ -34,7 +34,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 提供用于创建、评
 
 ## 创建和配置输出架构和数据集 {#create-an-output-schema-and-dataset}
 
-迈向富裕的第一步 [!DNL Real-time Customer Profile] 借助评分分析，您可以了解数据定义的真实对象（如人员）。 了解数据后，您可以描述和设计一个结构以添加含义，就像设计关系数据库一样。
+迈向富裕的第一步 [!DNL Real-Time Customer Profile] 借助评分分析，您可以了解数据定义的真实对象（如人员）。 了解数据后，您可以描述和设计一个结构以添加含义，就像设计关系数据库一样。
 
 从分配类开始合成架构。 类定义架构将包含的数据的行为方面（记录或时间系列）。 要开始创建您自己的模式，请按照 [使用模式编辑器创建模式](../../xdm/tutorials/create-schema-ui.md). 请注意，在为 [!DNL Profile]，您需要将数据集的架构配置为具有主标识字段，然后为 [!DNL Profile]. 将数据摄取到 [!DNL Profile]启用的数据集，该数据也被摄取为 [!DNL Profile] 记录。
 
@@ -58,4 +58,4 @@ Adobe Experience Platform [!DNL Data Science Workspace] 提供用于创建、评
 
 了解有关区段和 [!DNL Segment Builder]，阅读 [Segmentation Service概述](../../segmentation/home.md).
 
-详细了解 [!DNL Real-time Customer Profile]，阅读 [实时客户资料概述](../../profile/home.md)
+详细了解 [!DNL Real-Time Customer Profile]，阅读 [实时客户资料概述](../../profile/home.md)

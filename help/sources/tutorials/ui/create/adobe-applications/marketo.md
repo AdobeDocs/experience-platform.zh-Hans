@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 72fb25a262d2ab76085f12e3ad0c6a8decba50ac
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1473'
 ht-degree: 0%
@@ -30,7 +30,7 @@ ht-degree: 0%
 * [体验数据模型(XDM)](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md):了解如何在UI中创建和编辑模式。
 * [身份命名空间](../../../../../identity-service/namespaces.md):身份命名空间是 [!DNL Identity Service] 作为身份相关背景的指标。 完全限定的标识包括ID值和命名空间。
-* [[!DNL Real-time Customer Profile]](/help/profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](/help/profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
 ### 收集所需的凭据
@@ -171,7 +171,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了要引入的数据流 [!DNL Marketo] 数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已成功创建了要引入的数据流 [!DNL Marketo] 数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](/help/profile/home.md)
-* [[!DNL Data Science Workspace]概述](/help/data-science-workspace/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](/help/profile/home.md)
+* [[!DNL Data Science Workspace] 概述](/help/data-science-workspace/home.md)

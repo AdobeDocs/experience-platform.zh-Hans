@@ -5,7 +5,7 @@ title: XDM系统概述
 topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 由Adobe驱动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2087'
 ht-degree: 2%
@@ -114,11 +114,11 @@ Adobe Experience Platform查询服务允许您使用标准SQL查询Experience Pl
 
 请参阅 [查询服务概述](../query-service/home.md) 以了解有关该服务的详细信息。
 
-### 实时客户个人资料
+### 实时客户资料
 
-Real-time Customer Profile提供了集中式消费者用户档案，以进行有针对性的个性化体验管理。 每个用户档案都包含在所有系统中汇总的数据，以及涉及您与Experience Platform一起使用的任何系统中发生的个人事件的带有时间戳的可操作帐户。
+Real-Time Customer Profile提供了集中式消费者用户档案，以进行有针对性的个性化体验管理。 每个用户档案都包含在所有系统中汇总的数据，以及涉及您与Experience Platform一起使用的任何系统中发生的个人事件的带有时间戳的可操作帐户。
 
-实时客户配置文件会根据 [!UICONTROL XDM个人配置文件] 和 [!UICONTROL XDM ExperienceEvent] 类，并基于该数据响应查询。 配置文件不支持基于其他类使用架构。
+实时客户配置文件使用基于 [!UICONTROL XDM个人配置文件] 和 [!UICONTROL XDM ExperienceEvent] 类，并基于该数据响应查询。 配置文件不支持基于其他类使用架构。
 
 系统维护每个客户用户档案的一个实例，将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集模式”（有时称为“并集视图”）来表示。 并集架构将实现相同类的所有架构的字段聚合到单个架构中。  使用UI或API合成架构时，您可以启用该架构以与实时客户资料一起使用，并将其标记以包含在合并中。 然后，标记的架构将参与馈送到用户档案的架构定义。
 

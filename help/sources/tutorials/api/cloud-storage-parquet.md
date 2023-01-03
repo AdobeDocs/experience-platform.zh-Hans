@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程使用流服务API来指导您完成从第三方云存储系统中摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 2%
@@ -428,7 +428,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程中，您创建了一个源连接器，用于按计划从第三方云存储系统中收集Parquet数据。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程中，您创建了一个源连接器，用于按计划从第三方云存储系统中收集Parquet数据。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 - [实时客户资料概述](../../../profile/home.md)
 - [数据科学工作区概述](../../../data-science-workspace/home.md)

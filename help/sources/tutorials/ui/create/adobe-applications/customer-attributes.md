@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建源连接，以将客户属性配置文件数据引入Adobe Experience Platform。
 exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
-source-git-commit: b1b820c93ff1731b797f2b5e3ace7d2d6995b98b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 4%
@@ -76,7 +76,7 @@ ht-degree: 4%
 
 ## 后续步骤
 
-创建连接后，将自动创建目标架构和数据集，以包含传入数据。完成初始摄取后，下游Platform服务(例如 [!DNL Real-time Customer Profile] 和 [!DNL Segmentation Service]. 有关更多详细信息，请参阅以下文档：
+创建连接后，将自动创建目标架构和数据集，以包含传入数据。完成初始摄取后，下游Platform服务(例如 [!DNL Real-Time Customer Profile] 和 [!DNL Segmentation Service]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](../../../../../profile/home.md)
-* [[!DNL Segmentation Service]概述](../../../../../segmentation/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储基础连接器配置新数据流的步骤。
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
-source-git-commit: 38f64f2ba0b40a20528aac6efff0e2fd6bc12ed2
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1055'
 ht-degree: 0%
@@ -32,7 +32,7 @@ ht-degree: 0%
 - [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    - [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ## 添加数据
 
@@ -136,7 +136,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-在本教程中，您已成功创建了数据流以从云存储源流化数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程中，您已成功创建了数据流以从云存储源流化数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-- [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
+- [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 - [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

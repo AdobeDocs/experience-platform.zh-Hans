@@ -4,7 +4,7 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务来探索和处理在Experience Platform中为配置文件、区段和目标功能板提供动力的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 4826731682bcaf5a43c7ce047220c1805d97243a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '970'
 ht-degree: 0%

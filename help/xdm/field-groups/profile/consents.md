@@ -4,7 +4,7 @@ title: 同意和首选项架构字段组
 topic-legacy: overview
 description: 本文档概述了同意和首选项架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -182,7 +182,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果您要将同意数据发送到 [!DNL Real-time Customer Profile]，则需要您创建 [!DNL Profile]启用的架构基于 [!DNL XDM Individual Profile] 包含类 [!UICONTROL 同意和首选项] 字段组。 您基于该架构创建的数据集还必须在 [!DNL Profile]. 有关与 [!DNL Real-time Customer Profile] 架构和数据集的要求。
+>如果您要将同意数据发送到 [!DNL Real-Time Customer Profile]，则需要您创建 [!DNL Profile]启用的架构基于 [!DNL XDM Individual Profile] 包含类 [!UICONTROL 同意和首选项] 字段组。 您基于该架构创建的数据集还必须在 [!DNL Profile]. 有关与 [!DNL Real-Time Customer Profile] 架构和数据集的要求。
 >
 >此外，您还必须确保将合并策略配置为对包含最新同意和首选项数据的数据集优先级，以便正确更新客户配置文件。 请参阅 [合并策略](../../../rtcdp/profile/merge-policies.md) 以了解更多信息。
 

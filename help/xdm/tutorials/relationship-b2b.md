@@ -2,7 +2,7 @@
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1403'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 源架构“[!DNL Opportunities]“ ”基于 [!UICONTROL XDM业务机会] 类。 类提供的一个字段， `opportunityKey`，用作架构的标识符。 具体而言， `sourceKey` 字段 `opportunityKey` 对象在名为的自定义命名空间下设置为架构的主标识 [!DNL B2B Opportunity].
 
-如 **[!UICONTROL 架构属性]**，此架构已启用，可在中使用 [!DNL Real-time Customer Profile].
+如 **[!UICONTROL 架构属性]**，此架构已启用，可在中使用 [!DNL Real-Time Customer Profile].
 
 ![机会模式](../images/tutorials/relationship-b2b/opportunities.png)
 

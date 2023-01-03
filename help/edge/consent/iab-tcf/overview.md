@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK中的IAB TCF 2.0支持
 description: 了解如何使用Adobe Experience Platform Web SDK支持IAB TCF 2.0同意首选项
 keywords: 同意；设置同意；配置文件隐私字段组；体验事件隐私字段组；隐私字段组；IAB TCF 2.0;Real-Time CDP;
 exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '861'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Adobe Experience Platform Web SDK支持交互式广告局透明度与同意框�
 
 要使用SDK将同意数据发送到Adobe Experience Platform，需要满足以下条件：
 
-- 其架构基于 [!DNL XDM Individual Profile] 类和包含TCF 2.0同意字段，在中启用 [!DNL Real-time Customer Profile].
+- 其架构基于 [!DNL XDM Individual Profile] 类和包含TCF 2.0同意字段，在中启用 [!DNL Real-Time Customer Profile].
 - 使用Platform和上述启用了用户档案的数据集设置的数据流。
 
 请参阅 [符合TCF 2.0](../../../landing/governance-privacy-security/consent/iab/overview.md) 有关创建所需数据集和数据流的说明。

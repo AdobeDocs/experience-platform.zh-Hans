@@ -6,14 +6,14 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1929'
 ht-degree: 5%
 
 ---
 
-# 的默认护栏 [!DNL Real-time Customer Profile] 数据
+# 的默认护栏 [!DNL Real-Time Customer Profile] 数据
 
 Adobe Experience Platform使您能够以实时客户配置文件的形式根据行为分析和客户属性提供个性化的跨渠道体验。 为了支持这种新的用户档案方法，Experience Platform使用了与传统关系数据模型不同的高度异常化混合数据模型。
 
@@ -27,7 +27,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 以下Experience Platform服务涉及对实时客户资料数据进行建模：
 
-* [[!DNL Real-time Customer Profile]](home.md):使用来自多个来源的数据创建统一的消费者用户档案。
+* [[!DNL Real-Time Customer Profile]](home.md):使用来自多个来源的数据创建统一的消费者用户档案。
 * [标识](../identity-service/home.md):在将不同数据源摄取到平台时，将它们的身份桥接起来。
 * [模式](../xdm/home.md):体验数据模型(XDM)架构是一个标准化的框架，Platform通过该框架组织客户体验数据。
 * [区段](../segmentation/home.md):Platform中的分段引擎用于根据客户行为和属性根据客户配置文件创建区段。
@@ -46,7 +46,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 ## 数据模型限制
 
-以下护栏在对实时客户资料数据进行建模时提供了建议的限制。 要了解有关主要实体和维度实体的更多信息，请参阅 [实体类型](#entity-types) 中。
+以下护栏在建模实时客户资料数据时提供了建议的限制。 要了解有关主要实体和维度实体的更多信息，请参阅 [实体类型](#entity-types) 中。
 
 ### 主实体护栏
 
@@ -124,9 +124,9 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 的 [!DNL Profile] 存储数据模型由两种核心实体类型组成：
 
-* **主要实体：** 主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
+* **主要实体：** 主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-Time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
 
-   与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
+   与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-Time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
 
    ![概述记录数据与时间序列数据之间差异的信息图。](images/guardrails/profile-entity.png)
 

@@ -5,7 +5,7 @@ title: 区段作业API端点
 topic-legacy: developer guide
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理贵组织的区段作业。
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: cb28f52029ac63e4d2c7c210c6199adcd855cf5a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1511'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 区段作业端点
 
-区段作业是一种异步流程，可根据需要创建受众区段。 它引用了 [区段定义](./segment-definitions.md)，以及任何 [合并策略](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。
+区段作业是一种异步流程，可根据需要创建受众区段。 它引用了 [区段定义](./segment-definitions.md)，以及任何 [合并策略](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。
 
 本指南提供了一些信息，可帮助您更好地了解区段作业，并包含用于使用API执行基本操作的示例API调用。
 

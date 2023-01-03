@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -21,8 +21,8 @@ ht-degree: 0%
 
 本教程需要对 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查阅以下服务的文档：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md):允许您从 [!DNL Real-time Customer Profile] 数据。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md):允许您从 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
 - [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
@@ -86,9 +86,9 @@ ht-degree: 0%
 
 ### 创建区段作业
 
-区段作业是一种异步流程，可根据需要创建受众区段。 它引用区段定义，以及控制如何 [!DNL Real-time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。 每次要刷新当前符合区段定义条件的受众时，都需要运行区段作业。
+区段作业是一种异步流程，可根据需要创建受众区段。 它引用区段定义，以及控制如何 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。 每次要刷新当前符合区段定义条件的受众时，都需要运行区段作业。
 
-您可以通过向 `/segment/jobs` 的端点 [!DNL Real-time Customer Profile] API。
+您可以通过向 `/segment/jobs` 的端点 [!DNL Real-Time Customer Profile] API。
 
 有关使用此端点的更多详细信息，请参阅 [segment jobs endpoint wide](../api/segment-jobs.md#create)
 
@@ -140,7 +140,7 @@ ht-degree: 0%
 
 ## 查找用户档案
 
-如果您知道要访问的特定用户档案，可以使用 [!DNL Real-time Customer Profile] API。 有关访问各个用户档案的完整步骤，请参阅 [使用用户档案API访问实时客户档案数据](../../profile/api/entities.md) 教程。
+如果您知道要访问的特定用户档案，可以使用 [!DNL Real-Time Customer Profile] API。 有关访问各个用户档案的完整步骤，请参阅 [使用用户档案API访问实时客户档案数据](../../profile/api/entities.md) 教程。
 
 ## 导出区段 {#export}
 
@@ -210,7 +210,7 @@ curl -X POST \
 
 ### 为受众成员生成用户档案 {#generate-profiles}
 
-在您拥有一个并行保留的数据集后，可以创建一个导出作业，通过向 `/export/jobs` 的端点 [!DNL Real-time Customer Profile] API和提供要导出的区段的数据集ID和区段信息。
+在您拥有一个并行保留的数据集后，可以创建一个导出作业，通过向 `/export/jobs` 的端点 [!DNL Real-Time Customer Profile] API和提供要导出的区段的数据集ID和区段信息。
 
 有关使用此端点的更多详细信息，请参阅 [导出作业端点指南](../api/export-jobs.md#create)
 

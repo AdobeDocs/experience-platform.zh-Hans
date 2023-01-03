@@ -5,7 +5,7 @@ title: 区段生成器UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3101'
 ht-degree: 1%
@@ -254,7 +254,7 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-区段生成器提供了一个丰富的工作流程，允许您将可销售的受众与 [!DNL Real-time Customer Profile] 数据。 阅读本指南后，您现在应该能够：
+区段生成器提供了一个丰富的工作流程，允许您将可销售的受众与 [!DNL Real-Time Customer Profile] 数据。 阅读本指南后，您现在应该能够：
 
 - 使用属性、事件和现有受众的组合作为构建基块来创建区段定义。
 - 使用规则生成器画布和容器来控制区段规则执行的顺序。

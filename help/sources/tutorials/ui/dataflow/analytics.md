@@ -3,7 +3,8 @@ keywords: Experience Platform；主页；热门主题；Analytics;mixpanel
 solution: Experience Platform
 title: 在UI中使用Analytics源创建数据流
 description: 本教程提供了有关如何使用Platform UI为分析源创建数据流的步骤。
-source-git-commit: d23f3791b040a856c0e3c048be31ac36a60e0cf1
+exl-id: 108a69e5-d7d9-4ca1-a364-38ea54aa74ff
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1277'
 ht-degree: 0%
@@ -26,7 +27,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Data Prep]](../../../../data-prep/home.md):允许数据工程师映射、转换和验证来自体验数据模型(XDM)的数据。
 
 <!-- ## Add data
@@ -140,10 +141,10 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了一个数据流，以将数据从Analytics源引入Platform。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已成功创建了一个数据流，以将数据从Analytics源引入Platform。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](../../../../profile/home.md)
-* [[!DNL Data Science Workspace]概述](../../../../data-science-workspace/home.md)
+* [[!DNL Real-Time Customer Profile] 概述](../../../../profile/home.md)
+* [[!DNL Data Science Workspace] 概述](../../../../data-science-workspace/home.md)
 
 
 >[!WARNING]

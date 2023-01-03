@@ -3,10 +3,11 @@ keywords: Experience Platform；主页；热门主题；CJA;journey analytics；
 title: Adobe Experience Platform端到端示例工作流
 topic-legacy: getting started
 description: 了解Adobe Experience Platform的基本端到端工作流程（高级）。
-source-git-commit: 9ed521c4e2ebcd20da662e93b9591ef690f51c5e
+exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1836'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -26,7 +27,7 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 - [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，全面了解客户及其行为。
 - [源](../sources/home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
 - [[!DNL Segmentation Service]](../segmentation/home.md): [!DNL Segmentation Service] 允许您将存储在 [!DNL Experience Platform] 与属于较小群组的个人（例如客户、潜在客户、用户或组织）相关。
-- [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Real-Time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 - [数据集](../catalog/datasets/overview.md):中数据持久性的存储和管理结构 [!DNL Experience Platform].
 - [目标](../destinations/home.md):目标是与常用应用程序的预建集成，允许从平台无缝激活数据以用于跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例。
 
@@ -36,15 +37,15 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 上述教程将演示如何为架构设置标识字段。 标识字段表示一个字段，可用于标识与记录或时间系列事件相关的个人人员。 身份字段是在Platform中构建客户身份图形的关键组件，这最终会影响实时客户资料如何将不同的数据片段合并在一起，以获得客户的完整视图。 有关如何在Platform中查看身份图形的更多详细信息，请参阅 [如何使用身份图查看器](../identity-service/ui/identity-graph-viewer.md).
 
-您需要启用架构以在实时客户用户档案中使用，以便能够根据您的架构的数据构建客户用户档案。 请参阅 [为用户档案启用模式](../xdm/ui/resources/schemas.md#profile) 有关更多信息，请参阅架构UI指南。
+您需要启用架构以在实时客户用户档案中使用，以便能够根据您的架构根据数据构建客户用户档案。 请参阅 [为用户档案启用模式](../xdm/ui/resources/schemas.md#profile) 有关更多信息，请参阅架构UI指南。
 
 ## 将数据摄取到平台
 
 创建XDM架构后，您便可以开始将数据导入系统。
 
-引入Platform的所有数据都会在摄取时存储到单个数据集。 数据集是映射到特定XDM架构的数据记录集合。 在数据可供使用之前 [!DNL Real-time Customer Profile]，则必须专门配置相关数据集。 有关如何为配置文件启用数据集的完整说明，请参阅 [数据集UI指南](../catalog/datasets/user-guide.md#enable-profile) 和 [数据集配置API教程](../profile/tutorials/dataset-configuration.md). 配置数据集后，您可以开始向其中摄取数据。
+引入Platform的所有数据都会在摄取时存储到单个数据集。 数据集是映射到特定XDM架构的数据记录集合。 在数据可供使用之前 [!DNL Real-Time Customer Profile]，则必须专门配置相关数据集。 有关如何为配置文件启用数据集的完整说明，请参阅 [数据集UI指南](../catalog/datasets/user-guide.md#enable-profile) 和 [数据集配置API教程](../profile/tutorials/dataset-configuration.md). 配置数据集后，您可以开始向其中摄取数据。
 
-Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。 例如，您可以使用 [Amazon S3](../sources/tutorials/api/create/cloud-storage/s3.md). 可在 [源连接器概述](../sources/home.md).
+Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。例如，您可以使用 [Amazon S3](../sources/tutorials/api/create/cloud-storage/s3.md). 可在 [源连接器概述](../sources/home.md).
 
 如果您使用Amazon S3作为源连接器，则可以按照 [创建Amazon S3连接器](../sources/tutorials/api/create/cloud-storage/s3.md) 或上的UI教程 [创建Amazon S3连接器](../sources/tutorials/ui/create/cloud-storage/s3.md) 了解如何在连接器中创建、连接和摄取数据。
 
@@ -52,7 +53,7 @@ Platform允许从外部源摄取数据，同时让您能够使用Platform服务�
 
 在通过源连接器将数据引入Platform并存储到启用了配置文件的数据集中后，系统会根据您在XDM架构中配置的身份数据自动创建客户配置文件。
 
-首次将数据上传到新数据集时，或在设置新的ETL流程或数据源时，建议仔细检查数据，以确保数据已正确上传，并且生成的配置文件包含您预期的数据。 有关如何在Platform UI中访问客户用户档案的更多信息，请参阅 [实时客户资料UI指南](../profile/ui/user-guide.md). 有关如何使用实时客户用户档案API访问用户档案的详细信息，请参阅 [使用实体端点](../profile/api/entities.md).
+首次将数据上传到新数据集时，或在设置新的ETL流程或数据源时，建议仔细检查数据，以确保数据已正确上传，并且生成的配置文件包含您预期的数据。 有关如何在Platform UI中访问客户用户档案的更多信息，请参阅 [Real-Time Customer Profile UI指南](../profile/ui/user-guide.md). 有关如何使用实时客户用户档案API访问用户档案的详细信息，请参阅 [使用实体端点](../profile/api/entities.md).
 
 ## 评估数据
 
@@ -92,9 +93,9 @@ Platform允许从外部源摄取数据，同时让您能够使用Platform服务�
 
 ## 监控平台数据活动
 
-Platform允许您通过使用数据流跟踪数据的处理方式，数据流是跨Platform各个组件移动数据的作业的表示形式。 这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后数据集会被利用 [!DNL Identity Service] 和 [!DNL Real-time Customer Profile] 最终激活到目标之前。 监控仪表板可直观地呈现数据流的历程。 要了解如何在Platform UI中监视数据流，请参阅 [监控源的数据流](../dataflows/ui/monitor-sources.md) 和 [监控目标数据流](../dataflows/ui/monitor-destinations.md).
+Platform允许您通过使用数据流跟踪数据的处理方式，数据流是跨Platform各个组件移动数据的作业的表示形式。 这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活到目标之前。 监控仪表板可直观地呈现数据流的历程。 要了解如何在Platform UI中监视数据流，请参阅 [监控源的数据流](../dataflows/ui/monitor-sources.md) 和 [监控目标数据流](../dataflows/ui/monitor-destinations.md).
 
-您还可以通过使用 [!DNL Observability Insights]. 您可以通过Platform UI订阅警报通知，或将其发送到配置的WebHook。 有关如何从Experience PlatformUI查看、启用、禁用和订阅可用警报的更多详细信息，请参阅 [[!UICONTROL 警报] UI指南](../observability/alerts/ui.md). 有关如何通过Web挂接接收警报的详细信息，请参阅 [订阅Adobe I/O事件通知](../observability/alerts/subscribe.md).
+您还可以通过使用 [!DNL Observability Insights]. 您可以通过Platform UI订阅警报通知，或将通知发送到配置的WebHook。 有关如何从Experience PlatformUI查看、启用、禁用和订阅可用警报的更多详细信息，请参阅 [[!UICONTROL 警报] UI指南](../observability/alerts/ui.md). 有关如何通过Web挂接接收警报的详细信息，请参阅 [订阅Adobe I/O事件通知](../observability/alerts/subscribe.md).
 
 ## 后续步骤
 

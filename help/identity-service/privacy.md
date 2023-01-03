@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理Identity Service的隐私请求相关的基本概念。
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1038'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中对身份数据存储进行隐私请求。 如果您还计划对Platform数据湖或 [!DNL Real-time Customer Profile]，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 和 [配置文件的隐私请求处理](../profile/privacy.md) 除了本教程之外，
+>本指南仅介绍如何在Experience Platform中对身份数据存储进行隐私请求。 如果您还计划对Platform数据湖或 [!DNL Real-Time Customer Profile]，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 和 [配置文件的隐私请求处理](../profile/privacy.md) 除了本教程之外，
 >
 >有关如何为其他Adobe Experience Cloud应用程序发出隐私请求的步骤，请参阅 [Privacy Service文档](../privacy-service/experience-cloud-apps.md).
 
@@ -28,7 +28,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 * [[!DNL Privacy Service]](../privacy-service/home.md):管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
 * [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化所带来的根本难题。
-* [[!DNL Real-time Customer Profile]](home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ## 了解身份命名空间 {#namespaces}
 

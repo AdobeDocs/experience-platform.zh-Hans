@@ -5,7 +5,7 @@ title: 预览和估算API端点
 topic-legacy: developer guide
 description: 在开发区段定义时，您可以使用Adobe Experience Platform中的估计和预览工具来查看摘要级别的信息，以帮助确保隔离预期受众。
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 2%
@@ -250,4 +250,4 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户资料数据相关的量度，例如特定命名空间或整个资料数据存储中的资料片段和合并资料总数，请访问 [配置文件预览(`/previewsamplestatus`)endpoint指南](../../profile/api/preview-sample-status.md).
+阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户配置文件数据相关的量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件总数，请访问 [配置文件预览(`/previewsamplestatus`)endpoint指南](../../profile/api/preview-sample-status.md).

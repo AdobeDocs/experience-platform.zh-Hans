@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: fdc61c920ee9ae2c66344e781334844d38b44806
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '944'
-ht-degree: 13%
+ht-degree: 25%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 13%
 
 为了提高系统中所执行活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成了一个审核跟踪，可帮助解决平台上的问题，并帮助您的企业有效地遵守公司数据管理策略和法规要求。
 
-从基本意义上讲，审核日志会告知 **who** 执行 **什么** 操作和 **when**. 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与操作类型相关的其他属性。
+从基本意义上讲，审核日志将说明&#x200B;**谁**&#x200B;执行了&#x200B;**什么**&#x200B;操作，以及在&#x200B;**什么时候**&#x200B;执行的。日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。
 
 本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理这些日志。
 
@@ -34,34 +34,34 @@ ht-degree: 13%
 | 资源 | 操作 |
 | --- | --- |
 | [访问控制策略（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [帐户(Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [Attribution AI实例](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li></ul> |
+| [帐户(Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [Attribution AI实例](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
 | [审核日志](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>导出</li></ul> |
-| [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [Customer AI实例](../../../intelligent-services/customer-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li></ul> |
-| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
-| [数据流](../../../edge/datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../edge/datastreams/data-prep.md)</li></ul> |
-| [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
-| [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [Customer AI实例](../../../intelligent-services/customer-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
+| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
+| [数据流](../../../edge/datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../edge/datastreams/data-prep.md)</li></ul> |
+| [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
+| [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [身份图](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
 | [身份命名空间](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>创建</li><li>更新</li></ul> |
-| [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [查询](../../../query-service/ui/overview.md) | <ul><li>Execute</li></ul> |
-| [查询模板](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [角色（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>添加用户</li><li>删除用户</li></ul> |
-| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>删除</li></ul> |
-| [计划查询](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>为配置文件启用</li></ul> |
-| [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>删除</li><li>区段激活</li><li>区段删除</li></ul> |
-| [源数据流](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>用户档案激活</li><li>配置文件删除</li></ul> |
+| [查询模板](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [角色（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>添加用户</li><li>删除用户</li></ul> |
+| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>Delete</li></ul> |
+| [计划查询](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为配置文件启用</li></ul> |
+| [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>Delete</li><li>区段激活</li><li>区段删除</li></ul> |
+| [源数据流](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>用户档案激活</li><li>配置文件删除</li></ul> |
 | [工作顺序](../../../hygiene/home.md) | <ul><li>创建</li></ul> |
 
 ## 访问审核日志
 
-为贵组织启用该功能后，会在发生活动时自动收集审核日志。 您无需手动启用日志收集。
+为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。您无需手动启用日志收集。
 
 要查看和导出审核日志，您必须具有 **[!UICONTROL 查看用户活动日志]** 已授予的访问控制权限(位于 [!UICONTROL 数据管理] 类别)。 要了解如何管理平台功能的各个权限，请参阅 [访问控制文档](../../../access-control/home.md).
 
@@ -88,7 +88,7 @@ ht-degree: 13%
 
 ![筛选器](../../images/audit-logs/filters.png)
 
-以下过滤器可用于UI中的审核事件：
+在 UI 中有以下过滤器可用于审核事件：
 
 | 过滤器 | 描述 |
 | --- | --- |
@@ -114,7 +114,7 @@ ht-degree: 13%
 
 ## 在API中管理审核日志
 
-您可以在UI中执行的所有操作也可以使用API调用来完成。 请参阅 [API参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/) 以了解更多信息。
+您在 UI 中可以执行的所有操作也可以使用 API 调用来完成。有关详细信息，请参阅 [ API 参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/)。
 
 ## 管理Adobe Admin Console的审核日志
 

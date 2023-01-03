@@ -5,7 +5,7 @@ title: 开始使用Adobe Experience Platform API
 topic-legacy: api guide
 description: Adobe Experience Platform提供彼此紧密关联的API服务。 本指南包含有关可用服务、CRUD操作所需标头、错误消息、Postman集合和示例API调用的信息。
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 0%
@@ -130,7 +130,7 @@ curl -X GET \
 | [[!DNL Policy Service] API指南](.././data-governance/api/overview.md) <br> （数据管理） | 的 [!DNL Policy Service] API允许您创建和管理数据使用标签和策略，以确定可以对包含某些数据使用标签的数据执行哪些营销操作。 要将标签应用于数据集和字段，请参阅 [[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md) 指南 |
 | [[!DNL Privacy Service] API指南](.././privacy-service/api/getting-started.md) | 的 [!DNL Privacy Service] API允许开发人员创建和管理客户请求，以跨Experience Cloud应用程序访问或删除其个人数据，这符合法律隐私法规。 |
 | [[!DNL Query Service] API指南](.././query-service/api/getting-started.md) | 的 [!DNL Query Service] API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 |
-| [[!DNL Real-time Customer Profile] API指南](.././profile/api/overview.md) | 实时客户配置文件API允许开发人员探索和使用配置文件数据，包括查看配置文件、创建和更新合并策略、导出或采样配置文件数据，以及删除不再需要或错误添加的配置文件数据。 |
+| [[!DNL Real-Time Customer Profile] API指南](.././profile/api/overview.md) | 实时客户配置文件API允许开发人员探索和使用配置文件数据，包括查看配置文件、创建和更新合并策略、导出或采样配置文件数据，以及删除不再需要或错误添加的配置文件数据。 |
 | [沙盒API指南](.././sandboxes/api/getting-started.md) | 沙盒API允许开发人员以编程方式管理Adobe Experience Platform中的独立虚拟沙盒环境。 |
 | [[!DNL Schema Registry] API指南](.././xdm/api/overview.md) <br> (XDM) | 的 [!DNL Schema Registry] API允许开发人员以编程方式管理Adobe Experience Platform中的所有模式和相关的Experience Data Model(XDM)资源。 |
 | [[!DNL Segmentation Service] API指南](.././segmentation/api/overview.md) | 的 [!DNL Segmentation Service] API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 这包括构建区段并根据实时客户资料数据生成受众。 |

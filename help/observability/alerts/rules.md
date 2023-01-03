@@ -4,7 +4,7 @@ title: 标准警报规则
 description: 本文档涵盖由Experience Platform提供的预定义警报规则。
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 44e337778bbfe901687383418981dbae83b356a7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '922'
 ht-degree: 3%
@@ -52,7 +52,7 @@ When [在平台UI中查看警报规则](./ui.md)，则可以单独订阅每个�
 
 {style=&quot;table-layout:auto&quot;}
 
-## 实时客户个人资料
+## 实时客户资料
 
 以下警报规则专用于 [实时客户资料](../../profile/home.md):
 

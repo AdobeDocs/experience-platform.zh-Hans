@@ -5,7 +5,7 @@ title: 数据湖中的隐私请求处理
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1428'
 ht-degree: 1%

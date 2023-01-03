@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
-user-guide-description: 根据实时客户档案数据构建区段并生成受众。
+user-guide-description: 根据实时客户资料数据构建区段并生成受众。
 feature: Segments
-source-git-commit: 0b14416cc312479c08303bf5cf610c513eaa26cb
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '166'
-ht-degree: 26%
+ht-degree: 19%
 
 ---
 

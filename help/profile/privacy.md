@@ -5,18 +5,18 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1563'
 ht-degree: 0%
 
 ---
 
-# 中的隐私请求处理 [!DNL Real-time Customer Profile]
+# 中的隐私请求处理 [!DNL Real-Time Customer Profile]
 
 Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退出销售或删除其个人数据的请求(如《通用数据保护条例》(GDPR)等隐私法规中所述)，并 [!DNL California Consumer Privacy Act] (CCPA)。
 
-本文档介绍与处理 [!DNL Real-time Customer Profile] 在Adobe Experience Platform。
+本文档介绍与处理 [!DNL Real-Time Customer Profile] 在Adobe Experience Platform。
 
 >[!NOTE]
 >
@@ -30,7 +30,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 * [[!DNL Privacy Service]](../privacy-service/home.md):管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
 * [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化所带来的根本难题。
-* [[!DNL Real-time Customer Profile]](home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
 ## 了解身份命名空间 {#namespaces}
 
@@ -42,7 +42,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 ## 提交请求 {#submit}
 
-以下各节将简要介绍如何对 [!DNL Real-time Customer Profile] 使用 [!DNL Privacy Service] API或UI。 在阅读这些部分之前，强烈建议您查看 [Privacy ServiceAPI](../privacy-service/api/getting-started.md) 或 [Privacy ServiceUI](../privacy-service/ui/overview.md) 有关如何提交隐私作业的完整步骤文档，包括如何以请求负载正确设置已提交的用户身份数据的格式。
+以下各节将简要介绍如何对 [!DNL Real-Time Customer Profile] 使用 [!DNL Privacy Service] API或UI。 在阅读这些部分之前，强烈建议您查看 [Privacy ServiceAPI](../privacy-service/api/getting-started.md) 或 [Privacy ServiceUI](../privacy-service/ui/overview.md) 有关如何提交隐私作业的完整步骤文档，包括如何以请求负载正确设置已提交的用户身份数据的格式。
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理数据湖中存储的数据的作业或 [!DNL Real-time Customer Profile]，分别为。
+在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理数据湖中存储的数据的作业或 [!DNL Real-Time Customer Profile]，分别为。
 
 ![在UI中创建访问作业请求，并在产品下选择配置文件选项](./images/privacy/product-value.png)
 

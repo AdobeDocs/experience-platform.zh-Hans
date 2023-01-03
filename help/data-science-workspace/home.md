@@ -5,7 +5,7 @@ title: 数据科学工作区概述
 topic-legacy: overview
 description: 本指南概述与Adobe Experience Platform中的数据科学工作区相关的关键概念。
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: 4119242fef46d916e90e1dfb95f7e8fb9e8902f0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 数据是人工智能和机器学习的基石。
 
-[!DNL Data Science Workspace] 与Adobe Experience Platform，包括数据湖， [!DNL Real-time Customer Profile]和 [!DNL Unified Edge]. 同时浏览存储在Adobe Experience Platform中的所有组织数据，以及常见的大数据和深层学习库，例如 [!DNL Spark] ML和 [!DNL TensorFlow]. 如果找不到所需内容，请使用XDM标准化架构摄取您自己的数据集。
+[!DNL Data Science Workspace] 与Adobe Experience Platform，包括数据湖， [!DNL Real-Time Customer Profile]和 [!DNL Unified Edge]. 同时浏览存储在Adobe Experience Platform中的所有组织数据，以及常见的大数据和深层学习库，例如 [!DNL Spark] ML和 [!DNL TensorFlow]. 如果找不到所需内容，请使用XDM标准化架构摄取您自己的数据集。
 
 ### 预建的机器学习方法
 

@@ -4,7 +4,7 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: af01ac288a8afe59105be5859b2d40de5e346963
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3381'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # [!UICONTROL 用户档案] 仪表板
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关您的 [!DNL Real-time Customer Profile] 数据，在每日快照期间捕获。 本指南概述了如何在UI中访问和使用“配置文件”功能板，并提供了有关功能板中显示的量度的信息。
+Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关您的 [!DNL Real-Time Customer Profile] 数据，在每日快照期间捕获。 本指南概述了如何在UI中访问和使用“配置文件”功能板，并提供了有关功能板中显示的量度的信息。
 
-有关Experience Platform用户界面中所有配置文件功能的概述，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+有关Experience Platform用户界面中所有配置文件功能的概述，请参阅 [Real-Time Customer Profile UI指南](../../profile/ui/user-guide.md).
 
 ## 用户档案功能板数据
 
@@ -434,4 +434,4 @@ The three levels of completeness are:
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该能够找到用户档案仪表板并了解可用小组件中显示的量度。 了解有关使用的更多信息 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+通过阅读本文档，您现在应该能够找到用户档案仪表板并了解可用小组件中显示的量度。 了解有关使用的更多信息 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [Real-Time Customer Profile UI指南](../../profile/ui/user-guide.md).

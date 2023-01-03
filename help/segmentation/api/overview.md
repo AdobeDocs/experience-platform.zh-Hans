@@ -4,7 +4,7 @@ title: Segmentation Service API指南
 topic-legacy: guide
 description: Segmentation Service API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: 6133c3127aaf10243d5472540c29125155c99d7b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 # Segmentation Service API指南
 
-[!DNL Adobe Experience Platform Segmentation Service] 允许您在 [!DNL Adobe Experience Platform] 从 [!DNL Real-time Customer Profile] 数据。
+[!DNL Adobe Experience Platform Segmentation Service] 允许您在 [!DNL Adobe Experience Platform] 从 [!DNL Real-Time Customer Profile] 数据。
 
 的 [!DNL Segmentation Service] API提供了多个端点，允许您以编程方式在中管理分段操作 [!DNL Experience Platform]. 此概述文档提供了每个端点的高级简介，以及指向其关联端点指南的链接以了解详细信息。 在阅读各个端点指南之前，请参阅 [入门指南](./getting-started.md) 有关所需标头、读取示例API调用等的重要信息。
 

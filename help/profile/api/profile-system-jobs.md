@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 配置文件系统作业API端点
 topic-legacy: guide
 type: Documentation
-description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批量，以删除不再需要或错误添加的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
+description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以删除不再需要或错误添加的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1316'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 配置文件系统作业端点（删除请求）
 
-Adobe Experience Platform允许您从多个源摄取数据，并为各个客户构建可靠的配置文件。 摄取到 [!DNL Platform] 存储在 [!DNL Data Lake]，并且如果为用户档案启用了数据集，则该数据存储在 [!DNL Real-time Customer Profile] 数据存储。 有时可能需要从配置文件存储中删除数据集或批量处理，才能删除不再需要或错误添加的数据。 这需要使用 [!DNL Real-time Customer Profile] 用于创建 [!DNL Profile] 系统作业，或 `delete request`，也可以根据需要修改、监视或删除。
+Adobe Experience Platform允许您从多个源摄取数据，并为各个客户构建可靠的配置文件。 摄取到 [!DNL Platform] 存储在 [!DNL Data Lake]，并且如果为用户档案启用了数据集，则该数据存储在 [!DNL Real-Time Customer Profile] 数据存储。 有时可能需要从配置文件存储中删除数据集或批量处理，才能删除不再需要或错误添加的数据。 这需要使用 [!DNL Real-Time Customer Profile] 用于创建 [!DNL Profile] 系统作业，或 `delete request`，也可以根据需要修改、监视或删除。
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ Adobe Experience Platform允许您从多个源摄取数据，并为各个客户�
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ## 查看删除请求
 
@@ -39,10 +39,10 @@ GET /system/jobs?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例: `start=4` |
-| `limit` | 限制返回的结果数。 示例: `limit=10` |
-| `page` | 根据请求的创建时间返回特定的结果页面。 示例: `page=2` |
-| `sort` | 按特定字段对结果进行升序排序(`asc`)或降序(`desc`)顺序。 返回多个结果页面时，排序参数不起作用。 示例: `sort=batchId:asc` |
+| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例：`start=4` |
+| `limit` | 限制返回的结果数。 示例：`limit=10` |
+| `page` | 根据请求的创建时间返回特定的结果页面。 示例：`page=2` |
+| `sort` | 按特定字段对结果进行升序排序(`asc`)或降序(`desc`)顺序。 返回多个结果页面时，排序参数不起作用。 示例：`sort=batchId:asc` |
 
 **请求**
 

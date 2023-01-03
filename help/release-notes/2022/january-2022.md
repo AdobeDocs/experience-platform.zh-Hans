@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年1月
 description: 2022年1月版Adobe Experience Platform发行说明。
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1342'
 ht-degree: 3%

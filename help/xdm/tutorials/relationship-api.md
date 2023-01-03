@@ -5,7 +5,7 @@ description: 本文档提供了一个教程，用于定义由贵组织使用架�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
-而架构关系可以通过使用并集架构和 [!DNL Real-time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
+而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
 
 本文档提供了一个教程，用于定义由贵组织使用 [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 * [XDM系统在Experience Platform](../home.md):XDM及其在 [!DNL Experience Platform].
    * [架构组合的基础知识](../schema/composition.md):介绍XDM模式的构建基块。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 [!DNL Accept] 标题及其可能值)。
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-api.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
+>要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-Time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-api.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
 
 要定义两个架构之间的关系，您必须首先获取 `$id` 两个架构的值。 如果您知道显示名称(`title`)，您可以找到 `$id` 值 `/tenant/schemas` 的端点 [!DNL Schema Registry] API。
 

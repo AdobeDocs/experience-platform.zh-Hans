@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文
 title: 数据准备UI指南
 description: 本文档提供了有关如何在Platform UI中使用数据准备函数将CSV文件映射到XDM架构的说明。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1845'
 ht-degree: 1%
@@ -22,7 +22,7 @@ ht-degree: 1%
    * [架构组合的基础知识](../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 * [Identity Service](../../identity-service/home.md):通过跨设备和系统桥接身份，更好地了解各个客户及其行为。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [源](../../sources/home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 
 ## 数据流详细信息

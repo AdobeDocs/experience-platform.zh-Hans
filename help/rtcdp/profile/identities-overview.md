@@ -3,7 +3,7 @@ keywords: 身份rtcdp;rtcdp身份；实时cdp身份
 title: Real-time Customer Data Platform身份
 description: Adobe Experience Platform Identity Service通过跨设备和系统将身份桥接在一起，帮助您更好地了解客户及其行为。
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -28,4 +28,4 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统将身
 
 ## 后续步骤
 
-身份及其之间的关系由 [!DNL Identity Service] 利用 [!DNL Real-time Customer Profile] 以构建每个客户及其交互的完整图景。 要了解更多信息，请访问 [Identity Service文档](../../identity-service/home.md).
+身份及其之间的关系由 [!DNL Identity Service] 利用 [!DNL Real-Time Customer Profile] 以构建每个客户及其交互的完整图景。 要了解更多信息，请访问 [Identity Service文档](../../identity-service/home.md).

@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类编写架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2422'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    * [架构组合的基础知识](../schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意接受标头及其可能值）。
@@ -955,9 +955,9 @@ curl -X PATCH \
 
 ### 定义标识描述符
 
-架构用于将数据摄取到 [!DNL Experience Platform]. 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，可以访问图形数据 [[!DNL Real-time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 提供拼合的每个客户视图的服务。
+架构用于将数据摄取到 [!DNL Experience Platform]. 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，可以访问图形数据 [[!DNL Real-Time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 提供拼合的每个客户视图的服务。
 
-通常标记为“身份”的字段包括：电子邮件地址，电话号码， [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。
+通常标记为“身份”的字段包括：电子邮件地址，电话号码， [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。
 
 考虑特定于贵组织的任何唯一标识符，因为它们也可能是良好的标识字段。
 
@@ -1016,9 +1016,9 @@ curl -X POST \
 }
 ```
 
-## 启用在中使用的架构 [!DNL Real-time Customer Profile] {#profile}
+## 启用在中使用的架构 [!DNL Real-Time Customer Profile] {#profile}
 
-通过将“union”标记添加到 `meta:immutableTags` 属性时，您可以启用会员架构以供使用 [!DNL Real-time Customer Profile].
+通过将“union”标记添加到 `meta:immutableTags` 属性时，您可以启用会员架构以供使用 [!DNL Real-Time Customer Profile].
 
 有关使用并集视图的更多信息，请参阅 [工会](../api/unions.md) 在 [!DNL Schema Registry] 开发人员指南。
 

@@ -7,7 +7,7 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: da3e93f6c10c89c173fff786604ef844f56081be
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1851'
 ht-degree: 3%
@@ -218,5 +218,5 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] 常见问题解答和疑难解答指南](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] 和 [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |
-| [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] 疑难解答指南](../profile/troubleshooting.md) |
+| [!DNL Real-Time Customer Profile] | [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] 疑难解答指南](../profile/troubleshooting.md) |
 | 沙盒 | [沙盒API](https://www.adobe.io/experience-platform-apis/references/sandbox) | [沙箱疑难解答指南](../sandboxes/troubleshooting-guide.md) |

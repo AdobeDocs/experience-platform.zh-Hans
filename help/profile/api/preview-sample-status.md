@@ -3,7 +3,7 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 预览示例状态（配置文件预览）API端点
 description: 实时客户配置文件API的预览示例状态端点允许您预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成显示数据集重叠、身份重叠和未拼合配置文件的报表。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2874'
 ht-degree: 1%
@@ -22,7 +22,7 @@ Adobe Experience Platform允许您从多个来源摄取客户数据，以便为�
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 配置文件片段与合并的配置文件
 
@@ -36,7 +36,7 @@ Adobe Experience Platform允许您从多个来源摄取客户数据，以便为�
 
 ## 示例作业的触发方式
 
-由于实时客户资料启用的数据会被摄取到 [!DNL Platform]，则会存储在配置文件数据存储中。 当将记录摄取到用户档案存储区时，如果用户档案总计数增加或减少5%以上，则会触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
+由于实时客户资料的启用数据会被摄取到 [!DNL Platform]，则会存储在配置文件数据存储中。 当将记录摄取到用户档案存储区时，如果用户档案总计数增加或减少5%以上，则会触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
 
 * 对于 **流式数据工作流**，则会每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行此操作，则会自动触发示例作业以更新计数。
 * 对于 **批量摄取**，在成功将批处理摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则会运行一个作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。

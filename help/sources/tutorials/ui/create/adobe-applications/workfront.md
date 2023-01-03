@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；
 title: （测试版）在UI中创建Adobe Workfront源连接
 description: 本教程提供了创建Adobe Workfront源连接以使用用户界面将Workfront数据引入Adobe Experience Platform的步骤。
-source-git-commit: 1af0863766e29c599e02f2a553d237bc62f455d2
+exl-id: f82e852a-c9d1-4ecc-bc54-2b39d3b4cc1e
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '771'
 ht-degree: 0%

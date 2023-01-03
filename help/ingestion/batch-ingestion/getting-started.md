@@ -4,7 +4,7 @@ title: 数据摄取API快速入门
 type: Documentation
 description: 数据摄取API入门指南概述了在使用API将数据摄取到Experience Platform之前您需要了解的关键概念和基本功能。
 exl-id: 0653de2b-3268-478b-a23f-c458b6d3df7c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '367'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 使用API指南需要对处理数据涉及的多项Adobe Experience Platform服务有一定的了解。 在使用数据摄取API之前，请查阅以下服务的文档：
 
 * [批量摄取](./overview.md):允许您将数据作为批处理文件导入到Adobe Experience Platform中。
-* [[!DNL Real-time Customer Profile]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+* [[!DNL Real-Time Customer Profile]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 

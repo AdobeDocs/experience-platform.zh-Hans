@@ -3,7 +3,7 @@ keywords: 数据管理rtcdp;rtcdp数据管理；实时客户数据配置文件�
 title: Real-time Customer Data Platform中的隐私
 description: Adobe Real-time Customer Data Platform使您能够简化保持数据操作符合隐私法规的流程。
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## 选择退出功能
 
-[!DNL Real-Time CDP] 允许客户选择禁止在分段用例中包含其个人数据。 客户的选择退出首选项由 [!DNL Real-time Customer Profile]，并可以通过在区段谓词中使用布尔逻辑(“AND NOT”)排除已选择退出区段的用户来强制执行。
+[!DNL Real-Time CDP] 允许客户选择禁止在分段用例中包含其个人数据。 客户的选择退出首选项由 [!DNL Real-Time Customer Profile]，并可以通过在区段谓词中使用布尔逻辑(“AND NOT”)排除已选择退出区段的用户来强制执行。
 
 请参阅 [响应选择退出请求](../../segmentation/consents.md) (位于Adobe Experience Platform Segmentation Service文档中)以了解更多信息。
 

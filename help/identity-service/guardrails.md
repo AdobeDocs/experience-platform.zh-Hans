@@ -3,7 +3,7 @@ keywords: Experience Platform；身份；身份服务；故障诊断；护栏；
 title: Identity服务的防护
 description: 本文档提供了有关Identity Service数据的使用和费率限制的信息，以帮助您优化对身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 672d98135492350ab6e12eec51649e6e5a7e4923
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 以下Experience Platform服务与对身份数据进行建模有关：
 
 * [标识](home.md):在将不同数据源摄取到平台时，将它们的身份桥接起来。
-* [[!DNL Real-time Customer Profile]](../profile/home.md):使用来自多个来源的数据创建统一的消费者用户档案。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md):使用来自多个来源的数据创建统一的消费者用户档案。
 
 ## 数据模型限制
 
@@ -34,8 +34,8 @@ ht-degree: 2%
 | 图中的标识数 | 150 | 该限制在沙盒级别应用。 达到限制后，将不会更新标识图。 **注意**:标识图中的最大标识数 **（对于单个合并的用户档案）** 是50。 基于身份图且身份超过50个的合并配置文件将从实时客户配置文件中排除。 有关更多信息，请阅读 [配置文件数据的防护](../profile/guardrails.md). |
 | XDM记录中的身份数 | 20 | 所需的XDM记录最少为2个。 |
 | 自定义命名空间的数量 | None | 您可以创建的自定义命名空间数量没有限制。 |
-| 图数 | 无 | 您可以创建的身份图的数量没有限制。 |
-| 命名空间显示名称或身份符号的字符数 | 无 | 命名空间显示名称或身份符号的字符数没有限制。 |
+| 图数 | None | 您可以创建的身份图的数量没有限制。 |
+| 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
 
 ### 身份值验证
 

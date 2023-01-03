@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用流服务API，为原始和XDM数据使用HTTP API源创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 2b3f8b7b0a19214a95a2ad76c9fecd70ffd91743
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 2%
@@ -22,7 +22,7 @@ ht-degree: 2%
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md):标准化框架， [!DNL Platform] 组织体验数据。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
 
 此外，创建流连接需要您具有目标XDM架构和数据集。 要了解如何创建这些模板，请阅读 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md) 或 [流时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 

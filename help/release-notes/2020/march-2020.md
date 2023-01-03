@@ -6,7 +6,7 @@ last-update: March 10, 2020
 author: ens71067
 keywords: 发行说明;
 exl-id: 407c2bac-4c8a-4939-b3dd-788250f15650
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 6%
@@ -19,13 +19,13 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-* [数据管理](#governance)
+* [数据治理](#governance)
 * [[!DNL Data Ingestion]](#ingestion)
 * [[!DNL Destinations]](#destinations)
 * [[!DNL Identity Service]](#identity)
 * [[!DNL Sources]](#sources)
 
-## 数据管理 {#governance}
+## 数据治理 {#governance}
 
 [!DNL Experience Platform] 允许公司将多个企业系统中的数据整合在一起，以便营销人员能够更好地识别、了解和吸引客户。 [!DNL Experience Platform] 包括端到端数据管理基础架构，以确保在 [!DNL Platform] 和在系统之间共享时。
 
@@ -61,7 +61,7 @@ Adobe Experience Platform提供丰富的功能集，用于摄取任何类型的�
 
 **已知问题**
 
-* 无
+* None
 
 要了解有关将数据摄取到平台的更多信息，请访问 [数据摄取文档](../../ingestion/home.md).
 
@@ -95,7 +95,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 **已知问题**
 
-* 无
+* None
 
 有关 [!DNL Identity Service]，请参阅 [Identity Service概述](../../identity-service/home.md).
 
@@ -111,13 +111,13 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用 
 | ------- | ----------- |
 | Adobe Audience Manager连接器的已弃用信号 | 将不再发送来自Audience Manger的信号级数据。 请注意，特征和区段的区段成员资格仍将包含在内。 由于进行此更改，将不再生成集客数据集。 |
 | 重命名的数据集 | 由Audience Manger连接器生成的数据集将具有更新的名称和描述。 |
-| 启用 [!DNL Profile] 在Audience Manger中切换 | [!DNL Profile] 可以启用或禁用切换，以将数据集提升到 [!DNL Real-time Customer Profile]. 默认情况下，将启用切换。 |
+| 启用 [!DNL Profile] 在Audience Manger中切换 | [!DNL Profile] 可以启用或禁用切换，以将数据集提升到 [!DNL Real-Time Customer Profile]. 默认情况下，将启用切换。 |
 | 云存储系统的UI支持 | 新的源连接器 [!DNL Azure Data Lake Storage Gen2] 中。 |
 | CRM系统的UI支持 | 新的源连接器 [!DNL HubSpot], [!DNL Salesforce Service Cloud]和 [!DNL ServiceNow] 中。 |
 | 对数据库系统的用户界面支持 | 新的源连接器 [!DNL AWS Redshift], [!DNL Google BigQuery], [!DNL MariaDB], [!DNL Microsoft SQL Server]和 [!DNL MySQL] 中。 |
 
 **已知问题**
 
-* 无
+* None
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md).

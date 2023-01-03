@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您使用RESTful API或用户界面访问实时客户资料数据。 本指南概述了如何使用配置文件API访问实体（通常称为“配置文件”）。
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 1%
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # 实体端点（配置文件访问）
 
-Adobe Experience Platform允许您访问 [!DNL Real-time Customer Profile] 使用RESTful API或用户界面的数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用访问用户档案的更多信息 [!DNL Platform] UI，请参阅 [用户档案用户指南](../ui/user-guide.md).
+Adobe Experience Platform允许您访问 [!DNL Real-Time Customer Profile] 使用RESTful API或用户界面的数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用访问用户档案的更多信息 [!DNL Platform] UI，请参阅 [用户档案用户指南](../ui/user-guide.md).
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 按身份访问用户档案数据
 
@@ -888,7 +888,7 @@ curl -X GET \
 
 ## 后续步骤
 
-按照本指南，您已成功访问 [!DNL Real-time Customer Profile] 数据字段、用户档案和时间系列数据。 了解如何访问 [!DNL Platform]，请参阅 [数据访问概述](../../data-access/home.md).
+按照本指南，您已成功访问 [!DNL Real-Time Customer Profile] 数据字段、用户档案和时间系列数据。 了解如何访问 [!DNL Platform]，请参阅 [数据访问概述](../../data-access/home.md).
 
 ## 附录 {#appendix}
 

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方CRM系统检索数据，并使用源连接器和API将数据导入平台的步骤。
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 1%
@@ -680,7 +680,7 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程之后，您创建了一个源连接器，以按计划从CRM系统收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+在本教程之后，您创建了一个源连接器，以按计划从CRM系统收集数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 * [实时客户资料概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)

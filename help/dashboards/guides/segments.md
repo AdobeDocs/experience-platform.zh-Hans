@@ -4,7 +4,7 @@ title: 区段功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e5a4fddbd7f5b14280e283871d8b66a2e2f2407d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2105'
 ht-degree: 0%

@@ -5,7 +5,7 @@ title: 监控数据摄取
 topic-legacy: overview
 description: 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-source-git-commit: dce7faa7fc680e37b537bf623c3a33e6c6e37169
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 在 [Experience PlatformUI](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 在左侧导航菜单中，然后是 **[!UICONTROL 流式处理端到端]**.
 
-的 **[!UICONTROL 流式处理端到端]** 监视页面。 此工作区提供了一个图表，用于显示接收流式处理事件的速率 [!DNL Platform]，一个图表，用于显示已成功处理的流式处理事件的速率 [[!DNL Real-time Customer Profile]](../../profile/home.md)，以及传入数据的详细列表。
+的 **[!UICONTROL 流式处理端到端]** 监视页面。 此工作区提供了一个图表，用于显示接收流式处理事件的速率 [!DNL Platform]，一个图表，用于显示已成功处理的流式处理事件的速率 [[!DNL Real-Time Customer Profile]](../../profile/home.md)，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 

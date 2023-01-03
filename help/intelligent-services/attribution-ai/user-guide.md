@@ -5,7 +5,7 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2960'
 ht-degree: 1%

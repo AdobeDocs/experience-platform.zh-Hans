@@ -5,20 +5,20 @@ topic-legacy: guide
 type: Documentation
 description: 配置文件API快速入门指南概述了要使用实时客户配置文件API端点对配置文件数据执行基本CRUD操作所需了解的关键概念和基本功能。
 exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%
 
 ---
 
-# 入门 [!DNL Real-time Customer Profile] API {#getting-started}
+# 入门 [!DNL Real-Time Customer Profile] API {#getting-started}
 
 使用实时客户配置文件API端点，您可以对配置文件数据执行基本的CRUD操作，例如配置计算属性、访问实体、导出配置文件数据，以及删除不需要的数据集或批量。
 
-使用开发人员指南需要对与 [!DNL Profile] 数据。 开始使用之前 [!DNL Real-time Customer Profile] API，请查阅以下服务的文档：
+使用开发人员指南需要对与 [!DNL Profile] 数据。 开始使用之前 [!DNL Real-Time Customer Profile] API，请查阅以下服务的文档：
 
-* [[!DNL Real-time Customer Profile]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+* [[!DNL Real-Time Customer Profile]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 * [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md):通过跨设备和系统桥接身份，更好地了解客户及其行为。
 * [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md):允许您根据实时客户资料数据构建受众区段。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ## 读取示例API调用
 
-的 [!DNL Real-time Customer Profile] API文档提供了示例API调用，以演示如何正确设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+的 [!DNL Real-Time Customer Profile] API文档提供了示例API调用，以演示如何正确设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ## 必需标题
 
@@ -48,4 +48,4 @@ API文档还要求您完成 [身份验证教程](https://www.adobe.com/go/platfo
 
 ## 后续步骤
 
-要开始使用 [!DNL Real-time Customer Profile] API，请选择一个可用的端点指南。
+要开始使用 [!DNL Real-Time Customer Profile] API，请选择一个可用的端点指南。

@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；Adobe Campaign Managed Cloud Services；营销活动；营销活动托管服务
 title: Adobe Campaign Managed Cloud Services
 description: 了解如何使用用户界面将Campaign ManagedCloud Services连接到平台
-source-git-commit: 99f65889aecf8c045dbb72053ebaca9429c3ebe1
+exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -61,7 +62,7 @@ Adobe Campaign Managed Cloud Services提供了用于设计跨渠道客户体验�
 
 >[!NOTE]
 >
->您的XDM ExperienceEvent架构必须启用用户档案，才能将您的Campaign数据摄取到 [!DNL Real-time Customer Profile].
+>您的XDM ExperienceEvent架构必须启用用户档案，才能将您的Campaign数据摄取到 [!DNL Real-Time Customer Profile].
 
 有关如何创建模式的详细说明，请阅读 [在UI中创建XDM架构](../../../xdm/tutorials/create-schema-ui.md).
 

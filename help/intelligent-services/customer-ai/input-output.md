@@ -6,7 +6,7 @@ title: 客户人工智能中的输入与输出
 topic-legacy: Getting started
 description: 进一步了解Customer AI使用的必需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: e0e96a52e30f5c34e0695c3e291bed9b6c085e00
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '3195'
 ht-degree: 3%
@@ -44,7 +44,7 @@ Customer AI通过分析以下数据集之一来预测客户流失率或转化倾
 | [字段组](../../xdm/schema/composition.md) | 在架构中定义一个或多个字段的组件。 字段组强制执行其字段在架构层次结构中的显示方式，因此在每个架构中显示的结构都与其中包含的结构相同。 字段组仅与特定类兼容，这些类由其标识 `meta:intendedToExtend` 属性。 |
 | [数据类型](../../xdm/schema/composition.md) | 还可以为架构提供一个或多个字段的组件。 但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为一种更灵活的选项，用于描述在具有潜在不同类的多个架构中可重复使用的常用数据结构。 CEE架构和Adobe Analytics架构均支持本文档中概述的数据类型。 |
 | 流失率 | 取消或选择不续订其订阅的帐户百分比的度量。 较高的流失率可能会对每月经常性收入(MRR)产生负面影响，也可能表示对产品或服务的不满。 |
-| [实时客户资料](../../profile/home.md) | Real-time Customer Profile提供了集中式消费者用户档案，以进行有针对性的个性化体验管理。 每个用户档案都包含在所有系统中汇总的数据，以及涉及您与Experience Platform一起使用的任何系统中发生的个人事件的带有时间戳的可操作帐户。 |
+| [实时客户资料](../../profile/home.md) | Real-Time Customer Profile提供了集中式消费者用户档案，以进行有针对性的个性化体验管理。 每个用户档案都包含在所有系统中汇总的数据，以及涉及您与Experience Platform一起使用的任何系统中发生的个人事件的带有时间戳的可操作帐户。 |
 
 ## 客户人工智能输入数据
 
@@ -72,7 +72,7 @@ Customer AI依靠不同的事件类型来构建模型功能。 这些事件类�
 
 | 字段组 | 事件类型 | XDM字段路径 |
 | --- | --- | --- |
-| [!UICONTROL 商务详细信息] | 订购 | <li> commerce.order.purchaseID </li> <li> productListItems.SKU </li> |
+| [!UICONTROL 商务详细信息] | 订单 | <li> commerce.order.purchaseID </li> <li> productListItems.SKU </li> |
 |  | productListViews | <li> commerce.productListViews.value </li> <li> productListItems.SKU </li> |
 |  | 结账 | <li> commerce.checkouts.value </li> <li> productListItems.SKU </li> |
 |  | 购买 | <li> commerce.purchases.value </li> <li> productListItems.SKU </li> |
@@ -140,7 +140,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 
 要获得具有此特定预测目标的最佳Customer AI输出，需要使用以下列出的事件类型。 根据您的预测目标可以排除所需事件，但是，排除多个事件可能会导致结果不佳。
 
-- 订购
+- 订单
 - 结账
 - 购买
 - webVisit
@@ -158,7 +158,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 
 要获得具有此特定预测目标的最佳Customer AI输出，需要使用以下列出的事件类型。 根据您的预测目标可以排除所需事件，但是，排除多个事件可能会导致结果不佳。
 
-- 订购
+- 订单
 - 结账
 - 购买
 - webVisit
@@ -180,7 +180,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 
 要获得具有此特定预测目标的最佳Customer AI输出，需要使用以下列出的事件类型。 根据您的预测目标可以排除所需事件，但是，排除多个事件可能会导致结果不佳。
 
-- 订购
+- 订单
 - 结账
 - 购买
 - webVisit
@@ -198,7 +198,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 
 要获得具有此特定预测目标的最佳Customer AI输出，需要使用以下列出的事件类型。 根据您的预测目标可以排除所需事件，但是，排除多个事件可能会导致结果不佳。
 
-- 订购
+- 订单
 - 结账
 - 购买
 - webVisit
@@ -233,7 +233,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 
 要获得具有此特定预测目标的最佳Customer AI输出，需要使用以下列出的事件类型。 根据您的预测目标可以排除所需事件，但是，排除多个事件可能会导致结果不佳。
 
-- 订购
+- 订单
 - 结账
 - 购买
 - webVisit

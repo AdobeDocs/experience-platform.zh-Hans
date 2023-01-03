@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 exl-id: 98d50b90-38ed-4cc2-ad48-78b712b453f7
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 6%
@@ -25,7 +25,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
+Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-Time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
 
 [!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
 
@@ -71,7 +71,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用 
 
 **已知问题**
 
-* 无。
+* None.
 
 有关源的详细信息，请参阅 [源概述](../../sources/home.md).
 
@@ -94,6 +94,6 @@ XDM是一项公开记录的规范，旨在提高数字体验的强大功能。 �
 
 **已知问题**
 
-* 无
+* None
 
 要了解有关使用XDM的更多信息，请使用 [!DNL Schema Registry] API和 [!DNL Schema Editor] 用户界面，请阅读 [XDM系统文档](../../xdm/home.md).

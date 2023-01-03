@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到用户档案服务
 description: 本文档提供了有关如何使用数据准备将部分行更新发送到用户档案服务的信息。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 4e24552c441c9096ef1139df66ad07d89f08a5d6
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 1%

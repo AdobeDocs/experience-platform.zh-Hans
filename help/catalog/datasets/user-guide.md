@@ -5,7 +5,7 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1476'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    * [架构组合的基础知识](../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [架构编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用 [!DNL Schema Editor] 在 [!DNL Platform] 用户界面。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
 ## 查看数据集 {#view-datasets}
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 ## 为实时客户用户档案启用数据集 {#enable-profile}
 
-每个数据集都能够使用其摄取的数据扩充客户用户档案。 要实现此目的，数据集所遵循的架构必须兼容才能在中使用 [!DNL Real-time Customer Profile]. 兼容的架构满足以下要求：
+每个数据集都能够使用其摄取的数据扩充客户用户档案。 要实现此目的，数据集所遵循的架构必须兼容才能在中使用 [!DNL Real-Time Customer Profile]. 兼容的架构满足以下要求：
 
 * 架构至少具有一个指定为标识属性的属性。
 * 架构具有定义为主标识的标识属性。

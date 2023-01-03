@@ -5,7 +5,7 @@ title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1621'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 ![将选定字段标记为主标识的复选框在架构编辑器中突出显示。](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-在将 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换开关 **[!UICONTROL 用户档案]**. 选择 **[!UICONTROL 启用]** 为 [!DNL Real-time Customer Profile].
+在将 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换开关 **[!UICONTROL 用户档案]**. 选择 **[!UICONTROL 启用]** 为 [!DNL Real-Time Customer Profile].
 
 ![用于为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/schema-profile.png)
 

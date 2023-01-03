@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 exl-id: bf401f3a-b088-4cbd-9a64-224294b797b9
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '863'
 ht-degree: 6%
@@ -18,15 +18,15 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [数据管理](#governance)
+- [数据治理](#governance)
 - [[!DNL Destinations]](#destinations)
 - [[!DNL Observability Insights]](#observability)
 - [[!DNL Privacy Service]](#privacy)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
-## 数据管理 {#governance}
+## 数据治理 {#governance}
 
 Adobe Experience Platform数据管理是用于管理客户数据并确保符合适用于数据使用的法规、限制和策略的一系列策略和技术。 它在 [!DNL Experience Platform] 在不同级别，包括编目、数据谱系、数据使用标签、数据访问策略以及对营销操作数据的访问控制。
 
@@ -58,7 +58,7 @@ Adobe Experience Platform数据管理是用于管理客户数据并确保符合�
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe I/O事件通知 | [!DNL Observability Insights] 利用Adobe I/O事件为多项Experience Platform服务创建事件通知。 通知负载会发送到配置的Webhook，然后您可以使用该Webhook自动执行进一步的下游流程。 |
+| Adobe I/O事件通知 | [!DNL Observability Insights] 利用Adobe I/O事件为多项Experience Platform服务创建事件通知。 通知负载会发送到已配置的Webhook，然后您可以使用该Webhook自动执行进一步的下游流程。 |
 
 请参阅 [[!DNL Observability Insights] 概述](../../observability/home.md) 以了解有关该服务的详细信息。
 
@@ -74,19 +74,19 @@ Adobe Experience Platform数据管理是用于管理客户数据并确保符合�
 
 请参阅 [Privacy Service概述](../../privacy-service/home.md) 以了解有关该服务的详细信息。
 
-## 实时客户个人资料 {#profile}
+## 实时客户资料 {#profile}
 
-Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 使用 [!DNL Real-time Customer Profile]，您可以看到每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行合并。 [!DNL Profile] 允许您将不同的客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 使用 [!DNL Real-Time Customer Profile]，您可以看到每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行合并。 [!DNL Profile] 允许您将不同的客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。
 
 | 功能 | 描述 |
 | ------- | ----------- |
 | 配置文件查看器 | Platform UI中的用户档案查看器已更新为具有完全自定义功能的功能板。 用户现在可以选择执行以下任务： <ul><li>更新基本信息小组件中选定的标准属性和自定义属性。</li><li>创建、编辑和删除自定义小组件</li><li>调整小组件大小和重新排列小组件</li></ul> |
 
-有关 [!DNL Real-time Customer Profile]，包括使用的教程和最佳实践 [!DNL Profile] 数据，请阅读 [实时客户资料概述](../../profile/home.md).
+有关 [!DNL Real-Time Customer Profile]，包括使用的教程和最佳实践 [!DNL Profile] 数据，请阅读 [实时客户资料概述](../../profile/home.md).
 
 ## 分段服务 {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
+Adobe Experience Platform Segmentation Service提供了用户界面和RESTful API，允许您从 [!DNL Real-Time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，以便任何Adobe应用程序都可轻松访问。
 
 [!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
 

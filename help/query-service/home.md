@@ -5,16 +5,16 @@ title: 查询服务概述
 topic-legacy: overview
 description: 本文档概述了查询服务在Experience Platform中的角色。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: c09a7a6198bf1ef3f94e53bdbdf3b0b93f6b2bd1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
 
 ---
 
-# [!DNL Query Service]概述
+# [!DNL Query Service] 概述
 
-Adobe Experience Platform从各种来源摄取数据。 营销人员面临的一个主要挑战是理解这些数据，以洞察其客户。 Adobe Experience Platform [!DNL Query Service] 通过允许您使用标准SQL在 [!DNL Platform]. 使用 [!DNL Query Service]，则可以加入 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、机器学习或将数据摄取到中 [!DNL Real-time Customer Profile]. 本文档概述了 [!DNL Query Service] within [!DNL Experience Platform].
+Adobe Experience Platform从各种来源摄取数据。 营销人员面临的一个主要挑战是理解这些数据，以洞察其客户。 Adobe Experience Platform [!DNL Query Service] 通过允许您使用标准SQL在 [!DNL Platform]. 使用 [!DNL Query Service]，则可以加入 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、机器学习或将数据摄取到中 [!DNL Real-Time Customer Profile]. 本文档概述了 [!DNL Query Service] within [!DNL Experience Platform].
 
 [!DNL Query Service] 使品牌能够连接在线到离线客户历程并了解全渠道归因。 以下视频演示了体验企业如何利用 [!DNL Query Service] 解决关键用例和方法 [!DNL Query Service] 工作。
 
@@ -34,7 +34,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### [!DNL Segmentation Service]
 
-Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户划分为具有相似特征的较小组。 随后可以对这些区段进行评估，以便对您的 [!DNL Real-time Customer Profile] 数据。 [!DNL Query Service] 可通过在 [!DNL Data Lake]. 请阅读 [!DNL Segmentation Service] 有关分段的更多信息，请参阅概述，以及 [!DNL Profile Query Language] (PQL)指南，以了解有关如何分析区段的更多信息。
+Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户划分为具有相似特征的较小组。 随后可以对这些区段进行评估，以便对您的 [!DNL Real-Time Customer Profile] 数据。 [!DNL Query Service] 可通过在 [!DNL Data Lake]. 请阅读 [!DNL Segmentation Service] 有关分段的更多信息，请参阅概述，以及 [!DNL Profile Query Language] (PQL)指南，以了解有关如何分析区段的更多信息。
 
 ## 用例
 
