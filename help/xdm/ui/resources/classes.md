@@ -5,9 +5,9 @@ title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c83b5616f46f6f7d752979fa66a66fad16f16102
+source-git-commit: 7b642744f12ec33ff45a4b41cdb57bfe37396a56
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
@@ -50,10 +50,6 @@ Adobe提供了多个标准（“核心”）XDM类，包括 [!DNL XDM Individual
 
 ## 编辑现有类 {#edit}
 
->[!IMPORTANT]
->
->在2022年4月30日之后创建的自定义类无法直接编辑，并且当前正在开发修复。 作为解决方法，您可以 [创建自定义字段组](./field-groups.md) 并在每个使用要扩展的自定义类的架构中重复使用它。 2022年4月30日之前创建的自定义类不受此限制的影响。
-
 >[!NOTE]
 >
 >只能完全编辑和自定义由您的组织定义的自定义类。 对于由Adobe定义的核心类，在单个架构的上下文中只能编辑其字段的显示名称。 请参阅 [编辑架构字段的显示名称](./schemas.md#display-names) 以了解详细信息。
@@ -74,10 +70,6 @@ Adobe提供了多个标准（“核心”）XDM类，包括 [!DNL XDM Individual
 
 ## 向类添加字段 {#add-fields}
 
->[!IMPORTANT]
->
->在2022年4月30日之后创建的自定义类无法直接编辑，并且当前正在开发修复。 作为解决方法，您可以 [创建自定义字段组](./field-groups.md) 并在每个使用要扩展的自定义类的架构中重复使用它。 2022年4月30日之前创建的自定义类不受此限制的影响。
-
 在中打开使用自定义类的架构后， [!UICONTROL 架构编辑器]，则可以开始向类添加字段。 要添加新字段，请选择 **加号(+)** 图标。
 
 ![](../../images/ui/resources/classes/add-field.png)
@@ -96,7 +88,7 @@ A **[!UICONTROL 新建字段]** 将显示在画布中，并且右边栏会更新
 
 ## 更改架构的类 {#schema}
 
-在保存架构之前，您可以在初始创建过程中的任意时间点更改架构的类。 请参阅 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
+在保存架构之前，您可以在初始创建过程中的任意时刻更改该架构的类。 请参阅 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
 
 ## 后续步骤
 
