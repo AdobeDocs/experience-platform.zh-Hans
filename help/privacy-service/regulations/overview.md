@@ -5,10 +5,10 @@ title: 隐私法规概述
 topic-legacy: troubleshooting
 description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: 74624291b77e586c6adeb3e08b12a1dae92d419a
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '721'
-ht-degree: 0%
+source-wordcount: '724'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 
-通过使用Adobe Experience Platform Privacy Service,Experience Cloud可根据以下法规支持访问和删除请求：
+通过使用 [Adobe Experience Platform Privacy Service](../home.md)，则Experience Cloud会根据以下法规支持访问和删除请求：
 
 | 监管 | 描述 |
 | --- | --- |
@@ -29,6 +29,8 @@ ht-degree: 0%
 | 新西兰 [!DNL Privacy Act] | 的 [新西兰 [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) 控制各机构如何收集、使用、披露、储存和获取新西兰公民和组织的个人信息。 2020年，该法案的最新版本对隐私法进行了重大更新，包括新的犯罪、增加罚款、强制通知数据泄露，以及增强隐私专员的权力。 |
 | PDPA（泰国） | 的 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。 |
 | VCDPA（弗吉尼亚） | 的 [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) 为弗吉尼亚州居民（“消费者”）提供了新的数据隐私权，包括访问、删除和更正个人数据的权利。 消费者还有权选择退出个人数据销售、选择退出基于个人数据的分析以及处理个人广告目的。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 后续步骤
 

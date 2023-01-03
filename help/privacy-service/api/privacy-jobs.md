@@ -5,10 +5,10 @@ title: 隐私作业API端点
 topic-legacy: developer guide
 description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: b126726aa7f7fe6070693fdecfdac1ec66050aa9
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '1429'
-ht-degree: 3%
+source-wordcount: '1451'
+ht-degree: 2%
 
 ---
 
@@ -37,7 +37,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的规则类型。 接受的值包括： <ul><li>`gdpr` （欧盟）</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` (巴西)</li><li>`nzpa_nzl` (新西兰)</li><li>`pdpa_tha` (泰国)</li></ul> |
+| `{REGULATION}` | 要查询的规则类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅 [受支持法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 要在每个页面上显示的结果数。 默认值为 `1` 最大值是 `100`. 超过最大值会导致API返回400代码错误。 |
 
@@ -161,7 +161,7 @@ curl -X POST \
 | `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值为 `normal` 和 `low`. 如果 `priority` ，则默认行为为 `normal`. |
 | `analyticsDeleteMethod` | 一个可选属性，用于指定Adobe Analytics如何处理个人数据。 此属性可接受两个可能的值： <ul><li>`anonymize`:给定用户ID集合引用的所有数据均设为匿名。 如果 `analyticsDeleteMethod` ，这是默认行为。</li><li>`purge`:所有数据都将被完全删除。</li></ul> |
 | `mergePolicyId` | 在对实时客户资料(`profileService`)，则可以选择提供特定 [合并策略](../../profile/merge-policies/overview.md) 用于ID拼合的ID。 通过指定合并策略，在返回客户数据时，隐私请求可以包含区段信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不会包含分段信息。 |
-| `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`gdpr` （欧盟）</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` (巴西)</li><li>`nzpa_nzl` (新西兰)</li><li>`pdpa_tha` (泰国)</li></ul> |
+| `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅 [受支持法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 

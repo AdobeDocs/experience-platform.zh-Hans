@@ -5,9 +5,9 @@ title: 身份命名空间概述
 topic-legacy: overview
 description: 身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '1627'
+source-wordcount: '1642'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 - [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 - [[!DNL Identity Service]](./home.md):通过跨设备和系统桥接身份，更好地了解各个客户及其行为。
-- [[!DNL Privacy Service]](../privacy-service/home.md):身份命名空间用于遵守《通用数据保护条例》(GDPR)，其中GDPR请求可以相对于命名空间进行。
+- [[!DNL Privacy Service]](../privacy-service/home.md):身份命名空间用于法律隐私法规(如《通用数据保护条例》(GDPR))的合规请求中。 每个隐私请求都是相对于命名空间发出的，以便确定哪些消费者的数据应受到影响。
 
 ## 了解身份命名空间
 

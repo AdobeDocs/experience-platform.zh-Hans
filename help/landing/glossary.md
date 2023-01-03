@@ -5,9 +5,9 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '7433'
+source-wordcount: '7919'
 ht-degree: 0%
 
 ---
@@ -45,6 +45,8 @@ ht-degree: 0%
 **Amazon S3存储段**: [!DNL Amazon S3] 存储段是存储在 [!DNL Amazon] 生态系统。 存储段包含对象，每个对象都使用由开发人员分配的唯一密钥进行存储和检索。
 
 **Amazon S3连接器**:的 [!DNL Amazon] S3连接器允许Experience Platform客户安全地连接和访问其 [!DNL Amazon] S3数据。
+
+**APA**:的 [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act) 促进和保护个人的隐私，并规范澳大利亚政府机构和组织处理个人信息的方式。 的 [!DNL Privacy Act] 包括适用于私营部门组织的原则。 例如，个人有权了解为什么收集个人信息以及如何使用个人信息，有权访问、删除其数据和更正个人信息。
 
 **附加保存策略**:“追加”保存策略是指定要通过连接摄取的第三方数据，并在数据集末尾附加任何新数据或行时使用的选项。 之前摄取的行将保持不变，并且只会将自上次计划运行后创建的行摄取到Experience Platform。 在源系统中更改的任何行在Experience Platform时均保持不变。
 
@@ -90,6 +92,8 @@ ht-degree: 0%
 
 **[!DNL Catalog Service]**: [!DNL Catalog Service] (有时称为 [!DNL Catalog])是Adobe Experience Platform中数据位置和谱系的记录系统。 虽然摄取到Experience Platform的所有数据都作为文件和目录存储在数据湖中， [!DNL Catalog] 包含这些文件和目录的元数据和描述，用于查找、监控和数据管理。
 
+**CCPA**:的 [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) 增强了美国加利福尼亚州居民的隐私权和消费者保护。 CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择退出将其数据出售给第三方的权利。
+
 **类**:在体验数据模型(XDM)中，类定义用于构建架构的最小字段集，并定义架构所表示的业务对象的基本行为。
 
 **客户端**:客户端是连接到 [!DNL Query Service] 通过 [!DNL PostgreSQL] 协议或HTTP API。
@@ -107,6 +111,8 @@ ht-degree: 0%
 **控制台**:在 [!DNL Query Service]，则控制台会提供有关查询状态和操作的信息。 控制台将显示与 [!DNL Query Service]、正在执行的查询操作以及从这些查询产生的任何错误消息。
 
 **合同(&quot;C&quot;)标签**:合同(“C”)数据使用标签用于对具有合同义务或与贵组织的数据管理策略相关的数据进行分类。
+
+**CPRA**:的 [[!DNL California Consumer Privacy Rights Act (CPRA)]](https://cppa.ca.gov/regulations/consumer_privacy_act.html) 对 [!DNL California Consumer Privacy Act (CCPA)]. 的 [!DNL CPRA] 通过增加消费者权利并通过更广泛的敏感个人信息定义来扩展涵盖的数据类型，为加利福尼亚州的消费者数据隐私确立了新的基准。 此外， [!DNL CPRA] 成立了加州隐私保护局，这是一家专门负责实施和实施数据隐私规则的新机构。
 
 **C1合同标签**:A `C1` 合同数据使用标签指定只能以聚合形式从Adobe Experience Cloud导出数据，而不包含单个或设备标识符。 例如，源自社交网络的数据。
 
@@ -262,6 +268,8 @@ ht-degree: 0%
 
 ## H
 
+**HIPAA**:的 [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html) 是一项旨在提高医疗效率、提高医疗保险便携性、保护患者和健康计划成员隐私的美国联邦法律。 根据HIPAA，个人有权访问和修改其信息，并获得其医疗记录或健康信息的副本。 受保实体和受保实体的业务联系人必须遵守HIPAA法规。
+
 **主机**:在标记的上下文中，主机指定系统交付内部版本所需的位置、域和用户凭据。
 
 **每小时**:在计划文件导出的上下文中，每3、6、8或12小时计划一次增量文件导出。
@@ -316,6 +324,8 @@ ht-degree: 0%
 
 ## L
 
+**LGPD**:的 [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) 旨在规范巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择不将其数据出售给第三方的权利。
+
 **库**:在标记上下文中，库是一组业务逻辑，其中包含有关标记库应如何在客户端设备上行为的说明。
 
 **查找实体**:在数据建模的上下文中，查询实体表示可与个人相关联，但不能直接用于识别个人的概念。 属于此类别的实体应由基于自定义体验数据模型(XDM)类的架构来表示。
@@ -342,6 +352,8 @@ ht-degree: 0%
 
 ## N
 
+**[!DNL New Zealand Privacy Act]**:的 [[!DNL New Zealand Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) 控制各机构如何收集、使用、披露、储存和获取新西兰公民和组织的个人信息。 2020年，该法案的最新版本对隐私法进行了重大更新，包括新的犯罪、增加罚款、强制通知数据泄露，以及增强隐私专员的权力。
+
 **非生产沙盒**:非生产沙箱是通常用于开发实验、测试或试验的沙箱。 与生产沙箱不同，非生产沙箱可以重置和删除。
 
 **[!DNL Notebooks]**: [!DNL Notebooks] 使用创作 [!DNL Jupyter Notebook] 和可运行以执行数据分析。
@@ -367,6 +379,8 @@ ht-degree: 0%
 **部分摄取**:部分摄取允许在指定的错误阈值内摄取批量数据的有效记录。 可以在下载或访问失败记录的错误诊断 [!UICONTROL 监控] 或 [!UICONTROL 源] 数据流运行概述。
 
 **镶木文件**:Parquet文件是具有复杂嵌套数据结构的柱状存储文件格式。 添加数据以填充架构数据集时需要使用Parquet文件。
+
+**PDPA**:的 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。
 
 **个性化优惠**:个性化优惠是基于资格规则和限制的可自定义营销消息。
 
@@ -529,6 +543,8 @@ ht-degree: 0%
 **并集模式**:并集架构是共享相同类且已启用的架构的合并 [!DNL Real-time Customer Profile]. 组织可以存在多个并集架构，但每个类只能有一个并集架构。
 
 ## V
+
+**VCDPA**:的 [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) 为弗吉尼亚州居民（“消费者”）提供了新的数据隐私权，包括访问、删除和更正个人数据的权利。 消费者还有权选择退出个人数据销售、选择退出基于个人数据的分析以及处理个人广告目的。
 
 ## W
 

@@ -5,10 +5,10 @@ title: 在Privacy ServiceUI中管理隐私作业
 topic-legacy: UI guide
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '1100'
-ht-degree: 0%
+source-wordcount: '1151'
+ht-degree: 1%
 
 ---
 
@@ -24,13 +24,25 @@ ht-degree: 0%
 
 ### 调节类型
 
-[!DNL Privacy Service] 支持若干隐私法规的作业请求：
+[!DNL Privacy Service] 支持多项隐私法规的作业请求。 下表列出了受支持的法规及其相应标签，如UI中所示：
 
-* 的 [!DNL California Consumer Privacy Act] ([!UICONTROL CCPA])
-* 欧盟 [!DNL General Data Protection Regulation] ([!UICONTROL GDPR])
-* 泰国 [!DNL Personal Data Protection Act] ([!UICONTROL PDPA_THA])
-* 巴西 [!DNL Lei Geral de Proteção de Dados] ([!UICONTROL LGPD_BRA])
-* 新西兰 [!DNL Privacy Act] ([!UICONTROL NZPA_NZL])
+| UI标签 | 监管 |
+| --- | --- |
+| [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
+| [!UICONTROL GDPR] | 欧盟 [!DNL General Data Protection Regulation] |
+| [!UICONTROL PDPA_THA] | 泰国 [!DNL Personal Data Protection Act] |
+| [!UICONTROL LGPD_BRA] | 巴西 [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL NZPA_NZL] | 新西兰 [!DNL Privacy Act] |
+| [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
+| [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
+| [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
+| [!UICONTROL HIPAA_AUS] | [!DNL Health Insurance Portability and Accountability Act] |
+
+{style=&quot;table-layout:auto&quot;}
+
+>[!NOTE]
+>
+>请参阅 [受支持的隐私法规](../regulations/overview.md) 以详细了解每项条例的法律背景。
 
 将单独跟踪每种法规类型的作业。 要在调节类型之间切换，请选择 **[!UICONTROL 调节类型]** 下拉菜单，并从列表中选择所需的规则。
 
@@ -153,6 +165,6 @@ ht-degree: 0%
 
 ### 后续步骤
 
-通过阅读本文档，您已学会如何使用 [!DNL Privacy Service] 用于创建隐私作业、查看作业的详细信息并监视其处理状态的UI，并在作业完成后下载结果。
+通过阅读本文档，您已学会了如何使用 [!DNL Privacy Service] 用于创建隐私作业、查看作业的详细信息并监视其处理状态的UI，并在作业完成后下载结果。
 
 有关如何使用 [!DNL Privacy Service] API，请参阅 [API指南](../api/overview.md).
