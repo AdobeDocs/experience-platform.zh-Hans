@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 79fc200f4e56699013b1ba3f91f5e383cea77e2a
+source-git-commit: e2318509236fad5054ce82b384f399dd6cbbdc34
 workflow-type: tm+mt
-source-wordcount: '3411'
+source-wordcount: '3414'
 ht-degree: 0%
 
 ---
@@ -207,7 +207,7 @@ ht-degree: 0%
 
    ![图像突出显示如何选择源字段。](../assets/ui/activate-batch-profile-destinations/select-target-field.png)
 
-1. 在 **[!UICONTROL 选择字段]** ，选择要发送到目标的XDM属性，然后选择 **[!UICONTROL 选择]**.
+1. 在 **[!UICONTROL 选择字段]** ，选择要发送到目标的XDM属性或身份命名空间，然后选择 **[!UICONTROL 选择]**.
 
    ![显示作为源字段可用的各种字段的图像。](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
