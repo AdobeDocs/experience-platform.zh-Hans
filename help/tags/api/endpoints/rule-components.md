@@ -2,9 +2,9 @@
 title: 规则组件端点
 description: 了解如何在Reactor API中对/rule_components端点进行调用。
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '1205'
+source-wordcount: '1190'
 ht-degree: 6%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 6%
 
 | 规则组件类型 | 描述 |
 | --- | --- |
-| 活动 | 事件是规则的触发器。 当事件在客户端设备上运行时发生时，规则将启动。 &quot;[!UICONTROL 库加载]&quot;, &quot;[!UICONTROL 页面顶部]&quot;和&quot;[!UICONTROL 单击]“是事件的示例。 |
+| 事件 | 事件是规则的触发器。 当事件在客户端设备上运行时发生时，规则将启动。 &quot;[!UICONTROL 库加载]&quot;, &quot;[!UICONTROL 页面顶部]&quot;和&quot;[!UICONTROL 单击]“是事件的示例。 |
 | 条件 | 条件是在执行任何操作之前评估是否满足某些标准。 发生事件后，将评估条件。 仅当满足所有条件时，才执行规则的操作。 |
 | 操作 | 这些是您希望规则实际执行的操作，例如发送Adobe Analytics信标、检索自定义访客ID或触发特定mbox。 |
 
@@ -305,22 +305,22 @@ curl -X GET \
 **API格式**
 
 ```http
-POST /rules/{RULE_ID}/rule_components
+POST /properties/{PROPERTY_ID}/rule_components
 ```
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 的 `id` 定义规则组件的规则。 |
+| `PROPERTY_ID` | 的 `id` 属性的中。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的规则创建新规则组件。 调用还会通过将规则组件与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
+以下请求会创建新规则组件。 在有效负载中， `relationships` 资产会将组件与特定规则和现有扩展关联。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
-  https://reactor.adobe.io/rules/RLf7b4f416b2e04ae1ba857ae681fee5bc/rule_components \
+  https://reactor.adobe.io/properties/PR97596432a82549ceb8e2a5d9df05c0e1/rule_components \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -366,7 +366,7 @@ curl -X POST \
 | `attributes.rule_order` | 一个整数，用于指示要触发的关联规则的优先级。 |
 | `attributes.settings` | 设置JSON对象，表示为字符串。 |
 | `attributes.timeout` | 一个整数，用于指示按顺序执行的操作的超时。 |
-| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`:定义此规则组件的扩展。 此扩展必须与扩展包中指示的 `delegate_descriptor_id`.</li><li>`rules`:在下定义此组件的规则。 必须是请求路径中提供的相同规则ID。</li></ol>有关关系的更多常规信息，请参阅 [关系指南](../guides/relationships.md). |
+| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`:定义此规则组件的扩展。 此扩展必须与扩展包中指示的 `delegate_descriptor_id`.</li><li>`rules`:在下定义此组件的规则。</li></ol>有关关系的更多常规信息，请参阅 [关系指南](../guides/relationships.md). |
 | `type` | 要创建的资源类型。 对于此端点，值必须为 `rule_components`. |
 
 {style=&quot;table-layout:auto&quot;}

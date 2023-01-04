@@ -2,7 +2,7 @@
 title: 属性端点
 description: 了解如何在Reactor API中调用/properties端点。
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
 source-wordcount: '1146'
 ht-degree: 9%
@@ -556,7 +556,7 @@ PATCH /properties/{PROPERTY_ID}
 
 ```shell
 curl -X PATCH \
-  https://reactor.adobe.io/properties/HT5d90148e72224224aac9bc0b01498b84 \
+  https://reactor.adobe.io/properties/PR541dbb24bad54dceb04710d7a9e7a740 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -710,7 +710,7 @@ curl -X DELETE \
 
 ## 管理资产的注释 {#notes}
 
-属性是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理属性和其他兼容资源的注释的详细信息。
+属性是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理资产和其他兼容资源的注释的详细信息。
 
 ## 检索属性的相关资源 {#related}
 

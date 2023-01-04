@@ -2,7 +2,7 @@
 title: B2B源数据类型
 description: 本文档概述了B2B源体验数据模型(XDM)数据类型。
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 3%
@@ -23,7 +23,7 @@ ht-degree: 3%
 | --- | --- | --- |
 | `sourceID` | 字符串 | 源记录的唯一ID。 |
 | `sourceInstanceID` | 字符串 | 源数据的实例或组织ID。 |
-| `sourceKey` | 字符串 | 由 `sourceId`, `sourceInstanceId`和 `sourceType` 以下格式连接在一起： `[sourceID]@$[sourceInstanceID].[sourceType]`.<br><br>某些源连接器(如Marketo)会为某些标识符自动连接此值。 必须使用 [数据准备 `concat` 函数](../../data-prep/functions.md#string)，例如： `concat(id,"@${ORG_ID}.Marketo")` |
+| `sourceKey` | 字符串 | 由 `sourceId`, `sourceInstanceId`和 `sourceType` 以下格式连接在一起： `[sourceID]@[sourceInstanceID].[sourceType]`.<br><br>某些源连接器(如Marketo)会为某些标识符自动连接此值。 必须使用 [数据准备 `concat` 函数](../../data-prep/functions.md#string)，例如： `concat(id,"@${ORG_ID}.Marketo")` |
 | `sourceType` | 字符串 | 提供源数据的平台的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
