@@ -5,7 +5,7 @@ title: 架构API端点
 description: 架构注册表API中的/schemas端点允许您以编程方式管理体验应用程序中的XDM架构。
 topic-legacy: developer guide
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 666f424355fd1104971bb1566b72e207d00f4a56
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 4%
@@ -374,7 +374,7 @@ curl -X PUT \
 **API格式**
 
 ```http
-PATCH /tenant/schema/{SCHEMA_ID} 
+PATCH /tenant/schemas/{SCHEMA_ID} 
 ```
 
 | 参数 | 描述 |
@@ -465,7 +465,7 @@ curl -X PATCH\
 **API格式**
 
 ```http
-PATCH /tenant/schema/{SCHEMA_ID} 
+PATCH /tenant/schemas/{SCHEMA_ID} 
 ```
 
 | 参数 | 描述 |
