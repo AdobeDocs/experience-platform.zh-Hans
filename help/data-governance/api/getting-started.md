@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 策略服务API快速入门
-topic-legacy: developer guide
 description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用策略服务API之前需要了解的核心概念。
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 0%

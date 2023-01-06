@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；策略执行；基于API的执行；数据管理
 solution: Experience Platform
 title: 数据管理策略API端点
-topic-legacy: developer guide
 description: 数据管理策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。 /policys端点用于与查看、创建、更新或删除数据管理策略相关的所有API调用。
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1865'
 ht-degree: 2%

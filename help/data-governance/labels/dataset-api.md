@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据集API；管理数据使用情况；数据使用API
 solution: Experience Platform
 title: 使用API管理数据集的数据使用标签
-topic-legacy: developer guide
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '816'
 ht-degree: 1%

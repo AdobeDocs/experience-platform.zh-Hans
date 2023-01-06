@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用标签api；策略服务API；支持的数据使用标签；合同标签；身份标签；敏感标签
 solution: Experience Platform
 title: 数据使用标签术语表
-topic-legacy: labels
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '2108'
 ht-degree: 1%

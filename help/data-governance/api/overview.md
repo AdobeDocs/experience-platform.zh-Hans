@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 策略服务API指南
-topic-legacy: developer guide
 description: 策略服务API允许开发人员管理Experience Platform中的数据使用标签和策略。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 3%

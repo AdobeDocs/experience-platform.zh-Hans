@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理
 solution: Experience Platform
 title: 自动策略实施
-topic-legacy: guide
 description: 本文档介绍了在将区段激活到Experience Platform中的目标时如何自动强制实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1727'
 ht-degree: 0%

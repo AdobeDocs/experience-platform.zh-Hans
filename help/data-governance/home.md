@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 数据管理概述
-topic-legacy: overview
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 它在Experience Platform的各个级别中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略，以及控制数据在营销操作中的使用
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1479'
 ht-degree: 0%

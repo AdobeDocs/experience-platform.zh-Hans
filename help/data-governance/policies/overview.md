@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 数据使用策略概述
-topic-legacy: policies
 description: 数据使用策略是描述您允许或限制对Adobe Experience Platform中的数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%

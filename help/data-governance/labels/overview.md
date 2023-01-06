@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用标签api；策略服务API；数据使用标签概述
 solution: Experience Platform
 title: 数据使用情况标签概述
-topic-legacy: labels
 description: 了解如何使用数据使用标签来帮助在Adobe Experience Platform中强制执行数据管理合规性。
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '680'
 ht-degree: 0%

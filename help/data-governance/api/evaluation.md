@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理
 solution: Experience Platform
 title: 策略评估API端点
-topic-legacy: developer guide
 description: 创建营销操作并定义策略后，可以使用策略服务API来评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 1%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；策略实施；营销操作API；基于API的实施；数据管理
 solution: Experience Platform
 title: 营销操作API端点
-topic-legacy: developer guide
 description: 在“Adobe Experience Platform数据管理”中，营销操作是Experience Platform数据使用者采取的一项操作，需要检查其是否违反了数据使用策略。
 exl-id: bc16b318-d89c-4fe6-bf5a-1a4255312f54
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '732'
 ht-degree: 2%
