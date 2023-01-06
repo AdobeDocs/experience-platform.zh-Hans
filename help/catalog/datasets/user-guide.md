@@ -5,7 +5,7 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1509d14c0acbf7136d5869d6de2ee2cf9fad450a
 workflow-type: tm+mt
 source-wordcount: '1476'
 ht-degree: 0%
@@ -127,7 +127,7 @@ ht-degree: 0%
 
 数据使用情况标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅 [数据管理概述](../../data-governance/home.md) 要了解有关标签的更多信息，或参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) ，以了解有关如何将标签应用于数据集的说明。
 
-## 删除数据集
+## 删除数据集 {#delete}
 
 您可以通过先访问数据集来删除其 **[!UICONTROL 数据集活动]** 屏幕。 然后，选择 **[!UICONTROL 删除数据集]** 删除它。
 
