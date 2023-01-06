@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流摄取；摄取；时间系列数据；流时间系列数据；
 solution: Experience Platform
 title: 使用流摄取API流式传输时间系列数据
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1204'
 ht-degree: 2%

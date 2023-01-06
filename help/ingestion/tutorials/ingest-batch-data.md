@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；摄取；摄取批量数据；教程；批量摄取；教程；用户界面指南；
 solution: Experience Platform
 title: 将数据摄取到Experience Platform
-topic-legacy: tutorial
 type: Tutorial
 description: 利用Adobe Experience Platform，可以轻松将数据导入为批处理文件，格式为符合已知Experience Data Model(XDM)架构的Parquet文件或数据。
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1322'
 ht-degree: 0%

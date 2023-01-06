@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分批量摄取；部分；摄取；摄取；错误诊断；检索错误诊断；获取错误诊断；获取错误；获取错误；检索错误；
 solution: Experience Platform
 title: 检索数据摄取错误诊断
-topic-legacy: overview
 description: 本文档提供了有关监控批量摄取、管理部分批量摄取错误的信息，以及有关部分批量摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 2%

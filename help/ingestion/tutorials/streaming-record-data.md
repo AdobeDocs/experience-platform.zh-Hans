@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流摄取；摄取；记录数据；流记录数据；
 solution: Experience Platform
 title: 使用流摄取API的流记录数据
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 2%

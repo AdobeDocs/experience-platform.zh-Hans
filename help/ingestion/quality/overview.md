@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据质量；质量；支持的验证；验证；支持的验证；
 solution: Experience Platform
 title: 数据质量
-topic-legacy: overview
 description: 以下文档概要介绍了Adobe Experience Platform中批量摄取和流式摄取受支持的检查和验证行为。
 exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
-source-git-commit: 7857b9a82dc1b5e12c9f8d757f6967b926124ec4
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '425'
 ht-degree: 5%

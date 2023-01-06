@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；批量；启用数据集；批量摄取概述；概述；批量摄取概述；
 solution: Experience Platform
 title: 批量摄取API概述
-topic-legacy: overview
 description: Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1387'
 ht-degree: 6%
@@ -61,7 +60,7 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 
 下表显示了摄取数据时支持的转化。
 
-| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | Date-Time | 对象 | 地图 |
+| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | 日期时间 | 对象 | 地图 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 字符串 | X | X | X | X | X | X | X | X |  |  |
 | 字节 | X | X | X | X | X | X |  |  |  |  |
@@ -70,7 +69,7 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 | 长 | X | X | X | X | X | X | X | X |  |  |
 | 双精度 | X | X | X | X | X | X |  |  |  |  |
 | 日期 |  |  |  |  |  |  | X |  |  |  |
-| Date-Time |  |  |  |  |  |  |  | X |  |  |
+| 日期时间 |  |  |  |  |  |  |  | X |  |  |
 | 对象 |  |  |  |  |  |  |  |  | X | X |
 | 地图 |  |  |  |  |  |  |  |  | X | X |
 

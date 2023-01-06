@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；流；流摄取；故障诊断；流摄取故障诊断；流摄取常见问题解答；FAQ;
 solution: Experience Platform
 title: 流摄取疑难解答指南
-topic-legacy: troubleshooting
 description: 本文档提供了有关在Adobe Experience Platform上流式引入的常见问题解答。
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 0%

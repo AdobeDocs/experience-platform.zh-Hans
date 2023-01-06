@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流式引入；摄取；流式传送多条消息；多条消息；
 solution: Experience Platform
 title: 在一个HTTP请求中发送多条消息
-topic-legacy: tutorial
 type: Tutorial
 description: 本文档提供了一个教程，用于使用流摄取在单个HTTP请求内向Adobe Experience Platform发送多条消息。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1493'
 ht-degree: 1%

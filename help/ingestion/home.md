@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；数据位置；数据位置；数据管理；数据管理；谱系；谱系；批量；批量；摄取数据
 solution: Experience Platform
 title: 数据摄取概述
-topic-legacy: overview
 description: 本文档介绍了将数据摄取到平台的三种主要方式，以及指向其各自概述文档的链接，以获取更多详细信息。
 exl-id: c189dd4a-5c59-4189-a18c-a3e45a9ff01d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '461'
 ht-degree: 14%
