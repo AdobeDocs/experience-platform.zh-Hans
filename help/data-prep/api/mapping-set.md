@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据准备；API指南；映射集；
 solution: Experience Platform
 title: 映射集API端点
-topic-legacy: mapping sets
 description: 您可以使用Adobe Experience Platform API中的“/mappingSets”端点以编程方式检索、创建、更新和验证映射集。
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '854'
 ht-degree: 3%

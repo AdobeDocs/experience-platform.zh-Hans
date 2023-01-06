@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；映射；数据准备；数据准备；准备数据；
 solution: Experience Platform
 title: 使用数据准备处理数据格式
-topic-legacy: overview
 description: 本文档概述了数据准备中处理不同数据类型的方式。
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: 15afb221a3576b7a37ea02195549f246833b800d
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '575'
 ht-degree: 13%
@@ -82,8 +81,8 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 | 符号 | 含义 | 演示文稿 | 示例 |
 | ------ | ------- | ------------ | ------- |
 | G | 时代 | 文本 | 广告；安诺·多米尼；A |
-| Y | 年，基于ISO周 | 数值 | 1996年；96 |
-| y | 年份 | 数值 | 2004年；04 |
+| Y | 年，基于ISO周 | 数值 | 1996; 96 |
+| y | 年份 | 数值 | 2004; 04 |
 | M/L | 月份 | 数字/文本 | 7;07;7月；7月；J |
 | w | 一年中的一周 | 数值 | 27 |
 | W | 当月的某周 | 数值 | 3 |
@@ -102,7 +101,7 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 | S | 毫秒 | 数值 | 245 |
 | z | 时区 | 一般时区 | 太平洋标准时间；PST;GMT-08:00 |
 | Z | 时区 | RFC 822时区 | -0800 |
-| X | 时区 | ISO 8601时区 | -08;-0800;-08:00 |
+| X | 时区 | ISO 8601时区 | -08; -0800; -08:00 |
 | V | 时区ID | 文本 | 美国/洛杉矶 |
 | O | 时区偏移 | 文本 | GMT+8 |
 | Q/q | 季度 | 数字/文本 | 3;03;第3季度；第3季度 |

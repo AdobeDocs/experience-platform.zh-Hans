@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；映射；数据准备；数据准备；准备数据；
 solution: Experience Platform
 title: 数据准备概述
-topic-legacy: overview
 description: 本文档介绍了Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: 61603d7516dbd859b0cce6c167c75aab42ca7171
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '788'
 ht-degree: 0%

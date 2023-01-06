@@ -2,9 +2,8 @@
 keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式；
 solution: Experience Platform
 title: 架构API端点
-topic-legacy: schemas
-description: '您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与Platform中的映射器一起使用。 '
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+description: 您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与Platform中的映射器一起使用。
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 4%

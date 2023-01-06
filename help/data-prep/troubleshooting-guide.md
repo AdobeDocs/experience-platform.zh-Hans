@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；主页；热门主题；
 title: 数据准备疑难解答指南
-topic-legacy: troubleshooting
 description: 本文档提供了有关Adobe Experience Platform数据准备的常见问题解答。
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '342'
 ht-degree: 0%

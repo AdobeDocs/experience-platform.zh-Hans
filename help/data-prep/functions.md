@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；映射；映射字段；映射函数；
 solution: Experience Platform
 title: 数据准备映射函数
-topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 714ce6eb1a77559a7bd1691afeac4a96e0877717
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '4367'
 ht-degree: 3%

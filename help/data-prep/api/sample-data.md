@@ -2,9 +2,8 @@
 keywords: Experience Platform；主页；热门主题；数据准备；API指南；示例数据；
 solution: Experience Platform
 title: 示例数据API端点
-topic-legacy: sample data
-description: '您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。 '
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+description: 您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 4%
