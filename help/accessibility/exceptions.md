@@ -1,12 +1,11 @@
 ---
 title: 辅助功能例外和解决方法以进行Experience Platform
-topic-legacy: guide
 type: Documentation
-description: Adobe Experience Platform致力于为所有个人提供无障碍和包容的功能。
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+description: Adobe Experience Platform 致力于为所有个人提供可访问的包容性功能。
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '41'
-ht-degree: 0%
+ht-degree: 34%
 
 ---
 

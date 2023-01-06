@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；统一；配置文件；rtcp;XDM图形
 title: 自定义辅助功能解决方案以进行Experience Platform
-topic-legacy: guide
 type: Documentation
 description: 进一步了解Adobe Experience Platform用户界面中的自定义无障碍解决方案。
 exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
-source-git-commit: 7f4202c9c4a132ed9d74c495f6608357eac8003f
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%

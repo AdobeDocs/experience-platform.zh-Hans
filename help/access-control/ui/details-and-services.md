@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；产品配置文件
 solution: Experience Platform
 title: 管理产品配置文件的详细信息和其他服务
-topic-legacy: user guide
 description: 本文档介绍了在Adobe Admin Console中管理产品配置文件的详细信息和其他服务所需的必要步骤。 您可以通过“配置文件设置”菜单配置配置文件的详细信息并访问其他服务。
 exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%

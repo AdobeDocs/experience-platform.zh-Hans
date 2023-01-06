@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；Adobe Admin Console
 solution: Experience Platform
-topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: e2d3267715f693a321b2f4ce1bae0650f38c21d7
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '1419'
 ht-degree: 3%
@@ -111,10 +110,10 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 访问创建、接受和拒绝合作伙伴握手，以连接两个IMS组织并启用 [!DNL Segment Match] 流量。 |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 对读取、创建、编辑和发布的访问权限 [!DNL Segment Match] 与活跃的合作伙伴提供信息源。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在 [!DNL Data Science Workspace]. |
-| 数据管理 | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |
-| 数据管理 | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
-| 数据管理 | [!UICONTROL 查看数据使用策略] | 对属于贵组织的数据使用策略的只读访问权限。 |
-| 数据管理 | [!UICONTROL 查看用户活动日志] | 对记录的查看的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) 平台活动。 |
+| 数据治理 | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |
+| 数据治理 | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
+| 数据治理 | [!UICONTROL 查看数据使用策略] | 对属于贵组织的数据使用策略的只读访问权限。 |
+| 数据治理 | [!UICONTROL 查看用户活动日志] | 对记录的查看的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) 平台活动。 |
 | [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况功能板] | 以只读方式访问许可证使用功能板。 |
 | [!DNL Dashboards] | [!UICONTROL 管理标准功能板] | 添加data warehouse中尚未包含的自定义属性。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询] | 访问读取、创建、编辑和删除Platform数据的结构化SQL查询。 |

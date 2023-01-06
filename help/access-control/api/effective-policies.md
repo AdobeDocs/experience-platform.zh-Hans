@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；有效策略；访问控制API
 solution: Experience Platform
 title: 有效的策略API端点
-topic-legacy: developer guide
 description: 了解如何使用Adobe Experience Platform的访问控制API查看有效的访问策略。
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 2%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；故障诊断；访问控制
 solution: Experience Platform
 title: 访问控制疑难解答指南
-topic-legacy: troubleshooting guide
 description: 本文档提供了有关Adobe Experience Platform中访问控制的常见问题解答。
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
-source-git-commit: 79ffdf35e27d74a64ea8e25544fdeeb293b58306
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%

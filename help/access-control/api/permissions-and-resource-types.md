@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；访问控制权限；访问控制资源类型；访问控制API
 solution: Experience Platform
 title: 引用API端点
-topic-legacy: developer guide
 description: 访问控制API中的引用端点允许您查看可用权限和资源类型的名称，这些名称和资源类型随后可用于查看当前用户的有效访问控制策略。
 exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 1%

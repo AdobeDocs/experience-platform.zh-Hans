@@ -1,16 +1,15 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；统一；配置文件；rtcp;XDM图形
 title: 平台中的常规辅助功能
-topic-legacy: guide
 type: Documentation
 description: 进一步了解Adobe Experience Platform支持的常规辅助功能，包括键盘导航、调色板和对比度以及辅助技术支持。
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '484'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
-
 
 # Experience Platform中的辅助功能
 
@@ -36,7 +35,7 @@ Experience Platform努力支持完整的键盘无障碍功能。
 
 ## 调色板和对比度
 
-Experience Platform致力于符合[WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)合规性，包括对颜色对比度的要求。 Experience PlatformUI在应用程序中提供了足够的对比度，以确保视力低下或色觉缺失的用户具有无障碍的观看体验。
+Experience Platform努力 [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) 符合性，包括对颜色对比度的要求。 Experience PlatformUI在应用程序中提供了足够的对比度，以确保视力低下或色觉缺失的用户具有无障碍的观看体验。
 
 ![Experience PlatformUI的主页上显示的调色板和对比度。](images/homepage.png)
 
@@ -44,4 +43,4 @@ Experience Platform致力于符合[WCAG 2.1 AA](https://www.w3.org/TR/WCAG/)合�
 
 添加数据、创建架构或定义区段时，必填字段以可视方式（在字段的文本标签旁边使用星号）以及以编程方式指示。 当您在字段中输入无效数据并在保存时，这些字段会触发验证。 如果必填字段未通过验证，则会以红色列出，并带有错误图标，同时还会显示需要修复的问题的书面说明。
 
-![未通过验证的必填字段的特写。该字段以红色显示，并显示错误图标。](images/field-validation.png)
+![未通过验证的必填字段的特写。 该字段以红色显示，并显示错误图标。](images/field-validation.png)

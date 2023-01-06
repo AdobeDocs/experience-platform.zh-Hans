@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；产品配置文件；管理权限
 solution: Experience Platform
 title: 管理产品配置文件的权限
-topic-legacy: user guide
 description: 通过Adobe Experience Platform中的访问控制，您可以使用Adobe Admin Console管理各种平台功能的角色和权限。 本文档是有关如何管理Platform产品配置文件权限的指南。
 exl-id: ca403bef-6d62-4ca9-bba6-d1280ac63171
-source-git-commit: 4881b456cbb6281f35cf1bdcb81e1d21fe764297
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%

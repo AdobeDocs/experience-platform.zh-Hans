@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；产品配置文件
 solution: Experience Platform
 title: 在Adobe Admin Console中创建新产品配置文件
-topic-legacy: user guide
 description: 本文档介绍了在Adobe Admin Console中创建新产品用户档案所需的必要步骤。 要开始创建新配置文件，请导航到产品配置文件选项卡，然后单击新建配置文件。
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 1%
