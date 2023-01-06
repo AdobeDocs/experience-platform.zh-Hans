@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；删除对象；目录服务；API
 solution: Experience Platform
 title: 删除API中的对象
-topic-legacy: developer guide
 description: 您可以通过在目录请求的路径中提供Catalog对象ID来删除该DELETE对象。
 exl-id: 2ac9c378-2340-43e1-8279-7c365df652e4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 1%

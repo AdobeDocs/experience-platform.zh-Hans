@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目录；多个对象查找；API
 solution: Experience Platform
 title: 查找多个目录对象
-topic-legacy: developer guide
 description: 如果您想查看多个特定对象，而不是对每个对象提出一个请求，则Catalog为请求多个相同类型的对象提供了一个简单的快捷方式。 您可以使用单个GET请求通过包含以逗号分隔的ID列表来返回多个特定对象。
 exl-id: b2329b32-6139-4557-aff3-a584e03b09f3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '237'
 ht-degree: 1%

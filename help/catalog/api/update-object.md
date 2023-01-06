@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目录；API；更新对象
 solution: Experience Platform
 title: 更新目录对象
-topic-legacy: developer guide
 description: 您可以通过在目录请求的路径中包含Catalog对象的ID来更新该对象的部分PATCH。 本文档介绍如何使用字段和使用JSON修补程序符号对目录对象执行PATCH操作。
 exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 3%

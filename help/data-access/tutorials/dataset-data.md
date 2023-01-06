@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据访问；数据访问API；查询数据访问
 solution: Experience Platform
 title: 使用数据访问API查看数据集数据
-topic-legacy: tutorial
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform中的数据访问API查找、访问和下载数据集中存储的数据。 此外，还将介绍数据访问API的一些独特功能，如分页和部分下载。
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '1390'
 ht-degree: 3%

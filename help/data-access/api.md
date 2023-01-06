@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据访问；python sdk;Spark sdk；数据访问API；导出；导出
 solution: Experience Platform
 title: Data Access API指南
-topic-legacy: developer guide
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform ，该接口重点关注Experience Platform中已摄取数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 4%
@@ -240,4 +239,4 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## 订阅数据摄取事件
 
-[!DNL Platform] 通过 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收有关潜在延迟和失败的通知。 请参阅 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 以了解更多信息。
+[!DNL Platform] 通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收有关潜在延迟和失败的通知。 请参阅 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 以了解更多信息。

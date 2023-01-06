@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据
 solution: Experience Platform
 title: 列表目录对象
-topic-legacy: developer guide
 description: 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳实践是包含可限制响应大小的过滤器。
 exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 1%

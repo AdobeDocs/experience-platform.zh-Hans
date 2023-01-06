@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；创建批处理；目录服务；API
 solution: Experience Platform
 title: 在API中创建批处理
-topic-legacy: developer guide
 description: 您可以通过向目录API中的/batches端点发出POST请求来创建批处理。
 exl-id: 1d2cbca9-1cd6-4b89-9b77-3687268bd849
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 3%

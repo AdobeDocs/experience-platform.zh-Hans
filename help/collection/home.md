@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据收集；启动；Web SDK
 solution: Experience Platform
 title: 数据收集概述
-topic-legacy: overview
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '514'
 ht-degree: 6%
@@ -68,7 +67,7 @@ Platform Edge Network是一个全球分布式、快速、可靠的服务器网�
 
 ## 后续步骤
 
-本文档简要概述了数据收集的工作方式，以自动将收集的客户体验数据发送到Adobe产品和第三方目标的过程。
+本文档概要介绍了数据收集的工作方式，以自动将收集的客户体验数据发送到Adobe产品和第三方目标的过程。
 
 ![数据收集框架](./images/home/collection.png)
 

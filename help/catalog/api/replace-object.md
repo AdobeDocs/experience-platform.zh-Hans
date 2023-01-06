@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目录；API；替换对象
 solution: Experience Platform
 title: 替换目录对象
-topic-legacy: developer guide
 description: 您可以使用PUT请求覆盖Catalog对象的内容，其中整个资源将被请求有效负载替换。
 exl-id: cd98d13c-5261-4bff-b5db-af5f06d093c9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 2%

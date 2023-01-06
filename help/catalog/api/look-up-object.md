@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目录；对象查找；API
 solution: Experience Platform
 title: 查找目录对象
-topic-legacy: developer guide
 description: 如果您知道特定Catalog对象的唯一标识符，则可以执行GET请求以查看该对象的详细信息。
 exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 2%

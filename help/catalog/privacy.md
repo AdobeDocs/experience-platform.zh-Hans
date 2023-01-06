@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据湖隐私；身份命名空间；隐私；数据湖
 solution: Experience Platform
 title: 数据湖中的隐私请求处理
-topic-legacy: overview
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '1428'
 ht-degree: 1%

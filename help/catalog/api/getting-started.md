@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目录服务；目录服务；目录服务
 solution: Experience Platform
 title: 目录服务API指南
-topic-legacy: developer guide
 description: 目录服务API允许开发人员在Adobe Experience Platform中管理数据集元数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 3%
