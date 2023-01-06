@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；监视数据流；流服务API；流服务
 solution: Experience Platform
 title: 使用流服务API监控数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流服务API监控流程运行数据是否完整、错误和量度的步骤。
 exl-id: c4b2db97-eba4-460d-8c00-c76c666ed70e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '718'
 ht-degree: 1%

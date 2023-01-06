@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流程服务；更新目标数据流
 solution: Experience Platform
 title: 使用流服务API更新目标数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息，或添加和删除区段和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: c35a29d4e9791b566d9633b651aecd2c16f88507
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '2408'
 ht-degree: 1%

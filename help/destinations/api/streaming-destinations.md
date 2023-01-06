@@ -3,10 +3,9 @@ keywords: Experience Platform；主页；热门主题；API教程；流目标API
 solution: Experience Platform
 title: 在Adobe Experience Platform中使用流服务API连接到流目标并激活数据
 description: 本文档介绍了如何使用Adobe Experience Platform API创建流目标
-topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 183830318a3dd5012f27a73a8dd2753638aff83f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '2241'
 ht-degree: 1%

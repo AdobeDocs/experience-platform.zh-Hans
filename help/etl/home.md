@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；ETL;etl;etl集成；ETL集成
 solution: Experience Platform
 title: 为Adobe Experience Platform开发ETL集成
-topic-legacy: overview
 description: ETL集成指南概述了创建高性能、安全的连接器以Experience Platform数据并将数据引入平台的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '4075'
 ht-degree: 1%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据流；数据流；数据；监控；监控数据流；监控数据流；监控数据流；监控；监控数据流；监控数据流；监控数据流；流程服务；
 solution: Experience Platform
 title: 数据流概述
-topic-legacy: overview
 description: 本文档介绍了数据流，以表示它们在Adobe Experience Platform中的使用方式。
 exl-id: 8fe08ffa-f095-4e9f-8bab-d060985f0236
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '238'
 ht-degree: 5%

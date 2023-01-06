@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；命名空间；命名空间；命名空间；身份命名空间；身份命名空间；身份；身份
 solution: Experience Platform
 title: 在Identity服务API中创建自定义命名空间
-topic-legacy: API guide
 description: 使用身份命名空间API，您可以创建仅适用于贵组织的自定义身份命名空间。
 exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 3%

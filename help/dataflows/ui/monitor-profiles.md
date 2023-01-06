@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；监控配置文件；监控数据流；数据流；配置文件；实时客户配置文件；
 description: “实时客户资料”可通过合并来自多个渠道（包括在线、离线、CRM和第三方）的数据，让您查看每个客户的整体视图。 本教程提供了有关如何使用Experience Platform用户界面通过配置文件监控数据流的说明。
 title: 在UI中监控配置文件的数据流
-topic-legacy: overview
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1074'
 ht-degree: 3%

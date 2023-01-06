@@ -3,10 +3,9 @@ keywords: Experience Platform；目标API；临时激活；激活区段临时
 solution: Experience Platform
 title: 通过临时激活API将受众区段激活到批量目标
 description: 本文说明了通过临时激活API激活受众区段的端到端工作流程，包括激活前进行的分段作业。
-topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: cdf96088be27cba1fb92f1348f002123614285fe
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1563'
 ht-degree: 1%
@@ -242,7 +241,7 @@ Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 
 
 使用临时激活API时，您可能会遇到特定于此API端点的错误消息。 查看表格，了解在表格显示时如何解决这些问题。
 
-| 错误消息 | 分辨率 |
+| 错误消息 | 解决方案 |
 |---------|----------|
 | 已针对区段运行 `segment ID` 订购 `dataflow ID` 使用运行id `flow run ID` | 此错误消息表示当前正在为区段进行临时激活流程。 等待作业完成，然后再次触发激活作业。 |
 | 区段 `<segment name>` 不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择激活的区段未映射到数据流，或者为区段设置的激活计划已过期或尚未启动。 检查区段是否确实映射到数据流，并验证区段激活计划是否与当前日期重叠。 |

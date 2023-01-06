@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；列表标识；列表集群
 solution: Experience Platform
 title: 列出群集中的所有标识
-topic-legacy: API guide
 description: 在标识图中相关的标识（无论命名空间如何）被视为该标识图中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
 exl-id: 0fb9eac9-2dc2-4881-8598-02b3053d0b31
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
 source-wordcount: '359'
 ht-degree: 1%

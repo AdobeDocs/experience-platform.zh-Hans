@@ -2,15 +2,14 @@
 keywords: Experience Platform；主页；热门主题；监视器身份；监视数据流；数据流；身份；
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而全面了解客户及其行为。 本教程提供了有关如何使用Experience Platform用户界面通过标识监控数据流的说明。
 title: 在UI中监控身份的数据流
-topic-legacy: overview
 type: Tutorial
-source-git-commit: 3018ee005c96e3905ae8dab24cca901cf48847ea
+exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1149'
 ht-degree: 1%
 
 ---
-
 
 # 在UI中监控标识的数据流
 

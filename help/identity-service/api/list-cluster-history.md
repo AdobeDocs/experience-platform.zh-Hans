@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；身份；群集历史记录
 solution: Experience Platform
 title: 获取身份的群集历史记录
-topic-legacy: API guide
 description: 身份可以在各种设备图运行过程中移动群集。 Identity Service可随着时间的推移查看给定身份的群集关联。
 exl-id: e52edb15-e3d6-4085-83d5-212bbd952632
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 1%

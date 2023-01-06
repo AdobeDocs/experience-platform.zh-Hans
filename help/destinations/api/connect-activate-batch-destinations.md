@@ -3,10 +3,9 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 连接到批处理目标，并使用流量服务API激活数据
 description: 使用流程服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据的分步说明
-topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '3420'
 ht-degree: 2%

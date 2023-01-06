@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；identity service api;identity service开发人员指南；区域
 solution: Experience Platform
 title: Identity Service API指南
-topic-legacy: API guide
 description: Identity Service API允许开发人员使用Adobe Experience Platform中的身份图来管理客户的跨设备、跨渠道和近乎实时的标识。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: d612af38-4648-4c3e-8cfd-3f306c9370e1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
 workflow-type: tm+mt
 source-wordcount: '767'
 ht-degree: 2%

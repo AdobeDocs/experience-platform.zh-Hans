@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；身份；身份
 solution: Experience Platform
 title: 列表标识映射
-topic-legacy: API guide
 description: 映射是群集中指定命名空间的所有标识的集合。
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 1%
