@@ -1,10 +1,10 @@
 ---
 title: 在Identity服务中删除
 description: 本文档概述了可用于在Experience Platform中删除身份数据的各种机制，并明确了身份图可能受到何种影响。
-source-git-commit: 506d47035622e45f72a8d92aeff6c5ec4e3d0856
+source-git-commit: 17e39f6e9d6e62e22f867de91d571593ba945c71
 workflow-type: tm+mt
-source-wordcount: '1333'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -49,7 +49,7 @@ Privacy Service处理客户访问、选择退出销售或删除其个人数据�
 | 已接受的用例 | 仅限数据隐私请求(GDPR、CCPA)。 | 管理存储在Experience Platform中的数据。 |
 | 估计滞后 | 从天到周 | Days |
 | 受服务影响 | Privacy Service中的单个身份删除允许您选择数据是从Identity Service、实时客户资料还是数据湖中删除。 | 数据卫生中的单个身份删除会在“身份服务”、“实时客户资料”和“数据湖”中删除选定的数据。 |
-| 删除模式 | 从Identity Service中删除身份。 | 从Identity Service中、在所有数据集中或针对单个数据集，完全删除一个身份及其所有对应链接。 |
+| 删除模式 | 从Identity Service中删除身份。 | 从Identity Service中删除身份。 |
 
 {style=&quot;table-layout:auto&quot;}
 
