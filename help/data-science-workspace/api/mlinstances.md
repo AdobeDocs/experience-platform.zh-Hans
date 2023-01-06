@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实例；敏感的机器学习api
 solution: Experience Platform
 title: MLInstances API端点
-topic-legacy: Developer guide
 description: MLInstance是现有引擎与一组适当的配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 4%

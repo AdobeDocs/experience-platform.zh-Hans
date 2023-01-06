@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；引擎；Sensei机器学习API
 solution: Experience Platform
 title: 引擎API端点
-topic-legacy: Developer guide
 description: 引擎是数据科学工作区中机器学习模型的基础。 它们包含解决特定问题的机器学习算法、用于执行特征工程的特征管道，或者同时用于两者。
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1165'
 ht-degree: 3%

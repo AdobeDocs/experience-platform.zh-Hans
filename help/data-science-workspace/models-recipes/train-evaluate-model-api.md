@@ -2,11 +2,10 @@
 keywords: Experience Platform；培训和评估；数据科学工作区；热门主题；Sensei机器学习API
 solution: Experience Platform
 title: 利用Sensei机器学习API训练和评估模型
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将向您展示如何使用Sensei机器学习API调用创建、培训和评估模型。
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1235'
 ht-degree: 1%
@@ -46,7 +45,7 @@ ht-degree: 1%
 | --- | --- |
 | 方法 | 引擎 |
 | 模型 | MLInstance |
-| 培训运行 | 实验 |
+| 培训运行 | 试验 |
 | 服务 | MLService |
 
 ### 创建MLInstance

@@ -2,11 +2,10 @@
 keywords: Experience Platform；对模型进行评分；Data Science Workspace；热门主题；敏感的机器学习api
 solution: Experience Platform
 title: 使用Sensei机器学习API对模型进行评分
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将向您展示如何利用Sensei机器学习API创建实验和实验运行。
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%

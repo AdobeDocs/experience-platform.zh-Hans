@@ -2,11 +2,10 @@
 keywords: Experience Platform；机器学习模型；Data Science Workspace；实时客户资料；热门主题；机器学习分析
 solution: Experience Platform
 title: 使用机器学习分析丰富实时客户资料
-topic-legacy: tutorial
 type: Tutorial
 description: 本文档提供了有关如何利用机器学习分析扩充实时客户资料的指南。
 exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform；机器学习模型；数据科学工作区；热门主题；创建和发布模型
 solution: Experience Platform
 title: 创建和发布机器学习模型
-topic-legacy: tutorial
 type: Tutorial
 description: 以下指南介绍了创建和发布机器学习模型所需的步骤。
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1076'
 ht-degree: 0%

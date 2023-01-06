@@ -2,11 +2,10 @@
 keywords: Experience Platform;JupyterLab；笔记本；Data Science Workspace；热门主题；查询服务
 solution: Experience Platform
 title: Jupyter笔记本中的查询服务
-topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform允许您通过将查询服务集成到JupyterLab作为标准功能，在Data Science Workspace中使用结构化查询语言(SQL)。 本教程演示了用于探索、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '822'
 ht-degree: 1%

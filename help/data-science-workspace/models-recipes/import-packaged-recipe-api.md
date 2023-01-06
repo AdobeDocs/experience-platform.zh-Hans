@@ -2,11 +2,10 @@
 keywords: Experience Platform；导入打包的方法；Data Science Workspace；热门主题；方法；API；感生机器学习；创建引擎
 solution: Experience Platform
 title: 使用Sensei机器学习API导入打包的方法
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程使用Sensei机器学习API创建引擎，也称为用户界面中的方法。
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 2%
@@ -23,7 +22,7 @@ ht-degree: 2%
 | ---- | ---- |
 | 方法 | [引擎](../api/engines.md) |
 | 模型 | [MLInstance](../api/mlinstances.md) |
-| 培训和评价 | [实验](../api/experiments.md) |
+| 培训和评价 | [试验](../api/experiments.md) |
 | 服务 | [MLService](../api/mlservices.md) |
 
 引擎包含机器学习算法和逻辑以解决特定问题。 下图提供了一个可视化图表，其中显示了 [!DNL Data Science Workspace]. 本教程重点介绍如何创建引擎，即机器学习模型的大脑。

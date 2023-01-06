@@ -2,11 +2,10 @@
 keywords: Experience Platform；发布模型；Data Science Workspace；热门主题；敏感的机器学习api
 solution: Experience Platform
 title: 使用Sensei机器学习API发布模型作为服务
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程介绍使用Sensei机器学习API将模型作为服务发布的过程。
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 1%
@@ -40,7 +39,7 @@ ht-degree: 1%
 | 搜索词 | 定义 |
 | --- | --- |
 | **机器学习实例（ML实例）** | 实例 [!DNL Sensei] 特定租户的引擎，包含特定数据、参数和 [!DNL Sensei] 代码。 |
-| **实验** | 用于保持培训实验运行、评分实验运行或两者的伞形实体。 |
+| **试验** | 用于保持培训实验运行、评分实验运行或两者的伞形实体。 |
 | **计划实验** | 描述由用户定义的计划管理的培训或评分实验运行自动化的术语。 |
 | **实验运行** | 培训或评分实验的特定实例。 来自特定实验的多个实验运行可能会因用于培训或评分的数据集值而异。 |
 | **训练模型** | 在获得经过验证、评估和最终确定的模型之前，通过试验和特征工程过程创建的机器学习模型。 |

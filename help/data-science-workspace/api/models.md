@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；模型；Sensei机器学习API
 solution: Experience Platform
 title: 模型API端点
-topic-legacy: Developer guide
 description: 模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行求解。
 exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 4%

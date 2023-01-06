@@ -1,12 +1,10 @@
 ---
-keywords: Experience Platform；开发人员指南；SDK；模型创作；数据科学工作区；热门主题；测试
+keywords: Experience Platform；开发人员指南；SDK；模型创作；Data Science Workspace；热门主题；测试
 solution: Experience Platform
 title: 模型创作SDK
-topic-legacy: Overview
-description: 模型创作SDK使您能够开发可在Adobe Experience Platform Data Science Workspace中使用的自定义机器学习方法和功能管道，在PySpark和Spark(Scala)中提供可实现的模板。
+description: 模型创作SDK允许您开发自定义的机器学习方法和功能管道，这些方法和管道可在Adobe Experience Platform Data Science Workspace中使用，在PySpark和Spark(Scala)中提供可实施的模板。
 exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 1%
@@ -15,13 +13,13 @@ ht-degree: 1%
 
 # 模型创作SDK
 
-模型创作SDK使您能够开发可在[!DNL Adobe Experience Platform]数据科学工作区中使用的自定义机器学习方法和功能管道，在[!DNL PySpark]和[!DNL Spark (Scala)]中提供可实现的模板。
+模型创作SDK允许您开发自定义的机器学习方法和功能管道，这些方法和管道可用于 [!DNL Adobe Experience Platform] 数据科学工作区，在 [!DNL PySpark] 和 [!DNL Spark (Scala)].
 
-本文档提供有关“模型创作SDK”中的各种类的信息。
+本文档提供了有关在模型创作SDK中找到的各种类的信息。
 
 ## DataLoader {#dataloader}
 
-DataLoader类封装与检索、过滤和返回原始输入数据相关的任何内容。 输入数据的示例包括用于培训、评分或功能工程的数据。 数据加载程序扩展抽象类`DataLoader`，并必须覆盖抽象方法`load`。
+DataLoader类封装与检索、过滤和返回原始输入数据相关的任何内容。 输入数据示例包括用于培训、评分或功能工程的数据。 数据加载器扩展抽象类 `DataLoader` 必须覆盖抽象方法 `load`.
 
 **PySpark**
 
@@ -38,7 +36,7 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
         <tr>
             <td>
                 <p><code>load(self, configProperties, spark)</code></p>
-                <p>将平台数据作为Pactis DataFrame加载和返回</p>
+                <p>将平台数据作为Pantics数据框架加载和返回</p>
             </td>
             <td>
                 <ul>
@@ -51,9 +49,9 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
     </tbody>
 </table>
 
-**Spark**
+**火花**
 
-下表描述[!DNL Spark] Data Loader类的抽象方法：
+下表介绍了 [!DNL Spark] 数据加载器类：
 
 <table>
     <thead>
@@ -78,9 +76,9 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
     </tbody>
 </table>
 
-### 从[!DNL Platform]数据集{#load-data-from-a-platform-dataset}加载数据
+### 从 [!DNL Platform] 数据集 {#load-data-from-a-platform-dataset}
 
-下面的示例按ID检索[!DNL Platform]数据并返回一个DataFrame，其中数据集ID(`datasetId`)是配置文件中定义的属性。
+以下示例检索 [!DNL Platform] 按ID划分的数据，并返回一个DataFrame，其中数据集ID(`datasetId`)是配置文件中定义的属性。
 
 **PySpark**
 
@@ -193,13 +191,13 @@ class MyDataLoader extends DataLoader {
 }
 ```
 
-## 数据保护程序{#datasaver}
+## 数据保护程序 {#datasaver}
 
-DataSaver类封装与存储输出数据相关的任何内容，包括来自评分或功能工程的输出数据。 数据保护程序扩展抽象类`DataSaver`，并必须覆盖抽象方法`save`。
+DataSaver类封装与存储输出数据相关的任何内容，包括来自评分或功能工程的输出数据。 数据保护程序扩展抽象类 `DataSaver` 必须覆盖抽象方法 `save`.
 
 **PySpark**
 
-下表描述[!DNL PySpark]数据保护程序类的抽象方法：
+下表介绍了 [!DNL PySpark] 数据保护程序类：
 
 <table>
     <thead>
@@ -212,13 +210,13 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
         <tr>
             <td>
                 <p><code>save(self, configProperties, dataframe)</code></p>
-                <p>将输出数据作为DataFrame接收并存储在平台数据集中</p>
+                <p>将输出数据作为DataFrame接收，并将其存储在Platform数据集中</p>
             </td>
             <td>
                 <ul>
                     <li><code>self</code>:自引用</li>
                     <li><code>configProperties</code>:配置属性映射</li>
-                    <li><code>dataframe</code>:以DataFrame形式存储的数据</li>
+                    <li><code>dataframe</code>:要以DataFrame形式存储的数据</li>
                 </ul>
             </td>
         </tr>
@@ -227,7 +225,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
 
 **Spark(Scala)**
 
-下表描述[!DNL Spark]数据保护程序类的抽象方法：
+下表介绍了 [!DNL Spark] 数据保护程序类：
 
 <table>
     <thead>
@@ -240,26 +238,26 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
         <tr>
             <td>
                 <p><code>save(configProperties, dataFrame)</code></p>
-                <p>将输出数据作为DataFrame接收并存储在平台数据集中</p>
+                <p>将输出数据作为DataFrame接收，并将其存储在Platform数据集中</p>
             </td>
             <td>
                 <ul>
                     <li><code>configProperties</code>:配置属性映射</li>
-                    <li><code>dataFrame</code>:以DataFrame形式存储的数据</li>
+                    <li><code>dataFrame</code>:要以DataFrame形式存储的数据</li>
                 </ul>
             </td>
         </tr>
     </tbody>
 </table>
 
-### 将数据保存到[!DNL Platform]数据集{#save-data-to-a-platform-dataset}
+### 将数据保存到 [!DNL Platform] 数据集 {#save-data-to-a-platform-dataset}
 
-要将数据存储到[!DNL Platform]数据集上，必须在配置文件中提供或定义属性：
+要将数据存储到 [!DNL Platform] 数据集中，必须在配置文件中提供或定义属性：
 
-- 要存储数据的有效[!DNL Platform]数据集ID
-- 属于您组织的租户ID
+- 有效 [!DNL Platform] 数据将存储到的数据集ID
+- 属于贵组织的租户ID
 
-下面的示例将数据(`prediction`)存储到[!DNL Platform]数据集上，其中数据集ID(`datasetId`)和租户ID(`tenantId`)是配置文件中定义的属性。
+以下示例存储数据(`prediction`)到a [!DNL Platform] 数据集，其中数据集ID(`datasetId`)和租户ID(`tenantId`)是配置文件中定义的属性。
 
 
 **PySpark**
@@ -395,9 +393,9 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-DatasetTransformer类修改和转换数据集的结构。 [!DNL Sensei Machine Learning Runtime]不要求定义此组件，并根据您的要求实现。
+DatasetTransformer类可修改和转换数据集的结构。 的 [!DNL Sensei Machine Learning Runtime] 无需定义此组件，并可根据您的要求进行实施。
 
-在特征流水线方面，数据集转换器可以与特征流水线工厂协同使用，为特征工程准备数据。
+关于特征管线，数据集转换器可以与特征管线工厂合作使用，以准备用于特征工程的数据。
 
 **PySpark**
 
@@ -429,7 +427,7 @@ DatasetTransformer类修改和转换数据集的结构。 [!DNL Sensei Machine L
 
 **Spark(Scala)**
 
-下表描述[!DNL Spark]数据集转换器类的抽象方法：
+下表介绍了 [!DNL Spark] 数据集转换器类：
 
 <table>
     <thead>
@@ -454,9 +452,9 @@ DatasetTransformer类修改和转换数据集的结构。 [!DNL Sensei Machine L
     </tbody>
 </table>
 
-## FeaturePipelineFactory {#featurepipelinefactory}
+## 功能管道工厂 {#featurepipelinefactory}
 
-FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成的功能管道的各个阶段。
+FeaturePipelineFactory类包含特征提取算法并定义特征管道从始至终的阶段。
 
 **PySpark**
 
@@ -473,7 +471,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>create_pipeline(self, configProperties)</code></p>
-                <p>创建并返回包含一系列Spark Transformers的Spark管道</p>
+                <p>创建并返回包含一系列Spark Transporters的Spark管线</p>
             </td>
             <td>
                 <ul>
@@ -485,7 +483,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>get_param_map(self, configProperties, sparkSession)</code></p>
-                <p>从配置属性中检索和返回参数映射</p>
+                <p>从配置属性中检索并返回参数映射</p>
             </td>
             <td>
                 <ul>
@@ -500,7 +498,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
 
 **Spark(Scala)**
 
-下表描述了[!DNL Spark] FeaturePipelineFactory的类方法：
+下表介绍了 [!DNL Spark] 功能管道工厂：
 
 <table>
     <thead>
@@ -513,7 +511,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>createPipeline(configProperties)</code></p>
-                <p>创建并返回包含一系列变压器的管道</p>
+                <p>创建并返回包含一系列变压器的管线</p>
             </td>
             <td>
                 <ul>
@@ -524,7 +522,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>getParamMap(configProperties, sparkSession)</code></p>
-                <p>从配置属性中检索和返回参数映射</p>
+                <p>从配置属性中检索并返回参数映射</p>
             </td>
             <td>
                 <ul>
@@ -536,9 +534,9 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
     </tbody>
 </table>
 
-## PipelineFactory {#pipelinefactory}
+## 管道工厂 {#pipelinefactory}
 
-PipelineFactory类封装了模型培训和评分的方法和定义，其中培训逻辑和算法以[!DNL Spark]管道的形式进行定义。
+PipelineFactory类封装模型训练和评分的方法和定义，其中训练逻辑和算法以 [!DNL Spark] 管道。
 
 **PySpark**
 
@@ -555,7 +553,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>apply(self, configProperties)</code></p>
-                <p>创建并返回一个Spark管道，它包含用于模型培训和评分的逻辑和算法</p>
+                <p>创建并返回Spark管道，其中包含用于模型培训和评分的逻辑和算法</p>
             </td>
             <td>
                 <ul>
@@ -567,7 +565,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>train(self, configProperties, dataframe)</code></p>
-                <p>返回包含训练模型的逻辑和算法的自定义管道。 如果使用Spark管线，则不需要使用此方法</p>
+                <p>返回包含用于训练模型的逻辑和算法的自定义管道。 如果使用Spark管道，则不需要使用此方法</p>
             </td>
             <td>
                 <ul>
@@ -580,7 +578,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>score(self, configProperties, dataframe, model)</code></p>
-                <p>使用培训的模型进行评分并返回结果</p>
+                <p>使用训练的模型进行评分并返回结果</p>
             </td>
             <td>
                 <ul>
@@ -594,7 +592,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>get_param_map(self, configProperties, sparkSession)</code></p>
-                <p>从配置属性中检索和返回参数映射</p>
+                <p>从配置属性中检索并返回参数映射</p>
             </td>
             <td>
                 <ul>
@@ -609,7 +607,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
 
 **Spark(Scala)**
 
-下表描述了[!DNL Spark] PipelineFactory的类方法：
+下表介绍了 [!DNL Spark] 管道工厂：
 
 <table>
     <thead>
@@ -622,7 +620,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>apply(configProperties)</code></p>
-                <p>创建并返回包含模型培训和评分的逻辑和算法的管道</p>
+                <p>创建并返回一个管道，其中包含用于模型培训和评分的逻辑和算法</p>
             </td>
             <td>
                 <ul>
@@ -633,7 +631,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>getParamMap(configProperties, sparkSession)</code></p>
-                <p>从配置属性中检索和返回参数映射</p>
+                <p>从配置属性中检索并返回参数映射</p>
             </td>
             <td>
                 <ul>
@@ -645,13 +643,13 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
     </tbody>
 </table>
 
-## MLEvaluator {#mlevaluator}
+## MLE值器 {#mlevaluator}
 
-MLEvaluator类提供了定义评估量度和确定培训和测试数据集的方法。
+MLEvaluator类提供了定义评估量度和确定训练和测试数据集的方法。
 
 **PySpark**
 
-下表描述了PySpark MLvalueator的类方法：
+下表描述了PySpark MLEvaluator的类方法：
 
 <table>
     <thead>
@@ -677,12 +675,12 @@ MLEvaluator类提供了定义评估量度和确定培训和测试数据集的方
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>evaluate(self, dataframe, model, configProperties)</code></p>
-                <p>评估训练的模型并返回评估结果</p>
+                <p>评估训练好的模型并返回评估结果</p>
             </td>
             <td>
                 <ul>
                     <li><code>self</code>:自引用</li>
-                    <li><code>dataframe</code>:由培训和测试数据组成的DataFrame</li>
+                    <li><code>dataframe</code>:由培训和测试数据组成的数据框架</li>
                     <li><code>model</code>:训练好的模型</li>
                     <li><code>configProperties</code>:配置属性</li>
                 </ul>
@@ -693,7 +691,7 @@ MLEvaluator类提供了定义评估量度和确定培训和测试数据集的方
 
 **Spark(Scala)**
 
-下表描述了[!DNL Spark] MLEvaluator的类方法：
+下表介绍了 [!DNL Spark] MLEvaluator:
 
 <table>
     <thead>
@@ -718,13 +716,13 @@ MLEvaluator类提供了定义评估量度和确定培训和测试数据集的方
         <tr>
             <td>
                 <p><i>抽象</i><br/><code>evaluate(configProperties, model, data)</code></p>
-                <p>评估训练的模型并返回评估结果</p>
+                <p>评估训练好的模型并返回评估结果</p>
             </td>
             <td>
                 <ul>
                     <li><code>configProperties</code>:配置属性</li>
                     <li><code>model</code>:训练好的模型</li>
-                    <li><code>data</code>:由培训和测试数据组成的DataFrame</li>
+                    <li><code>data</code>:由培训和测试数据组成的数据框架</li>
                 </ul>
             </td>
         </tr>

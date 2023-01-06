@@ -2,10 +2,9 @@
 keywords: Experience Platform；零售销售方法；Data Science Workspace；热门主题；方法；预建方法
 solution: Experience Platform
 title: 零售销售方法
-topic-legacy: overview
 description: “零售销售”方法使您可以预测某个时间段内系统初始的所有商店的销售预测。 借助准确的预测模型，零售商将能够找到需求与定价策略之间的关系，并做出优化的定价决策以最大限度地提高销售和收入。
 exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
-source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '585'
 ht-degree: 2%

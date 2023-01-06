@@ -2,11 +2,10 @@
 keywords: Experience Platform;JupyterLab；方法；笔记本；Data Science Workspace；热门主题；创建方法
 solution: Experience Platform
 title: 使用JupyterLab Notebooks创建模型
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将指导您完成使用JupyterLab笔记本电脑方法生成器模板创建方法所需的步骤。
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: b4dabd36f54cc571b78a6c6c9535f9f08c403b64
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%

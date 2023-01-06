@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；数据科学工作区；数据科学
 solution: Experience Platform
 title: Sensei机器学习API指南
-topic-legacy: Developer guide
 description: Sensei机器学习API允许开发人员对各种数据科学工作区资源执行CRUD操作。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '243'
 ht-degree: 9%
@@ -42,7 +41,7 @@ ht-degree: 9%
 
 * [引擎](./engines.md)
 * [实验](./experiments.md)
-* [分析](./insights.md)
+* [见解](./insights.md)
 * [MLInstances（脚本）](./mlinstances.md)
 * [MLServices](./mlservices.md)
 * [模型](./models.md)

@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；mlservices;sensei机器学习API
 solution: Experience Platform
 title: MLServices API端点
-topic-legacy: Developer guide
 description: MLService是已发布的受过培训的模型，可让您的组织能够访问和重复使用以前开发的模型。 MLServices的一个关键功能是能够按计划自动执行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可确保始终如一地生成新的洞察。
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '890'
 ht-degree: 2%

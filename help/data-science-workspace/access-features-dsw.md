@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；Data Science Workspace；热门主题；访问控制；沙盒；智能包；dsw功能；dsw访问；Adobe Experience Platform Intelligence；智能；aep智能包
 solution: Experience Platform
 title: 数据科学工作区访问和功能
-topic-legacy: Access and features for data science workspace
 description: 以下文档概述了Data Science Workspace的权限和对功能的访问权限。
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 2%

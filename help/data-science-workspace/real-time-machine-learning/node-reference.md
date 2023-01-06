@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；Data Science Workspace；热门主题；实时机器学习；节点引用；
 solution: Experience Platform
 title: 实时机器学习节点参考
-topic-legacy: Nodes reference
 description: 节点是形成图的基本单位。 每个节点都执行特定任务，并且可以使用链接将它们链接在一起，以形成表示ML管道的图形。 节点执行的任务表示对输入数据的操作，如数据或模式的转换或机器学习推理。 节点将转换或推断的值输出到下一个节点。
 exl-id: 67fe26b5-ce03-4a9a-ad45-783b2acf8d92
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '678'
 ht-degree: 1%
@@ -122,7 +121,7 @@ msg6 = model_train.process(msg5)
 
 | 值 | 描述 |
 | --- | --- |
-| 功能 | 输入模型特征（字符串列表）。 <br> 例如: `browser`, `device`, `login_page`, `product_page`, `search_page` |
+| 功能 | 输入模型特征（字符串列表）。 <br> 例如： `browser`, `device`, `login_page`, `product_page`, `search_page` |
 | label | Target列名称（字符串）。 |
 | 模式 | 培训/测试（字符串）。 |
 | model_path | 以onnx格式在本地保存模型的路径。 |
@@ -132,7 +131,7 @@ msg6 = model_train.process(msg5)
 
 ### 拆分
 
-使用以下节点将数据帧拆分为多个类型，并通过 `train_size` 或 `test_size`. 这会返回具有多索引的数据帧。 您可以使用以下示例访问培训和测试数据帧， `msg5.data.xs(“train”)`.
+使用以下节点将数据帧拆分为多个类型，并通过 `train_size` 或 `test_size`. 这会返回具有多索引的数据帧。 您可以使用以下示例访问培训和测试数据帧， `msg5.data.xs("train")`.
 
 ```python
 splitter = Split(params={"train_size": 0.7})

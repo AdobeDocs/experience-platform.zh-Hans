@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；数据科学工作区；热门主题；数据科学工作区；数据科学
 solution: Experience Platform
 title: 数据科学工作区概述
-topic-legacy: overview
 description: 本指南概述与Adobe Experience Platform中的数据科学工作区相关的关键概念。
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%

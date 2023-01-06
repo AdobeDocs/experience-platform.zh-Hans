@@ -2,10 +2,9 @@
 keywords: Experience Platform；产品推荐方法；Data Science Workspace；热门主题；方法；预构建方法
 solution: Experience Platform
 title: 产品推荐方法
-topic-legacy: overview
 description: 通过产品Recommendations方法，您可以根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察信息。
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
-source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 3%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实验；Sensei机器学习API
 solution: Experience Platform
 title: Experiments API端点
-topic-legacy: Developer guide
 description: 模型开发和培训在实验级别进行，实验由MLI实例、培训运行和评分运行组成。
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 4%

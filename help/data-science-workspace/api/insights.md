@@ -2,10 +2,9 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；分析；Sensei机器学习API
 solution: Experience Platform
 title: 分析API端点
-topic-legacy: Developer guide
 description: 分析包含量度，这些量度用于让数据科学家通过显示相关评估量度来评估和选择最佳ML模型。
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 3%

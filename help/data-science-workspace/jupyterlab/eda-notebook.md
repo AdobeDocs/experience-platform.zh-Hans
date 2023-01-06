@@ -2,11 +2,10 @@
 keywords: Experience Platform;JupyterLab；笔记本；Data Science Workspace；热门主题；分析数据笔记本；EDA；探索性数据分析；数据科学
 solution: Experience Platform
 title: 探索性数据分析(EDA)笔记本
-topic-legacy: overview
 type: Tutorial
 description: 本指南重点介绍如何使用探索性数据分析(EDA)笔记本来发现Web数据中的模式、将事件与预测目标聚合、清理聚合数据，以及了解预测器与目标之间的关系。
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '2760'
 ht-degree: 0%
@@ -633,7 +632,7 @@ for col in Data.columns:
 
 ### 对缺失的值进行更正
 
-以下部分包含一些有关更正缺失值的示例方法。 尽管在上述数据中，只有一列具有缺失的值，但示例单元格中所有数据类型的值都低于正确的值。 这些功能包括：
+以下部分包含一些有关更正缺失值的示例方法。 尽管在上述数据中，只有一列具有缺失的值，但示例单元格中所有数据类型的值都低于正确的值。 其中包括：
 
 - 数值数据类型：输入0或最大值（如果适用）
 - 类别数据类型：输入模态值

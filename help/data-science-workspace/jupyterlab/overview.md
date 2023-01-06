@@ -2,10 +2,9 @@
 keywords: Experience Platform;JupyterLab；笔记本；Data Science Workspace；热门主题；jupyterlab
 solution: Experience Platform
 title: JupyterLab UI概述
-topic-legacy: Overview
 description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供了一个交互式开发环境，以便与Jupyter Notebooks、代码和数据合作。 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: 1d3981c67c86f93394acf49b61bd29154e9653e8
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1820'
 ht-degree: 3%

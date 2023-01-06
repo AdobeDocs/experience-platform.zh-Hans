@@ -1,12 +1,10 @@
 ---
-keywords: Experience Platform；开发人员指南；数据科学工作区；热门主题；实时机器学习；
+keywords: Experience Platform；开发人员指南；Data Science Workspace；热门主题；实时机器学习；
 solution: Experience Platform
 title: 实时机器学习入门
-topic-legacy: Getting started
 description: 以下文档概述了在Adobe Experience Platform中创建实时机器学习模型所需的步骤。
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '438'
 ht-degree: 0%
@@ -17,38 +15,38 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->尚未向所有用户提供实时机器学习。 此功能位于alpha中，仍在测试中。 此文档可能会更改。
+>尚未向所有用户提供实时机器学习功能。 此功能位于Alpha中，且仍在测试中。 本文档可能会更改。
 
-为了利用实时机器学习，您需要对随Adobe Experience Platform和[!DNL Data Science Workspace]提供的组织具有访问权限。 此外，您还需要具有完整的数据集才能用于培训和评分。
+要利用实时机器学习，您需要有权访问配置了Adobe Experience Platform和 [!DNL Data Science Workspace]. 此外，您还需要有一个完整的数据集，以用于培训和评分。
 
-实时机器学习指南需要对Python 3、[Jupyter Notebooks](../jupyterlab/overview.md)、数据科学和机器学习进行有效的了解。
+实时机器学习指南需要对Python 3进行有效的了解， [Jupyter笔记本](../jupyterlab/overview.md)、数据科学和机器学习。
 
-**主要条款：**
+**关键术语：**
 
-- **DSL：域** 特定语言。
-- **Edge：实** 时机器学习评分服务可以在离您的激活和应用程序更近的Edge群集上运行。
-- **集线器：** 当Experience Edge Network处于开发阶段时，当前alpha正在Adobe Experience Platform集线器上运行实时机器学习评分服务。
-- **节点：** 节点是图形的基本单位。每个节点都执行特定任务，它们可以通过链接链接链接在一起，形成表示ML管线的图形。 由节点执行的任务表示对输入数据的操作，例如数据或模式的转换，或机器学习推理。 节点将变换或推断的值输出到下一个节点。
+- **DSL:** 域特定语言。
+- **边缘：** 实时机器学习评分服务可以在离激活和应用程序更近的Edge群集上运行。
+- **中心：** 当前的Alpha在开发Experience Edge Network时，正在Adobe Experience Platform集线器上运行实时机器学习评分服务。
+- **节点：** 节点是图形的基本单位。 每个节点都执行特定任务，并且可以使用链接将它们链接在一起，以形成表示ML管道的图形。 节点执行的任务表示对输入数据的操作，如数据或模式的转换或机器学习推理。 节点将转换或推断的值输出到下一个节点。
 
 ## Adobe Experience Platform中的数据集
 
-要使用“实时机器学习”进行开始，您必须具有对数据集的访问权限。 您可以选择使用外部数据集并将其上传到[!DNL JupyterLab]环境，或在Platform中创建新数据集（如果尚未这样做）。
+要开始使用实时机器学习，您必须有权访问数据集。 您可以选择使用外部数据集并将其上传到您的 [!DNL JupyterLab] 环境，或在Platform中创建新数据集（如果尚未创建）。
 
 >[!NOTE]
 >
->如果您已经有要使用的数据集，可以跳到[下一步](#next-steps)。
+>如果您已经有要使用的数据集，则可以跳到 [后续步骤](#next-steps).
 
 ### 使用外部数据集
 
-要了解有关使用外部数据集(如将数据上传到[!DNL JupyterLab]环境)的更多信息，请访问教程[中使用笔记本](../jupyterlab/analyze-your-data.md#external-data)分析数据。
+了解有关使用外部数据集(例如，将数据上传到 [!DNL JupyterLab] 环境，请访问 [使用笔记本分析数据](../jupyterlab/analyze-your-data.md#external-data).
 
 ### 创建新数据集
 
-要创建用于实时机器学习的新数据集，您需要为数据集创建数据模式。 接下来，您需要使用您创建的模式收录数据。 使用以下教程为[!DNL Platform]创建和填充数据集：
+要创建用于实时机器学习的新数据集，您需要为数据集提供一个数据架构。 接下来，您需要使用您创建的架构摄取数据。 请通过以下教程为 [!DNL Platform]:
 
-- [在API中创建并填充数据集](../../catalog/datasets/create.md)
+- [在API中创建和填充数据集](../../catalog/datasets/create.md)
 - [在UI中创建和填充数据集](../../ingestion/tutorials/ingest-batch-data.md)
 
 ## 后续步骤 {#next-steps}
 
-在您准备好用于实时机器学习的数据后，请开始，方法是按照[实时机器学习笔记本用户指南](./rtml-authoring-notebook.md)，学习如何创建ONNX模型并将其上传到实时机器学习模型商店。
+准备好数据进行实时机器学习后，请首先按照 [实时机器学习笔记本用户指南](./rtml-authoring-notebook.md) 了解如何创建ONNX模型并将其上传到实时机器学习模型库。

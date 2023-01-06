@@ -2,10 +2,9 @@
 keywords: Experience Platform；故障诊断；Data Science Workspace；热门主题
 solution: Experience Platform
 title: Data Science Workspace疑难解答指南
-topic-legacy: Troubleshooting
 description: 本文档提供了有关Adobe Experience Platform Data Science Workspace的常见问题解答。
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
-source-git-commit: ec42d80e695ccf57c10c539ae1b5104c7948c473
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1470'
 ht-degree: 0%
@@ -66,7 +65,7 @@ JupyterLab Notebook可能表示某个单元处于执行状态，无限期地处�
 
 ## 为什么我无法访问 [!DNL JupyterLab] 在Safari中？
 
-Safari在Safari &lt; 12中默认禁用第三方Cookie。 因为 [!DNL Jupyter] 虚拟机实例位于与其父框架不同的域上，Adobe Experience Platform当前要求启用第三方Cookie。 请启用第三方Cookie或切换到其他浏览器，例如 [!DNL Google Chrome].
+Safari默认在Safari &lt; 12中禁用第三方Cookie。 因为 [!DNL Jupyter] 虚拟机实例位于与其父框架不同的域上，Adobe Experience Platform当前要求启用第三方Cookie。 请启用第三方Cookie或切换到其他浏览器，例如 [!DNL Google Chrome].
 
 对于Safari 12，您需要将用户代理切换到[!DNL Chrome]&#39;或&#39;[!DNL Firefox]&#39;。 要切换用户代理，请首先打开 *Safari* 菜单和选择 **首选项**. 此时将出现“首选项”窗口。
 
@@ -154,7 +153,7 @@ Safari在Safari &lt; 12中默认禁用第三方Cookie。 因为 [!DNL Jupyter] �
 
 ## [!DNL Docker Hub] 数据科学工作区中的限制限制
 
-自2020年11月20日起，对Docker Hub的匿名和免费认证使用的费率限制已生效。 匿名和免费 [!DNL Docker Hub] 用户每六小时最多只能有100个容器图像拉取请求。 如果您受这些更改的影响，将收到以下错误消息： `ERROR: toomanyrequests: Too Many Requests.` 或 `You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits.`.
+自2020年11月20日起，对Docker Hub的匿名和免费认证使用的费率限制已生效。 匿名和免费 [!DNL Docker Hub] 用户每六小时最多可获得100个容器图像拉取请求。 如果您受这些更改的影响，将收到以下错误消息： `ERROR: toomanyrequests: Too Many Requests.` 或 `You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits.`.
 
 目前，此限制仅在您尝试在6小时内构建100个指向方法的笔记本时，或者如果您在数据科学工作区中使用基于Spark的笔记本时（经常进行放大和缩小），才会影响您的组织。 但是，这不太可能，因为在上运行的群集在空闲之前保持活动状态两个小时。 这会减少群集处于活动状态时所需的提取数。 如果您收到上述任何错误，则需要等到 [!DNL Docker] 限制已重置。
 
