@@ -4,10 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform常见问题解答和疑难解答指南
 description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 landing-page-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
-topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '1851'
 ht-degree: 3%

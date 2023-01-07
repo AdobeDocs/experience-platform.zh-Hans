@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；日期范围
 solution: Experience Platform
 title: 可观察性分析API快速入门
-topic-legacy: developer guide
 description: 可观察性分析API允许您为各种Adobe Experience Platform功能检索量度数据。 本文档简要介绍在尝试调用可观察性分析API之前您需要了解的核心概念。
 exl-id: 3b120bd6-155d-467e-b98e-05478f8a4cc5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%

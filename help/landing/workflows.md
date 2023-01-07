@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题；Adobe Experience Platform；用户指南；UI指南；工作流UI指南；工作流；工作流用户指南；
 solution: Experience Platform
 title: 工作流UI指南
-topic-legacy: ui guide
 description: 了解如何遵循多步工作流，在Adobe Experience Platform用户界面中执行常见操作。
 exl-id: f1a3ea83-09c9-48df-9493-62f03b403a95
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '307'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 

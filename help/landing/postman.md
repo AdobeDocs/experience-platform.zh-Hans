@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Adobe Experience Platform;API指南；平台API指南；平台简介；开发人员指南
 solution: Experience Platform
 title: Postman在Adobe Experience Platform
-topic-legacy: api guide
 description: 本文档包含概述如何设置Postman环境、导入Postman收藏集以及每个Platform服务可用收藏集列表的步骤。
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-source-git-commit: d06c3bc51909b464b9eed2a2f0df04ca531010b3
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 0%

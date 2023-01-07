@@ -1,9 +1,8 @@
 ---
 title: 使用Adobe Experience Platform Web SDK处理客户同意数据
-topic-legacy: getting started
 description: 了解如何集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '1375'
 ht-degree: 0%

@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
 title: Adobe Experience Platform端到端示例工作流
-topic-legacy: getting started
 description: 了解Adobe Experience Platform的基本端到端工作流程（高级）。
 exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '1836'
 ht-degree: 3%
@@ -93,9 +92,9 @@ Platform允许从外部源摄取数据，同时让您能够使用Platform服务�
 
 ## 监控平台数据活动
 
-Platform允许您通过使用数据流跟踪数据的处理方式，数据流是跨Platform各个组件移动数据的作业的表示形式。 这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活到目标之前。 监控仪表板可直观地呈现数据流的历程。 要了解如何在Platform UI中监视数据流，请参阅 [监控源的数据流](../dataflows/ui/monitor-sources.md) 和 [监控目标数据流](../dataflows/ui/monitor-destinations.md).
+Platform允许您通过使用数据流跟踪数据的处理方式，数据流是跨Platform各个组件移动数据的作业的表示形式。 这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后数据集会被利用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活到目标之前。 监控仪表板可直观地呈现数据流的历程。 要了解如何在Platform UI中监视数据流，请参阅 [监控源的数据流](../dataflows/ui/monitor-sources.md) 和 [监控目标数据流](../dataflows/ui/monitor-destinations.md).
 
-您还可以通过使用 [!DNL Observability Insights]. 您可以通过Platform UI订阅警报通知，或将通知发送到配置的WebHook。 有关如何从Experience PlatformUI查看、启用、禁用和订阅可用警报的更多详细信息，请参阅 [[!UICONTROL 警报] UI指南](../observability/alerts/ui.md). 有关如何通过Web挂接接收警报的详细信息，请参阅 [订阅Adobe I/O事件通知](../observability/alerts/subscribe.md).
+您还可以通过使用 [!DNL Observability Insights]. 您可以通过Platform UI订阅警报通知，或将其发送到配置的WebHook。 有关如何从Experience PlatformUI查看、启用、禁用和订阅可用警报的更多详细信息，请参阅 [[!UICONTROL 警报] UI指南](../observability/alerts/ui.md). 有关如何通过Web挂接接收警报的详细信息，请参阅 [订阅Adobe I/O事件通知](../observability/alerts/subscribe.md).
 
 ## 后续步骤
 

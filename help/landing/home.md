@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
 solution: Experience Platform
 title: Adobe Experience Platform 概述
-topic-legacy: getting started
 description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '437'
 ht-degree: 10%
@@ -30,7 +29,7 @@ Adobe已基于Experience Platform构建了多个应用程序服务。 您可以�
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
-* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
 

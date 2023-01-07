@@ -2,14 +2,13 @@
 keywords: Experience Platform；主页；热门主题；身份验证；访问
 solution: Experience Platform
 title: 身份验证和访问Experience PlatformAPI
-topic-legacy: tutorial
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '1272'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
@@ -37,7 +36,7 @@ ht-degree: 5%
 
 您还必须具有Adobe ID才能完成本教程。 如果您没有Adobe ID，则可以使用以下步骤创建一个：
 
-1. 转到 [Adobe开发人员控制台](https://console.adobe.io).
+1. 转到 [Adobe Developer控制台](https://console.adobe.io).
 2. 选择 **[!UICONTROL 创建新帐户]**.
 3. 完成注册流程。
 
@@ -47,9 +46,9 @@ ht-degree: 5%
 
 ### 获取开发人员访问权限
 
-联系 [!DNL Admin Console] 组织中的管理员，可使用 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 有关如何操作的特定说明的文档 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
+联系 [!DNL Admin Console] 组织中的管理员，可使用 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 有关如何操作的特定说明的文档 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/cn/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
 
-将您分配为开发人员后，即可在 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
+将您分配为开发人员后，即可在 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
 ### 获取用户访问权限
 
@@ -65,7 +64,7 @@ ht-degree: 5%
 
 ### 将Experience Platform添加到项目
 
-转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) (在Adobe Developer控制台文档中)。
+转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) (在Adobe Developer控制台文档中)。
 
 创建新项目后，选择 **[!UICONTROL 添加API]** 在 **[!UICONTROL 项目概述]** 屏幕。
 
@@ -102,7 +101,7 @@ ht-degree: 5%
 >
 >在本教程中，以下步骤将简要介绍如何在开发人员控制台中生成JWT。 但是，此生成方法只应用于测试和评估目的。
 >
->为了正常使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅 [服务帐户验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) Adobe开发人员。
+>为了正常使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅 [服务帐户验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) 在Adobe Developer。
 
 选择 **[!UICONTROL 服务帐户(JWT)]** 在左侧导航中，选择 **[!UICONTROL 生成JWT]**.
 
@@ -197,7 +196,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 使用Postman验证和测试API调用
 
-[邮递员](https://www.postman.com/) 是一款通用工具，允许开发人员探索和测试RESTful API。 此 [中等帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置Postman以自动执行JWT身份验证，并使用它使用Platform API。
+[Postman](https://www.postman.com/) 是一款通用工具，允许开发人员探索和测试RESTful API。 此 [中等帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置Postman以自动执行JWT身份验证，并使用它来使用Platform API。
 
 ## 后续步骤
 

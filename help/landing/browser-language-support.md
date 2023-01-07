@@ -1,25 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；CJA；旅程分析；客户旅程分析；活动编排；客户旅程；旅程；旅程编排；功能；区域
+keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
 solution: Experience Platform
-title: Experience Platform UI的浏览器和语言支持
-topic-legacy: getting started
+title: Experience PlatformUI的浏览器和语言支持
 description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
-source-wordcount: '246'
-ht-degree: 17%
+source-wordcount: '248'
+ht-degree: 21%
 
 ---
 
-# Experience Platform UI的浏览器和语言支持
+# Experience PlatformUI的浏览器和语言支持
 
-Adobe Experience Platform用户界面(UI)设计为支持多种浏览器和语言。
+Adobe Experience Platform用户界面(UI)旨在支持多种浏览器和语言。
 
 ## 浏览器支持
 
-平台UI设计为在Google Chrome、Safari、Firefox和Microsoft Edge的&#x200B;**最新版本**&#x200B;中发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+Platform UI可在 **最新版本** Google Chrome、Safari、Firefox和Microsoft Edge中的“隐藏主体”。 在较旧版本的浏览器上使用某些功能时，您可能会遇到问题。
 
 | Operating system | 支持的浏览器 |
 |---|---|
@@ -44,13 +42,13 @@ Adobe Experience Platform用户界面(UI)设计为支持多种浏览器和语言
 
 ### 更改默认语言
 
-您的默认UI语言由用户用户档案中指定的区域决定。
+您的默认UI语言由用户配置文件中指定的区域决定。
 
-要更改您的语言：
+如要更改您的语言：
 
-1. 在[!DNL Experience Platform]用户界面的页脚中选择当前语言。
-2. 在用户档案设置中，选择&#x200B;**[!UICONTROL Change Region]**。
-3. 选择您的地区。
+1. 在页脚中选择当前语言 [!DNL Experience Platform] 用户界面。
+2. 在您的配置文件设置中，选择 **[!UICONTROL 更改区域]**.
+3. 选择您所在的地区。
 
 >[!NOTE]
 >
