@@ -5,9 +5,9 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括、导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: deb9f314d5eaadebe2f3866340629bad5f39c60d
+source-git-commit: 491aadf161bd822cb40a5ef5dd107831bca1d2c4
 workflow-type: tm+mt
-source-wordcount: '4362'
+source-wordcount: '4383'
 ht-degree: 1%
 
 ---
@@ -533,6 +533,11 @@ WHERE T2.ID IS NULL
 +++回答是，如果配置了，则强制实施基于属性的访问控制。 请参阅 [基于属性的访问控制概述](../access-control/abac/overview.md) 以了解更多信息。
 +++
 
+### 查询服务是否支持“INSERT OVERWRITE INTO”命令？
+
++++答案否，查询服务不支持“INSERT OVERWRITE INTO”命令。
++++
+
 ## 导出数据 {#exporting-data}
 
 本节提供有关导出数据和限制的信息。
@@ -627,7 +632,7 @@ and timestamp < to_timestamp('2022-07-23');
 | 错误代码 | 连接状态 | 描述 | 可能的原因 |
 |------------|---------------------------|-------------|----------------|
 | **08P01** | 不适用 | 不支持的消息类型 | 不支持的消息类型 |
-| **2001年2月28日** | 启动 — 身份验证 | 密码无效 | 身份验证令牌无效 |
+| **28P01** | 启动 — 身份验证 | 密码无效 | 身份验证令牌无效 |
 | **28000** | 启动 — 身份验证 | 授权类型无效 | 授权类型无效。 必须为 `AuthenticationCleartextPassword`. |
 | **42P12** | 启动 — 身份验证 | 未找到表 | 未找到要使用的表 |
 | **42601** | 查询 | 语法错误 | 命令或语法错误无效 |
