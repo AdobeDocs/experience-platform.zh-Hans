@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；ECID;ecid
 solution: Experience Platform
 title: 隐私请求的身份数据
-topic-legacy: overview
 description: 本文档就如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息提供了一般指导。
 exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 2%

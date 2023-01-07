@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 订阅Privacy Service事件
-topic-legacy: privacy events
 description: 了解如何使用预配置的WebHook订阅Privacy Service事件。
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '440'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -31,7 +30,7 @@ ht-degree: 1%
 
 在开始本教程之前，请查看以下Privacy Service文档：
 
-* [Privacy Service概述](./home.md)
+* [Privacy Service 概述](./home.md)
 * [Privacy ServiceAPI指南](./api/overview.md)
 
 ## 注册网页挂接到 [!DNL Privacy Service Events]

@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；统一；配置文件；rtcp;XDM图形
 title: 实时客户资料概述
-topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '2046'
 ht-degree: 0%

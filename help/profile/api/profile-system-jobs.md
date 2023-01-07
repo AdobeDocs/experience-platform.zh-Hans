@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 配置文件系统作业API端点
-topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以删除不再需要或错误添加的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1316'
 ht-degree: 2%

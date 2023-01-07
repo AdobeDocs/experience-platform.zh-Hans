@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 实体（配置文件访问）API端点
-topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您使用RESTful API或用户界面访问实时客户资料数据。 本指南概述了如何使用配置文件API访问实体（通常称为“配置文件”）。
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 1%

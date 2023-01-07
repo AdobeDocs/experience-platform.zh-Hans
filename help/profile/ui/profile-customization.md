@@ -2,9 +2,8 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；用户界面；UI；自定义；配置文件详细信息；详细信息
 title: UI中的配置文件详细信息自定义
 description: 本指南提供了关于自定义在Adobe Experience Platform UI中显示实时客户配置文件数据的方式的分步说明。
-topic-legacy: guide
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1350'
 ht-degree: 0%

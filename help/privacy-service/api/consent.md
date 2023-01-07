@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 同意API端点
-topic-legacy: developer guide
 description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的客户同意请求。
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '247'
 ht-degree: 2%

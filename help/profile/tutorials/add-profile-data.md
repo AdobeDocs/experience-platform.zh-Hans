@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；启用配置文件；启用配置文件
 title: 将数据添加到实时客户资料
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程概述了向实时客户用户档案添加数据所需的步骤。
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%

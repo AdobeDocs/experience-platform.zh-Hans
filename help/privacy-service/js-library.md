@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Adobe隐私JavaScript库概述
-topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 6%
@@ -139,7 +138,7 @@ adobePrivacy.removeIdentities(handleRemovedIDs);
 adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 ```
 
-| 变量 | 描述 |
+| Variable | 描述 |
 | --- | --- |
 | `validIds` | 一个JSON对象，其中包含已成功检索的所有ID。 |
 | `failedIDs` | 一个JSON对象，其中包含未从中检索的所有ID [!DNL Privacy Service]，或找不到其他内容。 |

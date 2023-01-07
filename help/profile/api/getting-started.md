@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 实时客户资料API快速入门
-topic-legacy: guide
 type: Documentation
 description: 配置文件API快速入门指南概述了要使用实时客户配置文件API端点对配置文件数据执行基本CRUD操作所需了解的关键概念和基本功能。
 exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%

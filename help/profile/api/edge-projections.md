@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 边缘投影API端点
-topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform让您能够在多个渠道中实时为客户提供协调、一致的个性化体验，方法是随时提供正确的数据，并在发生更改时不断更新这些数据。 这是通过使用边缘来完成的，边缘是一个地理上放置的服务器，用于存储数据并使应用程序能够轻松访问数据。
 exl-id: ce429164-8e87-412d-9a9d-e0d4738c7815
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1959'
 ht-degree: 2%

@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Privacy Service发行说明
-topic-legacy: release notes
 description: Adobe Experience Platform Privacy Service的最新发行说明。
 exl-id: 66ee38f1-f0d5-44ff-823d-d1b8a9765c6d
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '553'
-ht-degree: 6%
+ht-degree: 5%
 
 ---
 
@@ -28,7 +27,7 @@ ht-degree: 6%
 | --- | --- |
 | 支持LGPD（巴西） | 如今，巴西可以在 [!DNL Lei Geral de Proteção de Dados] (LGPD)法规。 这些作业将根据法规代码进行跟踪 `lgpd_bra`. |
 
-## 2020 年 4 月 8 日
+## 2020年4月8日
 
 ### 新增功能
 
@@ -55,7 +54,7 @@ ht-degree: 6%
    * 为GDPR和CCPA法规分别设置作业跟踪页面。
    * 新建 *调节类型* 用于在GDPR和CCPA的跟踪数据之间切换的下拉列表。
 
-## 2019 年 7 月 25 日
+## 2019年7月25日
 
 ### 新增功能
 
@@ -65,7 +64,7 @@ ht-degree: 6%
 | 请求生成器 | 为了为同时具有技术用户和非技术用户提交GDPR请求的组织提供服务，UI中新增了“创建请求”功能。 JSON文件提交功能在 [!DNL Privacy Service] UI，适用于那些希望继续使用UI的组织。 |
 | GDPR作业事件通知 | 有关GDPR作业状态的事件通知是许多工作流的一个关键元素。 虽然之前使用单个电子邮件通知来提供通知，但GDPR事件通知是利用Adobe I/O事件的消息，会将这些消息发送到配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可订阅Adobe I/OGDPR事件，以在产品或GDPR作业完成后接收更新。 |
 
-## 2019 年 4 月 18 日
+## 2019年4月18日
 
 ### 增强功能
 
@@ -91,7 +90,7 @@ ht-degree: 6%
 * 将所有查找(GET)API调用更新为默认的30天回顾范围
 * 使用限制的API的最大回顾范围为45天
 
-## 2019 年 2 月 14 日
+## 2019年2月14日
 
 ### 增强功能
 

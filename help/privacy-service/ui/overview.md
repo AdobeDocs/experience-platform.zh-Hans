@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Privacy ServiceUI概述
-topic-legacy: UI guide
 description: 开始使用Privacy Service用户界面来协调和监视各种Experience Cloud应用程序中的隐私请求。
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 76e431301f961484436fe47d28079ee47dbcc8ed
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '207'
+ht-degree: 1%
 
 ---
 

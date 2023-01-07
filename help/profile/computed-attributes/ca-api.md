@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 计算属性API端点
-topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform中，计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南演示了如何使用实时客户配置文件API创建、查看、更新和删除计算属性。
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '2275'
 ht-degree: 2%

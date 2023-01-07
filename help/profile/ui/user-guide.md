@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件；联合架构；联合配置文件；联合配置文件
 title: Real-Time Customer Profile UI指南
-topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而全面了解您的每位客户。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1951'
 ht-degree: 0%

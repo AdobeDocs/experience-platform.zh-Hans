@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；统一配置文件；统一配置文件；统一配置文件；rtcp；启用配置文件；启用配置文件；联合架构；联合配置文件；联合配置文件
 title: Union Schema UI指南
-topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松查看组织内的任何合并架构，并预览特定类的字段、身份、关系和参与架构。 本指南提供了有关如何使用平台UI查看和探索并集模式的详细信息。
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1199'
 ht-degree: 2%
@@ -80,7 +79,7 @@ ht-degree: 2%
 
 从列表中选择单个标识会导致显示的架构根据需要自动更新以显示标识字段。 这可能包括在嵌套身份字段时展开多个字段。
 
-标识字段在并集架构中突出显示，并且标识的详细信息显示在屏幕的右侧。 详细信息包括包含身份字段的参与架构列表，您可以向下展开以查找与将数据摄取到所选身份字段的架构相关的数据集的链接。
+标识字段在并集架构中突出显示，并且标识的详细信息显示在屏幕的右侧。 详细信息包括包含身份字段的参与架构列表，您可以向下展开以查找与将数据摄取到所选身份字段的架构相关数据集的链接。
 
 ![所选身份将突出显示。 有关所选身份的详细信息将显示在右侧侧栏中。](../images/union-schema/select-identity.png)
 

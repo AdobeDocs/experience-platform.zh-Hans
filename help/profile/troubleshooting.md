@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: Real-Time Customer Profile疑难解答指南
-topic-legacy: guide
 type: Documentation
 description: 本文档提供了有关实时客户资料的常见问题解答，以及使用Adobe Experience Platform处理资料数据时常见错误的疑难解答指南。
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 0%

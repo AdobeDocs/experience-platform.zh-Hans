@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Privacy Service疑难解答指南
-topic-legacy: troubleshooting
 description: 本文档提供了有关Privacy Service的常见问题解答，以及有关API中常见错误的信息。
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '884'
 ht-degree: 1%
@@ -103,7 +102,7 @@ Adobe不支持使用 [!DNL Privacy Service] 用于清除意外提交到产品的
 | 错误消息 | 描述 |
 | --- | --- |
 | 未找到用户ID。 | 找不到请求中提供的某些用户ID，因此已跳过。 确保在请求有效负载中使用正确的命名空间和ID值。 请参阅 [提供身份数据](./identity-data.md) 以了解更详细的说明。 |
-| 命名空间无效 | 为用户ID提供的身份命名空间无效。 请参阅 [标准身份命名空间](./api/appendix.md#standard-namespaces) 在 [!DNL Privacy Service] API指南附录，以获取已接受的命名空间列表。 如果您使用的是自定义命名空间，请确保您正在设置 `type` 属性更改为“自定义”。 |
+| 命名空间无效 | 为用户ID提供的身份命名空间无效。 请参阅 [标准身份命名空间](./api/appendix.md#standard-namespaces) 在 [!DNL Privacy Service] API指南附录，以获取已接受的命名空间列表。 如果您使用的是自定义命名空间，请确保您正在设置ID的 `type` 属性更改为“自定义”。 |
 | 部分完成 | 作业已成功完成，但某些数据不适用于给定请求，因此被跳过。 |
 | 数据不是必需的格式。 | 指定应用程序的一个或多个数据值的格式不正确。 有关更多信息，请查看作业详细信息。 |
 | 尚未配置IMS组织。 | 未为您的IMS组织配置此消息时 [!DNL Privacy Service]. 有关更多信息，请与管理员联系。 |

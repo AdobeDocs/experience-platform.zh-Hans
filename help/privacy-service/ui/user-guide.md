@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；导出；导出
 solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
-topic-legacy: UI guide
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1151'
 ht-degree: 1%

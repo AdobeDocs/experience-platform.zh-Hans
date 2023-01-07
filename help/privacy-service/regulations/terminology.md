@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；GDPR;GDPR;CCPA;PDPA;LGPD;LGPD；概述；法规；法规；法规；法规；隐私；隐私；
 solution: Experience Platform
 title: 隐私法规术语
-topic-legacy: troubleshooting
 description: 本文档提供了与Adobe Experience Cloud支持的隐私法规相关的关键术语的定义。
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 65ff39c99eee98654daee89c86d6047dc055c196
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1513'
 ht-degree: 3%

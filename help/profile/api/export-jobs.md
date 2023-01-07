@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 配置文件导出作业API端点
-topic-legacy: guide
 type: Documentation
 description: 实时客户配置文件允许您通过汇集来自多个来源的数据（包括属性数据和行为数据），在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1519'
 ht-degree: 2%

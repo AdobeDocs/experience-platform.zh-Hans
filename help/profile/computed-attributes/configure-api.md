@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 如何配置计算属性字段
-topic-legacy: guide
 type: Documentation
 description: 计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用架构注册表API创建此字段，以定义架构和将包含计算属性字段的自定义字段组。
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 2%
