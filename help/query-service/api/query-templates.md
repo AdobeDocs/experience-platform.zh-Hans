@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询模板；API指南；模板；查询服务；
 solution: Experience Platform
 title: 查询模板API端点
-topic-legacy: query templates
 description: 本指南详细介绍了您可以使用查询服务API进行的各种查询模板API调用。
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 3%

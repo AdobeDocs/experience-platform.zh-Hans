@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询
 solution: Experience Platform
 title: 查询服务API指南
-topic-legacy: query templates
 description: 查询服务API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 2f4a156b-5623-419a-a9b2-72310f755708
-source-git-commit: 9f458a327c0b72a5984161f13f02d09b7a2e610e
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 5%

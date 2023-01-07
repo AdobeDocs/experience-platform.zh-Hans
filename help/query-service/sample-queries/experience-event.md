@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询；
 solution: Experience Platform
 title: 体验事件的查询示例
-topic-legacy: queries
 type: Tutorial
 description: 以下文档提供了与Adobe Experience Platform查询服务中的体验事件有关的查询示例。
 exl-id: e6793a03-e474-4ae4-acb2-a052ff1c6d68
-source-git-commit: d79d466602d77f8a3eb1162ee67572973b3e08c7
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%

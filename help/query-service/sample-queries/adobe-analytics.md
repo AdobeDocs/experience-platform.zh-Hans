@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询；Adobe Analytics;
 solution: Experience Platform
 title: Adobe Analytics数据的查询示例
-topic-legacy: queries
 description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了查询服务利用此数据的许多用例，其中包括旨在与Adobe Analytics数据集结合使用的示例查询。
 exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
-source-git-commit: e0cdfc514a9e1277134d4c0d5396fc0bdf9d9958
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '975'
 ht-degree: 1%

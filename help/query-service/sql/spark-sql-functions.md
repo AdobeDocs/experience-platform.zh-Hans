@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Spark SQL;Spark SQL;Spark SQL函数；函数；
 solution: Experience Platform
 title: 查询服务中的Spark SQL函数
-topic-legacy: spark sql functions
 description: 本文档包含有关扩展SQL功能的Spark SQL函数的信息。
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: f291c0db5b751227e979e70ea8f91a0c133ecf34
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '3866'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Aqua Data Studio;Aqua Data Studio；连接到查询服务；
 solution: Experience Platform
 title: 将Aqua Data Studio连接到查询服务
-topic-legacy: connect
 description: 本文档将介绍将Aqua Data Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 0%

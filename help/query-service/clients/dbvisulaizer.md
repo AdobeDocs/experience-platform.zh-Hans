@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；数据库可视化器；数据库可视化器；数据库可视化器；连接到查询服务；
 solution: Experience Platform
 title: 将DbVisualizer连接到查询服务
-topic-legacy: connect
 description: 本文档将介绍将DbVisualizer与Adobe Experience Platform查询服务连接的步骤。
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 7d38488c204e28c9cfd8ea50c06f1ce781d76c59
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 1%

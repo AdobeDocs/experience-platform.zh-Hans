@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；API指南；连接参数；查询服务；
 solution: Experience Platform
 title: 连接参数API端点
-topic-legacy: connection parameters
 description: 通过向/connection_parameters端点发出GET请求，可以检索连接参数以使用交互式服务。
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 1%

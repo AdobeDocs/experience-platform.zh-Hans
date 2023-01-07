@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；运行计划查询；运行计划查询；查询服务；计划查询；计划查询；
 solution: Experience Platform
 title: 计划查询运行API端点
-topic-legacy: runs for scheduled queries
 description: 以下各节将介绍您可以为使用查询服务API运行计划查询而进行的各种API调用。
 exl-id: 1e69b467-460a-41ea-900c-00348c3c923c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 2%

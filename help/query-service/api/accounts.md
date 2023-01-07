@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；API指南；查询服务；查询服务帐户；帐户；
 solution: Experience Platform
 title: 帐户API端点
-topic-legacy: connection parameters
 description: 您可以为永久性创建查询服务帐户。
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 4%

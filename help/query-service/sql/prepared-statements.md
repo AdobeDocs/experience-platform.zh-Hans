@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；准备语句；准备；SQL;
 solution: Experience Platform
 title: 查询服务中准备的语句
-topic-legacy: prepared statements
 description: 在SQL中，已准备语句用于模板类似查询或更新。 Adobe Experience Platform查询服务通过使用参数化查询支持准备的语句。
 exl-id: 7ee4a10e-2bfe-487f-a8c5-f03b5b1d77e3
-source-git-commit: 9f4e34edc47a333aa88153529d0af6a10f189a15
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 11%
@@ -105,7 +104,7 @@ EXECUTE getIdRange(10000, 10005);
 
 调用此函数时，您将看到与之前完全相同的结果：
 
-| id | 名字 | lastname | 出生日期 | 电子邮件 | 城市 | 国家 |
+| id | 名字 | lastname | 出生日期 | 电子邮件 | city | 国家 |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | 亚历山大 | 戴维斯 | 1993-09-15 | example@example.com | 温哥华 | 加拿大 |
 | 10001 | 安托万 | 杜布瓦 | 1967-03-14 | example2@example.com | 巴黎 | 法国 |

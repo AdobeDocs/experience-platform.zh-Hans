@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；查询服务；查询服务；查询
 title: Adobe Experience Platform查询服务入门
-topic-legacy: tutorial
 description: 全面利用Adobe Experience Platform查询服务的必要步骤细目
 exl-id: 36ab9354-23f9-4cb8-bcd4-00fe076386ab
-source-git-commit: c09a7a6198bf1ef3f94e53bdbdf3b0b93f6b2bd1
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 7%

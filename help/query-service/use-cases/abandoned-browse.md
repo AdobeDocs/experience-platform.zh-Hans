@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；查询服务；查询服务；查询
 title: Adobe Experience Platform查询服务的示例用例
-topic-legacy: tutorial
 description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的多功能性和优势。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 6f6256b5601ce5c230ef334a9ce71325b43fda45
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 2%

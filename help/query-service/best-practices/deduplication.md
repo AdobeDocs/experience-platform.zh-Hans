@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；重复数据删除；
 solution: Experience Platform
 title: 查询服务中的重复数据删除
-topic-legacy: queries
 type: Tutorial
 description: 本文档概述了用于删除重复的三个常见用例（体验事件、购买和量度）的子选择和完整示例查询示例。
 exl-id: 46ba6bb6-67d4-418b-8420-f2294e633070
-source-git-commit: b140037ed5f055a8e7c583540910cc6b18bbf0bd
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%

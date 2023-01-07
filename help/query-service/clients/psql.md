@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；PSQL;psqlconnect到查询服务；查询服务；查询服务；
 solution: Experience Platform
 title: 将PSQL连接到查询服务
-topic-legacy: connect
 description: PSQL是在计算机上安装PostgreSQL时提供的命令行接口。 您可以按照以下说明进行安装。
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 4d9e6ce81809c6e6ee1188177a937ac8fc609996
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '294'
 ht-degree: 0%

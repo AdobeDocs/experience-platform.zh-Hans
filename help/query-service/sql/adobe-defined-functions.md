@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Adobe定义的函数；SQL;
 solution: Experience Platform
 title: Adobe定义的查询服务中的SQL函数
-topic-legacy: functions
 description: 本文档提供了有关Adobe Experience Platform查询服务中可用的Adobe定义函数的信息。
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '1486'
 ht-degree: 3%

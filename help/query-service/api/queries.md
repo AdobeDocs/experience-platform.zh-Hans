@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；查询服务；API指南；查询；查询；查询服务；
 solution: Experience Platform
 title: 查询API端点
-topic-legacy: queries
 description: 以下各节介绍了可以使用查询服务API中的/querys端点进行的调用。
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '676'
 ht-degree: 2%
