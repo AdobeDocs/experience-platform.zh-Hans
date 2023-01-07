@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；
 title: 在UI中定义必填字段
 description: 了解如何在Experience Platform用户界面中定义必需的XDM字段。
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
-source-git-commit: 11dcb1a824020a5b803621025863e95539ab4d71
+source-git-commit: fe3d9a3fc473e7ca13f0e0c2f222bcc1b1a991c4
 workflow-type: tm+mt
 source-wordcount: '362'
 ht-degree: 0%
@@ -28,7 +28,7 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 但是，如果必填字段嵌套在未标记为必填字段的对象中，则嵌套的字段不会显示在 **[!UICONTROL 必填字段]** 中。
 
-在以下示例中， `loyaltyId` 字段，但其父对象 `loyalty` 不是。 在这种情况下，如果 `loyalty` 在摄取数据时被排除，即使子字段也是如此 `loyaltyId` 标记为必需。 换句话说， `loyalty` 可选，它必须包含 `loyaltyId` 字段。
+在以下示例中， `internalSKU` 字段，但其父对象 `SKUs` 不是。 在这种情况下，如果 `SKUs` 在摄取数据时被排除，即使子字段也是如此 `internalSKU` 标记为必需。 换句话说， `SKUs` 可选，它必须包含 `internalSKU` 字段。
 
 ![嵌套的必填字段](../../images/ui/fields/required/nested.png)
 

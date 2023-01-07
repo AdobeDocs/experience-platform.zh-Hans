@@ -2,9 +2,9 @@
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1c2aabaaeadb41631fc75783db739bb34a3f53cc
 workflow-type: tm+mt
-source-wordcount: '1403'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -123,4 +123,4 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 ## 后续步骤
 
-通过阅读本教程，您已使用 [!DNL Schema Editor]. 使用基于这些架构的数据集摄取数据并在用户档案数据存储中激活数据后，您便可以将两个架构中的属性用于多类分段用例。 有关更多信息，请参阅Real-Time CDP B2B版文档。
+通过阅读本教程，您已使用 [!DNL Schema Editor]. 使用基于这些架构的数据集摄取数据并在用户档案数据存储中激活数据后，您可以将两个架构中的属性用于 [多类分段用例](../../rtcdp/segmentation/b2b.md).

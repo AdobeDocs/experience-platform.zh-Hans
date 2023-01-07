@@ -5,9 +5,9 @@ title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fe3d9a3fc473e7ca13f0e0c2f222bcc1b1a991c4
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ When [定义新字段](./overview.md#define) 在UI中，您可以通过选择 **
 
 画布会更新以反映所做更改，所选字段会获得指纹符号(![](../../images/ui/fields/special/identity-symbol.png))将其指定为标识。 在左边栏中，标识字段现在列在为架构提供字段的类或架构字段组的名称下。
 
-由于所有标识字段都是默认必填字段，因此该字段现在列在 **[!UICONTROL 必填字段]** 中。 如果标识字段嵌套在架构结构中，则所有父字段也将按需要列出。
+如果字段也设置为主标识，则也会列在 **[!UICONTROL 必填字段]** 中。 如果标识字段嵌套在架构结构中，则所有父字段也将按需要列出。
 
 ![](../../images/ui/fields/special/identity-applied.png)
 

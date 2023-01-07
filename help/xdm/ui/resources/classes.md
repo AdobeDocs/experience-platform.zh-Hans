@@ -5,20 +5,20 @@ title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 7b642744f12ec33ff45a4b41cdb57bfe37396a56
+source-git-commit: a854a40034666159fabca550227efe9f3a47fb53
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
 
 # 在UI中创建和编辑类
 
-在体验数据模型(XDM)中，类定义架构将包含的数据的行为方面（记录或时间系列）。 除此之外，类还描述了所有基于该类的架构需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
+在Adobe Experience Platform中，架构的类定义架构将包含的数据的行为方面（记录或时间系列）。 除此之外，类还描述了所有基于该类的架构需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
 
-Adobe提供了多个标准（“核心”）XDM类，包括 [!DNL XDM Individual Profile] 和 [!DNL XDM ExperienceEvent]. 除了这些核心类之外，您还可以创建自己的自定义类，以描述贵组织的更具体用例。
+Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 [!DNL XDM Individual Profile] 和 [!DNL XDM ExperienceEvent]. 除了这些核心类之外，您还可以创建自己的自定义类，以描述贵组织的更具体用例。
 
-本文档概述了如何在Adobe Experience Platform UI中创建、编辑和管理自定义类。
+本文档概述了如何在Experience PlatformUI中创建、编辑和管理自定义类。
 
 ## 先决条件
 
@@ -32,7 +32,7 @@ Adobe提供了多个标准（“核心”）XDM类，包括 [!DNL XDM Individual
 
 ![](../../images/ui/resources/classes/browse-classes.png)
 
-此时会出现一个对话框，允许您从可用类的列表中进行选择。 在对话框顶部，选择 **[!UICONTROL 创建新类]**. 然后，您可以为新类提供一个显示名称（类的简短、描述性、唯一性和用户友好名称）、描述以及架构将定义的数据的行为(&quot;[!UICONTROL 记录]&quot;或&quot;[!UICONTROL 时间系列]“)。
+此时会出现一个对话框，允许您从可用类的列表中进行选择。 在对话框顶部，选择 **[!UICONTROL 创建新类]**. 然后，您可以为新类提供一个显示名称（类的简短、描述性、唯一性和用户友好名称）、描述以及架构将定义的数据的行为(**[!UICONTROL 记录]** 或 **[!UICONTROL 时间系列]**)。
 
 完成后，选择 **[!UICONTROL 分配类]**.
 
@@ -78,9 +78,11 @@ Adobe提供了多个标准（“核心”）XDM类，包括 [!DNL XDM Individual
 >
 >请记住，您添加到类的任何字段都将用于使用该类的所有架构中。 因此，您应仔细考虑哪些字段在所有架构用例中都将很有用。 如果您想要添加一个字段，该字段可能只能看到此类下某些架构中的使用，则可能需要考虑通过 [创建字段组](./field-groups.md#create) 中。
 
-A **[!UICONTROL 新建字段]** 将显示在画布中，并且右边栏会更新以显示用于配置字段属性的控件。 请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置字段并将其添加到类的具体步骤。
+A **[!UICONTROL 新建字段]** 将显示在画布中，并且右边栏会更新以显示用于配置字段属性的控件。 在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**.
 
-继续向类中添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 以保存架构和类。
+![](../../images/ui/resources/classes/assign-to-class.png)
+
+请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置字段并将其添加到类的具体步骤。 继续向类中添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 以保存架构和类。
 
 ![](../../images/ui/resources/classes/save.png)
 

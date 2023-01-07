@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f700f7c68ba9ff2fc0a99bf62031bf3fe0c95f
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -88,11 +88,11 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 完成向数据类型添加字段后，请选择 **[!UICONTROL 保存]** 保存更改并将数据类型添加到 [!DNL Schema Library].
 
-## 将数据类型添加到类或字段组
+## 将数据类型添加到架构
 
 创建数据类型后，即可在架构中开始使用该数据类型。 由于XDM架构由类和零个或多个字段组组成，因此不能直接将数据类型提供的字段添加到架构中。 而是必须包含在类或字段组中。
 
-首先，执行 [向类添加字段](./classes.md#add-fields) 或 [向字段组添加字段](./field-groups.md#add-fields). 当您选择 **[!UICONTROL 类型]** 对于新字段，从下拉菜单中选择数据类型的名称。
+首先，执行 [向类添加字段](./classes.md#add-fields) 或 [向字段组添加字段](./field-groups.md#add-fields). 或者，您也可以开始 [将字段直接添加到架构](./schemas.md#add-individual-fields) 并从中选择父类或字段组。 当您选择 **[!UICONTROL 类型]** 对于新字段，从下拉菜单中选择数据类型的名称。
 
 ## 将多字段对象转换为数据类型 {#convert}
 
@@ -102,7 +102,7 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 ![](../../images/ui/resources/data-types/convert-object.png)
 
-画布会从“[!UICONTROL 对象]”更改为新数据类型。 子字段旁边还有一些小的锁图标，表示它们不再是单个字段，而是多字段数据类型的一部分。 现在，通过从 **[!UICONTROL 类型]** 下拉列表。
+画布会从“[!UICONTROL 对象]”更改为新数据类型。 现在，通过从 **[!UICONTROL 类型]** 下拉列表。
 
 ![](../../images/ui/resources/data-types/converted.png)
 
