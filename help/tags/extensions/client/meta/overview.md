@@ -1,9 +1,10 @@
 ---
 title: 元像素扩展概述
 description: 了解Adobe Experience Platform中的Meta Pixel标记扩展。
-source-git-commit: a47e35a1b8c7ce2b0fa4ffe30fcdc7d22fc0f4c5
+exl-id: c5127bbc-6fe7-438f-99f1-6efdbe7d092e
+source-git-commit: 24001da61306a00d295bf9441c55041e20f488c0
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -14,13 +15,11 @@ ht-degree: 0%
 
 的 [!DNL Meta Pixel] 标记扩展允许您利用 [!DNL Pixel] 功能。 本文档介绍如何在 [规则](../../../ui/managing-resources/rules.md).
 
->[!NOTE]
->
->如果您尝试将服务器端事件发送到 [!DNL Meta] 而不是从客户端，请使用 [[!DNL Meta Conversions API] 扩展](../../server/meta/overview.md) 中。
-
 ## 先决条件
 
 要使用该扩展，您必须具有 [!DNL Meta] 有权访问的帐户 [!DNL Ads Manager]. 具体而言，您必须 [新建 [!DNL Meta Pixel]](https://www.facebook.com/business/help/952192354843755) 复制 [!DNL Pixel ID] 以便可以将扩展配置为您的帐户。 如果您已经有 [!DNL Meta Pixel]，则可以改用其ID。
+
+强烈建议使用 [!DNL Meta Pixel] 与 [!DNL Meta Conversions API] 共享和发送来自客户端和服务器端的相同事件，因为这可能有助于恢复未被 [!DNL Meta Pixel]. 请参阅 [[!DNL Meta Conversions API] 事件转发扩展](../../client/meta/overview.md) 以了解如何将其集成到服务器端实施中的步骤。 请注意，贵组织必须具有 [事件转发](../../../ui/event-forwarding/overview.md) 以使用服务器端扩展。
 
 ## 安装扩展
 
@@ -36,7 +35,7 @@ ht-degree: 0%
 >
 >通过使用数据元素，您可以选择动态更改 [!DNL Pixel] ID的使用取决于其他因素，例如构建环境。 请参阅 [使用不同 [!DNL Pixel] 不同环境的ID](#id-data-element) 以了解更多信息。
 
-您还可以选择提供要与扩展关联的事件ID。 用于删除与 [!DNL Meta Pixel] 和 [!DNL Meta Conversions API]. 请参阅 [!DNL Meta] 文档 [处理重复项 [!DNL Pixel] 和 [!DNL Conversions API] 事件](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/) 以了解详细信息。
+您还可以选择提供要与扩展关联的事件ID。 用于删除与 [!DNL Meta Pixel] 和 [!DNL Meta Conversions API]. 有关详细信息，请参阅 [事件重复数据删除](../../server/meta/overview.md#event-deduplication) 在 [!DNL Conversions API] 扩展。
 
 完成后，选择 **[!UICONTROL 保存]**
 
@@ -64,7 +63,9 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本指南介绍了如何将数据发送到 [!DNL Meta] 使用 [!DNL Meta Pixel] 标记扩展。 有关Experience Platform中标记的更多信息，请参阅 [标记概述](../../../home.md).
+本指南介绍了如何将数据发送到 [!DNL Meta] 使用 [!DNL Meta Pixel] 标记扩展。 如果您还计划将服务器端事件发送到 [!DNL Meta]，您现在可以继续安装和配置 [[!DNL Conversions API] 事件转发扩展](../../server/meta/overview.md).
+
+有关Experience Platform中标记的更多信息，请参阅 [标记概述](../../../home.md).
 
 ## 附录：使用不同 [!DNL Pixel] 不同环境的ID {#id-data-element}
 
@@ -77,4 +78,3 @@ ht-degree: 0%
 ```js
 return (turbine.environment.stage === "production" ? 'exampleProductionKey' : 'exampleTestKey');
 ```
-
