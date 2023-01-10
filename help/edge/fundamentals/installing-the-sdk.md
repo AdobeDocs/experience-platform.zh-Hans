@@ -3,7 +3,7 @@ title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
 keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: c3476d7f9e758678cdf270ab55f8b85c0614b546
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 2%
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ## 选项1:安装标记扩展
 
-有关标记扩展的文档，请参阅 [launch文档](../../tags/extensions/client/sdk/overview.md)
+有关标记扩展的文档，请参阅 [标记文档](../../tags/extensions/client/sdk/overview.md)
 
 ## 选项2:安装预建的独立版本
 
@@ -145,7 +145,7 @@ alloy("sendEvent", { ... });
 
 ### 支持Internet Explorer
 
-Adobe Experience Platform SDK使用promise，promise是一种通信完成异步任务的方法。 的 [承诺](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 除外，所有target浏览器都本地支持SDK使用的实施 [!DNL Internet Explorer]. 要在 [!DNL Internet Explorer]，您必须 `window.Promise` [填充](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+Adobe Experience Platform SDK使用promise，promise是一种通信完成异步任务的方法。 的 [承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 除外，所有target浏览器都本地支持SDK使用的实施 [!DNL Internet Explorer]. 要在 [!DNL Internet Explorer]，您必须 `window.Promise` [填充](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
 一个用于polyfill promise的库是promise-polyfill。 请参阅 [promise-polyfill文档](https://www.npmjs.com/package/promise-polyfill) 有关如何使用NPM进行安装的更多信息。
 
