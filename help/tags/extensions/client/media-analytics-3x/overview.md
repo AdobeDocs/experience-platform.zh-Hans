@@ -2,10 +2,10 @@
 title: Adobe MediumAnalytics(3.x SDK)for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe MediumAnalytics(3.x SDK)for Audio and Video标记扩展。
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: e21ed1e9fd0c2678551cfc664b611076c198a157
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 76%
+source-wordcount: '752'
+ht-degree: 74%
 
 ---
 
@@ -24,7 +24,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 3.x SDK)�
 
 >[!IMPORTANT]
 >
->此扩展随 Media 3.x SDK 一起部署，无法向后兼容 Media 2.x SDK。如果您的页面使用的是 Media 2.x SDK，请改用 [Adobe Media Analytics for Audio and Video 扩展](../media-analytics/overview.md)。
+>此扩展随 Media 3.x SDK 一起部署，无法向后兼容 Media 2.x SDK。自2.x被弃用以来，请更新至3.x。
 
 在启用了标记的项目中包含上述所有三个扩展后，可以采用以下两种方式之一继续操作：
 
