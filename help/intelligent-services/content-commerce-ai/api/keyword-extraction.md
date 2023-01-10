@@ -2,10 +2,9 @@
 keywords: Experience Platform；快速入门；内容ai；商务ai；内容和商务ai；关键词提取；关键词提取
 solution: Experience Platform
 title: 内容和商务AI API中的关键词提取
-topic-legacy: Developer guide
 description: 在给定文本文档时，关键词提取服务会自动提取最能描述文档主题的关键词或关键词。 为了提取关键词，使用命名实体识别(NER)和无监督关键词提取算法的组合。
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '1082'
 ht-degree: 3%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；快速入门；归因ai；热门主题；归因ai输入；归因ai输出；
 feature: Attribution AI
 title: 输入和输出Attribution AI
-topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '2504'
 ht-degree: 3%

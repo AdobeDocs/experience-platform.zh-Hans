@@ -3,11 +3,10 @@ keywords: Experience Platform；快速入门；客户人工智能；热门主题
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Customer AI错误疑难解答
-topic-legacy: Getting started
 description: 查找Customer AI中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%
@@ -52,7 +51,7 @@ ht-degree: 0%
 - 检查定义的预测和资格窗口中是否缺少数据。 您的数据必须完整无缺。 另外，请确保您的数据集符合 [客户人工智能历史数据要求](./input-output.md#data-requirements).
 - 在架构字段属性中，检查商务、应用程序、Web和搜索中是否缺少数据。
 
-如果您的数据似乎不存在问题，请尝试更改资格填充条件以将模型限制为特定用户档案(例如， `_experience.analytics.customDimensions.eVars.eVar142` 存在)。 这可限制培训窗口中使用的数据的群体和大小。
+如果您的数据似乎不是问题所在，请尝试更改资格填充条件以将模型限制为特定用户档案(例如， `_experience.analytics.customDimensions.eVars.eVar142` 存在)。 这可限制培训窗口中使用的数据的群体和大小。
 
 如果限制资格人口不起作用或不可能，请更改您的预测窗口。
 

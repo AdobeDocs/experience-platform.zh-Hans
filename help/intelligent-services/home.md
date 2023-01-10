@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；智能服务；热门主题；智能服务；智能服务
 solution: Experience Platform
 title: 智能服务概述
-topic-legacy: Intelligent Services overview
 description: “智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%

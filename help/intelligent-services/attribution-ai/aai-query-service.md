@@ -2,10 +2,9 @@
 keywords: 分析；归因ai；归因ai分析；AAI查询服务；归因查询；归因得分
 feature: Attribution AI
 title: 使用查询服务分析归因得分
-topic-legacy: Attribution AI queries
 description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI得分。
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 # 使用查询服务分析归因得分
 
-数据中的每一行都表示一个转化，在该转化中，相关接触点的信息将存储为`touchpointsDetail`列下的结构数组。
+数据中的每一行都表示一个转化，在该转化中，相关接触点的信息将存储为 `touchpointsDetail` 列。
 
 | 接触点信息 | 栏目 |
 | ---------------------- | ------ |
@@ -24,7 +23,7 @@ ht-degree: 0%
 
 ## 查找数据路径
 
-在Adobe Experience Platform UI的左侧导航中，选择&#x200B;**[!UICONTROL Datasets]**。 此时会显示&#x200B;**[!UICONTROL Datasets]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，并查找您的Attribution AI得分的输出数据集。
+在Adobe Experience Platform UI中，选择 **[!UICONTROL 数据集]** 中。 的 **[!UICONTROL 数据集]** 页面。 接下来，选择 **[!UICONTROL 浏览]** 选项卡，然后为您的Attribution AI得分查找输出数据集。
 
 ![访问您的实例](./images/aai-query/datasets_browse.png)
 
@@ -32,7 +31,7 @@ ht-degree: 0%
 
 ![数据集活动页面](./images/aai-query/select_preview.png)
 
-在数据集活动页面中，选择右上角的&#x200B;**[!UICONTROL 预览数据集]** ，以预览数据并确保按预期摄取数据。
+在数据集活动页面中，选择 **[!UICONTROL 预览数据集]** ，以预览数据并确保按预期摄取数据。
 
 ![预览数据集](./images/aai-query/preview_dataset.JPG)
 
@@ -40,29 +39,29 @@ ht-degree: 0%
 
 ![选择架构](./images/aai-query/select_schema.png)
 
-使用评分架构，您可以选择或搜索值。 选择&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏后，将打开该边栏，以便复制路径以用于创建查询。
+使用评分架构，您可以选择或搜索值。 选择后， **[!UICONTROL 字段属性]** 边栏会打开，用于复制用于创建查询的路径。
 
 ![复制路径](./images/aai-query/copy_path.png)
 
 ## 访问查询服务
 
-要从Platform UI中访问查询服务，请首先在左侧导航中选择&#x200B;**[!UICONTROL Querys]** ，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡。 将加载之前保存的查询列表。
+要从平台UI中访问查询服务，请首先选择 **[!UICONTROL 查询]** 在左侧导航中，选择 **[!UICONTROL 浏览]** 选项卡。 将加载之前保存的查询列表。
 
 ![查询服务浏览](./images/aai-query/query_tab.png)
 
-接下来，选择右上角的&#x200B;**[!UICONTROL 创建查询]**。 加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
+接下来，选择 **[!UICONTROL 创建查询]** 中。 加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
 
 ![查询编辑器](./images/aai-query/query_example.png)
 
-有关查询编辑器的详细信息，请访问[查询编辑器用户指南](../../query-service/ui/user-guide.md)。
+有关查询编辑器的更多信息，请访问 [查询编辑器用户指南](../../query-service/ui/user-guide.md).
 
 ## 用于归因分析的查询模板
 
-以下查询可用作不同分数分析方案的模板。 您需要将`_tenantId`和`your_score_output_dataset`替换为在评分输出架构中找到的正确值。
+以下查询可用作不同分数分析方案的模板。 您需要将 `_tenantId` 和 `your_score_output_dataset` 的值。
 
 >[!NOTE]
 >
-> 根据数据的摄取方式，下面使用的值（如`timestamp`）可能采用不同的格式。
+> 根据数据的摄取方式，使用以下值，例如 `timestamp` 格式可能不同。
 
 ### 验证示例
 
@@ -306,7 +305,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> 在此示例中，除了`_tenantId`和`your_score_output_dataset`之外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可采用配置Attribution AI实例期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构，以查找完成此查询所需的`{COLUMN_NAME}`值。
+> 在本例中，您需要将 `{COLUMN_NAME}` 除 `_tenantId` 和 `your_score_output_dataset`. 的 `COLUMN_NAME` 变量可采用配置Attribution AI实例期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构以查找 `{COLUMN_NAME}` 完成此查询所需的值。
 
 ```sql
 SELECT 

@@ -2,10 +2,9 @@
 keywords: Experience Cloud；快速入门；内容和商务ai；热门主题；智能服务；ccai
 solution: Experience Platform
 title: 内容和商务AI概述
-topic-legacy: Content and Commerce AI
 description: Content and Commerce AI是一组AI服务，它允许您从内容中提取智能功能，组织、简化内容流程，并为客户提供更具影响力的个性化体验。
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 1%

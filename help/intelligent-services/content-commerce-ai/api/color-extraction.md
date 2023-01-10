@@ -2,10 +2,9 @@
 keywords: Experience Platform；快速入门；内容ai；商务ai；内容和商务ai；颜色提取；颜色提取
 solution: Experience Platform
 title: 内容和商务AI API中的颜色提取
-topic-legacy: Developer guide
 description: 当给定图像时，颜色提取服务可以计算像素颜色的直方图，并按主色对它们进行分段。
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 2%

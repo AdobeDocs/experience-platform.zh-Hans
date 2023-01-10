@@ -3,10 +3,9 @@ keywords: Experience Platform；用户指南；客户AI；热门主题；配置�
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: 配置Customer AI实例
-topic-legacy: Instance creation
 description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '3342'
 ht-degree: 0%

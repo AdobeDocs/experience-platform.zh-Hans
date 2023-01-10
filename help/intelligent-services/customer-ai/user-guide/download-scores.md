@@ -3,10 +3,9 @@ keywords: Experience Platform；下载得分；customer ai；热门主题；导�
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: 在Customer AI中下载分数
-topic-legacy: Downloading scores
 description: Customer AI允许您下载Parquet文件格式的分数。
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 2%

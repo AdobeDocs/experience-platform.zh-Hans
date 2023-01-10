@@ -2,10 +2,9 @@
 keywords: 文本分类；文本分类
 solution: Experience Platform
 title: 内容和商务AI API中的文本分类
-topic-legacy: Developer guide
 description: 给定文本片段时，文本分类服务可将其分类为一个或多个标签。 分类可以是单标签、多标签或分层。
 exl-id: f240519a-0d83-4309-91e4-4e48be7955a1
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '441'
 ht-degree: 4%
