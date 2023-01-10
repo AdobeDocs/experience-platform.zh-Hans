@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询API端点
 description: 以下各节介绍了可以使用查询服务API中的/querys端点进行的调用。
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: e0287076cc9f1a843d6e3f107359263cd98651e6
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '825'
 ht-degree: 2%
 
 ---
@@ -42,6 +42,7 @@ GET /queries?{QUERY_PARAMETERS}
 | `property` | 根据字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括 `created`, `updated`, `state`和 `id`. 支持的运算符列表包括 `>` （大于）， `<` （小于）， `>=` （大于或等于）， `<=` （小于或等于）， `==` （等于）， `!=` （不等于）和 `~` （包含）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有指定ID的所有查询。 |
 | `excludeSoftDeleted` | 指示是否应包含已软删除的查询。 例如， `excludeSoftDeleted=false` will **包含** 软删除的查询。 (*布尔值，默认值：true*) |
 | `excludeHidden` | 指示是否应显示非用户驱动的查询。 将此值设置为false将会 **包含** 非用户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
+| `isPrevLink` | 的 `isPrevLink` 查询参数用于分页。 API调用的结果使用 `created` 时间戳和 `orderby` 属性。 导航结果页面时， `isPrevLink` 向后分页时设置为true。 它会反转查询的顺序。 例如，请参阅“下一步”和“上一步”链接。 |
 
 **请求**
 
@@ -128,7 +129,7 @@ POST /queries
 
 **请求**
 
-以下请求会创建一个新查询，该查询由有效负载中提供的值配置：
+以下请求将创建一个新查询，并在有效负载中提供SQL语句：
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
@@ -139,7 +140,27 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
         "dbName": "prod:all",
-        "sql": "SELECT * FROM accounts;",
+        "sql": "SELECT account_balance FROM user_data WHERE $user_id;",
+        "queryParameters": {
+            $user_id : {USER_ID}
+            }
+        "name": "Sample Query",
+        "description": "Sample Description"
+    }  
+```
+
+以下请求示例使用现有查询模板ID创建新查询。
+
+```shell
+curl -X POST https://platform.adobe.io/data/foundation/query/queries \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '{
+        "dbName": "prod:all",
+        "templateID": "f7cb5155-29da-4b95-8131-8c5deadfbe7f",
         "name": "Sample Query",
         "description": "Sample Description"
     }  
@@ -151,6 +172,10 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 | `sql` | 要创建的SQL查询。 |
 | `name` | SQL查询的名称。 |
 | `description` | SQL查询的描述。 |
+| `queryParameters` | 用于替换SQL语句中任何参数化值的键值配对。 它只是必需的 **if** 您正在提供的SQL中使用参数替换。 不会对这些键值对进行值类型检查。 |
+| `templateId` | 预先存在的查询的唯一标识符。 您可以提供它，而不是SQL语句。 |
+| `insertIntoParameters` | （可选）如果定义了此属性，则此查询将转换为INSERT INTO查询。 |
+| `ctasParameters` | （可选）如果定义此属性，则此查询将转换为CTAS查询。 |
 
 **响应**
 

@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 查询模板API端点
 description: 本指南详细介绍了您可以使用查询服务API进行的各种查询模板API调用。
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: e0287076cc9f1a843d6e3f107359263cd98651e6
 workflow-type: tm+mt
-source-wordcount: '668'
-ht-degree: 3%
+source-wordcount: '894'
+ht-degree: 2%
 
 ---
 
@@ -129,15 +129,19 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
-        "sql": "SELECT * FROM accounts;",
-        "name": "Sample query template"
+        "sql": "SELECT account_balance FROM user_data WHERE user_id='$user_id';",
+        "name": "Sample query template",
+        "queryParameters": {
+            user_id : {USER_ID}
+            }
     }'
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sql` | 要创建的SQL查询。 |
+| `sql` | 要创建的SQL查询。 您可以使用标准SQL或参数替换。 要在SQL中使用参数替换，必须在参数键的前面添加 `$`. 例如， `$key`，并在SQL中以JSON键值对的形式提供 `queryParameters` 字段。 此处传递的值将是模板中使用的默认参数。 如果要覆盖这些参数，则必须在POST请求中覆盖它们。 |
 | `name` | 查询模板的名称。 |
+| `queryParameters` | 用于替换SQL语句中任何参数化值的键值配对。 它只是必需的 **if** 您正在提供的SQL中使用参数替换。 不会对这些键值对进行值类型检查。 |
 
 **响应**
 
@@ -145,7 +149,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
 
 ```json
 {
-    "sql": "SELECT * FROM accounts;",
+    "sql": "SELECT account_balance FROM user_data WHERE user_id='$user_id';",
     "name": "Sample query template",
     "id": "0094d000-9062-4e6a-8fdb-05606805f08f",
     "updated": "2020-01-09T00:20:09.670Z",
@@ -265,8 +269,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sql` | 要更新的SQL查询。 |
-| `name` | 计划查询的名称。 |
+| `sql` | 要创建的SQL查询。 您可以使用标准SQL或参数替换。 要在SQL中使用参数替换，必须在参数键的前面添加 `$`. 例如， `$key`，并在SQL中以JSON键值对的形式提供 `queryParameters` 字段。 此处传递的值将是模板中使用的默认参数。 如果要覆盖这些参数，则必须在POST请求中覆盖它们。 |
+| `name` | 查询模板的名称。 |
+| `queryParameters` | 用于替换SQL语句中任何参数化值的键值配对。 它只是必需的 **if** 您正在提供的SQL中使用参数替换。 不会对这些键值对进行值类型检查。 |
 
 **响应**
 
