@@ -7,12 +7,12 @@ user-guide-description: 使用智能 AI 服务从您的营销活动数据生成�
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '123'
-ht-degree: 24%
+ht-degree: 26%
 
 ---
 
 
-# Adobe智能服务 {#intelligent-services}
+# Adobe 智能服务 {#intelligent-services}
 
 - [智能服务概述](home.md)
 - [准备数据以在智能服务中使用](data-preparation.md)

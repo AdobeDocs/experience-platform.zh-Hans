@@ -18,7 +18,7 @@ ht-degree: 3%
 
 ## 版本2.13.1 - 2022年10月13日
 
-* 修复了在window.Visitor配置后定义时，访客迁移不起作用的问题。 在使用Adobe标记运行时，这尤其是一个问题。
+* 修复了在window.Visitor配置后定义时，访客迁移无法正常工作的问题。 在使用Adobe标记运行时，这尤其是一个问题。
 * 修复了 `device.screenWidth` 和 `device.screenHeight` 在某些环境中被填充为字符串。
 
 ## 版本2.13.0 - 2022年9月28日

@@ -43,7 +43,7 @@ ht-degree: 26%
    * [Adobe Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
-   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
+   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
    * [与Experience Cloud的平台集成（视频）](video/experience-cloud-integrations.md)
 * 管理、隐私和安全 {#governance-privacy-security}

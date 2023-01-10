@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: 数据卫生帮助
 breadcrumb-title: 数据卫生指南
-user-guide-description: 在Experience Platform中删除单个记录并计划数据集过期，以便进行数据清理、删除匿名数据和最小化数据。
+user-guide-description: 在 Experience Platform 中删除个人记录并安排数据集过期时间，以进行数据清理、匿名数据移除和数据最小化。
 feature: Data Hygiene
 source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
 source-wordcount: '52'
-ht-degree: 15%
+ht-degree: 51%
 
 ---
 
