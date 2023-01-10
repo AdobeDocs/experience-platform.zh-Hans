@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；
 solution: Experience Platform
 title: 使用流量服务API将数据登陆区连接到Adobe Experience Platform
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 249f2076dd55a589c638648eb25214036a47c05a
 workflow-type: tm+mt
 source-wordcount: '1224'
 ht-degree: 4%
@@ -81,7 +80,7 @@ curl -X GET \
 **API格式**
 
 ```http
-GET /connectors/landingzone/credentials?type=user_drop_zone
+GET /data/foundation/connectors/landingzone/credentials?type=user_drop_zone
 ```
 
 **请求**
@@ -125,7 +124,7 @@ curl -X GET \
 **API格式**
 
 ```http
-POST /connectors/landingzone/credentials?type=user_drop_zone&action=refresh
+POST /data/foundation/connectors/landingzone/credentials?type=user_drop_zone&action=refresh
 ```
 
 | 标头 | 描述 |
