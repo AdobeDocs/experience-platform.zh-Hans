@@ -2,13 +2,13 @@
 title: 用户代理客户端提示
 description: 了解Web SDK中用户代理客户端提示的工作方式
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
-source-git-commit: 6c974d1a646ff1f3a8f7ad9d67a6840391fc739e
+exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
+source-git-commit: 4a2ae40fc64c4340ddb05db881c2176bb2aedc46
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1065'
 ht-degree: 6%
 
 ---
-
 
 # 用户代理客户端提示
 
@@ -116,13 +116,7 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串。
 
 ### Adobe Analytics报告依赖于高熵客户端提示 {#analytics}
 
-在禁用高熵客户端提示的情况下，以下Adobe Analytics报表将不起作用。
-
-* [浏览器](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser.html)
-* [浏览器类型](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html)
-* [Operating system](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html)
-* [操作系统类型](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)
-* [移动设备维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/mobile-dimensions.html)
+的 [操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans) 维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
 
 ### Audience Manager依赖于高熵客户端提示的特征 {#aam}
 
