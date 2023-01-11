@@ -2,9 +2,10 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；警报；
 title: 警报订阅API端点
 description: 本指南提供了您可以使用查询服务API对警报订阅端点进行的各种API调用的示例HTTP请求和响应。
-source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
+exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
+source-git-commit: 8673b6ceb9386677171334ce99d39c93e5e8159c
 workflow-type: tm+mt
-source-wordcount: '2289'
+source-wordcount: '2668'
 ht-degree: 2%
 
 ---
@@ -49,7 +50,23 @@ Adobe Experience Platform查询服务允许您订阅临时查询和计划查询�
 
 ```http
 GET /alert-subscriptions
+GET /alert-subscriptions?{QUERY_PARAMETERS}
 ```
+
+| 属性 | 描述 |
+| --------- | ----------- |
+| `{QUERY_PARAMETERS}` | （可选）添加到请求路径的参数，用于配置响应中返回的结果。 可以包含多个参数，并以与号(&amp;)分隔。 以下列出了可用参数。 |
+
+**查询参数**
+
+以下是用于列出查询的可用查询参数列表。 所有这些参数都是可选的。 对此端点进行无参数调用将检索适用于贵组织的所有查询。
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前面添加 `+` 对于升序和 `-` 按降序排列。 默认值为 `-created`。请注意，加号(`+`)必须使用进行转义 `%2B`. 例如 `%2Bcreated` 是创建升序顺序的值。 |
+| `pagesize` | 使用此参数可控制每页要从API调用中获取的记录数。 默认限制设置为每页最多50条记录。 |
+| `page` | 指示要查看其记录的返回结果的页码。 |
+| `property` | 根据所选字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 以下属性允许筛选： <ul><li>id</li><li>assetId</li><li>状态</li><li>alertType</li></ul> 支持的运算符包括 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
 
 **请求**
 
@@ -283,7 +300,7 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`:在查询执行开始时通知用户。</li><li>`success`:查询完成时通知用户。</li><li>`failure`:在查询失败时通知用户。</li></ul> |
+| `ALERT_TYPE` | 此属性描述触发警报的查询执行状态。 响应将仅包含此类警报的警报订阅信息。 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`:在查询执行开始时通知用户。</li><li>`success`:查询完成时通知用户。</li><li>`failure`:在查询失败时通知用户。</li></ul> |
 | `QUERY_ID` | 要更新的查询的唯一标识符。 |
 | `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
@@ -370,6 +387,10 @@ GET /alert-subscriptions/user-subscriptions/{EMAIL_ID}
 | 参数 | 描述 |
 | -------- | ----------- |
 | `{EMAIL_ID}` | 注册到Adobe帐户的电子邮件地址用于标识订阅了警报的用户。 |
+| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前面添加 `+` 对于升序和 `-` 按降序排列。 默认值为 `-created`。请注意，加号(`+`)必须使用进行转义 `%2B`. 例如 `%2Bcreated` 是创建升序顺序的值。 |
+| `pagesize` | 使用此参数可控制每页要从API调用中获取的记录数。 默认限制设置为每页最多50条记录。 |
+| `page` | 指示要查看其记录的返回结果的页码。 |
+| `property` | 根据所选字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 以下属性允许筛选： <ul><li>id</li><li>assetId</li><li>状态</li><li>alertType</li></ul> 支持的运算符包括 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
 
 **请求**
 

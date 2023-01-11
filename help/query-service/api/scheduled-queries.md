@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 计划查询API端点
 description: 以下各节将介绍您可以使用查询服务API对计划查询进行的各种API调用。
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 2ad86b0cf3cdc89825501b94bd609df751026420
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1139'
 ht-degree: 2%
 
 ---
@@ -311,7 +311,7 @@ PATCH请求支持两种不同的路径： `/state` 和 `/schedule/schedule`.
 
 ### 更新计划查询状态
 
-您可以使用 `/state` 更新选定计划查询的状态 — “已启用”或“已禁用”。 要更新状态，您需要将值设置为 `enable` 或 `disable`.
+您可以通过设置 `path` 属性 `/state` 和 `value` 属性 `enable` 或 `disable`.
 
 **API格式**
 
@@ -347,6 +347,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | 属性 | 描述 |
 | -------- | ----------- |
+| `op` | 要对查询计划执行的操作。 接受的值为 `replace`. |
 | `path` | 要修补的值的路径。 在这种情况下，由于您正在更新计划查询的状态，因此需要将 `path` to `/state`. |
 | `value` | 的更新值 `/state`. 此值可设置为 `enable` 或 `disable` 启用或禁用计划查询。 |
 
@@ -363,7 +364,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 ### 更新计划查询计划
 
-您可以使用 `/schedule/schedule` 更新计划查询的cron计划。 有关创建计划的更多信息，请阅读 [cron表达式格式](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 文档。
+您可以通过设置 `path` 属性 `/schedule/schedule` 在请求正文中。 有关创建计划的更多信息，请阅读 [cron表达式格式](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 文档。
 
 **API格式**
 
@@ -398,6 +399,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | 属性 | 描述 |
 | -------- | ----------- |
+| `op` | 要对查询计划执行的操作。 接受的值为 `replace`. |
 | `path` | 要修补的值的路径。 在这种情况下，由于您要更新计划查询的计划，因此需要将 `path` to `/schedule/schedule`. |
 | `value` | 的更新值 `/schedule`. 此值需要采用cron计划的形式。 因此，在本例中，计划查询将在45分钟标记下每小时运行一次。 |
 
