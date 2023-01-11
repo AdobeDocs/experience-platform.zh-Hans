@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '7919'
+source-wordcount: '7929'
 ht-degree: 0%
 
 ---
@@ -327,7 +327,7 @@ ht-degree: 0%
 
 **库**:在标记上下文中，库是一组业务逻辑，其中包含有关标记库应如何在客户端设备上行为的说明。
 
-**查找实体**:在数据建模的上下文中，查询实体表示可与个人相关联，但不能直接用于识别个人的概念。 属于此类别的实体应由基于自定义体验数据模型(XDM)类的架构来表示。
+**查找实体**:在数据建模的上下文中，查询实体表示可与个人相关联，但不能直接用于识别个人的概念。 属于此类别的实体应由基于自定义体验数据模型(XDM)类的架构来表示，并通过 [模式关系](../xdm/tutorials/relationship-ui.md).
 
 ## M
 

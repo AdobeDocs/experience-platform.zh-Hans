@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '1929'
+source-wordcount: '1954'
 ht-degree: 5%
 
 ---
@@ -122,17 +122,25 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 ### 实体类型
 
-的 [!DNL Profile] 存储数据模型由两种核心实体类型组成：
+的 [!DNL Profile] 存储数据模型由两种核心实体类型组成： [主要实体](#primary-entity) 和 [维度实体](#dimension-entity).
 
-* **主要实体：** 主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-Time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
+#### 主要实体
 
-   与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-Time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
+主实体或用户档案实体可将数据合并在一起，为个人形成“单一真相来源”。 此统一数据使用称为“并集视图”的表示。 并集视图将实现同一类的所有架构的字段聚合到单个并集架构中。 的并集架构 [!DNL Real-Time Customer Profile] 是一个非规范的混合数据模型，充当所有配置文件属性和行为事件的容器。
 
-   ![概述记录数据与时间序列数据之间差异的信息图。](images/guardrails/profile-entity.png)
+与时间无关的属性（也称为“记录数据”）使用 [!DNL XDM Individual Profile]，而时间系列数据（也称为“事件数据”）则使用 [!DNL XDM ExperienceEvent]. 在Adobe Experience Platform中摄取记录和时间系列数据时，会触发 [!DNL Real-Time Customer Profile] 开始摄取已启用供其使用的数据。 摄取的交互和详细信息越多，个人用户档案就越可靠。
 
-* **Dimension实体：** 虽然配置文件数据存储维护配置文件数据不是关系存储，但配置文件允许与小维度实体集成，以便以简单直观的方式创建区段。 此集成称为 [多实体分段](../segmentation/multi-entity-segmentation.md). 贵组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些非[!DNL XDM Individual Profile] 架构称为“维实体”，不包含时间系列数据。 Dimension实体提供查找数据，这有助于并简化多实体区段定义，并且必须足够小，以便分段引擎能够将整个数据集加载到内存中，以实现最佳处理（快速点查找）。
+![概述记录数据与时间序列数据之间差异的信息图。](images/guardrails/profile-entity.png)
 
-   ![显示用户档案实体由维度实体组成的信息图。](images/guardrails/profile-and-dimension-entities.png)
+#### Dimension实体
+
+虽然配置文件数据存储维护配置文件数据不是关系存储，但配置文件允许与小维度实体集成，以便以简单直观的方式创建区段。 此集成称为 [多实体分段](../segmentation/multi-entity-segmentation.md).
+
+贵组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 这些非[!DNL XDM Individual Profile] 架构称为“维实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用链接到用户档案实体 [模式关系](../xdm/tutorials/relationship-ui.md).
+
+Dimension实体提供查找数据，这有助于并简化多实体区段定义，并且必须足够小，以便分段引擎能够将整个数据集加载到内存中，以实现最佳处理（快速点查找）。
+
+![显示用户档案实体由维度实体组成的信息图。](images/guardrails/profile-and-dimension-entities.png)
 
 ### 配置文件片段
 

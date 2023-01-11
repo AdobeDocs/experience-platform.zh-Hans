@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '2699'
+source-wordcount: '2722'
 ht-degree: 2%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 2%
 | 类别 | 描述 |
 | --- | --- |
 | 配置文件实体 | 用户档案实体表示与个人（通常是客户）相关的属性。 属于此类别的实体应由基于 **[!DNL XDM Individual Profile]类**. |
-| 查找实体 | 查找实体表示可与个人相关的概念，但不能直接用于识别个人。 属于此类别的实体应由基于的架构表示 **自定义类**. |
+| 查找实体 | 查找实体表示可与个人相关的概念，但不能直接用于识别个人。 属于此类别的实体应由基于的架构表示 **自定义类**，并通过链接到用户档案和事件 [模式关系](../tutorials/relationship-ui.md). |
 | 事件实体 | 事件实体表示与客户可以执行的操作、系统事件或您希望跟踪随时间变化的任何其他概念相关的概念。 属于此类别的实体应由基于 **[!DNL XDM ExperienceEvent]类**. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -186,7 +186,7 @@ ht-degree: 2%
 
 * 用户档案实体应使用 [!DNL XDM Individual Profile] 类。
 * 事件实体应使用 [!DNL XDM ExperienceEvent] 类。
-* 查找实体应使用由贵组织定义的自定义XDM类。
+* 查找实体应使用由贵组织定义的自定义XDM类。 然后，配置文件实体和事件实体可以通过架构关系引用这些查找实体。
 
 >[!NOTE]
 >
