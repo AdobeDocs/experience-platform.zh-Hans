@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google拥有和运营的资产(如搜索、购物、Gmail和YouTube)来访问客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: b189f1b0fe29ebefb3cba9c4f820022a772ce297
+source-git-commit: d6b34f3bd3a432e1cf7d3dcce242934391b65d78
 workflow-type: tm+mt
-source-wordcount: '1778'
+source-wordcount: '1769'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-[Google客户匹配](https://support.google.com/google-ads/answer/6379332?hl=en) 允许您使用在线和离线数据，跨Google拥有和运营的资产访问客户并与其重新互动，例如： [!DNL Search], [!DNL Shopping], [!DNL Gmail]和 [!DNL YouTube].
+[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) 允许您使用在线和离线数据，跨Google拥有和运营的资产访问客户并与其重新互动，例如： [!DNL Search], [!DNL Shopping], [!DNL Gmail]和 [!DNL YouTube].
 
 ![GoogleAdobe Experience Platform UI中的“客户匹配”目标。](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
@@ -69,7 +69,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 ### 允许列表 {#allowlist}
 
-在创建 [!DNL Google Customer Match] 目标Experience Platform，请确保 [!DNL Google Ads] 账户符合 [Google客户匹配策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+在创建 [!DNL Google Customer Match] 目标Experience Platform，请确保 [!DNL Google Ads] 账户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
 具有合规帐户的客户会自动允许由Google列出。
 
@@ -96,10 +96,10 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 有关Google的哈希处理要求和其他激活限制的更多信息，请参阅Google文档中的以下部分：
 
-* [[!DNL Customer Match] 具有电子邮件地址、地址或用户ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id)
-* [[!DNL Customer Match] 注意事项](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_considerations)
-* [客户与电话号码匹配](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_phone_number)
-* [与移动设备ID匹配的客户](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_mobile_device_ids)
+* [[!DNL Customer Match] 具有电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
+* [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
+* [[!DNL Customer Match] 带电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
+* [[!DNL Customer Match] 使用移动设备ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
 要了解如何在Experience Platform中摄取电子邮件地址，请参阅 [批量摄取概述](../../../ingestion/batch-ingestion/overview.md) 和 [流摄取概述](../../../ingestion/streaming-ingestion/overview.md).
@@ -209,5 +209,5 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 其他资源 {#additional-resources}
 
-* [集成Google客户匹配 — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+* [集成 [!DNL Google Customer Match]  — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
 
