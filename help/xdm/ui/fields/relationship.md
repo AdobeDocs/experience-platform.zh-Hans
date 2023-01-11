@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中定义关系字段
 description: 了解如何在Experience Platform用户界面中定义关系字段。
-topic-legacy: user guide
 exl-id: 8a6be545-0edb-4b9c-b164-e44a7a5f54f5
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '249'
 ht-degree: 0%

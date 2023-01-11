@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Azure AzureData Explorer;AzureData Explorer;AzureData Explorer
 solution: Experience Platform
 title: 使用流服务API创建Azure AzureData Explorer库连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流程服务API将Azure AzureData Explorer连接到Adobe Experience Platform。
 exl-id: 1b17bbb0-1f7b-4d89-a158-ad269e6edf30
-source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '522'
 ht-degree: 1%

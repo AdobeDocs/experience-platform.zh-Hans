@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Azure事件中心；事件中心；Azure事件中心
 solution: Experience Platform
 title: 在UI中创建Azure事件中心源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Azure事件中心源连接。
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 1%

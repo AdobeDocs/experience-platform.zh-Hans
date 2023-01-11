@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Oracle对象存储；oracle对象存储
 solution: Experience Platform
 title: 使用流服务API创建Oracle对象存储库连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Oracle对象存储。
 exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '555'
 ht-degree: 1%

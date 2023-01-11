@@ -2,12 +2,11 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 自助源（批量SDK）概述
-topic-legacy: overview
 description: Adobe Experience Platform自助源(Batch SDK)是一组配置API，允许您使用流量服务API集成基于REST API的源，以将数据引入Experience Platform。
 exl-id: 5d5449ad-a1ba-402b-a281-0b2d8b704f32
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---

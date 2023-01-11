@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；边缘分段；边缘分段；流式边缘；
 solution: Experience Platform
 title: 使用API进行边缘分段
-topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1187'
 ht-degree: 0%

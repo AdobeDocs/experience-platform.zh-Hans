@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Veeva CRM;Veeva CRM;Veeva;CRM
 solution: Experience Platform
 title: Veva CRM源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Veeva CRM连接到Adobe Experience Platform。
 exl-id: fcd7af48-e66a-4313-bbfe-73301d335c67
-source-git-commit: ec0d6be6fde8ea7a0378769810079e3e62e9fd60
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '224'
 ht-degree: 0%

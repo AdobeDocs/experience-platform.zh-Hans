@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 使用流服务API为Mailchimp Campaign创建数据流
-topic-legacy: tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与MailChimp Campaign连接。
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '1942'
 ht-degree: 1%

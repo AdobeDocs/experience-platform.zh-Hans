@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；单个配置文件；字段；架构；架构；架构设计；混合；混合；工作详细信息；配置文件工作；
 solution: Experience Platform
-title: Work Contact Details Schema Field Group
-topic-legacy: overview
-description: This document provides an overview of the Work Contact Details schema field group.
+title: 工作联系人详细信息架构字段组
+description: 本文档概述了工作联系人详细信息架构字段组。
 exl-id: 0133622c-e95f-4833-b2f8-3694d41751b4
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '193'
 ht-degree: 4%
@@ -13,22 +12,22 @@ ht-degree: 4%
 ---
 
 
-# [!UICONTROL Work Contact Details] schema field group
+# [!UICONTROL 工作联系人详细信息] 架构字段组
 
 >[!NOTE]
 >
->The names of several schema field groups have changed. 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
+>多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL 工作联系] 人详细信息类的标准架构字 [[!DNL XDM Individual Profile] 段组](../../classes/individual-profile.md)。The field group provides several fields that capture occupational information regarding an individual person, such as work address, work email, work phone number, and organizations to which the person belongs.
+[!UICONTROL 工作联系人详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 现场组提供了多个字段，用于捕获有关个人的职业信息，例如工作地址、工作电子邮件、工作电话号码以及该个人所属的组织。
 
 ![](../../images/field-groups/work-contact-details.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `workAddress` | [Postal address](../../data-types/postal-address.md) | 描述人员的工作地址。 |
+| `workAddress` | [邮政地址](../../data-types/postal-address.md) | 描述人员的工作地址。 |
 | `workEmail` | [电子邮件地址](../../data-types/email-address.md) | 描述人员的工作电子邮件地址。 |
-| `workPhone` | [电话号码](../../data-types/phone-number.md) | Describes the person&#39;s work phone number. |
-| `organizations` | String (Array) | 自由格式字符串的数组，表示人员所属的组织。 |
+| `workPhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的工作电话号码。 |
+| `organizations` | 字符串（数组） | 自由格式字符串的数组，表示人员所属的组织。 |
 
 {style=&quot;table-layout:auto&quot;}
 

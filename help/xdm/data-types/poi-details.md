@@ -2,19 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；XDM；字段；架构；架构；poi;poi详细信息；目标点；兴趣点详细信息；数据类型；数据类型；
 solution: Experience Platform
 title: 目标点详细信息数据类型
-topic-legacy: overview
 description: 本文档概述了兴趣点详细信息XDM数据类型。
 exl-id: cab5463b-97a0-400d-a00c-0cd8bf9301a5
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '204'
 ht-degree: 5%
 
 ---
 
-# [!UICONTROL 目标点详细信] 息数据类型
+# [!UICONTROL 目标点详细信息] 数据类型
 
-[!UICONTROL 目标点详细] 描述了一种标准的XDM数据类型，该数据类型描述在其中观察到事件的与地理相关的数据。
+[!UICONTROL 目标点详细信息] 是一种标准的XDM数据类型，用于描述在其中观察到事件的与地理相关的数据。
 
 <img src="../images/data-types/poi-details.png" width="550" /><br />
 

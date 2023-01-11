@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；应用程序；数据类型；数据类型；
 solution: Experience Platform
 title: 应用程序数据类型
-topic-legacy: overview
 description: 本文档概述了应用程序体验数据模型(XDM)数据类型。
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 2%

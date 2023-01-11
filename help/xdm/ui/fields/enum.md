@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
-topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 89ada47cb6e0b204d8f2f19e7e9b6f31bf347964
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '1257'
 ht-degree: 0%

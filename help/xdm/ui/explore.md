@@ -3,12 +3,11 @@ keywords: Experience Platform；主页；热门主题；UI;XDM;XDM系统；体�
 solution: Experience Platform
 title: 在UI中浏览架构资源
 description: 了解如何在Experience Platform用户界面中探索现有模式、类、模式字段组和数据类型。
-topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 744d87c82b7e7e06782c6c1b9db2ec46a5444d28
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '957'
 ht-degree: 0%
 
 ---

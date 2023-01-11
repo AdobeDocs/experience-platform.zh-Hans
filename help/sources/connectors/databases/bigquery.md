@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；BigQuery;bigquery;Google BigQuery;google bigquery
 solution: Experience Platform
 title: Google BigQuery源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 7a62dcf1e9712d3c0c0d148b953e50dc11c91f1b
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%

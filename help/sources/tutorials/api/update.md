@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流程服务；更新帐户
 solution: Experience Platform
 title: 使用流服务API更新帐户
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流量服务API更新帐户的详细信息和凭据的步骤。
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '523'
 ht-degree: 2%

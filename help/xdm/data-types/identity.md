@@ -2,28 +2,27 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；身份；数据类型；数据类型；
 solution: Experience Platform
 title: 身份数据类型
-topic-legacy: overview
 description: 本文档概述了Identity XDM数据类型。
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 4%
 
 ---
 
-#  Identitydata类型
+# [!UICONTROL 身份] 数据类型
 
- Identity是一种标准的XDM数据类型，用于明确区分与数字体验进行交互的人员。标识由标识提供程序建立，该提供程序本身在`namespace`属性中引用。 在每个`namespace`内，标识是唯一的。
+[!UICONTROL 身份] 是一种标准的XDM数据类型，用于明确区分与数字体验进行交互的人员。 身份由身份提供者建立，该提供者本身在 `namespace` 属性。 在每个 `namespace`，则标识是唯一的。
 
 <img src="../images/data-types/identity.png" width="550" /><br />
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `namespace` | 对象 | 包含单个字符串字段(`code`)的对象，该字段指示与提供的`id`属性关联的命名空间。 |
-| `authenticatedState` | 字符串 | 观察到的体验事件时此身份的已验证状态。 有关已接受的值和定义，请参阅[附录](#authenticatedState)。 |
+| `namespace` | 对象 | 包含单个字符串字段(`code`)，指示与提供的 `id` 属性。 |
+| `authenticatedState` | 字符串 | 观察到的体验事件时此身份的已验证状态。 请参阅 [附录](#authenticatedState) 以了解接受的值和定义。 |
 | `id` | 字符串 | 相关命名空间中消费者的标识。 |
-| `primary` | 布尔值 | 指示这是否是个人的主标识。 每个人只能有一个主标识。 |
+| `primary` | 布尔型 | 指示这是否是个人的主标识。 每个人只能有一个主标识。 |
 | `xid` | 字符串 | 如果存在，则此值表示跨命名空间标识符，该标识符在所有命名空间中所有命名空间范围内的标识符都是唯一的。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -35,11 +34,11 @@ ht-degree: 4%
 
 ## 附录
 
-以下部分包含有关[!UICONTROL Identity]数据类型的其他信息。
+以下部分包含有关 [!UICONTROL 身份] 数据类型。
 
 ## 已接受的authenticatedState值 {#authenticatedState}
 
-下表概述了`authenticatedState`的已接受值及其相关含义：
+下表概述了 `authenticatedState` 及其相关含义：
 
 | 值 | 描述 |
 | --- | --- |

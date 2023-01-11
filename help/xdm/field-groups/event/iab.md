@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；iab;tcf；同意；
 solution: Experience Platform
 title: 事件架构的IAB TCF 2.0同意字段组
-topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类的IAB TCF 2.0同意架构字段组。
 exl-id: c236d0d4-27bd-45d7-a912-d0e93a609254
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 1%

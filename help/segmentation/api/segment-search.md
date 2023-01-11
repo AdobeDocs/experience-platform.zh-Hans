@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；分段；分段服务；故障诊断；API；设置；区段；区段；搜索；区段搜索；
 title: 区段搜索API端点
-topic-legacy: guide
 description: 在Adobe Experience Platform Segmentation Service API中，区段搜索用于搜索跨各种数据源包含的字段，并近乎实时地返回它们。 本指南提供了有助于您更好地了解区段搜索的信息，并包含用于使用API执行基本操作的示例API调用。
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1201'
 ht-degree: 2%

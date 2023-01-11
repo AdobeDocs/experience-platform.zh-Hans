@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Snowflake;snowflake
 solution: Experience Platform
 title: 使用流服务API创建Snowflake库连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Snowflake。
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: b1c0c3ea0d7170f76728de06e05787b7c9aaffe9
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '532'
 ht-degree: 1%

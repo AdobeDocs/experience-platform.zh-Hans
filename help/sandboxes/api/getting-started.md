@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；沙盒开发人员指南
 solution: Experience Platform
 title: 沙盒API快速入门
-topic-legacy: developer guide
 description: 沙盒API允许开发人员以编程方式管理Adobe Experience Platform中的沙箱。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 5%

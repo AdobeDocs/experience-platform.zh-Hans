@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题；UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；架构；架构；架构；架构；创建；数据类型；数据类型；
 solution: Experience Platform
 title: 使用UI创建和编辑数据类型
-topic-legacy: tutorial
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 81f700f7c68ba9ff2fc0a99bf62031bf3fe0c95f
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1156'
 ht-degree: 0%
 
 ---

@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Kinesis;Kinesis;Amazon Kinesis;Amazon Kinesis
 solution: Experience Platform
 title: 使用流服务API创建Amazon Kinesis源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Amazon Kinesis源。
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 1%

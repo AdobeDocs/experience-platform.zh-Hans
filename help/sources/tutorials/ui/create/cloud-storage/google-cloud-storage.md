@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Google云存储；Google云存储；GCS;GCS
 solution: Experience Platform
 title: 在UI中创建Google云存储源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Google UI创建Adobe Experience Platform云存储源连接。
 exl-id: 3258ccd7-757c-4c4a-b7bb-0e8c9de3b50a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 1%

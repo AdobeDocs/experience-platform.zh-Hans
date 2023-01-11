@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；云存储数据
 solution: Experience Platform
 title: 使用流服务API为云存储源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1736'
 ht-degree: 1%

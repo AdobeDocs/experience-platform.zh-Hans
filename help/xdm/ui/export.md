@@ -2,10 +2,9 @@
 solution: Experience Platform
 title: 在UI中导出XDM模式
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙箱或IMS组织。
-topic-legacy: user guide
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%

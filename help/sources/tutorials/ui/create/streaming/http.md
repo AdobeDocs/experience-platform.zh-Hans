@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流连接；创建流连接；UI指南；教程；创建流连接；流摄取；
 solution: Experience Platform
 title: 使用UI创建HTTP API流连接
-topic-legacy: tutorial
 type: Tutorial
 description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1058'
 ht-degree: 0%

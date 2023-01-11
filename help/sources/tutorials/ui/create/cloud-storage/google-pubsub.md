@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Google PubSub;google Pubsub
 solution: Experience Platform
 title: 在UI中创建Google PubSub源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: da7b6fe8f9d274b8e5f27138a1baf8caf63a0c01
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 1%

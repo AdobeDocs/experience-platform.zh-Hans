@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Couchbase;Couchbase
 solution: Experience Platform
 title: 使用流服务API创建Couchbase连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Couchbase连接到Adobe Experience Platform。
 exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
 workflow-type: tm+mt
 source-wordcount: '454'
 ht-degree: 1%

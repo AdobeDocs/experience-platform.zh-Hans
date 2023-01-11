@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；一般REST；一般REST
 solution: Experience Platform
 title: 通用REST API源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将通用REST API连接到Adobe Experience Platform。
 exl-id: e3449e33-7261-4aa2-bce9-5530eb4fcc68
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '228'
 ht-degree: 0%

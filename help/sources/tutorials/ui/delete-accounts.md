@@ -3,10 +3,9 @@ keywords: Experience Platform；主页；热门主题；删除帐户
 description: Adobe Experience Platform中的源连接器提供了按计划摄取外部源数据的功能。 本教程提供了从“源”工作区中删除帐户的步骤。
 solution: Experience Platform
 title: 在UI中删除源连接帐户
-topic-legacy: overview
 type: Tutorial
 exl-id: 7cb65d17-d99d-46ff-b28f-7469d0b57d07
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 0%

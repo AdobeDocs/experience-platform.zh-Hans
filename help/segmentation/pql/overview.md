@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；PQL;PQL；配置文件查询语言
 solution: Experience Platform
 title: 配置文件查询语言(PQL)概述
-topic-legacy: developer guide
 description: 本指南提供了PQL的一般概述，其中涵盖格式准则并提供PQL表达式示例。
 exl-id: 4f7ab50e-89a3-42db-b74a-c6f2d86c9bcb
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '715'
 ht-degree: 2%

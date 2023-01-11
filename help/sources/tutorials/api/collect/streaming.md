@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；云存储数据；流数据；流
 solution: Experience Platform
 title: 使用流服务API为原始数据创建流数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 2%

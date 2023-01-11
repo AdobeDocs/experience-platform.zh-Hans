@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；事件中心；Azure事件中心；事件中心
 solution: Experience Platform
 title: 使用流服务API创建Azure事件中心源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '737'
 ht-degree: 1%

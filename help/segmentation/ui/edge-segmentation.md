@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；边缘分段；分段；分段服务；分段服务；UI指南；流式边缘；
 solution: Experience Platform
 title: 边缘分段UI指南
-topic-legacy: ui guide
 description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '939'
 ht-degree: 0%

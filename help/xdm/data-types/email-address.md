@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；XDM；字段；架构；架构；电子邮件地址；xdm:emailAddress；电子邮件地址；数据类型；数据类型；
 solution: Experience Platform
 title: 电子邮件地址数据类型
-topic-legacy: overview
 description: 本文档概述“电子邮件地址”XDM数据类型。
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-source-git-commit: fe6abe468025ab3373f802954aedceeb1af625fe
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 2%

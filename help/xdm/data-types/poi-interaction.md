@@ -2,19 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；poi；交互；目标点；目标点；数据类型；数据类型；
 solution: Experience Platform
 title: 兴趣点交互数据类型
-topic-legacy: overview
 description: 本文档概述了兴趣点交互XDM数据类型。
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL 目标点交互数] 据类型
+# [!UICONTROL 目标点互动] 数据类型
 
-[!UICONTROL 目标点交互] 是一种标准的XDM数据类型，用于描述当移动设备在一定范围内时向移动设备应用程序传递身份信息的无线设备。
+[!UICONTROL 目标点互动] 是一种标准的XDM数据类型，用于描述在移动设备处于范围内时向移动设备应用程序传递身份信息的无线设备。
 
 <img src="../images/data-types/poi-interaction.png" width="400" /><br />
 

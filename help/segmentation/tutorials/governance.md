@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据使用合规性；强制；强制数据使用合规性；分段服务；分段；分段；
 solution: Experience Platform
 title: 使用API为受众区段强制实施数据使用合规性
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程介绍了使用API强制实时客户资料受众区段符合数据使用要求的步骤。
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 1%

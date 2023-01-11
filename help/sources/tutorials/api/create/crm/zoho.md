@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Zoho CRM;Zoho CRM;Zoho;Zoho
 solution: Experience Platform
 title: 使用流服务API创建Zoho CRM基本连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Zoho CRM。
 exl-id: 33995927-8f5e-44c5-b809-4db8706bbd34
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 1%

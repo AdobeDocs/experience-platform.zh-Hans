@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；CRM;CRM;CRM流程服务
 solution: Experience Platform
 title: 使用流服务API探索CRM系统
-topic-legacy: overview
 description: 本教程使用流程服务API来探索CRM系统。
 exl-id: 9a8c553a-a93d-4539-a9d2-5f76a3927d92
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 2%

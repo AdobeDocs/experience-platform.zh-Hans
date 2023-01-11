@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；激活入站数据；填充配置文件；填充rtcp；填充的统一配置文件
 solution: Experience Platform
 title: 激活入站源数据以在UI中填充客户配置文件
-topic-legacy: overview
 type: Tutorial
 description: 来自源连接器的入站数据可用于扩充和填充实时客户资料数据。
 exl-id: ddd3766a-3f55-4bbc-8358-c578eae2c629
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 0%

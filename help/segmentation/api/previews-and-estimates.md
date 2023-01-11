@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；预览；估计；预览和估计；估计和预览；API;API;
 solution: Experience Platform
 title: 预览和估算API端点
-topic-legacy: developer guide
 description: 在开发区段定义时，您可以使用Adobe Experience Platform中的估计和预览工具来查看摘要级别的信息，以帮助确保隔离预期受众。
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 2%

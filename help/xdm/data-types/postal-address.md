@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地址；xdm:address；数据类型；数据类型；
 solution: Experience Platform
 title: 邮政地址数据类型
-topic-legacy: overview
 description: 本文档概述了邮政地址XDM数据类型。
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '341'
 ht-degree: 1%
@@ -38,7 +37,7 @@ ht-degree: 1%
 | `stateProvince` | 观察的州或省份。 格式遵循 [ISO 3166-2（国家/地区和分区）](https://www.unece.org/cefact/locode/subdivisions.html) 标准。 |
 | `status` | 指示当前是否可以使用地址。 |
 | `statusReason` | 当前的描述 `status`. |
-| `street1` - `street4` | 这四个字段用于包含主要街道级别信息、公寓号、街道号和街道名称。 `street2` to `street4` 为可选项。 |
+| `street1` — `street4` | 这四个字段用于包含主要街道级别信息、公寓号、街道号和街道名称。 `street2` to `street4` 为可选项。 |
 
 {style=&quot;table-layout:auto&quot;}
 

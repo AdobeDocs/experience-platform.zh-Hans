@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；目标映射；目标映射
 solution: Experience Platform
 title: 将Adobe Target事件数据映射到XDM
-topic-legacy: overview
-description: 了解如何将Adobe Target事件字段映射到体验数据模型(XDM)架构，以在Adobe Experience Platform中使用。
+description: 了解如何将Adobe Target事件字段映射到体验数据模型(XDM)架构以在Adobe Experience Platform中使用。
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 1%

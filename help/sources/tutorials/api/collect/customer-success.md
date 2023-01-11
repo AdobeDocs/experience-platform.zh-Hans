@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；收集客户成功；客户成功
 solution: Experience Platform
 title: 使用流服务API为客户成功源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从客户成功系统中检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 1%

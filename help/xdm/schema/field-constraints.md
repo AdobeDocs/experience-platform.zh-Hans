@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；字段组；字段组；字段组；数据类型；数据类型；数据类型；数据类型；架构设计；数据类型；数据类型；数据类型；数据类型；架构；架构；架构；架构设计；映射；
 solution: Experience Platform
 title: XDM字段类型约束
-topic-legacy: overview
 description: 体验数据模型(XDM)中字段类型约束的引用，包括可映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: bd40388d710f8b135c0d36716b0ec59c8c9b78ee
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 6%

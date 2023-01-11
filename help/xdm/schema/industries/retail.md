@@ -1,13 +1,12 @@
 ---
 solution: Experience Platform
 title: 零售行业数据模型
-topic-legacy: overview
 description: 查看零售行业的标准化数据模型，该数据模型与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
 exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
-source-git-commit: 2d7314f11837ca5c5ca1411553f20f58c4cad1ec
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '522'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 

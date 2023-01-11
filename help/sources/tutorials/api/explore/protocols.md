@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；协议
 solution: Experience Platform
 title: 利用流服务API实现协议系统
-topic-legacy: overview
 description: 本教程使用流服务API来浏览协议应用程序。
 exl-id: e4b24312-543e-4014-aa53-e8ca9c620950
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '588'
 ht-degree: 2%

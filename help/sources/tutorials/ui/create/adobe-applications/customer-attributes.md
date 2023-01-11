@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；客户属性
 solution: Experience Platform
 title: 在UI中创建客户属性源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建源连接，以将客户属性配置文件数据引入Adobe Experience Platform。
 exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 4%

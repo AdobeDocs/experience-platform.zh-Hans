@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；分段服务；分段；创建数据集；导出受众区段；导出区段；
 solution: Experience Platform
 title: 创建用于导出受众区段的数据集
-topic-legacy: tutorial
 type: Tutorial
 description: 本教程将演示创建数据集所需的步骤，数据集可用于使用Experience PlatformUI导出受众区段。
 exl-id: 1cd16e43-b050-42ba-a894-d7ea477b65f3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '757'
 ht-degree: 0%

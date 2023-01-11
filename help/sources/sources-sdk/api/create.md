@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 使用流服务API创建新的连接规范
-topic-legacy: tutorial
 description: 以下文档提供了如何使用流服务API创建连接规范并通过自助源集成新源的步骤。
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: ae5bb475bca90b31d8eb7cf6b66d4d191d36ac5c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '800'
+ht-degree: 1%
 
 ---
 

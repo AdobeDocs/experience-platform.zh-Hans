@@ -2,12 +2,11 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 自助源入门（批量SDK）
-topic-legacy: developer guide
 description: 本文档简要介绍在尝试使用自助源（批处理SDK）创建新源之前您需要了解的先决条件信息。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---

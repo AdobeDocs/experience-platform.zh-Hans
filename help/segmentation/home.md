@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；区段；区段服务；区段；区段；区段；区段
 solution: Experience Platform
 title: Segmentation Service概述
-topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；区段生成器；区段生成器
 solution: Experience Platform
 title: 重构的分段时间约束UI指南
-topic-legacy: ui guide
 description: 区段生成器提供了丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '297'
 ht-degree: 0%

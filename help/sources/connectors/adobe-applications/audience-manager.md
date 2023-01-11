@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Audience Manager连接器；Audience Manager;Audience Manager
 solution: Experience Platform
 title: Audience Manager源概述
-topic-legacy: overview
 description: Adobe Audience Manager源将在Audience Manager中收集的第一方数据流到Adobe Experience Platform。
 exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 0%

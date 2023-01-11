@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Couchbase;Couchbase
 solution: Experience Platform
 title: Couchbase Source Connector概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Couchbase连接到Adobe Experience Platform。
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%

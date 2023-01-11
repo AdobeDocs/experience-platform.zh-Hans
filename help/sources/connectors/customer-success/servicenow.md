@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；ServiceNow
 solution: Experience Platform
 title: ServiceNow Source Connector概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将ServiceNow连接到Adobe Experience Platform。
 exl-id: f491b367-ec6d-4fb8-8eeb-3178673c0085
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '216'
 ht-degree: 0%

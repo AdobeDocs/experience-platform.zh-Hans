@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；OData;odata;oData；通用OData；通用数据
 solution: Experience Platform
 title: 通用OData源概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将通用OData连接到Adobe Experience Platform。
 exl-id: ff50f883-d4fd-4f32-a9d6-fe4624a32e24
-source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '221'
 ht-degree: 0%

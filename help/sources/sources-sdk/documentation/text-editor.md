@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 在本地环境中使用文本编辑器创建源文档页面
-topic-legacy: tutorial
 description: 本文档提供了有关如何使用本地环境为源创作文档并提交拉取请求(PR)的步骤。
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 3%

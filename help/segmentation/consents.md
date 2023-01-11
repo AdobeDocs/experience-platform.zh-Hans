@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；选择退出；分段；分段服务；分段服务；荣誉退出；选择退出；选择退出；同意；共享；收集；
 solution: Experience Platform
 title: 在区段中尊重同意
-topic-legacy: overview
 description: 了解如何在区段操作中执行个人数据收集和共享的客户同意首选项。
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '675'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Marketo Engage;Marketo Engage;Marketo；映射
 solution: Experience Platform
 title: Marketo Engage源的映射字段
-topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '952'
 ht-degree: 4%

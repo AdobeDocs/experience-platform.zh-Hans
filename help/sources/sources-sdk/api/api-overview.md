@@ -1,12 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 title: 自助源（批量SDK）API指南
-topic-legacy: overview
 description: 本文档概述了创建新源的过程，包括有关如何使用流服务API检索、写入和提交新连接规范的步骤。
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '488'
 ht-degree: 0%
 
 ---

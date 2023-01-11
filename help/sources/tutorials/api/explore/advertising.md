@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；广告系统；广告系统
 solution: Experience Platform
 title: 利用流量服务API开发广告系统
-topic-legacy: overview
 description: 流量服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。 本教程使用流量服务API来探索广告系统。
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 2%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；第三方数据库；数据库流服务
 solution: Experience Platform
 title: 使用流服务API浏览数据库
-topic-legacy: overview
 description: 本教程使用流服务API来探索第三方数据库的内容和文件结构。
 exl-id: 94935492-a7be-48dc-8089-18476590bf98
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 2%

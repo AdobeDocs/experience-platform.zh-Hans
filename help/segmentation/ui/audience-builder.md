@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；分段服务；分段；分段服务；用户指南；UI指南；受众UI指南；受众生成器；受众；受众；受众UI指南；
 solution: Experience Platform
 title: Audiences UI指南
-topic-legacy: ui guide
 description: Adobe Experience Platform UI中的Audience Builder提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于为组织构建和编辑受众的直观控件。
 hide: true
 hidefromtoc: true
-source-git-commit: f71d49b576059e687c337cbacd6dd3d525e97834
+exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%

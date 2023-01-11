@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Redshift;Redshift;Amazon Redshift;Amazon Redshift
 solution: Experience Platform
 title: 使用流服务API创建Amazon Redshift基本连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与Amazon Redshift连接。
 exl-id: 2728ce08-05c9-4dca-af1d-d2d1b266c5d9
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%

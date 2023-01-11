@@ -1,10 +1,9 @@
 ---
 solution: Experience Platform
 title: 同意和首选项架构字段组
-topic-legacy: overview
 description: 本文档概述了同意和首选项架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%

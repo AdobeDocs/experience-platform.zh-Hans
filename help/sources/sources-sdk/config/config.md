@@ -1,13 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 title: 自助源（批量SDK）中的配置选项
-topic-legacy: overview
 description: 本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
 exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '297'
+ht-degree: 1%
 
 ---
 

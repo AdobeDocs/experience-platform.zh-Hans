@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；PQL;PQL；配置文件查询语言；字符串函数；字符串；
 solution: Experience Platform
 title: PQL字符串函数
-topic-legacy: developer guide
 description: 配置文件查询语言(PQL)提供了一些函数，可简化与字符串的交互。
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
-source-git-commit: 1c9ed96cdbd9e670bd1f05467e33e8dab5bc2121
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 6%

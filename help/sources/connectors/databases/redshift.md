@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Amazon Redshift;Amazon Redshift;Redshift
 solution: Experience Platform
 title: Amazon Redshift Source Connector概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Amazon Redshift连接到Adobe Experience Platform。
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 0%

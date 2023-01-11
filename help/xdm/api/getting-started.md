@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体�
 solution: Experience Platform
 title: 架构注册API快速入门
 description: 本文档简要介绍在尝试调用架构注册表API之前需要了解的核心概念。
-topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1356'
 ht-degree: 0%

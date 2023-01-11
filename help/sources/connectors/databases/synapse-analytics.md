@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Azure synapse分析；azure synapse分析；Synapse;Synapse
 solution: Experience Platform
 title: azure synapse分析源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure synapse分析连接到Adobe Experience Platform。
 exl-id: 5b94ae74-e5a7-40e9-a952-41eddf06dcde
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '240'
 ht-degree: 0%

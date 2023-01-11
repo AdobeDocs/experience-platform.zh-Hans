@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；CS;CS；客户成功系统
 solution: Experience Platform
 title: 使用流量服务API探索客户成功系统
-topic-legacy: overview
 description: 本教程使用流量服务API来探索客户成功(CS)系统。
 exl-id: 453be69d-3d72-4987-81cd-67fa3be7ee59
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 2%

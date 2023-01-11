@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；xdm；体验数据模型；命名空间；命名空间；兼容性模式；已修复；
 solution: Experience Platform
 title: Experience Data Model(XDM)中的名称步调
-topic-legacy: overviews
 description: 了解体验数据模型(XDM)中的名称步调如何允许您在将不同架构组件汇集在一起时扩展架构并防止字段冲突。
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: bcffd3d38cecba38e1e57a44ce0febfd2cf0f8fb
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '630'
 ht-degree: 1%

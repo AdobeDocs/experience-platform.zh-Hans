@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Salesforce服务云；Salesforce服务云
 solution: Experience Platform
 title: 使用流服务API创建Salesforce服务云源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Salesforce Service Cloud。
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 1%

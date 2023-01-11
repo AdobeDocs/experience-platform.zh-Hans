@@ -3,10 +3,9 @@ keywords: Experience Platform；主页；热门主题；分析；分类
 description: 了解如何在UI中创建Adobe Analytics源连接器以将分类数据引入Adobe Experience Platform。
 solution: Experience Platform
 title: 在UI中为分类数据创建Adobe Analytics源连接
-topic-legacy: overview
 type: Tutorial
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '660'
 ht-degree: 6%

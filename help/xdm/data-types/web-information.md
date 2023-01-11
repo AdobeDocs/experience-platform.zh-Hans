@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；模式；模式；XDM；字段；模式；模式；网页详细信息；数据类型；数据类型；网页
 solution: Experience Platform
 title: Web信息数据类型
-topic-legacy: overview
 description: 本文档概述了Web信息体验数据模型(XDM)数据类型。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+exl-id: bfb00835-5908-4baf-af2a-6d845710e340
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL Web信] 息数据类型
+# [!UICONTROL Web信息] 数据类型
 
-[!UICONTROL Web信] 息是标准的体验数据模型(XDM)数据类型，用于描述通过特定于万维网渠道（包括网页、反向链接和/或与页面交互相关的链接）的体验事件记录的信息。
+[!UICONTROL Web信息] 是一种标准的体验数据模型(XDM)数据类型，用于描述通过特定于万维网渠道的体验事件记录的信息，包括与页面交互相关的网页、反向链接和/或链接。
 
 ![](../images/data-types/web-information.png)
 

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；架构；架构；架构；架构；关系；关系描述符；关系描述符；引用标识；引用标识；
 title: 使用模式注册表API定义两个模式之间的关系
 description: 本文档提供了一个教程，用于定义由贵组织使用架构注册API定义的两个架构之间的一对一关系。
-topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 2%

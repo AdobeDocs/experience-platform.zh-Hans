@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；区段作业；区段作业；API;API;
 solution: Experience Platform
 title: 区段作业API端点
-topic-legacy: developer guide
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理贵组织的区段作业。
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1511'
 ht-degree: 2%

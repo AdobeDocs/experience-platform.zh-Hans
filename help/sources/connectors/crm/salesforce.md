@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；CRM架构；CRM;Salesforce;Salesforce
 solution: Experience Platform
 title: Salesforce源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: e178e0df2653b8cb0d4176734be7cb421098e225
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '900'
 ht-degree: 0%

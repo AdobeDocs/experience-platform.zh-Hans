@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体�
 solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
-topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: a854a40034666159fabca550227efe9f3a47fb53
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '901'
 ht-degree: 0%

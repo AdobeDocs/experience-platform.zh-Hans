@@ -2,19 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；信标；交互详细信息；数据类型；数据类型；
 solution: Experience Platform
 title: 地域交互详细信息数据类型
-topic-legacy: overview
 description: 本文档概述了地域交互详细信息XDM数据类型。
 exl-id: c05b098b-3f12-4283-a6d5-5ebf96b9828d
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '159'
 ht-degree: 4%
 
 ---
 
-# [!UICONTROL 地域交互详细] 信息数据类型
+# [!UICONTROL 地域交互详细信息] 数据类型
 
-[!UICONTROL 地域交] 互详细描述了标准XDM数据类型，该数据类型描述地理定义区域中包含的当前状态。
+[!UICONTROL 地域交互详细信息] 是一种标准的XDM数据类型，用于描述在地理上定义的区域中包含的当前状态。
 
 <img src="../images/data-types/geo-interaction-details.png" width="400" /><br />
 

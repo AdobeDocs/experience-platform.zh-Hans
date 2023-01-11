@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 记录源
-topic-legacy: overview
 description: 在Adobe Experience Platform中实时创建新源的最后一步是记录新源。
 exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
-source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%

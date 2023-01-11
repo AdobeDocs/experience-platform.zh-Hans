@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM;XDM系统；
 solution: Experience Platform
 title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
-topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: e8ad829ac4ea89c0d0167e6b414db577c9ecf094
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 3%

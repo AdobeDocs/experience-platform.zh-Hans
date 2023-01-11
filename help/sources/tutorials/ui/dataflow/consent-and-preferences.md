@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；同意和首选项；同意；onetrust;OneTrust
 solution: Experience Platform
 title: 在UI中使用同意和首选项源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为同意和首选项源创建数据流的步骤。
 exl-id: 340b5945-baa1-4f79-88fa-2572606f6083
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 0%

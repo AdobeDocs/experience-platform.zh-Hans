@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Marketo源连接器；命名空间；架构；b2b;B2B
 solution: Experience Platform
 title: B2B命名空间和架构
-topic-legacy: overview
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1707'
 ht-degree: 4%

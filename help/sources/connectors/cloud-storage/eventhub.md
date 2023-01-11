@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Azure事件中心；Azure事件中心；事件中心；事件中心
 solution: Experience Platform
 title: Azure事件集线器源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 9415b4add3784cc6f81794060464b7ff63497a96
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 0%

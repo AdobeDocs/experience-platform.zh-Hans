@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；bigquery;Google;Google;Google BigQuery
 solution: Experience Platform
 title: 使用流服务API创建Google BigQuery Base连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google BigQuery。
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
-source-git-commit: 015a4fa06fc2157bb8374228380bb31826add37e
+source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 1%

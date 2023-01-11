@@ -2,13 +2,12 @@
 keywords: Experience Platform；主页；热门主题；Analytics映射字段；Analytics映射
 solution: Experience Platform
 title: Adobe Analytics源连接器的映射字段
-topic-legacy: overview
 description: Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '3431'
-ht-degree: 14%
+ht-degree: 15%
 
 ---
 

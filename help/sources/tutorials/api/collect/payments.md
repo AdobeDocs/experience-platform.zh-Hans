@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；收集付款数据；付款数据
 solution: Experience Platform
 title: 使用流服务API为支付源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从支付应用程序检索数据并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1343'
 ht-degree: 1%

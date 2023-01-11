@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Google Big Query;google big query;GBQ;gbq
 solution: Experience Platform
 title: 在UI中创建Google大查询源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Google UI创建Adobe Experience Platform大查询源连接。
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 1%

@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；MySQL;mysql
 solution: Experience Platform
 title: 创建 [!DNL MySQL] 使用流服务API的基本连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到MySQL。
 exl-id: 273da568-84ed-4a3d-bfea-0f5b33f1551a
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 2%

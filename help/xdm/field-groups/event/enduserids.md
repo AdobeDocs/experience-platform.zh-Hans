@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；最终用户ID；最终用户；ID;
 solution: Experience Platform
 title: 最终用户ID详细信息架构字段组
-topic-legacy: overview
 description: 本文档概述了最终用户ID详细信息架构字段组。
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 5%

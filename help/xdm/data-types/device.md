@@ -2,19 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；设备；数据类型；数据类型；
 solution: Experience Platform
 title: 设备数据类型
-topic-legacy: overview
 description: 本文档概述了设备XDM数据类型。
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 5%
 
 ---
 
-#  设备数据类型
+# [!UICONTROL 设备] 数据类型
 
- 设备是用于描述已识别设备的标准XDM数据类型。设备是可跨会话跟踪（通常由Cookie跟踪）的应用程序或浏览器实例。
+[!UICONTROL 设备] 是描述已识别设备的标准XDM数据类型。 设备是可跨会话跟踪（通常由Cookie跟踪）的应用程序或浏览器实例。
 
 <img src="../images/data-types/device.png" width="450" /><br />
 
@@ -22,14 +21,14 @@ ht-degree: 5%
 | --- | --- | --- |
 | `colorDepth` | 整数 | 显示可表示的颜色数。 |
 | `manufacturer` | 字符串 | 负责设备设计和创建的组织的名称。 |
-| `model` | 字符串 | 设备的型号名称。 这是设备的通用、人类可读或营销名称。 例如，“iPhone 6S”是手机的特定型号。 |
+| `model` | 字符串 | 设备的型号名称。 这是设备的通用、人类可读或营销名称。 例如，“iPhone 6S”是移动电话的特定型号。 |
 | `modelNumber` | 字符串 | 制造商为此设备分配的唯一型号标识。 模型号不是版本，而是标识特定模型配置的唯一标识符。 |
 | `screenHeight` | 整数 | 设备活动显示在默认方向上的垂直像素数。 |
-| `screenOrientation` | 字符串 | 当前屏幕方向。 接受的值包括`portrait`和`landscape`。 |
+| `screenOrientation` | 字符串 | 当前屏幕方向。 接受的值包括 `portrait` 和 `landscape`. |
 | `screenWidth` | 字符串 | 设备在默认方向上的活动显示的水平像素数。 |
 | `type` | 字符串 | 被跟踪的设备类型。 接受的值包括： <ul><li>`mobile`</li><li>`tablet`</li><li>`desktop`</li><li>`ereader`</li><li>`gaming`</li><li>`television`</li><li>`settop`</li><li>`mediaplayer`</li><li>`computers`</li><li>`tv screens`</li></ul> |
 | `typeID` | 字符串 | 设备的标识符。 这可能是DeviceAtlas或其他服务中标识正在使用的硬件的标识符。 |
-| `typeIDService` | 字符串 | 用于标识设备类型的服务的命名空间。 有关已接受值的详细信息，请参阅[附录](#typeIDService)。 |
+| `typeIDService` | 字符串 | 用于标识设备类型的服务的命名空间。 请参阅 [附录](#typeIDService) 以了解有关已接受值的详细信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -40,11 +39,11 @@ ht-degree: 5%
 
 ## 附录
 
-以下部分包含有关[!UICONTROL Device]数据类型的其他信息。
+以下部分包含有关 [!UICONTROL 设备] 数据类型。
 
 ## typeIDService的已接受值 {#typeIDService}
 
-下表概述了`typeIDService`的已接受值及其相关含义：
+下表概述了 `typeIDService` 及其相关含义：
 
 | 值 | 描述 |
 | --- | --- |

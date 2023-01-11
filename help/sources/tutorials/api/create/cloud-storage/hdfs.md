@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；ApacheHadoop分布式文件系统；Apachehadoop;hdfs;HDFS
 solution: Experience Platform
 title: 使用流服务API创建Apache HDFS基本连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将ApacheHadoop分布式文件系统连接到Adobe Experience Platform。
 exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '461'
 ht-degree: 1%

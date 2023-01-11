@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；AzureData Explorer;Azure Data Explorer；数据资源管理器；Data Explorer
 solution: Experience Platform
 title: 在UI中创建AzureData Explorer源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建AzureData Explorer源连接。
 exl-id: 561bf948-fc92-4401-8631-e2a408667507
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 1%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；单个配置文件；字段；架构；架构；架构设计；字段组；字段组；iab;tcf；同意；
 solution: Experience Platform
 title: 用于配置文件架构的IAB TCF 2.0同意字段组
-topic-legacy: overview
 description: 本文档概述了XDM个人配置文件类的IAB TCF 2.0同意架构字段组。
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
-source-git-commit: 046486d5e154b45fc2c2f5408eee235dddf46a4d
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '341'
 ht-degree: 1%

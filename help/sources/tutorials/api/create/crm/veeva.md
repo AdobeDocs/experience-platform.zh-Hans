@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Veeva CRM;Veeva CRM;Veeva;
 solution: Experience Platform
 title: 使用流服务API创建Veeva CRM基本连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Veeva CRM。
 exl-id: e1aea5a2-a247-43eb-8252-2e2ed96b82a1
-source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 2%

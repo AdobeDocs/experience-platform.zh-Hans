@@ -3,12 +3,11 @@ keywords: Experience Platform；主页；热门主题；UI;XDM;XDM系统；体�
 solution: Experience Platform
 title: 使用模式编辑器定义两个模式之间的关系
 description: 本文档提供了一个教程，用于使用Experience Platform用户界面中的架构编辑器定义两个架构之间的关系。
-topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 3b16c0766c7d54b18ceea4c9f40ccb370b9f9685
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1109'
 ht-degree: 0%
 
 ---

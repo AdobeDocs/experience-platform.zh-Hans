@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；电子商务连接器；电子商务
 solution: Experience Platform
 title: 在UI中使用电子商务源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为电子商务源创建数据流的步骤。
 exl-id: ee1382c5-78ac-4765-8883-0a922772bb20
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1386'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
 title: 使用Platform UI创建MailChimp促销活动源连接
-topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform与MailChimp营销活动连接。
 exl-id: e8e1ed32-4277-44c9-aafc-6bb9e0a1fe0d
-source-git-commit: 430b544835956ec0b212fb44d48beaae46afdd2e
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 1%
@@ -43,7 +42,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 域 | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| Domain | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | 用户名 | 与您的MailChimp帐户对应的用户名。 基本身份验证需要此功能。 |
 | 密码 | 与您的MailChimp帐户对应的密码。 基本身份验证需要此功能。 |
 

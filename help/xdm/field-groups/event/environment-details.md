@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；环境；环境详细信息；
 solution: Experience Platform
 title: 环境详细信息架构字段组
-topic-legacy: overview
 description: 本文档概述了ExperienceEvent环境详细信息架构字段组。
 exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 3%
@@ -13,13 +12,13 @@ ht-degree: 3%
 ---
 
 
-# [!UICONTROL 环境详] 细信息架构字段组
+# [!UICONTROL 环境详细信息] 架构字段组
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
+>多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL 环境] 详细信息类的标准架构字段组 [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) ，用于捕获与体验事件相关的环境详细信息（如设备详细信息、浏览器信息、本地时间和其他地理信息）。
+[!UICONTROL 环境详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md) 用于捕获与体验事件相关的环境详细信息，如设备详细信息、浏览器信息、本地时间和其他地理信息。
 
 <img src="../../images/field-groups/environment-details.png" width="500" /><br />
 

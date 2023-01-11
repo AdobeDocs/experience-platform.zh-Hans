@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Azure;azure blob;Blob
 solution: Experience Platform
 title: 使用流服务API创建Azure Blob Base连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure Blob。
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: 0d891acd4e33eb7080da44e204672dc3601cf166
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '692'
 ht-degree: 1%

@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；HP Vertica
 solution: Experience Platform
 title: 在UI中创建HP Vertica源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建HP Vertica源连接。
 exl-id: d7315ad4-9250-4e66-be33-016efabb512e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 1%

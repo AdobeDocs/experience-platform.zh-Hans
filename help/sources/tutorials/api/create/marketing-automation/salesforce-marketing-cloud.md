@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Salesforce Marketing Cloud;SalesforceMarketing Cloud
 solution: Experience Platform
 title: 使用流服务API创建SalesforceMarketing Cloud库连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与SalesforceMarketing Cloud连接。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 1%

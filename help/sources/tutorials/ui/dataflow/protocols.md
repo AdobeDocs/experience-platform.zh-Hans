@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；协议连接器
 solution: Experience Platform
 title: 在UI中使用协议源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为协议源创建数据流的步骤。
 exl-id: 94631a78-14ea-41d7-876c-468634dfc6c1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1385'
 ht-degree: 0%

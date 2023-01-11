@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；HP Vertica;HP vertica
 solution: Experience Platform
 title: HP Vertica Source Connector概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将HP Vertica连接到Adobe Experience Platform。
 exl-id: 5785d8bb-ccda-4d53-a79b-030923e3ae81
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；XDM;XDM系统；XDM个人配置文件；XDM ExperienceEvent;XDM体验事件；体验事件；字段组；字段组；字段组；体验事件；XDM体验事件；体验事件；体验事件；XDM体验事件；体验事件；XDM体验事件；体验数据模型；体验数据模型；数据模型；数据模型；数据模型；数据库模式；架构；架构；注册表；架构；记录数据；时间序列；时间序列
 solution: Experience Platform
 title: XDM系统概述
-topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 由Adobe驱动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '2087'
 ht-degree: 2%

@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；营销自动化
 solution: Experience Platform
 title: 利用流服务API探索营销自动化系统
-topic-legacy: overview
 description: 本教程使用流量服务API来探索营销自动化系统。
 exl-id: 250c1ba0-1baa-444f-ab2b-58b3a025561e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 2%

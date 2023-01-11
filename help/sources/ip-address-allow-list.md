@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；IP地址；IP地址允�
 description: 在使用源连接器之前，必须将IP地址添加到允许列表。
 solution: Experience Platform
 title: 源连接的IP地址允许列表
-topic-legacy: overview
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: 40a6a6888fe075d653c565e5925874d737aa5c59
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%

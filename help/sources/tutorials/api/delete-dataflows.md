@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流程服务；API;API；删除；删除数据流
 solution: Experience Platform
 title: 使用流服务API删除数据流
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API删除批处理数据流和流数据流。
 exl-id: ea9040b1-3a40-493d-86f0-27deef09df07
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 2%

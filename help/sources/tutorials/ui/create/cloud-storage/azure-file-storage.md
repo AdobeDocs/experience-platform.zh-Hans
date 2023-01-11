@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Azure文件存储；Azure文件存储连接器
 solution: Experience Platform
 title: 在UI中创建Azure文件存储源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Azure文件存储源连接。
 exl-id: 25d483b6-3975-4e80-9dbe-28b7b91cb063
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 1%

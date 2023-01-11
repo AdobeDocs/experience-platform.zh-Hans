@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；区段定义；区段定义；API;API;
 solution: Experience Platform
 title: 区段定义API端点
-topic-legacy: developer guide
 description: Adobe Experience Platform Segmentation Service API中的区段定义端点允许您以编程方式管理贵组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 3%

@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据源连接
 solution: Experience Platform
 title: 使用流服务API从第三方云存储系统中摄取分段数据
-topic-legacy: overview
 type: Tutorial
 description: 本教程使用流服务API来指导您完成从第三方云存储系统中摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 2%

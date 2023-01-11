@@ -2,9 +2,8 @@
 solution: Experience Platform
 title: 在UI中为XDM架构生成示例数据
 description: 了解如何根据Adobe Experience Platform用户界面中的现有架构生成示例JSON数据。
-topic-legacy: user guide
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '336'
 ht-degree: 0%

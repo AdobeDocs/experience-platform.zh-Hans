@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；AzureData Explorer;Azure数据资源管理器
 solution: Experience Platform
 title: AzureData Explorer源概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将AzureData Explorer连接到Adobe Experience Platform。
 exl-id: 869bd8bb-51e6-4e0c-a3ec-ff083dda5789
-source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%

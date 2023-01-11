@@ -3,10 +3,9 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体�
 solution: Experience Platform
 title: 创建临时架构
 description: 在特定情况下，可能需要创建体验数据模型(XDM)架构，其中的字段名称仅由单个数据集使用。 这称为“临时”架构。 临时架构用于各种Experience Platform数据摄取工作流，包括摄取CSV文件和创建特定类型的源连接。
-topic-legacy: tutorial
 type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 3%

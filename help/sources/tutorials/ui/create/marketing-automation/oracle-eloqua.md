@@ -2,15 +2,14 @@
 keywords: Experience Platform；主页；热门主题；来源；连接器；oracle;oracle雄辩；雄辩
 solution: Experience Platform
 title: 使用Platform UI创建OracleEloqua源连接
-topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到OracleEloqua。
-source-git-commit: a40a1b8fae41c495afd9cdfc3c8d68148e90f2cd
+exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '466'
 ht-degree: 1%
 
 ---
-
 
 # 创建 [!DNL Oracle Eloqua] 源连接（使用Platform UI）
 
@@ -66,4 +65,3 @@ ht-degree: 1%
 ## 后续步骤
 
 通过本教程，您已通过身份验证，并在 [!DNL Oracle Eloqua] 帐户和平台。 您现在可以继续下一个教程和 [创建数据流以将营销自动化数据引入平台](../../dataflow/marketing-automation.md).
-

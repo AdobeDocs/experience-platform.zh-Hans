@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；配置数据流；客户成功连接器
 solution: Experience Platform
 title: 在UI中使用客户成功源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为客户成功源创建数据流的步骤。
 exl-id: d348a7f8-6302-45f1-9961-bab56ad0407e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1397'
 ht-degree: 0%

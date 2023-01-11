@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流程服务；广告；Google AdWords；广告
 solution: Experience Platform
 title: 使用流服务API为广告源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方广告应用程序检索数据，并使用源连接器和流量服务API将其摄取到平台中的步骤。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1320'
 ht-degree: 1%

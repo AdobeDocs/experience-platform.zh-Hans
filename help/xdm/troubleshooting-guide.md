@@ -3,9 +3,8 @@ keywords: Experience Platform；热门主题；XDM;XDM系统；XDM个人配置�
 solution: Experience Platform
 title: XDM系统疑难解答指南
 description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
-topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '2060'
 ht-degree: 0%
@@ -52,7 +51,7 @@ ht-degree: 0%
 
 ### 如何为架构定义标识？
 
-在 [!DNL Experience Platform]，则无论解释的数据源如何，均会使用身份来标识主题（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 常用的身份字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]，则无论解释的数据源如何，均会使用身份来标识主题（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 标识的常用字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 

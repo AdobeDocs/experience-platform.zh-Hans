@@ -3,9 +3,8 @@ keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
-topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '1374'
 ht-degree: 4%

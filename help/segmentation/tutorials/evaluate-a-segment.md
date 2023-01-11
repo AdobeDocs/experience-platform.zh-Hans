@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；区段评估；分段服务；分段；评估区段；访问区段结果；评估和访问区段；
 solution: Experience Platform
 title: 评估和访问区段结果
-topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%

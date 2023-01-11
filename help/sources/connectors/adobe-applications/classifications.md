@@ -1,25 +1,23 @@
 ---
 keywords: Experience Platform；主页；热门主题；Adobe Analytics分类源连接器
 solution: Experience Platform
-title: Adobe Analytics Source Connector for Classifications Data
-topic-legacy: overview
-description: 了解如何使用用户界面将分析分类连接到平台
+title: Adobe Analytics分类数据的源连接器
+description: 了解如何使用用户界面将Analytics分类连接到平台
 exl-id: c26002df-dce4-415e-93e9-268e0efebc9f
-translation-type: tm+mt
-source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
 
 ---
 
-# Adobe Analytics源连接器
+# Adobe Analytics分类数据源连接器
 
-Adobe Experience Platform允许从外部源摄取数据，同时为您提供使用[!DNL Platform]服务构建、标记和增强传入数据的能力。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-[!DNL Experience Platform] 支持将分析分类数据引入Adobe Experience Platform。
+[!DNL Experience Platform] 支持将Analytics分类数据摄取到Adobe Experience Platform。
 
-分类允许在生成报表时以不同方式对Analytics变量数据进行分类和显示。 Analytics Classifications Data Connector要求您的数据在使用前已迁移到Adobe Analytics的新[!DNL Classifications]基础架构。 要确认Adobe的迁移状态，请联系您的客户成功经理。
+通过分类，可在生成报表时以不同的方式对Analytics变量数据进行分类和显示。 Analytics分类数据连接器要求您的数据已迁移到 [!DNL Classifications] Adobe Analytics基础设施。 要确认数据的迁移状态，请联系您的Adobe客户成功经理。
 
 以下文档提供了有关如何使用用户界面将Analytics分类连接到平台的信息：
 

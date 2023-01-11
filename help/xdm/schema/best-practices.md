@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；枚举；主标识；主标识；XDM个人配置文件；体验事件；XDM体验事件；XDM体验事件；experienceEvent;experienceevent;XDM Experienceevent；架构设计；最佳实践
 solution: Experience Platform
 title: 数据建模的最佳实践
-topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '2699'
 ht-degree: 2%

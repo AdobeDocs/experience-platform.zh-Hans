@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；Oracle数据库；oracle数据库
 solution: Experience Platform
 title: 在UI中创建Oracle数据库源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Oracle数据库源连接。
 exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '465'
 ht-degree: 1%

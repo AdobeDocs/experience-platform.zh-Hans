@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段服务；分段；分段服务；用户指南；UI指南；分段UI指南；区段生成器；区段生成器；已实现；现有；正在退出；
 solution: Experience Platform
 title: Segmentation Service UI指南
-topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '2647'
 ht-degree: 1%

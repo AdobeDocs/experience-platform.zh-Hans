@@ -2,19 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；商务；数据类型；数据类型；
 solution: Experience Platform
 title: 商务数据类型
-topic-legacy: overview
 description: 本文档概述了商务体验数据模型(XDM)数据类型。
 exl-id: c9cc569b-1a91-4a6e-8bfd-7f8ec07d01d4
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '341'
 ht-degree: 1%
 
 ---
 
-#  Commercedata类型
+# [!UICONTROL 商务] 数据类型
 
- Commerce是一种标准的体验数据模型(XDM)数据类型，用于描述与购买和销售活动相关的记录。
+[!UICONTROL 商务] 是一种标准的体验数据模型(XDM)数据类型，用于描述与购买和销售活动相关的记录。
 
 <img src="../images/data-types/commerce.PNG" width="400" /><br />
 

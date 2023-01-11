@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；收集协议数据；协议数据
 solution: Experience Platform
 title: 使用流服务API为协议源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API从协议应用程序检索数据并将其摄取到平台中的步骤。
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 1%

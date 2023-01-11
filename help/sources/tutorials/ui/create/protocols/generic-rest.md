@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform；主页；热门主题；通用REST API
 title: 在UI中创建通用REST API源连接
-topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建通用REST API源连接。
-source-git-commit: 94809a8e98c8de7a9a474fb5543b590fc51cb075
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '637'
 ht-degree: 1%
@@ -48,7 +47,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 主机 | 您请求的源的主机URL。 |
+| Host | 您请求的源的主机URL。 |
 | 用户名 | 与您的用户帐户对应的用户名。 |
 | 密码 | 与您的用户帐户对应的密码。 |
 

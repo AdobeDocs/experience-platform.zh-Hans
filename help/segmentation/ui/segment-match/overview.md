@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；区段匹配；区段匹配
 solution: Experience Platform
 title: 区段匹配概述
-topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1998'
 ht-degree: 0%

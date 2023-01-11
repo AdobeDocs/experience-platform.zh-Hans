@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；区段；区段成员资格；区段成员资格；架构设计；映射；映射；
 solution: Experience Platform
 title: 区段成员资格详细信息架构字段组
-topic-legacy: overview
 description: 本文档概述了区段成员资格详细信息架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 5f28c9eceb42ee19f7a8b22604ff36f8ffbd89b1
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '430'
 ht-degree: 2%

@@ -3,11 +3,10 @@ keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中定义对象字段
 description: 了解如何在Experience Platform用户界面中定义对象类型字段。
-topic-legacy: user guide
 exl-id: 5b7b3cf0-7f11-4e15-af87-09127f4423a5
-source-git-commit: fe3d9a3fc473e7ca13f0e0c2f222bcc1b1a991c4
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---

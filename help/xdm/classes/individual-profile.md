@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；单个配置文件；字段；架构；架构；标识映射；标识映射；架构设计；映射；并集架构；并集架构
 solution: Experience Platform
 title: XDM个人配置文件类
-topic-legacy: overview
 description: 本文档概述了XDM Individual Profile类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 1%

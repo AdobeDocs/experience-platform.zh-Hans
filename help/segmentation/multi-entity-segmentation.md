@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；区段服务；区段；区段；多实体；多实体分段；多实体区段；
 solution: Experience Platform
 title: 多实体分段概述
-topic-legacy: overview
 description: 多实体分段功能可以根据产品、商店或其他非用户档案类使用附加数据扩展用户档案数据。 连接后，来自其他类的数据将变得可用，就像它们是配置文件架构的本机数据一样。
 exl-id: 01a37fdc-2abe-4a84-b7da-fcbd141ff51f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '699'
 ht-degree: 0%

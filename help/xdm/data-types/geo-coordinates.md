@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地理；坐标；数据类型；数据类型；
 solution: Experience Platform
 title: 地理坐标数据类型
-topic-legacy: overview
 description: 本文档概述了地理坐标XDM数据类型。
 exl-id: 3c80eb44-852f-4a95-bd13-b6197ffe62da
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '131'
 ht-degree: 5%

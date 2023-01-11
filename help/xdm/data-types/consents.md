@@ -2,9 +2,8 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；同意；同意；首选项；首选项；privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing；同意
 title: 同意和首选项数据类型
 description: “隐私、个性化和营销首选项的同意”数据类型旨在支持收集由同意管理平台(CMP)和其他来自您数据操作来源的客户权限和首选项。
-topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '2058'
 ht-degree: 2%

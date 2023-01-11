@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；标识映射；身份映射；架构设计；映射；事件建模；最佳实践；事件；事件；
 solution: Experience Platform
 title: XDM ExperienceEvent类
-topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 1%

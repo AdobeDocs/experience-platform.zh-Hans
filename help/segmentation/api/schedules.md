@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；计划；计划；API;API;
 solution: Experience Platform
 title: 计划API端点
-topic-legacy: developer guide
 description: 计划是一种工具，可用于每天自动运行一次批量分段作业。
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: 84026b447eea00955bc9e6482b81ae1aad3c312e
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '2011'
 ht-degree: 3%
@@ -397,7 +396,7 @@ cron表达式是由6或7个字段组成的字符串。 表达式应类似于以�
 
 下表显示了cron表达式字符串示例并说明其含义。
 
-| 表达式 | 说明 |
+| 表达式 | 解释 |
 | ---------- | ----------- |
 | `0 0 13 * * ?` | 该事件将于每天下午1点触发。 |
 | `0 30 9 * * ? 2022` | 2022年，该活动将于每天早上9点30分触发。 |

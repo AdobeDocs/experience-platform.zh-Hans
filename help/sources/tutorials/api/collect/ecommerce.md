@@ -2,11 +2,10 @@
 keywords: Experience Platform；主页；热门主题；收集电子商务数据；电子商务数据
 solution: Experience Platform
 title: 使用流服务API为电子商务源创建数据流
-topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从第三方电子商务系统检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1284'
 ht-degree: 1%

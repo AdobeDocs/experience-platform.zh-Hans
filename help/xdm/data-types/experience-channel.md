@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；模式；模式；XDM；字段；模式；模式；网页详细信息；数据类型；数据类型；网页
 solution: Experience Platform
 title: 体验渠道数据类型
-topic-legacy: overview
 description: 本文档概述了Experience Channel体验数据模型(XDM)数据类型。
-source-git-commit: b9168052174c250810e59e403cb77419d510df3b
+exl-id: 209654f7-0bde-439a-989c-ce2e41599105
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '271'
 ht-degree: 4%
 
 ---
 
-# [!UICONTROL 体验渠] 道数据类型
+# [!UICONTROL 体验渠道] 数据类型
 
-[!UICONTROL 体验] 渠道是一种描述体验渠道的标准体验数据模型(XDM)数据类型。体验渠道表示数字体验的使用方法或路径。
+[!UICONTROL 体验渠道] 是描述体验渠道的标准体验数据模型(XDM)数据类型。 体验渠道表示数字体验的使用方法或路径。
 
 有多个体验渠道，每个渠道在内容的交付方式、客户交互的观察方式以及数据收集方式等方面存在不同的限制。 在渠道中，体验可以交付到特定位置。 渠道中存在的位置和位置类型因渠道而异。
 
@@ -21,7 +21,7 @@ ht-degree: 4%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_id` | 字符串 | 唯一标识渠道的ID。 每个特定体验渠道定义一个常量`@id`。 |
+| `_id` | 字符串 | 唯一标识渠道的ID。 每个特定体验渠道定义一个常量 `@id`. |
 | `_type` | 字符串 | 为具有相似属性的渠道提供粗略分类标签。 |
 | `contentTypes` | 字符串数组 | 此渠道可交付的内容类型。 |
 | `locationTypes` | 字符串数组 | 此渠道包含并可向其交付内容的位置类型（虚拟位置）。 |

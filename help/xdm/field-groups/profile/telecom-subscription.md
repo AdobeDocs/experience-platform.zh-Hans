@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；电信；订阅；电信；架构设计；字段组；字段组；
 solution: Experience Platform
 title: 电信订阅模式字段组
-topic-legacy: overview
 description: 本文档概述了电信订阅架构字段组。
 exl-id: 00c20081-09d0-425c-9894-0f957558bd43
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 6%

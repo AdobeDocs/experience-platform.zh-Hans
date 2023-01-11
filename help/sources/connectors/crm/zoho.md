@@ -2,10 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Zoho CRM;Zoho CRM;Zoho;Zoho
 solution: Experience Platform
 title: Zoho CRM源连接器概述
-topic-legacy: overview
 description: 了解如何使用API或用户界面将Zoho CRM连接到Adobe Experience Platform。
 exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 0%
