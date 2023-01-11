@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 检索数据摄取错误诊断
 description: 本文档提供了有关监控批量摄取、管理部分批量摄取错误的信息，以及有关部分批量摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '981'
 ht-degree: 2%
 
 ---
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的响应将返回包含 `path` 详细说明保存诊断的位置的对象。 响应将返回 `path` 对象 [JSON行](https://jsonlines.org/) 格式。
+成功的响应将返回包含 `path` 详细说明保存诊断的位置的对象。 响应将返回 `path` 对象 [JSON行](https://jsonlines.readthedocs.io/en/latest/) 格式。
 
 ```json
 {"path": "F1.json"}

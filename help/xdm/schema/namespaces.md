@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Data Model(XDM)中的名称步调
 description: 了解体验数据模型(XDM)中的名称步调如何允许您在将不同架构组件汇集在一起时扩展架构并防止字段冲突。
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '634'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 标准XDM语法可深入分析命名空间在架构中的表示方式(包括 [如何在Adobe Experience Platform翻译](#compatibility))。
 
-标准XDM使用 [JSON-LD](https://json-ld.org/) 用于将命名空间分配给字段的语法。 此命名空间以URI的形式提供(例如 `https://ns.adobe.com/xdm` 对于 `xdm` 命名空间)，或作为在 `@context` 架构的属性。
+标准XDM使用 [JSON-LD](https://www.w3.org/TR/json-ld11/#basic-concepts) 用于将命名空间分配给字段的语法。 此命名空间以URI的形式提供(例如 `https://ns.adobe.com/xdm` 对于 `xdm` 命名空间)，或作为在 `@context` 架构的属性。
 
 以下是标准XDM语法中产品的示例架构。 除 `@id` （由JSON-LD规范定义的唯一标识符）， `properties` 以命名空间开头，以字段名称结尾。 如果使用 `@context`，命名空间和字段名称之间用冒号(`:`)。 如果不使用前缀，则命名空间和字段名称将以斜杠(`/`)。
 
@@ -75,7 +75,7 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `@context` | 一个对象，它定义了可用的简写前缀，而不是下面的完整命名空间URI `properties`. |
-| `@id` | 记录的唯一标识符，由 [JSON-LD规范](https://json-ld.org/spec/latest/json-ld/#node-identifiers). |
+| `@id` | 记录的唯一标识符，由 [JSON-LD规范](https://www.w3.org/TR/json-ld11/#node-identifiers). |
 | `xdm:sku` | 使用短前缀表示命名空间的字段示例。 在这种情况下， `xdm` 是命名空间(`https://ns.adobe.com/xdm`)和 `sku` 是字段名称。 |
 | `https://ns.adobe.com/xdm/channels/application` | 使用完整命名空间URI的字段示例。 在这种情况下， `https://ns.adobe.com/xdm/channels` 是命名空间，和 `application` 是字段名称。 |
 | `https://ns.adobe.com/vendorA/product/stockNumber` | 供应商资源提供的字段使用它们自己的唯一命名空间。 在本例中， `https://ns.adobe.com/vendorA/product` 是供应商命名空间，并且 `stockNumber` 是字段名称。 |

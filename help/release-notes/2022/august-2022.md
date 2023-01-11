@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '2131'
+source-wordcount: '2109'
 ht-degree: 7%
 
 ---
@@ -116,8 +116,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 全局模式 | [[!UICONTROL AJO实体架构]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | 描述Adobe Journey Optimizer的非规范化实体。 |
-| 类 | [[!UICONTROL AJO执行实体]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-execution-entity.schema.json) | 描述用于分段的Adobe Journey Optimizer执行实体。 |
+| 类 | [[!UICONTROL AJO实体类]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | 用于为Adobe Journey Optimizer创建查找架构的基于记录的类。 |
 | 字段组 | [[!UICONTROL Workfront工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | 引用Adobe Workfront所有较低级别特定对象字段组的包装器字段组。 |
 
 {style=&quot;table-layout:auto&quot;}
