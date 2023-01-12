@@ -2,7 +2,7 @@
 title: Real-time Customer Data Platform B2B版本的分段用例
 description: 概述各种可用的Adobe Real-time Customer Data Platform B2B Edition用例。
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '1283'
 ht-degree: 0%
@@ -42,7 +42,7 @@ B2B类及其属性会附加一个 `B2B` 标签，以区分区段工作区中的�
 
 由于数据模型可能非常复杂，因此您可以使用Platform UI查看数据模型的更详细可视化表示形式，以帮助查找用例的相关属性。 要开始，请转到Platform UI并在左侧导航中选择架构。
 
-从可用列表中选择相应的架构，然后从 [!UICONTROL 组合物] 边栏。 在以下示例中，选择“人员”关系会显示当前架构中引用相关“人员”架构的属性（如果它是关系中的源架构），或者“人员”架构引用（如果它是关系中的目标架构）。
+从可用列表中选择相应的架构，然后从 [!UICONTROL 组合物] 边栏。 在以下示例中，选择“人员”关系会显示当前架构中引用相关“人员”架构的属性（如果它是关系中的源架构），或者“人员”架构引用（如果它是关系中的引用架构）。
 
 ![在架构工作区中使用人员关系的源键示例](../assets/segmentation/source-key-schema-relationship-example.png)
 

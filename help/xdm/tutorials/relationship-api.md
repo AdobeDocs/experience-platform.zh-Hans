@@ -4,9 +4,9 @@ title: 使用模式注册表API定义两个模式之间的关系
 description: 本文档提供了一个教程，用于定义由贵组织使用架构注册API定义的两个架构之间的一对一关系。
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1398'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,11 @@ ht-degree: 2%
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
-而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
+而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到 **源模式**，表示单独 **参考模式**.
+
+>[!NOTE]
+>
+>架构注册表API将引用架构称为“目标架构”。 不要将这些模式与 [数据准备映射集](../../data-prep/mapping-set.md) 或模式 [目标连接](../../destinations/home.md).
 
 本文档提供了一个教程，用于定义由贵组织使用 [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -30,11 +34,11 @@ ht-degree: 2%
 
 在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 [!DNL Accept] 标题及其可能值)。
 
-## 定义源架构和目标架构 {#define-schemas}
+## 定义源和引用架构 {#define-schemas}
 
 您应该已经创建了将在关系中定义的两个架构。 本教程将在组织当前忠诚度计划(在[!DNL Loyalty Members]“模式”和他们最喜爱的酒店(在“[!DNL Hotels]“架构”)。
 
-架构关系由 **源模式** 具有引用 **目标架构**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作目标架构。
+架构关系由 **源模式** 具有引用 **参考模式**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作参考架构。
 
 >[!IMPORTANT]
 >
@@ -108,13 +112,13 @@ curl -X GET \
 
 ## 为源架构定义引用字段
 
-在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作对目标架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值 `string`.
+在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作引用架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值 `string`.
 
 >[!IMPORTANT]
 >
 >源架构不能将其主标识用作引用字段。
 
-在本教程中，目标架构“[!DNL Hotels]&quot;包含 `hotelId` 用作架构主标识的字段。 但是，源架构“[!DNL Loyalty Members]“ ”没有要用作引用的专用字段 `hotelId`，因此需要创建自定义字段组才能向架构中添加新字段： `favoriteHotel`.
+在本教程中，参考架构“[!DNL Hotels]&quot;包含 `hotelId` 用作架构主标识的字段。 但是，源架构“[!DNL Loyalty Members]“ ”没有要用作引用的专用字段 `hotelId`，因此需要创建自定义字段组才能向架构中添加新字段： `favoriteHotel`.
 
 >[!NOTE]
 >
@@ -378,8 +382,8 @@ curl -X POST \
 | `@type` | 定义的描述符类型。 对于引用描述符，值必须为 `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
 | `xdm:sourceVersion` | 源架构的版本号。 |
-| `sourceProperty` | 源架构中用于引用目标架构的主标识的字段路径。 |
-| `xdm:identityNamespace` | 引用字段的标识命名空间。 此命名空间必须与目标架构的主标识相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
+| `sourceProperty` | 源架构中用于引用架构的主标识的字段路径。 |
+| `xdm:identityNamespace` | 引用字段的标识命名空间。 此命名空间必须与引用架构的主标识相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -401,7 +405,7 @@ curl -X POST \
 
 ## 创建关系描述符 {#create-descriptor}
 
-关系描述符在源模式和目标模式之间建立一对一关系。 在为源架构中的相应字段定义了引用标识描述符后，您可以通过向 `/tenant/descriptors` 端点。
+关系描述符在源模式和参考模式之间建立一对一关系。 在为源架构中的相应字段定义了引用标识描述符后，您可以通过向 `/tenant/descriptors` 端点。
 
 **API格式**
 
@@ -411,7 +415,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Hotels]”作为目标架构。
+以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Hotels]“ ”作为参考架构。
 
 ```shell
 curl -X POST \
@@ -438,9 +442,9 @@ curl -X POST \
 | `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
 | `xdm:sourceVersion` | 源架构的版本号。 |
 | `xdm:sourceProperty` | 源架构中引用字段的路径。 |
-| `xdm:destinationSchema` | 的 `$id` 目标架构的URL。 |
-| `xdm:destinationVersion` | 目标架构的版本号。 |
-| `xdm:destinationProperty` | 目标架构中主标识字段的路径。 |
+| `xdm:destinationSchema` | 的 `$id` 引用架构的URL。 |
+| `xdm:destinationVersion` | 引用架构的版本号。 |
+| `xdm:destinationProperty` | 引用架构中主标识字段的路径。 |
 
 {style=&quot;table-layout:auto&quot;}
 

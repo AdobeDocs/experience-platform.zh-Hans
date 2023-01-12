@@ -5,9 +5,9 @@ title: 在UI中浏览架构资源
 description: 了解如何在Experience Platform用户界面中探索现有模式、类、模式字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '958'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 如果您正在检查包含关系字段的架构，则该字段将列在 **[!UICONTROL 关系]**. 选择左边栏中的关系字段名称以在画布中显示该字段，无论其嵌套的深度如何。
 
-关系字段也在画布中以唯一方式突出显示，显示字段引用的目标架构的名称。 如果选择关系字段的名称，则可以在右边栏中查看目标架构主标识的标识命名空间。
+关系字段也在画布中以唯一方式突出显示，显示该字段链接到的引用架构的名称。 如果选择关系字段的名称，则可以在右边栏中查看引用架构主标识的标识命名空间。
 
 ![](../images/ui/explore/relationship-field.png)
 

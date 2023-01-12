@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统疑难解答指南
 description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '2060'
+source-wordcount: '2074'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 ### 如何为架构定义标识？
 
-在 [!DNL Experience Platform]，则无论解释的数据源如何，均会使用身份来标识主题（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 标识的常用字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]，则无论解释的数据源如何，均会使用身份来标识主题（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 常用的身份字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 
@@ -269,7 +269,13 @@ GET请求 [!DNL Schema Registry] API需要 `Accept` 标头，以便系统确定�
 }
 ```
 
-为了启用包含关系描述符的架构以便在中使用 [!DNL Profile]，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用某个架构，该架构的引用标识描述符包含不匹配的命名空间时，将显示此错误消息。 确保 `xdm:namespace` 目标架构的identity字段的值与 `xdm:identityNamespace` 用于解决此问题的源字段引用标识描述符中的属性。
+>[!NOTE]
+>
+>对于此错误，“目标架构”引用关系中的引用架构。
+
+为了启用包含关系描述符的架构以便在中使用 [!DNL Profile]，源字段的命名空间和引用字段的主命名空间必须相同。 当您尝试启用某个架构，该架构的引用标识描述符包含不匹配的命名空间时，将显示此错误消息。
+
+确保 `xdm:namespace` 引用架构的identity字段的值与 `xdm:identityNamespace` 用于解决此问题的源字段引用标识描述符中的属性。
 
 有关标准身份命名空间代码的列表，请参阅 [标准命名空间](../identity-service/namespaces.md) 在身份命名空间概述中。
 

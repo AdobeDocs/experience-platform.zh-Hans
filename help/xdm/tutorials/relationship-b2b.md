@@ -2,9 +2,9 @@
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 1c2aabaaeadb41631fc75783db739bb34a3f53cc
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1391'
 ht-degree: 0%
 
 ---
@@ -40,11 +40,11 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 * [架构组合的基础知识](../schema/composition.md):介绍XDM模式的构建基块。
 * [使用创建架构 [!DNL Schema Editor]](create-schema-ui.md):本教程介绍了如何在UI中构建和编辑模式的基础知识。
 
-## 定义源架构和目标架构
+## 定义源和引用架构
 
 您应该已经创建了将在关系中定义的两个架构。 出于演示目的，本教程将在业务机会(在[!DNL Opportunities]“模式”)及其关联的业务帐户(在“[!DNL Accounts]“架构”)。
 
-架构关系由 **源模式** 引用 **目标架构**. 在后续步骤中，“[!DNL Opportunities]“ ”用作源架构，而“[!DNL Accounts]“ ”用作目标架构。
+架构关系由 **源模式** 引用 **参考模式**. 在后续步骤中，“[!DNL Opportunities]“ ”用作源架构，而“[!DNL Accounts]“ ”用作参考架构。
 
 ### 了解B2B关系中的身份
 
@@ -53,7 +53,7 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 >title="引用标识命名空间"
 >abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。 请参阅此文档，了解有关B2B关系中身份的更多信息。"
 
-要建立关系，目标架构必须具有定义的主标识。 在为B2B实体设置主标识时，请记住，如果您跨不同系统或位置收集基于字符串的实体ID，则它们可能会重叠，这可能会导致平台中的数据冲突。
+要建立关系，引用架构必须具有定义的主标识。 在为B2B实体设置主标识时，请记住，如果您跨不同系统或位置收集基于字符串的实体ID，则它们可能会重叠，这可能会导致平台中的数据冲突。
 
 为此，所有标准B2B类都包含符合 [[!UICONTROL B2B源] 数据类型](../data-types/b2b-source.md). 此数据类型提供B2B实体的字符串标识符的字段以及有关该标识符源的其他上下文信息。 其中一个领域， `sourceKey`，关联数据类型中其他字段的值，以生成实体的唯一标识符。 此字段应始终用作B2B实体架构的主标识。
 
@@ -75,7 +75,7 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 ### [!DNL Accounts] 模式
 
-目标架构“[!DNL Accounts]“ ”基于 [!UICONTROL XDM帐户] 类。 根级别 `accountKey` 字段包含 `sourceKey` 在名为的自定义命名空间下用作其主标识的 [!DNL B2B Account]. 此架构也已启用，可在用户档案中使用。
+引用架构“[!DNL Accounts]“ ”基于 [!UICONTROL XDM帐户] 类。 根级别 `accountKey` 字段包含 `sourceKey` 在名为的自定义命名空间下用作其主标识的 [!DNL B2B Account]. 此架构也已启用，可在用户档案中使用。
 
 ![帐户架构](../images/tutorials/relationship-b2b/accounts.png)
 
@@ -91,11 +91,11 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 >title="引用架构中的关系名称"
 >abstract="一个标签，用于描述从引用架构到当前架构（例如，“相关商机”）的关系。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。 请参阅此文档，了解有关构建B2B模式关系的更多信息。"
 
-要定义两个架构之间的关系，源架构必须具有引用目标架构主标识的专用字段。 标准B2B类包括适用于常见相关业务实体的专用源密钥字段。 例如， [!UICONTROL XDM业务机会] 类包含相关帐户的源键字段(`accountKey`)和相关的营销活动(`campaignKey`)。 但是，您还可以添加其他 [!UICONTROL B2B源] 字段（如果需要的组件数超过默认组件数）。
+要定义两个架构之间的关系，源架构必须具有指示引用架构的主标识的专用字段。 标准B2B类包括适用于常见相关业务实体的专用源密钥字段。 例如， [!UICONTROL XDM业务机会] 类包含相关帐户的源键字段(`accountKey`)和相关的营销活动(`campaignKey`)。 但是，您还可以添加其他 [!UICONTROL B2B源] 字段（如果需要的组件数超过默认组件数）。
 
 >[!NOTE]
 >
->目前，只能从源架构定义到目标架构的多对一和一对一关系。 对于一对多关系，您必须在架构中定义表示“多”的关系字段。
+>目前，只能从源架构定义到引用架构的多对一和一对一关系。 对于一对多关系，您必须在架构中定义表示“多”的关系字段。
 
 要设置关系字段，请选择箭头图标(![箭头图标](../images/tutorials/relationship-b2b/arrow.png))。 对于 [!DNL Opportunities] 架构，这是 `accountKey.sourceKey` 字段，因为其目标是与帐户建立多对一关系。
 
@@ -105,11 +105,11 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 ![关系对话框](../images/tutorials/relationship-b2b/relationship-dialog.png)
 
-在 **[!UICONTROL 参考模式]**，请使用搜索栏查找目标架构的名称。 突出显示目标架构的名称时， **[!UICONTROL 引用标识命名空间]** 字段会自动更新架构主标识的命名空间。
+在 **[!UICONTROL 参考模式]**，请使用搜索栏查找引用架构的名称。 突出显示引用架构的名称时， **[!UICONTROL 引用标识命名空间]** 字段会自动更新架构主标识的命名空间。
 
 ![参考模式](../images/tutorials/relationship-b2b/reference-schema.png)
 
-在 **[!UICONTROL 当前架构中的关系名称]** 和 **[!UICONTROL 引用架构中的关系名称]**，分别在源架构和目标架构的上下文中为关系提供友好名称。 完成后，选择 **[!UICONTROL 保存]** 以应用更改并保存架构。
+在 **[!UICONTROL 当前架构中的关系名称]** 和 **[!UICONTROL 引用架构中的关系名称]**，分别在源架构和参考架构的上下文中为关系提供友好名称。 完成后，选择 **[!UICONTROL 保存]** 以应用更改并保存架构。
 
 ![关系名称](../images/tutorials/relationship-b2b/relationship-name.png)
 
@@ -117,7 +117,7 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 ![已应用的关系](../images/tutorials/relationship-b2b/relationship-applied.png)
 
-如果您查看目标架构的结构，则关系标记将显示在架构的主标识字段旁边和左边栏中。
+如果查看引用架构的结构，则关系标记将显示在架构的主标识字段旁边和左边栏中。
 
 ![目标架构关系标记](../images/tutorials/relationship-b2b/destination-relationship.png)
 

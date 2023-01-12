@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 架构组合的基础知识
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: b67349baa909cc59f3ff1d7aac22f7926f2b36ff
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '4108'
 ht-degree: 2%
@@ -76,7 +76,7 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 
 >[!NOTE]
 >
->使用 `identityMap` 可用作关系中的源架构，但不能用作目标架构。 这是因为所有目标架构都必须具有可见标识，该标识可以映射到源架构的引用字段中。 请参阅 [关系](../tutorials/relationship-ui.md) 有关源架构和目标架构要求的详细信息。
+>使用 `identityMap` 可用作关系中的源架构，但不能用作引用架构。 这是因为所有引用架构都必须具有可见标识，该标识可以映射到源架构的引用字段中。 请参阅 [关系](../tutorials/relationship-ui.md) 有关源和参考模式要求的详细信息。
 
 但是，如果您要将存储身份的源中的数据(例如， [!DNL Airship] 或Adobe Audience Manager)，或当架构的标识数量存在变量时。 此外，如果您使用 [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
