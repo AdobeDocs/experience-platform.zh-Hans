@@ -2,9 +2,9 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '607'
 ht-degree: 2%
 
 ---
@@ -17,14 +17,14 @@ ht-degree: 2%
 
 Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
 
-Platform的数据卫生功能允许您通过以下方式管理存储的数据：
+<!-- Platform's data hygiene capabilities allow you to manage your stored data through the following:
 
-* 计划自动数据集过期
-* 从一个或多个数据集中删除单个记录
+* Scheduling automated dataset expirations
+* Deleting individual records from one or all datasets
 
 >[!IMPORTANT]
 >
->记录删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../privacy-service/home.md) 中。
+>Record deletes are meant to be used for data cleansing, removing anonymous data, or data minimization. They are **not** to be used for data subject rights requests (compliance) as pertaining to privacy regulations like the General Data Protection Regulation (GDPR). For all compliance use cases, use [Adobe Experience Platform Privacy Service](../privacy-service/home.md) instead. -->
 
 这些活动可以使用 [[!UICONTROL 数据卫生] UI工作区](#ui) 或 [数据卫生API](#api). 当执行数据卫生作业时，系统会在处理的每个步骤中提供透明度更新。 请参阅 [时间表和透明度](#timelines-and-transparency) 有关每个作业类型在系统中如何表示的详细信息。
 
@@ -40,9 +40,9 @@ Platform的数据卫生功能允许您通过以下方式管理存储的数据：
 
 ## 时间表和透明度
 
-记录删除请求和数据集过期请求每个请求都有各自的处理时间轴，并在各自工作流的关键点提供透明度更新。 有关每种作业类型的详细信息，请参阅以下部分。
+记录删除请求和数据集过期请求每个请求都有各自的处理时间轴，并在各自工作流的关键点提供透明度更新。
 
-### 数据集过期 {#dataset-expiration-transparency}
+<!-- ### Dataset expirations {#dataset-expiration-transparency} -->
 
 在 [数据集过期请求](./ui/dataset-expiration.md) 已创建：
 
@@ -57,24 +57,24 @@ Platform的数据卫生功能允许您通过以下方式管理存储的数据：
 
 {style=&quot;table-layout:auto&quot;}
 
-### 记录删除 {#record-delete-transparency}
+<!-- ### Record deletes {#record-delete-transparency}
 
 >[!IMPORTANT]
 >
->记录删除仅适用于已购买Adobe医疗保健盾的组织。
+>Record deletes are only available for organizations that have purchased Adobe Healthcare Shield.
 
-在 [记录删除请求](./ui/record-delete.md) 已创建：
+The following takes place when a [record delete request](./ui/record-delete.md) is created:
 
-| 暂存 | 请求提交后的时间 | 描述 |
+| Stage | Time after request submission | Description |
 | --- | --- | --- |
-| 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交记录删除请求。 请求显示在 [!UICONTROL 数据卫生UI] 在提交之后。 |
-| 配置文件查找已更新 | 3 小时 | 删除身份导致的用户档案计数更改将反映在 [功能板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |
-| 区段已更新 | 24 小时 | 删除用户档案后，所有相关 [区段](../segmentation/home.md) 会更新以反映其新大小。 |
-| 历程和目标已更新 | 26 小时 | [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [营销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和 [目标](../destinations/home.md) 会根据相关区段的更改进行更新。 |
-| 在数据湖中删除记录软项 | 7 天 | 数据会从数据湖中软删除。 |
-| 数据抽真空完成 | 14 天 | 的 [卫生工作状况](./ui/browse.md#view-details) 更新以指示作业已完成，这意味着数据湖上的数据抽真空已完成，相关记录已被硬删除。 |
+| Request is submitted | 0 hours | A data steward or privacy analyist submits a record delete request. The request is visible in the [!UICONTROL Data Hygiene UI] after it has been submitted. |
+| Profile lookups updated | 3 hours | The change in profile counts caused by the deleted identity are reflected in [dashboard widgets](../dashboards/guides/profiles.md#profile-count-trend) and other reports. |
+| Segments updated | 24 hours | Once profiles are removed, all related [segments](../segmentation/home.md) are updated to reflect their new size. |
+| Journeys and destinations updated | 26 hours | [Journeys](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [campaigns](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html), and [destinations](../destinations/home.md) are updated according to changes in related segments. |
+| Records soft deleted in data lake | 7 days | The data is soft deleted from the data lake. |
+| Data vacuuming completed | 14 days | The [status of the hygiene job](./ui/browse.md#view-details) updates to indicate that the job has completed, meaning that data vacuuming has been completed on the data lake and the relevant records have been hard deleted. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"} -->
 
 ## 后续步骤
 

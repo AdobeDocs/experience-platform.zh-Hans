@@ -2,9 +2,9 @@
 title: 数据卫生UI指南
 description: 了解如何在Adobe Experience Platform用户界面中管理数据卫生任务。
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: d4073f18844de65b9181667d0332c0315ee1cc09
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '218'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
@@ -33,4 +33,4 @@ ht-degree: 0%
 
 * [浏览现有工作单](./browse.md)
 * [创建数据集过期请求](./dataset-expiration.md)
-* [创建记录删除请求](./record-delete.md)
+<!-- * [Create a record delete request](./record-delete.md) -->

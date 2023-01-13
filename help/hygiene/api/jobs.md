@@ -4,18 +4,18 @@ description: 了解如何以编程方式更正或删除客户在Adobe Experience
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '484'
 ht-degree: 1%
 
 ---
 
 # 使用数据卫生API删除记录
 
->[!IMPORTANT]
+<!-- >[!IMPORTANT]
 >
->此端点表示用于记录删除的测试版功能。 要获取最新功能，请使用 [`/workorder` 端点](./workorder.md) 中。
+>This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. -->
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 
