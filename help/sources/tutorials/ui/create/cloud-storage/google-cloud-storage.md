@@ -5,9 +5,9 @@ title: 在UI中创建Google云存储源连接
 type: Tutorial
 description: 了解如何使用Google UI创建Adobe Experience Platform云存储源连接。
 exl-id: 3258ccd7-757c-4c4a-b7bb-0e8c9de3b50a
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 648dcd04de1f88318e3e771d5f044ac5b5ddaf2d
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '567'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部源数�
 
 [!DNL Experience Platform] 支持从外部存储摄取以下文件格式：
 
-* 分隔符分隔值(DSV):目前，对DSV格式化数据文件的支持仅限于逗号分隔值。 DSV格式文件中字段标题的值只能由字母数字字符和下划线组成。 将来将提供对一般DSV文件的支持。
+* 分隔符分隔值(DSV):任何单字符值都可用作DSV格式数据文件的分隔符。
 * JavaScript对象表示法(JSON):JSON格式的数据文件必须符合XDM。
 * Apache Parquet:必须符合XDM规范，但必须使用Parquet格式的数据文件。
 
