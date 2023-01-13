@@ -1,10 +1,11 @@
 ---
 title: 发布扩展
 description: 了解如何在Adobe Experience Platform中私密或公开发布标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
+source-git-commit: 8862a911f09d47c3a2260faba045f3c79826b52c
 workflow-type: tm+mt
-source-wordcount: '321'
-ht-degree: 39%
+source-wordcount: '319'
+ht-degree: 46%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 39%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 测试和文档记录完成后，扩展即可发布。 当前，可执行两种类型的发布：
 
@@ -27,12 +28,12 @@ ht-degree: 39%
 
 ## 私密发布
 
-私密发布扩展的最简单方法是使用[标记扩展发行版](https://www.npmjs.com/package/@adobe/reactor-releaser)。 在其文档中，提供了更多的相关说明。
+私密发布扩展的最简单方法是使用 [标记扩展发行版](https://www.npmjs.com/package/@adobe/reactor-releaser). 在其文档中，提供了更多的相关说明。
 
-如果您希望直接使用API私密发布扩展，请参阅API文档中[私密发布扩展包](https://developer.adobelaunch.com/api/reference/1.0/extension_packages/release_private/)的示例调用，以获取更多详细信息。
+如果您希望直接使用API私密发布扩展，请参阅的示例调用 [私密发布扩展包](https://developer.adobelaunch.com/api/reference/1.0/extension_packages/release_private/) ，以了解更多详细信息。
 
 ## 公开发布
 
 完成私密发布后，您可以请求 Adobe 公开发布扩展。这会使您的扩展出现在 Public 目录中。任何数据收集用户都可以将您的扩展安装到任何资产中。
 
-请填写[公开发布申请表单](https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=7DRB5U)，以开始完成发布流程。
+请填写[公开发布申请表单](https://experiencecloudpanel.adobe.com/c/r/DCExtensionReleaseRequest)，以开始完成发布流程。

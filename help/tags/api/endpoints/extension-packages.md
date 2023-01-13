@@ -2,10 +2,10 @@
 title: 扩展包端点
 description: 了解如何在Reactor API中调用/extension_packages端点。
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 8862a911f09d47c3a2260faba045f3c79826b52c
 workflow-type: tm+mt
-source-wordcount: '956'
-ht-degree: 5%
+source-wordcount: '954'
+ht-degree: 4%
 
 ---
 
@@ -944,7 +944,7 @@ curl -X PATCH \
 
 完成扩展包测试后，您可以私下发布扩展包。 这样，该资产便可用于公司内的任何资产。
 
-在私下发布后，您可以通过填写 [公开发布申请表](https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=7DRB5U).
+在私下发布后，您可以通过填写 [公开发布申请表](https://experiencecloudpanel.adobe.com/c/r/DCExtensionReleaseRequest).
 
 **API格式**
 
