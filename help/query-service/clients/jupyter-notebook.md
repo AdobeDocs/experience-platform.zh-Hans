@@ -1,9 +1,10 @@
 ---
 title: 将Jupyter Notebook连接到查询服务
 description: 了解如何将Jupyter Notebook与Adobe Experience Platform查询服务连接。
-source-git-commit: af37fe3be6b9645965b7477b9b85c5e11fe6fbae
+exl-id: 358eab67-538f-4ada-931f-783b92db4a1c
+source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
 workflow-type: tm+mt
-source-wordcount: '615'
+source-wordcount: '575'
 ht-degree: 0%
 
 ---
@@ -21,16 +22,15 @@ ht-degree: 0%
 >[!TIP]
 >
 >[!DNL Anaconda Navigator] 是一种桌面图形用户界面(GUI)，它为安装和启动通用界面提供了一种更轻松的方法 [!DNL Python] 诸如 [!DNL Jupyter Notebook]. 它还有助于管理包、环境和通道，而无需使用命令行命令。
->您可以 [安装首选版本的应用程序](https://docs.anaconda.com/anaconda/install/) 从他们的网站上。
->按照引导式安装过程操作。 从Anaconda Navigator主屏幕中，选择 **[!DNL Jupyter Notebook]** 从支持的应用程序列表启动程序。
->![的 [!DNL Anaconda Navigator] 主屏幕 [!DNL Jupyter Notebook] 突出显示。](../images/clients/jupyter-notebook/anaconda-navigator-home.png)
->有关详细信息，请参阅 [官方文档](https://docs.anaconda.com/anaconda/navigator/).
+>按照网站上的引导式安装过程， [安装首选版本的应用程序](https://docs.anaconda.com/anaconda/install/).
+>从Anaconda Navigator主屏幕中，选择 **[!DNL Jupyter Notebook]** 从支持的应用程序列表启动程序。
+>有关详细信息，请参阅 [官方Anaconda文档](https://docs.anaconda.com/anaconda/navigator/).
+
+官方的Jupyter文档提供了 [从命令行界面运行笔记本](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI)。
 
 ## Launch [!DNL Jupyter Notebook]
 
-在您打开了 [!DNL Jupyter Notebook] Web应用程序，选择 **[!DNL New]** 下拉列表后跟 **[!DNL Python 3]** 创建新笔记本。 的 [!DNL Notebook] 出现编辑器。
-
-![的 [!DNL Jupiter Notebook] 使用 [!DNL New] 下拉列表和 [!DNL Python] 3突出显示。](../images/clients/jupyter-notebook/new-notebook.png)
+在您打开了 [!DNL Jupyter Notebook] Web应用程序，选择 **[!DNL New]** 从UI中下拉列表，然后是 **[!DNL Python 3]** 创建新笔记本。 的 [!DNL Notebook] 出现编辑器。
 
 在 [!DNL Notebook] 编辑器中，输入以下值： `pip install psycopg2-binary` 选择 **[!DNL Run]** 中。 输入行下方会显示成功消息。
 
@@ -38,11 +38,7 @@ ht-degree: 0%
 >
 >在此过程中，您必须选择 **[!DNL Run]** 执行每行代码。
 
-![的 [!DNL Notebook] 突出显示安装库命令的UI。](../images/clients/jupyter-notebook/install-library.png)
-
 接下来，导入 [!DNL PostgreSQL] 数据库适配器 [!DNL Python]. 输入值： `import psycopg2`选择 **[!DNL Run]**. 此过程没有成功消息。 如果没有错误消息，请继续执行下一步。
-
-![的 [!DNL Notebook] 突出显示导入数据库驱动程序代码的UI。](../images/clients/jupyter-notebook/import-dbdriver.png)
 
 您现在必须通过输入以下值来提供Adobe Experience Platform凭据： `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. 可以在 [!UICONTROL 查询] 部分 [!UICONTROL 凭据] 选项卡。 请参阅有关如何 [查找组织凭据](../ui/credentials.md) 以了解详细说明。
 
@@ -50,9 +46,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->从Platform UI复制凭据时，请确保凭据没有其他格式。 它们应全部位于一行中，属性和值之间应有一个空格。 凭据用引号括起来， **not** 逗号分隔。
+>从Platform UI复制凭据时，无需对凭据进行其他格式设置。 它们可以在一行中提供，属性和值之间只有一个空格。 凭据用引号括起来， **not** 逗号分隔。
 
-![的 [!DNL Notebook] 突出显示连接凭据的UI。](../images/clients/jupyter-notebook/provide-credentials.png)
+```python
+conn = psycopg2.connect('''sslmode=require host=<YOUR_HOST_CREDENTIAL> port=80 dbname=prod:all user=<YOUR_ORGANIZATION_ID> password=<YOUR_PASSWORD>''')"
+```
 
 您的 [!DNL Jupyter Notebook] 实例现在已连接到查询服务。
 
@@ -62,29 +60,25 @@ ht-degree: 0%
 
 输入以下值：
 
-```console
+```python
 cur = conn.cursor()
-cur.execute('''{YOUR_QUERY_HERE}''')
+cur.execute('''<YOUR_QUERY_HERE>''')
 data = [r for r in cur]
 ```
 
 接下来，调用参数(`data` 在上例中)以在无格式响应中显示查询结果。
-
-![的 [!DNL Notebook] UI中包含命令，用于在笔记本中返回和显示SQL结果。](../images/clients/jupyter-notebook/example-query.png)
 
 要以更易读的方式格式化结果，请使用以下命令：
 
 - `colnames = [desc[0] for desc in cur.description]`
 - `import pandas as pd`
 - `import numpy as np`
+- `df = pd.DataFrame(samples,columns=colnames)`
+- `df.fillna(0,inplace=True)`
 
 这些命令不会生成成功消息。 如果没有错误消息，则可以使用函数以表格式输出SQL查询的结果。
 
-![设置SQL结果格式所需的命令。](../images/clients/jupyter-notebook/format-results-commands.png)
-
 输入并运行 `df.head()` 函数查看表格化查询结果。
-
-![SQL查询在 [!DNL Jupyter Notebook].](../images/clients/jupyter-notebook/format-results-output.png)
 
 ## 后续步骤
 
