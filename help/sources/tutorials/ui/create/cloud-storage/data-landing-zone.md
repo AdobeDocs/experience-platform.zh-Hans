@@ -3,14 +3,18 @@ keywords: Experience Platform；主页；热门主题；数据登陆区；数据
 title: 使用UI将数据登陆区连接到平台
 description: 了解如何使用平台用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: fb16ea940ef394a15dd24fe703239b4487fafb18
+source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
 
 # 连接 [!DNL Data Landing Zone] 到使用UI的平台
+
+>[!IMPORTANT]
+>
+>此页面专用于 [!DNL Data Landing Zone] *来源* 连接器Experience Platform。 有关连接到的信息 [!DNL Data Landing Zone] *目标* 连接器，请参阅 [[!DNL Data Landing Zone] 目标文档页面](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] 是一个安全、基于云的文件存储工具，用于将文件导入Adobe Experience Platform。 数据会自动从 [!DNL Data Landing Zone] 七天后。
 

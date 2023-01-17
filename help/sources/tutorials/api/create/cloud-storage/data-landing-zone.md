@@ -5,14 +5,18 @@ title: 使用流量服务API将数据登陆区连接到Adobe Experience Platform
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: b1021f985626157895d7350e941238c3197db0b6
+source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1249'
 ht-degree: 4%
 
 ---
 
 # 连接 [!DNL Data Landing Zone] 到Adobe Experience Platform
+
+>[!IMPORTANT]
+>
+>此页面专用于 [!DNL Data Landing Zone] *来源* 连接器Experience Platform。 有关连接到的信息 [!DNL Data Landing Zone] *目标* 连接器，请参阅 [[!DNL Data Landing Zone] 目标文档页面](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] 是一个安全、基于云的文件存储工具，用于将文件导入Adobe Experience Platform。 数据会自动从 [!DNL Data Landing Zone] 七天后。
 

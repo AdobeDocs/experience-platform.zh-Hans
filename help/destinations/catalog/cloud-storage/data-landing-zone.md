@@ -2,10 +2,10 @@
 title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活区段和导出数据集。
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6fbf1b87becebee76f583c6e44b1c42956e561ab
 workflow-type: tm+mt
-source-wordcount: '987'
-ht-degree: 0%
+source-wordcount: '1163'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Data Landing Zone] 连接时，请联系您的Adobe代表并提供 [!DNL Organization ID].
+>* 此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Data Landing Zone] 连接时，请联系您的Adobe代表并提供 [!DNL Organization ID].
+>* 本文档页面将 [!DNL Data Landing Zone] *目标*. 此外， [!DNL Data Landing Zone] *来源* 的子目录。 有关更多信息，请阅读 [[!DNL Data Landing Zone] 来源](/help/sources/connectors/cloud-storage/data-landing-zone.md) 文档。
+
 
 
 ## 概述 {#overview}
@@ -35,9 +37,13 @@ ht-degree: 0%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 管理 [!DNL Data Landing Zone]
+## 先决条件 {#prerequisites}
 
-您可以使用 [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) 管理 [!DNL Data Landing Zone] 容器。
+请注意，在使用 [!DNL Data Landing Zone] 目标。
+
+### 连接 [!DNL Data Landing Zone] 容器到 [!DNL Azure Storage Explorer]
+
+您可以使用 [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) 管理 [!DNL Data Landing Zone] 容器。 开始使用 [!DNL Data Landing Zone]，您首先需要检索您的凭据，并将其输入 [!DNL Azure Storage Explorer]，然后连接 [!DNL Data Landing Zone] 容器到 [!DNL Azure Storage Explorer].
 
 在 [!DNL Azure Storage Explorer] UI中，选择左侧导航栏中的连接图标。 的 **选择资源** 窗口，为您提供连接到的选项。 选择 **[!DNL Blob container]** 连接到 [!DNL Data Landing Zone] 存储。
 
@@ -49,13 +55,54 @@ ht-degree: 0%
 
 选择连接方法后，必须提供 **显示名称** 和 **[!DNL Blob]容器SAS URL** 与 [!DNL Data Landing Zone] 容器。
 
->[!IMPORTANT]
->
->您必须使用Platform API检索数据登陆区凭据。 有关完整信息，请参阅 [检索数据登陆区凭据](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html?lang=en#retrieve-data-landing-zone-credentials).
->
-> 要检索凭据并访问导出的文件，必须替换查询参数 `type=user_drop_zone` with `type=dlz_destination` 中描述的任何HTTP调用。
+>[!BEGINSHADEBOX]
 
-提供 [!DNL Data Landing Zone] SAS URL，然后选择 **下一个**.
+### 检索您的凭据 [!DNL Data Landing Zone]
+
+您必须使用Platform API检索 [!DNL Data Landing Zone] 凭据。 用于检索凭据的API调用如下所述。 有关获取标头所需值的信息，请参阅 [开始使用Adobe Experience Platform API](/help/landing/api-guide.md) 的双曲余切值。
+
+**API格式**
+
+```http
+GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination
+```
+
+**请求**
+
+以下请求示例检索现有登陆区的凭据。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/landingzone/credentials?type=dlz_destination' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
+**响应**
+
+以下响应会返回登陆区的凭据信息，包括您当前的 `SASToken` 和 `SASUri`，以及 `storageAccountName` 对应于登陆区域容器。
+
+```json
+{
+    "containerName": "dlz-user-container",
+    "SASToken": "sv=2022-09-11&si=dlz-ed86a61d-201f-4b50-b10f-a1bf173066fd&sr=c&sp=racwdlm&sig=4yTba8voU3L0wlcLAv9mZLdZ7NlMahbfYYPTMkQ6ZGU%3D",
+    "storageAccountName": "dlblobstore99hh25i3df123",
+    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2022-09-11&si=dlz-ed86a61d-201f-4b50-b10f-a1bf173066fd&sr=c&sp=racwdlm&sig=4yTba8voU3L0wlcLAv9mZLdZ7NlMahbfYYPTMkQ6ZGU%3D"
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `containerName` | 您的登陆区域的名称。 |
+| `SASToken` | 登陆区域的共享访问签名令牌。 此字符串包含授权请求所需的所有信息。 |
+| `SASUri` | 登陆区的共享访问签名URI。 此字符串是您要对其进行身份验证的登陆区域的URI及其相应的SAS令牌的组合。 |
+
+>[!ENDSHADEBOX]
+
+提供您的显示名称(`containerName`)和 [!DNL Data Landing Zone] SAS URL（在上述API调用中返回），然后选择 **下一个**.
 
 ![enter-connection-info](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
 
@@ -79,7 +126,7 @@ ht-degree: 0%
 
 ### 对目标进行身份验证 {#authenticate}
 
-因为 [!DNL Data Landing Zone] 是Adobe配置的存储，您无需执行任何步骤来对目标进行身份验证。
+确保已将 [!DNL Data Landing Zone] 容器到 [!DNL Azure Storage Explorer] 如 [先决条件](#prerequisites) 中。 因为 [!DNL Data Landing Zone] 是Adobe配置的存储，您无需在Experience PlatformUI中执行任何进一步步骤即可对目标进行身份验证。
 
 ### 填写目标详细信息 {#destination-details}
 
