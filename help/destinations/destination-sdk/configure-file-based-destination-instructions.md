@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
+source-git-commit: 0d58d949ff24b9059d6afe81de354da0783ec8a4
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
@@ -261,16 +261,16 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 * 如果已选择 `"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅 [身份验证配置](./authentication-configuration.md#when-to-use).
 
 
-<!-- ## Step 5: Test your destination {#test-destination}
+## 步骤5:测试目标 {#test-destination}
 
-After setting up your destination using the configuration endpoints in the previous steps, you can use the [destination testing tool](./create-template.md) to test the integration between Adobe Experience Platform and your destination.
+使用上一步中的配置端点设置目标后，您可以使用 [目标测试工具](./file-based-destination-testing-overview.md) 以测试Adobe Experience Platform与您的目标之间的集成。
 
-As part of the process to test your destination, you must use the Experience Platform UI to create segments, which you will activate to your destination. Refer to the two resources below for instructions how to create segments in Experience Platform:
+在测试目标的过程中，您必须使用Experience PlatformUI创建区段，然后才能将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
 
-* [Create a segment documentation page](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
-* [Create a segment video walkthrough](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) -->
+* [创建区段文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建区段视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
-## 步骤5:发布目标 {#publish-destination}
+## 步骤6:发布目标 {#publish-destination}
 
 >[!NOTE]
 >
@@ -278,10 +278,18 @@ As part of the process to test your destination, you must use the Experience Pla
 
 配置和测试目标后，请使用 [目标发布API](./destination-publish-api.md) 将配置提交到Adobe以供审核。
 
-## 步骤6:记录目标 {#document-destination}
+## 步骤7:记录目标 {#document-destination}
 
 >[!NOTE]
 >
 >如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
 
 如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 要在 [Experience Platform目标目录](/help/destinations/catalog/overview.md).
+
+## 步骤8:提交目标以供Adobe审核 {#submit-for-review}
+
+>[!NOTE]
+>
+>如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
+
+最后，在目标可以发布到Experience Platform目录并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe查看。 查找有关如何 [提交以供审核在Destination SDK中创作的按产品化目标](/help/destinations/destination-sdk/submit-destination.md).

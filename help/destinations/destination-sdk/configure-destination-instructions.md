@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
+source-git-commit: 0d58d949ff24b9059d6afe81de354da0783ec8a4
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '825'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建区段，然后才能将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
 
-* [创建区段文档页面](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
+* [创建区段文档页面](/help/segmentation/ui/overview.md#create-segment)
 * [创建区段视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## 步骤7:发布目标 {#publish-destination}
@@ -187,3 +187,11 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 >如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
 
 如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 要在 [Experience Platform目标目录](/help/destinations/catalog/overview.md).
+
+## 步骤9:提交目标以供Adobe审核 {#submit-for-review}
+
+>[!NOTE]
+>
+>如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
+
+最后，在目标可以发布到Experience Platform目录并对所有Experience Platform客户可见之前，您需要正式提交目标以供Adobe查看。 查找有关如何 [提交以供审核在Destination SDK中创作的按产品化目标](/help/destinations/destination-sdk/submit-destination.md).
