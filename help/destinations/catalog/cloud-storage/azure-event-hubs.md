@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: Azure事件中心连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: fd6a9f082c830de5a46d484bccfeba3b4116d05d
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,7 @@ ht-degree: 0%
 * **[!UICONTROL SAS密钥名称]**:授权规则的名称，也称为SAS密钥名称。
 * **[!UICONTROL SAS密钥]**:事件中心命名空间的主键。 的 `sasPolicy` 该 `sasKey` 对应于必须拥有 **管理** 配置了权限，以便填充事件中心列表。 了解如何验证 [!DNL Azure Event Hubs] 在 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
-* **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+* **[!UICONTROL 事件中心名称]**:填写 [!DNL Azure Event Hub] 名称。 了解 [!DNL Azure Event Hubs] 名称 [Microsoft文档](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub).
 
 ### 填写目标详细信息 {#destination-details}
 
