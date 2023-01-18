@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Cloud Connector扩展的发行说明
 description: Adobe Experience Platform中Cloud Connector扩展的最新发行说明。
-source-git-commit: 8a478c727b3b97de53ba303fbda4dd1502ff6a0d
+source-git-commit: e232ad7a9b581e65f7f4240bbc06155aec409eb7
 workflow-type: tm+mt
-source-wordcount: '112'
-ht-degree: 25%
+source-wordcount: '128'
+ht-degree: 22%
 
 ---
 
@@ -20,4 +20,5 @@ v1.0.1
 
 * 修复了在Body Raw文本区域中粘贴的有效JSON被另存为字符串而非JSON的问题。
 * 不允许在GET或HEAD请求中设置主体。
+* 修复了以下错误：保存大于5kb的响应会导致规则执行失败。
 
