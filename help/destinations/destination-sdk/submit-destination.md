@@ -2,9 +2,9 @@
 description: 本页提供您需要提交的所有信息，以便审核使用Destination SDK创作的已产品化目标。
 title: 提交以供审核在Destination SDK中创作的按产品化目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: e68ae7d1cb87d078d9fce5a5df501cc6ce944403
+source-git-commit: 1eab40687c599d37c71b919bc3a4aeae274b0a49
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '928'
 ht-degree: 0%
 
 ---
@@ -29,23 +29,25 @@ ht-degree: 0%
 本页列出了在提交或更新您使用Adobe Experience Platform Destination SDK创作的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向 <aepdestsdk@adobe.com> 包括：
 
 * 您的目标可解决的用例描述。 如果要更新现有目标配置，则不需要执行此操作。
-* 使用测试目标API端点对您的目标执行HTTP调用后，测试结果。 请与Adobe共享：
-   * 对目标端点进行的API调用。
-   * 从目标端点收到的API响应。
+* 使用测试目标API端点对您的目标执行HTTP调用后，测试结果。 请与Adobe共享对目标端点发起的API调用以及从目标端点收到的API响应。
+* 基于文件的目标的其他要求：
+   * 使用测试API后，共享请求和响应示例 [使用示例用户档案测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
+   * 附加由目标生成并导出到存储位置的样例文件。
+   * 提交某种形式的验证，以证明您已成功将导出的文件从存储位置摄取到系统中。
 * 验证您是否已使用 [目标发布API](./destination-publish-api.md).
 * 文档PR（拉取请求），请按照 [自助文档流程](./docs-framework/documentation-instructions.md).
 * 图像文件，将在Experience Platform目标目录中显示为目标卡的徽标。
 
 您可以在以下部分中找到有关每个项目的详细信息：
 
-## 用例描述
+## 用例描述 {#use-case-description}
 
 描述您的目标为Experience Platform客户解决的用例。 您的描述可以类似于现有合作伙伴的用例：
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md):从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
 * [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases):DataX API适用于那些想要定位特定受众组的广告商，这些受众组在Verizon Media(VMG)中以电子邮件地址作为关键字，这样，他们就可以快速创建新区段，并使用VMG的近实时API推送所需的受众组。
 
-## 使用测试目标API后的测试结果
+## 使用测试目标API后的测试结果 {#testing-api-response}
 
 使用 [测试目标API](./test-destination.md) 端点来对您的目标执行HTTP调用。 这包括：
 
@@ -215,15 +217,35 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }
 ```
 
-## 证明您已提交目标发布请求
+## 基于文件的目标的其他要求 {#additional-file-based-destination-requirements}
+
+对于基于文件的目标，您必须提供其他验证，以确认您已正确设置目标。 确保包含以下项目：
+
+### 测试API响应 {#testing-api-response-file-based}
+
+使用测试API之后，包含请求和响应示例 [使用示例用户档案测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
+
+### 附加导出的文件 {#attach-exported-file}
+
+在 [提交电子邮件](#download-sample-email)，请附加一个CSV文件，该文件已通过您设置的目标导出到您的存储位置。
+
+### 成功摄取的证明 {#proof-of-successful-ingestion}
+
+最后，您必须提供某种形式的证明，证明数据在导出到您提供的存储位置后已成功摄取到您的系统中。 请提供以下任意项目：
+
+* 屏幕截图或简短的屏幕截图视频，您可以在该视频中手动从存储位置获取文件并将其摄取到系统中。
+* 屏幕截图或简短的屏幕截图视频，您的系统UI会确认由Experience Platform生成的文件名已成功摄取到您的系统中。
+* 您系统中Adobe的日志行可以与文件名或从Experience Platform生成的数据相关联。
+
+## 证明您已提交目标发布请求 {#destination-publishing-request-proof}
 
 成功测试目标后，必须使用 [目标发布API](./destination-publish-api.md) 将目标提交到Adobe以供审核和发布。
 
 为您的目标提供发布请求的ID。 有关如何检索发布请求ID的信息，请阅读 [列出目标发布请求](./destination-publish-api.md#retrieve-list).
 
-## 面向按产品化集成的目标文档PR（拉取请求）
+## 面向按产品化集成的目标文档PR（拉取请求） {#documentation-pr}
 
-如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 为您的目标创建产品文档页面。 在提交流程中，为目标文档提供拉取请求(PR)。
+如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则必须使用 [自助文档流程](./docs-framework/documentation-instructions.md) 为您的目标创建产品文档页面。 在提交流程中，为目标文档提供拉取请求(PR)。
 
 ## 目标的徽标 {#logo}
 
@@ -233,6 +255,6 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 * **格式**: `SVG`
 * **大小**:小于2 MB
 
-## 下载示例电子邮件
+## 下载示例电子邮件 {#download-sample-email}
 
 [下载](./assets/sample-email-submit-destination.rtf) 示例电子邮件，其中包含您需要提供的所有信息以进行Adobe。
