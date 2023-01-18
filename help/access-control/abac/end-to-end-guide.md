@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: bf6fd07404ac6d937aa8660a0de024173f24f5c9
 workflow-type: tm+mt
-source-wordcount: '2427'
+source-wordcount: '2425'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 1%
 
 * [为用户设置角色标签](#label-roles):使用其营销组与外部代理合作的医疗保健提供商(ACME Business Group)的示例。
 * [为资源设置标签（架构字段和区段）](#label-resources):分配 **[!UICONTROL PHI/受管健康数据]** 为架构资源和区段设置标签。
-* [创建策略以将它们链接在一起](#policy):创建策略以将资源上的标签链接到您角色中的标签，从而拒绝访问架构字段和区段。 这将拒绝对没有匹配标签的用户访问架构字段并在所有沙箱中划分区段。
+* [创建策略以将它们链接在一起](#policy):创建策略以将资源上的标签链接到您角色中的标签，从而拒绝访问架构字段和区段。 这将授予具有匹配标签的用户对所有沙箱中架构字段和区段的访问权限。
 
 ## 权限
 
