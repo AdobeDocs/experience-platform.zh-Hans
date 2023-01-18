@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: f2106d1e5bc0442df4d0ba84323821f6f2d9b1c7
+source-git-commit: c2312a65388e8aec7cdeb8daf20fe9de7d1fa4fc
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '967'
 ht-degree: 31%
 
 ---
@@ -208,6 +208,7 @@ ht-degree: 31%
       * [概述](./extensions/server/overview.md)
       * Adobe Experience Platform Cloud Connector {#cloud-connector}
          * [概述](./extensions/server/cloud-connector/overview.md)
+         * [发行说明](./extensions/server/cloud-connector/release-notes.md)
       * [!DNL AWS] {#aws}
          * [概述](./extensions/server/aws/overview.md)
       * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
