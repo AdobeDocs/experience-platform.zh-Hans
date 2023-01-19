@@ -5,9 +5,9 @@ title: 使用模式注册表API创建模式
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类编写架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 030874e91b88b18f7de0cc2d12200243b7ed1d31
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '2556'
+source-wordcount: '2588'
 ht-degree: 1%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 1%
 的 [!DNL Schema Registry] 用于访问 [!DNL Schema Library] 在Adobe Experience Platform。 的 [!DNL Schema Library] 包含按Adobe提供给您的资源， [!DNL Experience Platform] 合作伙伴以及您使用其应用程序的供应商。 注册表提供了用户界面和RESTful API，所有可用库资源均可从中访问。
 
 本教程使用 [!DNL Schema Registry] 用于指导您完成使用标准类构建架构的步骤的API。 如果您希望在 [!DNL Experience Platform], [模式编辑器教程](create-schema-ui.md) 提供了在架构编辑器中执行类似操作的分步说明。
+
+>[!NOTE]
+>
+>如果要将CSV数据摄取到平台，您可以 [将该数据映射到由AI生成的推荐创建的XDM模式](../../ingestion/tutorials/map-csv/recommendations.md) （当前处于测试版中），无需自行手动创建架构。
 
 ## 快速入门
 

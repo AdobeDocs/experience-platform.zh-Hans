@@ -5,9 +5,9 @@ title: 使用模式编辑器创建模式
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '3893'
+source-wordcount: '3924'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,13 @@ ht-degree: 0%
 
 利用Adobe Experience Platform用户界面，可创建和管理 [!DNL Experience Data Model] (XDM)模式(位于称为 [!DNL Schema Editor]. 本教程介绍如何使用 [!DNL Schema Editor].
 
+出于演示目的，本教程中的步骤涉及创建一个描述客户忠诚度计划成员的示例架构。 虽然您可以使用这些步骤为自己创建不同的架构，但建议您先创建示例架构，以了解 [!DNL Schema Editor].
+
 >[!NOTE]
 >
->出于演示目的，本教程中的步骤涉及创建一个描述客户忠诚度计划成员的示例架构。 虽然您可以使用这些步骤为自己创建不同的架构，但建议您先创建示例架构，以了解 [!DNL Schema Editor].
-
-如果您希望使用 [!DNL Schema Registry] 而是从读取 [[!DNL Schema Registry] 开发人员指南](../api/getting-started.md) 在尝试教程之前 [使用API创建模式](create-schema-api.md).
+>如果要将CSV数据摄取到平台，您可以 [将该数据映射到由AI生成的推荐创建的XDM模式](../../ingestion/tutorials/map-csv/recommendations.md) （当前处于测试版中），无需自行手动创建架构。
+>
+>如果您希望使用 [!DNL Schema Registry] API，首先读取 [[!DNL Schema Registry] 开发人员指南](../api/getting-started.md) 在尝试教程之前 [使用API创建模式](create-schema-api.md).
 
 ## 快速入门
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '3156'
+source-wordcount: '3203'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ ht-degree: 0%
 本指南需要对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [架构组合基础知识](../../schema/composition.md) 概述如何构建模式。
 
 ## 创建新架构 {#create}
+
+>[!NOTE]
+>
+>本节介绍如何在UI中手动创建新架构。 如果要将CSV数据摄取到平台，您可以选择 [将该数据映射到由AI生成的推荐创建的XDM模式](../../../ingestion/tutorials/map-csv/recommendations.md) （当前处于测试版中），无需自行手动创建架构。
 
 在 [!UICONTROL 模式] 工作区，选择 **[!UICONTROL 创建架构]** 中。 在显示的下拉菜单中，您可以选择 **[!UICONTROL XDM个人配置文件]** 和 **[!UICONTROL XDM ExperienceEvent]** 作为架构的基类。 或者，您也可以选择 **[!UICONTROL 浏览]** 从可用类的完整列表中进行选择，或 [创建新的自定义类](./classes.md#create) 中。
 
