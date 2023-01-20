@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 2%
@@ -46,7 +46,7 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 | **[!UICONTROL 上次运行时间戳]** | 运行查询时的最近时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
 | **[!UICONTROL 上次运行状态]** | 最近一次查询执行的状态。 三个状态值是： `successful` `failed` 或 `in progress`. |
 
-有关如何 [通过查询服务UI监控查询](../monitor-queries.md).
+有关如何 [通过查询服务UI监控查询](./monitor-queries.md).
 
 ## 模板 {#browse}
 

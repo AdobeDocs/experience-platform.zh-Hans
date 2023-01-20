@@ -2,7 +2,7 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 5d9428c4323e65c2605fd116160e160af7d9086d
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '956'
 ht-degree: 0%

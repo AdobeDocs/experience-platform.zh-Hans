@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；警报；
-title: 警报订阅API端点
+title: 警报订阅端点
 description: 本指南提供了您可以使用查询服务API对警报订阅端点进行的各种API调用的示例HTTP请求和响应。
 exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
-source-git-commit: 8673b6ceb9386677171334ce99d39c93e5e8159c
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '2668'
+source-wordcount: '2667'
 ht-degree: 2%
 
 ---
 
-# 警报订阅API端点
+# 警报订阅端点
 
 Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 平台内警报和电子邮件警报的通知内容相同。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/).
 

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '2934'
 ht-degree: 5%
@@ -217,7 +217,7 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | 功能 | 描述 |
 | --- | --- |
 | 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
-| 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 请参阅 [数据集示例指南](../../query-service/sql/dataset-samples.md) 以了解更多。 |
+| 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 请参阅 [数据集示例指南](../../query-service/essential-concepts/dataset-samples.md) 以了解更多。 |
 
 有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 

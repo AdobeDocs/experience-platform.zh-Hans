@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将 Tableau 连接到查询服务
 description: 本文档将介绍如何将Tableau与Adobe Experience Platform查询服务连接。
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: 1d71cc4336747eb258ec2d8dcdc545cb2233692d
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../best-practices/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
+>可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../essential-concepts/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
 
 填写所有凭据后，确认设置以继续。 您现在已连接到Adobe Experience Platform。
 

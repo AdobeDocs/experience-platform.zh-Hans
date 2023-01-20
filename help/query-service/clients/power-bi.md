@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将Power BI连接到查询服务
 description: 本文档将介绍如何将Power BI与Adobe Experience Platform查询服务连接。
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 1%
@@ -51,7 +51,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../best-practices/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
+>可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../essential-concepts/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
 
 ### 数据连接模式 {#data-connectivity-mode}
 

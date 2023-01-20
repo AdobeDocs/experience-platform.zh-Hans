@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1352'
 ht-degree: 4%
@@ -104,8 +104,8 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 功能 | 描述 |
 | --- | --- |
-| 通过Platform UI监控查询 | 查询服务 [!UICONTROL 计划查询] 选项卡通过UI改善了所有查询作业状态的可见性。 现在，您可以从 [!UICONTROL 计划查询] 选项卡。 您还可以通过UI，根据任何这些查询的状态订阅警报。 请参阅 [监视查询文档](../../query-service/monitor-queries.md) 以了解有关此功能的更多信息。 |
-| 查询加速报告分析数据模型 | 作为Data Distiller SKU的一部分，查询加速存储使您能够减少从数据中获得关键分析所需的时间和处理能力。 通过查询加速存储，您可以构建自定义数据模型和/或扩展现有的Adobe Real-time Customer Data Platform数据模型，以改进报表分析及其可视化图表。 请参阅 [查询加速存储报告分析文档](../../query-service/query-accelerated-store/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
+| 通过Platform UI监控查询 | 查询服务 [!UICONTROL 计划查询] 选项卡通过UI改善了所有查询作业状态的可见性。 现在，您可以从 [!UICONTROL 计划查询] 选项卡。 您还可以通过UI，根据任何这些查询的状态订阅警报。 请参阅 [监视查询文档](../../query-service/ui/monitor-queries.md) 以了解有关此功能的更多信息。 |
+| 查询加速报告分析数据模型 | 作为Data Distiller SKU的一部分，查询加速存储使您能够减少从数据中获得关键分析所需的时间和处理能力。 通过查询加速存储，您可以构建自定义数据模型和/或扩展现有的Adobe Real-time Customer Data Platform数据模型，以改进报表分析及其可视化图表。 请参阅 [查询加速存储报告分析文档](../../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 

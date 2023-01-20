@@ -2,7 +2,7 @@
 title: 查询服务审核日志集成
 description: 查询服务审核日志维护各种用户操作的记录，以形成用于解决问题或遵守公司数据管理策略和法规要求的审核跟踪。 本教程概述了特定于查询服务的审核日志功能。
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: 40de87ae407884d4ec7c75215fc7319721fbe1d0
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '935'
 ht-degree: 2%

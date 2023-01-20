@@ -1,7 +1,8 @@
 ---
 title: 查询服务中数据资产组织的最佳实践
 description: 本文档概述了组织数据以便于查询服务使用的逻辑方法。
-source-git-commit: ed9fa7b83f9e1c974bc74e9dde018a87823954ee
+exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
+source-git-commit: d3ea7ee751962bb507c91e1afea0da35da60a66d
 workflow-type: tm+mt
 source-wordcount: '788'
 ht-degree: 0%
@@ -169,4 +170,4 @@ DROP SCHEMA databaseA.schema2;
 
 ## 后续步骤
 
-通过阅读本文档，您现在可以更好地了解有关数据资产的组织和结构的最佳实践，以便与Adobe Experience Platform查询服务结合使用。 建议通过阅读 [数据删除文档](./deduplication.md).
+通过阅读本文档，您现在可以更好地了解有关数据资产的组织和结构的最佳实践，以便与Adobe Experience Platform查询服务结合使用。 建议通过阅读 [数据删除文档](../essential-concepts/deduplication.md).

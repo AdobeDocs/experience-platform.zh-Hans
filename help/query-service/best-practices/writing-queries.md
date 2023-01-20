@@ -5,9 +5,9 @@ title: 查询服务中查询执行的一般指导
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1072'
 ht-degree: 3%
 
 ---
@@ -311,7 +311,7 @@ LIMIT 50;
 
 ## 重复数据删除
 
-查询服务支持重复数据删除或从数据中删除重复行。 有关重复数据删除的详细信息，请阅读 [查询服务重复数据删除指南](./deduplication.md).
+查询服务支持重复数据删除或从数据中删除重复行。 有关重复数据删除的详细信息，请阅读 [查询服务重复数据删除指南](../essential-concepts/deduplication.md).
 
 ## 查询服务中的时区计算
 
@@ -325,4 +325,7 @@ LIMIT 50;
 
 - [Analytics分析](../use-cases/analytics-insights.md)
 - [使用Adobe Target进行活动分析](../use-cases/activity-analysis-with-adobe-target.md)
-- [ExperienceEvent示例查询](../sample-queries/experience-event.md).
+- [创建事件的趋势报表](../use-cases/trended-report-of-events.md)
+- [查看访客的汇总报表](../use-cases/roll-up-report-of-a-visitor.md)
+- [列出用户的页面查看次数](../use-cases/list-visitor-sessions.md)
+- [按访客的页面查看次数列出访客](../use-cases/visitors-by-number-of-page-views.md)

@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；故障诊断指南；FAQ；故障诊断；
 solution: Experience Platform
-title: 查询服务疑难解答指南
+title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括、导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '4383'
 ht-degree: 1%
 
 ---
 
-# [!DNL Query Service] 疑难解答指南
+# 常见问题解答
 
 本文档提供了有关查询服务的常见问题解答，并提供了使用查询服务时常见错误代码的列表。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
 
@@ -105,7 +105,7 @@ SELECT * FROM customers LIMIT 0;
 
 ![扁平化数据的XDM架构和表格视图。 嵌套数据集的列名称在UI中突出显示。](./images/troubleshooting/column-name.png)
 
-有关 [如何使用嵌套数据结构](./best-practices/nested-data-structures.md) 使用查询编辑器或第三方客户端。
+有关 [如何使用嵌套数据结构](./essential-concepts/nested-data-structures.md) 使用查询编辑器或第三方客户端。
 +++
 
 ### 如何加快对包含数组的数据集的查询？
@@ -142,7 +142,7 @@ SELECT * FROM customers LIMIT 0;
 
 +++答案匿名块功能允许您将一个或多个按顺序执行的SQL语句链接起来。 它们还允许使用例外处理选项。
 
-请参阅 [匿名块文档](./best-practices/anonymous-block.md) 以了解更多详细信息。
+请参阅 [匿名块文档](./essential-concepts/anonymous-block.md) 以了解更多详细信息。
 +++
 
 ### 如何在查询服务中实施自定义归因？
@@ -226,7 +226,7 @@ AS SELECT '1' as _id,
 
 ### 如何快速处理每天进入系统的新数据？
 
-+++回答 [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) 子句可用于基于快照ID增量读取表上的数据。 这非常适合与 [增量负载](./best-practices/incremental-load.md) 设计模式，仅处理自上次加载执行以来创建或修改的数据集中的信息。 因此，它提高了处理效率，并可用于流和批量数据处理。
++++回答 [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) 子句可用于基于快照ID增量读取表上的数据。 这非常适合与 [增量负载](./essential-concepts/incremental-load.md) 设计模式，仅处理自上次加载执行以来创建或修改的数据集中的信息。 因此，它提高了处理效率，并可用于流和批量数据处理。
 +++
 
 ### 为什么配置文件UI中显示的数字与从配置文件导出数据集计算的数字之间存在差异？

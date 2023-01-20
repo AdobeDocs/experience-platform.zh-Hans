@@ -1,7 +1,8 @@
 ---
 title: 查询服务包
 description: 以下文档概述了可用于查询服务的功能和产品包，并重点介绍了临时查询和批处理查询之间的差异。
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '720'
 ht-degree: 3%
@@ -65,4 +66,4 @@ Experience Platform的访问控制通过 [Adobe Admin Console](https://admincons
 
 ## 后续步骤
 
-通过阅读本文档，您应更好地了解查询服务中提供的不同打包类型和查询执行功能。 要进一步了解查询服务（如已知的行业用例），请阅读 [用例文档](./use-cases/abandoned-browse.md). 有关更多常规信息，请访问 [查询服务概述](./home.md).
+通过阅读本文档，您应该能够更好地了解查询服务中提供的不同打包类型和查询执行功能。 要进一步了解查询服务（如已知的行业用例），请阅读 [用例文档](./use-cases/abandoned-browse.md). 有关更多常规信息，请访问 [查询服务概述](./home.md).

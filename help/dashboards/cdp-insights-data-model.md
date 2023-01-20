@@ -2,7 +2,7 @@
 title: Real-time Customer Data Platform Insights数据模型
 description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型结合使用，以针对您的营销和KPI用例自定义您自己的Real-Time CDP报表。
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 9f33ad0146b72f820530233b651370c43fafe713
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '1109'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights数据模型
 
-Real-time Customer Data Platform分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 然后，这些分析可用作用户定义的功能板的自定义小组件。 请参阅查询加速存储报告分析文档以了解 [如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板一起使用](../query-service/query-accelerated-store/reporting-insights-data-model.md).
+Real-time Customer Data Platform分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 然后，这些分析可用作用户定义的功能板的自定义小组件。 请参阅查询加速存储报告分析文档以了解 [如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板一起使用](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
 
 ## 先决条件
 

@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；生成数据集；生成数据集；创建数据集；
 solution: Experience Platform
-title: 在查询服务中根据结果生成数据集
+title: 从查询结果生成输出数据集
 type: Tutorial
 description: Adobe Experience Platform查询服务允许从UI创建数据集。 创建数据集后，可以像数据湖中的任何其他数据集一样访问该数据集，并将其用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
-# 从结果生成数据集 [!DNL Query Service]
+# 根据查询结果生成输出数据集
 
 [!DNL Query Service] 允许您使用查询在 [!DNL Data Lake]. 然后，这些数据集可用作更多查询或其他服务(例如 [!DNL Data Science Workspace]、实时客户资料，或 [!DNL Analysis Workspace].
 

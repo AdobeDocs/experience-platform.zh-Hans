@@ -1,16 +1,17 @@
 ---
-title: '针对Web和移动设备交互的分析分析 '
+title: 针对Web和移动设备交互的分析分析
 description: 本文档介绍如何使用查询服务从摄取的Adobe Analytics数据创建可操作的分析。
-source-git-commit: cdceba9caf035831f4c376edf34356f666b79aa8
+exl-id: f64e61ef-0157-4f0a-88f8-bbe4f9aa83f0
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '232'
 ht-degree: 1%
 
 ---
 
 # 针对Web和移动交互的分析分析
 
-Adobe Experience Platform允许您使用体验数据模型(XDM)字段从Adobe Analytics报表包中摄取数据，以填充数据集。 然后，查询服务可以通过运行SQL查询来利用此分析数据，从用户在数字平台上的行为中生成有价值的分析。
+Adobe Experience Platform允许您使用体验数据模型(XDM)字段从Adobe Analytics报表包中摄取数据，以填充数据集。 此分析数据会进行修改以符合 [!DNL XDM ExperienceEvent] 类。 然后，查询服务可以通过运行SQL查询来利用此数据，从用户在数字平台上的行为中生成有价值的分析。
 
 本文档提供了各种SQL查询示例，这些示例演示了在从Web和移动分析数据创建分析时的常见用例。
 

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年1月
 description: 2022年1月版Adobe Experience Platform发行说明。
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1342'
 ht-degree: 3%
@@ -91,7 +91,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 | 功能 | 描述 |
 | --- | --- |
-| 匿名块 | 匿名块SQL结构允许您将查询服务中的大规模数据准备作业分解为较小的任务，然后为增量数据加载依次重复使用和执行这些任务。 有关更多信息，请参阅 [匿名块文档的示例查询](../../query-service/best-practices/anonymous-block.md). |
+| 匿名块 | 匿名块SQL结构允许您将查询服务中的大规模数据准备作业分解为较小的任务，然后为增量数据加载依次重复使用和执行这些任务。 有关更多信息，请参阅 [匿名块文档的示例查询](../../query-service/essential-concepts/anonymous-block.md). |
 | 数据集组织 | 提供了一种连贯的逻辑数据结构，用于随着沙盒中数据资产数量的增加，组织数据资产以与查询服务一起使用。 有关更多信息，请参阅 [组织数据资产文档](../../query-service/best-practices/organize-data-assets.md). |
 
 有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).

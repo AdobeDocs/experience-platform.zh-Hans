@@ -3,7 +3,7 @@ keywords: Experience Platform；查询服务；查询服务；查询
 title: Adobe Experience Platform查询服务的示例用例
 description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的多功能性和优势。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 2%
@@ -73,11 +73,11 @@ Adobe Experience Platform提供了一个数据存储库和必要的工具，以�
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该了解 [!DNL Query Service] 不仅会影响数据的质量和分段的方便性，而且会影响数据架构对整个端到端工作流程的重要性。 有关将Adobe Analytics与 [!DNL Query Service]，请参阅 [Adobe Analytics示例查询文档](../sample-queries/adobe-analytics.md).
+通过阅读本文档，您现在应该了解 [!DNL Query Service] 不仅会影响数据的质量和分段的方便性，而且会影响数据架构对整个端到端工作流程的重要性。 有关将Adobe Analytics与 [!DNL Query Service]，请参阅 [Adobe Analytics促销变量用例](./merchandising-variables.md).
 
 其他文档，这些文档说明了 [!DNL Query Service] 对贵组织的战略业务洞察是 [机器人过滤用例](./bot-filtering.md) 示例。
 
-或者，这些文档将有助于您了解 [!DNL Query Service] 功能：
+或者，这些文档也有助于您了解 [!DNL Query Service] 功能：
 
 * [查询执行的指导](../best-practices/writing-queries.md)
 * [数据资产组织指南](../best-practices/organize-data-assets.md).
