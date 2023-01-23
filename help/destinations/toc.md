@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: d046c17a7b376f5c2e2f25c38fac0916ed2dba73
+source-git-commit: bdc6ef162e9684065b60a13670848dac64be21fd
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '988'
 ht-degree: 6%
 
 ---
@@ -153,6 +153,7 @@ ht-degree: 6%
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
       * [Pega客户决策中心连接](./catalog/personalization/pega.md)
+      * [Pega配置文件连接](./catalog/personalization/pega-profile.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
