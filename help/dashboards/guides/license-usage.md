@@ -4,7 +4,7 @@ title: 许可证使用功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 255de9b9e83c11aeed747a3c0cdb7bd7a7949bd2
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '935'
 ht-degree: 1%
@@ -68,7 +68,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 每个小组件都会显示一个折线图，用于比较贵组织的实际数字与贵组织许可时的可用总数，并提供总使用量的百分比。
 
-![许可证使用情况功能板概述选项卡，其中突出显示示例许可证使用情况量度小组件的折线图。](../images/license-usage/widgets.png)
+![“许可证使用情况”功能板“概述”选项卡，其中“示例许可证使用情况”量度小组件的折线图突出显示。](../images/license-usage/widgets.png)
 
 ## 可用量度
 
@@ -88,7 +88,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 | <ul><li>RT客户数据平台：OD</li><li>RT客户数据平台：OD PRFL到10米</li><li>RT客户数据平台：OD PRFL到50M</li></ul> | [Adobe Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
 | <ul><li>AEP:OD激活</li><li>AEP:OD激活PRFL至10米</li><li>AEP:OD激活PRFL，最长50米</li></ul> | [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
-| <ul><li>Journey Optimizer SELECT:OD</li><li>Journey Optimizer PRIME:OD</li><li>Journey Optimizer ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:OD个人资料编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/legal/product-descriptions/adobe-journey-optimizer.html) |
+| <ul><li>Journey Optimizer SELECT:OD</li><li>Journey Optimizer PRIME:OD</li><li>Journey Optimizer ULTIMATE:OD</li><li>UNP AJO PRIME STARTER:OD</li><li>UNP AJO ULTIMATE STARTER:OD</li><li>UNP Real-Time CDP:OD个人资料编排</li></ul> | [Adobe Journey Optimizer](https://helpx.adobe.com/cn/legal/product-descriptions/adobe-journey-optimizer.html) |
 
 >[!WARNING]
 >

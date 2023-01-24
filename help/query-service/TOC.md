@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 3d549b14571be7ec3455da0e23181951cb991a9d
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '264'
-ht-degree: 15%
+ht-degree: 16%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 15%
 - 入门 {#get-started}
    - [先决条件](get-started/prerequisites.md)
 - 数据Distiller {#data-distiller}
-   - [许可证使用情况](data-distiller/licence-usage.md)
+   - [许可证使用](data-distiller/license-usage.md)
    - 查询加速存储 {#query-accelerated-store}
       - [发送加速查询](data-distiller/query-accelerated-store/send-accelerated-queries.md)
       - [报告分析数据模型指南](data-distiller/query-accelerated-store/reporting-insights-data-model.md)

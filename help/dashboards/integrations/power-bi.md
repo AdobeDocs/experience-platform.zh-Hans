@@ -2,7 +2,7 @@
 title: 平台功能板的Power BI报表模板
 description: 使用报表模板来探索使用Experience Platform的Power BI。
 exl-id: fb98a79f-3d82-4e11-b08a-b7cb06414462
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%

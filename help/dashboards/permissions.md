@@ -4,7 +4,7 @@ title: 如何获取和授予Experience Platform功能板的访问权限
 type: Documentation
 description: 授予用户使用Adobe Admin Console查看、编辑和更新Experience Platform功能板的功能。
 exl-id: 2e50790f-b3ab-4851-a9a5-7cb98bf98ce3
-source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '645'
 ht-degree: 6%

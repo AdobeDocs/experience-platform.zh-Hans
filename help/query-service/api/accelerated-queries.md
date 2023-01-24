@@ -1,7 +1,8 @@
 ---
 title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储，以便快速返回基于聚合数据的结果。 本文档为查询服务加速查询端点提供了HTTP请求和响应示例。
-source-git-commit: 2a9d40fc783feb78a1d5ad7eb615ceb40097eb89
+exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 1%
@@ -16,7 +17,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-要使用查询加速存储，需要Data Distiller SKU。 请参阅 [包装](../packages.md), [护栏](../guardrails.md#query-accelerated-store)和 [许可](../data-distiller/licence-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+要使用查询加速存储，需要Data Distiller SKU。 请参阅 [包装](../packages.md), [护栏](../guardrails.md#query-accelerated-store)和 [许可](../data-distiller/license-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
 
 以下各节详细介绍通过查询服务API以无状态方式访问查询加速存储所需的API调用。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
 
@@ -210,4 +211,3 @@ curl -X POST https://platform.adobe.io/data/foundation/query/acceleated-queries
 | `resultsMeta._adhoc.meta:xdmType` | 这是系统为XDM字段类型生成的值。 有关可用类型的更多信息，请参阅 [可用的XDM类型](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/custom-fields-api.html). |
 | `resultsMeta._adhoc.properties` | 这些是查询的数据集的列名称。 |
 | `resultsMeta._adhoc.results` | 这些是查询的数据集的行名称。 它们反映每个返回的列。 |
-
