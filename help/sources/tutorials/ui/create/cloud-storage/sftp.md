@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；SFTP;SFTP
-solution: Experience Platform
 title: 在UI中创建SFTP源连接
-type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建SFTP源连接。
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -44,12 +41,13 @@ ht-degree: 0%
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
 | `passPhrase` | 如果密钥文件或密钥内容受密码短语的保护，则解密私钥的密码短语或密码。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语一起用作值。 |
 | `maxConcurrentConnections` | 此参数允许您为平台在连接到SFTP服务器时将创建的并发连接数指定最大限制。 您必须将此值设置为小于SFTP设置的限制。 **注意**:为现有SFTP帐户启用此设置后，它只会影响将来的数据流，而不会影响现有的数据流。 |
+| 文件夹路径 | 要提供访问权限的文件夹的路径。 [!DNL SFTP] 来源，您可以提供文件夹路径以指定用户对所选子文件夹的访问权限。 |
 
 收集所需的凭据后，您可以按照以下步骤创建新凭据 [!DNL SFTP] 帐户连接到平台。
 
 ## 连接到 [!DNL SFTP] 服务器
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建入站帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
 
@@ -67,31 +65,31 @@ ht-degree: 0%
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为新用户提供名称和可选描述 [!DNL SFTP] 帐户。
-
-![SFTP的新帐户屏幕](../../../../images/tutorials/create/sftp/new.png)
-
-#### 使用密码进行身份验证
-
-[!DNL SFTP] 支持不同的身份验证类型进行访问。 在 **[!UICONTROL 帐户身份验证]** 选择 **[!UICONTROL 密码]** 然后，提供要连接到的主机和端口值以及您的用户名和密码。
-
-![SFTP源使用基本身份验证的新帐户屏幕](../../../../images/tutorials/create/sftp/password.png)
-
-#### 使用SSH公钥进行身份验证
-
-要使用基于SSH公钥的凭据，请选择 **[!UICONTROL SSH公钥]**  然后提供主机和端口值，以及私钥内容和密码组合。
-
 >[!IMPORTANT]
 >
 >SFTP支持RSA或DSA类型OpenSSH密钥。 确保关键文件内容以 `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` 结尾为 `"-----END [RSA/DSA] PRIVATE KEY-----"`. 如果私钥文件是PPK格式的文件，请使用PuTTY工具将PPK格式转换为OpenSSH格式。
 
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为新用户提供名称和可选描述 [!DNL SFTP] 帐户。
+
+![SFTP的新帐户屏幕](../../../../images/tutorials/create/sftp/new.png)
+
+的 [!DNL SFTP] 源支持通过SSH公钥进行基本身份验证和身份验证。
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+要使用基本身份验证，请选择 **[!UICONTROL 密码]** 然后，提供要连接到的主机和端口值以及您的用户名和密码。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
+
+![SFTP源使用基本身份验证的新帐户屏幕](../../../../images/tutorials/create/sftp/password.png)
+
+>[!TAB SSH公钥身份验证]
+
+要使用基于SSH公钥的凭据，请选择 **[!UICONTROL SSH公钥]**  然后提供主机和端口值，以及私钥内容和密码组合。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
+
 ![使用SSH公钥的SFTP源的新帐户屏幕。](../../../../images/tutorials/create/sftp/ssh.png)
 
-| 凭据 | 描述 |
-| ---------- | ----------- |
-| 私钥内容 | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
-| 密码短语 | 如果密钥文件或密钥内容受密码短语保护，则指定用于解密私钥的密码或密码。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语一起用作其值。 |
-
+>[!ENDTABS]
 
 ## 后续步骤
 

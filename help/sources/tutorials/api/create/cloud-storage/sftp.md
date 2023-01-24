@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；SFTP;SFTP；安全文件传输协议；安全文件传输协议
-solution: Experience Platform
 title: 使用流服务API创建SFTP基连接
-type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '895'
 ht-degree: 1%
 
 ---
@@ -44,6 +41,7 @@ ht-degree: 1%
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
 | `passPhrase` | 如果密钥文件或密钥内容受密码短语的保护，则解密私钥的密码短语或密码。 如果 `privateKeyContent` 受密码保护，此参数需要与私钥内容的密码短语一起用作值。 |
 | `maxConcurrentConnections` | 此参数允许您为平台在连接到SFTP服务器时将创建的并发连接数指定最大限制。 您必须将此值设置为小于SFTP设置的限制。 **注意**:为现有SFTP帐户启用此设置后，它只会影响将来的数据流，而不会影响现有的数据流。 |
+| `folderPath` | 要提供访问权限的文件夹的路径。 [!DNL SFTP] 来源，您可以提供文件夹路径以指定用户对所选子文件夹的访问权限。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL SFTP] 为： `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
 
 ### 使用Platform API
@@ -54,7 +52,7 @@ ht-degree: 1%
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-的 [!DNL SFTP] 源支持通过SSH公钥进行基本身份验证和身份验证。
+的 [!DNL SFTP] 源支持通过SSH公钥进行基本身份验证和身份验证。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。
 
 要创建基本连接ID，请向 `/connections` 提供 [!DNL SFTP] 身份验证凭据作为请求参数的一部分。
 
@@ -94,7 +92,8 @@ curl -X POST \
               "port": 22,
               "userName": "{USERNAME}",
               "password": "{PASSWORD}",
-              "maxConcurrentConnections": 1
+              "maxConcurrentConnections": 5,
+              "folderPath": "acme/business/customers/holidaySales"
           }
       },
       "connectionSpec": {
@@ -111,6 +110,7 @@ curl -X POST \
 | `auth.params.username` | 与SFTP服务器关联的用户名。 |
 | `auth.params.password` | 与SFTP服务器关联的密码。 |
 | `auth.params.maxConcurrentConnections` | 将平台连接到SFTP时指定的并发连接数上限。 启用后，此值必须至少设置为1。 |
+| `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
 | `connectionSpec.id` | SFTP服务器连接规范ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 >[!TAB SSH公钥身份验证]
@@ -134,8 +134,8 @@ curl -X POST \
               "userName": "{USERNAME}",
               "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
               "passPhrase": "{PASSPHRASE}",
-              "maxConcurrentConnections": 1
-
+              "maxConcurrentConnections": 5,
+              "folderPath": "acme/business/customers/holidaySales"
           }
       },
       "connectionSpec": {
@@ -153,6 +153,7 @@ curl -X POST \
 | `auth.params.privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
 | `auth.params.passPhrase` | 如果密钥文件或密钥内容受密码短语的保护，则解密私钥的密码短语或密码。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码短语一起用作值。 |
 | `auth.params.maxConcurrentConnections` | 将平台连接到SFTP时指定的并发连接数上限。 启用后，此值必须至少设置为1。 |
+| `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
 | `connectionSpec.id` | 的 [!DNL SFTP] 服务器连接规范ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 >[!ENDTABS]
