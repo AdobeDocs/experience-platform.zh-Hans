@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
+source-git-commit: 1c092cd66a8a96623359a0e56de76e2a3d077c8d
 workflow-type: tm+mt
-source-wordcount: '1954'
+source-wordcount: '1982'
 ht-degree: 5%
 
 ---
@@ -90,6 +90,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | 配置文件片段最大大小 | 50MB | 硬 | **单个配置文件片段的最大大小为50MB。** 对于任何 [配置文件片段](#profile-fragments) 大于50MB。 |
 | 最大配置文件存储大小 | 50MB | 柔和 | **存储的配置文件的最大大小为50MB。** 添加新 [配置文件片段](#profile-fragments) 大于50MB的配置文件将影响系统性能。 例如，配置文件可以包含一个50MB的片段，或者它可以跨多个总大小为50MB的数据集包含多个片段。 尝试存储单个片段大于50MB的配置文件，或多个片段总大小超过50MB的片段，将影响系统性能。 |
 | 每天摄取的配置文件或ExperienceEvent批次数 | 90 | 柔和 | **每天摄取的配置文件或ExperienceEvent批次数上限为90个。** 这意味着每天摄取的配置文件和ExperienceEvent批次的合计总数不能超过90个。 摄取其他批次将影响系统性能。 |
+| 每个用户档案记录的ExperienceEvents数量 | 5000 | 柔和 | **每个用户档案记录的ExperienceEvents最大数量为5000。** 超过5000个ExperienceEvents的用户档案将 **not** 考虑进行分段。 |
 
 {style=&quot;table-layout:auto&quot;}
 
