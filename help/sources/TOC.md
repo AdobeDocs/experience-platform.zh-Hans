@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 46c9ec0c561f7ed3e38f05ef7b1e3ffec0eaed57
+source-git-commit: 79773c35cf70bc967b29a8bcca729106bd7dd4f0
 workflow-type: tm+mt
-source-wordcount: '860'
-ht-degree: 12%
+source-wordcount: '872'
+ht-degree: 11%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 12%
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
          - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B命名空间和架构](connectors/adobe-applications/marketo/marketo-namespaces.md)
-   - 广告 {#advertising}
+   - Advertising {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
    - Analytics {#analytics}
       - [混合面板连接器](connectors/analytics/mixpanel.md)
@@ -59,6 +59,7 @@ ht-degree: 12%
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
+      - [SugarCRM连接器](connectors/crm/sugarcrm.md)
       - [Veva CRM连接器](connectors/crm/veeva.md)
       - [Zoho CRM连接器](connectors/crm/zoho.md)
    - 客户成功 {#customer-success}
@@ -106,7 +107,7 @@ ht-degree: 12%
       - [HTTP API连接器](connectors/streaming/http.md)
 - API教程 {#api-tutorials}
    - 创建基本连接 {#create}
-      - 广告 {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/api/create/analytics/mixpanel.md)
@@ -129,6 +130,8 @@ ht-degree: 12%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
+         - [SugarCRM帐户和联系人](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
+         - [SugarCRM事件](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
       - 客户成功 {#customer-success}
@@ -213,7 +216,7 @@ ht-degree: 12%
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
          - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
-      - 广告 {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
@@ -237,6 +240,8 @@ ht-degree: 12%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
+         - [SugarCRM帐户和联系人](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
+         - [SugarCRM事件](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
       - 客户成功 {#customer-success}

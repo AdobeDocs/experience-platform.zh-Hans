@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e4fa36ebbb52ba0e5b37cda8d220e571d8afa4aa
 workflow-type: tm+mt
 source-wordcount: '1123'
 ht-degree: 2%
@@ -42,7 +42,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 - [Adobe Workfront源概述](connectors/adobe-applications/workfront.md)
    - [在UI中创建Workfront源连接](./tutorials/ui/create/adobe-applications/workfront.md)
 
-### 广告 {#advertising}
+### Advertising {#advertising}
 
 Experience Platform支持从第三方广告系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
@@ -84,6 +84,7 @@ CRM系统提供的数据有助于建立客户关系，这反过来又可以创�
 
 - [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md)
 - [[!DNL Salesforce]](connectors/crm/salesforce.md)
+- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md)
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
 - [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
