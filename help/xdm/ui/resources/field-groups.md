@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构字段组
 description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 542ad49f475ac9586da506a8afa5408e83262121
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '839'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,11 @@ Adobe Experience Platform提供了许多涵盖各种营销用例的标准字段�
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-A **[!UICONTROL 新建字段]** 将显示在画布中，并且右边栏会更新以显示用于配置字段属性的控件。 请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置不同字段类型的具体步骤。
+安 **[!UICONTROL 无标题字段]** 占位符显示在画布中，右边栏会更新以显示用于配置字段属性的控件。 请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置不同字段类型的具体步骤。
+
+在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始在字段组的名称中键入以缩小结果范围。
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
 
 在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始在字段组的名称中键入以缩小结果范围。
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 3a9b97b25980d88e0fff3d71e43407b641e6454d
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '902'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,9 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 
 >
 >请记住，您添加到类的任何字段都将用于使用该类的所有架构中。 因此，您应仔细考虑哪些字段在所有架构用例中都将很有用。 如果您想要添加一个字段，该字段可能只能看到此类下某些架构中的使用，则可能需要考虑通过 [创建字段组](./field-groups.md#create) 中。
 
-A **[!UICONTROL 新建字段]** 将显示在画布中，并且右边栏会更新以显示用于配置字段属性的控件。 在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**.
+安 **[!UICONTROL 无标题字段]** 占位符显示在画布中，右边栏会更新以显示用于配置字段属性的控件。 在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**.
+
+![](../../images/ui/resources/classes/assign-to-class.png)
 
 ![](../../images/ui/resources/classes/assign-to-class.png)
 
