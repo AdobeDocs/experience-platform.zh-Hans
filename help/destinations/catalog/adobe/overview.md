@@ -3,10 +3,10 @@ keywords: 目标；experience cloud解决方案；目标；目标；广告云；
 title: Adobe目标概述
 description: 通过将Platform中的数据与其他Adobe Experience Cloud解决方案（用于广告定位、个性化、营销自动化等）连接起来，来管理客户体验
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 4ac73a83188a11900f38307ca8d743de4c186fdb
 workflow-type: tm+mt
-source-wordcount: '218'
-ht-degree: 13%
+source-wordcount: '230'
+ht-degree: 12%
 
 ---
 
@@ -20,11 +20,14 @@ ht-degree: 13%
 
 目前，Platform支持下面列出的Adobe目标。
 
-要了解连接和扩展之间的差异，请参阅“目标类型和类别”页面中的[连接](../../destination-types.md#connections) 。
+要了解连接和扩展之间的差异，请参阅 [连接](../../destination-types.md#connections) （在目标类型和类别页面中）。
 
 ### 连接
 
+* [Adobe Advertising Cloud DSP连接](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
 * [Adobe Campaign连接](../email-marketing/adobe-campaign.md)
+* [Adobe Target连接](/help/destinations/catalog/personalization/adobe-target-connection.md)
+* [（测试版）Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
 * [Marketo Engage连接](/help/destinations/catalog/adobe/marketo-engage.md)
 
 ### 扩展
