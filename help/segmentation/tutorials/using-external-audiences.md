@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 57586104f1119f5cda926faf286c1663fbb0b240
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1664'
 ht-degree: 0%
 
 ---
@@ -257,3 +257,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 | `xdmEntity._id` | 用于唯一标识数据集内记录的合适ID。 |
 | `{TENANT_NAME}.identities` | 此部分用于将自定义标识的字段组与您之前导入的用户连接起来。 |
 | `segmentMembership.{IDENTITY_NAMESPACE}` | 这是之前创建的自定义身份命名空间的标签。 例如，如果您将身份命名空间称为“externalAudience”，则会将该名称空间用作数组的键。 |
+
+>[!NOTE]
+>
+>默认情况下，外部受众成员资格仅保留30天。 若要将其保留超过30天，请使用 `validUntil` 字段。 有关此字段的更多信息，请阅读 [区段成员资格详细信息架构字段组](../../xdm/field-groups/profile/segmentation.md).

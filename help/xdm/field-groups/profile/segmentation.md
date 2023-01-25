@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段成员资格详细信息架构字段组
 description: 本文档概述了区段成员资格详细信息架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: fda47171cde3f58f48ee721357923017918a7d4e
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '470'
 ht-degree: 2%
 
 ---
@@ -75,11 +75,15 @@ ht-degree: 2%
 | --- | --- |
 | `xdm:version` | 此用户档案符合条件的区段版本。 |
 | `xdm:lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
-| `xdm:validUntil` | 不再假定区段成员资格有效的时间戳。 |
+| `xdm:validUntil` | 不再假定区段成员资格有效的时间戳。 对于外部受众，如果未设置此字段，则区段成员资格将仅保留30天 `lastQualificationTime`. |
 | `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `xdm:payload` | 某些区段成员资格包括描述与成员资格直接相关的其他值的有效负载。 每个成员只能提供给定类型的有效负荷。 `xdm:payloadType` 指示有效负载类型(`boolean`, `number`, `propensity`或 `string`)，而其同级属性则为有效负载类型提供值。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!NOTE]
+>
+>位于 `exited` 超过30天的状态，基于 `lastQualificationTime`，将被删除。
 
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 

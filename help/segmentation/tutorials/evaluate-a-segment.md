@@ -5,9 +5,9 @@ title: 评估和访问区段结果
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 378f9260703d388976054431a76ac285724a9ae3
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -130,6 +130,10 @@ ht-degree: 0%
 | -------- | ----------- |
 | `lastQualificationTime` | 断言区段成员资格以及进入或退出区段的用户档案的时间戳。 |
 | `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`existing`:实体继续在分部中。</li><li>`realized`:实体正在输入区段。</li><li>`exited`:实体正在退出区段。</li></ul> |
+
+>[!NOTE]
+>
+>位于 `exited` 超过30天的状态，基于 `lastQualificationTime`，将被删除。
 
 ## 访问区段结果
 
