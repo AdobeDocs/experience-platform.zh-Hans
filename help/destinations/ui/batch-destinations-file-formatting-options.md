@@ -1,10 +1,11 @@
 ---
 description: 了解如何在将数据激活到基于文件的目标时配置文件格式选项
 title: （测试版）为基于文件的目标配置文件格式选项
-source-git-commit: 23a7a1997e05d2bde26de5b73a23ea051bf2b3bb
+exl-id: f59b1952-e317-40ba-81d1-35535e132a72
+source-git-commit: 14ce4a11f53ef24b3008b3f775cc926d05ea8f8e
 workflow-type: tm+mt
-source-wordcount: '565'
-ht-degree: 0%
+source-wordcount: '601'
+ht-degree: 1%
 
 ---
 
@@ -28,17 +29,25 @@ ht-degree: 0%
 
 ## 文件格式配置 {#file-configuration}
 
+要显示文件格式选项，请启动 [连接到目标](/help/destinations/ui/connect-destination.md) 工作流。 选择 **数据类型：区段** 和 **文件类型：CSV** 以显示导出的 `CSV` 文件。
+
 >[!IMPORTANT]
 >
 >您连接到的目标可能并没有所有这些选项可用。 由目标开发人员决定他们要在其目标中支持的文件格式选项。 目标开发人员可以确定在连接到目标时哪些选项可用。 在Experience PlatformUI中，必需选项带有星号标记。
-
-要显示文件格式选项，请启动 [连接到目标](/help/destinations/ui/connect-destination.md) 工作流和选择区段作为 **文件类型**. 本节介绍可用于导出的文件格式设置 `CSV` 文件。
+> 
+>新的云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md)  — 当前仅支持下面重点介绍的六个CSV选项。
 
 ![显示一些可用文件格式选项的图像。](/help/destinations/assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
-### 分隔符
+### 分隔符 {#delimiter}
 
-为每个字段和值设置分隔符。 例如， `,` (以逗号分隔值或 `/t` 的值。
+为每个字段和值设置分隔符。 可用选项包括：
+
+* 冒号 `(:)`
+* 逗号 `(,)`
+* 竖线 `(|)`
+* 分号 `(;)`
+* Tab `(\\t)`
 
 ### 引号字符
 
