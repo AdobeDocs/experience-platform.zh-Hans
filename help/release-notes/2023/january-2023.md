@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 0f2ddad37db87d8818281067e3a30cc1b2fb6418
+source-git-commit: 68e5baac9012a33d179f8ebff23deda7a8efd26b
 workflow-type: tm+mt
-source-wordcount: '1316'
+source-wordcount: '1371'
 ht-degree: 6%
 
 ---
@@ -18,6 +18,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [数据收集](#data-collection)
 - [体验数据模型(XDM)](#xdm)
 - [实时客户资料](#profile)
+- [分段服务](#segmentation)
 - [源](#sources)
 
 ## Assurance {#assurance}
@@ -93,15 +94,6 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 利用用户档案，可将客户数据整合到统一视图中，为每次客户互动提供一个加盖时间戳的可操作帐户。
 
-**新增功能或更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 平台生成的区段成员资格过期 | 位于 `Exited` 状态超过30天，根据 `lastQualificationTime` 字段，则该字段将被删除。 |
-| 外部受众成员资格过期 | 默认情况下，外部受众成员资格将保留30天。 若要将其保留更长时间，请使用 `validUntil` 字段。 |
-
-{style=&quot;table-layout:auto&quot;}
-
 **即将弃用** {#deprecation}
 
 为了在区段成员资格生命周期中消除冗余， `Existing` 状态将从 [区段成员资格映射](../../xdm/field-groups/profile/segmentation.md) 于2023年3月底。 后续公告将包括确切的弃用日期。
@@ -111,6 +103,21 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 如果您使用 [企业目标](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis、Azure事件中心、HTTP API)，并且已根据 `Existing` 状态。 如果存在这种情况，请查看下游集成。 如果您有兴趣识别超过特定时间的新合格用户档案，请考虑将 `Realized` 状态和 `lastQualificationTime` 在区段成员资格映射中。 有关更多信息，请联系您的Adobe代表。
 
 要了解有关实时客户用户档案的更多信息，包括有关使用用户档案数据的教程和最佳实践，请首先阅读 [实时客户资料概述](../../profile/home.md).
+
+## 分段服务 {#segmentation}
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 平台生成的区段成员资格过期 | 位于 `Exited` 状态超过30天，根据 `lastQualificationTime` 字段，则该字段将被删除。 |
+| 外部受众成员资格过期 | 默认情况下，外部受众成员资格将保留30天。 若要将其保留更长时间，请使用 `validUntil` 字段。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
 
 ## 源 {#sources}
 
