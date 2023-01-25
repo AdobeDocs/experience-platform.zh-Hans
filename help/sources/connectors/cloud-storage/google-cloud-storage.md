@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Google云存储源连接器概述
 description: 了解如何使用API或用户界面将Google云存储连接到Adobe Experience Platform。
 exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
-source-git-commit: 648dcd04de1f88318e3e771d5f044ac5b5ddaf2d
+source-git-commit: ae22e423119bf378a068349d481f0717a75171bb
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '573'
 ht-degree: 0%
 
 ---
@@ -36,6 +36,8 @@ Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google
 <!-- ![](../../images/tutorials/create/google-cloud-storage/interoperability.png) -->
 
 您可以使用新生成的访问密钥ID和密钥访问密钥来连接 [!DNL Google Cloud Storage] 帐户到平台。
+
+有关更多信息，请阅读 [创建和管理服务帐户密钥](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) 从 [!DNL Google Cloud] 文档。
 
 ## 文件和目录的命名限制
 

@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google PubSub;google Pubsub
-solution: Experience Platform
 title: 在UI中创建Google PubSub源连接
-type: Tutorial
 description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f56cdc2dc67f2d4820d80d8e5bdec8306d852891
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '612'
 ht-degree: 1%
 
 ---
@@ -31,8 +28,9 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `projectId` | 验证所需的项目ID [!DNL PubSub]. |
-| `credentials` | 验证所需的凭据或私钥ID [!DNL PubSub]. |
+| 项目 ID | 验证所需的项目ID [!DNL PubSub]. |
+| 凭据 | 验证所需的凭据或私钥ID [!DNL PubSub]. |
+| 主题ID | 的ID [!DNL PubSub] 表示消息馈送的资源。 如果要提供对中特定数据流的访问权限，则必须指定主题ID [!DNL Google PubSub] 来源。 |
 
 有关这些值的更多信息，请参阅以下内容 [PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication) 文档。 如果您使用基于服务帐户的身份验证，请参阅以下内容 [PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account) 以了解有关如何生成凭据的步骤。
 
@@ -44,9 +42,9 @@ ht-degree: 1%
 
 ## 连接 [!DNL PubSub] 帐户
 
-在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
 
 在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL Google PubSub]**，然后选择 **[!UICONTROL 添加数据]**.
 
@@ -62,7 +60,13 @@ ht-degree: 1%
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述以及 [!DNL PubSub] 输入窗体上的身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述以及 [!DNL PubSub] 输入窗体上的身份验证凭据。 在此步骤中，您可以通过提供主题ID来定义您的帐户有权访问的数据。 只能访问与该主题ID关联的订阅。
+
+>[!NOTE]
+>
+>在 [!DNL PubSub] 项目。 如果要添加主体（角色）以有权访问特定主题，则还必须将该主体（角色）添加到该主题的相应订阅中。 有关更多信息，请阅读 [[!DNL PubSub] 访问控制文档](https://cloud.google.com/pubsub/docs/access-control).
+
+完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
 
 ![新建](../../../../images/tutorials/create/google-pubsub/new.png)
 

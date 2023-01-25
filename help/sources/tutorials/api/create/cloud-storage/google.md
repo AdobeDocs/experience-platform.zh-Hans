@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google云存储；Google云存储；Google;Google
-solution: Experience Platform
 title: 使用流服务API创建Google云存储基础连接
-type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google云存储帐户。
 exl-id: 321d15eb-82c0-45a7-b257-1096c6db6b18
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 3636b785d82fa2e49f76825650e6159be119f8b4
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '560'
 ht-degree: 1%
 
 ---
@@ -35,6 +32,8 @@ ht-degree: 1%
 | ---------- | ----------- |
 | `accessKeyId` | 由61个字符组成的字母数字字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 |
 | `secretAccessKey` | 一个40个字符、基于64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 |
+| `bucketName` | 您的 [!DNL Google Cloud Storage] 存储段。 如果要提供对云存储中特定子文件夹的访问权限，则必须指定存储段名称。 |
+| `folderPath` | 要提供访问权限的文件夹的路径。 |
 
 有关这些值的更多信息，请参阅 [Google云存储HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) 的双曲余切值。 有关如何生成您自己的访问密钥ID和密钥的步骤，请参阅 [[!DNL Google Cloud Storage] 概述](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
@@ -48,6 +47,10 @@ ht-degree: 1%
 
 要创建基本连接ID，请向 `/connections` 提供 [!DNL Google Cloud Storage] 身份验证凭据作为请求参数的一部分。
 
+>[!TIP]
+>
+>在此步骤中，您还可以通过定义存储段名称和子文件夹的路径，指定您的帐户将有权访问的子文件夹。
+
 **API格式**
 
 ```http
@@ -60,33 +63,37 @@ POST /connections
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Google Cloud Storage connection",
-        "description": "Connector for Google Cloud Storage",
-        "auth": {
-            "specName": "Basic Authentication for google-cloud",
-            "params": {
-                "accessKeyId": "accessKeyId",
-                "secretAccessKey": "secretAccessKey"
-            }
-        },
-        "connectionSpec": {
-            "id": "32e8f412-cdf7-464c-9885-78184cb113fd",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Google Cloud Storage connection",
+      "description": "Connector for Google Cloud Storage",
+      "auth": {
+          "specName": "Basic Authentication for google-cloud",
+          "params": {
+              "accessKeyId": "accessKeyId",
+              "secretAccessKey": "secretAccessKey",
+              "bucketName": "acme-google-cloud-bucket",
+              "folderPath": "/acme/customers/sales"
+          }
+      },
+      "connectionSpec": {
+          "id": "32e8f412-cdf7-464c-9885-78184cb113fd",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
 | `auth.params.accessKeyId` | 与 [!DNL Google Cloud Storage] 帐户。 |
 | `auth.params.secretAccessKey` | 与 [!DNL Google Cloud Storage] 帐户。 |
+| `auth.params.bucketName` | 您的 [!DNL Google Cloud Storage] 存储段。 如果要提供对云存储中特定子文件夹的访问权限，则必须指定存储段名称。 |
+| `auth.params.folderPath` | 要提供访问权限的文件夹的路径。 |
 | `connectionSpec.id` | 的 [!DNL Google Cloud Storage] 连接规范ID: `32e8f412-cdf7-464c-9885-78184cb113fd` |
 
 **响应**
