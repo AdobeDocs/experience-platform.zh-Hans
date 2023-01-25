@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: a43947f87337e235eb059db6f497999bc4ede74d
+source-git-commit: 3c91e39958a9cba001ae0f0ac70f920263fa041d
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '267'
 ht-degree: 16%
 
 ---
@@ -59,6 +59,7 @@ ht-degree: 16%
    - [查询编辑器用户指南](ui/user-guide.md)
    - [查询模板](ui/query-templates.md)
    - [查询计划](ui/query-schedules.md)
+   - [查询日志](ui/query-logs.md)
    - [监视计划查询](ui/monitor-queries.md)
    - [凭据指南](ui/credentials.md)
    - [根据查询结果生成输出数据集](ui/create-datasets.md)

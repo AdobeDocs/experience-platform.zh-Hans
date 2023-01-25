@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 5a027200efc22051cca6d4c041e857b2abc7d96f
 workflow-type: tm+mt
-source-wordcount: '1095'
+source-wordcount: '1135'
 ht-degree: 2%
 
 ---
@@ -61,7 +61,9 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 | **[!UICONTROL 修改者]** | 修改查询的最后一个用户。 贵组织中有权访问 [!DNL Query Service] 可以修改查询。 |
 | **[!UICONTROL 上次修改时间]** | 浏览器时区中查询的上次修改日期和时间。 |
 
-## 日志
+请参阅 [查询模板](./query-templates.md) 有关Platform UI中模板的更多信息，请参阅文档。
+
+## 日志 {#log}
 
 的 **[!UICONTROL 日志]** 选项卡提供了以前执行的查询列表。 默认情况下，日志会以逆时代顺序列出查询。
 
@@ -69,13 +71,18 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 
 | 栏目 | 描述 |
 | --- | --- |
-| **[!UICONTROL 名称]** | 查询名称，由SQL查询的前几个字符组成。 选择名称会打开 [!DNL Query Editor]，用于编辑查询。 您可以使用搜索栏搜索查询的名称。 搜索区分大小写。 |
-| **[!UICONTROL 创建者]** | 创建查询的人员的姓名。 |
-| **[!UICONTROL 客户端]** | 用于查询的客户端。 |
-| **[!UICONTROL 数据集]** | 查询使用的输入数据集。 选择要转到输入数据集详细信息屏幕的数据集。 |
+| **[!UICONTROL 名称]** | 查询名称，由SQL查询的前几个字符组成。 选择模板名称以打开 [!UICONTROL 查询日志详细信息] 查看。 您可以使用搜索栏搜索查询的名称。 搜索区分大小写。 |
+| **[!UICONTROL 开始时间]** | 执行查询的时间。 |
+| **[!UICONTROL 结束时间]** | 查询运行完成的时间。 |
 | **[!UICONTROL 状态]** | 查询的当前状态。 |
-| **[!UICONTROL 上次运行]** | 上次运行查询时。 您可以通过选择此列上的箭头，对列表进行升序或降序排序。 |
-| **[!UICONTROL 运行时间]** | 运行查询所花费的时间。 |
+| **[!UICONTROL 数据集]** | 查询使用的输入数据集。 选择要转到输入数据集详细信息屏幕的数据集。 |
+| **[!UICONTROL 客户端]** | 用于查询的客户端。 |
+| **[!UICONTROL 创建者]** | 创建查询的人员的姓名。 |
+
+>!![Note]
+选择铅笔图标(![铅笔图标。](../images/ui/overview/edit-icon.png))以导航到 [!DNL Query Editor]. 已预填充查询，以便进行便捷的编辑。
+
+请参阅 [查询日志文档](./query-logs.md) 有关查询事件自动生成的日志文件的详细信息。
 
 ## 凭据
 
