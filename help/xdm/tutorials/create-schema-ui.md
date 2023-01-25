@@ -5,9 +5,9 @@ title: 使用模式编辑器创建模式
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: 9f39130c8d470b236764993f7ebca9c1cdc748bb
 workflow-type: tm+mt
-source-wordcount: '3924'
+source-wordcount: '3947'
 ht-degree: 0%
 
 ---
@@ -212,7 +212,7 @@ An &quot;[!UICONTROL 无标题字段]“占位符”将显示在画布中，并�
 | --- | --- |
 | [!UICONTROL 必需] | 表示数据摄取需要字段。 摄取时，任何上传到基于此架构且不包含此字段的数据集的数据都将失败。 |
 | [!UICONTROL 数组] | 指示字段包含一个值数组，每个值都指定数据类型。 例如，在数据类型为“[!UICONTROL 字符串]&quot;指定字段将包含字符串数组。 |
-| [!UICONTROL 枚举和建议值] | 枚举表示此字段必须包含枚举列表中可能值之一的值。 或者，您也可以使用此选项来仅提供字符串字段的建议值列表，而不将字段限制为这些值。 |
+| [!UICONTROL 枚举和建议值] | 枚举表示此字段必须包含枚举列表中可能值之一的值。 或者，您也可以使用此选项来仅提供字符串字段的建议值列表，而不将字段限制为这些值。 请参阅 [定义枚举和建议值](../ui/fields/enum.md) 以详细了解如何在UI中管理这些类型的字段。 |
 | [!UICONTROL 标识] | 表示此字段是标识字段。 提供了有关身份字段的更多信息 [本教程的后面部分](#identity-field). |
 | [!UICONTROL 关系] | 而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 的 [!UICONTROL 关系] 约束表示此字段引用基于不同类的架构的主标识，这表示两个架构之间的关系。 请参阅 [定义关系](./relationship-ui.md) 以了解更多信息。 |
 

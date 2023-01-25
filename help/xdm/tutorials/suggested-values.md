@@ -2,10 +2,10 @@
 title: 在API中管理建议的值
 description: 了解如何向架构注册API的字符串字段添加建议的值。
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: 2f916ea4b05ca67c2b9e603512d732a2a3f7a3b2
+source-git-commit: b1ef2de1e6f9c6168a5ee2a62b55812123783a3a
 workflow-type: tm+mt
-source-wordcount: '658'
-ht-degree: 0%
+source-wordcount: '942'
+ht-degree: 1%
 
 ---
 
@@ -69,11 +69,11 @@ ht-degree: 0%
 
 由于字符串没有 `enum` 数组定义约束，其 `meta:enum` 可以扩展属性以包含新值。
 
-<!-- ## Manage suggested values for standard fields
+## 管理标准字段的建议值
 
-For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). -->
+对于现有标准字段，您可以 [添加建议值](#add-suggested-standard) 或 [禁用建议值](#disable-suggested-standard).
 
-## 向标准字段添加建议的值 {#add-suggested-standard}
+### 向标准字段添加建议的值 {#add-suggested-standard}
 
 扩展 `meta:enum` 标准字符串字段的 [友好名称描述符](../api/descriptors.md#friendly-name) ，用于特定模式中的相关字段。
 
@@ -151,19 +151,25 @@ curl -X POST \
 >}
 >```
 
-<!-- ### Remove suggested values {#remove-suggested-standard}
+### 禁用标准字段的建议值 {#disable-suggested-standard}
 
-If a standard string field has predefined suggested values, you can remove any values that you do not wish to see in segmentation. This is done through by creating a [friendly name descriptor](../api/descriptors.md#friendly-name) for the schema that includes an `xdm:excludeMetaEnum` property.
+如果标准字符串字段在 `meta:enum`，则可以禁用您不希望在分段中看到的任何值。 这是通过创建 [友好名称描述符](../api/descriptors.md#friendly-name) 对于包含 `xdm:excludeMetaEnum` 属性。
 
-**API format**
+>[!IMPORTANT]
+>
+>您只能对没有相应枚举约束的标准字段禁用建议的值。 换言之，如果字段具有 `enum` 数组，然后 `meta:excludeMetaEnum` 不会有任何效果。
+>
+>请参阅 [枚举和建议值演化规则](../ui/fields/enum.md#evolution) 以了解有关编辑现有字段的限制的详细信息。
+
+**API格式**
 
 ```http
 POST /tenant/descriptors
 ```
 
-**Request**
+**请求**
 
-The following request removes the suggested values "[!DNL Web Form Filled Out]" and "[!DNL Media ping]" for `eventType` in a schema based on the [XDM ExperienceEvent class](../classes/experienceevent.md).
+以下请求会禁用建议的值“[!DNL Web Form Filled Out]&quot;和&quot;[!DNL Media ping]&quot; `eventType` 基于 [XDM ExperienceEvent类](../classes/experienceevent.md).
 
 ```shell
 curl -X POST \
@@ -185,19 +191,19 @@ curl -X POST \
       }'
 ```
 
-| Property | Description |
+| 属性 | 描述 |
 | --- | --- |
-| `@type` | The type of descriptor being defined. For a friendly name descriptor, this value must be set to `xdm:alternateDisplayInfo`. |
-| `xdm:sourceSchema` | The `$id` URI of the schema where the descriptor is being defined. |
-| `xdm:sourceVersion` | The major version of the source schema. |
-| `xdm:sourceProperty` | The path to the specific property whose suggested values you want to manage. The path should begin with a slash (`/`) and not end with one. Do not include `properties` in the path (for example, use `/personalEmail/address` instead of `/properties/personalEmail/properties/address`). |
-| `meta:excludeMetaEnum` | An object that describes the suggested values that should be excluded for the field in segmentation. The key and value for each entry must match those included in the original `meta:enum` of the field in order for the entry to be excluded.  |
+| `@type` | 定义的描述符类型。 对于友好名称描述符，必须将此值设置为 `xdm:alternateDisplayInfo`. |
+| `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
+| `xdm:sourceVersion` | 源架构的主要版本。 |
+| `xdm:sourceProperty` | 要管理其建议值的特定属性的路径。 路径应以斜杠(`/`)，而不是以一结束。 不包括 `properties` 在路径中(例如，使用 `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
+| `meta:excludeMetaEnum` | 一个对象，用于描述分段中应排除的字段建议值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。 |
 
-{style="table-layout:auto"}
+{style=&quot;table-layout:auto&quot;}
 
-**Response**
+**响应**
 
-A successful response returns HTTP status 201 (Created) and the details of the newly created descriptor. The suggested values included under `xdm:excludeMetaEnum` will now be hidden from the Segmentation UI.
+成功的响应会返回HTTP状态201（已创建）以及新创建描述符的详细信息。 建议的值包括 `xdm:excludeMetaEnum` 现在将在分段UI中隐藏。
 
 ```json
 {
@@ -211,7 +217,7 @@ A successful response returns HTTP status 201 (Created) and the details of the n
   "meta:containerId": "tenant",
   "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
 }
-``` -->
+```
 
 ## 管理自定义字段的建议值 {#suggested-custom}
 

@@ -2,9 +2,9 @@
 title: 在架构注册API中定义XDM字段
 description: 了解在架构注册API中创建自定义体验数据模型(XDM)资源时如何定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 6277725cd69bc94325d3584177742df1a7fd4f95
+source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
 workflow-type: tm+mt
-source-wordcount: '1199'
+source-wordcount: '1202'
 ht-degree: 0%
 
 ---
@@ -101,7 +101,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->的 `meta:enum` 值 **not** 声明枚举或自行驱动任何数据验证。 在大多数情况下， `meta:enum` 此外， `enum` 以确保数据受到约束。 但是，在某些用例中， `meta:enum` 没有相应的 `enum` 数组。 请参阅 [定义建议值](../tutorials/suggested-values.md) 以了解更多信息。
+>的 `meta:enum` 值 **not** 声明枚举或自行驱动任何数据验证。 在大多数情况下， `meta:enum` 此外， `enum` 以确保数据受到约束。 但是，在某些用例中， `meta:enum` 没有相应的 `enum` 数组。 请参阅 [在API中定义建议的值](../tutorials/suggested-values.md) 以了解更多信息。
 
 您可以选择提供 `default` 用于指示默认值的属性 `enum` 值（如果未提供值）。
 
