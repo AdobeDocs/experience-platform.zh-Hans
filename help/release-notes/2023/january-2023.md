@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 68e5baac9012a33d179f8ebff23deda7a8efd26b
+source-git-commit: 5657473ad10880b907a5b010fa99e08a5e45e174
 workflow-type: tm+mt
-source-wordcount: '1371'
-ht-degree: 6%
+source-wordcount: '1994'
+ht-degree: 4%
 
 ---
 
@@ -16,6 +16,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [Assurance](#assurance)
 - [数据收集](#data-collection)
+- [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
@@ -47,6 +48,53 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 将数据发送到 [!DNL Google Ads] 使用事件转发 | 您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API扩展](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) 对于事件转发，与 [Google Oauth 2密钥](../../tags/ui/event-forwarding/secrets.md#google-oauth2)，以安全地将服务器端数据发送到 [!DNL Google Ads] 实时。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [（测试版）Adobe Experience Cloud Audiences连接](../../destinations/catalog/adobe/experience-cloud-audiences.md) | 使用 [!UICONTROL （测试版）Adobe Experience Cloud受众] 可将区段从Experience Platform共享到各种Experience Platform解决方案，如Audience Manager、Analytics、Advertising Cloud、Adobe Campaign、Target或Marketo。 |
+| [Pega配置文件连接](../../destinations/catalog/personalization/pega-profile.md) | 使用 [!DNL Pega Profile Connector] 在Adobe Experience Platform中创建与 [!DNL Amazon] S3存储，用于将配置文件数据定期从Adobe Experience Platform导出到CSV文件，并将其导出到您自己的S3存储段中。 在 [!DNL Pega Customer Decision Hub]，则可以计划数据作业以从S3存储导入此配置文件数据，以更新 [!DNL Pega Customer Decision Hub] 配置文件。 |
+| [（测试版）交易台CRM EU连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 随着EUID（欧洲统一ID）的发布，您现在会看到两个 [!DNL The Trade Desk - CRM] 目标 [目标目录](/help/destinations/catalog/overview.md). <ul><li> 如果您在欧盟地区收集数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。</li><li> 如果您在APAC或NAMER地区收集数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。 </li></ul> |
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号） `:`，管道 `|`，分号 `;`)现已可用于新的测试版云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> 了解支持的 [文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md) （对于基于文件的目标）。 |
+| 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，可使用此字段。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
+
+**修复和增强功能** {#fixes-and-enhancements}
+
+<!--
+
+| Fix or enhancement | Description |
+| ----------- | ----------- |
+| UI and API validation for required mappings and duplicate mappings (PLAT-123316) | Validation is now enforced as follows in the UI and API when [mapping fields](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) in the activate destinations workflow:<ul><li>**Required mappings**: If the destination has been set up by the destination developer with required mappings (for example, the [Google Ad Manager 360](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#activate) destination), then these required mappings need to be added by the user when activating data to the destination. </li><li>**Duplicate mappings**: expand on allowed and forbidden source-to-target mappings.</li></ul> |
+| Updated profile export behavior to cloud storage destinations (PLAT-123316) | We fixed an issue in the behavior of [mandatory attributes](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) when exporting data files to batch destinations. <br> Previously, every record in the output files was verified to contain both: <ol><li>A non-null value of the `mandatoryField` column and</li><li>also contain a non-null value on at least one of the other non-mandatory fields.</li></ol> The second condition has been removed. As a result, you might be seeing more output rows in your exported data files. |
+
+-->
+
+<table>
+    <tr>
+        <td><b>修复或增强功能</b></td>
+        <td><b>描述</b></td>
+    </tr>
+    <tr>
+        <td>所需映射和重复映射的UI和API验证(PLAT-123316)</td>
+        <td>现在，在UI和API中，如下所示，在 <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">映射字段</a> 在激活目标工作流中：<ul><li><b>必需映射</b>:如果目标开发人员已设置目标，且该目标已设置为所需的映射(例如， <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> 目标)，则用户在将数据激活到目标时需要添加这些所需映射。 </li><li><b>重复映射</b>:在激活工作流的映射步骤中，您可以在源字段中添加重复值，但不能在目标字段中添加重复值。 有关允许和禁止的映射组合的示例，请参阅下表。 <br><table><thead><tr><th>允许/禁止</th><th>源字段</th><th>目标字段</th></tr></thead><tbody><tr><td>允许</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>电子邮件别名2</li></ul></td></tr><tr><td>禁止</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
+    </tr>
+    <tr>
+        <td>更新了对基于文件的目标的导出行为(PLAT-123316)</td>
+        <td>我们修复了 <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mandatory-attributes">必需属性</a> 将数据文件导出到批处理目标时。 <br> 以前，输出文件中的每条记录都经过验证，可同时包含以下两项： <ol><li>的非空值 <code>mandatoryField</code> 列和</li><li>其他至少一个非必填字段上的非空值。</li></ol> 第二个条件已被删除。 因此，您可能会在导出的数据文件中看到更多输出行，如以下示例所示：<br> <b> 2023年1月版之前的示例行为 </b> <br> 必填字段： <code>emailAddress</code> <br> <b>要激活的输入数据</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br> <b>激活输出</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr></tbody></table> <br> <b> 2023年1月版发布后的示例行为 </b> <br> <b>激活输出</b> <br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
+    </tr>
+</table>
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
