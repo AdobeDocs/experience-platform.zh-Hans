@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: d41606e4df297d11b4e0e755363d362e075e862c
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 ## 快速入门
 
-建议您对以下方面有一定的了解 [!DNL Experience Platform] 服务：
+本指南需要对以下内容有一定的了解 [!DNL Platform] 组件：
 
 * [[!DNL Privacy Service]](../privacy-service/home.md):管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
 * [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化所带来的根本难题。
@@ -48,7 +48,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 >
 >Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 请参阅 [合并策略限制](#merge-policy-limitations) 以了解更多信息。
 >
->另外，请务必注意，无法保证完成隐私请求所花费的时间。 如果 [!DNL Profile] 当请求仍在处理时，也无法保证是否处理了这些记录。
+>请注意，完成隐私请求所花费的时间 **无法** 保证。 如果 [!DNL Profile] 当请求仍在处理时，也无法保证是否处理了这些记录。
 
 ### 使用 API
 
@@ -65,6 +65,8 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 >请参阅 [配置文件请求和身份请求](#profile-v-identity) 本文档的后面部分提供了有关使用 `ProfileService` 和 `identity` 在 `include` 数组。
 
 以下请求会在 [!DNL Profile] 存储。 在 `userIDs` 数组；使用标准 `Email` 标识命名空间，而另一个使用自定义 `Customer_ID` 命名空间。 它还包括 [!DNL Profile] (`ProfileService`) `include` 数组：
+
+**请求**
 
 ```shell
 curl -X POST \
@@ -108,6 +110,56 @@ curl -X POST \
 >[!IMPORTANT]
 >
 >平台处理所有 [沙箱](../sandboxes/home.md) 属于您的组织。 因此， `x-sandbox-name` 系统将忽略请求中包含的标头。
+
+**产品响应**
+
+对于配置文件服务，一旦完成隐私作业，将以JSON格式返回响应，其中包含有关所请求用户ID的信息。
+
+```json
+{
+    "privacyResponse": {
+        "jobId": "7467850f-9698-11ed-8635-355435552164",
+        "response": [
+            {
+                "sandbox": "prod",
+                "mergePolicyId": "none",
+                "result": {
+                    "person": {
+                        "gender": "female"           
+                    },
+                    "personalEmail": {
+                        "address": "ajones@acme.com",
+                    },
+                    "identityMap": {
+                        "crmid": [
+                            {
+                                "id": "5b7db37a-bc7a-46a2-a63e-2cfe7e1cc068"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "sandbox": "prod",
+                "mergePolicyId": "none",
+                "result": {
+                    "person": {
+                        "gender": "male"
+                    },
+                    "id": 12345678,
+                    "identityMap": {
+                        "crmid": [
+                            {
+                                "id": "e9d439f2-f5e4-4790-ad67-b13dbd89d52e"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+```
 
 ### 使用UI
 
@@ -161,6 +213,6 @@ Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并�
 >
 ## 后续步骤
 
-阅读本文档后，您便了解了 [!DNL Experience Platform]. 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
+阅读本文档后，您便了解了 [!DNL Experience Platform]. 要加深您对如何管理身份数据和创建隐私作业的了解，请继续阅读本指南中提供的文档。
 
 有关处理的隐私请求的信息 [!DNL Platform] 未使用的资源 [!DNL Profile]，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md).
