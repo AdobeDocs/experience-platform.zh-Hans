@@ -3,18 +3,25 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 842aaa7104b277cf415d1ed9ee2744a200c07ce8
+source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 1%
 
 ---
 
-# [!DNL Destinations]概述 {#overview}
+# [!DNL Destinations] 概述 {#overview}
 
 ![目标概述横幅](./assets/overview/destinations-overview-banner.png)
 
 **[!DNL Destinations]** 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+<div id="recs-overview-body-1"></div>
+<div id="recs-overview-body-2"></div>
+<div id="recs-overview-body-3"></div>
+<div id="recs-overview-body-4"></div>
+<div id="recs-overview-body-5"></div>
+<div id="recs-overview-body-6"></div>
 
 ## 目标和来源 {#destinations-and-sources}
 
