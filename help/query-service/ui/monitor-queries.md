@@ -2,10 +2,10 @@
 title: 监视计划查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 7b5a22d849f0f46a9ff14843c594b743bbd01c9d
+source-git-commit: 95d3604a9589a4d0db7e426dd000ddec9cd4f2ce
 workflow-type: tm+mt
-source-wordcount: '1044'
-ht-degree: 1%
+source-wordcount: '1230'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +15,7 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 ## [!UICONTROL 计划查询]
 
-的 [!UICONTROL 计划查询] 选项卡提供了已执行查询和计划查询的概述。 工作区包含计划运行或至少执行一次的所有CTAS和ITAS查询。 可以找到所有计划查询的运行详细信息以及失败查询的错误代码和消息。
+的 [!UICONTROL 计划查询] 选项卡提供了所有计划CTAS和ITAS查询的概述。 可以找到所有计划查询的运行详细信息，以及任何失败查询的错误代码和消息。
 
 导航到 [!UICONTROL 计划查询] 选项卡，选择 **[!UICONTROL 查询]** 从左侧导航栏中，然后是 **[!UICONTROL 计划查询]**
 
@@ -29,14 +29,14 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 | 栏目 | 描述 |
 |---|---|
-| 名称 | 名称字段是模板名称或SQL查询的前几个字符。 任何通过具有查询编辑器的UI创建的查询，在开始时即会命名。 如果查询是通过API创建的，则查询的名称是用于创建查询的初始SQL的一个代码片段。 |
-| 模板 | 查询的模板名称。 选择模板名称以导航到查询编辑器。 为方便起见，查询模板会显示在查询编辑器中。 如果没有模板名称，则该行将标有连字符，并且无法重定向到查询编辑器以查看查询。 |
-| SQL | SQL查询的代码段。 |
-| 运行频率 | 这是设置查询运行的频率。 可用值包括 `Run once` 和 `Scheduled`. 可以根据查询的运行频率对查询进行筛选。 |
-| 创建者 | 创建查询的用户的名称。 |
-| 已创建 | 以UTC格式创建查询时的时间戳。 |
-| 上次运行时间戳 | 运行查询时的最近时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
-| 上次运行状态 | 最近一次查询执行的状态。 三个状态值是： `successful` `failed` 或 `in progress`. |
+| **[!UICONTROL 名称]** | 名称字段是模板名称或SQL查询的前几个字符。 任何通过具有查询编辑器的UI创建的查询，在开始时即会命名。 如果查询是通过API创建的，则其名称将变为用于创建查询的初始SQL的代码段。 从 [!UICONTROL 名称] 列，查看与查询关联的所有运行的列表。 有关详细信息，请参阅 [查询运行计划详细信息](#query-runs) 中。 |
+| **[!UICONTROL 模板]** | 查询的模板名称。 选择模板名称以导航到查询编辑器。 为方便起见，查询模板会显示在查询编辑器中。 如果没有模板名称，则该行将标有连字符，并且无法重定向到查询编辑器以查看查询。 |
+| **[!UICONTROL SQL]** | SQL查询的代码段。 |
+| **[!UICONTROL 运行频率]** | 这是设置查询运行的频率。 可用值包括 `Run once` 和 `Scheduled`. 可以根据查询的运行频率对查询进行筛选。 |
+| **[!UICONTROL 创建者]** | 创建查询的用户的名称。 |
+| **[!UICONTROL 已创建]** | 以UTC格式创建查询时的时间戳。 |
+| **[!UICONTROL 上次运行时间戳]** | 运行查询时的最近时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
+| **[!UICONTROL 上次运行状态]** | 最近一次查询执行的状态。 状态值为： `Success`, `Failed`, `In progress`和 `No runs`. |
 
 >[!TIP]
 >
@@ -64,7 +64,7 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 请参阅 [警报订阅API文档](../api/alert-subscriptions.md) 以了解更多信息。
 
-### 筛选查询
+### 筛选查询 {#filter}
 
 您可以根据运行频率过滤查询。 从 [!UICONTROL 计划查询] ，选择过滤器图标(![过滤器图标](../images/ui/monitor-queries/filter-icon.png))以打开过滤器侧栏。
 
@@ -80,7 +80,7 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 启用过滤器标准后，选择 **[!UICONTROL 隐藏过滤器]** 来关闭过滤器面板。
 
-## 查询运行计划详细信息
+## 查询运行计划详细信息 {#query-runs}
 
 选择查询名称以导航到计划详细信息页面。 此视图提供作为计划查询的一部分执行的所有运行的列表。 提供的信息包括使用的开始和结束时间、状态和数据集。
 
@@ -90,23 +90,23 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 | 列名称 | 描述 |
 |---|---|
-| 查询运行ID | 每天执行的查询运行ID。 |
-| 查询运行开始 | 执行查询时的时间戳。 采用UTC格式。 |
-| 查询运行结束 | 查询完成时的时间戳。 采用UTC格式。 |
-| 状态 | 最近一次查询执行的状态。 三个状态值是： `successful` `failed` 或 `in progress`. |
-| 数据集 | 执行中涉及的数据集。 |
+| **[!UICONTROL 查询运行ID]** | 每天执行的查询运行ID。 选择 **[!UICONTROL 查询运行ID]** 导航到 [!UICONTROL 查询运行概述]. |
+| **[!UICONTROL 查询运行开始]** | 执行查询时的时间戳。 采用UTC格式。 |
+| **[!UICONTROL 查询运行结束]** | 查询完成时的时间戳。 采用UTC格式。 |
+| **[!UICONTROL 状态]** | 最近一次查询执行的状态。 三个状态值是： `successful` `failed` 或 `in progress`. |
+| **[!UICONTROL 数据集]** | 执行中涉及的数据集。 |
 
 计划查询的详细信息可在 [!UICONTROL 属性] 的上界。 此面板包括初始查询ID、客户端类型、模板名称、查询SQL和计划的终止时间。
 
 ![“计划详细信息”页面中，“属性”面板突出显示。](../images/ui/monitor-queries/properties-panel.png)
 
-### 运行详细信息
-
 选择查询运行ID以导航到运行详细信息页面并查看查询信息。
 
 ![运行ID突出显示的计划详细信息屏幕。](../images/ui/monitor-queries/navigate-to-run-details.png)
 
-此视图提供有关此计划查询的单个运行的信息，以及运行状态的更详细划分。 此页面还包含客户端信息以及导致查询失败的任何错误的详细信息。
+## 查询运行概述 {#query-run-overview}
+
+的 [!UICONTROL 查询运行概述] 提供有关此计划查询的单个运行的信息，以及运行状态的更详细划分。 此页面还包含客户端信息以及可能导致查询失败的任何错误的详细信息。
 
 ![“运行详细信息”屏幕中突出显示了“概述”部分。](../images/ui/monitor-queries/query-run-details.png)
 
@@ -117,6 +117,24 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 可以从此视图将查询SQL复制到剪贴板。 选择SQL代码段右上角的复制图标以复制查询。 弹出消息确认代码已复制。
 
 ![运行详细信息屏幕中突出显示了SQL复制图标。](../images/ui/monitor-queries/copy-sql.png)
+
+### （有限版本）针对具有匿名块的查询运行详细信息 {#anonymous-block-queries}
+
+>[!IMPORTANT]
+>
+>查询监控功能显示匿名块查询的运行详细信息，当前处于有限版本中，并非所有客户都能使用。
+
+使用匿名块组成其SQL语句的查询被分隔成各自的查询。 这允许您单独检查每个查询块的运行详细信息。
+
+匿名块通过使用 `$$` 前缀。 请参阅 [匿名块文档](../essential-concepts/anonymous-block.md) 以详细了解查询服务中的匿名块。
+
+匿名块查询在运行状态左侧具有选项卡。 选择一个选项卡以显示运行详细信息。
+
+![“查询”运行概述显示一个匿名块查询。 多个查询选项卡会突出显示。](../images/ui/monitor-queries/anonymous-block-overview.png)
+
+如果匿名块查询失败，您可以通过此UI找到该特定块的错误代码。
+
+![“查询”运行概述显示匿名块查询，其中突出显示单个块的错误代码。](../images/ui/monitor-queries/anonymous-block-failed-query.png)
 
 选择 **[!UICONTROL 查询]** 返回到计划详细信息屏幕，或 **[!UICONTROL 计划查询]** 返回 [!UICONTROL 计划查询] 选项卡。
 

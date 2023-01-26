@@ -1,14 +1,18 @@
 ---
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，并且查询日志可通过UI用于帮助进行故障诊断。 本文档概述了如何使用和导航UI的查询服务日志部分。
-source-git-commit: 22deca5f9bcf6bcf97cca01b97fce9d22800b767
+source-git-commit: 95d3604a9589a4d0db7e426dd000ddec9cd4f2ce
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '585'
 ht-degree: 0%
 
 ---
 
 # 查询日志
+
+>[!IMPORTANT]
+>
+>某些查询日志功能当前处于有限版本中，并非所有客户都可用。 如果没有编辑图标，您的UI显示方式可能会略有不同。 此外，选择查询名称的过程可能会导航到查询编辑器，而不是 [!UICONTROL 查询日志详细信息] 中。
 
 Adobe Experience Platform会维护一个日志，其中包含通过API和UI发生的所有查询事件。 此信息可在查询服务UI中(从 [!UICONTROL 日志] 选项卡。
 
@@ -39,6 +43,10 @@ A [每个日志表列的描述](./overview.md#log) 可在查询服务概述的�
 在“日志详细信息”面板中，您可以选择新的输出数据集，并查看或复制运行中使用的完整SQL查询。
 
 ![选中一行的“查询日志”工作区，并突出显示输出数据集和SQL查询。](../images/ui/query-log/edit-output-dataset.png)
+
+>[!IMPORTANT]
+>
+>某些查询日志功能当前处于有限版本中，并非所有客户都可用。
 
 您还可以从 [!UICONTROL 名称] 列直接导航到 [!UICONTROL 查询日志详细信息] 中。
 
