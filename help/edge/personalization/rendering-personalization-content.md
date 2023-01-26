@@ -3,20 +3,20 @@ title: 使用Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions;sendEvent;decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 0d8e19d8428191cc0c6c56e629e8c5528a96115c
+source-git-commit: c75a8bdeaba67259b5f4b4ce025d5e128d763040
 workflow-type: tm+mt
-source-wordcount: '924'
-ht-degree: 1%
+source-wordcount: '962'
+ht-degree: 2%
 
 ---
 
 # 呈现个性化内容
 
-Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans).
+Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans).
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同一页面和下一页面个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/configure-personalization-destinations.md).
 
-在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 可由SDK自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 您而是必须使用SDK请求此内容，然后自行手动渲染该内容。
+在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 和Adobe Journey Optimizer [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) 可由SDK自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 您而是必须使用SDK请求此内容，然后自行手动渲染该内容。
 
 ## 自动渲染内容
 
@@ -107,7 +107,7 @@ alloy("sendEvent", {
 
 如果您改为 `renderDecisions` 选项 `true` 在发送事件时，SDK会尝试渲染任何符合自动渲染条件的主张（如之前所述）。 因此，每个提案对象都将拥有 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
 
-迄今为止，我们仅讨论了符合自动渲染条件的个性化内容(即在Adobe Target的可视化体验编辑器中创建的任何内容)。 检索任何个性化内容 _not_ 符合自动渲染的条件，您需要通过在 `decisionScopes` 选项。 范围是一个字符串，用于标识要从服务器检索的特定主张。
+迄今为止，我们仅讨论了符合自动渲染条件的个性化内容(即在Adobe Target的可视化体验编辑器或Adobe Journey Optimizer的Web Campaign UI中创建的任何内容)。 检索任何个性化内容 _not_ 符合自动渲染的条件，您需要通过在 `decisionScopes` 选项。 范围是一个字符串，用于标识要从服务器检索的特定主张。
 
 示例如下：
 
@@ -303,7 +303,7 @@ SDK为 [管理闪烁](../personalization/manage-flicker.md) 在个性化过程�
 
 >[!IMPORTANT]
 >
->如果 `__view__` 页面加载时的范围， `renderAttempted` 标记将设置为 `true`. 的 `applyPropositions` 命令将不会重新呈现 `__view__` 具有 `renderAttempted: true` 标记。
+>如果 `__view__` 范围（或Web曲面）在页面加载时呈现，其 `renderAttempted` 标记将设置为 `true`. 的 `applyPropositions` 命令将不会重新呈现 `__view__` 范围（或Web Surface）命题 `renderAttempted: true` 标记。
 
 ### 用例1:重新呈现单页应用程序视图主张
 
