@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fbdd3a3270e8aad95cb12281bcd4623a88b13f47
+source-git-commit: 08ad27303b88826fd7e0fcc0a8b3d498de58c260
 workflow-type: tm+mt
-source-wordcount: '1994'
+source-wordcount: '1847'
 ht-degree: 5%
 
 ---
@@ -75,10 +75,6 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
     <tr>
         <td><b>修复或增强功能</b></td>
         <td><b>描述</b></td>
-    </tr>
-    <tr>
-        <td>所需映射和重复映射的UI和API验证(PLAT-123316)</td>
-        <td>现在，在UI和API中，如下所示，在 <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">映射字段</a> 在激活目标工作流中：<ul><li><b>必需映射</b>:如果目标开发人员已设置目标，且该目标已设置为所需的映射(例如， <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> 目标)，则用户在将数据激活到目标时需要添加这些所需映射。 </li><li><b>重复映射</b>:在激活工作流的映射步骤中，您可以在源字段中添加重复值，但不能在目标字段中添加重复值。 有关允许和禁止的映射组合的示例，请参阅下表。 <br><table><thead><tr><th>允许/禁止</th><th>源字段</th><th>目标字段</th></tr></thead><tbody><tr><td>允许</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>电子邮件别名2</li></ul></td></tr><tr><td>禁止</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
     </tr>
     <tr>
         <td>更新了对基于文件的目标的导出行为(PLAT-123316)</td>
