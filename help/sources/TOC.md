@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 79773c35cf70bc967b29a8bcca729106bd7dd4f0
+source-git-commit: 2d9cd6ed1db7bcbbe9b35c154e09a6b03f9a132d
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '875'
 ht-degree: 11%
 
 ---
@@ -206,6 +206,7 @@ ht-degree: 11%
    - [重试失败的数据流运行](tutorials/api/retry-flows.md)
    - [删除帐户](tutorials/api/delete.md)
    - [删除数据流](tutorials/api/delete-dataflows.md)
+   - [摄取加密数据](tutorials/api/encrypt-data.md)
 - UI教程 {#ui-tutorials}
    - 创建源连接 {#create}
       - Adobe应用程序 {#adobe-applications}
