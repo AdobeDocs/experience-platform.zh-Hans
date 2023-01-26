@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Analytics源连接器；分析；Analytics;AAID;
 title: Adobe Analytics报表包数据的源连接器
 description: 本文档概述了Analytics，并介绍了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 486f5bdd834808c6262f41c0b0187721fc9b0799
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1040'
 ht-degree: 7%
 
 ---
@@ -20,7 +19,7 @@ Adobe Experience Platform允许您通过Analytics源连接器摄取Adobe Analyti
 
 [!DNL Analytics] 是一个功能强大的引擎，可帮助您进一步了解客户、客户如何与您的Web资产进行交互、了解您的数字营销支出在何处是有效的，以及确定需要改进的方面。 [!DNL Analytics] 每年处理数万亿次Web交易， [!DNL Analytics] 源连接器允许您轻松地利用此丰富的行为数据并丰富 [!DNL Real-Time Customer Profile] 几分钟后。
 
-![](./images/analytics-data-experience-platform.png)
+![一个图形，用于说明来自不同Adobe应用程序(包括Adobe Analytics)的数据历程。](./images/analytics-data-experience-platform.png)
 
 在高层， [!DNL Analytics] 收集来自世界各地各种数字渠道和多个数据中心的数据。 收集数据后，将应用访客识别、分段和转换架构(VISTA)规则和处理规则来形成传入数据。 在原始数据经过这种轻量级的处理后，会认为它已准备好供使用 [!DNL Real-Time Customer Profile]. 在与上述过程平行的过程中，相同的处理数据被微批处理并摄取到Platform数据集中，以供 [!DNL Data Science Workspace], [!DNL Query Service]，以及其他数据发现应用程序。
 
@@ -35,6 +34,10 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 要进一步了解XDM，请参阅 [XDM系统概述](../../../xdm/home.md).
 
 ## 如何将字段从Adobe Analytics映射到XDM?
+
+>[!IMPORTANT]
+>
+>数据准备转换可能会为整个数据流添加延迟。 添加的额外延迟因转换逻辑的复杂性而异。
 
 建立源连接以将 [!DNL Analytics] 数据通过Platform用户界面Experience Platform，数据字段会自动映射和引入到 [!DNL Real-Time Customer Profile] 几分钟内。 有关创建源连接的说明 [!DNL Analytics] 使用平台UI，查看 [Analytics源连接器教程](../../tutorials/ui/create/adobe-applications/analytics.md).
 
@@ -79,8 +82,8 @@ Analytics回填默认为13个月。 上表所列的100亿件事件的限制严�
 
 这些字段未标记为标识。相同的身份将会复制到XDM的 `identityMap` 作为键值对：
 
-* `{ “key”: “AAID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
-* `{ “key”: “ECID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
-* `{ “key”: “AACUSTOMID”, “value”: [ { “id”: “<identity>”, “primary”: false } ] }`
+* `{ "key": "AAID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
+* `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
+* `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
 
 在身份映射中，如果ECID存在，则会将其标记为事件的主标识。 在这种情况下，AAID可能基于ECID，因为 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，会将 AAID 标记为事件的主标识。绝不会将 AACUSTOMID 标记为事件的主 ID。但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID基于AACUSTOMID。
