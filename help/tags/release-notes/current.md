@@ -2,14 +2,23 @@
 title: 标记和事件转发发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 892d22a88546ff270af4f5b253a013015349898b
+source-git-commit: 18599d223733cb151c7517abb77b1745d2e634b7
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '497'
 ht-degree: 5%
 
 ---
 
 # 标记和事件转发的发行说明
+
+## 2022 年 1 月 25 日
+
+* **新主屏幕**:数据收集UI主页已更新，其中包含有用的入门信息和链接，可简化工作效率。 这包括：
+   1. 文档和建议的工作流以开始使用
+   1. 近期属性、规则和数据元素
+   1. 常用扩展
+   1. 新扩展通过快速安装功能进行了更新
+* **将数据发送到 [!DNL Google Ads] 使用事件转发**:您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API扩展](../extensions/server/google-ads-enhanced-conversions/overview.md) 对于事件转发，与 [Google Oauth 2密钥](../ui/event-forwarding/secrets.md#google-oauth2)，以安全地将服务器端数据发送到 [!DNL Google Ads] 实时。
 
 ## 2022 年 11 月 23 日
 
