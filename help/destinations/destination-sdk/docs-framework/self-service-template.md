@@ -2,9 +2,9 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 46e8f6cf3e135b31dc508274598f9d76df857c8f
+source-git-commit: 49b3553c3e408d2dfbca491b1df71be1d4aefaae
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1534'
 ht-degree: 1%
 
 ---
@@ -83,6 +83,7 @@ ht-degree: 1%
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *YourDestination* 目标。 |
 | 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出类型 | **[!UICONTROL 数据集导出]** | 您正在导出未按受众兴趣或资格进行分组或构建的原始数据集。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 | 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
 
@@ -130,11 +131,13 @@ ht-degree: 1%
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-*根据需要删除 — 如果您正在记录新的流目标，请保留下面的第一段。 如果您正在记录新的基于文件的目标，请保留第二段。*
+*根据需要删除 — 如果您正在记录新的流目标，请保留下面的第一段。 如果您正在记录新的基于文件的目标，请保留第二段。 如果您正在记录用于导出数据集的目标，请保留第三个段落。*
 
 读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
 读取 [激活受众数据以批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+
+读取 [（测试版）导出数据集](/help/destinations/ui/export-datasets.md) 有关将数据集导出到此目标的详细说明。
 
 ### 映射属性和标识 {#map}
 
