@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 5657473ad10880b907a5b010fa99e08a5e45e174
+source-git-commit: fbdd3a3270e8aad95cb12281bcd4623a88b13f47
 workflow-type: tm+mt
-source-wordcount: '1993'
+source-wordcount: '1994'
 ht-degree: 5%
 
 ---
@@ -66,19 +66,10 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号） `:`，管道 `|`，分号 `;`)现已可用于新的测试版云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> 了解支持的 [文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md) （对于基于文件的目标）。 |
-| 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，可使用此字段。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
+| 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号） `:`，管道，分号 `;`)现已可用于新的测试版云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> 了解支持的 [文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md) （对于基于文件的目标）。 |
+| 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，请使用此参数。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
 
-**修复和增强功能** {#fixes-and-enhancements}
-
-<!--
-
-| Fix or enhancement | Description |
-| ----------- | ----------- |
-| UI and API validation for required mappings and duplicate mappings (PLAT-123316) | Validation is now enforced as follows in the UI and API when [mapping fields](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) in the activate destinations workflow:<ul><li>**Required mappings**: If the destination has been set up by the destination developer with required mappings (for example, the [Google Ad Manager 360](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#activate) destination), then these required mappings need to be added by the user when activating data to the destination. </li><li>**Duplicate mappings**: expand on allowed and forbidden source-to-target mappings.</li></ul> |
-| Updated profile export behavior to cloud storage destinations (PLAT-123316) | We fixed an issue in the behavior of [mandatory attributes](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) when exporting data files to batch destinations. <br> Previously, every record in the output files was verified to contain both: <ol><li>A non-null value of the `mandatoryField` column and</li><li>also contain a non-null value on at least one of the other non-mandatory fields.</li></ol> The second condition has been removed. As a result, you might be seeing more output rows in your exported data files. |
-
--->
+**修复和增强功能** {#destinations-fixes-and-enhancements}
 
 <table>
     <tr>
