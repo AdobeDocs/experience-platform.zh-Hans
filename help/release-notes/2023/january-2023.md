@@ -1,7 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 08ad27303b88826fd7e0fcc0a8b3d498de58c260
+hide: true
+hidefromtoc: true
+source-git-commit: f419856a0b75b04463ff020163bc292833fd02fd
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 5%
