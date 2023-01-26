@@ -1,7 +1,8 @@
 ---
 title: Pega配置文件连接器
 description: 在Adobe Experience Platform中使用适用于Amazon S3的Pega Profile Connector将完整或增量配置文件数据导出到Amazon S3云存储，或将两者都导出。 在Pega客户决策中心，可以在客户配置文件设计器中计划数据作业，以定期从Amazon S3存储导入配置文件数据。
-source-git-commit: bdc6ef162e9684065b60a13670848dac64be21fd
+last-substantial-update: 2023-01-25T00:00:00Z
+source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
 source-wordcount: '1086'
 ht-degree: 1%

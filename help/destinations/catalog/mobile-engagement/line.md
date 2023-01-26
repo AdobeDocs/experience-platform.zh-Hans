@@ -2,13 +2,14 @@
 keywords: 移动设备；移动设备参与目标；LINE;LINE移动设备参与目标
 title: 线路连接
 description: 利用LINE目标，可向Platform区段添加用户档案，并为连接的用户提供个性化体验。
-source-git-commit: b15ad6339cb342d754e3a78e0d68b232a94a835e
+last-substantial-update: 2022-11-08T00:00:00Z
+exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
+source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
 source-wordcount: '1183'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL LINE] 连接
 
