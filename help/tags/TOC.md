@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: c2312a65388e8aec7cdeb8daf20fe9de7d1fa4fc
+source-git-commit: e34661f70a3550e579afe5133d85f76b1125e004
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '961'
 ht-degree: 31%
 
 ---
@@ -165,7 +165,7 @@ ht-degree: 31%
       * [Google全局网站标记(gtag)](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag)
       * [InMoment](https://exchange.adobe.com/apps/ec/100847)
       * [JSON助手](https://exchange.adobe.com/apps/ec/106449)
-      * [JW Player Analytics](https://exchange.a[](https://exchange.adobe.com/apps/ec/101460/sdi-toolkit)dobe.com/apps/ec/101523))
+      * [JW Player Analytics](https://exchange.adobe.com/apps/ec/101523)
       * [KickFire](https://exchange.adobe.com/apps/ec/101621)
       * [映射表](https://exchange.adobe.com/apps/ec/103136)
       * [!DNL Marketo Munchkin] {#marketo}
