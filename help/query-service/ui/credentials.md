@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1330'
 ht-degree: 1%
 
 ---
@@ -28,11 +28,11 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 的 **[!UICONTROL 过期凭据]** 部分提供了以下信息：
 
-- **[!UICONTROL 主机]**:要连接到的主机的名称。 要连接到查询服务，这将包括您当前使用的IMS组织的名称。
+- **[!UICONTROL 主机]**:要将客户端连接到的主机的名称。 这包括Platform UI顶部功能区中所显示的组织名称。
 - **[!UICONTROL 端口]**:要连接到的主机的端口号。
-- **[!UICONTROL 数据库]**:要连接到的数据库的名称。
+- **[!UICONTROL 数据库]**:要将客户端连接到的数据库的名称。
 - **[!UICONTROL 用户名]**:用于连接到查询服务的用户名。
-- **[!UICONTROL 密码]**:用于连接到查询服务的密码。
+- **[!UICONTROL 密码]**:用于连接到查询服务的密码。 UI中的密码已经过哈希处理，以确保安全。 选择复制图标(![复制图标。](../images/ui/credentials/copy-icon.png))将完整的未哈希凭据复制到剪贴板。
 - **[!UICONTROL PSQL命令]**:命令自动插入所有相关信息，以便您使用命令行上的PSQL连接到查询服务。
 - **[!UICONTROL 过期]**:过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中对其进行更改。
 

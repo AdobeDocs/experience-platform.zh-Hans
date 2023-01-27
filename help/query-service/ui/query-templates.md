@@ -2,10 +2,10 @@
 title: 查询模板
 description: 查询模板是可重用的已保存SQL查询，其他用户可重复使用这些查询以节省时间和精力。 它们可以使用查询编辑器或查询服务API创建，并可用于所有Experience Platform数据集。
 exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
-source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
+source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
 workflow-type: tm+mt
-source-wordcount: '436'
-ht-degree: 1%
+source-wordcount: '504'
+ht-degree: 0%
 
 ---
 
@@ -27,6 +27,8 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 有关如何使用查询编辑器以 [写入](./user-guide.md#query-authoring) 和 [保存查询](./user-guide.md#saving-queries). 命名并保存查询后，该查询便可在 [!UICONTROL 模板] 选项卡。
 
+## 浏览查询模板 {#browse}
+
 从Platform UI的“查询”工作区中，选择 **[!UICONTROL 模板]** 以显示可用的已保存查询列表。
 
 ![突出显示“模板”选项卡的查询工作区。](../images/ui/query-templates/query-templates.png)
@@ -34,6 +36,13 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 要查找相关的模板信息，请从可用列表中选择任意查询模板以打开详细信息面板。
 
 ![查询工作区中的详细信息面板，其中突出显示了查询ID。](../images/ui/query-templates/details-panel.png)
+
+在“详细信息”面板中，您可以执行四个单独的操作：
+
+* 选择 **[!UICONTROL 输出数据集]** 编辑所选模板的输出数据集。
+* 选择 **[!UICONTROL 查看计划]** 导航到 [!UICONTROL 计划] 选项卡。 此视图包含与查询关联的任何计划信息。
+* 选择 **[!UICONTROL 删除查询]** 删除模板。
+* 选择模板名称以导航到查询编辑器，在该编辑器中预填充了SQL。
 
 ### 使用查询服务API创建模板
 
