@@ -5,9 +5,9 @@ title: 使用模式编辑器创建模式
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 9f39130c8d470b236764993f7ebca9c1cdc748bb
+source-git-commit: ecf757e98c3da568173d161aa5d4701881ec2337
 workflow-type: tm+mt
-source-wordcount: '3947'
+source-wordcount: '3985'
 ht-degree: 0%
 
 ---
@@ -177,8 +177,10 @@ An &quot;[!UICONTROL 无标题字段]“占位符”将显示在画布中，并�
 
 每个字段都需要以下信息：
 
-* **[!UICONTROL 字段名称]:** 字段的名称，用驼峰写成。 示例：loyatyLevel
-* **[!UICONTROL 显示名称]:** 字段的名称，以标题大小写写。 示例：忠诚度级别
+* **[!UICONTROL 字段名称]:** 字段的名称，最好用camelCase写。 不允许使用空格字符。 这是用于在代码和其他下游应用程序中引用字段的名称。
+   * 示例：loyatyLevel
+* **[!UICONTROL 显示名称]:** 字段的名称，以标题大小写写。 这是查看或编辑架构时将在画布中显示的名称。
+   * 示例：忠诚度级别
 * **[!UICONTROL 类型]:** 字段的数据类型。 这包括在 [!DNL Schema Registry]. 示例： [!UICONTROL 字符串], [!UICONTROL 整数], [!UICONTROL 布尔值], [!UICONTROL 人员], [!UICONTROL 地址], [!UICONTROL 电话号码]等。
 * **[!UICONTROL 描述]:** 字段的可选描述应包含最多200个字符。
 

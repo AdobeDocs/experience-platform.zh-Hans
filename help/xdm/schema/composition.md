@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构组合的基础知识
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
 workflow-type: tm+mt
-source-wordcount: '4108'
+source-wordcount: '4119'
 ht-degree: 2%
 
 ---
@@ -215,11 +215,11 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 
 ### 数据类型 {#data-type}
 
-数据类型在类或架构中用作引用字段类型，其方式与基本文字字段相同。 关键区别在于数据类型可以定义多个子字段。 与字段组类似，数据类型允许一致地使用多字段结构，但比字段组具有更大的灵活性，因为通过将数据类型添加为字段的“数据类型”，数据类型可以包含在架构中的任意位置。
+数据类型在类或架构中用作引用字段类型，其方式与基本文字字段相同。 关键区别在于数据类型可以定义多个子字段。 它们可以以与字段组相同的方式定义多个子字段，但关键的区别在于，数据类型可以通过将其添加为字段的“数据类型”来包含在架构中的任意位置。 虽然字段组仅与某些类兼容，但数据类型可以包含在任何父类或字段组中。
 
 [!DNL Experience Platform] 在 [!DNL Schema Registry] 支持使用标准模式来描述常用数据结构。 这在 [!DNL Schema Registry] 教程，在您逐步完成定义数据类型的步骤后，教程将变得更清晰。
 
-以下屏幕截图演示了数据类型在平台UI中的显示方式。 提供的字段之一 [!UICONTROL 人口统计详细信息] 字段组使用“[!UICONTROL 人员姓名]“数据类型，如管道字符(`|`)来访问Advertising Cloud的帮助。 此特定数据类型提供了与个人姓名相关的多个子字段，该结构可重复使用于需要捕获人员姓名的其他字段。
+以下屏幕截图演示了数据类型在平台UI中的显示方式。 提供的字段之一 [!UICONTROL 人口统计详细信息] 字段组使用“[!UICONTROL 对象]“数据类型，如管道字符(`|`)来访问Advertising Cloud的帮助。 此特定数据类型提供了与个人姓名相关的多个子字段，该结构可重复使用于需要捕获人员姓名的其他字段。
 
 ![](../images/schema-composition/data-type.png)
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1407'
 ht-degree: 4%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 4%
 
 ## 定义字段的属性 {#define}
 
-选择 **加号(+)** 图标， **[!UICONTROL 新建字段]** 显示在画布中，它位于与您的独特租户ID同名的对象中(显示为 `_tenantId` )。 添加到架构的所有自定义字段都会自动放置在此命名空间内，以防止与Adobe提供的类和字段组中的其他字段发生冲突。
+选择 **加号(+)** 图标， **[!UICONTROL 无标题字段]** 占位符显示在画布中。
 
 ![](../../images/ui/fields/overview/new-field.png)
 
@@ -52,8 +52,8 @@ ht-degree: 4%
 
 | 字段属性 | 描述 |
 | --- | --- |
-| [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。<br><br>理想情况下，该名称应使用camelCase写入。 它可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开头。<ul><li>**正确**: `fieldName`</li><li>**可接受：** `field_name2`, `Field-Name`, `field-name_3`</li><li>**错误**: `_fieldName`</li></ul> |
-| [!UICONTROL 显示名称] | 字段的人类易记名称。 |
+| [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码中的字段和其他下游应用程序中的字段<br><br>理想情况下，该名称应使用camelCase写入。 它可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开头。<ul><li>**正确**: `fieldName`</li><li>**可接受：** `field_name2`, `Field-Name`, `field-name_3`</li><li>**错误**: `_fieldName`</li></ul> |
+| [!UICONTROL 显示名称] | 字段的显示名称。 这是用于在架构编辑器画布中表示字段的名称。 |
 | [!UICONTROL 类型] | 字段将包含的数据类型。 从此下拉菜单中，您可以选择 [标准标量类型](../../schema/field-constraints.md) 受XDM或多字段之一支持 [数据类型](../resources/data-types.md) 之前在 [!DNL Schema Registry].<br><br>您还可以选择 **[!UICONTROL 高级类型搜索]** 搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -70,7 +70,7 @@ ht-degree: 4%
 
 ![](../../images/ui/fields/overview/field-details.png)
 
-画布会更新以显示字段的名称和类型，除了列出其他属性外，右边栏现在还会列出字段的路径。
+画布会更新以显示新添加的字段，该字段位于与您的独特租户ID同名的对象中(显示为 `_tenantId` )。 添加到架构的所有自定义字段都会自动放置在此命名空间内，以防止与Adobe提供的类和字段组中的其他字段发生冲突。 现在，除了列出字段的其他属性之外，右边栏还会列出字段的路径。
 
 ![](../../images/ui/fields/overview/field-added.png)
 
