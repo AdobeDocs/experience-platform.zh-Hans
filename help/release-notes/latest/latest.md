@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 3ea2ac1b048adb14aa93b42e5b23ea70bb995414
+source-git-commit: 855ce02dc371621cd8a4b02348e1e74a573123f3
 workflow-type: tm+mt
-source-wordcount: '1905'
+source-wordcount: '1911'
 ht-degree: 4%
 
 ---
@@ -61,11 +61,11 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [Pega配置文件连接](../../destinations/catalog/personalization/pega-profile.md) | 使用 [!DNL Pega Profile Connector] 在Adobe Experience Platform中创建与 [!DNL Amazon] S3存储，用于将配置文件数据定期从Adobe Experience Platform导出到CSV文件，并将其导出到您自己的S3存储段中。 在 [!DNL Pega Customer Decision Hub]，则可以计划数据作业以从S3存储导入此配置文件数据，以更新 [!DNL Pega Customer Decision Hub] 配置文件。 |
 | [（测试版）交易台CRM EU连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 随着EUID（欧洲统一ID）的发布，您现在会看到两个 [!DNL The Trade Desk - CRM] 目标 [目标目录](/help/destinations/catalog/overview.md). <ul><li> 如果您在欧盟地区收集数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。</li><li> 如果您在APAC或NAMER地区收集数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。 </li></ul> |
 
-**新增功能或更新功能**
+**新增功能或更新功能** {#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 增强与流目标集成的付费媒体同意 | 对 [同意策略实施](/help/data-governance/enforcement/auto-enforcement.md) on [流目标](/help/destinations/destination-types.md#streaming-destinations) 用于付费媒体激活用例。 现在，已从特定体验撤回同意的用户档案会主动从这些目标中删除。 <br> <b>注意</b>:此功能仅适用于 **[!UICONTROL 隐私和安全防护]**，以及 **[!UICONTROL 医疗盾]**. |
+| 付费媒体同意策略增强以与流目标集成 | 对 [同意策略实施](/help/data-governance/enforcement/auto-enforcement.md) on [流目标](/help/destinations/destination-types.md#streaming-destinations) 用于付费媒体激活用例。 当用户档案不再符合同意策略的条件时，Experience Platform现在会主动将其策略退出通信到流目标。 <br> <b>注意</b>:此功能仅适用于 **[!UICONTROL 隐私和安全防护]**，以及 **[!UICONTROL 医疗盾]**. |
 | 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号） `:`，管道，分号 `;`)现已可用于新的测试版云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> 了解支持的 [文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md) （对于基于文件的目标）。 |
 | 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，请使用此参数。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
 
