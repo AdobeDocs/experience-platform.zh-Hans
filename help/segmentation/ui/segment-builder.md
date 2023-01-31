@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 28b9458d29ce69bcbfdff53c0cb6bd7f427e4a2e
 workflow-type: tm+mt
-source-wordcount: '3101'
+source-wordcount: '3258'
 ht-degree: 1%
 
 ---
@@ -125,6 +125,22 @@ ht-degree: 1%
 如果从此枚举列表中选择一个值，则该值将用实边框列出。 但是，对于使用 `meta:enum` （柔和）枚举，则还可以 **not** 从枚举列表。 如果您创建自己的值，则会用虚线边框列出该值，并出现一则警告，指出该值未在枚举列表中。
 
 ![当您插入的值不是枚举列表的一部分时，将显示警告。](../images/ui/segment-builder/enum-warning.png)
+
+如果要创建多个值，则可以使用批量上传一次添加所有值。 选择 ![加号图标](../images/ui/segment-builder/plus-icon.png) 显示 **[!UICONTROL 批量添加值]** 弹出窗口。
+
+![加号图标会高亮显示，其中显示了用于访问批量上传弹出窗口的按钮。](../images/ui/segment-builder/add-bulk-values.png)
+
+在 **[!UICONTROL 批量添加值]** 弹出窗口，您可以上传CSV或TSV文件。
+
+![随即会显示批量弹出窗口中的添加值。 您可以选择来上传CSV或TSV文件的对话框会突出显示。](../images/ui/segment-builder/bulk-values-popover.png)
+
+或者，您也可以手动添加逗号分隔值。
+
+![随即会显示批量弹出窗口中的添加值。 可用于插入值的对话框和添加的值都会突出显示。](../images/ui/segment-builder/bulk-values-comma-separated.png)
+
+请注意，最多允许250个值。 如果超过此数量，则需要先删除一些值，然后再添加更多值。
+
+![将显示显示已达到最大值数的警告。](../images/ui/segment-builder/maximum-values.png)
 
 ### 添加受众
 

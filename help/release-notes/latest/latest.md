@@ -1,10 +1,10 @@
 ---
-title: Adobe Experience Platform发行说明2023年1月
+title: Adobe Experience Platform 发行说明
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 855ce02dc371621cd8a4b02348e1e74a573123f3
+source-git-commit: 39d00824a17fd0b72de84425e5753945ad454b20
 workflow-type: tm+mt
-source-wordcount: '1911'
-ht-degree: 4%
+source-wordcount: '1948'
+ht-degree: 5%
 
 ---
 
@@ -148,8 +148,9 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 平台生成的区段成员资格过期 | 位于 `Exited` 状态超过30天，根据 `lastQualificationTime` 字段，则该字段将被删除。 |
+| 区段生成器中的批量值导入 | 区段生成器现在支持导入多个值，方法是上传CSV或TSV文件，或手动插入逗号分隔值。 有关更多信息，请参阅 [区段生成器指南](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 | 外部受众成员资格过期 | 默认情况下，外部受众成员资格将保留30天。 若要将其保留更长时间，请使用 `validUntil` 字段。 |
+| 平台生成的区段成员资格过期 | 位于 `Exited` 状态超过30天，根据 `lastQualificationTime` 字段，则该字段将被删除。 |
 
 {style=&quot;table-layout:auto&quot;}
 
