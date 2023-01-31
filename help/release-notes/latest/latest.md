@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 39d00824a17fd0b72de84425e5753945ad454b20
+source-git-commit: f7bcd009882d9753638ba2ce692df9fe80287641
 workflow-type: tm+mt
-source-wordcount: '1948'
-ht-degree: 5%
+source-wordcount: '2293'
+ht-degree: 7%
 
 ---
 
@@ -14,6 +14,7 @@ ht-degree: 5%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
 - [Assurance](#assurance)
 - [数据收集](#data-collection)
 - [[!DNL Destinations]](#destinations)
@@ -21,6 +22,39 @@ Adobe Experience Platform 现有功能的更新包括：
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
 - [源](#sources)
+
+## 人工智能/机器学习服务 {#ai-ml}
+
+人工智能和机器学习服务使营销分析师和从业人员能够在客户体验用例中利用AI/ML的功能。 这使营销分析人员能够设置预测，而无需具备数据科学专业知识，具体取决于公司使用业务级别配置的需求。
+
+### 归因人工智能
+
+Attribution AI用于将点数归因到导致转化事件的接触点。 营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| HIPAA 准备就绪 | Healthcare Shield客户现在可以接收、使用、维护或传输Attribution AI和某些其他基于Experience Platform的应用程序中受保护的健康信息。 Healthcare Shield是面向受保的实体或HIPAA管辖的业务伙伴的医疗保健客户。 有关更多信息，请阅读 [HIPAA和Adobe产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) |
+| 编辑其他分数数据集列 | 现在，您可以在编辑现有模型时，添加或删除其他分数数据集列（报表列）。 这扩展了归因得分的灵活性，可在创建模型后为您提供对其他维度的分析。 请参阅 [归因UI指南](../../intelligent-services/attribution-ai/user-guide.md) 以了解更多。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+请参阅 [AI/ML服务](../../intelligent-services/attribution-ai/overview.md) 概述以了解更多信息。
+
+### 客户人工智能
+
+Customer AI for Real-time Customer Data Platform用于生成自定义倾向得分，例如个人档案的大规模流失率和转化。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| HIPAA 准备就绪 | Healthcare Shield客户现在可以在Customer AI中接收、使用、维护或传输受保护的健康信息，以用于Real-time Customer Data Platform和某些其他基于Experience Platform的应用程序。 Healthcare Shield是面向受保的实体或HIPAA管辖的业务伙伴的医疗保健客户。 有关更多信息，请参阅 [HIPAA和Adobe产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) |
+
+{style=&quot;table-layout:auto&quot;}
+
+请参阅 [AI/ML服务](../../intelligent-services/customer-ai/overview.md) 概述以了解更多信息。
 
 ## Assurance {#assurance}
 
