@@ -4,9 +4,9 @@ title: 将受众数据激活到流区段导出目标
 type: Tutorial
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
+source-git-commit: 9bde403338187409892d76de68805535de03d59f
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
@@ -121,19 +121,29 @@ ht-degree: 0%
 
 1. 选择 **[!UICONTROL 下一个]** 转到 [!UICONTROL 审阅] 页面。
 
-## 审阅 {#review}
+## 请查看 {#review}
 
 在 **[!UICONTROL 审阅]** 页面，则可以查看所选内容的摘要。 选择 **[!UICONTROL 取消]** 来分解流量， **[!UICONTROL 返回]** 修改设置，或 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
->[!IMPORTANT]
->
->在此步骤中，Adobe Experience Platform会检查是否存在数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅 [策略执行](../../rtcdp/privacy/data-governance-overview.md#enforcement) 在“数据管理文档”一节中。
+![审阅步骤中的选择摘要。](/help/destinations/assets/ui/activate-segment-streaming-destinations/review.png)
+
+### 同意策略评估 {#consent-policy-evaluation}
+
+如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+
+### 数据使用策略检查 {#data-usage-policy-checks}
+
+在 **[!UICONTROL 审阅]** 步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 在“数据管理文档”一节中。
 
 ![数据策略违规](../assets/common/data-policy-violation.png)
 
-如果未检测到任何策略违规，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
+### 过滤区段 {#filter-segments}
 
-![审阅](../assets/ui/activate-segment-streaming-destinations/review.png)
+此外，在此步骤中，您还可以使用页面上的可用过滤器来仅显示计划或映射已作为此工作流的一部分进行更新的区段。 您还可以切换要查看的表列。
+
+![屏幕记录，其中显示了审阅步骤中可用的区段过滤器。](/help/destinations/assets/ui/activate-segment-streaming-destinations/filter-segments-review-step.gif)
+
+如果您对您的选择满意，并且未检测到任何策略违规，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
 ## 验证区段激活 {#verify}
 
