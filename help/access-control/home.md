@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 56f1cbc622450b154e6e29a8116789b316901f66
 workflow-type: tm+mt
-source-wordcount: '1419'
+source-wordcount: '1473'
 ht-degree: 3%
 
 ---
@@ -79,6 +79,12 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
+| [!DNL Alerts] | [!UICONTROL 查看警报历史记录] | 警报历史记录的只读访问权限。 |
+| [!DNL Alerts] | [!UICONTROL 解决警报] | 访问读取、编辑和删除警报。 |
+| [!DNL Alerts] | [!UICONTROL 查看警报] | 警报的只读访问权限。 |
+| [!DNL Alerts] | [!UICONTROL 管理警报] | 有权读取、创建、编辑和删除警报历史记录。 |
+| [!DNL Data Hygiene] | [!UICONTROL 查看数据卫生] | 用于数据卫生的只读访问。 |
+| [!DNL Data Hygiene] | [!UICONTROL 管理数据卫生] | 访问读取、创建、编辑和删除数据卫生。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 访问读取、创建、编辑和删除架构及相关资源。 |
 | [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对架构和相关资源的只读访问。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理关系] | 访问读取、创建、编辑和删除架构关系。 |
@@ -94,9 +100,9 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Profile Management] | [!UICONTROL 查看合并策略] | 对可用合并策略的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 导出区段的受众] | 能够将评估的受众区段导出到数据集。 |
 | [!DNL Profile Management] | [!UICONTROL 对受众评估区段] | 能够通过评估区段定义为受众生成用户档案。 |
-| [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 有权读取、创建、编辑和删除身份命名空间。 |
-| [!DNL Identities] | [!UICONTROL 查看标识命名空间] | 身份命名空间的只读访问权限。 |
-| [!DNL Identities] | [!UICONTROL 查看身份图] | 身份图的只读访问权限。 |
+| [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 有权读取、创建、编辑和删除身份命名空间。 |
+| [!DNL Identity Management] | [!UICONTROL 查看标识命名空间] | 身份命名空间的只读访问权限。 |
+| [!DNL Identity Management] | [!UICONTROL 查看身份图] | 身份图的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 有权读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于贵组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
