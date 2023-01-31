@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform 概述
 description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
+source-git-commit: 48e050718b665bc297f97bf1b90a6f4517dd3af5
 workflow-type: tm+mt
-source-wordcount: '437'
-ht-degree: 10%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -17,9 +17,11 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 构建于RESTful API之上， [!DNL Experience Platform] 向开发人员公开了系统的完整功能，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 独一无二。 它为合作伙伴、客户和开发人员社区提供了一个基础，可在此基础上构建可推动体验业务的创新：通过从客户及其个人偏好的360度视图中提供持续改进的完全个性化体验，来超越客户期望。
 
-<div id="recs-overview-body-1"></div>
-<div id="recs-overview-body-2"></div>
-<div id="recs-overview-body-3"></div>
+<div id="recs-overview-body-wrapper-1">
+    <div id="recs-overview-body-1"></div>
+    <div id="recs-overview-body-2"></div>
+    <div id="recs-overview-body-3"></div>
+</div>
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
