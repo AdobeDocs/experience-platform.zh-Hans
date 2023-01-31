@@ -4,7 +4,7 @@ feature: Attribution AI
 title: 使用查询服务分析归因得分
 description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI得分。
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform UI中，选择 **[!UICONTROL 数据集]** 中。 的 **[!UICONTROL 数据集]** 页面。 接下来，选择 **[!UICONTROL 浏览]** 选项卡，然后为您的Attribution AI得分查找输出数据集。
 
-![访问您的实例](./images/aai-query/datasets_browse.png)
+![访问模型](./images/aai-query/datasets_browse.png)
 
 选择输出数据集。 此时会显示数据集活动页面。
 
@@ -305,7 +305,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
-> 在本例中，您需要将 `{COLUMN_NAME}` 除 `_tenantId` 和 `your_score_output_dataset`. 的 `COLUMN_NAME` 变量可采用配置Attribution AI实例期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构以查找 `{COLUMN_NAME}` 完成此查询所需的值。
+> 在本例中，您需要将 `{COLUMN_NAME}` 除 `_tenantId` 和 `your_score_output_dataset`. 的 `COLUMN_NAME` 变量可采用配置Attribution AI模型期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构以查找 `{COLUMN_NAME}` 完成此查询所需的值。
 
 ```sql
 SELECT 

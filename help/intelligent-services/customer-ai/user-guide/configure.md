@@ -5,9 +5,9 @@ feature: Customer AI
 title: 配置Customer AI实例
 description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 6aff88c0bc5cd15b8b3ffb32458402e1edc873c8
 workflow-type: tm+mt
-source-wordcount: '3342'
+source-wordcount: '2828'
 ht-degree: 0%
 
 ---
@@ -250,46 +250,6 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 >根据输入数据的大小，预测运行可能需要长达24小时才能完成。
 
 通过执行本节，您配置了Customer AI的实例并执行了预测运行。 成功完成运行后，如果启用了用户档案切换，则得分分析会自动使用预测的得分填充用户档案。 请最多等待24小时，然后再继续阅读本教程的下一部分。
-
-## 治理政策
-
-完成创建实例并提交模型配置的工作流后， [策略实施](/help/data-governance/enforcement/auto-enforcement.md) 检查是否存在任何违规。 如果发生策略违规，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
-
-![显示策略违规的弹出窗口](../images/user-guide/policy-violation-popover-cai.png)
-
-弹出窗口提供有关违规的特定信息。 您可以通过策略设置和其他与配置工作流无直接关联的措施来解决这些违规问题。 例如，您可以更改标签，以便允许将某些字段用于数据科学目的。 或者，您也可以修改模型配置本身，使其不使用带有标签的任何内容。 请参阅相关文档，了解有关如何设置 [策略](/help/data-governance/policies/overview.md).
-
-## 基于属性的访问控制
-
->[!IMPORTANT]
->
->基于属性的访问控制当前仅在有限版本中可用。
-
-[基于属性的访问控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
-
-利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
-
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
-
-由于基于属性的访问控制，某些字段和功能将受限访问，并且对于某些Customer AI服务实例不可用。 示例包括“身份”、“得分定义”和“克隆”。
-
-![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/unavailable-functionalities.png)
-
-位于Customer AI工作区顶部 **分析页面**，请注意侧栏、得分定义、身份和用户档案属性中的详细信息都显示“访问受限”。
-
-![突出显示了架构的受限字段的Customer AI工作区。](../images/user-guide/access-restricted.png)
-
-<!-- If you select datasets with restricted schemas on the **[!UICONTROL Create instance workflow]** page, a warning sign appears next to the dataset name with the message: [!UICONTROL Restricted information is excluded].
-
-![The Customer AI workspace with the restricted fields of the selected datasets results highlighted.](../images/user-guide/restricted-info-excluded.png) -->
-
-预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
-
-![预览数据集的受限字段位于Customer AI工作区中，且模式结果受限。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
-
-创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
-
-![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## 后续步骤 {#next-steps}
 

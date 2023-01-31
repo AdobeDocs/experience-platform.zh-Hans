@@ -5,10 +5,10 @@ feature: Customer AI
 title: Customer AI快速入门
 description: 本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 596921163bf64d11545dcde49039bcdd07c253dd
 workflow-type: tm+mt
-source-wordcount: '652'
-ht-degree: 1%
+source-wordcount: '572'
+ht-degree: 0%
 
 ---
 
@@ -46,12 +46,6 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对Platfo
 ### 读取示例API调用
 
 本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md) (位于Experience Platform疑难解答指南中)。
-
-## 访问控制 {#access-control}
-
-使用访问控制时， **查看客户人工智能** 和 **管理客户人工智能** 权限授予对客户AI不同功能的访问权限。 的 **管理客户人工智能** 许可允许您 **创建**,**更新**, **删除**, **启用**&#x200B;或 **禁用** 实例 **查看客户人工智能** 可供您阅读或查看。 的 **创建**, **更新** 和 **删除** 操作由审核日志记录。
-
-请参阅相关文档以了解 [为访问控制分配权限](../../../help/access-control/home.md) 或如何 [使用审核日志来监控访问和活动](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
 
 ## 后续步骤
 

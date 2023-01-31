@@ -4,9 +4,9 @@ feature: Attribution AI
 title: Attribution AIUI指南
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
 workflow-type: tm+mt
-source-wordcount: '2960'
+source-wordcount: '2443'
 ht-degree: 0%
 
 ---
@@ -17,41 +17,41 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 
-## 创建实例
+## 创建模型
 
 在 [!DNL Adobe Experience Platform] UI，选择 **[!UICONTROL 服务]** 中。 的 **[!UICONTROL 服务]** 浏览器会显示并显示可用的Adobe智能服务。 在Attribution AI容器中，选择 **[!UICONTROL 打开]**.
 
-![访问您的实例](./images/user-guide/open_Attribution_ai.png)
+![访问模型](./images/user-guide/open_Attribution_ai.png)
 
-此时将显示Attribution AI服务页面。 本页列出了Attribution AI的服务实例并显示了有关这些实例的信息，包括实例名称、转化事件、实例运行频率以及上次更新的状态。
+此时将显示Attribution AI服务页面。 本页列出了Attribution AI的服务模型并显示了有关这些模型的信息，包括模型名称、转化事件、模型运行频率以及上次更新的状态。
 
-您可以在 **[!UICONTROL 得分的转化事件总数]** 位于 **[!UICONTROL 创建实例]** 容器。 此量度跟踪当前日历年中由Attribution AI评分的转化事件总数，包括所有沙盒环境和任何已删除的服务实例。
+您可以在 **[!UICONTROL 得分的转化事件总数]** 位于 **[!UICONTROL 创建模型]** 容器。 此量度跟踪当前日历年（包括所有沙盒环境和任何已删除的服务模型）按Attribution AI打分的转化事件总数。
 
 ![总转化](./images/user-guide/total_conversions.png)
 
-可以使用UI右侧的控件来编辑、克隆和删除服务实例。 要显示这些控件，请从现有的 **[!UICONTROL 服务实例]**. 控件包含以下信息：
+可以使用UI右侧的控件来编辑、克隆和删除服务模型。 要显示这些控件，请从现有的 **[!UICONTROL 服务模型]**. 控件包含以下信息：
 
-- **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务实例。 您可以编辑实例的名称、描述、状态和评分频率。
-- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制所选服务实例。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
-- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。 将从Platform中删除相应的输出数据集。 但是，不会删除已同步到实时客户用户档案的得分。
+- **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务模型。 您可以编辑模型的名称、描述、状态、评分频率以及其他得分数据集列。
+- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制所选服务模型。 然后，您可以修改工作流以进行细微调整，并将其重命名为新模型。
+- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务模型。 将从Platform中删除相应的输出数据集。 但是，不会删除已同步到实时客户用户档案的得分。
 - **[!UICONTROL 数据源]**:指向所用数据集的链接。 如果Attribution AI使用多个数据集，则会显示“多个”，然后显示数据集的数量。 选择超链接后，将显示数据集预览弹出窗口。
 - **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才会显示该设置。 此处显示了有关运行失败原因（如错误代码）的信息。
 
 ![侧窗格](./images/user-guide/multiple-datasets-pane.png)
 
-- **[!UICONTROL 转化事件]**:为此实例配置的转化事件的快速概述。
+- **[!UICONTROL 转化事件]**:为此模型配置的转化事件的快速概述。
 - **[!UICONTROL 回顾窗口]**:您定义的时间范围，用于指示转化事件接触点之前包含的天数。
-- **[!UICONTROL 接触点]**:创建此实例时定义的所有接触点的列表。
+- **[!UICONTROL 接触点]**:创建此模型时定义的所有接触点的列表。
 
 ![](./images/user-guide/side_panel_2.png)
 
-选择 **[!UICONTROL 创建实例]** 开始。
+选择 **[!UICONTROL 创建模型]** 开始。
 
-![创建实例](./images/user-guide/landing_page.png)
+![创建模型](./images/user-guide/landing_page.png)
 
-接下来，将显示Attribution AI的设置页面，您可以在该页面中为服务实例提供名称和可选描述。
+接下来，将显示Attribution AI的设置页面，您可以在该页面中为服务模型提供名称和可选描述。
 
-![命名实例](./images/user-guide/naming_instance.png)
+![命名模型](./images/user-guide/naming_instance.png)
 
 ## 选择数据 {#select-data}
 
@@ -227,7 +227,7 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 
 ### 其他分数数据集列（可选）
 
-默认情况下，会为标准架构中的每个服务实例创建一个分数数据集。 您可以选择根据转化事件和接触点配置向评分数据集输出添加其他列。 首先，从输入数据集中选择列，然后拖放列以更改顺序，方法是将鼠标左键按在汉堡包图标上。
+默认情况下，会为标准架构中的每个服务模型创建一个分数数据集。 您可以选择根据转化事件和接触点配置向评分数据集输出添加其他列。 首先，从输入数据集中选择列，然后拖放列以更改顺序，方法是将鼠标左键按在汉堡包图标上。
 
 ![得分数据集列添加](./images/user-guide/Add-score-dataset.png)
 
@@ -264,44 +264,6 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 选择培训窗口后，选择 **[!UICONTROL 完成]** 中。 允许一些时间处理数据。 完成后，会显示一个弹出对话框，确认实例设置已完成。 选择 **[!UICONTROL 确定]** 被重定向到 **[!UICONTROL 服务实例]** 页面，您可以在其中查看服务实例。
 
 ![设置完成](./images/user-guide/instance_setup_complete.png)
-
-## 治理政策
-
-完成创建实例并提交模型配置的工作流后， [策略实施](/help/data-governance/enforcement/auto-enforcement.md) 检查是否存在任何违规。 如果发生策略违规，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
-
-![显示策略违规的弹出窗口](./images/user-guide/policy-violation-popover-aai.png)
-
-弹出窗口提供有关违规的特定信息。 您可以通过策略设置和其他与配置工作流无直接关联的措施来解决这些违规问题。 例如，您可以更改标签，以便允许将某些字段用于数据科学目的。 或者，您也可以修改模型配置本身，使其不使用带有标签的任何内容。 请参阅相关文档，了解有关如何设置 [策略](/help/data-governance/policies/overview.md).
-
-## 基于属性的访问控制
-
->[!IMPORTANT]
->
->基于属性的访问控制当前仅在有限版本中可用。
-
-[基于属性的访问控制](../../../help/access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
-
-利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
-
-通过基于属性的访问控制，管理员可以控制用户对所有平台工作流和资源中的敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
-
-由于基于属性的访问控制，某些字段和功能可能具有访问限制，并且对于某些Attribution AI服务实例不可用。 示例包括“身份”、“得分定义”和“克隆”。
-
-Attribution AI工作区顶部 **分析页面**，侧栏中显示的详细信息具有受限访问权限。
-
-![Attribution AI工作区中突出显示了受限架构字段。](./images/user-guide/access-restricted.png)
-
-如果您在 **[!UICONTROL 创建实例工作流]** 页面上，数据集名称旁边会显示一个警告标记，并显示一条消息： [!UICONTROL 排除受限信息].
-
-![Attribution AI工作区中突出显示了受限数据集字段。](./images/user-guide/restricted-info-excluded.png)
-
-预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
-
-![预查看的架构字段受限的Attribution AI工作区会突出显示结果。](./images/user-guide/restricted-dataset-preview.png)
-
-创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
-
-![Attribution AI工作区中实例结果的受限字段突出显示。](./images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## 后续步骤
 
