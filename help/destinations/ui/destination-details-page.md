@@ -1,11 +1,11 @@
 ---
 keywords: 目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
-description: '单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活以及启用和禁用数据流的控件。 '
+description: 单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 165d8719cbf5d4b0555d5b9ef84252e3cbd82d42
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '799'
 ht-degree: 2%
 
 ---
@@ -78,11 +78,17 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->* 目前，Experience Platform中所有目标都支持目标监控功能 *除外* the [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标。
+>* 目前，Experience Platform中所有目标都支持目标监控功能 *除外* the [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目标。
 >* 对于 [AmazonKinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 目标、排除的标识当前不会显示。
 
 
 ![数据流运行视图](../assets/ui/details-page/dataflow-runs.png)
+
+### 数据流运行持续时间 {#dataflow-runs-duration}
+
+数据流运行的显示持续时间中存在已知问题。 而 **[!UICONTROL 处理持续时间]** 如下图所示，对于大多数数据流运行，指示大约四小时，任何数据流运行的实际处理时间都会缩短很多。 如果Experience Platform需要重试调用目标，数据流运行窗口会持续打开较长时间。
+
+![“数据流”运行页的图像，其中“处理时间”列突出显示。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run.png)
 
 ## [!UICONTROL 激活数据] {#activation-data}
 
