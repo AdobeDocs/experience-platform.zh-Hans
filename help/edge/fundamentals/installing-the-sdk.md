@@ -3,7 +3,7 @@ title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
 keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: c3476d7f9e758678cdf270ab55f8b85c0614b546
+source-git-commit: e0fc9708edec3b36bed9925f12fca9db8b477262
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 2%
@@ -31,8 +31,8 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 例如：
 
 
-* 缩小： [https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js)
-* 未缩小： [https://cdn1.adoberesources.net/alloy/2.6.4/alloy.js](https://cdn1.adoberesources.net/alloy/2.6.4/alloy.js)
+* 缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
+* 未缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
 
 
 ### 添加代码 {#adding-the-code}
@@ -46,7 +46,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js" async></script>
 ```
 
 “基础代码”将创建一个名为 `alloy`. 使用此函数与SDK进行交互。 如果要为全局函数命名其他名称，请更改 `alloy` 名称如下所示：
@@ -58,7 +58,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["mycustomname"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js" async></script>
 ```
 
 在本例中，全局函数被重命名 `mycustomname`，而不是 `alloy`.
@@ -108,7 +108,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js"></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js"></script>
 ```
 
 ## 选项3:使用NPM包

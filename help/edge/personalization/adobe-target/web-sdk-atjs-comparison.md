@@ -3,7 +3,7 @@ title: 比较at.js与Experience PlatformWeb SDK
 description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 3c229dfced2ea404e8b333a25cd8148ac81a91c2
+source-git-commit: 519d77ca7bfb910b03fea3567e08824e6f852eb4
 workflow-type: tm+mt
 source-wordcount: '2286'
 ht-degree: 6%
@@ -30,8 +30,8 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 
 例如：
 
-* 缩小： [https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js)
-* 未缩小： [https://cdn1.adoberesources.net/alloy/2.6.4/alloy.js](https://cdn1.adoberesources.net/alloy/2.6.4/alloy.js)
+* 缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
+* 未缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
 
 [了解更多](../../fundamentals/installing-the-sdk.md)
 
