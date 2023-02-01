@@ -4,7 +4,7 @@ solution: Experience Platform
 feature: Customer AI
 title: Customer AI的访问控制
 description: 本文档提供了有关Customer AI基于属性的访问控制的信息。
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
 workflow-type: tm+mt
 source-wordcount: '516'
 ht-degree: 0%
@@ -42,8 +42,8 @@ ht-degree: 0%
 
 使用访问控制时， **查看客户人工智能** 和 **管理客户人工智能** 权限授予对客户AI不同功能的访问权限。 的 **管理客户人工智能** 许可允许您 **创建**,**更新**, **删除**, **启用**&#x200B;或 **禁用** 模型 **查看客户人工智能** 可供您阅读或查看。 的 **创建**, **更新** 和 **删除** 操作由审核日志记录。
 
-请参阅相关文档以了解 [为访问控制分配权限](../../../help/access-control/home.md) 或如何 [使用审核日志来监控访问和活动](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
+请参阅相关文档以了解 [为访问控制分配权限](../../../access-control/home.md) 或如何 [使用审核日志来监控访问和活动](../../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## 后续步骤
 
-通过阅读本指南，您已介绍中访问控制的主要原则 [!DNL Experience Platform]. 您现在可以继续 [访问控制用户指南](./ui/overview.md) 以了解有关如何使用的详细步骤 [!DNL Admin Console] 创建产品配置文件并为 [!DNL Platform].
+通过阅读本指南，您已介绍中访问控制的主要原则 [!DNL Experience Platform]. 您现在可以继续 [访问控制用户指南](../overview.md) 以了解有关如何使用的详细步骤 [!DNL Admin Console] 创建产品配置文件并为 [!DNL Platform].

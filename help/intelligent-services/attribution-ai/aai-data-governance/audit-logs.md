@@ -1,12 +1,11 @@
 ---
 keywords: 分析；归因ai；归因ai分析；AAI查询服务；归因查询；归因得分
-feature: Attribution AI audit logs
-title: 审核日志概述
+title: 审核日志Attribution AI概述
 description: 了解如何查看和管理Attribution AI中的审核日志。
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: a68d4634c6341f27673fdd70d96f7e214032b5a9
 workflow-type: tm+mt
-source-wordcount: '274'
-ht-degree: 37%
+source-wordcount: '268'
+ht-degree: 38%
 
 ---
 
@@ -16,11 +15,11 @@ ht-degree: 37%
 
 从基本意义上讲，审核日志将说明谁执行了什么操作，以及在什么时候执行的。日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。它可跟踪用户在Attribution AI中执行的创建、更新和删除操作。
 
-[在Attribution AI工作区中选择的审核日志](../../attribution-ai/images/data-governance/audit-logs-cai.png)
+<!-- [The audit logs selected in the Attribution AI workspace](../../../attribution-ai/aai-data-governance/images/data-governance/audit-logs-cai.png) -->
 
 ## 访问审核日志
 
 为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。您无需手动启用日志收集。
 
-要查看和导出审核日志，您必须已在 Audit Logs Access 中获得审核日志访问访问控制权限。要了解如何管理Attribution AI功能的各个权限，请参阅 [访问控制文档](../../attribution-ai/access-controls.md).
+要查看和导出审核日志，您必须已在 Audit Logs Access 中获得审核日志访问访问控制权限。要了解如何管理Attribution AI功能的各个权限，请参阅 [访问控制文档](../aai-data-governance/access-controls.md).
 

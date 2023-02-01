@@ -1,11 +1,10 @@
 ---
 keywords: 分析；客户ai；客户ai分析；CAI查询服务；客户ai查询；客户ai得分
-feature: Customer AI audit logs
-title: 审核日志概述
+title: Customer AI中的审核日志概述
 description: 了解如何在Customer AI中查看和管理审核日志。
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '279'
 ht-degree: 36%
 
 ---
@@ -22,4 +21,4 @@ ht-degree: 36%
 
 为您的组织启用该功能后，系统会在活动发生时自动收集审核日志。您无需手动启用日志收集。
 
-要查看和导出审核日志，您必须已在 Audit Logs Access 中获得审核日志访问访问控制权限。要了解如何管理Customer AI功能的各个权限，请参阅 [访问控制文档](../../customer-ai/user-guide/access-controls.md).
+要查看和导出审核日志，您必须已在 Audit Logs Access 中获得审核日志访问访问控制权限。要了解如何管理Customer AI功能的各个权限，请参阅 [访问控制文档](../cai-data-governance/access-controls.md).

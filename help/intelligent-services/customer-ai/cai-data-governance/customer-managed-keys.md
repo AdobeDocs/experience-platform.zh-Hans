@@ -1,12 +1,11 @@
 ---
 keywords: 分析；客户ai；客户ai分析；AAI查询服务；客户ai查询；客户ai得分；CAI中的客户管理密钥
-feature: Customer-Managed Keys in Customer AI
-title: 客户管理的密钥
+title: Customer AI中的客户管理密钥。
 description: 了解如何为Customer AI设置客户管理的密钥。
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: f80cdd553c36ee10cfbf07c5cbbb14e9a4ae6757
 workflow-type: tm+mt
-source-wordcount: '170'
-ht-degree: 24%
+source-wordcount: '173'
+ht-degree: 21%
 
 ---
 

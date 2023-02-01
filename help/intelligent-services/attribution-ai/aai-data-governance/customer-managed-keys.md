@@ -1,9 +1,8 @@
 ---
 keywords: 分析；归因ai；归因ai分析；AAI查询服务；归因查询；归因得分；AAI中的客户管理密钥
-feature: Customer-Managed Keys in Attribution AI
 title: 客户管理的密钥
 description: 了解如何为Attribution AI设置客户管理的密钥。
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: f80cdd553c36ee10cfbf07c5cbbb14e9a4ae6757
 workflow-type: tm+mt
 source-wordcount: '168'
 ht-degree: 24%
