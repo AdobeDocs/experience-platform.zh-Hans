@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 2d9cd6ed1db7bcbbe9b35c154e09a6b03f9a132d
+source-git-commit: 33aeeb58e5bfa2c1553a5c49fee07dc5020f4efb
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '928'
 ht-degree: 11%
 
 ---
@@ -329,6 +329,15 @@ ht-degree: 11%
       - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
       - [文档自助API模板](sources-sdk/documentation/template.md)
       - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
+   - 流SDK {#streaming-sdk}
+      - [自助源（流SDK）入门](sources-sdk/streaming/getting-started.md)
+      - [为流源创建连接规范](sources-sdk/streaming/create.md)
+      - [更新流源的连接规范](sources-sdk/streaming/update-connection-specs.md)
+      - [更新流流规范](sources-sdk/streaming/update-flow-specs.md)
+      - [测试并提交连接规范以进行验证](sources-sdk/streaming/submit.md)
+      - [记录源（流SDK）](sources-sdk/streaming/document-streaming.md)
+      - [文档自助API流模板](sources-sdk/streaming/streaming-template-api.md)
+      - [文档自助服务UI流模板](sources-sdk/streaming/streaming-template-ui.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
