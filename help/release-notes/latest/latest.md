@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: f7bcd009882d9753638ba2ce692df9fe80287641
+source-git-commit: 667e868f2faba3ac3f241a2e2cd04d6de67f48c7
 workflow-type: tm+mt
-source-wordcount: '2293'
-ht-degree: 7%
+source-wordcount: '2443'
+ht-degree: 6%
 
 ---
 
@@ -83,7 +83,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 {style=&quot;table-layout:auto&quot;}
 
-## 目标 {#destinations}
+## 目标（2月2日更新） {#destinations}
 
 [!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 
@@ -114,6 +114,10 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
         <td>更新了对基于文件的目标的导出行为(PLAT-123316)</td>
         <td>我们修复了 <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mandatory-attributes">必需属性</a> 将数据文件导出到批处理目标时。 <br> 以前，输出文件中的每条记录都经过验证，可同时包含以下两项： <ol><li>的非空值 <code>mandatoryField</code> 列和</li><li>其他至少一个非必填字段上的非空值。</li></ol> 第二个条件已被删除。 因此，您可能会在导出的数据文件中看到更多输出行，如以下示例所示：<br> <b> 2023年1月版之前的示例行为 </b> <br> 必填字段： <code>emailAddress</code> <br> <b>要激活的输入数据</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br> <b>激活输出</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr></tbody></table> <br> <b> 2023年1月版发布后的示例行为 </b> <br> <b>激活输出</b> <br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>约翰</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>杰尼费</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
     </tr>
+    <tr>
+        <td>所需映射和重复映射的UI和API验证(PLAT-123316)</td>
+        <td>现在，在UI和API中，如下所示，在 <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">映射字段</a> 在激活目标工作流中：<ul><li><b>必需映射</b>:如果目标开发人员已设置目标，且该目标已设置为所需的映射(例如， <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> 目标)，则用户在将数据激活到目标时需要添加这些所需映射。 </li><li><b>重复映射</b>:在激活工作流的映射步骤中，您可以在源字段中添加重复值，但不能在目标字段中添加重复值。 有关允许和禁止的映射组合的示例，请参阅下表。 <br><table><thead><tr><th>允许/禁止</th><th>源字段</th><th>目标字段</th></tr></thead><tbody><tr><td>允许</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>电子邮件别名2</li></ul></td></tr><tr><td>禁止</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
+    </tr>    
 </table>
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
