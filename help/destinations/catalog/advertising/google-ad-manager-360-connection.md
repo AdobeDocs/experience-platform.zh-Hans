@@ -2,10 +2,10 @@
 title: （测试版） [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
+source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
 workflow-type: tm+mt
-source-wordcount: '914'
-ht-degree: 1%
+source-wordcount: '926'
+ht-degree: 2%
 
 ---
 
@@ -54,19 +54,15 @@ ht-degree: 1%
 
 ### 允许列表 {#allow-listing}
 
+在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Ad Manager 360] 目标。 在创建目标之前，请确保完成下面描述的允许列表流程。
+
 >[!NOTE]
 >
->允许列表在设置第一个 [!DNL Google Ad Manager] 目标。 请确保已完成下述允许列表流程 [!DNL Google] 创建目标之前。
+>此规则的例外情况是现有规则 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
 
->[!IMPORTANT]
->
->Google简化了将外部受众管理平台连接到Google Ad Manager 360的过程。 您现在可以通过自助方式完成链接到Google Ad Manager 360的过程。 读取 [数据管理平台中的区段](https://support.google.com/admanager/answer/3289669?hl=en) (在Google文档中)。 您应当拥有下面列出的ID。
+1. 按照 [Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en) 将Adobe添加为链接的数据管理平台(DMP)。
+2. 在 [!DNL Google Ad Manager] 界面，转到 **[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用 **[!UICONTROL API访问]** 滑块。
 
-* **帐户ID**:Adobe的帐户ID与Google。 帐户ID:87933855。
-* **客户ID**:Adobe的客户帐户ID和Google。 客户ID:89690775。
-* **网络代码**:这是您的 [!DNL Google Ad Manager] 网络标识符，位于 **[!UICONTROL 管理员>全局设置]** 在Google界面和URL中。
-* **受众链接ID**:这是与 [!DNL Google Ad Manager] 网络 [!DNL Network code])，也可在下找到 **[!UICONTROL 管理员>全局设置]** 在Google界面中。
-* 您的帐户类型。 由Google或AdX购买者提供的DFP。
 
 ## 连接到目标 {#connect}
 
@@ -91,12 +87,12 @@ ht-degree: 1%
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
-* **[!UICONTROL 存储段名称]**:输入 [!DNL Google Cloud Storage] 存储段供此目标使用。
 * **[!UICONTROL 文件夹路径]**:输入将托管导出文件的目标文件夹的路径。
-* **[!UICONTROL 帐户ID]**:使用 [!DNL Google].
-* **[!UICONTROL 帐户类型]**:根据您使用Google的帐户选择一个选项：
-   * 使用 `DFP by Google` 表示 [!DNL DoubleClick] （发布者）
+* **[!UICONTROL 存储段名称]**:输入 [!DNL Google Cloud Storage] 存储段供此目标使用。
+* **[!UICONTROL 帐户ID]**:输入 [!DNL Audience Link ID] 从 [!DNL Google] 帐户。 这是与 [!DNL Google Ad Manager] 网络 [!DNL Network code])。 您可以在 **[!UICONTROL 管理员>全局设置]** 在 [!DNL Google Ad Manager] 界面。
+* **[!UICONTROL 帐户类型]**:根据 [!DNL Google] 帐户：
    * 使用 `AdX buyer` 表示 [!DNL Google AdX]
+   * 使用 `DFP by Google` 表示 [!DNL DoubleClick] （发布者）
 
 ### 启用警报 {#enable-alerts}
 
@@ -127,3 +123,12 @@ ht-degree: 1%
 ## 导出的数据 {#exported-data}
 
 要验证数据是否已成功导出，请检查 [!DNL Google Cloud Storage] 存储段，并确保导出的文件包含预期的用户档案群体。
+
+## 故障排除 {#troubleshooting}
+
+如果您在使用此目标时遇到任何错误，并且需要联系到Adobe或Google，请保留以下ID。
+
+这些是Adobe的Google帐户ID:
+
+* **[!UICONTROL 帐户ID]**:87933855
+* **[!UICONTROL 客户ID]**:89690775

@@ -3,9 +3,9 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 94cd05ca8b5c8331b1b49e5172daf499918d2320
+source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '890'
 ht-degree: 3%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 3%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] | 如果源标识是GAID命名空间，请选择此目标标识。 |
 | IDFA | [!DNL Apple ID for Advertisers] | 如果源标识是IDFA命名空间，请选择此目标标识。 |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 一个38位数的数字设备ID，Audience Manager会将其与之交互的每个设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en) 来定位加利福尼亚州的用户，以及所有其他用户的Google Cookie ID。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 一个38位数的数字设备ID，Audience Manager会将其与之交互的每个设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 来定位加利福尼亚州的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 会使用此ID来定位加州以外的用户。 |
 | RIDA | 用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
@@ -58,18 +58,10 @@ ht-degree: 3%
 
 ### 允许列表 {#allow-listing}
 
->[!NOTE]
->
->在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Ad Manager] 目标。 请确保已完成下面描述的允许列表流程 [!DNL Google] 创建目标之前。
->此规则的例外是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
+在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Ad Manager] 目标。 在创建目标之前，请确保完成下面描述的允许列表流程。
 
-在创建 [!DNL Google Ad Manager] 目标，您必须联系 [!DNL Google] Adobe添加到允许的数据提供程序列表，以及将帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
-
-* **帐户ID**:Adobe的帐户ID与Google。 帐户ID:87933855。
-* **客户ID**:Adobe的客户帐户ID和Google。 客户ID:89690775。
-* **网络代码**:这是您的 [!DNL Google Ad Manager] 网络标识符，位于 **[!UICONTROL 管理员>全局设置]** 在Google界面和URL中。
-* **受众链接ID**:这是与 [!DNL Google Ad Manager] 网络 [!DNL Network code])，也可在下找到 **[!UICONTROL 管理员>全局设置]** 在Google界面中。
-* 您的帐户类型。 由Google或AdX购买者提供的DFP。
+1. 按照 [Google Ad Manager文档](https://support.google.com/admanager/answer/3289669?hl=en) 将Adobe添加为链接的数据管理平台(DMP)。
+2. 在 [!DNL Google Ad Manager] 界面，转到 **[!UICONTROL 管理员]** > **[!UICONTROL 全局设置]** > **[!UICONTROL 网络设置]**，并启用 **[!UICONTROL API访问]** 滑块。
 
 ## 连接到目标 {#connect}
 
@@ -85,10 +77,11 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
+* **[!UICONTROL 帐户ID]**:输入 [!DNL Audience Link ID] 从 [!DNL Google] 帐户。 这是与 [!DNL Google Ad Manager] 网络 [!DNL Network code])。 您可以在 **[!UICONTROL 管理员>全局设置]** 在 [!DNL Google Ad Manager] 界面。
 * **[!UICONTROL 帐户类型]**:根据您使用Google的帐户选择一个选项：
    * 使用 `DFP by Google` 表示 [!DNL DoubleClick] （发布者）
    * 使用 `AdX buyer` 表示 [!DNL Google AdX]
-* **[!UICONTROL 帐户ID]**:使用 [!DNL Google].
+
 
 >[!NOTE]
 >
@@ -111,3 +104,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 ## 导出的数据 {#exported-data}
 
 验证数据是否已成功导出到 [!DNL Google Ad Manager] 目标位置，检查 [!DNL Google Ad Manager] 帐户。 如果激活成功，则帐户中会填充受众。
+
+## 故障排除 {#troubleshooting}
+
+如果您在使用此目标时遇到任何错误，并且需要联系到Adobe或Google，请保留以下ID。
+
+这些是Adobe的Google帐户ID:
+
+* **[!UICONTROL 帐户ID]**:87933855
+* **[!UICONTROL 客户ID]**:89690775
