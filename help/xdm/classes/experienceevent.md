@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
+source-git-commit: e4e87fdb5f6dfbca882f924d38397a904d8b0cff
 workflow-type: tm+mt
-source-wordcount: '1853'
+source-wordcount: '1865'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 例如，如果旅游和酒店业的企业正在为航班预订事件建模，则为类级别 `timestamp` 字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应在标准字段组或自定义字段组提供的单独字段中捕获。
 
-![](../images/classes/experienceevent/timestamps.png)
+![突出显示了“航班预订”和“开始日期”的示例体验事件架构。](../images/classes/experienceevent/timestamps.png)
 
 通过将类级别时间戳与事件架构中其他相关的日期时间值分开，您可以实施灵活的分段用例，同时在体验应用程序中保留客户历程的带有时间戳的帐户。
 
