@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 自动策略实施
 description: 本文档介绍了在将区段激活到Experience Platform中的目标时如何自动强制实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c0f077d685c688f96d1778a02b24c0959a5dd822
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1883'
 ht-degree: 0%
 
 ---
@@ -116,6 +116,16 @@ ht-degree: 0%
 ### 同意策略评估 {#consent-policy-evaluation}
 
 如果 [创建同意策略](../policies/user-guide.md#consent-policy) 将区段激活到目标后，您可以查看您的同意策略对激活中包含的用户档案百分比有何影响。
+
+#### 付费媒体的同意策略增强功能 {#consent-policy-enhancement}
+
+增强了对包括付费媒体激活在内的流媒体目标的同意策略实施。 此增强功能适用于隐私和安全保护或医疗保健保护的客户，并会随着同意状态的更改主动从流目标中删除用户档案。 它还可确保立即传播同意更改，以便始终定位正确的受众。
+
+这些改进让您能够更加信任您的营销策略，因为营销人员无需向其区段表达式手动添加同意属性。 这可确保在撤回同意或不再符合同意策略的条件后，不会在无意中针对任何营销体验定位用户档案。 现在，在下游解决方案的激活工作流中自动强制实施营销同意策略，这些策略为如何跨各种营销工作流管理同意或首选项数据设置了规则。
+
+>[!NOTE]
+>
+>此增强功能不会对UI进行任何更改。
 
 #### 激活前评估
 
