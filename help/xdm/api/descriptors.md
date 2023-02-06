@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
+source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1956'
-ht-degree: 2%
+source-wordcount: '1900'
+ht-degree: 3%
 
 ---
 
@@ -357,7 +357,7 @@ curl -X DELETE \
 | `xdm:title` | 您希望为此字段显示的新标题，在标题大小写中写成。 |
 | `xdm:description` | 可以添加可选描述以及标题。 |
 | `meta:enum` | 如果字段指示为 `xdm:sourceProperty` 是字符串字段， `meta:enum` 可用于在分段UI中为字段添加建议的值。 请务必注意， `meta:enum` 不声明枚举或为XDM字段提供任何数据验证。<br><br>此字段应仅用于由Adobe定义的核心XDM字段。 如果源属性是由您的组织定义的自定义字段，则应该编辑该字段的 `meta:enum` 属性(通过PATCH请求)。 |
-| `meta:excludeMetaEnum` | 如果字段指示为 `xdm:sourceProperty` 是一个字符串字段，其中包含在 `meta:enum` 字段中，您可以将此对象包含在友好名称描述符中，以从分段中排除部分或全部这些值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。<br><br>请务必注意，您只能排除包含的字符串字段的值 **仅建议值**. 如果字符串字段包含实际 `enum` 约束，则无法禁用其关联的建议值。 `enum` 您的组织定义的自定义资源的字段，可以通过PATCH请求进行编辑， `enum` 无法删除标准Adobe定义的资源中的字段。 |
+| `meta:excludeMetaEnum` | 如果字段指示为 `xdm:sourceProperty` 是一个字符串字段，其中包含在 `meta:enum` 字段中，您可以将此对象包含在友好名称描述符中，以从分段中排除部分或全部这些值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。 |
 
 {style=&quot;table-layout:auto&quot;}
 

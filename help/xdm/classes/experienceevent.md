@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: e4e87fdb5f6dfbca882f924d38397a904d8b0cff
+source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1865'
+source-wordcount: '1842'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 1%
 | --- | --- |
 | `_id`<br>**(必需)** | 事件的唯一字符串标识符。 此字段用于跟踪单个事件的唯一性，防止重复数据，并在下游服务中查找该事件。 在某些情况下， `_id` 可以 [通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果从源连接流式传输数据或直接从Parquet文件摄取数据，则应通过关联使事件具有唯一性的特定字段组合（如主ID、时间戳、事件类型等）来生成此值。 拼接值必须是 `uri-reference` 格式化的字符串，这意味着必须删除任何冒号字符。 之后，连接值应使用SHA-256或您选择的其他算法进行哈希处理。<br><br>要区分这一点很重要 **此字段不表示与个人相关的身份**，而是数据本身的记录。 与个人有关的身份数据应降级为 [身份字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
 | `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，此值表示被摄取的批次创建记录的ID。 在摄取数据时，系统会自动填充此字段。 不支持在Web SDK实施的上下文之外使用此字段。 |
-| `eventType` | 表示事件类型或类别的字符串。 如果要区分同一架构和数据集中的不同事件类型，例如区分某个产品查看事件与某个零售公司的添加到购物车事件，则可以使用此字段。<br><br>此属性的标准值在 [附录节](#eventType)，包括其预期用例的描述。 此字段是一个可扩展枚举，这意味着您还可以使用自己的事件类型字符串对您跟踪的事件进行分类。 您还可以 [禁用任何标准建议值](../ui/fields/enum.md#standard-fields) （如果它们不适合您的用例）。<br><br>`eventType` 限制您在应用程序上每次点击只使用一个事件，因此您必须使用计算字段告知系统最重要的事件。 有关更多信息，请参阅 [计算字段的最佳实践](#calculated). |
+| `eventType` | 表示事件类型或类别的字符串。 如果要区分同一架构和数据集中的不同事件类型，例如区分某个产品查看事件与某个零售公司的添加到购物车事件，则可以使用此字段。<br><br>此属性的标准值在 [附录节](#eventType)，包括其预期用例的描述。 此字段是一个可扩展枚举，这意味着您还可以使用自己的事件类型字符串对您跟踪的事件进行分类。<br><br>`eventType` 限制您在应用程序上每次点击只使用一个事件，因此您必须使用计算字段告知系统最重要的事件。 有关更多信息，请参阅 [计算字段的最佳实践](#calculated). |
 | `producedBy` | 描述事件的制作者或来源的字符串值。 如果出于分段目的需要，可使用此字段过滤掉某些事件生成器。<br><br>此属性的一些建议值在 [附录节](#producedBy). 此字段是一个可扩展枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
 | `identityMap` | 映射字段，其中包含事件所应用的个人的一组命名空间标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确利用此字段 [实时客户资料](../../profile/home.md)，请勿尝试手动更新数据操作中字段的内容。<br /><br />请参阅 [架构组合基础知识](../schema/composition.md#identityMap) ，以了解其用例的详细信息。 |
 | `timestamp`<br>**(必需)** | 事件发生时的ISO 8601时间戳，格式如下 [RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6). 此时间戳必须在过去发生。 请参阅下面的章节 [时间戳](#timestamps) 以了解有关使用此字段的最佳实践。 |
@@ -86,7 +86,7 @@ Adobe提供了多个与 [!DNL XDM ExperienceEvent] 类。 以下是类的一些�
 
 以下部分包含有关 [!UICONTROL XDM ExperienceEvent] 类。
 
-### 的建议值 `eventType` {#eventType}
+### 的接受值 `eventType` {#eventType}
 
 下表概述了 `eventType`，及其定义：
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f770ba8668c5154b2cf5a57ba61d771ca34ab2d8
+source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1257'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，并将类型设置为 [!UICONTROL 字符串]，则您可以选择定义 [枚举](#enum) 或 [建议值](#suggested-values) 对于该字段。
 
-![为UI中的字符串字段启用了枚举和建议值选项。](../../images/ui/fields/enum/enum-options-selected.png)
+![该图像显示了在UI中为字符串字段启用的枚举和建议值选项](../../images/ui/fields/enum/enum-options-selected.png)
 
 本文档介绍如何在 [!UICONTROL 模式] UI工作区。 有关枚举和建议值（包括如何在UI中配置它们及其下游效果）的快速概述，请观看以下视频：
 
@@ -36,13 +36,13 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 选择 **[!UICONTROL 枚举和建议值]**，然后选择 **[!UICONTROL 枚举]**. 此时会显示其他控件，允许您指定枚举的值约束。 要添加约束，请选择 **[!UICONTROL 添加行]**.
 
-![在UI中选择的枚举选项。](../../images/ui/fields/enum/enum-add-row.png)
+![显示在UI中选择的枚举选项的图像](../../images/ui/fields/enum/enum-add-row.png)
 
 在 **[!UICONTROL 值]** 列中，您必须提供要将字段限制为的确切值。 您可以选择提供人性化的 **[!UICONTROL 显示名称]** ，这会影响值在分段中的显示方式。
 
 继续使用 **[!UICONTROL 添加行]** 要向枚举添加所需的约束和可选标签，或选择删除图标(![删除图标的图像](../../images/ui/fields/enum/remove-icon.png))以将其删除。 完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
 
-![为UI中的字符串字段填写的枚举值和显示名称。](../../images/ui/fields/enum/enum-confirm.png)
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/enum-confirm.png)
 
 画布会更新以反映所做的更改。 将来浏览此架构时，您可以在右边栏中查看和编辑枚举字段的约束。
 
@@ -50,35 +50,39 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 选择 **[!UICONTROL 枚举和建议值]**，然后选择 **[!UICONTROL 建议值]** 以显示其他控件。 从此处选择 **[!UICONTROL 添加行]** 以开始添加建议的值。
 
-![在UI中选择的建议值选项。](../../images/ui/fields/enum/suggested-add-row.png)
+![显示在UI中选择的建议值选项的图像](../../images/ui/fields/enum/suggested-add-row.png)
 
 在 **[!UICONTROL 显示名称]** 列中，为您希望在分段UI中显示的值提供一个人类易记的名称。 要添加更多建议值，请选择 **[!UICONTROL 添加行]** 再次，并根据需要重复该过程。 要删除之前添加的行，请选择 ![删除图标](../../images/ui/fields/enum/remove-icon.png) 排旁边。
 
 完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
 
-![为UI中的字符串字段填写的枚举值和显示名称。](../../images/ui/fields/enum/suggested-confirm.png)
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-confirm.png)
 
 >[!NOTE]
 >
 >字段的更新建议值大约有五分钟的延迟，才能反映在分段UI中。
 
-### 管理标准字段的建议值 {#standard-fields}
+### 管理标准字段的建议值
 
-标准XDM组件中的某些字段包含它们自己的建议值，例如 `eventType` 从 [[!UICONTROL XDM ExperienceEvent] 类](../../classes/experienceevent.md) 并且，您可以像为自定义字段创建其他建议值一样，为这些标准字段创建其他建议值。 您还可以禁用任何标准建议值，这些值不适合您的用例，但不能从字段定义中直接将其删除。
+标准XDM组件中的某些字段包含它们自己的建议值，例如 `eventType` 从 [[!UICONTROL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 虽然您可以为标准字段创建其他建议值，但您无法修改或删除组织未定义的任何建议值。 在UI中查看标准字段时，其建议值虽然显示但为只读值。
 
->[!IMPORTANT]
->
->您只能对没有相应枚举约束的标准字段禁用建议的值。 换句话说，如果 **[!UICONTROL 枚举]** 选项 **[!UICONTROL 建议值]**，则字段将被约束为枚举，并且这些约束无法禁用。
->
->请参阅 [下方](#evolution) 有关更新枚举和现有架构字段建议值的规则的详细信息。
-
-要禁用标准建议值，请选择相关值旁边的切换开关。 您可以禁用建议值的任意组合，包括所有这些值。
-
-![对于 [!UICONTROL 事件类型] 字段。](../../images/ui/fields/enum/suggested-standard.png)
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
 
 要为标准字段添加新的建议值，请选择 **[!UICONTROL 添加行]**. 要删除您的组织之前添加的建议值，请选择 ![删除图标](../../images/ui/fields/enum/remove-icon.png) 排旁边。
 
-![向UI中的标准字符串字段添加的自定义建议值。](../../images/ui/fields/enum/suggested-standard-add.png)
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard-add.png)
+
+<!-- ### Removing suggested values for standard fields
+
+Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
+
+For example, consider a profile schema where the a suggested value for the standard `person.gender` field is disabled:
+
+![Image showing the enum values and display names filled out for the string field in the UI](../../images/ui/fields/enum/standard-enum-disabled.png)
+
+In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
+
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
 
 ## 枚举和建议值的演化规则 {#evolution}
 
@@ -86,15 +90,13 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 对于枚举和建议的值，以下规则会应用摄取后的规则：
 
-* 您 **可以** 向具有现有建议值的任何字段中添加建议值。
-* 您 **可以** 从具有现有建议值的字段中删除自定义建议值。
-* 您 **可以** 从仅包含建议值且无枚举约束的字段中禁用标准建议值。
+* 您 **可以** 使用现有建议值为标准和自定义字段添加建议值。
+* 您 **可以** 从具有现有建议值的自定义字段中删除建议值。
 * 您 **可以** 为现有自定义枚举字段添加新的枚举值。
 * 您 **可以** 将自定义字段的枚举值切换为仅建议的值，或将其转换为没有枚举或建议值的字符串。 **应用后，此开关将无法撤消。**
-* 您 **不能** 在标准字段中添加或删除枚举约束。
-* 您 **不能** 从标准字段中删除建议的值（仅限禁用）。
-* 您 **不能** 将枚举约束添加到没有现有枚举的字段。
-* 您 **不能** 为自定义字段删除少于所有现有枚举约束。
+* 您 **不能** 从标准字段中删除枚举或建议值。
+* 您 **不能** 将枚举值添加到没有现有枚举的字段。
+* 您 **不能** 删除自定义字段的枚举值少于所有现有枚举值。
 * 您 **不能** 从建议的值切换到枚举。
 
 ## 合并枚举和建议值的规则 {#merging}
@@ -122,4 +124,4 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 本指南介绍了如何在UI中为字符串字段定义枚举和建议值。 有关如何使用架构注册表API管理枚举和建议值的信息，请参阅以下内容 [教程](../../tutorials/suggested-values.md).
 
-了解如何在 [!DNL Schema Editor]，请参阅 [在UI中定义字段。](./overview.md#special).
+了解如何在 [!DNL Schema Editor]，请参阅 [在UI中定义字段](./overview.md#special).
