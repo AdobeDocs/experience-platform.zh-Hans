@@ -1,7 +1,7 @@
 ---
 title: 配置文件导出行为
 description: 了解配置文件导出行为在Experience Platform目标中支持的不同集成模式之间有何不同。
-source-git-commit: 1c844d86834ef78d1206a8698dbcbfe2fae49661
+source-git-commit: 07b92bc06f28bc37673ae71a45ff0e76de9bce9b
 workflow-type: tm+mt
 source-wordcount: '2926'
 ht-degree: 0%
@@ -126,7 +126,7 @@ Experience Platform会优化配置文件导出行为以将数据导出到您的�
 
 从配置文件属性的角度来看，对上述三个属性所做的任何更改都将决定目标导出。
 
->[!BEGINSHADEBOX]
+>[!ENDSHADEBOX]
 
 ## 批量（基于文件）目标 {#file-based-destinations}
 
