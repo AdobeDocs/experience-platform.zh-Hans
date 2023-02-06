@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: f89c6a11199bff2d91414e8370c1fd9693308fc6
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '1016'
 ht-degree: 6%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 6%
 * [目标概述](./home.md)
 * [目标类型和类别](./destination-types.md)
 * [目标（激活）护栏](./guardrails.md)
+* 目标的工作原理 {#how-destinations-work}
+   * [目标中的可配置和常用导出设置](./how-destinations-work/destinations-configurations.md)
+   * [不同目标类型的配置文件导出行为](./how-destinations-work/profile-export-behavior.md)
+   * [目标激活工作流中的身份处理](./how-destinations-work/identity-handling.md)
 * API教程 {#api}
    * [使用流服务API连接到流目标并激活数据](./api/streaming-destinations.md)
    * [连接到批量云存储和电子邮件营销目标，并使用流程服务API激活数据](./api/connect-activate-batch-destinations.md)

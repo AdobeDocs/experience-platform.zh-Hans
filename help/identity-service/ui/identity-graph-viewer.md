@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 身份图查看器概述
 description: 身份图是特定客户不同身份之间关系的映射，可直观地展示客户如何跨不同渠道与您的品牌进行交互。
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 1%
@@ -35,7 +35,7 @@ ht-degree: 1%
 - **链接（边缘）：** 链接或边缘表示标识之间的连接。
 - **图形（集群）：** 图形或群集是一组表示人员的身份和链接。
 
-## 访问身份图查看器
+## 访问身份图查看器 {#access-identity-graph-viewer}
 
 要在UI中使用身份图查看器，请选择 **[!UICONTROL 标识]** ，然后选择 **[!UICONTROL 身份图]** 选项卡。 从 **[!UICONTROL 身份命名空间]** 屏幕，单击 **[!UICONTROL 选择身份命名空间]** 图标来搜索您打算使用的命名空间。
 

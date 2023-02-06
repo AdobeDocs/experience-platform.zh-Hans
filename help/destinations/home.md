@@ -3,10 +3,10 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
-source-wordcount: '633'
-ht-degree: 1%
+source-wordcount: '755'
+ht-degree: 0%
 
 ---
 
@@ -45,7 +45,7 @@ Platform的核心功能之一是摄取第一方数据并根据业务需求对其
 
 ## 目标类型和类别 {#types-and-categories}
 
-有关详细信息，请参阅 [目标类型和类别概述](./destination-types.md).
+通过Experience Platform，您可以将数据激活到各种类型的目标，以满足您的激活用例。 目标范围从基于API的集成到与文件接收系统的集成、配置文件查找目标等。 有关所有可用目标的详细信息，请参阅 [目标类型和类别概述](./destination-types.md).
 
 ## 目标和访问控制 {#access-controls}
 
@@ -69,6 +69,12 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 通过基于属性的访问控制，您可以将映射配置应用到您有权访问的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据导出到目标。
 
 有关目标如何使用基于属性的访问控制的更多信息，请阅读 [基于属性的访问控制概述](../access-control/abac/overview.md#destinations).
+
+## 目标监控 {#destinations-monitoring}
+
+在建立与目标的连接并完成激活工作流后，您可以监控向接收系统导出的数据。 阅读 [在UI中监控数据流到目标的指南](/help/dataflows/ui/monitor-destinations.md) 以了解更多信息。
+
+您还可以验证数据是否成功传入您的目标。 目录中的大多数目标文档页面都具有 *验证数据导出部分*，指示如何在目标平台中检查数据是否从Experience Platform成功导入。
 
 ## 在将数据激活到目标方面的数据管理限制 {#data-governance}
 

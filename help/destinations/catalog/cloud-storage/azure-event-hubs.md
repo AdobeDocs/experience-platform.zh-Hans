@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: Azure事件中心连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: fd6a9f082c830de5a46d484bccfeba3b4116d05d
+source-git-commit: ce20c273cb6a87264363c03611ccfdfb783e595f
 workflow-type: tm+mt
-source-wordcount: '2006'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -134,7 +134,7 @@ Experience Platform会优化将用户档案导出到 [!DNL Azure Event Hubs] 目
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段可用作目标导出的提示。 这意味着，如果任何映射的区段更改状态（从null更改为已实现或从已实现/现有更改为退出）或任何映射的属性已更新，则将开始目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标中，给定配置文件中任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性的任何更新，无论该更新是否与属性的值相同。 这意味着，即使值本身未发生更改，属性上的覆盖也会被视为更改。</li></ul> | <ul><li>所有区段（具有最新的成员资格状态），无论它们是否在数据流中映射，都会包含在 `segmentMembership` 对象。</li><li>中的所有标识 `identityMap` 对象(Experience Platform当前不支持在 [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段可用作目标导出的提示。 这意味着，如果任何映射的区段更改状态（从null更改为已实现或从已实现/现有更改为退出）或任何映射的属性已更新，则将开始目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标中，给定配置文件中任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性的任何更新，无论该更新是否与属性的值相同。 这意味着，即使值本身未发生更改，属性上的覆盖也会被视为更改。</li></ul> | <ul><li>的 `segmentMembership` 对象包括在激活数据流中映射的区段，在鉴别或区段退出事件后，配置文件的状态发生了更改。 请注意，如果配置文件符合条件的其他未映射区段属于同一区段，则这些区段可能属于目标导出的一部分 [合并策略](/help/profile/merge-policies/overview.md) 作为激活数据流中映射的区段。 </li><li>中的所有标识 `identityMap` 对象(Experience Platform当前不支持在 [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style=&quot;table-layout:fixed&quot;}
 
@@ -142,7 +142,7 @@ Experience Platform会优化将用户档案导出到 [!DNL Azure Event Hubs] 目
 
 ![Amazon Kinesis目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-导出到目标的用户档案，可由符合或退出 *三个映射的区段*. 但是，在数据导出中， `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，则可能会显示其他未映射的区段，前提是该特定用户档案是其成员。 如果某个用户档案符合“使用德罗林汽车的客户”区段的资格条件，但同时也是“观看的‘回到未来’”电影和科幻片迷区段的成员，则另外两个区段也将出现在 `segmentMembership` 对象，即使这些对象未在数据流中映射。
+导出到目标的用户档案，可由符合或退出 *三个映射的区段*. 但是，在数据导出中， `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，则可能会显示其他未映射的区段，如果该特定配置文件是其成员，并且这些区段与触发导出的区段共享相同的合并策略。 如果用户档案符合 **使用德罗林汽车的客户** 区段，但亦为 **观看了“回到未来”** 电影和 **科幻迷** 区段，则另外两个区段也将显示在 `segmentMembership` 数据导出对象，即使这些对象未在数据流中映射，但前提是它们与 **使用德罗林汽车的客户** 区段。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个将出现在数据导出中。
 
