@@ -2,7 +2,7 @@
 description: 此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 21278b39a2dc12771449b9a471ea4182c6b999a3
+source-git-commit: 74f617afe8a0f678d43fb7b949d43cef25e78b9d
 workflow-type: tm+mt
 source-wordcount: '3012'
 ht-degree: 5%
@@ -40,11 +40,12 @@ ht-degree: 5%
    ],
    "customerDataFields":[
       {
-         "name":"bucket",
+         "name":"bucketName",
          "title":"Amazon S3 bucket name",
          "description":"Enter your Amazon S3 bucket name",
          "type":"string",
          "isRequired":true,
+         "pattern": "(?=^.{3,63}$)(?!^(\\d+\\.)+\\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$)",
          "readOnly":false,
          "hidden":false
       },
@@ -54,7 +55,7 @@ ht-degree: 5%
          "description":"Enter your S3 bucket path",
          "type":"string",
          "isRequired":true,
-         "pattern":"^[A-Za-z]+$",
+         "pattern": "^[0-9a-zA-Z\\/\\!\\-_\\.\\*\\''\\(\\)]*((\\%SEGMENT_(NAME|ID)\\%)?\\/?)+$",
          "readOnly":false,
          "hidden":false
       },
@@ -876,7 +877,7 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 | `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目标名称] | 目标实例的用户定义的名称。 | 我2022年的广告去向 |
 | `ORGANIZATION_NAME` | [!UICONTROL 组织名称] | Adobe Experience Platform中的客户组织名称。 | 我的组织名称 |
 | `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客户使用的沙盒的名称。 | prod |
-| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 这两种格式都定义了文件的生成时间，但格式不同。 <br><br><ul><li>`DATETIME` 使用以下格式：YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 互斥，且不能同时使用。 | <ul><li>`DATETIME`:20220509_210543</li><li>`TIMESTAMP`:1652131584</li></ul> |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 这两种格式都定义了文件的生成时间，但格式不同。 <br><br><ul><li>`DATETIME` 使用以下格式：YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 互斥，且不能同时使用。 | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
 | `CUSTOM_TEXT` | [!UICONTROL 自定义文本] | 要包含在文件名中的用户定义的自定义文本。 不能在中使用 `defaultFilename`. | My_Custom_Text |
 | `TIMESTAMP` | [!UICONTROL 日期和时间] | 生成文件时的10位时间戳（Unix格式）。 | 1652131584 |
 
