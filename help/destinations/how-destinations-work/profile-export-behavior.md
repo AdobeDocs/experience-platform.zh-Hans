@@ -1,9 +1,9 @@
 ---
 title: 配置文件导出行为
 description: 了解配置文件导出行为在Experience Platform目标中支持的不同集成模式之间有何不同。
-source-git-commit: 07b92bc06f28bc37673ae71a45ff0e76de9bce9b
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '2926'
+source-wordcount: '2944'
 ht-degree: 0%
 
 ---
@@ -87,9 +87,9 @@ Experience Platform会优化配置文件导出行为以导出到企业目标，�
 
 ## 基于流API的目标 {#streaming-api-based-destinations}
 
-流目标(如Facebook、交易台和其他基于API的集成)的用户档案导出行为与上述行为相同。
+流目标(如Facebook、交易台和其他基于API的集成)的配置文件导出行为与上述企业目标的行为非常相似。
 
-目标示例：广告、社交等。
+流目标的示例包括 [社交和广告类别](/help/destinations/destination-types.md#categories) 中。
 
 Experience Platform会优化配置文件导出行为以将数据导出到您的流目标，以便仅在区段鉴别或其他重大事件之后对配置文件进行相关更新时，才将数据导出到基于流API的目标。 在以下情况下，用户档案会导出到您的目标：
 

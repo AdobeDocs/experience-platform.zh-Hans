@@ -1,9 +1,9 @@
 ---
 title: 目标激活工作流中的身份处理
 description: 了解激活工作流中如何处理身份导出，具体取决于目标类型
-source-git-commit: 6ccf26cbdbbe675d0d731f59cee589d63ca6f8ad
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '1174'
+source-wordcount: '1186'
 ht-degree: 1%
 
 ---
@@ -107,3 +107,5 @@ ht-degree: 1%
 阅读本文档后，您现在知道如何确定各个目标支持或需要哪些身份。 您现在还可以了解身份选择如何适用于每个目标类型。
 
 接下来，您可以阅读 [导出设置](/help/destinations/how-destinations-work/destinations-configurations.md) 目标类型在目标中很常见，可由开发人员在单个目标级别配置目标，并且用户可以在激活工作流中编辑哪些设置。
+
+您还可以在 [目录](/help/destinations/catalog/overview.md).

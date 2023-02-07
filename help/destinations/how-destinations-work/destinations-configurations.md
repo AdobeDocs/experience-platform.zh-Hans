@@ -1,9 +1,9 @@
 ---
 title: 目标中的可配置和常用导出设置
 description: 了解目标中的哪些导出设置可以在目标级别进行配置，哪些是固定的且无法编辑的。
-source-git-commit: 04322d10a88b27d5641ab9474c8387945aab9982
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '845'
 ht-degree: 0%
 
 ---
@@ -63,5 +63,7 @@ ht-degree: 0%
 ## 后续步骤 {#next-steps}
 
 阅读本文档后，您现在知道目标的哪些导出设置在各个目标类型中是通用的，开发人员可以在单个目标级别配置这些设置，以及用户可以在激活工作流中编辑哪些设置。
+
+接下来，您可以阅读有关 [每个目标类型的常见导出行为模式](/help/destinations/how-destinations-work/profile-export-behavior.md).
 
 对于目标开发人员，您可以 [入门](/help/destinations/destination-sdk/getting-started.md) Destination SDK。 对于要激活数据的用户，您可以在 [目录](/help/destinations/catalog/overview.md).
