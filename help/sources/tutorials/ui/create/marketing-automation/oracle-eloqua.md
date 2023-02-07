@@ -1,19 +1,17 @@
 ---
-keywords: Experience Platform；主页；热门主题；来源；连接器；oracle;oracle雄辩；雄辩
-solution: Experience Platform
 title: 使用Platform UI创建OracleEloqua源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到OracleEloqua。
 exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '521'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Oracle Eloqua] 源连接（使用Platform UI）
 
-本教程提供了创建 [!DNL Oracle Eloqua] 源连接器。
+本教程提供了创建 [!DNL Oracle Eloqua] 源连接。
 
 ## 快速入门
 
@@ -30,8 +28,8 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 端点 | 您的 [!DNL Oracle Eloqua]. |
-| 用户名 | 您的用户名 [!DNL Oracle Eloqua] 帐户。 用户名的格式必须为 `siteName + \\ + username`，其中 `siteName` 是您用来登录的公司名称 [!DNL Oracle Eloqua] 和 `username` 是您的用户名。 例如，您的登录用户名可以是： `adobe\\emily`. |
+| 端点 | 您的 [!DNL Oracle Eloqua] 服务器。 [!DNL Oracle Eloqua] 支持多个数据中心。 要查找您的端点，请登录到 [[!DNL Oracle Eloqua] 界面](https://login.eloqua.com) ，然后从重定向URL复制基本URL部分。 URL模式的格式为 `xxx.xx.eloqua.com` 和应输入 `http` 或 `https`. |
+| 用户名 | 您的用户名 [!DNL Oracle Eloqua] 服务器。 用户名的格式必须为 `siteName + \\ + username`，其中 `siteName` 是您用来登录的公司名称 [!DNL Oracle Eloqua] 和 `username` 是您的用户名。 例如，您的登录用户名可以是： `Eloqua\Andy`. **注意**:必须使用单个反斜杠(`\`)，因为Experience PlatformUI会自动添加额外的反斜杠(`\`)。 |
 | 密码 | 与您的 [!DNL Oracle Eloqua] 用户名。 |
 
 有关的身份验证凭据的详细信息 [!DNL Oracle Eloqua]，请参阅 [[!DNL Oracle Eloqua] 认证指南](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html).

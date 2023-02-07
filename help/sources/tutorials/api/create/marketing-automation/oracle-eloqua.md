@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；oracle；雄辩；oracle雄辩
-solution: Experience Platform
 title: 使用流服务API创建OracleEloqua基连接
-type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到OracleEloqua。
 exl-id: 866e408f-6e0b-4e81-9ad8-9d74c485c89a
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '558'
 ht-degree: 1%
 
 ---
