@@ -4,16 +4,20 @@ solution: Experience Platform
 title: 角色API端点
 description: 基于属性的访问控制API中的/roles端点允许您以编程方式管理Adobe Experience Platform中的角色。
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1606'
 ht-degree: 3%
 
 ---
 
 # 角色端点
 
-角色定义管理员、专家或最终用户对您组织中的资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求分组的。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。
+>[!NOTE]
+>
+>如果传递了用户令牌，则令牌的用户必须对请求的组织具有“组织管理员”角色。
+
+角色定义管理员、专家或最终用户对您组织中的资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。
 
 的 `/roles` 基于属性的访问控制API中的端点允许您以编程方式管理组织中的角色。
 

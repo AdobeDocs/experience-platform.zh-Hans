@@ -4,14 +4,18 @@ solution: Experience Platform
 title: 有效的策略API端点
 description: 了解如何使用Adobe Experience Platform的访问控制API查看有效的访问策略。
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
-source-wordcount: '295'
-ht-degree: 2%
+source-wordcount: '318'
+ht-degree: 1%
 
 ---
 
 # 有效策略端点
+
+>[!NOTE]
+>
+>如果传递了用户令牌，则令牌的用户必须对请求的组织具有“组织管理员”角色。
 
 要查看当前用户的有效访问控制策略，请向 `/acl/effective-policies` 的端点 [!DNL Access Control] API。 您要检索的权限和资源类型必须以数组形式在请求有效负载中提供。 以下示例API调用中演示了这一点。
 

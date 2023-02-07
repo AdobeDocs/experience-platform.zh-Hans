@@ -4,14 +4,18 @@ solution: Experience Platform
 title: 产品API端点
 description: 基于属性的访问控制API中的/products端点允许您以编程方式管理Adobe Experience Platform中的产品。
 exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '515'
 ht-degree: 3%
 
 ---
 
 # 产品端点
+
+>[!NOTE]
+>
+>如果传递了用户令牌，则令牌的用户必须对请求的组织具有“组织管理员”角色。
 
 的 `/products` 基于属性的访问控制API中的端点允许您以编程方式管理产品以及与组织中的产品关联的权限类别和权限集。
 
