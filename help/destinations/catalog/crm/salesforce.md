@@ -3,10 +3,10 @@ keywords: CRM;CRM;CRM目标；Salesforce CRM;Salesforce CRM目标
 title: Salesforce CRM连接
 description: 利用Salesforce CRM目标，可导出帐户数据，并在Salesforce CRM中激活该数据以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: b243a5f88cadc238ac3edd3bf45a54564598bbf0
+source-git-commit: edf49d8a52eeddea65a18c1dad0035ec7e5d2c12
 workflow-type: tm+mt
-source-wordcount: '2256'
-ht-degree: 1%
+source-wordcount: '3089'
+ht-degree: 0%
 
 ---
 
@@ -39,17 +39,17 @@ When [激活区段](#activate)，您可以在潜在客户或联系人之间进�
 
 请注意 [!DNL Salesforce CRM]，以便将数据从Platform导出到您的Salesforce帐户：
 
-#### 您需要拥有Salesforce帐户 {#prerequisites-account}
+#### 你需要 [!DNL Salesforce] 帐户 {#prerequisites-account}
 
-转到Salesforce [试用](https://www.salesforce.com/in/form/signup/freetrial-sales/) 页面以注册和创建Salesforce帐户（如果您还没有）。
+转到 [!DNL Salesforce] [试用](https://www.salesforce.com/in/form/signup/freetrial-sales/) 用于注册和创建页面 [!DNL Salesforce] 帐户（如果您还没有）。
 
-#### 配置连接的应用程序 {#prerequisites-connected-app}
+#### 在中配置连接的应用程序 [!DNL Salesforce] {#prerequisites-connected-app}
 
-接下来，您需要配置 [连接的应用程序](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5) （如果您还没有）。
+首先，您需要配置 [[!DNL Salesforce] 连接的应用程序](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5) 在 [!DNL Salesforce] 帐户（如果您还没有）。 [!DNL Salesforce CRM] 将利用连接的应用程序连接到 [!DNL Salesforce].
 
-在连接的应用程序内，确保 [OAuth设置](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 启用。
+接下来，启用 [!DNL OAuth Settings for API Integration] 对于 [!DNL Salesforce connected app]. 请参阅 [[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 文档以获取指导。
 
-另外，请确保 [范围](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 将选择下面所述的。
+另外，请确保 [范围](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 选择以下 [!DNL Salesforce connected app].
 
 * ``chatter_api``
 * ``lightning``
@@ -62,36 +62,62 @@ When [激活区段](#activate)，您可以在潜在客户或联系人之间进�
 * ``refresh_token``
 * ``offline_access``
 
-#### 在Salesforce中创建自定义字段 {#prerequisites-custom-field}
-
-创建类型的自定义字段 `Text Area Long`，该Experience Platform将用于更新 [!DNL Salesforce CRM].
-请参阅Salesforce文档，以 [创建自定义字段](https://help.salesforce.com/s/articleView?id=sf.adding_fields.htm&amp;type=5) 如果您需要其他指导，请执行以下操作。
+最后，确保 `password` 在 [!DNL Salesforce] 帐户。 请参阅 [!DNL Salesforce] [适用于特殊情况的OAuth 2.0用户名 — 密码流](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&amp;type=5) 文档。
 
 >[!IMPORTANT]
 >
->确保字段名称中没有空格字符。 请改用下划线 `(_)` 字符。
+>如果 [!DNL Salesforce] 帐户管理员对受信任IP范围的访问权限受限，您需要联系他们以获取 [Experience PlatformIP](/help/destinations/catalog/streaming/ip-address-allow-list.md) 列入允许列表。 请参阅 [!DNL Salesforce] [限制对已连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档。
+
+#### 在中创建自定义字段 [!DNL Salesforce] {#prerequisites-custom-field}
+
+将区段激活到 [!DNL Salesforce CRM] 目标，则必须在 **[!UICONTROL 映射ID]** 字段中 **[区段计划](#schedule-segment-export-example)** 中。
+
+[!DNL Salesforce CRM] 需要此值才能正确读取和解释来自Experience Platform的区段，并在 [!DNL Salesforce]. 请参阅Experience Platform文档，以了解 [区段成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指导，请执行以下操作：
+
+对于从Platform激活到 [!DNL Salesforce CRM]，则需要创建类型的自定义字段 `Text Area (Long)` within [!DNL Salesforce]. 您可以根据业务要求定义256 - 131,072个字符之间任意大小的字段字符长度。 请参阅 [!DNL Salesforce] [自定义字段类型](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5) 文档页面，以了解有关自定义字段类型的其他信息。 另请参阅 [!DNL Salesforce] 文档 [创建自定义字段](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您需要有关字段创建的帮助。
+
+>[!IMPORTANT]
+>
+>字段名称中不要包含空格字符。 请改用下划线 `(_)` 字符。
+>在 [!DNL Salesforce] 您必须使用 **[!UICONTROL 字段名称]** 与 **[!UICONTROL 映射ID]** 每个激活的平台区段。 例如，下面的屏幕截图显示了一个名为 `crm_2_seg`. 在将区段激活到此目标时，添加 `crm_2_seg` as **[!UICONTROL 映射ID]** 将Experience Platform中的区段受众填充到此自定义字段中。
+
+中的自定义字段创建示例 [!DNL Salesforce], *第1步 — 选择数据类型*，如下所示：
+![显示自定义字段创建的Salesforce UI屏幕截图，第1步 — 选择数据类型。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-1.png)
+
+中的自定义字段创建示例 [!DNL Salesforce], *第2步 — 输入自定义字段的详细信息*，如下所示：
+![显示自定义字段创建的Salesforce UI屏幕截图，第2步 — 输入自定义字段的详细信息。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-2.png)
+
+>[!TIP]
+>
+>* 区分用于Platform区段的自定义字段和 [!DNL Salesforce] 创建自定义字段时，您可以包含可识别的前缀或后缀。 例如， `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`
+>* 如果您已在中创建其他自定义字段 [!DNL Salesforce]，则可以使用与平台区段相同的名称，以便在 [!DNL Salesforce].
+
 
 >[!NOTE]
 >
 >* Salesforce中的对象限制为25个外部字段，请参阅 [自定义字段属性](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
 >* 此限制意味着您在任何时候最多只能有25个Experience Platform区段成员关系处于活动状态。
->* 如果您在Salesforce中已达到此限制，则必须从Salesforce中删除自定义属性，该属性用于针对Experience Platform中的旧区段存储区段状态，然后才能新建 **[!UICONTROL 映射ID]** 中。
+>* 如果您在Salesforce中已达到此限制，则必须从Salesforce中删除自定义属性，这些属性用于针对Experience Platform中的旧区段存储区段状态，然后才能新建 **[!UICONTROL 映射ID]** 中。
 
 
-请参阅Adobe Experience Platform文档，以了解 [区段成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指导，请执行以下操作：
-
-#### 收集Salesforce凭据 {#gather-credentials}
+#### 收集 [!DNL Salesforce CRM] 凭据 {#gather-credentials}
 
 在验证到 [!DNL Salesforce CRM] 目标：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| <ul><li>Salesforce域前缀</li></ul> | 请参阅 [Salesforce域前缀](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) 以获取其他指导。 | <ul><li>如果您的域如下所示，则需要突出显示的值。<br> <i>`d5i000000isb4eak-dev-ed`.my.salesforce.com</i></li></ul> |
-| <ul><li>消费者密钥</li><li>消费者密码</li></ul> | 请参阅 [Salesforce文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 如果您需要其他指导，请执行以下操作。 | <ul><li>r23kxxxxxxxxx0z05xxxxx</code></li><li>ipxxxxxxxxxxxxT4xxxxxxxxxxxx</code></li></ul> |
+| `Username` | 您的 [!DNL Salesforce] 帐户用户名。 |  |
+| `Password` | 您的 [!DNL Salesforce] 帐户密码。 |  |
+| `Security Token` | 您的 [!DNL Salesforce] 安全令牌，稍后您会将该令牌附加到 [!DNL Salesforce] 用于创建要用作 **[!UICONTROL 密码]** when [对目标进行身份验证](#authenticate).<br> 请参阅 [!DNL Salesforce] 文档 [重置安全令牌](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5) 学习如何从 [!DNL Salesforce] 界面。 |  |
+| `Custom Domain` | 您的 [!DNL Salesforce] 域前缀。 <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) 了解如何从 [!DNL Salesforce] 界面。 | 如果 [!DNL Salesforce] 域<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*,<br> 您需要 `d5i000000isb4eak-dev-ed` 作为值。 |
+| `Client ID` | 您的销售人员 `Consumer Key`. <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 了解如何从 [!DNL Salesforce] 界面。 |  |
+| `Client Secret` | 您的销售人员 `Consumer Secret`. <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 了解如何从 [!DNL Salesforce] 界面。 |  |
 
 ### 护栏 {#guardrails}
 
-Salesforce通过施加请求、费率和超时限制来平衡事务处理加载。 请参阅 [API请求限制和分配](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) 以了解详细信息。
+[!DNL Salesforce] 通过施加请求、费率和超时限制来平衡事务加载。 请参阅 [API请求限制和分配](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) 以了解详细信息。
+
+如果 [!DNL Salesforce] 帐户管理员已强制实施IP限制，您需要添加 [Experience PlatformIP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 至 [!DNL Salesforce] 帐户的受信任IP范围。 请参阅 [!DNL Salesforce] [限制对已连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档。
 
 >[!IMPORTANT]
 >
@@ -128,26 +154,23 @@ Salesforce通过施加请求、费率和超时限制来平衡事务处理加载�
 
 ### 对目标进行身份验证 {#authenticate}
 
-要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+要对目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce CRM] 凭据](#gather-credentials) 部分。
+|凭据 |描述 | | — | — | | **[!UICONTROL 用户名]** |您的 [!DNL Salesforce] 帐户用户名。 | | **[!UICONTROL 密码]** |由 [!DNL Salesforce] 帐户密码附加了您的 [!DNL Salesforce] 安全令牌。<br>拼接值采用 `{PASSWORD}{TOKEN}`.<br> 请注意，请勿使用任何大括号或空格。<br>例如，如果 [!DNL Salesforce] 密码为 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全令牌为 `TOKEN12345....0000`，您将在 **[!UICONTROL 密码]** 字段 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自定义域]** |您的 [!DNL Salesforce] 域前缀。 <br>例如，如果您的域为 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 作为值。 | | **[!UICONTROL 客户端ID]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Key`. | | **[!UICONTROL 客户端密钥]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Secret`. |
 
 ![Platform UI屏幕截图，其中显示了如何进行身份验证。](../../assets/catalog/crm/salesforce/authenticate-destination.png)
-
-* **[!UICONTROL 密码]**:您的Salesforce帐户密码。
-* **[!UICONTROL 自定义域]**:您的Salesforce域。
-* **[!UICONTROL 客户端ID]**:您的Salesforce连接的应用程序客户密钥。
-* **[!UICONTROL 客户端密钥]**:您的Salesforce已连接应用程序客户密钥。
-* **[!UICONTROL 用户名]**:您的Salesforce帐户用户名。
 
 如果提供的详细信息有效，UI会显示 **[!UICONTROL 已连接]** 状态中显示绿色复选标记，则可以继续执行下一步。
 
 ### 填写目标详细信息 {#destination-details}
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-![Platform UI屏幕截图，显示目标详细信息。](../../assets/catalog/crm/salesforce/destination-details.png)
-
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL Salesforce ID类型]**:选择 **[!UICONTROL 联系人]** 如果要导出或更新的身份类型为 *联系人*. 选择 **[!UICONTROL 商机]** 如果要导出或更新的身份类型为 *商机*.
+* **[!UICONTROL Salesforce ID类型]**:
+   * 选择 **[!UICONTROL 联系人]** 如果要导出或更新的身份类型为 *联系人*.
+   * 选择 **[!UICONTROL 商机]** 如果要导出或更新的身份类型为 *商机*.
+
+![Platform UI屏幕截图，显示目标详细信息。](../../assets/catalog/crm/salesforce/destination-details.png)
 
 ### 启用警报 {#enable-alerts}
 
@@ -165,68 +188,64 @@ Salesforce通过施加请求、费率和超时限制来平衡事务处理加载�
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到 [!DNL Salesforce CRM] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。 要将XDM字段正确映射到 [!DNL Salesforce CRM] 目标字段，请执行以下步骤：
+要将受众数据从Adobe Experience Platform正确发送到 [!DNL Salesforce CRM] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。
+
+在 **[!UICONTROL 目标字段]** 应完全按照属性映射表中所述的名称命名，因为这些属性将构成请求正文。
+
+在 **[!UICONTROL 源字段]** 不要遵守任何此类限制。 您可以根据需要映射数据，但请根据 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5). 如果输入数据无效，则对 [!DNL Salesforce] 将失败，并且您的联系人/潜在客户将不会更新。
+
+要将XDM字段正确映射到 [!DNL (API) Salesforce CRM] 目标字段，请执行以下步骤：
 
 1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**，则会在屏幕上看到一个新的映射行。
    ![Platform UI中“添加新映射”的屏幕截图示例。](../../assets/catalog/crm/salesforce/add-new-mapping.png)
+1. 在 **[!UICONTROL 选择源字段]** 窗口，选择 **[!UICONTROL 选择属性]** 类别，然后选择XDM属性或 **[!UICONTROL 选择身份命名空间]** 并选择一个身份。
+1. 在 **[!UICONTROL 选择目标字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 选择身份或选择 **[!UICONTROL 选择自定义属性]** 类别，然后选择属性或使用 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Salesforce CRM] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5) ，以获取有关受支持属性的指导。
+   * 重复这些步骤，在XDM配置文件架构和 [!DNL (API) Salesforce CRM]:
 
-1. 在 **[!UICONTROL 选择源字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 或 **[!UICONTROL 选择属性]** 类别和选择 `crmID`.
-   ![Platform UI源映射的屏幕截图示例。](../../assets/catalog/crm/salesforce/source-mapping.png)
-
-1. 在 **[!UICONTROL 选择目标字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 类别和选择 `SalesforceId`.
-   ![平台UI屏幕截图，显示SalesforceId的Target映射。](../../assets/catalog/crm/salesforce/target-mapping-salesforceid.png)
-
-   * 在XDM配置文件架构和 [!DNL Salesforce CRM] 实例：
-   | XDM配置文件架构 | [!DNL Salesforce CRM] 实例 | 必需 |
-   |---|---|---|
-   | `crmID` | `SalesforceId` | 是 |
-
-   * **[!UICONTROL 选择自定义属性]**:选择此选项可将源字段映射到您在 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Salesforce CRM] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5) ，以获取有关受支持属性的指导。
-      ![平台UI屏幕截图，其中显示了LastName的Target映射。](../../assets/catalog/crm/salesforce/target-mapping-lastname.png)
+   **使用联系人**
 
    * 如果您正在使用 *联系人* 在区段中，请参阅Salesforce中的对象引用，以获取 [联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) 定义要更新的字段的映射。
    * 您可以通过搜索单词来识别必填字段 *必需*，在上述链接的字段描述中提及。
-   * 根据要导出或更新的字段，在XDM配置文件架构与 [!DNL Salesforce CRM] 实例：
-
-   | XDM配置文件架构 | [!DNL Salesforce CRM] 实例 | 注释 |
-   | --- | --- | --- |
-   | `person.name.lastName` | `LastName` | `Required`的问题。联系人的姓氏，最多80个字符。 |
-   | `person.name.firstName` | `FirstName` | 联系人的名字最多40个字符。 |
-   | `personalEmail.address` | `Email` | 联系人的电子邮件地址。 |
+   * 根据要导出或更新的字段，添加XDM配置文件架构与 [!DNL (API) Salesforce CRM]: |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 联系人的姓氏，最多80个字符。 |\
+      |`xdm: person.name.firstName`|`Attribute: FirstName`|联系人的名字最多40个字符。 | |`xdm: personalEmail.address`|`Attribute: Email`|联系人的电子邮件地址。 |
 
    * 使用这些映射的示例如下所示：
       ![平台UI屏幕截图示例，其中显示了目标映射。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
 
+   **使用潜在客户**
+
    * 如果您正在使用 *潜在客户* 在区段中，请参阅Salesforce中的对象引用，以获取 [商机](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) 定义要更新的字段的映射。
    * 您可以通过搜索单词来识别必填字段 *必需*，在上述链接的字段描述中提及。
-   * 根据要导出或更新的字段，在XDM配置文件架构与 [!DNL Salesforce CRM] 实例：
-
-   | XDM配置文件架构 | [!DNL Salesforce CRM] 实例 | 注释 |
-   | --- | --- | --- |
-   | `person.name.lastName` | `LastName` | `Required`的问题。联系人的姓氏，最多80个字符。 |
-   | `b2b.companyName` | `Company` | `Required`的问题。领导的公司。 |
-   | `personalEmail.address` | `Email` | 联系人的电子邮件地址。 |
+   * 根据要导出或更新的字段，添加XDM配置文件架构与 [!DNL (API) Salesforce CRM]: |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 最多80个字符的前导的姓氏。 |\
+      |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. 领导的公司。 | |`xdm: personalEmail.address`|`Attribute: Email`|潜在客户的电子邮件地址。 |
 
    * 使用这些映射的示例如下所示：
       ![平台UI屏幕截图示例，其中显示了目标映射。](../../assets/catalog/crm/salesforce/mappings-leads.png)
 
 
 
+完成为目标连接提供映射后，请选择 **[!UICONTROL 下一个]**.
 
 ### 计划区段导出和示例 {#schedule-segment-export-example}
 
-执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤您必须在Salesforce中将Platform区段手动映射到自定义字段属性。
+执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤您必须在 [!DNL Salesforce].
 
-为此，请选择每个区段，然后在 **[!UICONTROL 映射ID]** 字段。
+为此，请选择每个区段，然后输入 [!DNL Salesforce] 在 [!DNL Salesforce CRM] **[!UICONTROL 映射ID]** 字段。 请参阅 [在中创建自定义字段 [!DNL Salesforce]](#prerequisites-custom-field) 部分，以了解有关在 [!DNL Salesforce].
 
->[!IMPORTANT]
->
->* 用于 **[!UICONTROL 映射ID]** 应与在Salesforce中创建的自定义字段属性的名称完全匹配。
->* 确保您在Salesforce中创建的自定义字段属性的名称不使用空格字符。
+例如，如果 [!DNL Salesforce] 自定义字段 `crm_2_seg`，请在 [!DNL Salesforce CRM] **[!UICONTROL 映射ID]** 将Experience Platform中的区段受众填充到此自定义字段中。
 
+中的自定义字段示例 [!DNL Salesforce] 如下所示：
+![[!DNL Salesforce] 显示自定义字段的UI屏幕截图。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-示例如下所示：
+指示 [!DNL Salesforce CRM] **[!UICONTROL 映射ID]** 如下所示：
 ![Platform UI屏幕截图示例显示了计划区段导出。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
+
+如 [!DNL Salesforce] **[!UICONTROL 字段名称]** 与 [!DNL Salesforce CRM] **[!UICONTROL 映射ID]**.
+
+根据您的用例，所有激活的区段都可以映射到相同的 [!DNL Salesforce] 自定义字段或其他 **[!UICONTROL 字段名称]** in [!DNL Salesforce CRM]. 基于上面所示图像的典型示例可能是。
+| [!DNL Salesforce CRM] 区段名称 | [!DNL Salesforce] **[!UICONTROL 字段名称]** | [!DNL Salesforce CRM] **[!UICONTROL 映射ID]** | | — | — | — | | crm_1_seg | `crm_1_seg` | `crm_1_seg` | | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
+
+对每个激活的平台区段重复此部分。
 
 ## 验证数据导出 {#exported-data}
 
@@ -245,17 +264,23 @@ Salesforce通过施加请求、费率和超时限制来平衡事务处理加载�
    ![平台UI屏幕截图示例，其中显示了区段。](../../assets/catalog/crm/salesforce/segment.png)
 
 1. 最后，登录到Salesforce网站，并验证是否已添加或更新区段中的用户档案。
-   * 如果你 *联系人* 在平台区段中，导航到 **[!DNL Apps]** > **[!DNL Contacts]** 页面。
+
+   **使用联系人**
+
+   * 如果已选择 *联系人* 在平台区段中，导航到 **[!DNL Apps]** > **[!DNL Contacts]** 页面。
       ![Salesforce CRM屏幕截图显示包含区段中用户档案的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
 
    * 选择 *联系人* 并检查字段是否已更新。 您可以在 [!DNL Salesforce CRM] 更新时，会根据 **[!UICONTROL 映射ID]** 值 [区段计划](#schedule-segment-export-example).
       ![Salesforce CRM屏幕截图显示了具有更新区段状态的“联系人详细信息”页面。](../../assets/catalog/crm/salesforce/contact-info.png)
 
-   * 如果你 *潜在客户* ，然后导航到 **[!DNL Apps]** > **[!DNL Leads]** 页面。
+   **使用潜在客户**
+
+   * 如果已选择 *潜在客户* ，然后导航到 **[!DNL Apps]** > **[!DNL Leads]** 页面。
       ![Salesforce CRM屏幕截图，其中显示了包含区段配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
 
    * 选择 *商机* 并检查字段是否已更新。 您可以在 [!DNL Salesforce CRM] 更新时，会根据 **[!UICONTROL 映射ID]** 值 [区段计划](#schedule-segment-export-example).
       ![Salesforce CRM屏幕截图显示了具有更新区段状态的“潜在客户详细信息”页面。](../../assets/catalog/crm/salesforce/lead-info.png)
+
 
 ## 数据使用和管理 {#data-usage-governance}
 
@@ -265,11 +290,14 @@ Salesforce通过施加请求、费率和超时限制来平衡事务处理加载�
 
 ### 将事件推送到目标时遇到未知错误 {#unknown-errors}
 
-检查数据流运行时，如果收到以下错误消息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
+* 检查数据流运行时，您可能会遇到以下错误消息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
 
-![显示错误的平台UI屏幕截图。](../../assets/catalog/crm/salesforce/error.png)
+   ![显示错误的平台UI屏幕截图。](../../assets/catalog/crm/salesforce/error.png)
 
-要修复此错误，请验证 **[!UICONTROL 映射ID]** 您在 [!DNL Salesforce CRM] ，且该区段在 [!DNL Salesforce CRM].
+   * 要修复此错误，请验证 **[!UICONTROL 映射ID]** 激活工作流中提供的 [!DNL Salesforce CRM] 目标与您在中创建的自定义字段类型的值完全匹配 [!DNL Salesforce]. 请参阅 [在中创建自定义字段 [!DNL Salesforce]](#prerequisites-custom-field) 部分。
+
+* 激活区段时，可能会收到一条错误消息： `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
+   * 要修复此错误，请与 [!DNL Salesforce] 帐户管理员添加 [Experience PlatformIP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 至 [!DNL Salesforce] 帐户的受信任IP范围。 请参阅 [!DNL Salesforce] [限制对已连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档。
 
 ## 其他资源 {#additional-resources}
 
