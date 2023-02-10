@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的客户管理密钥
 description: 了解如何为存储在Adobe Experience Platform中的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: 47b3de5035f93f8a4288a0fec0a9111a979d7442
+source-git-commit: ca92839bd2a775ae323da5d5d0750b2026f8052d
 workflow-type: tm+mt
-source-wordcount: '1603'
+source-wordcount: '1618'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Adobe Experience Platform中的客户管理密钥
 
 存储在Adobe Experience Platform上的数据在静态时使用系统级别密钥进行加密。 如果您使用的是基于平台构建的应用程序，则可以选择使用您自己的加密密钥，从而更好地控制数据安全。
+
+>[!NOTE]
+>
+>Adobe Experience Platform数据湖和配置文件存储(CosmosDB)中的数据使用CMK进行加密。
 
 本文档介绍了在平台中启用客户管理的密钥(CMK)功能的过程。
 
