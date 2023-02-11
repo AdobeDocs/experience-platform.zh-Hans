@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: c60c58e563a324c4f8f90eac04686f2190e8448d
+source-git-commit: 6388c72aa0be8f5f91efaaa6a0edd22f3eb99de8
 workflow-type: tm+mt
-source-wordcount: '2444'
+source-wordcount: '2432'
 ht-degree: 6%
 
 ---
@@ -130,7 +130,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 功能 | 描述 |
 | --- | --- |
-| 禁用字符串字段的建议值 | 您现在可以 [禁用字符串字段的单个建议值](../../xdm/ui/fields/enum.md) 在 [!UICONTROL 模式] 工作区，包括来自标准组件的工作区。 此功能仅适用于具有建议值的字段，枚举约束不支持此功能。 |
+| 架构树显示名称改进 | 以前，字段名称显示在UI中，但现在，架构画布上架构字段的显示名称更易于人为读取。 |
 
 **新的XDM组件**
 
