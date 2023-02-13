@@ -2,9 +2,9 @@
 description: 本页提供您需要提交的所有信息，以便审核使用Destination SDK创作的已产品化目标。
 title: 提交以供审核在Destination SDK中创作的按产品化目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 1eab40687c599d37c71b919bc3a4aeae274b0a49
+source-git-commit: 73f1faaffd4a77c9c09eccf00d5a0ff98580b232
 workflow-type: tm+mt
-source-wordcount: '928'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,8 @@ ht-degree: 0%
 
 本页列出了在提交或更新您使用Adobe Experience Platform Destination SDK创作的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请向 <aepdestsdk@adobe.com> 包括：
 
-* 您的目标可解决的用例描述。 如果要更新现有目标配置，则不需要执行此操作。
+* 您的目标可解决的用例描述。 仅当您提交新的目标配置时，才需要执行此操作。
+* 提交目标的原因描述。 仅当您要更新现有目标配置时，才需要此设置。
 * 使用测试目标API端点对您的目标执行HTTP调用后，测试结果。 请与Adobe共享对目标端点发起的API调用以及从目标端点收到的API响应。
 * 基于文件的目标的其他要求：
    * 使用测试API后，共享请求和响应示例 [使用示例用户档案测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
@@ -46,6 +47,14 @@ ht-degree: 0%
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md):从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
 * [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases):DataX API适用于那些想要定位特定受众组的广告商，这些受众组在Verizon Media(VMG)中以电子邮件地址作为关键字，这样，他们就可以快速创建新区段，并使用VMG的近实时API推送所需的受众组。
+
+## 更新原因 {#reason-for-update}
+
+>[!NOTE]
+>
+>仅当您更新现有配置时，才需要此部分。
+
+简要描述您的提交为现有目标解决的问题。 例如，在从测试版过渡到正式发布时，您的提交可能会更新目标的名称、描述和徽标。 或者，您的提交可能会修复在目标配置中发现的错误。
 
 ## 使用测试目标API后的测试结果 {#testing-api-response}
 
