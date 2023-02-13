@@ -4,7 +4,7 @@ title: 流目允许列表标的IP地址
 type: Documentation
 description: 本页提供了可添加到允许列表的IP范围，以便将数据从Experience Platform安全地导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 8ea871d3ba66b9ee1a864a6319cde21f518f4534
+source-git-commit: 4d71e246c8ce92cbdae4d248568cf32ab44ac82a
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%
@@ -68,6 +68,7 @@ Adobe建议您在使用本页上述目允许列表标之前，先将以下IP范�
 `40.74.7.208/28`
 `52.142.236.87`
 `20.50.23.153`
+`20.101.246.9`
 `40.74.4.144/28`
 `40.74.7.160/28`
 `40.74.3.176/28`
