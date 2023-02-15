@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 在UI中监控目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: a84d67e433d70cc6194ca20abc656e4b141d42a6
 workflow-type: tm+mt
-source-wordcount: '3211'
+source-wordcount: '3214'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 0%
 - **[!UICONTROL 数据流运行开始]**:数据流运行开始的时间。 对于流数据流运行，Experience Platform会根据数据流运行的开始以每小时量度的形式捕获量度。 对于流数据流运行，如果数据流运行（例如在晚上10:30启动），则量度会在UI中将开始时间显示为晚上10:00。
 - **[!UICONTROL 处理时间]**:数据流运行处理所花费的时间。
    - 对于 **[!UICONTROL 已完成]** 运行时，处理时间量度始终显示1小时。
-   - 对于仍在 **[!UICONTROL 处理]** 状态下，用于捕获所有量度的窗口将保持打开状态超过一小时，以处理与数据流运行对应的所有量度。 例如，从上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，一旦处理窗口关闭，并且数据流运行的状态将更新为 **已完成**，则显示的处理时间会更改为1小时。
+   - 对于仍在 **[!UICONTROL 处理]** 状态下，用于捕获所有量度的窗口将保持打开状态超过一小时，用于处理与数据流运行对应的所有量度。 例如，从上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，一旦处理窗口关闭，并且数据流运行的状态将更新为 **已完成**，则显示的处理时间会更改为1小时。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。
 - **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
@@ -170,7 +170,7 @@ ht-degree: 0%
 >[!NOTE]
 >
 >- 目前，Experience Platform中所有目标都支持目标监控功能 *除外* the [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标。
->- 对于 [AmazonKinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 目标、排除的标识当前不会显示。
+>- 对于 [AmazonKinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 目前不显示目标、排除的标识、失败的标识和激活的标识。
 
 
 >[!CONTEXTUALHELP]
