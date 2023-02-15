@@ -1,7 +1,8 @@
 ---
 title: 配置数据流
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
-source-git-commit: 82703fae72e8637bb7d5e08a6699d9e1466afd8b
+exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
+source-git-commit: aa271fed242d03ecac6025721c2566a3b550b6bb
 workflow-type: tm+mt
 source-wordcount: '1658'
 ht-degree: 3%
@@ -38,11 +39,11 @@ ht-degree: 3%
 
 选择 **[!UICONTROL 高级选项]** 以显示用于配置数据流的其他控件。
 
-![高级配置选项](../assets/datastreams/configure/advanced-options.png)
+![高级配置选项](../assets/datastreams/configure/advanced-options.png) {#advanced-options}
 
 | 设置 | 描述 |
 | --- | --- |
-| [!UICONTROL 地理位置] | 根据用户的IP地址确定是否进行GPS查找。 默认设置 **[!UICONTROL 无]** 禁用任何GPS查找，而 **[!UICONTROL 城市]** 设置可将GPS坐标设为两位小数。 |
+| [!UICONTROL 地理位置] | 根据用户的IP地址确定是否进行地理查找。 默认设置 **[!UICONTROL 无]** 禁用任何地理查找，而 **[!UICONTROL 城市]** 设置可将GPS坐标设为两位小数。 |
 | [!UICONTROL 第一方ID Cookie] | 启用后，此设置会告知边缘网络在查找 [第一方设备ID](../identity/first-party-device-ids.md)，而不是在身份映射中查找此值。<br><br>启用此设置时，您必须提供应存储ID的Cookie的名称。 |
 | [!UICONTROL 第三方ID同步] | ID同步可以分组到容器中，以允许在不同时间运行不同的ID同步。 启用此设置后，您可以指定为此数据流运行哪个ID同步容器。 |
 | [!UICONTROL 访问类型] | 定义边缘网络接受的数据流的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**:如果选择此选项，边缘网络将接受经过身份验证的请求和未经身份验证的请求。 当您计划使用Web SDK时，请选择此选项；或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/)，以及 [服务器API](../../server-api/overview.md). </li><li>**[!UICONTROL 仅验证]**:如果选择此选项，边缘网络将仅接受经过验证的请求。 如果您计划仅使用服务器API，并且希望阻止边缘网络处理任何未经身份验证的请求，请选择此选项。</li></ul> |
