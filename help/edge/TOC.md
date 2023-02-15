@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 1b0f1e2e1625f6994a6e09bd086e4b63a3e8d4ab
+source-git-commit: b53be9f2f2d55d5f9e8081fb0ca6732dcc2a8c11
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 33%
+source-wordcount: '209'
+ht-degree: 34%
 
 ---
 
@@ -31,6 +31,9 @@ ht-degree: 33%
    * [概述](./datastreams/overview.md)
    * [配置数据流](./datastreams/configure.md)
    * [为数据收集准备数据](./datastreams/data-prep.md)
+   * 数据扩充 {#data-enrichment}
+      * [按天气渠道划分的天气数据](./datastreams/data-enrichment/weather.md)
+      * [天气数据字段映射](./datastreams/data-enrichment/weather-reference.md)
 * 标识 {#identity}
    * [概述](identity/overview.md)
    * [第一方设备ID](identity/first-party-device-ids.md)
@@ -69,7 +72,7 @@ ht-degree: 33%
       * [与标记集成](consent/iab-tcf/with-launch.md)
       * [无标记集成](consent/iab-tcf/without-launch.md)
 * Web SDK标记扩展 {#extension}
-   * [Web SDK扩展](extension/web-sdk-extension-configuration.md)
+   * [Web SDK 扩展](extension/web-sdk-extension-configuration.md)
    * [事件类型](extension/event-types.md)
    * [操作类型](extension/action-types.md)
    * [数据元素类型](extension/data-element-types.md)
