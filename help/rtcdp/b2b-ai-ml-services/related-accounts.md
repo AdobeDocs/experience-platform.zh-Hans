@@ -3,9 +3,9 @@ title: Real-Time CDP B2B版中的相关帐户
 type: Documentation
 description: 有关Real-Time CDP B2BExperience Platform中相关帐户功能的概述和更多信息。
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5d1488b26391d8ac758a2968194a6d070ad5b561
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '433'
 ht-degree: 6%
 
 ---
@@ -31,6 +31,16 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 ![屏幕显示Experience PlatformUI中的相关帐户。](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
 使用此功能可在Experience PlatformUI中查看帐户配置文件的相关帐户配置文件，然后将相关帐户包含在区段定义中，以扩大您的范围或在区段中应用更广泛的标准。
+
+## 启用相关帐户服务 {#enable}
+
+要启用服务，请选择 **[!UICONTROL 用户档案]** 在侧栏中，后跟 **[!UICONTROL 设置]**.
+
+![Experience PlatformUI突出显示配置文件和设置。](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
+
+选择旁边的切换开关 [!UICONTROL 启用相关帐户] 启用服务，然后选择 **[!UICONTROL 保存]**.
+
+![帐户设置屏幕突出显示切换和保存。](../assets/../b2b-ai-ml-services/assets/related-account-toggle.png)
 
 ## 工作原理 {#how-it-works}
 
