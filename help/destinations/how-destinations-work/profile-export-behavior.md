@@ -1,9 +1,9 @@
 ---
 title: 配置文件导出行为
 description: 了解配置文件导出行为在Experience Platform目标中支持的不同集成模式之间有何不同。
-source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
+source-git-commit: 5d404d723ea0b7cc72c5188dcff1f59a1874cfe2
 workflow-type: tm+mt
-source-wordcount: '2944'
+source-wordcount: '2979'
 ht-degree: 0%
 
 ---
@@ -169,11 +169,11 @@ Experience Platform会优化配置文件导出行为以将数据导出到您的�
 
 **完整文件导出**
 
-区段的完整人口会每天导出。
+区段的完全活动群体每天都会导出。
 
 | 决定目标导出的因素 | 导出文件中包含的内容 |
 |---------|----------|
-| <ul><li>UI或API中设置的导出计划以及用户操作(选择 [立即导出文件](/help/destinations/ui/export-file-now.md) 或使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md))确定目标导出的开始。</li><li>配置文件的区段成员资格的任何更改（无论其是否符合区段的资格条件）均可使配置文件包含在增量导出中。</li></ul> | 在完整文件导出中，每个文件导出中都包含基于最新区段评估的区段的整个配置文件群体。 选择导出的每个XDM属性的最新值也作为列包含在每个文件中。 |
+| <ul><li>UI或API中设置的导出计划以及用户操作(选择 [立即导出文件](/help/destinations/ui/export-file-now.md) 或使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md))确定目标导出的开始。</li><li>配置文件的区段成员资格的任何更改（无论其是否符合区段的资格条件）均可使配置文件包含在增量导出中。</li></ul> | 在完整文件导出中，每个文件导出中都包含基于最新区段评估的区段的整个活动配置文件群体。 选择导出的每个XDM属性的最新值也作为列包含在每个文件中。 请注意，处于退出状态的用户档案未包含在文件导出中。 |
 
 {style=&quot;table-layout:fixed&quot;}
 
@@ -183,7 +183,7 @@ Experience Platform会优化配置文件导出行为以将数据导出到您的�
 
 | 决定目标导出的因素 | 导出文件中包含的内容 |
 |---------|----------|
-| <ul><li>UI或API中设置的导出计划可确定目标导出的开始。</li><li>配置文件的区段成员资格的任何更改（无论其是否符合区段的资格条件）均可使配置文件包含在增量导出中。 配置文件的属性或身份映射中的更改 *不* 确定要包含在增量导出中的配置文件。</li></ul> | 区段成员资格已更改的配置文件，以及选择导出的每个XDM属性的最新信息。 |
+| <ul><li>UI或API中设置的导出计划可确定目标导出的开始。</li><li>配置文件的区段成员资格的任何更改（无论其是否符合区段的资格条件）均可使配置文件包含在增量导出中。 配置文件的属性或身份映射中的更改 *不* 确定要包含在增量导出中的配置文件。</li></ul> | <p>区段成员资格已更改的配置文件，以及选择导出的每个XDM属性的最新信息。</p><p>目标导出中包含已退出状态的用户档案(如果 `segmentMembership.status` 在映射步骤中选择XDM字段。</p> |
 
 {style=&quot;table-layout:fixed&quot;}
 
