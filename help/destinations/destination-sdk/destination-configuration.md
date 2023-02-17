@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: f0f2ed2059cbbb017dbbbdc0d1f215abee17f514
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
-source-wordcount: '1894'
+source-wordcount: '1907'
 ht-degree: 4%
 
 ---
@@ -152,7 +152,7 @@ ht-degree: 4%
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `customerAuthenticationConfigurations` | 字符串 | 指示用于向服务器验证Experience Platform客户的配置。 请参阅 `authType` 下方的值。 |
-| `authType` | 字符串 | 流目标的接受值包括：<ul><li>`BEARER`的问题。如果您的目标支持载体身份验证，请设置 `"authType":"Bearer"` 和  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li><li>`OAUTH2`的问题。如果您的目标支持OAuth 2身份验证，请设置 `"authType":"OAUTH2"` 和，添加OAuth 2的必填字段，如 [Destination SDKOAuth 2身份验证页面](./oauth2-authentication.md). 此外，设置 `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li> |
+| `authType` | 字符串 | 流目标的接受值包括：<ul><li>`BASIC`的问题。如果您的目标支持基本身份验证，请设置 `"authType":"Basic"` 和  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li><li>`BEARER`的问题。如果您的目标支持载体身份验证，请设置 `"authType":"Bearer"` 和  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li><li>`OAUTH2`的问题。如果您的目标支持OAuth 2身份验证，请设置 `"authType":"OAUTH2"` 和，添加OAuth 2的必填字段，如 [Destination SDKOAuth 2身份验证页面](./oauth2-authentication.md). 此外，设置 `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li> |
 
 {style=&quot;table-layout:auto&quot;}
 

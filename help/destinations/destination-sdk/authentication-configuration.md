@@ -2,9 +2,9 @@
 description: 使用Adobe Experience Platform Destination SDK中支持的身份验证配置来验证用户并将数据激活到目标端点。
 title: 身份验证配置
 exl-id: 33eaab24-f867-4744-b424-4ba71727373c
-source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,7 @@ ht-degree: 0%
 Adobe Experience Platform Destination SDK支持多种身份验证类型：
 
 * [承载验证](#bearer)
+* [基本身份验证](#basic)
 * [[!DNL Amazon S3] 身份验证](#s3)
 * [[!DNL Azure Blob] 存储](#blob)
 * [[!DNL Azure Data Lake Storage]](#adls)
@@ -34,6 +35,22 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 
 * [流目标的身份验证配置](destination-configuration.md#customer-authentication-configurations)
 * [基于文件的目标的身份验证配置](file-based-destination-configuration.md#customer-authentication-configurations)
+
+## 基本身份验证 {#basic}
+
+Experience Platform中的流目标支持基本身份验证。
+
+配置基本身份验证类型时，用户需要输入用户名和密码才能连接到您的目标。
+
+要为目标设置基本身份验证，请配置 `customerAuthenticationConfigurations` 部分 `/destinations` 端点，如下所示：
+
+```json
+"customerAuthenticationConfigurations":[
+   {
+      "authType":"BASIC"
+   }
+]
+```
 
 ## 承载验证 {#bearer}
 

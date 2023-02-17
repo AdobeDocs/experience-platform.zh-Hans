@@ -2,7 +2,7 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 21278b39a2dc12771449b9a471ea4182c6b999a3
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
 source-wordcount: '2545'
 ht-degree: 4%
@@ -140,7 +140,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4-5句。 |
 | `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`、`PUBLISHED` 和 `DELETED`。使用 `TEST` 首次配置目标时。 |
 | `customerAuthenticationConfigurations` | 字符串 | 指示用于向服务器验证Experience Platform客户的配置。 请参阅 `authType` 下方的值。 |
-| `customerAuthenticationConfigurations.authType` | 字符串 | 流目标支持的值包括： <ul><li>`OAUTH2`</li><li>`BEARER`</li></ul> 基于文件的目标支持的值包括： <ul><li>`S3`</li><li>`AZURE_CONNECTION_STRING`</li><li>`AZURE_SERVICE_PRINCIPAL`</li><li>`SFTP_WITH_SSH_KEY`</li><li>`SFTP_WITH_PASSWORD`</li></ul> |
+| `customerAuthenticationConfigurations.authType` | 字符串 | 流目标支持的值包括： <ul><li>`BASIC`</li><li>`BEARER`</li><li>`OAUTH2`</li></ul> 基于文件的目标支持的值包括： <ul><li>`S3`</li><li>`AZURE_CONNECTION_STRING`</li><li>`AZURE_SERVICE_PRINCIPAL`</li><li>`SFTP_WITH_SSH_KEY`</li><li>`SFTP_WITH_PASSWORD`</li></ul> |
 | `customerDataFields.name` | 字符串 | 为要引入的自定义字段提供名称。 |
 | `customerDataFields.type` | 字符串 | 指示您引入的自定义字段类型。 接受的值为 `string`, `object`, `integer` |
 | `customerDataFields.title` | 字符串 | 指示字段的名称，客户在Experience Platform用户界面中看到该字段 |
