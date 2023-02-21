@@ -1,17 +1,15 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google PubSub;google Pubsub
-solution: Experience Platform
-title: Google PubSub Source Connector概述
+title: Google PubSub源概述
 description: 了解如何使用API或用户界面将Google PubSub连接到Adobe Experience Platform。
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 2b72d384e8edd91c662364dfac31ce4edff79172
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
-# [!DNL Google PubSub] 连接器
+# [!DNL Google PubSub]
 
 Adobe Experience Platform为云提供商(如 [!DNL AWS], [!DNL Google Cloud Platform]和 [!DNL Azure]，允许您将来自这些系统的数据引入平台，以用于下游服务和目标。
 
