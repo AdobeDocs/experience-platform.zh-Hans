@@ -1,21 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；
 description: Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、映射规则、身份、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
-title: (Alpha)使用UI中的模板创建源数据流
+title: （测试版）使用UI中的模板创建源数据流
+badge1: "Beta"
 hide: true
 hidefromtoc: true
-source-git-commit: d6d8281d1be1468b0c2b7474b80be96949dc7d4c
+exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
+source-git-commit: c4cb3783cbbab6f9bf25ffaa5b27a200c555b181
 workflow-type: tm+mt
-source-wordcount: '1184'
-ht-degree: 1%
+source-wordcount: '1337'
+ht-degree: 0%
 
 ---
 
-# (Alpha)使用UI中的模板创建源数据流
+# （测试版）使用UI中的模板创建源数据流
 
 >[!IMPORTANT]
 >
->模板位于Alpha中，当前仅受 [[!DNL Marketo Engage] 来源](../../connectors/adobe-applications/marketo/marketo.md). 文档和功能可能会发生更改。
+>模板处于测试阶段，受以下来源支持：
+>
+>* [[!DNL Marketo Engage]](../../connectors/adobe-applications/marketo/marketo.md)
+>* [[!DNL Microsoft Dynamics]](../../connectors/crm/ms-dynamics.md)
+>* [[!DNL Salesforce]](../../connectors/crm/salesforce.md)
+>
+>文档和功能可能会发生更改。
 
 Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、身份、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
 
@@ -25,7 +32,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 * 最大限度地减少在手动数据获取过程中可能发生的错误。
 * 随时更新自动生成的资产，以适合您的用例。
 
-以下教程提供了有关如何在Platform UI中使用模板的步骤 [[!DNL Marketo Engage] 来源](../../connectors/adobe-applications/marketo/marketo.md).
+以下教程提供了有关如何在Platform UI中使用模板的步骤。
 
 ## 快速入门
 
@@ -43,11 +50,11 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >abstract="为您的用例选择适当的业务类型。 您的访问权限可能因您的Real-time Customer Data Platform订阅帐户而异。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans" text="Real-Time CDP概述"
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕显示可用于创建帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区，并查看Experience Platform中可用的源目录。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+使用 *[!UICONTROL 类别]* 菜单来按类别筛选源。 或者，在搜索栏中输入源名称，以从目录中查找特定源。
 
-在 [!UICONTROL Adobe应用程序] 类别，选择 **[!UICONTROL Marketo Engage]** 然后选择 **[!UICONTROL 添加数据]**.
+转到 [!UICONTROL Adobe应用程序] 类别以查看 [!DNL Marketo Engage] 源卡，然后选择 [!UICONTROL 添加数据] 开始。
 
 ![突出显示源的源工作区目录。Marketo Engage源。](../../images/tutorials/templates/catalog.png)
 
@@ -64,21 +71,25 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 此时会显示身份验证步骤，提示您创建新帐户或使用现有帐户。
 
-#### 现有帐户
+>[!BEGINTABS]
+
+>[!TAB 使用现有帐户]
 
 要使用现有帐户，请选择 [!UICONTROL 现有帐户] 然后，从显示的列表中选择要使用的帐户。
 
 ![现有帐户的选择页面，其中包含您可以访问的现有帐户列表。](../../images/tutorials/templates/existing-account.png)
 
-#### 新帐户
+>[!TAB 创建新帐户]
 
 要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供源连接详细信息和帐户身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 并留出一些时间建立新连接。
 
 ![具有源连接详细信息和帐户身份验证凭据的新帐户的身份验证页面。](../../images/tutorials/templates/new-account.png)
 
+>[!ENDTABS]
+
 ### 选择模板
 
-验证并选择帐户后，会显示模板列表。 选择模板名称旁边的预览图标，以预览模板中的示例数据。
+根据您选择的业务类型，将显示模板列表。 选择预览图标 ![预览图标](../../images/tutorials/templates/preview-icon.png) 模板名称旁边，以预览模板中的示例数据。
 
 ![高亮显示预览图标的模板列表。](../../images/tutorials/templates/templates.png)
 
@@ -95,6 +106,22 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >将从选定范围中禁用已使用的模板。
 
 ![选择了Opportunity Contact Role模板的模板列表。](../../images/tutorials/templates/select-template.png)
+
+### 设置计划
+
+的 [!DNL Microsoft Dynamics] 和 [!DNL Salesforce] 源都支持调度数据流。
+
+使用计划界面为数据流配置摄取计划。 将摄取频度设置为 **一次** 创建一次性摄取。
+
+![Dynamics和Salesforce模板的计划界面。](../../images/tutorials/templates/schedule.png)
+
+或者，您也可以将摄取频率设置为 **分钟**, **小时**, **日**&#x200B;或 **周**. 如果计划多个摄取的数据流，则必须设置一个间隔，以在每个摄取之间建立一个时间范围。 例如，摄取频度设置为 **小时** 和间隔设置为 **15** 表示您的数据流已计划在每次 **15小时**.
+
+在此步骤中，您还可以启用 **回填** 并为数据的增量摄取定义一列。 回填用于摄取历史数据，而您为增量摄取定义的列允许将新数据与现有数据区分开。
+
+完成摄取计划的配置后，选择 **[!UICONTROL 完成]**.
+
+![启用回填的Dynamics和Salesforce模板的计划界面。](../../images/tutorials/templates/backfill.png)
 
 ### 审核资产 {#review-assets}
 

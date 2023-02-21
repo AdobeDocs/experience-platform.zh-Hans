@@ -1,17 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；Marketo源连接器；命名空间；架构；b2b;B2B
-solution: Experience Platform
 title: B2B命名空间和架构
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fa3f937862dd8b6078f73b2a172b3fb5db652dc7
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1727'
 ht-degree: 4%
 
 ---
 
 # B2B命名空间和架构
+
+>[!NOTE]
+>
+>您可以使用Adobe Experience Platform UI中的模板来加快B2B和B2C数据的资产创建速度。 有关更多信息，请阅读 [在Platform UI中使用模板](../../../tutorials/ui/templates.md).
 
 本文档提供了有关命名空间和架构的基础设置信息，这些命名空间和架构将与B2B源一起使用。 本文档还提供了有关设置生成B2B命名空间和模式所需的Postman自动化实用程序的详细信息。
 
