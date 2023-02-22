@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用流服务API，为原始和XDM数据使用HTTP API源创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6b78ed695bca5912c9af4371a8423fdcd7471bde
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1496'
 ht-degree: 2%
 
 ---
@@ -208,7 +208,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `auth.params.sourceId` | 可在创建经过身份验证的基本连接时使用的其他标识符。 此参数是可选的，将使用与 `name` 属性（如果未提供）。 |
-| `auth.params.authenticationRequired` | 指定已创建流连接的参数 |
+| `auth.params.authenticationRequired` | 此参数指定流连接是否需要身份验证。 如果 `authenticationRequired` 设置为 `true` 然后，必须为流连接提供身份验证。 如果 `authenticationRequired` 设置为 `false` 则不需要进行身份验证。 |
 
 **响应**
 
