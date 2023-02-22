@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 33aeeb58e5bfa2c1553a5c49fee07dc5020f4efb
+source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
 workflow-type: tm+mt
-source-wordcount: '928'
+source-wordcount: '931'
 ht-degree: 11%
 
 ---
@@ -216,6 +216,7 @@ ht-degree: 11%
          - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
+         - [Marketo自定义活动](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
          - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
       - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
@@ -342,4 +343,4 @@ ht-degree: 11%
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

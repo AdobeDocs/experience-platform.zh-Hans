@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage连接器
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
@@ -77,8 +77,9 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 
 以下文档提供了有关创建 [!DNL Marketo] 源连接：
 
-* 有关如何连接 [!DNL Marketo] 数据到平台，请参阅 [在UI中创建Marketo源连接器](../../../tutorials/ui/create/adobe-applications/marketo.md).
-* 有关B2B命名空间和与 [!DNL Marketo]，请参阅 [B2B命名空间和架构](./marketo-namespaces.md).
-* 有关查找 [!DNL Marketo] munchkin ID和生成您的凭据，请参阅 [[!DNL Marketo] 身份验证指南](./marketo-auth.md).
-* 有关适用于的特定映射规则的信息 [!DNL Marketo] 数据集，请参阅 [[!DNL Marketo] 字段映射](../mapping/marketo.md).
-* 有关 [!DNL Real-Time Customer Data Platform B2B Edition] 及其功能，请参阅 [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
+* 有关如何连接 [!DNL Marketo] 数据到平台，请阅读 [创建 [!DNL Marketo] UI中的源连接](../../../tutorials/ui/create/adobe-applications/marketo.md).
+   * 有关如何设置模式和摄取自定义活动数据的信息，请阅读 [创建源连接和数据流 [!DNL Marketo] 自定义活动数据](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
+* 有关B2B命名空间和与 [!DNL Marketo]，请阅读相关文档 [B2B命名空间和架构](./marketo-namespaces.md).
+* 有关查找 [!DNL Marketo] munchkin ID并生成您的凭据，请阅读 [[!DNL Marketo] 身份验证指南](./marketo-auth.md).
+* 有关适用于的特定映射规则的信息 [!DNL Marketo] 数据集，阅读有关 [[!DNL Marketo] 字段映射](../mapping/marketo.md).
+* 有关 [!DNL Real-Time Customer Data Platform B2B Edition] 及其功能，请阅读 [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).

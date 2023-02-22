@@ -1,22 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；Marketo源连接器；Marketo连接器；Marketo源；Marketo
-solution: Experience Platform
-title: 在UI中创建Marketo Engage源连接器
-type: Tutorial
-description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
+title: 在UI中创建Marketo Engage源连接和数据流
+description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将B2B数据引入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: d049a29d4c39fa41917e8da1dde530966f4cbaf4
 workflow-type: tm+mt
-source-wordcount: '1473'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
 
-# 创建 [!DNL Marketo Engage] UI中的源连接器
+# 创建 [!DNL Marketo Engage] UI中的源连接和数据流
 
 >[!IMPORTANT]
 >
->在创建 [!DNL Marketo Engage] 源连接和数据流之间，您必须首先确保 [映射了您的Adobe IMS组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. 此外，您还必须确保您已完成 [自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) 创建源连接和数据流之前。
+>在创建 [!DNL Marketo Engage] 源连接和数据流之间，您必须首先确保 [已映射Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. 此外，您还必须确保您已完成 [自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) 创建源连接和数据流之前。
 
 本教程提供了创建 [!DNL Marketo Engage] (以下简称“[!DNL Marketo]“)UI中的源连接器，将B2B数据导入Adobe Experience Platform。
 
@@ -48,7 +45,7 @@ ht-degree: 0%
 
 ## 连接 [!DNL Marketo] 帐户
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
 
@@ -84,23 +81,27 @@ ht-degree: 0%
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## 提供数据流详细信息
+## 提供数据流详细信息 {#provide-dataflow-details}
 
 的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集还是新数据集。 在此过程中，您还可以配置 [!UICONTROL 配置文件数据集], [!UICONTROL 错误诊断], [!UICONTROL 部分摄取]和 [!UICONTROL 警报].
 
 ![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-details.png)
 
-### 使用现有数据集
+>[!BEGINTABS]
+
+>[!TAB 使用现有数据集]
 
 要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。 选择数据集后，请为数据流提供名称和描述。
 
 ![现有数据集](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
-### 使用新数据集
+>[!TAB 使用新数据集]
 
 要摄取到新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 选择架构后，请为数据流提供名称和描述。
 
 ![新数据集](../../../../images/tutorials/create/marketo/new-dataset.png)
+
+>[!ENDTABS]
 
 ### 启用 [!DNL Profile] 和错误诊断
 
@@ -110,7 +111,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->的 [!DNL Marketo] 连接器使用批量摄取来摄取所有历史记录，并使用流式摄取来进行实时更新。 这允许连接器在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 以防止数据流失败。
+>的 [!DNL Marketo] 源使用批量摄取来摄取所有历史记录，并使用流式摄取来进行实时更新。 这允许源在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 以防止数据流失败。
 
 ![配置文件和错误](../../../../images/tutorials/create/marketo/profile-and-errors.png)
 
@@ -121,6 +122,14 @@ ht-degree: 0%
 完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
 
 ![警报](../../../../images/tutorials/create/marketo/alerts.png)
+
+### 在摄取公司数据时跳过未声明的帐户
+
+创建数据流以从公司数据集摄取数据时，您可以配置 [!UICONTROL 排除未声明的帐户] 从摄取中排除或包含未声明的帐户。
+
+当个人填写表格时， [!DNL Marketo] 根据不包含其他数据的公司名称创建虚拟帐户记录。 对于新数据流，默认情况下会启用用于排除未声明帐户的切换开关。 对于现有数据流，您可以启用或禁用该功能，其更改将应用于新摄取的数据，而非现有数据。
+
+![未声明的帐户](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
 
 ## 映射 [!DNL Marketo] 用于定位XDM字段的数据集源字段
 
