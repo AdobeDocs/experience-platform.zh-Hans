@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年2月版Adobe Experience Platform发行说明。
-source-git-commit: 38c9325e2eb5d396472ea55ca082083040d6e590
+source-git-commit: ff276de35ca2aaeec168f4c4386d849f3352ad57
 workflow-type: tm+mt
-source-wordcount: '817'
+source-wordcount: '987'
 ht-degree: 4%
 
 ---
@@ -14,10 +14,31 @@ ht-degree: 4%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [Real-Time CDP B2B版中的相关帐户](#related-accounts)
 - [源](#sources)
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能** {#destinations-new-updated-features}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| [同意策略增强](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) 与 [基于文件（批处理）的目标](/help/destinations/destination-types.md#file-based) | <p> 当用户档案不再符合同意策略的条件时，Experience Platform现在会主动将其策略退出通信到基于文件的目标。 这跟 [2023年2月发布](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality) 流目标的相同功能。 </p> <p> <b>注意</b>:此功能仅适用于 **[!UICONTROL 隐私和安全防护]**，以及 **[!UICONTROL 医疗盾]**. </p> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新文档或更新的文档** {#destinations-new-updated-documentation}
+
+| 文档 | 描述 |
+| ----------- | ----------- |
+| 目标工作原理文档 | <p>我们根据用户的常见问题发布了三篇关于目标工作方式的新解释文章：</p> <p><ul><li>[目标中的可配置和常用导出设置](/help/destinations/how-destinations-work/destinations-configurations.md)</li><li>[不同目标类型的配置文件导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md)</li><li>[目标激活工作流中的身份处理](/help/destinations/how-destinations-work/identity-handling.md)</li></p> |
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
