@@ -3,10 +3,10 @@ title: 用户代理客户端提示
 description: 了解Web SDK中用户代理客户端提示的工作方式
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 4a2ae40fc64c4340ddb05db881c2176bb2aedc46
+source-git-commit: faeec4288948012fabeb25d0a0ce5a3b45f563ec
 workflow-type: tm+mt
-source-wordcount: '1065'
-ht-degree: 6%
+source-wordcount: '1132'
+ht-degree: 7%
 
 ---
 
@@ -120,12 +120,9 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串。
 
 ### Audience Manager依赖于高熵客户端提示的特征 {#aam}
 
-如果您的Audience Manager特征使用以下任意属性，则必须启用高熵客户端提示。 否则，特征将停止工作。
+[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能，可最大限度地减少通过 `User-Agent` 标题。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 将不再收到基于的特征的可靠信息 [平台级别关键值](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
 
-* 操作系统版本
-* 设备型号
-* 设备制造商
-* 设备供应商
+使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 继续接收可靠的特征数据。
 
 ## 启用高熵客户端提示 {#enabling-high-entropy-client-hints}
 
