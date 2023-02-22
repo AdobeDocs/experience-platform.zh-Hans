@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5e6fa112ccca7405c3dfd0653d3d6cad8b9ed2af
+source-git-commit: c26a60f0d0fc9f5b7253851baf73e1a3edfffe0f
 workflow-type: tm+mt
 source-wordcount: '3355'
 ht-degree: 2%
@@ -342,10 +342,10 @@ DROP VIEW IF EXISTS v1
 以下示例显示如何使用一个或多个语句创建块以一起执行：
 
 ```sql
-BEGIN
+$$BEGIN
   statementList
 [EXCEPTION exceptionHandler]
-END
+$$END
 
 exceptionHandler:
       WHEN OTHER
@@ -358,7 +358,7 @@ statementList:
 以下示例使用匿名块。
 
 ```sql
-BEGIN
+$$BEGIN
    SET @v_snapshot_from = select parent_id  from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
    SET @v_snapshot_to = select snapshot_id from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
    SET @v_log_id = select now();
@@ -369,7 +369,7 @@ EXCEPTION
   WHEN OTHER THEN
     DROP TABLE IF EXISTS tracking_email_id_incrementally;
     SELECT 'ERROR';
-END;
+$$END;
 ```
 
 ### 自动转换为JSON {#auto-to-json}
