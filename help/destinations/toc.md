@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
+source-git-commit: 593179cb919d464084973d154098c6fdffcc3471
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1031'
 ht-degree: 6%
 
 ---
@@ -40,6 +40,7 @@ ht-degree: 6%
       * [为同一页面和下一页面个性化配置个性化目标](./ui/configure-personalization-destinations.md)
       * [（测试版）使用Experience PlatformUI将文件按需导出到批量目标](./ui/export-file-now.md)
       * [（测试版）使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
+      * [（测试版）在新的测试版云存储目标中使用XDM属性的上一个鉴别时间](./ui/activate-last-qualification-time.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
@@ -240,4 +241,4 @@ ht-degree: 6%
       * [文档自助模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题解答](./destinations-faq.md)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -3,7 +3,7 @@ title: 在新的测试版云存储目标中使用XDM属性的上一个鉴别时�
 description: 了解如何在新的测试版云存储目标中使用XDM属性的上一个鉴别时间
 hidefromtoc: y
 hide: y
-source-git-commit: 7dd525d8c71cdfb9fb2393181faa3270ad1dc4cc
+source-git-commit: 03031dcaad82932f92e76177adf3b55447c3c153
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 如何使用上次鉴别时间XDM属性 {#how-to-use}
 
-如果您使用六个新的云存储测试版连接器之一，则可以使用 [映射步骤](//help/destinations/ui/activate-batch-profile-destinations.md#mapping) ，用于在导出文件中创建列，且最新时间戳为用户档案符合区段条件时。 这可以帮助您了解某些测量或分析用例，并更好地了解何时激活特定受众。
+如果您使用六个新的云存储测试版连接器之一，则可以使用 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) ，用于在导出文件中创建列，且最新时间戳为用户档案符合区段条件时。 这可以帮助您了解某些测量或分析用例，并更好地了解何时激活特定受众。
 
 请注意，要添加 `lastQualificationTime` 要导出文件，您当前需要手动插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` ，如下所示。 您还可以将目标字段编辑为 `lastQualificationTime` 或要命名此列的任何其他值。 请注意，由于这是测试版功能，因此 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 值可能会在将来发生更改。
 
