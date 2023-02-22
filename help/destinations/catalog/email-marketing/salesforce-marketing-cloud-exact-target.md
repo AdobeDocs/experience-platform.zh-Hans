@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: (API)SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在SalesforceMarketing Cloud中激活它以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: d75c272b3c86e25d3f162c630963c10e8206bd9d
+source-git-commit: 5a9b7af3b009f8529f2e473b17f77c54de35003e
 workflow-type: tm+mt
-source-wordcount: '2434'
+source-wordcount: '2464'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,9 @@ ht-degree: 1%
 
 #### 你需要 [!DNL Salesforce Marketing Cloud] 帐户 {#prerequisites-account}
 
-联系您的 [!DNL Salesforce Account Executive] 订购 [!DNL Salesforce Marketing Cloud Account Engagement] 产品（如果您尚未提供）。
+A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户参与度](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) 产品必须继续。
+
+联系 [[!DNL Salesforce] 支持](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) 如果您没有 [!DNL Salesforce Marketing Cloud] 帐户或帐户缺失 [!DNL Marketing Cloud Account Engagement] 产品订阅。
 
 #### 在中创建属性 [!DNL Salesforce Marketing Cloud] {#prerequisites-attribute}
 
