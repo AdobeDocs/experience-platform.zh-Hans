@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 3%
@@ -417,7 +417,7 @@ curl -X DELETE \
 
 #### 已弃用的字段描述符
 
-您可以 [弃用自定义XDM资源中的字段](../tutorials/field-deprecation.md#custom) 通过添加 `meta:status` 属性设置为 `deprecated` 到相关字段。 但是，如果要弃用架构中标准XDM资源提供的字段，则可以为相关架构分配一个已弃用的字段描述符，以实现相同的效果。 使用 [正确 `Accept` 标题](../tutorials/field-deprecation.md#verify-deprecation)，则您可以在API中查找架构时，查看该架构已弃用的标准字段。
+您可以 [弃用自定义XDM资源中的字段](../tutorials/field-deprecation-api.md#custom) 通过添加 `meta:status` 属性设置为 `deprecated` 到相关字段。 但是，如果要弃用架构中标准XDM资源提供的字段，则可以为相关架构分配一个已弃用的字段描述符，以实现相同的效果。 使用 [正确 `Accept` 标题](../tutorials/field-deprecation-api.md#verify-deprecation)，则您可以在API中查找架构时，查看该架构已弃用的标准字段。
 
 ```json
 {

@@ -4,7 +4,7 @@ description: 了解如何将现有字段组中的字段单独添加到体验数�
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
+source-git-commit: 07faf4dd749219a955df720a8c740427113a5de2
 workflow-type: tm+mt
 source-wordcount: '1208'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Adobe Experience Platform提供了一套强大的标准化 [字段组](../schema
 
 本教程假定您熟悉 [XDM模式的构成](../schema/composition.md) 以及如何在平台UI中使用架构编辑器。 接下来，您应该开始 [创建新模式](./resources/schemas.md) 并将其分配到标准类，然后再继续阅读本指南。
 
-## 删除从标准字段组添加的字段
+## 删除从标准字段组添加的字段 {#remove-field-group}
 
 在将标准字段组添加到架构后，您可以删除您不需要的任何标准字段。
 
