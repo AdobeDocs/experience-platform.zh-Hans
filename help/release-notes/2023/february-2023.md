@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年2月
 description: 2023年2月版Adobe Experience Platform发行说明。
-source-git-commit: 2084583823acb5d5d16ea5bfdbfff98a7c5ac490
+source-git-commit: 66ca8d3972045cffe4a1614f638546f4e7838680
 workflow-type: tm+mt
-source-wordcount: '953'
-ht-degree: 5%
+source-wordcount: '1138'
+ht-degree: 6%
 
 ---
 
@@ -45,10 +45,31 @@ Adobe Experience Platform 现有功能的更新包括：
 XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
 
 **更新功能**
-&#x200B; |功能 |描述 | | — | — | |通过UI弃用字段 |现在，在摄取数据后，您可以弃用架构中的字段。 XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
+&#x200B; |功能 |描述 | | — | — | |通过UI弃用字段 |您现在可以 [摄取数据后，将弃用架构中的字段](../../xdm/tutorials/field-deprecation-ui.md). XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
 
-{style=&quot;table-layout:auto&quot;}有关&#x200B;Platform中XDM的详细信息，请阅读 [XDM系统概述](../../xdm/home.md).&#x200B;
-<!-- Field deprecation: https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/field-deprecation.html -->
+{style=&quot;table-layout:auto&quot;}
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 类 | [[!UICONTROL XDM单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1669/files) | XDM Individual Prospect Profile类引入了合作伙伴提供的ID。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | [!UICONTROL 频度上限约束] | 的 [!UICONTROL 频度上限约束] 字段组 [更新以支持重复事件和自定义事件](https://github.com/adobe/xdm/pull/1641/files). |
+| 数据类型 | [!UICONTROL Web反向链接] | Web反向链接属性已 [已更新以包含 `xdm:linkName` 和 `xdm:linkRegion`](https://github.com/adobe/xdm/pull/1666/files). 分别是在上一页面上选择的HTML元素的名称和区域。 |
+| 字段组 | [!UICONTROL AdobeCJM ExperienceEvent — 消息交互详细信息] | [的 [!UICONTROL 跟踪器URL] 字段](https://github.com/adobe/xdm/pull/1665/files) 到 [!UICONTROL AdobeCJM ExperienceEvent]. 此跟踪器提供用户选择的URL。 |
+| 字段组 | [!UICONTROL AdobeCJM ExperienceEvent — 消息交互详细信息] | [空 `meta:enum` 属性已删除](https://github.com/adobe/xdm/pull/1668/files) 从URL [!UICONTROL 跟踪类型] 字段。 |
+| 数据类型 | [!UICONTROL 媒体信息] | [从 `videoSegment` 属性 [!UICONTROL 媒体信息] 数据类型已删除](https://github.com/adobe/xdm/pull/1667/files). |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请阅读 [XDM系统概述](../../xdm/home.md). &#x200B;
 
 ## 查询服务 {#query-service}
 
