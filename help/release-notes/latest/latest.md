@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年2月版Adobe Experience Platform发行说明。
-source-git-commit: ff276de35ca2aaeec168f4c4386d849f3352ad57
+source-git-commit: 2084583823acb5d5d16ea5bfdbfff98a7c5ac490
 workflow-type: tm+mt
-source-wordcount: '987'
-ht-degree: 4%
+source-wordcount: '952'
+ht-degree: 6%
 
 ---
 
@@ -17,7 +17,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
-- [Real-Time CDP B2B版中的相关帐户](#related-accounts)
+- [Real-Time Customer Data Platform B2B 版](#b2b)
 - [源](#sources)
 
 ## [!DNL Destinations] {#destinations}
@@ -47,7 +47,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 **更新功能**
 &#x200B; |功能 |描述 | | — | — | |通过UI弃用字段 |现在，在摄取数据后，您可以弃用架构中的字段。 XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
 
-有关&#x200B;Platform中XDM的详细信息，请阅读 [XDM系统概述](../../xdm/home.md).&#x200B;
+{style=&quot;table-layout:auto&quot;}有关&#x200B;Platform中XDM的详细信息，请阅读 [XDM系统概述](../../xdm/home.md).&#x200B;
 <!-- Field deprecation: https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/field-deprecation.html -->
 
 ## 查询服务 {#query-service}
@@ -57,20 +57,16 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 **更新功能**
 &#x200B; |功能 |描述 | | — | — | |为使用SQL的配置文件启用数据集 |在CTAS查询中使用LABEL来使数据集“启用配置文件”，或使用ALTER来更新要为配置文件启用的现有数据集。 | |监视计划查询 |使用计划查询选项卡查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。  | |切换自动完成功能 |通过切换查询编辑器自动完成功能，消除某些元数据命令并缩短处理时间。 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 | |数据集示例 |在查询中指定采样率，然后使用数据集示例创建统一的随机示例，或根据特定条件创建条件示例。 |
 
-有&#x200B;关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).&#x200B;
+{style=&quot;table-layout:auto&quot;}有&#x200B;关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).&#x200B;
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
 <!-- Toggle auto-complete feature link: https://experienceleague.adobe.com/docs/experience-platform/query/ui/user-guide.html#auto-complete -->
 <!-- dataset samples: https://experienceleague.adobe.com/docs/experience-platform/query/essential-concepts/dataset-samples.html -->
 
-## Real-Time CDP B2B版中的相关帐户 {#related-accounts}
+## Real-Time Customer Data Platform B2B 版 {#b2b}
 
->[!NOTE]
->
->“相关帐户”功能仅适用于Real-Time CDP B2B Edition的客户。
-
-相关帐户， [!DNL Real-Time CDP B2B] 允许您查看与您正在浏览的帐户类似的帐户列表。 您可以在区段定义中包含相关帐户，以扩大您的范围或在区段中应用更广泛的标准。
+Real-Time CDP B2B Edition基于Real-time Customer Data Platform(Real-Time CDP)而构建，专为以企业对企业服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
 
 **更新功能**
 
@@ -79,12 +75,6 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 启用相关帐户服务 | 新的切换功能允许您在帐户上启用相关帐户服务。 有关更多信息，请阅读 [启用相关帐户服务](../../rtcdp/b2b-ai-ml-services/related-accounts.md#enable). |
 
 {style=&quot;table-layout:auto&quot;}
-
-请在以下文档页面中阅读有关相关帐户功能的更多信息：
-
-- [Real-Time CDP B2B版中的相关帐户概述](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
-- [帐户配置文件UI指南中的“相关帐户”选项卡](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
-- [如何在区段定义中使用相关帐户](../../rtcdp/segmentation/b2b.md#related-accounts)
 
 要了解有关Real-Time CDP B2B Edition的更多信息，请阅读 [Real-Time CDP B2B版概述](../../rtcdp/overview.md).
 
