@@ -47,7 +47,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 **更新功能**
 &#x200B; |功能 |描述 | | — | — | |通过UI弃用字段 |现在，在摄取数据后，您可以弃用架构中的字段。 XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
 
-{style=&quot;table-layout:auto&quot;}有关&#x200B;Platform中XDM的详细信息，请阅读 [XDM系统概述](../../xdm/home.md).&#x200B;
+有关&#x200B;Platform中XDM的详细信息，请阅读 [XDM系统概述](../../xdm/home.md).&#x200B;
 <!-- Field deprecation: https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/field-deprecation.html -->
 
 ## 查询服务 {#query-service}
@@ -57,7 +57,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 **更新功能**
 &#x200B; |功能 |描述 | | — | — | |为使用SQL的配置文件启用数据集 |在CTAS查询中使用LABEL来使数据集“启用配置文件”，或使用ALTER来更新要为配置文件启用的现有数据集。 | |监视计划查询 |使用计划查询选项卡查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。  | |切换自动完成功能 |通过切换查询编辑器自动完成功能，消除某些元数据命令并缩短处理时间。 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 | |数据集示例 |在查询中指定采样率，然后使用数据集示例创建统一的随机示例，或根据特定条件创建条件示例。 |
 
-{style=&quot;table-layout:auto&quot;}有&#x200B;关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).&#x200B;
+有&#x200B;关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).&#x200B;
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
