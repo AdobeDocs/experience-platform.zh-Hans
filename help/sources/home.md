@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: e880a643150de5cc2d2fb3948b15888da54f7244
+source-git-commit: 0108d0dcb130e17007faeaa08f97e5c13d71578f
 workflow-type: tm+mt
 source-wordcount: '1133'
 ht-degree: 2%
@@ -54,6 +54,7 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 Experience Platform支持从第三方分析平台摄取数据。 有关更多信息，请参阅以下相关文档：
 
 - [[!DNL Mixpanel]](connectors/analytics/mixpanel.md)
+- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md)
 
 ### 云存储 {#cloud-storage}
 

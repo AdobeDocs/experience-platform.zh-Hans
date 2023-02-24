@@ -2,7 +2,7 @@
 title: 在UI中创建动画源连接
 description: 了解如何使用Adobe Experience Platform UI创建Chatlio源连接。
 badge: "Beta"
-source-git-commit: 4a2ed14a55736a9dde1adbb8c7996a5659216ec8
+source-git-commit: c35daa60db315f1ed04ed6424464f1ae7bfb4243
 workflow-type: tm+mt
 source-wordcount: '1168'
 ht-degree: 1%
@@ -111,7 +111,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 * **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
 * **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
 
-审核数据流后，单击 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
 
 ![源工作流的审核步骤。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/review.png)
 

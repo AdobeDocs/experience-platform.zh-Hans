@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: e880a643150de5cc2d2fb3948b15888da54f7244
+source-git-commit: 0108d0dcb130e17007faeaa08f97e5c13d71578f
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '940'
 ht-degree: 11%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 11%
       - [Google Ads连接器](connectors/advertising/ads.md)
    - Analytics {#analytics}
       - [混合面板连接器](connectors/analytics/mixpanel.md)
+      - [彭多](connectors/analytics/pendo-webhook.md)
    - 云存储 {#cloud-storage}
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Amazon S3连接器](connectors/cloud-storage/s3.md)
@@ -113,6 +114,7 @@ ht-degree: 11%
          - [Google Ads](tutorials/api/create/advertising/ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/api/create/analytics/mixpanel.md)
+         - [彭多](tutorials/api/create/analytics/pendo-webhook.md)
       - 云存储 {#cloud-storage}
          - [AmazonKinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
@@ -226,6 +228,7 @@ ht-degree: 11%
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
       - Analytics {#analytics}
          - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
+         - [彭多](tutorials/ui/create/analytics/pendo-webhook.md)
       - 云存储 {#cloud-storage}
          - [AmazonKinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
