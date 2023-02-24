@@ -2,7 +2,7 @@
 title: Customer.io源概述
 description: 了解如何使用API或用户界面通过Web挂接将Customer.io连接到Adobe Experience Platform
 badge: "Beta"
-source-git-commit: cb4b92f4d71d42d57363e16d4764217b6de7f8ee
+source-git-commit: 516ec2cbfb954764f1a6fb2007e20acac425607d
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Experience Platform支持从流应用程序中摄取数据。 对流提供商的
 
 [[!DNL Customer.io]](https://customer.io/) 是一个自动消息平台，面向希望拥有更多控制和灵活性以制作和发送数据驱动的电子邮件、推送通知、应用程序内消息和短信的营销人员。
 
-的 [!DNL Customer.io] 源允许您从中摄取受支持的Webhook事件架构及其关联的事件数据 [!DNL Customer.io] 使用 [[!DNL Customer.io] 报表Webhook](https://customer.io/docs/api/webhooks/).
+的 [!DNL Customer.io] 源允许您从中摄取受支持的webhook事件架构及其关联的事件数据 [!DNL Customer.io] 使用 [[!DNL Customer.io] 报表Webhook](https://customer.io/docs/api/webhooks/).
 
 支持的Webhook事件架构包括：
 

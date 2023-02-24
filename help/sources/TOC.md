@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 11fa9ca8d7044843c295126f8416e5a36600d244
+source-git-commit: e880a643150de5cc2d2fb3948b15888da54f7244
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '937'
 ht-degree: 11%
 
 ---
@@ -92,6 +92,7 @@ ht-degree: 11%
    - 本地系统 {#local-system}
       - [本地文件上传连接器](connectors/local-system/local-file-upload.md)
    - 营销自动化 {#marketing-automation}
+      - [查蒂奥](connectors/marketing-automation/chatlio-webhook.md)
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
       - [Mailchimp连接器](connectors/marketing-automation/mailchimp.md)
@@ -163,6 +164,7 @@ ht-degree: 11%
       - 电子商务 {#ecommerce}
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
       - 营销自动化 {#marketing-automation}
+         - [查蒂奥](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
          - [MailChimp营销活动](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
@@ -278,6 +280,7 @@ ht-degree: 11%
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 营销自动化 {#marketing-automation}
+         - [查蒂奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
          - [Mailchimp营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)

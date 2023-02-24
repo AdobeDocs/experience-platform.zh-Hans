@@ -2,9 +2,9 @@
 title: 在UI中创建Customer.io源连接和数据流
 description: 了解如何使用Adobe Experience Platform UI创建Customer.io源连接。
 badge: "Beta"
-source-git-commit: 7ec7900f8a2fe3d7ad63ac061f286657c4a6b4d8
+source-git-commit: f2f3279b5c68cd636ca7da0fe2221e1b0a94fbad
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1233'
 ht-degree: 1%
 
 ---
@@ -64,13 +64,13 @@ ht-degree: 1%
 
 使用 *[!UICONTROL 类别]* 菜单来按类别筛选源。 或者，在搜索栏中输入源名称，以从目录中查找特定源。
 
-转到 [!UICONTROL 营销自动化] 类别以查看 [!DNL Customer.io] 源卡。 要开始，请选择 [!UICONTROL 添加数据].
+转到 [!UICONTROL 营销自动化] 类别以查看 [!DNL Customer.io] 源卡。 要开始，请选择 **[!UICONTROL 添加数据]**.
 
 ![Platform UI使用Customer.io卡编录的屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
 
 ## 选择数据 {#select-data}
 
-的 **[!UICONTROL 选择数据]** 步骤，为您提供一个界面以选择引入到平台的数据。
+的 **[!UICONTROL 选择数据]** 步骤，为您提供一个界面以选择要引入平台的数据。
 
 * 界面的左侧是一个浏览器，用于查看您帐户中的可用数据流；
 * 界面的右侧部分允许您从JSON文件预览多达100行数据。
