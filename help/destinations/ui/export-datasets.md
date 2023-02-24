@@ -2,9 +2,10 @@
 title: （测试版）将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到首选的云存储位置。
-source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
+exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
+source-git-commit: aebb1494a6ed667730997048d30a2ca3e00f9452
 workflow-type: tm+mt
-source-wordcount: '1309'
+source-wordcount: '1335'
 ht-degree: 1%
 
 ---
@@ -18,7 +19,9 @@ ht-degree: 1%
 >* 购买了Real-Time CDP Prime和Ultimate产品包的客户可以使用此功能。 有关更多信息，请联系您的Adobe代表。
 
 
-本文介绍了导出所需的工作流 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到首选云存储位置，例如 [!DNL Amazon S3]、SFTP位置，或 [!DNL Google Cloud Storage].
+本文介绍了导出所需的工作流 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到首选云存储位置，例如 [!DNL Amazon S3]、SFTP位置，或 [!DNL Google Cloud Storage] 使用Experience PlatformUI。
+
+您还可以使用Experience PlatformAPI导出数据集。 阅读 [导出数据集API教程](/help/destinations/api/export-datasets.md) 以了解更多信息。
 
 ## 何时激活区段或导出数据集 {#when-to-activate-segments-or-activate-datasets}
 
@@ -99,7 +102,7 @@ Experience Platform目录中某些基于文件的目标同时支持区段激活�
 > 
 >对于数据集导出，文件名具有默认格式的预设，无法修改。 请参阅部分 [验证数据集导出是否成功](#verify) ，以了解导出文件的详细信息和示例。
 
-## 审阅 {#review}
+## 请查看 {#review}
 
 在 **[!UICONTROL 审阅]** 页面，则可以查看所选内容的摘要。 选择 **[!UICONTROL 取消]** 来分解流量， **[!UICONTROL 返回]** 修改设置，或 **[!UICONTROL 完成]** 以确认您的选择并开始将数据集导出到目标。
 
