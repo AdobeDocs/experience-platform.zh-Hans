@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 3c91e39958a9cba001ae0f0ac70f920263fa041d
+source-git-commit: 135691e0d2b77cc8e2581ff3a614fe26c7969cdd
 workflow-type: tm+mt
-source-wordcount: '267'
-ht-degree: 16%
+source-wordcount: '270'
+ht-degree: 17%
 
 ---
 
@@ -27,6 +27,7 @@ ht-degree: 16%
       - [报告分析数据模型指南](data-distiller/query-accelerated-store/reporting-insights-data-model.md)
    - 派生属性 {#derived-attributes}
       - [概述](data-distiller/derived-attributes/overview.md)
+      - [无缝SQL流程](data-distiller/derived-attributes/seamless-sql-flow.md)
       - [创建基于文件的派生属性](data-distiller/derived-attributes/decile-based-derived-attributes.md)
 - 用例 {#use-cases}
    - [放弃浏览](use-cases/abandoned-browse.md)
@@ -96,4 +97,4 @@ ht-degree: 16%
    - [准备的陈述](sql/prepared-statements.md)
 - [常见问题解答](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

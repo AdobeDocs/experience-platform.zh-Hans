@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c26a60f0d0fc9f5b7253851baf73e1a3edfffe0f
+source-git-commit: 3907efa2e8c20671e283c1e5834fc7224ee12f9e
 workflow-type: tm+mt
-source-wordcount: '3355'
+source-wordcount: '3406'
 ht-degree: 2%
 
 ---
@@ -173,18 +173,19 @@ SELECT statement 1
 SELECT statement 2
 ```
 
-### 创建选定表
+### 创建选定表 {#create-table-as-select}
 
 以下语法定义 `CREATE TABLE AS SELECT` (CTAS)查询：
 
 ```sql
-CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
+CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false', label='PROFILE') ] AS (select_query)
 ```
 
 | 参数 | 描述 |
 | ----- | ----- |
 | `schema` | XDM架构的标题。 仅当您希望对由CTAS查询创建的新数据集使用现有XDM架构时，才使用此子句。 |
 | `rowvalidation` | （可选）指定用户是否希望对为新创建数据集摄取的每个新批次进行行级别验证。 默认值为 `true`。 |
+| `label` | 当您使用CTAS查询创建数据集时，请将此标签的值 `profile` 为配置文件启用数据集设置标签。 这表示数据集在创建时会自动为用户档案标记。 有关使用的详细信息，请参阅派生属性扩展文档 `label`. |
 | `select_query` | A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries). |
 
 **示例**
@@ -192,7 +193,7 @@ CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='fal
 ```sql
 CREATE TABLE Chairs AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 
-CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
+CREATE TABLE Chairs WITH (schema='target schema title', label='PROFILE') AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 
 CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
 ```
