@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: e086359916b3aeef73ba9c98e1bfa13da5a974cd
+source-git-commit: ffbb68c9c84b834984e1adb2640d8806ce9f9962
 workflow-type: tm+mt
-source-wordcount: '628'
-ht-degree: 25%
+source-wordcount: '650'
+ht-degree: 24%
 
 ---
 
@@ -18,6 +18,12 @@ ht-degree: 25%
 ## v0.19.2（2023年2月14日）
 
 - 修复了允许将超时设置为数据元素的问题。
+
+## v0.19.1（2023年2月3日）
+
+- 更新以支持 `at.js` v2.10.1
+- 客户端自定义Mbox参数现在可以正确支持点表示法
+- VEC中不再进行投放调用
 
 ## v0.19.0（2022年9月19日）
 
