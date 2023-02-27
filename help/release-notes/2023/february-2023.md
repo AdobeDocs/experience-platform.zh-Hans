@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2023年2月
 description: 2023年2月版Adobe Experience Platform发行说明。
-source-git-commit: 66ca8d3972045cffe4a1614f638546f4e7838680
+source-git-commit: deb8512d3c585512520dae04e555c6497d74ba4c
 workflow-type: tm+mt
 source-wordcount: '1138'
 ht-degree: 6%
@@ -45,9 +45,12 @@ Adobe Experience Platform 现有功能的更新包括：
 XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
 
 **更新功能**
-&#x200B; |功能 |描述 | | — | — | |通过UI弃用字段 |您现在可以 [摄取数据后，将弃用架构中的字段](../../xdm/tutorials/field-deprecation-ui.md). XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
 
+| 功能 | 描述 |
+| --- | --- |
+| 通过UI弃用字段 | 您现在可以 [摄取数据后，将弃用架构中的字段](../../xdm/tutorials/field-deprecation-ui.md). XDM字段弃用允许您从UI视图中删除字段，同时保留这些字段以供使用。 如果需要，您可以再次显示已弃用的字段，并且引用这些字段的任何区段、查询或下游解决方案将照常运行。 |
 
+{style=&quot;table-layout:auto&quot;}
 
 **新的XDM组件**
 
@@ -76,9 +79,18 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以加入来自数据湖的任何数据集，并作为新数据集捕获查询结果，以用于报表、Data Science Workspace或将其摄取到实时客户资料中。
 
 **更新功能**
-&#x200B; |功能 |描述 | | — | — | |为使用SQL的配置文件启用数据集 |在CTAS查询中使用LABEL来使数据集“启用配置文件”，或使用ALTER来更新要为配置文件启用的现有数据集。 | |监视计划查询 |使用计划查询选项卡查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。  | |切换自动完成功能 |通过切换查询编辑器自动完成功能，消除某些元数据命令并缩短处理时间。 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 | |数据集示例 |在查询中指定采样率，然后使用数据集示例创建统一的随机示例，或根据特定条件创建条件示例。 |
 
-有&#x200B;关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).&#x200B;
+| 功能 | 描述 |
+| --- | --- |
+| 为使用SQL的配置文件启用数据集 | 在CTAS查询中使用LABEL来使数据集“启用配置文件”，或使用ALTER来更新要为配置文件启用的现有数据集。 |
+| 监视计划查询 | 使用计划查询选项卡查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。 |
+| 切换自动完成功能 | 通过切换查询编辑器自动完成功能，可消除某些元数据命令并缩短处理时间。 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 |
+| 数据集示例 | 在查询中指定采样率，然后使用数据集样本创建统一的随机样本，或根据特定条件创建条件样本。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
+
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
