@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年2月
 description: 2023年2月版Adobe Experience Platform发行说明。
-source-git-commit: deb8512d3c585512520dae04e555c6497d74ba4c
+source-git-commit: 72ae96f72bfffe376fec5c0e1dcf79406cb86a26
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1172'
 ht-degree: 6%
 
 ---
@@ -82,20 +82,15 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 功能 | 描述 |
 | --- | --- |
-| 为使用SQL的配置文件启用数据集 | 在CTAS查询中使用LABEL来使数据集“启用配置文件”，或使用ALTER来更新要为配置文件启用的现有数据集。 |
-| 监视计划查询 | 使用计划查询选项卡查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。 |
-| 切换自动完成功能 | 通过切换查询编辑器自动完成功能，可消除某些元数据命令并缩短处理时间。 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 |
-| 数据集示例 | 在查询中指定采样率，然后使用数据集样本创建统一的随机样本，或根据特定条件创建条件样本。 |
+| 为使用SQL的配置文件启用数据集 | [在CTAS查询中使用LABEL来创建数据集“启用了配置文件”](../../query-service/sql/syntax.md#create-table-as-select)，或使用ALTER更新要为配置文件启用的现有数据集。 您可以使用此扩展SQL结构为实时客户资料业务用例的派生属性提供无缝支持。 请参阅 [派生属性文档的无缝SQL流](../../query-service/data-distiller/derived-attributes/seamless-sql-flow.md) 以了解更多详细信息。 |
+| 监视计划查询 | 使用 [“计划查询”选项卡](../../query-service/ui/monitor-queries.md) 以查找有关查询运行和订阅警报的重要信息。 如果计划详细信息、状态和错误消息/代码失败，则监视查询。 |
+| 切换自动完成功能 | 通过消除某些元数据命令并缩短处理时间 [切换查询编辑器自动完成功能](../../query-service/ui/user-guide.md#auto-complete). 此功能会在您编写查询时自动为查询建议潜在的SQL关键字和表详细信息。 |
+| 数据集示例 | 在查询中指定采样率，并 [使用数据集示例创建统一的随机示例](../../query-service/essential-concepts/dataset-samples.md)，或根据特定条件创建条件示例。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
 
-<!-- Links for QS feature docs after release day: -->
-<!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
-<!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
-<!-- Toggle auto-complete feature link: https://experienceleague.adobe.com/docs/experience-platform/query/ui/user-guide.html#auto-complete -->
-<!-- dataset samples: https://experienceleague.adobe.com/docs/experience-platform/query/essential-concepts/dataset-samples.html -->
 
 ## Real-Time Customer Data Platform B2B 版 {#b2b}
 
