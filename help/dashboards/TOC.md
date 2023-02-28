@@ -7,7 +7,7 @@ feature: Dashboards
 source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
 source-wordcount: '80'
-ht-degree: 33%
+ht-degree: 38%
 
 ---
 
@@ -36,4 +36,4 @@ ht-degree: 33%
    * [Power BI](integrations/power-bi.md)
 * [查询功能板数据集](query.md)
 * [Real-time Customer Data Platform Insights数据模型](cdp-insights-data-model.md)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

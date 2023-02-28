@@ -7,7 +7,7 @@ feature: Access Control
 source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
 source-wordcount: '124'
-ht-degree: 45%
+ht-degree: 48%
 
 ---
 
@@ -45,4 +45,4 @@ ht-degree: 45%
    * [查看有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

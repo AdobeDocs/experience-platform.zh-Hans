@@ -7,7 +7,7 @@ feature: Data Ingestion
 source-git-commit: f77bbc60f2bc1f12970e8050ec6a924b9713f303
 workflow-type: tm+mt
 source-wordcount: '145'
-ht-degree: 24%
+ht-degree: 28%
 
 ---
 
@@ -47,4 +47,4 @@ ht-degree: 24%
 - [数据摄取的防护](guardrails.md)
 - [源连接器](source-connectors.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

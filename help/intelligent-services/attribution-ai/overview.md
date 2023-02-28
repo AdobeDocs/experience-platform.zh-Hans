@@ -8,13 +8,13 @@ exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '499'
-ht-degree: 30%
+ht-degree: 36%
 
 ---
 
 # 归因人工智能概述
 
-Attribution AI作为Intelligent Services的一部分，是一种多渠道算法归因服务，用于计算客户交互对指定结果的影响和增量影响。 借助Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI作为Intelligent Services的一部分，是一种多渠道算法归因服务，用于计算客户交互对指定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户历程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
 ## 了解Attribution AI
 

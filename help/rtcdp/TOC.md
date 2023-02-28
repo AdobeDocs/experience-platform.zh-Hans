@@ -7,7 +7,7 @@ user-guide-description: 将企业多个来源的已知数据和匿名数据相�
 source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
 source-wordcount: '205'
-ht-degree: 29%
+ht-degree: 31%
 
 ---
 
@@ -62,5 +62,5 @@ ht-degree: 29%
 * 源 {#sources}
    * [源概述](sources/sources-overview.md)
    * [Real-Time CDP B2B版中的源](sources/b2b.md)
-* [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary-en)

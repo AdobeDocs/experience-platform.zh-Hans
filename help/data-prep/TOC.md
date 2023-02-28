@@ -6,7 +6,7 @@ feature: Data Prep
 source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
 workflow-type: tm+mt
 source-wordcount: '50'
-ht-degree: 38%
+ht-degree: 46%
 
 ---
 
@@ -26,4 +26,4 @@ ht-degree: 38%
 - [映射集](mapping-set.md)
 - [流上插页](upserts.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -6,7 +6,7 @@ feature: Profiles
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '135'
-ht-degree: 22%
+ht-degree: 25%
 
 ---
 
@@ -50,4 +50,4 @@ ht-degree: 22%
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile] 疑难解答指南](troubleshooting.md)
 * [配置文件API参考](https://www.adobe.com/go/profile-apis-en)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

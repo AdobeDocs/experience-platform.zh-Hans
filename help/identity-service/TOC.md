@@ -7,7 +7,7 @@ feature: Identities
 source-git-commit: ed091c95952b731ce1f7567b99a1072a8be2b4a5
 workflow-type: tm+mt
 source-wordcount: '112'
-ht-degree: 25%
+ht-degree: 28%
 
 ---
 
@@ -35,4 +35,4 @@ ht-degree: 25%
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -6,7 +6,7 @@ user-guide-description: 了解 Experience Platform 如何实时地为客户营�
 source-git-commit: 695675aed5a1de4bb6869b733769f8e7e86a0d5b
 workflow-type: tm+mt
 source-wordcount: '256'
-ht-degree: 26%
+ht-degree: 28%
 
 ---
 
@@ -71,4 +71,4 @@ ht-degree: 26%
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
-* [发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [发行说明](https://www.adobe.com/go/platform-release-notes_cn)

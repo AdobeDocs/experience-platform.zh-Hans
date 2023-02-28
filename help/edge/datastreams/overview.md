@@ -6,13 +6,13 @@ exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
 source-git-commit: 2cec87d3f45b1b774925a9b669b53a958e65e57a
 workflow-type: tm+mt
 source-wordcount: '780'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
 # 数据流概述
 
-数据流表示实施Adobe Experience Platform Web和移动SDK时的服务器端配置。 而 [配置命令](../fundamentals/configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
+数据流表示实施 Adobe Experience Platform Web 和移动 SDK 时的服务器端配置。而 [配置命令](../fundamentals/configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
 
 您可以通过选择 **[!UICONTROL 数据流]** 在Adobe Experience Platform UI或数据收集UI的左侧导航中。
 

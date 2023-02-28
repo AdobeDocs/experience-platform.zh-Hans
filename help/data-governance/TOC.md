@@ -7,7 +7,7 @@ feature: Data Governance
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '97'
-ht-degree: 36%
+ht-degree: 40%
 
 ---
 
@@ -37,4 +37,4 @@ ht-degree: 36%
    * [营销操作](api/marketing-actions.md)
    * [评估](api/evaluation.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/policy-service/)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

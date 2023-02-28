@@ -8,7 +8,7 @@ solution: Experience Platform
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '236'
-ht-degree: 15%
+ht-degree: 17%
 
 ---
 
@@ -64,4 +64,4 @@ ht-degree: 15%
    * [安排服务(UI)上的自动培训和评分](models-recipes/schedule-models-ui.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
-* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)

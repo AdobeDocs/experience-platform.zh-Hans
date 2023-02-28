@@ -7,7 +7,7 @@ user-guide-description: 使用智能 AI 服务从您的营销活动数据生成�
 source-git-commit: 5448333a68560aeb83e8f31a36c75c539fc4bf1b
 workflow-type: tm+mt
 source-wordcount: '149'
-ht-degree: 27%
+ht-degree: 30%
 
 ---
 
@@ -56,4 +56,4 @@ ht-degree: 27%
       - [客户管理的密钥](customer-ai/cai-data-governance/customer-managed-keys.md)
       - [数据管理](customer-ai/cai-data-governance/data-governance.md)
       - [治理政策](customer-ai/cai-data-governance/governance-policies.md)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)
