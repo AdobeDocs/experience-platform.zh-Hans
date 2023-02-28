@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用流服务API，为原始和XDM数据使用HTTP API源创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 6b78ed695bca5912c9af4371a8423fdcd7471bde
+source-git-commit: 7ff297973f951d7bfd940983bf4fa39dcc9f1542
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1544'
 ht-degree: 2%
 
 ---
@@ -475,6 +475,8 @@ POST /flows
 
 >[!TAB 无转换]
 
+以下请求会为没有数据转换的HTTP API创建流数据流。
+
 ```shell
 curl -X POST \
   'https://platform.adobe.io/data/foundation/flowservice/flows' \
@@ -500,6 +502,10 @@ curl -X POST \
 ```
 
 >[!TAB 具有转换]
+
+以下请求会为HTTP API创建一个流数据流，并且映射转换已应用于您的数据。
+
+创建包含转换的数据流时， `name` 参数无法更改。 此值必须始终设置为 `Mapping`.
 
 ```shell
 curl -X POST \
