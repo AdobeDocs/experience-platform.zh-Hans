@@ -1,139 +1,140 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
 title: 管理访问控制策略
-description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理访问控制策略的信息。
+description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理访问控制策略的信息。
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 504c73fc73ce41f2c1b3159478fc7fe9b4d20a9d
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
 
 # 管理访问控制策略
 
-访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 访问策略可以是本地策略或全局策略，也可以覆盖其他策略。
+访问控制策略是汇集属性以建立允许和不允许操作的声明。 访问策略可以是本地策略或全局策略，并且可以覆盖其他策略。 Adobe提供了一个默认策略，可立即激活，或者在您的组织准备好开始根据标签控制对特定对象的访问时激活。 默认策略利用应用于资源的标签来拒绝访问，除非用户处于具有匹配标签的角色中。
 
 >[!IMPORTANT]
 >
->访问策略不要与数据使用策略混淆，该策略控制数据在Adobe Experience Platform中的使用方式，而不是由组织中的哪些用户有权访问。 请参阅创建指南 [数据使用策略](../../../data-governance/policies/create.md) 以了解更多信息。
+>访问策略不应与数据使用策略混淆，数据使用策略控制数据在Adobe Experience Platform中的使用方式，而不是控制组织中哪些用户可以访问数据。 请参阅有关创建的指南 [数据使用策略](../../../data-governance/policies/create.md) 了解更多信息。
 
-## 创建新策略
+<!-- ## Create a new policy
 
-要创建新策略，请选择 **[!UICONTROL 策略]** ，然后选择 **[!UICONTROL 创建策略]**.
+To create a new policy, select the **[!UICONTROL Policies]** tab in the sidebar and select **[!UICONTROL Create Policy]**.
 
 ![flac-new-policy](../../images/flac-ui/flac-new-policy.png)
 
-的 **[!UICONTROL 创建新策略]** 对话框，提示您输入名称和可选描述。 完成后，选择 **[!UICONTROL 确认]**.
+The **[!UICONTROL Create a new policy]** dialog appears, prompting you to enter a name, and an optional description. When finished, select **[!UICONTROL Confirm]**.
 
 ![flac-create-new-policy](../../images/flac-ui/flac-create-new-policy.png)
 
-使用下拉箭头选择是否要 **允许访问** (![flac-permit-access-to](../../images/flac-ui/flac-permit-access-to.png))资源或 **拒绝访问** (![flac-deny-access-to](../../images/flac-ui/flac-deny-access-to.png))资源。
+Using the dropdown arrow select if you would like to **Permit access to** (![flac-permit-access-to](../../images/flac-ui/flac-permit-access-to.png)) a resource or **Deny access to** (![flac-deny-access-to](../../images/flac-ui/flac-deny-access-to.png)) a resource.
 
-接下来，使用下拉菜单和搜索访问类型（读取或写入）选择要包含在策略中的资源。
+Next, select the resource that you would like to include in the policy using the dropdown menu and search access type, read or write.
 
-![flac-flac-policy-resource-dropdon](../../images/flac-ui/flac-policy-resource-dropdown.png)
+![flac-flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown.png)
 
-接下来，使用下拉箭头选择要应用于此策略的条件， **以下是true** (![flac-policy-true](../../images/flac-ui/flac-policy-true.png))或 **以下内容为false** (![flac-policy-false](../../images/flac-ui/flac-policy-false.png))。
+Next, using the dropdown arrow select the condition you would like to apply to this policy, **The following being true** (![flac-policy-true](../../images/flac-ui/flac-policy-true.png)) or **The following being false** (![flac-policy-false](../../images/flac-ui/flac-policy-false.png)).
 
-选择加号图标以 **添加匹配表达式** 或 **添加表达式组** 的值。
+Select the plus icon to **Add matches expression** or **Add expression group** for the resource. 
 
 ![flac-policy-expression](../../images/flac-ui/flac-policy-expression.png)
 
-使用下拉菜单，选择 **资源**.
+Using the dropdown, select the **Resource**.
 
 ![flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown-1.png)
 
-接下来，使用下拉菜单选择 **匹配**.
+Next, using the dropdown select the **Matches**.
 
 ![flac-policy-matches-dropdown](../../images/flac-ui/flac-policy-matches-dropdown.png)
 
-接下来，使用下拉菜单，选择标签类型(**[!UICONTROL 核心标签]** 或 **[!UICONTROL 自定义标签]**)以匹配分配给角色中用户的标签。
+Next, using the dropdown, select the type of label (**[!UICONTROL Core label]** or **[!UICONTROL Custom label]**) to match the label assigned to the User in roles.
 
-![flac-policy-user-dopdown](../../images/flac-ui/flac-policy-user-dropdown.png)
+![flac-policy-user-dropdown](../../images/flac-ui/flac-policy-user-dropdown.png)
 
-最后，选择 **沙盒** 您希望策略条件应用到的规则集。
+Finally, select the **Sandbox** that you would like the policy conditions to apply to, using the dropdown menu.
 
 ![flac-policy-sandboxes-dropdown](../../images/flac-ui/flac-policy-sandboxes-dropdown.png)
 
-选择 **添加资源** 添加更多资源。 完成后，选择 **[!UICONTROL 保存并退出]**.
+Select **Add resource** to add more resources. Once finished, select **[!UICONTROL Save and exit]**.
 
 ![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
 
-新策略已成功创建，您将被重定向到 **[!UICONTROL 策略]** 选项卡中，您将看到新创建的策略显示在列表中。
+The new policy is successfully created, and you are redirected to the **[!UICONTROL Policies]** tab, where you will see the newly created policy appear in the list. 
 
 ![flac-policy-saved](../../images/flac-ui/flac-policy-saved.png)
 
-## 编辑策略
+## Edit a policy
 
-要编辑现有策略，请从 **[!UICONTROL 策略]** 选项卡。 或者，使用筛选器选项筛选结果以查找要编辑的策略。
+To edit an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-接下来，选择省略号(`…`)，并且下拉列表会显示用于编辑、停用、删除或复制角色的控件。 从下拉菜单中选择编辑。
+Next, select the ellipsis (`…`) next to the policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select edit from the dropdown.
 
 ![flac-policy-edit](../../images/flac-ui/flac-policy-edit.png)
 
-将显示策略权限屏幕。 进行更新，然后选择 **[!UICONTROL 保存并退出]**.
+The policy permissions screen appears. Make the updates then select **[!UICONTROL Save and exit]**.
 
 ![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
 
-策略已成功更新，您将被重定向到 **[!UICONTROL 策略]** 选项卡。
+The policy is successfully updated, and you are redirected to the **[!UICONTROL Policies]** tab.
 
-## 复制策略
+## Duplicate a policy
 
-要复制现有策略，请从 **[!UICONTROL 策略]** 选项卡。 或者，使用筛选器选项筛选结果以查找要编辑的策略。
+To duplicate an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-接下来，选择省略号(`…`)，并且下拉列表会显示用于编辑、停用、删除或复制角色的控件。 从下拉菜单中选择“复制”。
+Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select duplicate from the dropdown.
 
 ![flac-policy-duplicate](../../images/flac-ui/flac-policy-duplicate.png)
 
-的 **[!UICONTROL 复制策略]** 对话框，提示您确认复制。
+The **[!UICONTROL Duplicate policy]** dialog appears, prompting you to confirm the duplication. 
 
 ![flac-policy-duplicate-confirm](../../images/flac-ui/flac-duplicate-confirm.png)
 
-新策略将作为原始策略的副本显示在 **[!UICONTROL 策略]** 选项卡。
+The new policy appears in the list as a copy of the original on the **[!UICONTROL Policies]** tab.
 
 ![flac-role-duplicate-saved](../../images/flac-ui/flac-role-duplicate-saved.png)
 
-## 删除策略
+## Delete a policy
 
-要删除现有策略，请从 **[!UICONTROL 策略]** 选项卡。 或者，使用筛选器选项筛选结果以查找要删除的策略。
+To delete an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to delete.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-接下来，选择省略号(`…`)，并且下拉列表会显示用于编辑、停用、删除或复制角色的控件。 从下拉菜单中选择删除。
+Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select delete from the dropdown.
 
 ![flac-policy-delete](../../images/flac-ui/flac-policy-delete.png)
 
-的 **[!UICONTROL 删除用户策略]** 对话框，提示您确认删除。
+The **[!UICONTROL Delete user policy]** dialog appears, prompting you to confirm the deletion. 
 
 ![flac-policy-delete-confirm](../../images/flac-ui/flac-policy-delete-confirm.png)
 
-您将返回到 **[!UICONTROL 策略]** ，此时会出现确认删除弹出窗口。
+You are returned to the **[!UICONTROL policies]** tab and a confirmation of deletion pop over appears.
 
-![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png)
+![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png) -->
 
 ## 激活策略
 
-要激活现有策略，请从 **[!UICONTROL 策略]** 选项卡。 或者，使用筛选器选项筛选结果以查找要删除的策略。
+要激活现有策略，请从 **[!UICONTROL 策略]** 选项卡。
 
-![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
+![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-接下来，选择省略号(`…`)，并且下拉列表会显示用于编辑、激活、删除或复制角色的控件。 从下拉菜单中选择激活。
+接下来，选择省略号(`…`)，此时下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 从下拉菜单中选择激活。
 
-![flac-policy-activate](../../images/flac-ui/flac-policy-delete.png)
+![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-的 **[!UICONTROL 激活用户策略]** 对话框，提示您确认激活。
+此 **[!UICONTROL 激活策略]** 对话框，提示您确认激活。
 
-![flac-policy-activate-confirm](../../images/flac-ui/flac-policy-activate-confirm.png)
+![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
-您将返回到 **[!UICONTROL 策略]** 选项卡，此时会显示激活确认弹出窗口。 策略状态显示为活动状态。
 
-![flac-policy-activated](../../images/flac-ui/flac-policy-activated.png)
+您将返回到 **[!UICONTROL 策略]** 选项卡和确认激活弹出窗口。 策略状态显示为活动。
+
+![flac-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
 ## 后续步骤
 
-创建新策略后，您可以继续执行 [管理角色的权限](permissions.md).
+激活策略后，您可以继续下一步以 [管理角色的权限](permissions.md).
