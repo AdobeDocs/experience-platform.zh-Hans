@@ -2,9 +2,9 @@
 title: Marketo Measure Ultimate目标
 description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
 last-substantial-update: 2023-03-07T00:00:00Z
-source-git-commit: 60ea8a608b85661f3a5d23dc3ba52cb0952fe2d2
+source-git-commit: bd2869e48c2d831460fb817c6ddfb800f88b8600
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '654'
 ht-degree: 1%
 
 ---
@@ -60,21 +60,23 @@ Marketo Measure（以前称为Bizible）可让营销人员深入了解哪些营�
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 
+![Marketo Measure目标的连接到目标工作流。](/help/destinations/assets/catalog/adobe/marketo-measure-ultimate/marketo-measure-connect-to-destination.png)
+
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将数据集导出到此目标 {#export-datasets}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [（测试版）导出数据集](/help/destinations/ui/export-datasets.md) 以获取有关将数据集导出到此目标的详细说明。
+阅读 [（测试版）导出数据集](/help/destinations/ui/export-datasets.md) 教程，了解有关将数据集导出到此目标的详细说明。
 
-## 导出的数据/验证数据导出 {#exported-data}
+## 验证数据导出 {#exported-data}
 
 要验证是否成功导出数据集，您可以检查数据集是否已成功导出到 [Snowflakedata warehouse](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=en).
 
@@ -82,5 +84,6 @@ Marketo Measure（以前称为Bizible）可让营销人员深入了解哪些营�
 
 全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).
 
-## 其他资源 {#additional-resources}
+<!--## Additional resources {#additional-resources}-->
+
 
