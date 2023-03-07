@@ -2,7 +2,7 @@
 title: Marketo Measure Ultimate目标
 description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
 last-substantial-update: 2023-03-07T00:00:00Z
-source-git-commit: bd2869e48c2d831460fb817c6ddfb800f88b8600
+source-git-commit: c2c7a4cd860fed2c8124fe46fe3fd405ba49ecf4
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 1%
@@ -83,7 +83,5 @@ Marketo Measure（以前称为Bizible）可让营销人员深入了解哪些营�
 ## 数据使用和管理 {#data-usage-governance}
 
 全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).
-
-<!--## Additional resources {#additional-resources}-->
 
 
