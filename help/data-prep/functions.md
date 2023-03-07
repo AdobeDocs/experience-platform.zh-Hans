@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 2584e804674cc54f9cdd0b3a28ee6fb1600b6216
+source-git-commit: da7eff7966679635efa71cbbd33768ef4f412241
 workflow-type: tm+mt
-source-wordcount: '4392'
+source-wordcount: '4557'
 ht-degree: 3%
 
 ---
@@ -64,7 +64,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 等于 | 比较两个字符串以确认它们是否相等。 此函数区分大小写。 | <ul><li>STRING1： **必需** 要比较的第一个字符串。</li><li>字符串2： **必需** 要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equals(&#x200B;STRING2) | &quot;string1&quot;。 &#x200B;equals&#x200B;(&quot;STRING1&quot;) | false |
 | equalsIgnoreCase | 比较两个字符串以确认它们是否相等。 此函数为 **非** 区分大小写。 | <ul><li>STRING1： **必需** 要比较的第一个字符串。</li><li>字符串2： **必需** 要比较的第二个字符串。</li></ul> | STRING1. &#x200B;equalsIgnoreCase&#x200B;(STRING2) | &quot;string1&quot;。 &#x200B;equalsIgnoreCase&#x200B;(&quot;STRING1) | true |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 正则表达式函数
 
@@ -73,7 +73,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | extract_regex | 根据正则表达式从输入字符串中提取组。 | <ul><li>字符串： **必需** 从中提取组的字符串。</li><li>正则表达式： **必需** 您希望组匹配的正则表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259，E259B_009,1_1&quot;&#x200B;， &quot;([^，]+)，[^，]*，([^，]+)”) | [“E259、E259B_009、1_1”、“E259”、“1_1”] |
 | matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必需** 正在检查的字符串与正则表达式匹配。</li><li>正则表达式： **必需** 要比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)”) | true |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 哈希函数 {#hashing}
 
@@ -89,7 +89,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | md5 | 获取输入并使用MD5生成哈希值。 | <ul><li>输入： **必需** 要进行哈希处理的纯文本。</li><li>字符集： *可选* 字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。 </li></ul> | md5（输入，字符集） | md5（“我的文本”，“UTF-8”） | d3b96ce8c9fb4&#x200B;e9bd0198d03ba6852c7 |
 | crc32 | 采用循环冗余校验(CRC)算法生成一个32位循环码。 | <ul><li>输入： **必需** 要进行哈希处理的纯文本。</li><li>字符集： *可选* 字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | crc32（输入，字符集） | crc32（“我的文本”，“UTF-8”） | 8df92e80 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### URL函数 {#url}
 
@@ -104,8 +104,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | get_url_port | 返回给定URL的端口。 如果输入无效，则返回null。 | <ul><li>URL： **必需** 需要从中提取端口的URL。</li></ul> | get_url_port(URL) | get_url_port&#x200B;(&quot;sftp://example.com//home/&#x200B;joe/employee.csv&quot;) | 22 |
 | get_url_path | 返回给定URL的路径。 默认情况下，将返回完整路径。 | <ul><li>URL： **必需** 需要从中提取路径的URL。</li><li>完整路径(_P)： *可选* 一个布尔值，确定是否返回完整路径。 如果设置为false，则仅返回路径的结尾。</li></ul> | get_url_path&#x200B;(URL， FULL_PATH) | get_url_path&#x200B;(&quot;sftp://example.com//&#x200B;home/joe/employee.csv&quot;) | “//home/joe/&#x200B;employee.csv” |
 | get_url_query_str | 将给定URL的查询字符串作为查询字符串名称和查询字符串值的映射返回。 | <ul><li>URL： **必需** 您尝试从中获取查询字符串的URL。</li><li>锚点： **必需** 确定对查询字符串中的锚点执行的操作。 可以是以下三个值之一：“保留”、“移除”或“附加”。<br><br>如果该值为“retain”，则锚点将附加到返回的值。<br>如果该值为“remove”，则将从返回值中删除锚点。<br>如果该值为“append”，则锚点将作为单独值返回。</li></ul> | get_url_query_str&#x200B;(URL， ANCHOR) | get_url_query_str&#x200B;(&quot;foo://example.com:8042&#x200B;/over/there？name=&#x200B;ferret#nose&quot;， &quot;retain&quot;)<br>get_url_query_str&#x200B;(&quot;foo://example.com:8042&#x200B;/over/there？name=&#x200B;ferret#nose&quot;， &quot;remove&quot;)<br>get_url_query_str&#x200B;(&quot;foo://example.com&#x200B;：8042/over/there&#x200B;？name=ferret#nose&quot;， &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
+| get_url_encoded | 此函数将URL作为输入，并使用ASCII字符替换或编码特殊字符。 欲知特殊字符的更多信息，请阅读 [特殊字符列表](#special-characters) 本文档的附录中列出的所有详细信息。 | <ul><li>URL： **必需** 要替换或编码为ASCII字符的带有特殊字符的输入URL。</li></ul> | get_url_encoded(URL) | get_url_encoded(&quot;https</span>：//example.com/partneralliance_asia-pacific_2022&quot;) | https%3A%2F%2Fexample.com%2Fpartneralliance_asia-pacific_2022 |
+| get_url_decoded | 此函数以URL作为输入，并将ASCII字符解码为特殊字符。  欲知特殊字符的更多信息，请阅读 [特殊字符列表](#special-characters) 本文档的附录中列出的所有详细信息。 | <ul><li>URL： **必需** 要解码为特殊字符的包含ASCII字符的输入URL。</li></ul> | get_url_decoded(URL) | get_url_decoded(&quot;https%3A%2F%2Fexample.com%2Fpartneralliance_asia-pacific_2022&quot;) | https</span>：//example.com/partneralliance_asia-pacific_2022 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 日期和时间函数 {#date-and-time}
 
@@ -128,7 +130,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | zone_date_to_utc | 将任何时区的日期转换为UTC格式的日期。 | <ul><li>日期： **必需** 您尝试转换的日期。</li></ul> | zone_date_to_utc&#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
 | zone_date_to_zone | 将日期从一个时区转换为另一个时区。 | <ul><li>日期： **必需** 您尝试转换的日期。</li><li>区域： **必需** 您尝试将日期转换为的时区。</li></ul> | zone_date_to_zone&#x200B;(DATE， ZONE) | `zone_date_to_utc&#x200B;(now(), "Europe/Paris")` | `2021-10-26T15:43:59Z` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 层次结构 — 对象 {#objects}
 
@@ -147,7 +149,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象： **必需** 从中提取键的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;： &quot;Pride and Impance&quot;， &quot;book2&quot;： &quot;1984&quot;}) | `["book1", "book2"]` |
 | get_values | 解析键/值对并根据给定的键返回字符串的值。 | <ul><li>字符串： **必需** 要分析的字符串。</li><li>密钥： **必需** 必须为其提取值的键。</li><li>VALUE_DELIMITER： **必需** 分隔字段和值的分隔符。 如果 `null` 或提供了空字符串，则此值为 `:`.</li><li>FIELD_DELIMITER： *可选* 分隔字段和值对的分隔符。 如果 `null` 或提供了空字符串，则此值为 `,`.</li></ul> | get_values(STRING， KEY， VALUE_DELIMITER， FIELD_DELIMITER) | get_values(\&quot;firstName - John ， lastName - Cena ， phone - 555 420 8692\&quot;， \&quot;firstName\&quot;， \&quot;-\&quot;， \&quot;，\&quot;) | John |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关对象复制功能的信息，请参阅部分 [以下](#object-copy).
 
@@ -169,7 +171,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组末尾。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>阵列： **必需** 用于在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
 | upsert_array_replace | 此函数用于替换数组中的元素。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>阵列： **必需** 在配置文件中替换该数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 逻辑运算符 {#logical-operators}
 
@@ -182,7 +184,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | decode | 给定一个键和一个作为数组扁平化的键值对列表，如果找到键，此函数将返回值，如果数组中存在，则返回默认值。 | <ul><li>密钥： **必需** 要匹配的键。</li><li>OPTIONS： **必需** 键/值对的平面化数组。 或者，也可以在末尾放置默认值。</li></ul> | decode(KEY， OPTIONS) | decode(stateCode， &quot;ca&quot;， &quot;California&quot;， &quot;pa&quot;， &quot;Pennsylvania&quot;， &quot;N/A&quot;) | 如果给定的stateCode为“ca”、“California”。<br>如果给定的stateCode为“pa”，“Pennsylvania”。<br>如果stateCode与以下内容不匹配，则为“不适用”。 |
 | iif | 评估给定的布尔表达式并根据结果返回指定的值。 | <ul><li>表达式： **必需** 正在评估的布尔表达式。</li><li>真值： **必需** 表达式计算结果为true时返回的值。</li><li>FALSE_VALUE： **必需** 表达式计算结果为false时返回的值。</li></ul> | iif（表达式，TRUE_VALUE，FALSE_VALUE） | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;)， &quot;True&quot;， &quot;False&quot;) | &quot;True&quot; |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 聚合 {#aggregation}
 
@@ -195,7 +197,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS： **必需** 可以相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3， 1， 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS： **必需** 可以相互比较的一个或多个对象。</li></ul> | 最大(OPTIONS) | max(3， 1， 4) | 4 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 类型转换 {#type-conversions}
 
@@ -210,7 +212,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | to_float | 将字符串转换为浮点数。 | <ul><li>字符串： **必需** 要转换为浮点的字符串。</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
 | to_integer | 将字符串转换为整数。 | <ul><li>字符串： **必需** 要转换为整数的字符串。</li></ul> | to_integer(STRING) | to_integer(&quot;12&quot;) | 12 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### JSON函数 {#json}
 
@@ -222,7 +224,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | 将给定字符串中的JSON内容反序列化。 | <ul><li>字符串： **必需** 要反序列化的JSON字符串。</li></ul> | json_to_object&#x200B;(STRING) | &#x200B; json_to_object({&quot;info&quot;：{&quot;firstName&quot;：&quot;John&quot;，&quot;lastName&quot;： &quot;Doe&quot;}}) | 表示JSON的对象。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 特别行动 {#special-operations}
 
@@ -234,7 +236,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | 生成伪随机ID。 |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 用户代理功能 {#user-agent}
 
@@ -258,7 +260,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必需** 用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0 (iPhone；CPU iPhone OS 5_1_1_1，如Mac OS X)AppleWebKit/534.46 （KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
 | ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必需** 用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0 (iPhone；CPU iPhone OS 5_1_1_1，如Mac OS X)AppleWebKit/534.46 （KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Phone |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 对象复制 {#object-copy}
 
@@ -302,3 +304,43 @@ address.line1 -> addr.addrLine1
 * 新属性在源架构和XDM架构中应有匹配的名称。
 
 如果不满足任何先决条件，则必须使用数据准备手动将源架构映射到XDM架构。
+
+## 附录
+
+以下提供了有关使用数据准备映射函数的其他信息
+
+### 特殊字符 {#special-characters}
+
+下表概述了保留字符及其相应的编码字符。
+
+| 保留字符 | 编码字符 |
+| --- | --- |
+| 空间 | %20 |
+| ！ | %21 |
+| ” | %22 |
+| # | %23 |
+| $ | %24 |
+| % | %25 |
+| &amp; | %26 |
+| &#39; | %27 |
+| ( | %28 |
+| ） | %29 |
+| * | %2A |
+| + | %2B |
+| , | %2C |
+| / | %2F |
+| ： | %3A |
+| ; | %3B |
+| &lt; | %3C |
+| = | %3D |
+| > | %3E |
+| ? | %3F |
+| @ | %40 |
+| [ | %5B |
+| | | %5C |
+| ] | %5D |
+| ^ | %5E |
+| ` | %60 |
+| ~ | %7E |
+
+{style="table-layout:auto"}
