@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的区段以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 0a300660ce0fc53c403d2ceeb3d4d7d2c32ac117
+source-git-commit: dcbc0c3ef87be0bc296992819c9b1bc3ba6317e4
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '926'
 ht-degree: 1%
 
 ---
@@ -79,7 +79,7 @@ ht-degree: 1%
 >[!NOTE]
 >
 >* 当前Experience Platform中的所有目标都支持目标监视功能 *排除* 此 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)， [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目标。
->* 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 当前不显示目标、已排除的身份、已失败和已激活的身份。
+>* 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 估计目标、与排除、失败和激活的标识相关的量度。 较大量的激活数据会导致量度的准确性较高。
 
 
 ![数据流运行视图](../assets/ui/details-page/dataflow-runs.png)
