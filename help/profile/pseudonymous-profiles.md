@@ -5,9 +5,9 @@ title: 假名配置文件数据过期
 description: 本文档提供了在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 hide: true
 hidefromtoc: true
-source-git-commit: 3f776255ca858a86f501fd587c44fe176c45e103
+source-git-commit: a6173860adda4bd71c94750e5cce6dd4cbe820c6
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 - 要考虑用于假名配置文件删除的身份类型。
    - 例如： `ECID` 仅， `AAID` 仅限，或两者的组合 `ECID` 和 `AAID`.
-- 删除假名配置文件之前等待的时间。 客户的默认建议为30天。 但是，该值可能因您的用例而异。
+- 删除假名配置文件之前等待的时间。 客户的默认建议为14天。 但是，该值可能因您的用例而异。
 - 与许可证配置文件计数相比较的当前配置文件计数。
 
 ## 常见问题解答 {#faq}
@@ -37,10 +37,10 @@ ht-degree: 0%
 
 ### 哪些用户应使用假名配置文件数据过期？
 
-- 如果您使用的连接器将数据从其源直接发送到Platform。
+- 如果您使用的是将数据直接发送到Platform的流源。
 - 如果您的网站为未经身份验证的客户集体提供服务。
 - 如果您的数据集中存在过多的配置文件计数，并且已确认这种过多的配置文件计数是由于基于Cookie的匿名身份类型造成的。
-   - 要确定这一点，您应使用身份类型重叠报表。 有关此报告的更多信息，请访问LINK
+   - 要确定这一点，您应使用身份类型重叠报表。 有关此报告的更多信息，请参阅 [身份重叠报表节](./api/preview-sample-status.md#identity-overlap-report) 预览示例状态API指南的。
 
 ### 在使用假名配置文件数据过期之前，您应该注意哪些注意事项？
 
