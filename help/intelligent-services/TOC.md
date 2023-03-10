@@ -4,10 +4,10 @@ audience: user
 user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 使用智能 AI 服务从您的营销活动数据生成分数、发掘见解和创建区段。
-source-git-commit: a98639851e7245b9cbd6fe42b35b4730dd19c3f8
+source-git-commit: 56f0ea4ee1fcefecb317eb2a078b01f7a9767c52
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 31%
+source-wordcount: '140'
+ht-degree: 32%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 31%
       - [治理策略](attribution-ai/aai-data-governance/governance-policies.md)
    - [使用查询服务分析分数](attribution-ai/aai-query-service.md)
    - [错误疑难解答](attribution-ai/troubleshooting.md)
-- 内容标记 {#content-tagging-ai}
-   - [概述](content-tagging/overview.md)
-   - [快速入门](content-tagging/getting-started.md)
-   - 内容标记AI API{#api}
-      - [颜色标记](content-tagging/api/color-tagging.md)
-      - [关键词标记](content-tagging/api/keyword-tagging.md)
-      - [文本存在和光学字符识别](content-tagging/api/optical-character-recognition.md)
+- 内容标记 {#content-commerce-ai}
+   - [概述](content-commerce-ai/overview.md)
+   - [快速入门](content-commerce-ai/getting-started.md)
+   - 内容标记API{#api}
+      - [颜色标记](content-commerce-ai/api/color-tagging.md)
+      - [关键词标记](content-commerce-ai/api/keyword-tagging.md)
+      - [文本存在和光学字符识别](content-commerce-ai/api/optical-character-recognition.md)
 - 客户人工智能 {#customer-ai}
    - [概述](customer-ai/overview.md)
    - [Customer AI入门](customer-ai/getting-started.md)
