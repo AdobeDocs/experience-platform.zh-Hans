@@ -1,15 +1,15 @@
 ---
 keywords: Experience Platform；主页；热门主题；统一标签；标签；
-title: （测试版）统一标记概述
+title: 统一标记概述（测试版）
 description: 本文档提供了有关Adobe Experience Platform中统一标记的信息
-source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
+source-git-commit: de258d0e9fe8304b239633c6901a62e3d7b9e214
 workflow-type: tm+mt
 source-wordcount: '607'
 ht-degree: 1%
 
 ---
 
-# （测试版）统一标记概述
+# 统一标记概述（测试版）
 
 >[!IMPORTANT]
 >
