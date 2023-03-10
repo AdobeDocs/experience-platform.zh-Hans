@@ -1,12 +1,12 @@
 ---
-keywords: Experience Cloud；快速入门；内容和商业人工智能；热门主题；智能服务；ccai
+keywords: Experience Cloud；快速入门；内容标记；热门主题；Intelligent Services
 solution: Experience Platform
 title: 内容标记概述
-description: Content and Commerce AI是一组AI服务，可让您从内容中提取智能功能、组织和简化内容流，并为客户提供更有影响力的个性化体验。
+description: 内容标记是一组AI服务，可让您从内容中提取智能功能、组织和简化内容流，并为客户提供更有影响力的个性化体验。
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '319'
 ht-degree: 1%
 
 ---

@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；快速入门；content ai；commerce ai；content tagging ai；关键字标记；关键字标记
+keywords: Experience Platform；快速入门；内容；内容标记ai；关键词标记；关键词标记
 solution: Experience Platform
 title: 内容标记API中的关键词标记
-description: 关键字标记服务在给定文本文档时，自动提取最能描述文档主题的关键字或关键短语。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
+description: 关键字标记服务在给定文本文档时，自动提取最能描述文档主题的关键字或关键词组。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '450'
 ht-degree: 5%
 
 ---

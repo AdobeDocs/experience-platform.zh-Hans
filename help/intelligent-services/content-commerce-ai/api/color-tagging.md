@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；快速入门；content ai；commerce ai；内容标记；颜色标记；颜色提取；
+keywords: Experience Platform；快速入门；内容；内容标记；颜色标记；颜色提取；
 solution: Experience Platform
 title: 内容标记API中的颜色标记
-description: 当给定图像时，颜色标记服务可以计算像素颜色的直方图，并按主颜色将它们排序为分段。
+description: 当给定图像时，颜色标记服务可以计算像素颜色的直方图，并按主颜色将它们排序到存储桶中。
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '497'
 ht-degree: 4%
 
 ---
