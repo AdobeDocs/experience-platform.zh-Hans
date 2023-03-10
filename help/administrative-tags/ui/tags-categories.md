@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform；标记类别；标记；
 title: 标记类别
-description: 本文档提供了有关管理Adobe Experience Cloud中的管理标记类别的信息
-source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
+description: 本文档提供了有关在Adobe Experience Cloud中管理统一标记类别的信息
+source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
 workflow-type: tm+mt
 source-wordcount: '417'
 ht-degree: 0%

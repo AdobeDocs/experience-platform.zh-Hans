@@ -1,15 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；管理标签；标签；
-title: 管理标记概述
-description: 本文档提供了有关Adobe Experience Platform中管理标记的信息
-source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
+keywords: Experience Platform；主页；热门主题；统一标签；标签；
+title: （测试版）统一标记概述
+description: 本文档提供了有关Adobe Experience Platform中统一标记的信息
+source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
 workflow-type: tm+mt
-source-wordcount: '577'
-ht-degree: 2%
+source-wordcount: '607'
+ht-degree: 1%
 
 ---
 
-# 标记概述
+# （测试版）统一标记概述
+
+>[!IMPORTANT]
+>
+>统一标记处于测试阶段。 如果您想提供反馈，请选择“标记管理”页面顶部的按钮。
 
 标记是Adobe Experience Platform的一项功能，它使管理员能够管理元数据分类，以便对业务对象进行分类，从而更便于发现和分类。 标记是元数据，可以将其视为可附加到区段、数据集、历程或其他对象的关键字，以便搜索功能查找该对象和相关对象。 标记分为两种类型：已分类和未分类。
 

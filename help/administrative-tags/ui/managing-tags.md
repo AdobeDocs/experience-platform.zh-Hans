@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform；管理标签；标签；
-title: 管理管理标记
-description: 本文档提供了有关管理Adobe Experience Cloud中的管理标记的信息
-source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
+title: 管理统一标记
+description: 本文档提供了有关在Adobe Experience Cloud中管理统一标记的信息
+source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
 workflow-type: tm+mt
 source-wordcount: '1070'
 ht-degree: 0%
