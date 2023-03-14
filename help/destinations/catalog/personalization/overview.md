@@ -1,12 +1,12 @@
 ---
 keywords: 个性化；个性化
 title: 个性化目标概述
-description: 个性化平台从个人行为中收集数据和分析。 这些平台可帮助营销人员导航匿名数据，根据以往活动或作为具有相似习惯的受众区段的一部分向潜在客户提供优惠或广告。
+description: 个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: bdc6ef162e9684065b60a13670848dac64be21fd
+source-git-commit: 0dbd050a9057f491537777ab539bfc687f8c89cb
 workflow-type: tm+mt
-source-wordcount: '154'
-ht-degree: 11%
+source-wordcount: '153'
+ht-degree: 12%
 
 ---
 
@@ -14,16 +14,16 @@ ht-degree: 11%
 
 ## 概述 {#overview}
 
-个性化平台从个人行为中收集数据和分析。 这些平台可帮助营销人员导航匿名数据，根据以往活动或作为具有相似习惯的受众区段的一部分向潜在客户提供优惠或广告。
+个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
 
 ## 支持的个性化目标 {#supported-destinations}
 
-目前，Platform支持下面列出的个性化目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，平台支持下面列出的个性化目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 **连接**
 
 * [Adobe Target](adobe-target-connection.md)
-* [（测试版）Adobe Commerce](adobe-commerce.md)
+* [Adobe Commerce](adobe-commerce.md)
 * [自定义个性化连接](custom-personalization.md)
 * [Pega客户决策中心连接](pega.md)
 * [Pega配置文件连接](pega-profile.md)
@@ -37,4 +37,4 @@ ht-degree: 11%
 * [Experience Cloud ID 服务扩展](adobe-ecid.md)
 * [Gainsight扩展](gainsight.md)
 * [Kickfire扩展](kickfire.md)
-* [Marketo Web个性化扩展](marketo-web-personalization.md)
+* [Marketo Web Personalization扩展](marketo-web-personalization.md)
