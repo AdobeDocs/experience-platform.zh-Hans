@@ -3,9 +3,9 @@ keywords: 流；HTTP目标
 title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或执行您可能需要对从Experience Platform导出的配置文件数据执行的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 01e4a32222bb94ab87751b2375ad616e5b5c0738
+source-git-commit: b6d7ae987bbc97b3f58bd10ef181145ae89aa63e
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2436'
 ht-degree: 0%
 
 ---
@@ -158,7 +158,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="包括区段时间戳"
->abstract="如果希望数据导出包括创建和更新区段时的UNIX时间戳，以及将区段映射到目标以供激活时的UNIX时间戳，请进行切换。 查看选中此选项的数据导出示例文档。<p>第一个项目符号中的内容</p><p>第二个项目符号中的内容</p><ul><li>列表项一。</li><li>列表项二。</li></ul>  — 更多文本行。  — 还有更多行文本。 设置测试格式，以查看我们是否可以： <br>使用HTML格式</p><p>甚至使用段落标记。这是第一行。</p><p>还有更多段落标记，用于第二行。</p><p>所有段落标记。 三号线。</p>最后，测试是否包含带有Markdown的链接 [https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html]（绝对链接）和HTML <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=zh-Hans">链接文本</a> 语法。最后，进行测试以包含Markdown链接 [../overview.md]（相对链接）和HTML <a href="../overview.md">相对链接文本</a> 语法。"
+>abstract="如果希望数据导出包括创建和更新区段时的UNIX时间戳，以及将区段映射到目标以供激活时的UNIX时间戳，请进行切换。 查看选中此选项的数据导出示例文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
