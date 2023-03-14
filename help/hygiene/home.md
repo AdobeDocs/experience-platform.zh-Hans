@@ -4,8 +4,8 @@ description: Adobe Experience Platform数据卫生功能允许您通过更新或
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '607'
-ht-degree: 2%
+source-wordcount: '604'
+ht-degree: 1%
 
 ---
 
@@ -55,7 +55,7 @@ Adobe Experience Platform提供了一组功能强大的工具来管理大型、�
 | 历程和目标已更新 | 50 小时 | [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [营销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和 [目标](../destinations/home.md) 会根据相关区段的更改进行更新。 |
 | 硬删除完成 | 14 天 | 与数据集相关的所有数据都将从数据湖中硬删除。 的 [卫生工作状况](./ui/browse.md#view-details) 会更新删除数据集的内容，以反映这一点。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 <!-- ### Record deletes {#record-delete-transparency}
 
