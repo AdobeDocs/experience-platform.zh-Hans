@@ -1,9 +1,9 @@
 ---
 title: 数据Distiller概述
 description: 与您的授权许可相关的查询服务数据的Distiller使用限制摘要。
-source-git-commit: b3003cc62e8d3555b887a23f0614020bd2c5e81e
+source-git-commit: ae4ecd43071a198592193a1a598a064cdc6be2f6
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -16,29 +16,32 @@ Data Distiller是一款产品包，其中包含Adobe Experience Platform功能�
 
 的  [数据Distiller许可证使用功能板](./license-usage.md) 在您购买了数据Distiller计算小时数后，即可使用。 许可证使用功能板可帮助您监控授权计算小时数的使用情况。 请参阅 [数据Distiller许可证使用文档](./license-usage.md) 查看有关贵组织查询服务许可证使用情况的重要信息。
 
-## 范围参数 {#scoping-parameters}
+<!-- Update these descriptions post 23.3 release
+## Scoping parameters {#scoping-parameters}
 
-范围界定参数是与所需设置的范围界定相关的使用限制，由您的许可证容量来定义。 如果没有附加组件，Data Distiller的范围界定参数如下所示：
+Scoping parameters are usage limits that relate to the scoping of your required set up, and are defined by your license capacity. Without add-ons, Data Distiller's scoping parameters are as follows: 
 
-* **计算小时数**:您可以使用PSQL或查询服务API来运行在任何沙盒（已计划或其他）中执行的批处理查询，以扫描和写入数据。 它使用您在许可协议的范围界定过程中确定的每年分配的计算小时数。 所有沙盒的总计算小时数都会累计。
-* **摄取的数据**:摄取到Adobe Experience Platform中且可使用Data Distiller查询的数据受当前Adobe Real-time Customer Data Platform、Customer Journey Analytics和/或Adobe Journey Optimizer许可证中所述的限制。
-* **数据湖存储**:在您当前为Adobe Real-time Customer Data Platform、Customer Journey Analytics和/或Adobe Journey Optimizer提供的许可证中提供的数据湖存储也可以与Data Distiller一起使用。 数据湖存储是一项共享功能。
-* **查询服务用户**:在您当前对Adobe Real-time Customer Data Platform、Customer Journey Analytics和/或Adobe Journey Optimizer的许可证中详细列出的查询服务用户数，也可以与Data Distiller一起使用。 查询服务用户是一项共享功能。
+* **Compute Hours**: You can use PSQL or the Query Service API to run batch queries executed in any sandbox (scheduled or otherwise) to scan and write data. This uses your allotted Compute Hours per year as determined in the scoping process of your license agreement. Total Compute Hours is accumulated across all Sandboxes.
+* **Data Ingested**: The data ingested into Adobe Experience Platform which can be queried using Data Distiller is subject to the limitations described in your then-current license to Adobe Real-Time Customer Data Platform, Customer Journey Analytics, and/or Adobe Journey Optimizer.
+* **Data Lake Storage**: The data lake storage provided in your then-current license to Adobe Real-Time Customer Data Platform, Customer Journey Analytics, and/or Adobe Journey Optimizer may also be used with Data Distiller. Data Lake Storage is a shared feature.
+* **Query Service Users**: The number of Query Service users detailed in your then-current license to Adobe Real-Time Customer Data Platform, Customer Journey Analytics, and/or Adobe Journey Optimizer may also be used with Data Distiller. Query Service Users is a shared feature. 
+-->
 
 ## 护栏
 
 请参阅 [查询服务护栏](../guardrails.md) 有关与您的许可授权相关的查询服务数据的默认使用限制的文档。
 
-## 静态限制
+<!-- Update these descriptions post 23.3 release
+## Static limits
 
-静态限制是与Adobe Experience Platform激活的功能边界相关的使用限制。 [有关Adobe Experience Platform激活的更多信息](https://helpx.adobe.com/ca/legal/product-descriptions/adobe-experience-platform0.html) 可在Adobe帮助文档中找到。 下面列出了数据Distiller静态限制的摘要，有关更完整的信息，请参阅查询服务护栏文档。
+A static limit is the usage limit that relates to the functional boundaries of Adobe Experience Platform Activation. [More information on Adobe Experience Platform Activation](https://helpx.adobe.com/ca/legal/product-descriptions/adobe-experience-platform0.html) can be found in the Adobe help documents. A summary of Data Distiller static limits are listed below, for more complete information please refer to the Query Service guardrail document.  
 
-* **批量查询**:计划的批处理查询在24小时后超时。
-* **查询服务**:您可以使用查询服务实现以下目的：
-   * 要运行SQL查询以进行数据分析，并进行摄取数据准备（清理、整形和操作）之后。
-   * 要运行SQL查询以创建汇总量度以直接显示到BI工具中，请执行以下操作：
-   * 在Adobe Experience Platform中快速检查数据。
-   * 从数据中生成有意义的分析。
-* **报表API调用**:要确保使用报表API对聚合数据运行查询，有足够的资源来高效执行。 这包括可增强现有数据模型(例如Real-time Customer Data Platform提供的数据模型)的查询。 报表API通过为每个查询分配并发插槽来跟踪资源利用率。 最多可同时使用4个报表API调用。 如果您通过BI工具访问报表API，并且需要更多并发插槽，则需要BI服务器。
-
+* **Batch Queries**: Scheduled batch queries time out after 24 hours.
+* **Query Service**: You can use Query Service for the following purposes: 
+    * To run SQL queries for data analysis and post ingestion data preparation (cleaning, shaping, and manipulation).
+    * To run SQL queries to create roll-up metrics to surface directly into a BI tool.
+    * To quickly inspect data within Adobe Experience Platform.
+    * To generate meaningful insights from your data.
+* **Reporting API Call**: To ensure queries run on aggregated data using the reporting API have enough resources to execute efficiently. This includes queries that enhance existing data models such as those provided by Real-Time Customer Data Platform. The reporting API tracks resource utilization by assigning concurrency slots to each query. A maximum of four reporting API calls are available concurrently. If you access the reporting API through a BI tool and require more concurrency slots, a BI server is required.
+-->
 
