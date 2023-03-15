@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform帮助中的统一标记
+user-guide-title: 有关 Adobe Experience Platform 中统一标签的帮助
 breadcrumb-title: 统一标记指南
-user-guide-description: 使用统一的标记来管理元数据分类。 了解如何创建标记类别和标记。
+user-guide-description: 使用统一标签管理元数据分类法。了解如何创建标记类别和标记。
 source-git-commit: de258d0e9fe8304b239633c6901a62e3d7b9e214
 workflow-type: tm+mt
 source-wordcount: '39'
-ht-degree: 0%
+ht-degree: 64%
 
 ---
 
