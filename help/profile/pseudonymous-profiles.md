@@ -5,9 +5,9 @@ title: 匿名用户档案数据过期
 description: 本文档提供了有关在Adobe Experience Platform中为假名用户档案配置数据过期的一般指导。
 hide: true
 hidefromtoc: true
-source-git-commit: ab5eb1e7a3f2c20efcb44b1699a5938f6d54fa04
+source-git-commit: 6ba219162f6fde37d8bd258c43ed1bdbbbcdf569
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,6 @@ ht-degree: 0%
 - 删除假名配置文件时要考虑的身份命名空间。
    - 例如： `ECID` 仅， `AAID` 仅，或 `ECID` 和 `AAID`.
 - 删除假名用户档案前需要等待的时间。 客户的默认推荐为14天。 但是，此值可能因您的用例而异。
-- 与许可证配置文件计数相比的当前配置文件计数。
 
 ## 常见问题解答 {#faq}
 
