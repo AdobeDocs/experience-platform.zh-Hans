@@ -2,9 +2,9 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
+source-git-commit: 2913e9e687843e566db4ebf2031e610d1891d4c9
 workflow-type: tm+mt
-source-wordcount: '604'
+source-wordcount: '639'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->目前，数据卫生仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
+>目前，数据卫生仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**. 这些功能将在不久的将来正式发布。 有关这些服务即将发布的更多信息，请联系您的Adobe服务代表。 但是，您可以立即 [通过删除数据集 [!UICONTROL 数据集] UI](../catalog/datasets/user-guide.md#delete).
 
 Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
 
