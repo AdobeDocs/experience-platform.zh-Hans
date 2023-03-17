@@ -2,9 +2,9 @@
 title: Adobe Analytics报表包数据的源连接器
 description: 本文档概述了Analytics，并介绍了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 486f5bdd834808c6262f41c0b0187721fc9b0799
+source-git-commit: 35298fc6b3e272c1b7b14cfa17713d18427ba2ce
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1042'
 ht-degree: 7%
 
 ---
@@ -50,7 +50,7 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 | Analytics 数据 | 预期滞后 |
 | -------------- | ---------------- |
 | 新数据 [!DNL Real-Time Customer Profile] (A4T) **not** enabled) | &lt; 2 分钟 |
-| 新数据 [!DNL Real-Time Customer Profile] (A4T) **is** enabled) | &lt; 15 分钟 |
+| 新数据 [!DNL Real-Time Customer Profile] (A4T) **is** enabled) | 最多30分钟 |
 | 数据湖的新数据 | &lt; 90 分钟 |
 | 回填不到100亿个事件 | &lt; 4 周 |
 
