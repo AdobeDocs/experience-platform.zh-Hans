@@ -4,14 +4,18 @@ title: 警报概述
 description: 了解 Adobe Experience Platform 中的警报，包括有关如何定义警报规则的结构。
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: b1c82169056e66b9cdcf99f73daa7d37a3a01600
+source-git-commit: 37700c3b3b728b59083fd51cabf1d8e4b8213580
 workflow-type: tm+mt
-source-wordcount: '760'
-ht-degree: 5%
+source-wordcount: '774'
+ht-degree: 3%
 
 ---
 
 # 警报概述
+
+>[!NOTE]
+>
+>非生产沙箱不支持警报。 要订阅警报，您必须确保使用的是生产沙盒。
 
 Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询 [[!DNL Observability Insights] API](../api/overview.md) 为了检查作业是否已完成、是否已到达工作流中的某个里程碑，或是否发生任何错误。
 
@@ -29,7 +33,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 | 不重复。 | 如果异常情况持续存在，可以重复上述步骤。 |
 | 示例包括：<ul><li>数据摄取已成功完成。</li><li>查询执行已完成。</li><li>数据已删除。</li></ul> | 示例包括：<ul><li>摄取持续时间超过服务级别协议(SLA)。</li><li>过去24小时内未发生每日摄取。</li><li>流处理器的错误率高于配置的阈值。</li><li>用户档案总数超过授权。</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 警报解剖
 
@@ -43,7 +47,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 | **操作** | 触发警报时，会执行一项操作。 具体而言，通过投放渠道(如预配置的Webhook或Experience PlatformUI)向适用的收件人发送消息。 |
 | **频度** | （可选）如果警报的条件仍为true或未解析，则可以将其配置为以定义的间隔重复其操作。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 接收和管理警报
 
@@ -71,7 +75,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 | 管理警报* | 允许您通过 [!UICONTROL 警报] 选项卡。 |
 | 解决警报* | 允许您通过 [!UICONTROL 警报] 选项卡。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **为了访问 [!UICONTROL 警报] 选项卡，则还必须同时授予您“查看警报”权限和其他权限之一。*
 
