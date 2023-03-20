@@ -5,8 +5,8 @@ description: 通过Microsoft Bing连接目标，您可以跨Microsoft显示广�
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
-source-wordcount: '622'
-ht-degree: 2%
+source-wordcount: '616'
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 2%
 |---|---|
 | 女佣 | Microsoft Advertising ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -43,7 +43,7 @@ ht-degree: 2%
 | 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到 [!DNL Microsoft Bing] 目标。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 先决条件 {#prerequisites}
 

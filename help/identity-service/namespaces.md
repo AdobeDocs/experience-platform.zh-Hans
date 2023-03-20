@@ -7,7 +7,7 @@ exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
 source-git-commit: 482de6a50d14b9de095014b070ce400a2fd273cc
 workflow-type: tm+mt
 source-wordcount: '1681'
-ht-degree: 2%
+ht-degree: 7%
 
 ---
 
@@ -36,7 +36,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_identity_create_namespace"
 >title="指定标识类型"
->abstract="标识类型控制数据是否存储到标识图。 将不会存储非人员标识符，并且所有其他身份类型都将存储。"
+>abstract="标识类型控制数据是否存储到标识图形中。非人员标识符不会被存储，所有其他标识类型都会被存储。"
 >text="Learn more in documentation"
 
 数据可以由多种不同的身份类型来标识。 标识类型在创建标识命名空间时指定，并控制数据是否持久保留到标识图以及如何处理该数据的任何特殊说明。 除 **非人员标识符** 请按照拼合命名空间及其相应ID值的相同行为，将这些值拼合到标识图群集。 使用 **非人员标识符**.
@@ -83,7 +83,7 @@ Experience Platform提供了多个适用于所有组织的身份命名空间。 
 >[!CONTEXTUALHELP]
 >id="platform_identity_view_integration_identities"
 >title="查看集成标识"
->abstract="集成身份是用于与其他系统连接且不用于身份解析或拼合身份的命名空间。 <br> 默认情况下，这些标识是隐藏的。 使用切换开关查看集成命名空间。"
+>abstract="集成身份是用于连接其他系统的命名空间，不用于标识解析或拼接标识。<br>默认情况下，这些标识是隐藏的。使用切换功能来查看集成命名空间。"
 
 要在UI中查看身份命名空间，请选择 **[!UICONTROL 标识]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]**.
 

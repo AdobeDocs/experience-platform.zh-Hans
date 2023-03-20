@@ -7,7 +7,7 @@ description: 了解如何在UI中创建Adobe Analytics源连接，以将消费�
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
-source-wordcount: '2345'
+source-wordcount: '2384'
 ht-degree: 2%
 
 ---
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
-<!---Analytics Report Suites can be configured for one sandbox at a time. To import the same Report Suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
+&lt;! — 可以一次为一个沙盒配置Analytics报表包。 要将同一报表包导入其他沙盒，必须删除数据集流，并通过其他沙盒的配置再次实例化该流。—>
 
 ### 映射
 
@@ -198,7 +198,7 @@ ht-degree: 2%
 
 * [!UICONTROL 等于]
 * [!UICONTROL 不等于]
-* [!UICONTROL 始于]
+* [!UICONTROL 开头]
 * [!UICONTROL 止于]
 * [!UICONTROL 结尾不为]
 * [!UICONTROL 包含]
@@ -250,7 +250,7 @@ ht-degree: 2%
 
 ![数据流详细信息](../../../../images/tutorials/create/analytics/dataflow-detail.png)
 
-### 审阅
+### 请查看
 
 的 [!UICONTROL 审阅] 步骤，允许您在创建新的Analytics数据流之前查看该数据流。 连接的详细信息按类别分组，包括：
 

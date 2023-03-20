@@ -6,7 +6,7 @@ description: 了解如何通过将区段发送到基于配置文件的批量目�
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: 7d680567cee8b47532bb66434e2f0582cde68532
 workflow-type: tm+mt
-source-wordcount: '3595'
+source-wordcount: '3592'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ ht-degree: 0%
 | **[!UICONTROL 组织名称]** | 您的组织名称在Experience Platform中。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
 | **[!UICONTROL 沙盒名称]** | 用于导出区段的沙盒ID。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 选择 **[!UICONTROL 应用更改]** 以确认您的选择。
 

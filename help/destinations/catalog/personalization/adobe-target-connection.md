@@ -5,7 +5,7 @@ description: Adobe Target是一款应用程序，可在跨网站、移动设备�
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
 source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1011'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 | 导出类型 | **[!DNL Profile request]** | 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 用例 {#use-cases}
 

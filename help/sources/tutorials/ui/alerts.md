@@ -5,8 +5,8 @@ title: 在UI中订阅上下文关联警报
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
 source-git-commit: d450dc7b0dc0303c9d33c3e8e003659e3140cf5b
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '845'
+ht-degree: 1%
 
 ---
 
@@ -57,7 +57,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 
 有关在UI中创建源数据流的详细步骤，请参阅以下指南：
 
-* [广告](./dataflow/advertising.md)
+* [Advertising](./dataflow/advertising.md)
 * [云存储](./dataflow/batch/cloud-storage.md)
 * [CRM](./dataflow/crm.md)
 * [数据库](./dataflow/databases.md)

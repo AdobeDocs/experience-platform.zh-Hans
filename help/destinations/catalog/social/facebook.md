@@ -5,7 +5,7 @@ description: 根据经过哈希处理的电子邮件，激活Facebook营销活�
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '1859'
+source-wordcount: '1856'
 ht-degree: 1%
 
 ---
@@ -57,14 +57,14 @@ ht-degree: 1%
 | 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，以及Facebook目标中使用的标识符（名称、电话号码或其他）。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Facebook帐户先决条件 {#facebook-account-prerequisites}
 
 在将受众区段发送到 [!DNL Facebook]，请确保满足以下要求：
 
 * 您的 [!DNL Facebook] 用户帐户必须具有 **[!DNL Manage campaigns]** 为您计划使用的广告帐户启用的权限。
-* 的 **Adobe Experience Cloud** 业务帐户必须作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`. 请参阅 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) (在Facebook文档中)。
+* 的 **Adobe Experience Cloud** 业务帐户必须作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`。请参阅 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) (在Facebook文档中)。
    >[!IMPORTANT]
    >
    > 配置Adobe Experience Cloud的权限时，必须启用 **管理营销活动** 权限。 需要权限才能 [!DNL Adobe Experience Platform] 集成。

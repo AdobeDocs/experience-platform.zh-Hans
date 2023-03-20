@@ -4,8 +4,8 @@ description: 通过激活在Twitter中构建的受众，定位您的现有关注
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '812'
-ht-degree: 3%
+source-wordcount: '806'
+ht-degree: 2%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 3%
 | device_id | IDFA/AdID/Android ID | Adobe Experience Platform支持Google广告ID(GAID)和Apple ID for Advertisers(IDFA)。 请在 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 目标激活工作流的URL。 |
 | 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256哈希电子邮件地址映射到此字段。 当源字段包含未哈希属性时，请检查 **[!UICONTROL 应用转换]** 选项， [!DNL Platform] 自动对激活时的数据进行哈希处理。 如果您在将客户电子邮件地址上传到Adobe Experience Platform之前对其进行哈希处理，请注意，这些身份必须使用SHA256进行哈希处理，而不必加任何盐。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -42,7 +42,7 @@ ht-degree: 3%
 | 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及在Twitter自定义受众目标中使用的标识符。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 用例 {#use-cases}
 

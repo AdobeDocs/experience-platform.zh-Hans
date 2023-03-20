@@ -6,8 +6,8 @@ description: 下表包含Marketo数据集中的字段与其相应XDM字段之间
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '952'
-ht-degree: 4%
+source-wordcount: '922'
+ht-degree: 2%
 
 ---
 
@@ -133,7 +133,7 @@ ht-degree: 4%
 | `directMarketing.emailSent.testVariantName` | `directMarketing.emailSent.testVariantName` |
 | `directMarketing.emailSent.automationRunID` | `directMarketing.emailSent.automationRunID` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 项目 {#programs}
 
@@ -164,7 +164,7 @@ ht-degree: 4%
 | `endDate` | `campaignEndDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 方案成员资格 {#program-memberships}
 
@@ -197,7 +197,7 @@ ht-degree: 4%
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 公司 {#companies}
 
@@ -229,7 +229,7 @@ ht-degree: 4%
 | `iif(mktoCdpParentOrgId != null && mktoCdpParentOrgId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(mktoCdpParentOrgId, ".mkto_org"), "sourceKey", concat(mktoCdpParentOrgId, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `accountParentKey` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 静态列表 {#static-lists}
 
@@ -247,7 +247,7 @@ ht-degree: 4%
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 静态列表成员关系 {#static-list-memberships}
 
@@ -264,7 +264,7 @@ ht-degree: 4%
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 指定帐户 {#named-accounts}
 
@@ -296,7 +296,7 @@ ht-degree: 4%
 | `sourceType` | `accountSourceType` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 机会 {#opportunities}
 
@@ -333,7 +333,7 @@ ht-degree: 4%
 | `nextStep` | `nextStep` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 机会联系角色 {#opportunity-contact-roles}
 
@@ -354,7 +354,7 @@ ht-degree: 4%
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 人员 {#persons}
 
@@ -412,7 +412,7 @@ ht-degree: 4%
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | 这是一个计算字段。 |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | 这是一个计算字段。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

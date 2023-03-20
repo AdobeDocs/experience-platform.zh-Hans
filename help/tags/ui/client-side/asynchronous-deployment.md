@@ -72,8 +72,8 @@ ht-degree: 55%
 尽管始终强制按此顺序执行，但某些规则可能会在标记库完成加载时立即执行，而其他规则可能会在稍后执行。 标记库完成加载时会发生以下情况：
 
 1. 立即执行规则 A。
-1. 如果 `DOMContentLoaded` 浏览器事件 (DOM Ready) 已经发生，则会立即执行规则 B 和规则 C。否则，规则 B 和规则 C 稍后在发生 [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) 浏览器事件时执行。
-1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标签库，则标记库 *always* 完成加载 [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) 发生浏览器事件。
+1. 如果 `DOMContentLoaded` 浏览器事件 (DOM Ready) 已经发生，则会立即执行规则 B 和规则 C。否则，规则 B 和规则 C 稍后在发生 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 浏览器事件时执行。
+1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标签库，则标记库 *always* 完成加载 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 发生浏览器事件。
 
 将这些原则应用于您自己的网站时，请考虑以下事项：
 

@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；警报；目标
 description: 创建数据流时，您可以订阅警报，以接收有关流程运行状态、成功或失败的警报消息。
 title: 订阅上下文关联目标警报
-source-git-commit: 56f1d5a6a1e90910cedb21fafb6b2ecf16d5b6d7
+exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
+source-git-commit: 3bb9858c236c91e1567fd8e78988f4049537ffe3
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 0%

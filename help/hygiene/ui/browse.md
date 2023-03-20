@@ -4,7 +4,7 @@ description: 了解如何在Adobe Experience Platform用户界面中查看和管
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '862'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 1%
 | [!UICONTROL 过期日期] | 根据相关数据集的计划删除日期过滤数据集过期请求。 |
 | [!UICONTROL 更新日期] | 根据上次更新工作单的时间进行筛选。 创建和过期将计为更新。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 查看工作单的详细信息 {#view-details}
 

@@ -69,7 +69,7 @@ Experience Platform提供了用户界面和RESTful API，您可以从中查看�
 >
 >没有基于临时行为的标准类。 临时架构由利用这些架构的平台进程自动生成，但也可以 [使用架构注册表API手动创建](./tutorials/ad-hoc.md).
 
-### [!UICONTROL XDM个人配置文件] {#xdm-individual-profile}
+### [!UICONTROL XDM 个人资料] {#xdm-individual-profile}
 
 [!UICONTROL XDM个人配置文件] 是基于记录的类，它对已识别和部分已识别主题的属性形成单一表示。 高度识别的用户档案可用于个人通信或定向活动，并且可以包含详细的个人信息，例如姓名、性别、出生日期、地点和联系信息，包括电话号码和电子邮件地址。
 

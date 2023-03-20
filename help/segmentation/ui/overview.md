@@ -214,7 +214,7 @@ ht-degree: 1%
 | 字段 | 描述 |
 | ----- | ----------- | 
 | [!UICONTROL 名称] | 受众的名称。 |
-| [!UICONTROL 用户档案计数] | 符合受众资格的用户档案总数。 |
+| [!UICONTROL 配置文件计数] | 符合受众资格的用户档案总数。 |
 | [!UICONTROL Origin] | 受众的来源。 如果此受众是平台生成的，则其将具有分段服务的来源。 |
 | [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`, `Published`和 `Archived`. |
 | [!UICONTROL 更新频度] | 一个值，用于指示受众数据更新频率。 此字段的可能值包括 `On Demand`, `Scheduled`和 `Continuous`. |

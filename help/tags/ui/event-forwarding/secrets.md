@@ -4,8 +4,8 @@ description: 了解如何在UI中配置密钥，以对事件转发属性中使�
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
 source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1766'
-ht-degree: 0%
+source-wordcount: '1763'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 | [!UICONTROL OAuth 2] | 包含多个属性以支持 [客户端凭据授予类型](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) 对于 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 验证规范。 系统会要求您提供所需信息，然后在指定的间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL Google OAuth 2] | 包含多个属性以支持 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 验证规范，用于 [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) 和 [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). 系统会要求您提供所需信息，然后在指定的间隔内为您处理这些令牌的续订。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 本指南简要概述了如何为事件转发配置密钥([!UICONTROL Edge])属性。
 
