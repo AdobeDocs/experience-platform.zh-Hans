@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
 workflow-type: tm+mt
-source-wordcount: '1451'
-ht-degree: 2%
+source-wordcount: '1549'
+ht-degree: 1%
 
 ---
 
@@ -40,7 +40,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 要在每个页面上显示的结果数。 默认值为 `1` 最大值是 `100`. 超过最大值会导致API返回400代码错误。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -63,6 +63,12 @@ curl -X GET \
 要在分页响应中获取下一组结果，您必须对同一端点再进行一次API调用，同时将 `page` 按1查询参数。
 
 ## 创建隐私作业 {#create-job}
+
+>[!IMPORTANT]
+>
+>Privacy Service仅适用于数据主体和消费者权限请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有法律义务及时履行这些义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅生产环境，并且会造成有效隐私请求的不必要积压。
+>
+>现已设置硬性的每日上载限制，以帮助防止滥用服务。 发现滥用系统的用户将禁用其对服务的访问权限。 随后将与他们举行会议，讨论他们的行动并讨论可接受的Privacy Service用途。
 
 在创建新作业请求之前，您必须首先收集有关要访问、删除或选择退出销售其数据的数据主体的标识信息。 获得所需数据后，必须在向发送的POST请求的有效负载中提供该数据 `/jobs` 端点。
 
@@ -162,7 +168,7 @@ curl -X POST \
 | `mergePolicyId` | 在对实时客户资料提出隐私请求时(`profileService`)，则可以选择提供特定 [合并策略](../../profile/merge-policies/overview.md) 用于ID拼合的ID。 通过指定合并策略，在返回客户数据时，隐私请求可以包含区段信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不会包含分段信息。 |
 | `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅 [受支持法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -214,7 +220,7 @@ curl -X POST \
 | --- | --- |
 | `jobId` | 作业的只读、唯一的系统生成ID。 此值用于查找特定作业的下一步。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 成功提交作业请求后，可以继续执行 [检查作业的状态](#check-status).
 
@@ -236,7 +242,7 @@ GET /jobs/{JOB_ID}
 | --- | --- |
 | `{JOB_ID}` | 要查找的作业的ID。 此ID在 `jobId` 成功响应 [创建工作](#create-job) 和 [列出所有作业](#list). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -334,7 +340,7 @@ curl -X GET \
 | `productStatusResponse.results` | 对于某些状态，某些产品可能会返回 `results` 提供未涵盖的其他信息的对象 `responseMsgDetail`. |
 | `downloadURL` | 如果作业的状态为 `complete`，此属性会提供一个URL，用于将作业结果下载为ZIP文件。 此文件可在作业完成后60天内下载。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 作业状态类别 {#status-categories}
 
@@ -347,7 +353,7 @@ curl -X GET \
 | `submitted` | 作业会提交到每个适用的应用程序。 |
 | `error` | 处理作业时出现故障 — 可通过检索单个作业详细信息来获取更具体的信息。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
