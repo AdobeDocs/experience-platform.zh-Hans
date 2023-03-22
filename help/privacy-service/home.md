@@ -4,14 +4,20 @@ solution: Experience Platform
 title: Privacy Service概述
 description: Privacy Service使您能够促进在Experience Cloud数据操作中自动遵守法律隐私法规。
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
-source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
+source-git-commit: e09f0598e1d8dc007d0fdfcf13da11d5cad94c54
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1608'
 ht-degree: 5%
 
 ---
 
 # [!DNL Privacy Service] 概述
+
+>[!IMPORTANT]
+>
+>Adobe Experience Platform Privacy Service的权限已得到改进，可提高其粒度级别。 通过这些更改，组织管理员可以授予更多用户使用所需的角色和权限级别的访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们而言是一次重大更改。 此权限更改的实施将在 **2023年3月28日**.
+>
+>技术帐户可供企业客户使用，并通过Adobe开发人员控制台创建。 技术帐户持有人的Adobe ID结束于 `@techacct.adobe.com`. 如果您不确定自己是否是技术帐户持有者，请联系您的组织管理员。
 
 为了提供更好的客户体验，您需要收集和存储客户的个人数据。 使用此数据时，了解并尊重客户的隐私至关重要。 新的法律和组织规定正在用户提供相应的权利，允许他们请求访问或删除您的数据存储中的用户个人数据。
 

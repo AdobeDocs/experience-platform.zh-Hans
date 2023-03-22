@@ -1,14 +1,21 @@
 ---
 title: 管理Privacy Service权限
 description: 了解如何使用Adobe Admin Console管理Adobe Experience Platform Privacy Service的用户权限。
-source-git-commit: 59dc28a84971dc8c21d633741cfe2dc1b44ea1a6
+exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
+source-git-commit: 37a67b19fa0cb38e9e34066c869dd9dc49edefd6
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
 
 # 管理Privacy Service权限
+
+>[!IMPORTANT]
+>
+>Adobe Experience Platform Privacy Service的权限已得到改进，可提高其粒度级别。 通过这些更改，组织管理员可以授予更多用户使用所需的角色和权限级别的访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们而言是一次重大更改。 此权限更改的实施将在 **2023年3月28日**.
+>
+>技术帐户可供企业客户使用，并通过Adobe开发人员控制台创建。 技术帐户持有人的Adobe ID结束于 `@techacct.adobe.com`. 如果您不确定自己是否是技术帐户持有者，请联系您的组织管理员。
 
 访问 [Adobe Experience Platform Privacy Service](./home.md) 可通过Adobe Admin Console中基于角色的细粒度权限进行控制。 通过创建产品配置文件以将权限分配给用户组，可以确定谁有权访问Privacy Service中的哪些功能 [UI](./ui/overview.md) 和 [API](./api/overview.md).
 
@@ -36,7 +43,7 @@ ht-degree: 1%
 | [!UICONTROL 选择退出销售权限] | [!UICONTROL 阅读权限 — 选择退出销售] | 确定用户是否可以查看现有的选择退出销售请求及其详细信息。 |
 | [!UICONTROL 选择退出销售权限] | [!UICONTROL 写入权限 — 选择退出销售] | 确定用户是否可以创建新的选择退出销售请求。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 管理权限 {#manage}
 
