@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: cf6ff8bcd3dfebe551ac3d7289fa8d5fb2a78079
+source-git-commit: 658cd7ec2d88d4b3633412f5c6d571351904e70b
 workflow-type: tm+mt
-source-wordcount: '946'
-ht-degree: 33%
+source-wordcount: '1157'
+ht-degree: 27%
 
 ---
 
@@ -23,8 +23,8 @@ ht-degree: 33%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
->title="描述"
->abstract=""
+>title="在平台中监控用户活动"
+>abstract="<h2>描述</h2><p>您可以以审核日志的形式监控各种平台服务和功能的用户活动。 这些日志构成一个记录的审核跟踪 <b>who</b> 执行 <b>什么</b> 操作和 <b>when</b>. 审核日志可帮助解决平台上的问题，并帮助您的企业有效遵守公司数据管理策略和法规要求。</p><h2>说明</h2><ul><li>选择 <b>审核</b> 中。 “审核”工作区会显示记录日志的列表，默认情况下，该列表按从最近到最近的顺序进行排序。</li>   <li> 注意：审核日志会保留365天，之后这些日志将从系统中删除。 因此，您最长只能返回365天。 如果您需要回顾超过365天的数据，则应当以常规频率导出日志，以满足内部策略要求。 </li><li>从列表中选择事件，以在右边栏中查看其详细信息。 </li><li>选择漏斗图标以显示过滤器控件列表，以帮助缩小结果范围。 无论选择何种过滤器，都只显示最后1000条记录。 </li><li>要导出当前审核日志列表，请选择 **下载日志**.</li><li>有关此功能的更多帮助，请参阅 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html?lang=zh-Hans">审核日志概述</a> Experience League。</li></ul>"
 
 为了提高系统中所执行活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成了一个审核跟踪，可帮助解决平台上的问题，并帮助您的企业有效地遵守公司数据管理策略和法规要求。
 
@@ -72,10 +72,10 @@ ht-degree: 33%
 
 ## 在UI中管理审核日志 {#managing-audit-logs-in-the-ui}
 
->[!CONTEXTUALHELP]
->id="platform_privacyConsole_audits_instructions"
->title="说明"
->abstract=""
+[!CONTEXTUALHELP]
+id="platform_privacyConsole_audits_instructions"
+title="说明"
+abstract=""
 
 您可以在 **[!UICONTROL 审核]** 工作区。 工作区会显示记录日志的列表，默认情况下，该列表按从最近到最近的顺序进行排序。
 
@@ -90,8 +90,7 @@ ht-degree: 33%
 ### 筛选审核日志
 
 >[!NOTE]
->
->由于这是一项新功能，因此显示的数据只能追溯到2022年3月。 根据所选的资源，以前的数据可能从2022年1月开始提供。
+由于这是一项新功能，因此显示的数据只能追溯到2022年3月。 根据所选的资源，以前的数据可能从2022年1月开始提供。
 
 
 选择漏斗图标(![“过滤器”图标](../../images/audit-logs/icon.png))以显示筛选器控件列表，以帮助缩小结果范围。 无论选择何种过滤器，都只显示最后1000条记录。
