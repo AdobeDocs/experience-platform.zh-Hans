@@ -2,9 +2,9 @@
 title: （测试版）Experience Cloud受众
 description: 了解如何将区段从Experience Platform共享到各种Experience Platform解决方案。
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: 32222aa1c96537b51cd0db35d9cdabce9210f64a
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1512'
 ht-degree: 2%
 
 ---
@@ -61,8 +61,8 @@ Note: briefly talk about when to share segments to these destinations using the 
 >[!IMPORTANT]
 >
 > * 此目标可用于 [Adobe Real-time Customer Data Platform Prime和Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
-> * 您需要获得Audience Manager许可证才能启用上面部分中所述的数据管理平台用例。
-> * 您 *不需要* 通过“Experience Platform受众”集成，可与Adobe Advertising Cloud、Adobe Target、Marketo及其他Experience Cloud解决方案共享Experience Cloud区段的Audience Manager许可证。
+> * 您需要Audience Manager许可证才能启用 [数据管理平台用例](#dmp-use-cases) 上文进一步提到。
+> * 您 *不需要* Audience Manager许可证，用于与Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Cloud解决方案共享Experience Platform区段，如 [上述](#share-segments-with-other-solutions).
 
 
 ### 对于使用旧版区段共享解决方案的客户
@@ -96,7 +96,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 | IDFA | Apple ID for Advertisers | 使用Apple ID for Advertisers(IDFA)的主标识摄取到Experience Platform的用户档案，可以导出到此目标。 |
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | 被摄取到具有经过哈希处理的电子邮件地址主标识的Experience Platform的用户档案，可以导出到此目标。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -107,7 +107,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 | 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，这些成员无需使用上述部分中列出的标识。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 连接到目标 {#connect}
 
@@ -173,7 +173,7 @@ Experience Platform中的数据管理由两者强制执行 [数据使用标签](
 
 ### Audience Manager中的权限管理
 
-Audience Manager中的区段和特征受 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=zh-Hans) (RBAC)。
+Audience Manager中的区段和特征受 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=en) (RBAC)。
 
 从Experience Platform导出的区段会分配给Audience Manager中名为 **[!UICONTROL Experience Platform区段]**.
 
