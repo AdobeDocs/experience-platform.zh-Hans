@@ -3,10 +3,10 @@ title: （测试版）将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: aebb1494a6ed667730997048d30a2ca3e00f9452
+source-git-commit: d0de642eb6118e6597925c12c76917ffa98c3a5a
 workflow-type: tm+mt
-source-wordcount: '1335'
-ht-degree: 1%
+source-wordcount: '1359'
+ht-degree: 5%
 
 ---
 
@@ -22,6 +22,19 @@ ht-degree: 1%
 本文介绍了导出所需的工作流 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到首选云存储位置，例如 [!DNL Amazon S3]、SFTP位置，或 [!DNL Google Cloud Storage] 使用Experience PlatformUI。
 
 您还可以使用Experience PlatformAPI导出数据集。 阅读 [导出数据集API教程](/help/destinations/api/export-datasets.md) 以了解更多信息。
+
+## 支持的目标 {#supported-destinations}
+
+目前，您可以将数据集导出到屏幕截图中突出显示并如下所示的云存储目标。
+
+![支持数据集导出的目标](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
+
+* [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
+* [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
+* [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)
+* [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog)
+* [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
+* [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
 ## 何时激活区段或导出数据集 {#when-to-activate-segments-or-activate-datasets}
 
@@ -75,7 +88,7 @@ Experience Platform目录中某些基于文件的目标同时支持区段激活�
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_datasets_exportoptions"
 >title="数据集的文件导出选项"
->abstract="选择 **导出增量文件** 以仅导出自上次导出后添加到数据集的数据。 <br> 第一个增量文件导出包含数据集中的所有数据，充当回填。 将来的增量文件仅包含自首次导出以来添加到数据集的数据。"
+>abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。后续增量文件仅包含自第一次导出后添加到数据集的数据。"
 
 在 **[!UICONTROL 计划]** 步骤中，您可以为数据集导出设置开始日期和导出频率。
 

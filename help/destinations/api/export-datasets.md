@@ -3,9 +3,9 @@ solution: Experience Platform
 title: （测试版）使用流量服务API导出数据集
 description: 了解如何使用流量服务API将数据集导出到选择目标。
 type: Tutorial
-source-git-commit: c16fbc89b7bc7a8f1ee4a0ca4fd9f7541df095ca
+source-git-commit: d0de642eb6118e6597925c12c76917ffa98c3a5a
 workflow-type: tm+mt
-source-wordcount: '3326'
+source-wordcount: '3347'
 ht-degree: 4%
 
 ---
@@ -24,6 +24,19 @@ ht-degree: 4%
 >[!TIP]
 >
 >您还可以使用Experience Platform用户界面导出数据集。 阅读 [导出数据集UI教程](/help/destinations/ui/export-datasets.md) 以了解更多信息。
+
+## 支持的目标 {#supported-destinations}
+
+目前，您可以将数据集导出到屏幕截图中突出显示并如下所示的云存储目标。
+
+![支持数据集导出的目标](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
+
+* [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
+* [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
+* [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)
+* [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog)
+* [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
+* [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
 ## 快速入门 {#get-started}
 
@@ -88,7 +101,7 @@ ht-degree: 4%
 | [!DNL Google Cloud Storage] | `c5d93acb-ea8b-4b14-8f53-02138444ae99` | `585c15c4-6cbf-4126-8f87-e26bff78b657` |
 | SFTP | `36965a81-b1c6-401b-99f8-22508f1e6a26` | `354d6aad-4754-46e4-a576-1b384561c440` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 您需要这些ID来构建 [!DNL Flow Service] 实体。 您还需要参考 [!DNL Connection Spec] 自身来设置某些实体，以便您能够 [!DNL Connection Spec] 从 [!DNL Flow Service APIs]. 请参阅下面的检索表中所有目标的连接规范示例：
 
@@ -966,14 +979,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: <SANDBOX-NAME>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "name": "Data Landing Zone(DLZ) Base Connection",
-  "auth": {
-    "name": "Data Landing Zone(DLZ) Base Connection",
-    "description": "Data Landing Zone(DLZ) Base Connection",
-    "connectionSpec": {
-        "id": "10440537-2a7b-4583-ac39-ed38d4b848e8",
-        "version": "1.0"
-    }
+  "name": "Data Landing Zone(DLZ) Base Connection"
 }'
 ```
 
