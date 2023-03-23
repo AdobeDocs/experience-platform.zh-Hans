@@ -6,7 +6,7 @@ exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
 source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
 source-wordcount: '743'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
@@ -26,11 +26,11 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
 >title="立即导出文件"
->abstract="选择此控件可交付除之前计划的导出之外的完整文件导出。 文件导出会立即触发，并会从Experience Platform分段运行中获取最新结果。"
+>abstract="选择此控件可交付完整文件导出以及任何之前计划的导出。将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。"
 
 本文介绍如何使用Experience PlatformUI将文件按需导出到批处理目标，例如 [云存储](/help/destinations/catalog/cloud-storage/overview.md) 和 [电子邮件营销](/help/destinations/catalog/email-marketing/overview.md) 目标。
 
-的 **[!UICONTROL 立即导出文件]** 利用控制，可导出完整文件，而不会中断先前计划区段的当前导出计划。 此导出操作除了之前计划的导出之外，还不会更改区段的导出频率。 文件导出会立即触发，并会从Experience Platform分段运行中获取最新结果。
+的 **[!UICONTROL 立即导出文件]** 利用控制，可导出完整文件，而不会中断先前计划区段的当前导出计划。 此导出操作除了之前计划的导出之外，还不会更改区段的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
 
 您还可以为此目的使用Experience PlatformAPI。 阅读操作说明 [通过临时激活API按需激活受众区段以实现批量目标](/help/destinations/api/ad-hoc-activation-api.md).
 

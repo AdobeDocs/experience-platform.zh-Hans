@@ -7,7 +7,7 @@ hidefromtoc: true
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
 source-wordcount: '1184'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -64,13 +64,13 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
->title="主标识"
->abstract="主标识是将记录与Experience Platform中消费者的配置文件关联的属性。 数据集的主标识字段由数据集所基于的架构定义。 在此列中，必须为记录的主标识提供类型（或命名空间），例如 `email` (电子邮件地址和 `ecid` Experience CloudID。 要了解更多信息，请参阅数据卫生UI指南。"
+>title="主要标识"
+>abstract="主要标识是一个用于将记录与 Experience Platform 中的消费者配置文件相关联的属性。数据集的主要标识字段由数据集所基于的架构定义。在此列中，您必须为记录的主要标识提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="标识值"
->abstract="在此列中，必须为记录的主标识提供值，该值必须与左列中提供的标识类型相对应。 如果主标识类型为 `email`，值应为记录的电子邮件地址。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="在此列中，您必须提供记录的主要标识的值，该值必须与左列中提供的标识类型相对应。如果主要标识类型是 `email`，则值应是记录的电子邮件地址。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
 删除记录时，必须提供身份信息，以便系统能够确定必须删除哪些记录。 对于Platform中的任何数据集，将根据 **主标识** 字段。
 

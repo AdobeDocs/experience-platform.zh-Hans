@@ -7,7 +7,7 @@ exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '654'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -22,9 +22,9 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_ingestion_streaming_ingestionrate"
 >title="摄取率"
->abstract="每秒成功处理的事件数。"
+>abstract="每秒成功处理的事件的数目。"
 >text="Learn more in the documentation"
->additional-url="http://www.adobe.com/go/monitor-dataflows-en" text="在UI中监视源的数据流"
+>additional-url="http://www.adobe.com/go/monitor-dataflows-cn" text="在 UI 中监测源的数据流"
 
 >[!TIP]
 >

@@ -6,7 +6,7 @@ exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
 source-git-commit: 3f7f66c0d58d127299ad12027869ca0e9837f5cd
 workflow-type: tm+mt
 source-wordcount: '868'
-ht-degree: 1%
+ht-degree: 5%
 
 ---
 
@@ -34,8 +34,8 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_alerts_subscribe"
->title="订阅源警报"
->abstract="警报允许您根据源数据流的状态接收通知。 如果数据流已启动、成功、失败或未摄取任何数据，则可以设置警报通知以获取更新。"
+>title="订阅源提醒"
+>abstract="提醒可让您接收基于源数据流状态的通知。您可以设置提醒通知，以便在数据流已启动、成功、失败或未提取任何数据时获得更新。"
 >text="Learn more in documentation"
 
 >[!IMPORTANT]

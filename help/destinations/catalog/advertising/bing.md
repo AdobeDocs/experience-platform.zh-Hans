@@ -6,7 +6,7 @@ exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
 source-wordcount: '616'
-ht-degree: 1%
+ht-degree: 8%
 
 ---
 
@@ -81,8 +81,8 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
->title="映射ID"
->abstract="输入要将选定区段映射到的Bing区段ID数字。 如果提供 [!UICONTROL 映射ID] 与Bing目标中的区段ID不对应，您将在Bing帐户中看不到预期的受众数据。"
+>title="映射 ID"
+>abstract="输入要将所选区段映射到的数字 Bing 区段 ID。如果提供的[!UICONTROL 映射 ID] 未与 Bing 目标中的区段 ID 相对应，您将不会在 Bing 帐户中看到预期受众数据。"
 
 >[!IMPORTANT]
 > 

@@ -8,7 +8,7 @@ exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: c4cb3783cbbab6f9bf25ffaa5b27a200c555b181
 workflow-type: tm+mt
 source-wordcount: '1337'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -47,8 +47,8 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"
 >title="选择业务类型"
->abstract="为您的用例选择适当的业务类型。 您的访问权限可能因您的Real-time Customer Data Platform订阅帐户而异。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans" text="Real-Time CDP概述"
+>abstract="为您的用例选择适当的业务类型。您的访问权限可能因 Real-Time Customer Data Platform 订阅帐户而异。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans" text="Real-Time CDP 概述"
 
 在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区，并查看Experience Platform中可用的源目录。
 
@@ -128,9 +128,9 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_review"
 >title="查看自动生成的资产"
->abstract="最多可能需要五分钟才能生成所有资产。 如果您选择离开页面，则会在资产完成后收到返回通知。 在生成资产后，您便可以查看资产，并随时为数据流进行其他配置。"
+>abstract="生成所有资产最多需要五分钟时间。如果您选择离开页面，在生成完资产后，将向您发送通知以返回页面。您可以在资产生成后查看资产，并随时对数据流进行其他配置。"
 
-的 [!UICONTROL 审核模板资产] 页面会将自动生成的资产显示为模板的一部分。 在本页中，您可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。 最多可能需要五分钟才能生成所有资产。 如果您选择离开页面，则会在资产完成后收到返回通知。 在生成资产后，您便可以查看资产，并随时为数据流进行其他配置。
+的 [!UICONTROL 审核模板资产] 页面会将自动生成的资产显示为模板的一部分。 在本页中，您可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。 生成所有资产最多需要五分钟时间。如果您选择离开页面，在生成完资产后，将向您发送通知以返回页面。您可以在资产生成后查看资产，并随时对数据流进行其他配置。
 
 默认情况下，会启用自动生成的数据流。 选择省略号(`...`)，然后选择 **[!UICONTROL 预览映射]** 以查看为数据流创建的映射集。
 

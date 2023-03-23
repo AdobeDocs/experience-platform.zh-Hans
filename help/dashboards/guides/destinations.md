@@ -7,7 +7,7 @@ exl-id: 6a34a796-24a1-450a-af39-60113928873e
 source-git-commit: d9e10271db52f61cdc3e4adc546fe05adadb5a46
 workflow-type: tm+mt
 source-wordcount: '3031'
-ht-degree: 0%
+ht-degree: 20%
 
 ---
 
@@ -67,28 +67,28 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
-* [[!UICONTROL 最常用的目标]](#most-used-destinations)
+* [[!UICONTROL 最常用目标]](#most-used-destinations)
 * [[!UICONTROL 最近创建的目标]](#recently-created-destinations)
 * [[!UICONTROL 最近激活的区段]](#recently-activated-segments)
 * [[!UICONTROL 最近激活的区段（按目标）]](#recently-activated-segments-by-destination)
-* [[!UICONTROL 受众大小趋势]](#audience-size-trend)
-* [[!UICONTROL 按身份划分的未映射区段]](#unmapped-segments-by-identity)
-* [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
-* [[!UICONTROL 常见受众]](#common-audiences)
+* [[!UICONTROL 受众规模趋势]](#audience-size-trend)
+* [[!UICONTROL 未映射的区段（按标识）]](#unmapped-segments-by-identity)
+* [[!UICONTROL 映射的区段（按标识）]](#mapped-segments-by-identity)
+* [[!UICONTROL 普通受众]](#common-audiences)
 * [[!UICONTROL 映射的受众]](#mapped-audiences)
-* [[!UICONTROL 映射的受众运行状况]](#mapped-audience-health)
+* [[!UICONTROL 映射的受众健康]](#mapped-audience-health)
 * [[!UICONTROL 目标计数]](#destinations-count)
 * [[!UICONTROL 目标状态]](#destination-status)
 * [[!UICONTROL 按目标平台划分的活动目标]](#active-destinations-by-destination-platform)
 * [[!UICONTROL 所有目标中的已激活受众]](#activated-audiences-across-all-destinations)
 * [[!UICONTROL 激活的受众]](#activated-audiences)
 
-### [!UICONTROL 最常用的目标] {#most-used-destinations}
+### [!UICONTROL 最常用目标] {#most-used-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mostuseddestinations"
->title="最常用的目标"
->abstract="此小组件按映射的区段数量显示贵组织最活跃的目标。 这些数字在上次快照时是准确的。 此排名可深入分析当前最常使用的目标，同时突出显示可能未充分利用的目标。"
+>title="最常用目标"
+>abstract="此构件按映射的区段数显示您组织的最活跃的目标。这些数字在上次拍摄快照时是准确的。此排名提供了对当前使用最多的目标的洞察，并突出显示了可能未被充分利用的目标。"
 
 的 **[!UICONTROL 最常用的目标]** 小组件按映射的区段数显示自上次快照起您组织的热门目标。 此排名提供了有关哪些目标正在被利用的洞察信息，同时还可能显示那些可能未充分利用的目标。
 
@@ -105,7 +105,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlycreateddestinations"
 >title="最近创建的目标"
->abstract="此小组件会显示您组织内最近配置的目标列表。"
+>abstract="此构件显示您组织内最近配置的目标的列表。"
 
 的 **[!UICONTROL 最近创建的目标]** 小组件允许您查看组织最近配置的目标列表。
 
@@ -122,9 +122,9 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegments"
 >title="最近激活的区段"
->abstract="此小组件提供最近映射到目标的区段列表。 此列表提供了系统中正在使用的区段和目标的快照，并有助于对任何错误映射进行故障诊断。"
+>abstract="此构件提供最近映射到目标的区段的列表。此列表提供系统中正使用的区段和目标的快照，并且可以帮助纠正任何错误的映射。"
 
-的 **[!UICONTROL 最近激活的区段]** 小组件提供了最近映射到目标的区段列表。 此列表提供了系统中正在使用的区段和目标的快照，并有助于对任何错误映射进行故障诊断。
+的 **[!UICONTROL 最近激活的区段]** 小组件提供了最近映射到目标的区段列表。 此列表提供系统中正使用的区段和目标的快照，并且可以帮助纠正任何错误的映射。
 
 显示的更新日期显示区段上次激活到目标的时间，并准确到最后的每日快照。 换句话说，如果您将区段激活到目标，则更新日期在拍摄下一个快照之后才会更改。
 
@@ -139,7 +139,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegmentsbydestination"
 >title="最近激活的区段（按目标）"
->abstract="此小组件会根据概述下拉菜单中选择的目标，以降序方式显示前五个最近激活的区段。"
+>abstract="此构件根据在概述下拉列表中选择的目标，以降序顺序显示最近激活的前五个区段。"
 
 的 **[!UICONTROL 最近激活的区段（按目标）]** 小组件会根据概述下拉列表中选择的目标，以降序方式显示前五个最近激活的区段。 它类似于 [!UICONTROL 最近激活的区段] 小组件，但显示的数据 **仅** 应用到所选目标。
 
@@ -151,12 +151,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 请参阅 [所用术语的定义](#prerequisites) 中。
 
-### [!UICONTROL 受众大小趋势] {#audience-size-trend}
+### [!UICONTROL 受众规模趋势] {#audience-size-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_audiencesizetrend"
->title="受众大小趋势"
->abstract="此小组件说明区段中包含的每天发送到目标帐户的用户档案数。 第一个下拉菜单调整受众趋势的时间段。 第二个小组件下拉菜单选择要分析的区段。 从概述下拉菜单中选择了目标。"
+>title="受众规模趋势"
+>abstract="此构件说明了每天发送到目标帐户的区段中包含的配置文件数量。可使用第一个下拉菜单调整受众趋势的时段。可使用第二个构件下拉菜单选择要分析的区段。从概述下拉列表中选择目标。"
 
 的 **[!UICONTROL 受众大小趋势]** 小组件描述了已映射到该目标帐户的区段在一段时间内的配置文件计数关系。 小组件使用折线图来说明区段中包含的每天发送到目标帐户的用户档案数。
 
@@ -170,12 +170,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![受众大小趋势小组件的自动字幕对话框。](../images/destinations/audience-size-trend-captions.png)
 
-### [!UICONTROL 按身份划分的未映射区段] {#unmapped-segments-by-identity}
+### [!UICONTROL 未映射的区段（按标识）] {#unmapped-segments-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_unmappedsegmentsbyidentity"
->title="按身份划分的未映射区段"
->abstract="此小组件列出了前5个 **未映射** 按给定目标和身份的降序身份计数排名的区段。 小组件下拉列表中列出的过滤器ID会因在概述页面顶部选择的目标帐户而发生更改。"
+>title="未映射的区段（按标识）"
+>abstract="此构件列出了前五个&#x200B;**未映射的**&#x200B;区段，它们按给定目标和标识的标识计数以降序顺序排名。构件下拉列表中列出的筛选条件 ID 因概述页面顶部选择的目标帐户而异。"
 
 的 **[!UICONTROL 按身份划分的未映射区段]** 小组件列出了前5个 **未映射** 按给定目标和身份的降序身份计数排名的区段。 它会突出显示根据所选ID映射到所选目标帐户最有用的区段。
 
@@ -187,27 +187,27 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 请参阅 [所用术语的定义](#prerequisites) 中。
 
-### [!UICONTROL 按身份映射的区段] {#mapped-segments-by-identity}
+### [!UICONTROL 映射的区段（按标识）] {#mapped-segments-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedsegmentsbyidentity"
->title="按身份映射的区段"
->abstract="此小组件提供了 **映射** 区段。 根据区段中包含的源ID数量，列表按从高到低的顺序排列。 将从小组件标题下方的下拉菜单中选择要计数的目标ID。 小组件下拉列表中提供的目标ID取决于概述功能板顶部选择的目标。"
+>title="映射的区段（按标识）"
+>abstract="此构件提供前五个&#x200B;**映射的**&#x200B;区段的列表。此列表根据区段中包含的源 ID 的数量按从高到低的顺序进行排序。从构件标题下方的下拉菜单中选择要计算的目标 ID。构件下拉列表中可用的目标 ID 取决于在概述仪表板顶部选择的目标。"
 
-此小组件提供了 **映射** 区段。 根据区段中包含的源ID数量，列表按从高到低的顺序排列。 将从小组件标题下方的下拉菜单中选择要计数的目标ID。 小组件中下拉列表中提供的目标ID将根据概述功能板顶部选择的目标帐户过滤器进行更改。
+此构件提供前五个&#x200B;**映射的**&#x200B;区段的列表。此列表根据区段中包含的源 ID 的数量按从高到低的顺序进行排序。从构件标题下方的下拉菜单中选择要计算的目标 ID。小组件中下拉列表中提供的目标ID将根据概述功能板顶部选择的目标帐户过滤器进行更改。
 
 ![按身份小组件映射的区段。](../images/destinations/mapped-segments-by-identity.png)
 
 的 **[!UICONTROL 按身份映射的区段]** 小组件重点介绍在选定目标内成功定位营销活动用户档案机会的可能性。 有效的目标营销活动不取决于发送到目标的用户档案数量，而是取决于可能与目标ID匹配以提供有用且可操作的数据的源ID数量。
 
-### 常见受众 {#common-audiences}
+### 普通受众 {#common-audiences}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_commonaudiences"
->title="常见受众"
->abstract="此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。 区段列表会根据区段最近激活的时间进行排序。 最近激活的区段显示在顶部。"
+>title="普通受众"
+>abstract="此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个区段的列表。区段列表将根据区段的最近激活时间进行排序。最近激活的区段显示在顶部。"
 
-的 **[!UICONTROL 常见受众]** 小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。 区段列表会根据区段最近激活的时间进行排序。 最近激活的区段显示在顶部。
+的 **[!UICONTROL 常见受众]** 小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。 区段列表将根据区段的最近激活时间进行排序。最近激活的区段显示在顶部。
 
 的 [!UICONTROL 受众大小] 列提供每个列出区段的配置文件总数。
 
@@ -221,12 +221,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![映射的受众小组件。](../images/destinations/mapped-audiences.png)
 
-### 映射的受众运行状况 {#mapped-audience-health}
+### 映射的受众健康 {#mapped-audience-health}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedaudiencehealth"
->title="映射的受众运行状况"
->abstract="此小组件提供了多达20个已映射区段的列表，这些区段的总配置文件计数与映射到该目标的30天平均受众大小之间至少有一个标准偏差的因子。 它提供了一个计算量度，用于衡量过去30天内受众规模与平均数的差异。 受众大小按从高到低的顺序进行排序。"
+>title="映射的受众健康"
+>abstract="此构件提供一个包含最多 20 个映射的区段的列表，这些区段的配置文件总数与映射到该目标的 30 天平均受众规模之间至少有一个标准差。它为受众规模与过去 30 天平均值的离散度提供了计算量度。受众规模按从高到低的顺序进行排序。"
 
 小组件提供了多达20个已映射区段的列表，从上次每日快照开始，这些区段的总配置文件计数与映射到该目标的30天平均受众大小之间至少有一个标准偏差的因子。
 
@@ -249,9 +249,9 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_destinationscount"
 >title="目标计数"
->abstract="此小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。"
+>abstract="此构件提供了可在系统内激活和交付受众的可用端点总数。此数目包含活动目标数和非活动目标数。"
 
-的 [!UICONTROL 目标计数] 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。
+的 [!UICONTROL 目标计数] 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数目包含活动目标数和非活动目标数。
 
 在总计数以下，选择 **[!UICONTROL 目标]** 导航到目标浏览选项卡。 此页面列出了迄今为止您已与建立连接的所有目标。
 

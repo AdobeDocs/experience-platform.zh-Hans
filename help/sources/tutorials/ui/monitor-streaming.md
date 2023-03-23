@@ -6,7 +6,7 @@ exl-id: b080e398-e71f-40bd-aea1-7ea3ce86b55d
 source-git-commit: 647f2780798dcf55a68e156af3318924c352a442
 workflow-type: tm+mt
 source-wordcount: '1034'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -65,26 +65,26 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflow_records_received"
->title="收到的记录"
->abstract="“已接收记录”量度指示在数据流中接收的记录总数。"
+>title="已接收的记录"
+>abstract="“已接收的记录”量度指示数据流中接收的记录总数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflow_records_ingested"
->title="摄取的记录"
->abstract="“摄取的记录”量度指示摄取到数据湖中的记录总数。"
+>title="已提取的记录"
+>abstract="“已提取的记录”量度指示已提取到数据湖中的记录总数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflow_records_failed"
->title="记录失败"
->abstract="“记录失败”量度指示由于数据中的错误而未摄取到数据湖的记录总数。"
+>title="失败的记录"
+>abstract="“失败的记录”量度指示因数据错误而未被提取到数据湖的记录总数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflow_records_warnings"
 >title="带警告的记录"
->abstract="带警告的记录指示使用映射器转换警告摄取的记录的总计数。 所有映射器转换错误都会报告为警告，部分摄取的行将被视为成功，并出现警告"
+>abstract="“带警告的记录”指示带映射器转换警告的已提取记录总数。所有映射器转换错误都报告为警告，部分提取的行被视为成功并显示警告"
 >text="Learn more in documentation"
 
 每个数据流运行都显示以下详细信息：

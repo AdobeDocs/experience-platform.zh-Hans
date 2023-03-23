@@ -6,7 +6,7 @@ exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
 source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
 workflow-type: tm+mt
 source-wordcount: '1011'
-ht-degree: 1%
+ht-degree: 7%
 
 ---
 
@@ -69,8 +69,8 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
->title="关于数据流ID"
->abstract="此选项确定将包含区段的数据收集数据流。 下拉菜单仅显示启用了Target配置的数据流。 要使用边缘分段，必须选择数据流ID。 选择“无”会禁用使用边缘分段的所有用例。"
+>title="关于数据流 ID"
+>abstract="此选项确定区段将包含在哪个数据收集数据流中。下拉菜单仅显示已启用目标配置的数据流。要使用边缘分段，您必须选择数据流 ID。选择“无”将禁用所有使用边缘分段的用例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="了解有关选择数据流的更多信息"
 
 >[!IMPORTANT]

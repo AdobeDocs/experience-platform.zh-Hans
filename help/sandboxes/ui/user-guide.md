@@ -7,7 +7,7 @@ exl-id: b258c822-5182-4217-9d1b-8196d889740f
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '816'
-ht-degree: 2%
+ht-degree: 8%
 
 ---
 
@@ -40,12 +40,12 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxname"
 >title="沙盒名称"
->abstract="沙盒名称是后端用于为此沙盒创建唯一ID的文本。"
+>abstract="沙盒名称是在后端用于为此沙盒创建唯一 ID 的文本。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxtitle"
 >title="沙盒标题"
->abstract="沙盒标题是显示名称，它将在整个Experience PlatformUI的菜单和下拉菜单中表示沙盒。"
+>abstract="沙盒标题是在整个 Experience Platform UI 的菜单和下拉列表中代表沙盒的显示名称。"
 
 >[!NOTE]
 >

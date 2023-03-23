@@ -6,7 +6,7 @@ exl-id: 27abfc38-ec19-4321-b743-169370d585a0
 source-git-commit: cb0b80f79a849d81216c5500c54b62ac5d85e2f6
 workflow-type: tm+mt
 source-wordcount: '870'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
@@ -63,13 +63,13 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_rsa"
->title="RSA公钥"
->abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 在下面的文档链接中查看格式正确的键值示例。"
+>title="RSA 公钥"
+>abstract="（可选）您可以附加 RSA 格式的公钥以对导出的文件进行加密。在下面的文档链接中查看格式正确的密钥的示例。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
->title="专用SSH密钥"
->abstract="私有SSH密钥必须格式化为Base64编码的字符串，且不得受密码保护。"
+>title="私有 SSH 密钥"
+>abstract="私有 SSH 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。"
 
 如果您选择 **[!UICONTROL 基本身份验证]** 键入以连接到SFTP位置：
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 * **[!UICONTROL 域]**:填写您的SFTP帐户的IP地址或域名
 * **[!UICONTROL 端口]**:SFTP存储位置使用的端口；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的专用SSH密钥。 私钥必须格式化为Base64编码的字符串，且不得受密码保护。
+* **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的专用SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 查看下图中格式正确的加密密钥示例。
 
    ![显示UI中格式正确的PGP键示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)

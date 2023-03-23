@@ -7,7 +7,7 @@ exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '2108'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_policies_labeltype"
 >title="标签类型"
->abstract="数据使用标签分为几类。 Adobe定义的标签包括合同标签、身份标签和敏感标签。 由贵组织定义的标签将分类为自定义标签。"
+>abstract="有多种类别的数据使用标签。Adobe 定义的标签包括合同标签、标识标签和敏感标签。您组织定义的标签被归类为自定义标签。"
 >text="See the data usage labels glossary for more information on these label types."
 
 数据使用标签允许您根据 [治理政策](../policies/overview.md) 和 [访问控制策略](../../access-control/abac/overview.md) 数据中的任何值。 Adobe Experience Platform提供了多个现成的核心数据使用标签，您可以使用这些标签开始对数据进行分类。

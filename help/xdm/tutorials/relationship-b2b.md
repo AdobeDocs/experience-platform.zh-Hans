@@ -5,7 +5,7 @@ exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '1391'
-ht-degree: 0%
+ht-degree: 14%
 
 ---
 
@@ -13,8 +13,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
->title="参考模式"
->abstract="选择要与之建立关系的架构。 根据架构的类，它可能还与B2B上下文中的其他实体存在关系。 请参阅相关文档，了解B2B模式类如何彼此关联。"
+>title="参考架构"
+>abstract="选择要与之建立关系的架构。根据架构的类，它还可能与 B2B 上下文中的其他实体存在现有关系。请参阅文档以了解 B2B 架构类如何相互关联。"
 
 Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model(XDM)类，用于捕获基本的B2B数据实体，包括 [帐户](../classes/b2b/business-account.md), [机会](../classes/b2b/business-opportunity.md), [营销活动](../classes/b2b/business-campaign.md)，等等。 通过基于这些类构建模式并使它们能够在 [实时客户资料](../../profile/home.md)，您可以将来自不同来源的数据合并到称为合并模式的统一表示形式中。
 
@@ -50,8 +50,8 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_identity_namespace"
->title="引用标识命名空间"
->abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。 请参阅此文档，了解有关B2B关系中身份的更多信息。"
+>title="参考标识命名空间"
+>abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。请参阅文档以了解有关 B2B 关系中的标识的更多信息。"
 
 要建立关系，引用架构必须具有定义的主标识。 在为B2B实体设置主标识时，请记住，如果您跨不同系统或位置收集基于字符串的实体ID，则它们可能会重叠，这可能会导致平台中的数据冲突。
 
@@ -84,12 +84,12 @@ Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_current"
 >title="当前架构中的关系名称"
->abstract="一个标签，用于描述从当前架构到引用架构的关系（例如，“相关帐户”）。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。 请参阅此文档，了解有关构建B2B模式关系的更多信息。"
+>abstract="描述当前架构与参考架构之间的关系的标签（例如，“相关帐户”）。此标签在配置文件和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_reference"
->title="引用架构中的关系名称"
->abstract="一个标签，用于描述从引用架构到当前架构（例如，“相关商机”）的关系。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。 请参阅此文档，了解有关构建B2B模式关系的更多信息。"
+>title="参考架构中的关系名称"
+>abstract="描述参考架构与当前架构之间的关系的标签（例如，“相关机会”）。此标签在配置文件和分段中用于为来自相关 B2B 实体的数据提供上下文。请参阅文档以了解有关构建 B2B 架构关系的更多信息。"
 
 要定义两个架构之间的关系，源架构必须具有指示引用架构的主标识的专用字段。 标准B2B类包括适用于常见相关业务实体的专用源密钥字段。 例如， [!UICONTROL XDM业务机会] 类包含相关帐户的源键字段(`accountKey`)和相关的营销活动(`campaignKey`)。 但是，您还可以添加其他 [!UICONTROL B2B源] 字段（如果需要的组件数超过默认组件数）。
 

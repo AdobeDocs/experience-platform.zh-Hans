@@ -7,7 +7,7 @@ exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1923'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segments"
 >title="区段"
->abstract="区段视图包含有关您的所有IMS组织区段的信息，以及有关其激活和评估作业的更多信息。"
+>abstract="区段视图包含有关您的 IMS 组织的所有区段的信息，以及有关其激活和评估作业的更多信息。"
 
 访问 **[!UICONTROL 区段]** 功能板，选择 **[!UICONTROL 监控]** 中。 在 **[!UICONTROL 监控]** 页面，选择 **[!UICONTROL 区段]** 卡。
 

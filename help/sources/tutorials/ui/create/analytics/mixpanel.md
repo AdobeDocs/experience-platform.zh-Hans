@@ -6,7 +6,7 @@ exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '874'
-ht-degree: 3%
+ht-degree: 10%
 
 ---
 
@@ -68,9 +68,9 @@ ht-degree: 3%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"
->title="为混合面板摄取设置时区"
->abstract="时区必须与Mixpanel配置文件时区设置相同，因为平台使用指定的项目时区从Mixpanel中摄取相关数据。 在将事件记录到Mixpanel数据存储中之前，Mixpanel将调整其时区以与项目时区协调。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="在文档中了解更多信息"
+>title="为 Mixpanel 提取设置时区"
+>abstract="时区必须与您的 Mixpanel 配置文件时区设置相同，因为 Platform 使用指定的项目时区来从 Mixpanel 提取相关数据。在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="请参阅文档以了解详情"
 
 在源进行身份验证后，提供项目ID和时区，然后选择 **[!UICONTROL 选择]**.
 

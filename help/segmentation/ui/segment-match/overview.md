@@ -7,7 +7,7 @@ exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1998'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -117,8 +117,8 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 >[!CONTEXTUALHELP]
 >id="platform_segment_match_marketing"
->title="限制的营销用例"
->abstract="受限的营销用例可帮助您向合作伙伴提供指导，以确保根据数据管理限制正确使用共享区段。"
+>title="受限的营销用例"
+>abstract="受限的营销用例有助于为您的合作伙伴提供指导，确保根据您的数据治理限制正确使用共享区段。"
 >text="Learn more in documentation"
 
 A **馈送** 是一组数据（区段）、用于显示或使用该数据的规则，以及用于确定如何将您的数据与合作伙伴数据进行匹配的配置。 信息源可以通过以下方式独立管理，并与其他平台用户交换 [!DNL Segment Match].

@@ -7,7 +7,7 @@ exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
 source-wordcount: '3203'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -252,7 +252,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_enableforprofile"
 >title="为配置文件启用架构"
->abstract="为配置文件启用架构后，从此架构创建的任何数据集都将参与实时客户配置文件，该配置文件可合并来自不同来源的数据以构建每个客户的完整视图。 使用架构将数据摄取到配置文件后，便无法禁用该架构。 有关详细信息，请参阅文档。"
+>abstract="在为配置文件启用一个架构时，从该架构创建的任何数据集都会参与实时客户配置文件，此配置文件合并来自不同源的数据以构建每个客户的完整视图。使用架构将数据提取到配置文件中后，无法将其禁用。有关详细信息，请参阅文档。"
 
 [实时客户资料](../../../profile/home.md) 合并来自不同来源的数据，以构建每个客户的完整视图。 如果您希望架构捕获的数据参与此过程，则必须启用该架构以在中使用 [!DNL Profile].
 

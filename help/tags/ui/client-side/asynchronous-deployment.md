@@ -5,7 +5,7 @@ exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1079'
-ht-degree: 55%
+ht-degree: 61%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 55%
 >[!CONTEXTUALHELP]
 >id="platform_tags_asynchronous_deployment"
 >title="异步部署"
->abstract="如果启用此选项，则在解析此脚本标记后，浏览器将开始加载JavaScript文件，但是，它将继续解析并渲染文档的其余部分，而不是等待库的加载和执行。 这可以提高网页性能，但对于如何执行某些规则具有重要影响。 有关详细信息，请参阅文档。"
+>abstract="如果启用此选项，在解析此脚本标记时，浏览器将开始加载 JavaScript 文件，但此时浏览器不是等待加载和执行库，而是将继续解析并渲染文档的其余部分。这可以提高网页性能，并且在涉及某些规则的执行方式时具有重要意义。有关详细信息，请参阅文档。"
 
 >[!NOTE]
 >

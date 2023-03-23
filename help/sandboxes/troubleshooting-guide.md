@@ -7,7 +7,7 @@ exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '857'
-ht-degree: 1%
+ht-degree: 6%
 
 ---
 
@@ -26,8 +26,8 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxtypes"
 >title="沙盒类型"
->abstract="沙盒类型指示这是生产沙盒还是开发沙盒。 生产沙箱包括实时数据，开发沙箱用于测试和开发。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在UI中创建沙盒"
+>abstract="沙盒类型指示这是生产沙盒还是开发沙盒。生产沙盒包括实时数据，开发沙盒用于测试和开发。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在 UI 中创建沙盒"
 
 Experience Platform中提供了两种沙盒类型：
 

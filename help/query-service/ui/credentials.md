@@ -7,7 +7,7 @@ exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
 source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
 workflow-type: tm+mt
 source-wordcount: '1330'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -19,8 +19,8 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 >[!CONTEXTUALHELP]
 >id="platform_queryservice_credentials_expiringcredentials"
->title="客户端的SSL模式"
->abstract="必须在连接到查询服务的客户端中启用SSL。 确保将SSL模式设置为“require”。"
+>title="客户端的 SSL 模式"
+>abstract="必须在连接到查询服务的客户端中启用 SSL。确保 SSL 模式设置为“要求”。"
 
 您可以使用过期凭据快速设置与外部客户端的连接。
 

@@ -5,7 +5,7 @@ exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
 source-wordcount: '213'
-ht-degree: 0%
+ht-degree: 37%
 
 ---
 
@@ -14,12 +14,12 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_consumer"
 >title="数据卫生请求状态"
->abstract="此小组件显示已创建、失败和已完成的数据卫生记录删除作业的总计数。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
+>abstract="此构件显示已创建、失败和完成的数据卫生记录删除作业的总数。有关数据卫生流程的更多信息，请在左侧导航中选择&#x200B;**数据卫生**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_recents"
->title="最近的数据卫生工作单"
->abstract="此小组件会显示最近创建或更新的五个“数据卫生”工作单，具体取决于您在右上方选择的选项。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
+>title="最新的数据卫生工单"
+>abstract="此构件显示五个最近创建或更新的数据卫生工单，具体取决于您在右上角选择的选项。有关数据卫生流程的更多信息，请在左侧导航中选择&#x200B;**数据卫生**。"
 
 的 **[!UICONTROL 数据卫生]** 使用Adobe Experience Platform UI中的工作区，可创建和监视各种数据卫生任务，包括删除记录和计划数据集过期。
 

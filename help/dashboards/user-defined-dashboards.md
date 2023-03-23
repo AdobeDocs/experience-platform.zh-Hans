@@ -5,7 +5,7 @@ exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '956'
-ht-degree: 0%
+ht-degree: 6%
 
 ---
 
@@ -37,14 +37,14 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
->title="小组件的最大数量"
->abstract="用户定义的功能板最多支持十个小组件。 在向功能板中添加十个小组件后， [!UICONTROL 添加新小组件] 选项处于禁用状态，且显示为灰色。"
+>title="最大构件数"
+>abstract="用户定义的仪表板支持最多 10 个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
 
 从新功能板视图中，选择 **[!UICONTROL 添加新小组件]** 以开始小组件创建过程。
 
 >[!IMPORTANT]
 >
->用户定义的功能板最多支持十个小组件。 在向功能板中添加十个小组件后， [!UICONTROL 添加新小组件] 选项处于禁用状态，且显示为灰色。
+>用户定义的仪表板支持最多 10 个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。
 
 ![突出显示了“添加新小组件”的新空仪表板。](./images/user-defined-dashboards/add-new-widget.png)
 

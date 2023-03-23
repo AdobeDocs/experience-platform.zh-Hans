@@ -7,7 +7,7 @@ exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '2647'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -49,17 +49,17 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_churncolumnname"
 >title="流失率"
->abstract="流失率表示与上次运行区段作业相比，区段定义中发生更改的用户档案的百分比。"
+>abstract="流失率表示与上次运行区段作业时相比，区段定义内正在更改的配置文件的百分比。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_evaluationmethodcolumnname"
->title="评价方法"
->abstract="区段的评估方法包括批处理、流处理和边缘处理。"
+>title="评估方法"
+>abstract="区段的评估方法包括批量评估、流式评估和边缘评估。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_addallsegmentstoschedule"
->title="添加所有要计划的区段"
->abstract="允许在每日计划更新中包含所有批次评估区段。 禁用可从计划更新中删除所有区段。"
+>title="将所有区段添加到计划"
+>abstract="启用此项可在每日计划更新中包含所有批量评估区段。禁用此项可从计划更新中删除所有区段。"
 
 选择 **[!UICONTROL 浏览]** 选项卡，以查看组织的所有区段定义列表。
 

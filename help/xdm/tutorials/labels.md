@@ -5,7 +5,7 @@ exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '737'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -37,8 +37,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_editgovernancelabels"
->title="编辑管理标签"
->abstract="将标签应用于架构字段，以指示应用于该特定字段中包含数据的使用策略。"
+>title="编辑治理标签"
+>abstract="将标签应用于架构字段可指示适用于该特定字段中包含的数据的使用策略。"
 
 要开始添加标签，您必须先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新模式](../ui/resources/schemas.md#create) 可在架构编辑器中查看其结构。
 

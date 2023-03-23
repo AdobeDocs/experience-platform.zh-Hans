@@ -7,7 +7,7 @@ exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
 source-git-commit: 9bde403338187409892d76de68805535de03d59f
 workflow-type: tm+mt
 source-wordcount: '935'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
@@ -82,7 +82,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="应用转换"
->abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
+>abstract="使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。"
 
 当您将未哈希化的源属性映射到目标预期经过哈希化的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，请检查 **应用转换** 选项，让Adobe Experience Platform在激活时自动对源属性进行哈希处理。
 
@@ -93,7 +93,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_enddate"
 >title="结束日期"
->abstract="无法为区段计划添加结束日期。"
+>abstract="无法添加区段计划的结束日期。"
 
 默认情况下， [!UICONTROL 区段计划] 页面仅显示您在当前激活流程中选择的新选定区段。
 
@@ -109,11 +109,11 @@ ht-degree: 0%
 
    * 某些目标要求您选择 **[!UICONTROL 受众来源]** 对于每个区段，使用日历选择器下方的下拉菜单。 如果您的目标不包含此选择器，请跳过此步骤。
 
-      ![映射ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
+      ![映射 ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
    * 某些目标需要您手动映射 [!DNL Platform] 区段到目标中的对应对象。 为此，请选择每个区段，然后在 **[!UICONTROL 映射ID]** 字段。 如果您的目标不包含此字段，请跳过此步骤。
 
-      ![映射ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
+      ![映射 ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
    * 某些目标要求您输入 **[!UICONTROL 应用程序ID]** 激活 [!DNL IDFA] 或 [!DNL GAID] 区段。 如果您的目标不包含此字段，请跳过此步骤。
 
@@ -129,7 +129,7 @@ ht-degree: 0%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

@@ -8,11 +8,11 @@ exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1069'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
-# 在UI中监视源的数据流
+# 在 UI 中监测源的数据流
 
 >[!IMPORTANT]
 >
@@ -39,14 +39,14 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
->title="源摄取"
->abstract="源摄取视图包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
+>title="源提取"
+>abstract="源提取视图包含有关数据湖服务中的数据活动状态和量度的信息，包括提取的记录和失败的记录。查看量度定义指南以了解有关量度和图表的更多信息。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_ingestion"
 >title="数据流运行详细信息"
->abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="源处理包含有关数据湖服务中的数据活动状态和量度的信息，包括提取的记录和失败的记录。查看量度定义指南以了解有关量度和图表的更多信息。"
 >text="Learn more in documentation"
 
 在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 从左侧导航访问 [!UICONTROL 监控] 功能板。 的 [!UICONTROL 监控] 功能板包含有关所有源数据流的量度和信息，包括对从源到的数据流量运行状况的分析 [!DNL Identity Service]和 [!DNL Profile].
@@ -67,10 +67,10 @@ ht-degree: 0%
 
 ![量度和图形](../assets/ui/monitor-sources/metrics-graphs.png)
 
-| 源摄取 | 描述 |
+| 源提取 | 描述 |
 | ---------------- | ----------- |
-| [!UICONTROL 摄取的记录 ] | 摄取的记录总数。 |
-| [!UICONTROL 记录失败] | 由于数据中的错误而未摄取的记录总数。 |
+| [!UICONTROL 已提取的记录 ] | 摄取的记录总数。 |
+| [!UICONTROL 失败的记录] | 由于数据中的错误而未摄取的记录总数。 |
 | [!UICONTROL 失败的数据流总数] | 具有 `failed` 状态。 |
 
 源摄取列表显示至少包含一个现有帐户的所有源。 该列表还包含有关每个源的摄取率、失败记录数以及基于所应用时间范围的失败数据流总数的信息。

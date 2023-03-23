@@ -8,7 +8,7 @@ exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '1109'
-ht-degree: 0%
+ht-degree: 9%
 
 ---
 
@@ -17,17 +17,17 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
 >title="架构关系"
->abstract="属于不同类的架构可以通过关系字段根据上下文进行链接，从而允许您构建更复杂的分段规则。 有关架构关系的更多信息，请参阅此文档。"
+>abstract="可以通过关系字段对属于不同类的架构进行上下文链接，从而构建更复杂的分段规则。有关架构关系的更多信息，请参阅文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_reference_schema"
->title="参考模式"
->abstract="选择要与之建立关系的架构。 此架构可以是与当前架构不同的类。 有关架构关系的更多信息，请参阅此文档。"
+>title="参考架构"
+>abstract="选择要与之建立关系的架构。此架构可以是与当前架构不同的类。有关架构关系的更多信息，请参阅文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_identity_namespace"
->title="引用标识命名空间"
->abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。 有关架构关系的更多信息，请参阅此文档。"
+>title="参考标识命名空间"
+>abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 

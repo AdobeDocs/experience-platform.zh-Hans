@@ -5,7 +5,7 @@ exl-id: eefd87d7-457f-422a-b159-5b428da54189
 source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
 source-wordcount: '1763'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -40,15 +40,15 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_eventforwarding_secrets_environments"
->title="机密环境"
->abstract="为了让事件转发可用的密钥，必须将其分配到现有环境。 如果尚未为事件转发资产创建任何环境，则必须先配置这些环境，然后才能继续。"
+>title="密钥的环境"
+>abstract="要使某个密钥可由事件转发使用，必须将此密钥分配给现有环境。如果您未为事件转发属性创建任何环境，则必须先配置它们，然后再继续。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" text="环境概述"
 
 要创建密钥，请选择 **[!UICONTROL 事件转发]** 在左侧导航中，打开要在下添加密钥的事件转发属性。 接下来，选择 **[!UICONTROL 秘密]** 在左侧导航中，然后是 **[!UICONTROL 创建新密钥]**.
 
 ![创建新密钥](../../images/ui/event-forwarding/secrets/create-new-secret.png)
 
-下一个屏幕允许您配置密钥的详细信息。 为了让事件转发可用的密钥，必须将其分配到现有环境。 如果尚未为事件转发资产创建任何环境，请参阅 [环境](../publishing/environments.md) ，以了解如何在继续之前配置它们。
+下一个屏幕允许您配置密钥的详细信息。 要使某个密钥可由事件转发使用，必须将此密钥分配给现有环境。如果尚未为事件转发资产创建任何环境，请参阅 [环境](../publishing/environments.md) ，以了解如何在继续之前配置它们。
 
 >[!NOTE]
 >

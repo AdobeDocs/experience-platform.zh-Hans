@@ -7,7 +7,7 @@ exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1164'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_restrictusage"
 >title="限制数据使用"
->abstract="数据使用策略类型会评估应用于数据管理标签的特定营销操作，以限制营销活动的数据使用。"
+>abstract="数据使用策略类型将评估应用于数据治理标签的具体营销行为，以便限制用于营销活动的数据使用。"
 
 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform].
 

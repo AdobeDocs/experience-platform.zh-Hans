@@ -5,7 +5,7 @@ exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
 source-wordcount: '862'
-ht-degree: 1%
+ht-degree: 25%
 
 ---
 
@@ -13,15 +13,15 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
->title="工作单ID"
->abstract="当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 换言之，工作单代表特定的数据卫生过程，包括其当前状态和其他相关详细信息。 每个工作单在创建时会自动分配其自己的唯一ID。"
+>title="工单 ID"
+>abstract="在向系统发送数据卫生请求时，将创建工单以执行请求的任务。换句话说，工单代表一个特定的数据卫生流程，包括其当前状态和其他相关详细信息。每个工单在创建后会自动获得其唯一 ID。"
 >text="See the data hygiene UI guide to learn more."
 
 >[!IMPORTANT]
 >
 >Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
-当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如计划的数据集过期，包括其当前状态和其他相关详细信息。
+在向系统发送数据卫生请求时，将创建工单以执行请求的任务。工作单表示特定的数据卫生过程，如计划的数据集过期，包括其当前状态和其他相关详细信息。
 
 本指南介绍如何在Adobe Experience Platform UI中查看和管理现有工作单。
 
@@ -68,18 +68,18 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
->title="按服务列出的状态"
->abstract="数据卫生请求由多个Experience Platform服务独立处理。 此部分概述了每个服务的请求当前处理状态。 要了解更多信息，请参阅数据卫生UI指南。"
+>title="按服务显示的状态"
+>abstract="数据卫生请求由多个 Experience Platform 服务独立处理。此部分概述了每个相应服务的请求的当前处理状态。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="标识数"
->abstract="作为此工作单的一部分请求更新或删除其记录的标识数。 计数中包含的标识不一定存在于受影响的数据集中。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="其记录在此工单中被请求更新或删除的标识的数量。计数中包含的标识不一定存在于受影响的数据集中。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="记录删除响应"
->abstract="当记录删除进程收到来自系统的响应时，这些消息将显示在 **[!UICONTROL 结果]** 中。 如果在处理工作单时出现问题，则此部分中将显示任何相关错误消息，以帮助您排查问题。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="当记录删除过程收到来自系统的响应时，这些消息将显示在&#x200B;**[!UICONTROL 结果]**&#x200B;部分下。如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
 选择列出的工作单的ID以查看其详细信息。
 

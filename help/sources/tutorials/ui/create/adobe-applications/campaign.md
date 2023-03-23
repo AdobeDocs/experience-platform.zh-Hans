@@ -6,7 +6,7 @@ exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1149'
-ht-degree: 1%
+ht-degree: 6%
 
 ---
 
@@ -38,20 +38,20 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_instance"
->title="Adobe Campaign环境实例"
->abstract="您要使用的Adobe Campaign环境的名称。"
+>title="Adobe Campaign 环境实例"
+>abstract="要使用的 Adobe Campaign 环境的名称。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_mapping"
 >title="目标映射"
->abstract="目标映射是Campaign用于投放消息的技术对象，包含发送投放所需的所有技术设置（地址、电话号码、选择加入指示符、其他标识符……）。"
+>abstract="目标映射是 Campaign 用于传递消息的技术对象，并包含发送投放内容所需的所有技术设置（地址、电话号码、选择加入指示器、附加标识符...）。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_schema"
 >title="架构名称"
->abstract="在Adobe Campaign数据库中定义的实体的名称。"
+>abstract="Adobe Campaign 数据库中定义的实体的名称。"
 >text="Learn more in documentation"
 
 的 [!UICONTROL 选择数据] 步骤，为您提供用于配置 [!UICONTROL Adobe Campaign实例], [!UICONTROL 目标映射]和 [!UICONTROL 架构名称].

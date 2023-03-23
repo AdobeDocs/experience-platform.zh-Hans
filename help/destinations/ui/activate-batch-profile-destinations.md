@@ -7,7 +7,7 @@ exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: 7d680567cee8b47532bb66434e2f0582cde68532
 workflow-type: tm+mt
 source-wordcount: '3592'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule"
 >title="计划"
->abstract="使用铅笔图标可设置文件导出类型（完整文件或增量文件）和导出频率。"
+>abstract="使用铅笔图标设置文件导出类型（完整文件或增量文件）和导出频率。"
 
 [!DNL Adobe Experience Platform] 以 [!DNL CSV] 文件。 在 **[!UICONTROL 计划]** 页面，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
 
@@ -74,17 +74,17 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择 **导出完整文件** 导出符合区段资格的所有配置文件的完整快照。 选择 **导出增量文件** 仅导出自上次导出以来符合区段资格条件的用户档案。 <br> 第一个增量文件导出包含符合该区段资格的所有配置文件，用作回填。 将来的增量文件仅包括自首次增量文件导出以来符合区段资格条件的配置文件。"
+>abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合区段资格的所有配置文件的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合区段资格的配置文件。<br>第一个增量文件导出包括符合区段资格的所有配置文件，充当回填。后续增量文件仅包含自第一个增量文件导出后符合区段资格的配置文件。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
->title="评估区段后激活"
->abstract="激活在每日分段作业完成后立即运行。 这可确保导出最新的用户档案。"
+>title="在区段评估后激活"
+>abstract="在每日分段作业完成后立即运行激活。这将确保导出最新的配置文件。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
->title="计划激活"
+>title="计划的激活"
 >abstract="激活在一天中的固定时间运行。"
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出文件，该文件包含选定区段的所有配置文件资格的完整快照。
@@ -157,7 +157,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
 >title="配置文件名"
->abstract="对于基于文件的目标，每个区段会生成唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个区段生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 对于大多数目标，默认文件名包括目标名称、区段ID以及日期和时间指示器。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
@@ -233,8 +233,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
->title="关于必填属性"
->abstract="选择所有导出的配置文件都应包含的XDM架构属性。 不会将没有必填项的用户档案导出到目标。 不选择强制键会导出所有符合条件的用户档案，而不考虑其属性。"
+>title="关于强制属性"
+>abstract="选择所有导出的配置文件应包含的 XDM 架构属性。不会将没有强制密钥的配置文件导出到目标。不选择强制密钥会导出所有合格的配置文件，而不管其属性如何。"
 
 “必选属性”是用户启用的复选框，可确保所有配置文件记录都包含选定的属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -248,8 +248,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
->title="关于重复数据删除键"
->abstract="通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 选择一个命名空间或最多两个XDM架构属性作为重复数据删除键值。 未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
+>title="关于删除重复项键"
+>abstract="通过选择删除重复项键，消除导出文件中同一配置文件的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为删除重复项键。不选择删除重复项键可能会导致导出文件中出现重复的配置文件条目。"
 
 重复数据删除键是用户定义的主键，可确定用户希望删除其配置文件的身份&#x200B;。
 
@@ -470,9 +470,9 @@ Adobe建议选择身份命名空间，例如 [!DNL CRM ID] 或将电子邮件地
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_viewApplicableConsentPolicies"
 >title="查看适用的同意策略"
->abstract="如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 如果您的公司无权访问上述SKU，则此控制会被禁用。"
+>abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
-如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

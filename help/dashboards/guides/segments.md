@@ -7,7 +7,7 @@ exl-id: de5e07bc-2c44-416e-99db-7607059117cb
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2105'
-ht-degree: 1%
+ht-degree: 7%
 
 ---
 
@@ -81,13 +81,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 * [[!UICONTROL 受众规模]](#audience-size)
 * [[!UICONTROL Audience Activation订单]](#audience-activation-order)
-* [[!UICONTROL 受众大小趋势]](#audience-size-trend)
+* [[!UICONTROL 受众规模趋势]](#audience-size-trend)
 * [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
 * [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
 * [[!UICONTROL 受众重叠]](#audience-overlap)
 * [[!UICONTROL 受众重叠报表]](#audience-overlap-report)
 * [[!UICONTROL 标识重叠]](#identity-overlap)
-* [[!UICONTROL 各个标识的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
 * [[!UICONTROL 计划激活]](#scheduled-activations)
 
 ### [!UICONTROL 受众规模] {#audience-size}
@@ -95,7 +95,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_audiencesize"
 >title="受众规模"
->abstract="此小组件显示选定区段内合并的用户档案总数。 此数字取决于应用于数据的合并策略，并且在最新快照时是正确的。"
+>abstract="此构件显示所选区段中合并的配置文件总数。此数目取决于应用于您的数据的合并策略，并且在生成最新快照时是正确的。"
 
 的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
 
@@ -103,12 +103,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![突出显示受众大小小组件的区段功能板概述。](../images/segments/audience-size.png)
 
-### [!UICONTROL 受众大小趋势] {#audience-size-trend}
+### [!UICONTROL 受众规模趋势] {#audience-size-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_audiencesizetrend"
->title="受众大小趋势"
->abstract="此小组件提供有关满足以下条件的用户档案总数的信息： **any** 区段定义，在每日快照期间捕获，最近30天、90天或12个月。"
+>title="受众规模趋势"
+>abstract="此构件提供有关符合&#x200B;**任意**&#x200B;区段定义标准的配置文件总数的信息，如在过去 30 天、90 天或 12 个月的每日快照期间捕获的配置文件。"
 
 的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
 
@@ -181,7 +181,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_identityoverlap"
 >title="标识重叠"
->abstract="此小组件显示区段中包含两个所选身份的配置文件重叠。 圆圈显示每个身份的相对大小。 包含两个命名空间的配置文件数量由圈子之间的重叠表示。"
+>abstract="此构件显示包含两个所选标识的区段中的配置文件的重叠。圆圈显示每个标识的相对大小。包含两个命名空间的配置文件的数量由圆圈之间的重叠部分表示。"
 
 的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，以显示包含多个身份的区段中配置文件的重叠。
 
@@ -193,12 +193,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![突出显示身份重叠小组件的区段功能板概述。](../images/segments/identity-overlap.png)
 
-### [!UICONTROL 各个标识的配置文件] {#profiles-by-identity}
+### [!UICONTROL 按标识列出的配置文件] {#profiles-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_profilesbyidentity"
->title="各个标识的配置文件"
->abstract="此小组件显示选定区段中每个合并配置文件的身份划分。"
+>title="按标识列出的配置文件"
+>abstract="此构件显示跨所选区段中每个合并配置文件的标识的细分。"
 
 的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中每个合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
 

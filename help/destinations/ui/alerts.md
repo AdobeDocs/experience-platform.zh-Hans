@@ -6,7 +6,7 @@ exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
 source-git-commit: 3bb9858c236c91e1567fd8e78988f4049537ffe3
 workflow-type: tm+mt
 source-wordcount: '950'
-ht-degree: 0%
+ht-degree: 5%
 
 ---
 
@@ -30,8 +30,8 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 
 >[!CONTEXTUALHELP]
 >id="platform_destination_alerts_subscribe"
->title="订阅目标警报"
->abstract="警报允许您根据目标数据流的状态接收通知。 如果数据流已启动、成功、失败或未向目标发送任何数据，则可以设置警报通知以获取更新。"
+>title="订阅目标提醒"
+>abstract="提醒可让您接收基于目标数据流状态的通知。您可以设置提醒，以便在数据流已启动、成功、失败或未向目标发送任何数据时获得更新。"
 >text="Learn more in documentation"
 
 >[!IMPORTANT]

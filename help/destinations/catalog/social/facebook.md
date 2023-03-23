@@ -6,7 +6,7 @@ exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
 source-wordcount: '1856'
-ht-degree: 1%
+ht-degree: 6%
 
 ---
 
@@ -145,13 +145,13 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_facebook_accountid"
 >title="帐户 ID"
->abstract="您的Facebook广告帐户ID。 您可以在Facebook广告管理器帐户中找到此ID。 输入此ID时，应始终为其添加前缀 `act_`."
+>abstract="您的 Facebook 广告帐户 ID。您可以在 Facebook 广告管理器帐户中找到此 ID。在输入此 ID 时，请始终为其添加前缀 `act_`。"
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL 帐户ID]**:您的 [!DNL Facebook Ad Account ID]. 您可以在 [!DNL Facebook Ads Manager] 帐户。 输入此ID时，应始终为其添加前缀 `act_`.
+* **[!UICONTROL 帐户ID]**:您的 [!DNL Facebook Ad Account ID]. 您可以在 [!DNL Facebook Ads Manager] 帐户。 在输入此 ID 时，请始终为其添加前缀 `act_`。
 
 ### 启用警报 {#enable-alerts}
 
@@ -164,7 +164,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="受众来源"
->abstract="选择区段中客户数据的最初收集方式。 当区段定向用户时，数据将显示在Facebook中"
+>abstract="选择最初收集区段中的客户数据的方式。当用户被区段定位时，数据将显示在 Facebook 中"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -174,12 +174,12 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_partners"
 >title="受众来源"
->abstract="广告商直接从其合作伙伴那里收集数据。"
+>abstract="广告商直接从合作伙伴那里收集数据。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customersandpartners"
 >title="受众来源"
->abstract="广告商直接从其客户和合作伙伴那里收集数据。"
+>abstract="广告商直接从客户和合作伙伴那里收集数据。"
 
 >[!IMPORTANT]
 > 

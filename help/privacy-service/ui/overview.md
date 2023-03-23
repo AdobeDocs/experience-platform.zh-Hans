@@ -7,7 +7,7 @@ exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '207'
-ht-degree: 1%
+ht-degree: 19%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_privacy_privacyconsole_requests"
 >title="数据主体请求"
->abstract="此小组件显示Privacy Service在给定日期内处理的已提交和已完成数据主体请求的数量。 有关Privacy Service流程的更多信息，请选择 **请求** 中。"
+>abstract="此构件显示 Privacy Service 在给定日期处理的已提交和已完成数据主体请求的数目。有关 Privacy Service 流程的更多信息，请在左侧导航中选择&#x200B;**请求**。"
 
 Privacy ServiceUI [!DNL Privacy Service] 允许您跨各种Adobe Experience Cloud应用程序协调隐私和合规性请求。
 

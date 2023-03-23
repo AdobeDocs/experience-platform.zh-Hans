@@ -5,7 +5,7 @@ exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
 source-wordcount: '806'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -72,7 +72,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_twitter_accountid"
 >title="帐户 ID"
->abstract="您的Twitter Ads帐户ID。 这可在您的Twitter广告设置中找到。"
+>abstract="您的 Twitter 广告帐户 ID。可以在 Twitter 广告设置中找到它。"
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 

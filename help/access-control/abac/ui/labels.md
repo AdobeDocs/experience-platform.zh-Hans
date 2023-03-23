@@ -6,7 +6,7 @@ exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '173'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -18,8 +18,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_abac_labelusage"
->title="标签使用情况"
->abstract="您可以使用自定义标签对数据应用数据管理和访问控制配置。"
+>title="标签使用"
+>abstract="您可以使用自定义标签将数据治理和访问控制配置应用于您的数据。"
 
 >[!NOTE]
 >

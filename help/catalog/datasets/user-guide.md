@@ -7,7 +7,7 @@ exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '1476'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_datasets_negative_numbers"
 >title="数据集活动中的负数"
->abstract="摄取的记录中的负数表示用户已在选定的时间范围内删除了某些批次。"
+>abstract="摄取的记录中的负数表示用户已删除选定时间范围内的某些批次。"
 >text="Learn more in documentation"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 功能板。 功能板列出了贵组织的所有可用数据集。 系统会为每个列出的数据集显示详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
