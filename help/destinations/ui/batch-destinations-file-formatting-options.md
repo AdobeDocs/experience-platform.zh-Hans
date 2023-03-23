@@ -2,7 +2,7 @@
 description: 了解如何在将数据激活到基于文件的目标时配置文件格式选项
 title: （测试版）为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 14ce4a11f53ef24b3008b3f775cc926d05ea8f8e
+source-git-commit: 379a3769965bb425ca2c8df195b99a98f0b5398d
 workflow-type: tm+mt
 source-wordcount: '601'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
 * 逗号 `(,)`
 * 竖线 `(|)`
 * 分号 `(;)`
-* Tab `(\\t)`
+* Tab `(\t)`
 
 ### 引号字符
 
