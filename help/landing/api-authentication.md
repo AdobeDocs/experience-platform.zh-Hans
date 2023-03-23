@@ -5,9 +5,9 @@ title: 身份验证和访问Experience PlatformAPI
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '1272'
+source-wordcount: '1269'
 ht-degree: 6%
 
 ---
@@ -64,7 +64,7 @@ ht-degree: 6%
 
 ### 将Experience Platform添加到项目
 
-转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) (在Adobe Developer控制台文档中)。
+转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) (在Adobe Developer控制台文档中)。
 
 创建新项目后，选择 **[!UICONTROL 添加API]** 在 **[!UICONTROL 项目概述]** 屏幕。
 

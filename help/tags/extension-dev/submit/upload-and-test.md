@@ -2,9 +2,9 @@
 title: 上传和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试扩展。
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 9b99ec5e526fcbe34a41d3ce397b34a9b4105819
 workflow-type: tm+mt
-source-wordcount: '2394'
+source-wordcount: '2382'
 ht-degree: 34%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 34%
 
 要使用API或命令行工具，您需要具有Adobe I/O的技术帐户。您必须在I/O控制台中创建技术帐户，然后使用Uploader工具上传扩展包。
 
-有关创建用于Adobe Experience Platform中标记的技术帐户的信息，请参阅 [访问令牌](https://developer.adobelaunch.com/api/guides/access_tokens/) 的双曲余切值。
+有关创建用于Adobe Experience Platform中标记的技术帐户的信息，请参阅 [Reactor API快速入门](../../api/getting-started.md) 的双曲余切值。
 
 >[!IMPORTANT]
 >
@@ -112,7 +112,7 @@ Uploader要求您输入多段信息。 技术帐户ID、API密钥和其他一些
 
 目录将显示每个可用扩展的卡图标。如果您的扩展未显示在目录中，请确保您已完成上面“Adobe管理控制台”的“设置和创建扩展包”部分中的步骤。 如果Platform未完成初始处理，则扩展包也可能显示为“Pending”。
 
-如果您已执行上述步骤，但仍未在目录中看到Pending或Failed扩展包，则应直接使用API检查扩展包的状态。 有关如何进行相应API调用的信息，请阅读 [获取扩展包](https://developer.adobelaunch.com/api/reference/1.0/extension_packages/fetch/) （在API文档中）。
+如果您已执行上述步骤，但仍在目录中未看到Pending或Failed扩展包，则应直接使用API检查扩展包的状态。 有关如何进行相应API调用的信息，请阅读 [获取扩展包](../../api/endpoints/extension-packages.md#lookup) （在API文档中）。
 
 扩展包处理完成后，选择 **安装** 卡底部。
 
@@ -160,7 +160,7 @@ Uploader要求您输入多段信息。 技术帐户ID、API密钥和其他一些
 
 ![](../images/getting-started/load-event.png)
 
-的 `Window Loaded` **事件类型** 确保每当页面在测试网站上加载时，都会触发此规则。 选择 **保留更改**. 在本例中，忽略 **条件** ，因为应触发测试网站上任何页面的规则。
+的 `Window Loaded` **事件类型** 确保每当页面在测试网站上加载时，都会触发此规则。 选择&#x200B;**保留更改**。在本例中，忽略 **条件** ，因为应触发测试网站上任何页面的规则。
 
 在 **操作** 选择 **添加**. 的 **操作配置** 屏幕。接下来，您必须选择要应用规则的扩展，以及触发规则时要发生的操作。 选择 **Facebook Pixel** 从 **扩展** 下拉列表和 **发送页面查看** 从 **操作类型** 下拉列表。 选择 **保留更改**，然后 **保存** 以下内容 **编辑规则** 屏幕。
 

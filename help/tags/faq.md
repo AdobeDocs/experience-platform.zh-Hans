@@ -2,10 +2,10 @@
 title: 标记疑难解答指南
 description: 获取有关Adobe Experience Platform中标记的常见问题解答。
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: b0cc02478273c0b6035488a5d21191ce5cc0e268
+source-git-commit: 9701a14dc2915e0d6dcc6051c15d5113f305487f
 workflow-type: tm+mt
-source-wordcount: '1051'
-ht-degree: 27%
+source-wordcount: '1044'
+ht-degree: 26%
 
 ---
 
@@ -45,6 +45,8 @@ ht-degree: 27%
 
 我们有许多客户还选择使用相同的扩展开发方法构建自己的专用扩展，以便仅在自己的公司内使用。
 
+要开发扩展，请查看 [扩展开发概述](./extension-dev/overview.md) 页面。
+
 ## 标记是否符合我公司的安全标准？
 
 标记符合SOC-2和《格雷姆 — 里奇 — 比利雷法案》。 标记还提供了自托管功能。 您可以从自己的服务器或所选的CDN为JavaScript库和移动配置提供服务。 对于 I.T. 和安全团队来说，这使您能够运行自动化测试、将文件签入到您自己的版本控制系统中，以及完全遵循任何内部生产迁移过程（与安全相关或其他方面的过程）。
@@ -71,22 +73,7 @@ ht-degree: 27%
 
 ## 标记支持哪些浏览器？
 
-浏览器支持标记：
-
-- [!DNL Chrome]（最新版）
-- [!DNL Safari]（最新版）
-- [!DNL Firefox]（最新版）
-- [!DNL Microsoft Edge]（最新版）
-- [!DNL Internet Explorer]（10 及更高版本）
-- [!DNL iOS Safari]（最新版）
-- [!DNL Android Chrome]（最新版）
-
-浏览器支持标记应用程序界面：
-
-- [!DNL Chrome]（最新版）
-- [!DNL Safari]（最新版）
-- [!DNL Firefox]（最新版）
-- [!DNL Microsoft Edge]（最新版）
+查看支持的浏览器 [此处](./extension-dev/browsers.md).
 
 大多数Adobe客户端都利用当前浏览器中更新的Web平台功能来创建更好的用户体验，包括单页应用程序以及交互式Ajax密集型网站和页面。 由于大多数客户在其网站上转为使用更新的方法，因此他们需要诸如标记之类的解决方案来启用这些方法。
 

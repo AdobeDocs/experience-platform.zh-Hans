@@ -4,10 +4,10 @@ title: 订阅Adobe I/O事件通知
 description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 此外，还提供了有关可用事件类型的参考信息，以及指向有关如何解释每个适用事件返回数据的进一步文档的链接 [!DNL Platform] 服务。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 29b1942e4009770d4f9d346a760b6e78cef23969
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '774'
-ht-degree: 0%
+source-wordcount: '771'
+ht-degree: 1%
 
 ---
 
@@ -33,9 +33,9 @@ ht-degree: 0%
 
 ![](../images/notifications/response-challenge.png)
 
-## 在Adobe开发人员控制台中创建新项目
+## 在Adobe Developer控制台中创建新项目
 
-转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 中的Adobe开发人员控制台文档。
+转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) (在Adobe Developer控制台文档中)。
 
 ## 订阅事件
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 
 生成密钥对时，浏览器会自动下载该密钥对。 由于此文件不会保留在开发人员控制台中，因此您必须自行存储。
 
-下一个屏幕允许您查看新生成的键对的详细信息。 选择 **[!UICONTROL 下一个]** 继续。
+下一个屏幕允许您查看新生成的键对的详细信息。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![](../images/notifications/keypair-generated.png)
 

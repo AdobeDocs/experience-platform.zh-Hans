@@ -1,10 +1,11 @@
 ---
 title: 扩展开发入门
 description: 开始在Adobe Experience Platform中开发您自己的标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 3925b928-0180-4a4f-aaa6-42f342089560
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '430'
-ht-degree: 85%
+source-wordcount: '451'
+ht-degree: 88%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 85%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 为了帮助您启动、运行和构建扩展，我们将使用由 Adobe 工程师提供的开源基架工具为扩展包创建必要的文件和文件结构，因此您要完成的是最有价值的部分：实际编写代码。
 
@@ -59,3 +60,7 @@ npx @adobe/reactor-scaffold
 >* 可以添加每个事件、条件、操作的多个视图。
 >* 只能存在一个配置视图。
 
+
+## 后续步骤
+
+* 关注 [提交流程概述](./submit/overview.md) 准备 [验证](./submit/upload-and-test.md#validate) 和 [上传](./submit/upload-and-test.md#integration) 扩展，用于在标记生态系统中进行测试。

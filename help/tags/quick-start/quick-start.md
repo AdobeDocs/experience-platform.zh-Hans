@@ -2,9 +2,9 @@
 title: 快速入门指南
 description: 了解如何在Adobe Experience Platform中快速启动和运行标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1525'
 ht-degree: 43%
 
 ---
@@ -135,5 +135,5 @@ Platform中的标记之所以真正独特，是因为这些扩展可由任何人
 要了解有关标记的更多信息，请参阅以下资源：
 
 * **[数据收集社区](https://forums.adobe.com/community/experience-cloud/platform/launch)**:提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。 使用您的Adobe ID登录。
-* **[开发人员文档](https://developer.adobelaunch.com/)**:加入标记开发人员社区，构建扩展或使用标记API
+* **[开发人员文档](../api/overview.md)**:加入标记开发人员社区，构建扩展或使用标记API
 * **[Tutorials概述](https://experienceleague.adobe.com/docs/core-services-learn/tutorials/overview.html)**:这些文档将向您介绍标记概念，包括事件转发和Android应用程序中的Mobile SDK。

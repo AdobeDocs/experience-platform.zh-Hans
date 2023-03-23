@@ -2,9 +2,9 @@
 title: Reactor API快速入门
 description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1050'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 ## 获取开发人员访问Adobe Experience Platform的权限
 
-在为Reactor API生成身份验证值之前，您必须拥有开发人员Experience Platform权限。 要获取开发人员访问权限，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 在您完成步骤“在Adobe Developer控制台中生成访问凭据”后，返回到本教程以生成特定于Reactor API的凭据。
+在为Reactor API生成身份验证值之前，您必须拥有开发人员Experience Platform权限。 要获取开发人员访问权限，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成“获取用户访问权限”步骤后，返回到本教程以生成特定于Reactor API的凭据。
 
 ## 生成访问凭据
 
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ### 一次性设置
 
-转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 中的文档。
+转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 中的文档。
 
 创建项目后，选择 **添加API** 在 **项目概述** 屏幕。
 
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 下一个屏幕确认密钥对已成功生成，并且包含公共证书和私钥的压缩文件夹会自动下载到您的计算机。 在后续步骤中需要此私钥才能生成访问令牌。
 
-选择 **下一个** 继续。
+选择&#x200B;**下一步**&#x200B;以继续。
 
 ![](../images/api/getting-started/keypair-generated.png)
 
@@ -149,7 +149,7 @@ curl -X POST \
 | `access_token` | 新生成的访问令牌值。 此值用于所需的 `Authorization` 标头，且必须以格式提供 `Bearer {ACCESS_TOKEN}`. |
 | `expires_in` | 令牌过期的剩余时间（以毫秒为单位）。 令牌过期后，必须生成一个新令牌。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤
 
