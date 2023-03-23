@@ -3,10 +3,10 @@ keywords: 流；HTTP目标
 title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: b6d7ae987bbc97b3f58bd10ef181145ae89aa63e
+source-git-commit: e22472443eef8aa053aeb0eb35488de581e4b2bd
 workflow-type: tm+mt
-source-wordcount: '2436'
-ht-degree: 0%
+source-wordcount: '2648'
+ht-degree: 7%
 
 ---
 
@@ -95,7 +95,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_clientcredentialstype"
 >title="客户端凭据类型"
->abstract="选择 **已编码的正文形式** 在请求正文中包含客户端ID和客户端密钥，或 **基本授权** 在授权标头中包含客户端ID和客户端密钥。 查看文档中的示例。"
+>abstract="选择&#x200B;**编码的正文形式**&#x200B;以在请求正文中包含客户端 ID 和客户端密码，或选择&#x200B;**基本授权**&#x200B;以在授权标头中包含客户端 ID 和客户端密码。查看文档中的示例。"
 
 #### 承载令牌身份验证 {#bearer-token-authentication}
 
@@ -143,27 +143,27 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_headers"
 >title="标头"
->abstract="按照以下格式，输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`"
+>abstract="按照以下格式输入要包含在目标调用中的任何自定义标头：`header1:value1,header2:value2,...headerN:valueN`"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
->title="HTTP端点"
->abstract="要将用户档案数据发送到的HTTP端点的URL。"
+>title="HTTP 端点"
+>abstract="要将配置文件数据发送到的 HTTP 端点的 URL。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
 >title="包括区段名称"
->abstract="如果您希望数据导出包含要导出的区段名称，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+>abstract="如果您希望数据导出包括正在导出的区段的名称，请进行切换。在选中此选项后查看数据导出示例的文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
->title="包含区段时间戳"
->abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+>title="包括区段时间戳"
+>abstract="如果您希望数据导出包括区段创建时间和更新时间的 Unix 时间戳，以及区段映射到用于激活的目标时的 Unix 时间戳，请进行切换。在选中此选项后查看数据导出示例的文档。**在平台中监控用户活动**<h2>描述</h2><p>您可以以审核日志的形式监控各种平台服务和功能的用户活动。 这些日志构成一个记录的审核跟踪 <b>who</b> 执行 <b>什么</b> 操作和 <b>when</b>. 审核日志可帮助解决平台上的问题，并帮助您的企业有效遵守公司数据管理策略和法规要求。</p><h2>说明</h2><ul><li>选择 <b>审核</b> 中。 “审核”工作区会显示记录日志的列表，默认情况下，该列表按从最近到最近的顺序进行排序。</li>   <li> 注意：审核日志会保留365天，之后这些日志将从系统中删除。 因此，您最长只能返回365天。 如果您需要回顾超过365天的数据，则应当以常规频率导出日志，以满足内部策略要求。 </li><li>从列表中选择事件，以在右边栏中查看其详细信息。 </li><li>选择漏斗图标以显示过滤器控件列表，以帮助缩小结果范围。 无论选择何种过滤器，都只显示最后1000条记录。 </li><li>要导出当前审核日志列表，请选择 **下载日志**.</li><li>有关此功能的更多帮助，请参阅 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html?lang=zh-Hans">审核日志概述</a> Experience League。</li></ul>"
 
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_http_queryparameters"
->title="查询参数"
->abstract="或者，您也可以将查询参数添加到HTTP端点URL。 设置您使用的查询参数的格式，如下所示： `parameter1=value&parameter2=value`."
+[!CONTEXTUALHELP]
+id="platform_destinations_connect_http_queryparameters"
+title="查询参数"
+abstract="（可选）您可以将查询参数添加到 HTTP 端点 URL。格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。"
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -173,7 +173,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 描述]**:输入描述，以帮助您在将来标识此目标。
 * **[!UICONTROL 标题]**:按照以下格式，输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`.
 * **[!UICONTROL HTTP端点]**:要将用户档案数据发送到的HTTP端点的URL。
-* **[!UICONTROL 查询参数]**:或者，您也可以将查询参数添加到HTTP端点URL。 设置您使用的查询参数的格式，如下所示： `parameter1=value&parameter2=value`.
+* **[!UICONTROL 查询参数]**:或者，您也可以将查询参数添加到HTTP端点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
 * **[!UICONTROL 包括区段名称]**:如果您希望数据导出包含要导出的区段名称，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 * **[!UICONTROL 包含区段时间戳]**:如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 
@@ -186,8 +186,7 @@ curl --location --request POST 'https://some-api.com/token' \
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
-> 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
