@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: cd99ccb7b026565814dd6f268b2a92dda34bc7f0
 workflow-type: tm+mt
-source-wordcount: '1352'
-ht-degree: 4%
+source-wordcount: '1343'
+ht-degree: 3%
 
 ---
 
@@ -17,11 +17,13 @@ ht-degree: 4%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [数据收集](#data-collection)
-- [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
-- [查询服务](#query-service)
-- [源](#sources)
+- [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
+   - [客户管理的密钥 {#cmk}](#customer-managed-keys-cmk)
+   - [数据收集 {#data-collection}](#data-collection-data-collection)
+   - [\[!DNL Destinations\] {#destinations}](#dnl-destinations-destinations)
+   - [体验数据模型(XDM) {#xdm}](#experience-data-model-xdm-xdm)
+   - [查询服务 {#query-service}](#query-service-query-service)
+   - [源 {#sources}](#sources-sources)
 
 ## 客户管理的密钥 {#cmk}
 
@@ -41,7 +43,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [!DNL Splunk] 事件转发扩展 | 您现在可以将数据发送到 [!DNL Splunk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Splunk] 扩展概述](../../tags/extensions/server/splunk/overview.md) 以了解更多信息。 |
 | [!DNL Zendesk] 事件转发扩展 | 您现在可以将数据发送到 [!DNL Zendesk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../../tags/extensions/server/zendesk/overview.md) 以了解更多信息。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## [!DNL Destinations] {#destinations}
 
@@ -54,9 +56,9 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | （测试版）数据集导出 | 的 [数据集导出测试版功能](/help/destinations/ui/export-datasets.md) 允许您导出第一代数据(如 [Real-time Customer Data Platform产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html))从Adobe Experience Platform通过目标用户界面发送到您自己的外部客户系统。 这样，您就可以通过无代码/低代码工作流将数据从Experience Platform中导出到六个云存储目标（如下表中所示），以便进行分析和法规遵从性用例。 |
 | （测试版）增强的文件导出功能 | 现在，在导出文件以外时，您可以从增强的自定义功能中受益： <br><ul><li>其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).</li><li>能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表中列出的六个新的测试版云存储卡支持此功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-**新目标或更新的目标**
+**新目标或更新的目标** {#new-or-updated-destinations}
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -70,7 +72,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | 测试版参与者现在看到两个 [!DNL Azure Blob] 目标卡片在目标目录中并排显示。 新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
 | [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | 测试版参与者现在看到两个 [!DNL SFTP] 目标卡片在目标目录中并排显示。 新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **新文档或更新的文档**
 
@@ -92,7 +94,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 数据类型 | [[!UICONTROL 广告详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` 已重命名为 `friendlyName`和 `ID` 已重命名为 `name`. |
 | 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` 已更名为 `name`。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
@@ -107,7 +109,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 通过Platform UI监控查询 | 查询服务 [!UICONTROL 计划查询] 选项卡通过UI改善了所有查询作业状态的可见性。 现在，您可以从 [!UICONTROL 计划查询] 选项卡。 您还可以通过UI，根据任何这些查询的状态订阅警报。 请参阅 [监视查询文档](../../query-service/ui/monitor-queries.md) 以了解有关此功能的更多信息。 |
 | 查询加速报告分析数据模型 | 作为Data Distiller SKU的一部分，查询加速存储使您能够减少从数据中获得关键分析所需的时间和处理能力。 通过查询加速存储，您可以构建自定义数据模型和/或扩展现有的Adobe Real-time Customer Data Platform数据模型，以改进报表分析及其可视化图表。 请参阅 [查询加速存储报告分析文档](../../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
 Adobe Experience Platform的新增功能：
