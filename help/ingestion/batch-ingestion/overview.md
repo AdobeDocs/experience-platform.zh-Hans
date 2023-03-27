@@ -2,9 +2,9 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；批量；启用数据集；批量摄取概述；概述；批量摄取概述；
 solution: Experience Platform
 title: 批量摄取API概述
-description: Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
+description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
 source-wordcount: '1387'
 ht-degree: 6%
@@ -13,9 +13,9 @@ ht-degree: 6%
 
 # 批量摄取API概述
 
-Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是来自平面文件（如Parquet文件）的配置文件数据，也可以是符合 [!DNL Experience Data Model] (XDM)注册表。
+Adobe Experience Platform批量摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是来自平面文件（如Parquet文件）的配置文件数据，也可以是符合 [!DNL Experience Data Model] (XDM)注册表。
 
-的 [数据摄取API参考](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) 提供了有关这些API调用的其他信息。
+的 [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 提供了有关这些API调用的其他信息。
 
 下图概述了批量摄取流程：
 
@@ -23,7 +23,7 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 
 ## 快速入门
 
-本指南中使用的API端点是 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ### [!DNL Data Ingestion] 先决条件
 

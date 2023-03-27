@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 为Adobe Experience Platform开发ETL集成
 description: ETL集成指南概述了创建高性能、安全的连接器以Experience Platform数据并将数据引入平台的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '4075'
+source-wordcount: '4081'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ETL集成指南概述了为创建高性能、安全的连接器而需执行的�
 
 - [[!DNL Catalog]](https://www.adobe.io/experience-platform-apis/references/catalog/)
 - [[!DNL Data Access]](https://www.adobe.io/experience-platform-apis/references/data-access/)
-- [[!DNL Data Ingestion]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
+- [[!DNL Batch Ingestion]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
+- [[!DNL Streaming Ingestion]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
 - [Experience PlatformAPI的身份验证和授权](https://www.adobe.com/go/platform-api-authentication-en)
 - [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
@@ -490,7 +491,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-数据将写入 [!DNL Experience Platform] 使用 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，只有在数据完全写入后，才会创建批处理并将其标记为成功。
+数据将写入 [!DNL Experience Platform] 使用 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，只有在数据完全写入后，才会创建批处理并将其标记为成功。
 
 数据输入 [!DNL Experience Platform] 应以Parquet文件的形式写入。
 
@@ -579,7 +580,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
 
 ### 创建批处理
 
-一旦处理了数据，ETL工具会将数据写回 [!DNL Experience Platform] 使用 [批量摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 在将数据添加到数据集之前，必须先将其链接到批次，该批次稍后会上传到特定数据集。
+一旦处理了数据，ETL工具会将数据写回 [!DNL Experience Platform] 使用 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 在将数据添加到数据集之前，必须先将其链接到批次，该批次稍后会上传到特定数据集。
 
 **请求**
 

@@ -7,9 +7,9 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 short-description: Find answers to frequently asked questions and a guide for troubleshooting common errors in Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: b21367814e38fb5ee017709a29b39de982d59d24
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1861'
 ht-degree: 3%
 
 ---
@@ -209,7 +209,8 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | 服务 | API 参考 | 故障排除 |
 | --- | --- | --- |
 | 访问控制 | [访问控制API](https://www.adobe.io/experience-platform-apis/references/access-control/) | [访问控制疑难解答指南](../access-control/troubleshooting-guide.md) |
-| Adobe Experience Platform数据摄取 | [[!DNL Data Ingestion API]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) | [批量摄取疑难解答指南](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[流摄取疑难解答指南](../ingestion/streaming-ingestion/troubleshooting.md) |
+| Adobe Experience Platform数据摄取 | [[!DNL Batch Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) | [批量摄取疑难解答指南](../ingestion/batch-ingestion/troubleshooting.md) |
+| Adobe Experience Platform数据摄取 | [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/) | [流摄取疑难解答指南](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform数据科学工作区 | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] 疑难解答指南](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform数据管理 | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] 疑难解答指南](../identity-service/troubleshooting-guide.md) |

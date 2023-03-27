@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identity Service疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform Identity Service的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
 source-wordcount: '2180'
 ht-degree: 0%
@@ -282,7 +282,7 @@ When [!DNL Identity Service] 标识会持续存在，标识的ID和关联的命�
 
 [!DNL Identity Service] 从上传到的记录和时间系列数据中摄取身份数据 [!DNL Platform] 使用批量摄取。 由于批量摄取是一个异步流程，因此您必须查看批量的详细信息才能查看错误。 错误将随着批处理的进行而累积，直到批处理完成为止。
 
-以下是与 [!DNL Identity Service] 使用 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).
+以下是与 [!DNL Identity Service] 使用 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).
 
 ### 未知的XDM架构
 

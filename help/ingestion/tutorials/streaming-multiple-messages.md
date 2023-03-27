@@ -5,9 +5,9 @@ title: 在一个HTTP请求中发送多条消息
 type: Tutorial
 description: 本文档提供了一个教程，用于使用流摄取在单个HTTP请求内向Adobe Experience Platform发送多条消息。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 3ad5c06db07b360df255d3afb1c177cc5de613bb
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1490'
 ht-degree: 1%
 
 ---
@@ -508,7 +508,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三条消息失败，原因是标头中使用的IMS组织ID无效。 IMS组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个IMS组织ID与您使用的流连接相匹配，您可以执行 `GET inlet` 使用 [[!DNL Data Ingestion API]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 请参阅 [检索流连接](./create-streaming-connection.md#get-data-collection-url) 有关如何检索之前创建的流连接的示例。
+第三条消息失败，原因是标头中使用的组织ID无效。 组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个组织ID与您使用的流连接相匹配，您可以执行 `GET inlet` 使用 [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/). 请参阅 [检索流连接](./create-streaming-connection.md#get-data-collection-url) 有关如何检索之前创建的流连接的示例。
 
 第四条消息失败，因为它未遵循预期的XDM架构。 的 `xdmSchema` 请求的标头和正文中包含的XDM架构与 `{DATASET_ID}`. 更正消息标头和正文中的架构后，该架构可通过DCCS验证并成功发送至 [!DNL Platform]. 还必须更新消息正文，以匹配 `{DATASET_ID}` 通过流式验证 [!DNL Platform]. 有关成功流入平台的消息会发生什么情况的更多信息，请参阅 [确认消息已摄取](#confirm-messages-ingested) 部分。
 

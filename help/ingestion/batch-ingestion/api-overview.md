@@ -4,22 +4,22 @@ solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用适用于Adobe Experience Platform的批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 49281d6ef959c84c3da964f0a9e19859fd8901a5
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '2413'
+source-wordcount: '2412'
 ht-degree: 4%
 
 ---
 
 # 批量摄取开发人员指南
 
-本文档提供了使用 [批量摄取API端点](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) 在Adobe Experience Platform。 有关批量摄取API的概述（包括先决条件和最佳实践），请首先阅读 [批量摄取API概述](overview.md).
+本文档提供了使用 [批量摄取API端点](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 在Adobe Experience Platform。 有关批量摄取API的概述（包括先决条件和最佳实践），请首先阅读 [批量摄取API概述](overview.md).
 
 本文档的附录提供了 [格式化要用于摄取的数据](#data-transformation-for-batch-ingestion)，包括示例CSV和JSON数据文件。
 
 ## 快速入门
 
-本指南中使用的API端点是 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 数据摄取提供了一个RESTful API，通过该API，您可以对支持的对象类型执行基本的CRUD操作。
+本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 批量摄取通过RESTful API提供，在该API中，您可以对支持的对象类型执行基本的CRUD操作。
 
 在继续之前，请查看 [批量摄取API概述](overview.md) 和 [入门指南](getting-started.md).
 

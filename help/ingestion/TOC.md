@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 数据提取帮助
 breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批量摄取或流式摄取将您的数据引入 Experience Platform。
 feature: Data Ingestion
-source-git-commit: f77bbc60f2bc1f12970e8050ec6a924b9713f303
+source-git-commit: 6110bf51cbd0005428e7dab4552944c5c9b54d03
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 28%
+source-wordcount: '156'
+ht-degree: 26%
 
 ---
 
@@ -46,5 +46,6 @@ ht-degree: 28%
    - [数据摄取通知](quality/subscribe-events.md)
 - [数据摄取的防护](guardrails.md)
 - [源连接器](source-connectors.md)
-- [API参考](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
+- [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
+- [流摄取API参考](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes_cn)
