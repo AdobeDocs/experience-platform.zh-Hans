@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 3d829018b527aacb81c16db5e889b2e50f625e28
 workflow-type: tm+mt
-source-wordcount: '2934'
+source-wordcount: '2940'
 ht-degree: 5%
 
 ---
@@ -82,7 +82,7 @@ Experience Platform允许您审核用户活动以获取各种服务和功能。 
 | --- | --- | --- |
 | 已添加资源 | <ul><li>Attribution AI实例</li><li>Customer AI实例</li><li>数据流</li></ul> | 活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关平台中由审核日志跟踪的不同特定于资源的事件类型的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
@@ -112,11 +112,9 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) 用于事件转发 | 您现在可以将数据发送到 [!DNL Snapchat Conversions API] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 有关如何验证和使用API的更多信息，请参阅 [[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [[!DNL User-Agent Client Hints] 在Web SDK中](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK现在支持 [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但更能保护隐私。 |
 | [逐页迁移Web SDK](../../edge/home.md#migrating-to-web-sdk) | 您现在可以从其他Experience Cloud库迁移现有Web资产，例如 [!DNL at.js]，到Web SDK，每次一个页面。 这支持分阶段迁移Web SDK的方法，而无需同时迁移您的所有页面。 |
+| [[!DNL Adobe Journey Optimizer] 支持数据流](../../edge/datastreams/overview.md#aep) | 数据流的Adobe Experience Platform服务现在支持 [!DNL Adobe Journey Optimizer]. 此选项允许您在 [!DNL Adobe Journey Optimizer]. |
 
-{style=&quot;table-layout:auto&quot;}
-
-<!-- | [[!DNL Adobe Journey Optimizer] support for datastreams](../../edge/datastreams/overview.md#aep)| The Adobe Experience Platform service for datastreams now supports [!DNL Adobe Journey Optimizer]. This option allows you to use web and app-based inbound channels in [!DNL Adobe Journey Optimizer].|
--->
+{style="table-layout:auto"}
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
@@ -130,7 +128,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | ----------- | ----------- |
 | 目标 SDK | Destination SDK现在为创建批量（或基于文件）产品化或专用目标的合作伙伴和客户提供完全支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](/help/destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **新目标或更新的目标**
 
@@ -139,7 +137,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。 [Campaign快速入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). 请注意，此集成适用于 [Adobe Campaign版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **新文档或更新的文档**
 
@@ -168,7 +166,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | 跟踪媒体详细信息。 |
 | 字段组 | [[!UICONTROL AdobeCJM ExperienceEvent — 曲面]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | 描述Adobe Journey Optimizer中体验事件的曲面。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **更新了XDM组件**
 
@@ -190,7 +188,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | （多个） | （多个） | Adobe Journey Optimizer实体 [稳定](https://github.com/adobe/xdm/pull/1625/files). |
 | （多个） | （多个） | 某些实验组件中特定字段的命名空间已 [更新了一致性](https://github.com/adobe/xdm/pull/1626/files). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
