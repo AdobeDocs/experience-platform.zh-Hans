@@ -4,10 +4,10 @@ title: 将受众数据激活到用户档案请求目标
 type: Tutorial
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 9bde403338187409892d76de68805535de03d59f
+source-git-commit: 811aba50fb4509e77910499f8d01c4bc13d06841
 workflow-type: tm+mt
-source-wordcount: '896'
-ht-degree: 0%
+source-wordcount: '898'
+ht-degree: 4%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本文介绍在Adobe Experience Platform用户档案请求目标中激活受众数据所需的工作流。 与一起使用时 [边缘分割](../../segmentation/ui/edge-segmentation.md)，则这些目标可以在您的Web属性上启用同页和下一页个性化用例。 有关更多信息 [启用同页和下一页个性化用例](/help/destinations/ui/configure-personalization-destinations.md).
+本文介绍在Adobe Experience Platform用户档案请求目标中激活受众数据所需的工作流。 与一起使用时 [边缘分割](../../segmentation/ui/edge-segmentation.md)，则这些目标可以在您的Web和移动资产上启用同页和下一页个性化用例。 有关更多信息 [启用同页和下一页个性化用例](/help/destinations/ui/configure-personalization-destinations.md).
 
 用户档案请求目标示例包括 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 连接。
 
@@ -107,7 +107,7 @@ ht-degree: 0%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
