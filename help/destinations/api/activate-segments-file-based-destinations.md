@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 使用流量服务API将区段激活到基于文件的目标
 description: 了解如何使用流量服务API将具有限定配置文件的文件导出到云存储目标。
 type: Tutorial
-source-git-commit: 6ed78a96f099fb4552716ac4a598c43f4d65cf37
+source-git-commit: d925802489d5da006cd9cfacb89b3e880663edaf
 workflow-type: tm+mt
 source-wordcount: '4337'
 ht-degree: 2%
@@ -3645,6 +3645,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 接下来，您必须设置输出模式以进行导出。 首先，您需要查找并检查现有的合作伙伴架构。
 
+>[!BEGINSHADEBOX]
+
 **请求**
 
 +++请求获取输出模式的合作伙伴模式
@@ -3957,7 +3959,7 @@ Inspect执行上述调用时获取的响应。 您需要深入到响应中以查
 
 **请求**
 
-+++ 创建输出架构 — 请求
++++创建输出架构 — 请求
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/schemas' \
@@ -3977,7 +3979,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **响应**
 
-+++ 创建输出架构 — 响应
++++创建输出模式 — 响应
 
 ```json
 {
@@ -4287,7 +4289,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 >[!ENDSHADEBOX]
 
-### 创建映射集
+### 创建映射集 {#create-mapping-set}
 
 接下来，使用 [数据准备API](https://developer.adobe.com/experience-platform-apis/references/data-prep/#tag/Mapping-sets/operation/createMappingSet) 使用输入架构ID、输出架构ID和所需的字段映射创建映射集。
 
@@ -4295,7 +4297,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **请求**
 
-+++ 创建映射集 — 请求
++++创建映射集 — 请求
 
 >[!IMPORTANT]
 >
@@ -4304,7 +4306,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 >* 另请注意，即使以下示例配置包含 `Email` 和 `Phone_E.164`，则每个数据流只能导出一个标识属性。
 
 
-```shell{line-numbers="true" start-line="1" highlight="16-38"}
+```shell {line-numbers="true" start-line="1" highlight="16-38"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/mappingSets' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
