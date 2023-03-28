@@ -1,11 +1,11 @@
 ---
 title: 用户代理客户端提示
-description: 了解Web SDK中用户代理客户端提示的工作方式
+description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者以更加保护隐私的方式访问用户代理字符串中提供的大部分相同信息。
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: faeec4288948012fabeb25d0a0ce5a3b45f563ec
+source-git-commit: 29679e85943f16bcb02064cc60a249a3de61e022
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1155'
 ht-degree: 7%
 
 ---
