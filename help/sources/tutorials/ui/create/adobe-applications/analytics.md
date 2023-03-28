@@ -5,9 +5,9 @@ title: 在UI中创建Adobe Analytics源连接
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 3530c91cd36e9e2729515827978e6115857f2405
 workflow-type: tm+mt
-source-wordcount: '2384'
+source-wordcount: '2390'
 ht-degree: 5%
 
 ---
@@ -159,7 +159,7 @@ ht-degree: 5%
 * [数据准备映射函数](../../../../../data-prep/functions.md)
 * [添加计算字段](../../../../../data-prep/ui/mapping.md#calculated-fields)
 
-### 筛选 [!DNL Profile Service] （测试版） {#filtering-for-profile}
+### 实时客户资料筛选（测试版） {#filtering-for-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_analytics_filtering"
@@ -170,7 +170,7 @@ ht-degree: 5%
 >
 >支持过滤 [!DNL Analytics] 数据当前为测试版，并非所有用户都能使用。 文档和功能可能会发生变化。
 
-完成 [!DNL Analytics] 报表包数据时，您可以应用筛选规则和条件，以便有选择地将数据从摄取到 [!DNL Profile Service]. 仅对 [!DNL Analytics] 仅在输入之前过滤数据和数据 [!DNL Profile.] 所有数据都会被摄取到数据湖中。
+完成 [!DNL Analytics] 报表包数据中，您可以应用过滤规则和条件，以便有选择地将数据从摄取到实时客户资料中或从中排除。 仅对 [!DNL Analytics] 仅在输入之前过滤数据和数据 [!DNL Profile.] 所有数据都会被摄取到数据湖中。
 
 #### 行级过滤
 
