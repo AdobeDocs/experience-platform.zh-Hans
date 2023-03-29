@@ -3,9 +3,9 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
+source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '805'
 ht-degree: 0%
 
 ---
@@ -56,9 +56,10 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 | 权限级别 | 描述 |
 | ---- | ----|
 | **[!UICONTROL 管理目标]** | 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). |
-| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 要将区段激活到目标，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 将区段激活到目标并启用 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 将区段激活到目标并隐藏 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关访问控制的更多信息，请参阅 [访问控制用户指南](../access-control/ui/overview.md).
 

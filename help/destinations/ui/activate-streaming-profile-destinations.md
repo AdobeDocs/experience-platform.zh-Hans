@@ -4,10 +4,10 @@ title: 将受众数据激活到流配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 9bde403338187409892d76de68805535de03d59f
+source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
-source-wordcount: '743'
-ht-degree: 0%
+source-wordcount: '780'
+ht-degree: 5%
 
 ---
 
@@ -15,7 +15,10 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+> * 激活数据并启用 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 在不通过 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> 
+> 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 ## 概述 {#overview}
 
@@ -84,7 +87,7 @@ ht-degree: 0%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果贵组织已购买 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**，选择 **[!UICONTROL 查看适用的同意策略]** 以了解应用了哪些同意策略以及激活中包含了多少个用户档案。 了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

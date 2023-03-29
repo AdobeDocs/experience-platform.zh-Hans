@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 56f1cbc622450b154e6e29a8116789b316901f66
+source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
-source-wordcount: '1473'
+source-wordcount: '1542'
 ht-degree: 3%
 
 ---
@@ -106,9 +106,10 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 有权读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于贵组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
-| [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。 |
+| [!DNL Destinations] | [!UICONTROL 管理目标] | 对读取、创建和删除目标激活流和目标帐户的访问权限。 |
 | [!DNL Destinations] | [!UICONTROL 查看目标] | 对 **[!UICONTROL 目录]** 选项卡和已验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限需要 [!UICONTROL 查看目标] 或 [!UICONTROL 管理目标] 授予将激活目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限需要 [!UICONTROL 查看目标] 或 [!UICONTROL 管理目标] 授予将数据激活到目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 在无映射的情况下激活区段] | 允许用户将区段激活到现有目标，而不显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限需要 [!UICONTROL 激活目标] 授予将数据激活到目标的用户的权限。 |
 | [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能够将数据激活到已创建的活动数据集。 |
 | [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |

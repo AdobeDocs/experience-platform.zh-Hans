@@ -4,9 +4,9 @@ title: 将受众数据激活到流区段导出目标
 type: Tutorial
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 9bde403338187409892d76de68805535de03d59f
+source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '972'
 ht-degree: 8%
 
 ---
@@ -15,7 +15,10 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+> * 激活数据并启用 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 在不通过 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> 
+> 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 ## 概述 {#overview}
 

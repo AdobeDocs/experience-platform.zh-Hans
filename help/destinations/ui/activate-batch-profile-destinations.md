@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 7d680567cee8b47532bb66434e2f0582cde68532
+source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
-source-wordcount: '3592'
+source-wordcount: '3629'
 ht-degree: 10%
 
 ---
@@ -15,9 +15,12 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+> * 激活数据并启用 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 在不通过 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> 
+> 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 >
->一些参与改进的文件导出功能测试版计划的客户看到了新 **[!UICONTROL 映射]** 步骤作为激活工作流的一部分 [新的测试版云存储目标](/help/release-notes/2022/october-2022.md#destinations). 另请注意 [已知限制](#known-limitations) 作为版本的一部分。
+> 一些参与改进的文件导出功能测试版计划的客户看到了新 **[!UICONTROL 映射]** 步骤作为激活工作流的一部分 [新的测试版云存储目标](/help/release-notes/2022/october-2022.md#destinations). 另请注意 [已知限制](#known-limitations) 作为版本的一部分。
 
 ## 概述 {#overview}
 
