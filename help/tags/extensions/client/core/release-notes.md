@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 0955646164269d868be5161a117c6e12dbd9a4cb
 workflow-type: tm+mt
-source-wordcount: '1565'
-ht-degree: 57%
+source-wordcount: '1654'
+ht-degree: 55%
 
 ---
 
@@ -14,6 +14,26 @@ ht-degree: 57%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2023 年 3 月 29 日
+
+v3.4.1
+
+* 添加新的Web本机委托事件：
+   * Keydown
+   * KeyUp
+* 添加了针对以下代理测试多个值（“添加其他”选项）的功能：
+   * 事件
+      * 更改
+   * 条件
+      * Cookie
+      * 登陆页面
+      * 查询字符串参数
+      * 流量源
+      * Variable
+* 更改events/EntersViewport委托以使用 [交集观察器API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 而不是手动检测进入视区的元素。
+* 删除将DTM Cookie迁移到LocalStorage的代码。
+* 当LocalStorage API和SessionStorage API不可用时，将警告记录到控制台。
 
 ## 2022 年 1 月 4 日
 
@@ -91,7 +111,7 @@ v2.0.5
 
 * 更新了具有延迟选项（现在支持v2.0.4版本中添加的数据元素值）的事件和操作在运行时评估中的代码，以将字符串正确强制为数字。
 
-## 2021 年 3 月 9 日
+## 2021年3月9日
 
 v2.0.4
 
