@@ -1,15 +1,15 @@
 ---
-title: （测试版）Snap Inc连接
+title: Snap Inc连接
 description: 了解如何连接到Snapchat Ads平台并从Experience Platform中导出受众区段。
-source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
+exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
+source-git-commit: 988ecbed3084ef162453c9f1124998c6e9ae2e45
 workflow-type: tm+mt
-source-wordcount: '1012'
-ht-degree: 2%
+source-wordcount: '993'
+ht-degree: 1%
 
 ---
 
-
-# （测试版）Snap Inc
+# Snap Inc连接
 
 ## 概述 {#overview}
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此文档页面由 *Snap Inc* 团队。 此产品目前是测试版产品，功能可能会发生更改。 如有任何查询或更新请求，请直接联系 *dev-support@snap.com*
+>此文档页面由 *Snap Inc* 团队。 如有任何查询或更新请求，请直接联系 *dev-support@snap.com*
 
 ## 用例 {#use-cases}
 
@@ -57,7 +57,7 @@ ht-degree: 2%
 | GAID | SHA-256经过哈希处理的Google广告ID | 将Google广告ID映射到目标标识字段 *gaid*. |
 | IDFA | SHA-256经过哈希处理的Apple广告ID | 将Apple广告ID映射到目标标识字段 *idfa*. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -68,7 +68,7 @@ ht-degree: 2%
 | 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *您的目标* 目标。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 连接到Snap Inc {#connect}
 
