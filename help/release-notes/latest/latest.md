@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: c5061a759f1098ce1dcc7e3f00c52e064239d7c5
+source-git-commit: 38c3461f1d84fca83fd04eef57aae28de4744e17
 workflow-type: tm+mt
-source-wordcount: '663'
-ht-degree: 5%
+source-wordcount: '1012'
+ht-degree: 4%
 
 ---
 
@@ -16,6 +16,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [数据收集](#data-collection)
 - [数据准备](#data-prep)
+- [目标](#destinations)
 - [分段服务](#segmentation)
 - [源](#sources)
 
@@ -44,6 +45,41 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 用于编码和解码URL字符串的新函数 | <ul><li>的 `get_url_encoded` 函数将URL作为输入，并用ASCII字符替换或编码特殊字符。</li><li>的 `get_url_decoded` 函数将URL作为输入，并将ASCII字符解码为特殊字符。</li></ul> 有关更多信息，请阅读 [数据准备功能指南](../../data-prep/functions.md). 有关保留字符及其相应编码字符的完整列表，请阅读 [特殊字符](../../data-prep/functions.md#special-characters). |
 
 有关数据准备的更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新目标** {#new-destinations}
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Adobe Commerce] 连接GA](../../destinations/catalog/personalization/adobe-commerce.md) | 的 [!DNL Adobe Commerce] 目标连接器（现在通常可用）允许您选择一个或多个要激活到您的Real-Time CDP受众 [!DNL Adobe Commerce] 帐户为购物者提供动态个性化体验。 |
+| [[!DNL Snap Inc] 连接GA](../../destinations/catalog/advertising/snap-inc.md) | 的 [!DNL Snap Inc] 目标连接器（现在通常可用）允许营销人员将在Experience Platform中创建的用户区段导入 [!DNL Snapchat Ads] 并用于定位其广告。 |
+| [(API)OracleEloqua连接](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | 使用基于API的连接到 [!DNL Oracle Eloqua] 在为潜在客户提供个性化客户体验的同时，在 [!DNL Oracle Eloqua]. |
+| [（测试版） [!DNL Amazon Ads] 连接](../../destinations/catalog/advertising/amazon-ads.md) | 的 [!DNL Amazon Ads] 与Adobe Experience Platform集成提供与 [!DNL Amazon Ads] 产品，包括 [!DNL Amazon DSP (ADSP)]. 使用 [!DNL Amazon Ads] 目标中，用户能够定义广告商受众，以在上定位和激活 [!DNL Amazon DSP]. |
+| [[!DNL Marketo Measure Ultimate] 连接](../../destinations/catalog/adobe/marketo-measure-ultimate.md) | [!DNL Marketo Measure] （以前称为Bizible）使营销人员能够洞悉哪些营销工作在增加收入和为公司实现投资回报方面最有效。 该目标支持从Adobe Experience Platform到 [!DNL Marketo Measure]. 该卡仅供 [!DNL Marketo Measure Ultimate] 客户。 |
+| [TikTok连接](../../destinations/catalog/social/tiktok.md) | 在TikTok上使用您的数据构建自定义受众，以便通过广告营销活动进行定位。 |
+| [Zendesk连接](../../destinations/catalog/crm/zendesk.md) | 使用此目标可在区段内创建和更新身份，以作为 [!DNL Zendesk]. |
+
+{style="table-layout:auto"}
+
+**新增功能或更新功能** {#destinations-new-updated-functionality}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 目标的新访问控制权限： [[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | 新权限允许用户将区段激活到现有目标，而不显示 [映射步骤](../../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 |
+
+{style="table-layout:auto"}
+
+**修复和增强功能** {#destinations-fixes-and-enhancements}
+
+我们将针对实时CDP的基于文件的目标中的PGP/GPG加密发布错误修复。 根据这项更改，当前使用加密的基于文件的现有目标将生成一个扩展名与之前不同的文件名。
+
+- 使用加密时的当前扩展： `filename.csv`
+- 使用加密时的未来扩展： `filename.csv.gpg`
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 分段服务 {#segmentation}
 
