@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年3月
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: 48cd7f670ab7d42d2b0c54bb549d37aa3b9ebe66
+source-git-commit: c5061a759f1098ce1dcc7e3f00c52e064239d7c5
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '716'
 ht-degree: 5%
 
 ---
@@ -54,7 +54,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 功能 | 描述 |
 | --- | --- |
-| 配置文件量度 | 为了更准确地表示用户档案量度，会将会员资格划分和流失量度组合在一起，现在会在24小时内计算这些量度。 有关更多信息，请参阅 [分段UI指南](../../segmentation/ui/overview.md) |
+| 配置文件量度 | 为了更准确地表示用户档案量度，会将会员资格划分和流失量度组合在一起，现在会在24小时内计算这些量度。 有关更多信息，请参阅 [分段UI指南](../../segmentation/ui/overview.md#browse) |
 
 {style="table-layout:auto"}
 
