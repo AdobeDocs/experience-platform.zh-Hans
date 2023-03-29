@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年3月
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: 38c3461f1d84fca83fd04eef57aae28de4744e17
+source-git-commit: 74b609572b6e5e9b5e641fe497f53f3463b900c4
 workflow-type: tm+mt
-source-wordcount: '1065'
-ht-degree: 4%
+source-wordcount: '1110'
+ht-degree: 3%
 
 ---
 
@@ -43,6 +43,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 功能 | 描述 |
 | --- | --- |
+| 筛选Adobe Analytics数据的一般可用性 | 现在，您可以使用数据准备功能来应用规则和条件，以便在将Analytics数据摄取到实时客户资料之前对其进行过滤。 有关更多信息，请阅读 [过滤用于配置文件摄取的Analytics数据](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
 | 用于编码和解码URL字符串的新函数 | <ul><li>的 `get_url_encoded` 函数将URL作为输入，并用ASCII字符替换或编码特殊字符。</li><li>的 `get_url_decoded` 函数将URL作为输入，并将ASCII字符解码为特殊字符。</li></ul> 有关更多信息，请阅读 [数据准备功能指南](../../data-prep/functions.md). 有关保留字符及其相应编码字符的完整列表，请阅读 [特殊字符](../../data-prep/functions.md#special-characters). |
 
 有关数据准备的更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
