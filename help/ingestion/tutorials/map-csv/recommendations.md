@@ -1,18 +1,17 @@
 ---
-title: 使用AI生成的Recommendations（测试版）将CSV文件映射到XDM模式
+title: 使用AI生成的Recommendations将CSV文件映射到XDM模式
 description: 本教程介绍如何使用AI生成的推荐将CSV文件映射到XDM模式。
-source-git-commit: d6f858af8bc44be74b1aaf12b973fb6818c1b2a5
+exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
+source-git-commit: df6f76be6beba962b1795bd33dc753ef04267734
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 0%
+source-wordcount: '1014'
+ht-degree: 1%
 
 ---
 
-# 使用AI生成的推荐（测试版）将CSV文件映射到XDM模式
+# 使用AI生成的推荐将CSV文件映射到XDM模式
 
->[!IMPORTANT]
->
->此功能当前处于测试阶段，您的组织可能还无法访问此功能。 文档和功能可能会发生更改。
+>[!NOTE]
 >
 >有关Platform中通常可用的CSV映射功能的信息，请参阅 [将CSV文件映射到现有架构](./existing-schema.md).
 
@@ -31,7 +30,7 @@ ht-degree: 0%
 
 在Experience PlatformUI中，选择 **[!UICONTROL 源]** 中。 在 **[!UICONTROL 目录]** ，导航到 **[!UICONTROL 本地系统]** 类别。 在 **[!UICONTROL 本地文件上传]**，选择 **[!UICONTROL 添加数据]**.
 
-![的 [!UICONTROL 源] 平台UI中的目录， [!UICONTROL 添加数据] 在 [!UICONTROL 本地文件上传] 被选中](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
+![的 [!UICONTROL 源] 平台UI中的目录， [!UICONTROL 添加数据] 在 [!UICONTROL 本地文件上传] 中。](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
 
 的 **[!UICONTROL 映射CSV XDM架构]** 此时会显示工作流，从 **[!UICONTROL 数据流详细信息]** 中。
 
@@ -51,19 +50,19 @@ ht-degree: 0%
 | [!UICONTROL 数据流详细信息] | 为将CSV数据导入平台的数据流提供名称和可选描述。 启动此工作流时，会自动为数据流分配默认名称。 更改名称是可选操作。 |
 | [!UICONTROL 警报] | 从 [产品内警报](../../../observability/alerts/overview.md) 数据流启动后要接收的与其状态有关的信息。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 配置完数据流后，选择 **[!UICONTROL 下一个]**.
 
-![的 [!UICONTROL 数据流详细信息] 部分已完成](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)
+![的 [!UICONTROL 数据流详细信息] 部分完成。](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)
 
 ## 选择数据
 
 在 **[!UICONTROL 选择数据]** 步骤中，使用左列上传CSV文件。 您可以选择 **[!UICONTROL 选择文件]** 要打开文件资源管理器对话框以从中选择文件，或者可以直接将文件拖放到列上。
 
-![的 [!UICONTROL 选择文件] 按钮和拖放区域(在 [!UICONTROL 选择数据] 步骤](../../images/tutorials/map-csv-recommendations/upload-files.png)
+![的 [!UICONTROL 选择文件] 按钮和拖放区域(在 [!UICONTROL 选择数据] 中。](../../images/tutorials/map-csv-recommendations/upload-files.png)
 
-上传文件后，会显示一个示例数据部分，其中显示了接收数据的前十行，以便您能够验证其上传是否正确。 选择 **[!UICONTROL 下一个]** 继续。
+上传文件后，会显示一个示例数据部分，其中显示了接收数据的前十行，以便您能够验证其上传是否正确。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![工作区中填充了示例数据行](../../images/tutorials/map-csv-recommendations/data-uploaded.png)
 
@@ -71,11 +70,11 @@ ht-degree: 0%
 
 运行ML模型以根据数据流配置和上传的CSV文件生成新架构。 该过程完成后， [!UICONTROL 映射] 步骤填充以显示每个字段的映射，同时显示生成的架构结构的完全可导航视图。
 
-![的 [!UICONTROL 映射] 步骤，显示映射的所有CSV字段以及生成的架构结构](../../images/tutorials/map-csv-recommendations/schema-generated.png)
+![的 [!UICONTROL 映射] 步骤，显示映射的所有CSV字段以及生成的架构结构。](../../images/tutorials/map-csv-recommendations/schema-generated.png)
 
 从此处，您可以选择 [编辑字段映射](#edit-mappings) 或 [更改与其关联的字段组](#edit-schema) 根据你的需要。 满足后，选择 **[!UICONTROL 完成]** 完成映射并启动您之前配置的数据流。 将CSV数据摄取到系统中，并根据生成的架构结构填充数据集，以便下游Platform服务使用。
 
-![的 [!UICONTROL 完成] 按钮，完成CSV映射过程](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
+![的 [!UICONTROL 完成] 按钮，完成CSV映射过程。](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
 
 ### 编辑字段映射 {#edit-mappings}
 
@@ -85,11 +84,11 @@ ht-degree: 0%
 
 CSV字段会使用ML模型自动映射到现有的XDM字段组。 如果要更改任何特定CSV字段的字段组，请选择 **[!UICONTROL 编辑]** 架构树旁边。
 
-![的 [!UICONTROL 编辑] “架构树”旁边的按钮](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
+![的 [!UICONTROL 编辑] 按钮。](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
 此时会显示一个对话框，用于编辑映射中任何字段的显示名称、数据类型和字段组。 选择编辑图标(![“编辑”图标](../../images/tutorials/map-csv-recommendations/edit-icon.png))，以在选择 **[!UICONTROL 应用]**.
 
-![要更改的源字段的推荐字段组](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
+![要更改的源字段的推荐字段组。](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
 
 调整源字段的架构推荐后，请选择 **[!UICONTROL 保存]** 以应用更改。
 
