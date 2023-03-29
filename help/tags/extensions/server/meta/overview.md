@@ -2,9 +2,9 @@
 title: 元转化API扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的元转化API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: 24001da61306a00d295bf9441c55041e20f488c0
+source-git-commit: ec1e2b792ff827fd791576d904858ef9abb98947
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '2261'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ ht-degree: 0%
 | [!UICONTROL 自定义数据] | 要用于广告投放优化的其他数据，以JSON对象的形式提供。 请参阅 [[!DNL Conversions API] 文档](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data) 有关此对象已接受属性的详细信息。<br><br>如果您发送购买事件，则必须使用此部分提供所需的属性 `currency` 和 `value`. |
 | [!UICONTROL 测试事件] | 此选项用于验证您的配置是否导致服务器事件被 [!DNL Meta] 如预期。 要使用此功能，请选择 **[!UICONTROL 作为测试事件发送]** 复选框，然后在以下输入中提供您选择的测试事件代码。 部署事件转发规则后，如果正确配置了扩展和操作，则应会在 **[!DNL Test Events]** 查看 [!DNL Meta Events Manager]. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 完成后，选择 **[!UICONTROL 保留更改]** 将操作添加到规则配置。
 
@@ -79,6 +79,113 @@ ht-degree: 0%
 如果您从客户端和服务器发送不同的事件类型，但二者之间没有重叠，则无需进行重复数据删除。 但是，如果两者共享任何单个事件 [!DNL Meta Pixel] 和 [!DNL Conversions API]，则必须确保删除这些重复事件，以便不会对报告产生不利影响。
 
 发送共享事件时，请确保包含事件ID和名称，以及从客户端和服务器发送的每个事件。 收到多个ID和名称相同的事件时， [!DNL Meta] 会自动使用多种策略来删除重复项并保留最相关的数据。 请参阅 [!DNL Meta] 文档 [重复数据删除 [!DNL Meta Pixel] 和 [!DNL Conversions API] 事件](https://www.facebook.com/business/help/823677331451951?id=1205376682832142) 以了解此过程的详细信息。
+
+## 快速启动工作流：元转化API扩展（测试版） {#quick-start}
+
+>[!IMPORTANT]
+>
+>* 快速入门功能适用于已购买Real-Time CDP Prime和Ultimate软件包的客户。 有关更多信息，请联系您的Adobe代表。
+>* 此功能适用于新的新实施，当前不支持在现有标记和事件转发属性上自动安装扩展和配置。
+
+
+快速入门功能可帮助您轻松高效地设置元转化API和元像素扩展。 此工具可自动执行Adobe标记和事件转发中执行的多个步骤，从而显着缩短设置时间。
+
+此功能可使用必要的规则和数据元素，在新自动生成的标记和事件转发属性上自动安装和配置元转化API和元像素扩展。 此外，它还会自动安装和配置Experience PlatformWeb SDK和数据流。 最后，快速入门功能会在开发环境中自动将库发布到指定的URL，从而通过事件转发和Experience Edge实时收集客户端数据和进行服务器端事件转发。
+
+以下视频介绍了快速入门功能。
+
+>[!VIDEO](https://publish.tv.adobe.com/bucket/1/category/5138/video/3416939/)
+
+### 安装快速入门功能
+
+>[!NOTE]
+>
+>此功能旨在帮助您开始实施事件转发。 它不会提供适用于所有用例的端到端、功能完备的实施。
+
+此设置会自动安装元转换API和元像素扩展。 Meta建议使用此混合实施来收集和转发事件转化服务器端。
+快速设置功能旨在帮助客户开始实施事件转发，而不是旨在提供适用于所有用例的端到端、功能完备的实施。
+
+要安装该功能，请选择 **[!UICONTROL 入门]** 表示 **[!DNL Send Conversions Data to Meta]** 在Adobe Experience Platform数据收集上 **[!UICONTROL 主页]** 页面。
+
+![数据收集主页显示转化数据到元](../../../images/extensions/server/meta/conversion-data-to-meta.png)
+
+输入 **[!UICONTROL 域]**，然后选择 **[!UICONTROL 下一个]**. 此域将用作自动生成的标记和事件转发属性、规则、数据元素、数据流等的命名约定。
+
+![欢迎屏幕请求域名](../../../images/extensions/server/meta/welcome.png)
+
+在 **[!UICONTROL 初始设置]** 对话框输入 **[!UICONTROL 元像素ID]**, **[!UICONTROL 元转换API访问令牌]**&#x200B;和 **[!UICONTROL 数据层路径]**，然后选择 **[!UICONTROL 下一个]**.
+
+![初始设置对话框](../../../images/extensions/server/meta/initial-setup.png)
+
+需要几分钟才能完成初始设置过程，然后选择 **[!UICONTROL 下一个]**.
+
+![初始设置完成确认屏幕](../../../images/extensions/server/meta/setup-complete.png)
+
+从 **[!UICONTROL 在您的网站上添加代码]** 对话框复制使用副本提供的代码 ![复制](../../../images/extensions/server/meta/copy-icon.png) 函数并将其粘贴到 `<head>` 源网站的。 实施后，选择 **[!UICONTROL 开始验证]**
+
+![在网站对话框中添加代码](../../../images/extensions/server/meta/add-code-on-your-site.png)
+
+的 [!UICONTROL 验证结果] 对话框显示元扩展实施结果。 选择&#x200B;**[!UICONTROL 下一步]**。您还可以通过选择 **[!UICONTROL 保证]** 链接。
+
+![显示实施结果的测试结果对话框](../../../images/extensions/server/meta/test-results.png)
+
+的 **[!UICONTROL 后续步骤]** 屏幕显示确认设置已完成。 在此，您可以选择通过添加新事件来优化实施，这些事件将显示在下一节中。
+
+如果不想添加其他事件，请选择 **[!UICONTROL 关闭]**.
+
+![“下一步”对话框](../../../images/extensions/server/meta/next-steps.png)
+
+#### 添加其他事件
+
+要添加新事件，请选择 **[!UICONTROL 编辑标记Web属性]**.
+
+![显示编辑标记Web属性的“下一步”对话框](../../../images/extensions/server/meta/edit-your-tags-web-property.png)
+
+选择与要编辑的元事件对应的规则。 例如， **MetaConversion_AddToCart**.
+
+>[!NOTE]
+>
+>如果没有事件，则不会运行此规则。 对于所有规则，都是如此， **MetaConversion_PageView** 规则为例外。
+
+添加事件选择 **[!UICONTROL 添加]** 下 [!UICONTROL 事件] 标题。
+
+![“标记属性”页面不显示事件](../../../images/extensions/server/meta/edit-rule.png)
+
+选择 [!UICONTROL 事件类型]. 在本例中，我们选择了 [!UICONTROL 单击] 事件，并将其配置为在 **.add-to-cart-button** 中。 选择&#x200B;**[!UICONTROL 保留更改]**。
+
+![显示点击事件的事件配置屏幕](../../../images/extensions/server/meta/event-configuration.png)
+
+已保存新事件。 选择 **[!UICONTROL 选择工作库]** 并选择要构建到的库。
+
+![选择工作库下拉列表](../../../images/extensions/server/meta/working-library.png)
+
+接下来，选择旁边的下拉菜单 **[!UICONTROL 保存到库]** 选择 **[!UICONTROL 保存到库并构建]**. 这将在库中发布更改。
+
+![选择保存到库并生成](../../../images/extensions/server/meta/save-and-build.png)
+
+对要配置的任何其他元转换事件重复这些步骤。
+
+#### 数据层配置
+
+>[!IMPORTANT]
+>
+>更新此全局数据层的方式取决于您的网站架构。 单页应用程序与服务器端渲染应用程序将不同。 您还可能完全负责在标记产品中创建和更新此数据。 在所有情况下，都需要在运行 `MetaConversion_* rules`. 如果不在规则之间更新数据，则还可能会遇到发送最后一个规则的过时数据的情况 `MetaConversion_* rule` 在 `MetaConversion_* rule`.
+
+在配置过程中，系统会询问您数据层的居住位置。 默认情况下，这将为 `window.dataLayer.meta`，和内部 `meta` 对象，则您的数据将会如下所示。
+
+![数据层元信息](../../../images/extensions/server/meta/data-layer-meta.png)
+
+这一点很重要 `MetaConversion_*` 规则使用此数据结构将相关数据段传递到 [!DNL Meta Pixel] 扩展和 [!DNL Meta Conversions API]. 请参阅 [标准事件](https://developers.facebook.com/docs/meta-pixel/reference#standard-events) 有关不同元事件需要哪些数据的更多信息。
+
+例如，如果您想要使用 `MetaConversion_Subscribe` 规则，您需要更新 `window.dataLayer.meta.currency`, `window.dataLayer.meta.predicted_ltv`和 `window.dataLayer.meta.value` 根据 [标准事件](https://developers.facebook.com/docs/meta-pixel/reference#standard-events).
+
+以下示例说明了在执行规则之前需要在网站上运行什么才能更新数据层。
+
+![更新数据层元信息](../../../images/extensions/server/meta/update-data-layer-meta.png)
+
+默认情况下， `<datalayerpath>.conversionData.eventId` 将由任何 `MetaConversion_* rules`.
+
+有关数据层外观的本地引用，您可以在 `MetaConversion_DataLayer` 数据元素。
 
 ## 后续步骤
 
