@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: e34661f70a3550e579afe5133d85f76b1125e004
+source-git-commit: 7bff76b6c06e3d596dd811d04b3673c08ed9c250
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '962'
 ht-degree: 31%
 
 ---
@@ -222,6 +222,8 @@ ht-degree: 31%
          * [概述](./extensions/server/meta/overview.md)
       * [!UICONTROL Microsoft Azure] {#azure}
          * [概述](./extensions/server/azure/overview.md)
+      * [!DNL Mixpanel] {#mixpanel}
+         * [概述](./extensions/server/mixpanel/overview.md)
       * [Pega客户决策中心](https://exchange.adobe.com/apps/ec/107597)
       * [快照转化API](https://exchange.adobe.com/apps/ec/108550)
       * [!DNL Splunk] {#splunk}
