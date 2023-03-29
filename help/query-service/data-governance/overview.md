@@ -2,10 +2,10 @@
 title: 查询服务中的数据管理
 description: 此概述涵盖Experience Platform查询服务中数据管理的主要元素。
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
+source-git-commit: 54a6f508818016df1a4ab2a217bc0765b91df9e9
 workflow-type: tm+mt
-source-wordcount: '2667'
-ht-degree: 0%
+source-wordcount: '2843'
+ht-degree: 1%
 
 ---
 
@@ -93,6 +93,16 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 的 `CREATE VIEW` 关键字定义查询的视图，但该视图未实际化。 而是在每次在查询中引用视图时运行查询。 当用户从数据集创建视图时，父数据集基于角色和属性的访问控制规则将为 **not** 分层应用。 因此，在创建视图时，您必须明确地设置每个列的权限。
 
+#### 对加速数据集创建基于字段的访问限制 {#create-field-based-access-restrictions-on-accelerated-datasets}
+
+使用 [基于属性的访问控制能力](../../access-control/abac/overview.md) 您可以在事实数据集和维度数据集中定义组织或数据使用范围 [加速储存](../data-distiller/query-accelerated-store/send-accelerated-queries.md). 这允许管理员管理对特定区段的访问权限，并更好地管理授予用户或组的访问权限。
+
+要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询来创建加速数据集，并根据现有XDM架构或Ad Hoc架构构建这些数据集。 然后，管理员可以 [添加和编辑架构的数据使用标签](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) 或 [临时架构](./ad-hoc-schema-labels.md#edit-governance-labels). 您可以从 [!UICONTROL 标签] 工作区 [!UICONTROL 模式] UI。
+
+数据使用标签也可以 [直接在数据集上应用或编辑](../../data-governance/labels/user-guide.md#add-labels) 通过数据集UI，或通过访问控制创建 [!UICONTROL 标签] 工作区。 请参阅指南以了解操作方法 [创建新标签](../../access-control/abac/ui/labels.md) 以了解更多信息。
+
+随后，用户对单个列的访问权限可以由附加的数据使用标签和应用于分配给用户的角色的权限集来控制。
+
 ### 连接 {#connectivity}
 
 查询服务可通过平台UI访问，或通过与外部兼容客户端建立连接来访问。 所有可用前线的访问由一组凭据控制。
@@ -131,13 +141,13 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 加密是使用算法过程将数据转换为编码且不可读的文本，以确保信息在没有解密密钥的情况下受到保护且无法访问。
 
-查询服务数据合规性可确保数据始终加密。 传输中的数据始终符合HTTPS，并且静态数据在Azure数据湖存储中使用系统级别密钥进行加密。 请参阅 [数据在Adobe Experience Platform中的加密方式](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/encryption.html) 以了解更多信息。 有关Azure数据湖存储中静态数据如何加密的详细信息，请参阅 [官方Azure文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+查询服务数据合规性可确保数据始终加密。 传输中的数据始终符合HTTPS，并且静态数据在Azure数据湖存储中使用系统级别密钥进行加密。 请参阅 [数据在Adobe Experience Platform中的加密方式](../../landing/governance-privacy-security/encryption.md) 以了解更多信息。 有关Azure数据湖存储中静态数据如何加密的详细信息，请参阅 [官方Azure文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
 <!-- Data-in-transit is always HTTPS compliant and similarly when the data is at rest in the data lake, the encryption is done with Customer Management Key (CMK), which is already supported by Data Lake Management. The currently supported version is TLS1.2. -->
 
 ## 审核 {#audit}
 
-查询服务记录用户活动，并以不同的日志类型对该活动进行分类。 日志提供有关 **who** 执行 **什么** 操作和 **when**. 日志中记录的每个操作都包含元数据，这些元数据指示操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与操作类型相关的其他属性。
+查询服务记录用户活动，并以不同的日志类型对该活动进行分类。 日志提供有关 **who** 执行 **什么** 操作和 **when**. 日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。
 
 平台用户可以根据需要请求任何日志类别。 本节提供有关为查询服务捕获的信息类型以及可访问此信息的位置的详细信息。
 
