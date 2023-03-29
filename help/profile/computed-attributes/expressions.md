@@ -4,7 +4,9 @@ title: 计算属性的PQL表达式示例
 type: Documentation
 description: 计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数需要使用有效的配置文件查询语言(PQL)表达式。 本指南概述了计算属性的一些最常用的PQL表达式。
 exl-id: 7c80e2d3-919a-47f9-a59f-833a70f02a8f
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+hide: true
+hidefromtoc: true
+source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
 workflow-type: tm+mt
 source-wordcount: '965'
 ht-degree: 2%
@@ -32,8 +34,8 @@ ht-degree: 2%
 | 过去7天内图像下载次数。 | xEvent[（时间戳发生时间早于7天）和eventType=&quot;download&quot;和contentType = &quot;image&quot;].count() | 配置文件和EE[] | 整数 |
 | 过去7天内客户在体育用品上花费的总和。 | xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].sum(commerce.order.priceTotal) | 配置文件和EE[] | 整数或双精度 |
 | 过去7天内顾客平均花在体育用品上。<br/><br/>**注意：** 需要创建三个计算属性。 | **ca1:** xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].sum(commerce.order.priceTotal)<br/><br/>**ca2:** xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].count()<br/><br/>**ca3:** ca1 / ca2 | 配置文件和EE[] | 双精度 |
-| 客户过去7天在体育用品上花了100美元以上吗？<br/><br/>**注意：** 需要创建两个计算属性。 | **ca1:** xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].sum(commerce.order.priceTotal)<br/><br/>**ca2:** ca1 > 100 | 配置文件和EE[] | 布尔型 |
-| 客户在过去7天内购买过吗？ | chain(xEvent， timestamp， [答：WHAT(eventType = &quot;transaction&quot;)WHEN（&lt; 7天前）]) | 配置文件和EE[] | 布尔型 |
+| 客户过去7天在体育用品上花了100美元以上吗？<br/><br/>**注意：** 需要创建两个计算属性。 | **ca1:** xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].sum(commerce.order.priceTotal)<br/><br/>**ca2:** ca1 > 100 | 配置文件和EE[] | 布尔值 |
+| 客户在过去7天内购买过吗？ | chain(xEvent， timestamp， [答：WHAT(eventType = &quot;transaction&quot;)WHEN（&lt; 7天前）]) | 配置文件和EE[] | 布尔值 |
 | 过去7天中，用户在体育用品上花费的最低。 | xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].min(commerce.order.priceTotal) | 配置文件和EE[] | 整数或双精度 |
 | 过去7天中，用户在体育用品上花费的最高。 | xEvent[（时间戳发生时间早于7天），eventType=&quot;transaction&quot;和category = &quot;sporting goods&quot;].max(commerce.order.priceTotal) | 配置文件和EE[] | 整数或双精度 |
 | 过去7天内按产品编入索引的每个下载产品的下载次数计数。 | xEvent[（时间戳发生时间早于7天）和eventType=&quot;download&quot;].groupBy(product)。map((K， G)=> mapEntry(K， G.count())) | 配置文件和EE[] | 地图[字符串，整数] |
@@ -42,7 +44,7 @@ ht-degree: 2%
 | 过去7天内每个下载产品下载次数中按产品编入索引的最小数值属性数。 | xEvent[（时间戳发生时间早于7天）和eventType=&quot;download&quot;].groupBy(product)。map((K， G)=> mapEntry(K， G.min(commerce.order.priceTotal))) | 配置文件和EE[] | 地图[字符串，整数] 或地图[字符串，双精度类型] |
 | 过去7天内每个下载产品下载次数中按产品编入索引的最大数值属性数。 | xEvent[（时间戳发生时间早于7天）和eventType=&quot;download&quot;].groupBy(product)。map((K， G)=> mapEntry(K， G.max(commerce.order.priceTotal))) | 配置文件和EE[] | 地图[字符串，整数] 或地图[字符串，双精度类型] |
 | 配置文件上的数字表达式，不引用事件。 | if(person.gender = &quot;female&quot;, 60, 65) | 配置文件 | 整数或双精度 |
-| 配置文件上的布尔表达式，不引用事件。 | person.birthYear >= 2000 | 配置文件 | 布尔型 |
+| 配置文件上的布尔表达式，不引用事件。 | person.birthYear >= 2000 | 配置文件 | 布尔值 |
 | 配置文件中的字符串表达式，不是引用事件。 | if(homeAddress.countryCode in [&quot;US&quot;、&quot;MX&quot;、&quot;CA&quot;], &quot;NA&quot;, &quot;ROW&quot;) | 配置文件 | 字符串 |
 
 ## 批处理表达式
