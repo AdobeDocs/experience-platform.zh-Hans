@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '1266'
-ht-degree: 0%
+source-wordcount: '1463'
+ht-degree: 1%
 
 ---
 
@@ -15,8 +15,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_description"
->title="描述"
->abstract=""
+>title="执行数据主体隐私请求"
+>abstract="<h2>描述</h2><p>Adobe Experience Platform Privacy Service允许您代表那些希望根据法律隐私法规访问或删除其个人数据的客户创建和管理隐私请求。</p>"
 
 本文档提供了使用创建和管理隐私请求的步骤 [!DNL Privacy Service] 用户界面。
 
@@ -109,7 +109,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="说明"
->abstract=""
+>abstract="<ul><li>选择 <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">请求</a> 在左侧导航中打开隐私Ul，然后选择 <b>创建请求</b>.</li><li>从此处，您可以使用请求生成器或上传数据主体的JSON文件。</li><li>如果使用请求生成器，请选择作业类型（访问和/或删除），然后选择您提供的身份类型（电子邮件、ECID或AAID），或输入自定义身份命名空间。 为客户输入相应的标识值，然后选择 <b>创建</b> 完成。</li><li>如果上传JSON文件，请选择创建请求旁边的箭头。 从选项列表中，选择 <b>上传JSON</b> 并上传您的文件。 如果您没有要上传的JSON文件，请选择 <b>下载Adobe-GDPR-Request.json</b> 下载可填充的模板。 上传JSON并选择 <b>创建</b> 完成。</li><li>有关此功能的更多帮助，请参阅 <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=zh-Hans">Privacy Service用户指南</a> Experience League。</li></ul>"
 
 >[!NOTE]
 >

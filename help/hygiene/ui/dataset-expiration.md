@@ -2,9 +2,9 @@
 title: 管理数据集过期
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 2913e9e687843e566db4ebf2031e610d1891d4c9
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
@@ -13,8 +13,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
->title="描述"
->abstract=""
+>title="删除不需要或过期的客户记录和数据集"
+>abstract="<h2>描述</h2><p>要管理与法规遵从性无关的Experience Platform数据的生命周期，您可以删除客户记录并计划数据集的过期日期。 要创建或管理数据主体请求，请参阅“执行数据主体隐私请求”用例块。</p>"
 
 >[!IMPORTANT]
 >
@@ -33,7 +33,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
 >title="说明"
->abstract=""
+>abstract="<ul><li>选择 <a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html">数据卫生</a> 在左侧导航中，选择 <b>创建请求</b>.</li><li>如果要删除记录：</li>   <li>选择 <b>记录</b>.</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的消费者的身份。 选择 <b>添加标识</b> 一次提供一个标识或选择 <b>选择文件</b> ，以上传身份的JSON文件。</li>   <li>如果需要，请选择 <b>模板</b> 查看JSON文件的预期格式。</li><li>如果需要，请参阅相关文档以获取相关说明 <a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html#schedule-dataset-expiration">计划数据集的过期日期</a>.</li></ul>"
 
 要创建新请求，请选择 **[!UICONTROL 创建请求]** 的页面。
 
@@ -54,8 +54,7 @@ ht-degree: 0%
 ![显示正在选择的数据集的图像](../images/ui/ttl/select-dataset.png)
 
 >[!NOTE]
->
->只显示属于当前沙盒的数据集。
+只显示属于当前沙盒的数据集。
 
 ### 提交请求
 
@@ -68,8 +67,7 @@ ht-degree: 0%
 提交请求后，将创建工作单，并显示在 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。
 
 >[!NOTE]
->
->请参阅 [时间表和透明度](../home.md#dataset-expiration-transparency) 有关执行数据集过期日期后如何处理这些过期日期的详细信息。
+请参阅 [时间表和透明度](../home.md#dataset-expiration-transparency) 有关执行数据集过期日期后如何处理这些过期日期的详细信息。
 
 ## 编辑或取消数据集过期
 
