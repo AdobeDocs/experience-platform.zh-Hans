@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年3月
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: 74b609572b6e5e9b5e641fe497f53f3463b900c4
+source-git-commit: 582305583aa5869d8cc29f871aeb3fa0ef0b6ab1
 workflow-type: tm+mt
-source-wordcount: '1110'
-ht-degree: 3%
+source-wordcount: '1724'
+ht-degree: 4%
 
 ---
 
@@ -14,11 +14,29 @@ ht-degree: 3%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [仪表板](#dashboards)
 - [数据收集](#data-collection)
 - [数据准备](#data-prep)
 - [目标](#destinations)
+- [Experience Data Model](#xdm)
+- [查询服务](#query-service)
+- [Real-Time Customer Data Platform B2B 版](#b2b)
 - [分段服务](#segmentation)
 - [源](#sources)
+
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
+
+**新增功能或更新功能** {#dashboards-new-updated-features}
+
+| 功能 | 描述 |
+| --- | --- |
+| 用户定义的功能板 | 您现在可以 **示例属性值** 在用户定义的功能板小组件编辑器中向小组件添加属性之前，请执行以下操作： 创建小组件时，该属性列中的一些示例值可用于单个属性。<br>您现在可以 **交换X和Y轴** 在带交换轴按钮的小组件上。 这样可节省时间，并在向小组件添加属性时提供更符合人体工程学的体验。 这样保存后，需要从“属性”面板中再次查找这两个属性。<br> 您现在可以 **更改图例的位置和标题** 在小组件中。 在小组件上出现图例后，您可以将该图例重新定位到图表周围的任意位置，还可以重新命名图例标题，就像使用轴标签和小组件标题一样。 |
+
+{style="table-layout:auto"}
+
+有关功能板的更多信息（包括如何授予访问权限和创建自定义小组件），请首先阅读 [功能板概述](../../dashboards/home.md).
 
 ## 数据收集 {#data-collection}
 
@@ -82,6 +100,48 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 - 使用加密时的未来扩展： `filename.csv.gpg`
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| CSV模式推荐 | 您现在可以上传本地文件来创建机器学习生成的架构，从而无需手动创建架构。 从 [!UICONTROL 源] 工作区、上传CSV文件示例，Adobe机器学习算法将根据目标字段为您建议一种模式。 请参阅 [文档](../../ingestion/tutorials/map-csv/recommendations.md) ”。 |
+
+{style="table-layout:auto"}
+
+有关Platform中XDM的更多信息，请阅读 [XDM系统概述](../../xdm/home.md).
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以加入来自数据湖的任何数据集，并作为新数据集捕获查询结果，以用于报表、Data Science Workspace或将其摄取到实时客户资料中。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 基于属性的加速存储访问控制 | 结合使用基于属性的访问控制和数据Distiller，对加速存储上的所有数据集定义访问控制。 这可控制对用户创建并存储在加速存储中的自定义数据模型的访问，以支持自定义功能板。 |
+
+{style="table-layout:auto"}
+
+有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
+
+## Real-Time Customer Data Platform B2B 版 {#b2b}
+
+Real-Time CDP B2B Edition基于Real-time Customer Data Platform(Real-Time CDP)而构建，专为以企业对企业服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 错误修复 | 为了在系统中更准确地表示用户档案，在Real-time Customer Data Platform B2B Edition的总用户档案计数或可寻址受众量度中，系统不再包含内部用户档案。 从今天开始，您可能会看到配置文件计数/可寻址受众量度总数出现一次性下降。 您的任何数据都未被擦除，这只是对计数的更改。 如有任何疑问，请联系您的Adobe主管 |
+
+{style="table-layout:auto"}
+
+要了解有关Real-Time CDP B2B Edition的更多信息，请阅读 [Real-Time CDP B2B版概述](../../rtcdp/overview.md).
 
 ## 分段服务 {#segmentation}
 
