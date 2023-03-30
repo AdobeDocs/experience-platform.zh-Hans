@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 135691e0d2b77cc8e2581ff3a614fe26c7969cdd
+source-git-commit: 9df75958d3945a52c219e96f18f9fc07f8036076
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '272'
 ht-degree: 17%
 
 ---
@@ -36,6 +36,7 @@ ht-degree: 17%
    - [机器人过滤](use-cases/bot-filtering.md)
    - [创建事件的趋势报表](use-cases/trended-report-of-events.md)
    - [基于数据集的派生属性](use-cases/deciles-use-case.md)
+   - [模糊匹配](use-cases/fuzzy-match.md)
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)
    - [倾向得分](use-cases/propensity-score.md)
