@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5ec1ede39489ce48fc20739030884ec3811a8426
+source-git-commit: 2b8307422e4f073451c23ae9b35061d845f0893c
 workflow-type: tm+mt
-source-wordcount: '1528'
-ht-degree: 40%
+source-wordcount: '1597'
+ht-degree: 39%
 
 ---
 
@@ -13,6 +13,20 @@ ht-degree: 40%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.16.0 - 2023年3月30日
+
+**新增功能**
+
+* （测试版）已添加 **[!UICONTROL 更新变量]** 操作和 **[!UICONTROL 变量]** 数据元素。
+* 添加了 [`onBeforeLinkClickSend`](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) 回调函数。
+
+**修复和改进功能**
+
+* 修复了在 **[!UICONTROL 通过标识重定向]** 操作。
+* 修复了当只有一个架构时，XDM对象数据元素不起作用的问题。
+* 包含Adobe Experience Platform Web SDK版本2.15.0。
+
 
 ## 版本2.15.1 - 2023年1月26日
 

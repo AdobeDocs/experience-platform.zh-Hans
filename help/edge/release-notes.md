@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 6009592d47cf8f3d0d31e919aff0552e370b2063
+source-git-commit: 009475c8bab3eb29a5d8a97763967d49ccf0999d
 workflow-type: tm+mt
-source-wordcount: '1470'
+source-wordcount: '1507'
 ht-degree: 3%
 
 ---
@@ -16,11 +16,21 @@ ht-degree: 3%
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](extension/web-sdk-ext-release-notes.md).
 
-## 版本2.14.0 - 2023年1月25日
+## 版本2.15.0 - 2023年3月30日
 
 **新增功能**
 
-* （测试版）增加了对AJO表面和建议的支持。
+* 添加了 [`onBeforeLinkClickSend`](fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) 链接点击回调。
+* 添加了对Adobe Journey Optimizer点击跟踪的支持。
+
+**修复和改进功能**
+
+* 链接集合现在包含链接名称和访客区域。
+* 删除了失败URL目标的控制台错误。
+
+## 版本2.14.0 - 2023年1月25日
+
+* （测试版）增加了对Adobe Journey Optimizer表面和建议的支持。
 
 **修复和改进功能**
 
