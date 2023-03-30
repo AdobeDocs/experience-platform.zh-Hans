@@ -1,26 +1,26 @@
 ---
 title: 查询服务中的模糊匹配
 description: 了解如何对平台数据执行匹配，该数据通过大致匹配您选择的字符串来合并来自多个数据集的结果。
-source-git-commit: a3a4ca4179610348eba73cf1239861265d2bf887
+source-git-commit: 633210fe5e824d8686a23b877a406db3780ebdd4
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
 
-# 模糊匹配
+# 查询服务中的模糊匹配
 
-在您的平台数据中使用“fuzzy”匹配可返回最可能的近似匹配，而无需搜索具有相同字符的字符串。 这样可以更灵活地搜索数据，并通过节省时间和精力使数据更易于访问。
+对Adobe Experience Platform数据使用“fuzzy”匹配，以返回最可能的近似匹配，而无需搜索具有相同字符的字符串。 这样可以更灵活地搜索数据，并通过节省时间和精力使数据更易于访问。
 
-模糊匹配不会尝试重新设置搜索字符串的格式以便匹配它们，而是会分析两个序列之间的相似度比率，并返回相似度百分比。 [!DNL FuzzyWuzzy] 建议使用此流程，因为与相比，其函数更适合在更复杂的情况下帮助匹配字符串 [!DNL regex] 或 [!DNL difflib].
+模糊匹配不会尝试重新设置搜索字符串的格式以便匹配它们，而是会分析两个序列之间的相似度比率，并返回相似度百分比。 [[!DNL FuzzyWuzzy]](https://pypi.org/project/fuzzywuzzy/) 建议使用此流程，因为与相比，其函数更适合在更复杂的情况下帮助匹配字符串 [!DNL regex] 或 [!DNL difflib].
 
-此用例中提供的示例侧重于在两个不同的旅行社数据集中匹配酒店房间搜索中的相似属性。 文档演示了如何根据字符串与大型单独数据源的相似度来匹配字符串。 在此示例中，模糊匹配比较Luma和Acme旅行社的房间功能的搜索结果。
+此用例中提供的示例重点在于，在两个不同的旅行社数据集中，匹配来自酒店房间搜索的相似属性。 文档演示了如何根据字符串与大型单独数据源的相似度来匹配字符串。 在此示例中，模糊匹配比较Luma和Acme旅行社的房间功能的搜索结果。
 
 ## 快速入门 {#getting-started}
 
 在此过程中，需要您培训机器学习模型，本文档假定您了解一个或多个机器学习环境的工作知识。
 
-此示例使用 [!DNL Python] 和 [!DNL Jupyter Notebook] 开发环境。 尽管有许多可用选项， [!DNL Jupyter Notebook] 推荐使用，因为它是一个计算要求较低的开源web应用程序。 它可以是 [从官方的朱佩特网站下载](https://jupyter.org/).
+此示例使用 [!DNL Python] 和 [!DNL Jupyter Notebook] 开发环境。 尽管有许多可用选项， [!DNL Jupyter Notebook] 推荐使用，因为它是一个计算要求较低的开源web应用程序。 可以从下载 [官方的朱佩特网站](https://jupyter.org/).
 
 在开始之前，必须导入必要的库。 [!DNL FuzzyWuzzy] 是开源的 [!DNL Python] 基于 [!DNL difflib] 库，用于匹配字符串。 它使用 [!DNL Levenshtein Distance] 来计算序列和模式之间的差异。 [!DNL FuzzyWuzzy] 具有以下要求：
 
@@ -43,7 +43,7 @@ pip install fuzzywuzzy[speedup]
 
 ### 连接到查询服务
 
-必须通过提供连接凭据将机器学习模型连接到查询服务。 可以提供过期和未过期的凭据。 请参阅 [凭据指南](../ui/credentials.md) 以详细了解如何获取必要的凭据。 如果您使用 [!DNL Jupyter Notebook]，请参阅 [如何连接到查询服务](../clients/jupyter-notebook.md).
+必须通过提供连接凭据将机器学习模型连接到查询服务。 可以提供过期和未过期的凭据。 请参阅 [凭据指南](../ui/credentials.md) 以详细了解如何获取必要的凭据。 如果您使用 [!DNL Jupyter Notebook]，请阅读 [如何连接到查询服务](../clients/jupyter-notebook.md).
 
 此外，请务必导入 [!DNL numpy] 包到 [!DNL Python] 启用线性代数的环境。
 
