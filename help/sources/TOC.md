@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 840ad16b3762afee0b36bdd93c5be566c5a29b18
+source-git-commit: 10edb5dfd9ce99b69cf5bb014f4903942c9bff3e
 workflow-type: tm+mt
-source-wordcount: '952'
+source-wordcount: '963'
 ht-degree: 11%
 
 ---
@@ -352,6 +352,9 @@ ht-degree: 11%
       - [记录源（流SDK）](sources-sdk/streaming/document-streaming.md)
       - [文档自助API流模板](sources-sdk/streaming/streaming-template-api.md)
       - [文档自助服务UI流模板](sources-sdk/streaming/streaming-template-ui.md)
+- 错误消息 {#errors}
+   - [源中的错误消息](./errors/sources-errors.md)
+   - [流量服务中的错误消息](./errors/flow-service-errors.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
