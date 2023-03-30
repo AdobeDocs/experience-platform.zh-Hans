@@ -4,10 +4,10 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: Learn how to configure the Experience Platform Web SDK
 keywords: 配置；配置；SDK；边缘；Web SDK；配置；edgeConfigId；上下文；Web；设备；placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;Web SDK设置；prehidingStyle;ocookieDestinationsEnable;urlDestinationsEnabled;idMigCookiesEnabled；第三方Cookies
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: ed39d782ba6991a00a31b48abb9d143e15e6d89e
+source-git-commit: a192a746fa227b658fcdb8caa07ea6fb4ac1a944
 workflow-type: tm+mt
-source-wordcount: '999'
-ht-degree: 14%
+source-wordcount: '1128'
+ht-degree: 9%
 
 ---
 
@@ -36,21 +36,21 @@ alloy("configure", {
 >
 >**边缘配置已重新命名为数据流。 数据流ID与配置ID相同。**
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | None |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 您分配的配置ID，用于将SDK关联到相应的帐户和配置。 在单个页面中配置多个实例时，必须配置其他 `edgeConfigId` （对于每个实例）。
 
 ### `context` {#context}
 
-| **类型** | **必需** | **默认值** |
+| **类型** | 必需 | **默认值** |
 | ---------------- | ------------ | -------------------------------------------------- |
 | 字符串数组 | 否 | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 指示要自动收集的上下文类别，如 [自动信息](../data-collection/automatic-information.md). 如果未指定此配置，则默认使用所有类别。
 
@@ -67,11 +67,11 @@ alloy("configure", {
 
 ### `debugEnabled`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `false` |
+| 布尔值 | 否 | `false` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 指示是否启用调试。 将此配置设置为 `true` 启用以下功能：
 
@@ -79,7 +79,7 @@ alloy("configure", {
 | ---------------------- | ------------------ |
 | 控制台日志记录 | 允许在浏览器的JavaScript控制台中显示调试消息 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `edgeDomain` {#edge-domain}
 
@@ -91,19 +91,19 @@ alloy("configure", {
 
 用于与Adobe服务通信和交互的edgeDomain后面的路径。  通常，仅当不使用默认生产环境时，这种情况才会发生更改。
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
 | 字符串 | 否 | ee |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `orgId`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 字符串 | 是 | 无 |
+| 字符串 | 是 | None |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 您分配的 [!DNL Experience Cloud] 组织ID。 在一个页面中配置多个实例时，必须配置其他 `orgId` （对于每个实例）。
 
@@ -111,33 +111,52 @@ alloy("configure", {
 
 ### `clickCollectionEnabled` {#clickCollectionEnabled}
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `true` |
+| 布尔值 | 否 | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 指示是否自动收集与链接点击量关联的数据。 请参阅 [自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking) 以了解更多信息。 如果链接包含下载属性或链接以文件扩展名结尾，则也会将其标记为下载链接。 下载链接限定符可以配置正则表达式。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
 | 函数 | 否 | ()=>未定义 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 在发送每个事件之前，配置为其调用的回调。 具有字段的对象 `xdm` 将发送到回调。 要更改发送的内容，请修改 `xdm` 对象。 在回调函数中， `xdm` 对象已在event命令中传递了数据，并且自动收集了信息。 有关此回调的时间和示例的更多信息，请参阅 [全局修改事件](tracking-events.md#modifying-events-globally).
+
+### `onBeforeLinkClickSend` {#onBeforeLinkClickSend}
+
+| 类型 | 必需 | 默认值 |
+| -------- | ------------ | ----------------- |
+| 函数 | 否 | ()=>未定义 |
+
+{style="table-layout:auto"}
+
+在发送每个链接点击跟踪事件之前，配置一个为其调用的回调。 回调会使用 `xdm`, `clickedElement`和 `data` 字段。
+
+使用DOM元素结构过滤链接跟踪时，可以使用 `clickElement` 命令。 `clickedElement` 是已单击并封装父节点树的DOM元素节点。
+
+要更改发送的数据，请修改 `xdm` 和/或 `data` 对象。 在回调函数中， `xdm` 对象已在event命令中传递了数据，并且自动收集了信息。
+
+* 除 `false` 将允许该事件处理并发送回调。
+* 如果回调返回 `false` 值时，将停止事件处理，且没有错误，并且不会发送事件。 此机制允许通过检查事件数据并返回来过滤掉某些事件 `false` 如果不应发送该事件。
+* 如果回调引发异常，则将停止处理该事件，并且不会发送该事件。
+
 
 ## 隐私选项
 
 ### `defaultConsent` {#default-consent}
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
 | 对象 | 否 | `"in"` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 设置用户的默认同意。 如果尚未为用户保存同意首选项，则使用此设置。 其他有效值为 `"pending"` 和 `"out"`. 此默认值不会持久保留在用户的配置文件中。 用户的配置文件仅在 `setConsent` 调用。
 * `"in"`:如果设置此设置或未提供任何值，则在未使用用户同意首选项的情况下继续工作。
@@ -149,11 +168,11 @@ alloy("configure", {
 
 ### `prehidingStyle` {#prehidingStyle}
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 字符串 | 否 | 无 |
+| 字符串 | 否 | None |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 用于创建CSS样式定义，当从服务器加载个性化内容时，该定义会隐藏网页的内容区域。 如果未提供此选项，则SDK在加载个性化内容时不会尝试隐藏任何内容区域，这可能会导致“闪烁”。
 
@@ -169,29 +188,29 @@ alloy("configure", {
 
 使用此选项可启用Web SDK以读取和写入旧版 `mbox` 和 `mboxEdgeCluster` 由 [!DNL at.js]. 这有助于您在从使用Web SDK的页面移动到使用 [!DNL at.js] 图书馆，反之亦然。
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `false` |
+| 布尔值 | 否 | `false` |
 
 ## 受众选项
 
 ### `cookieDestinationsEnabled`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `true` |
+| 布尔值 | 否 | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 启用 [!DNL Audience Manager] cookie目标，允许根据区段鉴别来设置cookie。
 
 ### `urlDestinationsEnabled`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `true` |
+| 布尔值 | 否 | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 启用 [!DNL Audience Manager] URL目标，允许根据区段鉴别触发URL。
 
@@ -199,11 +218,11 @@ alloy("configure", {
 
 ### `idMigrationEnabled` {#id-migration-enabled}
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `true` |
+| 布尔值 | 否 | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 如果为true，则SDK会读取并设置旧的AMCV Cookie。 此选项有助于过渡到使用Adobe Experience Platform Web SDK，而网站的某些部分可能仍使用Visitor.js。
 
@@ -211,10 +230,10 @@ alloy("configure", {
 
 ### `thirdPartyCookiesEnabled`
 
-| **类型** | **必需** | **默认值** |
+| 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 布尔型 | 否 | `true` |
+| 布尔值 | 否 | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 启用Adobe第三方Cookie的设置。 SDK可以在第三方上下文中保留访客ID，以便允许在网站之间使用相同的访客ID。 如果您有多个网站，或者希望与合作伙伴共享数据，请使用此选项；但是，有时出于隐私原因不需要此选项。

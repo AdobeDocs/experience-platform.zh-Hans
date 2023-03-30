@@ -3,10 +3,10 @@ title: 使用Adobe Experience Platform Web SDK跟踪链接
 description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
 keywords: Adobe Analytics;Analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;Web Interaction；页面查看次数；链接跟踪；链接；跟踪链接；clickCollection；点击收藏集；
 exl-id: d5a1804c-8f91-4083-a46e-ea8f7edf36b6
-source-git-commit: dac14cd358922b577c71f8d9b7f7c9b7e1b4f87d
+source-git-commit: 04078a53bc6bdc01d8bfe0f2e262a28bbaf542da
 workflow-type: tm+mt
-source-wordcount: '340'
-ht-degree: 0%
+source-wordcount: '470'
+ht-degree: 1%
 
 ---
 
@@ -34,6 +34,8 @@ alloy("sendEvent", {
   }
 });
 ```
+
+从版本2.15.0开始，Web SDK会捕获 `region` 的HTML元素。 这将启用 [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html?lang=zh-Hans) 报表功能。Adobe Analytics
 
 链接类型可以是以下三个值之一：
 
@@ -90,3 +92,23 @@ alloy("configure", {
 });
 ```
 
+从Web SDK版本2.15.0开始，通过自动链接跟踪收集的数据可以通过提供 [onBeforeLinkClickSend回调函数](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend).
+
+此回调函数仅在发生自动链接点击事件时才执行。
+
+```javascript
+alloy("configure", {
+  onBeforeLinkClickSend: function(options) {
+    if (options.xdm.web.webInteraction.type === "download") {
+      options.xdm.web.webInteraction.name = undefined;
+    }
+  }
+});
+```
+
+使用 `onBeforeLinkClickSend` 命令，Adobe建议返回 `false` 链接点击次数。 任何其他响应都会使Web SDK将数据发送到边缘网络。
+
+
+>[!NOTE]
+>
+>**当 `onBeforeEventSend` 和 `onBeforeLinkClickSend` 设置回调函数，Web SDK将运行 `onBeforeLinkClickSend` 回调函数来筛选和扩充链接点击交互事件，然后是 `onBeforeEventSend` 回调函数。
