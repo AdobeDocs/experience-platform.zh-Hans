@@ -2,9 +2,9 @@
 title: 在UI中创建Marketo Engage源连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将B2B数据引入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: d049a29d4c39fa41917e8da1dde530966f4cbaf4
+source-git-commit: b271d28677543f773fe1ba471fc08574e7c5542b
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1693'
 ht-degree: 0%
 
 ---
@@ -183,3 +183,24 @@ ht-degree: 0%
 
 * [[!DNL Real-Time Customer Profile] 概述](/help/profile/home.md)
 * [[!DNL Data Science Workspace] 概述](/help/data-science-workspace/home.md)
+
+## 附录 {#appendix}
+
+以下部分提供了在使用 [!DNL Marketo] 来源。
+
+### UI中的错误消息 {#error-messages}
+
+当Platform检测到您的设置存在问题时，UI中会显示以下错误消息：
+
+#### [!DNL Munchkin ID] 未映射到相应的组织
+
+如果您的 [!DNL Munchkin ID] 未映射到您使用的平台组织。 配置 [!DNL Munchkin ID] 和贵组织使用 [[!DNL Marketo] 界面](https://app-sjint.marketo.com/#MM0A1).
+
+![显示Marketo实例未正确映射到Adobe组织的错误消息。](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
+
+#### 缺少主标识
+
+如果缺少主标识，则数据流将无法保存和摄取。 确保 [XDM架构中存在主标识](../../../../../xdm/tutorials/create-schema-ui.md)，然后再尝试配置数据流。
+
+![显示XDM架构中缺少主标识的错误消息。](../../../../images/tutorials/create/marketo/no-primary-identity.png)
+
