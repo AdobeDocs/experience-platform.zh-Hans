@@ -2,11 +2,11 @@
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标
 title: 电子邮件营销目标概述
 type: Tutorial
-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
+description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。 了解哪些ESP作为Experience Platform目标受支持。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: ccbc633bfce8f4f66577b50064c28cfc26cb6dca
+source-git-commit: d6ea94b275ab0ed7c0638200188fe7ada7bacf5c
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '377'
 ht-degree: 4%
 
 ---
@@ -17,16 +17,17 @@ ht-degree: 4%
 
 电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件活动。 Adobe Experience Platform通过允许您将区段激活到电子邮件营销目标来与ESP集成。
 
-Platform将您的区段导出为 `.csv` 文件并将其传送到首选位置。 从 [!DNL Platform]. 每个合作伙伴的数据导入流程各不相同。 有关更多信息，请阅读各个目标文章。
-
 ## 支持的电子邮件营销目标 {#supported-destinations}
 
 Adobe Experience Platform支持以下电子邮件营销目标：
 
 * [Adobe Campaign](adobe-campaign.md)
-* [Oracle雄辩](oracle-eloqua.md)
+* [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)
+* [(API)OracleEloqua](oracle-eloqua-api.md)
+* [(API)SalesforceMarketing Cloud](salesforce-marketing-cloud-exact-target.md)
+* [（文件）OracleEloqua](oracle-eloqua.md)
+* [（文件）SalesforceMarketing Cloud](salesforce-marketing-cloud.md)
 * [OracleResponsys](oracle-responsys.md)
-* [SalesforceMarketing Cloud](salesforce-marketing-cloud.md)
 * [SendGrid](sendgrid.md)
 
 ## 连接到新的电子邮件营销目标 {#connect-destination}
@@ -45,7 +46,9 @@ Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-
 | Phone | `mobilePhone.number` |
 | 忠诚度计划ID | `Customer-defined XDM field` |
 
-### 其他目标属性
+{style="table-layout:auto"}
+
+### 其他目标属性 {#other-destination-attributes}
 
 在架构字段选择器中，选择要导出到电子邮件目标的其他字段。 一些推荐选项包括：
 
@@ -53,27 +56,24 @@ Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-
 |------ | ---------|
 | 名字 | `person.name.firstName` |
 | 姓氏 | `person.name.lastName` |
-| 电话 | `mobilePhone.number` |
+| Phone | `mobilePhone.number` |
 | 地址城市 | `homeAddress.city` |
 | 地址状态 | `homeAddress.stateProvince` |
 | 地址邮政编码 | `homeAddress.postalCode` |
 | 生日 | `person.birthDayAndMonth` |
-| 区段成员资格 | `segmentMembership.status` |
+| 区段会员资格 | `segmentMembership.status` |
 
-## 将数据从存储位置导入目标 {#import-data-into-destination}
-
-阅读单个电子邮件营销目标文章，了解如何将数据从存储位置导入目标：
-
-* [Adobe Campaign](adobe-campaign.md)
-* [Oracle雄辩](oracle-eloqua.md)
-* [OracleResponsys](oracle-responsys.md)
-* [SalesforceMarketing Cloud](salesforce-marketing-cloud.md)
+{style="table-layout:auto"}
 
 ## 将区段激活到电子邮件营销目标 {#activate}
 
-有关如何将区段激活到电子邮件营销目标的说明，请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md).
+目录中的某些电子邮件营销目标通过与目标的API集成，以流式方式导出用户档案。
 
-## 其他资源
+其他目标会将文件导出到云存储位置。 导出完成后，您需要将数据从云存储位置导入电子邮件营销目标。
+
+访问 [支持的电子邮件营销目标](#supported-destinations) 部分以了解如何将区段激活到每个电子邮件营销目标。
+
+## 其他资源 {#additional-resources}
 
 * [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)
 * [使用流量服务API创建电子邮件营销目标并激活数据](../../api/connect-activate-batch-destinations.md)
