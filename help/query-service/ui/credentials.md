@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
+source-git-commit: 879f3eb1f6856470e8e2d87537ca12438ca25d22
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1338'
 ht-degree: 3%
 
 ---
@@ -123,13 +123,15 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >在使用未过期的凭据连接到主机时，仍需要使用 [!UICONTROL 过期凭据] 部分，但密码和用户名除外。
 >输入用户名和密码的格式使用冒号分隔值，如本例中所示 `username:{your_username}` 和 `password:{password_string}`.
 
-| 参数 | 描述 |
-|---|---|
-| **服务器/主机** | 您连接到的服务器/主机的名称。 <ul><li>此值用于过期的凭据和未过期的凭据，其形式为 `server.adobe.io`. 值位于 **[!UICONTROL 主机]** 在 [!UICONTROL 过期凭据] 中。</ul></li> |
-| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值用于过期的凭据和未过期的凭据，可在 **[!UICONTROL 端口]** 在 [!UICONTROL 过期凭据] 中。 端口的示例值为 `80`.</ul></li> |
-| **数据库** | 您连接到的数据库。 <ul><li>此值用于过期的凭据和未过期的凭据，可在 **[!UICONTROL 数据库]** 在 [!UICONTROL 过期凭据] 中。 数据库的示例值为 `prod:all`.</ul></li> |
-| **用户名** | 连接到外部客户端的用户的用户名。 <ul><li>此值用于过期的凭据和未过期的凭据。 它采用字母数字字符串的形式，在 `@AdobeOrg`. 此值位于 **[!UICONTROL 用户名]**.</li></ul> |
-| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的凭据已过期，可在 **[!UICONTROL 密码]** 在 [!UICONTROL 过期凭据] 中。</li><li>如果您使用的是未过期的凭据，则此值是technicalAccountID的连接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`.</li></ul> |
+| 参数 | 描述 | 示例 |
+|---|---|---|
+| **服务器/主机** | 您连接到的服务器/主机的名称。 <ul><li>此值用于过期的凭据和未过期的凭据，其形式为 `server.adobe.io`. 值位于 **[!UICONTROL 主机]** 在 [!UICONTROL 过期凭据] 中。</ul></li> | `acme.platform.adobe.io` |
+| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值用于过期的凭据和未过期的凭据，可在 **[!UICONTROL 端口]** 在 [!UICONTROL 过期凭据] 中。</ul></li> | `80` |
+| **数据库** | 您连接到的数据库。 <ul><li>此值用于过期的凭据和未过期的凭据，可在 **[!UICONTROL 数据库]** 在 [!UICONTROL 过期凭据] 中。 </ul></li> | `prod:all` |
+| **用户名** | 连接到外部客户端的用户的用户名。 <ul><li>此值用于过期的凭据和未过期的凭据。 它采用字母数字字符串的形式，在 `@AdobeOrg`. 此值位于 **[!UICONTROL 用户名]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
+| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的凭据已过期，可在 **[!UICONTROL 密码]** 在 [!UICONTROL 过期凭据] 中。</li><li>如果您使用的是未过期的凭据，则此值是technicalAccountID的连接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>过期凭据密码超过一千个字符的字母数字字符串。 将不提供任何示例。</li><li>未过期的凭据密码如下所示：`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
+
+{style="table-layout:auto"}
 
 ## 后续步骤
 
