@@ -2,9 +2,9 @@
 title: 管理Privacy Service权限
 description: 了解如何使用Adobe Admin Console管理Adobe Experience Platform Privacy Service的用户权限。
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
-source-git-commit: 37a67b19fa0cb38e9e34066c869dd9dc49edefd6
+source-git-commit: fc6c22ab1185b9692ece86de75149102ce020474
 workflow-type: tm+mt
-source-wordcount: '1064'
+source-wordcount: '1095'
 ht-degree: 1%
 
 ---
@@ -34,6 +34,10 @@ ht-degree: 1%
 ## 可用权限
 
 下表概述了Privacy Service的可用权限，并介绍了授予访问权限的特定功能：
+
+>[!NOTE]
+>
+>所有Privacy Service和 [!UICONTROL 选择退出销售] 权限是不同的，并且相互之间不存在功能重叠。 这是可能的，因为Privacy ServiceAPI被视为幂等。
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
