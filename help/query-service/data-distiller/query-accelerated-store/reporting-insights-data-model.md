@@ -2,9 +2,9 @@
 title: Query Accelerated Store Reporting Insights指南
 description: 了解如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板结合使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1033'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,11 @@ Adobe Experience Platform的Real-Time CDP数据模型提供对用户档案、区
 
 ## 快速入门
 
-需要使用Distiller SKU来构建自定义数据模型，以便进行报表分析，并扩展包含丰富的Platform数据的Real-Time CDP数据模型。 请参阅 [包装](../../packages.md), [护栏](../../guardrails.md#query-accelerated-store)和 [许可](../../data-distiller/license-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+需要使用Distiller SKU来构建自定义数据模型，以便进行报表分析，并扩展包含丰富的Platform数据的Real-Time CDP数据模型。 请参阅 [包装](../../packages.md) 和 [护栏](../../guardrails.md#query-accelerated-store) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+
+<!-- Document is hidden temporarily
+Please see the [packaging](../../packages.md), [guardrails](../../guardrails.md#query-accelerated-store), and [licensing](../../data-distiller/license-usage.md) documentation that relates to the Data Distiller SKU. 
+-->
 
 ## 构建报表分析数据模型
 

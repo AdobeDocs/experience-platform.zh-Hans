@@ -2,9 +2,9 @@
 title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储，以便快速返回基于聚合数据的结果。 本文档为查询服务加速查询端点提供了HTTP请求和响应示例。
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '566'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,11 @@ ht-degree: 1%
 
 ## 快速入门
 
-要使用查询加速存储，需要Data Distiller SKU。 请参阅 [包装](../packages.md), [护栏](../guardrails.md#query-accelerated-store)和 [许可](../data-distiller/license-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+要使用查询加速存储，需要Data Distiller SKU。 请参阅 [包装](../packages.md) 和 [护栏](../guardrails.md#query-accelerated-store) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+
+<!-- Document is hidden temporarily
+Please see the [packaging](../packages.md), [guardrails](../guardrails.md#query-accelerated-store), and [licensing](../data-distiller/license-usage.md) documentation that relates to the Data Distiller SKU. 
+-->
 
 以下各节详细介绍通过查询服务API以无状态方式访问查询加速存储所需的API调用。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
 
