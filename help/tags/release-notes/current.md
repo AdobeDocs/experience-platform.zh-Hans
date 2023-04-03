@@ -2,9 +2,9 @@
 title: 标记和事件转发发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: f2f2f9abc50f2016e41fd23bfbb66553fadf6fce
+source-git-commit: 3ebf8df16f88660eab481bd0a0ba88816b470255
 workflow-type: tm+mt
-source-wordcount: '679'
+source-wordcount: '720'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,8 @@ ht-degree: 4%
 已发布新扩展：
 
 * **[!DNL Braze]事件转发扩展**:的 [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 事件转发扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Braze] 以服务器端事件的形式使用 [!DNL Braze] 用户跟踪API。
-* **[!DNL Mixpanel]事件转发扩展**:的 [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发在Adobe Experience Platform Edge Network中捕获事件信息，并使用跟踪事件API将其发送到Mixpanel。
+* **[Epsilon事件API] 事件转发扩展**:的 [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发在Adobe Experience Platform边缘网络中捕获事件信息，并将其发送到 [!DNL Epsilon] 使用 [!DNL Epsilon] 事件API。
+* **[!DNL Mixpanel]事件转发扩展**:的 [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发在Adobe Experience Platform边缘网络中捕获事件信息，并将其发送到 [!DNL Mixpanel] 使用跟踪事件API。
 
 ## 2023 年 1 月 25 日
 
