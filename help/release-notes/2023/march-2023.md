@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2023年3月
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: 1ead97aa9b197cd1c046175bdcd06c03fd35ac17
+source-git-commit: e597656949ba81b4a07c2962a02ddd94c6dc23e3
 workflow-type: tm+mt
-source-wordcount: '1762'
+source-wordcount: '2206'
 ht-degree: 4%
 
 ---
@@ -111,6 +111,38 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 功能 | 描述 |
 | --- | --- |
 | CSV模式推荐 | 您现在可以上传本地文件来创建机器学习生成的架构，从而无需手动创建架构。 从 [!UICONTROL 源] 工作区、上传CSV文件示例，Adobe机器学习算法将根据目标字段为您建议一种模式。 请参阅 [文档](../../ingestion/tutorials/map-csv/recommendations.md) ”。 |
+
+{style="table-layout:auto"}
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 类 | [[!UICONTROL 选件项目]](https://github.com/adobe/xdm/pull/1678/files) | 表示选件的类。 |
+| 类 | [[!UICONTROL 决策项]](https://github.com/adobe/xdm/pull/1678/files) | 可进行决策的项目。 决策过程的输出是一个或多个决策项。 |
+| 类 | [[!UICONTROL 媒体会话服务器超时]](https://github.com/adobe/xdm/pull/1676/files) | 这表示用户上次已知交互与会话关闭时间之间经过的时间（以秒为单位）。 |
+| 字段组 | [[!UICONTROL XDM配置文件计算属性]](https://github.com/adobe/xdm/pull/1686/files) | 这会将来自Adobe内部服务的计算属性添加到传入的客户数据。 客户不应使用此功能来摄取数据。 |
+| 数据类型 | [[!UICONTROL 退款项目]](https://github.com/adobe/xdm/pull/1685/files) | 指示退款是否与订单关联，并定义退款类型、金额和关联币种。 |
+| 数据类型 | [[!UICONTROL 类别数据]](https://github.com/adobe/xdm/pull/1677/files) | 此新数据类型表示产品的类别。 |
+| 架构 | [[!UICONTROL Adobe Target分类字段]](https://github.com/adobe/xdm/pull/1682/files) | 已为Target分类数据集创建新的XDM架构。 它包含一组元数据字段，用于对Target活动和体验进行分类。 |
+
+{style="table-layout:auto"}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | [[!UICONTROL 内容组件详细信息]](https://github.com/adobe/xdm/pull/1674/files) | `uri-reference` 从 [!UICONTROL 内容组件详细信息] |
+| 字段组 | [[!UICONTROL AJO实体标记]](https://github.com/adobe/xdm/pull/1672/files) | 向 [!UICONTROL AJO实体字段]，对应于历程或营销活动 |
+| 字段组 | （多个） | 为 [[!UICONTROL Journey Orchestration步骤事件常用字段]](https://github.com/adobe/xdm/pull/1671/files) |
+| 字段组 | （多个） | [为 [!UICONTROL 媒体报告]](https://github.com/adobe/xdm/pull/1670/files). |
+| 字段组 | [!UICONTROL Workfront更改事件] | 的 `Full Record` 和 `Accessor Employee Ids` 字段组。 |
+| 数据类型 | [[!UICONTROL 产品列表项]](https://github.com/adobe/xdm/pull/1685/files) | 的 [!UICONTROL 退款金额] 已添加，以指明该物项的退款额（如有）。 |
+| 数据类型 | [[!UICONTROL 订购 ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL 退款列表] 已添加到此订单的退款列表。 |
+| 数据类型 | [[!UICONTROL 产品列表项 ]](https://github.com/adobe/xdm/pull/1677/files) | 产品类别已添加到此产品类别数据的列表。 |
+| 数据类型 | [!UICONTROL 会话详细信息] | 添加了 `pev3` 字符串字段 [指示用于报告的媒体流类型](https://github.com/adobe/xdm/pull/1676/files). 此外，还添加了 `pccr` 属性指示是否发生重定向。 |
+| 数据类型 | [!UICONTROL 申请列表] | 提供 [申请列表属性](https://github.com/adobe/xdm/pull/1675/files). 这些属性包括名称、ID和描述。 |
+| 数据类型 | [!UICONTROL Commerce] | 的 [商务数据类型已更新](https://github.com/adobe/xdm/pull/1675/files) 包含 `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals`和 `requisitionList`. |
 
 {style="table-layout:auto"}
 
