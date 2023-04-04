@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私法规常见问题解答
 description: 本文档对有关受支持的法律隐私法规及其在Adobe Experience Cloud中实施的常见问题解答进行了解答。
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 7e86721f6dd6fd280ae7e7e67aca21b4258ffb66
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1619'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,11 @@ A **数据控制器** 是指有权力和责任对收集、使用或披露个
 
 假设该企业已经收集了个人信息，并且能够验证或验证特定消费者的身份，则隐私法规允许满足消费者请求的特定时间窗口。 下表对每项法规的适用时间窗口进行了划分，并对一些例外进行了说明：
 
-| 监管 | 合规性窗口 | 注释 |
+>[!NOTE]
+>
+>在“天”内做出回应的时间表，反映了每部监管法规定的完成消费者请求的时间表。
+
+| 监管 | 响应的时间范围 | 注释 |
 | --- | --- | --- |
 | CCPA（加利福利亚） | 45 天 |  |
 | GDPR（欧盟） | 30 天 | 如果请求复杂，或同一数据主体已发出大量请求，则请求可延长到60天。 |
