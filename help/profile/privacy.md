@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 4cb6280ea646f813a064eb08fef4ab29126ec3ea
+source-git-commit: e5ea0672ba8e9b5951464396a75decc5d8508ff4
 workflow-type: tm+mt
-source-wordcount: '1612'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -186,10 +186,6 @@ curl -X POST \
 ## 删除请求处理 {#delete}
 
 When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，在隐私作业完成后，将删除记录。
-
->[!IMPORTANT]
->
->隐私删除请求不是即时请求，可能会因涉及的服务和其他影响因素（如地理位置）而有所不同。 完成隐私工作的时间范围可从15天到45天不等，但无法保证。
 
 根据您是否还包含Identity Service(`identity`)和数据湖(`aepDataLake`)作为您对用户档案的隐私请求(`ProfileService`)，则会在可能不同的时间从系统中删除与用户档案相关的不同数据集：
 
