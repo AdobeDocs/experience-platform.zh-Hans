@@ -7,7 +7,7 @@ exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
 source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
 source-wordcount: '794'
-ht-degree: 1%
+ht-degree: 15%
 
 ---
 
@@ -15,8 +15,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_description"
->title="控制对敏感和受保护数据的访问"
->abstract="<h2>描述</h2><p>控制对特定数据属性和/或区段的访问，从而允许您为各种角色和团队操作Experience Platform用例设计灵活的工作流。</p>"
+>title="控制访问敏感和受保护的数据"
+>abstract="<h2>描述</h2><p>通过控制访问特定的数据属性和/或区段，可为操作 Experience Platform 用例的各种角色和团队设计灵活的工作流。</p>"
 
 Adobe Experience Platform允许您将数据使用情况标签应用到数据集和字段，并根据相关的 [数据管理政策](../policies/overview.md) 和 [访问控制策略](../../access-control/abac/ui/policies.md).
 
@@ -51,7 +51,7 @@ Adobe Experience Platform允许您将数据使用情况标签应用到数据集�
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_instructions"
 >title="说明"
->abstract="<ul><li>为XDM字段和区段设置标签，以对要限制访问的字段和区段进行分类。</li><li>为角色添加标签，通过向角色添加标签，您可以定义此角色成员应具有限制的标签。</li><li>创建策略时，策略会在标记对象（如XDM字段和区段）上的标签与角色上的标签之间创建一种关系。 如果标签匹配，则可以定义许可或限制访问。</li></ul>"
+>abstract="<ul><li>为 XDM 字段和区段加标签以划分要限制访问其的字段和/或区段。</li><li>为角色加标签，通过将标签添加到角色，可定义此角色的成员应在其上具有限制的标签。</li><li>创建策略，策略在加了标签的对象（如 XDM 字段和区段）上的标签与角色上的标签之间建立关系。如果标签匹配，则可以定义允许或限制访问。</li></ul>"
 
 您可以使用 [!DNL Experience Platform] API或用户界面。 有关每个子部分的详细信息，请参阅下面的子部分。
 
