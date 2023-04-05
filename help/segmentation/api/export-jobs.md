@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段导出作业API端点
 description: 导出作业是用于将受众区段成员保留到数据集的异步进程。 您可以在Adobe Experience Platform Segmentation Service API中使用/export/jobs端点，该端点允许您以编程方式检索、创建和取消导出作业。
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d28cebaf4b9fe5c35240e28653e99424db08d9d2
 workflow-type: tm+mt
-source-wordcount: '1682'
+source-wordcount: '1631'
 ht-degree: 2%
 
 ---
@@ -144,7 +144,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
                     {
                         "segmentId": "52c26d0d-45f2-47a2-ab30-ed06abc981ff",
                         "segmentNs": "AAM",
-                        "status": ["realized", "existing"]
+                        "status": ["realized"]
                     }
                 ]
             },
@@ -200,7 +200,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
 | `destination` | 导出数据的目标信息：<ul><li>`datasetId`:导出数据的数据集的ID。</li><li>`segmentPerBatch`:一个布尔值，用于显示区段ID是否已合并。 值“false”表示所有区段ID都导出为单个批量ID。 值“true”表示将一个区段ID导出为一个批量ID。 **注意：** 将值设置为true可能会影响批量导出性能。</li></ul> |
 | `fields` | 导出字段的列表，用逗号分隔。 |
 | `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:将用户档案导出到的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized", "existing"]` 表示当前属于该区段的所有用户档案。 可能的值包括：“已实现”、“现有”和“已退出”。 值“已实现”表示用户档案正在进入区段。 值“现有”表示用户档案继续位于区段中。 值“退出”表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:将用户档案导出到的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`. 值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `mergePolicy` | 导出数据的合并策略信息。 |
 | `metrics.totalTime` | 一个字段，用于指示导出作业运行所用的总时间。 |
 | `metrics.profileExportTime` | 一个字段，用于指示用户档案导出所用的时间。 |
@@ -279,7 +279,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `fields` | 导出字段的列表，用逗号分隔。 如果留空，则将导出所有字段。 |
 | `mergePolicy` | 指定用于管理导出数据的合并策略。 当有多个区段要导出时，请包含此参数。 如果未提供，则导出将采用与给定区段相同的合并策略。 |
 | `filter` | 一个对象，根据下面列出的子属性，指定将按ID、鉴别时间或摄取时间包含在导出作业中的区段。 如果留空，则会导出所有数据。 |
-| `filter.segments` | 指定要导出的区段。 省略此值将导致导出所有用户档案的所有数据。 接受区段对象的数组，每个数组都包含以下字段：<ul><li>`segmentId`: **(使用时需要 `segments`)** 要导出的用户档案的区段ID。</li><li>`segmentNs` *（可选）* 给定的区段命名空间 `segmentID`.</li><li>`status` *（可选）* 字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized", "existing"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `"realized"`, `"existing"`和 `"exited"`.  值“已实现”表示用户档案正在进入区段。 值“现有”表示用户档案继续位于区段中。 值“退出”表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 指定要导出的区段。 省略此值将导致导出所有用户档案的所有数据。 接受区段对象的数组，每个数组都包含以下字段：<ul><li>`segmentId`: **(使用时需要 `segments`)** 要导出的用户档案的区段ID。</li><li>`segmentNs` *（可选）* 给定的区段命名空间 `segmentID`.</li><li>`status` *（可选）* 字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `filter.segmentQualificationTime` | 根据区段鉴别时间进行筛选。 可以提供开始时间和/或结束时间。 |
 | `filter.segmentQualificationTime.startTime` | 给定状态的区段ID的区段鉴别开始时间。 未提供，将不会对区段ID鉴别的开始时间进行过滤。 必须在 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
 | `filter.segmentQualificationTime.endTime` | 给定状态的区段ID的区段鉴别结束时间。 如果未提供，则不会对区段ID鉴别的结束时间进行过滤。 必须在 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
@@ -470,7 +470,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
 | `destination` | 导出数据的目标信息：<ul><li>`datasetId`:导出数据的数据集的ID。</li><li>`segmentPerBatch`:一个布尔值，用于显示区段ID是否已合并。 值 `false` 表示所有区段ID都归为一个批处理ID。 值 `true` 表示将一个区段ID导出为一个批量ID。</li></ul> |
 | `fields` | 导出字段的列表，用逗号分隔。 |
 | `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:要导出的用户档案的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized", "existing"]` 表示当前属于该区段的所有用户档案。 可能的值包括：“已实现”、“现有”和“已退出”。  值“已实现”表示用户档案正在进入区段。 值“现有”表示用户档案继续位于区段中。 值“退出”表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:要导出的用户档案的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `mergePolicy` | 导出数据的合并策略信息。 |
 | `metrics.totalTime` | 一个字段，用于指示导出作业运行所用的总时间。 |
 | `metrics.profileExportTime` | 一个字段，用于指示用户档案导出所用的时间。 |

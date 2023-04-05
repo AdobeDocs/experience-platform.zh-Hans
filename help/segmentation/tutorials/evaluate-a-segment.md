@@ -5,9 +5,9 @@ title: 评估和访问区段结果
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 378f9260703d388976054431a76ac285724a9ae3
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1608'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ ht-degree: 0%
     "UPS": {
       "04a81716-43d6-4e7a-a49c-f1d8b3129ba9": {
         "timestamp": "2018-04-26T15:52:25+00:00",
-        "status": "existing"
+        "status": "realized"
       },
       "53cba6b2-a23b-454a-8069-fc41308f1c0f": {
         "lastQualificationTime": "2018-04-26T15:52:25+00:00",
@@ -129,7 +129,7 @@ ht-degree: 0%
 | 属性 | 描述 |
 | -------- | ----------- |
 | `lastQualificationTime` | 断言区段成员资格以及进入或退出区段的用户档案的时间戳。 |
-| `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`existing`:实体继续在分部中。</li><li>`realized`:实体正在输入区段。</li><li>`exited`:实体正在退出区段。</li></ul> |
+| `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`realized`:实体符合区段资格。</li><li>`exited`:实体正在退出区段。</li></ul> |
 
 >[!NOTE]
 >

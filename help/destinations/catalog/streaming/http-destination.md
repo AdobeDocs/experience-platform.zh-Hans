@@ -3,9 +3,9 @@ keywords: 流；HTTP目标
 title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 658cd7ec2d88d4b3633412f5c6d571351904e70b
+source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
 workflow-type: tm+mt
-source-wordcount: '2436'
+source-wordcount: '2431'
 ht-degree: 8%
 
 ---
@@ -213,7 +213,7 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段可用作目标导出的提示。 这意味着，如果任何映射的区段更改状态（从null更改为已实现或从已实现/现有更改为退出）或任何映射的属性已更新，则将开始目标导出。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件中任何身份的更改也会决定目标导出。</li><li>属性的更改被定义为属性的任何更新，无论该更新是否与属性的值相同。 这意味着，即使值本身未发生更改，属性上的覆盖也会被视为更改。</li></ul> | <ul><li>的 `segmentMembership` 对象包括在激活数据流中映射的区段，在鉴别或区段退出事件后，配置文件的状态发生了更改。 请注意，如果配置文件符合条件的其他未映射区段属于同一区段，则这些区段可能属于目标导出的一部分 [合并策略](/help/profile/merge-policies/overview.md) 作为激活数据流中映射的区段。 </li><li>中的所有标识 `identityMap` 对象也包含在内(Experience Platform当前不支持HTTP API目标中的身份映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和区段可用作目标导出的提示。 这表示如果任何映射的区段更改状态(从 `null` to `realized` 或 `realized` to `exiting`)或任何映射的属性都会更新，则将开始导出目标。</li><li>由于身份当前无法映射到HTTP API目标，因此给定配置文件中任何身份的更改也会决定目标导出。</li><li>属性的更改被定义为属性的任何更新，无论该更新是否与属性的值相同。 这意味着，即使值本身未发生更改，属性上的覆盖也会被视为更改。</li></ul> | <ul><li>的 `segmentMembership` 对象包括在激活数据流中映射的区段，在鉴别或区段退出事件后，配置文件的状态发生了更改。 请注意，如果配置文件符合条件的其他未映射区段属于同一区段，则这些区段可能属于目标导出的一部分 [合并策略](/help/profile/merge-policies/overview.md) 作为激活数据流中映射的区段。 </li><li>中的所有标识 `identityMap` 对象也包含在内(Experience Platform当前不支持HTTP API目标中的身份映射)。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -253,11 +253,11 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
       },
       "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae":{
          "lastQualificationTime":"2022-01-02T23:37:33Z",
-         "status":"existing"
+         "status":"realized"
       },
       "947c1c46-008d-40b0-92ec-3af86eaf41c1":{
          "lastQualificationTime":"2021-08-25T23:37:33Z",
-         "status":"existing"
+         "status":"realized"
       },
       "5114d758-ce71-43ba-b53e-e2a91d67b67f":{
          "lastQualificationTime":"2022-01-11T23:37:33Z",
@@ -295,7 +295,7 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
         "ups": {
           "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
             "lastQualificationTime": "2019-04-15T02:41:50+0000",
-            "status": "existing",
+            "status": "realized",
             "createdAt": 1648553325000,
             "updatedAt": 1648553330000,
             "mappingCreatedAt": 1649856570000,
@@ -315,7 +315,7 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
         "ups": {
           "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
             "lastQualificationTime": "2019-04-15T02:41:50+0000",
-            "status": "existing",
+            "status": "realized",
             "createdAt": 1648553325000,
             "updatedAt": 1648553330000,
             "mappingCreatedAt": 1649856570000,

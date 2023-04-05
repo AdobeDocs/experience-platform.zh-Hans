@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 区段成员资格详细信息架构字段组
 description: 本文档概述了区段成员资格详细信息架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: fda47171cde3f58f48ee721357923017918a7d4e
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '470'
-ht-degree: 2%
+source-wordcount: '440'
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 2%
 | --- | --- | --- |
 | `segmentMembership` | 地图 | 描述个人区段成员资格的映射对象。 此对象的结构在下文中有详细描述。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 以下示例 `segmentMembership` 映射系统为特定用户档案填充的内容。 区段成员关系按命名空间排序，如对象的根级别键所示。 反过来，每个命名空间下的各个键表示用户档案所属区段的ID。 每个区段对象包含多个子字段，这些子字段提供了有关成员资格的更多详细信息：
 
@@ -42,7 +42,7 @@ ht-degree: 2%
         "xdm:version": "15",
         "xdm:lastQualificationTime": "2018-04-26T15:52:25+00:00",
         "xdm:validUntil": "2019-04-26T15:52:25+00:00",
-        "xdm:status": "existing",
+        "xdm:status": "realized",
         "xdm:payload": {
           "xdm:payloadBooleanValue": true,
           "xdm:payloadType": "boolean"
@@ -76,10 +76,10 @@ ht-degree: 2%
 | `xdm:version` | 此用户档案符合条件的区段版本。 |
 | `xdm:lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
 | `xdm:validUntil` | 不再假定区段成员资格有效的时间戳。 对于外部受众，如果未设置此字段，则区段成员资格将仅保留30天 `lastQualificationTime`. |
-| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
+| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`:该用户档案符合区段的条件。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `xdm:payload` | 某些区段成员资格包括描述与成员资格直接相关的其他值的有效负载。 每个成员只能提供给定类型的有效负荷。 `xdm:payloadType` 指示有效负载类型(`boolean`, `number`, `propensity`或 `string`)，而其同级属性则为有效负载类型提供值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

@@ -2,9 +2,9 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2267'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 要了解Adobe端的消息格式以及配置文件配置和转换过程，请熟悉以下Experience Platform概念：
 
-* **体验数据模型(XDM)**. [XDM概述](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 和  [如何在Adobe Experience Platform中创建XDM模式](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
+* **体验数据模型(XDM)**. [XDM概述](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en) 和  [如何在Adobe Experience Platform中创建XDM模式](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=zh-Hans).
 * **类**. [在UI中创建和编辑类](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
 * **IdentityMap**. 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅 `xdm:identityMap` 在 [XDM字段字典](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
 * **区段成员资格**. 的 [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM属性会通知配置文件是哪个区段的成员。 对于 `status` 字段，请阅读 [区段成员资格详细信息架构字段组](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
@@ -84,7 +84,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Experience Platform中的轮廓结构 {#profile-structure}
 
@@ -93,7 +93,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 用户档案有3个部分：
 
 * `segmentMembership` （始终显示在用户档案中）
-   * 此部分包含配置文件中存在的所有区段。 区段可以具有以下3种状态之一： `realized`, `existing`, `exited`.
+   * 此部分包含配置文件中存在的所有区段。 区段可以具有两种状态之一： `realized` 或 `exited`.
 * `identityMap` （始终显示在用户档案中）
    * 此部分包含配置文件(电子邮件、Google GAID、Apple IDFA等)上以及在激活工作流中映射以导出的用户存在的所有身份。
 * 属性（根据目标配置，这些属性可能存在于配置文件中）。 预定义属性与自由格式属性之间还有一些细微的区别：
@@ -110,7 +110,7 @@ Authorization: Bearer YOUR_REST_API_KEY
     "ups": {
       "11111111-1111-1111-1111-111111111111": {
         "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
-        "status": "existing"
+        "status": "realized"
       }
     }
   },
@@ -139,7 +139,7 @@ Authorization: Bearer YOUR_REST_API_KEY
     "ups": {
       "11111111-1111-1111-1111-111111111111": {
         "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
-        "status": "existing"
+        "status": "realized"
       }
     }
   },
@@ -249,7 +249,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
 }
 ```
 
-### 区段成员资格 {#segment-membership}
+### 区段会员资格 {#segment-membership}
 
 的 [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM属性会通知配置文件是哪个区段的成员。
 对于 `status` 字段，请阅读 [区段成员资格详细信息架构字段组](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
@@ -268,7 +268,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       },
       "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
         "lastQualificationTime": "2019-11-20T13:15:49Z",
-        "status": "existing"
+        "status": "realized"
       },
       "8f812592-3f06-416b-bd50-e7831848a31a": {
         "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -291,7 +291,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       },
       "af854278-894a-4192-a96b-320fbf2623fd": {
         "lastQualificationTime": "2021-08-20T16:44:37Z",
-        "status": "existing"
+        "status": "realized"
       },
       "66505bf9-bc08-4bac-afbc-8b6706650ea4": {
         "lastQualificationTime": "2019-08-20T17:23:04Z",
@@ -511,7 +511,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
             },
             "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
               "lastQualificationTime": "2019-11-20T13:15:49Z",
-              "status": "existing"
+              "status": "realized"
             },
             "8f812592-3f06-416b-bd50-e7831848a31a": {
                 "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -685,7 +685,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
             },
             "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
               "lastQualificationTime": "2019-11-20T13:15:49Z",
-              "status": "existing"
+              "status": "realized"
             },
             "8f812592-3f06-416b-bd50-e7831848a31a": {
                 "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -874,7 +874,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       "ups":{
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -894,7 +894,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       "ups":{
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -914,7 +914,7 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       "ups":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -934,11 +934,11 @@ Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](htt
       "ups":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"existing"
+            "status":"realized"
          },
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -1194,10 +1194,10 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 | `input.profile` | 用户档案，表示为 [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). 遵循本页上面进一步提到的合作伙伴XDM架构。 |
 | `destination.segmentAliases` | 从Adobe Experience Platform命名空间中的区段ID映射到合作伙伴系统中的区段别名。 |
 | `destination.segmentNames` | 从Adobe Experience Platform命名空间中的区段名称映射到合作伙伴系统中的区段名称。 |
-| `addedSegments(listOfSegments)` | 仅返回状态为 `realized` 或 `existing`. |
+| `addedSegments(listOfSegments)` | 仅返回状态为 `realized`. |
 | `removedSegments(listOfSegments)` | 仅返回状态为 `exited`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤 {#next-steps}
 

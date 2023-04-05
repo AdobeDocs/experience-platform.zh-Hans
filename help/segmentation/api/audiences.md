@@ -5,7 +5,7 @@ description: Adobe Experience Platform Segmentation Service API中的受众端�
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
 hide: true
 hidefromtoc: true
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
 source-wordcount: '1515'
 ht-degree: 4%
@@ -254,7 +254,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?propoerty=withMetr
                         "crmid": 11400769
                     },
                     "totalProfilesByStatus": {
-                        "existing": 11400769
+                        "realized": 11400769
                     }
                 },
                 "createEpoch": 1653583927,

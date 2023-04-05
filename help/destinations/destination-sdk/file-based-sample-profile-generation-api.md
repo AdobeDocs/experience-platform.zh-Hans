@@ -1,13 +1,13 @@
 ---
 description: 本页介绍如何使用来自Destination SDK的/sample-profiles API端点来根据源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成示例用户档案
-source-git-commit: ee2bf346a4857a70a7f9aec02bab574f8a257ace
+exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '678'
-ht-degree: 2%
+source-wordcount: '652'
+ht-degree: 1%
 
 ---
-
 
 # 根据源架构生成示例用户档案
 
@@ -108,10 +108,10 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 | -------- | ----------- |
 | `segmentMembership` | 描述个人区段成员资格的映射对象。 有关 `segmentMembership`，读取 [区段成员资格详细信息](../../xdm/field-groups/profile/segmentation.md). |
 | `lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
-| `status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
+| `status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`:用户档案是区段的一部分。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关 `identityMap`，请参阅 [模式组合的基础](../../xdm/schema/composition.md#identityMap). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## API错误处理 {#api-error-handling}
 

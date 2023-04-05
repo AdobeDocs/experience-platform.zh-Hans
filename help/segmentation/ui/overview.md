@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmentation Service UI指南
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 11a4bb90b5d88f86ac14d702a213f56432a30c24
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '2686'
+source-wordcount: '2650'
 ht-degree: 3%
 
 ---
@@ -69,12 +69,11 @@ ht-degree: 3%
 
 您可以通过选择 ![过滤器属性图标](../images/ui/overview/filter-attribute.png). 这些附加字段包括划分、评估方法和作业ID。
 
-如果选择了划分，则显示一个条形图，其中概述了属于以下每种计算配置文件状态的配置文件百分比： [!UICONTROL 已实现], [!UICONTROL 现有]和 [!UICONTROL 正在退出]. 此外， [!UICONTROL 浏览] 选项卡是区段状态的最准确划分。 如果此数字与 [!UICONTROL 概述] 选项卡，您应使用 [!UICONTROL 浏览] 选项卡作为正确的信息源，因为 [!UICONTROL 概述] 选项卡号每天只更新一次。
+如果选择了划分，则显示一个条形图，其中概述了属于以下每种计算配置文件状态的配置文件百分比： [!UICONTROL 已实现] 和 [!UICONTROL 正在退出]. 此外， [!UICONTROL 浏览] 选项卡是区段状态的最准确划分。 如果此数字与 [!UICONTROL 概述] 选项卡，您应使用 [!UICONTROL 浏览] 选项卡作为正确的信息源，因为 [!UICONTROL 概述] 选项卡号每天只更新一次。
 
 | 状态 | 描述 |
 | ------ | ----------- |
 | 已实现 | 过去24小时内符合该区段资格的用户档案计数。 因此，自上次运行批处理客户细分作业以来符合该客户细分资格的用户档案数。 |
-| 现有 | 过去24小时内符合该区段资格条件的用户档案计数。 因此，自上次运行批处理客户细分作业以来，符合该客户细分资格条件的用户档案数。 |
 | 正在退出 | 过去24小时内退出区段的用户档案计数。 因此，自上次运行批处理区段作业以来不再符合区段资格的配置文件数。 |
 
 评估方法可以是流、批处理或边缘。 当数据进入系统时，会不断评估流区段。 批区段将根据设置的计划进行评估。 边缘区段会进行实时评估，以便支持同一页面和下一页个性化用例。

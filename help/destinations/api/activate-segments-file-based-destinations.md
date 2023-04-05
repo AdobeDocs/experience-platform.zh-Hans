@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 使用流量服务API将区段激活到基于文件的目标
 description: 了解如何使用流量服务API将具有限定配置文件的文件导出到云存储目标。
 type: Tutorial
-source-git-commit: d925802489d5da006cd9cfacb89b3e880663edaf
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
 source-wordcount: '4337'
 ht-degree: 2%
@@ -3750,7 +3750,6 @@ Inspect执行上述调用时获取的响应。 您需要深入到响应中以查
                "properties":{
                   "status":{
                      "enum":[
-                        "existing",
                         "realized",
                         "exited"
                      ],
@@ -3759,7 +3758,6 @@ Inspect执行上述调用时获取的响应。 您需要深入到响应中以查
                      "default":"realized",
                      "meta:enum":{
                         "exited":"Entity is exiting the segment.",
-                        "existing":"Entity continues to be in the segment.",
                         "realized":"Entity is entering the segment."
                      },
                      "description":"Is the segment participation realized as part of the current request.",
@@ -4066,11 +4064,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                 "meta:xdmType": "string",
                                 "meta:enum": {
                                     "exited": "Entity is exiting the segment.",
-                                    "realized": "Entity is entering the segment.",
-                                    "existing": "Entity continues to be in the segment."
+                                    "realized": "Entity is entering the segment."
                                 },
                                 "enum": [
-                                    "existing",
                                     "realized",
                                     "exited"
                                 ],

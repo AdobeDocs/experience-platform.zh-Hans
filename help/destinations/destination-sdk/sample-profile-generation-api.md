@@ -2,10 +2,10 @@
 description: 本页列出并介绍了可使用“/authoring/sample-profiles” API端点执行的所有API操作，以生成要在目标测试中使用的示例配置文件。
 title: 配置文件生成API操作示例
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 789a3928379d200af292c722806f7ca72441d9f3
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '975'
-ht-degree: 2%
+source-wordcount: '943'
+ht-degree: 1%
 
 ---
 
@@ -62,7 +62,7 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 | `{DESTINATION_INSTANCE_ID}` | 您生成示例用户档案所依据的目标实例的ID。 |
 | `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件的默认数量由 `maxUsersPerRequest` 值 [目标服务器配置](./destination-server-api.md#create). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
 **请求**
@@ -183,10 +183,10 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 | -------- | ----------- |
 | `segmentMembership` | 描述个人区段成员资格的映射对象。 有关 `segmentMembership`，读取 [区段成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
-| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
+| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`:用户档案是区段的一部分。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 根据构建消息转换模板时要使用的目标模式生成示例用户档案 {#generate-sample-profiles-target-schema}
 
@@ -213,7 +213,7 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 | `{DESTINATION_ID}` | 基于生成示例用户档案的目标配置的ID。 |
 | `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件的默认数量由 `maxUsersPerRequest` 值 [目标服务器配置](./destination-server-api.md#create). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -240,7 +240,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609326Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609328Z",
@@ -285,7 +285,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609626Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609627Z",
@@ -330,7 +330,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609823Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609824Z",
