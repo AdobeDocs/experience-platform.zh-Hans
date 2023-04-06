@@ -1,18 +1,14 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2023年3月版Adobe Experience Platform发行说明。
-source-git-commit: 5f7cc08d48b7cf7d057fe199882be011607e51e6
+source-git-commit: 5b8dd4b295f9363fd7e848070b1ec21ff519c524
 workflow-type: tm+mt
-source-wordcount: '2397'
+source-wordcount: '2205'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform 发行说明
-
->[!IMPORTANT]
->
->自2023年4月5日起， `Existing` 状态将从区段成员资格映射中弃用，以删除区段成员资格生命周期中的冗余。 进行此项更改后，符合区段条件的用户档案将表示为 `Realized` 取消用户档案资格的用户档案将继续以 `Exited`. 有关此更改的更多详细信息，请阅读 [Segmentation Service部分](#segmentation).
 
 **发布日期：2023 年 3 月 29 日**
 
@@ -189,7 +185,6 @@ Real-Time CDP B2B Edition基于Real-time Customer Data Platform(Real-Time CDP)�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 配置文件量度 | 为了更准确地表示用户档案量度，会将会员资格划分和流失量度组合在一起，现在会在24小时内计算这些量度。 有关更多信息，请参阅 [分段UI指南](../../segmentation/ui/overview.md#browse) |
-| 区段成员资格映射 | 作为上次公告于2023年2月4月5日的后续行动， `Existing` 状态将从区段成员资格映射中弃用，以删除区段成员资格生命周期中的冗余。 进行此项更改后，符合区段条件的用户档案将表示为 `Realized` 取消用户档案资格的用户档案将继续以 `Exited`.<br/><br/> 如果您使用 [企业目标](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis、Azure事件中心、HTTP API)，并且可能已根据 `Existing` 状态。 如果存在这种情况，请查看下游集成。 如果您有兴趣识别超过特定时间的新合格用户档案，请考虑将 `Realized` 状态和 `lastQualificationTime` 在区段成员资格映射中。 有关更多信息，请联系您的Adobe代表。 |
 
 {style="table-layout:auto"}
 
