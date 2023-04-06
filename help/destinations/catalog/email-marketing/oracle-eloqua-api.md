@@ -2,24 +2,25 @@
 title: (API)OracleEloqua连接
 description: (API)OracleEloqua目标允许您导出帐户数据，并在OracleEloqua中激活它以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 3197eddcf9fef2870589fdf9f09276a333f30cd1
+source-git-commit: e8aa09545c95595e98b4730188bd8a528ca299a9
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1642'
 ht-degree: 0%
 
 ---
+
 
 # [!DNL (API) Oracle Eloqua] 连接
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) 使营销人员能够在为潜在客户提供个性化客户体验的同时，规划和执行营销活动。 通过集成的潜在客户管理和轻松的营销活动创建，它可帮助营销人员在购买者历程的适当时间吸引适当的受众，并优雅地扩展以跨渠道（包括电子邮件、展示搜索、视频和移动设备）访问受众。 销售团队可以更快地完成更多交易，从而通过实时分析提高营销ROI。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [更新联系人](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) 操作 [!DNL Oracle Eloqua] REST API，用于将区段内的身份更新为 [!DNL Oracle Eloqua].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [更新联系人](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) 操作 [!DNL Oracle Eloqua] REST API，它允许您 **更新身份** 在区段内输入 [!DNL Oracle Eloqua].
 
 [!DNL Oracle Eloqua] 使用 [基本身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) 与 [!DNL Oracle Eloqua] REST API。 验证的说明 [!DNL Oracle Eloqua] 实例位于下面的 [对目标进行身份验证](#authenticate) 中。
 
 ## 用例 {#use-cases}
 
-作为营销人员，您可以根据用户Adobe Experience Platform用户档案的属性，向用户提供个性化体验。 您可以根据离线数据构建区段，并将这些区段发送到 [!DNL Oracle Eloqua]，以便在Adobe Experience Platform中更新区段和配置文件后，立即在用户信息源中显示。
+在线平台的营销部门希望向策划的潜在客户受众广播基于电子邮件的营销活动。 该平台的营销团队可以通过Adobe Experience Platform更新现有的潜在客户信息，从他们自己的离线数据构建区段，并将这些区段发送到 [!DNL Oracle Eloqua]，然后用于发送营销活动电子邮件。
 
 ## 先决条件 {#prerequisites}
 
@@ -54,15 +55,26 @@ ht-degree: 0%
 * 如果超出此限制，您将在Experience Platform中遇到错误。 这是因为 [!DNL Oracle Eloqua] API无法验证请求，并以 —  *400:验证错误*  — 描述问题的错误消息。
 * 如果您已达到上面指定的限制，则需要从目标中删除现有映射，并删除 [!DNL Oracle Eloqua] 帐户。
 
-* 请参阅 [OracleEloqua创建联系人字段](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/ContactFields/Tasks/CreatingContactFields.htm) 页面以了解有关其他限制的信息。
+* 请参阅 [[!DNL Oracle Eloqua] 创建联系人字段](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/ContactFields/Tasks/CreatingContactFields.htm) 页面以了解有关其他限制的信息。
 
 ## 支持的身份 {#supported-identities}
 
 [!DNL Oracle Eloqua] 支持更新下表所述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
 
-| Target标识 | 示例 | 描述 | 必需 |
-|---|---|---|---|
-| `EloquaId` | `111111` | 联系人的唯一标识符。 | 是 |
+| Target标识 | 描述 | 必需 |
+|---|---|---|
+| `EloquaId` | 联系人的唯一标识符。 | 是 |
+
+## 导出类型和频度 {#export-type-frequency}
+
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | <ul><li>您正在导出区段的所有成员，以及所需的架构字段 *(例如：电子邮件地址、电话号码、姓氏)*，则会根据字段映射。</li><li> 对于Platform中的每个选定区段， [!DNL Oracle Eloqua] 区段状态会从平台中更新为其区段状态。</li></ul> |
+| 导出频度 | **[!UICONTROL 流]** | <ul><li>流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+
+{style="table-layout:auto"}
 
 ## 连接到目标 {#connect}
 
@@ -111,42 +123,37 @@ ht-degree: 0%
 
 要将受众数据从Adobe Experience Platform正确发送到 [!DNL Oracle Eloqua] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。
 
-`EloquaID` 需要更新与身份对应的属性。 的 `emailAddress` 在没有引发错误的情况下，还需要使用，如下所示：
-
-```json
-{
-   "type":"ObjectValidationError",
-   "container":{
-      "type":"ObjectKey",
-      "objectType":"Contact"
-   },
-   "property":"emailAddress",
-   "requirement":{
-      "type":"EmailAddressRequirement"
-   },
-   "value":"<null>"
-}
-```
-
-在 **[!UICONTROL 目标字段]** 应完全按照属性映射表中所述的名称命名，因为这些属性将构成请求正文。
-
-在 **[!UICONTROL 源字段]** 不要遵守任何此类限制。 您可以根据需要映射数据格式，但如果数据格式在推送到 [!DNL Oracle Eloqua] 这会导致错误。
-
-例如，您可以映射 **[!UICONTROL 源字段]** 标识命名空间 `contact key`, `ABC ID` 等。 to **[!UICONTROL 目标字段]** : `EloquaID` 确保ID值符合所接受的格式 [!DNL Oracle Eloqua].
-
-要将XDM字段正确映射到 [!DNL Oracle Eloqua] 目标字段，请执行以下步骤：
+将XDM字段映射到 [!DNL Oracle Eloqua] 目标字段，请执行以下步骤：
 
 1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新的映射行。
 1. 在 **[!UICONTROL 选择源字段]** 窗口，选择 **[!UICONTROL 选择属性]** 类别，然后选择XDM属性或 **[!UICONTROL 选择身份命名空间]** 并选择一个身份。
-1. 在 **[!UICONTROL 选择目标字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 选择身份或选择 **[!UICONTROL 选择自定义属性]** 类别，并根据需要选择属性。
-   * 重复这些步骤，在XDM配置文件架构和 [!DNL Oracle Eloqua] 实例： |源字段|目标字段|必填| |—|—|—| |`xdm: personalEmail.address`|`Attribute: emailAddress`|是 | |`IdentityMap: Eid`|`Identity: EloquaId`|是 |
+1. 在 **[!UICONTROL 选择目标字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 选择身份，或选择 **[!UICONTROL 选择自定义属性]** 和在 **[!UICONTROL 属性名称]** 字段。 您提供的属性名称应与 [!DNL Oracle Eloqua]. 请参阅 [[!DNL create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) ，以获取可在 [!DNL Oracle Eloqua].
+   * 重复这些步骤，在XDM配置文件架构和 [!DNL Oracle Eloqua]: |源字段 |目标字段 |必填 | |—|—|—| |`IdentityMap: Eid`|`Identity: EloquaId`|是 | |`xdm: personalEmail.address`|`Attribute: emailAddress`|是 | |`xdm: personName.firstName`|`Attribute: firstName`| | |`xdm: personName.lastName`|`Attribute: lastName`| | |`xdm: workAddress.street1`|`Attribute: address1`| | |`xdm: workAddress.street2`|`Attribute: address2`| | |`xdm: workAddress.street3`|`Attribute: address3`| | |`xdm: workAddress.postalCode`|`Attribute: postalCode`| | |`xdm: workAddress.country`|`Attribute: country`| | |`xdm: workAddress.city`|`Attribute: city`| |
 
-   * 使用这些映射的示例如下所示：
+   * 下面显示了具有上述映射的示例：
       ![Platform UI屏幕截图示例，其中包含属性映射。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
-      >[!IMPORTANT]
-      >
-      >和 `emailAddress` 和 `EloquaId` 目标属性映射是必选项。
+>[!IMPORTANT]
+>
+>* 在 **[!UICONTROL 目标字段]** 名称应与 [[!DNL Create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) 因为这些属性将形成请求正文。
+>* 在 **[!UICONTROL 源字段]** 不要遵守任何此类限制。 您可以根据需要映射数据格式，但如果数据格式在推送到 [!DNL Oracle Eloqua] 这会导致错误。 例如，您可以映射 **[!UICONTROL 源字段]** 标识命名空间 `contact key`, `ABC ID` 等。 to **[!UICONTROL 目标字段]** : `EloquaId` 确保ID值与接受的格式匹配 [!DNL Oracle Eloqua].
+>* 的 `EloquaID` 必须进行映射才能更新与标识对应的属性。
+>* 的 `emailAddress` 需要映射。 如果没有该函数，API会引发错误，如下所示：
+>
+>```json
+>{
+>     "type":"ObjectValidationError",
+>     "container":{
+>           "type":"ObjectKey",
+>           "objectType":"Contact"
+>     },
+>     "property":"emailAddress",
+>     "requirement":{
+>           "type":"EmailAddressRequirement"
+>     },
+>     "value":"<null>"
+>}
+>```
 
 完成为目标连接提供映射后，请选择 **[!UICONTROL 下一个]**.
 
@@ -182,6 +189,7 @@ ht-degree: 0%
 
 ## 其他资源 {#additional-resources}
 
-来自 [!DNL Oracle ELoqua] 文档如下所示：
+有关更多详细信息，请参阅 [!DNL Oracle Eloqua] 文档：
+
 * [OracleEloqua营销自动化](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [用于Oracle雄辩Marketing Cloud服务的REST API](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
