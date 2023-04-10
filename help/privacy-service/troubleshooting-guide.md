@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Privacy Service疑难解答指南
 description: 本文档提供了有关Privacy Service的常见问题解答，以及有关API中常见错误的信息。
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: fc115801ac8e75cd58356060ad98f1e340d2494a
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
 source-wordcount: '917'
 ht-degree: 1%
@@ -69,7 +69,7 @@ Adobe不支持使用 [!DNL Privacy Service] 用于清除意外提交到产品的
 
 隐私请求对时间敏感，且已完成，且与适用的隐私法相关。 提交的请求不属于数据主体/消费者访问或删除请求，这会影响所有 [!DNL Privacy Service] 客户和 [!DNL Privacy Service] 支持适当的法律时间表。 现已设置硬性的每日上载限制，以帮助防止滥用服务。
 
-请联系您的客户经理(CDM)，以协调并提供解决任何PII或数据问题的措施。
+请联系您的Adobe客户团队，以协调并提供相应的精力，以解决任何PII或数据问题。
 
 ## 如何获取有关隐私请求或工作状态的信息？
 

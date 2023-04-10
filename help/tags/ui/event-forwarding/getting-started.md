@@ -3,10 +3,10 @@ title: 事件转发入门
 description: 请按照此分步教程，开始使用Adobe Experience Platform中的事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '872'
-ht-degree: 26%
+source-wordcount: '873'
+ht-degree: 27%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 26%
 
 ## 先决条件
 
-* Adobe Experience Platform Collection Enterprise（请联系您的客户经理以了解定价信息）
+* Adobe Experience Platform Collection Enterprise(请联系您的Adobe客户团队以了解定价信息)
 * Adobe Experience Platform中的事件转发
 * Adobe Experience Platform Web 或 Mobile SDK，配置为将数据发送到 Edge Network
 * 将数据映射到体验数据模型(XDM)（此映射可以使用标记完成）
@@ -56,7 +56,7 @@ ht-degree: 26%
 
 在 **[!UICONTROL 标记]** 工作区，创建类型的属性 **[!UICONTROL Edge]**.
 
-1. 选择 **[!UICONTROL 新建资产]**.
+1. 选择&#x200B;**[!UICONTROL 新属性]**。
 
 1. 命名资产。
 

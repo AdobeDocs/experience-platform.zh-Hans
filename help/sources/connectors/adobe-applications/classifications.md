@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Analytics分类数据的源连接器
 description: 了解如何使用用户界面将Analytics分类连接到平台
 exl-id: c26002df-dce4-415e-93e9-268e0efebc9f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '180'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 [!DNL Experience Platform] 支持将Analytics分类数据摄取到Adobe Experience Platform。
 
-通过分类，可在生成报表时以不同的方式对Analytics变量数据进行分类和显示。 Analytics分类数据连接器要求您的数据已迁移到 [!DNL Classifications] Adobe Analytics基础设施。 要确认数据的迁移状态，请联系您的Adobe客户成功经理。
+通过分类，可在生成报表时以不同的方式对Analytics变量数据进行分类和显示。 Analytics分类数据连接器要求您的数据已迁移到 [!DNL Classifications] Adobe Analytics基础设施。 要确认数据的迁移状态，请联系您的Adobe帐户团队。
 
 以下文档提供了有关如何使用用户界面将Analytics分类连接到平台的信息：
 

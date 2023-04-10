@@ -2,9 +2,9 @@
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '2619'
+source-wordcount: '2621'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 
 请参阅 [管理数据收集的权限](./permissions.md) 了解如何授予对资产和资产权限的访问权限。
 
-要使用本指南中提到的各种数据收集产品，您还必须拥有数据流的访问权限以及创建和管理架构的功能。 如果您需要访问其中任一功能，请联系您的客户成功经理以帮助您获取必要的访问权限。 请注意，如果您尚未购买Adobe Experience Platform,Adobe将为您配置使用SDK的必要访问权限，而无需支付额外费用。
+要使用本指南中提到的各种数据收集产品，您还必须拥有数据流的访问权限以及创建和管理架构的功能。 如果您需要访问其中任一功能，请联系您的Adobe帐户团队以帮助您获得必要的访问权限。 请注意，如果您尚未购买Adobe Experience Platform,Adobe将为您配置使用SDK的必要访问权限，而无需支付额外费用。
 
 如果您已经拥有平台的访问权限，则必须确保您拥有 [权限](../access-control/home.md#permissions) 在启用的以下类别下：
 
@@ -141,7 +141,7 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 
 此时会显示SDK的配置页面。 大多数必需值会自动填充默认值，您可以根据需要选择更改这些默认值。
 
-![配置Web SDK](./images/e2e/configure-sdk.png)
+![配置 Web SDK](./images/e2e/configure-sdk.png)
 
 但是，在安装SDK之前，您必须选择一个数据流，以便它知道要将数据发送到的位置。 在 **[!UICONTROL 数据流]**，使用下拉菜单选择您在 [早期步骤](#datastream). 设置数据流后，选择 **[!UICONTROL 保存]** 完成将SDK安装到资产。
 

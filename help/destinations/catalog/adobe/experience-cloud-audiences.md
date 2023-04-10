@@ -2,9 +2,9 @@
 title: （测试版）Experience Cloud受众
 description: 了解如何将区段从Experience Platform共享到各种Experience Platform解决方案。
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: 32222aa1c96537b51cd0db35d9cdabce9210f64a
+source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
 workflow-type: tm+mt
-source-wordcount: '1512'
+source-wordcount: '1509'
 ht-degree: 2%
 
 ---
@@ -67,7 +67,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 
 ### 对于使用旧版区段共享解决方案的客户
 
-如果您已经通过 [旧版区段共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam)，则要禁用旧版集成，您必须联系客户关怀或客户成功经理。 客户关怀和客户支持管理团队必须提交Jira票证(请参阅模板票证AAM-52354)才能禁用集成。
+如果您已经通过 [旧版区段共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)，则要禁用旧版集成，您必须联系客户关怀或Adobe帐户团队。 客户关怀团队和Adobe客户团队必须提交Jira票证(请参阅模板票证AAM-52354)才能禁用集成。
 
 为测试版客户解决取消置备票证的周转时间为6个工作日或更短。 禁用现有旧版集成后，您可以继续 [创建连接](#connect) 通过自助服务目的卡。
 

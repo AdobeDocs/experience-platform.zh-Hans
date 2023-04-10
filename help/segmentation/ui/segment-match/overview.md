@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 区段匹配概述
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
 source-wordcount: '1998'
 ht-degree: 2%
@@ -56,7 +56,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 选择加入和选择退出同意检查决定您是否可以在获得同意的情况下运行以在默认情况下共享用户数据。 如果同意配置默认设置为 `opt-out`，则可以共享用户数据，除非用户明确选择禁用。 如果默认设置为 `opt-in`，则无法共享用户数据，除非用户明确选择加入。
 
-的默认同意配置 [!DNL Segment Match] 设置为 `opt-out`. 要为您的数据强制实施选择加入模型，请向您的Adobe客户经理发送电子邮件请求。
+的默认同意配置 [!DNL Segment Match] 设置为 `opt-out`. 要为您的数据强制实施选择加入模型，请向您的Adobe帐户团队发送电子邮件请求。
 
 有关 `share` 用于设置数据共享同意值的属性，请参阅以下文档 [隐私和同意字段组](../../../xdm/field-groups/profile/consents.md). 有关用于捕获消费者同意以收集和使用与隐私、个性化和营销首选项相关数据的特定字段组的信息，请参阅以下内容 [隐私、个性化和营销首选项同意GitHub示例](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md).
 

@@ -2,9 +2,9 @@
 title: 授予用户访问权限
 description: 在Adobe Experience Platform中设置团队成员的标记用户帐户和权限。
 exl-id: c7235e50-13b3-4487-b171-873063875621
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: b0615a2fd2bd9d9dd729d506f71ce4a91c64a4fd
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '218'
 ht-degree: 19%
 
 ---
@@ -23,4 +23,4 @@ ht-degree: 19%
 
 ## 确认配置
 
-在按照如上所述为公司配置了对标记的访问权限并设置了用户后，您应该能够从 [Adobe Experience Cloud仪表板](https://experience.adobe.com/). 如果完成上述步骤后仍无法访问任一UI，请联系您的Adobe支持代表。
+在按照如上所述为公司配置了对标记的访问权限并设置了用户后，您应该能够从 [Adobe Experience Cloud仪表板](https://experience.adobe.com/). 如果您在完成上述步骤后仍无法访问任一UI，请联系您的Adobe帐户团队或客户关怀团队。

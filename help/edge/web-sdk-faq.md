@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 5586c788f4ae5c61b3b94f93b4180fc293d7e179
+source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
 workflow-type: tm+mt
-source-wordcount: '2101'
+source-wordcount: '2104'
 ht-degree: 2%
 
 ---
@@ -101,7 +101,7 @@ Adobe Experience Platform Web SDK是为以下人员开发的：
 
 ## 如何获取开始使用Adobe Experience Platform Web SDK的访问权限？
 
-Web SDK当前可供一般公众使用，并可用于将数据发送到Adobe Experience Cloud产品。 将数据发送到第三方解决方案的功能即将推出。 SDK是免费的，由Adobe免费托管，并且可以下载，这样您便可以根据需要免费将其托管在自己的服务器上。 Platform Web SDK需要访问数据流配置和Adobe Experience Platform XDM架构生成器，以便Adobe的服务器能够正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的客户成功经理(CSM)以开始请求流程。
+Web SDK当前可供一般公众使用，并可用于将数据发送到Adobe Experience Cloud产品。 将数据发送到第三方解决方案的功能即将推出。 SDK不收取任何费用，并且由Adobe免费托管。 如果需要，您可以免费下载它并将其托管在自己的服务器上。 Platform Web SDK需要访问数据流配置和Adobe Experience Platform XDM架构生成器，以便Adobe的服务器能够正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的Adobe帐户团队以开始请求流程。
 
 ## Web SDK当前支持哪些用例？
 
@@ -173,5 +173,5 @@ Adobe Experience Platform Web SDK可在最新版本的Google Chrome、Safari、F
 
 ## 在哪里可以获取有关Adobe Experience Platform Web SDK的更多信息？
 
-* [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html)
+* [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=zh-Hans)
 * [源代码](https://github.com/adobe/alloy)

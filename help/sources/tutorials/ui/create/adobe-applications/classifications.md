@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 在UI中为分类数据创建Adobe Analytics源连接
 type: Tutorial
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '659'
 ht-degree: 6%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 6%
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Sandboxes]](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-Analytics分类数据连接器要求您的数据已迁移到 [!DNL Classifications] Adobe Analytics基础设施。 要确认数据的迁移状态，请联系您的Adobe客户成功经理。
+Analytics分类数据连接器要求您的数据已迁移到 [!DNL Classifications] Adobe Analytics基础设施。 要确认数据的迁移状态，请联系您的Adobe帐户团队。
 
 ## 选择分类
 

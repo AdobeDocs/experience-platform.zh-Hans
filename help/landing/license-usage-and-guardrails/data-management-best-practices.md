@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据管理；许可证
 title: 数据管理许可证授权最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 252ca6c62b6b95e3a01211c15d7361146dee5116
+source-git-commit: 5b5afceff59105eb6e0d17e22c2810a5c25ae760
 workflow-type: tm+mt
-source-wordcount: '2130'
+source-wordcount: '2133'
 ht-degree: 2%
 
 ---
@@ -156,7 +156,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 | 功能 | 描述 |
 | --- | --- |
 | [启用/禁用配置文件的数据集](../../catalog/datasets/user-guide.md) | 在实时客户配置文件中启用或禁用数据集摄取。 |
-| [体验事件过期](../../profile/event-expirations.md) | 对摄取到启用了用户档案的数据集中的所有事件应用过期时间。 请联系您的Adobe支持代表以启用此功能。 |
+| [体验事件过期](../../profile/event-expirations.md) | 对摄取到启用了用户档案的数据集中的所有事件应用过期时间。 要启用此功能，请联系您的Adobe客户团队或客户关怀团队。 |
 | [Adobe Analytics数据准备过滤器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用 [!DNL Kafka] 从摄取中排除不必要数据的过滤器 |
 | [Adobe Audience Manager源连接器过滤器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接过滤器，从摄取中排除不必要的数据 |
 | [Alloy SDK数据过滤器](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | 应用Alloy过滤器以从摄取中排除不必要的数据 |

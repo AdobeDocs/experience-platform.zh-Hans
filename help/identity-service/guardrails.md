@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障诊断；护栏；
 title: Identity服务的防护
 description: 本文档提供了有关Identity Service数据的使用和费率限制的信息，以帮助您优化对身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: b5368382b42f478f6019c5ee925e56ec91ea6930
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '491'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 ### 身份命名空间摄取
 
-自2023年3月31日起，Identity Service将阻止为新客户摄取Adobe Analytics ID(AAID)。 此标识通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和冗余，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的客户经理。
+自2023年3月31日起，Identity Service将阻止为新客户摄取Adobe Analytics ID(AAID)。 此标识通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和冗余，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe帐户团队。
 
 ## 后续步骤
 
