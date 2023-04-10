@@ -2,7 +2,7 @@
 title: 元转化API扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的元转化API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: fcc8e794bdfc3c6287d12c35e7d837d2f697239c
+source-git-commit: 6538599e10d4980c3890a8fba65c8ef51c24496a
 workflow-type: tm+mt
 source-wordcount: '2256'
 ht-degree: 0%
@@ -165,7 +165,7 @@ ht-degree: 0%
 
 对要配置的任何其他元转换事件重复这些步骤。
 
-#### 数据层配置
+#### 数据层配置 {#configuration}
 
 >[!IMPORTANT]
 >
