@@ -2,9 +2,9 @@
 keywords: 事件转发扩展；布雷；阻止事件转发扩展
 title: Braze事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展会将Adobe Experience Edge Network事件发送到Braze。
-source-git-commit: 88e589eb17c249a8bdc82fe7a041a5581a60c7e6
+source-git-commit: 6815b5eb0426efd1dde901db1e8b86e86615530a
 workflow-type: tm+mt
-source-wordcount: '1874'
+source-wordcount: '1863'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 - 为营销和促销活动定位特定用户，以增加回访客户数量。
 - 研究用户行为和模式以通过自定义消息定向特定受众，这有助于增加收入。
 
-的 [!DNL Braze Track Events API] [事件转发](../../../ui/event-forwarding/overview.md) 扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Braze] 以服务器端事件的形式使用 [[!DNL Braze User Identify]](https://www.braze.com/docs/api/endpoints/user_data/post_user_identify) 和 [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API。
+的 [!DNL Braze Track Events API] [事件转发](../../../ui/event-forwarding/overview.md) 扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Braze] 以服务器端事件的形式使用 [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API。
 
 本文档介绍扩展的用例、如何在事件转发库中安装该扩展，以及如何在事件转发中使用其功能 [规则](../../../ui/managing-resources/rules.md).
 
