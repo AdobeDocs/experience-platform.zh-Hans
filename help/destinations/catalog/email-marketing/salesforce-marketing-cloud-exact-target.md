@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: (API)SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在SalesforceMarketing Cloud中激活它以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 5a9b7af3b009f8529f2e473b17f77c54de35003e
+source-git-commit: 017ccadc1689663059aa1214c5440549b509e81b
 workflow-type: tm+mt
-source-wordcount: '2464'
+source-wordcount: '2619'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 >
 >请注意此连接与 [[!DNL Salesforce Marketing Cloud] 连接](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) 电子邮件营销目录部分中存在的问题。 其他SalesforceMarketing Cloud连接允许您将文件导出到指定的存储位置，而这是基于API的流连接。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，用于在新的 [!DNL Salesforce Marketing Cloud] 区段。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，它允许您 **添加联系人和更新联系人数据** 在新的 [!DNL Salesforce Marketing Cloud] 区段。
 
 [!DNL Salesforce Marketing Cloud] 使用带有客户端凭据的OAuth 2作为与 [!DNL Salesforce Marketing Cloud] API。 验证的说明 [!DNL Salesforce Marketing Cloud] 实例位于下面的 [对目标进行身份验证](#authenticate) 中。
 
@@ -92,7 +92,7 @@ A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户
 | 客户端ID | 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 了解如何从 [!DNL Salesforce Marketing Cloud] 界面。 | r23kxxxxxxxx0z05xxxxxx |
 | 客户端密钥 | 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 了解如何从 [!DNL Salesforce Marketing Cloud] 界面。 | ipxxxxxxxxxxT4xxxxxxxxxx |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 护栏 {#guardrails}
 
@@ -124,7 +124,7 @@ A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户
 | 导出类型 | **[!UICONTROL 基于用户档案]** | <ul><li>您正在导出区段的所有成员，以及所需的架构字段 *(例如：电子邮件地址、电话号码、姓氏)*，则会根据字段映射。</li><li> 每个区段状态位于 [!DNL Salesforce Marketing Cloud] 会根据 **[!UICONTROL 映射ID]** 值 [区段计划](#schedule-segment-export-example) 中。</li></ul> |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 连接到目标 {#connect}
 
@@ -260,3 +260,20 @@ A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户
 
 * [!DNL Salesforce Marketing Cloud] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html)
 * [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) 说明如何使用指定属性组中的指定信息更新联系人。
+
+### Changelog {#changelog}
+
+本节将捕获对此目标连接器所做的功能和重要文档更新。
+
++++ 查看changelog
+
+| 发布月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2023 年 2 月 | 文档更新 | 我们更新了 [(API)SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 包含引用链接的部分，该引用链接调用 [!DNL Salesforce Marketing Cloud Account Engagement] 是使用此目标的强制订阅。 |
+| 2023 年 2 月 | 功能更新 | 我们修复了目标中配置不正确导致将格式错误的JSON发送到Salesforce的问题。 这会导致某些用户在激活时看到大量身份失败。 (PLATIR-26299) |
+| 2023 年 1 月 | 文档更新 | <ul><li>我们更新了 [先决条件 [!DNL Salesforce]](#prerequisites-destination) 调用需要在 [!DNL Salesforce] 侧。 此部分现在包含有关如何执行此操作的详细说明以及有关在 [!DNL Salesforce]. (PLATIR-25602)</li><li>我们为 [区段计划](#schedule-segment-export-example) 中。 (PLATIR-25602)</li></ul> |
+| 2022 年 10 月 | 初始版本 | 初始目标版本和文档发布。 |
+
+{style="table-layout:auto"}
+
++++
