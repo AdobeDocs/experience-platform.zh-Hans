@@ -2,7 +2,8 @@
 keywords: 事件转发扩展；布雷；阻止事件转发扩展
 title: Braze事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展会将Adobe Experience Edge Network事件发送到Braze。
-source-git-commit: 6815b5eb0426efd1dde901db1e8b86e86615530a
+last-substantial-update: 2023-03-29T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 4%

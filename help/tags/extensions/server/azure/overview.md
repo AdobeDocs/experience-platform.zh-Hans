@@ -2,10 +2,11 @@
 title: Microsoft Azure扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的Microsoft Azure扩展。
 exl-id: 2337d99d-861e-44e7-94ed-ba21ef28d815
-source-git-commit: f6c11fadc0d8019044fbdd2923af00ce18ce39e1
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '937'
-ht-degree: 4%
+source-wordcount: '931'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +54,7 @@ ht-degree: 4%
 | [!UICONTROL SAS访问密钥] | 整个共享访问授权规则的主密钥 [!DNL Event Hubs] 命名空间或要将数据发送到的特定事件中心实例。 请参阅 [获取SAS授权值](#sas) 以了解更多信息。 |
 | [!UICONTROL 分区ID] | [!DNL Event Hubs] 允许您 [将事件直接发送到特定分区](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/event-hubs/partitioning-in-event-hubs-and-kafka). 要利用此功能，请提供要接收事件的分区的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **数据**
 
@@ -61,7 +62,7 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL 负载] | 此字段包含要转发到 [!DNL Event Hubs]. 数据可以是JSON对象、字符串或数据元素。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 完成后，选择 **[!UICONTROL 保留更改]** 将操作添加到规则配置。 如果您对规则满意，请选择 **[!UICONTROL 保存到库]**.
 

@@ -2,9 +2,10 @@
 title: Google Ads增强转化扩展
 description: 了解用于Adobe Experience Platform中事件转发的Google广告增强转化扩展。
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '1314'
+source-wordcount: '1311'
 ht-degree: 1%
 
 ---
@@ -59,7 +60,7 @@ ht-degree: 1%
 | 帐户 ID | 您的 [!DNL Google Ads] 帐户ID。 要查找此值，请登录 [!DNL Google Ads] 并导航到： **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Install the Tag yourself]**. 帐户ID字符串可在以开头的代码段窗口中找到 `AW-` 或 `d`. |
 | 产品 | 选择 **[!UICONTROL Google Ads(AdWords)]**. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 完成后，选择 **[!UICONTROL 添加帐户]**，然后选择 **[!UICONTROL 保存]**.
 

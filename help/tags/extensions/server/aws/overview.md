@@ -2,10 +2,11 @@
 title: AWS扩展概述
 description: 了解用于Adobe Experience Platform中事件转发的AWS扩展。
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
-source-git-commit: b4ff3dbc9c62dceefdf2b842cafa65132dde41fc
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '847'
-ht-degree: 4%
+source-wordcount: '841'
+ht-degree: 3%
 
 ---
 
@@ -59,7 +60,7 @@ ht-degree: 4%
 | [!UICONTROL AWS地区] | 的 [!DNL AWS] 区域 [!DNL Kinesis] 会创建数据流。 |
 | [!UICONTROL 分区键] | 的 [分区键](https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key) 扩展在向数据流发送数据时将使用的附加内容。<br><br>[!DNL Kinesis Data Streams] 将属于某个流的数据记录分隔为多个分区。 它使用随每个数据记录一起发送的分区键来确定给定数据记录属于哪个共享。<br><br>分发客户的一个好分区键可能是客户编号，因为每个客户的分区键不同。 分区键不好，可能会出现其邮政编码，因为它们都可能位于附近的同一区域。 通常，您应选择具有不同潜在值最高范围的分区键。 请参阅 [!DNL AWS] 文章 [缩放 [!DNL Kinesis] 数据流](https://aws.amazon.com/blogs/big-data/under-the-hood-scaling-your-kinesis-data-streams/) 以了解有关管理分区键的最佳实践。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **[!UICONTROL 数据]**
 
@@ -67,7 +68,7 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL 负载] | 此字段包含要转发到 [!DNL Kinesis] 数据流（JSON格式）。<br><br>在 **[!UICONTROL 原始]** 选项，您可以将JSON对象直接粘贴到提供的文本字段中，也可以选择数据元素图标(![“数据集”图标](../../../images/extensions/server/aws/data-element-icon.png))从现有数据元素列表中选择以表示有效负载。<br><br>您还可以使用 **[!UICONTROL JSON键值对编辑器]** 选项，通过UI编辑器手动添加每个键值对。 每个值都可以由原始输入来表示，也可以改为选择数据元素。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 完成后，选择 **[!UICONTROL 保留更改]** 将操作添加到规则配置。 如果您对规则满意，请选择 **[!UICONTROL 保存到库]**.
 

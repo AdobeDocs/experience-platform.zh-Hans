@@ -2,7 +2,8 @@
 keywords: 事件转发扩展；mixpanel;mixpanel事件转发扩展
 title: Mixpanel跟踪事件API事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展会将Adobe Experience Edge Network事件发送到Mixpanel。
-source-git-commit: 8538e3a2899c3e2451519996cabeffc4b42d706c
+last-substantial-update: 2023-03-29T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
 source-wordcount: '953'
 ht-degree: 1%
