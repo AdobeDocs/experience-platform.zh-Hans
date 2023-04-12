@@ -4,12 +4,12 @@ feature: Attribution AI
 title: Attribution AI概述
 description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 landing-page-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
-short-description: Attribution AI is used to attribute credits to touchpoints leading to conversion events. This can be used by marketers to help quantify the marketing impact of each individual marketing touchpoint across customer journeys.
+short-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: b21367814e38fb5ee017709a29b39de982d59d24
 workflow-type: tm+mt
-source-wordcount: '499'
-ht-degree: 36%
+source-wordcount: '532'
+ht-degree: 40%
 
 ---
 

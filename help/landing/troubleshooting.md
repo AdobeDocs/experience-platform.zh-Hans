@@ -4,13 +4,13 @@ solution: Experience Platform
 title: Adobe Experience Platform常见问题解答和疑难解答指南
 description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 landing-page-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
-short-description: Find answers to frequently asked questions and a guide for troubleshooting common errors in Experience Platform.
+short-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '1861'
-ht-degree: 3%
+source-wordcount: '1877'
+ht-degree: 4%
 
 ---
 
@@ -215,7 +215,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | Adobe Experience Platform数据管理 | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] 疑难解答指南](../identity-service/troubleshooting-guide.md) |
 | Adobe Experience Platform查询服务 | [[!DNL Query Service API]](https://www.adobe.io/experience-platform-apis/references/query-service/) | [[!DNL Query Service] 疑难解答指南](../query-service/troubleshooting-guide.md) |
-| Adobe Experience Platform Segmentation | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
+| Adobe Experience Platform分段 | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] 常见问题解答和疑难解答指南](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] 和 [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |
