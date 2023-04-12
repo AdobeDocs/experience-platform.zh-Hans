@@ -5,9 +5,9 @@ title: 评估和访问区段结果
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1608'
+source-wordcount: '1607'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 ## 计划评估 {#scheduled-evaluation}
 
-通过计划评估，您的IMS组织可以创建循环计划以自动运行导出作业。
+通过计划评估，您的组织可以创建循环计划以自动运行导出作业。
 
 >[!NOTE]
 >

@@ -4,9 +4,9 @@ title: 使用API为配置文件和Identity服务启用数据集
 type: Tutorial
 description: 本教程将向您展示如何使用Adobe Experience Platform API启用数据集以与实时客户资料和Identity Service结合使用。
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1072'
 ht-degree: 1%
 
 ---
@@ -93,7 +93,7 @@ curl -X POST \
 | 属性 | 描述 |
 |---|---|
 | `schemaRef.id` | 的ID [!DNL Profile]启用了数据集所基于的架构。 |
-| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] 其中包含属于您的IMS组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南以了解更多信息。 |
+| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] 其中包含属于贵组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南以了解更多信息。 |
 
 **响应**
 
@@ -220,6 +220,7 @@ curl -X PATCH \
 请求正文包括 `path` 到两种类型的标记， `unifiedProfile` 和 `unifiedIdentity`. 的 `value` 每个都是包含字符串的数组 `enabled:true`.
 
 **响应**
+
 成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 和 `unifiedIdentity` 标记现已添加，并且数据集已启用以供配置文件和Identity服务使用。
 
 ```json

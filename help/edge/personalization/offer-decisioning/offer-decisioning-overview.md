@@ -3,9 +3,9 @@ title: 将Offer decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioningUI或API创建选件和其他相关对象。
 keywords: offer decisioning；决策；Web SDK;Platform Web SDK；个性化选件；提供选件；选件交付；选件个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '863'
 ht-degree: 5%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->在Adobe Experience Platform Web SDK中使用Offer decisioning可供选择的用户抢先体验。 并非所有IMS组织都能使用此功能。
+>在Adobe Experience Platform Web SDK中使用Offer decisioning可供选择的用户抢先体验。 并非所有组织都能使用此功能。
 
 Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用 Offer Decisioning 用户界面 (UI) 或 API 创建优惠和其他相关对象。
 
 ## 先决条件
 
-* IMS组织已启用边缘决策
+* 组织支持边缘决策
 * 选件、已创建的活动
 * 数据流已发布
 

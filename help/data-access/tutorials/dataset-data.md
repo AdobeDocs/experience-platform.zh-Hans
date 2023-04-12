@@ -5,9 +5,9 @@ title: 使用数据访问API查看数据集数据
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform中的数据访问API查找、访问和下载数据集中存储的数据。 此外，还将介绍数据访问API的一些独特功能，如分页和部分下载。
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1388'
 ht-degree: 3%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 3%
 
 有关 [!DNL Catalog] API，请参阅 [API参考](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
-## 在IMS组织下检索批列表
+## 在您的组织下检索批列表
 
 使用 [!DNL Catalog] API中，您可以返回组织下的批列表：
 
@@ -84,7 +84,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 
 **响应**
 
-响应包括一个对象，其中列出了与IMS组织相关的所有批次，每个顶级值代表一个批次。 单个批处理对象包含该特定批处理的详细信息。 对于空间，以下响应已最小化。
+响应包含一个对象，其中列出了与组织相关的所有批次，每个顶级值都表示一个批次。 单个批处理对象包含该特定批处理的详细信息。 对于空间，以下响应已最小化。
 
 ```json
 {

@@ -3,11 +3,11 @@ keywords: Experience Platform；零售销售方法；Data Science Workspace；�
 solution: Experience Platform
 title: 创建零售销售架构和数据集
 type: Tutorial
-description: 本教程为您提供所有其他Adobe Experience Platform Data Science Workspace教程所需的先决条件和资产。 完成后，您和IMS组织成员将可以使用零售销售架构和数据集进行Experience Platform。
+description: 本教程为您提供所有其他Adobe Experience Platform Data Science Workspace教程所需的先决条件和资产。 完成后，您和组织成员将可以使用零售销售架构和数据集进行Experience Platform。
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '551'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # 创建零售销售架构和数据集
 
-本教程将为您提供所有其他 [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 教程。 完成后，您和IMS组织成员将可以在 [!DNL Experience Platform].
+本教程将为您提供所有其他 [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 教程。 完成后，您和贵组织的成员将可以在 [!DNL Experience Platform].
 
 ## 快速入门
 

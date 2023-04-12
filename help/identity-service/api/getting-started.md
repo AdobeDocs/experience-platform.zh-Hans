@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Identity Service API指南
 description: Identity Service API允许开发人员使用Adobe Experience Platform中的身份图来管理客户的跨设备、跨渠道和近乎实时的标识。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: d612af38-4648-4c3e-8cfd-3f306c9370e1
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '767'
-ht-degree: 2%
+source-wordcount: '764'
+ht-degree: 3%
 
 ---
 
@@ -51,7 +51,7 @@ Adobe Experience Platform [!DNL Identity Service] 在Adobe Experience Platform�
 
 ### 基于区域的路由
 
-的 [!DNL Identity Service] API采用特定于区域的端点，这些端点需要包含 `{REGION}` 作为请求路径的一部分。 在配置IMS组织期间，会确定一个区域并将其存储在您的IMS组织配置文件中。 对每个端点使用正确的区域可确保使用 [!DNL Identity Service] API将被路由到相应的区域。
+的 [!DNL Identity Service] API采用特定于区域的端点，这些端点需要包含 `{REGION}` 作为请求路径的一部分。 在配置组织期间，会确定一个区域并将其存储在您的组织配置文件中。 对每个端点使用正确的区域可确保使用 [!DNL Identity Service] API将被路由到相应的区域。
 
 当前支持两个区域 [!DNL Identity Service] API:VA7和NLD2。
 
@@ -66,7 +66,7 @@ Adobe Experience Platform [!DNL Identity Service] 在Adobe Experience Platform�
 >
 >在未指定区域的情况下发出的请求可能导致呼叫路由到错误区域或导致呼叫意外失败。
 
-如果您在IMS组织配置文件中找不到该区域，请联系您的系统管理员以获取支持。
+如果您无法在组织配置文件中找到该区域，请联系您的系统管理员以获取支持。
 
 ## 使用 [!DNL Identity Service] API
 

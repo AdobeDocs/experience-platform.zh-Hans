@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 1fb0fde2054528679235268ae96e3b7e78de80ef
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '770'
 ht-degree: 3%
 
 ---
@@ -67,7 +67,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `destinationId` | 字符串 | 您要提交以进行发布的目标配置的目标ID。 使用 [目标配置API引用](./destination-configuration-api.md#retrieve-list). |
 | `destinationAccess` | 字符串 | 使用 `ALL` ，以便您的目标显示在所有Experience Platform客户的目录中。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -85,7 +85,7 @@ GET /authoring/destinations/publish
 
 **请求**
 
-以下请求会根据IMS组织和沙盒配置，检索您有权访问的用于发布的已提交目标列表。
+以下请求会根据组织和沙盒配置，检索您有权访问的用于发布的已提交目标列表。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -97,7 +97,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 **响应**
 
-以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含已提交以供发布的目标列表，您有权访问这些目标。 一个 `configId` 对应于一个目标的发布请求。
+以下响应会根据您使用的组织ID和沙盒名称，返回HTTP状态200，其中包含已提交以供发布的目标列表，您有权访问这些目标。 一个 `configId` 对应于一个目标的发布请求。
 
 ```json
 {
@@ -125,7 +125,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 对应于您的Experience Platform组织中的目标。 `PUBLIC` 对应于您提交以进行发布的目标。 请用Git术语来考虑这两个选项，其中 `DEV` 版本表示您的本地创作分支，并且 `PUBLIC` 版本表示远程主分支。 |
 | `publishDetailsList.publishedDate` | 字符串 | 提交目标以进行发布的日期（以纪元时间表示）。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 获取特定目标发布请求的状态 {#get}
 

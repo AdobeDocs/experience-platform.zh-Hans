@@ -1,21 +1,21 @@
 ---
 solution: Experience Platform
 title: 在UI中导出XDM模式
-description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙箱或IMS组织。
+description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙箱或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '488'
 ht-degree: 0%
 
 ---
 
 # 在UI中导出XDM模式
 
-架构库中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。
+架构库中的所有资源都包含在组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和组织之间共享体验数据模型(XDM)资源。
 
-为满足此需求， [!UICONTROL 模式] 使用Adobe Experience Platform UI中的工作区，可为架构库中的任何架构生成导出有效负载。 然后，可以在对架构注册API的调用中使用此有效负载将架构（以及所有相关资源）导入目标沙箱和IMS组织。
+为满足此需求， [!UICONTROL 模式] 使用Adobe Experience Platform UI中的工作区，可为架构库中的任何架构生成导出有效负载。 然后，可以在对架构注册API的调用中使用此有效负载将架构（以及所有相关资源）导入目标沙箱和组织。
 
 >[!NOTE]
 >
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-虽然平台UI允许导出XDM资源，但您必须使用架构注册表API将这些资源导入其他沙箱或IMS组织，以完成工作流。 请参阅 [架构注册API快速入门](../api/getting-started.md) 有关在遵循本指南之前所需的身份验证标头的重要信息。
+虽然Platform UI允许导出XDM资源，但您必须使用架构注册表API将这些资源导入其他沙箱或组织，以完成工作流。 请参阅 [架构注册API快速入门](../api/getting-started.md) 有关在遵循本指南之前所需的身份验证标头的重要信息。
 
 ## 生成导出有效负载
 
@@ -201,14 +201,14 @@ ht-degree: 0%
 ]
 ```
 
-有效负载采用数组的形式，每个数组项目都是一个对象，表示要导出的自定义XDM资源。 在上例中，“[!DNL Loyalty details]“自定义字段组”和“[!DNL Loyalty Members]“架构”。 导出中不包含架构使用的任何核心资源，因为这些资源可在所有沙箱和IMS组织中使用。
+有效负载采用数组的形式，每个数组项目都是一个对象，表示要导出的自定义XDM资源。 在上例中，“[!DNL Loyalty details]“自定义字段组”和“[!DNL Loyalty Members]“架构”。 导出中不包含该架构使用的任何核心资源，因为这些资源可在所有沙箱和组织中使用。
 
 请注意，贵组织的租户ID的每个实例都显示为 `<XDM_TENANTID_PLACEHOLDER>` 中。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中将架构导入的位置。
 
 ## 使用API导入资源
 
-在复制了架构的导出JSON后，您便可以将其用作向POST请求的有效负载 `/rpc/import` 架构注册表API中的端点。 请参阅 [导入端点指南](../api/import.md) 有关如何配置调用以将架构发送到所需的IMS组织和沙盒的详细信息。
+在复制了架构的导出JSON后，您便可以将其用作向POST请求的有效负载 `/rpc/import` 架构注册表API中的端点。 请参阅 [导入端点指南](../api/import.md) 有关如何配置调用以将架构发送到所需组织和沙盒的详细信息。
 
 ## 后续步骤
 
-按照本指南，您已成功将XDM架构导出到其他IMS组织或沙盒。 有关 [!UICONTROL 模式] UI，请参阅 [[!UICONTROL 模式] UI概述](./overview.md).
+按照本指南，您已成功将XDM架构导出到其他组织或沙盒。 有关 [!UICONTROL 模式] UI，请参阅 [[!UICONTROL 模式] UI概述](./overview.md).

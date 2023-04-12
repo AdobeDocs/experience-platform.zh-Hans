@@ -2,9 +2,9 @@
 title: 身份验证
 description: 了解如何为Adobe Experience Platform Edge Network Server API配置身份验证。
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '638'
+source-wordcount: '637'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 在对 [!DNL Server API]，确保满足以下先决条件：
 
-* 您拥有有权访问Adobe Experience Platform的IMS组织帐户。
+* 您拥有有权访问Adobe Experience Platform的组织帐户。
 * 您的Experience Platform帐户具有 `developer` 和 `user` 为Adobe Experience Platform API产品配置文件启用了角色。 联系您的 [Admin Console](../access-control/home.md) 管理员为您的帐户启用这些角色。
 * 你有Adobe ID。 如果您没有Adobe ID，请转到 [Adobe Developer控制台](https://developer.adobe.com/console) 并创建一个新帐户。
 

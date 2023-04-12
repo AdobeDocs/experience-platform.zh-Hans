@@ -2,9 +2,9 @@
 title: 查询服务中数据资产组织的最佳实践
 description: 本文档概述了组织数据以便于查询服务使用的逻辑方法。
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: d3ea7ee751962bb507c91e1afea0da35da60a66d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -129,7 +129,7 @@ dataset3| table
 
 ## 从数据容器更新或删除数据资产
 
-随着IMS组织（或沙盒）中的数据资产数量增加，有必要从数据容器更新或删除数据资产。 可通过使用点表示法引用相应的数据库和架构名称，从组织容器中删除单个资产。 表和视图(`t1` 和 `v1` ) `databaseA.schema1` 在第一个示例中，使用以下示例中的语法删除。
+随着组织（或沙盒）中的数据资产数量增加，有必要从数据容器更新或删除数据资产。 可通过使用点表示法引用相应的数据库和架构名称，从组织容器中删除单个资产。 表和视图(`t1` 和 `v1` ) `databaseA.schema1` 在第一个示例中，使用以下示例中的语法删除。
 
 ```sql
 ALTER TABLE databaseA.schema2.t1 REMOVE SCHEMA databaseA.schema2;
@@ -138,7 +138,7 @@ ALTER VIEW databaseA.schema2.v1 REMOVE SCHEMA databaseA.schema2;
 
 ### 删除数据资产
 
-的 [拖放表](../sql/syntax.md#drop-table) 函数仅从实际中删除数据资产 [!DNL Data Lake] 当IMS组织中的所有数据库之间存在对表的单个引用时。
+的 [拖放表](../sql/syntax.md#drop-table) 函数仅从实际中删除数据资产 [!DNL Data Lake] 当组织中所有数据库都存在对表的单个引用时。
 
 ```sql
 DROP TABLE databaseA.schema2.t1;

@@ -5,9 +5,9 @@ title: 在数据科学工作区UI中对模型进行评分
 type: Tutorial
 description: 在Adobe Experience Platform Data Science Workspace中，通过将输入数据馈送到现有培训的模型中，可以获得评分。 然后，将评分结果存储并作为新批次在指定的输出数据集中查看。
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---

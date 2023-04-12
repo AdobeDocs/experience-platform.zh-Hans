@@ -4,9 +4,9 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 96a092efe5ceefeb7b6c3ddd9845d78b8862ac68
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '429'
 ht-degree: 4%
 
 ---
@@ -57,7 +57,7 @@ ht-degree: 4%
 ## 1.1.0版 — 2021年10月5日
 
 * 远程调试可视化 — 在Adobe Experience Platform Web SDK >边缘事务部分中，将远程调试事件组织到可视化流程图中。
-* 启动新的远程调试会话时，需要页面上使用的Adobe Experience Platform Web SDK IMS组织与登录组织相匹配。
+* 启动新的远程调试会话时，需要页面上使用的Adobe Experience Platform Web SDK组织与登录组织相匹配。
 * 仅显示连接选项卡的边缘事务。 Target跟踪日志仍在“日志”>“Edge”部分中可用。
 * 允许为页面上Adobe Experience Platform Web SDK的每个实例单独覆盖数据流ID配置。 添加已启用调试的切换开关。
 * 修复了Adobe Target跟踪令牌并非总是随Adobe Experience Platform Web SDK的远程调试会话一起发送的问题。

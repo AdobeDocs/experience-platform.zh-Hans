@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 量度API端点
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1409'
-ht-degree: 4%
+source-wordcount: '1384'
+ht-degree: 3%
 
 ---
 
@@ -86,7 +86,7 @@ curl -X POST \
 | `aggregator` | 指定聚合函数，该函数应用于将多次序列记录分组为单个结果。 有关可用聚合器的详细信息，请参阅 [OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 | `downsample` | 可选字段，用于指定聚合函数，以通过将字段分类为间隔（或“分段”）来降低量度数据的采样率。 缩减采样的间隔由 `granularity` 属性。 有关缩减采样的详细信息，请参阅 [OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -180,7 +180,7 @@ curl -X POST \
 | `groupBy` | 如果在 `filter` 属性， `groupBy` 选项在请求中设置为true，则此对象将包含对应 `dps` 属性。<br><br>如果此对象在响应中显示为空，则对应 `dps` 属性适用于中提供的所有数据集 `filters` 数组(或 [!DNL Platform] 如果未提供过滤器)。 |
 | `dps` | 给定量度、过滤器和时间范围的返回数据。 此对象中的每个键都表示一个时间戳，其中包含指定量度的相应值。 每个数据点之间的时间段取决于 `granularity` 值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 附录
 
@@ -211,7 +211,7 @@ curl -X POST \
 | **timeseries.data.collection.inlet.success** | 对一个数据入口或所有数据入口的成功HTTP调用总数。 | 入口ID |
 | **timeseries.data.collection.inlet.failure** | 对一个数据入口或所有数据入口的失败HTTP调用总数。 | 入口ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### [!DNL Identity Service] {#identity}
 
@@ -223,11 +223,11 @@ curl -X POST \
 | timeseries.identity.dataset.recordfailed.count | 失败的记录数 [!DNL Identity Service]，适用于一个数据集或所有数据集。 | 数据集 ID |
 | timeseries.identity.dataset.namespacecode.recordfailed.count | 命名空间失败的身份记录数。 | 命名空间ID(**必需**) |
 | timeseries.identity.dataset.namespacecode.recordskipped.count | 命名空间跳过的身份记录数。 | 命名空间ID(**必需**) |
-| timeseries.identity.graph.imsorg.uniqueidentities.count | 存储在IMS组织的标识图中的唯一标识数。 | 不适用 |
+| timeseries.identity.graph.imsorg.uniqueidentities.count | 您组织的标识图中存储的唯一标识数。 | 不适用 |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | 命名空间的标识图中存储的唯一标识数。 | 命名空间ID(**必需**) |
-| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | IMS组织的标识图中存储的特定图强度（“未知”、“弱”或“强”）的唯一标识数。 | 图表强度(**必需**) |
+| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | 针对特定图表强度（“未知”、“弱”或“强”），存储在组织标识图中的唯一标识数。 | 图表强度(**必需**) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### [!DNL Real-Time Customer Profile] {#profile}
 
@@ -239,7 +239,7 @@ curl -X POST \
 | timeseries.profiles.dataset.recordsuccess.count | 写入其数据源的记录数，由 [!DNL Profile]，适用于一个数据集或所有数据集。 | 数据集 ID |
 | timeseries.profiles.dataset.batchsuccess.count | 数量 [!DNL Profile] 为数据集或所有数据集批量摄取。 | 数据集 ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 错误消息
 
@@ -272,9 +272,9 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `title` | 包含错误消息的字符串以及可能发生该错误的原因。 |
-| `report` | 包含有关错误的上下文信息，包括在触发该错误的操作中使用的沙盒和IMS组织。 |
+| `report` | 包含有关错误的上下文信息，包括触发该错误的操作中使用的沙盒和组织。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 下表列出了API可返回的不同错误代码：
 
@@ -284,6 +284,6 @@ curl -X POST \
 | `INSGHT-1001-400` | 量度查询失败 | 由于请求错误或查询本身不可解析，尝试查询量度数据库时出错。 在再次尝试之前，请确保请求的格式正确。 |
 | `INSGHT-1001-500` | 量度查询失败 | 由于服务器错误，尝试查询量度数据库时出错。 请重试请求，如果问题仍然存在，请与Adobe支持联系。 |
 | `INSGHT-1002-500` | 服务错误 | 由于内部错误，无法处理该请求。 请重试请求，如果问题仍然存在，请与Adobe支持联系。 |
-| `INSGHT-1003-401` | 沙盒验证错误 | 由于沙盒验证错误，无法处理该请求。 确保您在 `x-sandbox-name` 标头表示在再次尝试请求之前，您的IMS组织具有有效且已启用的沙盒。 |
+| `INSGHT-1003-401` | 沙盒验证错误 | 由于沙盒验证错误，无法处理该请求。 确保您在 `x-sandbox-name` 标头表示贵组织在再次尝试请求之前已启用的有效沙盒。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

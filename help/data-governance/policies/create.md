@@ -5,9 +5,9 @@ title: 在API中创建数据管理策略
 type: Tutorial
 description: 了解如何使用策略服务API创建数据管理策略。
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1199'
 ht-degree: 2%
 
 ---
@@ -57,7 +57,7 @@ GET /marketingActions/custom
 
 **请求**
 
-以下请求使用 `marketingActions/custom` 端点，可获取由IMS组织定义的所有营销操作的列表。
+以下请求使用 `marketingActions/custom` 端点，可获取由您的组织定义的所有营销操作的列表。
 
 ```shell
 curl -X GET \

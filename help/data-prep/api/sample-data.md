@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；数据准备；API指南
 solution: Experience Platform
 title: 示例数据API端点
 description: 您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 4%
+source-wordcount: '399'
+ht-degree: 5%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 ## 列出示例数据
 
-您可以通过向 `/samples` 端点。
+通过向 `/samples` 端点。
 
 **API格式**
 
@@ -34,7 +34,7 @@ GET /samples?limit={LIMIT}&start={START}
 
 **请求**
 
-以下请求将检索IMS组织内的最后两个映射示例数据。
+以下请求将检索您组织内的最后两个映射示例数据。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \

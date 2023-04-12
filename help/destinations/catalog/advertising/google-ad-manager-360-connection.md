@@ -2,10 +2,10 @@
 title: （测试版） [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '926'
-ht-degree: 2%
+source-wordcount: '920'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Google Ad Manager 360] 连接时，请联系您的Adobe代表并提供 [!DNL IMS Organization ID].
+>此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Google Ad Manager 360] 连接时，请联系您的Adobe代表并提供 [!DNL organization ID].
 
 的 [!DNL Google Ad Manager 360] 目标导出 [!DNL CSV] 文件 [!DNL Google Cloud Storage] 存储段。 导出 [!DNL CSV] 文件，必须将它们导入 [!DNL Google Ad Manager 360] 帐户。
 
@@ -37,7 +37,7 @@ ht-degree: 2%
 |---|---|---|
 | PPID | [!DNL Publisher provided ID] | 选择此目标标识以将受众发送到 [!DNL Google Ad Manager 360] |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -48,7 +48,7 @@ ht-degree: 2%
 | 导出类型 | **[!UICONTROL 基于用户档案]** | 您正在导出区段的所有成员，以及在的 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 先决条件 {#prerequisites}
 

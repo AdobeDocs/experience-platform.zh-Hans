@@ -2,16 +2,16 @@
 title: 公司端点
 description: 了解如何在Reactor API中对/companys端点进行调用。
 exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 4%
+source-wordcount: '239'
+ht-degree: 3%
 
 ---
 
 # 公司端点
 
-公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与IMS组织ID匹配。 API用户只能查看他们有权访问的公司。 公司可能包含许多 [属性](./properties.md). 一个资产恰好属于一个公司。
+公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与组织ID匹配。 API用户只能查看他们有权访问的公司。 公司可能包含许多 [属性](./properties.md). 一个资产恰好属于一个公司。
 
 的 `/companies` reactor API中的端点允许您以编程方式检索您在experience应用程序中有权访问的公司。
 
@@ -121,7 +121,7 @@ GET /companies/{COMPANY_ID}
 | --- | --- |
 | `{COMPANY_ID}` | 的 `id` 值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 

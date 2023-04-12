@@ -1,13 +1,13 @@
 ---
 title: 位置提示
 description: 本文介绍了位置提示在边缘网络服务器API中的工作方式，以便最终用户请求可以始终路由到同一服务器。
-source-git-commit: 7f1d8fba34c5478f0d6e727a5a52af642852c9dd
+exl-id: 8cd2f8e2-2065-4b7e-8d35-4ed1a716f1b3
+source-git-commit: 2c7a5f007189d897ed32302a2a80c1e16af6af80
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
-
 
 # 位置提示
 
@@ -62,4 +62,4 @@ POST 'https://edge.adobedc.net/ee/{LOCATION_HINT}/v2/interact?dataStreamId={Data
 
 为确保边缘网络返回的位置提示在会话期间持续存在，您可以将位置提示值与Cookie生命周期(包含在 `ttlSeconds` 字段（通常为1800秒）。
 
-与大多数Cookie一样，每当出现来自边缘网络的响应时，您应该延长此Cookie的生命周期。 要确保与Web SDK的最大兼容性，请使用Cookie名称 `kndctr_{IMSORG}_AdobeOrg_cluster`. IMS组织ID通常以 `@AdobeOrg`. 的 `@` 必须将值转换为下划线，以确保cookie的格式正确。
+与大多数Cookie一样，每当出现来自边缘网络的响应时，您应该延长此Cookie的生命周期。 要确保与Web SDK的最大兼容性，请使用Cookie名称 `kndctr_{IMSORG}_AdobeOrg_cluster`. 组织ID通常以 `@AdobeOrg`. 的 `@` 必须将值转换为下划线，以确保cookie的格式正确。

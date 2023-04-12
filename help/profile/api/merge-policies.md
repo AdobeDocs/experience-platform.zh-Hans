@@ -4,9 +4,9 @@ title: 合并策略API端点
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2468'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
-合并策略是IMS组织的专用策略，允许您创建不同的策略以按照所需的特定方式合并架构。 任何API访问 [!DNL Profile] 数据需要合并策略，但如果未明确提供，则使用默认策略。 [!DNL Platform] 为组织提供默认的合并策略，或者，您可以为特定体验数据模型(XDM)架构类创建合并策略，并将其标记为组织的默认策略。
+合并策略是贵组织的私有策略，允许您创建不同的策略以按照所需的特定方式合并架构。 任何API访问 [!DNL Profile] 数据需要合并策略，但如果未明确提供，则使用默认策略。 [!DNL Platform] 为组织提供默认的合并策略，或者，您可以为特定体验数据模型(XDM)架构类创建合并策略，并将其标记为组织的默认策略。
 
 虽然每个组织可能在每个架构类中具有多个合并策略，但每个类只能有一个默认的合并策略。 如果提供了架构类的名称并且需要但未提供合并策略，则将使用设置为默认设置的任何合并策略。
 
@@ -37,7 +37,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 为确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为边缘上的活动策略。 要使区段在边缘上激活（标记为边缘区段），必须将其绑定到在边缘上标记为活动的合并策略。 如果区段为 **not** 绑定到在边缘上标记为活动的合并策略，该区段在边缘上不会标记为活动，并且将标记为流区段。
 
-此外，每个IMS组织只能 **one** 边缘上处于活动状态的合并策略。 如果合并策略在边缘上处于活动状态，则它可用于边缘上的其他系统，如边缘配置文件、边缘分段和边缘上的目标。
+此外，每个组织只能 **one** 边缘上处于活动状态的合并策略。 如果合并策略在边缘上处于活动状态，则它可用于边缘上的其他系统，如边缘配置文件、边缘分段和边缘上的目标。
 
 ### 完成合并策略对象
 
@@ -193,7 +193,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ## 访问合并策略 {#access-merge-policies}
 
-使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求以按其ID查看特定合并策略，或访问IMS组织中按特定条件过滤的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
+使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求以按其ID查看特定合并策略，或访问组织中按特定条件过滤的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
 
 ### 按ID访问单个合并策略
 

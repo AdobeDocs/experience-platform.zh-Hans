@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询API端点
 description: 以下各节介绍了可以使用查询服务API中的/querys端点进行的调用。
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 08e19149a84273231c6261d2a4e09584dfb6e38d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '864'
 ht-degree: 2%
 
 ---
@@ -46,7 +46,7 @@ GET /queries?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求可检索为IMS组织创建的最新查询。
+以下请求会检索为贵组织创建的最新查询。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
@@ -58,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定IMS组织的查询列表(JSON)。 以下响应会返回为IMS组织创建的最新查询。
+成功响应会返回HTTP状态200，其中包含指定组织的查询列表(JSON)。 以下响应会返回为您的组织创建的最新查询。
 
 ```json
 {

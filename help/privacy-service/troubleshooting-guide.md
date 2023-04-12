@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service疑难解答指南
 description: 本文档提供了有关Privacy Service的常见问题解答，以及有关API中常见错误的信息。
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '916'
 ht-degree: 1%
 
 ---
@@ -107,7 +107,7 @@ Adobe不支持使用 [!DNL Privacy Service] 用于清除意外提交到产品的
 | 命名空间无效 | 为用户ID提供的身份命名空间无效。 请参阅 [标准身份命名空间](./api/appendix.md#standard-namespaces) 在 [!DNL Privacy Service] API指南附录，以获取已接受的命名空间列表。 如果您使用的是自定义命名空间，请确保您正在设置ID的 `type` 属性更改为“自定义”。 |
 | 部分完成 | 作业已成功完成，但某些数据不适用于给定请求，因此被跳过。 |
 | 数据不是必需的格式。 | 指定应用程序的一个或多个数据值的格式不正确。 有关更多信息，请查看作业详细信息。 |
-| 尚未配置IMS组织。 | 未为您的IMS组织配置此消息时 [!DNL Privacy Service]. 有关更多信息，请与管理员联系。 |
+| 尚未配置IMS组织。 | 如果贵组织未配置 [!DNL Privacy Service]. 有关更多信息，请与管理员联系。 |
 | 需要访问权限和权限。 | 要使用，需要拥有访问权限和权限 [!DNL Privacy Service]. 请与管理员联系以获取访问权限。 |
 | 上载和存档访问数据时出现问题。 | 发生此错误时，请重新上载访问数据，然后重试。 |
 | 超出了当前文档速率限制的工作量。 | 发生此错误时，请降低提交率并重试。 |

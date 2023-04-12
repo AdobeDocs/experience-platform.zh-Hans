@@ -2,10 +2,10 @@
 description: 本页列出并介绍了可使用“/authoring/destination-servers” API端点执行的所有API操作。 可通过公共端点“/authoring/destination-servers”在Adobe Experience Platform Destination SDK中配置目标的服务器和模板规范。
 title: 目标服务器端点API操作
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1361'
-ht-degree: 4%
+source-wordcount: '1355'
+ht-degree: 3%
 
 ---
 
@@ -70,11 +70,11 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>使用 `PEBBLE_V1` 如果Adobe需要在 `value` 字段。 如果您具有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> 使用 `NONE` 如果Adobe端不需要转换，例如，如果您具有如下端点： `https://api.moviestar.com/data/items`.</li></ul> |
 | `urlBasedDestination.url.value` | 字符串 | *必需。* 填写Experience Platform应连接到的API端点的地址。 |
 | `httpTemplate.httpMethod` | 字符串 | *必需。* Adobe在对服务器的调用中将使用的方法。 选项包括 `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
-| `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
+| `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必需。*&#x200B;使用 `PEBBLE_V1`。 |
 | `httpTemplate.requestBody.value` | 字符串 | *必需。* 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务所需的格式。 <br> <ul><li> 有关如何编写模板的信息，请阅读 [使用模板段](./message-format.md#using-templating). </li><li> 有关字符转义的更多信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). </li><li> 有关简单转换的示例，请参阅 [配置文件属性](./message-format.md#attributes) 转换。 </li></ul> |
 | `httpTemplate.contentType` | 字符串 | *必需。* 服务器接受的内容类型。 此值极有可能 `application/json`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -603,7 +603,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## 列出目标服务器配置 {#retrieve-list}
 
-您可以通过向 `/authoring/destination-servers` 端点。
+通过向 `/authoring/destination-servers` 端点。
 
 **API格式**
 
@@ -613,7 +613,7 @@ GET /authoring/destination-servers
 
 **请求**
 
-以下请求将根据IMS组织和沙盒配置，检索您有权访问的目标服务器配置列表。
+以下请求将根据组织和沙盒配置，检索您有权访问的目标服务器配置列表。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination-servers \
@@ -625,7 +625,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 **响应**
 
-以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的目标服务器配置列表。 一个 `instanceId` 对应于一个目标服务器的模板。 响应因简短而被截断。
+以下响应会根据您使用的组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的目标服务器配置列表。 一个 `instanceId` 对应于一个目标服务器的模板。 响应因简短而被截断。
 
 ```json
 {

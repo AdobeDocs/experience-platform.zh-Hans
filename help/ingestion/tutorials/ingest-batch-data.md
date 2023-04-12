@@ -5,9 +5,9 @@ title: 将数据摄取到Experience Platform
 type: Tutorial
 description: 利用Adobe Experience Platform，可以轻松将数据导入为批处理文件，格式为符合已知Experience Data Model(XDM)架构的Parquet文件或数据。
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1322'
+source-wordcount: '1320'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 作为�
 
 ## 数据集工作区
 
-中的数据集工作区 [!DNL Experience Platform] 允许您查看和管理IMS组织创建的所有数据集，并创建新数据集。
+中的数据集工作区 [!DNL Experience Platform] 允许您查看和管理贵组织创建的所有数据集，以及创建新数据集。
 
 通过单击 **[!UICONTROL 数据集]** 的下游。 数据集工作区包含数据集列表，其中包括显示名称、创建时间（日期和时间）、源、架构和上次批处理状态的列，以及上次更新数据集的日期和时间。
 

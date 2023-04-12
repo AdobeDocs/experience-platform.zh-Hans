@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jupyterlab笔记本中的数据访问
 description: 本指南重点介绍如何使用Jupyter Notebooks（在Data Science Workspace中构建）来访问您的数据。
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '3294'
+source-wordcount: '3292'
 ht-degree: 8%
 
 ---
@@ -519,7 +519,7 @@ df1.show(10)
 | df1 | 一个变量，表示用于读取和写入数据的Pantics数据帧。 |
 | 用户令牌 | 使用自动获取的用户令牌 `clientContext.getUserToken()`. |
 | 服务令牌 | 使用自动获取的服务令牌 `clientContext.getServiceToken()`. |
-| ims-org | 您的IMS组织ID，使用 `clientContext.getOrgId()`. |
+| ims-org | 您的组织ID是使用 `clientContext.getOrgId()`. |
 | api-key | 使用自动获取的API密钥 `clientContext.getApiKey()`. |
 
 >[!TIP]
@@ -571,7 +571,7 @@ df1.write.format("com.adobe.platform.query")
 | df1 | 一个变量，表示用于读取和写入数据的Pantics数据帧。 |
 | 用户令牌 | 使用自动获取的用户令牌 `clientContext.getUserToken()`. |
 | 服务令牌 | 使用自动获取的服务令牌 `clientContext.getServiceToken()`. |
-| ims-org | 您的IMS组织ID，使用 `clientContext.getOrgId()`. |
+| ims-org | 您的组织ID是使用 `clientContext.getOrgId()`. |
 | api-key | 使用自动获取的API密钥 `clientContext.getApiKey()`. |
 
 >[!TIP]

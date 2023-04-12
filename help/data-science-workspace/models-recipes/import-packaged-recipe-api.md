@@ -5,9 +5,9 @@ title: 使用Sensei机器学习API导入打包的方法
 type: Tutorial
 description: 本教程使用Sensei机器学习API创建引擎，也称为用户界面中的方法。
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1006'
 ht-degree: 2%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 2%
 本教程要求您完成 [Adobe Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功调用 [!DNL Platform] API。 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 - `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。
-- `{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+- `{ORG_ID}`:您独特的Adobe Experience Platform集成中提供了您的组织凭据。
 - `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。
 
 ## 创建引擎

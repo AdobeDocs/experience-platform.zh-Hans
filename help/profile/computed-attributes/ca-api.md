@@ -6,9 +6,9 @@ description: 在Adobe Experience Platform中，计算属性是用于将事件级
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
 hide: true
 hidefromtoc: true
-source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2274'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,7 @@ curl -X POST \
 | `name` | 作为字符串的计算属性字段的名称。 |
 | `path` | 包含计算属性的字段的路径。 此路径可在 `properties` 属性，且不应在路径中包含字段名称。 写入路径时，请忽略 `properties` 属性。 |
 | `{TENANT_ID}` | 如果您不熟悉租户ID，请参阅 [架构注册开发人员指南](../../xdm/api/getting-started.md#know-your-tenant_id). |
-| `description` | 计算属性的描述。 在定义了多个计算属性后，此功能特别有用，因为它将帮助IMS组织内的其他人确定要使用的正确计算属性。 |
+| `description` | 计算属性的描述。 在定义了多个计算属性后，此功能特别有用，因为它有助于组织内的其他人确定要使用的正确计算属性。 |
 | `expression.value` | 有效 [!DNL Profile Query Language] (PQL)表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅 [示例PQL表达式](expressions.md) 文档。 |
 | `schema.name` | 包含计算属性字段的架构所基于的类。 示例： `_xdm.context.experienceevent` ，用于基于XDM ExperienceEvent类的架构。 |
 

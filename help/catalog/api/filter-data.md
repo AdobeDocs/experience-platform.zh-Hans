@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用查询参数筛选目录数据
 description: 目录服务API允许通过使用请求查询参数过滤响应数据。 “目录”的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API上的负载并帮助提高整体性能。
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2121'
+source-wordcount: '2120'
 ht-degree: 1%
 
 ---
@@ -206,7 +206,7 @@ curl -X GET \
 使用标记时需要考虑以下一些限制：
 
 * 当前支持标记的目录对象只有数据集、批次和连接。
-* 标记名称对您的IMS组织是唯一的。
+* 标记名称对您的组织是唯一的。
 * Adobe流程可能会对某些行为使用标记。 这些标记的名称以“adobe”作为标准前缀。 因此，在声明标记名称时，应避免出现此约定。
 * 以下标记名称是保留的，供在 [!DNL Experience Platform]，因此无法声明为贵组织的标记名称：
    * `unifiedProfile`:此标记名称是为要摄取的数据集保留的 [[!DNL Real-Time Customer Profile]](../../profile/home.md).

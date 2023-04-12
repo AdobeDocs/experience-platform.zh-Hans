@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity Service疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform Identity Service的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2180'
+source-wordcount: '2176'
 ht-degree: 0%
 
 ---
@@ -204,7 +204,7 @@ Internal solutions|Preferred|Common
 }
 ```
 
-当您的IMS组织没有为 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
+当您的组织未配置相应的权限时，会显示此错误消息 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
 
 ### 网关服务令牌无效
 
@@ -264,7 +264,7 @@ When [!DNL Identity Service] 标识会持续存在，标识的ID和关联的命�
 }
 ```
 
-当您的IMS组织没有为 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
+当您的组织未配置相应的权限时，会显示此错误消息 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
 
 ### 内部服务器错误
 
@@ -330,7 +330,7 @@ When [!DNL Identity Service] 标识会持续存在，标识的ID和关联的命�
 }
 ```
 
-当摄取的记录显示的标识的关联命名空间不存在或IMS组织无法访问，则会显示此错误。
+当摄取的记录显示的标识的关联命名空间不存在或贵组织无法访问，则会显示此错误。
 
 ### 由于未为专用身份图配置IMS组织，因此正在跳过批量摄取
 
@@ -342,7 +342,7 @@ When [!DNL Identity Service] 标识会持续存在，标识的ID和关联的命�
 }
 ```
 
-在摄取批量数据时，当您的IMS组织没有为配置适当的权限时，会显示此错误消息 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
+在摄取批量数据时，当您的组织没有为 [!DNL Identity Service]. 请联系您的系统管理员以解决此问题。
 
 ### 内部错误
 

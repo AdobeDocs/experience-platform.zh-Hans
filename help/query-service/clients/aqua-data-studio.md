@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将Aqua Data Studio连接到查询服务
 description: 本文档将介绍将Aqua Data Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: 3ffb535e9a6648f037678acebba0de5f2088e79e
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 >
 >有 [!DNL Windows] 和 [!DNL macOS] 版本 [!DNL Aqua Data Studio]. 本指南中的屏幕截图是使用 [!DNL macOS] 桌面应用程序。 版本之间的UI可能存在细微差异。
 
-获取连接所需的凭据 [!DNL Aqua Data Studio] 要Experience Platform，您必须拥有 [!UICONTROL 查询] 工作区。 如果您当前没有访问 [!UICONTROL 查询] 工作区。
+获取连接所需的凭据 [!DNL Aqua Data Studio] 要Experience Platform，您必须拥有 [!UICONTROL 查询] 工作区。 如果您当前无权访问 [!UICONTROL 查询] 工作区。
 
 ## 注册服务器 {#register-server}
 

@@ -5,9 +5,9 @@ title: 使用数据访问API检索失败的批次
 type: Tutorial
 description: 本教程介绍了使用数据摄取API检索有关失败批次的信息的步骤。
 exl-id: 5fb9f28d-091e-4124-8d8e-b8a675938d3a
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '645'
 ht-degree: 2%
 
 ---
@@ -194,9 +194,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 与上一个示例流中的时间戳错误一样，这些错误是由于XDM格式不正确所致。 这些错误消息会因问题的性质而异。 因此，无法显示任何特定错误示例。
 
-### 缺少或无效的IMS组织ID
+### 缺少组织ID或组织ID无效
 
-如果有效负载中缺少IMS组织ID，则会显示此错误。
+如果有效负载中缺少组织ID，则会显示此错误。
 
 ```json
 {

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM系统疑难解答指南
 description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2074'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -177,7 +177,7 @@ ht-degree: 0%
 
 当您尝试创建名称不正确的字段的资源，或向现有资源添加名称不正确的字段时，会显示此错误消息。
 
-由IMS组织定义的资源必须在租户ID下命名其字段的命名空间，以避免与其他行业和供应商资源发生冲突。 在使用标准字段组构建架构时，您在这些字段组结构中添加的任何自定义字段也必须与租户ID下的名称同步。
+贵组织定义的资源必须在租户ID下命名其字段的命名空间，以避免与其他行业和供应商资源发生冲突。 在使用标准字段组构建架构时，您在这些字段组结构中添加的任何自定义字段也必须与租户ID下的名称同步。
 
 >[!NOTE]
 >

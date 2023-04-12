@@ -5,9 +5,9 @@ title: 使用流服务API为原始数据创建流数据流
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1098'
 ht-degree: 2%
 
 ---
@@ -204,7 +204,7 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-Target连接创建并管理到平台的目标连接或传输数据将登陆的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和IMS组织。
+Target连接创建并管理到平台的目标连接或传输数据将登陆的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和组织。
 
 要创建目标连接，请向 `/targetConnections` 的端点 [!DNL Flow Service] API。 在请求中，您必须提供数据格式，即 `dataSetId` 在上一步中检索，并且固定连接规范ID绑定到 [!DNL Data Lake]. 此ID为 `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
@@ -419,7 +419,7 @@ curl -X GET \
 
 - [源连接ID](#source)
 - [Target连接ID](#target)
-- [映射ID](#mapping)
+- [映射 ID](#mapping)
 - [数据流规范ID](#specs)
 
 数据流负责从源中调度和收集数据。 通过在有效负载中提供先前提到的值时执行POST请求，可以创建数据流。

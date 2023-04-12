@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1900'
-ht-degree: 3%
+source-wordcount: '1872'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 架构定义数据实体的静态视图，但不提供有关基于这些架构（例如数据集）的数据如何彼此关联的特定详细信息。 Adobe Experience Platform允许您使用描述符描述这些关系以及有关架构的其他解释性元数据。
 
-架构描述符是租户级别的元数据，这意味着它们对IMS组织是唯一的，所有描述符操作都在租户容器中进行。
+架构描述符是租户级别的元数据，这意味着它们对您的组织是唯一的，所有描述符操作都在租户容器中进行。
 
 每个模式可以应用一个或多个模式描述符实体。 每个模式描述符实体包括描述符 `@type` 和 `sourceSchema` 适用的。 应用后，这些描述符将应用于使用架构创建的所有数据集。
 
@@ -60,7 +60,7 @@ curl -X GET \
 | `application/vnd.adobe.xdm+json` | 返回扩展描述符对象的数组 |
 | `application/vnd.adobe.xdm-v2+json` | 此 `Accept` 必须使用头才能利用分页功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -98,7 +98,7 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | 的 `@id` 要查找的描述符。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -207,7 +207,7 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | 的 `@id` 要更新的描述符的。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -264,7 +264,7 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | 的 `@id` 要删除的描述符。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -318,7 +318,7 @@ curl -X DELETE \
 | `xdm:property` | 任一 `xdm:id` 或 `xdm:code`，具体取决于 `xdm:namespace` 已使用。 |
 | `xdm:isPrimary` | 可选布尔值。 当为true时，将字段指示为主标识。 架构只能包含一个主标识。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### 友好名称描述符 {#friendly-name}
 
@@ -359,7 +359,7 @@ curl -X DELETE \
 | `meta:enum` | 如果字段指示为 `xdm:sourceProperty` 是字符串字段， `meta:enum` 可用于在分段UI中为字段添加建议的值。 请务必注意， `meta:enum` 不声明枚举或为XDM字段提供任何数据验证。<br><br>此字段应仅用于由Adobe定义的核心XDM字段。 如果源属性是由您的组织定义的自定义字段，则应该编辑该字段的 `meta:enum` 属性(通过PATCH请求)。 |
 | `meta:excludeMetaEnum` | 如果字段指示为 `xdm:sourceProperty` 是一个字符串字段，其中包含在 `meta:enum` 字段中，您可以将此对象包含在友好名称描述符中，以从分段中排除部分或全部这些值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### 关系描述符
 
@@ -389,7 +389,7 @@ curl -X DELETE \
 | `xdm:destinationVersion` | 引用架构的主要版本。 |
 | `xdm:destinationProperty` | 引用架构中目标字段的可选路径。 如果忽略此属性，则目标字段将由包含匹配引用标识描述符的任何字段推断（请参阅下文）。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### 引用标识描述符
 
@@ -413,7 +413,7 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 源架构中用于引用架构的字段路径。 应以“/”开头，而不以“/”结尾。 不要在路径中包含“properties”(例如， `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
 | `xdm:identityNamespace` | 源属性的标识命名空间代码。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### 已弃用的字段描述符
 
@@ -435,4 +435,4 @@ curl -X DELETE \
 | `xdm:sourceVersion` | 要将描述符应用到的架构的版本。 应设置为 `1`. |
 | `xdm:sourceProperty` | 将描述符应用到的架构中属性的路径。 如果要将描述符应用于多个属性，可以以数组的形式提供路径列表(例如， `["/firstName", "/lastName"]`)。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

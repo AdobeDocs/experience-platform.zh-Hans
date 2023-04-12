@@ -7,9 +7,9 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 short-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1877'
+source-wordcount: '1868'
 ht-degree: 4%
 
 ---
@@ -32,9 +32,9 @@ ht-degree: 4%
 
 有关创建API请求的更多信息，请访问Platform API快速入门指南 [读取示例API调用](./api-guide.md#sample-api) 中。
 
-## 我的IMS组织是什么？ {#what-is-my-ims-organization}
+## 我的组织是什么？ {#what-is-my-ims-organization}
 
-IMS组织是Adobe的表示形式。 任何经许可的Adobe解决方案均与此客户组织集成。 当IMS组织有权 [!DNL Experience Platform]，它可以向开发人员分配访问权限。 IMS组织ID(`x-gw-ims-org-id`)表示应为执行API调用的组织，因此需要作为所有API请求中的标头。 可以通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**. 有关如何在 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+组织是Adobe的代表。 任何经许可的Adobe解决方案均与此客户组织集成。 当组织有权 [!DNL Experience Platform]，它可以向开发人员分配访问权限。 组织ID(`x-gw-ims-org-id`)表示应为执行API调用的组织，因此需要作为所有API请求中的标头。 可以通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**. 有关如何在 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## 在哪里可以找到我的API密钥？ {#where-can-i-find-my-api-key}
 
@@ -42,7 +42,7 @@ IMS组织是Adobe的表示形式。 任何经许可的Adobe解决方案均与此
 
 ## 如何获取访问令牌？ {#how-do-i-get-an-access-token}
 
-所有API调用的授权标头中都需要使用访问令牌。 它们可以使用 `curl` 命令，前提是您有权访问IMS组织的集成。 访问令牌仅在24小时内有效，在此之后必须生成新令牌才能继续使用API。 有关生成访问令牌的详细信息，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+所有API调用的授权标头中都需要使用访问令牌。 如果您有权访问组织的集成，则可以使用CURL命令生成这些集成。 访问令牌仅在24小时内有效，在此之后必须生成新令牌才能继续使用API。 有关生成访问令牌的详细信息，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## 如何使用查询参数？ {#how-do-i-user-query-parameters}
 
@@ -151,7 +151,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 }
 ```
 
-当IMS组织标头(`x-gw-ims-org-id`)。 再次尝试之前，请确保标头包含在IMS组织的ID中。
+当组织标题(`x-gw-ims-org-id`)。 再次尝试之前，请确保标头包含在您组织的ID中。
 
 ### 配置文件无效 {#profile-is-not-valid}
 
@@ -162,7 +162,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 }
 ```
 
-当用户或Adobe I/O集成(由 [访问令牌](#how-do-i-get-an-access-token) 在 `Authorization` 头)无权对 [!DNL Experience Platform] 中提供的IMS组织的API `x-gw-ims-org-id` 标题。 再次尝试之前，请确保您在标头中为IMS组织提供了正确的ID。 如果您不知道自己的组织ID，可以在 [Adobe I/O控制台](https://console.adobe.io):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**.
+当用户或Adobe I/O集成(由 [访问令牌](#how-do-i-get-an-access-token) 在 `Authorization` 头)无权对 [!DNL Experience Platform] 中提供的组织的API `x-gw-ims-org-id` 标题。 再次尝试之前，请确保您在标题中为贵组织提供了正确的ID。 如果您不知道自己的组织ID，可以在 [Adobe I/O控制台](https://console.adobe.io):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**.
 
 ### 刷新etag错误 {#refresh-etag-error}
 
@@ -199,7 +199,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 ```
 
 以下两种情况中的一种情况会显示此错误消息：
-- 当IMS组织标头不正确或格式错误时(`x-gw-ims-org-id`)在API请求中传递。 再次尝试之前，请确保包含您的IMS组织的正确ID。
+- 当组织ID标头不正确或格式错误时(`x-gw-ims-org-id`)在API请求中传递。 再次尝试之前，请确保包含正确的组织ID。
 - 当您的帐户（由提供的身份验证凭据表示）与产品配置文件无关联以进行Experience Platform时。 按照 [生成访问凭据](./api-authentication.md#authentication-for-each-session) 在Platform API身份验证教程中，将Platform添加到您的帐户并相应地更新您的身份验证凭据。
 
 ## 服务疑难解答目录 {#service-troubleshooting-directory}

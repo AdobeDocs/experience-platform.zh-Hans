@@ -5,9 +5,9 @@ title: 身份验证和访问Experience PlatformAPI
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1267'
 ht-degree: 6%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 6%
 
 要成功调用Experience PlatformAPI，您必须具备以下条件：
 
-* 有权访问Adobe Experience Platform的IMS组织。
+* 有权访问Adobe Experience Platform的组织。
 * 能够将您添加为产品配置文件的开发人员和用户的Admin Console管理员。
 
 您还必须具有Adobe ID才能完成本教程。 如果您没有Adobe ID，则可以使用以下步骤创建一个：
@@ -54,7 +54,7 @@ ht-degree: 6%
 
 您的 [!DNL Admin Console] 管理员还必须将您作为用户添加到同一产品配置文件。 请参阅 [管理用户组 [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) 以了解更多信息。
 
-## 生成API密钥、IMS组织ID和客户端密钥 {#api-ims-secret}
+## 生成API密钥、组织ID和客户端密钥 {#api-ims-secret}
 
 >[!NOTE]
 >

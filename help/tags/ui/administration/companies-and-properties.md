@@ -1,10 +1,11 @@
 ---
 title: 属性
 description: 了解如何在Adobe Experience Platform中为您的组织组织和分组扩展、环境和库。
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1178'
-ht-degree: 56%
+source-wordcount: '1176'
+ht-degree: 58%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 ## Web 资产
 
@@ -24,7 +25,7 @@ Web 属性是规则、数据元素、配置的扩展、环境和库的集合。�
 
 ## 规划资产的最佳做法 {#best-practices-for-planning-properties}
 
-Adobe Experience Platform中的每个标记实施可能会有很大不同。 他们拥有多种数据收集需求、变量使用、扩展、第三方标记、其他系统和技术、人员、团队、地理区域等。 您应该采用与IMS组织的工作流和流程相匹配的方式来构建资产。
+Adobe Experience Platform中的每个标记实施可能会有很大不同。 他们拥有多种数据收集需求、变量使用、扩展、第三方标记、其他系统和技术、人员、团队、地理区域等。 您应该采用与组织的工作流和流程相匹配的方式来构建资产。
 
 在规划资产时，请考虑以下各项：
 
@@ -66,7 +67,7 @@ Adobe Experience Platform中的每个标记实施可能会有很大不同。 他
 
 对于在Adobe Experience Platform工作的个人、团队和组织，他们需要访问您的所有网站和应用程序（其中一些，还是仅一个）？
 
-用户管理功能允许您将所有资产的不同角色分配给不同的人员，或者按资产进行分配。如果某人拥有足够的权限，则该人员可以在该平台IMS组织中的所有资产中执行管理操作。 所有其他角色可以按资产进行分配。您甚至可以对某些用户（非管理员）隐藏资产，方法是不为他们授予该资产中的任何角色。
+用户管理功能允许您将所有资产的不同角色分配给不同的人员，或者按资产进行分配。如果某人拥有足够的权限，则该人员可以在该平台组织中的所有资产中执行管理操作。 所有其他角色可以按资产进行分配。您甚至可以对某些用户（非管理员）隐藏资产，方法是不为他们授予该资产中的任何角色。
 
 ## 资产页面
 
@@ -96,7 +97,7 @@ Properties 列表显示了以下信息：
 
 开始之前，请参阅[规划资产的最佳做法](companies-and-properties.md#best-practices-for-planning-properties)以了解资产。
 
-导航到您的公司页面，然后选择&#x200B;**[!UICONTROL 添加属性]**，或从列表中选择现有属性并选择&#x200B;**[!UICONTROL 配置]**。
+导航到您的公司页面，然后选择 **[!UICONTROL 添加属性]**，或从列表中选择现有资产并选择 **[!UICONTROL 配置]**.
 
 ![](../../images/property-settings.png)
 
@@ -110,10 +111,10 @@ Properties 列表显示了以下信息：
 
    **Domains：**&#x200B;您计划将此资产部署到的任何站点的基本 URL
 
-1. （高级）**[!UICONTROL 按顺序运行规则组件]**&#x200B;选中此复选框可使条件和操作等到前一个条件和操作完成后再运行
-1. （高级）**[!UICONTROL 为缺少的数据元素返回空字符串：]**&#x200B;如果引用的数据元素在库中不存在，则通常会返回`undefined`。  如果希望该方案返回空字符串，请选中此复选框。
-1. （高级）**[!UICONTROL 配置以进行扩展开发：]**&#x200B;如果计划安装贵公司正在积极开发的开发扩展，请选中此复选框
-1. 选择 **[!UICONTROL Save]**。
+1. （高级） **[!UICONTROL 按顺序运行规则组件]** 选中此复选框可使条件和操作在前一个条件和操作运行之前等待其完成
+1. （高级） **[!UICONTROL 为缺少的数据元素返回空字符串：]** 如果您引用的数据元素在库中不存在，则通常会返回 `undefined`.  如果希望该方案返回空字符串，请选中此复选框。
+1. （高级） **[!UICONTROL 为扩展开发配置：]** 如果您计划安装公司正在积极开发的开发扩展，请选中此复选框
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 ### 对于移动设备
 
@@ -130,7 +131,7 @@ Properties 列表显示了以下信息：
 
    * **Use HTTPS：**&#x200B;选择是应当通过 HTTP 还是 HTTPS 来发送所有数据通信。
 
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 创建资产后，Platform会自动添加默认主机、一组环境（开发、暂存和生产）以及默认扩展。
 
@@ -146,4 +147,4 @@ Properties 列表显示了以下信息：
 
    您可以选择多个要删除的资产。
 
-1. 选择&#x200B;**[!UICONTROL Delete]**，然后确认删除该属性。
+1. 选择 **[!UICONTROL 删除]**，然后确认移除资产。

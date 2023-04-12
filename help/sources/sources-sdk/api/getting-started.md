@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 自助源入门（批量SDK）
 description: 本文档简要介绍在尝试使用自助源（批处理SDK）创建新源之前您需要了解的先决条件信息。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 2a5d545db18a5dd33c5ff2ac5c543ec35db4ca00
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '386'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-要使用自助源（批量SDK），您必须确保有权访问已使用Adobe Experience Platform源进行设置的IMS组织沙盒。
+要使用自助源（批量SDK），您必须确保您有权访问已使用Adobe Experience Platform源进行设置的组织沙盒。
 
 本指南还要求您对Adobe Experience Platform的以下组件有一定的了解：
 

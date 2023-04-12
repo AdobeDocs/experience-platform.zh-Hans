@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构注册API指南
 description: 架构注册表API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关的Experience Data Model(XDM)资源。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1118'
+source-wordcount: '1116'
 ht-degree: 2%
 
 ---
@@ -71,7 +71,7 @@ XDM架构表示并验证摄取到平台中的数据的结构和格式。 架构�
 
 ## 导出 {#export}
 
-架构注册表API允许您在沙箱和IMS组织之间传输和共享XDM资源。 对于任何架构、字段组或数据类型，您可以生成包含资源结构和任何相关资源的导出有效负荷。 然后，可以使用此有效负载将资源导入目标沙箱和IMS组织。
+架构注册API允许您在沙箱和组织之间传输和共享XDM资源。 对于任何架构、字段组或数据类型，您可以生成包含资源结构和任何相关资源的导出有效负荷。 然后，可以使用此负载将资源导入目标沙箱和组织。
 
 请参阅 [导出端点指南](./export.md) 有关如何为现有XDM资源创建导出有效负载的更多信息。
 

@@ -5,9 +5,9 @@ title: 通过临时激活API将受众区段激活到批量目标
 description: 本文说明了通过临时激活API激活受众区段的端到端工作流程，包括激活前进行的分段作业。
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1553'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,7 @@ Adobe Experience Platform每24小时运行一次计划分段作业。 临时激�
 
 在调用Adobe Experience Platform API之前，请确保满足以下先决条件：
 
-* 您拥有有权访问Adobe Experience Platform的IMS组织帐户。
+* 您拥有有权访问Adobe Experience Platform的组织帐户。
 * 您的Experience Platform帐户具有 `developer` 和 `user` 为Adobe Experience Platform API产品配置文件启用了角色。 联系您的 [Admin Console](../../access-control/home.md) 管理员为您的帐户启用这些角色。
 * 你有Adobe ID。 如果您没有Adobe ID，请转到 [Adobe Developer控制台](https://developer.adobe.com/console) 并创建一个新帐户。
 
@@ -169,7 +169,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 | <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要激活区段的目标实例的ID。 您可以通过导航到 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** ，然后单击所需的目标行以显示右边栏中的目标ID。 有关更多信息，请阅读 [目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到选定目标的区段的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 具有导出ID的请求（将弃用） {#request-deprecated}
 
@@ -207,7 +207,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到选定目标的区段的ID。 |
 | <ul><li>`exportId1`</li></ul> | 在响应 [区段导出](../../segmentation/api/export-jobs.md#retrieve-list) 工作。 请参阅 [步骤4:获取最新的区段导出作业ID](#segment-export-id) 以了解有关如何查找此ID的说明。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 响应 {#response}
 
@@ -231,7 +231,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 | `order` | 区段被激活到的目标的ID。 |
 | `statusURL` | 激活流程的状态URL。 您可以使用 [流量服务API](../../sources/tutorials/api/monitor.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## API错误处理 {#api-error-handling}
 
@@ -241,7 +241,7 @@ Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 
 
 使用临时激活API时，您可能会遇到特定于此API端点的错误消息。 查看表格，了解在表格显示时如何解决这些问题。
 
-| 错误消息 | 解决方案 |
+| 错误消息 | 解决方法 |
 |---------|----------|
 | 已针对区段运行 `segment ID` 订购 `dataflow ID` 使用运行id `flow run ID` | 此错误消息表示当前正在为区段进行临时激活流程。 等待作业完成，然后再次触发激活作业。 |
 | 区段 `<segment name>` 不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择激活的区段未映射到数据流，或者为区段设置的激活计划已过期或尚未启动。 检查区段是否确实映射到数据流，并验证区段激活计划是否与当前日期重叠。 |

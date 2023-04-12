@@ -1,10 +1,11 @@
 ---
 title: 导出API端点
 description: 架构注册表API中的/export端点允许您在沙箱之间共享XDM资源。
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+exl-id: 1dcbfa59-af98-4db5-b6f4-f848e5bf5e81
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '414'
-ht-degree: 2%
+source-wordcount: '410'
+ht-degree: 1%
 
 ---
 
@@ -32,7 +33,7 @@ GET /rpc/export/{RESOURCE_ID}
 | --- | --- |
 | `{RESOURCE_ID}` | 的 `meta:altId` 或URL编码 `$id` 要导出的XDM资源。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -50,7 +51,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个对象数组，它表示目标XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的 `Property` 数据类型 `Restaurant` 字段组采用，而第二个对象是 `Restaurant` 字段组本身。 然后，可以使用此有效负载 [导入资源](#import) 移入其他沙箱或IMS组织。
+成功的响应会返回一个对象数组，它表示目标XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的 `Property` 数据类型 `Restaurant` 字段组采用，而第二个对象是 `Restaurant` 字段组本身。 然后，可以使用此有效负载 [导入资源](#import) 移入其他沙箱或组织。
 
 请注意，资源租户ID的所有实例都将替换为 `<XDM_TENANTID_PLACEHOLDER>`. 这样，架构注册表就可以根据在后续导入调用中发送资源的位置，自动将正确的租户ID应用到资源。
 

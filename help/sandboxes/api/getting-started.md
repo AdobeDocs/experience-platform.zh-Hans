@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒API快速入门
 description: 沙盒API允许开发人员以编程方式管理Adobe Experience Platform中的沙箱。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '375'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform中的沙箱提供了独立的开发环境，允许您�
 
 ## 先决条件
 
-要为IMS组织管理沙箱，您必须具有沙盒管理权限。 没有访问权限的用户只能使用 [可用沙箱端点](./available.md) 列出当前用户的活动沙箱。 请参阅 [访问控制概述](../../access-control/home.md) 有关如何为Experience Platform分配沙盒权限的更多信息。
+要为贵组织管理沙箱，您必须具有“沙盒管理”权限。 没有访问权限的用户只能使用 [可用沙箱端点](./available.md) 列出当前用户的活动沙箱。 请参阅 [访问控制概述](../../access-control/home.md) 有关如何为Experience Platform分配沙盒权限的更多信息。
 
 ### 读取示例API调用
 

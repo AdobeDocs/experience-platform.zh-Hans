@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 自助源（批量SDK）API指南
 description: 本文档概述了创建新源的过程，包括有关如何使用流服务API检索、写入和提交新连接规范的步骤。
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 配置新源的第一步是创建新的连接规范。
 
-连接规范返回源的连接器属性。 它们包括与创建基连接和源连接相关的验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和IMS组织无关。 典型的连接规范包含有关给定源的基本信息以及三个不同的部分： `authSpec`, `sourceSpec`和 `exploreSpec`.
+连接规范返回源的连接器属性。 它们包括与创建基连接和源连接相关的验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和组织无关。 典型的连接规范包含有关给定源的基本信息以及三个不同的部分： `authSpec`, `sourceSpec`和 `exploreSpec`.
 
 有关详细说明，请参阅 [创建新连接规范](./create.md). 有关用于连接规范的属性和值的信息（包括有关配置身份验证、源和浏览规范的详细信息），请参阅 [配置选项文档](../config/config.md).
 

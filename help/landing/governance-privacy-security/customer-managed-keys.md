@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的客户管理密钥
 description: 了解如何为存储在Adobe Experience Platform中的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: ca92839bd2a775ae323da5d5d0750b2026f8052d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1618'
+source-wordcount: '1617'
 ht-degree: 0%
 
 ---
@@ -207,7 +207,7 @@ curl -X POST \
 | --- | --- |
 | `name` | 配置的名称。 请确保记住此值，因为在 [后续步骤](#check-status). 值区分大小写。 |
 | `type` | 配置类型。 必须设置为 `BYOK_CONFIG`. |
-| `imsOrgId` | 您的IMS组织ID。 此值必须与 `x-gw-ims-org-id` 标题。 |
+| `imsOrgId` | 您的组织 ID。此值必须与 `x-gw-ims-org-id` 标题。 |
 | `configData` | 包含有关配置的以下详细信息：<ul><li>`providerType`:必须设置为 `AZURE_KEYVAULT`.</li><li>`keyVaultKeyIdentifier`:您复制的密钥保管库URI [更早](#send-to-adobe).</li></ul> |
 
 **响应**

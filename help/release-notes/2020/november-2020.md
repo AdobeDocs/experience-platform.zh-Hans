@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2184'
+source-wordcount: '2182'
 ht-degree: 5%
 
 ---
@@ -34,7 +34,7 @@ Adobe Experience Platform的新增功能：
 
 ## Adobe Experience Platform Data Lake迁移 {#migration}
 
-当Adobe将数据湖从Gen1迁移到Gen2时，用户将能够从数据湖中读取数据，但写入数据湖的所有功能都将受到影响。 Adobe将联系系统管理员以详细讨论迁移的影响，并确认特定IMS组织的迁移日期和时间。
+当Adobe将数据湖从Gen1迁移到Gen2时，用户将能够从数据湖中读取数据，但写入数据湖的所有功能都将受到影响。 Adobe将联系系统管理员以详细讨论迁移的影响，并确认特定组织的迁移日期和时间。
 
 欲知更多信息，请阅读 [Data Lake迁移指南](../../landing/adls2-gen2-migration.md).
 
@@ -72,7 +72,7 @@ Adobe Experience Platform的新增功能：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 生产沙盒 | [!DNL Experience Platform] 提供了一个生产沙盒，无法删除或重置。 可用沙箱、生产和非生产的总数取决于所获得的许可证。 |
+| 生产沙盒 | [!DNL Experience Platform] 提供了单个生产沙盒，无法删除或重置。 可用沙箱、生产和非生产的总数取决于所获得的许可证。 |
 | 非生产沙箱 | 可以为单个沙箱创建多个非生产沙箱 [!DNL Platform] 实例，允许您测试功能、运行实验和创建自定义配置，而不会影响生产沙盒。 |
 | 沙盒切换器 | 在 [!DNL Experience Platform] 用户界面屏幕左上角的沙盒切换器允许您通过下拉菜单在可用的沙盒之间进行切换。 沙盒切换器还提供了一个搜索功能，允许您过滤可用的沙箱。 |
 | `x-sandbox-name` 标题 | 所有对 [!DNL Experience Platform] API现在必须包含新 `x-sandbox-name` 标题，其值引用 `name` 操作将在其中进行的沙盒的属性。 |
@@ -213,7 +213,7 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用 
 | 分层映射 | 在数据获取过程中，您可以预览分层源文件，如JSON或Parquet。 请参阅 [在UI中为云存储连接器配置数据流](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) 以了解更多信息。 |
 | 支持在流源中映射的API | 现在，您可以使用API来通过流源执行映射功能。 |
 | 支持云存储源的自定义分隔符的API | 您现在可以使用云存储源收集非CSV分隔的文件。 您可以使用任何单列分隔符（如制表符、逗号、管道字符、分号或哈希）来收集任何格式的平面文件。 |
-| 对Adobe Audience Manager连接器的沙盒支持 | Audience Manager连接器现在支持沙盒感知。 用户可以使连接器将Audience Manager数据集路由到他们选择的沙盒（包括非生产沙盒）。 配置限制为每个IMS组织只能有一个沙盒。 |
+| 对Adobe Audience Manager连接器的沙盒支持 | Audience Manager连接器现在支持沙盒感知。 用户可以使连接器将Audience Manager数据集路由到他们选择的沙盒（包括非生产沙盒）。 配置限制为每个组织一个沙盒。 |
 | UX改进 | 基于文件的摄取现在可通过源目录访问。 |
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md).

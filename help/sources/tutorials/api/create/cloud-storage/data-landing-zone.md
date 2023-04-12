@@ -5,9 +5,9 @@ title: 使用流量服务API将数据登陆区连接到Adobe Experience Platform
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1248'
 ht-degree: 4%
 
 ---
@@ -452,7 +452,7 @@ curl -X GET \
 
 ## 创建源连接
 
-源连接创建并管理从中摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和IMS组织。
+源连接创建并管理从中摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
 要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
 

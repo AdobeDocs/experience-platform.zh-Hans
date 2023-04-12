@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform Edge Network Server API如何识别
 seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
 keywords: 边缘网络；网关；API；访客；识别
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 5%
@@ -116,7 +116,7 @@ The Edge Network response includes a `state:store` handle, which, in turn, inclu
 
 >[!NOTE]
 >
->The `kndctr_{$IMS_ORG_ID|url-safe}_` prefix is also used for other entries stored on the client device, and enables state isolation for complex integrations, which could involve multiple/different IMS organizations. While the Edge Network will filter the entries which can be used for a given datastream, in order to minimize the payload, the caller (SDK) should ideally ensure that only the relevant entries are sent.
+>The `kndctr_{$IMS_ORG_ID|url-safe}_` prefix is also used for other entries stored on the client device, and enables state isolation for complex integrations, which could involve multiple/different organizations. While the Edge Network will filter the entries which can be used for a given datastream, in order to minimize the payload, the caller (SDK) should ideally ensure that only the relevant entries are sent.
 
 The caller must:
 

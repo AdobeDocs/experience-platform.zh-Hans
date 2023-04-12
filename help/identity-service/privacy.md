@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理Identity Service的隐私请求相关的基本概念。
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ curl -X POST \
 
 ## 删除请求处理
 
-When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 单个身份的删除基于提供的命名空间和/或ID值。 此外，与给定IMS组织关联的所有沙箱都会被删除。
+When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 单个身份的删除基于提供的命名空间和/或ID值。 此外，与给定组织关联的所有沙箱都会被删除。
 
 根据您是否还包含实时客户资料(`ProfileService`)和数据湖(`aepDataLake`)作为您的Identity Service隐私请求中的产品(`identity`)，则会在可能不同的时间从系统中删除与身份相关的不同数据集：
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段作业API端点
 description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理贵组织的区段作业。
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1497'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定IMS组织的区段作业列表(JSON)。 但是，响应将因区段作业中的区段数量而异。
+成功响应会返回HTTP状态200，其中包含指定组织的区段作业列表(JSON)。 但是，响应将因区段作业中的区段数量而异。
 
 **区段作业中小于或等于1500个区段**
 

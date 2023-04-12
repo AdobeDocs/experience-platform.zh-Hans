@@ -2,9 +2,9 @@
 description: 本页介绍了可使用“/authoring/credentials” API端点执行的所有API操作。
 title: 凭据端点API操作
 exl-id: 89957f38-e7f4-452d-abc0-0940472103fe
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '791'
 ht-degree: 4%
 
 ---
@@ -132,7 +132,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 | `servicePrincipalKey` | 字符串 | Azure数据湖存储的Azure服务主密钥 |
 | `connectionString` | 字符串 | Azure Blob Storage连接字符串 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -140,7 +140,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 ## 列出凭据配置 {#retrieve-list}
 
-您可以通过向 `/authoring/credentials` 端点。
+通过向 `/authoring/credentials` 端点。
 
 **API格式**
 
@@ -151,7 +151,7 @@ GET /authoring/credentials
 
 **请求**
 
-以下请求将根据IMS组织和沙盒配置，检索您有权访问的凭据配置列表。
+以下请求将根据组织和沙盒配置，检索您有权访问的凭据配置列表。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials \
@@ -163,7 +163,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 **响应**
 
-以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的凭据配置列表。 一个 `instanceId` 对应于一个凭据配置的模板。 响应因简短而被截断。
+以下响应会根据您使用的组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的凭据配置列表。 一个 `instanceId` 对应于一个凭据配置的模板。 响应因简短而被截断。
 
 ```json
 {

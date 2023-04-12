@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 策略服务API快速入门
 description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用策略服务API之前需要了解的核心概念。
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ API文档还要求您完成 [身份验证教程](https://www.adobe.com/go/platfo
 
 在 [!DNL Policy Service] API中，所有策略和营销操作都称为 `core` 或 `custom` 资源。
 
-`core` 资源是指由Adobe定义和维护的资源，而 `custom` 资源是由您的组织创建和维护的资源，因此仅对您的IMS组织是唯一可见的。 因此，列出和查找操作(`GET`)是 `core` 资源，而则列出、查找和更新操作(`POST`, `PUT`, `PATCH`和 `DELETE`)可用于 `custom` 资源。
+`core` 资源是指由Adobe定义和维护的资源，而 `custom` 资源是指由贵组织创建和维护的资源，因此仅对贵组织而言是独特和可见的。 因此，列出和查找操作(`GET`)是 `core` 资源，而则列出、查找和更新操作(`POST`, `PUT`, `PATCH`和 `DELETE`)可用于 `custom` 资源。
 
 ## 后续步骤
 

@@ -2,9 +2,9 @@
 title: B2B命名空间和架构
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: fa3f937862dd8b6078f73b2a172b3fb5db652dc7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1717'
 ht-degree: 4%
 
 ---
@@ -47,10 +47,10 @@ ht-degree: 4%
 | `IMS` | Identity Management系统(IMS)为Adobe服务提供了身份验证框架。 关于 [!DNL Marketo]，此值已修复，且始终设置为： `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | 拥有或许可产品和服务并允许其成员访问的公司实体。 请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md) 有关如何检索 `{ORG_ID}` 信息。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | 您使用的虚拟沙盒分区的名称。 | `prod` |
-| `TENANT_ID` | 用于确保您创建的资源命名正确且包含在IMS组织中的ID。 | `b2bcdpproductiontest` |
+| `TENANT_ID` | 一个ID，用于确保您创建的资源命名正确且包含在您的组织内。 | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | 您对进行API调用的URL端点。 此值是固定的，始终设置为： `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 运行脚本
 
@@ -90,7 +90,7 @@ B2B命名空间用于实体的主标识。
 | B2B营销列表成员 | `b2b_marketing_list_member` | `B2B_MARKETING_LIST_MEMBER` |
 | B2B帐户人员关系 | `b2b_account_person_relation` | `B2B_ACCOUNT_PERSON` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## B2B模式
 
@@ -106,10 +106,10 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 >
 >请向左/向右滚动以查看表的完整内容。
 
-| 架构名称 | 基类 | 字段组 | [!DNL Profile] 在模式中 | 主标识 | 主标识命名空间 | 次标识 | 次标识命名空间 | 关系 | 注释 |
+| 架构名称 | 基类 | 字段组 | [!DNL Profile] 在模式中 | 主要标识 | 主标识命名空间 | 次标识 | 次标识命名空间 | 关系 | 注释 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | B2B帐户 | [XDM业务帐户](../../../../xdm/classes/b2b/business-account.md) | XDM业务帐户详细信息 | 已启用 | `accountKey.sourceKey` 在基类中 | B2B帐户 | `extSourceSystemAudit.externalKey.sourceKey` 在基类中 | B2B帐户 | <ul><li>`accountParentKey.sourceKey` “ XDM业务帐户详细信息”字段组中</li><li>目标属性： `/accountKey/sourceKey`</li><li>类型：一对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li></ul> |
-| B2B人员 | [XDM个人配置文件](../../../../xdm/classes/individual-profile.md) | <ul><li>XDM业务人员详细信息</li><li>XDM业务人员组件</li><li>IdentityMap</li><li>同意和首选项详细信息</li></ul> | 已启用 | `b2b.personKey.sourceKey` “ XDM业务人员详细信息”字段组中的 | B2B人员 | <ol><li>`extSourceSystemAudit.externalKey.sourceKey` “XDM业务人员详细信息”字段组</li><li>`workEmail.address` “XDM业务人员详细信息”字段组</ol></li> | <ol><li>B2B人员</li><li>电子邮件</li></ol> | <ul><li>`personComponents.sourceAccountKey.sourceKey` XDM业务人员组件字段组的</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li><li>目标属性：accountKey.sourceKey</li><li>当前架构中的关系名称：帐户</li><li>引用架构中的关系名称：人员</li></ul> |
+| B2B人员 | [XDM 个人资料](../../../../xdm/classes/individual-profile.md) | <ul><li>XDM业务人员详细信息</li><li>XDM业务人员组件</li><li>IdentityMap</li><li>同意和首选项详细信息</li></ul> | 已启用 | `b2b.personKey.sourceKey` “ XDM业务人员详细信息”字段组中的 | B2B人员 | <ol><li>`extSourceSystemAudit.externalKey.sourceKey` “XDM业务人员详细信息”字段组</li><li>`workEmail.address` “XDM业务人员详细信息”字段组</ol></li> | <ol><li>B2B人员</li><li>电子邮件</li></ol> | <ul><li>`personComponents.sourceAccountKey.sourceKey` XDM业务人员组件字段组的</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li><li>目标属性：accountKey.sourceKey</li><li>当前架构中的关系名称：帐户</li><li>引用架构中的关系名称：人员</li></ul> |
 | B2B机会 | [XDM业务机会](../../../../xdm/classes/b2b/business-opportunity.md) | XDM业务机会详细信息 | 已启用 | `opportunityKey.sourceKey` 在基类中 | B2B机会 | `extSourceSystemAudit.externalKey.sourceKey` 在基类中 | B2B机会 | <ul><li>`accountKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li><li>目标属性： `accountKey.sourceKey`</li><li>当前架构中的关系名称：帐户</li><li>引用架构中的关系名称：机会</li></ul> |
 | B2B机会人员关系 | [XDM业务机会人员关系](../../../../xdm/classes/b2b/business-opportunity-person-relation.md) | None | 已启用 | `opportunityPersonKey.sourceKey` 在基类中 | B2B机会人员关系 | `extSourceSystemAudit.externalKey.sourceKey` 在基类中 | B2B机会人员关系 | **第一关系**<ul><li>`personKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B人员</li><li>命名空间：B2B人员</li><li>目标属性：b2b.personKey.sourceKey</li><li>当前架构中的关系名称：人员</li><li>引用架构中的关系名称：机会</li></ul>**第二关系**<ul><li>`opportunityKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B机会 </li><li>命名空间：B2B机会 </li><li>目标属性： `opportunityKey.sourceKey`</li><li>当前架构中的关系名称：机会</li><li>引用架构中的关系名称：人员</li></ul> |
 | B2B营销活动 | [XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign.md) | XDM Business Campaign详细信息 | 已启用 | `campaignKey.sourceKey` 在基类中 | B2B营销活动 | `extSourceSystemAudit.externalKey.sourceKey` 在基类中 | B2B营销活动 |
@@ -119,7 +119,7 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 | B2B活动 | [XDM ExperienceEvent](../../../../xdm/classes/experienceevent.md) | <ul><li>访问网页</li><li>新潜在客户</li><li>转化潜在客户</li><li>添加到列表</li><li>从列表中删除</li><li>Add To Opportunity</li><li>从机会中删除</li><li>已填写的表单</li><li>链接点击量</li><li>电子邮件发送</li><li>已打开电子邮件</li><li>已点击电子邮件</li><li>电子邮件退回</li><li>Email Robjected Soft</li><li>取消订阅的电子邮件</li><li>分数已更改</li><li>Opportunity Updated</li><li>促销活动进度中的状态已更改</li><li>人员标识符</li><li>Marketo Web URL</li><li>有趣的时刻</li><li>调用Webhook</li><li>更改促销活动频度</li><li>收入阶段已更改</li><li>合并潜在客户</li><li>已发送电子邮件</li><li>更改促销活动流</li><li>添加到Campaign</li></ul> | 已启用 | `personKey.sourceKey` 人员标识符字段组 | B2B人员 | None | None | **第一关系**<ul><li>`listOperations.listKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B营销列表</li><li>命名空间：B2B营销列表</li></ul>**第二关系**<ul><li>`opportunityEvent.opportunityKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B机会</li><li>命名空间：B2B机会</li></ul>**第三种关系**<ul><li>`leadOperation.campaignProgression.campaignKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B营销活动</li><li>命名空间：B2B营销活动</li></ul> | `ExperienceEvent` 与实体不同。 体验事件的标识是执行活动的人员。 |
 | B2B帐户人员关系 | [XDM业务帐户人员关系](../../../../xdm/classes/b2b/business-account-person-relation.md) | 标识映射 | 已启用 | `accountPersonKey.sourceKey` 在基类中 | B2B帐户人员关系 | None | None | **第一关系**<ul><li>`personKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B人员</li><li>命名空间：B2B人员</li><li>目标属性： `b2b.personKey.SourceKey`</li><li>当前架构中的关系名称：人员</li><li>引用架构中的关系名称：帐户</li></ul>**第二关系**<ul><li>`accountKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li><li>目标属性： `accountKey.sourceKey`</li><li>当前架构中的关系名称：帐户</li><li>引用架构中的关系名称：人员</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤
 

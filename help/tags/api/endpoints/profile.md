@@ -2,9 +2,9 @@
 title: 配置文件端点
 description: 了解如何在Reactor API中调用/profiles端点。
 exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '169'
 ht-degree: 5%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 5%
 
 在Reactor API中，配置文件表示Adobe Experience Platform用户。 Reactor API不维护其自己的用户和权限数据库，而是依赖于由管理的AdobeID [Adobe的身份管理系统(IMS)](https://helpx.adobe.com/cn/enterprise/using/identity.html).
 
-配置文件包含有关已登录用户的所有信息，包括其所属的所有IMS组织、其所属的每个组织中的产品配置文件，以及他们从每个产品配置文件中拥有的权限。
+配置文件包含有关已登录用户的所有信息，包括其所属的所有组织、其所属在每个组织中的产品配置文件，以及他们从每个产品配置文件中拥有的权限。
 
 ## 快速入门
 
@@ -51,14 +51,14 @@ curl -X GET \
     "id": "UR0bd696624e844d6ba5bfc248ba1eca11",
     "type": "users",
     "attributes": {
-      "active_org": "{IMS_ORG_1}",
+      "active_org": "{ORG_1}",
       "expires_in": 0,
       "display_name": "John Smith",
       "job_function": null,
       "email": "jsmith@example.com",
       "organizations": {
-        "{IMS_ORG_1}": {
-          "name": "Example IMS Org A",
+        "{ORG_1}": {
+          "name": "Example organization A",
           "admin": true,
           "active": true,
           "login_companies": [
@@ -73,8 +73,8 @@ curl -X GET \
           ],
           "tenant_id": "{TENANT_ID_1}"
         },
-        "{IMS_ORG_2}": {
-          "name": "Example IMS Org B",
+        "{ORG_2}": {
+          "name": "Example organization B",
           "admin": false,
           "active": false,
           "login_companies": [

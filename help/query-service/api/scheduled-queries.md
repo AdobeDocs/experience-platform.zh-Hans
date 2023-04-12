@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 计划端点
 description: 以下各节将介绍您可以使用查询服务API对计划查询进行的各种API调用。
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1132'
 ht-degree: 2%
 
 ---
@@ -45,7 +45,7 @@ GET /schedules?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求可检索为IMS组织创建的最新计划查询。
+以下请求会检索为您的组织创建的最新计划查询。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
@@ -57,7 +57,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定IMS组织的计划查询列表。 以下响应会返回为IMS组织创建的最新计划查询。
+成功响应会返回HTTP状态200，其中包含指定组织的计划查询列表。 以下响应会返回为您的组织创建的最新计划查询。
 
 ```json
 {

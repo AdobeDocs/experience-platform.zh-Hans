@@ -4,9 +4,9 @@ title: 配置文件导出作业API端点
 type: Documentation
 description: 实时客户配置文件允许您通过汇集来自多个来源的数据（包括属性数据和行为数据），在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1519'
+source-wordcount: '1517'
 ht-degree: 2%
 
 ---
@@ -180,7 +180,7 @@ curl -X POST \
 
 ## 列出所有导出作业
 
-您可以通过向 `export/jobs` 端点。 该请求还支持查询参数 `limit` 和 `offset`，如下所示。
+通过向执行GET请求，您可以返回特定组织的所有导出作业的列表 `export/jobs` 端点。 该请求还支持查询参数 `limit` 和 `offset`，如下所示。
 
 **API格式**
 
@@ -209,7 +209,7 @@ curl -X GET \
 
 **响应**
 
-响应包括 `records` 包含由IMS组织创建的导出作业的对象。
+响应包括 `records` 对象，其中包含由您的组织创建的导出作业。
 
 ```json
 {

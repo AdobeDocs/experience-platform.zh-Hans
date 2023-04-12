@@ -3,18 +3,18 @@ keywords: Experience Platform；发布模型；Data Science Workspace；热门�
 solution: Experience Platform
 title: 在数据科学工作区UI中发布模型作为服务
 type: Tutorial
-description: Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型as a Service，从而让IMS组织内的用户能够对数据进行评分，而无需创建他们自己的模型。
+description: Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而让组织内的用户能够对数据进行评分，而无需自行创建模型。
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
 
 # 在数据科学工作区UI中作为服务发布模型
 
-Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型as a Service，从而让IMS组织内的用户能够对数据进行评分，而无需创建他们自己的模型。
+Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而让组织内的用户能够对数据进行评分，而无需自行创建模型。
 
 ## 快速入门
 

@@ -2,9 +2,9 @@
 title: 从Data Lake迁移到Gen2
 description: 了解Adobe Experience Platform中将数据湖迁移到Gen2所提供的新功能。
 exl-id: 56d9c77a-d7eb-498d-994f-b15d150dedb7
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '285'
 ht-degree: 0%
 
 ---
@@ -26,4 +26,4 @@ Adobe Experience Platform正在迁移到Gen2 Data Lake。 这是新一代数据�
 
 ## 与平台用户的通信
 
-Adobe将联系系统管理员以详细讨论迁移的影响，并确认特定IMS组织的迁移日期和时间。
+Adobe将联系系统管理员以详细讨论迁移的影响，并确认特定组织的迁移日期和时间。

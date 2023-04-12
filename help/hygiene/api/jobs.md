@@ -4,9 +4,9 @@ description: 了解如何以编程方式更正或删除客户在Adobe Experience
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '484'
+source-wordcount: '480'
 ht-degree: 1%
 
 ---
@@ -107,10 +107,10 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` | 包含贵组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`:必须设置为 `imsOrgID`.</li><li>`value`:您的IMS组织ID。 此值与 `x-gw-ims-org-id` 标题。</li></ul> |
+| `companyContexts` | 包含贵组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`:必须设置为 `imsOrgID`.</li><li>`value`:您的组织ID。 此值与 `x-gw-ims-org-id` 标题。</li></ul> |
 | `users` | 一个数组，其中包含至少一个用户的集合，您要删除其信息。 每个用户对象包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中单独的作业ID。 最好为此值选择一个唯一且易于识别的字符串，以便以后可以引用或查找该字符串。</li><li>`action`:一个数组，其中列出了对用户数据执行的所需操作。 必须包含单个字符串值： `delete`.</li><li>`userIDs`:用户的标识集合。 单个用户可以拥有的身份数量最多为9个。 每个标识都包含以下属性： <ul><li>`namespace`:的 [标识命名空间](../../identity-service/namespaces.md) 与ID关联。 这可以是 [标准命名空间](../../privacy-service/api/appendix.md#standard-namespaces) 可由平台识别，或者它可以是由您的组织定义的自定义命名空间。 使用的命名空间类型必须反映在 `type` 属性。</li><li>`value`:标识值。</li><li>`type`:必须设置为 `standard` 如果使用全局识别的命名空间，或 `custom` 如果您使用的是由您的组织定义的命名空间。</li></ul></li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 

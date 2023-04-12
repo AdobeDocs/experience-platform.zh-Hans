@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询编辑器；查询编辑器；查询编辑器；查询编辑器；
 solution: Experience Platform
 title: 查询服务凭据指南
-description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
+description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询以及访问组织内用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: d86e1118fc8886f3a55b0224a2e065b33d96daf2
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1337'
 ht-degree: 3%
 
 ---

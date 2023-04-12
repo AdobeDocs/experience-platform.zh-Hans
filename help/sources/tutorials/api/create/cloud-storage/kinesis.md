@@ -5,9 +5,9 @@ title: 使用流服务API创建Amazon Kinesis源连接
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Amazon Kinesis源。
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '729'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ curl -X POST \
 
 ## 创建源连接 {#source}
 
-源连接创建并管理从中摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和IMS组织。
+源连接创建并管理从中摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
 要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
 

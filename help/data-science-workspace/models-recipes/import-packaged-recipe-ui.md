@@ -5,9 +5,9 @@ title: 在数据科学工作区UI中导入打包的方法
 type: Tutorial
 description: 本教程提供了有关如何使用提供的零售销售示例配置和导入打包方法的分析。 在本教程结束时，您将准备好在Adobe Experience Platform数据科学工作区中创建、培训和评估模型。
 exl-id: 2556e1f0-3f9c-4884-a699-06c041d5c4d1
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1833'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -111,8 +111,8 @@ ht-degree: 0%
 | `max_depth` | 数值 | 随机林分类器中树的最大深度。 |
 | `ACP_DSW_INPUT_FEATURES` | 字符串 | 以逗号分隔的输入架构属性列表。 |
 | `ACP_DSW_TARGET_FEATURES` | 字符串 | 以逗号分隔的输出架构属性列表。 |
-| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔型 | 确定输入和输出功能是否可修改 |
-| `tenantId` | 字符串 | 此ID可确保您创建的资源具有正确命名空间，并包含在您的IMS组织中。 [按照此处的步骤操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以查找租户ID。 |
+| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出功能是否可修改 |
+| `tenantId` | 字符串 | 此ID可确保您创建的资源命名正确并包含在您的组织内。 [按照此处的步骤操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以查找租户ID。 |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用于培训模型的输入模式。 在UI中导入时，将此参数留空，在使用API导入时，将替换为培训架构ID。 |
 | `evaluation.labelColumn` | 字符串 | 用于评估可视化的列标签。 |
 | `evaluation.metrics` | 字符串 | 用于评估模型的评估量度列表（以逗号分隔）。 |

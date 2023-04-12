@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段匹配概述
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1998'
+source-wordcount: '1997'
 ht-degree: 2%
 
 ---
@@ -76,7 +76,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 | 权限 | 描述 |
 | --- | --- |
-| 管理受众共享连接 | 此权限允许您完成合作伙伴握手过程，该过程会连接两个IMS组织以启用 [!DNL Segment Match] 流量。 |
+| 管理受众共享连接 | 此权限允许您完成合作伙伴握手过程，该过程会连接两个组织以启用 [!DNL Segment Match] 流量。 |
 | 管理受众共享 | 此权限允许您创建、编辑和发布信息源(用于 [!DNL Segment Match])与积极合作伙伴(管理员用户已与 **[!UICONTROL 受众共享连接]** 访问)。 |
 
 请参阅 [访问控制概述](../../../access-control/home.md) 以了解有关访问控制和权限的更多信息。

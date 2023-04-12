@@ -5,9 +5,9 @@ title: 在数据科学工作区用户界面中训练和评估模型
 type: Tutorial
 description: 在Adobe Experience Platform Data Science Workspace中，机器学习模型是通过合并适合模型意图的现有方法来创建的。 然后，对模型进行训练和评估，以通过微调其关联的超参数来优化其运行效率和效能。 方法可重复使用，这意味着可以使用单个方法创建多个模型并针对特定目的进行量身定制。
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1090'
 ht-degree: 2%
 
 ---
@@ -119,8 +119,8 @@ ht-degree: 2%
 | ----- | ----- | ----- |
 | `ACP_DSW_INPUT_FEATURES` | 字符串 | 以逗号分隔的输入架构属性列表。 |
 | `ACP_DSW_TARGET_FEATURES` | 字符串 | 以逗号分隔的输出架构属性列表。 |
-| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔型 | 确定输入和输出功能是否可修改 |
-| `tenantId` | 字符串 | 此ID可确保您创建的资源具有正确命名空间，并包含在您的IMS组织中。 [按照此处的步骤操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以查找租户ID。 |
+| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出功能是否可修改 |
+| `tenantId` | 字符串 | 此ID可确保您创建的资源命名正确并包含在您的组织内。 [按照此处的步骤操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以查找租户ID。 |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用于培训模型的输入模式。 |
 | `evaluation.labelColumn` | 字符串 | 用于评估可视化的列标签。 |
 | `evaluation.metrics` | 字符串 | 用于评估模型的评估量度列表（以逗号分隔）。 |

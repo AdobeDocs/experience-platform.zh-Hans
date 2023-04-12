@@ -5,9 +5,9 @@ title: 在数据科学工作区UI中计划模型
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace允许您在机器学习服务上设置计划的评分和培训运行。 自动化培训和评分过程有助于通过跟踪数据中的模式，随时保持和提高服务的效率。
 exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---

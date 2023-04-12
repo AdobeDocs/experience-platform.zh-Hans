@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询模板API端点
 description: 本指南详细介绍了您可以使用查询服务API进行的各种查询模板API调用。
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: ee6a54aeba4ddfeb98ee5e11283c299f00969a53
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '890'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ### 检索查询模板列表
 
-您可以通过向 `/query-templates` 端点。
+通过向 `/query-templates` 端点。
 
 **API格式**
 
@@ -47,7 +47,7 @@ GET /query-templates?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求可检索为IMS组织创建的最新查询模板。
+以下请求会检索为贵组织创建的最新查询模板。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limit=1
@@ -59,7 +59,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定IMS组织的查询模板列表。 以下响应会返回为IMS组织创建的最新查询模板。
+成功响应会返回HTTP状态200，其中包含指定组织的查询模板列表。 以下响应会返回为您的组织创建的最新查询模板。
 
 ```json
 {

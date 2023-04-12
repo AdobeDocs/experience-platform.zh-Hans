@@ -2,9 +2,9 @@
 description: 本页介绍了可使用“/authoring/audience-templates” API端点执行的所有API操作。
 title: 受众元数据端点API操作
 exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '873'
 ht-degree: 4%
 
 ---
@@ -196,7 +196,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `validations.field` | 字符串 | 指示在对目标进行API调用之前是否应对任何字段运行验证。 例如，您可以使用 `{{validations.accountId}}` 验证用户的帐户ID。 |
 | `validations.regex` | 字符串 | 指示字段的结构方式，以便验证通过。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
@@ -318,7 +318,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 ## 检索受众模板列表 {#retrieve-list}
 
-您可以通过向 `/authoring/audience-templates` 端点。
+通过向 `/authoring/audience-templates` 端点。
 
 **API格式**
 
@@ -329,7 +329,7 @@ GET /authoring/audience-templates
 
 **请求**
 
-以下请求将根据IMS组织和沙盒配置，检索您有权访问的受众模板列表。
+以下请求将根据组织和沙盒配置，检索您有权访问的受众模板列表。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-templates \
@@ -341,7 +341,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 **响应**
 
-以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的受众元数据模板列表。 一个 `instanceId` 对应于一个目标的模板。 响应因简短而被截断。
+以下响应会根据您使用的组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的受众元数据模板列表。 一个 `instanceId` 对应于一个目标的模板。 响应因简短而被截断。
 
 ```json
 {

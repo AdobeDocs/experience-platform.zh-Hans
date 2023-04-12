@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1540'
 ht-degree: 3%
 
 ---
@@ -55,7 +55,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 
 ## 沙箱和权限
 
-非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试验。 产品配置文件的权限授予该配置文件的用户访问 [!DNL Platform] 功能。 默认的Experience Platform许可证会授予您五个沙箱（一个生产，四个非生产）。 您最多可以添加10个非生产沙箱，最多可添加75个沙箱。 有关更多详细信息，请联系您的IMS组织管理员或Adobe销售代表。
+非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试验。 产品配置文件的权限授予该配置文件的用户访问 [!DNL Platform] 功能。 默认的Experience Platform许可证会授予您五个沙箱（一个生产，四个非生产）。 您最多可以添加10个非生产沙箱，最多可添加75个沙箱。 有关更多详细信息，请联系贵组织的管理员或Adobe销售代表。
 
 有关 [!DNL Experience Platform]，请参阅 [沙箱概述](../sandboxes/home.md).
 
@@ -114,7 +114,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对 **[!UICONTROL 目录]** 选项卡和已验证的源 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 访问创建、接受和拒绝合作伙伴握手，以连接两个IMS组织并启用 [!DNL Segment Match] 流量。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流量。 |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 对读取、创建、编辑和发布的访问权限 [!DNL Segment Match] 与活跃的合作伙伴提供信息源。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在 [!DNL Data Science Workspace]. |
 | 数据治理 | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |

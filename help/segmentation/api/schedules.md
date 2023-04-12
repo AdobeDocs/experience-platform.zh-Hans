@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 计划API端点
 description: 计划是一种工具，可用于每天自动运行一次批量分段作业。
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: e24a2ba0321ebaa8e91f96477f58bfa4915f47ce
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2011'
+source-wordcount: '2009'
 ht-degree: 3%
 
 ---
@@ -52,7 +52,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定IMS组织的计划列表(JSON)。
+成功响应会返回HTTP状态200，其中包含指定组织的计划列表(JSON)。
 
 >[!NOTE]
 >
@@ -274,7 +274,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 | 属性 | 描述 |
 | -------- | ----------- |
 | `path` | 要修补的值的路径。 在这种情况下，由于您正在更新计划的状态，因此需要设置 `path` 到“/state”。 |
-| `value` | 计划状态的更新值。 此值可设置为“活动”或“不活动”以激活或停用计划。 请注意 **无法** 如果IMS组织已启用流式传输，则禁用计划。 |
+| `value` | 计划状态的更新值。 此值可设置为“活动”或“不活动”以激活或停用计划。 请注意 **无法** 如果组织已启用流式传输，则禁用计划。 |
 
 **响应**
 

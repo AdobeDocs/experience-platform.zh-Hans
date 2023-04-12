@@ -3,9 +3,9 @@ keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户�
 title: Real-Time CDP B2B版概述
 description: Real-Time Customer Data Platform B2B 版本帐户概述
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1082'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ Real-Time CDP B2B版引入与人员、公司、属性和行为相关的数据和
 
 ## B2B源
 
-Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 的 [!DNL Marketo] 源允许您将B2B数据流式传输到平台，并使用与平台连接的应用程序保持此数据为最新。 它支持任意数量的 [!DNL Marketo] （对具有多个实例的大型公司有利）并提取到合并数据的单个IMS组织。
+Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 的 [!DNL Marketo] 源允许您将B2B数据流式传输到平台，并使用与平台连接的应用程序保持此数据为最新。 它支持任意数量的 [!DNL Marketo] （这对具有多个实例的大型公司有利）并提取到合并数据的单个组织中。
 
 >[!NOTE]
 >
@@ -75,7 +75,7 @@ Experience Platform目标(如Google客户匹配、Facebook、LinkedIn、Marketo 
 
 ## 后续步骤
 
-现在，您已更好地了解Real-Time CDP B2B Edition为营销人员带来的好处，以及它与Real-Time CDP之间的差异，接下来可以了解如何将这些功能应用于您自己的IMS组织。
+现在，您已更好地了解Real-Time CDP B2B Edition为营销人员带来的好处，以及它与Real-Time CDP之间的差异，接下来便可以了解如何将这些功能应用于您自己的组织。
 
 要了解Real-Time CDP B2B Edition如何使您的企业对企业服务模式受益，请参阅以下文档以帮助您入门：
 

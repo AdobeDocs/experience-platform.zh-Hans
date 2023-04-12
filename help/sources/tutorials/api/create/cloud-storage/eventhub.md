@@ -5,9 +5,9 @@ title: 使用流服务API创建Azure事件中心源连接
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '736'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ curl -X POST \
 
 ## 创建源连接
 
-源连接创建并管理从中摄取数据的外部源的连接。 源连接由创建数据流所需的数据源、数据格式和源连接ID等信息组成。 源连接实例特定于租户和IMS组织。
+源连接创建并管理从中摄取数据的外部源的连接。 源连接由创建数据流所需的数据源、数据格式和源连接ID等信息组成。 源连接实例特定于租户和组织。
 
 要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
 

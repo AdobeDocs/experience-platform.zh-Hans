@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务概述
 description: 本文档概述了查询服务在Experience Platform中的角色。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform从各种来源摄取数据。 营销人员面临的一
 
 ## 使用 [!DNL Query Service]
 
-[!DNL Query Service] 提供了用户界面和RESTful API，您可以从中创建SQL查询以更好地分析数据。 通过用户界面，您可以编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。 用户界面用作沙盒，在更广泛的数据集上执行查询之前，先测试查询。 有关在 [!DNL Platform] 可在 [查询服务用户界面指南](ui/overview.md). RESTful API提供了类似的体验，允许您以编程方式编写和执行查询，计划查询以供将来使用和重复，以及为希望编写的查询创建模板。 有关使用的更多信息 [!DNL Query Service] API可在 [Query Service开发人员指南](api/getting-started.md).
+[!DNL Query Service] 提供了用户界面和RESTful API，您可以从中创建SQL查询以更好地分析数据。 使用用户界面，您可以编写和执行查询、查看以前执行的查询以及访问组织内用户保存的查询。 用户界面用作沙盒，在更广泛的数据集上执行查询之前，先测试查询。 有关在 [!DNL Platform] 可在 [查询服务用户界面指南](ui/overview.md). RESTful API提供了类似的体验，允许您以编程方式编写和执行查询，计划查询以供将来使用和重复，以及为希望编写的查询创建模板。 有关使用的更多信息 [!DNL Query Service] API可在 [Query Service开发人员指南](api/getting-started.md).
 
 ## [!DNL Query Service] 和 [!DNL Experience Platform] 服务
 

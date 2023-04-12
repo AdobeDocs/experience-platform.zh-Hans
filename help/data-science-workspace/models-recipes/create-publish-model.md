@@ -5,9 +5,9 @@ title: 创建和发布机器学习模型
 type: Tutorial
 description: 以下指南介绍了创建和发布机器学习模型所需的步骤。
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1076'
+source-wordcount: '1074'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 ## 将打分的模型作为服务发布
 
-数据科学工作区允许您将培训的模型作为服务发布。 这样，IMS组织内的用户便可以对数据进行评分，而无需自行创建模型。
+数据科学工作区允许您将培训的模型作为服务发布。 这样，组织内的用户便可以对数据进行评分，而无需自行创建模型。
 
 要了解如何将模型作为服务发布，请访问 [UI教程](./publish-model-service-ui.md) 或 [API教程](./publish-model-service-api.md).
 

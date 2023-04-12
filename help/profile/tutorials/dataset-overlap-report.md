@@ -4,9 +4,9 @@ title: 生成数据集重叠报表
 type: Tutorial
 description: 本教程概述了使用实时客户资料API生成数据集重叠报表所需的步骤。
 exl-id: 90894ed3-b09e-435d-a9e3-18fd6dc8e907
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '884'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 * `Authorization: Bearer {ACCESS_TOKEN}`:的 `Authorization` 标头需要前置有单词的访问令牌 `Bearer`. 必须每24小时生成一次新的访问令牌值。
 * `x-api-key: {API_KEY}`:的 `API Key` 也称为a `Client ID` 和是一个只需生成一次的值。
-* `x-gw-ims-org-id: {ORG_ID}`:的 `IMS Org` 也称为 `Organization ID` 并且只需生成一次。
+* `x-gw-ims-org-id: {ORG_ID}`:组织ID只需生成一次。
 
 完成身份验证教程并收集所需标头的值后，您便可以开始调用实时客户API。
 
@@ -109,7 +109,7 @@ Postman是一个用于API开发的协作平台，可用于显示API调用。 可
 
 ### 数据集ID列表
 
-的 `data` 对象包含数据集ID的唯一组合（以逗号分隔的列表），以及该数据集组合的相应配置文件计数。
+的 `data` 对象包含以逗号分隔的列表形式表示的数据集ID的唯一组合，以及该数据集组合的相应配置文件计数。
 
 >[!NOTE]
 >

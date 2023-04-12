@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform中访问控制的常见问题解答。
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 在哪里可以找到我当前的访问权限？
 
-如果您是IMS组织的系统管理员、产品管理员或产品配置文件管理员，则可以查看分配的产品配置文件及其在Adobe Admin Console中提供的权限。 请参阅 [访问控制用户指南](./ui/overview.md) 有关如何导航的说明 [!DNL Admin Console] 查看产品配置文件的权限。
+如果您是您组织的系统管理员、产品管理员或产品配置文件管理员，则可以查看您分配的产品配置文件及其在Adobe Admin Console中提供的权限。 请参阅 [访问控制用户指南](./ui/overview.md) 有关如何导航的说明 [!DNL Admin Console] 查看产品配置文件的权限。
 
 如果您不是管理员，则仍可以通过向 `/acl/effective-policies` 访问控制API中的端点。 请参阅 [访问控制开发人员指南](./api/effective-policies.md) 以了解更多信息。
 

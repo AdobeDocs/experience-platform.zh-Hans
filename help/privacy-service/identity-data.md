@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私请求的身份数据
 description: 本文档就如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息提供了一般指导。
 exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '645'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 当客户可以通过多个不同渠道与您的品牌进行交互时，协调从这些多次交互中记录的不同标识符可能会非常困难。 这反过来又会导致难以确定哪些数据属于您的 [!DNL Experience Cloud] 应用程序。
 
-例如，在处理 [!DNL Privacy Service]，标识可以表示在Adobe控制域下设置的Cookie值、在第三方域下与Adobe共享的Cookie值，或您在IMS组织中明确定义的自定义标识符。
+例如，在处理 [!DNL Privacy Service]，标识可以表示在Adobe控制域下设置的Cookie值、在第三方域下与Adobe共享的Cookie值，或您在组织内明确定义的自定义标识符。
 
 因此，每个身份都必须发送到 [!DNL Privacy Service] 与一个命名空间相伴，该命名空间通过将标识值与其源系统相关联来提供上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe Target ID(“TNTID”))相关联。
 

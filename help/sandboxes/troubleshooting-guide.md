@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙箱疑难解答指南
 description: 本文档提供了有关Adobe Experience Platform沙箱的常见问题解答。
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '855'
 ht-degree: 6%
 
 ---
@@ -45,7 +45,7 @@ Experience Platform中提供了两种沙盒类型：
 
 ## 默认的生产沙盒是什么？
 
-默认的生产沙盒是在首次配置IMS组织时创建的第一个生产沙盒。 默认的生产沙盒允许您从Platform中摄取或使用数据，并接受不包含沙盒名称或沙盒ID值的请求。 可以重置默认的生产沙盒，但不能删除。
+默认的生产沙盒是在首次配置组织时创建的第一个生产沙盒。 默认的生产沙盒允许您从Platform中摄取或使用数据，并接受不包含沙盒名称或沙盒ID值的请求。 可以重置默认的生产沙盒，但不能删除。
 
 ## 我能有多少个生产沙箱？
 
@@ -63,7 +63,7 @@ Experience Platform中提供了两种沙盒类型：
 
 ## 我可以拥有多少个开发沙箱？
 
-Experience Platform当前允许在单个IMS组织内最多活动总共75个沙箱（生产和开发）。
+Experience Platform当前允许在单个组织内最多75个沙箱（生产和开发）处于活动状态。
 
 开发沙箱支持重置和删除功能。
 

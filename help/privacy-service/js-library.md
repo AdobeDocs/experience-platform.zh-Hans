@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe隐私JavaScript库概述
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1006'
 ht-degree: 6%
 
 ---
@@ -207,7 +207,7 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 | 参数 | 描述 |
 | --- | --- |
-| `imsOrgID` | 您的IMS组织ID。 |
+| `imsOrgID` | 您的组织 ID。 |
 
 **Adobe Target**
 

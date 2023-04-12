@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1547'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 **请求**
 
-以下请求从页面大小为50的第三个页面开始，检索IMS组织内所有作业的分页列表。
+以下请求从页面大小为50的第三页开始，检索组织内所有作业的分页列表。
 
 ```shell
 curl -X GET \
@@ -159,7 +159,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` **（必需）** | 包含贵组织的身份验证信息的数组。 列出的每个标识符都包含以下属性： <ul><li>`namespace`:标识符的命名空间。</li><li>`value`:标识符的值。</li></ul>是 **必需** 标识符之一使用 `imsOrgId` as `namespace`, `value` 包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符(例如， `Campaign`)，用于识别与属于贵组织的Adobe应用程序的集成。 潜在值包括帐户名称、客户端代码、租户ID或其他应用程序标识符。 |
+| `companyContexts` **（必需）** | 包含贵组织的身份验证信息的数组。 列出的每个标识符都包含以下属性： <ul><li>`namespace`:标识符的命名空间。</li><li>`value`:标识符的值。</li></ul>是 **必需** 标识符之一使用 `imsOrgId` as `namespace`, `value` 包含贵组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符(例如， `Campaign`)，用于识别与属于贵组织的Adobe应用程序的集成。 潜在值包括帐户名称、客户端代码、租户ID或其他应用程序标识符。 |
 | `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您要访问或删除其信息。 在单个请求中最多可以提供1000个用户ID。 每个用户对象包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中单独的作业ID。 最好为此值选择一个唯一且易于识别的字符串，以便以后可以轻松引用或查找该字符串。</li><li>`action`:一个数组，其中列出了对用户数据执行的所需操作。 根据您要执行的操作，此数组必须包括 `access`, `delete`，或两者兼有。</li><li>`userIDs`:用户的标识集合。 单个用户可以拥有的身份数量最多为9个。 每个标识都包含 `namespace`, a `value`，和命名空间限定符(`type`)。 请参阅 [附录](appendix.md) 以了解有关这些必需属性的更多详细信息。</li></ul> 更详细的说明 `users` 和 `userIDs`，请参阅 [疑难解答指南](../troubleshooting-guide.md#user-ids). |
 | `include` **（必需）** | 要包含在处理中的Adobe产品数组。 如果此值缺失或为空，则请求将被拒绝。 仅包括贵组织与集成的产品。 请参阅 [接受的产品值](appendix.md) ，以了解详细信息。 |
 | `expandIDs` | 可选属性，当设置为 `true`，表示针对处理应用程序中的ID而进行的优化(当前仅受 [!DNL Analytics])。 如果忽略，则此值默认为 `false`. |

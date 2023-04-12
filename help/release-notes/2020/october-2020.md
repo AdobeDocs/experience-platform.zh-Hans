@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 exl-id: 89f5e2bd-8892-4d3f-a3fe-5433bb5ece7a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1015'
 ht-degree: 4%
 
 ---
@@ -41,7 +41,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 配置文件预览API添加 | 配置文件预览API(`/previewsamplestatus`)现在包括查看IMS组织中配置文件片段总数的划分，以及查看身份命名空间中配置文件片段的分布的功能。 |
+| 配置文件预览API添加 | 配置文件预览API(`/previewsamplestatus`)现在包括查看整个组织的配置文件片段总数的划分，以及查看跨身份命名空间的配置文件片段分布的功能。 |
 | 并集架构视图更新 | 在Experience PlatformUI中，用户可以更轻松地查找有关所有模式和对合并模式做出贡献的数据集的信息，以及身份和关系字段等表面键属性。 这些更新改进了对配置文件进行故障诊断和验证的功能，确认配置文件配置正确，身份拼合正确，数据已成功摄取。 |
 
 有关 [!DNL Real-Time Customer Profile]，包括使用的教程和最佳实践 [!DNL Profile] 数据，请阅读 [实时客户资料概述](../../profile/home.md).

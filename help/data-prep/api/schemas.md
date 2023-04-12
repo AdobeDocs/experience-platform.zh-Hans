@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据准备；api指南
 solution: Experience Platform
 title: 架构API端点
 description: 您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与Platform中的映射器一起使用。
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '611'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 4%
 
 ## 获取所有模式
 
-您可以通过向 `/schemas` 端点。
+通过向 `/schemas` 端点。
 
 **API格式**
 
@@ -43,7 +43,7 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 **请求**
 
-以下请求可检索为IMS组织创建的最后两个架构。
+以下请求可检索为贵组织创建的最后两个架构。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0&limit=2 \

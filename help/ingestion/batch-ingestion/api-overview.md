@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用适用于Adobe Experience Platform的批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2412'
+source-wordcount: '2411'
 ht-degree: 4%
 
 ---
@@ -549,7 +549,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源与组织中的资源命名正确且包含在组织中。 |
 | `{SCHEMA_ID}` | 您创建的架构的ID。 |
 
 ### 创建批处理

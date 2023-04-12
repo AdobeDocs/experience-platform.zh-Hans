@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流摄取疑难解答指南
 description: 本文档提供了有关在Adobe Experience Platform上流式引入的常见问题解答。
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1024'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供可用于将数据摄取�
 
 ### 如何确保仅从可信来源收集数据？
 
-[!DNL Experience Platform] 支持安全数据收集。 启用经过身份验证的数据收集后，客户端必须发送JSON Web令牌(JWT)及其IMS组织ID作为请求标头。 有关如何将经过身份验证的数据发送到的更多信息 [!DNL Platform]，请参阅 [经过验证的数据收集](../tutorials/create-authenticated-streaming-connection.md).
+[!DNL Experience Platform] 支持安全数据收集。 启用经过身份验证的数据收集后，客户端必须发送JSON Web令牌(JWT)及其组织ID作为请求标头。 有关如何将经过身份验证的数据发送到的更多信息 [!DNL Platform]，请参阅 [经过验证的数据收集](../tutorials/create-authenticated-streaming-connection.md).
 
 ### 将数据流式传输到的滞后时间是多少 [!DNL Real-Time Customer Profile]?
 

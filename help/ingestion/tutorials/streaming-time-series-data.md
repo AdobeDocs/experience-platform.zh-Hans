@@ -5,9 +5,9 @@ title: 使用流摄取API流式传输时间系列数据
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1203'
 ht-degree: 2%
 
 ---
@@ -155,7 +155,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 有关租户ID的更多信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源与组织中的资源命名正确且包含在组织中。 有关租户ID的详细信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
 
 请注意 `$id` 以及 `version` 属性，因为创建数据集时将同时使用这两个属性。
 
