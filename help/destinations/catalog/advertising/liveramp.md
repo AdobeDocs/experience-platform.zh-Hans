@@ -3,9 +3,9 @@ title: (Alpha) [!DNL LiveRamp SFTP] 连接
 description: 了解如何使用LiveRamp连接器载入从Adobe Real-time Customer Data Platform到LiveRamp Connect的受众。
 hidefromtoc: true
 hide: true
-source-git-commit: 875610178449ddade78462dc74ea4e3dbadb2907
+source-git-commit: b308def0e9b9643cfc1dcc8ac7db19eb733750ea
 workflow-type: tm+mt
-source-wordcount: '1725'
+source-wordcount: '1738'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ abc101@testemailabc.com,active,active,
 
 在数据成功导出到 [!DNL LiveRamp - SFTP] 存储，您必须将数据上传到 [!DNL LiveRamp] 平台。
 
-请参阅 **后续步骤** 部分 [将数据导入LiveRamp](https://docs.liveramp.com/connect/en/getting-your-data-into-liveramp.html) 文档以了解更多说明。
+有关如何从 [!DNL LiveRamp - SFTP] 存储到 [!DNL LiveRamp] 受众，请参阅以下文档： [将第一个文件上传到受众时的注意事项](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#considerations-when-uploading-the-first-file-to-an-audience).
 
 ## 数据使用和管理 {#data-usage-governance}
 
