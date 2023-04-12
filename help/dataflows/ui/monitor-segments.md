@@ -4,10 +4,10 @@ description: 利用分段，可根据实时客户资料数据创建区段和受�
 title: 在UI中监控区段的数据流
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1923'
-ht-degree: 4%
+source-wordcount: '1919'
+ht-degree: 3%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segments"
 >title="区段"
->abstract="区段视图包含有关您的 IMS 组织的所有区段的信息，以及有关其激活和评估作业的更多信息。"
+>abstract="“区段”视图包含有关贵组织所有区段的信息，以及有关其激活和评估作业的更多信息。"
 
 访问 **[!UICONTROL 区段]** 功能板，选择 **[!UICONTROL 监控]** 中。 在 **[!UICONTROL 监控]** 页面，选择 **[!UICONTROL 区段]** 卡。
 
@@ -48,7 +48,7 @@ ht-degree: 4%
 >
 >当前，仅激活到 [批量（基于文件）目标](../../destinations/destination-types.md#file-based) 支持监控区段功能板。
 
-![区段功能板。 将显示有关IMS组织和沙盒中不同区段的信息。](../assets/ui/monitor-segments/segment-monitoring-dashboard.png)
+![区段功能板。 此时会显示有关组织和沙盒中不同区段的信息。](../assets/ui/monitor-segments/segment-monitoring-dashboard.png)
 
 以下量度可用于此功能板视图：
 
@@ -109,7 +109,7 @@ ht-degree: 4%
 | **[!UICONTROL 数据流运行开始]** | 激活作业开始的日期和时间。 |
 | **[!UICONTROL 数据流运行结束]** | 激活作业结束的日期和时间。 |
 | **[!UICONTROL 数据流运行ID]** | 当前激活作业的ID。 |
-| **[!UICONTROL IMS组织ID]** | 激活作业所属的IMS组织的ID。 |
+| **[!UICONTROL IMS组织ID]** | 激活作业所属的组织的ID。 |
 | **[!UICONTROL 目标名称]** | 要激活数据的目标的名称。 |
 
 在量度下，将显示一个切换开关，用于在数据流运行错误和区段之间进行选择。
@@ -151,7 +151,7 @@ ht-degree: 4%
 | **[!UICONTROL 作业类型]** | 区段作业的类型。 在这种情况下，它将始终是一项区段评估工作。 |
 | **[!UICONTROL 评估类型]** | 正在执行的评估类型。 这可以是 **[!UICONTROL 批次]** 或 **[!UICONTROL 流]**. |
 | **[!UICONTROL 作业ID]** | 评估作业的ID。 |
-| **[!UICONTROL IMS组织ID]** | 评估作业所属的IMS组织的ID。 |
+| **[!UICONTROL IMS组织ID]** | 评估作业所属的组织的ID。 |
 | **[!UICONTROL 区段名称]** | 正在评估的区段的名称。 |
 | **[!UICONTROL 区段ID]** | 正在评估的区段的ID。 |
 
