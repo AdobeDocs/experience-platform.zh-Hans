@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据收集概述
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
 workflow-type: tm+mt
-source-wordcount: '514'
-ht-degree: 6%
+source-wordcount: '516'
+ht-degree: 7%
 
 ---
 
@@ -23,7 +23,7 @@ Adobe Experience Platform提供了一套技术，允许您从客户端源收集�
 
 数据收集重点关注已摄取数据集的可发现性和可访问性，其中包括以下内容：
 
-* [Adobe Experience Platform边缘网络](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
+* [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
 * [标记](../tags/home.md)
 * [数据流](../edge/datastreams/overview.md)
 * [事件转发](../tags/ui/event-forwarding/overview.md)
@@ -63,11 +63,11 @@ Platform Edge Network是一个全球分布式、快速、可靠的服务器网�
 
 >[!NOTE]
 >
->事件转发是一项付费功能，仅作为Adobe Real-time Customer Data Platform连接产品的一部分提供。
+>事件转发是一项付费功能，作为Adobe Real-time Customer Data Platform连接、Prime或Ultimate产品的一部分提供。
 
 ## 后续步骤
 
-本文档概要介绍了数据收集的工作方式，以自动将收集的客户体验数据发送到Adobe产品和第三方目标的过程。
+本文档简要概述了数据收集的工作方式，以自动将收集的客户体验数据发送到Adobe产品和第三方目标的过程。
 
 ![数据收集框架](./images/home/collection.png)
 

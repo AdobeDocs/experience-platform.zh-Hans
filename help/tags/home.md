@@ -2,14 +2,18 @@
 title: 标记概述
 description: Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式，让客户可以部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 4f31c77fd3efe06797055ca04a30ae5ff4872b4e
+source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
 workflow-type: tm+mt
-source-wordcount: '562'
-ht-degree: 78%
+source-wordcount: '585'
+ht-degree: 75%
 
 ---
 
 # 标记概述
+
+>[!NOTE]
+>
+>事件转发是一项付费功能，作为Adobe Real-time Customer Data Platform连接、Prime或Ultimate产品的一部分提供。
 
 >[!NOTE]
 >
