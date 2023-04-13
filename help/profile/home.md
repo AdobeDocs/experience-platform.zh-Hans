@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户资料概述
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 737a67b7e30f770d65751b1a924d8378af8bde52
+source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
-source-wordcount: '2098'
+source-wordcount: '1991'
 ht-degree: 0%
 
 ---
@@ -90,13 +90,13 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 要进一步了解并集模式，包括如何在UI中访问并集模式，请访问 [并集架构UI指南](ui/union-schema.md).
 
-### (Alpha)计算属性
+<!-- ### (Alpha) Computed attributes
 
 >[!IMPORTANT]
 >
->计算属性功能位于Alpha中。 文档和功能可能会发生更改。
+>Computed attribute functionality is in alpha. The documentation and functionality are subject to change.
 
-计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 这些计算有助于您轻松回答与生命周期购买值、购买间隔时间或应用程序打开次数等相关的问题，而无需您每次需要信息时都手动执行复杂的计算。 有关计算属性的更多信息(包括了解计算属性在Adobe Experience Platform中发挥的角色)，请首先阅读 [计算属性概述](computed-attributes/overview.md).
+Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
 
 ## 用户档案和区段
 

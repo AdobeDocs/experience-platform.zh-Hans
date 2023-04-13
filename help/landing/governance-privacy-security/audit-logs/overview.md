@@ -2,7 +2,7 @@
 title: 审核日志概述
 description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
+source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
 source-wordcount: '1156'
 ht-degree: 48%
@@ -43,7 +43,7 @@ ht-degree: 48%
 | [Attribution AI实例](../../../intelligent-services/attribution-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
 | [审核日志](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>导出</li></ul> |
 | [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| 计算属性 | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [Customer AI实例](../../../intelligent-services/customer-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
 | [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
 | [数据流](../../../edge/datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../edge/datastreams/data-prep.md)</li></ul> |

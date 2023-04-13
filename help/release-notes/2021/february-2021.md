@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
-source-wordcount: '1143'
+source-wordcount: '1135'
 ht-degree: 6%
 
 ---
@@ -56,7 +56,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 在Adobe Experience Platform中，从各种来源摄取数据，在Experience Platform内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
 
-数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活 [!DNL Destinations].
+数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后数据集会被利用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活 [!DNL Destinations].
 
 **新增功能**
 
@@ -114,7 +114,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 计算属性(Alpha) | ***注意：此功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。*** <br/><br/>计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 然后，您可以在分段、激活和个性化中使用聚合。 这些函数的一些示例包括计数、总和、平均、最小、最大、true/false。 计算属性当前仅通过API可用。 有关更多信息，请参阅 [计算属性概述](../../profile/computed-attributes/overview.md). |
+| 计算属性(Alpha) | ***注意：此功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。*** <br/><br/>计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 然后，您可以在分段、激活和个性化中使用聚合。 这些函数的一些示例包括计数、总和、平均、最小、最大、true/false。 计算属性当前仅通过API可用。 |
 
 有关实时客户资料的更多信息，包括与 [!DNL Profile] 数据，请首先阅读 [实时客户资料概述](../../profile/home.md).
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段定义API端点
 description: Adobe Experience Platform Segmentation Service API中的区段定义端点允许您以编程方式管理贵组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1216'
 ht-degree: 3%
 
 ---
@@ -209,11 +209,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `expression.value` | 符合 `expression.format`. |
 | `description` | 定义的人类可读描述。 |
 
->[!NOTE]
+<!-- >[!NOTE]
 >
->区段定义表达式也可引用计算的属性。 要了解更多信息，请参阅 [计算属性API端点指南](../../profile/computed-attributes/ca-api.md)
+>A segment definition expression may also reference a computed attribute. To learn more, please refer to the [computed attribute API endpoint guide](../../profile/computed-attributes/ca-api.md)
 >
->计算属性功能位于Alpha中，并非所有用户都可用。 文档和功能可能会发生更改。
+>Computed attribute functionality is in alpha and is not available to all users. Documentation and functionality are subject to change. -->
 
 **响应**
 
