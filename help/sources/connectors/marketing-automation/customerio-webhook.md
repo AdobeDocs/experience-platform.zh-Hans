@@ -1,8 +1,10 @@
 ---
 title: Customer.io源概述
 description: 了解如何使用API或用户界面通过Web挂接将Customer.io连接到Adobe Experience Platform
-badge: "Beta"
-source-git-commit: 9d6a4b5f60f7895e2c1833493926db147064f3f1
+badge: Beta
+last-substantial-update: 2023-03-29T00:00:00Z
+exl-id: 0f4ee106-c22b-465c-9c5e-83709e8424f5
+source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 0%
@@ -57,4 +59,3 @@ Experience Platform支持从流应用程序中摄取数据。 对流提供商的
 ### 连接 [!DNL Customer.io] 到使用UI的平台 {#connect-to-platform-using-ui}
 
 * [创建源连接和数据流以引入 [!DNL Customer.io] 使用用户界面将数据发送到平台](../../tutorials/ui/create/marketing-automation/customerio-webhook.md)
-

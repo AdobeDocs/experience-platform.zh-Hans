@@ -1,8 +1,10 @@
 ---
 title: 章节源概述
 description: 了解如何使用API或用户界面通过Web挂接将Chatlio连接到Adobe Experience Platform
-badge: "Beta"
-source-git-commit: 2c13cb5a951a3144d0047b567194732acdc35dab
+badge: Beta
+last-substantial-update: 2023-03-29T00:00:00Z
+exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
+source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
@@ -55,4 +57,3 @@ Experience Platform支持从流应用程序中摄取数据。 对流提供商的
 ### 连接 [!DNL Chatlio] 到使用UI的平台 {#connect-to-platform-using-ui}
 
 * [创建源连接以引入 [!DNL Chatlio] 使用用户界面将数据发送到平台](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)
-
