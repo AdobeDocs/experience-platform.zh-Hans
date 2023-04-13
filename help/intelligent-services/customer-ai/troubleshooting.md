@@ -6,7 +6,7 @@ title: Customer AI错误疑难解答
 description: 查找Customer AI中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 3bc750b5e1cf47cbca6b037d099936c80c926cf8
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%
@@ -48,10 +48,10 @@ ht-degree: 0%
 首先检查数据的准确性。 您的数据必须包含预测结果所需的必要字段。
 
 - 检查数据集是否具有最新日期。 Customer AI始终假定数据在触发模型时处于最新状态。
-- 检查定义的预测和资格窗口中是否缺少数据。 您的数据必须完整无缺。 另外，请确保您的数据集符合 [客户人工智能历史数据要求](./input-output.md#data-requirements).
+- 检查定义的预测和资格窗口中是否缺少数据。 您的数据必须完整无缺。 另外，请确保您的数据集符合 [客户人工智能历史数据要求](./data-requirements.md#data-requirements).
 - 在架构字段属性中，检查商务、应用程序、Web和搜索中是否缺少数据。
 
-如果您的数据似乎不是问题所在，请尝试更改资格填充条件以将模型限制为特定用户档案(例如， `_experience.analytics.customDimensions.eVars.eVar142` 存在)。 这可限制培训窗口中使用的数据的群体和大小。
+如果您的数据似乎不存在问题，请尝试更改资格填充条件以将模型限制为特定用户档案(例如， `_experience.analytics.customDimensions.eVars.eVar142` 存在)。 这可限制培训窗口中使用的数据的群体和大小。
 
 如果限制资格人口不起作用或不可能，请更改您的预测窗口。
 

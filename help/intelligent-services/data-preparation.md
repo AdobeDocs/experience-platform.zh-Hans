@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 准备数据以在智能服务中使用
 description: 为了使智能服务能够从营销事件数据中发现洞察，必须在语义上对数据进行扩充并以标准结构进行维护。 智能服务使用体验数据模型(XDM)架构来实现此目的。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 87a8ad253abb219662034652b5f8c4fabfa40484
 workflow-type: tm+mt
 source-wordcount: '2936'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 例如，如果您使用Customer AI来预测购买产品的倾向，则Customer AI的模型需要成功购买路径的示例和失败路径的示例。 这是因为在模型培训期间， Customer AI会了解哪些事件和历程会导致购买。 此外，还包括未购买的客户执行的操作，例如在将项目添加到购物车时停止其历程的个人。 这些客户可能表现出类似的行为，但是， Customer AI可以提供洞察并深入分析导致倾向得分较高的主要差异和因素。 同样，Attribution AI需要同时使用事件类型和历程类型，才能按接触点位置显示接触点有效性、热门转化路径和划分等量度。
 
-有关历史数据要求的更多示例和信息，请访问 [客户人工智能](./customer-ai/input-output.md#data-requirements) 或 [Attribution AI](./attribution-ai/input-output.md#data-requirements) 输入/输出文档中的历史数据要求部分。
+有关历史数据要求的更多示例和信息，请访问 [客户人工智能](./customer-ai/data-requirements.md#data-requirements) 或 [Attribution AI](./attribution-ai/input-output.md#data-requirements) 输入/输出文档中的历史数据要求部分。
 
 ### 拼合数据的准则
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 如果您的数据存储在Experience Platform之外，则需要将数据映射到 [消费者体验事件架构](#cee-schema). 可以使用自定义字段组扩展此模式，以更好地捕获客户数据。 映射后，您可以使用消费者体验事件架构创建数据集，并 [将数据摄取到平台](../ingestion/home.md). 然后，在配置 [!DNL Intelligent Service].
 
-根据 [!DNL Intelligent Service] 您希望使用，可能需要不同的字段。 请注意，如果您有可用的数据，则最好将数据添加到字段。 要了解有关必填字段的更多信息，请访问 [Attribution AI](./attribution-ai/input-output.md) 或 [客户人工智能](./customer-ai/input-output.md) 输入/输出指南。
+根据 [!DNL Intelligent Service] 您希望使用，可能需要不同的字段。 请注意，如果您有可用的数据，则最好将数据添加到字段。 要了解有关必填字段的更多信息，请访问 [Attribution AI](./attribution-ai/input-output.md) 或 [客户人工智能](./customer-ai/data-requirements.md) 数据要求指南。
 
 ### Adobe Analytics数据准备 {#analytics-data}
 
@@ -65,7 +65,7 @@ GROUP BY channel.typeAtSource
 
 >[!IMPORTANT]
 >
->Adobe Analytics连接器最多需要四周时间才能回填数据。 如果您最近设置了连接，则应验证数据集是否具有客户或Attribution AI所需的最小数据长度。 请查看 [客户人工智能](./customer-ai/input-output.md#data-requirements) 或 [Attribution AI](./attribution-ai/input-output.md#data-requirements)，并验证是否有足够的数据来实现预测目标。
+>Adobe Analytics连接器最多需要四周时间才能回填数据。 如果您最近设置了连接，则应验证数据集是否具有客户或Attribution AI所需的最小数据长度。 请查看 [客户人工智能](./customer-ai/data-requirements.md#data-requirements) 或 [Attribution AI](./attribution-ai/input-output.md#data-requirements)，并验证是否有足够的数据来实现预测目标。
 
 ### Adobe Audience Manager数据准备（仅限Customer AI） {#AAM-data}
 
@@ -75,7 +75,7 @@ Customer AI本地支持Adobe Audience Manager数据。 要使用Audience Manager
 
 >[!IMPORTANT]
 >
->如果您最近设置了一个连接器，则应验证数据集是否具有所需的最小数据长度。 请查看 [输入/输出文档](./customer-ai/input-output.md) ，并验证您是否有足够的数据来实现预测目标。
+>如果您最近设置了一个连接器，则应验证数据集是否具有所需的最小数据长度。 请查看 [输入/输出文档](./customer-ai/data-requirements.md) ，并验证您是否有足够的数据来实现预测目标。
 
 ### [!DNL Experience Platform] 数据准备
 
@@ -110,7 +110,7 @@ CEE字段组中有几个关键字段，应用这些关键字段 [!DNL Intelligen
 * [xdm:timestamp](#timestamp)
 * [xdm:channel](#channel) (仅对于Attribution AI必填)
 
-#### 主标识 {#identity}
+#### 主要标识 {#identity}
 
 架构中的其中一个字段必须设置为主标识字段，该字段允许 [!DNL Intelligent Services] 将时间序列数据的每个实例关联到个人。
 

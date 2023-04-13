@@ -5,7 +5,7 @@ feature: Customer AI
 title: Customer AI快速入门
 description: 本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: 596921163bf64d11545dcde49039bcdd07c253dd
+source-git-commit: 3bc750b5e1cf47cbca6b037d099936c80c926cf8
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 0%
@@ -49,4 +49,4 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对Platfo
 
 ## 后续步骤
 
-完成上述文档中所述的步骤后，请访问 [输入和输出](./input-output.md) 文档。 本文档简要概述了在Customer AI中使用和生成的数据类型。
+完成上述文档中所述的步骤后，请访问 [输入和输出](./data-requirements.md) 文档。 本文档简要概述了在Customer AI中使用和生成的数据类型。
