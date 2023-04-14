@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service概述
 description: Privacy Service使您能够促进在Experience Cloud数据操作中自动遵守法律隐私法规。
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
-source-git-commit: e09f0598e1d8dc007d0fdfcf13da11d5cad94c54
+source-git-commit: 3296209a15a5f88ab14e16de25d554b9df712445
 workflow-type: tm+mt
-source-wordcount: '1608'
+source-wordcount: '1623'
 ht-degree: 5%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Privacy Service的权限已得到改进，可提高其粒度级别。 通过这些更改，组织管理员可以授予更多用户使用所需的角色和权限级别的访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们而言是一次重大更改。 此权限更改的实施将在 **2023年3月28日**.
+>Adobe Experience Platform Privacy Service的权限已得到改进，可提高其粒度级别。 通过这些更改，组织管理员可以授予更多用户使用所需的角色和权限级别的访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们而言是一次重大更改。 此权限更改的实施将在 **2023年4月13日**. 请参阅 [迁移旧版API凭据](./permissions.md#migrate-tech-accounts) 以获取有关解决此问题的指导。
 >
 >技术帐户可供企业客户使用，并通过Adobe开发人员控制台创建。 技术帐户持有人的Adobe ID结束于 `@techacct.adobe.com`. 如果您不确定自己是否是技术帐户持有者，请联系您的组织管理员。
 
