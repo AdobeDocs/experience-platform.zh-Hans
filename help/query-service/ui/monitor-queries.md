@@ -2,9 +2,9 @@
 title: 监视计划查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 5e6fa112ccca7405c3dfd0653d3d6cad8b9ed2af
+source-git-commit: 1b4554e204663d40c3a18da792614305abb7d296
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,15 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 
 ### 运行具有匿名块的查询的详细信息 {#anonymous-block-queries}
 
-使用匿名块组成其SQL语句的查询被分隔成各自的查询。 这允许您单独检查每个查询块的运行详细信息。
+使用匿名块组成其SQL语句的查询被分隔成各自的子查询。 这允许您单独检查每个查询块的运行详细信息。
+
+>[!NOTE]
+>
+>使用DROP命令的匿名块的运行详细信息将 **not** 作为单独的子查询报告。 对于CTAS查询、ITAS查询和用作匿名块子查询的COPY语句，可以使用单独的运行详细信息。 当前不支持DROP命令的运行详细信息。
 
 匿名块通过使用 `$$` 前缀。 请参阅 [匿名块文档](../essential-concepts/anonymous-block.md) 以详细了解查询服务中的匿名块。
 
-匿名块查询在运行状态左侧具有选项卡。 选择一个选项卡以显示运行详细信息。
+匿名块子查询在运行状态的左侧具有选项卡。 选择一个选项卡以显示运行详细信息。
 
 ![“查询”运行概述显示一个匿名块查询。 多个查询选项卡会突出显示。](../images/ui/monitor-queries/anonymous-block-overview.png)
 
