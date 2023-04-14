@@ -4,9 +4,10 @@ description: Adobe Experience Platform UI提供了一个功能板，您可以通
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
 hide: true
 hidefromtoc: true
-source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
+recommendations: noCatalog, display
+source-git-commit: fa573dcf03eb711e946afe40d107871f5166ff58
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
