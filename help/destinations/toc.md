@@ -4,7 +4,7 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 12bae2f5b3dd04eaf72e736cb1ddca4bdd0a9d52
+source-git-commit: fb1a8f3a8f78578a0c7d6b8ab4feb60d8c5da1af
 workflow-type: tm+mt
 source-wordcount: '1072'
 ht-degree: 6%
@@ -144,6 +144,7 @@ ht-degree: 6%
       * [OracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [(API)SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
       * [（文件）SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
+      * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
       * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
    * 标记扩展 {#launch-extensions}
       * [标记扩展概述](./catalog/launch-extensions/overview.md)
