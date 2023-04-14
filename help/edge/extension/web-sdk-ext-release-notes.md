@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 2b8307422e4f073451c23ae9b35061d845f0893c
+source-git-commit: 52c6420a7fba6474dd2e9e97c9b2f49b5208be1d
 workflow-type: tm+mt
-source-wordcount: '1597'
+source-wordcount: '1620'
 ht-degree: 39%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 39%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.16.1 - 2023年4月14日
+
+* 修复了XDM对象和变量数据元素存在的一个问题，即您无法从非默认沙盒中选择架构。
 
 ## 版本2.16.0 - 2023年3月30日
 
