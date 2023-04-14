@@ -6,10 +6,10 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1132c5166f1271f1b8eb0c618b83d028b413b991
 workflow-type: tm+mt
-source-wordcount: '1198'
-ht-degree: 3%
+source-wordcount: '1177'
+ht-degree: 1%
 
 ---
 
@@ -48,7 +48,7 @@ ht-degree: 3%
 | 激活到目标的数据类型 | 用户档案数据，包括身份和身份映射 | 硬 | 目前，只能导出 *配置文件记录属性* 到目标。 目前不支持导出描述事件数据的XDM属性。 |
 | 激活到目标的数据类型 — 阵列和映射属性支持 | 不可用 | 硬 | 此时，它 **not** 可导出 *数组或映射属性* 到目标。 此规则的例外是 [身份映射](/help/xdm/field-groups/profile/identitymap.md)，可在基于流和文件的激活中导出。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 流激活 {#streaming-activation}
 
@@ -58,7 +58,7 @@ ht-degree: 3%
 | --- | --- | --- | --- |
 | 每秒激活次数（具有配置文件导出的HTTP消息） | 不适用 | - | 当前，从Experience Platform到合作伙伴目标的API端点每秒发送的消息数没有限制。 <br> 任何限制或延迟都由Experience Platform发送数据的端点规定。 另请务必检查 [目录](/help/destinations/catalog/overview.md) 连接并激活数据的目标页面。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 批量（基于文件）激活 {#batch-file-based-activation}
 
@@ -70,7 +70,7 @@ ht-degree: 3%
 | 在给定小时内可导出的区段的最大数量 | 100 | 柔和 | 建议向批处理目标数据流中添加最多100个区段。 |
 | 每个文件要激活的最大行数（记录） | 500万 | 硬 | Adobe Experience Platform会自动将导出的文件拆分为每个文件500万条记录（行）。 每行表示一个用户档案。 拆分文件名后附加一个数字，表示该文件是较大导出的一部分，如下所示： `filename.csv`, `filename_2.csv`, `filename_3.csv`. 有关更多信息，请阅读 [调度节](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 的“激活批处理目标”教程的“受众”部分。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 临时激活 {#ad-hoc-activation}
 
@@ -81,7 +81,7 @@ ht-degree: 3%
 | 每个临时激活作业激活的区段 | 80 | 硬 | 目前，每个临时激活作业最多可激活80个区段。 尝试激活每个作业80个以上的区段将导致作业失败。 此行为可能会在未来版本中发生更改。 |
 | 每个区段的并发临时激活作业 | 1 | 硬 | 每个区段不要运行多个并发的临时激活作业。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 边缘个性化目标激活 {#edge-destinations-activation}
 
@@ -90,10 +90,10 @@ ht-degree: 3%
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | 最大数 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标 | 10 | 柔和 | 您可以为每个沙盒将数据流设置为10个自定义个性化目标。 |
-| 每个沙盒映射到个性化目标的最大属性数 | 20 | 硬 | 每个沙盒在数据流中最多可以将20个属性映射到个性化目标。 |
+| 每个沙盒映射到个性化目标的最大属性数 | 30 | 硬 | 每个沙盒在数据流中最多可以将30个属性映射到个性化目标。 |
 | 映射到单个区段的最大区段数 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 目标 | 50 | 柔和 | 在激活流程中，您最多可以激活50个区段，以到达一个Adobe Target目标。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Destination SDK护栏 {#destination-sdk-guardrails}
 
@@ -104,7 +104,7 @@ ht-degree: 3%
 | 最大数 [私有自定义目标](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 柔和 | 使用Destination SDK，您最多可以创建5个专用自定义流或批量目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
 | 用于Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs` （最低1.800和最高3.600）</li><li>`maxNumEventsInBatch` （最小1.000，最大10.000）</li></ul> | 硬 | 使用 [可配置聚合](/help/destinations/destination-sdk/destination-configuration.md#configurable-aggregation) 选项时，需要注意用于确定将HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 目标限制和重试策略 {#destination-throttling-and-retry-policy}
 
@@ -114,7 +114,7 @@ ht-degree: 3%
 | --- | --- |
 | 企业目标(HTTP API、Amazon Kinesis、Azure EventHubs) | 在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的请求速率低于每秒10,000次，以此速率发送到企业目标。 <br> 如果向企业目标发出的请求失败，Experience Platform会存储失败的请求并重试两次，以将请求发送到您的端点。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 其他Experience Platform服务的防护 {#guardrails-other-services}
 
