@@ -5,9 +5,9 @@ title: 查询服务中查询执行的一般指导
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: adf8da46d09c60b86df16493043efeacbdd24fe2
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1067'
 ht-degree: 3%
 
 ---
@@ -324,7 +324,6 @@ LIMIT 50;
 有关可在查询服务中使用的查询示例，请阅读以下用例文档：
 
 - [Analytics分析](../use-cases/analytics-insights.md)
-- [使用Adobe Target进行活动分析](../use-cases/activity-analysis-with-adobe-target.md)
 - [创建事件的趋势报表](../use-cases/trended-report-of-events.md)
 - [查看访客的汇总报表](../use-cases/roll-up-report-of-a-visitor.md)
 - [列出用户的页面查看次数](../use-cases/list-visitor-sessions.md)
