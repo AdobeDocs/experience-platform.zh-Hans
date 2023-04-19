@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 内容标记API中的颜色标记
 description: 当给定图像时，“颜色标记”服务可以计算像素颜色的直方图，并按主色对它们进行分段排序。
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-source-git-commit: e6ea347252b898f73c2bc495b0324361ee6cae9b
+source-git-commit: fd8891bdc7d528e327d2a72c2427f7bbc6dc8a03
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '653'
 ht-degree: 5%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 5%
 
 **颜色标记（带有蒙版）**
 
-该方法采用基于深度学习的前景提取器来识别前景中的对象。 一旦提取了前景对象，就在前景区域和背景区域以及整个图像的主色上计算直方图。
+该方法采用基于深度学习的前景提取器来识别前景中的对象。 一旦提取了前景对象，就在前景区域和背景区域以及整个图像的主导颜色上计算直方图。
 
 **色调提取**
 
-除了上述变体之外，您还可以配置服务以检索以下内容的色调直方图：
+除了上述变体之外，您还可以配置服务以检索以下各项的色调直方图：
 
 - 整体图像（使用完整图像变体时）
 - 整体图像以及前景和背景区域（当将变体与蒙版结合使用时）
@@ -161,7 +161,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **请求 — 掩盖的图像变体**
 
-以下示例请求使用掩码方法进行颜色标记。 我们通过将 `enable_mask` 参数 `true` 中。
+以下示例请求使用掩码方法进行颜色标记。 可通过将 `enable_mask` 参数 `true` 中。
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -202,7 +202,9 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 -F 'infile_1=@1431RDMJANELLERAWJACKE_2.jpg'
 ```
 
->注意：此外，我们还会设置 `retrieve_tone` 参数 `true` 中。 这使我们能够在图像的整体、前景和背景区域中检索温、中性和冷色调上的色调分布直方图。
+>[!NOTE]
+>
+>此外， `retrieve_tone` 参数也设置为 `true` 中。 这使我们能够在图像的整体、前景和背景区域中检索暖色调、中性色调和冷色调上的色调分布直方图。
 
 **响应 — 掩盖的图像变体**
 
@@ -352,16 +354,16 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 }]
 ```
 
-除了整个图像中的颜色之外，您现在还可以看到前景区域和背景区域的颜色。 由于我们为上述每个区域启用了色调检索，因此我们还可以检索一个色调直方图。
+除了整个图像中的颜色之外，您现在还可以看到前景区域和背景区域的颜色。 由于已为上述每个区域启用了色调检索，因此您还可以检索色调的直方图。
 
 **输入参数**
 
 | 名称 | 数据类型 | 必需 | 默认 | 值 | 描述 |
 | --- | --- | --- | --- | --- | --- |
-| `documents` | 数组(Document-Object) | 是 | - | 请参阅下文 | json元素列表，列表中每个项目表示一个文档。 |
+| `documents` | 数组(Document-Object) | 是 | - | 请参阅下文 | JSON元素列表，列表中每个项目表示一个文档。 |
 | `top_n` | 数字 | 否 | 0 | 非负整数 | 要返回的结果数。 0，返回所有结果。 与阈值结合使用时，返回的结果数将少于任一限制。 |
 | `min_coverage` | 数字 | 否 | 0.05 | 实数 | 需要返回结果的覆盖范围阈值。 Exclude（排除）参数以返回所有结果。 |
-| `resize_image` | 数字 | 否 | True | True/False | 是否调整输入图像的大小。 默认情况下，在执行颜色提取之前，会先将图像大小调整为320*320像素。 出于调试目的，我们还可以允许代码在完整图像上运行，方法是将其设置为False。 |
+| `resize_image` | 数字 | 否 | True | True/False | 是否调整输入图像的大小。 默认情况下，在执行颜色提取之前，会先将图像大小调整为320*320像素。 出于调试目的，我们还可以允许代码在完整图像上运行，方法是将其设置为 `False`. |
 | `enable_mask` | 数字 | 否 | False | True/False | 启用/禁用颜色提取 |
 | `retrieve_tone` | 数字 | 否 | False | True/False | 启用/禁用音调提取 |
 
@@ -369,7 +371,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 | 名称 | 数据类型 | 必需 | 默认 | 值 | 描述 |
 | -----| --------- | -------- | ------- | ------ | ----------- |
-| `repo:path` | 字符串 | - | - | - | 要从中提取关键短语的文档的预签名URL。 |
-| `sensei:repoType` | 字符串 | - | - | HTTPS | 存储文档的存储库类型。 |
-| `sensei:multipart_field_name` | 字符串 | - | - | - | 在将文档作为多部分参数传递时，请使用此参数，而不是使用预签名的url。 |
-| `dc:format` | 字符串 | 是 | - | &quot;text/plain&quot;,<br>&quot;application/pdf&quot;,<br>&quot;text/pdf&quot;,<br>&quot;text/html&quot;,<br>&quot;text/rtf&quot;,<br>&quot;application/rtf&quot;,<br>&quot;application/msword&quot;,<br>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;,<br>&quot;application/mspowerpoint&quot;,<br>&quot;application/vnd.ms-powerpoint&quot;,<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | 在处理文档之前，将针对允许的输入编码类型检查文档编码。 |
+| `repo:path` | 字符串 | - | - | - | 文档的预签名URL。 |
+| `sensei:repoType` | 字符串 | - | - | HTTPS | 存储图像的存储库类型。 |
+| `sensei:multipart_field_name` | 字符串 | - | - | - | 在将图像文件作为多部分参数传递时，请使用此参数，而不是使用预签名的URL。 |
+| `dc:format` | 字符串 | 是 | - | &quot;image/jpg&quot;,<br>&quot;image/jpeg&quot;,<br>&quot;image/png&quot;,<br>&quot;image/tiff&quot; | 在处理之前，将针对允许的输入编码类型检查图像编码。 |
