@@ -1,13 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；Analytics源连接器；Analytics连接器；Analytics源；Analytics
-solution: Experience Platform
+keywords: Experience Platform；主页；热门主题；Analytics源连接器；Analytics源；分析；筛选；配置文件筛选；实时客户配置文件；筛选；配置文件数据筛选；行级过滤；列级过滤
 title: 在UI中创建Adobe Analytics源连接
-type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 9c2ede973aa4348f15362ba80fdcd7a231577909
+source-git-commit: 23a99a46cfd6e42dd0f4815bb972dbe46104b60f
 workflow-type: tm+mt
-source-wordcount: '2365'
+source-wordcount: '2380'
 ht-degree: 5%
 
 ---
@@ -281,7 +279,7 @@ ht-degree: 5%
 
 要删除数据流，请转到 [!UICONTROL 数据流] 页面，然后选择省略号(`...`)，然后选择 [!UICONTROL 删除].
 
-![删除](../../../../images/tutorials/create/analytics/delete.png)
+![delete](../../../../images/tutorials/create/analytics/delete.png)
 
 ## 后续步骤和其他资源
 
