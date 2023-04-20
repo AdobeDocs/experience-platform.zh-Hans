@@ -3,10 +3,10 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
+source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
 workflow-type: tm+mt
-source-wordcount: '890'
-ht-degree: 3%
+source-wordcount: '911'
+ht-degree: 2%
 
 ---
 
@@ -39,7 +39,7 @@ ht-degree: 3%
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID可唯一标识Amazon Fire TV。 |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -50,7 +50,7 @@ ht-degree: 3%
 | 导出类型 | **[!UICONTROL 区段导出]** | 您将区段（受众）的所有成员导出到Google目标。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 先决条件 {#prerequisites}
 
@@ -73,6 +73,11 @@ ht-degree: 3%
 
 ### 连接参数 {#parameters}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_gam_appendSegmentID"
+>title="将区段ID附加到区段名称"
+>abstract="选择此选项，使Google Ad Manager中的区段名称包含来自Experience Platform的区段ID，如下所示： `Segment Name (Segment ID)`"
+
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
@@ -82,6 +87,11 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
    * 使用 `DFP by Google` 表示 [!DNL DoubleClick] （发布者）
    * 使用 `AdX buyer` 表示 [!DNL Google AdX]
 
+<!--
+
+*  **[!UICONTROL Append segment ID to segment name]**: Select this option to have the segment name in Google Ad Manager include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`
+
+-->
 
 >[!NOTE]
 >
