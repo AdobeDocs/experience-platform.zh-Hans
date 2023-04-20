@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Analytics源连接器；Analytics源；分析；筛选；配置文件筛选；实时客户配置文件；筛选；配置文件数据筛选；行级过滤；列级过滤
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 23a99a46cfd6e42dd0f4815bb972dbe46104b60f
+source-git-commit: 3b86c071c4b5dc151bf83ad0042c10ac7a5648db
 workflow-type: tm+mt
-source-wordcount: '2380'
+source-wordcount: '2352'
 ht-degree: 5%
 
 ---
