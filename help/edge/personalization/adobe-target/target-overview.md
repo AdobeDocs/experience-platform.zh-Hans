@@ -3,10 +3,10 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 5a048505be139b58dbb3bf85120df5e3cc46881e
 workflow-type: tm+mt
-source-wordcount: '1273'
-ht-degree: 5%
+source-wordcount: '1318'
+ht-degree: 6%
 
 ---
 
@@ -16,12 +16,15 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->的 [Adobe Target文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en) 其中包含的主题包含特定于Platform Web SDK的信息，这些信息与Target特性和功能相关。
+>了解如何使用 [将Target从at.js 2.x迁移到平台Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) 教程。
+>
+>了解如何首次使用 [使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 教程。 有关特定于Target的信息，请参阅标题为的教程部分 [使用Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+
 
 以下功能已经过测试，目前在 [!DNL Target]:
 
 * [A/B测试](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=zh-Hans)
+* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
 * [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
@@ -76,8 +79,8 @@ ht-degree: 5%
 * 定位库
 * 地域
 * 网络
-* Operating System
-* 网站页面
+* 操作系统
+* 站点页面
 * 浏览器
 * 流量源
 * 时间范围
@@ -168,13 +171,13 @@ alloy("sendEvent",
 
 要更新 [!DNL Target] 配置文件，请确保配置文件数据与以下内容一起传递：
 
-* 在 `“data {“`
-* 在 `“__adobe.target”`
-* 前缀 `“profile.”` 例如，如下所示
+* 在 `"data {"`
+* 在 `"__adobe.target"`
+* 前缀 `"profile."` 例如，如下所示
 
 | 键 | 类型 | 描述 |
 | --- | --- | --- |
-| `renderDecisions` | 布尔型 | 指示个性化组件是否应解释DOM操作 |
+| `renderDecisions` | 布尔值 | 指示个性化组件是否应解释DOM操作 |
 | `decisionScopes` | 数组 `<String>` | 要检索决策的范围列表 |
 | `xdm` | 对象 | 在XDM中格式化的数据，这些数据会作为体验事件进入Platform Web SDK中 |
 | `data` | 对象 | 发送到的任意键/值对 [!DNL Target] 解决方案。 |
