@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 10edb5dfd9ce99b69cf5bb014f4903942c9bff3e
+source-git-commit: 33a660800e3202d9969c4e44eba8419e22db57a3
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '968'
 ht-degree: 11%
 
 ---
@@ -90,7 +90,8 @@ ht-degree: 11%
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [TeradataVantage连接器](connectors/databases/teradata-vantage.md)
    - 电子商务 {#ecommerce}
-      - [Shopify连接器](connectors/ecommerce/shopify.md)
+      - [Shopify](connectors/ecommerce/shopify.md)
+      - [Shopify流](connectors/ecommerce/shopify-streaming.md)
    - 本地系统 {#local-system}
       - [本地文件上传连接器](connectors/local-system/local-file-upload.md)
    - 营销自动化 {#marketing-automation}
@@ -167,6 +168,7 @@ ht-degree: 11%
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - 电子商务 {#ecommerce}
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
+         - [Shopify流](tutorials/api/create/ecommerce/shopify-streaming.md)
       - 营销自动化 {#marketing-automation}
          - [查蒂奥](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
@@ -284,6 +286,7 @@ ht-degree: 11%
          - [Teradata](tutorials/ui/create/databases/teradata-vantage.md)
       - 电子商务 {#ecommerce}
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
+         - [Shopify流](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 营销自动化 {#marketing-automation}
