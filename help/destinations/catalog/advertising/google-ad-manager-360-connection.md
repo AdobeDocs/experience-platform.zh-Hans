@@ -4,8 +4,8 @@ description: Google Ad Manager 360是Google的一个广告服务平台，它为�
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
 source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '947'
+ht-degree: 4%
 
 ---
 
@@ -85,8 +85,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
->title="将区段ID附加到区段名称"
->abstract="选择此选项，使Google Ad Manager 360中的区段名称包含来自Experience Platform的区段ID，如下所示： `Segment Name (Segment ID)`"
+>title="将分段 ID 附加到分段名称"
+>abstract="选择此选项可让 Google Ad Manager 360 中的区段名称包含来自 Experience Platform 的区段 ID，如下所示：`Segment Name (Segment ID)`"
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 

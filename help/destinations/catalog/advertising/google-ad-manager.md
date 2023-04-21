@@ -6,7 +6,7 @@ exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
 source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
 workflow-type: tm+mt
 source-wordcount: '911'
-ht-degree: 2%
+ht-degree: 5%
 
 ---
 
@@ -75,8 +75,8 @@ ht-degree: 2%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam_appendSegmentID"
->title="将区段ID附加到区段名称"
->abstract="选择此选项，使Google Ad Manager中的区段名称包含来自Experience Platform的区段ID，如下所示： `Segment Name (Segment ID)`"
+>title="将分段 ID 附加到分段名称"
+>abstract="选择此选项可让 Google Ad Manager 中的区段名称包含来自 Experience Platform 的区段 ID，如下所示：`Segment Name (Segment ID)`"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
