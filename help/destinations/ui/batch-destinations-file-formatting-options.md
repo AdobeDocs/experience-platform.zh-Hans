@@ -2,10 +2,10 @@
 description: 了解如何在将数据激活到基于文件的目标时配置文件格式选项
 title: （测试版）为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 379a3769965bb425ca2c8df195b99a98f0b5398d
+source-git-commit: b1e9b781f3b78a22b8b977fe08712d2926254e8c
 workflow-type: tm+mt
-source-wordcount: '601'
-ht-degree: 1%
+source-wordcount: '1214'
+ht-degree: 2%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 * To configure file formatting options for exported files by using the Experience Platform Flow Service API, read [Flow Service API - Destinations](https://developer.adobe.com/experience-platform-apis/references/destinations/).
 -->
 
-## 文件格式配置 {#file-configuration}
+## CSV文件的文件格式配置 {#file-configuration}
 
 要显示文件格式选项，请启动 [连接到目标](/help/destinations/ui/connect-destination.md) 工作流。 选择 **数据类型：区段** 和 **文件类型：CSV** 以显示导出的 `CSV` 文件。
 
@@ -41,7 +41,12 @@ ht-degree: 1%
 
 ### 分隔符 {#delimiter}
 
-为每个字段和值设置分隔符。 可用选项包括：
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_delimiter"
+>title="分隔符"
+>abstract="使用此控件为每个字段和值设置分隔符。 查看相关文档，了解每个选择的示例。"
+
+使用此控件可为导出的CSV文件中的每个字段和值设置分隔符。 可用选项包括：
 
 * 冒号 `(:)`
 * 逗号 `(,)`
@@ -49,29 +54,108 @@ ht-degree: 1%
 * 分号 `(;)`
 * Tab `(\t)`
 
-### 引号字符
+#### 示例
 
-设置一个用于转义引号值的字符，其中分隔符可以是值的一部分。
+查看导出的CSV文件中的以下内容示例，这些示例在UI中进行了每个选择。
 
-### 转义字符
+* 示例输出 **[!UICONTROL 冒号`(:)`]** 选定项： `male:John:Doe`
+* 示例输出 **[!UICONTROL 逗号`(,)`]** 选定项： `male,John,Doe`
+* 示例输出 **[!UICONTROL 管道`(|)`]** 选定项： `male|John|Doe`
+* 示例输出 **[!UICONTROL 分号`(;)`]** 选定项： `male;John;Doe`
+* 示例输出 **[!UICONTROL 选项卡`(\t)`]** 选定项： `male \t John \t Doe`
 
-设置一个用于在已引号值内转义引号的字符。
+### 引号字符 {#quote-character}
 
-### 空值输出
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_quoteCharacter"
+>title="引号字符"
+>abstract="如果要从导出的字符串中删除双引号，请使用此选项。 查看相关文档，了解每个选择的示例。"
 
-设置空值的字符串表示形式。
+如果要从导出的字符串中删除双引号，请使用此选项。 可用选项包括：
 
-### Null值输出
+* **[!UICONTROL 空字符(\0000)]**. 使用此选项可从导出的CSV文件中删除双引号。
+* **[!UICONTROL 双引号(&quot;)]**. 使用此选项可在导出的CSV文件中保留双引号。
 
-在导出的文件中设置空值的字符串表示形式。
+#### 示例
 
-示例输出 **[!UICONTROL null]** 选定项： `male,NULL,TestLastName`
-示例输出 **&quot;** 选定项： `male,"",TestLastName`
-示例输出 **[!UICONTROL 空字符串]** 选定项： `male,,TestLastName`
+在UI中，查看导出的CSV文件中的内容示例，以及每个选项。
 
-### 压缩格式
+* 示例输出 **[!UICONTROL 空字符(\0000)]** 选定项： `Test,John,LastName`
+* 示例输出 **[!UICONTROL 双引号(&quot;)]** 选定项： `"Test","John","LastName"`
 
-设置在将数据保存到文件时要使用的压缩编解码器。 支持的选项包括GZIP和NONE。
+### 转义字符 {#escape-character}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_escapeCharacter"
+>title="转义字符"
+>abstract="设置一个用于在已引号值内转义引号的字符。 查看相关文档，了解每个选择的示例。"
+
+使用此选项可设置一个用于在已引号值内转义引号的字符。 例如，当字符串用双引号括起来，其中部分字符串已用双引号括起来时，此选项非常有用。 此选项确定要用哪个字符替换内部双引号。 可用选项包括：
+
+* 反斜线 `(\)`
+* 单报价 `(')`
+
+#### 示例
+
+在UI中，查看导出的CSV文件中的内容示例，以及每个选项。
+
+* 示例输出 **[!UICONTROL 反斜线`(\)`]** 选定项： `"Test,\"John\",LastName"`
+* 示例输出 **[!UICONTROL 单报价`(')`]** 选定项： `"Test,'"John'",LastName"`
+
+### 空值输出 {#empty-value-output}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_emptyValueOutput"
+>title="空值输出"
+>abstract="使用此选项可设置空值在导出的CSV文件中的显示方式。 查看相关文档，了解每个选择的示例。"
+
+使用此控件设置空值的字符串表示形式。 此选项可确定空值在导出的CSV文件中的显示方式。 可用选项包括：
+
+* **[!UICONTROL null]**
+* **&quot;&quot;**
+* **[!UICONTROL 空字符串]**
+
+#### 示例
+
+在UI中，查看导出的CSV文件中的内容示例，以及每个选项。
+
+* 示例输出 **[!UICONTROL null]** 选定项： `male,NULL,TestLastName`. 在这种情况下，Experience Platform会将空值转换为空值。
+* 示例输出 **&quot;** 选定项： `male,"",TestLastName`. 在这种情况下，Experience Platform会将空值转换为一对双引号。
+* 示例输出 **[!UICONTROL 空字符串]** 选定项： `male,,TestLastName`. 在这种情况下，Experience Platform将保留空值，并按原样导出该值（不带双引号）。
+
+>[!TIP]
+>
+>空值输出与下面部分中的空值输出之差是，空值具有实际值为空。 NULL值根本没有任何值。 将空值视为表格上的空玻璃，将空值视为表格上根本没有玻璃。
+
+### Null值输出 {#null-value-output}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_nullValueOutput"
+>title="Null值输出"
+>abstract="使用此控件可在导出的文件中设置空值的字符串表示形式。 查看相关文档，了解每个选择的示例。"
+
+使用此控件可在导出的文件中设置空值的字符串表示形式。 此选项可确定在导出的CSV文件中显示空值的方式。 可用选项包括：
+
+* **[!UICONTROL null]**
+* **&quot;&quot;**
+* **[!UICONTROL 空字符串]**
+
+#### 示例
+
+在UI中，查看导出的CSV文件中的内容示例，以及每个选项。
+
+* 示例输出 **[!UICONTROL null]** 选定项： `male,NULL,TestLastName`. 在这种情况下，不会进行转换，CSV文件包含空值。
+* 示例输出 **&quot;** 选定项： `male,"",TestLastName`. 在这种情况下，Experience Platform会将空值替换为空字符串周围的双引号。
+* 示例输出 **[!UICONTROL 空字符串]** 选定项： `male,,TestLastName`. 在这种情况下，Experience Platform会将空值替换为空字符串（不带双引号）。
+
+### 压缩格式 {#compression-format}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_compressionFormat"
+>title="压缩格式"
+>abstract="设置将数据保存到文件时要使用的压缩类型。 支持的选项包括GZIP和NONE。 查看相关文档，了解每个选择的示例。"
+
+设置将数据保存到文件时要使用的压缩类型。 支持的选项包括GZIP和NONE。 此选项可确定是否要导出压缩文件。
 
 ### 编码
 
