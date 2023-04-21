@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: (API)SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在SalesforceMarketing Cloud中激活它以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 017ccadc1689663059aa1214c5440549b509e81b
+source-git-commit: 877bf4886e563e8a571f067c06107776a0c81d5d
 workflow-type: tm+mt
-source-wordcount: '2619'
+source-wordcount: '2911'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,13 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/overview/) (以前称为 [!DNL ExactTarget])是一款数字营销套装，它允许您构建和自定义访客和客户的历程，以个性化其体验。
+[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/engagement/) (以前称为 [!DNL ExactTarget])是一款数字营销套装，它允许您构建和自定义访客和客户的历程，以个性化其体验。
 
 >[!IMPORTANT]
 >
 >请注意此连接与 [[!DNL Salesforce Marketing Cloud] 连接](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) 电子邮件营销目录部分中存在的问题。 其他SalesforceMarketing Cloud连接允许您将文件导出到指定的存储位置，而这是基于API的流连接。
+
+与 [!DNL Salesforce Marketing Cloud Account Engagement] 更注重 **B2B** 营销， [!DNL (API) Salesforce Marketing Cloud] 目标是理想的 **B2C** 事务性决策周期较短的用例。 您可以整合代表目标受众行为的较大数据集，通过对联系人进行优先级排序和细分来调整和改进营销活动，尤其是从外部数据集进行细分 [!DNL Salesforce]. *注意，Experience Platform还具有 [[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*
 
 此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，它允许您 **添加联系人和更新联系人数据** 在新的 [!DNL Salesforce Marketing Cloud] 区段。
 
@@ -44,9 +46,9 @@ ht-degree: 1%
 
 #### 你需要 [!DNL Salesforce Marketing Cloud] 帐户 {#prerequisites-account}
 
-A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户参与度](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) 产品必须继续。
+A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [[!DNL Marketing Cloud Engagement]](https://www.salesforce.com/products/marketing-cloud/engagement/) 产品必须继续。
 
-联系 [[!DNL Salesforce] 支持](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) 如果您没有 [!DNL Salesforce Marketing Cloud] 帐户或帐户缺失 [!DNL Marketing Cloud Account Engagement] 产品订阅。
+联系 [[!DNL Salesforce] 支持](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) 如果您没有 [!DNL Salesforce Marketing Cloud] 帐户或帐户缺失 [!DNL Marketing Cloud Engagement] 产品订阅。
 
 #### 在中创建属性 [!DNL Salesforce Marketing Cloud] {#prerequisites-attribute}
 
@@ -81,6 +83,21 @@ A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户
 >* 区分用于平台区段的属性和 [!DNL Salesforce Marketing Cloud]，则可以为用于Adobe区段的属性包含可识别的前缀或后缀。 例如， `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`.
 >* 如果您已在中创建其他属性 [!DNL Salesforce Marketing Cloud]，则可以使用与平台区段相同的名称，以便在 [!DNL Salesforce Marketing Cloud].
 
+
+#### 在 [!DNL Salesforce Marketing Cloud] {#prerequisites-roles-permissions}
+
+作为 [!DNL Salesforce Marketing Cloud] 支持自定义角色（具体取决于您的用例），您应该为用户分配相关角色，以更新您 [!DNL Salesforce Marketing Cloud] 属性集。 分配给用户的角色示例如下所示：
+![选定用户的SalesforceMarketing CloudUI，显示其分配的角色。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-edit-roles.png)
+
+根据您的 [!DNL Salesforce Marketing Cloud] 已分配用户，则还需要将权限分配给 [!DNL Salesforce Marketing Cloud] 属性集，其中包含要更新的字段。
+
+由于此目标需要访问 `[!DNL Email Demographics system attribute-set]`，您需要允许 `Email` 如下所示：
+![SalesforceMarketing CloudUI显示具有允许权限的电子邮件属性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-permisions-list.png)
+
+要限制访问级别，您还可以使用粒度权限覆盖单个访问。
+![SalesforceMarketing CloudUI显示具有粒度权限的电子邮件属性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/sales-email-attribute-set-permission.png)
+
+请参阅 [[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_marketing_cloud_roles.htm&amp;type=5) 和 [[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_roles.htm&amp;type=5) 页面以获取详细指南。
 
 #### 收集 [!DNL Salesforce Marketing Cloud] 凭据 {#gather-credentials}
 
@@ -269,7 +286,8 @@ A [!DNL Salesforce Marketing Cloud] 具有订阅的帐户 [Marketing Cloud帐户
 
 | 发布月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 2 月 | 文档更新 | 我们更新了 [(API)SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 包含引用链接的部分，该引用链接调用 [!DNL Salesforce Marketing Cloud Account Engagement] 是使用此目标的强制订阅。 |
+| 2023 年 4 月 | 文档更新 | <ul><li>我们更正了 [(API)SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 部分 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目标的强制订阅。 之前，部分错误地指出用户需要订阅Marketing Cloud **帐户** 订婚继续。</li> <li>我们在 [先决条件](#prerequisites) 表示 [角色和权限](#prerequisites-roles-permissions) 分配给 [!DNL Salesforce] 用户。 (PLATIR-26299)</li></ul> |
+| 2023 年 2 月 | 文档更新 | 我们更新了 [(API)SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 包含引用链接的部分，该引用链接调用 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目标的强制订阅。 |
 | 2023 年 2 月 | 功能更新 | 我们修复了目标中配置不正确导致将格式错误的JSON发送到Salesforce的问题。 这会导致某些用户在激活时看到大量身份失败。 (PLATIR-26299) |
 | 2023 年 1 月 | 文档更新 | <ul><li>我们更新了 [先决条件 [!DNL Salesforce]](#prerequisites-destination) 调用需要在 [!DNL Salesforce] 侧。 此部分现在包含有关如何执行此操作的详细说明以及有关在 [!DNL Salesforce]. (PLATIR-25602)</li><li>我们为 [区段计划](#schedule-segment-export-example) 中。 (PLATIR-25602)</li></ul> |
 | 2022 年 10 月 | 初始版本 | 初始目标版本和文档发布。 |
