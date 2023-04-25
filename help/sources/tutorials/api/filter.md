@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；流程服务；流程服务API；源；源
 title: 使用流服务API过滤源的行级数据
 description: 本教程涵盖有关如何使用流量服务API在源级别过滤数据的步骤
-source-git-commit: 122f6bda2fbcf72bf098b972ff7b081f4c5e3388
+exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
+source-git-commit: da6f5a79b1ee16fb0d44a5c2990ed1b8be1f99e2
 workflow-type: tm+mt
 source-wordcount: '785'
 ht-degree: 3%
@@ -13,7 +14,14 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->当前，仅支持过滤源的行级数据 [[!DNL Google BigQuery]](../../connectors/databases/bigquery.md) 和 [[!DNL Snowflake]](../../connectors/databases/snowflake.md) 来源。
+>当前，仅以下来源支持过滤行级数据：
+>
+>* [Google BigQuery](../../connectors/databases/bigquery.md)
+>* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
+>* [Salesforce](../../connectors/crm/salesforce.md)
+>* [SalesforceMarketing Cloud](../../connectors/marketing-automation/salesforce-marketing-cloud.md)
+>* [Snowflake](../../connectors/databases/snowflake.md)
+
 
 本教程提供了有关如何使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -103,11 +111,11 @@ curl -X GET \
 | `attributes.filterAtSource.columnNameEscapeChar` | 确定用于转义列的字符。 |
 | `attributes.filterAtSource.valueEscapeChar` | 确定在编写SQL查询时将如何包围值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### 比较运算符
 
-| 运算符 | 描述 |
+| 操作员 | 描述 |
 | --- | --- |
 | `==` | 按属性是否等于提供的值进行筛选。 |
 | `!=` | 按属性是否不等于提供的值进行筛选。 |
@@ -118,7 +126,7 @@ curl -X GET \
 | `like` | 在 `WHERE` 子句来搜索指定的模式。 |
 | `in` | 按属性是否在指定范围内进行筛选。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 指定摄取的筛选条件
 

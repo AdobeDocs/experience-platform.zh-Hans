@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle
 title: 在UI中创建Oracle服务云源连接
 description: 了解如何使用Adobe Experience Platform UI创建Oracle服务云源连接。
 exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '480'
 ht-degree: 1%
 
 ---
 
-# （测试版）在UI中创建Oracle服务云源连接
-
->[!NOTE]
->
->oracle服务云源处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+# 在UI中创建Oracle服务云源连接
 
 本教程提供了使用Adobe Experience Platform用户界面创建Oracle服务云源连接的步骤。
 

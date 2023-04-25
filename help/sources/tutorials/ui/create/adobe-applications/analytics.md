@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 3b86c071c4b5dc151bf83ad0042c10ac7a5648db
+source-git-commit: 1839e67d86a04762d93a5c35050e261fb1d1cf50
 workflow-type: tm+mt
-source-wordcount: '2352'
+source-wordcount: '2406'
 ht-degree: 5%
 
 ---
@@ -31,6 +31,14 @@ ht-degree: 5%
 * **友好名称**:友好名称是人为 [!DNL Analytics] 实施。 请参阅以下内容 [[!DNL Analytics] 转化变量文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 有关友好名称的详细信息。
 
 ## 创建与Adobe Analytics的源连接
+
+>[!NOTE]
+>
+>在生产沙盒中创建Analytics源数据流时，会创建两个数据流：
+>
+>* 一种数据流，可将13个月的历史报表包数据回填到数据湖中。 此数据流在回填完成时结束。
+>* 数据流，将实时数据发送到数据湖和 [!DNL Real-Time Customer Profile]. 此数据流持续运行。
+
 
 在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种来源。
 

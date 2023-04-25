@@ -1,10 +1,9 @@
 ---
 title: 在Ui中创建Shopify流连接和数据流
 description: 了解如何使用Platform用户界面创建Shopify流源连接和数据流
-badge: "Beta"
-hidefromtoc: y
-hide: y
-source-git-commit: 279d8e307c8ca5a799a47c6f903b9a082d9cf034
+badge: Beta
+exl-id: 3368ecf6-0c61-49ce-bc9c-29ee50b3f037
+source-git-commit: feb05d5bddc4135c5fe14d3ec5d8fad62c5e2236
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 1%
@@ -95,4 +94,3 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 ## 后续步骤
 
 通过阅读本教程，您已经为 [!DNL Shopify Streaming] 帐户。 有关如何连接 [!DNL Shopify Streaming] 帐户，请阅读 [创建源连接和数据流到流 [!DNL Shopify] 使用流量服务API的数据](../../../api/create/ecommerce/shopify-streaming.md).
-

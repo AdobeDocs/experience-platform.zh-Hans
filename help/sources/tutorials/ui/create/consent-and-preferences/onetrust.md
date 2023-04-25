@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；onetrust;OneTrust
 solution: Experience Platform
-title: （测试版）在UI中创建OneTrust源连接
+title: 在UI中创建OneTrust源连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建OneTrust源连接。
 exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 35095ec8c22106ba0a8f11e0a970ed7989a7f06c
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
 
-# （测试版）创建 [!DNL OneTrust Integration] UI中的源连接
+# 创建 [!DNL OneTrust Integration] UI中的源连接
 
 >[!NOTE]
 >
->的 [!DNL OneTrust Integration] 来源为测试版。 其功能和文档可能会发生更改。 有关使用测试版标记的源的信息，请参阅 [源概述](../../../../home.md#terms-and-conditions).
+>的 [!DNL OneTrust Integration] 源仅支持摄取同意和首选项数据，而不支持Cookie。
 
 本教程提供了创建 [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US) 源连接，以使用Platform用户界面将历史和计划同意数据摄取到Adobe Experience Platform。
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| 主机名 | 从中 [!DNL OneTrust Integration] 需要从中提取数据。 | `https://uat.onetrust.com/` |
+| 主机名 | 从中 [!DNL OneTrust Integration] 需要从中提取数据。 | `app.onetrust.com` |
 | 授权测试URL | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |  |
 | 访问令牌 | 与 [!DNL OneTrust Integration] 帐户。 | `ZGFkZDMyMjFhMmEyNDQ2ZGFhNTdkZjNkZjFmM2IyOWE6QjlUSERVUTNjOFVsRmpEZTJ6Vk9oRnF3Sk8xNlNtcm4=` |
 
@@ -48,13 +48,13 @@ ht-degree: 0%
 >
 >的 [!DNL OneTrust Integration] 正在与Adobe共享API规范以获取数据。
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区中可用的源目录Experience Platform。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+使用 *[!UICONTROL 类别]* 菜单来按类别筛选源。 或者，在搜索栏中输入源名称，以从目录中查找特定源。
 
-在 *[!UICONTROL 同意和首选项]* 类别，选择 [!DNL OneTrust Integration]，然后选择 **[!UICONTROL 添加数据]**.
+转到 [!UICONTROL 同意和首选项] 类别 [!DNL OneTrust Integration] 源卡。 要开始，请选择 **[!UICONTROL 添加数据]**.
 
-![目录](../../../../images/tutorials/create/onetrust/catalog.png)
+![Experience PlatformUI源目录。](../../../../images/tutorials/create/onetrust/catalog.png)
 
 的 **[!UICONTROL 连接OneTrust集成帐户]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
 
@@ -62,13 +62,13 @@ ht-degree: 0%
 
 要使用现有帐户，请选择 [!DNL OneTrust Integration] 创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![现有](../../../../images/tutorials/create/onetrust/existing.png)
+![源工作流中的现有帐户身份验证步骤。](../../../../images/tutorials/create/onetrust/existing.png)
 
 ### 新帐户
 
 如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
 
-![新建](../../../../images/tutorials/create/onetrust/new.png)
+![源工作流中的新帐户身份验证步骤。](../../../../images/tutorials/create/onetrust/new.png)
 
 ## 后续步骤
 

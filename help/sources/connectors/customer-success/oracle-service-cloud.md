@@ -2,18 +2,15 @@
 keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle服务云
 title: Oracle服务云源连接器概述
 description: 了解如何使用API或用户界面将Oracle服务云连接到Adobe Experience Platform。
-source-git-commit: 078a266967cd7b0818f958283a58a8af4c886a21
+exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
+source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
 
-# （测试版）Oracle服务云源
-
->[!NOTE]
->
->oracle服务云源处于测试阶段。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+# Oracle服务云源
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
