@@ -2,10 +2,10 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: a0be2f8625ca60f9c8f355c1230a889002436d6d
+source-git-commit: 8507ecceca47fac3d321b89e4fed018ee9784777
 workflow-type: tm+mt
-source-wordcount: '1307'
-ht-degree: 4%
+source-wordcount: '1608'
+ht-degree: 3%
 
 ---
 
@@ -112,6 +112,20 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ![用于从小组件中筛选值的筛选器对话框。](./images/user-defined-dashboards/filter-dialog.png)
 
+#### 过滤历史数据 {#filter-historical-data}
+
+要从小组件生成的分析中过滤掉历史数据，请添加 `date_key` 属性，然后选择 **[!UICONTROL 最近日期]** 后跟 **[!UICONTROL 应用]**. 此过滤器可确保用于获取分析的数据是从最新的系统快照中获取的。
+
+![的 [!UICONTROL 过滤器：date_key] 对话框 [!UICONTROL 最近日期] 和 [!UICONTROL 应用] 突出显示。](./images/user-defined-dashboards/recent-date.png)
+
+或者，您也可以创建一个自定义句点，以按过滤数据。 选择 **[!UICONTROL 选择日期]** 以使用可用日期列表扩展对话框。 使用 **[!UICONTROL 全选]** 复选框可启用或禁用所有可用选项，或单独选中每天的复选框。 最后，选择 **[!UICONTROL 应用]** 以确认您的选择。
+
+>[!NOTE]
+>
+>如果 `date_key` 属性已添加为过滤器，请选择省略号后跟 **[!UICONTROL 编辑]** 从下拉选项更改过滤器时段。
+
+![的 [!UICONTROL 过滤器：date_key] 复选框且选中或取消选中单日复选框。](./images/user-defined-dashboards/select-dates.png)
+
 ### 小组件属性
 
 选择属性图标(![属性图标。](./images/user-defined-dashboards/properties-icon.png))以打开“属性”面板。 在 [!UICONTROL 属性] 面板中，在 [!UICONTROL 小组件标题] 文本。
@@ -135,6 +149,22 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 ![带有自定义小组件的用户定义功能板和突出显示的保存按钮。](./images/user-defined-dashboards/user-defined-dashboard.png)
 
 为确保Adobe Real-time Customer Data Platform分析功能板的每个查询都拥有足够的资源来高效执行，API通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理四个并发查询，因此在任何给定时间都有四个并发查询槽。 查询将基于并发插槽放入队列中，然后在队列中等待足够的并发插槽可用。
+
+### 复制小组件
+
+创建小组件后，您可以复制整个小组件并自定义其属性，以创建独特的小组件，而无需从头开始。 要复制小组件，请首先导航到功能板库存。 然后，从库存列表中选择功能板名称。 此时会显示您的自定义功能板。
+
+![突出显示功能板和自定义功能板名称的平台UI。](./images/user-defined-dashboards/dashbaord-inventory.png)
+
+选择铅笔图标(![铅笔图标。](./images/user-defined-dashboards/edit-icon.png))以进入编辑模式。
+
+![突出显示了铅笔图标的自定义仪表板。](./images/user-defined-dashboards/edit-mode.png)
+
+接下来，选择要复制的小组件右上角的省略号，然后 **[!UICONTROL 复制]** 列表。
+
+![用户定义的功能板中的小组件，并突出显示省略号和复制小组件。](./images/user-defined-dashboards/duplicate.png)
+
+在用户定义的功能板中会显示一个重复的小组件。 选择新小组件的省略号，然后 **[!UICONTROL 编辑]**，以自定义新小组件。
 
 ## 后续步骤和其他资源
 
