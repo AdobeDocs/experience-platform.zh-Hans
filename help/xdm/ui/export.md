@@ -4,9 +4,9 @@ title: 在UI中导出XDM模式
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙箱或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -25,17 +25,17 @@ ht-degree: 0%
 
 虽然Platform UI允许导出XDM资源，但您必须使用架构注册表API将这些资源导入其他沙箱或组织，以完成工作流。 请参阅 [架构注册API快速入门](../api/getting-started.md) 有关在遵循本指南之前所需的身份验证标头的重要信息。
 
-## 生成导出有效负载
+## 生成导出有效负载 {#generate-export-payload}
 
-在平台UI中，选择 **[!UICONTROL 模式]** 中。 在 [!UICONTROL 模式] 工作区中，找到要导出的架构，然后在 [!DNL Schema Editor].
+在平台UI中，选择 **[!UICONTROL 模式]** 中。 在 [!UICONTROL 模式] 工作区中，选择要导出的架构的行，以在右侧侧栏中显示架构详细信息。
 
 >[!TIP]
 >
 >请参阅 [浏览XDM资源](./explore.md) 有关如何查找要查找的XDM资源的详细信息。
 
-打开架构后，选择 **[!UICONTROL 复制JSON]** 图标(![复制图标](../images/ui/export/icon.png))。
+接下来，选择 **[!UICONTROL 复制JSON]** 图标(![复制图标](../images/ui/export/icon.png))。
 
-![](../images/ui/export/copy-json.png)
+![具有模式行和 [!UICONTROL 复制到JSON] 突出显示。](../images/ui/export/copy-json.png)
 
 这会将JSON有效负载复制到剪贴板，这些负载是根据架构结构生成的。 对于“[!DNL Loyalty Members]“架构”中，将生成以下JSON:
 

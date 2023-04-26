@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1414'
 ht-degree: 4%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 4%
 
 要在UI中定义新的XDM字段，您必须先在 [!DNL Schema Editor]. 根据您当前在 [!DNL Schema Library]，您可以选择 [创建新模式](../resources/schemas.md#create) 或 [选择要编辑的现有架构](../resources/schemas.md#edit).
 
-在您 [!DNL Schema Editor] 打开后，用于添加或编辑字段的控件将显示在画布中。 这些控件显示在架构名称旁边，以及在选定类或字段组下定义的任何对象类型字段。
+在您 [!DNL Schema Editor] 打开后，画布中会显示用于添加字段的控件。 这些控件显示在架构名称旁边，以及在选定类或字段组下定义的任何对象类型字段。
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
@@ -53,10 +53,10 @@ ht-degree: 4%
 | 字段属性 | 描述 |
 | --- | --- |
 | [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码中的字段和其他下游应用程序中的字段<br><br>理想情况下，该名称应使用camelCase写入。 它可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开头。<ul><li>**正确**: `fieldName`</li><li>**可接受：** `field_name2`, `Field-Name`, `field-name_3`</li><li>**错误**: `_fieldName`</li></ul> |
-| [!UICONTROL 显示名称] | 字段的显示名称。 这是用于在架构编辑器画布中表示字段的名称。 |
+| [!UICONTROL 显示名称] | 字段的显示名称。 这是用于在架构编辑器画布中表示字段的名称。 字段名称可以使用 [显示名称切换](../resources/schemas.md#display-name-toggle). |
 | [!UICONTROL 类型] | 字段将包含的数据类型。 从此下拉菜单中，您可以选择 [标准标量类型](../../schema/field-constraints.md) 受XDM或多字段之一支持 [数据类型](../resources/data-types.md) 之前在 [!DNL Schema Registry].<br><br>您还可以选择 **[!UICONTROL 高级类型搜索]** 搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 您还可以提供可选的可供用户读取的 **[!UICONTROL 描述]** 到字段以提供更多有关字段预期用例的上下文。
 
@@ -96,7 +96,7 @@ ht-degree: 4%
 | [!UICONTROL 唯一最小值] | [!UICONTROL 双精度] | 在摄取期间接受的双精度类型的最大值。 如果摄取的值与此处输入的值完全匹配，则该值会被拒绝。 使用此约束时，[!UICONTROL 最小值]“（非独占）约束必须留空。 |
 | [!UICONTROL 唯一最大值] | [!UICONTROL 双精度] | 在摄取期间接受的双精度类型的最大值。 如果摄取的值与此处输入的值完全匹配，则该值会被拒绝。 使用此约束时，[!UICONTROL 最大值]“（非独占）约束必须留空。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 特殊字段类型 {#special}
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '3203'
+source-wordcount: '3340'
 ht-degree: 1%
 
 ---
@@ -57,6 +57,18 @@ ht-degree: 1%
 
 选择架构后， [!DNL Schema Editor] 显示，画布中显示了架构的结构。 您现在可以 [添加字段组](#add-field-groups) 到架构(或 [添加单个字段](#add-individual-fields) ), [编辑字段显示名称](#display-names)或 [编辑现有自定义字段组](./field-groups.md#edit) 如果架构使用任何。
 
+## 显示名称切换 {#display-name-toggle}
+
+为了方便起见，架构编辑器提供了一个切换开关，用于在原始字段名称和更易读的显示名称之间进行更改。 这种灵活性可改进字段发现和编辑架构。 切换位于架构编辑器视图的右上角。
+
+>[!NOTE]
+>
+>从字段名称更改为显示名称纯粹是修饰，不会更改任何下游资源。
+
+![架构编辑器 [!UICONTROL 显示字段的显示名称] 突出显示。](../../images/ui/resources/schemas/display-name-toggle.png)
+
+标准字段组的显示名称是系统生成的，但可以自定义，如 [显示名称](#display-names) 中。 显示名称会反映在多个UI视图中，包括映射和数据集预览。 默认设置为“off”，并按字段名称的原始值显示字段名称。
+
 ## 将字段组添加到架构 {#add-field-groups}
 
 >[!NOTE]
@@ -65,7 +77,7 @@ ht-degree: 1%
 
 在中打开架构后 [!DNL Schema Editor]，则可以通过使用字段组将字段添加到架构。 要开始，请选择 **[!UICONTROL 添加]** 下一页 **[!UICONTROL 字段组]** 中。
 
-![](../../images/ui/resources/schemas/add-field-group-button.png)
+![使用的架构编辑器 [!UICONTROL 添加] 从 [!UICONTROL 字段组] 部分。](../../images/ui/resources/schemas/add-field-group-button.png)
 
 此时会出现一个对话框，其中显示了可为架构选择的字段组列表。 由于字段组只与一个类兼容，因此将只列出与架构的选定类关联的那些字段组。 默认情况下，列出的字段组会根据其在您组织内的使用受欢迎程度进行排序。
 
