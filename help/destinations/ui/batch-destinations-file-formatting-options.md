@@ -5,7 +5,7 @@ exl-id: f59b1952-e317-40ba-81d1-35535e132a72
 source-git-commit: b1e9b781f3b78a22b8b977fe08712d2926254e8c
 workflow-type: tm+mt
 source-wordcount: '1214'
-ht-degree: 2%
+ht-degree: 19%
 
 ---
 
@@ -44,7 +44,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_delimiter"
 >title="分隔符"
->abstract="使用此控件为每个字段和值设置分隔符。 查看相关文档，了解每个选择的示例。"
+>abstract="使用此控件为每个字段和值设置分隔符。查看每个选择的示例文档。"
 
 使用此控件可为导出的CSV文件中的每个字段和值设置分隔符。 可用选项包括：
 
@@ -69,9 +69,9 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_quoteCharacter"
 >title="引号字符"
->abstract="如果要从导出的字符串中删除双引号，请使用此选项。 查看相关文档，了解每个选择的示例。"
+>abstract="如果要从导出的字符串中删除双引号，请使用此选项。查看每个选择的示例文档。"
 
-如果要从导出的字符串中删除双引号，请使用此选项。 可用选项包括：
+如果要从导出的字符串中删除双引号，请使用此选项。可用选项包括：
 
 * **[!UICONTROL 空字符(\0000)]**. 使用此选项可从导出的CSV文件中删除双引号。
 * **[!UICONTROL 双引号(&quot;)]**. 使用此选项可在导出的CSV文件中保留双引号。
@@ -88,7 +88,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_escapeCharacter"
 >title="转义字符"
->abstract="设置一个用于在已引号值内转义引号的字符。 查看相关文档，了解每个选择的示例。"
+>abstract="设置一个用于在已被引号引起的值中将引号转义的字符。查看每个选择的示例文档。"
 
 使用此选项可设置一个用于在已引号值内转义引号的字符。 例如，当字符串用双引号括起来，其中部分字符串已用双引号括起来时，此选项非常有用。 此选项确定要用哪个字符替换内部双引号。 可用选项包括：
 
@@ -107,7 +107,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_emptyValueOutput"
 >title="空值输出"
->abstract="使用此选项可设置空值在导出的CSV文件中的显示方式。 查看相关文档，了解每个选择的示例。"
+>abstract="使用此选项设置应如何在导出的 CSV 文件中表示空值。查看每个选择的示例文档。"
 
 使用此控件设置空值的字符串表示形式。 此选项可确定空值在导出的CSV文件中的显示方式。 可用选项包括：
 
@@ -127,14 +127,14 @@ ht-degree: 2%
 >
 >空值输出与下面部分中的空值输出之差是，空值具有实际值为空。 NULL值根本没有任何值。 将空值视为表格上的空玻璃，将空值视为表格上根本没有玻璃。
 
-### Null值输出 {#null-value-output}
+### null 值输出 {#null-value-output}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_nullValueOutput"
->title="Null值输出"
->abstract="使用此控件可在导出的文件中设置空值的字符串表示形式。 查看相关文档，了解每个选择的示例。"
+>title="null 值输出"
+>abstract="使用此选项设置应如何在导出的文件中表示 null 值。查看每个选择的示例文档。"
 
-使用此控件可在导出的文件中设置空值的字符串表示形式。 此选项可确定在导出的CSV文件中显示空值的方式。 可用选项包括：
+使用此选项设置应如何在导出的文件中表示 null 值。此选项可确定在导出的CSV文件中显示空值的方式。 可用选项包括：
 
 * **[!UICONTROL null]**
 * **&quot;&quot;**
@@ -153,9 +153,9 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_compressionFormat"
 >title="压缩格式"
->abstract="设置将数据保存到文件时要使用的压缩类型。 支持的选项包括GZIP和NONE。 查看相关文档，了解每个选择的示例。"
+>abstract="设置在将数据保存到文件时要使用何种压缩类型。支持的选项为 GZIP 和 NONE。查看每个选择的示例文档。"
 
-设置将数据保存到文件时要使用的压缩类型。 支持的选项包括GZIP和NONE。 此选项可确定是否要导出压缩文件。
+设置在将数据保存到文件时要使用何种压缩类型。支持的选项为 GZIP 和 NONE。此选项可确定是否要导出压缩文件。
 
 ### 编码
 
