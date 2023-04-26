@@ -2,9 +2,10 @@
 title: (API)OracleEloqua连接
 description: (API)OracleEloqua目标允许您导出帐户数据，并在OracleEloqua中激活它以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: e8aa09545c95595e98b4730188bd8a528ca299a9
+exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
+source-git-commit: 3d54b89ab5f956710ad595a0e8d3567e1e773d0a
 workflow-type: tm+mt
-source-wordcount: '1642'
+source-wordcount: '2125'
 ht-degree: 0%
 
 ---
@@ -34,14 +35,20 @@ ht-degree: 0%
 
 要将数据从Platform导出到 [!DNL Oracle Eloqua] 帐户 [!DNL Oracle Eloqua] 帐户。
 
+此外，您至少需要 *“高级用户 — 营销权限”* , [!DNL Oracle Eloqua] 实例。 请参阅 *&quot;安全组&quot;* 部分 [安全用户访问](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm) 页面以获取指南。 目标需要以编程方式访问 [确定基本URL](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html) 调用时 [!DNL Oracle Eloqua] API。
+
 #### 收集 [!DNL Oracle Eloqua] 凭据 {#gather-credentials}
 
 在验证到 [!DNL Oracle Eloqua] 目标：
 
 | 凭据 | 描述 |
 | --- | --- |
+| `Company Name` | 与 [!DNL Oracle Eloqua] 帐户。 <br>您稍后将使用 `Company Name` 和 [!DNL Oracle Eloqua] `Username` 作为要用作 **[!UICONTROL 用户名]** when [对目标进行身份验证](#authenticate). |
 | `Username` | 您的用户名 [!DNL Oracle Eloqua] 帐户。 |
 | `Password` | 您的密码 [!DNL Oracle Eloqua] 帐户。 |
+| `Pod` | [!DNL Oracle Eloqua] 支持多个数据中心，每个数据中心具有唯一的域名。 [!DNL Oracle Eloqua] 指“pod”，目前总共有7个 — p01、p02、p03、p04、p06、p07和p08。 要获取您所在的POD，请登录 [!DNL Oracle Eloqua] 并记下您成功登录后浏览器中的URL。 例如，如果您的浏览器URL为 `secure.p01.eloqua.com` 您的 `pod` is `p01`. 请参阅 [确定POD](https://community.oracle.com/topliners/discussion/4470225/determining-your-pod-number-for-oracle-eloqua) 页面以了解其他指南。 |
+
+请参阅 [登录到 [!DNL Oracle Eloqua]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/Administration/Tasks/SigningInToEloqua.htm#Signing) 以获取指导。
 
 ## 护栏 {#guardrails}
 
@@ -88,9 +95,14 @@ ht-degree: 0%
 
 ### 对目标进行身份验证 {#authenticate}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_apioracleeloqua_companyname_username"
+>title="公司名称\用户名"
+>abstract="在此字段中填写您公司的名称和用户名，并在表格中OracleEloqua `{COMPANY_NAME}\{USERNAME}`"
+
 填写以下必填字段。 请参阅 [收集 [!DNL Oracle Eloqua] 凭据](#gather-credentials) 部分。
 * **[!UICONTROL 密码]**:您的密码 [!DNL Oracle Eloqua] 帐户。
-* **[!UICONTROL 用户名]**:您的用户名 [!DNL Oracle Eloqua] 帐户。
+* **[!UICONTROL 用户名]**:由 [!DNL Oracle Eloqua] 公司名称和 [!DNL Oracle Eloqua] 用户名。<br>拼接值采用 `{COMPANY_NAME}\{USERNAME}`.<br> 请注意，请勿使用任何大括号或空格，并保留 `\`. <br>例如，如果 [!DNL Oracle Eloqua] 公司名称为 `MyCompany` 和 [!DNL Oracle Eloqua] 用户名为 `Username`，您将在 **[!UICONTROL 用户名]** 字段 `MyCompany\Username`.
 
 要对目标进行身份验证，请选择 **[!UICONTROL 连接到目标]**.
 ![Platform UI屏幕截图，其中显示了如何进行身份验证。](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
@@ -99,11 +111,18 @@ ht-degree: 0%
 
 ### 填写目标详细信息 {#destination-details}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_apioracleeloqua_pod"
+>title="面板"
+>abstract="要查找面板号，请登录OracleEloqua。 在您成功登录后，请注意浏览器中的URL。 "
+>additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle知识库 — 查找面板编号"
+
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 ![Platform UI屏幕截图，显示目标详细信息。](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
+* **[!UICONTROL 面板]**:要获取 `pod` 您登录，登录 [!DNL Oracle Eloqua] 并记下您成功登录后浏览器中的URL。 例如，如果您的浏览器URL为 `secure.p01.eloqua.com` the `pod` 您需要选择的值为 `p01`. 请参阅 [收集 [!DNL Oracle Eloqua] 凭据](#gather-credentials) 部分以获取其他指导。
 
 ### 启用警报 {#enable-alerts}
 
@@ -193,3 +212,18 @@ ht-degree: 0%
 
 * [OracleEloqua营销自动化](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [用于Oracle雄辩Marketing Cloud服务的REST API](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
+
+### Changelog
+
+本节将捕获对此目标连接器所做的功能和重要文档更新。
+
++++ 查看changelog
+
+| 发布月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2023 年 4 月 | 文档更新 | <ul><li>我们更新了 [用例](#use-cases) 部分，以更清晰的示例说明客户何时会从使用此目标中受益。</li> <li>我们更新了 [映射](#mapping-considerations-example) 部分，其中明确显示了必选和可选映射。</li> <li>我们更新了 [连接到目标](#connect) 部分，其中包含有关如何为 **[!UICONTROL 用户名]** 字段 [!DNL Oracle Eloqua] 公司名称和 [!DNL Oracle Eloqua] 用户名。 (PLATIR-28343)</li><li>我们更新了 [收集 [!DNL Oracle Eloqua] 凭据](#gather-credentials) 和 [填写目标详细信息](#destination-details) 带有指导的部分 [!DNL Oracle Eloqua] **[!UICONTROL 面板]** 选项。 的 *&quot;Pod&quot;* 值由目标用来构建API调用的基本URL。 的 [[!DNL Oracle Eloqua] 先决条件](#prerequisites-destination) 章节还更新了有关分配的指导 *“高级用户 — 营销权限”* 为必需 *&quot;安全组&quot;* , [!DNL Oracle Eloqua] 实例。</li></ul> |
+| 2023 年 3 月 | 初始版本 | 初始目标版本和文档发布。 |
+
+{style="table-layout:auto"}
+
++++
