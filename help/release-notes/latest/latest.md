@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e29bff2b8c576f92d239bb6c855710142df8db57
+source-git-commit: f8ef0c6fb949cb5c9071e84d88a9151a5558848f
 workflow-type: tm+mt
-source-wordcount: '779'
-ht-degree: 6%
+source-wordcount: '1274'
+ht-degree: 4%
 
 ---
 
@@ -17,6 +17,8 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [仪表板](#dashboards)
 - [数据准备](#data-prep)
+- [数据收集](#data-collection)
+- [目标](#destinations)
 - [Experience Data Model](#xdm)
 - [实时客户资料](#profile)
 - [源](#sources)
@@ -49,6 +51,60 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 {style="table-layout:auto"}
 
 有关数据准备的更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 数据流的IP地址模糊处理 | 现在，您可以在 [数据流配置UI](../../edge/datastreams/configure.md). <br><br>数据流级别的IP模糊设置优先于在Adobe Target和Audience Manager中配置的任何IP模糊处理。 <br><br>发送到Adobe Analytics的数据不受数据流级别的影响 [!UICONTROL IP模糊处理] 设置。 Adobe Analytics当前接收未模糊处理的IP地址。 要使Analytics接收模糊处理的IP地址，您必须在Adobe Analytics中单独配置IP模糊处理。 此行为将在未来版本中更新。<br><br> 有关IP模糊处理及其配置说明的更多详细信息，请参阅 [数据流配置文档](../../edge/datastreams/configure.md#advanced-options). |
+| 数据流配置覆盖 | 您现在可以为数据流定义其他配置选项，以用于覆盖特定设置，例如事件数据集、Target属性令牌、ID同步容器和Analytics报表包。 <br><br>覆盖数据流配置是两步流程。 首先，必须在数据流UI中定义数据流配置覆盖。 然后，必须通过Web SDK命令将覆盖发送到边缘网络。 |
+
+{style="table-layout:auto"}
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新目标** {#new-destinations}
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Salesforce Marketing Cloud Account Engagement] 连接](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) | 使用SalesforceMarketing Cloud客户参与（以前称为Pardot）目标捕获、跟踪、评分和评分潜在客户。 此目的地适用于涉及多个部门和决策者的B2B用例，这些部门和决策者需要较长的销售和决策周期。 |
+
+{style="table-layout:auto"}
+
+**新增功能或更新功能** {#destinations-new-updated-functionality}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 的数据流监控 [!DNL Custom Personalization] 和 [!DNL Adobe Commerce] 目标 | <p> 您现在可以在 [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 和 [具有属性的自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 连接。 </p> <p>![Adobe Commerce图像](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce量度"){width="100" zoomable="yes"}</p>  请参阅 [在目标工作区中监控数据流](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) 以了解更多详细信息。 |
+| 新建 **[!UICONTROL 将区段ID附加到区段名称]** 字段 [!DNL Google Ad Manager] 和 [!DNL Google Ad Manager 360] 目标 | 您现在可以在 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) 和 [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 从Experience Platform中包含区段ID，如下所示： `Segment Name (Segment ID)`. |
+
+{style="table-layout:auto"}
+
+<!--
+
+| New **[!UICONTROL Append segment ID to segment name]** field for the [!DNL Google Ad Manager] and [!DNL Google Ad Manager 360] destinations | You can now have the segment name in [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) and [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`. |
+| Scheduled audience backfills | <p>For the [!DNL Google Display & Video 360] destination, the activation of audience backfills to the destination is scheduled to occur 24-48 hours after a segment is first mapped to a destination connection. This update is in response to Google's policy to wait 24 hours until ingesting data and will improve match rates between Real-time CDP and [!DNL Google Display & Video 360].</p> <p>Note that this is a backend configuration applicable to this destination only and that is unrelated to any customer-configurable scheduling options in the UI.</p> |
+
+-->
+
+
+**修复和增强功能** {#destinations-fixes-and-enhancements}
+
+- 我们修复了 **排除的身份** 用于基于文件的目标导出的报告量度。 客户会按预期从激活的导出中接收所有导出的ID。 但是， **排除的身份** 由于错误地计数从未导出的身份，UI中的报表量度无法正确显示大量已排除的身份。 (PLAT-149774)
+- 我们修复了激活工作流的计划步骤中的问题。 对于需要映射ID的目标，客户无法为添加到现有目标连接的区段添加映射ID。 (PLAT-148808)
+
+<!--
+- We have fixed an issue with the beta SFTP destination where the port number was previously hardcoded to 22. The port is now configurable for this destination. 
+
+-->
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
