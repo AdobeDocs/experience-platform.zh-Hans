@@ -2,20 +2,15 @@
 keywords: 量度概述；rtcdp量度概述
 title: Real-time Customer Data Platform主页和功能板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
-badge: "Beta"
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: cc6d962e1c4a9afe1b608dfa06e9812b33dc7e6d
+source-git-commit: 8ea657e379248616d3140bc0a7b0c25a918bc857
 workflow-type: tm+mt
-source-wordcount: '817'
+source-wordcount: '802'
 ht-degree: 1%
 
 ---
 
 # [!DNL Real-Time Customer Data Platform] 主页
-
->[!NOTE]
->
->的 [!DNL Real-Time Customer Data Platform] 主页为测试版。 其功能和文档可能会发生更改。
 
 Adobe Real-time Customer Data Platform(Real-Time CDP)主页是登录到Real-Time CDP后显示的首页。
 
