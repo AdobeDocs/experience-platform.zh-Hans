@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 95a56982d38bd1e2c72dd84e2fa48b9de659741f
+source-git-commit: 9d9e02c2a4f628ebe04aaa63942e830f3354729f
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '983'
 ht-degree: 31%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 31%
          * [概述](./extensions/client/product-string/overview.md)
          * [发行说明](./extensions/client/product-string/release-notes.md)
       * [Adobe Analytics Product String Builder](https://exchange.adobe.com/apps/ec/101461)
+      * [Adobe Analytics通过Adobe Experience Platform Web SDK](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/client/audience-manager/overview.md)
       * Adobe 客户端数据层{#client-data-layer}
