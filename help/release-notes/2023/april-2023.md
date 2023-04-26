@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年4月
 description: 2023年4月的Adobe Experience Platform发行说明。
-source-git-commit: 9f50ca4b2a4c576af5ce8ee5c085a7603fed2560
+source-git-commit: 938b4ba7affadc7ad0eca086d7cc2c9ce1a54a83
 workflow-type: tm+mt
-source-wordcount: '407'
-ht-degree: 6%
+source-wordcount: '780'
+ht-degree: 5%
 
 ---
 
@@ -14,8 +14,25 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [仪表板](#dashboards)
 - [数据准备](#data-prep)
+- [Experience Data Model](#xdm)
+- [实时客户资料](#profile)
 - [源](#sources)
+
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
+
+**新增功能或更新功能** {#dashboards-new-updated-features}
+
+| 功能 | 描述 |
+| --- | --- |
+| 用户定义的功能板 | 您现在可以 **过滤历史数据** ，并使用近期数据或自定义分析时段。<br>您现在也可以 **复制现有小组件**. 通过自定义副本并编辑其属性，可避免在创建新的独特小组件时从头开始重新启动。 |
+
+{style="table-layout:auto"}
+
+有关功能板的更多信息（包括如何授予访问权限和创建自定义小组件），请首先阅读 [功能板概述](../../dashboards/home.md).
 
 ## 数据准备 {#data-prep}
 
@@ -31,6 +48,30 @@ Adobe Experience Platform 现有功能的更新包括：
 {style="table-layout:auto"}
 
 有关数据准备的更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 显示名称切换 | 模式编辑器现在提供了一个切换开关，用于在原始字段名称和更易读的显示名称之间进行更改。 这种灵活性可改进字段发现和编辑架构。 标准字段组的显示名称是系统生成的，但也可以根据需要通过UI进行自定义。 |
+
+{style="table-layout:auto"}
+
+有关Platform中XDM的更多信息，请阅读 [XDM系统概述](../../xdm/home.md).
+
+## 实时客户资料 {#profile}
+
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 利用用户档案，可将客户数据整合到统一视图中，为每次客户互动提供一个加盖时间戳的可操作帐户。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 匿名用户档案数据到期 | 现在，通常可以使用假名用户档案数据到期！ 此版本将在启用后，从您的Experience Platform实例中持续删除旧用户档案。 要了解有关此功能和假名用户档案的更多信息，请阅读 [匿名用户档案数据过期指南](../../profile/pseudonymous-profiles.md). |
 
 ## 源 {#sources}
 
