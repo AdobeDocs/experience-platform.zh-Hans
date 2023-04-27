@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: ccd02ea014d514b56a8e1bd540bb2c2c4bb2eb1b
+source-git-commit: 952ffa14537058ad03121747846a96c7c978b833
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 38%
@@ -18,7 +18,7 @@ ht-degree: 38%
 
 **新增功能**
 
-* 添加了对数据流配置覆盖的支持。
+* 添加了 [数据流配置覆盖](../datastreams/overrides.md).
 * 在 `datasetId` 选项 `sendEvent` 命令。
 
 **修复和改进功能**
