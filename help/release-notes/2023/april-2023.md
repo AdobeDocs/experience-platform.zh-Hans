@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2023年4月
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: 8b77b3a91d8724591ec389aa214c81c4bef6baf8
+source-git-commit: 7c4bdee9f8599e27ffab776c4df5083d2e29e26c
 workflow-type: tm+mt
-source-wordcount: '1373'
+source-wordcount: '1422'
 ht-degree: 4%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 | 功能 | 描述 |
 | --- | --- |
-| 用户定义的功能板 | 您现在可以 **过滤历史数据** ，并使用近期数据或自定义分析时段。<br>您现在也可以 **复制现有小组件**. 通过自定义副本并编辑其属性，可避免在创建新的独特小组件时从头开始重新启动。 |
+| 用户定义的功能板 | 您现在可以 **过滤历史数据** ，并使用近期数据或自定义分析时段。 请参阅 [用户定义的功能板指南](../../dashboards/user-defined-dashboards.md#filter-historical-data) 以了解更多信息。<br>您现在也可以 **复制现有小组件**. 通过自定义副本并编辑其属性，可避免在创建新的独特小组件时从头开始重新启动。 阅读 [小组件复制指南](../../dashboards/user-defined-dashboards.md#duplicate-a-widget) 以了解更多。 |
 
 {style="table-layout:auto"}
 
@@ -107,7 +107,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 功能 | 描述 |
 | --- | --- |
-| 显示名称切换 | 模式编辑器现在提供了一个切换开关，用于在原始字段名称和更易读的显示名称之间进行更改。 这种灵活性可改进字段发现和编辑架构。 标准字段组的显示名称是系统生成的，但也可以根据需要通过UI进行自定义。 |
+| 显示名称切换 | 模式编辑器现在提供了一个切换开关，用于在原始字段名称和更易读的显示名称之间进行更改。<br>![突出显示了显示名称的架构编辑器切换开关。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可改进字段发现和编辑架构。 标准字段组的显示名称是系统生成的，但也可以根据需要通过UI进行自定义。 请阅读 [显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) 以了解更多。 |
 
 {style="table-layout:auto"}
 
