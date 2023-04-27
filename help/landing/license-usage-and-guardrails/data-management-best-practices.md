@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据管理；许可证
 title: 数据管理许可证授权最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 5b5afceff59105eb6e0d17e22c2810a5c25ae760
+source-git-commit: fd594e19e13ca6e7f9f92674107d8ac6dabac9d6
 workflow-type: tm+mt
-source-wordcount: '2133'
+source-wordcount: '2169'
 ht-degree: 2%
 
 ---
@@ -122,8 +122,6 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 
 {style="table-layout:auto"}
 
-
-
 #### 配置文件存储组合报表
 
 有许多报表可帮助您了解用户档案存储的构成。 这些报表可帮助您针对如何以及在何处设置体验事件过期做出明智的决策，从而更好地优化许可证使用：
@@ -132,6 +130,10 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 * **身份重叠报表API**:显示对可寻址受众贡献最大的身份命名空间。 请参阅 [生成身份重叠报表](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) 以了解更多信息。
 <!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
+
+#### 假名用户档案数据过期 {#pseudonymous-profile-expirations}
+
+此功能允许您从配置文件存储区自动删除旧的假名配置文件。 有关此功能的更多信息，请阅读 [匿名用户档案数据过期概述](../../profile/pseudonymous-profiles.md).
 
 #### 体验事件过期 {#event-expirations}
 
@@ -144,7 +146,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 * 使用 [许可证使用仪表板](../../dashboards/guides/license-usage.md) 以跟踪和监控客户使用趋势。 这样，您就可以提前处理可能发生的任何潜在超量情况。
 * 配置 [摄取过滤器](#ingestion-filters) 通过确定分段和个性化用例所需的事件来实现。 这样，您就只能发送用例所需的重要事件。
 * 确保您仅 [为配置文件启用数据集](#ingestion-filters) 分段和个性化用例所需的区段。
-* 配置 [体验事件过期](#event-expirations) （例如Web数据）。
+* 配置 [体验事件过期](#event-expirations) 和 [假名用户档案数据过期](#pseudonymous-profile-expirations) （例如Web数据）。
 * 定期检查 [用户档案构成报表](#profile-store-composition-reports) 以了解用户档案存储的构成。 这样，您就可以了解对许可证使用情况贡献最大的数据源。
 
 ## 功能摘要和可用性 {#feature-summary}
