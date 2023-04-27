@@ -2,9 +2,9 @@
 title: 配置Adobe Experience Platform Web SDK扩展
 description: 如何在UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
+source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
 workflow-type: tm+mt
-source-wordcount: '1041'
+source-wordcount: '1184'
 ht-degree: 6%
 
 ---
@@ -75,7 +75,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ### [!UICONTROL 从VisitorAPI迁移ECID]
 
-默认启用此选项。启用此功能后，SDK可以读取AMCV和s_ecid Cookie，并设置Visitor.js使用的AMCV Cookie。 此功能在迁移到Adobe Experience Platform Web SDK时很重要，因为某些页面可能仍在使用Visitor.js。 它允许SDK继续使用相同的ECID，以便用户不会被标识为两个单独的用户。
+默认启用选项。启用此功能后，SDK可以读取AMCV和s_ecid Cookie，并设置Visitor.js使用的AMCV Cookie。 此功能在迁移到Adobe Experience Platform Web SDK时很重要，因为某些页面可能仍在使用Visitor.js。 它允许SDK继续使用相同的ECID，以便用户不会被标识为两个单独的用户。
 
 ### [!UICONTROL 使用第三方Cookie]
 
@@ -93,7 +93,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ### [!UICONTROL 回调函数]
 
-扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en) 中。 利用此函数，可在将事件发送到Adobe Edge网络之前全局修改事件。 有关如何使用此函数的更多详细信息，请参阅 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
+扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=zh-Hans) 中。 利用此函数，可在将事件发送到Adobe Edge网络之前全局修改事件。 有关如何使用此函数的更多详细信息，请参阅 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
 
 ### [!UICONTROL 单击数据收集]
 
@@ -102,6 +102,23 @@ SDK可以自动收集您的链接点击信息。 默认情况下，此功能处�
 ### [!UICONTROL 自动收集的上下文数据]
 
 默认情况下，SDK会收集与设备、Web、环境和放置上下文有关的特定上下文数据。 如果要查看Adobe收集的信息列表，可以找到 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). 如果您不希望收集此数据，或者您只想收集某些类别的数据，则可以更改这些选项。
+
+## [!UICONTROL 数据流配置覆盖]
+
+数据流覆盖允许您为数据流定义其他配置，这些配置通过Web SDK传递到边缘网络。
+
+这有助于您触发与默认数据流行为不同的数据流行为，而无需创建新数据流或修改现有设置。
+
+数据流配置覆盖是一个两步流程：
+
+1. 首先，您必须在 [“数据流配置”页](../datastreams/configure.md).
+2. 然后，您必须通过Web SDK命令或使用Web SDK标记扩展将覆盖发送到边缘网络。
+
+查看数据流 [配置覆盖文档](../datastreams/overrides.md) 有关如何覆盖数据流配置的详细说明。
+
+作为通过Web SDK命令传递覆盖的替代方法，您可以在下面显示的标记扩展屏幕中配置覆盖。
+
+![显示Web SDK标记扩展页面中数据流配置覆盖的图像。](../assets/extension/overview/datastream-overrides.png)
 
 ## [!UICONTROL 高级设置]
 

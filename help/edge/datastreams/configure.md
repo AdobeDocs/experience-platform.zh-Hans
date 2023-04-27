@@ -2,12 +2,13 @@
 title: 配置数据流
 description: 了解如何将您的客户端Web SDK集成与其他Adobe产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 611b80f2444ea86ef008f761c5d46976c55b864d
+source-git-commit: 3de929fb17f8b0b6ca4f6f2c7dd0c5a9a26001b2
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2116'
 ht-degree: 2%
 
 ---
+
 
 # 配置数据流
 
@@ -47,6 +48,8 @@ ht-degree: 2%
 | [!UICONTROL IP 模糊处理] | 指示要应用于数据流的IP模糊处理类型。 任何基于客户IP的处理都将受IP模糊设置的影响。 这包括从您的数据流接收数据的所有Experience Cloud服务。 <p>可用选项：</p> <ul><li>**[!UICONTROL 无]**:禁用IP模糊处理。 完整的用户IP地址将通过数据流发送。</li><li>**[!UICONTROL 部分]**:对于IPv4地址，模糊处理用户IP地址的最后八位字节。 对于IPv6地址，将地址的最后80位模糊处理。 <p>示例：</p> <ul><li>IPv4: `1.2.3.4` -> `1.2.3.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL 完整]**:模糊处理整个IP地址。 <p>示例：</p> <ul><li>IPv4: `1.2.3.4` -> `0.0.0.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `::/128`</li></ul></li></ul> IP模糊处理对其他Adobe产品的影响： <ul><li>**Adobe Target**:数据流级别 [!UICONTROL IP模糊处理] 设置优先于在Adobe Target中设置的任何IP模糊处理选项。 例如，如果数据流级别 [!UICONTROL IP模糊处理] 选项设置为 **[!UICONTROL 完整]** 和Adobe Target IP模糊处理选项设置为 **[!UICONTROL 最后八位字节模糊处理]**,Adobe Target将收到完全模糊处理的IP。 请参阅Adobe Target文档(位于 [IP模糊处理](https://developer.adobe.com/target/before-implement/privacy/privacy/) 和 [地理位置](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=en) 以了解更多详细信息。</li><li>**Audience Manager**:数据流级别的IP模糊设置优先于Audience Manager中设置的任何IP模糊处理选项，并且会应用于所有IP地址。 由Audience Manager完成的任何地理位置查找都受数据流级别的影响 [!UICONTROL IP模糊处理] 选项。 Audience Manager中基于完全模糊处理的IP的地理位置查找将导致未知区域，并且任何基于结果地理位置数据的区段都将无法实现。 请参阅Audience Manager文档，内容位于 [IP模糊处理](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=en) 以了解更多详细信息。</li><li>**Adobe Analytics**:发送到Adobe Analytics的数据不受数据流级别的影响 [!UICONTROL IP模糊处理] 设置。 Adobe Analytics当前接收未模糊处理的IP地址。 要使Analytics接收模糊处理的IP地址，您必须在Adobe Analytics中单独配置IP模糊处理。 此行为将在未来版本中更新。 请参阅Adobe Analytics [文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html) 有关如何在Analytics中启用IP模糊处理的详细信息。</li></ul> |
 | [!UICONTROL 第一方ID Cookie] | 启用后，此设置会告知边缘网络在查找 [第一方设备ID](../identity/first-party-device-ids.md)，而不是在身份映射中查找此值。<br><br>启用此设置时，您必须提供应存储ID的Cookie的名称。 |
 | [!UICONTROL 第三方ID同步] | ID同步可以分组到容器中，以允许在不同时间运行不同的ID同步。 启用此设置后，您可以指定为此数据流运行哪个ID同步容器。 |
+| [!UICONTROL 第三方ID同步容器ID] | 要用于第三方ID同步的容器的数字ID。 |
+| [!UICONTROL 容器ID覆盖] | 在此部分中，您可以定义其他第三方ID同步容器ID，以用于覆盖默认容器ID。 |
 | [!UICONTROL 访问类型] | 定义边缘网络接受的数据流的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**:如果选择此选项，边缘网络将接受经过身份验证的请求和未经身份验证的请求。 当您计划使用Web SDK时，请选择此选项；或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/)，以及 [服务器API](../../server-api/overview.md). </li><li>**[!UICONTROL 仅验证]**:如果选择此选项，边缘网络将仅接受经过验证的请求。 如果您计划仅使用服务器API，并且希望阻止边缘网络处理任何未经身份验证的请求，请选择此选项。</li></ul> |
 
 从此处，如果您要配置Experience Platform数据流，请按照 [为数据收集准备数据](./data-prep.md) ，以在返回到本指南之前将数据映射到Platform事件架构。 否则，请选择 **[!UICONTROL 保存]** 并继续下一节。
@@ -88,6 +91,7 @@ ht-degree: 2%
 | 设置 | 描述 |
 | --- | --- |
 | [!UICONTROL 报表包 ID] | **（必需）** 要将数据发送到的Analytics报表包的ID。 此ID可在Adobe Analytics UI中的 [!UICONTROL 管理员] > [!UICONTROL 报表包]. 如果指定了多个报表包，则数据会复制到每个报表包。 |
+| [!UICONTROL 报表包覆盖] | 在此部分中，您可以添加可用于覆盖默认报表包ID的其他报表包ID。 |
 
 ### Adobe Audience Manager设置 {#audience-manager}
 
@@ -116,7 +120,7 @@ ht-degree: 2%
 
 | 设置 | 描述 |
 |---| --- |
-| [!UICONTROL 事件数据集] | **（必需）** 选择将客户事件数据流式传输到的Platform数据集。 此架构必须使用 [XDM ExperienceEvent类](../../xdm/classes/experienceevent.md). |
+| [!UICONTROL 事件数据集] | **（必需）** 选择将客户事件数据流式传输到的Platform数据集。 此架构必须使用 [XDM ExperienceEvent类](../../xdm/classes/experienceevent.md). 要添加其他数据集，请选择 **[!UICONTROL 添加事件数据集]**. |
 | [!UICONTROL 配置文件数据集] | 选择要将客户属性数据发送到的Platform数据集。 此架构必须使用 [XDM个人配置文件类](../../xdm/classes/individual-profile.md). |
 | [!UICONTROL 优惠决策] | 选中此复选框可启用Platform Web SDK实施的Offer decisioning。 请参阅 [将Offer decisioning与Platform Web SDK结合使用](../personalization/offer-decisioning/offer-decisioning-overview.md) 以了解更多实施详细信息。<br><br>有关Offer decisioning功能的更多信息，请参阅 [Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html?lang=zh-Hans). |
 | [!UICONTROL 边缘分割] | 选中此复选框可启用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 数据流。 当SDK通过启用边缘分段的数据流发送数据时，相关用户档案的任何更新区段成员关系将在响应中发送回。<br><br>此选项可与 [!UICONTROL 个性化目标] 表示 [下一页个性化用例](../../destinations/ui/configure-personalization-destinations.md). |
@@ -134,6 +138,7 @@ ht-degree: 2%
 | [!UICONTROL 资产令牌] | [!DNL Target] 允许客户通过使用资产来控制权限。 有关属性的更多信息，请参阅 [配置企业权限](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html) 在 [!DNL Target] 文档。<br><br>资产令牌可在Adobe Target UI中的 [!UICONTROL 设置] > [!UICONTROL 属性]. |
 | [!UICONTROL Target环境ID] | [Adobe Target中的环境](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) 帮助您在所有开发阶段管理实施。 此设置指定要与此数据流一起使用的环境。<br><br>最佳做法是对您的 `dev`, `stage`和 `prod` 数据流环境，使事情保持简单。 但是，如果您已经定义了Adobe Target环境，则可以使用这些环境。 |
 | [!UICONTROL Target第三方ID命名空间] | 的标识命名空间 `mbox3rdPartyId` 要用于此数据流。 请参阅 [实施 `mbox3rdPartyId` 和Web SDK](../personalization/adobe-target/using-mbox-3rdpartyid.md) 以了解更多信息。 |
+| [!UICONTROL 资产令牌覆盖] | 在此部分中，您可以定义可用于覆盖默认属性令牌的其他属性令牌。 |
 
 ### [!UICONTROL 事件转发] 设置
 

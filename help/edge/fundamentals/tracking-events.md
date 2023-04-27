@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 9b108d0e1722ea1b895c08fd7f42104a0d0da5df
+source-git-commit: a6948e3744aa754eda22831a7e68b847eb904e76
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1194'
 ht-degree: 1%
 
 ---
@@ -138,7 +138,12 @@ alloy("sendEvent", {
 
 ### 覆盖数据集ID
 
+>[!IMPORTANT]
+>
+>的 `datasetId` 选项受支持 `sendEvent` 命令已弃用。 要覆盖数据集ID，请使用 [配置覆盖](../datastreams/overrides.md) 中。
+
 在某些用例中，您可能希望将事件发送到配置UI中配置的数据集以外的数据集。 为此，您需要将 `datasetId` 选项 `sendEvent` 命令：
+
 
 
 ```javascript
