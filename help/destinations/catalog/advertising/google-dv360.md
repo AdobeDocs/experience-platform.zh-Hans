@@ -3,9 +3,9 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
+source-git-commit: 326127996a27df41383ef67da765f7b0818f17f2
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '987'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 请注意以下特定于 [!DNL Google Display & Video 360] 目标：
 
 * 激活的受众在Google平台中以编程方式创建。
-* [!DNL Platform] 当前不包括用于验证激活是否成功的测量量度。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
+* 激活对 [!DNL Google Display & Video 360] 目标计划在区段首次映射到目标连接后24-48小时内发生。 此更新是为了响应Google的策略，将等待24小时，直到摄取数据，旨在提高Real-time CDP和 [!DNL Google Display & Video 360]. 请注意，这是仅适用于此目标的后端配置，与UI中任何可由客户配置的计划选项无关。
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ ht-degree: 2%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] | 如果源标识是GAID命名空间，请选择此目标标识。 |
 | IDFA | [!DNL Apple ID for Advertisers] | 如果源标识是IDFA命名空间，请选择此目标标识。 |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 一个38位数的数字设备ID，Audience Manager会将其与之交互的每个设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en) 来定位加利福尼亚州的用户，以及所有其他用户的Google Cookie ID。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 一个38位数的数字设备ID，Audience Manager会将其与之交互的每个设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 来定位加利福尼亚州的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 会使用此ID来定位加州以外的用户。 |
 | RIDA | 用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
