@@ -6,10 +6,10 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1c092cd66a8a96623359a0e56de76e2a3d077c8d
+source-git-commit: 8ee68e5416c28a08dffc358dad70055e9b4cdd28
 workflow-type: tm+mt
-source-wordcount: '1982'
-ht-degree: 5%
+source-wordcount: '1980'
+ht-degree: 4%
 
 ---
 
@@ -48,6 +48,8 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 以下护栏在建模实时客户资料数据时提供了建议的限制。 要了解有关主要实体和维度实体的更多信息，请参阅 [实体类型](#entity-types) 中。
 
+![显示Adobe Experience Platform中用户档案数据不同防护的图表。](./images/guardrails/profile-guardrails.png)
+
 ### 主实体护栏
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
@@ -61,7 +63,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | ExperienceEvent中的数组基数 | &lt;=10 | 柔和 | ExperienceEvent（时间系列数据）中的最佳数组基数为&lt;=10。 |
 | 单个配置文件身份图的身份计数 | 50 | 硬 | **单个配置文件的身份图表中的最大身份数为50。** 任何身份超过50个的配置文件都将从分段、导出和查找中排除。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Dimension实体护栏
 
@@ -71,7 +73,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | 无嵌套关系 | 0 | 柔和 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 对于不属于 [!DNL Profile] 并集模式。 |
 | 主ID字段的JSON深度 | 4 | 柔和 | 主ID字段的建议最大JSON深度为4。 这意味着在高度嵌套的架构中，如果某个字段的深度超过4个级别，则不应选择该字段作为主ID。 位于第4个嵌套级别的字段可用作主ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 数据大小限制
 
@@ -92,7 +94,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | 每天摄取的配置文件或ExperienceEvent批次数 | 90 | 柔和 | **每天摄取的配置文件或ExperienceEvent批次数上限为90个。** 这意味着每天摄取的配置文件和ExperienceEvent批次的合计总数不能超过90个。 摄取其他批次将影响系统性能。 |
 | 每个用户档案记录的ExperienceEvents数量 | 5000 | 柔和 | **每个用户档案记录的ExperienceEvents最大数量为5000。** 超过5000个ExperienceEvents的用户档案将 **not** 考虑进行分段。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Dimension实体护栏
 
@@ -102,7 +104,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | 每维实体架构的数据集 | 5 | 柔和 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果为“产品”创建架构并添加五个贡献数据集，则不应创建与产品架构绑定的第六个数据集。 |
 | Dimension实体每天摄取的批次 | 每个实体4个 | 柔和 | 建议每天摄取的维度实体批次数上限为每个实体4个。 例如，您每天最多可以摄取4次产品目录更新。 为同一实体摄取其他维度实体批可能会影响系统性能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 分段护栏
 
@@ -115,7 +117,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 | 每个沙盒的流区段 | 500 | 柔和 | 一个组织总共可以有500个以上的流区段，但前提是每个沙箱中的流区段少于500个。 尝试创建其他流区段可能会影响系统性能。 |
 | 每个沙盒的批量区段 | 4000 | 柔和 | 一个组织总共可以有4000个以上的批处理区段，但前提是每个沙箱中的批处理区段少于4000个。 尝试创建其他批处理区段可能会影响系统性能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 附录
 
