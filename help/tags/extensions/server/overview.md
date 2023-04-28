@@ -2,7 +2,7 @@
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: e0c1b4e2cc7444ab97d0eae6ff4f3455b0017d4a
+source-git-commit: 24220c24af89e3eabc3d21854c1f70a418b2da59
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 17%
@@ -39,6 +39,7 @@ ht-degree: 17%
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
 * [[!DNL Mixpanel]](./mixpanel/overview.md)
 * [Pega客户决策中心](https://exchange.adobe.com/apps/ec/107597)*
+* [[!DNL Pinterest]](./pinterest/overview.md)
 * [快照转化API](https://exchange.adobe.com/apps/ec/108550)*
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Zendesk] 事件API](./zendesk/overview.md)
