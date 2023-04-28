@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2023年4月
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: 7c4bdee9f8599e27ffab776c4df5083d2e29e26c
+source-git-commit: a8e59d6386a51c4d5d3173be16ee45311f8d2929
 workflow-type: tm+mt
 source-wordcount: '1422'
 ht-degree: 4%
@@ -122,6 +122,8 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 匿名用户档案数据到期 | 现在，通常可以使用假名用户档案数据到期！ 此版本将在启用后，从您的Experience Platform实例中持续删除旧用户档案。 要了解有关此功能和假名用户档案的更多信息，请阅读 [匿名用户档案数据过期指南](../../profile/pseudonymous-profiles.md). |
+
+{style="table-layout:auto"}
 
 ## 源 {#sources}
 
