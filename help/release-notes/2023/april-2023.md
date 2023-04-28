@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2023年4月
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: a8e59d6386a51c4d5d3173be16ee45311f8d2929
+source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
 workflow-type: tm+mt
-source-wordcount: '1422'
-ht-degree: 4%
+source-wordcount: '1492'
+ht-degree: 3%
 
 ---
 
@@ -62,6 +62,8 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | --- | --- |
 | 数据流的IP地址模糊处理 | 现在，您可以在 [数据流配置UI](../../edge/datastreams/configure.md). <br><br>数据流级别的IP模糊设置优先于在Adobe Target和Audience Manager中配置的任何IP模糊处理。 <br><br>发送到Adobe Analytics的数据不受数据流级别的影响 [!UICONTROL IP模糊处理] 设置。 Adobe Analytics当前接收未模糊处理的IP地址。 要使Analytics接收模糊处理的IP地址，您必须在Adobe Analytics中单独配置IP模糊处理。 此行为将在未来版本中更新。<br><br> 有关IP模糊处理及其配置说明的更多详细信息，请参阅 [数据流配置文档](../../edge/datastreams/configure.md#advanced-options). |
 | [数据流配置覆盖](../../edge/datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，以用于覆盖特定设置，例如事件数据集、Target属性令牌、ID同步容器和Analytics报表包。 <br><br>覆盖数据流配置是两步流程： <ol><li>首先，您必须在 [“数据流配置”页](../../edge/datastreams/configure.md).</li><li>然后，您必须通过Web SDK命令或使用Web SDK将覆盖发送到边缘网络 [标记扩展](../../edge/extension/web-sdk-extension-configuration.md).</li></ol> |
+| OAuth JWT密钥 | 的 [OAuth JWT密钥](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌，以支持事件转发中的服务器到服务器交互。 |
+| [!DNL Pinterest Conversions API] 扩展 | 的 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Pinterest] 以服务器端事件的形式使用 [!DNL Pinterest Conversions API]. |
 
 {style="table-layout:auto"}
 

@@ -2,14 +2,22 @@
 title: 标记和事件转发发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 3ebf8df16f88660eab481bd0a0ba88816b470255
+source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '798'
 ht-degree: 4%
 
 ---
 
 # 标记和事件转发的发行说明
+
+## 2023 年 4 月 26 日
+
+* **OAuth JWT密钥**:的 [OAuth JWT密钥](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌，以支持事件转发中的服务器到服务器交互。
+
+以下新扩展已发布：
+
+* **[!DNL Pinterest Conversions API]扩展**:的 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Pinterest] 以服务器端事件的形式使用 [!DNL Pinterest Conversions API].
 
 ## 2023 年 3 月 29 日
 
