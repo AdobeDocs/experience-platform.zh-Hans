@@ -3,7 +3,7 @@ title: 比较at.js与Experience PlatformWeb SDK
 description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 519d77ca7bfb910b03fea3567e08824e6f852eb4
+source-git-commit: 5065d76ad8008988c843c88e33a25731fb5284d0
 workflow-type: tm+mt
 source-wordcount: '2286'
 ht-degree: 6%
@@ -33,7 +33,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 * 缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
 * 未缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
 
-[了解更多](../../fundamentals/installing-the-sdk.md)
+[了解详情](../../fundamentals/installing-the-sdk.md)
 
 ## 配置库
 
@@ -97,7 +97,7 @@ alloy("configure", {
 
 在配置过程中可以设置许多选项。 所有选项都可在下面找到，并按类别分组。
 
-[了解更多](../../fundamentals/configuring-the-sdk.md)
+[了解详情](../../fundamentals/configuring-the-sdk.md)
 
 
 ## 如何请求和自动渲染页面加载Target选件
@@ -208,7 +208,7 @@ Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知�
 }
 ```
 
-[了解更多](../rendering-personalization-content.md)
+[了解详情](../rendering-personalization-content.md)
 
 ## 如何请求和不自动渲染页面加载Target选件
 
@@ -287,7 +287,7 @@ alloy("sendEvent", {
   });
 ```
 
-[了解更多](../rendering-personalization-content.md#manually-rendering-content)
+[了解详情](../rendering-personalization-content.md#manually-rendering-content)
 
 
 ## 如何请求特定的基于表单的Target mbox
@@ -445,7 +445,7 @@ alloy("sendEvent", {
 });
 ```
 
-[了解更多](../rendering-personalization-content.md#manually-rendering-content)
+[了解详情](../rendering-personalization-content.md#manually-rendering-content)
 
 ## 如何应用Target活动
 
@@ -597,7 +597,7 @@ alloy("sendEvent", {
     // Find the discount proposition, if it exists.
     for (var i = 0; i < propositions.length; i++) {
       var proposition = propositions[i];
-      for (var j = 0; j < proposition.items; j++) {
+      for (var j = 0; j < proposition.items.length; j++) {
         var item = proposition.items[j];
 
         if (item.schema === "https://ns.adobe.com/personalization/measurement") {
@@ -631,7 +631,7 @@ alloy("sendEvent", {
 });
 ```
 
-[了解更多](../rendering-personalization-content.md#manually-rendering-content)
+[了解详情](../rendering-personalization-content.md#manually-rendering-content)
 
 ## 如何在单页应用程序中触发视图更改
 
@@ -667,7 +667,7 @@ alloy("sendEvent", {
 });
 ```
 
-[了解更多](./spa-implementation.md#implementing-xdm-views)
+[了解详情](./spa-implementation.md#implementing-xdm-views)
 
 ## 如何利用响应令牌
 
@@ -731,7 +731,7 @@ alloy("sendEvent", {
   });
 ```
 
-[了解更多](./accessing-response-tokens.md)
+[了解详情](./accessing-response-tokens.md)
 
 ## 如何管理闪烁
 
