@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
+source-git-commit: 3594b20ee495dadf91d745958eac1a06647cae24
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1661'
 ht-degree: 4%
 
 ---
@@ -110,6 +110,26 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 功能 | 描述 |
 | --- | --- |
 | 显示名称切换 | 模式编辑器现在提供了一个切换开关，用于在原始字段名称和更易读的显示名称之间进行更改。<br>![突出显示了显示名称的架构编辑器切换开关。](../../xdm/images/ui/resources/schemas/display-name-toggle.png "架构编辑器显示名称切换"){width="100" zoomable="yes"}<br>这种灵活性可改进字段发现和编辑架构。 标准字段组的显示名称是系统生成的，但也可以根据需要通过UI进行自定义。 请阅读 [显示名称切换文档](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) 以了解更多。 |
+
+{style="table-layout:auto"}
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 架构 | [[!UICONTROL Adobe Target分类字段]](https://github.com/adobe/xdm/pull/1719/files) | Target分类数据集的新XDM架构，其中包含一组用于对Target活动和体验进行分类的元数据字段。 |
+
+{style="table-layout:auto"}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | [[!UICONTROL Adobe统一配置文件服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1696/files) | 为实时客户用户档案添加了帐户扩展字段组，使用户能够在帐户合并中添加区段成员资格。 |
+| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1696/files) | 实时客户资料使用的计算属性字段组已更新为系统只读全局架构。 |
+| 字段组 | 多个 | 添加了多个事件作为的字段 [[!UICONTROL 时间系列架构]](https://github.com/adobe/xdm/pull/1718/files). |
+| 字段组 | 用户档案忠诚度详细信息 | [修复了标题](https://github.com/adobe/xdm/pull/1717/files) 表示 `xdm:upgradeDate` 从“项目名称”到“升级日期”。 |
+| 字段组 | 多个 | 几个字段来自 [[!UICONTROL 决策项]](https://github.com/adobe/xdm/pull/1714/files) 已更新，以删除双层嵌套层次结构。 |
 
 {style="table-layout:auto"}
 
