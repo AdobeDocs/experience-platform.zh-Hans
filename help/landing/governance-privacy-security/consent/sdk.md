@@ -2,10 +2,10 @@
 title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 description: 了解如何集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: dc269f952d0970cb5be1b28ab91c6006de975df3
 workflow-type: tm+mt
-source-wordcount: '1375'
-ht-degree: 0%
+source-wordcount: '1349'
+ht-degree: 1%
 
 ---
 
@@ -45,7 +45,6 @@ ht-degree: 0%
 | 数据流字段 | 值 |
 | --- | --- |
 | [!UICONTROL 沙盒] | 平台的名称 [沙盒](../../../sandboxes/home.md) 包含设置数据流所需的流连接和数据集。 |
-| [!UICONTROL 流入口] | 有效的流连接，用于Experience Platform。 请参阅 [创建流连接](../../../ingestion/tutorials/create-streaming-connection-ui.md) 如果您没有现有的流入口。 |
 | [!UICONTROL 事件数据集] | 安 [!DNL XDM ExperienceEvent] 您计划使用SDK将事件数据发送到的数据集。 虽然您需要提供事件数据集才能创建Platform数据流，但请注意，下游实施工作流中不接受通过事件发送的同意数据。 |
 | [!UICONTROL 配置文件数据集] | 的 [!DNL Profile] — 启用了数据集且已创建客户同意字段 [更早](#prerequisites). |
 
