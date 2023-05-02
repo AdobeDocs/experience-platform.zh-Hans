@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 使用流量服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流量服务API编辑目标连接的各个组件。
-source-git-commit: 52fe0ef2ab195756c381b3ef0a5792dffe459b8d
+source-git-commit: 956ac5d210d54526e886e57b8ea37ab4b3fbab8a
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1565'
 ht-degree: 2%
 
 ---
@@ -196,9 +196,6 @@ curl -X GET \
 PATCH /targetConnections/{TARGET_CONNECTION_ID}
 ```
 
->[!ENDSHADEBOX]
-
-
 >[!BEGINTABS]
 
 >[!TAB Amazon S3]
@@ -244,11 +241,11 @@ curl -X PATCH \
 }
 ```
 
->[!TAB Google Ad Manager 360]
+>[!TAB Google Ad Manager和Google Ad Manager 360]
 
 **请求**
 
-以下请求更新了 [[!DNL Google Ad Manager 360] 目标](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 连接，以向区段名称字段添加新的附加区段ID。
+以下请求更新了 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) 或 [[!DNL Google Ad Manager 360] 目标](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 连接以添加新 [**[!UICONTROL 将区段ID附加到区段名称]**](/help/release-notes/2023/april-2023.md#destinations) 字段。
 
 ```shell
 curl -X PATCH \
@@ -328,6 +325,8 @@ curl -X PATCH \
 
 >[!ENDTABS]
 
+>[!ENDSHADEBOX]
+
 ## 编辑基本连接组件（身份验证参数和其他组件） {#patch-base-connection}
 
 基本连接的组件因目标而异。 例如， [!DNL Amazon S3] 目标中，您可以将访问密钥和密钥更新为 [!DNL Amazon S3] 位置。
@@ -340,11 +339,13 @@ curl -X PATCH \
 >
 >的 `If-Match` 发出PATCH请求时需要标头。 此标头的值是要更新的基本连接的唯一版本。 每次成功更新流量实体（如数据流、基本连接等）时，etag值都会随之更新。
 >
-> 要获取etag值的最新版本，请向 `/connections/{BASE_CONNECTION_ID}` 端点，其中 `{BASE_CONNECTION_ID}` 是要更新的基本连接ID。
+> 要获取Etag值的最新版本，请向 `/connections/{BASE_CONNECTION_ID}` 端点，其中 `{BASE_CONNECTION_ID}` 是要更新的基本连接ID。
 
 以下是更新基本连接规范中不同类型目标参数的一些示例。 但是，用于更新任何目标参数的一般规则如下：
 
 获取连接的数据流ID >获取基本连接ID >将基本连接PATCH为所需参数的更新值。
+
+>[!BEGINSHADEBOX]
 
 **API格式**
 
@@ -440,6 +441,8 @@ curl -X PATCH \
 ```
 
 >[!ENDTABS]
+
+>[!ENDSHADEBOX]
 
 ## API错误处理 {#api-error-handling}
 
