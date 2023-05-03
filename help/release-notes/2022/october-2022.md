@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: cd99ccb7b026565814dd6f268b2a92dda34bc7f0
+source-git-commit: 8bbac729324ad5bd701f8609c443092ddb045b96
 workflow-type: tm+mt
-source-wordcount: '1343'
-ht-degree: 3%
+source-wordcount: '1328'
+ht-degree: 2%
 
 ---
 
@@ -14,16 +14,11 @@ ht-degree: 3%
 **发行日期：2022 年 10 月 26 日**
 
 - [客户管理的密钥](#cmk)
-
-Adobe Experience Platform 现有功能的更新包括：
-
-- [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
-   - [客户管理的密钥 {#cmk}](#customer-managed-keys-cmk)
-   - [数据收集 {#data-collection}](#data-collection-data-collection)
-   - [\[!DNL Destinations\] {#destinations}](#dnl-destinations-destinations)
-   - [体验数据模型(XDM) {#xdm}](#experience-data-model-xdm-xdm)
-   - [查询服务 {#query-service}](#query-service-query-service)
-   - [源 {#sources}](#sources-sources)
+- [数据收集](#data-collection)
+- [目标](#destinations)
+- [Experience Data Model](#xdm)
+- [查询服务](#query-service)
+- [源](#sources-sources)
 
 ## 客户管理的密钥 {#cmk}
 
