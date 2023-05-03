@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service和Experience Cloud应用程序
 description: 本文档提供了有关如何为隐私相关操作配置不同Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: 4a078a09da131260fa44b64cd5f707482afdce04
+source-git-commit: 16985d285cf181547f3692c5ed1910eebe8df210
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '901'
 ht-degree: 12%
 
 ---
@@ -33,7 +33,7 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experie
 | 应用程序 | 访问/删除 | 选择退出销售 | 删除行为 | 文档和其他注意事项 |
 | --- | :---: | :---: | --- | --- |
 | Adobe Advertising Cloud | ✓ | ✓ | 数据主体的Cookie ID或设备ID将从系统中删除，以及与Cookie关联的所有成本、点击和收入数据也将一起删除。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[CCPA的访问/删除文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[CCPA的选择退出销售文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
-| Adobe Analytics | ✓ | ✓ | Adobe Analytics 根据数据的敏感性和合同限制提供了数据标签设置工具。标签是执行以下操作的重要步骤：<ol><li>识别数据主体。</li><li>确定作为访问请求的一部分要返回的数据。</li><li>标识作为删除请求一部分必须删除的数据字段。</li></ol> | <ul><li>[隐私工作流程](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/an-gdpr-workflow.html)</li><li>[Analytics标签设置](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/data-labels/gdpr-labels.html)</li></ul> |
+| Adobe Analytics | ✓ | ✓ | Adobe Analytics 根据数据的敏感性和合同限制提供了数据标签设置工具。标签是执行以下操作的重要步骤：<ol><li>识别数据主体。</li><li>确定作为访问请求的一部分要返回的数据。</li><li>标识作为删除请求一部分必须删除的数据字段。</li></ol> | <ul><li>[隐私工作流程](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/an-gdpr-workflow.html)</li><li>[Analytics标签设置](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/data-labels/gdpr-labels.html)</li><li>[Analytics选择退出](https://experienceleague.adobe.com/docs/analytics/components/dimensions/cm-opt-out.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | 与请求中包含的Audience Manager标识符关联的所有特征和区段都将被删除。 此外，个人的相应标识符被选择退出进一步的数据收集，并且相应的ID映射被移除。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[选择退出文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | 数据主体所存储的数据将从系统中删除。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans)</li><li>[选择退出文档](../segmentation/consents.md)</li></ul> |
 | Adobe客户属性(CRS) | ✓ | 不适用 | 数据主体的属性将从系统中删除。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[CCPA的访问/删除文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此选择退出销售请求不适用。</li></ul> |
