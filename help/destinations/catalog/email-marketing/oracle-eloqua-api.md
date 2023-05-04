@@ -6,7 +6,7 @@ exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
 source-git-commit: 3d54b89ab5f956710ad595a0e8d3567e1e773d0a
 workflow-type: tm+mt
 source-wordcount: '2125'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -98,7 +98,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_companyname_username"
 >title="公司名称\用户名"
->abstract="在此字段中填写您公司的名称和用户名，并在表格中OracleEloqua `{COMPANY_NAME}\{USERNAME}`"
+>abstract="在此字段中填写您的公司名称和来自 Oracle Eloqua 的用户名，格式为 `{COMPANY_NAME}\{USERNAME}`"
 
 填写以下必填字段。 请参阅 [收集 [!DNL Oracle Eloqua] 凭据](#gather-credentials) 部分。
 * **[!UICONTROL 密码]**:您的密码 [!DNL Oracle Eloqua] 帐户。
@@ -113,9 +113,9 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_pod"
->title="面板"
->abstract="要查找面板号，请登录OracleEloqua。 在您成功登录后，请注意浏览器中的URL。 "
->additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle知识库 — 查找面板编号"
+>title="Pod"
+>abstract="要查找您的 Pod 编号，请登录到 Oracle Eloqua。成功登录后，记下浏览器中的 URL。 "
+>additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle 知识库 - 找出您的 Pod 编号"
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 ![Platform UI屏幕截图，显示目标详细信息。](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
