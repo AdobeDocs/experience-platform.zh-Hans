@@ -1,7 +1,7 @@
 ---
 keywords: 量度概述；rtcdp量度概述
 title: Real-time Customer Data Platform主页和功能板
-description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
+description: Adobe Experience Platform 的仪表板、主页和首次用户体验
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
 source-git-commit: 8ea657e379248616d3140bc0a7b0c25a918bc857
 workflow-type: tm+mt

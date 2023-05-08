@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Adobe Experience Platform术语表
-description: Experience Platform 重要术语词汇表。
+description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
 source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt

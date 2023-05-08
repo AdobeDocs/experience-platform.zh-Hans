@@ -1,6 +1,6 @@
 ---
 title: 审核日志概述
-description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
+description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
 source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt

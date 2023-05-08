@@ -1,6 +1,6 @@
 ---
 title: 事件转发概述
-description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
+description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Platform Edge Network 执行任务。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
 source-git-commit: eb9d2f9a233f4214057db5136f32fc1290ece63c

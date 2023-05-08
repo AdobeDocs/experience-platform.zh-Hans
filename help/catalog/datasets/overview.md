@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据位置；数据位置；数据管理；世系；世系；数据类型；数据类型；数据类型；数据类型
 solution: Experience Platform
 title: 数据集概述
-description: 本文档全面概述了 Experience Platform 中的数据集。
+description: 本文档高度概括 Experience Platform 中的数据集。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
