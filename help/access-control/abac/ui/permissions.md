@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面配置角色权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: a94cf02a57bd91d2342b53ced7da98836343aa2b
+source-git-commit: 9515527f5a2c250b0a9057aa37769431e3b6fa07
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 4%
@@ -159,7 +159,7 @@ ht-degree: 4%
 
 的 **[!UICONTROL 将用户添加到您的团队]** 对话框。 输入用户电子邮件地址、名字（可选）和姓氏（可选）。
 
-选择铅笔图标以选择产品和用户组，选择 **[!UICONTROL Adobe体验平台]**，然后选择 **[!UICONTROL AEP-Default-All-Users]**，然后选择  **[!UICONTROL 保存]**.
+选择铅笔图标以选择产品和用户组，选择 **[!UICONTROL Adobe Experience Platform]**，然后选择 **[!UICONTROL AEP-Default-All-Users]**，然后选择  **[!UICONTROL 保存]**.
 
 ![product-profile](../../images/flac-ui/product-profile.png)
 
