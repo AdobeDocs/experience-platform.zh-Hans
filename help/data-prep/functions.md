@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: cce2d7b4f950248807bd700bae5e371418df634d
+source-git-commit: a89faf5f1d1befdc057cd872fcd190703c620c2d
 workflow-type: tm+mt
-source-wordcount: '4591'
+source-wordcount: '4916'
 ht-degree: 3%
 
 ---
@@ -246,6 +246,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 * 手机 — 屏幕较小的移动设备（通常&lt; 7英寸）
 * 移动设备 — 尚未识别的移动设备。 此移动设备可以是电子阅读器、平板电脑、手机、手表等。
 
+有关设备字段值的更多信息，请阅读 [设备字段值列表](#device-field-values) 在本文档附录中。
+
 >[!NOTE]
 >
 >请向左/向右滚动以查看表的完整内容。
@@ -343,5 +345,36 @@ address.line1 -> addr.addrLine1
 | ^ | %5E |
 | ` | %60 |
 | ~ | %7E |
+
+{style="table-layout:auto"}
+
+### 设备字段值 {#device-field-values}
+
+下表概述了设备字段值的列表及其相应描述。
+
+| 设备 | 描述 |
+| --- | --- |
+| 台式机 | 台式机或笔记本电脑类型的设备。 |
+| 匿名化 | 匿名设备。 在某些情况下，这些是 `useragents` 匿名化软件修改的。 |
+| 未知 | 未知设备。 这些通常是 `useragents` 不包含有关设备的信息。 |
+| 移动设备 | 尚未识别的移动设备。 此移动设备可以是电子阅读器、平板电脑、手机、手表等。 |
+| 平板电脑 | 大屏幕的移动设备（通常> 7英寸）。 |
+| Phone | 小屏幕的移动设备（通常&lt; 7英寸）。 |
+| Watch | 屏幕很小的移动设备（通常&lt; 2英寸）。 这些设备通常作为手机/平板电脑类型设备的附加屏幕运行。 |
+| 增强现实 | 具有AR功能的移动设备。 |
+| 虚拟现实 | 一种具有VR功能的移动设备。 |
+| eReader | 类似于平板电脑的设备，但通常使用 [!DNL eInk] 屏幕。 |
+| 机顶盒 | 允许通过电视大小的屏幕进行交互的连接设备。 |
+| TV | 与机顶盒类似的设备，但内置于电视中。 |
+| 家用设备 | （通常是大型）家用电器，如冰箱。 |
+| 游戏控制台 | 固定游戏系统，如 [!DNL Playstation] 或 [!DNL XBox]. |
+| 手持游戏控制台 | 一种像 [!DNL Nintendo Switch]. |
+| 语音 | 声音驱动装置，如 [!DNL Amazon Alexa] 或 [!DNL Google Home]. |
+| 车 | 基于车辆的浏览器。 |
+| 机器人 | 访问网站的机器人。 |
+| 机器人移动 | 访问网站但表示希望被视为移动设备访客的机器人。 |
+| 机器人模拟器 | 访问网站的机器人，假装是机器人 [!DNL Google]，但事实并非如此。 **注意**:在大多数情况下，机器人模仿器确实是机器人。 |
+| Cloud | 基于云的应用程序。 它们既不是机器人，也不是黑客，而是需要连接的应用程序。 这包括 [!DNL Mastodon] 服务器。 |
+| 黑客 | 如果在 `useragent` 字符串。 |
 
 {style="table-layout:auto"}
