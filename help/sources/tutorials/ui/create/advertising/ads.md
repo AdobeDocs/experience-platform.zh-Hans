@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google广告；Google广告源连接器；google广告连接器
 title: 在UI中创建Google广告源连接
 description: 了解如何使用Google UI创建Adobe Experience Platform Ads源连接。
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ac87434c857a39f4be3714cba57519cbb4fa54a6
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -16,13 +15,13 @@ ht-degree: 0%
 >
 >Google Ads源处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
 
-本教程提供了使用Google用户界面创建Adobe Experience Platform Ads源连接器的步骤。
+本教程提供了使用Google用户界面创建Adobe Experience Platform Ads源连接的步骤。
 
 ## 快速入门
 
 本教程需要对Experience Platform的以下组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
@@ -36,6 +35,7 @@ ht-degree: 0%
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | 客户ID | 客户ID是与您要通过Google Ads API管理的Google Ads客户帐户对应的帐号。 此ID遵循的模板是 `123-456-7890`. |
+| 登录客户ID | 登录客户ID是与您的Google Ads manager帐户对应的帐号，用于从特定运营客户获取报表数据。 有关登录客户ID的更多信息，请阅读 [Google Ads API文档](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
 | 开发人员令牌 | 开发人员令牌允许您访问Google Ads API。 您可以使用相同的开发人员令牌对所有Google广告帐户发出请求。 通过检索开发人员令牌 [登录您的manager帐户](https://ads.google.com/home/tools/manager-accounts/) 然后导航到API中心页面。 |
 | 刷新令牌 | 刷新令牌是 [!DNL OAuth2] 身份验证。 此令牌允许您在访问令牌过期后重新生成该令牌。 |
 | 客户端ID | 客户端ID与客户端密钥一起使用，作为 [!DNL OAuth2] 身份验证。 客户端ID和客户端密钥通过将您的应用程序标识到Google，使您的应用程序能够代表您的帐户运行。 |
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 在 **[!UICONTROL 广告]** 类别，选择 **[!UICONTROL Google Ads]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![Experience PlatformUI源目录中Google Ads源的图像](../../../../images/tutorials/create/ads/catalog.png).
+![Experience PlatformUI中的源目录。](../../../../images/tutorials/create/ads/catalog.png).
 
 的 **[!UICONTROL 连接到Google Ads]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
 
@@ -59,13 +59,13 @@ ht-degree: 0%
 
 要连接现有帐户，请选择要连接的Google Ads帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![可用于创建Google Ads数据流的现有帐户列表的图像，其中](../../../../images/tutorials/create/ads/existing.png).
+![源工作流中现有帐户的选择页面。](../../../../images/tutorials/create/ads/existing.png).
 
 ### 新帐户
 
 如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供名称、可选描述和您的Google广告凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
 
-![Experience PlatformUI上新帐户连接屏幕的图像](../../../../images/tutorials/create/ads/connect.png).
+![源工作流中的新帐户界面。](../../../../images/tutorials/create/ads/new.png).
 
 ## 后续步骤
 

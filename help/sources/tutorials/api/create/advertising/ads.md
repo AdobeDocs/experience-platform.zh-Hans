@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google广告；Google广告；Google广告；广告
 title: 使用流服务API创建Google Ads基连接
 description: 了解如何使用流量服务API将Adobe Experience Platform与Google Ads连接。
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: 56419f41188c9bfdbeda7dde680f269b980a37f0
+source-git-commit: 7c77b0dc658ad45a25f4ead4e14f5826701cf645
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '747'
 ht-degree: 1%
 
 ---
@@ -36,6 +35,7 @@ ht-degree: 1%
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `clientCustomerId` | 客户ID是与您要通过Google Ads API管理的Google Ads客户帐户对应的帐号。 此ID遵循的模板是 `123-456-7890`. |
+| `loginCustomerId` | 登录客户ID是与您的Google Ads manager帐户对应的帐号，用于从特定运营客户获取报表数据。 有关登录客户ID的更多信息，请阅读 [Google Ads API文档](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
 | `developerToken` | 开发人员令牌允许您访问Google Ads API。 您可以使用相同的开发人员令牌对所有Google广告帐户发出请求。 通过检索开发人员令牌 [登录您的manager帐户](https://ads.google.com/home/tools/manager-accounts/) 然后导航到 [!DNL API Center] 页面。 |
 | `refreshToken` | 刷新令牌是 [!DNL OAuth2] 身份验证。 此令牌允许您在访问令牌过期后重新生成该令牌。 |
 | `clientId` | 客户端ID与客户端密钥一起使用，作为 [!DNL OAuth2] 身份验证。 客户端ID和客户端密钥通过将您的应用程序标识到Google，使您的应用程序能够代表您的帐户运行。 |
@@ -79,6 +79,7 @@ curl -X POST \
           "specName": "Basic Authentication",
           "params": {
               "clientCustomerID": "{CLIENT_CUSTOMER_ID}",
+              "loginCustomerID": "{LOGIN_CUSTOMER_ID}",
               "developerToken": "{DEVELOPER_TOKEN}",
               "authenticationType": "{AUTHENTICATION_TYPE}"
               "clientId": "{CLIENT_ID}",
@@ -96,6 +97,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --------- | ----------- |
 | `auth.params.clientCustomerID` | 您的Google Ads帐户的客户客户ID。 |
+| `auth.params.loginCustomerID` | 与您的Google Ads管理员帐户对应的登录客户ID。 |
 | `auth.params.developerToken` | 您的Google Ads帐户的开发人员令牌。 |
 | `auth.params.refreshToken` | 您的Google Ads帐户的刷新令牌。 |
 | `auth.params.clientID` | 您的Google Ads帐户的客户端ID。 |
