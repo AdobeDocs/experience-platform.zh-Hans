@@ -1,9 +1,10 @@
 ---
 title: 派生属性的无缝SQL流
 description: 查询服务SQL已扩展，可无缝支持派生属性。 了解如何使用此SQL扩展创建为配置文件启用的派生属性，以及如何将该属性用于实时客户配置文件和分段服务。
-source-git-commit: 1ff66d0ac8e0491a6db518545d122555d9d54c75
+exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
+source-git-commit: 6202b1a5956da83691eeb5422d3ebe7f3fb7d974
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1238'
 ht-degree: 1%
 
 ---
@@ -40,6 +41,16 @@ ht-degree: 1%
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
 ```
 
+支持的数据类型包括：布尔值、日期、日期时间、文本、浮点、bigint、整数、map、数组和struct/row。
+
+下面的SQl代码块提供了定义结构/行、映射和数组数据类型的示例。 第1行演示了行语法。 行2演示了映射语法和行3数组语法。
+
+```sql {line-numbers="true"}
+ROW (Column_name <data_type> [, column name <data_type> ]*)
+MAP <data_type, data_type>
+ARRAY <data_type>
+```
+
 或者，也可以通过Platform UI为用户档案启用数据集。 有关将数据集标记为已启用用户档案的更多信息，请参阅 [为实时客户配置文件文档启用数据集](../../../catalog/datasets/user-guide.md#enable-profile).
 
 在以下示例查询中， `decile_table` 数据集创建时使用 `id` 作为主标识列，且具有命名空间 `IDFA`. 它还有一个名为 `decile1Month` 映射数据类型。 创建的表(`decile_table`)。
@@ -48,12 +59,6 @@ CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> prima
 CREATE TABLE decile_table (id text PRIMARY KEY NAMESPACE 'IDFA', 
             decile1Month map<text, integer>) WITH (label='PROFILE');
 ```
-
-<!--        decile3Month map<text, integer>,
-            decile6Month map<text, integer>,
-            decile9month map<text, integer>,
-            decile12month map<text, integer>,
-            decilelifetime map<text, integer> -->
 
 成功执行查询后，数据集ID将返回到控制台，如以下示例所示。
 
