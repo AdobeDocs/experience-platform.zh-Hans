@@ -2,14 +2,18 @@
 title: Adobe Experience Platform 发行说明
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: da28de44fc8ab37d530c2f9b3c167e365f00dca6
+source-git-commit: e3fc587d924b2183806918f91e5ae3aa3fee52f3
 workflow-type: tm+mt
-source-wordcount: '1841'
+source-wordcount: '2094'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform 发行说明
+
+>[!IMPORTANT]
+>
+>自2023年5月15日起， `Existing` 状态将从区段成员资格映射中弃用，以删除区段成员资格生命周期中的冗余。 进行此项更改后，符合区段条件的用户档案将表示为 `Realized` 取消用户档案资格的用户档案将继续以 `Exited`. 有关此更改的更多详细信息，请阅读 [Segmentation Service部分](#segmentation).
 
 **发布日期：2023 年 4 月 26 日**
 
@@ -22,6 +26,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [Experience Data Model](#xdm)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [实时客户资料](#profile)
+- [分段服务](#segmentation)
 - [源](#sources)
 
 ## 仪表板 {#dashboards}
@@ -160,6 +165,20 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 | 匿名用户档案数据到期 | 现在，通常可以使用假名用户档案数据到期！ 此版本将在启用后，从您的Experience Platform实例中持续删除旧用户档案。 要了解有关此功能和假名用户档案的更多信息，请阅读 [匿名用户档案数据过期指南](../../profile/pseudonymous-profiles.md). |
 
 {style="table-layout:auto"}
+
+## 分段服务 {#segmentation}
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 区段成员资格映射 | 作为2023年2月15日先前公告的后续行动， `Existing` 状态将从区段成员资格映射中弃用，以删除区段成员资格生命周期中的冗余。 进行此项更改后，符合区段条件的用户档案将表示为 `Realized` 取消用户档案资格的用户档案将继续以 `Exited`.<br/><br/> 如果您使用 [企业目标](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis、Azure事件中心、HTTP API)，并且可能已根据 `Existing` 状态。 如果您的情况是这样，请查看下游集成。 如果您有兴趣识别超过特定时间的新合格用户档案，请考虑将 `Realized` 状态和 `lastQualificationTime` 在区段成员资格映射中。 有关更多信息，请联系您的Adobe代表。 |
+
+{style="table-layout:auto"}
+
+有关 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
 
 ## 源 {#sources}
 
