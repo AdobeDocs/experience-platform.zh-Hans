@@ -1,13 +1,13 @@
 ---
 title: 目标中的可配置和常用导出设置
 description: 了解目标中的哪些导出设置可以在目标级别进行配置，哪些是固定的且无法编辑的。
-source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
+exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
 source-wordcount: '845'
 ht-degree: 0%
 
 ---
-
 
 # 目标中的可配置和常用导出设置
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 目标开发人员可以使用 [Destination SDK](/help/destinations/destination-sdk/overview.md) 创建自定义或产品化（私有或公共）目标。 Destination SDK为开发人员提供了极大的灵活性，可以根据其API端点和文件接收系统的下游功能配置目标。 根据下游功能，目标开发人员在使用Destination SDK配置目标时可使用以下配置选项：
 
 * 确定哪些属性和标识可以从Experience Platform导出到目标。 还确定目标需要哪些身份才能成功导出数据。
-* 设置聚合策略，该策略可确定在聚合要发送到API集成的HTTP消息时，Experience Platform应等待多长时间。 目标开发人员可以配置不同的聚合类型，以确定传出HTTP消息中应包含多少个配置文件，以及Experience Platform应等待多长时间直到调度HTTP消息。 查找有关 [聚合策略配置选项](/help/destinations/destination-sdk/destination-configuration.md#aggregation) 目标开发人员可在Destination SDK文档中找到。
+* 设置聚合策略，该策略可确定在聚合要发送到API集成的HTTP消息时，Experience Platform应等待多长时间。 目标开发人员可以配置不同的聚合类型，以确定传出HTTP消息中应包含多少个配置文件，以及Experience Platform应等待多长时间直到调度HTTP消息。 查找有关 [聚合策略配置选项](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) 目标开发人员可在Destination SDK文档中找到。
 * 确定HTTP消息导出是否应包含符合区段资格的配置文件、从区段中删除的配置文件，或者是同时包含这两者。
 * 确定用户在导出文件时应使用的文件名和文件格式配置。
 

@@ -2,9 +2,9 @@
 description: 了解如何使用Destination SDK通过预定义的文件格式选项和自定义文件名配置来配置Amazon S3目标。
 title: 使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标。
 exl-id: 0ecd3575-dcda-4e5c-af5c-247d4ea13fa1
-source-git-commit: 04e4b0f6b6d84d04d0a24a462383420ebd9a2daf
+source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
-source-wordcount: '746'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本页介绍如何使用Destination SDK，通过预定义的默认值配置Amazon S3目标 [文件格式选项](../../server-and-file-configuration.md#file-configuration) 和定制 [文件名配置](../../file-based-destination-configuration.md#file-name-configuration).
+本页介绍如何使用Destination SDK，通过预定义的默认值配置Amazon S3目标 [文件格式选项](configure-file-formatting-options.md) 和定制 [文件名配置](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
 此页面显示了 [!DNL Amazon S3] 目标。 您可以编辑以下步骤中显示的配置，也可以根据需要删除配置的某些部分。
+
+有关下面所用参数的详细说明，请参阅 [目标SDK中的配置选项](../../functionality/configuration-options.md).
 
 ## 先决条件 {#prerequisites}
 
@@ -23,7 +25,7 @@ ht-degree: 0%
 
 ## 步骤1:创建服务器和文件配置 {#create-server-file-configuration}
 
-首先使用 `/destination-server` 用于创建服务器和文件配置的端点。 有关HTTP请求中参数的详细描述，请阅读 [基于文件的目标的服务器和文件配置规范](../../server-and-file-configuration.md#s3-example) 和关联的 [文件格式配置](../../server-and-file-configuration.md#file-configuration).
+首先使用 `/destination-server` 端点到 [创建服务器和文件配置](../../authoring-api/destination-server/create-destination-server.md).
 
 **API格式**
 
@@ -34,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **请求**
 
 以下请求会创建一个新的目标服务器配置，该配置由有效负载中提供的参数进行配置。
-以下负载包括一个通用 [!DNL Amazon S3] 配置，具有预定义，默认 [CSV文件格式](../../server-and-file-configuration.md#file-configuration) 配置参数，用户可以在Experience PlatformUI中定义这些参数。
+以下负载包括一个通用 [!DNL Amazon S3] 配置，具有预定义，默认 [CSV文件格式](../../functionality/destination-server/file-formatting.md) 配置参数，用户可以在Experience PlatformUI中定义这些参数。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \
@@ -128,12 +130,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 要在 [步骤1](#create-server-file-configuration) 对于此目标配置，请将 `destinationServerId` 值 `instanceId` 在中创建目标服务器时获得的值 [步骤1](#create-server-file-configuration).
 
-有关下面所用参数的详细说明，请参阅以下页面：
-
-* [身份验证配置](../../authentication-configuration.md#s3)
-* [批量目标配置](../../file-based-destination-configuration.md#batch-configuration)
-* [基于文件的目标配置API操作](../../destination-configuration-api.md#create-file-based)
-
 **API格式**
 
 ```http
@@ -153,7 +149,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
    "name":"Amazon S3 destination with predefined CSV formatting options",
    "description":"Amazon S3 destination with predefined CSV formatting options",
-   "releaseNotes":"Amazon S3 destination with predefined CSV formatting options",
    "status":"TEST",
    "customerAuthenticationConfigurations":[
       {
@@ -288,9 +283,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 根据上述配置，Experience Platform目录现在将显示一张供您使用的新专用目标卡。
 
-![显示包含选定目标卡的目标目录页面的屏幕记录。](../../assets/destination-card.gif)
+![显示包含选定目标卡的目标目录页面的屏幕记录。](../../assets/guides/batch/destination-card.gif)
 
-在以下图像和录制中，请注意 [基于文件的目标的激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md) 匹配您在目标配置中选择的选项。
+在以下图像和录制中，请注意 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 匹配您在目标配置中选择的选项。
 
 在填写有关目标的详细信息时，请注意显示的字段是如何在配置中设置的自定义数据字段。
 
@@ -298,13 +293,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 >
 >向目标配置添加自定义数据字段的顺序未反映在UI中。 客户数据字段始终按屏幕记录中显示的顺序显示。
 
-![屏幕记录，显示配置中定义的客户数据字段。](../../assets/file-configuration-options.gif)
+![屏幕记录，显示配置中定义的客户数据字段。](../../assets/guides/batch/file-configuration-options.gif)
 
 在计划导出间隔时，请注意字段的显示方式是您在 `batchConfig` 配置。
-![导出计划选项](../../assets/file-export-scheduling.png)
+![导出计划选项](../../assets/guides/batch/file-export-scheduling.png)
 
 查看文件名配置选项时，请注意显示的字段如何表示 `filenameConfig` 您在配置中设置的选项。
-![文件名配置选项](../../assets/file-naming-options.gif)
+![文件名配置选项](../../assets/guides/batch/file-naming-options.gif)
 
 如果要调整上述任何字段，请重复 [步骤1](#create-server-file-configuration) 和 [二](#create-destination-configuration) 以根据您的需要修改配置。
 
@@ -314,7 +309,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 >
 >如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
 
-配置目标后，使用 [目标发布API](../../destination-publish-api.md) 将配置提交到Adobe以供审核。
+配置目标后，使用 [目标发布API](../../publishing-api/create-publishing-request.md) 将配置提交到Adobe以供审核。
 
 ## 步骤5:（可选）记录目标 {#document-destination}
 

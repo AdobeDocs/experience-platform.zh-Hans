@@ -1,9 +1,10 @@
 ---
 description: 为基于文件的目标配置文件格式选项
 title: 了解如何使用Destination SDK为基于文件的目标配置文件格式选项。
-source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
+exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
+source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
-source-wordcount: '932'
+source-wordcount: '913'
 ht-degree: 1%
 
 ---
@@ -22,18 +23,14 @@ Destination SDK允许您广泛调整导出文件的格式和压缩选项，以�
 
 Adobe还建议您在继续操作之前阅读并熟悉以下文档：
 
-* 每个可用的文件格式选项均在 [文件格式配置](../../server-and-file-configuration.md#file-configuration) 中。
-* 完成 [配置基于文件的目标](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md) 使用Destination SDK。
+* 每个可用的文件格式选项均在 [文件格式配置](../../functionality/destination-server/file-formatting.md) 中。
+* 完成 [配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md) 使用Destination SDK。
 
 ## 创建服务器和文件配置 {#create-server-file-configuration}
 
 首先使用 `/destination-server` 端点来确定要为导出文件设置的文件格式配置选项。
 
 以下是 [!DNL Amazon S3] 目标，并选择多个文件格式选项。
-
->[!TIP]
->
->请注意，所有可用的文件格式选项都记录在 [文件格式配置](../../server-and-file-configuration.md#file-configuration) 中。
 
 **API格式**
 
@@ -115,13 +112,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 在此步骤中，您可以按所需的任意顺序对显示的选项进行分组，还可以根据所选文件类型创建自定义分组、下拉字段和条件分组。 所有这些设置都显示在录像和下面进一步的部分中。
 
-![显示批处理文件的各种文件格式选项的屏幕记录。](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-options.gif)
+![显示批处理文件的各种文件格式选项的屏幕记录。](../../assets/guides/batch/file-formatting-options.gif)
 
 ### 对文件格式选项进行排序 {#ordering}
 
 目标配置中作为客户数据字段添加文件格式选项的顺序反映在UI中。 例如，下面的配置会相应地反映在UI中，选项会按顺序显示 **[!UICONTROL 分隔符]**, **[!UICONTROL 引号字符]**, **[!UICONTROL 转义字符]**, **[!UICONTROL 空值]**, **[!UICONTROL Null值]**.
 
-![显示Experience PlatformUI中文件格式选项顺序的图像。](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-order.png)
+![显示Experience PlatformUI中文件格式选项顺序的图像。](../../assets/guides/batch/file-formatting-order.png)
 
 ```json
         {
@@ -246,38 +243,43 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 为此，请使用 `"type": "object"` ，并在 `properties` 参数，如以下示例中所示，其中分组 **[!UICONTROL CSV选项]** 中。
 
-```json
-        {
-            "name": "csvOptions",
-            "title": "CSV Options",
-            "description": "Select your CSV options",
-            "type": "object",
-            "properties": [
-                {
-                    "name": "delimiter",
-                    "title": "Delimiter",
-                    "description": "Select your Delimiter",
-                    "type": "string",
-                    "isRequired": false,
-                    "default": ",",
-                    "namedEnum": [
-                        {
-                            "name": "Comma (,)",
-                            "value": ","
-                        },
-                        {
-                            "name": "Tab (\\t)",
-                            "value": "\t"
-                        }
-                    ],
-                    "readOnly": false,
-                    "hidden": false
-                },
-
+```json {line-numbers="true" start-number="100" highlight="106-128"}
+"customerDataFields":[
 [...]
+{
+   "name":"csvOptions",
+   "title":"CSV Options",
+   "description":"Select your CSV options",
+   "type":"object",
+   "properties":[
+      {
+         "name":"delimiter",
+         "title":"Delimiter",
+         "description":"Select your Delimiter",
+         "type":"string",
+         "isRequired":false,
+         "default":",",
+         "namedEnum":[
+            {
+               "name":"Comma (,)",
+               "value":","
+            },
+            {
+               "name":"Tab (\\t)",
+               "value":"\t"
+            }
+         ],
+         "readOnly":false,
+         "hidden":false
+      },
+      [...]
+   ]
+}
+[...]
+]
 ```
 
-![显示UI中CSV选项分组的图像。](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-grouping.png)
+![显示UI中CSV选项分组的图像。](../../assets/guides/batch/file-formatting-grouping.png)
 
 ### 为文件格式选项创建下拉选择器 {#dropdown-selectors}
 
@@ -285,27 +287,44 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 为此，请使用 `namedEnum` 如下所示的对象，并配置 `default` 值。
 
-```json
+```json {line-numbers="true" start-number="100" highlight="114-124"}
+[...]
+"customerDataFields":[
+[...]
 {
-   "name": "delimiter",
-   "type": "string",
-   "title": "Delimiter",
-   "description": "Select your Delimiter",
-   "namedEnum": [
-   {
-      "name": "Comma (,)",
-      "value": ","
-   },
-   {
-      "name": "Tab (\\t)",
-      "value": "\t"
-   }
-   ],
-   "default": ","
-},
+   "name":"csvOptions",
+   "title":"CSV Options",
+   "description":"Select your CSV options",
+   "type":"object",
+   "properties":[
+      {
+         "name":"delimiter",
+         "title":"Delimiter",
+         "description":"Select your Delimiter",
+         "type":"string",
+         "isRequired":false,
+         "default":",",
+         "namedEnum":[
+            {
+               "name":"Comma (,)",
+               "value":","
+            },
+            {
+               "name":"Tab (\\t)",
+               "value":"\t"
+            }
+         ],
+         "readOnly":false,
+         "hidden":false
+      },
+      [...]
+   ]
+}
+[...]
+]
 ```
 
-![屏幕录制显示了使用上面显示的配置创建的下拉选择器示例。](/help/destinations/destination-sdk/assets/guides/batch/dropdown-options-file-formatting.gif)
+![屏幕录制显示了使用上面显示的配置创建的下拉选择器示例。](../../assets/guides/batch/dropdown-options-file-formatting.gif)
 
 ### 创建条件文件格式选项 {#conditional-options}
 
@@ -466,7 +485,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 在下面，您可以根据上述配置看到生成的UI屏幕。 当用户选择CSV文件类型时，UI中会显示引用CSV文件类型的其他文件格式选项。
 
-![显示CSV文件的条件文件格式选项的屏幕记录。](/help/destinations/destination-sdk/assets/guides/batch/conditional-file-formatting.gif)
+![显示CSV文件的条件文件格式选项的屏幕记录。](../../assets/guides/batch/conditional-file-formatting.gif)
 
 ### 完成API请求，其中包含上面显示的所有选项
 
@@ -485,7 +504,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
   "name": "My S3 Destination",
   "description": "Test destination",
-  "releaseNotes": "Test destination",
   "status": "TEST",
   "sources": [
     "UNIFIED_PROFILE"
@@ -713,7 +731,7 @@ emptyValue -> ""
 | 迈克尔 | 罗斯 | 美国 | 纽约 |
 | 詹姆斯 | Smith |  | null |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 这将产生如下所示的输出。 请注意表中的null值如何被错误地导出为转义引号。
 

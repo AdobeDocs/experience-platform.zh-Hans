@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年2月
 description: 2022年2月版Adobe Experience Platform发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: e2342a8a7d03074ac26fbd129a2e7fd520ccb0c3
 workflow-type: tm+mt
 source-wordcount: '1019'
-ht-degree: 3%
+ht-degree: 9%
 
 ---
 
@@ -33,7 +33,7 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的标准目标小组件 | 通过以下标准小组件，您可以显示与目标相关的不同量度。<ul><li>最近按目标激活的区段。 此小组件会根据所选目标以降序方式显示前五个最近激活的区段。</li><li>受众大小趋势。 此小组件描述已映射到该目标帐户的区段在一段时间内的用户档案计数之间的关系。</li><li>按身份未映射的区段。 此小组件列出了前五个未映射区段，这些区段按给定目标和身份的降序身份计数排名。</li><li>按身份映射区段。 此小组件列出了前五个映射的区段。 区段会根据与从小组件下拉菜单中选择的目标ID匹配的源ID的相应计数，从高到低进行排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。</li></ul> 有关可用标准小组件的更多信息，请参阅 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
+| 新的标准目标小组件 | 通过以下标准小组件，您可以显示与目标相关的不同量度。<ul><li>最近激活的区段（按目标）. 此小组件会根据所选目标以降序方式显示前五个最近激活的区段。</li><li>受众规模趋势. 此小组件描述已映射到该目标帐户的区段在一段时间内的用户档案计数之间的关系。</li><li>未映射的区段（按标识）. 此构件列出了前五个未映射的区段，它们按给定目标和标识的标识计数以降序顺序排名。</li><li>映射的区段（按标识）. 此小组件列出了前五个映射的区段。 区段会根据与从小组件下拉菜单中选择的目标ID匹配的源ID的相应计数，从高到低进行排序。</li><li>普通受众. 此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个区段的列表。</li></ul> 有关可用标准小组件的更多信息，请参阅 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
 
 有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
@@ -59,7 +59,7 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| （测试版）Destination SDK对基于文件的目标的支持 | [Destination SDK对基于文件的目标的支持](../../destinations/destination-sdk/file-based-destination-configuration.md) 目前为私有测试版，仅适用于数量有限的合作伙伴和客户。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队，讨论受支持的用例。 <br><br> 在Destination SDK对基于文件的目标的支持测试阶段，测试合作伙伴和客户可以使用 [Experience PlatformDestination SDK](/help/destinations/destination-sdk/overview.md) 要构建专用目标以从以下功能中受益，请执行以下操作： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure数据湖存储、数据登陆区存储，创建基于文件的（批处理）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置和设置选项，以设置导出的CSV文件的格式（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读 [（测试版）使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/file-based-destination-configuration.md). <br><br> 用于创建专用或产品化的功能 *流* 使用Destination SDK的目标已经可供所有Experience Platform客户和合作伙伴使用。 阅读有关如何 [使用Destination SDK配置流目标](/help/destinations/destination-sdk/configure-destination-instructions.md) 以了解详细信息。 |
+| （测试版）Destination SDK对基于文件的目标的支持 | [Destination SDK对基于文件的目标的支持](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) 目前为私有测试版，仅适用于数量有限的合作伙伴和客户。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队，讨论受支持的用例。 <br><br> 在Destination SDK对基于文件的目标的支持测试阶段，测试合作伙伴和客户可以使用 [Experience PlatformDestination SDK](../../destinations/destination-sdk/overview.md) 要构建专用目标以从以下功能中受益，请执行以下操作： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure数据湖存储、数据登陆区存储，创建基于文件的（批处理）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置和设置选项，以设置导出的CSV文件的格式（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读 [（测试版）使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> 用于创建专用或产品化的功能 *流* 使用Destination SDK的目标已经可供所有Experience Platform客户和合作伙伴使用。 阅读有关如何 [使用Destination SDK配置流目标](../../destinations/destination-sdk/guides/configure-destination-instructions.md) 以了解详细信息。 |
 
 ## [!DNL Identity Service] {#identity}
 

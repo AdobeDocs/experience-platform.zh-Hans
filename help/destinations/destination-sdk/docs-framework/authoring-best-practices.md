@@ -2,7 +2,7 @@
 title: 创作最佳实践
 description: 了解在创作目标文档页面时应遵循的规则和提示，以确保它符合Adobe Experience Platform文档质量标准。
 exl-id: b12059f1-6635-41cd-acc5-6ff471111164
-source-git-commit: 0b9b724c2530e43ce681011d12fc1341148ddbf5
+source-git-commit: e239de97a26ea2ff36bb74390e249851a13d2e13
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 0%
@@ -56,5 +56,5 @@ ht-degree: 0%
 
 ## 过程 {#process}
 
-* 的 [文档模板](./self-service-template.md) 会根据合作伙伴的反馈，偶尔更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
+* 的 [文档模板](./self-service-template.md) 会根据合作伙伴的反馈，偶尔更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](../assets/docs-framework/yourdestination-template.zip).
 * 创作文档并从分支的分支创建文档拉取请求(PR) *除主分支之外*. 在中创作时，请参阅提交目标以供审阅一节 [GitHub界面](./use-github-interface-to-create-documentation.md#submit-review) 或 [您的本地环境](./work-in-local-environment.md#submit-review).

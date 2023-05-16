@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2023年1月
 description: 2023年1月版Adobe Experience Platform发行说明。
-source-git-commit: 6388c72aa0be8f5f91efaaa6a0edd22f3eb99de8
+exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
-source-wordcount: '2432'
+source-wordcount: '2414'
 ht-degree: 6%
 
 ---
@@ -38,7 +39,7 @@ Attribution AI用于将点数归因到导致转化事件的接触点。 营销�
 | HIPAA 准备就绪 | Healthcare Shield客户现在可以接收、使用、维护或传输Attribution AI和某些其他基于Experience Platform的应用程序中受保护的健康信息。 Healthcare Shield是面向受保的实体或HIPAA管辖的业务伙伴的医疗保健客户。 有关更多信息，请阅读 [HIPAA和Adobe产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) |
 | 编辑其他分数数据集列 | 现在，您可以在编辑现有模型时，添加或删除其他分数数据集列（报表列）。 这扩展了归因得分的灵活性，可在创建模型后为您提供对其他维度的分析。 请参阅 [归因UI指南](../../intelligent-services/attribution-ai/user-guide.md) 以了解更多。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 请参阅 [AI/ML服务](../../intelligent-services/attribution-ai/overview.md) 概述以了解更多信息。
 
@@ -52,7 +53,7 @@ Customer AI for Real-time Customer Data Platform用于生成自定义倾向得�
 | ------- | ----------- |
 | HIPAA 准备就绪 | Healthcare Shield客户现在可以在Customer AI中接收、使用、维护或传输受保护的健康信息，以用于Real-time Customer Data Platform和某些其他基于Experience Platform的应用程序。 Healthcare Shield是面向受保的实体或HIPAA管辖的业务伙伴的医疗保健客户。 有关更多信息，请参阅 [HIPAA和Adobe产品和服务](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 请参阅 [AI/ML服务](../../intelligent-services/customer-ai/overview.md) 概述以了解更多信息。
 
@@ -66,7 +67,7 @@ Adobe保证允许您检查、校样、模拟和验证如何在移动设备应用
 | ------- | ----------- |
 | 验证编辑器 | 对验证编辑器进行了新的增强。 这些增强功能包括验证列、新的代码构建工具和改进的视图。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关“Assurance（保证）”的更多信息，请阅读 [保证文档](https://developer.adobe.com/client-sdks/documentation/platform-assurance/).
 
@@ -81,7 +82,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 新主屏幕 | 数据收集UI主页已更新，其中包含有用的入门信息和链接，可简化工作效率。 这包括：<ol><li>文档和建议的工作流以开始使用</li><li>近期属性、规则和数据元素</li><li>常用扩展</li><li>新扩展通过快速安装功能进行了更新</li></ol> |
 | 将数据发送到 [!DNL Google Ads] 使用事件转发 | 您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API扩展](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) 对于事件转发，与 [Google Oauth 2密钥](../../tags/ui/event-forwarding/secrets.md#google-oauth2)，以安全地将服务器端数据发送到 [!DNL Google Ads] 实时。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 目标（2月2日更新） {#destinations}
 
@@ -101,7 +102,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | ----------- | ----------- |
 | 付费媒体同意策略增强以与流目标集成 | 安 [增强同意策略执行](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) on [流目标](/help/destinations/destination-types.md#streaming-destinations) 用于付费媒体激活用例。 当用户档案不再符合同意策略的条件时，Experience Platform现在会主动将其策略退出通信到流目标。 <br> <b>注意</b>:此功能仅适用于 **[!UICONTROL 隐私和安全防护]**，以及 **[!UICONTROL 医疗盾]**. |
 | 测试版云存储目标连接器的新分隔符选项 | 三个新的分隔符选项（冒号） `:`，管道，分号 `;`)现已可用于新的测试版云存储目标 —  [(Beta)Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [（测试版）Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [（测试版）Azure数据湖存储第2代](/help/destinations/catalog/cloud-storage/adls-gen2.md), [（测试版）数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [（测试版）Google云存储](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [（测试版）SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> 了解支持的 [文件格式选项](/help/destinations/ui/batch-destinations-file-formatting-options.md) （对于基于文件的目标）。 |
-| 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，请使用此参数。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
+| 中提供的新可选参数 [客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md) 配置 [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`:当您需要创建一个客户数据字段，该字段的值在用户组织设置的所有目标数据流中必须唯一时，请使用此参数。 <br> 例如， **[!UICONTROL 集成别名]** 字段 [[!UICONTROL 自定义个性化]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) 目标必须唯一，这意味着此目标的两个单独的数据流不能具有此字段的相同值。 |
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
@@ -160,7 +161,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 字段组 | [[!UICONTROL 天气触发器]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | 的 `weatherTriggers` 字段，现在嵌套在 `weather` 对象。 |
 | 字段组 | [[!UICONTROL XDM相关业务帐户]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account/related-accounts.schema.json) | 字段组现在稳定。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
@@ -190,7 +191,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 | 外部受众成员资格过期 | 默认情况下，外部受众成员资格将保留30天。 若要将其保留更长时间，请使用 `validUntil` 字段。 |
 | 平台生成的区段成员资格过期 | 位于 `Exited` 状态超过30天，根据 `lastQualificationTime` 字段，则该字段将被删除。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 有关 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
 

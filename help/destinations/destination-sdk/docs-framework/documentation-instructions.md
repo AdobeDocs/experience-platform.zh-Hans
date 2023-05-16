@@ -2,7 +2,7 @@
 title: 在Adobe Experience Platform中记录您的目标
 description: 分步说明，以便您在Adobe Experience Platform中为目标创建文档页面
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
+source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
@@ -51,7 +51,7 @@ ht-degree: 1%
 
 为了帮助您创建文档页面，Adobe已预填了 [文档模板](./self-service-template.md) 为你。 在下面，您可以找到如何编辑模板和打开拉取请求的说明。 Adobe文档团队将审核并发布您新目标的文档。
 
-[在此处下载模板](assets/yourdestination-template.zip) 并解压缩文件以解压缩 `yourdestination.md` 文件。
+[在此处下载模板](../assets/docs-framework/yourdestination-template.zip) 并解压缩文件以解压缩 `yourdestination.md` 文件。
 
 有关使用模板创建文档页面的说明，请参阅下文。
 

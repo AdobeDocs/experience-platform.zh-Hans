@@ -2,9 +2,9 @@
 description: 本页介绍如何验证和开始使用Adobe Experience Platform Destination SDK。 其中包含有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: Destination SDK入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '627'
 ht-degree: 4%
 
 ---
@@ -56,7 +56,7 @@ AdobeExchange团队为您提供沙盒名称，您需要在Destination SDKAPI端�
 
 ## 基于角色的访问控制(RBAC) {#rbac}
 
-使用中描述的Destination SDKAPI端点 [参考文档](./configuration-options.md)，您需要 **[!UICONTROL 目标创作]** 访问控制权限。 与AdobeExchange团队合作，在 [Adobe Admin Console](https://adminconsole.adobe.com/).
+使用中描述的Destination SDKAPI端点 [参考文档](functionality/configuration-options.md)，您需要 **[!UICONTROL 目标创作]** 访问控制权限。 与AdobeExchange团队合作，在 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 ![目标创作权限](./assets/destination-authoring-permission.png)
 
@@ -68,7 +68,7 @@ AdobeExchange团队为您提供沙盒名称，您需要在Destination SDKAPI端�
 
 ## 其他注意事项 {#additional-considerations}
 
-* 您对目标配置所做的任何更改（无论您是创建还是编辑目标配置）都需要由Adobe审核和批准。 只有在审核完成后，您所做的更改才会反映在您的目标中。
+* 对于产品化/公共目标，您对目标配置所做的任何更改（无论您是创建还是编辑目标配置）都需要由Adobe审核和批准。 只有在审核完成后，您所做的更改才会反映在您的目标中。 这不适用于仅供您使用的专用目标。
 * 只有属于同一组织且有权访问沙盒的用户才能编辑目标配置。
 
 ## 后续步骤 {#next-steps}
@@ -77,8 +77,8 @@ AdobeExchange团队为您提供沙盒名称，您需要在Destination SDKAPI端�
 
 * 根据您的目标类型，阅读以下配置指南：
 
-   * [使用Destination SDK配置流目标](./configure-destination-instructions.md)
-   * [使用Destination SDK配置基于文件的目标](./configure-file-based-destination-instructions.md)
+   * [使用Destination SDK配置流目标](guides/configure-destination-instructions.md)
+   * [使用Destination SDK配置基于文件的目标](guides/configure-file-based-destination-instructions.md)
 
 * 有关所有操作，请参阅 [目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
 * 使用 [目标创作API Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 使用Destination SDKAPI端点配置目标。 要开始使用Postman，请参阅 [导入环境和收藏集的步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832).

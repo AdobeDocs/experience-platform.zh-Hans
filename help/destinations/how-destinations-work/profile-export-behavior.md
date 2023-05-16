@@ -1,7 +1,8 @@
 ---
 title: 配置文件导出行为
 description: 了解配置文件导出行为在Experience Platform目标中支持的不同集成模式之间有何不同。
-source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
+exl-id: 2be62843-0644-41fa-a860-ccd65472562e
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
 source-wordcount: '2933'
 ht-degree: 0%
@@ -26,16 +27,16 @@ Experience Platform目标将数据导出为基于API的集成，作为HTTPS调�
 
 在将用户档案调度到目标API端点之前，先将用户档案聚合到HTTPS消息中的过程，将调用 *微批量*.
 
-获取 [Facebook目标](/help/destinations/catalog/social/facebook.md) 带有 *[可配置聚合](/help/destinations/destination-sdk/destination-configuration.md#configurable-aggregation)* 例如，策略 — 数据以聚合方式发送，其中目标服务会从用户档案服务上游接收所有传入数据，并按以下任一方式将其聚合，然后再将其调度到Facebook:
+获取 [Facebook目标](/help/destinations/catalog/social/facebook.md) 带有 *[可配置聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* 例如，策略 — 数据以聚合方式发送，其中目标服务会从用户档案服务上游接收所有传入数据，并按以下任一方式将其聚合，然后再将其调度到Facebook:
 
 * 记录数（最多10.000条）或
 * 时间窗口间隔（30分钟）
 
 以上任何一个阈值最先满足时，都会导出到Facebook。 所以，在 [!DNL Facebook Custom Audiences] 功能板中，您可能会看到来自Experience Platform的受众以10.000个记录增量进入。 您可能每10-15分钟会看到10,000条记录，因为处理和汇总数据的速度比导出间隔30分钟快，发送速度也快，因此在处理所有记录之前大约每10-15分钟会看到一条记录。 如果没有足够的记录来组成10.000批，则当满足时间窗口阈值时将按原样发送当前记录数，因此您也可能会看到发送到Facebook的较小批次。
 
-再举一个例子，请考虑 [HTTP API目标](/help/destinations/catalog/streaming/http-destination.md)，其中 *[最佳工作聚合](/help/destinations/destination-sdk/destination-configuration.md#best-effort-aggregation)* 策略， `maxUsersPerRequest: 10`. 这意味着在向此目标触发HTTP调用之前，最多将聚合10个用户档案，但是，当目标服务从上游服务收到更新的重新评估信息后，Experience Platform会尝试将用户档案调度到该目标。
+再举一个例子，请考虑 [HTTP API目标](/help/destinations/catalog/streaming/http-destination.md)，其中 *[最佳工作聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* 策略， `maxUsersPerRequest: 10`. 这意味着在向此目标触发HTTP调用之前，最多将聚合10个用户档案，但是，当目标服务从上游服务收到更新的重新评估信息后，Experience Platform会尝试将用户档案调度到该目标。
 
-聚合策略是可配置的，目标开发人员可以决定如何配置聚合策略以最好地满足下游API端点的速率限制。 有关更多信息 [聚合策略](/help/destinations/destination-sdk/destination-configuration.md#aggregation) (在Destination SDK文档中)。
+聚合策略是可配置的，目标开发人员可以决定如何配置聚合策略以最好地满足下游API端点的速率限制。 有关更多信息 [聚合策略](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) (在Destination SDK文档中)。
 
 ## 流配置文件导出（企业）目标 {#streaming-profile-destinations}
 
@@ -169,7 +170,7 @@ Experience Platform会优化配置文件导出行为以将数据导出到您的�
 
 **完整文件导出**
 
-区段的完全活动群体会每天导出。
+区段的完全活动群体每天都会导出。
 
 | 决定目标导出的因素 | 导出文件中包含的内容 |
 |---------|----------|

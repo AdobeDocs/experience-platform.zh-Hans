@@ -2,7 +2,7 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: 1773edff56059cf5bc57ebaaa133216423fcfe10
 workflow-type: tm+mt
 source-wordcount: '1528'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >* 按模板中所述的顺序填写此模板中的所有部分。
->* 根据合作伙伴的反馈，此模板不常更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
+>* 根据合作伙伴的反馈，此模板不常更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](../assets/docs-framework/yourdestination-template.zip).
 
 
 ## 概述 {#overview}
@@ -103,7 +103,7 @@ ht-degree: 1%
 
 要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
-![显示如何对目标进行身份验证的示例屏幕截图](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
+![显示如何对目标进行身份验证的示例屏幕截图](../assets/docs-framework/authenticate-destination.png)
 
 * **[!UICONTROL 载体令牌]**:填写承载令牌以对目标进行身份验证。
 
@@ -113,7 +113,7 @@ ht-degree: 1%
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![示例屏幕截图，显示如何填写目标的详细信息](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
+![示例屏幕截图，显示如何填写目标的详细信息](../assets/docs-framework/configure-destination-details.png)
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。

@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 1132c5166f1271f1b8eb0c618b83d028b413b991
+source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
 workflow-type: tm+mt
 source-wordcount: '1177'
 ht-degree: 1%
@@ -102,7 +102,7 @@ ht-degree: 1%
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | 最大数 [私有自定义目标](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | 柔和 | 使用Destination SDK，您最多可以创建5个专用自定义流或批量目标。 如果您需要创建5个以上的此类目标，请联系自定义关怀代表。 |
-| 用于Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs` （最低1.800和最高3.600）</li><li>`maxNumEventsInBatch` （最小1.000，最大10.000）</li></ul> | 硬 | 使用 [可配置聚合](/help/destinations/destination-sdk/destination-configuration.md#configurable-aggregation) 选项时，需要注意用于确定将HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
+| 用于Destination SDK的配置文件导出策略 | <ul><li>`maxBatchAgeInSecs` （最低1.800和最高3.600）</li><li>`maxNumEventsInBatch` （最小1.000，最大10.000）</li></ul> | 硬 | 使用 [可配置聚合](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 选项时，需要注意用于确定将HTTP消息发送到基于API的目标的频率以及消息应包含的用户档案数的最小值和最大值。 |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 3d829018b527aacb81c16db5e889b2e50f625e28
+source-git-commit: 8904d44cc8d289d103ec6d65116b8385ed615c4d
 workflow-type: tm+mt
 source-wordcount: '2940'
 ht-degree: 5%
@@ -126,7 +126,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 目标 SDK | Destination SDK现在为创建批量（或基于文件）产品化或专用目标的合作伙伴和客户提供完全支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](/help/destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+| 目标 SDK | Destination SDK现在为创建批量（或基于文件）产品化或专用目标的合作伙伴和客户提供完全支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](../../destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[测试基于文件的目标](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
 
 {style="table-layout:auto"}
 

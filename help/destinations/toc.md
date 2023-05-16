@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: eb261675ffbd131a00aaa5d526d03e966b94c7c7
+source-git-commit: 36d4908fc19916c5e107eb4883d741ba1904b5a4
 workflow-type: tm+mt
-source-wordcount: '1074'
-ht-degree: 6%
+source-wordcount: '1178'
+ht-degree: 5%
 
 ---
 
@@ -196,44 +196,34 @@ ht-degree: 6%
 * 目标 SDK {#destination-sdk}
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
-   * [快速入门](./destination-sdk/getting-started.md)
-   * Destination SDK功能 {#functionality}
-      * [配置选项](./destination-sdk/configuration-options.md)
-      * [流目标配置](./destination-sdk/destination-configuration.md)
-      * [基于文件的目标配置](./destination-sdk/file-based-destination-configuration.md)
-      * [流目标服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
-      * [基于文件的目标服务器和文件规范](./destination-sdk/server-and-file-configuration.md)
-      * [消息格式](./destination-sdk/message-format.md)
-      * [受众元数据管理](./destination-sdk/audience-metadata-management.md)
-      * 身份验证 {#authentication}
-         * [身份验证配置](./destination-sdk/authentication-configuration.md)
-         * [OAuth 2身份验证](./destination-sdk/oauth2-authentication.md)
-      * 开发人员工具 {#developer-tools}
-         * [创建和测试消息转换模板](./destination-sdk/create-template.md)
-         * [测试目标配置](./destination-sdk/test-destination.md)
-   * API操作 {#api}
-      * [Destination SDK（目标创作）API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
-      * [目标端点API操作](./destination-sdk/destination-configuration-api.md)
-      * [目标服务器端点API操作](./destination-sdk/destination-server-api.md)
-      * [受众元数据端点API操作](./destination-sdk/audience-metadata-api.md)
-      * [凭据端点API操作](./destination-sdk/credentials-configuration-api.md)
-      * [发布端点API操作](./destination-sdk/destination-publish-api.md)
-      * 开发人员工具参考 {#developer-tools-reference}
-         * 流目标测试API {#streaming-destination-testing-api}
-            * [获取示例模板API操作](./destination-sdk/sample-template-api.md)
-            * [渲染模板API操作](./destination-sdk/render-template-api.md)
-            * [目标测试API操作](./destination-sdk/destination-testing-api.md)
-            * [配置文件生成API操作示例](./destination-sdk/sample-profile-generation-api.md)
-         * 基于文件的目标测试API {#file-based-destination-testing-api}
-            * [基于文件的目标测试API概述](./destination-sdk/file-based-destination-testing-overview.md)
-            * [根据源架构生成示例用户档案](./destination-sdk/file-based-sample-profile-generation-api.md)
-            * [使用示例用户档案测试基于文件的目标](./destination-sdk/file-based-destination-testing-api.md)
-            * [查看详细的激活结果](./destination-sdk/file-based-destination-results-api.md)
-            * [验证模板化客户字段](./destination-sdk/file-based-render-template-api.md)
+   * [Destination SDK入门](./destination-sdk/getting-started.md)
+   * 功能 {#functionality}
+      * [配置选项](./destination-sdk/functionality/configuration-options.md)
+      * 目标服务器组件 {#destination-server}
+         * [服务器规范](./destination-sdk/functionality/destination-server/server-specs.md)
+         * [模板规格](./destination-sdk/functionality/destination-server/templating-specs.md)
+         * [消息格式](./destination-sdk/functionality/destination-server/message-format.md)
+         * [支持的转换函数](./destination-sdk/functionality/destination-server/supported-functions.md)
+         * [文件格式配置](./destination-sdk/functionality/destination-server/file-formatting.md)
+      * 目标配置组件 {#destination-configuration}
+         * [客户身份验证配置](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
+         * [OAuth2身份验证](./destination-sdk/functionality/destination-configuration/oauth2-authentication.md)
+         * [客户数据字段](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
+         * [UI属性](./destination-sdk/functionality/destination-configuration/ui-attributes.md)
+         * [合作伙伴架构配置](./destination-sdk/functionality/destination-configuration/schema-configuration.md)
+         * [身份命名空间配置](./destination-sdk/functionality/destination-configuration/identity-namespace-configuration.md)
+         * [支持的映射配置](./destination-sdk/functionality/destination-configuration/supported-mapping-configurations.md)
+         * [目标投放](./destination-sdk/functionality/destination-configuration/destination-delivery.md)
+         * [受众元数据配置](./destination-sdk/functionality/destination-configuration/audience-metadata-configuration.md)
+         * [聚合策略](./destination-sdk/functionality/destination-configuration/aggregation-policy.md)
+         * [批量配置](./destination-sdk/functionality/destination-configuration/batch-configuration.md)
+         * [历史用户档案资格](./destination-sdk/functionality/destination-configuration/historical-profile-qualifications.md)
+      * [流目标的速率限制和重试策略](./destination-sdk/functionality/rate-limiting-retry-policy.md)
+      * [受众元数据管理](./destination-sdk/functionality/audience-metadata-management.md)
    * 指南 {#guides}
-      * [使用Destination SDK配置流目标](./destination-sdk/configure-destination-instructions.md)
-      * [使用Destination SDK配置基于文件的目标](./destination-sdk/configure-file-based-destination-instructions.md)
-      * [提交以供审核在Destination SDK中创作的目标](./destination-sdk/submit-destination.md)
+      * [使用Destination SDK配置流目标](./destination-sdk/guides/configure-destination-instructions.md)
+      * [使用Destination SDK配置基于文件的目标](./destination-sdk/guides/configure-file-based-destination-instructions.md)
+      * [提交以供审核在Destination SDK中创作的目标](./destination-sdk/guides/submit-destination.md)
       * 配置基于文件的目标 {#configure-file-based-destinations}
          * [配置文件格式选项](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
          * [使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
@@ -242,9 +232,45 @@ ht-degree: 6%
          * [使用自定义文件格式选项和自定义文件名配置配置Azure数据湖存储目标](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
          * [使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [使用预定义的文件格式选项和自定义文件名配置配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
-   * 参考 {#reference}
-      * [流目标的速率限制和重试策略](./destination-sdk/rate-limiting-retry-policy.md)
-      * [支持的转换函数](./destination-sdk/supported-functions.md)
+   * 目标创作API参考 {#authoring-api}
+      * [Destination SDK（目标创作）API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * 目标服务器操作 {#server-operations}
+         * [创建目标服务器配置](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
+         * [检索目标服务器配置](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
+         * [更新目标服务器配置](./destination-sdk/authoring-api/destination-server/update-destination-server.md)
+         * [删除目标服务器配置](./destination-sdk/authoring-api/destination-server/delete-destination-server.md)
+      * 目标配置操作 {#destination-operations}
+         * [创建目标配置](./destination-sdk/authoring-api/destination-configuration/create-destination-configuration.md)
+         * [检索目标配置](./destination-sdk/authoring-api/destination-configuration/retrieve-destination-configuration.md)
+         * [更新目标配置](./destination-sdk/authoring-api/destination-configuration/update-destination-configuration.md)
+         * [删除目标配置](./destination-sdk/authoring-api/destination-configuration/delete-destination-configuration.md)
+   * 受众元数据API参考 {#audience-template-api}
+      * [创建受众模板](./destination-sdk/metadata-api/create-audience-template.md)
+      * [检索受众模板](./destination-sdk/metadata-api/retrieve-audience-template.md)
+      * [更新受众模板](./destination-sdk/metadata-api/update-audience-template.md)
+      * [删除受众模板](./destination-sdk/metadata-api/delete-audience-template.md)
+   * 凭据配置API引用 {#credentials-api}
+      * [创建凭据配置](./destination-sdk/credentials-api/create-credential-configuration.md)
+      * [检索凭据配置](./destination-sdk/credentials-api/retrieve-credential-configuration.md)
+      * [更新凭据配置](./destination-sdk/credentials-api/update-credential-configuration.md)
+      * [删除凭据配置](./destination-sdk/credentials-api/delete-credential-configuration.md)
+   * 目标测试API引用 {#testing-api}
+      * 流目标测试API {#streaming-destinations}
+         * [流目标测试API概述](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
+         * [根据源架构生成示例用户档案](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
+         * [生成示例消息转换模板 ](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
+         * [验证导出的配置文件结构](./destination-sdk/testing-api/streaming-destinations/render-template-api.md)
+         * [使用示例用户档案测试流目标](./destination-sdk/testing-api/streaming-destinations/destination-testing-api.md)
+         * [创建和测试消息转换模板](./destination-sdk/testing-api/streaming-destinations/create-template.md)
+      * 基于文件的目标测试API {#batch-destinations}
+         * [基于文件的目标测试API概述](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)
+         * [根据源架构生成示例用户档案](./destination-sdk/testing-api/batch-destinations/file-based-sample-profile-generation-api.md)
+         * [使用示例用户档案测试基于文件的目标](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-api.md)
+         * [查看详细的激活结果](./destination-sdk/testing-api/batch-destinations/file-based-destination-results-api.md)
+         * [验证模板化客户字段](./destination-sdk/testing-api/batch-destinations/file-based-render-template-api.md)
+   * 目标发布API引用 {#publishing-api}
+      * [创建目标发布请求](./destination-sdk/publishing-api/create-publishing-request.md)
+      * [检索目标发布请求](./destination-sdk/publishing-api/retrieve-publishing-request.md)
    * 记录目标 {#document-destination}
       * [在Adobe Experience Platform中记录您的目标](./destination-sdk/docs-framework/documentation-instructions.md)
       * [使用GitHub Web界面创建目标文档页面](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
