@@ -3,10 +3,10 @@ keywords: Experience Platform；查询；查询服务；故障诊断；护栏；
 title: 查询服务的防护
 description: 本文档提供了有关查询服务数据使用限制的信息，以帮助您优化查询使用。
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5ceb261dbf1cac58d0cfe620875b8fa7c761abf2
 workflow-type: tm+mt
-source-wordcount: '1029'
-ht-degree: 2%
+source-wordcount: '1004'
+ht-degree: 1%
 
 ---
 
@@ -34,8 +34,6 @@ ht-degree: 2%
 
 下图概述了查询服务功能当前如何打包和授权：
 
-![一个图表，用于说明与许可相关的查询服务功能的分发和打包。](./images/guardrails/query-capabilities.png)
-
 ## 限制类型
 
 本文档中有两种类型的默认限制：
@@ -62,7 +60,7 @@ ht-degree: 2%
 | 客户端连接器和结果输出限制 | 客户端连接器<ul><li>查询UI（100行）</li><li>第三方客户(50,000)</li><li>[!DNL PostgresSQL] 客户端(50,000)</li></ul> | 硬 | 查询结果可通过以下方式接收：<ul><li>查询服务UI</li><li>第三方客户</li><li>[!DNL PostgresSQL] 客户端</li></ul>注意：对输出计数添加限制可能会更快地返回结果。 例如， `LIMIT 5`, `LIMIT 10`，等等。 |
 | 通过 | 客户端UI | 不适用 | 这定义了如何将结果提供给用户。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **批量查询**
 
@@ -76,7 +74,7 @@ ht-degree: 2%
 | 客户端连接器和结果输出限制 | 客户端连接器<ul><li>查询UI（行数没有上限）</li><li>第三方客户端（对行没有上限）</li><li>[!DNL PostgresSQL] 客户端（对行没有上限）</li><li>REST API（行数上限）</li></ul> | 硬 | 可使用以下方法获取查询结果：<ul><li>可以存储为派生的数据集</li><li>可插入到现有派生数据集中</li></ul>注意：查询结果中的记录计数编号没有上限。 |
 | 通过 | 数据集 | 不适用 | 这定义了如何将结果提供给用户。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 查询加速存储 {#query-accelerated-store}
 
@@ -86,7 +84,7 @@ ht-degree: 2%
 |---|---|---|---|
 | 查询并发 | 4 | 硬 | 为确保通过报表API对聚合数据的查询(包括增强数据模型(如Real-Time CDP数据模型)的查询)具有资源来有效执行，报表API通过为每个查询分配并发时隙来跟踪资源利用率。 系统将查询放入队列中，等待并发插槽变为可用或可从缓存中提供它们。 在任何给定时间，最多有四个并发查询槽。<br>如果您通过BI工具访问报表API，并且需要更多并发，则需要BI服务器。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤
 
