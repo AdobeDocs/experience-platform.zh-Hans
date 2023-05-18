@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2023年4月
 description: 2023年4月的Adobe Experience Platform发行说明。
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: c95d2ab1a6f104c18c491d3a533ee2c304a0aa68
+source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2084'
 ht-degree: 4%
 
 ---
@@ -190,7 +190,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持过滤Microsoft Dynamics、Salesforce CRM和SalesforceMarketing Cloud的行级数据的API | 使用逻辑和比较运算符过滤Microsoft Dynamics、Salesforce CRM和SalesforceMarketing Cloud源的行级数据。 阅读 [使用API过滤源的数据](../../sources/tutorials/api/filter.md) 以了解更多信息。 |
+| 支持过滤Salesforce CRM源的行级数据的API。 | 使用逻辑和比较运算符过滤Salesforce CRM源的行级数据。 阅读 [使用API过滤源的数据](../../sources/tutorials/api/filter.md) 以了解更多信息。 |
 | Shopify Streaming的测试版可用性 | 的 [Shopify流源](../../sources/connectors/ecommerce/shopify-streaming.md) 现已在测试版中提供。 使用Shopify流源从Shopify合作伙伴帐户流式传输数据以Experience Platform。 |
 | OneTrust集成的一般可用性 | 的 [OneTrust集成源](../../sources/connectors/consent-and-preferences/onetrust.md) 现在为GA。 使用OneTrust集成源将OneTrust集成帐户中的同意和首选项数据Experience Platform。 |
 | oracle服务云的正式发布 | 的 [Oracle服务云源](../../sources/connectors/customer-success/oracle-service-cloud.md) 现在为GA。 使用Oracle服务云源将Oracle服务云数据引入Experience Platform。 |

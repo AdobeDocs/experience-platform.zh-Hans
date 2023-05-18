@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；流程服务；流程服
 title: 使用流服务API过滤源的行级数据
 description: 本教程涵盖有关如何使用流量服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: da6f5a79b1ee16fb0d44a5c2990ed1b8be1f99e2
+source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
 workflow-type: tm+mt
-source-wordcount: '785'
-ht-degree: 3%
+source-wordcount: '780'
+ht-degree: 2%
 
 ---
 
@@ -17,9 +17,7 @@ ht-degree: 3%
 >当前，仅以下来源支持过滤行级数据：
 >
 >* [Google BigQuery](../../connectors/databases/bigquery.md)
->* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
 >* [Salesforce](../../connectors/crm/salesforce.md)
->* [SalesforceMarketing Cloud](../../connectors/marketing-automation/salesforce-marketing-cloud.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
 
 
