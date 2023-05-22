@@ -1,52 +1,51 @@
 ---
-keywords: Experience Platform；主页；热门主题；Salesforce Marketing Cloud;SalesforceMarketing Cloud；营销自动化
 solution: Experience Platform
-title: SalesforceMarketing Cloud源概述
-description: 了解如何使用API或用户界面将SalesforceMarketing Cloud连接到Adobe Experience Platform。
+title: SalesforceMarketing Cloud來源概觀
+description: 瞭解如何使用API或使用者介面將SalesforceMarketing Cloud連結至Adobe Experience Platform。
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 997a9dc70145a8cfd5d6da20ba788a4610e5c257
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Salesforce Marketing Cloud]
+# [!DNL Salesforce Marketing Cloud]
 
->[!NOTE]
->
->的 [!DNL Salesforce Marketing Cloud] 来源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
-
-[!DNL Experience Platform] 支持从第三方营销自动化系统中摄取数据。 对营销自动化提供商的支持包括 [!DNL Salesforce Marketing Cloud].
+Experience Platform提供從協力廠商行銷自動化系統擷取資料的支援。 對行銷自動化提供者的支援包括 [!DNL Salesforce Marketing Cloud].
 
 ## 先决条件
 
-在连接 [!DNL Salesforce Marketing Cloud] 源到平台时，您必须确保 **权限范围** 已配置为 [!DNL Salesforce Marketing Cloud] 客户端ID和客户端密钥组合：
+連線之前 [!DNL Salesforce Marketing Cloud] platform的來源，您必須確保以下各項 **許可權範圍** 已布建至您的 [!DNL Salesforce Marketing Cloud] 使用者端ID和使用者端密碼組合：
 
 * `campaign_read`
 * `list_and_subscribers_read`
 
-您可以通过调用 `v2/userinfo` 资源 [!DNL Salesforce Marketing Cloud] API。 请参阅 [[!DNL Salesforce Marketing Cloud] API集成权限范围文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html) 以了解如何请求和比较范围。
+您可以呼叫 `v2/userinfo` 的資源 [!DNL Salesforce Marketing Cloud] API。 請參閱 [[!DNL Salesforce Marketing Cloud] API整合許可權範圍檔案](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html>) 以取得如何請求和比較範圍的指引。
 
-有关范围（包括其相关权限和行为列表）的更多信息，请参阅此 [[!DNL Salesforce Marketing Cloud] REST API文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html).
+如需有關範圍的詳細資訊，包括其相關許可權和行為清單，請參閱此 [[!DNL Salesforce Marketing Cloud] REST API檔案](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html>).
 
-## IP地址允许列表
+>[!IMPORTANT]
+>
+>自訂物件擷取目前不支援 [!DNL Salesforce Marketing Cloud] 來源整合。
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+## IP位址允許清單
 
-## 连接 [!DNL Salesforce Marketing Cloud] 到使用API的平台
+在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
 
-以下文档提供了有关如何连接的信息 [!DNL Salesforce Marketing Cloud] 要使用API的平台，请执行以下操作：
+## Connect [!DNL Salesforce Marketing Cloud] 使用API移至Platform
 
-* [使用流服务API创建SalesforceMarketing Cloud库连接](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
-* [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
-* [使用流服务API为营销自动化源创建数据流](../../tutorials/api/collect/marketing-automation.md)
+以下檔案提供有關如何連線的資訊 [!DNL Salesforce Marketing Cloud] 使用API移至Platform：
 
-## 连接 [!DNL Salesforce Marketing Cloud] 到使用UI的平台
+* [使用Flow Service API建立SalesforceMarketing Cloud基本連線](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
+* [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
+* [使用流量服務API為行銷自動化來源建立資料流](../../tutorials/api/collect/marketing-automation.md)
 
-以下文档提供了有关如何连接的信息 [!DNL Salesforce Marketing Cloud] 到使用用户界面的平台：
+## Connect [!DNL Salesforce Marketing Cloud] 使用UI移至Platform
 
-* [在UI中创建SalesforceMarketing Cloud源连接](../../tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
-* [在UI中为营销自动化源连接创建数据流](../../tutorials/ui/dataflow/marketing-automation.md)
+以下檔案提供有關如何連線的資訊 [!DNL Salesforce Marketing Cloud] 至使用使用者介面的Platform：
+
+* [在使用者介面中建立SalesforceMarketing Cloud來源連線](../../tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
+* [在UI中建立行銷自動化來源連線的資料流](../../tutorials/ui/dataflow/marketing-automation.md)
