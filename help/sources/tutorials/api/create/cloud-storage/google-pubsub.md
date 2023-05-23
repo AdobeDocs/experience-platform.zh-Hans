@@ -1,60 +1,60 @@
 ---
-title: 使用流服务API创建Google PubSub源连接
-description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google PubSub帐户。
+title: 使用Flow Service API建立Google PubSub來源連線
+description: 瞭解如何使用Flow Service API將Adobe Experience Platform連線至Google PubSub帳戶。
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: 2b72d384e8edd91c662364dfac31ce4edff79172
+source-git-commit: 371947cff518c16816692210054680367fd6504c
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '961'
 ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Google PubSub] 使用流服务API的源连接
+# 建立 [!DNL Google PubSub] 使用流量服務API的來源連線
 
-本教程将指导您完成连接的步骤 [!DNL Google PubSub] (以下简称“[!DNL PubSub]&quot;)Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教學課程將逐步引導您完成連線的步驟 [!DNL Google PubSub] (以下稱&quot;[!DNL PubSub]&quot;)進行Experience Platform，使用 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-以下部分提供了成功连接所需了解的其他信息 [!DNL PubSub] 使用 [!DNL Flow Service] API。
+以下小節提供成功連線所需瞭解的其他資訊 [!DNL PubSub] 至平台，使用 [!DNL Flow Service] API。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-为 [!DNL Flow Service] 连接到 [!DNL PubSub]，则必须为以下连接属性提供值：
+為了 [!DNL Flow Service] 以連線到 [!DNL PubSub]，您必須提供下列連線屬性的值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `projectId` | 验证所需的项目ID [!DNL PubSub]. |
-| `credentials` | 验证所需的凭据或密钥 [!DNL PubSub]. |
-| `topicId` | 的ID [!DNL PubSub] 表示消息馈送的资源。 如果要提供对中特定数据流的访问权限，则必须指定主题ID [!DNL Google PubSub] 来源。 |
-| `subscriptionId` | 您的 [!DNL PubSub] 订阅。 在 [!DNL PubSub]，则通过订阅已发布消息的主题，可接收消息。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基目标连接和源目标连接相关的验证规范。 的 [!DNL PubSub] 连接规范ID是： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `projectId` | 驗證所需的專案ID [!DNL PubSub]. |
+| `credentials` | 驗證所需的認證或金鑰 [!DNL PubSub]. |
+| `topicName` | 代表訊息摘要的資源名稱。 如果您想要提供對以下專案中的特定資料流的存取權，則必須指定主題名稱： [!DNL PubSub] 來源。 主題名稱格式為： `projects/{PROJECT_ID}/topics/{TOPIC_ID}`. |
+| `subscriptionName` | 您的名稱 [!DNL PubSub] 訂閱。 在 [!DNL PubSub]，訂閱可讓您透過訂閱訊息已發佈到的主題來接收訊息。 **注意**：單一 [!DNL PubSub] 訂閱只能用於一個資料流。 若要建立多個資料流，您必須有多個訂閱。 訂閱名稱格式為： `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`. |
+| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎和來源目標連線相關的驗證規格。 此 [!DNL PubSub] 連線規格ID為： `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
-有关这些值的更多信息，请参阅此 [[!DNL PubSub] 身份验证](https://cloud.google.com/pubsub/docs/authentication) 文档。 要使用基于服务帐户的身份验证，请参阅 [[!DNL PubSub] 创建服务帐户指南](https://cloud.google.com/docs/authentication/production#create_service_account) 以了解有关如何生成凭据的步骤。
+如需這些值的詳細資訊，請參閱此 [[!DNL PubSub] 驗證](https://cloud.google.com/pubsub/docs/authentication) 檔案。 若要使用以服務帳戶為基礎的驗證，請參閱此 [[!DNL PubSub] 建立服務帳戶的指南](https://cloud.google.com/docs/authentication/production#create_service_account) 瞭解如何產生認證的步驟。
 
 >[!TIP]
 >
->如果您使用基于服务帐户的身份验证，请确保您已向您的服务帐户授予足够的用户访问权限，并且在复制和粘贴凭据时，JSON中没有额外的空格。
+>如果您使用以服務帳戶為基礎的驗證，在複製和貼上您的認證時，請確保您已授予足夠的使用者存取權給您的服務帳戶，並且JSON中沒有額外的空格。
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
 
-## 创建基本连接
+## 建立基礎連線
 
-创建源连接的第一步是验证您的 [!DNL PubSub] 源并生成基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+建立來源連線的第一個步驟是驗證您的 [!DNL PubSub] 來源並產生基本連線ID。 基礎連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
 
-要创建基本连接ID，请向 `/connections` 提供 [!DNL PubSub] 身份验证凭据作为请求参数的一部分。
+POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL PubSub] 要求引數中的驗證認證。
 
-在此步骤中，您可以通过提供主题ID来定义您的帐户有权访问的数据。 只能访问与该主题ID关联的订阅。
+此 [!DNL PubSub] 來源可讓您指定在驗證期間允許使用的存取型別。 您可以將帳戶設定為擁有根存取權，或限制特定專案的存取權 [!DNL PubSub] 主題和訂閱。
 
 >[!NOTE]
 >
->在 [!DNL PubSub] 项目。 如果要添加主体（角色）以有权访问特定主题，则还必须将该主体（角色）添加到该主题的相应订阅中。 有关更多信息，请阅读 [[!DNL PubSub] 访问控制文档](https://cloud.google.com/pubsub/docs/access-control).
+>指派給使用者的主體（角色） [!DNL PubSub] 專案會繼承內建立的所有主題和訂閱 [!DNL PubSub] 專案。 如果您希望主參與者（角色）有權存取特定主題，則也必須將該主參與者（角色）新增至主題的對應訂閱。 如需詳細資訊，請閱讀 [[!DNL PubSub] 存取控制檔案](<https://cloud.google.com/pubsub/docs/access-control>).
 
 **API格式**
 
@@ -63,6 +63,10 @@ POST /connections
 ```
 
 **请求**
+
+>[!BEGINTABS]
+
+>[!TAB 專案型驗證]
 
 ```shell
 curl -X POST \
@@ -76,12 +80,10 @@ curl -X POST \
       "name": "Google PubSub connection",
       "description": "Google PubSub connection",
       "auth": {
-          "specName": "Google PubSub authentication credentials",
+          "specName": "Project Based Authentication",
           "params": {
-              "projectId": "acme-project",
-              "credentials": "{CREDENTIALS}",
-              "topicId": "acmeProjectAPI",
-              "subscriptionId": "acme-project-api-new"
+              "projectId": "{PROJECT_ID}",
+              "credentials": "{CREDENTIALS}"
           }
       },
       "connectionSpec": {
@@ -93,15 +95,50 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.projectId` | 验证所需的项目ID [!DNL PubSub]. |
-| `auth.params.credentials` | 验证所需的凭据或密钥 [!DNL PubSub]. |
-| `auth.params.topicId` | 主题ID [!DNL PubSub] 要提供访问权限的源。 |
-| `auth.params.subscriptionId` | 针对您的 [!DNL PubSub] 主题。 |
-| `connectionSpec.id` | 的 [!DNL PubSub] 连接规范ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
+| `auth.params.projectId` | 驗證所需的專案ID [!DNL PubSub]. |
+| `auth.params.credentials` | 驗證所需的認證或金鑰 [!DNL PubSub]. |
+| `connectionSpec.id` | 此 [!DNL PubSub] 連線規格ID： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+
+>[!TAB 主題和訂閱型驗證]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Google PubSub connection",
+      "description": "Google PubSub connection",
+      "auth": {
+          "specName": "Topic & Subscription Based Authentication",
+          "params": {
+              "credentials": "{CREDENTIALS}",
+              "topicName": "projects/{PROJECT_ID}/topics/{TOPIC_ID}",
+              "subscriptionName": "projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}"
+          }
+      },
+      "connectionSpec": {
+          "id": "70116022-a743-464a-bbfe-e226a7f8210c",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `auth.params.credentials` | 驗證所需的認證或金鑰 [!DNL PubSub]. |
+| `auth.params.topicName` | 的專案ID和主題ID配對 [!DNL PubSub] 您想要提供存取權的來源。 |
+| `auth.params.subscriptionName` | 的專案ID和訂閱ID配對 [!DNL PubSub] 您想要提供存取權的來源。 |
+| `connectionSpec.id` | 此 [!DNL PubSub] 連線規格ID： `70116022-a743-464a-bbfe-e226a7f8210c`. |
+
+>[!ENDTABS]
 
 **响应**
 
-成功的响应会返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一步中需要此基本连接ID才能创建源连接。
+成功回應會傳回新建立連線的詳細資料，包括其唯一識別碼(`id`)。 建立來源連線的下一個步驟需要此基本連線ID。
 
 ```json
 {
@@ -110,11 +147,11 @@ curl -X POST \
 }
 ```
 
-## 创建源连接 {#source}
+## 建立來源連線 {#source}
 
-源连接创建并管理从中摄取数据的外部源的连接。 源连接由创建数据流所需的数据源、数据格式和源连接ID等信息组成。 源连接实例特定于租户和组织。
+來源連線會建立和管理與擷取資料之外部來源的連線。 來源連線包含資料來源、資料格式等資訊，以及建立資料流所需的來源連線ID。 租使用者和組織專屬的來源連線例項。
 
-要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
+POST若要建立來源連線，請向 `/sourceConnections` 的端點 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -144,8 +181,8 @@ curl -X POST \
           "format": "json"
       },
       "params": {
-          "topicId": "acme-project",
-          "subscriptionId": "{SUBSCRIPTION_ID}",
+          "topicName": "projects/{PROJECT_ID}/topics/{TOPIC_ID}",
+          "subscriptionName": "projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}",
           "dataType": "raw"
       }
   }'
@@ -153,18 +190,18 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的名称。 确保源连接的名称具有描述性，因为您可以使用该名称查找有关源连接的信息。 |
-| `description` | 可提供的可选值，用于包含有关源连接的更多信息。 |
-| `baseConnectionId` | 您的基本连接ID [!DNL PubSub] 上一步中生成的源。 |
-| `connectionSpec.id` | 的固定连接规范ID [!DNL PubSub]. 此ID为： `70116022-a743-464a-bbfe-e226a7f8210c` |
-| `data.format` | 的格式 [!DNL PubSub] 要摄取的数据。 目前，唯一支持的数据格式是 `json`. |
-| `params.topicId` | 您的 [!DNL PubSub] 主题。 在 [!DNL PubSub]，主题是表示消息馈送的命名资源。 |
-| `params.subscriptionId` | 与给定主题对应的订阅ID。 在 [!DNL PubSub]，则订阅允许您读取主题中的消息。 可以为单个主题分配一个或多个订阅。 |
-| `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw` 和 `xdm`. |
+| `name` | 來源連線的名稱。 確保來源連線的名稱是描述性的，因為您可以使用此名稱來查閱來源連線的資訊。 |
+| `description` | 您可以提供的選用值，包含來源連線的更多資訊。 |
+| `baseConnectionId` | 您的的基本連線ID [!DNL PubSub] 上一步驟中產生的來源。 |
+| `connectionSpec.id` | 的固定連線規格ID [!DNL PubSub]. 此ID為： `70116022-a743-464a-bbfe-e226a7f8210c` |
+| `data.format` | 的格式 [!DNL PubSub] 您要擷取的資料。 目前唯一支援的資料格式為 `json`. |
+| `params.topicName` | 您的名稱 [!DNL PubSub] 主題。 在 [!DNL PubSub]，主題是代表訊息摘要的已命名資源。 |
+| `params.subscriptionName` | 與指定主題對應的訂閱名稱。 在 [!DNL PubSub]，訂閱可讓您從主題讀取訊息。 可以將一個或多個訂閱指派給單一主題。 |
+| `params.dataType` | 此引數會定義所擷取的資料型別。 支援的資料型別包括： `raw` 和 `xdm`. |
 
 **响应**
 
-成功的响应会返回唯一标识符(`id`)。 在下一个教程中，需要此ID才能创建数据流。
+成功的回應會傳回唯一識別碼(`id`)。 在下個教學課程中，需要此ID才能建立資料流。
 
 ```json
 {
@@ -175,4 +212,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL PubSub] 源连接使用 [!DNL Flow Service] API。 在下一个教程中，您可以使用此源连接ID [使用创建流数据流 [!DNL Flow Service] API](../../collect/streaming.md).
+依照本教學課程，您已建立 [!DNL PubSub] 來源連線使用 [!DNL Flow Service] API。 您可以在下一個教學課程中使用此來源連線ID來 [使用建立串流資料流 [!DNL Flow Service] API](../../collect/streaming.md).
