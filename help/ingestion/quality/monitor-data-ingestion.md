@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；監控；監控；資料流程；監控擷取；資料擷取；資料擷取；檢視記錄；檢視批次；
+keywords: Experience Platform；主页；热门主题；监测；监测；数据流；监测摄取；数据摄取；数据摄取；查看记录；查看批次；
 solution: Experience Platform
-title: 監控資料擷取
-description: 本使用手冊提供如何在Adobe Experience Platform使用者介面中監控資料的步驟。 本指南會要求您擁有Adobe ID並存取Adobe Experience Platform。
+title: 监控数据摄取
+description: 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 3%
 
 ---
 
-# 監控資料擷取
+# 监控数据摄取
 
-資料內嵌可讓您將資料內嵌至Adobe Experience Platform。 您可以使用批次擷取，這可讓您使用各種檔案型別（例如CSV）插入資料，或使用串流擷取，可讓您將資料擷取到 [!DNL Platform] 即時使用串流端點。
+通过数据摄取，可将数据摄取到Adobe Experience Platform。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您将数据摄取到 [!DNL Platform] 实时使用流式端点。
 
-本使用手冊提供如何在Adobe Experience Platform使用者介面中監控資料的步驟。 本指南會要求您擁有Adobe ID並存取Adobe Experience Platform。
+本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 
-## 監控串流端對端資料擷取 {#monitor-streaming-end-to-end-data-ingestion}
+## 监控流端到端数据摄取 {#monitor-streaming-end-to-end-data-ingestion}
 
 >[!CONTEXTUALHELP]
 >id="platform_ingestion_streaming_ingestionrate"
@@ -28,70 +28,70 @@ ht-degree: 3%
 
 >[!TIP]
 >
->若要計算特定日期的總事件數，請使用下列運算式： `total events / day = ingestion rate * 60 * 60 * 24`.
+>要计算特定日期的总事件数，请使用以下表达式： `total events / day = ingestion rate * 60 * 60 * 24`.
 
-在 [EXPERIENCE PLATFORMUI](https://platform.adobe.com)，選取 **[!UICONTROL 監視]** 左側導覽選單上，後面接著 **[!UICONTROL 端對端串流]**.
+在 [EXPERIENCE PLATFORMUI](https://platform.adobe.com)，选择 **[!UICONTROL 监测]** 左侧导航菜单，后面是 **[!UICONTROL 端到端的流式传输]**.
 
-此 **[!UICONTROL 端對端串流]** 便會顯示「監督」頁面。 此工作區提供顯示接收串流事件的速率的圖表 [!DNL Platform]，此圖表顯示已順利處理之串流事件的速率 [[!DNL Real-Time Customer Profile]](../../profile/home.md)以及傳入資料的詳細清單。
+此 **[!UICONTROL 端到端的流式传输]** 此时将显示“监视”页。 此工作区提供了一个图形，其中显示接收流式事件的速率 [!DNL Platform]，此图表显示由成功处理的流式处理事件的速率 [[!DNL Real-Time Customer Profile]](../../profile/home.md)以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
-根據預設，最上層圖表會顯示過去七天的擷取率。 您可以選取醒目提示的按鈕，調整此日期範圍以顯示不同的時段。
+默认情况下，顶部图表显示过去7天的摄取速率。 通过选择高亮显示的按钮，可以调整此日期范围以显示各种时间段。
 
 ![](../images/quality/monitor-data-flows/events-received.png)
 
-下方圖表顯示成功處理串流事件的速率 [!DNL Profile] 過去七天內。 您可以選取醒目提示的按鈕，調整此日期範圍以顯示不同的時段。
+下面的图表显示按以下方式成功处理流式事件的速率 [!DNL Profile] 过去七天。 通过选择高亮显示的按钮，可以调整此日期范围以显示各种时间段。
 
 >[!NOTE]
 >
->為了讓資料顯示在此圖表上，資料必須 **明確** 已啟用： [!DNL Profile]. 若要瞭解如何啟用串流資料的 [!DNL Profile]，閱讀 [資料集使用手冊](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>为了让数据显示在此图表上，数据必须 **明确** 已启用 [!DNL Profile]. 了解如何为以下项启用流数据 [!DNL Profile]，请阅读 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
 
 ![](../images/quality/monitor-data-flows/ingested-by-profile.png)
 
-圖表下方是與上方顯示之日期範圍相對應的所有串流擷取記錄清單。 每個列出的批次都會顯示其ID、資料集名稱、上次更新時間、批次中的記錄數以及錯誤數（如果存在）。 您可以選取任何記錄，以取得有關該記錄的詳細資訊。
+图形下方是与上面显示的日期范围对应的所有流摄取记录的列表。 每个列出的批次都会显示其ID、数据集名称、上次更新时间、批次中的记录数以及错误数（如果存在）。 您可以选择任何记录，以了解有关该记录的更多详细信息。
 
 ![](../images/quality/monitor-data-flows/streams.png)
 
-### 檢視串流記錄
+### 查看流记录
 
-檢視成功串流記錄的詳細資訊時，會顯示擷取的記錄數、檔案大小以及擷取的開始和結束時間等資訊。
+查看成功流式传输记录的详细信息时，会显示所摄取的记录数、文件大小以及摄取的开始和结束时间等信息。
 
 ![](../images/quality/monitor-data-flows/successful-streaming.png)
 
-失敗的串流記錄的詳細資訊會顯示與成功記錄相同的資訊。
+失败的流记录详细信息显示的信息与成功记录的信息相同。
 
 ![](../images/quality/monitor-data-flows/failed-batch.png)
 
-此外，失敗的記錄會提供處理批次時發生之錯誤的詳細資料。 在以下範例中，轉換或驗證資料時發生剖析錯誤。
+此外，失败记录会提供有关处理批次时发生的错误的详细信息。 在下面的示例中，在转换或验证数据时发生了解析错误。
 
 >[!NOTE]
 >
->如果擷取的列有錯誤，這些列會 **not** 會遭到捨棄，除非產生的訊息導致無效的XDM。
+>如果摄取的行中存在错误，则这些行将 **非** 将被丢弃，除非生成的消息导致无效的XDM。
 
 ![](../images/quality/monitor-data-flows/failed-batch-error.png)
 
-## 監控批次端對端資料擷取
+## 监控批量端到端数据摄取
 
-在 [[!DNL Experience Platform UI]](https://platform.adobe.com)，選取 **[!UICONTROL 監視]** ，位於左側導覽功能表。
+在 [[!DNL Experience Platform UI]](https://platform.adobe.com)，选择 **[!UICONTROL 监测]** 左侧导航菜单。
 
-此 **[!UICONTROL 批次端對端]** 「監督」頁面隨即顯示，顯示先前擷取的批次清單。 您可以選取任何批次以取得該記錄的詳細資訊。
+此 **[!UICONTROL 批量端到端]** 此时将显示“监视”页面，其中显示之前摄取的批的列表。 您可以选择任何批次，以了解有关该记录的更多详细信息。
 
 ![](../images/quality/monitor-data-flows/batch-monitoring.png)
 
-### 檢視批次
+### 查看批次
 
-檢視成功批次的詳細資訊時，會顯示擷取的記錄數、檔案大小以及擷取的開始和結束時間等資訊。
+查看成功批次的详细信息时，会显示所摄取的记录数、文件大小以及摄取的开始和结束时间等信息。
 
 ![](../images/quality/monitor-data-flows/successful-batch.png)
 
-失敗批次的詳細資訊會顯示與成功批次相同的資訊，以及失敗記錄數的增加。
+失败批次的详细信息显示与成功批次相同的信息，以及失败记录数。
 
 ![](../images/quality/monitor-data-flows/failed-batch.png)
 
-此外，失敗的批次會提供處理批次時發生之錯誤的詳細資料。 在以下範例中，擷取的批次發生錯誤，因為它具有個人的身分數量上限。
+此外，失败的批次会提供有关处理批次时发生的错误的详细信息。 在下面的示例中，摄取的批次出错，因为它具有人员的最大身份数。
 
 >[!NOTE]
 >
->如果擷取的列有錯誤，這些列會 **not** 會遭到捨棄，除非產生的訊息導致無效的XDM。
+>如果摄取的行中存在错误，则这些行将 **非** 将被丢弃，除非生成的消息导致无效的XDM。
 
 ![](../images/quality/monitor-data-flows/failed-streaming-error.png)
