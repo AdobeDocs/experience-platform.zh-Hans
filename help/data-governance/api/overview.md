@@ -1,53 +1,53 @@
 ---
-keywords: Experience Platform；首頁；熱門主題
+keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 原則服務API指南
-description: 原則服務API可讓開發人員管理Experience Platform中的資料使用標籤和原則。 参阅本指南，了解如何使用 API 执行关键操作。
+title: 策略服务API指南
+description: 策略服务API允许开发人员管理Experience Platform中的数据使用标签和策略。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 0c09db51d97bc0cf321c5d2fd57c42d194b25d5f
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '547'
 ht-degree: 3%
 
 ---
 
 # [!DNL Policy Service] API指南
 
-Adobe Experience Platform資料控管可讓您管理客戶資料，並確保遵守適用於資料使用的法規、限制和原則。 它在以下方面發揮著關鍵作用 [!DNL Experience Platform] 在不同的層級，包括編目、資料譜系、資料使用標籤、資料使用原則，以及控制行銷動作的資料使用。
+Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在以下方面发挥着关键作用 [!DNL Experience Platform] 在不同的级别，包括编目、数据谱系、数据使用标签、数据使用策略和控制营销活动的数据使用。
 
-此 [!DNL Policy Service] API提供數個端點，可讓您以程式設計方式管理資料使用標籤和原則，並評估違反原則的行銷動作。 這些端點概述如下。 如需詳細資訊，請參閱個別端點指南，並參閱 [快速入門手冊](./getting-started.md) 如需必要標題的重要資訊，請參閱範例API呼叫等。
+此 [!DNL Policy Service] API提供了多个端点，允许您以编程方式管理数据使用标签和策略，并评估营销操作是否违反策略。 这些端点概述如下。 有关详细信息，请访问各个端点指南，并参阅 [快速入门指南](./getting-started.md) 有关所需标头的重要信息，请阅读示例API调用等。
 
-若要檢視所有可用的端點和CRUD作業，請造訪 [[!DNL Policy Service] API swagger](https://www.adobe.io/experience-platform-apis/references/policy-service/).
+要查看所有可用的端点和CRUD操作，请访问 [[!DNL Policy Service] API swagger](https://www.adobe.io/experience-platform-apis/references/policy-service/).
 
 ## 标签
 
-資料使用標籤可讓您根據套用至該資料的使用原則來分類資料集和欄位。 標籤可隨時套用，讓您靈活選擇控管資料的方式。 最佳實務建議在資料內嵌至後立即加上標籤 [!DNL Experience Platform]，或在資料可用於以下專案時立即啟用： [!DNL Platform]. 您可以使用建立、檢視、編輯和刪除標籤 `/labels` 端點。 若要瞭解如何使用此端點，請造訪 [標籤端點指南](./labels.md).
+将数据使用标签应用于架构，以根据应用于该数据的使用策略对数据集和字段进行分类。 可以随时应用标签，从而灵活地选择管理数据的方式。 最佳实践鼓励在将数据摄取到其中后立即标记数据 [!DNL Experience Platform]，或当数据可用于以下项目时 [!DNL Platform]. 您可以使用创建、查看、编辑和删除标签 `/labels` 端点。 要了解如何使用此端点，请访问 [标签端点指南](./labels.md).
 
-## 行銷動作
+## 营销活动
 
-在資料控管架構中，行銷動作（也稱為行銷使用案例）是 [!DNL Experience Platform] 資料消費者可能會採取某些措施，而您的組織想要針對這些措施限制資料使用。 如需有關使用行銷動作的詳細資訊，請參閱 [行銷動作端點指南](./marketing-actions.md).
+在数据管理框架的上下文中，营销操作（也称为营销用例）是 [!DNL Experience Platform] 数据使用者可能会采取一些措施，贵组织希望针对这些措施限制数据的使用。 有关使用营销活动的详细信息，请参阅 [营销操作端点指南](./marketing-actions.md).
 
 ## 支持
 
-資料控管原則是描述允許或限制您對內資料執行何種行銷動作的規則 [!DNL Experience Platform].
+数据治理策略是描述允许或限制您对内数据执行的营销操作类型的规则 [!DNL Experience Platform].
 
 >[!NOTE]
 >
->資料控管原則與存取控制原則不應混淆，存取控制原則會決定組織中特定Platform使用者可存取的特定資料屬性。 請參閱指南： [基於屬性的存取控制](../../access-control/abac/overview.md) 以取得詳細資訊。
+>数据治理策略不应与访问控制策略混淆，访问控制策略决定了组织中某些Platform用户可以访问的特定数据属性。 请参阅指南，网址为 [基于属性的访问控制](../../access-control/abac/overview.md) 了解更多信息。
 
-資料治理原則的定義如下：
+数据治理策略由以下内容定义：
 
-1. 特定行銷動作
-1. 限制動作執行的資料使用標籤
+1. 特定的营销活动
+1. 操作无法执行的数据使用标签
 
-若要瞭解如何在API中管理原則，請參閱 [原則端點指南](./policies.md)
+要了解如何在API中管理策略，请参阅 [策略端点指南](./policies.md)
 
 ## 评估
 
-將資料使用標籤套用至 [!DNL Platform] 資料集和資料使用原則已針對這些標籤定義了行銷動作，資料控管功能可讓您強制執行這些原則並防止構成原則違規的資料作業。
+一旦数据使用标签应用于平台架构，并且针对这些标签为营销操作定义了数据使用策略，则数据管理功能允许您实施这些策略并阻止构成策略违规的数据操作。
 
-此 [!DNL Policy Service] API提供端點，可讓您根據資料集或資料使用標籤的任意組合來測試行銷動作，以檢查是否發生任何原則違規。 接著，您可以根據API回應，在體驗應用程式中設定通訊協定，以適當地強制資料使用原則相容。 請參閱 [評估端點指南](./evaluation.md) 以取得詳細資訊。
+此 [!DNL Policy Service] API提供了一些端点，可让您根据数据集或数据使用标签的任意组合来测试营销操作，以检查是否发生了任何违反策略的情况。 然后，您可以根据API响应，在体验应用程序中设置协议，以适当强制实施数据使用策略合规性。 请参阅 [评估端点指南](./evaluation.md) 了解更多信息。
 
 ## 后续步骤
 
-若要開始使用進行呼叫 [!DNL Policy Service] API，請閱讀 [快速入門手冊](./getting-started.md) 然後選取其中一個端點指南，以瞭解如何使用特定端點。 若要使用標籤和原則，請使用 [!DNL Experience Platform] UI，請參閱 [標籤使用手冊](../labels/user-guide.md) 和 [原則使用手冊](../policies/user-guide.md)（分別）。
+要开始使用 [!DNL Policy Service] API，请阅读 [快速入门指南](./getting-started.md) 然后选择其中一个端点指南以了解如何使用特定端点。 要使用标签和策略 [!DNL Experience Platform] UI，请参阅 [标签用户指南](../labels/user-guide.md) 和 [策略用户指南](../policies/user-guide.md)，则不会显示任何内容。
