@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform保證使用者存取
-description: 本指南說明如何透過Admin Console管理Adobe Experience Platform Assurance，以保留使用者對Assurance的存取權。
+title: Adobe Experience Platform保证用户访问权限
+description: 本指南说明如何通过Admin Console管理Adobe Experience Platform Assurance，以保留用户对Assurance的访问权限。
 exl-id: b26ff857-5486-4391-b5a0-1e5cb05a1f11
 source-git-commit: 95e5dad03741d06ee33a10c48b481b792140f7f1
 workflow-type: tm+mt
@@ -13,20 +13,20 @@ ht-degree: 3%
 
 >[!WARNING]
 >
->請注意，使用者對Assurance的存取權正在變更。 由於Assurance讓Beta版(Project Griffon)可供所有Adobe Experience Cloud客戶普遍使用（作為保證） — 將透過以下方式管理對Assurance的存取 [Admin Console](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
+>请注意，用户对Assurance的访问权限正在更改。 由于Assurance使Beta版（项目Griffon）可供所有Adobe Experience Cloud客户普遍使用（作为Assurance），因此Assurance的访问将通过 [Admin Console](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
 >
->如果您需要協助，請聯絡貴公司的Adobe Experience Cloud管理員。
+>如果您需要帮助，请联系贵公司的Adobe Experience Cloud管理员。
 
-若要接收或維持對Assurance的不間斷存取，請確定已在Admin Console中完成下列步驟：
+要接收或保持对Assurance的无中断访问，请确保在Admin Console中完成以下步骤：
 
-## 透過產品設定檔新增使用者至Experience Platform
+## 通过产品配置文件将用户添加到Experience Platform
 
-若要將使用者新增至產品設定檔，請登入Admin Console並選取 **新增使用者**.
+要将用户添加到产品配置文件，请登录Admin Console并选择 **添加用户**.
 
-![會反白顯示「新增使用者」按鈕。](./images/get-access/product-profile-add-users.png)
+![“添加用户”按钮会突出显示。](./images/get-access/product-profile-add-users.png)
 
-此 **新增使用者至您的團隊** 對話方塊隨即顯示。 您可以在此對話方塊中輸入要新增之使用者的詳細資訊。 輸入使用者的電子郵件地址、名字（選用）和姓氏（選用）。
+此 **将用户添加到您的团队** 对话框。 在此对话框中，您可以输入要添加的用户的详细信息。 输入用户的电子邮件地址、名字（可选）和姓氏（可选）。
 
-選取鉛筆圖示以選擇產品和使用者群組。 從此處選取 **Adobe Experience Platform**，則 **AEP-Default-All-Users**，後接 **儲存**.
+选择铅笔图标以选择产品和用户组。 从此处选择 **Adobe Experience Platform**，则 **AEP-Default-All-Users**，后接 **保存**.
 
-![隨即顯示對話方塊，其中顯示如何新增產品設定檔。](./images/get-access/product-profile-add-profile.png)
+![此时将显示显示如何添加产品配置文件的对话框。](./images/get-access/product-profile-add-profile.png)
