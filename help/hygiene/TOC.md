@@ -12,17 +12,17 @@ ht-degree: 50%
 ---
 
 
-# 数据卫生 {#hygiene}
+# 資料衛生 {#hygiene}
 
-* [数据卫生概述](./home.md)
-* 数据卫生UI {#ui}
+* [資料檢疫概觀](./home.md)
+* 資料衛生UI {#ui}
    * [概述](./ui/overview.md)
-   * [浏览现有工作单](./ui/browse.md)
-   * [管理数据集过期日期](./ui/dataset-expiration.md)
-   * [删除记录](./ui/record-delete.md)
-* 数据卫生API {#api}
+   * [瀏覽現有工單](./ui/browse.md)
+   * [管理資料集有效期](./ui/dataset-expiration.md)
+   * [刪除記錄](./ui/record-delete.md)
+* 資料衛生API {#api}
    * [概述](./api/overview.md)
-   * [数据集过期](./api/dataset-expiration.md)
-   * [记录删除](./api/jobs.md)
-   * [记录删除](./api/workorder.md)
-   * [配额](./api/quota.md)
+   * [資料集有效期](./api/dataset-expiration.md)
+   * [記錄刪除](./api/jobs.md)
+   * [記錄刪除](./api/workorder.md)
+   * [配額](./api/quota.md)

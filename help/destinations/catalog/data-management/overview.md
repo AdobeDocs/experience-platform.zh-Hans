@@ -1,7 +1,7 @@
 ---
-keywords: dmp目标；DIL;audience manager dmp扩展；dmp扩展；数据管理平台；数据管理平台目标
-title: 数据管理平台(DMP)目标概述
-description: 数据管理平台(DMP)使广告商、出版商和代理能够构建独特的受众配置文件，识别其最有价值的区段，并在任何数字渠道中使用它们。 这样，您就可以创建消费者配置文件的真实360视图，并构建和激活有意义的受众。
+keywords: dmp目的地；DIL；audience manager dmp擴充功能；dmp擴充功能；資料管理平台；資料管理平台目的地
+title: 資料管理平台(DMP)目的地概觀
+description: 資料管理平台(DMP)可讓廣告商、發佈商和代理建立獨一無二的對象設定檔、識別他們最有價值的區段，並在任何數位頻道中使用這些區段。 這可讓您為消費者設定檔建立真正的360度檢視，建置並啟用有意義的對象。
 exl-id: 1c925edc-b31e-440f-bdd9-37aa399565d5
 source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
@@ -10,10 +10,10 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Data Management Platform] (DMP)目标概述 {#dmp-destinations}
+# [!DNL Data Management Platform] (DMP)目的地概觀 {#dmp-destinations}
 
-[!DNL Data Management Platforms] (DMP)使广告商、出版商和代理能够构建独特的受众配置文件，识别其最有价值的区段，并在任何数字渠道中使用它们。这样，您就可以创建消费者配置文件的真实360视图，并构建和激活有意义的受众。
+[!DNL Data Management Platforms] (DMP)可讓廣告商、發佈商和代理建立獨一無二的對象設定檔、識別他們最有價值的區段，並在任何數位頻道中使用這些區段。 這可讓您為消費者設定檔建立真正的360度檢視，建置並啟用有意義的對象。
 
-目前，Adobe Experience Platform支持下面列出的数据管理平台(DMP)目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，Adobe Experience Platform支援下列資料管理平台(DMP)目的地。 如需如何連線至這些目的地的詳細資訊，請參閱個別連結：
 
-* [Audience ManagerDIL扩展](aam-dil-extension.md)
+* [Audience ManagerDIL擴充功能](aam-dil-extension.md)

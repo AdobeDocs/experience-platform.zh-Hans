@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；日期范围
+keywords: Experience Platform；首頁；熱門主題；日期範圍
 solution: Experience Platform
-title: 可观察性分析API快速入门
-description: 可观察性分析API允许您为各种Adobe Experience Platform功能检索量度数据。 本文档简要介绍在尝试调用可观察性分析API之前您需要了解的核心概念。
+title: Observability Insights API快速入門
+description: 「可觀察性深入分析API」可讓您擷取各種Adobe Experience Platform功能的量度資料。 本檔案會介紹您在嘗試呼叫Observability Insights API之前需要瞭解的核心概念。
 exl-id: 3b120bd6-155d-467e-b98e-05478f8a4cc5
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
@@ -11,26 +11,26 @@ ht-degree: 0%
 
 ---
 
-# 入门 [!DNL Observability Insights] API
+# 開始使用 [!DNL Observability Insights] API
 
-的 [!DNL Observability Insights] API允许您检索各种Adobe Experience Platform功能的量度数据。 本文档简要介绍在尝试调用 [!DNL Observability Insights] API。
+此 [!DNL Observability Insights] api可讓您擷取各種Adobe Experience Platform功能的量度資料。 本檔案會介紹您在嘗試呼叫「 」之前需要瞭解的核心概念。 [!DNL Observability Insights] API。
 
-## 读取示例API调用
+## 讀取範例API呼叫
 
-的 [!DNL Observability Insights] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关文档中用于示例API调用的约定的信息，请参阅 [Experience Platform疑难解答指南](../../landing/troubleshooting.md).
+此 [!DNL Observability Insights] API檔案提供範例API呼叫，示範如何格式化請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱中如何讀取範例API呼叫的區段 [Experience Platform疑難排解指南](../../landing/troubleshooting.md).
 
-## 必需标题
+## 必要的標頭
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中进行的沙盒的名称。 有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱。 如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 ## 后续步骤
 
-要开始使用 [!DNL Observability Insights] API，继续 [metrics endpoint指南](./metrics.md).
+若要開始使用進行呼叫 [!DNL Observability Insights] API，繼續前往 [量度端點指南](./metrics.md).

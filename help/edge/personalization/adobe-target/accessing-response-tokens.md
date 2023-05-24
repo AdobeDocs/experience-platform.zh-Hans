@@ -1,20 +1,20 @@
 ---
-title: 使用Adobe Experience Platform Web SDK访问响应令牌
-description: 了解如何使用Adobe Experience Platform Web SDK访问响应令牌。
-keywords: 个性化；Target;Adobe Target;renderDecisions;sendEvent;decisionScopes;result.decisions，响应令牌；
-source-git-commit: 4bddd9f23ae885468148d1592af219290d6fafd9
+title: 使用Adobe Experience Platform Web SDK存取回應Token
+description: 瞭解如何使用Adobe Experience Platform Web SDK存取回應Token。
+keywords: 個人化；target；adobe target；renderDecisions；sendEvent；decisionScopes；result.decisions，回應Token；
+exl-id: fc9d552a-29ba-4693-9ee2-599c7bc76cdf
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '271'
 ht-degree: 0%
 
 ---
 
+# 存取回應Token
 
-# 访问响应令牌
+Adobe Target傳回的個人化內容包括 [回應Token](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，此為有關活動、選件、體驗、使用者設定檔、地理資訊等專案的詳細資訊。 這些詳細資料可與協力廠商工具共用，或用於偵錯。 可在Adobe Target使用者介面中設定回應Token。
 
-从Adobe Target返回的个性化内容包括[响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，这些令牌提供了有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可以与第三方工具共享或用于调试。 可以在Adobe Target用户界面中配置响应令牌。
-
-要访问任何个性化内容，请在发送事件时提供回调函数。 SDK在收到来自服务器的成功响应后，将调用此回调。 将为您的回调提供一个`result`对象，该对象可能包含包含任何返回的个性化内容的`propositions`属性。 以下是提供回调函数的示例。
+若要存取任何個人化內容，請在傳送事件時提供回呼函式。 SDK收到來自伺服器的成功回應後，就會呼叫此回呼。 您的回撥將會獲得 `result` 物件，其中可能包含 `propositions` 包含任何傳回的個人化內容的屬性。 以下是提供回呼函式的範例。
 
 ```javascript
 alloy("sendEvent", {
@@ -27,19 +27,19 @@ alloy("sendEvent", {
   });
 ```
 
-在此示例中， `result.propositions`（如果存在）是一个数组，其中包含与事件相关的个性化建议。 有关`result.propositions`内容的更多信息，请参阅[渲染个性化内容](../rendering-personalization-content.md) 。
+在此範例中， `result.propositions`，如果存在的話，是包含與事件相關之個人化主張的陣列。 請參閱 [呈現個人化內容](../rendering-personalization-content.md) 以取得有關以下專案的內容的詳細資訊： `result.propositions`.
 
-假设您要收集所有由Web SDK自动呈现的主张中的所有活动名称，并将它们推送到单个数组中。 然后，您可以将单个阵列发送给第三方。 在这种情况下：
+假設您要從Web SDK自動轉譯的所有主張中收集所有活動名稱，並將其推送到單一陣列中。 然後，您可以將單一陣列傳送給協力廠商。 在此案例中：
 
-1. 从`result`对象中提取命题。
-1. 回答每个建议。
-1. 确定SDK是否提出了建议。
-1. 如果是，则循环讨论建议中的每个项目。
-1. 从`meta`属性中检索活动名称，该属性是包含响应令牌的对象。
-1. 将活动名称推送到数组中。
-1. 将活动名称发送给第三方。
+1. 從擷取主張 `result` 物件。
+1. 循環瀏覽每個主張。
+1. 判斷SDK是否呈現主張。
+1. 如果是，則重複檢查主張中的每個專案。
+1. 從擷取活動名稱 `meta` 屬性，包含回應Token的物件。
+1. 將活動名稱推入陣列。
+1. 將活動名稱傳送給第三方。
 
-您的代码如下所示：
+您的程式碼如下所示：
 
 ```javascript
 alloy("sendEvent", {
@@ -66,5 +66,3 @@ alloy("sendEvent", {
     // them in some other way.
   });
 ```
-
-

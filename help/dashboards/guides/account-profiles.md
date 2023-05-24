@@ -1,6 +1,6 @@
 ---
-title: Account Profiles Dashboard指南
-description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织B2B帐户配置文件的重要信息。
+title: 帳戶設定檔儀表板指南
+description: Adobe Experience Platform提供控制面板，讓您檢視有關組織B2B帳戶設定檔的重要資訊。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
@@ -9,103 +9,103 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL 帐户配置文件] 仪表板
+# [!UICONTROL 帳戶設定檔] 儀表板
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功能板可以查看有关帐户配置文件的重要信息，这些信息是在每日快照期间捕获的。 本指南概述了如何访问和使用 [!UICONTROL 帐户配置文件] 功能板，并提供有关功能板中显示的可视化的更多信息。
+Adobe Experience Platform使用者介面(UI)提供了一個儀表板，您可以通過該儀表板檢視有關您的帳戶設定檔的重要資訊，如每日快照期間所擷取。 本指南概述如何存取及使用 [!UICONTROL 帳戶設定檔] UI中的控制面板，並提供控制面板中所顯示視覺效果的詳細資訊。
 
-有关帐户用户档案用户界面中所有功能的概述，请访问 [帐户配置文件UI指南](../../rtcdp/accounts/account-profile-ui-guide.md).
+如需帳戶設定檔使用者介面中所有功能的概述，請造訪 [帳戶設定檔UI指南](../../rtcdp/accounts/account-profile-ui-guide.md).
 
 ## 快速入门
 
-您必须有权 [Adobe Real-time Customer Data Platform B2B版](../../rtcdp/b2b-overview.md) 以访问B2B [!UICONTROL 帐户配置文件] 功能板。
+您必須有權使用 [Adobe Real-time Customer Data Platform B2B版本](../../rtcdp/b2b-overview.md) 以存取B2B [!UICONTROL 帳戶設定檔] 儀表板。
 
-## 帐户配置文件数据
+## 帳戶設定檔資料
 
-的 [!UICONTROL 帐户配置文件] 功能板显示来自营销渠道中多个来源以及贵组织当前用于存储客户帐户信息的各种系统的统一帐户信息快照。
+此 [!UICONTROL 帳戶設定檔] dashboard可顯示您的行銷管道的多個來源，以及貴組織目前用來儲存客戶帳戶資訊的各種系統的整合帳戶資訊快照。
 
-快照中的配置文件数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本， [!UICONTROL 帐户配置文件] 功能板不会实时更新。
-
->[!NOTE]
->
->自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
-
-## 浏览 [!UICONTROL 帐户配置文件] 仪表板
-
-导航到 [!UICONTROL 帐户配置文件] 功能板中，选择 **[!UICONTROL 用户档案]** 在 [!UICONTROL 帐户] 中。
-
-![左侧导航中突出显示了“帐户配置文件”的Platform UI，并显示了“概述”选项卡。](../images/account-profiles/account-profiles-dashboard.png)
-
-从 [!UICONTROL 帐户配置文件] 功能板 [浏览摄取到您组织的帐户配置文件](#browse-account-profiles)或 [使用小组件快速查看您的帐户配置文件数据的整个](#standard-widgets) 可视化数据的各个方面。
-
-## 浏览帐户配置文件 {#browse-account-profiles}
-
-的 [!UICONTROL 浏览] 选项卡允许您使用从连接的企业源中的帐户ID或直接输入源详细信息来搜索和查看摄取到您组织的只读帐户配置文件。 从此处，您可以看到属于帐户配置文件的重要信息，包括其名称、行业、收入和区段等。
-
-选择 [!UICONTROL 配置文件ID] 从 [!UICONTROL 浏览] 选项卡 [!UICONTROL 详细信息] 选项卡。
-
-![显示结果的“帐户配置文件”浏览选项卡突出显示了配置文件ID。](../images/account-profiles/account-profiles-browse-tab.png)
-
-在 [!UICONTROL 详细信息] 选项卡已从多个配置文件片段合并到一起，以形成单个帐户的单个视图。 请参阅 [浏览Adobe Real-time Customer Data Platform的帐户配置文件](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 要详细了解Platform UI中帐户配置文件查看功能。
-
-## 的 [!UICONTROL 帐户配置文件] [!UICONTROL 概述] {#overview}
-
-的 [!UICONTROL 概述] 选项卡由小组件组成，小组件提供只读量度以传递有关帐户配置文件的重要信息。 选择 **[!UICONTROL 修改功能板]** 更改 [!UICONTROL 概述] 来访问Advertising Cloud帮助。
-
-![“帐户配置文件”概述选项卡，其中突出显示了“修改”功能板。](../images/account-profiles/modify-dashboard.png)
-
-请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 以了解更多。
-
-## 标准小组件 {#standard-widgets}
-
-Adobe提供了可用于显示与帐户配置文件相关的不同量度的标准小组件。
-
-要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
-
-* [按行业开列的帐户总数](#total-accounts-by-industry)
-* [添加了帐户配置文件](#account-profiles-added)
-* [预测评分分布](#predictive-scoring-distribution)
-* [预测评分主要影响因素](#predictive-scoring-top-influential-factors)
-
-### 按行业开列的帐户总数 {#total-accounts-by-industry}
-
-此小组件以单个量度显示帐户总数，并使用圆环图来说明构成整体数量的行业的计数比例大小。 键可为构成圆环图的不同行业提供颜色编码信息。
-
-当光标悬停在圆环图的相应部分上时，不同行业的单个计数将显示在对话框中。
-
-![按行业小组件划分的帐户总数。](../images/account-profiles/total-accounts-by-industry-widget.png)
-
-### 添加了帐户配置文件 {#account-profiles-added}
-
-此小组件使用颜色编码条形图来说明在给定时间段内添加到帐户的用户档案计数，以及构成这些添加用户档案的不同行业的比例。 行业采用颜色编码，并且键值为构成条形图的不同行业提供颜色编码信息。 从小组件下拉菜单中选择分析周期。 条形图可在30天、90天和12个月期间进行可视化。
+快照中的設定檔資料顯示的資料與拍攝快照的特定時間點完全相同。 換言之，快照不是資料的近似或樣本，而且 [!UICONTROL 帳戶設定檔] 儀表板未即時更新。
 
 >[!NOTE]
 >
->由于用户档案仅添加到帐户且从不删除，因此在一段时间内添加的用户档案数量最少为0。
+>自建立快照以來對資料所做的任何變更或更新，都不會反映在控制面板中，直到建立下一個快照為止。
 
-![帐户配置文件添加了小组件。](../images/account-profiles/accounts-profiles-added-widget.png)
+## 探索 [!UICONTROL 帳戶設定檔] 儀表板
 
-### 预测评分分布 {#predictive-scoring-distribution}
+若要導覽至 [!UICONTROL 帳戶設定檔] 在Platform UI中，選取 **[!UICONTROL 設定檔]** 在 [!UICONTROL 帳戶] ，位於左側導覽面板中。
 
-的 [!UICONTROL 预测评分分布] 小组件显示所有帐户配置文件的分数分布，以帮助您快速了解销售渠道的运行状况。 评分数据通过圆环图和列图传递。
+![左側導覽中具有帳戶設定檔的Platform UI會醒目提示，並顯示「概觀」索引標籤。](../images/account-profiles/account-profiles-dashboard.png)
 
-圆环图说明了在购买时段的高倾向、中倾向和低倾向中，帐户配置文件总数所占的比例。 此键值提供了有关颜色编码部分的更多详细信息，包括评分时段范围以及该范围中的帐户用户档案数。
+從 [!UICONTROL 帳戶設定檔] 控制面板，您可以 [瀏覽擷取到您組織的帳戶設定檔](#browse-account-profiles)，或 [使用Widget一目瞭然地檢視您的帳戶設定檔資料](#standard-widgets) 以視覺效果呈現資料的各方面。
 
-列图提供了更精细的评分划分。 每列显示20个5点增量存储段中每个存储段中的帐户配置文件数。
+## 瀏覽帳戶設定檔 {#browse-account-profiles}
 
-利用小组件中的下拉菜单，可选择帐户评分模型。
+此 [!UICONTROL 瀏覽] 索引標籤可讓您使用來自已連線企業來源的帳戶ID或直接輸入來源詳細資訊，來搜尋及檢視擷取到您組織的唯讀帳戶設定檔。 從這裡，您可以檢視屬於帳戶設定檔的重要資訊，包括其名稱、產業、收入、區段等。
 
-![预测评分分发小组件。](../images/account-profiles/predictive-scoring-distribution.png)
+選取 [!UICONTROL 設定檔ID] 結果顯示在 [!UICONTROL 瀏覽] 標籤以開啟 [!UICONTROL 詳細資料] 帳戶設定檔的標籤。
 
-### 预测评分主要影响因素 {#predictive-scoring-top-influential-factors}
+![「帳戶設定檔」瀏覽標籤會顯示結果，並反白顯示「設定檔ID」。](../images/account-profiles/account-profiles-browse-tab.png)
 
-的 [!UICONTROL 预测评分主要影响因素] 小组件可帮助您了解有助于提升每个倾向时段得分的最重要因素。
+顯示在「 」上的帳戶設定檔資訊 [!UICONTROL 詳細資料] 索引標籤已從多個設定檔片段合併在一起，以形成個別帳戶的單一檢視。 請參閱以下說明檔案： [在Adobe Real-time Customer Data Platform中瀏覽帳戶設定檔](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 以進一步瞭解Platform UI中的帳戶設定檔檢視功能。
 
-此小组件显示高倾向、中倾向和低倾向各个时段的主要影响因素。 每个影响因素对应的条形图表示该倾向时段中包含特定影响因素的帐户配置文件百分比。
+## 此 [!UICONTROL 帳戶設定檔] [!UICONTROL 概觀] {#overview}
 
-利用小组件中的下拉菜单，可选择帐户评分模型。
+此 [!UICONTROL 概觀] tab由widget組成，提供唯讀量度，傳達有關您帳戶設定檔的重要資訊。 選取 **[!UICONTROL 修改儀表板]** 變更 [!UICONTROL 概觀] 移動Widget並調整其大小以定位。
 
-![预测性评分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
+![反白顯示「修改儀表板」的「帳戶設定檔」概述標籤。](../images/account-profiles/modify-dashboard.png)
+
+請參考以下檔案： [修改儀表板](../customize/modify.md) 和 [Widget程式庫概觀](../customize/widget-library.md) 以深入瞭解。
+
+## 標準Widget {#standard-widgets}
+
+Adobe提供標準的Widget，您可用來視覺化與帳戶設定檔相關的各種量度。
+
+若要進一步瞭解每個可用的標準Widget，請從下列清單中選取Widget的名稱：
+
+* [依產業區分的帳戶總數](#total-accounts-by-industry)
+* [帳戶設定檔已新增](#account-profiles-added)
+* [預測性評分分佈](#predictive-scoring-distribution)
+* [預測性評分主要影響因素](#predictive-scoring-top-influential-factors)
+
+### 依產業區分的帳戶總數 {#total-accounts-by-industry}
+
+此Widget會顯示單一量度中的帳戶總數，並使用環圈圖來說明組成整體數字之產業中的比例計數大小。 索引鍵為組成環圈圖的不同產業提供色彩編碼資訊。
+
+當游標暫留在環圈圖的個別區段上時，不同產業的個別計數會顯示在對話方塊中。
+
+![依產業Widget區分的帳戶總數。](../images/account-profiles/total-accounts-by-industry-widget.png)
+
+### 帳戶設定檔已新增 {#account-profiles-added}
+
+此Widget使用顏色編碼的長條圖，說明在指定時間內新增到帳戶的設定檔計數，以及構成這些新增設定檔的不同行業比例。 各產業皆採用色彩編碼，而索引鍵則提供橫條圖中各產業所使用的色彩編碼資訊。 從Widget下拉式選單中選取分析期間。 長條圖可以在30天、90天和12個月期間進行視覺化。
+
+>[!NOTE]
+>
+>由於設定檔只會新增至帳戶且永遠不會移除，因此在一段時間內新增的設定檔數量可能最低為零。
+
+![帳戶設定檔已新增Widget。](../images/account-profiles/accounts-profiles-added-widget.png)
+
+### 預測性評分分佈 {#predictive-scoring-distribution}
+
+此 [!UICONTROL 預測性評分分佈] widget會顯示所有帳戶設定檔的分數分佈，協助您一眼瞭解銷售管道的狀況。 評分資料會透過環形圖和直條圖傳送。
+
+環圈圖可說明您的總帳戶設定檔在高、中及低購買值區傾向中的比例。 索引鍵針對以顏色標示的區段提供詳細資訊，包括評分貯體範圍和該範圍內的帳戶設定檔數量。
+
+柱狀圖提供更細微的評分劃分。 每欄顯示20個五點增量貯體中每個貯體中的帳戶設定檔數。
+
+Widget中的下拉式選單可讓您選取帳戶評分模型。
+
+![預測性評分分佈Widget。](../images/account-profiles/predictive-scoring-distribution.png)
+
+### 預測性評分主要影響因素 {#predictive-scoring-top-influential-factors}
+
+此 [!UICONTROL 預測性評分主要影響因素] widget可協助您瞭解驅動每個傾向性貯體分數的最重要因素。
+
+此Widget會顯示每個高、中和低傾向值區的主要影響因素。 每個影響因子的橫條會指出該傾向性貯體中包含特定影響因子的帳戶設定檔百分比。
+
+Widget中的下拉式選單可讓您選取帳戶評分模型。
+
+![預測性評分主要影響因素Widget。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该了解如何找到 [!UICONTROL 帐户配置文件] 功能板。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中将帐户配置文件用作B2B数据一部分的更多信息，请参阅 [帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md) Adobe Real-Time CDP版。
+依照本檔案操作，您現在應該知道如何找到 [!UICONTROL 帳戶設定檔] 儀表板。 您也應該瞭解可用介面工具列中顯示的量度。 若要進一步瞭解如何在Experience PlatformUI中使用帳戶設定檔，請參閱 [帳戶設定檔概述](../../rtcdp/accounts/account-profile-overview.md) 適用於Adobe Real-Time CDP， B2B版本。

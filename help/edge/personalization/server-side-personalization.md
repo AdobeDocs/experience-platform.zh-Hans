@@ -1,7 +1,7 @@
 ---
-title: 使用边缘网络服务器API进行服务器端个性化
-description: 本文演示了如何使用边缘网络服务器API在Web属性上部署服务器端个性化。
-keywords: 个性化；服务器api;边缘网络；服务器端；
+title: 使用Edge Network Server API的伺服器端個人化
+description: 本文示範如何使用Edge Network Server API在網頁屬性上部署伺服器端個人化。
+keywords: 個人化；伺服器api；邊緣網路；伺服器端；
 source-git-commit: 3e7084953a5e158059074c857bfce4940a83661b
 workflow-type: tm+mt
 source-wordcount: '574'
@@ -10,65 +10,65 @@ ht-degree: 2%
 ---
 
 
-# 使用边缘网络服务器API进行服务器端个性化
+# 使用Edge Network Server API的伺服器端個人化
 
 ## 概述 {#overview}
 
-服务器端个性化包括使用 [边缘网络服务器API](../../server-api/overview.md) 以个性化您的Web资产上的客户体验。
+伺服器端個人化涉及使用 [Edge Network Server API](../../server-api/overview.md) 個人化您的Web屬性的客戶體驗。
 
-在本文描述的示例中，使用服务器API在服务器端检索个性化内容。 然后，HTML会根据检索到的个性化内容在服务器端呈现。
+在本文所述的範例中，個人化內容是使用伺服器API在伺服器端擷取。 接著，系統會根據擷取的個人化內容，在伺服器端轉譯HTML。
 
-下表显示了个性化和非个性化内容的示例。
+下表顯示個人化及非個人化內容的範例。
 
-| 不进行个性化的示例页面 | 具有个性化的示例页面 |
+| 沒有個人化的範例頁面 | 具個人化的範例頁面 |
 |---|---|
-| ![未进行个性化的示例网页](assets/plain.png) | ![具有个性化的示例网页](assets/personalized.png) |
+| ![沒有個人化的網頁範例](assets/plain.png) | ![具有個人化的網頁範例](assets/personalized.png) |
 
 ## 注意事项 {#considerations}
 
 ### Cookie {#cookies}
 
-Cookie用于保留用户标识和群集信息。  使用服务器端实施时，应用程序服务器会在请求生命周期中处理这些Cookie的存储和发送。
+Cookie可用來儲存使用者身分和叢集資訊。  使用伺服器端實作時，應用程式伺服器會在請求生命週期中處理這些Cookie的儲存和傳送。
 
-| Cookie | 用途 | 存储者 | 发送者 |
+| Cookie | 用途 | 儲存者 | 傳送者 |
 |---|---|---|---|
-| `kndctr_AdobeOrg_identity` | 包含用户身份详细信息。 | 应用程序服务器 | 应用程序服务器 |
-| `kndctr_AdobeOrg_cluster` | 指示应使用哪个边缘网络群集来执行请求。 | 应用程序服务器 | 应用程序服务器 |
+| `kndctr_AdobeOrg_identity` | 包含使用者身分詳細資訊。 | 应用程序服务器 | 应用程序服务器 |
+| `kndctr_AdobeOrg_cluster` | 指出應使用哪一個Edge Network叢集來執行要求。 | 应用程序服务器 | 应用程序服务器 |
 
-### 请求投放 {#request-placement}
+### 請求位置 {#request-placement}
 
-需要个性化请求才能获取建议并发送显示通知。 使用服务器端实施时，应用程序服务器会向边缘网络服务器API发出这些请求。
+需要個人化請求才能取得主張並傳送顯示通知。 使用伺服器端實作時，應用程式伺服器會向Edge Network Server API提出這些要求。
 
-| 请求 | 制作者 |
+| 请求 | 製作者 |
 |---|---|
-| 交互请求以检索主张 | 应用程序服务器调用边缘网络服务器API。 |
-| 用于发送显示通知的交互请求 | 应用程序服务器调用边缘网络服务器API。 |
+| 擷取主張的互動請求 | 呼叫Edge Network Server API的應用程式伺服器。 |
+| 傳送顯示通知的Interact請求 | 呼叫Edge Network Server API的應用程式伺服器。 |
 
-## 示例应用程序 {#sample-app}
+## 範例應用程式 {#sample-app}
 
-下面描述的过程使用一个示例应用程序，您可以将该应用程序用作实验和了解此类个性化的更多信息的起点。
+以下說明的程式使用範例應用程式，您可以將其作為實驗起點，並深入瞭解此型別的個人化。
 
-您可以下载此示例并根据自己的需要对其进行自定义。 例如，您可以更改环境变量，以便示例应用程序从您自己的Experience Platform配置中提取选件。
+您可以下載此範例，並根據自己的需求加以自訂。 例如，您可以變更環境變數，讓範例應用程式從您自己的Experience Platform設定中提取選件。
 
-为此，请打开 `.env` 文件，并根据您的配置修改变量。 重新启动示例应用程序，您便可以尝试使用自己的个性化内容。
+若要這麼做，請開啟 `.env` 檔案存放庫的根目錄，並根據您的設定修改變數。 重新啟動範例應用程式，您就可以使用自己的個人化內容進行實驗了。
 
-### 运行示例 {#running-sample}
+### 執行範例 {#running-sample}
 
-按照以下步骤运行示例应用程序。
+請依照下列步驟執行範例應用程式。
 
-1. 克隆 [此存储库](https://github.com/adobe/alloy-samples) 到本地机器。
-2. 打开终端并导航到 `personalization-server-side` 文件夹。
-3. 运行 `npm install`.
-4. 运行 `npm start`.
-5. 打开Web浏览器并导航到 `http://localhost`.
+1. 原地複製 [此存放庫](https://github.com/adobe/alloy-samples) 至您的本機電腦。
+2. 開啟終端機並導覽至 `personalization-server-side` 資料夾。
+3. 執行 `npm install`.
+4. 執行 `npm start`.
+5. 開啟網頁瀏覽器並導覽至 `http://localhost`.
 
-## 流程概述 {#process}
+## 程式概述 {#process}
 
-本节介绍了检索个性化内容时使用的步骤。
+本節說明擷取個人化內容時所使用的步驟。
 
-1. [快速](https://expressjs.com/) 用于精益服务器端实施。 这可处理基本的服务器请求和路由。
-2. 浏览器会请求网页。 之前由浏览器存储的任何Cookie，其前缀为 `kndctr_`，则不包含。
-3. 当从应用程序服务器请求页面时，会向 [交互式数据收集端点](../../../server-api/interactive-data-collection.md) 以获取个性化内容。 示例应用程序使用帮助程序方法来简化API的生成和发送请求的过程(请参阅 [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js))。 的 `POST` 请求包含 `event` 和 `query`. 上一步中的Cookie（如果可用）包含在 `meta>state>entries` 数组。
+1. [Express](https://expressjs.com/) 用於精簡伺服器端實作。 這會處理基本伺服器請求和路由。
+2. 瀏覽器要求網頁。 瀏覽器先前儲存的任何Cookie，首碼為 `kndctr_`，已包括在內。
+3. 當從應用程式伺服器要求頁面時，會將事件傳送至 [互動式資料收集端點](../../../server-api/interactive-data-collection.md) 以擷取個人化內容。 範例應用程式會使用Helper方法來簡化建立及傳送請求至API的程式(請參閱 [aepEdgeClient.js](https://github.com/adobe/alloy-samples/blob/main/common/aepEdgeClient.js))。 此 `POST` 請求包含 `event` 和 `query`. 上一步的Cookie （如果有的話）會包含在 `meta>state>entries` 陣列。
 
    ```js
    fetch(
@@ -148,8 +148,8 @@ Cookie用于保留用户标识和群集信息。  使用服务器端实施时，
    ).then((res) => res.json());
    ```
 
-4. 基于表单的活动中的Target选件会从响应中读取，并在生成HTML响应时使用。
-5. 对于基于表单的活动，必须在实施中手动发送显示事件，以指示选件何时显示。 在本例中，通知是在请求生命周期期间在服务器端发送的。
+4. 從回應中讀取表單式活動的Target選件，並在產生HTML回應時使用。
+5. 對於表單式活動，必須在實作中手動傳送顯示事件，以指出何時已顯示選件。 在此範例中，通知是在請求生命週期期間在伺服器端傳送。
 
    ```js
    function sendDisplayEvent(aepEdgeClient, req, propositions, cookieEntries) {
@@ -196,5 +196,5 @@ Cookie用于保留用户标识和群集信息。  使用服务器端实施时，
    }
    ```
 
-6. [!DNL Visual Experience Composer (VEC)] 选件将被忽略，因为它们只能通过Web SDK呈现。
-7. 返回HTML响应时，应用程序服务器在响应中设置标识和群集Cookie。
+6. [!DNL Visual Experience Composer (VEC)] 選件會被忽略，因為它們只能透過Web SDK轉譯。
+7. 傳回HTML回應時，應用程式伺服器會在回應上設定身分和叢集Cookie。

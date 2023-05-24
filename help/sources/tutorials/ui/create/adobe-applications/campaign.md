@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；营销活动；营销活动托管服务
-title: 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
-description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Cloud Services。
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；行銷活動；行銷活動管理的服務
+title: 使用Platform UI建立Adobe Campaign Managed Cloud Services來源連線
+description: 瞭解如何使用Platform UI將Adobe Experience Platform連線至Adobe Campaign Managed Cloud Services。
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,29 +10,29 @@ ht-degree: 6%
 
 ---
 
-# 使用Platform UI创建Adobe Campaign Managed Cloud Services源连接
+# 使用Platform UI建立Adobe Campaign Managed Cloud Services來源連線
 
-本教程提供了创建源连接以将Adobe Campaign Managed Cloud Services数据导入Adobe Experience Platform的步骤。
+本教學課程提供建立來源連線的步驟，以便將您的Adobe Campaign Managed Cloud Services資料引進Adobe Experience Platform。
 
 ## 快速入门
 
-本指南需要对Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Experience Platform元件：
 
-* [源](../../../../home.md):Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [沙箱](../../../../../sandboxes/home.md):Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [來源](../../../../home.md)：Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [沙箱](../../../../../sandboxes/home.md)：Platform提供虛擬沙箱，可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-## 将Adobe Campaign Managed Cloud Services连接到平台
+## 將Adobe Campaign Managed Cloud Services連線至平台
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种来源。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏来缩小显示的源范围。
+您可以從畫面左側的目錄中選取適當的類別。 您也可以使用搜尋列來縮小顯示的來源。
 
-在 **[!UICONTROL Adobe应用程序]** 类别，选择 **[!UICONTROL Adobe Campaign Managed Cloud Services]** 然后选择 **[!UICONTROL 添加数据]**.
+在 **[!UICONTROL Adobe應用程式]** 類別，選取 **[!UICONTROL Adobe Campaign Managed Cloud Services]** 然後選取 **[!UICONTROL 新增資料]**.
 
-![显示Adobe Campaign Managed Cloud Services卡的源目录。](../../../../images/tutorials/create/campaign/catalog.png)
+![顯示Adobe Campaign Managed Cloud Services卡片的來源目錄。](../../../../images/tutorials/create/campaign/catalog.png)
 
 ### 选择数据 {#select-data}
 
@@ -54,90 +54,90 @@ ht-degree: 6%
 >abstract="Adobe Campaign 数据库中定义的实体的名称。"
 >text="Learn more in documentation"
 
-的 [!UICONTROL 选择数据] 步骤，为您提供用于配置 [!UICONTROL Adobe Campaign实例], [!UICONTROL 目标映射]和 [!UICONTROL 架构名称].
+此 [!UICONTROL 選取資料] 步驟隨即顯示，為您提供設定您的 [!UICONTROL Adobe Campaign執行個體]， [!UICONTROL 目標對應]、和 [!UICONTROL 結構描述名稱].
 
 | 属性 | 描述 |
 | --- | --- |
-| Adobe Campaign实例 | 您使用的Adobe Campaign环境实例的名称。 |
-| 目标映射 | Campaign用于投放消息的技术对象，其中包含发送投放所需的所有技术设置。 |
-| 架构名称 | 您将引入Platform的架构实体的名称。 相关选项包括“投放日志”和“跟踪日志”。 |
+| Adobe Campaign執行個體 | 您使用的Adobe Campaign環境執行個體的名稱。 |
+| 目标映射 | Campaign用來傳送訊息的技術物件，包含傳送傳送訊息所需的所有技術設定。 |
+| 架构名称 | 您要帶至Platform的結構描述實體名稱。 選項包括傳送記錄和追蹤記錄。 |
 
-![一个界面，您可以在其中配置Adobe Campaign实例、目标映射和架构名称。](../../../../images/tutorials/create/campaign/select-data.png)
+![您可以在此處設定Adobe Campaign例項、目標對應和結構描述名稱的介面。](../../../../images/tutorials/create/campaign/select-data.png)
 
-为Campaign实例、目标映射和架构名称提供值后，屏幕会随之更新，以显示架构预览以及示例数据集。 完成后，选择 **[!UICONTROL 下一个]**.
+提供Campaign執行個體、目標對應和結構描述名稱的值後，畫面會更新以顯示結構描述的預覽和範例資料集。 完成後，選取 **[!UICONTROL 下一個]**.
 
-![架构层次结构的预览以及数据集的示例](../../../../images/tutorials/create/campaign/preview.png)
+![結構描述階層以及資料集範例的預覽](../../../../images/tutorials/create/campaign/preview.png)
 
-### 使用现有数据集
+### 使用現有的資料集
 
-的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集，还是要为数据流配置新数据集。
+此 [!UICONTROL 資料流詳細資料] 頁面可讓您選取您要使用現有資料集，還是為資料流設定新資料集。
 
-要使用现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。
+若要使用現有的資料集，請選取 **[!UICONTROL 現有資料集]**. 您可以使用來擷取現有的資料集 [!UICONTROL 進階搜尋] 選項，或是透過在下拉式選單中捲動現有資料集清單的方式。
 
-选择数据集后，为数据流提供名称和可选描述。
+選取資料集後，為資料流命名並選填說明。
 
-![显示现有数据集选项的界面。](../../../../images/tutorials/create/campaign/existing-dataset.png)
+![顯示現有資料集選項的介面。](../../../../images/tutorials/create/campaign/existing-dataset.png)
 
-### 使用新数据集
+### 使用新資料集
 
-要使用新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 完成后，选择 **[!UICONTROL 下一个]**.
+若要使用新資料集，請選取「 」 **[!UICONTROL 新資料集]** 然後提供輸出資料集名稱和選擇性說明。 接下來，使用 [!UICONTROL 進階搜尋] 選項或透過捲動下拉式選單中的現有結構描述清單的方式。 完成後，選取 **[!UICONTROL 下一個]**.
 
-![显示新数据集选项的界面。](../../../../images/tutorials/create/campaign/new-dataset.png)
+![顯示新資料集選項的介面。](../../../../images/tutorials/create/campaign/new-dataset.png)
 
-### 启用警报
+### 啟用警示
 
-您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报，以订阅和接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅源警报](../../alerts.md).
+您可以啟用警報以接收有關資料流狀態的通知。 從清單中選取警報，以訂閱並接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱來源警報](../../alerts.md).
 
-完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+當您完成提供詳細資訊給資料流時，請選取「 」 **[!UICONTROL 下一個]**.
 
-![可为数据流启用的不同警报类型选项。](../../../../images/tutorials/create/campaign/alerts.png)
+![您可以為資料流啟用的不同警報型別選擇。](../../../../images/tutorials/create/campaign/alerts.png)
 
-### 将数据字段映射到XDM架构
+### 將資料欄位對應至XDM結構描述
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+Platform會根據您選取的目標結構描述或資料集，為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。 您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
 
 >[!IMPORTANT]
 >
->在将源字段映射到目标XDM字段时，必须确保将指定的主标识字段映射到相应的目标XDM字段。
+>將來源欄位對應到目標XDM欄位時，您必須確保將指定的主要身分欄位對應到其適當的目標XDM欄位。
 
-成功映射源数据后，选择 **[!UICONTROL 下一个]**.
+成功對應來源資料後，請選取 **[!UICONTROL 下一個]**.
 
-![映射树，其中有四个源数据字段被映射到其相应的XDM架构字段。](../../../../images/tutorials/create/campaign/mapping.png)
+![對應樹狀結構，四個來源資料欄位對應到它們對應的XDM結構描述欄位。](../../../../images/tutorials/create/campaign/mapping.png)
 
-### 查看数据流
+### 檢閱您的資料流
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源檔案的相關路徑，以及該來源檔案中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
-![显示连接和数据集信息的审核页面。](../../../../images/tutorials/create/campaign/review.png)
+![顯示連線和資料集資訊的稽核頁面。](../../../../images/tutorials/create/campaign/review.png)
 
-### 监控数据集活动
+### 監視您的資料集活動
 
-创建数据流后，您可以监控通过其摄取的数据，以查看有关摄取速率以及成功和失败批次的信息。
+建立資料流後，您可以監視透過它擷取的資料，以檢視有關擷取率以及成功和失敗批次的資訊。
 
-要开始查看数据集活动，请选择 **[!UICONTROL 数据流]** 的子目录。
+若要開始檢視您的資料集活動，請選取 **[!UICONTROL 資料流]** 在來源目錄中。
 
-![选择了数据流标题选项卡的源目录页面。](../../../../images/tutorials/create/campaign/dataflows.png)
+![已選取資料流標題標籤的來源目錄頁面。](../../../../images/tutorials/create/campaign/dataflows.png)
 
-接下来，从显示的数据流列表中选择目标数据集。
+接下來，從出現的資料流清單中選取目標資料集。
 
-![选定了Adobe Campaign投放日志目标数据集的现有数据流列表。](../../../../images/tutorials/create/campaign/target-dataset.png)
+![已選取Adobe Campaign傳遞記錄目標資料集的現有資料流清單。](../../../../images/tutorials/create/campaign/target-dataset.png)
 
-此时会显示数据集活动页面。 在此处，您可以看到有关数据流性能的信息，包括摄取率、成功批次和失败批次。
+資料集活動頁面隨即顯示。 從這裡，您可以檢視資料流效能的相關資訊，包括擷取率、成功的批次和失敗的批次。
 
-本页还为您提供了一个界面，用于更新数据流的元数据描述、启用部分摄取和错误诊断，以及向数据集添加新数据。
+此頁面也提供您更新資料流的中繼資料說明的介面、啟用部分擷取和錯誤診斷，以及將新資料新增到資料集。
 
-![一个界面，其中包含表示选定数据集的摄取率的图形。](../../../../images/tutorials/create/campaign/dataset-activity.png)
+![具有圖形的介面，代表所選資料集的擷取率。](../../../../images/tutorials/create/campaign/dataset-activity.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了一个数据流，以将Campaign v8投放日志和跟踪日志数据引入平台。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+依照本教學課程所述，您已成功建立資料流，將您的Campaign v8傳遞記錄檔和追蹤記錄檔資料帶入Platform。 傳入資料現在可供下游平台服務使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 如需更多詳細資訊，請參閱下列檔案：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

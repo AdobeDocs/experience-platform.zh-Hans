@@ -1,16 +1,17 @@
 ---
-title: 将CSV文件映射到XDM架构
-description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到XDM模式。
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+title: 將CSV檔案對應至XDM結構描述
+description: 本教學課程說明如何使用Adobe Experience Platform使用者介面將CSV檔案對應至XDM結構描述。
+exl-id: b80ab18f-9f4d-4044-b11d-238e9a45710f
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 0%
 
 ---
 
-# 将CSV文件映射到XDM模式
+# 將CSV檔案對應至XDM結構描述
 
-要将CSV数据摄取到 [!DNL Adobe Experience Platform]，则数据必须映射到 [!DNL Experience Data Model] (XDM)架构。 以下教程介绍如何使用 [!DNL Platform] 用户界面：
+為了將CSV資料擷取到 [!DNL Adobe Experience Platform]，資料必須對應至 [!DNL Experience Data Model] (XDM)結構描述。 以下教學課程說明如何使用 [!DNL Platform] 使用者介面：
 
-* [将CSV文件映射到现有XDM架构](./existing-schema.md)
-* [使用AI生成的推荐将CSV文件映射到新的XDM模式](./recommendations.md) （目前为测试版）
+* [將CSV檔案對應至現有的XDM結構描述](./existing-schema.md)
+* [使用AI產生的建議將CSV檔案對應到新的XDM結構描述](./recommendations.md) （目前為測試版）

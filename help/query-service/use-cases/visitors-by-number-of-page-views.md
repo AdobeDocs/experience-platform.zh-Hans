@@ -1,23 +1,24 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询；
-title: 按访客的页面查看次数列出访客
-description: 了解如何编写使用体验事件的查询，以检索按页面查看次数组织的访客列表。
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；experienceevent查詢；experienceevent查詢；體驗事件查詢；
+title: 依訪客的頁面檢視次數列出訪客
+description: 瞭解如何撰寫查詢，這些查詢使用體驗事件來擷取按頁面檢視次陣列織的訪客清單。
+exl-id: 6e8eed0c-838e-4cd0-ae8c-453114fbf4ea
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 1%
 
 ---
 
-# 按访客的页面查看次数列出访客
+# 依訪客的頁面檢視次數列出訪客
 
-本文档提供了检索按页面查看次数组织的访客列表所需的SQL示例。 通过Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 来捕获各种用例。 体验事件由体验数据模型(XDM)ExperienceEvent类表示，该类可在用户与网站或服务交互时捕获系统的不可更改和非聚合快照。 体验事件甚至可用于时域分析。 请参阅 [“下一步”部分](#next-steps) 对于涉及 [!DNL Experience Events] 以生成访客报表。
+本檔案提供擷取依頁面檢視次陣列織的訪客清單所需的SQL範例。 透過Adobe Experience Platform查詢服務，您可以編寫使用 [!DNL Experience Events] 以擷取各種使用案例。 體驗事件由Experience Data Model (XDM) ExperienceEvent類別表示，可在使用者與網站或服務互動時，擷取系統不可變且非彙總的快照。 體驗事件甚至可用於時間網域分析。 請參閱 [後續步驟區段](#next-steps) 有關更多使用案例，包括 [!DNL Experience Events] 以產生訪客報表。
 
-有关XDM和 [!DNL Experience Events] 可在 [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，则可以有效地跟踪用户中的行为趋势。 以下文档提供了涉及 [!DNL Experience Events].
+有關XDM和的更多資訊 [!DNL Experience Events] 您可在以下網址找到： [[!DNL XDM System] 概觀](../../xdm/home.md). 透過結合查詢服務與 [!DNL Experience Events]，您就能有效追蹤使用者之間的行為趨勢。 以下檔案提供涉及下列專案的查詢範例： [!DNL Experience Events].
 
 ## 目标
 
-以下示例创建一个报表，其中列出了查看次数最多页面的用户的10个ID。
+下列範例會建立一份報表，列出檢視次數最多之使用者的10個ID。
 
 ```sql
 SELECT 
@@ -29,7 +30,7 @@ ORDER BY pageViews DESC
 LIMIT 10;
 ```
 
-查询结果显示在下表中。
+查詢結果顯示在下表中。
 
 ```console
                id                  | pageViews
@@ -49,10 +50,10 @@ LIMIT 10;
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您可以更好地了解如何在 [!DNL Experience Events] 列出查看次数最多的页面的用户。
+閱讀本檔案可讓您更瞭解如何使用查詢服務搭配 [!DNL Experience Events] 以列出檢視次數最多頁面的使用者。
 
-请参阅以下用例，了解其他基于访客的用例：
+請參閱下列使用案例，以瞭解其他以訪客為基礎的使用案例：
 
-- [列出访客以前的会话。](./list-visitor-sessions.md)
-- [查看访客的汇总报表。](./roll-up-report-of-a-visitor.md)
-- [按天创建事件的趋势报表。](./trended-report-of-events.md)
+- [列出訪客之前的工作階段。](./list-visitor-sessions.md)
+- [檢視訪客的統計報表。](./roll-up-report-of-a-visitor.md)
+- [依日期建立事件的趨勢報表。](./trended-report-of-events.md)

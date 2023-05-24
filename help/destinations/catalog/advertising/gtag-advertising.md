@@ -1,7 +1,7 @@
 ---
-keywords: GTAG;Google Gtag;Google扩展；Google Gtag扩展；GTAG
-title: Google扩展
-description: Google gtag扩展是Adobe Experience Platform中的一个广告目的地。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
+keywords: gtag；google gtag；google擴充功能；google gtag擴充功能；GTAG
+title: Google gtag擴充功能
+description: Google gtag擴充功能是Adobe Experience Platform中的廣告目的地。 如需擴充功能的相關詳細資訊，請參閱Adobe交換上的擴充功能頁面。
 exl-id: 14a466f2-78a0-4493-93cd-3dcdae048042
 source-git-commit: c3f6650df5fabe9736e4b11a43c41ae39f014425
 workflow-type: tm+mt
@@ -10,58 +10,58 @@ ht-degree: 3%
 
 ---
 
-# Google扩展 {#gtag-advertising-extension}
+# Google gtag擴充功能 {#gtag-advertising-extension}
 
 >[!IMPORTANT]
 >
->此处介绍的Google gtag扩展已弃用，并由 [[!DNL Google Global Site Tag (gtag)]](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) 扩展由 [!DNL Acronym]. 您可以在 [!DNL Google Global Site Tag (gtag)] 扩展 [[!UICONTROL 标记]](../../../tags/home.md) 工作区。
+>此處說明的Google gtag擴充功能已過時，並由 [[!DNL Google Global Site Tag (gtag)]](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) 擴充功能開發者 [!DNL Acronym]. 您可以找到 [!DNL Google Global Site Tag (gtag)] 內的擴充功能 [[!UICONTROL 標籤]](../../../tags/home.md) 資料收集UI或Experience Platform UI中的工作區。
 
 ## 概述 {#overview}
 
-加载Google `gtag.js` 将事件数据发送到您的网站 [!DNL Google Analytics]、Google Ads和 [!DNL Google Marketing Platform]. 此扩展仅会将标记代码添加到您的网站。 您将需要使用其他Google扩展来添加将使用gtag的事件和操作。
+載入Google `gtag.js` 將事件資料傳送至您的網站 [!DNL Google Analytics]、Google Ads和 [!DNL Google Marketing Platform]. 此擴充功能只會將gtag程式碼新增至您的網站。 您將需要使用其他Google擴充功能來新增將使用gtag的事件和動作。
 
-Google gtag是Adobe Experience Platform中的一项广告扩展。 有关扩展功能的更多信息，请参阅 [Adobe交换](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html).
+Google gtag是Adobe Experience Platform中的廣告擴充功能。 如需擴充功能的相關詳細資訊，請參閱擴充功能頁面，網址為 [Adobe交換](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html).
 
-此目标是一个标记扩展。 有关标记扩展在Platform中工作方式的更多信息，请参阅 [标记扩展概述](../launch-extensions/overview.md).
+此目的地是標籤延伸模組。 如需標籤擴充功能在Platform中如何運作的詳細資訊，請參閱 [標籤擴充功能概觀](../launch-extensions/overview.md).
 
-![Google扩展](../../assets/catalog/advertising/gtag-advertising/catalog.png)
+![Google gtag擴充功能](../../assets/catalog/advertising/gtag-advertising/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于 [!DNL Destinations] 目录。
+此擴充功能適用於 [!DNL Destinations] 已購買Platform之所有客戶的目錄。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们向您授予 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
+若要使用此擴充功能，您需要存取Adobe Experience Platform中的標籤。 標籤是以隨附的加值功能形式提供給Adobe Experience Cloud客戶。 請聯絡您的組織管理員以取得標籤的存取權，並要求他們授予您 **[!UICONTROL manage_properties]** 許可權，方便您安裝擴充功能。
 
-## 安装扩展 {#install-extension}
+## 安裝擴充功能 {#install-extension}
 
-要安装Google gtag扩展，请执行以下操作：
+若要安裝Google gtag擴充功能：
 
-在 [平台界面](https://platform.adobe.com/)，转到 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**.
+在 [平台介面](https://platform.adobe.com/)，前往 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**.
 
-从目录中选择扩展或使用搜索栏。
+從目錄選取擴充功能或使用搜尋列。
 
-单击目标以突出显示它，然后选择 **[!UICONTROL 配置]** 中。 如果 **[!UICONTROL 配置]** 控件呈灰显状态，表示您缺少 **[!UICONTROL manage_properties]** 权限。 请参阅 [先决条件](#prerequisites).
+按一下目的地以反白顯示，然後選取 **[!UICONTROL 設定]** 在右側邊欄中。 如果 **[!UICONTROL 設定]** 控制項呈現灰色，表示您遺漏 **[!UICONTROL manage_properties]** 許可權。 另請參閱 [必要條件](#prerequisites).
 
-选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解 [“属性”页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page) 的。
+選取您要安裝擴充功能的屬性。 您也可以選擇建立新屬性。 资产是规则、数据元素、配置的扩展、环境和库的集合。瞭解中的屬性 [「屬性」頁面段落](../../../tags/ui/administration/companies-and-properties.md#properties-page) 標籤檔案中的。
 
-工作流可指导您完成完成安装的步骤。
+工作流程會逐步引導您完成安裝步驟。
 
-有关扩展配置选项和安装支持的信息，请参阅 [GoogleAdobeExchange上的gtag页面](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html).
+如需擴充功能組態選項和安裝支援的詳細資訊，請參閱 [Adobe Exchange上的Google gtag頁面](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html).
 
-您还可以直接在 [数据收集UI](https://experience.adobe.com/#/data-collection/). 有关更多信息，请参阅 [添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) （位于标记文档中）。
+您也可以直接在中安裝擴充功能 [資料彙集UI](https://experience.adobe.com/#/data-collection/). 如需詳細資訊，請參閱以下章節： [新增擴充功能](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 標籤檔案中。
 
-## 如何使用扩展 {#how-to-use}
+## 如何使用擴充功能 {#how-to-use}
 
-安装扩展后，您可以开始设置规则。
+安裝擴充功能後，您就可以開始設定規則。
 
-您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅 [标记文档](../../../tags/ui/managing-resources/rules.md).
+您可以為已安裝的擴充功能設定規則，以只在特定情況下將事件資料傳送至擴充功能目的地。 如需為擴充功能設定規則的詳細資訊，請參閱 [標籤檔案](../../../tags/ui/managing-resources/rules.md).
 
-## 配置、升级和删除扩展 {#configure-upgrade-delete}
+## 設定、升級和刪除擴充功能 {#configure-upgrade-delete}
 
-您可以在数据收集UI中配置、升级和删除扩展。
+您可以在資料收集UI中設定、升級和刪除擴充功能。
 
 >[!TIP]
 >
->如果您的其中一个资产上已安装扩展，则仍会显示Platform UI **[!UICONTROL 安装]** 的子项。 启动安装工作流，如 [安装扩展](#install-extension) 配置或删除扩展。
+>如果擴充功能已安裝在您的其中一個屬性上，Platform UI仍會顯示 **[!UICONTROL 安裝]** 用於擴充功能。 依照中的說明開始安裝工作流程 [安裝擴充功能](#install-extension) 以設定或刪除您的擴充功能。
 
-要升级扩展，请参阅 [扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) （位于标记文档中）。
+若要升級您的擴充功能，請參閱 [擴充功能升級程式](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 標籤檔案中。

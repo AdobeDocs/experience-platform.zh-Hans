@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；产品配置文件
+keywords: Experience Platform；首頁；熱門主題；產品設定檔
 solution: Experience Platform
-title: 管理产品配置文件的详细信息和其他服务
-description: 本文档介绍了在Adobe Admin Console中管理产品配置文件的详细信息和其他服务所需的必要步骤。 您可以通过“配置文件设置”菜单配置配置文件的详细信息并访问其他服务。
+title: 管理產品設定檔的詳細資訊和其他服務
+description: 本檔案說明在Adobe Admin Console中管理產品設定檔的詳細資訊和其他服務所需的必要步驟。 您可以從「設定檔設定」功能表設定設定設定檔的詳細資訊，以及存取其他服務。
 exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
@@ -11,33 +11,33 @@ ht-degree: 0%
 
 ---
 
-# 管理产品配置文件的详细信息和其他服务
+# 管理產品設定檔的詳細資訊和其他服務
 
-您可以在中配置用户档案的详细信息并访问其他服务 **[!UICONTROL 配置文件设置]** 菜单。 要访问菜单，请选择 **[!UICONTROL 设置]** 从 **[!UICONTROL 产品配置文件]** 页面。
+您可以設定設定檔的詳細資訊，並從中存取其他服務。 **[!UICONTROL 設定檔設定]** 功能表。 若要存取功能表，請選取 **[!UICONTROL 設定]** 從 **[!UICONTROL 產品設定檔]** 頁面。
 
-![设置](../images/settings.png)
+![設定](../images/settings.png)
 
-的 **[!UICONTROL 编辑产品配置文件]** 菜单，从 **[!UICONTROL 编辑配置文件详细信息]** 选项卡。 利用此选项卡，可输入和编辑配置文件名称和描述。 您还可以修改帐户的显示名称和电子邮件通知设置。
+此 **[!UICONTROL 編輯產品設定檔]** 功能表隨即出現，從 **[!UICONTROL 編輯設定檔詳細資料]** 標籤。 此索引標籤可讓您輸入及編輯設定檔名稱和說明。 您也可以修改帳戶的顯示名稱及電子郵件通知設定。
 
 ![edit-product-profile](../images/edit-product-profile.png)
 
-选择 **[!UICONTROL 下一个]** 访问 **[!UICONTROL 启用服务]** 页面。
+選取 **[!UICONTROL 下一個]** 存取 **[!UICONTROL 啟用服務]** 頁面。
 
-的 **[!UICONTROL 启用服务]** 菜单，以修改用户档案对 [!DNL Platform] 最初在创建用户档案时配置的服务。 根据您的 [!DNL Platform] 订阅，这些服务可以包括：
+此 **[!UICONTROL 啟用服務]** 功能表可讓您修改設定檔對其他 [!DNL Platform] 建立設定檔時初始設定的服務。 視您的 [!DNL Platform] 訂閱，這些服務可包括：
 
 - [!DNL Data Science Workspace]
 - [!DNL Query Service]
-- [!DNL Adobe Real-Time Customer Data Platform] UI(仅适用于Real-Time CDP)
+- [!DNL Adobe Real-Time Customer Data Platform] UI (僅適用於Real-Time CDP)
 - B2B UI
 
-单击特定服务右侧的切换开关以启用或禁用该服务。 您还可以选择 **[!UICONTROL 全部打开]** 复选框可启用或禁用所有列出的服务。
+按一下特定服務右側的切換按鈕，即可啟用或停用該服務。 您也可以選取 **[!UICONTROL 全部開啟]** 核取方塊以啟用或停用所有列出的服務。
 
-完成后，选择 **[!UICONTROL 保存]**.
+完成後，選取 **[!UICONTROL 儲存]**.
 
-![enable-services](../images/enable-services.png)
+![啟用 — 服務](../images/enable-services.png)
 
-有权使用B2B或B2P Edition的客户有权访问B2B UI。 可通过 [!UICONTROL “启用服务”菜单]. 选择旁边的切换开关 [!UICONTROL B2B UI] 为特定产品配置文件启用服务，然后选择 **[!UICONTROL 保存]**.
+有權使用B2B或B2P版本的客戶可存取B2B UI。 可以透過以下方式為使用者布建B2B UI： [!UICONTROL 啟用服務功能表]. 選取旁的切換 [!UICONTROL B2B UI] 啟用特定產品設定檔的服務，然後選取 **[!UICONTROL 儲存]**.
 
-B2B UI切换开关使用户能够查看与管理帐户和机会相关的B2B工作流，并创建与B2B相关的区段。 有关更多信息，请参阅 [[!DNL Adobe Real-Time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md).
+B2B UI切換可讓使用者檢視有關管理帳戶和機會的B2B工作流程，以及建立B2B相關區段。 如需詳細資訊，請參閱以下檔案： [[!DNL Adobe Real-Time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md).
 
 ![enable-b2b](../images/enable-b2b.png)

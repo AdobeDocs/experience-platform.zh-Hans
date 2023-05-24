@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；区段生成器；区段生成器
+keywords: Experience Platform；首頁；熱門主題；分段；區段產生器；區段產生器
 solution: Experience Platform
-title: 重构的分段时间约束UI指南
-description: 区段生成器提供了丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
+title: 重構分段時間限制UI指南
+description: 區段產生器提供豐富的工作區，可讓您與設定檔資料元素互動。 工作區提供直覺式控制項來建置和編輯規則，例如用來表示資料屬性的拖放圖磚。
 exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,20 +11,20 @@ ht-degree: 0%
 
 ---
 
-# 时间约束重分解
+# 時間限制重構
 
-2020年10月版的Adobe Experience Platform对Adobe Experience Platform分段服务进行了性能更改，为使用OR和AND逻辑运算符添加了新限制。 这些更改将影响使用区段生成器UI新创建或编辑的区段。 本指南介绍如何缓解这些更改。
+2020年10月發行的Adobe Experience Platform已對Adobe Experience Platform Segmentation Service進行效能變更，新增了使用OR和AND邏輯運運算元的限制。 這些變更將會影響使用區段產生器UI新建或編輯的區段。 本指南說明如何減輕這些變更。
 
-在2020年10月版之前，所有规则级别、组级别和事件级别的时间限制都重复引用了相同的时间戳。 为了阐明时间约束的使用，已删除规则级和组级时间约束。 要适应此更改，所有时间约束都必须重写为事件级时间约束。
+在2020年10月版本之前，所有規則層級、群組層級和事件層級時間限制都以重複方式參考相同的時間戳記。 為了釐清時間限制的使用方式，已移除規則層級和群組層級的時間限制。 為了配合此變更，所有時間限制都必須重寫為事件層級時間限制。
 
-以前，单个事件可能会附加多个时间约束规则。
+過去，個別事件可以附加多個時間限制規則。
 
-![区段生成器中会突出显示以前的时间约束样式。](../images/ui/segment-refactoring/former-time-constraint.png)
+![「區段產生器」會反白顯示前一個時間限制樣式。](../images/ui/segment-refactoring/former-time-constraint.png)
 
-如您所见，此区段在规则级别有两个限制：一个表示“[!UICONTROL 今天]“ ”和“ ”的另一个[!UICONTROL 昨天]&quot;
+如您所見，此區段在規則層級上有兩個限制：一個適用於&quot;[!UICONTROL 今天]」和另一個「[!UICONTROL 昨天]「。
 
-上一个区段等同于以下区段 — 已使用AND运算符连接两个事件级时间约束。 第一个事件级时间约束引用名称等于“Training”且今天发生的点击事件，而第二个事件级时间约束引用名称等于“Pets”且昨天发生的点击事件。
+前一個區段等同於以下區段 — 兩個事件層級時間限制都使用AND運運算元連線。 第一個事件層級時間限制會參考名稱等於「Training」且發生在今天的點選事件，第二個事件層級時間限制會參考名稱等於「Pets」且發生在昨天的點選事件。
 
-![区段生成器中会突出显示新的时间限制样式。](../images/ui/segment-refactoring/time-constraint-1.png) ![区段生成器中会突出显示新的时间限制样式。](../images/ui/segment-refactoring/time-constraint-2.png)
+![新的時間限制樣式會在「區段產生器」中反白顯示。](../images/ui/segment-refactoring/time-constraint-1.png) ![新的時間限制樣式會在「區段產生器」中反白顯示。](../images/ui/segment-refactoring/time-constraint-2.png)
 
-时间约束的这种重构还会影响使用OR运算符连接的时间约束。
+這種時間限制重構也會影響使用OR運運算元連線的時間限制。

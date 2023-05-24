@@ -1,49 +1,49 @@
 ---
-keywords: Experience Platform；用户指南；客户人工智能；热门主题；访问控制；创建模型；
+keywords: Experience Platform；使用手冊；customer ai；熱門主題；存取控制；建立模型；
 solution: Experience Platform
 feature: Customer AI
-title: Customer AI的访问控制
-description: 本文档提供了有关Customer AI基于属性的访问控制的信息。
-source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
+title: Customer AI的存取控制
+description: 本檔案提供Customer AI的屬性型存取控制相關資訊。
+exl-id: 02e3b6a4-304a-4ac4-b07c-010531101feb
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '516'
 ht-degree: 0%
 
 ---
 
-
 # 基于属性的访问控制
 
 >[!IMPORTANT]
 >
->基于属性的访问控制当前仅在有限版本中可用。
+>以屬性為基礎的存取控制目前僅在有限版本中可用。
 
-[基于属性的访问控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
+[以屬性為基礎的存取控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一項功能，可讓管理員根據屬性控制特定物件和/或權能的存取權。 屬性可以是新增至物件的中繼資料，例如新增至結構描述欄位或區段的標籤。 管理員定義包含管理使用者存取許可權的屬性的存取原則。
 
-利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
+此功能可讓您使用定義組織或資料使用範圍的標籤來標籤Experience Data Model (XDM)結構描述欄位。 同時，管理員可以使用使用者和角色管理介面來定義圍繞XDM結構描述欄位的存取原則，並更好地管理授予使用者或使用者群組（內部、外部或第三方使用者）的存取權。 此外，屬性型存取控制可讓管理員管理特定區段的存取權。
 
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+透過屬性型存取控制，貴組織的管理員可控制使用者對所有Platform工作流程和資源的敏感個人資料(SPD)和個人識別資訊(PII)的存取權。 管理員可以定義僅能存取特定欄位的使用者角色，以及對應至這些欄位的資料。
 
-由于基于属性的访问控制，某些字段和功能将受到限制，并且对某些Customer AI服务模型不可用。 示例包括“身份”、“得分定义”和“克隆”。
+由於屬性型存取控制，某些欄位和功能會有存取限制，不適用於某些Customer AI服務模型。 範例包括「身分」、「評分定義」和「原地複製」。
 
-![突出显示服务模型结果的受限字段的Customer AI工作区。](../images/user-guide/unavailable-functionalities.png)
+![Customer AI工作區中反白了服務模型結果的受限制欄位。](../images/user-guide/unavailable-functionalities.png)
 
-位于Customer AI工作区顶部 **分析页面**，请注意侧栏、得分定义、身份和用户档案属性中的详细信息都显示“访问受限”。
+在Customer AI工作區頂端 **深入分析頁面**，請注意，側欄、分數定義、身分和設定檔屬性中的詳細資訊都顯示「存取受限」。
 
-![突出显示了架构的受限字段的Customer AI工作区。](../images/user-guide/access-restricted.png)
+![反白顯示結構描述受限制欄位的Customer AI工作區。](../images/user-guide/access-restricted.png)
 
-预览 **[!UICONTROL 创建模型工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
+當您在「 」上預覽包含受限結構描述的資料集時 **[!UICONTROL 建立模型工作流程]** 頁面，會出現警告以告知您 [!UICONTROL 由於存取限制，某些資訊不會顯示在資料集預覽中。]
 
-![预览数据集的受限字段位于Customer AI工作区中，且模式结果受限。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
+![Customer AI工作區，其預覽資料集的限制欄位中反白顯示限制的結構描述結果。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
 
-创建具有受限信息的模型后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
+建立包含限制資訊的模型後，請繼續前往 **[!UICONTROL 定義目標]** 步驟，頂端會顯示警告： [!UICONTROL 由於存取限制，某些資訊不會顯示在設定中。]
 
-![突出显示服务模型结果的受限字段的Customer AI工作区。](../images/user-guide/information-not-displayed-save-and-exit.png)
+![Customer AI工作區中反白了服務模型結果的受限制欄位。](../images/user-guide/information-not-displayed-save-and-exit.png)
 
-使用访问控制时， **查看客户人工智能** 和 **管理客户人工智能** 权限授予对客户AI不同功能的访问权限。 的 **管理客户人工智能** 许可允许您 **创建**,**更新**, **删除**, **启用**&#x200B;或 **禁用** 模型 **查看客户人工智能** 可供您阅读或查看。 的 **创建**, **更新** 和 **删除** 操作由审核日志记录。
+使用存取控制時， **檢視Customer AI** 和 **管理Customer AI** 許可權可授予對Customer AI不同功能的存取權。 此 **管理Customer AI** 許可權可讓您 **建立**，**更新**， **刪除**， **啟用**，或 **disable** 模型，當 **檢視Customer AI** 可讓您閱讀或檢視。 此 **建立**， **更新** 和 **刪除** 動作由稽核記錄檔記錄。
 
-请参阅相关文档以了解 [为访问控制分配权限](../../../access-control/home.md) 或如何 [使用审核日志来监控访问和活动](../../../landing/governance-privacy-security/audit-logs/overview.md).
+請參閱檔案以瞭解 [指派存取控制的許可權](../../../access-control/home.md) 或如何 [使用稽核記錄來監視存取和活動](../../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## 后续步骤
 
-通过阅读本指南，您已介绍中访问控制的主要原则 [!DNL Experience Platform]. 您现在可以继续 [访问控制用户指南](../overview.md) 以了解有关如何使用的详细步骤 [!DNL Admin Console] 创建产品配置文件并为 [!DNL Platform].
+閱讀本指南後，您已經瞭解中存取控制的主要原則 [!DNL Experience Platform]. 您現在可以繼續前往 [存取控制使用手冊](../overview.md) 以取得有關如何使用 [!DNL Admin Console] 若要建立產品設定檔並指派許可權 [!DNL Platform].

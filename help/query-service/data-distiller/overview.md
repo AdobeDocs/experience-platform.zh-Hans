@@ -1,16 +1,17 @@
 ---
-title: 数据Distiller概述
-description: 与您的授权许可相关的查询服务数据的Distiller使用限制摘要。
-source-git-commit: 5958a9764ebe749a6c945c984a6e9979c444d4dc
+title: 資料Distiller概觀
+description: 與您授權權益相關的查詢服務資料的Data Distiller使用限制摘要。
+exl-id: eb4a184b-f241-4f6f-a250-bbe4605d6b1b
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '104'
 ht-degree: 0%
 
 ---
 
-# 数据Distiller概述
+# 資料Distiller概觀
 
-Data Distiller是一款产品包，其中包含Adobe Experience Platform功能的子集。 借助Data Distiller，您可以通过在查询服务中执行批量查询，为实时客户资料或分析用例执行摄取后数据准备（例如清理、整形和操作）。 您对Data Distiller的使用取决于您对基于平台的应用程序的授权。
+Data Distiller是一套產品，其中包括Adobe Experience Platform的部分功能。 使用Data Distiller，您可以透過在查詢服務中執行批次查詢，針對即時客戶設定檔或分析使用案例執行擷取後資料準備（例如清理、整形和操作）。 您對Data Distiller的使用取決於您對平台型應用程式的權益。
 
 <!-- Commented out references to licence usage dashboard. It is temporarily hidden:
 ## License usage {#license-usage}
@@ -34,7 +35,7 @@ Scoping parameters are usage limits that relate to the scoping of your required 
 
 ## 护栏
 
-请参阅 [查询服务护栏](../guardrails.md) 有关与您的许可授权相关的查询服务数据的默认使用限制的文档。
+請參閱 [查詢服務護欄](../guardrails.md) 有關與您的授權許可權相關之查詢服務資料預設使用限制的檔案。
 
 <!-- Update these descriptions post 23.3 release
 ## Static limits
@@ -49,4 +50,3 @@ A static limit is the usage limit that relates to the functional boundaries of A
     * To generate meaningful insights from your data.
 * **Reporting API Call**: To ensure queries run on aggregated data using the reporting API have enough resources to execute efficiently. This includes queries that enhance existing data models such as those provided by Real-Time Customer Data Platform. The reporting API tracks resource utilization by assigning concurrency slots to each query. A maximum of four reporting API calls are available concurrently. If you access the reporting API through a BI tool and require more concurrency slots, a BI server is required.
 -->
-

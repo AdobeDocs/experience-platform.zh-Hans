@@ -1,44 +1,44 @@
 ---
-title: XDM业务帐户人员关系分类
-description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户人员关系类。
+title: XDM商業帳戶個人關係類別
+description: 本檔案提供Experience Data Model (XDM)中XDM商業帳戶個人關係類別的概觀。
 exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '445'
-ht-degree: 3%
+source-wordcount: '442'
+ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM业务帐户人员关系] 类
+# [!UICONTROL XDM商業帳戶個人關係] 類別
 
 >[!IMPORTANT]
 >
->此类旨在供具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-Time CDP B2B Edition的访问权限，才能参加此类 [实时客户资料](../../../profile/home.md).
+>此類別旨在供擁有下列許可權的組織使用： [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必須擁有Real-Time CDP B2B Edition的存取權，此類別才能參與 [即時客戶個人檔案](../../../profile/home.md).
 
-[!UICONTROL XDM业务帐户人员关系] 是一个标准的体验数据模型(XDM)类，可捕获与业务帐户关联的人员所需的最低属性。
+[!UICONTROL XDM商業帳戶個人關係] 是一個標準Experience Data Model (XDM)類別，可擷取與商業帳戶相關聯之個人的最低要求屬性。
 
-![XDM业务帐户人员关系类的结构，如在UI中所示](../../images/classes/b2b/business-account-person-relation.png)
+![XDM商業帳戶個人關係類別在UI中的結構](../../images/classes/b2b/business-account-person-relation.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `accountKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 帐户与人员关系中帐户的组合标识符。 |
-| `accountPersonKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 帐户 — 人员关系实体的组合标识符。 |
-| `extSourceSystemAudit` | [[!UICONTROL 外部源系统审核属性]](../../data-types/external-source-system-audit-attributes.md) | 如果帐户与人员关系来自外部源系统，则此对象会捕获该系统的审核属性。 |
-| `personKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 帐户与人员关系中人员的组合标识符。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与类捕获的其他ID字段分开。 |
-| `accountID` | 字符串 | 帐户与人员关系中帐户的唯一标识符。 |
-| `accountPersonID` | 字符串 | 帐户 — 人员关系实体的唯一标识符。 |
-| `currencyCode` | 字符串 | 用于帐户与人员之间关系的ISO 4217货币代码。 |
-| `isActive` | 布尔型 | 指示帐户与人员之间的关系是否有效。 |
-| `isDeleted` | 布尔型 | 指示此帐户与人员关系是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
-| `isDirect` | 布尔型 | 指示这是否是帐户与人员之间的直接关系。 |
-| `isPrimary` | 布尔型 | 指示此人是否是此帐户上的主要联系人。 |
-| `personID` | 字符串 | 帐户与人员关系中人员的唯一标识符。 |
-| `personRoles` | 字符串数组 | 列出帐户与人员关系中人员的角色。 |
-| `relationEndDate` | DateTime | 帐户与人员之间的关系结束的日期。 |
-| `relationStartDate` | DateTime | 帐户与人员之间的关系开始的日期。 |
-| `relationshipSource` | 字符串 | 帐户 — 人员关系的来源。 |
+| `accountKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 帳戶 — 個人關係中帳戶的複合識別碼。 |
+| `accountPersonKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 帳戶 — 個人關係實體的複合識別碼。 |
+| `extSourceSystemAudit` | [[!UICONTROL 外部來源系統稽核屬性]](../../data-types/external-source-system-audit-attributes.md) | 如果帳戶 — 人員關係來自外部來源系統，此物件會擷取該系統的稽核屬性。 |
+| `personKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 帳戶 — 個人關係中個人的複合識別碼。 |
+| `_id` | 字符串 | 記錄的唯一識別碼。 這是系統產生的值，與類別擷取的其他ID欄位不同。 |
+| `accountID` | 字符串 | 帳戶 — 個人關係中帳戶的唯一識別碼。 |
+| `accountPersonID` | 字符串 | 帳戶 — 個人關係實體的唯一識別碼。 |
+| `currencyCode` | 字符串 | 用於帳戶和個人之間關係的ISO 4217貨幣代碼。 |
+| `isActive` | 布尔值 | 指出帳戶和個人之間的關係是否有效。 |
+| `isDeleted` | 布尔值 | 指出此帳戶 — 人員關係是否已在Marketo Engage中刪除。<br><br>使用時 [Marketo來源聯結器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，任何在Marketo中刪除的記錄都會自動反映在即時客戶個人檔案中。 不過，與這些設定檔相關的記錄可能仍會保留在資料湖中。 透過設定 `isDeleted` 至 `true`，您可使用欄位來篩選在查詢資料湖時已從來源中刪除哪些記錄。 |
+| `isDirect` | 布尔值 | 指出這是否為帳戶和個人之間的直接關係。 |
+| `isPrimary` | 布尔值 | 指出此人是否為此帳戶的主要聯絡人。 |
+| `personID` | 字符串 | 帳戶 — 個人關係中個人的唯一識別碼。 |
+| `personRoles` | 字串陣列 | 列出客戶 — 個人關係中個人的角色。 |
+| `relationEndDate` | 日期時間 | 帳戶和個人之間的關係結束的日期。 |
+| `relationStartDate` | 日期時間 | 帳戶和個人之間的關係開始的日期。 |
+| `relationshipSource` | 字符串 | 帳戶 — 個人關係的來源。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-请参阅 [Real-Time CDP B2B版中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。
+請參閱指南： [Real-Time CDP B2B Edition中的結構描述關係](../../tutorials/relationship-b2b.md) 瞭解此類別與其他B2B類別在概念上的關聯性，以及如何在Adobe Experience Platform UI中建立這些關聯性。

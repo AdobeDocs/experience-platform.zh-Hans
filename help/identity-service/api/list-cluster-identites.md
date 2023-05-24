@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；列表标识；列表集群
+keywords: Experience Platform；首頁；熱門主題；清單身分；清單叢集
 solution: Experience Platform
-title: 列出群集中的所有标识
-description: 在标识图中相关的标识（无论命名空间如何）被视为该标识图中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
+title: 列出叢集中的所有身分
+description: 在身分圖表中相關聯的身分（無論名稱空間為何）會視為該身分圖表中相同「叢集」的一部分。 下列選項提供存取所有叢整合員的方法。
 exl-id: 0fb9eac9-2dc2-4881-8598-02b3053d0b31
 source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
@@ -11,18 +11,18 @@ ht-degree: 1%
 
 ---
 
-# 列出群集中的所有标识
+# 列出叢集中的所有身分
 
-在标识图中相关的标识（无论命名空间如何）被视为该标识图中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
+在身分圖表中相關聯的身分（無論名稱空間為何）會視為該身分圖表中相同「叢集」的一部分。 下列選項提供存取所有叢整合員的方法。
 
-## 获取单个身份的关联身份
+## 取得單一身分的相關聯身分
 
-为单个标识检索所有群集成员。
+擷取單一身分的所有叢整合員。
 
-您可以使用可选 `graph-type` 用于指示要从中获取群集的身份图的参数。 选项包括：
+您可以使用選填的 `graph-type` 指示要從其中取得叢集的身分圖表引數。 選項包括：
 
-- 无 — 不执行身份拼合。
-- 专用图 — 根据您的专用身份图执行身份拼合。 如果否 `graph-type` 提供，这是默认设置。
+- 無 — 不執行任何身分拼接。
+- 私人身分圖表 — 根據您的私人身分圖表執行身分拼接。 若否 `graph-type` 「 」會顯示，這是預設值。
 
 **API格式**
 
@@ -32,7 +32,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`，按ID)和ID值(`id`)。
+選項1：以名稱空間形式提供身分(`nsId`，依ID)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -43,7 +43,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`，按名称)和ID值(`id`)。
+選項2：以名稱空間形式提供身分(`ns`，依名稱)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -54,7 +54,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:将身份提供为XID(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取XID以获取身份](./list-native-id.md).
+選項3：以XID提供身分(`xid`)。 如需如何取得身分識別的XID的詳細資訊，請參閱本檔案涵蓋的章節 [取得身分的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -65,13 +65,13 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-## 获取多个标识的关联标识
+## 取得多個身分的相關身分
 
-使用 `POST` 作为等效于 `GET` 上述方法用于返回多标识簇中的标识。
+使用 `POST` 作為批次等效的 `GET` 上述方法可傳回多個身分的叢集中的身分。
 
 >[!NOTE]
 >
->请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>要求不應超過最多1000個身分。 超過1000個身分的要求會產生400個狀態代碼。
 
 **API格式**
 
@@ -81,11 +81,11 @@ POST https://platform-{REGION}.adobe.io/data/core/identity/clusters/members
 
 **请求**
 
-以下请求演示了如何提供要检索群集成员的XID列表。
+下列要求示範如何提供要擷取叢整合員的XID清單。
 
-**存根请求**
+**Stub請求**
 
-使用 `x-uis-cst-ctx: stub` 标头将返回一个短响应。 这是一个临时解决方案，在服务完成的同时促进早期集成开发进展。 当不再需要时，将弃用此设置。
+使用方式 `x-uis-cst-ctx: stub` 標頭將傳回存根回應。 這是臨時解決方案，可在服務完成時協助早期整合開發進度。 當不再需要時，這將被取代。
 
 ```shell
 curl -X POST \
@@ -101,7 +101,7 @@ curl -X POST \
 }'
 ```
 
-**使用XID调用**
+**使用XID呼叫**
 
 ```shell
 curl -X POST \
@@ -117,7 +117,7 @@ curl -X POST \
 }' | json_pp
 ```
 
-**使用UID调用**
+**使用UID呼叫**
 
 ```shell
 curl -X POST \
@@ -143,7 +143,7 @@ curl -X POST \
 
 **响应**
 
-**“受阻”响应**
+**&#39;已截斷&#39;回應**
 
 ```json
 {
@@ -183,7 +183,7 @@ curl -X POST \
 }
 ```
 
-**完全响应**
+**完整回應**
 
 ```json
 {
@@ -237,8 +237,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->无论请求的XID是否属于同一群集，或者一个或多个XID是否与任何群集关联，响应都将始终为请求中提供的每个XID具有一个条目。
+>無論請求的XID是否屬於相同叢集，或一或多個叢集完全關聯，回應中都會為請求中提供的每個XID各有一個專案。
 
 ## 后续步骤
 
-继续下一个教程以 [列出标识的群集历史记录](./list-cluster-history.md)
+繼續下一教學課程，前往 [列出身分的叢集記錄](./list-cluster-history.md)

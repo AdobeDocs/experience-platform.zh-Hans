@@ -1,6 +1,6 @@
 ---
-title: Reactor API快速入门
-description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
+title: Reactor API快速入門
+description: 瞭解如何開始使用Reactor API，包括產生所需存取憑證的步驟。
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -9,119 +9,119 @@ ht-degree: 1%
 
 ---
 
-# Reactor API快速入门
+# Reactor API快速入門
 
-为了使用 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)，则每个请求必须包含以下身份验证标头：
+為了使用 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)，每個請求都必須包含下列驗證標頭：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-本指南介绍如何使用Adobe Developer控制台收集每个标头的值，以便您开始调用Reactor API。
+本指南說明如何使用Adobe Developer主控台收集這些標頭的值，以便您開始呼叫Reactor API。
 
-## 获取开发人员访问Adobe Experience Platform的权限
+## 取得開發人員的Adobe Experience Platform存取權
 
-在为Reactor API生成身份验证值之前，您必须拥有开发人员Experience Platform权限。 要获取开发人员访问权限，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成“获取用户访问权限”步骤后，返回到本教程以生成特定于Reactor API的凭据。
+您必須先擁有開發人員Experience Platform存取權，才能產生Reactor API的驗證值。 若要取得開發人員存取權，請依照 [Experience Platform驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成「取得使用者存取權」步驟後，請返回本教學課程，產生Reactor API的特定認證。
 
-## 生成访问凭据
+## 產生存取認證
 
-使用Adobe Developer控制台，您必须生成以下三个访问凭据：
+使用Adobe Developer Console時，您必須產生下列三個存取認證：
 
 * `{ORG_ID}`
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您组织的ID(`{ORG_ID}`)和API密钥(`{API_KEY}`)可在初始生成API调用后在将来的API调用中重复使用。 但是，您的访问令牌(`{ACCESS_TOKEN}`)是临时的，必须每24小时重新生成一次。
+您組織的ID (`{ORG_ID}`)和API金鑰(`{API_KEY}`)可在最初產生API呼叫後，於日後API呼叫中重複使用。 不過，您的存取權杖(`{ACCESS_TOKEN}`)是暫時性的，必須每24小時重新產生一次。
 
-有关生成这些值的步骤，请参见下文。
+下文將詳細說明產生這些值的步驟。
 
-### 一次性设置
+### 一次性設定
 
-转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 中的文档。
+前往 [Adobe Developer主控台](https://www.adobe.com/go/devs_console_ui) 並使用您的Adobe ID登入。 接下來，請依照以下教學課程中概述的步驟操作： [建立空白專案](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 在開發人員控制檯檔案中。
 
-创建项目后，选择 **添加API** 在 **项目概述** 屏幕。
+建立專案後，選取 **新增API** 於 **專案概述** 畫面。
 
 ![](../images/api/getting-started/add-api-button.png)
 
-的 **添加API** 屏幕。 选择 **Experience PlatformReactor API** 从可用API列表中选择 **下一个**.
+此 **新增API** 畫面隨即顯示。 選取 **Experience Platform Reactor API** 從可用API清單中選取 **下一個**.
 
 ![](../images/api/getting-started/add-launch-api.png)
 
-在下一个屏幕中，系统会提示您创建JSON Web令牌(JWT)凭据，以生成新密钥对或上传您自己的公钥。 在本教程中，选择 **生成键对** 选项，然后选择 **生成密钥对** 在右下角。
+在下一個畫面中，系統提示您建立JSON Web權杖(JWT)認證，以便產生新的金鑰組或上傳您自己的公開金鑰。 在本教學課程中，選取 **產生金鑰組** 選項，然後選取 **產生金鑰組** 右下角。
 
 ![](../images/api/getting-started/create-jwt.png)
 
-下一个屏幕确认密钥对已成功生成，并且包含公共证书和私钥的压缩文件夹会自动下载到您的计算机。 在后续步骤中需要此私钥才能生成访问令牌。
+下一個畫面會確認金鑰組已成功產生，而包含公開憑證和私密金鑰的壓縮資料夾會自動下載至您的電腦。 在後續步驟中需要此私密金鑰才能產生存取權杖。
 
 选择&#x200B;**下一步**&#x200B;以继续。
 
 ![](../images/api/getting-started/keypair-generated.png)
 
-下一个屏幕会提示您选择一个或多个要与API集成关联的产品配置文件。
+下一個畫面會提示您選取一或多個產品設定檔，以與API整合建立關聯。
 
 >[!NOTE]
 >
->产品配置文件由您的组织通过Adobe Admin Console进行管理，并包含针对具体功能的特定权限集。 产品配置文件及其权限只能由组织内具有管理员权限的用户管理。 如果不确定要为API选择哪些产品配置文件，请联系您的管理员。
+>產品設定檔由您的組織透過Adobe Admin Console管理，並包含精細功能的特定許可權集。 產品設定檔及其許可權只能由組織內具有管理員許可權的使用者管理。 如果您不確定要為API選擇哪些產品設定檔，請聯絡您的管理員。
 
-从列表中选择所需的产品配置文件，然后选择 **保存配置的API** 完成API注册。
+從清單中選取所需的產品設定檔，然後選取「 」 **儲存已設定的API** 以完成API註冊。
 
 ![](../images/api/getting-started/select-product-profile.png)
 
-将API添加到项目后，项目页面会重新显示在Experience PlatformReactor API页面中。 从此处，向下滚动到 **服务帐户(JWT)** 部分，该部分提供了所有Reactor API调用中所需的以下访问凭据：
+將API新增至專案後，專案頁面會重新出現在Experience PlatformReactor API頁面上。 從這裡，向下捲動至 **服務帳戶(JWT)** 區段，提供所有呼叫Reactor API時所需的下列存取認證：
 
-* **客户端ID**:客户ID是必需的 `{API_KEY}` 必须在 `x-api-key` 标题。
-* **组织ID**:组织ID是 `{ORG_ID}` 的值 `x-gw-ims-org-id` 标题。
+* **使用者端ID**：使用者端ID為必要項 `{API_KEY}` 此專案必須提供於 `x-api-key` 標頭。
+* **組織ID**：組織ID `{ORG_ID}` 必須在下列專案中使用的值： `x-gw-ims-org-id` 標頭。
 
 ![](../images/api/getting-started/access-creds.png)
 
-### 每个会话的身份验证
+### 每個工作階段的驗證
 
-现在，您拥有 `{API_KEY}` 和 `{ORG_ID}` 值，最后一步是生成 `{ACCESS_TOKEN}` 值。
+現在您已擁有 `{API_KEY}` 和 `{ORG_ID}` 值，最後一個步驟是產生 `{ACCESS_TOKEN}` 值。
 
 >[!NOTE]
 >
->这些令牌在24小时后过期。 如果您将此集成用于应用程序，最好从应用程序内以编程方式获取载体令牌。
+>這些Token會在24小時後過期。 如果您在應用程式中使用此整合，最好以程式設計方式從應用程式中取得持有人權杖。
 
-根据用例的不同，您有两个选项可用于生成访问令牌：
+根據您的使用案例，您有兩個選項可產生存取權杖：
 
-* [手动生成令牌](#manual)
-* [以编程方式生成令牌](#program)
+* [手動產生代號](#manual)
+* [以程式設計方式產生代號](#program)
 
-#### 手动生成访问令牌 {#manual}
+#### 手動產生存取權杖 {#manual}
 
-在文本编辑器或浏览器中打开之前下载的私钥，并复制其内容。 然后，导航回开发人员控制台，并将私钥粘贴到 **生成访问令牌** ，在选择 **生成令牌**.
+在文字編輯器或瀏覽器中開啟您先前下載的私密金鑰，並複製其內容。 然後，導覽回開發人員主控台，並將私密金鑰貼入 **產生存取權杖** 區段（位於專案的Reactor API頁面上），然後選取 **產生Token**.
 
 ![](../images/api/getting-started/paste-private-key.png)
 
-将生成新的访问令牌，并提供一个用于将令牌复制到剪贴板的按钮。 此值用于所需的 `Authorization` 标头，且必须以格式提供 `Bearer {ACCESS_TOKEN}`.
+會產生新的存取Token，並提供按鈕以將該Token複製到剪貼簿。 此值用於必要的 `Authorization` 標頭，且必須以格式提供 `Bearer {ACCESS_TOKEN}`.
 
 ![](../images/api/getting-started/token-generated.png)
 
-#### 以编程方式生成访问令牌 {#program}
+#### 以程式設計方式產生存取權杖 {#program}
 
-如果您将集成用于应用程序，则可以通过API请求以编程方式生成访问令牌。 要完成此操作，您必须获取以下值：
+如果您針對應用程式使用整合，可以透過API請求以程式設計方式產生存取權杖。 若要完成此作業，您必須取得下列值：
 
-* 客户端ID(`{API_KEY}`)
-* 客户端密钥(`{SECRET}`)
-* JSON Web令牌(`{JWT}`)
+* 使用者端ID (`{API_KEY}`)
+* 使用者端密碼(`{SECRET}`)
+* JSON Web權杖(`{JWT}`)
 
-您的客户端ID和密钥可以从项目的主页获取，如 [上一步](#one-time-setup).
+您可以從專案的首頁面取得您的使用者端ID和密碼，請參閱 [上一步](#one-time-setup).
 
 ![](../images/api/getting-started/auto-access-creds.png)
 
-要获取JWT凭据，请导航到 **服务帐户(JWT)** 在左侧导航中，选择 **生成JWT** 选项卡。 在本页上，在 **生成自定义JWT**，将私钥的内容粘贴到提供的文本框中，然后选择 **生成令牌**.
+若要取得您的JWT認證，請導覽至 **服務帳戶(JWT)** 在左側導覽中，然後選取 **產生JWT** 標籤。 在此頁面上，在 **產生自訂JWT**，將私密金鑰的內容貼到提供的文字方塊中，然後選取 **產生Token**.
 
 ![](../images/api/getting-started/generate-jwt.png)
 
-生成的JWT在完成处理后即会显示在下方，并且还会显示一个示例cURL命令，您可以根据需要使用该命令来测试令牌。 使用 **复制** 按钮将令牌复制到剪贴板。
+產生的JWT完成處理後會顯示在下方，並附有一個範例cURL命令，您可以視需要用來測試權杖。 使用 **複製** 按鈕以將Token複製到剪貼簿。
 
 ![](../images/api/getting-started/jwt-generated.png)
 
-收集凭据后，您可以将下面的API调用集成到您的应用程序中，以便以编程方式生成访问令牌。
+收集您的認證後，您可以將下列API呼叫整合到您的應用程式中，以便以程式設計方式產生存取權杖。
 
 **请求**
 
-请求必须发送 `multipart/form-data` 负载，提供您的身份验证凭据，如下所示：
+要求必須傳送 `multipart/form-data` 裝載，提供您的驗證認證，如下所示：
 
 ```shell
 curl -X POST \
@@ -134,7 +134,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新的访问令牌，以及到其过期为止所剩的秒数。
+成功的回應會傳回新的存取Token，以及到期前的秒數。
 
 ```json
 {
@@ -146,25 +146,25 @@ curl -X POST \
 
 | 属性 | 描述 |
 | :-- | :-- |
-| `access_token` | 新生成的访问令牌值。 此值用于所需的 `Authorization` 标头，且必须以格式提供 `Bearer {ACCESS_TOKEN}`. |
-| `expires_in` | 令牌过期的剩余时间（以毫秒为单位）。 令牌过期后，必须生成一个新令牌。 |
+| `access_token` | 新產生的存取權杖值。 此值用於必要的 `Authorization` 標頭，且必須以格式提供 `Bearer {ACCESS_TOKEN}`. |
+| `expires_in` | Token到期前的剩餘時間（毫秒）。 權杖過期後，必須產生新的權杖。 |
 
 {style="table-layout:auto"}
 
 ## 后续步骤
 
-按照本教程中的步骤，您应具有 `{ORG_ID}`, `{API_KEY}`和 `{ACCESS_TOKEN}`. 您现在可以在对Reactor API的简单cURL请求中使用这些值来测试这些值。
+依照本教學課程中的步驟進行，您應該要具備下列專案的有效值： `{ORG_ID}`， `{API_KEY}`、和 `{ACCESS_TOKEN}`. 您現在可以透過在Reactor API的簡單cURL請求中使用這些值來測試這些值。
 
-首先尝试对 [列出所有公司](./endpoints/companies.md#list).
+首先嘗試對進行API呼叫 [列出所有公司](./endpoints/companies.md#list).
 
 >[!NOTE]
 >
->您的组织中可能没有任何公司，在这种情况下，响应将为HTTP状态404（未找到）。 只要没有收到403（禁止）错误，您的访问凭据就有效且有效。
+>您的組織中可能沒有任何公司，在這種情況下，回應將為HTTP狀態404 （找不到）。 只要您沒有收到403 （禁止）錯誤，您的存取認證即有效且可運作。
 
-确认您的访问凭据正在工作后，请继续浏览其他API参考文档，以了解API的许多功能。
+在您確認存取憑證正常運作後，請繼續探索其他API參考檔案，以瞭解API的多種功能。
 
 ## 其他资源
 
-JWT库和SDK: [https://jwt.io/](https://jwt.io/)
+JWT程式庫和SDK： [https://jwt.io/](https://jwt.io/)
 
-Postman API开发： [https://www.postman.com/](https://www.postman.com/)
+Postman API開發： [https://www.postman.com/](https://www.postman.com/)

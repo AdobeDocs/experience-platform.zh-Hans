@@ -1,7 +1,7 @@
 ---
-keywords: 移动消息；移动消息目标；Braze;飞艇
-title: 移动设备参与目标概述
-description: 了解Adobe Experience Platform支持的不同移动参与目标。
+keywords: 行動傳訊；行動傳訊目的地；Braze；飛艇
+title: 行動參與目的地概觀
+description: 瞭解Adobe Experience Platform支援的不同行動參與目的地。
 exl-id: bb5852c0-a47a-42c7-9fae-ec7d80dc3bcf
 source-git-commit: 10c04bdee8536194baea00d3466c758f848c46c5
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# 移动设备参与目标概述 {#mobile-destinations}
+# 行動參與目的地概觀 {#mobile-destinations}
 
-## 支持的移动参与目标 {#supported-destinations}
+## 支援的行動參與目的地 {#supported-destinations}
 
-[!DNL Adobe Experience Platform] 当前支持以下移动参与目标：
+[!DNL Adobe Experience Platform] 目前支援下列行動參與目的地：
 
-* [飞艇属性连接](airship-attributes.md)
-* [Airship Tags连接](airship-tags.md)
-* [Braze连接](braze.md)
-* [线路连接](line.md)
+* [飛艇屬性連線](airship-attributes.md)
+* [飛艇標籤連線](airship-tags.md)
+* [硬式連線](braze.md)
+* [線路連線](line.md)

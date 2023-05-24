@@ -1,22 +1,23 @@
 ---
-title: 子资源完整性(SRI)支持
-description: 了解子资源完整性(SRI)在Adobe Experience Platform中如何受支持。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+title: 子資源完整性(SRI)支援
+description: 瞭解Adobe Experience Platform如何支援子資源完整性(SRI)。
+exl-id: bd8bc3f7-9a85-44e2-ae07-f0664179b51c
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '601'
-ht-degree: 67%
+ht-degree: 72%
 
 ---
 
-# 子资源完整性(SRI)支持
+# 子資源完整性(SRI)支援
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-本文档介绍子资源完整性(SRI)在Adobe Experience Platform中的支持方式。
+本文介紹Adobe Experience Platform如何支援子資源完整性(SRI)。
 
-现代网站是通过引用 Web 上不同位置的图像、内容和脚本来构建的。SRI允许浏览器验证请求文件的内容是否未意外修改。
+现代网站是通过引用 Web 上不同位置的图像、内容和脚本来构建的。SRI可讓瀏覽器確認要求的檔案內容未意外修改。
 
 虽然 SRI 与内容安全策略 (CSP) 的用例是互补的，但是 SRI 不同于 CSP，CSP 可确保网站上仅允许使用来自可信来源的文件。而 SRI 则更进一步，它可确保这些文件的内容符合您的预期。
 
@@ -33,11 +34,11 @@ SRI 验证过程可概括如下：
 
 ## 标记管理系统的限制
 
-作为一款标签管理系统(TMS),Adobe Experience Platform中的标签提供了一个编译的JavaScript库内部版本，您可以通过单个`<script>`元素（嵌入代码）将该内部版本加载到您的页面上。 TMS 提供的动态功能是通过动态交换该脚本的内容来实现的，无需更改其他任何内容。
+作為標籤管理系統(TMS)，Adobe Experience Platform中的標籤提供編譯的JavaScript程式庫組建，讓您透過單一載入到頁面上 `<script>` 元素（內嵌程式碼）。 TMS 提供的动态功能是通过动态交换该脚本的内容来实现的，无需更改其他任何内容。
 
 但是，如果脚本内容发生更改，这些内容的加密哈希也会随之更改。因此，要搭配使用 SRI 与 TMS 的唯一方法是，在发布新内部版本的同时更新嵌入代码。对于许多人来说，这首先就违背了使用 TMS 的主要目的。
 
-标记的下一个最佳安全选项是实施内容安全策略。 有关更多信息，请参阅[CSP和标记](./content-security-policy.md)上的指南。
+下一個最佳標籤安全性選項是實作內容安全性原則。 如需詳細資訊，請參閱以下指南： [CSP和標籤](./content-security-policy.md).
 
 ## 将 SRI 集成到内部版本部署中
 
@@ -55,4 +56,4 @@ SRI 验证过程可概括如下：
 
 ## 后续步骤
 
-本文档介绍了在标记中使用SRI的限制，以及在存在这些限制的情况下，将SRI集成到库内部版本部署中所需的步骤。 如果您尚未集成，强烈建议您阅读[CSP和标记](./content-security-policy.md)中的指南，以了解替代安全选项。
+本檔案說明搭配標籤使用SRI的限制，以及將SRI整合至程式庫組建部署（儘管有這些限制）所需的步驟。 如果您尚未閱讀指南，強烈建議您參閱 [CSP和標籤](./content-security-policy.md) 以取得替代安全性選項。

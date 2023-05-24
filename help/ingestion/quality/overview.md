@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据质量；质量；支持的验证；验证；支持的验证；
+keywords: Experience Platform；首頁；熱門主題；資料品質；品質；品質；支援的驗證；驗證；支援的驗證；
 solution: Experience Platform
-title: 数据质量
-description: 以下文档概要介绍了Adobe Experience Platform中批量摄取和流式摄取受支持的检查和验证行为。
+title: 資料品質
+description: 以下檔案提供Adobe Experience Platform中批次和串流擷取支援的檢查和驗證行為摘要。
 exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,58 +11,58 @@ ht-degree: 6%
 
 ---
 
-# Adobe Experience Platform中的数据质量
+# Adobe Experience Platform中的資料品質
 
-Adobe Experience Platform为通过批量摄取或流式摄取上传的任何数据提供了明确定义的完整性、准确性和一致性保证。 以下文档概要介绍了中支持的批量和流式引入检查和验证行为 [!DNL Experience Platform].
+Adobe Experience Platform針對透過批次或串流擷取上傳的任何資料，提供完整、準確和一致的明確定義保證。 以下檔案提供中批次和串流擷取支援的檢查和驗證行為摘要 [!DNL Experience Platform].
 
-## 支持的检查
+## 支援的檢查
 
-|   | 批量摄取 | 流式摄取 |
+|   | 批次擷取 | 串流擷取 |
 | ------ | --------------- | ------------------- |
-| 数据类型检查 | 是 | 是 |
-| 枚举检查 | 是 | 是 |
-| 范围检查（最小、最大） | 是 | 是 |
-| 必填字段检查 | 是 | 是 |
-| 模式检查 | 否 | 是 |
-| 格式检查 | 否 | 是 |
+| 資料型別檢查 | 是 | 是 |
+| 列舉檢查 | 是 | 是 |
+| 範圍檢查（最小值、最大值） | 是 | 是 |
+| 必填欄位檢查 | 是 | 是 |
+| 圖樣檢查 | 否 | 是 |
+| 格式檢查 | 否 | 是 |
 
-## 支持的验证行为
+## 支援的驗證行為
 
-批量摄取和流式摄取都会通过移动错误数据以在 [!DNL Data Lake]. 数据摄取为批量摄取和流式摄取提供了以下验证。
+批次和串流擷取都會將不良資料移動到中進行擷取和分析，以防止失敗的資料下游 [!DNL Data Lake]. 資料擷取針對批次和串流擷取提供下列驗證。
 
 ### 批量摄取
 
-已完成以下批量摄取验证：
+批次擷取會完成下列驗證：
 
-| 验证区域 | 描述 |
+| 驗證區域 | 描述 |
 | --------------- | ----------- |
-| 架构 | 确保架构为 **not** empty并包含对并集架构的引用，如下所示： `"meta:immutableTags": ["union"]` |
-| `identityField` | 确保定义所有有效的身份描述符。 |
-| `createdUser` | 确保允许摄取批次的用户摄取该批次。 |
+| 架构 | 確保結構描述為 **not** 空白，並包含對聯合結構描述的參考，如下所示： `"meta:immutableTags": ["union"]` |
+| `identityField` | 請確定已定義所有有效的身分描述項。 |
+| `createdUser` | 確保允許擷取批次的使用者擷取批次。 |
 
 ### 流式摄取
 
-对流式引入完成了以下验证：
+下列驗證會針對串流擷取完成：
 
-| 验证区域 | 描述 |
+| 驗證區域 | 描述 |
 | --------------- | ----------- |
-| 架构 | 确保架构为 **not** empty并包含对并集架构的引用，如下所示： `"meta:immutableTags": ["union"]` |
-| `identityField` | 确保定义所有有效的身份描述符。 |
-| JSON | 确保JSON有效。 |
-| 组织 | 确保列出的组织是有效的组织。 |
-| 源名称 | 确保指定数据源的名称。 |
-| 数据集 | 确保指定、启用且未删除数据集。 |
-| 标头 | 确保指定了标头并且有效。 |
+| 架构 | 確保結構描述為 **not** 空白，並包含對聯合結構描述的參考，如下所示： `"meta:immutableTags": ["union"]` |
+| `identityField` | 請確定已定義所有有效的身分描述項。 |
+| JSON | 確保JSON有效。 |
+| 组织 | 確保列出的組織是有效的組織。 |
+| 來源名稱 | 確保指定資料來源的名稱。 |
+| 数据集 | 確保資料集已指定、啟用且未移除。 |
+| 标头 | 確保標頭已指定且有效。 |
 
-有关如何 [!DNL Platform] 可在 [监控数据流文档](./monitor-data-ingestion.md).
+關於如何操作的更多資訊 [!DNL Platform] 監視及驗證資料可在以下網址找到： [監控資料流程檔案](./monitor-data-ingestion.md).
 
-## 身份值验证
+## 身分值驗證
 
-下表概述了为了确保身份值成功验证必须遵循的现有规则。
+下表概述您必須遵循的現有規則，以確保身分值成功驗證。
 
-| 命名空间 | 验证规则 | 违反规则时的系统行为 |
+| 命名空间 | 驗證規則 | 違反規則時的系統行為 |
 | --- | --- | --- |
-| ECID | <ul><li>ECID的标识值必须恰好为38个字符。</li><li>ECID的标识值只能由数字组成。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过该记录。</li></ul> |
-| 非ECID | 标识值不能超过1024个字符。 | 如果标识值超过1024个字符，则会跳过该记录。 |
+| ECID | <ul><li>ECID的身分值必須剛好38個字元。</li><li>ECID的身分值只能包含數字。</li></ul> | <ul><li>如果ECID的身分值不完全是38個字元，則會略過記錄。</li><li>如果ECID的身分值包含非數字字元，則會略過記錄。</li></ul> |
+| 非ECID | 身分值不可超過1024個字元。 | 如果身分值超過1024個字元，則會略過記錄。 |
 
-有关 [!DNL Identity Service] 护栏，看 [[!DNL Identity Service] 护栏概述](../../identity-service/guardrails.md).
+如需詳細資訊，請參閱 [!DNL Identity Service] 護欄，請參閱 [[!DNL Identity Service] 護欄概述](../../identity-service/guardrails.md).

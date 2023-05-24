@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform；主页；热门主题；沙盒疑难解答
+keywords: Experience Platform；首頁；熱門主題；沙箱疑難排解
 solution: Experience Platform
-title: 沙箱疑难解答指南
-description: 本文档提供了有关Adobe Experience Platform沙箱的常见问题解答。
+title: 沙箱疑難排解指南
+description: 本檔案提供有關Adobe Experience Platform中沙箱的常見問題解答。
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '855'
-ht-degree: 6%
+ht-degree: 9%
 
 ---
 
-# 沙箱疑难解答指南
+# 沙箱疑難排解指南
 
-本文档提供了有关Adobe Experience Platform沙箱的常见问题解答。 有关其他平台服务的相关问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本檔案提供有關Adobe Experience Platform中沙箱的常見問題解答。 有關其他Platform服務的相關問題和疑難排解，請參閱 [Experience Platform疑難排解指南](../landing/troubleshooting.md).
 
-沙盒将单个Platform实例分区为单独的虚拟环境，以帮助开发和改进数字体验应用程序。 请参阅 [沙箱概述](home.md) 以了解更多信息。
+沙箱會將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。 有关更多信息，请参阅[沙盒概述](home.md)。
 
-## 什么是沙盒？
+## 什麼是Sandbox？
 
-沙箱是单个Experience Platform实例中的虚拟分区。 每个沙盒都维护着自己独立的Platform资源库（包括模式、数据集、用户档案等）。 在沙盒内执行的所有内容和操作都仅限于该沙盒，不会影响任何其他沙盒。 请参阅 [沙箱概述](home.md) 以了解更多信息。
+沙箱是單一Experience Platform執行個體中的虛擬分割區。 每個沙箱都維護其自身的Platform資源資料庫（包括結構描述、資料集、設定檔等）。 在沙箱內執行的所有內容和動作都僅限於該沙箱，不會影響任何其他沙箱。 有关更多信息，请参阅[沙盒概述](home.md)。
 
-## 有哪些类型的沙箱可用，它们之间有何区别？ {#sandbox-types}
+## 可以使用哪些型別的沙箱，以及它們之間有何差異？ {#sandbox-types}
 
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxtypes"
@@ -29,48 +29,48 @@ ht-degree: 6%
 >abstract="沙盒类型指示这是生产沙盒还是开发沙盒。生产沙盒包括实时数据，开发沙盒用于测试和开发。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在 UI 中创建沙盒"
 
-Experience Platform中提供了两种沙盒类型：
+Experience Platform中有兩種沙箱型別：
 
-* **生产沙盒**:生产沙盒用于与生产环境中的用户档案一起使用。 平台允许您创建多个生产沙箱，以便为数据提供正确的功能，同时保持操作隔离。 此功能允许您将特定的生产沙箱专用于不同的业务线、品牌、项目或地区。 生产沙箱可支持大量生产配置文件，具体取决于您获得许可的 [!DNL Profile] 承诺（在所有授权生产沙箱中累计测量）。 您有权按授权使用授权的平均配置文件 [!DNL Profile] （累计测量所有授权生产沙箱）。
-* **开发沙盒**:开发沙盒是一个沙盒，专门用于使用非生产用户档案进行开发和测试。 开发沙箱支持大量非生产用户档案，这些用户档案最多占您获得许可的用户档案的10% [!DNL Profile] 承诺（在所有授权开发沙箱中累计测量）。 您最多有权：
-   * 每个授权非生产配置文件的平均非生产配置文件丰富度为75 KB（累计测量所有授权开发沙箱）；
-   * 每天按开发沙盒执行一次批量分段作业；
-   * 平均120 [!DNL Profile] API调用，每个 [!DNL Profile]，每年（累计测量所有授权开发沙箱的数据）。
+* **生產沙箱**：生產沙箱旨在用於生產環境中的設定檔。 Platform可讓您建立多個生產沙箱，以便在為資料提供正確功能的同時仍保持操作隔離。 此功能可讓您指定特定的生產沙箱給不同的業務線、品牌、專案或區域。 生產沙箱支援大量生產設定檔，最多可達您的授權 [!DNL Profile] 承諾（在所有授權的生產沙箱中累積測量）。 您有權根據授權使用授權平均設定檔 [!DNL Profile] （在所有授權的生產沙箱中累積測量）。
+* **開發沙箱**：開發沙箱是一種沙箱，專門可用於使用非生產設定檔進行開發和測試。 開發沙箱支援最多10%授權的非生產設定檔數量 [!DNL Profile] 承諾（在所有授權開發沙箱中累積測量）。 您有權享有：
+   * 每個授權的非生產設定檔的平均非生產設定檔豐富度為75 KB （在所有授權開發沙箱中累加測量）；
+   * 每個開發沙箱每天一個批次分段工作；
+   * 平均120 [!DNL Profile] API呼叫，按 [!DNL Profile]，每年（在所有已授權的開發沙箱中累積測量）。
 
-请参阅 [沙箱概述](./home.md) 以了解更多信息。
+有关更多信息，请参阅[沙盒概述](./home.md)。
 
-## 我能否从多个沙盒访问资源？
+## 我可以從多個沙箱存取資源嗎？
 
-沙盒是单个Platform实例的独立分区，每个沙盒都维护其自己的独立资源库。 无论沙盒类型（生产或非生产）如何，都无法从任何其他沙盒访问存在于一个沙盒中的资源。
+沙箱是單一Platform執行個體的獨立分割區，每個沙箱都維護自己的獨立資源庫。 不論沙箱型別（生產或非生產）為何，都無法從任何其他沙箱存取存在於一個沙箱中的資源。
 
-## 默认的生产沙盒是什么？
+## 什麼是預設的生產沙箱？
 
-默认的生产沙盒是在首次配置组织时创建的第一个生产沙盒。 默认的生产沙盒允许您从Platform中摄取或使用数据，并接受不包含沙盒名称或沙盒ID值的请求。 可以重置默认的生产沙盒，但不能删除。
+預設的生產沙箱是第一次布建組織時建立的第一個生產沙箱。 預設的生產沙箱可讓您從Platform擷取或使用資料，以及接受不包含沙箱名稱或沙箱ID值的請求。 預設的生產沙箱可以重設，但不能刪除。
 
-## 我能有多少个生产沙箱？
+## 我可以擁有多少個生產沙箱？
 
-一个Experience Platform实例支持多个生产和开发沙箱，每个沙箱都维护自己独立的Platform资源库（包括架构、数据集和配置文件）。
+Experience Platform執行個體支援多個生產及開發沙箱，每個沙箱都維護其獨立的Platform資源庫（包括結構描述、資料集和設定檔）。
 
-默认的Experience Platform许可证会授予您总共五个沙箱，您可以将其分类为生产或开发。 您可以额外授权包含10个沙箱，最多共授权75个沙箱。
+預設Experience Platform授權總共會授予您5個沙箱，您可將其分類為生產或開發。 您可以授權其他10個沙箱的套件，最多總共75個沙箱。
 
-生产沙箱可以重置或删除，但生产沙箱也由Adobe Analytics用于 [跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能，或者如果在其中托管的身份图表也由Adobe Audience Manager用于 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) 功能。
+生產沙箱可重設或刪除，但Adobe Analytics也用於的生產沙箱除外 [跨裝置分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能，或其中代管的身分圖表是否也被Adobe Audience Manager用於此功能 [以人物為基礎的目的地(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) 功能。
 
-您可以更新生产沙盒的标题。 但是，不能重命名生产沙盒。
+您可以更新生產沙箱的標題。 但是，無法重新命名生產沙箱。
 
 >[!NOTE]
 >
->沙盒名称用于API调用中的查找目的，而沙盒标题用作显示名称。
+>沙箱名稱用於API呼叫中的查詢目的，而沙箱標題則用作顯示名稱。
 
-## 我可以拥有多少个开发沙箱？
+## 我可以擁有多少個開發沙箱？
 
-Experience Platform当前允许在单个组织内最多75个沙箱（生产和开发）处于活动状态。
+Experience Platform目前最多可在單一組織中啟用75個沙箱（生產及開發）。
 
-开发沙箱支持重置和删除功能。
+開發沙箱支援重設和刪除功能。
 
-## 我刚创建了一个沙盒。 如何为将使用此沙盒的用户设置权限？
+## 我剛才已建立沙箱。 如何為將使用此沙箱的使用者設定許可權？
 
-Adobe Admin Console通过使用产品配置文件将用户链接到沙箱和权限。 创建新沙盒后，导航到 **权限** 选项卡，然后单击 **沙箱**. 在此，您可以以与其他权限相同的方式添加或删除对新沙盒的访问权限。
+Adobe Admin Console透過使用產品設定檔將使用者連結至沙箱和許可權。 建立新沙箱後，瀏覽至 **許可權** 您想要授與存取權的產品設定檔標籤，然後按一下 **沙箱**. 從這裡，您可以用與其他許可權相同的方式新增或移除新沙箱的存取權。
 
-如果您希望向特定沙盒的用户添加唯一权限，则可能需要创建应用了相应沙盒和权限的新产品用户档案，并将这些用户分配给该用户档案。
+如果您想要將唯一許可權新增到特定沙箱的使用者，您可能需要建立新的產品設定檔，並套用適當的沙箱和許可權，然後將這些使用者指派到該設定檔。
 
-请参阅 [访问控制用户指南](../access-control/ui/overview.md) 有关管理沙箱和Admin Console权限的更多信息。
+請參閱 [存取控制使用手冊](../access-control/ui/overview.md) 有關在Admin Console中管理沙箱和許可權的詳細資訊。

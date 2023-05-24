@@ -1,43 +1,43 @@
 ---
-title: 边缘网络服务器API概述
+title: Edge Network Server API總覽
 description: 了解什么是 Edge Network Server API 以及如何使用它。
 seo-description: Learn what the Edge Network Server API is and how you can use it.
-keywords: 数据收集；Adobe Experience Platform Edge Network；服务器API;
+keywords: 資料收集；收集；Adobe Experience Platform Edge Network；伺服器api；
 exl-id: 46bd8798-d7f9-405b-9ca8-856ad4aa688c
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
 source-wordcount: '271'
-ht-degree: 5%
+ht-degree: 15%
 
 ---
 
-# 边缘网络服务器API概述 {#overview}
+# Edge Network Server API總覽 {#overview}
 
-Adobe Experience Platform Edge Network为客户提供了一种与任何Adobe Experience Cloud或Adobe Experience Platform Edge服务进行交互的优化方式。
+Adobe Experience Platform Edge Network 为客户提供了与任何 Adobe Experience Cloud 或 Adobe Experience Platform Edge 服务交互的优化方式。
 
-的 [!DNL Edge Network Server API] 可用于各种数据收集、个性化、广告和营销用例。 的 [!DNL Server API] 可在服务器上使用， [!DNL IoT] 设备、机顶盒和各种其他设备。
+此 [!DNL Edge Network Server API] 可用於各種資料收集、個人化、廣告和行銷使用案例。 此 [!DNL Server API] 可用於伺服器， [!DNL IoT] 裝置、機上盒和其他各種裝置。
 
-自 [!DNL Server API] 它不依赖任何库来加载，它提供了一种以闪电般的速度与Adobe Experience Platform边缘网络及受支持的解决方案进行交互的方式。
+由於 [!DNL Server API] 不依賴任何程式庫載入，而是提供極快速的方式與Adobe Experience Platform Edge Network和支援的解決方案互動。
 
-的好处 [!DNL Server API] 架构包括：
+的優點 [!DNL Server API] 架構包括：
 
-* 缩短了页面加载时间
-* 改进了延迟
-* 第一方数据收集
-* 简化的服务端通信
+* 縮短頁面載入時間
+* 改善延遲
+* 第一方資料收集
+* 簡化服務之間的伺服器端通訊
 
-的 [!DNL Server API] 通过两个专用端点支持交互式和批量数据收集：
+此 [!DNL Server API] 透過兩個專用端點，支援互動式和批次資料收集：
 
-1. 交互式端点支持与Adobe Experience Platform和Adobe Experience Cloud服务的通信，这些服务支持高级分段、个性化和其他营销用例。
-2. 批处理端点将允许在需要载入数据时批量发送请求，而不会收到来自正在调用的应用程序的响应。
+1. 互動式端點支援與Adobe Experience Platform和Adobe Experience Cloud服務的通訊，這些服務支援進階細分、個人化和其他行銷使用案例。
+2. 當需要上線資料時，批次端點將允許批次傳送請求，而不會收到來自被呼叫的應用程式的回應。
 
-的 [!DNL Server API] 支持以下类型的请求：
+此 [!DNL Server API] 支援下列型別的請求：
 
-* 通过验证的请求 [Adobe I/O](https://developer.adobe.com/)，使用新 `server.adobedc.net` 端点。
-* 通过的未验证请求 `edge.adobedc.net` 端点。
+* 已驗證的請求，透過 [Adobe I/O](https://developer.adobe.com/)，使用新的 `server.adobedc.net` 端點。
+* 透過的未驗證請求 `edge.adobedc.net` 端點。
 
-这允许根据贵组织的隐私政策，安全地收集经过身份验证的敏感数据。 除了身份验证之外，服务器API还支持标记数据流以仅接受通过API进行的经过身份验证的通信。
+如此一來，即可根據貴組織的隱私權政策，啟用允許收集敏感資料且經過驗證的安全使用案例。 除了驗證以外，伺服器API支援標籤資料串流，以僅接受透過API的驗證通訊。
 
-请观看以下视频，以简化服务器API的概述。
+觀看以下影片，瞭解Server API的簡化概觀。
 
 >[!VIDEO](https://video.tv.adobe.com/v/341448/)

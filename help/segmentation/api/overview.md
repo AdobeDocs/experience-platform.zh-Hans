@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；API;API;
-title: Segmentation Service API指南
-description: Segmentation Service API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
+keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；API；API；
+title: 分段服務API指南
+description: Segmentation Service API可讓開發人員以程式設計方式管理Adobe Experience Platform中的分段作業。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 3%
 
 ---
 
-# Segmentation Service API指南
+# 分段服務API指南
 
-[!DNL Adobe Experience Platform Segmentation Service] 允许您在 [!DNL Adobe Experience Platform] 从 [!DNL Real-Time Customer Profile] 数据。
+[!DNL Adobe Experience Platform Segmentation Service] 可讓您在中建立區段及產生對象 [!DNL Adobe Experience Platform] 從您的 [!DNL Real-Time Customer Profile] 資料。
 
-的 [!DNL Segmentation Service] API提供了多个端点，允许您以编程方式在中管理分段操作 [!DNL Experience Platform]. 此概述文档提供了每个端点的高级简介，以及指向其关联端点指南的链接以了解详细信息。 在阅读各个端点指南之前，请参阅 [入门指南](./getting-started.md) 有关所需标头、读取示例API调用等的重要信息。
+此 [!DNL Segmentation Service] API提供多個端點，可讓您以程式設計方式管理以下專案的細分作業： [!DNL Experience Platform]. 本概觀檔案提供這些端點的概略介紹，並連結至其相關的端點指南，以取得詳細資訊。 在閱讀個別端點指南之前，請參閱 [快速入門手冊](./getting-started.md) 如需必要標題的重要資訊，請參閱範例API呼叫等。
 
-要查看所有可用的端点和CRUD操作，请参阅 [分段服务API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
+若要檢視所有可用的端點和CRUD作業，請參閱 [Segmentation Service API參考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
 <!-- ## Audiences
 
@@ -24,42 +24,42 @@ Audiences are a collection of people who share similar behaviors and/or characte
 
 For more information on using this endpoint, please read the [audiences endpoint guide](./audiences.md). -->
 
-## 导出作业
+## 匯出工作
 
-导出作业是用于将受众区段成员保留到数据集的异步进程。 您可以使用 `/export/jobs` 用于检索所有导出作业、创建新导出作业、检索特定导出作业的详细信息或取消特定导出作业的端点。
+匯出作業是用來將受眾區段成員保留至資料集的非同步程式。 您可以使用 `/export/jobs` 端點可擷取所有匯出作業、建立新的匯出作業、擷取特定匯出作業的詳細資訊，或取消特定匯出作業。
 
-有关使用此端点的更多信息，请阅读 [导出作业端点指南](./export-jobs.md).
+如需使用此端點的詳細資訊，請閱讀 [匯出作業端點指南](./export-jobs.md).
 
-## 预览和估计
+## 預覽和預估
 
-“预览”为区段定义提供符合条件的用户档案的分页列表，允许您将结果与预期结果进行比较。 您可以使用 `/preview` 端点来创建新的预览作业或查找特定预览作业的结果。
+預覽可提供符合區段定義之合格設定檔的分頁清單，讓您可將結果與預期進行比較。 您可以使用 `/preview` 端點，用來建立新的預覽工作或查閱特定預覽工作的結果。
 
-估计值提供区段定义的统计信息，如预计受众规模、置信区间和误差标准偏差。 您可以使用 `/estimate` 端点来查看区段定义的估计值。
+預估可提供區段定義的統計資訊，例如預計對象人數、信賴區間和錯誤標準差。 您可以使用 `/estimate` 端點以檢視區段定義的預估值。
 
-有关使用这些端点的更多信息，请阅读 [预览和估计端点指南](./previews-and-estimates.md).
+如需使用這些端點的詳細資訊，請閱讀 [預覽和估計端點指南](./previews-and-estimates.md).
 
-## 计划
+## 時程表
 
-计划是一种工具，可用于每天自动运行一次批量分段作业。 您可以使用 `/config/schedules` 端点来检索计划列表、创建新计划、检索特定计划的详细信息、更新特定计划或删除特定计划。
+排程是一種工具，可用來每天自動執行一次批次細分工作。 您可以使用 `/config/schedules` 端點可擷取排程清單、建立新排程、擷取特定排程的詳細資訊、更新特定排程，或刪除特定排程。
 
-有关使用此端点的更多信息，请阅读 [schedules endpoint guide](./schedules.md).
+如需使用此端點的詳細資訊，請閱讀 [排程端點指南](./schedules.md).
 
-## 区段定义
+## 區段定義
 
-区段定义定义哪些用户档案将属于哪些受众区段。 您可以使用 `/segment/definitions` 用于管理区段定义的端点。
+區段定義會定義哪些設定檔將成為哪些受眾區段的一部分。 您可以使用 `/segment/definitions` 端點以管理區段定義。
 
-有关使用此端点的更多信息，请阅读 [segment definitions endpoint buide](./segment-definitions.md).
+如需使用此端點的詳細資訊，請閱讀 [區段定義端點指南](./segment-definitions.md).
 
-## 区段作业
+## 區段工作
 
-区段作业会处理之前已建立的区段定义，以生成受众区段。 您可以使用 `/segment/jobs` 用于管理区段作业的端点。
+區段作業會處理先前建立的區段定義，以產生對象區段。 您可以使用 `/segment/jobs` 端點以管理區段作業。
 
-有关使用此端点的更多信息，请阅读 [segment jobs endpoint wide](./segment-jobs.md).
+如需使用此端點的詳細資訊，請閱讀 [區段作業端點指南](./segment-jobs.md).
 
-## 区段搜索
+## 區段搜尋
 
-区段搜索用于搜索跨各种数据源包含的字段，并近乎实时地返回它们。 要开始使用区段搜索，请参阅 [search endpoint指南](segment-search.md)
+區段搜尋可用來搜尋跨不同資料來源包含的欄位，並近乎即時地傳回這些欄位。 若要開始使用區段搜尋，請參閱 [搜尋端點指南](segment-search.md)
 
 ## 后续步骤
 
-要开始使用 [!DNL Segmentation Service] 有关如何调用服务各种端点的详细步骤，请参阅不同端点指南。 要了解有关使用 [!DNL Platform] UI，请参阅 [分段用户指南](../ui/overview.md).
+若要開始使用 [!DNL Segmentation Service] API，檢閱不同的端點指南，以取得有關如何對服務的各種端點進行呼叫的詳細步驟。 若要進一步瞭解如何使用 [!DNL Platform] UI，請參閱 [區段使用手冊](../ui/overview.md).

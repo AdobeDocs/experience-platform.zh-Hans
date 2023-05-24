@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；故障诊断；Data Science Workspace；热门主题
+keywords: Experience Platform；疑難排解；資料科學工作區；熱門主題
 solution: Experience Platform
-title: Data Science Workspace疑难解答指南
-description: 本文档提供了有关Adobe Experience Platform Data Science Workspace的常见问题解答。
+title: Data Science Workspace疑難排解指南
+description: 本檔案提供有關Adobe Experience Platform資料科學工作區的常見問題解答。
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,103 +11,103 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Data Science Workspace] 疑难解答指南
+# [!DNL Data Science Workspace] 疑難排解指南
 
-本文档提供了有关Adobe Experience Platform的常见问题解答 [!DNL Data Science Workspace]. 有关 [!DNL Platform] API通常，请参阅 [Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md).
+本檔案提供有關Adobe Experience Platform常見問題的解答 [!DNL Data Science Workspace]. 有關下列專案的問題和疑難排解： [!DNL Platform] API一般而言，請參閱 [Adobe Experience Platform API疑難排解指南](../landing/troubleshooting.md).
 
-## JupyterLab笔记本查询状态在执行状态中卡住
+## JupyterLab Notebook查詢狀態卡在執行狀態
 
-JupyterLab Notebook可能表示某个单元处于执行状态，无限期地处于某些内存不足状态。 例如，在查询大型数据集或执行多个后续查询时，JupyterLab Notebook可能会耗尽可用内存来存储生成的数据帧对象。 在这种情况下，可以看到一些指标。 首先，即使单元格显示为 [`*`] 图标。 此外，底栏还指示已使用/可用的RAM数量。
+JupyterLab Notebook可能表示儲存格在某些記憶體不足的情況下無限期處於執行狀態。 例如，在查詢大型資料集或執行多個後續查詢時，JupyterLab Notebook的可用記憶體可能會用盡以儲存產生的資料流物件。 在此情況下可以看到一些指標。 首先，即使儲存格顯示為executing，核心也會進入閒置狀態。 [`*`] 圖示加以儲存。 此外，底部列會指出已使用/可用的RAM數量。
 
-![可用内存](./images/jupyterlab/user-guide/allocate-ram.png)
+![可用的ram](./images/jupyterlab/user-guide/allocate-ram.png)
 
-在数据读取期间，内存可能会增长，直到达到您分配的最大内存量为止。 一旦达到最大内存并重新启动内核，就会释放内存。 这意味着，由于内核重新启动，此情景中已用的内存可能显示为非常低，而在重新启动之前，内存将非常接近分配的最大RAM。
+在讀取資料期間，記憶體可能會增加，直到達到您配置的最大記憶體數量。 當達到最大記憶體且核心重新啟動時，就會釋放記憶體。 這表示在此情況下使用的記憶體可能會因為核心重新啟動而顯示為非常低，而在重新啟動之前，記憶體會非常接近配置的最大RAM。
 
-要解决此问题，请选择JupyterLab右上角的齿轮图标，然后将滑块滑动到右侧，然后选择 **[!UICONTROL 更新配置]** 分配更多内存。 此外，如果您正在运行多个查询，并且RAM值接近最大分配量，除非您需要来自先前查询的结果，否则请重新启动内核以重置可用的RAM量。 这可确保您拥有当前查询可用的最大RAM量。
+若要解決此問題，請選取JupyterLab右上方的齒輪圖示，並將滑桿滑至右側，然後選取 **[!UICONTROL 更新設定]** 以配置更多RAM。 此外，如果您正在執行多個查詢，而RAM值接近配置的最大量，除非您需要先前查詢的結果，請重新啟動核心以重設可用的RAM量。 這可確保您擁有可用於目前查詢的最大RAM量。
 
-![分配更多内存](./images/jupyterlab/user-guide/notebook-gpu-config.png)
+![配置更多ram](./images/jupyterlab/user-guide/notebook-gpu-config.png)
 
-如果您正在分配最大内存量(RAM)，但仍然遇到此问题，则可以修改查询以通过减少数据列或范围对较小的数据集大小进行操作。 要使用全部数据，建议您使用Spark笔记本。
+如果您正在配置最大記憶體(RAM)量且仍然遇到此問題，您可以透過減少資料行或資料範圍，修改查詢以在較小的資料集大小上操作。 若要使用完整的資料量，建議您使用Spark筆記本。
 
-## [!DNL JupyterLab] 环境未在中加载 [!DNL Google Chrome]
+## [!DNL JupyterLab] 環境未載入 [!DNL Google Chrome]
 
 >[!IMPORTANT]
 >
->此问题已得到解决，但可能仍存在于Google Chrome 80.x浏览器中。 请确保您的Chrome浏览器是最新的。
+>此問題已解決，但可能仍存在於Google Chrome 80.x瀏覽器中。 請確定您的Chrome瀏覽器為最新狀態。
 
-使用 [!DNL Google Chrome] 浏览器版本80.x中的“隐藏主体”页面，则默认情况下会阻止所有第三方Cookie。 此策略可以阻止 [!DNL JupyterLab] 从Adobe Experience Platform中加载。
+使用 [!DNL Google Chrome] 瀏覽器80.x版預設會封鎖所有第三方Cookie。 此原則可防止 [!DNL JupyterLab] ，以免在Adobe Experience Platform中載入。
 
-要解决此问题，请执行以下步骤：
+若要修正此問題，請使用下列步驟：
 
-在 [!DNL Chrome] 浏览器，导航到右上方并选择 **设置** (或者，您也可以复制并粘贴地址栏中的“chrome://settings/”)。 接下来，滚动到页面底部，然后单击 **高级** 下拉列表。
+在您的 [!DNL Chrome] 瀏覽器，導覽至右上角並選取 **設定** (您也可以複製並貼上位址列中的「chrome://settings/」)。 接下來，捲動至頁面底部，然後按一下 **進階** 下拉式清單。
 
-![chrome高级](./images/faq/chrome-advanced.png)
+![chrome advanced](./images/faq/chrome-advanced.png)
 
-的 **隐私和安全** 的上界。 接下来，单击 **网站设置** 后跟 **Cookie和网站数据**.
+此 **隱私權與安全性** 區段隨即顯示。 接下來，按一下 **網站設定** 後面接著 **Cookie和網站資料**.
 
-![chrome高级](./images/faq/privacy-security.png)
+![chrome advanced](./images/faq/privacy-security.png)
 
-![chrome高级](./images/faq/cookies.png)
+![chrome advanced](./images/faq/cookies.png)
 
-最后，将“阻止第三方Cookie”切换为“关”。
+最後，將「封鎖第三方Cookie」切換為「關閉」。
 
-![chrome高级](./images/faq/toggle-off.png)
+![chrome advanced](./images/faq/toggle-off.png)
 
 >[!NOTE]
 >
->或者，您也可以禁用第三方Cookie并添加 [*.]ds.adobe.net到允许列表。
+>或者，您可以停用第三方Cookie並新增 [*.]ds.adobe.net加入允許清單。
 
-导航到地址栏中的“chrome://flags/”。 搜索并禁用标题为的标记 *&quot;默认为Cookie设置SameSite&quot;* 使用右侧的下拉菜单。
+導覽至網址列中的「chrome://flags/」。 搜尋和停用標示為的標幟 *&quot;預設SameSite Cookie&quot;* 使用右側的下拉式功能表。
 
-![禁用samesite标记](./images/faq/samesite-flag.png)
+![停用samesite標幟](./images/faq/samesite-flag.png)
 
-在步骤2之后，系统会提示您重新启动浏览器。 你重新启动后， [!DNL Jupyterlab] 应该可以访问。
+在步驟2之後，系統會提示您重新啟動瀏覽器。 你重新啟動後， [!DNL Jupyterlab] 應為可存取。
 
-## 为什么我无法访问 [!DNL JupyterLab] 在Safari中？
+## 為什麼我無法存取 [!DNL JupyterLab] 使用Safari嗎？
 
-Safari默认在Safari &lt; 12中禁用第三方Cookie。 因为 [!DNL Jupyter] 虚拟机实例位于与其父框架不同的域上，Adobe Experience Platform当前要求启用第三方Cookie。 请启用第三方Cookie或切换到其他浏览器，例如 [!DNL Google Chrome].
+Safari預設會在Safari &lt; 12中停用第三方Cookie。 因為您的 [!DNL Jupyter] 虛擬機器器執行個體位在與上層框架不同的網域上，Adobe Experience Platform目前要求啟用協力廠商Cookie。 請啟用第三方Cookie或切換至其他瀏覽器，例如 [!DNL Google Chrome].
 
-对于Safari 12，您需要将用户代理切换到[!DNL Chrome]&#39;或&#39;[!DNL Firefox]&#39;。 要切换用户代理，请首先打开 *Safari* 菜单和选择 **首选项**. 此时将出现“首选项”窗口。
+若使用Safari 12，您必須將使用者代理程式切換為&#39;[!DNL Chrome]&#39;或&#39;[!DNL Firefox]&#39;. 若要切換使用者代理程式，請開啟 *Safari* 功能表並選取 **偏好設定**. 偏好設定視窗隨即出現。
 
-![Safari首选项](./images/faq/preferences.png)
+![Safari偏好設定](./images/faq/preferences.png)
 
-在Safari首选项窗口中，选择 **高级**. 然后，检查 *在菜单栏中显示“开发”菜单* 框中。 完成此步骤后，您可以关闭首选项窗口。
+在Safari偏好設定視窗中，選取 **進階**. 然後檢視 *在功能表列中顯示[開發]功能表* 方塊。 完成此步驟後，您可以關閉偏好設定視窗。
 
-![Safari高级](./images/faq/advanced.png)
+![Safari進階](./images/faq/advanced.png)
 
-接下来，从顶部导航栏中选择 **开发** 菜单。 从 **开发** 下拉菜单，悬停鼠标 **用户代理**. 您可以选择 **[!DNL Chrome]** 或 **[!DNL Firefox]** 要使用的用户代理字符串。
+接下來，從頂端導覽列中選取 **開發** 功能表。 從 **開發** 下拉式清單，暫留在 **使用者代理**. 您可以選取 **[!DNL Chrome]** 或 **[!DNL Firefox]** 您要使用的使用者代理字串。
 
-![“开发”菜单](./images/faq/user-agent.png)
+![開發功能表](./images/faq/user-agent.png)
 
-## 为什么在尝试上传或删除文件时，我看到“403禁止”消息 [!DNL JupyterLab]?
+## 為什麼我嘗試上傳或刪除中的檔案時會看到「403禁止」訊息 [!DNL JupyterLab]？
 
-如果您的浏览器启用了广告拦截软件，例如 [!DNL Ghostery] 或 [!DNL AdBlock] 此外，必须允许每个广告拦截软件中使用域“\*.adobe.net”，以便 [!DNL JupyterLab] 正常运行。 这是因为 [!DNL JupyterLab] 虚拟机在与 [!DNL Experience Platform] 域。
+如果您的瀏覽器已啟用廣告封鎖軟體，例如 [!DNL Ghostery] 或 [!DNL AdBlock] 此外，每個廣告封鎖軟體都必須允許網域「\*.adobe.net」 [!DNL JupyterLab] 以正常運作。 這是因為 [!DNL JupyterLab] 虛擬機器器在與「 」不同的網域上執行 [!DNL Experience Platform] 網域。
 
-## 为什么我的 [!DNL Jupyter Notebook] 被加扰或未呈现为代码？
+## 為什麼我的某些部分 [!DNL Jupyter Notebook] 看起來很混亂或不演算為程式碼？
 
-如果相关的单元格意外从“代码”更改为“标记”，则可能会发生这种情况。 在代码单元格聚焦时，按键组合 **ESC+M** 将单元格的类型更改为Markdown。 单元格类型可以通过笔记本顶部选定单元格的下拉指示器进行更改。 要将单元格类型更改为代码，请首先选择要更改的给定单元格。 接下来，单击指示单元格当前类型的下拉列表，然后选择“代码”。
+如果意外地將相關儲存格從「代碼」變更為「Markdown」，就可能發生這種情況。 聚焦程式碼儲存格時，按下按鍵組合 **ESC+M** 將儲存格型別變更為Markdown。 儲存格的型別可以透過所選儲存格之筆記本頂端的下拉式指示器來變更。 若要將儲存格型別變更為程式碼，請從選取您要變更的指定儲存格開始。 接下來，按一下指出儲存格目前型別的下拉式清單，然後選取「代碼」。
 
 ![](./images/faq/code_type.png)
 
-## 如何安装自定义 [!DNL Python] 库？
+## 如何安裝自訂 [!DNL Python] 資料庫？
 
-的 [!DNL Python] 内核随许多常用的机器学习库一起预安装。 但是，您可以通过在代码单元格中执行以下命令来安装其他自定义库：
+此 [!DNL Python] kernel已預先安裝許多常用的機器學習程式庫。 不過，您可以在程式碼儲存格中執行以下命令，以安裝其他自訂程式庫：
 
 ```shell
 !pip install {LIBRARY_NAME}
 ```
 
-有关预安装的完整列表 [!DNL Python] 库，请参阅 [JupyterLab用户指南的附录部分](./jupyterlab/overview.md#supported-libraries).
+如需預先安裝的完整清單 [!DNL Python] 程式庫，請參閱 [JupyterLab使用手冊的附錄區段](./jupyterlab/overview.md#supported-libraries).
 
-## 我能否安装自定义PySpark库？
+## 我可以安裝自訂PySpark程式庫嗎？
 
-很遗憾，您无法为PySpark内核安装其他库。 但是，您可以联系Adobe客户服务代表，为您安装自定义PySpark库。
+很遺憾，您無法為PySpark核心安裝其他程式庫。 不過，您可以聯絡Adobe客戶服務代表，為您安裝自訂PySpark程式庫。
 
-有关预安装的PySpark库的列表，请参阅 [JupyterLab用户指南的附录部分](./jupyterlab/overview.md#supported-libraries).
+如需預先安裝的PySpark程式庫的清單，請參閱 [JupyterLab使用手冊的附錄區段](./jupyterlab/overview.md#supported-libraries).
 
-## 是否可以配置 [!DNL Spark] 群集资源 [!DNL JupyterLab] [!DNL Spark] 还是PySpark内核？
+## 是否可以設定 [!DNL Spark] 的叢集資源 [!DNL JupyterLab] [!DNL Spark] 或PySpark核心？
 
-您可以通过将以下块添加到笔记本的第一个单元格来配置资源：
+您可以將下列區塊新增至筆記本的第一個儲存格來設定資源：
 
 ```python
 %%configure -f 
@@ -123,38 +123,38 @@ Safari默认在Safari &lt; 12中禁用第三方Cookie。 因为 [!DNL Jupyter] �
 }
 ```
 
-有关 [!DNL Spark] 群集资源配置（包括可配置属性的完整列表），请参阅 [JupyterLab用户指南](./jupyterlab/overview.md#kernels).
+如需詳細資訊，請參閱 [!DNL Spark] 叢集資源設定，包括可設定屬性的完整清單，請參閱 [JupyterLab使用手冊](./jupyterlab/overview.md#kernels).
 
-## 为什么在尝试为较大的数据集执行某些任务时我会收到错误？
+## 嘗試執行較大資料集的某些任務時，為什麼會收到錯誤？
 
-如果您收到错误，原因如下 `Reason: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues.` 这通常意味着驱动程序或执行器内存不足。 查看JupyterLab笔记本 [数据访问](./jupyterlab/access-notebook-data.md) 有关数据限制以及如何在大型数据集上执行任务的更多信息。 通常，通过更改 `mode` 从 `interactive` to `batch`.
+如果您收到錯誤的原因，例如 `Reason: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues.` 這通常表示驅動程式或執行器的記憶體不足。 請參閱JupyterLab Notebooks [資料存取](./jupyterlab/access-notebook-data.md) 檔案，以取得資料限制及如何在大型資料集上執行任務的詳細資訊。 通常此錯誤可透過變更 `mode` 從 `interactive` 至 `batch`.
 
-此外，在编写大型Spark/PySpark数据集时，会缓存您的数据(`df.cache()`)之前执行写入代码可以大大提高性能。
+此外，在撰寫大型Spark/PySpark資料集時，請快取您的資料(`df.cache()`)，然後執行寫入程式碼可以大幅改善效能。
 
 <!-- remove this paragraph at a later date once the sdk is updated -->
 
-如果您在读取数据时遇到问题，并对数据应用转换，请尝试在转换之前缓存数据。 缓存数据可防止通过网络进行多次读取。 首先，读取数据。 接下来，缓存(`df.cache()`)数据。 最后，执行转换。
+如果您在讀取資料時遇到問題，並且正在將轉換套用至資料，請嘗試在轉換之前快取您的資料。 快取您的資料可防止跨網路多次讀取。 從讀取資料開始。 接下來，快取(`df.cache()`)資料。 最後，執行轉換。
 
-## 为什么我的Spark/PySpark笔记本在读写数据方面需要这么长时间？
+## 我的Spark/PySpark筆記型電腦為何要花這麼長時間來讀取和寫入資料？
 
-如果您对数据执行转换，例如使用 `fit()`，则转换可能会执行多次。 要提高性能，请使用 `df.cache()` 执行 `fit()`. 这可确保转换只执行一次，并防止跨网络进行多次读取。
+如果您要對資料執行轉換，例如使用 `fit()`，轉換可能會執行多次。 若要提高效能，請使用 `df.cache()` 執行 `fit()`. 這樣可確保只執行一次轉換，並防止跨網路多次讀取。
 
-**建议顺序：** 首先，读取数据。 接下来，执行转换，然后执行缓存(`df.cache()`)数据。 最后，执行 `fit()`.
+**建議的順序：** 從讀取資料開始。 接下來，執行轉換，然後進行快取(`df.cache()`)資料。 最後，執行 `fit()`.
 
-## 为什么我的Spark/PySpark笔记本无法运行？
+## 為什麼我的Spark/PySpark筆記型電腦無法執行？
 
-如果您收到以下任何错误：
+如果您收到下列任何錯誤：
 
-- 由于暂存失败，作业中止……只能压缩每个分区中元素数量相同的RDD。
-- 远程RPC客户端已断开关联，并出现其他内存错误。
-- 读取和写入数据集时性能不佳。
+- 工作已中止，因為中繼失敗……只能壓縮每個磁碟分割中具有相同元素數量的RDD。
+- 遠端RPC使用者端已解除關聯和其他記憶體錯誤。
+- 讀取和寫入資料集時效能不佳。
 
-检查以确保缓存数据(`df.cache()`)。 在笔记本中执行代码时，使用 `df.cache()` (例如 `fit()` 可大大提高笔记本性能。 使用 `df.cache()` 在编写数据集之前，请确保转换只执行一次，而不是多次。
+檢查以確定您正在快取資料(`df.cache()`)，然後再寫入資料。 在Notebooks中執行程式碼時，使用 `df.cache()` 在動作(例如 `fit()` 可大幅提升筆記型電腦效能。 使用 `df.cache()` 在寫入資料集之前，請確定轉換只會執行一次，而非多次。
 
-## [!DNL Docker Hub] 数据科学工作区中的限制限制
+## [!DNL Docker Hub] 限制資料科學工作區中的限制
 
-自2020年11月20日起，对Docker Hub的匿名和免费认证使用的费率限制已生效。 匿名和免费 [!DNL Docker Hub] 用户每六小时最多可获得100个容器图像拉取请求。 如果您受这些更改的影响，将收到以下错误消息： `ERROR: toomanyrequests: Too Many Requests.` 或 `You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits.`.
+自2020年11月20日起，匿名和免費驗證使用Docker Hub的費率限制已生效。 匿名且免費 [!DNL Docker Hub] 每六小時，使用者最多只能收到100個容器影像提取請求。 如果您受這些變更影響，您將會收到此錯誤訊息： `ERROR: toomanyrequests: Too Many Requests.` 或 `You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits.`.
 
-目前，此限制仅在您尝试在6小时内构建100个指向方法的笔记本时，或者如果您在数据科学工作区中使用基于Spark的笔记本时（经常进行放大和缩小），才会影响您的组织。 但是，这不太可能，因为在上运行的群集在空闲之前保持活动状态两个小时。 这会减少群集处于活动状态时所需的提取数。 如果您收到上述任何错误，则需要等到 [!DNL Docker] 限制已重置。
+目前，此限制只會在您嘗試在六小時內建立100部配方筆記型電腦，或是您在資料科學工作區中使用經常擴充和縮減的Spark筆記型電腦時，才會影響您的組織。 不過，這不太可能，因為這些執行所在的叢集在閒置之前會維持作用中兩個小時。 這減少了叢集處於作用中狀態時所需的提取次數。 如果您收到上述任何錯誤，則需要等到您的 [!DNL Docker] 限制已重設。
 
-有关 [!DNL Docker Hub] 速率限制，访问 [DockerHub文档](https://www.docker.com/increase-rate-limits). 正在为此制定解决方案，并预期在后续版本中推出。
+如需有關的詳細資訊 [!DNL Docker Hub] 速率限制，請造訪 [DockerHub檔案](https://www.docker.com/increase-rate-limits). 我們正在研究此問題的解決方案，預計會在後續版本中推出。

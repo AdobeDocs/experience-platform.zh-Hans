@@ -1,29 +1,30 @@
 ---
-title: 追加销售详细信息架构字段组
-description: 本文档概述了追加销售详细信息架构字段组。
-source-git-commit: 4a74faad811d9b13f93799686df44f04a8d1b784
+title: 追加銷售詳細資料結構欄位群組
+description: 本檔案提供「追加銷售詳細資訊」結構描述欄位群組的概觀。
+exl-id: 6b69805d-03bc-489b-945a-03e61b99842e
+source-git-commit: afdac5ce2ed967b4688d456a586c946bc2cf4179
 workflow-type: tm+mt
-source-wordcount: '154'
-ht-degree: 3%
+source-wordcount: '151'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL 追加销] 售详细信息架构字段组
+# [!UICONTROL 追加銷售細節] 結構描述欄位群組
 
-[!UICONTROL 追加销] 售详细信息类的标准架构字段 [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) 组，用于捕获有关追加销售营销事件的信息，包括有关交易的详细信息以及向客户显示选件的不同方式。
+[!UICONTROL 追加銷售細節] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md) 用於擷取有關追加銷售行銷事件的資訊，包括有關交易的詳細資訊和向客戶顯示優惠的不同方式。
 
-字段组提供单个对象类型字段`upsells`。 此对象中包含的属性说明如下。
+欄位群組提供單一物件型別欄位， `upsells`. 此物件中包含的屬性說明如下。
 
-![向上销售详细信息结构](../../images/field-groups/upsell-details.png)
+![追加銷售詳細資料結構](../../images/field-groups/upsell-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `upsellImpressions` | [展示次数](../../data-types/impressions.md)的数组 | 一个数组，列出客户记录的展示次数（数字查看次数或追加销售选件的参与次数）。 |
-| `upsellTransaction` | [交易](../../data-types/transaction.md) | 描述追加销售的货币交易记录。 |
+| `upsellImpressions` | 陣列 [曝光次數](../../data-types/impressions.md) | 列出客戶錄製的印象（數位檢視或追加銷售優惠方案的參與）的陣列。 |
+| `upsellTransaction` | [交易](../../data-types/transaction.md) | 說明追加銷售的貨幣交易。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upsell-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upsell-details.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upsell-details.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upsell-details.schema.json)

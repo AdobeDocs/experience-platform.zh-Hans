@@ -1,10 +1,11 @@
 ---
-title: 边缘扩展模块中的上下文
-description: 了解上下文对象及其在与边缘属性的标记扩展中的库模块交互时所起的作用。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+title: Edge擴充功能模組中的內容
+description: 瞭解上下文物件，及其在與Edge屬性的標籤擴充功能中的程式庫模組互動時所扮演的角色。
+exl-id: 04e4e369-687e-4b46-9d24-18a97a218555
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '747'
-ht-degree: 74%
+ht-degree: 77%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 74%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+> Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Edge 扩展中的所有库模块在执行时，都会获得一个 `context` 对象。本文档介绍了 `context` 对象提供的属性，以及些属性在库模块中发挥的作用。
 
@@ -22,7 +23,7 @@ Edge 扩展中的所有库模块在执行时，都会获得一个 `context` 对�
 
 ### [!DNL event]
 
-`event`对象表示触发规则的事件，并包含以下值：
+此 `event` object代表觸發規則的事件，並包含以下值：
 
 ```js
 logger.log(context.arc.event);
@@ -41,7 +42,7 @@ logger.log(context.arc.event);
 logger.log(context.arc.request)
 ```
 
-`request` 对象有两个顶级属性：`body` 和 `head`。`body`属性包含体验数据模型(XDM)信息，当您导航到&#x200B;**[!UICONTROL Launch]**&#x200B;并选择&#x200B;**[!UICONTROL Edge Trace]**&#x200B;选项卡时，可以在Adobe Experience Platform Debugger中检查该属性。
+`request` 对象有两个顶级属性：`body` 和 `head`。此 `body` 屬性包含Experience Data Model (XDM)資訊，當您導覽至「 」時，可在Adobe Experience Platform Debugger中檢視 **[!UICONTROL Launch]** 並選取 **[!UICONTROL 邊緣追蹤]** 標籤。
 
 ### [!DNL ruleStash] {#rulestash}
 
@@ -95,15 +96,15 @@ module.exports = (context) => {
 
 >[!NOTE]
 >
->使用此策略时，请务必始终返回完整的扩展规则库。 如果改为仅返回一个值，则它将覆盖您可能设置的任何其他属性。
+>使用此策略時，請務必小心傳回完整的擴充功能規則隱藏專案。 如果您只傳回值，則會覆寫您可能已設定的任何其他屬性。
 
 ## 实用工具
 
-`utils`属性表示一个对象，该对象提供特定于标记运行时的实用工具。
+此 `utils` 屬性代表提供標籤執行階段專用公用程式的物件。
 
 ### [!DNL logger]
 
-`logger`实用程序允许您记录在使用[Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)时在调试会话期间显示的消息。
+此 `logger` 公用程式可讓您記錄在使用時於偵錯工作階段顯示的訊息 [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob).
 
 ```js
 context.utils.logger.error('Error!');
@@ -130,7 +131,7 @@ context.utils.fetch('http://example.com/movies.json')
 
 ### [!DNL getBuildInfo]
 
-此实用程序会返回一个对象，其中包含有关当前标记运行时库的生成信息。
+此公用程式會傳回物件，內含目前標籤執行階段程式庫組建的相關資訊。
 
 ```js
 logger.log(context.utils.getBuildInfo().turbineBuildDate);

@@ -1,6 +1,6 @@
 ---
-title: 在UI中创建Google云存储源连接
-description: 了解如何使用Google UI创建Adobe Experience Platform云存储源连接。
+title: 在UI中建立Google雲端儲存空間來源連線
+description: 瞭解如何使用Adobe Experience Platform UI建立Google雲端儲存空間來源連線。
 exl-id: 3258ccd7-757c-4c4a-b7bb-0e8c9de3b50a
 source-git-commit: 7181cb92dd44d8005fe1054020ffeb36c309b42e
 workflow-type: tm+mt
@@ -9,71 +9,71 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Google Cloud Storage] UI中的源连接
+# 建立 [!DNL Google Cloud Storage] ui中的來源連線
 
-本教程提供了创建 [!DNL Google Cloud Storage] 源连接。
+本教學課程提供建立 [!DNL Google Cloud Storage] 來源連線使用Adobe Experience Platform UI。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-如果您已经拥有 [!DNL Google Cloud Storage] 连接时，您可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/batch/cloud-storage.md).
+如果您已有有效的 [!DNL Google Cloud Storage] 連線時，您可以略過本檔案的其餘部分，並繼續進行上的教學課程 [設定資料流](../../dataflow/batch/cloud-storage.md).
 
 ### 支持的文件格式
 
-[!DNL Experience Platform] 支持从外部存储摄取以下文件格式：
+[!DNL Experience Platform] 支援從外部儲存體擷取的下列檔案格式：
 
-* 分隔符分隔值(DSV):任何单字符值都可用作DSV格式数据文件的分隔符。
-* JavaScript对象表示法(JSON):JSON格式的数据文件必须符合XDM。
-* Apache Parquet:必须符合XDM规范，但必须使用Parquet格式的数据文件。
+* 分隔符號分隔值(DSV)：任何單一字元值都可作為DSV格式資料檔案的分隔符號。
+* JavaScript物件標籤法(JSON)： JSON格式資料檔案必須符合XDM規範。
+* Apache Parquet： Parquet格式資料檔案必須符合XDM標準。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-为了访问 [!DNL Google Cloud Storage] 数据，必须提供以下值：
+為了存取您的 [!DNL Google Cloud Storage] 資料，您必須提供下列值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| 访问密钥ID | 由61个字符组成的字母数字字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 |
-| 密钥访问密钥 | 一个40个字符、基于64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 |
-| 存储段名称 | 您的 [!DNL Google Cloud Storage] 存储段。 如果要提供对云存储中特定子文件夹的访问权限，则必须指定存储段名称。 |
-| 文件夹路径 | 要提供访问权限的文件夹的路径。 |
+| 存取金鑰ID | 61個字元的英數字串，用於驗證您的 [!DNL Google Cloud Storage] 至平台的帳戶。 |
+| 秘密存取金鑰 | 40個字元的base-64編碼字串，用於驗證您的 [!DNL Google Cloud Storage] 至平台的帳戶。 |
+| 存储桶名称 | 您的名稱 [!DNL Google Cloud Storage] 貯體。 如果您想要提供雲端儲存空間中特定子資料夾的存取權，您必須指定貯體名稱。 |
+| 文件夹路径 | 您要提供存取權的資料夾路徑。 |
 
-有关这些值的更多信息，请参阅 [Google云存储HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) 的双曲余切值。 有关如何生成您自己的访问密钥ID和密钥的步骤，请参阅 [[!DNL Google Cloud Storage] 概述](../../../../connectors/cloud-storage/google-cloud-storage.md).
+如需這些值的詳細資訊，請參閱 [Google雲端儲存空間HMAC金鑰](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) 指南。 有關如何產生您自己的存取金鑰ID和秘密存取金鑰的步驟，請參閱 [[!DNL Google Cloud Storage] 概觀](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
-收集所需的凭据后，您可以按照以下步骤链接 [!DNL Google Cloud Storage] 帐户到平台。
+收集完所需的認證後，您可以依照下列步驟連結 [!DNL Google Cloud Storage] 至平台的帳戶。
 
-## 连接 [!DNL Google Cloud Storage] 帐户
+## 連線您的 [!DNL Google Cloud Storage] 帳戶
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL Google云存储]** 然后选择 **[!UICONTROL 添加数据]**.
+在 [!UICONTROL 雲端儲存空間] 類別，選取 **[!UICONTROL Google雲端儲存空間]** 然後選取 **[!UICONTROL 新增資料]**.
 
-![显示源目录页面的平台UI屏幕。](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
+![Platform UI畫面會顯示來源目錄頁面。](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
 
-的 **[!UICONTROL 连接到Google云存储]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線至Google雲端儲存空間]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 现有帐户
+### 現有帳戶
 
-要连接现有帐户，请选择 [!DNL Google Cloud Storage] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要連線現有帳戶，請選取 [!DNL Google Cloud Storage] 您要連線的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![Platform UI屏幕显示Google云存储源的现有帐户页面](../../../../images/tutorials/create/google-cloud-storage/existing.png)
+![Platform UI畫面會顯示Google Cloud Storage來源的現有帳戶頁面](../../../../images/tutorials/create/google-cloud-storage/existing.png)
 
-### 新帐户
+### 新帳戶
 
-如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供名称、可选描述以及 [!DNL Google Cloud Storage] 凭据。 在此步骤中，您还可以通过定义子文件夹路径的名称来指定您的帐户有权访问的子文件夹。
+如果您使用新認證，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供名稱、選擇性說明，以及 [!DNL Google Cloud Storage] 認證。 在此步驟中，您還可以定義子資料夾的路徑名稱，以指定您的帳戶將有權存取的子資料夾。
 
-完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
 
-![Platform UI屏幕显示Google云存储源的新帐户页面。](../../../../images/tutorials/create/google-cloud-storage/new.png)
+![Platform UI畫面會顯示Google Cloud Storage來源的新帳戶頁面。](../../../../images/tutorials/create/google-cloud-storage/new.png)
 
 
 ## 后续步骤
 
-通过阅读本教程，您已经与 [!DNL Google Cloud Storage] 帐户。 您现在可以继续下一个教程和 [配置数据流，以将云存储中的数据引入平台](../../dataflow/batch/cloud-storage.md).
+依照本教學課程，您已建立與的連線， [!DNL Google Cloud Storage] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流，將雲端儲存空間中的資料匯入Platform](../../dataflow/batch/cloud-storage.md).

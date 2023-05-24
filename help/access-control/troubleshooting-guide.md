@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；故障诊断；访问控制
+keywords: Experience Platform；首頁；熱門主題；疑難排解；存取控制
 solution: Experience Platform
-title: 访问控制疑难解答指南
-description: 本文档提供了有关Adobe Experience Platform中访问控制的常见问题解答。
+title: 存取控制疑難排解指南
+description: 本檔案提供Adobe Experience Platform存取控制常見問題的解答。
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,28 +11,28 @@ ht-degree: 0%
 
 ---
 
-# 访问控制疑难解答指南
+# 存取控制疑難排解指南
 
-本文档提供了有关Adobe Experience Platform中访问控制的常见问题解答。 有关与其他 [!DNL Platform] 服务，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本檔案提供Adobe Experience Platform存取控制常見問題的解答。 關於其他相關問題和疑難排解 [!DNL Platform] 服務，請參閱 [Experience Platform疑難排解指南](../landing/troubleshooting.md).
 
-[!DNL Experience Platform] 利用 [Adobe Admin Console](https://adminconsole.adobe.com) 要提供基于角色的访问控制，请将用户与权限和沙箱关联起来。  请参阅 [访问控制概述](home.md) 以了解更多信息。
+[!DNL Experience Platform] 可運用中的產品設定檔 [Adobe Admin Console](https://adminconsole.adobe.com) 若要提供角色型存取控制，請將使用者與許可權和沙箱連結。  請參閱 [存取控制總覽](home.md) 以取得詳細資訊。
 
-## 在哪里可以找到我当前的访问权限？
+## 我可以在哪裡找到目前的存取許可權？
 
-如果您是您组织的系统管理员、产品管理员或产品配置文件管理员，则可以查看您分配的产品配置文件及其在Adobe Admin Console中提供的权限。 请参阅 [访问控制用户指南](./ui/overview.md) 有关如何导航的说明 [!DNL Admin Console] 查看产品配置文件的权限。
+如果您是組織的系統管理員、產品管理員或產品設定檔管理員，則可以在Adobe Admin Console中檢視指派的產品設定檔及其提供的許可權。 請參閱 [存取控制使用手冊](./ui/overview.md) 以取得如何導覽 [!DNL Admin Console] 以檢視產品設定檔的許可權。
 
-如果您不是管理员，则仍可以通过向 `/acl/effective-policies` 访问控制API中的端点。 请参阅 [访问控制开发人员指南](./api/effective-policies.md) 以了解更多信息。
+如果您不是管理員，您仍然可以透過傳送請求至 `/acl/effective-policies` 存取控制API中的端點。 請參閱下列「檢視有效原則」一節： [存取控制開發人員指南](./api/effective-policies.md) 以取得詳細資訊。
 
-## 中的一些功能 [!DNL Platform] UI不可用。 权限如何控制对这些功能的访问？
+## 中的部分功能 [!DNL Platform] UI無法使用。 這些功能的存取權如何由許可權控制？
 
-如果您没有特定 [!DNL Platform] 功能，该功能将在 [!DNL Experience Platform] UI。 例如，为了查看[!UICONTROL 用户档案]“ ”选项卡，您必须具有[!UICONTROL 查看配置文件]&quot;或&quot;[!UICONTROL 管理配置文件]“权限”。 如果您需要其他权限，请联系您的管理员 [!DNL Experience Platform] 功能。
+如果您沒有特定專案的存取許可權 [!DNL Platform] 功能，則會在以下位置隱藏或顯示為灰色： [!DNL Experience Platform] UI。 例如，若要檢視「[!UICONTROL 設定檔]「索引標籤，您必須擁有」[!UICONTROL 檢視設定檔]「或」[!UICONTROL 管理設定檔]」許可權。 如果您需要其他許可權，請聯絡管理員： [!DNL Experience Platform] 功能。
 
-## 权限分组方式，以及哪个组包含要使用的权限？
+## 許可權如何分組，哪個群組包含我想使用的許可權？
 
-权限按 [!DNL Platform] (例如 [!DNL Data Management] 和 [!DNL Profile Management])。 有关可用权限及其所属群组的完整列表，请参阅 [权限部分](home.md#permissions) 在访问控制概述中。
+許可權會依以下專案進行分組和分類： [!DNL Platform] 套用的功能(例如 [!DNL Data Management] 和 [!DNL Profile Management])。 如需可用許可權及其所屬群組的完整清單，請參閱 [許可權區段](home.md#permissions) 在存取控制概觀中。
 
-请参阅 [访问控制概述](home.md) 以了解有关提供基于角色的访问控制的更多信息。
+請參閱 [存取控制總覽](home.md) 有關提供角色型存取控制的詳細資訊。
 
-## 从AdobeIO迁移到业务ID后，权限会发生什么情况？
+## 從AdobeIO移轉至Business ID後，許可權會發生什麼事？
 
-访问控制使用用户ID（分配给用户的内部唯一ID）来授予权限。 将组织从Adobe ID迁移到业务ID后，为其用户设置的所有权限都将丢失，因为用户ID会发生更改，而访问控制将使用新生成的用户ID。 如果贵组织已迁移到业务ID，请联系您的Adobe代表，将您的用户ID从Adobe ID迁移到业务ID。
+存取控制使用使用者ID （指派給使用者的內部唯一ID）來授予許可權。 當組織從Adobe ID移轉至Business ID時，為其使用者設定的所有許可權都將遺失，因為使用者ID變更，且存取控制將使用新產生的使用者ID。 如果您的組織移轉至Business ID，請聯絡您的Adobe代表，以將您的使用者ID從Adobe ID移轉至Business ID。

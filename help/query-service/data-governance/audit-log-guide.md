@@ -1,6 +1,6 @@
 ---
-title: 查询服务审核日志集成
-description: 查询服务审核日志维护各种用户操作的记录，以形成用于解决问题或遵守公司数据管理策略和法规要求的审核跟踪。 本教程概述了特定于查询服务的审核日志功能。
+title: 查詢服務稽核記錄整合
+description: 查詢服務稽核記錄可維護各種使用者動作的記錄，以形成稽核軌跡，用於疑難排解問題或遵循公司資料管理政策和法規要求。 本教學課程提供查詢服務專屬的稽核記錄功能概觀。
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
@@ -9,84 +9,84 @@ ht-degree: 2%
 
 ---
 
-# [!DNL Query Service] 审核日志集成
+# [!DNL Query Service] 稽核記錄整合
 
-Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询相关的用户操作记录。 审核日志是疑难解答和遵守公司数据管理策略和法规要求的必不可少的工具。 利用功能，可返回许多事件类型的操作日志，并过滤和导出记录。 日志可通过Platform UI访问，或 [审核查询API](https://www.adobe.io/experience-platform-apis/references/audit-query/) ，并以CSV或JSON文件格式下载。
+Adobe Experience Platform [!DNL Query Service] 稽核記錄整合提供查詢相關使用者動作的記錄。 稽核記錄是進行疑難排解以及遵守公司資料管理政策和法規要求的重要工具。 此功能可讓您傳回許多事件型別的動作記錄，並篩選及匯出記錄。 可透過Platform UI或 [稽核查詢API](https://www.adobe.io/experience-platform-apis/references/audit-query/) 並下載為CSV或JSON檔案格式。
 
-要了解有关审核日志用户界面的更多信息，请参阅 [审核日志概述文档](../../landing/governance-privacy-security/audit-logs/overview.md). 要了解有关调用Platform API的更多信息，请参阅 [审核日志API指南](../../landing/api-guide.md).
+若要進一步瞭解稽核記錄使用者介面，請參閱 [稽核記錄概觀檔案](../../landing/governance-privacy-security/audit-logs/overview.md). 若要進一步瞭解如何呼叫Platform API，請參閱 [稽核記錄API指南](../../landing/api-guide.md).
 
 ## 先决条件
 
-您必须拥有 [!DNL Data Governance] [!UICONTROL 查看用户活动日志] 在Platform UI中启用了查看审核日志功能板的权限。 权限通过Adobe启用 [Admin Console](https://adminconsole.adobe.com/). 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 请参阅的访问控制文档 [有关通过Admin Console添加权限的完整说明](../../access-control/home.md).
+您必須擁有 [!DNL Data Governance] [!UICONTROL 檢視使用者活動記錄] 已啟用在Platform UI中檢視稽核記錄儀表板的許可權。 許可權會透過Adobe啟用 [Admin Console](https://adminconsole.adobe.com/). 如果您沒有啟用此許可權的管理員許可權，請聯絡貴組織的管理員。 請參閱存取控制檔案以瞭解 [透過Admin Console新增許可權的完整指示](../../access-control/home.md).
 
-## [!DNL Query Service] 审核日志类别 {#audit-log-categories}
+## [!DNL Query Service] 稽核記錄類別 {#audit-log-categories}
 
-提供的审核日志类别 [!DNL Query Service] 如下所示。
+提供的稽核記錄類別 [!DNL Query Service] 如下所示。
 
 | 类别 | 描述 |
 |---|---|
-| [!UICONTROL 查询] | 利用此类别，可审核查询执行。 |
-| [!UICONTROL 查询模板] | 利用此类别，可审核对查询模板执行的各种操作（创建、更新和删除）。 |
-| [!UICONTROL 计划查询] | 利用此类别，可审核在 [!DNL Query Service]. |
+| [!UICONTROL 查询] | 此類別可讓您稽核查詢執行。 |
+| [!UICONTROL 查詢範本] | 此類別可讓您稽核對查詢範本採取的各種動作（建立、更新和刪除）。 |
+| [!UICONTROL 排定的查詢] | 此類別可讓您稽核在中建立、更新或刪除的排程 [!DNL Query Service]. |
 
-## 执行 [!DNL Query Service] 审核日志 {#perform-an-audit-log}
+## 執行 [!DNL Query Service] 稽核記錄 {#perform-an-audit-log}
 
-执行审核 [!DNL Query Service] 活动，选择 **[!UICONTROL 审核]** 从左侧导航中，接下漏斗图标(![过滤器图标。](../images/audit-log/filter.png))以显示筛选器控件列表，以帮助缩小结果范围。
+若要針對下列專案執行稽核： [!DNL Query Service] 活動，選取 **[!UICONTROL 稽核]** 從左側導覽，然後按一下漏斗圖示(![篩選圖示。](../images/audit-log/filter.png))來顯示篩選控制項清單，以協助縮小結果範圍。
 
-![Platform UI审核日志功能板左侧导航中带有“审核”，过滤器控件突出显示。](../images/audit-log/filter-controls.png)
+![Platform UI稽核記錄儀表板，左側導覽中的「稽核」和篩選控制項會醒目提示。](../images/audit-log/filter-controls.png)
 
-从 [!UICONTROL 审核] 仪表板 [!UICONTROL 活动日志] 选项卡上，您可以按 [!DNL Query Service] 类别。 可以根据执行日志结果的时间段、执行的操作/函数或颁布查询的用户，进一步过滤日志结果。 请参阅的审核日志文档 [有关如何根据类别、操作、用户和状态过滤日志的完整说明](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
+從 [!UICONTROL 稽核] 儀表板 [!UICONTROL 活動記錄] 索引標籤上，您可以透過以下任何專案篩選所有錄製的平台動作： [!DNL Query Service] 類別。 可根據記錄結果執行的時間段、採取的動作/功能或執行查詢的使用者，進一步篩選記錄結果。 請參閱稽核記錄檔案以瞭解 [有關如何根據類別、動作、使用者和狀態篩選記錄的完整指示](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
 
-返回的审核日志数据包含有关满足您选择的筛选条件的所有查询的以下信息。
+傳回的稽核記錄檔資料包含符合您所選篩選條件之所有查詢的下列資訊。
 
 | 列名称 | 描述 |
 |---|---|
-| [!UICONTROL 时间戳] | 在 `month/day/year hour:minute AM/PM` 格式。 |
-| [!UICONTROL 资产名称] | 的值 [!UICONTROL 资产名称] 字段取决于选择作为过滤器的类别。 使用 [!UICONTROL 计划查询] 类别，这是 **计划名称**. 使用 [!UICONTROL 查询模板] 类别，这是 **模板名称**. 使用 [!UICONTROL 查询] 类别，这是 **会话ID** |
-| [!UICONTROL 类别] | 此字段与您在过滤器下拉菜单中选择的类别匹配。 |
-| [!UICONTROL 操作] | 这可以是创建、删除、更新或执行。 可用的操作取决于选择作为过滤器的类别。 |
-| [!UICONTROL 用户] | 此字段提供执行查询的用户ID。 |
+| [!UICONTROL 时间戳] | 在中執行動作的確切日期和時間 `month/day/year hour:minute AM/PM` 格式。 |
+| [!UICONTROL 資產名稱] | 的值 [!UICONTROL 資產名稱] 欄位取決於選擇作為篩選器的類別。 使用時 [!UICONTROL 排定的查詢] 類別這是 **排程名稱**. 使用時 [!UICONTROL 查詢範本] 類別，這是 **範本名稱**. 使用時 [!UICONTROL 查詢] 類別，這是 **工作階段ID** |
+| [!UICONTROL 类别] | 此欄位符合您在篩選下拉式清單中選取的類別。 |
+| [!UICONTROL 操作] | 這可以是建立、刪除、更新或執行。 可用的動作取決於選擇作為篩選器的類別。 |
+| [!UICONTROL 用户] | 此欄位提供執行查詢的使用者ID。 |
 
-![“审核”功能板中突出显示了过滤的活动日志。](../images/audit-log/filtered-activity.png)
+![反白顯示篩選活動記錄檔的「稽核」控制面板。](../images/audit-log/filtered-activity.png)
 
 >[!NOTE]
 >
->与审核日志功能板中默认显示的相比，通过下载CSV或JSON文件格式的日志结果来提供更多查询详细信息。
+>透過下載CSV或JSON檔案格式的記錄結果，提供的查詢詳細資料會多於稽核記錄儀表板中預設顯示的資料。
 
-## “详细信息”面板
+## 詳細資訊面板
 
-选择任意行的审核日志结果，以打开屏幕右侧的详细信息面板。
+選取稽核記錄結果的任何一列，即可開啟畫面右側的詳細資訊面板。
 
-![审核功能板活动日志选项卡，其中突出显示了详细信息面板。](../images/audit-log/details-panel.png)
+![稽核控制面板「活動記錄」索引標籤，並反白顯示詳細資訊面板。](../images/audit-log/details-panel.png)
 
-详细信息面板可用于查找 [!UICONTROL 资产ID] 和 [!UICONTROL 事件状态].
+詳細資訊面板可用來尋找 [!UICONTROL 資產ID] 和 [!UICONTROL 事件狀態].
 
-的值 [!UICONTROL 资产ID] 更改取决于审核中使用的类别。
+的值 [!UICONTROL 資產ID] 會隨著稽核中使用的類別而改變。
 
-* 使用 [!UICONTROL 查询] 类别， [!UICONTROL 资产ID] 是  **会话ID**.
-* 使用 [!UICONTROL 查询模板] 类别， [!UICONTROL 资产ID] 是 **模板ID** 前缀为 `[!UICONTROL templateID:]`.
-* 使用 [!UICONTROL 计划查询] 类别， [!UICONTROL 资产ID] 是  **计划ID** 前缀为 `[!UICONTROL scheduleID:]`.
+* 使用時 [!UICONTROL 查詢] 類別， [!UICONTROL 資產ID] 是  **工作階段ID**.
+* 使用時 [!UICONTROL 查詢範本] 類別， [!UICONTROL 資產ID] 是 **範本ID** 前置詞為 `[!UICONTROL templateID:]`.
+* 使用時 [!UICONTROL 排定的查詢] 類別， [!UICONTROL 資產ID] 是  **排程ID** 前置詞為 `[!UICONTROL scheduleID:]`.
 
-的值 [!UICONTROL 事件状态] 更改取决于审核中使用的类别。
+的值 [!UICONTROL 事件狀態] 會隨著稽核中使用的類別而改變。
 
-* 使用 [!UICONTROL 查询] 类别， [!UICONTROL 事件状态] 字段提供所有 **查询ID** 由用户在该会话中执行。
-* 使用 [!UICONTROL 查询模板] 类别， [!UICONTROL 事件状态] 字段 **模板名称** 作为事件状态的前缀。
-* 使用 [!UICONTROL 查询计划] 类别， [!UICONTROL 事件状态] 字段 **计划名称** 作为事件状态的前缀。
+* 使用時 [!UICONTROL 查詢] 類別， [!UICONTROL 事件狀態] 欄位提供所有欄位的清單 **查詢ID** 由使用者在該工作階段中執行。
+* 使用時 [!UICONTROL 查詢範本] 類別， [!UICONTROL 事件狀態] 欄位提供 **範本名稱** 作為事件狀態的前置詞。
+* 使用時 [!UICONTROL 查詢排程] 類別， [!UICONTROL 事件狀態] 欄位提供 **排程名稱** 作為事件狀態的前置詞。
 
-## 可用的过滤器 [!DNL Query Service] 审核日志类别 {#available-filters}
+## 可用的篩選器 [!DNL Query Service] 稽核記錄類別 {#available-filters}
 
-可用的过滤器因下拉列表中选择的类别而异。 下表详细列出了 [[!DNL Query Service] 审核日志类别](#audit-log-categories).
+可用的篩選器會因下拉式清單中所選的類別而異。 下表詳細說明以下專案可用的篩選器 [[!DNL Query Service] 稽核記錄類別](#audit-log-categories).
 
 | 过滤器 | 描述 |
 |---|---|
-| 类别 | 请参阅 [[!DNL Query Service] 审核日志类别](#audit-log-categories) 部分。 |
-| 操作 | 在 [!DNL Query Service] 审核类别，更新是 **对现有表单的修改**，删除是 **删除计划或模板**，创建为 **创建新计划或模板**，则执行为 **运行查询**. |
-| 用户 | 输入完整的用户ID(例如johndoe@acme.com)以按用户进行过滤。 |
-| 状态 | 的 [!UICONTROL 允许], [!UICONTROL 成功]和 [!UICONTROL 失败] 选项会根据“状态”或“事件状态”筛选日志，而 [!UICONTROL 拒绝] 选项将筛选 **全部** 日志。 |
-| 日期 | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 |
+| 类别 | 請參閱 [[!DNL Query Service] 稽核記錄類別](#audit-log-categories) 區段，以取得可用類別的完整清單。 |
+| 操作 | 當引用時 [!DNL Query Service] 稽核類別，更新為 **修改現有表單**，刪除為 **移除排程或範本**，建立為 **建立新排程或範本**，而執行為 **執行查詢**. |
+| 用户 | 輸入完整的使用者ID (例如johndoe@acme.com)以依使用者篩選。 |
+| 状态 | 此 [!UICONTROL 允許]， [!UICONTROL 成功]、和 [!UICONTROL 失敗] 選項會根據「狀態」或「事件狀態」來篩選記錄，而 [!UICONTROL 拒絕] 選項將會篩選掉 **全部** 記錄。 |
+| 日期 | 選取開始日期和/或結束日期，以定義篩選結果的日期範圍。 |
 
 ## 后续步骤
 
-通过阅读本文档，您对 [!DNL Query Service] 审核日志功能以及如何使用它过滤您的 [!DNL Query Service] 用户操作。
+閱讀本檔案可讓您更瞭解 [!DNL Query Service] 稽核記錄功能，以及如何用來篩選您的 [!DNL Query Service] 使用者動作。
 
-如果您使用 [!DNL Query Service] 出于疑难解答目的，建议您阅读 [疑难解答指南](../troubleshooting-guide.md).
+如果您使用 [!DNL Query Service] 稽核記錄功能如需疑難排解，建議您閱讀 [疑難排解指南](../troubleshooting-guide.md).

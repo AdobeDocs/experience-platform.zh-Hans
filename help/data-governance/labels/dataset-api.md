@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据集API；管理数据使用情况；数据使用API
+keywords: Experience Platform；首頁；熱門主題；資料集api；管理資料使用；資料使用api
 solution: Experience Platform
-title: 使用API管理数据集的数据使用标签
-description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
+title: 使用API管理資料集的資料使用標籤
+description: 資料集服務API可讓您套用和編輯資料集的使用標籤。 它是Adobe Experience Platform資料目錄功能的一部分，但與管理資料集中繼資料的目錄服務API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 1%
 
 ---
 
-# 使用API管理数据集的数据使用标签
+# 使用API管理資料集的資料使用標籤
 
-的 [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) 允许您应用和编辑数据集的使用情况标签。 它是Adobe Experience Platform数据目录功能的一部分，但与 [!DNL Catalog Service] 管理数据集元数据的API。
+此 [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) 可讓您套用及編輯資料集的使用標籤。 它是Adobe Experience Platform資料目錄功能的一部分，但與 [!DNL Catalog Service] 管理資料集中繼資料的API。
 
 >[!IMPORTANT]
 >
->仅支持在数据集级别应用标签用于数据管理用例。 如果您尝试为数据创建访问策略，则必须 [将标签应用到架构](../../xdm/tutorials/labels.md) 数据集所基于的信息。 请参阅 [基于属性的访问控制](../../access-control/abac/overview.md) 以了解更多信息。
+>僅資料控管使用案例支援在資料集層級套用標籤。 如果您嘗試建立資料的存取原則，您必須 [將標籤套用至結構描述](../../xdm/tutorials/labels.md) 資料集所根據的。 請參閱以下文章的概觀： [基於屬性的存取控制](../../access-control/abac/overview.md) 以取得詳細資訊。
 
-本文档介绍如何使用 [!DNL Dataset Service API]. 有关如何使用API调用管理数据使用情况标签本身的步骤，请参阅 [标签端点指南](../api/labels.md) 对于 [!DNL Policy Service API].
+本檔案說明如何使用管理資料集和欄位的標籤 [!DNL Dataset Service API]. 如需如何使用API呼叫管理資料使用標籤本身的步驟，請參閱 [標籤端點指南](../api/labels.md) 的 [!DNL Policy Service API].
 
 ## 快速入门
 
-在阅读本指南之前，请先执行 [入门部分](../../catalog/api/getting-started.md) ，以收集所需的凭据来调用 [!DNL Platform] API。
+在閱讀本指南之前，請遵循以下說明的步驟： [快速入門區段](../../catalog/api/getting-started.md) 目錄開發人員指南中的，以收集必要的認證來呼叫 [!DNL Platform] API。
 
-要调用本文档中概述的端点，您必须具有 `id` 值。 如果没有此值，请参阅 [列出目录对象](../../catalog/api/list-objects.md) 以查找现有数据集的ID。
+若要呼叫本檔案中概述的端點，您必須擁有唯一的 `id` 特定資料集的值。 如果您沒有此值，請參閱指南，位置為 [列出目錄物件](../../catalog/api/list-objects.md) 以尋找現有資料集的ID。
 
-## 查找数据集的标签 {#look-up}
+## 查詢資料集的標籤 {#look-up}
 
-您可以通过向 [!DNL Dataset Service] API。
+您可以透過向「 」發出GET請求，查詢已套用至現有資料集的資料使用標籤。 [!DNL Dataset Service] API。
 
 **API格式**
 
@@ -39,7 +39,7 @@ GET /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 独特 `id` 要查找其标签的数据集的值。 |
+| `{DATASET_ID}` | 唯一 `id` 您要查詢其標籤的資料集值。 |
 
 **请求**
 
@@ -54,7 +54,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回已应用于数据集的数据使用情况标签。
+成功的回應會傳回已套用至資料集的資料使用標籤。
 
 ```json
 {
@@ -77,12 +77,12 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `labels` | 已应用于数据集的数据使用情况标签列表。 |
-| `optionalLabels` | 数据集中已应用数据使用标签的各个字段的列表。 |
+| `labels` | 已套用至資料集的資料使用標籤清單。 |
+| `optionalLabels` | 資料集中已套用資料使用標籤的個別欄位清單。 |
 
-## 将标签应用于数据集 {#apply}
+## 將標籤套用至資料集 {#apply}
 
-您可以为数据集创建一组标签，方法是在POST或PUT请求的有效负荷中向提供标签 [!DNL Dataset Service] API。 使用以下任一方法会覆盖任何现有的标签，并使用有效负载中提供的标签替换它们。
+您可以透過在POST或PUT請求的裝載中提供資料集，為資料集建立一組標籤。 [!DNL Dataset Service] API。 使用其中一個方法會覆寫任何現有標籤，並以承載中提供的標籤取代。
 
 **API格式**
 
@@ -93,19 +93,19 @@ PUT /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 独特 `id` 要为其创建标签的数据集的值。 |
+| `{DATASET_ID}` | 唯一 `id` 您正在建立標籤的資料集值。 |
 
 **请求**
 
-以下示例PUT请求更新了数据集的现有标签以及该数据集中的特定字段。 有效负载中提供的字段与POST请求所需的字段相同。
+以下範例PUT請求會更新資料集的現有標籤，以及該資料集內的特定欄位。 承載中提供的欄位與POST請求所需的欄位相同。
 
-在进行API调用以更新数据集(PUT)的现有标签时， `If-Match` 表示数据集服务中必须包含数据集标签实体的当前版本的标头。 为防止发生数据冲突，该服务仅在包含的 `If-Match` 字符串匹配由系统为该数据集生成的最新版本标记。
+進行API呼叫以更新資料集(PUT)的現有標籤時， `If-Match` 必須包含標頭，指出資料集服務中資料集 — 標籤實體的目前版本。 為避免資料衝突，服務將只更新資料集實體（如果包含） `If-Match` 字串符合系統為該資料集產生的最新版本標籤。
 
 >[!NOTE]
 >
->如果相关数据集当前不存在标签，则只能通过POST请求添加新标签，该请求不需要 `If-Match` 标题。 将标签添加到数据集后， `etag` 值已分配，可用于稍后更新或删除标签。
+>如果相關資料集目前沒有標籤，則只能透過POST請求新增新標籤，不需要新增標籤。 `If-Match` 標頭。 標籤新增至資料集後， `etag` 會指派值，以便稍後用來更新或移除標籤。
 
-要检索数据集标签实体的最新版本，请 [GET请求](#look-up) 到 `/datasets/{DATASET_ID}/labels` 端点。 在响应中的 `etag` 标题。 更新现有数据集标签时，最佳做法是首先对数据集执行查找请求，以获取其最新版本 `etag` 值，然后在 `If-Match` 后续PUT请求的标头。
+若要擷取最新版本的資料集 — 標籤實體，請建立 [GET要求](#look-up) 至 `/datasets/{DATASET_ID}/labels` 端點。 目前的值會傳回至下方的回應中 `etag` 標頭。 更新現有資料集標籤時，最佳實務是先執行資料集的查詢請求，以擷取其最新資料 `etag` 值之前，在下列位置使用該值： `If-Match` 後續PUT請求的標頭。
 
 ```shell
 curl -X PUT \
@@ -133,12 +133,12 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `labels` | 要添加到数据集的数据使用情况标签列表。 |
-| `optionalLabels` | 数据集中要向其添加标签的任意单个字段的列表。 此数组中的每个项目都必须具有以下属性： <br/><br/>`option`:包含 [!DNL Experience Data Model] (XDM)字段的属性。 以下三个属性是必需的：<ul><li>id</code>:URI $id</code> 与字段关联的架构的值。</li><li>contentType</code>:架构的内容类型和版本号。 这应采用有效 <a href="../../xdm/api/getting-started.md#accept">接受标头</a> 的XDM查询请求。</li><li>schemaPath</code>:数据集架构中字段的路径。</li></ul>`labels`:要添加到字段的数据使用情况标签的列表。 |
+| `labels` | 您要新增至資料集的資料使用標籤清單。 |
+| `optionalLabels` | 資料集中您要新增標籤的任何個別欄位清單。 此陣列中的每個專案都必須具備下列屬性： <br/><br/>`option`：一個物件，包含 [!DNL Experience Data Model] 欄位的(XDM)屬性。 需要下列三個屬性：<ul><li>id</code>： URI $id</code> 與欄位關聯的結構描述值。</li><li>內容型別</code>：結構描述的內容型別和版本號碼。 這應該採用其中一種有效形式 <a href="../../xdm/api/getting-started.md#accept">接受標頭</a> XDM查詢請求的。</li><li>結構描述路徑</code>：資料集結構描述中欄位的路徑。</li></ul>`labels`：您要新增至欄位的資料使用標籤清單。 |
 
 **响应**
 
-成功的响应会返回数据集的更新标签集。
+成功的回應會傳回資料集的更新標籤集。
 
 ```json
 {
@@ -158,6 +158,6 @@ curl -X PUT \
 
 ## 后续步骤
 
-通过阅读本文档，您了解了如何使用 [!DNL Dataset Service] API。 您现在可以定义 [数据使用策略](../policies/overview.md) 和 [访问控制策略](../../access-control/abac/ui/policies.md) 基于您应用的标签。
+閱讀本檔案後，您已瞭解如何使用 [!DNL Dataset Service] API。 您現在可以定義 [資料使用原則](../policies/overview.md) 和 [存取控制原則](../../access-control/abac/ui/policies.md) 根據您已套用的標籤。
 
-有关管理 [!DNL Experience Platform]，请参阅 [数据集概述](../../catalog/datasets/overview.md).
+如需中管理資料集的詳細資訊 [!DNL Experience Platform]，請參閱 [資料集總覽](../../catalog/datasets/overview.md).

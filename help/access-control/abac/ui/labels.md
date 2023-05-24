@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
-title: 基于属性的访问控制管理标签
-description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理标签的信息
+keywords: Experience Platform；首頁；熱門主題；存取控制；屬性型存取控制；ABAC
+title: 以屬性為基礎的存取控制管理標籤
+description: 本檔案提供透過Adobe Experience Cloud中的許可權介面管理標籤的資訊
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
@@ -10,11 +10,11 @@ ht-degree: 10%
 
 ---
 
-# 管理标签
+# 管理標籤
 
-标签允许您根据使用情况对数据集和字段进行分类，并访问应用于该数据的策略。 标签可随时应用，从而在您选择如何管理数据方面提供了灵活性。 最佳实践是鼓励在将数据摄取到平台后立即为数据设置标签，或者在数据可用于平台后立即为数据设置标签。
+標籤可讓您根據套用至該資料的使用和存取原則來分類資料集和欄位。 標籤可隨時套用，讓您靈活選擇控管資料的方式。 最佳實務建議在資料內嵌至Platform後，或資料可在Platform中使用時，立即為資料加上標籤。
 
-## 创建新标签 {#create-new-label}
+## 建立新標籤 {#create-new-label}
 
 >[!CONTEXTUALHELP]
 >id="platform_abac_labelusage"
@@ -23,14 +23,14 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->您必须具有管理权限才能创建自定义标签。 当前不支持删除标签。
+>您必須具有管理許可權才能建立自訂標籤。 目前不支援刪除標籤。
 
-要创建新标签，请选择 **[!UICONTROL 标签]** ，然后选择 **[!UICONTROL 创建标签]**.
+若要建立新標籤，請選取 **[!UICONTROL 標籤]** 索引標籤並選取「 」 **[!UICONTROL 建立標籤]**.
 
 ![flac-new-label](../../images/flac-ui/create-label.png)
 
-的 **[!UICONTROL 创建新标签]** 对话框，提示您输入名称、可选友好名称和可选描述。
+此 **[!UICONTROL 建立新標籤]** 對話方塊隨即顯示，提示您輸入名稱、可選好記名稱和可選說明。
 
 ![new-label-info](../../images/flac-ui/new-label-info.png)
 
-完成后，选择 **[!UICONTROL 确认]**.
+完成後，選取 **[!UICONTROL 確認]**.

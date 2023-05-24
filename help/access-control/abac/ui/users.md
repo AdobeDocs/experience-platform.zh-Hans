@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
-title: 基于属性的访问控制管理用户
-description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理用户和用户组的信息
+keywords: Experience Platform；首頁；熱門主題；存取控制；屬性型存取控制；ABAC
+title: 以屬性為基礎的存取控制管理使用者
+description: 本檔案提供透過Adobe Experience Cloud中的許可權介面管理使用者和使用者群組的相關資訊
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
 source-git-commit: fa4786b081b46c8f3c0030282ae3900891fbd652
 workflow-type: tm+mt
@@ -12,28 +12,28 @@ ht-degree: 1%
 
 # 管理用户
 
-如果要查看用户详细信息以及分配给用户的角色，请选择 **[!UICONTROL 用户]** 选项卡。
+如果您想要檢視使用者詳細資訊以及指派給他們的角色，請選取 **[!UICONTROL 使用者]** 標籤。
 
 ![flac-users-tab](../../images/flac-ui/flac-users-tab.png)
 
-此时将显示用户列表。 从列表中选择要查看的用户。 或者，使用搜索栏通过输入用户的姓名或电子邮件地址来搜索用户。
+使用者清單隨即顯示。 從清單中選取您要檢視的使用者。 或者，使用搜尋列輸入使用者的名稱或電子郵件地址來搜尋使用者。
 
-“详细信息”选项卡提供了用户的概述。 该概述显示用户名、帐户类型、电子邮件、身份验证ID、联系信息和位置详细信息。
+詳細資訊標籤提供使用者的概觀。 概述會顯示使用者名稱、帳戶型別、電子郵件、驗證ID、聯絡資訊和位置詳細資訊。
 
 ![flac-users-details](../../images/flac-ui/flac-users-details.png)
 
-选择 **[!UICONTROL 角色]** 选项卡，查看用户被分配到的角色。
+選取 **[!UICONTROL 角色]** 標籤以檢視指派給使用者的角色。
 
 ![flac-users-roles](../../images/flac-ui/flac-users-roles.png)
 
-## 具有Experience Platform权限的开发人员和API访问控制
+## 具有Experience Platform許可權的開發人員和API存取控制
 
 >[!NOTE]
 >
->只有系统管理员才能在“权限”中查看和管理API凭据。
+>只有系統管理員才能在「許可權」中檢視和管理API認證。
 
-过渡到Adobe Experience Platform权限还有其他步骤需要完成，以便开发人员API工作流程以前依赖于产品配置文件。 请参阅 [API身份验证](../../../landing/api-authentication.md) 以了解更多信息。
+轉換至Adobe Experience Platform許可權時，需要為先前依賴產品設定檔的開發人員API工作流程完成其他步驟。 請參閱指南： [API驗證](../../../landing/api-authentication.md) 以取得詳細資訊。
 
 ## 后续步骤
 
-您现在已了解如何查看用户详细信息以及当前添加到的用户角色。 要了解有关基于属性的访问控制的更多信息，请参阅 [基于属性的访问控制概述](../overview.md).
+您現在已瞭解如何檢視使用者詳細資訊以及使用者目前新增的角色。 若要進一步瞭解屬性型存取控制，請參閱 [屬性型存取控制概觀](../overview.md).

@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle服务云
-title: Oracle服务云源连接器概述
-description: 了解如何使用API或用户界面将Oracle服务云连接到Adobe Experience Platform。
+keywords: Experience Platform；首頁；熱門主題；Oracle服務雲端；oracle服務雲端
+title: oracle服務雲端來源聯結器總覽
+description: 瞭解如何使用API或使用者介面將Oracle Service Cloud連線至Adobe Experience Platform。
 exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
 source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# Oracle服务云源
+# oracle服務雲端來源
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-Experience Platform支持从第三方客户成功系统摄取数据。 对客户成功提供商的支持包括Oracle服务云。
+Experience Platform提供從協力廠商客戶成功系統擷取資料的支援。 對客戶成功提供者的支援包括Oracle Service Cloud。
 
-## IP地址允许列表
+## IP位址允許清單
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
 
-以下文档提供了有关如何使用API或用户界面将Adobe Service CloudOracle连接到平台的信息：
+以下檔案提供如何使用API或使用者介面將Oracle Service Cloud連線至平台的資訊：
 
-## 使用API将Oracle服务云连接到平台
+## 使用API將Oracle Service Cloud連線至平台
 
-- [使用流服务API创建Oracle服务云基连接](../../tutorials/api/create/customer-success/oracle-service-cloud.md)
-- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
-- [使用流服务API为客户成功源创建数据流](../../tutorials/api/collect/customer-success.md)
+- [使用Flow Service API建立Oracle服務雲端基本連線](../../tutorials/api/create/customer-success/oracle-service-cloud.md)
+- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
+- [使用Flow Service API建立客戶成功來源的資料流](../../tutorials/api/collect/customer-success.md)
 
-## 使用UI将Oracle服务云连接到平台
+## 使用UI將Oracle Service Cloud連線至平台
 
-- [在UI中创建Oracle服务云源连接](../../tutorials/ui/create/customer-success/oracle-service-cloud.md)
-- [在UI中为客户成功源连接创建数据流](../../tutorials/ui/dataflow/customer-success.md)
+- [在UI中建立Oracle服務雲端來源連線](../../tutorials/ui/create/customer-success/oracle-service-cloud.md)
+- [在UI中建立客戶成功來源連線的資料流](../../tutorials/ui/dataflow/customer-success.md)

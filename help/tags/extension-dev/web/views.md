@@ -1,6 +1,6 @@
 ---
-title: Web扩展中的视图
-description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
+title: Web擴充功能中的檢視
+description: 瞭解如何在Adobe Experience Platform Web擴充功能中定義程式庫模組的檢視。
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
 source-git-commit: 41efcb14df44524b58be2293d2b943bd890c1621
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 75%
 
 ---
 
-# Web扩展中的视图
+# Web擴充功能中的檢視
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 每个事件、条件、操作或数据元素类型可以提供允许用户提供设置的视图。扩展还可以具有顶级[扩展配置视图](../configuration.md)，通过该视图，用户可以为整个扩展提供全局设置。在所有类型的视图中，视图的构建过程都是相同的。
 
@@ -25,19 +25,19 @@ ht-degree: 75%
 <!DOCTYPE html>
 ```
 
-## 包括iframe脚本的标记
+## 包含標籤iframe指令碼
 
-在视图的HTML中包含iframe脚本标记：
+在檢視的HTML中包含標籤iframe指令碼：
 
 ```html
 <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
 ```
 
-此脚本提供了一个通信API，以允许视图与标记应用程序通信。
+此指令碼提供通訊API，讓您的檢視可與標籤應用程式通訊。
 
 ## 在扩展桥接通信 API 中注册
 
-加载iframe脚本后，您需要为标记提供一些方法，以供其进行通信。 调用 `window.extensionBridge.register` 并向其传递一个对象，如下所示：
+載入iframe指令碼後，您需要為標籤提供一些方法，以便用於通訊。 调用 `window.extensionBridge.register` 并向其传递一个对象，如下所示：
 
 ```js
 window.extensionBridge.register({
@@ -65,14 +65,14 @@ window.extensionBridge.register({
 
 ### [!DNL init]
 
-的 `init` 将视图加载到iframe后，标记会立即调用方法。 它将传递一个参数 (`info`)，该参数必须是包含以下属性的对象：
+此 `init` 將檢視載入iframe後，標籤就會呼叫方法。 它将传递一个参数 (`info`)，该参数必须是包含以下属性的对象：
 
 | 属性 | 描述 |
 | --- | --- |
 | `settings` | 包含先前从此视图保存的设置的对象。如果 `settings` 为 `null`，则表示用户正在创建初始设置，而不是加载已保存的版本。如果 `settings` 是一个对象，则应该使用它来填充视图，因为用户正在选择编辑以前保留的设置。 |
-| `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果当前视图是扩展配置视图，则使用 `settings`. |
+| `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果目前的檢視是擴充功能組態檢視，請使用 `settings`. |
 | `propertySettings` | 包含属性设置的对象。有关此对象中所包含内容的详细信息，请参阅 [turbine 对象指南](../turbine.md#property-settings)。 |
-| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于由Adobe开发的扩展。 如果您是Adobe员工，代表由Adobe创作的扩展，请 [向数据收集工程团队发送电子邮件](mailto:reactor@adobe.com) 并提供扩展的名称，以便我们可以将其添加到允许列表。 |
+| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此Token將僅供Adobe開發的擴充功能使用。 如果您是Adobe員工，負責展現Adobe製作的某項擴充功能，請 [傳送電子郵件給資料收集工程團隊](mailto:reactor@adobe.com) 並提供擴充功能的名稱，以便我們將其新增至允許清單。 |
 | `company` | 包含单个属性 (`orgId`) 的对象，该属性本身表示您的 Adobe Experience Cloud ID（一个由 24 个字符组成的字母数字字符串）。 |
 | `schema` | [JSON 模式](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
 
@@ -80,7 +80,7 @@ window.extensionBridge.register({
 
 ### [!DNL validate]
 
-的 `validate` 用户点击“保存”按钮后，将调用方法。 它应返回以下任一值：
+此 `validate` 當使用者點選「儲存」按鈕後，就會呼叫方法。 它应返回以下任一值：
 
 * 一个布尔值，指示用户的输入是否有效。
 * 一个稍后使用布尔值（指示用户的输入是否有效）解析的 promise。
@@ -91,16 +91,16 @@ window.extensionBridge.register({
 
 ### [!DNL getSettings]
 
-的 `getSettings` 用户点击“保存”按钮并验证视图后，将调用方法。 该函数应返回以下任一值：
+此 `getSettings` 當使用者點選「儲存」按鈕且檢視經過驗證後，將呼叫方法。 该函数应返回以下任一值：
 
 * 一个对象，包含基于用户输入的设置。
 * 一个稍后使用包含基于用户输入的设置的对象解析的 promise。
 
-此设置对象稍后将在标记运行时库中发出。 该对象的内容由您自行决定。该对象必须可序列化为 JSON 并从 JSON 反序列化。函数或[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)实例等值不符合这些条件，因此不允许使用。
+此設定物件稍後會在標籤執行階段程式庫中發出。 该对象的内容由您自行决定。该对象必须可序列化为 JSON 并从 JSON 反序列化。函数或[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)实例等值不符合这些条件，因此不允许使用。
 
 ## 利用共享视图
 
-的 `window.extensionBridge` 对象有多种方法允许您利用通过标记提供的现有视图，这样您就不必在自己的视图中重现它们。 可用的方法如下：
+此 `window.extensionBridge` object有數種方法可讓您利用透過標籤可用的現有檢視，因此您不必在檢視中重現它們。 可用的方法如下：
 
 ### [!DNL openCodeEditor]
 
@@ -130,7 +130,7 @@ window.extensionBridge.openRegexTester().then(function(pattern) {
 | 属性 | 描述 |
 | --- | --- |
 | `pattern` | 应该用作测试器中模式字段初始值的正则表达式模式。通常在用户编辑现有正则表达式时提供。如果未提供，则模式字段最初将为空。 |
-| `flags` | 测试器应使用的正则表达式标志。例如，`gi` 将指示全局匹配标志和忽略大小写标志。用户不能在测试器中修改这些标志，但这些标志可用于演示扩展在执行正则表达式时将使用的特定标志。如果未提供，测试器将不使用任何标记。有关正则表达式标志的更多信息，请参阅 [MDN 的正则表达式文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)。<br><br>一种常见的情况是，扩展允许用户切换正则表达式的“区分大小写”选项。为了支持此功能，扩展通常会在其扩展视图中提供一个复选框，如果选中此复选框，则将启用不区分大小写(由 `i` 标记)。 该视图保存的设置对象将需要表示该复选框是否已选中，这样执行正则表达式的库模块就可以知道是否使用 `i` 标志。此外，当扩展视图希望打开正则表达式测试器时，需要传递 `i` 标记是否选中了“不区分大小写”复选框。 这允许用户在启用不区分大小写的情况下正确测试正则表达式。 |
+| `flags` | 测试器应使用的正则表达式标志。例如，`gi` 将指示全局匹配标志和忽略大小写标志。用户不能在测试器中修改这些标志，但这些标志可用于演示扩展在执行正则表达式时将使用的特定标志。如果未提供，测试器将不使用任何标记。有关正则表达式标志的更多信息，请参阅 [MDN 的正则表达式文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)。<br><br>一种常见的情况是，扩展允许用户切换正则表达式的“区分大小写”选项。為了支援此功能，擴充功能通常會在其擴充功能檢視中提供一個核取方塊，一經勾選後即會啟用不區分大小寫功能(表示為 `i` 標幟)。 该视图保存的设置对象将需要表示该复选框是否已选中，这样执行正则表达式的库模块就可以知道是否使用 `i` 标志。此外，當擴充功能檢視需要開啟規則運算式測試器時，必須傳遞 `i` 標示是否已勾選「不區分大小寫」核取方塊。 這可讓使用者正確測試已啟用不區分大小寫功能的規則運算式。 |
 
 ### [!DNL openDataElementSelector] {#open-data-element}
 
@@ -142,15 +142,15 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 调用此方法将显示允许用户选择数据元素的模态。当用户选择完数据元素后，将使用选定数据元素的名称解析 promise（默认情况下，该名称将用百分比符号括起来）。如果用户在没有选择保存更改的情况下关闭元素选择器，则 promise 将永远不会得到解析。
 
-的 `options` 对象应包含单个布尔属性， `tokenize`. 此属性指示在解析 promise 之前是否应将选定数据元素的名称用百分比符号括起来。请参阅[支持数据元素](#supporting-data-elements)一节，了解这种属性有用的原因。此选项默认为 `true`。
+此 `options` 物件應包含單一布林屬性， `tokenize`. 此属性指示在解析 promise 之前是否应将选定数据元素的名称用百分比符号括起来。请参阅[支持数据元素](#supporting-data-elements)一节，了解这种属性有用的原因。此选项默认为 `true`。
 
 ## 支持数据元素 {#supporting-data-elements}
 
-您的视图可能包含用户希望在其中利用数据元素的表单字段。 例如，如果视图有一个文本字段，用户应在该字段中输入产品名称，则用户在该字段中键入硬编码值可能没有意义。 相反，他们可能希望字段的值是动态的（在运行时确定），并且可以通过使用数据元素来实现这一点。
+您的檢視可能有使用者想要運用資料元素的表單欄位。 例如，如果您的檢視有使用者應輸入產品名稱的文字欄位，則使用者在該欄位中輸入硬式編碼值可能沒有意義。 相反，他们可能希望字段的值是动态的（在运行时确定），并且可以通过使用数据元素来实现这一点。
 
-例如，假设我们正在构建一个扩展，它会发送信标以跟踪转化。我们还假设信标所发送的其中一段数据是产品名称。在允许用户配置信标的扩展视图中，很可能包含一个用于表示产品名称的文本字段。 通常来说，Platform 用户键入静态产品名称（例如“Calzone Oven XL”）没有多大意义，因为产品名称可能取决于从中发送信标的页面。对于数据元素来说，这是一个极好的用例。
+例如，假设我们正在构建一个扩展，它会发送信标以跟踪转化。我们还假设信标所发送的其中一段数据是产品名称。在允許使用者設定信標的擴充功能檢視中，可能會有產品名稱的文字欄位。 通常来说，Platform 用户键入静态产品名称（例如“Calzone Oven XL”）没有多大意义，因为产品名称可能取决于从中发送信标的页面。对于数据元素来说，这是一个极好的用例。
 
-如果用户希望将名为 `productname` 的数据元素用作产品名称值，则可以键入数据元素的名称，并在名称两侧加上百分比符号 (`%productname%`)。我们将封装百分比的数据元素名称称为“数据元素令牌”。 平台用户通常熟悉此结构。 您的扩展反过来会将数据元素令牌保存在其导出的 `settings` 对象中。然后，您的设置对象可能如下所示：
+如果用户希望将名为 `productname` 的数据元素用作产品名称值，则可以键入数据元素的名称，并在名称两侧加上百分比符号 (`%productname%`)。我們將兩側加上百分比符號的資料元素名稱稱為「資料元素代號」。 Platform使用者通常熟悉此結構。 您的扩展反过来会将数据元素令牌保存在其导出的 `settings` 对象中。然后，您的设置对象可能如下所示：
 
 ```js
 {
@@ -158,7 +158,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 }
 ```
 
-在运行时，在将设置对象传递到库模块之前，会扫描设置对象，并将任何数据元素令牌替换为其各自的值。 如果在运行时， `productname` 数据元素 `Ceiling Medallion Pro 2000`，则将传递到库模块的设置对象可能如下所示：
+在執行階段，將設定物件傳遞至程式庫模組之前，會掃描設定物件，並將任何資料元素代號取代為其各自的值。 如果是在執行階段， `productname` 資料元素為 `Ceiling Medallion Pro 2000`，則會傳入程式庫模組中的設定物件將是：
 
 ```js
 {
@@ -172,7 +172,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 >[!NOTE]
 >
->要下载相应的图标，请导航到 [Adobe频谱上的图标页面](https://spectrum.adobe.com/page/icons/) 并搜索“[!DNL Data]&quot;
+>若要下載適當的圖示，請導覽至 [Adobe頻譜上的圖示頁面](https://spectrum.adobe.com/page/icons/) 並搜尋&quot;[!DNL Data]「。
 
 当用户选择文本字段旁边的按钮时，将调用 `window.extensionBridge.openDataElementSelector`，[如上所述](#open-data-element)。这会显示用户可以从中进行选择的数据元素列表，而不是强制用户记住数据元素名称并键入百分比符号。用户选择数据元素后，您将收到用百分比符号括起来的选定数据元素的名称（除非您已将 `tokenize` 选项设置为 `false`）。我们建议您随后使用该结果填充文本字段。
 
@@ -220,7 +220,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 }
 ```
 
-在这种情况下，由于 `productName` 的值不只是一个数据元素令牌，因此结果将始终为字符串。每个数据元素令牌在转换为字符串后将替换为其各自的值。如果在运行时， `productname` wher `Ceiling Medallion Pro` （字符串）和 `modelnumber` wher `2000` （一个数字），传递给库模块的生成设置对象将为：
+在这种情况下，由于 `productName` 的值不只是一个数据元素令牌，因此结果将始终为字符串。每个数据元素令牌在转换为字符串后将替换为其各自的值。如果是在執行階段，則值 `productname` 為 `Ceiling Medallion Pro` （字串）和 `modelnumber` 為 `2000` （數字），產生並傳遞至程式庫模組的設定物件將是：
 
 ```js
 {
@@ -230,4 +230,4 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 ## 避免导航
 
-扩展视图与包含数据收集用户界面之间的通信取决于扩展视图内没有发生导航。 因此，请避免向扩展视图添加任何会使用户离开扩展视图 HTML 页面的内容。例如，如果在扩展视图中提供了一个链接，请确保该链接会打开一个新的浏览器窗口（通常通过将 `target="_blank"` 添加到锚点标记来实现）。如果选择在扩展视图中使用 `form` 元素，请确保永远不会提交表单。如果表单中有一个 `button` 元素，但未能向其添加 `type="button"`，则可能会意外提交表单。在扩展视图内提交表单会导致 HTML 文档刷新，从而造成用户体验受损。
+擴充功能檢視與容納資料收集使用者介面之間的通訊，須在擴充功能檢視內未發生導覽的情況下才能進行。 因此，请避免向扩展视图添加任何会使用户离开扩展视图 HTML 页面的内容。例如，如果在扩展视图中提供了一个链接，请确保该链接会打开一个新的浏览器窗口（通常通过将 `target="_blank"` 添加到锚点标记来实现）。如果选择在扩展视图中使用 `form` 元素，请确保永远不会提交表单。如果表单中有一个 `button` 元素，但未能向其添加 `type="button"`，则可能会意外提交表单。在扩展视图内提交表单会导致 HTML 文档刷新，从而造成用户体验受损。

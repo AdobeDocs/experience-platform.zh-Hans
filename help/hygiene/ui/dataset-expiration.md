@@ -1,6 +1,6 @@
 ---
-title: 管理数据集过期
-description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
+title: 管理資料集有效期
+description: 瞭解如何在Adobe Experience Platform UI中排程資料集有效期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
 source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 22%
 
 ---
 
-# 管理数据集过期日期 {#dataset-expiration}
+# 管理資料集有效期 {#dataset-expiration}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
@@ -18,65 +18,65 @@ ht-degree: 22%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**. 这些功能将在不久的将来正式发布。 有关这些服务即将发布的更多信息，请联系您的Adobe服务代表。 但是，您可以立即 [通过删除数据集 [!UICONTROL 数据集] UI](../../catalog/datasets/user-guide.md#delete).
+>Adobe Experience Platform中的資料檢疫功能目前僅適用於已購買的組織 **AdobeHealthcare Shield** 或 **Adobe隱私權與安全性盾牌**. 這些功能將於不久的未來正式發行。 如需其未來可用性的詳細資訊，請洽詢您的Adobe服務代表。 不過，您可以立即 [透過刪除資料集 [!UICONTROL 資料集] UI](../../catalog/datasets/user-guide.md#delete).
 
-的 [[!UICONTROL 数据卫生] 工作区](./overview.md) 在Adobe Experience Platform UI中，您可以计划数据集的过期日期。 当数据集到期日期时，数据湖、Identity Service和实时客户配置文件会开始各自的流程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，过期时间将标记为完成。
+此 [[!UICONTROL 資料衛生] 工作區](./overview.md) Adobe Experience Platform UI中的可讓您排程資料集的到期時間。 當資料集到達其到期日時，Data Lake、Identity Service和Real-Time Customer Profile會開始個別程式，從各自的服務中移除資料集的內容。 從所有三項服務中刪除資料後，到期日即會標籤為完成。
 
 >[!WARNING]
 >
->如果数据集设置为过期，您必须手动更改任何可能将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
+>如果資料集設為過期，您必須手動變更任何可能將資料擷取至該資料集的資料流程，讓您的下游工作流程不會受到負面影響。
 
-本文档介绍如何在Platform UI中计划和管理数据集过期。
+本文介紹如何在Platform UI中排程和管理資料集有效期。
 
-## 计划数据集过期 {#schedule-dataset-expiration}
+## 排程資料集到期日 {#schedule-dataset-expiration}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
 >title="说明"
 >abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html">数据卫生</a>，然后选择<b>创建请求</b>。</li><li>如果要删除记录：</li>   <li>选择<b>记录</b>。</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的使用者的身份。选择<b>添加身份</b>以一次提供一个身份，或改为选择<b>选择文件</b>以上传包含多个身份的 JSON 文件。</li>   <li>如果需要，请选择<b>模板</b>以查看该 JSON 文件的预期格式。</li><li>如果要<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html#schedule-dataset-expiration">安排数据集的到期日期</a>，请参阅说明文档。</li></ul>"
 
-要创建新请求，请选择 **[!UICONTROL 创建请求]** 的页面。
+若要建立新請求，請選取「 」 **[!UICONTROL 建立請求]** 從工作區的首頁面。
 
-![显示 [!UICONTROL 创建请求] 按钮](../images/ui/ttl/create-request-button.png)
+![影像顯示 [!UICONTROL 建立請求] 正在選取按鈕](../images/ui/ttl/create-request-button.png)
 
-将出现请求创建对话框。 在 **[!UICONTROL 请求的操作]** 选择 **[!UICONTROL 删除数据集]** 用于更新数据集过期计划的可用控件。
+此時會出現請求建立對話方塊。 在 **[!UICONTROL 請求的動作]** 區段，選取 **[!UICONTROL 刪除資料集]** 更新資料集到期排程的可用控制項。
 
-![显示 [!UICONTROL 创建请求] 按钮](../images/ui/ttl/dataset-selected.png)
+![影像顯示 [!UICONTROL 建立請求] 正在選取按鈕](../images/ui/ttl/dataset-selected.png)
 
-### 选择日期和数据集
+### 選取日期和資料集
 
-将出现请求创建对话框。 在 **[!UICONTROL 请求的操作]** 部分，选择您希望删除数据集的日期。 您可以手动输入日期(格式为 `mm/dd/yyyy`)或选择日历图标(![日历图标的图像](../images/ui/ttl/calendar-icon.png))从对话框中选择日期。
+此時會出現請求建立對話方塊。 在 **[!UICONTROL 請求的動作]** 區段，選取您要刪除資料集的日期。 您可以手動輸入日期(格式為 `mm/dd/yyyy`)或選取行事曆圖示(![行事曆圖示的影像](../images/ui/ttl/calendar-icon.png))以從對話方塊中選取日期。
 
-![显示数据集已设置过期日期的图像](../images/ui/ttl/select-date.png)
+![顯示資料集設定到期日的影像](../images/ui/ttl/select-date.png)
 
-下一个，下 **[!UICONTROL 数据集详细信息]**，选择数据库图标(![数据库图标的图像](../images/ui/ttl/database-icon.png))打开数据集选择对话框。 从列表中选择要将过期时间应用到的数据集，然后选择 **[!UICONTROL 完成]**.
+下一個，在 **[!UICONTROL 資料集詳細資料]**，選取資料庫圖示(![資料庫圖示的影像](../images/ui/ttl/database-icon.png))以開啟資料集選擇對話方塊。 從清單中選擇要套用到期日的資料集，然後選取 **[!UICONTROL 完成]**.
 
-![显示正在选择的数据集的图像](../images/ui/ttl/select-dataset.png)
-
->[!NOTE]
-只显示属于当前沙盒的数据集。
-
-### 提交请求
-
-的 [!UICONTROL 数据集详细信息] 部分中填充了相应内容，以包含选定数据集的主标识和架构。 在 **[!UICONTROL 请求设置]**，为请求输入名称和可选描述，然后输入 **[!UICONTROL 提交]**.
-
-![显示 [!UICONTROL 提交] 按钮](../images/ui/ttl/submit.png)
-
-系统将要求您确认删除数据集的日期。 选择 **[!UICONTROL 提交]** 继续。
-
-提交请求后，将创建工作单，并显示在 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。
+![顯示正在選取之資料集的影像](../images/ui/ttl/select-dataset.png)
 
 >[!NOTE]
-请参阅 [时间表和透明度](../home.md#dataset-expiration-transparency) 有关执行数据集过期日期后如何处理这些过期日期的详细信息。
+只會顯示屬於目前沙箱的資料集。
 
-## 编辑或取消数据集过期
+### 提交請求
 
-要编辑或取消数据集过期，请选择 **[!UICONTROL 数据集]** ，然后从列表中选择数据集过期时间。
+此 [!UICONTROL 資料集詳細資料] 區段會填入，以包含所選資料集的主要身分和結構描述。 下 **[!UICONTROL 請求設定]**，輸入要求的名稱和說明（選擇性），然後按一下 **[!UICONTROL 提交]**.
 
-在数据集过期的详细信息页面上，右边栏会显示用于编辑或取消计划删除的控件。
+![影像顯示 [!UICONTROL 提交] 正在選取按鈕](../images/ui/ttl/submit.png)
+
+系統會要求您確認刪除資料集的日期。 選取 **[!UICONTROL 提交]** 以繼續。
+
+提交請求後，即會建立工單並出現在「 」的主標籤上。 [!UICONTROL 資料衛生] 工作區。 從這裡，您可以在工單處理請求時監視工單的狀態。
+
+>[!NOTE]
+請參閱概述一節，網址為 [時間表與透明度](../home.md#dataset-expiration-transparency) 以取得資料集過期執行後如何處理的詳細資訊。
+
+## 編輯或取消資料集有效期
+
+若要編輯或取消資料集有效期，請選取「 」 **[!UICONTROL 資料集]** ，並從清單中選取資料集有效期。
+
+在資料集到期的詳細資訊頁面上，右側欄會顯示用於編輯或取消排程刪除的控制項。
 
 ## 后续步骤
 
-本文档介绍了如何在Experience PlatformUI中计划数据集过期。 有关如何在UI中执行其他数据卫生任务的信息，请参阅 [数据卫生UI概述](./overview.md).
+本檔案說明如何在Experience PlatformUI中排程資料集有效期。 有關如何在UI中執行其他資料檢疫工作的資訊，請參閱 [資料衛生UI總覽](./overview.md).
 
-要了解如何使用数据卫生API计划数据集过期，请参阅 [数据集过期端点指南](../api/dataset-expiration.md).
+若要瞭解如何使用資料衛生API排程資料集有效期，請參閱 [資料集到期端點指南](../api/dataset-expiration.md).

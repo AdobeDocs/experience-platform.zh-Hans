@@ -1,63 +1,64 @@
 ---
-title: 医疗保健成员详细信息架构字段组
-description: 本文档概述了医疗保健成员详细信息架构字段组。
-source-git-commit: a51079ff1686ecae3e5fe9f0170b28bc16bcef86
+title: 醫療保健成員詳細資料結構欄位群組
+description: 本檔案提供「醫療保健會員詳細資訊」結構描述欄位群組的概觀。
+exl-id: 43ba025e-2acf-4cb7-8487-e6c7c7240867
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '661'
-ht-degree: 4%
+source-wordcount: '655'
+ht-degree: 3%
 
 ---
 
-# [!UICONTROL 医疗保健会员详细信息] 架构字段组
+# [!UICONTROL 醫療保健會員詳細資訊] 結構描述欄位群組
 
-[!UICONTROL 医疗保健会员详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) ，可捕获拥有或将接受医疗服务或护理的人员的详细信息，例如联系信息、初级保健医生和计划信息。
+[!UICONTROL 醫療保健會員詳細資訊] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md) 擷取已經或將會接受醫療服務或照護的人員的詳細資訊，例如聯絡資訊、初級保健醫生和計畫資訊。
 
-![字段组结构](../../images/field-groups/healthcare-member-details/structure.png)
+![欄位群組結構](../../images/field-groups/healthcare-member-details/structure.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `billingAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 人员的帐单地址。 |
-| `faxPhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 此人的传真电话号码。 |
-| `homeAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 此人的家庭地址。 |
-| `homePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 此人的家庭电话号码。 |
-| `mailingAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 此人的通讯地址。 |
-| `memberDetails` | 对象 | 一个对象，其中包含有关人员的医疗保健相关属性和关系的详细信息。 请参阅 [下文](#memberDetails) 以了解有关对象结构的详细信息。 |
-| `mobilePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 人员的手机号码。 |
-| `person` | [[!UICONTROL 人员]](../../data-types/person.md) | 与人员的医疗会员资格相关的个人行为者、联系人或所有者。 |
-| `personalEmail` | [[!UICONTROL 电子邮件地址]](../../data-types/email-address.md) | 人员的个人电子邮件地址。 |
-| `shippingAddress` | [[!UICONTROL 邮政地址]](../../data-types/postal-address.md) | 人的送货地址。 |
+| `billingAddress` | [[!UICONTROL 郵寄地址]](../../data-types/postal-address.md) | 個人的帳單地址。 |
+| `faxPhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 個人的傳真電話號碼。 |
+| `homeAddress` | [[!UICONTROL 郵寄地址]](../../data-types/postal-address.md) | 個人的住家地址。 |
+| `homePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 個人的住家電話號碼。 |
+| `mailingAddress` | [[!UICONTROL 郵寄地址]](../../data-types/postal-address.md) | 個人的郵寄地址。 |
+| `memberDetails` | 对象 | 此物件包含有關個人醫療保健相關屬性和關係的詳細資訊。 請參閱 [下方的子區段](#memberDetails) 以取得物件結構的詳細資訊。 |
+| `mobilePhone` | [[!UICONTROL 电话号码]](../../data-types/phone-number.md) | 個人的行動電話號碼。 |
+| `person` | [[!UICONTROL 人员]](../../data-types/person.md) | 與個人的醫療保健會籍相關的個人執行者、聯絡人或擁有者。 |
+| `personalEmail` | [[!UICONTROL 电子邮件地址]](../../data-types/email-address.md) | 個人的個人電子郵件地址。 |
+| `shippingAddress` | [[!UICONTROL 郵寄地址]](../../data-types/postal-address.md) | 個人的送貨地址。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `memberDetails` {#memberDetails}
 
-`memberDetails` 是一个对象，其中包含有关人员医疗保健相关属性和关系的详细信息。 的结构 `memberDetails` 下面介绍了。
+`memberDetails` 是一個物件，其中包含有關個人的醫療保健相關屬性和關係的詳細資訊。 的結構 `memberDetails` 如下所述。
 
-![memberDetails结构](../../images/field-groups/healthcare-member-details/memberDetails.png)
+![memberDetails結構](../../images/field-groups/healthcare-member-details/memberDetails.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `emergencyContact` | 对象 | 为人员捕获以下紧急联系详细信息： <ul><li>`fullName`:（字符串）紧急联系人的全名。</li><li>`phone`:（字符串）紧急联系人的电话号码。</li><li>`relationshipToMember`:（字符串）紧急联系人与人员的关系。</li></ul> |
-| `medications` | 对象数组 | 列出与人员相关的当前和过去药物的详细信息。 每个数组项目都是一个用于捕获以下详细信息的对象： <ul><li>`refillLocation`:([[!UICONTROL 邮政地址]](../../data-types/postal-address.md))药物的填充位置。</li><li>`ID`:（字符串）药物ID。</li><li>`isCurrent`:（布尔值）指示药物是当前还是过去。</li><li>`numberOfRefills`:（整数）由本药物供应商规定的重填次数。</li><li>`startDate`:(DateTime)人开始服药的日期。</li></ul> |
-| `multipleBirth` | 对象 | 捕获与多胎有关的详细信息： <ul><li>`isMultipleBirth`:（布尔值）指示人是否分娩过多次。</li><li>`multipleBirthNumber`:（整数）如果 `isMultipleBirth` 是真的。</li></ul> |
-| `plans` | 对象数组 | 列出与人员关联的当前和过去医疗计划的详细信息。 每个数组项目都是一个用于捕获以下详细信息的对象： <ul><li>`coverageEndDate`:(DateTime)计划范围结束的日期。</li><li>`coverageStartDate`:(DateTime)计划覆盖范围开始的日期。</li><li>`isActive`:（布尔值）指示计划是否处于活动状态。</li><li>`planId`:（字符串）计划ID。</li></ul> |
-| `primaryCarePhysicians` | 对象数组 | 列出与该人相关的初级保健医师的详细信息。 每个数组项目都是一个用于捕获以下详细信息的对象： <ul><li>`endDate`:(DateTime)初级保健医师结束对该人的护理的日期。</li><li>`fullname`:（字符串）医生的全名。</li><li>`providerId`:（字符串）医生的唯一标识符。</li><li>`startDate`:(DateTime)初级保健医师开始照料人的日期。</li></ul> |
-| `specialists` | 对象数组 | 列出与该人员关联的医疗保健专家的详细信息。 每个数组项目都是一个用于捕获以下详细信息的对象： <ul><li>`fullname`:（字符串）专家的全名。</li><li>`providerId`:（字符串）专家的唯一标识符。</li><li>`specialty`:（字符串）提供者的专业（如麻醉学、泌尿科、放射科、皮肤病学等）。</li></ul> |
-| `beneficiaryRelationship` | 字符串 | 如果该人是受扶养人，则与医疗保健成员的受益关系（例如，自己、配偶、子女等）。 |
-| `billingAccountID` | 字符串 | 人员账单帐户的唯一标识符。 |
-| `dateAgeCollected` | DateTime | 收集人的年龄的日期。 |
-| `deceasedDate` | DateTime | 死者死亡的日期。 |
-| `isDeceased` | 布尔型 | 指示此人是否已死亡。 |
-| `isDependent` | 布尔型 | 指示人员是否为从属人员。 |
-| `nationality` | 字符串 | 人与其国家之间的法律关系，使用ISO 3166-1 Alpha-2代码表示。 |
-| `preferredAvailability` | 字符串 | 人员首选的约会日期和时间。 |
-| `primaryMemberID` | 字符串 | 主用户的唯一标识符（如果人员是从属用户）。 |
+| `emergencyContact` | 对象 | 擷取此人的下列緊急聯絡詳細資料： <ul><li>`fullName`：（字串）緊急聯絡人的全名。</li><li>`phone`：（字串）緊急聯絡人的電話號碼。</li><li>`relationshipToMember`：（字串）緊急聯絡人與個人的關係。</li></ul> |
+| `medications` | 物件陣列 | 列出與個人相關之目前和過去藥物的詳細資訊。 每個陣列專案都是一個物件，可擷取以下詳細資訊： <ul><li>`refillLocation`： ([[!UICONTROL 郵寄地址]](../../data-types/postal-address.md))重新填滿藥物的位置。</li><li>`ID`：（字串）藥物ID。</li><li>`isCurrent`：（布林值）指出藥物為目前或過去。</li><li>`numberOfRefills`：（整數）此藥物提供者所指定的重新填入次數。</li><li>`startDate`：(DateTime)人員開始接受藥物的日期。</li></ul> |
+| `multipleBirth` | 对象 | 擷取與多胞胎相關的細節： <ul><li>`isMultipleBirth`：（布林值）指出此人是否生過多個孩子。</li><li>`multipleBirthNumber`：（整數）在下列情況下出生的嬰兒數： `isMultipleBirth` 為true。</li></ul> |
+| `plans` | 物件陣列 | 列出與個人相關的目前和過去醫療計畫的詳細資訊。 每個陣列專案都是一個物件，可擷取以下詳細資訊： <ul><li>`coverageEndDate`：（日期時間）計畫涵蓋範圍結束的日期。</li><li>`coverageStartDate`：（日期時間）計畫涵蓋範圍的開始日期。</li><li>`isActive`：（布林值）指出計畫是否作用中。</li><li>`planId`：（字串）計畫ID。</li></ul> |
+| `primaryCarePhysicians` | 物件陣列 | 列出與個人相關的初級保健醫生的詳細資訊。 每個陣列專案都是一個物件，可擷取以下詳細資訊： <ul><li>`endDate`：（日期時間）基層照護醫師終止對個人的照護的日期。</li><li>`fullname`：（字串）醫師的全名。</li><li>`providerId`：（字串）醫師的唯一識別碼。</li><li>`startDate`：（日期時間）基層照護醫師開始照護該人的日期。</li></ul> |
+| `specialists` | 物件陣列 | 列出與個人相關的醫療保健專家的詳細資訊。 每個陣列專案都是一個物件，可擷取以下詳細資訊： <ul><li>`fullname`：（字串）專員的全名。</li><li>`providerId`：（字串）專員的唯一識別碼。</li><li>`specialty`：（字串）提供者的專長（例如麻醉科、泌尿科、放射科、皮膚科等）。</li></ul> |
+| `beneficiaryRelationship` | 字符串 | 如果人員是受撫養人（例如自己、配偶、子女等），則為與醫療保健會員的受益人關係。 |
+| `billingAccountID` | 字符串 | 個人帳單帳戶的唯一識別碼。 |
+| `dateAgeCollected` | 日期時間 | 收集個人年齡的日期。 |
+| `deceasedDate` | 日期時間 | 如果人員已死亡，則為死亡日期。 |
+| `isDeceased` | 布尔值 | 指出人員是否已死亡。 |
+| `isDependent` | 布尔值 | 指出此人是否為受撫養人。 |
+| `nationality` | 字符串 | 個人與其狀態之間的法律關係，使用ISO 3166-1 Alpha-2代碼表示。 |
+| `preferredAvailability` | 字符串 | 個人對約會偏好的日期和時間。 |
+| `primaryMemberID` | 字符串 | 如果個人是受撫養人，則為主要訂閱者的唯一識別碼。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-healthcare-member.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-healthcare-member.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-healthcare-member.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-healthcare-member.schema.json)
 
-有关如何使用此字段组来提供通用字段的更多信息，请参阅行业模式文档 [医疗保健行业用例](../../schema/industries/healthcare.md).
+如需有關如何使用此欄位群組來提供常見服務的詳細資訊，請參閱產業結構描述檔案 [醫療保健產業使用案例](../../schema/industries/healthcare.md).

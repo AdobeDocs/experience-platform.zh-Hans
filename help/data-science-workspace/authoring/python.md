@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据访问；python sdk；数据访问API；读取python；写入python
+keywords: Experience Platform；首頁；熱門主題；資料存取；python sdk；資料存取api；讀取python；寫入python
 solution: Experience Platform
-title: 在数据科学工作区中使用Python访问数据
+title: 在Data Science Workspace中使用Python存取資料
 type: Tutorial
-description: 以下文档包含有关如何在Python中访问数据以在数据科学工作区中使用的示例。
+description: 以下檔案包含如何在Python中存取資料以用於資料科學工作區的範例。
 exl-id: 75aafd58-634a-4df3-a2f0-9311f93deae4
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 ---
 
-# 在数据科学工作区中使用Python访问数据
+# 在資料科學工作區中使用Python存取資料
 
-以下文档包含有关如何使用Python访问数据以在数据科学工作区中使用的示例。 有关使用JupyterLab笔记本访问数据的信息，请访问 [JupyterLab笔记本电脑数据访问](../jupyterlab/access-notebook-data.md) 文档。
+以下檔案包含如何使用Python存取資料以用於資料科學工作區的範例。 如需使用JupyterLab筆記型電腦存取資料的詳細資訊，請造訪 [JupyterLab Notebooks資料存取](../jupyterlab/access-notebook-data.md) 說明檔案。
 
-## 读取数据集
+## 讀取資料集
 
-在设置环境变量并完成安装后，您的数据集现在可以读取到pantics数据帧中。
+設定環境變數並完成安裝後，現在可將您的資料集讀入pandas dataframe。
 
 ```python
 import pandas as pd
@@ -34,13 +34,13 @@ dataset_reader = DatasetReader(client_context, config_properties['DATASET_ID'])
 df = dataset_reader.read()
 ```
 
-### 从数据集中选择列
+### 從資料集中選取欄
 
 ```python
 df = dataset_reader.select(['column-a','column-b']).read()
 ```
 
-### 获取分区信息：
+### 取得分割資訊：
 
 ```python
 client_context = get_client_context(config_properties)
@@ -51,9 +51,9 @@ partitions = dataset.get_partitions_info()
 
 ### DISTINCT子句
 
-DISTINCT子句允许您在行/列级别获取所有不同值，从响应中删除所有重复值。
+DISTINCT子句可讓您擷取列/欄層級的所有相異值，從回應中移除所有重複值。
 
-使用的示例 `distinct()` 函数如下所示：
+使用 `distinct()` 函式如下所示：
 
 ```python
 df = dataset_reader.select(['column-a']).distinct().read()
@@ -61,11 +61,11 @@ df = dataset_reader.select(['column-a']).distinct().read()
 
 ### WHERE子句
 
-您可以在Python中使用某些运算符来帮助过滤数据集。
+您可以在Python中使用某些運運算元，協助篩選資料集。
 
 >[!NOTE]
 >
->用于筛选的函数区分大小写。
+>用於篩選的函式區分大小寫。
 
 ```python
 eq() = '='
@@ -77,7 +77,7 @@ And = and operator
 Or = or operator
 ```
 
-使用这些过滤函数的示例如下所示：
+以下提供使用這些篩選函式的範例：
 
 ```python
 df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experience_ds['timestamp'].lt(87879779797)).Or(experience_ds['a'].eq(123)))
@@ -85,9 +85,9 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY子句
 
-ORDER BY子句允许接收的结果按指定的列按特定顺序（升序或降序）排序。 这是使用 `sort()` 函数。
+ORDER BY子句允許接收的結果以特定順序（升序或降序）依指定資料行排序。 這是透過使用 `sort()` 函式。
 
-使用的示例 `sort()` 函数如下所示：
+使用 `sort()` 函式如下所示：
 
 ```python
 df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
@@ -95,9 +95,9 @@ df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
 
 ### LIMIT子句
 
-LIMIT子句用于限制从数据集接收的记录数。
+LIMIT子句可讓您限制從資料集接收的記錄數。
 
-使用的示例 `limit()` 函数如下所示：
+使用 `limit()` 函式如下所示：
 
 ```python
 df = dataset_reader.limit(100).read()
@@ -105,19 +105,19 @@ df = dataset_reader.limit(100).read()
 
 ### OFFSET子句
 
-OFFSET子句允许您从开头跳过行，以从以后的点开始返回行。 与LIMIT结合使用时，可用于循环块中的行。
+OFFSET子句可讓您從頭開始略過資料列，以開始從後面傳回資料列。 在搭配LIMIT的情況下，這可用於在區塊中疊代列。
 
-使用的示例 `offset()` 函数如下所示：
+使用 `offset()` 函式如下所示：
 
 ```python
 df = dataset_reader.offset(100).read()
 ```
 
-## 编写数据集
+## 寫入資料集
 
-要写入数据集，您需要向数据集提供熊猫数据帧。
+若要寫入資料集，您必須為資料集提供pandas資料流。
 
-### 编写熊猫数据帧
+### 正在寫入熊貓資料流
 
 ```python
 client_context = get_client_context(config_properties)
@@ -130,15 +130,15 @@ dataset_writer = DatasetWriter(client_context, dataset)
 write_tracker = dataset_writer.write(<your_dataFrame>, file_format='json')
 ```
 
-## Userspace目录（检查点）
+## 使用者空間目錄（檢查點）
 
-对于运行时间较长的作业，您可能需要存储中间步骤。 在此类情况下，您可以读取和写入用户空间。
+若要讓工作執行時間更長，您可能需要儲存中繼步驟。 在類似的情況下，您可以讀取和寫入使用者空間。
 
 >[!NOTE]
 >
->数据的路径为 **not** 存储。 您需要存储其相应数据的相应路径。
+>資料的路徑為 **not** 已儲存。 您需要儲存其個別資料的對應路徑。
 
-### 写入用户空间
+### 寫入使用者空間
 
 ```python
 client_context = get_client_context(config_properties)
@@ -147,7 +147,7 @@ user_helper = UserSpaceHelper(client_context)
 user_helper.write(data_frame=<data_frame>, path=<path_to_directory>, ref_dataset_id=<ref_dataset_id>)
 ```
 
-### 从用户空间读取
+### 從使用者空間讀取
 
 ```python
 client_context = get_client_context(config_properties)
@@ -158,4 +158,4 @@ my_df = user_helper.read(path=<path_to_directory>, ref_dataset_id=<ref_dataset_i
 
 ## 后续步骤
 
-Adobe Experience Platform Data Science Workspace提供了一个方法示例，该方法示例使用上述代码示例来读取和写入数据。 如果您想进一步了解如何使用Python访问数据，请查看 [数据科学工作区Python GitHub存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail).
+Adobe Experience Platform Data Science Workspace提供使用上述程式碼範例來讀取和寫入資料的配方範例。 如果您想進一步瞭解如何使用Python存取您的資料，請檢視 [資料科學工作區Python GitHub存放庫](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail).

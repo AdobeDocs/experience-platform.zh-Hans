@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle服务云
-title: 在UI中创建Oracle服务云源连接
-description: 了解如何使用Adobe Experience Platform UI创建Oracle服务云源连接。
+keywords: Experience Platform；首頁；熱門主題；Oracle服務雲端；oracle服務雲端
+title: 在UI中建立Oracle服務雲端來源連線
+description: 瞭解如何使用Adobe Experience Platform UI建立Oracle服務雲端來源連線。
 exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
 source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
@@ -10,57 +10,57 @@ ht-degree: 1%
 
 ---
 
-# 在UI中创建Oracle服务云源连接
+# 在UI中建立Oracle服務雲端來源連線
 
-本教程提供了使用Adobe Experience Platform用户界面创建Oracle服务云源连接的步骤。
+本教學課程提供使用Adobe Experience Platform使用者介面建立Oracle服務雲端來源連線的步驟。
 
 ## 快速入门
 
-本教程需要对Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-如果您已经拥有有效的Oracle服务云源连接，则可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/customer-success.md)
+如果您已經有有效的Oracle服務雲端來源連線，您可以略過本檔案的其餘部分，並前往上的教學課程 [設定資料流](../../dataflow/customer-success.md)
 
-### 收集所需的凭据
+### 收集必要的認證
 
-要访问您的Oracle服务云帐户，请执行以下操作： [!DNL Platform]，则必须提供以下值：
+若要存取您的Oracle服務雲端帳戶，請前往 [!DNL Platform]，您必須提供下列值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| Host | 您的Oracle服务云实例的主机URL。 |
-| 用户名 | 您的Oracle服务云用户帐户的用户名。 |
-| 密码 | 您的Oracle服务云帐户的密码。 |
+| Host | oracle服務雲端例項的主機URL。 |
+| 用户名 | 您的Oracle服務雲端使用者帳戶使用者名稱。 |
+| 密码 | 您的Oracle Service Cloud帳戶密碼。 |
 
-有关对Oracle服务云帐户进行身份验证的更多信息，请参阅 [[!DNL Oracle] 认证指南](https://docs.oracle.com/en/cloud/saas/b2c-service/20c/cxska/OKCS_Authenticate_and_Authorize.html).
+如需驗證Oracle服務雲端帳戶的詳細資訊，請參閱 [[!DNL Oracle] 驗證指南](https://docs.oracle.com/en/cloud/saas/b2c-service/20c/cxska/OKCS_Authenticate_and_Authorize.html).
 
-## 连接您的Oracle服务云帐户
+## 連線您的Oracle服務雲端帳戶
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕显示可用于创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示可用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
 
-在 [!UICONTROL 客户成功] 类别，选择 **[!UICONTROL Oracle服务云]** 然后选择 **[!UICONTROL 添加数据]**.
+在 [!UICONTROL 客戶成功] 類別，選取 **[!UICONTROL oracle服務雲端]** 然後選取 **[!UICONTROL 新增資料]**.
 
-![突出显示Oracle服务云源的源目录。](../../../../images/tutorials/create/oracle-service-cloud/catalog.png)
+![反白顯示Oracle服務雲端來源的來源目錄。](../../../../images/tutorials/create/oracle-service-cloud/catalog.png)
 
-的 **[!UICONTROL 连接到Oracle服务云]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線至Oracle Service Cloud]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 现有帐户
+### 現有帳戶
 
-要连接现有帐户，请选择要连接的Oracle服务云帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要連線現有帳戶，請選取您要連線的Oracle服務雲端帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![现有帐户界面。](../../../../images/tutorials/create/oracle-service-cloud/existing.png)
+![現有的帳戶介面。](../../../../images/tutorials/create/oracle-service-cloud/existing.png)
 
-### 新帐户
+### 新帳戶
 
-如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供名称、可选描述和您的Oracle服务云凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+如果您使用新認證，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供名稱、選擇性說明和您的Oracle服務雲端憑證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
 
-![新帐户与的占位符值的界面。](../../../../images/tutorials/create/oracle-service-cloud/new.png)
+![帶有預留位置值的新帳戶介面。](../../../../images/tutorials/create/oracle-service-cloud/new.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已建立与Oracle服务云帐户的连接。 您现在可以继续下一个教程和 [配置数据流以将客户成功数据引入平台](../../dataflow/crm.md).
+依照本教學課程所述，您已建立與您的Oracle Service Cloud帳戶的連線。 您現在可以繼續下一節教學課程和 [設定資料流，將客戶成功資料匯入Platform](../../dataflow/crm.md).

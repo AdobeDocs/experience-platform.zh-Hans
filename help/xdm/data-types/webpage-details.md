@@ -1,38 +1,38 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式；模式；XDM；字段；模式；模式；网页详细信息；数据类型；数据类型；网页
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；網頁詳細資訊；資料型別；資料型別；資料型別；網頁
 solution: Experience Platform
-title: 网页详细信息数据类型
-description: 本文档概述了Web页面详细信息体验数据模型(XDM)数据类型。
+title: 網頁詳細資料資料型別
+description: 本檔案提供網頁詳細資訊Experience Data Model (XDM)資料型別的概觀。
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '408'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL 网页详细信息] 数据类型
+# [!UICONTROL 網頁詳細資料] 資料型別
 
-[!UICONTROL 网页详细信息] 是一种标准的体验数据模型(XDM)数据类型，用于描述由ExperienceEvent记录的有关刚刚加载和查看的网页的详细信息。
+[!UICONTROL 網頁詳細資料] 是標準的Experience Data Model (XDM)資料型別，可描述剛載入及檢視之網頁的詳細資訊，如ExperienceEvent所記錄。
 
-数据类型适用于单页Web应用程序(SPA)的完整页面详细信息和初始页面加载。 对于在加载的页面上发生的不触发新页面加载的交互，请参阅 [Web交互](./web-interaction.md) 数据类型。
+此資料型別適用於單頁網頁應用程式(SPA)的完整頁面詳細資料和初始頁面載入。 若為發生在載入頁面上的互動並未觸發新頁面載入，請參閱 [網路互動](./web-interaction.md) 資料型別。
 
 <img src="../images/data-types/web-page-details.PNG" width="500" /><br />
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `pageViews` | [[!UICONTROL 测量]](./measure.md) | 网页上的查看次数。 |
-| `URL` | 字符串 | 网页的规范URL或常用URL。 这可能是用于访问页面的实际URL，也可能不是。 记录用于访问页面使用的URL `webLink`. URI格式应遵循 [RFC 3986](https://tools.ietf.org/html/rfc3986) 标准。 |
-| `isErrorPage` | 布尔型 | 此属性使用标记来指示页面是否为错误页面。 此标记用于对Web交互进行广泛分类。 错误由应用程序定义，可以与带有HTTP错误代码的页面对应。 |
-| `isHomePage` | 布尔型 | 此属性使用标记来指示页面是否为主页。 此标记用于对Web交互进行广泛分类。 主页的定义由应用程序决定。 |
-| `name` | 字符串 | 网页的规范名称。 此名称不一定是页面标题或与页面内容直接关联，但可用于组织网站页面以进行分类。 |
-| `server` | 字符串 | 托管网页的规范性服务器或常用服务器。 这可能是实际提供页面交互的主机或服务器，也可能不是。 |
-| `siteSection` | 字符串 | 此网页所在站点区域的规范名称。 这可用于对交互进行分类或分类。 |
-| `viewName` | 字符串 | 页面中的视图名称。 此属性通常用于单页应用程序或具有可更改大多数页面布局的选项卡或控件的页面。 |
+| `pageViews` | [[!UICONTROL 測量]](./measure.md) | 網頁上的檢視次數。 |
+| `URL` | 字符串 | 網頁的規範或一般URL。 這可能是也可能不是用來存取頁面的實際URL。 若要記錄用來存取頁面的URL，請使用 `webLink`. URI格式應遵循 [RFC 3986](https://tools.ietf.org/html/rfc3986) 標準。 |
+| `isErrorPage` | 布尔值 | 此屬性會使用標幟來指出頁面是否為錯誤頁面。 此標幟可用來將網頁互動廣泛分類。 錯誤由應用程式定義，並可對應至提供HTTP錯誤碼的頁面。 |
+| `isHomePage` | 布尔值 | 此屬性會使用標幟來指出頁面是否為首頁。 此標幟可用來將網頁互動廣泛分類。 首頁的定義由應用程式決定。 |
+| `name` | 字符串 | 網頁的規範名稱。 此名稱不一定是頁面標題或直接與頁面內容相關聯，但用於組織網站頁面以進行分類。 |
+| `server` | 字符串 | 託管網頁的規範或常用伺服器。 這可能是也可能不是實際提供頁面互動的主機或伺服器。 |
+| `siteSection` | 字符串 | 此網頁所在的網站區段的規範名稱。 這可用來分類或分類互動。 |
+| `viewName` | 字符串 | 頁面中檢視的名稱。 此屬性常用於具有變更大部分頁面版面的索引標籤或控制項的單頁應用程式或頁面。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.example.2.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.example.2.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.schema.json)

@@ -1,98 +1,98 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；模式注册表；模式注册表；兼容性；兼容性；兼容性模式；兼容性模式；兼容性模式；字段类型；字段类型；
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述登入；相容性；相容性；相容性模式；相容性模式；欄位型別；欄位型別；
 solution: Experience Platform
-title: 架构注册API指南附录
-description: 本文档提供了与使用架构注册表API相关的补充信息。
+title: 結構描述登入API指南附錄
+description: 本檔案提供與使用結構描述登入API相關的補充資訊。
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '984'
-ht-degree: 1%
+source-wordcount: '978'
+ht-degree: 0%
 
 ---
 
-# 架构注册API指南附录
+# 結構描述登入API指南附錄
 
-本文档提供了与使用 [!DNL Schema Registry] API。
+本檔案提供與使用相關的補充資訊 [!DNL Schema Registry] API。
 
-## 使用查询参数 {#query}
+## 使用查詢引數 {#query}
 
-的 [!DNL Schema Registry] 支持在列出资源时使用查询参数来筛选页面和结果。
+此 [!DNL Schema Registry] 支援在列出資源時使用查詢引數來頁面和篩選結果。
 
 >[!NOTE]
 >
->组合多个查询参数时，必须用与号(`&`)。
+>合併多個查詢引數時，必須以&amp;符號(`&`)。
 
 ### 分页 {#paging}
 
-用于分页的最常见查询参数包括：
+分頁最常見的查詢引數包括：
 
 | 参数 | 描述 |
 | --- | --- |
-| `orderby` | 按特定属性对结果排序。 示例： `orderby=title` 将按标题以升序(A-Z)对结果进行排序。 添加 `-` 在参数值(`orderby=-title`)将按标题以降序(Z-A)对项目进行排序。 |
-| `limit` | 与 `orderby` 参数， `limit` 限制为给定请求应返回的最大项目数。 如果没有 `orderby` 参数存在。<br><br>的 `limit` 参数指定正整数(介于 `0` 和 `500`)as a *提示* 至应返回的最大项目数。 例如， `limit=5` 仅返回列表中的5个资源。 但是，此值并不严格遵循。 实际响应尺寸可以是小于或大于，因为需要提供可靠的操作 `start` 参数（如果提供）。 |
-| `start` | 与 `orderby` 参数， `start` 指定项目子集列表的开始位置。 如果没有 `orderby` 参数存在。 此值可从 `_page.next` 列表响应的属性，用于访问结果的下一页。 如果 `_page.next` 值为null，则没有其他页面可用。<br><br>通常，为获取结果的第一页，会忽略此参数。 之后， `start` 应设置为 `orderby` 字段。 然后，API响应会返回以具有中主排序属性的条目开头的条目 `orderby` 严格大于（升序）或严格小于（降序）指定值。<br><br>例如，如果 `orderby` 参数设置为 `orderby=name,firstname`, `start` 参数将包含 `name` 属性。 在这种情况下，如果您希望在名称“Miller”后立即显示资源的后20个条目，则可以使用： `?orderby=name,firstname&start=Miller&limit=20`. |
+| `orderby` | 依特定屬性排序結果。 範例： `orderby=title` 會依標題以遞增順序(A-Z)排序結果。 新增 `-` 在引數值之前(`orderby=-title`)會依標題以遞減順序(Z-A)排序專案。 |
+| `limit` | 當與 `orderby` 引數， `limit` 限制指定請求應傳回的專案數上限。 若無此引數，就無法使用 `orderby` 引數存在。<br><br>此 `limit` 引數指定正整數(介於 `0` 和 `500`)作為 *提示* 應傳回的專案數上限。 例如， `limit=5` 只傳回清單中的五個資源。 不過，此值並非嚴格遵循。 實際的回應大小可能會小於或大於此值，因為需要提供 `start` 引數（若有）。 |
+| `start` | 當與 `orderby` 引數， `start` 指定專案子集清單的開始位置。 若無此引數，就無法使用 `orderby` 引數存在。 此值可從下列位置取得： `_page.next` 清單回應的屬性，並用來存取結果的下一頁。 如果 `_page.next` 值為null，則沒有其他可用頁面。<br><br>通常省略此引數是為了取得結果的第一頁。 之後， `start` 應設定為以下專案的主要排序屬性最大值： `orderby` 在上一頁收到的欄位。 API回應接著會傳回開頭為具有主要排序屬性的專案 `orderby` 嚴格大於（遞增）或嚴格小於（遞減）指定值。<br><br>例如，如果 `orderby` 引數已設為 `orderby=name,firstname`，則 `start` 引數會包含 `name` 屬性。 在這種情況下，如果您想在名稱「Miller」之後立即顯示資源的接下來的20個專案，您可以使用： `?orderby=name,firstname&start=Miller&limit=20`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 正在筛选 {#filtering}
 
-您可以使用 `property` 参数，用于在检索的资源中对给定JSON属性应用特定运算符。 支持的运算符包括：
+您可以使用以下專案來篩選結果： `property` 引數，用於針對擷取資源內的指定JSON屬性套用特定運運算元。 支援的運運算元包括：
 
-| 运算符 | 描述 | 示例 |
+| 操作员 | 描述 | 示例 |
 | --- | --- | --- |
-| `==` | 按属性是否等于提供的值进行筛选。 | `property=title==test` |
-| `!=` | 按属性是否不等于提供的值进行筛选。 | `property=title!=test` |
-| `<` | 按属性是否小于提供的值进行筛选。 | `property=version<5` |
-| `>` | 按属性是否大于提供的值进行筛选。 | `property=version>5` |
-| `<=` | 按属性是否小于或等于提供的值进行筛选。 | `property=version<=5` |
-| `>=` | 按属性是否大于或等于提供的值进行筛选。 | `property=version>=5` |
-| `~` | 按属性是否与提供的正则表达式匹配进行筛选。 | `property=title~test$` |
-| (None) | 仅声明属性名称仅返回存在属性的条目。 | `property=title` |
+| `==` | 依據屬性是否等於提供的值來篩選。 | `property=title==test` |
+| `!=` | 依據屬性是否不等於提供的值來篩選。 | `property=title!=test` |
+| `<` | 依據屬性是否小於提供的值來篩選。 | `property=version<5` |
+| `>` | 依據屬性是否大於提供的值來篩選。 | `property=version>5` |
+| `<=` | 依據屬性是否小於或等於提供的值來篩選。 | `property=version<=5` |
+| `>=` | 依據屬性是否大於或等於提供的值來篩選。 | `property=version>=5` |
+| `~` | 依據屬性是否符合提供的規則運算式進行篩選。 | `property=title~test$` |
+| (None) | 若僅指出屬性名稱，則只會傳回屬性存在的專案。 | `property=title` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!TIP]
 >
->您可以使用 `property` 用于按其兼容类筛选架构字段组的参数。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与兼容的字段组 [!DNL XDM Individual Profile] 类。
+>您可以使用 `property` 用於依結構描述欄位群組的相容類別來篩選結構描述欄位群組的引數。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 只傳回與相容的欄位群組 [!DNL XDM Individual Profile] 類別。
 
-## 兼容性模式 {#compatibility}
+## 相容性模式 {#compatibility}
 
-[!DNL Experience Data Model] (XDM)是一项公开记录的规范，由Adobe驱动，旨在提高数字体验的互操作性、表现力和功能。 Adobe在 [GitHub上的开源项目](https://github.com/adobe/xdm/). 这些定义以XDM标准符号编写，使用JSON-LD（链接数据的JavaScript对象符号）和JSON模式作为定义XDM模式的语法。
+[!DNL Experience Data Model] (XDM)是公開記錄的規格，由Adobe驅動，以改善數位體驗的互用性、表現力和效能。 Adobe會在中維護原始程式碼和正式XDM定義 [GitHub上的開放原始碼專案](https://github.com/adobe/xdm/). 這些定義是以XDM標準標籤法編寫，使用JSON-LD （連結資料的JavaScript物件標籤法）和JSON結構描述作為定義XDM結構描述的文法。
 
-在公共存储库中查看正式的XDM定义时，您可以看到标准XDM与在Adobe Experience Platform中看到的不同。 您在中看到的内容 [!DNL Experience Platform] 称为兼容模式，它提供了标准XDM与内部使用方式之间的简单映射 [!DNL Platform].
+在公開存放庫中檢視正式XDM定義時，您可以看到標準XDM與您在Adobe Experience Platform中看到的不同。 您在中看到的內容 [!DNL Experience Platform] 這稱為相容性模式，它提供標準XDM與其使用方式之間的簡單對應 [!DNL Platform].
 
-### 兼容性模式的工作原理
+### 相容性模式的運作方式
 
-兼容性模式允许XDM JSON-LD模型通过更改标准XDM中的值来使用现有数据基础结构，同时保持语义相同。 它使用嵌套的JSON结构，以类似树的格式显示架构。
+相容性模式可讓XDM JSON-LD模型透過變更標準XDM中的值同時保持相同的語意來搭配現有資料基礎結構運作。 它使用巢狀JSON結構，以樹狀格式顯示結構描述。
 
-在标准XDM和兼容性模式之间，您会注意到的主要区别是删除了字段名称的“xdm：”前缀。
+您在標準XDM和相容性模式之間會注意到的主要差異，是移除欄位名稱的「xdm：」首碼。
 
-下面是一个并排比较，其中显示了标准XDM和兼容性模式中与生日相关的字段（删除了“描述”属性）。 请注意，兼容模式字段包括对“meta:xdmField”和“meta:xdmType”属性中XDM字段及其数据类型的引用。
+以下並排比較會顯示標準XDM和相容性模式中與生日相關的欄位（已移除「說明」屬性）。 請注意，相容性模式欄位包括對XDM欄位的引用，以及其「meta：xdmField」和「meta：xdmType」屬性中的資料型別。
 
 <table style="table-layout:auto">
-  <th>标准XDM</th>
-  <th>兼容性模式</th>
+  <th>標準XDM</th>
+  <th>相容性模式</th>
   <tr>
   <td>
   <pre class=" language-json">
-{ "xdm:birthDate":{ "title":“出生日期”、“类型”："string", "format":"date" }, "xdm:birthDayAndMonth":{ "title":“出生日期”、“类型”："string", "pattern":"[0-1][0-9]-[0-9][0-9]" }, "xdm:pirthYear":{ "title":“出生年”、“类型”："integer", "minimum":1, "maximum":32767 }
+{ "xdm：birthDate"： { "title"： "Birth Date"， "type"： "string"， "format"： "date" }， "xdm：birthDayAndMonth"： { "title"： "Birth Date"， "type"： "string"， "pattern"： "[0-1][0-9]-[0-9][0-9]" }， "xdm：birthYear"： { "title"： "Birth year"， "type"： "integer"： 1， "maximimum"： 32767 } } }
   </pre>
   </td>
   <td>
   <pre class=" language-json">
-{ "birthDate":{ "title":“出生日期”、“类型”："string", "format":"date", "meta:xdmField":"xdm:birthDate", "meta:xdmType":"date" }, "birthDayAndMonth":{ "title":“出生日期”、“类型”："string", "pattern":“[0-1][0-9]-[0-9][0-9]”，“meta:xdmField”："xdm:birthDayAndMonth", "meta:xdmType":"string" }, "birthYear":{ "title":“出生年”、“类型”："integer", "minimum":1, "maximum":32767, "meta:xdmField":"xdm:birthYear", "meta:xdmType":"short" }
+{ "birthDate"： { "title"： "Birth Date"， "type"： "string"， "format"： "date"， "meta：xdmField"： "xdm：birthDate"， "meta：xdmType"： "date" }， "birthDayAndMonth"： { "title"： "Birth Date"， "type"： "string"， "pattern"： "[0-1][0-9]-[0-9]"， "meta：xdmField"： "xdm：birthDayAnd"， meta：xdmType"： "string" }， "birthYear"： { "title"： "Birth year"， "type"： "integer"， "minimum"： 1， "maximum"： 32767， "meta：xdmField"： "xdm：birthYear"， "meta：xdmType"： "short" }
       </pre>
   </td>
   </tr>
 </table>
 
-### 为何需要兼容模式？
+### 為何需要相容性模式？
 
-Adobe Experience Platform旨在与多个解决方案和服务结合使用，每个解决方案和服务都有各自的技术挑战和限制（例如，某些技术如何处理特殊字符）。 为了克服这些限制，开发了兼容性模式。
+Adobe Experience Platform設計為可與多種解決方案和服務搭配使用，而每一種解決方案和服務都有各自的技術挑戰和限制（例如，某些技術如何處理特殊字元）。 為了克服這些限制，我們開發了相容性模式。
 
-最多 [!DNL Experience Platform] 服务包括 [!DNL Catalog], [!DNL Data Lake]和 [!DNL Real-Time Customer Profile] use [!DNL Compatibility Mode] 代替标准XDM。 的 [!DNL Schema Registry] API还使用 [!DNL Compatibility Mode]，本文档中的示例全部使用 [!DNL Compatibility Mode].
+最多 [!DNL Experience Platform] 服務包括 [!DNL Catalog]， [!DNL Data Lake]、和 [!DNL Real-Time Customer Profile] use [!DNL Compatibility Mode] 以取代標準XDM。 此 [!DNL Schema Registry] API也使用 [!DNL Compatibility Mode]，而本檔案中的範例全部使用以下專案顯示 [!DNL Compatibility Mode].
 
-有必要知道，标准XDM与其在中的操作方式之间存在映射 [!DNL Experience Platform]，但不应影响您的使用 [!DNL Platform] 服务。
+值得一提的是，對應會發生在標準XDM與其操作方式之間 [!DNL Experience Platform]，但應該不會影響您的使用 [!DNL Platform] 服務。
 
-您可以使用开源项目，但是当涉及通过与资源交互时， [!DNL Schema Registry]，本文档中的API示例提供了您应了解和遵循的最佳实践。
+開放原始碼專案可供您使用，但當您透過與資源互動時， [!DNL Schema Registry]，本檔案中的API範例提供您應知道並遵循的最佳實務。

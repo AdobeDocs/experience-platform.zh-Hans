@@ -11,65 +11,65 @@ ht-degree: 27%
 ---
 
 
-# Adobe Experience Platform概述 {#landing}
+# Adobe Experience Platform概觀 {#landing}
 
-* [平台概述](home.md)
-* [平台概述（视频）](video/platform-overview.md)
-* [平台教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
-* [由平台提供支持的客户体验（视频）](video/customer-experience.md)
-* [由Platform提供支持的客户体验的后台（视频）](video/customer-experience-bts.md)
+* [平台概觀](home.md)
+* [平台概觀（影片）](video/platform-overview.md)
+* [平台教學課程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
+* [由Platform提供支援的客戶體驗（影片）](video/customer-experience.md)
+* [Platform支援的客戶體驗幕後（影片）](video/customer-experience-bts.md)
 * 快速入门{#getting-started}
-   * [端到端示例工作流](end-to-end-tutorial.md)
-   * [关键功能（视频）](video/key-capabilities.md)
-   * [关键用例（视频）](video/platform-use-cases.md)
-   * [平台架构（视频）](video/platform-architecture.md)
-   * [角色和项目阶段（视频）](video/roles-project-phases.md)
-* Experience PlatformUI {#platform-ui}
+   * [端對端範例工作流程](end-to-end-tutorial.md)
+   * [重要功能（影片）](video/key-capabilities.md)
+   * [主要使用案例（影片）](video/platform-use-cases.md)
+   * [平台架構（影片）](video/platform-architecture.md)
+   * [角色和專案階段（影片）](video/roles-project-phases.md)
+* EXPERIENCE PLATFORMUI {#platform-ui}
    * [Platform UI指南](ui-guide.md)
-   * [Platform UI导览（视频）](video/platform-ui.md)
-   * [工作流UI指南](workflows.md)
+   * [Platform UI導覽（影片）](video/platform-ui.md)
+   * [工作流程UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
-   * [自我识别调查](self-identification.md)
-* Experience PlatformAPI {#platform-apis}
-   * [Platform API快速入门](api-guide.md)
+   * [自我識別調查](self-identification.md)
+* EXPERIENCE PLATFORMAPI {#platform-apis}
+   * [Platform API快速入門](api-guide.md)
    * [验证和访问 Platform API](api-authentication.md)
-   * [API基础知识](api-fundamentals.md)
-   * [将Postman与Platform API结合使用](postman.md)
-   * [API参考文档](https://www.adobe.com/go/platform-api-reference-en)
-* 平台文档 {#documentation}
+   * [API基礎知識](api-fundamentals.md)
+   * [搭配Platform API使用Postman](postman.md)
+   * [API參考檔案](https://www.adobe.com/go/platform-api-reference-en)
+* 平台檔案 {#documentation}
    * [概述](documentation/overview.md)
-   * [语言支持](documentation/language-support.md)
-* 基于平台构建的应用程序服务 {#ecosystem}
+   * [語言支援](documentation/language-support.md)
+* 以Platform為基礎的應用程式服務 {#ecosystem}
    * [概述](application-services.md)
-   * [Adobe Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
-   * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
+   * [Adobe Real-time Customer Data Platform （所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
+   * [應用程式與Intelligent Services （影片）](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-   * [与Experience Cloud的平台集成（视频）](video/experience-cloud-integrations.md)
-* 管理、隐私和安全 {#governance-privacy-security}
+   * [Platform與Experience Cloud的整合（影片）](video/experience-cloud-integrations.md)
+* 治理、隱私和安全性 {#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
    * 同意管理 {#consent}
-      * Adobe标准 {#adobe}
+      * Adobe標準 {#adobe}
          * [概述](./governance-privacy-security/consent/adobe/overview.md)
-         * [配置数据集以捕获同意和首选项数据](./governance-privacy-security/consent/adobe/dataset.md)
+         * [設定資料集以擷取同意和偏好設定資料](./governance-privacy-security/consent/adobe/dataset.md)
       * IAB TCF 2.0 {#iab}
          * [概述](./governance-privacy-security/consent/iab/overview.md)
-         * [配置数据集以捕获同意和首选项数据](./governance-privacy-security/consent/iab/dataset.md)
-      * [集成Platform Web SDK以处理同意和首选项数据](./governance-privacy-security/consent/sdk.md)
+         * [設定資料集以擷取同意和偏好設定資料](./governance-privacy-security/consent/iab/dataset.md)
+      * [整合Platform Web SDK以處理同意和偏好設定資料](./governance-privacy-security/consent/sdk.md)
    * 审核日志 {#audit-logs}
       * [概述](./governance-privacy-security/audit-logs/overview.md)
-      * 审核查询API {#audit-api}
+      * 稽核查詢API {#audit-api}
          * [概述](./governance-privacy-security/audit-logs/api/overview.md)
          * [快速入门](./governance-privacy-security/audit-logs/api/getting-started.md)
          * [事件](./governance-privacy-security/audit-logs/api/events.md)
          * [导出](./governance-privacy-security/audit-logs/api/export.md)
-   * [数据加密](./governance-privacy-security/encryption.md)
-   * [客户管理的密钥](./governance-privacy-security/customer-managed-keys.md)
-* 许可证使用和防护 {#license}
-   * [数据管理许可证授权最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
-   * [许可证使用功能板](./license-usage-and-guardrails/license-usage-dashboard.md)
-* [疑难解答指南](troubleshooting.md)
-* [Gen2数据湖迁移](adls2-gen2-migration.md)
+   * [資料加密](./governance-privacy-security/encryption.md)
+   * [客戶管理的金鑰](./governance-privacy-security/customer-managed-keys.md)
+* 授權使用與護欄 {#license}
+   * [資料管理授權權益最佳實務](./license-usage-and-guardrails/data-management-best-practices.md)
+   * [授權使用情況儀表板](./license-usage-and-guardrails/license-usage-dashboard.md)
+* [疑難排解指南](troubleshooting.md)
+* [Gen2資料湖移轉](adls2-gen2-migration.md)
 * [术语表](glossary.md)
 * [发行说明](https://www.adobe.com/go/platform-release-notes_cn)

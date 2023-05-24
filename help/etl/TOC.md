@@ -6,14 +6,14 @@ user-guide-description: 了解创建安全、高性能连接器以将数据引�
 source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '43'
-ht-degree: 48%
+ht-degree: 58%
 
 ---
 
 
-# 在Experience Platform中提取、转换和加载过程 {#etl}
+# 以Experience Platform擷取、轉換和載入程式 {#etl}
 
-- [开发ETL集成](home.md)
-- [ETL转换](transformations.md)
+- [開發ETL整合](home.md)
+- [ETL轉換](transformations.md)
 - [ETL工作流程](workflow.md)
-- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
+- [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)

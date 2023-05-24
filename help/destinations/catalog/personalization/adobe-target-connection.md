@@ -1,7 +1,7 @@
 ---
-keywords: 目标个性化；目的地；experience platform target目标；adobe target目标；
-title: Adobe Target连接
-description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
+keywords: target個人化；目的地； experience platform target目的地； adobe target目的地；
+title: Adobe Target連線
+description: Adobe Target應用程式可在跨網站、行動應用程式等的所有傳入客戶互動中提供即時的AI支援個人化和實驗功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
 source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
 workflow-type: tm+mt
@@ -10,62 +10,62 @@ ht-degree: 7%
 
 ---
 
-# Adobe Target连接 {#adobe-target-connection}
+# Adobe Target連線 {#adobe-target-connection}
 
-## 目标更改日志 {#changelog}
+## 目的地變更記錄檔 {#changelog}
 
 >[!IMPORTANT]
 >
->在增强型Adobe Target V2目标连接器的测试版中，您可能会在目标目录中看到两张Adobe Target卡。
->Adobe Target V2目标连接器目前处于测试阶段，仅适用于一定数量的客户。 除了AdobeV1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，用于将配置文件属性映射到Adobe Target，从而启用基于属性的同页和下一页个性化。
+>使用增強型Adobe Target V2目的地聯結器的測試版時，您可能會在目的地目錄中看到兩個Adobe Target卡。
+>Adobe Target V2目的地聯結器目前為測試版，僅適用於特定數量的客戶。 除了AdobeV1卡提供的功能外，Target V2聯結器還新增了 [對應步驟](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 至啟用工作流程，可讓您將設定檔屬性對應至Adobe Target，啟用以屬性為基礎的相同頁面和下一頁個人化。
 
-![并排视图中两个Adobe Target目标卡的图像。](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
+![並排檢視中的兩個Adobe Target目的地卡片影像。](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
 
 ## 概述 {#overview}
 
-Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
+Adobe Target應用程式可在跨網站、行動應用程式等的所有傳入客戶互動中提供即時的AI支援個人化和實驗功能。
 
-Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
+Adobe Target是Adobe Experience Platform目標目錄中的個人化連線。
 
 ## 先决条件 {#prerequisites}
 
-### 数据流ID {#datastream-id}
+### 資料串流ID {#datastream-id}
 
-配置Adobe Target连接时 [使用数据流ID](#parameters)，则必须具有 [Adobe Experience Platform Web SDK](../../../edge/home.md) 已实施。
+將Adobe Target連線設定至時 [使用資料串流ID](#parameters)，您必須擁有 [Adobe Experience Platform Web SDK](../../../edge/home.md) 已實作。
 
-在不使用数据流ID的情况下配置Adobe Target连接不需要您实施Web SDK。
+在不使用資料串流ID的情況下設定Adobe Target連線不需要您實作Web SDK。
 
 >[!IMPORTANT]
 >
->在创建 [!DNL Adobe Target] 连接，请阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 同页和下一页个性化要求您在配置Adobe Target连接时使用数据流ID。
+>建立之前 [!DNL Adobe Target] connection，閱讀操作指南 [設定相同頁面和下一頁個人化的個人化目的地](../../ui/configure-personalization-destinations.md). 本指南會針對跨多個Experience Platform元件的相同頁面和下一頁個人化使用案例，引導您進行必要的設定步驟。 相同頁面和下一頁個人化功能會要求您在設定Adobe Target連線時使用資料串流ID。
 
-### Adobe Target先决条件 {#prerequisites-in-adobe-target}
+### Adobe Target的必要條件 {#prerequisites-in-adobe-target}
 
-在Adobe Target中，确保您的用户具有：
+在Adobe Target中，確定您的使用者具有：
 
-* 访问 [默认工作区](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=en#default-workspace);
-* 的 **审批者** [角色](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=en#roles-and-permissions).
+* 存取 [預設工作區](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=en#default-workspace)；
+* 此 **核准者** [角色](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=en#roles-and-permissions).
 
-阅读有关为授予权限的更多信息 [Target Premium](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=en#section_8C425E43E5DD4111BBFC734A2B7ABC80) 对于 [Target Standard](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html?lang=en#roles-permissions).
+深入瞭解授與許可權 [Target Premium](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=en#section_8C425E43E5DD4111BBFC734A2B7ABC80) 和for [Target Standard](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html?lang=en#roles-permissions).
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!DNL Profile request]** | 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。 |
-| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 匯出型別 | **[!DNL Profile request]** | 您正在要求在Adobe Target目的地對映的所有區段都使用單一設定檔。 |
+| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## 用例 {#use-cases}
 
-**个性化主页横幅**
+**個人化首頁橫幅**
 
-一家房屋租赁和销售公司希望根据Adobe Experience Platform的客户细分资格，使用横幅个性化其主页。 该公司可以选择哪些受众应获得个性化体验，并将这些体验作为其Target选件的定位标准发送到Adobe Target。
+一家家用租賃和銷售公司想要根據Adobe Experience Platform中的客戶區段資格，以橫幅來個人化他們的首頁。 公司可以選取應該讓哪些對象獲得個人化體驗，並將這些對象傳送到Adobe Target，作為其Target選件的鎖定目標條件。
 
-## 连接到目标 {#connect}
+## 連線到目的地 {#connect}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
@@ -75,43 +75,43 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
 
-Adobe Experience Platform会自动连接到您公司的Adobe Target实例。 无需进行身份验证。
+Adobe Experience Platform會自動連線至貴公司的Adobe Target執行個體。 不需要驗證。
 
-### 连接参数 {#parameters}
+### 連線引數 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
 
-* **名称**:填写此目标的首选名称。
-* **描述**:输入目标的描述。 例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
-* **数据流ID**:这可确定将包含区段的数据收集数据流。 下拉菜单仅显示启用了Target和Adobe Experience Platform服务的数据流。 请参阅 [配置数据流](../../../edge/datastreams/configure.md#aep) 有关如何为Adobe Experience Platform和Adobe Target配置数据流的详细信息。
-   * **[!UICONTROL 无]**:如果您需要配置Adobe Target个性化，但无法实施 [Experience PlatformWeb SDK](../../../edge/home.md). 使用此选项时，从Experience Platform导出到Target的区段仅支持下一会话个性化，并且会禁用边缘分段。 有关更多信息，请参阅下表。
+* **名稱**：填寫此目的地的偏好名稱。
+* **說明**：輸入目的地的說明。 例如，您可以提及要將此目的地用於哪個行銷活動。 此欄位為選用。
+* **資料串流ID**：這會決定要將區段納入哪個資料收集資料串流。 下拉式功能表只會顯示已啟用Target和Adobe Experience Platform服務的資料串流。 另請參閱 [設定資料串流](../../../edge/datastreams/configure.md#aep) 以取得如何設定Adobe Experience Platform和Adobe Target資料流的詳細資訊。
+   * **[!UICONTROL 無]**：如果您需要設定Adobe Target個人化，但無法實作 [Experience PlatformWeb SDK](../../../edge/home.md). 使用此選項時，從Experience Platform匯出至Target的區段僅支援下一次工作階段個人化，且會停用邊緣區段。 如需詳細資訊，請參閱下表。
 
-| 未选择数据流 | 已选择数据流 |
+| 未選取任何資料串流 | 已選取資料流 |
 |---|---|
-| <ul><li>[边缘分割](../../../segmentation/ui/edge-segmentation.md) 不支持。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 不受支持。</li><li>您只能将区段共享到Adobe Target连接， *默认生产沙盒*.</li><li>要在不使用数据流ID的情况下配置下一个会话的个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>边缘分割可按预期工作。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 。</li><li>其他沙箱支持区段共享。</li></ul> |
+| <ul><li>[邊緣細分](../../../segmentation/ui/edge-segmentation.md) 不受支援。</li><li>[相同頁面和下一頁個人化](../../ui/configure-personalization-destinations.md) 不受支援。</li><li>您只能將區段共用至Adobe Target連線， *預設生產沙箱*.</li><li>若要在不使用資料流ID的情況下設定下一個工作階段個人化，請使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>邊緣細分如預期般運作。</li><li>[相同頁面和下一頁個人化](../../ui/configure-personalization-destinations.md) 支援。</li><li>其他沙箱支援區段共用。</li></ul> |
 
-### 启用警报 {#enable-alerts}
+### 啟用警示 {#enable-alerts}
 
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-## 将区段激活到此目标 {#activate}
+## 啟用此目的地的區段 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-读取 [将用户档案和区段激活到用户档案请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
+讀取 [對設定檔請求目的地啟用設定檔和區段](../../ui/activate-profile-request-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-## 导出的数据 {#exported-data}
+## 匯出的資料 {#exported-data}
 
-Adobe Target从Adobe Experience Platform边缘网络中读取用户档案数据，因此不会导出任何数据。
+Adobe Target會從Adobe Experience Platform Edge Network讀取設定檔資料，因此不會匯出任何資料。
 
-## 数据使用和管理 {#data-usage-governance}
+## 資料使用與控管 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，读取 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
+全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請閱讀 [資料控管概觀](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).

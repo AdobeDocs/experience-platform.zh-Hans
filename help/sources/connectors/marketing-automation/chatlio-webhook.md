@@ -1,6 +1,6 @@
 ---
-title: 章节源概述
-description: 了解如何使用API或用户界面通过Web挂接将Chatlio连接到Adobe Experience Platform
+title: Chatlio來源概觀
+description: 瞭解如何使用API或使用者介面利用Webhook將Chatlio連線至Adobe Experience Platform
 badge: Beta
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
@@ -15,45 +15,45 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->的 [!DNL Chatlio] 来源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+>此 [!DNL Chatlio] 來源為測試版。 請閱讀 [來源概觀](../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-Experience Platform支持从流应用程序中摄取数据。 对流提供商的支持包括 [!DNL Chatlio].
+Experience Platform支援從串流應用程式擷取資料。 對串流提供者的支援包括 [!DNL Chatlio].
 
-[[!DNL Chatlio]](https://chatlio.com/) 是与 [!DNL Slack] 并且便于多个支持代理同时帮助单个网站访客。 [!DNL Chatlio] 使用 [!DNL Chatio Zapier App] 连接 [!DNL Chatlio] 拥有2000多种不同的应用程序和服务。
+[[!DNL Chatlio]](https://chatlio.com/) 是與完全整合的即時聊天應用程式 [!DNL Slack] 和協助多位支援代理同時協助個別網站訪客。 [!DNL Chatlio] 使用 [!DNL Chatio Zapier App] 以連線 [!DNL Chatlio] 超過2000種不同的應用程式和服務。
 
-的 [!DNL Chatlio] 源允许您从中摄取受支持的webhook事件架构及其关联的事件数据 [!DNL Chatlio.com] 使用 [[!DNL Chatlio] Webhooks](https://chatlio.com/docs/webhooks/).
+此 [!DNL Chatlio] 來源可讓您從擷取支援的webhook事件結構描述及其相關事件資料 [!DNL Chatlio.com] 使用 [[!DNL Chatlio] Webhook](https://chatlio.com/docs/webhooks/).
 
-支持的Web挂接包括：
+支援的Webhook包括：
 
-* 导出聊天记录
-* 导出离线消息
-* 新对话已开始
-* 访客未及时获得答案
-* 访客在聊天后留下反馈
+* 匯出聊天記錄
+* 匯出離線訊息
+* 新交談已開始
+* 訪客未及時收到答案
+* 訪客在聊天後留下意見回饋
 
 ## 先决条件 {#prerequisites}
 
-在创建 [!DNL Chatlio] 源连接时，必须首先确保您具有以下内容：
+建立之前 [!DNL Chatlio] 來源連線，您必須先確定您有以下專案：
 
-* A [!DNL Chatlio] 帐户。 如果您还没有访问 [[!DNL Chatlio] 注册页面](https://chatlio.com/app/#/signup) 注册并创建帐户。
-* 成功注册帐户后，请在 [[!DNL Chatlio] 设置文档](https://chatlio.com/docs/setup/) 完成帐户设置。
+* A [!DNL Chatlio] 帳戶。 如果您還沒有訪客，請前往 [[!DNL Chatlio] 註冊頁面](https://chatlio.com/app/#/signup) 以註冊及建立您的帳戶。
+* 成功註冊帳戶後，請遵循 [[!DNL Chatlio] 設定檔案](https://chatlio.com/docs/setup/) 以完成您的帳戶設定。
 
-### 设置 [!DNL Chatlio] WebHook {#set-up-webhook}
+### 設定 [!DNL Chatlio] webhook {#set-up-webhook}
 
-成功创建数据流后，必须设置Web挂接以通知平台 [!DNL Chatlio] 事件。 当客户属性发生更改或用户打开您的消息时，Web挂接可立即通知您，并将此信息发送给您的 [!DNL Chatlio] 来源。
+成功建立資料流後，您必須設定webhook以通知Platform以下事項 [!DNL Chatlio] 事件。 Webhook可在客戶屬性變更或有人開啟您的訊息並將此資訊傳送給您的時立即通知您 [!DNL Chatlio] 來源。
 
-有关更多信息，请阅读 [获取流端点URL](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#get-streaming-endpoint) 和 [设置 [!DNL Chatlio] 网钩](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#set-up-webhook).
+如需詳細資訊，請閱讀上的教學課程 [取得您的串流端點URL](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#get-streaming-endpoint) 和 [設定 [!DNL Chatlio] Webhook](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md#set-up-webhook).
 
-## 连接 [!DNL Chatlio] 到平台 {#connect-to-platform}
+## Connect [!DNL Chatlio] 至平台 {#connect-to-platform}
 
-以下文档提供了有关如何创建 [!DNL Chatlio] 流连接器连接到 [!DNL Platform] 使用API或用户界面：
+以下檔案提供如何建立 [!DNL Chatlio] 要連線的串流聯結器 [!DNL Platform] 使用API或使用者介面：
 
-### 连接 [!DNL Chatlio] 到使用API的平台 {#connect-to-platform-using-api}
+### Connect [!DNL Chatlio] 使用API移至Platform {#connect-to-platform-using-api}
 
-* [创建源连接以引入 [!DNL Chatlio] 使用API将数据发送到平台。](../../tutorials/api/create/marketing-automation/chatlio-webhook.md)
+* [建立來源連線以帶來 [!DNL Chatlio] 使用API將資料傳輸至Platform。](../../tutorials/api/create/marketing-automation/chatlio-webhook.md)
 
-### 连接 [!DNL Chatlio] 到使用UI的平台 {#connect-to-platform-using-ui}
+### Connect [!DNL Chatlio] 使用UI移至Platform {#connect-to-platform-using-ui}
 
-* [创建源连接以引入 [!DNL Chatlio] 使用用户界面将数据发送到平台](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)
+* [建立來源連線以帶來 [!DNL Chatlio] 使用使用者介面將資料傳送至Platform](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)

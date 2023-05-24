@@ -1,27 +1,27 @@
 ---
-title: 在Adobe Experience Platform Web SDK中手动映射Adobe Analytics变量
-description: 了解如何使用Experience PlatformWeb SDK中的处理规则手动将变量映射到Adobe Analytics。
-seo-description: 通过Web SDK使用处理规则将变量手动映射到Adobe Analytics
-keywords: Adobe Analytics;Analytics；变量；映射变量；映射变量；ContextData；上下文数据；处理规则；规则；XDM；架构；
+title: 在Adobe Experience Platform Web SDK中手動對應Adobe Analytics變數
+description: 瞭解如何使用Experience PlatformWeb SDK中的處理規則手動將變數對應至Adobe Analytics。
+seo-description: Manually map variables into Adobe Analytics using processing rules with Web SDK
+keywords: adobe analytics；analytics；變數；對應變數；對應變數；contextData；內容資料；處理規則；規則；xdm；結構描述；
 exl-id: 395050c1-8d39-4da8-acea-6e618ed662dd
 source-git-commit: 9392a90b70699b79949095e178ea77dd34d313a3
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '391'
 ht-degree: 25%
 
 ---
 
-# 在Adobe Analytics中手动映射变量
+# 在Adobe Analytics中手動對應變數
 
-Adobe Experience Platform [!DNL Web SDK]可以自动映射某些变量，但必须手动映射自定义变量。
+Adobe Experience Platform [!DNL Web SDK] 可以自動對應特定變數，但自訂變數必須手動對應。
 
-对于未自动映射到[!DNL Analytics]的XDM数据，您可以使用[上下文数据](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=zh-Hans)来匹配[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)。 然后，可以使用[处理规则](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html?lang=zh-Hans)将其映射到[!DNL Analytics]中以填充[!DNL Analytics]变量。
+對於未自動對應的XDM資料 [!DNL Analytics]，您可以使用 [內容資料](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=zh-Hans) 以符合您的 [綱要](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans). 然後可以將其對應至 [!DNL Analytics] 使用 [處理規則](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html?lang=zh-Hans) 填入 [!DNL Analytics] 變數。
 
-此外，您还可以使用一组默认的操作和产品列表，通过Adobe Experience Platform Web SDK发送或检索数据。 为此，请参阅[收集商务和产品信息](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html)。
+此外，您也可以使用一組預設的動作和產品清單，以透過Adobe Experience Platform Web SDK傳送或擷取資料。 若要這麼做，請參閱 [收集商業和產品資訊](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html).
 
 ## 上下文数据
 
-要供[!DNL Analytics]使用，请使用点表示法对XDM数据进行扁平化处理，并作为`contextData`提供。 以下值对列表显示了`context data`扁平化时的样子：
+使用對象 [!DNL Analytics]，XDM資料會使用點標籤法扁平化，並成為可用的 `contextData`. 下列值配對清單顯示 `context data` 當它平面化時，看起來像是：
 
 ```json
 {
@@ -48,18 +48,18 @@ Adobe Experience Platform [!DNL Web SDK]可以自动映射某些变量，但必�
 
 ## 处理规则
 
-可以通过[处理规则](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)访问边缘网络收集的所有数据。在[!DNL Analytics]中，可以使用处理规则将上下文数据合并到[!DNL Analytics]变量中。
+可以通过[处理规则](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html?lang=zh-Hans)访问边缘网络收集的所有数据。在 [!DNL Analytics]，您可以使用處理規則將內容資料併入 [!DNL Analytics] 變數。
 
-例如，在以下规则中，Adobe Analytics设置为使用与&#x200B;**a.x._atag.search.term（上下文数据）**&#x200B;关联的数据填充&#x200B;**内部搜索词(eVar2)**。
+例如，在以下規則中，Adobe Analytics設定為填入 **內部搜尋詞(eVar2)** 與下列專案相關聯的資料： **a.x._atag.search.term（內容資料）**.
 
 ![](assets/examplerule.png)
 
 
-## XDM架构
+## XDM結構描述
 
-Adobe Experience Platform使用模式以可重用的一致方式描述数据结构。 通过跨系统一致地定义数据，更容易保留含义，从而从数据中获得价值。 [!DNL Analytics] 上下文数据与架构定义的结构配合使用。
+Adobe Experience Platform使用結構描述，以一致且可重複使用的方式描述資料結構。 藉由跨系統以一致的方式定義資料，更容易保留意義，進而從資料中獲得價值。 [!DNL Analytics] 內容資料適用於結構描述所定義的結構。
 
-以下示例显示如何将[`event`命令](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans)与`xdm`选项一起使用，以通过Adobe Experience Platform Web SDK发送和检索数据。 在此示例中，`event` 命令与 [ExperienceEvent 商务详细信息架构](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)匹配，因此可以跟踪 productListItems `name` 和 `SKU` 值：
+以下範例說明 [`event` 命令](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans) 可搭配使用 `xdm` 使用Adobe Experience Platform Web SDK傳送和擷取資料的選項。 在此示例中，`event` 命令与 [ExperienceEvent 商务详细信息架构](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)匹配，因此可以跟踪 productListItems `name` 和 `SKU` 值：
 
 
 ```javascript
@@ -84,4 +84,4 @@ alloy("event",{
 });
 ```
 
-有关使用Adobe Experience Platform [!DNL Web SDK]跟踪事件的更多信息，请参阅[跟踪事件](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html)。
+如需使用Adobe Experience Platform追蹤事件的詳細資訊 [!DNL Web SDK]，請參閱 [追蹤事件](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans).

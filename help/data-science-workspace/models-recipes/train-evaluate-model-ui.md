@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；培训和评估；数据科学工作区；热门主题；创建模型；创建培训运行
+keywords: Experience Platform；訓練與評估；資料科學工作區；熱門主題；建立模型；建立訓練回合
 solution: Experience Platform
-title: 在数据科学工作区用户界面中训练和评估模型
+title: 在Data Science Workspace UI中訓練和評估模型
 type: Tutorial
-description: 在Adobe Experience Platform Data Science Workspace中，机器学习模型是通过合并适合模型意图的现有方法来创建的。 然后，对模型进行训练和评估，以通过微调其关联的超参数来优化其运行效率和效能。 方法可重复使用，这意味着可以使用单个方法创建多个模型并针对特定目的进行量身定制。
+description: 在Adobe Experience Platform Data Science Workspace中，機器學習模型是透過結合適合模型意圖的現有配方來建立。 然後訓練並評估模型，藉由微調其相關的Hyperparameters來最佳化其操作效率和功效。 配方可重複使用，這表示您可以透過單一配方建立多個模型，並針對特定目的量身打造。
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -12,116 +12,116 @@ ht-degree: 2%
 
 ---
 
-# 在数据科学工作区UI中培训和评估模型
+# 在Data Science Workspace UI中訓練和評估模型
 
-在Adobe Experience Platform Data Science Workspace中，机器学习模型是通过合并适合模型意图的现有方法来创建的。 然后，对模型进行训练和评估，以通过微调其关联的超参数来优化其运行效率和效能。 方法可重复使用，这意味着可以使用单个方法创建多个模型并针对特定目的进行量身定制。
+在Adobe Experience Platform Data Science Workspace中，機器學習模型是透過結合適合模型意圖的現有配方來建立。 然後訓練並評估模型，藉由微調其相關的Hyperparameters來最佳化其操作效率和功效。 配方可重複使用，這表示您可以透過單一配方建立多個模型，並針對特定目的量身打造。
 
-本教程将指导创建、培训和评估模型的步骤。
+本教學課程將逐步解說建立、訓練及評估模型的步驟。
 
 ## 快速入门
 
-要完成本教程，您必须具有 [!DNL Experience Platform]. 如果您在 [!DNL Experience Platform]，请在继续操作之前与系统管理员联系。
+若要完成本教學課程，您必須擁有 [!DNL Experience Platform]. 如果您無權存取中的組織 [!DNL Experience Platform]，請在繼續之前聯絡您的系統管理員。
 
-本教程需要现有的方法。 如果您没有方法，请按照 [在UI中导入打包的方法](./import-packaged-recipe-ui.md) 教程，然后再继续。
+本教學課程需要現有配方。 如果您沒有配方，請遵循以下步驟 [在UI中匯入封裝的配方](./import-packaged-recipe-ui.md) 繼續之前，請先參閱教學課程。
 
 ## 创建模型
 
-在Experience Platform中，选择 **[!UICONTROL 模型]** 选项卡，然后选择“浏览”选项卡以查看现有模型。 选择 **[!UICONTROL 创建模型]** 在页面右上方附近，以开始创建模型。
+在Experience Platform中，選取 **[!UICONTROL 模型]** 標籤，然後選取瀏覽標籤以檢視現有模型。 選取 **[!UICONTROL 建立模型]** 在頁面右上角附近，開始建立模型的程式。
 
 ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-浏览现有处方列表，查找并选择用于创建模型的处方，然后选择 **[!UICONTROL 下一个]**.
+瀏覽現有配方清單，尋找並選取要用來建立模型的配方，然後選取 **[!UICONTROL 下一個]**.
 ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
-选择适当的输入数据集并选择 **[!UICONTROL 下一个]**. 这将设置模型的默认输入培训数据集。
+選取適當的輸入資料集，然後選取 **[!UICONTROL 下一個]**. 這會設定模型的預設輸入訓練資料集。
 ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-为模型提供名称并查看默认模型配置。 默认配置在方法创建过程中应用，通过双击这些值来检查和修改配置值。
+提供模型的名稱並檢閱預設模型組態。 在配方建立期間套用預設組態，按兩下值以檢閱和修改組態值。
 
-要提供一组新配置，请选择 **[!UICONTROL 上传新配置]** 并将包含模型配置的JSON文件拖到浏览器窗口中。 选择 **[!UICONTROL 完成]** 创建模型。
+若要提供一組新的設定，請選取 **[!UICONTROL 上傳新設定]** 並將包含模型設定的JSON檔案拖曳至瀏覽器視窗。 選取 **[!UICONTROL 完成]** 以建立模型。
 
 >[!NOTE]
 >
->配置是唯一的，并且特定于其预期的方法，这意味着零售销售方法的配置不适用于产品Recommendations方法。 请参阅 [参考](#reference) 部分，以了解零售销售方法配置列表。
+>設定是唯一的，且特定於其預期配方，這表示零售銷售配方的設定不適用於產品Recommendations配方。 請參閱 [參考資料](#reference) 區段，以取得零售銷售配方設定清單。
 
 ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
-## 创建培训运行
+## 建立訓練回合
 
-在Experience Platform中，选择 **[!UICONTROL 模型]** 选项卡，然后选择“浏览”选项卡以查看现有模型。 查找并选择附加到要训练的模型名称的超链接。
+在Experience Platform中，選取 **[!UICONTROL 模型]** 標籤，然後選取瀏覽標籤以檢視現有模型。 尋找並選取附加至您要訓練之模型名稱的超連結。
 
 ![](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
-将列出所有现有培训运行及其当前培训状态。 对于使用 [!DNL Data Science Workspace] 用户界面中，使用默认配置和输入培训数据集自动生成并执行培训运行。
+列出所有現有訓練回合及其目前的訓練狀態。 對於使用建立的模型 [!DNL Data Science Workspace] 會使用預設設定和輸入訓練資料集，自動產生並執行訓練回合。
 
-通过选择 **[!UICONTROL 火车]** 在“模型概述”页面的右上角附近。
+選取以下專案以建立新的訓練回合 **[!UICONTROL 訓練]** 靠近模型概觀頁面的右上角。
 
 ![](../images/models-recipes/train-evaluate-ui/model_overview.png)
 
-为培训运行选择培训输入数据集，然后选择 **[!UICONTROL 下一个]**.
+選取訓練回合的訓練輸入資料集，然後選取 **[!UICONTROL 下一個]**.
 
 ![](../images/models-recipes/train-evaluate-ui/training_input.png)
 
-将显示在模型创建期间提供的默认配置，通过双击这些值来相应地更改和修改这些配置。 选择 **[!UICONTROL 完成]** 创建并执行培训运行。
+模型建立期間提供的預設組態會顯示，按兩下值可相應地變更和修改這些組態。 選取 **[!UICONTROL 完成]** 以建立並執行訓練回合。
 
 >[!NOTE]
 >
->配置是唯一的，并且特定于其预期的方法，这意味着零售销售方法的配置不适用于产品Recommendations方法。 请参阅 [参考](#reference) 部分，以了解零售销售方法配置列表。
+>設定是唯一的，且特定於其預期配方，這表示零售銷售配方的設定不適用於產品Recommendations配方。 請參閱 [參考資料](#reference) 區段，以取得零售銷售配方設定清單。
 
 ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 
-## 评估模型
+## 評估模型
 
-在Experience Platform中，选择 **[!UICONTROL 模型]** 选项卡，然后选择“浏览”选项卡以查看现有模型。 查找并选择附加到要评估的模型名称的超链接。
+在Experience Platform中，選取 **[!UICONTROL 模型]** 標籤，然後選取瀏覽標籤以檢視現有模型。 尋找並選取附加至要評估之模型名稱的超連結。
 
-![选择模型](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
+![選取模型](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
-将列出所有现有培训运行及其当前培训状态。 如果已完成多次培训运行，可以在模型评估图表中比较不同培训运行中的评估量度。 使用图形上方的下拉列表选择评估量度。
+列出所有現有訓練回合及其目前的訓練狀態。 使用多個已完成的訓練回合時，可在模型評估圖表中比較不同訓練回合中的評估量度。 使用圖表上方的下拉式清單選取評估量度。
 
-“平均绝对百分比误差”(MAPE)量度以误差百分比表示准确度。 这用于识别性能最佳的实验。 MAPE越低越好。
+平均絕對百分比誤差(MAPE)量度會以誤差百分比來表示精確度。 這可用來識別表現最佳的實驗。 MAPE越低越好。
 
-![培训运行概述](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
+![訓練回合概觀](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
 
-“精度”量度描述相关实例与总实例的百分比 *已检索* 实例。 精度可以看作随机选择的结果正确的概率。
+「精確度」量度說明相關執行個體佔總數的百分比 *已擷取* 執行個體。 精確度可視為隨機選取的結果正確的可能性。
 
-![运行多个运行](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
+![執行多個回合](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
-选择特定培训运行可通过打开评估页面来提供该运行的详细信息。 此操作可在运行完成之前完成。 在评估页面上，您能够查看特定于培训运行的其他评估量度、配置参数和可视化图表。
+選取特定訓練回合會透過開啟評估頁面來提供該回合的詳細資料。 這可以在執行完成之前完成。 在評估頁面上，您可以檢視訓練回合專用的其他評估量度、設定引數和視覺效果。
 
-![预览日志](../images/models-recipes/train-evaluate-ui/evaluate_training.png)
+![預覽記錄](../images/models-recipes/train-evaluate-ui/evaluate_training.png)
 
-您还可以下载活动日志以查看运行的详细信息。 日志对于失败的运行来查看错误内容特别有用。
+您也可以下載活動記錄檔以檢視執行的詳細資訊。 記錄檔對於失敗的執行特別有用，以檢視哪裡出了問題。
 
-![活动日志](../images/models-recipes/train-evaluate-ui/activity_logs.png)
+![活動記錄](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
-无法训练超参数，必须通过测试超参数的不同组合来优化模型。 重复此模型培训和评估过程，直到您到达一个优化的模型。
+無法訓練Hyperparameters，且必須透過測試不同的Hyperparameters組合來最佳化Model。 重複此模型訓練和評估程式，直到您到達最佳化模型為止。
 
 ## 后续步骤
 
-本教程将指导您在 [!DNL Data Science Workspace]. 在您到达优化模型后，可以使用培训的模型通过遵循 [在UI中对模型进行评分](./score-model-ui.md) 教程。
+本教學課程會逐步引導您建立、訓練和評估中的模型 [!DNL Data Science Workspace]. 到達最佳化模型後，您可以使用經過訓練的模型透過以下步驟產生見解 [在UI中為模型評分](./score-model-ui.md) 教學課程。
 
 ## 参考 {#reference}
 
-### 零售销售方法配置
+### 零售配方設定
 
-超参数决定模型的训练行为，修改超参数将影响模型的精度和精度：
+超引數會決定模型的訓練行為，修改Hyperparameters將會影響模型的精確度和精確度：
 
-| 超参数 | 描述 | 推荐范围 |
+| 超引數 | 描述 | 建議的範圍 |
 | --- | --- | --- |
-| learning_rate | 学习率通过learning_rate缩小每个树的贡献。 learningrate和n估计量之间存在权衡。 | 0.1 |
-| n_metiators | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此，大量的渐变提升通常会获得更好的性能。 | 100 |
-| max_depth | 单个回归估计器的最大深度。 最大深度限制树中的节点数。 调整此参数以获得最佳性能；最佳值取决于输入变量的交互。 | 3 |
+| learning_rate | 學習率會藉由learning_rate縮減每個樹狀結構的貢獻。 learning_rate和n_estimators之間存在取捨。 | 0.1 |
+| n_estimators | 要執行的提升階段數目。 漸層提升對於過擬合相當穩健，因此大量數字通常會產生較佳的效能。 | 100 |
+| max_depth | 個別回歸估計值的最大深度。 最大深度會限制樹狀結構中的節點數目。 調整此引數以獲得最佳效能；最佳值取決於輸入變數的互動。 | 3 |
 
-其他参数可确定模型的技术属性：
+其他引數會決定模型的技術屬性：
 
-| 参数键 | 类型 | 描述 |
+| 引數索引鍵 | 类型 | 描述 |
 | ----- | ----- | ----- |
-| `ACP_DSW_INPUT_FEATURES` | 字符串 | 以逗号分隔的输入架构属性列表。 |
-| `ACP_DSW_TARGET_FEATURES` | 字符串 | 以逗号分隔的输出架构属性列表。 |
-| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出功能是否可修改 |
-| `tenantId` | 字符串 | 此ID可确保您创建的资源命名正确并包含在您的组织内。 [按照此处的步骤操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以查找租户ID。 |
-| `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用于培训模型的输入模式。 |
-| `evaluation.labelColumn` | 字符串 | 用于评估可视化的列标签。 |
-| `evaluation.metrics` | 字符串 | 用于评估模型的评估量度列表（以逗号分隔）。 |
-| `ACP_DSW_SCORING_RESULTS_XDM_SCHEMA` | 字符串 | 用于对模型进行评分的输出架构。 |
+| `ACP_DSW_INPUT_FEATURES` | 字符串 | 以逗號分隔的輸入結構描述屬性清單。 |
+| `ACP_DSW_TARGET_FEATURES` | 字符串 | 逗號分隔的輸出結構描述屬性清單。 |
+| `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 決定輸入和輸出特徵是否可修改 |
+| `tenantId` | 字符串 | 此ID可確保您建立的資源能正確建立名稱空間，並包含在您的組織內。 [請依照這裡的步驟操作](../../xdm/api/getting-started.md#know-your-tenant_id) 以尋找您的租使用者ID。 |
+| `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用於訓練模型的輸入結構描述。 |
+| `evaluation.labelColumn` | 字符串 | 評估視覺效果的欄標籤。 |
+| `evaluation.metrics` | 字符串 | 用於評估模型的評估量度清單（以逗號分隔）。 |
+| `ACP_DSW_SCORING_RESULTS_XDM_SCHEMA` | 字符串 | 用於對模型評分的輸出結構描述。 |

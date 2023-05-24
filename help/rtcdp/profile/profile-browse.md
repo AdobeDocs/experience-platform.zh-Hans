@@ -1,7 +1,7 @@
 ---
-keywords: 查看配置文件rtcdp;rtcdp配置文件视图；rtcdp配置文件
-title: 浏览Real-time Customer Data Platform中的用户档案
-description: Adobe Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户资料数据。
+keywords: 檢視設定檔rtcdp；rtcdp設定檔檢視；rtcdp設定檔
+title: 在Real-time Customer Data Platform中瀏覽設定檔
+description: Adobe Real-time Customer Data Platform可讓您使用Adobe Experience Platform使用者介面瀏覽即時客戶個人檔案資料。
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -11,46 +11,46 @@ ht-degree: 0%
 ---
 
 
-# 浏览Real-time Customer Data Platform中的用户档案
+# 在Real-time Customer Data Platform中瀏覽設定檔
 
-实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而全面了解您的每位客户。 由于单个用户档案是根据从各种来源引入系统的数据进行汇总的，因此每个用户档案都会成为客户与您的品牌进行每次交互的可操作且加盖时间戳的帐户。
+即時客戶設定檔可為個別客戶建立整體檢視，並結合來自多個管道的資料，包括線上、離線、CRM和第三方資料。 由於個別設定檔是根據從各種來源帶入系統的資料進行彙總，每個設定檔都成為可操作、附有時間戳記的帳戶，說明客戶與您的品牌每次互動。
 
-在Adobe Experience Platform用户界面中，您可以查看这些只读配置文件，并查看有关每个客户的重要信息，包括其偏好、过去事件、交互以及个人所属的区段。
+在Adobe Experience Platform使用者介面中，您可以檢視這些唯讀設定檔，並檢視有關每個個別客戶的重要資訊，包括其偏好設定、過去事件、互動和個人所屬的區段。
 
-Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅 [Real-Time Customer Profile用户指南](../../profile/ui/user-guide.md).
+Adobe Real-time Customer Data Platform是以Adobe Experience Platform為基礎所打造，因此能夠使用Experience PlatformUI中的設定檔檢視功能。 如需在平台使用者介面中檢視客戶設定檔的詳細指南，請參閱 [即時客戶設定檔使用手冊](../../profile/ui/user-guide.md).
 
-## Real-Time CDP B2B Edition的配置文件增强功能
+## Real-Time CDP B2B版本的設定檔增強功能
 
-除了Adobe Experience Platform、Real-Time CDP、B2B Edition支持的配置文件浏览功能外，用户还可以在 [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，这些区段显示在客户的 [!UICONTROL 区段成员资格] 选项卡上的任意位置。
+除了Adobe Experience Platform、Real-Time CDP支援的設定檔瀏覽功能外，B2B版本使用者還可以在以下位置存取客戶設定檔中的B2B屬性和事件： [!UICONTROL 屬性] 和 [!UICONTROL 事件] 標籤之間。 B2B資料也可用來執行分段，而這些區段會出現在客戶的 [!UICONTROL 區段會籍] 索引標籤和非B2B區段並排。
 
-Real-Time CDP, B2B Edition还允许您浏览 [!UICONTROL 帐户], [!UICONTROL 机会]和 [!UICONTROL 源记录] 来自与单个客户关联的企业来源。
+Real-Time CDP， B2B Edition也可讓您瀏覽 [!UICONTROL 帳戶]， [!UICONTROL 機會]、和 [!UICONTROL 來源記錄] 來自與個別客戶相關聯的企業來源。
 
-要探索这些增强功能，请首先执行 [Real-Time Customer Profile用户指南](../../profile/ui/user-guide.md) 按合并策略或身份命名空间浏览配置文件。
+若要探索這些增強功能，請依照以下說明的步驟開始進行 [即時客戶設定檔使用手冊](../../profile/ui/user-guide.md) 依合併原則或身分名稱空間瀏覽設定檔。
 
 ![](images/b2b-browse-profile.png)
 
-用户档案详细信息包括 [!UICONTROL 帐户], [!UICONTROL 机会]和 [!UICONTROL 源记录] 选项卡，以及客户配置文件中提供的标准信息，B2B事件和属性也增强了这些信息。
+設定檔詳細資料包括存取以下專案： [!UICONTROL 帳戶]， [!UICONTROL 機會]、和 [!UICONTROL 來源記錄] 索引標籤中提供的標準資訊之外，客戶設定檔中也增強了B2B事件和屬性。
 
 ![](images/b2b-profile-detail.png)
 
-### “帐户”选项卡
+### 帳戶標籤
 
-选择 **[!UICONTROL 帐户]** 查看与用户档案相关的帐户列表。 此列表包括帐户配置文件中的基本信息（如帐户的名称、网站和行业），以及指向帐户配置文件的链接。
+選取 **[!UICONTROL 帳戶]** 以檢視與設定檔相關的帳戶清單。 此清單包含帳戶設定檔的基本資訊，例如帳戶的名稱、網站和產業，以及帳戶設定檔的連結。
 
-有关查看和浏览帐户用户档案的更多信息，请首先阅读 [帐户配置文件概述](../accounts/account-profile-overview.md).
+如需檢視和探索帳戶設定檔的詳細資訊，請從閱讀 [帳戶設定檔概述](../accounts/account-profile-overview.md).
 
 ![](images/b2b-profile-accounts.png)
 
-### “机会”选项卡
+### 機會標籤
 
-的 **[!UICONTROL 机会]** 选项卡提供与帐户相关的未结和已结业务机会的详细信息。 这些机会可能会从多个来源摄取到Experience Platform中，但Real-Time CDP B2B Edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
+此 **[!UICONTROL 機會]** 頁標提供與帳戶相關的未結與已結業務機會的明細。 這些機會可能會從多個來源引入Experience Platform，但Real-Time CDP， B2B版本讓行銷人員輕鬆地在一個位置一起看到所有這些機會。
 
-每个机会都包括诸如机会名称、其数量、阶段，以及该机会是否是打开、关闭、赢得还是丢失的信息。
+每個機會都包含一些資訊，例如機會的名稱、數量、階段，以及機會是否開啟、關閉、成功或失敗。
 
 ![](images/b2b-profile-opportunities.png)
 
-### “源记录”选项卡
+### 來源記錄標籤
 
-的 **[!UICONTROL 源记录]** 选项卡，您可以轻松查看来自企业源的对单个客户配置文件做出贡献的多个源记录。 除 [!UICONTROL 人员来源键] 和电子邮件地址，每个源记录还提供记录类型（例如，“联系人”或“潜在客户”记录）以及源。
+此 **[!UICONTROL 來源記錄]** 索引標籤可讓您輕鬆檢視來自企業來源的多個來源記錄，這些記錄對單一客戶設定檔有貢獻。 除了 [!UICONTROL 個人來源金鑰] 和電子郵件地址，每個來源記錄也提供記錄型別（例如，「聯絡人」或「潛在客戶」記錄）以及來源。
 
 ![](images/b2b-profile-source-records.png)

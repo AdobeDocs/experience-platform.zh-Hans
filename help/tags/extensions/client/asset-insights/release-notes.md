@@ -1,6 +1,6 @@
 ---
-title: AEM资产分析扩展的发行说明
-description: Adobe Experience Platform中AEM资产分析标记扩展的最新发行说明。
+title: AEM Asset Insights擴充功能發行說明
+description: Adobe Experience Platform中AEM Asset Insights標籤擴充功能的最新發行說明。
 exl-id: cee35b44-2249-47c6-80d6-8b4eaa9802df
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 43%
 
 ---
 
-# AEM资产分析发行说明
+# AEM Asset Insights發行說明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2020 年 9 月 9 日
 
@@ -23,7 +23,7 @@ ht-degree: 43%
 
 - 这项扩展旨在与 AEM 资产分析结合使用。
 - 更具体地说，它可以替换 ***pageTracker*** 进程和嵌入代码。
-- 配置并激活后，这项扩展会向Adobe Analytics发送AEM资产“展示次数”和“单击次数”量度，随后，这些量度将自动导入回AEM的资产分析报表。
+- 完成設定並啟動後，此擴充功能會將AEM資產的「曝光數」和「點選次數」量度傳送至Adobe Analytics，系統會自動將這些量度匯回AEM的Asset Insights報表。
 
 **错误修复**
 

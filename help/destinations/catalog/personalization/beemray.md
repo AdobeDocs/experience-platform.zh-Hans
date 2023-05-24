@@ -1,7 +1,7 @@
 ---
-keywords: beemray，beemray扩展
-title: Beemray扩展
-description: Beemray扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
+keywords: beemray，beemray擴充功能
+title: Beemray擴充功能
+description: Beemray擴充功能是Adobe Experience Platform中的個人化目的地。 如需擴充功能的相關詳細資訊，請參閱Adobe交換上的擴充功能頁面。
 exl-id: 5bb639f5-42b5-48ae-a3e9-7585595ab925
 source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
@@ -14,48 +14,48 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-[!DNL Beemray] 有助于您根据情景情境加快产品速度。使您能够获得洞察、构建新体验、推动交互并参与真正重要的时刻。 Beemray使用机器学习实现了情境智能自动化。 Beemray连接到Adobe Experience Cloud和您的其他技术合作伙伴。 一切都是实时进行的。 此扩展会在您的网站上安装[!DNL Beemray] SDK。
+[!DNL Beemray] 可協助您透過情境式情境加快產品速度。 讓您獲得見解、建立新體驗、推動互動，並參與真正重要的時刻。 Beemray會使用機器學習將情境智慧自動化。 Beemray會連線至Adobe Experience Cloud和您的其他技術合作夥伴。 所有事情都即時發生。 此擴充功能會安裝 [!DNL Beemray] 您網站上的SDK。
 
-Beemray是Adobe Experience Platform中的一个个性化扩展。 有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的扩展页面。
+Beemray是Adobe Experience Platform中的個人化擴充功能。 如需擴充功能的相關詳細資訊，請參閱擴充功能頁面，網址為 [Adobe交換](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
 
-此目标是一个标记扩展。 有关标记扩展在Platform中工作方式的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
+此目的地是標籤延伸模組。 如需標籤擴充功能在Platform中如何運作的詳細資訊，請參閱 [標籤擴充功能概觀](../launch-extensions/overview.md).
 
-![Beemray扩展](../../assets/catalog/personalization/beemray/catalog.png)
+![Beemray擴充功能](../../assets/catalog/personalization/beemray/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-[!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
+此擴充功能適用於 [!DNL Destinations] 已購買Platform之所有客戶的目錄。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+若要使用此擴充功能，您需要存取Adobe Experience Platform中的標籤。 標籤是以隨附的加值功能形式提供給Adobe Experience Cloud客戶。 請聯絡您的組織管理員以取得標籤的存取權，並要求他們授予您 **[!UICONTROL manage_properties]** 許可權，方便您安裝擴充功能。
 
-## 安装扩展 {#install-extension}
+## 安裝擴充功能 {#install-extension}
 
-要安装[!DNL Beemray]扩展，请执行以下操作：
+若要安裝 [!DNL Beemray] 副檔名：
 
-在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在 [平台介面](https://platform.adobe.com/)，前往 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**.
 
-从目录中选择扩展或使用搜索栏。
+從目錄選取擴充功能或使用搜尋列。
 
-单击目标以将其突出显示，然后选择右边栏中的&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+按一下目的地以反白顯示，然後選取 **[!UICONTROL 設定]** 在右側邊欄中。 如果 **[!UICONTROL 設定]** 控制項呈現灰色，表示您遺漏 **[!UICONTROL manage_properties]** 許可權。 另請參閱 [必要條件](#prerequisites).
 
-选择要在其中安装扩展的标记属性。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解[标记文档](../../../tags/ui/administration/companies-and-properties.md)中的属性。
+選取您要安裝擴充功能的標籤屬性。 您也可以選擇建立新屬性。 资产是规则、数据元素、配置的扩展、环境和库的集合。瞭解中的屬性 [標籤檔案](../../../tags/ui/administration/companies-and-properties.md).
 
-利用工作流，可转到数据收集UI以完成安装。
+工作流程會將您帶到資料收集UI以完成安裝。
 
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的[Beemray页面。
+如需擴充功能組態選項和安裝支援的詳細資訊，請參閱 [Adobe交換的Beemray頁面](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
 
-您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
+您也可以直接在中安裝擴充功能 [資料彙集UI](https://experience.adobe.com/#/data-collection/). 請參閱指南： [新增擴充功能](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 以取得詳細資訊。
 
-## 如何使用扩展 {#how-to-use}
+## 如何使用擴充功能 {#how-to-use}
 
-安装扩展后，您可以开始设置规则。 在数据收集UI中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅标记文档中关于[rules](../../../tags/ui/managing-resources/rules.md)的概述。
+安裝擴充功能後，您就可以開始設定規則。 在資料收集UI中，您可以為已安裝的擴充功能設定規則，以只在某些情況下將事件資料傳送至擴充功能目的地。 如需為擴充功能設定規則的詳細資訊，請參閱以下主題的概觀： [規則](../../../tags/ui/managing-resources/rules.md) 標籤檔案中。
 
-## 配置、升级和删除扩展 {#configure-upgrade-delete}
+## 設定、升級和刪除擴充功能 {#configure-upgrade-delete}
 
-您可以在数据收集UI中配置、升级和删除扩展。
+您可以在資料收集UI中設定、升級和刪除擴充功能。
 
 >[!TIP]
 >
->如果您的其中一个资产上已安装扩展，则UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 按照[Install extension](#install-extension)中所述启动安装工作流，以配置或删除您的扩展。
+>如果擴充功能已安裝在您的其中一個屬性上，UI仍會顯示 **[!UICONTROL 安裝]** 用於擴充功能。 依照中的說明開始安裝工作流程 [安裝擴充功能](#install-extension) 以設定或刪除您的擴充功能。
 
-要升级扩展，请参阅标记文档中[扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md)中的指南。
+若要升級您的擴充功能，請參閱 [擴充功能升級程式](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 標籤檔案中。

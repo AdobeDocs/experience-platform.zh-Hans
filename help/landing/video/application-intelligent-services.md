@@ -1,6 +1,6 @@
 ---
-title: 应用程序和基于Experience Platform的智能服务
-description: 此视频概述了基于Adobe Experience Platform构建的应用程序服务和智能服务，它补充了Experience CloudApplications&mdash;Real-time Customer Data Platform、Journey Orchestration、Customer Journey Analytics、Attribution AI和客户AI。
+title: 以Experience Platform為基礎的應用程式和智慧型服務
+description: 這部影片會概略介紹以Adobe Experience Platform為基礎建立的應用程式服務和智慧型服務，這些服務可補充Experience Cloud應用程式&mdash；Real-time Customer Data Platform、Journey Orchestration、Customer Journey Analytics、Attribution AI和Customer AI。
 kt: 4333
 audience: all
 doc-type: video
@@ -14,15 +14,15 @@ ht-degree: 17%
 
 ---
 
-# 应用程序和基于Experience Platform的智能服务
+# 以Experience Platform為基礎的應用程式和智慧型服務
 
-此视频概述了基于Experience Platform构建的应用程序和智能服务。
+這部影片會概略介紹以Experience Platform為基礎建立的應用程式和智慧型服務。
 
-要了解更多信息，请使用链接访问每个应用程序的文档：
+若要深入瞭解，請使用連結來瀏覽每個個別應用程式的檔案：
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-landing.html)
-* [Intelligent Services](https://experienceleague.adobe.com/docs/intelligent-services.html)
-* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journeys/using/journey-orchestration-home.html?lang=zh-Hans)
+* [智能服务](https://experienceleague.adobe.com/docs/intelligent-services.html)
+* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journeys/using/journey-orchestration-home.html)
 * [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=zh-Hans)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](../../rtcdp/overview.md)
 

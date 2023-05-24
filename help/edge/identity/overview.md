@@ -1,7 +1,7 @@
 ---
-title: Platform Web SDK中的身份数据
-description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
-keywords: 身份；第一方身份；身份服务；第三方身份；ID迁移；访客ID；第三方身份；thirdPartyCookiesEnabled；idMigrationEnabled；getIdentity；同步身份；syncIdentity；sendEvent；identityMap；primary；ecid；身份命名空间；命名空间ID；authenticationState；hashEnabled；
+title: 平台Web SDK中的身分資料
+description: 瞭解如何使用Adobe Experience Platform Web SDK擷取和管理Adobe Experience Cloud ID (ECID)。
+keywords: 身分；第一方身分；身分服務；第三方身分；ID移轉；訪客ID；第三方身分；thirdPartyCookiesEnabled；idMigrationEnabled；getIdentity；同步身分；syncIdentity；sendEvent；identityMap；主要；ecid；身分名稱空間；名稱空間id；authenticationState；hashEnabled；
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
 source-git-commit: 0edd9422d6ea1b8e3aeaba1b24bc38b42ca809d8
 workflow-type: tm+mt
@@ -10,60 +10,60 @@ ht-degree: 0%
 
 ---
 
-# Platform Web SDK中的身份数据
+# Platform Web SDK中的身分資料
 
-Adobe Experience Platform Web SDK可利用 [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) 以跟踪访客行为。 通过使用ECID，您可以确保每个设备都有一个唯一标识符，该标识符可以跨多个会话持续存在，从而将特定设备在Web会话期间和跨多个会话发生的所有点击绑定在一起。
+Adobe Experience Platform Web SDK可運用 [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) 以追蹤訪客行為。 使用ECID，您可以確保每個裝置都有唯一識別碼，可跨多個工作階段持續存在，繫結特定裝置在Web工作階段期間和跨工作階段發生的所有點選。
 
-本文档概述了如何使用Platform Web SDK管理ECID。
+本檔案概述如何使用Platform Web SDK管理ECID。
 
-## 使用SDK跟踪ECID
+## 使用SDK追蹤ECID
 
-Platform Web SDK通过使用Cookie来分配和跟踪ECID，以及使用多种可用方法来配置这些Cookie的生成方式。
+Platform Web SDK可透過Cookie指派及追蹤ECID，並有多種可用方法來設定這些Cookie的產生方式。
 
-当新用户访问您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备识别Cookie。 对于首次访问的访客，会在首次从Adobe Experience Platform Edge Network响应时生成并返回ECID。 对于回访访客，ECID检索自 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie并将其添加到Edge Network的有效负载中。
+當新使用者進入您的網站時，Adobe Experience Cloud Identity Service會嘗試為該使用者設定裝置識別Cookie。 首次造訪訪訪客時，系統會在首次從Adobe Experience Platform Edge Network回應時產生並傳回ECID。 若為重複訪客，ECID會從 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie並由Edge Network新增至裝載。
 
-设置包含ECID的Cookie后，Web SDK生成的每个后续请求都将在 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie。
+設定包含ECID的Cookie後，Web SDK產生的每個後續請求都會在 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie。
 
-使用Cookie进行设备识别时，可通过两个选项与边缘网络进行交互：
+使用Cookie識別裝置時，您有兩個選項可與Edge Network互動：
 
-1. 将数据直接发送到边缘网络域 `adobedc.net`. 此方法称为 [第三方数据收集](#third-party).
-1. 在您自己的域上创建一个指向 `adobedc.net`. 此方法称为 [第一方数据收集](#first-party).
+1. 將資料直接傳送至Edge Network網域 `adobedc.net`. 此方法稱為 [協力廠商資料收集](#third-party).
+1. 在您自己的網域上建立CNAME，並指向 `adobedc.net`. 此方法稱為 [第一方資料收集](#first-party).
 
-如以下部分所述，您选择使用的数据收集方法会直接影响所有浏览器的Cookie生命周期。
+如下節所述，您選擇使用的資料收集方法會直接影響所有瀏覽器的Cookie存留期。
 
-### 第三方数据收集 {#third-party}
+### 協力廠商資料收集 {#third-party}
 
-第三方数据收集涉及将数据直接发送到边缘网络域 `adobedc.net`.
+第三方資料收集涉及將資料直接傳送至Edge Network網域 `adobedc.net`.
 
-近年来，Web浏览器在处理由第三方设置的Cookie时越来越严格。 默认情况下，某些浏览器会阻止第三方Cookie。 如果您使用第三方Cookie来识别网站访客，则这些Cookie的生命周期几乎总是比使用第一方Cookie时可用的生命周期更短。 在某些情况下，第三方Cookie将在七天内过期。
+近年來，網頁瀏覽器在處理第三方設定的Cookie時，受到越來越多限制。 某些瀏覽器預設會封鎖第三方Cookie。 如果您使用第三方Cookie來識別網站訪客，則這些Cookie的存留期幾乎總是比使用第一方Cookie時可用的存留期短。 在某些情況下，第三方Cookie最快會在七天後過期。
 
-此外，当使用第三方数据收集时，一些广告拦截器会完全将流量限制在Adobe数据收集端点。
+此外，使用協力廠商資料收集時，有些廣告封鎖程式會完全將流量限制在Adobe資料收集端點。
 
-### 第一方数据收集 {#first-party}
+### 第一方資料收集 {#first-party}
 
-第一方数据收集涉及通过您自己的域上的CNAME设置Cookie，该CNAME指向 `adobedc.net`.
+第一方資料收集涉及透過您自己的網域上的CNAME設定Cookie，並指向 `adobedc.net`.
 
-虽然浏览器长期以来以与站点拥有的端点设置的方式处理由CNAME端点设置的Cookie，但浏览器最近实施的更改在处理CNAME Cookie方面造成了一种差异。 虽然当前没有浏览器默认阻止第一方CNAME Cookie，但某些浏览器将使用CNAME设置的Cookie的生命周期限制为仅七天。
+雖然瀏覽器長期以來以類似網站擁有端點的方式處理CNAME端點設定的Cookie，但瀏覽器最近實作的變更對CNAME Cookie的處理方式造成差異。 雖然目前沒有瀏覽器預設會封鎖第一方CNAME Cookie，但有些瀏覽器會將使用CNAME設定的Cookie存留期限製為僅七天。
 
-### Cookie生命周期对Adobe Experience Cloud应用程序的影响 {#lifespans}
+### Cookie有效期限對Adobe Experience Cloud應用程式的影響 {#lifespans}
 
-无论您是选择第一方还是第三方数据收集，Cookie可以保留的时间长短都会直接影响Adobe Analytics和Customer Journey Analytics中的访客计数。 此外，在网站上使用Adobe Target或Offer decisioning时，最终用户可能会遇到不一致的个性化体验。
+無論您是選擇第一方還是第三方資料收集，Cookie可儲存的時間長度會直接影響Adobe Analytics和Customer Journey Analytics中的訪客計數。 此外，在網站上使用Adobe Target或Offer Decisioning時，使用者可能會遇到不一致的個人化體驗。
 
-例如，假定您创建了一个个性化体验，如果用户在过去七天内查看了任何项目三次，则该体验会将任何项目提升到主页。
+例如，假設您已建立個人化體驗，而如果使用者在過去七天內檢視任何專案三次，該體驗會將任何專案提升至首頁。
 
-如果最终用户在一周内访问三次，然后七天没有返回网站，则该用户可能在返回网站时被视为新用户，因为其Cookie可能已被浏览器策略删除（具体取决于他们在访问网站时所用的浏览器）。 如果发生这种情况，您的Analytics工具会将访客视为新用户，即使他们仅在7天多一点前访问过该网站。 此外，任何为用户个性化体验的努力都将重新开始。
+如果一般使用者一週內瀏覽三次，然後七天未返回網站，則該使用者在返回網站時可視為新使用者，因為其Cookie可能已被瀏覽器原則刪除（取決於使用者瀏覽網站時所使用的瀏覽器）。 如果發生這種情況，您的Analytics工具會將訪客視為新使用者，即使他們七天多一點前才造訪網站。 此外，任何為使用者個人化體驗的努力都將重新開始。
 
-### 第一方设备Id
+### 第一方裝置ID
 
-如上所述，要考虑Cookie生命周期的影响，您可以选择设置和管理自己的设备标识符。 请参阅指南，网址为 [第一方设备标识](./first-party-device-ids.md) 了解更多信息。
+如上所述，若要考慮Cookie有效期限的影響，您可以選擇設定和管理自己的裝置識別碼。 請參閱指南： [第一方裝置ID](./first-party-device-ids.md) 以取得詳細資訊。
 
-## 正在检索当前用户的ECID和区域
+## 正在擷取目前使用者的ECID和區域
 
-要检索当前访客的唯一ECID，请使用 `getIdentity` 命令。 对于尚无ECID的首次访客，此命令会生成一个新的ECID。 `getIdentity` 还会返回访客的区域ID。
+若要擷取目前訪客的唯一ECID，請使用 `getIdentity` 命令。 對於尚未建立ECID的首次訪客，此命令會產生新的ECID。 `getIdentity` 也會傳回訪客的地區ID。
 
 >[!NOTE]
 >
->此方法通常与需要读取 [!DNL Experience Cloud] ID或需要Adobe Audience Manager的位置提示。 标准实施不使用该函数。
+>此方法通常用於需要讀取 [!DNL Experience Cloud] ID或需要Adobe Audience Manager的位置提示。 标准实施不使用该函数。
 
 ```javascript
 alloy("getIdentity")
@@ -80,9 +80,9 @@ alloy("getIdentity")
 
 ## 使用 `identityMap`
 
-使用XDM [`identityMap` 字段](../../xdm/schema/composition.md#identityMap)，您可以使用多个标识识别设备/用户，设置其身份验证状态，并确定哪个标识符被视为主要标识符。 如果未将标识符设置为 `primary`，则主节点默认为 `ECID`.
+使用XDM [`identityMap` 欄位](../../xdm/schema/composition.md#identityMap)，您可使用多個身分識別裝置/使用者、設定其驗證狀態，以及決定要將哪個識別碼視為主要識別碼。 如果尚未將任何識別碼設為 `primary`，則主要預設為 `ECID`.
 
-`identityMap` 字段更新使用 `sentEvent` 命令。
+`identityMap` 欄位更新使用 `sentEvent` 命令。
 
 ```javascript
 alloy("sendEvent", {
@@ -100,34 +100,34 @@ alloy("sendEvent", {
 });
 ```
 
-内的每个属性 `identityMap` 表示属于某个特定的身份 [身份命名空间](../../identity-service/namespaces.md). 属性名称应该是身份命名空间符号，您可以在Adobe Experience Platform用户界面的“ ”下方找到该符号[!UICONTROL 身份]“。 属性值应为与该身份命名空间相关的身份数组。
+內的每個屬性 `identityMap` 代表屬於特定身分識別 [身分名稱空間](../../identity-service/namespaces.md). 屬性名稱應為身分名稱空間符號，您可以在「 」下方的Adobe Experience Platform使用者介面中找到該符號[!UICONTROL 身分]「。 屬性值應該是與該身分名稱空間相關的身分陣列。
 
 >[!IMPORTANT]
 >
->传入的命名空间ID `identityMap` 区分大小写。 请确保使用正确的命名空间ID，以避免数据收集不完整。
+>傳入的名稱空間ID `identityMap` 區分大小寫。 請務必使用正確的名稱空間ID，以避免不完整的資料收集。
 
-标识数组中的每个标识对象包含以下属性：
+身分陣列中的每個身分物件包含下列屬性：
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `id` | 字符串 | **（必需）** 要为给定的命名空间设置的ID。 |
-| `authenticationState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值包括 `ambiguous`， `authenticated`、和 `loggedOut`. |
-| `primary` | 布尔值 | 确定此标识是否应用作配置文件中的主片段。 默认情况下，会将ECID设置为用户的主要标识符。 如果忽略，则此值默认为 `false`. |
+| `id` | 字符串 | **（必要）** 您要為指定的名稱空間設定的ID。 |
+| `authenticationState` | 字符串 | **（必要）** ID的驗證狀態。 可能的值包括 `ambiguous`， `authenticated`、和 `loggedOut`. |
+| `primary` | 布尔值 | 決定是否應將此身分識別作為設定檔中的主要片段。 依預設，ECID會設為使用者的主要識別碼。 如果省略，此值會預設為 `false`. |
 
-使用 `identityMap` 标识设备或用户的字段产生的结果与使用相同 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=en) 方法来自 [!DNL ID Service API]. 请参阅 [ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=en) 了解更多详细信息。
+使用 `identityMap` 識別裝置或使用者的欄位會產生與使用相同的結果 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=en) 來自的方法 [!DNL ID Service API]. 請參閱 [ID服務API檔案](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=en) 以取得更多詳細資料。
 
-## 从访客API迁移到ECID
+## 從訪客API移轉至ECID
 
-从使用访客API进行迁移时，您还可以迁移现有的AMCV Cookie。 要启用ECID迁移，请设置 `idMigrationEnabled` 参数。 ID迁移支持以下用例：
+從使用訪客API移轉時，您也可以移轉現有的AMCV Cookie。 若要啟用ECID移轉，請將 `idMigrationEnabled` 引數來設定。 ID移轉可啟用下列使用案例：
 
-* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为了支持这种情况，SDK会读取现有AMCV Cookie并使用现有ECID写入一个新Cookie。 此外，SDK还会写入AMCV Cookie，以便如果首先在通过SDK检测的页面上获取ECID，则通过访客API检测的后续页面将具有相同的ECID。
-* 在同样具有访客API的页面上设置Adobe Experience Platform Web SDK时。 为了支持这种情况，如果未设置AMCV Cookie，SDK将在页面上查找访客API，并调用它以获取ECID。
-* 当整个网站都在使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以便保留返回的访客信息很有用。 在使用部署SDK后 `idMigrationEnabled` 为了迁移大多数访客Cookie，可以关闭该设置。
+* 當網域的某些頁面使用訪客API，而其他頁面使用此SDK時。 為了支援此情況，SDK會讀取現有的AMCV Cookie，並使用現有的ECID寫入新的Cookie。 此外，SDK會寫入AMCV Cookie，因此如果先在透過SDK檢測的頁面上取得ECID，則透過訪客API檢測的後續頁面將具有相同的ECID。
+* 在也具有Visitor API的頁面上設定Adobe Experience Platform Web SDK時。 為了支援此情況，如果未設定AMCV Cookie，SDK會在頁面上尋找訪客API，並呼叫它以取得ECID。
+* 當整個網站使用Adobe Experience Platform Web SDK且沒有訪客API時，移轉ECID以保留傳回的訪客資訊會很有用。 透過部署SDK後 `idMigrationEnabled` 為了移轉大部分的訪客Cookie，可以關閉設定。
 
-### 更新迁移特征
+### 更新特徵以進行移轉
 
-将XDM格式的数据发送到Audience Manager时，在迁移时需要将此数据转换为信号。 您的特征需要更新，以反映XDM提供的新密钥。 通过使用，可简化此过程 [BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) 该Audience Manager已创建。
+將XDM格式資料傳送到Audience Manager時，移轉時需要將此資料轉換為訊號。 您的特徵需要更新，以反映XDM提供的新金鑰。 此程式透過使用 [BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) 該Audience Manager已建立。
 
-## 在事件转发中使用
+## 用於事件轉送
 
-如果您当前拥有 [事件转发](../../tags/ui/event-forwarding/overview.md) 已启用且正在使用 `appmeasurement.js` 和 `visitor.js`，您可以保持启用事件转发功能，这不会导致任何问题。 在后端，Adobe获取所有AAM区段并将它们添加到对Analytics的调用。 如果对Analytics的调用包含这些区段，则Analytics不会调用Audience Manager来转发任何数据，因此不存在任何双重数据收集。 使用Web SDK时也不需要位置提示，因为在后端中调用相同的分段端点。
+如果您目前擁有 [事件轉送](../../tags/ui/event-forwarding/overview.md) 已啟用且正在使用 `appmeasurement.js` 和 `visitor.js`，即可保持事件轉送功能已啟用，這樣就不會造成任何問題。 在後端，Adobe會擷取任何AAM區段，並將其新增至Analytics呼叫。 如果對Analytics的呼叫包含這些區段，Analytics將不會呼叫Audience Manager來轉送任何資料，因此不會有任何雙重資料收集。 使用Web SDK時也不需要位置提示，因為後端會呼叫相同的區段端點。

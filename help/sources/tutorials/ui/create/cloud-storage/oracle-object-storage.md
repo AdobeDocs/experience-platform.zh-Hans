@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；Oracle对象存储；oracle对象存储
+keywords: Experience Platform；首頁；熱門主題；Oracle物件儲存；oracle物件儲存
 solution: Experience Platform
-title: 在UI中创建Oracle对象存储源连接
+title: 在UI中建立Oracle物件儲存來源連線
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建Oracle对象存储源连接。
+description: 瞭解如何使用Adobe Experience Platform UI建立Oracle物件儲存來源連線。
 exl-id: 32284163-5dde-4171-8977-f76ceeebcef2
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,55 +12,55 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Oracle Object Storage] UI中的源连接
+# 建立 [!DNL Oracle Object Storage] UI中的來源連線
 
-本教程提供了创建 [!DNL Oracle Object Storage] 源连接。
+本教學課程提供建立 [!DNL Oracle Object Storage] 來源連線使用Adobe Experience Platform UI。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-连接到 [!DNL Oracle Object Storage]，则必须为以下连接属性提供值：
+在中以連線到 [!DNL Oracle Object Storage]，您必須提供下列連線屬性的值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `serviceUrl` | 的 [!DNL Oracle Object Storage] 身份验证所需的端点。 端点格式为： `https://{OBJECT_STORAGE_NAMESPACE}.compat.objectstorage.eu-frankfurt-1.oraclecloud.com` |
-| `accessKey` | 的 [!DNL Oracle Object Storage] 访问密钥ID，这是进行身份验证所需的。 |
-| `secretKey` | 的 [!DNL Oracle Object Storage] 验证所需的密码。 |
-| `bucketName` | 如果用户具有受限访问权限，则需要允许的存储段名称。 存储段名称必须介于3到63个字符之间，且必须以字母或数字开头和结尾，并且只能包含小写字母、数字或连字符(`-`)。 存储段名称的格式不能与IP地址类似。 |
-| `folderPath` | 用户具有受限访问权限时需要的允许文件夹路径。 |
+| `serviceUrl` | 此 [!DNL Oracle Object Storage] 驗證所需的端點。 端點格式為： `https://{OBJECT_STORAGE_NAMESPACE}.compat.objectstorage.eu-frankfurt-1.oraclecloud.com` |
+| `accessKey` | 此 [!DNL Oracle Object Storage] 驗證所需的存取金鑰ID。 |
+| `secretKey` | 此 [!DNL Oracle Object Storage] 驗證所需的密碼。 |
+| `bucketName` | 如果使用者擁有受限制的存取權，則需要允許的bucket名稱。 貯體名稱的長度必須介於3到63個字元之間，開頭和結尾必須是字母或數字，而且只能包含小寫字母、數字或連字型大小(`-`)。 儲存貯體名稱的格式不得類似於IP位址。 |
+| `folderPath` | 如果使用者擁有受限存取權，則需要允許的資料夾路徑。 |
 
-有关如何获取这些值的更多信息，请参阅 [Oracle对象存储身份验证指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
+如需如何取得這些值的詳細資訊，請參閱 [oracle物件儲存驗證指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
-收集所需的凭据后，您可以按照以下步骤创建新的Oracle对象存储帐户以连接到平台。
+收集完所需的認證後，您可以依照下列步驟建立新的Oracle物件儲存體帳戶以連線至平台。
 
-## 连接到Oracle对象存储
+## 連線到Oracle物件儲存體
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种来源。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
 
-在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL Oracle对象存储]** 然后选择 **[!UICONTROL 添加数据]**.
+在 [!UICONTROL 雲端儲存空間] 類別，選取 **[!UICONTROL oracle物件儲存]** 然後選取 **[!UICONTROL 新增資料]**.
 
-![目录](../../../../images/tutorials/create/oracle-object-storage/catalog.png)
+![目錄](../../../../images/tutorials/create/oracle-object-storage/catalog.png)
 
-### 现有帐户
+### 現有帳戶
 
-要使用现有帐户，请选择 [!DNL Oracle Object Storage] 创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要使用現有帳戶，請選取 [!DNL Oracle Object Storage] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![现有](../../../../images/tutorials/create/oracle-object-storage/existing.png)
+![現有](../../../../images/tutorials/create/oracle-object-storage/existing.png)
 
-### 新帐户
+### 新帳戶
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述以及 [!DNL Oracle Object Storage] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、選擇性說明和您的 [!DNL Oracle Object Storage] 認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
 
-![新建](../../../../images/tutorials/create/oracle-object-storage/new.png)
+![新](../../../../images/tutorials/create/oracle-object-storage/new.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已经与 [!DNL Oracle Object Storage] 帐户。 您现在可以继续阅读下一个教程： [配置数据流以将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md).
+依照本教學課程，您已建立與的連線， [!DNL Oracle Object Storage] 帳戶。 您現在可以繼續下一個教學課程： [設定資料流以將雲端儲存空間中的資料帶入Platform](../../dataflow/batch/cloud-storage.md).

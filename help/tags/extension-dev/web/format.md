@@ -1,6 +1,6 @@
 ---
-title: Web扩展中的库模块
-description: 了解如何在Adobe Experience Platform中设置用于Web扩展的库模块的格式。
+title: Web擴充功能中的程式庫模組
+description: 瞭解如何在Adobe Experience Platform中為Web擴充功能格式化程式庫模組。
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
 source-git-commit: b3754c94843f32ba58aa1e020dface1179372de3
 workflow-type: tm+mt
@@ -13,13 +13,13 @@ ht-degree: 70%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >
 >本文档介绍 Web 扩展的库模块格式。如果您正在开发 Edge 扩展，请另外参阅关于[格式化 Edge 扩展模块](../edge/format.md)的指南。
 
-库模块是由扩展提供的一段可重用代码，在Adobe Experience Platform的标记运行时库中发出该扩展。 然后，此库在客户端的网站上运行。 例如，`gesture` 事件类型具有将在客户端网站上运行的库模块，并且可检测用户手势。
+程式庫模組是一段可重複使用的程式碼，由Adobe Experience Platform中的標籤執行階段程式庫內發出的擴充功能所提供。 然後，此程式庫就會在使用者端的網站上執行。 例如，`gesture` 事件类型具有将在客户端网站上运行的库模块，并且可检测用户手势。
 
 库模块的结构为 [CommonJS 模块](https://nodejs.org/api/modules.html#modules-commonjs-modules)。在 CommonJS 模块中，可使用以下变量：
 
@@ -27,7 +27,7 @@ ht-degree: 70%
 
 您可以使用 `require` 函数来访问：
 
-1. 标记提供的核心模块。 可以使用 `require('@adobe/reactor-name-of-module')` 来访问这些模块。有关更多信息，请参阅有关可用[核心模块](./core.md)的文档。
+1. 標籤提供的核心模組。 可以使用 `require('@adobe/reactor-name-of-module')` 来访问这些模块。有关更多信息，请参阅有关可用[核心模块](./core.md)的文档。
 1. 扩展中的其他模块。扩展中的任何模块都可以通过相对路径进行访问。相对路径必须以 `./` 或 `../` 开头。
 
 用法示例：
@@ -61,7 +61,7 @@ exports.sayHello = function(…) { … }
 
 ## 执行和缓存
 
-当标记运行时库运行时，将立即“安装”模块并缓存其导出。 假设有以下模块：
+當標籤執行階段程式庫執行時，會立即「安裝」模組，並快取其匯出。 假设有以下模块：
 
 ```javascript
 console.log('runs on startup');
@@ -71,4 +71,4 @@ module.exports = function(settings) {
 }
 ```
 
-`runs on startup` 将立即记录，而 `runs when necessary` 只有在标记引擎调用导出函数后，才会记录该事件。 虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。
+`runs on startup` 將會立即記錄，而 `runs when necessary` 只有在標籤引擎呼叫已匯出的函式時，才會記錄。 虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。

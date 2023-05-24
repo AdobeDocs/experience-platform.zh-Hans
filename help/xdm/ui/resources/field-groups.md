@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；字段组；字段组；
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；資料模型；ui；工作區；欄位群組；欄位群組；
 solution: Experience Platform
-title: 在UI中创建和编辑架构字段组
-description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
+title: 在UI中建立和編輯結構描述欄位群組
+description: 瞭解如何在Experience Platform使用者介面中建立和編輯結構描述欄位群組。
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
 source-git-commit: 542ad49f475ac9586da506a8afa5408e83262121
 workflow-type: tm+mt
@@ -11,76 +11,76 @@ ht-degree: 0%
 
 ---
 
-# 在UI中创建和编辑架构字段组
+# 在UI中建立和編輯結構描述欄位群組
 
-在体验数据模型(XDM)中，架构字段组是可重用的组件，用于定义一个或多个字段以实施某些功能，例如个人详细信息、酒店首选项或地址。 字段组将作为实现兼容类的架构的一部分包含在内。
+在Experience Data Model (XDM)中，結構描述欄位群組是可重複使用的元件，可定義一或多個實作特定功能的欄位，例如個人詳細資料、飯店偏好設定或地址。 欄位群組旨在包含在實作相容類別的結構描述中。
 
-字段组根据字段组表示的数据（记录或时间序列）的行为，定义与哪些类兼容。 这意味着并非所有字段组都可用于所有类。
+欄位群組會根據欄位群組所代表的資料行為（記錄或時間序列），定義其相容的類別。 這表示並非所有欄位群組都可用於所有類別。
 
-Adobe Experience Platform提供了许多涵盖各种营销用例的标准字段组。 但是，您也可以创建和编辑自己的自定义字段组，以定义与XDM架构中的业务相关的其他概念。 本指南概述了如何在Platform UI中为贵组织创建、编辑和管理自定义字段组。
+Adobe Experience Platform提供許多標準欄位群組，涵蓋廣泛的行銷使用案例。 不過，您也可以建立和編輯自己的自訂欄位群組，以在XDM結構描述中定義與您的業務相關的其他概念。 本指南概述如何在Platform UI中建立、編輯及管理貴組織的自訂欄位群組。
 
 ## 先决条件
 
-本指南需要对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [架构组合基础知识](../../schema/composition.md) 以了解字段组对XDM模式的贡献情况。
+本指南需要實際瞭解XDM系統。 請參閱 [XDM概觀](../../home.md) 介紹XDM在Experience Platform生態系統內的角色，以及 [結構描述組合基本概念](../../schema/composition.md) 瞭解欄位群組對XDM結構描述的貢獻。
 
-虽然本指南不是必需的，但建议您也要遵循 [在UI中合成架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+雖然本指南不需要，但建議您也參閱以下主題的相關教學課程： [在UI中構成結構描述](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
 
-## 创建新字段组 {#create}
+## 建立新的欄位群組 {#create}
 
-要创建新字段组，您必须先选择要将字段组添加到的架构。 您可以选择 [创建新模式](./schemas.md#create) 或 [选择要编辑的现有架构](./schemas.md#edit).
+若要建立新的欄位群組，您必須先選取要新增該欄位群組的結構描述。 您可以選擇 [建立新結構描述](./schemas.md#create) 或 [選取要編輯的現有結構描述](./schemas.md#edit).
 
-在中打开架构后， [!DNL Schema Editor]，选择 **[!UICONTROL 添加]** 旁边 [!UICONTROL 字段组] 区域。
+一旦您在中開啟結構描述後 [!DNL Schema Editor]，選取 **[!UICONTROL 新增]** 旁邊 [!UICONTROL 欄位群組] 區段。
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-在出现的对话框中，选择 **[!UICONTROL 创建新字段组]**. 在此，您可以提供 **[!UICONTROL 显示名称]** 和 **[!UICONTROL 描述]** 字段组。 完成后，选择 **[!UICONTROL 添加字段组]**.
+在出現的對話方塊中，選取 **[!UICONTROL 建立新欄位群組]**. 您可以在此處提供 **[!UICONTROL 顯示名稱]** 和 **[!UICONTROL 說明]** （欄位群組）。 完成後，選取 **[!UICONTROL 新增欄位群組]**.
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
-的 [!DNL Schema Editor] 重新显示，新字段组列在左边栏中。 由于这是一个全新的字段组，因此它当前不向架构提供任何字段，因此画布保持不变。 您现在可以开始 [向字段组添加字段](#add-fields).
+此 [!DNL Schema Editor] 會重新出現，而新欄位群組會列在左側邊欄中。 由於這是全新的欄位群組，目前未提供任何欄位給結構描述，因此畫布保持不變。 您現在可以開始 [新增欄位至欄位群組](#add-fields).
 
 ![](../../images/ui/resources/field-groups/field-group-added.png)
 
-## 编辑现有字段组 {#edit}
+## 編輯現有欄位群組 {#edit}
 
 >[!NOTE]
 >
->只能完全编辑和自定义由您的组织定义的自定义字段组。 对于由Adobe定义的核心字段组，在单个架构的上下文中只能编辑其字段的显示名称。 请参阅 [编辑架构字段的显示名称](./schemas.md#display-names) 以了解详细信息。
+>只有貴組織定義的自訂欄位群組才能完全編輯和自訂。 對於由Adobe定義的核心欄位群組，只能在個別結構描述的內容中編輯其欄位的顯示名稱。 請參閱以下小節： [編輯結構描述欄位的顯示名稱](./schemas.md#display-names) 以取得詳細資訊。
 >
->在用于数据摄取的架构中保存和使用自定义字段组后，以后只能对字段组进行附加更改。 请参阅 [模式演化规则](../../schema/composition.md#evolution) 以了解更多信息。
+>儲存自訂欄位群組並在結構描述中使用以進行資料擷取後，之後只能對欄位群組進行附加變更。 請參閱 [結構描述演化規則](../../schema/composition.md#evolution) 以取得詳細資訊。
 
-要编辑现有字段组，必须首先打开一个架构，该架构在 [!DNL Schema Editor]. 您可以 [选择要编辑的现有架构](./schemas.md#edit)，或者您可以 [创建新模式](./schemas.md#create) 并添加相关字段组。
+若要編輯現有的欄位群組，您必須先開啟採用下列欄位群組的結構描述： [!DNL Schema Editor]. 您可以 [選取要編輯的現有結構描述](./schemas.md#edit)，或您可以 [建立新結構描述](./schemas.md#create) 並新增相關欄位群組。
 
-在编辑器中打开架构后，您可以启动 [向字段组添加字段](#add-fields).
+在編輯器中開啟結構描述後，您就可以開始 [新增欄位至欄位群組](#add-fields).
 
-## 向字段组添加字段 {#add-fields}
+## 新增欄位至欄位群組 {#add-fields}
 
 >[!NOTE]
 >
->本节重点介绍如何向自定义字段组添加字段。 有关如何向标准字段组添加自定义字段的信息，请参阅 [模式UI指南](./schemas.md#custom-fields-for-standard-groups).
+>本節著重於新增欄位至自訂欄位群組。 有關如何將自訂欄位新增到標準欄位群組的資訊，請參閱 [結構描述UI指南](./schemas.md#custom-fields-for-standard-groups).
 
-要向自定义字段组添加字段，请首先选择 **加号(+)** 图标。
+若要新增欄位至自訂欄位群組，請從選取 **加(+)** 圖示加以識別（位於畫布中的方案名稱旁）。
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-安 **[!UICONTROL 无标题字段]** 占位符显示在画布中，右边栏会更新以显示用于配置字段属性的控件。 请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置不同字段类型的具体步骤。
+一個 **[!UICONTROL 未命名的欄位]** 預留位置會顯示在畫布中，而右邊欄會更新以顯示控制項來設定欄位的屬性。 請參閱指南： [在UI中定義欄位](../fields/overview.md#define) ，以瞭解如何設定不同欄位型別的具體步驟。
 
-在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始在字段组的名称中键入以缩小结果范围。
-
-![](../../images/ui/resources/field-groups/select-field-group.png)
-
-在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]** 选项，然后使用下拉菜单从列表中选择所需的字段组。 您可以开始在字段组的名称中键入以缩小结果范围。
+下 **[!UICONTROL 指派給]**，選取 **[!UICONTROL 欄位群組]** 選項，然後使用下拉式清單，從清單中選取所需的欄位群組。 您可以開始輸入欄位群組的名稱來縮小結果範圍。
 
 ![](../../images/ui/resources/field-groups/select-field-group.png)
 
-将字段添加到架构后，会将其分配到选定的字段组。 继续向字段组添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 保存架构和字段组。
+下 **[!UICONTROL 指派給]**，選取 **[!UICONTROL 欄位群組]** 選項，然後使用下拉式清單，從清單中選取所需的欄位群組。 您可以開始輸入欄位群組的名稱來縮小結果範圍。
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
+
+將欄位新增到結構描述後，就會將其指派給所選的欄位群組。 繼續將所需數量的欄位新增至欄位群組。 完成後，選取 **[!UICONTROL 儲存]** 以儲存結構描述和欄位群組。
 
 ![](../../images/ui/resources/field-groups/complete-field-group.png)
 
-如果同一字段组已在其他架构中使用，则新添加的字段将自动显示在这些架构中。
+如果其他結構描述中已經使用了相同的欄位群組，則新新增的欄位會自動出現在這些結構描述中。
 
 ## 后续步骤
 
-本指南介绍了如何使用平台UI创建和编辑字段组。 有关 [!UICONTROL 模式] 工作区，请参阅 [[!UICONTROL 模式] 工作区概述](../overview.md).
+本指南說明如何使用Platform UI建立和編輯欄位群組。 如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區，請參閱 [[!UICONTROL 結構描述] 工作區概觀](../overview.md).
 
-了解如何使用 [!DNL Schema Registry] API，请参阅 [字段组终结点指南](../../api/field-groups.md).
+若要瞭解如何使用管理欄位群組 [!DNL Schema Registry] API，請參閱 [欄位群組端點指南](../../api/field-groups.md).

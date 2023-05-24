@@ -1,5 +1,5 @@
 ---
-description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点或存储位置。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
+description: Adobe Experience Platform Destination SDK是一組設定API，可讓您根據您選擇的資料和驗證格式，設定Experience Platform的目的地整合模式，以將受眾和設定檔資料傳送至您的端點或儲存位置。 設定儲存在Experience Platform中，並可透過API擷取以取得其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
@@ -11,78 +11,78 @@ ht-degree: 4%
 
 # Adobe Experience Platform Destination SDK
 
-Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式，将受众和配置文件数据交付到您的端点或存储位置。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
+Adobe Experience Platform Destination SDK是一套設定API，可讓您根據您選擇的資料和驗證格式，設定Experience Platform的目的地整合模式，以將受眾和設定檔資料傳送至您的端點或儲存位置。 設定儲存在Experience Platform中，並可透過API擷取以取得其他更新。
 
-本Destination SDK文档提供了相关说明，供您使用这些Adobe Experience Platform Destination SDK配置、测试和发布与Adobe Experience Platform的已产品化目标集成，并让您的目标成为不断增长的目标目录的一部分。 通过使用Destination SDK，您还可以创建自己的自定义专用目标，以导出根据您的需求量身定制的数据。
+Destination SDK檔案會提供指示，讓您使用Adobe Experience Platform Destination SDK來設定、測試和發行與Adobe Experience Platform的已生產目的地整合，並讓您的目的地成為不斷成長的目的地目錄的一部分。 使用Destination SDK，您也可以建立自己的自訂私人目的地，以匯出符合您需求的資料。
 
-![Experience PlatformUI中的屏幕截图，显示目标目录](assets/destinations-catalog-overview.png)
+![Experience PlatformUI的熒幕擷圖，顯示目的地目錄](assets/destinations-catalog-overview.png)
 
-## 产品化和自定义集成 {#productized-custom-integrations}
+## 產品化和自訂整合 {#productized-custom-integrations}
 
 >[!IMPORTANT]
 >
-> 用于创建专用自定义目标的功能仅适用于 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
+> 建立私人自訂目的地的此功能僅適用於 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客戶。
 
-作为Destination SDK合作伙伴，您可以从将按产品分类的目标添加到 [Experience Platform目录](../catalog/overview.md):
+作為Destination SDK合作夥伴，您可以將已生產化的目的地新增至 [Experience Platform目錄](../catalog/overview.md)：
 
-1. 通过预配置的参数跨客户标准化集成配置，并简化客户的设置体验。
-2. 在Experience Platform目标目录中引入品牌目标卡，以简化客户设置和意识。
-3. 作为与Adobe Experience Platform和Adobe Real-time Customer Data Platform的产品化目标集成。
+1. 透過預先設定的引數標準化跨客戶的整合設定，並簡化客戶的設定體驗。
+2. 在Experience Platform目的地目錄中推出品牌目的地卡，以簡化客戶設定和認知度。
+3. 精選並與Adobe Experience Platform和Adobe Real-time Customer Data Platform整合為產品化的目的地。
 
-作为Experience Platform客户，您还可以创作自己的专用自定义目标，最适合您的激活需求。
+身為Experience Platform客戶，您也可以撰寫自己的私人自訂目的地，以最符合您的啟用需求。
 
-![概述图表显示了目标开发人员如何与Destination SDK交互，以及Real-Time CDP客户如何从产品化和专用目标中受益。](assets/destination-sdk-visual.png)
+![總覽圖表顯示目的地開發人員如何與Destination SDK互動，以及Real-Time CDP客戶如何從生產化和私有目的地獲益。](assets/destination-sdk-visual.png)
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-### 实时（流）集成 {#real-time-integrations}
+### 即時（串流）整合 {#real-time-integrations}
 
-通过Destination SDK,Adobe Experience Platform支持与具有REST API端点的目标进行实时（也称为流）集成。 与Experience Platform的实时集成支持以下功能：
+透過Destination SDK，Adobe Experience Platform支援與具有REST API端點的目的地即時整合（也稱為串流）。 與Experience Platform的即時整合支援下列功能：
 
-* 报文转换和聚合
-* 用户档案回填
-* 可配置的元数据集成，用于初始化受众设置和数据传输
-* 可配置身份验证
-* 一套测试和验证API，可供您测试和迭代目标配置
+* 訊息轉換和彙總
+* 設定檔回填
+* 可設定的中繼資料整合，可初始化對象設定和資料傳輸
+* 可設定的驗證
+* 一套測試和驗證API，可供您測試和迭代目的地設定
 
-### 基于文件的集成 {#file-based-integrations}
+### 檔案式整合 {#file-based-integrations}
 
-通过Destination SDK，您还可以设置集成以定期将文件导出到您选择的存储位置。 基于文件的与Experience Platform集成支持以下功能：
+透過Destination SDK，您也可以設定整合，以定期將檔案匯出至您選擇的儲存位置。 與Experience Platform的檔案式整合支援如下的功能：
 
-* 支持多种格式(CSV、Parquet、JSON)的文件导出
-* 可配置的文件格式选项，利用该选项可构建导出文件的格式以满足下游要求。
+* 檔案匯出採用數個支援的格式(CSV、Parquet、JSON)
+* 可設定的檔案格式選項，可讓您根據下游需求來建構轉存檔案的格式。
 
-请阅读 [集成先决条件](integration-prerequisites.md) 文章和阅读 [配置选项](functionality/configuration-options.md) 文章
+請閱讀中目標端的技術需求 [整合必要條件](integration-prerequisites.md) 文章並閱讀中所有支援的設定 [設定選項](functionality/configuration-options.md) 文章
 
-## 获取Destination SDK {#get-access}
+## 取得Destination SDK的存取權 {#get-access}
 
-Destination SDK访问权限因您作为Real-Time CDP客户的合作伙伴或Experience Platform的状态而异。 有关更多信息，请参阅下表。
+Destination SDK存取權會因您身為合作夥伴或Experience Platform、Real-Time CDP客戶的身份而異。 如需詳細資訊，請參閱下表。
 
-| 合作伙伴或客户的类型 | 如何访问Destination SDK |
+| 合作夥伴或客戶的型別 | 如何存取Destination SDK |
 ---------|----------|
-| 独立软件供应商(ISV) | 加入 [Adobe技术合作伙伴计划](https://partners.adobe.com/technologyprogram/experiencecloud.html) 和请求，以便配置Experience Platform沙盒以访问Destination SDK。 |
-| 系统集成商(SI) | 您需要在 [Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)，您将获得一个Experience Platform沙盒，并有权访问Destination SDK。 |
-| Experience Platform客户 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK，从而为组织构建专用目标。 |
+| 獨立軟體廠商(ISV) | 加入 [Adobe技術合作夥伴計畫](https://partners.adobe.com/technologyprogram/experiencecloud.html) 並要求布建Experience Platform沙箱以存取Destination SDK。 |
+| 系統整合商(SI) | 您需要在 [Adobe解決方案合作夥伴計畫](https://solutionpartners.adobe.com/home.html)，您就會布建Experience Platform沙箱，並存取Destination SDK。 |
+| Experience Platform客戶於 [Real-Time CDP Ultimate套件](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 依預設，您可以存取Experience Platform沙箱和Destination SDK，讓您為組織建立私人目的地。 |
 
 {style="table-layout:auto"}
 
-## 高级流程 {#process}
+## 高階流程 {#process}
 
-在Experience Platform中配置目标的过程如下所述：
+以Experience Platform設定目的地的程式概述如下：
 
-1. 如果您是ISV或SI，请参阅 [获取访问权限](#get-access) 上节中的信息。 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户可以跳过此步骤。
-2. [请求配置Experience Platform沙盒](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) 并启用目标创作权限。
-3. 构建集成。 按照产品文档中的说明配置 [流目标](guides/configure-destination-instructions.md) 或 [基于文件的目标](guides/configure-file-based-destination-instructions.md).
-4. 测试集成。 按照产品文档中的说明进行测试 [流目标](testing-api/streaming-destinations/streaming-destination-testing-overview.md) 或 [基于文件的目标](testing-api/batch-destinations/file-based-destination-testing-overview.md).
-5. 如果您是ISV或SI创建 [产品化集成](./overview.md#productized-custom-integrations), [提交集成](guides/submit-destination.md) 供Adobe审阅（标准响应时间为五个工作日）。
-6. 如果您是ISV或SI创建产品化集成，请使用 [自助文档流程](docs-framework/documentation-instructions.md) 在Experience League上为您的目标创建产品文档页面。
-7. 对于按产品分类的集成，一旦获得Adobe批准，您的集成将显示在 [Experience Platform目录](../catalog/overview.md).
-8. 如果您想要更新集成，请遵循相同的流程。
+1. 如果您是ISV或SI，請參閱 [取得存取權](#get-access) 一節中的資訊。 [Real-Time CDP Ultimate套件](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客戶可跳過此步驟。
+2. [布建Experience Platform沙箱的要求](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) 並啟用目的地編寫許可權。
+3. 建置您的整合。 依照產品檔案中的指示進行設定 [串流目的地](guides/configure-destination-instructions.md) 或 [檔案型目的地](guides/configure-file-based-destination-instructions.md).
+4. 測試您的整合。 依照產品檔案中的指示進行測試 [串流目的地](testing-api/streaming-destinations/streaming-destination-testing-overview.md) 或 [檔案型目的地](testing-api/batch-destinations/file-based-destination-testing-overview.md).
+5. 如果您是ISV或SI，請建立 [產品化整合](./overview.md#productized-custom-integrations)， [提交您的整合](guides/submit-destination.md) 供Adobe檢閱（標準回應時間為5個工作日）。
+6. 如果您是建立產品化整合的ISV或SI，請使用 [自助服務檔案程式](docs-framework/documentation-instructions.md) 以建立有關目的地Experience League的產品檔案頁面。
+7. 對於產品化整合，一經Adobe核准，您的整合會顯示在 [Experience Platform目錄](../catalog/overview.md).
+8. 如果您想要更新整合，請遵循相同程式。
 
 ## 参考 {#reference}
 
-Adobe建议您阅读并了解以下Experience Platform文档：
+Adobe建議您閱讀並瞭解下列Experience Platform檔案：
 
-* [Adobe Experience Platform目标概述](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en)
-* [XDM架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)
-* [身份命名空间概述](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)
+* [Adobe Experience Platform目的地概觀](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en)
+* [XDM結構描述組成的基礎](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)
+* [身分名稱空間總覽](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)

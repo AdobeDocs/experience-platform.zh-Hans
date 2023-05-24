@@ -1,32 +1,33 @@
 ---
-title: 使用架构注册表API向架构添加特定字段
-description: 了解如何使用架构注册表API，将预先存在的字段组中的各个字段添加到体验数据模型(XDM)架构。
-source-git-commit: 4bcd949e901c11bb933000f7ae76f17134dda496
+title: 使用結構描述登入API新增特定欄位到結構描述
+description: 瞭解如何使用結構描述登入API，將現有欄位群組中的個別欄位新增到體驗資料模型(XDM)結構描述。
+exl-id: 696cce2b-bbde-416a-9f52-12ab4da9c2c6
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '629'
 ht-degree: 2%
 
 ---
 
-# 使用架构注册API向架构添加特定字段
+# 使用結構描述登入API將特定欄位新增到結構描述
 
-体验数据模型(XDM)架构由基类组成，其中通过使用由Adobe定义的标准字段组和由您的组织定义的自定义字段组来包含其他字段。
+Experience Data Model (XDM)結構描述由基底類別組成，並使用由Adobe定義的標準欄位群組和您的組織定義的自訂欄位群組來包含其他欄位。
 
-在构建架构时，您可能希望使用给定字段组中的某些字段，同时将不需要的其他字段排除在同一个组中。 本教程将向您展示如何使用架构注册表API将字段组中的各个字段添加到架构中。
+在建置結構描述時，您可能要使用指定欄位群組中的某些欄位，同時排除相同群組中您不需要的其他欄位。 本教學課程說明如何使用Schema Registry API將欄位群組中的個別欄位新增到結構描述。
 
 >[!NOTE]
 >
->有关如何在Adobe Experience Platform UI中添加和删除单个架构字段的信息，请参阅 [基于字段的工作流](../ui/field-based-workflows.md) （目前为测试版）。
+>如需如何在Adobe Experience Platform UI中新增和移除個別結構描述欄位的詳細資訊，請參閱以下指南： [欄位式工作流程](../ui/field-based-workflows.md) （目前為測試版）。
 
 ## 先决条件
 
-本教程包括调用 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 开始之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用API(包括您的 `{TENANT_ID}`、容器的概念以及发出请求所需的标头。
+本教學課程涉及對 [結構描述登入API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 開始之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需成功呼叫API所需的重要資訊，包括 `{TENANT_ID}`、容器的概念，以及發出請求所需的標頭。
 
-## 了解 `meta:refProperty` 字段
+## 瞭解 `meta:refProperty` 欄位
 
-对于任何给定的架构，在其下引用构成其结构的类和字段组 `allOf` 数组。 每个组件都表示为包含 `$ref` 引用组件URI的属性 `$id`.
+對於任何指定的結構描述，組成其結構的類別和欄位群組會在下列專案底下參考： `allOf` 陣列。 每個元件都表示為一個物件，其中包含一個 `$ref` 參考元件URI的屬性 `$id`.
 
-以下JSON表示使用单个类(`experienceevent`)和字段组(`experienceevent-all`):
+以下JSON代表使用單一類別(`experienceevent`)和欄位群組(`experienceevent-all`)：
 
 ```json
 {
@@ -44,13 +45,13 @@ ht-degree: 2%
 }
 ```
 
-对于 `allOf` 引用字段组的数组，可以添加同级 `meta:refProperty` 字段，以指定架构中应包含组中的哪些字段。
+對於中的任何物件 `allOf` 參照欄位群組的陣列，您可以新增同層級 `meta:refProperty` 欄位，指定群組中的哪些欄位應包含在結構描述中。
 
 >[!NOTE]
 >
->每个字段都使用JSON指针字符串指定，表示相应字段组内字段的路径。 字符串必须以前导斜杠(`/`)和不应包含任何 `properties` 命名空间。 例如：`/_experience/campaign/message/id`。
+>每個欄位都使用JSON指標字串指定，該字串代表其各自欄位群組中的欄位路徑。 字串必須以前導斜線(`/`)且不應包含任何 `properties` 名稱空間。 例如：`/_experience/campaign/message/id`。
 
-作为字符串包含时， `meta:refProperty` 可以引用组中的单个字段。 使用同一组可以包含来自同一组的其他字段 `$ref` 值 `meta:refProperty` 值。
+當以字串形式包含時， `meta:refProperty` 可參照群組中的單一欄位。 來自相同群組的其他欄位可使用相同來包含 `$ref` 另一個物件中具有不同值的值 `meta:refProperty` 值。
 
 ```json
 {
@@ -73,7 +74,7 @@ ht-degree: 2%
 }
 ```
 
-或者， `meta:refProperty` 可以作为数组提供，允许您指定多个字段以包含在单个内的给定组中 `allOf` 列表项：
+或者， `meta:refProperty` 可作為陣列提供，讓您指定在單一群組中要包含來自指定群組的多個欄位 `allOf` 清單專案：
 
 ```json
 {
@@ -96,9 +97,9 @@ ht-degree: 2%
 }
 ```
 
-## 使用PUT操作添加字段
+## 使用PUT操作新增欄位
 
-您可以使用PUT请求重写整个架构，并配置要在下包含的字段 `allOf`.
+您可以使用PUT請求來重寫整個結構描述，並設定您要包含的欄位 `allOf`.
 
 **API格式**
 
@@ -108,11 +109,11 @@ PUT /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 要重写的架构。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要重寫的結構描述中。 |
 
 **请求**
 
-以下请求会更新 `allOf` 数组。
+以下請求會更新底下欄位群組包含的特定欄位 `allOf` 陣列。
 
 ```shell
 curl -X PUT \
@@ -144,7 +145,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回更新架构的详细信息。
+成功的回應會傳回更新後之結構的詳細資訊。
 
 ```json
 {
@@ -189,11 +190,11 @@ curl -X PUT \
 
 >[!NOTE]
 >
->有关架构PUT请求的更多详细信息，请参阅 [schema endpoint指南](../api/schemas.md#put).
+>如需結構描述之PUT請求的詳細資訊，請參閱 [結構描述端點指南](../api/schemas.md#put).
 
-## 使用PATCH操作添加字段
+## 使用PATCH操作新增欄位
 
-您可以使用PATCH请求将单个字段添加到架构，而不会覆盖其他字段。 架构注册表支持所有标准JSON修补程序操作，包括 `add`, `remove`和 `replace`. 有关JSON修补程序的更多信息，请参阅 [API基础知识指南](../../landing/api-fundamentals.md#json-patch).
+您可以使用PATCH請求將個別欄位新增到結構描述而不覆寫其他欄位。 Schema Registry支援所有標準JSON修補程式操作，包括 `add`， `remove`、和 `replace`. 如需JSON修補程式的詳細資訊，請參閱 [API基礎指南](../../landing/api-fundamentals.md#json-patch).
 
 **API格式**
 
@@ -203,11 +204,11 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 要重写的架构。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要重寫的結構描述中。 |
 
 **请求**
 
-以下请求会向架构的 `allOf` 数组，指定要添加的字段。
+以下請求會將新物件新增至結構描述的 `allOf` 陣列，指定要新增的欄位。
 
 ```shell
 curl -X PATCH \
@@ -235,7 +236,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回更新架构的详细信息。
+成功的回應會傳回更新後之結構的詳細資訊。
 
 ```json
 {
@@ -280,10 +281,10 @@ curl -X PATCH \
 
 >[!NOTE]
 >
->有关架构PATCH请求的更多详细信息，请参阅 [schema endpoint指南](../api/schemas.md#patch).
+>如需結構描述之PATCH請求的詳細資訊，請參閱 [結構描述端點指南](../api/schemas.md#patch).
 
 ## 后续步骤
 
-本指南介绍了如何使用API调用将现有字段组中的各个字段添加到架构。 有关如何在平台UI中执行类似基于字段的任务的详细信息，请参阅 [基于字段的工作流](../ui/field-based-workflows.md).
+本指南說明如何使用API呼叫，將現有欄位群組中的個別欄位新增至結構描述。 如需如何在Platform UI中執行類似的欄位式工作的詳細資訊，請參閱以下指南： [欄位式工作流程](../ui/field-based-workflows.md).
 
-有关模式注册表API功能的更多信息，请参阅 [API概述](../api/overview.md) 获取端点和进程的完整列表。
+如需Schema Registry API功能的詳細資訊，請參閱 [API概觀](../api/overview.md) 以取得完整的端點與程式清單。

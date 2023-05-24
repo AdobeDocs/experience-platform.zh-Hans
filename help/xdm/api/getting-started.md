@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；模式注册表；模式注册表；
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述登入；
 solution: Experience Platform
-title: 架构注册API快速入门
-description: 本文档简要介绍在尝试调用架构注册表API之前需要了解的核心概念。
+title: 開始使用結構描述登入API
+description: 本檔案會介紹您在嘗試呼叫Schema Registry API之前需要瞭解的核心概念。
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,50 +11,50 @@ ht-degree: 0%
 
 ---
 
-# 入门 [!DNL Schema Registry] API
+# 開始使用 [!DNL Schema Registry] API
 
-的 [!DNL Schema Registry] API允许您创建和管理各种体验数据模型(XDM)资源。 本文档简要介绍在尝试调用 [!DNL Schema Registry] API。
+此 [!DNL Schema Registry] API可讓您建立和管理各種Experience Data Model (XDM)資源。 本檔案會介紹您在嘗試呼叫「 」之前需要瞭解的核心概念。 [!DNL Schema Registry] API。
 
 ## 先决条件
 
-使用开发人员指南需要对Adobe Experience Platform的以下组件有一定的了解：
+使用開發人員指南需要深入瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   * [架构组合的基础知识](../schema/composition.md):了解XDM模式的基本构建块。
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM) System]](../home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   * [結構描述組合基本概念](../schema/composition.md)：瞭解XDM結構描述的基本建置組塊。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-XDM使用JSON模式格式来描述和验证摄取的客户体验数据的结构。 因此，强烈建议您查看 [官方JSON模式文档](https://json-schema.org/) 以更好地了解这项基础技术。
+XDM使用JSON結構描述格式來說明和驗證所擷取客戶體驗資料的結構。 因此，強烈建議您檢閱 [官方JSON結構描述檔案](https://json-schema.org/) 以進一步瞭解這項基礎技術。
 
-## 读取示例API调用
+## 讀取範例API呼叫
 
-的 [!DNL Schema Registry] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) (位于Experience Platform疑难解答指南中)。
+此 [!DNL Schema Registry] API檔案提供範例API呼叫，示範如何格式化請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑難排解指南中。
 
-## 收集所需标题的值
+## 收集必要標題的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Schema Registry]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
+中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Schema Registry]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关 [!DNL Platform]，请参阅 [沙盒文档](../../sandboxes/home.md).
+>如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱檔案](../../sandboxes/home.md).
 
-对 [!DNL Schema Registry] 需要 `Accept` 标头，其值确定API返回的信息格式。 请参阅 [接受标头](#accept) 部分以了解更多详细信息。
+對的所有查詢(GET)請求 [!DNL Schema Registry] 需要額外的 `Accept` 標頭，其值會決定API傳回的資訊格式。 請參閱 [接受標頭](#accept) 區段以取得更多詳細資訊。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
 
 * `Content-Type: application/json`
 
-## 知晓您的TENANT_ID {#know-your-tenant_id}
+## 知道您的TENANT_ID {#know-your-tenant_id}
 
-在整个API指南中，您将看到对 `TENANT_ID`. 此ID用于确保您创建的资源与组织中的资源命名正确且包含在组织中。 如果您不知道自己的ID，可以通过执行以下GET请求来访问它：
+在API指南中，您會看到 `TENANT_ID`. 此ID可用來確保您建立的資源能正確建立名稱空間，並包含在您的組織內。 如果您不知道您的ID，可以透過執行以下GET請求來存取它：
 
 **API格式**
 
@@ -75,7 +75,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关贵组织使用 [!DNL Schema Registry]. 这包括 `tenantId` 属性，其值是 `TENANT_ID`.
+成功的回應會傳回有關貴組織使用的資訊 [!DNL Schema Registry]. 這包括 `tenantId` 屬性，其值是您的 `TENANT_ID`.
 
 ```JSON
 {
@@ -152,92 +152,92 @@ curl -X GET \
  }
 ```
 
-## 了解 `CONTAINER_ID` {#container}
+## 瞭解 `CONTAINER_ID` {#container}
 
-调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`. 可以对其进行API调用的容器有两个：the `global` 容器和 `tenant` 容器。
+呼叫 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`. 可以針對兩個容器進行API呼叫： `global` 容器和 `tenant` 容器。
 
-### 全局容器
+### 全域容器
 
-的 `global` 容器包含所有标准Adobe和 [!DNL Experience Platform] 合作伙伴提供的类、架构字段组、数据类型和架构。 您只能对 `global` 容器。
+此 `global` 容器包含所有標準Adobe和 [!DNL Experience Platform] 合作夥伴提供的類別、結構描述欄位群組、資料型別和結構描述。 您只能對以下專案執行清單和查詢(GET)請求： `global` 容器。
 
-使用的调用的示例 `global` 容器将如下所示：
+使用 `global` 容器看起來像這樣：
 
 ```http
 GET /global/classes
 ```
 
-### 租户容器
+### 租使用者容器
 
-不要与你的独特 `TENANT_ID`, `tenant` 容器包含由组织定义的所有类、字段组、数据类型、架构和描述符。 这些属性对每个组织都是唯一的，这意味着其他组织无法查看或管理这些属性。 您可以对在 `tenant` 容器。
+不要與您的獨特之處混淆 `TENANT_ID`，則 `tenant` container包含組織定義的所有類別、欄位群組、資料型別、結構描述和描述項。 這些內容對每個組織都是獨一無二的，這表示其他組織無法看到或管理這些內容。 您可以針對在中建立的資源執行所有CRUD作業(GET、POST、PUT、PATCH、DELETE)。 `tenant` 容器。
 
-使用的调用的示例 `tenant` 容器将如下所示：
+使用 `tenant` 容器看起來像這樣：
 
 ```http
 POST /tenant/fieldgroups
 ```
 
-在中创建类、字段组、架构或数据类型时， `tenant` 容器中，它被保存到 [!DNL Schema Registry] 分配 `$id` 包含您的 `TENANT_ID`. 此 `$id` 在整个API中使用来引用特定资源。 示例 `$id` 值将在下一节中提供。
+當您在中建立類別、欄位群組、結構或資料型別時 `tenant` 容器，則會儲存至 [!DNL Schema Registry] 並指派 `$id` 包含您的 `TENANT_ID`. 此 `$id` 在整個API中使用來參考特定資源。 範例： `$id` 值會在下一節中提供。
 
-## 资源标识 {#resource-identification}
+## 資源識別 {#resource-identification}
 
-XDM资源通过 `$id` 属性，例如以下示例：
+XDM資源以 `$id` URI形式的屬性，例如以下範例：
 
 * `https://ns.adobe.com/xdm/context/profile`
 * `https://ns.adobe.com/{TENANT_ID}/schemas/7442343-abs2343-21232421`
 
-为了使URI对REST更友好，架构在名为的属性中还具有URI的点表示法编码 `meta:altId`:
+為了讓URI更適合REST，結構描述在名為的屬性中也有對URI進行點標籤法編碼 `meta:altId`：
 
 * `_xdm.context.profile`
 * `_{TENANT_ID}.schemas.7442343-abs2343-21232421`
 
-调用 [!DNL Schema Registry] API将支持URL编码的 `$id` URI或 `meta:altId` （点符号格式）。 最佳实践是使用URL编码 `$id` 对API进行REST调用时的URI，如下所示：
+呼叫 [!DNL Schema Registry] API將支援URL編碼的 `$id` URI或 `meta:altId` （點標籤法格式）。 最佳實務為使用URL編碼 `$id` 對API進行REST呼叫時的URI，如下所示：
 
 * `https%3A%2F%2Fns.adobe.com%2Fxdm%2Fcontext%2Fprofile`
 * `https%3A%2F%2Fns.adobe.com%2F{TENANT_ID}%2Fschemas%2F7442343-abs2343-21232421`
 
-## 接受标头 {#accept}
+## 接受標頭 {#accept}
 
-在 [!DNL Schema Registry] API、 `Accept` 需要标头来确定API返回的数据格式。 查找特定资源时，还必须在 `Accept` 标题。
+在中執行清單和查詢(GET)作業時 [!DNL Schema Registry] API、和 `Accept` 需要標題來決定API傳回的資料格式。 查詢特定資源時，版本號碼也必須包含在 `Accept` 標頭。
 
-下表列出了兼容的 `Accept` 标头值，包括具有版本号的值，以及有关使用API时将返回哪些内容的描述。
+下表列出相容專案 `Accept` 標頭值（包括含有版本號碼的值），以及使用API時傳回內容的說明。
 
 | Accept | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed-id+json` | 仅返回ID列表。 这最常用于列出资源。 |
-| `application/vnd.adobe.xed+json` | 返回具有原始的完整JSON架构的列表 `$ref` 和 `allOf` 包含。 用于返回完整资源列表。 |
-| `application/vnd.adobe.xed+json; version=1` | 原始XDM，包含 `$ref` 和 `allOf`. 具有标题和描述。 |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 属性和 `allOf` 已解决。 具有标题和描述。 |
-| `application/vnd.adobe.xed-notext+json; version=1` | 原始XDM，包含 `$ref` 和 `allOf`. 无标题或描述。 |
-| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 属性和 `allOf` 已解决。 无标题或描述。 |
-| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 属性和 `allOf` 已解决。 包含描述符。 |
-| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` 和 `allOf` 已解析，具有标题和描述。 已弃用的字段用 `meta:status` 属性 `deprecated`. |
+| `application/vnd.adobe.xed-id+json` | 僅傳回ID清單。 這最常用於列出資源。 |
+| `application/vnd.adobe.xed+json` | 傳回具有原始的完整JSON結構描述清單 `$ref` 和 `allOf` 包含。 這可用來傳回完整資源的清單。 |
+| `application/vnd.adobe.xed+json; version=1` | 原始XDM與 `$ref` 和 `allOf`. 有標題和說明。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 屬性和 `allOf` 已解決。 有標題和說明。 |
+| `application/vnd.adobe.xed-notext+json; version=1` | 原始XDM與 `$ref` 和 `allOf`. 無標題或說明。 |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 屬性和 `allOf` 已解決。 無標題或說明。 |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 屬性和 `allOf` 已解決。 包含描述項。 |
+| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` 和 `allOf` 已解決，具有標題和說明。 已棄用的欄位會以 `meta:status` 屬性： `deprecated`. |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->平台当前仅支持每个架构的一个主要版本(`1`)。 因此， `version` 必须始终 `1` 执行查找请求以返回架构的最新次要版本时。 有关架构版本控制的详细信息，请参阅下面的子部分。
+>Platform目前僅支援每個結構描述一個主要版本(`1`)。 因此，此專案的值 `version` 必須一律為 `1` 執行查詢請求以傳回結構描述的最新次要版本時。 如需架構版本設定的詳細資訊，請參閱以下小節。
 
-### 架构版本控制 {#versioning}
+### 結構描述版本設定 {#versioning}
 
-架构版本由 `Accept` 架构注册表API和 `schemaRef.contentType` 下游平台服务API负载中的属性。
+結構描述版本參考自 `Accept` 結構描述登入API和中的標頭 `schemaRef.contentType` 下游Platform服務API裝載中的屬性。
 
-目前，平台仅支持单个主要版本(`1`)。 根据 [模式演化规则](../schema/composition.md#evolution)，则架构的每次更新都必须是无损的，这意味着架构的新次要版本(`1.2`, `1.3`等) 始终向后兼容以前的次要版本。 因此，在指定 `version=1`，架构注册表始终返回 **最新** 主要版本 `1` ，这表示不返回以前的次要版本。
+目前，Platform僅支援單一主要版本(`1`)以取得相同的結果。 根據 [結構描述演化規則](../schema/composition.md#evolution)，結構描述的每次更新都必須是非破壞性的，這表示結構描述的新次要版本(`1.2`， `1.3`、等) 始終與先前的次要版本回溯相容。 因此，在指定 `version=1`，結構描述登入一律會傳回 **最新** 主要版本 `1` 結構描述中，這表示不會傳回先前的次要版本。
 
 >[!NOTE]
 >
->仅当数据集引用了架构，并且满足以下任一情况后，才会执行架构演变的无损要求：
+>只有在資料集參考結構描述且下列其中一個情況為真時，才會強制執行結構描述演化的非破壞性要求：
 >
->* 已将数据摄取到数据集中。
->* 该数据集已启用，可在“实时客户资料”中使用（即使未摄取任何数据）。
+>* 資料已內嵌至資料集。
+>* 此資料集已啟用以用於即時客戶個人檔案（即使尚未擷取任何資料）。
 >
->如果架构尚未与满足上述任一条件的数据集关联，则可以对其进行任何更改。 但是，在所有情况下， `version` 组件仍保持为 `1`.
+>如果結構描述尚未與符合上述其中一項條件的資料集建立關聯，則可以對資料集進行任何變更。 但在所有情況下， `version` 元件仍維持在 `1`.
 
-## XDM字段约束和最佳实践
+## XDM欄位限制和最佳實務
 
-架构的字段列在 `properties` 对象。 每个字段本身就是一个对象，其中包含用于描述和约束字段可包含的数据的属性。 请参阅 [在API中定义自定义字段](../tutorials/custom-fields-api.md) 适用于最常用的数据类型的代码示例和可选约束。
+結構描述的欄位會列在其中 `properties` 物件。 每個欄位本身都是一個物件，包含可描述和限制欄位可包含之資料的屬性。 請參閱以下指南： [在API中定義自訂欄位](../tutorials/custom-fields-api.md) 適用於最常用資料型別的程式碼範例和選擇性限制。
 
-以下示例字段说明了格式正确的XDM字段，并提供了有关命名约束和最佳实践的更多详细信息。 在定义包含相似属性的其他资源时，也可以应用这些实践。
+以下範例欄位說明正確格式化的XDM欄位，以及下面提供的有關命名限制和最佳實務的更多詳細資訊。 定義包含類似屬性的其他資源時，也可以套用這些實務。
 
 ```JSON
 "fieldName": {
@@ -251,17 +251,17 @@ XDM资源通过 `$id` 属性，例如以下示例：
 }
 ```
 
-* 字段对象的名称可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开头。
-   * **正确：** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
-   * **错误：** `_fieldName`
-* 字段对象的名称首选使用camelCase。 示例：`fieldName`
-* 字段应包括 `title`，以标题大小写写。 示例：`Field Name`
-* 字段需要 `type`.
-   * 定义某些类型可能需要可选 `format`.
-   * 如果需要特定的数据格式， `examples` 可以添加为数组。
-   * 也可使用注册表中的任何数据类型来定义字段类型。 请参阅 [创建数据类型](./data-types.md#create) （详细信息）端点指南中的。
-* 的 `description` 解释字段及有关字段数据的相关信息。 它应以完整的句子编写，并且使用清晰的语言，以便访问该模式的任何人都能够理解该字段的意图。
+* 欄位物件的名稱可能包含英數、破折號或底線字元，但 **可能不會** 以底線開頭。
+   * **正確：** `fieldName`， `field_name2`， `Field-Name`， `field-name_3`
+   * **不正確：** `_fieldName`
+* 欄位物件的名稱偏好使用camelCase。 示例：`fieldName`
+* 欄位應包含 `title`，以Title Case撰寫。 示例：`Field Name`
+* 欄位需要 `type`.
+   * 定義某些型別可能需要選擇性 `format`.
+   * 需要特定格式化的資料， `examples` 可作為陣列新增。
+   * 欄位型別也可以使用登入中的任何資料型別來定義。 請參閱以下小節： [建立資料型別](./data-types.md#create) 如需詳細資訊，請參閱資料型別端點指南。
+* 此 `description` 說明欄位及與欄位資料相關的資訊。 它應以完整的句子撰寫並加上清晰的語言，以便存取結構描述的任何人都能瞭解此欄位的意圖。
 
 ## 后续步骤
 
-要开始使用 [!DNL Schema Registry] API，请选择一个可用的端点指南。
+若要開始使用進行呼叫 [!DNL Schema Registry] API中，選取其中一個可用的端點參考線。

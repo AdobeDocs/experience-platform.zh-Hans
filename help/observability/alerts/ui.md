@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；日期范围
-title: 警报UI指南
-description: 了解如何在Experience Platform用户界面中管理警报。
+keywords: Experience Platform；首頁；熱門主題；日期範圍
+title: 警報UI指南
+description: 瞭解如何在Experience Platform使用者介面中管理警報。
 feature: Alerts
 exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
 source-git-commit: ed18ecea98497e0c20d44617436a013bf83b69d2
@@ -11,60 +11,60 @@ ht-degree: 0%
 
 ---
 
-# 警报UI指南
+# 警報UI指南
 
-利用Adobe Experience Platform用户界面，可根据Adobe Experience Platform可观性分析显示的量度，查看接收警报的历史记录。 UI还允许您查看、启用、禁用和订阅可用的警报规则。
+Adobe Experience Platform使用者介面可讓您根據Adobe Experience Platform可觀察性深入解析顯示的量度，檢視已接收警報的歷史記錄。 UI也可讓您檢視、啟用、停用和訂閱可用的警報規則。
 
 >[!NOTE]
 >
->有关Experience Platform中警报的简介，请参阅 [警报概述](./overview.md).
+>如需Experience Platform中警示的簡介，請參閱 [警報概觀](./overview.md).
 
-要开始配置，请选择 **[!UICONTROL 警报]** 中。
+若要開始使用，請選取 **[!UICONTROL 警報]** 左側導覽列中。
 
 ![](../images/alerts/ui/workspace.png)
 
-## 管理警报规则
+## 管理警示規則
 
-的 **[!UICONTROL 浏览]** 选项卡中列出了可能触发警报的可用规则。
+此 **[!UICONTROL 瀏覽]** 索引標籤會列出可能觸發警示的可用規則。
 
 ![](../images/alerts/ui/rules.png)
 
-从列表中选择规则，以在右边栏中查看其描述及其配置参数，包括阈值和严重性。
+從清單中選取規則，即可在右側邊欄中檢視其說明和設定引數，包括臨界值和嚴重度。
 
 ![](../images/alerts/ui/rule-details.png)
 
-选择省略号(**...**)，并且下拉列表会显示用于启用或禁用警报（取决于其当前状态）以及订阅或取消订阅警报的电子邮件通知的控件。
+選取省略符號(**...**)，下拉式清單則會顯示啟用或停用警報（視其目前狀態而定），以及訂閱或取消訂閱警報電子郵件通知的控制項。
 
 ![](../images/alerts/ui/disable-subscribe.png)
 
-## 启用电子邮件警报
+## 啟用電子郵件警示
 
-警报通知可直接发送到您的电子邮件。
+警示通知可直接傳送至您的電子郵件。
 
-选择铃铛图标(![钟图标](../images/alerts/ui/bell-icon.png))，位于用于显示通知和公告的右侧顶部功能区中。 在显示的下拉菜单中，选择齿轮图标(![齿轮图标](../images/alerts/ui/cog-icon.png))以访问Experience Cloud首选项页面。
+選取鈴鐺圖示(![鈴鐺圖示](../images/alerts/ui/bell-icon.png))，位於右上角功能區以顯示通知和公告。 在出現的下拉式清單中，選取齒輪圖示(![齒輪圖示](../images/alerts/ui/cog-icon.png))以存取Experience Cloud偏好設定頁面。
 
 ![](../images/alerts/ui/edit-preferences.png)
 
-的 **用户档案** 选项卡。 选择 **[!UICONTROL 通知]** 在左侧导航中访问电子邮件警报首选项。
+此 **設定檔** 標籤中會顯示。 選取 **[!UICONTROL 通知]** 在左側導覽中存取「電子郵件警示偏好設定」。
 
 ![](../images/alerts/ui/profile.png)
 
-滚动到 **电子邮件** 部分，然后选择 **[!UICONTROL 即时通知]**
+捲動至 **電子郵件** 區段並選取 **[!UICONTROL 即時通知]**
 
 ![](../images/alerts/ui/notifications.png)
 
-您订阅的任何警报现在都将发送到与您的Adobe ID帐户关联的电子邮件地址。
+您訂閱的任何警報現在都會傳送至連線至您Adobe ID帳戶的電子郵件地址。
 
-## 查看警报历史记录
+## 檢視警示歷史記錄
 
-的 **[!UICONTROL 历史]** 选项卡显示贵组织收到警报的历史记录，包括触发警报的规则、触发日期和解析日期（如果适用）。
+此 **[!UICONTROL 歷史記錄]** 索引標籤顯示貴組織收到警示的歷史記錄，包括觸發警示、觸發日期和解決日期（如果適用）的規則。
 
 ![](../images/alerts/ui/history.png)
 
-选择列出的警报，右边栏中将显示更多详细信息，包括触发警报的事件的简短摘要。
+選取列出的警報，右側邊欄中會顯示更多詳細資料，包括觸發警報之事件的簡短摘要。
 
 ![](../images/alerts/ui/history-details.png)
 
 ## 后续步骤
 
-本文档概述了如何在Platform UI中查看和管理警报。 请参阅 [可观测性洞察](../home.md) 以了解有关服务功能的详细信息。
+本檔案概述如何在Platform UI中檢視和管理警報。 請參閱以下文章的概觀： [可觀察性深入分析](../home.md) 以取得服務功能的詳細資訊。

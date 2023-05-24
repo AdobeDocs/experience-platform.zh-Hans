@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
+keywords: Experience Platform；首頁；熱門主題；CJA；歷程分析；customer journey analytics；行銷活動協調；協調；客戶歷程；歷程；歷程協調；功能；地區
 solution: Experience Platform
-title: Experience Platform文档语言支持
-description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
+title: Experience Platform檔案語言支援
+description: Adobe Experience Platform可讓組織集中和標準化客戶資料，再應用資料科學和機器學習，以大幅改善豐富個人化體驗的設計和傳遞。
 exl-id: 52acf8fb-8420-4fe3-8b8b-b7bfea465d25
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
@@ -11,14 +11,14 @@ ht-degree: 0%
 
 ---
 
-# Experience Platform文档语言支持
+# Experience Platform檔案語言支援
 
-Adobe Experience Platform文档提供了多种语言版本。
+Adobe Experience Platform檔案提供多種語言版本。
 
-要更改显示文档的语言，请在顶部导航中选择语言图标。
+若要變更顯示檔案的語言，請選取頂端導覽列中的語言圖示。
 
 ![](../images/overview/documentation-language.png)
 
-当语言下拉列表打开时，选择要在其中查看文档的语言。
+語言下拉式清單開啟時，選擇您要檢視檔案的語言。
 
 ![](../images/overview/documentation-language-select.png)

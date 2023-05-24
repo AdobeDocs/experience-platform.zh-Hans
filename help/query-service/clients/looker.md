@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；登录者；登录者；连接到查询服务；
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；查閱者；查閱者；連線到查詢服務；
 solution: Experience Platform
-title: 将Looker连接到查询服务
-description: 本文档将介绍如何将Looker与Adobe Experience Platform查询服务连接。
+title: 將查閱者連線至查詢服務
+description: 本檔案將逐步說明將Looker與Adobe Experience Platform查詢服務連線的步驟。
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
 source-git-commit: b059a0191fbf2c3e5d2dfceb9802e2aaa429f7ed
 workflow-type: tm+mt
@@ -11,39 +11,39 @@ ht-degree: 0%
 
 ---
 
-# 连接 [!DNL Looker] 查询服务
+# Connect [!DNL Looker] 至查詢服務
 
-本文档介绍了连接的步骤 [!DNL Looker] 与Adobe Experience Platform [!DNL Query Service].
+本檔案說明連線的步驟 [!DNL Looker] 使用Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
-> 本指南假定您已拥有 [!DNL Looker] 并熟悉如何导航其界面。 有关 [!DNL Looker] 可在 [官方 [!DNL Looker] 文档](https://docs.looker.com/).
+> 本指南假設您已擁有 [!DNL Looker] 並熟悉如何導覽其介面。 更多關於的資訊 [!DNL Looker] 您可在以下網址找到： [正式 [!DNL Looker] 檔案](https://docs.looker.com/).
 
-## 创建新数据库连接 {#create-connection}
+## 建立新的資料庫連線 {#create-connection}
 
-登录后 [!DNL Looker]，选择 **[!DNL Admin]**，后跟 **[!DNL Connections]**. 的 [!DNL Connections] 页面。 在 [!DNL Connections] 页面，选择 **[!DNL Add Connection]**.
+登入之後 [!DNL Looker]，選取 **[!DNL Admin]**，後接 **[!DNL Connections]**. 此 [!DNL Connections] 頁面隨即開啟。 於 [!DNL Connections] 頁面，選取 **[!DNL Add Connection]**.
 
-从此处，输入下面列出的连接设置的详细信息。 有关 [创建新数据库连接的说明和可用属性的说明](https://cloud.google.com/looker/docs/connecting-to-your-db#creating_a_new_database_connection).
+從這裡，輸入下列連線設定的詳細資料。 請參閱以下專案的官方Looker檔案： [建立新資料庫連線的指示和可用屬性的說明](https://cloud.google.com/looker/docs/connecting-to-your-db#creating_a_new_database_connection).
 
-- **[!DNL Name]:** 连接的名称。
-- **[!DNL Dialect]:** 用于SQL数据库的方言。 [!DNL Query Service] 使用 **[!DNL PostgreSQL]**.
-- **[!DNL Host and Port]:** 主机端点及其端口 [!DNL Query Service].
-- **[!DNL Database]:** 将使用的数据库。
-- **[!DNL Username and Password]:** 将使用的登录凭据。 用户名将以 `ORG_ID@AdobeOrg`.
-- **SSL**:启用SSL以确保跨网络的安全连接。
+- **[!DNL Name]：** 連線的名稱。
+- **[!DNL Dialect]：** SQL資料庫使用的方言。 [!DNL Query Service] 使用 **[!DNL PostgreSQL]**.
+- **[!DNL Host and Port]：** 的主機端點及其連線埠 [!DNL Query Service].
+- **[!DNL Database]：** 將使用的資料庫。
+- **[!DNL Username and Password]：** 將使用的登入認證。 使用者名稱將以下列形式提供 `ORG_ID@AdobeOrg`.
+- **SSL**：啟用SSL以確保網路上的安全連線。
 
-要查找将Looker与查询服务连接所需的凭据，请登录到平台UI并选择 **[!UICONTROL 查询]** 从左侧导航，然后是 **[!UICONTROL 凭据]**. 有关查找 **主机**, **端口**, **数据库**, **用户名**&#x200B;和 **密码** 凭据，请阅读 [凭据指南](../ui/credentials.md).
+若要尋找連線Looker與查詢服務所需的認證，請登入Platform UI並選取 **[!UICONTROL 查詢]** 從左側導覽，然後是 **[!UICONTROL 認證]**. 如需尋找您的檔案的詳細資訊， **主機**， **連線埠**， **資料庫**， **使用者名稱**、和 **密碼** 認證，請閱讀 [認證指南](../ui/credentials.md).
 
-![“Experience Platform查询”工作区的“凭据”页面中突出显示了“凭据”和“过期凭据”。](../images/clients/looker/query-service-credentials-page.png)
+![反白顯示認證和到期認證的「Experience Platform查詢」工作區的「認證」頁面。](../images/clients/looker/query-service-credentials-page.png)
 
 >[!IMPORTANT]
 >
->[!DNL Query Service] 此外，还提供了未过期的凭据，以便能够与第三方客户端进行一次性设置。 请参阅相关文档 [有关如何生成和使用未过期凭据的完整说明](../ui/credentials.md#non-expiring-credentials). 如果希望以一次性设置的方式连接Looker，则必须完成此过程。 的 `credential` 和 `technicalAccountId` 获取的值包括Looker的值 `password` 参数。
+>[!DNL Query Service] 也會提供不會到期的認證，以允許與協力廠商使用者端進行一次性設定。 請參閱以下檔案： [有關如何產生和使用不會到期的認證的完整指示](../ui/credentials.md#non-expiring-credentials). 如果您想要以一次性設定方式連線Looker，則必須完成此程式。 此 `credential` 和 `technicalAccountId` 取得的值包含Looker的值 `password` 引數。
 
-要了解Adobe Experience Platform中对第三方连接的SSL支持，请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md). 本文档提供了有关如何使用 `verify-full` SSL模式。
+若要瞭解Adobe Experience Platform對協力廠商連線的SSL支援，請參閱 [[!DNL Query Service] SSL檔案](./ssl-modes.md). 本檔案提供如何使用進行連線的指示 `verify-full` SSL模式。
 
-输入连接详细信息后，选择 **[!DNL Test These Settings]** 以确保凭据正常工作。 有关 [测试连接设置](https://cloud.google.com/looker/docs/connecting-to-your-db#testing_your_connection_settings) 在官方的Looker文档中提供。 成功连接后，屏幕上会显示一条消息，指示您可以连接。 连接成功后，选择 **[!DNL Add Connection]** 创建连接。
+輸入連線詳細資料後，請選取 **[!DNL Test These Settings]** 以確保您的憑證正常運作。 更多相關資訊 [測試您的連線設定](https://cloud.google.com/looker/docs/connecting-to-your-db#testing_your_connection_settings) Looker官方檔案中提供。 成功連線後，畫面上會顯示一則訊息，指示您可以連線。 連線成功後，請選取 **[!DNL Add Connection]** 以建立連線。
 
 ## 后续步骤
 
-现在你已经连接了 [!DNL Query Service]，您可以使用 [!DNL Looker] 来编写查询。 有关如何编写和运行查询的详细信息，请阅读 [运行查询指南](../best-practices/writing-queries.md).
+現在您已連線至 [!DNL Query Service]，您可以使用 [!DNL Looker] 以寫入查詢。 如需如何寫入和執行查詢的詳細資訊，請參閱 [running queries指南](../best-practices/writing-queries.md).

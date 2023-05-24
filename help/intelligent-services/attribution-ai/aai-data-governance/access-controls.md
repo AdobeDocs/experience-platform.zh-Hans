@@ -1,53 +1,53 @@
 ---
-keywords: Experience Platform；主页；热门主题；访问控制；Adobe Admin Console
+keywords: Experience Platform；首頁；熱門主題；存取控制；adobe admin console
 solution: Experience Platform
 feature: Attribution AI
-title: Attribution AI访问控制
-description: 本文档提供了有关基于属性的Attribution AI访问控制的信息。
-source-git-commit: d82fd8dd5efbe314c09d32905f8ab964640cc11a
+title: Attribution AI的存取控制
+description: 本檔案提供Attribution AI的屬性型存取控制相關資訊。
+exl-id: 3ed672bf-1fa6-4893-99e0-afc2b2179543
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 1%
 
 ---
 
-
 # 访问控制
 
-Attribution AI的访问控制通过Adobe Experience Platform(位于 [Adobe Admin Console](https://adminconsole.adobe.com/). 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
+Attribution AIAdobe Experience Platform的存取控制是透過 [Adobe Admin Console](https://adminconsole.adobe.com/). 此功能運用Admin Console中的產品設定檔，將使用者與許可權和沙箱連結。
 
-有关访问控制的更多信息，请参阅 [访问控制概述](../../../access-control/home.md).
+如需存取控制的詳細資訊，請參閱 [存取控制總覽](../../../access-control/home.md).
 
 ## 基于属性的访问控制
 
 >[!IMPORTANT]
 >
->基于属性的访问控制当前仅在有限版本中可用。
+>以屬性為基礎的存取控制目前僅在有限版本中可用。
 
-[基于属性的访问控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
+[以屬性為基礎的存取控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一項功能，可讓管理員根據屬性控制特定物件和/或權能的存取權。 屬性可以是新增至物件的中繼資料，例如新增至結構描述欄位或區段的標籤。 管理員定義包含管理使用者存取許可權的屬性的存取原則。
 
-利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
+此功能可讓您使用定義組織或資料使用範圍的標籤來標籤Experience Data Model (XDM)結構描述欄位。 同時，管理員可以使用使用者和角色管理介面來定義圍繞XDM結構描述欄位的存取原則，並更好地管理授予使用者或使用者群組（內部、外部或第三方使用者）的存取權。 此外，屬性型存取控制可讓管理員管理特定區段的存取權。
 
-通过基于属性的访问控制，管理员可以控制用户对所有平台工作流和资源中的敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+透過屬性型存取控制，管理員可控制使用者對所有Platform工作流程與資源的敏感個人資料(SPD)和個人識別資訊(PII)的存取權。 管理員可以定義僅能存取特定欄位及對應至這些欄位之資料的使用者角色。
 
-由于基于属性的访问控制，某些字段和功能可能会限制访问，并且对于某些Attribution AI服务模型不可用。 示例包括“身份”、“得分定义”和“克隆”。
+由於屬性型存取控制，某些欄位和功能可能會受到存取限制，並且無法用於某些Attribution AI服務模型。 範例包括「身分」、「評分定義」和「原地複製」。
 
-Attribution AI工作区顶部 **分析页面**，侧栏中显示的详细信息具有受限访问权限。
+在Attribution AI工作區頂端 **深入分析頁面**&#x200B;時，側邊欄中顯示的詳細資料具有受限制的存取權。
 
-![Attribution AI工作区中突出显示了受限架构字段。](../images/user-guide/access-restricted.png)
+![反白顯示受限制結構描述欄位的Attribution AI工作區。](../images/user-guide/access-restricted.png)
 
-如果您在 **[!UICONTROL 创建模型工作流]** 页面上，数据集名称旁边会显示一个警告标记，并显示一条消息： [!UICONTROL 排除受限信息].
+如果您在「 」上選取包含受限制結構的資料集 **[!UICONTROL 建立模型工作流程]** 頁面，資料集名稱旁會出現警告符號，並出現訊息： [!UICONTROL 已排除受限制的資訊].
 
-![Attribution AI工作区中突出显示了受限数据集字段。](../images/user-guide/restricted-info-excluded.png)
+![反白顯示受限制資料集欄位的Attribution AI工作區。](../images/user-guide/restricted-info-excluded.png)
 
-预览 **[!UICONTROL 创建模型工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
+當您在「 」上預覽包含受限結構描述的資料集時 **[!UICONTROL 建立模型工作流程]** 頁面，會出現警告以告知您 [!UICONTROL 由於存取限制，某些資訊不會顯示在資料集預覽中。]
 
-![Attribution AI工作区中突出显示了受限制的预览架构字段的结果。](../images/user-guide/restricted-dataset-preview.png)
+![反白顯示受限制預覽結構描述欄位結果的Attribution AI工作區。](../images/user-guide/restricted-dataset-preview.png)
 
-创建具有受限信息的模型后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
+建立包含限制資訊的模型後，請繼續前往 **[!UICONTROL 定義目標]** 步驟，頂端會顯示警告： [!UICONTROL 由於存取限制，某些資訊不會顯示在設定中。]
 
-![Attribution AI工作区中，模型结果的受限字段突出显示。](../images/user-guide/information-not-displayed-save-and-exit.png)
+![反白顯示模型結果之限制欄位的Attribution AI工作區。](../images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## 后续步骤
 
-通过阅读本指南，您已介绍中访问控制的主要原则 [!DNL Experience Platform]. 您现在可以继续 [访问控制用户指南](../overview.md) 以了解有关如何使用的详细步骤 [!DNL Admin Console] 创建产品配置文件并为 [!DNL Platform].
+閱讀本指南後，您已經瞭解中存取控制的主要原則 [!DNL Experience Platform]. 您現在可以繼續前往 [存取控制使用手冊](../overview.md) 以取得有關如何使用 [!DNL Admin Console] 若要建立產品設定檔並指派許可權 [!DNL Platform].

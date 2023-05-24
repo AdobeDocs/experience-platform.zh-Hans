@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；源；数据收集
-title: Adobe数据收集
-description: 本文档概述了Adobe数据收集源。
+keywords: Experience Platform；首頁；熱門主題；來源；來源；資料收集
+title: Adobe資料彙集
+description: 本檔案提供Adobe資料收集來源的概觀。
 exl-id: 3cb582a9-b852-4ede-8047-af1a47aa3647
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -10,30 +10,30 @@ ht-degree: 0%
 
 ---
 
-# Adobe数据收集
+# Adobe資料彙集
 
-Adobe Experience Platform提供了一套技术，允许您从客户端源收集客户体验数据，并将其发送到Adobe Experience Platform边缘网络，在该网络中，可以在几秒内对数据进行扩充、转换并分发到Adobe或非Adobe目标。
+Adobe Experience Platform提供了一套技術，可讓您從使用者端來源收集客戶體驗資料，並將其傳送至Adobe Experience Platform Edge Network，在那裡可以快速擴充和轉換資料，並將其分發到Adobe或非Adobe目的地。
 
-通过Adobe Experience Platform数据收集的源集成，您可以通过源目录访问边缘网络上的数据，包括为数据收集进行数据准备，并改进对警告的支持。
+Adobe Experience Platform資料收集的來源整合可讓您透過來源目錄存取Edge Network上的資料，包括資料收集的資料準備，以及改善對警告的支援。
 
-## 使用源工作区访问数据收集
+## 使用來源工作區來存取資料收集
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 [!UICONTROL Adobe应用程序] 类别，选择 **[!UICONTROL Adobe数据收集]**，然后选择 **[!UICONTROL 设置]**.
+在 [!UICONTROL Adobe應用程式] 類別，選取 **[!UICONTROL Adobe資料彙集]**，然後選取 **[!UICONTROL 設定]**.
 
-![数据收集](./images/data-collection/catalog.png)
+![資料彙集](./images/data-collection/catalog.png)
 
-数据收集UI将显示在 **[!UICONTROL 数据流]** 选项卡。
+資料收集UI會顯示在 **[!UICONTROL 資料串流]** 標籤。
 
-数据流是一种配置，用于告知边缘网络您希望将数据发送到的位置。 具体而言，数据流指定要将数据发送到的Experience Cloud产品，以及希望如何处理数据并将其存储在每个产品中。
+資料串流是一種設定，可告知Edge Network您要將資料傳送至何處。 具體而言，資料串流會指定您要將資料傳送至哪些Experience Cloud產品，以及您要將資料處理及儲存在每個產品中的方式。
 
-![数据流](./images/data-collection/datastreams.png)
+![資料串流](./images/data-collection/datastreams.png)
 
-有关如何在UI中配置数据收集的完整步骤，请参阅 [数据收集端到端概述](../../../collection/e2e.md).
+如需如何在UI中設定資料收集的完整步驟，請參閱 [資料收集端對端概觀](../../../collection/e2e.md).
 
 ## 后续步骤
 
-通过阅读本文档，您学习了如何使用源工作区访问数据收集UI。 有关数据收集的更多信息，请参阅 [数据收集概述](../../../collection/e2e.md).
+閱讀本檔案後，您已瞭解如何使用來源工作區來存取資料收集UI。 如需資料收集的詳細資訊，請參閱 [資料收集概觀](../../../collection/e2e.md).

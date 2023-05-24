@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；监视数据流；流服务API；流服务
+keywords: Experience Platform；首頁；熱門主題；監控資料流；流程服務api；流程服務
 solution: Experience Platform
-title: 使用流服务API监控源数据流
+title: 使用流量服務API監控來源資料流
 type: Tutorial
-description: 本教程介绍了使用流服务API监控流程运行数据是否完整、错误和量度的步骤。
+description: 本教學課程涵蓋使用流量服務API監控流量執行資料的完整性、錯誤和量度的步驟。
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,28 +12,28 @@ ht-degree: 2%
 
 ---
 
-# 使用流服务API监控源数据流
+# 使用流量服務API監控來源資料流
 
-本教程介绍使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教學課程涵蓋監控流程執行資料的步驟，瞭解資料的完整性、錯誤及使用下列專案的量度： [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
->本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从 [源概述](../../home.md) 在尝试使用本教程之前，请按照列出的步骤创建数据流。
+>本教學課程要求您具備有效資料流的ID值。 如果您沒有有效的資料流ID，請從「 」中選擇您選擇的聯結器 [來源概觀](../../home.md) 並依照概述的步驟建立資料流，然後再嘗試進行本教學課程。
 
 ## 快速入门
 
-此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程也要求您實際瞭解Adobe Experience Platform的下列元件：
 
-* [源](../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+* [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
 
-## 监视数据流
+## 監視資料流
 
-要查看数据流的状态，请向 [!DNL Flow Service] API，同时提供数据流的相应流ID。
+GET若要檢視資料流的狀態，請向 [!DNL Flow Service] API，同時提供資料流的對應流量ID。
 
 **API格式**
 
@@ -43,11 +43,11 @@ GET /runs?property=flowId=={FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 独特 `id` 值。 |
+| `{FLOW_ID}` | 唯一 `id` 您要監控之資料流的值。 |
 
 **请求**
 
-以下请求检索现有数据流的规范。
+以下請求會擷取現有資料流的規格。
 
 ```shell
 curl -X GET \
@@ -60,7 +60,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)。
+成功回應會傳回有關您資料流執行的詳細資訊，包括其建立日期、來源和目標連線以及資料流執行的唯一識別碼(`id`)。
 
 ```json
 {
@@ -224,15 +224,15 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `items` | 包含与您的特定流程运行关联的元数据的单个有效负荷。 |
-| `metrics` | 定义流运行中数据的特性。 |
-| `activities` | 定义数据的转换方式。 |
-| `durationSummary` | 定义流运行的开始和结束时间。 |
-| `sizeSummary` | 定义数据的卷（以字节为单位）。 |
-| `recordSummary` | 定义数据的记录计数。 |
-| `fileSummary` | 定义数据的文件计数。 |
-| `statusSummary` | 定义流运行是成功还是失败。 |
+| `items` | 包含與您特定流程執行相關聯的單一中繼資料裝載。 |
+| `metrics` | 定義資料流執行中的資料特性。 |
+| `activities` | 定義資料的轉換方式。 |
+| `durationSummary` | 定義流程執行的開始和結束時間。 |
+| `sizeSummary` | 定義資料量（位元組）。 |
+| `recordSummary` | 定義資料的記錄計數。 |
+| `fileSummary` | 定義資料的檔案計數。 |
+| `statusSummary` | 定義流程執行是成功還是失敗。 |
 
 ## 后续步骤
 
-通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何使用用户界面执行相同任务的信息，请参阅 [使用用户界面监控数据流](../ui/monitor.md)
+依照本教學課程，您已使用擷取資料流中的量度和錯誤資訊 [!DNL Flow Service] API。 您現在可以繼續根據擷取排程監控資料流，以追蹤其狀態和擷取率。 如需如何使用使用者介面執行相同工作的詳細資訊，請參閱以下教學課程： [使用使用者介面監控資料流](../ui/monitor.md)

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；API；基于属性的访问控制；基于属性的访问控制
+keywords: Experience Platform；首頁；熱門主題；API；屬性型存取控制；屬性型存取控制
 solution: Experience Platform
-title: 访问控制策略API端点
-description: 基于属性的访问控制API中的/policys端点允许您以编程方式管理Adobe Experience Platform中的策略。
+title: 存取控制原則API端點
+description: 屬性式存取控制API中的/policies端點可讓您以程式設計方式管理Adobe Experience Platform中的原則。
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
 source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 2%
 
 ---
 
-# 访问控制策略端点
+# 存取控制原則端點
 
 >[!NOTE]
 >
->如果传递了用户令牌，则令牌的用户必须对请求的组织具有“组织管理员”角色。
+>如果傳遞的是使用者權杖，則權杖的使用者必須具有請求組織的「組織管理員」角色。
 
-访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 这些策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 的 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
+存取控制原則是將屬性集合在一起以建立允許和不允許動作的宣告。 這些原則可以是本機或全域，並且可以覆寫其他原則。 此 `/policies` 屬性型存取控制API中的端點可讓您以程式設計方式管理原則，包括管理原則的規則相關資訊及其各自的主題條件。
 
 >[!IMPORTANT]
 >
->不要将此端点与 `/policies` 的端点 [策略服务API](../../../data-governance/api/policies.md)，用于管理数据使用策略。
+>此端點不可與 `/policies` 中的端點 [原則服務API](../../../data-governance/api/policies.md)，用來管理資料使用原則。
 
 ## 快速入门
 
-本指南中使用的API端点是基于属性的访问控制API的一部分。 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端點是以屬性為基礎的存取控制API的一部分。 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
 
-## 检索策略列表 {#list}
+## 擷取原則清單 {#list}
 
-向发送GET请求 `/policies` 端点来列出您组织中的所有现有策略。
+向發出GET要求 `/policies` 端點可列出組織中的所有現有原則。
 
 **API格式**
 
@@ -39,7 +39,7 @@ GET /policies
 
 **请求**
 
-以下请求可检索现有策略的列表。
+以下請求會擷取現有原則的清單。
 
 ```shell
 curl -X GET \
@@ -51,7 +51,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回现有策略的列表。
+成功的回應會傳回現有原則的清單。
 
 ```json
 {
@@ -132,25 +132,25 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与策略对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
-| `imsOrgId` | 可访问查询策略的组织。 |
-| `createdBy` | 创建策略的用户的ID。 |
-| `createdAt` | 策略的创建时间。 的 `createdAt` 属性以unix纪元时间戳显示。 |
-| `modifiedBy` | 上次更新策略的用户的ID。 |
-| `modifiedAt` | 上次更新策略的时间。 的 `modifiedAt` 属性以unix纪元时间戳显示。 |
-| `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的更多信息的属性。 |
-| `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 适用于主题的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这种情况下， `subjectCondition` 是应用于主题属性的类似查询的条件。 |
-| `rules` | 定义策略的规则集。 规则定义哪些属性组合被授权，以便主体成功对资源执行操作。 |
-| `rules.effect` | 考虑 `action`, `condition` 和 `resource`. 可能的值包括： `permit`, `deny`或 `indeterminate`. |
-| `rules.resource` | 主体可以或不能访问的资产或对象。  资源可以是文件、应用程序、服务器，甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是模式，则模式可以应用某些标签，从而有助于针对该模式的操作是允许还是不允许。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`, `create`, `edit`和 `delete`. |
+| `id` | 與原則相對應的ID。 此識別碼是自動產生的，可用於查詢、更新和刪除原則。 |
+| `imsOrgId` | 可存取查詢之原則的組織。 |
+| `createdBy` | 建立原則的使用者ID。 |
+| `createdAt` | 建立原則的時間。 此 `createdAt` 屬性會顯示在unix epoch時間戳記中。 |
+| `modifiedBy` | 上次更新原則的使用者ID。 |
+| `modifiedAt` | 上次更新原則的時間。 此 `modifiedAt` 屬性會顯示在unix epoch時間戳記中。 |
+| `name` | 原則的名稱。 |
+| `description` | （選用）可新增的屬性，以提供特定原則的進一步資訊。 |
+| `status` | 原則的目前狀態。 此屬性定義原則目前是否為 `active` 或 `inactive`. |
+| `subjectCondition` | 套用至主旨的條件。 主體是具有特定屬性的使用者，會請求存取資源以執行動作。 在這種情況下， `subjectCondition` 是套用至主旨屬性的類似查詢條件。 |
+| `rules` | 定義原則的規則集。 規則定義哪些屬性組合已獲授權，主體才能成功對資源執行動作。 |
+| `rules.effect` | 考量以下專案的值後所產生的影響： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.resource` | 主體可以或無法存取的資產或物件。  資源可以是檔案、應用程式、伺服器，甚至API。 |
+| `rules.condition` | 套用至資源的條件。 例如，如果資源是結構描述，則結構描述可以套用某些標籤，這有助於決定針對該結構描述的操作是允許還是不允許的。 |
+| `rules.action` | 允許主體對查詢的資源執行的動作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
-## 按ID查找策略详细信息 {#lookup}
+## 依ID查詢原則詳細資料 {#lookup}
 
-向发送GET请求 `/policies` 端点时，在请求路径中提供策略ID以检索有关该单个策略的信息。
+向發出GET要求 `/policies` 端點時，在請求路徑中提供原則ID以擷取有關該個別原則的資訊。
 
 **API格式**
 
@@ -160,11 +160,11 @@ GET /policies/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {POLICY_ID} | 要检索的策略的ID。 |
+| {POLICY_ID} | 您要擷取之原則的ID。 |
 
 **请求**
 
-以下请求可检索有关单个策略的信息。
+下列要求會擷取個別原則的相關資訊。
 
 ```shell
 curl -X GET \
@@ -176,7 +176,7 @@ curl -X GET \
 
 **响应**
 
-成功的请求返回有关查询的策略ID的信息。
+成功的要求會傳回有關查詢的原則ID的資訊。
 
 ```json
 {
@@ -214,26 +214,26 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与策略对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
-| `imsOrgId` | 可访问查询策略的组织。 |
-| `createdBy` | 创建策略的用户的ID。 |
-| `createdAt` | 策略的创建时间。 的 `createdAt` 属性以unix纪元时间戳显示。 |
-| `modifiedBy` | 上次更新策略的用户的ID。 |
-| `modifiedAt` | 上次更新策略的时间。 的 `modifiedAt` 属性以unix纪元时间戳显示。 |
-| `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的更多信息的属性。 |
-| `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 适用于主题的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这种情况下， `subjectCondition` 是应用于主题属性的类似查询的条件。 |
-| `rules` | 定义策略的规则集。 规则定义哪些属性组合被授权，以便主体成功对资源执行操作。 |
-| `rules.effect` | 考虑 `action`, `condition` 和 `resource`. 可能的值包括： `permit`, `deny`或 `indeterminate`. |
-| `rules.resource` | 主体可以或不能访问的资产或对象。  资源可以是文件、应用程序、服务器，甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是模式，则模式可以应用某些标签，从而有助于针对该模式的操作是允许还是不允许。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`, `create`, `edit`和 `delete`. |
+| `id` | 與原則相對應的ID。 此識別碼是自動產生的，可用於查詢、更新和刪除原則。 |
+| `imsOrgId` | 可存取查詢之原則的組織。 |
+| `createdBy` | 建立原則的使用者ID。 |
+| `createdAt` | 建立原則的時間。 此 `createdAt` 屬性會顯示在unix epoch時間戳記中。 |
+| `modifiedBy` | 上次更新原則的使用者ID。 |
+| `modifiedAt` | 上次更新原則的時間。 此 `modifiedAt` 屬性會顯示在unix epoch時間戳記中。 |
+| `name` | 原則的名稱。 |
+| `description` | （選用）可新增的屬性，以提供特定原則的進一步資訊。 |
+| `status` | 原則的目前狀態。 此屬性定義原則目前是否為 `active` 或 `inactive`. |
+| `subjectCondition` | 套用至主旨的條件。 主體是具有特定屬性的使用者，會請求存取資源以執行動作。 在這種情況下， `subjectCondition` 是套用至主旨屬性的類似查詢條件。 |
+| `rules` | 定義原則的規則集。 規則定義哪些屬性組合已獲授權，主體才能成功對資源執行動作。 |
+| `rules.effect` | 考量以下專案的值後所產生的影響： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.resource` | 主體可以或無法存取的資產或物件。  資源可以是檔案、應用程式、伺服器，甚至API。 |
+| `rules.condition` | 套用至資源的條件。 例如，如果資源是結構描述，則結構描述可以套用某些標籤，這有助於決定針對該結構描述的操作是允許還是不允許的。 |
+| `rules.action` | 允許主體對查詢的資源執行的動作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 
 ## 创建策略 {#create}
 
-要创建新策略，请向 `/policies` 端点。
+POST若要建立新原則，請向 `/policies` 端點。
 
 **API格式**
 
@@ -243,7 +243,7 @@ POST /policies
 
 **请求**
 
-以下请求会创建一个名为的新策略： `acme-integration-policy`.
+下列要求會建立名為的新原則： `acme-integration-policy`.
 
 ```shell
 curl -X POST \
@@ -270,18 +270,18 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的更多信息的属性。 |
-| `imsOrgId` | 包含策略的组织。 |
-| `rules` | 定义策略的规则集。 规则定义哪些属性组合被授权，以便主体成功对资源执行操作。 |
-| `rules.effect` | 考虑 `action`, `condition` 和 `resource`. 可能的值包括： `permit`, `deny`或 `indeterminate`. |
-| `rules.resource` | 主体可以或不能访问的资产或对象。  资源可以是文件、应用程序、服务器，甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是模式，则模式可以应用某些标签，从而有助于针对该模式的操作是允许还是不允许。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`, `create`, `edit`和 `delete`. |
+| `name` | 原則的名稱。 |
+| `description` | （選用）可新增的屬性，以提供特定原則的進一步資訊。 |
+| `imsOrgId` | 包含原則的組織。 |
+| `rules` | 定義原則的規則集。 規則定義哪些屬性組合已獲授權，主體才能成功對資源執行動作。 |
+| `rules.effect` | 考量以下專案的值後所產生的影響： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.resource` | 主體可以或無法存取的資產或物件。  資源可以是檔案、應用程式、伺服器，甚至API。 |
+| `rules.condition` | 套用至資源的條件。 例如，如果資源是結構描述，則結構描述可以套用某些標籤，這有助於決定針對該結構描述的操作是允許還是不允許的。 |
+| `rules.action` | 允許主體對查詢的資源執行的動作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 **响应**
 
-成功的请求会返回新创建的策略，包括其唯一策略ID和关联的规则。
+成功的請求會傳回新建立的原則，包括其唯一的原則ID和相關聯的規則。
 
 ```json
 {
@@ -311,18 +311,18 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与策略对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
-| `name` | 策略的名称。 |
-| `rules` | 定义策略的规则集。 规则定义哪些属性组合被授权，以便主体成功对资源执行操作。 |
-| `rules.effect` | 考虑 `action`, `condition` 和 `resource`. 可能的值包括： `permit`, `deny`或 `indeterminate`. |
-| `rules.resource` | 主体可以或不能访问的资产或对象。  资源可以是文件、应用程序、服务器，甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是模式，则模式可以应用某些标签，从而有助于针对该模式的操作是允许还是不允许。 |
-| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`, `create`, `edit`和 `delete`. |
+| `id` | 與原則相對應的ID。 此識別碼是自動產生的，可用於查詢、更新和刪除原則。 |
+| `name` | 原則的名稱。 |
+| `rules` | 定義原則的規則集。 規則定義哪些屬性組合已獲授權，主體才能成功對資源執行動作。 |
+| `rules.effect` | 考量以下專案的值後所產生的影響： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules.resource` | 主體可以或無法存取的資產或物件。  資源可以是檔案、應用程式、伺服器，甚至API。 |
+| `rules.condition` | 套用至資源的條件。 例如，如果資源是結構描述，則結構描述可以套用某些標籤，這有助於決定針對該結構描述的操作是允許還是不允許的。 |
+| `rules.action` | 允許主體對查詢的資源執行的動作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 
-## 按策略ID更新策略 {#put}
+## 依原則ID更新原則 {#put}
 
-要更新单个策略的规则，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
+PUT若要更新個別原則的規則，請向 `/policies` 端點，同時在請求路徑中提供您要更新之原則的ID。
 
 **API格式**
 
@@ -332,7 +332,7 @@ PUT /policies/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {POLICY_ID} | 要更新的策略的ID。 |
+| {POLICY_ID} | 您要更新的原則ID。 |
 
 **请求**
 
@@ -361,7 +361,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回更新的策略。
+成功的回應會傳回更新的原則。
 
 ```json
 {
@@ -389,9 +389,9 @@ curl -X PUT \
 }
 ```
 
-## 更新策略属性 {#patch}
+## 更新原則屬性 {#patch}
 
-要更新单个策略的属性，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
+若要更新個別原則的屬性，請向以下發出PATCH請求： `/policies` 端點，同時在請求路徑中提供您要更新之原則的ID。
 
 **API格式**
 
@@ -401,11 +401,11 @@ PATCH /policies/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {POLICY_ID} | 要更新的策略的ID。 |
+| {POLICY_ID} | 您要更新的原則ID。 |
 
 **请求**
 
-以下请求将替换 `/description` 在策略ID中 `c3863937-5d40-448d-a7be-416e538f955e`.
+以下請求會取代 `/description` 在原則ID中 `c3863937-5d40-448d-a7be-416e538f955e`.
 
 ```shell
 curl -X PATCH \
@@ -426,13 +426,13 @@ curl -X PATCH \
 
 | 操作 | 描述 |
 | --- | --- |
-| `op` | 操作调用，用于定义更新角色所需的操作。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 要更新的参数的路径。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新角色所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 要更新的引數路徑。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回查询的策略ID，其中包含更新的描述。
+成功回應會傳回查詢的原則識別碼和更新的說明。
 
 ```json
 {
@@ -460,9 +460,9 @@ curl -X PATCH \
 }
 ```
 
-## 删除策略 {#delete}
+## 刪除原則 {#delete}
 
-要删除策略，请向 `/policies` 端点。
+若要刪除原則，請向以下發出DELETE要求： `/policies` 端點，同時提供您要刪除之原則的ID。
 
 **API格式**
 
@@ -472,11 +472,11 @@ DELETE /policies/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {POLICY_ID} | 要删除的策略的ID。 |
+| {POLICY_ID} | 您要刪除之原則的ID。 |
 
 **请求**
 
-以下请求将删除ID为的策略 `c3863937-5d40-448d-a7be-416e538f955e`.
+以下請求會刪除ID為的原則 `c3863937-5d40-448d-a7be-416e538f955e`.
 
 ```shell
 curl -X DELETE \
@@ -488,6 +488,6 @@ curl -X DELETE \
 
 **响应**
 
-成功响应会返回HTTP状态204（无内容）和空白正文。
+成功的回應會傳回HTTP狀態204 （無內容）和空白內文。
 
-您可以通过尝试对策略进行查询(GET)请求来确认删除。 您将收到HTTP状态404（未找到），因为该策略已从管理中删除。
+您可以嘗試對原則進行查詢(GET)請求以確認刪除。 您會收到HTTP狀態404 （找不到），因為原則已從管理中移除。

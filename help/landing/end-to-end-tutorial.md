@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
-title: Adobe Experience Platform端到端示例工作流
-description: 了解Adobe Experience Platform的基本端到端工作流程（高级）。
+keywords: Experience Platform；首頁；熱門主題；CJA；歷程分析；customer journey analytics；行銷活動協調；協調；客戶歷程；歷程；歷程協調；功能；地區
+title: Adobe Experience Platform端對端範例工作流程
+description: 概略瞭解Adobe Experience Platform的基本端對端工作流程。
 exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
@@ -10,92 +10,92 @@ ht-degree: 3%
 
 ---
 
-# Adobe Experience Platform端到端示例工作流
+# Adobe Experience Platform端對端範例工作流程
 
-Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。  Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
+Adobe Experience Platform是市面上功能最強大、最靈活、最開放的系統，可建置和管理可提升客戶體驗的完整解決方案。  Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 
-基于RESTful API，Platform向开发人员提供了系统的完整功能，支持使用熟悉的工具轻松集成企业解决方案。 Platform允许您通过以下方式获得客户的整体视图：摄取客户数据，将数据分段到要定位的受众，并将这些受众激活到外部目标。 以下教程将演示一个端到端工作流，其中显示了从通过源摄取到通过目标激活受众的所有步骤。
+Platform以RESTful API為基礎，向開發人員公開系統的完整功能，支援使用熟悉工具輕鬆整合企業解決方案。 Platform可讓您內嵌客戶資料、將資料分段至您要鎖定的對象，並將這些對象啟動至外部目的地，進而取得客戶的整體檢視。 以下教學課程顯示端對端工作流程，顯示從透過來源擷取到透過目的地啟用對象的所有步驟。
 
-![Experience Platform端到端工作流](./images/end-to-end-tutorial/platform-end-2-end-workflow.png)
+![Experience Platform端對端工作流程](./images/end-to-end-tutorial/platform-end-2-end-workflow.png)
 
 ## 快速入门
 
-此端到端工作流使用多个Adobe Experience Platform服务。 以下是此工作流中使用的服务列表，其概述链接包括：
+此端對端工作流程使用多個Adobe Experience Platform服務。 以下是此工作流程中使用的服務清單，以及指向其概述的連結：
 
-- [[!DNL Experience Data Model (XDM)]](../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../xdm/schema/best-practices.md).
-- [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，全面了解客户及其行为。
-- [源](../sources/home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-- [[!DNL Segmentation Service]](../segmentation/home.md): [!DNL Segmentation Service] 允许您将存储在 [!DNL Experience Platform] 与属于较小群组的个人（例如客户、潜在客户、用户或组织）相关。
-- [[!DNL Real-Time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-- [数据集](../catalog/datasets/overview.md):中数据持久性的存储和管理结构 [!DNL Experience Platform].
-- [目标](../destinations/home.md):目标是与常用应用程序的预建集成，允许从平台无缝激活数据以用于跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例。
+- [[!DNL Experience Data Model (XDM)]](../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。 為了充分利用「分段」，請確保您的資料已根據 [資料模型化的最佳實務](../xdm/schema/best-practices.md).
+- [[!DNL Identity Service]](../identity-service/home.md)：透過跨裝置和系統橋接身分，為您提供客戶及其行為的全方位檢視。
+- [來源](../sources/home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+- [[!DNL Segmentation Service]](../segmentation/home.md)： [!DNL Segmentation Service] 可讓您分割儲存在 [!DNL Experience Platform] 和歸入較小群組的個人（例如客戶、潛在客戶、使用者或組織）相關的資訊。
+- [[!DNL Real-Time Customer Profile]](../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+- [資料集](../catalog/datasets/overview.md)：資料持續存在的儲存和管理結構 [!DNL Experience Platform].
+- [目的地](../destinations/home.md)：目的地是預先建立的與常用應用程式的整合，可讓您順暢地從Platform啟用資料，用於跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例。
 
 ## 创建 XDM 架构
 
-在将数据摄取到平台中之前，必须先创建一个XDM架构以描述该数据的结构。 在下一步中摄取数据时，您会将传入数据映射到此架构。 要了解如何创建XDM模式示例，请阅读 [使用模式编辑器创建模式](../xdm/tutorials/create-schema-ui.md).
+在將資料內嵌至Platform之前，您必須先建立XDM結構描述以說明該資料的結構。 當您在下一步擷取資料時，會將您的傳入資料對應至此結構描述。 若要瞭解如何建立範例XDM結構描述，請閱讀以下教學課程： [使用結構編輯器建立結構](../xdm/tutorials/create-schema-ui.md).
 
-上述教程将演示如何为架构设置标识字段。 标识字段表示一个字段，可用于标识与记录或时间系列事件相关的个人人员。 身份字段是在Platform中构建客户身份图形的关键组件，这最终会影响实时客户资料如何将不同的数据片段合并在一起，以获得客户的完整视图。 有关如何在Platform中查看身份图形的更多详细信息，请参阅 [如何使用身份图查看器](../identity-service/ui/identity-graph-viewer.md).
+上述教學課程說明如何設定結構描述的身分欄位。 身分欄位代表可用來識別與記錄或時間序列事件相關的個人欄位。 身分欄位是在Platform中建構客戶身分圖表的重要元件，這最終會影響Real-time Customer Profile如何將不同的資料片段合併在一起，以獲得客戶的完整檢視。 如需如何在Platform中檢視身分圖表的詳細資訊，請參閱以下教學課程： [如何使用身分圖表檢視器](../identity-service/ui/identity-graph-viewer.md).
 
-您需要启用架构以在实时客户用户档案中使用，以便能够根据您的架构根据数据构建客户用户档案。 请参阅 [为用户档案启用模式](../xdm/ui/resources/schemas.md#profile) 有关更多信息，请参阅架构UI指南。
+您需要啟用結構描述以用於Real-Time Customer Profile，以便可以根據您的結構描述從資料建構客戶設定檔。 請參閱以下小節： [為設定檔啟用結構描述](../xdm/ui/resources/schemas.md#profile) 如需詳細資訊，請參閱結構描述UI指南。
 
-## 将数据摄取到平台
+## 將您的資料內嵌至Platform
 
-创建XDM架构后，您便可以开始将数据导入系统。
+建立XDM結構描述後，您就可以開始將資料帶入系統。
 
-引入Platform的所有数据都会在摄取时存储到单个数据集。 数据集是映射到特定XDM架构的数据记录集合。 在数据可供使用之前 [!DNL Real-Time Customer Profile]，则必须专门配置相关数据集。 有关如何为配置文件启用数据集的完整说明，请参阅 [数据集UI指南](../catalog/datasets/user-guide.md#enable-profile) 和 [数据集配置API教程](../profile/tutorials/dataset-configuration.md). 配置数据集后，您可以开始向其中摄取数据。
+所有帶入Platform的資料都會在擷取時儲存至個別資料集。 資料集是對應至特定XDM結構描述的資料記錄集合。 在可以使用您的資料之前， [!DNL Real-Time Customer Profile]，相關資料集必須經過專門設定。 如需有關如何為設定檔啟用資料集的完整指示，請參閱 [資料集UI指南](../catalog/datasets/user-guide.md#enable-profile) 和 [資料集設定API教學課程](../profile/tutorials/dataset-configuration.md). 設定資料集後，您就可以開始將資料內嵌到其中。
 
-Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。例如，您可以使用 [Amazon S3](../sources/tutorials/api/create/cloud-storage/s3.md). 可在 [源连接器概述](../sources/home.md).
+Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。例如，您可以使用來內嵌資料 [Amazon S3](../sources/tutorials/api/create/cloud-storage/s3.md). 完整的可用來源清單可在以下網址找到： [來源聯結器概觀](../sources/home.md).
 
-如果您使用Amazon S3作为源连接器，则可以按照 [创建Amazon S3连接器](../sources/tutorials/api/create/cloud-storage/s3.md) 或上的UI教程 [创建Amazon S3连接器](../sources/tutorials/ui/create/cloud-storage/s3.md) 了解如何在连接器中创建、连接和摄取数据。
+如果您使用Amazon S3作為來源聯結器，您可以遵循以下任一API教學課程中的指示： [建立Amazon S3聯結器](../sources/tutorials/api/create/cloud-storage/s3.md) 或上的使用者介面教學課程 [建立Amazon S3聯結器](../sources/tutorials/ui/create/cloud-storage/s3.md) 以瞭解如何在聯結器內建立、連線及內嵌資料。
 
-有关源连接器的更多详细说明，请阅读 [源连接器概述](../sources/home.md). 要了解有关流量服务（源所基于的API）的更多信息，请阅读 [流量服务API参考](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+如需來源聯結器的詳細指示，請閱讀 [來源聯結器概觀](../sources/home.md). 若要深入瞭解流量服務（來源所依據的API），請參閱 [流程服務API參考](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-在通过源连接器将数据引入Platform并存储到启用了配置文件的数据集中后，系统会根据您在XDM架构中配置的身份数据自动创建客户配置文件。
+透過來源聯結器將您的資料匯入Platform並儲存在已啟用設定檔的資料集後，就會根據您在XDM結構描述中設定的身分資料自動建立客戶設定檔。
 
-首次将数据上传到新数据集时，或在设置新的ETL流程或数据源时，建议仔细检查数据，以确保数据已正确上传，并且生成的配置文件包含您预期的数据。 有关如何在Platform UI中访问客户用户档案的更多信息，请参阅 [Real-Time Customer Profile UI指南](../profile/ui/user-guide.md). 有关如何使用实时客户用户档案API访问用户档案的详细信息，请参阅 [使用实体端点](../profile/api/entities.md).
+首次將資料上傳到新資料集時，或設定新的ETL程式或資料來源時，建議仔細檢查資料，以確保資料已正確上傳，且產生的設定檔包含您期望的資料。 如需如何在Platform UI中存取客戶設定檔的詳細資訊，請參閱 [Real-Time Customer Profile UI指南](../profile/ui/user-guide.md). 如需有關如何使用即時客戶設定檔API存取設定檔的詳細資訊，請參閱以下指南： [使用實體端點](../profile/api/entities.md).
 
-## 评估数据
+## 評估您的資料
 
-从摄取的数据成功生成用户档案后，即可使用分段来评估数据。 区段是定义由个人子集与用户档案存储共享的特定属性或行为的过程，以便将可销售的人群与客户群区分开来。 要了解有关分段的更多信息，请阅读 [分段服务概述](../segmentation/home.md).
+從擷取的資料成功產生設定檔後，您就可以使用細分評估資料。 區段是定義個人資料存放區中個人子集所共用的特定屬性或行為的程式，以便從您的客戶群中區分可行銷人群組。 若要深入瞭解細分，請閱讀 [細分服務總覽](../segmentation/home.md).
 
-### 创建区段定义
+### 建立區段定義
 
-要开始使用，您必须创建一个区段定义来将客户聚类，以创建目标受众。 区段定义是规则的集合，您可以使用这些规则定义要定位的受众。 要创建区段定义，您可以按照UI指南中有关使用 [区段生成器](../segmentation/ui/segment-builder.md) 或上的API教程 [创建区段](../segmentation/tutorials/create-a-segment.md).
+若要開始使用，您必須建立區段定義，以叢集客戶來建立目標對象。 區段定義是規則的集合，可用來定義您要鎖定的對象。 若要建立區段定義，您可以依照使用者介面指南中的指示，使用 [區段產生器](../segmentation/ui/segment-builder.md) 或上的API教學課程 [建立區段](../segmentation/tutorials/create-a-segment.md).
 
-创建区段定义后，请确保记住区段定义ID。
+建立區段定義後，請務必記下區段定義ID。
 
-### 评估区段定义
+### 評估您的區段定義
 
-创建区段定义后，您可以创建区段作业以作为一次性实例来评估区段，也可以创建计划以持续评估区段。
+建立區段定義後，您可以建立區段工作，將區段評估為一次性例項，或建立排程持續評估區段。
 
-要按需评估区段定义，您可以创建区段任务。 区段作业是一个异步流程，可根据引用的区段定义和合并策略创建新的受众区段。 合并策略是一组规则，Platform使用这些规则来确定将使用哪些数据来创建客户配置文件，以及当源之间存在差异时，将按优先顺序排列哪些数据。 要了解如何使用合并策略，请参阅 [合并策略UI指南](../profile/merge-policies/ui-guide.md).
+若要依需求評估節段定義，您可以建立節段工單。 區段作業為非同步程式，可根據參照的區段定義和合併原則建立新的受眾區段。 合併原則是一組規則，Platform可使用此規則來決定將使用哪些資料建立客戶設定檔，以及當來源之間有差異時，會優先處理哪些資料。 若要瞭解如何使用合併原則，請參閱 [合併原則UI指南](../profile/merge-policies/ui-guide.md).
 
-创建和评估区段作业后，您可以获取有关该区段的信息，如受众的大小或处理过程中可能发生的错误。 要了解如何创建区段作业（包括您需要提供的所有详细信息），请阅读 [区段作业开发人员指南](../segmentation/api/segment-jobs.md).
+建立並評估區段作業後，您就可以取得有關區段的資訊，例如對象規模或處理期間可能發生的錯誤。 若要瞭解如何建立區段作業，包括您需要提供的所有詳細資訊，請閱讀 [區段工作開發人員指南](../segmentation/api/segment-jobs.md).
 
-要持续评估区段定义，您可以创建并启用计划。 计划是一种工具，可用于在指定的时间每天自动运行一次区段作业。 要了解如何创建和启用计划，您可以按照 [计划终结点](../segmentation/api/schedules.md).
+若要持續評估區段定義，您可以建立並啟用排程。 排程是一種工具，可用於在指定時間每天自動執行區段作業一次。 若要瞭解如何建立及啟用排程，您可以依照以下網站的API指南中的指示： [排程端點](../segmentation/api/schedules.md).
 
-## 导出评估的数据
+## 匯出您的評估資料
 
-创建一次性区段作业或持续计划后，您可以创建区段导出作业以将结果导出到数据集，或将结果导出到目标。 以下各节提供了有关这两个选项的指导。
+建立一次性區段作業或進行中的排程後，您可以建立區段匯出作業以將結果匯出至資料集，或將結果匯出至目的地。 以下章節提供這兩個選項的指引。
 
-### 将评估的数据导出到数据集
+### 將評估過的資料匯出至資料集
 
-创建一次性区段作业或持续计划后，可以通过创建区段导出作业导出结果。 区段导出作业是将评估受众的相关信息发送到数据集的异步任务。
+建立一次性區段作業或進行中的排程後，您可以建立區段匯出作業來匯出結果。 區段匯出作業是一種非同步工作，會將評估對象的相關資訊傳送至資料集。
 
-在创建导出作业之前，必须先创建数据集以将数据导出到。 要了解如何创建数据集，请阅读 [创建目标数据集](../segmentation/tutorials/evaluate-a-segment.md#create-dataset) 在有关评估区段的教程中，确保在创建数据集ID后记下该数据集ID。 创建数据集后，您可以创建导出作业。 要了解如何创建导出作业，您可以按照 [导出作业端点](../segmentation/api/export-jobs.md).
+在建立匯出作業之前，您必須先建立資料集以匯出資料。 若要瞭解如何建立資料集，請閱讀以下章節： [建立目標資料集](../segmentation/tutorials/evaluate-a-segment.md#create-dataset) 在關於評估區段的教學課程中，請確保在建立後記下資料集ID。 建立資料集後，您可以建立匯出作業。 若要瞭解如何建立匯出作業，您可以依照 [匯出作業端點](../segmentation/api/export-jobs.md).
 
-### 将评估的数据导出到目标
+### 將評估過的資料匯出至目的地
 
-或者，在创建一次性区段作业或正在进行的计划后，您可以将结果导出到目标。 目标是可在其中激活和传递受众的端点，例如外部服务上的Adobe应用程序。 可在 [目标目录](../destinations/catalog/overview.md).
+或者，在建立一次性區段作業或進行中的排程後，您可以將結果匯出至目的地。 目的地是端點，例如外部服務上的Adobe應用程式，可在此啟用和傳送對象。 可使用的目的地完整清單請參閱 [目的地目錄](../destinations/catalog/overview.md).
 
-有关如何将数据激活到批量营销目标或电子邮件营销目标的说明，请参阅 [如何使用Platform UI激活受众数据以批量导出配置文件目标](../destinations/ui/activate-batch-profile-destinations.md) 和 [关于如何使用流量服务API连接到批处理目标和激活数据的指南](../destinations/api/connect-activate-batch-destinations.md).
+如需如何啟用批次或電子郵件行銷目的地的資料說明，請參閱以下教學課程： [如何使用Platform UI啟用受眾資料以批次設定檔匯出目的地](../destinations/ui/activate-batch-profile-destinations.md) 和 [有關如何使用Flow Service API連線到批次目的地和啟用資料的指南](../destinations/api/connect-activate-batch-destinations.md).
 
-## 监控平台数据活动
+## 監視您的Platform資料活動
 
-Platform允许您通过使用数据流跟踪数据的处理方式，数据流是跨Platform各个组件移动数据的作业的表示形式。 这些数据流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后数据集会被利用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活到目标之前。 监控仪表板可直观地呈现数据流的历程。 要了解如何在Platform UI中监视数据流，请参阅 [监控源的数据流](../dataflows/ui/monitor-sources.md) 和 [监控目标数据流](../dataflows/ui/monitor-destinations.md).
+Platform可讓您透過資料流追蹤資料的處理方式，資料流代表在平台各種元件之間行動資料的工作。 這些資料流是跨不同服務設定的，有助於將資料從來源聯結器移至目標資料集，然後由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最終啟用至目的地之前。 監控儀表板可讓您以視覺化方式呈現資料流的歷程。 若要瞭解如何監視Platform UI中的資料流，請參閱上的教學課程 [監控來源的資料流](../dataflows/ui/monitor-sources.md) 和 [監控目的地的資料流](../dataflows/ui/monitor-destinations.md).
 
-您还可以通过使用 [!DNL Observability Insights]. 您可以通过Platform UI订阅警报通知，或将其发送到配置的WebHook。 有关如何从Experience PlatformUI查看、启用、禁用和订阅可用警报的更多详细信息，请参阅 [[!UICONTROL 警报] UI指南](../observability/alerts/ui.md). 有关如何通过Web挂接接收警报的详细信息，请参阅 [订阅Adobe I/O事件通知](../observability/alerts/subscribe.md).
+您也可以透過使用統計量度和事件通知來監控Platform活動，方法是使用 [!DNL Observability Insights]. 您可以透過Platform UI訂閱警報通知，或將其傳送至已設定的webhook。 如需如何從Experience PlatformUI檢視、啟用、停用和訂閱可用警報的詳細資訊，請參閱 [[!UICONTROL 警報] UI指南](../observability/alerts/ui.md). 如需如何透過Webhook接收警報的詳細資訊，請參閱以下指南： [訂閱Adobe I/O事件通知](../observability/alerts/subscribe.md).
 
 ## 后续步骤
 
-通过阅读本教程，您大致了解了适用于Platform的简单端到端流程。 要了解有关Adobe Experience Platform的更多信息，请阅读 [平台概述](./home.md). 要了解有关使用Platform UI和Platform API的更多信息，请阅读 [Platform UI指南](./ui-guide.md) 和 [Platform API指南](./api-guide.md) 分别进行。
+閱讀本教學課程後，您已大致瞭解Platform的簡易端對端流程。 若要進一步瞭解Adobe Experience Platform，請閱讀 [平台概觀](./home.md). 若要進一步瞭解使用Platform UI和Platform API，請閱讀 [Platform UI指南](./ui-guide.md) 和 [平台API指南](./api-guide.md) （分別）。

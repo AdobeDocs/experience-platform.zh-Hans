@@ -1,26 +1,27 @@
 ---
-title: 金融帐户数据类型
-description: 本文档概述了金融帐户XDM数据类型。
-source-git-commit: 32d8798d426696d8fd4ace4c53a8bf9b4db26b61
+title: 財務帳戶資料型別
+description: 本檔案提供財務帳戶XDM資料型別的概觀。
+exl-id: badf9b20-d397-4b46-b045-19c69806fe8e
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 8%
+source-wordcount: '103'
+ht-degree: 5%
 
 ---
 
-# [!UICONTROL 财务帐户] 数据类型
+# [!UICONTROL 財務帳戶] 資料型別
 
-[!UICONTROL 财务帐户] 是一种标准的XDM数据类型，用于描述财务帐户的详细信息，包括其类型、所有者和当前余额。
+[!UICONTROL 財務帳戶] 是標準的XDM資料型別，說明財務帳戶的詳細資訊，包括其型別、擁有者和目前餘額。
 
 ![](../images/data-types/financial-account.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `currentAccountBalance` | [[!UICONTROL 货币]](./currency.md) | 帐户的当前余额。 |
-| `financialAccountId` | [!UICONTROL 字符串] | 帐户的唯一ID。 |
-| `financialAccountName` | [!UICONTROL 字符串] | 分配给帐户的名称。 |
-| `financialAccountType` | [!UICONTROL 字符串] | 财务帐户的类型，如支票、储蓄或退休。 |
+| `currentAccountBalance` | [[!UICONTROL 货币]](./currency.md) | 帳戶的目前餘額。 |
+| `financialAccountId` | [!UICONTROL 字符串] | 帳戶的唯一識別碼。 |
+| `financialAccountName` | [!UICONTROL 字符串] | 指派給帳戶的名稱。 |
+| `financialAccountType` | [!UICONTROL 字符串] | 財務帳戶的型別，例如支票、儲蓄或退休。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json).
+如需資料型別的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json).

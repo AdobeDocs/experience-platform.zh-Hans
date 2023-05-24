@@ -1,25 +1,25 @@
 ---
-title: 审核事件API端点
-description: 了解如何使用审核查询API在Experience Platform中检索审核事件。
+title: 稽核事件API端點
+description: 瞭解如何使用稽核查詢API在Experience Platform中擷取稽核事件。
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
 source-git-commit: c7887391481def872c40dd6ed1193bf562b9d0cf
 workflow-type: tm+mt
-source-wordcount: '477'
-ht-degree: 9%
+source-wordcount: '474'
+ht-degree: 8%
 
 ---
 
-# 审核事件端点
+# 稽核事件端點
 
-审核日志用于提供各种服务和功能的用户活动详细信息。 日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。的 `/audit/events` 的端点 [!DNL Audit Query] API允许您以编程方式在 [!DNL Platform].
+稽核記錄可用於提供各種服務和功能的使用者活動細節。 日志中记录的每个操作都包含元数据，这些元数据可指示操作类型、日期和时间、执行操作的用户的电子邮件 ID 以及与操作类型相关的其他属性。此 `/audit/events` 中的端點 [!DNL Audit Query] API可讓您以程式設計方式為貴組織的活動擷取事件資料，位置在： [!DNL Platform].
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端點是 [[!DNL Audit Query] API](https://developer.adobe.com/experience-platform-apis/references/audit-query/). 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功對任一檔案發出呼叫所需必要標題的重要資訊 [!DNL Experience Platform] API。
 
-## 列出审核事件
+## 列出稽核事件
 
-您可以通过向 `/audit/events` 端点，指定要在有效负载中检索的事件。
+您可以向以下發出GET要求來擷取事件資料： `/audit/events` 端點，指定您要在裝載中擷取的事件。
 
 **API格式**
 
@@ -27,13 +27,13 @@ ht-degree: 9%
 GET /audit/events
 ```
 
-的 [!DNL Audit Query] API支持在列出事件时使用查询参数来筛选页面和结果。
+此 [!DNL Audit Query] API支援在列出事件時使用查詢引數來頁面和篩選結果。
 
 | 参数 | 描述 |
 | --- | --- |
-| `limit` | 响应中要返回的最大记录数。 默认 `limit` 是50。 |
-| `start` | 指向返回的搜索结果的第一个项目的指针。 要访问下一页结果，此参数应以所指示的相同数量递增。 示例：要访问限制为50的请求的下一页结果，请使用参数start=50，然后为之后的页面使用start=100，依此类推。 |
-| `queryId` | 在对/audit/events端点进行查询时，响应将包含queryId字符串属性。 要在单独的调用中进行相同的查询，您可以将ID值作为单个查询参数包含在内，而无需再次手动配置搜索参数。 |
+| `limit` | 回應中可傳回的最大記錄數。 預設 `limit` 為50。 |
+| `start` | 針對傳回的搜尋結果，指向第一個專案的指標。 若要存取結果的下一頁，此引數的增量應該與限制所指示的量相同。 範例：若要存取limit=50之要求的下一頁結果，請使用start=50引數，然後對其後的頁面使用start=100引數，以此類推。 |
+| `queryId` | 向/audit/events端點提出查詢時，回應會包含queryId字串屬性。 若要在個別呼叫中進行相同的查詢，您可以將ID值納入為單一查詢引數，而非再次手動設定搜尋引數。 |
 
 **请求**
 
@@ -49,7 +49,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回在请求中指定的量度和过滤器的生成数据点。
+成功的回應會針對請求中指定的量度和篩選器傳回產生的資料點。
 
 ```json
 {
@@ -144,16 +144,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `customerAuditLogList` | 一个数组，其对象表示请求中指定的每个事件。 每个对象都包含有关过滤器配置和返回的事件数据的信息。 |
-| `userEmail` | 执行事件的用户的电子邮件。 |
-| `eventType` | 事件的类型。 事件类型包括 `Core` 和 `Enhanced`. |
-| `imsOrgId` | 发生事件的组织的ID。 |
-| `permissionResource` | 提供权限的产品或功能可执行该操作。 资源可以是以下任一类型： <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
-| `permissionType` | 操作涉及的权限类型。 |
-| `assetType` | 执行操作的平台资源类型。 |
-| `assetId` | 执行操作的平台资源的唯一标识符。 |
-| `assetName` | 执行操作的平台资源的名称。 |
-| `action` | 为事件记录的操作类型。 操作可以是以下任一操作： <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`remove` </li><li>`reset` </li><li>`segment activate` </li><li>`segment remove` </li><li>`update` </li></ul> |
-| `status` | 操作的状态。 状态可以是以下任一状态： </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul> |
+| `customerAuditLogList` | 一個陣列，其物件代表要求中指定的每個事件。 每個物件都包含有關篩選設定和傳回事件資料的資訊。 |
+| `userEmail` | 執行事件之使用者的電子郵件。 |
+| `eventType` | 事件型別。 事件型別包括 `Core` 和 `Enhanced`. |
+| `imsOrgId` | 發生事件之組織的ID。 |
+| `permissionResource` | 提供許可權的產品或功能會執行動作。 資源可以是下列任一專案： <ul><li>`Activation` </li><li>`ActivationAssociation` </li><li>`AnalyticSource` </li><li>`AudienceManagerSource` </li><li>`BizibleSource` </li><li>`CustomerAttributeSource` </li><li>`Dataset` </li><li>`EnterpriseSource` </li><li>`LaunchSource` </li><li>`MarketoSource` </li><li>`ProductProfile` </li><li>`ProfileConfig` </li><li>`Sandbox` </li><li>`Schema` </li><li>`Segment` </li><li>`StreamingSource` </li></ul> |
+| `permissionType` | 動作涉及的許可權型別。 |
+| `assetType` | 執行動作的Platform資源型別。 |
+| `assetId` | 執行動作的Platform資源的唯一識別碼。 |
+| `assetName` | 執行動作的Platform資源名稱。 |
+| `action` | 為事件記錄的動作型別。 動作可以是下列任一專案： <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`remove` </li><li>`reset` </li><li>`segment activate` </li><li>`segment remove` </li><li>`update` </li></ul> |
+| `status` | 動作的狀態。 狀態可以是下列任一專案： </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

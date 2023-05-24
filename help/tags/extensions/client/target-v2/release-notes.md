@@ -1,6 +1,6 @@
 ---
-title: Adobe Target v2扩展的发行说明
-description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
+title: Adobe Target v2擴充功能發行說明
+description: Adobe Experience Platform中Adobe Target v2標籤擴充功能的最新發行說明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
 source-git-commit: ffbb68c9c84b834984e1adb2640d8806ce9f9962
 workflow-type: tm+mt
@@ -9,125 +9,125 @@ ht-degree: 24%
 
 ---
 
-# Adobe Target v2扩展发行说明
+# Adobe Target v2擴充功能發行說明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-## v0.19.2（2023年2月14日）
+## v0.19.2 （2023年2月14日）
 
-- 修复了允许将超时设置为数据元素的问题。
+- 修正允許將逾時設為資料元素的問題。
 
-## v0.19.1（2023年2月3日）
+## v0.19.1 （2023年2月3日）
 
-- 更新以支持 `at.js` v2.10.1
-- 客户端自定义Mbox参数现在可以正确支持点表示法
-- VEC中不再进行投放调用
+- 更新以支援 `at.js` v2.10.1
+- 使用者端自訂Mbox引數現在可正確支援點標籤法
+- VEC中不再進行傳遞呼叫
 
-## v0.19.0（2022年9月19日）
+## v0.19.0 （2022年9月19日）
 
-- 更新以支持 `at.js` v2.10.0
-- 添加了跨域跟踪支持。
+- 更新以支援 `at.js` v2.10.0
+- 新增跨網域追蹤支援。
 
-## v0.18.0（2022年6月1日）
+## v0.18.0 （2022年6月1日）
 
-- 更新以支持 `at.js` v2.9.0
+- 更新以支援 `at.js` v2.9.0
 - 添加了对用户代理客户端提示的支持。
 
-## v0.17.1（2022年1月28日）
+## v0.17.1 （2022年1月28日）
 
-- 更新以支持 `at.js` v2.8.1
-- 已修复 `pageLoad` 未映射到 `target-global-mbox` 在ODD混合执行模式下
-- 修复了 `mbox` 请求
-- 升级了开发依赖项以修复安全漏洞
+- 更新以支援 `at.js` v2.8.1
+- 固定 `pageLoad` 未對應到 `target-global-mbox` 在ODD混合執行模式下
+- 已修正的分析詳細資料問題 `mbox` 請求
+- 升級開發相依性以修正安全性弱點
 
-## v0.17.0（2022年1月7日）
+## v0.17.0 （2022年1月7日）
 
-- 更新以支持 `at.js` v2.8.0，现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。要选择退出此功能，请设置 `telemetryEnabled` to `false` in `targetGlobalSettings`.
+- 更新以支援 `at.js` v2.8.0，現在正在收集功能使用情況和效能遙測資料。  不收集个人数据。若要選擇退出此功能，請設定 `telemetryEnabled` 至 `false` 在 `targetGlobalSettings`.
 
-## v0.16.0（2021年10月28日）
+## v0.16.0 （2021年10月28日）
 
-- 更新以支持 `at.js` v2.7.0，现在可从Adobe Target下载。
+- 更新以支援 `at.js` v2.7.0，現可透過Adobe Target下載。
 
-## v0.15.1（2021年7月20日）
+## v0.15.1 （2021年7月20日）
 
-- 修复了 `stringify` 函数名称冲突，这会导致为 `sessionId`, `requestId`，等等。
+- 已修正的問題 `stringify` 函式名稱衝突，導致產生的UUID值不正確 `sessionId`， `requestId`、等等。
 
-## v0.15.0（2021年7月16日）
+## v0.15.0 （2021年7月16日）
 
-- 向Cookie添加安全属性，只要 `at.js` settings secureOnly设置为true
-- 现在，使用 `triggerView()`
-- 修复了与 `CONTENT_RENDERING_NO_OFFERS` 事件。 现在，当没有从Target返回内容时，可以正确触发该事件
-- 使用预取请求时，可正确返回A4T点击量度详细信息
-- UUID生成不再使用 `Math.random()`，但依赖于 `window.crypto`
-- `sessionId` 每次网络调用时，Cookie到期正确延长
-- SPA视图缓存初始化现已得到正确处理，并遵循 `viewsEnable` 设置
+- 每當發生以下情況時，為Cookie新增安全屬性： `at.js` 設定secureOnly設為true
+- 回應Token現在可使用於 `triggerView()`
+- 修正與相關的錯誤 `CONTENT_RENDERING_NO_OFFERS` 事件。 現在只要沒有從Target傳回內容，就會正確觸發
+- 使用預先擷取請求時，會正確傳回A4T點選量度詳細資料
+- UUID產生不再使用 `Math.random()`，但須仰賴 `window.crypto`
+- `sessionId` Cookie過期在每次網路呼叫時會正確延長
+- SPA檢視快取初始化現在可以正確處理並遵循 `viewsEnable` 設定
 
-## v0.14.2（2021年6月2日）
+## v0.14.2 （2021年6月2日）
 
-- 修复最终包中包含两个 `at.js` 版本中，一个具有On-Device Decisioning，一个不具有。
+- 修正最終套件組合包含兩個的錯誤 `at.js` 版本，一個包含「裝置上決策」，另一個不包含。
 
-## v0.14.1（2021年5月19日）
+## v0.14.1 （2021年5月19日）
 
-- 修复了v0.14版本中引入的回归问题，在该版本中，Load Target操作会触发全局mbox调用
+- v0.14版本中推出的修正回歸，其中Load Target動作會引發全域mbox呼叫
 
-## v0.14（2021年5月14日）
+## v0.14 （2021年5月14日）
 
-- 添加了新操作Load Target（加载目标） [设备内决策](./overview.md#load-target-with-on-device-decisioning)，加载 `at.js` 2.5，具有设备内决策功能
-- 已更新 `at.js` 到2.5
+- 已新增以下專案的新動作：載入Target [裝置上決策](./overview.md#load-target-with-on-device-decisioning)，會載入 `at.js` 2.5搭配裝置上決策功能
+- 已更新 `at.js` 至2.5
 
 
-## v0.13.7（2021年3月25日）
+## v0.13.7 （2021年3月25日）
 
-- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 只应包含在 `pageLoad` 请求。
-- 修复了标记扩展中的文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
-- 已更新 `at.js` 到2.4.1。
+- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 僅應包含在 `pageLoad` 要求。
+- 已修正標籤擴充功能中的檔案和視窗全域物件的問題，方法是用全域物件的直接參照來取代全域物件相依性。
+- 已更新 `at.js` 至2.4.1。
 
-## v0.13.6（2021年1月25日）
+## v0.13.6 （2021年1月25日）
 
 - 添加了对统一配置文件/平台 ID 交付 API customerId 的支持
 - 修复了无效样式标记注入的问题
-- 已将at.s更新至2.4.0
-- 解决了未定义参数可能导致投放请求错误的问题
+- 將at.s更新至2.4.0
+- 未定義的引數可能導致錯誤傳送請求的問題，已解決
 
-## v0.13.4（2020年11月25日）
+## v0.13.4 （2020年11月25日）
 
 - 修复了 mbox 参数不显示在 UI 中的错误
 - 品牌更新
-- 更新了 `at.js` 版本到2.3.3
+- 已更新 `at.js` 2.3.3版本
 
-## v0.13.3（2020年7月24日）
+## v0.13.3 （2020年7月24日）
 
 - 修复了导致 QA 模式链接对闲置活动无效的错误
 - 修复了脚本或代码将 `default` 属性添加到 `window` 或 `document` 时扩展失败的错误
 
-## v0.13.2（2020年6月15日）
+## v0.13.2 （2020年6月15日）
 
-- 修复了使用CNAME和Edge覆盖时， `at.js` 1.x可能会错误地创建服务器域，从而导致Target请求失败
-- 修复了以下问题：当使用适用于Target的v2标记扩展和Adobe Analytics标记扩展时，Target会延迟Analytics sendBeacon调用
+- 修正使用CNAME和Edge覆寫時的問題，其中 `at.js` 1.x可能會錯誤建立伺服器網域，導致Target請求失敗
+- 修正使用Target的v2標籤擴充功能和Adobe Analytics標籤擴充功能時，Target會延遲Analytics sendBeacon呼叫的問題
 - 改进了 `deviceIdLifetime` 设置，使其可通过 `targetGlobalSettings` 覆盖
 
-## v0.13.0（2020年3月25日）
+## v0.13.0 （2020年3月25日）
 
-- 已更新 `at.js` 到v2.3。
+- 已更新 `at.js` 升級至v2.3。
 - 在 adobe.target.getOffer API 中添加了 Target 全局 Mbox 支持
 - 修复了参数和页面加载参数无法正确处理的问题
 
 ## v0.12.0（2019 年 10 月 10 日）
 
-- 已更新 `at.js` 到v2.2。
-- 改进了Experience CloudID库(ECID)v4.4与 `at.js` 2.2。
-- 以前，ECID库会在之前发出两次阻止调用 `at.js` 可以获取体验。 现已减少为一次调用，显著提高了性能。
+- 已更新 `at.js` 升級至v2.2。
+- 改善Experience CloudID程式庫(ECID) v4.4和之間整合的效能 `at.js` 2.2.
+- 之前，ECID程式庫曾進行兩次封鎖呼叫 `at.js` 可擷取體驗。 现已减少为一次调用，显著提高了性能。
 
 >[!NOTE]
->请将您的ECID标记扩展升级到v4.4.1以利用此性能增强功能。
+>請將您的ECID標籤擴充功能升級至v4.4.1，以運用此效能增強功能。
 
-## v0.11.1（2019年7月31日）
+## v0.11.1 （2019年7月31日）
 
-- 更新了扩展版本以使用 `at.js` 2.1.1
+- 更新要使用的擴充功能版本 `at.js` 2.1.1
 - 添加了处理参数的修复
 
-## v0.11.0（2019年6月3日）
+## v0.11.0 （2019年6月3日）
 
-- 要支持的新标记扩展 `at.js` 2.1
+- 要支援的新標籤延伸模組 `at.js` 2.1

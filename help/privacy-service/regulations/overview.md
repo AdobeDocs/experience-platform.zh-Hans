@@ -1,41 +1,41 @@
 ---
-keywords: Experience Platform；主页；热门主题；GDPR;GDPR;CCPA;PDPA;LGPD;LGPD；概述；法规；法规；法规；法规；隐私；隐私；
+keywords: Experience Platform；首頁；熱門主題；GDPR；gdpr；CCPA；CCPA；PDPA；PDPA；LGPD；lgpd；概觀；概觀；法規；法規；法規；法規；隱私；隱私；
 solution: Experience Platform
-title: 隐私法规概述
-description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
+title: 隱私權法規概述
+description: 本檔案概述Adobe Experience Cloud支援的各種隱私權法規。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
-source-wordcount: '724'
-ht-degree: 1%
+source-wordcount: '721'
+ht-degree: 0%
 
 ---
 
-# 隐私法规概述
+# 隱私權法規概述
 
-本文档概述了Adobe Experience Cloud支持的各种隐私法规。
+本檔案概述Adobe Experience Cloud支援的各種隱私權法規。
 
-通过使用 [Adobe Experience Platform Privacy Service](../home.md)，则Experience Cloud会根据以下法规支持访问和删除请求：
+透過使用 [Adobe Experience Platform Privacy Service](../home.md)，Experience Cloud根據下列法規支援存取和刪除請求：
 
-| 监管 | 描述 |
+| 法規 | 描述 |
 | --- | --- |
-| APA（澳大利亚） | 的 [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act) 促进和保护个人的隐私，并规范澳大利亚政府机构和组织处理个人信息的方式。 《隐私法》包括适用于私营部门组织的原则。 例如，个人有权了解为什么收集个人信息以及如何使用个人信息，有权访问、删除其数据和更正个人信息。 |
-| CCPA（加利福利亚） | 的 [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) 增强了美国加利福尼亚州居民的隐私权和消费者保护。 CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择退出将其数据出售给第三方的权利。 |
-| 克普拉（加利福利亚） | 的 [[!DNL California Consumer Privacy Rights Act (CPRA)]](https://cppa.ca.gov/regulations/consumer_privacy_act.html) 对《加州消费者隐私法案》(CCPA)的部分内容进行了扩展和修改。 CPRA通过增加消费者权利和通过更广泛的敏感个人信息定义来扩展涵盖的数据类型，为加州的消费者数据隐私确立了新的基准。  此外，CPRA还成立了加州隐私保护机构，这是一家专门负责实施和实施数据隐私规则的新机构。 |
-| GDPR（欧盟） | 的 [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) 为欧洲经济区(EEA)成员引入了几项新的数据隐私权，包括访问权和被遗忘权。 这意味着，在EEA中居住且您的企业收集了其个人数据的任何人，都可以随时请求访问或删除其数据。<br><br>英国（退欧后）有其自己的版本的《英国 — GDPR条例》 ，该条例为英国公民提供与欧洲经济区版本相同的权利。 |
-| HIPAA（美利坚合众国） | 的 [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html) 是一项旨在提高医疗效率、提高医疗保险便携性、保护患者和健康计划成员隐私的美国联邦法律。 根据HIPAA，个人有权访问和修改其信息，并获得其医疗记录或健康信息的副本。 受保实体和受保实体的业务联系人必须遵守HIPAA法规。 |
-| LGPD（巴西） | 的 [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) 旨在规范巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择不将其数据出售给第三方的权利。 |
-| 新西兰 [!DNL Privacy Act] | 的 [新西兰 [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) 控制各机构如何收集、使用、披露、储存和获取新西兰公民和组织的个人信息。 2020年，该法案的最新版本对隐私法进行了重大更新，包括新的犯罪、增加罚款、强制通知数据泄露，以及增强隐私专员的权力。 |
-| PDPA（泰国） | 的 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。 |
-| VCDPA（弗吉尼亚） | 的 [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) 为弗吉尼亚州居民（“消费者”）提供了新的数据隐私权，包括访问、删除和更正个人数据的权利。 消费者还有权选择退出个人数据销售、选择退出基于个人数据的分析以及处理个人广告目的。 |
+| APA （澳洲） | 此 [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act) 促進及保護個人隱私，並規範澳洲政府機構及組織處理個人資訊的方式。 隱私權法案包含適用於私營部門組織的原則。 例如，個人有權瞭解為何收集個人資訊以及如何加以使用，以及存取、清除其資料和更正個人資訊的能力。 |
+| CCPA （加利福利亞州） | 此 [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) 加強美國加州居民的隱私權和消費者保護。 CCPA為加州居民提供了新的資料隱私權，包括存取和刪除其個人資料的權利、知悉其個人資料是否遭到販售或揭露（以及對象是誰）的權利，以及選擇退出將其資料販售予第三方的權利。 |
+| CPRA （加利福利亞州） | 此 [[!DNL California Consumer Privacy Rights Act (CPRA)]](https://cppa.ca.gov/regulations/consumer_privacy_act.html) 擴充及修正加州消費者隱私法(CCPA)的部分內容。 CPRA提升消費者權益，並透過更廣義的敏感個人資訊定義，擴大資料型別，建立加州消費者資料隱私權的新基準。  此外，CPRA還成立了加州隱私保護局，專責實作及執行資料隱私權規則的新機構。 |
+| GDPR （歐盟） | 此 [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) 為歐洲經濟區(EEA)成員引進了許多新的資料隱私權，包括存取權和被遺忘權。 這表示生活在EEA中、其個人資料已由您的企業收集的任何人，可隨時請求存取或刪除其資料。<br><br>英國（英國退歐後）有自己的法規版本，UK-GDPR，其公民享有與EEA版本相同的權利。 |
+| HIPAA （美國） | 此 [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html) 是一項美國聯邦法律，旨在改善醫療效率、改善健康保險便利性，並保護病人和健康計畫成員的隱私。 根據HIPAA，個人有權存取和修改其資訊，並取得其醫療記錄或健康資訊的副本。 涵蓋的實體與涵蓋的實體的業務夥伴必須遵循HIPAA法規。 |
+| LGPD （巴西） | 此 [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) 旨在規範巴西境內所有個人或自然人的個人資料處理方式。 LGPD賦予巴西公民存取和刪除其個人資料的權利，得知其個人資料是否遭到販售或揭露（以及對象是誰）的權利，以及選擇退出將資料販售予第三方的權利。 |
+| 新西兰 [!DNL Privacy Act] | 此 [紐西蘭 [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) 控制機構如何收集、使用、披露、儲存和存取紐西蘭公民和組織的個人資訊。 2020年，最新版本的法案對這些隱私權法進行了重大更新，包括新增罪行、增加罰款、強制通知資料洩露，以及增加隱私權專員的權力。 |
+| PDPA （泰國） | 此 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 引入的目的是保護泰國資料擁有者，避免非法收集、使用或公開其個人資料。 受歐盟GDPR啟發，該法規授予泰國公民請求存取或刪除其儲存的個人資料的權利。 |
+| VCDPA （維吉尼亞州） | 此 [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) 為維吉尼亞州居民（「消費者」）提供新的資料隱私權，包括存取、刪除和更正個人資料的權利。 消費者也有權選擇退出個人資料銷售、選擇退出根據個人資料進行個人資料分析，以及處理個人廣告目的。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤
 
-有关受支持法规的更多信息，请参阅以下文件：
+如需支援法規的詳細資訊，請參閱下列檔案：
 
-* [隐私法规常见问题解答](./faq.md)
-* [隐私法规术语](./terminology.md)
+* [隱私權法規常見問題集](./faq.md)
+* [隱私權法規術語](./terminology.md)
 
-要了解如何支持Experience Cloud应用程序上存储的数据的客户访问和删除请求，请参阅 [Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md).
+若要瞭解如何支援客戶存取和刪除儲存在Experience Cloud應用程式上的資料請求，請參閱以下指南： [Privacy Service和Experience Cloud應用程式](../experience-cloud-apps.md).

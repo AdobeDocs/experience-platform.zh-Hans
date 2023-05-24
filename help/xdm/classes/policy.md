@@ -1,36 +1,37 @@
 ---
-title: 策略类
-description: 本文档概述了Experience Data Model(XDM)中的策略类。
-source-git-commit: c0437b8f9d93c46dbec991a33a893a5b9e0cdf2c
+title: 原則類別
+description: 本檔案提供Experience Data Model (XDM)中原則類別的概觀。
+exl-id: 56cc8c69-84a0-493e-85c5-e0cd994e4bee
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '244'
-ht-degree: 8%
+source-wordcount: '241'
+ht-degree: 7%
 
 ---
 
-# [!UICONTROL 策略] 类
+# [!UICONTROL 原則] 類別
 
-在Experience Data Model(XDM)中， [!UICONTROL 策略] 类可捕获定义保险单的最小属性集。
+在Experience Data Model (XDM)中， [!UICONTROL 原則] class會擷取定義保單的最小屬性集。
 
 ![](../images/classes/policy.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `assignedBeneficiary` | 数组 [[!UICONTROL 人员]](../data-types/person.md) 数据类型 | 捕获分配给政策的受益人（或受益人）。 |
-| `benefitAmount` | [[!UICONTROL 货币]](../data-types/currency.md) | 根据政策条款支付的金额。 |
-| `location` | [[!UICONTROL 邮政地址]](../data-types/postal-address.md) | 发放保险单的位置。 |
-| `owner` | [!UICONTROL 对象] | 捕获策略持有者的用户档案信息。 |
-| `owner.faxPhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 房主的传真号码。 |
-| `owner.homeAddress` | [[!UICONTROL 邮政地址]](../data-types/postal-address.md) | 房主的住址。 |
-| `owner.homePhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 房主的家电话号码。 |
-| `owner.mobilePhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 业主的手机号码。 |
-| `owner.personalEmail` | [[!UICONTROL 电子邮件地址]](../data-types/email-address.md) | 所有者的个人电子邮件地址。 |
-| `ID` | [!UICONTROL 字符串] | 保险单的标识符。 |
-| `_id` | [!UICONTROL 字符串] | 记录的唯一、系统生成的字符串标识符。 此字段用于跟踪单个记录的唯一性，防止重复数据，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此在数据摄取期间不会为其提供显式值。 但是，如果您愿意，您仍可以选择提供您自己的唯一ID值。 |
-| `endDate` | [!UICONTROL DateTime] | 保单保险范围结束（或结束）的日期。 |
-| `hasAssignedBeneficiary` | [!UICONTROL 布尔型] | 指示是否为政策分配了受益人。 |
-| `name` | [!UICONTROL 字符串] | 保险单的名称。 |
-| `startDate` | [!UICONTROL DateTime] | 保险单保险开始（或开始）的日期。 |
-| `type` | [!UICONTROL 字符串] | 保险单的类型，如家庭、汽车、租赁者或船。 |
+| `assignedBeneficiary` | 陣列 [[!UICONTROL 個人]](../data-types/person.md) 資料型別 | 擷取指定給保單的受益人（或受益人）。 |
+| `benefitAmount` | [[!UICONTROL 货币]](../data-types/currency.md) | 根據政策條款支付的金額。 |
+| `location` | [[!UICONTROL 郵寄地址]](../data-types/postal-address.md) | 保單核發地點。 |
+| `owner` | [!UICONTROL 对象] | 擷取保單持有人設定檔資訊。 |
+| `owner.faxPhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 擁有者的傳真電話號碼。 |
+| `owner.homeAddress` | [[!UICONTROL 郵寄地址]](../data-types/postal-address.md) | 擁有者的住家地址。 |
+| `owner.homePhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 擁有者的住家電話號碼。 |
+| `owner.mobilePhone` | [[!UICONTROL 电话号码]](../data-types/phone-number.md) | 擁有者的行動電話號碼。 |
+| `owner.personalEmail` | [[!UICONTROL 电子邮件地址]](../data-types/email-address.md) | 擁有者的個人電子郵件地址。 |
+| `ID` | [!UICONTROL 字符串] | 保單的識別碼。 |
+| `_id` | [!UICONTROL 字符串] | 記錄的唯一、系統產生的字串識別碼。 此欄位用於追蹤個別記錄的唯一性、防止資料重複，以及在下游服務中查詢該記錄。<br><br>由於此欄位是系統產生的，因此在資料擷取期間不會向其提供明確值。 不過，您仍然可以視需要選擇提供自己的唯一ID值。 |
+| `endDate` | [!UICONTROL 日期時間] | 保單承保結束（或結束）的日期。 |
+| `hasAssignedBeneficiary` | [!UICONTROL 布尔型] | 指出原則是否已指定受益人。 |
+| `name` | [!UICONTROL 字符串] | 保單的名稱。 |
+| `startDate` | [!UICONTROL 日期時間] | 保單承保開始（或開始）的日期。 |
+| `type` | [!UICONTROL 字符串] | 住家、汽車、租借者或船隻等保單型別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

@@ -1,66 +1,66 @@
 ---
-keywords: Experience Platform；主页；热门主题；删除帐户
-description: Adobe Experience Platform中的源连接器提供了按计划摄取外部源数据的功能。 本教程提供了从“源”工作区中删除帐户的步骤。
+keywords: Experience Platform；首頁；熱門主題；刪除帳戶
+description: Adobe Experience Platform中的來源聯結器可讓您依排程擷取外部來源的資料。 本教學課程提供從「來源」工作區刪除帳戶的步驟。
 solution: Experience Platform
-title: 在UI中删除源连接帐户
+title: 刪除UI中的來源連線帳戶
 type: Tutorial
 exl-id: 7cb65d17-d99d-46ff-b28f-7469d0b57d07
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '487'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# 删除源连接帐户
+# 刪除來源連線帳戶
 
-Adobe Experience Platform中的源连接器提供了按计划摄取外部源数据的功能。 本教程提供了从 **[!UICONTROL 源]** 工作区。
+Adobe Experience Platform中的來源聯結器可讓您依排程擷取外部來源的資料。 本教學課程提供從刪除帳戶的步驟。 **[!UICONTROL 來源]** 工作區。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-- [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   - [架构组合的基础知识](../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   - [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL Real-Time Customer Profile]](../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [[!DNL Experience Data Model (XDM)] 系統](../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   - [結構描述組合基本概念](../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   - [結構描述編輯器教學課程](../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+- [[!DNL Real-Time Customer Profile]](../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-## 使用UI删除帐户
+## 使用UI刪除帳戶
 
 >[!TIP]
 >
->在删除源帐户之前，必须首先删除与源帐户关联的任何现有数据流。 要删除现有数据流，请参阅 [删除UI中的源数据流](./delete.md).
+>在刪除來源帳戶之前，您必須先刪除與來源帳戶關聯的任何現有資料流。 若要刪除現有的資料流，請參閱上的教學課程 [在UI中刪除來源資料流](./delete.md).
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 **[!UICONTROL 源]** 工作区。 的 **[!UICONTROL 目录]** 屏幕显示了各种源，您可以使用这些源创建帐户和数据流。 每个源都显示与其关联的现有帐户和数据流的数量。
+登入 [Adobe Experience Platform](https://platform.adobe.com) 然後選取 **[!UICONTROL 來源]** 以存取 **[!UICONTROL 來源]** 工作區。 此 **[!UICONTROL 目錄]** 畫面會顯示各種來源，您可使用這些來源建立帳戶和資料流。 每個來源都會顯示與其相關聯的現有帳戶和資料流數量。
 
-选择 **[!UICONTROL 帐户]** 访问 **[!UICONTROL 帐户]** 页面。
+選取 **[!UICONTROL 帳戶]** 存取 **[!UICONTROL 帳戶]** 頁面。
 
 ![catalog-accounts](../../images/tutorials/delete-accounts/catalog.png)
 
-此时会显示现有帐户的列表。 本页列出了现有帐户的可排序信息，如源、用户名、关联的数据流和创建日期。 选择 **漏斗图标** 排序。
+現有帳號的清單隨即顯示。 本頁面提供現有帳戶（例如來源、使用者名稱、關聯的資料流和建立日期）的可排序資訊清單。 選取 **漏斗圖示** 以排序。
 
-![数据流列表](../../images/tutorials/delete-accounts/accounts.png)
+![資料流 — 清單](../../images/tutorials/delete-accounts/accounts.png)
 
-排序面板将显示在屏幕的左侧，其中包含可用源的列表。 您可以使用排序函数选择多个源。
+排序面板會顯示在畫面左側，其中包含可用來源的清單。 您可以使用排序功能選取多個來源。
 
-选择要访问的源，并从主界面的帐户列表中找到要删除的帐户。 在示例中，所选的源为 **[!DNL Azure Blob Storage]** 帐户名称为 **[!UICONTROL blobTestConnector]**. 从排序面板中选择多个源时，最近创建的帐户将首先显示，因为列表按创建日期排序。
+選取您要存取的來源，並從主介面的帳戶清單中找出您要刪除的帳戶。 在此範例中，選取的來源為 **[!DNL Azure Blob Storage]** 且帳戶名稱為 **[!UICONTROL Blobtectconnector]**. 從排序面板選取多個來源時，您最近建立的帳戶會先出現，因為清單是依建立日期排序。
 
-选择要删除的帐户。
+選取您要刪除的帳戶。
 
-![数据流排序](../../images/tutorials/delete-accounts/sort.png)
+![資料流 — 排序](../../images/tutorials/delete-accounts/sort.png)
 
-的 **[!UICONTROL 属性]** 面板显示在屏幕的右侧，其中包含有关所选帐户的信息。
+此 **[!UICONTROL 屬性]** 面板會出現在畫面的右側，其中包含有關所選帳戶的資訊。
 
-选择省略号(`...`)。 此时会出现一个弹出面板，其中提供了 **[!UICONTROL 添加数据]**, **[!UICONTROL 编辑详细信息]**&#x200B;和 **[!UICONTROL 删除]**. 选择 **[!UICONTROL 删除]** 删除帐户。
+選取省略符號(`...`)的名稱旁。 快顯面板隨即出現，其中提供選項至 **[!UICONTROL 新增資料]**， **[!UICONTROL 編輯詳細資料]**、和 **[!UICONTROL 刪除]**. 選取 **[!UICONTROL 刪除]** 以刪除帳戶。
 
-![数据流排序](../../images/tutorials/delete-accounts/delete.png)
+![資料流 — 排序](../../images/tutorials/delete-accounts/delete.png)
 
-出现最终确认对话框，选择 **[!UICONTROL 删除]** 以完成该过程。
+最後確認對話方塊出現，選取 **[!UICONTROL 刪除]** 以完成程式。
 
-![删除](../../images/tutorials/delete-accounts/confirm.png)
+![delete](../../images/tutorials/delete-accounts/confirm.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已成功使用 **[!UICONTROL 源]** 工作区以删除现有帐户。
+依照本教學課程，您已成功使用 **[!UICONTROL 來源]** 工作區以刪除現有帳戶。
 
-有关如何使用 [!DNL Flow Service] API，请参阅 [使用流量服务API删除连接](../../tutorials/api/delete.md)
+如需如何以程式設計方式執行這些操作的步驟，請使用 [!DNL Flow Service] API，請參考以下教學課程： [使用流量服務API刪除連線](../../tutorials/api/delete.md)

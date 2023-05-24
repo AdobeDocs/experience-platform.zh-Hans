@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；配置文件；区段；区段；分段；用户界面；UI；自定义；区段功能板；功能板
-title: 区段功能板
-description: Adobe Experience Platform UI提供了一个功能板，您可以通过该功能板查看与贵组织创建和维护的区段相关的重要量度。
+keywords: Experience Platform；設定檔；區段；區段；分段；使用者介面；UI；自訂；區段控制面板；控制面板
+title: 區段控制面板
+description: Adobe Experience Platform UI提供控制面板，讓您檢視與組織建立和維護的區段相關的重要量度。
 type: Documentation
 exl-id: 4a45bc3a-be5e-42b5-abd1-f0fb5795f5f4
 source-git-commit: f7d204442c8bc2355671ba2adffff4c40ce08784
@@ -11,12 +11,12 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL 区段] 仪表板 {#segment-dashboard}
+# [!UICONTROL 區段] 儀表板 {#segment-dashboard}
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关区段的重要信息，这些信息是在每日快照期间捕获的。
+Adobe Experience Platform使用者介面(UI)提供了一個控制面板，您可以透過它檢視有關區段的重要資訊，如每日快照期間所擷取。
 
-有关如何访问UI中的区段功能板并与之交互，以及了解有关该功能板中显示的可用量度的更多信息，请访问 [区段仪表板指南](../../dashboards/guides/segments.md).
+如需如何在UI中存取及與區段控制面板互動的詳細指示，以及深入瞭解控制面板中顯示的可用量度，請造訪 [區段控制面板指南](../../dashboards/guides/segments.md).
 
-有关Experience Platform用户界面中所有功能板功能的概述，请首先阅读 [功能板概述](../../dashboards/home.md).
+如需Experience Platform使用者介面中所有儀表板功能的概觀，請先閱讀 [儀表板概觀](../../dashboards/home.md).
 
-![区段功能板。 这显示了三个小组件 — 受众大小小组件、受众大小更改趋势小组件，以及按身份小组件划分的用户档案。](../images/ui/segment-dashboard/dashboard-overview.png)
+![區段控制面板。 此顯示三個Widget — 對象人數Widget、對象人數變化趨勢Widget，以及依身分識別Widget的設定檔。](../images/ui/segment-dashboard/dashboard-overview.png)

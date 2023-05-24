@@ -1,26 +1,27 @@
 ---
-keywords: Experience Platform；主页；热门主题；标签标识
-title: 在UI中将字段标记为标识
-description: 包含个人身份信息(PII)的字段可以标记为身份字段。 标识字段中提供的值由Identity Service解释为标识。 标识的命名空间将作为标记字段的一部分进行指定。
-source-git-commit: ae51c9bd07944f26be2809a6d15f9d9e8c2fd5a1
+keywords: Experience Platform；首頁；熱門主題；標籤身分
+title: 在UI中將欄位標示為身分
+description: 包含個人識別資訊(PII)的欄位可以標示為身分欄位。 身分欄位中提供的值會由Identity Service解譯為身分。 身分的名稱空間是在標示欄位時指定。
+exl-id: c3097030-0242-404f-9e4c-72a7fa574011
+source-git-commit: 44e056407f5089c927752f00cc6bf173d7640b83
 workflow-type: tm+mt
 source-wordcount: '201'
 ht-degree: 0%
 
 ---
 
-# 在UI中将字段标记为标识
+# 在UI中將欄位標示為身分
 
-包含个人身份信息(PII)的字段可以标记为身份字段。 标识字段中提供的值被解释为标识 [!DNL Identity Service]. 标识的命名空间将作为标记字段的一部分进行指定。
+包含個人識別資訊(PII)的欄位可以標示為身分欄位。 身分欄位中提供的值會由解譯為身分 [!DNL Identity Service]. 身分的名稱空間是在標示欄位時指定。
 
-要将字段标记为标识，必须满足以下条件：
+欄位必須符合下列條件才能標籤為身分：
 
-* 只能将字符串类型字段用于标识
-* 身份仅在记录数据和时间序列数据中识别
-* 只应将PII字段标记为标识。 选择表示更通用数据的字段会导致关系不太精确，并可能导致从身份图访问相关身份时出现错误
+* 只有字串型別欄位可用於身分
+* 身分只能在記錄和時間序列資料中識別
+* 只有PII欄位應該標示為身分。 選擇代表較通用資料的欄位會導致關係較不精確，並且可能導致從身分圖表存取相關身分時發生錯誤
 
-有关如何在UI中标记身份字段的说明，请参阅 [在UI中定义标识字段](../../xdm/ui/fields/identity.md).
+如需如何在UI中標籤身分欄位的指示，請參閱以下指南： [在UI中定義身分欄位](../../xdm/ui/fields/identity.md).
 
 ## 后续步骤
 
-有关 [!DNL Identity Service]，请参阅 [[!DNL Identity Service] 概述](../home.md).
+如需詳細資訊，請參閱 [!DNL Identity Service]，請參閱 [[!DNL Identity Service] 概觀](../home.md).

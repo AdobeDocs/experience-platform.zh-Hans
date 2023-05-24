@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；UI;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构编辑器；架构编辑器；架构；架构；架构；创建；关系；参考；引用；
+keywords: Experience Platform；首頁；熱門主題；UI；UI；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述編輯器；結構描述編輯器；結構描述；結構描述；結構描述；建立；關係；參考；參考；
 solution: Experience Platform
-title: 使用模式编辑器定义两个模式之间的关系
-description: 本文档提供了一个教程，用于使用Experience Platform用户界面中的架构编辑器定义两个架构之间的关系。
+title: 使用結構編輯器定義兩個結構描述之間的關係
+description: 本檔案提供在Experience Platform使用者介面中使用結構編輯器定義兩個結構描述之間關係的教學課程。
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
@@ -12,7 +12,7 @@ ht-degree: 9%
 
 ---
 
-# 使用 [!DNL Schema Editor] {#relationship-ui}
+# 使用定義兩個結構描述之間的一對一關係 [!DNL Schema Editor] {#relationship-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
@@ -29,96 +29,96 @@ ht-degree: 9%
 >title="参考标识命名空间"
 >abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
 
-了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
+瞭解客戶之間的關係以及客戶在不同管道中與您品牌的互動是Adobe Experience Platform的重要部分。 在的結構中定義這些關係 [!DNL Experience Data Model] (XDM)結構描述可讓您對客戶資料獲得複雜的深入分析。
 
-而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用其他相关架构的标识。
+雖然結構描述關係可透過使用聯合結構描述和來推斷 [!DNL Real-Time Customer Profile]，這僅適用於共用相同類別的結構描述。 若要在屬於不同類別的兩個結構描述之間建立關係，必須將專用關係欄位新增到來源結構描述中，該欄位會參考其他相關結構描述的身分。
 
-本文档提供了一个教程，用于使用 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅 [使用模式注册表API定义关系](relationship-api.md).
+本檔案提供使用結構編輯器定義兩個結構描述之間關係的教學課程。 [!DNL Experience Platform] 使用者介面。 如需使用API定義結構描述關係的步驟，請參閱以下教學課程： [使用結構描述登入API定義關係](relationship-api.md).
 
 >[!NOTE]
 >
->有关如何在Adobe Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
+>如需在Adobe Real-time Customer Data Platform B2B版本中建立多對一關係的步驟，請參閱以下指南： [建立B2B關係](./relationship-b2b.md).
 
 ## 快速入门
 
-本教程需要对 [!DNL XDM System] 和模式编辑器 [!DNL Experience Platform] UI。 在开始使用本教程之前，请查阅以下文档：
+本教學課程需要您實際瞭解 [!DNL XDM System] 以及中的結構編輯器 [!DNL Experience Platform] UI。 在開始本教學課程之前，請檢閱下列檔案：
 
-* [XDM系统在Experience Platform](../home.md):XDM及其在 [!DNL Experience Platform].
-* [架构组合的基础知识](../schema/composition.md):介绍XDM模式的构建基块。
-* [使用创建架构 [!DNL Schema Editor]](create-schema-ui.md):一个教程，其中介绍了使用 [!DNL Schema Editor].
+* [Experience Platform中的XDM系統](../home.md)：XDM及其在中的實作概觀 [!DNL Experience Platform].
+* [結構描述組合基本概念](../schema/composition.md)：XDM結構描述建置區塊簡介。
+* [使用建立方案 [!DNL Schema Editor]](create-schema-ui.md)：此教學課程涵蓋使用的基本知識 [!DNL Schema Editor].
 
-## 定义源和引用架构
+## 定義來源和參考結構描述
 
-您应该已经创建了将在关系中定义的两个架构。 出于演示目的，本教程将创建组织忠诚度计划(在[!DNL Loyalty Members]“模式”和他们最喜爱的酒店(在“[!DNL Hotels]“架构”)。
+您應已建立將在關係中定義的兩個結構描述。 為了示範，本教學課程會在組織的熟客方案成員之間建立關係(定義於「[!DNL Loyalty Members]「結構描述)和他們最喜愛的飯店(定義於「[!DNL Hotels]&quot;結構描述)。
 
 >[!IMPORTANT]
 >
->要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-Time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-ui.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
+>為了建立關係，兩個結構描述都必須定義主要身分並啟用 [!DNL Real-Time Customer Profile]. 請參閱以下小節： [啟用結構描述以在設定檔中使用](./create-schema-ui.md#profile) 架構建立教學課程中，如果您需要有關如何據以設定架構的指引。
 
-架构关系由 **源模式** 指向 **参考模式**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作参考架构。
+結構描述關係由內的專用欄位表示。 **來源結構描述** 該欄位指向 **參考結構描述**. 在接下來的步驟中， 」[!DNL Loyalty Members]&quot;將是來源結構描述，而&quot;[!DNL Hotels]」將做為參考結構描述。
 
-以下各节介绍了在定义关系之前本教程中使用的每个架构的结构。
+以下幾節說明在定義關係之前，本教學課程中使用的每個結構描述的結構。
 
-### [!DNL Loyalty Members] 模式
+### [!DNL Loyalty Members] 綱要
 
-源架构“[!DNL Loyalty Members]“ ”基于 [!DNL XDM Individual Profile] 类，包含描述忠诚度计划成员的字段。 其中一个领域， `personalEmail.addess`，用作下架构的主标识 [!UICONTROL 电子邮件] 命名空间。 如 **[!UICONTROL 架构属性]**，此架构已启用，可在中使用 [!DNL Real-Time Customer Profile].
+來源結構描述&quot;[!DNL Loyalty Members]&quot;是根據 [!DNL XDM Individual Profile] 類別，包含描述忠誠度計畫成員的欄位。 其中一個欄位， `personalEmail.addess`，會作為下結構描述的主要身分 [!UICONTROL 電子郵件] 名稱空間。 如下方所示 **[!UICONTROL 結構描述屬性]**，此結構描述已啟用以用於中 [!DNL Real-Time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
-### [!DNL Hotels] 模式
+### [!DNL Hotels] 綱要
 
-引用架构“[!DNL Hotels]“ ”基于自定义“[!DNL Hotels]“类”，并包含描述酒店的字段。 要参与关系，引用架构还必须定义主标识，并为 [!UICONTROL 用户档案]. 在这种情况下， `_tenantId.hotelId`使用自定义“[!DNL Hotel ID]&quot;标识命名空间。
+參考結構描述»[!DNL Hotels]「以自訂為基礎」[!DNL Hotels]「類別，並包含描述飯店的欄位。 為了參與關係，參考結構描述還必須定義主要身分並啟用 [!UICONTROL 設定檔]. 在這種情況下， `_tenantId.hotelId`使用自訂&quot;，當作結構描述的主要身分識別。[!DNL Hotel ID]&quot;身分名稱空間。
 
-![为配置文件启用](../images/tutorials/relationship/hotels.png)
-
->[!NOTE]
->
->要了解如何创建自定义身份命名空间，请参阅 [Identity Service文档](../../identity-service/namespaces.md#manage-namespaces).
-
-## 创建关系字段组
+![為設定檔啟用](../images/tutorials/relationship/hotels.png)
 
 >[!NOTE]
 >
->仅当源架构没有专用的字符串类型字段用作指向引用架构主标识的指针时，才需要执行此步骤。 如果此字段已在源架构中定义，请跳转到的下一步 [定义关系字段](#relationship-field).
+>若要瞭解如何建立自訂身分名稱空間，請參閱 [Identity Service檔案](../../identity-service/namespaces.md#manage-namespaces).
 
-要定义两个架构之间的关系，源架构必须具有一个专用字段来指示引用架构的主标识。 您可以通过创建新架构字段组或扩展现有架构字段组，将此字段添加到源架构中。
+## 建立關係欄位群組
 
-对于 [!DNL Loyalty Members] 架构，新 `preferredHotel` 将添加字段，以指示忠诚会员在公司访问时首选的酒店。 首先，选择加号图标(**+**)。
+>[!NOTE]
+>
+>只有在您的來源結構描述沒有專用字串型別欄位來當作參考結構描述主要身分的指標時，才需要執行此步驟。 如果您已在來源結構描述中定義此欄位，請跳至的下一個步驟 [定義關係欄位](#relationship-field).
+
+為了定義兩個結構描述之間的關係，來源結構描述必須有一個專用欄位來指示參考結構描述的主要身分。 您可以建立新的結構描述欄位群組或擴充現有的結構描述欄位群組，將此欄位新增至來源結構描述。
+
+若為 [!DNL Loyalty Members] 結構描述，新 `preferredHotel` 將會新增欄位，以指出忠誠會員對於公司造訪偏好的飯店。 從選取加號圖示(**+**)。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-画布中将显示新字段占位符。 在 **[!UICONTROL 字段属性]**，提供字段名称和显示名称，并将其类型设置为“[!UICONTROL 字符串]&quot; 在 **[!UICONTROL 分配给]**，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在这种情况下，新[!DNL Preferred Hotel]“ ”字段组。
+畫布中會出現新的欄位預留位置。 下 **[!UICONTROL 欄位屬性]**，提供欄位名稱和欄位顯示名稱，並將其型別設為&quot;[!UICONTROL 字串]「。 下 **[!UICONTROL 指派給]**，選取要擴充的現有欄位群組，或輸入唯一名稱以建立新欄位群組。 在此範例中，新增&quot;[!DNL Preferred Hotel]「欄位群組已建立。
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
-完成后，选择 **[!UICONTROL 应用]**.
+完成後，選取 **[!UICONTROL 套用]**.
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-已更新 `preferredHotel` 字段 `_tenantId` 对象，因为它是自定义字段。 选择 **[!UICONTROL 保存]** 以完成对架构所做的更改。
+已更新 `preferredHotel` 欄位會顯示在畫布中，位於 `_tenantId` 物件，因為它是自訂欄位。 選取 **[!UICONTROL 儲存]** 以完成您對結構描述的變更。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
-## 为源架构定义关系字段 {#relationship-field}
+## 定義來源結構描述的關係欄位 {#relationship-field}
 
-在源架构定义了专用引用字段后，您可以将其指定为关系字段。
+一旦您的來源結構描述定義了專用參考欄位，您就可以將其指定為關係欄位。
 
 >[!NOTE]
 >
->以下步骤涵盖如何使用画布中的右边栏控件定义关系字段。 如果您有权访问Real-Time CDP B2B Edition，则还可以使用 [同一对话框](./relationship-b2b.md#relationship-field) 与创建多对一关系时一样。
+>以下步驟說明如何使用畫布中的滑鼠右欄控制項定義關係欄位。 如果您有Real-Time CDP B2B Edition的存取權，也可以使用 [相同對話方塊](./relationship-b2b.md#relationship-field) 建立多對一關係時也是如此。
 
-选择 `preferredHotel` 字段，然后向下滚动到 **[!UICONTROL 字段属性]** 直到 **[!UICONTROL 关系]** 复选框。 选中此复选框可显示配置关系字段所需的参数。
+選取 `preferredHotel` 欄位，然後向下捲動至 **[!UICONTROL 欄位屬性]** 直到 **[!UICONTROL 關係]** 核取方塊隨即顯示。 選取核取方塊以顯示設定關係欄位所需的引數。
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-选择的下拉菜单 **[!UICONTROL 参考模式]** 并选择关系的参考架构(&quot;[!DNL Hotels]”)。 在 **[!UICONTROL 引用标识命名空间]**，选择引用架构的标识字段的命名空间(在本例中为“[!DNL Hotel ID]“)。 选择 **[!UICONTROL 应用]** 完成。
+選取以下專案的下拉式清單： **[!UICONTROL 參考結構描述]** 並選取關係的參考結構描述(&quot;[!DNL Hotels]&quot;（在此範例中）。 下 **[!UICONTROL 參考身分名稱空間]**，選取參考結構描述身分欄位的名稱空間(在此案例中為「 」[!DNL Hotel ID]「)。 選取 **[!UICONTROL 套用]** 完成後。
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 
-的 `preferredHotel` 字段现在作为关系在画布中突出显示，用于显示引用架构的名称。 选择 **[!UICONTROL 保存]** 以保存更改并完成工作流。
+此 `preferredHotel` 欄位現在會在畫布中反白為關係，顯示參考結構描述的名稱。 選取 **[!UICONTROL 儲存]** 以儲存變更並完成工作流程。
 
 ![](../images/tutorials/relationship/relationship-save.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已使用 [!DNL Schema Editor]. 有关如何使用API定义关系的步骤，请参阅 [使用模式注册表API定义关系](relationship-api.md).
+依照本教學課程所述，您已使用下列範例成功建立兩個結構描述之間的一對一關係： [!DNL Schema Editor]. 如需如何使用API定義關係的步驟，請參閱以下教學課程： [使用結構描述登入API定義關係](relationship-api.md).

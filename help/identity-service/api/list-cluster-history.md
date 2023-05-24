@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；身份；群集历史记录
+keywords: Experience Platform；首頁；熱門主題；身分；叢集歷程記錄
 solution: Experience Platform
-title: 获取身份的群集历史记录
-description: 身份可以在各种设备图运行过程中移动群集。 Identity Service可随着时间的推移查看给定身份的群集关联。
+title: 取得身分的叢集記錄
+description: 身分可以在各種裝置圖表執行的過程中移動叢集。 Identity Service可讓您檢視特定身分在一段時間內的叢集關聯。
 exl-id: e52edb15-e3d6-4085-83d5-212bbd952632
 source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
@@ -11,16 +11,16 @@ ht-degree: 1%
 
 ---
 
-# 获取标识的群集历史记录
+# 取得身分的叢集歷史記錄
 
-身份可以在各种设备图运行过程中移动群集。 [!DNL Identity Service] 提供给定身份随时间变化的群集关联的可见性。
+身分可以在各種裝置圖表執行的過程中移動叢集。 [!DNL Identity Service] 可讓您檢視特定身分在一段時間內的叢集關聯。
 
-使用可选 `graph-type` 用于指示要从中获取群集的输出类型的参数。 选项包括：
+使用選填 `graph-type` 指示要從中取得叢集的輸出型別的引數。 選項包括：
 
-- `None`  — 不执行身份拼合。
-- `Private Graph`  — 根据您的专用身份图执行身份拼合。 如果否 `graph-type` 提供，这是默认设置。
+- `None`  — 不執行身分連結。
+- `Private Graph`  — 根據您的私人身分圖表執行身分拼接。 若否 `graph-type` 「 」會顯示，這是預設值。
 
-## 获取单个标识的群集历史记录
+## 取得單一身分的叢集歷程記錄
 
 **API格式**
 
@@ -30,7 +30,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`，按ID)和ID值(`id`)。
+選項1：以名稱空間形式提供身分(`nsId`，依ID)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -41,7 +41,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`，按名称)和ID值(`id`)。
+選項2：以名稱空間形式提供身分(`ns`，依名稱)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -52,7 +52,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:将身份提供为XID(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取XID以获取身份](./list-native-id.md).
+選項3：以XID提供身分(`xid`)。 如需如何取得身分識別的XID的詳細資訊，請參閱本檔案涵蓋的章節 [取得身分的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -63,13 +63,13 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-## 获取多标识的群集历史记录
+## 取得多個身分識別的叢集歷程記錄
 
-使用 `POST` 方法作为批次等效项 `GET` 方法，用于返回多个身份的簇历史记录。
+使用 `POST` 方法當作 `GET` 上述方法可傳回多個身分的叢集歷程記錄。
 
 >[!NOTE]
 >
->请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>要求不應超過最多1000個身分。 超過1000個身分的要求會產生400個狀態代碼。
 
 **API格式**
 
@@ -77,9 +77,9 @@ curl -X GET \
 POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 ```
 
-**请求正文**
+**要求內文**
 
-选项1:提供要检索群集成员的XID列表。
+選項1：提供要擷取叢整合員的XID清單。
 
 ```shell
 {
@@ -88,7 +88,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 }
 ```
 
-选项2:提供身份列表作为复合ID，其中每个标识按命名空间代码命名ID值和命名空间。
+選項2：提供身分清單作為複合ID，其中每個名稱依名稱空間程式碼命名ID值和名稱空間。
 
 ```shell
 {
@@ -106,9 +106,9 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **请求**
 
-**存根请求**
+**Stub請求**
 
-使用 `x-uis-cst-ctx: stub` 标头将返回一个短响应。 这是一个临时解决方案，在服务完成的同时促进早期集成开发进展。 当不再需要时，将弃用此设置。
+使用方式 `x-uis-cst-ctx: stub` 標頭將傳回存根回應。 這是臨時解決方案，可在服務完成時協助早期整合開發進度。 當不再需要時，這將被取代。
 
 ```shell
 curl -X POST \
@@ -165,7 +165,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-**响应**
+**回應**
 
 ```json
 {
@@ -213,8 +213,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->无论请求的XID是否属于同一群集，或者一个或多个XID是否与任何群集关联，响应都将始终为请求中提供的每个XID具有一个条目。
+>無論請求的XID是否屬於相同叢集，或一或多個叢集完全關聯，回應中都會為請求中提供的每個XID各有一個專案。
 
 ## 后续步骤
 
-继续下一个教程以 [列表标识映射](./list-identity-mappings.md)
+繼續下一教學課程，前往 [清單身分對應](./list-identity-mappings.md)

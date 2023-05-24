@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；区段；区段成员资格；区段成员资格；架构设计；映射；映射；
+keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；個人設定檔；欄位；結構描述；結構描述；區段；segmentMembership；區段會籍；結構描述設計；對應；對應；
 solution: Experience Platform
-title: 区段成员资格详细信息架构字段组
-description: 本文档概述了区段成员资格详细信息架构字段组。
+title: 區段會籍詳細資料結構欄位群組
+description: 本檔案提供「區段成員資格詳細資訊」結構描述欄位群組的概觀。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
 source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
@@ -12,27 +12,27 @@ ht-degree: 1%
 ---
 
 
-# [!UICONTROL 区段成员资格详细信息] 架构字段组
+# [!UICONTROL 區段會籍細節] 結構描述欄位群組
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
 
-[!UICONTROL 区段成员资格详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供单个映射字段，用于捕获有关区段成员资格的信息，包括个人所属的区段、上次资格鉴定时间以及成员资格在有效期间的信息。
+[!UICONTROL 區段會籍細節] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md). 欄位群組提供單一對應欄位，可擷取關於區段會籍的資訊，包括個人屬於哪些區段、上次資格取得時間以及會籍有效期至。
 
 >[!WARNING]
 >
->而 `segmentMembership` 字段，则不应尝试手动填充或更新此字段。 系统会自动更新 `segmentMembership` 将每个用户档案映射为分段作业。
+>而 `segmentMembership` 欄位必須使用此欄位群組手動新增到您的設定檔結構描述，您不應嘗試手動填入或更新此欄位。 系統會自動更新 `segmentMembership` 在執行分段工作時，對應每個設定檔。
 
 <img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `segmentMembership` | 地图 | 描述个人区段成员资格的映射对象。 此对象的结构在下文中有详细描述。 |
+| `segmentMembership` | 地图 | 描述個人區段會籍的地圖物件。 此物件的結構將於下文詳細說明。 |
 
 {style="table-layout:auto"}
 
-以下示例 `segmentMembership` 映射系统为特定用户档案填充的内容。 区段成员关系按命名空间排序，如对象的根级别键所示。 反过来，每个命名空间下的各个键表示用户档案所属区段的ID。 每个区段对象包含多个子字段，这些子字段提供了有关成员资格的更多详细信息：
+範例如下 `segmentMembership` 系統已針對特定設定檔填入的對應。 區段會籍會依名稱空間排序，如物件的根層級索引鍵所示。 反過來，每個名稱空間底下的個別索引鍵代表設定檔所屬區段的ID。 每個區段物件都包含數個子欄位，提供有關成員資格的進一步詳細資訊：
 
 ```json
 {
@@ -73,19 +73,19 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 | --- | --- |
-| `xdm:version` | 此用户档案符合条件的区段版本。 |
-| `xdm:lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
-| `xdm:validUntil` | 不再假定区段成员资格有效的时间戳。 对于外部受众，如果未设置此字段，则区段成员资格将仅保留30天 `lastQualificationTime`. |
-| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`:该用户档案符合区段的条件。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
-| `xdm:payload` | 某些区段成员资格包括描述与成员资格直接相关的其他值的有效负载。 每个成员只能提供给定类型的有效负荷。 `xdm:payloadType` 指示有效负载类型(`boolean`, `number`, `propensity`或 `string`)，而其同级属性则为有效负载类型提供值。 |
+| `xdm:version` | 此設定檔符合資格的區段版本。 |
+| `xdm:lastQualificationTime` | 此設定檔上次符合區段資格的時間戳記。 |
+| `xdm:validUntil` | 區塊會籍何時不應再被假定為有效的時間戳記。 對於外部對象，若未設定此欄位，則區段會籍將僅保留30天，從 `lastQualificationTime`. |
+| `xdm:status` | 字串欄位，指出是否已將區段會籍實現為目前請求的一部分。 接受下列值： <ul><li>`realized`：設定檔符合區段的資格。</li><li>`exited`：設定檔正在退出區段，做為目前請求的一部分。</li></ul> |
+| `xdm:payload` | 部分割槽段會籍包含說明與會籍直接相關之其他值的裝載。 每個成員資格只能提供一個指定型別的裝載。 `xdm:payloadType` 指示裝載型別(`boolean`， `number`， `propensity`，或 `string`)，而其同層級屬性則提供裝載型別的值。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->位于 `exited` 超过30天的状态，基于 `lastQualificationTime`，将被删除。
+>任何位於中的區段會籍 `exited` 超過30天的狀態，根據 `lastQualificationTime`，可能會刪除。
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)

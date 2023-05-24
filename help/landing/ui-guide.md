@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；Adobe Experience Platform；用户指南；UI指南；平台UI指南；平台简介；功能板；
+keywords: Experience Platform；首頁；熱門主題；Adobe Experience Platform；使用手冊；ui指南；平台ui指南；平台簡介；控制面板；
 solution: Experience Platform
-title: Experience PlatformUI概述
+title: Experience PlatformUI概觀
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
@@ -13,162 +13,162 @@ ht-degree: 2%
 
 # Adobe Experience Platform UI指南
 
-本指南是关于使用Adobe Experience Platform用户界面(UI)的简介，其中说明了各个组件的用途，并提供了指向更多文档的链接以了解更多信息。
+本指南旨在簡介如何使用Adobe Experience Platform使用者介面(UI)、說明各種元件的用途，並提供進一步檔案的連結以取得詳細資訊。
 
-要了解有关Adobe Experience Platform的更多信息，请阅读 [Experience Platform概述](home.md).
+若要進一步瞭解Adobe Experience Platform，請閱讀 [Experience Platform概觀](home.md).
 
-## 主屏幕
+## 主畫面
 
-登录Adobe Experience Platform后，您将在 [!UICONTROL 主页] 页面，由 [量度仪表板](#metrics), [近期数据](#recent-data)和 [推荐学习](#recommended-learning) 中。
+登入Adobe Experience Platform後，您便可在 [!UICONTROL 首頁] 頁面，由 [量度控制面板](#metrics)， [最近的資料](#recent-data)、和 [建議的學習](#recommended-learning) 區段。
 
 ![](images/user-guide/homepage.png)
 
 ### 量度
 
-量度功能板提供了信息卡，用于提供有关您组织内的数据集、用户档案、区段和目标的信息。
+量度儀表板提供的卡片可向您提供有關資料集、設定檔、區段和組織內目的地的資訊。
 
 ![](images/user-guide/homepage-dashboard.png)
 
-的 **[!UICONTROL 数据集]** 部分显示组织内的数据集数量。 此数字会在创建新数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
+此 **[!UICONTROL 資料集]** 區段會顯示貴組織內的資料集數目。 此數字會在建立新資料集時更新。 有關資料集的更多資訊可在以下網址找到： [資料集總覽](../catalog/datasets/overview.md).
 
-的 **[!UICONTROL 用户档案]** 部分显示组织内具有用户档案的总人数（不包括用户档案片段）。 此总人数表示可寻址受众总数，每24小时更新一次。 有关用户档案的更多信息，请参阅 [实时客户资料概述](../profile/home.md).
+此 **[!UICONTROL 設定檔]** 區段顯示貴組織中具有設定檔的總人數，不包括設定檔片段。 此總人數代表可定址對象總數，每24小時會更新一次。 有關設定檔的更多資訊可在以下網址找到： [即時客戶個人檔案總覽](../profile/home.md).
 
-的 **[!UICONTROL 区段]** 部分显示组织内创建的区段总数。 此数字会在创建新区段时更新。 有关区段的更多信息，请参阅 [Segmentation Service概述](../segmentation/home.md).
+此 **[!UICONTROL 區段]** 區段會顯示貴組織內建立的區段總數。 此數字會在建立新區段時更新。 如需區段的詳細資訊，請參閱 [Segmentation Service概述](../segmentation/home.md).
 
-的 **[!UICONTROL 目标]** 部分显示为组织创建的目标总数。 此数字将在创建新目标时更新。 有关目标的更多信息，请参阅 [目标概述](../destinations/home.md).
+此 **[!UICONTROL 目的地]** 區段顯示針對組織建立的目的地總數。 此數字會在建立新目的地時更新。 關於目的地的更多資訊可在以下連結中找到： [目的地概觀](../destinations/home.md).
 
-### 近期数据
+### 最近資料
 
-最近的数据功能板提供有关最近创建的数据集、源、区段和目标的信息。
+最近的資料儀表板提供有關最近建立的資料集、來源、區段和目的地的資訊。
 
 ![](images/user-guide/homepage-recent.png)
 
-的 **[!UICONTROL 最近的数据集]** 部分列出了您组织内最近创建的五个数据集。 每次创建新数据集时，此列表都会更新。 您可以从列表中选择一个数据集，以查看有关指定数据集的更多信息或选择 **[!UICONTROL 查看全部]** 以查看所有创建数据集的列表。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
+此 **[!UICONTROL 最近的資料集]** 區段會列出貴組織內最近建立的五個資料集。 每次建立新資料集時，此清單都會更新。 您可以從清單中選取資料集，以檢視指定資料集的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 檢視所有已建立資料集的清單。 有關資料集的更多資訊可在以下網址找到： [資料集總覽](../catalog/datasets/overview.md).
 
-的 **[!UICONTROL 最近来源]** 部分列出了您组织内最近创建的五个源连接器。 每次创建新源连接器时，此列表都会更新。 您可以从列表中选择源连接，以查看有关指定连接器的详细信息或选择 **[!UICONTROL 查看全部]** 查看所有已创建源连接的列表。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
+此 **[!UICONTROL 最近的來源]** 區段列出貴組織內最近建立的五個來源聯結器。 每次建立新的來源聯結器時，此清單都會更新。 您可以從清單中選取來源連線，以檢視有關指定聯結器的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 檢視所有已建立來源連線的清單。 有關來源的更多資訊可在以下連結中找到： [來源概觀](../sources/home.md).
 
-的 **[!UICONTROL 近期区段]** 部分列出了您组织内最近创建的五个区段定义。 每次创建新区段定义时，此列表都会更新。 您可以从列表中选择区段定义，以查看有关指定区段定义的详细信息，或选择 **[!UICONTROL 查看全部]** 以查看所有创建的区段定义的列表。 有关区段的更多信息，请参阅 [Segmentation Service概述](../segmentation/home.md).
+此 **[!UICONTROL 最近的區段]** 區段列出貴組織內最近建立的五個區段定義。 每次建立新區段定義時，此清單都會更新。 您可以從清單中選取區段定義，以檢視有關指定區段定義的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 以檢視所有已建立區段定義的清單。 如需區段的詳細資訊，請參閱 [Segmentation Service概述](../segmentation/home.md).
 
-的 **[!UICONTROL 近期目标]** 部分列出了您组织内最近创建的五个目标。 每次创建新目标时，此列表都会更新。 您可以从列表中选择一个目标，以查看有关指定目标的更多信息，或选择 **[!UICONTROL 查看全部]** 以查看所有已创建目标的列表。 有关目标的更多信息，请参阅 [目标概述](../destinations/home.md).
+此 **[!UICONTROL 最近的目的地]** 區段會列出貴組織內最近建立的五個目的地。 每次建立新目的地時，此清單都會更新。 您可以從清單中選取一個目的地，以檢視有關指定目的地的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 檢視所有已建立目的地的清單。 關於目的地的更多資訊可在以下連結中找到： [目的地概觀](../destinations/home.md).
 
-### 推荐学习
+### 建議的學習
 
-的 **[!UICONTROL 推荐学习]** 部分提供了有用文档的链接，以开始使用Adobe Experience Platform。
+此 **[!UICONTROL 建議的學習]** 區段提供有用檔案的連結，以開始使用Adobe Experience Platform。
 
 ![](images/user-guide/homepage-recommended.png)
 
-## 顶部导航栏
+## 頂端導覽列
 
-Platform UI中的顶部导航栏显示您当前登录到的组织，并提供几个重要控件。
+Platform UI中的頂端導覽列會顯示您目前登入的組織，並提供數個重要控制項。
 
-导航栏左侧是Adobe Experience Platform徽标。 随时选择此徽标将返回Platform UI主屏幕。
+導覽列的左側是Adobe Experience Platform標誌。 您隨時都可以選取此標誌，返回Platform UI首頁。
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
-### 组织切换器
+### 組織切換器
 
-顶部导航栏右侧的第一个项目是 **组织切换器**.
+頂端導覽列右側的第一個專案是 **組織切換器**.
 
 ![](./images/user-guide/homepage-ims-org-switcher.png)
 
-选择切换器后，您有权访问的组织会打开一个下拉菜单（如果有）。 要切换到其他组织，请选择列出的选项。
+選取切換器會開啟您有權存取的組織的下拉式選單（如果有的話）。 若要切換至其他組織，請選取列出的選項。
 
-### 切换应用程序
+### 切換應用程式
 
-顶部导航右侧的下一个项目是 **应用程序切换器**，由 ![应用程序切换器](./images/user-guide/app-switcher-icon.png) 图标。 选择此图标后，您可以在您的组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets等)之间切换。
+頂部導覽右側的下一個專案為 **應用程式切換器**，由 ![應用程式切換器](./images/user-guide/app-switcher-icon.png) 圖示。 選取此圖示時，您可以在組織有權存取的Adobe應用程式(例如Experience Platform、Analytics、Assets等)之間切換。
 
 ### 帮助
 
-应用程序切换器的右侧是 **帮助和支持菜单**，以 ![问号/帮助](./images/user-guide/help-icon.png) 图标。 选择此图标时，会显示一个弹出菜单，其中包含多个帮助和支持资源。 的 **[!UICONTROL 帮助]** 选项卡会显示当前所在页面的相关文档列表。 的 **[!UICONTROL 支持]** 选项卡，用于与Adobe支持团队创建支持票证。 的 **[!UICONTROL 反馈]** 选项卡，用于向Adobe提交有关Platform的反馈。
+應用程式切換器右側是 **說明與支援功能表**，以 ![問號/說明](./images/user-guide/help-icon.png) 圖示。 當您選取此圖示時，會出現一個彈出選單，其中包含數個說明和支援資源。 此 **[!UICONTROL 說明]** 索引標籤會顯示您目前所在頁面的相關檔案清單。 此 **[!UICONTROL 支援]** 索引標籤可讓您與Adobe支援團隊建立支援票證。 此 **[!UICONTROL 意見反應]** 標籤可讓您提交有關Platform的意見回饋給Adobe。
 
 ![](images/user-guide/homepage-help-clicked.png)
 
 ### 通知和公告
 
-在 **通知部分**，以 ![钟/通知和公告](images/user-guide/notification-icon.png) 图标。 的 **[!UICONTROL 通知]** 选项卡显示有关产品和其他相关更新的重要信息，而 **[!UICONTROL 公告]** 选项卡显示有关服务维护的信息。
+在 **通知區段**，以 ![鈴鐺/通知和公告](images/user-guide/notification-icon.png) 圖示。 此 **[!UICONTROL 通知]** 標籤會顯示產品的重要資訊以及其他相關更新，而 **[!UICONTROL 公告]** 標籤顯示有關服務維護的資訊。
 
 ### 用户配置文件
 
-顶部导航栏上的最后一项是 **用户设置**，由 ![用户设置/用户配置文件](images/user-guide/profile-icon.png) 图标。 选择此图标可编辑首选项或注销。
+頂端導覽列上的最後一個專案是 **使用者設定**，由 ![使用者設定/使用者設定檔](images/user-guide/profile-icon.png) 圖示。 選取此圖示可編輯您的偏好設定或登出。
 
-您可以在Platform界面的明暗主题之间进行切换，其中的开关位于您姓名和电子邮件正下方。 选择您喜欢的主题。
+您可以使用位於您名稱和電子郵件正下方的開關，在Platform介面的淺色和深色主題之間切換。 選取您偏好的主題。
 
 ![](images/theme.png)
 
 ### 沙盒
 
-沙盒栏紧靠顶部导航栏的下方。 此栏显示您当前用于Platform的沙箱。 有关沙箱的更多信息，请参阅 [沙箱概述](../sandboxes/home.md).
+上方導覽列正下方是沙箱列。 此列顯示您目前用於Platform的沙箱。 有關沙箱的更多資訊可在以下網址找到： [沙箱總覽](../sandboxes/home.md).
 
 ## 左侧导航栏 {#left-nav}
 
-屏幕左侧的导航列出了Platform UI中支持的所有不同服务。
+畫面左側的導覽會列出Platform UI支援的所有不同服務。
 
-单击菜单图标可显示或隐藏左侧导航面板。
+按一下功能表圖示以顯示或隱藏左側導覽面板。
 
 ![](images/user-guide/hidemenu.png)
 
-显示面板后，再次单击可锁定打开位置的导航。
+您可以在顯示面板後按一下，將導覽鎖定在開啟位置。
 
 >[!IMPORTANT]
 >
->左侧导航栏仅显示您能够访问的功能。 在Adobe Experience Platform的早期版本中，不可用项目处于禁用状态。 如果您认为您应该有权访问未显示的部分，请联系您的系统管理员。
+>左側導覽列僅顯示您可以存取的功能。 在舊版Adobe Experience Platform中，無法使用的專案已停用。 如果您認為您應該具有未出現之區段的存取權，請聯絡您的系統管理員。
 
 ![](images/user-guide/homepage-left.png)
 
-的 **[!UICONTROL 主页]** 部分，可返回到Platform UI主页。
+此 **[!UICONTROL 首頁]** 區段可讓您返回平台UI首頁。
 
-的 **[!UICONTROL 工作流]** 部分显示用于在Platform中执行操作的多步工作流列表。 有关工作流的更多信息，请参阅 [工作流概述](./workflows.md).
+此 **[!UICONTROL 工作流程]** 區段會顯示在Platform內執行作業的多步驟工作流程清單。 如需工作流程的詳細資訊，請參閱 [工作流程概觀](./workflows.md).
 
 ### [!UICONTROL 连接]
 
-的 **[!UICONTROL 源]** 部分允许您创建、更新和删除源连接，从而允许您将数据从外部源摄取到平台。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
+此 **[!UICONTROL 來源]** 區段可讓您建立、更新和刪除來源連線，好讓您將資料從外部來源擷取到Platform。 有關來源的更多資訊可在以下連結中找到： [來源概觀](../sources/home.md).
 
-的 **[!UICONTROL 目标]** 部分允许您创建、更新和删除目标，从而将数据从Platform导出到许多外部目标。 有关目标的更多信息，请参阅 [目标概述](../destinations/home.md).
+此 **[!UICONTROL 目的地]** 區段可讓您建立、更新和刪除目的地，好讓您將資料從Platform匯出至許多外部目的地。 關於目的地的更多資訊可在以下連結中找到： [目的地概觀](../destinations/home.md).
 
 ### [!UICONTROL 客户]
 
-的 **[!UICONTROL 用户档案]** 通过部分，您可以浏览客户配置文件、查看配置文件量度、创建和管理合并策略以及查看合并架构。 要了解有关使用 [!UICONTROL 用户档案] 部分，请阅读 [[!DNL Profile] 用户指南](../profile/ui/user-guide.md). 有关实时客户资料的更多信息，请参阅 [实时客户资料概述](../profile/home.md).
+此 **[!UICONTROL 設定檔]** 區段可讓您瀏覽客戶設定檔、檢視設定檔量度、建立和管理合併原則，以及檢視聯合結構描述。 若要進一步瞭解如何使用 [!UICONTROL 設定檔] 區段，請閱讀 [[!DNL Profile] 使用手冊](../profile/ui/user-guide.md). 如需Real-Time Customer Profile的詳細資訊，請參閱 [即時客戶個人檔案總覽](../profile/home.md).
 
-的 **[!UICONTROL 区段]** 部分，可创建和管理区段定义。 要了解有关使用 [!UICONTROL 区段] 部分，请阅读 [分段用户指南](../segmentation/ui/overview.md). 有关Segmentation Service的更多信息，请参阅 [Segmentation Service概述](../segmentation/home.md).
+此 **[!UICONTROL 區段]** 區段可讓您建立和管理區段定義。 若要進一步瞭解如何使用 [!UICONTROL 區段] 區段，請閱讀 [分段使用手冊](../segmentation/ui/overview.md). 有關Segmentation Service的詳細資訊，請參閱 [Segmentation Service概述](../segmentation/home.md).
 
-的 **[!UICONTROL 标识]** 部分，可让您创建和管理身份命名空间。 有关 [!UICONTROL 标识] 部分，包括有关身份命名空间以及如何在Platform UI中使用身份的信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md).
+此 **[!UICONTROL 身分]** 區段可讓您建立和管理身分名稱空間。 如需更多有關「 」的資訊， [!UICONTROL 身分] 區段，包含身分識別名稱空間以及如何在Platform UI中使用身分識別的資訊，請參閱 [身分名稱空間總覽](../identity-service/namespaces.md).
 
 ### [!UICONTROL Privacy]
 
-的 **[!UICONTROL 策略]** 部分，可让您创建和管理数据使用策略。 要了解有关使用策略部分的更多信息，请阅读 [数据使用策略用户指南](../data-governance/policies/user-guide.md). 有关数据使用策略的更多信息，请参阅 [数据使用策略概述](../data-governance/policies/overview.md).
+此 **[!UICONTROL 原則]** 區段可讓您建立和管理資料使用原則。 若要進一步瞭解如何使用原則區段，請閱讀 [資料使用原則使用手冊](../data-governance/policies/user-guide.md). 有關資料使用原則的更多資訊可在以下連結中找到： [資料使用原則概觀](../data-governance/policies/overview.md).
 
-的 **[!UICONTROL 请求]** 部分，可让您创建和管理隐私请求。 请注意，必须列入允许列表您才能访问Privacy ServiceUI。 要了解有关使用“请求”部分的更多信息，请阅读 [Privacy Service用户指南](../privacy-service/ui/user-guide.md). 有关Privacy Service的更多信息，请参阅 [Privacy Service概述](../privacy-service/home.md).
+此 **[!UICONTROL 請求]** 區段可讓您建立和管理隱私權請求。 請注意，您必須列入允許清單才能存取Privacy ServiceUI。 若要進一步瞭解如何使用請求區段，請閱讀 [Privacy Service使用手冊](../privacy-service/ui/user-guide.md). 有關Privacy Service的更多資訊可在以下連結中找到： [Privacy Service概觀](../privacy-service/home.md).
 
 ### [!UICONTROL 数据科学]
 
-的 **[!UICONTROL 笔记本]** JupyterLab是一个交互式开发环境，可让您探索、分析和建模数据。 要了解有关使用笔记本部分的更多信息，请阅读 [JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md). 有关数据科学工作区的更多信息，请参阅 [数据科学工作区概述](../data-science-workspace/home.md)
+此 **[!UICONTROL Notebooks]** 區段可讓您存取JupyterLab，這是一個互動式開發環境，可讓您探索、分析和模型化您的資料。 若要進一步瞭解如何使用Notebooks區段，請閱讀 [JupyterLab使用手冊](../data-science-workspace/jupyterlab/overview.md). 有關資料科學工作區的詳細資訊，請參閱 [資料科學工作區概觀](../data-science-workspace/home.md)
 
-的 **[!UICONTROL 模型]** 部分允许您使用机器学习和人工智能来创建、开发、训练和调整模型以进行预测。 有关“模型”部分的更多信息，请参阅 [训练和评估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
+此 **[!UICONTROL 模型]** 區段可讓您使用機器學習和人工智慧來建立、開發、訓練及調整模型以做出預測。 有關「模型」區段的更多資訊可在的教學課程中找到： [訓練和評估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
 
-的 **[!UICONTROL 服务]** 部分，您可以管理发布的模型以进行计划培训和评分，或使用Adobe的Intelligent Services（一组AI服务，可提供实时、个性化的客户体验）。 有关“服务”部分的更多信息，请参阅 [发布模型为服务教程](../data-science-workspace/models-recipes/publish-model-service-ui.md).
+此 **[!UICONTROL 服務]** 區段可讓您管理已發佈的模型，以進行排程的培訓和評分，或使用Adobe的Intelligent Services （一組提供即時、個人化客戶體驗的AI服務）。 有關「服務」區段的詳細資訊，請參閱 [將模型發佈為服務教學課程](../data-science-workspace/models-recipes/publish-model-service-ui.md).
 
 ### [!UICONTROL 数据管理]
 
-的 **[!UICONTROL 模式]** 通过部分，您可以创建和管理体验数据模型(XDM)架构。 要进一步了解模式，请阅读 [创建模式](../xdm/tutorials/create-schema-ui.md). 有关XDM的更多信息，请参阅 [XDM系统概述](../xdm/home.md).
+此 **[!UICONTROL 結構描述]** 區段可讓您建立和管理Experience Data Model (XDM)結構。 若要進一步瞭解結構描述，請閱讀以下教學課程： [建立結構描述](../xdm/tutorials/create-schema-ui.md). 有關XDM的更多資訊可在以下網址找到： [XDM系統總覽](../xdm/home.md).
 
-的 **[!UICONTROL 数据集]** 区域，以创建和管理数据集。 有关数据集的更多信息，请参阅 [datasets用户指南](../catalog/datasets/user-guide.md).
+此 **[!UICONTROL 資料集]** 區段可讓您建立和管理資料集。 有關資料集的更多資訊可在以下網址找到： [資料集使用手冊](../catalog/datasets/user-guide.md).
 
-的 **[!UICONTROL 查询]** 部分允许您创建和管理查询、记录由Adobe Experience Platform查询服务发出的SQL查询，以及查看 [!DNL PostgreSQL] 凭据。 有关查询的更多信息，请参阅 [查询服务用户指南](../query-service/ui/overview.md).
+此 **[!UICONTROL 查詢]** 區段可讓您建立和管理查詢、記錄Adobe Experience Platform查詢服務所進行的SQL查詢，以及檢視 [!DNL PostgreSQL] 認證。 有關查詢的更多資訊可在以下網址找到： [查詢服務使用手冊](../query-service/ui/overview.md).
 
-的 **[!UICONTROL 监控]** 部分，可让您监控批量摄取和流式摄取。 有关监控的更多信息，请参阅 [监控数据摄取用户指南](../ingestion/quality/monitor-data-ingestion.md).
+此 **[!UICONTROL 監視]** 區段可讓您監視批次和串流擷取。 如需有關監控的詳細資訊，請參閱 [監控資料擷取使用手冊](../ingestion/quality/monitor-data-ingestion.md).
 
-### [!UICONTROL 决策]
+### [!UICONTROL 決策]
 
-Adobe Journey Optimizer是一项基于Experience Platform构建的应用程序服务。 它允许您使用强大的决策技术，在适当的时间跨所有接触点为客户提供最佳选件和体验。 进一步了解Journey Optimizer，包括与 [!UICONTROL 选件] 和 [!UICONTROL 活动] 访问 [Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans).
+Adobe Journey Optimizer是以Experience Platform為基礎建立的應用程式服務。 它可讓您使用強大的決策技術，在適當的時間為所有接觸點的客戶提供最佳優惠和體驗。 若要進一步瞭解Journey Optimizer，包括使用 [!UICONTROL 選件] 和 [!UICONTROL 活動] 造訪 [Journey Optimizer檔案](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans).
 
 ### [!UICONTROL 管理]
 
-平台用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息，这些信息是在每日快照期间捕获的。 通过选择 **[!UICONTROL 许可证使用情况]** 中。 要进一步了解许可证使用功能板，请访问 [许可证使用仪表板指南](./license-usage-and-guardrails/license-usage-dashboard.md).
+Platform使用者介面(UI)提供了一個儀表板，您可以透過該儀表板檢視有關您組織的授權使用情況的重要資訊，如每日快照期間所擷取。 選取「 」，存取此儀表板 **[!UICONTROL 授權使用情況]** 在導覽中。 若要進一步瞭解授權使用量儀表板，請造訪 [授權使用儀表板指南](./license-usage-and-guardrails/license-usage-dashboard.md).
 
 >[!IMPORTANT]
 >
->许可证使用功能板功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
+>授權使用儀表板功能目前為Alpha版，並非所有使用者都可使用。 文档和功能可能会发生变化。
 
 ## 后续步骤
 
-通过阅读本指南，您现在已介绍到Platform UI的主页和主要导航元素。 有关在用户界面中工作的更多详细信息，请参阅每个Platform服务的相关文档。 有关此文档的链接，请参阅 [左侧导航](#left-nav) 部分。
+閱讀本指南後，您現在已能瞭解首頁和Platform UI的主要導覽元素。 如需在使用者介面中運作的詳細資訊，請參閱每個個別平台服務的檔案。 本檔案的連結提供於 [左側導覽](#left-nav) 區段可在此檔案的先前章節找到。

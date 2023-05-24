@@ -1,6 +1,6 @@
 ---
-title: 边缘扩展的条件类型
-description: 了解如何在Adobe Experience Platform中为边缘扩展定义条件类型库模块。
+title: 邊緣擴充功能的條件型別
+description: 瞭解如何在Adobe Experience Platform中定義邊緣擴充功能的條件型別程式庫模組。
 exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -13,26 +13,26 @@ ht-degree: 50%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+> Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-在标记规则中，在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。条件类型由扩展提供并评估某些内容是true还是false，从而返回布尔值。
+在標籤規則中，會在事件發生後評估條件。 所有条件必须返回 true，规则才会继续处理。條件型別由擴充功能提供，會評估某條件是否成立，傳回布林值。
 
 例如，扩展可以提供“视区包含”条件类型， 用户可在其中指定 CSS 选择器。在客户端网站上评估条件时，扩展将能够找到与 CSS 选择器匹配的元素，并返回其中是否有任何元素包含在用户视区中。
 
-本文档介绍如何在Adobe Experience Platform中为边缘扩展定义条件类型。
+本文介紹如何在Adobe Experience Platform中定義邊緣擴充功能的條件型別。
 
 >[!IMPORTANT]
 >
 >如果您正在开发 Web 扩展，请另外参阅关于 [Web 扩展的条件类型](../web/condition-types.md)的指南。
 >
->本文档还假定您熟悉库模块以及它们在边缘扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本檔案也假設您熟悉程式庫模組，以及如何將這些模組整合在Edge擴充功能中。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
 
-条件类型通常包括：
+條件型別通常包含下列專案：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改条件的设置。
-2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
+1. Experience PlatformUI和資料收集UI中顯示的檢視，可讓使用者修改條件的設定。
+2. 在標籤執行階段程式庫內發出的程式庫模組，用於解譯設定及評估條件。
 
-例如，如果要评估用户是否在主机上 `example.com`，则您的模块可能如下所示。
+例如，如果您想要評估使用者是否在主機上 `example.com`，您的模組可能如下所示。
 
 ```js
 module.exports = (context) => {
@@ -41,7 +41,7 @@ module.exports = (context) => {
 };
 ```
 
-如果您希望可由用户配置主机名以允许输入主机名并将其保存到设置对象，则该对象可能类似于此示例。
+如果您想要讓使用者能夠設定主機名稱，以允許輸入主機名稱並將其儲存到設定物件，該物件看起來可能類似於此範例。
 
 ```js
 {

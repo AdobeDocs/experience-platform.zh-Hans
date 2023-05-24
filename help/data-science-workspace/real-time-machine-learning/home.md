@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；Data Science Workspace；热门主题；实时机器学习；
+keywords: Experience Platform；開發人員指南；Data Science Workspace；熱門主題；即時機器學習；
 solution: Experience Platform
-title: 实时机器学习概述
-description: 实时机器学习功能可以显着提升数字体验内容与最终用户的相关性。 借助Experience Edge上的实时引荐和持续学习，可实现这一点。
+title: Real-time Machine Learning概述
+description: 即時機器學習可大幅提升數位體驗內容對使用者的相關性。 在Experience Edge上運用即時參考和持續學習，便可做到這一點。
 exl-id: 23eb1877-1bdf-4982-b58c-cfb58467035a
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,71 +11,71 @@ ht-degree: 1%
 
 ---
 
-# 实时机器学习概述(Alpha)
+# Real-time Machine Learning概述(Alpha)
 
 >[!IMPORTANT]
 >
->尚未向所有用户提供实时机器学习功能。 此功能位于Alpha中，且仍在测试中。 本文档可能会更改。
+>即時機器學習尚未開放所有使用者使用。 此功能目前處於Alpha測試階段，仍在測試中。 此檔案可能會有變動。
 
-实时机器学习功能可以显着提升数字体验内容与最终用户的相关性。 这可以通过利用对的实时参考和持续学习来实现 [!DNL Experience Edge].
+即時機器學習可大幅提升數位體驗內容對使用者的相關性。 這可透過對進行即時參考和持續學習來達成 [!DNL Experience Edge].
 
-在集线器和 [!DNL Edge] 显着减少传统上在为相关和响应式的超级个性化体验提供支持时涉及的延迟。 因此，实时机器学习为同步决策提供具有极低延迟的推论。 示例包括呈现个性化的网页内容或显示优惠或折扣，以减少流失率并提高网店转化率。
+Hub和AEM上無縫計算的組合 [!DNL Edge] 大幅減少傳統上為高度個人化的體驗提供相關且回應式支援的延遲。 因此，即時機器學習以極低的延遲提供推斷以進行同步決策。 範例包括呈現個人化網頁內容或呈現優惠或折扣，以減少流失率並增加網店的轉換率。
 
-## 实时机器学习架构 {#architecture}
+## Real-time Machine Learning架構 {#architecture}
 
-下图提供了实时机器学习架构的概述。 目前，Alpha具有更简化的版本。
+下列圖表提供即時機器學習架構的概觀。 目前，Alpha有更簡化的版本。
 
-![阿尔法拱门](../images/rtml/alpha-arch.png)
+![alpha arch](../images/rtml/alpha-arch.png)
 
-![简化的概述](../images/rtml/end-to-end-arch.png)
+![簡化的概觀](../images/rtml/end-to-end-arch.png)
 
-## 实时机器学习工作流
+## 即時機器學習工作流程
 
-以下工作流概述了创建和利用实时机器学习模型时涉及的典型步骤和结果。
+下列工作流程概述建立及使用即時機器學習模型的一般步驟和結果。
 
-### 数据获取和准备
+### 資料擷取與準備
 
-数据会通过 [!DNL Experience Data Model] (XDM)Adobe Experience Platform。 此数据用于模型培训。 要进一步了解XDM，请访问 [XDM概述](../../xdm/home.md).
+資料會以下列方式擷取和轉換： [!DNL Experience Data Model] Adobe Experience Platform (XDM)。 此資料用於模型訓練。 若要進一步瞭解XDM，請造訪 [XDM概觀](../../xdm/home.md).
 
 ### 创作
 
-通过从头开始创作实时机器学习模型，或将其作为Adobe Experience Platform Jupyter Notebooks中经过预先培训的序列化ONNX模型引入，创建实时机器学习模型。
+從頭開始製作，或在Adobe Experience Platform Jupyter Notebooks中匯入預先訓練的序列化ONNX模型，藉此建立即時機器學習模型。
 
 ### 部署
 
-将模型部署到 [!DNL Experience Edge] 在 [!UICONTROL 服务库] 使用预测API端点。
+將您的模型部署到 [!DNL Experience Edge] 若要在中建立即時機器學習服務 [!UICONTROL 服務庫] 使用預測API端點。
 
-### 推理
+### 推斷
 
-使用预测REST API端点可实时生成机器学习分析。
+使用Prediction REST API端點即時產生機器學習深入分析。
 
 ### 交付
 
-然后，营销人员可以定义区段和规则，以将实时机器学习得分映射到使用Adobe Target的体验。 这样，品牌网站的访客就可以实时获得相同或下一页的超个性化体验。
+行銷人員可以使用Adobe Target定義區段和規則，將Real-time Machine Learning分數對應至體驗。 這可讓您品牌的網站訪客即時獲得相同或下一頁超個人化體驗。
 
-## 当前功能
+## 目前功能
 
-“实时机器学习”目前为alpha版。 随着提供更多特性和节点，下面概述的功能可能会发生更改。
+即時機器學習目前採用Alpha版。 隨著更多功能和節點可供使用，以下概述的功能可能會有所變更。
 
 >[!NOTE]
 >
 > Alpha限制：
-> - 目前，仅支持基于ONNX的模型。
-> - 无法序列化节点中使用的函数。 例如，在Pantics节点中使用的lambda函数。
-> - 20秒后就睡了 [!DNL Edge] 部署是手动完成的。
-> - 要进行深入学习，需要以如下方式发送数据： `df.values` 称为，它将返回DL模型可接受的阵列。 这是因为ONNX模型评分节点使用 `df.values` 并发送输出以根据模型进行评分。
+> - 目前僅支援基於ONNX的模型。
+> - 無法序列化節點中使用的函式。 例如，用於Pandas節點中的lambda函式。
+> - 之後有20秒的睡眠 [!DNL Edge] 部署是手動完成的。
+> - 若要進行深入學習，您的資料傳送方式必須允許 `df.values` 稱為，它會傳回DL模型可接受的陣列。 這是因為ONNX模型評分節點使用 `df.values` 並傳送輸出以對照模型評分。
 
 
 
 ### 功能:
 
-|  | Alpha（5月） |
+|  | Alpha （五月） |
 | --- | --- |
-| **功能** |  — 使用RTML笔记本模板，创作、测试和部署自定义机器学习模型。 <br>  — 支持导入预先培训的机器学习模型。 <br>  — 实时机器学习SDK。 <br>  — 创作节点的起始集。 <br>  — 部署到Adobe Experience Platform中心。 |
+| **功能** |  — 使用RTML筆記本範本，編寫、測試和部署自訂機器學習模型。 <br>  — 支援匯入預先訓練的機器學習模型。 <br>  — 即時機器學習SDK。 <br>  — 入門製作節點集。 <br>  — 部署至Adobe Experience Platform中樞。 |
 | **可用性** | 北美洲 |
-| **创作节点** |  — 熊猫 <br> - ScikitLearn <br> - ONNXNode <br>  — 拆分 <br> - ModelUpload <br> - OneHotEncoder |
-| **评分运行时间** | ONNX |
+| **製作節點** |  — 熊貓 <br> - ScikitLearn <br> - ONNXNode <br>  — 分割 <br> - ModelUpload <br> - OneHotEncoder |
+| **評分執行時間** | ONNX |
 
 ## 后续步骤
 
-您可以首先按照 [入门](./getting-started.md) 的双曲余切值。 本指南将指导您完成为创建实时机器学习模型设置所有必需的先决条件。
+您可以依照以下說明開始操作 [快速入門](./getting-started.md) 指南。 本指南會逐步引導您設定建立Real-time Machine Learning模型的所有必要先決條件。

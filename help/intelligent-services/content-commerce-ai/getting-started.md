@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；快速入门；内容；内容标记
+keywords: Experience Platform；快速入門；內容；內容標籤
 solution: Experience Platform
-title: 内容标记快速入门
-description: 内容标记利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成身份验证教程。
+title: 內容標籤快速入門
+description: 內容標籤會利用Adobe I/OAPI。 若要呼叫Adobe I/O API和I/O主控台整合，您必須先完成驗證教學課程。
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
 source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
@@ -11,62 +11,62 @@ ht-degree: 0%
 
 ---
 
-# 内容标记快速入门
+# 內容標籤快速入門
 
-[!DNL Content tagging] 利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+[!DNL Content tagging] 會利用Adobe I/O API。 若要呼叫Adobe I/O API和I/O主控台整合，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en).
 
-但是，当您转到 **添加API** 步骤，该API位于Creative Cloud下而非Adobe Experience Platform下，如以下屏幕快照所示：
+不過，當您前往 **新增API** 步驟，API位於Creative Cloud下而非Adobe Experience Platform，如下列熒幕擷圖所示：
 
-![添加内容标记](./images/add-api-updated.png)
+![新增內容標籤](./images/add-api-updated.png)
 
-完成身份验证教程将为所有Adobe I/OAPI调用中的每个所需标头提供值，如下所示：
+完成驗證教學課程後，會提供所有Adobe I/OAPI呼叫中每個必要標題的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-## 创建Postman环境（可选）
+## 建立Postman環境（選用）
 
-在Adobe Developer控制台中设置项目和API后，您可以选择下载Postman的环境文件。 下 **[!UICONTROL API]** 在项目的左边栏中，选择 **[!UICONTROL 内容标记]**. 此时将打开一个新选项卡，其中包含标有“[!DNL Try it out]“。 选择 **Postman下载** 下载用于配置Postman环境的JSON文件。
+在Adobe Developer主控台中設定專案和API後，您就可以選擇下載Postman的環境檔案。 下 **[!UICONTROL API]** 在專案的左側邊欄中，選取 **[!UICONTROL 內容標籤]**. 隨即開啟新標籤，內含標示為「[!DNL Try it out]「。 選取 **Postman專用下載** 以下載用來設定Postman環境的JSON檔案。
 
-![postman下载](./images/add-to-postman-updated.png)
+![郵遞員專用下載](./images/add-to-postman-updated.png)
 
-下载文件后，打开Postman并选择 **齿轮图标** 打开右上方的 **管理环境** 对话框。
+下載檔案後，請開啟Postman並選取 **齒輪圖示** 以開啟 **管理環境** 對話方塊。
 
-![齿轮图标](./images/select-gear-icon.png)
+![齒輪圖示](./images/select-gear-icon.png)
 
-接下来，选择 **导入** 从 **管理环境** 对话框。
+接下來，選取 **匯入** 從 **管理環境** 對話方塊。
 
-![导入](./images/import-updated.png)
+![匯入](./images/import-updated.png)
 
-系统将重定向您并提示您从计算机中选择环境文件。 选择您之前下载的JSON文件，然后选择 **打开** 以加载环境。
+系統會將您重新導向，並要求您從電腦中選取環境檔案。 選取您先前下載的JSON檔案，然後選取 **開啟** 以載入環境。
 
 ![](./images/choose-your-file.png)
 
 ![](./images/click-open.png)
 
-您将被重定向回 *管理环境* 选项卡中填充了新环境名称。 选择环境名称以查看和编辑Postman中可用的变量。 您仍需要手动填充 `JWT_TOKEN` 和 `ACCESS_TOKEN`. 这些值应在完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+系統會將您重新導向回 *管理環境* 索引標籤中填入新環境名稱。 選取環境名稱，以檢視和編輯Postman中可用的變數。 您仍需手動填入 `JWT_TOKEN` 和 `ACCESS_TOKEN`. 這些值應在完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en).
 
 ![](./images/re-direct-updated.png)
 
-完成后，您的变量应当类似于下面的屏幕快照。 选择 **更新** 以完成环境设置。
+完成後，您的變數看起來應該類似下面的熒幕擷圖。 選取 **更新** 以完成環境設定。
 
 ![](./images/final-environment-updated.png)
 
-您现在可以从右上角的下拉菜单中选择环境，并自动填充保存的任何值。 您只需随时重新编辑这些值，即可更新所有API调用。
+您現在可以從右上角的下拉式選單中選取環境，並自動填入任何儲存的值。 您隨時只需重新編輯值，即可更新所有API呼叫。
 
-![示例](./images/select-environment-updated.png)
+![範例](./images/select-environment-updated.png)
 
-有关使用Postman使用Adobe I/OAPI的更多信息，请参阅上的媒体帖子 [在Adobe I/O上使用Postman进行JWT身份验证](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f).
+如需使用Postman處理Adobe I/O API的詳細資訊，請參閱以下媒體文章： [在Adobe I/O上使用Postman進行JWT驗證](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f).
 
-## 正在读取示例API调用
+## 讀取範例API呼叫
 
-本指南提供了示例API调用，以演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md) 在Experience Platform疑难解答指南中。
+本指南提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md) 在Experience Platform疑難排解指南中。
 
 ## 后续步骤 {#next-steps}
 
-获得所有凭据后，便可以为其设置自定义工作程序 [!DNL Content tagging]. 以下文档有助于了解可扩展性框架和环境设置。
+取得所有認證後，您就可以為設定自訂背景工作 [!DNL Content tagging]. 下列檔案可協助您瞭解「擴充性架構」和環境設定。
 
-要了解有关可扩展性框架的更多信息，请从阅读 [可扩展性简介](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html) 文档。 本文档概述了先决条件和预配要求。
+若要進一步瞭解擴充性架構，請閱讀 [擴充性簡介](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html) 檔案。 本檔案概述先決條件和布建需求。
 
-详细了解如何为以下对象设置环境： [!DNL Content tagging]，首先请阅读 [设置开发人员环境](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). 本文档提供了允许您为Asset compute服务开发的设置说明。
+若要進一步瞭解如何設定環境 [!DNL Content tagging]，請先閱讀以下專案的指南 [設定開發人員環境](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). 本檔案提供可讓您為Asset compute服務開發的設定指示。

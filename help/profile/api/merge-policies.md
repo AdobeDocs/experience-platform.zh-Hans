@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
-title: 合并策略API端点
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API
+title: 合併原則API端點
 type: Documentation
-description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
+description: Adobe Experience Platform可讓您將多個來源的資料片段集合在一起，並加以合併，以便檢視每個個別客戶的完整檢視。 彙總此資料時，合併原則是Platform用來判斷資料優先順序的方式以及將合併哪些資料以建立統一檢視的規則。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,39 +11,39 @@ ht-degree: 1%
 
 ---
 
-# 合并策略端点
+# 合併原則端點
 
-Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 将此数据整合在一起时，合并策略是 [!DNL Platform] 用于确定数据的优先级以及要合并哪些数据来创建统一视图。
+Adobe Experience Platform可讓您將多個來源的資料片段集合在一起，並加以合併，以便檢視每個個別客戶的完整檢視。 彙總此資料時，合併原則是指 [!DNL Platform] 使用來決定資料的優先順序以及將合併哪些資料以建立統一的檢視。
 
-例如，如果客户跨多个渠道与您的品牌进行交互，则您的组织将在多个数据集中显示与该单个客户相关的多个配置文件片段。 将这些片段摄取到Platform后，它们会合并在一起，以便为该客户创建单个配置文件。 当来自多个源的数据发生冲突（例如，一个片段将客户列为“单一”，而另一个片段将客户列为“已婚”）时，合并策略会确定要包含在个人配置文件中的信息。
+例如，如果客戶跨多個管道與您的品牌互動，您的組織將有多個與該單一客戶相關的設定檔片段出現在多個資料集中。 將這些片段內嵌至Platform時，會合併在一起，以便為該客戶建立單一設定檔。 當來自多個來源的資料衝突時（例如，一個片段將客戶列為「單身」，而另一個片段將客戶列為「已婚」），合併原則會決定要包含在個人設定檔中的資訊。
 
-使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略，并为您的组织设置默认的合并策略。 本指南提供了使用API处理合并策略的步骤。
+使用RESTful API或使用者介面，您可以建立新的合併原則、管理現有原則，並為您的組織設定預設合併原則。 本指南提供使用API處理合併原則的步驟。
 
-要使用UI处理合并策略，请参阅 [合并策略UI指南](../merge-policies/ui-guide.md). 要进一步了解合并策略的总体情况及其在Experience Platform中的角色，请首先阅读 [合并策略概述](../merge-policies/overview.md).
+若要使用UI使用合併原則，請參閱 [合併原則UI指南](../merge-policies/ui-guide.md). 若要進一步瞭解一般合併原則及其在Experience Platform中的角色，請先閱讀 [合併原則概觀](../merge-policies/overview.md).
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端點是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在繼續之前，請檢閱 [快速入門手冊](getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功對任一檔案發出呼叫所需必要標題的重要資訊 [!DNL Experience Platform] API。
 
-## 合并策略的组件 {#components-of-merge-policies}
+## 合併原則的元件 {#components-of-merge-policies}
 
-合并策略是贵组织的私有策略，允许您创建不同的策略以按照所需的特定方式合并架构。 任何API访问 [!DNL Profile] 数据需要合并策略，但如果未明确提供，则使用默认策略。 [!DNL Platform] 为组织提供默认的合并策略，或者，您可以为特定体验数据模型(XDM)架构类创建合并策略，并将其标记为组织的默认策略。
+合併原則是您組織專屬的原則，可讓您建立不同的原則，以所需的特定方式合併方案。 任何API存取 [!DNL Profile] 資料需要合併原則，但若未明確提供合併原則，則會使用預設值。 [!DNL Platform] 為組織提供預設的合併原則，或者您可以為特定Experience Data Model (XDM)結構描述類別建立合併原則，並將其標籤為組織的預設值。
 
-虽然每个组织可能在每个架构类中具有多个合并策略，但每个类只能有一个默认的合并策略。 如果提供了架构类的名称并且需要但未提供合并策略，则将使用设置为默认设置的任何合并策略。
+雖然每個組織在每個結構描述類別中可能都有多個合併原則，但每個類別只能有一個預設合併原則。 在提供結構描述類別名稱且需要合併原則但未提供合併原則的情況下，將使用任何設定為預設的合併原則。
 
 >[!NOTE]
 >
->当您将新合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略将自动更新为不再用作默认值。
+>當您設定新的合併原則為預設值時，先前設為預設值的任何現有合併原則會自動更新為不再使用作為預設值。
 
-为确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为边缘上的活动策略。 要使区段在边缘上激活（标记为边缘区段），必须将其绑定到在边缘上标记为活动的合并策略。 如果区段为 **not** 绑定到在边缘上标记为活动的合并策略，该区段在边缘上不会标记为活动，并且将标记为流区段。
+為確保所有設定檔消費者在邊緣上使用相同的檢視，可將合併原則標籤為邊緣上的作用中。 為了在邊緣上啟用區段（標籤為邊緣區段），該區段必須繫結至在邊緣上標籤為有效的合併原則。 如果區段為 **not** 繫結至在edge上標示為「作用中」的合併原則，該區段不會在edge上標示為「作用中」，而會標示為串流區段。
 
-此外，每个组织只能 **one** 边缘上处于活动状态的合并策略。 如果合并策略在边缘上处于活动状态，则它可用于边缘上的其他系统，如边缘配置文件、边缘分段和边缘上的目标。
+此外，每個組織只能擁有 **一** 在edge上作用中的合併原則。 如果合併原則在Edge上為作用中，則可將其用於Edge上的其他系統，例如Edge Profile、Edge Segmentation和Destinations on Edge。
 
-### 完成合并策略对象
+### 完成合併原則物件
 
-完整的合并策略对象表示一组控制合并配置文件片段各方面的首选项。
+完整的合併原則物件代表一組偏好設定，可控制合併設定檔片段的各個層面。
 
-**合并策略对象**
+**合併原則物件**
 
 ```json
     {
@@ -68,18 +68,18 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 | 属性 | 描述 |
 |---|---|
-| `id` | 系统生成的唯一标识符在创建时分配 |
-| `name` | 用于在列表视图中标识合并策略的易记名称。 |
-| `imsOrgId` | 此合并策略所属的组织ID |
-| `schema.name` | 部分 [`schema`](#schema) 对象， `name` 字段包含与合并策略相关的XDM架构类。 有关模式和类的详细信息，请阅读 [XDM文档](../../xdm/home.md). |
-| `version` | [!DNL Platform] 维护的合并策略版本。 每当更新合并策略时，此只读值都会递增。 |
-| `identityGraph` | [身份图](#identity-graph) 表示将从中获取相关身份的身份图的对象。 将合并找到的所有相关身份的配置文件片段。 |
-| `attributeMerge` | [属性合并](#attribute-merge) 对象，指示在发生数据冲突时合并策略优先处理配置文件属性的方式。 |
-| `isActiveOnEdge` | 布尔值，指示此合并策略是否可在边缘上使用。 默认情况下，此值为 `false`. |
-| `default` | 布尔值，指示此合并策略是否是指定架构的默认策略。 |
-| `updateEpoch` | 合并策略的上次更新日期。 |
+| `id` | 系統會在建立時產生指派的唯一識別碼 |
+| `name` | 可在清單檢視中識別合併原則的易記名稱。 |
+| `imsOrgId` | 此合併原則所屬的組織ID |
+| `schema.name` | 的一部分 [`schema`](#schema) 物件， `name` 欄位包含與合併原則相關的XDM結構描述類別。 如需結構描述和類別的詳細資訊，請參閱 [XDM檔案](../../xdm/home.md). |
+| `version` | [!DNL Platform] 維護版本的合併原則。 此唯讀值會在合併原則更新時遞增。 |
+| `identityGraph` | [身分圖表](#identity-graph) 表示將從其中取得相關身分的身分圖表物件。 將合併找到的所有相關身分的設定檔片段。 |
+| `attributeMerge` | [屬性合併](#attribute-merge) 物件，指明當資料衝突時，合併原則優先處理設定檔屬性的方式。 |
+| `isActiveOnEdge` | 表示此合併原則是否可用於Edge的布林值。 根據預設，此值為 `false`. |
+| `default` | 表示此合併原則是否為指定之結構描述的預設值的布林值。 |
+| `updateEpoch` | 合併原則的上次更新日期。 |
 
-**合并策略示例**
+**合併原則範例**
 
 ```json
     {
@@ -104,9 +104,9 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ### 身份图 {#identity-graph}
 
-[Adobe Experience Platform Identity Service](../../identity-service/home.md) 管理全局使用的身份图表，以及 [!DNL Experience Platform]. 的 `identityGraph` 合并策略的属性定义如何确定用户的相关身份。
+[Adobe Experience Platform Identity Service](../../identity-service/home.md) 管理全域使用的身分圖表，以及每個組織在 [!DNL Experience Platform]. 此 `identityGraph` 合併原則的屬性定義如何確定使用者的相關身分。
 
-**identityGraph对象**
+**identitygraph物件**
 
 ```json
     "identityGraph": {
@@ -114,10 +114,10 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-其中 `{IDENTITY_GRAPH_TYPE}` 是以下任一项：
+位置 `{IDENTITY_GRAPH_TYPE}` 為下列其中一項：
 
-* **&quot;none&quot;:** 不执行身份拼合。
-* **&quot;pdg&quot;:** 根据您的专用身份图执行身份拼合。
+* **&quot;none&quot;：** 不執行身分拼接。
+* **&quot;pdg&quot;：** 根據您的私人身分圖表執行身分拼接。
 
 **示例`identityGraph`**
 
@@ -127,11 +127,11 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-### 属性合并 {#attribute-merge}
+### 屬性合併 {#attribute-merge}
 
-配置文件片段是特定用户在身份列表中仅包含一个身份的配置文件信息。 如果使用的标识图形类型导致多个标识，则可能存在冲突的配置文件属性，并且必须指定优先级。 使用 `attributeMerge`，您可以指定在键值（记录数据）类型数据集之间发生合并冲突时要优先排序的配置文件属性。
+個人資料片段是存在於特定使用者身分識別清單中，只有一個身分識別的個人資料資訊。 當使用的身分圖表型別導致多個身分時，可能會發生衝突的設定檔屬性，必須指定優先順序。 使用 `attributeMerge`，您可以指定在索引鍵值（記錄資料）型別資料集之間發生合併衝突時，要優先處理哪些設定檔屬性。
 
-**attributeMerge对象**
+**attributeMerge物件**
 
 ```json
     "attributeMerge": {
@@ -139,13 +139,13 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-其中 `{ATTRIBUTE_MERGE_TYPE}` 是以下任一项：
+位置 `{ATTRIBUTE_MERGE_TYPE}` 為下列其中一項：
 
-* **`timestampOrdered`**:（默认）优先于上次更新的用户档案。 使用此合并类型， `data` 属性。
-* **`dataSetPrecedence`**:根据来自的数据集，优先考虑配置文件片段。 当一个数据集中存在的信息比另一个数据集中的数据更可取或更可信时，可以使用此方法。 使用此合并类型时， `order` 属性是必需的，因为它会按优先级顺序列出数据集。
-   * **`order`**:使用“dataSetPreperance”时， `order` 数组必须随数据集列表一起提供。 列表中未包含的任何数据集都将不会合并。 换言之，必须明确列出数据集才能将其合并到用户档案中。 的 `order` 数组按优先级顺序列出数据集的ID。
+* **`timestampOrdered`**：（預設）為上次更新的設定檔指定優先順序。 使用此合併型別， `data` 屬性不是必要專案。
+* **`dataSetPrecedence`**：根據設定檔片段來自的資料集為其賦予優先權。 當某個資料集中存在的資訊比另一個資料集中的資料更受偏好或信任時，可以使用此功能。 使用此合併型別時， `order` 屬性是必要的，因為它會依優先順序列出資料集。
+   * **`order`**：使用「dataSetPrecedence」時，會 `order` 陣列必須隨資料集清單提供。 不會合併清單中未包含的任何資料集。 換言之，資料集必須明確列出，才能合併至設定檔中。 此 `order` array會依優先順序列出資料集的ID。
 
-#### 示例 `attributeMerge` 对象使用 `dataSetPrecedence` type
+#### 範例 `attributeMerge` 物件，使用 `dataSetPrecedence` type
 
 ```json
     "attributeMerge": {
@@ -159,7 +159,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-#### 示例 `attributeMerge` 对象使用 `timestampOrdered` type
+#### 範例 `attributeMerge` 物件，使用 `timestampOrdered` type
 
 ```json
     "attributeMerge": {
@@ -169,9 +169,9 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ### 架构 {#schema}
 
-架构对象指定为其创建此合并策略的体验数据模型(XDM)架构类。
+結構描述物件會指定為其建立此合併原則的Experience Data Model (XDM)結構描述類別。
 
-**`schema`对象**
+**`schema`物件**
 
 ```json
     "schema": {
@@ -179,7 +179,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-其中， `name` 是与合并策略关联的架构所基于的XDM类的名称。
+其中值 `name` 是與合併原則相關聯之結構描述所根據的XDM類別名稱。
 
 **示例`schema`**
 
@@ -189,15 +189,15 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-要进一步了解XDM并在Experience Platform中使用模式，请首先阅读 [XDM系统概述](../../xdm/home.md).
+若要進一步瞭解XDM以及使用Experience Platform中的結構描述，請從閱讀 [XDM系統總覽](../../xdm/home.md).
 
-## 访问合并策略 {#access-merge-policies}
+## 存取合併原則 {#access-merge-policies}
 
-使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求以按其ID查看特定合并策略，或访问组织中按特定条件过滤的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
+使用 [!DNL Real-Time Customer Profile] API， `/config/mergePolicies` 端點可讓您執行查詢請求，以依據其ID檢視特定合併原則，或存取組織中按特定條件篩選的所有合併原則。 您也可以使用 `/config/mergePolicies/bulk-get` 端點，以依據其ID擷取多個合併原則。 以下各節將概述執行上述每個呼叫的步驟。
 
-### 按ID访问单个合并策略
+### 依ID存取單一合併原則
 
-您可以通过向发出GET请求来通过其ID访问单个合并策略 `/config/mergePolicies` 端点和包含 `mergePolicyId` 在请求路径中。
+您可以透過單一合併原則的ID，向以下網站發出GET請求來存取該原則： `/config/mergePolicies` 端點，並包含 `mergePolicyId` 在請求路徑中。
 
 **API格式**
 
@@ -207,7 +207,7 @@ GET /config/mergePolicies/{mergePolicyId}
 
 | 参数 | 描述 |
 |---|---|
-| `{mergePolicyId}` | 要删除的合并策略的标识符。 |
+| `{mergePolicyId}` | 您要刪除的合併原則識別碼。 |
 
 **请求**
 
@@ -222,7 +222,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回合并策略的详细信息。
+成功的回應會傳回合併原則的詳細資訊。
 
 ```json
 {
@@ -244,11 +244,11 @@ curl -X GET \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的各个元素的详细信息。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段，以取得組成合併原則的個別元素的詳細資訊。
 
-### 按ID检索多个合并策略
+### 依其ID擷取多個合併原則
 
-您可以通过向 `/config/mergePolicies/bulk-get` 端点，包括您希望在请求正文中检索的合并策略的ID。
+您可以透過向以下專案發出POST請求來擷取多個合併原則： `/config/mergePolicies/bulk-get` 端點，並包含您想要在請求內文中擷取的合併原則ID。
 
 **API格式**
 
@@ -258,7 +258,7 @@ POST /config/mergePolicies/bulk-get
 
 **请求**
 
-请求正文包含一个“ids”数组，其中包含您要检索其详细信息的每个合并策略的各个对象的“id”。
+請求內文包含「ids」陣列，其中包含您要擷取詳細資料的每個合併原則之個別物件，其中包含「id」。
 
 ```shell
 curl -X POST \
@@ -282,7 +282,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回HTTP状态207（多状态）以及在POST请求中提供ID的合并策略的详细信息。
+成功的回應會傳回HTTP狀態207 （多重狀態）以及POST要求中提供ID的合併原則詳細資訊。
 
 ```json
 { 
@@ -343,11 +343,11 @@ curl -X POST \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的各个元素的详细信息。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段，以取得組成合併原則的個別元素的詳細資訊。
 
-### 按条件列出多个合并策略
+### 依條件列出多個合併原則
 
-您可以通过向 `/config/mergePolicies` 端点和使用可选查询参数对响应进行筛选、排序和分页。 可以包含多个参数，并以与号(&amp;)分隔。 在没有参数的情况下调用此端点将检索适用于贵组织的所有合并策略。
+您可以透過向以下發出GET請求，列出組織內的多個合併原則： `/config/mergePolicies` 端點，並使用選用的查詢引數來篩選、排序及分頁回應。 可包含多個引數，以&amp;分隔。 在不使用引數的情況下呼叫此端點將會擷取您的組織可用的所有合併原則。
 
 **API格式**
 
@@ -357,22 +357,22 @@ GET /config/mergePolicies?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 |---|---|
-| `default` | 一个布尔值，用于按合并策略是否是架构类的默认策略来筛选结果。 |
-| `limit` | 指定页面大小限制以控制页面中包含的结果数。 默认值：20 |
-| `orderBy` | 指定结果排序依据的字段 `orderBy=name` 或 `orderBy=+name` 按名称升序排序，或 `orderBy=-name`，以按降序排序。 省略此值会导致默认排序 `name` 升序。 |
-| `isActiveOnEdge` | 一个布尔值，用于按合并策略是否在边缘上处于活动状态来筛选结果。 |
-| `schema.name` | 用于检索可用合并策略的架构的名称。 |
-| `identityGraph.type` | 按身份图表类型筛选结果。 可能的值包括“无”和“pdg”（专用图）。 |
-| `attributeMerge.type` | 按使用的属性合并类型筛选结果。 可能的值包括“timestampOrdered”和“dataSetPreperance”。 |
-| `start` | 页面偏移 — 指定要检索数据的起始ID。 默认值：0 |
-| `version` | 如果要使用合并策略的特定版本，请指定此选项。 默认情况下，将使用最新版本。 |
+| `default` | 布林值，會依據合併原則是否為結構描述類別的預設值來篩選結果。 |
+| `limit` | 指定頁面大小限制，以控制頁面中包含的結果數量。 預設值： 20 |
+| `orderBy` | 指定排序結果依據的欄位，如下所示 `orderBy=name` 或 `orderBy=+name` 若要依名稱遞增順序排序，或 `orderBy=-name`，以遞減順序排序。 省略此值會導致預設排序 `name` 以遞增順序排列。 |
+| `isActiveOnEdge` | 布林值，會依據合併原則在Edge上是否有效來篩選結果。 |
+| `schema.name` | 要擷取其可用合併原則的結構描述名稱。 |
+| `identityGraph.type` | 依身分圖表型別篩選結果。 可能的值包括「none」和「pdg」（私密圖表）。 |
+| `attributeMerge.type` | 依使用的屬性合併型別篩選結果。 可能的值包括「timestampOrdered」和「dataSetPrecedence」。 |
+| `start` | 頁面位移 — 指定要擷取之資料的起始ID。 預設值： 0 |
+| `version` | 如果您想要使用特定版本的合併原則，請指定此專案。 依預設，將會使用最新版本。 |
 
-有关 `schema.name`, `identityGraph.type`和 `attributeMerge.type`，请参阅 [合并策略的组件](#components-of-merge-policies) 部分。
+如需有關的詳細資訊 `schema.name`， `identityGraph.type`、和 `attributeMerge.type`，請參閱 [合併原則的元件](#components-of-merge-policies) 本章節先前提供。
 
 
 **请求**
 
-以下请求列出了给定架构的所有合并策略：
+下列要求列出特定結構描述的所有合併原則：
 
 ```shell
 curl -X GET \
@@ -385,7 +385,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回符合请求中发送的查询参数所指定条件的合并策略分页列表。
+成功的回應會傳回符合由請求中傳送的查詢引數所指定之條件的合併原則分頁清單。
 
 ```json
 {
@@ -457,11 +457,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `_links.next.href` | 结果下一页的URI地址。 使用此URI作为对同一端点的另一API调用的请求参数，以查看页面。 如果不存在下一页，则此值将为空字符串。 |
+| `_links.next.href` | 下一頁結果的URI位址。 使用此URI作為另一個API呼叫的要求引數，以檢視頁面。 如果下一頁不存在，則此值將為空字串。 |
 
-## 创建合并策略
+## 建立合併原則
 
-您可以通过向 `/config/mergePolicies` 端点。
+您可以透過向以下網站發出POST請求，為您的組織建立新的合併原則： `/config/mergePolicies` 端點。
 
 **API格式**
 
@@ -469,8 +469,8 @@ curl -X GET \
 POST /config/mergePolicies
 ```
 
-**请求**
-以下请求会创建新的合并策略，该策略由有效负载中提供的属性值进行配置：
+**請求**
+以下請求會建立新的合併原則，此原則由承載中提供的屬性值設定：
 
 ```shell
 curl -X POST \
@@ -502,18 +502,18 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | 在列表视图中标识合并策略的人类易记名称。 |
-| `identityGraph.type` | 要从中获取要合并的相关标识的标识图类型。 可能值：“无”或“pdg”（专用图）。 |
-| `attributeMerge` | 在发生数据冲突时优先配置文件属性值的方式。 |
-| `schema` | 与合并策略关联的XDM架构类。 |
-| `isActiveOnEdge` | 指定此合并策略是否在边缘上处于活动状态。 |
-| `default` | 指定此合并策略是否为架构的默认策略。 |
+| `name` | 人類易記的名稱，透過此名稱，可在清單檢視中識別合併原則。 |
+| `identityGraph.type` | 從中取得要合併之相關身分的身分圖表型別。 可能的值： 「無」或「pdg」（私密圖表）。 |
+| `attributeMerge` | 當資料衝突時，設定檔屬性值的優先順序方式。 |
+| `schema` | 與合併原則關聯的XDM結構描述類別。 |
+| `isActiveOnEdge` | 指定此合併原則在Edge上是否有效。 |
+| `default` | 指定此合併原則是否為結構描述的預設值。 |
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 的子菜单。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段以取得詳細資訊。
 
 **响应**
 
-成功的响应会返回新创建的合并策略的详细信息。
+成功的回應會傳回新建立的合併原則的詳細資料。
 
 ```json
 {
@@ -546,15 +546,15 @@ curl -X POST \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的各个元素的详细信息。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段，以取得組成合併原則的個別元素的詳細資訊。
 
-## 更新合并策略 {#update}
+## 更新合併原則 {#update}
 
-您可以通过编辑单个属性(PATCH)或使用新属性(PUT)覆盖整个合并策略来修改现有合并策略。 下面显示了每个示例。
+您可以編輯個別屬性(PATCH)或使用新屬性(PUT)覆寫整個合併原則，以修改現有的合併原則。 每種的範例如下所示。
 
-### 编辑单个合并策略字段
+### 編輯個別合併原則欄位
 
-您可以通过向 `/config/mergePolicies/{mergePolicyId}` 端点：
+您可以透過向以下專案發出PATCH請求，編輯合併原則的個別欄位： `/config/mergePolicies/{mergePolicyId}` 端點：
 
 **API格式**
 
@@ -564,11 +564,11 @@ PATCH /config/mergePolicies/{mergePolicyId}
 
 | 参数 | 描述 |
 |---|---|
-| `{mergePolicyId}` | 要删除的合并策略的标识符。 |
+| `{mergePolicyId}` | 您要刪除的合併原則識別碼。 |
 
 **请求**
 
-以下请求通过更改其值来更新指定的合并策略 `default` 属性 `true`:
+以下請求會透過變更其值來更新指定的合併原則 `default` 屬性至 `true`：
 
 ```shell
 curl -X PATCH \
@@ -587,16 +587,16 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 |---|---|
-| `op` | 指定要执行的操作。 其他PATCH操作的示例可在 [JSON修补程序文档](https://datatracker.ietf.org/doc/html/rfc6902) |
-| `path` | 要更新的字段路径。 接受的值包括：&quot;/name&quot;、&quot;/identityGraph.type&quot;、&quot;/attributeMerge.type&quot;、&quot;/schema.name&quot;、&quot;/version&quot;、&quot;/default&quot;、&quot;/isActiveOnEdge&quot; |
-| `value` | 将指定字段设置为的值。 |
+| `op` | 指定要執行的作業。 其他PATCH操作的範例可在以下網址找到： [JSON修補程式檔案](https://datatracker.ietf.org/doc/html/rfc6902) |
+| `path` | 要更新的欄位路徑。 接受的值為：「/name」、「/identityGraph.type」、「/attributeMerge.type」、「/schema.name」、「/version」、「/default」、「/isActiveOnEdge」 |
+| `value` | 要設定指定欄位的值。 |
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 的子菜单。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段以取得詳細資訊。
 
 
 **响应**
 
-成功的响应会返回新更新的合并策略的详细信息。
+成功的回應會傳回新更新的合併原則的詳細資料。
 
 ```json
 {
@@ -629,9 +629,9 @@ curl -X PATCH \
 }
 ```
 
-### 覆盖合并策略
+### 覆寫合併原則
 
-修改合并策略的另一种方法是使用PUT请求，该请求会覆盖整个合并策略。
+修改合併原則的另一種方法是使用PUT請求，這會覆寫整個合併原則。
 
 **API格式**
 
@@ -641,11 +641,11 @@ PUT /config/mergePolicies/{mergePolicyId}
 
 | 参数 | 描述 |
 |---|---|
-| `{mergePolicyId}` | 要覆盖的合并策略的标识符。 |
+| `{mergePolicyId}` | 您要覆寫之合併原則的識別碼。 |
 
 **请求**
 
-以下请求将覆盖指定的合并策略，将其属性值替换为有效负载中提供的属性值。 由于此请求完全替换了现有的合并策略，因此您需要提供最初定义合并策略时所需的所有相同字段。 但是，这次您为要更改的字段提供了更新的值。
+以下請求會覆寫指定的合併原則，將其屬性值取代為承載中提供的屬性值。 由於此請求會完全取代現有的合併原則，因此您必須提供原始定義合併原則時所需的所有相同欄位。 不過，這次您是要為要變更的欄位提供更新的值。
 
 ```shell
 curl -X PUT \
@@ -680,18 +680,18 @@ curl -X PUT \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | 在列表视图中标识合并策略的人类易记名称。 |
-| `identityGraph` | 要从中获取要合并的相关标识的标识图。 |
-| `attributeMerge` | 在发生数据冲突时优先配置文件属性值的方式。 |
-| `schema` | 与合并策略关联的XDM架构类。 |
-| `isActiveOnEdge` | 指定此合并策略是否在边缘上处于活动状态。 |
-| `default` | 指定此合并策略是否为架构的默认策略。 |
+| `name` | 人類易記的名稱，透過此名稱，可在清單檢視中識別合併原則。 |
+| `identityGraph` | 從中取得要合併之相關身分的身分圖表。 |
+| `attributeMerge` | 當資料衝突時，設定檔屬性值的優先順序方式。 |
+| `schema` | 與合併原則關聯的XDM結構描述類別。 |
+| `isActiveOnEdge` | 指定此合併原則在Edge上是否有效。 |
+| `default` | 指定此合併原則是否為結構描述的預設值。 |
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 的子菜单。
+請參閱 [合併原則的元件](#components-of-merge-policies) 區段以取得詳細資訊。
 
 **响应**
 
-成功的响应会返回更新的合并策略的详细信息。
+成功的回應會傳回已更新合併原則的詳細資料。
 
 ```json
 {
@@ -724,13 +724,13 @@ curl -X PUT \
 }
 ```
 
-## 删除合并策略
+## 刪除合併原則
 
-通过向 `/config/mergePolicies` 端点，并在请求路径中包含要删除的合并策略的ID。
+您可以透過向以下專案發出DELETE請求來刪除合併原則： `/config/mergePolicies` 端點，並在請求路徑中包含您要刪除的合併原則ID。
 
 >[!NOTE]
 >
->如果合并策略 `isActiveOnEdge` 设置为true时，将合并策略 **无法** 删除。 使用 [PATCH](#edit-individual-merge-policy-fields) 或 [PUT](#overwrite-a-merge-policy) 端点来更新合并策略，然后再删除该策略。
+>如果合併原則具有 `isActiveOnEdge` 設為true，則合併原則 **無法** 被刪除。 使用 [PATCH](#edit-individual-merge-policy-fields) 或 [PUT](#overwrite-a-merge-policy) 端點以在刪除合併原則之前更新它。
 
 **API格式**
 
@@ -740,11 +740,11 @@ DELETE /config/mergePolicies/{mergePolicyId}
 
 | 参数 | 描述 |
 |---|---|
-| `{mergePolicyId}` | 要删除的合并策略的标识符。 |
+| `{mergePolicyId}` | 您要刪除的合併原則識別碼。 |
 
 **请求**
 
-以下请求会删除合并策略。
+以下請求會刪除合併原則。
 
 ```shell
 curl -X DELETE \
@@ -757,10 +757,10 @@ curl -X DELETE \
 
 **响应**
 
-成功的删除请求会返回HTTP状态200（确定）和空的响应正文。 要确认删除成功，您可以执行GET请求以按其ID查看合并策略。 如果删除了合并策略，您将收到HTTP状态404（未找到）错误。
+成功的刪除請求會傳回HTTP狀態200 （確定）和空白的回應內文。 若要確認刪除成功，您可以執行GET要求，依合併原則的ID檢視合併原則。 如果刪除合併原則，您會收到HTTP狀態404 （找不到）錯誤。
 
 ## 后续步骤
 
-现在，您已了解如何为组织创建和配置合并策略，接下来可以使用这些策略来调整Platform中客户配置文件的视图，并从 [!DNL Real-Time Customer Profile] 数据。
+現在您知道如何為組織建立和設定合併原則，就可以使用它們來調整Platform中客戶設定檔的檢視，以及從建立受眾區段 [!DNL Real-Time Customer Profile] 資料。
 
-请参阅 [Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md) 以开始定义和使用区段。
+請參閱 [Adobe Experience Platform Segmentation Service檔案](../../segmentation/home.md) 以開始定義和使用區段。

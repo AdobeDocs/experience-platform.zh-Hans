@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；模式注册表；模式注册表；模式；模式；模式；模式；模式；模式；创建
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述登入；結構描述；結構描述；結構描述；建立
 solution: Experience Platform
-title: 使用模式注册表API创建模式
+title: 使用結構描述登入API建立結構描述
 type: Tutorial
-description: 本教程使用架构注册表API来指导您完成使用标准类编写架构的步骤。
+description: 本教學課程使用Schema Registry API逐步引導您完成使用標準類別撰寫結構的步驟。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
 source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
@@ -12,40 +12,40 @@ ht-degree: 1%
 
 ---
 
-# 使用创建架构 [!DNL Schema Registry] API
+# 使用建立方案 [!DNL Schema Registry] API
 
-的 [!DNL Schema Registry] 用于访问 [!DNL Schema Library] 在Adobe Experience Platform。 的 [!DNL Schema Library] 包含按Adobe提供给您的资源， [!DNL Experience Platform] 合作伙伴以及您使用其应用程序的供应商。 注册表提供了用户界面和RESTful API，所有可用库资源均可从中访问。
+此 [!DNL Schema Registry] 用於存取 [!DNL Schema Library] 在Adobe Experience Platform中。 此 [!DNL Schema Library] 包含可依Adobe提供給您的資源， [!DNL Experience Platform] 您使用之應用程式的合作夥伴與廠商。 登入提供可存取所有可用程式庫資源的使用者介面和RESTful API。
 
-本教程使用 [!DNL Schema Registry] 用于指导您完成使用标准类构建架构的步骤的API。 如果您希望在 [!DNL Experience Platform], [模式编辑器教程](create-schema-ui.md) 提供了在架构编辑器中执行类似操作的分步说明。
+本教學課程使用 [!DNL Schema Registry] 此API可引導您完成使用標準類別撰寫結構描述的步驟。 如果您偏好在中使用使用者介面 [!DNL Experience Platform]，則 [結構描述編輯器教學課程](create-schema-ui.md) 提供在架構編輯器中執行類似動作的逐步指示。
 
 >[!NOTE]
 >
->如果要将CSV数据摄取到平台，您可以 [将该数据映射到由AI生成的推荐创建的XDM模式](../../ingestion/tutorials/map-csv/recommendations.md) （当前处于测试版中），无需自行手动创建架构。
+>如果您正在將CSV資料擷取至Platform，您可以 [將該資料對應到AI產生的建議所建立的XDM結構描述](../../ingestion/tutorials/map-csv/recommendations.md) （目前為測試版），不需自行手動建立結構描述。
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   * [架构组合的基础知识](../schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM) System]](../home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   * [結構描述組合基本概念](../schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 `Accept` 标题及其可能值)。
+在開始本教學課程之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需您成功對 [!DNL Schema Registry] API。 這包括您的 `{TENANT_ID}`、「容器」的概念，以及提出請求所需的標頭(請特別注意 `Accept` 標頭及其可能的值)。
 
-本教程将指导您完成构建忠诚度会员架构的步骤，该架构描述与零售忠诚度计划成员相关的数据。 开始之前，您可能希望预览 [完整的会员架构](#complete-schema) 中。
+本教學課程將逐步解說構成忠誠度會員綱要的步驟，該綱要說明與零售忠誠度計畫會員相關的資料。 開始之前，您可以預覽 [完整熟客會員結構](#complete-schema) 在附錄中。
 
-## 使用标准类撰写架构
+## 使用標準類別撰寫結構描述
 
-可以将架构视为要摄取到中的数据的蓝图 [!DNL Experience Platform]. 每个架构都由一个类和一个或多个架构字段组组成。 换言之，您无需添加字段组即可定义架构，但在大多数情况下，至少需要使用一个字段组。
+結構描述可視為您要擷取至的資料的藍圖 [!DNL Experience Platform]. 每個結構描述都由一個類別和零個或多個結構描述欄位群組組成。 換言之，您不必為了定義結構描述而新增欄位群組，但在大多數情況下至少使用一個欄位群組。
 
-### 分配类
+### 指派類別
 
-架构组合过程从选择类开始。 该类定义数据的关键行为方面（记录与时间系列），以及描述将要摄取的数据所需的最小字段。
+結構描述構成程式從選取類別開始。 類別會定義資料的主要行為方面（記錄與時間序列），以及描述將擷取之資料所需的最少欄位。
 
-您在本教程中创建的架构使用 [!DNL XDM Individual Profile] 类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。 有关行为的详细信息，请参阅 [架构组合基础知识](../schema/composition.md).
+您在本教學課程中建立的結構描述會使用 [!DNL XDM Individual Profile] 類別。 [!DNL XDM Individual Profile] 是Adobe提供的標準類別，用於定義記錄行為。 有關行為的更多資訊可在以下網址找到： [結構描述組合基本概念](../schema/composition.md).
 
-要分配类，需要进行API调用，以在租户容器中创建(POST)新架构。 此调用包括架构将实现的类。 每个架构只能实现一个类。
+若要指派類別，會進行API呼叫，以在租使用者容器中建立(POST)新結構描述。 此呼叫包含結構描述將實作的類別。 每個結構描述只能實作一個類別。
 
 **API格式**
 
@@ -55,7 +55,7 @@ POST /tenant/schemas
 
 **请求**
 
-请求必须包含 `allOf` 引用 `$id` 班上的。 此属性定义架构将实现的“基类”。 在本例中，基类是 [!DNL XDM Individual Profile] 类。 的 `$id` 的 [!DNL XDM Individual Profile] 类用作 `$ref` 字段 `allOf` 数组。
+請求必須包含 `allOf` 參照 `$id` 類別的。 此屬性會定義結構描述將實作的「基底類別」。 在此範例中，基底類別是 [!DNL XDM Individual Profile] 類別。 此 `$id` 的 [!DNL XDM Individual Profile] 類別當作 `$ref` 中的欄位 `allOf` 下方陣列。
 
 ```SHELL
 curl -X POST \
@@ -79,7 +79,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含包含新创建架构详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
+成功的要求會傳回HTTP回應狀態201 （已建立），其回應本文包含新建立之綱要的詳細資訊，包括 `$id`， `meta:altIt`、和 `version`. 這些值是唯讀的，並由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -127,9 +127,9 @@ curl -X POST \
 }
 ```
 
-### 查找架构
+### 查詢結構描述
 
-要查看新创建的架构，请使用 `meta:altId` 或URL编码 `$id` 架构的URI。
+GET若要檢視您新建立的結構描述，請使用 `meta:altId` 或編碼的URL `$id` 結構描述的URI。
 
 **API格式**
 
@@ -139,7 +139,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 要查找的架构。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要查閱的結構描述中。 |
 
 **请求**
 
@@ -155,7 +155,7 @@ curl -X GET \
 
 **响应**
 
-响应格式取决于 `Accept` 标头。 试试不同的 `Accept` 标题，以了解最符合您需求的标题。
+回應格式取決於 `Accept` 標頭已隨請求傳送。 嘗試使用不同的方式進行實驗 `Accept` 標頭，檢視哪一個最符合您的需求。
 
 ```JSON
 {
@@ -201,13 +201,13 @@ curl -X GET \
 }
 ```
 
-### 添加字段组 {#add-a-field-group}
+### 新增欄位群組 {#add-a-field-group}
 
-现在，已创建并确认忠诚度会员架构，接下来可以向其添加字段组。
+現在忠誠會員方案已建立並確認，您可以新增欄位群組。
 
-根据所选架构的类别，有不同的标准字段组可供使用。 每个字段组都包含 `intendedToExtend` 字段定义与该字段组兼容的类。
+根據所選的結構描述類別，有不同的標準欄位群組可供使用。 每個欄位群組都包含 `intendedToExtend` 定義與該欄位群組相容之類別的欄位。
 
-字段组定义了概念，如“name”或“address”，这些概念可在需要捕获相同信息的任何架构中重复使用。
+欄位群組會定義概念（例如「名稱」或「地址」），這些概念可在需要擷取相同資訊的任何結構描述中重複使用。
 
 **API格式**
 
@@ -217,13 +217,13 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 要将字段组添加到的架构中。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 欄位群組新增至的結構描述中。 |
 
 **请求**
 
-此请求会更新会员架构，以在 [[!UICONTROL 人口统计详细信息] 字段组](../field-groups/profile/demographic-details.md) (`profile-person-details`)。
+此請求會更新熟客會員結構以包含 [[!UICONTROL 人口統計細節] 欄位群組](../field-groups/profile/demographic-details.md) (`profile-person-details`)。
 
-通过添加 `profile-person-details` 字段组中，忠诚度成员架构现在可捕获忠诚度计划成员的人口统计信息，如其名字、姓氏和生日。
+藉由新增 `profile-person-details` 欄位群組，「忠誠會員」結構描述現在會擷取忠誠會員方案會員的人口統計資訊，例如他們的名字、姓氏和生日。
 
 ```SHELL
 curl -X PATCH \
@@ -240,7 +240,7 @@ curl -X PATCH \
 
 **响应**
 
-响应将显示 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
+回應中會顯示新新增的欄位群組 `meta:extends` 陣列並包含 `$ref` 至中的欄位群組 `allOf` 屬性。
 
 ```JSON
 {
@@ -298,13 +298,13 @@ curl -X PATCH \
 }
 ```
 
-### 添加更多字段组
+### 新增更多欄位群組
 
-忠诚度成员架构需要另外两个标准字段组，您可以通过使用其他字段组重复这些步骤来添加这些字段组。
+「忠誠會員」結構需要兩個更標準的欄位群組，您可以使用其他欄位群組重複步驟來新增這些欄位群組。
 
 >[!TIP]
 >
->值得查看所有可用的字段组，以熟悉每个字段中包含的字段。 您可以列出(GET)所有可与特定类一起使用的字段组，方法是对“global”和“tenant”容器中的每个容器执行请求，并仅返回那些“meta:interedToExtend”字段与您使用的类匹配的字段组。 在这种情况下， [!DNL XDM Individual Profile] 类，所以 [!DNL XDM Individual Profile] `$id` 使用：
+>請務必檢閱所有可用的欄位群組，以熟悉每個群組中所包含的欄位。 您可以透過對每個「全域」和「租使用者」容器執行請求，僅傳回「meta：intendedToExtend」欄位符合您使用之類別的那些欄位群組，列出(GET)所有可用於特定類別的欄位群組。 在此案例中，它是 [!DNL XDM Individual Profile] 類別，因此 [!DNL XDM Individual Profile] `$id` 已使用：
 >
 >
 ```http
@@ -320,14 +320,14 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 正在更新的架构的子目录。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 您正在更新的結構描述。 |
 
 **请求**
 
-此请求会更新忠诚度会员架构，以包含以下标准字段组中的字段：
+此請求會更新熟客會員結構，以納入以下標準欄位群組中的欄位：
 
-* [[!UICONTROL 个人联系详细信息]](../field-groups/profile/personal-contact-details.md) (`profile-personal-details`):添加联系信息，如家庭地址、电子邮件地址和家庭电话。
-* [[!UICONTROL 忠诚度详细信息]](../field-groups/profile/loyalty-details.md) (`profile-loyalty-details`):添加联系信息，如家庭地址、电子邮件地址和家庭电话。
+* [[!UICONTROL 個人聯絡詳細資訊]](../field-groups/profile/personal-contact-details.md) (`profile-personal-details`)：新增聯絡資訊，例如住家地址、電子郵件地址和家庭電話。
+* [[!UICONTROL 熟客方案細節]](../field-groups/profile/loyalty-details.md) (`profile-loyalty-details`)：新增聯絡資訊，例如住家地址、電子郵件地址和家庭電話。
 
 ```SHELL
 curl -X PATCH \
@@ -345,9 +345,9 @@ curl -X PATCH \
 
 **响应**
 
-响应会在 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
+回應中會顯示新新增的欄位群組 `meta:extends` 陣列並包含 `$ref` 至中的欄位群組 `allOf` 屬性。
 
-忠诚度会员架构现在应包含四个 `$ref` 值 `allOf` 数组： `profile`, `profile-person-details`, `profile-personal-details`和 `profile-loyalty-details` 如下所示。
+熟客會員結構描述現在應包含四個 `$ref` 中的值 `allOf` 陣列： `profile`， `profile-person-details`， `profile-personal-details`、和 `profile-loyalty-details` 如下所示。
 
 ```JSON
 {
@@ -419,15 +419,15 @@ curl -X PATCH \
 }
 ```
 
-### 定义新字段组
+### 定義新的欄位群組
 
-而标准 [!UICONTROL 忠诚度详细信息] 字段组为架构提供了与忠诚度相关的有用字段，但任何标准字段组中都不包含其他忠诚度字段。
+而標準 [!UICONTROL 熟客方案細節] 欄位群組為結構描述提供有用的熟客相關欄位，其他熟客欄位未包含在任何標準欄位群組中。
 
-要添加这些字段，您可以在 `tenant` 容器。 这些字段组对您的组织是唯一的，并且组织外的任何人都不可见或无法编辑。
+若要新增這些欄位，您可以在 `tenant` 容器。 這些欄位群組是您組織所獨有的，並且您的組織以外的任何人都看不到或無法編輯。
 
-要创建(POST)新字段组，您的请求必须包含 `meta:intendedToExtend` 包含 `$id` 对于与字段组兼容的基类，以及字段组将包含的属性。
+若要建立(POST)新欄位群組，您的請求必須包含 `meta:intendedToExtend` 包含 `$id` 與欄位群組相容的基底類別，以及欄位群組將包含的屬性。
 
-任何自定义属性都必须嵌套在 `TENANT_ID` 以避免与其他字段组或字段发生冲突。
+任何自訂屬性都必須巢狀內嵌在 `TENANT_ID` 以避免與其他欄位群組或欄位衝突。
 
 **API格式**
 
@@ -437,7 +437,7 @@ POST /tenant/fieldgroups
 
 **请求**
 
-此请求会创建一个新字段组，该字段组具有 `loyaltyTier` 包含特定于公司特定忠诚度计划的四个字段的对象： `id`, `effectiveDate`, `currentThreshold`和 `nextThreshold`.
+此請求會建立具有 `loyaltyTier` 包含公司特定忠誠度方案特定四個欄位的物件： `id`， `effectiveDate`， `currentThreshold`、和 `nextThreshold`.
 
 ```SHELL
 curl -X POST\
@@ -501,7 +501,7 @@ curl -X POST\
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
+成功的要求會傳回HTTP回應狀態201 （已建立），其回應本文包含新建立欄位群組的詳細資訊，包括 `$id`， `meta:altIt`、和 `version`. 這些值是唯讀的，並由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -587,9 +587,9 @@ curl -X POST\
 }
 ```
 
-### 将自定义字段组添加到架构
+### 將自訂欄位群組新增到結構描述
 
-您现在可以按照 [添加标准字段组](#add-a-field-group) 将新创建的字段组添加到架构。
+您現在可以執行以下的相同步驟： [新增標準欄位群組](#add-a-field-group) 以將此新建立的欄位群組新增至您的結構描述。
 
 **API格式**
 
@@ -599,11 +599,11 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 模式。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 結構描述的。 |
 
 **请求**
 
-此请求会更新(PATCH)忠诚度会员架构，以包含新“忠诚度等级”字段组中的字段。
+此請求會更新(PATCH)忠誠會員結構，以包含新「忠誠度等級」欄位群組中的欄位。
 
 ```SHELL
 curl -X PATCH \
@@ -620,7 +620,7 @@ curl -X PATCH \
 
 **响应**
 
-您可以看到字段组已成功添加，因为响应现在会在 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
+您可以看到欄位群組已成功新增，因為回應現在會在中顯示新新增的欄位群組 `meta:extends` 陣列並包含 `$ref` 至中的欄位群組 `allOf` 屬性。
 
 ```JSON
 {
@@ -699,9 +699,9 @@ curl -X PATCH \
 }
 ```
 
-### 查看当前架构
+### 檢視目前的結構描述
 
-您现在可以执行GET请求以查看当前架构，并查看添加的字段组对架构整体结构的贡献情况。
+您現在可以執行GET要求來檢視目前的結構描述，並檢視新增的欄位群組對結構描述整體結構的貢獻。
 
 **API格式**
 
@@ -711,7 +711,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 模式。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 結構描述的。 |
 
 **请求**
 
@@ -727,9 +727,9 @@ curl -X GET \
 
 **响应**
 
-通过使用 `application/vnd.adobe.xed-full+json; version=1` `Accept` 标题中，您可以看到显示所有属性的完整架构。 这些属性是类和字段组贡献的字段，这些字段组已用于组成架构。 在以下示例响应中，只显示最近添加的空格字段。 您可以在 [附录](#appendix) 在本文档末尾。
+藉由使用 `application/vnd.adobe.xed-full+json; version=1` `Accept` 標題中，您可以看到完整結構描述顯示所有屬性。 這些屬性是用來構成結構描述的類別和欄位群組所貢獻的欄位。 在下列範例回應中，只會顯示最近新增的欄位以取得空格。 您可以在「 」中檢視完整結構描述，包括所有屬性及其屬性。 [附錄](#appendix) （位於本檔案結尾）。
 
-在 `"properties"`，您可以看到 `_{TENANT_ID}` 添加自定义字段组时创建的命名空间。 在该命名空间中， `loyaltyTier` 对象以及创建字段组时定义的字段。
+下 `"properties"`，您會看到 `_{TENANT_ID}` 新增自訂欄位群組時所建立的名稱空間。 該名稱空間內是 `loyaltyTier` 物件和建立欄位群組時定義的欄位。
 
 ```JSON
 {
@@ -815,13 +815,13 @@ curl -X GET \
 }
 ```
 
-### 创建数据类型
+### 建立資料型別
 
-您创建的“忠诚度层”字段组包含可能在其他架构中有用的特定属性。 例如，数据可能会作为体验事件的一部分被摄取，或者由实现其他类的架构使用。 在这种情况下，将对象层次结构另存为数据类型是有意义的，以便在其他位置重用定义。
+您建立的「熟客層」欄位群組包含可能在其他結構描述中有用的特定屬性。 例如，資料可能會當作體驗事件的一部分擷取，或供實作不同類別的結構描述使用。 在此情況下，將物件階層儲存為資料型別是有意義的，這樣可以更輕鬆地在其他地方重複使用定義。
 
-数据类型允许您定义对象层次结构一次，并在字段中引用它，就像任何其他标量类型的引用一样。
+資料型別可讓您定義物件階層一次，並在欄位中參照它，就像任何其他純量型別一樣。
 
-换言之，数据类型允许一致地使用多字段结构，比字段组更灵活，因为通过将它们添加为字段的“类型”，可以将它们包含在架构中的任意位置。
+換言之，資料型別允許一致地使用多欄位結構，比欄位群組有更多彈性，因為它們可以新增為欄位的「型別」，以包含在結構描述中的任何位置。
 
 **API格式**
 
@@ -831,7 +831,7 @@ POST /tenant/datatypes
 
 **请求**
 
-定义数据类型不需要 `meta:extends` 或 `meta:intendedToExtend` 字段和字段无需嵌套在租户ID下以避免冲突。
+定義資料型別不需要 `meta:extends` 或 `meta:intendedToExtend` 欄位和欄位不需要巢狀內嵌在租使用者ID底下，即可避免衝突。
 
 ```SHELL
 curl -X POST \
@@ -883,7 +883,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含新创建数据类型的详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
+成功的要求會傳回HTTP回應狀態201 （已建立），其回應本文包含新建立資料型別的詳細資訊，包括 `$id`， `meta:altIt`、和 `version`. 這些值是唯讀的，並由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -956,11 +956,11 @@ curl -X POST \
 }
 ```
 
-您可以使用已编码的URL执行查找(GET)请求 `$id` 用于直接查看新数据类型的URI。 请务必将 `version` 在 `Accept` 查找请求的标头。
+您可以使用編碼的URL執行查詢(GET)請求 `$id` URI直接檢視新的資料型別。 請務必包含 `version` 在您的 `Accept` 查詢請求的標頭。
 
-### 在架构中使用数据类型
+### 在結構描述中使用資料型別
 
-现在，已创建忠诚度层数据类型，接下来您可以更新(PATCH) `loyaltyTier` 字段组中的字段，以引用数据类型来替换之前存在的字段。
+現在忠誠度層級資料型別已建立，您可以更新(PATCH) `loyaltyTier` 欄位群組中的欄位，用來參照資料型別，以取代先前存在的欄位。
 
 **API格式**
 
@@ -970,7 +970,7 @@ PATCH /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{FIELD_GROUP_ID}` | 的 `meta:altId` 或URL已编码 `$id` 要更新的字段组的列表。 |
+| `{FIELD_GROUP_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要更新的欄位群組的。 |
 
 **请求**
 
@@ -999,7 +999,7 @@ curl -X PATCH \
 
 **响应**
 
-响应现在包含引用(`$ref`)到 `loyaltyTier` 对象，而不是之前定义的字段。
+回應現在包含參考(`$ref`)至中的資料型別 `loyaltyTier` 物件，而非先前定義的欄位。
 
 ```JSON
 {
@@ -1066,7 +1066,7 @@ curl -X PATCH \
 }
 ```
 
-如果您立即执行GET请求以查找架构，则 `loyaltyTier` 属性显示对 `meta:referencedFrom`:
+如果您現在執行GET要求來查閱結構描述， `loyaltyTier` 屬性會顯示下資料型別的參考 `meta:referencedFrom`：
 
 ```JSON
 "_{TENANT_ID}": {
@@ -1111,15 +1111,15 @@ curl -X PATCH \
 }
 ```
 
-### 定义标识描述符
+### 定義身分描述項
 
-架构用于将数据摄取到 [!DNL Experience Platform]. 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，可以访问图形数据 [[!DNL Real-Time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 提供拼合的每个客户视图的服务。
+結構描述用於將資料擷取到 [!DNL Experience Platform]. 此資料最終會跨多個服務使用，以建立個人的單一、統一檢視。 為協助執行此程式，可將關鍵欄位標示為「身分」，並在資料擷取後，將這些欄位中的資料插入該個人的「身分圖表」。 之後可透過以下方式存取圖表資料： [[!DNL Real-Time Customer Profile]](../../profile/home.md) 和其他 [!DNL Experience Platform] 服務，提供各個客戶的拼接檢視表。
 
-通常标记为“身份”的字段包括：电子邮件地址，电话号码， [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 考虑特定于贵组织的任何唯一标识符，因为它们也可能是良好的标识字段。
+通常標籤為「身分」的欄位包括：電子郵件地址、電話號碼、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID欄位。 請考量貴組織特有的任何唯一識別碼，因為這些識別碼可能是良好的身分識別欄位。
 
-身份描述符表示 `sourceProperty` 的 `sourceSchema` 是应视为标识的唯一标识符。
+身分描述項會指出 `sourceProperty` 的 `sourceSchema` 是應視為身分的唯一識別碼。
 
-有关使用描述符的更多信息，请参阅 [架构注册开发人员指南](../api/getting-started.md).
+如需使用描述元的詳細資訊，請參閱 [Schema Registry開發人員指南](../api/getting-started.md).
 
 **API格式**
 
@@ -1129,7 +1129,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在 `personalEmail.address` 字段。 这说明 [!DNL Experience Platform] 将忠诚会员的电子邮件地址用作标识符，以帮助拼合有关个人的信息。 此调用还会通过设置 `xdm:isPrimary` to `true`，这是 [启用架构以在实时客户资料中使用](#profile).
+以下請求在上定義身分描述項 `personalEmail.address` 「熟客會員」結構描述的欄位。 這說明 [!DNL Experience Platform] 將熟客會員的電子郵件地址當作識別碼，以協助彙整個人的相關資訊。 此呼叫也會透過設定將此欄位設定為結構描述的主要身分 `xdm:isPrimary` 至 `true`，這是 [啟用結構以用於Real-Time Customer Profile](#profile).
 
 ```SHELL
 curl -X POST \
@@ -1152,11 +1152,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以列出可用的“xdm:namespace”值，或使用 [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
+>您可以列出可用的「xdm：namespace」值，或使用 [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). 「xdm：property」的值可以是「xdm：code」或「xdm：id」，具體取決於使用的「xdm：namespace」。
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建），其中包含新创建描述符的详细信息(包括其 `@id`. 的 `@id` 是由 [!DNL Schema Registry] 和用于在API中引用描述符。
+成功的回應會傳回HTTP狀態201 （已建立），其回應內文包含新建立之描述項的詳細資訊，包括其 `@id`. 此 `@id` 是由指派的唯讀欄位 [!DNL Schema Registry] 和用於參考API中的描述項。
 
 ```JSON
 {
@@ -1176,17 +1176,17 @@ curl -X POST \
 }
 ```
 
-## 启用在中使用的架构 [!DNL Real-Time Customer Profile] {#profile}
+## 啟用結構描述以用於 [!DNL Real-Time Customer Profile] {#profile}
 
-应用主标识描述符后，您可以启用会员架构以供使用 [!DNL Real-Time Customer Profile] 通过添加 `union` 标记 `meta:immutableTags` 属性。
+一旦結構描述套用了主要身分描述項後，您就可以啟用忠誠會員結構描述以供使用 [!DNL Real-Time Customer Profile] 藉由新增 `union` 標籤到 `meta:immutableTags` 屬性。
 
 >[!NOTE]
 >
->有关使用并集视图的更多信息，请参阅 [工会](../api/unions.md) 在 [!DNL Schema Registry] 开发人员指南。
+>如需使用聯合檢視的詳細資訊，請參閱以下章節： [聯合](../api/unions.md) 在 [!DNL Schema Registry] 開發人員指南。
 
-### 添加 `union` 标记
+### 新增 `union` 標籤
 
-为了将架构包含在合并的并集视图中， `union` 标记必须添加到 `meta:immutableTags` 架构的属性。 这是通过PATCH请求来更新架构并添加 `meta:immutableTags` 值为 `union`.
+為了使結構描述包含在合併的聯合檢視中， `union` 標籤必須新增至 `meta:immutableTags` 結構描述的屬性。 這是透過PATCH請求完成的，以更新結構並新增 `meta:immutableTags` 陣列，值為 `union`.
 
 **API格式**
 
@@ -1196,7 +1196,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 为“配置文件”启用的架构。 |
+| `{SCHEMA_ID}` | 此 `meta:altId` 或URL編碼 `$id` 設定檔啟用的結構描述。 |
 
 **请求**
 
@@ -1215,7 +1215,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示操作已成功执行，并且架构现在包含顶级属性， `meta:immutableTags`，这是一个包含值“union”的数组。
+回應會顯示已成功執行作業，而且結構描述現在包含最上層屬性。 `meta:immutableTags`，此陣列包含值「union」。
 
 ```JSON
 {
@@ -1297,11 +1297,11 @@ curl -X PATCH \
 }
 ```
 
-### 在并集中列出架构
+### 聯合中的清單結構描述
 
-现在，您已成功将架构添加到 [!DNL XDM Individual Profile] 并集。 要查看属于同一并集的所有架构的列表，您可以使用查询参数执行GET请求以过滤响应。
+您現在已成功將結構描述新增至 [!DNL XDM Individual Profile] 聯合。 若要檢視屬於相同聯合的所有結構描述清單，您可以使用查詢引數來執行GET請求以篩選回應。
 
-使用 `property` 查询参数，您可以指定仅包含 `meta:immutableTags` 具有 `meta:class` 等于 `$id` 的 [!DNL XDM Individual Profile] 类。
+使用 `property` 查詢引數時，您可以指定僅包含 `meta:immutableTags` 欄位有 `meta:class` 等於 `$id` 的 [!DNL XDM Individual Profile] 類別會傳回。
 
 **API格式**
 
@@ -1311,7 +1311,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **请求**
 
-以下示例请求返回属于 [!DNL XDM Individual Profile] 并集。
+以下範例要求傳回屬於 [!DNL XDM Individual Profile] 聯合。
 
 ```SHELL
 curl -X GET \
@@ -1325,7 +1325,7 @@ curl -X GET \
 
 **响应**
 
-响应是一个经过筛选的架构列表，仅包含满足这两个要求的架构列表。 请记住，使用多个查询参数时，假定为AND关系。 列表响应的格式取决于 `Accept` 请求中发送的标头。
+回應是經過篩選的結構描述清單，僅包含同時滿足這兩個要求的結構描述。 請記住，使用多個查詢引數時，會假設為AND關係。 清單回應的格式取決於 `Accept` 標頭已在請求中傳送。
 
 ```JSON
 {
@@ -1371,25 +1371,25 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已使用标准字段组和您定义的字段组成功构建了架构。 您现在可以使用此架构创建数据集并将记录数据摄取到Adobe Experience Platform。
+依照本教學課程，您已使用標準欄位群組和您定義的欄位群組，成功撰寫結構描述。 您現在可以使用此結構描述來建立資料集，並將記錄資料擷取到Adobe Experience Platform。
 
-在本教程中创建的完整忠诚会员架构，位于以下附录中。 在查看架构时，您可以看到字段组对整体结构的贡献情况，以及哪些字段可用于数据摄取。
+在本教學課程中建立的完整熟客會員結構描述可在下列附錄中取得。 當您檢視結構描述時，您可以看到欄位群組對整體結構的貢獻，以及哪些欄位可用於資料擷取。
 
-创建多个架构后，您可以使用关系描述符定义它们之间的关系。 请参阅教程 [定义两个架构之间的关系](relationship-api.md) 以了解更多信息。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请参阅 [架构注册开发人员指南](../api/getting-started.md) 使用API时。
+建立多個結構描述後，您可以透過使用關係描述元來定義它們之間的關係。 請參閱教學課程，瞭解 [定義兩個結構描述之間的關係](relationship-api.md) 以取得詳細資訊。 如需如何在登入中執行所有作業(GET、POST、PUT、PATCH和DELETE)的詳細範例，請參閱 [Schema Registry開發人員指南](../api/getting-started.md) 使用API時。
 
 ## 附录 {#appendix}
 
-以下信息补充了API教程。
+下列資訊可補充API教學課程。
 
-## 完整的会员架构 {#complete-schema}
+## 完整的熟客會員結構 {#complete-schema}
 
-在本教程中，我们构建了一个架构来描述零售忠诚度计划的成员。
+在本教學課程中，會撰寫結構描述來說明零售忠誠度計畫的會員。
 
-架构实现 [!DNL XDM Individual Profile] 类和组合多个字段组。 它使用标准捕获有关忠诚会员的信息 [!DNL Demographic Details], [!UICONTROL 个人联系详细信息]和 [!UICONTROL 忠诚度详细信息] 字段组，以及通过在教程中定义的自定义忠诚度等级字段组。
+結構描述會實作 [!DNL XDM Individual Profile] 類別並結合多個欄位群組。 它會使用標準來擷取關於忠誠會員的資訊 [!DNL Demographic Details]， [!UICONTROL 個人聯絡詳細資訊]、和 [!UICONTROL 熟客方案細節] 欄位群組，以及透過教學課程中定義的自訂忠誠度層級欄位群組。
 
-以下显示了JSON格式的已完成会员架构：
+以下顯示JSON格式中完成的熟客會員結構：
 
-+++查看完整架构
++++檢視完整結構描述
 
 ```JSON
 {

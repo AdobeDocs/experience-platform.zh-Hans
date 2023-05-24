@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；对模型进行评分；Data Science Workspace；热门主题；敏感的机器学习api
+keywords: Experience Platform；為模型評分；Data Science Workspace；熱門主題；sensei機器學習api
 solution: Experience Platform
-title: 使用Sensei机器学习API对模型进行评分
+title: 使用Sensei Machine Learning API為模型評分
 type: Tutorial
-description: 本教程将向您展示如何利用Sensei机器学习API创建实验和实验运行。
+description: 本教學課程將說明如何運用Sensei機器學習API來建立實驗和執行實驗。
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -12,15 +12,15 @@ ht-degree: 1%
 
 ---
 
-# 使用 [!DNL Sensei Machine Learning API]
+# 使用為模型評分 [!DNL Sensei Machine Learning API]
 
-本教程将向您展示如何利用API创建实验和实验运行。 有关Sensei机器学习API中所有端点的列表，请参阅 [本文档](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
+本教學課程將說明如何運用API來建立實驗和執行實驗。 如需Sensei機器學習API中所有端點的清單，請參閱 [本檔案](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
 
-## 为评分创建计划实验
+## 建立已排程的實驗以進行評分
 
-与培训的计划实验类似，还通过包含 `template` 部分。 此外， `name` 字段 `tasks` 在主体中设置为 `score`.
+類似於訓練的已排程實驗，建立已排程實驗以進行評分也是透過包含 `template` 區段至body引數。 此外， `name` 欄位在 `tasks` 內文中的設定為 `score`.
 
-以下是创建一个实验的示例，该实验将从 `startTime` 将运行到 `endTime`.
+以下範例說明如何建立實驗，從開始每20分鐘執行一次 `startTime` 和將執行至 `endTime`.
 
 **请求**
 
@@ -34,10 +34,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`:您独特的Adobe Experience Platform集成中提供了您的组织凭据。\
-`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
-`{JSON_PAYLOAD}`:要发送的Experience Run对象。 下面显示了我们在教程中使用的示例：
+`{ORG_ID}`：您在唯一Adobe Experience Platform整合中找到的組織憑證。\
+`{ACCESS_TOKEN}`：驗證後提供的特定持有人權杖值。\
+`{API_KEY}`：您在唯一Adobe Experience Platform整合中找到的特定API金鑰值。\
+`{JSON_PAYLOAD}`：要傳送的Experiment Run物件。 我們會在教學課程中使用的範例顯示在這裡：
 
 ```JSON
 {
@@ -67,10 +67,10 @@ curl -X POST \
 }
 ```
 
-`{INSTANCE_ID}`:表示MLInstance的ID。\
-`{MODEL_ID}`:表示已培训模型的ID。
+`{INSTANCE_ID}`：代表MLInstance的ID。\
+`{MODEL_ID}`：代表已訓練模型的ID。
 
-以下是创建计划实验后的响应。
+以下是建立排程實驗後的回應。
 
 **响应**
 
@@ -102,13 +102,13 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`:表示实验的ID。\
-`{INSTANCE_ID}`:表示MLInstance的ID。
+`{EXPERIMENT_ID}`：代表實驗的ID。\
+`{INSTANCE_ID}`：代表MLInstance的ID。
 
 
-### 为评分创建实验运行
+### 建立評分的實驗回合
 
-现在，利用训练好的模型，我们可以创建一个“实验运行”来打分。 的值 `modelId` 参数是 `id` 在上述GET模型请求中返回的参数。
+現在，有了經過訓練的模型，我們可以為評分建立實驗回合。 的值 `modelId` 引數為 `id` 引數已在上述GET模型請求中傳回。
 
 **请求**
 
@@ -122,11 +122,11 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`:您独特的Adobe Experience Platform集成中提供了您的组织凭据。\
-`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
-`{EXPERIMENT_ID}`:与要定位的实验对应的ID。 这可在创建实验时的响应中找到。\
-`{JSON_PAYLOAD}`:要发布的数据。 以下是我们在教程中使用的示例：
+`{ORG_ID}`：您在唯一Adobe Experience Platform整合中找到的組織憑證。\
+`{ACCESS_TOKEN}`：驗證後提供的特定持有人權杖值。\
+`{API_KEY}`：您在唯一Adobe Experience Platform整合中找到的特定API金鑰值。\
+`{EXPERIMENT_ID}`：與您要鎖定之實驗相對應的ID。 這可在建立實驗時的回應中找到。\
+`{JSON_PAYLOAD}`：要發佈的資料。 我們在本教學課程中使用的範例如下：
 
 ```JSON
 {
@@ -145,9 +145,9 @@ curl -X POST \
 }
 ```
 
-`{MODEL_ID}`:与模型对应的ID。
+`{MODEL_ID}`：與模型相對應的ID。
 
-“实验运行”创建的响应如下所示：
+建立實驗回合的回應如下所示：
 
 **响应**
 
@@ -168,13 +168,13 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`:与运行所在实验对应的ID。\
-`{EXPERIMENT_RUN_ID}`:与您刚刚创建的“实验运行”对应的ID。
+`{EXPERIMENT_ID}`：與執行所在實驗相對應的ID。\
+`{EXPERIMENT_RUN_ID}`：與您剛建立的Experiment Run相對應的ID。
 
 
-### 为计划的实验运行检索实验运行状态
+### 擷取排程實驗執行的實驗執行狀態
 
-要为计划实验运行体验，查询如下所示：
+若要取得排程實驗的實驗執行，查詢如下所示：
 
 **请求**
 
@@ -185,11 +185,11 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_ID}`:与运行所在实验对应的ID。\
-`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{ORG_ID}`:您独特的Adobe Experience Platform集成中提供了您的组织凭据。
+`{EXPERIMENT_ID}`：與執行所在實驗相對應的ID。\
+`{ACCESS_TOKEN}`：驗證後提供的特定持有人權杖值。\
+`{ORG_ID}`：您在唯一Adobe Experience Platform整合中找到的組織憑證。
 
-由于特定实验存在多个实验运行，因此返回的响应将具有一组运行ID。
+由於特定實驗有多個實驗執行，因此傳回的回應將具有執行ID陣列。
 
 **响应**
 
@@ -212,12 +212,12 @@ curl -X GET \
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:与“实验运行”对应的ID。\
-`{EXPERIMENT_ID}`:与运行所在实验对应的ID。
+`{EXPERIMENT_RUN_ID}`：與實驗回合相對應的ID。\
+`{EXPERIMENT_ID}`：與執行所在實驗相對應的ID。
 
-### 停止和删除计划的实验
+### 停止並刪除排程的實驗
 
-如果要在计划实验之前停止执行该实验 `endTime`，可通过查询向 `{EXPERIMENT_ID}`
+如果您想要在排程實驗之前停止執行 `endTime`，這可透過向查詢DELETE請求來完成 `{EXPERIMENT_ID}`
 
 **请求**
 
@@ -228,15 +228,15 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-`{EXPERIMENT_ID}`:与实验对应的ID。\
-`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{ORG_ID}`:您独特的Adobe Experience Platform集成中提供了您的组织凭据。
+`{EXPERIMENT_ID}`：與實驗相對應的ID。\
+`{ACCESS_TOKEN}`：驗證後提供的特定持有人權杖值。\
+`{ORG_ID}`：您在唯一Adobe Experience Platform整合中找到的組織憑證。
 
 >[!NOTE]
 >
->API调用将禁用创建新的实验运行。 但是，它不会停止执行已在运行的实验运行。
+>API呼叫將停用建立新的實驗執行。 但是，它不會停止執行已執行的實驗回合。
 
-以下是通知实验已成功删除的响应。
+以下是「回應」，通知實驗已成功刪除。
 
 **响应**
 

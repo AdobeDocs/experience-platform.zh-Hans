@@ -1,6 +1,6 @@
 ---
-description: 本页介绍了Destination SDK支持的各种OAuth 2身份验证流，并提供了为目标设置OAuth 2身份验证的说明。
-title: OAuth 2身份验证
+description: 本頁說明Destination SDK支援的各種OAuth 2驗證流程，並提供為目的地設定OAuth 2驗證的指示。
+title: OAuth 2驗證
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
@@ -9,30 +9,30 @@ ht-degree: 4%
 
 ---
 
-# OAuth 2身份验证
+# OAuth 2驗證
 
-Destination SDK支持多种到目标的身份验证方法。 其中包括使用 [OAuth 2身份验证框架](https://tools.ietf.org/html/rfc6749).
+Destination SDK支援多種前往目的地的驗證方法。 其中一項為透過使用向目的地進行驗證的選項 [OAuth 2驗證架構](https://tools.ietf.org/html/rfc6749).
 
-本页介绍了Destination SDK支持的各种OAuth 2身份验证流，并提供了为目标设置OAuth 2身份验证的说明。
+本頁說明Destination SDK支援的各種OAuth 2驗證流程，並提供為目的地設定OAuth 2驗證的指示。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均为 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-有关哪些类型的集成支持本页所述功能的详细信息，请参阅下表。
+請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
 
-| 集成类型 | 支持功能 |
+| 整合型別 | 支援功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件的（批处理）集成 | 否 |
+| 即時（串流）整合 | 是 |
+| 檔案式（批次）整合 | 否 |
 
-## 如何将OAuth 2身份验证详细信息添加到目标配置 {#how-to-setup}
+## 如何將OAuth 2驗證詳細資料新增至您的目的地設定 {#how-to-setup}
 
-### 系统中的先决条件 {#prerequisites}
+### 您系統中的必要條件 {#prerequisites}
 
-第一步，您必须在系统中为Adobe Experience Platform创建应用程序，或在系统中注册Experience Platform。 目标是生成客户端ID和客户端密钥，验证目标Experience Platform所需的客户端ID和客户端密钥。 作为系统中此配置的一部分，您需要Adobe Experience Platform OAuth 2重定向/回调URL，您可以从以下列表中获取该URL。
+首先，您必須在系統中為Adobe Experience Platform建立應用程式，或在系統中註冊Experience Platform。 目標是產生使用者端ID和使用者端密碼，這是驗證Experience Platform至您的目的地所需的密碼。 在您的系統中進行此設定時，您會需要Adobe Experience Platform OAuth 2重新導向/回呼URL，可從以下清單中取得。
 
 * `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
@@ -40,55 +40,55 @@ Destination SDK支持多种到目标的身份验证方法。 其中包括使用 
 
 >[!IMPORTANT]
 >
->在系统中为Adobe Experience Platform注册重定向/回调URL的步骤仅对 [具有授权代码的OAuth 2](oauth2-authentication.md#authorization-code) 授予类型。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
+>只有在下列情況下，才需要為系統中Adobe Experience Platform註冊重新導向/回呼URL的步驟 [具有授權代碼的OAuth 2](oauth2-authentication.md#authorization-code) 授予型別。 對於其他兩種支援的授權型別（密碼和使用者端認證），您可以略過此步驟。
 
-在此步骤结束时，您应该：
-* 客户ID;
-* 客户密码；
-* Adobe的回调URL（用于授权代码授予）。
+在此步驟結束時，您應該會：
+* 使用者端ID；
+* 使用者端密碼；
+* Adobe的回呼URL （用於授權代碼授權）。
 
-### 您需要在Destination SDK中执行的操作 {#to-do-in-destination-sdk}
+### 在Destination SDK中需要做什麼 {#to-do-in-destination-sdk}
 
-要在Experience Platform中为目标设置OAuth 2身份验证，您必须将OAuth 2详细信息添加到 [目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)，在 `customerAuthenticationConfigurations` 参数。 请参阅 [客户身份验证](../../functionality/destination-configuration/customer-authentication.md) ，以查看详细示例。 根据OAuth 2身份验证授权类型，此页面下面将进一步说明您需要向配置模板添加哪些字段。
+若要為Experience Platform中的目的地設定OAuth 2驗證，您必須將OAuth 2詳細資料新增至 [目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)，位於 `customerAuthenticationConfigurations` 引數。 另請參閱 [客戶驗證](../../functionality/destination-configuration/customer-authentication.md) 以取得詳細範例。 根據您的OAuth 2驗證授權型別，關於您需要新增哪些欄位到設定範本的特定指示，請參閱本頁的下方。
 
-## 支持的OAuth 2授权类型 {#oauth2-grant-types}
+## 支援的OAuth 2授與型別 {#oauth2-grant-types}
 
-Experience Platform支持下表中的三种OAuth 2授权类型。 如果您设置了自定义OAuth 2，则Adobe可以在集成中的自定义字段帮助下支持它。 有关更多信息，请参阅每种授权类型的章节。
+Experience Platform支援下表中的三種OAuth 2授與型別。 如果您有自訂OAuth 2設定，Adobe可在您整合中的自訂欄位協助下支援該設定。 如需詳細資訊，請參閱各授權型別的章節。
 
 >[!IMPORTANT]
 >
->* 按照以下部分的说明提供输入参数。 Adobe内部系统连接到您平台的身份验证系统并获取输出参数，这些参数用于对用户进行身份验证并维护对目标的身份验证。
->* 表中以粗体突出显示的输入参数是OAuth 2身份验证流程中的必需参数。 其他参数是可选的。 此处未显示其他自定义输入参数，但在部分中有长度说明 [自定义OAuth 2配置](#customize-configuration) 和 [访问令牌刷新](#access-token-refresh).
+>* 您可以依照以下各節的指示提供輸入引數。 Adobe內部系統會連線至您平台的驗證系統，並抓取輸出引數，這些引數會用於驗證使用者及維護對您目的地的驗證。
+>* 表格中以粗體標示的輸入引數是OAuth 2驗證流程中的必要引數。 其他引數為選用引數。 還有其他自訂輸入引數未在此處顯示，但會在各節中詳細說明 [自訂您的OAuth 2設定](#customize-configuration) 和 [存取權杖重新整理](#access-token-refresh).
 
 
-| OAuth 2授予 | 输入 | 输出 |
+| OAuth 2授予 | 輸入 | 輸出 |
 |---------|----------|---------|
-| 授权代码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
-| 密码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>accessTokenUrl</b></li><li><b>用户名</b></li><li><b>密码</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
-| 客户端凭据 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 授權代碼 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 密码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>accessTokenUrl</b></li><li><b>使用者名稱</b></li><li><b>密碼</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 使用者端認證 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
 {style="table-layout:auto"}
 
-上表列出了在标准OAuth 2流中使用的字段。 除了这些标准字段外，各种合作伙伴集成可能还需要额外的输入和输出。 Adobe为Destination SDK设计了灵活的OAuth 2身份验证/授权框架，该框架可处理上述标准字段模式的变体，同时支持自动重新生成无效输出（如过期的访问令牌）的机制。
+上表列出標準OAuth 2流程中使用的欄位。 除了這些標準欄位之外，不同的合作夥伴整合可能需要額外的輸入和輸出。 Adobe為Destination SDK設計了彈性的OAuth 2驗證/授權架構，可以處理上述標準欄位模式的變異，同時支援自動重新產生無效輸出的機制，例如過期的存取權杖。
 
-在所有情况下，输出都包含访问令牌，Experience Platform使用该令牌来验证和维护对目标的身份验证。
+在所有情況下，輸出都包含存取權杖，Experience Platform會使用該權杖來驗證和維護對您目的地的驗證。
 
-Adobe为OAuth 2身份验证设计的系统：
-* 支持所有三个OAuth 2授权，同时考虑其中任何变体，例如附加数据字段、非标准API调用等。
-* 支持具有不同生命周期值（无论是90天、30分钟还是您指定的任何其他生命周期值）的访问令牌。
-* 支持具有或不具有刷新令牌的OAuth 2授权流。
+Adobe為OAuth 2驗證設計的系統：
+* 支援所有三個OAuth 2授予，並會考慮其中的任何變化，例如其他資料欄位、非標準API呼叫等。
+* 支援存取具有不同期限值的權杖，不論是90天、30分鐘或您指定的任何其他期限值。
+* 支援具有或不具有重新整理權杖的OAuth 2授權流程。
 
-## 具有授权代码的OAuth 2 {#authorization-code}
+## 具有授權代碼的OAuth 2 {#authorization-code}
 
-如果您的目标支持标准OAuth 2.0授权代码流(请阅读 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.1))或其变体，请查阅以下必填和可选字段：
+如果您的目的地支援標準OAuth 2.0授權代碼流程(請參閱 [RFC標準規格](https://tools.ietf.org/html/rfc6749#section-4.1))或它的變體，請參閱下列必要和選用欄位：
 
-| OAuth 2授予 | 输入 | 输出 |
+| OAuth 2授予 | 輸入 | 輸出 |
 |---------|----------|---------|
-| 授权代码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 授權代碼 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
 {style="table-layout:auto"}
 
-要为目标设置此身份验证方法，请在您 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md):
+若要為目的地設定此驗證方法，請在設定中新增下列行 [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)：
 
 ```json
 {
@@ -111,33 +111,33 @@ Adobe为OAuth 2身份验证设计的系统：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authType` | 字符串 | 使用“OAUTH2”。 |
-| `grant` | 字符串 | 使用“OAUTH2_AUTHORIZATION_CODE”。 |
-| `accessTokenUrl` | 字符串 | 您的URL，该URL会出现访问令牌和（可选）刷新令牌的问题。 |
-| `authorizationUrl` | 字符串 | 授权服务器的URL，用于将用户重定向到您的应用程序以登录。 |
-| `refreshTokenUrl` | 字符串 | *可选.* 您的URL，会导致刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
-| `clientId` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端ID。 |
-| `clientSecret` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端密钥。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的操作范围。 示例：“读，写”。 |
+| `authType` | 字符串 | 使用「OAUTH2」。 |
+| `grant` | 字符串 | 使用「OAUTH2_AUTHORIZATION_CODE」。 |
+| `accessTokenUrl` | 字符串 | 您這邊的URL，會發行存取權杖，以及選擇性地重新整理權杖。 |
+| `authorizationUrl` | 字符串 | 授權伺服器的URL，您可在此處將使用者重新導向以登入您的應用程式。 |
+| `refreshTokenUrl` | 字符串 | *可选.* 您這邊的URL，這會產生重新整理Token的問題。 通常， `refreshTokenUrl` 與 `accessTokenUrl`. |
+| `clientId` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端ID。 |
+| `clientSecret` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端密碼。 |
+| `scope` | 字串清單 | *可选*. 設定存取Token可讓Experience Platform對您的資源執行的範圍。 範例： &quot;read， write&quot;。 |
 
 {style="table-layout:auto"}
 
-## 具有密码授予的OAuth 2
+## 具有密碼授予的OAuth 2
 
-对于OAuth 2密码授予(请阅读 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.3))，则Experience Platform需要用户的用户名和密码。 在身份验证流程中，Experience Platform交换访问令牌和刷新令牌（可选）的这些凭据。
-Adobe利用以下标准输入简化目标配置，并能够覆盖值：
+針對OAuth 2密碼授予(請參閱 [RFC標準規格](https://tools.ietf.org/html/rfc6749#section-4.3))，Experience Platform需要使用者的使用者名稱和密碼。 在驗證流程中，Experience Platform會交換這些憑證以取得存取權杖，並視需要交換重新整理權杖。
+Adobe會使用以下標準輸入來簡化目的地設定，並有能力覆寫值：
 
-| OAuth 2授予 | 输入 | 输出 |
+| OAuth 2授予 | 輸入 | 輸出 |
 |---------|----------|---------|
-| 密码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>accessTokenUrl</b></li><li><b>用户名</b></li><li><b>密码</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 密码 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>accessTokenUrl</b></li><li><b>使用者名稱</b></li><li><b>密碼</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
-> 您无需为 `username` 和 `password` 在下面的配置中。 添加 `"grant": "OAUTH2_PASSWORD"` 在目标配置中，当用户对您的目标进行身份验证时，系统将请求用户在Experience PlatformUI中提供用户名和密码。
+> 您不需要為新增任何引數 `username` 和 `password` 在以下的設定中。 當您新增時 `"grant": "OAUTH2_PASSWORD"` 在目標設定中，當使用者對您的目標進行驗證時，系統會要求使用者在Experience PlatformUI中提供使用者名稱和密碼。
 
-要为目标设置此身份验证方法，请在您 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md):
+若要為目的地設定此驗證方法，請在設定中新增下列行 [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)：
 
 ```json
 {
@@ -156,26 +156,26 @@ Adobe利用以下标准输入简化目标配置，并能够覆盖值：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authType` | 字符串 | 使用“OAUTH2”。 |
-| `grant` | 字符串 | 使用“OAUTH2_PASSWORD”。 |
-| `accessTokenUrl` | 字符串 | 您的URL，该URL会出现访问令牌和（可选）刷新令牌的问题。 |
-| `clientId` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端ID。 |
-| `clientSecret` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端密钥。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的操作范围。 示例：“读，写”。 |
+| `authType` | 字符串 | 使用「OAUTH2」。 |
+| `grant` | 字符串 | 使用「OAUTH2_PASSWORD」。 |
+| `accessTokenUrl` | 字符串 | 您這邊的URL，會發行存取權杖，以及選擇性地重新整理權杖。 |
+| `clientId` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端ID。 |
+| `clientSecret` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端密碼。 |
+| `scope` | 字串清單 | *可选*. 設定存取Token可讓Experience Platform對您的資源執行的範圍。 範例： &quot;read， write&quot;。 |
 
 {style="table-layout:auto"}
 
-## 具有客户端凭据授予的OAuth 2
+## 具有使用者端憑證授權的OAuth 2
 
-您可以配置OAuth 2客户端凭据(读取 [RFC标准规范](https://tools.ietf.org/html/rfc6749#section-4.4))目标，支持下面列出的标准输入和输出。 您可以自定义值。 请参阅 [自定义OAuth 2配置](#customize-configuration) 以了解详细信息。
+您可以設定OAuth 2使用者端認證(請參閱 [RFC標準規格](https://tools.ietf.org/html/rfc6749#section-4.4))目的地，支援下列標準輸入和輸出。 您可以自訂值。 另請參閱 [自訂您的OAuth 2設定](#customize-configuration) 以取得詳細資訊。
 
-| OAuth 2授予 | 输入 | 输出 |
+| OAuth 2授予 | 輸入 | 輸出 |
 |---------|----------|---------|
-| 客户端凭据 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>范围</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| 使用者端認證 | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>範圍</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
 {style="table-layout:auto"}
 
-要为目标设置此身份验证方法，请在您 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md):
+若要為目的地設定此驗證方法，請在設定中新增下列行 [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)：
 
 ```json
 {
@@ -197,23 +197,23 @@ Adobe利用以下标准输入简化目标配置，并能够覆盖值：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authType` | 字符串 | 使用“OAUTH2”。 |
-| `grant` | 字符串 | 使用“OAUTH2_CLIENT_CREDENTIALS”。 |
-| `accessTokenUrl` | 字符串 | 授权服务器的URL，用于发出访问令牌和可选刷新令牌。 |
-| `refreshTokenUrl` | 字符串 | *可选.* 您的URL，会导致刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
-| `clientId` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端ID。 |
-| `clientSecret` | 字符串 | 您的系统分配给Adobe Experience Platform的客户端密钥。 |
-| `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的操作范围。 示例：“读，写”。 |
+| `authType` | 字符串 | 使用「OAUTH2」。 |
+| `grant` | 字符串 | 使用「OAUTH2_CLIENT_CREDENTIALS」。 |
+| `accessTokenUrl` | 字符串 | 授權伺服器的URL，它會發出存取權杖和選用的重新整理權杖。 |
+| `refreshTokenUrl` | 字符串 | *可选.* 您這邊的URL，這會產生重新整理Token的問題。 通常， `refreshTokenUrl` 與 `accessTokenUrl`. |
+| `clientId` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端ID。 |
+| `clientSecret` | 字符串 | 您的系統指派給Adobe Experience Platform的使用者端密碼。 |
+| `scope` | 字串清單 | *可选*. 設定存取Token可讓Experience Platform對您的資源執行的範圍。 範例： &quot;read， write&quot;。 |
 
 {style="table-layout:auto"}
 
-## 自定义OAuth 2配置 {#customize-configuration}
+## 自訂您的OAuth 2設定 {#customize-configuration}
 
-上述部分中描述的配置描述了标准OAuth 2授权。 但是，由Adobe设计的系统具有灵活性，因此您可以将自定义参数用于OAuth 2授权中的任何变量。 要自定义标准OAuth 2设置，请使用 `authenticationDataFields` 参数，如以下示例中所示。
+上節中所述的設定描述了標準OAuth 2授權。 不過，由Adobe設計的系統提供彈性，因此您可以在OAuth 2授予的任何變數中使用自訂引數。 若要自訂標準OAuth 2設定，請使用 `authenticationDataFields` 引數，如下列範例所示。
 
-### 示例1:使用 `authenticationDataFields` 捕获来自身份验证响应的信息 {#example-1}
+### 範例1：使用 `authenticationDataFields` 擷取來自驗證回應的資訊 {#example-1}
 
-在此示例中，目标平台具有在特定时间后过期的刷新令牌。 在这种情况下，合作伙伴将 `refreshTokenExpiration` 用于从 `refresh_token_expires_in` 字段。
+在此範例中，目的地平台的重新整理Token會在特定時間後過期。 在此情況下，合作夥伴會設定 `refreshTokenExpiration` 自訂欄位，以從取得重新整理權杖有效期 `refresh_token_expires_in` API回應中的欄位。
 
 ```json
 {
@@ -249,9 +249,9 @@ Adobe利用以下标准输入简化目标配置，并能够覆盖值：
 }  
 ```
 
-### 示例2:使用 `authenticationDataFields` 提供特殊刷新令牌 {#example-2}
+### 範例2：使用 `authenticationDataFields` 提供特殊的重新整理權杖 {#example-2}
 
-在此示例中，合作伙伴设置其目标以提供特殊的刷新令牌。 此外，访问令牌的过期日期不会在API响应中返回，因此他们可以硬编码默认值（在此例中为3600秒）。
+在此範例中，合作夥伴會設定其目的地，以提供特殊的重新整理權杖。 此外，存取權杖的到期日不會在API回應中傳回，因此他們可以硬式編碼預設值，在此例中為3600秒。
 
 ```json
       "authenticationDataFields": [
@@ -266,9 +266,9 @@ Adobe利用以下标准输入简化目标配置，并能够覆盖值：
       ]
 ```
 
-### 示例3:用户在配置目标时输入客户端ID和客户端密钥 {#example-3}
+### 範例3：使用者在設定目的地時輸入使用者端ID和使用者端密碼 {#example-3}
 
-在本例中，不要创建全局客户端ID和客户端密钥，如部分所示 [系统中的先决条件](#prerequisites)，则需要客户输入客户端ID、客户端密钥和帐户ID（客户用于登录到目标的ID）
+在此範例中，不要建立全域使用者端ID和使用者端密碼，如區段所示 [您系統中的必要條件](#prerequisites)，客戶必須輸入使用者端ID、使用者端密碼和帳戶ID （客戶用來登入目的地的ID）
 
 ```json
 {
@@ -351,27 +351,27 @@ Adobe利用以下标准输入简化目标配置，并能够覆盖值：
 
 
 
-您可以在 `authenticationDataFields` 要自定义您的OAuth 2配置，请执行以下操作：
+您可在下列引數中使用 `authenticationDataFields` 若要自訂您的OAuth 2設定：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authenticationDataFields.name` | 字符串 | 自定义字段的名称。 |
-| `authenticationDataFields.title` | 字符串 | 可为自定义字段提供的标题。 |
-| `authenticationDataFields.description` | 字符串 | 您设置的自定义数据字段的描述。 |
-| `authenticationDataFields.type` | 字符串 | 定义自定义数据字段的类型。 <br> 接受的值： `string`, `boolean`, `integer` |
-| `authenticationDataFields.isRequired` | 布尔值 | 指定身份验证流程中是否需要自定义数据字段。 |
-| `authenticationDataFields.format` | 字符串 | 选择 `"format":"password"`,Adobe加密身份验证数据字段的值。 与一起使用时 `"fieldType": "CUSTOMER"`，则当用户在字段中键入内容时，也会隐藏UI中的输入。 |
-| `authenticationDataFields.fieldType` | 字符串 | 指示输入是来自合作伙伴（您）还是用户，用户在以Experience Platform设置目标时。 |
-| `authenticationDataFields.value` | 字符串. 布尔值. 整数 | 自定义数据字段的值。 值与所选类型(从 `authenticationDataFields.type`. |
-| `authenticationDataFields.authenticationResponsePath` | 字符串 | 指示您引用的API响应路径中的哪个字段。 |
+| `authenticationDataFields.name` | 字符串 | 自訂欄位的名稱。 |
+| `authenticationDataFields.title` | 字符串 | 您可以為自訂欄位提供的標題。 |
+| `authenticationDataFields.description` | 字符串 | 您設定的自訂資料欄位說明。 |
+| `authenticationDataFields.type` | 字符串 | 定義自訂資料欄位的型別。 <br> 接受的值： `string`， `boolean`， `integer` |
+| `authenticationDataFields.isRequired` | 布尔值 | 指定驗證流程中是否需要自訂資料欄位。 |
+| `authenticationDataFields.format` | 字符串 | 當您選取 `"format":"password"`，Adobe會加密驗證資料欄位的值。 搭配使用時 `"fieldType": "CUSTOMER"`，這也會在使用者鍵入欄位時隱藏UI中的輸入。 |
+| `authenticationDataFields.fieldType` | 字符串 | 指出當合作夥伴（您）或使用者在Experience Platform中設定您的目的地時，輸入內容是來自合作夥伴（您）或使用者。 |
+| `authenticationDataFields.value` | 字符串. 布尔值. 整数 | 自訂資料欄位的值。 值與從中選擇的型別相符 `authenticationDataFields.type`. |
+| `authenticationDataFields.authenticationResponsePath` | 字符串 | 指出您正在參照的API回應路徑欄位。 |
 
 {style="table-layout:auto"}
 
-## 访问令牌刷新 {#access-token-refresh}
+## 存取權杖重新整理 {#access-token-refresh}
 
-Adobe设计了一个系统，该系统可刷新过期的访问令牌，而无需用户重新登录您的平台。 系统能够生成新令牌，以便客户能够继续无缝地激活到您的目标。
+Adobe設計的系統可重新整理過期的存取權杖，而不需要使用者重新登入您的平台。 系統能夠產生新的Token，因此客戶可以順暢地繼續啟用您的目的地。
 
-要设置访问令牌刷新，您可能需要配置一个模板化HTTP请求，以便Adobe使用刷新令牌获取新的访问令牌。 如果访问令牌已过期，则Adobe会获取您提供的模板请求，并添加您提供的参数。 使用 `accessTokenRequest` 用于配置访问令牌刷新机制的参数。
+若要設定存取權杖重新整理，您可能需要設定範本化HTTP請求，以允許Adobe使用重新整理權杖取得新的存取權杖。 如果存取權杖已過期，Adobe會採用您提供的樣板化請求，並新增您提供的引數。 使用 `accessTokenRequest` 引數以設定存取權杖重新整理機制。
 
 
 ```json
@@ -441,43 +441,43 @@ Adobe设计了一个系统，该系统可刷新过期的访问令牌，而无需
 }
 ```
 
-您可以在 `accessTokenRequest` 要自定义令牌刷新过程，请执行以下操作：
+您可在下列引數中使用 `accessTokenRequest` 若要自訂您的Token重新整理程式：
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `accessTokenRequest.destinationServerType` | 字符串 | 使用 `URL_BASED`。 |
-| `accessTokenRequest.urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对 `accessTokenRequest.urlBasedDestination.url.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.urlBasedDestination.url.value` 是常量。 </li></li> |
-| `accessTokenRequest.urlBasedDestination.url.value` | 字符串 | Experience Platform请求访问令牌的URL。 |
-| `accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对 `accessTokenRequest.httpTemplate.requestBody.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.httpTemplate.requestBody.value` 是常量。 </li></li> |
-| `accessTokenRequest.httpTemplate.requestBody.value` | 字符串 | 使用模板语言对访问令牌端点的HTTP请求中的字段进行自定义。 有关如何使用模板来自定义字段的信息，请参阅 [模板公约](#templating-conventions) 中。 |
-| `accessTokenRequest.httpTemplate.httpMethod` | 字符串 | 指定用于调用访问令牌端点的HTTP方法。 在大多数情况下，此值为 `POST`. |
-| `accessTokenRequest.httpTemplate.contentType` | 字符串 | 指定对访问令牌端点的HTTP调用的内容类型。 <br> 例如： `application/x-www-form-urlencoded` 或 `application/json`. |
-| `accessTokenRequest.httpTemplate.headers` | 字符串 | 指定是否应将任何标头添加到访问令牌端点的HTTP调用中。 |
-| `accessTokenRequest.responseFields.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对 `accessTokenRequest.responseFields.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.responseFields.value` 是常量。 </li></li> |
-| `accessTokenRequest.responseFields.value` | 字符串 | 使用模板语言从访问令牌端点访问HTTP响应中的字段。 有关如何使用模板来自定义字段的信息，请参阅 [模板公约](#templating-conventions) 中。 |
-| `accessTokenRequest.validations.name` | 字符串 | 指示您为此验证提供的名称。 |
-| `accessTokenRequest.validations.actualValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对 `accessTokenRequest.validations.actualValue.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.validations.actualValue.value` 是常量。 </li></li> |
-| `accessTokenRequest.validations.actualValue.value` | 字符串 | 使用模板语言访问HTTP响应中的字段。 有关如何使用模板来自定义字段的信息，请参阅 [模板公约](#templating-conventions) 中。 |
-| `accessTokenRequest.validations.expectedValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果对 `accessTokenRequest.validations.expectedValue.value`.</li><li> 使用 `NONE` 如果字段中的值 `accessTokenRequest.validations.expectedValue.value` 是常量。 </li></li> |
-| `accessTokenRequest.validations.expectedValue.value` | 字符串 | 使用模板语言访问HTTP响应中的字段。 有关如何使用模板来自定义字段的信息，请参阅 [模板公约](#templating-conventions) 中。 |
+| `accessTokenRequest.urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果您對中的值使用範本 `accessTokenRequest.urlBasedDestination.url.value`.</li><li> 使用 `NONE` 如果欄位中的值 `accessTokenRequest.urlBasedDestination.url.value` 是一個常數。 </li></li> |
+| `accessTokenRequest.urlBasedDestination.url.value` | 字符串 | Experience Platform要求存取權杖的URL。 |
+| `accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果您對中的值使用範本 `accessTokenRequest.httpTemplate.requestBody.value`.</li><li> 使用 `NONE` 如果欄位中的值 `accessTokenRequest.httpTemplate.requestBody.value` 是一個常數。 </li></li> |
+| `accessTokenRequest.httpTemplate.requestBody.value` | 字符串 | 使用範本化語言來自訂存取Token端點的HTTP請求中的欄位。 有關如何使用範本來自訂欄位的資訊，請參閱 [範本化慣例](#templating-conventions) 區段。 |
+| `accessTokenRequest.httpTemplate.httpMethod` | 字符串 | 指定用來呼叫存取權杖端點的HTTP方法。 在大多數情況下，此值為 `POST`. |
+| `accessTokenRequest.httpTemplate.contentType` | 字符串 | 指定存取權杖端點的HTTP呼叫的內容型別。 <br> 例如： `application/x-www-form-urlencoded` 或 `application/json`. |
+| `accessTokenRequest.httpTemplate.headers` | 字符串 | 指定是否應將任何標頭新增到存取權杖端點的HTTP呼叫中。 |
+| `accessTokenRequest.responseFields.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果您對中的值使用範本 `accessTokenRequest.responseFields.value`.</li><li> 使用 `NONE` 如果欄位中的值 `accessTokenRequest.responseFields.value` 是一個常數。 </li></li> |
+| `accessTokenRequest.responseFields.value` | 字符串 | 使用範本化語言從您的存取權杖端點存取HTTP回應中的欄位。 有關如何使用範本來自訂欄位的資訊，請參閱 [範本化慣例](#templating-conventions) 區段。 |
+| `accessTokenRequest.validations.name` | 字符串 | 表示您為此驗證提供的名稱。 |
+| `accessTokenRequest.validations.actualValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果您對中的值使用範本 `accessTokenRequest.validations.actualValue.value`.</li><li> 使用 `NONE` 如果欄位中的值 `accessTokenRequest.validations.actualValue.value` 是一個常數。 </li></li> |
+| `accessTokenRequest.validations.actualValue.value` | 字符串 | 使用範本化語言來存取HTTP回應中的欄位。 有關如何使用範本來自訂欄位的資訊，請參閱 [範本化慣例](#templating-conventions) 區段。 |
+| `accessTokenRequest.validations.expectedValue.templatingStrategy` | 字符串 | <ul><li>使用 `PEBBLE_V1` 如果您對中的值使用範本 `accessTokenRequest.validations.expectedValue.value`.</li><li> 使用 `NONE` 如果欄位中的值 `accessTokenRequest.validations.expectedValue.value` 是一個常數。 </li></li> |
+| `accessTokenRequest.validations.expectedValue.value` | 字符串 | 使用範本化語言來存取HTTP回應中的欄位。 有關如何使用範本來自訂欄位的資訊，請參閱 [範本化慣例](#templating-conventions) 區段。 |
 
 {style="table-layout:auto"}
 
-## 模板惯例 {#templating-conventions}
+## 範本化慣例 {#templating-conventions}
 
-根据您的身份验证自定义，您可能需要访问身份验证响应中的数据字段，如上一节中所示。 为此，请熟悉 [卵石模板语言](https://pebbletemplates.io/) 由Adobe使用，请参阅以下模板约定以自定义您的OAuth 2实施。
+根據您的驗證自訂，您可能需要存取驗證回應中的資料欄位，如上一節所示。 若要這麼做，請熟悉 [鵝卵石範本語言](https://pebbletemplates.io/) 供Adobe使用，並參考以下範本設定慣例來自訂您的OAuth 2實作。
 
 
-| 前缀 | 描述 | 示例 |
+| 前置詞 | 描述 | 示例 |
 |---------|----------|---------|
-| authData | 访问任何合作伙伴或客户数据字段的值。 | ``{{ authData.accessToken }}`` |
-| response.body | HTTP响应主体 | ``{{ response.body.access_token }}`` |
-| response.status | HTTP响应状态 | ``{{ response.status }}`` |
-| response.headers | HTTP响应头 | ``{{ response.headers.server[0] }}`` |
-| userContext | 访问有关当前身份验证尝试的信息 | <ul><li>`{{ userContext.sandboxName }} `</li><li>`{{ userContext.sandboxId }} `</li><li>`{{ userContext.imsOrgId }} `</li><li>`{{ userContext.client }} // the client executing the authentication attempt `</li></ul> |
+| authData | 存取任何合作夥伴或客戶資料欄位的值。 | ``{{ authData.accessToken }}`` |
+| response.body | HTTP回應內文 | ``{{ response.body.access_token }}`` |
+| response.status | HTTP回應狀態 | ``{{ response.status }}`` |
+| response.headers | HTTP回應標頭 | ``{{ response.headers.server[0] }}`` |
+| userContext | 存取有關目前驗證嘗試的資訊 | <ul><li>`{{ userContext.sandboxName }} `</li><li>`{{ userContext.sandboxId }} `</li><li>`{{ userContext.imsOrgId }} `</li><li>`{{ userContext.client }} // the client executing the authentication attempt `</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文，您现在了解了Adobe Experience Platform支持的OAuth 2身份验证模式，并了解如何使用OAuth 2身份验证支持配置目标。 接下来，您可以使用Destination SDK设置OAuth 2支持的目标。 读取 [使用Destination SDK配置目标](../../guides/configure-destination-instructions.md) 以了解后续步骤。
+閱讀本文章，您現在瞭解Adobe Experience Platform支援的OAuth 2驗證模式，並瞭解如何使用OAuth 2驗證支援設定您的目的地。 接下來，您可以使用Destination SDK設定您的OAuth 2支援目的地。 讀取 [使用Destination SDK設定您的目的地](../../guides/configure-destination-instructions.md) 以瞭解後續步驟。

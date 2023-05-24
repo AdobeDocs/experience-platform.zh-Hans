@@ -1,7 +1,7 @@
 ---
-keywords: SFTP;SFTP
-title: SFTP连接
-description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
+keywords: SFTP；sftp
+title: sftp連線
+description: 建立與您的SFTP伺服器的即時輸出連線，以定期從Adobe Experience Platform匯出限定資料檔案。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
 source-git-commit: cb0b80f79a849d81216c5500c54b62ac5d85e2f6
 workflow-type: tm+mt
@@ -10,56 +10,56 @@ ht-degree: 8%
 
 ---
 
-# SFTP连接
+# sftp連線
 
-## 目标更改日志 {#changelog}
+## 目的地變更記錄檔 {#changelog}
 
 >[!IMPORTANT]
 >
->通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL SFTP] 目标目录中的信息卡。
->* 如果您已经将文件导出到 **[!UICONTROL SFTP]** 目标：请为新数据流创建新数据流 **[!UICONTROL SFTP测试版]** 目标。
->* 如果您尚未为 **[!UICONTROL SFTP]** 目标，请使用新 **[!UICONTROL SFTP测试版]** 将文件导出到卡 **[!UICONTROL SFTP]**.
+>隨著匯出資料集功能的Beta版和改良的檔案匯出功能，您現在可能會看到兩個 [!DNL SFTP] 目的地目錄中的卡片。
+>* 如果您已將檔案匯出至 **[!UICONTROL SFTP]** 目的地：請建立新的資料流到新的 **[!UICONTROL SFTP測試版]** 目的地。
+>* 如果您尚未建立任何資料流至 **[!UICONTROL SFTP]** 目的地，請使用新的 **[!UICONTROL SFTP測試版]** 要匯出檔案的卡片 **[!UICONTROL SFTP]**.
 
 
-![两个SFTP目标卡片在并排视图中的图像。](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
+![並排檢視中的兩個SFTP目的地卡片影像。](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
 
-改进了新 [!DNL SFTP] 目标卡包括：
+新功能中的改進 [!DNL SFTP] 目的地卡包括：
 
-* [数据集导出支持](/help/destinations/ui/export-datasets.md).
-* 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
-* 能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
-* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+* [資料集匯出支援](/help/destinations/ui/export-datasets.md).
+* 其他 [檔案命名選項](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+* 可透過以下方式設定匯出檔案中的自訂檔案標頭： [改善對應步驟](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* [能夠自訂匯出的CSV資料檔案的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## 概述 {#overview}
 
-创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
+建立與您的SFTP伺服器的即時輸出連線，以定期從Adobe Experience Platform匯出限定資料檔案。
 
 >[!IMPORTANT]
 >
-> 虽然Experience Platform支持将数据导出到SFTP服务器，但建议使用云存储位置导出数据 [!DNL Amazon S3] 和 [!DNL SFTP].
+> 雖然Experience Platform支援將資料匯出至SFTP伺服器，但建議匯出資料的雲端儲存位置為 [!DNL Amazon S3] 和 [!DNL SFTP].
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段的所有成員，以及所需的結構描述欄位（例如：電子郵件地址、電話號碼、姓氏），如&lt;客戶名稱>的「選取設定檔屬性」畫面中所選。 [目的地啟用工作流程](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 匯出頻率 | **[!UICONTROL 批次]** | 批次目的地會以三、六、八、十二或二十四小時的增量將檔案匯出至下游平台。 深入瞭解 [批次檔案型目的地](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
-![基于SFTP配置文件的导出类型](../../assets/catalog/cloud-storage/sftp/catalog.png)
+![SFTP設定檔匯出型別](../../assets/catalog/cloud-storage/sftp/catalog.png)
 
-## 连接到目标 {#connect}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
 
-### 身份验证信息 {#authentication-information}
+### 驗證資訊 {#authentication-information}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_rsa"
@@ -71,58 +71,58 @@ ht-degree: 8%
 >title="私有 SSH 密钥"
 >abstract="私有 SSH 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。"
 
-如果您选择 **[!UICONTROL 基本身份验证]** 键入以连接到SFTP位置：
+如果您選取 **[!UICONTROL 基本驗證]** 輸入以連線至您的SFTP位置：
 
-![SFTP目标基本身份验证](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![SFTP目的地基本驗證](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
-* **[!UICONTROL 主机]**:SFTP存储位置的地址；
-* **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
-* **[!UICONTROL 密码]**:登录SFTP存储位置的密码。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 查看下图中格式正确的加密密钥示例。
+* **[!UICONTROL 主機]**：您的SFTP儲存位置位址；
+* **[!UICONTROL 使用者名稱]**：登入SFTP儲存位置的使用者名稱；
+* **[!UICONTROL 密碼]**：登入SFTP儲存位置的密碼。
+* **[!UICONTROL 加密金鑰]**：您可以附加您的RSA格式公開金鑰，以將加密新增至匯出的檔案（選擇性）。 在下圖檢視格式正確的加密金鑰範例。
 
-   ![显示UI中格式正确的PGP键示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![此影像顯示UI中格式正確的PGP金鑰範例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 
-如果您选择 **[!UICONTROL 具有SSH密钥的SFTP]** 连接到SFTP位置的身份验证类型：
+如果您選取 **[!UICONTROL 使用SSH金鑰的SFTP]** 要連線至您的SFTP位置的驗證型別：
 
-![SFTP目标SSH密钥身份验证](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
+![SFTP目的地SSH金鑰驗證](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
 
-* **[!UICONTROL 域]**:填写您的SFTP帐户的IP地址或域名
-* **[!UICONTROL 端口]**:SFTP存储位置使用的端口；
-* **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的专用SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 查看下图中格式正确的加密密钥示例。
+* **[!UICONTROL 網域]**：填入SFTP帳戶的IP位址或網域名稱
+* **[!UICONTROL 連線埠]**：您的SFTP儲存位置使用的連線埠；
+* **[!UICONTROL 使用者名稱]**：登入SFTP儲存位置的使用者名稱；
+* **[!UICONTROL SSH金鑰]**：用來登入SFTP儲存位置的私人SSH金鑰。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
+* **[!UICONTROL 加密金鑰]**：您可以附加您的RSA格式公開金鑰，以將加密新增至匯出的檔案（選擇性）。 在下圖檢視格式正確的加密金鑰範例。
 
-   ![显示UI中格式正确的PGP键示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![此影像顯示UI中格式正確的PGP金鑰範例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-### 目标详细信息 {#destination-details}
+### 目的地詳細資料 {#destination-details}
 
-在建立到SFTP位置的身份验证连接后，请提供目标的以下信息：
+在建立與SFTP位置的驗證連線後，請提供目的地的下列資訊：
 
-![SFTP目标的可用目标详细信息](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
+![SFTP目的地的可用目的地詳細資料](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
-* **[!UICONTROL 名称]**:在Experience Platform用户界面中输入一个名称，以帮助您识别此目标；
-* **[!UICONTROL 描述]**:输入此目标的描述；
-* **[!UICONTROL 文件夹路径]**:在SFTP位置中输入将导出文件的文件夹路径。
-* **[!UICONTROL 文件类型]**:选择导出文件应使用的Experience Platform格式。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
-* **[!UICONTROL 压缩格式]**:选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
+* **[!UICONTROL 名稱]**：輸入有助於您在Experience Platform使用者介面中識別此目的地的名稱；
+* **[!UICONTROL 說明]**：輸入此目的地的說明；
+* **[!UICONTROL 資料夾路徑]**：輸入要匯出檔案之SFTP位置中的資料夾路徑。
+* **[!UICONTROL 檔案型別]**：選取匯出檔案應使用的格式Experience Platform。 此選項僅適用於 **[!UICONTROL SFTP測試版]** 目的地。 選取 [!UICONTROL CSV] 選項，您也可以 [設定檔案格式選項](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 壓縮格式]**：選取Experience Platform應用於匯出檔案的壓縮型別。 此選項僅適用於 **[!UICONTROL SFTP測試版]** 目的地。
 
-## 将区段激活到此目标 {#activate}
+## 啟用此目的地的區段 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+另請參閱 [啟用對象資料以批次設定檔匯出目的地](../../ui/activate-batch-profile-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-## （测试版）导出数据集 {#export-datasets}
+## (Beta)匯出資料集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目的地支援資料集匯出。 如需如何設定資料集匯出的完整資訊，請參閱 [匯出資料集教學課程](/help/destinations/ui/export-datasets.md).
 
-## 导出的数据 {#exported-data}
+## 匯出的資料 {#exported-data}
 
-对于 [!DNL SFTP] 目标，平台会创建 `.csv` 文件。 有关文件的更多信息，请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 区段激活教程中的。
+對象 [!DNL SFTP] 目的地，平台會建立 `.csv` 檔案的儲存位置。 如需檔案的詳細資訊，請參閱 [啟用對象資料以批次設定檔匯出目的地](../../ui/activate-batch-profile-destinations.md) 區段啟動教學課程中的。
 
-## IP地址允许列表
+## IP位址允許清單
 
-请参阅 [云存储目标的IP地址允许列表](ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
+請參閱 [雲端儲存空間目的地的IP位址允許清單](ip-address-allow-list.md) 如果您需要將AdobeIP新增至允許清單。

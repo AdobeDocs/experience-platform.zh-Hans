@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；警报
-description: 创建数据流时，您可以订阅警报，以接收有关流程运行状态、成功或失败的警报消息。
-title: 在UI中订阅上下文关联警报
+keywords: Experience Platform；首頁；熱門主題；警報
+description: 您可以在建立資料流時訂閱警示，以接收有關資料流執行狀態、成功或失敗的警示訊息。
+title: 訂閱UI中的內容感知警報
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
 source-git-commit: 3f7f66c0d58d127299ad12027869ca0e9837f5cd
 workflow-type: tm+mt
@@ -10,27 +10,27 @@ ht-degree: 5%
 
 ---
 
-# 在UI中订阅源数据流警报
+# 訂閱UI中來源資料流的警報
 
 >[!NOTE]
 >
->非生产沙箱不支持警报。 要订阅警报，您必须确保使用的是生产沙盒。
+>非生產沙箱不支援警報。 若要訂閱警報，您必須確保使用生產沙箱。
 
-Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的基于事件的警报。 警报可减少或消除轮询 [[!DNL Observability Insights] API](../../../observability/api/overview.md) 为了检查作业是否已完成、是否已到达工作流中的某个里程碑，或是否发生任何错误。
+Adobe Experience Platform可讓您訂閱有關Adobe Experience Platform活動的事件型警報。 警報可減少或免除輪詢 [[!DNL Observability Insights] API](../../../observability/api/overview.md) 以檢查工作是否已完成、是否已到達工作流程中的某個里程碑，或是否已發生任何錯誤。
 
-创建数据流时，您可以订阅警报，以接收有关流运行状态、成功或失败的警报消息。
+建立資料流以接收有關資料流執行的狀態、成功或失敗的警報訊息時，您可以訂閱警報。
 
-本文档提供了有关如何订阅源数据流的警报消息的步骤。
+本檔案提供訂閱來源資料流接收警示訊息的步驟。
 
 ## 快速入门
 
-本文档要求您对Adobe Experience Platform的以下组件有一定的了解：
+本檔案需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [可观测性](../../../observability/home.md): [!DNL Observability Insights] 允许您通过使用统计量度和事件通知来监控平台活动。
-   * [警报](../../../observability/alerts/overview.md):当您的Platform操作达到一组特定条件（例如，当系统超出阈值时可能出现问题）时，Platform可以向组织中订阅了这些条件的任何用户发送警报消息。
+* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+* [可觀察性](../../../observability/home.md)： [!DNL Observability Insights] 可讓您透過使用統計量度和事件通知來監控Platform活動。
+   * [警報](../../../observability/alerts/overview.md)：當您的Platform作業達到特定條件集時（例如系統違反臨界值時會發生問題），Platform可以向您組織中訂閱警報訊息的任何使用者傳送警報訊息。
 
-## 在UI中订阅警报 {#subscribe-sources-alerts}
+## 訂閱UI中的警示 {#subscribe-sources-alerts}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_alerts_subscribe"
@@ -40,89 +40,89 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 
 >[!IMPORTANT]
 >
->您必须为Platform帐户启用电子邮件的即时通知，才能接收数据流基于电子邮件的警报通知。
+>您必須啟用Platform帳戶的即時電子郵件通知，才能接收資料流的電子郵件警示通知。
 
-您可以在 [!UICONTROL 数据流详细信息] 源工作区中的源工作流步骤。
+您可以在以下期間為資料流啟用警報： [!UICONTROL 資料流詳細資料] 「來源」工作區中「來源」工作流程的步驟。
 
-![数据流详细信息](../../images/tutorials/alerts/dataflow-detail.png)
+![資料流 — 詳細資料](../../images/tutorials/alerts/dataflow-detail.png)
 
-源数据流的可用警报包括：
+來源資料流的可用警報包括：
 
 | 警报 | 描述 |
 | --- | --- |
-| 源数据流运行开始 | 当源数据流启动时，此警报会向您发送一条消息。 |
-| 源数据流运行成功 | 成功将来自源的数据摄取到平台后，此警报会向您发送一条消息。 |
-| 源数据流运行失败 | 如果数据流中发生错误，此警报会向您发送消息。 |
-| ~~缺少摄取的源数据流~~ | ~~如果摄取延迟超过七小时且未将数据摄取到平台，则此警报会向您发送消息。~~ <br>**注意：** 您将不再收到警报，因为此警报已弃用。 |
+| 來源資料流執行開始 | 此警報會在來源資料流啟動時傳送訊息給您。 |
+| 來源資料流執行成功 | 當來源中的資料成功擷取到Platform時，此警報會傳送訊息給您。 |
+| 來源資料流執行失敗 | 如果您的資料流發生錯誤，此警報會傳送訊息給您。 |
+| ~~來源資料流缺乏擷取~~ | ~~如果內嵌延遲超過7小時且沒有資料內嵌到Platform，此警報會傳送訊息給您。~~ <br>**注意：** 您將不會再收到警示，因為此警示已過時。 |
 
-选择要订阅的警报，然后选择 **[!UICONTROL 下一个]** 以检查和完成数据流。
+選取您要訂閱的警示，然後選取 **[!UICONTROL 下一個]** 以檢閱並完成您的資料流。
 
-![选择警报](../../images/tutorials/alerts/select-alerts.png)
+![選取警示](../../images/tutorials/alerts/select-alerts.png)
 
-有关在UI中创建源数据流的详细步骤，请参阅以下指南：
+如需在UI中建立來源資料流的詳細步驟，請參閱下列指南：
 
 * [Advertising](./dataflow/advertising.md)
-* [云存储](./dataflow/batch/cloud-storage.md)
+* [雲端儲存空間](./dataflow/batch/cloud-storage.md)
 * [CRM](./dataflow/crm.md)
 * [数据库](./dataflow/databases.md)
-* [电子商务](./dataflow/ecommerce.md)
-* [本地文件](./create/local-system/local-file-upload.md)
-* [营销自动化](./dataflow/marketing-automation.md)
-* [支付](./dataflow/payments.md)
-* [协议](./dataflow/protocols.md)
+* [電子商務](./dataflow/ecommerce.md)
+* [本機檔案](./create/local-system/local-file-upload.md)
+* [行銷自動化](./dataflow/marketing-automation.md)
+* [付款](./dataflow/payments.md)
+* [通訊協定](./dataflow/protocols.md)
 
-## 接收警报
+## 接收警示
 
-数据流运行后，您可以通过UI或电子邮件接收警报。
+資料流執行後，您可以透過UI或電子郵件接收警報。
 
 ### 在UI中
 
-警报在UI中由Platform UI顶部标题中的通知图标表示。 选择通知图标可查看有关数据流的特定警报消息。
+警報會在UI中以Platform UI頂端標題中的通知圖示表示。 選取通知圖示以檢視與資料流相關的特定警報訊息。
 
 ![通知](../../images/tutorials/alerts/notification.png)
 
-此时会出现通知面板，其中显示了您创建的数据流上的状态更新列表。
+此時會顯示通知面板，其中顯示您所建立之資料流上的狀態更新清單。
 
-![警报窗口](../../images/tutorials/alerts/alert-window.png)
+![警報視窗](../../images/tutorials/alerts/alert-window.png)
 
-您可以将鼠标悬停在警报消息上以将其标记为已读，或者选择时钟图标以设置将来有关数据流状态的提醒。
+您可以將滑鼠指標暫留在警示訊息上，將其標示為已讀取，也可以選取時鐘圖示來設定資料流狀態的未來提醒。
 
-![提醒我](../../images/tutorials/alerts/remind-me.png)
+![提醒](../../images/tutorials/alerts/remind-me.png)
 
-选择警报消息以查看数据流的特定信息。
+選取警報訊息以檢視資料流的特定資訊。
 
 ![select-alert-message](../../images/tutorials/alerts/select-alert-message.png)
 
-的 [!UICONTROL 数据流运行概述] 页面。 屏幕的上半部分显示有关数据流的概述，包括其属性、相应数据流运行ID和高级错误摘要的信息。
+此 [!UICONTROL 資料流執行概觀] 頁面便會顯示。 畫面的上半部分會顯示資料流的概觀，包括其屬性、對應資料流執行ID和高級別錯誤摘要的相關資訊。
 
-![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
+![資料流 — 概觀](../../images/tutorials/alerts/dataflow-overview.png)
 
-页面的下半部分显示任何 [!UICONTROL 数据流运行错误] 在数据流运行阶段出现。 从此处，您可以预览错误诊断或使用 [[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/) 下载错误诊断或与数据流对应的文件清单。
+頁面下半部會顯示任何 [!UICONTROL 資料流執行錯誤] 在資料流執行階段發生的錯誤。 從這裡，您可以預覽錯誤診斷或使用 [[!DNL Data Access] API](https://www.adobe.io/experience-platform-apis/references/data-access/) 以下載與您的資料流對應的錯誤診斷或檔案資訊清單。
 
-![数据流运行错误](../../images/tutorials/alerts/dataflow-run-error.png)
+![資料流 — 執行 — 錯誤](../../images/tutorials/alerts/dataflow-run-error.png)
 
-有关处理数据流错误的更多信息，请参阅 [在UI中监控源数据流](../../../dataflows/ui/monitor-sources.md).
+如需處理資料流錯誤的詳細資訊，請參閱以下指南： [在UI中監控來源資料流](../../../dataflows/ui/monitor-sources.md).
 
-### 通过电子邮件
+### 透過電子郵件
 
-数据流的警报也通过电子邮件发送给您。 在电子邮件正文中选择数据流名称，以查看有关数据流的更多信息。
+資料流的警報也會透過電子郵件傳送給您。 選取電子郵件內文中的資料流名稱，以檢視資料流的詳細資訊。
 
 ![电子邮件](../../images/tutorials/alerts/email.png)
 
-与UI警报类似， [!UICONTROL 数据流运行概述] 页面，为您提供一个界面来调查与数据流关联的任何错误。
+與UI警報類似， [!UICONTROL 資料流執行概觀] 頁面隨即顯示，提供您一個介面來調查與資料流關聯的任何錯誤。
 
-![数据流概述](../../images/tutorials/alerts/dataflow-overview.png)
+![資料流 — 概觀](../../images/tutorials/alerts/dataflow-overview.png)
 
-## 订阅和退订警报
+## 訂閱和取消訂閱警示
 
-您可以订阅更多警报或取消订阅 [!UICONTROL 数据流] 页面。 从列表中找到您创建的数据流，然后选择省略号(`...`)以查看选项的下拉菜单。 接下来，选择 **[!UICONTROL 订阅警报]** 修改数据流的警报设置。
+您可以訂閱更多警報，或取消訂閱中現有資料流的已建立警報。 [!UICONTROL 資料流] 頁面。 從清單中找出您建立的資料流，然後選取省略符號(`...`)，以檢視選項的下拉式功能表。 接下來，選取 **[!UICONTROL 訂閱警示]** 修改資料流的警示設定。
 
-![选项](../../images/tutorials/alerts/options.png)
+![選項](../../images/tutorials/alerts/options.png)
 
-此时会出现一个弹出窗口，为您提供源警报列表。 选择要订阅或取消订阅的警报。 完成后，选择 **[!UICONTROL 保存]**.
+隨即出現快顯視窗，為您提供來源警示清單。 選取您要訂閱的警示，或取消選取您要取消訂閱的警示。 完成後，選取 **[!UICONTROL 儲存]**.
 
 ![保存](../../images/tutorials/alerts/save.png)
 
 ## 后续步骤
 
-本文档提供了关于如何订阅源数据流的上下文关联警报的分步指南。 有关更多信息，请参阅 [警报UI指南](../../../observability/alerts/ui.md).
+本檔案逐步說明如何訂閱來源資料流的內容感知警報。 如需詳細資訊，請參閱 [警報UI指南](../../../observability/alerts/ui.md).

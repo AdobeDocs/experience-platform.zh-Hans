@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；目录；对象查找；API
+keywords: Experience Platform；首頁；熱門主題；目錄；物件查詢；api
 solution: Experience Platform
-title: 查找目录对象
-description: 如果您知道特定Catalog对象的唯一标识符，则可以执行GET请求以查看该对象的详细信息。
+title: 查詢目錄物件
+description: 如果您知道特定目錄物件的唯一識別碼，則可以執行GET要求來檢視該物件的詳細資訊。
 exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 2%
 
 ---
 
-# 查找目录对象
+# 查詢目錄物件
 
-如果您知道特定 [!DNL Catalog] 对象时，您可以执行GET请求以查看该对象的详细信息。
+如果您知道特定專案的唯一識別碼 [!DNL Catalog] 物件時，您可以執行GET要求來檢視該物件的詳細資訊。
 
 >[!NOTE]
 >
->查看特定对象时，最佳做法仍是 [按属性筛选](filter-data.md) 并仅返回您感兴趣的资产。
+>檢視特定物件時，最佳作法仍是 [依屬性篩選](filter-data.md) 並只傳回您感興趣的屬性。
 
 **API格式**
 
@@ -28,12 +28,12 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{OBJECT_ID}` | 要检索的特定对象的标识符。 |
+| `{OBJECT_TYPE}` | 型別 [!DNL Catalog] 要擷取的物件。 有效物件包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_ID}` | 您要擷取之特定物件的識別碼。 |
 
 **请求**
 
-以下请求会按数据集的ID检索数据集，并返回其 `name`, `description`, `state`, `tags`和 `files` 属性。
+以下請求會依其ID擷取資料集，並傳回其 `name`， `description`， `state`， `tags`、和 `files` 屬性。
 
 ```shell
 curl -X GET \
@@ -46,7 +46,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回仅包含请求的指定数据集 `properties` 在身体里。
+成功的回應會傳回指定的資料集，但只包含要求的資料集 `properties` 內文中的。
 
 ```json
 {
@@ -66,4 +66,4 @@ curl -X GET \
 
 >[!NOTE]
 >
->其值以前缀的属性 `@` 表示相互关联的对象。 请参阅 [查看相关对象](appendix.md#view-interrelated-objects) 以了解有关如何查看这些对象详细信息的步骤。
+>其值前置詞為的屬性 `@` 代表相互關聯的物件。 請參閱附錄中關於 [檢視相互關聯的物件](appendix.md#view-interrelated-objects) 瞭解如何檢視這些物件詳細資訊的步驟。

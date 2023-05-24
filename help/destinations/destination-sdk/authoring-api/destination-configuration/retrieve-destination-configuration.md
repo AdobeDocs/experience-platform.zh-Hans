@@ -1,6 +1,6 @@
 ---
-description: 本页说明了用于通过Adobe Experience Platform Destination SDK检索目标配置的API调用。
-title: 检索目标配置
+description: 此頁面是用來透過Adobe Experience Platform Destination SDK擷取目的地設定的API呼叫的範例。
+title: 擷取目的地設定
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '365'
@@ -9,48 +9,48 @@ ht-degree: 2%
 ---
 
 
-# 检索目标配置
+# 擷取目的地設定
 
-本页说明了API请求和有效负载，您可以使用检索有关现有目标配置的信息 `/authoring/destination` API端点。
+此頁面以範例說明API請求和裝載，您可使用這些API請求和裝載來擷取有關現有目的地設定的資訊， `/authoring/destination` api端點。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均为 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
 
-## 目标配置API操作快速入门 {#get-started}
+## 目的地設定API操作快速入門 {#get-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
-## 检索目标配置 {#retrieve}
+## 擷取目的地設定 {#retrieve}
 
-您可以检索 [现有](create-destination-configuration.md) 目标配置 `GET` 请求 `/authoring/destination` 端点。
+您可以擷取 [現有](create-destination-configuration.md) 目的地設定，透過設定 `GET` 向以下專案提出的請求： `/authoring/destination` 端點。
 
 >[!TIP]
 >
->**API端点**: `platform.adobe.io/data/core/activation/authoring/destinations`
+>**API端點**： `platform.adobe.io/data/core/activation/authoring/destinations`
 
 
 **API格式**
 
-使用以下API格式检索您帐户的所有目标配置。
+使用以下API格式來擷取您帳戶的所有目的地設定。
 
 ```http
 GET /authoring/destinations
 ```
 
-使用以下API格式检索由 `{INSTANCE_ID}` 参数。
+使用下列API格式來擷取特定的目的地設定，其定義為 `{INSTANCE_ID}` 引數。
 
 ```http
 GET /authoring/destinations/{INSTANCE_ID}
 ```
 
-以下两个请求将检索您的IMS组织或特定目标配置的所有目标配置，具体取决于您是否传递 `INSTANCE_ID` 参数。
+以下兩個請求會擷取您IMS組織的所有目的地設定，或特定目的地設定，具體取決於您是否傳遞 `INSTANCE_ID` 請求中的引數。
 
-选择下面的每个选项卡，以查看相应的有效负荷。
+選取下方的每個索引標籤以檢視對應的裝載。
 
 >[!BEGINTABS]
 
->[!TAB 检索所有目标配置]
+>[!TAB 擷取所有目的地設定]
 
 +++请求
 
@@ -66,7 +66,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功响应会根据 [!DNL IMS Org ID] 和您使用的沙盒名称。 一个 `instanceId` 对应于一个目标配置。
+成功的回應會根據「 」傳回HTTP狀態200，其中包含您有權存取的目的地設定清單。 [!DNL IMS Org ID] 以及您使用的沙箱名稱。 一 `instanceId` 對應至一個目的地設定。
 
 ```json
 {
@@ -174,7 +174,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
->[!TAB 检索特定目标配置]
+>[!TAB 擷取特定目的地設定]
 
 +++请求
 
@@ -188,13 +188,13 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | 要检索的目标配置的ID。 |
+| `{INSTANCE_ID}` | 您要擷取的目的地設定ID。 |
 
 +++
 
 +++响应
 
-成功响应会返回HTTP状态200，其中目标配置的详细信息对应于 `{INSTANCE_ID}` 在调用中提供。
+成功的回應會傳回HTTP狀態200，其中包含與對應的目的地設定詳細資訊。 `{INSTANCE_ID}` 在呼叫中提供。
 
 ```json
 {
@@ -304,16 +304,16 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 >[!ENDTABS]
 
-## API错误处理 {#error-handling}
+## API錯誤處理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何通过Destination SDK检索目标配置 `/authoring/destinations` API端点。
+閱讀本檔案後，您現在知道如何透過Destination SDK擷取目的地設定 `/authoring/destinations` api端點。
 
-要进一步了解使用此端点可以执行的操作，请参阅以下文章：
+若要進一步瞭解您可以使用此端點做什麼，請參閱下列文章：
 
-* [创建目标配置](create-destination-configuration.md)
-* [更新目标配置](update-destination-configuration.md)
-* [删除目标配置](delete-destination-configuration.md)
+* [建立目的地設定](create-destination-configuration.md)
+* [更新目的地設定](update-destination-configuration.md)
+* [刪除目的地設定](delete-destination-configuration.md)

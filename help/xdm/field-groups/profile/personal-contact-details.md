@@ -1,38 +1,38 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；个人详细信息；架构设计；字段组；字段组；
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；個人設定檔；欄位；結構；結構；個人詳細資訊；結構描述設計；欄位群組；欄位群組；
 solution: Experience Platform
-title: 个人联系人详细信息架构字段组
-description: 本文档概述了个人联系人详细信息架构字段组。
+title: 個人聯絡詳細資料結構描述欄位群組
+description: 本檔案提供「個人連絡人詳細資訊」結構描述欄位群組的概觀。
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '169'
-ht-degree: 7%
+source-wordcount: '166'
+ht-degree: 6%
 
 ---
 
 
-# [!UICONTROL 个人联系详细信息] 架构字段组
+# [!UICONTROL 個人聯絡詳細資訊] 結構描述欄位群組
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
 
-[!UICONTROL 个人联系详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 描述个人的联系信息。
+[!UICONTROL 個人聯絡詳細資訊] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md) 說明個人的聯絡資訊。
 
 ![](../../images/field-groups/personal-contact-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `faxPhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的传真号码。 |
-| `homeAddress` | [邮政地址](../../data-types/postal-address.md) | 描述人员的住宅地址。 |
-| `homePhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的家庭电话号码。 |
-| `mobilePhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的手机号码。 |
-| `personalEmail` | [电子邮件地址](../../data-types/email-address.md) | 描述人员的电子邮件地址。 |
+| `faxPhone` | [电话号码](../../data-types/phone-number.md) | 說明人員的傳真號碼。 |
+| `homeAddress` | [郵寄地址](../../data-types/postal-address.md) | 說明個人的住址。 |
+| `homePhone` | [电话号码](../../data-types/phone-number.md) | 說明個人的住家電話號碼。 |
+| `mobilePhone` | [电话号码](../../data-types/phone-number.md) | 說明個人的行動電話號碼。 |
+| `personalEmail` | [电子邮件地址](../../data-types/email-address.md) | 說明個人的電子郵件地址。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)

@@ -1,7 +1,7 @@
 ---
-title: Real-Time CDP B2B中的预测潜在客户和帐户评分
+title: Real-Time CDP B2B中的預測性銷售線索和帳戶評分
 type: Documentation
-description: 有关Experience PlatformCDP B2B中的预测潜在客户和帐户评分功能的概述和更多信息。
+description: 有關Experience PlatformCDP B2B中預測性銷售線索和帳戶評分功能的概述和詳細資訊。
 exl-id: d3afbabb-005d-4537-831a-857c88043759
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
@@ -10,38 +10,38 @@ ht-degree: 2%
 
 ---
 
-# Real-Time CDP B2B中的预测潜在客户和帐户评分
+# Real-Time CDP B2B中的預測性銷售線索和帳戶評分
 
-B2B营销人员在营销漏斗的顶部面临多项挑战。 为了提高效率，B2B营销人员需要一种自动的方式来鉴定大量人员的资格，以便他们能够专注于高价值目标。 资格鉴定应与最终销售结果保持一致，而不仅仅是营销转化。
+B2B行銷人員在行銷漏斗頂端面臨多項挑戰。 為了有效運作，B2B行銷人員需要自動化方式來確認大量人員的資格，以便他們能專注於高價值的目標。 資格應與最終銷售結果一致，而不僅僅是行銷轉換。
 
-Accounts是购买B2B产品和服务的最终实体。 为了有效地进行营销和销售，B2B营销人员不仅需要了解个人购买的可能性，还需要了解客户购买的可能性。
+帳戶是購買B2B產品和服務的最終實體。 為了有效行銷和銷售，B2B行銷人員不僅需要知道個人的購買可能性，還需要知道帳戶購買的可能性。
 
-尤其是基于帐户的营销，将帐户作为营销目标进行战略化。 帐户购买倾向评分可极大地帮助B2B营销人员在帐户中排定优先级，以最大化其投资回报。
+以帳戶為基礎的行銷尤其會將帳戶策略化為行銷目標。 帳戶購買傾向分數可大幅協助B2B行銷人員排定帳戶優先順序，以實現投資報酬的最大化。
 
-预测性潜在客户和帐户评分服务通过学习机会阶段转化事件并预测机会阶段转化事件并将人员活动汇总到帐户级别以生成帐户评分来解决上述挑战。 这些得分可作为个人用户档案和帐户用户档案上的自定义字段使用，并且可以轻松作为区段标准包含在内以优化受众。 在汇总和单位级别，还提供了一些最具影响力的因素，以帮助B2B营销人员更好地了解哪些因素推动了分数。
+預測性銷售線索和帳戶評分服務可透過學習和預測機會階段轉換事件，並將個人活動彙總到帳戶層級以產生帳戶分數，從而解決上述挑戰。 這些分數可立即作為個人設定檔和帳戶設定檔的自訂欄位提供，並可輕鬆作為區段條件納入，以縮小您的受眾。 彙總和單位層級也提供主要影響因素，以協助B2B行銷人員更瞭解哪些元素驅動分數。
 
-## 了解预测潜在客户和帐户评分 {#how-it-works}
+## 瞭解預測性銷售線索和帳戶評分 {#how-it-works}
 
 >[!NOTE]
 >
->[!DNL Marketo] 数据源当前是必需的，因为它是唯一可在人员配置文件级别提供转化事件的数据源。
+>[!DNL Marketo] 資料來源目前為必要專案，因為它是唯一可在人員設定檔層級提供轉換事件的資料來源。
 
-预测潜在客户和帐户评分使用基于树的（随机林/梯度提升）机器学习方法来构建预测潜在客户评分模型。
+預測性銷售線索和帳戶評分使用樹狀結構（隨機森林/漸層提升）機器學習方法，以建立預測性銷售線索評分模型。
 
-管理员能够为每个已配置的转化事件配置多个用户档案评分目标（也称为模型），从而为每个已配置的目标生成单独的得分。
+管理員能夠設定多個設定檔評分目標（也稱為模型），每個設定的轉換事件各一個，從而為每個設定的目標產生個別的分數。
 
-预测潜在客户和帐户评分支持以下转化目标类型和字段：
+預測性銷售線索和帳戶評分支援下列轉換目標型別和欄位：
 
-| 目标类型 | 字段 |
+| 目標型別 | 字段 |
 | --- | --- |
 | `leadOperation.convertLead` | <ul><li>`leadOperation.convertLead.convertedStatus`</li><li>`leadOperation.convertLead.assignTo`</li></ul> |
-| `opportunityEvent.opportunityUpdated` | <ul><li>`opportunityEvent.dataValueChanges.attributeName`</li><li>`opportunityEvent.dataValueChanges.newValue`</li><li>`opportunityEvent.dataValueChanges.oldValue`</li>示例： `opportunityEvent.dataValueChanges.attributeName` 等于 `Stage` 和 `opportunityEvent.dataValueChanges.newValue` 等于 `Contract`</ul> |
+| `opportunityEvent.opportunityUpdated` | <ul><li>`opportunityEvent.dataValueChanges.attributeName`</li><li>`opportunityEvent.dataValueChanges.newValue`</li><li>`opportunityEvent.dataValueChanges.oldValue`</li>範例： `opportunityEvent.dataValueChanges.attributeName` 等於 `Stage` 和 `opportunityEvent.dataValueChanges.newValue` 等於 `Contract`</ul> |
 
-算法考虑了以下属性和输入数据：
+演演算法會考量下列屬性和輸入資料：
 
-* 人员配置文件
+* 個人設定檔
 
-| XDM字段 | 必填/可选 |
+| XDM欄位 | 必填/可选 |
 | --- | --- |
 | `personComponents.sourceAccountKey.sourceKey` | 必需 |
 | `workAddress.country` | 可选 |
@@ -50,11 +50,11 @@ Accounts是购买B2B产品和服务的最终实体。 为了有效地进行营�
 
 >[!NOTE]
 > 
->算法仅检查 `sourceAccountKey.sourceKey` 字段。
+>演演算法只會檢查 `sourceAccountKey.sourceKey` 「Person：personComponents」欄位群組中的欄位。
 
-* 帐户配置文件
+* 帳戶設定檔
 
-| XDM字段 | 必填/可选 |
+| XDM欄位 | 必填/可选 |
 | --- | --- |
 | `accountKey.sourceKey` | 必需 |
 | `extSourceSystemAudit.createdDate` | 必需 |
@@ -62,64 +62,64 @@ Accounts是购买B2B产品和服务的最终实体。 为了有效地进行营�
 | `accountOrganization.numberOfEmployees` | 可选 |
 | `accountOrganization.annualRevenue.amount` | 可选 |
 
-* 体验事件
+* 體驗事件
 
-| XDM字段 | 必填/可选 |
+| XDM欄位 | 必填/可选 |
 | --- | --- |
 | `_id` | 必需 |
 | `personKey.sourceKey` | 必需 |
 | `timestamp` | 必需 |
 | `eventType` | 必需 |
 
-支持多个模型，并设置以下硬限制：
+支援多種機型，並設定下列硬性限制：
 
-* 每个生产沙盒有权使用五种模型。
-* 每个开发沙盒都有权使用一个模型。
+* 每個生產沙箱有權使用五個模型。
+* 每個開發沙箱都有權使用一種模型。
 
-数据质量要求如下：
+資料品質要求如下：
 
-* 理想情况下，为培训目的，需要使用两年的最新数据。
-* 所需数据的最小长度为六个月加上预测窗口。
-* 对于每个预测目标，至少需要10个符合条件的转化事件。
+* 理想情況下，應提供兩年的最新資料供訓練使用。
+* 所需的最小資料長度為六個月加上預測期間。
+* 對於每個預測目標，至少需要10個合格的轉換事件。
 
-评分作业每天运行，结果另存为用户档案属性和帐户属性，然后可在区段定义和个性化中使用这些属性和属性。 帐户概述功能板中还提供了现成的分析分析。
+評分工作每天都會執行，且結果會儲存為設定檔屬性和帳戶屬性，然後可用於區段定義和個人化。 現成可用的分析深入分析也可在帳戶概述控制面板上取得。
 
-有关如何 [管理预测潜在客户和帐户评分](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) 服务。
+請參閱檔案，深入瞭解如何 [管理預測性銷售線索和帳戶評分](/help/rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) 服務。
 
-## 查看预测潜在客户和帐户评分结果 {#how-to-view}
+## 檢視預測性銷售線索和帳戶評分結果 {#how-to-view}
 
-运行作业后，结果将保存在名称下每个模型的新系统数据集中 `LeadsAI.Scores` - ***分数名称***. 每个得分字段组可位于 `{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`.
+工作執行後，結果會儲存在名稱下每個模型的新系統資料集中 `LeadsAI.Scores` - ***分數名稱***. 每個分數欄位群組都位於 `{CUSTOM_FIELD_GROUP}.LeadsAI.the_score_name`.
 
 | 属性 | 描述 |
 | --- | --- |
-| 得分 | 配置文件在定义的时间范围内实现预测目标的相对可能性。 此值不应视为概率百分比，而应视为用户档案与整体群体的比较可能性。 此分数的范围为0到100。 |
-| 百分位数 | 此值提供有关用户档案相对于其他类似评分用户档案的性能的信息。 百分位数介于1到100之间。 |
-| 模型类型 | 选定的模型类型指示这是人员还是帐户分数。 |
-| 得分日期 | 打分的日期。 |
-| 影响因素 | 预测了用户档案可能转换的原因。 因素包括以下属性：<ul><li>代码：积极影响用户档案预测分数的用户档案或行为属性。</li><li>值：配置文件或行为属性的值。</li><li>重要性：指示用户档案或行为属性对预测得分（低、中、高）的权重。</li></ul> |
+| 得分 | 設定檔在定義的時間範圍內達到預測目標的相對可能性。 此值不被視為機率百分比，而是個人資料相較於整體母體的可能性。 此分數介於0到100之間。 |
+| 百分位數 | 此值提供有關設定檔相對於其他類似評分的設定檔效能的資訊。 百分位數的範圍為1到100。 |
+| 模型型別 | 選取的模型型別會指出這是否為人員或帳戶分數。 |
+| 評分日期 | 評分發生的日期。 |
+| 影響因素 | 個人資料可能轉換的預測原因。 因子由下列屬性組成：<ul><li>程式碼：對設定檔的預測分數產生正面影響的設定檔或行為屬性。</li><li>值：設定檔或行為屬性的值。</li><li>重要性：指出設定檔或行為屬性對預測分數（低、中、高）的權重。</li></ul> |
 
-### 查看客户配置文件分数
+### 檢視客戶設定檔分數
 
-要查看人员用户档案的预测得分，请选择 **[!UICONTROL 用户档案]** 在左侧面板的客户部分下，然后输入身份命名空间和身份值。 完成后，选择 **[!UICONTROL 查看]**.
+若要檢視個人檔案的預測性分數，請選取「 」 **[!UICONTROL 設定檔]** 在左側面板的「客戶」區段下方，然後輸入身分名稱空間和身分值。 完成後，選取 **[!UICONTROL 檢視]**.
 
-接下来，从列表中选择用户档案。
+接下來，從清單中選取設定檔。
 
-![客户用户档案](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
+![客戶設定檔](/help/rtcdp/accounts/images/b2b-view-customer-profile.png)
 
-的 **[!UICONTROL 详细信息]** 页面现在包含预测得分。 单击预测得分旁边的图表图标。
+此 **[!UICONTROL 詳細資訊]** 頁面現在包含預測性分數。 按一下預測分數旁的圖表圖示。
 
-![客户用户档案预测得分](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
+![客戶設定檔預測性分數](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score.png)
 
-弹出对话框显示得分、整体得分分布、此得分的最大影响因素以及得分目标定义。
+快顯對話方塊會顯示分數、整體分數分佈、此分數的主要影響因素，以及分數目標定義。
 
-![客户用户档案预测得分详细信息](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score-details.png)
+![客戶設定檔預測性分數詳細資訊](/help/rtcdp/accounts/images/b2b-view-customer-profile-predictive-score-details.png)
 
-## 监控预测潜在客户和帐户评分作业 {#monitoring-jobs}
+## 監控預測性銷售線索和帳戶評分工作 {#monitoring-jobs}
 
-您可以通过功能板监控基本量度和每日作业运行状态。 这些量度包括：
+您可以透過控制面板監控基本量度和每日工作執行狀態。 這些量度包括：
 
-* 得分的人员/帐户用户档案总数
-* 下一个得分作业（日期）
-* 下一份培训工作（日期）
+* 已評分的個人/帳戶設定檔總數
+* 下一個評分工作（日期）
+* 下一個訓練工作（日期）
 
-有关更多信息，请参阅 [监控预测潜在客户和帐户评分的作业](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).
+如需詳細資訊，請參閱以下檔案： [監控預測性銷售線索和帳戶評分的工作](/help/dataflows/ui/b2b/monitor-profile-enrichment.md).

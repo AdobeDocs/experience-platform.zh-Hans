@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；身份；身份
+keywords: Experience Platform；首頁；熱門主題；身分；身分
 solution: Experience Platform
-title: 列表标识映射
-description: 映射是群集中指定命名空间的所有标识的集合。
+title: 清單身分對應
+description: 對應是叢集中指定名稱空間之所有身分識別的集合。
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
 source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 1%
 
 ---
 
-# 列表标识映射
+# 清單身分對應
 
-映射是群集中指定命名空间的所有标识的集合。
+對應是叢集中指定名稱空間之所有身分識別的集合。
 
-## 获取单个标识的标识映射
+## 取得單一身分的身分對應
 
-给定身份，从请求中由身份表示的相同命名空间中检索所有相关身份。
+指定身分後，從要求中身分所代表的名稱空間擷取所有相關身分。
 
 **API格式**
 
@@ -27,7 +27,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/mapping
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`，按ID)和ID值(`id`)。
+選項1：以名稱空間形式提供身分(`nsId`，依ID)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -38,7 +38,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`，按名称)和ID值(`id`)。
+選項2：以名稱空間形式提供身分(`ns`，依名稱)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -49,7 +49,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:将身份提供为XID(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取XID以获取身份](./list-native-id.md).
+選項3：以XID提供身分(`xid`)。 如需如何取得身分識別的XID的詳細資訊，請參閱本檔案涵蓋的章節 [取得身分的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -60,13 +60,13 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-### 获取多个身份的身份映射
+### 取得多個身分的身分對應
 
-使用 `POST` 方法作为批次等效项 `GET` 方法检索多个标识的映射。
+使用 `POST` 方法當作 `GET` 上述方法可擷取多個身分的對應。
 
 >[!NOTE]
 >
->请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>要求不應超過最多1000個身分。 超過1000個身分的要求會產生400個狀態代碼。
 
 **API格式**
 
@@ -74,9 +74,9 @@ curl -X GET \
 POST https://platform.adobe.io/data/core/identity/mappings
 ```
 
-**请求正文**
+**要求內文**
 
-选项1:提供要检索映射的XID列表。
+選項1：提供要擷取對應的XID清單。
 
 ```shell
 {
@@ -85,7 +85,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 }
 ```
 
-选项2:提供身份列表作为复合ID，其中每个标识按命名空间ID命名ID值和命名空间。 此示例演示了如何在覆盖默认值时使用此方法 `graph-type` “专用图”的名称。
+選項2：提供身分清單作為複合ID，其中每個名稱依名稱空間ID命名ID值和名稱空間。 此範例示範在覆寫預設值時使用此方法 `graph-type` 「私密圖表」的。
 
 ```shell
 {
@@ -144,7 +144,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-如果未找到与提供的输入相关的身份，则 `HTTP 204` 返回的响应代码中没有内容。
+如果提供的輸入找不到相關身分， `HTTP 204` 傳回的回應代碼沒有內容。
 
 **响应**
 
@@ -182,9 +182,9 @@ curl -X POST \
 }
 ```
 
-- `lastAssociationTime`:输入标识上次与此标识关联的时间戳。
-- `regions`:提供 `regionId` 和 `lastAssociationTime` 在哪里看到了身份。
+- `lastAssociationTime`：輸入身分最後一次與此身分關聯的時間戳記。
+- `regions`：提供 `regionId` 和 `lastAssociationTime` 檢視身分的位置。
 
 ## 后续步骤
 
-继续下一个教程以 [列表可用命名空间](./list-namespaces.md).
+繼續下一教學課程，前往 [列出可用的名稱空間](./list-namespaces.md).

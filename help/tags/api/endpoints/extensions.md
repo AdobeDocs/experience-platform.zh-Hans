@@ -1,27 +1,27 @@
 ---
-title: 扩展端点
-description: 了解如何在Reactor API中对/extensions端点进行调用。
+title: 擴充功能端點
+description: 瞭解如何在Reactor API中呼叫/extensions端點。
 exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '977'
-ht-degree: 8%
+source-wordcount: '941'
+ht-degree: 4%
 
 ---
 
-# 扩展端点
+# 擴充功能端點
 
-在Reactor API中，扩展表示 [扩展包](./extension-packages.md). 扩展可将扩展包定义的功能提供给 [属性](./properties.md). 在创建 [扩展](./data-elements.md) 和 [规则组件](./rule-components.md).
+在Reactor API中，擴充功能代表已安裝的 [擴充功能套件](./extension-packages.md). 擴充功能可讓使用者透過擴充功能套件來定義功能， [屬性](./properties.md). 建立時會運用這些功能 [擴充功能](./data-elements.md) 和 [規則元件](./rule-components.md).
 
-扩展恰好属于一个资产。 资产可以具有多个扩展，但给定扩展包的不能包含多个已安装实例。
+擴充功能只屬於一個屬性。 屬性可以有許多擴充功能，但指定的擴充功能套件最多只能有一個已安裝的執行個體。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索扩展列表 {#list}
+## 擷取擴充功能清單 {#list}
 
-您可以通过发出GET请求来检索资产的扩展列表。
+您可以發出GET要求，以擷取屬性的擴充功能清單。
 
 **API格式**
 
@@ -31,13 +31,13 @@ GET properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其扩展名的属性的。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其副檔名的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
+>您可以使用查詢引數，根據下列屬性篩選列出的擴充功能：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
 
 **请求**
 
@@ -53,7 +53,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回在指定属性下定义的扩展列表。
+成功的回應會傳回在指定屬性下定義的擴充功能清單。
 
 ```json
 {
@@ -154,13 +154,13 @@ curl -X GET \
 }
 ```
 
-## 查找扩展 {#lookup}
+## 查詢擴充功能 {#lookup}
 
-您可以通过在GET请求的路径中提供扩展的ID来查找扩展。
+您可以在GET請求的路徑中提供擴充功能ID以查詢擴充功能。
 
 >[!NOTE]
 >
->删除扩展后，系统会将其标记为已删除，但实际不会删除扩展。 因此，可以检索已删除的扩展。 已删除的扩展可以通过 `deleted_at` 属性 `meta` 返回的扩展数据。
+>刪除擴充功能時，會在系統中將其標示為已刪除，但實際上並未將其移除。 因此，您可以擷取已刪除的擴充功能。 刪除的擴充功能可透過以下專案加以識別： `deleted_at` 中的屬性 `meta` 傳回擴充功能資料的URL編號。
 
 **API格式**
 
@@ -170,9 +170,9 @@ GET /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 的 `id` 的扩展。 |
+| `EXTENSION_ID` | 此 `id` ，屬於您要查閱的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -188,7 +188,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回扩展的详细信息。
+成功的回應會傳回擴充功能的詳細資料。
 
 ```json
 {
@@ -278,9 +278,9 @@ curl -X GET \
 }
 ```
 
-## 创建或更新扩展 {#create}
+## 建立或更新擴充功能 {#create}
 
-扩展通过引用 [扩展包](./extension-packages.md) 并将已安装的扩展添加到资产中。 安装任务完成后，将返回一个响应，指示扩展是否成功安装。
+擴充功能是透過參考 [擴充功能套件](./extension-packages.md) 並將已安裝的擴充功能新增至屬性。 安裝工作完成時，會傳回回應，指出擴充功能是否安裝成功。
 
 **API格式**
 
@@ -290,9 +290,9 @@ POST /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 的 `id` 要在下安装扩展的资产的。 |
+| `PROPERTY_ID` | 此 `id` 要在其下安裝擴充功能的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -325,16 +325,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `relationships.extension_package` | **（必需）** 引用所安装扩展包ID的对象。 |
-| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 请参阅 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
-| `attributes.enabled` | 一个布尔值，指示扩展是否已启用。 |
-| `attributes.settings` | 设置JSON对象，表示为字符串。 |
+| `relationships.extension_package` | **（必要）** 參照所安裝擴充功能套件ID的物件。 |
+| `attributes.delegate_descriptor_id` | 如果您的擴充功能需要自訂設定，則還需要委派描述項ID。 請參閱指南： [委派描述項ID](../guides/delegate-descriptor-ids.md) 以取得詳細資訊。 |
+| `attributes.enabled` | 表示擴充功能是否已啟用的布林值。 |
+| `attributes.settings` | 以字串表示的設定JSON物件。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新创建扩展的详细信息。
+成功的回應會傳回新建立之擴充功能的詳細資料。
 
 ```json
 {
@@ -424,9 +424,9 @@ curl -X POST \
 }
 ```
 
-## 修订扩展 {#revise}
+## 修訂擴充功能 {#revise}
 
-您可以通过在扩展请求的路径中包含扩展ID来修订该扩展。
+您可以在PATCH請求的路徑中包含擴充功能ID來修訂擴充功能。
 
 **API格式**
 
@@ -436,13 +436,13 @@ PATCH /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 的 `id` 要修订的扩展的。 |
+| `EXTENSION_ID` | 此 `id` 您想要修訂的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-与 [创建扩展](#create)，则必须通过表单数据上载修订包的本地版本。
+與 [建立擴充功能](#create)，修訂套件的本機版本必須透過表單資料上傳。
 
 ```shell
 curl -X PATCH \
@@ -467,14 +467,14 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 要修订的属性。 对于扩展，您可以修订其 `delegate_descriptor_id`, `enabled`和 `settings` 属性。 |
-| `meta.action` | 必须包含值 `revise` 进行修订时。 |
+| `attributes` | 您想要修訂的屬性。 對於擴充功能，您可以修改其 `delegate_descriptor_id`， `enabled`、和 `settings` 屬性。 |
+| `meta.action` | 必須包含在值中 `revise` 進行修訂時。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回修订的扩展的详细信息及其 `meta.latest_revision_number` 财产增加了1。
+成功回應會傳回修訂擴充功能的詳細資料，以及 `meta.latest_revision_number` 屬性增加1。
 
 ```json
 {
@@ -564,9 +564,9 @@ curl -X PATCH \
 }
 ```
 
-## 删除扩展 {#private-release}
+## 刪除擴充功能 {#private-release}
 
-您可以删除扩展，方法是将其ID包含在DELETE请求的路径中。
+您可以在DELETE請求的路徑中包含擴充功能的ID來刪除擴充功能。
 
 **API格式**
 
@@ -576,9 +576,9 @@ DELETE /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 的 `id` 要删除的扩展的名称。 |
+| `EXTENSION_ID` | 此 `id` 要刪除的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -592,21 +592,21 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回没有响应正文的HTTP状态204（无内容），表示该扩展已被删除。
+成功的回應會傳回HTTP狀態204 （無內容），且沒有回應內文，這表示擴充功能已刪除。
 
-## 管理扩展的注释 {#notes}
+## 管理擴充功能的附註 {#notes}
 
-扩展是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理扩展和其他兼容资源的注释的更多信息。
+擴充功能是「重要」資源，這表示您可以建立並擷取每個個別資源上的文字型附註。 請參閱 [附註端點指南](./notes.md) 有關如何管理擴充功能和其他相容資源的附註的詳細資訊。
 
-## 检索扩展的相关资源 {#related}
+## 擷取擴充功能的相關資源 {#related}
 
-以下调用演示了如何检索扩展的相关资源。 When [查找扩展](#lookup)，则这些关系列在 `relationships` 属性。
+下列呼叫示範如何擷取擴充功能的相關資源。 時間 [查詢擴充功能](#lookup)，這些關係會列在 `relationships` 屬性。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
 
-### 列出扩展的相关库 {#libraries}
+### 列出擴充功能的相關程式庫 {#libraries}
 
-您可以通过附加 `/libraries` 到查找请求的路径。
+您可以附加程式庫，列出使用擴充功能的程式庫 `/libraries` 至查閱請求的路徑。
 
 **API格式**
 
@@ -616,9 +616,9 @@ GET  /extensions/{EXTENSION_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 的 `id` 要列出其库的扩展的。 |
+| `{EXTENSION_ID}` | 此 `id` 要列出其程式庫的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -634,7 +634,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回使用指定扩展的库列表。
+成功的回應會傳回使用指定擴充功能的程式庫清單。
 
 ```json
 {
@@ -726,9 +726,9 @@ curl -X GET \
 }
 ```
 
-### 列出扩展的相关修订 {#revisions}
+### 列出擴充功能的相關修訂版本 {#revisions}
 
-您可以通过附加来列出扩展的先前修订版本 `/revisions` 到查找请求的路径。
+您可以藉由附加，列出擴充功能的先前修訂版本 `/revisions` 至查閱請求的路徑。
 
 **API格式**
 
@@ -738,9 +738,9 @@ GET  /extensions/{EXTENSION_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 的 `id` 要列出其修订版本的扩展的。 |
+| `{EXTENSION_ID}` | 此 `id` 要列出其修訂版本的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -756,7 +756,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定扩展的修订列表。
+成功的回應會傳回指定擴充功能的修訂清單。
 
 ```json
 {
@@ -940,9 +940,9 @@ curl -X GET \
 }
 ```
 
-### 查找扩展的相关扩展包 {#extension}
+### 查詢擴充功能的相關擴充功能套件 {#extension}
 
-您可以通过附加来查找扩展所基于的扩展包 `/extension_package` 到GET请求的路径。
+您可以透過附加來查詢擴充功能所依據的擴充功能套件 `/extension_package` 到GET請求的路徑。
 
 **API格式**
 
@@ -952,9 +952,9 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 的 `id` 要查找其扩展的扩展的名称。 |
+| `{EXTENSION_ID}` | 此 `id` 擴充功能中，包含您要查閱的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -970,7 +970,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回指定扩展所基于的扩展包的详细信息。 以下示例响应已被截断为空格。
+成功的回應會傳回指定擴充功能所根據的擴充功能套件的詳細資料。 以下範例回應已因空格而截斷。
 
 ```json
 {
@@ -1175,9 +1175,9 @@ curl -X GET \
 }
 ```
 
-### 查找扩展的相关源 {#origin}
+### 查詢擴充功能的相關來源 {#origin}
 
-您可以通过附加 `/origin` 到GET请求的路径。 扩展的来源是之前为创建当前修订版而更新的修订版本。
+您可以透過附加來查詢擴充功能的來源 `/origin` 到GET請求的路徑。 擴充功能的來源是先前修訂版本，更新後會建立目前的修訂版本。
 
 **API格式**
 
@@ -1187,9 +1187,9 @@ GET  /extensions/{EXTENSION_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 的 `id` 要查找其源的扩展的名称。 |
+| `{EXTENSION_ID}` | 此 `id` 要查詢其原點的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1205,7 +1205,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定扩展的源的详细信息。
+成功的回應會傳回指定擴充功能來源的詳細資料。
 
 ```json
 {
@@ -1295,9 +1295,9 @@ curl -X GET \
 }
 ```
 
-### 查找扩展的相关属性 {#property}
+### 查詢擴充功能的相關屬性 {#property}
 
-您可以通过附加 `/property` 到GET请求的路径。
+您可以透過附加來查詢擁有擴充功能的屬性 `/property` 到GET請求的路徑。
 
 **API格式**
 
@@ -1307,9 +1307,9 @@ GET  /extensions/{EXTENSION_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 的 `id` 要查找其资产的扩展的名称。 |
+| `{EXTENSION_ID}` | 此 `id` 要查詢其屬性的擴充功能。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1325,7 +1325,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回拥有指定扩展的属性的详细信息。
+成功的回應會傳回擁有指定擴充功能的屬性詳細資料。
 
 ```json
 {

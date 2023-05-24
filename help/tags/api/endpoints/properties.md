@@ -1,22 +1,22 @@
 ---
-title: 属性端点
-description: 了解如何在Reactor API中调用/properties端点。
+title: 屬性端點
+description: 瞭解如何在Reactor API中呼叫/properties端點。
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
 source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '1146'
-ht-degree: 9%
+source-wordcount: '1104'
+ht-degree: 6%
 
 ---
 
-# 属性端点
+# 屬性端點
 
-资产是一个容器结构，其中包含Reactor API中可用的大多数其他资源。 您可以使用 `/properties` 端点。
+屬性是一種容器建構，可保留Reactor API中大部分的其他可用資源。 您可以使用以下程式設計方式管理屬性： `/properties` 端點。
 
-在资源层次结构中，资产是以下项的所有者：
+在資源階層中，屬性是下列專案的擁有者：
 
 * [内部版本](./builds.md)
-* [回调](./callbacks.md)
+* [回呼](./callbacks.md)
 * [数据元素](./data-elements.md)
 * [环境](./environments.md)
 * [扩展](./extensions.md)
@@ -25,17 +25,17 @@ ht-degree: 9%
 * [规则组件](./rule-components.md)
 * [规则](./rules.md)
 
-资产恰好属于一个资产 [公司](./companies.md). 公司可以拥有许多资产。
+屬性只屬於一個 [公司](./companies.md). 公司可以有許多屬性。
 
-有关属性及其在标签管理中的角色的更多常规信息，请参阅 [公司和资产](../../ui/administration/companies-and-properties.md).
+如需有關屬性及其在Tag Management中角色的一般資訊，請參閱以下主題的概觀： [公司和屬性](../../ui/administration/companies-and-properties.md).
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索属性列表 {#list}
+## 擷取屬性清單 {#list}
 
-您可以通过在GET请求的路径中包含公司ID来检索属于公司的属性列表。
+您可以將公司ID包含在GET請求的路徑中，藉此擷取屬於公司的屬性清單。
 
 **API格式**
 
@@ -45,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 的 `id` 拥有要列出的资产的公司。 |
+| `COMPANY_ID` | 此 `id` 擁有您要列出之屬性的公司名稱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
+>使用查詢引數，可根據下列屬性篩選列出的屬性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
 
 **请求**
 
@@ -67,7 +67,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定公司的属性列表。
+成功的回應會傳回指定公司的屬性清單。
 
 ```json
 {
@@ -257,9 +257,9 @@ curl -X GET \
 }
 ```
 
-## 查找资产 {#lookup}
+## 查詢屬性 {#lookup}
 
-您可以通过在GET请求的路径中提供资产ID来查找资产。
+您可以在GET請求的路徑中提供屬性ID以查詢屬性。
 
 **API格式**
 
@@ -269,9 +269,9 @@ GET /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 的 `id` 要查找的资产的子目录。 |
+| `PROPERTY_ID` | 此 `id` ，屬於您要查閱的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -287,7 +287,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回属性的详细信息。
+成功的回應會傳回屬性的詳細資料。
 
 ```json
 {
@@ -382,7 +382,7 @@ curl -X GET \
 
 ## 创建资产 {#create}
 
-您可以通过发出POST请求来创建新资产。
+您可以發出POST要求來建立新屬性。
 
 **API格式**
 
@@ -392,13 +392,13 @@ POST /company/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 的 `id` 您所在公司的资产。 |
+| `COMPANY_ID` | 此 `id` ，位於您正在定義其屬性的公司底下。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求会为指定的属性创建新属性。 此调用还会通过将资产与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
+下列要求會為指定的屬性建立新屬性。 此呼叫也會透過，將屬性與現有擴充功能建立關聯， `relationships` 屬性。 請參閱指南： [關係](../guides/relationships.md) 以取得詳細資訊。
 
 ```shell
 curl -X POST \
@@ -427,21 +427,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 资产的人类可读名称。 |
-| `attributes.platform` | **（必需）** 资产的平台。 可以是 `web` 对于web属性，或 `mobile` 或 `edge` ，以访问移动资产。 |
-| `attributes.domains` | **（Web属性必需）** 属性的URL域数组。 |
-| `attributes.development` | 一个布尔值，指示这是否为开发资产。 |
-| `attributes.privacy` | 一个字符串，可用于引用与属性隐私相关的注意事项。 |
-| `attributes.rule_component_sequencing_enabled` | 一个布尔值，用于确定是否应为此属性启用规则组件排序。 |
-| `attributes.ssl_enabled` | 一个布尔值，用于确定是否应为此属性启用安全套接字层(SSL)。 |
-| `attributes.undefined_vars_return_empty` | 此属性的布尔值，用于确定是否应将未定义的变量返回为空。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为 `properties`. |
+| `attributes.name` | **（必要）** 可讀取的屬性名稱。 |
+| `attributes.platform` | **（必要）** 屬性的平台。 可以是 `web` 針對Web屬性，或 `mobile` 或 `edge` 適用於行動屬性。 |
+| `attributes.domains` | **（Web屬性的必要專案）** 屬性的URL網域陣列。 |
+| `attributes.development` | 表示這是否為開發屬性的布林值。 |
+| `attributes.privacy` | 字串；可用來參考屬性的隱私權相關考量事項。 |
+| `attributes.rule_component_sequencing_enabled` | 此屬性的布林值表示是否應啟用規則元件排序。 |
+| `attributes.ssl_enabled` | 此屬性的布林值表示是否應該啟用安全通訊端層(SSL)。 |
+| `attributes.undefined_vars_return_empty` | 此屬性的布林值表示未定義的變數是否應傳回為空白。 |
+| `type` | 正在更新的資源型別。 此端點的值必須為 `properties`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新创建属性的详细信息。
+成功的回應會傳回新建立屬性的詳細資料。
 
 ```json
 {
@@ -534,9 +534,9 @@ curl -X POST \
 }
 ```
 
-## 更新资产 {#update}
+## 更新屬性 {#update}
 
-您可以通过在PATCH请求的路径中包含属性ID来更新属性。
+您可以在PATCH請求的路徑中包含屬性的ID來更新屬性。
 
 **API格式**
 
@@ -546,13 +546,13 @@ PATCH /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 的 `id` 要更新的资产。 |
+| `PROPERTY_ID` | 此 `id` 要更新的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求更新了 `name` 和 `domains` 的值。
+以下請求會更新 `name` 和 `domains` 用於現有屬性。
 
 ```shell
 curl -X PATCH \
@@ -577,15 +577,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 其属性表示要为属性更新的属性的对象。 可以为资产更新以下属性： <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | 的 `id` 要更新的资产。 这应该与 `{PROPERTY_ID}` 值。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为 `properties`. |
+| `attributes` | 物件，其屬性代表要針對屬性更新的屬性。 可更新屬性的下列屬性： <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
+| `id` | 此 `id` 要更新的屬性。 這應該符合 `{PROPERTY_ID}` 請求路徑中提供的值。 |
+| `type` | 正在更新的資源型別。 此端點的值必須為 `properties`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回更新属性的详细信息。
+成功的回應會傳回已更新屬性的詳細資料。
 
 ```json
 {
@@ -680,7 +680,7 @@ curl -X PATCH \
 
 ## 删除资产
 
-您可以通过在DELETE请求的路径中包含资产ID来删除资产。
+您可以在DELETE請求的路徑中包含屬性ID來刪除屬性。
 
 **API格式**
 
@@ -690,9 +690,9 @@ DELETE /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 的 `id` 的子项。 |
+| `PROPERTY_ID` | 此 `id` 要刪除的屬性的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -706,21 +706,21 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回没有响应正文的HTTP状态204（无内容），表示该属性已被删除。
+成功的回應會傳回HTTP狀態204 （無內容），且沒有回應內文，這表示屬性已被刪除。
 
-## 管理资产的注释 {#notes}
+## 管理屬性的附註 {#notes}
 
-属性是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理资产和其他兼容资源的注释的详细信息。
+屬性是「重要」資源，這表示您可以為每個個別資源建立和擷取文字型附註。 請參閱 [附註端點指南](./notes.md) 有關如何管理屬性和其他相容資源附註的詳細資訊。
 
-## 检索属性的相关资源 {#related}
+## 擷取屬性的相關資源 {#related}
 
-以下调用演示了如何检索属性的相关资源。 When [查找资产](#lookup)，则这些关系列在 `relationships` 属性。
+下列呼叫示範如何擷取屬性的相關資源。 時間 [查詢屬性](#lookup)，這些關係會列在 `relationships` 屬性。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
 
-### 列出属性的相关回调 {#callbacks}
+### 列出屬性的相關回呼 {#callbacks}
 
-您可以列出 [回调](./callbacks.md) 通过附加在 `/callbacks` 到查找请求的路径。
+您可以列出 [回呼](./callbacks.md) 透過附加以下內容在屬性上註冊的 `/callbacks` 至查閱請求的路徑。
 
 **API格式**
 
@@ -730,9 +730,9 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其回调的属性的。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其回呼的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -748,7 +748,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性拥有的回调列表。
+成功的回應會傳回指定屬性擁有的回呼清單。
 
 ```json
 {
@@ -793,9 +793,9 @@ curl -X GET \
 }
 ```
 
-### 列出属性的相关数据元素 {#data-elements}
+### 列出屬性的相關資料元素 {#data-elements}
 
-您可以列出 [数据元素](./data-elements.md) 由某个财产拥有的 `/data_elements` 到查找请求的路径。
+您可以列出 [資料元素](./data-elements.md) 透過附加屬性擁有的物件 `/data_elements` 至查閱請求的路徑。
 
 **API格式**
 
@@ -805,9 +805,9 @@ GET  /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其数据元素的属性的。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其資料元素的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -823,7 +823,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性拥有的数据元素列表。
+成功的回應會傳回指定屬性擁有的資料元素清單。
 
 ```json
 {
@@ -934,9 +934,9 @@ curl -X GET \
 }
 ```
 
-### 列出资产的相关环境 {#environments}
+### 列出屬性的相關環境 {#environments}
 
-您可以列出 [环境](./environments.md) 由某个财产拥有的 `/environments` 到查找请求的路径。
+您可以列出 [環境](./environments.md) 透過附加屬性擁有的物件 `/environments` 至查閱請求的路徑。
 
 **API格式**
 
@@ -946,9 +946,9 @@ GET  /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其环境的资产的。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其環境的屬性的。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -964,7 +964,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性拥有的环境列表。
+成功的回應會傳回指定屬性所擁有的環境清單。
 
 ```json
 {
@@ -1054,9 +1054,9 @@ curl -X GET \
 }
 ```
 
-### 列出资产的相关扩展 {#extensions}
+### 列出屬性的相關副檔名 {#extensions}
 
-您可以列出 [扩展](./extensions.md) 由某个财产拥有的 `/extensions` 到查找请求的路径。
+您可以列出 [擴充功能](./extensions.md) 透過附加屬性擁有的物件 `/extensions` 至查閱請求的路徑。
 
 **API格式**
 
@@ -1066,9 +1066,9 @@ GET  /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其扩展名的属性的。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其副檔名的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1084,7 +1084,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性拥有的扩展列表。
+成功的回應會傳回指定屬性擁有的擴充功能清單。
 
 ```json
 {
@@ -1185,9 +1185,9 @@ curl -X GET \
 }
 ```
 
-### 列出资产的相关主机 {#hosts}
+### 列出屬性的相關主機 {#hosts}
 
-您可以列出 [主机](./hosts.md) 属性通过附加使用的 `/hosts` 到查找请求的路径。
+您可以列出 [主機](./hosts.md) 透過附加屬性來使用 `/hosts` 至查閱請求的路徑。
 
 **API格式**
 
@@ -1197,9 +1197,9 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其主机的属性。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其主機的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1215,7 +1215,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性使用的主机列表。
+成功的回應會傳回指定屬性所使用的主機清單。
 
 ```json
 {
@@ -1263,9 +1263,9 @@ curl -X GET \
 }
 ```
 
-### 列出资产的相关规则 {#rules}
+### 列出屬性的相關規則 {#rules}
 
-您可以列出 [规则](./rules.md) 属性通过附加使用的 `/rules` 到查找请求的路径。
+您可以列出 [規則](./rules.md) 透過附加屬性來使用 `/rules` 至查閱請求的路徑。
 
 **API格式**
 
@@ -1275,9 +1275,9 @@ GET  /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 要列出其规则的属性。 |
+| `{PROPERTY_ID}` | 此 `id` 要列出其規則的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1293,7 +1293,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定属性使用的规则列表。
+成功的回應會傳回指定屬性使用的規則清單。
 
 ```json
 {
@@ -1376,9 +1376,9 @@ curl -X GET \
 }
 ```
 
-### 查找相关公司以查找资产 {#company}
+### 查詢屬性的相關公司 {#company}
 
-您可以通过附加 `/company` 到查找请求的路径。
+您可以透過附加來查詢擁有屬性的公司 `/company` 至查閱請求的路徑。
 
 **API格式**
 
@@ -1388,9 +1388,9 @@ GET /properties/{PROPERTY_ID}/company
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 的 `id` 你想查的公司的财产。 |
+| `{PROPERTY_ID}` | 此 `id` 要查詢其公司的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1406,7 +1406,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定资产公司的详细信息。
+成功的回應會傳回指定屬性之公司的詳細資料。
 
 ```json
 {

@@ -1,6 +1,6 @@
 ---
-title: 核心扩展的发行说明
-description: Adobe Experience Platform中核心扩展的最新发行说明。
+title: 核心擴充功能的發行說明
+description: Adobe Experience Platform核心擴充功能的最新發行說明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
 source-git-commit: 0955646164269d868be5161a117c6e12dbd9a4cb
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 55%
 
 ---
 
-# 核心扩展发行说明
+# 核心擴充功能發行說明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2023 年 3 月 29 日
 
 v3.4.1
 
-* 添加新的Web本机委托事件：
+* 新增新的Web原生委派事件：
    * Keydown
    * KeyUp
-* 添加了针对以下代理测试多个值（“添加其他”选项）的功能：
+* 新增針對以下委派針對許多值（「新增其他」選項）進行測試的功能：
    * 事件
       * 更改
    * 条件
@@ -31,93 +31,93 @@ v3.4.1
       * 查询字符串参数
       * 流量源
       * Variable
-* 更改events/EntersViewport委托以使用 [交集观察器API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 而不是手动检测进入视区的元素。
-* 删除将DTM Cookie迁移到LocalStorage的代码。
-* 当LocalStorage API和SessionStorage API不可用时，将警告记录到控制台。
+* 變更events/EntersViewport委派以使用 [交集觀察者API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 取代手動偵測進入檢視區的元素。
+* 移除將DTM Cookie移轉至LocalStorage的程式碼。
+* 當LocalStorage和SessionStorage API無法使用時，將警告記錄到主控台。
 
 ## 2022 年 1 月 4 日
 
 v3.3.0
 
-* 更改 [触发直接调用操作](./overview.md#direct-call-action) 以便提供要发送到直接调用规则的自定义事件信息。
+* 變更 [觸發直接呼叫動作](./overview.md#direct-call-action) 以便您提供自訂事件資訊，以傳送至直接呼叫規則。
 
 ## 2021 年 10 月 8 日
 
 v3.2.2
 
-* 修复了所有可用运算符的条件值数据元素JSON模式。
-* 修复https://github.com/adobe/reactor-extension-core/issues/64。
+* 修正所有可用運運算元的條件值資料元素JSON結構描述。
+* 修正https://github.com/adobe/reactor-extension-core/issues/64。
 
 ## 2021 年 9 月 23 日
 
 v3.2.1
 
-* 修复了条件值数据元素视图初始化在字段值为0时无法正常工作的错误。
+* 修正欄位值為0時，條件值資料元素檢視初始化無法正常運作的錯誤。
 
 ## 2021 年 9 月 23 日
 
 v3.2.0
 
-条件值数据元素中引入了以下更改：
+條件值資料元素引進了下列變更：
 
-* 为条件值和回退值添加复选框，允许用户选择是否希望未定义为返回值。
-* 数字值将作为数字在设置对象中显示。
-* 不再需要条件值，它的行为方式与回退值相同。
+* 為條件值和遞補值新增核取方塊，讓使用者選擇是否要將未定義值設為傳回值。
+* 數字值會在設定物件中顯示為數字。
+* 條件值不再是必要值，因此其行為方式與遞補值相同。
 
 ## 2021年9月17日
 
 v3.1.1
 
-* 修复了阻止加载日期范围条件视图的JS错误。
+* 修正無法載入日期範圍條件檢視的JS錯誤。
 
 ## 2021 年 9 月 16 日
 
 v3.1.0
 
-添加了新数据元素：
+已新增新的資料元素：
 
-* 合并对象 — 选择多个数据元素，每个数据元素将提供一个对象。 这些对象将深度（递归）合并在一起，以生成新对象。
-* 条件值 — 根据比较结果返回两个值（conditionalValue或fallbackValue）中的一个。
-* 运行时环境 — 返回以下Launch环境变量之一：环境阶段，库生成日期，属性名称，属性ID，规则名称，规则ID，事件类型，事件详细信息有效负荷，直接调用标识符。
-* JavaScript工具 — 常用JavaScript操作的包装器：基本字符串操作（替换、子字符串、正则表达式匹配、第一个和最后一个索引、拆分、切片）、基本数组操作（切片、连接、弹出、移位）和基本通用操作（切片、长度）。
-* 设备属性 — 返回设备属性，如窗口大小或屏幕大小。
+* 合併物件 — 選取多個資料元素，每個元素都會提供物件。 這些物件將深層（遞回）合併在一起，以產生新物件。
+* 條件值 — 根據比較結果，傳回兩個值（conditionalValue或fallbackValue）之一。
+* 執行階段環境 — 傳回下列Launch環境變數之一：環境階段、程式庫建置日期、屬性名稱、屬性ID、規則名稱、規則ID、事件型別、事件詳細資料裝載、直接呼叫識別碼。
+* JavaScript工具 — 常見JavaScript作業的包裝函式：基本字串操控（取代、子字串、規則運算式相符、第一個和最後一個索引、分割、分割）、基本陣列作業（分割、連線、彈出、移位）和基本通用作業（分割、長度）。
+* 裝置屬性 — 傳回裝置屬性，例如視窗大小或熒幕大小。
 
-## 2021 年 8 月 11 日
+## 2021年8月11日
 
 v3.0.0
 
-* PDCL-6153:添加了对为缓存的自定义代码操作可靠地提取完全限定URL的支持。
+* PDCL-6153：新增支援，可靠地提取快取自訂程式碼動作的完整URL。
 
-核心扩展的v3.0.0与 [Turbine Web运行时的v27.2.0](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)，如果用户的公司支持Premium CDN，则允许用户在许多Adobe管理的托管区域中加载其库。
+核心擴充功能v3.0.0搭配以下變更： [Turbine Web執行階段v27.2.0](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)，可在使用者的公司支援Premium CDN時，讓其程式庫在Adobe管理的許多託管區域間載入。
 
-对于没有Premium CDN的用户，此升级是可选的，并且向后兼容，对于在其公司中启用了Premium CDN的客户，此升级是必选的。
+此升級為選擇性升級，且向後相容於沒有Premium CDN的使用者，且為已在其公司啟用Premium CDN的客戶所強制。
 
 ## 2021 年 5 月 20 日
 
 v2.0.7
 
-* 修复了文本输入上的鼠标交互无法继续正常工作的问题。
-* 弃用浏览器和操作系统条件的使用。
+* 修正文字輸入上的滑鼠互動無法正常運作的問題。
+* 淘汰使用瀏覽器和作業系統條件。
 
-## 2021年5月4日
+## 2021 年 5 月 4 日
 
 v2.0.6
 
-* 对修复当屏幕大小更改时扭曲的图标进行了细微更新。
+* 微幅更新以修正熒幕大小變更時扭曲的圖示。
 
 ## 2021 年 3 月 11 日
 
 v2.0.5
 
-* 更新了具有延迟选项（现在支持v2.0.4版本中添加的数据元素值）的事件和操作在运行时评估中的代码，以将字符串正确强制为数字。
+* 針對具有延遲選項的事件和動作，更新執行階段評估中的程式碼（現在支援在v2.0.4版本中新增的資料元素值），以正確地將字串強制轉換為數字。
 
-## 2021年3月9日
+## 2021 年 3 月 9 日
 
 v2.0.4
 
-* 为各个字段添加了数据元素支持 — 向以下事件添加了数据元素支持：“页面逗留时间”、“Enters Viewport”、“悬停”和“媒体播放时间”。 以及以下条件：“网站逗留时间”和“值比较”
-* 使用“链接延迟”时，为Ctrl/cmd +单击和鼠标中键单击添加了对默认行为的支持
-* **将点击事件的链接延迟标记为“不再支持”。**  — 有关更多信息，请参阅 [数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) 对于Adobe Experience Platform
+* 新增各種欄位的資料元素支援 — 已將資料元素支援新增至以下事件：「頁面上的時間」、「進入檢視區」、「暫留」和「媒體播放時間」。 以及下列條件：「網站逗留時間」和「值比較」
+* 新增對ctrl/cmd +按一下以及使用滑鼠中鍵按一下來支援預設行為（使用「連結延遲」）
+* **在點選事件上將連結延遲標籤為「不再支援」。**  — 如需詳細資訊，請參閱 [資料收集部落格](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) 適用於Adobe Experience Platform
 
 ## 2021 年 1 月 6 日
 
@@ -181,7 +181,7 @@ v1.6.2
 
 v1.6.1
 
-* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便仍然可以在CSP环境中加载标记脚本。 您可以阅读有关将标记与CSP结合使用的更多信息 [此处](../../../ui/client-side/content-security-policy.md).
+* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已設定，標籤新增至頁面的所有內嵌指令碼都會使用您設定的Nonce。 此變更支援使用包含Nonce的內容安全性原則，因此標籤指令碼仍可在CSP環境中載入。 您可以閱讀更多有關搭配CSP使用標籤的資訊 [此處](../../../ui/client-side/content-security-policy.md).
 
 ## 2019 年 6 月 18 日
 
@@ -209,8 +209,8 @@ v1.4.2
 ## 2018 年 11 月 8 日
 
 * **Persist Cohort 选项** - 在 Sampling 条件中添加了用于持久保留同类群组的选项。这样可以使用户在不同的会话中保留处于样本同类群组之内或之外。例如，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 true，则以后每次为同一访客运行该条件都将返回 true。同样，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 false，则以后每次为同一访客运行该条件都将返回 false。
-* **错误修复**  — 修复了以下问题：在标记同步加载但安装有误(无调用 `_satellite.pageBottom()`)将清除网站内容。
-* **错误修复**  — 修复了以下问题：如果标记库异步加载并在浏览器DOMContentLoaded事件触发后完成加载，则Enters Viewport将无法正常运行。
+* **錯誤修正**  — 修正當標籤同步載入頁面中，但並未正確安裝（沒有呼叫）時，在頁面上使用Page Bottom事件和Custom Code動作的規則問題 `_satellite.pageBottom()`)會清除網站內容。
+* **錯誤修正**  — 修正當瀏覽器的DOMContentLoaded事件引發後，標籤程式庫以非同步方式載入並完成載入時，Enters Viewport無法運作的問題。
 
 ## 2018 年 5 月 24 日
 

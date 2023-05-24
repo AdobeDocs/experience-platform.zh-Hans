@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；产品配置文件；管理权限
+keywords: Experience Platform；首頁；熱門主題；產品設定檔；管理許可權
 solution: Experience Platform
-title: 管理产品配置文件的权限
-description: 通过Adobe Experience Platform中的访问控制，您可以使用Adobe Admin Console管理各种平台功能的角色和权限。 本文档是有关如何管理Platform产品配置文件权限的指南。
+title: 管理產品設定檔的許可權
+description: Adobe Experience Platform中的存取控制可讓您使用Adobe Admin Console管理各種Platform功能的角色和許可權。 本檔案可作為如何管理Platform產品設定檔許可權的指南。
 exl-id: ca403bef-6d62-4ca9-bba6-d1280ac63171
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
@@ -11,42 +11,42 @@ ht-degree: 0%
 
 ---
 
-# 管理产品配置文件的权限
+# 管理產品設定檔的許可權
 
-紧接之后 [创建新产品用户档案](#create-a-new-product-profile)，系统会提示您配置用户档案的权限。 如果您正在编辑现有配置文件的权限，请从 **[!UICONTROL 产品配置文件]** 选项卡打开用户档案的详细信息页面，然后选择 **[!UICONTROL 权限]**.
+緊接在 [建立新的產品設定檔](#create-a-new-product-profile)，系統會提示您設定設定檔的許可權。 如果您正在編輯現有設定檔的許可權，請從 **[!UICONTROL 產品設定檔]** 標籤以開啟設定檔的詳細資訊頁面，然後選取 **[!UICONTROL 許可權]**.
 
-![权限](../images/permissions.png)
+![許可權](../images/permissions.png)
 
-权限分为几个类别，并列在此页面上。 该列表显示类别名称、包含的权限数量（以及活动的权限数量）及其描述。
+許可權分為不同類別，並列於本頁中。 清單會顯示類別名稱、其包含的許可權數量（以及有效數量）及其說明。
 
-在列表中选择任意类别以打开 **[!UICONTROL 编辑权限]** 页面。
+在清單中選取任何類別以開啟 **[!UICONTROL 編輯許可權]** 頁面。
 
-![编辑权限](../images/edit-permissions.png)
+![edit-permissions](../images/edit-permissions.png)
 
-的 **[!UICONTROL 编辑权限]** 页面提供了一个工作区，用于添加和删除选定产品配置文件的权限。 屏幕的左侧显示权限类别列表。 选择类别会更改下方显示的权限 **[!UICONTROL 可用权限项]**.
+此 **[!UICONTROL 編輯許可權]** 頁面提供工作區，可在所選產品設定檔中新增及移除許可權。 畫面左側會顯示許可權類別的清單。 選取類別會變更下顯示的許可權 **[!UICONTROL 可用的許可權專案]**.
 
-例如，要更新数据建模的权限，请选择 **[!UICONTROL 数据建模]**.
+例如，若要更新「資料模型」的許可權，請選取 **[!UICONTROL 資料模型]**.
 
-![用户档案管理](../images/profile-management.png)
+![設定檔管理](../images/profile-management.png)
 
-要添加权限，请选择加号 **(+)** 图标。 或者，您也可以选择 **[!UICONTROL 全部添加]** 将当前类别下的所有权限添加到用户档案。 添加的权限显示在 **[!UICONTROL 包含的权限项]**.
+若要新增許可權，請選取加號 **(+)** 圖示加以識別。 或者，您可以選取 **[!UICONTROL 全部新增]** 將目前類別下的所有許可權新增至設定檔。 新增的許可權會顯示在 **[!UICONTROL 包含的許可權專案]**.
 
 ![add-permission](../images/add-permission.png)
 
 >[!NOTE]
 >
->的 **[!UICONTROL 包含的权限项]** 仅列表显示当前选定类别的已添加权限。
+>此 **[!UICONTROL 包含的許可權專案]** 清單僅顯示目前所選類別的新增許可權。
 
-要删除权限，请选择 **X** 图标，或者选择 **[!UICONTROL 全部删除]** 删除当前类别下的所有权限。 已删除的权限将重新显示在 **[!UICONTROL 可用权限项]**.
+若要移除許可權，請選取 **X** 圖示或選取「 」 **[!UICONTROL 全部移除]** 以移除目前類別下的所有許可權。 移除的許可權會重新出現在下方 **[!UICONTROL 可用的許可權專案]**.
 
-继续查看可用的类别并添加任何所需的权限。 完成后，选择 **[!UICONTROL 保存]**.
+繼續瀏覽可用類別並新增任何所需許可權。 完成後，選取 **[!UICONTROL 儲存]**.
 
-![删除权限](../images/remove-permission.png)
+![remove-permisson](../images/remove-permission.png)
 
-的 **[!UICONTROL 权限]** 选项卡，其中显示了选定的权限现已处于活动状态。
+此 **[!UICONTROL 許可權]** 產品設定檔的索引標籤會重新出現，並顯示選取的許可權現在已啟用。
 
-![权限已更新](../images/permissions-updated.png)
+![許可權已更新](../images/permissions-updated.png)
 
 ## 后续步骤
 
-已建立权限后，您可以继续执行 [管理产品配置文件的详细信息和服务](details-and-services.md)
+建立許可權後，您可以繼續下一步以 [管理產品設定檔的詳細資訊和服務](details-and-services.md)

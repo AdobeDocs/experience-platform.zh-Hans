@@ -1,7 +1,7 @@
 ---
-keywords: Audience ManagerDIL扩展；目标audience manager;dil扩展
-title: Audience ManagerDIL扩展
-description: Audience ManagerDIL扩展是Adobe Experience Platform中的一个数据管理平台(DMP)目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
+keywords: Audience ManagerDIL擴充功能；目的地audience manager；dil擴充功能
+title: Audience ManagerDIL擴充功能
+description: Audience ManagerDIL擴充功能是Adobe Experience Platform中的資料管理平台(DMP)目的地。 如需擴充功能的相關詳細資訊，請參閱Adobe交換上的擴充功能頁面。
 exl-id: 7e1099de-0650-4ee2-b746-721afe194097
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -10,52 +10,52 @@ ht-degree: 3%
 
 ---
 
-# Audience ManagerDIL扩展 {#aam-dil-extension}
+# Audience ManagerDIL擴充功能 {#aam-dil-extension}
 
 ## 概述 {#overview}
 
-这是Adobe Audience ManagerData Integration Library扩展（客户端实施）。 注意：此扩展不适用于Adobe Analytics数据的服务器端转发(SSF)。 对于SSF，请使用Adobe Analytics扩展。 重要信息：从版本8.0开始，DIL对 [!DNL Experience Cloud] ID服务版本3.3或更高版本。 请同时实施这两项 [!DNL Experience Cloud] ID服务和DIL完整 [!DNL Audience Manager] 数据集成功能。
+這是Adobe Audience ManagerData Integration Library擴充功能（使用者端實作）。 注意：此擴充功能不適用於Adobe Analytics資料的伺服器端轉送(SSF)。 若為SSF，請使用Adobe Analytics擴充功能。 重要：從8.0版開始，DIL對 [!DNL Experience Cloud] ID服務3.3版或更新版本。 請實作兩者 [!DNL Experience Cloud] ID服務與DIL完整版 [!DNL Audience Manager] 資料整合功能。
 
-[!DNL Audience Manager] DIL是Adobe Experience Platform中的一项数据管理平台(DMP)扩展。 有关扩展功能的更多信息，请参阅 [Audience Manager扩展页面](../../../tags/extensions/client/audience-manager/overview.md) （位于标记文档中）。
+[!DNL Audience Manager] DIL是Adobe Experience Platform中的資料管理平台(DMP)擴充功能。 如需擴充功能的相關詳細資訊，請參閱 [Audience Manager擴充功能頁面](../../../tags/extensions/client/audience-manager/overview.md) 標籤檔案中。
 
-此目标是一个标记扩展。 有关扩展如何在Platform中工作的更多信息，请参阅 [标记扩展概述](../launch-extensions/overview.md).
+此目的地是標籤延伸模組。 如需擴充功能在Platform中如何運作的詳細資訊，請參閱 [標籤擴充功能概觀](../launch-extensions/overview.md).
 
-![Audience ManagerDIL扩展](../../assets/catalog/data-management-platform/aam-dil-extension/configure.png)
+![Audience ManagerDIL擴充功能](../../assets/catalog/data-management-platform/aam-dil-extension/configure.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于 [!DNL Destinations] 目录。
+此擴充功能適用於 [!DNL Destinations] 已購買Platform之所有客戶的目錄。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们向您授予 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
+若要使用此擴充功能，您需要存取Adobe Experience Platform中的標籤。 標籤是以隨附的加值功能形式提供給Adobe Experience Cloud客戶。 請聯絡您的組織管理員以取得標籤的存取權，並要求他們授予您 **[!UICONTROL manage_properties]** 許可權，方便您安裝擴充功能。
 
-## 安装扩展 {#install-extension}
+## 安裝擴充功能 {#install-extension}
 
-安装 [!DNL Audience Manager] DIL扩展：
+若要安裝 [!DNL Audience Manager] DIL延伸模組：
 
-在 [平台界面](https://platform.adobe.com/)，转到 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**.
+在 [平台介面](https://platform.adobe.com/)，前往 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**.
 
-从目录中选择扩展或使用搜索栏。
+從目錄選取擴充功能或使用搜尋列。
 
-单击目标以突出显示它，然后选择 **[!UICONTROL 配置]** 中。 如果 **[!UICONTROL 配置]** 控件呈灰显状态，表示您缺少 **[!UICONTROL manage_properties]** 权限。 请参阅 [先决条件](#prerequisites).
+按一下目的地以反白顯示，然後選取 **[!UICONTROL 設定]** 在右側邊欄中。 如果 **[!UICONTROL 設定]** 控制項呈現灰色，表示您遺漏 **[!UICONTROL manage_properties]** 許可權。 另請參閱 [必要條件](#prerequisites).
 
-选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解 [标记文档](../../../tags/ui/administration/companies-and-properties.md#properties-page).
+選取您要安裝擴充功能的屬性。 您也可以選擇建立新屬性。 资产是规则、数据元素、配置的扩展、环境和库的集合。瞭解中的屬性 [標籤檔案](../../../tags/ui/administration/companies-and-properties.md#properties-page).
 
-工作流可指导您完成完成安装的步骤。
+工作流程會逐步引導您完成安裝步驟。
 
-有关扩展配置选项的信息，请参阅 [Audience Manager扩展页面](../../../tags/extensions/client/audience-manager/overview.md) （位于标记文档中）。
+如需擴充功能組態選項的相關資訊，請參閱 [Audience Manager擴充功能頁面](../../../tags/extensions/client/audience-manager/overview.md) 標籤檔案中。
 
-您还可以直接在 [数据收集UI](https://experience.adobe.com/#/data-collection/). 请参阅 [添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 以了解更多信息。
+您也可以直接在中安裝擴充功能 [資料彙集UI](https://experience.adobe.com/#/data-collection/). 請參閱指南： [新增擴充功能](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 以取得詳細資訊。
 
-## 如何使用扩展 {#how-to-use}
+## 如何使用擴充功能 {#how-to-use}
 
-安装扩展后，您可以开始设置规则。 在数据收集UI中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅 [规则](../../../tags/ui/managing-resources/rules.md) （位于标记文档中）。
+安裝擴充功能後，您就可以開始設定規則。 在資料收集UI中，您可以為已安裝的擴充功能設定規則，以只在某些情況下將事件資料傳送至擴充功能目的地。 如需為擴充功能設定規則的詳細資訊，請參閱以下主題的概觀： [規則](../../../tags/ui/managing-resources/rules.md) 標籤檔案中。
 
-## 配置、升级和删除扩展 {#configure-upgrade-delete}
+## 設定、升級和刪除擴充功能 {#configure-upgrade-delete}
 
-您可以在数据收集UI中配置、升级和删除扩展。
+您可以在資料收集UI中設定、升級和刪除擴充功能。
 
 >[!TIP]
 >
->如果某个资产上已安装扩展，则仍会显示UI **[!UICONTROL 安装]** 的子项。 启动安装工作流，如 [安装扩展](#install-extension) 配置或删除扩展。
+>如果擴充功能已安裝在您的其中一個屬性上，UI仍會顯示 **[!UICONTROL 安裝]** 用於擴充功能。 依照中的說明開始安裝工作流程 [安裝擴充功能](#install-extension) 以設定或刪除您的擴充功能。
 
-要升级扩展，请参阅 [扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) （位于标记文档中）。
+若要升級您的擴充功能，請參閱 [擴充功能升級程式](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 標籤檔案中。

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；归因ai；访问得分；热门主题；下载得分；归因ai得分；导出
+keywords: Experience Platform；attribution ai；存取分數；熱門主題；下載分數；attribution ai分數；匯出；匯出
 feature: Attribution AI
-title: 在Attribution AI中下载分数
-description: 本文档是下载Attribution AI得分的指南。
+title: 以Attribution AI下載分數
+description: 本檔案可作為下載Attribution AI分數的指南。
 exl-id: 8821e3fb-c520-4933-8eb7-0b0aa10db916
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
@@ -11,29 +11,29 @@ ht-degree: 2%
 
 ---
 
-# 下载Attribution AI分数
+# 以Attribution AI下載分數
 
-本文档是下载Attribution AI得分的指南。
+本檔案可作為下載Attribution AI分數的指南。
 
 ## 快速入门
 
-Attribution AI允许您以Parquet文件格式下载分数。 本教程要求您已阅读并完成下载Attribution AI得分部分(位于 [入门](./getting-started.md) 的双曲余切值。
+Attribution AI可讓您以Parquet檔案格式下載分數。 本教學課程要求您已閱讀並完成下載Attribution AI分數區段於 [快速入門](./getting-started.md) 指南。
 
-此外，要访问Attribution AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新的服务实例，请访问 [Attribution AI用户指南](./user-guide.md). 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
+此外，若要存取Attribution AI的分數，您必須有可取得成功執行狀態的服務執行個體。 若要建立新的服務執行個體，請造訪 [Attribution AI使用手冊](./user-guide.md). 如果您最近建立了服務執行個體，但仍在訓練和評分，請等待24小時讓執行個體完成執行。
 
-## 查找数据集ID {#dataset-id}
+## 尋找您的資料集ID {#dataset-id}
 
-在您的服务实例中，单击 *更多操作* 右上方导航中的下拉列表，然后选择 **[!UICONTROL 访问分数]**.
+在您的服務執行個體中，按一下「 」以取得Attribution AI分析 *更多動作* 右上方的下拉式清單，然後選取 **[!UICONTROL 存取分數]**.
 
-![更多操作](./images/download-scores/more-actions.png)
+![更多動作](./images/download-scores/more-actions.png)
 
-此时会显示一个新对话框，其中包含指向下载分数文档的链接以及您当前实例的数据集ID。 将数据集ID复制到剪贴板，然后继续执行下一步。
+隨即顯示新對話方塊，其中包含下載分數檔案的連結，以及您目前執行個體的資料集ID。 將資料集ID複製到剪貼簿，然後繼續下一個步驟。
 
 ![数据集 ID](../customer-ai/images/download-scores/access-scores.png)
 
-## 检索批处理ID {#retrieve-your-batch-id}
+## 擷取您的批次識別碼 {#retrieve-your-batch-id}
 
-使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于贵组织的批次列表。 要返回其他批，请增加 `limit` 查询参数的值。 有关可用查询参数类型的更多信息，请访问 [使用查询参数筛选目录数据](../../catalog/api/filter-data.md).
+使用上一步的資料集ID，您需要呼叫目錄API以擷取批次ID。 此API呼叫會使用其他查詢引數，以傳回最新的成功批次，而非屬於您組織的批次清單。 若要傳回其他批次，請增加 `limit` 查詢引數至您想要傳回的所需數量。 如需有關可用查詢引數型別的詳細資訊，請瀏覽以下內容的指南： [使用查詢引數篩選目錄資料](../../catalog/api/filter-data.md).
 
 **API格式**
 
@@ -43,7 +43,7 @@ GET /batches?&dataSet={DATASET_ID}&createdClient=acp_foundation_push&status=succ
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASET_ID}` | “访问得分”对话框中可用的数据集ID。 |
+| `{DATASET_ID}` | 「存取分數」對話方塊中可用的資料集ID。 |
 
 **请求**
 
@@ -57,11 +57,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 
 **响应**
 
-成功的响应会返回包含批处理ID对象的有效负荷。 在此示例中，返回对象的键值是批处理ID `01E5QSWCAASFQ054FNBKYV6TIQ`. 复制批量ID以在下一次API调用中使用。
+成功的回應會傳回包含批次ID物件的裝載。 在此範例中，傳回物件的Key值是批次ID `01E5QSWCAASFQ054FNBKYV6TIQ`. 複製您的批次ID以用於下一個API呼叫。
 
 >[!NOTE]
 >
-> 以下答复已 `tags` 为了可读性而对对象进行了重构。
+> 下列回應具有 `tags` 物件經過重新格式化，可讀性更佳。
 
 ```json
 {
@@ -110,9 +110,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 }
 ```
 
-## 使用您的批处理ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
+## 使用您的批次ID擷取下一個API呼叫 {#retrieve-the-next-api-call-with-your-batch-id}
 
-获得批处理ID后，您便能够向 `/batches`. 该请求会返回用作下一个API请求的链接。
+取得批次ID後，您就可以向發出新的GET請求 `/batches`. 該請求會傳回用作下一個API請求的連結。
 
 **API格式**
 
@@ -122,11 +122,11 @@ GET batches/{BATCH_ID}/files
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 在上一步骤中检索的批ID [检索批ID](#retrieve-your-batch-id). |
+| `{BATCH_ID}` | 在上一步中擷取的批次ID [擷取您的批次識別碼](#retrieve-your-batch-id). |
 
 **请求**
 
-使用您自己的批处理ID，发出以下请求。
+使用您自己的批次ID提出以下請求。
 
 ```shell
 curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAASFQ054FNBKYV6TIQ/files' \
@@ -138,7 +138,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 
 **响应**
 
-成功响应会返回包含 `_links` 对象。 在 `_links` 对象是 `href` 使用新API调用作为其值。 复制此值以继续执行下一步。
+成功的回應會傳回包含 `_links` 物件。 在內 `_links` 物件是 `href` 以新的API呼叫作為其值。 複製此值以繼續執行下一個步驟。
 
 ```json
 {
@@ -164,9 +164,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 }
 ```
 
-## 检索文件 {#retrieving-your-files}
+## 擷取您的檔案 {#retrieving-your-files}
 
-使用 `href` 作为API调用在上一步中获得的值，请发出新的GET请求以检索您的文件目录。
+使用 `href` 您在上一個步驟中取得的值作為API呼叫，提出新的GET請求以擷取您的檔案目錄。
 
 **API格式**
 
@@ -176,7 +176,7 @@ GET files/{DATASETFILE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 在 `href` 值 [上一步](#retrieve-the-next-api-call-with-your-batch-id). 也可以在 `data` 对象类型下的数组 `dataSetFileId`. |
+| `{DATASETFILE_ID}` | dataSetFile ID會傳回 `href` 值來自 [上一步](#retrieve-the-next-api-call-with-your-batch-id). 您亦可在以下位置存取： `data` 物件型別下的陣列 `dataSetFileId`. |
 
 **请求**
 
@@ -190,7 +190,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 
 **响应**
 
-响应包含一个数据数组，该数据数组可能具有一个条目，或属于该目录的文件列表。 以下示例包含一个文件列表，为方便阅读，已对其进行了压缩。 在此方案中，您需要遵循每个文件的URL才能访问该文件。
+回應包含資料陣列，其中可能有單一專案，或屬於該目錄的檔案清單。 以下範例包含檔案清單，並經過壓縮以提高可讀性。 在此案例中，您需要遵循每個檔案的URL才能存取該檔案。
 
 ```json
 {
@@ -214,18 +214,18 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `_links.self.href` | GET请求URL，用于下载目录中的文件。 |
+| `_links.self.href` | 用來下載目錄中檔案的GET要求URL。 |
 
 
-复制 `href` 值 `data` 数组，然后继续执行下一步。
+複製 `href` 中任何檔案物件的值 `data` 陣列，然後繼續下一步驟。
 
-## 下载文件数据
+## 下載您的檔案資料
 
-要下载文件数据，请向 `"href"` 您在上一步中复制的值 [检索文件](#retrieving-your-files).
+GET若要下載您的檔案資料，請向 `"href"` 您在上一步中複製的值 [正在擷取您的檔案](#retrieving-your-files).
 
 >[!NOTE]
 >
->如果您直接在命令行中发出此请求，则可能会提示您在请求标头之后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`.
+>如果您直接在命令列中提出此請求，系統可能會提示您在該請求標頭後新增輸出。 以下請求範例使用 `--output {FILENAME.FILETYPE}`.
 
 **API格式**
 
@@ -235,8 +235,8 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 在 `href` 值 [上一步](#retrieve-the-next-api-call-with-your-batch-id). |
-| `{FILE_NAME}` | 文件的名称。 |
+| `{DATASETFILE_ID}` | dataSetFile ID會傳回 `href` 值來自 [上一步](#retrieve-the-next-api-call-with-your-batch-id). |
+| `{FILE_NAME}` | 檔案的名稱。 |
 
 **请求**
 
@@ -251,56 +251,56 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 >[!TIP]
 >
->在发出GET请求之前，请确保您位于您希望将文件保存到的正确目录或文件夹中。
+>在發出GET請求之前，請確定您位於要儲存檔案的正確目錄或資料夾中。
 
 **响应**
 
-响应将下载您在当前目录中请求的文件。 在本例中，文件名为“file.parquet”。
+回應會將您要求的檔案下載到目前目錄中。 在此範例中，檔案名稱為「file.parquet」。
 
-![终端](./images/download-scores/terminal-output.png)
+![終端機](./images/download-scores/terminal-output.png)
 
-下载的分数将采用Parquet格式，并且要么需要 [!DNL Spark]-shell或Parquet阅读器查看分数。 要查看原始分数，您可以使用 [Apache Parquet Tools](https://parquet.apache.org/docs/). 镶木工具可分析 [!DNL Spark].
+下載的分數將為Parquet格式，並且需要 [!DNL Spark]-shell或Parquet讀取器來檢視分數。 對於原始分數檢視，您可以使用 [Apache Parquet工具](https://parquet.apache.org/docs/). Parquet工具可透過以下方式分析資料 [!DNL Spark].
 
 ## 后续步骤
 
-本文档概述了下载Attribution AI得分所需的步骤。 有关分数输出的详细信息，请访问 [归因AI输入和输出](./input-output.md) 文档。
+本檔案概述下載Attribution AI分數所需的步驟。 如需分數輸出的詳細資訊，請造訪 [Attribution AI輸入和輸出](./input-output.md) 說明檔案。
 
-## 使用Snowflake访问分数
+## 使用Snowflake存取分數
 
 >[!IMPORTANT]
 >
->有关使用Snowflake访问分数的更多详细信息，请联系attributionai-support@adobe.com。
+>如需使用Snowflake存取評分的詳細資訊，請聯絡attributionai-support@adobe.com 。
 
-您可以通过Snowflake访问汇总Attribution AI得分。 目前，您需要通过电子邮件将Adobe支持发送到attributionai-support@adobe.com，以设置凭据并将凭据接收到您的读者帐户以进行Snowflake。
+您可以透過Snowflake存取彙總的Attribution AI分數。 目前，您需要透過電子郵件將Adobe支援傳送到attributionai-support@adobe.com ，以設定並接收讀者帳戶的認證以進行Snowflake。
 
-在Adobe支持处理了您的请求后，将为您提供一个要Snowflake的读者帐户URL以及下面的相应凭据：
+在Adobe支援處理完您的請求後，系統就會提供一個URL給您Snowflake的讀者帳戶，並提供以下對應的憑證：
 
-- SnowflakeURL
+- SNOWFLAKEURL
 - 用户名
 - 密码
 
 >[!NOTE]
 >
->读取器帐户用于使用支持JDBC连接器的SQL客户端、工作表和BI解决方案查询数据。
+>讀取器帳戶用於使用支援JDBC聯結器的SQL使用者端、工作表和BI解決方案來查詢資料。
 
-拥有凭据和URL后，您可以查询按接触点日期或转化日期汇总的模型表。
+取得認證和URL後，您就可以查詢模型表格，依接觸點日期或轉換日期彙總。
 
-### 在Snowflake中查找架构
+### 在Snowflake中尋找您的結構描述
 
-使用提供的凭据登录到Snowflake。 单击 **工作表** 选项卡，然后导航到左侧面板中的数据库目录。
+使用提供的憑證登入Snowflake。 按一下 **工作表** 索引標籤在主導覽列左上方，然後導覽至左側面板中的資料庫目錄。
 
-![工作表和导航](./images/download-scores/edited_snowflake_1.png)
+![工作表與導覽](./images/download-scores/edited_snowflake_1.png)
 
-接下来，单击 **选择架构** 中。 在显示的弹出窗口中，确认您选择了正确的数据库。 接下来，单击 *架构* 下拉列表，然后选择列出的模式之一。 您可以直接从所选架构下列出的得分表中查询。
+接下來，按一下 **選取結構描述** 在畫面的右上角。 在顯示的彈出視窗中，確認您已選取正確的資料庫。 接下來，按一下 *結構描述* 下拉式清單，然後選取其中一個列出的結構描述。 您可從選取的綱要下列出的分數表格中直接進行查詢。
 
-![查找模式](./images/download-scores/edited_snowflake_2.png)
+![尋找結構描述](./images/download-scores/edited_snowflake_2.png)
 
-## 将PowerBI连接到Snowflake（可选）
+## 將PowerBI連線至Snowflake （選擇性）
 
-您的Snowflake凭据可用于在PowerBI Desktop和Snowflake数据库之间设置连接。
+您的Snowflake認證可用來設定PowerBI Desktop與Snowflake資料庫之間的連線。
 
-首先，在 *服务器* 框中，键入SnowflakeURL。 下一个，下 *仓库*，键入“XSMALL”。 然后，键入您的用户名和密码。
+首先，在 *伺服器* 方塊中，輸入您的SnowflakeURL。 下一個，在 *倉儲*，輸入「XSMALL」。 然後，輸入您的使用者名稱和密碼。
 
-![POWERBI示例](./images/download-scores/powerbi-snowflake.png)
+![POWERBI範例](./images/download-scores/powerbi-snowflake.png)
 
-建立连接后，选择Snowflake数据库，然后选择相应的架构。 现在，您可以加载所有表。
+建立連線之後，請選取您的Snowflake資料庫，然後選取適當的結構描述。 您現在可以載入所有表格。

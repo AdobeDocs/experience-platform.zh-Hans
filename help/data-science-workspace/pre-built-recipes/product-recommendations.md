@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；产品推荐方法；Data Science Workspace；热门主题；方法；预构建方法
+keywords: Experience Platform；產品推薦配方；資料科學工作區；熱門主題；配方；預先建置配方
 solution: Experience Platform
-title: 产品推荐方法
-description: 通过产品Recommendations方法，您可以根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察信息。
+title: 產品推薦配方
+description: 產品Recommendations配方可讓您根據客戶的需求和興趣量身打造個人化產品推薦。 有了準確的預測模型，客戶的購買記錄就能讓您深入瞭解他們可能會對哪些產品感興趣。
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,49 +11,49 @@ ht-degree: 3%
 
 ---
 
-# 产品推荐方法
+# 產品推薦配方
 
-通过产品Recommendations方法，您可以根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察信息。
+產品Recommendations配方可讓您根據客戶的需求和興趣量身打造個人化產品推薦。 有了準確的預測模型，客戶的購買記錄就能讓您深入瞭解他們可能會對哪些產品感興趣。
 
-## 这食谱是为谁准备的？
+## 這是專為誰打造的配方？
 
-在现代，零售商可以提供多种产品，为客户提供大量选择，这也会阻碍客户搜索。 由于时间和精力的限制，客户可能找不到他们想要的产品，从而导致购买时认知不协调，或根本不购买。
+現今，零售商可以提供多種產品，為客戶提供許多選擇，但也可能阻礙客戶搜尋。 由於時間和精力限制，客戶可能無法找到他們想要的產品，導致購買行為與認知有高度不協調，或根本不會購買。
 
-## 这食谱是做什么的？
+## 這個配方有什麼作用？
 
-产品Recommendations方法使用机器学习来分析客户过去与产品的交互，并快速轻松地生成产品推荐的个性化列表。 这可以优化产品发现过程，并消除对客户的长时间、低效、不相关的搜索。 因此，产品Recommendations方法可以改善客户的整体购买体验，从而提高参与度和品牌忠诚度。
+產品Recommendations的配方使用機器學習來分析客戶與過去產品的互動，並快速輕鬆地產生產品推薦的個人化清單。 如此可最佳化產品探索程式，並免除對客戶進行冗長、低效且無關的搜尋。 因此，產品Recommendations配方可以改善客戶的整體購買體驗，進而提高參與度和品牌忠誠度。
 
-## 如何开始操作？
+## 如何開始使用？
 
-您可以按照Adobe Experience Platform Lab教程（请参阅下面的Lab链接）来入门。 本教程将向您展示如何通过以下操作在Jupyter Notebook中创建产品Recommendations方法： [笔记本至配方](../jupyterlab/create-a-model.md) 工作流，并在中实施方法 [!DNL Experience Platform] [!DNL Data Science Workspace].
+您可以依照Adobe Experience Platform Lab教學課程來開始使用（請參閱下方的Lab連結）。 本教學課程將示範如何遵循下列步驟，在Jupyter Notebook中建立「產品Recommendations」配方 [記事本至配方](../jupyterlab/create-a-model.md) 工作流程，並在中實作配方 [!DNL Experience Platform] [!DNL Data Science Workspace].
 
-* [实验：使用数据科学工作区预测未来](https://expleague.azureedge.net/labs/L777/index.html)
-* [实验室资源](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
+* [實驗室：使用資料科學工作區預測未來](https://expleague.azureedge.net/labs/L777/index.html)
+* [實驗室資源](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
 
-## 数据模式
+## 資料結構描述
 
-此方法使用自定义 [XDM模式](../../xdm/schema/field-dictionary.md) 要为输入和输出数据建模，请执行以下操作：
+此配方使用自訂 [XDM結構描述](../../xdm/schema/field-dictionary.md) 若要為輸入和輸出資料建立模型：
 
-### 输入数据架构
+### 輸入資料結構描述
 
 | 字段名称 | 类型 |
 | --- | --- |
 | itemId | 字符串 |
-| interactionType | 字符串 |
+| interactiontype | 字符串 |
 | timestamp | 字符串 |
 | userId | 字符串 |
 
-### 输出数据架构
+### 輸出資料結構描述
 
 | 字段名称 | 类型 |
 | --- | --- |
-| 推荐 | 字符串 |
+| recommendations | 字符串 |
 | userId | 整数 |
 
-## 算法
+## 演演算法
 
-“产品Recommendations”方法利用协作筛选，为您的客户生成产品推荐的个性化列表。 协作过滤与基于内容的方法不同，它不需要有关特定产品的信息，而是利用客户对一组产品的历史偏好。 这种功能强大的推荐技术使用了两个简单的假设：
-* 有些客户具有相似的兴趣，可以通过比较他们的购买和浏览行为来对他们进行分组。
-* 客户在购买和浏览行为方面更有可能感兴趣的是基于相似客户的推荐。
+產品Recommendations配方利用合作篩選，為您的客戶產生個人化的產品推薦清單。 協同篩選不同於以內容為基礎的方法，不需要特定產品的相關資訊，而是利用客戶對一組產品的歷史偏好設定。 這項強大的建議技術使用兩個簡單的假設：
+* 有些客戶有類似的興趣，且可透過比較其購買和瀏覽行為來分組。
+* 根據類似客戶的購買和瀏覽行為，客戶更可能對推薦感興趣。
 
-此过程分为两个主要步骤。 首先，定义相似客户的子集。 然后，在该集内，确定这些客户之间的类似功能，以便返回目标客户的推荐。
+此程式分為兩個主要步驟。 首先，定義類似客戶的子集。 然後，在該集合中，識別這些客戶中的類似功能，以便為目標客戶傳回建議。

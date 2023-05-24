@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；流式引入；摄取；流式传送多条消息；多条消息；
+keywords: Experience Platform；首頁；熱門主題；串流擷取；擷取；串流多則訊息；多則訊息；
 solution: Experience Platform
-title: 在一个HTTP请求中发送多条消息
+title: 在單一HTTP要求中傳送多則訊息
 type: Tutorial
-description: 本文档提供了一个教程，用于使用流摄取在单个HTTP请求内向Adobe Experience Platform发送多条消息。
+description: 本檔案提供的教學課程，說明如何使用串流擷取，在單一HTTP請求中傳送多則訊息至Adobe Experience Platform。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
 source-git-commit: 3ad5c06db07b360df255d3afb1c177cc5de613bb
 workflow-type: tm+mt
@@ -12,40 +12,40 @@ ht-degree: 1%
 
 ---
 
-# 在一个HTTP请求中发送多条消息
+# 在單一HTTP要求中傳送多則訊息
 
-在将数据流式传输到Adobe Experience Platform时，进行大量HTTP调用可能会非常昂贵。 例如，创建1个HTTP请求（每个消息200 KB），单个负载200 KB，而不是创建200个负载为1 KB的HTTP请求，这样会更加有效。 正确使用时，在单个请求内对多个消息进行分组是优化发送到的数据的绝佳方法 [!DNL Experience Platform].
+將資料串流至Adobe Experience Platform時，進行大量HTTP呼叫可能會很昂貴。 舉例來說，與其使用1KB裝載建立200個HTTP請求，不如使用200個訊息各為1KB，單一裝載為200KB來建立1個HTTP請求更有效率。 正確使用時，將單一請求中的多個訊息分組，是最佳化傳送至的資料的絕佳方式 [!DNL Experience Platform].
 
-本文档提供了将多条消息发送到的教程 [!DNL Experience Platform] 流摄取在单个HTTP请求中。
+本檔案提供傳送多則訊息至的教學課程 [!DNL Experience Platform] 使用串流擷取的單個HTTP請求中。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform有一定的了解 [!DNL Data Ingestion]. 在开始使用本教程之前，请查阅以下文档：
+本教學課程需要實際瞭解Adobe Experience Platform [!DNL Data Ingestion]. 在開始本教學課程之前，請檢閱下列檔案：
 
-- [数据摄取概述](../home.md):涵盖 [!DNL Experience Platform Data Ingestion]，包括摄取方法和Data Connectors。
-- [流摄取概述](../streaming-ingestion/overview.md):流摄取的工作流和构建基块，例如流连接、数据集、 [!DNL XDM Individual Profile]和 [!DNL XDM ExperienceEvent].
+- [資料擷取概觀](../home.md)：涵蓋 [!DNL Experience Platform Data Ingestion]，包括擷取方法和資料聯結器。
+- [串流擷取概觀](../streaming-ingestion/overview.md)：串流擷取的工作流程和建置區塊，例如串流連線、資料集、 [!DNL XDM Individual Profile]、和 [!DNL XDM ExperienceEvent].
 
-本教程还要求您完成 [验证到Adobe Experience Platform](https://www.adobe.com/go/platform-api-authentication-en) 教程以成功调用 [!DNL Platform] API。 完成身份验证教程将为本教程中所有API调用所需的授权标头提供值。 标头显示在示例调用中，如下所示：
+本教學課程也要求您完成 [Adobe Experience Platform驗證](https://www.adobe.com/go/platform-api-authentication-en) 教學課程，以成功呼叫 [!DNL Platform] API。 完成驗證教學課程，會提供本教學課程中所有API呼叫所需的Authorization標頭值。 標頭會顯示在範例呼叫中，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授權：持有人 `{ACCESS_TOKEN}`
 
-所有POST请求都需要一个额外的标头：
+所有POST請求都需要額外的標頭：
 
-- Content-Type:application/json
+- Content-Type： application/json
 
-## 创建流连接
+## 建立串流連線
 
-必须先创建流连接，然后才能开始将数据流式传输到 [!DNL Experience Platform]. 阅读 [创建流连接](./create-streaming-connection.md) 指南，了解如何创建流连接。
+您必須先建立串流連線，才能開始將資料串流至 [!DNL Experience Platform]. 閱讀 [建立串流連線](./create-streaming-connection.md) 有關如何建立串流連線的指南。
 
-注册流连接后，作为数据生成者，您将拥有一个唯一的URL，可用于将数据流式传输到Platform。
+註冊串流連線後，身為資料製作者的您將擁有唯一URL，此URL可用來將資料串流至Platform。
 
-## 流到数据集
+## 串流至資料集
 
-以下示例显示如何在单个HTTP请求内向特定数据集发送多条消息。 在消息标题中插入数据集ID，以直接将该消息摄取到该数据集中。
+以下範例說明如何在單一HTTP請求中傳送多則訊息至特定資料集。 在訊息標頭中插入資料集ID，以將訊息直接內嵌到其中。
 
-您可以使用 [!DNL Platform] UI或在API中使用列表操作。 数据集ID可在 [Experience Platform](https://platform.adobe.com) 通过 **[!UICONTROL 数据集]** 选项卡上，单击所需ID的数据集，然后从 **[!UICONTROL 信息]** 选项卡。 请参阅 [目录服务概述](../../catalog/home.md) 有关如何使用API检索数据集的信息。
+您可以使用取得現有資料集的ID [!DNL Platform] UI或使用API中的清單操作。 資料集ID可在下列位置找到： [Experience Platform](https://platform.adobe.com) 前往 **[!UICONTROL 資料集]** 索引標籤上，按一下您想要ID的資料集，然後從 **[!UICONTROL 資訊]** 標籤。 請參閱 [目錄服務概觀](../../catalog/home.md) 有關如何使用API擷取資料集的資訊。
 
-您可以创建新数据集，而不是使用现有数据集。 请阅读 [使用API创建数据集](../../catalog/api/create-dataset.md) 教程，以了解有关使用API创建数据集的更多信息。
+您可以建立新的資料集，而不需使用現有的資料集。 請閱讀 [使用API建立資料集](../../catalog/api/create-dataset.md) 教學課程，以瞭解使用API建立資料集的詳細資訊。
 
 **API格式**
 
@@ -55,7 +55,7 @@ POST /collection/batch/{CONNECTION_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | 创建的流连接的ID。 |
+| `{CONNECTION_ID}` | 已建立串流連線的ID。 |
 
 **请求**
 
@@ -188,7 +188,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 **响应**
 
-成功响应会返回HTTP状态207（多状态）。 查看响应正文可提供有关请求中执行的每个方法是否成功的更多详细信息。 为请求消息数组的每个元素返回响应。 以下是无消息失败的成功响应示例：
+成功的回應會傳回HTTP狀態207 （多狀態）。 檢閱回應內文時，會提供要求中執行之每個方法成功或失敗的相關詳細資訊。 系統會針對要求訊息陣列的每個元素傳回回應。 以下是成功回應且無訊息失敗的範例：
 
 ```json
 {
@@ -206,22 +206,22 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 }
 ```
 
-有关状态代码的详细信息，请参阅 [响应代码](#response-codes) 表。
+如需狀態碼的詳細資訊，請參閱 [回應代碼](#response-codes) 表格中列出的資訊。
 
-## 识别失败的消息
+## 識別失敗的訊息
 
-与使用单条消息发送请求相比，在发送包含多条消息的HTTP请求时，需要考虑其他因素，例如：如何识别数据何时发送失败、哪些特定消息未能发送以及如何检索这些消息，以及当同一请求中的其他消息失败时成功的数据会发生什么情况。
+相較於使用單一訊息傳送請求，在傳送包含多個訊息的HTTP請求時，還需要考慮其他因素，例如：如何識別資料何時無法傳送、哪些特定訊息無法傳送以及如何可擷取這些訊息，以及當相同請求中的其他訊息失敗時，成功傳送的資料會發生什麼情況。
 
-在继续本教程之前，建议先查看 [检索失败批次](../quality/retrieve-failed-batches.md) 的双曲余切值。
+在繼續本教學課程之前，建議您先檢閱 [擷取失敗的批次](../quality/retrieve-failed-batches.md) 指南。
 
-### 发送包含有效消息和无效消息的请求负载
+### 傳送包含有效及無效訊息的要求裝載
 
-以下示例显示了当批处理包含有效和无效消息时会发生什么情况。
+以下範例說明批次包含有效及無效訊息時會發生什麼情況。
 
-请求有效负载是一个JSON对象数组，表示XDM架构中的事件。 请注意，成功验证消息需要满足以下条件：
-- 的 `imsOrgId` 字段必须匹配入口定义。 如果请求有效负载不包括 `imsOrgId` 字段， [!DNL Data Collection Core Service] (DCCS)将自动添加该字段。
-- 消息的标头应引用在 [!DNL Platform] UI。
-- 的 `datasetId` 字段需要引用 [!DNL Platform]，且其架构需要与 `header` 请求正文中包含的每个消息中的对象。
+請求承載是代表XDM結構描述中事件的JSON物件陣列。 請注意，必須符合下列條件才能成功驗證訊息：
+- 此 `imsOrgId` 訊息標頭中的欄位必須與入口定義。 如果請求承載不包含 `imsOrgId` 欄位， [!DNL Data Collection Core Service] (DCCS)會自動新增欄位。
+- 訊息的標頭應參考中建立的現有XDM結構描述 [!DNL Platform] UI。
+- 此 `datasetId` 欄位需要參考中的現有資料集 [!DNL Platform]，其結構描述需符合 `header` 要求內文中包含的每個訊息內的物件。
 
 **API格式**
 
@@ -231,7 +231,7 @@ POST /collection/batch/{CONNECTION_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | 创建的数据入口的ID。 |
+| `{CONNECTION_ID}` | 已建立資料入口的ID。 |
 
 **请求**
 
@@ -460,7 +460,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 **响应**
 
-响应负载包括每个消息的状态以及 `xactionId` 可用于跟踪。
+回應裝載包含每則訊息的狀態，以及 `xactionId` 可用於追蹤。
 
 ```JSON
 {
@@ -487,11 +487,11 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 }
 ```
 
-上面的示例响应显示了上一个请求的错误消息。 通过将此响应与先前的有效响应进行比较，您可以发现请求会部分成功，成功摄取一条消息，并导致失败三条消息。 请注意，两个响应都会返回“207”状态代码。 有关状态代码的详细信息，请参阅 [响应代码](#response-codes) 表。
+上述範例回應顯示先前請求的錯誤訊息。 將此回應與先前的有效回應進行比較，您會發現要求導致部分成功，其中一條訊息成功擷取，而三條訊息則導致失敗。 請注意，這兩個回應都會傳回「207」狀態代碼。 如需狀態碼的詳細資訊，請參閱 [回應代碼](#response-codes) 表格中列出的資訊。
 
-第一条消息已成功发送到 [!DNL Platform] 和不受其他消息结果的影响。 因此，在尝试重新发送失败的消息时，您无需重新包含此消息。
+第一個訊息已成功傳送至 [!DNL Platform] 和其他訊息的結果則不會影響和。 因此，當嘗試重新傳送失敗的訊息時，您不需要重新包含此訊息。
 
-第二条消息失败，因为它缺少消息正文。 收集请求要求消息元素具有有效的标题和正文部分。 在第二条消息的标头之后添加以下代码将修复请求，从而允许第二条消息通过验证：
+第二個訊息失敗，因為它缺少訊息內文。 集合要求訊息元素必須有有效的標頭與內文區段。 在第二則訊息的標頭之後新增下列程式碼將修正請求，並允許第二則訊息通過驗證：
 
 ```JSON
       "body": {
@@ -508,44 +508,44 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三条消息失败，原因是标头中使用的组织ID无效。 组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个组织ID与您使用的流连接相匹配，您可以执行 `GET inlet` 使用 [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/). 请参阅 [检索流连接](./create-streaming-connection.md#get-data-collection-url) 有关如何检索之前创建的流连接的示例。
+第三個訊息失敗，因為標頭中使用了無效的組織ID。 組織必須與您嘗試發佈到的{CONNECTION_ID}相符。 若要確定哪個組織ID符合您使用的串流連線，您可以執行 `GET inlet` 請求使用 [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/). 另請參閱 [擷取串流連線](./create-streaming-connection.md#get-data-collection-url) 有關如何擷取先前建立的串流連線的範例。
 
-第四条消息失败，因为它未遵循预期的XDM架构。 的 `xdmSchema` 请求的标头和正文中包含的XDM架构与 `{DATASET_ID}`. 更正消息标头和正文中的架构后，该架构可通过DCCS验证并成功发送至 [!DNL Platform]. 还必须更新消息正文，以匹配 `{DATASET_ID}` 通过流式验证 [!DNL Platform]. 有关成功流入平台的消息会发生什么情况的更多信息，请参阅 [确认消息已摄取](#confirm-messages-ingested) 部分。
+第四則訊息失敗，因為它未遵循預期的XDM結構描述。 此 `xdmSchema` 請求標頭和內文中包含的XDM結構描述與的 `{DATASET_ID}`. 更正訊息標頭和內文中的結構描述可讓它通過DCCS驗證並成功傳送至 [!DNL Platform]. 訊息內文也必須更新以符合 `{DATASET_ID}` 以傳遞串流驗證 [!DNL Platform]. 如需成功串流至Platform的訊息有何動向的詳細資訊，請參閱 [確認已擷取的訊息](#confirm-messages-ingested) 一節。
 
-### 从检索失败的消息 [!DNL Platform]
+### 從擷取失敗的訊息 [!DNL Platform]
 
-失败的消息由响应数组中的错误状态代码标识。
-无效消息会收集并存储在指定的数据集内的“error”批次中 `{DATASET_ID}`.
+失敗的訊息由回應陣列中的錯誤狀態代碼識別。
+系統會收集無效的訊息，並將其儲存在所指定資料集的「錯誤」批次中 `{DATASET_ID}`.
 
-阅读 [检索失败批次](../quality/retrieve-failed-batches.md) 有关恢复失败批量消息的详细信息。
+閱讀 [擷取失敗的批次](../quality/retrieve-failed-batches.md) 指南，以取得復原失敗批次訊息的詳細資訊。
 
-## 确认摄取的消息
+## 確認已擷取的訊息
 
-通过DCCS验证的消息会被流式传输到 [!DNL Platform]. 开 [!DNL Platform]，则批量消息在摄取到 [!DNL Data Lake]. 批次的状态（无论是否成功）都会显示在指定的数据集中 `{DATASET_ID}`.
+通過DCCS驗證的訊息會串流至 [!DNL Platform]. 開啟 [!DNL Platform]，批次訊息在擷取到之前會透過串流驗證進行測試 [!DNL Data Lake]. 批次的狀態（無論是否成功）會出現在指定的資料集中 `{DATASET_ID}`.
 
-您可以查看成功流入的批量消息的状态 [!DNL Platform] 使用 [Experience PlatformUI](https://platform.adobe.com) 通过 **[!UICONTROL 数据集]** 选项卡上，单击要流式处理到的数据集，然后检查 **[!UICONTROL 数据集活动]** 选项卡。
+您可以檢視成功串流到的批次訊息的狀態 [!DNL Platform] 使用 [EXPERIENCE PLATFORMUI](https://platform.adobe.com) 前往 **[!UICONTROL 資料集]** 索引標籤，按一下您要串流至的資料集，然後檢查 **[!UICONTROL 資料集活動]** 標籤。
 
-通过流验证的批量消息 [!DNL Platform] 被摄取到 [!DNL Data Lake]. 然后，即可分析或导出这些消息。
+透過串流驗證的批次訊息 [!DNL Platform] 內嵌至 [!DNL Data Lake]. 然後，即可分析或匯出訊息。
 
 ## 后续步骤
 
-现在，您已了解如何在单个请求中发送多条消息，并验证消息何时被成功摄取到目标数据集，接下来可以开始将您自己的数据流式传输到 [!DNL Platform]. 有关如何从中查询和检索摄取数据的概述 [!DNL Platform]，请参阅 [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) 的双曲余切值。
+現在您知道如何在單一請求中傳送多則訊息，並驗證訊息何時成功擷取至目標資料集，就可以開始將自己的資料串流至 [!DNL Platform]. 有關如何查詢和擷取擷取資料的概述 [!DNL Platform]，請參閱 [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) 指南。
 
 ## 附录
 
-本节包含教程的补充信息。
+本節包含教學課程的補充資訊。
 
 ### 响应代码
 
-下表显示了成功和失败响应消息返回的状态代码。
+下表顯示成功和失敗回應訊息傳回的狀態碼。
 
-| 状态代码 | 描述 |
+| 狀態代碼 | 描述 |
 | :---: | --- |
-| 207 | 尽管将“207”用作整体响应状态代码，但接收者需要查阅多状态响应主体的内容，以进一步了解有关方法执行的成功或失败的信息。 响应代码用于成功、部分成功以及失败情况。 |
-| 400 | 请求有问题。 有关更具体的错误消息，请参阅响应正文（例如，消息有效负荷缺少必填字段，或消息为未知xdm格式）。 |
-| 401 | 未授权：请求缺少有效的授权标头。 仅对启用了身份验证的入口返回此值。 |
-| 403 | 未授权：提供的授权令牌无效或已过期。 仅对启用了身份验证的入口返回此值。 |
-| 413 | 负载过大 — 当负载请求总负载大于1MB时引发。 |
-| 429 | 指定时间段内的请求过多。 |
-| 500 | 处理负载时出错。 有关更具体的错误消息(例如，未指定消息有效负载架构，或与 [!DNL Platform])。 |
-| 503 | 服务当前不可用。 客户端应使用指数回退策略至少重试3次。 |
+| 207 | 雖然「207」會用作整體回應狀態代碼，但收件者需要參閱多狀態回應主體的內容，以取得有關方法執行成功或失敗的進一步資訊。 回應程式碼會用於成功、部分成功以及失敗情況。 |
+| 400 | 請求發生問題。 如需更具體的錯誤訊息，請參閱回應內文（例如，訊息裝載缺少必填欄位，或訊息的xdm格式未知）。 |
+| 401 | 未獲授權：請求缺少有效的授權標頭。 系統只會針對已啟用驗證的Inlet傳回此訊息。 |
+| 403 | 未獲授權：提供的授權權杖無效或已過期。 系統只會針對已啟用驗證的Inlet傳回此訊息。 |
+| 413 | 裝載太大 — 當裝載要求總數大於1MB時擲回。 |
+| 429 | 指定持續時間內有太多請求。 |
+| 500 | 處理裝載時發生錯誤。 如需更具體的錯誤訊息，請參閱回應內文（例如，訊息裝載結構描述未指定，或不符合中的XDM定義） [!DNL Platform])。 |
+| 503 | 服務目前無法使用。 使用者端應使用指數回退策略重試至少3次。 |

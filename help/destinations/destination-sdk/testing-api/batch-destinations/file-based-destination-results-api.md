@@ -1,6 +1,6 @@
 ---
-description: 本页介绍如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点会返回与使用流服务API监视数据流时获得的结果相同的结果。
-title: 查看详细的激活结果
+description: 此頁面說明如何使用/testing/destinationInstance API端點檢視測試結果的完整詳細資訊。 此API端點傳回的結果與使用流量服務API監視資料流時獲得的結果相同。
+title: 檢視詳細的啟用結果
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
 source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
 workflow-type: tm+mt
@@ -9,40 +9,40 @@ ht-degree: 2%
 
 ---
 
-# 查看详细的激活结果 {#view-test-results}
+# 檢視詳細的啟用結果 {#view-test-results}
 
 ## 概述 {#overview}
 
-本页介绍如何使用 `/testing/destinationInstance` 用于查看基于文件的目标测试结果的完整详细信息的API端点。
+此頁面說明如何使用 `/testing/destinationInstance` API端點可檢視檔案式目的地測試結果的完整詳細資料。
 
-如果您已经 [已测试目标](file-based-destination-testing-api.md) 并且收到了有效的API响应，则表明您的目标运行正常。
+如果您已 [已測試您的目的地](file-based-destination-testing-api.md) 並收到有效的API回應，表示您的目的地正常運作。
 
-如果要查看有关激活流程的更多详细信息，可以使用 `results` 属性 [目标测试](file-based-destination-testing-api.md) 端点响应，如下所述。
+如果您想檢視更多關於啟用流程的詳細資訊，您可以使用 `results` 屬性來自 [目的地測試](file-based-destination-testing-api.md) 端點回應，如下所述。
 
 >[!NOTE]
 >
->此API端点会返回与使用 [流量服务API](../../../api/update-destination-dataflows.md) 监视数据流。
+>此API端點傳回的結果與使用時獲得的結果相同。 [流程服務API](../../../api/update-destination-dataflows.md) 以監視資料流。
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
 ## 先决条件 {#prerequisites}
 
-在使用 `/testing/destinationInstance` 端点，确保满足以下条件：
+開始使用 `/testing/destinationInstance` 端點，確定您符合以下條件：
 
-* 您已通过Destination SDK创建了一个基于文件的现有目标，您可以在 [目标目录](../../../ui/destinations-workspace.md).
-* 您已在Experience PlatformUI中为目标至少创建了一个激活流程。
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您有一個透過Destination SDK建立的檔案型目的地，且您可以在下列位置中看到 [目的地目錄](../../../ui/destinations-workspace.md).
+* 您已在Experience PlatformUI中為您目的地建立至少一個啟用流程。
+* 若要成功提出API請求，您需要與要測試的目的地執行個體對應的目的地執行個體ID。 在Platform UI中瀏覽與目的地的連線時，從URL取得應在API呼叫中使用的目的地執行個體ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
-* 您之前 [已测试目标配置](file-based-destination-testing-api.md)，并收到了有效的API响应，该响应包括 `results` 属性。 您将使用此 `results` 值以进一步测试目标。
+   ![UI影像顯示如何從URL取得目的地執行個體ID。](../../assets/testing-api/get-destination-instance-id.png)
+* 您先前曾經 [已測試您的目的地設定](file-based-destination-testing-api.md)，並收到有效的API回應，包括 `results` 屬性。 您將使用此 `results` 值，進一步測試您的目的地。
 
-## 查看详细的目标测试结果 {#test-activation-results}
+## 檢視詳細的目的地測試結果 {#test-activation-results}
 
-一旦 [已验证目标配置](file-based-destination-testing-api.md)，则可以通过向发出GET请求来查看详细的激活结果 `authoring/testing/destinationInstance/` 端点和提供您正在测试的目标的目标实例ID，以及已激活区段的流运行ID。
+一旦您擁有 [已驗證您的目的地設定](file-based-destination-testing-api.md)，您可以向發出GET請求來檢視詳細的啟用結果 `authoring/testing/destinationInstance/` 端點，並提供您正在測試之目的地的目的地例項ID，以及已啟動區段的流程執行ID。
 
-您可以在 `results` 中返回的属性 [目标测试调用的响应](file-based-destination-testing-api.md).
+您可以在以下位置找到您需要使用的完整API URL： `results` 屬性傳回 [目的地測試呼叫的回應](file-based-destination-testing-api.md).
 
 **API格式**
 
@@ -50,13 +50,13 @@ ht-degree: 2%
 GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flowRunIds=id1,id2
 ```
 
-| 路径参数 | 描述 |
+| 路徑引數 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_INSTANCE_ID}` | 要为其生成示例用户档案的目标实例的ID。 请参阅 [先决条件](#prerequisites) 部分以了解有关如何获取此ID的详细信息。 |
+| `{DESTINATION_INSTANCE_ID}` | 您要產生範例設定檔的目標執行個體ID。 請參閱 [必備條件](#prerequisites) 區段，以瞭解有關如何取得此ID的詳細資訊。 |
 
 | 查询字符串参数 | 描述 |
 | -------- | ----------- |
-| `flowRunIds` | 与激活的区段对应的流量运行ID。 您可以在 `results` 中返回的属性 [目标测试调用的响应](file-based-destination-testing-api.md). |
+| `flowRunIds` | 與已啟動區段對應的流程執行ID。 您可以在以下位置找到流程執行ID： `results` 屬性傳回 [目的地測試呼叫的回應](file-based-destination-testing-api.md). |
 
 **请求**
 
@@ -71,7 +71,7 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/testing/de
 
 **响应**
 
-响应包含激活流程的完整详细信息。 您可以通过调用 [流量服务API](../../../api/update-destination-dataflows.md) 监视数据流。
+回應包含啟動流程的完整詳細資料。 您可以呼叫 [流程服務API](../../../api/update-destination-dataflows.md) 以監視資料流。
 
 ```json
 {
@@ -211,12 +211,12 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/testing/de
 }
 ```
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何测试基于文件的目标配置并查看激活结果的完整详细信息。
+閱讀本檔案後，您現在瞭解如何測試檔案型目的地設定，並檢視啟用結果的完整詳細資訊。
 
-如果您正在构建公共目标，您现在可以 [提交目标配置](../../guides/submit-destination.md) Adobe以供审阅。
+如果您要建立公用目的地，現在可以 [提交您的目的地設定](../../guides/submit-destination.md) 以Adobe檢閱。

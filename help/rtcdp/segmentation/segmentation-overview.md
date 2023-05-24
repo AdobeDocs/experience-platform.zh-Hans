@@ -1,7 +1,7 @@
 ---
-keywords: 分段；分段rtcdp；实时客户数据平台分段
+keywords: 細分；細分rtcdp；即時客戶資料平台細分
 title: Real-time Customer Data Platform中的Segmentation Service
-description: Adobe实时客户数据平台是以Adobe Experience Platform为基础构建的，它利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
+description: Adobe Real-Time Customer Data Platform是以Adobe Experience Platform為建置基礎，並利用許多Experience Platform服務和功能。 使用區段服務，您可以將客戶劃分為具有類似特徵的較小群組，以提供量身打造的行銷。
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -12,44 +12,44 @@ ht-degree: 4%
 
 # [!DNL Segmentation Service] in [!DNL Real-Time Customer Data Platform]
 
-[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)允许您从多个来源提取数据，从而为客户提供协调一致的体验。 使用 [!DNL Segmentation Service]是Adobe Experience Platform的一部分。
+[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)可讓您從多個來源取得資料，為客戶推動協調一致的體驗。 使用可實現相關個人化行銷活動 [!DNL Segmentation Service]，Adobe Experience Platform的一部分。
 
-Real-Time CDP基于Adobe Experience Platform构建，利用了 [!DNL Experience Platform] 服务和功能。 使用 [!DNL Segmentation Service]，您可以通过将客户划分为具有相似特征的较小群组，从而提供量身定制的营销。
+Real-Time CDP是以Adobe Experience Platform為建置基礎，並利用 [!DNL Experience Platform] 服務與功能。 使用 [!DNL Segmentation Service]，您可將客戶分成具有類似特徵的較小群組，以提供量身打造的行銷。
 
 ## 区段
 
-分段是定义用户档案库中用户档案子集共享的特定属性或行为的过程，用于将可销售的人群与客户群区分开来。 例如，在名为“您忘记购买运动鞋吗？”的电子邮件促销活动中，您可能希望看到过去30天内搜索跑鞋但未完成购买的所有用户的受众。 使用不同的区段，您可以专注于各个受众，从而提供更加自定义的营销体验。
+區段是定義個人資料存放區中個人資料子集所共用的特定屬性或行為的程式，以區分可行銷人群和您的客戶群。 例如，在名為「您忘記買運動鞋了嗎？」的電子郵件行銷活動中，您可能想要一個受眾，其中包含過去30天內搜尋跑鞋但未完成購買的所有使用者。 使用不同的區段，您可以專注於各種受眾，提供更自訂的行銷體驗。
 
 ## [!DNL Segment Builder]
 
-[!DNL Platform] 允许您轻松创建和访问区段，以及使用不同的构建基块来进一步描述区段。 有关如何使用区段生成器的更多信息，请阅读 [区段生成器指南](./segment-builder-guide.md).
+[!DNL Platform] 可讓您輕鬆建立及存取區段，並使用不同的建置區塊來進一步表示區段特性。 如需如何使用「區段產生器」的詳細資訊，請參閱 [區段產生器指南](./segment-builder-guide.md).
 
-## 客户人工智能
+## Customer AI
 
-Customer AI随Real-time Customer Data Platform一起提供，让您能够在个人级别生成客户预测并提供解释。
+Real-time Customer Data Platform隨附的Customer AI可讓您在個人層面產生客戶預測，並提供相關解釋。
 
-在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。此外，您还可以从Customer AI预测和分析中受益，通过提供最合适的选件和消息传送来个性化客户体验。 客户人工智能可以协助：
+在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。此外，您可以受益於Customer AI預測和深入分析，透過提供最合適的優惠方案和訊息來個人化客戶體驗。 Customer AI可協助：
 
-* 提供高准确度的客户倾向模型，以便进行更强的细分和定位。
-* 了解某些客户行为背后的影响因素和可能性。
-* 为贵公司的独特用例和数据提供可自定义的选项。
-* 通过客户倾向得分（如流失率和转化）增强实时客户资料。
-* 通过影响倾向得分的因素增强客户档案。
-* 根据影响因素和倾向得分创建客户区段。
+* 提供高準確度的客戶傾向模型，以實現更強大的細分和目標定位。
+* 瞭解特定客戶行為背後的影響因素和可能性。
+* 針對貴公司的獨特使用案例和資料，提供可自訂的選項。
+* 利用客戶傾向分數（例如流失和轉換）來增強即時客戶個人檔案。
+* 使用傾向分數的影響因素增強客戶設定檔。
+* 根據影響因素和傾向分數建立客戶區段。
 
-客户人工智能位于 **[!UICONTROL 服务]** 选项卡 **[!UICONTROL Adobe服务]**.
+Customer AI位於 **[!UICONTROL 服務]** 標籤下的 **[!UICONTROL Adobe服務]**.
 
-![客户人工智能位置](../assets/overview/rtcdp-customer-ai.png)
+![Customer AI位置](../assets/overview/rtcdp-customer-ai.png)
 
-### Customer AI快速入门
+### Customer AI快速入門
 
-要开始使用Customer AI，您需要遵循 [数据准备教程](../../intelligent-services/data-preparation.md) 并根据您的用例配置输入模式。 接下来，您需要 [配置Customer AI实例](../../intelligent-services/customer-ai/user-guide/configure.md). 配置实例后，将生成一个模型，其中可以 [查看您的分析和得分](../../intelligent-services/customer-ai/user-guide/discover-insights.md). 使用从模型生成的数据，您可以创建用于数据驱动激活的区段。
+若要開始使用Customer AI，您需要遵循 [資料準備教學課程](../../intelligent-services/data-preparation.md) 並根據您的使用案例設定輸入結構描述。 接下來，您需要 [設定Customer AI執行個體](../../intelligent-services/customer-ai/user-guide/configure.md). 設定例證後，會產生模型，您可在其中進行 [檢視您的深入分析和分數](../../intelligent-services/customer-ai/user-guide/discover-insights.md). 使用模型產生的資料，您可以建立區段以進行資料導向啟動。
 
-要进一步了解Customer AI，请首先访问 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 此外，以下视频展示了客户人工智能如何通过基于人工智能的倾向性来丰富客户档案，并支持客户细分和定位工作。
+若要進一步瞭解Customer AI，請造訪 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 此外，以下影片說明Customer AI如何運用AI傾向豐富客戶個人檔案，以及執行客戶細分和目標定位工作。
 
 >[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)
 
 
 ## 后续步骤
 
-阅读此概述后，您现在应该了解Real-Time CDP如何利用 [!DNL Segmentation Service] 以增强营销活动的自定义和个性化。 有关 [!DNL Segmentation Service]，请阅读 [分段文档](../../segmentation/home.md).
+閱讀本概述後，您現在應該瞭解Real-Time CDP如何運用 [!DNL Segmentation Service] 增強行銷活動的自訂和個人化。 如需更多有關「 」的資訊， [!DNL Segmentation Service]，請閱讀 [區段檔案](../../segmentation/home.md).

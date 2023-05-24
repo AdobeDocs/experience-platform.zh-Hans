@@ -1,6 +1,6 @@
 ---
-title: 在Reactor API中搜索资源
-description: 了解如何在Reactor API中搜索资源。
+title: 在Reactor API中搜尋資源
+description: 瞭解如何在Reactor API中搜尋資源。
 exl-id: cb594e60-3e24-457e-bfb3-78ec84d3e39a
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# 在Reactor API中搜索资源
+# 在Reactor API中搜尋資源
 
-的 `/search` reactor API中的端点允许您对存储的资源进行结构化查询。 本文档提供了针对各种常见用例的不同搜索查询示例。
+此 `/search` Reactor API中的端點可讓您對儲存的資源進行結構化查詢。 本檔案提供各種常見使用案例的不同搜尋查詢範例。
 
 >[!NOTE]
 >
->在阅读本指南之前，请参阅 [search endpoint指南](../endpoints/search.md) 有关已接受的查询语法和其他使用准则的信息。
+>閱讀本指南前，請先參閱 [搜尋端點指南](../endpoints/search.md) 以取得接受的查詢語法和其他使用准則的相關資訊。
 
-## 基本查询策略
+## 基本查詢策略
 
-以下示例演示了使用API搜索功能的一些基本概念。
+下列範例示範使用API搜尋功能的一些基本概念。
 
-### 跨多个字段搜索
+### 在多個欄位中搜尋
 
-在字段名称中使用通配符可以跨多个字段执行搜索。 例如，要在多个属性字段中搜索，请使用 `attributes.*` 作为字段名称。
+您可以在欄位名稱中使用萬用字元，跨多個欄位執行搜尋。 例如，若要搜尋多個屬性欄位，請使用 `attributes.*` 作為欄位名稱。
 
 ```json
 {
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->通常，搜索值必须与搜索的数据类型匹配。 例如，查询值为 `evar7` 针对整数字段的操作将失败。 跨多个字段进行搜索时，查询类型要求会较为宽松，以避免出现错误，但可能会产生不希望的结果。
+>一般而言，搜尋值必須符合要搜尋的資料型別。 例如，查詢值為 `evar7` 針對整數欄位會失敗。 跨多個欄位搜尋時，查詢型別要求會變得寬鬆以避免錯誤，但可能會產生不需要的結果。
 
-### 针对特定资源类型的范围查询
+### 將查詢範圍限定為特定資源型別
 
-您可以通过提供 `resource_types` 中。 例如，要在 `data_elements`和 `rule_components`:
+您可以透過提供以下專案將搜尋範圍限定為特定資源型別 `resource_types` 在請求中。 例如，若要搜尋 `data_elements`、和 `rule_components`：
 
 ```json
 {
@@ -63,9 +63,9 @@ ht-degree: 0%
 }
 ```
 
-### 对响应进行排序
+### 排序回應
 
-的 `sort` 属性可用于对响应进行排序。 例如，要按 `created_at` （以最新为先）
+此 `sort` 屬性可用於排序回應。 例如，排序依據 `created_at` 以最新的優先：
 
 ```json
 {
@@ -90,11 +90,11 @@ ht-degree: 0%
 }
 ```
 
-## 常见搜索示例
+## 常見搜尋範例
 
-以下示例演示了其他常见的搜索模式。
+下列範例示範其他常見搜尋模式。
 
-### 具有特定名称的任何资源
+### 任何具有特定名稱的資源
 
 ```shell
 curl -X POST \
@@ -115,7 +115,7 @@ curl -X POST \
       }'
 ```
 
-### 引用“evar7”的任何资源
+### 任何參照「evar7」的資源
 
 ```shell
 curl -X POST \
@@ -136,7 +136,7 @@ curl -X POST \
       }'
 ```
 
-### “custom-code”委托类型的数据元素
+### 「custom-code」委派型別的資料元素
 
 ```shell
 curl -X POST \
@@ -158,7 +158,7 @@ curl -X POST \
       }'
 ```
 
-### 引用特定数据元素的规则组件
+### 參考特定資料元素的規則元件
 
 ```shell
 curl -X POST \
@@ -180,7 +180,7 @@ curl -X POST \
       }'
 ```
 
-### 特定资产中的规则
+### 特定屬性中的規則
 
 ```shell
 curl -X POST \
@@ -202,7 +202,7 @@ curl -X POST \
       }'
 ```
 
-### 按ID查找资源
+### 依ID尋找資源
 
 ```shell
 curl -X POST \
@@ -223,7 +223,7 @@ curl -X POST \
       }'
 ```
 
-### 使用“OR”词逻辑执行搜索
+### 使用「OR」字詞邏輯執行搜尋
 
 ```shell
 curl -X POST \

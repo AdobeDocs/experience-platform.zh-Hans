@@ -1,36 +1,36 @@
 ---
-title: XDM业务营销列表成员类
-description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List Members类。
+title: XDM業務行銷清單成員類別
+description: 本檔案提供Experience Data Model (XDM)中XDM業務行銷清單成員類別的概觀。
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '339'
+source-wordcount: '336'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM业务营销列表成员] 类
+# [!UICONTROL XDM業務行銷清單成員] 類別
 
 >[!IMPORTANT]
 >
->此类旨在供具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-Time CDP B2B Edition的访问权限，才能参加此类 [实时客户资料](../../../profile/home.md).
+>此類別旨在供擁有下列許可權的組織使用： [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必須擁有Real-Time CDP B2B Edition的存取權，此類別才能參與 [即時客戶個人檔案](../../../profile/home.md).
 
-[!UICONTROL XDM业务营销列表成员] 是一个标准的体验数据模型(XDM)类，用于描述与营销列表关联的成员、人员或联系人。
+[!UICONTROL XDM業務行銷清單成員] 是一個標準的體驗資料模型(XDM)類別，可描述與行銷清單相關聯的成員、個人或聯絡人。
 
-![XDM业务营销列表成员类的结构，如在UI中所示](../../images/classes/b2b/business-marketing-list-members.png)
+![XDM業務行銷清單成員類別在UI中的結構](../../images/classes/b2b/business-marketing-list-members.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `extSourceSystemAudit` | [[!UICONTROL 外部源系统审核属性]](../../data-types/external-source-system-audit-attributes.md) | 如果营销列表成员资格来自外部源系统，则此对象会捕获该系统的审核属性。 |
-| `marketingListKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 人员所属的营销列表的复合标识符。 |
-| `marketingListMemberKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 营销列表成员资格实体的组合标识符。 |
-| `personKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 作为营销列表成员的人员的组合标识符。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `marketingListMemberID`. |
-| `isDeleted` | 布尔型 | 指示此营销列表成员实体是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
-| `marketingListID` | 字符串 | 营销列表的唯一ID。 |
-| `marketingListMemberID` | 字符串 | 营销列表成员资格实体的唯一ID。 |
-| `personId` | 字符串 | 人员的唯一ID。 |
+| `extSourceSystemAudit` | [[!UICONTROL 外部來源系統稽核屬性]](../../data-types/external-source-system-audit-attributes.md) | 如果行銷清單成員資格來自外部來源系統，此物件會擷取該系統的稽核屬性。 |
+| `marketingListKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 個人所屬行銷清單的複合識別碼。 |
+| `marketingListMemberKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 行銷清單成員資格實體的複合識別碼。 |
+| `personKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 行銷名單成員個人的複合識別碼。 |
+| `_id` | 字符串 | 記錄的唯一識別碼。 這是系統產生的值，與 `marketingListMemberID`. |
+| `isDeleted` | 布尔值 | 指示此行銷清單成員實體是否已在Marketo Engage中刪除。<br><br>使用時 [Marketo來源聯結器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，任何在Marketo中刪除的記錄都會自動反映在即時客戶個人檔案中。 不過，與這些設定檔相關的記錄可能仍會保留在資料湖中。 透過設定 `isDeleted` 至 `true`，您可使用欄位來篩選在查詢資料湖時已從來源中刪除哪些記錄。 |
+| `marketingListID` | 字符串 | 行銷清單的唯一ID。 |
+| `marketingListMemberID` | 字符串 | 行銷清單成員資格實體的唯一ID。 |
+| `personId` | 字符串 | 個人的唯一ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-请参阅 [Real-Time CDP B2B版中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。
+請參閱指南： [Real-Time CDP B2B Edition中的結構描述關係](../../tutorials/relationship-b2b.md) 瞭解此類別與其他B2B類別在概念上的關聯性，以及如何在Adobe Experience Platform UI中建立這些關聯性。

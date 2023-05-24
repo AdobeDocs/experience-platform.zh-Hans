@@ -1,36 +1,37 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；API；浏览；流程服务
-title: 使用流量服务API浏览表格源
-description: 本教程使用流量服务API来探索基于表的源的内容和结构。
-source-git-commit: 1333eac5e022ef32f051120496154a88e2f9324e
+keywords: Experience Platform；首頁；熱門主題；來源；API；探索；流程服務
+title: 使用Flow Service API探索表格來源
+description: 本教學課程使用流量服務API來探索表格來源的內容和結構。
+exl-id: 0c7a5b8a-2071-4ac2-b2d1-c5534e7c7d9c
+source-git-commit: 3bdeec8284873b8d9368f833b24e9922ed489019
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 2%
 
 ---
 
-# 使用 [!DNL Flow Service] API
+# 探索資料表，使用 [!DNL Flow Service] API
 
-本教程提供了有关如何使用 [[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/) API。
+本教學課程提供的步驟說明如何使用 [[!DNL Flow Service]](https://www.adobe.io/experience-platform-apis/references/flow-service/) API。
 
 >[!NOTE]
 >
-> 要浏览数据表，您必须已拥有表格源的有效基本连接ID。 如果您没有此ID，请参阅以下教程，了解如何为表格源创建基本连接ID的步骤： <ul><li>[广告](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[客户成功](../../../home.md#customer-success)</li><li>[数据库](../../../home.md#database)</li><li>[电子商务](../../../home.md#ecommerce)</li><li>[营销自动化](../../../home.md#marketing-automation)</li><li>[支付](../../../home.md#payments)</li><li>[协议](../../../home.md#protocols)</li></ul>
+> 為了探索您的資料表，您必須擁有表格來源的有效基本連線ID。 如果您沒有此ID，請參閱下列教學課程，以瞭解如何為表格來源建立基本連線ID的步驟： <ul><li>[Advertising](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[客戶成功](../../../home.md#customer-success)</li><li>[数据库](../../../home.md#database)</li><li>[電子商務](../../../home.md#ecommerce)</li><li>[行銷自動化](../../../home.md#marketing-automation)</li><li>[付款](../../../home.md#payments)</li><li>[通訊協定](../../../home.md#protocols)</li></ul>
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [來源](../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+* [沙箱](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../landing/api-guide.md).
 
-## 浏览数据表
+## 探索您的資料表格
 
-您可以通过向 [!DNL Flow Service] API，同时提供源的基本连接ID。
+您可以透過向以下網站發出GET請求，擷取有關資料表格結構的資訊： [!DNL Flow Service] API，同時提供來源的基本連線ID。
 
 **API格式**
 
@@ -40,7 +41,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 源的基本连接ID。 |
+| `{BASE_CONNECTION_ID}` | 來源的基本連線ID。 |
 
 **请求**
 
@@ -55,7 +56,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从源中返回一个表数组。 查找要引入Platform的表，并注意其 `path` 资产，因为您需要在下一步中提供该资产以检查其结构。
+成功的回應會從您的來源傳回資料表陣列。 找到您要帶入Platform的表格並記下該表格 `path` 屬性，因為您必須在下一個步驟中提供它以檢查其結構。
 
 ```json
 [
@@ -76,9 +77,9 @@ curl -X GET \
 ]
 ```
 
-## Inspect表的结构
+## Inspect表格的結構
 
-要检查数据表的内容，请向 [!DNL Flow Service] 将表的路径指定为查询参数时的API。
+GET若要檢查資料表的內容，請對 [!DNL Flow Service] 將表格的路徑指定為查詢引數時的API。
 
 **API格式**
 
@@ -88,8 +89,8 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 源的基本连接ID。 |
-| `{TABLE_PATH}` | 要检查的表的路径属性。 |
+| `{BASE_CONNECTION_ID}` | 來源的基本連線ID。 |
+| `{TABLE_PATH}` | 您要檢查的資料表的path屬性。 |
 
 **请求**
 
@@ -104,7 +105,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关指定表的内容和结构的信息。 有关每个表列的详细信息位于 `columns` 数组。
+成功的回應會傳回指定表格內容和結構的相關資訊。 有關每個表格欄的詳細資訊位於 `columns` 陣列。
 
 ```json
 {
@@ -187,13 +188,13 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已收集了有关数据表结构和内容的信息。 此外，您还检索了要摄取到平台中的表的路径。 您可以使用此信息创建源连接和数据流，以将数据引入平台。 有关如何使用创建源连接和数据流的具体步骤，请参阅以下教程 [!DNL Flow Service] API:
+依照本教學課程，您已收集有關資料表結構和內容的資訊。 此外，您已擷取要擷取至Platform的表格路徑。 您可以使用此資訊來建立來源連線和資料流，以將您的資料匯入Platform。 如需有關如何使用建立來源連線和資料流的特定步驟，請參閱下列教學課程 [!DNL Flow Service] API：
 
-* [广告源](../collect/advertising.md)
-* [CRM源](../collect/crm.md)
-* [客户成功来源](../collect/customer-success.md)
-* [数据库源](../collect/database-nosql.md)
-* [电子商务来源](../collect/ecommerce.md)
-* [营销自动化来源](../collect/marketing-automation.md)
-* [付款来源](../collect/payments.md)
-* [协议源](../collect/protocols.md)
+* [廣告來源](../collect/advertising.md)
+* [CRM來源](../collect/crm.md)
+* [客戶成功來源](../collect/customer-success.md)
+* [資料庫來源](../collect/database-nosql.md)
+* [電子商務來源](../collect/ecommerce.md)
+* [行銷自動化來源](../collect/marketing-automation.md)
+* [付款來源](../collect/payments.md)
+* [通訊協定來源](../collect/protocols.md)

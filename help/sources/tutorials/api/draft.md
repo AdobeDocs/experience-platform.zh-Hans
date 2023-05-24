@@ -1,50 +1,51 @@
 ---
-keywords: Experience Platform；主页；热门主题；流程服务；
-title: 使用流服务API草拟数据流
-description: 了解如何使用流服务API将数据流设置为草稿状态。
-badge: label="New Feature" type="Poritive"
-source-git-commit: d093e34ae4b353d1ed6db922b6da66cf23f25c48
+keywords: Experience Platform；首頁；熱門主題；流量服務；
+title: 使用流程服務API的資料流草稿
+description: 瞭解如何使用流量服務API將資料流設定為草稿狀態。
+badge: label="新功能" type="Positive"
+exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 2%
 
 ---
 
-# 使用流服务API草拟数据流
+# 使用Flow Service API的資料流草稿
 
-在使用流量服务API时，通过提供 `mode=draft` 查询参数。 草稿稍后可以更新为新信息，准备就绪后即可发布。 本教程介绍了使用流服务API将数据流设置为草稿状态的步骤。
+使用流量服務API時，請提供以下專案將您的資料流儲存為草稿： `mode=draft` 建立流程呼叫期間的查詢引數。 草稿稍後可使用新資訊進行更新，並在準備就緒後發佈。 本教學課程涵蓋使用Flow Service API將資料流設定為草稿狀態的步驟。
 
 ## 快速入门
 
-本教程要求您对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解Adobe Experience Platform的下列元件：
 
-* [源](../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+* [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
 ### 先决条件
 
-本教程要求您已经生成创建数据流所需的资产。 这包括：
+本教學課程要求您已經產生建立資料流所需的資產。 其中包括下列專案：
 
-* 已验证的基连接
-* 源连接
-* 目标XDM架构
-* 目标数据集
-* 目标连接
-* 映射
+* 已驗證的基本連線
+* 來源連線
+* 目標XDM結構描述
+* 目標資料集
+* 目標連線
+* 對應
 
-如果您还没有这些值，请从 [源概述中的目录](../../home.md). 然后，按照给定源的说明生成起草数据流所需的资产。
+如果您還沒有這些值，請從中選擇來源 [來源概觀中的目錄](../../home.md). 然後，依照該指定來源的指示產生所需的資產，以草擬資料流。
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
 
-## 将数据流设置为草稿状态
+## 將資料流設定為草稿狀態
 
-以下各节概述了将数据流设置为草稿、更新数据流、发布数据流以及最终删除数据流的过程。
+以下各節會概述將資料流設定為草稿、更新資料流、發佈資料流，以及最終刪除資料流的程式。
 
-### 起草数据流
+### 草稿資料流
 
-要将数据流设置为草稿，请向 `/flows` 端点 `mode=draft` 作为查询参数。 这允许您创建数据流并将其另存为草稿。
+若要將資料流設定為草稿，請向以下發出POST請求： `/flows` 端點 `mode=draft` 作為查詢引數。 這可讓您建立資料流並將其另存為草稿。
 
 **API格式**
 
@@ -54,11 +55,11 @@ POST /flows?mode=draft
 
 | 参数 | 描述 |
 | --- | --- |
-| `mode` | 用户提供的查询参数，用于确定数据流的状态。 要将数据流设置为草稿，请设置 `mode` to `draft`. |
+| `mode` | 使用者提供的查詢引數，可決定資料流的狀態。 若要將資料流設定為草稿，請設定 `mode` 至 `draft`. |
 
 **请求**
 
-以下请求将创建草稿数据流。
+以下請求會建立草稿資料流。
 
 ```shell
   'https://platform-int.adobe.io/data/foundation/flowservice/flows?mode=draft' \
@@ -84,7 +85,7 @@ POST /flows?mode=draft
 
 **响应**
 
-成功的响应会返回 `id` 和对应的 `etag` 数据流。
+成功的回應會傳回 `id` 和對應的 `etag` 您的資料流的。
 
 ```json
 {
@@ -93,9 +94,9 @@ POST /flows?mode=draft
 }
 ```
 
-### 更新数据流
+### 更新資料流
 
-要更新草稿，请向 `/flows` 端点，同时提供要更新的数据流的ID。 在此步骤中，您还必须提供 `If-Match` 标头参数，与 `etag` 要更新的数据流。
+若要更新您的草稿，請向發出PATCH請求 `/flows` 端點，同時提供您要更新的資料流ID。 在此步驟中，您還必須提供 `If-Match` 標頭引數，對應至 `etag` 要更新的資料流的ID。
 
 **API格式**
 
@@ -105,7 +106,7 @@ PATCH /flows/{FLOW_ID}
 
 **请求**
 
-以下请求将映射转换添加到起草的数据流。
+下列請求會將對應轉換新增至草擬的資料流。
 
 ```shell
 curl -X PATCH \
@@ -134,7 +135,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回您的流ID和 `etag`. 要验证更改，您可以向 `/flows` 端点。
+成功的回應會傳回您的流量ID和 `etag`. 若要驗證變更，您可以向以下發出GET要求： `/flows` 端點，並提供您的流量ID。
 
 ```json
 {
@@ -143,9 +144,9 @@ curl -X PATCH \
 }
 ```
 
-### 发布数据流
+### 發佈資料流
 
-草稿准备好发布后，向POST `/flows` 端点，同时提供要发布的草稿数据流的ID以及用于发布的操作操作。
+準備好發佈草稿後，請向發出POST請求 `/flows` 端點，同時提供您要發佈的草稿資料流ID以及發佈的動作操作。
 
 **API格式**
 
@@ -155,11 +156,11 @@ POST /flows/{FLOW_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 更新查询数据流状态的操作操作。 要发布草稿数据流，请设置 `op` to `publish`. |
+| `op` | 更新查詢資料流狀態的動作操作。 若要發佈草稿資料流，請設定 `op` 至 `publish`. |
 
 **请求**
 
-以下请求会发布您的草稿数据流。
+以下請求會發佈您的草稿資料流。
 
 ```shell
 curl -X POST \
@@ -172,7 +173,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回ID和相应的 `etag` 数据流。
+成功的回應會傳回ID和對應的 `etag` 您的資料流的。
 
 ```json
 {
@@ -181,6 +182,6 @@ curl -X POST \
 }
 ```
 
-### 删除数据流
+### 刪除資料流
 
-要删除数据流，请向 `/flows` 端点。 有关如何使用流服务API删除数据流的详细步骤，请阅读 [在API中删除数据流](./delete-dataflows.md).
+若要刪除您的資料流，請向以下發出DELETE請求： `/flows` 端點，同時提供您要刪除的資料流ID。 如需有關如何使用流量服務API刪除資料流的詳細步驟，請閱讀以下指南中的 [刪除API中的資料流](./delete-dataflows.md).

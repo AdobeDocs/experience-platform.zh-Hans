@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform Web SDK扩展中的数据元素类型
-description: 了解Adobe Experience Platform Web SDK标记扩展提供的不同数据元素类型。
+title: Adobe Experience Platform Web SDK擴充功能中的資料元素型別
+description: 瞭解Adobe Experience Platform Web SDK標籤擴充功能所提供的各種資料元素型別。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
 source-git-commit: db7700d5c504e484f9571bbb82ff096497d0c96e
 workflow-type: tm+mt
@@ -12,54 +12,54 @@ ht-degree: 8%
 
 # 数据元素类型
 
-在设置 [操作类型](action-types.md) 在 [Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md)，则必须配置数据元素类型。 本页介绍可用的数据元素类型。
+在您設定您的 [動作型別](action-types.md) 在 [Adobe Experience Platform Web SDK標籤擴充功能](web-sdk-extension-configuration.md)，您必須設定資料元素型別。 此頁面說明可用的資料元素型別。
 
-## 事件合并ID {#event-merge-id}
+## 事件合併ID {#event-merge-id}
 
-此数据元素在使用时提供事件合并 ID。此数据元素无需配置。提供的数据元素在访客离开页面或 **[!UICONTROL 重置事件合并ID]** 操作类型。
+此数据元素在使用时提供事件合并 ID。此数据元素无需配置。在訪客離開頁面或 **[!UICONTROL 重設事件合併ID]** 動作型別已使用。
 
-## 身份映射 {#identity-map}
+## 身分對應 {#identity-map}
 
-身份映射允许您为网页的访客建立身份。 身份映射由命名空间组成，如 _手机_ 或 _电子邮件_，每个命名空间包含一个或多个标识符。 例如，如果您网站上的个人提供了两个电话号码，则您的电话命名空间应包含两个标识符。
+身分對應可讓您為網頁的訪客建立身分識別。 身分對應由名稱空間組成，例如 _電話_ 或 _電子郵件_，每個名稱空間都包含一或多個識別碼。 例如，若您網站上的個人已提供兩個電話號碼，則您的電話名稱空間應包含兩個識別碼。
 
-在 [!UICONTROL 身份映射] 数据元素中，您将为每个标识符提供以下信息：
+在 [!UICONTROL 身分對應] 資料元素中，您會針對每個識別碼提供下列資訊：
 
-* **[!UICONTROL ID]**:标识访客的值。 例如，如果标识符属于 _手机_ 命名空间， [!UICONTROL ID] 可能 _555-555-5555_. 此值通常从JavaScript变量或页面上的某些其他数据中派生，因此最好创建一个引用页面数据的数据元素，然后在 [!UICONTROL ID] 字段 [!UICONTROL 身份映射] 数据元素。 如果ID值不是填充的字符串，则在您的页面上运行时，该标识符将自动从标识映射中删除。
-* **[!UICONTROL 已验证状态]**:指示访客是否已验证的选项。
-* **[!UICONTROL 主要]**:指示是否应将标识符用作个人的主要标识符的选择。 如果没有将标识符标记为主标识符，则会将ECID用作主标识符。
+* **[!UICONTROL ID]**：識別訪客的值。 例如，如果識別碼屬於 _電話_ 名稱空間， [!UICONTROL ID] 可以是 _555-555-5555_. 此值通常衍生自頁面上的JavaScript變數或一些其他資料片段，因此最好建立參照頁面資料的資料元素，然後參照中的資料元素 [!UICONTROL ID] 內的欄位 [!UICONTROL 身分對應] 資料元素。 如果您在頁面上執行時，ID值不是填入的字串，則識別碼會自動從身分對應中移除。
+* **[!UICONTROL 已驗證狀態]**：指出訪客是否已驗證的選取範圍。
+* **[!UICONTROL 主要]**：指出識別碼是否應作為個人的主要識別碼的選擇。 如果沒有識別碼標示為主要，系統會使用ECID作為主要識別碼。
 
-![显示“编辑数据元素”屏幕的UI图像。](./assets/identity-map-data-element.png)
+![顯示「編輯資料元素」畫面的UI影像。](./assets/identity-map-data-element.png)
 
-您不应提供 [!DNL ECID] 构建身份映射时。 使用SDK时， [!DNL ECID] 将在服务器上自动生成并包含在身份映射中。
+您不應提供 [!DNL ECID] 建置身分對應時。 使用SDK時， [!DNL ECID] 會在伺服器上自動產生，並包含在身分對應中。
 
-身份映射数据元素通常与 [[!UICONTROL XDM对象] 数据元素类型](#xdm-object) 和 [[!UICONTROL 设置同意] 操作类型](action-types.md#set-consent).
+身分對應資料元素通常會與 [[!UICONTROL XDM物件] 資料元素型別](#xdm-object) 和 [[!UICONTROL 設定同意] 動作型別](action-types.md#set-consent).
 
-有关更多信息 [Adobe Experience Platform Identity Service](../../identity-service/home.md).
+深入瞭解 [Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
-## XDM对象 {#xdm-object}
+## XDM物件 {#xdm-object}
 
-使用XDM对象数据元素，可以更轻松地将数据格式化为XDM。 首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。选择架构后，您会看到架构的结构，您可以轻松填写该结构。
+使用XDM物件資料元素將資料格式化為XDM會更容易。 首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。選取結構描述後，您會看到結構描述的結構，您可輕鬆填寫。
 
-![显示XDM对象结构的UI图像。](assets/XDM-object.png)
+![顯示XDM物件結構的UI影像。](assets/XDM-object.png)
 
-请注意，当您打开架构的某些字段时，例如 `web.webPageDetails.URL`，则会自动收集某些项目。 即使自动收集了多个项目，您仍可以根据需要覆盖任意项目。 所有值都可以手动填写或使用其他数据元素进行填写。
+請注意，當您開啟結構描述的特定欄位時，例如 `web.webPageDetails.URL`，則會自動收集某些專案。 即使自動收集了數個專案，您仍可視需要覆寫任何專案。 所有值都可以手动填写或使用其他数据元素进行填写。
 
 >[!NOTE]
 >
->只填写您感兴趣的信息。 将数据发送到解决方案时，将忽略未填充的任何内容。
+>僅填入您想收集的資訊片段。 將資料傳送至解決方案時，會忽略未填寫的專案。
 
-## （测试版）变量 {#variable}
+## （測試版）變數 {#variable}
 
 >[!IMPORTANT]
 >
->这目前是测试版功能，可能会发生更改。 将来版本可能包含中断更改。
+>此為目前的Beta版功能，可能會有變動。 未來版本可能包含重大變更。
 
-创建XDM对象的另一种方法是使用 **[!UICONTROL 变量]** 数据元素。 当引用XDM对象数据元素时(例如在 `sendEvent` 命令， **[!UICONTROL 变量]** 数据元素可以通过 [!UICONTROL 更新变量] 操作。 要使用数据元素，请选择正确的Adobe Experience Platform沙盒和架构。
+建立XDM物件的另一種方法是使用 **[!UICONTROL 變數]** 資料元素。 而XDM物件資料元素是在參考時建立的，例如在 `sendEvent` 命令， **[!UICONTROL 變數]** 資料元素可以透過以下方式更新： [!UICONTROL 更新變數] 動作。 若要使用資料元素，請選取正確的Adobe Experience Platform沙箱和結構描述。
 
-![显示“创建数据元素”屏幕的UI图像。](assets/variable-data-element.png)
+![UI影像顯示「建立資料元素」畫面。](assets/variable-data-element.png)
 
-创建此数据元素后，即可使用 [更新变量](./action-types.md#update-variable) 操作来修改数据元素。 然后，在发送事件操作中，将变量数据元素用于XDM选项。
+建立此資料元素後，您就可以使用 [更新變數](./action-types.md#update-variable) 修改資料元素的動作。 然後在「傳送事件」動作中，對XDM選項使用變數資料元素。
 
 ## 后续步骤 {#next-steps}
 
-了解特定用例，例如 [访问ECID](accessing-the-ecid.md).
+瞭解特定使用案例，例如 [存取ECID](accessing-the-ecid.md).

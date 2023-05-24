@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；配置文件；区段；区段；分段；用户界面；UI；自定义；区段功能板；功能板
-title: 区段功能板指南
-description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
+keywords: Experience Platform；設定檔；區段；區段；分段；使用者介面；UI；自訂；區段控制面板；控制面板
+title: 區段控制面板指南
+description: Adobe Experience Platform提供一個控制面板，您可以透過它檢視有關貴組織已建立區段的重要資訊。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
@@ -11,84 +11,84 @@ ht-degree: 7%
 
 ---
 
-# [!UICONTROL 区段] 仪表板 {#segment-dashboard}
+# [!UICONTROL 區段] 儀表板 {#segment-dashboard}
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关区段的重要信息，这些信息是在每日快照期间捕获的。 本指南概述了如何在UI中访问和使用区段功能板，并提供了有关功能板中显示的可视化的更多信息。
+Adobe Experience Platform使用者介面(UI)提供了一個控制面板，您可以透過它檢視有關區段的重要資訊，如每日快照期間所擷取。 本指南概述如何存取及使用UI中的區段控制面板，並提供控制面板中顯示視覺效果的詳細資訊。
 
-要概述Platform用户界面中的所有Adobe Experience Platform分段服务功能，请访问 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
+如需Platform使用者介面中所有Adobe Experience Platform Segmentation Service功能的總覽，請造訪 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
 
-## [!UICONTROL 区段] 仪表板数据
+## [!UICONTROL 區段] 儀表板資料
 
-区段功能板显示贵组织在“配置文件”存储(在Experience Platform中)中拥有的属性（记录）数据的快照。 快照不包含任何事件（时间系列）数据。
+區段儀表板會顯示貴組織在Experience Platform的設定檔存放區中擁有的屬性（記錄）資料快照。 快照不包含任何事件（時間序列）資料。
 
-快照中的属性数据完全显示快照拍摄时在特定时间点显示的数据。 换句话说，快照不是数据的近似值或样本，而且区段仪表板不会实时更新。
-
->[!NOTE]
->
->自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
-
-## 浏览 [!UICONTROL 区段] 仪表板 {#explore}
-
-导航到 [!UICONTROL 区段] 功能板中，选择 **[!UICONTROL 区段]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
+快照中的屬性資料顯示的資料與拍攝快照的特定時間點完全相同。 換言之，快照不是資料的近似或樣本，而且區段圖示板沒有即時更新。
 
 >[!NOTE]
 >
->如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 区段] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用分段的链接和文档。
+>自建立快照以來對資料所做的任何變更或更新，都不會反映在控制面板中，直到建立下一個快照為止。
 
-![区段功能板概述选项卡，其中区段和概述突出显示。](../images/segments/dashboard-overview.png)
+## 探索 [!UICONTROL 區段] 儀表板 {#explore}
 
-### 修改 [!UICONTROL 区段] 仪表板 {#modify}
+若要導覽至 [!UICONTROL 區段] 在Platform UI中，選取 **[!UICONTROL 區段]** 在左側欄中，然後選取 **[!UICONTROL 概觀]** 標籤來顯示控制面板。
 
-您可以修改 [!UICONTROL 区段] 通过选择 **[!UICONTROL 修改功能板]**. 这样，您就可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用小组件并为贵组织创建自定义小组件。
+>[!NOTE]
+>
+>如果您的組織剛開始使用Platform，但尚未建立作用中的設定檔資料集或合併原則，請 [!UICONTROL 區段] 儀表板不可見。 取而代之的是 [!UICONTROL 概觀] 索引標籤會顯示連結和檔案，以幫助您開始使用細分。
 
-请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
+![區段儀表板概述索引標籤中反白了區段和概述。](../images/segments/dashboard-overview.png)
 
-### 添加小组件 {#add-widget}
+### 修改 [!UICONTROL 區段] 儀表板 {#modify}
 
-选择 **[!UICONTROL 添加小组件]** 导航到小组件库，并查看要添加到功能板的可用小组件列表。
+您可以修改 [!UICONTROL 區段] 儀表板，選取 **[!UICONTROL 修改儀表板]**. 這可讓您從儀表板移動、新增和移除Widget，以及存取 **[!UICONTROL Widget資料庫]** 探索可用的Widget並為您的組織建立自訂Widget。
 
-![突出显示了“添加小组件”的区段功能板概述。](../images/segments/segments-overview-add-widget.png)
+請參閱 [修改儀表板](../customize/modify.md) 和 [Widget程式庫概觀](../customize/widget-library.md) 檔案，以瞭解更多。
 
-从小组件库中，您可以浏览选择的标准和自定义区段小组件。有关如何添加小组件的信息，请参阅小组件库文档，了解如何 [添加小组件](../customize/widget-library.md#add-widgets).
+### 新增Widget {#add-widget}
 
-## 选择区段
+選取 **[!UICONTROL 新增Widget]** 導覽至Widget程式庫，並檢視可新增至儀表板的可用Widget清單。
 
-功能板会自动选择要显示的区段，但您可以使用下拉菜单或区段选择器更改区段。
+![區段儀表板總覽及反白的新增Widget。](../images/segments/segments-overview-add-widget.png)
 
-要选择其他区段，请选择区段名称旁边的下拉菜单，或使用区段选择器打开区段选择对话框。
+在Widget資料庫中，您可以瀏覽標準與自訂區段Widget的選取範圍。如需如何新增Widget的詳細資訊，請參閱Widget資料庫檔案，瞭解如何 [新增Widget](../customize/widget-library.md#add-widgets).
+
+## 選取區段
+
+儀表板會自動選取要顯示的區段，但您可以使用下拉式選單或區段選取器來變更區段。
+
+若要選擇其他區段，請選取區段名稱旁的下拉式清單，或使用區段選取器開啟區段選取對話方塊。
 
 >[!IMPORTANT]
 >
->只有配置文件计数大于零的区段才会显示在可选区段列表中。
+>只有設定檔計數大於零的區段才會顯示在可選區段清單中。
 
-![区段功能板概述中突出显示了全局区段下拉菜单。](../images/segments/change-segment.png)
+![區段儀表板概觀，並反白顯示全域區段下拉選單。](../images/segments/change-segment.png)
 
-![选择区段对话框，其中显示所有可用的区段。](../images/segments/select-segment-dialog.png)
+![顯示所有可用區段的「選取區段」對話方塊。](../images/segments/select-segment-dialog.png)
 
-## 小组件和量度
+## Widget和量度
 
-区段功能板由小组件组成，这些小组件是只读量度，提供有关您选定区段的重要信息。
+區段儀表板是由Widget所組成，這些是唯讀量度，可提供有關您所選區段的重要資訊。
 
-最近快照的日期和时间显示在 [!UICONTROL 概述] 选项卡。 自该日期和时间起，所有小组件数据都是准确的。 快照的时间戳以UTC格式提供；它不在单个用户或组织的时区内。
+最近一次快照的日期和時間會顯示在最上方 [!UICONTROL 概觀] 區段下拉式清單旁的標籤。 截至該日期和時間，所有Widget資料都是準確的。 快照的時間戳記會以UTC提供，而不是在個別使用者或組織的時區中。
 
-![区段概述选项卡中突出显示了小组件时间戳。](../images/segments/widget-timestamp.png)
+![區段概述索引標籤，其中醒目提示Widget時間戳記。](../images/segments/widget-timestamp.png)
 
-## 标准小组件 {#standard-widgets}
+## 標準Widget {#standard-widgets}
 
-Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与区段相关的不同量度。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
+Adobe提供多個標準Widget，您可將其用於視覺化與區段相關的不同量度。 您也可以使用建立自訂Widget並與您的組織共用 [!UICONTROL Widget資料庫]. 若要進一步瞭解如何建立自訂Widget，請先閱讀 [Widget程式庫概觀](../customize/widget-library.md).
 
-要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
+若要進一步瞭解每個可用的標準Widget，請從下列清單中選取Widget的名稱：
 
 * [[!UICONTROL 受众规模]](#audience-size)
-* [[!UICONTROL Audience Activation订单]](#audience-activation-order)
+* [[!UICONTROL Audience啟用順序]](#audience-activation-order)
 * [[!UICONTROL 受众规模趋势]](#audience-size-trend)
-* [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
-* [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
-* [[!UICONTROL 受众重叠]](#audience-overlap)
-* [[!UICONTROL 受众重叠报表]](#audience-overlap-report)
+* [[!UICONTROL 對象人數變化趨勢]](#audience-size-change-trend)
+* [[!UICONTROL 依身分割槽分的對象人數趨勢]](#audience-size-trend-by-identity)
+* [[!UICONTROL 對象重疊]](#audience-overlap)
+* [[!UICONTROL 對象重疊報表]](#audience-overlap-report)
 * [[!UICONTROL 标识重叠]](#identity-overlap)
 * [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
-* [[!UICONTROL 计划激活]](#scheduled-activations)
+* [[!UICONTROL 已排程的啟用]](#scheduled-activations)
 
 ### [!UICONTROL 受众规模] {#audience-size}
 
@@ -97,11 +97,11 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >title="受众规模"
 >abstract="此构件显示所选区段中合并的配置文件总数。此数目取决于应用于您的数据的合并策略，并且在生成最新快照时是正确的。"
 
-的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
+此 **[!UICONTROL 對象人數]** widget會顯示拍攝快照時所選區段內的合併設定檔總數。 此數字是將區段合併原則套用至設定檔資料的結果，以便將設定檔片段合併在一起，為區段中的每個人形成一個設定檔。
 
-有关片段和合并的配置文件的更多信息，请参阅 [实时客户资料概述](../../profile/home.md).
+如需片段和合併設定檔的詳細資訊，請參閱 [即時客戶個人檔案總覽](../../profile/home.md).
 
-![突出显示受众大小小组件的区段功能板概述。](../images/segments/audience-size.png)
+![區段控制面板概觀，並反白顯示對象大小Widget。](../images/segments/audience-size.png)
 
 ### [!UICONTROL 受众规模趋势] {#audience-size-trend}
 
@@ -110,71 +110,71 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >title="受众规模趋势"
 >abstract="此构件提供有关符合&#x200B;**任意**&#x200B;区段定义标准的配置文件总数的信息，如在过去 30 天、90 天或 12 个月的每日快照期间捕获的配置文件。"
 
-的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+此 **[!UICONTROL 對象人數趨勢]** Widget提供符合條件的設定檔總數的線圖插圖 **任何** 指定期間的區段定義。 對象人數趨勢可在30天、90天和12個月期間進行視覺化。 從Widget的下拉式選單中選擇時段。 對象人數會反映在y軸，而時間則反映在x軸。
 
-此小组件还包含自动 [!UICONTROL 字幕] 机器学习模型分析图表和区段数据并自动生成字幕以描述关键趋势和重要事件的功能。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+此Widget也包含自動 [!UICONTROL 註解] 機器學習模型會分析圖表和區段資料，並自動產生註解以說明主要趨勢和重要事件的功能。 選取 **[!UICONTROL 註解]** 以開啟自動註解對話方塊。
 
-![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
+![區段概述會顯示對象人數趨勢Widget。](../images/segments/audience-size-trend-captions.png)
 
-随即会打开自动字幕对话框，该对话框提供对数据的分析。
+自動註解對話方塊隨即開啟，提供您資料的深入分析。
 
-![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
+![對象人數趨勢Widget的自動註解對話方塊。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
 
-要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
+若要進一步瞭解區段評估，以及設定檔如何符合資格及退出區段，請參閱 [Segment Service檔案](../../segmentation/home.md).
 
-### [!UICONTROL 受众大小更改趋势] {#audience-size-change-trend}
+### [!UICONTROL 對象人數變化趨勢] {#audience-size-change-trend}
 
-此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 从概述下拉菜单中选择了要分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+此Widget提供線圖，說明最近每日快照之間符合指定區段資格的設定檔總數差異。 從概述下拉式選單中選取選擇進行分析的區段。 趨勢分析的期間可以視覺化地呈現超過30天、90天和12個月的期間。 從Widget的下拉式選單中選擇時段。 對象人數會反映在y軸，而時間則反映在x軸。
 
-![受众大小更改趋势小组件。](../images/segments/audience-size-change-trend.png)
+![對象人數變化趨勢Widget。](../images/segments/audience-size-change-trend.png)
 
-### [!UICONTROL 按身份划分的受众大小趋势] {#audience-size-trend-by-identity}
+### [!UICONTROL 依身分割槽分的對象人數趨勢] {#audience-size-trend-by-identity}
 
-此小组件根据从小组件下拉菜单中选择的身份类型，展示特定区段的受众大小趋势。 从概述下拉菜单中选择用于分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。
+此Widget會根據從Widget下拉式選單中選擇的身分型別，說明特定區段的對象人數趨勢。 從概述下拉式清單中選取用於分析的區段。 趨勢分析的期間可以視覺化地呈現超過30天、90天和12個月的期間。 從Widget的下拉式選單中選擇時段。
 
-![按身份小组件显示的受众大小趋势。](../images/segments/audience-size-trend-by-identity.png)
+![依身分Widget區分的對象人數趨勢。](../images/segments/audience-size-trend-by-identity.png)
 
-### [!UICONTROL Audience Activation订单] {#audience-activation-order}
+### [!UICONTROL Audience啟用順序] {#audience-activation-order}
 
-的 [!UICONTROL Audience Activation订单] 小组件提供一个三列表格，其中列出了 [!UICONTROL 目标名称], [!UICONTROL 平台]和激活 [!UICONTROL 日期] 观众席。 该列表根据新近度按从高到低的顺序排列，最多可容纳10行。
+此 [!UICONTROL Audience啟用順序] widget提供三欄表格，列出 [!UICONTROL 目的地名稱]，則 [!UICONTROL 平台]，以及啟動 [!UICONTROL 日期] 對象的。 清單會根據造訪間隔從高到低排序，最多可容納10列。
 
-![受众激活订单小组件。](../images/segments/audience-activation-order.png)
+![Audience啟用順序Widget。](../images/segments/audience-activation-order.png)
 
-### [!UICONTROL 受众重叠] {#audience-overlap}
+### [!UICONTROL 對象重疊] {#audience-overlap}
 
-此小组件表示两个区段中符合两个区段定义标准的用户档案数量。 从小组件下拉菜单中选择用于比较的区段。 通过将鼠标悬停在维恩图的圆圈或交集上，可查看相关区段定义中包含的用户档案总数。
+此Widget代表兩個區段中符合兩個區段定義條件的設定檔數目。 從Widget下拉式選單中選取用於比較的區段。 將滑鼠懸停在圓形或文氏圖表交集上，可以看到相關區段定義中包含的輪廓總數。
 
-此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。
+此Widget可讓您透過視覺化區段定義結果中的相似性，將區段策略最佳化。
 
-![受众重叠小组件。](../images/segments/audience-overlap.png)
+![對象重疊Widget。](../images/segments/audience-overlap.png)
 
-### [!UICONTROL 受众重叠报表] {#audience-overlap-report}
+### [!UICONTROL 對象重疊報表] {#audience-overlap-report}
 
-此小组件可显示特定区段的受众重叠数据表格。 对于从屏幕顶部的下拉菜单中选择的区段，将提供从重叠百分比最高到重叠百分比最低的五个受众列表。 为清楚起见，您选择的区段列在 [!UICONTROL 区段名称] 列。 为 [!UICONTROL 区段B名称] 列。 第三列中提供的重叠百分比精确到十二位小数。
+此Widget會將特定區段的對象重疊資料製成表格化。 針對從畫面頂端的下拉式選單中選擇的區段，提供從最高重疊百分比到最低重疊百分比排名的五個對象清單。 為清楚起見，您選擇的區段會列在 [!UICONTROL 區段A名稱] 欄。 對象重疊分析僅針對下列專案中所列的第二個區段提供： [!UICONTROL 區段B名稱] 欄。 第三欄提供精確到十二位小數的重疊百分比。
 
-受众重叠报表可帮助您构建新的高性能区段。 观察到高百分比重叠，可禁止受众并阻止向不同目标发送相同的受众。 它们还可帮助您识别可能有助于更好地划分区段的隐藏分析。 低百分比重叠有助于找到要查找的独特用户档案。
+對象重疊報表可協助您建立新的高效能區段。 觀察高百分比的重疊可讓您抑制受眾，並防止將相同的受眾傳送至不同的目的地。 它們也可協助您識別隱藏的深入分析，可能有助於更佳的分段。 低百分比重疊有助於找到要追蹤的不重複設定檔。
 
-选择 **[!UICONTROL 查看更多]** 打开包含更多区段重叠数据的全屏对话框。
+選取 **[!UICONTROL 檢視更多]** 以開啟包含更多區段重疊資料的全熒幕對話方塊。
 
-![受众重叠报表小组件，以查看突出显示的内容。](../images/segments/audience-overlap-report.png)
+![對象重疊報表Widget中的檢視更加醒目提示。](../images/segments/audience-overlap-report.png)
 
-的 [!UICONTROL 受众重叠报表] 对话框。 此对话框最多可包含50行受众重叠分析，这些分析分为六列。 选择设置图标(![设置图标。](../images/segments/settings-icon.png))从表中删除或添加列。
+此 [!UICONTROL 對象重疊報表] 對話方塊隨即顯示。 此對話方塊最多可包含50列對象重疊分析，並分為6欄。 選取設定圖示(![設定圖示。](../images/segments/settings-icon.png))，以從表格中移除或新增欄。
 
-![受众重叠报表对话框。](../images/segments/audience-overlap-report-dialog.png)
+![對象重疊報表對話方塊。](../images/segments/audience-overlap-report-dialog.png)
 
 >[!NOTE]
 >
->选择 **[!UICONTROL 重叠]** 列标题，以将结果的排名从最高更改为最低或从最低更改为最高。
+>選取 **[!UICONTROL 重疊]** 欄標題，將結果的排名從最高變更為最低，或從最低變更為最高。
 
-要以PDF格式下载整个报表，请选择选项菜单(**`...`**)后跟 **[!UICONTROL 下载]**.
+若要以PDF格式下載整個報表，請選取選項功能表(**`...`**)後接 **[!UICONTROL 下載]**.
 
-![受众重叠报表对话框中突出显示了省略号和下载选项。](../images/segments/segments-audience-overlap-report-dialog-download.png)
+![對象重疊報表對話方塊中會反白顯示省略符號和下載選項。](../images/segments/segments-audience-overlap-report-dialog-download.png)
 
-从报表中选择一行以打开重叠分析的维恩图。 将鼠标悬停在维恩图的某个部分上，可在对话框中查看用户档案计数。
+從報表中選取一列，以開啟重疊分析的文氏圖表。 將滑鼠游標停留在文氏圖表的某個區段上，即可在對話方塊中檢視設定檔計數。
 
-![受众重叠报表对话框中显示了维恩图和突出显示的行。](../images/segments/audience-overlap-report-dialog-venn.png)
+![對象重疊報表對話方塊，其中會反白顯示文氏圖表和列。](../images/segments/audience-overlap-report-dialog-venn.png)
 
-选择 **[!UICONTROL 关闭]** 返回 [!UICONTROL 区段] 功能板。
+選取 **[!UICONTROL 關閉]** 以返回 [!UICONTROL 區段] 儀表板。
 
 ### [!UICONTROL 标识重叠] {#identity-overlap}
 
@@ -183,15 +183,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >title="标识重叠"
 >abstract="此构件显示包含两个所选标识的区段中的配置文件的重叠。圆圈显示每个标识的相对大小。包含两个命名空间的配置文件的数量由圆圈之间的重叠部分表示。"
 
-的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，以显示包含多个身份的区段中配置文件的重叠。
+此 **[!UICONTROL 身分重疊]** Widget會顯示文氏圖表或集合圖表，顯示包含多個身分的區段中的設定檔重疊。
 
-使用小组件上的下拉菜单选择要比较的身份。 圈子显示每个选定身份的相对大小，其中包含两个命名空间的配置文件数量由圈子之间重叠的大小表示。
+使用Widget上的下拉式選單來選取您要比較的身分。 圓圈顯示每個所選身分的相對大小，包含兩個名稱空間的輪廓數由圓圈之間的重疊大小表示。
 
-如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
+如果客戶在多個頻道上與您的品牌互動，則多個身分將會與該個別客戶相關聯，因此您的組織可能會有多個包含多個身分識別片段的設定檔。
 
-要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
+若要進一步瞭解身分，請造訪 [Adobe Experience Platform Identity Service檔案](../../identity-service/home.md).
 
-![突出显示身份重叠小组件的区段功能板概述。](../images/segments/identity-overlap.png)
+![區段儀表板總覽中，身分重疊Widget會反白顯示。](../images/segments/identity-overlap.png)
 
 ### [!UICONTROL 按标识列出的配置文件] {#profiles-by-identity}
 
@@ -200,24 +200,24 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >title="按标识列出的配置文件"
 >abstract="此构件显示跨所选区段中每个合并配置文件的标识的细分。"
 
-的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中每个合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
+此 **[!UICONTROL 依身分割槽分的設定檔]** widget會顯示您所選區段中每個合併設定檔的身分劃分。 依身分割槽分的設定檔總數可能會高於區段中的設定檔總數，因為一個設定檔可能會有多個相關聯的身分。 換言之，將針對每個身分顯示的值加總可能會超過區段中的受眾人數總計，因為如果客戶透過多個管道與您的品牌互動，則多個身分可能會與該個別客戶相關聯。
 
-选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+選取 **[!UICONTROL 註解]** 以開啟自動註解對話方塊。
 
-![“区段”功能板概述，其中突出显示了“按身份构件划分的配置文件”和“字幕”选项。](../images/segments/profiles-by-identity.png)
+![區段儀表板總覽會醒目顯示「依身分割槽分的設定檔Widget和註解」選項。](../images/segments/profiles-by-identity.png)
 
-机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
+機器學習模型會通過分析資料的整體分佈和關鍵維度來自動產生資料見解。
 
-要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
+若要進一步瞭解身分，請造訪 [Adobe Experience Platform Identity Service檔案](../../identity-service/home.md).
 
-### 计划激活 {#scheduled-activations}
+### 已排程的啟用 {#scheduled-activations}
 
-的 [!UICONTROL 计划激活] 小组件提供了最近激活的目标的表格化视图。 该表包括目标平台、到此目标的激活流程名称以及选定区段的激活开始和结束日期。 如果未为激活提供结束日期，则会显示为 [!UICONTROL 持续存在]. 从页面顶部的下拉菜单中选择了要分析的区段。
+此 [!UICONTROL 已排程的啟用] Widget以表格化方式提供最近啟用目的地的檢視。 此表格包含目的地平台、流向此目的地的啟用流程名稱，以及所選區段的啟用開始和結束日期。 如果沒有提供啟用的結束日期，則會顯示為 [!UICONTROL 進行中]. 系統會從頁面頂端的下拉式清單中選取要分析的區段。
 
-利用小组件，可快速了解受众激活的位置和时间，并使重复或不必要的激活更加透明。 此累积信息还会突出显示未激活的位置。
+Widget可讓您一眼就知道啟用對象的位置和時間，並讓重複或不必要的啟用更加透明。 此累積資訊也會反白標示任何啟用被遺漏的位置。
 
-![计划激活小组件。](../images/segments/scheduled-activations.png)
+![排定的啟用Widget。](../images/segments/scheduled-activations.png)
 
 ## 后续步骤
 
-通过遵循本文档，您现在应该能够找到区段仪表板，并选择要查看的区段。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中使用区段的更多信息，请参阅 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
+依照此檔案，您現在應該能夠找到區段控制面板並選取要檢視的區段。 您也應該瞭解可用介面工具列中顯示的量度。 若要進一步瞭解如何在Experience PlatformUI中使用區段，請參閱 [Segmentation Service UI指南](../../segmentation/ui/overview.md).

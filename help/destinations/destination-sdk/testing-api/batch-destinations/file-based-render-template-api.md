@@ -1,6 +1,6 @@
 ---
-description: 本页介绍如何使用/authoring/testing/template/render端点来显示目标配置中定义的模板化客户数据字段的外观。
-title: 验证模板化客户字段
+description: 此頁面說明如何使用/authoring/testing/template/render端點，以視覺效果呈現目的地設定中定義的範本化客戶資料欄位外觀。
+title: 驗證範本化客戶欄位
 exl-id: 8ed93f0c-3439-4d11-bb2f-d417a1e0b6a8
 source-git-commit: 6bd169075cd3826ae2a0907e6e624fd901076a4a
 workflow-type: tm+mt
@@ -10,28 +10,28 @@ ht-degree: 2%
 ---
 
 
-# 验证模板化客户字段
+# 驗證範本化客戶欄位
 
 ## 概述 {#overview}
 
-的 `/authoring/testing/template/render` 端点可帮助您可视化模板化方式 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 在目标配置中定义的内容如下所示。
+此 `/authoring/testing/template/render` 端點可協助您視覺化範本化的方式 [客戶資料欄位](../../functionality/destination-configuration/customer-data-fields.md) 目的地設定中定義的變數會很類似。
 
-端点会为您的客户数据字段生成随机值，并在响应中返回它们。 这有助于您验证客户数据字段的语义结构，如存储段名称或文件夹路径。
+端點會為您的客戶資料欄位產生隨機值，並在回應中傳回這些值。 這可協助您驗證客戶資料欄位的語意結構，例如貯體名稱或資料夾路徑。
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
 ## 先决条件 {#prerequisites}
 
-在使用 `/template/render` 端点，确保满足以下条件：
+開始使用 `/template/render` 端點，確定您符合以下條件：
 
-* 您已通过Destination SDK创建了一个基于文件的现有目标，您可以在 [目标目录](../../../ui/destinations-workspace.md).
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您有一個透過Destination SDK建立的檔案型目的地，且您可以在下列位置中看到 [目的地目錄](../../../ui/destinations-workspace.md).
+* 若要成功提出API請求，您需要與要測試的目的地執行個體對應的目的地執行個體ID。 在Platform UI中瀏覽與目的地的連線時，從URL取得應在API呼叫中使用的目的地執行個體ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
+   ![UI影像顯示如何從URL取得目的地執行個體ID。](../../assets/testing-api/get-destination-instance-id.png)
 
-## 呈现模板化的客户字段 {#render-customer-fields}
+## 呈現範本化客戶欄位 {#render-customer-fields}
 
 **API格式**
 
@@ -39,7 +39,7 @@ ht-degree: 2%
 POST /authoring/testing/template/render/destination
 ```
 
-为了说明此API端点的行为，让我们考虑使用以下客户数据字段配置的基于文件的目标：
+為了說明此API端點的行為，讓我們考慮具有下列客戶資料欄位設定的檔案型目的地：
 
 ```json
 "fileBasedS3Destination":{
@@ -56,7 +56,7 @@ POST /authoring/testing/template/render/destination
 
 **请求**
 
-以下请求调用 `/authoring/testing/template/render` 端点，该端点会返回一个响应，该响应包含为上述两个客户数据字段随机生成的值。
+以下請求會呼叫 `/authoring/testing/template/render` 端點，它會針對上述兩個客戶資料欄位，以隨機產生的值傳回回應。
 
 ```shell
 curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/template/render/destination' \
@@ -77,14 +77,14 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `destinationId` | 的ID [目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 你正在测试。 |
-| `templates` | 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). |
+| `destinationId` | 的ID [目的地設定](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 您正在測試的專案。 |
+| `templates` | 在中定義的範本化欄位名稱 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). |
 
 **响应**
 
-成功的响应会返回 `HTTP 200 OK` 状态，且主体包含随机生成的模板字段值。
+成功的回應會傳回 `HTTP 200 OK` 狀態，而內文則包含範本化欄位隨機產生的值。
 
-此响应可帮助您验证客户数据字段的正确结构，如存储段名称或文件夹路径。
+此回應可協助您驗證客戶資料欄位的正確結構，例如貯體名稱或檔案夾路徑。
 
 
 ```json
@@ -96,10 +96,10 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 }
 ```
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何验证在 [目标服务器](../../authoring-api/destination-server/create-destination-server.md).
+閱讀本檔案後，您現在瞭解如何驗證中定義的客戶資料欄位設定 [目的地伺服器](../../authoring-api/destination-server/create-destination-server.md).

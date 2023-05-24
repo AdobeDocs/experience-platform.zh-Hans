@@ -1,10 +1,11 @@
 ---
 title: 库
-description: 了解标记库的概念及其在Adobe Experience Platform中的工作方式。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+description: 瞭解標籤庫的概念及其在Adobe Experience Platform中的運作方式。
+exl-id: 4d6f86e6-5684-4635-aaf1-87ba10cd7d94
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '791'
-ht-degree: 59%
+ht-degree: 62%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 59%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 库由一系列指令构成，这些指令用于指示扩展、数据元素和规则在部署后如何彼此进行交互。创建库时，您可以指定要对库进行的更改。生成时，这些更改将与在之前的库中提交、批准或发布的所有内容组合到一起。
 
@@ -26,19 +27,19 @@ ht-degree: 59%
 
 ## 创建库 {#create-a-library}
 
-要创建库，请完成以下步骤。
+若要建立程式庫，請完成下列步驟。
 
-1. 打开[!UICONTROL Publishing]选项卡。
+1. 開啟 [!UICONTROL 發佈] 標籤。
 
-   [!UICONTROL 发布]页面会列出开发库，并提供提交这些库以供审批、将其移至暂存环境或将其发布到生产环境的方法。
+   此 [!UICONTROL 發佈] 頁面會列出開發程式庫，並提供工具來用於提交以進行核准、將其移至測試環境，或發佈至生產環境。
 
-1. 选择&#x200B;**[!UICONTROL Add New Library]**。
+1. 選取 **[!UICONTROL 新增程式庫]**.
 
    ![](../../images/library-create.jpg)
 
 1. 命名库。
 1. 将库分配到开发环境。
-1. 向库中添加更改。要添加项目，请选择&#x200B;**[!UICONTROL 添加更改]**，然后选择要添加的项目。 任何已编辑或已删除的项目均可添加到所选库中。
+1. 向库中添加更改。若要新增專案，請選取 **[!UICONTROL 新增變更]**，然後選擇要新增的專案。 任何已编辑或已删除的项目均可添加到所选库中。
 
    ![](../../images/library-add-change.jpg)
 
@@ -48,31 +49,31 @@ ht-degree: 59%
    * 数据元素
    * 扩展配置
 
-1. 要添加任何已更改的资源，请选择&#x200B;**[!UICONTROL Add All Changed Resources]**。
-1. 选择&#x200B;**[!UICONTROL Save]**&#x200B;或&#x200B;**[!UICONTROL Save and Build for Development]**。
+1. 若要新增任何已變更的資源，請選取 **[!UICONTROL 新增所有變更的資源]**.
+1. 選取 **[!UICONTROL 儲存]** 或 **[!UICONTROL 儲存並為開發環境建置]**.
 
    部署时将编译一个内部版本并将其部署到所分配的环境。
 
 创建库后，可使用该库的下拉菜单选择以下任一选项：
 
-* **编辑**:此选项用于更改库配置。
+* **編輯**：此選項可讓您變更程式庫組態。
 
-* **构建用于开发**:此选项可编译一个内部版本并将其部署到所分配的环境。
+* **建置以供開發**：此選項會編譯組建並將其部署到指派的環境。
 
-* **提交以供审批**:此选项可让审批者使用库，以将其移至发布流程中的下一步。
+* **提交以進行核准**：此選項可讓核准者將程式庫移至發佈程式中的下一個步驟。
 
-* **删除**:此选项会从发布过程中删除当前选定的库。
+* **刪除**：此選項會從發佈程式中移除目前選取的程式庫。
 
 ![](../../images/library-menu.png)
 
 ## 将项目添加到库 {#add-to-a-library}
 
-要添加到库，请完成以下步骤。
+若要新增至程式庫，請完成下列步驟。
 
 1. 安装要添加的[扩展](../managing-resources/extensions/overview.md)。
 1. 创建要添加的[数据元素](../managing-resources/data-elements.md)和规则。
-1. 打开&#x200B;**[!UICONTROL Publishing]**&#x200B;选项卡。
-1. 选择要更改的[库](libraries.md)，然后选择&#x200B;**[!UICONTROL 编辑]**。
+1. 開啟 **[!UICONTROL 發佈]** 標籤。
+1. 選取 [資料庫](libraries.md) 要變更，然後選取 **[!UICONTROL 編輯]**.
 1. 使用规则、数据元素和扩展按钮选择要添加到库中的项目。
 1. 保存更改。
 
@@ -88,16 +89,16 @@ ht-degree: 59%
 
 1. 禁用要移除的扩展，以及依赖这些扩展的任何数据元素和规则。
 1. 禁用要移除的数据元素和规则。
-1. 打开&#x200B;**[!UICONTROL Publishing]**&#x200B;选项卡。
+1. 開啟 **[!UICONTROL 發佈]** 標籤。
 1. 选择要更改的库。
 1. 使用规则、数据元素和扩展按钮选择要从库中移除的已禁用项目。
 1. 保存更改。
 
 ## 管理库更改
 
-要编辑库选项，请完成以下步骤。
+若要編輯程式庫選項，請完成下列步驟。
 
-1. 选择库，然后选择&#x200B;**[!UICONTROL Edit]**&#x200B;以查看库更改。 所有更改都显示在[!UICONTROL 库内容]列表中。
+1. 選擇程式庫並選取 **[!UICONTROL 編輯]** 以檢視程式庫變更。 所有變更都會顯示在 [!UICONTROL 程式庫內容] 清單。
 
    ![](../../images/library-contents.jpg)
 
@@ -105,17 +106,17 @@ ht-degree: 59%
 
    ![](../../images/library-contents-revision.jpg)
 
-1. 选择显示&#x200B;**所有**&#x200B;项目还是&#x200B;**已更改**&#x200B;项目。
-1. 选择修订版本，然后选择&#x200B;**[!UICONTROL 选择修订版本]**。
-1. 选择&#x200B;**[!UICONTROL Add a Change]**&#x200B;或&#x200B;**[!UICONTROL Add All Changed Resources]**。
+1. 選取是否要顯示 **全部** 專案或 **已變更** 個專案。
+1. 選取修訂版本，然後選取 **[!UICONTROL 選取修訂版本]**.
+1. 選取 **[!UICONTROL 新增變更]** 或 **[!UICONTROL 新增所有變更的資源]**.
 
 ## 活动库 {#active-library}
 
 库可以封装一系列您希望对已部署代码进行的更改。活动库可以为您提供更大的便利，允许您快速循环访问各项更改并查看相应影响。
 
-扩展、规则和数据元素现在可以直接保存到您正在处理的库中。 如果需要，还可以从[!UICONTROL Active Library]下拉列表中创建新内部版本，甚至创建新库。
+擴充功能、規則和資料元素現在可直接儲存至您正在處理的程式庫。 如有需要，您也可以建立新的組建，或甚至是新的程式庫 [!UICONTROL 使用中程式庫] 下拉式清單。
 
-以下列表提供了有关管理活动库的更多信息。
+下列清單提供有關管理使用中程式庫的詳細資訊。
 
 1. [创建一个新库](libraries.md#create-a-library)。
 1. 转到[规则](../managing-resources/rules.md)、[数据元素](../managing-resources/data-elements.md)或[扩展](../managing-resources/extensions/overview.md)。

@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；连接；连接到查询服务；SSL;sslmode;
-title: 查询服务SSL选项
-description: 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用验证完全SSL模式进行连接。
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；連線；連線到查詢服務；SSL；ssl；sslmode；
+title: 查詢服務SSL選項
+description: 瞭解協力廠商連線至Adobe Experience Platform查詢服務的SSL支援，以及如何使用驗證完整SSL模式連線。
 exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
 source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
@@ -10,73 +10,73 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Query Service] SSL选项
+# [!DNL Query Service] SSL選項
 
-为了提高安全性，Adobe Experience Platform [!DNL Query Service] 为加密客户端/服务器通信的SSL连接提供本机支持。 本文档介绍用于与的第三方客户端连接的可用SSL选项 [!DNL Query Service] 以及如何使用 `verify-full` SSL参数值。
+為了提高安全性，Adobe Experience Platform [!DNL Query Service] 為SSL連線提供原生支援，以加密使用者端/伺服器通訊。 本文介紹的協力廠商使用者端連線可用的SSL選項如下： [!DNL Query Service] 以及如何使用 `verify-full` SSL引數值。
 
 ## 先决条件
 
-本文档假定您已下载第三方桌面客户端应用程序以用于您的平台数据。 有关在与第三方客户端连接时如何整合SSL安全性的具体说明，请参阅其各自的连接指南文档。 要获取所有 [!DNL Query Service] 支持的客户端，请参阅 [客户端连接概述](./overview.md).
+本檔案假設您已下載協力廠商案頭使用者端應用程式，以便與您的平台資料搭配使用。 在各自的連線指南檔案中可找到有關如何在與協力廠商使用者端連線時合併SSL安全性的特定指示。 用於所有清單 [!DNL Query Service] 支援的使用者端，請參閱 [使用者端連線概觀](./overview.md).
 
-## 可用的SSL选项 {#available-ssl-options}
+## 可用的SSL選項 {#available-ssl-options}
 
-平台支持各种SSL选项，以满足您的数据安全需求，并平衡加密和密钥交换的处理开销。
+Platform支援各種SSL選項，以符合您的資料安全性需求，並平衡加密和金鑰交換的處理開銷。
 
-不同 `sslmode` 参数值提供不同级别的保护。 通过使用SSL证书对移动的数据进行加密，有助于防止“中间人”(MITM)攻击、窃听和模拟。 下表列出了各种可用的SSL模式及其提供的保护级别。
+不同的 `sslmode` 引數值可提供不同等級的保護。 使用SSL憑證加密您的資料，有助於防止「中間人」(MITM)攻擊、偷聽和模擬。 下表提供可用不同SSL模式的劃分及其提供的保護等級。
 
 >[!NOTE]
 >
-> SSL值 `disable` 由于符合必需的数据保护法规，Adobe Experience Platform不提供支持。
+> SSL值 `disable` 由於符合必要的資料保護規範，Adobe Experience Platform不支援此功能。
 
-| sslmode | 窃听保护 | MITM保护 | 描述 |
+| sslmode | 竊聽保護 | MITM保護 | 描述 |
 |---|---|---|---|
-| `allow` | 部分 | 否 | 安全性不是优先事项，速度和低处理开销更为重要。 此模式仅在服务器坚持加密的情况下才会选择加密。 |
-| `prefer` | 部分 | 否 | 不需要加密，但如果服务器支持，通信将被加密。 |
-| `require` | 是 | 否 | 所有通信都需要加密。 信任网络连接到正确的服务器。 不需要服务器SSL证书验证。 |
-| `verify-ca` | 是 | 取决于CA策略 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在 [!DNL PostgreSQL] 主目录。 [详情如下](#instructions) |
-| `verify-full` | 是 | 是 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在 [!DNL PostgreSQL] 主目录。 [详情如下](#instructions). |
+| `allow` | 部分 | 否 | 安全性不是優先考量，速度與低處理開銷更為重要。 只有在伺服器堅持使用加密時，這個模式才會選擇加密。 |
+| `prefer` | 部分 | 否 | 不需要加密，但如果伺服器支援的話，通訊將會加密。 |
+| `require` | 是 | 否 | 所有通訊都需要加密。 信任網路可連線到正確的伺服器。 不需要伺服器SSL憑證驗證。 |
+| `verify-ca` | 是 | 取決於CA原則 | 所有通訊都需要加密。 必須先進行伺服器驗證，才能共用資料。 這要求您設定根憑證於 [!DNL PostgreSQL] 主目錄。 [詳情如下](#instructions) |
+| `verify-full` | 是 | 是 | 所有通訊都需要加密。 必須先進行伺服器驗證，才能共用資料。 這要求您設定根憑證於 [!DNL PostgreSQL] 主目錄。 [詳情如下](#instructions). |
 
 >[!NOTE]
 >
->两者之间的差异 `verify-ca` 和 `verify-full` 取决于根证书颁发机构(CA)的策略。 如果您已创建自己的本地CA，以使用 `verify-ca` 通常提供足够的保护。 如果使用公共CA， `verify-ca` 允许连接到其他人可能已向CA注册的服务器。 `verify-full` 应始终与公共根CA一起使用。
+>兩者之間的差異 `verify-ca` 和 `verify-full` 取決於根憑證授權單位(CA)的原則。 如果您已建立自己的本機CA來核發應用程式的私人憑證，請使用 `verify-ca` 通常提供足夠的保護。 如果使用公用CA， `verify-ca` 允許連線到其他人可能已向CA註冊的伺服器。 `verify-full` 應一律搭配公用根CA使用。
 
-在建立与Platform数据库的第三方连接时，建议您使用 `sslmode=require` 至少要确保正在运行的数据的安全连接。 的 `verify-full` 建议在大多数安全敏感型环境中使用SSL模式。
+在建立與平台資料庫的協力廠商連線時，建議您使用 `sslmode=require` 至少要確保傳輸中資料的安全連線。 此 `verify-full` 建議將SSL模式用於大多數安全性敏感型環境。
 
-## 为服务器验证设置根证书 {#root-certificate}
+## 設定伺服器驗證的根憑證 {#root-certificate}
 
-为确保安全连接，必须在客户端和服务器上都配置SSL使用情况，然后才能进行连接。 如果SSL仅在服务器上配置，则客户端可能会发送敏感信息（如密码），然后才能建立服务器要求高安全性。
+為了確保安全連線，在建立連線之前，必須在使用者端和伺服器上設定SSL使用方式。 如果只在伺服器上設定SSL，則使用者端可能會在確定伺服器需要高度安全性之前傳送機密資訊，例如密碼。
 
-默认情况下， [!DNL PostgreSQL] 不对服务器证书执行任何验证。 在发送任何敏感数据之前（作为SSL的一部分），验证服务器的身份并确保安全连接 `verify-full` 模式)，则必须在本地计算机(`root.crt`)和由服务器上的根证书签名的叶证书。
+依預設， [!DNL PostgreSQL] 不執行伺服器憑證的任何驗證。 驗證伺服器的身分並確保在任何敏感資料傳送之前有安全連線（作為SSL的一部分） `verify-full` 模式)，則您必須在本機電腦上放置根（自我簽署）憑證(`root.crt`)和伺服器上根憑證簽署的分葉憑證。
 
-如果 `sslmode` 参数设置为 `verify-full`, libpq将通过检查存储在客户端上的根证书上的证书链来验证服务器是否可信。 然后验证主机名是否与服务器证书中存储的名称匹配。
+如果 `sslmode` 引數已設為 `verify-full`，libpq會透過檢查憑證鏈結一直到儲存在使用者端上的根憑證來驗證伺服器是否值得信任。 然後它會驗證主機名稱是否符合伺服器憑證中儲存的名稱。
 
-要允许服务器证书验证，必须放置一个或多个根证书(`root.crt`) [!DNL PostgreSQL] 文件。 文件路径类似于 `~/.postgresql/root.crt`.
+若要允許伺服器憑證驗證，您必須放置一個或多個根憑證(`root.crt`)中 [!DNL PostgreSQL] 檔案時。 檔案路徑會類似於 `~/.postgresql/root.crt`.
 
-## 启用验证完全SSL模式以与第三方一起使用 [!DNL Query Service] 连接 {#instructions}
+## 啟用驗證完整SSL模式以供第三方使用 [!DNL Query Service] 連線 {#instructions}
 
-如果你需要比 `sslmode=require`，则可以按照突出显示的步骤将第三方客户端连接到 [!DNL Query Service] 使用 `verify-full` SSL模式。
+如果您需要更嚴格的安全性控制 `sslmode=require`，您可以依照醒目提示的步驟，將協力廠商使用者端連線至 [!DNL Query Service] 使用 `verify-full` SSL模式。
 
 >[!NOTE]
 >
->可使用许多选项来获取SSL证书。 由于无管理证书的趋势日益增长，本指南中使用了DigiCert ，因为它们是高保证TLS/SSL、PKI、IoT和签名解决方案的可信全局提供商。
+>取得SSL憑證有許多選項。 由於流氓憑證的趨勢日益發展，本指南中使用DigiCert，因為他們是高保證TLS/SSL、PKI、IoT和簽署解決方案的可信全球提供者。
 
-1. 导航到 [可用DigiCert根证书列表](https://www.digicert.com/kb/digicert-root-certificates.htm)
-1. 搜索“[!DNL DigiCert Global Root CA]“ ”。
-1. 选择 [!DNL **下载PEM**] 将文件下载到本地计算机。
-   ![突出显示了“Download PEM（下载PEM）”的可用DigiCert根证书列表。](../images/clients/ssl-modes/digicert.png)
-1. 将安全证书文件重命名为 `root.crt`.
-1. 将文件复制到 [!DNL PostgreSQL] 文件夹。 必需的文件路径因操作系统而异。 如果文件夹不存在，请创建文件夹。
-   - 如果您使用的是macOS，则路径为 `/Users/<username>/.postgresql`
-   - 如果您使用的是Windows，则路径为 `%appdata%\postgresql`
+1. 導覽至 [可用的DigiCert根憑證清單](https://www.digicert.com/kb/digicert-root-certificates.htm)
+1. 搜尋&quot;[!DNL DigiCert Global Root CA]」從可用憑證清單。
+1. 選取 [!DNL **下載PEM**] 將檔案下載至本機電腦。
+   ![反白顯示「下載PEM」的可用DigiCert根憑證清單。](../images/clients/ssl-modes/digicert.png)
+1. 將安全性憑證檔案重新命名為 `root.crt`.
+1. 將檔案複製到 [!DNL PostgreSQL] 資料夾。 必要的檔案路徑會因您的作業系統而異。 如果該資料夾尚不存在，請建立該資料夾。
+   - 如果您使用macOS，路徑為 `/Users/<username>/.postgresql`
+   - 如果您使用的是Windows，則路徑為 `%appdata%\postgresql`
 
 >[!TIP]
 >
->查找 `%appdata%` 文件位置，按⊞ **Win + R** 输入 `%appdata%` 中。
+>尋找您的 `%appdata%` 檔案在Windows作業系統上的位置，按⊞ **Win + R** 和輸入 `%appdata%` 至搜尋欄位。
 
-在 [!DNL DigiCert Global Root CA] CRT文件在 [!DNL PostgreSQL] 文件夹，您可以连接到 [!DNL Query Service] 使用 `sslmode=verify-full` 或 `sslmode=verify-ca` 选项。
+晚於 [!DNL DigiCert Global Root CA] CRT檔案可在 [!DNL PostgreSQL] 資料夾，您可以連線至 [!DNL Query Service] 使用 `sslmode=verify-full` 或 `sslmode=verify-ca` 選項。
 
 ## 后续步骤
 
-通过阅读本文档，您可以更好地了解将第三方客户端连接到 [!DNL Query Service]，以及如何启用 `verify-full` 用于加密正在移动的数据的SSL选项。
+閱讀本檔案後，您對連線協力廠商使用者端的可用SSL選項有了更深入的瞭解 [!DNL Query Service]，以及如何啟用 `verify-full` SSL選項，可動態加密您的資料。
 
-如果您尚未执行此操作，请遵循 [将第三方客户端连接到 [!DNL Query Service]](./overview.md).
+如果您尚未這麼做，請遵循以下指南： [連線協力廠商使用者端至 [!DNL Query Service]](./overview.md).

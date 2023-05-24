@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；归因ai概述；热门主题；归因ai；归因ai
+keywords: Experience Platform；attribution ai概述；熱門主題；attribution ai；Attribution ai
 feature: Attribution AI
-title: Attribution AI概述
+title: Attribution AI概觀
 description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 landing-page-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 short-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
@@ -15,36 +15,36 @@ ht-degree: 40%
 
 # 归因人工智能概述
 
-Attribution AI作为Intelligent Services的一部分，是一种多渠道算法归因服务，用于计算客户交互对指定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户历程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI是Intelligent Services的一部分，是一種多管道演演算法歸因服務，可計算客戶互動對指定結果的影響和累加影響。 利用 Attribution AI，营销人员可以通过了解客户历程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
-## 了解Attribution AI
+## 瞭解Attribution AI
 
 Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 
-Attribution AI输出可以跨不同维度进行分隔，并可以在客户历程的不同阶段使用。 这无需将业务需求转换为机器学习问题、选择算法、培训或部署模型即可完成。
+Attribution AI輸出可以跨不同維度區隔，並可用於客戶歷程的不同階段。 無需將業務需求轉換為機器學習問題、挑選演演算法、培訓或部署模型，即可完成此作業。
 
-Attribution AI数据可以来自Adobe(例如， [!DNL Analytics])或非Adobe数据源。
+Attribution AI資料可以來自Adobe(例如： [!DNL Analytics])或非Adobe資料來源。
 
-Attribution AI支持两类得分：算法和基于规则。 算法分数包括增量分数和影响分数。基于规则的分数包括 First touch、Last touch、线性、U 型、时间衰减。
+Attribution AI支援兩種類別的分數：演演算法和規則型。 算法分数包括增量分数和影响分数。基于规则的分数包括 First touch、Last touch、线性、U 型、时间衰减。
 
-以下视频旨在支持您对Attribution AI的了解。
+下列影片的設計目的是協助您瞭解Attribution AI。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
 
-## 业务用例示例
+## 業務使用案例範例
 
-Attribution AI可用于协助处理以下示例用例：
+Attribution AI可用於協助以下範例使用案例：
 
-- **执行报告**:使高管人员能够了解营销的真正增量影响，无论是整体还是按渠道、地区、SKU等。
-- **预算分配**:在营销渠道中制定预算分配决策。
-- **促销活动优化**:在每个渠道中，了解哪些促销活动、创意和关键词对哪些SKU或Geos的效果更好。 这样，您就可以查看每个渠道，以便营销团队可以优化其策略。
-- **全漏斗归因**:了解营销在整个客户历程中的影响。 例如，免费注册帐户以进行付费转化等。
-- **合作伙伴评估**:根据归因结果评估机构和合作伙伴的效力。
+- **高階主管報告**：可讓高階主管瞭解行銷的真正累加影響，包括整體和依頻道、地區、SKU等分析，
+- **預算分配**：通知各行銷管道的預算分配決定。
+- **行銷活動最佳化**：在每個管道中，瞭解哪些行銷活動、創意和關鍵字對哪些SKU或Geo的效果更好。 這可讓您檢視每個管道，以便行銷團隊最佳化其策略。
+- **完整漏斗歸因**：瞭解行銷對整個客戶歷程的影響。 例如，免費帳戶註冊以取得付費轉換及其他功能。
+- **合作夥伴評估**：根據歸因結果評估機構和合作夥伴的成效。
 
 ### 其他功能
 
-Attribution AI还提供了与其他Adobe解决方案(例如 [!DNL Customer Journey Analytics]. 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析分析分析。
+Attribution AI也提供與其他Adobe解決方案的整合，例如 [!DNL Customer Journey Analytics]. 這可讓您使用這些解決方案來利用可自訂的演演算法模型來評估媒體效能並提供分析見解。
 
 ## 后续步骤
 
-您可以首先按照 [入门](./getting-started.md) 的双曲余切值。 本指南将指导您设置所有必需的预请求Attribution AI。 如果您的凭据和数据已准备就绪，请访问 [Attribution AI用户指南](./user-guide.md). 本指南将指导您创建实例并提交该实例以进行培训和评分。
+您可以依照以下說明開始操作 [快速入門](./getting-started.md) 指南。 本指南會逐步引導您設定Attribution AI的所有必要預先請求。 如果您已準備好認證和資料，請造訪 [Attribution AI使用手冊](./user-guide.md). 本指南會逐步引導您建立執行個體，並提交它以進行訓練和評分。

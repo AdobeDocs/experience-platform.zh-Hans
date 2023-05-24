@@ -1,50 +1,50 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；架构；架构；架构；架构；关系；关系描述符；关系描述符；引用标识；引用标识；
-title: 使用模式注册表API定义两个模式之间的关系
-description: 本文档提供了一个教程，用于定义由贵组织使用架构注册API定义的两个架构之间的一对一关系。
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述；結構描述；結構描述；關係；關係描述項；參考身分；參考身分；
+title: 使用結構描述登入API定義兩個結構描述之間的關係
+description: 本檔案提供教學課程，說明如何定義貴組織使用Schema Registry API定義之兩個結構描述之間的一對一關係。
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '1398'
-ht-degree: 2%
+source-wordcount: '1383'
+ht-degree: 1%
 
 ---
 
-# 使用 [!DNL Schema Registry] API
+# 使用定義兩個結構描述之間的關係 [!DNL Schema Registry] API
 
-了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
+瞭解客戶之間的關係以及客戶在不同管道中與您品牌的互動是Adobe Experience Platform的重要部分。 在的結構中定義這些關係 [!DNL Experience Data Model] (XDM)結構描述可讓您對客戶資料獲得複雜的深入分析。
 
-而架构关系可以通过使用并集架构和 [!DNL Real-Time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到 **源模式**，表示单独 **参考模式**.
+雖然結構描述關係可透過使用聯合結構描述和來推斷 [!DNL Real-Time Customer Profile]，這僅適用於共用相同類別的結構描述。 若要在屬於不同類別的兩個結構描述之間建立關係，必須將專用關係欄位新增至 **來源結構描述**，表示個別專案的身分 **參考結構描述**.
 
 >[!NOTE]
 >
->架构注册表API将引用架构称为“目标架构”。 不要将这些模式与 [数据准备映射集](../../data-prep/mapping-set.md) 或模式 [目标连接](../../destinations/home.md).
+>結構描述登入API將參考結構描述稱為「目的地結構描述」。 這些不應與中的目的地結構描述混淆 [資料準備對應集](../../data-prep/mapping-set.md) 或結構描述 [目的地連線](../../destinations/home.md).
 
-本文档提供了一个教程，用于定义由贵组织使用 [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+本檔案提供教學課程，說明如何定義貴組織透過以下工具定義之兩個結構描述之間的一對一關係： [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 ## 快速入门
 
-本教程需要对 [!DNL Experience Data Model] (XDM)和 [!DNL XDM System]. 在开始使用本教程之前，请查阅以下文档：
+本教學課程需要您實際瞭解 [!DNL Experience Data Model] (XDM)和 [!DNL XDM System]. 在開始本教學課程之前，請檢閱下列檔案：
 
-* [XDM系统在Experience Platform](../home.md):XDM及其在 [!DNL Experience Platform].
-   * [架构组合的基础知识](../schema/composition.md):介绍XDM模式的构建基块。
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [Experience Platform中的XDM系統](../home.md)：XDM及其在中的實作概觀 [!DNL Experience Platform].
+   * [結構描述組合基本概念](../schema/composition.md)：XDM結構描述建置區塊簡介。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 [!DNL Accept] 标题及其可能值)。
+在開始本教學課程之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需您成功對 [!DNL Schema Registry] API。 這包括您的 `{TENANT_ID}`、「容器」的概念，以及提出請求所需的標頭(請特別注意 [!DNL Accept] 標頭及其可能的值)。
 
-## 定义源和引用架构 {#define-schemas}
+## 定義來源和參考結構描述 {#define-schemas}
 
-您应该已经创建了将在关系中定义的两个架构。 本教程将在组织当前忠诚度计划(在[!DNL Loyalty Members]“模式”和他们最喜爱的酒店(在“[!DNL Hotels]“架构”)。
+您應已建立將在關係中定義的兩個結構描述。 本教學課程在組織目前的熟客方案成員之間建立關係(定義於「[!DNL Loyalty Members]「結構描述)及其最喜愛的飯店(定義於「[!DNL Hotels]&quot;結構描述)。
 
-架构关系由 **源模式** 具有引用 **参考模式**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作参考架构。
+結構描述關係由 **來源結構描述** 有一個欄位參照內的另一個欄位 **參考結構描述**. 在接下來的步驟中， 」[!DNL Loyalty Members]&quot;將是來源結構描述，而&quot;[!DNL Hotels]」將做為參考結構描述。
 
 >[!IMPORTANT]
 >
->要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-Time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-api.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
+>為了建立關係，兩個結構描述都必須定義主要身分並啟用 [!DNL Real-Time Customer Profile]. 請參閱以下小節： [啟用結構描述以在設定檔中使用](./create-schema-api.md#profile) 架構建立教學課程中，如果您需要有關如何據以設定架構的指引。
 
-要定义两个架构之间的关系，您必须首先获取 `$id` 两个架构的值。 如果您知道显示名称(`title`)，您可以找到 `$id` 值 `/tenant/schemas` 的端点 [!DNL Schema Registry] API。
+若要定義兩個結構描述之間的關係，您必須先取得 `$id` 兩個結構描述的值。 如果您知道顯示名稱(`title`)中，您可以找到 `$id` 向以下傳送GET要求而獲得值： `/tenant/schemas` 中的端點 [!DNL Schema Registry] API。
 
 **API格式**
 
@@ -66,11 +66,11 @@ curl -X GET \
 
 >[!NOTE]
 >
->的 [!DNL Accept] 标题 `application/vnd.adobe.xed-id+json` 仅返回生成架构的标题、ID和版本。
+>此 [!DNL Accept] 頁首 `application/vnd.adobe.xed-id+json` 僅傳回所產生結構描述的標題、ID和版本。
 
 **响应**
 
-成功响应会返回由您的组织定义的架构列表，包括其 `name`, `$id`, `meta:altId`和 `version`.
+成功回應會傳回您的組織所定義的結構描述清單，包括其 `name`， `$id`， `meta:altId`、和 `version`.
 
 ```json
 {
@@ -108,25 +108,25 @@ curl -X GET \
 }
 ```
 
-记录 `$id` 要定义两者之间关系的两个架构的值。 这些值将在后续步骤中使用。
+記錄 `$id` 您要定義兩者之間關係的兩個結構描述的值。 這些值將在後續步驟中使用。
 
-## 为源架构定义引用字段
+## 定義來源結構描述的參考欄位
 
-在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作引用架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值 `string`.
+在內 [!DNL Schema Registry]，關係描述元的運作方式類似於關聯式資料庫表格中的外來索引鍵：來源綱要中的欄位會作為參照綱要之主要身分欄位的參照。 如果您的來源結構描述沒有用於此目的的欄位，您可能需要使用新欄位建立結構描述欄位群組，並將其新增到結構描述。 此新欄位必須具有 `type` 值 `string`.
 
 >[!IMPORTANT]
 >
->源架构不能将其主标识用作引用字段。
+>來源結構描述不能使用其主要身分作為參考欄位。
 
-在本教程中，参考架构“[!DNL Hotels]&quot;包含 `hotelId` 用作架构主标识的字段。 但是，源架构“[!DNL Loyalty Members]“ ”没有要用作引用的专用字段 `hotelId`，因此需要创建自定义字段组才能向架构中添加新字段： `favoriteHotel`.
+在本教學課程中，參考結構描述»[!DNL Hotels]&quot;包含 `hotelId` 做為結構描述主要身分的欄位。 然而，來源結構描述&quot;[!DNL Loyalty Members]&quot;沒有專用欄位可做為參照 `hotelId`，因此需要建立自訂欄位群組，才能將新欄位新增到結構描述中： `favoriteHotel`.
 
 >[!NOTE]
 >
->如果您的源架构已经有一个您计划用作引用字段的专用字段，则可以跳到 [创建引用描述符](#reference-identity).
+>如果您的來源結構描述已有您打算用作參考欄位的專用欄位，您可以跳至上的步驟 [建立參考描述項](#reference-identity).
 
-### 创建新字段组
+### 建立新的欄位群組
 
-要向架构添加新字段，必须首先在字段组中定义该字段。 您可以通过向 `/tenant/fieldgroups` 端点。
+為了將新欄位新增到結構描述，必須首先在欄位群組中定義它。 您可以向以下專案發出POST請求，以建立新的欄位群組： `/tenant/fieldgroups` 端點。
 
 **API格式**
 
@@ -136,7 +136,7 @@ POST /tenant/fieldgroups
 
 **请求**
 
-以下请求会创建一个新字段组，该字段组将 `favoriteHotel` 字段 `_{TENANT_ID}` 添加到的任何架构的命名空间。
+以下請求會建立新欄位群組，新增 `favoriteHotel` 欄位位於 `_{TENANT_ID}` 要新增到的任何結構描述的名稱空間。
 
 ```shell
 curl -X POST\
@@ -177,7 +177,7 @@ curl -X POST\
 
 **响应**
 
-成功的响应会返回新创建字段组的详细信息。
+成功的回應會傳回新建立的欄位群組的詳細資訊。
 
 ```json
 {
@@ -230,15 +230,15 @@ curl -X POST\
 
 | 属性 | 描述 |
 | --- | --- |
-| `$id` | 只读，系统生成的新字段组的唯一标识符。 采用URI的形式。 |
+| `$id` | 系統產生的新欄位群組唯讀唯一識別碼。 採用URI的形式。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-记录 `$id` 字段组的URI，用于将字段组添加到源架构的下一步。
+記錄 `$id` 欄位群組的URI，用於下一步將欄位群組新增至來源結構描述中。
 
-### 将字段组添加到源架构
+### 將欄位群組新增至來源結構描述
 
-创建字段组后，您可以通过向 `/tenant/schemas/{SCHEMA_ID}` 端点。
+建立欄位群組後，您可以透過向以下專案發出PATCH請求，將其新增到來源結構描述： `/tenant/schemas/{SCHEMA_ID}` 端點。
 
 **API格式**
 
@@ -248,13 +248,13 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | URL编码 `$id` URI或 `meta:altId` 源架构的URL。 |
+| `{SCHEMA_ID}` | URL編碼 `$id` URI或 `meta:altId` 來源結構描述的。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求将“[!DNL Favorite Hotel]“ ”字段组[!DNL Loyalty Members]“架构”。
+以下請求新增「[!DNL Favorite Hotel]「 」欄位群組到「[!DNL Loyalty Members]「結構描述。
 
 ```shell
 curl -X PATCH \
@@ -277,15 +277,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `op` | 要执行的PATCH操作。 此请求使用 `add` 操作。 |
-| `path` | 将添加新资源的架构字段的路径。 向架构添加字段组时，值必须为“/allOf/ — ”。 |
-| `value.$ref` | 的 `$id` 的字段组。 |
+| `op` | 要執行的PATCH操作。 此請求會使用 `add` 作業。 |
+| `path` | 將新增新資源的結構描述欄位的路徑。 將欄位群組新增至結構描述時，值必須是&quot;/allOf/-&quot;。 |
+| `value.$ref` | 此 `$id` 欄位群組的欄位名稱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回更新架构的详细信息，该架构现在包括 `$ref` 其 `allOf` 数组。
+成功回應會傳回更新結構的詳細資訊，現在包含 `$ref` 在其下新增的欄位群組的值 `allOf` 陣列。
 
 ```json
 {
@@ -344,11 +344,11 @@ curl -X PATCH \
 }
 ```
 
-## 创建引用标识描述符 {#reference-identity}
+## 建立參考身分描述項 {#reference-identity}
 
-如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 自 `favoriteHotel` 字段[!DNL Loyalty Members]“”将表示 `hotelId` 字段[!DNL Hotels]&quot;, `favoriteHotel` 必须提供引用标识描述符。
+如果結構描述欄位用作關係中另一個結構描述的參考，則必須對其套用參考身分描述項。 由於 `favoriteHotel` 「」中的欄位[!DNL Loyalty Members]」將指 `hotelId` 「」中的欄位[!DNL Hotels]&quot;， `favoriteHotel` 必須為參考身分描述項指定名稱。
 
-通过向发出POST请求，为源模式创建引用描述符 `/tenant/descriptors` 端点。
+透過向以下專案發出POST請求，為來源結構描述建立參考描述項： `/tenant/descriptors` 端點。
 
 **API格式**
 
@@ -358,7 +358,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求会为 `favoriteHotel` 字段[!DNL Loyalty Members]&quot;
+以下請求會建立 `favoriteHotel` 來源結構描述中的欄位&quot;[!DNL Loyalty Members]「。
 
 ```shell
 curl -X POST \
@@ -379,17 +379,17 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 对于引用描述符，值必须为 `xdm:descriptorReferenceIdentity`. |
-| `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
-| `xdm:sourceVersion` | 源架构的版本号。 |
-| `sourceProperty` | 源架构中用于引用架构的主标识的字段路径。 |
-| `xdm:identityNamespace` | 引用字段的标识命名空间。 此命名空间必须与引用架构的主标识相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
+| `@type` | 正在定義的描述項型別。 參考描述項的值必須是 `xdm:descriptorReferenceIdentity`. |
+| `xdm:sourceSchema` | 此 `$id` 來源結構的URL。 |
+| `xdm:sourceVersion` | 來源結構描述的版本號碼。 |
+| `sourceProperty` | 來源結構描述中用於引用參考結構描述主要身分的欄位路徑。 |
+| `xdm:identityNamespace` | 參考欄位的身分名稱空間。 此名稱空間必須與參考結構描述的主要身分相同。 請參閱 [身分名稱空間總覽](../../identity-service/home.md) 以取得詳細資訊。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新创建的源字段引用描述符的详细信息。
+成功的回應會傳回來源欄位新建立的參考描述項的詳細資訊。
 
 ```json
 {
@@ -403,9 +403,9 @@ curl -X POST \
 }
 ```
 
-## 创建关系描述符 {#create-descriptor}
+## 建立關係描述項 {#create-descriptor}
 
-关系描述符在源模式和参考模式之间建立一对一关系。 在为源架构中的相应字段定义了引用标识描述符后，您可以通过向 `/tenant/descriptors` 端点。
+關係描述元在來源結構描述和參考結構描述之間建立一對一的關係。 一旦您在來源結構描述中定義了適當欄位的參考身分描述項，您就可以透過向以下專案發出POST請求來建立新的關係描述項： `/tenant/descriptors` 端點。
 
 **API格式**
 
@@ -415,7 +415,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Hotels]“ ”作为参考架构。
+以下請求會建立具有「」的新關係描述項[!DNL Loyalty Members]&quot;作為來源結構描述和&quot;[!DNL Hotels]」作為參考結構描述。
 
 ```shell
 curl -X POST \
@@ -438,19 +438,19 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 的 `@type` 关系描述符的值为 `xdm:descriptorOneToOne`. |
-| `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
-| `xdm:sourceVersion` | 源架构的版本号。 |
-| `xdm:sourceProperty` | 源架构中引用字段的路径。 |
-| `xdm:destinationSchema` | 的 `$id` 引用架构的URL。 |
-| `xdm:destinationVersion` | 引用架构的版本号。 |
-| `xdm:destinationProperty` | 引用架构中主标识字段的路径。 |
+| `@type` | 要建立的描述項型別。 此 `@type` 關係描述項的值為 `xdm:descriptorOneToOne`. |
+| `xdm:sourceSchema` | 此 `$id` 來源結構的URL。 |
+| `xdm:sourceVersion` | 來源結構描述的版本號碼。 |
+| `xdm:sourceProperty` | 來源結構描述中參考欄位的路徑。 |
+| `xdm:destinationSchema` | 此 `$id` 參考結構描述的URL。 |
+| `xdm:destinationVersion` | 參考結構描述的版本號碼。 |
+| `xdm:destinationProperty` | 參考結構描述中主要身分欄位的路徑。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 响应
 
-成功的响应会返回新创建的关系描述符的详细信息。
+成功的回應會傳回新建立的關係描述項的詳細資料。
 
 ```json
 {
@@ -468,4 +468,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您成功地在两个架构之间创建了一对一关系。 有关使用描述符的更多信息 [!DNL Schema Registry] API，请参阅 [架构注册开发人员指南](../api/descriptors.md). 有关如何在UI中定义架构关系的步骤，请参阅 [使用架构编辑器定义架构关系](relationship-ui.md).
+依照本教學課程，您已成功建立兩個結構描述之間的一對一關係。 如需有關使用描述元的詳細資訊，請參閱 [!DNL Schema Registry] API，請參閱 [Schema Registry開發人員指南](../api/descriptors.md). 如需如何在UI中定義結構描述關係的步驟，請參閱以下教學課程： [使用結構描述編輯器定義結構描述關係](relationship-ui.md).

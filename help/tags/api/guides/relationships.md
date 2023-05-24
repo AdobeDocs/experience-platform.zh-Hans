@@ -1,33 +1,33 @@
 ---
-title: Reactor API中的关系
-description: 了解如何在Reactor API中建立资源关系，包括每个资源的关系要求。
+title: Reactor API中的關係
+description: 瞭解如何在Reactor API中建立資源關係，包括每個資源的關係需求。
 exl-id: 23976978-a639-4eef-91b6-380a29ec1c14
 source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '807'
-ht-degree: 10%
+source-wordcount: '762'
+ht-degree: 6%
 
 ---
 
-# Reactor API中的关系
+# Reactor API中的關係
 
-Reactor API中的资源通常彼此相关。 本文档概述了如何在API中建立资源关系，以及每种资源类型的关系要求。
+Reactor API中的資源通常彼此相關。 本檔案概述如何在API中建立資源關係，以及每種資源型別的關係需求。
 
-根据相关资源类型，需要一些关系。 必需的关系意味着没有关系父资源不能存在。 所有其他关系都是可选的。
+根據相關資源的型別，需要一些關係。 必要的關聯性表示父資源不能沒有關聯性存在。 所有其他關係都是選擇性的。
 
-无论是必需关系还是可选关系，在创建相关资源时，系统都会自动建立关系，或者必须手动创建关系。 在手动创建关系时，根据相关资源，可以使用两种方法：
+無論關聯性是必要還是選擇性的，系統都會在建立相關資源時自動建立，或者必須手動建立。 在手動建立關係的情況下，根據相關資源有兩種可能的方法：
 
-* [按负载创建](#payload)
-* [按URL创建](#url) （仅限库）
+* [依裝載建立](#payload)
+* [依URL建立](#url) （僅適用於程式庫）
 
-请参阅 [关系要求](#requirements) 以获取每种资源类型的兼容关系列表，以及在适用时建立这些关系所需的方法。
+請參閱以下章節： [關係需求](#requirements) 取得每個資源型別的相容關係清單，以及建立這些關係所需的方法（如適用）。
 
-## 按负载创建关系 {#payload}
+## 依裝載建立關係 {#payload}
 
-在最初创建资源时，必须手动建立某些关系。 要实现此目的，您必须提供 `relationship` 对象。 这些关系的示例包括：
+最初建立資源時，必須手動建立某些關係。 若要完成此作業，您必須提供 `relationship` 物件。 這些關係的範例包括：
 
-* [创建数据元素](../endpoints/data-elements.md#create) 和所需的扩展
-* [创建环境](../endpoints/environments.md#create) 与所需的主机关系
+* [建立資料元素](../endpoints/data-elements.md#create) 含必要的副檔名
+* [建立環境](../endpoints/environments.md#create) 具有必要的主機關係
 
 **API格式**
 
@@ -37,14 +37,14 @@ POST /properties/{PROPERTY_ID}/{RESOURCE_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 资源所属的属性的ID。 |
-| `{RESOURCE_TYPE}` | 要创建的资源类型。 |
+| `{PROPERTY_ID}` | 資源所屬屬性的ID。 |
+| `{RESOURCE_TYPE}` | 要建立的資源型別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求会创建新 `rule_component`，与 `rules` 和 `extension`.
+以下請求會建立新的 `rule_component`，建立關係 `rules` 和 `extension`.
 
 ```shell
 curl -X POST \
@@ -84,19 +84,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `relationships` | 按有效负载创建关系时必须提供的对象。 此对象中的每个键都表示特定的关系类型。 在上述示例中， `extension` 和 `rules` 建立关系，其中 `rule_components`. 有关不同资源的兼容关系类型的更多信息，请参阅 [按资源划分的关系需求](#relationship-requirements-by-resource). |
-| `data` | 在 `relationship` 对象必须包含 `data` 属性，引用 `id` 和 `type` 与之建立关系的资源。 您可以通过格式设置 `data` 属性作为对象数组，其中每个对象都包含 `id` 和 `type` 资源。 |
-| `id` | 资源的唯一ID。 每个 `id` 必须和兄弟姐妹一起 `type` 属性，指示相关资源的类型。 |
-| `type` | 同级引用的资源类型 `id` 字段。 接受的值包括 `data_elements`, `rules`, `extensions`和 `environments`. |
+| `relationships` | 依裝載建立關係時必須提供的物件。 此物件中的每個索引鍵都代表特定的關聯性型別。 在上述範例中， `extension` 和 `rules` 建立關係，這些關係專門 `rule_components`. 如需不同資源的相容關係型別的詳細資訊，請參閱以下章節： [依資源的關係需求](#relationship-requirements-by-resource). |
+| `data` | 以下提供的每個關係型別 `relationship` 物件必須包含 `data` 屬性，會參照 `id` 和 `type` 正在與其建立關係的資源。 您可以透過格式化 `data` 屬性做為物件的陣列，每個物件都包含 `id` 和 `type` 適用的資源。 |
+| `id` | 資源的唯一識別碼。 每個 `id` 必須搭配同層級 `type` 屬性，指出相關資源的型別。 |
+| `type` | 同層級參照的資源型別 `id` 欄位。 接受的值包括 `data_elements`， `rules`， `extensions`、和 `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 通过URL创建关系 {#url}
+## 依URL建立關係 {#url}
 
-与其他资源不同，图书馆通过自己的专门工作建立关系 `/relationship` 端点。 示例包括：
+與其他資源不同，程式庫會透過自己的專屬資源建立關係 `/relationship` 端點。 示例包括：
 
-* [将扩展、数据元素和规则添加到库](../endpoints/libraries.md#add-resources)
-* [将库分配到环境](../endpoints/libraries.md#environment)
+* [將擴充功能、資料元素和規則新增至程式庫](../endpoints/libraries.md#add-resources)
+* [將程式庫指派給環境](../endpoints/libraries.md#environment)
 
 **API格式**
 
@@ -106,13 +106,13 @@ POST /properties/{PROPERTY_ID}/libraries/{LIBRARY_ID}/relationships/{RESOURCE_TY
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 库所属的属性的ID。 |
-| `{LIBRARY_ID}` | 要为其创建关系的库的ID。 |
-| `{RESOURCE_TYPE}` | 关系所定向的资源类型。 可用值包括 `environment`, `data_elements`, `extensions`和 `rules`. |
+| `{PROPERTY_ID}` | 程式庫所屬屬性的ID。 |
+| `{LIBRARY_ID}` | 您要為其建立關係的資料庫ID。 |
+| `{RESOURCE_TYPE}` | 關係所定位的資源型別。 可用的值包括 `environment`， `data_elements`， `extensions`、和 `rules`. |
 
 **请求**
 
-以下请求使用 `/relationships/environment` 用于库创建与环境关系的端点。
+以下請求使用 `/relationships/environment` 用於建立與環境關係的程式庫的端點。
 
 ```shell
 curl -X POST \
@@ -132,32 +132,32 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `data` | 引用 `id` 和 `type` 关系的目标资源。 如果您创建的关系涉及多个同一类型的资源(例如 `extensions` 和 `rules`)、 `data` 属性必须格式化为对象数组，每个对象都包含 `id` 和 `type` 资源。 |
-| `id` | 资源的唯一ID。 每个 `id` 必须和兄弟姐妹一起 `type` 属性，指示相关资源的类型。 |
-| `type` | 同级引用的资源类型 `id` 字段。 接受的值包括 `data_elements`, `rules`, `extensions`和 `environments`. |
+| `data` | 參照「 」的物件 `id` 和 `type` 關聯的目標資源。 如果您要建立與相同型別的多個資源的關係(例如 `extensions` 和 `rules`)， `data` 屬性必須格式化為物件陣列，且每個物件包含 `id` 和 `type` 適用的資源。 |
+| `id` | 資源的唯一識別碼。 每個 `id` 必須搭配同層級 `type` 屬性，指出相關資源的型別。 |
+| `type` | 同層級參照的資源型別 `id` 欄位。 接受的值包括 `data_elements`， `rules`， `extensions`、和 `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 按资源开列的关系要求 {#requirements}
+## 依資源的關係需求 {#requirements}
 
-下表概述了每种资源类型的可用关系（无论是否需要这些关系），以及在适用时手动创建关系的已接受方法。
+下表概述每種資源型別的可用關係（無論這些關係是否必要），以及手動建立關係的可接受方法（如適用）。
 
 >[!NOTE]
 >
->如果某个关系未列为由有效负载或URL创建，则系统会自动为其分配该关系。
+>如果關係未列為由承載或URL建立，則由系統自動指派。
 
-### 审核事件
+### 稽核事件
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
-| `property` | ✓ |  |  |
+| `property` | ✓ (N) |  |  |
 | `entity` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 内部版本
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `data_elements` |  |  |  |
 | `extensions` |  |  |  |
@@ -166,27 +166,27 @@ curl -X POST \
 | `library` | ✓ |  |  |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-### 回调
+### 回呼
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 公司
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `properties` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 数据元素
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `libraries` |  |  |  |
 | `revisions` | ✓ |  |  |
@@ -197,22 +197,22 @@ curl -X POST \
 | `updated_with_extension` | ✓ |  |  |
 | `updated_with_extension_package` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 环境
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `library` |  |  |  |
 | `builds` |  |  |  |
 | `host` | ✓ | ✓ |  |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 扩展
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `libraries` |  |  |  |
 | `revisions` | ✓ |  |  |
@@ -222,19 +222,19 @@ curl -X POST \
 | `extension_package` | ✓ | ✓ |  |
 | `updated_with_extension_package` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 托管
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 库
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `builds` |  |  |  |
 | `environment` |  |  | ✓ |
@@ -246,19 +246,19 @@ curl -X POST \
 | `property` | ✓ |  |  |
 | `last_build` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 注释
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `resource` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 属性
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `company` | ✓ |  |  |
 | `callbacks` |  |  |  |
@@ -268,11 +268,11 @@ curl -X POST \
 | `extensions` |  |  |  |
 | `extensions` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 规则组件
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `updated_with_extensions_package` | ✓ |  |  |
 | `updated_with_extension` | ✓ |  |  |
@@ -283,11 +283,11 @@ curl -X POST \
 | `rules` | ✓ | ✓ |  |
 | `revisions` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### 规则
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `libraries` |  |  |  |
 | `revisions` | ✓ |  |  |
@@ -298,7 +298,7 @@ curl -X POST \
 
 ### 秘密
 
-| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| 关系 | 必需 | 依裝載建立 | 依URL建立 |
 | :--- | :---: | :---: | :---: |
 | `property` | ✓ |  | ✓ |
 | `environment` | ✓ | ✓ |  |

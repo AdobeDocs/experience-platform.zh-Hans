@@ -11,9 +11,9 @@ ht-degree: 64%
 ---
 
 
-# 统一标记（测试版）{#administrative-tags}
+# 統一標籤（測試版）{#administrative-tags}
 
-* [统一标记概述（测试版）](overview.md)
-* 统一的标记UI {#ui}
-   * [管理标记](ui/managing-tags.md)
-   * [标记类别](ui/tags-categories.md)
+* [統一標籤總覽（測試版）](overview.md)
+* 統一標籤UI {#ui}
+   * [管理標籤](ui/managing-tags.md)
+   * [標籤類別](ui/tags-categories.md)

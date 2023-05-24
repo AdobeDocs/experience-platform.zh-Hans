@@ -1,5 +1,5 @@
 ---
-title: Adobe Experience Platform Debugger发行说明
+title: Adobe Experience Platform Debugger發行說明
 description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
@@ -11,57 +11,57 @@ ht-degree: 4%
 
 ---
 
-# Adobe Experience Platform Debugger发行说明
+# Adobe Experience Platform Debugger發行說明
 
 ## 1.4.0版 — 2022年10月3日
 
-* 为Web SDK混合实施添加了AEP保证调试支持。
-* 在同一AEP保证会话中添加了对多个选项卡的支持。
-* 修复了用户在登录后无法切换用户档案/组织的问题。
-   * 对于某些帐户，需要注销并重新登录才能切换组织。
-* 添加了在启用目标跟踪失败时的错误消息。
-* 更新了依赖关系。
+* 新增Web SDK混合實作的AEP保證偵錯支援。
+* 在同一AEP保證工作階段中新增支援多個標籤。
+* 修正使用者在登入後無法切換設定檔/組織的問題。
+   * 對於某些帳戶，需要登出並重新登入才能切換組織。
+* 新增啟用Target追蹤失敗時的錯誤訊息。
+* 更新相依性。
 
 ## 1.3.3版 — 2022年6月20日
 
-* 修复了无法从网络事件表中打开弹出窗口的问题。
-* 修复了阻止加载页面上的合金信息的问题。
+* 修正無法從網路事件表格開啟快顯視窗的問題。
+* 修正無法載入頁面上Alloy資訊的問題。
 
 ## 1.3.2版 — 2022年6月9日
 
-* 添加了用户登录时的默认头像。
-* 为日志中的JSON对象添加了语法突出显示。
+* 新增使用者登入時的預設頭像。
+* 新增語法醒目提示至記錄檔中的JSON物件。
 
 ## 1.3.1版 — 2022年5月24日
 
-* 更新了依赖关系。
-* 修复了无法启用后处理点击量的Analytics问题。
-* 修复了Debugger将附加到Adobe登录窗口的问题。
-* 修复了AT.js中日志消息未在Debugger中显示的问题。
+* 更新相依性。
+* 修正無法啟用處理後點選的Analytics問題。
+* 修正偵錯工具附加至Adobe登入視窗的問題。
+* 修正AT.js中記錄訊息未在Debugger中顯示的問題。
 
 ## 1.3.0版 — 2022年1月28日
 
-* 添加了关于链接以显示当前发行版本和说明。
-* 添加了用于查看Analytics请求的处理后点击的切换开关。 切换在Analytics部分中可用。
-* 修复了在调试器外部关闭会话时的远程调试会话问题。
-* 修复了在Web SDK边缘事务选项卡中显示的错误通知。
-* 修复了当调试器访问_satellite对象时，页面上的Adobe标记弃用警告。
-* 修复了在页面上未找到AppMeasurement实例的某些情况。
-* 修复了首次打开调试器窗口时发生的页面连接问题。
+* 新增「關於」連結以顯示最新版本和說明。
+* 新增切換功能，可檢視Analytics請求的處理後點選。 Analytics區段提供此切換選項。
+* 修正在偵錯工具外部關閉工作階段時的遠端偵錯工作階段問題。
+* 修正Web SDK Edge Transactions索引標籤中顯示的錯誤通知。
+* 修正偵錯工具存取_satellite物件時，頁面出現棄用警告的Adobe標籤。
+* 修正在頁面上找不到AppMeasurement例項的一些情況。
+* 修正第一次開啟偵錯工具視窗時發生的頁面連線問題。
 
 ## 1.2.0版 — 2021年10月26日
 
-* 在“网络”视图中显示所有浏览器选项卡中的事件。 要仅从当前选项卡中查看事件，请选择Debugger右下角的锁图标。
-* 更新了品牌策略。
+* 顯示網路檢視中所有瀏覽器標籤的事件。 若只要檢視目前標籤中的事件，請選取Debugger右下角的鎖定圖示。
+* 更新品牌。
 
 ## 1.1.0版 — 2021年10月5日
 
-* 远程调试可视化 — 在Adobe Experience Platform Web SDK >边缘事务部分中，将远程调试事件组织到可视化流程图中。
-* 启动新的远程调试会话时，需要页面上使用的Adobe Experience Platform Web SDK组织与登录组织相匹配。
-* 仅显示连接选项卡的边缘事务。 Target跟踪日志仍在“日志”>“Edge”部分中可用。
-* 允许为页面上Adobe Experience Platform Web SDK的每个实例单独覆盖数据流ID配置。 添加已启用调试的切换开关。
-* 修复了Adobe Target跟踪令牌并非总是随Adobe Experience Platform Web SDK的远程调试会话一起发送的问题。
+* 遠端偵錯視覺效果 — 在「Adobe Experience Platform Web SDK >邊緣交易」區段中，將遠端偵錯事件組織成視覺流程圖。
+* 啟動新的遠端偵錯工作階段時，需要頁面上使用的Adobe Experience Platform Web SDK組織符合登入組織。
+* 僅顯示已連線標籤的邊緣交易。 Target追蹤記錄仍可在「記錄> Edge」區段中取得。
+* 允許頁面上每個Adobe Experience Platform Web SDK執行個體的個別資料串流ID設定覆寫。 新增偵錯已啟用切換。
+* 修正Adobe Target追蹤權杖不一定會與Adobe Experience Platform Web SDK的遠端偵錯工作階段一起傳送的問題。
 
-## 1.0.0版 — 2021年5月5日
+## 1.0.0版（2021年5月5日）
 
-* Debugger的第一个主要版本。 用于替换Experience Cloud Debugger。
+* Experience Platform Debugger的第一個主要版本。 旨在取代Experience Cloud Debugger。

@@ -1,27 +1,27 @@
 ---
-title: Secrets端点
-description: 了解如何在Reactor API中对/secrets端点进行调用。
+title: 密碼端點
+description: 瞭解如何在Reactor API中呼叫/secrets端點。
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
 source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
 workflow-type: tm+mt
-source-wordcount: '1286'
-ht-degree: 7%
+source-wordcount: '1247'
+ht-degree: 4%
 
 ---
 
-# Secrets端点
+# 密碼端點
 
-密钥是仅存在于事件转发属性(具有 `platform` 属性设置为 `edge`)。 它们允许事件转发向另一个系统进行身份验证，以便进行安全数据交换。
+密碼是僅存在於事件轉送屬性（具有的屬性）中的資源 `platform` 屬性設定為 `edge`)。 它們允許事件轉送驗證至另一個系統以進行安全資料交換。
 
-本指南将向您展示如何调用 `/secrets` 端点。 有关不同密钥类型及其使用方法的详细说明，请参阅 [秘密](../guides/secrets.md) ，然后再返回本指南。
+本指南說明如何呼叫 `/secrets` Reactor API中的端點。 如需不同機密型別及其使用方式的詳細說明，請參閱以下文章的高層級概述： [秘密](../guides/secrets.md) 然後再返回本指南。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索属性的密钥列表 {#list-property}
+## 擷取屬性的密碼清單 {#list-property}
 
-您可以通过发出GET请求来列出属于某个资产的密钥。
+您可以透過提出GET請求來列出屬於某個屬性的秘密。
 
 **API格式**
 
@@ -31,9 +31,9 @@ GET /properties/{PROPERTY_ID}/secrets
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其机密的属性的ID。 |
+| `{PROPERTY_ID}` | 要列出其密碼的屬性的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -49,7 +49,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回属于该属性的机密列表。
+成功的回應會傳回屬於屬性的秘密清單。
 
 ```json
 {
@@ -115,9 +115,9 @@ curl -X GET \
 }
 ```
 
-## 检索环境的密钥列表 {#list-environment}
+## 擷取環境的秘密清單 {#list-environment}
 
-您可以通过发出GET请求来列出属于某个环境的密钥。
+您可以透過提出GET請求來列出屬於環境的秘密。
 
 **API格式**
 
@@ -127,9 +127,9 @@ GET /environments/{ENVIRONMENT_ID}/secrets
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 要列出其机密的环境的ID。 |
+| `{ENVIRONMENT_ID}` | 您要列出其密碼的環境的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -145,7 +145,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回属于该环境的机密列表。
+成功的回應會傳回屬於環境的秘密清單。
 
 ```json
 {
@@ -211,9 +211,9 @@ curl -X GET \
 }
 ```
 
-## 查个秘密 {#lookup}
+## 查詢密碼 {#lookup}
 
-您可以通过在GET请求的路径中包含密钥ID来查找密钥。
+您可以在GET請求的路徑中包含秘密的ID來查詢秘密。
 
 **API格式**
 
@@ -223,9 +223,9 @@ GET /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要查找的密钥的ID。 |
+| `{SECRET_ID}` | 您要查閱的秘密ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -241,7 +241,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回密钥的详细信息。
+成功的回應會傳回密碼的詳細資料。
 
 ```json
 {
@@ -296,13 +296,13 @@ curl -X GET \
 }
 ```
 
-## 创建密钥 {#create}
+## 建立密碼 {#create}
 
-您可以通过发出POST请求来创建密钥。
+您可以發出POST要求來建立秘密。
 
 >[!NOTE]
 >
->创建新密钥时，API会返回一个立即响应，其中包含该资源的信息。 同时，触发秘密交换任务以测试凭证交换是否正常工作。 此任务将异步处理，并将密钥的状态属性更新为 `succeeded` 或 `failed` 取决于结果。
+>當您建立新密碼時，API會傳回包含該資源資訊的立即回應。 同時，會觸發秘密交換工作，以測試認證交換是否正常運作。 系統會以非同步方式處理此工作，並將密碼的狀態屬性更新為 `succeeded` 或 `failed` 視結果而定。
 
 **API格式**
 
@@ -312,9 +312,9 @@ POST /properties/{PROPERTY_ID}/secrets
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要在下定义密钥的属性的ID。 |
+| `{PROPERTY_ID}` | 您要定義其下之密碼的屬性的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -351,17 +351,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 密钥的唯一描述性名称。 |
-| `type_of` | 密钥表示的身份验证凭据类型。 具有三个可接受的值：<ul><li>`token`:令牌字符串。</li><li>`simple-http`:用户名和密码。</li><li>`oauth2`:符合OAuth标准的凭据。</li></ul> |
-| `credentials` | 包含密钥凭据值的对象。 根据 `type_of` 属性中，必须提供不同的属性。 请参阅 [凭据](../guides/secrets.md#credentials) 有关每种类型要求的详细信息，请参阅“机密指南”。 |
-| `relationships.environment` | 首次创建环境时，必须将每个密钥与环境关联。 的 `data` 此属性中的对象必须包含 `id` 分配到的环境的密钥，以及 `type` 值 `environments`. |
-| `type` | 要创建的资源类型。 对于此调用，值必须为 `secrets`. |
+| `name` | 密碼的唯一描述性名稱。 |
+| `type_of` | 密碼代表的驗證認證型別。 有三個接受的值：<ul><li>`token`：權杖字串。</li><li>`simple-http`：使用者名稱和密碼。</li><li>`oauth2`：符合OAuth標準的認證。</li></ul> |
+| `credentials` | 包含密碼的認證值的物件。 根據 `type_of` 屬性，必須提供不同的屬性。 請參閱以下小節： [認證](../guides/secrets.md#credentials) 秘密指南，以瞭解每種型別需求的詳細資訊。 |
+| `relationships.environment` | 每個密碼在首次建立時都必須與環境相關聯。 此 `data` 此屬性內的物件必須包含 `id` 要指派給的秘密，以及 `type` 值 `environments`. |
+| `type` | 正在建立的資源型別。 對於此呼叫，值必須是 `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回密钥的详细信息。 请注意，根据密钥类型， `credentials` 可能是隐藏的。
+成功的回應會傳回密碼的詳細資料。 請注意，根據密碼的型別，某些屬性位於 `credentials` 可能已隱藏。
 
 ```json
 {
@@ -417,13 +417,13 @@ curl -X POST \
 }
 ```
 
-## 测试 `oauth2` 秘密 {#test}
+## 測試 `oauth2` 密碼 {#test}
 
 >[!NOTE]
 >
->此操作只能对具有 `type_of` 值 `oauth2`.
+>此作業只能對密碼執行 `type_of` 值 `oauth2`.
 
-您可以测试 `oauth2` 密钥，方法是将其ID包含在PATCH请求的路径中。 测试操作执行交换，并在 `test_exchange` 属性 `meta` 对象。 此操作不会更新密钥本身。
+您可以測試 `oauth2` 藉由在PATCH請求的路徑中包含其ID來保密。 測試操作會執行交換並將授權服務回應包含在 `test_exchange` 密碼的屬性 `meta` 物件。 此操作不會更新密碼本身。
 
 **API格式**
 
@@ -433,9 +433,9 @@ PATCH /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 的ID `oauth2` 要测试的秘密。 |
+| `{SECRET_ID}` | 的ID `oauth2` 您要測試的密碼。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -463,16 +463,16 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 必须包含 `type_of` 值为的属性 `oauth2`. |
-| `meta` | 必须包含 `action` 值为的属性 `test`. |
-| `id` | 您正在测试的密钥的ID。 此ID必须匹配请求路径中提供的ID。 |
-| `type` | 运行的资源类型。 必须设置为 `secrets`. |
+| `attributes` | 必須包含 `type_of` 屬性值為的屬性 `oauth2`. |
+| `meta` | 必須包含 `action` 屬性值為的屬性 `test`. |
+| `id` | 您正在測試的秘密ID。 這必須符合請求路徑中提供的ID。 |
+| `type` | 正在操作的資源型別。 必須設定為 `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回密钥的详细信息，授权服务的响应包含在 `meta.test_exchange`.
+成功的回應會傳回機密的詳細資料，而授權服務的回應包含在 `meta.test_exchange`.
 
 ```json
 { 
@@ -538,9 +538,9 @@ curl -X PATCH \
 }
 ```
 
-## 重试密钥 {#retry}
+## 重試密碼 {#retry}
 
-重试密钥是手动触发密钥交换的操作。 您可以通过在密钥请求的路径中包含其ID来重试PATCH。
+重試密碼是手動觸發密碼交換的動作。 您可以在PATCH請求的路徑中包含密碼的ID來重試密碼。
 
 **API格式**
 
@@ -550,9 +550,9 @@ PATCH /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要重试的密钥的ID。 |
+| `{SECRET_ID}` | 您要重試的密碼ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -580,16 +580,16 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 必须包含 `type_of` 与要更新的密钥匹配的属性(`token`, `simple-http`或 `oauth2`)。 |
-| `meta` | 必须包含 `action` 值为的属性 `retry`. |
-| `id` | 正在重试的密钥的ID。 此ID必须匹配请求路径中提供的ID。 |
-| `type` | 运行的资源类型。 必须设置为 `secrets`. |
+| `attributes` | 必須包含 `type_of` 與要更新的密碼相符的屬性(`token`， `simple-http`，或 `oauth2`)。 |
+| `meta` | 必須包含 `action` 屬性值為的屬性 `retry`. |
+| `id` | 您正在重試的秘密ID。 這必須符合請求路徑中提供的ID。 |
+| `type` | 正在操作的資源型別。 必須設定為 `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功响应会返回密钥的详细信息，其状态将重置为 `pending`. 交换完成后，密钥的状态将更新为 `succeeded` 或 `failed` 取决于结果。
+成功的回應會傳回密碼的詳細資料，其狀態會重設為 `pending`. 交換完成後，密碼的狀態將更新為 `succeeded` 或 `failed` 視結果而定。
 
 ```json
 {
@@ -644,11 +644,11 @@ curl -X PATCH \
 }
 ```
 
-## 重新授权 `oauth2-google` 秘密 {#reauthorize}
+## 重新授權 `oauth2-google` 密碼 {#reauthorize}
 
-每个 `oauth2-google` 密码包含 `meta.authorization_url_expires_at` 属性，指示授权URL何时过期。 此后，必须重新授权该密钥，才能续订身份验证过程。
+每個 `oauth2-google` 密碼包含 `meta.authorization_url_expires_at` 指出授權URL到期時間的屬性。 在這之後，密碼必須重新授權，才能更新驗證程式。
 
-重新授权 `oauth2-google` 机密，请PATCH有关机密。
+若要重新授權 `oauth2-google` secret，對有問題的密碼提出PATCH要求。
 
 **API格式**
 
@@ -658,11 +658,11 @@ PATCH /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 的 `id` 要重新授权的秘密。 |
+| `{SECRET_ID}` | 此 `id` 您想要重新授權的密碼。 |
 
 **请求**
 
-的 `data` 请求有效负载中的对象必须包含 `meta.action` 属性设置为 `reauthorize`.
+此 `data` 請求承載中的物件必須包含 `meta.action` 屬性設定為 `reauthorize`.
 
 ```shell
 curl -X PATCH \
@@ -688,7 +688,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回更新密钥的详细信息。 从此处，必须复制并粘贴 `meta.authorization_url` 浏览器以完成授权过程。
+成功的回應會傳回更新密碼的詳細資料。 您必須從此處複製並貼上 `meta.authorization_url` 放入瀏覽器以完成授權程式。
 
 ```json
 {
@@ -751,15 +751,15 @@ curl -X PATCH \
 }
 ```
 
-## 删除密钥 {#delete}
+## 刪除密碼 {#delete}
 
-您可以删除密钥，方法是将密钥的ID包含在DELETE请求的路径中。 这是一个硬删除操作，会立即生效，不需要库重新发布。
+您可以在DELETE請求的路徑中包含秘密的ID來刪除秘密。 這是硬式刪除，會立即生效，且不需要重新發佈程式庫。
 
-此操作会从与其相关的环境中删除密钥，并删除基础资源。
+此操作會從與其相關的環境中移除密碼，並刪除基礎資源。
 
 >[!WARNING]
 >
->如果已部署的规则引用已删除的密钥，则这些规则将立即停止运行。 引用此密钥的任何数据元素必须在以后更新或删除。
+>如果您有任何參考已刪除機密的已部署規則，這些規則將立即停止運作。 任何參考此密碼的資料元素都必須在之後更新或移除。
 
 **API格式**
 
@@ -769,9 +769,9 @@ DELETE /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要删除的密钥的ID。 |
+| `{SECRET_ID}` | 您要刪除的密碼的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -787,17 +787,17 @@ curl -X DELETE \
 
 **响应**
 
-成功响应会返回HTTP状态204（无内容）和空响应主体，表示该密钥已从系统中删除。
+成功的回應會傳回HTTP狀態204 （無內容）和空白的回應內文，指出密碼已從系統中刪除。
 
-## 列出机密的注释 {#notes}
+## 列出密碼的備註 {#notes}
 
-Reactor API允许您向特定资源添加注释，包括密钥。 注释是对资源行为没有影响的文本批注，可用于各种用例。
+Reactor API可讓您向特定資源新增附註，包括秘密。 附註是對資源行為沒有影響的文字註釋，可用於各種使用案例。
 
 >[!NOTE]
 >
->请参阅 [注释终端指南](./notes.md) 有关如何为Reactor API资源创建和编辑注释的详细信息。
+>請參閱 [附註端點指南](./notes.md) 瞭解如何建立和編輯Reactor API資源的附註。
 
-您可以通过发出GET请求来检索与密钥相关的所有注释。
+您可以透過提出GET要求來擷取與秘密相關的所有附註。
 
 **API格式**
 
@@ -807,9 +807,9 @@ GET /secrets/{SECRET_ID}/notes
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要列出其注释的密钥的ID。 |
+| `{SECRET_ID}` | 您要列出其附註的密碼ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -825,7 +825,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回属于该密钥的注释列表。
+成功的回應會傳回屬於密碼的附註清單。
 
 ```json
 {
@@ -868,15 +868,15 @@ curl -X GET \
 }
 ```
 
-## 检索密钥的相关资源 {#related}
+## 擷取密碼的相關資源 {#related}
 
-以下调用演示了如何检索密钥的相关资源。 When [查了个秘密](#lookup)，则这些关系列在 `relationships` 属性。
+下列呼叫示範如何擷取密碼的相關資源。 時間 [查詢秘密](#lookup)，這些關係會列在 `relationships` 屬性。
 
-请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
+請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
 
-### 查找相关环境以获取密钥 {#environment}
+### 查詢密碼的相關環境 {#environment}
 
-您可以通过附加 `/environment` 到GET请求的路径。
+您可以透過附加來查詢使用秘密的環境 `/environment` 到GET請求的路徑。
 
 **API格式**
 
@@ -886,9 +886,9 @@ GET /secrets/{SECRET_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要查找其环境的密钥的ID。 |
+| `{SECRET_ID}` | 您要查詢其環境的密碼的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -904,7 +904,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回环境的详细信息。
+成功的回應會傳迴環境的詳細資訊。
 
 ```json
 {
@@ -983,9 +983,9 @@ curl -X GET \
 }
 ```
 
-### 查找密钥的相关属性 {#property}
+### 查詢密碼的相關屬性 {#property}
 
-您可以通过附加 `/property` 到GET请求的路径。
+您可以透過附加來查詢擁有秘密的屬性 `/property` 到GET請求的路徑。
 
 **API格式**
 
@@ -995,9 +995,9 @@ GET /secrets/{SECRET_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 要查找其资产的密钥的ID。 |
+| `{SECRET_ID}` | 您要查詢其屬性的密碼ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -1013,7 +1013,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回属性的详细信息。
+成功的回應會傳回屬性的詳細資料。
 
 ```json
 {

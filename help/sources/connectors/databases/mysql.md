@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；MySQL;mysql;MySQL;MySQL
+keywords: Experience Platform；首頁；熱門主題；MySQL；mysql；My sql；My SQL
 solution: Experience Platform
-title: MySQL Source Connector概述
-description: 了解如何使用API或用户界面将MySQL连接到Adobe Experience Platform。
+title: MySQL來源聯結器總覽
+description: 瞭解如何使用API或使用者介面將MySQL連線至Adobe Experience Platform。
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 0%
 
 ---
 
-# MySQL连接器
+# MySQL聯結器
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-[!DNL Experience Platform] 支持从第三方数据库摄取数据。 [!DNL Platform] 可以连接到不同类型的数据库，如关系数据库、 NoSQL数据库或data warehouse。 对数据库提供程序的支持包括MySQL。
+[!DNL Experience Platform] 支援從第三方資料庫擷取資料。 [!DNL Platform] 可以連線到不同型別的資料庫，例如關聯式、NoSQL或資料倉儲。 支援的資料庫提供者包括MySQL。
 
-## IP地址允许列表
+## IP位址允許清單
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
 
-以下文档提供了如何将MySQL连接到 [!DNL Platform] 使用API或用户界面：
+以下檔案提供如何將MySQL連線至的相關資訊 [!DNL Platform] 使用API或使用者介面：
 
-## 将MySQL连接到 [!DNL Platform] 使用API
+## 將MySQL連線到 [!DNL Platform] 使用API
 
-- [使用流服务API创建MySQL基连接](../../tutorials/api/create/databases/mysql.md)
-- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
-- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
+- [使用Flow Service API建立MySQL基本連線](../../tutorials/api/create/databases/mysql.md)
+- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
+- [使用流程服務API為資料庫來源建立資料流](../../tutorials/api/collect/database-nosql.md)
 
-## 将MySQL连接到 [!DNL Platform] 使用UI
+## 將MySQL連線到 [!DNL Platform] 使用UI
 
-- [在UI中创建MySQL源连接](../../tutorials/ui/create/databases/mysql.md)
-- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
+- [在使用者介面中建立MySQL來源連線](../../tutorials/ui/create/databases/mysql.md)
+- [在UI中建立資料庫來源連線的資料流](../../tutorials/ui/dataflow/databases.md)

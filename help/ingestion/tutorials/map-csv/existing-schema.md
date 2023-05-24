@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；
+keywords: Experience Platform；首頁；熱門主題；對應csv；對應csv檔案；將csv檔案對應到xdm；將csv對應到xdm；ui指南；
 solution: Experience Platform
-title: 将CSV文件映射到现有XDM架构
+title: 將CSV檔案對應至現有的XDM結構描述
 type: Tutorial
-description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到现有XDM架构。
+description: 本教學課程說明如何使用Adobe Experience Platform使用者介面將CSV檔案對應至現有的XDM結構描述。
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -12,112 +12,112 @@ ht-degree: 1%
 
 ---
 
-# 将CSV文件映射到现有XDM架构
+# 將CSV檔案對應至現有的XDM結構描述
 
 >[!NOTE]
 >
->本文档介绍如何将CSV文件映射到现有XDM架构。 有关如何使用AI生成的架构推荐工具（目前为测试版）的信息，请参阅 [使用机器学习推荐映射CSV文件](./recommendations.md).
+>本文介紹如何將CSV檔案對應至現有的XDM結構描述。 如需有關如何使用AI產生的結構描述建議工具（目前為測試版）的資訊，請參閱以下檔案： [使用機器學習建議對應CSV檔案](./recommendations.md).
 
-要将CSV数据摄取到 [!DNL Adobe Experience Platform]，则数据必须映射到 [!DNL Experience Data Model] (XDM)架构。 本教程介绍如何使用 [!DNL Platform] 用户界面。
+為了將CSV資料擷取到 [!DNL Adobe Experience Platform]，資料必須對應至 [!DNL Experience Data Model] (XDM)結構描述。 本教學課程說明如何使用 [!DNL Platform] 使用者介面。
 
 ## 快速入门
 
-本教程需要对的以下组件有一定的了解 [!DNL Platform]:
+本教學課程需要您深入瞭解下列元件 [!DNL Platform]：
 
-- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
-- [批量摄取](../../batch-ingestion/overview.md):方法 [!DNL Platform] 从用户提供的数据文件中摄取数据。
-- [Adobe Experience Platform数据准备](../../batch-ingestion/overview.md):一组功能，允许您映射和转换摄取的数据以符合XDM模式。 有关 [数据准备函数](../../../data-prep/functions.md) 与架构映射特别相关。
+- [[!DNL Experience Data Model (XDM System)]](../../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。
+- [批次擷取](../../batch-ingestion/overview.md)：用來執行 [!DNL Platform] 從使用者提供的資料檔擷取資料。
+- [Adobe Experience Platform資料準備](../../batch-ingestion/overview.md)：功能套件，可讓您對應及轉換所擷取的資料，以符合XDM結構描述。 上的檔案 [資料準備函式](../../../data-prep/functions.md) 與結構描述對應特別相關。
 
-此外，本教程还要求您已创建数据集，以将CSV数据摄取到中。 有关在UI中创建数据集的步骤，请参阅 [数据摄取教程](../ingest-batch-data.md).
+本教學課程也要求您已建立資料集以將CSV資料擷取到。 如需在UI中建立資料集的步驟，請參閱 [資料擷取教學課程](../ingest-batch-data.md).
 
-## 选择目标
+## 選擇目的地
 
-登录到 [[!DNL Adobe Experience Platform]](https://platform.adobe.com) 然后选择 **[!UICONTROL 工作流]** 从左侧导航栏访问 **[!UICONTROL 工作流]** 工作区。
+登入 [[!DNL Adobe Experience Platform]](https://platform.adobe.com) 然後選取 **[!UICONTROL 工作流程]** 以存取 **[!UICONTROL 工作流程]** 工作區。
 
-从 **[!UICONTROL 工作流]** 屏幕，选择 **[!UICONTROL 将CSV映射到XDM架构]** 下 **[!UICONTROL 数据摄取]** ，然后选择 **[!UICONTROL Launch]**.
+從 **[!UICONTROL 工作流程]** 畫面，選取 **[!UICONTROL 將CSV對應至XDM結構描述]** 在 **[!UICONTROL 資料擷取]** 區段，然後選取 **[!UICONTROL Launch]**.
 
 ![](../../images/tutorials/map-a-csv-file/workflows.png)
 
-的 **[!UICONTROL 将CSV映射到XDM架构]** 此时会显示工作流，从 **[!UICONTROL 目标]** 中。 为要摄取到的入站数据选择数据集。 您可以使用现有数据集，也可以创建新数据集。
+此 **[!UICONTROL 將CSV對應至XDM結構描述]** 工作流程隨即出現，從 **[!UICONTROL 目的地]** 步驟。 選擇要將傳入資料擷取的資料集。 您可以使用現有的資料集或建立新的資料集。
 
-**使用现有数据集**
+**使用現有的資料集**
 
-要将CSV数据摄取到现有数据集，请选择 **[!UICONTROL 使用现有数据集]**. 您可以使用搜索函数检索现有数据集，也可以通过滚动面板中现有数据集的列表来检索现有数据集。
+若要將CSV資料內嵌至現有資料集，請選取 **[!UICONTROL 使用現有的資料集]**. 您可以使用搜尋函式或捲動面板中的現有資料集清單，擷取現有資料集。
 
 ![](../../images/tutorials/map-a-csv-file/use-existing-dataset.png)
 
-要将CSV数据摄取到新数据集，请选择 **[!UICONTROL 创建新数据集]** 并在提供的字段中输入数据集的名称和描述。 使用搜索函数或通过滚动浏览提供的架构列表来选择架构。 选择 **[!UICONTROL 下一个]** 以继续。
+若要將CSV資料內嵌至新資料集，請選取「 」 **[!UICONTROL 建立新資料集]** 並在提供的欄位中輸入資料集的名稱和說明。 使用搜尋功能或捲動提供的結構描述清單，以選取結構描述。 選取 **[!UICONTROL 下一個]** 以繼續進行。
 
 ![](../../images/tutorials/map-a-csv-file/create-new-dataset.png)
 
-## 添加数据
+## 新增資料
 
-的 **[!UICONTROL 添加数据]** 中。 将CSV文件拖放到提供的空间中，或选择 **[!UICONTROL 选择文件]** 来手动输入CSV文件。
+此 **[!UICONTROL 新增資料]** 步驟隨即顯示。 將CSV檔案拖放至提供的空間，或選取 **[!UICONTROL 選擇檔案]** 以手動輸入您的CSV檔案。
 
 ![](../../images/tutorials/map-a-csv-file/add-data.png)
 
-的 **[!UICONTROL 示例数据]** 文件上传后会显示部分，其中显示了前十行数据。 确认数据已按预期上载后，请选择 **[!UICONTROL 下一个]**.
+此 **[!UICONTROL 範例資料]** 區段會在檔案上傳後顯示，並顯示前十列資料。 在您確認資料已如預期上傳後，請選取 **[!UICONTROL 下一個]**.
 
 ![](../../images/tutorials/map-a-csv-file/sample-data.png)
 
-## 将CSV字段映射到XDM架构字段
+## 將CSV欄位對應至XDM結構描述欄位
 
-的 **[!UICONTROL 映射]** 中。 CSV文件的列列在 **[!UICONTROL 源字段]**，其对应的XDM架构字段列在 **[!UICONTROL 目标字段]**.
+此 **[!UICONTROL 對應]** 步驟隨即顯示。 CSV檔案的欄會列在 **[!UICONTROL 來源欄位]**，其對應的XDM結構描述欄位列於 **[!UICONTROL 目標欄位]**.
 
-[!DNL Platform] 根据您选择的目标架构或数据集，自动为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
+[!DNL Platform] 根據您選取的目標結構描述或資料集，自動為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。
 
 ![](../../images/tutorials/map-a-csv-file/mapping-with-suggestions.png)
 
-要接受所有自动生成映射值，请选中标记为“[!UICONTROL 接受所有目标字段]&quot;
+若要接受所有自動產生的對應值，請選取標示為「[!UICONTROL 接受所有目標欄位]「。
 
 ![](../../images/tutorials/map-a-csv-file/filled-mapping-with-suggestions.png)
 
-有时，源架构有多个推荐可用。 发生这种情况时，映射卡会显示最突出的推荐，后跟一个蓝色圆圈，其中包含可用的其他推荐数量。 选择灯泡图标将显示其他推荐的列表。 您可以选中要映射到的推荐旁边的复选框，以选择其中一个替代推荐。
+有時候，來源結構描述會提供多個建議。 發生此情況時，對應卡片會顯示最顯著的建議，後面接著一個藍色圓圈，其中包含可用的其他建議數量。 選取燈泡圖示將顯示其他建議的清單。 您可以選取您要對應至的建議旁邊的核取方塊，以選擇其中一個替代建議。
 
 ![](../../images/tutorials/map-a-csv-file/multiple-recommendations.png)
 
-或者，您也可以选择手动将源架构映射到目标架构。 将鼠标悬停在要映射的源架构上，然后选择加号图标。
+或者，您可以選擇手動將來源結構描述對應到目標結構描述。 暫留在您要對應的來源結構描述上，然後選取加號圖示。
 
 ![](../../images/tutorials/map-a-csv-file/mapping-with-suggestions-and-buttons.png)
 
-的 **[!UICONTROL 将源映射到目标字段]** 弹出窗口。 从此处，您可以选择要映射的字段，然后 **[!UICONTROL 保存]** 添加新映射。
+此 **[!UICONTROL 將來源對應到目標欄位]** 彈出視窗隨即顯示。 從這裡，您可以選取要對應的欄位，然後 **[!UICONTROL 儲存]** 以新增對應。
 
 ![](../../images/tutorials/map-a-csv-file/manual-mapping.png)
 
-如果要删除其中一个映射，请将鼠标悬停在该映射上，然后选择减号图标。
+如果要移除其中一個對應，請將滑鼠指標暫留在該對應上，然後選取減號圖示。
 
-### 添加计算字段 {#add-calculated-field}
+### 新增計算欄位 {#add-calculated-field}
 
-计算量度字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和说明，以便更便于引用。
+計算欄位允許根據輸入結構描述中的屬性建立值。 然後可以將這些值指派給目標結構描述中的屬性，並提供名稱和說明，以便更輕鬆地參考。
 
-选择 **[!UICONTROL 添加计算字段]** 按钮以继续。
+選取 **[!UICONTROL 新增計算欄位]** 按鈕以繼續。
 
 ![](../../images/tutorials/map-a-csv-file/add-calculated-field.png)
 
-的 **[!UICONTROL 创建计算字段]** 中。 左侧对话框包含计算字段中支持的字段、函数和运算符。 选择一个选项卡以开始向表达式编辑器添加函数、字段或运算符。
+此 **[!UICONTROL 建立計算欄位]** 面板隨即顯示。 左側對話方塊包含計算欄位支援的欄位、函式和運運算元。 選取其中一個標籤，以開始將函式、欄位或運運算元新增至運算式編輯器。
 
 ![](../../images/tutorials/map-a-csv-file/create-calculated-fields.png)
 
 | 选项卡 | 描述 |
 | --------- | ----------- |
-| 字段 | 字段选项卡列出了源架构中可用的字段和属性。 |
-| 函数 | 函数选项卡列出了可用于转换数据的函数。 要进一步了解可在计算字段中使用的函数，请阅读 [使用数据准备（映射器）函数](../../../data-prep/functions.md). |
-| 操作员 | 运算符选项卡列出了可用于转换数据的运算符。 |
+| 字段 | 欄位索引標籤會列出來源結構描述中可用的欄位和屬性。 |
+| 函数 | 函式標籤會列出可用來轉換資料的函式。 若要進一步瞭解您可以在計算欄位中使用的函式，請閱讀以下指南： [使用資料準備（對應程式）函式](../../../data-prep/functions.md). |
+| 操作员 | 運運算元索引標籤會列出可用於轉換資料的運運算元。 |
 
-您可以使用中心的表达式编辑器手动添加字段、函数和运算符。 选择编辑器以开始创建表达式。
+您可以使用中央的運算式編輯器，手動新增欄位、函式和運運算元。 選取編輯器以開始建立運算式。
 
 ![](../../images/tutorials/map-a-csv-file/create-calculated-field.png)
 
-选择 **[!UICONTROL 保存]** 以继续。
+選取 **[!UICONTROL 儲存]** 以繼續進行。
 
-映射屏幕将重新显示您新创建的源字段。 应用相应的目标字段并选择 **[!UICONTROL 完成]** 以完成映射。
+對應畫面會重新出現，並顯示您新建立的來源欄位。 套用適當的對應目標欄位並選取 **[!UICONTROL 完成]** 以完成對應。
 
 ![](../../images/tutorials/map-a-csv-file/new-calculated-field.png)
 
 ## 监测数据提取
 
-映射和创建CSV文件后，您可以监控通过其摄取的数据。 有关监控数据摄取的更多信息，请参阅 [监控数据摄取](../../../ingestion/quality/monitor-data-ingestion.md).
+在對應和建立CSV檔案後，您可以監視透過它擷取的資料。 如需監控資料擷取的詳細資訊，請參閱以下教學課程： [監控資料擷取](../../../ingestion/quality/monitor-data-ingestion.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到 [!DNL Platform]. 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile]. 请参阅 [[!DNL Real-Time Customer Profile]](../../../profile/home.md) 以了解更多信息。
+依照本教學課程所述，您已成功將一般CSV檔案對應至XDM結構描述，並將其內嵌至 [!DNL Platform]. 此資料現在可供下游使用 [!DNL Platform] 服務，例如 [!DNL Real-Time Customer Profile]. 請參閱「 」概觀 [[!DNL Real-Time Customer Profile]](../../../profile/home.md) 以取得詳細資訊。

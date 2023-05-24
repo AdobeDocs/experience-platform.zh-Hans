@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；PQL;PQL；配置文件查询语言；聚合函数；聚合；
+keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；pql；PQL；設定檔查詢語言；彙總函式；彙總；
 solution: Experience Platform
-title: PQL聚合函数
-description: 聚合函数用于在配置文件查询语言(PQL)数组内将多个值组合在一起，以形成单个摘要值。
+title: PQL彙總函式
+description: 彙總函式用於將設定檔查詢語言(PQL)陣列中的多個值群組在一起，以形成單一摘要值。
 exl-id: 6c0c0f6d-98c5-4b5d-b440-3e5e18c0f34b
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 6%
 
 # 聚合函数
 
-聚合函数用于将内的多个值组合在一起 [!DNL Profile Query Language] (PQL)数组以形成单个摘要值。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+彙總函式用於將內的多個值群組在一起 [!DNL Profile Query Language] (PQL)陣列來形成單一摘要值。 如需其他PQL函式的詳細資訊，請參閱 [[!DNL Profile Query Language] 概觀](./overview.md).
 
-## 计数
+## 計數
 
-的 `count` 函数返回给定数组中的元素数。
+此 `count` 函式傳回給定陣列中的元素數。
 
 **格式**
 
@@ -27,15 +27,15 @@ ht-degree: 6%
 
 **示例**
 
-以下PQL查询返回数组中的订单数。
+下列PQL查詢會傳回陣列中的訂單數。
 
 ```sql
 orders.count()
 ```
 
-## 总和
+## 總和
 
-的 `sum` 函数会返回数组中所有选定值的总和。
+此 `sum` 函式會傳回陣列中所有選取值的總和。
 
 **格式**
 
@@ -45,7 +45,7 @@ orders.count()
 
 **示例**
 
-以下PQL查询返回所有订单价格的总和。
+下列PQL查詢會傳回所有訂單價格的總和。
 
 ```sql
 orders.sum(order.price)
@@ -53,7 +53,7 @@ orders.sum(order.price)
 
 ## 平均
 
-的 `average` 函数返回数组中所有选定值的算术平均值。
+此 `average` 函式傳回陣列中所有選取值的算術平均值。
 
 **格式**
 
@@ -63,15 +63,15 @@ orders.sum(order.price)
 
 **示例**
 
-以下PQL查询返回所有订单的平均价格。
+下列PQL查詢會傳回所有訂單的平均價格。
 
 ```sql
 orders.average(order.price)
 ```
 
-## 最小
+## 最小值
 
-的 `min` 函数返回数组中所有选定值的最小值。
+此 `min` 函式傳回陣列中所有選取值的最小值。
 
 **格式**
 
@@ -81,7 +81,7 @@ orders.average(order.price)
 
 **示例**
 
-以下PQL查询返回所有订单的最低价格。
+下列PQL查詢會傳回所有訂單的最低價格。
 
 ```sql
 orders.min(order.price)
@@ -89,7 +89,7 @@ orders.min(order.price)
 
 ## 最大值
 
-的 `max` 函数返回数组中所有选定值的最大值。
+此 `max` 函式會傳回陣列中所有選取值的最大值。
 
 **格式**
 
@@ -99,7 +99,7 @@ orders.min(order.price)
 
 **示例**
 
-以下PQL查询返回所有订单的最高价格。
+下列PQL查詢會傳回所有訂單的最高價格。
 
 ```sql
 orders.max(order.price)
@@ -107,4 +107,4 @@ orders.max(order.price)
 
 ## 后续步骤
 
-现在，您已经了解了聚合函数，接下来可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语言概述](./overview.md).
+現在您已瞭解彙總函式，可以在PQL查詢中使用它們。 如需其他PQL功能的詳細資訊，請參閱 [設定檔查詢語言概觀](./overview.md).

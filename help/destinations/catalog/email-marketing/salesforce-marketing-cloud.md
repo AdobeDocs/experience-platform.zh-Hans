@@ -1,73 +1,73 @@
 ---
-keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Salesforce;Salesforce目标
-title: SalesforceMarketing Cloud连接
-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，允许您为访客和客户构建和自定义历程，以个性化其体验。
+keywords: 電子郵件；電子郵件；電子郵件；電子郵件目的地；salesforce；salesforce目的地
+title: SalesforceMarketing Cloud連線
+description: SalesforceMarketing Cloud是數位行銷套裝，先前稱為ExactTarget，可讓您建置和自訂訪客和客戶的歷程，以個人化其體驗。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
 source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
 workflow-type: tm+mt
-source-wordcount: '658'
-ht-degree: 2%
+source-wordcount: '655'
+ht-degree: 1%
 
 ---
 
-# [!DNL (Files) Salesforce Marketing Cloud] 连接
+# [!DNL (Files) Salesforce Marketing Cloud] 連線
 
 ## 概述 {#overview}
 
-[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一个以前称为ExactTarget的数字营销套件，允许您构建和自定义访客和客户的历程，以个性化其体验。
+[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是先前稱為ExactTarget的數位行銷套裝，可讓您為訪客和客戶建置和自訂歷程，以個人化其體驗。
 
-将区段数据发送到 [!DNL Salesforce Marketing Cloud]，则必须先 [连接目标](#connect-destination) 在平台中，然后 [设置数据导入](#import-data-into-salesforce) 从您的存储位置到 [!DNL Salesforce Marketing Cloud].
+若要傳送區段資料至 [!DNL Salesforce Marketing Cloud]，您必須先 [連線目的地](#connect-destination) 在Platform中，然後 [設定資料匯入](#import-data-into-salesforce) 從您的儲存位置移至 [!DNL Salesforce Marketing Cloud].
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段的所有成員，以及所需的結構描述欄位（例如：電子郵件地址、電話號碼、姓氏），如&lt;客戶名稱>的「選取設定檔屬性」畫面中所選。 [目的地啟用工作流程](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 匯出頻率 | **[!UICONTROL 批次]** | 批次目的地會以三、六、八、十二或二十四小時的增量將檔案匯出至下游平台。 深入瞭解 [批次檔案型目的地](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## IP地址允许列表 {#allow-list}
+## IP位址允許清單 {#allow-list}
 
-通过SFTP存储设置电子邮件营销目标时，Adobe建议您向允许列表添加某些IP范围。
+使用SFTP儲存設定電子郵件行銷目的地時，Adobe建議您將特定IP範圍新增至允許清單。
 
-请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
+請參閱 [雲端儲存空間目的地的IP位址允許清單](../cloud-storage/ip-address-allow-list.md) 如果您需要將AdobeIP新增至允許清單。
 
-## 连接到目标 {#connect}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
 
-此目标支持以下连接类型：
+此目的地支援下列連線型別：
 
-* **[!UICONTROL 带密码的SFTP]**
-* **[!UICONTROL 具有SSH密钥的SFTP]**
+* **[!UICONTROL 使用密碼的SFTP]**
+* **[!UICONTROL 使用SSH金鑰的SFTP]**
 
-### 连接参数 {#parameters}
+### 連線引數 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
 
-* 对于 **[!UICONTROL 带密码的SFTP]** 连接，您必须提供：
+* 對象 **[!UICONTROL 使用密碼的SFTP]** 連線，您必須提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
    * [!UICONTROL 密码]
-* 对于 **[!UICONTROL 具有SSH密钥的SFTP]** 连接，您必须提供：
+* 對象 **[!UICONTROL 使用SSH金鑰的SFTP]** 連線，您必須提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
-   * [!UICONTROL SSH密钥]
+   * [!UICONTROL SSH金鑰]
 
-* 或者，您也可以将RSA格式的公钥附加到 **[!UICONTROL 键]** 中。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-* **[!UICONTROL 名称]**:为您的目标选择相关名称。
-* **[!UICONTROL 描述]**:输入目标的描述。
-* **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV文件。
-* **[!UICONTROL 文件格式]**:选择 **CSV** 将CSV文件导出到存储位置。
+* 或者，您可以附加RSA格式的公開金鑰，將PGP/GPG的加密新增至匯出的檔案，位於 **[!UICONTROL 金鑰]** 區段。 您的公開金鑰必須寫成 [!DNL Base64] 編碼字串。
+* **[!UICONTROL 名稱]**：為您的目的地選擇相關名稱。
+* **[!UICONTROL 說明]**：輸入目的地的說明。
+* **[!UICONTROL 資料夾路徑]**：提供Platform會將匯出資料儲存為CSV檔案的儲存位置路徑。
+* **[!UICONTROL 檔案格式]**：選取 **CSV** 以將CSV檔案匯出至您的儲存位置。
 
 <!--
 
@@ -77,28 +77,28 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 -->
 
-### 启用警报 {#enable-alerts}
+### 啟用警示 {#enable-alerts}
 
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-## 将区段激活到此目标 {#activate}
+## 啟用此目的地的區段 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+另請參閱 [啟用對象資料以批次設定檔匯出目的地](../../ui/activate-batch-profile-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-### 目标属性 {#destination-attributes}
+### 目的地屬性 {#destination-attributes}
 
-在将区段激活到此目标时，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅 [将受众激活到电子邮件营销目标时的最佳实践](overview.md#best-practices).
+啟用區段至此目的地時，Adobe建議您從 [聯合結構描述](../../../profile/home.md#profile-fragments-and-union-schemas). 選取唯一識別碼以及您要匯出至目的地的任何其他XDM欄位。 如需詳細資訊，請參閱 [在電子郵件行銷目的地啟用對象時的最佳實務](overview.md#best-practices).
 
-## 导出的数据 {#exported-data}
+## 匯出的資料 {#exported-data}
 
-对于 [!DNL Salesforce Marketing Cloud] 目标，平台会创建 `.csv` 文件。 有关文件的更多信息，请参阅 [验证区段激活](../../ui/activate-batch-profile-destinations.md#verify) 区段激活教程中的。
+對象 [!DNL Salesforce Marketing Cloud] 目的地，平台會建立 `.csv` 檔案的儲存位置。 如需檔案的詳細資訊，請參閱 [驗證區段啟用](../../ui/activate-batch-profile-destinations.md#verify) 區段啟動教學課程中的。
 
-## 设置数据导入到 [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
+## 設定將資料匯入到 [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-连接后 [!DNL Platform] 至 [!DNL SFTP] 存储中，您必须将数据从存储位置导入到 [!DNL Salesforce Marketing Cloud]. 要了解如何完成此操作，请参阅 [将订阅者从文件导入Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) 在 [!DNL Salesforce Help Center].
+連線之後 [!DNL Platform] 至您的 [!DNL SFTP] 儲存，您必須設定從儲存位置匯入到中的資料 [!DNL Salesforce Marketing Cloud]. 若要瞭解如何完成此作業，請參閱 [將訂閱者從檔案匯入Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) 在 [!DNL Salesforce Help Center].

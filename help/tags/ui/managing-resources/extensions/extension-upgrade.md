@@ -1,20 +1,21 @@
 ---
-title: 扩展升级
-description: 了解扩展升级的打包和显示在扩展目录中的方式。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+title: 擴充功能升級
+description: 瞭解擴充功能升級在擴充功能目錄中如何封裝和呈現。
+exl-id: 4a7e0c5c-4bd1-4fb8-8509-f88a0aa42ac4
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '682'
-ht-degree: 68%
+ht-degree: 76%
 
 ---
 
-# 扩展升级
+# 擴充功能升級
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-扩展开发人员会不断向其扩展中添加新功能，并且还经常修复错误。这些更新将打包到扩展的新版本中，并在扩展目录中作为升级提供。
+扩展开发人员会不断向其扩展中添加新功能，并且还经常修复错误。這些更新會封裝成新版本的擴充功能，並可在擴充功能目錄中提供作為升級版本。
 
 ## 扩展目录
 
@@ -24,7 +25,7 @@ ht-degree: 68%
 
 ## 升级通知
 
-如果您在资产上安装了扩展，并且目录中提供了较新版本，则当您查看Installed Extensions页面时，将在扩展卡片上看到[!UICONTROL Upgrade]按钮。
+當您已安裝至屬性的擴充功能，且目錄中有較新版本時，您會看到 [!UICONTROL 升級] 按鈕時，可瀏覽擴充功能卡上的資訊。
 
 编辑该扩展提供的资源时，您也会看到通知。
 
@@ -40,11 +41,11 @@ ht-degree: 68%
 
 安装升级的过程与首次安装扩展的过程大致相同。
 
-1. 选择&#x200B;**[!UICONTROL Upgrade]**&#x200B;以转到[!UICONTROL Extension Configuration]屏幕。
+1. 選取 **[!UICONTROL 升級]** 前往 [!UICONTROL 擴充功能組態] 畫面。
 1. 根据需要做出任何配置更改。
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-在点击&#x200B;**[!UICONTROL Save]**&#x200B;之前，不会实际执行升级。 在此之前的任何时间，您都可以选择[!UICONTROL 取消]并保持当前安装的版本。 选择&#x200B;**[!UICONTROL Save]**&#x200B;是不返回的点。
+在您點選之前，實際上並不會執行升級作業 **[!UICONTROL 儲存]**. 在此動作之前，您可以隨時選取 [!UICONTROL 取消] 並繼續使用目前安裝的版本。 選取 **[!UICONTROL 儲存]** 無法復原。
 
 如果您的库处于 `Approved` 或 `Submitted` 状态，则不允许执行扩展升级。这是因为下一个生成版本必须包含新的扩展版本。对于处于 `Approved` 或 `Submitted` 状态的库，下一个生成版本是生产版本。该生成操作将由于不包含最新版本而失败，因此工作流程是在升级扩展&#x200B;_之前_&#x200B;发布或拒绝处于 `Approved` 或 `Submitted` 状态的库。
 
@@ -54,10 +55,10 @@ ht-degree: 68%
 
 除此之外，将已升级的扩展添加到库的方式与[将任何其他更改添加到库](../../publishing/libraries.md)的方式相同。
 
-从[!UICONTROL Edit Library]屏幕中，您可以使用“[!UICONTROL Add All Changed Resources]”按钮，也可以使用“[!UICONTROL Add a Resource]”按钮并自行选择已升级的扩展。
+從 [!UICONTROL 編輯程式庫] 畫面，您可使用&quot;[!UICONTROL 新增所有變更的資源]」按鈕，或者您可以使用「[!UICONTROL 新增資源]」按鈕，並自行選取升級版擴充功能。
 
 >[!TIP]
 >
 >扩展开发人员可以将新配置项添加到其扩展视图中，以便启用新功能。如果您在升级到新扩展版本后看到生成失败 - 并且您已经查明生成失败是由该扩展所导致 - 则您需要先转到扩展的 Configure 页面，并确保单击 Save（即使您没有更改任何内容）。然后，将新更改添加到库中，并尝试再次生成。
 
-将扩展升级添加到库后，可以按照[发布流程](../../publishing/publishing-flow.md)中列出的步骤将库发布到生产环境。
+在将扩展升级添加到库之后，您可以按照[发布流](../../publishing/publishing-flow.md)中概述的步骤，发布库用于生产。

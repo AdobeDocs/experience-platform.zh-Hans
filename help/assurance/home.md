@@ -1,95 +1,95 @@
 ---
-title: Adobe Experience Platform保证概述
-description: Adobe Experience Platform Assurance允许您检查、校样、模拟和验证如何在移动设备应用程序中收集数据或提供体验。
-source-git-commit: 07dc01c11c79ac2dad05d89309cabb5715c0b63c
+title: Adobe Experience Platform保證概觀
+description: Adobe Experience Platform Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
+exl-id: e887f5f6-3db0-4521-be2d-20ef3d08e7d0
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '824'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
+# Adobe Experience Platform Assurance
 
-# Adobe Experience Platform保障
-
-Adobe Experience Platform保障是 [Adobe Experience Cloud](https://www.adobe.com/cn/experience-cloud.html) 可帮助您检查、校样、模拟和验证如何在移动设备应用程序中收集数据或提供体验。
+Adobe Experience Platform Assurance產品來自 [Adobe Experience Cloud](https://www.adobe.com/cn/experience-cloud.html) 協助您檢查、校樣、模擬及驗證如何在行動應用程式中收集資料或提供體驗。
 
 >[!IMPORTANT]
 >
-> Griffon项目现在称为 **保证**!
+> Project Griffon現在稱為 **保證**！
 >
-> Project Griffon现在可在 **全部** Adobe Experience Cloud客户作为保证。 要了解有关此过渡的更多信息，请阅读 [用户访问指南](./user-access.md).
+> Project Griffon現在通常可供 **全部** Adobe Experience Cloud客戶作為保證。 若要進一步瞭解此轉變，請閱讀 [使用者存取指南](./user-access.md).
 
 >[!INFO]
 >
->提供了保证公共API!
+>Assurance Public API可供使用！
 >
->[保证API](https://developer.adobe.com/adobe-assurance-public-apis/) 是一组API，在与Adobe保障移动SDK配合后，这些API允许用户测试和调试其Web和移动应用程序。
+>[保證API](https://developer.adobe.com/adobe-assurance-public-apis/) 是API的集合，當使用者裝備AdobeAssurance Mobile SDK時，這些API可讓使用者測試和偵錯其網頁和行動應用程式。
 
 ## 正式发布
 
-从2022年10月15日开始，保证服务一般可供所有Adobe Experience Cloud使用。
+自2022年10月15日起，所有Adobe Experience Cloud皆普遍提供保證功能。
 
-### 有什么变化？
+### 有什麼改變？
 
-10月15日 — 将通过Admin Console管理对保障的访问。 请阅读 [用户访问指南](./user-access.md) 以确保您能够继续不受干扰地访问。
+10月15日 — 將透過Admin Console管理對Assurance的存取。 請閱讀 [使用者存取指南](./user-access.md) 以確保您能繼續不間斷地存取。
 
-预计现有的保障集成、会话和事件不会发生其他更改或中断。 可继续通过访问保证 [https://griffon.adobe.com](https://griffon.adobe.com) **或** 您可以使用（和书签） [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
+對於現有的保證整合、工作階段和事件，預計不會發生其他變更或中斷。 保證可繼續透過以下方式存取： [https://griffon.adobe.com](https://griffon.adobe.com) **或** 您可以使用（和書籤） [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
 
-## Assurance可为您做什么？
+## Assurance可為您做什麼？
 
-### 快速设置
+### 快速設定
 
-快速入门，只需几行代码。 对于移动设备应用程序，Assurance可与Adobe Experience Platform Mobile SDK配合使用，以帮助您检查、模拟和验证应用程序事件、位置信号、配置参数、SDK日志、设备信息等。
+使用幾行程式碼快速開始使用。 針對行動應用程式，Assurance會與Adobe Experience Platform Mobile SDK搭配使用，協助您檢查、模擬及驗證應用程式事件、位置訊號、設定引數、SDK記錄、裝置資訊等。
 
-### 无忧连接
+### 輕鬆連線
 
-借助“保证”功能，将您的应用程序与平台连接非常简单可靠。 您无需使用网络代理， [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack))，以及其他网络练习 — 将您的应用程序连接到“保障”一样简单，扫描二维码或点按按钮。
+有了Assurance，將您的應用程式與Platform連線起來既簡單又可靠。 您不需要使用網路代理， [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack))和其他網路體操 — 將應用程式連線至Assurance就像掃描QR碼或點選按鈕一樣簡單。
 
 ![](./images/index/no-hassle-connection.png)
 
-### 实时检查、模拟和验证
+### 即時檢查、模擬和驗證
 
-连接到“保证”后，您可以检查实时流式应用程序事件和活动，并过滤和搜索以消除噪音。 事件包含有关验证、调试和排查移动设备应用程序实施问题的详细信息。 保证功能还允许您实时屏幕截图、模拟位置信号等。
+連線至Assurance後，您可以檢查即時串流應用程式事件和活動，並篩選和搜尋以排除雜訊。 事件包含有關驗證、偵錯和疑難排解行動應用程式實作的詳細資訊。 Assurance也可讓您即時擷取熒幕擷圖、模擬位置訊號等等。
 
 ![](./images/index/real-time-insepction.png)
 
-### 与Adobe Experience Cloud集成
+### 與Adobe Experience Cloud整合
 
-客户端数据和体验通过用户在以营销人员为中心的用户界面上设置报表规则、活动和营销活动的方式提供上下文。 为了帮助您连接二者之间的点，我们将与Adobe Experience Cloud解决方案集成，例如Adobe Experience Platform、Adobe Analytics、Adobe Target、Places Service等。
+使用者端資料和體驗透過使用者在我們的以行銷人員為中心的使用者介面上設定報告規則、活動和行銷活動來提供。 為了協助您連結這兩者之間的點，我們整合了Adobe Experience Cloud解決方案，例如Adobe Experience Platform、Adobe Analytics、Adobe Target、Places Service等。
 
 ![](./images/index/integration.png)
 
 ## 功能
 
-### Adobe Experience Platform Mobile SDK事件、日志等
+### Adobe Experience Platform Mobile SDK事件、記錄檔等
 
-保证功能可帮助您检查由Adobe Experience Platform Mobile SDK生成的原始SDK事件。 SDK收集的所有事件都可供检查。 SDK事件在列表视图中加载，按时间排序。 每个事件都有一个详细视图，其中提供了更多详细信息。 还提供了用于浏览SDK配置、数据元素、共享状态和SDK扩展版本的其他视图。
+Assurance可協助您檢查Adobe Experience Platform Mobile SDK產生的原始SDK事件。 SDK收集的所有事件都可供檢查。 SDK事件會載入清單檢視中，依時間排序。 每個事件都有一個詳細檢視，提供更多詳細資訊。 此外，也提供瀏覽SDK設定、資料元素、共用狀態和SDK擴充功能版本的其他檢視。
 
 ### Adobe Analytics
 
-Adobe Analytics > Analytics事件视图是一个集中视图，用于显示与Adobe Analytics移动设备实施相关的事件。 列表视图在特殊格式化的视图中显示生命周期或操作/状态事件、后处理的“状态”，以及必需事件详细信息。 “后处理”状态显示在对事件应用处理规则后，Adobe Analytics如何处理该事件。
+Adobe Analytics > Analytics事件檢視是重點檢視，可顯示與您的Adobe Analytics行動實施相關的事件。 清單檢視會在特別格式化的檢視中顯示生命週期或動作/狀態事件、後處理的「狀態」，以及必要的事件詳細資訊。 「後處理」狀態會顯示Adobe Analytics在處理規則套用至事件後，如何處理該事件。
 
 ### 适用于流媒体的 Adobe Analytics
 
-Adobe Analytics > Media Analytics事件视图可显示用于音频和视频分析实施的事件。 事件详细信息视图显示每个播放会话所跟踪的标准和自定义元数据。 此外，您还可以查看后处理状态和后处理的媒体分析数据，如媒体逗留时间或缓冲总持续时间。
+「Adobe Analytics > Media Analytics事件」檢視會顯示音訊與視訊分析實作的事件。 事件詳細資料檢視會顯示針對每個播放工作階段追蹤的標準與自訂中繼資料。 此外，您還可以檢視處理後狀態和後處理的媒體分析資料，例如媒體逗留時間或總緩衝時間。
 
-### 位置（位置服务）
+### 地點（定位服務）
 
-“位置服务”视图是一个设备内视图，可显示用户位置登入和退出事件，以便轻松进行验证。 此方便的视图提供了一个方便的界面，用于查看特定位置的数据点，以便在客户端上进行检查以进行上下文调试。
+Location Services檢視是裝置上的檢視，可顯示使用者位置登入和退出事件，以方便驗證。 此方便使用的檢視提供便利的介面，可檢視使用者端的特定位置資料點，以供進行內容內偵錯。
 
-## 保证安全吗？
+## 保證安全嗎？
 
-保障已采取以下安全措施：
+保證已採取下列安全措施：
 
-* 保证和保证Web UI都具有连接的安全、基于PIN的握手。 用户必须明确创建握手，以防止最终用户创建“意外”的保证连接。
-* 仅支持同一Adobe Experience Cloud组织ID所属的保证和保证Web UI之间的连接。
-* Adobe Experience Platform Mobile SDK事件通过HTTPS传输。
-* 保证和Adobe Experience Platform Mobile SDK使用TLS 1.2
-* 30天后将删除保证会话。
-* 按照存储最佳实践，保证会话数据在静态时被加密。
+* Assurance和Assurance Web UI都有安全的PIN型連線握手。 使用者必須明確建立交握，以防止一般使用者建立「意外」保證連線。
+* 僅支援屬於相同Adobe Experience Cloud組織ID的Assurance和Assurance Web UI之間的連線。
+* Adobe Experience Platform Mobile SDK事件會透過HTTPS傳輸。
+* Assurance和Adobe Experience Platform Mobile SDK使用TLS 1.2
+* 保證工作階段會在30天後刪除。
+* 依照儲存最佳實務，保證工作階段資料會進行靜態加密。
 
 ## 快速入门
 
-要设置保证，您需要先在应用程序中安装保证扩展。 要了解如何执行此操作，请阅读 [实施保证扩展](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
+若要設定Assurance，您必須先在應用程式中安裝Assurance擴充功能。 若要瞭解如何執行此動作，請閱讀以下教學課程： [實作Assurance擴充功能](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
 
-在将保证添加到您的应用程序后，您可以创建可连接到您的设备的保证会话。 要了解如何使用“保证”，请阅读 [使用保证指南](./tutorials/using-assurance.md).
+將Assurance新增至應用程式後，您可以建立可連線至裝置的保證工作階段。 若要瞭解如何使用Assurance，請參閱 [使用保證指南](./tutorials/using-assurance.md).

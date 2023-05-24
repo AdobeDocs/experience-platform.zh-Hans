@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: 在UI中为XDM架构生成示例数据
-description: 了解如何根据Adobe Experience Platform用户界面中的现有架构生成示例JSON数据。
+title: 在UI中產生XDM結構描述的範例資料
+description: 瞭解如何根據Adobe Experience Platform使用者介面中的現有結構描述產生範例JSON資料。
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
@@ -10,22 +10,22 @@ ht-degree: 0%
 
 ---
 
-# 在UI中为XDM架构生成示例数据
+# 在UI中產生XDM結構的範例資料
 
-要将数据摄取到Adobe Experience Platform中，数据的格式和结构必须符合现有的体验数据模型(XDM)架构。 根据特定数据集架构的复杂性，可能很难确定数据集在摄取时所需数据的确切形状。
+若要將資料內嵌至Adobe Experience Platform，資料的格式和結構必須符合現有的Experience Data Model (XDM)結構。 根據特定資料集的結構描述複雜性，可能很難判斷資料集在擷取時預期的資料確切形狀。
 
-对于您在Experience PlatformUI中定义的任何架构，您可以生成一个符合该架构结构的示例JSON对象。 此对象可用作模板，用于摄取到使用相关架构的数据集中的任何数据。
+對於您在Experience PlatformUI中定義的任何結構描述，您可以產生符合結構描述結構的範例JSON物件。 此物件可當作任何資料匯入使用相關結構描述的資料集中的範本。
 
-在平台UI中，选择 **[!UICONTROL 模式]** 中。 在 **[!UICONTROL 浏览]** 选项卡，找到要为其生成示例数据的架构。 从列表中选择该架构，右边栏会更新以显示有关架构的详细信息。 从此处选择 **[!UICONTROL 下载样例文件]**.
+在Platform UI中選取 **[!UICONTROL 結構描述]** 左側導覽列中。 在 **[!UICONTROL 瀏覽]** 索引標籤中，找到您要為其產生範例資料的結構描述。 從清單中選取它，右邊欄會更新以顯示有關結構的詳細資訊。 從此處選取 **[!UICONTROL 下載範例檔案]**.
 
 ![](../images/ui/sample/sample-data.png)
 
-浏览器将下载示例JSON文件。 现在，您可以使用此文件作为参考，以了解在摄取到使用此模式的数据集时如何构建数据。
+瀏覽器會下載範例JSON檔案。 您現在可以使用此檔案作為參考，瞭解在擷取至採用此結構描述的資料集時，如何建構您的資料。
 
 ## 后续步骤
 
-本指南介绍了如何从平台UI中的XDM架构生成示例JSON文件。 要了解如何使用模式注册表API生成示例数据，请参阅 [示例数据端点指南](../api/sample-data.md).
+本指南說明如何從Platform UI中的XDM結構描述產生範例JSON檔案。 若要瞭解如何使用結構描述登入API產生範例資料，請參閱 [範例資料端點指南](../api/sample-data.md).
 
-准备好开始摄取数据后，请参阅 [将CSV文件映射到XDM](../../ingestion/tutorials/map-csv/overview.md) 了解如何将平面数据文件（如CSV）映射到XDM架构，并将其摄取到平台中。 或者，您也可以建立 [源连接](../../sources/home.md) 从外部源导入数据并将其映射到XDM。
+在您準備好開始內嵌資料後，請參閱教學課程： [將CSV檔案對應至XDM](../../ingestion/tutorials/map-csv/overview.md) 瞭解如何將平面資料檔案（例如CSV）對應到XDM結構描述，並將其擷取到Platform。 或者，您可以建立 [來源連線](../../sources/home.md) 從外部來源匯入資料，並將其對應至XDM。
 
-有关 [!UICONTROL 模式] 工作区中，请参阅 [[!UICONTROL 模式] 工作区概述](./overview.md).
+如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區在UI中，請參閱 [[!UICONTROL 結構描述] 工作區概觀](./overview.md).

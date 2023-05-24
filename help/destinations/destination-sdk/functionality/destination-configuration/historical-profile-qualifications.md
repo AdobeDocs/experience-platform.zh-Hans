@@ -1,6 +1,6 @@
 ---
-description: 了解通过Destination SDK构建的目标所支持的历史配置文件资格条件。
-title: 历史用户档案资格
+description: 瞭解使用Destination SDK建立的目的地支援的歷史設定檔資格。
+title: 歷史設定檔資格
 source-git-commit: 65a658208b48a50184e55a6d64cdf7ad6de0f04f
 workflow-type: tm+mt
 source-wordcount: '214'
@@ -9,24 +9,24 @@ ht-degree: 1%
 ---
 
 
-# 历史用户档案资格
+# 歷史設定檔資格
 
-默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格条件。 这意味着当用户首次为您的目标设置激活数据流时，第一次导出将包含该区段中曾经符合该区段资格条件的所有成员。
+依預設，透過Destination SDK建立的所有目的地都支援歷史設定檔資格。 這表示當使用者首次設定啟動資料流至您的目的地時，第一次匯出會包含符合該區段資格的所有區段成員。
 
-此行为由 `"backfillHistoricalProfileData":true` 参数。
+此行為由 `"backfillHistoricalProfileData":true` 目的地設定中的引數。
 
 >[!IMPORTANT]
 >
->对于通过Destination SDK创建的所有目标，都会启用历史配置文件资格，并且 `backfillHistoricalProfileData` 参数不可用户配置。
+>系統會針對透過Destination SDK建立的所有目的地啟用歷史設定檔資格，並且 `backfillHistoricalProfileData` 引數無法由使用者設定。
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-有关哪些类型的集成支持本页所述功能的详细信息，请参阅下表。
+請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
 
-| 集成类型 | 支持功能 |
+| 整合型別 | 支援功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件的（批处理）集成 | 是 |
+| 即時（串流）整合 | 是 |
+| 檔案式（批次）整合 | 是 |
 
 
 
@@ -40,18 +40,18 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该知道，当区段首次导出到目标时，Experience Platform会自动导出符合激活区段资格条件的所有用户档案的历史群体。 无法在Destination SDK或Experience PlatformUI中配置此选项。
+閱讀本文後，您應該知道，Experience Platform會在區段首次匯出至目的地時，自動匯出曾符合啟用區段資格的所有設定檔歷史母體。 此選項無法在Destination SDK或Experience Platform UI中設定。
 
-要了解有关其他目标组件的更多信息，请参阅以下文章：
+若要深入瞭解其他目的地元件，請參閱下列文章：
 
-* [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authentication.md)
-* [客户数据字段](customer-data-fields.md)
-* [UI属性](ui-attributes.md)
-* [架构配置](schema-configuration.md)
-* [身份命名空间配置](identity-namespace-configuration.md)
-* [支持的映射配置](supported-mapping-configurations.md)
-* [目标投放](destination-delivery.md)
-* [受众元数据配置](audience-metadata-configuration.md)
-* [聚合策略](aggregation-policy.md)
-* [批量配置](batch-configuration.md)
+* [客戶驗證](customer-authentication.md)
+* [OAuth2驗證](oauth2-authentication.md)
+* [客戶資料欄位](customer-data-fields.md)
+* [UI屬性](ui-attributes.md)
+* [結構描述設定](schema-configuration.md)
+* [身分名稱空間設定](identity-namespace-configuration.md)
+* [支援的對應設定](supported-mapping-configurations.md)
+* [目的地傳遞](destination-delivery.md)
+* [對象中繼資料設定](audience-metadata-configuration.md)
+* [彙總原則](aggregation-policy.md)
+* [批次設定](batch-configuration.md)

@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform发行说明2022年2月
-description: 2022年2月版Adobe Experience Platform发行说明。
+title: Adobe Experience Platform發行說明2022年2月
+description: Adobe Experience Platform的2022年2月發行說明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
 source-git-commit: e2342a8a7d03074ac26fbd129a2e7fd520ccb0c3
 workflow-type: tm+mt
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->此版本已从2月23日的原始日期改为3月7日。
+>此版本已從原始日期2月23日改為3月7日。
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -27,64 +27,64 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组织数据的重要分析（在每日快照中捕获）。
+Adobe Experience Platform提供多個 [!DNL dashboards] 您可以透過它檢視有關您組織資料的重要深入分析，如每日快照期間所擷取。
 
-**更新功能**
+**更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的标准目标小组件 | 通过以下标准小组件，您可以显示与目标相关的不同量度。<ul><li>最近激活的区段（按目标）. 此小组件会根据所选目标以降序方式显示前五个最近激活的区段。</li><li>受众规模趋势. 此小组件描述已映射到该目标帐户的区段在一段时间内的用户档案计数之间的关系。</li><li>未映射的区段（按标识）. 此构件列出了前五个未映射的区段，它们按给定目标和标识的标识计数以降序顺序排名。</li><li>映射的区段（按标识）. 此小组件列出了前五个映射的区段。 区段会根据与从小组件下拉菜单中选择的目标ID匹配的源ID的相应计数，从高到低进行排序。</li><li>普通受众. 此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个区段的列表。</li></ul> 有关可用标准小组件的更多信息，请参阅 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
+| 新的標準目的地Widget | 下列標準Widget可讓您視覺化與目的地相關的不同量度。<ul><li>最近激活的区段（按目标）. 此Widget會根據所選目的地，以遞減順序顯示最近啟用的前五個區段。</li><li>受众规模趋势. 此Widget針對已對應至目的地帳戶的區段，描述一段時間內設定檔計數之間的關係。</li><li>未映射的区段（按标识）. 此构件列出了前五个未映射的区段，它们按给定目标和标识的标识计数以降序顺序排名。</li><li>映射的区段（按标识）. 此Widget列出前五個對應區段。 區段會根據其各自符合從Widget下拉式選單中選取之目的地ID的來源ID計數，從高到低排序。</li><li>普通受众. 此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个区段的列表。</li></ul> 如需可用標準Widget的詳細資訊，請參閱 [目的地儀表板檔案。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
 
-有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
+如需詳細資訊，請參閱 [!DNL Dashboards]，請參閱 [[!DNL Dashboards] 概觀](../../dashboards/home.md).
 
-## 数据收集 {#data-collection}
+## 資料彙集 {#data-collection}
 
-Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+Platform提供了一套技術，可讓您收集使用者端客戶體驗資料，並將其傳送至Adobe Experience Platform Edge Network，在那裡可以擴充和轉換資料，並將其分發到Adobe或非Adobe目的地。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 向数据流添加服务时，选项列表中将仅包含您有权访问的服务。 请参阅 [配置数据流](../../edge/datastreams/overview.md) 以了解更多信息。 |
-| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将数据映射到服务器端的Experience Data Model(XDM)。 请参阅 [为数据收集准备数据](../../edge/datastreams/data-prep.md) （详细信息）。 |
-| 第一方设备ID | 现在，在使用Platform Web SDK收集客户数据时，您可以将自己的设备ID发送到Adobe Experience Platform Edge Network，这为最近对第三方Cookie生命周期的浏览器限制提供了解决方法。 请参阅 [第一方设备ID](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
+| 改善資料流設定的UI工作流程 | 更新在資料收集UI中建立新資料流的工作流程。 將服務新增至資料流時，只有您有權存取的服務會包含在選項清單中。 請參閱指南： [設定資料串流](../../edge/datastreams/overview.md) 以取得詳細資訊。 |
+| 为数据收集准备数据 | 如果您使用Adobe Experience Platform Web SDK，您現在可以運用資料準備功能，將您的資料對應至伺服器端的Experience Data Model (XDM)。 請參閱以下小節： [資料收集的資料準備](../../edge/datastreams/data-prep.md) 如需詳細資訊，請參閱資料串流指南。 |
+| 第一方裝置ID | 使用Platform Web SDK收集客戶資料時，您現在可以將自己的裝置ID傳送至Adobe Experience Platform Edge Network，針對第三方Cookie有效期限的最新瀏覽器限制提供因應措施。 請參閱指南： [第一方裝置ID](../../edge/identity/first-party-device-ids.md) 以取得詳細資訊。 |
 
-有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+如需Platform資料收集的詳細資訊，請參閱 [資料彙集概觀](../../collection/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+[!DNL Destinations] 是預先建立的與目標平台的整合，可無縫啟用Adobe Experience Platform的資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
 
-**新增功能或更新功能**
+**新功能或更新功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| （测试版）Destination SDK对基于文件的目标的支持 | [Destination SDK对基于文件的目标的支持](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) 目前为私有测试版，仅适用于数量有限的合作伙伴和客户。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队，讨论受支持的用例。 <br><br> 在Destination SDK对基于文件的目标的支持测试阶段，测试合作伙伴和客户可以使用 [Experience PlatformDestination SDK](../../destinations/destination-sdk/overview.md) 要构建专用目标以从以下功能中受益，请执行以下操作： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure数据湖存储、数据登陆区存储，创建基于文件的（批处理）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置和设置选项，以设置导出的CSV文件的格式（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读 [（测试版）使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> 用于创建专用或产品化的功能 *流* 使用Destination SDK的目标已经可供所有Experience Platform客户和合作伙伴使用。 阅读有关如何 [使用Destination SDK配置流目标](../../destinations/destination-sdk/guides/configure-destination-instructions.md) 以了解详细信息。 |
+| (Beta)檔案型目的地的Destination SDK支援 | [檔案型目的地的Destination SDK支援](../../destinations/destination-sdk/functionality/destination-server/server-specs.md) 目前為私人測試版，僅供特定數量的合作夥伴和客戶使用。 功能和相關檔案在正式發行前可能會有所變更。<br><br>請聯絡您的Adobe客戶代表，瞭解如何存取該功能。 Adobe內部客戶代表應聯絡Experience Platform目標產品與工程團隊，討論支援的使用案例。 <br><br> 在對檔案型目的地提供Destination SDK支援的測試階段，測試版合作夥伴和客戶可以使用 [Experience PlatformDestination SDK](../../destinations/destination-sdk/overview.md) 若要建置私人目的地以受益於以下功能： <ul><li>透過Amazon S3、SFTP伺服器、Azure Blob、Azure Data Lake儲存空間、資料登陸區域儲存空間，建立檔案式（批次）目的地。</li><li>設定並設定預設檔案匯出排程和頻率選項。</li><li>設定並設定匯出的CSV檔案的格式選項（分隔字元、逸出字元和其他選項）。</li><li>設定和編輯自訂檔案標題的功能。</li><li>能夠接收有關檔案和區段匯出的事件通知。</li><li>可匯出其他檔案型別，例如CSV、TSV、JSON、Parquet。</li></ul>  <br>若要開始使用新功能，請閱讀 [（測試版）使用Destination SDK設定以檔案為基礎的目的地](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md). <br><br> 建立私人或產品化的功能 *串流* 所有Experience Platform客戶和合作夥伴皆可使用「使用Destination SDK」目的地。 閱讀操作指南 [使用Destination SDK設定串流目的地](../../destinations/destination-sdk/guides/configure-destination-instructions.md) 以取得詳細資訊。 |
 
 ## [!DNL Identity Service] {#identity}
 
-提供相关的数字体验需要全面了解您的客户。 当客户数据在不同的系统中分散，导致每个客户似乎都具有多个“身份”时，这会使操作愈发困难。
+提供相關的數位體驗需要完全瞭解您的客戶。 當您的客戶資料分散於不同的系統時，這會使情況更困難，導致每個個別客戶似乎有多個「身分」。
 
-Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
+Adobe Experience Platform [!DNL Identity Service] 透過跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，協助您更好地瞭解客戶及其行為。
 
-**更新功能**
+**更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 的新权限 `view-identity-graph` | 您现在可以使用 `view-identity-graph` 控制组织中的用户是否能够查看身份图数据的权限。 将禁止没有此权限的用户访问UI中的身份图查看器，或者在访问 [!DNL Identity Service] 返回身份的API。 请参阅 [访问控制概述](../../access-control/home.md) 以了解有关权限的更多信息。 |
+| 的新許可權 `view-identity-graph` | 您現在可以使用 `view-identity-graph` 控制組織中使用者是否能夠檢視身分圖表資料的許可權。 沒有此許可權的使用者將無法在UI中或存取時存取身分圖表檢視器 [!DNL Identity Service] 傳回身分的API。 請參閱 [存取控制總覽](../../access-control/home.md) 以取得許可權的詳細資訊。 |
 
-有关 [!DNL Identity Service]，请参阅 [Identity Service概述](../../identity-service/home.md).
+如需更多一般資訊，請參閱 [!DNL Identity Service]，請參閱 [Identity Service概觀](../../identity-service/home.md).
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可從外部來源擷取資料，同時允許您使用Platform服務來建構、加標籤及增強該資料。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
 
-Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+Experience Platform提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
 
-**更新功能**
+**更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 测试版源迁移至GA | 以下来源已从测试版提升为正式发布： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
+| Beta版來源移至GA | 下列來源已從Beta版升級至GA版： <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
 
-要进一步了解源，请参阅 [源概述](../../sources/home.md).
+若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).

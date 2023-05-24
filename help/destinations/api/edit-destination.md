@@ -1,8 +1,8 @@
 ---
 solution: Experience Platform
-title: 使用流量服务API编辑目标连接
+title: 使用Flow Service API編輯目的地連線
 type: Tutorial
-description: 了解如何使用流量服务API编辑目标连接的各个组件。
+description: 瞭解如何使用流量服務API編輯目的地連線的各種元件。
 source-git-commit: 956ac5d210d54526e886e57b8ea37ab4b3fbab8a
 workflow-type: tm+mt
 source-wordcount: '1565'
@@ -10,62 +10,62 @@ ht-degree: 2%
 
 ---
 
-# 使用流量服务API编辑目标连接
+# 使用Flow Service API編輯目的地連線
 
-本教程介绍了编辑目标连接各个组件的步骤。 了解如何使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教學課程涵蓋編輯目的地連線各種元件的步驟。 瞭解如何使用，更新驗證認證、匯出位置等 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 >[!NOTE]
 >
-> 本教程中描述的编辑操作当前仅通过流服务API受支持。
+> 本教學課程中說明的編輯操作目前僅透過「流量服務API」支援。
 
 ## 快速入门 {#get-started}
 
-本教程要求您拥有有效的数据流ID。 如果您没有有效的数据流ID，请从 [目标目录](../catalog/overview.md) 并按照 [连接到目标](../ui/connect-destination.md) 和 [激活数据](../ui/activation-overview.md) 在尝试本教程之前。
+本教學課程需要您具備有效的資料流ID。 如果您沒有有效的資料流ID，請從「 」中選擇您選擇的目的地 [目的地目錄](../catalog/overview.md) 並依照下列步驟進行 [連線到目的地](../ui/connect-destination.md) 和 [啟用資料](../ui/activation-overview.md) 在嘗試本教學課程之前。
 
 >[!NOTE]
 >
-> 术语 *流量* 和 *数据流* 在本教程中可互换使用。 在本教程的上下文中，它们具有相同的含义。
+> 條款 *流量* 和 *資料流* 在本教學課程中可互換使用。 在本教學課程的內容中，兩者皆有相同涵義。
 
-此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程也要求您實際瞭解Adobe Experience Platform的下列元件：
 
-* [目标](../home.md): [!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
-* [沙箱](../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [目的地](../home.md)： [!DNL Destinations] 是預先建立的與目標平台的整合，可無縫啟用Adobe Experience Platform的資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
+* [沙箱](../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-以下各节提供了您需要了解的其他信息，以便使用 [!DNL Flow Service] API。
+以下小節提供您需要瞭解的其他資訊，以使用 [!DNL Flow Service] API。
 
-### 读取示例API调用 {#reading-sample-api-calls}
+### 讀取範例API呼叫 {#reading-sample-api-calls}
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) (位于Experience Platform疑难解答指南中)。
+本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑難排解指南中。
 
-### 收集所需标题的值 {#gather-values-for-required-headers}
+### 收集必要標題的值 {#gather-values-for-required-headers}
 
-要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程可为所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+若要對Platform API發出呼叫，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會提供所有Experience PlatformAPI呼叫中每個必要標題的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Experience Platform中的所有资源，包括属于 [!DNL Flow Service]，与特定虚拟沙箱隔离。 对Platform API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+Experience Platform中的所有資源，包括屬於下列專案的資源： [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 對Platform API的所有請求都需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如果 `x-sandbox-name` 标头未指定，请求将在 `prod` 沙盒。
+>如果 `x-sandbox-name` 標頭未指定，請求解析於 `prod` 沙箱。
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
 
 * `Content-Type: application/json`
 
-## 查找数据流详细信息 {#look-up-dataflow-details}
+## 查詢資料流詳細資料 {#look-up-dataflow-details}
 
-编辑目标连接的第一步是使用流ID检索数据流详细信息。 通过向发出GET请求，可以查看现有数据流的当前详细信息 `/flows` 端点。
+編輯目的地連線的第一個步驟，是使用流量ID擷取資料流詳細資訊。 您可以透過向以下網站發出GET要求，檢視現有資料流的目前詳細資料： `/flows` 端點。
 
 >[!TIP]
 >
->您可以使用Experience PlatformUI获取目标的所需数据流ID。 转到 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，选择所需的目标数据流并在右边栏中查找目标ID。 目标ID是您将在下一步中用作流ID的值。
+>您可以使用Experience PlatformUI來取得目的地所需的資料流ID。 前往 **[!UICONTROL 目的地]** > **[!UICONTROL 瀏覽]**，選取所需的目的地資料流，然後在右側邊欄中尋找目的地ID。 目的地ID是您將在下一個步驟中作為流量ID使用的值。
 >
-> ![使用Experience PlatformUI获取目标ID](/help/destinations/assets/api/edit-destination/get-destination-id.png)
+> ![使用Experience PlatformUI取得目的地ID](/help/destinations/assets/api/edit-destination/get-destination-id.png)
 
 >[!BEGINSHADEBOX]
 
@@ -77,11 +77,11 @@ GET /flows/{FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 独特 `id` 要检索的目标数据流的值。 |
+| `{FLOW_ID}` | 唯一 `id` 您要擷取之目的地資料流的值。 |
 
 **请求**
 
-以下请求会检索有关您的流ID的信息。
+以下請求會擷取有關您的流量ID的資訊。
 
 ```shell
 curl -X GET \
@@ -94,7 +94,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回数据流的当前详细信息，包括其版本、唯一标识符(`id`)及其他相关信息。 与本教程最相关的是在以下响应中突出显示的Target连接和基本连接ID。 您将在后续部分中使用这些ID来更新目标连接的各个组件。
+成功回應會傳回資料流的目前詳細資料，包括其版本、唯一識別碼(`id`)，以及其他相關資訊。 與本教學課程最相關的是目標連線與基本連線ID，其於以下回應中醒目提示。 您將在下一節中使用這些ID來更新目的地連線的各種元件。
 
 ```json {line-numbers="true" start-line="1" highlight="27,38"}
 {
@@ -172,21 +172,21 @@ curl -X GET \
 
 >[!ENDSHADEBOX]
 
-## 编辑目标连接组件（存储位置和其他组件） {#patch-target-connection}
+## 編輯目標連線元件（儲存位置和其他元件） {#patch-target-connection}
 
-目标连接的组件因目标而异。 例如， [!DNL Amazon S3] 目标中，您可以更新导出文件的存储段和路径。 对于 [!DNL Pinterest] 目标，您可以更新 [!DNL Pinterest Advertiser ID] 对于 [!DNL Google Customer Match] 您可以在 [!DNL Pinterest Account ID].
+目標連線的元件會依目的地而有所不同。 例如， [!DNL Amazon S3] 目的地，您可以更新檔案匯出的貯體和路徑。 對象 [!DNL Pinterest] 目的地，您可以更新 [!DNL Pinterest Advertiser ID] 和for [!DNL Google Customer Match] 您可以更新 [!DNL Pinterest Account ID].
 
-要更新目标连接的组件，请向 `/targetConnections/{TARGET_CONNECTION_ID}` 端点，同时提供您要使用的target连接ID、版本和新值。 请记住，在您检查到所需目标的现有数据流时，您在上一步中获得了目标连接ID。
+PATCH若要更新目標連線的元件，請對 `/targetConnections/{TARGET_CONNECTION_ID}` 端點，並提供您的目標連線ID、版本以及您要使用的新值。 請記住，您在上一步中檢查了到所需目的地的現有資料流時，已取得目標連線ID。
 
 >[!IMPORTANT]
 >
->的 `If-Match` 发出PATCH请求时需要标头。 此标头的值是要更新的目标连接的唯一版本。 每次成功更新流程实体（如数据流、目标连接等）时，etag值都会随之更新。
+>此 `If-Match` 發出PATCH請求時需要標頭。 此標頭的值是要更新的目標連線的唯一版本。 每次成功更新資料流、目標連線等流程實體時，etag值都會隨之更新。
 >
-> 要获取etag值的最新版本，请向 `/targetConnections/{TARGET_CONNECTION_ID}` 端点，其中 `{TARGET_CONNECTION_ID}` 是要更新的目标连接ID。
+> GET若要取得etag值的最新版本，請對 `/targetConnections/{TARGET_CONNECTION_ID}` 端點，其中 `{TARGET_CONNECTION_ID}` 是要更新的目標連線ID。
 
-以下是更新目标连接规范中不同类型目标参数的一些示例。 但是，用于更新任何目标参数的一般规则如下：
+以下是一些更新不同目的地型別之目標連線規格中的引數的範例。 但更新任何目的地引數的一般規則如下：
 
-获取连接的数据流ID >获取目标连接ID >将目标连接PATCH为所需参数的更新值。
+取得連線的資料流ID >取得目標連線ID >使用所需引數的更新值PATCH目標連線。
 
 >[!BEGINSHADEBOX]
 
@@ -202,7 +202,7 @@ PATCH /targetConnections/{TARGET_CONNECTION_ID}
 
 **请求**
 
-以下请求更新了 `bucketName` 和 `path` 参数 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) 目标连接。
+以下請求會更新 `bucketName` 和 `path` 引數 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) 目的地連線。
 
 ```shell
 curl -X PATCH \
@@ -226,13 +226,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 定义要更新的流程部分。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 定義要更新的流程部分。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回您的Target连接ID和更新的Etag。 您可以通过向 [!DNL Flow Service] API，同时提供您的Target连接ID。
+成功的回應會傳回您的目標連線ID和更新的Etag。 您可以向發出GET要求以驗證更新 [!DNL Flow Service] API，同時提供您的目標連線ID。
 
 ```json
 {
@@ -241,11 +241,11 @@ curl -X PATCH \
 }
 ```
 
->[!TAB Google Ad Manager和Google Ad Manager 360]
+>[!TAB Google廣告管理員與Google廣告管理員360]
 
 **请求**
 
-以下请求更新了 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) 或 [[!DNL Google Ad Manager 360] 目标](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 连接以添加新 [**[!UICONTROL 将区段ID附加到区段名称]**](/help/release-notes/2023/april-2023.md#destinations) 字段。
+以下請求會更新 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) 或 [[!DNL Google Ad Manager 360] 目的地](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 連線以新增新的 [**[!UICONTROL 將區段ID附加至區段名稱]**](/help/release-notes/2023/april-2023.md#destinations) 欄位。
 
 ```shell
 curl -X PATCH \
@@ -266,13 +266,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 定义要更新的流程部分。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 定義要更新的流程部分。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回您的Target连接ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供您的Target连接ID。
+成功的回應會傳回您的目標連線ID和更新的etag。 您可以向發出GET要求以驗證更新 [!DNL Flow Service] API，同時提供您的目標連線ID。
 
 ```json
 {
@@ -285,7 +285,7 @@ curl -X PATCH \
 
 **请求**
 
-以下请求更新了 `advertiserId` 参数 [[!DNL Pinterest] 目标连接](/help/destinations/catalog/advertising/pinterest.md#parameters).
+以下請求會更新 `advertiserId` 引數 [[!DNL Pinterest] 目的地連線](/help/destinations/catalog/advertising/pinterest.md#parameters).
 
 ```shell
 curl -X PATCH \
@@ -308,13 +308,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 定义要更新的流程部分。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 定義要更新的流程部分。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回您的Target连接ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供您的Target连接ID。
+成功的回應會傳回您的目標連線ID和更新的etag。 您可以向發出GET要求以驗證更新 [!DNL Flow Service] API，同時提供您的目標連線ID。
 
 ```json
 {
@@ -327,23 +327,23 @@ curl -X PATCH \
 
 >[!ENDSHADEBOX]
 
-## 编辑基本连接组件（身份验证参数和其他组件） {#patch-base-connection}
+## 編輯基本連線元件（驗證引數和其他元件） {#patch-base-connection}
 
-基本连接的组件因目标而异。 例如， [!DNL Amazon S3] 目标中，您可以将访问密钥和密钥更新为 [!DNL Amazon S3] 位置。
+基礎連線的元件會依目的地而有所不同。 例如， [!DNL Amazon S3] 目的地，您可以將存取金鑰和秘密金鑰更新為 [!DNL Amazon S3] 位置。
 
-要更新基本连接的组件，请向 `/connections` 端点，同时提供您要使用的基本连接ID、版本和新值。
+PATCH若要更新基本連線的元件，請對 `/connections` 端點，並提供您的基本連線ID、版本以及您想要使用的新值。
 
-请记住，在您检查到所需目标的现有数据流时，您在上一步中获得了基本连接ID。
+請記住，您在上一步中檢查了到您所要目的地的現有資料流時，已經取得基本連線ID。
 
 >[!IMPORTANT]
 >
->的 `If-Match` 发出PATCH请求时需要标头。 此标头的值是要更新的基本连接的唯一版本。 每次成功更新流量实体（如数据流、基本连接等）时，etag值都会随之更新。
+>此 `If-Match` 發出PATCH請求時需要標頭。 此標頭的值是您要更新的基礎連線的唯一版本。 每次成功更新資料流、基本連線等流程實體時，etag值都會隨之更新。
 >
-> 要获取Etag值的最新版本，请向 `/connections/{BASE_CONNECTION_ID}` 端点，其中 `{BASE_CONNECTION_ID}` 是要更新的基本连接ID。
+> GET若要取得最新版Etag值，請對 `/connections/{BASE_CONNECTION_ID}` 端點，其中 `{BASE_CONNECTION_ID}` 是您要更新的基本連線ID。
 
-以下是更新基本连接规范中不同类型目标参数的一些示例。 但是，用于更新任何目标参数的一般规则如下：
+以下是一些更新不同型別目的地之基本連線規格中引數的範例。 但更新任何目的地引數的一般規則如下：
 
-获取连接的数据流ID >获取基本连接ID >将基本连接PATCH为所需参数的更新值。
+取得連線的資料流ID >取得基本連線ID >使用所需引數的更新值PATCH基本連線。
 
 >[!BEGINSHADEBOX]
 
@@ -359,7 +359,7 @@ PATCH /connections/{BASE_CONNECTION_ID}
 
 **请求**
 
-以下请求更新了 `accessId` 和 `secretKey` 参数 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) 目标连接。
+以下請求會更新 `accessId` 和 `secretKey` 引數 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details) 目的地連線。
 
 ```shell
 curl -X PATCH \
@@ -383,13 +383,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 定义要更新的流程部分。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 定義要更新的流程部分。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回您的基本连接ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供基本连接ID。
+成功的回應會傳回您的基本連線ID和更新的etag。 您可以向發出GET要求以驗證更新 [!DNL Flow Service] API，同時提供您的基本連線ID。
 
 ```json
 {
@@ -402,7 +402,7 @@ curl -X PATCH \
 
 **请求**
 
-以下请求会更新 [[!DNL Azure Blob] 目标](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) 连接，以更新连接到Azure Blob实例所需的连接字符串。
+以下請求會更新 [[!DNL Azure Blob] 目的地](/help/destinations/catalog/cloud-storage/azure-blob.md#authenticate) 連線以更新連線至Azure Blob執行個體所需的連線字串。
 
 ```shell
 curl -X PATCH \
@@ -425,13 +425,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
-| `path` | 定义要更新的流程部分。 |
-| `value` | 要使用更新参数的新值。 |
+| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. |
+| `path` | 定義要更新的流程部分。 |
+| `value` | 您想要用來更新引數的新值。 |
 
 **响应**
 
-成功的响应会返回您的基本连接ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供基本连接ID。
+成功的回應會傳回您的基本連線ID和更新的etag。 您可以向發出GET要求以驗證更新 [!DNL Flow Service] API，同時提供您的基本連線ID。
 
 ```json
 {
@@ -444,10 +444,10 @@ curl -X PATCH \
 
 >[!ENDSHADEBOX]
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-本教程中的API端点遵循常规的Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](/help/landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](/help/landing/troubleshooting.md#request-header-errors) ，以了解有关解释错误响应的更多信息。
+本教學課程中的API端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](/help/landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](/help/landing/troubleshooting.md#request-header-errors) （位於Platform疑難排解指南中），以取得有關解釋錯誤回應的詳細資訊。
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您学习了如何使用 [!DNL Flow Service] API。 有关目标的更多信息，请参阅 [目标概述](../home.md).
+依照本教學課程，您已瞭解如何使用 [!DNL Flow Service] API。 如需目的地的詳細資訊，請參閱 [目的地概觀](../home.md).

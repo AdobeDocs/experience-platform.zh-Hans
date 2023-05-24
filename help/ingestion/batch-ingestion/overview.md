@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据摄取；批量；启用数据集；批量摄取概述；概述；批量摄取概述；
+keywords: Experience Platform；首頁；熱門主題；資料擷取；批次；批次；啟用資料集；批次擷取概觀；概觀；批次擷取概觀；
 solution: Experience Platform
-title: 批量摄取API概述
-description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
+title: 批次擷取API概觀
+description: Adobe Experience Platform批次擷取API可讓您將資料以批次檔案的形式擷取到Platform。 所擷取的資料可以是CRM系統中平面檔案（例如Parquet檔案）的設定檔資料，或是符合Experience Data Model (XDM)登入中已知結構的資料。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
 source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
@@ -11,62 +11,62 @@ ht-degree: 6%
 
 ---
 
-# 批量摄取API概述
+# 批次擷取API概觀
 
-Adobe Experience Platform批量摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是来自平面文件（如Parquet文件）的配置文件数据，也可以是符合 [!DNL Experience Data Model] (XDM)注册表。
+Adobe Experience Platform批次擷取API可讓您將資料以批次檔案的形式擷取到Platform。 所擷取的資料可以是平面檔案（例如Parquet檔案）的設定檔資料，或是符合 [!DNL Experience Data Model] (XDM)登入。
 
-的 [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 提供了有关这些API调用的其他信息。
+此 [批次擷取API參考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 提供有關這些API呼叫的其他資訊。
 
-下图概述了批量摄取流程：
+下圖概述批次擷取程式：
 
 ![](../images/batch-ingestion/overview/batch_ingestion.png)
 
 ## 快速入门
 
-本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端點屬於 [批次擷取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 在繼續之前，請檢閱 [快速入門手冊](getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
 
-### [!DNL Data Ingestion] 先决条件
+### [!DNL Data Ingestion] 必備條件
 
-- 要上传的数据必须采用Parquet或JSON格式。
-- 在 [[!DNL Catalog services]](../../catalog/home.md).
-- Parquet文件的内容必须与要上传到的数据集架构的子集相匹配。
-- 验证后拥有您的唯一访问令牌。
+- 要上傳的資料必須是Parquet或JSON格式。
+- 在中建立的資料集 [[!DNL Catalog services]](../../catalog/home.md).
+- Parquet檔案的內容必須符合要上傳到之資料集的結構描述子集。
+- 在驗證後取得您唯一的存取Token。
 
-### 批量摄取最佳实践
+### 批次擷取最佳實務
 
-- 建议的批处理大小介于256 MB到100 GB之间。
-- 每个批次最多应包含1500个文件。
+- 建議的批次大小在256 MB到100 GB之間。
+- 每個批次最多可包含1500個檔案。
 
-### 批量摄取约束
+### 批次擷取限制
 
-批量数据摄取具有一些限制：
+批次資料擷取有一些限制：
 
-- 每批文件的最大数量：1500
+- 每批次的最大檔案數： 1500
 - 最大批次大小：100 GB
-- 每行属性或字段的最大数量：10000
-- 每个用户每分钟的最大批数：138
+- 每列的屬性或欄位數上限： 10000
+- 每分鐘最大批次數，每位使用者： 138
 
 >[!NOTE]
 >
->要上传大于512MB的文件，需要将文件分为较小的块。 有关上传大文件的说明，请参阅 [本文档的大文件上传部分](#large-file-upload---create-file).
+>若要上傳大於512MB的檔案，檔案需要分成較小的區塊。 上傳大型檔案的指示可在以下網址找到： [此檔案的大型檔案上傳區段](#large-file-upload---create-file).
 
-### 类型
+### 型別
 
-在摄取数据时，了解如何 [!DNL Experience Data Model] (XDM)模式有效。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读 [架构注册开发人员指南](../../xdm/api/getting-started.md).
+擷取資料時，請務必瞭解如何 [!DNL Experience Data Model] (XDM)結構描述有效。 如需XDM欄位型別如何對應到不同格式的詳細資訊，請閱讀 [Schema Registry開發人員指南](../../xdm/api/getting-started.md).
 
-在摄取数据时具有一定的灵活性 — 如果类型与目标架构中的内容不匹配，则数据将转换为表示的目标类型。 如果不能，则会通过 `TypeCompatibilityException`.
+擷取資料時有一些彈性 — 如果型別不符合目標結構描述中的內容，資料將會轉換為表達的目標型別。 如果失敗，則會讓批次失敗 `TypeCompatibilityException`.
 
-例如，JSON和CSV均没有 `date` 或 `date-time` 类型。 因此，这些值使用 [ISO 8061格式化字符串](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15&quot;:05:59.000-08:00&quot;)或Unix时间（以毫秒为格式）(1531263959000)，在摄取时将转换为目标XDM类型。
+例如，JSON和CSV都沒有 `date` 或 `date-time` 型別。 因此，這些值會以下列方式表示 [ISO 8061格式字串](https://www.iso.org/iso-8601-date-and-time-format.html) (「2018-07-10T15」:05:59.000-08:00英吋)或Unix時間(以毫秒為單位，1531263959000會在擷取時轉換為目標XDM型別。
 
-下表显示了摄取数据时支持的转化。
+下表顯示擷取資料時支援的轉換。
 
-| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | 日期时间 | 对象 | 地图 |
+| 傳入（列）與目標（列） | 字符串 | 位元組 | 短 | 整数 | 長 | 双精度 | 日期 | 日期时间 | 对象 | 地图 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 字符串 | X | X | X | X | X | X | X | X |  |  |
-| 字节 | X | X | X | X | X | X |  |  |  |  |
+| 位元組 | X | X | X | X | X | X |  |  |  |  |
 | 短 | X | X | X | X | X | X |  |  |  |  |
 | 整数 | X | X | X | X | X | X |  |  |  |  |
-| 长 | X | X | X | X | X | X | X | X |  |  |
+| 長 | X | X | X | X | X | X | X | X |  |  |
 | 双精度 | X | X | X | X | X | X |  |  |  |  |
 | 日期 |  |  |  |  |  |  | X |  |  |  |
 | 日期时间 |  |  |  |  |  |  |  | X |  |  |
@@ -75,19 +75,19 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 >[!NOTE]
 >
->布尔值和数组无法转换为其他类型。
+>布林值和陣列無法轉換為其他型別。
 
 ## 使用 API
 
-的 [!DNL Data Ingestion] API允许您将数据作为批量（由一个或多个要作为单个单位摄取的文件组成的数据单元）摄取到中 [!DNL Experience Platform] 三个基本步骤：
+此 [!DNL Data Ingestion] API可讓您將資料以批次（包含要當作單一單元擷取的一或多個檔案的資料單位）的形式擷取到 [!DNL Experience Platform] 三個基本步驟：
 
-1. 创建新批。
-2. 将文件上传到与数据的XDM架构匹配的指定数据集。
-3. 表示批次的结束。
+1. 建立新批次。
+2. 將檔案上傳至符合資料的XDM結構描述的指定資料集。
+3. 表示批次結束。
 
-## 创建批处理
+## 建立批次
 
-在将数据添加到数据集之前，必须先将其链接到批次，然后批次才会上传到指定的数据集。
+在將資料新增到資料集之前，必須將其連結到批次，該批次稍後將上傳到指定的資料集中。
 
 ```http
 POST /batches
@@ -109,9 +109,9 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `datasetId` | 要将文件上传到的数据集的ID。 |
+| `datasetId` | 要上傳檔案的資料集的ID。 |
 
-**响应**
+**回應**
 
 ```JSON
 {
@@ -135,26 +135,26 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 刚刚创建的批次的ID（用于后续请求）。 |
-| `relatedObjects.id` | 要将文件上传到的数据集的ID。 |
+| `id` | 剛建立的批次ID （用於後續請求）。 |
+| `relatedObjects.id` | 要上傳檔案的資料集的ID。 |
 
-## 文件上传
+## 檔案上傳
 
-成功创建新批次以进行上传后，便可以将文件上传到特定数据集。
+成功建立要上傳的新批次後，檔案可以上傳到特定資料集。
 
-您可以使用小文件上传API上传文件。 但是，如果文件过大且超出了网关限制（例如，延长超时、超出主体大小请求和其他限制），则可以切换到大文件上传API。 此API以块形式上传文件，并使用大文件上传结束API调用将数据拼合在一起。
+您可以使用小型檔案上傳API上傳檔案。 不過，如果您的檔案過大，且超過閘道限制（例如延伸逾時、超出內文大小請求和其他限制），您可以切換至大型檔案上傳API。 此API會以區塊上傳檔案，並使用大型檔案上傳完成API呼叫將資料彙整在一起。
 
 >[!NOTE]
 >
->批量摄取可用于以递增方式更新配置文件存储中的数据。 有关更多信息，请参阅 [更新批](#patch-a-batch) 在 [批量获取开发人员指南](api-overview.md).
+>批次內嵌可用於以漸進方式更新設定檔存放區中的資料。 如需詳細資訊，請參閱以下章節： [更新批次](#patch-a-batch) 在 [批次擷取開發人員指南](api-overview.md).
 
 >[!INFO]
 >
->以下示例使用 [Apache Parquet](https://parquet.apache.org/docs/) 文件格式。 在 [批量获取开发人员指南](api-overview.md).
+>以下範例使用 [Apache Parquet](https://parquet.apache.org/docs/) 檔案格式。 以下是使用JSON檔案格式的範例： [批次擷取開發人員指南](api-overview.md).
 
-### 小文件上传
+### 小檔案上傳
 
-创建批处理后，即可将数据上传到预先存在的数据集。  上传的文件必须与其引用的XDM架构匹配。
+建立批次後，即可將資料上傳到預先存在的資料集。  要上傳的檔案必須與其參考的XDM結構描述相符。
 
 ```http
 PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
@@ -163,8 +163,8 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{BATCH_ID}` | 批次的ID。 |
-| `{DATASET_ID}` | 要上传文件的数据集的ID。 |
-| `{FILE_NAME}` | 数据集中将显示的文件名称。 |
+| `{DATASET_ID}` | 要上傳檔案的資料集ID。 |
+| `{FILE_NAME}` | 資料集中顯示的檔案名稱。 |
 
 **请求**
 
@@ -180,17 +180,17 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 要上传到数据集中的文件的路径和文件名。 |
+| `{FILE_PATH_AND_NAME}` | 要上傳至資料集的檔案的路徑和檔案名稱。 |
 
-**响应**
+**回應**
 
 ```JSON
 #Status 200 OK, with empty response body
 ```
 
-### 大文件上传 — 创建文件
+### 大型檔案上傳 — 建立檔案
 
-要上传大文件，必须将文件拆分为较小的块，并一次上传一个。
+若要上傳大型檔案，必須將檔案分割成較小的區塊，並一次上傳一個。
 
 ```http
 POST /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}?action=initialize
@@ -199,8 +199,8 @@ POST /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}?action=initiali
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{BATCH_ID}` | 批次的ID。 |
-| `{DATASET_ID}` | 摄取文件的数据集的ID。 |
-| `{FILE_NAME}` | 数据集中将显示的文件名称。 |
+| `{DATASET_ID}` | 擷取檔案的資料集ID。 |
+| `{FILE_NAME}` | 資料集中顯示的檔案名稱。 |
 
 **请求**
 
@@ -212,15 +212,15 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
   -H "x-api-key: {API_KEY}"
 ```
 
-**响应**
+**回應**
 
 ```JSON
 #Status 201 CREATED, with empty response body
 ```
 
-### 大文件上传 — 上传后续部分
+### 大型檔案上傳 — 上傳後續部分
 
-创建文件后，可通过发出重复的PATCH请求来上传所有后续区块，该请求对应文件的每个部分一个。
+建立檔案後，可以透過提出重複PATCH請求（檔案的每個區段各一個）來上傳所有後續區塊。
 
 ```http
 PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
@@ -229,8 +229,8 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{BATCH_ID}` | 批次的ID。 |
-| `{DATASET_ID}` | 要将文件上传到的数据集的ID。 |
-| `{FILE_NAME}` | 数据集中将显示的文件名称。 |
+| `{DATASET_ID}` | 要上傳檔案的資料集的ID。 |
+| `{FILE_NAME}` | 將在資料集中看到的檔案名稱。 |
 
 **请求**
 
@@ -247,17 +247,17 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 要上传到数据集中的文件的路径和文件名。 |
+| `{FILE_PATH_AND_NAME}` | 要上傳至資料集的檔案的路徑和檔案名稱。 |
 
-**响应**
+**回應**
 
 ```JSON
 #Status 200 OK, with empty response
 ```
 
-## 信号批处理完成
+## 訊號批次完成
 
-将所有文件上传到批处理后，可以发出批处理完成的信号。 通过执行此操作， [!DNL Catalog] 为已完成的文件创建DataSetFile条目，并与上面生成的批处理关联。 的 [!DNL Catalog] 然后，批次会标记为成功，这会触发下游流以摄取可用数据。
+將所有檔案上傳至批次後，可以發出完成批次的訊號。 藉由執行此動作， [!DNL Catalog] DataSetFile專案是為已完成的檔案建立的，並與上面產生的批次相關聯。 此 [!DNL Catalog] 然後批次會標籤為成功，這會觸發下游資料流擷取可用資料。
 
 **请求**
 
@@ -267,7 +267,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 要上传到数据集的批次的ID。 |
+| `{BATCH_ID}` | 要上傳至資料集的批次ID。 |
 
 ```SHELL
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE" \
@@ -277,15 +277,15 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 -H "x-api-key: {API_KEY}"
 ```
 
-**响应**
+**回應**
 
 ```JSON
 #Status 200 OK, with empty response
 ```
 
-## 检查批状态
+## 檢查批次狀態
 
-等待文件上传到批处理时，可以检查批处理的状态以查看其进度。
+在等待檔案上傳到批次時，可以檢查批次的狀態以檢視其進度。
 
 **API格式**
 
@@ -295,7 +295,7 @@ GET /batch/{BATCH_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 正在检查的批处理的ID。 |
+| `{BATCH_ID}` | 正在檢查的批次識別碼。 |
 
 **请求**
 
@@ -307,7 +307,7 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
   -H "x-api-key: {API_KEY}"
 ```
 
-**响应**
+**回應**
 
 ```JSON
 {
@@ -399,23 +399,23 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{USER_ID}` | 创建或更新批处理的用户ID。 |
+| `{USER_ID}` | 建立或更新批次的使用者ID。 |
 
-的 `"status"` 字段，显示所请求批的当前状态。 批可以具有以下状态之一：
+此 `"status"` 欄位會顯示所請求批次的目前狀態。 批次可以有下列其中一種狀態：
 
-## 批量摄取状态
+## 批次擷取狀態
 
 | 状态 | 描述 |
 | ------ | ----------- |
-| 已放弃 | 批次未在预期时间范围内完成。 |
-| 已中止 | 中止操作已 **显式** 已调用（通过批量摄取API）。 批处理处于“已加载”状态后，将无法中止该批处理。 |
-| 活动 | 批已成功提升，可用于下游冲减。 此状态可与“成功”交替使用。 |
-| 已删除 | 批次的数据已完全删除。 |
-| 失败 | 由配置错误和/或数据错误导致的终端状态。 失败批处理的数据将 **not** 出现。 此状态可与“失败”交替使用。 |
-| 不活动 | 批已成功提升，但已还原或已过期。 批次不再可用于下游冲减。 |
-| 已加载 | 批处理的数据已完成，并且批处理已准备好进行升级。 |
-| 正在加载 | 正在上载此批次的数据，并且该批次当前为 **not** 准备升职。 |
-| 正在重试 | 正在处理此批的数据。 但是，由于系统或临时错误，批处理失败 — 因此，将重试此批处理。 |
-| 暂存 | 批处理提升流程的暂存阶段已完成，并且已运行摄取作业。 |
-| 暂存 | 正在处理批处理的数据。 |
-| 停止 | 正在处理批处理的数据。 但是，多次重试后，批量升级已停止。 |
+| 已放棄 | 批次未在預期時間範圍內完成。 |
+| 已中止 | 中止作業具有 **明確** 已針對指定批次呼叫（透過批次擷取API）。 批次一旦處於「已載入」狀態，就無法中止。 |
+| 活动 | 已成功提升該批次，並可用於下游使用。 此狀態可與「Success」互換使用。 |
+| 已刪除 | 批次的資料已完全移除。 |
+| 失败 | 因設定錯誤和/或資料錯誤所導致的終端機狀態。 失敗批次的資料將 **not** 顯示。 此狀態可與「失敗」互換使用。 |
+| 非使用中 | 批次已成功提升，但已還原或已過期。 該批次不再可用於下游消耗。 |
+| 已載入 | 批次的資料已完成，且批次已準備好進行升級。 |
+| 正在載入 | 此批次的資料正在上傳，批次目前為 **not** 已準備好提升。 |
+| 正在重試 | 正在處理此批次的資料。 但由於系統或暫時性錯誤，批次失敗 — 因此，正在重試此批次。 |
+| 已分段 | 批次升級流程的準備階段已完成，且擷取工作已執行。 |
+| 暂存 | 批次的資料正在處理中。 |
+| 已擱置 | 批次的資料正在處理中。 但是，在多次重試後，批次促銷活動已停止。 |

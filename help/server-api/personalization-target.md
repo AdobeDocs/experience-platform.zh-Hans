@@ -1,6 +1,6 @@
 ---
-title: 通过Adobe Target进行个性化
-description: 了解如何使用服务器API来提供和渲染在Adobe Target中创建的个性化体验。
+title: 透過Adobe Target個人化
+description: 瞭解如何使用伺服器API來傳遞和轉譯在Adobe Target中建立的個人化體驗。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
 source-git-commit: 091d5440d7346861b7c882fa0a17bd03d528e438
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 1%
 
 ---
 
-# 通过Adobe Target进行个性化
+# 透過Adobe Target個人化
 
 ## 概述 {#overview}
 
-边缘网络服务器API可以借助 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en).
+Edge Network Server API可協助提供和轉譯在Adobe Target中建立的個人化體驗。 [表單式體驗撰寫器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en).
 
 >[!IMPORTANT]
 >
->通过 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) 服务器API不完全支持。 服务器API可以 **检索** 活动，但服务器API无法 **render** 活动。 如果要渲染由VEC创建的活动，请实施 [混合个性化](../edge/personalization/hybrid-personalization.md) 使用Web SDK和边缘网络服务器API。
+>透過建立的個人化體驗 [Target視覺化體驗撰寫器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) 伺服器API不完全支援。 伺服器API可以 **retrieve** 由VEC建立的活動，但伺服器API無法 **轉譯** VEC建立的活動。 如果您想要轉譯VEC建立的活動，請實作 [混合個人化](../edge/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network Server API。
 
-## 配置数据流 {#configure-your-datastream}
+## 設定您的資料串流 {#configure-your-datastream}
 
-在将服务器API与Adobe Target结合使用之前，必须对数据流配置启用Adobe Target个性化。
+您必須先在資料流設定上啟用Adobe Target個人化，才能將伺服器API與Adobe Target搭配使用。
 
-请参阅 [向数据流添加服务的指南](../edge/datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
+請參閱 [新增服務至資料流的指南](../edge/datastreams/overview.md#adobe-target-settings)，以取得如何啟用Adobe Target的詳細資訊。
 
-在配置数据流时，您可以（可选）为 [!DNL Property Token], [!DNL Target Environment ID]和 [!DNL Target Third Party ID Namespace].
+設定資料流時，您可以（選擇性）提供以下專案的值： [!DNL Property Token]， [!DNL Target Environment ID]、和 [!DNL Target Third Party ID Namespace].
 
-![显示数据流服务配置屏幕的UI图像，并选择Adobe Target](assets/target-datastream.png)
+![顯示資料流服務設定畫面的UI影像，其中選取Adobe Target](assets/target-datastream.png)
 
 
 ## 自定义参数 {#custom-parameters}
 
-中的大多数字段 [!DNL XDM] 每个请求的一部分序列化为点符号，然后作为自定义或 [!DNL mbox] 参数。
+中的大部分欄位 [!DNL XDM] 每個請求的部分都會序列化為點標籤法，然後以自訂或的形式傳送至Target [!DNL mbox] 引數。
 
 
 ### 示例 {#custom-parameters-example}
 
-提供以下XDM示例：
+提供以下XDM範例：
 
 ```json
 "xdm":{
@@ -49,15 +49,15 @@ ht-degree: 1%
 }
 ```
 
-在Target中创建受众时，以下值可用作自定义参数：
+在Target中建立受眾時，下列值將可作為自訂引數使用：
 
 * `xdm.marketing.campaignGroup`
 * `xdm.marketing.campaignName`
 * `xdm.marketing.trackingCode`
 
-## Target配置文件更新 {#profile-update}
+## Target設定檔更新 {#profile-update}
 
-的 [!DNL Server API] 用于更新Target配置文件。 要更新Target配置文件，请确保在 `data` 请求的一部分，格式如下：
+此 [!DNL Server API] 允許更新Target設定檔。 若要更新Target設定檔，請確定設定檔資料已傳入 `data` 請求部分，格式如下：
 
 ```json
 "data":  {
@@ -68,30 +68,30 @@ ht-degree: 1%
 }
 ```
 
-## 查询Target活动 {#querying-target-activities}
+## 查詢Target活動 {#querying-target-activities}
 
 ### 架构 {#schemas}
 
-请求的查询部分可确定Target返回的内容。 在 `personalization` 对象， `schemas` 确定Target要返回的内容类型。
+請求的查詢部分決定Target傳回的內容。 在 `personalization` 物件， `schemas` 決定Target要傳回的內容型別。
 
-如果您不确定将检索哪种选件，则应在对边缘网络的个性化查询中包含所有四个架构：
+若您不確定要擷取哪一種優惠方案，應在Edge Network的個人化查詢中納入全部四個結構描述：
 
-* **基于HTML的选件：**
+* **HTML型優惠方案：**
 https://ns.adobe.com/personalization/html-content-item
-* **基于JSON的选件：**
+* **JSON型選件：**
 https://ns.adobe.com/personalization/json-content-item
-* **Target重定向选件**
+* **Target重新導向選件**
 https://ns.adobe.com/personalization/redirect-item
-* **Target DOM操作选件**
+* **目標DOM操作選件**
 https://ns.adobe.com/personalization/dom-action
 
-### 决策范围 {#decision-scopes}
+### 決定範圍 {#decision-scopes}
 
-Adobe Target [!DNL mbox] 名称应包含在 `decisionScopes` 数组来返回相应的内容。
+Adobe Target [!DNL mbox] 名稱應包含在 `decisionScopes` 陣列，傳回適當的內容。
 
 #### 示例 {#decision-scopes-example}
 
-在以下示例中，请求所有四种选件类型以及一个名为 `serverapimbox`.
+在以下範例中，會請求所有四種選件型別以及一個名為的Target活動 `serverapimbox`.
 
 ```json
 "query":{
@@ -109,7 +109,7 @@ Adobe Target [!DNL mbox] 名称应包含在 `decisionScopes` 数组来返回相�
 }
 ```
 
-## API调用示例 {#api-example}
+## API呼叫範例 {#api-example}
 
 **API格式**
 
@@ -119,7 +119,7 @@ POST /ee/v2/interact
 
 ### 请求 {#request}
 
-下面概述了一个完整请求，其中包括一个完整的XDM对象、配置文件参数以及相应的Target查询。
+包含完整XDM物件、設定檔引數以及適當Target查詢的完整請求概述如下。
 
 ```shell
 curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}' \
@@ -200,7 +200,7 @@ curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 
 ### 响应 {#response}
 
-边缘网络将返回与下面类似的响应。
+Edge Network會傳回類似下列的回應。
 
 ```json
 {
@@ -271,20 +271,20 @@ curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 }
 ```
 
-如果访客根据发送到Adobe Target的数据有资格参加个性化活动，则相关活动内容将在 `handle` 对象，其中类型为 `personalization:decisions`.
+如果訪客根據傳送至Adobe Target的資料符合個人化活動的資格，相關活動內容將會位於 `handle` 物件，其中型別為 `personalization:decisions`.
 
-有时，会在 `handle` 也是。 其他内容类型与Target个性化无关。 如果访客符合多个活动的条件，则每个活动将是一个单独的活动 `personalization` 对象。
+其他內容有時會傳回到 `handle` 以及。 其他內容型別與Target個人化無關。 如果訪客符合多個活動的資格，則每個活動將是一個單獨的 `personalization` 物件。
 
-下表说明了响应中该部分的关键元素。
+下表說明該部分回應的主要元素。
 
 | 属性 | 描述 | 示例 |
 |---|---|---|
-| `scope` | 产生建议选件的Target mbox名称。 | `"scope": "serverapimbox"` |
-| `items[].schema` | 与建议的选件关联的内容的架构。 这将与您在创建个性化活动时选择的活动类型相关。 | `"schema": "https://ns.adobe.com/personalization/json-content-item",` |
-| `items[].meta.activity.id` | 选件活动的唯一ID。 通常为6位数。 | `"activity.id": "140281"` |
-| `items[].meta.activity.name` | 用户指定的选件活动的名称。 在活动创建步骤中提供了此信息。 | `"activity.name": "Server API Form"` |
-| `items[].meta.experience.id` | 个性化体验的唯一ID。 | `"experience.id": "0"` |
-| `items[].meta.experience.name` | 个性化体验的唯一名称。 | `"experience.name": "Experience A"` |
-| `items[].data.id` | 建议的选件的ID。 | `"id": "282484"` |
-| `items[].data.format` | 与建议的选件关联的内容格式。 | `"format: "application/json` |
-| `items[].data.content` | 与建议的选件关联的内容。 这将用于个性化调用应用程序的内容。 | `"content": "<CONTENT CONFIGURED IN TARGET>"` |
+| `scope` | 產生建議優惠方案的Target mbox名稱。 | `"scope": "serverapimbox"` |
+| `items[].schema` | 與建議選件相關聯的內容結構描述。 這會與您建立個人化活動時選取的活動型別相關。 | `"schema": "https://ns.adobe.com/personalization/json-content-item",` |
+| `items[].meta.activity.id` | 優惠活動的唯一ID。 通常是6位數的數字。 | `"activity.id": "140281"` |
+| `items[].meta.activity.name` | 使用者指定的優惠方案活動的名稱。 這會在活動建立步驟期間提供。 | `"activity.name": "Server API Form"` |
+| `items[].meta.experience.id` | 個人化體驗的唯一識別碼。 | `"experience.id": "0"` |
+| `items[].meta.experience.name` | 個人化體驗的唯一名稱。 | `"experience.name": "Experience A"` |
+| `items[].data.id` | 建議優惠方案的ID。 | `"id": "282484"` |
+| `items[].data.format` | 與建議選件相關聯的內容格式。 | `"format: "application/json` |
+| `items[].data.content` | 與建議優惠方案相關的內容。 這將用於呼叫應用程式內容的個人化。 | `"content": "<CONTENT CONFIGURED IN TARGET>"` |

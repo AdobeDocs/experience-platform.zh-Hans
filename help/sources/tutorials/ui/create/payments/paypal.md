@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；paypal;Paypal
+keywords: Experience Platform；首頁；熱門主題；paypal；Paypal
 solution: Experience Platform
-title: 在UI中创建PayPal源连接
+title: 在使用者介面中建立PayPal來源連線
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建PayPal源连接。
+description: 瞭解如何使用Adobe Experience Platform UI建立PayPal來源連線。
 exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,59 +12,59 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL PayPal] UI中的源连接
+# 建立 [!DNL PayPal] ui中的來源連線
 
-Adobe Experience Platform中的源连接器提供了按计划摄取外部源数据的功能。 本教程提供了创建 [!DNL PayPal] 源连接器。
+Adobe Experience Platform中的來源聯結器可讓您依排程擷取外部來源的資料。 本教學課程提供建立 [!DNL PayPal] 使用Platform使用者介面的來源聯結器。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-如果您已经拥有 [!DNL PayPal] 连接时，您可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/payments.md)
+如果您已有有效的 [!DNL PayPal] 連線時，您可以略過本檔案的其餘部分，並繼續進行上的教學課程 [設定資料流](../../dataflow/payments.md)
 
-### 收集所需的凭据
+### 收集必要的認證
 
-为了访问 [!DNL PayPal] 帐户平台中，您必须提供以下值：
+為了存取您的 [!DNL PayPal] 帳戶平台，您必須提供下列值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `host` | 的URL [!DNL PayPal] 实例。 |
-| `clientID` | 与 [!DNL PayPal] 应用程序。 |
-| `clientSecret` | 与 [!DNL PayPal] 应用程序。 |
+| `host` | 的URL [!DNL PayPal] 執行個體。 |
+| `clientID` | 與您的關聯的使用者端ID [!DNL PayPal] 應用程式。 |
+| `clientSecret` | 與您的關聯的使用者端密碼 [!DNL PayPal] 應用程式。 |
 
-有关入门的更多信息，请参阅此 [[!DNL PayPal] 文档](https://developer.paypal.com/docs/api/overview/#get-credentials)
+如需入門的詳細資訊，請參閱此 [[!DNL PayPal] 檔案](https://developer.paypal.com/docs/api/overview/#get-credentials)
 
-## 连接 [!DNL PayPal] 帐户
+## 連線您的 [!DNL PayPal] 帳戶
 
-收集所需的凭据后，您可以按照以下步骤链接 [!DNL PayPal] 帐户到平台。
+收集完所需的認證後，您可以依照下列步驟連結 [!DNL PayPal] 至平台的帳戶。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 **[!UICONTROL 源]** 工作区。 的 **[!UICONTROL 目录]** 屏幕会显示您可为其创建帐户的各种源。
+登入 [Adobe Experience Platform](https://platform.adobe.com) 然後選取 **[!UICONTROL 來源]** 以存取 **[!UICONTROL 來源]** 工作區。 此 **[!UICONTROL 目錄]** 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 **[!UICONTROL 支付]** 类别，选择 **[!UICONTROL PayPal]**. 如果这是您首次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，请选择 **[!UICONTROL 添加数据]** 创建新 [!DNL PayPal] 连接器。
+在 **[!UICONTROL 付款]** 類別，選取 **[!UICONTROL PayPal]**. 如果您是第一次使用此聯結器，請選取 **[!UICONTROL 設定]**. 否則，請選取 **[!UICONTROL 新增資料]** 以建立新的 [!DNL PayPal] 聯結器。
 
-![目录](../../../../images/tutorials/create/paypal/catalog.png)
+![目錄](../../../../images/tutorials/create/paypal/catalog.png)
 
-的 **[!UICONTROL 连接到PayPal]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線到PayPal]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 新帐户
+### 新帳戶
 
-如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供名称、可选描述以及 [!DNL PayPal] 凭据。 完成后，选择 **[!UICONTROL 连接]** 然后，再留出一些时间建立新连接。
+如果您使用新認證，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供名稱、選擇性說明，以及 [!DNL PayPal] 認證。 完成後，選取 **[!UICONTROL Connect]** 然後等待一段時間以建立新連線。
 
 ![connect](../../../../images/tutorials/create/paypal/connect.png)
 
-### 现有帐户
+### 現有帳戶
 
-要连接现有帐户，请选择 [!DNL PayPal] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要連線現有帳戶，請選取 [!DNL PayPal] 您要連線的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![现有](../../../../images/tutorials/create/paypal/existing.png)
+![現有](../../../../images/tutorials/create/paypal/existing.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已经与 [!DNL PayPal] 帐户。 您现在可以继续下一个教程和 [配置数据流以将付款数据导入平台](../../dataflow/payments.md).
+依照本教學課程，您已建立與的連線， [!DNL PayPal] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流以將付款資料匯入Platform](../../dataflow/payments.md).

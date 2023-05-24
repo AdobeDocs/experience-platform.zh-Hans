@@ -1,6 +1,6 @@
 ---
-title: 合并模式概述
-description: 此视频基本了解Adobe Experience Platform的合并模式，并概述如何使用平台UI探索合并模式。
+title: 聯合結構概觀
+description: 此影片提供對Adobe Experience Platform中聯合結構描述的基本瞭解，並概述如何使用Platform UI探索聯合結構描述。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -9,21 +9,20 @@ audience: all
 doc-type: video
 activity: understand
 thumbnail: null
-translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+exl-id: b3f84ed8-09e8-470e-b5e2-944a4eaf147b
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '101'
 ht-degree: 2%
 
 ---
 
-
 # 合并模式概述
 
-此视频基本了解Adobe Experience Platform的合并模式，并概述如何使用平台用户界面探索合并模式。 要了解有关合并模式的更多信息，请访问[合并模式UI指南](../ui/union-schema.md)。
+此影片提供對Adobe Experience Platform中聯合結構描述的基本瞭解，並概述如何使用Platform使用者介面探索聯合結構描述。 若要進一步瞭解聯合結構描述，請造訪 [聯合結構描述UI指南](../ui/union-schema.md).
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自录制此视频以来可能已更改。 有关最新信息，请参阅[合并模式UI指南](../ui/union-schema.md)。
+>Experience Platform使用者介面經常更新，自從錄製此影片後，可能有所變更。 如需最新資訊，請參閱 [聯合結構描述UI指南](../ui/union-schema.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/329940?quality=12&learn=on&captions=eng)

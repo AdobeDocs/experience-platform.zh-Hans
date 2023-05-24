@@ -1,87 +1,85 @@
 ---
-title: Marketo Measure Ultimate目标
-description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
+title: Marketo Measure Ultimate目的地
+description: 瞭解如何連結及啟用資料至Marketo Measure Ultimate目的地。
 last-substantial-update: 2023-03-07T00:00:00Z
-source-git-commit: c2c7a4cd860fed2c8124fe46fe3fd405ba49ecf4
+exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 1%
 
 ---
 
-
-# Marketo Measure Ultimate目标 {#mmu-destination}
+# Marketo Measure Ultimate目的地 {#mmu-destination}
 
 ## 概述 {#overview}
 
-Marketo Measure（以前称为Bizible）可让营销人员深入了解哪些营销工作在为公司增加收入和最大化投资回报方面最有效。 Marketo Measure是一种营销归因解决方案，可自动跟踪和报告渠道效果，让您能够洞察哪些渠道产生的客户参与度最高，并相应地优化营销支出。
+Marketo Measure （前身為Bizible）可讓行銷人員深入瞭解哪些行銷手法最能有效提升公司收入，實現投資報酬最大化。 Marketo Measure是一種行銷歸因解決方案，可自動追蹤和報告管道績效，讓您可見哪些管道可帶來最多的客戶參與，並據此將行銷支出最佳化。
 
-该目标支持企业到企业(B2B)数据从Adobe Experience Platform流入Marketo Measure。 此卡仅供Marketo Measure Ultimate客户使用。
+目的地可讓企業對企業(B2B)資料從Adobe Experience Platform傳輸至Marketo Measure。 此卡僅限Marketo Measure Ultimate客戶使用。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应如何以及何时使用Marketo Measure目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。 此集成:
+為協助您更清楚瞭解如何使用Marketo Measure目的地，以下是Adobe Experience Platform客戶可使用此目的地解決的範例使用案例。 此集成:
 
-* 满足大型企业复杂的数据和性能报告要求。
-* 在多个CRM和营销自动化系统中启用B2B归因报告。
-* 便于引入第三方离线接触点数据。
+* 滿足大型企業複雜的資料與效能報告需求。
+* 啟用多個CRM和行銷自動化系統的B2B歸因報告。
+* 可輕鬆引入第三方離線接觸點資料。
 
 ## 先决条件 {#prerequisites}
 
-请注意Marketo Measure目标的以下先决条件：
+請注意Marketo Measure目的地的下列先決條件：
 
-* 管理员应在Marketo Measure设置页面中完成Experience Platform沙盒映射。 如果没有沙盒映射，您将无法完成连接到目标保存和激活数据的工作流。
-* 只能导出B2B XDM类的数据集（例如，请参阅XDM业务帐户和XDM业务机会类）。 无法为给定数据源引入同一B2B XDM类的多个数据集。
-* 每个数据集只能包含在发往Marketo Measure目标的一个数据流中。
+* 管理員應在Marketo Measure設定頁面中完成Experience Platform沙箱對應。 如果沒有沙箱對應，您便無法完成工作流程以連線至目的地儲存並啟用資料。
+* 只能匯出B2B XDM類別的資料集（例如，請參閱XDM商業帳戶和XDM商業機會類別）。 您無法為指定的資料來源匯入相同B2B XDM類別的多個資料集。
+* 每個資料集只能包含在Marketo Measure目的地的一個資料流中。
 
-## 导出类型和频率 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 数据集导出]** | 您正在导出未按受众兴趣或资格进行分组或构建的原始数据集。 详细了解 [数据集导出](/help/destinations/destination-types.md#dataset-export-destinations). |
-| 导出频率 | **[!UICONTROL 批次]** | 此批处理目标每两小时会将文件导出到Marketo Measure平台。 详细了解 [计划数据集导出](/help/destinations/ui/export-datasets.md#scheduling). |
+| 匯出型別 | **[!UICONTROL 資料集匯出]** | 您正在匯出未依對象興趣或資格進行分組或建構的原始資料集。 深入瞭解 [資料集匯出](/help/destinations/destination-types.md#dataset-export-destinations). |
+| 匯出頻率 | **[!UICONTROL 批次]** | 此批次目的地每兩小時會將檔案匯出至Marketo Measure平台。 深入瞭解 [排程資料集匯出](/help/destinations/ui/export-datasets.md#scheduling). |
 
 {style="table-layout:auto"}
 
-## 连接到目标 {#connect}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写以下部分中列出的字段。
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下區段列出的欄位。
 
-### 填写目标详细信息 {#destination-details}
+### 填寫目的地詳細資料 {#destination-details}
 
-要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
 
-* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
+* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
 
-![Marketo Measure目标的连接到目标工作流。](/help/destinations/assets/catalog/adobe/marketo-measure-ultimate/marketo-measure-connect-to-destination.png)
+![Marketo Measure目的地的連線至目的地工作流程。](/help/destinations/assets/catalog/adobe/marketo-measure-ultimate/marketo-measure-connect-to-destination.png)
 
-### 启用警报 {#enable-alerts}
+### 啟用警示 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-## 将数据集导出到此目标 {#export-datasets}
+## 將資料集匯出至此目的地 {#export-datasets}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 管理和啟用資料集目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-阅读 [（测试版）导出数据集](/help/destinations/ui/export-datasets.md) 教程，了解有关将数据集导出到此目标的详细说明。
+閱讀 [(Beta)匯出資料集](/help/destinations/ui/export-datasets.md) 教學課程，以取得將資料集匯出至此目的地的詳細指示。
 
-## 验证数据导出 {#exported-data}
+## 驗證資料匯出 {#exported-data}
 
-要验证是否成功导出数据集，您可以检查数据集是否已成功导出到 [Snowflakedata warehouse](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=en).
+若要驗證資料集匯出是否成功，您可以檢查資料集是否已成功匯出至 [Snowflake資料倉儲](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=en).
 
-## 数据使用和管理 {#data-usage-governance}
+## 資料使用與控管 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).
-
-
+全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請閱讀 [資料控管概觀](/help/data-governance/home.md).

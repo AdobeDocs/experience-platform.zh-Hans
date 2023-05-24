@@ -1,6 +1,6 @@
 ---
-description: 了解如何使用基于文件的目标测试API来验证通过Destination SDK构建的基于文件的目标的配置。
-title: 基于文件的目标测试API
+description: 瞭解如何使用檔案型目的地測試API來驗證透過Destination SDK建立的檔案型目的地設定。
+title: 檔案型目的地測試API
 exl-id: 2733fd00-af08-4763-a30e-a53ee56c0a19
 source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
 workflow-type: tm+mt
@@ -10,46 +10,46 @@ ht-degree: 0%
 ---
 
 
-# 基于文件的目标测试API概述
+# 檔案型目的地測試API概觀
 
-基于文件的目标测试API是一组端点，您可以使用这些端点来验证通过Destination SDK构建的基于文件的目标的配置。
+檔案型目的地測試API是一組端點，可用來驗證透過Destination SDK建立的檔案型目的地的設定。
 
-我们建议您先使用这些工具来验证您的配置 [提交](../../guides/submit-destination.md) 您的审阅目标Adobe。
+建議您先使用這些工具驗證您的設定，然後再執行 [提交](../../guides/submit-destination.md) 您的Adobe檢閱目的地。
 
-为获得最佳测试结果，我们建议根据以下流程图使用此API。
+為獲得最佳測試結果，我們建議根據下列流程圖使用此API。
 
-![显示推荐目标测试流程的图表](../../assets/testing-api/batch-destinations/file-based-testing-flow.png)
+![顯示建議目的地測試流程的圖表](../../assets/testing-api/batch-destinations/file-based-testing-flow.png)
 
-有关每个端点可以执行的操作的简要概述，请参阅以下部分。
+請參閱以下各節，以取得每個端點的功能簡介。
 
-## 生成示例用户档案 {#generate-sample-profiles}
+## 產生範例設定檔 {#generate-sample-profiles}
 
-使用 `/sample-profiles` API端点，用于根据您现有的源架构生成示例配置文件。
+使用 `/sample-profiles` API端點可根據您現有的來源結構描述產生範例設定檔。
 
-示例用户档案可帮助您了解用户档案的JSON结构。 此外，它们还为您提供了一个默认设置，您可以使用自己的配置文件数据进行自定义，以进一步进行目标测试。
+範例設定檔可協助您瞭解設定檔的JSON結構。 此外，它們也會提供您預設值，讓您可使用自己的設定檔資料進行自訂，以便進行進一步的目的地測試。
 
-请参阅 [专用文档](file-based-sample-profile-generation-api.md) 了解如何生成示例用户档案。
+請參閱 [專屬檔案](file-based-sample-profile-generation-api.md) 以瞭解如何產生範例設定檔。
 
-## 测试目标配置 {#test-destination-configuration}
+## 測試目的地設定 {#test-destination-configuration}
 
-使用 `/testing/destinationInstance` 用于测试基于文件的目标是否正确配置，以及验证数据流向您配置的目标的完整性的API端点。
+使用 `/testing/destinationInstance` API端點，用於測試您的檔案型目的地是否已正確設定，以及驗證流向您設定之目的地的資料流的完整性。
 
-无论是否添加，您都可以向测试端点发出请求 [示例用户档案](file-based-sample-profile-generation-api.md) 呼叫。 如果您未在请求中发送任何用户档案，则API会自动生成一个示例用户档案并将其添加到请求中。
+您可以向測試端點提出請求，無論是否新增 [範例設定檔](file-based-sample-profile-generation-api.md) 至通話。 如果您未在請求上傳送任何設定檔，API會自動產生範例設定檔，並將其新增至請求。
 
-请参阅 [专用文档](file-based-destination-testing-api.md) 了解如何使用示例用户档案测试目标配置。
+請參閱 [專屬檔案](file-based-destination-testing-api.md) 以瞭解如何使用範例設定檔測試目的地設定。
 
-## 查看详细的激活结果 {#view-detailed-activation-results}
+## 檢視詳細的啟用結果 {#view-detailed-activation-results}
 
-使用 `/testing/destinationInstance` 用于查看基于文件的目标测试结果的完整详细信息的API端点。
+使用 `/testing/destinationInstance` API端點可讓您檢視檔案式目的地測試結果的完整詳細資訊。
 
-此API端点会返回与使用 [流量服务API](../../../api/update-destination-dataflows.md) 监视数据流。
+此API端點傳回的結果與使用時獲得的結果相同。 [流程服務API](../../../api/update-destination-dataflows.md) 以監視資料流。
 
-请参阅 [专用文档](file-based-destination-results-api.md) 了解如何查看详细的激活结果。
+請參閱 [專屬檔案](file-based-destination-results-api.md) 以瞭解如何檢視詳細的啟用結果。
 
-## 呈现客户数据字段 {#render-customer-data-fields}
+## 呈現客戶資料欄位 {#render-customer-data-fields}
 
-使用 `/authoring/testing/template/render` 用于显示模板化情况的API端点 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 在目标配置中定义的内容如下所示。
+使用 `/authoring/testing/template/render` API端點可將範本化方式加以視覺化 [客戶資料欄位](../../functionality/destination-configuration/customer-data-fields.md) 目的地設定中定義的變數會很類似。
 
-API端点会为您的客户数据字段生成随机值，并在响应中返回它们。 这有助于您验证客户数据字段的语义结构，如存储段名称或文件夹路径。
+API端點會為您的客戶資料欄位產生隨機值，並在回應中傳回這些值。 這可協助您驗證客戶資料欄位（例如儲存貯體名稱或資料夾路徑）的語意結構。
 
-请参阅 [专用文档](file-based-render-template-api.md) 了解如何为客户数据字段生成和可视化值。
+請參閱 [專屬檔案](file-based-render-template-api.md) 以瞭解如何產生和視覺化客戶資料欄位的值。

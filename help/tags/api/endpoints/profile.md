@@ -1,6 +1,6 @@
 ---
-title: 配置文件端点
-description: 了解如何在Reactor API中调用/profiles端点。
+title: 設定檔端點
+description: 瞭解如何在Reactor API中呼叫/profiles端點。
 exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 5%
 
 ---
 
-# 配置文件端点
+# 設定檔端點
 
-在Reactor API中，配置文件表示Adobe Experience Platform用户。 Reactor API不维护其自己的用户和权限数据库，而是依赖于由管理的AdobeID [Adobe的身份管理系统(IMS)](https://helpx.adobe.com/cn/enterprise/using/identity.html).
+在Reactor API中，設定檔代表Adobe Experience Platform使用者。 Reactor API不會維護自己的使用者和許可權資料庫，而是仰賴由管理的AdobeID [Adobe的身分管理系統(IMS)](https://helpx.adobe.com/cn/enterprise/using/identity.html).
 
-配置文件包含有关已登录用户的所有信息，包括其所属的所有组织、其所属在每个组织中的产品配置文件，以及他们从每个产品配置文件中拥有的权限。
+設定檔包含有關登入使用者的所有資訊，包括所屬的所有組織、每個組織中所屬的產品設定檔，以及每個產品設定檔賦予的許可權。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索当前配置文件 {#lookup}
+## 擷取目前的設定檔 {#lookup}
 
-您可以通过向 `/profile` 端点。
+您可以透過向以下網站發出GET請求，擷取目前登入的設定檔的詳細資料： `/profile` 端點。
 
 **API格式**
 
@@ -43,7 +43,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回用户档案的详细信息。
+成功的回應會傳回設定檔的詳細資料。
 
 ```json
 {

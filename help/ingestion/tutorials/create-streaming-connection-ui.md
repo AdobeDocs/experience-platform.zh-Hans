@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；流连接；创建流连接；UI指南；教程；创建流连接；流摄取；
+keywords: Experience Platform；首頁；熱門主題；串流連線；建立串流連線；ui指南；教學課程；建立串流連線；串流擷取；擷取；
 solution: Experience Platform
-title: 使用UI创建流连接
+title: 使用UI建立串流連線
 type: Tutorial
-description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
+description: 本UI指南將協助您使用Adobe Experience Platform建立串流連線。
 exl-id: af485890-61b1-4c83-8af9-a55e8ed6d69a
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -12,10 +12,10 @@ ht-degree: 0%
 
 ---
 
-# 使用UI创建流连接
+# 使用UI建立串流連線
 
-为了开始将数据流式传输到 [!DNL Experience Platform]，则必须先创建流HTTP连接。 创建流连接时，您需要提供关键详细信息，如流数据源，以及您是否打算从受信任（已验证）或不受信任（未验证）的源发送数据。
+為了開始將資料串流至 [!DNL Experience Platform]，您必須先建立串流HTTP連線。 建立串流連線時，您需要提供關鍵詳細資訊，例如串流資料的來源，以及您是否要從受信任（已驗證）或未受信任（未驗證）的來源傳送資料。
 
-注册流连接后，您将拥有一个唯一的URL，可用于将数据流式传输到 [!DNL Platform].
+註冊串流連線後，您會有唯一的URL，可用來將資料串流到 [!DNL Platform].
 
-要了解如何创建流连接，请阅读 [HTTP API源UI指南](../../sources/tutorials/ui/create/streaming/http.md).
+若要瞭解如何建立串流連線，請閱讀 [HTTP API來源UI指南](../../sources/tutorials/ui/create/streaming/http.md).

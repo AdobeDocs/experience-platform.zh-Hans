@@ -1,209 +1,209 @@
 ---
-keywords: 事件转发扩展；布雷；阻止事件转发扩展
-title: Braze事件转发扩展
-description: 此Adobe Experience Platform事件转发扩展会将Adobe Experience Edge Network事件发送到Braze。
+keywords: 事件轉送擴充功能；Braze；Braze事件轉送擴充功能
+title: Braze事件轉送擴充功能
+description: 此Adobe Experience Platform事件轉送擴充功能會將Adobe Experience Edge Network事件傳送至Braze。
 last-substantial-update: 2023-03-29T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+exl-id: 297f48f8-2c3b-41c2-8820-35f4558c67b3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 4%
 
 ---
 
+# [!DNL Braze Track Events API] 事件轉送擴充功能
 
-# [!DNL Braze Track Events API] 事件转发扩展
+[[!DNL Braze]](https://www.braze.com) 是客戶參與平台，可即時促進消費者與品牌之間以客戶為中心的互動。 使用 [!DNL Braze]，您可以執行以下操作：
 
-[[!DNL Braze]](https://www.braze.com) 是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的交互。 使用 [!DNL Braze]，您可以执行以下操作：
+- 根據使用者的語言偏好設定、位置偏好設定等，將資料（例如行銷訊息）傳送給目標使用者，以提高轉換率並支援關鍵業務目標。
+- 在適當的時間以客戶偏好的語言，跨多個管道傳送客戶個人化訊息，包括電子郵件、推播通知和應用程式內訊息。
+- 針對行銷和促銷活動的特定使用者，以增加重複客戶的數量。
+- 研究使用者行為和模式，以自訂訊息鎖定特定對象，這可能有助於增加收入。
 
-- 根据目标用户的语言偏好、位置偏好等向其提供数据（如营销消息），以提高转化率并支持关键业务目标。
-- 在适当的时间以客户首选的语言，跨多个渠道向客户发送个性化的消息，包括电子邮件、推送通知和应用程序内消息。
-- 为营销和促销活动定位特定用户，以增加回访客户数量。
-- 研究用户行为和模式以通过自定义消息定向特定受众，这有助于增加收入。
+此 [!DNL Braze Track Events API] [事件轉送](../../../ui/event-forwarding/overview.md) 擴充功能可讓您運用Adobe Experience Platform Edge Network中擷取的資料，並將其傳送至 [!DNL Braze] 以伺服器端事件的形式使用 [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API。
 
-的 [!DNL Braze Track Events API] [事件转发](../../../ui/event-forwarding/overview.md) 扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Braze] 以服务器端事件的形式使用 [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API。
-
-本文档介绍扩展的用例、如何在事件转发库中安装该扩展，以及如何在事件转发中使用其功能 [规则](../../../ui/managing-resources/rules.md).
+本文介紹擴充功能的使用案例、如何在事件轉送程式庫中安裝，以及如何在事件轉送中運用其功能 [規則](../../../ui/managing-resources/rules.md).
 
 ## 用例
 
-如果要在 [!DNL Braze] 以利用其客户分析和定位功能。
+如果您想要使用來自Edge Network的資料，請使用此擴充功能 [!DNL Braze] 以善用其客戶分析和目標定位功能。
 
-例如，假设零售组织拥有多渠道业务（网站和移动设备），并且从其网站和移动平台中捕获作为事件数据的事务性或对话式输入。 使用各种 [标记](../../../home.md) 规则，此数据会实时发送到边缘网络。 从此处， [!DNL Braze] 事件转发扩展会自动将相关事件发送到 [!DNL Braze] 从服务器端。
+例如，假設某個零售組織擁有多頻道實體（網站和行動裝置），且正從其網站和行動平台擷取交易式或對話式輸入作為事件資料。 使用各種 [標籤](../../../home.md) 規則，此資料會即時傳送至Edge Network。 從這裡， [!DNL Braze] 事件轉送擴充功能會自動傳送相關事件至 [!DNL Braze] 從伺服器端。
 
-发送数据后，组织的分析团队便可以利用 [!DNL Braze's] 用于处理数据集和获取业务分析的功能，以生成图形、功能板或其他可视化图表，从而通知业务利益相关方。 请参阅 [[!DNL Braze] 客户](https://www.braze.com/customers) 页面，以了解有关该平台各种用例的更多详细信息。
+傳送資料後，組織的分析團隊就可以運用 [!DNL Braze's] 能夠處理資料集並取得業務深入分析，以產生圖表、儀表板或其他視覺效果，以告知業務利害關係人。 請參閱 [[!DNL Braze] 客戶](https://www.braze.com/customers) 頁面，以取得平台各種使用案例的詳細資訊。
 
-## [!DNL Braze] 先决条件和防护 {#prerequisites}
+## [!DNL Braze] 必要條件和護欄 {#prerequisites}
 
-您必须具有 [!DNL Braze] 以便使用其技术。 如果您没有帐户，请导航到 [开始页面](https://www.braze.com/get-started/) on [!DNL Braze] 连接到 [!DNL Braze Sales] 并启动帐户创建过程。
+您必須擁有 [!DNL Braze] 以使用其技術。 如果您沒有帳戶，請瀏覽至 [開始使用頁面](https://www.braze.com/get-started/) 於 [!DNL Braze] 以連線到 [!DNL Braze Sales] 並啟動帳戶建立程式。
 
-### API护栏
+### API護欄
 
-扩展使用 [!DNL Braze]的API及其限制如下所述：
+擴充功能使用兩個 [!DNL Braze]的API及其限制概述如下：
 
 | API | 速率限制 |
 | --- | --- |
-| [!DNL User Track] | 每分钟50,000个请求。 <br>请参阅 [[!DNL User Track] API文档](https://www.braze.com/docs/api/endpoints/user_data/post_user_track#rate-limit) 以了解详细信息。 |
-| [!DNL User Identify] | 每分钟20,000个请求。 <br>请参阅 [[!DNL User Identify] API文档](https://www.braze.com/docs/api/endpoints/user_data/post_user_identify#rate-limit) 以了解详细信息。 |
+| [!DNL User Track] | 每分鐘50,000個請求。 <br>請參閱 [[!DNL User Track] API檔案](https://www.braze.com/docs/api/endpoints/user_data/post_user_track#rate-limit) 以取得詳細資訊。 |
+| [!DNL User Identify] | 每分鐘20,000個要求。 <br>請參閱 [[!DNL User Identify] API檔案](https://www.braze.com/docs/api/endpoints/user_data/post_user_identify#rate-limit) 以取得詳細資訊。 |
 
 >[!NOTE]
 >
-> 请参阅 [[!DNL Braze] API限制](https://www.braze.com/docs/api/api_limits/) 有关这些限制的更多细节。
+> 請參閱以下指南： [[!DNL Braze] API限制](https://www.braze.com/docs/api/api_limits/) 以取得有關其限制的其他詳細資料。
 
-### 计费数据点
+### 可記帳資料點
 
-将其他自定义属性发送到 [!DNL Braze] 可以增加 [!DNL Braze] 数据点使用情况。 咨询您的 [!DNL Braze] 帐户管理器。 请参阅 [!DNL Braze] 文档 [计费数据点](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/#billable-data-points) 以了解更多信息。
+傳送其他自訂屬性至 [!DNL Braze] 可能會增加 [!DNL Braze] 資料點使用量。 請諮詢您的 [!DNL Braze] 帳戶管理員，然後再傳送其他自訂屬性。 請參閱 [!DNL Braze] 檔案： [可記帳資料點](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/#billable-data-points) 以取得詳細資訊。
 
-### 收集所需的配置详细信息 {#configuration-details}
+### 收集必要的設定詳細資料 {#configuration-details}
 
-将边缘网络连接到 [!DNL Braze]，则需要输入以下数据：
+為了將Edge Network連線到 [!DNL Braze]，需要下列輸入：
 
-| 键类型 | 描述 | 示例 |
+| 金鑰型別 | 描述 | 示例 |
 | --- | --- | --- |
-| [!DNL Braze] 实例 | 与 [!DNL Braze] 帐户。 请参阅 [!DNL Braze] 文档 [实例](https://www.braze.com/docs/user_guide/administrative/access_braze/braze_instances) 以获取指导。 | `https://rest.iad-03.braze.com` |
-| API 密钥 | 的 [!DNL Braze] 与 [!DNL Braze] 帐户。 <br/>请参阅 [!DNL Braze] 文档位于 [REST API密钥](https://www.braze.com/docs/api/basics/#rest-api-key) 以获取指导。 | `YOUR-BRAZE-REST-API-KEY` |
+| [!DNL Braze] 实例 | 與相關聯的REST端點 [!DNL Braze] 帳戶。 請參閱 [!DNL Braze] 檔案： [執行個體](https://www.braze.com/docs/user_guide/administrative/access_braze/braze_instances) 以取得指引。 | `https://rest.iad-03.braze.com` |
+| API 密钥 | 此 [!DNL Braze] 與相關聯的API金鑰 [!DNL Braze] 帳戶。 <br/>請參閱 [!DNL Braze] 相關檔案： [REST API金鑰](https://www.braze.com/docs/api/basics/#rest-api-key) 以取得指引。 | `YOUR-BRAZE-REST-API-KEY` |
 
-### 创建密钥
+### 建立密碼
 
-新建 [事件转发密钥](../../../ui/event-forwarding/secrets.md) 并将值设置为 [[!DNL Braze] API密钥](#configuration-details). 这将用于验证与帐户的连接，同时保持值的安全性。
+建立新的 [事件轉送密碼](../../../ui/event-forwarding/secrets.md) 並將值設定為 [[!DNL Braze] API金鑰](#configuration-details). 這將用於驗證與您的帳戶的連線，同時保持值安全。
 
-## 安装和配置 [!DNL Braze] 扩展 {#install}
+## 安裝並設定 [!DNL Braze] 擴充功能 {#install}
 
-要安装扩展，请 [创建事件转发属性](../../../ui/event-forwarding/overview.md#properties) 或选择要编辑的现有属性。
+若要安裝擴充功能， [建立事件轉送屬性](../../../ui/event-forwarding/overview.md#properties) 或選擇現有屬性進行編輯。
 
-选择 **[!UICONTROL 扩展]** 中。 在 **[!UICONTROL 目录]** 选项卡，选择 **[!UICONTROL 安装]** 在 [!DNL Braze] 扩展。
+選取 **[!UICONTROL 擴充功能]** 左側導覽列中。 在 **[!UICONTROL 目錄]** 索引標籤，選取 **[!UICONTROL 安裝]** 在的卡片上 [!DNL Braze] 副檔名。
 
-![安装 [!DNL Braze] 扩展。](../../../images/extensions/server/braze/install-extension.png)
+![安裝 [!DNL Braze] 副檔名。](../../../images/extensions/server/braze/install-extension.png)
 
-在下一个屏幕上，输入以下内容 [配置值](#configuration-details) 之前从 [!DNL Braze]:
+在下一個畫面中，輸入下列內容 [設定值](#configuration-details) 您先前收集的 [!DNL Braze]：
 
-- **[!UICONTROL Braze Rest端点URL]**:您可以输入 [!DNL Braze] rest端点URL作为提供的输入中的纯文本。
-- **[!UICONTROL API密钥]**:选择 [秘密数据元素](#create-a-secret) 之前创建的，其中包含 [!DNL Braze] API密钥。
+- **[!UICONTROL Braze Rest端點URL]**：您可以輸入 [!DNL Braze] 在提供的輸入中將端點URL重設為純文字。
+- **[!UICONTROL API金鑰]**：選取 [秘密資料元素](#create-a-secret) 您先前建立的檔案，其中包含 [!DNL Braze] api金鑰。
 
-选择 **[!UICONTROL 保存]** 完成。
+選取 **[!UICONTROL 儲存]** 完成後。
 
-![的 [!DNL Braze] 扩展配置页面。](../../../images/extensions/server/braze/configure-extension.png)
+![此 [!DNL Braze] 擴充功能組態頁面。](../../../images/extensions/server/braze/configure-extension.png)
 
-## 创建 [!DNL Send Event] 规则 {#tracking-rule}
+## 建立 [!DNL Send Event] 規則 {#tracking-rule}
 
-安装扩展后，创建新的事件转发 [规则](../../../ui/managing-resources/rules.md) 并根据需要配置其条件。 为规则配置操作时，选择 **[!UICONTROL 布雷兹]** 扩展，然后选择 **[!UICONTROL 发送事件]** （对于操作类型）。
+安裝擴充功能後，建立新的事件轉送 [規則](../../../ui/managing-resources/rules.md) 並視需要設定其條件。 設定規則的動作時，選取 **[!UICONTROL 釺焊]** 擴充功能，然後選取 **[!UICONTROL 傳送事件]** （動作型別）。
 
-![添加事件转发规则操作配置。](../../../images/extensions/server/braze/braze-event-action.png)
+![新增事件轉送規則動作設定。](../../../images/extensions/server/braze/braze-event-action.png)
 
-**[!UICONTROL 用户标识]**
+**[!UICONTROL 使用者識別]**
 
-| 输入 | 描述 |
+| 輸入 | 描述 |
 | --- | --- |
-| [!UICONTROL 外部用户ID] | 长、随机且分布良好的UUID或GUID。 如果您选择其他方法来命名用户ID，则这些ID还必须长、随机且分布良好。 详细了解 [建议的用户ID命名约定](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_user_ids#suggested-user-id-naming-convention). |
-| [!UICONTROL Braze用户ID] | 使用户标识符更新。 |
-| [!UICONTROL 用户别名] | 别名用作替代的唯一用户标识符。 使用别名来标识与核心用户ID具有不同维度的用户。 <br><br> 用户别名对象由两部分组成：标识符本身的alias_name，以及指示别名类型的alias_label。 用户可以具有多个具有不同标签的别名，但每个别名标签只能有一个别名。 |
+| [!UICONTROL 外部使用者ID] | 長、隨機和分佈良好的UUID或GUID。 如果您選擇其他方法來為您的使用者ID命名，這些使用者ID也必須是長的、隨機且分佈良好。 進一步瞭解 [建議的使用者ID命名慣例](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_user_ids#suggested-user-id-naming-convention). |
+| [!UICONTROL Braze使用者ID] | Braze使用者識別碼。 |
+| [!UICONTROL 使用者別名] | 別名可作為替代的不重複使用者識別碼。 使用別名來識別與您的核心使用者ID位於不同維度的使用者。 <br><br> 使用者別名物件由兩部分組成：識別碼本身的alias_name，以及指示別名型別的alias_label。 使用者可以有多個具有不同標籤的別名，但每個alias_label只能有一個別名_name。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
-> 要将事件与用户绑定，您需要填写 [!UICONTROL 外部用户ID] 字段，或 [!UICONTROL Braze用户标识符] 字段或 [!UICONTROL 用户别名] 中。
+> 若要將事件連結至使用者，您必須填寫 [!UICONTROL 外部使用者ID] 欄位，或 [!UICONTROL Braze使用者識別碼] 欄位或 [!UICONTROL 使用者別名] 區段。
 
-**[!UICONTROL 事件数据]**
+**[!UICONTROL 事件資料]**
 
-| 输入 | 描述 | 必需 |
+| 輸入 | 描述 | 必需 |
 | --- | --- | --- |
-| [!UICONTROL 活动名称 &#x200B;] | 事件的名称。 | 是 |
-| [!UICONTROL 事件时间 ] | 在ISO 8601或 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
-| [!UICONTROL 应用程序标识符] | 应用程序标识符或 <strong>app_id</strong> 是将活动与应用程序组中的特定应用程序关联的参数。 它可指定您与之交互的应用程序组中的哪个应用程序。 进一步了解 [API标识符类型](https://www.braze.com/docs/api/identifier_types/). |  |
-| [!UICONTROL 事件属&#x200B;性] | 包含事件自定义属性的JSON对象。 |  |
+| [!UICONTROL 活动名称 &#x200B;] | 事件名稱。 | 是 |
+| [!UICONTROL 事件時間 ] | 日期時間為ISO 8601或中的字串 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
+| [!UICONTROL 應用程式識別碼] | 應用程式識別碼或 <strong>app_id</strong> 是將活動與應用程式群組中特定應用程式建立關聯的引數。 它會指定您正在與應用程式群組互動的應用程式。 進一步瞭解 [API識別碼型別](https://www.braze.com/docs/api/identifier_types/). |  |
+| [!UICONTROL 事件屬&#x200B;性] | 包含事件的自訂屬性的JSON物件。 |  |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
-> 的 **[!UICONTROL 阻止发送事件]** 操作只需要 **[!UICONTROL 事件名称]** 和 **[!UICONTROL 事件时间]** ，但您应在自定义属性字段中尽可能多地包含信息。 有关 [!DNL Braze] 事件对象，请参阅 [官方文档](https://www.braze.com/docs/api/objects_filters/event_object/).
+> 此 **[!UICONTROL Braze傳送事件]** 動作只需要一個 **[!UICONTROL 事件名稱]** 和 **[!UICONTROL 事件時間]** ，但您應在自訂屬性欄位中儘可能加入更多資訊。 如需詳細資訊，請參閱 [!DNL Braze] 事件物件，請參閱 [正式檔案](https://www.braze.com/docs/api/objects_filters/event_object/).
 
-**[!UICONTROL 用户属性]**
+**[!UICONTROL 使用者屬性]**
 
-用户属性可以是JSON对象，其中包含将使用指定用户配置文件中提供的名称和值创建或更新属性的字段。 支持以下属性：
+使用者屬性可以是JSON物件，其中包含將使用指定使用者設定檔上提供的名稱和值來建立或更新屬性的欄位。 支援下列屬性：
 
-| 用户属性 | 描述 |
+| 使用者屬性 | 描述 |
 | --- | --- |
 | [!UICONTROL 名字] |  |
 | [!UICONTROL 姓氏] |  |
 | [!UICONTROL Phone] |  |
 | [!UICONTROL 电子邮件] |  |
-| [!UICONTROL 性别] | 以下字符串之一：“M”、“F”、“O”（其他）、“N”（不适用）、“P”（宁可不说）。 |
+| [!UICONTROL 性别] | 下列其中一個字串：「M」、「F」、「O」（其他）、「N」（不適用）、「P」（不想說）。 |
 | [!UICONTROL 城市] |  |
-| [!UICONTROL 国家/地区] | 国家/地区： [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 格式。 |
-| [!UICONTROL 语言] | 语言作为字符串 [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) 格式。 |
-| [!UICONTROL 出生日期] | 格式为“YYYY-MM-DD”的字符串(例如，1980-12-21)。 |
-| [!UICONTROL 时区] | 时区名称来源 [IANA时区数据库](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (例如，“America/New_York”或“Eastern Time(Us &amp; Canada)”)。 |
-| [!UICONTROL Facebook] | 包含任意id（字符串）、称赞（字符串数组）、num_friends（整数）的哈希。 |
-| [!UICONTROL Twitter] | 包含以下任一项的哈希： id（整数）、screen_name(字符串，Twitter句柄)、followers_count（整数）、friends_count（整数）、statusstages_count(integer)。 |
+| [!UICONTROL 国家/地区] | 國家/地區作為字串 [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 格式。 |
+| [!UICONTROL 语言] | 中作為字串的語言 [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) 格式。 |
+| [!UICONTROL 出生日期] | 字串，格式為「YYYY-MM-DD」（如1980-12-21）。 |
+| [!UICONTROL 时区] | 時區名稱來源 [IANA時區資料庫](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (例如，「美洲/紐約」或「東部時間（美國和加拿大）」)。 |
+| [!UICONTROL facebook] | 雜湊包含任何id （字串）、like （字串陣列）、num_friends （整數）。 |
+| [!UICONTROL Twitter] | 雜湊包含下列任一專案：id （整數）、screen_name (字串、Twitter控制代碼)、followers_count （整數）、friends_count （整數）、statuses_count（整數）。 |
 
 {style="table-layout:auto"}
 
-## 创建 [!DNL Send Purchase Event] 规则 {#purchase-rule}
+## 建立 [!DNL Send Purchase Event] 規則 {#purchase-rule}
 
-安装扩展后，创建新的事件转发 [规则](../../../ui/managing-resources/rules.md) 并根据需要配置其条件。 为规则配置操作时，选择 **[!UICONTROL 布雷兹]** 扩展，然后选择 **[!UICONTROL 发送购买事件]** （对于操作类型）。
+安裝擴充功能後，建立新的事件轉送 [規則](../../../ui/managing-resources/rules.md) 並視需要設定其條件。 設定規則的動作時，選取 **[!UICONTROL 釺焊]** 擴充功能，然後選取 **[!UICONTROL 傳送購買事件]** （動作型別）。
 
-![添加“品牌购买”操作类型事件转发规则操作配置。](../../../images/extensions/server/braze/braze-purchase-event-action.png)
+![新增Braze Purchase動作型別事件轉送規則動作設定。](../../../images/extensions/server/braze/braze-purchase-event-action.png)
 
-**[!UICONTROL 用户标识]**
+**[!UICONTROL 使用者識別]**
 
-| 输入 | 描述 |
+| 輸入 | 描述 |
 | --- | --- |
-| [!UICONTROL 外部用户ID] | 长、随机且分布良好的UUID或GUID。 如果您选择其他方法来命名用户ID，则这些ID还必须长、随机且分布良好。 详细了解 [建议的用户ID命名约定](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_user_ids#suggested-user-id-naming-convention). |
-| [!UICONTROL Braze用户ID] | 使用户标识符更新。 |
-| [!UICONTROL 用户别名] | 别名用作替代的唯一用户标识符。 使用别名来标识与核心用户ID具有不同维度的用户。 <br><br> 用户别名对象由两部分组成：标识符本身的alias_name，以及指示别名类型的alias_label。 用户可以具有多个具有不同标签的别名，但每个别名标签只能有一个别名。 |
+| [!UICONTROL 外部使用者ID] | 長、隨機和分佈良好的UUID或GUID。 如果您選擇其他方法來為您的使用者ID命名，這些使用者ID也必須是長的、隨機且分佈良好。 進一步瞭解 [建議的使用者ID命名慣例](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_user_ids#suggested-user-id-naming-convention). |
+| [!UICONTROL Braze使用者ID] | Braze使用者識別碼。 |
+| [!UICONTROL 使用者別名] | 別名可作為替代的不重複使用者識別碼。 使用別名來識別與您的核心使用者ID位於不同維度的使用者。 <br><br> 使用者別名物件由兩部分組成：識別碼本身的alias_name，以及指示別名型別的alias_label。 使用者可以有多個具有不同標籤的別名，但每個alias_label只能有一個別名_name。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
-> 要将事件链接到用户，您必须完成 [!UICONTROL 外部用户ID] 字段， [!UICONTROL Braze用户标识符] 字段，或 [!UICONTROL 用户别名] 中。
+> 若要將事件連結至使用者，您必須完成 [!UICONTROL 外部使用者ID] 欄位， [!UICONTROL Braze使用者識別碼] 欄位，或 [!UICONTROL 使用者別名] 區段。
 
-**[!UICONTROL 购买数据]**
+**[!UICONTROL 購買資料]**
 
-| 输入 | 描述 | 必需 |
+| 輸入 | 描述 | 必需 |
 | --- | --- | --- |
-| [!UICONTROL 产品 ID &#x200B;] | 购买的标识符。 （例如，产品名称或产品类别） | 是 |
-| [!UICONTROL 购买时间 ] | 在ISO 8601或 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
-| [!UICONTROL 货币 &#x200B;] | 货币作为 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 字母货币代码格式。 | 是 |
+| [!UICONTROL 产品 ID &#x200B;] | 購買的識別碼。 （例如產品名稱或產品類別） | 是 |
+| [!UICONTROL 購買時間 ] | 日期時間為ISO 8601或中的字串 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
+| [!UICONTROL 货币 &#x200B;] | 貨幣作為字串，位於 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 字母貨幣代碼格式。 | 是 |
 | [!UICONTROL 价格 &#x200B;] | 价格. | 是 |
-| [!UICONTROL 数量 &#x200B;] | 如果未提供，则默认值为1。 最大值必须小于100。 |  |
-| [!UICONTROL 应用程序标识符] | 应用程序标识符或 <strong>app_id</strong> 是将活动与应用程序组中的特定应用程序关联的参数。 它可指定您与之交互的应用程序组中的哪个应用程序。 进一步了解 [API标识符类型](https://www.braze.com/docs/api/identifier_types/). |  |
-| [!UICONTROL 购买属&#x200B;性] | 包含购买的自定义属性的JSON对象。 |  |
+| [!UICONTROL 数量 &#x200B;] | 若未提供，預設值將為1。 最大值必須小於100。 |  |
+| [!UICONTROL 應用程式識別碼] | 應用程式識別碼或 <strong>app_id</strong> 是將活動與應用程式群組中特定應用程式建立關聯的引數。 它會指定您正在與應用程式群組互動的應用程式。 進一步瞭解 [API識別碼型別](https://www.braze.com/docs/api/identifier_types/). |  |
+| [!UICONTROL 購買屬&#x200B;性] | 包含購買的自訂屬性的JSON物件。 |  |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
-> 的 **[!UICONTROL 阻止发送事件]** 操作只需要 **[!UICONTROL 事件名称]** 和 **[!UICONTROL 事件时间]** ，但您应在自定义属性字段中尽可能多地包含信息。 有关 [!DNL Braze] 事件对象，请参阅 [官方文档](https://www.braze.com/docs/api/objects_filters/event_object/).
+> 此 **[!UICONTROL Braze傳送事件]** 動作只需要一個 **[!UICONTROL 事件名稱]** 和 **[!UICONTROL 事件時間]** ，但您應儘可能在自訂屬性欄位中包含更多資訊。 如需詳細資訊，請參閱 [!DNL Braze] 事件物件，請參閱 [正式檔案](https://www.braze.com/docs/api/objects_filters/event_object/).
 
-**[!UICONTROL 用户属性]**
+**[!UICONTROL 使用者屬性]**
 
-用户属性可以是JSON对象，其中包含将使用指定用户配置文件中提供的名称和值创建或更新属性的字段。 支持以下属性：
+使用者屬性可以是JSON物件，其中包含將使用指定使用者設定檔上提供的名稱和值來建立或更新屬性的欄位。 支援下列屬性：
 
-| 用户属性 | 描述 |
+| 使用者屬性 | 描述 |
 | --- | --- |
 | [!UICONTROL 名字] |  |
 | [!UICONTROL 姓氏] |  |
 | [!UICONTROL Phone] |  |
 | [!UICONTROL 电子邮件] |  |
-| [!UICONTROL 性别] | 以下字符串之一：“M”、“F”、“O”（其他）、“N”（不适用）、“P”（宁可不说）。 |
+| [!UICONTROL 性别] | 下列其中一個字串：「M」、「F」、「O」（其他）、「N」（不適用）、「P」（不想說）。 |
 | [!UICONTROL 城市] |  |
-| [!UICONTROL 国家/地区] | 国家/地区： [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 格式。 |
-| [!UICONTROL 语言] | 语言作为字符串 [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) 格式。 |
-| [!UICONTROL 出生日期] | 格式为“YYYY-MM-DD”的字符串(例如，1980-12-21)。 |
-| [!UICONTROL 时区] | 时区名称来源 [IANA时区数据库](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (例如，“America/New_York”或“Eastern Time(Us &amp; Canada)”)。 |
-| [!UICONTROL Facebook] | 包含任意id（字符串）、称赞（字符串数组）、num_friends（整数）的哈希。 |
-| [!UICONTROL Twitter] | 包含以下任一项的哈希： id（整数）、screen_name(字符串，Twitter句柄)、followers_count（整数）、friends_count（整数）、statusstages_count(integer)。 |
+| [!UICONTROL 国家/地区] | 國家/地區作為字串 [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 格式。 |
+| [!UICONTROL 语言] | 中作為字串的語言 [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) 格式。 |
+| [!UICONTROL 出生日期] | 字串，格式為「YYYY-MM-DD」（如1980-12-21）。 |
+| [!UICONTROL 时区] | 時區名稱來源 [IANA時區資料庫](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (例如，「美洲/紐約」或「東部時間（美國和加拿大）」)。 |
+| [!UICONTROL facebook] | 雜湊包含任何id （字串）、like （字串陣列）、num_friends （整數）。 |
+| [!UICONTROL Twitter] | 雜湊包含下列任一專案：id （整數）、screen_name (字串、Twitter控制代碼)、followers_count （整數）、friends_count （整數）、statuses_count（整數）。 |
 
 {style="table-layout:auto"}
 
-## 在中验证数据 [!DNL Braze] {#validate}
+## 驗證中的資料 [!DNL Braze] {#validate}
 
-如果事件集合和 [!DNL Adobe Experience Platform] 集成成功后，您将在 [!DNL Braze] 控制台 [查看用户配置文件](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/). 具体而言，发送到的新事件数据 [!DNL Braze] 反映在 [!DNL Purchases] 特定用户的部分 [“概述”选项卡](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/#overview-tab).
+如果事件集合和 [!DNL Adobe Experience Platform] 整合成功，您將會在 [!DNL Braze] 主控台時間 [檢視使用者設定檔](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/). 具體而言，新事件資料傳送至 [!DNL Braze] 反映在 [!DNL Purchases] 特定使用者的部分 [概覽標籤](https://www.braze.com/docs/user_guide/engagement_tools/segments/user_profiles/#overview-tab).
 
 ## 后续步骤
 
-本指南介绍了如何将转化事件发送到 [!DNL Braze] 使用事件转发。 有关下游应用程序的更多详细信息，请参阅 [!DNL Braze]，请参阅 [官方文档](https://www.braze.com/docs).
+本指南說明如何將轉換事件傳送至 [!DNL Braze] 使用事件轉送。 有關傳送至之事件資料的下游應用程式的更多詳細資料 [!DNL Braze]，請參閱 [正式檔案](https://www.braze.com/docs).
 
-有关Experience Platform中事件转发功能的更多信息，请参阅 [事件转发概述](../../../ui/event-forwarding/overview.md).
+如需Experience Platform中事件轉送功能的詳細資訊，請參閱 [事件轉送概觀](../../../ui/event-forwarding/overview.md).

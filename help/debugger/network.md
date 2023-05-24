@@ -1,6 +1,6 @@
 ---
-title: “网络”选项卡
-description: 了解如何使用Adobe Experience Platform Debugger中的“网络”选项卡。
+title: 網路標籤
+description: 瞭解如何使用Adobe Experience Platform Debugger中的「網路」索引標籤。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;网络;信息
 seo-description: Experience Platform Debugger Network screen
 seo-title: Network Tab
@@ -13,9 +13,9 @@ ht-degree: 62%
 
 ---
 
-# “网络”选项卡
+# 網路標籤
 
-的 **网络** 选项卡汇总页面上发出的所有Adobe Experience Cloud解决方案调用，并按从左到右的顺序显示它们。 标准参数会自动标示友好名称，并按照相同的角色对常用参数进行分组。
+此 **網路** 索引標籤會彙總頁面上發出的所有Adobe Experience Cloud解決方案呼叫，並依從左到右的順序顯示。 标准参数会自动标示友好名称，并按照相同的角色对常用参数进行分组。
 
 ![](images/network.jpg)
 
@@ -29,9 +29,9 @@ ht-degree: 62%
 
 ![](images/network-analytics.jpg)
 
-要恢复显示所有解决方案，请选择 **[!UICONTROL 网络]**
+若要返回顯示所有解決方案，請選取 **[!UICONTROL 網路]**
 
-在“网络”视图的项目上选择以查看展开的视图。 从展开的视图窗口中，可以将显示的信息复制到“剪贴板”。
+在「網路」檢視中的專案上選取，以檢視展開檢視。 从展开的视图窗口中，可以将显示的信息复制到“剪贴板”。
 
 ![](images/network-expand.jpg)
 
@@ -39,6 +39,6 @@ ht-degree: 62%
 
 ![](images/copy.jpg)-->
 
-要清除列表，请选择 **[!UICONTROL 删除事件]**.
+若要清除清單，請選取 **[!UICONTROL 移除事件]**.
 
-要下载包含此屏幕上信息的Excel文件，请选择 **[!UICONTROL 下载]**.
+若要下載包含此熒幕上資訊的Excel檔案，請選取 **[!UICONTROL 下載]**.

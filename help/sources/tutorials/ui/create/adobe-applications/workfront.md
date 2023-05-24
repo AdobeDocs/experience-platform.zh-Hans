@@ -1,99 +1,99 @@
 ---
-keywords: Experience Platform；主页；热门主题；
-title: （测试版）在UI中创建Adobe Workfront源连接
-description: 本教程提供了创建Adobe Workfront源连接以使用用户界面将Workfront数据引入Adobe Experience Platform的步骤。
+keywords: Experience Platform；首頁；熱門主題；
+title: （測試版）在UI中建立Adobe Workfront來源連線
+description: 本教學課程提供建立Adobe Workfront來源連線的步驟，以使用使用者介面將Workfront資料帶入Adobe Experience Platform。
 exl-id: f82e852a-c9d1-4ecc-bc54-2b39d3b4cc1e
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '771'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# （测试版）在UI中创建Adobe Workfront源连接
+# （測試版）在UI中建立Adobe Workfront來源連線
 
 >[!NOTE]
 >
->Adobe Workfront源是测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+>Adobe Workfront來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
 
-本教程提供了创建Adobe Workfront源连接以使用用户界面将Workfront数据引入Adobe Experience Platform的步骤。
+本教學課程提供建立Adobe Workfront來源連線的步驟，以使用使用者介面將Workfront資料帶入Adobe Experience Platform。
 
 ## 快速入门
 
 >[!IMPORTANT]
 >
->您必须在Adobe Admin Console中配置为管理员才能访问Workfront源。
+>您必須在Adobe Admin Console中設定為管理員，才能存取Workfront來源。
 
-本教程需要对Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Experience Platform元件：
 
-* [Experience Data Model(XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-* [实时客户资料](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [Experience Data Model (XDM)系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+* [即時客戶個人檔案](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-## 在UI中创建Workfront源连接
+## 在使用者介面中建立Workfront來源連線
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕显示可用于创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示可用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 您还可以使用搜索栏来缩小显示的源范围。
+您可以從畫面左側的目錄中選取適當的類別。 您也可以使用搜尋列來縮小顯示的來源。
 
-在 **[!UICONTROL Adobe应用程序]** 类别，选择 **[!UICONTROL Adobe Workfront]** 然后选择 **[!UICONTROL 添加数据]**.
+在 **[!UICONTROL Adobe應用程式]** 類別，選取 **[!UICONTROL Adobe Workfront]** 然後選取 **[!UICONTROL 新增資料]**.
 
-![突出显示Adobe Workfront源的源目录。](../../../../images/tutorials/create/workfront/catalog.png)
+![反白顯示Adobe Workfront來源的來源目錄。](../../../../images/tutorials/create/workfront/catalog.png)
 
 ## 选择数据
 
-的 [!UICONTROL 选择数据] 中。 在此，必须为Workfront子域和Datalane提供值。 您的Workfront子域是用于访问Workfront实例的相同URL，例如 `https://acme.workfront.com/`，而datalane则表示您要使用的workfront环境。
+此 [!UICONTROL 選取資料] 步驟隨即顯示。 在這裡，您必須提供Workfront子網域和Datalane的值。 舉例來說，您的Workfront子網域與您用來存取Workfront執行個體的URL相同 `https://acme.workfront.com/`，而您的datalane代表您要使用的workfront環境。
 
-添加子域和数据栏后，选择 **[!UICONTROL 下一个]**.
+新增子網域和Datalane後，請選取 **[!UICONTROL 下一個]**.
 
-![包含子域和数据栏占位符值的“选择数据”页。](../../../../images/tutorials/create/workfront/select-data.png)
+![具有子網域和datalane預留位置值的選取資料頁面。](../../../../images/tutorials/create/workfront/select-data.png)
 
-## 提供数据流详细信息
+## 提供資料流詳細資料
 
-数据流详细信息步骤允许您为数据流提供名称和可选描述。 在此步骤中，您还可以订阅警报以接收有关数据流状态的通知。 有关警报的更多信息，请访问 [在源UI中订阅警报](../../alerts.md).
+資料流詳細資料步驟可讓您為資料流提供名稱和可選描述。 在此步驟中，您也可以訂閱警報以接收有關資料流狀態的通知。 如需關於警報的詳細資訊，請瀏覽下列主題的教學課程： [訂閱來源UI中的警報](../../alerts.md).
 
-提供数据流详细信息并配置所需的警报设置后，请选择 **[!UICONTROL 下一个]**.
+提供資料流詳細資料並設定所需的警報設定後，請選取 **[!UICONTROL 下一個]**.
 
-![数据流详细信息页，其中包含有关数据流名称、描述和警报通知的信息](../../../../images/tutorials/create/workfront/dataflow-detail.png)
+![包含資料流名稱、說明和警示通知之資訊的資料流詳細資訊頁面](../../../../images/tutorials/create/workfront/dataflow-detail.png)
 
-## 审阅
+## 请查看
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源檔案的相關路徑，以及該來源檔案中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
-![概述连接信息的审核页面。](../../../../images/tutorials/create/workfront/review.png)
+![摘要連線資訊的檢閱頁面。](../../../../images/tutorials/create/workfront/review.png)
 
 ## 附录
 
-以下各节提供了有关Workfront源的其他信息。
+以下小節提供有關Workfront來源的其他資訊。
 
-### Workfront更改事件架构
+### Workfront變更事件結構描述
 
-Platform中的Workfront数据表示为时间系列记录数据，其中数据的每一行都有一个时间戳，显示事件发生的时间以及与该事件相关的属性。
+Platform中的Workfront資料以時間序列記錄資料表示，資料中的每一列都有時間戳記，顯示事件發生的時間及與該事件相關的屬性。
 
-在设置过程中，会创建一个名为“从流中更改事件”的Workfront架构。
+在設定期間，會建立名為「來自流程的Workfront變更事件」的結構描述。
 
-| 架构字段 | 描述 |
+| 結構描述欄位 | 描述 |
 | --- | --- |
-| `timestamp` | 选定事件发生的时间。 时间戳以GTM时区表示。 |
-| `_workfront.objectType` | 对象类型。 可用值可以包括 `project`, `task`, `portfolio`、和其他对象，具体取决于已更改或创建的对象。 |
-| `_workfront.objectID` | 与对象类型对应的ID。 |
-| `_workfront.created` | 此值设置为 `1` 如果事件表示对象创建。 |
-| `_workfront.deleted` | 此值设置为 `1` 如果删除了对象。 |
-| `_worfkront.updated` | 此值设置为 `1` 如果对象已更新。 |
-| `_workfront.completed` | 此值设置为 `1` 对象标记为已完成。 |
-| `_workfront.parentObjectType` | （可选）与对象的父级对应的对象类型。 |
-| `_workfront.parentID` | 父对象的ID。 |
-| `_workfront.customData` | 事件期间填充的所有自定义表单字段和值的映射。 |
+| `timestamp` | 所選事件發生的時間。 時間戳記以GTM時區表示。 |
+| `_workfront.objectType` | 物件型別。 可用的值包括 `project`， `task`， `portfolio`和其他專案，視變更或建立的物件而定。 |
+| `_workfront.objectID` | 對應至物件型別的ID。 |
+| `_workfront.created` | 此值已設為 `1` 如果事件代表物件建立。 |
+| `_workfront.deleted` | 此值已設為 `1` 如果物件已刪除。 |
+| `_worfkront.updated` | 此值已設為 `1` 如果物件已更新。 |
+| `_workfront.completed` | 此值已設為 `1` 如果物件標示為已完成。 |
+| `_workfront.parentObjectType` | （選用）對應至物件父項的物件型別。 |
+| `_workfront.parentID` | 父物件的ID。 |
+| `_workfront.customData` | 事件期間填入的所有自訂表單欄位和值的對應。 |
 
 >[!IMPORTANT]
 >
->只会填充已更改或已作为事件的一部分创建的属性。 例如，如果只更改对象的名称，则将填充的字段仅包括：<ul><li>`timestamp`</li><li>`_workfront.update (=1)`</li><li>`_workfront.objectType`</li><li>`_workfront.objectID`</li><li>`_workfront.objectName`</li></ul>
+>系統只會填入已變更或已建立為事件一部分的屬性。 例如，如果您只變更物件的名稱，則只會填入下列欄位：<ul><li>`timestamp`</li><li>`_workfront.update (=1)`</li><li>`_workfront.objectType`</li><li>`_workfront.objectID`</li><li>`_workfront.objectName`</li></ul>
 
 ## 后续步骤
 
-在本教程之后，您现在已创建了一个数据流，用于将数据从WorkfrontExperience Platform到数据。 您现在可以使用 [查询服务](../../../../../query-service/home.md) 以进一步分析您的数据。 有关Workfront的更多信息，请阅读 [Workfront概述](../../../../connectors/adobe-applications/workfront.md).
+依照本教學課程所述，您現在已建立資料流，將資料從Workfront帶入Experience Platform。 您現在可以使用以下服務 [查詢服務](../../../../../query-service/home.md) 以進一步分析您的資料。 如需Workfront的詳細資訊，請閱讀 [Workfront概觀](../../../../connectors/adobe-applications/workfront.md).

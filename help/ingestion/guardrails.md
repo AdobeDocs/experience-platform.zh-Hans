@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；故障诊断；护栏；准则；
-title: 数据摄取的防护
-description: 本文档提供了有关在Adobe Experience Platform中摄取数据的防护的指导
+keywords: Experience Platform；疑難排解；護欄；指南；
+title: 資料擷取的護欄
+description: 本檔案提供在Adobe Experience Platform中用於資料擷取的護欄相關指示
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
 source-git-commit: 582f6ffdea6fa1978f6af6f0f0f92e50a12f6200
 workflow-type: tm+mt
@@ -10,35 +10,35 @@ ht-degree: 1%
 
 ---
 
-# 数据摄取的防护
+# 資料擷取的護欄
 
-护栏是指为Adobe Experience Platform中的数据和系统使用、性能优化以及避免错误或意外结果提供指导的阈值。 护栏可以是指您对与授权许可相关的数据和处理的使用情况或使用情况。
+護欄是臨界值，可為Adobe Experience Platform中的資料和系統使用、效能最佳化以及避免錯誤或意外結果提供指引。 護欄可指您關於授權權益的使用或資料消耗與處理方式。
 
-本文档提供了有关在Adobe Experience Platform中摄取数据的防护的指导。
+本檔案提供在Adobe Experience Platform中用於資料擷取的護欄相關指示。
 
-## 批量摄取的防护
+## 批次擷取的護欄
 
-下表概述了在使用 [批量摄取API](./batch-ingestion/overview.md) 或来源：
+下表概述使用時需考慮的護欄 [批次擷取API](./batch-ingestion/overview.md) 或來源：
 
-| 摄取类型 | 准则 | 注释 |
+| 內嵌型別 | 准则 | 注释 |
 | --- | --- | --- |
-| 使用批量摄取API的数据湖摄取 | <ul><li>使用批量摄取API，您每小时可以摄取多达20 GB的数据到数据湖。</li><li>每批文件的最大数量为1500。</li><li>最大批处理大小为100 GB。</li><li>每行的属性或字段的最大数为10000。</li><li>每用户每分钟的批次数上限为138个。</li></ul> |
-| 使用批处理源的数据湖摄取 | <ul><li>使用批量摄取源(例如， [!DNL Azure Blob], [!DNL Amazon S3]和 [!DNL SFTP].</li><li>批处理大小应介于256 MB和100 GB之间。</li><li>每批文件的最大数量为1500。</li></ul> | 请参阅 [源概述](../sources/home.md) 用于数据摄取的源目录。 |
-| 批量摄取到配置文件 | <ul><li>记录类的最大大小为100 KB（软）。</li><li>ExperienceEvent类的最大大小为10 KB（软）。</li><li>单个记录的最大大小为1 MB。</li></ul> |
-| 每天摄取的配置文件或ExperienceEvent批次数 | **每天摄取的配置文件或ExperienceEvent批次数上限为90个。** 这意味着每天摄取的配置文件和ExperienceEvent批次的合计总数不能超过90个。 摄取其他批次将影响系统性能。 | 这是个软限制。 可以超出软限制，但是软限制为系统性能提供了建议的准则。 |
+| 使用批次擷取API擷取資料湖 | <ul><li>您可以使用批次擷取API，每小時最多可擷取20 GB資料至資料湖。</li><li>每個批次的最大檔案數為1500。</li><li>最大批次大小為100 GB。</li><li>每列的屬性或欄位數上限為10000。</li><li>每分鐘每個使用者的批次數量上限為138。</li></ul> |
+| 使用批次來源擷取資料湖 | <ul><li>您可以使用批次擷取來源（例如），每小時將最多200 GB的資料擷取至資料湖 [!DNL Azure Blob]， [!DNL Amazon S3]、和 [!DNL SFTP].</li><li>批次大小應介於256 MB和100 GB之間。</li><li>每個批次的最大檔案數為1500。</li></ul> | 請參閱 [來源概觀](../sources/home.md) 如需可用於資料內嵌的來源目錄。 |
+| 批次擷取至設定檔 | <ul><li>記錄類別的大小上限為100 KB （可變）。</li><li>ExperienceEvent類別的大小上限為10 KB （可變）。</li><li>單一記錄的大小上限為1 MB。</li></ul> |
+| 每天擷取的設定檔或ExperienceEvent批次數量 | **每天最多可擷取90個Profile或ExperienceEvent批次。** 這表示每天擷取的Profile和ExperienceEvent批次總數不能超過90。 擷取其他批次將會影響系統效能。 | 這是軟性限制。 雖然可能會超出軟性限制，但軟性限制會提供系統效能的建議指引。 |
 
-## 用于流式引入的防护
+## 串流擷取的護欄
 
-下表概述了在使用 [流式引入API](./streaming-ingestion/overview.md) 或流源：
+下表概述使用時需考慮的護欄 [串流獲取API](./streaming-ingestion/overview.md) 或串流來源：
 
-| 摄取类型 | 准则 | 注释 |
+| 內嵌型別 | 准则 | 注释 |
 | --- | --- | --- |
-| 流式摄取 | <ul><li>最大记录大小为1 MB，建议大小为10 KB。</li><li>您每秒最多可以处理2500个对用户档案的请求。</li><li>在15分钟内，您每秒最多可以处理20000个数据湖请求。</li></ul> | 如果您需要提高数据吞吐量，请使用批量摄取API。 |
-| 流源 | <ul><li>最大记录大小为1 MB，建议大小为10 KB。</li><li>在创建新的源连接时，流源每秒支持4000到5000个请求。 **注意**:流式数据最多可能需要30分钟才能完全处理到数据湖。</li><li>您每秒可以处理4000到5000个数据湖请求。 **注意**:流式数据最多可能需要30分钟才能完全处理到数据湖。</li></ul> | 流源，如 [!DNL Kafka], [!DNL Azure Event Hubs]和 [!DNL Amazon Kinesis] 不使用 [!DNL Data Collection Core Service] (DCCS)路由，并且可以具有不同的吞吐量限制。 请参阅 [源概述](../sources/home.md) 用于数据摄取的源目录。 |
+| 流式摄取 | <ul><li>記錄大小上限為1 MB，建議大小為10 KB。</li><li>您每秒最多可以處理2500個要求至Profile。</li><li>您可以在15分鐘內每秒最多處理20000個前往資料湖的請求。</li></ul> | 如果您需要更高的資料輸送量，請使用批次擷取API。 |
+| 串流來源 | <ul><li>記錄大小上限為1 MB，建議大小為10 KB。</li><li>在建立新的來源連線時，串流來源支援每秒鐘約4000到5000個要求。 **注意**：將串流資料完全處理至Data Lake最多可能需要30分鐘。</li><li>您可以每秒處理4000到5000個至Data Lake的請求。 **注意**：將串流資料完全處理至Data Lake最多可能需要30分鐘。</li></ul> | 串流來源，例如 [!DNL Kafka]， [!DNL Azure Event Hubs]、和 [!DNL Amazon Kinesis] 請勿使用 [!DNL Data Collection Core Service] (DCCS)路由，可有不同的輸送量限制。 請參閱 [來源概觀](../sources/home.md) 如需可用於資料內嵌的來源目錄。 |
 
 ## 后续步骤
 
-有关Experience Platform中数据和处理护栏的更多信息，请参阅以下文档：
+請參閱下列檔案，深入瞭解資料與Experience Platform處理護欄：
 
-* [实时客户资料数据的防护](../profile/guardrails.md)
-* [Identity Service数据的防护](../identity-service/guardrails.md)
+* [即時客戶個人檔案資料的護欄](../profile/guardrails.md)
+* [Identity Service資料的護欄](../identity-service/guardrails.md)

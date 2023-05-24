@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；分析；归因ai；热门主题；归因ai分析
+keywords: Experience Platform；insights；歸因ai；熱門主題；歸因ai insights
 feature: Attribution AI
-title: 在Attribution AI中发现洞察
-description: 本文档是与Adobe智能服务用户界面中的服务实例分析进行交互的指南。
+title: 探索Attribution AI中的深入分析
+description: 本檔案可作為在AdobeIntelligent Services使用者介面中與服務執行個體見解互動的指南。
 exl-id: 6b8e51e7-1b56-4f4e-94cf-96672b426c88
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
@@ -11,186 +11,186 @@ ht-degree: 0%
 
 ---
 
-# 在Attribution AI中发现洞察
+# 探索Attribution AI中的深入分析
 
-Attribution AI服务实例提供分析，可用于协助制定和衡量与营销绩效和投资回报相关的营销决策。 选择服务实例可提供可视化图表和过滤器，以帮助您了解客户旅程各个阶段每个客户交互的影响。
+Attribution AI服務例項提供深入分析，以協助您做出與行銷表現和投資報酬率相關的行銷決策，並加以衡量。 選取服務執行個體可提供視覺效果和篩選器，協助您瞭解客戶歷程每個階段每個客戶互動的影響。
 
-本文档是与Adobe智能服务用户界面中的服务实例分析进行交互的指南。
+本檔案可作為在AdobeIntelligent Services使用者介面中與服務執行個體見解互動的指南。
 
 ## 快速入门
 
-为了利用Attribution AI分析，您需要有一个运行状态成功的服务实例。 要创建新的服务实例，请访问 [Attribution AI用户界面指南](./user-guide.md). 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
+若要運用Attribution AI的深入分析，您必須有具備成功執行狀態的服務執行個體。 若要建立新的服務執行個體，請造訪 [Attribution AI使用者介面指南](./user-guide.md). 如果您最近建立了服務執行個體，但仍在訓練和評分，請等待24小時讓執行個體完成執行。
 
-## 服务实例分析概述
+## 服務執行個體深入分析概觀
 
-在 [!DNL Adobe Experience Platform] UI，选择 **[!UICONTROL 服务]** 中。 的 **[!UICONTROL 服务]** 浏览器会显示并显示可用的Adobe智能服务。 在Attribution AI容器中，选择 **[!UICONTROL 打开]**.
+在 [!DNL Adobe Experience Platform] UI，選取 **[!UICONTROL 服務]** 左側導覽列中。 此 **[!UICONTROL 服務]** 瀏覽器隨即出現，並顯示可用的AdobeIntelligent Services。 在Attribution AI的容器中，選取 **[!UICONTROL 開啟]**.
 
-![访问您的实例](./images/insights/open_Attribution_ai.png)
+![存取您的執行個體](./images/insights/open_Attribution_ai.png)
 
-此时将显示Attribution AI服务页面。 本页列出了Attribution AI的服务实例并显示了有关这些实例的信息，包括实例名称、转化事件、实例运行频率以及上次更新的状态。 选择要开始的服务实例名称。
+便會顯示「Attribution AI服務」頁面。 此頁面列出Attribution AI的服務執行處理並顯示其相關資訊，包括執行處理名稱、轉換事件、執行處理的執行頻率，以及上次更新的狀態。 選取服務執行個體名稱以開始。
 
 >[!NOTE]
 >
->只能选择已成功完成评分运行的服务实例。
+>只能選取已完成成功評分回合的服務執行個體。
 
-![创建实例](./images/insights/select-service-instance.png)
+![建立例項](./images/insights/select-service-instance.png)
 
-接下来，将显示该服务实例的分析页面，在该页面中，您会获得一些可视化图表和许多过滤器，可用于与数据交互。 在本指南中，将对可视化和过滤器进行更详细的说明。
+接著，該服務執行個體的深入分析頁面就會顯示，其中提供您視覺效果和許多篩選器，讓您與資料互動。 本指南會詳細說明視覺效果和篩選器。
 
-![设置页面](./images/insights/landing-page.png)
+![設定頁面](./images/insights/landing-page.png)
 
-### 服务实例详细信息
+### 服務執行個體詳細資訊
 
-要查看服务实例的其他详细信息，请选择 **[!UICONTROL 显示更多]** 在右上方。
+若要檢視服務執行處理的其他詳細資訊，請選取 **[!UICONTROL 顯示更多]** 右上角。
 
-![显示更多](./images/insights/show-more.png)
+![顯示更多](./images/insights/show-more.png)
 
-此时将显示详细列表。 有关列出的任何属性的更多信息，请访问 [Attribution AI用户指南](./user-guide.md).
+詳細清單隨即顯示。 如需所列任何屬性的詳細資訊，請造訪 [Attribution AI使用手冊](./user-guide.md).
 
-![显示详细信息](./images/insights/advanced-details.png)
+![顯示詳細資料](./images/insights/advanced-details.png)
 
-### 编辑实例
+### 編輯執行個體
 
-要编辑实例，请选择 **[!UICONTROL 编辑]** 中的“隐藏主体”。
-![单击编辑按钮](./images/insights/edit-button.png)
+若要編輯執行個體，請選取 **[!UICONTROL 編輯]** ，位於右上角導覽列中。
+![按一下編輯按鈕](./images/insights/edit-button.png)
 
-此时会出现编辑对话框，允许您编辑实例的名称、描述和评分频率。 如果实例状态被禁用，则无法编辑评分频率。 要确认更改并关闭对话框，请选择 **[!UICONTROL 保存]** 在右下角。
+「編輯」對話方塊會出現，讓您編輯執行個體的名稱、說明和評分頻率。 如果例項狀態為停用，則無法編輯評分頻率。 若要確認變更並關閉對話方塊，請選取 **[!UICONTROL 儲存]** 右下角。
 
-![编辑弹出窗口](./images/insights/edit-popover.png)
+![編輯彈出視窗](./images/insights/edit-popover.png)
 
-### 更多操作 {#more-actions}
+### 更多動作 {#more-actions}
 
-的 **[!UICONTROL 更多操作]** 按钮位于右上方的导航中，位于 **[!UICONTROL 编辑]**. 选择 **[!UICONTROL 更多操作]** 打开一个下拉列表，用于选择以下操作之一：
+此 **[!UICONTROL 更多動作]** 按鈕位於右上角導覽列旁邊 **[!UICONTROL 編輯]**. 選取 **[!UICONTROL 更多動作]** 開啟下拉式清單，讓您選取下列其中一個操作：
 
-- **[!UICONTROL 克隆]**:克隆实例。
-- **[!UICONTROL 删除]**:删除实例。
-- **[!UICONTROL 下载摘要数据]**:下载包含摘要数据的CSV文件。
-- **[!UICONTROL 访问分数]**:选择 **[!UICONTROL 访问分数]** 将您重定向到 [“Attribution AI”教程的访问分数](./download-scores.md).
-- **[!UICONTROL 查看运行历史记录]**:此时会显示一个弹出窗口，其中包含与服务实例关联的所有评分运行的列表。
+- **[!UICONTROL 原地複製]**：複製執行個體。
+- **[!UICONTROL 刪除]**：刪除執行個體。
+- **[!UICONTROL 下載摘要資料]**：下載包含摘要資料的CSV檔案。
+- **[!UICONTROL 存取分數]**：選取 **[!UICONTROL 存取分數]** 將您重新導向至 [存取Attribution AI教學課程的分數](./download-scores.md).
+- **[!UICONTROL 檢視執行歷程記錄]**：包含與服務執行個體相關聯之所有評分回合清單的彈出視窗會出現。
 
-![更多操作](./images/insights/more-actions.png)
+![更多動作](./images/insights/more-actions.png)
 
-## 过滤数据
+## 篩選您的資料
 
-Attribution AI分析允许您过滤数据，并根据选定的过滤器自动更新UI可视化图表。
+Attribution AI深入分析可讓您篩選資料，並根據您選取的篩選器自動更新UI視覺效果。
 
-### 转化事件
+### 轉換事件
 
-在Attribution AI中创建新实例时，其中一个必填字段是“转化事件”。 转化事件是用于确定营销活动（如电子商务订单、店内购买和网站访问）影响的业务目标。
+當您在Attribution AI中建立新執行個體時，必填欄位之一是「轉換事件」。 轉換事件是識別行銷活動影響的業務目標，例如電子商務訂單、店內購買和網站造訪。
 
-在实例内， **[!UICONTROL 转化事件]** 下拉列表允许您选择为实例定义的任何事件，以便过滤数据。 选择特定事件会更改UI可视化，以便仅填充属于这些事件的转化。
+在執行個體中， **[!UICONTROL 轉換事件]** 下拉式清單可讓您選取為您的執行個體定義的任何事件，以篩選您的資料。 選取特定事件會變更UI視覺效果，使其僅填入屬於這些事件的轉換。
 
-![转化事件](./images/insights/conversion-event.png)
+![轉換事件](./images/insights/conversion-event.png)
 
 ### 归因模型
 
-选择 **[!UICONTROL 归因模型]** 打开一个包含所有不同归因模型的下拉菜单。 您可以选择多个模型来比较结果。 有关不同归因模型及其工作方式的更多信息，请访问 [Attribution AI](./overview.md) 概述，其中包含一个包含每个模型相关信息的表。
+選取 **[!UICONTROL 歸因模型]** 會開啟下拉式清單，其中包含所有可用的不同歸因模型。 您可以選取多個模型來比較結果。 如需不同歸因模型及其運作方式的詳細資訊，請造訪 [Attribution AI](./overview.md) 概觀，其中包含每個模型資訊的表格。
 
-![归因模型](./images/insights/attribution-model.png)
+![歸因模型](./images/insights/attribution-model.png)
 
-### 地区
+### 地區
 
 >[!NOTE]
 >
->仅当您执行了可选步骤时，才会显示此过滤器 [基于区域的建模](./user-guide.md#region-based-modeling-optional) (在“Attribution AI用户界面指南”中)。
+>此篩選條件只有在您已執行選擇性步驟時才會出現 [區域型模型](./user-guide.md#region-based-modeling-optional) 在建立服務執行個體時，請參閱Attribution AI使用者介面指南。
 
-此过滤器允许您选择在实例创建过程中设置的任何区域。
+此篩選可讓您選取您在建立執行個體過程中設定的任何區域。
 
-### 添加过滤器
+### 新增篩選器
 
-您可以通过选择 **过滤器** 图标以打开 **[!UICONTROL 添加过滤器]** 弹出窗口。 的 **[!UICONTROL 添加过滤器]** 弹出窗口允许您按渠道、地理位置、媒体类型和产品进行过滤。 弹出窗口仅填充服务实例的适用过滤器。 例如，如果您没有提供地理数据或媒体类型，则这些过滤器属性将不适用于您的实例。
+您可以選取「 」，新增其他篩選器 **篩選** 圖示以開啟 **[!UICONTROL 新增篩選器]** 彈出視窗。 此 **[!UICONTROL 新增篩選器]** 彈出視窗可讓您依「頻道」、「地理」、「媒體型別」和「產品」來篩選。 彈出視窗只會填入服務執行個體的適用篩選器。 例如，如果您未提供地理資料或媒體型別，這些篩選屬性將無法用於您的執行個體。
 
-![额外过滤器](./images/insights/additional-filters.png)
+![額外的篩選器](./images/insights/additional-filters.png)
 
-![过滤器弹出窗口](./images/insights/filter-popover.png)
+![篩選彈出視窗](./images/insights/filter-popover.png)
 
-- **[!UICONTROL 渠道]:** 选择渠道属性后，您可以过滤任何可用的营销渠道。 您可以选择多个渠道来进行比较。
-- **[!UICONTROL Geography]:** 选择地理位置属性允许您根据基于区域的模型过滤国家/地区代码。 根据您的数据，此过滤器可能存在，也可能不存在。 国家/地区代码有两个字符长。 请参阅完整的国家/地区代码列表 [此处](https://datahub.io/core/country-list).
-- **[!UICONTROL 媒体类型]:** 通过选择媒体类型属性，可以过滤任何定义的媒体类型。
-- **[!UICONTROL 产品]:** 选择产品属性后，您可以从创建实例时最初摄取的任何产品中进行筛选。
+- **[!UICONTROL 頻道]：** 選取管道屬性可讓您篩選任何可用的行銷管道。 您可以選取多個管道來比較。
+- **[!UICONTROL 地理位置]：** 選取地理位置屬性可讓您根據以區域為基礎的模型來篩選國家/地區代碼。 根據您的資料，此篩選器可能存在，也可能不存在。 國家/地區代碼長度為兩個字元。 檢視完整的國家/地區代碼清單 [此處](https://datahub.io/core/country-list).
+- **[!UICONTROL 媒體型別]：** 選取媒體型別屬性可讓您篩選任何已定義的媒體型別。
+- **[!UICONTROL 產品]：** 選取產品屬性可讓您從建立執行個體時最初擷取的任何產品中進行篩選。
 
 ### Date Range
 
-选择日历图标以打开日期范围弹出窗口。 开始和结束转化事件日期决定了在UI中填充的数据量。 您可以选择缩小或扩大日期范围，以集中或扩展填充的数据量。
+選取行事曆圖示以開啟日期範圍彈出視窗。 開始和結束轉換事件日期會決定UI中填入的資料量。 您可以選擇縮小或擴大日期範圍，以集中或擴大填入的資料量。
 
-![日期范围](./images/insights/display-date-range.png)
+![日期範圍](./images/insights/display-date-range.png)
 
-## 数据概述
+## 您的資料概觀
 
-的 **[!UICONTROL 概述]** 卡片会按归因模型显示总转化。 总数会根据您使用本文档中先前概述的过滤器进行搜索的具体方式而发生更改。 选择更多模型会向“概述”中添加其他圆，每个圆的颜色与图例对应。
+此 **[!UICONTROL 概觀]** 卡片會依歸因模型顯示您的總轉換。 總數會根據您使用本檔案先前概述之篩選條件進行搜尋的特定方式而變更。 選取更多模型會在「概述」中新增其他圓圈，每個圓圈都有自己的顏色，與圖例相對應。
 
 ![概述](./images/insights/Overview.png)
 
-## 每周趋势
+## 每週趨勢
 
-的 **[!UICONTROL 每周趋势]** 卡片会按您在筛选过程中设置的日期范围来划分总转化。
+此 **[!UICONTROL 每週趨勢]** 卡片會依您在篩選程式期間設定的日期範圍來劃分總轉換。
 
-选择 **每周趋势** 卡片会显示一个下拉列表，允许您选择每日、每周或每月趋势。
+選取右上角的省略符號 **每週趨勢** 卡片會顯示下拉式清單，讓您選取每日、每週或每月趨勢。
 
-将鼠标悬停在特定归因模型的数据线上，会创建一个弹出窗口，显示该日期的转化总数。
+將滑鼠指標暫留在特定歸因模型的資料行上，會建立一個彈出視窗，顯示該日期的轉換總數。
 
-![趋势](./images/insights/weekly-trends.png)
+![趨勢](./images/insights/weekly-trends.png)
 
-## 按渠道划分
+## 依管道劃分
 
-的 **[!UICONTROL 按渠道划分]** 卡片用于确定与每个渠道相关的转化总数。 此卡可用于帮助就每个渠道的有效性和投资回报做出决策。
+此 **[!UICONTROL 依管道劃分]** 卡片可用來決定與每個管道相關的轉換總數。 這張卡片可用來協助您決定每個管道的有效性及投資報酬率。
 
-选择 **[!UICONTROL 按渠道划分]** 卡片会打开一个下拉菜单，允许您根据接触点填充数据。
+選取右上角的省略符號 **[!UICONTROL 依管道劃分]** 卡片會開啟下拉式清單，讓您根據接觸點填入資料。
 
-![划分渠道](./images/insights/channel-breakdown.png)
+![劃分頻道](./images/insights/channel-breakdown.png)
 
-## 热门营销活动
+## 熱門行銷活動
 
-的 **[!UICONTROL 热门营销活动]** 卡片显示营销活动的概述以及营销活动在每个渠道中的执行情况。 此卡可帮助您的团队了解特定渠道促销活动的有效性，并提供您应进一步投资的促销活动等洞察信息。
+此 **[!UICONTROL 熱門行銷活動]** 卡片會顯示行銷活動的概覽，以及行銷活動在每個管道中的執行方式。 此卡片可協助您的團隊瞭解特定頻道的特定行銷活動的成效，並提供諸如您應進一步投資哪些行銷活動等見解。
 
-![热门营销活动](./images/insights/top-campaigns.png)
+![熱門行銷活動](./images/insights/top-campaigns.png)
 
-## 按接触点位置划分
+## 依接觸點位置劃分
 
-选择 **[!UICONTROL 路径分析]** 选项卡加载 **[!UICONTROL 按接触点位置划分]** 和 **[!UICONTROL 热门转化路径]** 图形。
+選取 **[!UICONTROL 路徑分析]** 標籤載入 **[!UICONTROL 依接觸點位置劃分]** 和 **[!UICONTROL 排名在前的轉換路徑]** 圖表。
 
-的 **[!UICONTROL 按接触点位置划分]** 图表是按所有转化路径中所比较接触点位置划分的归因转化。 此图表可帮助您了解哪些接触点在转化路径的不同阶段更有效。 舞台是开始人、玩家和更近的人。
+此 **[!UICONTROL 依接觸點位置劃分]** 圖表是依接觸點位置劃分的已歸因轉換劃分，比較對象是所有轉換路徑。 此圖表可協助您瞭解哪些接觸點在轉換路徑的不同階段中更有效率。 這些階段包括入門者、玩家和接近者。
 
-- **入门：** 表示接触点是转化路径中的首次接触。
-- **播放器：** 表示接触点不是导致转化的首次或最近联系。
-- **近点：** 表示接触点是转化前的最后接触。
+- **入門：** 表示此接觸點是轉換路徑中的首次接觸。
+- **播放器：** 表示此接觸點不是導致轉換的第一個或最後一個接觸。
+- **更靠近：** 表示此接觸點是轉換前的最後一次接觸。
 
 >!![NOTE]
-所有接触点和位置中归因模型的贡献百分比总和应等于100。
+歸因模型在所有接觸點和位置的貢獻百分比總和應等於100。
 
-![用户路径划分接触点](./images/insights/user-paths.png)
+![使用者路徑劃分接觸點](./images/insights/user-paths.png)
 
-## 热门转化路径
+## 排名在前的轉換路徑
 
-的 **[!UICONTROL 热门转化路径]** 图表显示选定区域排名最前的转化路径上的受影响得分和算法得分。 此图表允许您可视化哪些接触点对转化有贡献以及每个接触点的归因得分。 您可以使用此信息查看特定区域中最频繁的路径，并查看不同接触点集之间是否存在任何模式。
+此 **[!UICONTROL 排名在前的轉換路徑]** 圖表顯示所選區域中排名在前的轉換路徑上的受影響分數和演演算法分數。 此圖表可讓您視覺化哪些接觸點對轉換有貢獻，以及每個接觸點的歸因分數。 您可以使用此資訊來檢視特定區域中最頻繁的路徑，並檢視不同接觸點集之間是否有任何模式出現。
 
-![最常用的用户路径](./images/insights/Touchpoint-paths.png)
+![最常見的使用者路徑](./images/insights/Touchpoint-paths.png)
 
-## 接触点有效性
+## 接觸點有效性
 
-选择 **[!UICONTROL 接触点有效性]** 选项卡加载 **[!UICONTROL 接触点有效性]** 卡。 此卡使用Attribution AI的分发数据来显示每个接触点的信息。 此表的数据仅针对 **[!UICONTROL 截至]** 日期。
+選取 **[!UICONTROL 接觸點有效性]** 標籤載入 **[!UICONTROL 接觸點有效性]** 卡片。 此卡片會使用Attribution AI的資料分佈，顯示每個接觸點的資訊。 此資料表的資料只會針對特定的時段產生，如 **[!UICONTROL 截至]** 日期在卡片的右上方。
 
-![接触点有效性选择](./images/insights/Touchpoint-effectiveness.png)
+![接觸點有效性選取](./images/insights/Touchpoint-effectiveness.png)
 
-您可以使用 **[!UICONTROL 接触点有效性]** 卡信息，以了解接触点对转化的贡献。 您还可以通过以下性能量度查看每个接触点的有效性：
+您可以使用 **[!UICONTROL 接觸點有效性]** 卡片資訊，以瞭解接觸點如何有助於轉換。 您也可以透過下列效能量度檢視每個接觸點的有效性：
 
-**接触的路径**:此量度显示接触点实现/未实现转化的路径百分比。 如果实现转化的路径与未实现转化的路径的比率较高，则会看到较高的归因转化。
+**接觸的路徑**：此量度顯示達成/未達成接觸點轉換的路徑百分比。 如果實現轉換的路徑與未實現轉換的路徑之間的比率（百分比）很高，您就會看到較高的已歸因轉換。
 
-![接触的路径量度](./images/insights/Touchpoint-metrics.png)
+![接觸的路徑量度](./images/insights/Touchpoint-metrics.png)
 
-**效率度量**:此量度以1到5的比例显示星体。 刻度指示接触点在进行转化时的相对重要性。
+**效率測量**：此量度以1至5的刻度顯示星星。 此比例代表接觸點對進行轉換的相對重要性。
 
 >[!NOTE]
-较高的接触点容量不能保证更高的效率测量。
+接觸點數量較多無法保證效率測量值較高。
 
-**总量**:用户接触接触点的总次数。 这包括在实现转化的路径上显示的接触点以及不导致转化的路径。
+**總數量**：使用者接觸接觸點的彙總次數。 這包括出現在達成轉換的路徑上的接觸點，以及未產生轉換的路徑。
 
 ## 后续步骤
 
-过滤完数据并显示相应信息后，即可选择访问分数。 有关如何访问分数的深入指南，请访问 [在Attribution AI中访问得分](./download-scores.md) 教程。 此外，您还可以下载摘要数据，如 [更多操作](#more-actions). 选择“下载概要数据”会下载按日期聚合的概要数据。
+篩選完資料並顯示適當資訊後，您就可以選擇存取分數。 如需如何存取評分的深入指南，請造訪 [在Attribution AI中存取分數](./download-scores.md) 教學課程。 此外，您也可以下載摘要資料，如所示 [更多動作](#more-actions). 選取「下載摘要資料」可下載按日期彙總的摘要資料。
 
 ## 其他资源
 
-以下视频旨在帮助了解如何使用Attribution AI分析页面了解营销渠道和营销活动的ROI。
+以下影片旨在協助您瞭解如何使用Attribution AI深入分析頁面來瞭解行銷管道和行銷活動的ROI。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)

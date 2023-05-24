@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；Audience Manager源连接器；Audience Manager;Audience Manager连接器
-title: 在UI中创建Adobe Audience Manager源连接
-description: 本教程将指导您完成为Adobe Audience Manager创建源连接的步骤，以便使用用户界面将消费者体验事件数据导入Platform。
+keywords: Experience Platform；首頁；熱門主題；Audience Manager來源聯結器；Audience Manager；Audience Manager聯結器
+title: 在使用者介面中建立Adobe Audience Manager來源連線
+description: 本教學課程將逐步帶您瞭解如何建立Adobe Audience Manager的來源連線，以使用使用者介面將消費者體驗事件資料匯入Platform。
 exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,63 +10,63 @@ ht-degree: 0%
 
 ---
 
-# 在UI中创建Adobe Audience Manager源连接
+# 在使用者介面中建立Adobe Audience Manager來源連線
 
-本教程将指导您完成为Adobe Audience Manager创建源连接器的步骤，以便使用用户界面将消费者体验事件数据导入Platform。
+本教學課程將逐步帶您瞭解如何建立Adobe Audience Manager的來源聯結器，以便使用使用者介面將消費者體驗事件資料匯入Platform。
 
-## 创建与Adobe Audience Manager的源连接
+## 建立與Adobe Audience Manager的來源連線
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种来源。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
 
-在 [!UICONTROL Adobe应用程序]，选择 **[!UICONTROL Adobe Audience Manager]** 然后选择 **[!UICONTROL 设置]**.
+下 [!UICONTROL Adobe應用程式]，選取 **[!UICONTROL Adobe Audience Manager]** 然後選取 **[!UICONTROL 設定]**.
 
-![目录](../../../../images/tutorials/create/aam/catalog.png)
+![目錄](../../../../images/tutorials/create/aam/catalog.png)
 
-### 选择特征和区段
+### 選取特徵和區段
 
 >[!NOTE]
 >
->您无法将Audience Manager源中的区域数据摄取到Experience Platform。 如果您的Analytics用例需要区域数据，请使用 [Analytics源连接器](../adobe-applications/analytics.md).
+>您無法從Audience Manager來源將地區資料擷取至Experience Platform。 如果您的Analytics使用案例需要地區資料，請使用 [Analytics來源聯結器](../adobe-applications/analytics.md).
 
-的 [!UICONTROL 选择特征和区段] ，为您提供一个交互式界面来浏览和选择您的特征、区段和数据。
+此 [!UICONTROL 選取特徵和區段] 步驟隨即顯示，提供互動式介面，讓您探索及選取特徵、區段和資料。
 
-* 界面的左侧面板包含 [!UICONTROL 选择特征和区段] 选项，以及可供您使用的所有区段的分层目录。
-* 界面的右半部分允许您与选定的区段进行交互，并选取要使用的特定数据。
+* 介面的左側面板包含 [!UICONTROL 選取特徵和區段] 選項以及所有可用區段的階層式目錄。
+* 介面的右半部分可讓您與選取的區段互動，並挑選您要使用的特定資料。
 
-![添加数据](../../../../images/tutorials/create/aam/add-data.png)
+![add-data](../../../../images/tutorials/create/aam/add-data.png)
 
-要在可用区段中导航，请从 [!UICONTROL 所有区段] 的上界。 通过选择文件夹，您可以遍历文件夹的层次结构，并为您提供要过滤的区段列表。
+若要瀏覽可用區段，請從以下位置選取您要存取的資料夾： [!UICONTROL 所有區段] 面板。 選取資料夾可讓您周游資料夾的階層，並提供您要篩選的區段清單。
 
 ![segment-folder](../../../../images/tutorials/create/aam/segment-folder.png)
 
-确定并选择要使用的区段后，右侧会显示一个新面板，其中显示了选定项目的列表。 您可以继续访问不同的文件夹，并为连接选择不同的区段。 选择更多区段会更新右侧的面板。
+識別並選取要使用的區段後，右側會出現新面板，顯示所選專案的清單。 您可以繼續存取不同的資料夾，並為您的連線選取不同的區段。 選取更多區段會更新右側的面板。
 
 ![select-data](../../../../images/tutorials/create/aam/select-data.png)
 
-或者，您也可以选择 **[!UICONTROL 选择所有区段]** 和 **[!UICONTROL 选择所有特征]** 框中。 选择所有区段会将Audience Manager区段引入Platform，同时选择所有特征会启用Audience Manager中的所有第一方特征。
+或者，您可以選取 **[!UICONTROL 選取所有區段]** 和 **[!UICONTROL 選取所有特徵]** 方塊。 選取所有區段會將Audience Manager區段帶入Platform，而選取所有特徵則會從Audience Manager中啟用所有第一方特徵。
 
 >[!WARNING]
 >
->首次使用Audience Manager源将Audience Manager区段发送到Platform时，大量Audience Manager区段人口的摄取会直接影响用户档案总数。 这意味着选择所有区段可能会导致用户档案计数超过您的许可证使用权限。 请查看 [许可证使用许可](../../../../../dashboards/guides/license-usage.md) 继续之前。
+>當您首次使用Audience Manager來源將Audience Manager區段傳送至Platform時，大量的Audience Manager區段母體的擷取會直接影響您的總設定檔計數。 這表示選取所有區段可能會導致「設定檔」計數超過您的授權使用權益。 請檢閱您的 [授權使用量](../../../../../dashboards/guides/license-usage.md) 然後再繼續。
 
-完成后，选择 **[!UICONTROL 下一个]**
+完成後，選取 **[!UICONTROL 下一個]**
 
-![所有区段](../../../../images/tutorials/create/aam/all-segments.png)
+![所有區段](../../../../images/tutorials/create/aam/all-segments.png)
 
-的 [!UICONTROL 审阅] 步骤，以便您在选定的特征和区段连接到Platform之前对其进行查看。 详细信息按以下类别分组：
+此 [!UICONTROL 檢閱] 步驟隨即顯示，可讓您在選取的特徵和區段連線至Platform之前先檢閱這些特徵和區段。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源平台和连接的状态。
-* **[!UICONTROL 选定数据]**:显示选定区段和已启用特征的数量。
+* **[!UICONTROL 連線]**：顯示來源平台和連線狀態。
+* **[!UICONTROL 選取的資料]**：顯示選取的區段數和啟用的特徵數。
 
-![审查](../../../../images/tutorials/create/aam/review.png)
+![檢閱](../../../../images/tutorials/create/aam/review.png)
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
 ## 后续步骤
 
-当Audience Manager数据流处于活动状态时，传入数据会自动摄取到实时客户配置文件中。 您现在可以使用此传入数据，并使用平台分段服务创建受众区段。 有关更多详细信息，请参阅以下文档：
+當Audience Manager資料流作用中時，傳入的資料會自動擷取到即時客戶設定檔中。 您現在可以利用這些傳入資料，並使用Platform Segmentation Service建立對象區段。 如需更多詳細資訊，請參閱下列檔案：
 
-* [实时客户资料概述](../../../../../profile/home.md)
+* [即時客戶個人檔案總覽](../../../../../profile/home.md)
 * [Segmentation Service概述](../../../../../segmentation/home.md)

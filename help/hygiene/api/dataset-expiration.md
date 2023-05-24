@@ -1,43 +1,43 @@
 ---
-title: 数据集过期API端点
-description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集过期时间。
+title: 資料集過期API端點
+description: 資料衛生API中的/ttl端點可讓您以程式設計方式在Adobe Experience Platform中排程資料集有效期。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '1456'
-ht-degree: 4%
+source-wordcount: '1426'
+ht-degree: 2%
 
 ---
 
-# 数据集过期端点
+# 資料集到期端點
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
+>Adobe Experience Platform中的資料檢疫功能目前僅適用於已購買的組織 **AdobeHealthcare Shield** 或 **Adobe隱私權與安全性盾牌**.
 
-的 `/ttl` 数据卫生API中的端点允许您为Adobe Experience Platform中的数据集计划过期日期。
+此 `/ttl` 資料衛生API中的端點可讓您為Adobe Experience Platform中的資料集排程到期日。
 
-数据集过期只是一个定时延迟的删除操作。 在此期间，数据集未受到保护，因此在数据集过期之前，可能会通过其他方式将其删除。
+資料集到期時間只是計時延遲的刪除作業。 資料集在過渡期間不會受到保護，因此在到期之前，可能會以其他方式將其刪除。
 
 >[!NOTE]
 >
->尽管将到期指定为特定的及时间，但在实际删除开始之前，在到期后可能会有长达24小时的延迟。 启动删除后，可能最多需要七天时间才能从Platform系统中删除数据集的所有跟踪。
+>雖然到期日指定為特定的即時時間，但在實際刪除開始之前，到期後最多可能有24小時的延遲。 開始刪除後，可能需要長達七天時間，資料集的所有追蹤才會從Platform系統中移除。
 
-在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集过期后，您可以通过设置新的过期时间来重新打开数据集。
+在實際起始資料集刪除作業之前，您可以隨時取消到期日或修改其觸發時間。 取消資料集到期後，您可以設定新的到期來重新開啟它。
 
-启动数据集删除后，其过期作业将标记为 `executing`，且不得进一步更改。 数据集本身最多可恢复七天，但只能通过通过Adobe服务请求启动的手动流程来恢复。 请求执行时，数据湖、Identity Service和实时客户配置文件会开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，过期时间将标记为 `executed`.
+開始刪除資料集後，其到期工作將標籤為 `executing`，而且可能不會進一步變更。 資料集本身最多可復原七天，但必須透過Adobe服務請求啟動的手動程式進行。 請求執行時，Data Lake、Identity Service和Real-Time Customer Profile會開始個別程式，從各自的服務中移除資料集的內容。 從所有三項服務中刪除資料後，到期日會標籤為 `executed`.
 
 >[!WARNING]
 >
->如果数据集设置为过期，您必须手动更改任何可能将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
+>如果資料集設為過期，您必須手動變更任何可能將資料擷取至該資料集的資料流程，讓您的下游工作流程不會受到負面影響。
 
 ## 快速入门
 
-本指南中使用的端点是数据卫生API的一部分。 在继续之前，请查看 [概述](./overview.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端點屬於資料衛生API。 在繼續之前，請檢閱 [概觀](./overview.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
 
-## 列出数据集过期日期 {#list}
+## 列出資料集有效期 {#list}
 
-您可以通过发出GET请求，列出贵组织的所有数据集过期日期。
+您可以發出GET要求，列出貴組織的所有資料集有效期。
 
 **API格式**
 
@@ -47,9 +47,9 @@ GET /ttl?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETERS}` | 可选查询参数列表，其中多个参数之间以 `&` 字符。 常见参数包括 `size` 和 `page` 中，用于分页。 有关支持的查询参数的完整列表，请参阅 [附录节](#query-params). |
+| `{QUERY_PARAMETERS}` | 選擇性查詢引數清單，多個引數由下列專案分隔： `&` 個字元。 常見引數包括 `size` 和 `page` 用於分頁。 如需支援的查詢引數完整清單，請參閱 [附錄部分](#query-params). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -64,7 +64,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会列出生成的数据集过期日期。 以下示例已截断空格。
+成功的回應會列出產生的資料集有效期。 下列範例的空格已截斷。
 
 ```json
 {
@@ -103,14 +103,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `totalRecords` | 与列表调用参数匹配的数据集过期次数计数。 |
-| `ttlDetails` | 包含返回的数据集过期日期的详细信息。 有关数据集过期属性的更多详细信息，请参阅做出 [对照调用](#lookup). |
+| `totalRecords` | 與清單呼叫的引數相符的資料集到期計數。 |
+| `ttlDetails` | 包含傳回資料集有效期的詳細資訊。 如需資料集到期屬性的詳細資訊，請參閱回應一節，以便 [查詢呼叫](#lookup). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 查找数据集过期时间 {#lookup}
+## 查詢資料集有效期 {#lookup}
 
-您可以通过GET请求查找数据集过期日期。
+您可以透過GET請求查詢資料集到期日。
 
 **API格式**
 
@@ -120,13 +120,13 @@ GET /ttl/{DATASET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 要查找其过期时间的数据集的ID。 |
+| `{DATASET_ID}` | 您要查詢其有效期的資料集ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求会查找数据集的过期详细信息 `62759f2ede9e601b63a2ee14`:
+以下請求會查詢資料集的到期日詳細資料 `62759f2ede9e601b63a2ee14`：
 
 ```shell
 curl -X GET \
@@ -139,7 +139,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回数据集过期的详细信息。
+成功的回應會傳回資料集到期日的詳細資訊。
 
 ```json
 {
@@ -157,23 +157,23 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 数据集过期的ID。 |
-| `datasetId` | 此过期时间所应用的数据集的ID。 |
-| `imsOrg` | 您组织的ID。 |
-| `status` | 数据集过期的当前状态。 |
-| `expiry` | 删除数据集的计划日期和时间。 |
-| `updatedAt` | 上次更新过期时间的时间戳。 |
-| `updatedBy` | 上次更新过期时间的用户。 |
-| `displayName` | 到期请求的显示名称。 |
-| `description` | 到期请求的描述。 |
+| `workorderId` | 資料集過期時間的ID。 |
+| `datasetId` | 套用此到期的資料集的ID。 |
+| `imsOrg` | 您組織的ID。 |
+| `status` | 資料集到期的目前狀態。 |
+| `expiry` | 刪除資料集的排程日期和時間。 |
+| `updatedAt` | 上次更新到期時間的時間戳記。 |
+| `updatedBy` | 上次更新到期時間的使用者。 |
+| `displayName` | 到期要求的顯示名稱。 |
+| `description` | 到期要求的說明。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-### 目录到期标记
+### 目錄到期標籤
 
-使用 [目录API](../../catalog/api/getting-started.md) 要查找数据集详细信息，如果数据集具有活动过期时间，则将列在 `tags.adobe/hygiene/ttl`.
+使用時 [目錄API](../../catalog/api/getting-started.md) 若要查詢資料集詳細資訊，如果資料集有作用中的有效期限，則會列在 `tags.adobe/hygiene/ttl`.
 
-以下JSON表示数据集详细信息从“目录”中截断的响应，该响应的过期值为 `32503680000000`. 标记的值会将到期编码为自Unix纪元开始以来的整数毫秒数。
+以下JSON代表來自目錄之資料集詳細資料的截斷回應，其到期值為 `32503680000000`. 標籤的值會以自Unix紀元開始以來的整數毫秒數編碼有效期。
 
 ```json
 {
@@ -191,9 +191,9 @@ curl -X GET \
 }
 ```
 
-## 创建或更新数据集过期时间 {#create-or-update}
+## 建立或更新資料集有效期 {#create-or-update}
 
-您可以通过PUT请求为数据集创建或更新过期日期。
+您可以透過PUT請求建立或更新資料集的到期日。
 
 **API格式**
 
@@ -203,11 +203,11 @@ PUT /ttl/{DATASET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 要计划过期时间的数据集的ID。 |
+| `{DATASET_ID}` | 您要為其排程到期的資料集ID。 |
 
 **请求**
 
-以下请求计划一个数据集 `5b020a27e7040801dedbf46e` 于2022年底（格林威治标准时间）删除。 如果找不到数据集的现有过期时间，则会创建新的过期时间。 如果数据集已具有待处理的过期时间，则该过期时间将更新为 `expiry` 值。
+下列請求會排程資料集 `5b020a27e7040801dedbf46e` 2022年底（格林威治標準時間）刪除。 如果資料集找不到現有的有效期，則會建立新的有效期。 如果資料集已有暫止的到期日，則會以新的更新該到期日 `expiry` 值。
 
 ```shell
 curl -X PUT \
@@ -226,15 +226,15 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `expiry` | 删除数据集的时间的ISO 8601时间戳。 |
-| `displayName` | 过期请求的显示名称。 |
-| `description` | 到期请求的可选描述。 |
+| `expiry` | 資料集刪除時間的ISO 8601時間戳記。 |
+| `displayName` | 到期要求的顯示名稱。 |
+| `description` | 到期要求的可選說明。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功响应会返回数据集过期的详细信息，如果更新了预先存在的过期，则HTTP状态为200（确定）；如果没有预先存在的过期，则返回201（已创建）。
+成功的回應會傳回資料集到期的詳細資料，如果更新了預先存在的到期日期，則傳回HTTP狀態為200 （確定），如果沒有預先存在的到期日期，則傳回201 （建立）。
 
 ```json
 {
@@ -252,23 +252,23 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 数据集过期的ID。 |
-| `datasetId` | 此过期时间所应用的数据集的ID。 |
-| `imsOrg` | 您组织的ID。 |
-| `status` | 数据集过期的当前状态。 |
-| `expiry` | 删除数据集的计划日期和时间。 |
-| `updatedAt` | 上次更新过期时间的时间戳。 |
-| `updatedBy` | 上次更新过期时间的用户。 |
+| `workorderId` | 資料集過期時間的ID。 |
+| `datasetId` | 套用此到期的資料集的ID。 |
+| `imsOrg` | 您組織的ID。 |
+| `status` | 資料集到期的目前狀態。 |
+| `expiry` | 刪除資料集的排程日期和時間。 |
+| `updatedAt` | 上次更新到期時間的時間戳記。 |
+| `updatedBy` | 上次更新到期時間的使用者。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 取消数据集过期 {#delete}
+## 取消資料集有效期 {#delete}
 
-您可以通过发出DELETE请求来取消数据集过期。
+您可以發出DELETE請求來取消資料集到期日。
 
 >[!NOTE]
 >
->只有状态为 `pending` 可以取消。 尝试取消已执行或已取消的过期时间会返回HTTP 404错误。
+>僅限狀態為「 」的資料集有效期 `pending` 可以取消。 嘗試取消已執行或已取消的到期傳回HTTP 404錯誤。
 
 **API格式**
 
@@ -278,13 +278,13 @@ DELETE /ttl/{EXPIRATION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPIRATION_ID}` | 的 `workorderId` 要取消的数据集过期时间的值。 |
+| `{EXPIRATION_ID}` | 此 `workorderId` 要取消的資料集到期日。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求会取消ID为的数据集过期 `SD5cfd7a11b25543a9bcd9ef647db3d8df`:
+以下請求會取消ID為的資料集有效期 `SD5cfd7a11b25543a9bcd9ef647db3d8df`：
 
 ```shell
 curl -X DELETE \
@@ -297,11 +297,11 @@ curl -X DELETE \
 
 **响应**
 
-成功响应会返回HTTP状态204（无内容）和过期时间 `status` 属性设置为 `cancelled`.
+成功的回應會傳回HTTP狀態204 （無內容），以及過期時間 `status` 屬性已設定為 `cancelled`.
 
-## 检索数据集的过期状态历史记录
+## 擷取資料集的到期狀態歷史記錄
 
-您可以使用查询参数查找特定数据集的过期状态历史记录 `include=history` 在查找请求中。 结果包括有关创建数据集过期时间、已应用的任何更新及其取消或执行（如果适用）的信息。
+您可以使用查詢引數來查詢特定資料集的到期狀態歷史記錄 `include=history` 在查詢請求中。 結果包括關於建立資料集有效期、已套用的任何更新，及其取消或執行（如果適用）的資訊。
 
 **API格式**
 
@@ -311,9 +311,9 @@ GET /ttl/{DATASET_ID}?include=history
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 要查找其过期历史记录的数据集的ID。 |
+| `{DATASET_ID}` | 您要查詢其到期歷程記錄的資料集ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -328,7 +328,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回数据集过期的详细信息，其中包含 `history` 提供其详细信息的阵列 `status`, `expiry`, `updatedAt`和 `updatedBy` 属性。
+成功的回應會傳回資料集到期日的詳細資訊，並附上 `history` 提供詳細資訊的陣列 `status`， `expiry`， `updatedAt`、和 `updatedBy` 其每個記錄的更新的屬性。
 
 ```json
 {
@@ -368,38 +368,38 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 数据集过期的ID。 |
-| `datasetId` | 此过期时间所应用的数据集的ID。 |
-| `datasetName` | 此过期时间所适用的数据集的显示名称。 |
-| `sandboxName` | 目标数据集所在的沙盒名称。 |
-| `displayName` | 到期请求的显示名称。 |
-| `description` | 到期请求的描述。 |
-| `imsOrg` | 您组织的ID。 |
-| `history` | 将过期时间的更新历史记录列为对象数组，每个对象都包含 `status`, `expiry`, `updatedAt`和 `updatedBy` 属性。 |
+| `workorderId` | 資料集過期時間的ID。 |
+| `datasetId` | 套用此到期的資料集的ID。 |
+| `datasetName` | 套用此到期日之資料集的顯示名稱。 |
+| `sandboxName` | 目標資料集所在之沙箱的名稱。 |
+| `displayName` | 到期要求的顯示名稱。 |
+| `description` | 到期要求的說明。 |
+| `imsOrg` | 您組織的ID。 |
+| `history` | 以物件陣列形式列出到期日更新的歷史記錄，每個物件都包含 `status`， `expiry`， `updatedAt`、和 `updatedBy` 更新時到期的屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 附录
 
-### 已接受的查询参数 {#query-params}
+### 接受的查詢引數 {#query-params}
 
-下表概述了 [列出数据集过期日期](#list):
+下表概述下列情況下可用的查詢引數： [列出資料集有效期](#list)：
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `size` | 介于1到100之间的整数，用于指示要返回的最大过期次数。 默认为25。 | `size=50` |
-| `page` | 一个整数，指示要返回的过期页面。 | `page=3` |
-| `orgId` | 匹配组织ID与参数ID匹配的数据集过期日期。 此值默认为 `x-gw-ims-org-id` 标头，和将被忽略，除非请求提供服务令牌。 | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
-| `status` | 以逗号分隔的状态列表。 包含后，响应将匹配数据集过期日期，数据集当前状态属于所列状态之一。 | `status=pending,cancelled` |
-| `author` | 匹配过期日期，其 `created_by` 是搜索字符串的匹配项。 如果搜索字符串以开头 `LIKE` 或 `NOT LIKE`，则其余部分将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须与 `created_by` 字段。 | `author=LIKE %john%` |
-| `sandboxName` | 匹配沙盒名称与参数完全匹配的数据集过期日期。 默认为请求中的沙盒名称 `x-sandbox-name` 标题。 使用 `sandboxName=*` 以包含所有沙箱的数据集过期日期。 | `sandboxName=dev1` |
-| `datasetId` | 匹配应用于特定数据集的过期日期。 | `datasetId=62b3925ff20f8e1b990a7434` |
-| `createdDate` | 匹配在24小时窗口中创建的过期日期，从指定时间开始。<br><br>请注意，日期没有时间(例如 `2021-12-07`)表示当天开始的日期时间。 因此， `createdDate=2021-12-07` 是指2021年12月7日创建的任何 `00:00:00` 至 `23:59:59.999999999` (UTC)。 | `createdDate=2021-12-07` |
-| `createdFromDate` | 匹配在指定时间或之后创建的过期日期。 | `createdFromDate=2021-12-07T00:00:00Z` |
-| `createdToDate` | 匹配在指定时间或之前创建的过期日期。 | `createdToDate=2021-12-07T23:59:59.999999999Z` |
-| `updatedDate` / `updatedToDate` / `updatedFromDate` | 赞 `createdDate` / `createdFromDate` / `createdToDate`，但与数据集过期的更新时间（而不是创建时间）匹配。<br><br>每次编辑时都会考虑更新过期日期，包括创建、取消或执行该日期的时间。 | `updatedDate=2022-01-01` |
-| `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | 在指定的间隔内随时取消的匹配过期日期。 即使以后重新打开过期时间（通过为同一数据集设置新的到期），也是如此。 | `updatedDate=2022-01-01` |
-| `completedDate` / `completedToDate` / `completedFromDate` | 匹配在指定间隔内完成的过期时间。 | `completedToDate=2021-11-11-06:00` |
-| `expiryDate` / `expiryToDate` / `expiryFromDate` | 在指定的间隔内，匹配将要执行或已执行的过期日期。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
+| `size` | 介於1到100之間的整數，表示要傳回的最大到期次數。 預設為25。 | `size=50` |
+| `page` | 整數，指出要傳回的到期頁。 | `page=3` |
+| `orgId` | 比對組織ID符合引數之資料集有效期。 此值的預設值為 `x-gw-ims-org-id` 標頭，除非請求提供服務權杖，否則會忽略和。 | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
+| `status` | 以逗號分隔的狀態清單。 納入後，回應會符合資料集有效期，其目前狀態在所列資料集中。 | `status=pending,cancelled` |
+| `author` | 比對下列專案的到期日： `created_by` 是搜尋字串的相符專案。 如果搜尋字串的開頭為 `LIKE` 或 `NOT LIKE`，其餘則視為SQL搜尋模式。 否則，系統會將整個搜尋字串視為必須完全符合的整個內容的常值字串。 `created_by` 欄位。 | `author=LIKE %john%` |
+| `sandboxName` | 符合沙箱名稱完全符合引數的資料集有效期。 在請求的 `x-sandbox-name` 標頭。 使用 `sandboxName=*` 以包含所有沙箱的資料集有效期。 | `sandboxName=dev1` |
+| `datasetId` | 符合套用至特定資料集的到期日。 | `datasetId=62b3925ff20f8e1b990a7434` |
+| `createdDate` | 符合在指定時間開始的24小時視窗中建立的到期日。<br><br>請注意，沒有時間的日期(例如 `2021-12-07`)代表當天開始的日期時間。 因此， `createdDate=2021-12-07` 指任何於2021年12月7日建立的到期日，從 `00:00:00` 到 `23:59:59.999999999` (UTC)。 | `createdDate=2021-12-07` |
+| `createdFromDate` | 符合在指定時間或之後建立的到期日。 | `createdFromDate=2021-12-07T00:00:00Z` |
+| `createdToDate` | 符合在指定時間或之前建立的到期日。 | `createdToDate=2021-12-07T23:59:59.999999999Z` |
+| `updatedDate` / `updatedToDate` / `updatedFromDate` | 按讚 `createdDate` / `createdFromDate` / `createdToDate`，但符合資料集到期日的更新時間，而不是建立時間。<br><br>系統會在每次編輯時考慮更新到期日，包括建立、取消或執行的時間。 | `updatedDate=2022-01-01` |
+| `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | 符合在指定間隔內任何時間取消的到期日。 即使稍後重新開啟到期日（為相同的資料集設定新的到期日），這也適用。 | `updatedDate=2022-01-01` |
+| `completedDate` / `completedToDate` / `completedFromDate` | 符合在指定間隔內完成的到期日。 | `completedToDate=2021-11-11-06:00` |
+| `expiryDate` / `expiryToDate` / `expiryFromDate` | 符合指定間隔內即將執行或已執行的到期日。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

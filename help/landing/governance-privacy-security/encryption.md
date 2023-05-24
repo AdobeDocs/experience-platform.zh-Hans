@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform中的数据加密
-description: 了解数据在传输中和在Adobe Experience Platform中存放时如何加密。
+title: Adobe Experience Platform中的資料加密
+description: 瞭解如何在Adobe Experience Platform中加密傳輸中和閒置的資料。
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 3%
 
 ---
 
-# Adobe Experience Platform中的数据加密
+# Adobe Experience Platform中的資料加密
 
-Adobe Experience Platform是一个功能强大且可扩展的系统，可跨企业解决方案集中化和标准化客户体验数据。 Platform使用的所有数据在传输过程中和静态时都经过加密，以保证数据的安全。 本文档从高级别介绍了平台的加密流程。
+Adobe Experience Platform是功能強大且可擴充的系統，可集中化及標準化企業解決方案中的客戶體驗資料。 Platform使用的所有資料都會在傳輸和存放時加密，以確保您的資料安全。 本檔案主要說明Platform的加密程式。
 
-以下流程图说明了如何摄取、加密和保留数据 [!DNL Experience Platform]:
+下列程式流程圖說明如何擷取、加密及儲存資料 [!DNL Experience Platform]：
 
 ![](../images/governance-privacy-security/encryption/flow.png)
 
-## 在途数据 {#in-transit}
+## 傳輸中的資料 {#in-transit}
 
-平台与任何外部组件之间传输的所有数据均通过使用HTTPS的安全加密连接进行传输 [TLS v1.2](https://datatracker.ietf.org/doc/html/rfc5246).
+Platform與任何外部元件之間傳輸的所有資料都會使用HTTPS透過安全、加密的連線進行 [TLS v1.2](https://datatracker.ietf.org/doc/html/rfc5246).
 
-通常，数据通过三种方式引入平台：
+一般而言，資料會透過三種方式帶入Platform：
 
-* [数据收集](../../collection/home.md) 功能允许网站和移动设备应用程序将数据发送到Platform Edge Network以进行暂存和准备摄取。
-* [源连接器](../../sources/home.md) 将数据从Adobe Experience Cloud应用程序和其他企业数据源直接流到平台。
-* 非AdobeETL（提取、转换、加载）工具会将数据发送到 [批量摄取API](../../ingestion/batch-ingestion/overview.md) 消费。
+* [資料彙集](../../collection/home.md) 功能可讓網站和行動應用程式將資料傳送至Platform Edge Network，以進行測試和擷取準備。
+* [來源聯結器](../../sources/home.md) 從Adobe Experience Cloud應用程式和其他企業資料來源將資料直接串流到Platform。
+* 非AdobeETL （擷取、轉換、載入）工具會將資料傳送至 [批次擷取API](../../ingestion/batch-ingestion/overview.md) 以利使用。
 
-在将数据导入系统后和 [已加密](#at-rest)，则可以通过Platform服务对其进行扩充，并通过以下方式从系统中引出：
+將資料帶入系統之後，以及 [已加密休息](#at-rest)之後，即可透過Platform服務加以擴充，並透過下列方式從系統中移除：
 
-* [目标](../../destinations/home.md) 允许您激活数据以Adobe应用程序和合作伙伴应用程序。
-* 本机平台应用程序，例如 [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans) 也可以利用数据。
+* [目的地](../../destinations/home.md) 可讓您啟用資料以Adobe應用程式和合作夥伴應用程式。
+* 原生平台應用程式，例如 [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) 也可以使用資料。
 
-## 静态数据 {#at-rest}
+## 靜態資料 {#at-rest}
 
-平台摄取和使用的数据存储在数据湖中，这是一个高度精细的数据存储，包含系统管理的所有数据，无论其来源或文件格式如何。 在数据湖中保留的所有数据都会在隔离的中进行加密、存储和管理 [[!DNL Microsoft Azure Data Lake] 存储](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) 您的组织特有的实例。
+Platform所擷取和使用的資料會儲存在Data Lake中，這是一個高度精細的資料存放區，包含系統管理的所有資料，無論來源或檔案格式為何。 儲存在資料湖中的所有資料都會經過加密、儲存，並在隔離環境中進行管理 [[!DNL Microsoft Azure Data Lake] 儲存](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) 貴組織專屬的例項。
 
-有关在Azure数据湖存储中如何加密静态数据的详细信息，请参阅 [官方Azure文档](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
+如需如何在Azure Data Lake Storage中加密閒置資料的詳細資訊，請參閱 [Azure官方檔案](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
 
 ## 后续步骤
 
-本文档概要介绍了如何在Platform中加密数据。 有关Platform中安全过程的更多信息，请参阅 [管理、隐私和安全](./overview.md) Experience League，或查看 [平台安全白皮书](https://www.adobe.com/content/dam/cc/en/security/pdfs/AEP_SecurityOverview.pdf).
+本檔案提供Platform中資料加密方式的高層級概觀。 如需Platform安全性程式的詳細資訊，請參閱以下文章的概觀： [治理、隱私和安全性](./overview.md) Experience League時，或檢視 [平台安全性白皮書](https://www.adobe.com/content/dam/cc/en/security/pdfs/AEP_SecurityOverview.pdf).

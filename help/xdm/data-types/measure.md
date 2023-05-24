@@ -1,30 +1,30 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；测量；数据类型；数据类型；
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；測量；資料型別；資料型別；
 solution: Experience Platform
-title: 测量数据类型
-description: 本文档概述了测量体验数据模型(XDM)数据类型。
+title: 測量資料型別
+description: 本檔案提供測量體驗資料模型(XDM)資料型別的概觀。
 exl-id: 5d6cc15d-63cf-4af5-9ae9-12c886dd6735
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '230'
-ht-degree: 3%
+source-wordcount: '227'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL 测量] 数据类型
+# [!UICONTROL 測量] 資料型別
 
-[!UICONTROL 测量] 是一种标准的体验数据模型(XDM)数据类型，其中包含特定量度的具体可量化数据点。 度量由唯一标识符和值组成。
+[!UICONTROL 測量] 是標準Experience Data Model (XDM)資料型別，包含特定量度的具體可量化資料點。 測量由唯一識別碼和值組成。
 
 <img src="../images/data-types/measure.PNG" width="500" /><br />
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `id` | 字符串 | 此度量的唯一标识符。 如果使用有损通信渠道（如具有离线功能的移动应用程序或网站）进行数据收集，而无法确保测量的传输，则此属性包含由客户端生成且所采用测量的唯一ID。 最好的做法是，让这一时间足够长，以确保足够的随机性。 <br><br> 如果在生成 `id`，结果应进行哈希处理。 这可确保值中不会对PII进行编码，因为其目标不是识别用户或设备，而是及时显示特定的度量。 |
-| `value` | 双精度 | 此度量的可量化值。 |
+| `id` | 字符串 | 此測量值的唯一識別碼。 在使用有損通訊通道（例如無法確保傳輸測量之行動應用程式或具有離線功能的網站）進行資料收集時，此屬性會包含使用者端產生的所採取測量之唯一ID。 最佳實務是將此動作維持足夠長的時間來確保足夠的隨機性。 <br><br> 如果時間戳記、裝置ID、IP、MAC位址或其他潛在的使用者識別值等資訊已納入產生程式 `id`，則結果應進行雜湊處理。 這可確保值中不會編碼PII，因為目標不是識別使用者或裝置，而是及時識別特定測量。 |
+| `value` | 双精度 | 此測量的可量化值。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/data/measure.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/data/measure.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/data/measure.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/data/measure.schema.json)

@@ -1,136 +1,136 @@
 ---
-title: Medallia连接
-description: 激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。
+title: Medallia連線
+description: 針對鎖定目標Medallia調查和意見回饋收集啟用設定檔，以更好地瞭解客戶需求和期望。
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1096'
 ht-degree: 1%
 
 ---
 
-# Medallia连接
+# Medallia連線
 
 ## 概述 {#overview}
 
-激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。
+針對鎖定目標Medallia調查和意見回饋收集啟用設定檔，以更好地瞭解客戶需求和期望。
 
 >[!IMPORTANT]
 >
->此文档页面由Medallia团队创建。 如有任何查询或更新请求，请直接通过adobe-integrations@medallia.com联系。
+>此檔案頁面是由Medallia團隊建立。 如有任何查詢或更新要求，請直接透過adobe-integrations@medallia.com聯絡。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解如何以及何时应使用Medallia目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+為協助您更清楚瞭解如何使用Medallia目的地，以下是Adobe Experience Platform客戶可使用此目的地解決的範例使用案例。
 
-### 用例#1
+### 使用案例#1
 
-B2B品牌希望评估并简化其入门计划。 他们希望向刚刚完成入门流程的客户实时发送个性化调查。
+B2B品牌想要評估並簡化其上線計畫。 他們想要將個人化調查即時傳送給剛剛完成入門流程的客戶。
 
-### 用例#2
+### 使用案例#2
 
-零售商希望更好地了解客户对订单履行的偏好。 他们希望向过去一个月在线和店内购买的客户发送一个简短的1问短信调查。
+零售商想要更瞭解客戶對訂單履行情況的偏好。 他們想要傳送簡短1題SMS問卷給過去一個月曾經線上上和店內購買過的客戶。
 
 ## 先决条件 {#prerequisites}
 
-建立Medallia连接需要以下信息：
-* **OAuth令牌端点URL**
-* **客户端ID**
-* **客户端密钥**
-* **API网关URL**
-* **导入API名称**
+建立Medallia連線需要下列資訊：
+* **OAuth權杖端點URL**
+* **使用者端ID**
+* **使用者端密碼**
+* **API閘道URL**
+* **匯入API名稱**
 
-与您的Medallia投放团队合作以获取这些详细信息。
+請與您的Medallia傳送團隊合作，以取得這些詳細資訊。
 
-## 支持的身份 {#supported-identities}
+## 支援的身分 {#supported-identities}
 
-Medallia支持激活下表所述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
+Medallia支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
 
-| Target标识 | 描述 | 注意事项 |
+| 目標身分 | 描述 | 注意事项 |
 |---|---|---|
-| 电子邮件 | 电子邮件地址 | 如果要发送电子邮件邀请调查，请选择电子邮件目标身份。 当某个用户档案与多个电子邮件地址关联时，Medallia将仅触发第一封电子邮件的邀请。 |
-| phone | 电话号码以E.164格式进行哈希处理 | 如果要发送基于短信的调查，请选择电话目标身份。 电话号码必须采用E.164格式，其中包括加号(+)、国际国家/地区通话代码、地区代码和电话号码。 例如：(+)（国家/地区代码）（区号）（电话号码）。 当用户档案与多个电话号码关联时，Medallia将仅触发第一个电话号码的邀请。 |
+| 电子邮件 | 电子邮件地址 | 當您想要傳送電子郵件邀請調查時，請選取電子郵件目標身分。 當設定檔與多個電子郵件地址關聯時，Medallia只會觸發第一個電子郵件的邀請。 |
+| phone | 以E.164格式雜湊的電話號碼 | 當您想要傳送以SMS為基礎的調查時，請選取電話目標身分。 電話號碼必須是E.164格式，其中包括加號(+)、國際國家/地區的電話代碼、當地區號和電話號碼。 例如：(+)（國家/地區代碼）（區號）（電話號碼）。 當設定檔與多個電話號碼相關聯時，Medallia只會觸發第一個電話號碼的邀請。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于用户档案]** | 您正在导出区段的所有新合格成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段的所有新合格成員，以及所需的結構描述欄位（例如：電子郵件地址、電話號碼、姓氏），如&lt;客戶名稱>的「選取設定檔屬性」畫面中所選。 [目的地啟用工作流程](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 连接到目标 {#connect}
-
->[!IMPORTANT]
-> 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
-
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
-
-### 对目标进行身份验证 {#authenticate}
-
-要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
-
-* **[!UICONTROL OAuth令牌端点URL]**:通常采用https://instance.medallia.tld/oauth/tenant/token形式。
-* **[!UICONTROL 客户端ID]**:从您的Medallia投放团队获取。
-* **[!UICONTROL 客户端密钥]**:从您的Medallia投放团队获取。
-
-![显示此目标的身份验证屏幕的图像。](/help/destinations/assets/catalog/voice/medallia-destination-oauth.png)
-
-### 填写目标详细信息 {#destination-details}
-
-要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-
-* **[!UICONTROL 名称]**:将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL API网关URL]**:从您的Medallia投放团队获取。 通常采用https://instance-tenant.apis.medallia.com形式。
-* **[!UICONTROL 导入API名称]**:从您的Medallia投放团队获取。 在此连接中使用的Medallia Import API（也称为Web Feed）的名称。 您可以将不同的区段激活到不同的导入API以触发不同的调查程序。
-
-![显示此目标的目标详细信息屏幕的图像。](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
-
-### 启用警报 {#enable-alerts}
-
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
-
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
-
-## 将区段激活到此目标 {#activate}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
 
-### 映射属性和标识 {#map}
+### 驗證至目的地 {#authenticate}
 
-必须根据用例映射以下目标标识命名空间：
-* 对于基于电子邮件的调查， **电子邮件** 必须映射为目标字段(使用 **目标字段** > **选择身份命名空间** > **电子邮件**
-* 对于基于短信的调查， **手机** 必须映射为目标字段(使用 **目标字段** > **选择身份命名空间** > **手机**. 电话号码必须采用E.164格式，其中包括加号(+)、国际国家/地区通话代码、地区代码和电话号码
+若要驗證目的地，請填入必填欄位並選取 **[!UICONTROL 連線到目的地]**.
 
-强烈建议您还映射其他目标自定义属性以创建个性化调查，并将有关客户的其他信息附加到调查记录：
+* **[!UICONTROL OAuth權杖端點URL]**：通常採用https://instance.medallia.tld/oauth/tenant/token的形式。
+* **[!UICONTROL 使用者端ID]**：從您的Medallia傳送團隊取得。
+* **[!UICONTROL 使用者端密碼]**：從您的Medallia傳送團隊取得。
 
-* 个性化调查通常按名称向客户提供地址
-   * 将客户的名字映射到 **目标字段** > **选择自定义属性** > **属性名称** > **名字**
-   * 将客户的姓氏映射到 **目标字段** > **选择自定义属性** > **属性名称** > **lastname**
-* 根据需要为任何其他目标自定义属性添加映射
+![顯示此目的地之驗證畫面的影像。](/help/destinations/assets/catalog/voice/medallia-destination-oauth.png)
 
-![显示标识和属性的示例映射的图像。](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)
+### 填寫目的地詳細資料 {#destination-details}
+
+若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
+
+* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
+* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL API閘道URL]**：從您的Medallia傳送團隊取得。 通常採用https://instance-tenant.apis.medallia.com的形式。
+* **[!UICONTROL 匯入API名稱]**：從您的Medallia傳送團隊取得。 用於此連線的Medallia Import API （也稱為Web摘要）名稱。 您可以對不同的匯入API啟用不同的區段，以觸發不同的調查方案。
+
+![顯示此目的地之目的地詳細資訊畫面的影像。](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
+
+### 啟用警示 {#enable-alerts}
+
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+
+## 啟用此目的地的區段 {#activate}
 
 >[!IMPORTANT]
 > 
-> 与您的Medallia投放团队共享确切的 **属性名称** 用于 **目标字段** > **选择自定义属性** > **属性名称**. 您可能希望直接共享映射页面的屏幕截图。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-## 导出的数据 {#exported-data}
+讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-在将区段激活到目标后，请通知您的Medallia投放团队，该团队将能够验证从Adobe Experience Platform到Medallia的导出数据。 请注意，只有在成功验证数据后，才能在Medallia内激活调查；在此之前，数据将导出到Medallia ，但不会触发针对客户的调查。
+### 對應屬性和身分 {#map}
 
-下面提供了导出数据的示例JSON，它使用 **映射属性和标识** 部分：
+下列目標身分名稱空間必須根據使用案例進行對應：
+* 對於電子郵件調查， **電子郵件** 必須使用將對應為目標欄位 **目標欄位** > **選取身分名稱空間** > **電子郵件**
+* 對於以簡訊為基礎的調查， **電話** 必須使用將對應為目標欄位 **目標欄位** > **選取身分名稱空間** > **電話**. 電話號碼必須是E.164格式，其中包括加號(+)、國際國家/地區的電話代碼、當地區號和電話號碼
+
+強烈建議您也對應其他目標自訂屬性，以建立個人化調查，並將客戶的更多相關資訊附加至調查記錄：
+
+* 個人化調查通常會依名稱為客戶提供服務
+   * 將客戶的名字對應至 **目標欄位** > **選取自訂屬性** > **屬性名稱** > **firstname**
+   * 將客戶的姓氏對應至 **目標欄位** > **選取自訂屬性** > **屬性名稱** > **姓氏**
+* 視需要新增任何其他目標自訂屬性的對應
+
+![顯示身分和屬性對應範例的影像。](/help/destinations/assets/catalog/voice/medallia-destination-mapping.png)
+
+>[!IMPORTANT]
+> 
+> 與您的Medallia傳送團隊分享確切的 **屬性名稱** 對於您使用的每個目標自訂屬性 **目標欄位** > **選取自訂屬性** > **屬性名稱**. 您可能希望直接分享對應頁面的熒幕擷圖。
+
+## 匯出的資料 {#exported-data}
+
+一旦您將區段啟動至目的地，請通知您的Medallia傳送團隊，該團隊將能夠驗證從Adobe Experience Platform匯出至Medallia的資料。 請注意，調查只能在資料驗證成功後於Medallia中啟動；在此之前，資料將匯出至Medallia，但不會向客戶觸發調查。
+
+以下提供匯出資料的JSON範例，其使用上方熒幕擷圖的範例對應 **對應屬性和身分** 區段：
 
 ```json
 [
@@ -147,6 +147,6 @@ Medallia支持激活下表所述的身份。 详细了解 [标识](/help/identit
 ]
 ```
 
-## 数据使用和管理 {#data-usage-governance}
+## 資料使用與控管 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).

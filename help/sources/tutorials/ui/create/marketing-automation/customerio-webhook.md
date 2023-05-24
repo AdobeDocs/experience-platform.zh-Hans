@@ -1,38 +1,39 @@
 ---
-title: 在UI中创建Customer.io源连接和数据流
-description: 了解如何使用Adobe Experience Platform UI创建Customer.io源连接。
-badge: "Beta"
-source-git-commit: 9d6a4b5f60f7895e2c1833493926db147064f3f1
+title: 在UI中建立Customer.io來源連線和資料流
+description: 瞭解如何使用Adobe Experience Platform UI建立Customer.io來源連線。
+badge: Beta
+exl-id: 7655a34c-808a-46e3-94e3-022a433755a4
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1233'
 ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Customer.io] UI中的源连接和数据流
+# 建立 [!DNL Customer.io] UI中的來源連線和資料流
 
 >[!NOTE]
 >
->的 [!DNL Customer.io] 来源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+>此 [!DNL Customer.io] 來源為測試版。 請閱讀 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
 
-本教程提供了创建 [!DNL Customer.io] 源连接和数据流。
+本教學課程提供建立 [!DNL Customer.io] 使用Adobe Experience Platform使用者介面的來源連線和資料流。
 
 ## 快速入门 {#getting-started}
 
-本教程需要对Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
 ## 先决条件 {#prerequisites}
 
-以下部分提供了在创建 [!DNL Customer.io] 源连接。
+下節提供建立前必須完成的必要條件相關資訊 [!DNL Customer.io] 來源連線。
 
-### 用于定义源架构的JSON示例 [!DNL Customer.io] {#prerequisites-json-schema}
+### 定義來源結構描述的JSON範例 [!DNL Customer.io] {#prerequisites-json-schema}
 
-在创建 [!DNL Customer.io] 源连接时，您需要提供源架构。 您可以使用以下JSON。
+建立之前 [!DNL Customer.io] 來源連線，您需要提供來源結構描述。 您可以使用以下JSON。
 
 ```
 {
@@ -52,131 +53,131 @@ ht-degree: 1%
 }
 ```
 
-### 为创建平台模式 [!DNL Customer.io] {#create-platform-schema}
+### 建立平台結構描述 [!DNL Customer.io] {#create-platform-schema}
 
-您还必须确保创建一个用于源的平台架构。 请参阅 [创建平台模式](../../../../../xdm/schema/composition.md) 有关如何创建架构的完整步骤。
+您也必須確保建立平台結構描述以用於您的來源。 請參閱教學課程，位置如下： [建立平台結構描述](../../../../../xdm/schema/composition.md) 有關如何建立方案的完整步驟。
 
-![Platform UI屏幕截图，显示Customer.io的示例架构](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
+![顯示Customer.io結構描述範例的平台UI熒幕擷圖](../../../../images/tutorials/create/marketing-automation/customerio-webhook/schema.png)
 
-## 连接 [!DNL Customer.io] 帐户 {#connect-account}
+## 連線您的 [!DNL Customer.io] 帳戶 {#connect-account}
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区，并查看Experience Platform中可用的源目录。
+在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 並檢視Experience Platform中可用的來源目錄。
 
-使用 *[!UICONTROL 类别]* 菜单来按类别筛选源。 或者，在搜索栏中输入源名称，以从目录中查找特定源。
+使用 *[!UICONTROL 類別]* 功能表，依類別篩選來源。 或者，在搜尋列中輸入來源名稱，從目錄中尋找特定來源。
 
-转到 [!UICONTROL 营销自动化] 类别以查看 [!DNL Customer.io] 源卡。 要开始，请选择 **[!UICONTROL 添加数据]**.
+前往 [!UICONTROL 行銷自動化] 類別以檢視 [!DNL Customer.io] 來源卡。 若要開始，請選取 **[!UICONTROL 新增資料]**.
 
-![Platform UI使用Customer.io卡编录的屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
+![具有Customer.io卡片目錄的平台UI熒幕擷圖](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
 
 ## 选择数据 {#select-data}
 
-的 **[!UICONTROL 选择数据]** 步骤，为您提供一个界面以选择要引入平台的数据。
+此 **[!UICONTROL 選取資料]** 步驟隨即顯示，提供介面供您選取要帶至Platform的資料。
 
-* 界面的左侧是一个浏览器，用于查看您帐户中的可用数据流；
-* 界面的右侧部分允许您从JSON文件预览多达100行数据。
+* 介面的左側是瀏覽器，可讓您檢視帳戶內的可用資料流；
+* 介面的右側部分可讓您預覽來自JSON檔案的最多100列資料。
 
-选择 **[!UICONTROL 上传文件]** 从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到 [!UICONTROL 拖放文件] 的上界。
+選取 **[!UICONTROL 上傳檔案]** 以從您的本機系統上傳JSON檔案。 或者，您也可以將要上傳的JSON檔案拖放至 [!UICONTROL 拖放檔案] 面板。
 
-![源工作流的添加数据步骤。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//add-data.png)
+![來源工作流程的新增資料步驟。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//add-data.png)
 
-上传文件后，预览界面会随之发生更新，以显示您上传的架构的预览。 预览界面允许您检查文件的内容和结构。 您还可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
+上傳檔案後，預覽介面會更新，以顯示您上傳的結構描述預覽。 預覽介面可讓您檢查檔案的內容和結構。 您也可以使用 [!UICONTROL 搜尋欄位] 用於從結構描述中存取特定專案的公用程式。
 
-完成后，选择 **[!UICONTROL 下一个]**.
+完成後，選取 **[!UICONTROL 下一個]**.
 
-![源工作流的预览步骤。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//preview.png)
+![來源工作流程的預覽步驟。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//preview.png)
 
 ## 数据流详细信息 {#dataflow-detail}
 
-的 **数据流详细信息** 此步骤将显示，为您提供使用现有数据集或为数据流建立新数据集的选项，以及提供数据流名称和描述的机会。 在此步骤中，您还可以配置用于配置文件摄取、错误诊断、部分摄取和警报的设置。
+此 **資料流詳細資料** 步驟隨即顯示，為您提供使用現有資料集或為資料流建立新資料集的選項，以及提供資料流名稱和說明的機會。 在此步驟中，您還可以配置設定檔擷取、錯誤診斷、部分擷取和警示的設定。
 
-完成后，选择 **[!UICONTROL 下一个]**.
+完成後，選取 **[!UICONTROL 下一個]**.
 
-![源工作流的数据流详细信息步骤。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//dataflow-detail.png)
+![來源工作流程的資料流詳細資料步驟。](../../../../images/tutorials/create/marketing-automation/customerio-webhook//dataflow-detail.png)
 
 ## 映射 {#mapping}
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+Platform會根據您選取的目標結構描述或資料集，為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。 您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
 
-下面列出的所有映射都是必需的，在继续到 [!UICONTROL 审阅] 舞台。
+下列所有對應都是強制性的，在繼續前往 [!UICONTROL 檢閱] 階段。
 
-| 目标字段 | 描述 |
+| 目標欄位 | 描述 |
 | --- | --- |
-| `object_type` | 对象类型，请参阅 [!DNL Customer.io] [事件](https://customer.io/docs/webhooks/#events) 文档。 |
-| `id` | 对象的标识符。 |
-| `email` | 与对象关联的电子邮件地址。 |
-| `event_id` | 事件的唯一标识符。 |
-| `cio_id` | 的 [!DNL Customer.io] 事件的标识符。 |
-| `metric` | 事件类型。 有关更多信息，请参阅 [!DNL Customer.io] [事件](https://customer.io/docs/webhooks/#events) 支持类型的文档。 |
-| `timestamp` | 事件发生时的时间戳。 |
+| `object_type` | 物件型別，請參閱 [!DNL Customer.io] [事件](https://customer.io/docs/webhooks/#events) 支援型別的檔案。 |
+| `id` | 物件的識別碼。 |
+| `email` | 與物件相關聯的電子郵件地址。 |
+| `event_id` | 事件的唯一識別碼。 |
+| `cio_id` | 此 [!DNL Customer.io] 事件的識別碼。 |
+| `metric` | 事件型別。 如需詳細資訊，請參閱 [!DNL Customer.io] [事件](https://customer.io/docs/webhooks/#events) 支援型別的檔案。 |
+| `timestamp` | 事件發生時的時間戳記。 |
 
 >[!IMPORTANT]
 >
->不映射 `cio_id` 执行 [!DNL Customer.io] 网页钩 `test mode` 因为不会从发送任何关联字段 [!DNL Customer.io].
+>不要對應 `cio_id` 執行時 [!DNL Customer.io] 中的webhook `test mode` 因為將不會傳送任何關聯的欄位 [!DNL Customer.io].
 
-成功映射源数据后，选择 **[!UICONTROL 下一个]**.
+成功對應來源資料後，請選取 **[!UICONTROL 下一個]**.
 
-![源工作流的映射步骤。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/mapping.png)
+![來源工作流程的對應步驟。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/mapping.png)
 
 ## 请查看 {#review}
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源檔案的相關路徑，以及該來源檔案中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
-![源工作流的审核步骤。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/review.png)
+![來源工作流程的稽核步驟。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/review.png)
 
-## 获取流端点URL {#get-streaming-endpoint}
+## 取得您的串流端點URL {#get-streaming-endpoint}
 
-创建流数据流后，您现在可以检索流端点URL。 此端点将用于订阅您的Webhook，从而允许您的流源与Experience Platform通信。
+建立串流資料流後，您現在可以擷取串流端點URL。 此端點將用於訂閱您的webhook，允許您的串流來源與Experience Platform通訊。
 
-以构建用于在上配置Webhook的URL [!DNL Customer.io] 您必须检索以下内容：
+為了建構用來設定webhook的URL [!DNL Customer.io] 您必須擷取下列專案：
 
-* **[!UICONTROL 数据流ID]**
-* **[!UICONTROL 流端点]**
+* **[!UICONTROL 資料流ID]**
+* **[!UICONTROL 串流端點]**
 
-检索 **[!UICONTROL 数据流ID]** 和 **[!UICONTROL 流端点]**，转到 [!UICONTROL 数据流活动] 数据流的页面，并从 [!UICONTROL 属性] 的上界。
+擷取您的 **[!UICONTROL 資料流ID]** 和 **[!UICONTROL 串流端點]**，前往 [!UICONTROL 資料流活動] 您剛建立之資料流的頁面，並從 [!UICONTROL 屬性] 面板。
 
-![数据流活动中的流端点。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/endpoint-test.png)
+![資料流活動中的串流端點。](../../../../images/tutorials/create/marketing-automation/customerio-webhook/endpoint-test.png)
 
-在检索到流端点和数据流ID后，请根据以下模式构建URL: ```{STREAMING_ENDPOINT}?x-adobe-flow-id={DATAFLOW_ID}```. 例如，构建的Webhook URL可能如下所示： ``https://dcs.adobedc.net/collection/febc116d22ba0ea2868e9c93b199375302afb8a589617700991bb8f3f0341ad7?x-adobe-flow-id=439b3fc4-3042-4a3a-b5e0-a494898d3fb0``
+擷取串流端點和資料流ID後，請根據以下模式建立URL： ```{STREAMING_ENDPOINT}?x-adobe-flow-id={DATAFLOW_ID}```. 例如，建構的webhook URL可能如下所示： ``https://dcs.adobedc.net/collection/febc116d22ba0ea2868e9c93b199375302afb8a589617700991bb8f3f0341ad7?x-adobe-flow-id=439b3fc4-3042-4a3a-b5e0-a494898d3fb0``
 
-## 在中设置报告网页挂接 [!DNL Customer.io] {#set-up-webhook}
+## 在中設定報告webhook [!DNL Customer.io] {#set-up-webhook}
 
-创建Webhook URL后，您现在可以使用 [!DNL Customer.io] 用户界面。 有关设置报告Web挂接的步骤，请阅读 [[!DNL Customer.io] 指南](https://customer.io/docs/webhooks/#setup) 设置Web挂接。
+建立webhook URL後，您現在可以使用以下專案設定報表webhook [!DNL Customer.io] 使用者介面。 如需設定報告Webhook的步驟，請參閱 [[!DNL Customer.io] 指南](https://customer.io/docs/webhooks/#setup) 設定webhook時。
 
-在 [!DNL Customer.io] 用户界面，输入 [webhook URL](#get-streaming-endpoint-url) 在 [!DNL WEBHOOK ENDPOINT] 字段。
+在 [!DNL Customer.io] 使用者介面，輸入您的 [webhook URL](#get-streaming-endpoint-url) 在 [!DNL WEBHOOK ENDPOINT] 欄位。
 
-![显示Webhook端点字段的Customer.io用户界面](../../../../images/tutorials/create/marketing-automation/customerio-webhook/webhook.png)
+![顯示webhook端點欄位的Customer.io使用者介面](../../../../images/tutorials/create/marketing-automation/customerio-webhook/webhook.png)
 
 >[!TIP]
 >
->您可以为报表WebHook订阅各种不同事件。 当 [!DNL Customer.io] 满足操作事件触发条件。 有关不同事件的更多信息，请参阅 [[!DNL Customer.io] 事件文档](https://customer.io/docs/webhooks/#events).
+>您可以為報告webhook訂閱各種不同的事件。 每則事件的訊息都會在下列情況下擷取至Platform： [!DNL Customer.io] 符合動作事件觸發條件。 如需不同事件的詳細資訊，請參閱 [[!DNL Customer.io] 事件檔案](https://customer.io/docs/webhooks/#events).
 
 ## 后续步骤 {#next-steps}
 
-在本教程之后，您已成功配置了流数据流以将 [!DNL Customer.io] Experience Platform。 要监视正在摄取的数据，请参阅 [使用Platform UI监控流数据流](../../monitor-streaming.md).
+依照本教學課程，您已成功設定串流資料流，將 [!DNL Customer.io] 要Experience Platform的資料。 若要監視正在擷取的資料，請參閱上的指南 [使用Platform UI監控串流資料流](../../monitor-streaming.md).
 
 ## 其他资源 {#additional-resources}
 
-以下部分提供了在使用 [!DNL Customer.io] 来源。
+以下各節提供其他資源，您可在使用時參照 [!DNL Customer.io] 來源。
 
 ### 护栏 {#guardrails}
 
-有关护栏的信息，请参阅 [[!DNL Customer.io] 超时和失败页面](https://customer.io/docs/webhooks/#timeouts-and-failures).
+有關護欄的資訊，請參閱 [[!DNL Customer.io] 逾時和失敗頁面](https://customer.io/docs/webhooks/#timeouts-and-failures).
 
 ### 验证 {#validation}
 
-验证是否已正确设置源和 [!DNL Customer.io] 正在摄取消息，请执行以下步骤：
+驗證您是否已正確設定來源及 [!DNL Customer.io] 正在內嵌訊息，請遵循下列步驟：
 
-* 您可以检查 [!DNL Customer.io] **[!UICONTROL 活动日志]** 页面以标识捕获的事件 [!DNL Customer.io].
+* 您可以檢查 [!DNL Customer.io] **[!UICONTROL 活動記錄]** 識別所擷取事件的頁面 [!DNL Customer.io].
 
-![Customer.io UI屏幕截图，显示活动日志](../../../../images/tutorials/create/marketing-automation/customerio-webhook/activity-logs.png)
+![顯示活動記錄的Customer.io UI熒幕擷圖](../../../../images/tutorials/create/marketing-automation/customerio-webhook/activity-logs.png)
 
-* 在平台UI中，选择 **[!UICONTROL 查看数据流]** 旁边 [!DNL Customer.io] 源目录的卡片菜单。 接下来，选择 **[!UICONTROL 预览数据集]** 验证为您在 [!DNL Customer.io].
+* 在Platform UI中選取 **[!UICONTROL 檢視資料流]** 旁邊 [!DNL Customer.io] 來源目錄上的卡片功能表。 接下來，選取 **[!UICONTROL 預覽資料集]** 驗證針對您在中選取的事件擷取的資料 [!DNL Customer.io].
 
-![显示摄取事件的Platform UI屏幕截图](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)
+![顯示已擷取事件的平台UI熒幕擷圖](../../../../images/tutorials/create/marketing-automation/customerio-webhook/platform-dataset.png)

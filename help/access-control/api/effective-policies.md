@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；有效策略；访问控制API
+keywords: Experience Platform；首頁；熱門主題；有效原則；存取控制api
 solution: Experience Platform
-title: 有效的策略API端点
-description: 了解如何使用Adobe Experience Platform的访问控制API查看有效的访问策略。
+title: 有效原則API端點
+description: 瞭解如何使用Adobe Experience Platform的存取控制API檢視有效的存取原則。
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
 source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 1%
 
 ---
 
-# 有效策略端点
+# 有效原則端點
 
 >[!NOTE]
 >
->如果传递了用户令牌，则令牌的用户必须对请求的组织具有“组织管理员”角色。
+>如果傳遞的是使用者權杖，則權杖的使用者必須具有請求組織的「組織管理員」角色。
 
-要查看当前用户的有效访问控制策略，请向 `/acl/effective-policies` 的端点 [!DNL Access Control] API。 您要检索的权限和资源类型必须以数组形式在请求有效负载中提供。 以下示例API调用中演示了这一点。
+若要檢視目前使用者的有效存取控制原則，請向下列使用者發出POST要求： `/acl/effective-policies` 中的端點 [!DNL Access Control] API。 您要在要求裝載中擷取的許可權和資源型別必須以陣列形式提供。 這會在以下範例API呼叫中說明。
 
 **API格式**
 
@@ -27,7 +27,7 @@ POST /acl/effective-policies
 
 **请求**
 
-以下请求会检索有关“[!UICONTROL 管理数据集]“ ”权限和对“ ”的访问[!UICONTROL 模式]“ ”当前用户的资源类型。
+以下請求會擷取關於「[!UICONTROL 管理資料集]「對」的許可權和存取權」[!UICONTROL 結構描述]「目前使用者的資源型別。
 
 ```shell
 curl -X POST \
@@ -45,11 +45,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->有关可在有效负载数组中提供的权限和资源类型的完整列表，请参阅附录部分 [已接受的权限和资源类型](#accepted-permissions-and-resource-types).
+>如需可在承載陣列中提供的許可權和資源型別的完整清單，請參閱附錄 [接受的許可權和資源型別](#accepted-permissions-and-resource-types).
 
 **响应**
 
-成功的响应会返回有关请求中提供的权限和资源类型的信息。 响应包括当前用户对请求中指定的资源类型具有的活动权限。 如果请求有效负载中包含的任何权限对当前用户处于活动状态，则API会返回带有星号(`*`)，以指示该权限处于活动状态。 响应负载中将忽略请求中提供的对用户不处于活动状态的任何权限。
+成功的回應會傳回要求中提供的許可權和資源型別相關資訊。 回應包含目前使用者對請求中指定的資源型別具有的使用中許可權。 如果要求裝載中包含的任何許可權對目前使用者而言是作用中的，API會傳回帶有星號(`*`)以表示許可權為使用中。 請求中提供的任何非使用者作用中的許可權會在回應裝載中忽略。
 
 ```json
 {
@@ -68,15 +68,15 @@ curl -X POST \
 
 ## 后续步骤
 
-本文档介绍了如何调用 [!DNL Access Control] 用于返回有关资源类型的活动权限和相关访问策略的信息的API。 有关的访问控制的详细信息 [!DNL Experience Platform]，请参阅 [访问控制概述](../home.md).
+本檔案說明如何呼叫 [!DNL Access Control] API可傳回有關資源型別的作用中許可權和相關存取原則的資訊。 如需關於存取控制的詳細資訊， [!DNL Experience Platform]，請參閱 [存取控制總覽](../home.md).
 
 ## 附录
 
-本节提供了有关使用 [!DNL Access Control] API。
+本節提供使用的補充資訊 [!DNL Access Control] API。
 
-### 已接受的权限和资源类型
+### 接受的許可權和資源型別
 
-以下是权限和资源类型的列表，您可以将这些权限和资源类型包含在POST请求的有效负载中 `/acl/active-permissions` 端点。
+以下是可包含在對的POST請求之裝載中的許可權和資源型別清單 `/acl/active-permissions` 端點。
 
 **Permissions**
 
@@ -116,7 +116,7 @@ permissions/view-segments
 permissions/view-sources
 ```
 
-**资源类型**
+**資源型別**
 
 ```plaintext
 resource-types/activation-associations

@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；查询服务；查询服务；嵌套数据结构；嵌套数据；
-title: 在查询服务中使用嵌套数据结构
-description: 本文档提供了使用CTAS和INSERT INTO语句处理和转换嵌套数据字段的工作示例。
+keywords: Experience Platform；查詢服務；查詢服務；巢狀資料結構；巢狀資料；
+title: 在查詢服務中使用巢狀資料結構
+description: 本檔案提供使用CTAS和INSERT INTO陳述式處理和轉換巢狀資料欄位的工作範例。
 exl-id: 593379fb-88ad-4b14-8d2e-aa6d18129974
 source-git-commit: d3ea7ee751962bb507c91e1afea0da35da60a66d
 workflow-type: tm+mt
@@ -10,25 +10,25 @@ ht-degree: 1%
 
 ---
 
-# 在查询服务中使用嵌套数据结构
+# 在查詢服務中使用巢狀資料結構
 
-Adobe Experience Platform查询服务支持使用嵌套数据字段。 企业数据结构的复杂性使得转换或处理此类数据变得复杂。 本文档提供了有关如何创建、处理或转换具有复杂数据类型（包括嵌套数据结构）的数据集的示例。
+Adobe Experience Platform查詢服務支援使用巢狀資料欄位。 企業資料結構的複雜性可能會使轉換或處理這些資料變得複雜。 本檔案提供範例，說明如何建立、處理或轉換具有複雜資料型別（包括巢狀資料結構）的資料集。
 
-查询服务提供 [!DNL PostgreSQL] 用于对由Experience Platform管理的所有数据集运行SQL查询的接口。 平台支持在表列（如struct、数组、映射）中使用基元或复杂数据类型，以及深度嵌套的结构、数组和映射。 数据集还可以包含嵌套结构，其中列数据类型可能与嵌套结构数组一样复杂，或者映射图，其中键值对的值可以是具有多个嵌套级别的结构。
+查詢服務提供 [!DNL PostgreSQL] 介面，可對Experience Platform管理的所有資料集執行SQL查詢。 Platform支援在表格欄中使用基本或複雜的資料型別，例如結構、陣列、對映和深度巢狀結構、陣列和對映。 資料集也可以包含巢狀結構，其中的欄資料型別可以像巢狀結構陣列一樣複雜，或是對應地圖，其中索引鍵/值組的值可以是具有多個巢狀層級的結構。
 
 ## 快速入门
 
-本教程需要使用第三方PSQL客户端或查询编辑器工具在Experience Platform用户界面(UI)中写入、验证和运行查询。 有关如何通过UI运行查询的完整详细信息，请参阅 [查询编辑器UI指南](../ui/user-guide.md). 有关第三方桌面客户端可以连接到查询服务的详细列表，请参阅 [客户端连接概述](../clients/overview.md).
+本教學課程需要使用協力廠商PSQL使用者端或查詢編輯器工具，在Experience Platform使用者介面(UI)中撰寫、驗證和執行查詢。 有關如何透過UI執行查詢的完整詳細資訊，請參閱 [查詢編輯器UI指南](../ui/user-guide.md). 如需第三方案頭使用者端可連線至查詢服務的詳細清單，請參閱 [使用者端連線概觀](../clients/overview.md).
 
-您还应该对 `INSERT INTO` 和 `CTAS` 语法。 有关其使用的特定信息，请参阅 [`INSERT INTO`](../sql/syntax.md#insert-into) 和 [`CTAS`](../sql/syntax.md#create-table-as-select) 部分 [SQL语法参考文档](../sql/syntax.md).
+您也應該充分瞭解 `INSERT INTO` 和 `CTAS` 語法。 關於其使用的特定資訊可在以下網址找到： [`INSERT INTO`](../sql/syntax.md#insert-into) 和 [`CTAS`](../sql/syntax.md#create-table-as-select) 的區段 [SQL語法參考檔案](../sql/syntax.md).
 
-## 创建数据集
+## 建立資料集
 
-查询服务提供“创建选定表”(`CTAS`)功能，用于根据 `SELECT` 语句，或者与本例一样，通过引用Adobe Experience Platform中的现有XDM架构来实现。 下面显示了 `Final_subscription` 创建。
+查詢服務提供以選取方式建立表格(`CTAS`)功能，可根據 `SELECT` 陳述式，或在此案例中一樣，透過對Adobe Experience Platform中現有XDM結構的參考來進行。 以下顯示的是的XDM結構描述 `Final_subscription` 已針對此範例建立。
 
-![final_subscription架构的图表。](../images/best-practices/final-subscription-schema.png)
+![final_subscription綱要的圖表。](../images/best-practices/final-subscription-schema.png)
 
-以下示例演示了用于创建 `final_subscription_test2` 数据集。 `final_subscription_test2` 是使用 `Final_subscription` 架构。 使用 `SELECT` 子句来填充某些行。
+下列範例示範用來建立 `final_subscription_test2` 資料集。 `final_subscription_test2` 是使用 `Final_subscription` 結構描述。 系統會使用「 」從來源擷取資料 `SELECT` 子句以填入某些資料列。
 
 ```sql
 CREATE TABLE final_subscription_test2 with(schema='Final_subscription') AS (
@@ -62,11 +62,11 @@ CREATE TABLE final_subscription_test2 with(schema='Final_subscription') AS (
        ) GROUP BY userid)
 ```
 
-在初始数据集中 `final_subscription_test2`，则struct数据类型将用于包含 `subscription` 字段和 `userid` 每个用户都具有的唯一值。 的 `subscription` 字段描述用户的产品订阅。 可以有多个订阅，但一个表格只能包含每行一个订阅的信息。
+在初始資料集中 `final_subscription_test2`，結構資料型別會用來包含這兩個 `subscription` 欄位和 `userid` 每個使用者所獨有的。 此 `subscription` 欄位說明使用者的產品訂閱。 可能有多個訂閱，但表格只能包含每列一個訂閱的資訊。
 
-## 使用INSERT INTO更新嵌套数据字段
+## 使用INSERT INTO來更新巢狀資料欄位
 
-在 `final_subscription_test2` 数据集已创建， `INSERT INTO` 语句用于将附加数据附加到表。 复制数据时，源和目标中的数据类型必须匹配。 或者，源数据类型必须为 `CAST` 到目标数据类型。 然后，使用以下SQL将增量数据添加到目标数据集中。
+晚於 `final_subscription_test2` 已建立資料集， `INSERT INTO` 陳述式用於將其他資料附加至表格。 複製資料時，來源和目標中的資料型別必須相符。 或者，來源資料型別必須是 `CAST` 至目標資料型別。 然後使用以下SQL將增量資料新增到目標資料集中。
 
 ```sql
 INSERT INTO final_subscription_test
@@ -99,24 +99,24 @@ INSERT INTO final_subscription_test
        ) GROUP BY userid)
 ```
 
-## 处理嵌套数据集中的数据
+## 處理巢狀資料集中的資料
 
-要从数据集中查找用户的活动订阅列表，您必须编写一个查询，将数组的元素分为多行和多列。 要实现此目的，您必须首先了解数据模型的形状，因为订阅信息会保存在数据集内嵌套的数组中。
+若要從資料集中找出使用者的作用中訂閱清單，您必須編寫查詢，將陣列元素分隔成多個列和欄。 若要這麼做，您必須先瞭解資料模型的形狀，因為訂閱資訊會儲存在巢狀於資料集中的陣列中。
 
-PSQL `\d` 命令用于逐级导航到所需的订阅数据。 下表说明了 `final_subscription_test2` 数据集。 复杂数据类型可以一目了然地识别，因为它们不是典型的类型值，如文本、布尔值、时间戳等。
+PSQL `\d` 命令可用來逐層導覽至所需的訂閱資料。 這些表格說明 `final_subscription_test2` 資料集。 複雜的資料型別不是典型的型別值（例如文字、布林值、時間戳記等），因此一眼就能辨識。
 
 | 栏目 | 类型 |
 |--------|-------|
 | `_lumaservices3` | final_subscription_test2__lumaservices3 |
 
-下一列的字段使用 `\d final_subscription_test2__lumaservices3` 命令。
+下一欄的欄位會使用 `\d final_subscription_test2__lumaservices3` 命令。
 
 | 栏目 | 类型 |
 |---------|-------|
 | `userid` | 文本 |
 | `subscription` | _lumaservices3_subscription_e[] |
 
-`subscription` 是结构元素数组。 其字段使用 `\d _lumaservices3_subscription_e[]` 命令。
+`subscription` 是結構元素的陣列。 其欄位會使用 `\d _lumaservices3_subscription_e[]` 命令。
 
 | 栏目 | 类型 |
 |---------|-------|
@@ -125,7 +125,7 @@ PSQL `\d` 命令用于逐级导航到所需的订阅数据。 下表说明了 `f
 | `offer_id` | 文本 |
 | `subscription_id` | 文本 |
 
-要查询订阅的嵌套字段，您必须首先将 `subscription` 将数组分成多行，并使用分解函数返回结果。 以下SQL示例根据 `userid`.
+若要查詢訂閱的巢狀欄位，您必須先分隔 `subscription` 陣列化成多列，並使用explode函式傳回結果。 下列SQL範例會根據下列條件傳回使用者的使用中訂閱 `userid`.
 
 ```sql
 SELECT userid, subs AS active_subscription FROM (
@@ -135,7 +135,7 @@ SELECT userid, subs AS active_subscription FROM (
 WHERE subs.last_status='Active';
 ```
 
-此简化的示例解决方案仅允许一个活动用户订阅。 实际上，单个用户可能有许多活动订阅。 以下示例修改了上一个查询，以允许同时进行多个活动订阅。
+此簡化的範例解決方案僅允許一位使用中的使用者訂閱。 實際上，單一使用者可以有許多作用中的訂閱。 下列範例將先前的查詢修改為允許多個同時作用中訂閱。
 
 ```sql
 SELECT userid, collect_list(subs) AS active_subscriptions FROM (
@@ -148,8 +148,8 @@ WHERE subs.last_status='Active'
 GROUP BY userid ;
 ```
 
-尽管此SQL示例的复杂性越来越高， `collect_list` 对于活动订阅，不保证输出与源的顺序相同。 要为用户创建活动订阅列表，必须使用GROUP BY或Shwiffling来聚合列表结果。
+儘管此SQL範例的複雜性不斷增加， `collect_list` 對於使用中訂閱，無法保證輸出的順序會與來源相同。 若要為使用者建立作用中訂閱清單，您必須使用GROUP BY或隨機排列來彙總清單的結果。
 
 ## 后续步骤
 
-通过阅读本文档，您现在可以了解如何在Adobe Experience Platform查询服务中处理或转换使用复杂数据类型的数据集。 请参阅 [查询执行指南](../best-practices/writing-queries.md) 有关在数据湖中的数据集上运行SQL查询的详细信息。
+閱讀本檔案後，您現在瞭解如何在Adobe Experience Platform查詢服務中處理或轉換使用複雜資料型別的資料集。 請參閱 [查詢執行指南](../best-practices/writing-queries.md) 以取得在Data Lake內對資料集執行SQL查詢的詳細資訊。

@@ -1,6 +1,6 @@
 ---
-title: 管理Privacy Service权限
-description: 了解如何使用Adobe Admin Console管理Adobe Experience Platform Privacy Service的用户权限。
+title: 管理Privacy Service的許可權
+description: 瞭解如何使用Adobe Admin Console管理Adobe Experience Platform Privacy Service的使用者許可權。
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
 source-git-commit: 1e164166f58540cbaaa4ad789b10cdfc40fa8a70
 workflow-type: tm+mt
@@ -9,142 +9,142 @@ ht-degree: 1%
 
 ---
 
-# 管理Privacy Service权限
+# 管理Privacy Service的許可權
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Privacy Service的权限已得到改进，可提高其粒度级别。 通过这些更改，组织管理员可以授予更多用户使用所需的角色和权限级别的访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们而言是一次重大更改。 此权限更改的实施将在 **2023年4月13日**. 请参阅 [迁移旧版API凭据](#migrate-tech-accounts) 以获取有关解决此问题的指导。
+>Adobe Experience Platform Privacy Service的許可權已得到改善，以提高其精細度等級。 這些變更可讓組織管理員以所需的角色和許可權層級，授予更多使用者存取權。 技術帳戶使用者必須更新其Privacy Service許可權，因為此即將進行的更新對他們而言是重大變更。 此許可權變更的強制實施將發生在 **2023年4月13日**. 請參閱以下說明檔案： [移轉舊版API認證](#migrate-tech-accounts) 以取得解決此問題的指引。
 >
->技术帐户可供企业客户使用，并通过Adobe开发人员控制台创建。 技术帐户持有人的Adobe ID结束于 `@techacct.adobe.com`. 如果您不确定自己是否是技术帐户持有者，请联系您的组织管理员。
+>企業客戶可使用技術帳戶，這些帳戶是透過Adobe開發人員控制檯建立的。 技術帳戶持有人的Adobe ID結尾為 `@techacct.adobe.com`. 如果您不確定您是否為技術帳戶擁有者，請聯絡您的組織管理員。
 
-访问 [Adobe Experience Platform Privacy Service](./home.md) 可通过Adobe Admin Console中基于角色的细粒度权限进行控制。 通过创建产品配置文件以将权限分配给用户组，可以确定谁有权访问Privacy Service中的哪些功能 [UI](./ui/overview.md) 和 [API](./api/overview.md).
+存取 [Adobe Experience Platform Privacy Service](./home.md) 是透過Adobe Admin Console中精細的角色型許可權所控制。 透過建立將許可權指派給使用者群組的產品設定檔，您可以決定誰可以存取Privacy Service中的哪些功能 [UI](./ui/overview.md) 和 [API](./api/overview.md).
 
 >[!NOTE]
 >
->在为Privacy ServiceAPI创建集成时，必须选择现有的产品配置文件，才能确定集成具有权限的功能或操作。 请参阅 [开始使用Privacy ServiceAPI](./api/getting-started.md) 以了解更多信息。
+>為Privacy ServiceAPI建立整合時，您必須選取現有的產品設定檔，才能決定整合有哪些功能或動作許可權。 請參閱指南： [Privacy Service API快速入門](./api/getting-started.md) 以取得詳細資訊。
 
-本指南向您展示如何管理Privacy Service权限。
+本指南說明如何管理Privacy Service的許可權。
 
 ## 快速入门
 
-要配置Privacy Service的访问控制，您必须拥有与Adobe Experience Platform Privacy Service产品集成的组织的管理员权限。 可授予或撤回权限的最低角色是 **产品配置文件管理员**. 其他可以管理权限的管理员角色包括 **产品管理员** （可以管理产品中的所有配置文件）和 **系统管理员** （无限制）。 请参阅 [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关详细信息，请参阅Adobe企业管理指南。
+若要設定Privacy Service的存取控制，您必須擁有與Adobe Experience Platform Privacy Service產品整合之組織的管理員許可權。 可授予或撤銷許可權的最小角色為 **產品設定檔管理員**. 可以管理許可權的其他管理員角色包括 **產品管理員** （可以管理產品內的所有設定檔）和 **系統管理員** （無限制）。 請參閱以下文章： [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 如需詳細資訊，請參閱Adobe企業管理指南。
 
-本指南假定您熟悉产品配置文件等基本Admin Console概念，以及它们如何向个人用户和组授予产品权限。 有关更多信息，请参阅 [Admin Console用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
+本指南假設您熟悉基本的Admin Console概念，例如產品設定檔，以及產品設定檔如何授予個別使用者和群組的產品許可權。 如需詳細資訊，請參閱 [Admin Console使用手冊](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
 
-## 可用权限
+## 可用許可權
 
-下表概述了Privacy Service的可用权限，并介绍了授予访问权限的特定功能：
+下表概述Privacy Service可用的許可權，以及使用者授予存取許可權的特定功能說明：
 
 >[!NOTE]
 >
->所有Privacy Service和 [!UICONTROL 选择退出销售] 权限是不同的，并且相互之间不存在功能重叠。 这是可能的，因为Privacy ServiceAPI被视为幂等。
+>所有Privacy Service和 [!UICONTROL 選擇退出銷售] 許可權是不同的，且彼此分開，沒有功能重疊。 這是可行的，因為Privacy Service API被視為等冪。
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| [!UICONTROL Privacy Service权限] | [!UICONTROL 隐私读取权限] | 确定用户是否可以查看现有访问和删除请求及其详细信息。 |
-| [!UICONTROL Privacy Service权限] | [!UICONTROL 隐私写入权限] | 确定用户是否可以创建新的访问和删除请求。 |
-| [!UICONTROL Privacy Service权限] | [!UICONTROL “读取（访问）内容交付”权限] | 当Privacy Service处理访问请求时，将向该客户发送包含客户数据的ZIP文件。 在查找访问请求的详细信息时，此权限决定用户是否可以访问请求ZIP文件的下载链接。 |
-| [!UICONTROL 选择退出销售权限] | [!UICONTROL 阅读权限 — 选择退出销售] | 确定用户是否可以查看现有的选择退出销售请求及其详细信息。 |
-| [!UICONTROL 选择退出销售权限] | [!UICONTROL 写入权限 — 选择退出销售] | 确定用户是否可以创建新的选择退出销售请求。 |
+| [!UICONTROL Privacy Service許可權] | [!UICONTROL 隱私權讀取許可權] | 決定使用者是否可以檢視現有的存取和刪除要求及其詳細資料。 |
+| [!UICONTROL Privacy Service許可權] | [!UICONTROL 隱私權寫入許可權] | 決定使用者是否可以建立新的存取和刪除要求。 |
+| [!UICONTROL Privacy Service許可權] | [!UICONTROL 讀取（存取）內容傳遞許可權] | 當Privacy Service處理存取請求時，包含客戶資料的ZIP檔案會傳送給該客戶。 查詢存取請求的詳細資訊時，此許可權會決定使用者是否可存取請求ZIP檔案的下載連結。 |
+| [!UICONTROL 選擇退出銷售許可權] | [!UICONTROL 讀取許可權 — 選擇退出銷售] | 決定使用者是否可以檢視現有的選擇退出銷售請求及其詳細資料。 |
+| [!UICONTROL 選擇退出銷售許可權] | [!UICONTROL 寫入許可權 — 選擇退出銷售] | 決定使用者是否可建立新的選擇退出銷售請求。 |
 
 {style="table-layout:auto"}
 
 ## 管理权限 {#manage}
 
-要管理Privacy Service权限，请登录 [Admin Console](https://adminconsole.adobe.com/) 选择 **[!UICONTROL 产品]** 中。 从此处选择 **[!UICONTROL Adobe Experience Platform Privacy Service]**.
+若要管理Privacy Service許可權，請登入 [Admin Console](https://adminconsole.adobe.com/) 並選取 **[!UICONTROL 產品]** 從頂端導覽列中。 從此處選取 **[!UICONTROL Adobe Experience Platform Privacy Service]**.
 
-![显示Privacy Service产品卡的Admin Console](./images/permissions/privacy-service-card.png)
+![顯示Admin Console中Privacy Service產品卡的影像](./images/permissions/privacy-service-card.png)
 
-### 选择或创建产品配置文件
+### 選取或建立產品設定檔
 
-下一个屏幕显示贵组织下可供Privacy Service的可用产品配置文件列表。 如果不存在产品配置文件，请选择 **[!UICONTROL 新建用户档案]** 创建一个。 如果贵组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
+下一個畫面會顯示可在您的組織下Privacy Service的可用產品設定檔清單。 如果沒有任何產品設定檔存在，請選取「 」 **[!UICONTROL 新設定檔]** 以建立一個。 如果您的組織中有多個角色或使用者群組需要不同的存取層級，您應該為每個角色或使用者群組建立個別的產品設定檔。
 
-![显示产品配置文件以在Admin Console中Privacy Service的图像](./images/permissions/select-or-create-profile.png)
+![顯示Admin Console中Privacy Service的產品設定檔的影像](./images/permissions/select-or-create-profile.png)
 
-选择产品配置文件后，您可以使用 **[!UICONTROL 权限]** 选项卡开始 [编辑权限](#edit-permissions) ，或选择 **[!UICONTROL 用户]** 选项卡开始 [分配用户](#assign-users) 到用户档案。
+選取產品設定檔後，您可以使用 **[!UICONTROL 許可權]** 索引標籤以開始 [編輯許可權](#edit-permissions) ，或選取 **[!UICONTROL 使用者]** 索引標籤以開始 [指派使用者](#assign-users) 至設定檔。
 
-![显示产品配置文件Admin Console权限选项卡的图像](./images/permissions/users-permissions-tabs.png)
+![顯示產品設定檔Admin Console的許可權索引標籤的影像](./images/permissions/users-permissions-tabs.png)
 
-### 编辑配置文件的权限 {#edit-permissions}
+### 編輯設定檔的許可權 {#edit-permissions}
 
-在 **[!UICONTROL 权限]** 选项卡，选择显示的任何权限类别以访问权限编辑视图。
+於 **[!UICONTROL 許可權]** 索引標籤中，選取任何顯示的許可權類別以存取許可權編輯檢視。
 
-编辑配置文件的权限时，可用权限会列在左列，而配置文件中包含的可用权限会列在右列。 选择列出的权限，以在任一列之间移动它们。
+編輯設定檔的許可權時，可用許可權會列在左欄，而包含在設定檔中的許可權則會列在右欄。 選取列出的許可權，以便在任一欄之間移動。
 
-![显示可用和包含的权限列的图像](./images/permissions/edit-permissions.png)
+![顯示可用和已包含許可權欄的影像](./images/permissions/edit-permissions.png)
 
-权限分为几类。 要在类别之间切换，请从左侧导航中选择所需的类别。
+許可權會整理到不同類別中。 若要在類別之間切換，請從左側導覽中選取所需的類別。
 
-![显示 [!UICONTROL 选择退出销售] 权限部分](./images/permissions/switch-category.png)
+![影像顯示 [!UICONTROL 選擇退出銷售] 許可權下的區段](./images/permissions/switch-category.png)
 
-选择 **[!UICONTROL 保存]** 权限配置完成后。
+選取 **[!UICONTROL 儲存]** 完成許可權設定後。
 
-![显示为产品配置文件保存的权限配置的图像](./images/permissions/save-permissions.png)
+![此影像顯示正在為產品設定檔儲存的許可權設定](./images/permissions/save-permissions.png)
 
-此时将重新显示产品配置文件视图，并反映添加的权限。
+產品設定檔檢視會重新出現，並反映新增的許可權。
 
-![显示产品配置文件已添加权限的图像](./images/permissions/permissions-added.png)
+![顯示產品設定檔新增許可權的影像](./images/permissions/permissions-added.png)
 
-### 将用户分配到配置文件 {#assign-users}
+### 將使用者指派給設定檔 {#assign-users}
 
-要将用户分配到产品配置文件（并向他们授予配置文件的配置权限），请选择 **[!UICONTROL 用户]** 选项卡，后跟 **[!UICONTROL 添加用户]**.
+若要將使用者指派給產品設定檔（並授予他們設定檔設定的許可權），請選取 **[!UICONTROL 使用者]** 索引標籤，後面接著 **[!UICONTROL 新增使用者]**.
 
-![显示产品配置文件的“用户”选项卡的图像，Admin Console](./images/permissions/manage-users.png)
+![顯示Admin Console中產品設定檔的使用者索引標籤的影像](./images/permissions/manage-users.png)
 
-有关管理产品配置文件用户的更多信息，请参阅 [Admin Console文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
+如需管理產品設定檔使用者的詳細資訊，請參閱 [Admin Console檔案](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
 
-### 将旧版API凭据迁移到配置文件 {#migrate-tech-accounts}
-
->[!NOTE]
->
->此部分仅适用于在将Privacy Service权限集成到Adobe Admin Console之前创建的现有API凭据。 对于新凭据，将通过 [Adobe Developer控制台项目](https://developer.adobe.com/developer-console/docs/guides/projects/) 中。<br><br>请参阅 [将产品配置文件分配给项目](./api/getting-started.md#product-profiles) Privacy ServiceAPI快速入门指南以了解更多信息。
-
-以前，技术帐户不需要产品配置文件来获取集成和权限。 但是，由于最近Privacy Service权限有了改进，现在需要将旧版API凭据迁移到产品配置文件。 此更新允许向技术帐户持有人授予粒度权限。 请按照以下提供的步骤更新技术帐户权限以进行Privacy Service。
-
-#### 更新技术帐户权限 {#update-tech-account-permissions}
-
-为技术帐户分配权限集的第一步是导航到 [Adobe Admin Console](https://adminconsole.adobe.com/) 并创建新的产品配置文件以进行Privacy Service。
-
-从Admin ConsoleUI中，选择 **产品** ，然后 **[!UICONTROL Experience Cloud]** 和 **[!UICONTROL Adobe Experience Platform Privacy Service]** 中。 的 [!UICONTROL 产品配置文件] 选项卡。 选择 **新建用户档案** 创建新的产品配置文件以进行Privacy Service。
-
-![在Adobe Admin Console中Experience PlatformPrivacy Service产品配置文件选项卡，并突出显示新配置文件。](./images/permissions/create-product-profile.png)
-
-的 [!UICONTROL 创建新的产品用户档案] 对话框。 有关如何创建产品配置文件的完整说明，请参阅 [创建用户档案的UI指南](../access-control/ui/create-profile.md).
-
-保存新的产品配置文件后，导航到 [Adobe Developer控制台](https://developer.adobe.com/console/home) 然后登录该产品或该项目。 选择 **[!UICONTROL 项目]** ，然后是项目的卡。
+### 將舊版API認證移轉至設定檔 {#migrate-tech-accounts}
 
 >[!NOTE]
 >
->您可能需要清除缓存和/或等待一段时间，才能在开发人员控制台项目列表中显示新项目。
+>本節僅適用於將Privacy Service許可權整合至Adobe Admin Console之前建立的現有API認證。 對於新憑證，產品設定檔（及其許可權）會透過以下方式指派 [Adobe Developer主控台專案](https://developer.adobe.com/developer-console/docs/guides/projects/) 而非。<br><br>請參閱以下小節： [將產品設定檔指派至專案](./api/getting-started.md#product-profiles) 如需詳細資訊，請參閱Privacy ServiceAPI快速入門手冊。
 
-登录项目后，选择 **[!UICONTROL Privacy ServiceAPI]** 集成。
+以前，技術帳戶不需要產品設定檔來整合和許可權。 不過，由於Privacy Service許可權最近有所改善，現在必須將舊版API憑證移轉至產品設定檔。 此更新允許將精細許可權授予技術帳戶持有者。 請依照下列提供的步驟更新Privacy Service的技術帳戶許可權。
 
-![Adobe Developer控制台的“项目”选项卡突出显示了项目和Privacy ServiceAPI。](./images/permissions/login-to-dev-console-project.png)
+#### 更新技術帳戶許可權 {#update-tech-account-permissions}
 
-此时会显示Privacy ServiceAPI集成功能板。 在此功能板中，您可以编辑与该项目关联的产品配置文件。 选择 **[!UICONTROL 编辑产品配置文件]** 开始这个过程。 的 [!UICONTROL 配置API] 对话框。
+指派技術帳戶許可權集的第一步，是導覽至 [Adobe Admin Console](https://adminconsole.adobe.com/) 和建立新的產品設定檔以供Privacy Service。
 
-![Adobe Developer控制台中的Privacy ServiceAPI集成功能板，其中突出显示了“编辑产品配置文件”](./images/permissions/edit-product-profiles.png)
+從Admin ConsoleUI中選取 **產品** 導覽列中的「 」，後面接著「 」 **[!UICONTROL Experience Cloud]** 和 **[!UICONTROL Adobe Experience Platform Privacy Service]** 在左側邊欄中。 此 [!UICONTROL 產品設定檔] 標籤隨即顯示。 選取 **新設定檔** 建立新的產品設定檔以進行Privacy Service。
 
-的 [!UICONTROL 配置API] 对话框显示服务中当前存在的可用产品配置文件。 它们与在管理控制台中创建的产品用户档案相关联。 从可用产品配置文件列表中，选中您在管理控制台中为技术帐户创建的新产品配置文件的复选框。 这会自动将此技术帐户与选定产品配置文件中的权限相关联。 选择 **[!UICONTROL 保存配置的API]** 以确认您的设置。
+![反白顯示新設定檔的Adobe Admin Console中的「Experience PlatformPrivacy Service產品設定檔」索引標籤。](./images/permissions/create-product-profile.png)
+
+此 [!UICONTROL 建立新的產品設定檔] 對話方塊隨即顯示。 有關如何建立產品設定檔的完整說明，請參閱 [建立設定檔的UI指南](../access-control/ui/create-profile.md).
+
+儲存新產品設定檔後，請導覽至 [Adobe Developer主控台](https://developer.adobe.com/console/home) 並登入該產品或該專案。 選取 **[!UICONTROL 專案]** 從頂端導覽，然後是專案的卡片。
 
 >[!NOTE]
 >
->如果技术帐户已与产品配置文件关联，则将已选中可用产品配置文件列表中的某个复选框。
+>您可能需要清除快取和/或等待一段時間，新專案才會出現在開發人員控制檯專案清單中。
 
-![在Adobe Developer控制台中，使用产品配置文件选中配置API对话框，并突出显示保存配置的API。](./images/permissions/select-profile-for-tech-account.png)
+登入專案後，選取 **[!UICONTROL PRIVACY SERVICEAPI]** 從左側邊欄進行整合。
 
-#### 确认已应用您的设置 {#confirm-applied-settings}
+![反白顯示專案和Privacy ServiceAPI的Adobe Developer Console的「專案」索引標籤。](./images/permissions/login-to-dev-console-project.png)
 
-确认您的设置已应用于帐户。 返回到 [Admin Console](https://adminconsole.adobe.com/) ，然后导航到新创建的产品用户档案。 选择 **[!UICONTROL API凭据]** 选项卡，以查看关联的项目列表。 在开发人员控制台中使用的项目，您将产品配置文件分配给技术帐户的项目将显示在凭据列表中。 每个API凭据的名称都由项目名称组成，其后面有一个随机生成的编号，该编号的后缀为。 选择凭据以打开 [!UICONTROL 详细信息] 的上界。
+「Privacy ServiceAPI整合」控制面板隨即顯示。 您可以從此儀表板編輯與該專案相關聯的產品設定檔。 選取 **[!UICONTROL 編輯產品設定檔]** 以開始此程式。 此 [!UICONTROL 設定API] 對話方塊隨即顯示。
 
-![Admin Console中的产品用户档案，其中突出显示了API凭据选项卡和一行项目凭据。](./images/permissions/confirm-credentials-in-admin-console.png)
+![Adobe Developer Console中的Privacy Service API整合控制面板，醒目提示編輯產品設定檔](./images/permissions/edit-product-profiles.png)
 
-的 [!UICONTROL 详细信息] 面板包含有关API凭据的信息，包括关联的技术ID、API密钥、创建日期和上次修改日期，以及关联的Adobe产品。
+此 [!UICONTROL 設定API] 對話方塊顯示服務中目前存在的可用產品設定檔。 這些設定檔與Admin Console中建立的產品設定檔相關聯。 從可用產品設定檔清單中，選取您在Admin Console中為技術帳戶建立的新產品設定檔的核取方塊。 這會自動將此技術帳戶與所選產品設定檔中的許可權建立關聯。 選取 **[!UICONTROL 儲存已設定的API]** 以確認您的設定。
 
-![Admin Console中API凭据突出显示的详细信息面板。](./images/permissions/admin-console-details-panel.png)
+>[!NOTE]
+>
+>如果技術帳戶已與產品設定檔相關聯，則會已選取可用產品設定檔清單中的其中一個核取方塊。
+
+![Adobe Developer Console中的「設定API」對話方塊中，產品設定檔核取方塊和「儲存已設定的API」會反白顯示。](./images/permissions/select-profile-for-tech-account.png)
+
+#### 確認已套用您的設定 {#confirm-applied-settings}
+
+確認您的設定已套用至帳戶。 返回 [Admin Console](https://adminconsole.adobe.com/) 並導覽至您新建立的產品設定檔。 選取 **[!UICONTROL API認證]** 索引標籤以檢視關聯專案的清單。 在開發人員控制檯中使用的專案（您將產品設定檔指派給技術帳戶）會顯示在認證清單中。 每個API認證的名稱由專案名稱組成，專案名稱的尾碼為隨機產生的數字。 選取認證以開啟 [!UICONTROL 詳細資料] 面板。
+
+![Admin Console中的產品設定檔，其中的API憑證索引標籤和一列反白顯示的專案憑證。](./images/permissions/confirm-credentials-in-admin-console.png)
+
+此 [!UICONTROL 詳細資料] 面板包含API認證的相關資訊，包括關聯的技術ID、API金鑰、建立和上次修改日期，以及關聯的Adobe產品。
+
+![Admin Console中API認證的醒目提示詳細資訊面板。](./images/permissions/admin-console-details-panel.png)
 
 ## 后续步骤
 
-本指南介绍了Privacy Service的可用权限以及如何通过Admin Console管理这些权限。
+本指南涵蓋Privacy Service可用的許可權，以及如何透過Admin Console管理這些許可權。
 
-有关如何在设置产品配置文件后创建新API集成的步骤，请参阅 [Privacy ServiceAPI快速入门指南](./api/getting-started.md). 有关管理其他Adobe Experience Platform功能的权限的更多信息，请参阅 [访问控制文档](../access-control/home.md).
+如需在設定產品設定檔後如何建立新API整合的步驟，請參閱 [Privacy Service API快速入門手冊](./api/getting-started.md). 如需管理其他Adobe Experience Platform功能許可權的詳細資訊，請參閱 [存取控制檔案](../access-control/home.md).

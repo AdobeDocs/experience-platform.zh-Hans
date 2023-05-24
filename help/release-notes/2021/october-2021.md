@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform发行说明2021年10月
-description: 2021年10月版Adobe Experience Platform发行说明。
+title: Adobe Experience Platform發行說明2021年10月
+description: Adobe Experience Platform的2021年10月發行說明。
 exl-id: 8f8bcb24-6478-4281-9362-9559158384af
 source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
@@ -13,23 +13,23 @@ ht-degree: 8%
 
 **发行日期：2021 年 10 月 27 日**
 
-## Experience Platform更新
+## Experience Platform的更新
 
-更新了Experience Platform。
+Experience Platform的更新。
 
 ### 用户界面 {#ui}
 
-用户界面已更新，更改如下：
+使用者介面已更新，其中包含下列變更：
 
 | 功能 | 描述 |
 | --- | --- |
-| 深色主题 | 使用深色主题开关可在平台界面中的浅色主题和深色主题之间进行切换。 交换机位于用户名和电子邮件下方的用户配置文件中。 |
-| 切换左侧导航 | 使用应用程序标题顶部的改进导航切换开关，可显示或隐藏显示Experience Platform功能的菜单。 系统会记住您的上次选择，并仅显示您有权访问的功能。 |
-| 访问可见性 | 左侧导航栏仅显示您能够访问的功能。 在Adobe Experience Platform的早期版本中，即使您无法访问不可用项目，它们也是可见的。 |
+| 深色主题 | 在Platform介面中，使用深色佈景主題切換開關在淺色和深色佈景主題之間切換。 交換器位於使用者名稱和電子郵件下方的使用者設定檔中。 |
+| 切換左側導覽 | 使用應用程式標題頂端的改良導覽切換功能，可顯示或隱藏顯示Experience Platform功能的功能表。 系統會記住您最後的選擇，並僅顯示您有權存取的功能。 |
+| 存取可見性 | 左側導覽列僅顯示您可以存取的功能。 在舊版Adobe Experience Platform中，即使您無法存取不可用的專案，也會顯示不可用的專案。 |
 
-请参阅 [平台UI指南](../../landing/ui-guide.md) 以了解更多。
+請參閱 [Platform UI指南](../../landing/ui-guide.md) 以深入瞭解。
 
-## 现有功能的更新
+## 現有功能的更新
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -38,27 +38,27 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ### [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+[!DNL Data Prep] 可讓資料工程師對應、轉換及驗證與Experience Data Model (XDM)之間的資料。
 
-**更新功能**
+**更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| `contains_key` 函数 | 的 `contains_key` 函数，用于检查对象是否存在于源中。 此函数将 `is_set` 函数，现已弃用。 |
-| 错误消息 | 返回的错误消息 `/mappingSets/preview` 数据准备API中的端点现在与运行时生成的错误消息一致。 |
+| `contains_key` 函数 | 此 `contains_key` 函式已匯入，可讓您檢查來源內是否有物件。 此函式取代 `is_set` 函式，現已棄用。 |
+| 错误消息 | 傳回的錯誤訊息 `/mappingSets/preview` 「資料準備API」中的端點現在與執行階段產生的錯誤訊息一致。 |
 
-请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md) 了解有关此服务的更多信息。
+請參閱 [[!DNL Data Prep] 概觀](../../data-prep/home.md) 以進一步瞭解此服務。
 
 ### 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可從外部來源擷取資料，同時允許您使用Platform服務來建構、加標籤及增強該資料。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
 
-Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+Experience Platform提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Amazon S3] 源增强功能 | 您现在可以使用 `s3SessionToken` 连接 [!DNL Amazon S3] 帐户到Platform的临时安全凭据。 此令牌允许您提供对 [!DNL Amazon S3] 资源。 有关详细信息，请参阅[[!DNL Amazon S3] 文档](../../sources/connectors/cloud-storage/s3.md#prerequisites)。 |
-| [!DNL Generic REST API] （测试版） | 您现在可以创建 [!DNL Generic REST API] 源连接使用 [[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md) 将数据从通用REST应用程序引入平台。 请参阅 [[!DNL Generic REST API] 概述](../../sources/connectors/protocols/generic-rest.md) 以了解更多信息。 |
-| [!DNL Zoho CRM] （测试版） | 您现在可以创建 [!DNL Zoho CRM] 源连接使用 [[!DNL Flow Service] API](../../sources/tutorials/api/create/crm/zoho.md) 或 [用户界面](../../sources/tutorials/ui/create/crm/zoho.md) 从 [!DNL Zoho CRM] 帐户到平台。 请参阅 [[!DNL Zoho CRM] 概述](../../sources/connectors/crm/zoho.md) 以了解更多信息。 |
+| [!DNL Amazon S3] 來源增強功能 | 您現在可以使用 `s3SessionToken` 用於連線您的 [!DNL Amazon S3] 使用臨時安全性憑證的帳戶至Platform。 此Token可讓您對您的提供短期、暫時的存取權 [!DNL Amazon S3] 資源提供給不受信任環境中的使用者。 有关详细信息，请参阅[[!DNL Amazon S3] 文档](../../sources/connectors/cloud-storage/s3.md#prerequisites)。 |
+| [!DNL Generic REST API] (Beta) | 您現在可以建立 [!DNL Generic REST API] 來源連線使用 [[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md) 將一般REST應用程式的資料帶入Platform。 請參閱 [[!DNL Generic REST API] 概觀](../../sources/connectors/protocols/generic-rest.md) 以取得詳細資訊。 |
+| [!DNL Zoho CRM] (Beta) | 您現在可以建立 [!DNL Zoho CRM] 來源連線使用 [[!DNL Flow Service] API](../../sources/tutorials/api/create/crm/zoho.md) 或 [使用者介面](../../sources/tutorials/ui/create/crm/zoho.md) 將資料從您的 [!DNL Zoho CRM] 至平台的帳戶。 請參閱 [[!DNL Zoho CRM] 概觀](../../sources/connectors/crm/zoho.md) 以取得詳細資訊。 |
 
-要进一步了解源，请参阅 [源概述](../../sources/home.md).
+若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).

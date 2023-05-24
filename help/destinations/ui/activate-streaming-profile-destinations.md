@@ -1,8 +1,8 @@
 ---
-keywords: 激活用户档案目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
-title: 将受众数据激活到流配置文件导出目标
+keywords: 啟用設定檔目的地；啟用目的地；啟用資料；啟用電子郵件行銷目的地；啟用雲端儲存空間目的地
+title: 將受眾資料啟用至串流設定檔匯出目的地
 type: Tutorial
-description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
+description: 瞭解如何透過將區段傳送至串流設定檔型目的地，以啟用您在Adobe Experience Platform中的受眾資料。
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
 source-git-commit: 5bb2981b8187fcd3de46f80ca6c892421b3590f6
 workflow-type: tm+mt
@@ -11,101 +11,101 @@ ht-degree: 5%
 
 ---
 
-# 将受众数据激活到流配置文件导出目标
+# 將受眾資料啟用至串流設定檔匯出目的地
 
 >[!IMPORTANT]
 > 
-> * 激活数据并启用 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
-> * 在不通过 [映射步骤](#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 若要啟用資料並啟用 [對應步驟](#mapping) 的工作流程中，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions).
+> * 若要在不透過 [對應步驟](#mapping) 的工作流程中，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用區段而不進行對應]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions).
 > 
-> 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+> 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform基于用户档案的流式目标(如Amazon Kinesis)中激活受众数据所需的工作流。
+本文說明在Adobe Experience Platform串流設定檔型目的地(例如Amazon Kinesis)中啟用受眾資料所需的工作流程。
 
 ## 先决条件 {#prerequisites}
 
-要将数据激活到目标，您必须成功 [连接到目标](./connect-destination.md). 如果您尚未执行此操作，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
+若要啟用目的地的資料，您必須已成功 [已連線至目的地](./connect-destination.md). 如果您尚未這麼做，請前往 [目的地目錄](../catalog/overview.md)，瀏覽支援的目的地並設定您要使用的目的地。
 
-## 选择您的目标 {#select-destination}
+## 選取您的目的地 {#select-destination}
 
-1. 转到 **[!UICONTROL 连接>目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。
+1. 前往 **[!UICONTROL 連線>目的地]**，然後選取 **[!UICONTROL 目錄]** 標籤。
 
-   ![显示目标目录选项卡的图像。](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
+   ![顯示目的地目錄索引標籤的影像。](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. 选择 **[!UICONTROL 激活区段]** 在与要激活区段的目标对应的卡上，如下图所示。
+1. 選取 **[!UICONTROL 啟用區段]** 對應至您要啟用區段之目的地的卡片上，如下圖所示。
 
-   ![在目标目录选项卡中突出显示激活区段控件的图像。](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+   ![醒目提示目標目錄標籤中啟用區段控制項的影像。](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
 
-1. 选择要用于激活区段的目标连接，然后选择 **[!UICONTROL 下一个]**.
+1. 選取您要用來啟用區段的目的地連線，然後選取 **[!UICONTROL 下一個]**.
 
-   ![该图像显示了可连接到的两个目标选项。](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
+   ![此影像顯示兩個您可連線之目的地的選取範圍。](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
-1. 移到下一个部分 [选择区段](#select-segments).
+1. 移至下一區段至 [選取您的區段](#select-segments).
 
-## 选择您的区段 {#select-segments}
+## 選取您的區段 {#select-segments}
 
-使用区段名称左侧的复选框选择要激活到目标的区段，然后选择 **[!UICONTROL 下一个]**.
+使用區段名稱左邊的核取方塊來選取您要啟用至目的地的區段，然後選取 **[!UICONTROL 下一個]**.
 
-![在激活工作流的选择区段步骤中突出显示所选复选框的图像。](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
+![反白啟動工作流程選取區段步驟中核取方塊選取範圍的影像。](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
 
-## 选择配置文件属性 {#select-attributes}
+## 選取設定檔屬性 {#select-attributes}
 
-在 **[!UICONTROL 映射]** 步骤中，选择要发送到target目标的用户档案属性。
+在 **[!UICONTROL 對應]** 步驟，選取您要傳送至目標目的地的設定檔屬性。
 
 >[!NOTE]
 >
-> Adobe Experience Platform会使用您的架构中四个推荐的常用属性来预填充您的选择： `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+> Adobe Experience Platform會使用結構描述中四個建議且常用的屬性來預先填入您的選取範圍： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.status`.
 
-文件导出将按以下方式有所不同，具体取决于 `segmentMembership.status` 已选中：
-* 如果 `segmentMembership.status` 字段，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 过期]** 成员。
-* 如果 `segmentMembership.status` 字段，导出的文件仅包含 **[!UICONTROL 活动]** 初始完整快照和后续增量导出中的成员。
+檔案匯出內容會依下列方式而有所不同，具體取決於是否 `segmentMembership.status` 已選取：
+* 如果 `segmentMembership.status` 欄位已選取，匯出的檔案包括 **[!UICONTROL 作用中]** 初始完整快照中的成員和 **[!UICONTROL 作用中]** 和 **[!UICONTROL 已過期]** 後續增量匯出中的成員。
+* 如果 `segmentMembership.status` 未選取欄位，匯出的檔案僅包含 **[!UICONTROL 作用中]** 初始完整快照和後續增量匯出中的成員。
 
-![显示映射步骤中预填充的推荐属性的图像。](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
+![顯示對應步驟中預先填入的建議屬性的影像。](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
-1. 在 **[!UICONTROL 选择属性]** 页面，选择 **[!UICONTROL 添加新字段]**.
+1. 在 **[!UICONTROL 選取屬性]** 頁面，選取 **[!UICONTROL 新增欄位]**.
 
-   ![在映射步骤中突出显示添加新字段控件的图像。](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
+   ![在對應步驟中反白顯示「新增欄位」控制項的影像。](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 
-1. 选择 **[!UICONTROL 架构字段]** 中。
+1. 選取右側的箭頭 **[!UICONTROL 結構描述欄位]** 登入點。
 
-   ![在映射步骤中突出显示如何选择源字段的图像。](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
+   ![在對應步驟中反白如何選取來源欄位的影像。](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
-1. 在 **[!UICONTROL 选择字段]** ，选择要发送到目标的XDM属性，然后选择 **[!UICONTROL 选择]**.
+1. 在 **[!UICONTROL 選取欄位]** 頁面上，選取您要傳送至目的地的XDM屬性，然後選擇 **[!UICONTROL 選取]**.
 
-   ![该图像显示了可选择作为源字段的XDM字段选项。](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![顯示可選取作為來源欄位的一系列XDM欄位的影像。](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
 
-1. 要添加更多映射，请重复步骤1至3，然后选择 **[!UICONTROL 下一个]**.
+1. 若要新增更多對應，請重複步驟1至3，然後選取 **[!UICONTROL 下一個]**.
 
 ## 请查看 {#review}
 
-在 **[!UICONTROL 审阅]** 页面，则可以查看所选内容的摘要。 选择 **[!UICONTROL 取消]** 来分解流量， **[!UICONTROL 返回]** 修改设置，或 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
+於 **[!UICONTROL 檢閱]** 頁面中，您可以看到選取範圍的摘要。 選取 **[!UICONTROL 取消]** 若要分解流量， **[!UICONTROL 返回]** 修改您的設定，或 **[!UICONTROL 完成]** 以確認您的選擇並開始傳送資料至目的地。
 
-![审阅步骤中的选择摘要。](/help/destinations/assets/ui/activate-streaming-profile-destinations/review.png)
+![稽核步驟中的選取專案摘要。](/help/destinations/assets/ui/activate-streaming-profile-destinations/review.png)
 
-### 同意策略评估 {#consent-policy-evaluation}
+### 同意原則評估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。了解 [同意策略评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。閱讀關於 [同意原則評估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以取得詳細資訊。
 
-### 数据使用策略检查 {#data-usage-policy-checks}
+### 資料使用原則檢查 {#data-usage-policy-checks}
 
-在 **[!UICONTROL 审阅]** 步骤中，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 在“数据管理文档”一节中。
+在 **[!UICONTROL 檢閱]** 步驟，Experience Platform也會檢查是否有任何資料使用原則違規。 以下是違反原則的範例。 您必須先解決違規，才能完成區段啟用工作流程。 如需有關如何解決原則違規的資訊，請閱讀關於 [資料使用原則違規](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) （位於資料控管檔案區段）。
 
-![数据策略违规](../assets/common/data-policy-violation.png)
+![資料原則違規](../assets/common/data-policy-violation.png)
 
 ### 过滤区段 {#filter-segments}
 
-此外，在此步骤中，您还可以使用页面上的可用过滤器来仅显示计划或映射已作为此工作流的一部分进行更新的区段。
+此外，在此步驟中，您可以使用頁面上的可用篩選器，只顯示其排程或對應已隨著此工作流程而更新的區段。
 
-![屏幕记录，其中显示了审阅步骤中可用的区段过滤器。](/help/destinations/assets/ui/activate-streaming-profile-destinations/filter-segments-review-step.gif)
+![熒幕錄製，顯示稽核步驟中可用的區段篩選器。](/help/destinations/assets/ui/activate-streaming-profile-destinations/filter-segments-review-step.gif)
 
-如果您对您的选择满意，并且未检测到任何策略违规，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
+如果您對您的選擇感到滿意，並且未偵測到任何原則違規，請選取 **[!UICONTROL 完成]** 以確認您的選擇並開始傳送資料至目的地。
 
-## 验证区段激活 {#verify}
+## 驗證區段啟用 {#verify}
 
-导出的 [!DNL Experience Platform] 数据以JSON格式登陆您的目标目标。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
+您的匯出 [!DNL Experience Platform] 資料以JSON格式登陸您的目標目的地。 例如，下列事件包含符合特定區段資格並退出其他區段之對象的電子郵件地址設定檔屬性。 此潛在客戶的身分識別為ECID和電子郵件。
 
 ```json
 {

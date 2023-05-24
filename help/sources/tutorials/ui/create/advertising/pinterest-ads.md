@@ -1,151 +1,152 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 在UI中创建Pinterest Ads源连接
-description: 了解如何使用Pinterest UI创建Adobe Experience Platform Ads源连接。
-badge: "Beta"
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+title: 在使用者介面中建立Pinterest Ads來源連線
+description: 瞭解如何使用Adobe Experience Platform UI建立Pinterest Ads來源連線。
+badge: Beta
 hide: true
 hidefromtoc: true
-source-git-commit: a16264da68d9e5e9aeac86b1a3083c701407febb
+exl-id: ca7b99c8-f1d9-4120-85d5-720f5b9ad41a
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '823'
 ht-degree: 2%
 
 ---
 
-# 创建 [!DNL Pinterest Ads] UI中的源连接
+# 建立 [!DNL Pinterest Ads] ui中的來源連線
 
 >[!NOTE]
 >
->的 [!DNL Pinterest Ads] 来源为测试版。 阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+>此 [!DNL Pinterest Ads] 來源為測試版。 閱讀 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
 
-本教程提供了创建 [!DNL Pinterest Ads] 源连接器。
+本教學課程提供建立 [!DNL Pinterest Ads] 使用Adobe Experience Platform使用者介面的來源聯結器。
 
 ## 快速入门 {#getting-started}
 
-本教程需要对Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform可通过该标准化框架组织客户体验数据。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
 ## 先决条件 {#prerequisites}
 
-为了连接 [!DNL Pinterest Ads] 要Experience Platform，必须为以下连接属性提供值：
+為了連線 [!DNL Pinterest Ads] 若要Experience Platform，您必須提供下列連線屬性的值：
 
-* 的 [!DNL Pinterest] 访问令牌。
-* 的 [!DNL Pinterest] 广告帐户ID。
-* 其中之一 [!DNL Pinterest] 营销活动、广告组或广告ID。
+* 此 [!DNL Pinterest] 存取權杖。
+* 此 [!DNL Pinterest] 廣告帳戶ID。
+* 其中之一 [!DNL Pinterest] 視需要提供行銷活動、廣告群組或廣告ID。
 
-有关这些连接属性的更多信息，请阅读 [[!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#prerequisites).
+如需這些連線屬性的詳細資訊，請閱讀 [[!DNL Pinterest Ads] 概觀](../../../../connectors/advertising/pinterest-ads.md#prerequisites).
 
-### 创建平台架构 {#create-platform-schema}
+### 建立Platform結構描述 {#create-platform-schema}
 
-您还必须确保首先创建一个平台架构，以用于 [!DNL Pinterst Ads] 来源。 阅读教程 [创建平台模式](../../../../../xdm/schema/composition.md) 有关如何创建架构的完整步骤。
+您也必須確保先建立Platform結構描述以用於您的 [!DNL Pinterst Ads] 來源。 閱讀教學課程日期： [建立平台結構描述](../../../../../xdm/schema/composition.md) 有關如何建立方案的完整步驟。
 
-![pinterest广告的示例平台架构](../../../../images/tutorials/create/advertising/pinterest-ads/schema.png)
+![pinterest Ads的平台結構描述範例](../../../../images/tutorials/create/advertising/pinterest-ads/schema.png)
 
-要获取 [!DNL Pinterest] 营销活动、广告组和广告API，请参阅 [[!DNL Pinterest] 字段](#pinterest-fields) 中。
+如需「 」支援的欄位清單 [!DNL Pinterest] 促銷活動、廣告群組和廣告API，請參閱 [[!DNL Pinterest] 欄位](#pinterest-fields) 區段。
 
-## 连接 [!DNL Pinterest Ads] 帐户 {#connect-account}
+## 連線您的 [!DNL Pinterest Ads] 帳戶 {#connect-account}
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕显示您可以创建帐户的各种来源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 *广告* 类别，选择 **[!UICONTROL Pinterest Ads]**，然后选择 **[!UICONTROL 添加数据]**.
+在 *廣告* 類別，選取 **[!UICONTROL pinterest Ads]**，然後選取 **[!UICONTROL 新增資料]**.
 
-![源目录Experience Platform。](../../../../images/tutorials/create/advertising/pinterest-ads/catalog.png)
+![Experience Platform上的來源目錄。](../../../../images/tutorials/create/advertising/pinterest-ads/catalog.png)
 
-的 **[!UICONTROL 连接Pinterest Ads帐户]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線Pinterest Ads帳戶]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 现有帐户 {#existing-account}
+### 現有帳戶 {#existing-account}
 
-要使用现有帐户，请选择 [!DNL Pinterest Ads] 创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要使用現有帳戶，請選取 [!DNL Pinterest Ads] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![源工作流的现有帐户步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/existing.png)
+![來源工作流程的現有帳戶步驟。](../../../../images/tutorials/create/advertising/pinterest-ads/existing.png)
 
-### 新帐户 {#new-account}
+### 新帳戶 {#new-account}
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、選擇性說明和您的認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
 
-![源工作流的新帐户步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/new.png)
+![來源工作流程的新帳戶步驟。](../../../../images/tutorials/create/advertising/pinterest-ads/new.png)
 
 
 
 ## 选择数据 {#select-data}
 
-的 **[!UICONTROL 选择数据]** 步骤，为您提供一个界面以输入要传递到API以将所需数据引入平台的信息。
+此 **[!UICONTROL 選取資料]** 步驟隨即顯示，提供介面供您輸入資訊，這些資訊會傳遞至API，以將您想要的資料帶入Platform。
 
 | 字段 | 描述 |
 | --- | --- |
-| [!UICONTROL ad_account_id] | 您的 [!DNL Pinterest Ads] 广告帐户ID。 请参阅 [[!DNL Pinterest] 有关在广告管理器中查找ID的指南](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 如果你需要指导的话。 |
-| [!UICONTROL object_type] | 选择其中一个 **营销活动**, **广告组** 或 **广告** 取决于 [!DNL Pinterest] 要从中获取信息的Analytics API。 |
-| [!UICONTROL object_ids] | 所选对象的ID。 导航到 [!DNL Pinterest] 页面 **Pinterest业务中心** > **广告帐户摘要** > **促销活动** / **广告组** / **广告** 并复制每个用户名正下方提及的所需ID。 |
+| [!UICONTROL ad_account_id] | 您的 [!DNL Pinterest Ads] 廣告帳戶ID。 請參閱 [[!DNL Pinterest] 在廣告管理員中尋找ID的指南](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 如果您需要任何指引。 |
+| [!UICONTROL object_type] | 選取其中一項 **行銷活動**， **廣告群組** 或 **廣告** 視下列專案而定 [!DNL Pinterest] 您想要從中取得資訊的Analytics API。 |
+| [!UICONTROL object_ids] | 所選物件的ID。 導覽至 [!DNL Pinterest] 第頁 —  **pinterest商業中心** > **廣告帳戶摘要** > **行銷活動** / **廣告群組** / **廣告** 並複製其每個名稱正下方提及的必要ID。 |
 
 >[!TIP]
 >
->您可以提供多个 `object_ids` 通过传递逗号分隔值。 您在单个请求中可以传递的最大ID数为100。 如果传递的值不正确，Platform将显示以下消息： `The request could not be processed. Error from flow provider: Unknown error while processing request.`
+>您可以提供多個 `object_ids` 以逗號分隔值。 您可在單一請求中傳遞的ID數量上限為100。 如果傳遞的值不正確，Platform會顯示下列訊息： `The request could not be processed. Error from flow provider: Unknown error while processing request.`
 
-提供值后，选择 **[!UICONTROL 选择]**. 如果提供的值有效，则将填充界面的正确部分（预览数据）。
+提供值後，選取 **[!UICONTROL 選取]**. 如果提供的值有效，將會填入介面的正確部分（預覽資料）。
 
-![源工作流的选择数据步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/select-data.png)
+![來源工作流程的選取資料步驟。](../../../../images/tutorials/create/advertising/pinterest-ads/select-data.png)
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已经与 [!DNL Pinterest Ads] 帐户。 您现在可以继续下一个教程和 [配置数据流以将广告数据引入平台](../../dataflow/advertising.md).
+依照本教學課程，您已建立與的連線， [!DNL Pinterest Ads] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流以將廣告資料帶入Platform](../../dataflow/advertising.md).
 
 ## 其他资源 {#additional-resources}
 
-以下部分提供了在使用 [!DNL Pinterest Ads] 来源。
+以下各節提供其他資源，您可在使用時參照 [!DNL Pinterest Ads] 來源。
 
 ## 计划 {#scheduling}
 
-计划 [!DNL Pinterest Ads] 要进行摄取的数据流，必须选择以下频率和间隔配置之一：
+排程您的 [!DNL Pinterest Ads] 資料流進行內嵌時，您必須選取下列其中一個頻率和間隔設定：
 
-| 频度 | 间隔 |
+| 频度 | 間隔 |
 | --- | --- |
 | `Day` | 1 |
 | `Hour` | 24 |
 
-有关计划的详细信息 [!DNL Pinterest Ads] 数据流，读取 [护栏部分 [!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#guardrails).
+如需排程的詳細資訊，請參閱： [!DNL Pinterest Ads] 資料流，請閱讀 [護欄部分 [!DNL Pinterest Ads] 概觀](../../../../connectors/advertising/pinterest-ads.md#guardrails).
 
-为计划提供值后，请选择 **[!UICONTROL 下一个]**.
+提供排程的值後，請選取 **[!UICONTROL 下一個]**.
 
-![源工作流的计划步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/scheduling.png)
+![來源工作流程的排程步驟。](../../../../images/tutorials/create/advertising/pinterest-ads/scheduling.png)
 
 ### 验证 {#validation}
 
-验证是否已正确设置源和 [!DNL Pinterest Ads] 正在摄取数据，请执行以下步骤：
+驗證您是否已正確設定來源及 [!DNL Pinterest Ads] 正在擷取資料，請遵循下列步驟：
 
-在平台UI中，选择 **[!UICONTROL 查看数据流]** 旁边 [!DNL Pinterest Ads] 目录页面上的卡片菜单。 然后，您可以选择 [!UICONTROL 预览数据集] 以验证所摄取的数据。
+在Platform UI中選取 **[!UICONTROL 檢視資料流]** 旁邊 [!DNL Pinterest Ads] 目錄頁面上的卡片功能表。 然後，您可以選取 [!UICONTROL 預覽資料集] 驗證已擷取的資料。
 
-![Platform UIPinterest Ads预览数据集的屏幕截图。](../../../../images/tutorials/create/advertising/pinterest-ads/preview-dataset.png)
+![pinterest Ads預覽資料集的Platform UI熒幕擷圖。](../../../../images/tutorials/create/advertising/pinterest-ads/preview-dataset.png)
 
-您可以根据 [!DNL Pinterest] UI
+您可以根據上顯示的計數來驗證資料 [!DNL Pinterest] UI
 
 >[!BEGINTABS]
 
 >[!TAB 营销活动]
 
-![Pinterest促销活动页面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-campaigns.png)
+![pinterest行銷活動頁面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-campaigns.png)
 
->[!TAB 广告组]
+>[!TAB 廣告群組]
 
-![Pinterest广告群组页面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-ad-groups.png)
+![pinterest廣告群組頁面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-ad-groups.png)
 
 >[!TAB 广告]
 
-![Pinterest广告页面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-ads.png)
+![pinterest廣告頁面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-ads.png)
 
 >[!ENDTABS]
 
 
 ### [!DNL Pinterest] 字段 {#pinterest-fields}
 
-支持的字段 [!DNL Pinterest] 营销活动、广告组和广告API如下所示：
+支援的欄位 [!DNL Pinterest] 行銷活動、廣告群組和廣告API如下：
 
-+++ 查看有效负载
++++ 檢視裝載
 
 ```json
 {

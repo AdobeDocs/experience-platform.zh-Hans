@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；监视帐户；监视数据流；数据流
-description: Adobe Experience Platform中的源连接器提供了按计划摄取外部源数据的功能。 本教程提供了从源工作区监控流数据流的步骤。
-title: 在UI中监控流源的数据流
+keywords: Experience Platform；首頁；熱門主題；監控帳戶；監控資料流；資料流
+description: Adobe Experience Platform中的來源聯結器可讓您依排程擷取外部來源的資料。 本教學課程提供從來源工作區監控串流資料流的步驟。
+title: 在UI中監視串流來源的資料流
 exl-id: b080e398-e71f-40bd-aea1-7ea3ce86b55d
 source-git-commit: 647f2780798dcf55a68e156af3318924c352a442
 workflow-type: tm+mt
@@ -10,58 +10,58 @@ ht-degree: 10%
 
 ---
 
-# 在UI中监控流源的数据流
+# 在UI中監視串流來源的資料流
 
-本教程介绍了使用 [!UICONTROL 源] 工作区。
+本教學課程涵蓋使用監控串流來源資料流的步驟。 [!UICONTROL 來源] 工作區。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [数据流](../../../dataflows/home.md):数据流是跨平台移动数据的数据作业的表示形式。 数据流是跨不同的服务进行配置的，有助于将数据从源连接器移动到目标数据集，并 [!DNL Identity] 和 [!DNL Profile]和 [!DNL Destinations].
-   * [数据流运行](../../notifications.md):数据流运行是基于所选数据流的频率配置的定期计划作业。
-* [源](../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙箱](../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [資料流](../../../dataflows/home.md)：資料流可呈現跨平台行動資料的資料作業。 資料流會跨不同服務進行設定，有助於將資料從來源聯結器移至目標資料集，以及 [!DNL Identity] 和 [!DNL Profile]，並至 [!DNL Destinations].
+   * [資料流執行](../../notifications.md)：資料流執行是根據所選資料流的頻率設定的週期性排程作業。
+* [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-## 监控流源的数据流
+## 監控串流來源的資料流
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-要查看流源的现有数据流，请选择 **[!UICONTROL 数据流]** 中。
+若要檢視串流來源的現有資料流，請選取「 」 **[!UICONTROL 資料流]** 從頂端標題。
 
-![目录](../../images/tutorials/monitor-streaming/catalog.png)
+![目錄](../../images/tutorials/monitor-streaming/catalog.png)
 
-的 [!UICONTROL 数据流] 页面包含组织中所有现有数据流的列表，包括有关其源数据、帐户名称和数据流运行状态的信息。
+此 [!UICONTROL 資料流] 頁面包含貴組織中所有現有資料流的清單，包括有關其來源資料、帳戶名稱和資料流執行狀態的資訊。
 
-选择要查看的数据流的名称。
+選取您要檢視的資料流名稱。
 
-![数据流](../../images/tutorials/monitor-streaming/dataflows.png)
+![資料流](../../images/tutorials/monitor-streaming/dataflows.png)
 
-下表包含有关数据流运行状态的更多信息：
+下表包含資料流執行狀態的詳細資訊：
 
 | 状态 | 描述 |
 | ------ | ----------- |
-| 已完成 | 的 `Completed` 状态表示在1小时内处理了相应数据流运行的所有记录。 A `Completed` 状态仍可能包含数据流运行中的错误。 |
-| 成功 | 的 `Success` 状态表示在1小时内处理了相应数据流运行的所有记录，在数据流运行过程中没有遇到任何错误。 |
-| 处理时间 | 的 `Processing` 状态表示数据流尚未处于活动状态。 此状态通常会在创建新数据流后立即出现。 |
-| 错误 | 的 `Error` 状态表示数据流的激活过程已中断。 |
-| 无运行 | 的 `No runs` 状态表示已创建数据流，但未启动数据流运行。 |
+| 已完成 | 此 `Completed` status表示對應資料流執行的所有記錄皆在一小時內處理。 A `Completed` 狀態在資料流執行中仍可包含錯誤。 |
+| 成功 | 此 `Success` status表示對應資料流執行的所有記錄都在一小時期間內處理，且在資料流執行期間沒有發生錯誤。 |
+| 处理时间 | 此 `Processing` status表示資料流尚未啟用。 建立新資料流後，經常會立即出現此狀態。 |
+| 错误 | 此 `Error` status表示資料流的啟用程式已中斷。 |
+| 無回合 | 此 `No runs` status表示已建立資料流，但未開始任何資料流執行。 |
 
-的 [!UICONTROL 数据流活动] 页面会显示有关流数据流的特定信息。 顶部横幅包含在选定日期范围内所有流数据流运行的摄取记录和失败记录的累计数量。
+此 [!UICONTROL 資料流活動] 頁面會顯示串流資料流的特定資訊。 頂端橫幅包含所選日期範圍內所有串流資料流執行的已擷取和失敗記錄的累計數量。
 
-![数据流活动](../../images/tutorials/monitor-streaming/dataflow-activity.png)
+![資料流活動](../../images/tutorials/monitor-streaming/dataflow-activity.png)
 
-默认情况下，显示的数据包含过去七天的摄取率。 选择 **[!UICONTROL 最近7天]** 来调整显示记录的时间范围。
+依預設，顯示的資料包含過去七天的擷取率。 選取 **[!UICONTROL 過去7天]** 以調整記錄顯示的時間範圍。
 
-此时会出现日历弹出窗口，为您提供替代摄取时间范围的选项。 您可以配置数据流运行时间范围，以查看从前七天或过去30天开始运行的流量。 或者，您也可以配置交互式日历以设置您选择的自定义时间范围。 完成后，选择 **[!UICONTROL 应用]**.
+此時會出現一個日曆快顯視窗，為您提供替代擷取時間範圍的選項。 您可以設定資料流執行時間範圍，以檢視過去7天或過去30天的資料流執行。 或者，您也可以設定互動式行事曆，以設定自訂的時間範圍。 完成後，選取 **[!UICONTROL 套用]**.
 
-![日历](../../images/tutorials/monitor-streaming/calendar.png)
+![行事曆](../../images/tutorials/monitor-streaming/calendar.png)
 
-页面的下半部分显示有关每个流运行接收、摄取和失败的记录数的信息。 每次流量运行都记录在每小时的窗口中。
+頁面下半部會顯示每次資料流執行時接收、擷取和失敗的記錄數資訊。 每個資料流執行都會記錄在一個每小時的視窗中。
 
-![数据流运行](../../images/tutorials/monitor-streaming/dataflow-run.png)
+![資料流 — 執行](../../images/tutorials/monitor-streaming/dataflow-run.png)
 
-### 数据流运行量度 {#dataflow-run-metrics}
+### 資料流執行量度 {#dataflow-run-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflow_records_received"
@@ -87,44 +87,44 @@ ht-degree: 10%
 >abstract="“带警告的记录”指示带映射器转换警告的已提取记录总数。所有映射器转换错误都报告为警告，部分提取的行被视为成功并显示警告"
 >text="Learn more in documentation"
 
-每个数据流运行都显示以下详细信息：
+每次個別資料流執行都會顯示下列詳細資料：
 
-* **[!UICONTROL 数据流运行开始]**:数据流运行开始的时间。
-* **[!UICONTROL 处理时间]**:数据流处理所花费的时间。
-* **[!UICONTROL 收到的记录]**:数据流中从源连接器接收的记录总数。
-* **[!UICONTROL 摄取的记录]**:摄取到的记录总数 [!DNL Data Lake].
-* **[!UICONTROL 警告记录]**:已摄取警告的记录总数。 所有映射器转换错误都将报告为警告，部分摄取的行将标记为 `success` 警告。 **注意**:仅流源支持摄取带有警告的记录。
-* **[!UICONTROL 记录失败]**:未摄取到的记录数 [!DNL Data Lake] 由于数据中的错误。
-* **[!UICONTROL 摄取率]**:摄取到的记录的成功率 [!DNL Data Lake]. 此量度适用于 [!UICONTROL 部分摄取] 启用。
-* **[!UICONTROL 状态]**:表示数据流处于的状态：e [!UICONTROL 已完成] 或 [!UICONTROL 处理]. [!UICONTROL 已完成] 表示在1小时内处理了相应数据流运行的所有记录。 [!UICONTROL 处理] 表示数据流运行尚未完成。
+* **[!UICONTROL 資料流執行開始]**：資料流開始執行的時間。
+* **[!UICONTROL 處理時間]**：資料流處理所花的時間。
+* **[!UICONTROL 已接收的記錄]**：在資料流中從來源聯結器收到的記錄總數。
+* **[!UICONTROL 記錄已擷取]**：擷取到的記錄總數 [!DNL Data Lake].
+* **[!UICONTROL 有警告的記錄]**：已擷取含有警告的記錄總數。 所有對應程式轉換錯誤都會回報為警告，而部分擷取的列會標示為 `success` 有警告。 **注意**：只有串流來源才支援擷取含有警告的記錄。
+* **[!UICONTROL 記錄失敗]**：未擷取的記錄數 [!DNL Data Lake] 因為資料中的錯誤。
+* **[!UICONTROL 擷取率]**：擷取的記錄成功率 [!DNL Data Lake]. 此量度適用於 [!UICONTROL 部分擷取] 已啟用。
+* **[!UICONTROL 狀態]**：代表資料流所處的狀態：可以 [!UICONTROL 已完成] 或 [!UICONTROL 處理中]. [!UICONTROL 已完成] 表示對應資料流執行的所有記錄都在一小時內處理。 [!UICONTROL 處理中] 表示資料流執行尚未完成。
 
-的 [!UICONTROL 数据流运行概述] 页面包含有关数据流的其他信息，如其相应的数据流运行ID、目标数据集和组织ID。
+此 [!UICONTROL 資料流執行概觀] 頁面包含資料流的其他資訊，例如其對應的資料流執行ID、目標資料集和組織ID。
 
-运行时出现错误的流还包含 [!UICONTROL 数据流运行错误] 面板，显示导致运行失败的特定错误以及失败记录的总计数。
+有錯誤的流程執行也包含 [!UICONTROL 資料流執行錯誤] 面板，顯示導致執行失敗的特定錯誤，以及失敗的記錄總數。
 
-![数据流运行概述](../../images/tutorials/monitor-streaming/dataflow-run-overview.png)
+![資料流 — 執行 — 概觀](../../images/tutorials/monitor-streaming/dataflow-run-overview.png)
 
-### 查看带有警告的记录 {#warnings}
+### 檢視有警告的記錄 {#warnings}
 
-[!UICONTROL 带警告的记录] 显示在流运行期间发生映射器转换警告的列表。 部分摄取的行被视为成功，如果发现任何映射器转换错误，则会在行后附加警告。
+[!UICONTROL 有警告的記錄] 顯示流程執行期間發生的對應程式轉換警告清單。 部分擷取的列會被視為成功，如果發現任何對應程式轉換錯誤，則會附加警告。
 
-默认情况下，所有映射器转换错误都被视为警告，除非它们属于以下任何错误：
+依預設，所有對應程式轉換錯誤都會被視為警告，除非它們符合下列任一條件：
 
-* 语法错误
-* 对不存在的属性的引用
-* XDM数据类型不匹配
+* 語法錯誤
+* 對不存在之屬性的參照
+* XDM資料型別不相符
 
-要查看错误诊断，请选择 **[!UICONTROL 预览错误诊断]**.
+若要檢視錯誤診斷，請選取 **[!UICONTROL 預覽錯誤診斷]**.
 
-![带警告的记录](../../images/tutorials/monitor-streaming/records-with-warnings.png)
+![有警告的記錄](../../images/tutorials/monitor-streaming/records-with-warnings.png)
 
-的 [!UICONTROL 错误诊断预览] 窗口允许您预览有关数据流运行的最多100个错误和/或警告。 从此处，您还可以使用 [!DNL Data Access] API。
+此 [!UICONTROL 錯誤診斷預覽] 視窗可讓您預覽與資料流執行相關的最多100個錯誤和/或警告。 您也可以從這裡下載內嵌失敗資訊清單，瞭解更多資訊，請使用 [!DNL Data Access] API。
 
-![诊断](../../images/tutorials/monitor-streaming/diagnostics.png)
+![診斷](../../images/tutorials/monitor-streaming/diagnostics.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已成功使用 [!UICONTROL 源] 工作区来监视流数据流并识别导致任何失败数据流的错误。 有关更多信息，请参阅以下文档：
+依照本教學課程，您已成功使用 [!UICONTROL 來源] 工作區，用來監控您的串流資料流，並識別導致任何資料流失敗的錯誤。 如需詳細資訊，請參閱下列檔案：
 
-* [源概述](../../home.md)
-* [数据流概述](../../../dataflows/home.md)
+* [來源概觀](../../home.md)
+* [資料流概觀](../../../dataflows/home.md)

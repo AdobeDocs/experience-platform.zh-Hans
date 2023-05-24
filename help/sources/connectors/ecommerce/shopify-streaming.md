@@ -1,6 +1,6 @@
 ---
-title: Shopify流源
-description: 了解如何创建源连接和数据流，以将流数据从Shopify实例摄取到Adobe Experience Platform
+title: Shopify串流來源
+description: 瞭解如何建立來源連線和資料流，以將串流資料從您的Shopify執行個體擷取到Adobe Experience Platform
 badge: Beta
 exl-id: 4c83c08d-c744-4167-9e3b-ed9a995943f4
 source-git-commit: feb05d5bddc4135c5fe14d3ec5d8fad62c5e2236
@@ -14,25 +14,25 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->的 [!DNL Shopify Streaming] 来源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记的源的详细信息。
+>此 [!DNL Shopify Streaming] 來源為測試版。 請閱讀 [來源概觀](../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
 
-Adobe Experience Platform支持从流应用程序中摄取数据。 对流提供商的支持包括 [!DNL Shopify].
+Adobe Experience Platform支援從串流應用程式擷取資料。 對串流提供者的支援包括 [!DNL Shopify].
 
 ## 先决条件 {#prerequisites}
 
-以下部分概述了在使用 [!DNL Shopify Streaming] 来源。
+以下章節概述在使用之前要完成的先決條件步驟 [!DNL Shopify Streaming] 來源。
 
-您必须拥有 [!DNL Shopify] 合作伙伴帐户，以便连接到 [!DNL Shopify] API。 如果您还没有合作伙伴帐户，请使用 [[!DNL Shopify] 合作伙伴仪表板](https://www.shopify.com/partners).
+您必須具備有效的 [!DNL Shopify] 合作夥伴帳戶，以連線至 [!DNL Shopify] API。 如果您還沒有合作夥伴帳戶，請使用 [[!DNL Shopify] 合作夥伴儀表板](https://www.shopify.com/partners).
 
-### 创建应用程序
+### 建立您的應用程式
 
-具有 [!DNL Shopify] 合作伙伴帐户，您现在可以使用合作伙伴仪表板继续并创建您的应用程序。 有关如何在中创建应用程序的完整步骤 [!DNL Shopify]，阅读 [[!DNL Shopify] 入门指南](https://www.shopify.com/partners/blog/17056443-how-to-generate-a-shopify-api-token).
+使用有效的 [!DNL Shopify] 合作夥伴帳戶，您現在可以使用合作夥伴儀表板繼續並建立您的應用程式。 如需有關如何在中建立應用程式的完整步驟 [!DNL Shopify]，閱讀 [[!DNL Shopify] 快速入門手冊](https://www.shopify.com/partners/blog/17056443-how-to-generate-a-shopify-api-token).
 
-创建应用程序后，检索 **客户端ID** 和 **客户端密码** 从 **客户端凭据** 选项卡 [!DNL Shopify] 合作伙伴仪表板。 客户端ID和客户端密钥将在后续步骤中使用，以检索您的授权代码和访问令牌。
+建立您的應用程式後，請擷取您的 **使用者端ID** 和 **使用者端密碼** 從 **使用者端認證** 的標籤 [!DNL Shopify] 合作夥伴儀表板。 使用者端ID和使用者端密碼將在後續步驟中使用，以擷取您的授權代碼和存取權杖。
 
-### 检索授权代码
+### 擷取您的授權代碼
 
-接下来，通过输入域的 `myshopify.com` 浏览器中的URL，以及定义API密钥、作用域和重定向URI的查询字符串。
+接下來，輸入您網域的 `myshopify.com` 瀏覽器URL，以及定義您的API金鑰、範圍和重新導向URI的查詢字串。
 
 此URL的格式如下：
 
@@ -44,10 +44,10 @@ https://{SHOP}.myshopify.com/admin/oauth/authorize?client_id={API_KEY}&scope={SC
 
 | 参数 | 描述 |
 | --- | --- |
-| `shop` | 您的子域 `myshopify.com` URL。 |
-| `api_key` | 您的 [!DNL Shopify] 客户端ID。 您可以从 **客户端凭据** 选项卡 [!DNL Shopify] 合作伙伴仪表板。 |
-| `scopes` | 要定义的访问类型。 例如，您可以将范围设置为 `scope=write_orders,read_customers` 以允许修改订单和读取客户的权限。 |
-| `redirect_uri` | 将生成访问令牌的脚本的URL。 |
+| `shop` | 您的子網域 `myshopify.com` URL。 |
+| `api_key` | 您的 [!DNL Shopify] 使用者端ID。 您可以從以下位置擷取使用者端ID： **使用者端認證** 的標籤 [!DNL Shopify] 合作夥伴儀表板。 |
+| `scopes` | 您要定義的存取權型別。 例如，您可以將範圍設定為 `scope=write_orders,read_customers` 允許修改訂單和讀取客戶的許可權。 |
+| `redirect_uri` | 將會產生存取權杖的指令碼的URL。 |
 
 **请求**
 
@@ -57,15 +57,15 @@ https://connnectors-test.myshopify.com/admin/oauth/authorize?client_id=l6fivierm
 
 **响应**
 
-成功响应会返回您的重定向URL，包括生成访问令牌所需的授权代码。
+成功的回應會傳回您的重新導向URL，包括產生存取權杖所需的授權代碼。
 
 ```http
 https://www.acme.com/?code=k6j2palgrbljja228ou8c20fmn7w41gz&hmac=68c9163f772eecbc8848c90f695bca0460899c125af897a6d2b0ebbd59d3a43b&shop=connnectors-test.myshopify.com&state=123456×tamp=1658305460
 ```
 
-### 检索您的访问令牌
+### 擷取您的存取權杖
 
-现在，您已拥有客户端ID、客户端密钥和授权代码，接下来可以检索您的访问令牌。 要检索您的访问令牌，请向域的 `myshopify.com` URL，同时在 [!DNL Shopify's] API端点： `/admin/oauth/access_token`.
+現在您已取得使用者端ID、使用者端密碼和授權碼，您可以擷取存取權杖。 POST若要擷取您的存取Token，請對您網域的 `myshopify.com` 此URL附加的URL [!DNL Shopify's] API端點： `/admin/oauth/access_token`.
 
 **API格式**
 
@@ -75,7 +75,7 @@ POST /{SHOP}.myshopify.com/admin/oauth/access_token
 
 **请求**
 
-以下请求会为 [!DNL Shopify] 实例。
+以下請求會為您的產生存取權杖 [!DNL Shopify] 執行個體。
 
 ```shell
 curl -X POST \
@@ -92,7 +92,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回您的访问令牌和权限范围。
+成功的回應會傳回您的存取權杖和許可權範圍。
 
 ```json
 {
@@ -101,13 +101,13 @@ curl -X POST \
 }
 ```
 
-## 创建用于流式传输的网页挂接 [!DNL Shopify] 数据 {#webhook}
+## 建立用於串流的webhook [!DNL Shopify] 資料 {#webhook}
 
-Webhook允许应用程序与 [!DNL Shopify] 在商店中发生特定事件后执行数据或操作。 对于流 [!DNL Shopify] Experience Platform数据时，可以使用webhook定义http端点和订阅主题。
+Webhook可讓應用程式與您的應用程式保持同步， [!DNL Shopify] 在商店中發生特定事件後提供資料或執行動作。 適用於串流 [!DNL Shopify] 要Experience Platform的資料，webhook可用於定義http端點和訂閱主題。
 
 **请求**
 
-以下请求会为您的 [!DNL Shopify Streaming] 数据。
+以下請求會為您的建立webhook [!DNL Shopify Streaming] 資料。
 
 ```shell
 curl -X POST \
@@ -125,13 +125,13 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- | 
-| `webhook.address` | 发送流消息的http端点。 |
-| `webhook.topic` | 您的Webhook订阅主题。 有关更多信息，请阅读 [[!DNL Shopify] webhook事件主题指南](https://shopify.dev/docs/api/admin-rest/2023-04/resources/webhook#event-topics). |
-| `webhook.format` | 数据的格式。 |
+| `webhook.address` | 傳送串流訊息的http端點。 |
+| `webhook.topic` | 您的webhook訂閱主題。 如需詳細資訊，請閱讀 [[!DNL Shopify] webhook活動主題指南](https://shopify.dev/docs/api/admin-rest/2023-04/resources/webhook#event-topics). |
+| `webhook.format` | 您的資料格式。 |
 
 **响应**
 
-成功的响应会返回有关您的Webhook的信息，包括其对应的信息 `id`、地址和其他元数据信息。
+成功的回應會傳回您webhook上的資訊，包括其對應的 `id`、位址和其他中繼資料資訊。
 
 ```json
 {
@@ -152,15 +152,15 @@ curl -X POST \
 
 ### 限制 {#limitations}
 
-以下是在 [!DNL Shopify Streaming] 来源。
+以下為搭配使用Webhook時可能會遇到的已知限制清單 [!DNL Shopify Streaming] 來源。
 
-* 不能保证您能够为同一资源安排不同主题的提交顺序。 例如， `products/update` 网页挂接在 `products/create` 网钩。
-* 您可以设置Webhook，以至少将Webhook事件交付一次到端点。 这意味着端点可能多次接收同一事件。 您可以通过比较 `X-Shopify-Webhook-Id` 头到先前的事件。
-* [!DNL Shopify] 将HTTP 2xx状态响应视为成功通知。 任何其他状态代码响应都被视为失败。 [!DNL Shopify] 为失败的webhook通知提供重试机制。 如果存在 **等待5秒后没有响应**, [!DNL Shopify] 重试连接 **19次** 在下一步中 **48小时**. 如果在重试时段结束时仍没有响应，则 [!DNL Shopify] 删除网页挂钩。
+* 並不保證您可以為相同資源安排不同主題的傳送順序。 例如，可能是 `products/update` webhook在 `products/create` webhook。
+* 您可以設定webhook將webhook事件至少傳送一次到端點。 這表示端點可能會收到相同事件多次。 您可以透過比較 `X-Shopify-Webhook-Id` 標頭至先前事件。
+* [!DNL Shopify] 將HTTP 2xx狀態回應視為成功通知。 任何其他狀態代碼回應都視為失敗。 [!DNL Shopify] 為失敗的webhook通知提供重試機制。 如果有 **等候5秒後沒有回應**， [!DNL Shopify] 重試連線 **19次** 在下個課程中 **48小時**. 如果在重試期間結束時仍然沒有回應，則 [!DNL Shopify] 刪除webhook。
 
 ## 后续步骤
 
-以下教程提供了有关如何连接您的 [!DNL Shopify Streaming] 源到Experience Platform:
+以下教學課程提供如何連線您的 [!DNL Shopify Streaming] 使用API和UIExperience Platform的來源：
 
-* [使用流服务API创建Shopify流源连接和数据流](../../tutorials/api/create/ecommerce/shopify-streaming.md)
-* [在UI中创建Shopify流源连接和数据流](../../tutorials/ui/create/ecommerce/shopify-streaming.md)
+* [使用Flow Service API建立Shopify串流來源連線和資料流](../../tutorials/api/create/ecommerce/shopify-streaming.md)
+* [在UI中建立Shopify串流來源連線和資料流](../../tutorials/ui/create/ecommerce/shopify-streaming.md)

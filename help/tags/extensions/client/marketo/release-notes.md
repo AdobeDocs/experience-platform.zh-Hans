@@ -1,6 +1,6 @@
 ---
-title: Marketo Munchkin扩展的发行说明
-description: Adobe Experience Platform中Marketo Munchkin标记扩展的最新发行说明。
+title: Marketo Munchkin擴充功能發行說明
+description: Adobe Experience Platform中Marketo Munchkin標籤擴充功能的最新發行說明。
 exl-id: 709265fc-f227-4995-8976-6170da60c89e
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 68%
 
 ---
 
-# Marketo Munchkin扩展发行说明
+# Marketo Munchkin擴充功能發行說明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2020 年 12 月 2 日
 

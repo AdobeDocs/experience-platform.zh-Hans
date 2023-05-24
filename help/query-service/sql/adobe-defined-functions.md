@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Adobe定义的函数；SQL;
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；adobe定義的函式；sql；
 solution: Experience Platform
-title: Adobe定义的查询服务中的SQL函数
-description: 本文档提供了有关Adobe Experience Platform查询服务中可用的Adobe定义函数的信息。
+title: 查詢服務中的Adobe定義SQL函式
+description: 本檔案提供Adobe Experience Platform查詢服務中可用的Adobe定義函式的資訊。
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 3%
 
 ---
 
-# Adobe定义的查询服务中的SQL函数
+# 查詢服務中的Adobe定義SQL函式
 
-Adobe定义的函数（在此称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助在上执行与业务相关的常见任务 [!DNL Experience Event] 数据。 这些函数包括 [会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) 和 [归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) 就象在Adobe Analytics发现的。
+Adobe定義的函式（在此稱為ADF）是Adobe Experience Platform查詢服務中預先建立的函式，可協助您執行以下常見的業務相關工作 [!DNL Experience Event] 資料。 這些包括下列函式 [工作階段化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) 和 [歸因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) 如同Adobe Analytics中的那些。
 
-本文档提供了Adobe定义的函数在 [!DNL Query Service].
+本檔案提供Adobe定義函式的資訊，這些函式可在 [!DNL Query Service].
 
 >[!NOTE]
 >
->Experience CloudID(ECID)也称为MCID，可继续用于命名空间。
+>Experience CloudID (ECID)也稱為MCID，並將繼續用於名稱空間。
 
-## 窗口函数 {#window-functions}
+## 視窗函式 {#window-functions}
 
-大多数业务逻辑要求收集客户的接触点并按时订购。 此支持由 [!DNL Spark] 窗口函数形式的SQL。 窗口函数是标准SQL的一部分，受许多其他SQL引擎支持。
+大多數的商業邏輯要求收集客戶的接觸點並在時間之前訂購它們。 此支援由以下人員提供 [!DNL Spark] SQL的視窗函式形式。 視窗函式是標準SQL的一部分，並且受到許多其他SQL引擎的支援。
 
-窗口函数会更新聚合，并为排序子集中的每一行返回一个项目。 最基本的聚合函数是 `SUM()`. `SUM()` 将您的行取出，并给出总计。 如果您改为 `SUM()` 将窗口转换为窗口函数后，您将收到每行的累计总和。
+視窗函式會更新彙總，並為已訂購子集中的每個資料列傳回單一料號。 最基本的彙總函式是 `SUM()`. `SUM()` 會取得您的列，並提供一個總計。 如果您改為套用 `SUM()` 對於視窗，將其轉換為視窗函式，您會收到每列的累計總和。
 
-大多数 [!DNL Spark] SQL帮助程序是窗口函数，用于更新窗口中的每一行，并添加该行的状态。
+大部分 [!DNL Spark] SQL輔助程式是視窗函式，會更新視窗中每一資料列，並加入該資料列的狀態。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 OVER ({PARTITION} {ORDER} {FRAME})
@@ -37,19 +37,19 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
-| `{PARTITION}` | 基于列或可用字段的行子组。 | `PARTITION BY endUserIds._experience.mcid.id` |
-| `{ORDER}` | 用于对子集或行进行排序的列或可用字段。 | `ORDER BY timestamp` |
-| `{FRAME}` | 分区中行的子组。 | `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` |
+| `{PARTITION}` | 根據欄或可用欄位的一組子列。 | `PARTITION BY endUserIds._experience.mcid.id` |
+| `{ORDER}` | 用來排序子集或列的欄或可用欄位。 | `ORDER BY timestamp` |
+| `{FRAME}` | 分割區中資料列的子群組。 | `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` |
 
-## 会话化
+## 工作階段化
 
-当您使用 [!DNL Experience Event] 来自网站、移动应用程序、交互式语音应答系统或任何其他客户交互渠道的数据，如果可以围绕相关活动时段对事件进行分组，则会很有帮助。 通常，您具有特定意图来驱动您的活动，例如研究产品、支付账单、检查帐户余额、填写应用程序等。
+當您使用時 [!DNL Experience Event] 源自網站、行動應用程式、互動式語音回應系統或任何其他客戶互動頻道的資料，如果事件可依相關活動期間分組，則會有所幫助。 通常，您有特定意圖可推動您的活動，例如研究產品、支付帳單、檢查帳戶餘額、填寫應用程式等。
 
-此数据分组或会话化有助于关联事件，以发现有关客户体验的更多上下文。
+此分組或資料工作階段化有助於建立事件關聯，以發掘更多有關客戶體驗的內容。
 
-有关Adobe Analytics中会话化的更多信息，请参阅 [上下文感知会话](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
+如需Adobe Analytics中工作階段化的詳細資訊，請參閱以下檔案： [內容感知作業](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
 
-**查询语法**
+**查詢語法**
 
 ```sql
 SESS_TIMEOUT({TIMESTAMP}, {EXPIRATION_IN_SECONDS}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -57,12 +57,12 @@ SESS_TIMEOUT({TIMESTAMP}, {EXPIRATION_IN_SECONDS}) OVER ({PARTITION} {ORDER} {FR
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
-| `{EXPIRATION_IN_SECONDS}` | 确定当前会话结束和新会话开始之间的事件所需的秒数。 |
+| `{TIMESTAMP}` | 在資料集中找到的時間戳記欄位。 |
+| `{EXPIRATION_IN_SECONDS}` | 事件之間符合目前工作階段結束和新工作階段開始所需的秒數。 |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT 
@@ -96,7 +96,7 @@ LIMIT 10
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `session` 列。 的 `session` 列由以下组件组成：
+對於給定的範例查詢，結果會提供在 `session` 欄。 此 `session` 欄由下列元件組成：
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -104,16 +104,16 @@ LIMIT 10
 
 | 参数 | 描述 |
 | ---------- | ------------- |
-| `{TIMESTAMP_DIFF}` | 当前记录与先前记录之间的时间差（以秒为单位）。 |
-| `{NUM}` | 唯一会话编号，从1开始，用于 `PARTITION BY` 的子菜单。 |
-| `{IS_NEW}` | 一个布尔值，用于标识记录是否是会话的第一个记录。 |
-| `{DEPTH}` | 会话中当前记录的深度。 |
+| `{TIMESTAMP_DIFF}` | 目前記錄與先前記錄之間的時間差異（以秒為單位）。 |
+| `{NUM}` | 「 」中定義之索引鍵的唯一工作階段編號，從1開始 `PARTITION BY` 視窗函式的。 |
+| `{IS_NEW}` | 用於識別記錄是否為工作階段第一個的布林值。 |
+| `{DEPTH}` | 工作階段中目前記錄的深度。 |
 
 ### SESS_START_IF
 
-此查询根据当前时间戳和给定的表达式返回当前行的会话状态，并与当前行启动新会话。
+此查詢會根據目前時間戳記和指定的運算式，傳回目前列的工作階段狀態，並以目前列開始新的工作階段。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -121,12 +121,12 @@ SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
-| `{TEST_EXPRESSION}` | 要检查其数据字段的表达式。 例如：`application.launches > 0`。 |
+| `{TIMESTAMP}` | 在資料集中找到的時間戳記欄位。 |
+| `{TEST_EXPRESSION}` | 您要用來檢查資料欄位的運算式。 例如：`application.launches > 0`。 |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT
@@ -161,7 +161,7 @@ SELECT
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `session` 列。 的 `session` 列由以下组件组成：
+對於給定的範例查詢，結果會提供在 `session` 欄。 此 `session` 欄由下列元件組成：
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -169,16 +169,16 @@ SELECT
 
 | 参数 | 描述 |
 | ---------- | ------------- |
-| `{TIMESTAMP_DIFF}` | 当前记录与先前记录之间的时间差（以秒为单位）。 |
-| `{NUM}` | 唯一会话编号，从1开始，用于 `PARTITION BY` 的子菜单。 |
-| `{IS_NEW}` | 一个布尔值，用于标识记录是否是会话的第一个记录。 |
-| `{DEPTH}` | 会话中当前记录的深度。 |
+| `{TIMESTAMP_DIFF}` | 目前記錄與先前記錄之間的時間差異（以秒為單位）。 |
+| `{NUM}` | 「 」中定義之索引鍵的唯一工作階段編號，從1開始 `PARTITION BY` 視窗函式的。 |
+| `{IS_NEW}` | 用於識別記錄是否為工作階段第一個的布林值。 |
+| `{DEPTH}` | 工作階段中目前記錄的深度。 |
 
 ### SESS_END_IF
 
-此查询根据当前时间戳和给定的表达式返回当前行的会话状态，结束当前会话，并在下一行启动新会话。
+此查詢會根據目前時間戳記和指定的運算式，傳回目前列的工作階段狀態，結束目前的工作階段，並在下一列開始新的工作階段。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -186,12 +186,12 @@ SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
-| `{TEST_EXPRESSION}` | 要检查其数据字段的表达式。 例如：`application.launches > 0`。 |
+| `{TIMESTAMP}` | 在資料集中找到的時間戳記欄位。 |
+| `{TEST_EXPRESSION}` | 您要用來檢查資料欄位的運算式。 例如：`application.launches > 0`。 |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT
@@ -226,7 +226,7 @@ SELECT
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `session` 列。 的 `session` 列由以下组件组成：
+對於給定的範例查詢，結果會提供在 `session` 欄。 此 `session` 欄由下列元件組成：
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -234,23 +234,23 @@ SELECT
 
 | 参数 | 描述 |
 | ---------- | ------------- |
-| `{TIMESTAMP_DIFF}` | 当前记录与先前记录之间的时间差（以秒为单位）。 |
-| `{NUM}` | 唯一会话编号，从1开始，用于 `PARTITION BY` 的子菜单。 |
-| `{IS_NEW}` | 一个布尔值，用于标识记录是否是会话的第一个记录。 |
-| `{DEPTH}` | 会话中当前记录的深度。 |
+| `{TIMESTAMP_DIFF}` | 目前記錄與先前記錄之間的時間差異（以秒為單位）。 |
+| `{NUM}` | 「 」中定義之索引鍵的唯一工作階段編號，從1開始 `PARTITION BY` 視窗函式的。 |
+| `{IS_NEW}` | 用於識別記錄是否為工作階段第一個的布林值。 |
+| `{DEPTH}` | 工作階段中目前記錄的深度。 |
 
 
 ## 路径分析
 
-路径分析可用于了解客户的参与深度、确认体验的预期步骤是否按预期工作以及确定影响客户的潜在棘手问题。
+路徑分析可用來瞭解客戶的參與深度、確認體驗的預期步驟是否如預期運作，以及識別影響客戶的潛在痛點。
 
-以下ADF支持根据其先前和后续关系建立路径视图。 您将能够创建上一页和下一页，或分步处理多个事件以创建路径。
+下列ADF支援從先前和後續的關係建立路徑檢視。 您可以建立先前的頁面和後續頁面，或逐步執行多個事件以建立路徑。
 
-### 上一页
+### 上一頁
 
-确定特定字段的上一个值，该值在窗口内的一定数量之外。 请注意，在示例中， `WINDOW` 函数配置了 `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` 设置ADF以查看当前行和所有后续行。
+決定視窗內距離特定欄位已定義步數的先前值。 請注意，在範例中， `WINDOW` 函式設定了以下框架： `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` 設定ADF檢視目前列和所有後續列。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -258,13 +258,13 @@ PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{KEY}` | 事件中的列或字段。 |
-| `{SHIFT}` | （可选）当前事件之外的事件数。 默认情况下，值为1。 |
-| `{IGNORE_NULLS}` | （可选）指示是否为null的布尔值 `{KEY}` 值应被忽略。 默认情况下，值为 `false`. |
+| `{KEY}` | 事件中的欄或欄位。 |
+| `{SHIFT}` | （選用）遠離目前事件的事件數。 預設值為1。 |
+| `{IGNORE_NULLS}` | （選用）表示是否為空值的布林值 `{KEY}` 值應被忽略。 預設值為 `false`. |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT endUserIds._experience.mcid.id, timestamp, web.webPageDetails.name
@@ -295,13 +295,13 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `previous_page` 列。 中的值 `previous_page` 列基于 `{KEY}` 在ADF中使用。
+對於給定的範例查詢，結果會提供在 `previous_page` 欄。 內的值 `previous_page` 欄是根據 `{KEY}` 用於ADF。
 
 ### 下一页
 
-确定特定字段的下一个值，该值在窗口内定义的步骤数之外。 请注意，在示例中， `WINDOW` 函数配置了 `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` 设置ADF以查看当前行和所有后续行。
+在視窗內決定某個特定欄位的下一個值，以及離開該欄位的定義步數。 請注意，在範例中， `WINDOW` 函式設定了以下框架： `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` 設定ADF檢視目前列和所有後續列。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 NEXT({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -309,13 +309,13 @@ NEXT({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{KEY}` | 事件中的列或字段。 |
-| `{SHIFT}` | （可选）当前事件之外的事件数。 默认情况下，值为1。 |
-| `{IGNORE_NULLS}` | （可选）指示是否为null的布尔值 `{KEY}` 值应被忽略。 默认情况下，值为 `false`. |
+| `{KEY}` | 事件中的欄或欄位。 |
+| `{SHIFT}` | （選用）遠離目前事件的事件數。 預設值為1。 |
+| `{IGNORE_NULLS}` | （選用）表示是否為空值的布林值 `{KEY}` 值應被忽略。 預設值為 `false`. |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT endUserIds._experience.aaid.id, timestamp, web.webPageDetails.name,
@@ -347,17 +347,17 @@ LIMIT 10
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `previous_page` 列。 中的值 `previous_page` 列基于 `{KEY}` 在ADF中使用。
+對於給定的範例查詢，結果會提供在 `previous_page` 欄。 內的值 `previous_page` 欄是根據 `{KEY}` 用於ADF。
 
-## 间隔时间
+## 時間間隔
 
-间隔时间允许您探索事件发生之前或之后某个时间段内客户的潜在行为。
+「時間間隔」可讓您在事件發生之前或之後，探索特定時段內的潛在客戶行為。
 
-### 上次匹配的间隔时间
+### 上一個相符專案之間的時間
 
-此查询会返回一个数字，表示自上次出现匹配事件后所经过的时间单位。 如果未找到匹配的事件，则返回null。
+此查詢會傳回一個數字，代表自出現上一個相符事件以來的時間單位。 如果找不到相符的事件，則會傳回null。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 TIME_BETWEEN_PREVIOUS_MATCH(
@@ -367,13 +367,13 @@ TIME_BETWEEN_PREVIOUS_MATCH(
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TIMESTAMP}` | 在所有事件上填充的数据集中找到的时间戳字段。 |
-| `{EVENT_DEFINITION}` | 用于限定上一个事件的表达式。 |
-| `{TIME_UNIT}` | 输出单位。 可能的值包括天、小时、分钟和秒。 默认情况下，值为秒。 |
+| `{TIMESTAMP}` | 在所有事件填入的資料集中找到時間戳記欄位。 |
+| `{EVENT_DEFINITION}` | 限定上一個事件的運算式。 |
+| `{TIME_UNIT}` | 輸出單位。 可能的值包括天、小時、分鐘和秒。 根據預設，該值為秒。 |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT 
@@ -415,13 +415,13 @@ LIMIT 10
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `average_minutes_since_registration` 列。 中的值 `average_minutes_since_registration` 列是当前事件与先前事件之间的时间差。 以前在 `{TIME_UNIT}`.
+對於給定的範例查詢，結果會提供在 `average_minutes_since_registration` 欄。 內的值 `average_minutes_since_registration` 欄是指目前和先前事件之間的時間差異。 時間單位之前定義於 `{TIME_UNIT}`.
 
-### 下次匹配之间的时间
+### 下一個相符專案之間的時間
 
-此查询返回一个负数，表示下一个匹配事件后的时间单位。 如果未找到匹配的事件，则返回null。
+此查詢傳回負數，代表下一個相符事件之後的時間單位。 如果找不到相符的事件，則會傳回null。
 
-**查询语法**
+**查詢語法**
 
 ```sql
 TIME_BETWEEN_NEXT_MATCH({TIMESTAMP}, {EVENT_DEFINITION}, {TIME_UNIT}) OVER ({PARTITION} {ORDER} {FRAME})
@@ -429,13 +429,13 @@ TIME_BETWEEN_NEXT_MATCH({TIMESTAMP}, {EVENT_DEFINITION}, {TIME_UNIT}) OVER ({PAR
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TIMESTAMP}` | 在所有事件上填充的数据集中找到的时间戳字段。 |
-| `{EVENT_DEFINITION}` | 用于限定下一个事件的表达式。 |
-| `{TIME_UNIT}` | （可选）输出单位。 可能的值包括天、小时、分钟和秒。 默认情况下，值为秒。 |
+| `{TIMESTAMP}` | 在所有事件填入的資料集中找到時間戳記欄位。 |
+| `{EVENT_DEFINITION}` | 限定下一個事件的運算式。 |
+| `{TIME_UNIT}` | （選用）輸出單位。 可能的值包括天、小時、分鐘和秒。 根據預設，該值為秒。 |
 
-对 `OVER()` 函数 [窗口函数部分](#window-functions).
+內引數的說明 `OVER()` 函式位於 [視窗函式區段](#window-functions).
 
-**示例查询**
+**範例查詢**
 
 ```sql
 SELECT 
@@ -477,14 +477,14 @@ LIMIT 10
 (10 rows)
 ```
 
-对于给定的示例查询，将在 `average_minutes_until_order_confirmation` 列。 中的值 `average_minutes_until_order_confirmation` 列是当前事件与后续事件之间的时间差。 以前在 `{TIME_UNIT}`.
+對於給定的範例查詢，結果會提供在 `average_minutes_until_order_confirmation` 欄。 內的值 `average_minutes_until_order_confirmation` 欄是目前事件與下一個事件之間的時間差異。 時間單位之前定義於 `{TIME_UNIT}`.
 
 ## 后续步骤
 
-使用此处描述的函数，您可以编写查询以访问您自己的 [!DNL Experience Event] 使用数据集 [!DNL Query Service]. 有关在中创作查询的更多信息 [!DNL Query Service]，请参阅 [创建查询](../best-practices/writing-queries.md).
+使用此處所述的函式，您可以撰寫查詢來存取您自己的查詢 [!DNL Experience Event] 資料集使用 [!DNL Query Service]. 如需有關在中編寫查詢的詳細資訊 [!DNL Query Service]，請參閱以下說明檔案： [建立查詢](../best-practices/writing-queries.md).
 
 ## 其他资源
 
-以下视频演示如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，视频还使用涉及XDM对象中各个属性的示例、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT(CTAS)。
+以下影片說明如何在Adobe Experience Platform介面和PSQL使用者端中執行查詢。 此外，影片也使用涉及XDM物件中個別屬性的範例、使用Adobe定義的函式，以及使用CREATE TABLE AS SELECT (CTAS)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)

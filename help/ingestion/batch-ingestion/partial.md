@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分；摄取；
+keywords: Experience Platform；首頁；熱門主題；批次擷取；批次擷取；部分擷取；擷取錯誤；擷取錯誤；部分批次擷取；部分批次擷取；部分；擷取；
 solution: Experience Platform
-title: 部分批量摄取概述
-description: 本文档提供了有关管理部分批量摄取的教程。
+title: 部分批次擷取概觀
+description: 本檔案提供管理部分批次擷取的教學課程。
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -11,50 +11,50 @@ ht-degree: 0%
 
 ---
 
-# 部分批量摄取
+# 部分批次擷取
 
-部分批量摄取是指摄取包含错误的数据（最高可达特定阈值）的功能。 借助此功能，用户可以成功将其所有正确数据摄取到Adobe Experience Platform中，同时将其所有错误数据分别进行批量处理，并提供有关其无效原因的详细信息。
+部分批次擷取是擷取包含錯誤的資料的能力，上限為特定臨界值。 透過此功能，使用者可以成功將其所有正確的資料擷取到Adobe Experience Platform，同時將其所有不正確的資料單獨分批處理，以及其無效原因的詳細資訊。
 
-本文档提供了有关管理部分批量摄取的教程。
+本檔案提供管理部分批次擷取的教學課程。
 
 ## 快速入门
 
-本教程需要了解与部分批量摄取相关的各种Adobe Experience Platform服务的相关知识。 在开始本教程之前，请查阅以下服务的文档：
+本教學課程需要具備與部分批次擷取相關的各種Adobe Experience Platform服務的運作知識。 在開始本教學課程之前，請檢閱下列服務的檔案：
 
-- [批量摄取](./overview.md):方法 [!DNL Platform] 从数据文件（如CSV和Parquet）中摄取和存储数据。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
+- [批次擷取](./overview.md)：方法： [!DNL Platform] 從資料檔案擷取及儲存資料，例如CSV和Parquet。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。
 
-以下部分提供了成功调用所需了解的其他信息 [!DNL Platform] API。
+以下小節提供您需瞭解的其他資訊，才能成功對進行呼叫 [!DNL Platform] API。
 
-### 读取示例API调用
+### 讀取範例API呼叫
 
-本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本指南提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
 
-### 收集所需标题的值
+### 收集必要標題的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授權：持有人 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
+中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+>如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
 
-## 在API中为部分批量摄取启用批处理 {#enable-api}
+## 在API中啟用批次進行部分批次擷取 {#enable-api}
 
 >[!NOTE]
 >
->此部分介绍如何使用API启用批量获取部分批量。 有关使用UI的说明，请阅读 [在UI中为部分批量摄取启用批处理](#enable-ui) 中。
+>本節說明如何使用API為部分批次擷取啟用批次。 如需使用UI的說明，請閱讀 [在UI中啟用批次進行部分批次擷取](#enable-ui) 步驟。
 
-您可以创建启用了部分摄取的新批。
+您可以建立已啟用部分擷取的新批次。
 
-要创建新批，请按照 [批量获取开发人员指南](./api-overview.md). 一旦您到达 **[!UICONTROL 创建批处理]** 步骤，在请求正文中添加以下字段：
+若要建立新批次，請依照 [批次擷取開發人員指南](./api-overview.md). 一旦您到達 **[!UICONTROL 建立批次]** 步驟，在請求內文中新增下列欄位：
 
 ```json
 {
@@ -65,64 +65,64 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `enableErrorDiagnostics` | 允许 [!DNL Platform] 以生成有关批处理的详细错误消息。 |
-| `partialIngestionPercent` | 在整个批处理失败之前可接受的错误的百分比。 因此，在本例中，在批处理失败之前，最多5%的批可能是错误。 |
+| `enableErrorDiagnostics` | 允許此功能的標幟 [!DNL Platform] 產生有關批次的詳細錯誤訊息。 |
+| `partialIngestionPercent` | 整個批次失敗之前的可接受錯誤百分比。 因此，在此範例中，最多5%的批次可能是錯誤，然後才會失敗。 |
 
 
-## 在UI中为部分批量摄取启用批处理 {#enable-ui}
+## 在UI中啟用批次進行部分批次擷取 {#enable-ui}
 
 >[!NOTE]
 >
->本节介绍如何使用UI启用批量获取部分批量。 如果您已使用API为部分批量摄取启用了批处理，则可以跳到下一节。
+>本節說明如何使用UI為部分批次擷取啟用批次。 如果您已使用API為部分批次擷取啟用批次，則可以跳至下一節。
 
-要通过 [!DNL Platform] UI中，您可以通过源连接创建新批次，在现有数据集中创建新批次，或通过“[!UICONTROL 将CSV映射到XDM流程]&quot;
+若要透過啟用批次進行部分擷取 [!DNL Platform] UI後，您可以透過來源連線建立新批次、在現有資料集中建立新批次，或透過「 」建立新批次[!UICONTROL 將CSV對應至XDM流程]「。
 
-### 创建新源连接 {#new-source}
+### 建立新的來源連線 {#new-source}
 
-要创建新的源连接，请按照 [源概述](../../sources/home.md). 一旦您到达 **[!UICONTROL 数据流详细信息]** 步骤，请注意 **[!UICONTROL 部分摄取]** 和 **[!UICONTROL 错误诊断]** 字段。
+若要建立新的來源連線，請依照 [來源概觀](../../sources/home.md). 一旦您到達 **[!UICONTROL 資料流詳細資料]** 步驟，記下 **[!UICONTROL 部分擷取]** 和 **[!UICONTROL 錯誤診斷]** 欄位。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
+此 **[!UICONTROL 部分擷取]** 切換可讓您啟用或停用部分批次擷取。
 
-的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
+此 **[!UICONTROL 錯誤診斷]** 切換僅在 **[!UICONTROL 部分擷取]** 切換功能已關閉。 此功能允許 [!DNL Platform] 產生您所擷取批次的詳細錯誤訊息。 如果 **[!UICONTROL 部分擷取]** 切換功能已開啟，自動執行增強的錯誤診斷。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-的 **[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+此 **[!UICONTROL 錯誤臨界值]** 可讓您設定整個批次失敗之前可接受的錯誤百分比。 預設情況下，此值會設為5%。
 
-### 使用现有数据集 {#existing-dataset}
+### 使用現有的資料集 {#existing-dataset}
 
-要使用现有数据集，请首先选择一个数据集。 右侧的侧栏会填充有关数据集的信息。
+若要使用現有資料集，請從選取資料集開始。 右側邊欄會填入資料集的相關資訊。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
+此 **[!UICONTROL 部分擷取]** 切換可讓您啟用或停用部分批次擷取。
 
-的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
+此 **[!UICONTROL 錯誤診斷]** 切換僅在 **[!UICONTROL 部分擷取]** 切換功能已關閉。 此功能允許 [!DNL Platform] 產生您所擷取批次的詳細錯誤訊息。 如果 **[!UICONTROL 部分擷取]** 切換功能已開啟，自動執行增強的錯誤診斷。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
-的 **[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+此 **[!UICONTROL 錯誤臨界值]** 可讓您設定整個批次失敗之前可接受的錯誤百分比。 預設情況下，此值會設為5%。
 
-现在，您可以使用 **添加数据** 按钮，并且将使用部分摄取来摄取。
+現在，您可以使用上傳資料 **新增資料** 按鈕，則會使用部分擷取來擷取。
 
-### 使用“[!UICONTROL 将CSV映射到XDM架构]“流量” {#map-flow}
+### 使用&quot;[!UICONTROL 將CSV對應至XDM結構描述]&quot;流量 {#map-flow}
 
-使用“[!UICONTROL 将CSV映射到XDM架构]“流”，请按照 [映射CSV文件教程](../tutorials/map-csv/overview.md). 一旦您到达 **[!UICONTROL 添加数据]** 步骤，请注意 **[!UICONTROL 部分摄取]** 和 **[!UICONTROL 错误诊断]** 字段。
+若要使用「[!UICONTROL 將CSV對應至XDM結構描述]&quot;流程，請依照 [對應CSV檔案教學課程](../tutorials/map-csv/overview.md). 一旦您到達 **[!UICONTROL 新增資料]** 步驟，記下 **[!UICONTROL 部分擷取]** 和 **[!UICONTROL 錯誤診斷]** 欄位。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
-的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
+此 **[!UICONTROL 部分擷取]** 切換可讓您啟用或停用部分批次擷取。
 
-的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
+此 **[!UICONTROL 錯誤診斷]** 切換僅在 **[!UICONTROL 部分擷取]** 切換功能已關閉。 此功能允許 [!DNL Platform] 產生您所擷取批次的詳細錯誤訊息。 如果 **[!UICONTROL 部分擷取]** 切換功能已開啟，自動執行增強的錯誤診斷。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-**[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+**[!UICONTROL 錯誤臨界值]** 可讓您設定整個批次失敗之前可接受的錯誤百分比。 預設情況下，此值會設為5%。
 
 ## 后续步骤 {#next-steps}
 
-本教程介绍了如何创建或修改数据集以启用部分批量摄取。 有关批量摄取的更多信息，请阅读 [批量获取开发人员指南](./api-overview.md).
+本教學課程說明如何建立或修改資料集，以啟用部分批次擷取。 如需批次擷取的詳細資訊，請閱讀 [批次擷取開發人員指南](./api-overview.md).
 
-有关监控部分摄取错误的信息，请阅读 [批量摄取错误诊断指南](../quality/error-diagnostics.md).
+如需有關監控部分擷取錯誤的資訊，請參閱 [批次擷取錯誤診斷指南](../quality/error-diagnostics.md).

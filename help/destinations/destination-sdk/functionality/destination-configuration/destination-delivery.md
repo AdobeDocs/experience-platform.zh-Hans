@@ -1,6 +1,6 @@
 ---
-description: 了解如何为使用Destination SDK构建的目标配置目标交付设置，以指示导出数据将转到的位置以及将在数据登陆位置中使用的身份验证规则。
-title: 目标投放
+description: 瞭解如何為使用Destination SDK建立的目的地設定目的地傳送設定，以指出匯出的資料將前往何處，以及在資料將著陸的位置使用什麼驗證規則。
+title: 目的地傳遞
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '563'
@@ -9,55 +9,55 @@ ht-degree: 1%
 ---
 
 
-# 目标投放
+# 目的地傳遞
 
-要更好地控制导出到目标的数据所在位置，可使用Destination SDK指定目标投放设置。
+為了讓您更能掌控匯出至目的地之資料的位置，Destination SDK可讓您指定目的地傳送設定。
 
-目标投放部分指示导出数据的去向，以及在数据登陆位置中使用的身份验证规则。
+目的地傳送區段會指出匯出資料前往的位置，以及資料著陸位置所使用的驗證規則。
 
 <!-- When configuring a destination, you must specify an authentication rule and one or more `destinationServerId` parameters, corresponding to the destination servers that define where the data will be delivered to. In most cases, the authentication rule that you should use is `CUSTOMER_AUTHENTICATION`.  -->
 
-要了解此组件在与Destination SDK创建的集成中的位置，请参阅 [配置选项](../configuration-options.md) 文档或请参阅以下目标配置概述页面：
+若要瞭解此元件在何處適合使用Destination SDK建立的整合，請參閱 [設定選項](../configuration-options.md) 說明檔案，或參閱以下目的地設定概觀頁面：
 
-* [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
-* [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
+* [使用Destination SDK設定串流目的地](../../guides/configure-destination-instructions.md#create-destination-configuration)
+* [使用Destination SDK設定檔案型目的地](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-您可以通过 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以透過以下方式設定目的地傳送設定： `/authoring/destinations` 端點。 請參閱下列API參考頁面，以取得詳細的API呼叫範例，您可在此範例設定本頁面所示的元件。
 
-* [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
-* [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
+* [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)
+* [更新目的地設定](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的目标交付选项。
+本文說明可用於目的地的所有支援目的地傳送選項。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均为 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-有关哪些类型的集成支持本页所述功能的详细信息，请参阅下表。
+請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
 
-| 集成类型 | 支持功能 |
+| 整合型別 | 支援功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件的（批处理）集成 | 是 |
+| 即時（串流）整合 | 是 |
+| 檔案式（批次）整合 | 是 |
 
-## 支持的参数 {#supported-parameters}
+## 支援的引數 {#supported-parameters}
 
-配置目标投放设置时，您可以使用下表中描述的参数定义应将导出数据发送到的位置。
+設定目的地傳送設定時，您可以使用下表所述的引數來定義應傳送匯出資料的位置。
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 应该连接到您的目标。 支持的值：<ul><li>`CUSTOMER_AUTHENTICATION`:如果Platform客户通过任何描述的身份验证方法登录到您的系统，请使用此选项 [此处](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`:如果Adobe与目标之间存在全局身份验证系统，则使用此选项 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>`NONE`:如果向目标平台发送数据不需要任何身份验证，请使用此选项。 </li></ul> |
-| `destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器](../../authoring-api/destination-server/create-destination-server.md) ，以便将数据导出到。 |
-| `deliveryMatchers.type` | 字符串 | <ul><li>为基于文件的目标配置目标交付时，请始终将其设置为 `SOURCE`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分。</li></ul> |
-| `deliveryMatchers.value` | 字符串 | <ul><li>为基于文件的目标配置目标交付时，请始终将其设置为 `batch`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分。</li></ul> |
+| `authenticationRule` | 字符串 | 指示如何進行 [!DNL Platform] 應該會連線至您的目的地。 支援的值：<ul><li>`CUSTOMER_AUTHENTICATION`：如果Platform客戶透過上述任何驗證方法登入您的系統，請使用此選項 [此處](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`：如果Adobe和您的目的地之間有全域驗證系統，而且您設定了 [!DNL Platform] 客戶不需要提供任何驗證認證即可連線至您的目的地。 在此情況下，您必須使用 [認證API](../../credentials-api/create-credential-configuration.md) 設定。 </li><li>`NONE`：如果不需要驗證即可將資料傳送至您的目的地平台，請使用此選項。 </li></ul> |
+| `destinationServerId` | 字符串 | 此 `instanceId` 的 [目的地伺服器](../../authoring-api/destination-server/create-destination-server.md) 要匯出資料的目標位置。 |
+| `deliveryMatchers.type` | 字符串 | <ul><li>為檔案型目的地設定目的地傳送時，請一律將此項設為 `SOURCE`.</li><li>為串流目的地設定目的地傳送時， `deliveryMatchers` 區段不是必填欄位。</li></ul> |
+| `deliveryMatchers.value` | 字符串 | <ul><li>為檔案型目的地設定目的地傳送時，請一律將此項設為 `batch`.</li><li>為串流目的地設定目的地傳送時， `deliveryMatchers` 區段不是必填欄位。</li></ul> |
 
 {style="table-layout:auto"}
 
-## 流目标的目标交付设置 {#destination-delivery-streaming}
+## 串流目的地的目的地傳送設定 {#destination-delivery-streaming}
 
-以下示例显示了如何为流目标配置目标投放设置。 请注意， `deliveryMatchers` 流目标不需要使用部分。
+以下範例說明應如何為串流目的地設定目的地傳送設定。 請注意 `deliveryMatchers` 區段不是串流目的地的必要欄位。
 
 >[!BEGINSHADEBOX]
 
@@ -74,9 +74,9 @@ ht-degree: 1%
 
 >[!ENDSHADEBOX]
 
-## 基于文件的目标的目标交付设置 {#destination-delivery-file-based}
+## 檔案型目的地的目的地傳送設定 {#destination-delivery-file-based}
 
-以下示例显示了如何为基于文件的目标配置目标投放设置。 请注意， `deliveryMatchers` 部分。
+以下範例說明應如何為以檔案為基礎的目的地設定目的地傳送設定。 請注意 `deliveryMatchers` 區段對於以檔案為基礎的目的地是必要的。
 
 >[!BEGINSHADEBOX]
 
@@ -103,18 +103,18 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该更好地了解如何为流目标和基于文件的目标配置目标应导出数据的位置。
+閱讀本文後，您應該進一步瞭解如何針對串流和檔案型目的地，設定目的地應匯出資料的位置。
 
-要了解有关其他目标组件的更多信息，请参阅以下文章：
+若要深入瞭解其他目的地元件，請參閱下列文章：
 
-* [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authentication.md)
-* [UI属性](ui-attributes.md)
-* [客户数据字段](customer-data-fields.md)
-* [架构配置](schema-configuration.md)
-* [身份命名空间配置](identity-namespace-configuration.md)
-* [支持的映射配置](supported-mapping-configurations.md)
-* [受众元数据配置](audience-metadata-configuration.md)
-* [聚合策略](aggregation-policy.md)
-* [批量配置](batch-configuration.md)
-* [历史用户档案资格](historical-profile-qualifications.md)
+* [客戶驗證](customer-authentication.md)
+* [OAuth2驗證](oauth2-authentication.md)
+* [UI屬性](ui-attributes.md)
+* [客戶資料欄位](customer-data-fields.md)
+* [結構描述設定](schema-configuration.md)
+* [身分名稱空間設定](identity-namespace-configuration.md)
+* [支援的對應設定](supported-mapping-configurations.md)
+* [對象中繼資料設定](audience-metadata-configuration.md)
+* [彙總原則](aggregation-policy.md)
+* [批次設定](batch-configuration.md)
+* [歷史設定檔資格](historical-profile-qualifications.md)

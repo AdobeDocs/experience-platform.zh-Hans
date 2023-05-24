@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；导出；导出
+keywords: Experience Platform；首頁；熱門主題；匯出；匯出
 solution: Experience Platform
-title: 在Privacy ServiceUI中管理隐私作业
-description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
+title: 在Privacy ServiceUI中管理隱私權工作
+description: 瞭解如何使用Privacy Service使用者介面協調和監視各種Experience Cloud應用程式的隱私權請求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
@@ -11,38 +11,38 @@ ht-degree: 14%
 
 ---
 
-# 在Privacy ServiceUI中管理隐私作业 {#user-guide}
+# 在Privacy ServiceUI中管理隱私權工作 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_description"
 >title="遵守数据主体隐私请求"
 >abstract="<h2>描述</h2><p>通过 Adobe Experience Platform Privacy Service，可代表要根据隐私法规访问或删除其个人数据的客户创建和管理隐私请求。</p>"
 
-本文档提供了使用创建和管理隐私请求的步骤 [!DNL Privacy Service] 用户界面。
+本檔案提供使用建立和管理隱私權請求的步驟。 [!DNL Privacy Service] 使用者介面。
 
 >[!IMPORTANT]
 >
->Privacy Service仅适用于数据主体和消费者权限请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有法律义务及时履行这些义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅生产环境，并且会造成有效隐私请求的不必要积压。
+>Privacy Service僅適用於資料主體和消費者權利請求。 不支援或不允許將Privacy Service用於資料清理或維護的任何其他用途。 Adobe有法定義務須及時履行。 因此，不允許在Privacy Service上進行負載測試，因為這是僅限生產的環境，且會建立有效隱私權請求的不必要待處理專案。
 >
->现已设置硬性的每日上载限制，以帮助防止滥用服务。 发现滥用系统的用户将禁用其对服务的访问权限。 随后将与他们举行会议，讨论他们的行动并讨论可接受的Privacy Service用途。
+>現已設定每日硬性上傳限制，以防止服務被濫用。 發現濫用系統的使用者將會停用其服務的存取權。 隨後將與其舉行會議，討論其行動並討論可接受的Privacy Service用途。
 
-## 浏览 [!DNL Privacy Service] UI功能板
+## 瀏覽 [!DNL Privacy Service] UI儀表板
 
-功能板 [!DNL Privacy Service] UI提供了两个小组件，用于查看隐私作业的状态：&quot;[!UICONTROL 状态报表]&quot;和&quot;[!UICONTROL 作业请求]&quot; 仪表板还显示所显示作业的当前选定法规。
+的儀表板 [!DNL Privacy Service] UI提供兩個Widget，可讓您檢視隱私權工作的狀態：「[!UICONTROL 狀態報告]「和」[!UICONTROL 工作請求]「。 控制面板也會針對顯示的作業顯示目前選取的規則。
 
-![UI功能板](../images/user-guide/dashboard.png)
+![UI儀表板](../images/user-guide/dashboard.png)
 
-### 调节类型
+### 法規型別
 
-[!DNL Privacy Service] 支持多项隐私法规的作业请求。 下表列出了受支持的法规及其相应标签，如UI中所示：
+[!DNL Privacy Service] 支援數項隱私權法規的工作請求。 下表列出支援的法規及其在UI中表示的對應標籤：
 
-| UI标签 | 监管 |
+| UI標籤 | 法規 |
 | --- | --- |
 | [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
-| [!UICONTROL GDPR] | 欧盟 [!DNL General Data Protection Regulation] |
-| [!UICONTROL PDPA_THA] | 泰国 [!DNL Personal Data Protection Act] |
-| [!UICONTROL LGPD_BRA] | 巴西 [!DNL Lei Geral de Proteção de Dados] |
-| [!UICONTROL NZPA_NZL] | 新西兰 [!DNL Privacy Act] |
+| [!UICONTROL GDPR] | 歐盟的 [!DNL General Data Protection Regulation] |
+| [!UICONTROL PDPA_THA] | 泰國的 [!DNL Personal Data Protection Act] |
+| [!UICONTROL LGPD_BRA] | 巴西的 [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL NZPA_NZL] | 紐西蘭 [!DNL Privacy Act] |
 | [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
 | [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
 | [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
@@ -52,59 +52,59 @@ ht-degree: 14%
 
 >[!NOTE]
 >
->请参阅 [受支持的隐私法规](../regulations/overview.md) 以详细了解每项条例的法律背景。
+>請參閱以下文章的概觀： [支援的隱私權法規](../regulations/overview.md) 以取得每項法規之法律內容的詳細資訊。
 
-将单独跟踪每种法规类型的作业。 要在调节类型之间切换，请选择 **[!UICONTROL 调节类型]** 下拉菜单，并从列表中选择所需的规则。
+系統會分別追蹤每種規則型態的工單。 若要切換規則型別，請選取 **[!UICONTROL 法規型別]** 下拉式功能表，並從清單中選取所需的規則。
 
-![规则类型下拉列表](../images/user-guide/regulation.png)
+![規則型別下拉式清單](../images/user-guide/regulation.png)
 
-当更改法规类型时，功能板会进行更新，以显示适用于所选法规的所有操作、过滤器、小部件和职务创建对话框。
+變更法規型別後，儀表板會更新以顯示適用於所選法規的所有操作、篩選器、Widget和工作建立對話方塊。
 
-![更新了功能板](../images/user-guide/dashboard-update.png)
+![已更新儀表板](../images/user-guide/dashboard-update.png)
 
-### 状态报表
+### 狀態報告
 
-状态报表小组件左侧的图表会跟踪已提交的作业，以及可能已报告有错误的任何作业。 右侧的图表跟踪接近30天合规性窗口结束的作业。
+「狀態報告」Widget左側的圖形，可追蹤已提交工作，以及任何可能已回報但有錯誤的工作。 右側的圖表會追蹤接近30天規定期間結束的工作。
 
-选择图表上方的两个切换按钮之一，以显示或隐藏其各自的量度。
+選取圖表上方的兩個切換按鈕之一，以顯示或隱藏其各自的量度。
 
 ![](../images/user-guide/hide-errors.png)
 
-通过将鼠标悬停在相关数据点上，可以查看与图形上的任何数据点关联的确切作业数。
+您可以將滑鼠停留在有問題的資料點上，以檢視與圖表上任何資料點相關聯的確切工作數目。
 
-![将鼠标悬停在数据点上](../images/user-guide/mouse-over.png)
+![將滑鼠移到資料點上](../images/user-guide/mouse-over.png)
 
-要查看有关给定数据点的更多详细信息，请选择相关数据点，以在“作业请求”小组件中显示相关的作业。 请注意应用于作业列表上方的过滤器。
+若要檢視指定資料點的進一步詳細資訊，請選取相關資料點，以在「工作請求」Widget中顯示相關工作。 記下套用至工作清單正上方的篩選器。
 
-![从小组件中应用的过滤器](../images/user-guide/apply-filter.png)
-
->[!NOTE]
->
->将过滤器应用到“作业请求”小组件后，您可以通过选择 **X** 在药丸上。 然后，作业请求返回到默认跟踪列表。
-
-### 作业请求
-
-作业请求小组件列出了您组织中所有可用的作业请求，包括请求类型、当前状态、到期日期和请求者电子邮件等详细信息。
+![從Widget套用的篩選器](../images/user-guide/apply-filter.png)
 
 >[!NOTE]
 >
->之前创建的作业的数据仅在完成日期后30天内可访问。
+>將篩選器套用至工作請求Widget後，您可以選取 **X** 在篩選藥丸上。 然後，工作請求會返回預設追蹤清單。
 
-您可以在“作业请求”标题下方的搜索栏中键入关键字以过滤列表。 该列表会根据您的键入自动进行过滤，并显示包含与您的搜索词匹配值的请求。 您还可以使用 **[!UICONTROL 请求日期]** 用于为列出的作业选择时间范围的下拉菜单。
+### 工作請求
 
-![作业请求搜索选项](../images/user-guide/job-search.png)
+工作請求Widget會列出組織中所有可用的工作請求，包括請求型別、目前狀態、到期日及請求者電子郵件等詳細資訊。
 
-要查看特定作业请求的详细信息，请从列表中选择该请求的作业ID以打开 **[!UICONTROL 作业详细信息]** 页面。
+>[!NOTE]
+>
+>僅可在完成日期後的30天記憶體取先前建立之工作的資料。
 
-![GDPR UI作业详细信息](../images/user-guide/job-details.png)
+您可以在「工作請求」標題下方的搜尋列中鍵入關鍵字，以篩選清單。 清單會在您輸入時自動篩選，顯示包含符合搜尋字詞之值的請求。 您也可以使用 **[!UICONTROL 申請日期]** 下拉式選單來選取所列工作的時間範圍。
 
-此对话框包含有关每个 [!DNL Experience Cloud] 解决方案及其当前状态与整体工作的关系。 由于每个隐私作业都是异步的，因此页面会显示每个解决方案的最新通信日期和时间(GMT)，因为有些解决方案在处理请求时需要的时间比其他解决方案多。
+![工作請求搜尋選項](../images/user-guide/job-search.png)
 
-如果解决方案提供了任何其他数据，则可在此对话框中查看该数据。 您可以通过选择单个产品行来查看此数据。
+若要檢視特定工作請求的詳細資訊，請從清單中選取請求的工作ID以開啟 **[!UICONTROL 工作詳細資訊]** 頁面。
 
-要将完整的作业数据下载为CSV文件，请选择 **[!UICONTROL 导出到CSV]** 对话框的右上方。
+![GDPR UI工作詳細資料](../images/user-guide/job-details.png)
 
-## 创建新的隐私作业请求 {#create-a-new-privacy-job-request}
+此對話方塊包含每個專案的狀態資訊 [!DNL Experience Cloud] 解決方案及其相對於整體工作的目前狀態。 由於每個隱私權工作非同步，頁面會顯示每個解決方案的最新通訊日期和時間(GMT)，因為有些解決方案比有些解決方案需要更多的時間來處理請求。
+
+如果解決方案已提供任何額外資料，可在此對話方塊中檢視。 您可以選取個別產品列來檢視此資料。
+
+若要將完整的工作資料下載為CSV檔案，請選取 **[!UICONTROL 匯出至CSV]** 位於對話方塊的右上方。
+
+## 建立新的隱私權工作請求 {#create-a-new-privacy-job-request}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
@@ -113,73 +113,73 @@ ht-degree: 14%
 
 >[!NOTE]
 >
->要创建隐私作业请求，您必须为要访问或删除其数据的特定客户提供身份信息。 请查阅 [隐私请求的身份数据](../identity-data.md) ，然后再继续使用此部分。
+>為了建立隱私權工作請求，您必須提供存取或刪除其資料之特定客戶的身分資訊。 請在以下位置檢閱檔案： [隱私權請求的身分資料](../identity-data.md) 然後再繼續本節。
 
-的 [!DNL Privacy Service] UI提供了两种创建新作业请求的方法：
+此 [!DNL Privacy Service] UI提供兩種建立新工作請求的方法：
 
-* [使用请求生成器](#request-builder)
-* [上传JSON文件](#json)
+* [使用請求產生器](#request-builder)
+* [上傳JSON檔案](#json)
 
-以下各节提供了使用上述每种方法的步骤。
+以下各節提供使用上述各種方法的步驟。
 
-### 使用请求生成器 {#request-builder}
+### 使用請求產生器 {#request-builder}
 
-使用请求生成器，您可以在用户界面中手动创建新的隐私作业请求。 请求生成器最适合于更简单和更小的请求集，因为请求生成器将请求限制为每个用户只具有ID类型。 对于更复杂的请求，最好是 [上传JSON文件](#json) 中。
+使用「請求產生器」，您可以在使用者介面中手動建立新的隱私權工作請求。 請求產生器最適合用於較簡單且較小的請求集，因為請求產生器限制每個使用者的請求只有ID型別。 若是更複雜的請求，最好 [上傳JSON檔案](#json) 而非。
 
-要开始使用请求生成器，请选择 **[!UICONTROL 创建请求]** 位于屏幕右侧的状态报表小组件下方。
+若要開始使用請求產生器，請選取「 」 **[!UICONTROL 建立請求]** 位於畫面右側的「狀態報表」Widget下方。
 
-![选择创建请求](../images/user-guide/create-request.png)
+![選取建立請求](../images/user-guide/create-request.png)
 
-的 **[!UICONTROL 创建请求]** 对话框打开，显示用于提交当前选定法规类型的隐私作业请求的可用选项。
+此 **[!UICONTROL 建立請求]** 對話方塊隨即開啟，顯示可用於針對目前所選規則型別提交隱私權工作請求的選項。
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-选择 **[!UICONTROL 作业类型]** 请求（“删除”或“访问”）以及列表中一个或多个可用产品。
+選取 **[!UICONTROL 工作型別]** 請求（「刪除」或「存取」）以及清單中一個或多個可用產品的完整清單。
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-在 **[!UICONTROL 命名空间类型]**，为要发送到的客户ID选择相应的命名空间类型 [!DNL Privacy Service].
+下 **[!UICONTROL 名稱空間型別]**，請為要傳送至的客戶ID選取適當的名稱空間型別 [!DNL Privacy Service].
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
-使用标准命名空间类型时，从下拉菜单（电子邮件、ECID或AAID）中选择命名空间，然后在右侧的文本框中键入ID值，然后按 **\&lt;enter>** ，以将其添加到列表中。
+使用標準名稱空間型別時，請從下拉式選單（電子郵件、ECID或AAID）中選取名稱空間，然後在右側的文字方塊中輸入ID值，然後按 **\&lt;enter>** ，以將每個ID新增至清單。
 
 <img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
 
-使用自定义命名空间类型时，必须先手动键入命名空间，然后再提供下面的ID值。
+使用自訂名稱空間型別時，您必須手動輸入名稱空間，才能在下方提供ID值。
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
-完成后，选择 **[!UICONTROL 创建]**.
+完成後，選取 **[!UICONTROL 建立]**.
 
 <img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
 
-该对话框会消失，新作业（或作业）连同其当前处理状态一起列在作业请求小组件中。
+對話方塊會消失，而新工作（或多個工作）會與其目前的處理狀態一起列在工作請求Widget中。
 
-### 上传JSON文件 {#json}
+### 上傳JSON檔案 {#json}
 
-在创建更复杂的请求（例如对处理的每个数据主体使用多个ID类型的请求）时，您可以通过上传JSON文件来创建请求。
+建立更複雜的請求時（例如針對每個處理中的資料主體使用多個ID型別的請求），您可以透過上傳JSON檔案來建立請求。
 
-选择旁边的箭头 **[!UICONTROL 创建请求]**，位于屏幕右侧状态报表小组件下方。 从显示的选项列表中，选择 **[!UICONTROL 上传JSON]**.
+選取旁的箭頭 **[!UICONTROL 建立請求]**，位於畫面右側的「狀態報表」Widget下方。 從出現的選項清單中，選取 **[!UICONTROL 上傳JSON]**.
 
-![请求创建选项](../images/user-guide/create-options.png)
+![請求建立選項](../images/user-guide/create-options.png)
 
-的 **[!UICONTROL 上传JSON]** 对话框中，提供了一个窗口供您将JSON文件拖放到中。
+此 **[!UICONTROL 上傳JSON]** 對話方塊隨即出現，為您提供可將JSON檔案拖放到的視窗。
 
 <img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
-如果您没有要上传的JSON文件，请选择 **[!UICONTROL 下载Adobe-GDPR-Request.json]** 下载模板，以根据从数据主体收集的值进行填充。
+如果您沒有要上傳的JSON檔案，請選取「 」 **[!UICONTROL 下載Adobe-GDPR-Request.json]** 以下載範本，您可依據從資料主體收集的值填入。
 
 
 <img src="../images/user-guide/privacy-template.png" width="500" /><br/>
 
 
-在计算机上找到JSON文件，并将其拖到对话框窗口中。 如果上传成功，则会在对话框中显示文件名。 您可以根据需要，继续添加更多JSON文件，方法是将它们拖放到对话框中。
+在您的電腦上找到JSON檔案，並將其拖曳至對話方塊視窗中。 如果上傳成功，檔案名稱會顯示在對話方塊中。 您可以視需要繼續新增更多JSON檔案，方法是將其拖放至對話方塊中。
 
-完成后，选择 **[!UICONTROL 创建]**. 该对话框会消失，新作业（或作业）连同其当前处理状态一起列在作业请求小组件中。
+完成後，選取 **[!UICONTROL 建立]**. 對話方塊會消失，而新工作（或多個工作）會與其目前的處理狀態一起列在工作請求Widget中。
 
 ### 后续步骤
 
-通过阅读本文档，您已学会了如何使用 [!DNL Privacy Service] 用于创建隐私作业、查看作业的详细信息并监视其处理状态的UI，并在作业完成后下载结果。
+閱讀本檔案後，您已瞭解如何使用 [!DNL Privacy Service] UI可建立隱私權工作、檢視工作的詳細資訊和監控其處理狀態，並在完成後下載結果。
 
-有关如何使用 [!DNL Privacy Service] API，请参阅 [API指南](../api/overview.md).
+如需如何以程式設計方式執行這些操作的步驟，請使用 [!DNL Privacy Service] API，請參閱 [API指南](../api/overview.md).

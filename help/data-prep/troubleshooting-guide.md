@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；
-title: 数据准备疑难解答指南
-description: 本文档提供了有关Adobe Experience Platform数据准备的常见问题解答。
+keywords: Experience Platform；首頁；熱門主題；
+title: 資料準備疑難排解指南
+description: 本檔案提供有關Adobe Experience Platform資料準備的常見問題解答。
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
 source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
@@ -10,26 +10,26 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Data Prep] 疑难解答指南
+# [!DNL Data Prep] 疑難排解指南
 
-本文档提供了有关Adobe Experience Platform的常见问题解答 [!DNL Data Prep]，以及常见错误的疑难解答指南。 有关Platform API的一般问题和故障诊断信息，请参阅 [Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md).
+本檔案提供有關Adobe Experience Platform常見問題的解答 [!DNL Data Prep]以及常見錯誤的疑難排解指南。 如需有關Platform API的一般問題和疑難排解資訊，請參閱 [Adobe Experience Platform API疑難排解指南](../landing/troubleshooting.md).
 
 ## 常见问题解答
 
-以下是有关 [!DNL Data Prep] 和他们的答案。
+以下為常見問題集的相關清單 [!DNL Data Prep] 以及他們的答案。
 
-### 如何解决转换错误？
+### 如何解決轉換錯誤？
 
-[!DNL Data Prep] 将所有转换错误定位到发生这些错误的列。 因此，该列将无效，并且将继续处理该行的其余部分。 这些转换问题将记录为 **警告**. 建议您定期查看警告并调整转换逻辑以解决转换问题。 这将提高摄取到Experience Platform的数据质量。
+[!DNL Data Prep] 將所有轉換錯誤當地語系化至其發生的欄。 因此，該欄會變成無效，而列的其餘部分會繼續處理。 這些轉換問題會記錄為 **警告**. 建議您定期檢閱警告，並調整轉換邏輯，以解決轉換問題。 這樣會提高Experience Platform中所擷取的資料品質。
 
-如果列被标记为 **必需** 将因转换问题而失效，则不会摄取该行。 启用部分数据摄取后，您可以在整个流程失败之前设置此类拒绝的阈值。 如果无效属性未影响任何架构级别验证，则将继续摄取该行。
+如果欄標籤為 **必填** 會因轉換問題而成為無效，則不會擷取該列。 啟用部分資料擷取時，您可以設定在整個流程失敗之前拒絕的臨界值。 如果無效屬性並未影響任何結構描述層級驗證，則會繼續內嵌列。
 
-即使没有任何转换错误，任何无效的行也将被拒绝。 例如，数据摄取流可能具有到必填字段的传递映射（无转换逻辑），并且该属性没有传入值。 该行将被拒绝。
+即使沒有任何轉換錯誤，任何無效的列也會被拒絕。 例如，資料擷取流程可能會有必要欄位的傳遞對應（無轉換邏輯），且該屬性沒有傳入值。 將拒絕此列。
 
-### 如何转义字段中的特殊字符？
+### 如何在欄位中逸出特殊字元？
 
-您可以使用 `${...}`. 但是，包含带有句点(`.`)不受此机制支持。 在与层级进行交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)以转义特殊字符。 例如， `address` 是包含属性的对象 `street.name`，这可称为 `address.street\.name` 而不是 `address.street.name`.
+您可以使用來逸出欄位中的特殊字元 `${...}`. 不過，包含具有句點(`.`)不受此機制支援。 與階層互動時，如果子屬性有句點(`.`)，則必須使用反斜線(`\`)以逸出特殊字元。 例如， `address` 是包含屬性的物件 `street.name`，則這可以稱為 `address.street\.name` 而非 `address.street.name`.
 
-### 计算字段的最大长度是多少？
+### 計算欄位的最大長度是多少？
 
-计算字段的最大长度为4096个字符。
+計算欄位的長度上限為4096個字元。

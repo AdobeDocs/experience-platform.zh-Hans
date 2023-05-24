@@ -1,6 +1,6 @@
 ---
-description: 了解如何为通过Destination SDK构建的目标配置UI属性，例如文档链接、目标卡类别、目标连接类型和频率。
-title: UI属性
+description: 瞭解如何為使用Destination SDK建立的目的地設定UI屬性，例如檔案連結、目的地卡類別以及目的地連線型別和頻率。
+title: UI屬性
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '755'
@@ -9,46 +9,46 @@ ht-degree: 0%
 ---
 
 
-# UI属性
+# UI屬性
 
-UI属性定义Adobe在Adobe Experience Platform用户界面中应为目标卡片显示的可视化元素，例如目标平台徽标、指向文档页面的链接、目标描述及其类别和类型。
+UI屬性會定義Adobe應在Adobe Experience Platform使用者介面中為目的地卡片顯示的視覺元素，例如目的地平台標誌、指向檔案頁面的連結、目的地說明及其類別和型別。
 
-要了解此组件在与Destination SDK创建的集成中的位置，请参阅 [配置选项](../configuration-options.md) 文档或请参阅以下目标配置概述页面：
+若要瞭解此元件在何處適合使用Destination SDK建立的整合，請參閱 [設定選項](../configuration-options.md) 說明檔案，或參閱以下目的地設定概觀頁面：
 
-* [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
-* [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
+* [使用Destination SDK設定串流目的地](../../guides/configure-destination-instructions.md#create-destination-configuration)
+* [使用Destination SDK設定檔案型目的地](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-When [创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md) 通过Destination SDK, `uiAttributes` 部分定义目标卡的以下可视属性：
+時間 [建立目的地](../../authoring-api/destination-configuration/create-destination-configuration.md) 透過Destination SDK， `uiAttributes` 區段會定義目的地卡片的下列視覺屬性：
 
-* 目标文档页面的URL(位于 [目标目录](../../../catalog/overview.md).
-* 您在其中托管要在目标目录卡中显示的图标的URL。
-* 在Platform UI中显示目标的类别。
-* 目标的数据导出频度。
-* 目标连接类型，如Amazon S3、Azure Blob等。
+* 目的地檔案頁面的URL，位於 [目的地目錄](../../../catalog/overview.md).
+* 您託管要在目的地目錄卡片中顯示之圖示的URL。
+* Platform UI中顯示您目的地的類別。
+* 您目的地的資料匯出頻率。
+* 目的地連線型別，例如Amazon S3、Azure Blob等。
 
-您可以通过 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以透過以下方式設定UI屬性 `/authoring/destinations` 端點。 請參閱下列API參考頁面，以取得詳細的API呼叫範例，您可在此範例設定本頁面所示的元件。
 
-* [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
-* [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
+* [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)
+* [更新目的地設定](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的UI属性，并显示了客户将在Experience PlatformUI中看到的内容。
+本文說明可用於目的地的所有受支援UI屬性，並顯示客戶會在Experience PlatformUI中看到的內容。
 
-![UI屏幕截图显示Experience Platform界面中的UI属性](../../assets/functionality/destination-configuration/ui-attributes.png)
+![顯示Experience Platform介面中UI屬性的UI熒幕擷圖](../../assets/functionality/destination-configuration/ui-attributes.png)
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均为 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-有关哪些类型的集成支持本页所述功能的详细信息，请参阅下表。
+請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
 
-| 集成类型 | 支持功能 |
+| 整合型別 | 支援功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件的（批处理）集成 | 是 |
+| 即時（串流）整合 | 是 |
+| 檔案式（批次）整合 | 是 |
 
-## 支持的参数 {#supported-parameters}
+## 支援的引數 {#supported-parameters}
 
 ```json
 "uiAttributes":{
@@ -62,25 +62,25 @@ When [创建目标](../../authoring-api/destination-configuration/create-destina
 
 ### `documentationLink` {#documentation-link}
 
-`documentationLink` 是一个字符串参数，用于引用 [目标目录](../../../catalog/overview.md) 你的目的地。 Adobe Experience Platform中每个按产品分类的目标都必须具有相应的文档页面。 [了解如何创建目标文档页面](../../docs-framework/documentation-instructions.md) 你的目的地。 请注意，私有/自定义目标不需要此功能。
+`documentationLink` 是字串引數，會參照 [目的地目錄](../../../catalog/overview.md) 以取得您的目的地。 Adobe Experience Platform中每個產品化的目的地都必須有對應的檔案頁面。 [瞭解如何建立目的地檔案頁面](../../docs-framework/documentation-instructions.md) 以取得您的目的地。 請注意，私人/自訂目的地不需要此資訊。
 
-使用以下格式： `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en`.
+使用以下格式： `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是目的地的名稱。 針對名為Moviestar的目的地，您可以使用 `http://www.adobe.com/go/destinations-moviestar-en`.
 
-用户可以从UI的目标目录页面查看并访问您的文档链接。 他们需要浏览到您的目标卡，然后选择 **[!UICONTROL 更多操作]**，然后 **[!UICONTROL 查看文档]**，如下图所示。
+使用者可以從UI中的目的地目錄頁面檢視和瀏覽您的檔案連結。 他們需瀏覽至您的目的地卡片，然後選取 **[!UICONTROL 更多動作]**，然後 **[!UICONTROL 檢視檔案]**，如下圖所示。
 
-![显示文档链接位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-doc-link.png)
+![顯示檔案連結位置的UI影像。](../../assets/functionality/destination-configuration/ui-attributes-doc-link.png)
 
 >[!NOTE]
 >
->此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。
+>只有在Adobe將您的目的地設定為上線並發佈檔案後，此連結才有效。
 
 ### `category` {#category}
 
-`category` 是一个字符串参数，它引用分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](../../../destination-types.md). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`.
+`category` 是字串引數，會參照在Adobe Experience Platform中指派給您的目的地的類別。 如需詳細資訊，請閱讀 [目的地類別](../../../destination-types.md). 使用下列其中一個值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`.
 
-用户可以在目标目录的屏幕左侧看到目标类别列表，如下图所示。
+使用者可在目的地目錄的畫面左側看到目的地類別清單，如下圖所示。
 
-![显示目标类别位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-category.png)
+![顯示目的地類別位置的UI影像。](../../assets/functionality/destination-configuration/ui-attributes-category.png)
 
 <!-- ### `iconUrl` {#icon-url}
 
@@ -92,41 +92,41 @@ Users can see the icon on your destination card, as shown in the image below.
 
 ### `connectionType` {#connection-type}
 
-`connectionType` 是一个字符串参数，它引用连接类型，具体取决于目标。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul>
+`connectionType` 是字串引數，根據目的地而參考連線型別。 支援的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul>
 
-用户可以在 [浏览](../../../ui/destinations-workspace.md#browse) 选项卡。
+使用者可以在以下位置檢視目的地連線型別： [瀏覽](../../../ui/destinations-workspace.md#browse) 目的地工作區的索引標籤。
 
-![显示UI中连接类型位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-connection.png)
+![顯示UI中連線型別位置的UI影像。](../../assets/functionality/destination-configuration/ui-attributes-connection.png)
 
 ### `frequency` {#frequency}
 
-`frequency` 是一个字符串参数，它引用了目标支持的数据导出类型。 设置为 `Streaming` （对于基于API的集成），或 `Batch` 将文件导出到目标时。
+`frequency` 是字串引數，參考您的目的地支援的資料匯出型別。 設定為 `Streaming` 針對API型整合，或 `Batch` 將檔案匯出至目的地時。
 
-用户可以在 **[!UICONTROL 数据流运行]** 页面。
+使用者可以在以下位置檢視頻率型別： **[!UICONTROL 資料流執行]** 每個目的地連線的頁面。
 
-![显示UI中频率类型位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-frequency.png)
+![顯示UI中頻率型別位置的UI影像。](../../assets/functionality/destination-configuration/ui-attributes-frequency.png)
 
 ### `isBeta` {#isbeta}
 
-如果您通过Destination SDK创建的目标对有限数量的客户可用，则您可能需要将目标目录中的目标卡标记为测试版。
+如果您使用Destination SDK建立的目的地可供有限數量的客戶使用，您可能想要從目的地目錄將目的地卡片標示為測試版。
 
-为此，您可以使用 `isBeta: "true"` 用于正确标记目标卡的目标配置的UI属性部分中的参数。
+若要這麼做，您可以使用 `isBeta: "true"` 目的地設定的UI屬性區段中的引數，以適當地標籤目的地卡片。
 
-![显示标记为测试版的目标卡的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-isbeta.png)
+![顯示標示為測試版之目的地卡片的UI影像。](../../assets/functionality/destination-configuration/ui-attributes-isbeta.png)
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该能够更好地了解可以为目标配置的UI属性，以及用户在平台UI中将看到这些属性的位置。
+閱讀本文後，您應該更瞭解您可以為目的地設定哪些UI屬性，以及使用者將在Platform UI中的何處看到這些屬性。
 
-要了解有关其他目标组件的更多信息，请参阅以下文章：
+若要深入瞭解其他目的地元件，請參閱下列文章：
 
-* [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authentication.md)
-* [客户数据字段](customer-data-fields.md)
-* [架构配置](schema-configuration.md)
-* [身份命名空间配置](identity-namespace-configuration.md)
-* [目标投放](destination-delivery.md)
-* [受众元数据配置](audience-metadata-configuration.md)
-* [聚合策略](aggregation-policy.md)
-* [批量配置](batch-configuration.md)
-* [历史用户档案资格](historical-profile-qualifications.md)
+* [客戶驗證](customer-authentication.md)
+* [OAuth2驗證](oauth2-authentication.md)
+* [客戶資料欄位](customer-data-fields.md)
+* [結構描述設定](schema-configuration.md)
+* [身分名稱空間設定](identity-namespace-configuration.md)
+* [目的地傳遞](destination-delivery.md)
+* [對象中繼資料設定](audience-metadata-configuration.md)
+* [彙總原則](aggregation-policy.md)
+* [批次設定](batch-configuration.md)
+* [歷史設定檔資格](historical-profile-qualifications.md)

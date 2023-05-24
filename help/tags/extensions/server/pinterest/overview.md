@@ -1,7 +1,7 @@
 ---
-keywords: 事件转发扩展；pinterest;pinterest事件转发扩展
-title: Pinterest事件转发扩展
-description: 此Adobe Experience Platform事件转发扩展允许您根据业务要求将事件摄取到Pinterest。
+keywords: 事件轉送擴充功能；pinterest；pinterest事件轉送擴充功能
+title: pinterest事件轉送擴充功能
+description: 此Adobe Experience Platform事件轉送擴充功能可讓您將事件擷取至Pinterest，以滿足您的業務需求。
 last-substantial-update: 2023-04-27T00:00:00Z
 source-git-commit: 87c76ef4b95bc05a64d9d124d69c2a51b7b77c08
 workflow-type: tm+mt
@@ -10,165 +10,165 @@ ht-degree: 4%
 
 ---
 
-# [!DNL Pinterest] 事件转发扩展
+# [!DNL Pinterest] 事件轉送擴充功能
 
-[!DNL Pinterest] 是一个可视发现引擎，用于查找各种创意，如菜谱、家居装饰、风格灵感等。 有几十亿个针 [!DNL Pinterest]，也可以在 [!DNL Pinterest]. 您可以整理用户交互事件并利用 [!DNL Pinterest Analytics] 以了解用户行为并运行定向广告。
+[!DNL Pinterest] 是視覺探索引擎，用於尋找配方、家庭裝飾、風格靈感等概念。 有數十億個圖釘 [!DNL Pinterest]，也可在上與其他人共用 [!DNL Pinterest]. 您可以整理使用者互動事件並運用 [!DNL Pinterest Analytics] 以瞭解使用者行為並執行鎖定目標的廣告。
 
-的 [[!DNL Pinterest] 转化](https://developers.pinterest.com/docs/conversions/conversion-management/) API [事件转发](../../../ui/event-forwarding/overview.md) 扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Pinterest]. 本文档介绍扩展的用例、如何安装该扩展，以及如何将其功能集成到事件转发中 [规则](../../../ui/managing-resources/rules.md).
+此 [[!DNL Pinterest] 轉換](https://developers.pinterest.com/docs/conversions/conversion-management/) API [事件轉送](../../../ui/event-forwarding/overview.md) 擴充功能可讓您運用Adobe Experience Platform Edge Network中擷取的資料，並將其傳送至 [!DNL Pinterest]. 本檔案說明擴充功能的使用案例、安裝方式，以及如何將其功能整合至事件轉送中 [規則](../../../ui/managing-resources/rules.md).
 
-转化访问令牌是使用的身份验证方法 [!DNL Pinterest] 与交互时 [!DNL Pinterest] API。
+轉換存取權杖為使用的驗證方法 [!DNL Pinterest] 與互動時 [!DNL Pinterest] API。
 
 ## 用例
 
-如果要在 [!DNL Pinterest] 以利用其客户分析功能。
+如果您想要使用來自Edge Network的資料，請使用此擴充功能 [!DNL Pinterest] 以善用其Customer Analytics功能。
 
-例如，以组织中的营销团队为例。 团队从其网站中捕获用户交互事件数据并将其加载到 [!DNL Pinterest] 使用此事件转发扩展。
+例如，以組織中的行銷團隊為例。 團隊會從他們的網站擷取使用者互動事件資料，並將其載入到 [!DNL Pinterest] 使用此事件轉送擴充功能。
 
-然后，营销和分析团队可以利用 [!DNL Pinterest] Analytics功能可了解关键用户交互和行为，从而让您更好地了解用户并将他们定位到目标广告营销活动。
+行銷與分析團隊就可以善用 [!DNL Pinterest] Analytics功能，可瞭解關鍵使用者互動和行為，讓您更瞭解使用者，並針對鎖定目標的廣告促銷活動鎖定使用者。
 
-有关特定用例的更多信息 [!DNL Pinterest]，请参阅 [[!DNL Pinterest] 用例](https://business.pinterest.com/en/success-stories) 文档。
+如需特定使用案例的詳細資訊，請參閱 [!DNL Pinterest]，請參閱 [[!DNL Pinterest] 使用案例](https://business.pinterest.com/en/success-stories) 說明檔案。
 
-## [!DNL Pinterest] 先决条件 {#prerequisites}
+## [!DNL Pinterest] 必備條件 {#prerequisites}
 
-您必须拥有 [!DNL Pinterest] [业务帐户](https://help.pinterest.com/en/business/article/get-a-business-account) 以使用此扩展。 转到 [[!DNL Pinterest] 注册页面](https://www.pinterest.com/business/create/) 注册并创建帐户（如果尚未注册）。
+您必須具備有效的 [!DNL Pinterest] [商業帳戶](https://help.pinterest.com/en/business/article/get-a-business-account) 才能使用此擴充功能。 前往 [[!DNL Pinterest] 註冊頁面](https://www.pinterest.com/business/create/) 註冊並建立帳戶。
 
-您还需要 [!DNL Pinterest] 开发人员帐户，该帐户需要与您的 [!DNL Pinterest] 商业帐户。 要将您的开发人员帐户与您的业务帐户关联，请参阅 [[!DNL Pinterest ] 开发人员帐户](https://developers.pinterest.com/account-setup/).
+您還需要 [!DNL Pinterest] 開發人員帳戶，需要與您建立關聯 [!DNL Pinterest] 商業帳戶。 若要將您的開發人員帳戶與企業帳戶建立關聯，請參閱 [[!DNL Pinterest ] 開發人員帳戶](https://developers.pinterest.com/account-setup/).
 
-### 收集所需的配置详细信息 {#configuration-details}
+### 收集必要的設定詳細資料 {#configuration-details}
 
-要将Experience Platform连接到 [!DNL Pinterest]，则需要输入以下数据：
+為了將Experience Platform連線到 [!DNL Pinterest]，需要下列輸入：
 
-| 凭据 | 描述 | 示例 |
+| 認證 | 描述 | 示例 |
 | --- | --- | --- |
-| 广告帐户Id | 您的 [!DNL Pinterest] 广告帐户Id。 请参阅 [[!DNL Pinterest] 文档](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 以获取指导。 | 123456789012 |
-| 转化访问令牌 | 您的 [!DNL Pinterest] 转化访问令牌。 请参阅 [[!DNL Pinterest] 转化API](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token) 文档以供指导。 <br> **由于此令牌未过期，因此只需执行一次此操作。** | {YOUR_PINTEREST_BEARER_TOKEN} |
+| 廣告帳戶ID | 您的 [!DNL Pinterest] 廣告帳戶ID。 請參閱 [[!DNL Pinterest] 檔案](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 以取得指引。 | 123456789012 |
+| 轉換存取權杖 | 您的 [!DNL Pinterest] 轉換存取Token。 請參閱 [[!DNL Pinterest] 轉換API](https://developers.pinterest.com/docs/conversions/conversions/#Get%20the%20conversion%20token) 指引檔案。 <br> **您只需執行此動作一次，因為此Token並未過期。** | {YOUR_PINTEREST_BEARER_TOKEN} |
 
-## 安装和配置 [!DNL Pinterest] 扩展 {#install}
+## 安裝並設定 [!DNL Pinterest] 擴充功能 {#install}
 
-要安装扩展，请 [创建事件转发属性](../../../ui/event-forwarding/overview.md#properties) 或选择要编辑的现有属性。
+若要安裝擴充功能， [建立事件轉送屬性](../../../ui/event-forwarding/overview.md#properties) 或選擇現有屬性進行編輯。
 
-在左侧导航中，选择 **[!UICONTROL 扩展]**. 选择 **[!UICONTROL 安装]** 在 [!DNL Pinterest] 扩展 **[!UICONTROL 目录]** 选项卡。
+在左側導覽中，選取 **[!UICONTROL 擴充功能]**. 選取 **[!UICONTROL 安裝]** 在的卡片上 [!DNL Pinterest] 中的擴充功能 **[!UICONTROL 目錄]** 標籤。
 
-![显示 [!DNL Pinterest] 扩展 [!UICONTROL 安装] 突出显示。](../../../images/extensions/server/pinterest/install.png)
+![目錄顯示 [!DNL Pinterest] 擴充功能，搭配 [!UICONTROL 安裝] 反白顯示。](../../../images/extensions/server/pinterest/install.png)
 
 ### 配置 [!DNL Pinterest] 扩展
 
 >[!IMPORTANT]
 >
->根据您的实施需求，您可能需要先创建架构、数据元素和数据集，然后再配置该扩展。 请在开始之前查看所有配置步骤，以确定您需要为用例设置哪些实体。
+>根據您的實作需求，您可能需要在設定擴充功能前建立結構、資料元素和資料集。 開始之前，請先檢閱所有設定步驟，以決定您需要為使用案例設定的實體。
 
-在左侧导航中，选择 **[!UICONTROL 扩展]**. 选择 **[!UICONTROL 配置]** 在 [!DNL Pinterest] 扩展 [!UICONTROL 已安装]**选项卡。
+在左側導覽中，選取 **[!UICONTROL 擴充功能]**. 選取 **[!UICONTROL 設定]** 在的卡片上 [!DNL Pinterest] 中的擴充功能 [!UICONTROL 已安裝]**標籤。
 
-![[!DNL Pinterest] 扩展，如 [!UICONTROL 安装] 选项卡 [!UICONTROL 配置] 突出显示。](../../../images/extensions/server/pinterest/configure.png)
+![[!DNL Pinterest] 擴充功能顯示於 [!UICONTROL 安裝] 定位方式 [!UICONTROL 設定] 反白顯示。](../../../images/extensions/server/pinterest/configure.png)
 
-在下一个屏幕中，输入 [!UICONTROL 广告帐户Id] 和 [!UICONTROL 转化访问令牌] 之前在 [配置详细信息](#configuration-details) 中。 完成后，选择 **[!UICONTROL 保存]**.
+在下一個畫面中，輸入 [!UICONTROL 廣告帳戶ID] 和 [!UICONTROL 轉換存取權杖] 您之前收集於 [設定詳細資料](#configuration-details) 區段。 完成後，選取 **[!UICONTROL 儲存]**.
 
-![的 [!DNL Pinterest] [!UICONTROL 配置] 屏幕高亮显示 [!UICONTROL 广告帐户Id] 和 [!UICONTROL 转化访问令牌] 输入字段。](../../../images/extensions/server/pinterest/input.png)
+![此 [!DNL Pinterest] [!UICONTROL 設定] 熒幕醒目提示 [!UICONTROL 廣告帳戶ID] 和 [!UICONTROL 轉換存取權杖] 輸入欄位。](../../../images/extensions/server/pinterest/input.png)
 
-## 配置事件转发规则 {#config-rule}
+## 設定事件轉送規則 {#config-rule}
 
-设置所有数据元素后，您可以开始创建事件转发规则，以确定事件何时以及如何发送到 [!DNL Pinterest].
+設定好所有資料元素後，您就可以開始建立事件轉送規則，判斷將事件傳送至的時間和方式 [!DNL Pinterest].
 
-新建 [规则](../../../ui/managing-resources/rules.md) 在事件转发属性中。 在 **[!UICONTROL 操作]**，添加新操作并将扩展设置为 **[!UICONTROL Pinterest]**. 要将Adobe Experience Edge Network事件发送到 [!DNL Pinterest]，请设置 **[!UICONTROL 操作类型]** to **[!UICONTROL 发送事件].**
+建立新的 [規則](../../../ui/managing-resources/rules.md) 在事件轉送屬性中。 下 **[!UICONTROL 動作]**，新增動作並將擴充功能設為 **[!UICONTROL pinterest]**. 傳送Adobe Experience Edge Network事件至 [!DNL Pinterest]，設定 **[!UICONTROL 動作型別]** 至 **[!UICONTROL 傳送事件].**
 
-![的 [!DNL Pinterest] [!UICONTROL 发送事件] 规则创建。](../../../images/extensions/server/pinterest/rule.png)
+![此 [!DNL Pinterest] [!UICONTROL 傳送事件] 規則建立。](../../../images/extensions/server/pinterest/rule.png)
 
-选择后，将显示其他控件以进一步配置事件。 您需要映射 [!DNL Pinterest] 事件属性添加到您之前创建的数据元素。
+選取後，會出現其他控制項以進一步設定事件。 您需要對應 [!DNL Pinterest] 事件屬性至您先前建立的資料元素。
 
-### [!UICONTROL 事件数据]
+### [!UICONTROL 事件資料]
 
-创建新规则时需要以下事件数据：
-
-| 字段名称 | 描述 | 示例 |
-| --- | --- | --- | 
-| [!UICONTROL 活动名称] | 用户事件的类型。 但是，这可以是任何事件类型，用于利用 [!DNL Pinterest Analytics] 建议使用 [[!DNL Pinterest] 事件代码](https://help.pinterest.com/en/business/article/add-event-codes) | *结帐 <br> * add_to_cart <br> * page_visit <br> *注册 <br> * [用户定义的事件] |
-| [!UICONTROL 操作源] | 表示发生转化事件的位置的源。 | * app_android <br> * app_ios <br> * web <br> *脱机 |
-| [!UICONTROL 事件时间] | 这是指事件时间。 使用的默认时间格式为UNIX，格式为 `<seconds>.<miliseconds>` 取决于您的本地时区。 有关更多信息，请参阅 [[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/#operation/events/create). | 1433188255.500表示在纪元后1433188255秒和500毫秒，或2015年6月1日星期一7时:50:55 PM GMT。 |
-| [!UICONTROL 事件ID] | 一个唯一的ID字符串，用于标识此事件，并可用于在通过转化API和Pinterest跟踪摄取的事件之间进行重复数据删除。 如果没有此选项，事件的数据可能会被重复计数，并且会报告量度虚增。 | ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad |
-| [!UICONTROL 事件属性] | 包含事件自定义属性的JSON对象。 从提供原始JSON或使用一组简化的键值输入中进行选择。 | { &quot;event_source_url&quot;:&quot;http://site.com&quot; } |
-
-![的 [!DNL Pinterest] [!UICONTROL 事件数据] 在规则操作中突出显示。](../../../images/extensions/server/pinterest/event-data.png)
-
-可以配置以下事件属性：
-
-| 字段名称 | 描述 |
-| --- | --- |
-| 事件源URL | Web转化事件的URL。 |
-| 应用程序存储ID | 应用商店应用程序ID。 |
-| 应用程序名称 | 应用程序的名称。 |
-| Application Version | 应用程序的版本。 |
-| 设备品牌 | 用户使用的设备的品牌。 |
-| 设备载体 | 用户设备的移动运营商。 |
-| 设备型号 | 用户设备的型号。 |
-| Device Type | 用户使用的设备类型。 |
-| 操作系统版本 | 设备操作系统的版本。 |
-| 用户语言 | 表示用户语言的双字符ISO-639-1语言代码。 |
-
-### [!UICONTROL 用户数据]
-
-以下用户数据可由非必填字段输入：
+建立新規則需要下列事件資料：
 
 | 字段名称 | 描述 | 示例 |
 | --- | --- | --- | 
-| [!UICONTROL 电子邮件] | 用户电子邮件地址或用户地址电子邮件的SHA256哈希。 | ebd543592...f2b7e1 |
-| [!UICONTROL 移动广告ID] | 用户的“Google广告ID”(GAID)或“Apple的广告商标识符”(IDFA)的Sha256哈希 | ebd543592...f2b7e1 |
-| [!UICONTROL 客户端IP地址] | 用户的IP地址，可以采用IPv4或IPv6格式。 用于匹配。 | 192.168.0.1 |
-| [!UICONTROL 客户端用户代理] | 用户Web浏览器的用户代理字符串。 | Mozilla/5.0(平台；rv:geckoversion)Gecko/geckotrail Firefox/firefoxversion |
-| [!UICONTROL 客户信息数据] | 包含其他客户信息的JSON对象。 从提供原始JSON或使用一组简化的键值输入中进行选择。 | { &quot;ph&quot;:&quot;122333445&quot; } |
+| [!UICONTROL 活动名称] | 使用者事件的型別。 不過，這可以是任何事件型別，以便運用 [!DNL Pinterest Analytics] 建議使用 [[!DNL Pinterest] 事件代碼](https://help.pinterest.com/en/business/article/add-event-codes) | *結帳 <br> * add_to_cart <br> * page_visit <br> *註冊 <br> * [使用者定義的事件] |
+| [!UICONTROL 動作來源] | 表示轉換事件發生位置的來源。 | * app_android <br> * app_ios <br> *網頁 <br> *離線 |
+| [!UICONTROL 事件時間] | 這是指事件時間。 使用的預設時間格式為UNIX，格式為 `<seconds>.<miliseconds>` 視您的當地時區而定。 如需詳細資訊，請參閱 [[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/#operation/events/create). | 1433188255.500表示在epoch之後的1433188255秒和500毫秒，或2015年6月1日星期一的7秒:50:格林威治標準時間下午55點。 |
+| [!UICONTROL 事件ID] | 此唯一ID字串可識別此事件，並可用於透過轉換API和Pinterest追蹤所擷取事件之間的重複資料刪除。 若沒有此專案，事件的資料可能會重複計算，並回報量度膨脹。 | ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad |
+| [!UICONTROL 事件屬性] | 包含事件的自訂屬性的JSON物件。 從提供原始JSON或使用一組簡化的鍵值輸入進行選取。 | { &quot;event_source_url&quot;： &quot;http://site.com&quot; } |
 
-![的 [!DNL Pinterest] [!UICONTROL 用户数据] 在规则操作中突出显示。](../../../images/extensions/server/pinterest/user-data.png)
+![此 [!DNL Pinterest] [!UICONTROL 事件資料] 在「規則」動作中反白顯示。](../../../images/extensions/server/pinterest/event-data.png)
 
-可配置的客户信息属性包括：
+可設定下列事件屬性：
 
 | 字段名称 | 描述 |
 | --- | --- |
-| Phone | 用户联系电话。 只接受数字，并且应使用国家/地区代码、地区代码和数字输入。 |
-| 性别 | 性别可以输入为“f”（女性）、“m”（男性）或“n”（非二进制）。 |
-| 出生日期 | 出生日期，按年、月和日输入。 |
-| 姓氏 | 用户的姓氏。 |
-| 名字 | 用户的名字。 |
-| 城市 | 用户的居住城市。 此功能主要用于计费目的。 |
-| State | 用户的状态，以小写形式提供为双字母代码。 |
-| 邮政编码 | 用户的zipcode，主要用于计费目的。 |
-| 国家/地区 | 双字符ISO-3166国家/地区代码，用于指示用户的国家/地区。 |
-| 外部ID | 广告商中用于标识其空间中用户的唯一ID。 例如，用户ID、忠诚度ID等。 |
-| 点击ID | 域的_epik Cookie中存储的唯一标识符或URL的&amp;epik=查询参数中存储的唯一标识符。 |
+| 事件來源URL | 網頁轉換事件的URL。 |
+| 應用程式存放區ID | 應用程式商店應用程式ID。 |
+| 应用程序名称 | 應用程式的名稱。 |
+| Application Version | 應用程式的版本。 |
+| 裝置品牌 | 使用者正在使用的裝置品牌。 |
+| 裝置載體 | 使用者裝置的行動電信業者。 |
+| 裝置型號 | 使用者裝置的型號。 |
+| Device Type | 使用者使用的裝置型別。 |
+| 作業系統版本 | 裝置的作業系統版本。 |
+| 使用者語言 | 表示使用者語言的雙字元ISO-639-1語言代碼。 |
+
+### [!UICONTROL 使用者資料]
+
+下列使用者資料可由輸入，這些不是必填欄位：
+
+| 字段名称 | 描述 | 示例 |
+| --- | --- | --- | 
+| [!UICONTROL 电子邮件] | 使用者電子郵件地址或使用者地址電子郵件的SHA256雜湊。 | ebd543592...f2b7e1 |
+| [!UICONTROL 行動廣告ID] | 使用者的「Google Advertising ID」(GAID)或「Apple的廣告商識別碼」(IDFA)的Sha256雜湊 | ebd543592...f2b7e1 |
+| [!UICONTROL 使用者端IP位址] | 使用者的IP位址，可以是IPv4或IPv6格式。 用於比對。 | 192.168.0.1 |
+| [!UICONTROL 使用者端使用者代理] | 使用者網頁瀏覽器的使用者代理字串。 | Mozilla/5.0 （平台；rv：geckoversion） Gecko/geckotrail Firefox/firefoxversion |
+| [!UICONTROL 客戶資訊資料] | 包含其他客戶資訊的JSON物件。 從提供原始JSON或使用一組簡化的鍵值輸入進行選取。 | { &quot;ph&quot;： &quot;122333445&quot; } |
+
+![此 [!DNL Pinterest] [!UICONTROL 使用者資料] 在「規則」動作中反白顯示。](../../../images/extensions/server/pinterest/user-data.png)
+
+可設定的客戶資訊屬性包括：
+
+| 字段名称 | 描述 |
+| --- | --- |
+| Phone | 使用者聯絡電話。 只接受數字，並應使用國碼、區碼和數字輸入。 |
+| 性别 | 性別可以輸入為「f」代表女性、「m」代表男性、或「n」代表非二進位。 |
+| 出生日期 | 以年、月、日形式輸入的出生日期。 |
+| 姓氏 | 使用者的姓氏。 |
+| 名字 | 使用者的名字。 |
+| 城市 | 使用者的居住城市。 這主要用於計費目的。 |
+| State | 使用者狀態，以小寫提供為兩個字母的程式碼。 |
+| 邮政编码 | 使用者的郵遞區號，主要用於計費用途。 |
+| 国家/地区 | 表示使用者國家/地區的兩個字元ISO-3166國家/地區代碼。 |
+| 外部ID | 來自廣告商的唯一ID，可識別其空間中的使用者。 例如，使用者ID、忠誠度ID等。 |
+| 點按ID | 儲存在網域上_epik Cookie或URL中&amp;epik=查詢引數的唯一識別碼。 |
 
 >[!IMPORTANT]
 >
->在将数据发送到 [!DNL Pinterest] API端点，扩展将对以下字段的值进行哈希和标准化：电子邮件、电话号码、名字、姓氏、性别、出生日期、城市、州、邮政编码、国家/地区和外部ID。 如果SHA256字符串已存在，则扩展将不会对这些字段的值进行哈希处理。
+>將資料傳送至之前 [!DNL Pinterest] API端點，擴充功能會將下列欄位的值雜湊並正規化：電子郵件、電話號碼、名字、姓氏、性別、出生日期、城市、州、郵遞區號、國家/地區和外部ID。 如果已經存在SHA256字串，擴充功能將不會雜湊這些欄位的值。
 
-### [!UICONTROL 自定义数据]
+### [!UICONTROL 自訂資料]
 
-可以为规则输入以下自定义数据：
+您可以為規則輸入下列自訂資料：
 
 | 字段名称 | 描述 |
 | --- | --- |
-| 货币 | ISO-4217货币代码。 如果未提供， [!DNL Pinterest] 将默认使用在帐户创建期间设置的广告商货币。 |
-| 值 | 事件的总值。 在请求中接受为字符串。 这将被解析为一个双位数。 |
-| 搜索字符串 | 与用户转化事件相关的搜索字符串。 |
-| 订单ID | 订单ID。 发送 `order_id` 将提供帮助 [!DNL Pinterest] 必要时删除重复事件。 |
-| 产品数量 | 事件的产品总数。 例如，结帐事件中购买的项目总数。 |
-| 内容ID | 产品ID的列表（数组）。 |
-| 内容 | 包含产品信息（如价格和数量）的对象列表（数组）。 |
+| 货币 | ISO-4217貨幣代碼。 如果未提供， [!DNL Pinterest] 將預設為在帳戶建立期間設定的廣告商貨幣。 |
+| 值 | 事件的總值。 已接受為請求中的字串。 這將會剖析為雙位數。 |
+| 搜尋字串 | 與使用者轉換事件相關的搜尋字串。 |
+| 訂單ID | 訂單ID。 傳送中 `order_id` 會有所幫助 [!DNL Pinterest] 必要時刪除重複事件。 |
+| 產品數量 | 事件的產品總數。 例如，在結帳事件中購買的專案總數。 |
+| 內容ID | 產品ID清單（陣列）。 |
+| 内容 | 包含產品相關資訊（例如價格和數量）的物件清單（陣列）。 |
 
-![的 [!DNL Pinterest] [!UICONTROL 自定义数据] 在规则操作中突出显示。](../../../images/extensions/server/pinterest/custom-data.png)
+![此 [!DNL Pinterest] [!UICONTROL 自訂資料] 在「規則」動作中反白顯示。](../../../images/extensions/server/pinterest/custom-data.png)
 
-## 在中验证数据 [!DNL Pinterest]
+## 驗證中的資料 [!DNL Pinterest]
 
-创建并执行事件转发规则后，验证是否将事件发送到 [!DNL Pinterest] API会按预期显示在 [!DNL Pinterest] UI。
+建立並執行事件轉送規則後，請驗證是否已將事件傳送至 [!DNL Pinterest] API會如預期般顯示在中 [!DNL Pinterest] UI。
 
-如果事件集合和 [!DNL Experience Platform] 集成成功后，您将在 [!DNL Pinterest] UI。
+如果事件集合和 [!DNL Experience Platform] 整合成功，您將會在 [!DNL Pinterest] UI。
 
-![的 [!DNL Pinterest] 事件管理器](../../../images/extensions/server/pinterest/event-history.png)
+![此 [!DNL Pinterest] 事件管理員](../../../images/extensions/server/pinterest/event-history.png)
 
-您可以进一步深入查看 [!DNL Pinterest] 事件数据分发。
+您可以進一步鑽研並檢視 [!DNL Pinterest] 事件資料分佈。
 
-![的 [!DNL Pinterest] 数据分布](../../../images/extensions/server/pinterest/event-history-distribution.png)
+![此 [!DNL Pinterest] 資料分佈](../../../images/extensions/server/pinterest/event-history-distribution.png)
 
 ## 后续步骤
 
-本指南介绍了如何安装和配置 [!DNL Pinterest] 事件转发UI中的扩展。 有关更多信息，请参阅官方文档：
+本指南說明如何安裝和設定 [!DNL Pinterest] UI中的事件轉送擴充功能。 如需詳細資訊，請參閱正式檔案：
 
 * [[!DNL Pinterest] API](https://developers.pinterest.com/docs/api/v5/)
-* [[!DNL Pinterest] 转化API概述](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions)
+* [[!DNL Pinterest] 轉換API概觀](https://help.pinterest.com/en/business/article/the-pinterest-api-for-conversions)

@@ -1,7 +1,7 @@
 ---
-keywords: 目标；adobe experience platform；平台；目标概述；激活数据；激活
+keywords: 目的地；adobe experience platform；平台；目的地概觀；啟用資料；啟用；
 title: 目标概述
-description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+description: 目的地是預先建立的與目的地平台的整合，可無縫地從Adobe Experience Platform啟用資料。 您可以使用Adobe Experience Platform中的目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
 source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
 workflow-type: tm+mt
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # [!DNL Destinations] 概述 {#overview}
 
-![目标概述横幅](./assets/overview/destinations-overview-banner.png)
+![目的地概觀橫幅](./assets/overview/destinations-overview-banner.png)
 
-**[!DNL Destinations]** 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+**[!DNL Destinations]** 是預先建立的與目標平台的整合，可無縫啟用Adobe Experience Platform的資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -23,80 +23,80 @@ ht-degree: 0%
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
 
-## 目标和来源 {#destinations-and-sources}
+## 目的地和來源 {#destinations-and-sources}
 
-Platform的核心功能之一是摄取第一方数据并根据业务需求对其进行激活。 使用 [来源](../sources/home.md) 将数据摄取到平台和目标以从平台导出数据。
+Platform的核心功能之一，就是擷取您的第一方資料，並根據您的業務需求加以啟用。 使用 [來源](../sources/home.md) 將資料內嵌至Platform和目的地，以從Platform匯出資料。
 
-## 目标步骤 {#steps}
+## 目的地步驟 {#steps}
 
-* 从 [自助目录](./catalog/overview.md) 平台中所有可用目标的目标数量。
-* 使用目标将用户档案或区段发送到营销自动化平台、数字广告平台等。
-* 计划定期向首选目标导出数据。
+* 從 [自助服務目錄](./catalog/overview.md) Platform中可用的所有目的地。
+* 使用目的地將設定檔或區段傳送至行銷自動化平台、數位廣告平台等。
+* 排程資料定期匯出至您偏好的目的地。
 
-## 控件 {#controls}
+## 控制項 {#controls}
 
-中的控件 [目标工作区](./ui/destinations-workspace.md) 允许您：
+中的控制項 [目的地工作區](./ui/destinations-workspace.md) 允許您：
 
-* 浏览可激活数据的目标平台目录；
-* 创建、编辑、激活和禁用数据流到目录中目标的数据流；
-* 在存储位置创建帐户或将平台链接到目标平台中的帐户；
-* 选择应激活到目标的区段；
-* 选择 [体验数据模型(XDM)字段](../xdm/home.md) 用于在将区段激活到电子邮件营销目标时导出。
+* 瀏覽可啟用資料的目的地平台目錄；
+* 建立、編輯、啟用和停用資料流到目錄中的目的地；
+* 在儲存位置中建立帳戶，或將Platform連結至目的地平台中的帳戶；
+* 選取應該對目的地啟用的區段；
+* 選擇哪一個 [體驗資料模型(XDM)欄位](../xdm/home.md) 以於啟用區段至電子郵件行銷目的地時匯出。
 
-## 目标类型和类别 {#types-and-categories}
+## 目的地型別和類別 {#types-and-categories}
 
-通过Experience Platform，您可以将数据激活到各种类型的目标，以满足您的激活用例。 目标范围从基于API的集成到与文件接收系统的集成、配置文件查找目标等。 有关所有可用目标的详细信息，请参阅 [目标类型和类别概述](./destination-types.md).
+透過Experience Platform，您可以對各種型別的目的地啟用資料，以滿足您的啟用使用案例。 目標範圍從API式整合，到與檔案接收系統、設定檔查詢目的地等的整合。 如需所有可用目的地的詳細資訊，請參閱 [目的地型別和類別概觀](./destination-types.md).
 
-## 目标和访问控制 {#access-controls}
+## 目的地和存取控制 {#access-controls}
 
-Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请参阅 [Adobe Experience Platform中的访问控制](../access-control/home.md) 并向下滚动到页面底部。
+Platform中的目標功能可搭配Adobe Experience Platform存取控制許可權使用。 您可以檢視、管理和啟用目的地，實際取決於您的使用者許可權等級。 如需個別許可權的相關資訊，請參閱 [Adobe Experience Platform中的存取控制](../access-control/home.md) 並向下捲動至頁面底部。
 
-下表概述了对目标执行某些操作所需的权限和权限组合：
+下表概述對目的地執行特定動作所需的許可權和許可權組合：
 
-| 权限级别 | 描述 |
+| 許可權層級 | 描述 |
 | ---- | ----|
-| **[!UICONTROL 管理目标]** | 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). |
-| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 将区段激活到目标并启用 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
-| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 将区段激活到目标并隐藏 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 工作流中，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 在无映射的情况下激活区段]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目的地]** | 若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** | 若要啟用目的地的區段並啟用 [對應步驟](ui/activate-batch-profile-destinations.md#mapping) 的工作流程中，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 啟用區段而不進行對應]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** | 若要對目的地啟用區段並隱藏 [對應步驟](ui/activate-batch-profile-destinations.md#mapping) 的工作流程中，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 啟用區段而不進行對應]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). |
 
 {style="table-layout:auto"}
 
-有关访问控制的更多信息，请参阅 [访问控制用户指南](../access-control/ui/overview.md).
+如需存取控制的詳細資訊，請參閱 [存取控制使用手冊](../access-control/ui/overview.md).
 
-### 目标基于属性的访问控制 {#attribute-based-access}
+### 目的地的屬性型存取控制 {#attribute-based-access}
 
-通过Adobe Experience Platform中基于属性的访问控制，管理员可以基于属性控制对特定对象和/或功能的访问。
+Adobe Experience Platform中基於屬性的存取控制可讓管理員根據屬性控制對特定物件和/或權能的存取。
 
-通过基于属性的访问控制，您可以将映射配置应用到您有权访问的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据导出到目标。
+透過以屬性為基礎的存取控制，您可以將對應設定套用至您擁有許可權的欄位。 此外，如果您無法存取資料集中的所有欄位，就無法將資料匯出至目的地。
 
-有关目标如何使用基于属性的访问控制的更多信息，请阅读 [基于属性的访问控制概述](../access-control/abac/overview.md#destinations).
+如需目的地如何使用屬性型存取控制的詳細資訊，請參閱 [屬性型存取控制概觀](../access-control/abac/overview.md#destinations).
 
-## 目标监控 {#destinations-monitoring}
+## 目的地監視 {#destinations-monitoring}
 
-在建立与目标的连接并完成激活工作流后，您可以监控向接收系统导出的数据。 阅读 [在UI中监控数据流到目标的指南](/help/dataflows/ui/monitor-destinations.md) 以了解更多信息。
+在建立與目的地的連線並完成啟動工作流程後，您可以監控匯出至接收系統的資料。 閱讀 [在UI中監控資料流到目的地的指南](/help/dataflows/ui/monitor-destinations.md) 以取得詳細資訊。
 
-您还可以验证数据是否成功传入您的目标。 目录中的大多数目标文档页面都具有 *验证数据导出部分*，指示如何在目标平台中检查数据是否从Experience Platform成功导入。
+您也可以驗證資料是否成功到達您的目的地。 目錄中的大多數目的地檔案頁面都有 *驗證資料匯出區段*，可指示您如何從目的地平台簽入資料是否已成功從Experience Platform匯入。
 
-## 在将数据激活到目标方面的数据管理限制 {#data-governance}
+## 將資料啟用至目的地的資料治理限制 {#data-governance}
 
-通过以下方式为Platform目标强制实施数据管理：
+透過下列方式，對Platform目的地強制執行資料控管：
 
-* *营销操作* ，您可以在创建目标工作流中选择；
-* *数据使用策略* 将包含某些使用标签的数据限制为通过特定营销操作激活到目标。
+* *行銷動作* 在「建立目的地」工作流程中選取的專案；
+* *資料使用原則* 限制將包含特定使用標籤的資料啟用至具有特定行銷動作的目的地。
 
-有关 [营销行动](../data-governance/policies/overview.md) 和 [解决数据策略违规问题](../data-governance/enforcement/auto-enforcement.md).
+如需有關的詳細資訊，請參閱Platform檔案中的資料控管 [行銷動作](../data-governance/policies/overview.md) 和 [解決資料原則違規](../data-governance/enforcement/auto-enforcement.md).
 
-有关在创建目标工作流中选择营销操作的更多信息，请参阅Platform中不同目标类型的以下页面：
+如需在建立目標工作流程中選取行銷動作的詳細資訊，請參閱Platform中不同目標型別的下列頁面：
 
-* [广告目标 — Google Ad Manager ](./catalog/advertising/google-ad-manager.md)
-* [广告目标 — Google广告](./catalog/advertising/google-ads-destination.md)
-* [广告目标 — Google显示和视频360 ](./catalog/advertising/google-dv360.md)
-* [云存储目标](./catalog/cloud-storage/overview.md)
-* [电子邮件营销目标](./catalog/email-marketing/overview.md)
-* [社交目标](./catalog/social/overview.md)
+* [廣告目的地 — Google廣告管理員 ](./catalog/advertising/google-ad-manager.md)
+* [Advertising目的地 — Google Ads](./catalog/advertising/google-ads-destination.md)
+* [廣告目的地 — Google Display &amp; Video 360 ](./catalog/advertising/google-dv360.md)
+* [雲端儲存空間目的地](./catalog/cloud-storage/overview.md)
+* [電子郵件行銷目的地](./catalog/email-marketing/overview.md)
+* [社交目的地](./catalog/social/overview.md)
 
-有关区段激活工作流中违反数据策略的更多信息，请参阅 **[!UICONTROL 审阅]** 步骤：
+如需區段啟用工作流程中資料原則違規的詳細資訊，請參閱 **[!UICONTROL 檢閱]** 請逐步執行下列指南：
 
-* [将受众数据激活到流区段导出目标](./ui/activate-segment-streaming-destinations.md#review)
-* [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md#review)
-* [激活受众数据以批量配置文件导出目标](./ui/activate-batch-profile-destinations.md#review)
+* [啟用串流區段匯出目的地的受眾資料](./ui/activate-segment-streaming-destinations.md#review)
+* [將受眾資料啟用至串流設定檔匯出目的地](./ui/activate-streaming-profile-destinations.md#review)
+* [啟用對象資料以批次設定檔匯出目的地](./ui/activate-batch-profile-destinations.md#review)

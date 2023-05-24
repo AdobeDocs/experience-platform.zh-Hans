@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理；测试
+keywords: Experience Platform；首頁；熱門主題；原則執行；自動執行；API型執行；資料控管；測試
 solution: Experience Platform
-title: 使用策略服务API强制实施数据使用策略
+title: 使用原則服務API強制執行資料使用原則
 type: Tutorial
-description: 为数据创建数据使用标签并针对这些标签创建营销操作的使用策略后，您可以使用策略服务API来评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，以根据API响应处理策略违规。
+description: 一旦您為資料建立了資料使用標籤，並針對這些標籤建立了行銷動作的使用原則，您就可以使用原則服務API來評估對資料集或任意一組標籤執行的行銷動作是否構成原則違規。 然後，您可以設定自己的內部通訊協定，以根據API回應處理原則違規。
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
@@ -12,30 +12,30 @@ ht-degree: 1%
 
 ---
 
-# 使用 [!DNL Policy Service] API
+# 使用強制執行資料使用原則 [!DNL Policy Service] API
 
-为数据创建数据使用情况标签并为针对这些标签的营销操作创建使用策略后，您便可以使用 [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) 评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，以根据API响应处理策略违规。
+一旦您建立了資料的資料使用標籤，並針對這些標籤建立了行銷動作的使用原則，您就可以使用 [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) 評估在資料集或任意一組標籤上執行的行銷動作是否構成原則違規。 然後，您可以設定自己的內部通訊協定，以根據API回應處理原則違規。
 
 >[!NOTE]
 >
->默认情况下，只有状态设置为 `ENABLED` 可以参与评估。 允许 `DRAFT` 要参与评估的策略，必须包含查询参数 `includeDraft=true` 在请求路径中。
+>依預設，只有狀態設定為的原則 `ENABLED` 可以參與評估。 允許 `DRAFT` 要參與評估的原則，您必須包括查詢引數 `includeDraft=true` 在請求路徑中。
 
-本文档提供了有关如何使用 [!DNL Policy Service] 用于检查不同情况下是否存在策略违规的API。
+本檔案提供如何使用 [!DNL Policy Service] API可檢查不同情境中的原則違規。
 
 ## 快速入门
 
-本教程需要对实施数据使用策略时涉及的以下关键概念有一定的了解：
+本教學課程需要您深入瞭解下列實施資料使用原則的重要概念：
 
-* [数据管理](../home.md):框架 [!DNL Platform] 强制实施数据使用合规性。
-   * [数据使用标签](../labels/overview.md):数据使用情况标签会应用于数据集（和/或这些数据集中的各个字段），从而指定数据使用方式的限制。
-   * [数据使用策略](../policies/overview.md):数据使用策略是描述针对某些数据使用标签集允许或限制的营销操作类型的规则。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [資料控管](../home.md)：作為依據的框架 [!DNL Platform] 強制資料使用規範。
+   * [資料使用標籤](../labels/overview.md)：資料使用標籤會套用至資料集（和/或這些資料集中的個別欄位），並指定該資料使用方式的限制。
+   * [資料使用原則](../policies/overview.md)：資料使用原則是描述允許或限制某些資料使用標籤集的行銷動作型別的規則。
+* [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Policy Service] API，包括所需的标头以及如何读取示例API调用。
+在開始本教學課程之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需您成功對 [!DNL Policy Service] API，包括必要的標頭以及如何讀取範例API呼叫。
 
-## 使用标签和营销操作进行评估
+## 使用標籤和行銷動作進行評估
 
-您可以通过测试针对数据集中假设存在的一组数据使用标签的营销操作来评估策略。 这是通过使用 `duleLabels` 查询参数，其中以逗号分隔的值列表形式提供标签，如以下示例所示。
+您可以根據一組假設會出現在資料集中的資料使用標籤來測試行銷動作，以評估原則。 這是透過使用 `duleLabels` 查詢引數，其中標籤是以逗號分隔的值清單提供，如以下範例所示。
 
 **API格式**
 
@@ -46,16 +46,16 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与您评估的数据使用策略关联的营销操作的名称。 |
-| `{LABEL_1}` | 用于测试营销操作的数据使用标签。 必须至少提供一个标签。 提供多个标签时，必须用逗号分隔这些标签。 |
+| `{MARKETING_ACTION_NAME}` | 與您正在評估的資料使用原則相關聯的行銷動作名稱。 |
+| `{LABEL_1}` | 用來測試行銷動作的資料使用標籤。 至少必須提供一個標籤。 提供多個標籤時，必須以逗號分隔。 |
 
 **请求**
 
-以下请求测试 `exportToThirdParty` 针对标签的营销行动 `C1` 和 `C3`. 由于您在本教程前面创建的数据使用策略定义了 `C1` 标签为 `deny` 条件时，营销操作应触发策略违规。
+以下請求會測試 `exportToThirdParty` 針對標籤的行銷動作 `C1` 和 `C3`. 由於您先前在本教學課程中建立的資料使用原則會定義 `C1` 標籤為其中一項 `deny` 條件的原則運算式中，行銷動作應觸發原則違規。
 
 >[!NOTE]
 >
->数据使用情况标签区分大小写。 仅当策略表达式中定义的标签与其策略表达式完全匹配时，才会发生策略违规。 在本例中， `C1` 标签会触发违规，而 `c1` 标签不会。
+>資料使用標籤區分大小寫。 只有當原則運算式中定義的標籤完全相符時，才會發生原則違規。 在此範例中， `C1` 標籤會觸發違規，而 `c1` 標籤不會。
 
 ```shell
 curl -X GET \
@@ -68,7 +68,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回营销操作的URL、测试该操作所针对的使用情况标签，以及由于针对这些标签测试该操作而违反的任何策略的列表。 在此示例中，“将数据导出到第三方”策略显示在 `violatedPolicies` 数组，指示营销操作触发了预期的策略违规。
+成功回應會傳回行銷動作的URL、測試該動作時所用的使用標籤，以及針對這些標籤測試該動作所違反的任何原則清單。 在此範例中，「將資料匯出至第三方」原則顯示在 `violatedPolicies` 陣列，指出行銷動作觸發了預期的原則違規。
 
 ```json
 {
@@ -128,11 +128,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `violatedPolicies` | 列出测试营销操作(在 `marketingActionRef`) `duleLabels`. |
+| `violatedPolicies` | 陣列會列出測試行銷動作所違反的任何原則(指定於 `marketingActionRef`)與提供的 `duleLabels`. |
 
-## 使用数据集评估
+## 使用資料集進行評估
 
-您可以通过针对一个或多个可从中收集标签的数据集测试营销操作来评估数据使用策略。 这是通过向 `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` 和在请求正文中提供数据集ID，如以下示例所示。
+您可以針對可收集標籤的一或多個資料集測試行銷動作，以評估資料使用原則。 這可透過向發出POST請求來完成 `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` 並在請求內文中提供資料集ID，如下列範例所示。
 
 **API格式**
 
@@ -143,11 +143,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与您评估的策略关联的营销操作的名称。 |
+| `{MARKETING_ACTION_NAME}` | 與您正在評估之原則相關聯的行銷動作名稱。 |
 
 **请求**
 
-以下请求测试 `exportToThirdParty` 营销操作。 数据集由有效负载中提供的数组中的类型和ID引用。
+以下請求會測試 `exportToThirdParty` 針對三個不同資料集執行行銷動作。 資料集由承載中提供的陣列中的型別和ID引用。
 
 ```shell
 curl -X POST \
@@ -181,13 +181,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityType` | 有效负载数组中的每个项目必须指示正在定义的实体类型。 对于此用例，值将始终为“dataSet”。 |
-| `entityId` | 有效负载数组中的每个项目都必须提供数据集的唯一ID。 |
-| `entityMeta.fields` | （可选） [JSON指针](../../landing/api-fundamentals.md#json-pointer) 字符串，引用数据集架构中的特定字段。 如果包含此数组，则只有数组中包含的字段会参与评估。 阵列中未包含的任何架构字段将不会参与评估。<br><br>如果未包含此字段，则数据集架构内的所有字段都将包含在评估中。 |
+| `entityType` | 承載陣列中的每個專案都必須指出所定義的實體型別。 對於此使用案例，值將一律為「dataSet」。 |
+| `entityId` | 承載陣列中的每個專案都必須提供資料集的唯一ID。 |
+| `entityMeta.fields` | （選用）一系列 [JSON指標](../../landing/api-fundamentals.md#json-pointer) 字串，參照資料集結構描述中的特定欄位。 如果包含此陣列，則只有陣列中包含的欄位會參與評估。 陣列中未包含的任何結構描述欄位都不會參與評估。<br><br>如果未包含此欄位，則資料集結構描述中的所有欄位都將包含在評估中。 |
 
 **响应**
 
-成功的响应会返回营销操作的URL、从提供的数据集收集的使用情况标签，以及由于针对这些标签测试操作而违反的任何策略的列表。 在此示例中，“将数据导出到第三方”策略显示在 `violatedPolicies` 数组，指示营销操作触发了预期的策略违规。
+成功的回應會傳回行銷動作的URL、從提供的資料集收集的使用情況標籤，以及針對這些標籤測試動作所違反的任何原則清單。 在此範例中，「將資料匯出至第三方」原則顯示在 `violatedPolicies` 陣列，指出行銷動作觸發了預期的原則違規。
 
 ```json
 {
@@ -368,12 +368,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `duleLabels` | 从请求有效负载中提供的数据集提取的数据使用标签列表。 |
-| `discoveredLabels` | 请求有效负载中提供的数据集列表，其中显示了在每个请求中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 列出测试营销操作(在 `marketingActionRef`) `duleLabels`. |
+| `duleLabels` | 從要求裝載中提供的資料集擷取的資料使用標籤清單。 |
+| `discoveredLabels` | 請求承載中提供的資料集清單，顯示可在每個資料集中找到之資料集層級和欄位層級標籤。 |
+| `violatedPolicies` | 陣列會列出測試行銷動作所違反的任何原則(指定於 `marketingActionRef`)與提供的 `duleLabels`. |
 
 ## 后续步骤
 
-通过阅读本文档，您可以在对数据集或一组数据使用标签执行营销操作时成功检查是否存在策略违规。 使用API响应中返回的数据，您可以在体验应用程序中设置协议，以在发生策略违规时相应地强制执行这些协议。
+透過閱讀本檔案，您在對資料集或一組資料使用標籤執行行銷動作時，已成功檢查原則違規。 您可以使用API回應中傳回的資料，在體驗應用程式中設定通訊協定，以便在發生原則違規時適當地強制執行。
 
-有关Platform如何为激活的区段自动提供策略强制的信息，请参阅 [自动执行](./auto-enforcement.md).
+如需Platform如何自動為已啟用的區段提供原則執行的資訊，請參閱以下指南： [自動執行](./auto-enforcement.md).

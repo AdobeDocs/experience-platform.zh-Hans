@@ -1,6 +1,6 @@
 ---
-title: 数据集示例
-description: 查询服务示例数据集使您能够对大数据进行探索性查询，同时极大地缩短了处理时间，同时也降低了查询准确性。 本指南提供了有关如何管理示例以便进行近似查询处理的信息
+title: 資料集範例
+description: 查詢服務範例資料集可讓您對大資料執行探索性查詢，並大幅減少處理時間，但代價是查詢準確性。 本指南提供如何管理範例以進行近似查詢處理的資訊
 exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
 source-git-commit: 13779e619345c228ff2a1981efabf5b1917c4fdb
 workflow-type: tm+mt
@@ -9,50 +9,50 @@ ht-degree: 0%
 
 ---
 
-# 数据集示例
+# 資料集範例
 
-Adobe Experience Platform查询服务提供示例数据集作为其近似查询处理功能的一部分。 使用现有的统一随机样本创建示例数据集 [!DNL Azure Data Lake Storage] (ADLS)仅使用原始数据中某个百分比记录的数据集。 此百分比称为采样率。 通过调整采样率以控制准确性和处理时间的平衡，您可以对大数据进行探索性查询，并大大减少了处理时间，同时也降低了查询准确性。
+Adobe Experience Platform查詢服務提供範例資料集，作為其近似查詢處理功能的一部分。 範例資料集是以現有的均勻隨機範例建立的 [!DNL Azure Data Lake Storage] (ADLS)資料集只會使用原始資料記錄的一個百分比。 此百分比稱為取樣率。 調整取樣率以控制精確度和處理時間的平衡，可讓您對大資料進行探索性查詢，並大幅減少處理時間，但代價是查詢精確度。
 
-由于许多用户在数据集上的聚合操作不需要确切的答案，因此发出近似查询以返回近似答案对于大型数据集上的探索性查询更有效。 由于示例数据集仅包含原始数据集中某一百分比的数据，因此您可以使用查询准确性来缩短响应时间。 在读取时，查询服务必须扫描的行数少，这样产生的结果比查询整个数据集的速度要快。
+由於許多使用者不需要資料集彙總操作的確切答案，因此對大型資料集發出近似查詢以傳回近似答案會更有效率。 由於範例資料集僅包含原始資料集中資料的一個百分比，因此可讓您以查詢正確性換取改善的回應時間。 在讀取時，查詢服務必須掃描的列數較少，產生的結果速度比您查詢整個資料集的速度更快。
 
-为了帮助您管理用于近似查询处理的示例，查询服务支持对数据集示例执行以下操作：
+為協助您管理近似查詢處理的範例，查詢服務支援下列資料集範例操作：
 
-- [创建统一的随机数据集示例。](#create-a-sample)
-- [（可选）指定筛选条件](##optional-filter-criteria)
-- [查看ADLS表的示例列表。](#view-list-of-samples)
-- [直接查询示例数据集。](#query-sample-datasets)
-- [删除示例。](#delete-a-sample)
-- 删除原始ADLS表时关联的示例。
+- [建立統一的隨機資料集範例。](#create-a-sample)
+- [選擇性地指定篩選條件](##optional-filter-criteria)
+- [檢視ADLS表格的範例清單。](#view-list-of-samples)
+- [直接查詢範例資料集。](#query-sample-datasets)
+- [刪除範例。](#delete-a-sample)
+- 刪除原始ADLS表格時刪除關聯的範例。
 
 ## 快速入门 {#get-started}
 
-要使用本文档中详细描述的创建和删除近似查询处理功能，必须将会话标记设置为 `true`. 在查询编辑器或PSQL客户端的命令行中，输入 `SET aqp=true;` 命令。
+若要使用本檔案中詳述的建立和刪除近似查詢處理功能，您必須將工作階段標幟設定為 `true`. 從「查詢編輯器」或PSQL使用者端的命令列輸入 `SET aqp=true;` 命令。
 
 >[!NOTE]
 >
->每次登录平台时，必须启用会话标记。
+>每次登入Platform時，都必須啟用工作階段標幟。
 
-![高亮显示“SET aqp=true；”命令的查询编辑器。](../images/essential-concepts/set-session-flag.png)
+![反白顯示「SET aqp=true；」命令的查詢編輯器。](../images/essential-concepts/set-session-flag.png)
 
-## 创建统一的随机数据集示例 {#create-a-sample}
+## 建立統一的隨機資料集範例 {#create-a-sample}
 
-使用 `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` 命令来从该数据集创建统一的随机示例。
+使用 `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` 命令以資料集名稱，從該資料集建立統一的隨機範例。
 
-采样率是从原始数据集获取的记录的百分比。 您可以使用 `TABLESAMPLE SAMPLERATE` 关键词。 在本例中，值5.0等于50%的采样率。 值2.5等于25%，以此类推。
+取樣率是從原始資料集中取得的記錄百分比。 您可以透過以下方式控制取樣率 `TABLESAMPLE SAMPLERATE` 關鍵字。 在此範例中，5.0的值等於50%的取樣率。 2.5的值將等於25%，以此類推。
 
 >[!IMPORTANT]
 >
->系统允许每个数据集最多包含5个示例。 如果尝试创建第六个示例数据集，屏幕上会显示一条错误消息，指出已达到示例限制。
+>系統允許每個資料集最多五個範例。 如果您嘗試建立第六個範例資料集，畫面上會顯示錯誤訊息，指出已達到範例限制。
 
 ```sql
 ANALYZE TABLE example_dataset_name TABLESAMPLE SAMPLERATE 5.0;
 ```
 
-## （可选）指定筛选条件 {#optional-filter-criteria}
+## 選擇性地指定篩選條件 {#optional-filter-criteria}
 
-您可以选择为统一随机示例指定筛选条件。 这允许您根据分析表的过滤子集创建示例。
+您可以選擇指定統一隨機樣本的篩選條件。 這可讓您根據分析表格的篩選子集建立樣本。
 
-创建示例时，首先应用可选过滤器，然后根据数据集的过滤视图创建示例。 应用了过滤器的数据集示例遵循以下查询格式：
+建立範例時，會先套用選用篩選器，然後從資料集的篩選檢視建立範例。 已套用篩選器的資料集範例會遵循下列查詢格式：
 
 ```sql
 ANALYZE TABLE <tableToAnalyze> TABLESAMPLE FILTERCONTEXT (<filter_condition>) SAMPLERATE X.Y;
@@ -60,7 +60,7 @@ ANALYZE TABLE <tableToAnalyze> TABLESAMPLE FILTERCONTEXT (<filter_condition_1> A
 ANALYZE TABLE <tableToAnalyze> TABLESAMPLE FILTERCONTEXT (<filter_condition_1> AND (<filter_condition_2> OR <filter_condition_3>)) SAMPLERATE X.Y;
 ```
 
-此类过滤样本数据集的实际示例如下：
+此型別篩選樣本資料集的實用範例如下：
 
 ```sql
 Analyze TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestamp)) in ('8', '9')) SAMPLERATE 10;
@@ -68,17 +68,17 @@ Analyze TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestam
 Analyze TABLE large_table TABLESAMPLE FILTERCONTEXT (month(to_timestamp(timestamp)) in ('8', '9') AND (product.name = "product1" OR product.name = "product2")) SAMPLERATE 10;
 ```
 
-在提供的示例中，表名为 `large_table`，则原始表格的筛选条件为 `month(to_timestamp(timestamp)) in ('8', '9')`，且取样率为（过滤数据的X%），在这种情况下， `10`.
+在提供的範例中，表格名稱為 `large_table`，原始表格的篩選條件為 `month(to_timestamp(timestamp)) in ('8', '9')`，而取樣率為（已篩選資料的X%），在這種情況下， `10`.
 
-## 查看示例列表 {#view-list-of-samples}
+## 檢視範例清單 {#view-list-of-samples}
 
-使用 `sample_meta()` 函数查看与ADLS表关联的示例列表。
+使用 `sample_meta()` 函式來檢視與ADLS表格相關聯的範例清單。
 
 ```sql
 SELECT sample_meta('example_dataset_name')
 ```
 
-数据集示例列表以以下示例的格式显示。
+資料集範例清單會以下列範例的格式顯示。
 
 ```shell
                   sample_table_name                  |    sample_dataset_id     |    parent_dataset_id     | sample_type | sampling_rate | sample_num_rows |       created      
@@ -87,17 +87,17 @@ SELECT sample_meta('example_dataset_name')
 (1 row)
 ```
 
-## 查询示例数据集 {#query-sample-datasets}
+## 查詢範例資料集 {#query-sample-datasets}
 
-使用 `{EXAMPLE_DATASET_NAME}` 直接查询示例表。 或者，添加 `WITHAPPROXIMATE` 关键字到查询和查询服务的结尾会自动使用最近创建的示例。
+使用 `{EXAMPLE_DATASET_NAME}` 以直接查詢範例表格。 或者，新增 `WITHAPPROXIMATE` 關鍵字到查詢及查詢服務結尾會自動使用最近建立的範例。
 
 ```sql
 SELECT * FROM example_dataset_name WITHAPPROXIMATE;
 ```
 
-## 删除数据集示例 {#delete-a-sample}
+## 刪除資料集範例 {#delete-a-sample}
 
-删除操作允许您在达到五个数据集示例的最大限制后创建新示例。
+刪除操作可讓您在達到5個資料集範例的最大限制後建立新範例。
 
 ```sql
 DROP TABLE SAMPLE x5e5cd8ea0a83c418a8ef0928_uniform_2_0_percent_bnhmc;
@@ -105,4 +105,4 @@ DROP TABLE SAMPLE x5e5cd8ea0a83c418a8ef0928_uniform_2_0_percent_bnhmc;
 
 >[!NOTE]
 >
->如果您有多个从原始ADLS数据集派生的示例数据集，则在删除原始数据集时，所有关联的示例也会被删除。
+>如果您有多個從原始ADLS資料集衍生的範例資料集，在丟棄原始資料集時，所有關聯的範例也會被刪除。

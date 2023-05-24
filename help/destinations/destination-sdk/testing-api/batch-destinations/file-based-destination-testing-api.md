@@ -1,6 +1,6 @@
 ---
-description: 本页介绍如何使用/testing/destinationInstance API端点来测试是否正确配置了基于文件的目标，以及如何验证流向您配置的目标的数据流的完整性。
-title: 使用示例用户档案测试基于文件的目标
+description: 此頁面說明如何使用/testing/destinationInstance API端點來測試檔案型目的地是否已正確設定，以及驗證資料流至您設定之目的地的完整性。
+title: 使用範例設定檔測試您的檔案型目的地
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
 source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
 workflow-type: tm+mt
@@ -9,32 +9,32 @@ ht-degree: 2%
 
 ---
 
-# 使用示例用户档案测试基于文件的目标
+# 使用範例設定檔測試您的檔案型目的地
 
 ## 概述 {#overview}
 
-本页介绍如何使用 `/testing/destinationInstance` 用于测试基于文件的目标是否正确配置，以及验证数据流向您配置的目标的完整性的API端点。
+此頁面說明如何使用 `/testing/destinationInstance` API端點，用於測試您的檔案型目的地是否已正確設定，以及驗證流向您設定之目的地的資料流的完整性。
 
-无论是否添加，您都可以向测试端点发出请求 [示例用户档案](file-based-sample-profile-generation-api.md) 呼叫。 如果您未在请求中发送任何用户档案，则API会自动生成一个示例用户档案并将其添加到请求中。
+您可以向測試端點提出請求，無論是否新增 [範例設定檔](file-based-sample-profile-generation-api.md) 至通話。 如果您未在請求上傳送任何設定檔，API會自動產生範例設定檔，並將其新增至請求。
 
-自动生成的示例配置文件包含通用数据。 如果要使用更直观的自定义用户档案数据测试目标，请使用 [配置文件生成API示例](file-based-sample-profile-generation-api.md) 要生成示例用户档案，请自定义其响应，并将其包含在对 `/testing/destinationInstance` 端点。
+自動產生的範例設定檔包含一般資料。 如果您想要使用自訂、更直覺的設定檔資料測試目的地，請使用 [範例設定檔產生API](file-based-sample-profile-generation-api.md) 產生範例設定檔，然後自訂其回應，並將其納入對的請求中 `/testing/destinationInstance` 端點。
 
 ## 快速入门 {#getting-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
 ## 先决条件 {#prerequisites}
 
-在使用 `/testing/destinationInstance` 端点，确保满足以下条件：
+開始使用 `/testing/destinationInstance` 端點，確定您符合以下條件：
 
-* 您已通过Destination SDK创建了一个基于文件的现有目标，您可以在 [目标目录](../../../ui/destinations-workspace.md).
-* 您已在Experience PlatformUI中为目标至少创建了一个激活流程。
-* 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标的连接时，从URL获取应在API调用中使用的目标实例ID。
+* 您有一個透過Destination SDK建立的檔案型目的地，且您可以在下列位置中看到 [目的地目錄](../../../ui/destinations-workspace.md).
+* 您已在Experience PlatformUI中為您目的地建立至少一個啟用流程。
+* 若要成功提出API請求，您需要與要測試的目的地執行個體對應的目的地執行個體ID。 在Platform UI中瀏覽與目的地的連線時，從URL取得應在API呼叫中使用的目的地執行個體ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
-* *可选*:如果要在测试目标配置时向API调用中添加一个示例配置文件，请使用 [/sample-profiles](file-based-sample-profile-generation-api.md) 端点，以根据您现有的源架构生成示例配置文件。 如果您未提供示例配置文件，API将生成一个配置文件，并在响应中返回该配置文件。
+   ![UI影像顯示如何從URL取得目的地執行個體ID。](../../assets/testing-api/get-destination-instance-id.png)
+* *可選*：如果您想要使用新增至API呼叫的範例設定檔測試目的地設定，請使用 [/sample-profiles](file-based-sample-profile-generation-api.md) 端點，以根據您現有的來源結構描述產生範例設定檔。 如果您未提供範例設定檔，API將會產生一個設定檔，並在回應中傳回。
 
-## 在不向调用添加用户档案的情况下测试目标配置 {#test-without-adding-profiles}
+## 測試您的目的地設定，而不將設定檔新增至呼叫 {#test-without-adding-profiles}
 
 **API格式**
 
@@ -53,13 +53,13 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-| 路径参数 | 描述 |
+| 路徑引數 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_INSTANCE_ID}` | 要为其生成示例用户档案的目标实例的ID。 请参阅 [先决条件](#prerequisites) 部分以了解有关如何获取此ID的详细信息。 |
+| `{DESTINATION_INSTANCE_ID}` | 您要產生範例設定檔的目標執行個體ID。 請參閱 [必備條件](#prerequisites) 區段，以瞭解有關如何取得此ID的詳細資訊。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200以及响应有效负载。
+成功的回應會傳回HTTP狀態200以及回應裝載。
 
 ```json
 {
@@ -111,15 +111,15 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `activations` | 返回每个激活的区段的区段ID和流运行ID。 激活条目数（以及关联的生成文件）等于目标实例上映射的区段数。 <br><br> 示例：如果您将两个区段映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的区段都将对应一个导出的文件。 |
-| `results` | 返回目标实例ID和可用于调用的流运行ID [结果API](file-based-destination-results-api.md)，以进一步测试集成。 |
-| `inputProfiles` | 返回由API自动生成的示例用户档案。 |
+| `activations` | 傳回每個已啟動區段的區段ID和流程執行ID。 啟用專案（以及關聯的產生檔案）的數量等於對應至目的地執行個體的區段數。 <br><br> 範例：如果您將兩個區段對應至目的地執行個體， `activations` 陣列將包含兩個專案。 每個已啟用的區段都會對應至一個匯出的檔案。 |
+| `results` | 傳回目的地執行個體ID和可用於呼叫 [結果API](file-based-destination-results-api.md)，以進一步測試整合。 |
+| `inputProfiles` | 傳回API自動產生的範例設定檔。 |
 
 {style="table-layout:auto"}
 
-## 通过向调用添加的用户档案测试目标配置 {#test-with-added-profiles}
+## 使用新增至呼叫的設定檔測試您的目的地設定 {#test-with-added-profiles}
 
-要使用更直观的自定义用户档案数据测试您的目标，您可以自定义从 [/sample-profiles](file-based-sample-profile-generation-api.md) 端点（具有您选择的值），并在对的请求中包含自定义配置文件 `/testing/destinationInstance` 端点。
+若要使用自訂、更直覺的設定檔資料測試您的目的地，您可以自訂從取得的回應 [/sample-profiles](file-based-sample-profile-generation-api.md) 端點，並將自訂設定檔納入對 `/testing/destinationInstance` 端點。
 
 **API格式**
 
@@ -175,12 +175,12 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_INSTANCE_ID}` | 您正在测试的目标的目标实例ID。  要为其生成示例用户档案的目标实例的ID。 请参阅 [先决条件](#prerequisites) 部分以了解有关如何获取此ID的详细信息。 |
-| `profiles` | 可包含一个或多个配置文件的数组。 使用 [配置文件API端点示例](file-based-sample-profile-generation-api.md) 以生成要在此API调用中使用的用户档案。 |
+| `{DESTINATION_INSTANCE_ID}` | 您正在測試之目的地的目的地執行個體ID。  您要產生範例設定檔的目標執行個體ID。 請參閱 [必備條件](#prerequisites) 區段，以瞭解有關如何取得此ID的詳細資訊。 |
+| `profiles` | 可包含一或多個設定檔的陣列。 使用 [範例設定檔API端點](file-based-sample-profile-generation-api.md) 產生設定檔以用於此API呼叫。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200以及响应有效负载。
+成功的回應會傳回HTTP狀態200以及回應裝載。
 
 ```json
 {
@@ -232,18 +232,18 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `activations` | 返回每个激活的区段的区段ID和流运行ID。 激活条目数（以及关联的生成文件）等于目标实例上映射的区段数。 <br><br> 示例：如果您将两个区段映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的区段都将对应一个导出的文件。 |
-| `results` | 返回目标实例ID和可用于调用的流运行ID [结果API](file-based-destination-results-api.md)，以进一步测试集成。 |
-| `inputProfiles` | 返回您在API请求中传递的自定义示例用户档案。 |
+| `activations` | 傳回每個已啟動區段的區段ID和流程執行ID。 啟用專案（以及關聯的產生檔案）的數量等於對應至目的地執行個體的區段數。 <br><br> 範例：如果您將兩個區段對應至目的地執行個體， `activations` 陣列將包含兩個專案。 每個已啟用的區段都會對應至一個匯出的檔案。 |
+| `results` | 傳回目的地執行個體ID和可用於呼叫 [結果API](file-based-destination-results-api.md)，以進一步測試整合。 |
+| `inputProfiles` | 傳回您在API請求中傳遞的自訂範例設定檔。 |
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何测试基于文件的目标配置。
+閱讀本檔案後，您現在知道如何測試檔案型目的地設定。
 
-如果您收到了有效的API响应，则表明您的目标运行正常。 如果要查看有关激活流程的更多详细信息，可以使用 `results` 属性 [查看详细的激活结果](file-based-destination-results-api.md).
+如果您收到有效的API回應，表示您的目的地正常運作。 如果您想檢視更多關於啟用流程的詳細資訊，您可以使用 `results` 回應至的屬性 [檢視詳細的啟用結果](file-based-destination-results-api.md).
 
-如果您正在构建公共目标，您现在可以 [提交目标配置](../../guides/submit-destination.md) Adobe以供审阅。
+如果您要建立公用目的地，現在可以 [提交您的目的地設定](../../guides/submit-destination.md) 以Adobe檢閱。

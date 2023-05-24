@@ -1,6 +1,6 @@
 ---
-title: Adobe Target v2扩展概述
-description: 了解Adobe Experience Platform中的Adobe Target v2标记扩展。
+title: Adobe Target v2擴充功能概觀
+description: 瞭解Adobe Experience Platform中的Adobe Target v2標籤擴充功能。
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 61%
 
 ---
 
-# Adobe Target v2扩展概述
+# Adobe Target v2擴充功能概觀
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -23,29 +23,29 @@ ht-degree: 61%
 >
 >Adobe Target 扩展需要使用 At.js 2.x。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Target扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安裝Adobe Target擴充功能，請開啟您的屬性，然後選取「 」 **[!UICONTROL 擴充功能>目錄]**，將游標暫留在Target擴充功能上，然後選取 **[!UICONTROL 安裝]**.
 
-要配置该扩展，请打开扩展选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
+若要設定擴充功能，請開啟「擴充功能」標籤、將游標暫留在擴充功能上方，然後選取「 」 **[!UICONTROL 設定]**.
 
 ![](../../../images/targetv2config.png)
 
 ### at.js 设置
 
-除超时之外，您的所有at.js设置都将自动从Target UI的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target UI中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
+所有at.js設定（Timeout除外）都會自動從Target UI中的at.js設定中擷取。 擴充功能只會在其首次新增時從Target UI擷取設定，因此如有其他更新，應在UI中管理所有設定。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
+使用者端代碼是Target的帳戶識別碼。 此选项几乎应始终保留为默认值。可使用資料元素加以變更。
 
 #### Organization ID
 
-此 ID 可将您的实施绑定到 Adobe Experience Cloud 帐户。此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
+此 ID 可将您的实施绑定到 Adobe Experience Cloud 帐户。此选项几乎应始终保留为默认值。可使用資料元素加以變更。
 
 #### Server Domain
 
-服务器域是指发送Target请求的域。 此选项几乎应始终保留为默认值。
+伺服器網域是指傳送Target要求的網域。 此选项几乎应始终保留为默认值。
 
 #### GDPR Opt-In
 
@@ -65,35 +65,35 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### Load Target
 
-将此操作添加到适合在上下文中加载Target的标记规则中。 这会将 at.js 库加载到页面中。在大多数实施中，应在您网站的每个页面上加载 Target。Adobe 建议，仅在执行 Target 调用之后再使用“加载 Target”操作。否则，您可能会遇到 Analytics 调用延迟等问题。
+將此動作新增至您的標籤規則，其中在此規則的內容中載入Target是可行的。 这会将 at.js 库加载到页面中。在大多数实施中，应在您网站的每个页面上加载 Target。Adobe 建议，仅在执行 Target 调用之后再使用“加载 Target”操作。否则，您可能会遇到 Analytics 调用延迟等问题。
 
 无需进行配置。
 
-### 使用设备上决策功能加载目标
+### 使用裝置上決策載入Target
 
-将此操作添加到适合在哪些情况下通过加载Target的标记规则中 [设备内决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) 在规则上下文中启用。 这会将启用设备决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅当在Target调用之前执行Load Target with On-Device Decisioning操作时，才应使用此操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
+將此動作新增至您的標籤規則，其中載入Target是可行的 [裝置上決策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) 已在規則內容中啟用。 這會將at.js程式庫載入頁面，並啟用裝置上決策。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建議，您必須先執行Target呼叫，才能將「載入Target」與「裝置上決策」動作搭配使用。 否则，您可能会遇到 Analytics 调用延迟等问题。
 
 无需进行配置。
 
 ### Add Params to All Requests
 
-此操作类型允许将参数添加到所有Target请求中。 必须先使用 Load Target 操作。
+此動作型別可讓引數新增至所有Target請求。 必须先使用 Load Target 操作。
 
 1. 指定要添加的任意参数的名称和值。
 1. 选择添加图标可添加更多参数。
 
 ### Add Params to Page Load Request
 
-此操作类型允许将参数专门添加到页面加载请求中。 必须先使用 Load Target 操作。
+此動作型別可專門將引數新增至頁面載入請求。 必须先使用 Load Target 操作。
 
 1. 指定要添加的任意参数的名称和值。
 1. 选择添加图标可添加更多参数。
 
 ### 触发页面加载请求
 
-此操作类型允许Target在页面加载时触发请求。 必须先使用 Load Target 操作。
+此動作型別可讓Target在頁面載入時觸發要求。 必须先使用 Load Target 操作。
 
-必须指定是否启用主体隐藏以防止闪烁，以及隐藏主体元素时使用的样式。 可以使用以下选项：
+您必須指定是否啟用主體隱藏以防止閃爍，以及隱藏主體元素時所使用的樣式。 可以使用以下选项：
 
 * **Body Hiding：**&#x200B;您可以启用或禁用此设置。默认值为 Enabled，表示隐藏 HTML 主体。
 * **Body Hidden Style：**&#x200B;默认值为 body{opacity:0}。此值可更改为其他内容，如 body{display:none}。
@@ -102,7 +102,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### Trigger View
 
-每当加载新页面或重新渲染页面上的组件时，都可以调用触发器视图操作。 应该为单页应用程序实施触发器视图。
+每當載入新頁面或重新呈現頁面上的元件時，都可以呼叫「觸發檢視」動作。 應為單頁應用程式實作觸發器檢視。
 
 1. 指定必须触发的视图名称。
 1. 通过选中 Page 复选框，指定是否应将视图触发归因于要报告的展示。如果视图与重新渲染的组件相关，而不归因于要报告的展示，则应将 Page 复选框保留为取消选中状态。
@@ -117,24 +117,24 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ![](../../../images/targetv2deploy.png)
 
-保存此规则后，您需要将其添加到库并生成/部署该规则，以便测试该行为。
+儲存此規則後，您需要將其新增至程式庫，然後進行建置/部署，以便測試行為。
 
 ## 使用异步部署的 Adobe Target 扩展
 
-标记可以异步部署。 如果您异步加载包含Target的标记库，则也将会异步加载Target。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
+標籤可非同步部署。 如果您以非同步方式載入標籤程式庫，且其中包含Target，則Target也會以非同步方式載入。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
 
-在异步部署中，页面可能会在 Target 库完全加载并执行内容交换之前完成默认内容渲染。这可能会导致所谓的“闪烁”，在这种情况下，会先短暂显示默认内容，然后再将该内容替换为 Target 指定的个性化内容。如果要避免出现这种闪烁情况，我们建议您使用预隐藏代码片段并异步加载标记包来避免任何内容闪烁。
+在异步部署中，页面可能会在 Target 库完全加载并执行内容交换之前完成默认内容渲染。这可能会导致所谓的“闪烁”，在这种情况下，会先短暂显示默认内容，然后再将该内容替换为 Target 指定的个性化内容。若要避免這種閃爍問題，建議您使用預先隱藏的程式碼片段，然後非同步載入標籤套件組合，以避免任何內容閃爍。
 
 在使用预隐藏代码片段时，请谨记以下事项：
 
-* 必须先添加代码片段，然后再加载标记标题嵌入代码。
-* 标记无法管理此代码，因此必须将其直接添加到页面。
+* 載入標籤標頭內嵌程式碼之前，必須先新增程式碼片段。
+* 標籤無法管理此程式碼，因此必須直接新增至頁面。
 * 当发生以下事件时（以最先发生者为准），将显示该页面：
    * 收到页面加载响应
    * 页面加载请求超时
    * 代码片段本身超时
-* 应在所有使用预隐藏代码片段的页面上使用“Fire Page Load Request”操作，以最大程度地缩短预隐藏的持续时间。
-* 此外，还必须在用于Target的页面加载规则的页面加载请求操作中启用主体隐藏；否则，所有页面加载在超时时段内都将保持隐藏状态。
+* 應使用預先隱藏程式碼片段，在所有頁面上使用「引發頁面載入請求」動作，以將預先隱藏的時間減至最少。
+* 您也必須在Target使用的頁面載入規則的「頁面載入請求」動作中啟用內文隱藏功能；否則，所有頁面載入會在逾時期間保持隱藏狀態。
 
 预隐藏代码片段如下所示，该代码片段可以缩小。可配置的选项位于末尾：
 

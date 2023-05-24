@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用
-title: 功能板小组件库概述
-description: 本指南提供了有关访问Adobe Experience Platform中小组件库的分步说明。
+keywords: Experience Platform；使用者介面；UI；控制面板；控制面板；設定檔；區段；目的地；授權使用情況
+title: 儀表板Widget程式庫概觀
+description: 本指南提供存取Adobe Experience Platform中Widget程式庫的逐步指示。
 exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
 source-git-commit: 09f212741321f17372d52fee507a96d2d2834e85
 workflow-type: tm+mt
@@ -10,55 +10,55 @@ ht-degree: 0%
 
 ---
 
-# 构件库概述
+# Widget程式庫概觀
 
-在Adobe Experience Platform用户界面中，您可以使用多个功能板查看组织的数据并与之交互。 您还可以通过向功能板视图添加小组件来更新某些功能板。
+在Adobe Experience Platform使用者介面中，您可以使用多個儀表板檢視組織的資料並與之互動。 您也可以將Widget新增至儀表板檢視，以更新某些儀表板。
 
-本指南提供了访问 [!UICONTROL 构件库] 在Experience Platform中，您可以选择标准小组件并创建自定义小组件，以自定义在功能板中显示的信息。
+本指南提供存取 [!UICONTROL Widget資料庫] 在Experience Platform中，您可以選取標準Widget並建立自訂Widget，以自訂顯示在儀表板中的資訊。
 
-有关如何修改功能板中已显示的小组件的位置和大小的信息，请参阅 [修改功能板指南](modify.md).
+如需如何修改儀表板中顯示的介面工具的位置和大小的相關資訊，請參閱 [修改儀表板指南](modify.md).
 
 >[!NOTE]
 >
->显示在 [!UICONTROL 许可证使用情况] 无法自定义功能板。 要了解有关此唯一功能板的更多信息，请阅读 [许可证使用仪表板文档](../guides/license-usage.md).
+>Widget會顯示在 [!UICONTROL 授權使用情況] 無法自訂儀表板。 若要深入瞭解此獨特控制面板，請閱讀 [授權使用情況儀表板檔案](../guides/license-usage.md).
 
-## 访问小组件库 {#access}
+## 存取Widget資料庫 {#access}
 
-从任何功能板（例如，“配置文件”功能板）中，选择 **[!UICONTROL 添加小组件]** 要直接导航到小组件库，您可以在该库中 [添加小组件](#add-widgets) 功能板。
+從任何儀表板（例如「設定檔」儀表板）中，選取 **[!UICONTROL 新增Widget]** 導覽至Widget程式庫，您可以 [新增Widget](#add-widgets) 至您的儀表板。
 
-![“配置文件”功能板“概述”选项卡，其中突出显示了“添加小组件”按钮。](../images/customization/profiles-overview-add-widget.png)
+![Profiles儀表板概觀索引標籤，其中的「新增Widget」按鈕突出顯示。](../images/customization/profiles-overview-add-widget.png)
 
-选择 **[!UICONTROL 修改功能板]** 从功能板中移动、调整小组件大小或删除小组件。 在此显示中，您还可以选择 **[!UICONTROL 构件库]** 浏览和 [添加小组件](#add-widgets). 要了解如何编辑小组件大小和布局，请参阅 [修改功能板文档](./modify.md).
+選取 **[!UICONTROL 修改儀表板]** 以從您的儀表板移動、調整大小或移除Widget。 您也可以從此顯示中選取 **[!UICONTROL Widget資料庫]** 瀏覽和 [新增Widget](#add-widgets). 若要瞭解如何編輯Widget大小和版面，請參閱 [修改儀表板檔案](./modify.md).
 
-![突出显示“配置文件”功能板概述，其中“修改”功能板。](../images/customization/modify-dashboard.png)
+![反白顯示「修改」圖示板的「設定檔」圖示板概述。](../images/customization/modify-dashboard.png)
 
-选择 **[!UICONTROL 构件库]** 打开小组件库并查看所有可用的标准量度，或开始创建自定义小组件。
+選取 **[!UICONTROL Widget資料庫]** 開啟Widget資料庫並檢視所有可用的標準量度，或開始建立自訂Widget。
 
-![突出显示小组件库的修改功能板视图。](../images/customization/widget-library-button.png)
+![修改儀表板檢視，並反白顯示Widget資料庫。](../images/customization/widget-library-button.png)
 
-## 添加小组件 {#add-widgets}
+## 新增Widget {#add-widgets}
 
-从 [!UICONTROL 构件库]，从可用标准小组件或自定义小组件列表中选择任意小组件。 小组件角的复选标记表示您的选择。
+從 [!UICONTROL Widget資料庫]，從可用的標準或自訂Widget清單中選取任何Widget。 Widget角落的核取記號表示您的選取範圍。
 
-![包含选定小组件的小组件库，并突出显示复选标记。](../images/customization/confirm-selected-widget-to-add.png)
+![選取了Widget和核取標籤的Widget程式庫會反白顯示。](../images/customization/confirm-selected-widget-to-add.png)
 
-### 使用中标签 {#in-use-label}
+### 使用中標籤 {#in-use-label}
 
-已添加到功能板的小组件具有 [!UICONTROL 使用中] 在小组件库中查看时附加的标签。 此标签会突出显示已添加到功能板中的小组件，以避免重复。 但是，如果您愿意，仍可多次添加同一小组件。
+已新增至儀表板的Widget具有 [!UICONTROL 使用中] 在Widget資料庫中檢視時，附加至這些專案的標籤。 此標籤會醒目顯示已新增至儀表板的Widget，以避免重複。 不過，您仍然可以新增相同的Widget多次。
 
-![突出显示了使用中标签的小组件库。](../images/customization/in-use-label.png)
+![反白顯示使用中標籤的Widget程式庫。](../images/customization/in-use-label.png)
 
-选择所有必需的小组件后，请选择 **[!UICONTROL 添加小组件]** 以确认您的选择并将小组件添加到功能板。
+選取所有必要的Widget後，請選取 **[!UICONTROL 新增Widget]** 以確認您的選擇並新增Widget至您的儀表板。
 
-## 标准和自定义小组件 {#standard-and-custom}
+## 標準和自訂Widget {#standard-and-custom}
 
-的 [!UICONTROL 构件库] 包含两个选项卡：
+此 [!UICONTROL Widget資料庫] 包含兩個標籤：
 
-* **[!UICONTROL 标准]:** 标准选项卡包含由Adobe提供的小组件。 您可以使用其中任何标准量度更新功能板。 要了解有关将标准小组件添加到功能板的更多信息，请参阅 [在功能板中使用标准小组件](standard-widgets.md).
-* **[!UICONTROL 自定义]:** 利用自定义选项卡，可在组织内创建和共享小组件。 有关创建您自己的小组件的完整步骤，请参阅 [功能板指南的自定义小组件](custom-widgets.md).
+* **[!UICONTROL 標準]：** 標準標籤包含Adobe提供的Widget。 您可以使用任何這些標準量度來更新您的儀表板。 若要進一步瞭解如何新增標準Widget至您的儀表板，請參閱指南，瞭解 [在儀表板中使用標準Widget](standard-widgets.md).
+* **[!UICONTROL 自訂]：** 自訂標籤可讓您在組織內建立和共用Widget。 如需建立您自己的Widget的完整步驟，請參閱 [控制面板的自訂Widget指南](custom-widgets.md).
 
-![突出显示标准和自定义选项卡的小组件库。](../images/customization/widget-library.png)
+![反白顯示標準和自訂標籤的Widget程式庫。](../images/customization/widget-library.png)
 
 ## 后续步骤
 
-阅读本文档后，您现在可以在Experience PlatformUI中访问小组件库。 要修改功能板中显示的小组件的大小和位置，请参阅 [修改功能板指南](modify.md).
+閱讀本檔案後，您現在可以在Experience PlatformUI中存取Widget程式庫。 若要修改顯示於儀表板中的Widget大小與位置，請參閱 [修改儀表板指南](modify.md).

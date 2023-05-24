@@ -1,6 +1,6 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
-title: 开始使用Real-time Customer Data Platform
+keywords: RTCDP；CDP；Real-time Customer Data Platform；即時客戶資料平台；real time cdp；cdp；rtcdp
+title: Real-time Customer Data Platform快速入門
 description: 在设置您实施的 Adobe Real-Time Customer Data Platform 时请使用此样板场景作为示例。
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
@@ -10,208 +10,208 @@ ht-degree: 2%
 
 ---
 
-# 开始使用Real-time Customer Data Platform
+# Real-time Customer Data Platform快速入門
 
-本快速入门指南将指导您完成Real-time Customer Data Platform(Real-Time CDP)的示例实施。 您可以在设置自己的实施时，以此作为示例。 尽管本指南显示了特定示例，但它链接到在创建设置时可使用的其他信息。
+本快速入門手冊將引導您逐步瞭解Real-time Customer Data Platform (Real-Time CDP)的範例實作。 您可以在設定自己的實作時以此為例。 雖然本指南會顯示特定範例，但連結至您可在建立設定時使用的其他資訊。
 
-此示例展示了由Adobe Experience Platform提供支持的Real-time Customer Data Platform的强大功能：
+此範例顯示由Adobe Experience Platform提供支援的Real-time Customer Data Platform的強大功能，可以：
 
-* 从多个源中摄取数据
-* 将它们合并到单个 [!DNL real-time customer profile]
-* 跨设备提供一致、相关和个性化的体验。
+* 從多個來源擷取資料
+* 將它們合併為單一 [!DNL real-time customer profile]
+* 跨裝置提供一致、相關和個人化的體驗。
 
 ## 用例
 
-运动服装公司Luma始终在努力改善客户体验。 他们有一项新的计划来增加与礼物有关的销售。 他们还希望减少过度曝光，例如关注顾客的烦人广告。
+運動服裝公司Luma一直致力於改善客戶體驗。 他們推出一項新計畫，以提高與禮品相關的銷售額。 此外他們還想減少過度曝光，例如追蹤客戶瀏覽的惱人廣告。
 
-目前，他们在媒体上花费太多，无法针对访客不会购买的项目重新定位。 例如，Luma不希望将某个项目重新定位到某个人，该项目旨在为其他人进行一次性购买。
+目前，他們在針對訪客日後不會購買的專案重新定位的媒體上花費過多。 例如，Luma不想重新鎖定某人，讓該專案原本是要供其他人一次性購買的。
 
-目前，Luma的数据分散在多个来源中。 因此，他们面临着重大挑战：
+目前，Luma的資料分散於多個來源。 因此，他們面臨重大挑戰：
 
-* 营销组织必须与各自拥有数据源的各个团队合作，这些团队包括网站、移动设备应用程序、忠诚度系统、CRM等。
-* 当营销团队访问数据时，该数据通常已过时，不再与他们对时间敏感的营销活动相关。
-* 他们需要统一数据，以便针对人员，而不是渠道。
+* 行銷組織必須與各自擁有資料來源（包括網站、行動應用程式、忠誠度系統、CRM等）的各種團隊合作。
+* 當行銷團隊存取資料時，資料通常已過時，不再與其對時間敏感的行銷活動相關。
+* 他們需要統一資料，以便鎖定個人而非管道。
 
-因此，Luma的业务目标如下：
+因此，Luma具備下列業務目標：
 
-* 从不同的数据源创建客户的实时单一视图。
-* 使用不同渠道和设备之间的相关消息个性化营销活动。
+* 從其不同的資料來源建立消費者的即時單一檢視。
+* 使用不同管道和裝置中的相關訊息，個人化行銷活動。
 
-要实现这些目标，营销团队需要能够大规模管理客户数据。
+為了達成這些目標，行銷團隊需要能夠大規模管理客戶資料。
 
-借助由Adobe Experience Platform提供支持的Real-Time CDP,Luma的营销组织可以：
+透過Adobe Experience Platform提供的Real-Time CDP，Luma的行銷組織可以：
 
-1. 从不同的平台收集数据，并确保数据在下游可用于其他营销活动。
-1. 创建客户的单个实时视图，与数据的来源无关。
-1. 在每个接触点中提供一致、相关的个性化体验。
+1. 從不同的平台收集資料，並確保其可供下游其他行銷活動使用。
+1. 建立其消費者的單一即時檢視，不受資料來源地限制。
+1. 在每個接觸點上推動一致、相關和個人化的體驗。
 
 ## 步骤
 
-本教程包括以下步骤：
+本教學課程包含下列步驟：
 
-1. 构建 [客户档案](#customer-profile).
-1. [个性化](#personalizing-the-user-experience) 用户体验。
-1. 使用 [多个数据源](#using-multiple-data-sources).
+1. 建置 [客戶設定檔](#customer-profile).
+1. [個人化](#personalizing-the-user-experience) 使用者體驗。
+1. 使用 [多個資料來源](#using-multiple-data-sources).
 1. [配置数据源](#configuring-a-data-source).
-1. [收集数据](#bringing-the-data-together-for-a-specific-customer) 特定客户的URL。
-1. 设置 [区段](#segments).
-1. 设置 [目标](#destinations).
-1. [拼合跨设备的配置文件](#cross-device-identity-stitching).
-1. [分析用户档案](#analyzing-the-profile).
+1. [收集資料](#bringing-the-data-together-for-a-specific-customer) 適用於特定客戶。
+1. 設定 [區段](#segments).
+1. 設定 [目的地](#destinations).
+1. [跨裝置拼接設定檔](#cross-device-identity-stitching).
+1. [分析設定檔](#analyzing-the-profile).
 
-## 客户用户档案
+## 客戶設定檔
 
-客户首次访问您的网站时，您对他们一无所知。
+客戶首次造訪您的網站時，您對他們一無所知。
 
 ![image](assets/luma-site.png)
 
-导航时，会实时捕获数据，这些数据不仅会发送到Adobe Analytics中的报表包，还会直接发送到Adobe Experience Platform。 在收集数据时，您会开始根据 [!DNL Experience Platform's real-time customer profile].
+導覽時，系統會即時擷取資料，不僅會傳送至Adobe Analytics中的報表套裝，也會直接傳送至Adobe Experience Platform。 收集資料時，您會根據中的行為資料，開始形成消費者的單一檢視。 [!DNL Experience Platform's real-time customer profile].
 
-网站的许多访客可能是以前从Luma购买过产品的重复客户。  Luma必须个性化消息传送和服务，以满足新访客和回访访客以及已知客户的需求。
+網站的許多訪客可能是先前從Luma購買的回頭客。  Luma必須個人化傳訊和供應專案，以處理新訪客和回訪訪客以及知名客戶。
 
-### 新客户的首次访问
+### 新客戶的首次造訪
 
-例如，一位独特的访客导航到Luma网站上的“男士”区域，然后查看一对运行着运动衫的访客。
+例如，未識別的訪客導覽至Luma網站上的男性區段，並檢視幾件運動衫。
 
 ![image](assets/luma-sweatshirts.png)
 
-当客户导航到了解有关这些产品的更多信息时，这些产品查看将在Adobe Analytics中收集并发送到 [!DNL Experience Platform].
+當客戶導覽以深入瞭解這些產品時，這些產品檢視會在Adobe Analytics中收集並傳送至 [!DNL Experience Platform].
 
 <!--![image](assets/luma-shirt-detail.png)-->
 
-Luma可以将访客行为映射到Adobe Experience Platform上的用户配置文件，并开始收集该消费者行为的更加丰富的视图。
+Luma可將訪客的行為對應至Adobe Experience Platform上的使用者設定檔，並開始收集該消費者行為的更豐富檢視。
 
-### 更详细地了解客户
+### 取得更詳細的客戶檢視
 
-随着客户继续与网站互动，情况将更加清晰。 例如，假设访客将产品添加到购物车并登录。
+隨著客戶繼續與網站互動，畫面會更清晰。 例如，假設訪客新增產品至購物車並登入。
 
-当客户登录时，她将自己标识为莎拉·罗斯。
+客戶登入時，她自稱是Sarah Rose。
 
 ![image](assets/luma-login.png)
 
-将合并两个标识：
+兩個身分已合併：
 
-* 匿名浏览数据
-* 与莎拉·罗斯的帐户关联的现有数据
+* 匿名瀏覽資料
+* 與Sarah Rose的帳戶相關聯的現有資料
 
-这两个标识将合并为 [!DNL Experience Platform]. Luma现在对此客户有统一的视图。
+兩個身分都會合併為中的單一設定檔 [!DNL Experience Platform]. Luma現在擁有此消費者的統一檢視。
 
-根据网站“男士”区域的匿名访客的浏览行为，可能假定该客户为男性。 现在她登录了，鲁玛认出了莎拉·罗斯。 Luma使用 [!DNL Real-Time Customer Profile] 以优化跨渠道投放给她的消息。
+根據匿名訪客在網站男性區段的瀏覽行為，我們可能假設該客戶為男性。 Luma現在已經登入，可以辨識Sarah Rose了。 Luma使用 [!DNL Real-Time Customer Profile] 以調整跨頻道傳送給她的訊息。
 
-## 个性化用户体验
+## 個人化使用者體驗
 
-萨拉以忠诚的态度受到欢迎，并感谢她成为铜牌会员，她掌握了更多关于福利以及如何提高她的地位和分数的信息。
+我們以忠誠訊息歡迎Sarah，並感謝Sarah成為銅級會員，提供更多關於福利以及如何提升其地位和積分的資訊。
 
-她导航到主页以浏览更多内容。
+她導覽至首頁以瀏覽更多內容。
 
 ![image](assets/luma-personal.png)
 
-Sarah会根据自己的情况，获得动态提供的个性化主页体验 [!DNL Real-Time Customer Profile] 在Adobe Experience Platform。
+Sarah會獲得個人化的首頁體驗，並依據她動態傳送 [!DNL Real-Time Customer Profile] 在Adobe Experience Platform中。
 
-得益于Adobe Sensei支持的Adobe Target个性化，她看到了相关内容，该个性化考虑了她过去的购买情况以及对运营服装和装备的喜爱程度。 Luma还根据她最近的浏览内容，为男性定制跑步器材。
+她能看到相關內容，這要歸功於Adobe Target中的Adobe Sensei支援個人化，其中會考量她過去的購買行為以及對於執行服裝和用具的相似性。 Luma也根據她最近瀏覽過的內容，為男士量身打造適合跑步的男士目錄內容。
 
-在页面的下方，Sarah将显示特色产品，以及一个基于她最近查看过的项目的新推荐栏。
+在本頁的下方，Sarah會看到精選產品，以及根據她最近檢視的專案而設計的新建議匣。
 
-此个性化内容可帮助Sarah快速查找相关项目。 这可以提高转化率，并提供更令人愉快的客户体验。
+此個人化內容可協助Sarah快速找到相關專案。 這能增加轉換次數，並提供更令人愉快的客戶體驗。
 
-### 让客户回来
+### 帶回客戶
 
-莎拉分心了，离开网站，结束了她的会话。 Luma可以使用Adobe Experience Platform中的数据帮助将她带回网站。
+Sarah分心並離開網站，結束工作階段。 Luma可在Adobe Experience Platform中使用她的資料，協助將她帶回網站。
 
-Real-time Customer Data Platform由Adobe Experience Platform提供支持，专为客户体验管理而构建。 它使组织能够：
+Real-time Customer Data Platform採用Adobe Experience Platform技術，專為客戶體驗管理而打造。 它可讓組織：
 
-* 简化数据集成和激活
-* 管理已知和未知的数据使用情况
-* 加快大规模营销用例
+* 簡化資料整合與啟用
+* 控管已知和未知的資料使用方式
+* 大規模加速行銷使用案例
 
 ## 使用多个数据源
 
-Luma团队在一个位置提供了所有的行为数据和客户数据。
+Luma的團隊將其所有行為和客戶資料放在一個地方。
 
 ![image](assets/luma-dash.png)
 
-他们可以从以下所有来源摄取数据：
+他們可以擷取下列所有來源的資料：
 
-* 现有Adobe Experience Cloud解决方案数据
-* 非Adobe来源，如Luma的忠诚度计划、呼叫中心和销售点系统数据
-* 来自Luma数据源的实时流数据
-* 来自Adobe解决方案的实时数据（无需新标记）
+* 現有的Adobe Experience Cloud解決方案資料
+* 非Adobe來源，例如Luma的忠誠度計畫、客服中心和銷售點系統資料
+* 來自Luma資料來源的即時串流資料
+* 來自Adobe解決方案的即時資料（無需新標籤）
 
-来自不同来源的所有这些数据都将合并到一个统一的客户用户档案中。
+來自不同來源的所有這些資料會合併至單一統一客戶設定檔中。
 
 ## 配置数据源
 
-使用 [!DNL Real-Time Customer Data Platform] 将新数据源引入平台。 Real-Time CDP包含可快速轻松地添加到用户档案的数据源目录。
+使用 [!DNL Real-Time Customer Data Platform] 將新的資料來源帶入Platform。 Real-Time CDP包括資料來源目錄，可快速輕鬆地新增至設定檔。
 
 ![image](assets/luma-source-cat.png)
 
-例如，要摄取Luma的CRM数据，请按 *CRM*，以及包含 *CRM* 列出。 添加 [!DNL Microsoft Dynamics CRM] 数据：
+例如，若要內嵌Luma的CRM資料，請篩選目錄 *CRM*，以及所有內含下列專案的現成可用聯結器 *CRM* 都會列出。 若要新增 [!DNL Microsoft Dynamics CRM] 資料：
 
-1. 授权连接。
+1. 授權連線。
 
    ![image](assets/luma-source-auth.png)
 
-1. 从推荐的XDM预映射表列表中选择要导入的内容。
+1. 從建議的XDM預先對應表格清單中選擇要匯入的內容。
 
    <!--    ![image](assets/luma-source-import.png) -->
 
-   例如，选择 **[!UICONTROL 联系人]**. 联系人数据的预览会自动加载，这样您就可以确保一切都按预期显示。
+   例如，選取 **[!UICONTROL 連絡人]**. 連絡人資料的預覽會自動載入，因此您可以確保一切如預期般顯示。
 
-   Adobe Experience Platform通过将标准字段自动映射到 [!DNL Experience Data Model] (XDM)配置文件架构。
+   Adobe Experience Platform會將標準欄位自動對應至 [!DNL Experience Data Model] (XDM)設定檔結構描述。
 
-1. 查看字段映射。
+1. 檢閱欄位對應。
 
    <!--    ![image](assets/luma-source-mapping.png) -->
 
-   例如，再次检查联系人的电子邮件字段是否正确映射。\
-   您可以选择预览数据并执行高级映射。
+   例如，仔細檢查連絡人的電子郵件欄位是否已正確對應。\
+   您可以選擇預覽資料並執行進階對應。
 
-1. 设置计划。
+1. 設定排程。
 
    ![image](assets/luma-source-sched.png)
 
-已经完成了。 您刚刚添加 [!DNL Microsoft CRM] 作为数据源输入 [!DNL Experience Platform].
+已完成。 您剛才已新增 [!DNL Microsoft CRM] 做為資料來源至 [!DNL Experience Platform].
 
-### 为使用策略的摄取数据设置标签
+### 標籤使用原則的內嵌資料
 
-Luma有许多内部策略来限制某些类型收集信息的使用，并且还必须遵守与数据使用有关的法律和隐私相关的问题。 使用Adobe Experience Platform数据管理，可以将预定义的数据使用标签应用于数据集（以及这些数据集中的特定字段），从而允许Luma根据特定的使用限制对其数据进行分类。
+Luma有許多內部原則，會限制使用特定種類的已收集資訊，且必須符合資料使用方面的法律和隱私權相關考量。 使用Adobe Experience Platform資料控管，可將預先定義的資料使用標籤套用至資料集（以及這些資料集內的特定欄位），讓Luma根據特定使用限制來分類其資料。
 
 ![](assets/governance-labels.png)
 
-应用数据使用标签后，Luma可以使用“数据管理”创建数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作类型的规则。 尝试在Real-Time CDP中执行构成策略违规的操作时，会阻止该操作，并发出警报以显示违反了哪项策略及原因。
+套用資料使用標籤後，Luma就可以使用資料控管來建立資料使用原則。 資料使用原則是描述您可在包含特定標籤的資料上執行的動作型別的規則。 當嘗試在Real-Time CDP中執行構成原則違規的動作時，會阻止該動作，並提供警示以顯示違反哪個原則及原因。
 
-## 为特定客户整合数据
+## 將特定客戶的資料彙集在一起
 
-在此方案中，搜索Sarah Rose的用户档案。 她的个人资料出现，还有她用来登录的电子邮件。
+在此案例中，搜尋Sarah Rose的設定檔。 她的個人資料隨即出現，並附上她用來登入的電子郵件。
 
 <!-- ![image](assets/luma-find-profile.png) -->
 
-Luma拥有的关于Sarah的所有用户档案信息都会显示出来。 这包括她的个人信息，如地址和电话号码、通信首选项以及她符合条件的区段。
+Luma擁有的所有關於Sarah顯示器的設定檔資訊。 這包括她的個人資訊，例如地址和電話號碼、通訊偏好設定以及她符合資格的區段。
 
 | 类别 | 描述 |
 |---|---|
-| 标识 | 显示中已链接在一起的身份 [!DNL Platform] 通过渠道和设备与Luma的互动。 将显示网站中的ECID。 她的身份还包括其移动设备应用程序中的ECID、电子邮件ID、最近添加的 [!DNL Microsoft Dynamics] 数据集，以及从Luma忠诚度系统传递到Adobe Experience Platform的忠诚度ID。 |
-| 事件 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的项目、她过去查看过的任何内容、她收到的电子邮件、她与呼叫中心的交互，以及这些交互发生的渠道和设备。 |
+| 标识 | 顯示連結在一起的身分 [!DNL Platform] 來自Sarah跨頻道和裝置與Luma的互動。 會顯示她來自網站的ECID。 她的身分也包含行動應用程式的ECID、電子郵件ID，以及最近新增的CRM ID [!DNL Microsoft Dynamics] 和從Luma忠誠度系統傳入Adobe Experience Platform的忠誠度ID。 |
+| 事件 | 顯示Sarah與Luma品牌的所有互動資料。 這包括她剛檢視的專案、過去檢視的任何專案、收到的電子郵件、她與客服中心的互動，以及每次互動發生在哪個頻道和裝置。 |
 
-Real-Time CDP配置文件可将Luma营销团队的工作流程从数周减少到数分钟，并根据这一360度客户视图解锁进行个性化的可能性。 用户档案可将她登录前浏览网站时的行为数据与现有客户档案合并，从而创建Sarah的全面视图。
+Real-Time CDP設定檔可將Luma行銷團隊的工作流程從數週縮短至數分鐘，並根據此360度客戶檢視開啟個人化的可能性。 設定檔會合併她在登入前瀏覽網站時的行為資料，以及她現有的客戶設定檔，以建立Sarah的全面檢視。
 
-营销团队可以使用此增强功能， [!DNL Real-Time Customer Profile] 以更好地个性化莎拉的体验，并提高她对Luma的品牌忠诚度。
+行銷團隊可以使用此增強功能、 [!DNL Real-Time Customer Profile] 以便更個人化Sarah的體驗，並提高她對Luma的品牌忠誠度。
 
 ## 区段
 
-强大的Adobe Experience Platform分段功能使营销人员能够根据 [!DNL Real-Time Customer Profile].
+強大的Adobe Experience Platform區段功能可讓行銷人員根據中擷取的資料，結合屬性、事件和現有區段 [!DNL Real-Time Customer Profile].
 
 <!-- ![image](assets/luma-segments.png) -->
 
-在这种情况下，Sarah最近在网站上的交互行为与她过去的行为不同。 她通常买女装。 但是，她车里的物品是男子的大运动衫。
+在此案例中，Sarah最近在網站上的互動表現出與她過去行為不同的行為。 她通常購買女裝。 不過，她購物車中的商品是男士大運動衫。
 
-Luma数据科学团队围绕购买倾向创建了一些模型。 一种模型标识了现有消费者的服装类别（如男/女）或体型的突然变化。 莎拉的购买行为改变表明她不是在为自己购物。
+Luma資料科學團隊已針對購買傾向建立模型。 有一種模式可識別現有消費者的服飾類別（例如女士/女士）或大小突然變化。 Sarah的購買行為改變表明，她不是在為自己購物。
 
 <!-- ![image](assets/luma-gift.png) -->
 
-### 定义区段
+### 定義區段
 
-修改或创建一个区段，以表示似乎正在购买礼品的购物车放弃者：
+修改或建立代表似乎正在購買禮品之購物車放棄者的區段：
 
 ```sql
 Profile: Category != Preferred Category 
@@ -226,79 +226,79 @@ Loyalty member
 
 <!-- ![image](assets/luma-abandon.png)-->
 
-因为莎拉在购物车里添加了一件看上去是礼物的物品，并放弃了它，所以Luma可以以免费礼品包的形式来定位她。
+因為Sarah在購物車中新增了一個明顯的禮物專案並捨棄了，Luma可以使用免費的禮物包裝選件鎖定她。
 
 ## 目标
 
-添加“赠送购物车放弃者”区段后，您大致可以看到此区段中有多少人。 您可以对其执行操作，并使其可用于跨渠道进行个性化。
+當您新增「放棄贈送禮品購物車」區段時，您可以大致檢視有多少人屬於此區段。 您可以對其採取動作，並使其可用於跨管道的個人化。
 
-选择 **[!UICONTROL 发送到目标]**.
+選取 **[!UICONTROL 傳送至目的地]**.
 
-在Real-Time CDP中，Luma可以根据其受众区段无缝地执行个性化操作。\
-在这里，我们看到所有可供Luma将此目标发送到的目标，包括Adobe和非Adobe解决方案：
+在Real-Time CDP中，Luma可順暢地對受眾區段進行個人化。\
+我們在這裡看到Luma可將此目的地傳送至的所有目的地，包括Adobe和非Adobe解決方案：
 
 ![image](assets/luma-dest.png)
 
-### 选择目标
+### 選取目的地
 
-在此方案中，Luma希望通过以下目标中的个性化来重新定位此受众：
+在此案例中，Luma想要跨以下目的地透過個人化重新鎖定此對象：
 
-* Google，用于显示
+* Google，用於顯示
 
    <!--* Facebook -->
-* Adobe Campaign，用于电子邮件
+* Adobe Campaign，用於電子郵件
 
 <!-- ![image](assets/luma-sched-dest.png) -->
 
-### 计划目标
+### 正在排程目的地
 
-您还可以安排区段在特定时间开始或结束。 该区段将在计划日期的已配置平台中发布并自动更新。
+您也可以排程區段在特定時間開始或結束。 區段將會在排程日期在設定的平台上發佈並自動更新。
 
 >[!NOTE]
 >
->（可选）如果选择日期字段，它会自动计划90天外。
+>（選擇性）如果您選取日期欄位，則會自動排程90天之後。
 
-选择 **[!UICONTROL 保存]** 转到下一页。
+選取 **[!UICONTROL 儲存]** 前往下一頁。
 
-当此受众中的客户购买产品时，他们对此受众的会员资格会实时受到禁止。 他们不再符合资格，因为他们的状态已经改变。
+當此對象中的客戶進行購買時，其對此對象的成員資格會即時隱藏。 他們不再符合資格，因為其狀態已變更。
 
-如果不将库存用于不符合条件的受众，Luma媒体团队的主管将因此节省数十万美元。
+這樣一來，Luma媒體團隊主管就不會對未合格的受眾使用清查資源，進而節省數十萬美元。
 
-### 为目标实施数据使用策略
+### 強制目的地的資料使用原則
 
-Adobe Experience Platform包含隐私和安全控制，用于确定区段是否可以激活到特定目标。 激活的启用或限制取决于创建时分配给目标的营销目的，以及您的组织定义的数据使用策略。
+Adobe Experience Platform包含隱私權與安全性控制項，用來判斷區段是否可啟動至特定目的地。 啟用是根據建立目的地時指派的行銷目的來啟用或限制，以及您的組織定義的資料使用原則。
 
-如果您的活动违反了策略，则会显示一条警告。 此警告包含数据谱系信息，可帮助您确定违反策略的原因以及您可以采取什么措施来解决违规。
+如果您的活動違反原則，系統會顯示警告。 此警告包含資料譜系資訊，可協助您識別違反原則的原因，以及您可以如何解決違規。
 
-有了这些控制， [!DNL Experience Platform] 帮助Luma以负责任的方式遵守法规和市场。 这些控制是灵活的，可以进行修改以满足Luma的安全和治理团队的要求，使他们能够放心地满足管理已知和未知客户数据的地区和组织要求。
+有了這些控制項， [!DNL Experience Platform] 協助Luma以負責的方式遵守法規與市場。 這些控制具有彈性，可以修改以符合Luma安全和治理團隊的要求，讓他們能夠自信地滿足區域和組織管理已知和未知客戶資料的要求。
 
-### 数据流画布
+### 資料流程畫布
 
-保存后，可视化数据流画布会显示从统一配置文件映射到您选择的三个目标的区段。
+儲存後，視覺資料流程畫布會顯示從統一設定檔對應至您選取之三個目的地的區段。
 
 ![image](assets/luma-flow.png)
 
-## 跨设备身份拼合
+## 跨裝置身分識別拼接
 
-Sarah在她的移动设备上浏览了一个社交媒体网站，她看到了一则Luma广告。 它让她想起她在车里留下的物品。
+Sarah在行動裝置上瀏覽社群媒體網站，且看到Luma廣告。 這讓她想起購物車中留下的物品。
 
-之后，她打开电子邮件，看到重新定向的电子邮件。 她从电子邮件中选择指向Luma的链接。
+稍後，她開啟電子郵件，並看到重新定位的電子郵件。 她從電子郵件中選取Luma連結。
 
-该链接会将Sarah引导至移动Luma主页，她在该主页上看到由Adobe Target提供支持的高度个性化体验。
+此連結會將Sarah帶往Luma行動首頁，她在其中看到Adobe Target提供的高度個人化體驗。
 
-* 她受到铜人的欢迎。
-* 她看到“礼物”的信息。
-* 她还看到“免费礼品包装”信息，这是她获得铜牌会员资格的福利之一。
-* 她仍然是以她对跑步的喜爱为目标的英雄形象。
+* 她受到青銅會員的歡迎。
+* 她看到「禮物」訊息。
+* 她也會看到「免費贈品包裝」訊息，這是她銅牌會員資格權益的一部分。
+* 根據她對於執行的喜好，主圖影像中仍會鎖定她。
 
-她买毛衣，加上礼物包装，写礼物便条。 她还可以选择记住这个活动，并在明年收到提醒，以便在此时收到礼物。 她说是的，并计划在第二年在电子邮件活动中提醒她再购买一份礼物。
+她購買毛衣、增加禮物包裝，並寫禮品單。 她也可以選擇記住這個活動，並收到明年的提醒，以便在這個時候收到禮物。 她說是的，並排定在第二年進行電子郵件促銷活動，以提醒她購買其他禮物。
 
-由于受众抑制能力，莎拉不会成为男人毛衣的目标。
+多虧了受眾抑制功能，Sarah的男士毛衣就不會成為目標。
 
-## 分析用户档案
+## 分析設定檔
 
-Luma营销人员使用Adobe Experience Platform查看Real-Time CDP功能板上的礼品赠送区段。 他们看到了这项计划的成果，并看到它正在增长。 客户正在响应优惠，并投入更多资金。
+Luma行銷人員使用Adobe Experience Platform檢視Real-Time CDP儀表板上的贈送禮物區段。 他們檢視此行動方案隨時間推移的結果，並看到其成長。 客戶對優惠方案做出回應，並花費更多金錢。
 
-这些洞察使营销人员能够对此信号采取行动，该信号的推动因素包括：将此数据提供到CDP中，并将Sarah等客户附加到该区段。
+這些見解讓行銷人員能針對此訊號採取行動，此訊號透過在CDP中取得此資料以及讓客戶（例如Sarah）附加至區段而強化。
 
-Luma使用此CDP数据来提高忠诚度和客户满意度。
+Luma使用此CDP資料來提高忠誠度和客戶滿意度。

@@ -1,6 +1,6 @@
 ---
-title: YouTube视频跟踪扩展概述
-description: 了解Adobe Experience Platform中的YouTube视频跟踪标记扩展。
+title: YouTube影片追蹤擴充功能概觀
+description: 瞭解Adobe Experience Platform中的YouTube影片追蹤標籤擴充功能。
 exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,51 +9,51 @@ ht-degree: 40%
 
 ---
 
-# YouTube视频跟踪扩展概述
+# YouTube影片追蹤擴充功能概觀
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 **先决条件**
 
-Adobe Experience Platform中的每个标记属性都需要从“扩展”屏幕中安装和配置以下扩展：
+Adobe Experience Platform中的每個標籤屬性都需要從「擴充功能」畫面安裝並設定下列擴充功能：
 
 * Adobe Analytics
 * Experience Cloud 访客 ID 服务
 * 核心扩展
 
-使用 [&quot;使用\嵌入播放器&lt;iframe> 标记”](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) 在要呈现视频播放器的每个网页的HTML中，从Google开发人员文档中提供的代码片段。
+使用 [「使用\內嵌播放器&lt;iframe> 標籤」](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) 每個影片播放器要呈現的網頁的HTML中，Google開發人員檔案的程式碼片段。
 
-此扩展版本2.0.1，支持通过插入 `id` 属性，并在iframe脚本标记中附加唯一值 `enablejsapi=1` 和 `rel=0` 到 `src` 属性值（如果尚未包含）。 例如：
+此2.0.1版擴充功能可透過插入「 」，支援在同一網頁內嵌一或多部YouTube影片。 `id` iframe指令碼標籤中具有唯一值的屬性，並附加 `enablejsapi=1` 和 `rel=0` 到結尾 `src` 屬性值（若尚未包含）。 例如：
 
 `<iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/xpatB77BzYE?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-此扩展还设计为动态检查唯一ID属性值，例如 `player1`，无论 `enablejsapi` 和 `rel` 查询字符串参数存在，且其预期值正确时。 因此，可以将YouTube脚本标记添加到包含或不包含 `id` 属性和 `enablejsapi` 和 `rel` 是否包含查询字符串参数。
+此擴充功能也可用來動態檢查唯一的ID屬性值，例如 `player1`，不論 `enablejsapi` 和 `rel` 查詢字串引數存在，而且其預期值是否正確。 因此，可以將YouTube指令碼標籤新增至網頁，無論是否使用 `id` 屬性以及是否 `enablejsapi` 和 `rel` 是否包含查詢字串引數。
 
 >[!NOTE]
 >
->在具有多个视频的页面上，每个视频使用在该页面上执行的标记规则中设置的相同配置。 例如，如果创建的规则规定在视频播放完 50% 时触发某个事件，则页面上的每个视频都将在 50% 提示点触发该规则。
+>在含有多個視訊的頁面上，每個視訊都使用在該頁面上執行的標籤規則中設定的相同設定。 例如，如果创建的规则规定在视频播放完 50% 时触发某个事件，则页面上的每个视频都将在 50% 提示点触发该规则。
 
-该扩展依赖以下逻辑来重写iFrame:
+擴充功能需仰賴下列邏輯來重寫iFrame：
 
 ```javascript
 document.onreadystatechange = function () {
  if (document.readyState === 'complete') {
 ```
 
-因此，页面加载后会出现轻微闪烁。 此行为是符合预期的。
+因此，頁面載入後會出現輕微閃爍。 此行为是符合预期的。
 
 ## 数据元素
 
-扩展中有六个可用的数据元素，这些数据元素都不需要进行配置。
+擴充功能中有6個可用的資料元素，且皆不需要設定。
 
-* **播放头位置：** 当在标记规则中调用播放头位置时，会以秒为单位记录播放头在视频时间轴上的位置。
+* **播放點位置：** 當在標籤規則中呼叫播放點位置時，會以秒為單位記錄播放點在視訊時間軸上的位置。
 * **视频 ID：**&#x200B;指定与视频关联的 YouTube ID。
 * **视频名称：**&#x200B;指定视频的描述性或友好名称。
 * **视频 URL：**&#x200B;返回当前已加载/正在播放视频的 YouTube.com URL。
 * **视频持续时间：**&#x200B;记录视频内容的总持续时间（以秒为单位）。
-* **扩展版本：** 此数据元素记录YouTube跟踪扩展版本，例如“Video Tracking_YouTube_2.0.0”。
+* **擴充功能版本：** 此資料元素會記錄YouTube追蹤擴充功能版本，例如「Video Tracking_YouTube_2.0.0」。
 
 ## 事件
 
@@ -64,13 +64,13 @@ document.onreadystatechange = function () {
 * **视频重播：**&#x200B;提示并在初始开始后重播视频时触发。此触发器将在每次重播视频时触发。
 * **视频暂停：**&#x200B;视频暂停时触发。
 * **视频恢复：**&#x200B;视频恢复，并且 `player.getCurrentTime() !== 0` 时触发。
-* **自定义提示跟踪：**&#x200B;视频达到指定的视频阈值百分比时触发。例如，如果视频为60秒，而指定的提示点为50%，则当播放头位置等于30秒时，将触发事件。 提示点跟踪适用于初次播放和重播。请注意，如果用户在提示点之间搜寻，则不会触发该事件。 仅当播放头穿过时间轴上计算的提示点位置，并且视频播放器正在播放时，才会触发提示点事件。
+* **自定义提示跟踪：**&#x200B;视频达到指定的视频阈值百分比时触发。例如，如果影片長度為60秒，而指定的提示點為50%，則播放點位置等於30秒時會觸發此事件。 提示点跟踪适用于初次播放和重播。請注意，如果使用者在提示點上尋找，則不會觸發事件。 唯有當播放點越過時間軸上計算的提示點位置，且視訊播放器正在播放時，才會觸發提示點事件。
 * **视频缓冲：**&#x200B;当播放器在开始播放视频之前下载一定数量的数据时触发。
 * **视频结束：**&#x200B;视频完全结束时触发。
 
 ## 使用情况
 
-可以为每个视频事件（上面列出的七个事件）设置一个标记规则。 为要跟踪的每个事件创建特定的标记规则。 如果不想跟踪事件，则只需省略以为其创建规则。
+您可以為每個視訊事件（即上方列出的七個事件）設定一個標籤規則。 為您要追蹤的每個事件建立特定的標籤規則。 如果您不想追蹤事件，只需省略以為其建立規則即可。
 
 规则包含三个操作：
 
@@ -78,27 +78,27 @@ document.onreadystatechange = function () {
 * **发送信标：**&#x200B;作为自定义链接跟踪调用发送 Adobe Analytics 信标，并提供“链接名称”值。
 * **清除变量：**&#x200B;清除 Adobe Analytics 变量。
 
-## “视频开始”的标记规则示例
+## 「影片開始」的標籤規則範例
 
-将包含以下视频扩展对象。
+需包括以下影片擴充功能物件。
 
-* **事件**:“视频开始”(此事件将在访客开始播放YouTube视频时触发规则。)
+* **事件**：「影片開始」(此事件會在訪客開始播放YouTube影片時觸發規則)。
 
 * **条件**：无
 
-* **操作**： 使用 **Analytics扩展** 要“设置变量”操作，请映射：
+* **操作**： 使用 **Analytics擴充功能** 至「設定變數」動作，對應：
 
-   * 视频开始事件、
+   * 影片開始事件，
    * 视频持续时间数据元素的 prop/eVar
    * 视频 ID 数据元素的 prop/eVar
    * 视频名称数据元素的 prop/eVar
    * 视频 URL 数据元素的 prop/eVar
 
-   然后，包括“发送信标”操作(`s.tl`)，其链接名称为“视频开始”，后跟“清除变量”操作。
+   接著，加入「傳送信標」動作(`s.tl`)，連結名稱為「影片開始」，接著會執行「清除變數」動作。
 
 >[!TIP]
 > 
->对于无法为每个视频元素使用多个eVar或prop的实施，可以在Platform中连接数据元素值，使用分类规则生成器工具将其解析为分类报表，如 [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)，然后作为区段在Analysis Workspace中应用。
+>對於無法對每個視訊元素使用多個eVar或prop的實作，可在Platform中串連資料元素值，並使用「分類規則產生器」工具剖析為分類報表，如中所述 [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)，然後套用為Analysis Workspace中的區段。
 
 要连接视频信息值，请创建一个名为“视频元数据”的新数据元素，然后对其进行编程，以拉入以上列出的所有视频数据元素并将它们组合在一起。例如：
 

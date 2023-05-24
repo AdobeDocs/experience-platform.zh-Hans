@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；预览；示例
-title: 预览示例状态（配置文件预览）API端点
-description: 实时客户配置文件API的预览示例状态端点允许您预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成显示数据集重叠、身份重叠和未拼合配置文件的报表。
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；預覽；範例
+title: 預覽範例狀態（設定檔預覽） API端點
+description: Real-Time Customer Profile API的預覽範例狀態端點可讓您預覽設定檔資料的最新成功範例、依資料集和身分列出設定檔分佈，並產生顯示資料集重疊、身分重疊和未拼接設定檔的報告。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -10,46 +10,46 @@ ht-degree: 1%
 
 ---
 
-# 预览示例状态端点（配置文件预览）
+# 預覽範例狀態端點（設定檔預覽）
 
-Adobe Experience Platform允许您从多个来源摄取客户数据，以便为每个单独的客户构建一个强大、统一的配置文件。 将数据摄取到Platform后，将运行一个示例作业以更新用户档案计数和其他与实时客户档案数据相关的量度。
+Adobe Experience Platform可讓您從多個來源擷取客戶資料，以便為個別客戶建立強大且統一的設定檔。 將資料內嵌至Platform後，會執行範例工作以更新設定檔計數和其他即時客戶設定檔資料相關量度。
 
-可以使用 `/previewsamplestatus` 端点，实时客户配置文件API的一部分。 此端点还可用于按数据集和身份命名空间列出配置文件分配，以及生成多个报表，以便查看您组织的配置文件存储的组成。 本指南将逐步介绍使用 `/previewsamplestatus` API端点。
+此範例工作的結果可以使用檢視 `/previewsamplestatus` 端點，即時客戶設定檔API的一部分。 此端點也可用來依資料集和身分名稱空間列出設定檔分佈，以及產生多個報表，以瞭解貴組織設定檔存放區的組成。 本指南會逐步說明使用檢視這些量度所需的步驟。 `/previewsamplestatus` api端點。
 
 >[!NOTE]
 >
->Adobe Experience Platform Segmentation Service API提供了一些可用的预估和预览端点，通过这些端点可以查看有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找有关使用区段预览和评估端点的详细步骤，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md), [!DNL Segmentation] API开发人员指南。
+>Adobe Experience Platform Segmentation Service API提供預估和預覽端點，可讓您檢視關於區段定義的摘要層級資訊，以協助確保您隔離預期對象。 若要尋找使用區段預覽和估計端點的詳細步驟，請造訪 [預覽和估計端點指南](../../segmentation/api/previews-and-estimates.md)，的一部分 [!DNL Segmentation] API開發人員指南。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端點是 [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在繼續之前，請檢閱 [快速入門手冊](getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功對任一檔案發出呼叫所需必要標題的重要資訊 [!DNL Experience Platform] API。
 
-## 配置文件片段与合并的配置文件
+## 設定檔片段與合併的設定檔
 
-本指南同时引用“配置文件片段”和“合并的配置文件”。 在继续操作之前，务必要了解这些术语之间的差异。
+本指南同時參考了「設定檔片段」和「合併的設定檔」。 在繼續之前，請務必瞭解這些辭彙之間的差異。
 
-每个客户配置文件都由多个配置文件片段组成，这些片段已合并，以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌进行交互，则贵组织可能在多个数据集中显示与该单个客户相关的多个配置文件片段。
+每個個別客戶設定檔都由多個設定檔片段組成，這些片段已合併以形成該客戶的單一檢視。 例如，如果客戶跨多個管道與您的品牌互動，您的組織可能會有多個與該單一客戶相關的設定檔片段出現在多個資料集中。
 
-将配置文件片段摄取到Platform后，它们会合并在一起（基于合并策略），以便为该客户创建单个配置文件。 因此，由于每个配置文件都由多个片段组成，因此配置文件片段的总数可能始终高于合并的配置文件的总数。
+將設定檔片段擷取至Platform時，會合併這些片段（根據合併原則），以為該客戶建立單一設定檔。 因此，由於每個設定檔都是由多個片段所組成，因此設定檔片段的總數可能一律高於合併的設定檔總數。
 
-要进一步了解用户档案及其在Experience Platform中的角色，请首先阅读 [实时客户资料概述](../home.md).
+若要進一步瞭解設定檔及其在Experience Platform中的角色，請先閱讀 [即時客戶個人檔案總覽](../home.md).
 
-## 示例作业的触发方式
+## 如何觸發範例工作
 
-由于实时客户资料的启用数据会被摄取到 [!DNL Platform]，则会存储在配置文件数据存储中。 当将记录摄取到用户档案存储区时，如果用户档案总计数增加或减少5%以上，则会触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
+當啟用即時客戶設定檔的資料內嵌到時 [!DNL Platform]，會儲存在設定檔資料存放區中。 當將記錄擷取至設定檔存放區增加或減少總設定檔計數超過5%時，會觸發取樣工作以更新計數。 範例的觸發方式取決於所使用的擷取型別：
 
-* 对于 **流式数据工作流**，则会每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行此操作，则会自动触发示例作业以更新计数。
-* 对于 **批量摄取**，在成功将批处理摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则会运行一个作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
+* 對象 **串流資料工作流程**，會每小時進行一次檢查，以判斷是否已達到5%的增加或減少臨界值。 如果有，則會自動觸發範例工作以更新計數。
+* 對象 **批次擷取**，在成功將批次擷取至設定檔存放區後15分鐘內，如果符合5%增加或減少臨界值，則會執行工作以更新計數。 使用設定檔API，您可以預覽最新成功的範例作業，以及依資料集和身分名稱空間列出設定檔分佈。
 
-在 [!UICONTROL 用户档案] Experience PlatformUI的部分。 有关如何使用UI访问用户档案数据的信息，请访问 [[!DNL Profile] UI指南](../ui/user-guide.md).
+依名稱空間量度的設定檔計數和設定檔也可在 [!UICONTROL 設定檔] Experience PlatformUI的區段。 如需有關如何使用UI存取設定檔資料的資訊，請造訪 [[!DNL Profile] UI指南](../ui/user-guide.md).
 
-## 查看最后一个示例状态 {#view-last-sample-status}
+## 檢視上一個範例狀態 {#view-last-sample-status}
 
-您可以对 `/previewsamplestatus` 端点来查看为您的组织运行的最后一个成功示例作业的详细信息。 这包括示例中的用户档案总数，以及用户档案计数量度，或您的组织在Experience Platform中拥有的用户档案总数。
+您可以對執行GET要求 `/previewsamplestatus` 端點可檢視您的組織上一次成功執行之範例工作的詳細資訊。 這包括範例中的設定檔總數，以及設定檔計數量度，或您的組織在Experience Platform內擁有的設定檔總數。
 
-将配置文件片段合并到一起后，会生成配置文件计数，以便为每个单独的客户形成一个配置文件。 换言之，当配置文件片段合并在一起时，它们会返回“1”个配置文件的计数，因为它们都与同一个人相关。
+設定檔計數是在合併設定檔片段後產生，以為每個個別客戶形成單一設定檔。 換言之，當設定檔片段合併在一起時，它們會傳回「1」設定檔計數，因為它們都與同一個人相關。
 
-用户档案计数还包含具有属性（记录数据）的用户档案，以及仅包含时间系列（事件）数据的用户档案，如Adobe Analytics用户档案。 在摄取用户档案数据时，将定期刷新示例作业，以便在Platform中提供最新的用户档案总数。
+設定檔計數也包含具有屬性（記錄資料）的設定檔，以及僅包含時間序列（事件）資料(例如Adobe Analytics設定檔)的設定檔。 範例工作會在擷取設定檔資料時定期重新整理，以提供Platform內最新的設定檔總數。
 
 **API格式**
 
@@ -70,11 +70,11 @@ curl -X GET \
 
 **响应**
 
-响应包含为组织运行的最后一个成功示例作业的详细信息。
+回應包含針對組織執行的最後一個成功範例工作的詳細資訊。
 
 >[!NOTE]
 >
->在此示例响应中， `numRowsToRead` 和 `totalRows` 彼此相等。 根据贵组织在Experience Platform中拥有的用户档案数，情况可能如此。 但是，通常这两个数字是不同的， `numRowsToRead` 数字越小，因为它表示示例是用户档案总数的子集(`totalRows`)。
+>在此範例回應中， `numRowsToRead` 和 `totalRows` 彼此相等。 根據貴組織在Experience Platform中的設定檔數量，情況可能會如此。 不過，這兩個數字通常不同，而且 `numRowsToRead` 是較小的數字，因為它代表範例為設定檔總數的子集(`totalRows`)。
 
 ```json
 {
@@ -98,22 +98,22 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `numRowsToRead` | 示例中合并的用户档案总数。 |
-| `sampleJobRunning` | 返回的布尔值 `true` 正在进行示例作业时。 为从上传批处理文件到将其实际添加到配置文件存储区的延迟提供透明度。 |
-| `cosmosDocCount` | Cosmos中的文档总计数。 |
-| `totalFragmentCount` | 配置文件存储中的配置文件片段总数。 |
-| `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
-| `streamingDriven` | *此字段已弃用，且不包含对响应的显着性。* |
-| `totalRows` | Experience Platform中合并的用户档案总数，也称为“用户档案计数”。 |
-| `lastBatchId` | 上次批量摄取ID。 |
-| `status` | 最后一个示例的状态。 |
-| `samplingRatio` | 采样的合并用户档案的比率(`numRowsToRead`)到合并用户档案总数(`totalRows`)，以小数格式以百分比表示。 |
-| `mergeStrategy` | 示例中使用的合并策略。 |
-| `lastSampledTimestamp` | 上次成功的示例时间戳。 |
+| `numRowsToRead` | 範例中合併的設定檔總數。 |
+| `sampleJobRunning` | 傳回的布林值 `true` 當範例工作正在進行時。 將批次檔案上傳至時，實際新增至設定檔存放區時，產生的延遲可透明化。 |
+| `cosmosDocCount` | Cosmos中的檔案總數。 |
+| `totalFragmentCount` | 設定檔存放區中的設定檔片段總數。 |
+| `lastSuccessfulBatchTimestamp` | 上次成功的批次擷取時間戳記。 |
+| `streamingDriven` | *此欄位已棄用，且未包含回應的任何重要意義。* |
+| `totalRows` | Experience Platform中合併的設定檔總數，也稱為「設定檔計數」。 |
+| `lastBatchId` | 上次批次擷取ID。 |
+| `status` | 上一個範例的狀態。 |
+| `samplingRatio` | 合併設定檔取樣比例(`numRowsToRead`)至合併的設定檔總數(`totalRows`)，以十進位格式的百分比表示。 |
+| `mergeStrategy` | 範例中使用的合併策略。 |
+| `lastSampledTimestamp` | 上次成功的範例時間戳記。 |
 
-## 按数据集列出配置文件分发
+## 依資料集列出設定檔分佈
 
-要按GET集查看用户档案的分布，您可以向 `/previewsamplestatus/report/dataset` 端点。
+GET若要依資料集檢視設定檔的分佈，您可以對 `/previewsamplestatus/report/dataset` 端點。
 
 **API格式**
 
@@ -124,11 +124,11 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要傳回的報表日期。 如果在該日期執行了多個報表，則會傳回該日期的最新報表。 如果指定日期不存在報表，則會傳回404 （找不到）錯誤。 如果未指定日期，則會傳回最近的報告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求使用 `date` 参数来返回指定日期的最新报表。
+以下請求使用 `date` 引數以傳回指定日期的最新報告。
 
 ```shell
 curl -X GET \
@@ -141,11 +141,11 @@ curl -X GET \
 
 **响应**
 
-响应包括 `data` 数组，包含数据集对象列表。 显示的响应已被截断，以显示三个数据集。
+回應包括 `data` 陣列，包含資料集物件清單。 顯示的回應已截斷，顯示三個資料集。
 
 >[!NOTE]
 >
->如果日期存在多个报表，则只会返回最新的报表。 如果提供的日期不存在数据集报表，则会返回“HTTP状态404（未找到）”。
+>如果日期存在多個報表，則僅傳回最新的報表。 如果提供的日期不存在資料集報告，則會傳回HTTP狀態404 （找不到）。
 
 ```json
 {
@@ -193,26 +193,26 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `sampleCount` | 使用此数据集ID的采样合并用户档案总数。 |
-| `samplePercentage` | 的 `sampleCount` 按采样合并用户档案总数的百分比( `numRowsToRead` 值 [上次示例状态](#view-last-sample-status))，以小数格式表示。 |
-| `fullIDsCount` | 具有此数据集ID的合并用户档案总数。 |
-| `fullIDsPercentage` | 的 `fullIDsCount` 合并用户档案总数( `totalRows` 值 [上次示例状态](#view-last-sample-status))，以小数格式表示。 |
-| `name` | 数据集的名称，在数据集创建期间提供。 |
-| `description` | 数据集的描述，在数据集创建期间提供。 |
-| `value` | 数据集的ID。 |
-| `streamingIngestionEnabled` | 是否为流摄取启用了数据集。 |
-| `createdUser` | 创建数据集的用户的用户ID。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数，则返回的报表为提供的日期。 如果否 `date` 参数时，将返回最新的报表。 |
+| `sampleCount` | 使用此資料集ID的抽樣合併設定檔總數。 |
+| `samplePercentage` | 此 `sampleCount` 佔抽樣合併設定檔總數的百分比( `numRowsToRead` 中傳回的值 [上一個範例狀態](#view-last-sample-status))，以十進位格式表示。 |
+| `fullIDsCount` | 具有此資料集ID的合併設定檔總數。 |
+| `fullIDsPercentage` | 此 `fullIDsCount` 佔合併的設定檔總數的百分比( `totalRows` 中傳回的值 [上一個範例狀態](#view-last-sample-status))，以十進位格式表示。 |
+| `name` | 資料集的名稱，在資料集建立期間提供。 |
+| `description` | 資料集的說明，如資料集建立期間所提供。 |
+| `value` | 資料集的ID。 |
+| `streamingIngestionEnabled` | 資料集是否已啟用串流擷取。 |
+| `createdUser` | 建立資料集之使用者的使用者ID。 |
+| `reportTimestamp` | 報表的時間戳記。 若為 `date` 引數是在請求期間提供，而傳回的報表是對應於提供的日期。 若否 `date` 引數之後，會傳回最新的報表。 |
 
-## 按身份命名空间列出配置文件分发
+## 依身分名稱空間列出設定檔分佈
 
-您可以对 `/previewsamplestatus/report/namespace` 端点来查看“配置文件存储”中所有合并配置文件中按身份命名空间划分的内容。 这包括由Adobe提供的标准身份以及由您的组织定义的自定义身份。
+您可以對執行GET要求 `/previewsamplestatus/report/namespace` 端點，用來檢視設定檔存放區中所有合併設定檔的依身分名稱空間劃分。 這包括Adobe提供的標準身分識別，以及貴組織定義的自訂身分識別。
 
-身份命名空间是Adobe Experience Platform Identity Service的重要组件，充当与客户数据相关的上下文指示器。 要了解更多信息，请首先阅读 [身份命名空间概述](../../identity-service/namespaces.md).
+身分識別名稱空間是Adobe Experience Platform Identity Service的重要元件，可做為客戶資料相關內容的指標。 若要進一步瞭解，請先閱讀 [身分名稱空間總覽](../../identity-service/namespaces.md).
 
 >[!NOTE]
 >
->按命名空间划分的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌进行交互，则多个命名空间将与该个别客户关联。
+>依名稱空間區分的設定檔總數（加總針對每個名稱空間顯示的值）可能會高於設定檔計數量度，因為一個設定檔可能會與多個名稱空間建立關聯。 例如，如果客戶在多個頻道上與您的品牌互動，則多個名稱空間會與該個別客戶相關聯。
 
 **API格式**
 
@@ -223,11 +223,11 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要傳回的報表日期。 如果在該日期執行了多個報表，則會傳回該日期的最新報表。 如果指定日期不存在報表，則會傳回404 （找不到）錯誤。 如果未指定日期，則會傳回最近的報告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求未指定 `date` 参数和将因此返回最新的报表。
+以下請求未指定 `date` 引數，因此將傳回最新的報表。
 
 ```shell
 curl -X GET \
@@ -240,7 +240,7 @@ curl -X GET \
 
 **响应**
 
-响应包括 `data` 数组，其中各个对象包含每个命名空间的详细信息。 显示的响应已被截断为显示四个命名空间。
+回應包括 `data` 陣列，包含每個名稱空間的詳細資訊的個別物件。 顯示的回應已截斷，顯示四個名稱空間。
 
 ```json
 {
@@ -292,22 +292,22 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `sampleCount` | 命名空间中取样的合并配置文件总数。 |
-| `samplePercentage` | 的 `sampleCount` 按采样合并用户档案的百分比( `numRowsToRead` 值 [上次示例状态](#view-last-sample-status))，以小数格式表示。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数，则返回的报表为提供的日期。 如果否 `date` 参数时，将返回最新的报表。 |
-| `fullIDsFragmentCount` | 命名空间中的配置文件片段总数。 |
-| `fullIDsCount` | 命名空间中合并的配置文件总数。 |
-| `fullIDsPercentage` | 的 `fullIDsCount` 合并用户档案总数的百分比( `totalRows` 值 [上次示例状态](#view-last-sample-status))，以小数格式表示。 |
-| `code` | 的 `code` 的子域。 使用命名空间时，可以找到该值 [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) 和也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
-| `value` | 的 `id` 值。 使用命名空间时，可以找到该值 [Identity Service API](../../identity-service/api/list-namespaces.md). |
+| `sampleCount` | 名稱空間中抽樣合併的設定檔總數。 |
+| `samplePercentage` | 此 `sampleCount` 以抽樣合併設定檔的百分比表示( `numRowsToRead` 中傳回的值 [上一個範例狀態](#view-last-sample-status))，以十進位格式表示。 |
+| `reportTimestamp` | 報表的時間戳記。 若為 `date` 引數是在請求期間提供，而傳回的報表是對應於提供的日期。 若否 `date` 引數之後，會傳回最新的報表。 |
+| `fullIDsFragmentCount` | 名稱空間中的設定檔片段總數。 |
+| `fullIDsCount` | 名稱空間中合併的設定檔總數。 |
+| `fullIDsPercentage` | 此 `fullIDsCount` 佔合併的設定檔總數的百分比( `totalRows` 中傳回的值 [上一個範例狀態](#view-last-sample-status))，以十進位格式表示。 |
+| `code` | 此 `code` 用於名稱空間。 這可以在使用名稱空間時找到 [Adobe Experience Platform Identity服務API](../../identity-service/api/list-namespaces.md) 也稱為 [!UICONTROL 身分符號] 在Experience PlatformUI中。 若要進一步瞭解，請造訪 [身分名稱空間總覽](../../identity-service/namespaces.md). |
+| `value` | 此 `id` 名稱空間的值。 這可以在使用名稱空間時找到 [身分識別服務API](../../identity-service/api/list-namespaces.md). |
 
-## 生成数据集重叠报表
+## 產生資料集重疊報告
 
-数据集重叠报表通过公开对可寻址受众（合并的配置文件）贡献最大的数据集，可以显示贵组织的配置文件存储的构成。 除了提供对数据的分析之外，此报表还可以帮助您采取措施来优化许可证使用情况，例如为某些数据集设置过期日期。
+資料集重疊報表可公開對可定址對象貢獻最大的資料集（合併的設定檔），讓您檢視組織設定檔存放區的組成。 除了提供您資料的深入分析，此報表還能協助您採取動作來最佳化授權使用，例如設定特定資料集的到期時間。
 
-您可以通过向 `/previewsamplestatus/report/dataset/overlap` 端点。
+您可以透過對「 」執行GET請求來產生資料集重疊報表。 `/previewsamplestatus/report/dataset/overlap` 端點。
 
-有关如何使用命令行或Postman UI生成数据集重叠报表的分步说明，请参阅 [生成数据集重叠报表教程](../tutorials/dataset-overlap-report.md).
+如需逐步指示，瞭解如何使用命令列或Postman UI產生資料集重疊報告，請參閱 [產生資料集重疊報表教學課程](../tutorials/dataset-overlap-report.md).
 
 **API格式**
 
@@ -318,11 +318,11 @@ GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要傳回的報表日期。 如果在相同日期執行了多個報表，則會傳回該日期的最新報表。 如果指定日期不存在報表，則會傳回404 （找不到）錯誤。 如果未指定日期，則會傳回最近的報告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求使用 `date` 参数来返回指定日期的最新报表。
+以下請求使用 `date` 引數以傳回指定日期的最新報告。
 
 ```shell
 curl -X GET \
@@ -334,7 +334,7 @@ curl -X GET \
 
 **响应**
 
-成功的请求会返回“HTTP状态200（确定）”和数据集重叠报表。
+成功的請求會傳回HTTP狀態200 （確定）和資料集重疊報表。
 
 ```json
 {
@@ -349,12 +349,12 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `data` | 的 `data` 对象包含以逗号分隔的数据集列表及其各自的配置文件计数。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数，则返回的报表为提供的日期。 如果否 `date` 参数时，将返回最新的报表。 |
+| `data` | 此 `data` 物件包含以逗號分隔的資料集清單及其各自的設定檔計數。 |
+| `reportTimestamp` | 報表的時間戳記。 若為 `date` 引數是在請求期間提供，而傳回的報表是對應於提供的日期。 若否 `date` 引數之後，會傳回最新的報表。 |
 
-### 解释数据集重叠报表
+### 解譯資料集重疊報表
 
-可以从响应中的数据集和用户档案计数来解释报表结果。 请考虑以下示例报表 `data` 对象：
+報表的結果可從回應中的資料集和設定檔計數中解譯。 考量下列範例報告 `data` 物件：
 
 ```json
   "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
@@ -362,18 +362,18 @@ curl -X GET \
   "5eeda0032af7bb19162172a7": 107
 ```
 
-此报表提供以下信息：
+此報表提供下列資訊：
 
-* 共有123个用户档案，其中包含来自以下数据集的数据： `5d92921872831c163452edc8`, `5da7292579975918a851db57`, `5eb2cdc6fa3f9a18a7592a98`.
-* 共有454,412个用户档案，包含来自以下两个数据集的数据： `5d92921872831c163452edc8` 和 `5eb2cdc6fa3f9a18a7592a98`.
-* 有107个配置文件只包含来自数据集的数据 `5eeda0032af7bb19162172a7`.
-* 组织共有454,642个用户档案。
+* 有123個設定檔包含來自以下資料集的資料： `5d92921872831c163452edc8`， `5da7292579975918a851db57`， `5eb2cdc6fa3f9a18a7592a98`.
+* 共有454,412個設定檔包含來自這兩個資料集的資料： `5d92921872831c163452edc8` 和 `5eb2cdc6fa3f9a18a7592a98`.
+* 有107個設定檔僅由資料集中的資料組成 `5eeda0032af7bb19162172a7`.
+* 組織內共有454,642個設定檔。
 
-## 生成身份命名空间重叠报表 {#identity-overlap-report}
+## 產生身分名稱空間重疊報表 {#identity-overlap-report}
 
-身份命名空间重叠报表通过公开对可寻址受众（合并的配置文件）贡献最大的身份命名空间，来提供对贵组织配置文件存储区构成的可见性。 这包括由Adobe提供的标准身份命名空间，以及由您的组织定义的自定义身份命名空间。
+身分名稱空間重疊報表可公開對可定址對象貢獻最大的身分名稱空間（合併的設定檔），讓您檢視組織設定檔存放區的組成。 這包括Adobe提供的標準身分名稱空間，以及貴組織定義的自訂身分名稱空間。
 
-您可以通过执行对 `/previewsamplestatus/report/namespace/overlap` 端点。
+您可以透過對「 」執行GET要求，產生身分名稱空間重疊報表。 `/previewsamplestatus/report/namespace/overlap` 端點。
 
 **API格式**
 
@@ -384,11 +384,11 @@ GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要傳回的報表日期。 如果在相同日期執行了多個報表，則會傳回該日期的最新報表。 如果指定日期不存在報表，則會傳回404 （找不到）錯誤。 如果未指定日期，則會傳回最近的報告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求使用 `date` 参数来返回指定日期的最新报表。
+以下請求使用 `date` 引數以傳回指定日期的最新報告。
 
 ```shell
 curl -X GET \
@@ -400,7 +400,7 @@ curl -X GET \
 
 **响应**
 
-成功的请求会返回HTTP状态200（确定）和身份命名空间重叠报表。
+成功的請求會傳回HTTP狀態200 （確定）和身分名稱空間重疊報表。
 
 ```json
 {
@@ -443,15 +443,15 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `data` | 的 `data` 对象包含以逗号分隔的列表，其中包含身份命名空间代码及其相应配置文件计数的唯一组合。 |
-| 命名空间代码 | 的 `code` 是每个身份命名空间名称的短格式。 每个 `code` 到 `name` 可以使用 [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). 的 `code` 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数，则返回的报表为提供的日期。 如果否 `date` 参数时，将返回最新的报表。 |
+| `data` | 此 `data` 物件包含以逗號分隔的清單，其中包含身分名稱空間程式碼及其各自設定檔計數的唯一組合。 |
+| 名稱空間程式碼 | 此 `code` 是每個身分名稱空間名稱的簡短形式。 每個專案的對應 `code` 至其 `name` 可使用找到 [Adobe Experience Platform Identity服務API](../../identity-service/api/list-namespaces.md). 此 `code` 也稱為 [!UICONTROL 身分符號] 在Experience PlatformUI中。 若要進一步瞭解，請造訪 [身分名稱空間總覽](../../identity-service/namespaces.md). |
+| `reportTimestamp` | 報表的時間戳記。 若為 `date` 引數是在請求期間提供，而傳回的報表是對應於提供的日期。 若否 `date` 引數之後，會傳回最新的報表。 |
 
-### 解释身份命名空间重叠报表
+### 解讀身分名稱空間重疊報表
 
-报告的结果可以从响应中的标识和用户档案计数来解释。 每行的数字值可告知您有多少个配置文件由标准和自定义身份命名空间的确切组合组成。
+報表的結果可從回應中的身分和個人資料計數中解譯。 每一列的數值可告訴您有多少設定檔是由標準和自訂身分名稱空間的精確組合所組成。
 
-请考虑以下摘自 `data` 对象：
+請考量以下摘錄自 `data` 物件：
 
 ```json
   "AAID,ECID,Email,crmid": 142,
@@ -459,17 +459,17 @@ curl -X GET \
   "ECID": 6565
 ```
 
-此报表提供以下信息：
+此報表提供下列資訊：
 
-* 共有142个用户档案，由 `AAID`, `ECID`和 `Email` 标准身份，以及来自自定义 `crmid` 身份命名空间。
-* 共有24个用户档案，其中 `AAID` 和 `ECID` 身份命名空间。
-* 有6,565个用户档案仅包含 `ECID` 身份。
+* 共有142個設定檔組成 `AAID`， `ECID`、和 `Email` 標準身分以及自訂 `crmid` 身分名稱空間。
+* 共有24個設定檔組成 `AAID` 和 `ECID` 身分名稱空間。
+* 有6,565個設定檔僅包含 `ECID` 身分。
 
-## 生成未拼合的用户档案报表
+## 產生未拼接的設定檔報告
 
-您可以通过未拼合的用户档案报表，进一步查看贵组织的用户档案存储的构成。 “未拼合”配置文件是只包含一个配置文件片段的配置文件。 “未知”配置文件是与匿名身份命名空间(如 `ECID` 和 `AAID`. 未知用户档案处于不活动状态，这意味着他们在指定时间段内未添加新事件。 未拼合的用户档案报表按7、30、60、90和120天的时间段划分用户档案。
+您可以透過未拼接的設定檔報表，進一步瞭解組織設定檔存放區的構成。 「未拼接」設定檔是僅包含一個設定檔片段的設定檔。 「未知」設定檔是與假名身分名稱空間相關聯的設定檔，例如 `ECID` 和 `AAID`. 未知的設定檔處於非使用中狀態，這表示它們未在指定的時段內新增事件。 「未拼接的設定檔」報表提供7、30、60、90和120天期間的設定檔劃分。
 
-您可以通过向执行GET请求，生成未拼合的用户档案报表 `/previewsamplestatus/report/unstitchedProfiles` 端点。
+您可以透過對執行GET請求來產生未拼接的設定檔報告 `/previewsamplestatus/report/unstitchedProfiles` 端點。
 
 **API格式**
 
@@ -479,7 +479,7 @@ GET /previewsamplestatus/report/unstitchedProfiles
 
 **请求**
 
-以下请求会返回未拼合的用户档案报表。
+以下請求會傳回未拼接的設定檔報表。
 
 ```shell
 curl -X GET \
@@ -491,11 +491,11 @@ curl -X GET \
 
 **响应**
 
-成功的请求会返回“HTTP状态200（确定）”和未拼合的用户档案报表。
+成功的請求會傳回HTTP狀態200 （確定）和未拼接的設定檔報表。
 
 >[!NOTE]
 >
->就本指南而言，报表已被截断为仅包含 `"120days"` 和&quot;`7days`“时间段”。 完整的未拼合用户档案报表按7、30、60、90和120天的时段划分用户档案。
+>出於本指南的目的，報表已截斷為僅包含 `"120days"` 和&quot;`7days`&quot;時段。 完整未拼接設定檔報告提供7、30、60、90和120天期間的設定檔劃分。
 
 ```json
 {
@@ -547,20 +547,20 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `data` | 的 `data` 对象包含为未拼合的用户档案报表返回的信息。 |
-| `totalNumberOfProfiles` | 配置文件存储区中独特配置文件的总数。 这等同于可寻址受众计数。 它包括已知和未拼合的用户档案。 |
-| `totalNumberOfEvents` | 配置文件存储中的ExperienceEvents总数。 |
-| `unstitchedProfiles` | 包含按时间段划分未拼合用户档案的对象。 未拼合的用户档案报表按7天、30天、60天、90天和120天时段划分用户档案。 |
-| `countOfProfiles` | 时间段内未拼合的配置文件计数或命名空间的未拼合配置文件计数。 |
-| `eventsAssociated` | 时间范围的ExperienceEvents数量或命名空间的事件数。 |
-| `nsDistribution` | 一个对象，其中包含单个身份命名空间以及每个命名空间的未拼合配置文件和事件的分布。 注意：合计总计 `countOfProfiles` (对于 `nsDistribution` 对象等于 `countOfProfiles` 在时间段内。 同样的情况也适用于 `eventsAssociated` 每个命名空间和总计 `eventsAssociated` 每个时段。 |
-| `reportTimestamp` | 报表的时间戳。 |
+| `data` | 此 `data` 物件包含針對未拼接設定檔報告傳回的資訊。 |
+| `totalNumberOfProfiles` | 設定檔存放區中的不重複設定檔總數。 這等同於可定址對象計數。 它包含已知和未拼接的設定檔。 |
+| `totalNumberOfEvents` | 設定檔存放區中的ExperienceEvents總數。 |
+| `unstitchedProfiles` | 包含依時段劃分之未拼接設定檔的物件。 「未拼接的設定檔」報表提供7、30、60、90和120天時間週期的設定檔劃分。 |
+| `countOfProfiles` | 時段內未拼接的設定檔計數，或名稱空間未拼接的設定檔計數。 |
+| `eventsAssociated` | 時間範圍的ExperienceEvents數目或名稱空間的事件數目。 |
+| `nsDistribution` | 包含個別身分名稱空間的物件，會針對每個名稱空間分配未拼接的設定檔和事件。 注意：將總計相加 `countOfProfiles` 中每個身分名稱空間的 `nsDistribution` 物件等於 `countOfProfiles` 用於時段。 下列專案也同樣如此： `eventsAssociated` 每個名稱空間和總計 `eventsAssociated` 每個時段。 |
+| `reportTimestamp` | 報表的時間戳記。 |
 
-### 解释未拼合的用户档案报表
+### 解譯未拼接的設定檔報告
 
-报表结果可以让您分析贵组织在其配置文件存储区中拥有多少个未拼合和非活动的配置文件。
+報表結果可讓您深入瞭解貴組織在其設定檔存放區中有多少未拼接和非作用中的設定檔。
 
-请考虑以下摘自 `data` 对象：
+請考量以下摘錄自 `data` 物件：
 
 ```json
   "7days": {
@@ -583,14 +583,14 @@ curl -X GET \
   }
 ```
 
-此报表提供以下信息：
+此報表提供下列資訊：
 
-* 有1,782个用户档案，其中仅包含一个用户档案片段，且过去七天内没有新事件。
-* 共有29,151个ExperienceEvent与1,782个未拼合的用户档案关联。
-* 有1,734个未拼合的配置文件，其中包含ECID标识命名空间中的单个配置文件片段。
-* 有28,591个事件与1,734个未拼合的配置文件关联，这些配置文件包含ECID标识命名空间中的单个配置文件片段。
+* 有1,782個設定檔僅包含一個設定檔片段，且過去七天沒有新事件。
+* 有29,151個ExperienceEvents與1,782個未拼接的設定檔相關聯。
+* 有1,734個未拼接的設定檔包含ECID的身分名稱空間中的單一設定檔片段。
+* 有28,591個事件與1,734個未拼接的設定檔相關聯，這些設定檔包含ECID的身分名稱空間中的單一設定檔片段。
 
 ## 后续步骤
 
-现在，您已了解如何在配置文件存储中预览示例数据并运行有关数据的多个报表，接下来还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息有助于确保隔离区段中的预期受众。 要了解有关使用分段API进行区段预览和评估的更多信息，请访问 [预览和评估端点指南](../../segmentation/api/previews-and-estimates.md).
+現在您知道如何在設定檔存放區中預覽範例資料，並對資料執行多個報告，您也可以使用Segmentation Service API的估計和預覽端點，檢視有關區段定義的摘要層級資訊。 此資訊可協助您確保區段中的預期對象已隔離。 若要進一步瞭解如何使用分段API進行區段預覽和預估，請造訪 [預覽和估算端點指南](../../segmentation/api/previews-and-estimates.md).
 

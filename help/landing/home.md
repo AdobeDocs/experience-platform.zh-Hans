@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；区域
+keywords: Experience Platform；首頁；熱門主題；CJA；歷程分析；customer journey analytics；行銷活動協調；協調；客戶歷程；歷程；歷程協調；功能；地區
 solution: Experience Platform
 title: Adobe Experience Platform 概述
-description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
+description: Adobe Experience Platform可讓組織集中和標準化客戶資料，再應用資料科學和機器學習，以大幅改善豐富個人化體驗的設計和傳遞。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
 source-git-commit: 48e050718b665bc297f97bf1b90a6f4517dd3af5
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '437'
+ht-degree: 10%
 
 ---
 
-# Adobe Experience Platform概述
+# Adobe Experience Platform概觀
 
-Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。 [!DNL Experience Platform] 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
+Adobe Experience Platform是市面上功能最強大、最靈活、最開放的系統，可建置和管理可提升客戶體驗的完整解決方案。 [!DNL Experience Platform] 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 
-构建于RESTful API之上， [!DNL Experience Platform] 向开发人员公开了系统的完整功能，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 独一无二。 它为合作伙伴、客户和开发人员社区提供了一个基础，可在此基础上构建可推动体验业务的创新：通过从客户及其个人偏好的360度视图中提供持续改进的完全个性化体验，来超越客户期望。
+以RESTful API為基礎， [!DNL Experience Platform] 向開發人員公開系統的完整功能，支援使用熟悉的工具輕鬆整合企業解決方案。 [!DNL Experience Platform] 也支援合作夥伴視需要建置及整合自己的產品和技術。 如此強大的功能與彈性，讓 [!DNL Experience Platform] 在市場上獨一無二。 它為合作夥伴、客戶和開發人員社群奠定基礎，以建立推動體驗業務的創新：透過從客戶和他們的個人偏好的360度檢視，提供持續改善、完全個人化的體驗，超越客戶期望。
 
 <div id="recs-overview-body-wrapper-1">
     <div id="recs-overview-body-1"></div>
@@ -28,13 +28,13 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ## [!DNL Experience Platform] 文档
 
-[!DNL Experience Platform] 文档以多种格式提供，以提供各种功能和服务。 要了解有关可用文档类型的更多信息，请访问 [平台文档概述](documentation/overview.md).
+[!DNL Experience Platform] 檔案提供多種格式，適用於多種功能和服務。 若要進一步瞭解可用的檔案型別，請造訪 [Platform檔案概覽](documentation/overview.md).
 
-要开始了解有关特定 [!DNL Platform] 服务，返回 [文档登陆页面](https://experienceleague.adobe.com/docs/experience-platform.html) 并选择相应的指南。
+開始瞭解更多關於特定的 [!DNL Platform] 服務，返回 [檔案登陸頁面](https://experienceleague.adobe.com/docs/experience-platform.html) 並選取適當的指南。
 
-### 基于的应用程序服务文档 [!DNL Experience Platform]
+### 內建於之應用程式服務的檔案 [!DNL Experience Platform]
 
-Adobe已基于Experience Platform构建了多个应用程序服务。 您可以在其自己的指南中找到这些服务的文档，链接如下：
+Adobe已在Experience Platform上建立多個應用程式服務。 您可以在相關指南中找到這些服務的相關檔案，連結如下：
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
@@ -44,23 +44,23 @@ Adobe已基于Experience Platform构建了多个应用程序服务。 您可以�
 
 ## [!DNL Experience Platform] 教程
 
-您可以开始使用 [!DNL Platform] 通过遵循分步教程快速轻松地完成各种操作，从准备数据以用于摄取到高级机器学习算法。 这些教程旨在补充 [!DNL Experience Platform] 文档，以便在完成教程时保持文档不变，以获得最佳结果。
+您可以開始使用 [!DNL Platform] 遵循並附上逐步教學課程，快速輕鬆地進行學習，涵蓋從準備資料以供擷取到進階機器學習演演算法的所有功能。 這些教學課程的設計目的是為了補充 [!DNL Experience Platform] 說明檔案，所以要取得最佳結果，請在完成教學課程的同時保留說明檔案。
 
-访问 [Experience Platform教程](https://www.adobe.com/go/platform-tutorials-home-en) 登陆页面以开始操作。
+造訪 [Experience Platform教學課程](https://www.adobe.com/go/platform-tutorials-home-en) 登陸頁面以開始使用。
 
-## 参考文档和资源
+## 參考檔案和資源
 
-* [**API基础知识**](api-fundamentals.md)\
-   了解使用的基础知识 [!DNL Platform] API。
+* [**API基礎知識**](api-fundamentals.md)\
+   瞭解使用的基礎知識 [!DNL Platform] API。
 
-* [**API参考文档**](https://www.adobe.com/go/platform-api-reference-en)\
-   Discover [!DNL Experience Platform] API，包括标头、参数、示例请求和响应。<br/>*这些文档在Adobe I/O上托管。*
+* [**API參考檔案**](https://www.adobe.com/go/platform-api-reference-en)\
+   探索 [!DNL Experience Platform] API，包括標題、引數、範例請求和回應。<br/>*這些檔案在Adobe I/O上託管。*
 
 * [**术语表**](glossary.md)\
-   查看Adobe Experience Platform术语。
+   檢閱Adobe Experience Platform術語。
 
-* [**年发行说明**](https://www.adobe.com/go/platform-release-notes-en)\
-   查找有关最近 [!DNL Experience Platform] 版本和查看过去的版本。
+* [**发行说明**](https://www.adobe.com/go/platform-release-notes_cn)\
+   尋找有關最近使用的資訊 [!DNL Experience Platform] 發行並檢閱過去的版本。
 
-* [**疑难解答指南**](troubleshooting.md)\
-   查找常见错误的解决方案和常见问题解答。
+* [**疑難排解指南**](troubleshooting.md)\
+   尋找常見錯誤的解決方法和常見問題的解答。

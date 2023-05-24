@@ -1,175 +1,176 @@
 ---
-title: 在UI中为自定义Marketo Engage数据创建活动源连接和数据流
-description: 本教程提供了在UI中创建Marketo Engage源连接和数据流的步骤，以便将自定义活动数据引入Adobe Experience Platform。
-source-git-commit: e584fbdfa64516a0dad1e7b99eb347f18e59d6d5
+title: 在UI中建立自訂活動資料的Marketo Engage來源連線和資料流
+description: 本教學課程提供在UI中建立Marketo Engage來源連線和資料流的步驟，以將自訂活動資料引入Adobe Experience Platform。
+exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1481'
 ht-degree: 0%
 
 ---
 
-# 创建 [!DNL Marketo Engage] UI中自定义活动数据的源连接和数据流
+# 建立 [!DNL Marketo Engage] UI中自訂活動資料的來源連線和資料流
 
 >[!NOTE]
 >
->本教程提供了有关如何设置和引入的具体步骤 **自定义活动** 数据来源 [!DNL Marketo] 以Experience Platform。 有关如何引入 **标准活动** 数据，读取 [[!DNL Marketo] UI指南](./marketo.md).
+>本教學課程提供如何設定和帶入的特定步驟 **自訂活動** 資料來源 [!DNL Marketo] 以Experience Platform。 如需如何帶來 **標準活動** 資料，請閱讀 [[!DNL Marketo] UI指南](./marketo.md).
 
-除此之外 [标准活动](../../../../connectors/adobe-applications/mapping/marketo.md#activities)，您还可以使用 [!DNL Marketo] 将自定义活动数据引入Adobe Experience Platform的源。 本文档提供了有关如何使用为自定义活动数据创建源连接和数据流的步骤。 [!DNL Marketo] UI中的源。
+除了 [標準活動](../../../../connectors/adobe-applications/mapping/marketo.md#activities)，您也可以使用 [!DNL Marketo] 將自訂活動資料帶入Adobe Experience Platform的來源。 本檔案提供如何使用，為自訂活動資料建立來源連線和資料流的步驟。 [!DNL Marketo] UI中的來源。
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [B2B命名空间和模式自动生成实用程序](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)：通过B2B命名空间和模式自动生成实用程序，您可以使用 [!DNL Postman] 自动生成B2B命名空间和架构的值。 必须先完成B2B命名空间和架构，然后才能创建 [!DNL Marketo] 源连接和数据流。
-* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [体验数据模型(XDM)](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md)：了解如何在UI中创建和编辑架构。
-* [身份命名空间](../../../../../identity-service/namespaces.md)：身份命名空间是的组件 [!DNL Identity Service] 用作与身份相关的上下文的指示器。 完全限定的身份包括ID值和命名空间。
-* [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [B2B名稱空間和結構描述自動產生公用程式](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)：B2B名稱空間和結構描述自動產生公用程式可讓您使用 [!DNL Postman] 自動產生B2B名稱空間和結構描述的值。 您必須先完成B2B名稱空間和結構描述，才能建立 [!DNL Marketo] 來源連線和資料流。
+* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [體驗資料模型(XDM)](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [在UI中建立和編輯結構描述](../../../../../xdm/ui/resources/schemas.md)：瞭解如何在UI中建立和編輯結構描述。
+* [身分名稱空間](../../../../../identity-service/namespaces.md)：身分名稱空間是元件 [!DNL Identity Service] 做為身分識別相關內容的指示器。 完整身分包含ID值和名稱空間。
+* [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-## 检索自定义活动详细信息
+## 擷取您的自訂活動詳細資料
 
-从引入自定义活动数据的第一步 [!DNL Marketo] Experience Platform是检索API名称和自定义活动的显示名称。
+從以下來源取得自訂活動資料的第一步 [!DNL Marketo] Experience Platform是擷取API名稱和自訂活動的顯示名稱。
 
-使用登录到您的帐户 [[!DNL Marketo]](https://app-sjint.marketo.com/#MM0A1) 界面。 在左侧导航中，在 [!DNL Database Management]，选择 **Marketo自定义活动**.
+使用登入您的帳戶 [[!DNL Marketo]](https://app-sjint.marketo.com/#MM0A1) 介面。 在左側導覽列底下 [!DNL Database Management]，選取 **Marketo自訂活動**.
 
-界面将更新为自定义活动的显示，包括关于其各自显示名称和API名称的信息。 您还可以使用右边栏从帐户中选择和查看其他自定义活动。
+介面會更新為自訂活動的顯示，包括有關其各自顯示名稱和API名稱的資訊。 您也可以使用滑鼠右邊欄來選取並檢視您帳戶中的其他自訂活動。
 
-![Adobe Marketo Engage UI中的“自定义活动”界面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity.png)
+![Adobe Marketo Engage UI中的自訂活動介面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity.png)
 
-选择 **字段** ，以查看与自定义活动关联的字段。 在此页面中，您可以查看自定义活动中字段的名称、API名称、描述和数据类型。 有关各个字段的详细信息，将在创建架构的后续步骤中使用。
+選取 **欄位** 以檢視與自訂活動相關聯的欄位。 在此頁面中，您可以檢視自訂活動中欄位的名稱、API名稱、說明和資料型別。 建立結構描述時，有關個別欄位的詳細資訊將用於後續步驟。
 
-![Marketo EngageUI中的“Marketo自定义活动字段详细信息”页面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
+![Marketo EngageUI中的「Marketo自訂活動欄位詳細資訊」頁面。](../../../../images/tutorials/create/marketo-custom-activities/marketo-custom-activity-fields.png)
 
-## 在B2B活动架构中为自定义活动设置字段组
+## 在B2B活動結構描述中設定自訂活動的欄位群組
 
-在 *[!UICONTROL 架构]* Experience PlatformUI的控制板，选择 **[!UICONTROL 浏览]** 然后选择 **[!UICONTROL B2B活动]** 架构列表中。
+在 *[!UICONTROL 結構描述]* Experience PlatformUI的控制面板，選取 **[!UICONTROL 瀏覽]** 然後選取 **[!UICONTROL B2B活動]** 從結構描述清單中。
 
 >[!TIP]
 >
->使用搜索栏可加快在架构列表中的导航。
+>使用搜尋列可加快在方案清單中的導覽。
 
-![选择了B2BExperience Platform架构的活动用户界面中的架构工作区。](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
+![已選取B2B活動結構描述的Experience PlatformUI中的結構描述工作區。](../../../../images/tutorials/create/marketo-custom-activities/b2b-activity.png)
 
-### 为自定义活动创建新字段组
+### 為自訂活動建立新的欄位群組
 
-接下来，将新的字段组添加到 [!DNL B2B Activity] 架构。 此字段组应与您要摄取的自定义活动对应，并应使用您之前检索的自定义活动的显示名称。
+接下來，將新欄位群組新增至 [!DNL B2B Activity] 結構描述。 此欄位群組應與您想要擷取的自訂活動相對應，且應使用您先前擷取的自訂活動的顯示名稱。
 
-要添加新字段组，请选择 **[!UICONTROL +添加]** 在 *[!UICONTROL 字段组]* 下的面板 *[!UICONTROL 合成]*.
+若要新增欄位群組，請選取 **[!UICONTROL +新增]** 旁邊 *[!UICONTROL 欄位群組]* 下方的面板 *[!UICONTROL 組合]*.
 
-![架构结构。](../../../../images/tutorials/create/marketo-custom-activities/add-new-field-group.png)
+![結構描述結構。](../../../../images/tutorials/create/marketo-custom-activities/add-new-field-group.png)
 
-此 *[!UICONTROL 添加字段组]* 窗口。 选择 **[!UICONTROL 创建新字段组]** ，然后为您在之前的步骤中检索到的自定义活动提供相同的显示名称，并为新字段组提供可选描述。 完成后，选择 **[!UICONTROL 添加字段组]**.
+此 *[!UICONTROL 新增欄位群組]* 視窗即會出現。 選取 **[!UICONTROL 建立新欄位群組]** 然後為您在先前步驟中擷取的自訂活動提供相同的顯示名稱，並為新欄位群組提供選擇性說明。 完成後，選取 **[!UICONTROL 新增欄位群組]**.
 
-![用于标记和创建新字段组的窗口。](../../../../images/tutorials/create/marketo-custom-activities/create-new-field-group.png)
+![標示和建立新欄位群組的視窗。](../../../../images/tutorials/create/marketo-custom-activities/create-new-field-group.png)
 
-创建后，您的新自定义活动字段组将显示在 [!UICONTROL 字段组] 目录。
+建立後，您的新自訂活動欄位群組會出現在 [!UICONTROL 欄位群組] 目錄。
 
-![在字段组面板下添加了新字段组的架构结构。](../../../../images/tutorials/create/marketo-custom-activities/new-field-group-created.png)
+![結構描述結構，在欄位群組面板下新增了新欄位群組。](../../../../images/tutorials/create/marketo-custom-activities/new-field-group-created.png)
 
-### 向架构结构添加新字段
+### 將新欄位新增至結構描述結構
 
-接下来，向架构中添加一个新字段。 此新字段必须设置为 `type: object` 和将包含自定义活动的各个字段。
+接下來，將新欄位新增至您的結構描述。 此新欄位必須設定為 `type: object` 和將包含自訂活動的個別欄位。
 
-要添加新字段，请选择加号(`+`)。 条目 *[!UICONTROL 无标题字段 |类型]* 显示。 接下来，使用配置字段的属性 *[!UICONTROL 字段属性]* 面板。 将字段名称设置为自定义活动的API名称，将显示名称设置为自定义活动的显示名称。 然后，将类型设置为 `object` 并将字段组分配给在上一步中创建的自定义活动字段组。 完成后，选择 **[!UICONTROL 应用]**.
+若要新增欄位，請選取加號(`+`)。 以下專案的專案： *[!UICONTROL 未命名的欄位 |型別]* 出現。 接下來，使用設定欄位的屬性 *[!UICONTROL 欄位屬性]* 面板。 將欄位名稱設為自訂活動的API名稱，並將顯示名稱設為自訂活動的顯示名稱。 然後，將型別設定為 `object` 並將欄位群組指派給您在上一步建立的自訂活動欄位群組。 完成後，選取 **[!UICONTROL 套用]**.
 
-![带加号(`+`)符号，以便添加新字段。](../../../../images/tutorials/create/marketo-custom-activities/add-new-object.png)
+![具有加號(`+`)簽署已選取，以便可以新增欄位。](../../../../images/tutorials/create/marketo-custom-activities/add-new-object.png)
 
-新字段会显示在您的架构中。
+新欄位會出現在您的結構描述中。
 
-![架构中添加了新字段。](../../../../images/tutorials/create/marketo-custom-activities/new-object-field-added.png)
+![結構描述中新增了一個新欄位。](../../../../images/tutorials/create/marketo-custom-activities/new-object-field-added.png)
 
-### 将子字段添加到对象字段 {#add-sub-fields-to-the-object-field}
+### 將子欄位新增至物件欄位 {#add-sub-fields-to-the-object-field}
 
-准备架构的最后一步是在您在上一步中创建的字段中添加各个字段。
+準備結構描述的最後一步是在您在上一步建立的欄位中新增個別欄位。
 
-![添加到架构中字段的一组子字段。](../../../../images/tutorials/create/marketo-custom-activities/add-sub-fields.png)
+![新增到結構描述內欄位的一組子欄位。](../../../../images/tutorials/create/marketo-custom-activities/add-sub-fields.png)
 
-## 创建数据流
+## 建立資料流
 
-架构设置完成后，您现在可以继续为自定义活动数据创建数据流。
+完成結構描述設定後，您現在可以繼續為自訂活動資料建立資料流。
 
-在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
 
-在 [!UICONTROL Adobe应用程序] 类别，选择 **[!UICONTROL Marketo Engage]**. 然后，选择 **[!UICONTROL 添加数据]** 以新建 [!DNL Marketo] 数据流。
+在 [!UICONTROL Adobe應用程式] 類別，選取 **[!UICONTROL Marketo Engage]**. 然後，選取 **[!UICONTROL 新增資料]** 以建立新的 [!DNL Marketo] 資料流。
 
-![已选择Marketo Engage源的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/marketo/catalog.png)
+![已選取Marketo Engage來源的Experience PlatformUI上的來源目錄。](../../../../images/tutorials/create/marketo/catalog.png)
 
 ### 选择数据
 
-选择 **[!UICONTROL 活动]** 从列表 [!DNL Marketo] 数据集，然后选择 **[!UICONTROL 下一个]**.
+選取 **[!UICONTROL 活動]** 從清單 [!DNL Marketo] 資料集，然後選取 **[!UICONTROL 下一個]**.
 
-![选择活动数据集后，源工作流中的选择数据步骤。](../../../../images/tutorials/create/marketo-custom-activities/select-data.png)
+![來源工作流程中已選取活動資料集的選取資料步驟。](../../../../images/tutorials/create/marketo-custom-activities/select-data.png)
 
 ### 数据流详细信息
 
-下一步， [为数据流提供信息](./marketo.md#provide-dataflow-details)，包括数据集和数据流的名称和描述、将使用的架构以及配置 [!DNL Profile] 摄取、错误诊断和部分摄取。
+下一個， [為您的資料流提供資訊](./marketo.md#provide-dataflow-details)，包括資料集和資料流的名稱和說明、您將使用的結構描述及其設定 [!DNL Profile] 擷取、錯誤診斷和部分擷取。
 
-![数据流详细信息步骤。](../../../../images/tutorials/create/marketo-custom-activities/dataflow-detail.png)
+![資料流詳細資料步驟。](../../../../images/tutorials/create/marketo-custom-activities/dataflow-detail.png)
 
 ### 映射
 
-自动填充标准活动字段的映射，但自定义活动字段必须手动映射到其对应的目标字段。
+系統會自動填入標準活動欄位的對應，但自訂活動欄位必須手動對應至其對應的目標欄位。
 
-要开始映射自定义活动字段，请选择 **[!UICONTROL 新字段类型]** 然后选择 **[!UICONTROL 添加新字段]**.
+若要開始對應自訂活動欄位，請選取 **[!UICONTROL 新欄位型別]** 然後選取 **[!UICONTROL 新增欄位]**.
 
-![使用下拉菜单添加新字段的映射步骤。](../../../../images/tutorials/create/marketo-custom-activities/add-new-mapping-field.png)
+![使用下拉式選單來新增欄位的對應步驟。](../../../../images/tutorials/create/marketo-custom-activities/add-new-mapping-field.png)
 
-浏览源数据结构并找到要摄取的自定义活动字段。 完成后，选择 **[!UICONTROL 选择]**.
+瀏覽來源資料結構，並尋找您要內嵌的自訂活動欄位。 完成後，選取 **[!UICONTROL 選取]**.
 
 >[!TIP]
 >
->为避免混淆并处理重复的字段名称，自定义活动字段将带有API名称前缀。
+>為避免混淆並處理重複的欄位名稱，自訂活動欄位會以API名稱為前置詞。
 
-![源数据结构。](../../../../images/tutorials/create/marketo-custom-activities/select-new-mapping-field.png)
+![來源資料結構。](../../../../images/tutorials/create/marketo-custom-activities/select-new-mapping-field.png)
 
-要添加目标字段，请选择架构图标 ![架构图标](../../../../images/tutorials/create/marketo-custom-activities/schema-icon.png) 然后从目标架构中选择自定义活动字段。
+若要新增目標欄位，請選取結構描述圖示 ![結構描述圖示](../../../../images/tutorials/create/marketo-custom-activities/schema-icon.png) 然後從目標結構描述中選取自訂活動欄位。
 
-![目标架构结构。](../../../../images/tutorials/create/marketo-custom-activities/add-target-mapping-field.png)
+![目標結構描述結構。](../../../../images/tutorials/create/marketo-custom-activities/add-target-mapping-field.png)
 
-重复这些步骤以添加其余的自定义活动映射字段。 完成后，选择 **[!UICONTROL 下一个]**.
+重複這些步驟以新增其餘的自訂活動對應欄位。 完成後，選取 **[!UICONTROL 下一個]**.
 
-![源数据和目标数据的所有映射。](../../../../images/tutorials/create/marketo-custom-activities/all-mappings.png)
+![來源和目標資料的所有對應。](../../../../images/tutorials/create/marketo-custom-activities/all-mappings.png)
 
 ### 请查看
 
-此 *[!UICONTROL 审核]* 步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
+此 *[!UICONTROL 檢閱]* 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**：显示源类型、所选源实体的相关路径以及源实体中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源實體的相關路徑，以及該來源實體中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
 
-查看数据流后，选择 **[!UICONTROL 保存并摄取]** 并留出一些时间来创建数据流。
+檢閱資料流後，選取 **[!UICONTROL 儲存並擷取]** 並留出一些時間來建立資料流。
 
-![总结有关连接、数据集和映射字段的信息的最后审核步骤。](../../../../images/tutorials/create/marketo-custom-activities/review.png)
+![總結連線、資料集和對映欄位相關資訊的最終稽核步驟。](../../../../images/tutorials/create/marketo-custom-activities/review.png)
 
-### 将自定义活动添加到现有活动数据流 {#add-to-existing-dataflows}
+### 將自訂活動新增至現有活動資料流 {#add-to-existing-dataflows}
 
-要将自定义活动数据添加到现有数据流，请使用要摄取的自定义活动数据修改现有活动数据流的映射。 这样，您可以将自定义活动摄取到相同的现有活动数据集中。 有关如何更新现有数据流的映射的更多信息，请阅读以下指南： [在UI中更新数据流](../../update-dataflows.md).
+若要將自訂活動資料新增至現有資料流，請使用您要擷取的自訂活動資料，修改現有活動資料流的對應。 這可讓您將自訂活動擷取到相同的現有活動資料集中。 如需如何更新現有資料流對應的詳細資訊，請閱讀以下指南： [更新UI中的資料流](../../update-dataflows.md).
 
-### 使用 [!DNL Query Service] 筛选自定义活动的活动 {#query-service-filter}
+### 使用 [!DNL Query Service] 若要篩選自訂活動的活動 {#query-service-filter}
 
-数据流完成后，您可以使用 [查询服务](../../../../../query-service/home.md) 以筛选自定义活动数据的活动。
+資料流完成後，您可以使用 [查詢服務](../../../../../query-service/home.md) 以篩選自訂活動資料的活動。
 
-将自定义活动摄取到Platform后，自定义活动的API名称会自动变为 `eventType`. 使用 `eventType={API_NAME}` 以筛选自定义活动数据。
+將自訂活動內嵌至Platform後，自訂活動的API名稱會自動變成 `eventType`. 使用 `eventType={API_NAME}` 以篩選自訂活動資料。
 
 ```sql
 SELECT * FROM with_custom_activities_ds_today WHERE eventType='aepCustomActivityDemo1' 
 ```
 
-使用 `IN` 用于筛选多个自定义活动的子句：
+使用 `IN` 用於篩選多個自訂活動的子句：
 
 ```sql
 SELECT * FROM $datasetName WHERE eventType='{API_NAME}'
 SELECT * FROM $datasetName WHERE eventType IN ('aepCustomActivityDemo1', 'aepCustomActivityDemo2')
 ```
 
-下图显示了 [查询编辑器](../../../../../query-service/ui/user-guide.md) 用于筛选自定义活动数据。
+下圖顯示 [查詢編輯器](../../../../../query-service/ui/user-guide.md) 篩選自訂活動資料。
 
-![显示自定义活动的查询示例的平台UI。](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
+![顯示自訂活動查詢範例的平台UI。](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已为设置一个平台架构 [!DNL Marketo] 自定义活动数据并创建了一个数据流以将该数据传送到Platform。 欲知关于 [!DNL Marketo] 源，请阅读 [[!DNL Marketo] 源概述](../../../../connectors/adobe-applications/marketo/marketo.md).
+依照本教學課程，您已為以下專案設定Platform結構： [!DNL Marketo] 自訂活動資料並建立資料流，將該資料匯入Platform。 如需一般資訊，請參閱 [!DNL Marketo] 來源，請閱讀 [[!DNL Marketo] 來源概觀](../../../../connectors/adobe-applications/marketo/marketo.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首頁；熱門主題
 solution: Experience Platform
-title: 订阅Privacy Service事件
-description: 了解如何使用预配置的WebHook订阅Privacy Service事件。
+title: 訂閱Privacy Service事件
+description: 瞭解如何使用預先設定的webhook訂閱Privacy Service事件。
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
@@ -11,41 +11,41 @@ ht-degree: 2%
 
 ---
 
-# 订阅 [!DNL Privacy Service Events]
+# 訂閱 [!DNL Privacy Service Events]
 
-[!DNL Privacy Service Events] 是Adobe Experience Platform提供的报文 [!DNL Privacy Service]，可利用发送到已配置WebHook的Adobe I/O事件来促进高效的作业请求自动化。 它们可减少或消除轮询 [!DNL Privacy Service] API，以检查作业是否完成或是否已到达工作流中的特定里程碑。
+[!DNL Privacy Service Events] 是Adobe Experience Platform提供的訊息 [!DNL Privacy Service]，可善用傳送至已設定webhook的Adobe I/O事件，以加速有效的工作請求自動化。 如此一來，您就不需要輪詢 [!DNL Privacy Service] API，以檢查工作是否已完成，或工作流程中是否已達到特定里程碑。
 
-当前，有四种类型的通知与隐私作业请求生命周期相关：
+目前有四種型別的通知與隱私權工作請求生命週期相關：
 
 | 类型 | 描述 |
 | --- | --- |
-| 作业完成 | 全部 [!DNL Experience Cloud] 应用程序已报告，作业的整体或全局状态已标记为完成。 |
-| 作业错误 | 一个或多个应用程序在处理请求时报告了错误。 |
-| 产品完成 | 与此作业关联的某个应用程序已完成其工作。 |
-| 产品错误 | 其中一个应用程序在处理请求时报告了错误。 |
+| 工作完成 | 全部 [!DNL Experience Cloud] 應用程式已回報，且工作的整體或全域狀態已標籤為完成。 |
+| 工作錯誤 | 一或多個應用程式在處理請求時報告錯誤。 |
+| 產品完成 | 與此工作相關聯的其中一個應用程式已完成其工作。 |
+| 產品錯誤 | 其中一個應用程式在處理請求時報告錯誤。 |
 
-本文档提供了为 [!DNL Privacy Service] 通知以及如何解释通知负载。
+本檔案提供設定事件註冊的步驟 [!DNL Privacy Service] 通知，以及如何解譯通知裝載。
 
 ## 快速入门
 
-在开始本教程之前，请查看以下Privacy Service文档：
+在開始本教學課程之前，請先檢閱下列Privacy Service檔案：
 
 * [Privacy Service 概述](./home.md)
-* [Privacy ServiceAPI指南](./api/overview.md)
+* [Privacy Service API指南](./api/overview.md)
 
-## 注册网页挂接到 [!DNL Privacy Service Events]
+## 註冊webhook到 [!DNL Privacy Service Events]
 
-为了接收 [!DNL Privacy Service Events]，则必须使用Adobe Developer Console向您的 [!DNL Privacy Service] 集成。
+為了接收 [!DNL Privacy Service Events]，您必須使用Adobe Developer主控台向註冊webhook [!DNL Privacy Service] 整合。
 
-请阅读本教程 [订阅[!DNL I/O Event]通知](../observability/alerts/subscribe.md) 以详细了解如何完成此操作。 确保您选择 **[!UICONTROL Privacy Service事件]** 作为事件提供商，以访问上面列出的事件。
+請依照上的教學課程進行 [訂閱[！DNL I/O Event]通知](../observability/alerts/subscribe.md) 以取得如何完成此作業的詳細步驟。 請務必選擇 **[!UICONTROL Privacy Service事件]** 作為事件提供者，以存取上述事件。
 
 ## 接收 [!DNL Privacy Service Event] 通知
 
-成功注册Webhook并运行隐私作业后，便可开始接收事件通知。 这些事件可以使用Webhook本身或通过选择 **[!UICONTROL 调试跟踪]** 选项卡(位于Adobe Developer控制台中的项目事件注册概述中)。
+成功註冊webhook並執行隱私權工作後，您就可以開始接收事件通知。 您可以使用webhook本身或選取 **[!UICONTROL 偵錯追蹤]** 索引標籤(位於您專案的Adobe Developer Console中的事件註冊概覽中)。
 
 ![](images/privacy-events/debug-tracing.png)
 
-以下JSON是 [!DNL Privacy Service Event] 当与隐私作业关联的某个应用程序完成其工作时将发送到webhook的通知有效负载：
+以下JSON為 [!DNL Privacy Service Event] 當與隱私權工作相關聯的應用程式之一完成其工作時，會傳送至您webhook的通知裝載：
 
 ```json
 {
@@ -67,11 +67,11 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 系统生成的唯一通知ID。 |
-| `type` | 要发送的通知类型，提供了下文所提供信息 `data`. 潜在值包括： <ul><li>`com.adobe.platform.gdpr.jobcomplete`</li><li>`com.adobe.platform.gdpr.joberror`</li><li>`com.adobe.platform.gdpr.productcomplete`</li><li>`com.adobe.platform.gdpr.producterror`</li></ul> |
-| `time` | 事件发生时间的时间戳。 |
-| `data.value` | 包含有关触发通知的内容的其他信息： <ul><li>`jobId`:触发通知的隐私作业的ID。</li><li>`message`:有关作业的特定状态的消息。 对于 `productcomplete` 或 `producterror` 通知，此字段表示相关的Experience Cloud应用程序。</li></ul> |
+| `id` | 系統產生的通知唯一ID。 |
+| `type` | 正在傳送的通知型別，為底下提供的資訊提供內容 `data`. 可能的值包括： <ul><li>`com.adobe.platform.gdpr.jobcomplete`</li><li>`com.adobe.platform.gdpr.joberror`</li><li>`com.adobe.platform.gdpr.productcomplete`</li><li>`com.adobe.platform.gdpr.producterror`</li></ul> |
+| `time` | 事件發生的時間戳記。 |
+| `data.value` | 包含觸發通知之專案的相關額外資訊： <ul><li>`jobId`：觸發通知的隱私權工作ID。</li><li>`message`：有關工作特定狀態的訊息。 對象 `productcomplete` 或 `producterror` 通知，此欄位表示有問題的Experience Cloud應用程式。</li></ul> |
 
 ## 后续步骤
 
-本文档介绍了如何将Privacy Service事件注册到配置的WebHook，以及如何解释通知负载。 要了解如何使用用户界面跟踪隐私作业，请参阅 [Privacy Service用户指南](./ui/user-guide.md).
+本檔案說明如何將Privacy Service事件註冊到已設定的webhook，以及如何解譯通知裝載。 若要瞭解如何使用使用者介面追蹤隱私權工作，請參閱 [Privacy Service使用手冊](./ui/user-guide.md).

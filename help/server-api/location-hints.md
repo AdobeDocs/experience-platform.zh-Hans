@@ -1,6 +1,6 @@
 ---
 title: 位置提示
-description: 本文介绍了位置提示在边缘网络服务器API中的工作方式，以便最终用户请求可以始终路由到同一服务器。
+description: 本文說明位置提示如何在Edge Network Server API中運作，以便一般使用者請求可以始終路由到相同的伺服器。
 exl-id: 8cd2f8e2-2065-4b7e-8d35-4ed1a716f1b3
 source-git-commit: 2c7a5f007189d897ed32302a2a80c1e16af6af80
 workflow-type: tm+mt
@@ -13,17 +13,17 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-的 [!DNL Adobe Experience Platform Edge Network] 使用多台分布于全局的服务器来确保快速响应时间，而不考虑最终用户的位置。 它还使用基于DNS的路由来确保请求始终路由到最接近最终用户的边缘网络位置。
+此 [!DNL Adobe Experience Platform Edge Network] 會使用數個分散於全球各地的伺服器，以確保無論使用者身在何處，都能快速回應。 它也會使用DNS型路由，確保請求一律路由到最接近使用者的邊緣網路位置。
 
-如果最终用户在会话期间连接到VPN或在其移动设备上切换网络类型，则边缘网络请求通常可以路由到其他位置。 由于Adobe Experience Platform和Adobe Experience Cloud解决方案将最终用户配置文件信息存储在边缘网络上，因此服务器之间的会话中间路由可能会出现问题。
+如果終端使用者在工作階段期間連線至VPN，或在其行動裝置上切換網路型別，Edge Network請求通常會路由到不同的位置。 伺服器之間的工作階段中期路由可能會產生問題，因為Adobe Experience Platform和Adobe Experience Cloud解決方案會將一般使用者設定檔資訊儲存在Edge Network上。
 
-这就是发挥位置提示作用的地方。
+這是位置提示發揮作用的地方。
 
-为确保最终用户始终与包含其当前配置文件数据的边缘网络区域服务器进行交互，位置提示功能可确保对边缘网络的所有请求都发送到发出会话第一个请求的同一服务器。 无论用户在会话过程中会经历哪些网络更改，这都有助于用户获得一致的体验。
+為確保一般使用者與包含其目前設定檔資料的Edge Network區域伺服器互動，位置提示功能可確保所有對Edge Network的請求都會傳送至工作階段第一個請求所在的相同伺服器。 無論使用者在工作階段中可能會遇到哪些網路變更，這都能協助他們獲得一致的體驗。
 
-## 使用位置提示
+## 位置提示使用方式
 
-初始边缘网络请求的响应以及所有后续请求中都包含位置提示，如以下示例所示：
+位置提示會包含在初始Edge Network請求的回應中，以及所有後續請求中，如下列範例所示：
 
 ```json
 {
@@ -38,9 +38,9 @@ ht-degree: 0%
 }
 ```
 
-的 `EdgeNetwork` 范围包含边缘网络相应地路由后续请求所需的所有相关信息。 在响应对边缘网络的初始和每个后续请求时，句柄中将有一个部分，其类型为 `locationHint:result`.
+此 `EdgeNetwork` 範圍包含Edge Network據以路由後續請求所需的所有相關資訊。 在對Edge網路的初始和每個後續請求的回應中，控制代碼中將有一個區段具有 `locationHint:result`.
 
-与 `EdgeNetwork` 范围可以包含以下值之一：
+與關聯的提示 `EdgeNetwork` 範圍可以包含下列其中一個值：
 
 * `or2`
 * `va6`
@@ -52,14 +52,14 @@ ht-degree: 0%
 
 **API格式**
 
-为确保后续请求正确路由，通常在基本路径之间的后续API调用的URL路径中插入位置提示 `ee`和 `v2` API版本。
+為確保後續請求正確路由，通常在基本路徑之間後續API呼叫的URL路徑中插入位置提示 `ee`、和 `v2` API版本。
 
 ```http
 POST 'https://edge.adobedc.net/ee/{LOCATION_HINT}/v2/interact?dataStreamId={DataStream_ID}'
 ```
 
-## 在Cookie中存储位置提示 {#storing-hints-in-cookies}
+## 將位置提示儲存在Cookie中 {#storing-hints-in-cookies}
 
-为确保边缘网络返回的位置提示在会话期间持续存在，您可以将位置提示值与Cookie生命周期(包含在 `ttlSeconds` 字段（通常为1800秒）。
+若要確保Edge Network傳回的位置提示在工作階段期間持續存在，您可以將位置提示值以及Cookie存留期儲存在 `ttlSeconds` 欄位（通常為1800秒）。
 
-与大多数Cookie一样，每当出现来自边缘网络的响应时，您应该延长此Cookie的生命周期。 要确保与Web SDK的最大兼容性，请使用Cookie名称 `kndctr_{IMSORG}_AdobeOrg_cluster`. 组织ID通常以 `@AdobeOrg`. 的 `@` 必须将值转换为下划线，以确保cookie的格式正确。
+和大多數Cookie一樣，每當Edge Network有回應時，您都應該延長此Cookie的生命週期。 為確保與Web SDK最大程度的相容性，請使用Cookie名稱 `kndctr_{IMSORG}_AdobeOrg_cluster`. 組織ID的結尾通常是 `@AdobeOrg`. 此 `@` 值必須轉換為底線，以確保Cookie的格式正確。

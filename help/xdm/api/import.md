@@ -1,6 +1,6 @@
 ---
-title: 导入API端点
-description: 架构注册表API中的/import端点允许您在组织和沙箱之间共享XDM资源。
+title: 匯入API端點
+description: 結構描述登入API中的/import端點可讓您在組織和沙箱之間共用XDM資源。
 exl-id: 30613535-4770-4f9c-9061-8e3efaf4de48
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -9,24 +9,24 @@ ht-degree: 1%
 
 ---
 
-# 导入端点
+# 匯入端點
 
-的 `/rpc/import` 的端点 [!DNL Schema Registry] API允许您从生成的导出负载创建体验数据模型(XDM)资源。 可以从以下两个源创建导出负载：
+此 `/rpc/import` 中的端點 [!DNL Schema Registry] API可讓您從產生的匯出裝載中建立Experience Data Model (XDM)資源。 匯出裝載可從兩個來源建立：
 
-* 的 [`/rpc/export` 端点](./export.md) 从现有XDM资源创建导出负载，以便在沙箱之间共享资源。
-* 的 [`/rpc/csv2schema` 端点](./csv-to-schema.md) 从CSV模板创建导出负载。
+* 此 [`/rpc/export` 端點](./export.md) 會從現有XDM資源建立匯出裝載，讓您在沙箱之間共用資源。
+* 此 [`/rpc/csv2schema` 端點](./csv-to-schema.md) 會從CSV範本建立匯出裝載。
 
-创建导出有效负载后，您可以使用 `/rpc/import` 端点，在您选择的沙盒中生成资源（和所有相关资源）。
+建立匯出裝載後，您可以使用 `/rpc/import` 端點，以在您選擇的沙箱中產生資源（以及所有相依資源）。
 
 ## 快速入门
 
-的 `/rpc/import` 端点是的一部分 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+此 `/rpc/import` 端點是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
 
-的 `/rpc/import` 端点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`、和不使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
+此 `/rpc/import` 端點是遠端程式呼叫(RPC)的一部分，受 [!DNL Schema Registry]. 不像 [!DNL Schema Registry] API、RPC端點不需要其他標頭，例如 `Accept` 或 `Content-Type`，且請勿使用 `CONTAINER_ID`. 相反地，他們必須使用 `/rpc` 名稱空間，如下方API呼叫所示。
 
-## 导入资源 {#import}
+## 匯入資源 {#import}
 
-为XDM资源生成导出有效负载后，您可以在向 `/import` 将该资源导入目标组织和沙盒的端点。
+為XDM資源產生匯出裝載後，您便可以在對的POST請求中使用該裝載 `/import` 端點，將該資源匯入目標組織和沙箱。
 
 **API格式**
 
@@ -36,7 +36,7 @@ POST /rpc/import
 
 **请求**
 
-以下请求获取从对的调用返回的有效负载 [`/rpc/export` 端点](./export.md) 导入字段组(`Restaurant`)到新组织和沙盒中，由 `x-gw-ims-org-id` 和 `x-sandbox-name` 标题。
+以下請求會採用從對的呼叫傳回的裝載 [`/rpc/export` 端點](./export.md) 匯入欄位群組(`Restaurant`)放入新組織和沙箱，由 `x-gw-ims-org-id` 和 `x-sandbox-name` 標頭。
 
 ```shell
 curl -X POST \
@@ -187,7 +187,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回导入的资源列表，并应用相应的租户ID和组织值。
+成功的回應會傳回匯入的資源清單，並套用適當的租使用者ID和組織值。
 
 ```json
 [

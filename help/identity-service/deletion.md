@@ -1,94 +1,95 @@
 ---
-title: 在Identity服务中删除
-description: 本文档概述了可用于在Experience Platform中删除身份数据的各种机制，并明确了身份图可能受到何种影响。
-source-git-commit: da1ce4560d28d43db47318883f9656cebb2eb487
+title: Identity Service中的刪除
+description: 本檔案概述您可以在Experience Platform中刪除身分資料的各種機制，並說明身分圖表可能受到哪些影響。
+exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1198'
 ht-degree: 1%
 
 ---
 
-# 在Identity服务中删除
+# Identity Service中的刪除
 
-Adobe Experience Platform Identity Service通过跨设备和系统为个人确定性地关联身份来生成身份图。 当在同一数据行中接收到两个或多个标记身份时，建立身份图链接。
+Adobe Experience Platform Identity Service會透過決定性地連結個人跨裝置和系統的身分來產生身分圖表。 在同一資料列中收到兩個或多個標籤的身分時，會建立身分圖表連結。
 
-实时客户资料利用身份图来创建客户属性和行为的全面、单一视图，使您能够实时地向人员而不是设备提供有影响的个人数字体验。
+即時客戶個人檔案會利用身分圖表來建立客戶屬性和行為的全面且單一檢視，讓您即時向人員而非裝置提供具影響力的個人數位體驗。
 
-本文档概述了可用于在Experience Platform中删除身份数据的各种机制，并明确了身份图可能受到何种影响。
+本檔案概述您可以在Experience Platform中刪除身分資料的各種機制，並說明身分圖表可能受到哪些影響。
 
 ## 快速入门
 
-以下文档引用了Experience Platform的以下功能：
+以下檔案參考下列Experience Platform功能：
 
-* [Identity Service](home.md):通过跨设备和系统桥接身份，更好地了解各个客户及其行为。
-   * [身份图](./ui/identity-graph-viewer.md):身份图是特定客户不同身份之间关系的映射，可直观地展示客户如何跨不同渠道与您的品牌进行交互。
-   * [身份命名空间](namespaces.md):身份命名空间是Identity Service的组件，充当与身份相关的上下文的指示器。 例如，它们会区分“name”的值<span>@email.com”作为电子邮件地址，或“443522”作为数字CRM ID。
-* [目录服务](../catalog/home.md):浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
-* [数据卫生](../hygiene/home.md):通过计划自动数据集过期时间或从一个数据集或所有数据集中删除单个记录，来管理您存储的消费者数据。
-* [Adobe Experience Platform Privacy Service](../privacy-service/home.md):管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
-* [实时客户资料](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+* [Identity Service](home.md)：透過跨裝置和系統橋接身分，更能瞭解個別客戶及其行為。
+   * [身分圖表](./ui/identity-graph-viewer.md)：身分圖表是特定客戶不同身分之間的關係地圖，可讓您以視覺化方式呈現客戶如何跨不同管道與您的品牌互動。
+   * [身分名稱空間](namespaces.md)：身分識別名稱空間是Identity Service的元件，用途是作為身分識別相關內容的指標。 例如，它們區分「name」的值<span>@email.com」作為電子郵件地址，或「443522」作為數值CRM ID。
+* [目錄服務](../catalog/home.md)：探索Data Lake中的資料譜系、中繼資料、檔案說明、目錄和資料集。
+* [資料衛生](../hygiene/home.md)：排程自動化資料集有效期，或從單一資料集或所有資料集中刪除個別記錄，藉此管理您儲存的消費者資料。
+* [Adobe Experience Platform Privacy Service](../privacy-service/home.md)：管理客戶在Adobe Experience Cloud應用程式中存取、選擇退出銷售或刪除其個人資料的請求。
+* [即時客戶個人檔案](../profile/home.md)：根據來自多個來源的彙總資料，即時提供統一的客戶設定檔。
 
-## 单个身份删除
+## 單一身分刪除
 
-单个身份删除请求允许您删除图表中的身份，从而删除与单个用户身份关联的链接，该用户身份与标识命名空间关联。 可以使用 [Privacy Service](../privacy-service/home.md) 用例包括客户请求删除数据以及遵守隐私法规(如《通用数据保护条例》(GDPR))的情况。
+單一身分刪除請求可讓您刪除圖表中的身分，進而刪除與身分名稱空間相關聯的單一使用者身分相關聯的連結。 您可以使用以下提供的機制 [Privacy Service](../privacy-service/home.md) 若是客戶要求刪除資料和遵守一般資料保護規範(GDPR)等隱私權法規等使用案例。
 
-以下各节概述了可用于Experience Platform中单个身份删除请求的机制。
+以下各節會概述您可以在Experience Platform中用於單一身分刪除請求的機制。
 
-### 删除单个身份Privacy Service
+### Privacy Service中的單一身分刪除
 
-Privacy Service处理客户访问、选择退出销售或删除其个人数据的请求，这些请求符合隐私法规(如《通用数据保护条例》(GDPR)和《加州消费者隐私法案》(CCPA)等规定。 通过Privacy Service，您可以使用API或UI提交作业请求。 当Experience Platform收到来自Privacy Service的删除请求时，Platform会向Privacy Service发送确认，确认该请求已被接收，且受影响的数据已被标记为删除。 单个身份的删除基于提供的命名空间和/或ID值。 此外，与给定组织关联的所有沙箱都会被删除。 有关更多信息，请阅读 [Identity Service中的隐私请求处理](privacy.md).
+Privacy Service會根據一般資料保護規範(GDPR)和加州消費者隱私保護法(CCPA)等隱私權法規，處理客戶存取、選擇退出銷售或刪除其個人資料的請求。 透過Privacy Service，您可以使用API或UI提交工作請求。 當Experience Platform收到來自Privacy Service的刪除請求時，平台會向Privacy Service傳送確認訊息，確認已收到請求且受影響的資料已標示為刪除。 個人身分的刪除是根據提供的名稱空間和/或ID值。 此外，刪除也會針對與指定組織相關聯的所有沙箱進行。 如需詳細資訊，請閱讀以下指南： [Identity Service中的隱私權請求處理](privacy.md).
 
-下表提供了单个身份删除在Privacy Service中的划分：
+下表提供Privacy Service中單一身分刪除的劃分資訊：
 
-| 单个身份删除 | Privacy Service |
+| 單一身分刪除 | Privacy Service |
 | --- | --- |
-| 已接受的用例 | 仅限数据隐私请求(GDPR、CCPA)。 |
-| 估计滞后 | 从天到周 |
-| 受服务影响 | Privacy Service中的单个身份删除允许您选择数据是从Identity Service、实时客户资料还是数据湖中删除。 |
-| 删除模式 | 从Identity Service中删除身份。 |
+| 接受的使用案例 | 僅限資料隱私權請求(GDPR、CCPA)。 |
+| 預估延遲 | 數天至數週 |
+| 受影響的服務 | Privacy Service中的單一身分刪除可讓您選擇資料將會從Identity Service、即時客戶設定檔或資料湖中刪除。 |
+| 刪除模式 | 從Identity Service刪除身分。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 数据集删除
+## 資料集刪除
 
-以下各节概述了可用于删除Experience Platform中数据集和相关身份链接的机制。
+以下各節概述可用來刪除Experience Platform中的資料集和相關聯的身分連結的機制。
 
-### 目录服务中的数据集删除
+### 目錄服務中的資料集刪除
 
-您可以使用目录服务提交数据集删除请求。 有关如何使用Catalog Service删除数据集的更多信息，请阅读 [使用目录服务API删除对象](../catalog/api/delete-object.md). 或者，您也可以使用Platform UI提交数据集删除请求。 有关更多信息，请阅读 [datasets用户指南](../catalog/datasets/user-guide.md#delete-a-dataset).
+您可以使用目錄服務來提交資料集刪除請求。 如需如何使用目錄服務刪除資料集的詳細資訊，請閱讀以下指南： [使用目錄服務API刪除物件](../catalog/api/delete-object.md). 或者，您可以使用Platform UI來提交資料集刪除請求。 如需詳細資訊，請閱讀 [資料集使用手冊](../catalog/datasets/user-guide.md#delete-a-dataset).
 
-### 数据卫生中的数据集过期
+### 資料衛生中的資料集有效期
 
-的 [[!UICONTROL 数据卫生] 工作区](../hygiene/ui/overview.md) 在Adobe Experience Platform UI中，您可以计划数据集的过期日期。 当数据集到期日期时，数据湖、Identity Service和实时客户配置文件会开始各自的流程，以从各自的服务中删除数据集的内容。 有关更多信息，请阅读 [使用管理数据集过期 [!UICONTROL 数据卫生] 工作区](../hygiene/ui/dataset-expiration.md).
+此 [[!UICONTROL 資料衛生] 工作區](../hygiene/ui/overview.md) Adobe Experience Platform UI中的可讓您排程資料集的到期時間。 當資料集到達其到期日時，Data Lake、Identity Service和Real-Time Customer Profile會開始個別程式，從各自的服務中移除資料集的內容。 如需詳細資訊，請閱讀以下指南： [使用管理資料集有效期 [!UICONTROL 資料衛生] 工作區](../hygiene/ui/dataset-expiration.md).
 
-下表列出了“目录服务”中删除数据集与数据卫生之间的差异：
+下表提供「目錄服務」和「資料檢疫」中資料集刪除之間的差異明細：
 
-| 数据集删除 | 目录服务 | 数据卫生 |
+| 資料集刪除 | 目录服务 | 資料衛生 |
 | --- | --- | --- |
-| 已接受的用例 | 删除Platform中的完整数据集及其关联的身份信息。 | 管理存储在Experience Platform中的数据。 |
-| 估计滞后 | Days | Days |
-| 受服务影响 | 通过“目录服务”删除数据集会从“身份服务”、“实时客户配置文件”和“数据湖”中删除数据。 | 通过数据卫生删除数据集会从Identity Service、“实时客户资料”和“数据湖”中删除数据。 |
-| 删除模式 | 从由特定数据集建立的Identity服务中删除链接的身份。 | 根据过期计划，从由特定数据集建立的Identity Service中删除链接的身份。 |
+| 接受的使用案例 | 刪除Platform中的完整資料集及其相關身分資訊。 | 管理Experience Platform中儲存的資料。 |
+| 預估延遲 | Days | Days |
+| 受影響的服務 | 透過目錄服務刪除資料集會從Identity Service、即時客戶設定檔和資料湖刪除資料。 | 透過資料檢疫刪除資料集會從身分服務、即時客戶設定檔和資料湖刪除資料。 |
+| 刪除模式 | 從由特定資料集建立的Identity Service中刪除連結的身分。 | 根據到期日排程，從由特定資料集建立的Identity Service中刪除連結的身分。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 删除后身份图的不同状态
+## 刪除後身分圖表的不同狀態
 
-删除所有标识图会导致删除两个或更多标识之间的链接，如删除请求所指定。 对于数据集删除请求，由指定数据集建立的所有身份链接都将被删除，并且可能或不会从图表中删除身份。 对于单个身份删除请求，将删除指定身份的身份链接，从而从所有身份图中删除身份值本身。 没有与其他身份的单个链接的身份不会存储在Identity Service中。
+所有身分圖表刪除都會移除兩個或多個身分之間的連結，如刪除請求所指定。 針對資料集刪除請求，會移除指定資料集建立的所有身分連結，而且不一定會將身分從圖形中移除。 對於單一身分刪除請求，會移除指定身分的身分連結，因此會從所有身分圖形中移除身分值本身。 沒有單一連結到其他身分的身分不會儲存在Identity Service中。
 
-下面概述删除可能对身份图状态产生的潜在影响。
+以下概述刪除可能對身分圖表狀態產生的影響。
 
-| 身份图状态 | 描述 |
+| 身分圖表狀態 | 描述 |
 | --- | --- |
-| 部分更新 | 成功处理删除请求后，图表中至少有两个标识保持关联时，会进行局部更新。 删除后，剩余的身份链接可能会彼此保持连接，或者可以根据删除的身份拆分为两个或多个单独的图表。 |
-| 完全移除 | 图表必须至少具有两个链接的标识才能存在。 因此，如果删除请求导致删除图表中的所有现有链接，则图表将被完全删除。 |
-| 无更改 | 如果某个特定删除请求包含的标识或数据集与该图表的任何成员都不关联，则该图表将不会受到影响。 此外，即使删除请求确实删除了数据集或身份数据集组合之间的链接，也不会更新图表，因为该链接是由其他未删除的链接建立的。 这意味着如果链接存在于两个不同的数据集中，则不会更新图表，因为只会删除其中一个数据集。 |
+| 部分更新 | 成功處理刪除請求後，圖形內至少有兩個身分維持連結，就會發生圖形的部分更新。 刪除後，其餘的身分連結可能會維持彼此連線，或根據已刪除的身分將連結分割成兩個或多個個別的圖表。 |
+| 完全移除 | 圖表必須至少有兩個連結的身分才能存在。 因此，如果刪除請求導致移除圖表內的所有現有連結，則圖表將被完全移除。 |
+| 无更改 | 如果特定刪除請求包含未與圖表任何成員相關聯的身分或資料集，圖表將不會受到影響。 此外，即使刪除請求確實刪除了資料集或身分資料集組合之間的連結，圖表也不會更新，因為該連結是由未刪除的其他連結所建立。 這表示如果連結存在於兩個不同的資料集中，圖表將不會更新，因為僅會移除其中一個資料集。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## 后续步骤
 
-本文档介绍了可用于删除Experience Platform上的身份和数据集的各种机制。 本文档还概述了身份和数据集删除如何影响身份图。 有关Identity Service的更多信息，请阅读 [Identity Service概述](home.md).
+本檔案說明您可以在Experience Platform上用來刪除身分和資料集的各種機制。 本檔案也概述身分和資料集刪除如何影響身分圖表。 如需Identity Service的詳細資訊，請閱讀 [Identity Service概觀](home.md).
 
 <!--
 

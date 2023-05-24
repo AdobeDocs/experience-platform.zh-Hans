@@ -1,28 +1,29 @@
 ---
-title: 实施详细信息数据类型
-description: 本文档概述了实施详细信息体验数据模型(XDM)数据类型。
-source-git-commit: 77fb3e348c2298fc5c325fcf2d3408da084b2b19
+title: 實作詳細資料資料型別
+description: 本檔案提供實作詳細資料Experience Data Model (XDM)資料型別的概觀。
+exl-id: d3d16bae-196b-489d-8590-fd22150eedf1
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '127'
-ht-degree: 6%
+source-wordcount: '124'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL 实施详细信息] 数据类型
+# [!UICONTROL 實作詳細資料] 資料型別
 
-[!UICONTROL 实施详细信息] 是一种标准的Experience Data Model(XDM)数据类型，用于描述技术实施，如API或SDK。
+[!UICONTROL 實作詳細資料] 是標準Experience Data Model (XDM)資料型別，可說明技術實作，例如API或SDK。
 
-![数据类型结构](../images/data-types/implementation-details.png)
+![資料型別結構](../images/data-types/implementation-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `environment` | 字符串 | 实施的环境。 |
-| `name` | 字符串 | SDK或端点的标识符。 所有SDK或端点都通过URI（包括扩展）进行标识。 |
+| `environment` | 字符串 | 實作的環境。 |
+| `name` | 字符串 | SDK或端點的識別碼。 所有SDK或端點會透過URI識別，包括擴充功能。 |
 | `version` | 字符串 | API或SDK的版本。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json)

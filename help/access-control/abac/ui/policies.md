@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
-title: 管理访问控制策略
-description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理访问控制策略的信息。
+keywords: Experience Platform；首頁；熱門主題；存取控制；屬性型存取控制；ABAC
+title: 管理存取控制原則
+description: 本檔案提供透過Adobe Experience Cloud中的許可權介面管理存取控制原則的資訊。
 exl-id: 66820711-2db0-4621-908d-01187771de14
 source-git-commit: 504c73fc73ce41f2c1b3159478fc7fe9b4d20a9d
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# 管理访问控制策略
+# 管理存取控制原則
 
-访问控制策略是汇集属性以建立允许和不允许操作的声明。 访问策略可以是本地策略或全局策略，并且可以覆盖其他策略。 Adobe提供了一个默认策略，可立即激活，或者在您的组织准备好开始根据标签控制对特定对象的访问时激活。 默认策略利用应用于资源的标签来拒绝访问，除非用户处于具有匹配标签的角色中。
+存取控制原則是將屬性集合在一起以建立允許和不允許動作的宣告。 存取原則可以是本機或全域，並且可以覆寫其他原則。 Adobe提供預設原則，可立即啟動，或是您的組織準備好開始根據標籤控制特定物件的存取時啟動。 預設原則會利用套用至資源的標籤來拒絕存取，除非使用者處於具有相符標籤的角色中。
 
 >[!IMPORTANT]
 >
->访问策略不应与数据使用策略混淆，数据使用策略控制数据在Adobe Experience Platform中的使用方式，而不是控制组织中哪些用户可以访问数据。 请参阅有关创建的指南 [数据使用策略](../../../data-governance/policies/create.md) 了解更多信息。
+>存取原則不應與資料使用原則混淆，後者控制資料在Adobe Experience Platform中的使用方式，而非貴組織中的哪些使用者有權存取資料。 請參閱建立指南 [資料使用原則](../../../data-governance/policies/create.md) 以取得詳細資訊。
 
 <!-- ## Create a new policy
 
@@ -116,25 +116,25 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 ![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png) -->
 
-## 激活策略
+## 啟用原則
 
-要激活现有策略，请从 **[!UICONTROL 策略]** 选项卡。
+若要啟用現有原則，請從 **[!UICONTROL 原則]** 標籤。
 
 ![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
-接下来，选择省略号(`…`)，此时下拉菜单会显示用于编辑、激活、删除或复制角色的控件。 从下拉菜单中选择激活。
+接著，選取省略符號(`…`)，下拉式清單則會顯示可編輯、啟動、刪除或複製角色的控制項。 從下拉式清單中選取「啟動」 。
 
 ![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-此 **[!UICONTROL 激活策略]** 对话框，提示您确认激活。
+此 **[!UICONTROL 啟用原則]** 對話方塊隨即顯示，提示您確認啟動。
 
 ![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
 
-您将返回到 **[!UICONTROL 策略]** 选项卡和确认激活弹出窗口。 策略状态显示为活动。
+您會返回 **[!UICONTROL 原則]** 標籤和啟用確認快顯視窗隨即出現。 原則狀態會顯示為作用中。
 
 ![flac-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
 ## 后续步骤
 
-激活策略后，您可以继续下一步以 [管理角色的权限](permissions.md).
+啟動原則後，您可以繼續下一步以 [管理角色的許可權](permissions.md).

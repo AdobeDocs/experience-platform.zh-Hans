@@ -1,38 +1,38 @@
 ---
-title: 配额API端点
-description: 利用数据卫生API中的/quota端点，可根据组织针对每种作业类型的每月配额限制来监控数据卫生使用情况。
+title: 配額API端點
+description: 資料衛生API中的/quota端點可讓您根據貴組織每個工作型別的每月配額限制，監控資料衛生使用情況。
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
 source-git-commit: 1c6a5df6473e572cae88a5980fe0db9dfcf9944e
 workflow-type: tm+mt
-source-wordcount: '350'
-ht-degree: 3%
+source-wordcount: '347'
+ht-degree: 2%
 
 ---
 
-# 配额端点
+# 配額端點
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
+>Adobe Experience Platform中的資料檢疫功能目前僅適用於已購買的組織 **AdobeHealthcare Shield** 或 **Adobe隱私權與安全性盾牌**.
 
-的 `/quota` 数据卫生API中的端点允许您根据组织针对每种作业类型的配额限制监控数据卫生使用情况。
+此 `/quota` 資料衛生API中的端點可讓您根據貴組織的每個工作型別的配額限制，監控資料衛生使用情況。
 
-每种数据卫生作业类型的配额通过以下方式强制执行：
+系統會以下列方式為每個資料衛生工作型別執行配額：
 
-* 记录删除和更新限制为每月请求的特定数量。
-* 数据集过期对并发活动作业的数量具有固定限制，无论何时执行过期。
+* 記錄刪除和更新限製為每月特定數量的請求。
+* 資料集有效期的同時作用中工作數有固定限制，無論何時執行有效期。
 
 ## 快速入门
 
-本指南中使用的端点是数据卫生API的一部分。 在继续之前，请查看 [概述](./overview.md) 以下信息：
+本指南中使用的端點屬於資料衛生API。 在繼續之前，請檢閱 [概觀](./overview.md) 以取得下列資訊：
 
-* 相关文档的链接
-* 本文档中有关读取示例API调用的指南
-* 有关成功调用任何Experience PlatformAPI所需标头的重要信息
+* 相關檔案的連結
+* 閱讀本檔案中範例API呼叫的指南
+* 成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊
 
-## 列出配额 {#list}
+## 清單配額 {#list}
 
-您可以通过向 `/quota` 端点。
+您可以透過向以下網站發出GET要求來檢視貴組織的配額資訊： `/quota` 端點。
 
 **API格式**
 
@@ -43,7 +43,7 @@ GET /quota?quotaType={QUOTA_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUOTA_TYPE}` | 可选查询参数，用于指定要检索的配额类型。 如果否 `quotaType` 参数，则API响应中会返回所有配额值。 接受的类型值包括：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:记录删除</li><li>`fieldUpdateWorkOrderDatasetQuota`:记录更新</li></ul> |
+| `{QUOTA_TYPE}` | 指定要擷取的配額型別的可選查詢引數。 若否 `quotaType` 引數，則API回應中會傳回所有配額值。 接受的型別值包括：<ul><li>`expirationDatasetQuota`：資料集有效期</li><li>`deleteIdentityWorkOrderDatasetQuota`：記錄刪除</li><li>`fieldUpdateWorkOrderDatasetQuota`：記錄更新</li></ul> |
 
 **请求**
 
@@ -58,7 +58,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回数据卫生配额的详细信息。
+成功的回應會傳回資料檢疫配額的詳細資料。
 
 ```json
 {
@@ -81,6 +81,6 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `quotas` | 列出每个数据卫生作业类型的配额信息。 每个配额对象都包含以下属性：<ul><li>`name`:数据卫生作业类型：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:记录删除</li></ul></li><li>`description`:数据卫生作业类型的描述。</li><li>`consumed`:此类型的作业在当前每月期间运行。</li><li>`quota`:此作业类型的配额限制。 对于记录删除和更新，此值表示每月可运行的作业数。 对于数据集过期，此值表示在任何给定时间可同时处于活动状态的作业数。</li></ul> |
+| `quotas` | 列出每個資料檢疫工作型別的配額資訊。 每個配額物件都包含以下屬性：<ul><li>`name`：資料衛生工作型別：<ul><li>`expirationDatasetQuota`：資料集有效期</li><li>`deleteIdentityWorkOrderDatasetQuota`：記錄刪除</li></ul></li><li>`description`：資料衛生工作型別的說明。</li><li>`consumed`：在目前每月期間執行的此型別工作數。</li><li>`quota`：此工作型別的配額限制。 對於記錄刪除和更新，這表示每個月期間可以執行的工作數量。 對於資料集有效期，這表示在指定時間可以並行作用中的工作數量。</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

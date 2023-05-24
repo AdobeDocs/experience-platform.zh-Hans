@@ -1,40 +1,40 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；商务；数据类型；数据类型；
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；商務；資料型別；資料型別；
 solution: Experience Platform
-title: 商务数据类型
-description: 本文档概述了商务体验数据模型(XDM)数据类型。
+title: Commerce資料型別
+description: 本檔案提供Commerce Experience Data Model (XDM)資料型別的概述。
 exl-id: c9cc569b-1a91-4a6e-8bfd-7f8ec07d01d4
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '341'
-ht-degree: 1%
+source-wordcount: '338'
+ht-degree: 0%
 
 ---
 
-# [!UICONTROL 商务] 数据类型
+# [!UICONTROL 商務] 資料型別
 
-[!UICONTROL 商务] 是一种标准的体验数据模型(XDM)数据类型，用于描述与购买和销售活动相关的记录。
+[!UICONTROL 商務] 是標準的體驗資料模型(XDM)資料型別，可描述與購買和銷售活動相關的記錄。
 
 <img src="../images/data-types/commerce.PNG" width="400" /><br />
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `order` | [[!UICONTROL 订购]](./order.md) | 描述一个或多个产品的下单。 |
-| `cartAbandons` | [[!UICONTROL 测量]](./measure.md) | 用于描述产品列表何时被标识为不再可供用户访问或购买。 |
-| `checkouts` | [[!UICONTROL 测量]](./measure.md) | 产品列表结账过程中的操作。 如果结帐流程中存在多个步骤，则可能会有多个结帐事件。 如果有多个步骤，则会使用事件时间信息以及引用的页面或体验来标识按顺序表示的步骤和各个事件。 |
-| `inStorePurchase` | [[!UICONTROL 测量]](./measure.md) | 描述与供Analytics使用的店内购买关联的值。 |
-| `productListAdds` | [[!UICONTROL 测量]](./measure.md) | 产品列表中添加的产品，例如添加到购物车的产品。 |
-| `productListOpens` | [[!UICONTROL 测量]](./measure.md) | 新产品列表的初始化，如正在创建的购物车。 |
-| `productListRemovals` | [[!UICONTROL 测量]](./measure.md) | 产品列表中产品条目的移除或移除，例如从购物车移除的产品。 |
-| `productListReopens` | [[!UICONTROL 测量]](./measure.md) | 先前已放弃且用户已重新激活的产品列表。 |
-| `productListViews` | [[!UICONTROL 测量]](./measure.md) | 描述产品列表的视图或视图何时发生。 |
-| `productViews` | [[!UICONTROL 测量]](./measure.md) | 描述单个产品的视图或视图何时发生。 |
-| `purchases` | [[!UICONTROL 测量]](./measure.md) | 用于跟踪何时接受订单。 购买事件是商务转化中唯一必需的操作。 购买事件必须引用产品列表。 |
-| `saveForLaters` | [[!UICONTROL 测量]](./measure.md) | 保存产品列表供将来使用，如愿望列表。 |
+| `order` | [[!UICONTROL 訂購]](./order.md) | 說明一或多個產品的已下訂單。 |
+| `cartAbandons` | [[!UICONTROL 測量]](./measure.md) | 用於說明何時已將產品清單識別為使用者無法再存取或購買。 |
+| `checkouts` | [[!UICONTROL 測量]](./measure.md) | 產品清單結帳程式中的動作。 如果結帳程式中有多個步驟，就可能有一個以上的結帳事件。 如果有多個步驟，事件時間資訊和參照的頁面或體驗可用來識別依序表示的步驟和個別事件。 |
+| `inStorePurchase` | [[!UICONTROL 測量]](./measure.md) | 說明與店內購買相關聯以供分析使用的值。 |
+| `productListAdds` | [[!UICONTROL 測量]](./measure.md) | 將產品新增至產品清單，例如將產品新增至購物車。 |
+| `productListOpens` | [[!UICONTROL 測量]](./measure.md) | 新產品清單的初始化，例如正在建立的購物車。 |
+| `productListRemovals` | [[!UICONTROL 測量]](./measure.md) | 從產品清單中移除或移除產品專案，例如從購物車移除的產品。 |
+| `productListReopens` | [[!UICONTROL 測量]](./measure.md) | 先前已捨棄且已由使用者重新啟動的產品清單。 |
+| `productListViews` | [[!UICONTROL 測量]](./measure.md) | 說明何時發生產品清單檢視。 |
+| `productViews` | [[!UICONTROL 測量]](./measure.md) | 說明何時已發生個別產品的檢視。 |
+| `purchases` | [[!UICONTROL 測量]](./measure.md) | 用於追蹤何時接受訂單。 購買事件是商務轉換中唯一需要的動作。 購買事件必須有參考的產品清單。 |
+| `saveForLaters` | [[!UICONTROL 測量]](./measure.md) | 儲存產品清單以供日後使用，例如願望清單。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json)

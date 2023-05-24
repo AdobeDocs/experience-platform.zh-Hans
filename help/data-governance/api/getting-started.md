@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；DULE;DULE
+keywords: Experience Platform；首頁；熱門主題；DULE；dule
 solution: Experience Platform
-title: 策略服务API快速入门
-description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用策略服务API之前需要了解的核心概念。
+title: 原則服務API快速入門
+description: 原則服務API可讓您建立和管理與Adobe Experience Platform資料控管相關的各種資源。 本檔案會介紹您在嘗試呼叫原則服務API之前需要瞭解的核心概念。
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,49 +11,49 @@ ht-degree: 0%
 
 ---
 
-# 入门 [!DNL Policy Service] API
+# 開始使用 [!DNL Policy Service] API
 
-的 [!DNL Policy Service] API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用 [!DNL Policy Service] API。
+此 [!DNL Policy Service] API可讓您建立和管理與Adobe Experience Platform資料控管相關的各種資源。 本檔案會介紹您在嘗試呼叫「 」之前需要瞭解的核心概念。 [!DNL Policy Service] API。
 
 ## 先决条件
 
-使用开发人员指南需要对 [!DNL Experience Platform] 使用“数据管理”功能时涉及的服务。 开始使用之前 [!DNL Policy Service API]，请查阅以下服务的文档：
+使用開發人員指南需要實際瞭解各種 [!DNL Experience Platform] 與資料控管功能搭配使用的服務。 開始使用之前 [!DNL Policy Service API]，請檢閱以下服務的檔案：
 
-* [数据管理](../home.md):框架 [!DNL Experience Platform] 强制实施数据使用合规性。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [資料控管](../home.md)：作為依據的框架 [!DNL Experience Platform] 強制資料使用規範。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-## 读取示例API调用
+## 讀取範例API呼叫
 
-的 [!DNL Policy Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+此 [!DNL Policy Service] API檔案提供範例API呼叫，示範如何格式化請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
 
-## 必需标题
+## 必要的標頭
 
-API文档还要求您完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功调用 [!DNL Platform] 端点。 完成身份验证教程将提供 [!DNL Experience Platform] API调用，如下所示：
+API檔案也要求您完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功呼叫 [!DNL Platform] 端點。 完成驗證教學課程後，會提供中每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括属于“数据管理”的沙箱，则与特定的虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
+中的所有資源 [!DNL Experience Platform]包括屬於資料控管的那些，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+>如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
 
 * `Content-Type: application/json`
 
-## 核心资源与自定义资源
+## 核心與自訂資源
 
-在 [!DNL Policy Service] API中，所有策略和营销操作都称为 `core` 或 `custom` 资源。
+在內 [!DNL Policy Service] API，所有原則和行銷動作稱為 `core` 或 `custom` 資源。
 
-`core` 资源是指由Adobe定义和维护的资源，而 `custom` 资源是指由贵组织创建和维护的资源，因此仅对贵组织而言是独特和可见的。 因此，列出和查找操作(`GET`)是 `core` 资源，而则列出、查找和更新操作(`POST`, `PUT`, `PATCH`和 `DELETE`)可用于 `custom` 资源。
+`core` 資源是由Adobe定義及維護的資源，而 `custom` 資源是由您的組織建立和維護的資源，因此是唯一的並且僅對您的組織可見。 因此，列出和查詢作業(`GET`)是唯一允許對執行的操作 `core` 資源，而列出、查詢及更新作業(`POST`， `PUT`， `PATCH`、和 `DELETE`)可用於 `custom` 資源。
 
 ## 后续步骤
 
-要开始使用策略服务API进行调用，请选择一个可用的端点指南。
+若要開始使用原則服務API進行呼叫，請選取其中一個可用的端點指南。

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；ad-hoc;adhoc;ad-hoc;Ad hoc;Ad hoc;
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述登入；ad-hoc；ad-hoc；ad-hoc；Ad-hoc；Ad-hoc；
 solution: Experience Platform
-title: 临时架构
-description: 在特定情况下，可能需要创建一个XDM架构，其中的字段名称仅由单个数据集使用。 这称为临时架构。
+title: 臨時結構描述
+description: 在特定情況下，可能有必要建立XDM結構描述，其中包含已命名為僅供單一資料集使用的欄位。 這稱為臨時結構描述。
 exl-id: 8ee43bdc-3f16-4ec9-b17a-9942e4599023
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
@@ -11,6 +11,6 @@ ht-degree: 0%
 
 ---
 
-# 临时架构
+# 臨時結構描述
 
-在特定情况下，可能需要创建 [!DNL Experience Data Model] (XDM)架构，其中的字段名称仅由单个数据集使用。 这称为临时架构。 临时架构用于多个数据摄取工作流，包括摄取CSV文件并创建特定类型的源连接器。 有关临时架构的更多信息，包括有关如何在 [!DNL Schema Registry] API，请参阅 [临时模式教程](../tutorials/ad-hoc.md).
+在特定情況下，您可能需要建立 [!DNL Experience Data Model] (XDM)結構描述，其欄位已命名為僅供單一資料集使用。 這稱為臨時結構描述。 臨機結構描述用於數個資料擷取工作流程，包括擷取CSV檔案和建立特定型別的來源聯結器。 如需臨時結構的詳細資訊，包括如何在中建立臨時結構的步驟。 [!DNL Schema Registry] API，請參閱 [臨時結構描述教學課程](../tutorials/ad-hoc.md).

@@ -1,57 +1,57 @@
 ---
-title: 实施Adobe Experience Platform Assurance扩展
-description: 本指南介绍如何实施和安装Adobe Experience Platform Assurance扩展。
-source-git-commit: 24f452bdb923179eefe53fdb28d3a92d43e533cd
+title: 實作Adobe Experience Platform保證擴充功能
+description: 本指南說明如何實作及安裝Adobe Experience Platform Assurance擴充功能。
+exl-id: b7bd1bb1-1606-4d00-97e0-c329c86d8ca4
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '400'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
+# 實施Adobe Experience Platform保證擴充功能
 
-# 实施Adobe Experience Platform保证扩展
-
-本教程介绍如何在Mobile SDK中安装和实施平台保障扩展。 有关将保障扩展添加到应用程序的说明，请阅读 [Adobe Experience Platform保障扩展概述](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
+本教學課程說明如何在Mobile SDK中安裝及實作Platform Assurance擴充功能。 如需將Assurance擴充功能新增至應用程式的說明，請參閱 [Adobe Experience Platform保證擴充功能概觀](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app).
 
 ## 快速入门
 
-要安装和实施保障扩展，您需要访问以下服务：
+若要安裝及實作Assurance擴充功能，您必須具備下列服務的存取權：
 
-- 的 [Adobe Experience Platform数据收集UI](https://experience.adobe.com/#/data-collection/)
-- [Adobe Experience Platform保障](https://experience.adobe.com/assurance)
+- 此 [Adobe Experience Platform資料彙集UI](https://experience.adobe.com/#/data-collection/)
+- [Adobe Experience Platform Assurance](https://experience.adobe.com/assurance)
 
 ## 创建移动 属性
 
 >[!NOTE]
 >
->如果您已经拥有移动资产，则可以继续执行下一步。
+>如果您已有行動屬性，您可以繼續進行下一個步驟。
 
-在数据收集UI中，选择 **[!UICONTROL 标记]**. 此时会显示移动和Web属性列表，其中包含有关属于贵组织的属性的信息。 选择 **[!UICONTROL 新资产]** 创建新资产。
+在資料收集UI中，選取 **[!UICONTROL 標籤]**. 行動和Web屬性清單隨即出現，其中包含屬於您組織的屬性相關資訊。 選取 **[!UICONTROL 新增屬性]** 以建立新屬性。
 
-![“新建属性”按钮将突出显示，显示您选择创建新属性的内容](./images/implement-assurance/create-new-property.png)
+![「新增屬性」按鈕會反白顯示，顯示您選擇用來建立新屬性的內容](./images/implement-assurance/create-new-property.png)
 
-的 **[!UICONTROL 创建资产]** 页面。 输入新资产的名称，然后选择 **[!UICONTROL 移动设备]** 作为平台。 插入详细信息后，选择 **[!UICONTROL 保存]** 创建移动资产。
+此 **[!UICONTROL 建立屬性]** 頁面便會顯示。 輸入新屬性的名稱，然後選取 **[!UICONTROL 行動]** 作為您的平台。 插入詳細資料後，選取 **[!UICONTROL 儲存]** 以建立行動屬性。
 
 >[!NOTE]
 >
->移动资产的 **[!UICONTROL 隐私]** 设置操作 **not** 会影响保证的数据收集。
+>行動屬性的 **[!UICONTROL 隱私權]** 設定do **not** 影響Assurance的資料收集。
 
-![此时将显示“创建属性”页面。 您可以在此处插入有关您的移动资产的信息。](./images/implement-assurance/create-property.png)
+![此時會顯示「建立屬性」頁面。 您可以在此處插入行動屬性的相關資訊。](./images/implement-assurance/create-property.png)
 
-## 安装Assurance扩展
+## 安裝Assurance擴充功能
 
-选择要在中安装Assurance扩展的移动资产。
+選取您要安裝Assurance擴充功能的行動屬性。
 
-![此时会显示标记属性页面，并突出显示选定的移动属性。](./images/implement-assurance/select-mobile-property.png)
+![接著會顯示「標籤屬性」頁面，並反白顯示選取的行動屬性。](./images/implement-assurance/select-mobile-property.png)
 
-的 **移动属性详细信息** 页面。 选择 **[!UICONTROL 扩展]** 以显示当前与您的移动资产关联的扩展列表。
+此 **行動屬性詳細資料** 頁面便會顯示。 選取 **[!UICONTROL 擴充功能]** 開啟目前與您的行動屬性相關聯的擴充功能清單。
 
-![此时会显示移动属性详细信息页面。 此时会显示有关最近活动的信息。 扩展选项卡会突出显示。](./images/implement-assurance/tag-properties.png)
+![行動屬性詳細資訊頁面隨即顯示。 會顯示最近活動的相關資訊。 擴充功能標籤會反白顯示。](./images/implement-assurance/tag-properties.png)
 
-选择 **[!UICONTROL 目录]** 以查看可添加到移动资产的扩展列表。 使用过滤器，找到 **[!UICONTROL AEP保证]** 扩展，然后选择 **[!UICONTROL 安装]**.
+選取 **[!UICONTROL 目錄]** 以檢視可新增至行動屬性的擴充功能清單。 使用篩選器，找出 **[!UICONTROL AEP保證]** 擴充功能，並選取 **[!UICONTROL 安裝]**.
 
-![将显示扩展目录。 将筛选并显示保证扩展，并突出显示安装按钮。](./images/implement-assurance/assurance-extension.png)
+![擴充功能目錄隨即顯示。 會篩選並顯示Assurance擴充功能，並反白顯示安裝按鈕。](./images/implement-assurance/assurance-extension.png)
 
 ## 后续步骤
 
-现在，您已在移动资产中安装了Assurance扩展，接下来可以在应用程序中开始使用Assurance。 要了解如何将保证扩展添加到您的应用程序，请阅读 [Adobe Experience Platform保障扩展概述](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app). 要了解如何使用“保证”，请阅读 [使用保证指南](./using-assurance.md).
+現在您已將Assurance擴充功能安裝在行動屬性中，您可以開始將Assurance用於應用程式。 若要瞭解如何將Assurance擴充功能新增至您的應用程式，請閱讀 [Adobe Experience Platform保證擴充功能概觀](https://developer.adobe.com/client-sdks/documentation/platform-assurance-sdk/#add-the-aep-assurance-extension-to-your-app). 若要瞭解如何使用Assurance，請參閱 [使用保證指南](./using-assurance.md).

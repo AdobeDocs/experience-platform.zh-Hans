@@ -1,7 +1,7 @@
 ---
-keywords: 广告目标；目标；平台目标
-title: 广告目标概述
-description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
+keywords: 廣告目的地；目的地；平台目的地
+title: Advertising目的地概觀
+description: 將Adobe Experience Platform連線至第三方廣告平台(例如DSP、廣告網路、SSP)，並共用這些平台的假名對象。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
 source-git-commit: 732e6d3d53d983f3390941f4694d2c542d882004
 workflow-type: tm+mt
@@ -10,53 +10,53 @@ ht-degree: 1%
 
 ---
 
-# 广告目标概述 {#advertising-destinations}
+# Advertising目的地概觀 {#advertising-destinations}
 
 ## 概述 {#overview}
 
-将Adobe Experience Platform连接到广告平台，如需求方平台(DSP)、供应方平台(SSP)、广告网络，以便将已知和假名的受众共享到这些平台。
+將Adobe Experience Platform連線到廣告平台，例如需求端平台(DSP)、供應端平台(SSP)和廣告網路，以在這些平台上共用已知和匿名的受眾。
 
-连接到广告目标时，您的受众将作为ID发送到目标平台，然后这些受众会映射到目标平台已知的ID。
+連線到廣告目的地時，您的對象會以ID的形式傳送至目的地平台，並在該平台將其對應至目的地平台已知的ID。
 
-## 支持的广告目标 {#supported-destinations}
+## 支援的廣告目的地 {#supported-destinations}
 
-目前，Experience Platform支持下面列出的广告目标。
+目前，Experience Platform支援下列廣告目的地。
 
-要了解连接和扩展之间的差异，请参阅 [连接](../../destination-types.md#connections) （在目标类型和类别页面中）。
+若要瞭解連線和擴充功能之間的差異，請參閱 [連線](../../destination-types.md#connections) 目的地型別和類別頁面。
 
 ### 连接
 
-* [Adobe Advertising Cloud连接](adobe-advertising-cloud-connection.md)
-* [(Beta)Amazon Ads连接](amazon-ads.md)
-* [(Beta)Criteo连接](criteo.md)
-* [Google Display &amp; Video 360连接](google-dv360.md)
-* [Google Ads连接](google-ads-destination.md)
-* [Google Ad Manager连接](google-ad-manager.md)
-* [（测试版）Google Ad Manager 360连接](google-ad-manager-360-connection.md)
-* [Google客户匹配连接](google-customer-match.md)
-* [Microsoft Bing连接](bing.md)
-* [Pinterest客户列表连接](pinterest.md)
-* [（测试版）Snapchat Ads连接](snap-inc.md)
-* [交易台连接](tradedesk.md)
-* [（测试版）交易台CRM连接](tradedesk-emails.md)
+* [Adobe Advertising Cloud連線](adobe-advertising-cloud-connection.md)
+* [（測試版） Amazon Ads連線](amazon-ads.md)
+* [(Beta) Criteo連線](criteo.md)
+* [Google顯示和視訊360連線](google-dv360.md)
+* [Google Ads連線](google-ads-destination.md)
+* [Google Ad Manager連線](google-ad-manager.md)
+* [（測試版） Google Ad Manager 360連線](google-ad-manager-360-connection.md)
+* [Google Customer Match連線](google-customer-match.md)
+* [Microsoft Bing連線](bing.md)
+* [pinterest客戶清單連線](pinterest.md)
+* [(Beta) Snapchat廣告連線](snap-inc.md)
+* [交易台連線](tradedesk.md)
+* [(Beta)交易台CRM連線](tradedesk-emails.md)
 * [Yahoo/Verizon DataX](datax.md)
 
 ### 扩展
 
-* [Adobe Advertising Cloud扩展](adobe-advertising-cloud.md)
-* [Awin广告转化标记扩展](awin-conversiontag.md)
-* [Awin Advertising Mastertag扩展](awin-mastertag.md)
-* [Bing Ads通用事件跟踪扩展](bing-ads.md)
-* [分支扩展](branch.md)
-* [DoubleClick Floodlight扩展](doubleclick-floodlight.md)
-* [Facebook Pixel扩展](facebook-pixel.md)
-* [Flashtalking OneTag扩展](flashtalking.md)
-* [Google Ads扩展](google-ads-extension.md)
-* [Google扩展](gtag-advertising.md)
-* [linkedIn Insight Tag扩展](linkedin.md)
-* [Pinterest转化跟踪扩展](pinterest-extension.md)
-* [Twitter通用网站标记扩展](twitter-uwt.md)
+* [Adobe Advertising Cloud擴充功能](adobe-advertising-cloud.md)
+* [Awin Advertising轉換標籤擴充功能](awin-conversiontag.md)
+* [Awin Advertising Mastertag擴充功能](awin-mastertag.md)
+* [Bing Ads通用事件追蹤擴充功能](bing-ads.md)
+* [分支擴充功能](branch.md)
+* [DoubleClick Floodlight擴充功能](doubleclick-floodlight.md)
+* [facebook Pixel擴充功能](facebook-pixel.md)
+* [Flashtalking OneTag擴充功能](flashtalking.md)
+* [Google Ads擴充功能](google-ads-extension.md)
+* [Google gtag擴充功能](gtag-advertising.md)
+* [linkedIn Insight Tag擴充功能](linkedin.md)
+* [pinterest轉換追蹤擴充功能](pinterest-extension.md)
+* [twitter通用網站標籤擴充功能](twitter-uwt.md)
 
-## 连接到新的广告目标 {#connect-destination}
+## 連線到新的廣告目的地 {#connect-destination}
 
-要将区段发送到营销活动的广告目标，Platform必须先连接到该目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 以了解有关设置新目标的详细信息。
+若要將區段傳送至行銷活動的廣告目的地，平台必須先連線至目的地。 請參閱 [目的地建立教學課程](../../ui/connect-destination.md) 以取得設定新目的地的詳細資訊。

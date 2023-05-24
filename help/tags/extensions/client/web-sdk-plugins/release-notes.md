@@ -1,6 +1,6 @@
 ---
-title: “常用Web SDK插件”扩展的发行说明
-description: Adobe Experience Platform中“常用Web SDK插件”标记扩展的最新发行说明。
+title: 常見Web SDK外掛程式擴充功能的發行說明
+description: Adobe Experience Platform中常見Web SDK外掛程式標籤擴充功能的最新發行說明。
 exl-id: e9b05ca5-0efc-426c-855a-5f0ccbfe20da
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,12 +9,12 @@ ht-degree: 4%
 
 ---
 
-# “常用Web SDK插件”发行说明
+# 常見Web SDK外掛程式發行說明
 
 ## 2022 年 10 月 6 日
 
-### “常用Web SDK插件”扩展1.0.0
+### 常見Web SDK外掛程式擴充功能1.0.0
 
 **功能**
 
-* 扩展已发布，并支持12个插件
+* 擴充功能發行時支援12個外掛程式

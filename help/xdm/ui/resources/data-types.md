@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；架构；架构；架构；架构；创建；数据类型；数据类型；
+keywords: Experience Platform；首頁；熱門主題；UI；XDM；XDM系統；體驗資料模型；體驗資料模型；資料模型；資料模型；結構描述登入；結構描述登入；結構描述；結構描述；結構描述；建立；資料型別；資料型別；
 solution: Experience Platform
-title: 使用UI创建和编辑数据类型
+title: 使用UI建立及編輯資料型別
 type: Tutorial
-description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
+description: 瞭解如何在Experience Platform使用者介面中建立和編輯資料型別。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
@@ -12,101 +12,101 @@ ht-degree: 0%
 
 ---
 
-# 使用UI创建和编辑数据类型
+# 使用UI建立及編輯資料型別
 
-在体验数据模型(XDM)中，数据类型是包含多个子字段的可重用字段。 尽管与中的架构字段组类似，它们允许一致地使用多字段结构，但数据类型更加灵活，因为它们可以包含在架构结构中的任意位置，而字段组只能在根级别添加。
+在體驗資料模型(XDM)中，資料型別是包含多個子欄位的可重複使用欄位。 雖然與結構描述欄位群組類似，因為它們允許一致地使用多欄位結構，但資料型別更靈活，因為它們可以包含在結構描述結構中的任何位置，而欄位群組只能新增到根層級。
 
-Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各种常见的体验管理用例。 但是，您还可以定义自己的自定义数据类型，以满足您独特的业务需求。
+Adobe Experience Platform提供許多標準資料型別，可用於涵蓋各種常見的體驗管理使用案例。 不過，您也可以定義自己的自訂資料型別，以滿足獨特的業務需求。
 
-本教程介绍了在Platform用户界面中创建和编辑自定义数据类型的步骤。
+本教學課程涵蓋在Platform使用者介面中建立和編輯自訂資料型別的步驟。
 
 ## 先决条件
 
-本指南需要对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [架构组合基础知识](../../schema/composition.md) 了解数据类型对XDM模式的贡献情况。
+本指南需要實際瞭解XDM系統。 請參閱 [XDM概觀](../../home.md) 介紹XDM在Experience Platform生態系統內的角色，以及 [結構描述組合基本概念](../../schema/composition.md) 瞭解資料型別對XDM結構描述的貢獻。
 
-虽然本指南不是必需的，但建议您也要遵循 [在UI中合成架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+雖然本指南不需要，但建議您也參閱以下主題的相關教學課程： [在UI中構成結構描述](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
 
-## 打开 [!DNL Schema Editor] （数据类型）
+## 開啟 [!DNL Schema Editor] （資料型別）
 
-在平台UI中，选择 **[!UICONTROL 模式]** 在左侧导航中打开 [!UICONTROL 模式] 工作区，然后选择 **[!UICONTROL 数据类型]** 选项卡。 此时会显示可用数据类型的列表，包括由Adobe定义的数据类型和由您的组织创建的数据类型。
+在Platform UI中選取 **[!UICONTROL 結構描述]** 在左側導覽以開啟 [!UICONTROL 結構描述] 工作區，然後選取 **[!UICONTROL 資料型別]** 標籤。 隨即顯示可用資料型別清單，包括由Adobe定義的資料型別以及貴組織建立的資料型別。
 
 ![](../../images/ui/resources/data-types/data-types-tab.png)
 
-从此处，您有两个选项：
+從這裡，您有兩個選項：
 
-- [创建新数据类型](#create)
-- [选择要编辑的现有数据类型](#edit)
+- [建立新的資料型別](#create)
+- [選取要編輯的現有資料型別](#edit)
 
-### 创建新数据类型 {#create}
+### 建立新的資料型別 {#create}
 
-从 **[!UICONTROL 数据类型]** 选项卡，选择 **[!UICONTROL 创建数据类型]**.
+從 **[!UICONTROL 資料型別]** 索引標籤，選取 **[!UICONTROL 建立資料型別]**.
 
 ![](../../images/ui/resources/data-types/create.png)
 
-的 [!DNL Schema Editor] 显示画布中新数据类型的当前结构。 在编辑器的右侧，您可以为数据类型提供显示名称和可选描述。 确保您为数据类型提供了唯一且简洁的名称，因为这是在将数据类型添加到架构时如何标识该数据类型的。
+此 [!DNL Schema Editor] 會出現，在畫布中顯示新資料型別的目前結構。 在編輯器的右側，您可以為資料型別提供顯示名稱和可選描述。 請確定您為資料型別提供唯一且簡潔的名稱，因為這是將資料型別新增至結構描述時識別資料型別的方式。
 
-本教程将创建一个描述餐厅属性的数据类型，因此该数据类型的显示名称为“Restaurant”。
+本教學課程會建立描述餐廳屬性的資料型別，因此該資料型別的顯示名稱為「餐廳」。
 
 ![](../../images/ui/resources/data-types/data-type-properties.png)
 
-从此处，您可以跳到 [下一部分](#add-fields) 开始向新数据类型添加字段。
+從這裡，您可以直接跳至 [下一節](#add-fields) 以開始將欄位新增至新資料型別。
 
-### 编辑现有数据类型
+### 編輯現有的資料型別
 
 >[!NOTE]
 >
->在已启用用于实时客户资料的架构中使用现有数据类型后，以后只能对该数据类型进行无损更改。 请参阅 [模式演化规则](../../schema/composition.md#evolution) 以了解更多信息。
+>一旦在已啟用用於即時客戶個人檔案的結構描述中使用了現有的資料型別，此後只能對該資料型別進行非破壞性變更。 請參閱 [結構描述演化規則](../../schema/composition.md#evolution) 以取得詳細資訊。
 
-只能编辑您的组织定义的自定义数据类型。 要缩小显示的列表范围，请选择过滤器图标(![过滤器图标](../../images/ui/resources/data-types/filter.png))以显示根据 [!UICONTROL 所有者]. 选择 **[!UICONTROL 客户]** 以仅显示您的组织拥有的自定义数据类型。
+只能編輯您的組織定義的自訂資料型別。 若要縮小顯示的清單範圍，請選取篩選圖示(![篩選圖示](../../images/ui/resources/data-types/filter.png))以顯示篩選控制項，依據為 [!UICONTROL 所有者]. 選取 **[!UICONTROL 客戶]** 以僅顯示貴組織擁有的自訂資料型別。
 
-从列表中选择要编辑的数据类型以打开右边栏，其中显示数据类型的详细信息。 在右边栏中选择数据类型的名称，以在 [!DNL Schema Editor].
+從清單中選取您要編輯的資料型別，以開啟右側邊欄，顯示資料型別的詳細資訊。 在右側邊欄中選取資料型別的名稱，以在下列位置開啟其結構： [!DNL Schema Editor].
 
 ![](../../images/ui/resources/data-types/edit.png)
 
-## 向数据类型添加字段 {#add-fields}
+## 新增欄位至資料型別 {#add-fields}
 
-要开始向数据类型添加字段，请选择 **加号(+)** 图标。 下面将显示一个新字段，右边栏会更新以显示新字段的控件。
+若要開始將欄位新增至資料型別，請選取 **加(+)** 圖示加以存取（位於畫布的根層級欄位旁）。 下方會顯示新欄位，而右側邊欄會更新，以顯示新欄位的控制項。
 
 ![](../../images/ui/resources/data-types/new-field.png)
 
-使用右边栏中的控件配置新字段的详细信息。 请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置字段并将其添加到数据类型的特定步骤。
+使用右側邊欄中的控制項來設定新欄位的詳細資訊。 請參閱指南： [在UI中定義欄位](../fields/overview.md#define) 瞭解如何設定欄位並將其新增至資料型別的具體步驟。
 
-餐厅数据类型需要一个字符串字段来表示餐厅的名称。 因此， [!UICONTROL 字段名称] 设置为“name”，则 [!UICONTROL 类型] 设置为&quot;[!UICONTROL 字符串]&quot; 选择 **[!UICONTROL 应用]** 以将更改应用到字段。
+餐廳資料型別需要字串欄位來代表餐廳名稱。 因此， [!UICONTROL 欄位名稱] 設為「name」，且 [!UICONTROL 型別] 設為&quot;[!UICONTROL 字串]「。 選取 **[!UICONTROL 套用]** 以將變更套用至欄位。
 
 ![](../../images/ui/resources/data-types/name-field.png)
 
-根据需要继续向数据类型添加更多字段。 “餐厅”数据类型示例现在包含品牌、座位容量和楼面空间的附加字段。
+視需要繼續新增更多欄位至資料型別。 範例Restaurant資料型別現在有品牌、座位容量和樓層空間的額外欄位。
 
 ![](../../images/ui/resources/data-types/more-fields.png)
 
-除了基本字段之外，您还可以在自定义数据类型中嵌套其他数据类型。 例如，Restaurant数据类型需要一个表示属性物理地址的字段。 在此方案中，您可以添加一个新的“地址”字段，该字段已分配标准数据类型“[!UICONTROL 邮政地址]&quot;
+除了基本欄位外，您也可以在自訂資料型別中巢狀內嵌其他資料型別。 例如，Restaurant資料型別需要代表屬性實體位址的欄位。 在此案例中，您可以新增指派了標準資料型別&quot;[!UICONTROL 郵寄地址]「。
 
 ![](../../images/ui/resources/data-types/address-field.png)
 
-这显示了在描述数据方面数据类型的灵活性：数据类型可以采用也是数据类型的字段，这些字段本身可以包含其他数据类型，等等。 这样，您就可以在整个XDM架构中提取和重用通用数据模式，从而更轻松地表示复杂的数据结构。
+這說明了資料型別在描述您的資料方面可以有多大的彈性：資料型別可以使用欄位，這些欄位也是資料型別，其本身可以包含進一步的資料型別等等。 這可讓您在XDM結構描述中抽象化並重複使用常見資料模式，更輕鬆地表示複雜的資料結構。
 
-完成向数据类型添加字段后，请选择 **[!UICONTROL 保存]** 保存更改并将数据类型添加到 [!DNL Schema Library].
+將欄位新增至資料型別後，請選取 **[!UICONTROL 儲存]** 以儲存變更並將資料型別新增至 [!DNL Schema Library].
 
-## 将数据类型添加到架构
+## 將資料型別新增至結構描述
 
-创建数据类型后，即可在架构中开始使用该数据类型。 由于XDM架构由类和零个或多个字段组组成，因此不能直接将数据类型提供的字段添加到架构中。 而是必须包含在类或字段组中。
+建立資料型別後，您就可以開始在結構描述中使用它。 由於XDM結構描述是由類別和零個或多個欄位群組所組成，因此資料型別提供的欄位無法直接新增到結構描述中。 反之，它們必須包含在類別或欄位群組中。
 
-首先，执行 [向类添加字段](./classes.md#add-fields) 或 [向字段组添加字段](./field-groups.md#add-fields). 或者，您也可以开始 [将字段直接添加到架构](./schemas.md#add-individual-fields) 并从中选择父类或字段组。 当您选择 **[!UICONTROL 类型]** 对于新字段，从下拉菜单中选择数据类型的名称。
+首先，請遵循以下涉及的步驟 [將欄位新增至類別](./classes.md#add-fields) 或 [新增欄位至欄位群組](./field-groups.md#add-fields). 或者，您可以開始 [將欄位直接新增到結構描述](./schemas.md#add-individual-fields) 並從中選擇父類別或欄位群組。 當您選擇 **[!UICONTROL 型別]** 對於新欄位，從下拉式選單中選取您的資料型別名稱。
 
-## 将多字段对象转换为数据类型 {#convert}
+## 將多欄位物件轉換為資料型別 {#convert}
 
-在 [!DNL Schema Editor]，则可以将该字段转换为数据类型，以便在其他类或字段组中使用该相同字段结构。
+當您建立物件型別欄位時，在 [!DNL Schema Editor]，您可以將該欄位轉換為資料型別，以便在不同類別或欄位群組中使用相同欄位結構。
 
-要将对象类型字段转换为数据类型，请在画布中选择该字段。 在转换字段之前，请确保 **[!UICONTROL 显示名称]** 描述对象将包含的数据，因为这将成为数据类型的名称。 准备好转换字段后，选择 **[!UICONTROL 转换为新数据类型]** 中。
+若要將物件型別欄位轉換為資料型別，請選取畫布中的欄位。 在轉換欄位之前，請確定 **[!UICONTROL 顯示名稱]** 描述物件將包含的資料，因為這會成為資料型別的名稱。 當您準備好轉換欄位時，請選取 **[!UICONTROL 轉換為新資料型別]** 在右側邊欄中。
 
 ![](../../images/ui/resources/data-types/convert-object.png)
 
-画布会从“[!UICONTROL 对象]”更改为新数据类型。 现在，通过从 **[!UICONTROL 类型]** 下拉列表。
+畫布會更新「」中欄位的資料型別[!UICONTROL 物件]」至新資料型別。 現在，您可以透過從以下專案選取此資料型別，將此結構重複用於其他類別和欄位群組： **[!UICONTROL 型別]** 下拉式清單。
 
 ![](../../images/ui/resources/data-types/converted.png)
 
 ## 后续步骤
 
-本指南介绍了如何使用平台UI创建和编辑数据类型。 有关 [!UICONTROL 模式] 工作区，请参阅 [[!UICONTROL 模式] 工作区概述](../overview.md).
+本指南說明如何使用Platform UI建立和編輯資料型別。 如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區，請參閱 [[!UICONTROL 結構描述] 工作區概觀](../overview.md).
 
-了解如何使用 [!DNL Schema Registry] API，请参阅 [data types endpoint指南](../../api/data-types.md).
+若要瞭解如何使用管理資料型別 [!DNL Schema Registry] API，請參閱 [資料型別端點指南](../../api/data-types.md).

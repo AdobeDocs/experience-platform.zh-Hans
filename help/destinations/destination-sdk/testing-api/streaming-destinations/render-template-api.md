@@ -1,6 +1,6 @@
 ---
-description: 了解如何根据消息转换模板使用目标测试API来验证到流目标的输出。
-title: 验证导出的配置文件结构
+description: 瞭解如何使用目的地測試API，根據您的訊息轉換範本，驗證串流目的地的輸出。
+title: 驗證匯出的設定檔結構
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
 source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
 workflow-type: tm+mt
@@ -10,27 +10,27 @@ ht-degree: 1%
 ---
 
 
-# 验证导出的配置文件结构 {#render-template-api-operations}
+# 驗證匯出的設定檔結構 {#render-template-api-operations}
 
 >[!IMPORTANT]
 >
->**API端点**: `https://platform.adobe.io/data/core/activation/authoring/testing/template/render`
+>**API端點**： `https://platform.adobe.io/data/core/activation/authoring/testing/template/render`
 
-本页列出并介绍了您可以使用 `/authoring/testing/template/render` API端点，用于根据您的 [消息转换模板](../../functionality/destination-server/message-format.md#using-templating). 有关此端点支持的功能的描述，请阅读 [创建模板](create-template.md).
+此頁面列出並描述您可以使用執行的所有API作業。 `/authoring/testing/template/render` API端點，用於根據您的 [訊息轉換範本](../../functionality/destination-server/message-format.md#using-templating). 如需此端點支援的功能的說明，請閱讀 [建立範本](create-template.md).
 
-## 渲染模板API操作入门 {#get-started}
+## 開始使用轉譯器範本API作業 {#get-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
-## 根据消息转换模板渲染导出的用户档案 {#render-exported-data}
+## 根據訊息轉換範本演算匯出的設定檔 {#render-exported-data}
 
-您可以通过向 `authoring/testing/template/render` 端点，并提供目标配置的目标ID以及您使用创建的模板 [模板API端点示例](sample-template-api.md).
+您可以透過向以下專案發出POST請求來演算匯出的設定檔： `authoring/testing/template/render` 端點，並提供目的地設定的目的地ID以及您使用建立的範本 [範例範本API端點](sample-template-api.md).
 
-您可以首先使用一个简单的模板来导出原始配置文件，而不应用任何转换，然后转到一个更复杂的模板，该模板将转换应用于配置文件。 简单模板的语法为： <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
+您可以先使用簡單範本來匯出原始設定檔而不套用任何轉換，然後移至更複雜的範本，將轉換套用至設定檔。 簡單範本的語法為： <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
 >[!TIP]
 >
->* 您在此应使用的目标ID是 `instanceId` 对应于目标配置的 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 以了解更多详细信息。
+>* 您應在此使用的目的地ID為 `instanceId` 對應至目的地組態，建立目的地組態時，使用 `/destinations` 端點。 請參閱 [擷取目的地設定](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 以取得更多詳細資料。
 
 
 **API格式**
@@ -40,32 +40,32 @@ ht-degree: 1%
 POST authoring/testing/template/render
 ```
 
-| 请求参数 | 描述 |
+| 請求引數 | 描述 |
 | -------- | ----------- |
-| `destinationId` | 要为其呈现导出配置文件的目标配置的ID。 |
-| `template` | 基于其渲染导出配置文件的模板字符转义版本。 |
-| `profiles` | *可选*. 您可以向请求正文添加用户档案。 如果不添加任何用户档案，Experience Platform将自动生成用户档案并将其添加到请求中。 <br> 如果要向调用正文添加用户档案，可以使用 [配置文件生成API示例](sample-profile-generation-api.md). |
+| `destinationId` | 您要為其呈現匯出設定檔的目的地設定ID。 |
+| `template` | 根據您轉譯匯出設定檔的範本之字元逸出版本。 |
+| `profiles` | *可选*. 您可以將設定檔新增至請求內文。 如果您未新增任何設定檔，Experience Platform會自動產生設定檔，並將其新增至請求。 <br> 如果您想要將設定檔新增至呼叫內文，可以使用產生一些設定檔 [範例設定檔產生API](sample-profile-generation-api.md). |
 
 {style="table-layout:auto"}
 
-请注意，渲染模板API端点返回的响应因目标聚合策略而异。 如果您的目标具有可配置的聚合策略，则在响应中还会返回聚合键值，该聚合键值可确定如何聚合用户档案。 了解 [聚合策略](../../functionality/destination-configuration/aggregation-policy.md) 以了解更多详细信息。
+請注意，轉譯器範本API端點傳回的回應會根據目的地彙總原則而有所不同。 如果您的目的地具有可設定的彙總原則，則也會在回應中傳回決定如何彙總設定檔的彙總金鑰。 閱讀關於 [彙總原則](../../functionality/destination-configuration/aggregation-policy.md) 以取得更多詳細資料。
 
-| 响应参数 | 描述 |
+| 回應引數 | 描述 |
 | -------- | ----------- |
-| `aggregationKey` | 表示在导出到目标时聚合用户档案的策略。 此参数是可选的，且仅当目标聚合策略设置为 `CONFIGURABLE_AGGREGATION`. |
-| `profiles` | 显示请求中提供的用户档案，或者显示请求中未提供用户档案时自动生成的用户档案。 |
-| `output` | 根据提供的消息转换模板，将呈现的用户档案作为转义字符串 |
+| `aggregationKey` | 代表匯出至目的地時彙總設定檔的原則。 此引數為選用引數，只有在目的地彙總原則設定為時才會出現 `CONFIGURABLE_AGGREGATION`. |
+| `profiles` | 顯示請求中提供的設定檔，或如果請求中未提供設定檔，則顯示自動產生的設定檔。 |
+| `output` | 根據提供的訊息轉換範本，以逸出字串形式呈現一個或多個設定檔 |
 
-以下各节针对上述两种情况提供了详细的请求和响应。
+以下各節提供上述兩種情況的詳細請求和回應。
 
-* [请求正文中包含的尽力汇总和用户档案](#best-effort)
-* [请求正文中包含的可配置聚合和配置文件](#configurable-aggregation)
+* [最大努力彙總和包含在請求內文中的設定檔](#best-effort)
+* [請求內文中包含的可設定彙總和設定檔](#configurable-aggregation)
 
-### 通过尽力聚合呈现导出的用户档案，并在请求正文中包含单个用户档案 {#best-effort}
+### 使用盡最大努力彙總和請求內文中包含的單一設定檔來呈現匯出的設定檔 {#best-effort}
 
 **请求**
 
-以下请求会渲染一个与目标预期格式匹配的导出配置文件。 在此示例中，目标ID对应于具有尽力聚合的目标配置，并且示例配置文件包含在请求正文中。
+以下請求會轉譯符合目的地預期格式的匯出設定檔。 在此範例中，目的地ID會對應至具有盡最大努力彙總的目的地設定，而範例設定檔會包含在請求內文中。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/template/render' \
@@ -126,9 +126,9 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 **响应**
 
-响应会返回呈现模板的结果或遇到的任何错误。
-成功响应会返回HTTP状态200，其中包含导出数据的详细信息。 在 `output` 参数，作为转义字符串。
-失败的响应会返回HTTP状态400，并显示所遇到错误的描述。
+回應會傳迴轉譯範本的結果，或任何遇到的錯誤。
+成功的回應會傳回HTTP狀態200以及匯出資料的詳細資訊。 在中尋找匯出的設定檔 `output` 引數，當作逸出字串。
+失敗的回應會傳回HTTP狀態400以及所發生錯誤的說明。
 
 ```json
 {
@@ -182,12 +182,12 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }    
 ```
 
-### 通过可配置聚合和请求正文中包含的配置文件渲染导出的配置文件 {#configurable-aggregation}
+### 呈現具有可設定彙總的匯出設定檔和包含在請求內文中的設定檔 {#configurable-aggregation}
 
 **请求**
 
 
-以下请求会渲染多个与目标预期格式匹配的导出用户档案。 在此示例中，目标ID对应于具有可配置聚合的目标配置。 请求正文中包含两个用户档案，每个用户档案具有三个区段资格和五个身份。 您可以使用 [配置文件生成API示例](sample-profile-generation-api.md).
+以下請求會轉譯多個符合目的地預期格式的匯出設定檔。 在此範例中，目的地ID會對應至具有可設定彙總的目的地設定。 請求內文中包含兩個設定檔，每個設定檔都具有三個區段資格和五個身分。 您可以使用產生設定檔以在呼叫時傳送 [範例設定檔產生API](sample-profile-generation-api.md).
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/template/render' \
@@ -307,9 +307,9 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 **响应**
 
-响应会返回呈现模板的结果或遇到的任何错误。
-成功响应会返回HTTP状态200，其中包含导出数据的详细信息。 在响应中，请注意如何根据区段成员资格和身份汇总用户档案。 在 `output` 参数，作为转义字符串。
-失败的响应会返回HTTP状态400，并显示所遇到错误的描述。
+回應會傳迴轉譯範本的結果，或任何遇到的錯誤。
+成功的回應會傳回HTTP狀態200以及匯出資料的詳細資訊。 在回應中通知如何根據區段會籍和身分彙總設定檔。 在中尋找匯出的設定檔 `output` 引數，當作逸出字串。
+失敗的回應會傳回HTTP狀態400以及所發生錯誤的說明。
 
 ```json
 {
@@ -1065,10 +1065,10 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }
 ```
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何使用消息转换模板生成与目标预期数据格式匹配的导出用户档案。 读取 [如何使用Destination SDK配置目标](../../guides/configure-destination-instructions.md) 以了解此步骤在配置目标过程中的适用位置。
+閱讀本檔案後，您現在知道如何使用訊息轉換範本產生符合目的地預期資料格式的匯出設定檔。 讀取 [如何使用Destination SDK設定您的目的地](../../guides/configure-destination-instructions.md) 以瞭解此步驟在設定目的地的程式中的適用位置。

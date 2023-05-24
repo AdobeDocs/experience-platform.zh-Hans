@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Aqua Data Studio;Aqua Data Studio；连接到查询服务；
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；Aqua Data Studio；Aqua Data Studio；連線到查詢服務；
 solution: Experience Platform
-title: 将Aqua Data Studio连接到查询服务
-description: 本文档将介绍将Aqua Data Studio与Adobe Experience Platform查询服务连接的步骤。
+title: 將Aqua Data Studio連線至查詢服務
+description: 本檔案將逐步說明將Aqua Data Studio與Adobe Experience Platform Query Service連線的步驟。
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,48 +11,48 @@ ht-degree: 0%
 
 ---
 
-# 连接 [!DNL Aqua Data Studio] 查询服务
+# Connect [!DNL Aqua Data Studio] 至查詢服務
 
-本文档介绍了连接的步骤 [!DNL Aqua Data Studio] 与Adobe Experience Platform [!DNL Query Service].
+本檔案說明連線的步驟 [!DNL Aqua Data Studio] 使用Adobe Experience Platform [!DNL Query Service].
 
 ## 快速入门
 
-本指南要求您已拥有 [!DNL Aqua Data Studio] 并熟悉如何导航其界面。 有关 [!DNL Aqua Data Studio] 可在 [官方 [!DNL Aqua Data Studio] 文档](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation21.1/page/0/Aqua-Data-Studio-21-1).
+本指南要求您已擁有下列專案的存取權： [!DNL Aqua Data Studio] 並熟悉如何導覽其介面。 更多關於的資訊 [!DNL Aqua Data Studio] 您可在以下網址找到： [正式 [!DNL Aqua Data Studio] 檔案](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation21.1/page/0/Aqua-Data-Studio-21-1).
 
 >[!NOTE]
 >
->有 [!DNL Windows] 和 [!DNL macOS] 版本 [!DNL Aqua Data Studio]. 本指南中的屏幕截图是使用 [!DNL macOS] 桌面应用程序。 版本之间的UI可能存在细微差异。
+>有 [!DNL Windows] 和 [!DNL macOS] 版本 [!DNL Aqua Data Studio]. 本指南中的熒幕擷取畫面是使用 [!DNL macOS] 案頭應用程式。 不同版本之間的UI可能會有細微差異。
 
-获取连接所需的凭据 [!DNL Aqua Data Studio] 要Experience Platform，您必须拥有 [!UICONTROL 查询] 工作区。 如果您当前无权访问 [!UICONTROL 查询] 工作区。
+取得連線所需的認證 [!DNL Aqua Data Studio] 若要Experience Platform，您必須擁有 [!UICONTROL 查詢] Platform UI中的工作區。 如果您目前沒有「 」的存取權，請聯絡您的組織管理員 [!UICONTROL 查詢] 工作區。
 
-## 注册服务器 {#register-server}
+## 註冊伺服器 {#register-server}
 
-安装后 [!DNL Aqua Data Studio]，则必须先注册服务器。 有关如何操作的说明，请参阅官方的Aqua Data Studio文档 [启动 [!DNL Register Server] 对话框](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#launching_the_register_server_dialog) 和 [注册服务器](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#steps_to_register_a_server_in_aqua_data_studio).
+安裝後 [!DNL Aqua Data Studio]，您必須先註冊伺服器。 如需操作方法的說明，請參閱官方Aqua Data Studio檔案 [啟動 [!DNL Register Server] 對話方塊](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#launching_the_register_server_dialog) 和 [註冊伺服器](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#steps_to_register_a_server_in_aqua_data_studio).
 
-一旦 **[!DNL Register Server]** 出现PostgresSQL服务器的对话框，请提供以下服务器设置的详细信息。
+一旦 **[!DNL Register Server]** PostgresSQL伺服器會出現對話方塊，提供下列伺服器設定的詳細資訊。
 
-- **[!DNL Name]**:连接的名称。 建议您提供一个用于识别连接的友好名称。
-- **[!DNL Login Name]**:登录名是您的平台组织ID。 它以 `ORG_ID@AdobeOrg`.
-- **[!DNL Password]**:这是在 [!DNL Query Service] 凭据功能板。
-- **[!DNL Host and Port]**:主机端点及其端口 [!DNL Query Service]. 必须使用端口80连接 [!DNL Query Service].
-- **[!DNL Database]:** 将使用的数据库。 将值用于Platform UI凭据 `dbname`: `prod:all`.
+- **[!DNL Name]**：連線的名稱。 建議您提供易記名稱以辨識連線。
+- **[!DNL Login Name]**：登入名稱是您的Platform組織ID。 其形式為 `ORG_ID@AdobeOrg`.
+- **[!DNL Password]**：這是在「 」上找到的英數字串 [!DNL Query Service] 認證儀表板。
+- **[!DNL Host and Port]**：的主機端點及其連線埠 [!DNL Query Service]. 您必須使用連線埠80來連線 [!DNL Query Service].
+- **[!DNL Database]：** 將使用的資料庫。 使用平台UI認證的值 `dbname`： `prod:all`.
 
-### [!DNL Query Service] 凭据
+### [!DNL Query Service] 認證
 
-要查找您的凭据，请登录到 [!DNL Platform] UI和选择 **[!UICONTROL 查询]** 从左侧导航，然后是 **[!UICONTROL 凭据]**. 有关查找登录凭据、主机、端口和数据库名称的完整说明，请阅读 [凭据指南](../ui/credentials.md).
+若要尋找您的認證，請登入 [!DNL Platform] UI並選取 **[!UICONTROL 查詢]** 從左側導覽，然後是 **[!UICONTROL 認證]**. 如需尋找您的登入證明資料、主機、連線埠和資料庫名稱的完整指示，請閱讀 [認證指南](../ui/credentials.md).
 
-[!DNL Query Service] 此外，还提供了未过期的凭据，以便能够与第三方客户端进行一次性设置。 请参阅相关文档 [有关如何生成和使用未过期凭据的完整说明](../ui/credentials.md#non-expiring-credentials).
+[!DNL Query Service] 也會提供不會到期的認證，以允許與協力廠商使用者端進行一次性設定。 請參閱以下檔案： [有關如何產生和使用不會到期的認證的完整指示](../ui/credentials.md#non-expiring-credentials).
 
-### 设置SSL模式
+### 設定SSL模式
 
-接下来，您必须将SSL模式值设置为 `?sslmode=require`. 此操作是从 [!DNL Driver] 选项卡 [!DNL Edit Server Properties] 对话框。 有关如何操作的说明，请参阅官方的Aqua Data Studio文档 [编辑驱动程序属性](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation13/page/116/PostgreSQL#drivers) 和 [为配置SSL [!DNL PostgreSQL]](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation20/page/SSL-Configuration/SSL-Configuration). 使用搜索栏查找 `sslmode` 属性。
+接下來，您必須將SSL模式值設定為 `?sslmode=require`. 這是從以下位置完成的： [!DNL Driver] 的標籤 [!DNL Edit Server Properties] 對話方塊。 如需操作方法的說明，請參閱官方Aqua Data Studio檔案 [編輯驅動程式屬性](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation13/page/116/PostgreSQL#drivers) 和 [設定SSL [!DNL PostgreSQL]](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation20/page/SSL-Configuration/SSL-Configuration). 使用搜尋列尋找 `sslmode` 屬性。
 
 >[!IMPORTANT]
 >
->请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
+>請參閱 [[!DNL Query Service] SSL檔案](./ssl-modes.md) 瞭解協力廠商連線至Adobe Experience Platform查詢服務的SSL支援，以及如何使用連線 `verify-full` SSL模式。
 
-输入连接详细信息后，从同一选项卡中，选择 **[!DNL Test Connection]** 以确保凭据正常工作。 如果连接测试成功，请选择 **[!DNL Save]** 注册服务器。 随即会出现确认对话框，确认连接，并在仪表板上显示连接图标。 您现在可以连接到服务器并查看其架构对象。
+輸入連線詳細資料後，從相同索引標籤中選取 **[!DNL Test Connection]** 以確保您的憑證正常運作。 如果連線測試成功，請選取 **[!DNL Save]** 註冊您的伺服器。 確認對話方塊隨即出現，確認連線，連線圖示隨即顯示在圖示板上。 您現在可以連線到伺服器並檢視其綱要物件。
 
 ## 后续步骤
 
-现在，您已连接到 [!DNL Query Service]，则可以使用 **[!DNL Query Analyzer]** within [!DNL Aqua Data Studio] 执行和编辑SQL语句。 有关如何编写和运行查询的详细信息，请阅读 [运行查询指南](../best-practices/writing-queries.md).
+現在您已連線至 [!DNL Query Service]，您可以使用 **[!DNL Query Analyzer]** 範圍 [!DNL Aqua Data Studio] 執行及編輯SQL敘述句。 如需如何寫入和執行查詢的詳細資訊，請參閱 [running queries指南](../best-practices/writing-queries.md).

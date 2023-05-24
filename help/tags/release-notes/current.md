@@ -1,5 +1,5 @@
 ---
-title: 标记和事件转发发行说明
+title: 標籤和事件轉送的發行說明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
 source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
@@ -9,66 +9,66 @@ ht-degree: 4%
 
 ---
 
-# 标记和事件转发的发行说明
+# 標籤和事件轉送的發行說明
 
 ## 2023 年 4 月 26 日
 
-* **OAuth JWT密钥**:的 [OAuth JWT密钥](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌，以支持事件转发中的服务器到服务器交互。
+* **OAuth JWT密碼**：此 [OAuth JWT密碼](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 可讓客戶使用Adobe和Google服務權杖，在事件轉送中支援伺服器對伺服器的互動。
 
-以下新扩展已发布：
+下列新擴充功能已發行：
 
-* **[!DNL Pinterest Conversions API]扩展**:的 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Pinterest] 以服务器端事件的形式使用 [!DNL Pinterest Conversions API].
+* **[!DNL Pinterest Conversions API]擴充功能**：此 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件轉送擴充功能可讓您運用Adobe Experience Platform Edge Network中擷取的資料，並將其傳送至 [!DNL Pinterest] 以伺服器端事件的形式使用 [!DNL Pinterest Conversions API].
 
 ## 2023 年 3 月 29 日
 
-**快速斯塔克工作流（测试版）**
+**Quick Stark工作流程（測試版）**
 
-从数据收集主屏幕中访问位于“快速入门”下的新快速入门工作流！ 以下工作流程现已作为公共测试版提供给客户。
-* **[元转化API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start)**:事件转发客户只需几个简单的步骤，即可快速收集和转发事件数据（服务器端到元）以进行广告转化。
-* **[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)**:客户只需几个简单的步骤，即可快速实施Mobile SDK并验证基本的移动事件。
+從資料收集首頁畫面存取「快速入門」底下的全新快速入門工作流程！ 以下工作流程現在可作為公開測試版提供給客戶。
+* **[中繼轉換API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start)**：事件轉送客戶可以快速收集並轉送事件資料，從伺服器端到中繼只要幾個簡單步驟就能進行廣告轉換。
+* **[行動SDK](https://developer.adobe.com/client-sdks/documentation/)**：客戶只需幾個簡單步驟，即可快速實作Mobile SDK並驗證基本行動事件。
 
-已发布新扩展：
+已發行新的擴充功能：
 
-* **[!DNL Braze]事件转发扩展**:的 [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 事件转发扩展允许您利用在Adobe Experience Platform边缘网络中捕获的数据，并将其发送到 [!DNL Braze] 以服务器端事件的形式使用 [!DNL Braze] 用户跟踪API。
-* **[Epsilon事件API] 事件转发扩展**:的 [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发在Adobe Experience Platform边缘网络中捕获事件信息，并将其发送到 [!DNL Epsilon] 使用 [!DNL Epsilon] 事件API。
-* **[!DNL Mixpanel]事件转发扩展**:的 [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许您利用事件转发在Adobe Experience Platform边缘网络中捕获事件信息，并将其发送到 [!DNL Mixpanel] 使用跟踪事件API。
+* **[!DNL Braze]事件轉送擴充功能**：此 [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 事件轉送擴充功能可讓您運用Adobe Experience Platform Edge Network中擷取的資料，並將其傳送至 [!DNL Braze] 以伺服器端事件的形式使用 [!DNL Braze] 使用者追蹤API。
+* **[Epsilon事件API] 事件轉送擴充功能**：此 [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 擴充功能可讓您運用事件轉送，擷取Adobe Experience Platform Edge Network中的事件資訊，並將其傳送至 [!DNL Epsilon] 使用 [!DNL Epsilon] 事件API。
+* **[!DNL Mixpanel]事件轉送擴充功能**：此 [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 擴充功能可讓您運用事件轉送，擷取Adobe Experience Platform Edge Network中的事件資訊，並將其傳送至 [!DNL Mixpanel] 使用追蹤事件API。
 
 ## 2023 年 1 月 25 日
 
-* **新主屏幕**:数据收集UI主页已更新，其中包含有用的入门信息和链接，可简化工作效率。 这包括：
-   1. 文档和建议的工作流以开始使用
-   1. 近期属性、规则和数据元素
-   1. 常用扩展
-   1. 新扩展通过快速安装功能进行了更新
-* **将数据发送到 [!DNL Google Ads] 使用事件转发**:您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API扩展](../extensions/server/google-ads-enhanced-conversions/overview.md) 对于事件转发，与 [Google Oauth 2密钥](../ui/event-forwarding/secrets.md#google-oauth2)，以安全地将服务器端数据发送到 [!DNL Google Ads] 实时。
+* **新主畫面**：資料收集UI首頁已更新，加入實用的入門資訊和連結，以簡化生產力。 这包括：
+   1. 開始使用的檔案和建議工作流程
+   1. 最近使用的屬性、規則和資料元素
+   1. 熱門擴充功能
+   1. 包含快速安裝功能的新擴充功能更新
+* **傳送資料至 [!DNL Google Ads] 使用事件轉送**：您現在可以使用 [[!DNL Google Ads Enhanced Conversions] API擴充功能](../extensions/server/google-ads-enhanced-conversions/overview.md) 用於事件轉送，結合 [Google Oauth 2秘密](../ui/event-forwarding/secrets.md#google-oauth2)，以安全地傳送伺服器端資料至 [!DNL Google Ads] 即時。
 
 ## 2022 年 11 月 23 日
 
-* **[!DNL AWS]事件转发扩展**:您现在可以将数据发送到 [!DNL Amazon Web Services] ([!DNL AWS])使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL AWS] 扩展概述](../../tags/extensions/server/aws/overview.md) 以了解更多信息。
-* **[!DNL Google Ads Enhanced Conversions]事件转发扩展**:您现在可以将转化数据发送到 [!DNL Google Ads] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Google Ads Enhanced Conversions] 扩展概述](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) 以了解更多信息。
-* **[!DNL Microsoft Azure]事件转发扩展**:您现在可以将数据发送到 [!DNL Microsoft Azure] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Microsoft Azure] 扩展概述](../../tags/extensions/server/azure/overview.md) 以了解更多信息。
+* **[!DNL AWS]事件轉送的擴充功能**：您現在可以將資料傳送至 [!DNL Amazon Web Services] ([!DNL AWS])使用 [事件轉送](../../tags/ui/event-forwarding/overview.md) 副檔名。 請參閱 [[!DNL AWS] 擴充功能概觀](../../tags/extensions/server/aws/overview.md) 以取得詳細資訊。
+* **[!DNL Google Ads Enhanced Conversions]事件轉送的擴充功能**：您現在可以將轉換資料傳送至 [!DNL Google Ads] 使用 [事件轉送](../../tags/ui/event-forwarding/overview.md) 副檔名。 請參閱 [[!DNL Google Ads Enhanced Conversions] 擴充功能概觀](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) 以取得詳細資訊。
+* **[!DNL Microsoft Azure]事件轉送的擴充功能**：您現在可以將資料傳送至 [!DNL Microsoft Azure] 使用 [事件轉送](../../tags/ui/event-forwarding/overview.md) 副檔名。 請參閱 [[!DNL Microsoft Azure] 擴充功能概觀](../../tags/extensions/server/azure/overview.md) 以取得詳細資訊。
 
 ## 2022 年 10 月 26 日
 
-* **数据流的敏感数据处理**:数据流现在利用多种平台技术适当地处理受法规(如健康保险流通和责任法案(HIPAA))强制实施的敏感数据。 请参阅 [处理数据流中的敏感数据](../../edge/datastreams/overview.md#sensitive) 以了解更多信息。
-* **[!DNL Splunk]事件转发扩展**:您现在可以将数据发送到 [!DNL Splunk] 使用 [事件转发](../ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Splunk] 扩展概述](../extensions/server/splunk/overview.md) 以了解更多信息。
-* **[!DNL Zendesk]事件转发扩展**:您现在可以将数据发送到 [!DNL Zendesk] 使用 [事件转发](../ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../extensions/server/zendesk/overview.md) 以了解更多信息。
+* **資料串流的敏感資料處理**：資料串流現在運用數種平台技術，可適當處理由健康保險便利與責任法案(HIPAA)等法規強制執行的敏感資料。 請參閱以下小節： [處理資料串流中的敏感資料](../../edge/datastreams/overview.md#sensitive) 以取得詳細資訊。
+* **[!DNL Splunk]事件轉送的擴充功能**：您現在可以將資料傳送至 [!DNL Splunk] 使用 [事件轉送](../ui/event-forwarding/overview.md) 副檔名。 請參閱 [[!DNL Splunk] 擴充功能概觀](../extensions/server/splunk/overview.md) 以取得詳細資訊。
+* **[!DNL Zendesk]事件轉送的擴充功能**：您現在可以將資料傳送至 [!DNL Zendesk] 使用 [事件轉送](../ui/event-forwarding/overview.md) 副檔名。 請參閱 [[!DNL Zendesk] 擴充功能概觀](../extensions/server/zendesk/overview.md) 以取得詳細資訊。
 
 ## 2022 年 9 月 28 日
 
-* **Adobe Experience Platform左导航集成**:以前只有数据收集UI才能使用的所有功能（包括标记和事件转发）现在也可以通过Experience PlatformUI的左侧导航中类别下的方式使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。
-* **标记和事件转发中的用户归因**:现在，在标记和事件转发中列出可用属性时，每个列出的属性都会显示上次更新时间以及更新者。
-* **[[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) 用于事件转发**:您现在可以将数据发送到 [!DNL Snapchat Conversions API] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 有关如何验证和使用API的更多信息，请参阅 [[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html).
+* **Adobe Experience Platform左側導覽整合**：先前專屬資料收集UI的所有功能（包括標籤和事件轉送）現在也可透過Experience PlatformUI中類別底下的左側導覽取得 **[!UICONTROL 資料彙集]**. 如此一來，當您在Platform中使用資料收集功能時，便不需要在UI之間切換。
+* **標籤和事件轉送中的使用者歸因**：現在，在標籤和事件轉送中列出可用屬性時，每個列出的屬性都會顯示上次更新時間以及由誰更新。
+* **[[!DNL Snap Conversions API] 擴充功能](https://exchange.adobe.com/apps/ec/108550) 用於事件轉送**：您現在可以將資料傳送至 [!DNL Snapchat Conversions API] 使用 [事件轉送](../../tags/ui/event-forwarding/overview.md) 副檔名。 有關如何驗證和使用API的詳細資訊，請參閱 [[!DNL Snapchat Marketing API] 檔案](https://marketingapi.snapchat.com/docs/conversion.html).
 
 ## 2022 年 7 月 27 日
 
-* 现在，可通过Adobe Admin Console中Adobe Experience Platform数据收集卡下的管理对标记和事件转发功能的访问。 请参阅 [数据收集权限](../../collection/permissions.md) 以了解更多信息。
-* 已支持Internet Explorer 10和11 [已弃用](../ie-deprecation.md).
+* 現在可透過Adobe Experience Platform資料收集資訊卡底下的Adobe Admin Console管理標籤和事件轉送功能的存取。 請參閱指南： [資料彙集許可權](../../collection/permissions.md) 以取得詳細資訊。
+* 支援Internet Explorer 10和11 [已棄用](../ie-deprecation.md).
 
 ## 2022 年 6 月 22 日
 
-已发布新扩展：
+已發行新的擴充功能：
 
-* [Google Data Layer标记扩展](../extensions/client/google-data-layer/overview.md):用于在标记实施中使用Google数据层。
-* [Google Ads Enhanced Conversions事件转发扩展](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html):允许您实时提高Google广告转化。
-* [Mailchimp事件转发扩展](../extensions/server/mailchimp/overview.md):将事件发送到Mailchimp营销API，该API可以触发Mailchimp营销活动、历程或交易的电子邮件。
+* [Google Data Layer標籤擴充功能](../extensions/client/google-data-layer/overview.md)：可讓您在標籤實作中使用Google資料層。
+* [Google Ads增強型轉換事件轉送擴充功能](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html)：可讓您即時增強Google Ads轉換。
+* [Mailchimp事件轉送擴充功能](../extensions/server/mailchimp/overview.md)：傳送事件至Mailchimp行銷API，其可觸發Mailchimp行銷活動、歷程或交易的電子郵件。

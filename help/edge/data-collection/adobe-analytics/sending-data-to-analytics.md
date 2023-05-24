@@ -1,23 +1,22 @@
 ---
-title: 使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics
-description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
-keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction；页面视图；链接跟踪；链接；跟踪链接；clickCollection；单击集合；
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+title: 使用Adobe Experience Platform Web SDK傳送資料至Adobe Analytics
+description: 瞭解如何使用Adobe Experience Platform Web SDK將資料傳送至Adobe Analytics。
+keywords: adobe analytics；analytics；sendEvent；s.t()；s.tl()；webPageDetails；pageViews；webInteraction；網頁互動；頁面檢視；連結追蹤；連結；追蹤連結；clickCollection；點選集合；
+exl-id: cec4a9eb-2079-4386-88da-9b995e0673e6
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '162'
 ht-degree: 0%
 
 ---
 
+# 傳送資料至Adobe Analytics
 
-# 向Adobe Analytics发送数据
+過去，有不同的函式可區分頁面檢視和連結(例如 `s.t(), s.tl()`)，在Web SDK中， `sendEvent` 命令。 您隨事件傳送的資料會決定該資料應該是頁面檢視還是連結。 [進一步瞭解追蹤連結](../track-links.md).
 
-过去，可以区分页面视图和链接（例如`s.t(), s.tl()`）的函数不同，而在Web SDK中，只有`sendEvent`命令。 您与事件一起发送的数据决定该数据应为页面视图还是链接。 [了解有关跟踪链接的更多信息](../track-links.md)。
+## 傳送頁面檢視
 
-## 发送页面视图
-
-可以通过设置`web.webPageDetails.pageViews.value=1`变量来指定页面视图。
+您可以透過設定 `web.webPageDetails.pageViews.value=1` 變數。
 
 ```javascript
 alloy("sendEvent", {
@@ -33,4 +32,4 @@ alloy("sendEvent", {
 });
 ```
 
-虽然Analytics在技术上记录了页面视图，即使未设置此变量，但最好在您希望将页面视图记录到数据中并在将来验证您的实施时设置此变量。
+雖然技術上來說，即使未設定此變數，Analytics仍會記錄頁面檢視，但只要您想要記錄明確在資料中的頁面檢視，且想在未來驗證實作，最佳實務是設定此變數。

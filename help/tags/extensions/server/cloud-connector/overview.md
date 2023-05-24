@@ -1,6 +1,6 @@
 ---
-title: Cloud Connector扩展概述
-description: 了解Adobe Experience Platform中的Cloud Connector事件转发扩展。
+title: Cloud Connector擴充功能概述
+description: 瞭解Adobe Experience Platform中的Cloud Connector事件轉送擴充功能。
 exl-id: f3713652-ac32-4171-8dda-127c8c235849
 source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 87%
 
 ---
 
-# Cloud Connector扩展概述
+# Cloud Connector擴充功能概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数据发送到目标或从目标检索数据。 云连接器扩展类似于在 Adobe Experience Platform Edge Network 上部署了邮递员，可用来将数据发送到尚未具备专用扩展的端点。
+雲端聯結器事件轉送擴充功能可讓您建立自訂HTTP請求，以將資料傳送至目的地或從目的地擷取資料。 云连接器扩展类似于在 Adobe Experience Platform Edge Network 上部署了邮递员，可用来将数据发送到尚未具备专用扩展的端点。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -25,7 +25,7 @@ Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数�
 
 ### 请求类型
 
-要选择端点所需的请求类型，请在 [!UICONTROL 请求类型] 下拉列表。
+若要選取端點所需的要求型別，請在 [!UICONTROL 請求型別] 下拉式清單。
 
 | 方法 | 描述 |
 |---|---|
@@ -45,15 +45,15 @@ Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数�
 
 #### 查询参数
 
-为每一个要作为查询字符串参数发送的键值对定义键和值。要手动输入数据元素，请使用大括号数据元素令牌化进行事件转发。 要将名为“siteSection”的数据元素的值引用为键或值，请输入 `{{siteSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
+为每一个要作为查询字符串参数发送的键值对定义键和值。若要手動輸入資料元素，請使用大括弧資料元素代碼化進行事件轉送。 要将名为“siteSection”的数据元素的值引用为键或值，请输入 `{{siteSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
 
-要添加更多查询参数，请选择 **[!UICONTROL 添加其他]**.
+若要新增更多查詢引數，請選取 **[!UICONTROL 新增其他]**.
 
 #### 标头
 
-为每一个要作为标头发送的键值对定义键和值。要手动输入数据元素，请使用大括号数据元素令牌化进行事件转发。 要将名为“pageName”的数据元素的值引用为键或值，请输入 `{{pageName}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
+为每一个要作为标头发送的键值对定义键和值。若要手動輸入資料元素，請使用大括弧資料元素代碼化進行事件轉送。 要将名为“pageName”的数据元素的值引用为键或值，请输入 `{{pageName}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
 
-要添加更多标头，请选择 **[!UICONTROL 添加其他]**.
+若要新增更多標頭，請選取 **[!UICONTROL 新增其他]**.
 
 下表列出了预定义的标头。您不仅可以使用这些标头，而且还可以根据需要添加您自己的自定义标头，但是这些标头应出于为您带来方便的目的而添加。
 
@@ -64,13 +64,13 @@ Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数�
 | 标头 | 描述 |
 |---|---|
 | [A-IM](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept) |  |
-| [Accept](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept) |  |
+| [Accept](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept) |  |
 | [Accept-Charset](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Charset) |  |
 | [Accept-Encoding](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Encoding) |  |
 | [Accept-Language](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language) |  |
-| [Accept-Datetime](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept) | 由用户代理传输，旨在表明它需要访问原始资源的过去状态。为了实现这个目的，应当在发出的 HTTP 请求中，根据原始资源的 TimeGate 传递 `Accept-Datetime` 标头，该标头的值用来表明所希望获得的原始资源过去状态的日期时间。 |
-| Access-Control-Request-Headers | 在发出[预检请求](https://developer.mozilla.org/zh-CN/docs/Glossary/preflight_request)时浏览器使用的标头，旨在告知服务器当生成真正的请求时将会使用的 [HTTP 标头](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)。 |
-| Access-Control-Request-Method | 在发出[预检请求](https://developer.mozilla.org/en-US/docs/Glossary/preflight_request)时浏览器使用的标头，旨在告知服务器当生成真正的请求时将会使用的 [HTTP 方法](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)。这是必需的标头，因为预检请求始终是一种 [OPTION](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS) 方法，与实际请求使用的方法不同。 |
+| [Accept-Datetime](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept) | 由用户代理传输，旨在表明它需要访问原始资源的过去状态。为了实现这个目的，应当在发出的 HTTP 请求中，根据原始资源的 TimeGate 传递 `Accept-Datetime` 标头，该标头的值用来表明所希望获得的原始资源过去状态的日期时间。 |
+| Access-Control-Request-Headers | 在发出[预检请求](https://developer.mozilla.org/zh-CN/docs/Glossary/preflight_request)时浏览器使用的标头，旨在告知服务器当生成真正的请求时将会使用的 [HTTP 标头](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)。 |
+| Access-Control-Request-Method | 在发出[预检请求](https://developer.mozilla.org/zh-CN/docs/Glossary/preflight_request)时浏览器使用的标头，旨在告知服务器当生成真正的请求时将会使用的 [HTTP 方法](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)。这是必需的标头，因为预检请求始终是一种 [OPTION](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS) 方法，与实际请求使用的方法不同。 |
 | Authorization | 包含用于验证服务器用户代理的凭据。 |
 | [Cache-Control](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control) | 用于缓存请求和响应机制的指令。 |
 | [Connection](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Connection) | 控制在当前事务完成后是否将网络连接保持打开状态。 |
@@ -88,7 +88,7 @@ Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数�
 | [If-None-Match](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-None-Match) |  |
 | [If-Range](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-Range) |  |
 | [If-Unmodified-Since](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-Unmodified-Since) |  |
-| [Max-Forwards](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Unmodified-Since) |  |
+| [Max-Forwards](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-Unmodified-Since) |  |
 | [Origin](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Origin) |  |
 | [Pragma](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Pragma) | 特定于实施的标头，可能会在请求-响应链的任意阶段产生各种影响。由于 HTTP/1.0 高速缓存尚无 Cache-Control 标头，因此为了与之保持向后兼容性而使用该标头。 |  |
 | [Proxy-Authorization](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Proxy-Authorization) |
@@ -104,19 +104,19 @@ Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数�
 
 #### 以 JSON 格式显示正文
 
-为每一个要在请求正文中发送的键值对定义键和值。要手动输入数据元素，请使用大括号数据元素令牌化进行事件转发。 要将名为“appSection”的数据元素的值引用为键或值，请输入 `{{appSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
+为每一个要在请求正文中发送的键值对定义键和值。若要手動輸入資料元素，請使用大括弧資料元素代碼化進行事件轉送。 要将名为“appSection”的数据元素的值引用为键或值，请输入 `{{appSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。
 
-要添加其他键值对，请选择 **[!UICONTROL 添加其他]**.
+若要新增其他索引鍵/值組，請選取 **[!UICONTROL 新增其他]**.
 
 #### 以 Raw 格式显示正文
 
-为每一个要在请求正文中发送的键值对定义键和值。要手动输入数据元素，请使用大括号数据元素令牌化进行事件转发。 要将名为“appSection”的数据元素的值引用为键或值，请输入 `{{appSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。您可以添加一个或多个数据元素。
+为每一个要在请求正文中发送的键值对定义键和值。若要手動輸入資料元素，請使用大括弧資料元素代碼化進行事件轉送。 要将名为“appSection”的数据元素的值引用为键或值，请输入 `{{appSection}}`。或者，通过在下拉菜单中选择数据元素来选择以前创建的数据元素。您可以添加一个或多个数据元素。
 
 ### 高级
 
-事件转发中的规则内操作会按顺序执行。 在某些情况下，您需要检索的数据可能来自客户端传入事件上一个并不存在的外部源，那么系统在进行响应时，会将该数据转换或发送至单个规则中某个后续操作的最终目的地。高级部分中的“Save the request response”可启用此功能。
+事件轉送中規則內的動作會依序執行。 在某些情况下，您需要检索的数据可能来自客户端传入事件上一个并不存在的外部源，那么系统在进行响应时，会将该数据转换或发送至单个规则中某个后续操作的最终目的地。高级部分中的“Save the request response”可启用此功能。
 
-要从端点保存响应主体，请检查 **[!UICONTROL 保存请求响应]** 框中，并在文本字段中定义响应键。
+若要儲存端點的回應內文，請檢查 **[!UICONTROL 儲存請求回應]** 方塊中，並在文字欄位中定義回應索引鍵。
 
 如果将响应键定义为 `productDetails`，请在数据元素中引用此数据，然后在同一规则的后续操作中引用此数据元素。要创建引用 `productDetail` 的数据元素，请创建一个类型为 `path` 的数据元素并输入以下路径：
 

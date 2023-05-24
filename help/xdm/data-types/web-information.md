@@ -1,31 +1,31 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式；模式；XDM；字段；模式；模式；网页详细信息；数据类型；数据类型；网页
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；網頁詳細資訊；資料型別；資料型別；資料型別；網頁
 solution: Experience Platform
-title: Web信息数据类型
-description: 本文档概述了Web信息体验数据模型(XDM)数据类型。
+title: 網頁資訊資料型別
+description: 本檔案提供網頁資訊Experience Data Model (XDM)資料型別的概觀。
 exl-id: bfb00835-5908-4baf-af2a-6d845710e340
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '190'
-ht-degree: 3%
+source-wordcount: '187'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL Web信息] 数据类型
+# [!UICONTROL 網頁資訊] 資料型別
 
-[!UICONTROL Web信息] 是一种标准的体验数据模型(XDM)数据类型，用于描述通过特定于万维网渠道的体验事件记录的信息，包括与页面交互相关的网页、反向链接和/或链接。
+[!UICONTROL 網頁資訊] 是標準的體驗資料模型(XDM)資料型別，可描述透過特定於全球資訊網通道的體驗事件所記錄的資訊，包括網頁、反向連結及/或與頁面上的互動相關的連結。
 
 ![](../images/data-types/web-information.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `webInteraction` | [[!UICONTROL Web交互]](./web-interaction.md) | 描述有关与交互对应的Web链接或URL的详细信息。 |
-| `webPageDetails` | [[!UICONTROL 网页详细信息]](./webpage-details.md) | 描述发生Web交互的网页的详细信息。 |
-| `webReferrer` | [!UICONTROL 对象] | 描述Web交互的反向链接，即访客在记录当前Web交互之前所从的URL。 包含以下子属性： <ul><li>`URL`:反向链接URL。</li><li>`type`:反向链接类型。</li></ul> |
+| `webInteraction` | [[!UICONTROL 網路互動]](./web-interaction.md) | 說明與互動對應的網頁連結或URL的詳細資訊。 |
+| `webPageDetails` | [[!UICONTROL 網頁詳細資料]](./webpage-details.md) | 說明發生網路互動之網頁的詳細資料。 |
+| `webReferrer` | [!UICONTROL 对象] | 說明網頁互動的反向連結，這是目前網頁互動有記錄前訪客剛造訪過的URL。 包含下列子屬性： <ul><li>`URL`：反向連結URL。</li><li>`type`：反向連結型別。</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.schema.json)

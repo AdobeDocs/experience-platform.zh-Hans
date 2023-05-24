@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；预览；估计；预览和估计；估计和预览；API;API;
+keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；預覽；預估；預覽和預估；預估和預覽；API；
 solution: Experience Platform
-title: 预览和估算API端点
-description: 在开发区段定义时，您可以使用Adobe Experience Platform中的估计和预览工具来查看摘要级别的信息，以帮助确保隔离预期受众。
+title: 預覽和預估API端點
+description: 開發區段定義時，您可以使用Adobe Experience Platform中的預估和預覽工具來檢視摘要層級的資訊，以協助確保您隔離了預期的受眾。
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,48 +11,48 @@ ht-degree: 2%
 
 ---
 
-# 预览和估算端点
+# 預覽和估計端點
 
-在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，以帮助确保隔离您预期的受众。
+當您開發區段定義時，可以使用Adobe Experience Platform中的預估和預覽工具來檢視摘要層級的資訊，以協助確保您隔離預期的對象。
 
-* **预览** 为区段定义提供符合条件的用户档案的分页列表，以便将结果与预期结果进行比较。
+* **預覽** 提供符合區段定義之設定檔的編頁清單，讓您比較結果與預期。
 
-* **估计** 提供有关区段定义的统计信息，如预计受众规模、置信区间和误差标准偏差。
+* **預估** 提供有關區段定義的統計資訊，例如預計對象人數、信賴區間和誤差標準差。
 
 >[!NOTE]
 >
->要访问与实时客户配置文件数据相关的类似量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件的总数，请参阅 [配置文件预览（预览示例状态）端点指南](../../profile/api/preview-sample-status.md)，是配置文件API开发人员指南的一部分。
+>若要存取與即時客戶個人檔案資料相關的類似量度，例如特定名稱空間或整體個人檔案資料存放區中的個人檔案片段和合併個人檔案總數，請參閱 [設定檔預覽（預覽範例狀態）端點指南](../../profile/api/preview-sample-status.md)，設定檔API開發人員指南的一部分。
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端點是 [!DNL Adobe Experience Platform Segmentation Service] API。 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需成功呼叫API所需的重要資訊，包括必要的標頭及如何讀取範例API呼叫。
 
-## 如何生成估计
+## 如何產生預估值
 
-当将记录摄取到用户档案存储区时，总用户档案计数增加或减少5%以上，则会触发取样作业以更新计数。 数据采样的触发方式取决于摄取方法：
+當將記錄擷取至設定檔存放區增加或減少總設定檔計數超過5%時，會觸發取樣工作以更新計數。 資料取樣觸發的方式取決於擷取方法：
 
-* **批量摄取：** 对于批量摄取，在将批成功摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则将运行一个作业以更新计数。
-* **流式摄取：** 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新计数。
+* **批次擷取：** 對於批次擷取，在成功將批次擷取到設定檔存放區後15分鐘內，如果符合5%增加或減少臨界值，則會執行工作以更新計數。
+* **串流擷取：** 對於串流資料工作流程，會每小時進行一次檢查，以判斷是否符合增加或減少5%的臨界值。 如果有的話，系統會自動觸發工作以更新計數。
 
-扫描的样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本大小：
+掃描的樣本大小取決於設定檔存放區中的實體總數。 這些範例大小如下表所示：
 
-| 配置文件存储中的实体 | 示例大小 |
+| 設定檔存放區中的實體 | 樣本大小 |
 | ------------------------- | ----------- |
-| 不到100万 | 完整数据集 |
-| 1到2000万 | 100万 |
-| 2000多万 | 总共5% |
+| 少於100萬 | 完整資料集 |
+| 1到2000萬 | 100萬 |
+| 超過2,000萬 | 佔總數的5% |
 
 >[!NOTE]
 >
->估计值通常需要10到15秒才能运行，从粗略估计开始，随着读取更多记录，将进行优化。
+>預估通常需要10到15秒來執行，從粗略的估計開始，並隨著閱讀更多記錄而調整。
 
-## 创建新预览 {#create-preview}
+## 建立新的預覽 {#create-preview}
 
-您可以通过向 `/preview` 端点。
+您可以透過向以下發出POST請求來建立新的預覽： `/preview` 端點。
 
 >[!NOTE]
 >
->在创建预览作业时，将自动创建评估作业。 这两个作业将共享相同的ID。
+>建立預覽作業時，會自動建立預估作業。 這兩個工作將共用相同的ID。
 
 **API格式**
 
@@ -80,14 +80,14 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `predicateExpression` | 用于查询数据的PQL表达式。 |
-| `predicateType` | 下查询表达式的谓词类型 `predicateExpression`. 目前，此属性唯一接受的值是 `pql/text`. |
-| `predicateModel` | 的名称 [!DNL Experience Data Model] (XDM)配置文件数据所基于的架构类。 |
-| `graphType` | 要从中获取群集的图形类型。 支持的值包括 `none` （不执行身份拼合）和 `pdg` （根据您的专用身份图执行身份拼合）。 |
+| `predicateExpression` | 查詢資料所依據的PQL運算式。 |
+| `predicateType` | 下方的查詢運算式的述詞型別 `predicateExpression`. 目前，此屬性唯一接受的值是 `pql/text`. |
+| `predicateModel` | 的名稱 [!DNL Experience Data Model] 設定檔資料所根據的(XDM)結構描述類別。 |
+| `graphType` | 您要從中取得叢集的圖表型別。 支援的值包括 `none` （不執行身分拼接）和 `pdg` （根據您的私人身分圖表執行身分拼接）。 |
 
 **响应**
 
-成功响应会返回HTTP状态201（已创建），其中包含新创建预览的详细信息。
+成功的回應會傳回HTTP狀態201 （已建立）以及新建立預覽的詳細資訊。
 
 ```json
 {
@@ -101,12 +101,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `state` | 预览作业的当前状态。 最初创建时，该变量将处于“NEW”状态。 随后，它将处于“正在运行”状态，直到处理完成，此时它将变为“RESULT_READY”或“失败”。 |
-| `previewId` | 预览作业的ID，在查看预估或预览时用于查找目的，如下一节中所述。 |
+| `state` | 預覽工作的目前狀態。 最初建立時，它將處於「新」狀態。 接著，處理完成前，它會一直處於「執行中」狀態，到此時會變成「RESULT_READY」或「FAILED」。 |
+| `previewId` | 預覽作業的ID，在檢視預估或預覽時用於查詢，如下節所述。 |
 
-## 检索特定预览的结果 {#get-preview}
+## 擷取特定預覽的結果 {#get-preview}
 
-您可以通过向 `/preview` 端点和在请求路径中提供预览ID。
+您可以透過向「 」發出GET請求來擷取有關特定預覽的詳細資訊。 `/preview` 端點並在請求路徑中提供預覽ID。
 
 **API格式**
 
@@ -116,7 +116,7 @@ GET /preview/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 的 `previewId` 要检索的预览的值。 |
+| `{PREVIEW_ID}` | 此 `previewId` 要擷取的預覽值。 |
 
 **请求**
 
@@ -130,7 +130,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关指定预览的详细信息。
+成功的回應會傳回HTTP狀態200，其中包含指定預覽的詳細資訊。
 
 ```json
 {
@@ -179,11 +179,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID及其相关标识的列表。 提供的链接可用于使用 [配置文件访问API端点](../../profile/api/entities.md). |
+| `results` | 實體ID及其相關身分的清單。 提供的連結可用於透過以下方式查詢指定的實體： [設定檔存取API端點](../../profile/api/entities.md). |
 
-## 检索特定评估作业的结果 {#get-estimate}
+## 擷取特定估算工作的結果 {#get-estimate}
 
-创建预览作业后，即可使用 `previewId` 在GET请求的路径中 `/estimate` 用于查看有关区段定义的统计信息的端点，包括预计受众大小、置信区间和错误标准偏差。
+建立預覽作業後，您可以使用其 `previewId` 在GET請求的路徑中 `/estimate` 端點，以檢視關於區段定義的統計資訊，包括預計對象人數、信賴區間和誤差標準差。
 
 **API格式**
 
@@ -193,11 +193,11 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 仅当创建了预览作业，并且两个作业共享相同的ID值以进行查找时，才会触发估计作业。 具体而言，这是 `previewId` 创建预览作业时返回的值。 |
+| `{PREVIEW_ID}` | 只有在建立預覽作業時，才會觸發預估作業，且兩個作業會共用相同的ID值以進行查詢。 具體來說，這就是 `previewId` 建立預覽作業時傳回的值。 |
 
 **请求**
 
-以下请求检索特定估计作业的结果。
+下列請求會擷取特定估算作業的結果。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
@@ -209,7 +209,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含估计作业的详细信息。
+成功的回應會傳回HTTP狀態200以及估計工作的詳細資訊。
 
 ```json
 {
@@ -243,10 +243,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间划分的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌进行交互，则多个命名空间将与该个别客户关联。 |
-| `state` | 预览作业的当前状态。 在处理完成之前，状态将为“正在运行”，此时状态将变为“RESULT_READY”或“失败”。 |
-| `_links.preview` | 当 `state` 为“RESULT_READY”，则此字段提供一个用于查看预估的URL。 |
+| `estimatedNamespaceDistribution` | 一個物件陣列，顯示區段內依身分名稱空間劃分的設定檔數目。 依名稱空間區分的設定檔總數（加總針對每個名稱空間顯示的值）可能會高於設定檔計數量度，因為一個設定檔可能會與多個名稱空間建立關聯。 例如，如果客戶在多個頻道上與您的品牌互動，則多個名稱空間會與該個別客戶相關聯。 |
+| `state` | 預覽工作的目前狀態。 狀態將為「執行中」，直到處理完成，此時會變成「RESULT_READY」或「FAILED」。 |
+| `_links.preview` | 當 `state` 為「RESULT_READY」，此欄位會提供一個URL來檢視預估值。 |
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户配置文件数据相关的量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件总数，请访问 [配置文件预览(`/previewsamplestatus`)endpoint指南](../../profile/api/preview-sample-status.md).
+閱讀本指南後，您應該更瞭解如何使用分段API來處理預覽和估算。 若要瞭解如何存取與您的即時客戶設定檔資料相關的量度，例如特定名稱空間內的設定檔片段總數和合併的設定檔總數，或是設定檔資料存放區整體，請造訪 [設定檔預覽(`/previewsamplestatus`)端點指南](../../profile/api/preview-sample-status.md).

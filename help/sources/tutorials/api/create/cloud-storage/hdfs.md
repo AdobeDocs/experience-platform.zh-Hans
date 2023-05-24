@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；ApacheHadoop分布式文件系统；Apachehadoop;hdfs;HDFS
+keywords: Experience Platform；首頁；熱門主題；ApacheHadoop分散式檔案系統；Apachehadoop；hdfs；HDFS
 solution: Experience Platform
-title: 使用流服务API创建Apache HDFS基本连接
+title: 使用流量服務API建立Apache HDFS基本連線
 type: Tutorial
-description: 了解如何使用流服务API将ApacheHadoop分布式文件系统连接到Adobe Experience Platform。
+description: 瞭解如何使用流量服務API將ApacheHadoop分散式檔案系統連線到Adobe Experience Platform。
 exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,41 +12,41 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Apache] HDFS基本连接使用 [!DNL Flow Service] API
+# 建立 [!DNL Apache] HDFS基本連線使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->Apache HDFS连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+>Apache HDFS聯結器為Beta版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
 
-基本连接表示源与Adobe Experience Platform之间经过验证的连接。
+基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
 
-本教程将指导您完成为 [!DNL Apache Hadoop Distributed File System] (以下简称“[!DNL HDFS]“)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Apache Hadoop Distributed File System] (以下稱&quot;[!DNL HDFS]&quot;)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
+* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-以下部分提供了成功连接到所需了解的其他信息 [!DNL HDFS] 使用 [!DNL Flow Service] API。
+以下小節提供成功連線所需瞭解的其他資訊 [!DNL HDFS] 使用 [!DNL Flow Service] API。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `url` | URL定义连接到所需的身份验证参数 [!DNL HDFS] 匿名。 有关如何获取此值的更多信息，请参阅 [此 [!DNL HDFS] 文档](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html). |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL AdWords] 为： `54e221aa-d342-4707-bcff-7a4bceef0001`. |
+| `url` | URL會定義連線至所需的驗證引數 [!DNL HDFS] 匿名。 如需如何取得此值的詳細資訊，請參閱 [此 [!DNL HDFS] 檔案](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html). |
+| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL AdWords] 為： `54e221aa-d342-4707-bcff-7a4bceef0001`. |
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
 
-## 创建基本连接
+## 建立基礎連線
 
-基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
 
-要创建基本连接ID，请向 `/connections` 提供 [!DNL HDFS] 身份验证凭据作为请求参数的一部分。
+POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL HDFS] 要求引數中的驗證認證。
 
 **API格式**
 
@@ -56,7 +56,7 @@ POST /connections
 
 **请求**
 
-以下请求会为 [!DNL HDFS]:
+下列要求會建立 [!DNL HDFS]：
 
 ```shell
 curl -X POST \
@@ -84,12 +84,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.url` | 用于定义连接到所需的身份验证参数的URL [!DNL HDFS] 匿名 |
-| `connectionSpec.id` | 的 [!DNL HDFS] 连接规范ID: `54e221aa-d342-4707-bcff-7a4bceef0001`. |
+| `auth.params.url` | 定義連線至所需的驗證引數的URL [!DNL HDFS] 匿名 |
+| `connectionSpec.id` | 此 [!DNL HDFS] 連線規格ID： `54e221aa-d342-4707-bcff-7a4bceef0001`. |
 
 **响应**
 
-成功的响应会返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中探索数据时需要此ID。
+成功回應會傳回新建立連線的詳細資料，包括其唯一識別碼(`id`)。 在下一個教學課程中探索您的資料時，需要此ID。
 
 ```json
 {
@@ -100,4 +100,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL HDFS] 使用 [!DNL Flow Service] API，并已获取连接的唯一ID值。 在下一个教程中，您可以使用此ID来了解如何 [使用流量服务API探索第三方云存储](../../explore/cloud-storage.md).
+依照本教學課程，您已建立 [!DNL HDFS] 使用下列專案的連線： [!DNL Flow Service] API且已取得連線的唯一ID值。 您可在下一個教學課程中使用此ID，瞭解如何 [使用Flow Service API探索協力廠商雲端儲存空間](../../explore/cloud-storage.md).

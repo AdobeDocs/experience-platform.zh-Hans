@@ -1,27 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询；
-title: 创建事件趋势报表
-description: 了解如何编写查询，使用体验事件创建按日期分组的指定日期范围内事件的趋势报表。
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；experienceevent查詢；experienceevent查詢；體驗事件查詢；
+title: 建立事件的趨勢報表
+description: 瞭解如何使用體驗事件來撰寫查詢，以建立指定日期範圍內事件的趨勢報表（依日期分組）。
+exl-id: 8f7ed5b5-c265-4a1e-a360-4293d1e86e97
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '379'
 ht-degree: 0%
 
 ---
 
-# 创建事件的趋势报表
+# 建立事件的趨勢報表
 
-本文档提供了在特定日期范围内按日创建事件趋势报告所需的SQL示例。 通过Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 来捕获各种用例。 体验事件由体验数据模型(XDM)ExperienceEvent类表示，该类可在用户与网站或服务交互时捕获系统的不可更改和非聚合快照。 体验事件甚至可用于时域分析。 请参阅 [“下一步”部分](#next-steps) 对于涉及 [!DNL Experience Events] 以生成访客报表。
+本檔案提供一個SQL的範例，說明如何依日期建立特定日期範圍內事件的趨勢報表。 透過Adobe Experience Platform查詢服務，您可以編寫使用 [!DNL Experience Events] 以擷取各種使用案例。 體驗事件由Experience Data Model (XDM) ExperienceEvent類別表示，可在使用者與網站或服務互動時，擷取系統不可變且非彙總的快照。 體驗事件甚至可用於時間網域分析。 請參閱 [後續步驟區段](#next-steps) 有關更多使用案例，包括 [!DNL Experience Events] 以產生訪客報表。
 
-利用报表，可访问Platform数据，从而使贵组织的战略业务洞察受益。 通过这些报表，您可以通过各种方式检查平台数据，以易于理解的格式显示关键量度，并共享所得的分析。
+報表可讓您存取Platform資料，使貴組織的策略業務深入解析受益。 透過這些報表，您可以透過各種方式檢查您的Platform資料、以易於理解的格式顯示關鍵量度，以及分享所產生的深入分析。
 
-有关XDM和 [!DNL Experience Events] 可在 [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，则可以有效地跟踪用户中的行为趋势。 以下文档提供了涉及 [!DNL Experience Events].
+有關XDM和的更多資訊 [!DNL Experience Events] 您可在以下網址找到： [[!DNL XDM System] 概觀](../../xdm/home.md). 透過結合查詢服務與 [!DNL Experience Events]，您就能有效追蹤使用者之間的行為趨勢。 以下檔案提供涉及下列專案的查詢範例： [!DNL Experience Events].
 
 ## 目标
 
-以下示例创建按日期分组的指定日期范围内事件的趋势报表。 具体而言，此SQL示例汇总了各种分析值，如 `A`, `B`和 `C`，然后汇总parkas在一个月内被查看的次数。
+下列範例會建立指定日期範圍內事件的趨勢報表（依日期分組）。 具體而言，此SQL範例將各種分析值加總為 `A`， `B`、和 `C`，然後合計一個月期間檢視公園的次數。
 
-在中找到的时间戳列 [!DNL Experience Event] 数据集采用UTC格式。 示例使用 `from_utc_timestamp()` 函数将时间戳从UTC转换为EDT，然后使用 `date_format()` 函数将日期与时间戳的其余部分隔离。
+時間戳記欄位位於 [!DNL Experience Event] 資料集為UTC格式。 此範例使用 `from_utc_timestamp()` 函式將時間戳記從UTC轉換為EDT，然後使用 `date_format()` 函式，將日期與其餘時間戳記隔離。
 
 ```sql
 SELECT 
@@ -42,7 +43,7 @@ GROUP BY Day
 ORDER BY Day ASC, pageViews DESC;
 ```
 
-此查询的结果如下所示。
+此查詢的結果如下所示。
 
 ```console
      Day     | pageViews |   A    |   B   |    C    | viewedParkas
@@ -83,10 +84,10 @@ ORDER BY Day ASC, pageViews DESC;
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本文档，您可以更好地了解如何在 [!DNL Experience Events] 有效跟踪用户的行为趋势。
+閱讀本檔案可讓您更瞭解如何使用查詢服務搭配 [!DNL Experience Events] 以有效追蹤使用者之間的行為趨勢。
 
-了解使用 [!DNL Experience Events]，阅读以下文档：
+若要瞭解使用的其他訪客型使用案例 [!DNL Experience Events]，請閱讀以下檔案：
 
-- [检索按页面查看次数组织的访客列表。](./visitors-by-number-of-page-views.md)
-- [列出访客以前的会话。](./list-visitor-sessions.md)
-- [查看访客的汇总报表。](./roll-up-report-of-a-visitor.md)
+- [擷取依頁面檢視次陣列織的訪客清單。](./visitors-by-number-of-page-views.md)
+- [列出訪客之前的工作階段。](./list-visitor-sessions.md)
+- [檢視訪客的統計報表。](./roll-up-report-of-a-visitor.md)

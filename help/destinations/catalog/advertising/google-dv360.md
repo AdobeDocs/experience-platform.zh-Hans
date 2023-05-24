@@ -1,7 +1,7 @@
 ---
-keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视频360；显示360；视频360；视频360；显示360；显示360；显示360；显示360；显示
-title: Google Display & Video 360连接
-description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
+keywords: DoubleClick Bid Manager；DoubleClick Bid Manager；DoubleClick；顯示和視訊360；顯示360；視訊360；顯示360；顯示和視訊
+title: Google顯示和視訊360連線
+description: Display & Video 360 （先前稱為DoubleClick Bid Manager）工具用於在各種顯示、影片和行動詳細目錄來源中執行重新定位以及以對象為目標的數位行銷活動。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
 source-git-commit: 326127996a27df41383ef67da765f7b0818f17f2
 workflow-type: tm+mt
@@ -10,108 +10,108 @@ ht-degree: 2%
 
 ---
 
-# [!DNL Google Display & Video 360] 连接
+# [!DNL Google Display & Video 360] 連線
 
 ## 概述 {#overview}
 
-[!DNL Display & Video 360]，以前称为 [!DNL DoubleClick Bid Manager]，是用于跨显示、视频和移动设备库存源执行重定向和受众定位的数字促销活动的工具。
+[!DNL Display & Video 360]，先前稱為 [!DNL DoubleClick Bid Manager]，是跨顯示器、影片和行動詳細目錄來源執行重新定位和以對象為目標的數位行銷活動的工具。
 
-## 目标详情 {#specifics}
+## 目的地詳情 {#specifics}
 
-请注意以下特定于 [!DNL Google Display & Video 360] 目标：
+請注意以下專屬於的詳細資訊 [!DNL Google Display & Video 360] 目的地：
 
-* 激活的受众在Google平台中以编程方式创建。
-* 激活对 [!DNL Google Display & Video 360] 目标计划在区段首次映射到目标连接后24-48小时内发生。 此更新是为了响应Google的策略，将等待24小时，直到摄取数据，旨在提高Real-time CDP和 [!DNL Google Display & Video 360]. 请注意，这是仅适用于此目标的后端配置，与UI中任何可由客户配置的计划选项无关。
+* 啟用的對象是在Google平台中以程式設計方式建立的。
+* 啟用對象回填至 [!DNL Google Display & Video 360] 目的地會排定在區段首次對應至目的地連線的24-48小時後發生。 此更新是為了回應Google等待24小時直到擷取資料的原則，並旨在提高Real-time CDP和之間的匹配率 [!DNL Google Display & Video 360]. 請注意，這是隻適用於此目的地的後端設定，與UI中任何可由客戶設定的排程選項無關。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建第一个目标，但尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去的Experience CloudID服务(使用Adobe Audience Manager或其他应用程序)中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步会传递到Platform。
+>如果您想使用Google Display &amp; Video 360建立您的第一個目的地，但尚未啟用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 若是過去的Experience CloudID服務(使用Adobe Audience Manager或其他應用程式)，請聯絡Adobe諮詢或客戶服務以啟用ID同步。 如果您先前在Audience Manager中設定Google整合，則您設定的ID同步會結轉到Platform。
 
-## 支持的身份 {#supported-identities}
+## 支援的身分 {#supported-identities}
 
-[!DNL Google Display & Video 360] 支持激活下表所述的身份。
+[!DNL Google Display & Video 360] 支援下表所述的身分啟用。
 
-| Target标识 | 描述 | 注意事项 |
+| 目標身分 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | [!DNL Google Advertising ID] | 如果源标识是GAID命名空间，请选择此目标标识。 |
-| IDFA | [!DNL Apple ID for Advertisers] | 如果源标识是IDFA命名空间，请选择此目标标识。 |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 一个38位数的数字设备ID，Audience Manager会将其与之交互的每个设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 来定位加利福尼亚州的用户，以及所有其他用户的Google Cookie ID。 |
-| [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 会使用此ID来定位加州以外的用户。 |
-| RIDA | 用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
-| 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
-| Amazon Fire TV ID | 此ID可唯一标识Amazon Fire TV。 |  |
+| GAID | [!DNL Google Advertising ID] | 當您的來源身分是GAID名稱空間時，選取此目標身分。 |
+| IDFA | [!DNL Apple ID for Advertisers] | 當您的來源身分識別是IDFA名稱空間時，請選取此目標身分。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也稱為 [!DNL Device ID]. 38位數的裝置ID，Audience Manager會與每個與其互動的裝置建立關聯。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 目標鎖定加州的使用者，以及所有其他使用者的Google Cookie ID。 |
+| [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 使用此ID來鎖定加州以外的使用者。 |
+| RIDA | 適用於廣告的Roku ID。 此ID可唯一識別Roku裝置。 |  |
+| MAID | Microsoft Advertising ID。 此ID可唯一識別執行Windows 10的裝置。 |  |
+| Amazon Fire TV ID | 此ID可唯一識別Amazon Fire電視。 |  |
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您将区段（受众）的所有成员导出到Google目标。 |
-| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 匯出型別 | **[!UICONTROL 区段导出]** | 您正在將區段（受眾）的所有成員匯出至Google目的地。 |
+| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## 先决条件 {#prerequisites}
 
-### 允许列表 {#allow-listing}
+### 允許清單 {#allow-listing}
 
 >[!NOTE]
 >
->在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Display & Video 360] 目标。 请确保已完成下面描述的允许列表流程 [!DNL Google] 创建目标之前。
->此规则的例外是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
+>必須先允許清單，才能設定您的第一個 [!DNL Google Display & Video 360] Platform中的目的地。 請確定以下說明的允許清單程式已由 [!DNL Google] 建立目的地之前。
+>此規則的例外情況是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客戶。 如果您已在Audience Manager中建立與此Google目的地的連線，則不需要再次進行允許清單程式，您可以繼續後續步驟。
 
-在创建 [!DNL Google Display & Video 360] 目标中，您必须联系Google，要求将Adobe添加到允许的数据提供程序列表中，并将您的帐户添加到允许列表中。 联系Google并提供以下信息：
+建立之前 [!DNL Google Display & Video 360] 在Platform中的目的地，您必須聯絡Google以要求Adobe放入允許的資料提供者清單，並將您的帳戶新增至允許清單。 請聯絡Google並提供下列資訊：
 
-* **帐户ID**:Adobe的帐户ID与Google。 帐户ID:87933855。
-* **客户ID**:Adobe的客户帐户ID和Google。 客户ID:89690775。
-* **您的帐户类型**:use **[!DNL Invite advertiser]** 允许将受众仅共享到您的Display &amp; Video 360帐户中的特定品牌，或使用 **[!DNL Invite partner]** 以允许将受众共享到您的Display &amp; Video 360帐户中的所有品牌。
+* **帳戶ID**：Adobe的帳戶ID與Google。 帳戶ID：87933855。
+* **客戶ID**：Adobe的客戶帳戶ID與Google。 客戶ID：89690775。
+* **您的帳戶型別**：使用 **[!DNL Invite advertiser]** 僅讓對象與您在Display &amp; Video 360帳戶中的特定品牌共用，或使用 **[!DNL Invite partner]** 讓對象與您在Display &amp; Video 360帳戶中的所有品牌共用。
 
-## 连接到目标 {#connect}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
 
-### 连接参数 {#parameters}
+### 連線引數 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
 
-* **[!UICONTROL 名称]**:填写此目标的首选名称。
-* **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
-* **[!UICONTROL 帐户类型]**:根据您使用Google的帐户选择一个选项：
-   * 使用 `Invite Advertiser` ，以便仅将受众共享到您的Display &amp; Video 360帐户中的特定品牌。
-   * 使用 `Invite Partner` 以允许将受众共享到您的Display &amp; Video 360帐户中的所有品牌。
-* **[!UICONTROL 帐户ID]**:填写 **[!DNL Invite partner]** 或 **[!DNL Invite advertiser]** 帐户ID与Google。 通常是一个六位或七位数的ID。
+* **[!UICONTROL 名稱]**：填寫此目的地的偏好名稱。
+* **[!UICONTROL 說明]**：選擇性。 例如，您可以提及要將此目的地用於哪個行銷活動。
+* **[!UICONTROL 帳戶型別]**：根據您使用Google的帳戶，選取選項：
+   * 使用 `Invite Advertiser` 僅讓對象與您在「顯示和視訊」360帳戶中的特定品牌共用。
+   * 使用 `Invite Partner` 讓對象與您在Display &amp; Video 360帳戶中的所有品牌共用。
+* **[!UICONTROL 帳戶ID]**：填入 **[!DNL Invite partner]** 或 **[!DNL Invite advertiser]** 使用Google的帳戶ID。 通常是6或7位數的ID。
 
 >[!NOTE]
 >
->设置 [!DNL Google Display & Video 360] 目标，请与您的 [!DNL Google Account Manager] 或Adobe代表，了解您拥有的帐户类型。
+>設定時 [!DNL Google Display & Video 360] 目的地，請與您的 [!DNL Google Account Manager] 或Adobe代表，以瞭解您的帳戶型別。
 
-### 启用警报 {#enable-alerts}
+### 啟用警示 {#enable-alerts}
 
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-## 将区段激活到此目标 {#activate}
+## 啟用此目的地的區段 {#activate}
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+另請參閱 [啟用串流區段匯出目的地的受眾資料](../../ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-## 导出的数据
+## 匯出的資料
 
-验证数据是否已成功导出到 [!DNL Google Display & Video 360] 目标位置，检查 [!DNL Google Display & Video 360] 帐户。 如果激活成功，则帐户中会填充受众。
+驗證資料是否已成功匯出至 [!DNL Google Display & Video 360] 目的地，檢查您的 [!DNL Google Display & Video 360] 帳戶。 如果成功啟用，系統會將對象填入您的帳戶。
 
 ## 故障排除 {#troubleshooting}
 
-### 400错误请求错误消息 {#bad-request}
+### 400 Bad Request錯誤訊息 {#bad-request}
 
-配置此目标时，您可能会收到以下错误：
+設定此目的地時，您可能會收到下列錯誤：
 
 `{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
 
-当客户帐户与 [先决条件](#prerequisites). 要解决此问题，请联系Google并确保您的帐户已允许列出。
+當客戶帳戶不符合 [必備條件](#prerequisites). 若要修正此問題，請聯絡Google並確認您的帳戶已加入允許清單。

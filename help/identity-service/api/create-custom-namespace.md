@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；命名空间；命名空间；命名空间；身份命名空间；身份命名空间；身份；身份
+keywords: Experience Platform；首頁；熱門主題；名稱空間；名稱空間；名稱空間；名稱空間；名稱空間；身分名稱空間；身分名稱空間；身分名稱空間；身分
 solution: Experience Platform
-title: 在Identity服务API中创建自定义命名空间
-description: 使用身份命名空间API，您可以创建仅适用于贵组织的自定义身份命名空间。
+title: 在Identity Service API中建立自訂名稱空間
+description: 使用身分名稱空間API，您可以建立僅供您的組織使用的自訂身分名稱空間。
 exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
 source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 3%
 
 ---
 
-# 在Identity服务API中创建自定义命名空间
+# 在Identity Service API中建立自訂名稱空間
 
-使用 [!DNL Identity Namespace] API中，您可以创建仅供贵组织使用的自定义身份命名空间。
+使用 [!DNL Identity Namespace] API後，您可以建立僅供貴組織使用的自訂身分名稱空間。
 
-有关创建自定义命名空间的建议，请参阅 [Identity Service常见问题解答文档](../troubleshooting-guide.md).
+如需建立自訂名稱空間的建議，請參閱 [Identity Service常見問題集檔案](../troubleshooting-guide.md).
 
 >[!NOTE]
 >
->命名空间是身份的限定符。 因此，创建命名空间后，将无法删除该命名空间。
+>名稱空間是身分的限定詞。 因此，建立名稱空間後，便無法刪除名稱空間。
 
 **API格式**
 
@@ -63,4 +63,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续下一个教程以 [列出标识的本机ID](./list-native-id.md)
+繼續下一教學課程，前往 [列出身分的原生ID](./list-native-id.md)

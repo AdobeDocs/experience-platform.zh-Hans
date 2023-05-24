@@ -1,6 +1,6 @@
 ---
-title: 边缘扩展中的库模块
-description: 在边缘属性中为标记扩展设置库模块的格式。
+title: 邊緣擴充功能中的程式庫模組
+description: 邊緣屬性中標籤擴充功能的格式庫模組。
 exl-id: 82b98972-6fa2-4143-bcf4-c5dac1ca0e7f
 source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
@@ -13,13 +13,13 @@ ht-degree: 76%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >
 >本文档介绍了 Edge 扩展的库模块格式。如果您正在开发 Web 扩展，请另外参阅关于[格式化 Web 扩展模块](../web/format.md)的指南。
 
-库模块是由Adobe Experience Platform的标记运行时库（在边缘节点上运行的库）内发出的扩展提供的一段可重用代码。 例如，`sendBeacon` 操作类型将具有一个库模块，该模块将会在 Edge 节点上运行并发送信标。
+程式庫模組是一段可重複使用的程式碼，由Adobe Experience Platform （在邊緣節點上執行的程式庫）中的標籤執行階段程式庫內發出的擴充功能所提供。 例如，`sendBeacon` 操作类型将具有一个库模块，该模块将会在 Edge 节点上运行并发送信标。
 
 库模块的结构为 [CommonJS 模块](https://nodejs.org/api/modules.html#modules-commonjs-modules)。在 CommonJS 模块中，可使用以下变量：
 

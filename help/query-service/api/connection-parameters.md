@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；API指南；连接参数；查询服务；
+keywords: Experience Platform；首頁；熱門主題；查詢服務；API指南；連線引數；查詢服務；
 solution: Experience Platform
-title: 连接参数API端点
-description: 通过向/connection_parameters端点发出GET请求，可以检索连接参数以使用交互式服务。
+title: 連線引數API端點
+description: 您可以向/connection_parameters端點發出GET要求，擷取使用互動式服務的連線引數。
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 1%
 
 ---
 
-# 连接参数端点
+# 連線引數端點
 
-## API调用示例
+## API呼叫範例
 
-以下部分将指导您完成使用 [!DNL Query Service] API。 调用包括常规API格式、显示所需标头的示例请求和示例响应。
+下節會逐步引導您使用完成可用的API呼叫。 [!DNL Query Service] API。 此呼叫包含一般API格式、顯示必要標題的範例要求以及範例回應。
 
-### 请求连接参数
+### 要求連線引數
 
-您可以通过向 `/connection_parameters` 端点。 有关使用连接参数通过交互式服务连接的客户端的更多信息，请阅读 [查询服务客户端](../clients/overview.md).
+您可以向以下網址發出GET要求，以擷取您的連線引數： `/connection_parameters` 端點。 如需使用連線引數透過互動式服務連線的使用者端詳細資訊，請參閱以下檔案： [查詢服務使用者端](../clients/overview.md).
 
 **API格式**
 
@@ -39,7 +39,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/connection_parameter
 
 **响应**
 
-成功响应会通过连接参数返回HTTP状态200。
+成功的回應會傳回HTTP狀態200和您的連線引數。
 
 ```json
 {

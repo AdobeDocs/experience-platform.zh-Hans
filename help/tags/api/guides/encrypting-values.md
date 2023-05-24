@@ -1,30 +1,30 @@
 ---
 title: 加密值
-description: 了解如何在使用Reactor API时加密敏感值。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+description: 瞭解如何在使用Reactor API時加密敏感值。
+exl-id: d89e7f43-3bdb-40a5-a302-bad6fd1f4596
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '392'
 ht-degree: 1%
 
 ---
 
 # 加密值
 
-在Adobe Experience Platform中使用标记时，某些工作流需要提供敏感值（例如，在通过主机将库交付到环境时提供私钥）。 这些全权证书的敏感性质需要
-安全传输和存储。
+使用Adobe Experience Platform中的標籤時，某些工作流程需要提供敏感值（例如，透過主機將程式庫傳送至環境時提供私密金鑰）。 這些認證的敏感性質需要安全的傳輸和儲存。
 
-本文档介绍如何使用[GnuPG加密](https://www.gnupg.org/gph/en/manual/x110.html)（也称为GPG）加密敏感值，以便只有标签系统可以读取这些值。
+本檔案說明如何使用加密敏感值 [GnuPG加密](https://www.gnupg.org/gph/en/manual/x110.html) （也稱為GPG），只有標籤系統才能讀取。
 
-## 获取公共GPG密钥和校验和
+## 取得公開GPG金鑰和總和檢查碼
 
-在[下载](https://gnupg.org/download/)并安装最新版本的GPG后，必须获取标记生产环境的公共GPG密钥：
+晚於 [正在下載](https://gnupg.org/download/) 以及安裝最新版GPG時，您必須取得標籤生產環境的公用GPG金鑰：
 
-* [GPG密钥](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg)
-* [校验和](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg.sum)
+* [gpg金鑰](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg)
+* [總和檢查碼](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg.sum)
 
-## 将密钥导入密钥链
+## 將金鑰匯入鑰匙圈
 
-将密钥保存到计算机后，下一步是将其添加到GPG密钥链。
+將金鑰儲存至電腦後，下一步就是將其新增至您的GPG金鑰鏈。
 
 **语法**
 
@@ -34,9 +34,9 @@ gpg --import {KEY_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{KEY_NAME}` | 公钥文件的名称。 |
+| `{KEY_NAME}` | 公開金鑰檔案的名稱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **示例**
 
@@ -46,22 +46,22 @@ gpg --import launch@adobe.com_pub.gpg
 
 ## 加密值
 
-将密钥添加到密钥链后，可以使用`--encrypt`标记开始加密值。 以下脚本演示了此命令的工作方式：
+將金鑰新增至鑰匙圈後，您可以使用 `--encrypt` 標幟。 下列指令碼示範此命令如何運作：
 
 ```shell
 echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch@adobe.com>"
 ```
 
-此命令可按如下方式划分：
+此命令可依下列方式劃分：
 
-* 输入内容被提供给`gpg`命令。
-* `--armor` 创建ASCII装甲输出，而不是二进制。这简化了通过JSON传输值的过程。
-* `--encrypt` 指示GPG加密数据。
-* `-r` 设置数据的收件人。只有收件人（与公钥对应的私钥的持有者）才能解密数据。 通过检查`gpg --list-keys`的输出，可以找到所需密钥的收件人名称。
+* 輸入已提供給 `gpg` 命令。
+* `--armor` 建立ASCII裝甲輸出，而非二進位。 這可簡化透過JSON傳輸值的過程。
+* `--encrypt` 指示GPG加密資料。
+* `-r` 設定資料的收件者。 只有收件者（與公開金鑰對應之私密金鑰的持有者）可以解密資料。 透過檢查輸出，可以找到所需金鑰的收件者名稱 `gpg --list-keys`.
 
-以上命令使用`Tags Data Encryption <launch@adobe.com>`的公钥以ASCII装甲格式加密值`Example value`。
+上述命令使用公開金鑰來 `Tags Data Encryption <launch@adobe.com>` 若要加密值， `Example value`，採用ASCII裝甲格式。
 
-该命令的输出将类似于以下内容：
+指令的輸出將類似於以下內容：
 
 ```shell
 -----BEGIN PGP MESSAGE-----
@@ -83,11 +83,10 @@ OUoIPf4KxTaboHZOEy32ZBng5heVrn4i9w==
 -----END PGP MESSAGE-----
 ```
 
-此输出只能由具有私钥的系统解密
-对应于`Tags Data Encryption <launch@adobe.com>`公钥。
+此輸出只能由擁有對應至下列專案的私密金鑰的系統解密： `Tags Data Encryption <launch@adobe.com>` 公開金鑰。
 
-此输出是向Reactor API发送数据时应在中提供的值。 系统存储此加密输出，并根据需要临时解密。 例如，系统解密足够长的主机凭据以启动与服务器的连接，然后立即删除解密值的所有迹线。
+此輸出是將資料傳送至Reactor API時應在中提供的值。 系統會儲存此加密輸出，並視需要暫時解密。 例如，系統會解密足夠長的主機證明資料，以啟動與伺服器的連線，然後立即移除解密值的所有追蹤。
 
 >[!NOTE]
 >
->装甲、加密值的格式很重要。 确保在请求中提供的值中正确转义行返回。
+>裝甲加密值的格式很重要。 確保請求中提供的值已正確逸出返回行。

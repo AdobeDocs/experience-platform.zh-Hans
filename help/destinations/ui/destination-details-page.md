@@ -1,7 +1,7 @@
 ---
-keywords: 目标；目标；目标详细信息页面；目标详细信息页面
-title: 查看目标详细信息
-description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的区段以及用于编辑激活以及启用和禁用数据流的控件。
+keywords: 目的地；目的地；目的地詳細資訊頁面；目的地詳細資訊頁面
+title: 檢視目的地詳細資料
+description: 個別目的地的「詳細資訊」頁面提供目的地詳細資訊的概觀。 目的地詳細資訊包括目的地名稱、ID、對應至目的地的區段，以及用於編輯啟用、啟用和停用資料流程的控制項。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
 source-git-commit: dcbc0c3ef87be0bc296992819c9b1bc3ba6317e4
 workflow-type: tm+mt
@@ -10,112 +10,112 @@ ht-degree: 1%
 
 ---
 
-# 查看目标详细信息
+# 檢視目的地詳細資料
 
 ## 概述 {#overview}
 
-在Adobe Experience Platform用户界面中，您可以查看和监控目标的属性和活动。 这些详细信息包括目标的名称和ID、用于激活或禁用目标的控件等。 详细信息还包括已激活配置文件记录、已激活、失败和已排除的身份的量度，以及数据流运行的历史记录。
+在Adobe Experience Platform使用者介面中，您可以檢視和監控目的地的屬性和活動。 這些詳細資訊包括目的地的名稱和ID、啟用或停用目的地的控制項及其他。 詳細資訊也包含啟用的設定檔記錄、啟用的身分、失敗和排除的量度，以及資料流執行的歷史記錄。
 
 >[!NOTE]
 >
->目标详细信息页面是 [!UICONTROL 目标] 中的工作区 [!DNL Platform] [!DNL UI]. 请参阅 [[!UICONTROL 目标] 工作区概述](./destinations-workspace.md) 了解更多信息。
+>目的地詳細資訊頁面是 [!UICONTROL 目的地] 工作區在 [!DNL Platform] [!DNL UI]. 請參閱 [[!UICONTROL 目的地] 工作區概觀](./destinations-workspace.md) 以取得詳細資訊。
 
-## 查看目标详细信息 {#view-details}
+## 檢視目的地詳細資料 {#view-details}
 
-请按照以下步骤查看有关现有目标的更多详细信息。
+請依照下列步驟，檢視現有目的地的詳細資訊。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 选择 **[!UICONTROL 浏览]** ，以查看现有目标。
+1. 登入 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 並選取 **[!UICONTROL 目的地]** 左側導覽列中的。 選取 **[!UICONTROL 瀏覽]** 以檢視您現有的目的地。
 
-   ![浏览目标](../assets/ui/details-page/browse-destinations.png)
+   ![瀏覽目的地](../assets/ui/details-page/browse-destinations.png)
 
-1. 选择过滤器图标 ![筛选图标](../assets/ui/details-page/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的筛选选择。
+1. 選取篩選圖示 ![篩選圖示](../assets/ui/details-page/filter.png) 以啟動「排序」面板。 排序面板會提供您所有目的地的清單。 您可以從清單中選取多個目的地，以檢視與所選目的地相關聯的資料流篩選選取專案。
 
-   ![筛选目标](../assets/ui/details-page/filter-destinations.png)
+   ![篩選目的地](../assets/ui/details-page/filter-destinations.png)
 
-1. 选择要查看的目标名称。
+1. 選取您要檢視的目的地名稱。
 
-   ![选择目标](../assets/ui/details-page/destination-select.png)
+   ![選取目的地](../assets/ui/details-page/destination-select.png)
 
-1. 此时将显示目标的详细信息页面，并显示其可用的控件。
+1. 目的地的「詳細資訊」頁面隨即顯示，並顯示其可用的控制項。
 
-   ![目标详细信息](../assets/ui/details-page/destination-details.png)
+   ![目的地詳細資料](../assets/ui/details-page/destination-details.png)
 
-## 右边栏 {#right-rail}
+## 右側邊欄 {#right-rail}
 
-右边栏显示有关选定目标的基本信息。
+右邊欄會顯示所選目的地的基本資訊。
 
-![右边栏](../assets/ui/details-page/right-sidebar.png)
+![右側邊欄](../assets/ui/details-page/right-sidebar.png)
 
-下表介绍了右边栏提供的控件和详细信息：
+下表涵蓋右側邊欄提供的控制項和詳細資訊：
 
-| 右边栏项目 | 描述 |
+| 右側邊欄專案 | 描述 |
 | --- | --- |
-| [!UICONTROL 激活区段] | 选择此控件可编辑哪些区段映射到目标、更新导出计划或添加和删除映射的属性和身份。 请参阅指南 [激活受众数据以细分流目标](./activate-segment-streaming-destinations.md)， [将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)、和 [将受众数据激活到基于用户档案的流目标](./activate-streaming-profile-destinations.md) 了解更多信息。 |
-| [!UICONTROL 删除] | 允许您删除此数据流并取消映射之前激活的区段（如果存在）。 |
-| [!UICONTROL 目标名称] | 可以编辑此字段以更新目标的名称。 |
-| [!UICONTROL 描述] | 可以编辑此字段以更新或向目标添加可选描述。 |
-| [!UICONTROL 目标] | 表示受众发送到的目标平台。 请参阅 [目标目录](../catalog/overview.md) 了解更多信息。 |
-| [!UICONTROL 状态] | 指示目标是启用还是禁用。 |
-| [!UICONTROL 营销活动] | 指示出于数据管理目的而应用于此目标的营销操作（用例）。 |
-| [!UICONTROL 类别] | 指示目标类型。 请参阅 [目标目录](../catalog/overview.md) 了解更多信息。 |
-| [!UICONTROL 连接类型] | 指示将受众发送到目标时所依据的表单。 可能的值包括 [!UICONTROL Cookie] 和 [!UICONTROL 基于配置文件]. |
-| [!UICONTROL 频度] | 指示将受众发送到目标的频率。 可能的值包括 [!UICONTROL 流] 和 [!UICONTROL 批次]. |
-| [!UICONTROL 标识] | 表示目标接受的身份命名空间，例如 `GAID`， `IDFA`，或 `email`. 有关接受的身份命名空间的更多信息，请参见 [身份命名空间概述](../../identity-service/namespaces.md). |
-| [!UICONTROL 创建者] | 指示创建此目标的用户。 |
-| [!UICONTROL 已创建] | 指示创建此目标时的UTC日期时间。 |
+| [!UICONTROL 啟用區段] | 選取此控制項可編輯對應到目的地的區段、更新匯出排程，或新增和移除對應的屬性和身分。 請參閱以下指南： [啟用對象資料以區段串流目的地](./activate-segment-streaming-destinations.md)， [啟用受眾資料以批次設定檔為基礎的目的地](./activate-batch-profile-destinations.md)、和 [啟用以串流設定檔為基礎的目的地的受眾資料](./activate-streaming-profile-destinations.md) 以取得詳細資訊。 |
+| [!UICONTROL 删除] | 可讓您刪除此資料流，並取消對應先前啟用的區段（如果存在）。 |
+| [!UICONTROL 目的地名稱] | 可編輯此欄位以更新目的地的名稱。 |
+| [!UICONTROL 描述] | 您可以編輯此欄位，以更新或新增選擇性說明至目的地。 |
+| [!UICONTROL 目标] | 代表傳送對象的目的地平台。 請參閱 [目的地目錄](../catalog/overview.md) 以取得詳細資訊。 |
+| [!UICONTROL 状态] | 指示目的地是啟用還是停用。 |
+| [!UICONTROL 行銷動作] | 表示適用於此目的地以進行資料控管的行銷動作（使用案例）。 |
+| [!UICONTROL 类别] | 指示目的地型別。 請參閱 [目的地目錄](../catalog/overview.md) 以取得詳細資訊。 |
+| [!UICONTROL 连接类型] | 表示將您的對象傳送至目的地的表單。 可能的值包括 [!UICONTROL Cookie] 和 [!UICONTROL 以設定檔為基礎]. |
+| [!UICONTROL 频度] | 指出將對象傳送到目的地的頻率。 可能的值包括 [!UICONTROL 串流] 和 [!UICONTROL 批次]. |
+| [!UICONTROL 标识] | 代表目的地接受的身分名稱空間，例如 `GAID`， `IDFA`，或 `email`. 如需有關接受的身分名稱空間的詳細資訊，請參閱 [身分名稱空間總覽](../../identity-service/namespaces.md). |
+| [!UICONTROL 创建者] | 指出建立此目的地的使用者。 |
+| [!UICONTROL 已建立] | 表示建立此目的地的UTC日期時間。 |
 
 {style="table-layout:auto"}
 
-## [!UICONTROL 已启用]/[!UICONTROL 已禁用] 切换 {#enabled-disabled-toggle}
+## [!UICONTROL 已啟用]/[!UICONTROL 已停用] 切換 {#enabled-disabled-toggle}
 
-您可以使用 **[!UICONTROL 已启用]/[!UICONTROL 已禁用]** 切换以开始和暂停所有到目标的数据导出。
+您可以使用 **[!UICONTROL 已啟用]/[!UICONTROL 已停用]** 切換以開始和暫停所有匯出至目的地的資料。
 
-![启用或禁用数据流切换](../assets/ui/details-page/enable-disable.png)
+![啟用或停用資料流切換](../assets/ui/details-page/enable-disable.png)
 
-## [!UICONTROL 数据流运行] {#dataflow-runs}
+## [!UICONTROL 資料流執行] {#dataflow-runs}
 
-此 [!UICONTROL 数据流运行] 选项卡提供有关您的数据流运行的量度数据到批处理目标和流式目标。 请参阅 [监测数据流](monitor-dataflows.md) 以了解详细信息和量度定义。
+此 [!UICONTROL 資料流執行] 索引標籤提供有關您的資料流執行到批次和串流目的地的量度資料。 請參閱 [監視資料流](monitor-dataflows.md) 以取得詳細資訊和量度定義。
 
 >[!NOTE]
 >
->* 当前Experience Platform中的所有目标都支持目标监视功能 *排除* 此 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)， [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目标。
->* 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 估计目标、与排除、失败和激活的标识相关的量度。 较大量的激活数据会导致量度的准确性较高。
+>* Experience Platform中目前所有目的地都支援目的地監視功能 *例外* 此 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)， [自訂個人化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud對象](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目的地。
+>* 對於 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中樞](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 會估計與已排除、失敗和已啟用的身分相關的量度。 較大量的啟用資料會導致量度的準確性較高。
 
 
-![数据流运行视图](../assets/ui/details-page/dataflow-runs.png)
+![資料流執行檢視](../assets/ui/details-page/dataflow-runs.png)
 
-### 数据流运行持续时间 {#dataflow-runs-duration}
+### 資料流執行持續時間 {#dataflow-runs-duration}
 
-流媒体目标与基于文件的目标之间显示的数据流运行持续时间存在差异。
+串流和基於檔案的目的地之間，資料流執行的顯示持續時間不同。
 
-### 流目标 {#streaming}
+### 串流目的地 {#streaming}
 
-而 **[!UICONTROL 处理持续时间]** 指示对于大多数流数据流运行大约四个小时，如下图所示，任何数据流运行的实际处理时间都短得多。 如果Experience Platform需要重试调用目标，数据流运行窗口会保持较长时间处于打开状态，同时还要确保它不会丢失同一时间窗口的任何延迟送达数据。
+而 **[!UICONTROL 處理持續時間]** 如下列影像所示，針對大多數串流資料流執行所指示的約四個小時，任何資料流執行的實際處理時間都會短很多。 若Experience Platform需要重新嘗試呼叫目的地，資料流執行視窗會持續開啟較長時間，同時確保不會遺漏相同時間視窗中任何延遲送達的資料。
 
-![数据流运行页面的图像，其中为流目标突出显示了“处理时间”列。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
+![針對串流目的地反白顯示「處理時間」欄的「資料流」執行頁面的影像。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
 
-有关详细信息，请阅读关于 [数据流运行到流式目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) 在监控文档中。
+如需詳細資訊，請閱讀 [資料流執行至串流目的地](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) 在監控檔案中。
 
-### 基于文件的目标 {#file-based}
+### 以檔案為基礎的目的地 {#file-based}
 
-对于要运行到基于文件的目标的数据流， **[!UICONTROL 处理持续时间]** 取决于要导出的数据的大小和系统负载。 另请注意，流向基于文件的目标的数据流按区段划分。
+對於以檔案為基礎的目的地的資料流執行，請 **[!UICONTROL 處理持續時間]** 取決於要匯出的資料大小和系統載入。 另請注意，對檔案型目的地執行的資料流會依每個區段進行劃分。
 
-![数据流运行页面的图像，其中为基于文件的目标突出显示了“处理时间”列。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
+![針對以檔案為基礎的目的地，以「處理時間」欄反白顯示的「資料流」執行頁面的影像。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
-有关详细信息，请阅读关于 [数据流运行到批处理（基于文件）目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 在监控文档中。
+如需詳細資訊，請閱讀 [資料流執行到批次（檔案型）目的地](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 在監控檔案中。
 
-## [!UICONTROL 激活数据] {#activation-data}
+## [!UICONTROL 啟用資料] {#activation-data}
 
-此 [!UICONTROL 激活数据] 选项卡显示已映射到目标的区段的列表，包括其开始日期和结束日期（如果适用），以及用于数据导出的其他相关信息，如导出类型、时间表和频率。 要查看有关特定区段的详细信息，请从列表中选择其名称。
+此 [!UICONTROL 啟用資料] tab會顯示已對應至目的地的區段清單，包括其開始日期和結束日期（如果適用），以及資料匯出的其他相關資訊，例如匯出型別、排程和頻率。 若要檢視特定區段的詳細資訊，請從清單中選取其名稱。
 
 >[!TIP]
 >
->要查看和编辑有关映射到目标的属性和身份的详细信息，请选择 **[!UICONTROL 激活区段]** 在 [右边栏](#right-rail).
+>若要檢視和編輯對應至目的地之屬性和身分的相關詳細資訊，請選取「 」 **[!UICONTROL 啟用區段]** 在 [右側邊欄](#right-rail).
 
-![激活数据视图批次目标](../assets/ui/details-page/activation-data-batch.png)
+![啟用資料檢視批次目的地](../assets/ui/details-page/activation-data-batch.png)
 
-![激活数据视图流目标](../assets/ui/details-page/activation-data-streaming.png)
+![啟用資料檢視串流目的地](../assets/ui/details-page/activation-data-streaming.png)
 
 >[!NOTE]
 >
->有关探索区段详情页面的详情，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).
+>如需探索區段詳細資訊頁面的詳細資訊，請參閱 [區段UI總覽](../../segmentation/ui/overview.md#segment-details).

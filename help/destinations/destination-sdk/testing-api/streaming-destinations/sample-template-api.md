@@ -1,6 +1,6 @@
 ---
-description: 了解如何使用目标测试API为目标生成测试消息转换模板。
-title: 生成示例消息转换模板
+description: 瞭解如何使用目的地測試API為您的目的地產生測試訊息轉換範本。
+title: 產生範例訊息轉換範本
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
 source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
 workflow-type: tm+mt
@@ -10,25 +10,25 @@ ht-degree: 1%
 ---
 
 
-# 生成示例消息转换模板 {#get-sample-template-api-operations}
+# 產生範例訊息轉換範本 {#get-sample-template-api-operations}
 
 >[!IMPORTANT]
 >
->**API端点**: `https://platform.adobe.io/data/core/activation/authoring/testing/template/sample`
+>**API端點**： `https://platform.adobe.io/data/core/activation/authoring/testing/template/sample`
 
-本页列出并介绍了您可以使用 `/authoring/testing/template/sample` API端点，用于生成 [消息转换模板](../../functionality/destination-server/message-format.md#using-templating) 你的目的地。 有关此端点支持的功能的描述，请阅读 [创建模板](create-template.md).
+此頁面列出並描述您可以使用執行的所有API作業。 `/authoring/testing/template/sample` API端點，以產生 [訊息轉換範本](../../functionality/destination-server/message-format.md#using-templating) 以取得您的目的地。 如需此端點支援的功能的說明，請閱讀 [建立範本](create-template.md).
 
-## 模板API操作示例快速入门 {#get-started}
+## 範例範本API操作快速入門 {#get-started}
 
-在继续之前，请查看 [入门指南](../../getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
 
-## 获取示例模板 {#generate-sample-template}
+## 取得範例範本 {#generate-sample-template}
 
-您可以通过向 `authoring/testing/template/sample/` 端点，并提供基于您创建模板的目标配置的目标ID。
+您可以透過向以下網站發出GET請求來取得範例範本： `authoring/testing/template/sample/` 端點，並提供您建立範本時依據之目的地設定的目的地ID。
 
 >[!TIP]
 >
->* 您在此应使用的目标ID是 `instanceId` 对应于目标配置的 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 以了解更多详细信息。
+>* 您應在此使用的目的地ID為 `instanceId` 對應至目的地組態，建立目的地組態時，使用 `/destinations` 端點。 請參閱 [擷取目的地設定](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 以取得更多詳細資料。
 
 
 **API格式**
@@ -39,11 +39,11 @@ GET authoring/testing/template/sample/{DESTINATION_ID}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_ID}` | 要为其生成消息转换模板的目标配置的ID。 |
+| `{DESTINATION_ID}` | 您要為其產生訊息轉換範本的目的地設定ID。 |
 
 **请求**
 
-以下请求会生成一个新的示例模板，该模板由有效负载中提供的参数进行配置。
+以下請求會產生新的範例範本，由承載中提供的引數設定。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/testing/template/sample/5114d758-ce71-43ba-b53e-e2a91d67b67f' \
@@ -57,9 +57,9 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含一个示例模板，您可以编辑该模板以匹配预期的数据格式。
+成功的回應會傳回HTTP狀態200和範本，您可編輯範本以符合預期的資料格式。
 
-如果您提供的目标ID与 [最佳工作聚合](../../functionality/destination-configuration/aggregation-policy.md) 和 `maxUsersPerRequest=1` 在聚合策略中，请求会返回与以下模板类似的示例模板：
+如果您提供的目的地ID對應至具有的目的地設定 [最大努力彙總](../../functionality/destination-configuration/aggregation-policy.md) 和 `maxUsersPerRequest=1` 在彙總原則中，要求會傳回類似以下的範例範本：
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -92,7 +92,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 }
 ```
 
-如果您提供的目标ID与 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 或 [最佳工作聚合](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) with `maxUsersPerRequest` 大于1，请求会返回与以下模板类似的示例模板：
+如果您提供的目的地ID對應至目的地伺服器範本，並附有 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 或 [最大努力彙總](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 替換為 `maxUsersPerRequest` 大於一個時，請求會傳回類似以下的範例範本：
 
 ```python
 {#- THIS is an example template for multiple profiles -#}
@@ -131,10 +131,10 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 }
 ```
 
-## API错误处理 {#api-error-handling}
+## API錯誤處理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
 
 ## 后续步骤 {#next-steps}
 
-阅读本文档后，您现在知道如何使用 `/authoring/testing/template/sample` API端点。 接下来，您可以使用 [呈现模板API端点](render-template-api.md) ，以根据模板生成导出的用户档案，并将其与目标的预期数据格式进行比较。
+閱讀本檔案後，您現在知道如何使用 `/authoring/testing/template/sample` api端點。 接下來，您可以使用 [轉譯器範本API端點](render-template-api.md) 根據範本產生匯出的設定檔，並與目的地的預期資料格式進行比較。

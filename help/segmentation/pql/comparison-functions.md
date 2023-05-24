@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；PQL;PQL；配置文件查询语言；比较函数；比较；
+keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；pql；PQL；設定檔查詢語言；比較函式；比較；
 solution: Experience Platform
-title: PQL比较函数
-description: 比较函数用于比较不同表达式和值，并相应地返回“true”或“false”。
+title: PQL比較函式
+description: 比較函式可用來比較不同運算式和值之間的差異，並據此傳回「true」或「false」。
 exl-id: 15f106c7-b88b-4042-b925-703e2a309573
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 9%
 
 ---
 
-# 比较函数
+# 比較函式
 
-比较函数用于比较不同表达式和值之间的差异，返回 `true` 或 `false` 因此。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+比較函式可用來比較不同運算式和值之間的差異，並傳回 `true` 或 `false` 因此， 如需其他PQL函式的詳細資訊，請參閱 [[!DNL Profile Query Language] 概觀](./overview.md).
 
 ## 等于
 
-的 `=` （等于）函数检查一个值或表达式是否等于另一个值或表达式。
+此 `=` （等於）函式檢查一個值或運算式是否等於另一個值或運算式。
 
 **格式**
 
@@ -27,7 +27,7 @@ ht-degree: 9%
 
 **示例**
 
-以下PQL查询会检查家庭地址国家/地区是否位于加拿大。
+下列PQL查詢會檢查住家地址所在的國家/地區是否位於加拿大。
 
 ```sql
 homeAddress.countryISO = "CA"
@@ -35,7 +35,7 @@ homeAddress.countryISO = "CA"
 
 ## 不等于
 
-的 `!=` （不等于）函数检查一个值或表达式是否为 **not** 等于其他值或表达式。
+此 `!=` （不等於）函式檢查一個值或運算式是否為 **not** 等於另一個值或運算式。
 
 **格式**
 
@@ -45,7 +45,7 @@ homeAddress.countryISO = "CA"
 
 **示例**
 
-以下PQL查询检查家庭地址国家/地区是否不在加拿大。
+下列PQL查詢會檢查住家地址所在的國家/地區是否不在加拿大。
 
 ```sql
 homeAddress.countryISO != "CA"
@@ -53,7 +53,7 @@ homeAddress.countryISO != "CA"
 
 ## 大于
 
-的 `>` （大于）函数用于检查第一个值是否大于第二个值。
+此 `>` （大於）函式來檢查第一個值是否大於第二個值。
 
 **格式**
 
@@ -63,7 +63,7 @@ homeAddress.countryISO != "CA"
 
 **示例**
 
-以下PQL查询可定义生日不在1月或2月的人员。
+以下PQL查詢定義生日未在1月或2月的人。
 
 ```sql
 person.birthMonth > 2
@@ -71,7 +71,7 @@ person.birthMonth > 2
 
 ## 大于或等于
 
-的 `>=` （大于或等于）函数用于检查第一个值是否大于或等于第二个值。
+此 `>=` （大於或等於）函式來檢查第一個值是否大於或等於第二個值。
 
 **格式**
 
@@ -81,7 +81,7 @@ person.birthMonth > 2
 
 **示例**
 
-以下PQL查询可定义生日不在1月或2月的人员。
+以下PQL查詢定義生日未在1月或2月的人。
 
 ```sql
 person.birthMonth >= 3
@@ -89,7 +89,7 @@ person.birthMonth >= 3
 
 ## 小于
 
-的 `<` （小于）比较函数用于检查第一值是否小于第二值。
+此 `<` （小於）比較函式用於檢查第一個值是否小於第二個值。
 
 **格式**
 
@@ -99,7 +99,7 @@ person.birthMonth >= 3
 
 **示例**
 
-以下PQL查询定义生日在1月的人员。
+以下PQL查詢定義生日在一月的人員。
 
 ```sql
 person.birthMonth < 2
@@ -107,7 +107,7 @@ person.birthMonth < 2
 
 ## 小于或等于
 
-的 `<=` （小于或等于）比较函数用于检查第一值是否小于或等于第二值。
+此 `<=` （小於或等於）比較函式用於檢查第一個值是否小於或等於第二個值。
 
 **格式**
 
@@ -117,7 +117,7 @@ person.birthMonth < 2
 
 **示例**
 
-以下PQL查询定义生日在1月或2月的人员。
+以下PQL查詢定義生日在一月或二月的人員。
 
 ```sql
 person.birthMonth <= 2
@@ -125,4 +125,4 @@ person.birthMonth <= 2
 
 ## 后续步骤
 
-现在，您已经了解了比较函数，接下来可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语言概述](./overview.md).
+現在您已瞭解比較函式，可以在PQL查詢中使用它們。 如需其他PQL功能的詳細資訊，請參閱 [設定檔查詢語言概觀](./overview.md).

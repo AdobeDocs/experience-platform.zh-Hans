@@ -1,6 +1,6 @@
 ---
-keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户数据平台；实时CDP;b2b;CDP；客户AI
-title: Real-Time CDP B2B版概述
+keywords: RTCDP；CDP；B2B版本；Real-time Customer Data Platform；即時客戶資料平台；real time cdp；b2b；cdp；客戶人工智慧
+title: Real-Time CDP B2B版本概觀
 description: Real-Time Customer Data Platform B2B 版本帐户概述
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
@@ -10,80 +10,80 @@ ht-degree: 1%
 
 ---
 
-# Real-time Customer Data Platform B2B版概述
+# Real-time Customer Data Platform B2B版本概觀
 
-Real-Time CDP B2B Edition基于Adobe Real-time Customer Data Platform(Real-Time CDP)而构建，专为以企业对企业服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+Real-Time CDP B2B Edition以Adobe Real-time Customer Data Platform (Real-Time CDP)為基礎，專為以B2B服務模式運作的行銷人員所打造。 它會整合來自多個來源的資料，並將其合併為單一檢視的人員與帳戶設定檔。 此統一的資料可讓行銷人員精準鎖定特定對象，並透過所有可用管道吸引這些對象。
 
-Real-Time CDP B2B Edition与其B2C版本相比，Adobe Experience Platform的各种功能都有所改进。 这些功能包括对B2B用例的体验数据模型(XDM)进行了改进、对身份分辨率和配置文件分段进行了升级，以及自定义的连接器和目标 [!DNL Marketo Engage]. 的 [!DNL Marketo] 连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培养潜在客户并增强基于帐户的营销操作。
+有各種Adobe Experience Platform功能的改善，可區分Real-Time CDP B2B版本與其B2C版本。 其中包括改善B2B使用案例的Experience Data Model (XDM)、升級身分解析和設定檔分段，以及針對以下專案自訂建立的聯結器和目的地： [!DNL Marketo Engage]. 此 [!DNL Marketo] connector可讓B2B品牌將其領先業界的B2B參與資料與行為資訊連結，以培育潛在客戶並增強以帳戶為基礎的行銷作業。
 
-使用Real-Time CDP B2B Edition，您可以：
+使用Real-Time CDP B2B版本，您可以：
 
-* 将从多个来源收集的数据合并到一个视图中，以创建全面的人员和帐户配置文件。
-* 从统一帐户配置文件的集中存储中丰富、划分和导出所有跨源数据。
-* 使用集中化流程每个步骤都提供的数据管理工具来管理您的数据，以确保您的数据符合法律法规和业务策略。
+* 將從多個來源收集的資料合併到單一檢視中，以建立整體性的人員和帳戶設定檔。
+* 從統一帳戶設定檔的集中存放區擴充、劃分及匯出所有跨來源資料。
+* 使用資料控管工具來管理您的資料，這些工具可在集中程式的每個步驟中使用，以確保您的資料符合法律法規和業務政策。
 
-有关Real-Time CDP B2B Edition改进的更全面详细信息，请参阅以下各节。
+有關Real-Time CDP B2B版本改進功能的更完整詳細資訊，分為以下幾節。
 
 ## XDM
 
-Real-Time CDP B2B Edition提供了多个新的XDM模式类、字段组和关系类型，用于捕获和构建专门用于B2B的数据。 请参阅 [Real-Time CDP B2B版中的XDM](./schemas/b2b.md) 以细分这些增强功能。
+Real-Time CDP B2B Edition提供數種新的XDM結構描述類別、欄位群組和關係型別，以擷取和建構您的資料並專門用於B2B用途。 請參閱以下文章的概觀： [Real-Time CDP B2B版本中的XDM](./schemas/b2b.md) 以取得每個增強功能的劃分資訊。
 
-通过使用预配置的B2B模式，您可以以标准化、可操作的结构导入数据。 许多新架构类几乎直接映射到主流CRM中遇到的类，例如 [!DNL Salesforce], [!DNL Microsoft Dynamics], [!DNL Marketo]、和其他B2B数据源。 借助Real-Time CDP B2B Edition，您可以以简单的方式将数据从B2B源导入平台，并且结果易于审核。
+透過使用預先設定的B2B結構描述，您可以將資料匯入標準化的可操作結構中。 許多新結構描述類別幾乎直接對應到主流CRM中遇到的類別，例如 [!DNL Salesforce]， [!DNL Microsoft Dynamics]， [!DNL Marketo]和其他B2B資料來源。 有了Real-Time CDP B2B Edition，您可以直接的方式將資料從B2B來源帶入Platform，而且結果易於稽核。
 
-通过这些XDM增强功能，您可以通过以B2B为中心的源和目标更好地摄取和激活数据，从而为更多各种灵活的用例改进数据统一和呈现方式。
+這些XDM增強功能可讓您透過以B2B為中心的來源和目的地更好地擷取和啟用資料，進而改善資料統一和呈現，以因應更多樣化和彈性的使用案例。
 
-## 身份解析
+## 身分解析
 
-在定义了架构并摄取了符合这些架构的数据后，Real-Time CDP B2B Edition通过功能强大的实时身份解析系统来识别代表真实人员和企业的源记录。
+定義結構描述並擷取符合這些結構描述的資料後，Real-Time CDP B2B Edition會透過功能強大的即時身分識別系統識別代表真實世界人員和企業的來源記錄。
 
-身份解析系统提供以下功能：
+身分解析系統提供下列功能：
 
-* B2B和B2C人员合并记录
-* 多级帐户层次结构
-* 多对多、人员到帐户连接
-* 人员和帐户身份可实时解决
+* 合併B2B和B2C人員記錄
+* 多重層次科目階層
+* 多對多人員對帳戶連線
+* 即時解析人員和帳戶身分
 
-身份解决系统已得到扩大，以支持更多层面的人员分类。 该系统允许人们被识别为商机中的商机和客户。
+身分解析系統已擴充，以支援更多元化的人員分類。 此系統可讓相關人員被識別為商業機會的潛在客戶以及客戶。
 
-由源CRM同步并通过系统内多个路径连接的帐户记录由Platform合并在一起。 该系统将那些与业务机会相关的人员和那些记录为客户的人员汇集在一起，但如果他们是可识别的，也能将他们作为一种属性加以区分。
+由來源CRM同步並透過系統內的多個路徑連線的帳戶記錄由Platform合併在一起。 此系統將與業務機會相關的人員和記錄為客戶的人員，但如果可識別，則還能保留他們之間的區別作為屬性。
 
-匹配标识符用于链接在一起并合并来自多个系统的帐户记录。 在此过程中，帐户层次结构将保留。 使用不同点来仔细检查某个人是否与某个帐户相关，并在需要时提供将其与帐户分离的功能。
+相符的識別碼可用來連結在一起，並合併來自多個系統的帳戶記錄。 在整個過程中都會保留帳戶階層。 差異區段可用來仔細檢視個人是否與帳戶相關聯，並提供了視需要將其與帳戶區分開的功能。
 
-## 用户档案和分段
+## 設定檔和區段
 
-Real-Time CDP B2B版引入与人员、公司、属性和行为相关的数据和已解析的身份后，该数据将用于构建用户档案。 然后，这些用户档案可分段为可浏览的受众，这些受众随后可以激活到各种目标。
+一旦Real-Time CDP B2B Edition擷取了與人員、公司、屬性和行為相關的資料並解析了身分後，該資料就會用於建構設定檔。 然後，這些設定檔可以區分為可瀏覽的對象，這些對象然後可以啟動到各種目的地。
 
-正确实施后，系统会使用唯一的主标识符来跟踪人员，而不是使用可能发生更改的属性（如电子邮件地址）来跟踪人员。 这意味着当有人更改作业时，系统仍会跟踪这些作业。 该人员仍是同一实体，但却与新帐户相关联。 此本机功能为扩展到新帐户提供了强大的矢量，因为系统会遵循这些人员作为个人，包括其所有属性和行为。
+正確實作後，系統會使用唯一的主要識別碼（而非可變更的屬性，例如電子郵件地址）來追蹤人員。 這表示當有人變更工作時，系統仍會追蹤這些工作。 個人仍是相同的實體，但他們會連結至新帳戶。 此原生功能提供擴充至新帳戶的絕佳向量，因為系統以包括他們所有屬性和行為的個人身分追蹤這些人。
 
-## B2B源
+## B2B來源
 
-Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 的 [!DNL Marketo] 源允许您将B2B数据流式传输到平台，并使用与平台连接的应用程序保持此数据为最新。 它支持任意数量的 [!DNL Marketo] （这对具有多个实例的大型公司有利）并提取到合并数据的单个组织中。
+Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 此 [!DNL Marketo] 來源可讓您將B2B資料串流到Platform，並使用平台連線的應用程式保持這些資料在最新狀態。 它支援任意數量的例項 [!DNL Marketo] （對擁有多個例項的大型公司有好處），並提取至單一組織，資料會合併至其中。
 
 >[!NOTE]
 >
->的 [!DNL Marketo] 源 **not** 使用Real-Time CDP B2B Edition时需要。
+>此 [!DNL Marketo] 來源為 **not** 使用Real-Time CDP B2B版本時需要。
 
-请参阅 [Real-Time CDP B2B版中的源](./sources/b2b.md) 文档，以了解有关Marketo和将B2B数据引入平台的更多信息。
+請參閱 [Real-Time CDP B2B版本中的來源](./sources/b2b.md) 有關Marketo和將B2B資料帶入Platform的詳細資訊，請參閱相關檔案。
 
-## B2B目标
+## B2B目的地
 
-Experience Platform目标(如Google客户匹配、Facebook、LinkedIn、Marketo Engage、Amazon S3、Google Display &amp; Video 360、Google Ads和Google Ad Manager)均可用，并且Real-Time CDP B2B Edition完全支持这些目标。 Marketo Engage目标还会将区段成员资格数据流式传输到平台之外，并在Marketo中作为列表提供。
+Google Customer Match、Facebook、LinkedIn、Marketo Engage、Amazon S3、Google Display &amp; Video 360、Google Ads和Google Ad Manager等Experience Platform目的地都由Real-Time CDP B2B Edition提供和完全支援。 Marketo Engage目的地也會將區段會籍資料從Platform串流出來，並以Marketo中的清單形式提供。
 
-请参阅 [Marketo Engage目标](../destinations/catalog/adobe/marketo-engage.md) 以了解更多信息。
+請參閱以下文章的概觀： [Marketo Engage目的地](../destinations/catalog/adobe/marketo-engage.md) 以取得詳細資訊。
 
-对于具有多个CRM的公司，Real-Time CDP B2B Edition提供了配置目标连接器以分隔Marketo或CRM实例的选项。 如果需要，您可以将目标连接器配置到每个实例，并单独将受众发送到每个CRM实例。
+對於擁有多個CRM的公司，Real-Time CDP B2B Edition提供將目的地聯結器設定為分隔Marketo或CRM執行個體的選項。 如有需要，您可以為每個執行個體設定目的地聯結器，並單獨將對象傳送到每個CRM執行個體。
 
 ## 后续步骤
 
-现在，您已更好地了解Real-Time CDP B2B Edition为营销人员带来的好处，以及它与Real-Time CDP之间的差异，接下来便可以了解如何将这些功能应用于您自己的组织。
+現在您已更瞭解Real-Time CDP B2B Edition為行銷人員提供的好處，以及它與Real-Time CDP之間的差異，您可以瞭解如何將這些功能套用至您自己的組織。
 
-要了解Real-Time CDP B2B Edition如何使您的企业对企业服务模式受益，请参阅以下文档以帮助您入门：
+若要瞭解Real-Time CDP B2B Edition如何讓您的企業對企業服務模式受益，請參閱以下檔案以幫助您開始使用：
 
-* [Real-Time CDP B2B Edition的示例用例](./b2b-use-case.md)
-* [Real-time Customer Data Platform B2B版的端到端教程](./b2b-tutorial.md)
-* [如何摄取数据](./sources/b2b.md)
-* [如何访问用户档案](./profile/profile-overview.md)
-* [Real-time Customer Data Platform B2B版中的模式](./schemas/b2b.md)
-* [如何构建区段](./segmentation/b2b.md)
-* [如何将区段激活到目标](./destinations/b2b.md)
-* [如何定义和实施数据管理策略](./privacy/data-governance-overview.md)
+* [Real-Time CDP B2B版本的範例使用案例](./b2b-use-case.md)
+* [Real-time Customer Data Platform B2B版本的端對端教學課程](./b2b-tutorial.md)
+* [如何內嵌資料](./sources/b2b.md)
+* [如何存取設定檔](./profile/profile-overview.md)
+* [Real-time Customer Data Platform B2B版本中的結構描述](./schemas/b2b.md)
+* [如何建立區段](./segmentation/b2b.md)
+* [如何啟用目的地的區段](./destinations/b2b.md)
+* [如何定義及強制執行資料控管原則](./privacy/data-governance-overview.md)

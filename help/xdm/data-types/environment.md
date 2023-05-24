@@ -1,63 +1,63 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；环境；数据类型；数据类型；
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；環境；資料型別；資料型別；
 solution: Experience Platform
-title: 环境数据类型
-description: 本文档概述了环境XDM数据类型。
+title: 環境資料型別
+description: 本檔案提供環境XDM資料型別的概觀。
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '468'
-ht-degree: 5%
+source-wordcount: '465'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL 环境] 数据类型
+# [!UICONTROL 環境] 資料型別
 
-[!UICONTROL 环境] 是一种标准的XDM数据类型，用于描述所观察到事件的周围环境，特别是详细描述网络和软件版本等暂时性信息。
+[!UICONTROL 環境] 是標準的XDM資料型別，可描述觀察到的事件周圍環境，尤其會詳細說明網路和軟體版本之類的臨時資訊。
 
 >[!IMPORTANT]
 >
->所有值都应与 [DeviceAtlas](https://deviceatlas.com) 数据库，由Adobe授权。
+>所有值都應與 [DeviceAtlas](https://deviceatlas.com) 資料庫，依Adobe授權。
 
 <img src="../images/data-types/environment.png" width="400" /><br />
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `_dc` | 对象 | 包含单个字段的对象， `language`，表示用于表示用户在数据呈现方面的语言、地理或文化偏好的环境语言。 语言在语言代码中指定，定义如 [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
-| `browserDetails` | [浏览器详细信息](./browser-details.md) | 描述特定于浏览器的环境详细信息，如浏览器名称、版本、JavaScript版本、用户代理字符串和接受语言。 |
-| `ISP` | 字符串 | 用户的Internet服务提供商的名称。 |
-| `carrier` | 字符串 | 移动网络运营商或MNO（也称为无线服务提供商、无线运营商、蜂窝公司或移动网络运营商）的名称，用于向用户销售和提供通信服务。 |
-| `colorDepth` | 整数 | 用于单个像素的每个颜色分量的位数。 |
-| `connectionType` | 字符串 | Internet连接类型。 接受的值包括： <ul><li>`dialup`</li><li>`isdn`</li><li>`bisdn`</li><li>`dsl`</li><li>`cable`</li><li>`wireless_wifi`</li><li>`mobile`</li><li>`mobile_edge`</li><li>`mobile_2g`</li><li>`mobile_3g`</li><li>`mobile_lte`</li><li>`t1`</li><li>`t3`</li><li>`oc3`</li><li>`lan`</li><li>`modem`</li></ul> |
-| `domain` | 字符串 | 用户ISP的域。 |
-| `ipV4` | 字符串 | 分配给参与使用因特网协议进行通信（32位）的计算机网络的设备的数字标签。 |
-| `ipV6` | 字符串 | 分配给参与使用因特网协议进行通信（128位）的计算机网络的设备的数字标签。 |
-| `operatingSystem` | 字符串 | 进行观察时使用的操作系统的名称。 属性不应包含任何版本信息，例如 `10.5.3`，而是包含“edition”（版本）名称，例如 `Ultimate` 或 `Professional`. |
-| `operatingSystemVendor` | 字符串 | 观察时使用的操作系统供应商的名称。 |
-| `operatingSystemVersion` | 字符串 | 观察时所用操作系统的完整版本标识符。 版本通常以数字形式组成，但可能采用供应商定义的格式。 |
-| `type` | 字符串 | 应用程序环境的类型。 请参阅 [附录](#type) 的值。 |
-| `viewportHeight` | 整数 | 内部显示体验的窗口的垂直大小（以像素为单位）。 对于Web视图事件，此值为浏览器视区高度。 |
-| `viewPortWidth` | 整数 | 内部显示体验的窗口的水平大小（以像素为单位）。 对于Web视图事件，此值为浏览器视区宽度。 |
+| `_dc` | 对象 | 包含單一欄位的物件， `language`，代表環境語言，可代表使用者對於資料表示的語言、地理或文化偏好設定。 語言是依照中定義的語言代碼指定的 [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
+| `browserDetails` | [瀏覽器詳細資料](./browser-details.md) | 說明環境的瀏覽器特定詳細資訊，例如瀏覽器名稱、版本、JavaScript版本、使用者代理字串以及接受語言。 |
+| `ISP` | 字符串 | 使用者的網際網路服務提供者的名稱。 |
+| `carrier` | 字符串 | 向使用者銷售並提供通訊服務的行動網路電信業者或MNO （也稱為無線服務提供者、無線電信業者、行動電話公司或行動網路電信業者）的名稱。 |
+| `colorDepth` | 整数 | 用於單一畫素的每個顏色分量的位元數。 |
+| `connectionType` | 字符串 | 網際網路連線型別。 接受的值包括： <ul><li>`dialup`</li><li>`isdn`</li><li>`bisdn`</li><li>`dsl`</li><li>`cable`</li><li>`wireless_wifi`</li><li>`mobile`</li><li>`mobile_edge`</li><li>`mobile_2g`</li><li>`mobile_3g`</li><li>`mobile_lte`</li><li>`t1`</li><li>`t3`</li><li>`oc3`</li><li>`lan`</li><li>`modem`</li></ul> |
+| `domain` | 字符串 | 使用者ISP的網域。 |
+| `ipV4` | 字符串 | 指定給參與使用網際網路通訊協定進行通訊（32位元）的電腦網路之裝置的數字標籤。 |
+| `ipV6` | 字符串 | 指定給參與使用網際網路通訊協定進行通訊的電腦網路（128位元）之裝置的數字標籤。 |
+| `operatingSystem` | 字符串 | 完成觀察時所使用的作業系統名稱。 屬性不應包含任何版本資訊，例如 `10.5.3`，而是包含「版本」標示，例如 `Ultimate` 或 `Professional`. |
+| `operatingSystemVendor` | 字符串 | 完成觀察時所使用的作業系統供應商名稱。 |
+| `operatingSystemVersion` | 字符串 | 完成觀察時所用作業系統的完整版本識別碼。 版本通常由數字組成，但可能採用廠商定義的格式。 |
+| `type` | 字符串 | 應用程式環境的型別。 請參閱 [附錄](#type) 以取得接受的值。 |
+| `viewportHeight` | 整数 | 內部顯示體驗的視窗垂直大小（畫素）。 若為網頁檢視事件，此為瀏覽器檢視區高度。 |
+| `viewPortWidth` | 整数 | 顯示體驗的視窗水準大小（畫素）。 若為網頁檢視事件，此為瀏覽器檢視區寬度。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关数据类型的更多详细信息，请参阅公共XDM存储库：
+如需資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.schema.json)
 
 ## 附录
 
-以下部分包含有关 [!UICONTROL 设备] 数据类型。
+以下小節包含更多關於 [!UICONTROL 裝置] 資料型別。
 
-## 类型的接受值 {#type}
+## 接受的型別值 {#type}
 
-下表概述了 `type` 及其相关含义：
+下表概述下列專案的可接受值 `type` 及其相關涵義：
 
 | 值 | 描述 |
 | --- | --- |
 | `browser` | 浏览器 |
 | `application` | 应用程序 |
-| `iot` | 物联网 |
-| `external` | 外部系统 |
-| `widget` | 应用程序扩展 |
+| `iot` | 物聯網 |
+| `external` | 外部系統 |
+| `widget` | 應用程式延伸模組 |

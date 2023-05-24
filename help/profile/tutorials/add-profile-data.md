@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；启用配置文件；启用配置文件
-title: 将数据添加到实时客户资料
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；啟用設定檔；啟用設定檔
+title: 新增資料至即時客戶個人檔案
 type: Tutorial
-description: 本教程概述了向实时客户用户档案添加数据所需的步骤。
+description: 本教學課程概述將資料新增至即時客戶設定檔的必要步驟。
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
@@ -12,34 +12,34 @@ ht-degree: 0%
 ---
 
 
-# 将数据添加到 [!DNL Real-Time Customer Profile]
+# 新增資料至 [!DNL Real-Time Customer Profile]
 
-本教程概述了将数据添加到 [!DNL Real-Time Customer Profile].
+本教學課程概述新增資料至的必要步驟 [!DNL Real-Time Customer Profile].
 
-## 为 [!DNL Real-Time Customer Profile]
+## 啟用結構描述 [!DNL Real-Time Customer Profile]
 
-摄取到的数据 [!DNL Experience Platform] 供使用 [!DNL Real-Time Customer Profile] 必须符合 [!DNL Experience Data Model] (XDM)已为 [!DNL Profile]. 要为用户档案启用架构，必须实施 [!DNL XDM Individual Profile] 或 [!DNL XDM ExperienceEvent] 类。
+正在擷取的資料 [!DNL Experience Platform] 供使用 [!DNL Real-Time Customer Profile] 必須符合 [!DNL Experience Data Model] (XDM)結構描述已啟用 [!DNL Profile]. 若要為設定檔啟用結構描述，它必須實作 [!DNL XDM Individual Profile] 或 [!DNL XDM ExperienceEvent] 類別。
 
-您可以启用架构以在中使用 [!DNL Real-Time Customer Profile] 使用 [!DNL Schema Registry] API或 [!DNL Schema Editor] 用户界面。 要开始配置，请按照 [使用API创建模式](../../xdm/tutorials/create-schema-api.md) 或 [使用架构编辑器UI创建架构](../../xdm/tutorials/create-schema-ui.md).
+您可以啟用結構描述以用於 [!DNL Real-Time Customer Profile] 使用 [!DNL Schema Registry] API或 [!DNL Schema Editor] 使用者介面。 若要開始使用，請遵循的教學課程 [使用API建立結構描述](../../xdm/tutorials/create-schema-api.md) 或 [使用結構描述編輯器UI建立結構描述](../../xdm/tutorials/create-schema-ui.md).
 
-## 使用批量摄取添加数据
+## 使用批次擷取新增資料
 
-上传到的所有数据 [!DNL Platform] 使用批量摄取会上传到单个数据集。 此数据在 [!DNL Real-Time Customer Profile]，则必须专门配置相关数据集。 有关完整说明，请参阅 [为配置文件和标识服务配置数据集](dataset-configuration.md).
+所有資料已上傳至 [!DNL Platform] 使用批次擷取會上傳至個別資料集。 在可以使用此資料之前， [!DNL Real-Time Customer Profile]，相關資料集必須經過專門設定。 如需完整的指示，請參閱以下教學課程： [為設定檔和Identity服務設定資料集](dataset-configuration.md).
 
-配置数据集后，您可以开始向其中摄取数据。 请参阅 [批量获取开发人员指南](../../ingestion/batch-ingestion/api-overview.md) 以了解有关如何上传不同格式文件的详细步骤。
+設定資料集後，您就可以開始將資料內嵌到其中。 請參閱 [批次擷取開發人員指南](../../ingestion/batch-ingestion/api-overview.md) 以取得有關如何上傳不同格式檔案的詳細步驟。
 
-## 使用流摄取添加数据
+## 使用串流擷取新增資料
 
-任何与 [!DNL Profile]-enabled XDM架构将自动在 [!DNL Real-Time Customer Profile]. 如果记录中提供了多个标识，或使用了时间系列数据，则这些标识将在标识图中映射，而无需额外配置。 请参阅 [流式引入开发人员指南](../../ingestion/tutorials/streaming-record-data.md) 以了解更多。
+任何符合「 」的串流擷取資料 [!DNL Profile]-enabled XDM結構描述會自動新增或覆寫中的適當記錄 [!DNL Real-Time Customer Profile]. 如果記錄中提供了多個身分，或使用了時間序列資料，則這些身分將會在身分圖表中對應，而無需額外的設定。 請參閱 [串流擷取開發人員指南](../../ingestion/tutorials/streaming-record-data.md) 以深入瞭解。
 
-## 确认上传成功
+## 確認上傳成功
 
-首次将数据上传到新数据集时，或在涉及新ETL或数据源的过程中，建议仔细检查数据以确保数据已正确上传。
+首次將資料上傳到新資料集時，或是在涉及新ETL或資料來源的程式過程中，建議仔細檢查資料，以確保資料已正確上傳。
 
-使用 [!DNL Real-Time Customer Profile] 访问API时，您可以在批量数据加载到数据集中时对其进行检索。 如果无法检索您期望的任何实体，则可能未为 [!DNL Profile]. 确认您的数据集已启用后，请确保源数据格式和标识符支持您的预期。
+使用 [!DNL Real-Time Customer Profile] 存取API，您可以在批次資料載入資料集時擷取該資料。 如果您無法擷取任何您預期的實體，您的資料集可能不會啟用 [!DNL Profile]. 確認您的資料集已啟用後，請確定來源資料格式和識別碼支援您的期望。
 
-有关如何使用 [!DNL Real-Time Customer Profile] API，请参阅 [entities endpoint指南](../api/entities.md)，也称为“[!DNL Profile Access] API”。
+有關如何使用存取實體的詳細說明 [!DNL Real-Time Customer Profile] API，請參閱 [實體端點指南](../api/entities.md)，也稱為「[!DNL Profile Access] API」。
 
-## 更新配置文件存储数据
+## 更新設定檔存放區資料
 
-有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅 [为配置文件启用数据集并重新插入](../../catalog/datasets/enable-upsert.md).
+有時候，您可能需要更新組織設定檔存放區中的資料。 例如，您可能需要更正記錄或變更屬性值。 這可以透過批次擷取完成，並需要設定檔啟用的資料集，以更新插入標籤。 如需如何設定屬性更新資料集的詳細資訊，請參閱的教學課程 [為設定檔和更新插入啟用資料集](../../catalog/datasets/enable-upsert.md).

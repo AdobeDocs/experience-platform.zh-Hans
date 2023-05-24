@@ -1,6 +1,6 @@
 ---
-title: 针对Web和移动设备交互的分析分析
-description: 本文档介绍如何使用查询服务从摄取的Adobe Analytics数据创建可操作的分析。
+title: 網頁和行動互動的Analytics深入分析
+description: 本檔案說明如何使用查詢服務，從擷取的Adobe Analytics資料建立可操作分析。
 exl-id: f64e61ef-0157-4f0a-88f8-bbe4f9aa83f0
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 1%
 
 ---
 
-# 针对Web和移动交互的分析分析
+# 網頁和行動互動的Analytics深入分析
 
-Adobe Experience Platform允许您使用体验数据模型(XDM)字段从Adobe Analytics报表包中摄取数据，以填充数据集。 此分析数据会进行修改以符合 [!DNL XDM ExperienceEvent] 类。 然后，查询服务可以通过运行SQL查询来利用此数据，从用户在数字平台上的行为中生成有价值的分析。
+Adobe Experience Platform可讓您使用Experience Data Model (XDM)欄位從Adobe Analytics報表套裝擷取資料，以填入資料集。 已修改此分析資料，以符合 [!DNL XDM ExperienceEvent] 類別。 然後，Query Service可以透過執行SQL查詢來利用此資料，從使用者在數位平台上的行為產生有價值的深入分析。
 
-本文档提供了各种SQL查询示例，这些示例演示了在从Web和移动分析数据创建分析时的常见用例。
+本檔案提供各種範例SQL查詢，示範從Web和行動Analytics資料建立深入分析時的常見使用案例。
 
-请参阅 [Analytics字段映射文档](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关摄取和映射分析数据的更多信息。
+請參閱 [Analytics欄位對應檔案](../../sources/connectors/adobe-applications/mapping/analytics.md) 以取得擷取和對應analytics資料的詳細資訊。
 
 ## 快速入门
 
-对于以下每个用例，都提供了参数化SQL查询示例作为模板供您进行自定义。 无论您在何处看到，都提供参数 `{ }` 在SQL示例中，您希望评估的数据集、eVar、事件或时间范围。
+對於以下每個使用案例，都會提供引數化SQL查詢範例作為範本供您自訂。 提供引數到任何您看到的位置 `{ }` 在您想要評估之資料集、eVar、事件或時間範圍的SQL範例中。
 
 ## 目标
 
-以下示例显示用于分析Adobe Analytics数据的常见用例的SQL查询。
+下列範例顯示用於分析Adobe Analytics資料的常見使用案例的SQL查詢。
 
-### 在给定日期每小时生成一次访客计数
+### 產生指定日期每小時的訪客計數
 
 ```sql
 SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day,
@@ -37,7 +37,7 @@ GROUP BY Day, Hour
 ORDER BY Hour;
 ```
 
-### 确定指定日期内查看次数最多的10个页面
+### 識別指定日期檢視次數最多的10個頁面
 
 ```SQL
 SELECT web.webpagedetails.name AS Page_Name,
@@ -49,7 +49,7 @@ ORDER BY page_views DESC
 LIMIT  10;
 ```
 
-### 识别10个最活跃的用户
+### 識別10位最活躍的使用者
 
 ```sql
 SELECT enduserids._experience.aaid.id AS aaid,
@@ -61,7 +61,7 @@ ORDER BY Count DESC
 LIMIT  10;
 ```
 
-### 根据用户活动确定10个最想要的城市
+### 根據使用者活動，識別10個最理想的城市
 
 ```sql
 SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city,
@@ -73,7 +73,7 @@ ORDER BY Count DESC
 LIMIT  10;
 ```
 
-### 识别查看次数最多的10个产品
+### 識別檢視次數最多的10種產品
 
 ```sql
 SELECT Product_SKU,
@@ -88,7 +88,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-### 确定订单收入最高的10项
+### 識別最高的10筆訂單收入
 
 ```sql
 SELECT Purchase_ID,

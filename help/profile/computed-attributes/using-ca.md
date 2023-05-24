@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
-title: 在平台中使用计算属性
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API
+title: 在Platform中使用計算屬性
 type: Documentation
-description: 计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。
+description: 計算屬性是將事件層級資料彙總到設定檔層級屬性的函式。 這些函式會自動計算，以便用於區段、啟用和個人化。
 hide: true
 hidefromtoc: true
 source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
@@ -13,8 +13,8 @@ ht-degree: 12%
 ---
 
 
-# (Alpha)在Experience Platform中使用计算属性
+# (Alpha)在Experience Platform中使用計算屬性
 
 >[!IMPORTANT]
 >
->计算属性功能当前位于Alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
+>計算屬性功能目前為Alpha版，並非所有使用者都可使用。 文档和功能可能会发生变化。

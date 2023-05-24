@@ -1,46 +1,46 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；数组；字段；
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；資料模型；ui；工作區；陣列；欄位；
 solution: Experience Platform
-title: 在UI中定义数组字段
-description: 了解如何在Experience Platform用户界面中定义数组字段。
+title: 在UI中定義陣列欄位
+description: 瞭解如何在Experience Platform使用者介面中定義陣列欄位。
 exl-id: 9ac55554-c29b-40b2-9987-c8c17cc2c00c
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '366'
-ht-degree: 2%
+source-wordcount: '363'
+ht-degree: 1%
 
 ---
 
-# 在UI中定义数组字段
+# 在UI中定義陣列欄位
 
-在Adobe Experience Platform用户界面中定义体验数据模型(XDM)字段时，可以将该字段指定为数组。
+在Adobe Experience Platform使用者介面中定義Experience Data Model (XDM)欄位時，您可以將該欄位指定為陣列。
 
-数组的内容取决于 [!UICONTROL 类型] 已选择。 例如，如果字段的 [!UICONTROL 类型] 设置为&quot;[!UICONTROL 字符串]&quot;，将该字段设置为数组会将该字段指定为字符串数组。 如果字段的 [!UICONTROL 类型] 设置为多字段数据类型，如“[!UICONTROL 邮政地址]“，则它将成为符合数据类型的邮政地址对象数组。
+陣列的內容取決於 [!UICONTROL 型別] 已為該欄位選取。 例如，如果欄位的 [!UICONTROL 型別] 設為&quot;[!UICONTROL 字串]&quot;，將該欄位設定為陣列會將欄位指定為字串陣列。 如果欄位的 [!UICONTROL 型別] 設為多欄位資料型別，例如&quot;[!UICONTROL 郵寄地址]&quot;，則它會變成符合資料型別的一系列郵寄地址物件。
 
-在 [在用户界面中定义了新字段](./overview.md#define)，您可以通过选择 **[!UICONTROL 数组]** 复选框。
+在您擁有 [在UI中定義新欄位](./overview.md#define)，您可以選取 **[!UICONTROL 陣列]** 核取方塊。
 
 ![](../../images/ui/fields/special/array.png)
 
-选中此复选框后，右边栏中会显示其他控件，允许您选择进一步约束数组。 如果您不希望强制实施特定约束，请将字段留空。
+選取核取方塊後，右側欄中會出現其他控制項，可讓您選擇進一步限制陣列。 如果您不想強制執行特定限制，請將此欄位留空。
 
-阵列的其他配置控件如下所示：
+陣列的其他設定控制項如下：
 
-| 字段属性 | 描述 |
+| 欄位屬性 | 描述 |
 | --- | --- |
-| [!UICONTROL 最小长度] | 要使摄取成功，数组必须包含的最小项目数。 |
-| [!UICONTROL 最大长度] | 要使摄取成功，数组必须包含的最大项目数。 |
-| [!UICONTROL 仅独特项目] | 如果设置为“[!UICONTROL True]“，为了使摄取成功，数组中的每个项目必须是唯一的。 |
+| [!UICONTROL 最小長度] | 陣列必須包含的專案數下限才能成功內嵌。 |
+| [!UICONTROL 最大长度] | 陣列必須包含的專案數上限，才能成功內嵌。 |
+| [!UICONTROL 僅限唯一專案] | 若設為&quot;[!UICONTROL True]&quot;，陣列中的每個專案都必須是唯一的，才能成功擷取。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-配置完字段后，选择 **[!UICONTROL 应用]** 将更改应用到架构。
+完成欄位設定後，選取 **[!UICONTROL 套用]** 將變更套用至結構描述。
 
 ![](../../images/ui/fields/special/array-config.png)
 
-画布会更新以反映对字段所做的更改。 请注意，画布中字段名称旁边显示的数据类型将附加一对方括号(`[]`)，指示字段表示该数据类型的数组。
+畫布會更新以反映對欄位所做的變更。 請注意，畫布中欄位名稱旁邊顯示的資料型別會附加一對方括弧(`[]`)，指出欄位代表該資料型別的陣列。
 
 ![](../../images/ui/fields/special/array-applied.png)
 
 ## 后续步骤
 
-本指南介绍了如何在UI中定义数组字段。 请参阅 [在UI中定义字段](./overview.md#special) 了解如何在 [!DNL Schema Editor].
+本指南說明如何在UI中定義陣列欄位。 請參閱以下文章的概觀： [在UI中定義欄位](./overview.md#special) 瞭解如何在中定義其他XDM欄位型別 [!DNL Schema Editor].

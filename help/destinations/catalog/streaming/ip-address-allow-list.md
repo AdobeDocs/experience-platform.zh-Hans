@@ -1,8 +1,8 @@
 ---
-keywords: IP地址、IP范围、允许列表目标、允许列表、允许列表流目标
-title: 流目允许列表标的IP地址
+keywords: IP位址、IP範圍、允許清單目的地、允許清單、允許清單串流目的地
+title: 串流目的地的IP位址允許清單
 type: Documentation
-description: 本页提供了可添加到允许列表的IP范围，以便将数据从Experience Platform安全地导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
+description: 此頁面提供您可新增至允許清單的IP範圍，以便安全地從Experience Platform匯出資料至您的HTTP REST API端點、Amazon Kinesis或Azure事件中樞執行個體。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
 source-git-commit: 4d71e246c8ce92cbdae4d248568cf32ab44ac82a
 workflow-type: tm+mt
@@ -11,31 +11,31 @@ ht-degree: 0%
 
 ---
 
-# 流目允许列表标的IP地址 {#ip-address-allowlist}
+# 串流目的地的IP位址允許清單 {#ip-address-allowlist}
 
 >[!IMPORTANT]
 >
-> * Adobe建议您将此页面加入书签并每三个月重新访问一次，以检查最新的IP地址。 Adobe不提供新IP范围的通知。
-> * 此处介绍的IP列表 *不* 应用于您使用构建的任何目标 [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
+> * Adobe建議您將此頁面加入書籤，每三個月重新造訪一次，以檢查最新的IP位址。 Adobe不提供新IP範圍的通知。
+> * 此處記錄的IP清單 *不會* 套用至您使用建立的任何目的地 [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
 
 
 ## 概述 {#overview}
 
-此处介绍的IP范围适用于以下目标：
+此處記錄的IP範圍適用於以下目的地：
 
-* [HTTP API目标](./http-destination.md)
+* [HTTP API目的地](./http-destination.md)
 * [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
 * [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 
-从Experience Platform到这些目标的出站流量始终会通过此页面上列出的IP。
+從Experience Platform到這些目的地的傳出流量一律會經過此頁面上列出的IP。
 
-本页提供了可添加到的IP范允许列表围，以便安全地将数据从Experience Platform导出到HTTP端点， [!DNL Amazon Kinesis]或 [!DNL Azure Event Hubs] 实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规标准要求IP范围列表，则此功能会特别有列入允许列表用。
+此頁面提供您可新增至允許清單的IP範圍，以便安全地從Experience Platform匯出資料至HTTP端點。 [!DNL Amazon Kinesis]，或 [!DNL Azure Event Hubs] 執行個體。 如果您的HTTP端點位於企業防火牆之後，或您的公司安全性與合規性標準需要將IP範圍清單加入允許清單，則此功能特別有用。
 
-您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的流量。
+您可以透過網路防火牆定義網路存取控制。 透過指定適當的IP範圍，您可以允許資料傳輸服務的流量。
 
-Adobe建议您在使用本页上述目允许列表标之前，先将以下IP范围添加到。 未能将区域特定的IP范围添加到您的允许列表，在使用这些流目标时，可能会导致错误或性能不佳。
+Adobe建議您在使用此頁面上提及的目的地之前，先將下列IP範圍新增至允許清單。 使用這些串流目的地時，如果無法將您所在區域的IP範圍新增至允許清單，可能會導致錯誤或效能不佳。
 
-## VA7:美国和美洲客户 {#us-americas}
+## VA7：美國和美洲客戶 {#us-americas}
 
 `20.186.185.239`
 `40.70.154.136/29`
@@ -58,7 +58,7 @@ Adobe建议您在使用本页上述目允许列表标之前，先将以下IP范�
 `52.254.107.0/28`
 `52.254.107.144/28`
 
-## NLD2:EMEA客户 {#emea}
+## NLD2：EMEA客戶 {#emea}
 
 `40.74.4.160/28`
 `40.74.6.128/28`
@@ -84,7 +84,7 @@ Adobe建议您在使用本页上述目允许列表标之前，先将以下IP范�
 `51.105.144.81`
 `51.124.70.4`
 
-## 澳大利亚5:APAC客户 {#apac}
+## 澳洲5：APAC客戶 {#apac}
 
 `20.43.104.80/28`
 `20.43.104.16/28`

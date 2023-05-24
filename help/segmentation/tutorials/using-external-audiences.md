@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首頁；熱門主題
 solution: Experience Platform
-title: 导入和使用外部受众
-description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
+title: 匯入和使用外部對象
+description: 請依照本教學課程瞭解如何搭配Adobe Experience Platform使用外部對象。
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
 source-git-commit: 57586104f1119f5cda926faf286c1663fbb0b240
 workflow-type: tm+mt
@@ -11,95 +11,95 @@ ht-degree: 0%
 
 ---
 
-# 导入和使用外部受众
+# 匯入和使用外部對象
 
-Adobe Experience Platform支持导入外部受众的功能，该功能随后可用作新区段定义的组件。 本文档提供了设置导入和使用外部受众的Experience Platform的教程。
+Adobe Experience Platform支援匯入外部對象的功能，這些對象隨後可用作新區段定義的元件。 本檔案提供設定Experience Platform以匯入及使用外部對象的教學課程。
 
 ## 快速入门
 
-本教程需要对 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查阅以下服务的文档：
+本教學課程需要深入瞭解各種 [!DNL Adobe Experience Platform] 建立受眾區段所涉及的服務。 在開始本教學課程之前，請檢閱下列服務的檔案：
 
-- [Segmentation Service](../home.md):允许您根据实时客户资料数据构建受众区段。
-- [实时客户资料](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-- [体验数据模型(XDM)](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
-- [数据集](../../catalog/datasets/overview.md):Experience Platform中数据持久性的存储和管理结构。
-- [流式摄取](../../ingestion/streaming-ingestion/overview.md):Experience Platform如何实时从客户端和服务器端设备摄取和存储数据。
+- [細分服務](../home.md)：可讓您從即時客戶個人檔案資料建立受眾區段。
+- [即時客戶個人檔案](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+- [體驗資料模型(XDM)](../../xdm/home.md)：Platform組織客戶體驗資料的標準化架構。 為了充分利用「分段」，請確保您的資料已根據 [資料模型化的最佳實務](../../xdm/schema/best-practices.md).
+- [資料集](../../catalog/datasets/overview.md)：Experience Platform中資料持續存在的儲存和管理結構。
+- [串流擷取](../../ingestion/streaming-ingestion/overview.md)：Experience Platform如何即時從使用者端和伺服器端裝置擷取及儲存資料。
 
-### 区段数据与区段元数据
+### 區段資料與區段中繼資料
 
-在开始导入和使用外部受众之前，请务必了解区段数据与区段元数据之间的差异。
+開始匯入和使用外部對象之前，請務必瞭解區段資料與區段中繼資料之間的差異。
 
-区段数据是指符合区段资格标准的用户档案，因此属于受众。
+區段資料是指符合區段資格條件的設定檔，因此也是對象的一部分。
 
-区段元数据是有关区段本身的信息，包括名称、描述、表达式（如果适用）、创建日期、上次修改日期和ID。 该ID可将区段元数据链接到符合区段资格条件且属于所生成受众一部分的个人用户档案。
+區段中繼資料是有關區段本身的資訊，包括名稱、說明、運算式（如果適用）、建立日期、上次修改日期和ID。 此ID會將區段中繼資料連結至符合區段資格的個別設定檔，且是所產生對象的一部分。
 
-| 区段数据 | 区段元数据 |
+| 區段資料 | 區段中繼資料 |
 | ------------ | ---------------- |
-| 符合区段资格条件的用户档案 | 有关区段本身的信息 |
+| 符合區段資格的設定檔 | 區段本身的相關資訊 |
 
-## 为外部受众创建标识命名空间
+## 為外部對象建立身分名稱空間
 
-使用外部受众的第一步是创建身份命名空间。 身份命名空间允许平台关联区段源自的位置。
+使用外部對象的第一個步驟是建立身分名稱空間。 身分名稱空間可讓Platform建立區段來源的關聯。
 
-要创建身份命名空间，请按照 [identity namespace指南](../../identity-service/namespaces.md#manage-namespaces). 创建身份命名空间时，将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
+若要建立身分名稱空間，請依照 [身分名稱空間指南](../../identity-service/namespaces.md#manage-namespaces). 建立身分名稱空間時，請將來源詳細資料新增至身分名稱空間，並標籤其 [!UICONTROL 型別] as a **[!UICONTROL 非人員識別碼]**.
 
-![非人员标识符在创建身份命名空间模式中突出显示。](../images/tutorials/external-audiences/identity-namespace-info.png)
+![「建立身分名稱空間」強制回應視窗中會醒目提示「非人員」識別碼。](../images/tutorials/external-audiences/identity-namespace-info.png)
 
-## 为区段元数据创建架构
+## 為區段中繼資料建立結構
 
-创建身份命名空间后，您需要为要创建的区段创建新架构。
+建立身分名稱空間後，您需要為要建立的區段建立新的結構描述。
 
-要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL 浏览]** 以查看可用架构类型的完整选择。
+若要開始構成方案，請先選取 **[!UICONTROL 結構描述]** ，然後按一下 **[!UICONTROL 建立結構描述]** 在「結構描述」工作區的右上角。 從此處選取 **[!UICONTROL 瀏覽]** 檢視完整可用的結構描述型別選擇。
 
-![“创建架构”和“浏览”都会突出显示。](../images/tutorials/external-audiences/create-schema-browse.png)
+![建立結構描述和瀏覽都會反白顯示。](../images/tutorials/external-audiences/create-schema-browse.png)
 
-由于您创建的区段定义是预定义的类，因此请选择 **[!UICONTROL 使用现有类]**. 现在，选择 **[!UICONTROL 区段定义]** 类，后跟 **[!UICONTROL 分配类]**.
+由於您正在建立預先定義的類別區段定義，因此請選取 **[!UICONTROL 使用現有類別]**. 現在，選取 **[!UICONTROL 區段定義]** 類別，後面接著 **[!UICONTROL 指派類別]**.
 
-![区段定义类会突出显示。](../images/tutorials/external-audiences/assign-class.png)
+![區段定義類別會反白顯示。](../images/tutorials/external-audiences/assign-class.png)
 
-现在，您的架构已创建，接下来将需要指定包含区段ID的字段。 此字段应标记为主标识，并分配给您之前创建的命名空间。
+現在您的結構描述已建立，您將需要指定哪個欄位將包含區段ID。 此欄位應標示為主要身分，並指派給您先前建立的名稱空間。
 
-![将选定字段标记为主标识的复选框在架构编辑器中突出显示。](../images/tutorials/external-audiences/mark-primary-identifier.png)
+![架構編輯器中會反白標示將選取欄位標示為主要身分的核取方塊。](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-在将 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换开关 **[!UICONTROL 用户档案]**. 选择 **[!UICONTROL 启用]** 为 [!DNL Real-Time Customer Profile].
+標示 `_id` 欄位做為主要身分識別，選取結構描述的標題，然後按一下標示為的切換 **[!UICONTROL 設定檔]**. 選取 **[!UICONTROL 啟用]** 啟用結構描述的方式 [!DNL Real-Time Customer Profile].
 
-![用于为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/schema-profile.png)
+![在架構編輯器中會反白顯示啟用「設定檔」架構的切換按鈕。](../images/tutorials/external-audiences/schema-profile.png)
 
-现在，已为用户档案启用此架构，并将主标识分配给您创建的非人员标识命名空间。 因此，这意味着使用此架构导入到平台的区段元数据将被摄取到用户档案，而不会与其他与人员相关的用户档案数据合并。
+現在，此結構描述已為設定檔啟用，並將主要身分識別指派給您建立的非個人身分名稱空間。 因此，這表示使用此結構描述匯入Platform的區段中繼資料將內嵌到設定檔中，而不會與其他人員相關的設定檔資料合併。
 
-## 为架构创建数据集
+## 為結構描述建立資料集
 
-配置架构后，您将需要为区段元数据创建数据集。
+設定結構描述後，您將需要為區段中繼資料建立資料集。
 
-要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
+若要建立資料集，請依照 [資料集使用手冊](../../catalog/datasets/user-guide.md#create). 您應遵循 **[!UICONTROL 從結構描述建立資料集]** 選項，使用您先前建立的結構描述。
 
-![您要将数据集基于的架构会突出显示。](../images/tutorials/external-audiences/select-schema.png)
+![您要作為資料集基礎的結構描述會醒目提示。](../images/tutorials/external-audiences/select-schema.png)
 
-创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
+建立資料集後，請繼續按照 [資料集使用手冊](../../catalog/datasets/user-guide.md#enable-profile) 以啟用此資料集以供即時客戶個人檔案使用。
 
-![用于启用配置文件架构的切换开关在“数据集”活动页面中突出显示。](../images/tutorials/external-audiences/dataset-profile.png)
+![在「資料集活動」頁面中，會反白顯示啟用「設定檔」綱要的切換按鈕。](../images/tutorials/external-audiences/dataset-profile.png)
 
-## 设置和导入受众数据
+## 設定和匯入對象資料
 
-启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 您可以通过批量连接或流连接摄取此数据。
+在啟用資料集後，現在可以透過UI或使用Experience Platform API將資料傳送到Platform。 您可以透過批次或串流連線擷取此資料。
 
-### 使用批量连接摄取数据
+### 使用批次連線擷取資料
 
-要创建批量连接，您可以按照 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可在中使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+若要建立批次連線，您可以遵循一般中的指示 [本機檔案上傳UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 如需可搭配使用內嵌資料的可用來源完整清單，請參閱 [來源概觀](../../sources/home.md).
 
-### 使用流连接摄取数据
+### 使用串流連線擷取資料
 
-要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教程](../../sources/tutorials/ui/create/streaming/http.md).
+若要建立串流連線，您可以依照以下其中一節中的指示操作： [api教學課程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教學課程](../../sources/tutorials/ui/create/streaming/http.md).
 
-创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+建立串流連線後，您就可以存取唯一的串流端點，將資料傳送至該端點。 若要瞭解如何將資料傳送至這些端點，請閱讀 [串流記錄資料的教學課程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![流连接的流端点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![串流連線的串流端點會在來源詳細資訊頁面中反白顯示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
-## 受众元数据结构
+## 對象中繼資料結構
 
-创建连接后，您现在可以将数据摄取到平台。
+建立連線後，您現在可以將資料內嵌至Platform。
 
-外部受众有效负载元数据的示例如下所示：
+外部受眾裝載的中繼資料範例可見於下方：
 
 ```json
 {
@@ -139,74 +139,74 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schemaRef` | 架构 **必须** 请参阅之前创建的区段元数据架构。 |
-| `datasetId` | 数据集ID **必须** 请参阅之前为刚刚创建的架构创建的数据集。 |
-| `xdmEntity._id` | ID **必须** 请参阅与外部受众使用的相同区段ID。 |
-| `xdmEntity.identityMap` | 此部分 **必须** 包含在创建之前创建的命名空间时使用的标识标签。 |
-| `{IDENTITY_NAMESPACE}` | 这是之前创建的身份命名空间的标签。 例如，如果您将身份命名空间称为“externalAudience”，则会将该名称空间用作数组的键。 |
-| `segmentName` | 您希望外部受众按其分段的区段名称。 |
+| `schemaRef` | 結構描述 **必須** 請參閱先前建立的區段中繼資料結構。 |
+| `datasetId` | 資料集ID **必須** 請參閱先前為您剛剛建立的結構描述建立的資料集。 |
+| `xdmEntity._id` | ID **必須** 請參閱您作為外部對象使用的相同區段ID。 |
+| `xdmEntity.identityMap` | 本節 **必須** 包含建立先前建立的名稱空間時使用的身分標籤。 |
+| `{IDENTITY_NAMESPACE}` | 這是先前建立之身分名稱空間的標籤。 因此，舉例來說，如果您將身分名稱空間稱為「externalAudience」，您可以將其用作陣列的索引鍵。 |
+| `segmentName` | 您希望外部對象分段依據的區段名稱。 |
 
-## 使用导入的受众生成区段
+## 使用匯入的對象建立區段
 
-设置导入的受众后，即可将其用作分段流程的一部分。 要查找外部受众，请转到区段生成器，然后选择 **[!UICONTROL 受众]** 选项卡 **[!UICONTROL 字段]** 中。
+設定匯入的對象後，就可以在細分程式中使用這些對象。 若要尋找外部對象，請前往「區段產生器」，然後選取 **[!UICONTROL 受眾]** 索引標籤中的 **[!UICONTROL 欄位]** 區段。
 
-![区段生成器中的外部受众选择器会突出显示。](../images/tutorials/external-audiences/external-audiences.png)
+![區段產生器中的外部受眾選擇器會醒目提示。](../images/tutorials/external-audiences/external-audiences.png)
 
 ## 后续步骤
 
-现在，您可以在区段中使用外部受众，接下来可以使用区段生成器创建区段。 要了解如何创建区段，请阅读 [创建区段的教程](./create-a-segment.md).
+現在，您可以在區段中使用外部對象，您可以使用區段產生器來建立區段。 若要瞭解如何建立區段，請參閱 [建立區段的教學課程](./create-a-segment.md).
 
 ## 附录
 
-除了使用导入的外部受众元数据并将其用于创建区段外，您还可以将外部区段成员资格导入Platform。
+除了使用匯入的外部受眾中繼資料並使用它們來建立區段外，您也可以將外部區段會籍匯入至Platform。
 
-### 设置外部区段成员资格目标架构
+### 設定外部區段會籍目的地結構描述
 
-要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL XDM个人配置文件]**.
+若要開始構成方案，請先選取 **[!UICONTROL 結構描述]** ，然後按一下 **[!UICONTROL 建立結構描述]** 在「結構描述」工作區的右上角。 從此處選取 **[!UICONTROL XDM個別設定檔]**.
 
-![“XDM Individual Profile”区域会突出显示。](../images/tutorials/external-audiences/create-schema-profile.png)
+![「XDM個別輪廓」區域會反白顯示。](../images/tutorials/external-audiences/create-schema-profile.png)
 
-现在，架构已创建完成，接下来您需要将区段成员资格字段组添加为架构的一部分。 要执行此操作，请选择 [!UICONTROL 区段成员资格详细信息]，后跟 [!UICONTROL 添加字段组].
+現在已建立結構描述，您將需要新增區段成員資格欄位群組作為結構描述的一部分。 要執行此操作，請選取 [!UICONTROL 區段會籍細節]，後接 [!UICONTROL 新增欄位群組].
 
-![区段成员资格详细信息字段组将突出显示。](../images/tutorials/external-audiences/segment-membership-details.png)
+![「區段會籍詳細資訊」欄位群組會反白顯示。](../images/tutorials/external-audiences/segment-membership-details.png)
 
-此外，请确保架构已标记为 **[!UICONTROL 用户档案]**. 要实现此目的，您需要将字段标记为主标识。
+此外，請確定結構描述已標籤為 **[!UICONTROL 設定檔]**. 為此，您需要將欄位標示為主要身分。
 
-![用于为配置文件启用架构的切换在架构编辑器中突出显示。](../images/tutorials/external-audiences/external-segment-profile.png)
+![在架構編輯器中會反白顯示啟用「設定檔」架構的切換按鈕。](../images/tutorials/external-audiences/external-segment-profile.png)
 
-### 设置数据集
+### 設定資料集
 
-创建架构后，您需要创建一个数据集。
+建立結構描述後，您需要建立資料集。
 
-要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
+若要建立資料集，請依照 [資料集使用手冊](../../catalog/datasets/user-guide.md#create). 您應遵循 **[!UICONTROL 從結構描述建立資料集]** 選項，使用您先前建立的結構描述。
 
-![突出显示了用于创建数据库的架构。](../images/tutorials/external-audiences/select-schema.png)
+![您用來建立資料庫的綱要會反白顯示。](../images/tutorials/external-audiences/select-schema.png)
 
-创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
+建立資料集後，請繼續按照 [資料集使用手冊](../../catalog/datasets/user-guide.md#enable-profile) 以啟用此資料集以供即時客戶個人檔案使用。
 
-![在创建数据集工作流中，突出显示了用于启用用户档案架构的切换开关。](../images/tutorials/external-audiences/dataset-profile.png)
+![在「建立資料集」工作流程中，會反白顯示啟用「設定檔」結構描述的切換按鈕。](../images/tutorials/external-audiences/dataset-profile.png)
 
-## 设置和导入外部受众成员资格数据
+## 設定和匯入外部對象成員資格資料
 
-启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 您可以通过批量连接或流连接摄取此数据。
+在啟用資料集後，現在可以透過UI或使用Experience Platform API將資料傳送到Platform。 您可以透過批次或串流連線擷取此資料。
 
-### 使用批量连接摄取数据
+### 使用批次連線擷取資料
 
-要创建批量连接，您可以按照 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可在中使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+若要建立批次連線，您可以遵循一般中的指示 [本機檔案上傳UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 如需可搭配使用內嵌資料的可用來源完整清單，請參閱 [來源概觀](../../sources/home.md).
 
-### 使用流连接摄取数据
+### 使用串流連線擷取資料
 
-要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教程](../../sources/tutorials/ui/create/streaming/http.md).
+若要建立串流連線，您可以依照以下其中一節中的指示操作： [api教學課程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教學課程](../../sources/tutorials/ui/create/streaming/http.md).
 
-创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+建立串流連線後，您就可以存取唯一的串流端點，將資料傳送至該端點。 若要瞭解如何將資料傳送至這些端點，請閱讀 [串流記錄資料的教學課程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![流连接的流端点在源详细信息页面中突出显示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![串流連線的串流端點會在來源詳細資訊頁面中反白顯示。](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
-## 区段成员结构
+## 區段會籍結構
 
-创建连接后，您现在可以将数据摄取到平台。
+建立連線後，您現在可以將資料內嵌至Platform。
 
-外部受众成员资格有效负载的示例如下所示：
+外部對象會籍裝載的範例可見於下方：
 
 ```json
 {
@@ -252,12 +252,12 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schemaRef` | 架构 **必须** 请参阅之前创建的区段成员资格数据架构。 |
-| `datasetId` | 数据集ID **必须** 请参阅之前创建的数据集，以了解您刚刚创建的成员资格架构。 |
-| `xdmEntity._id` | 用于唯一标识数据集内记录的合适ID。 |
-| `{TENANT_NAME}.identities` | 此部分用于将自定义标识的字段组与您之前导入的用户连接起来。 |
-| `segmentMembership.{IDENTITY_NAMESPACE}` | 这是之前创建的自定义身份命名空间的标签。 例如，如果您将身份命名空间称为“externalAudience”，则会将该名称空间用作数组的键。 |
+| `schemaRef` | 結構描述 **必須** 如需區段會籍資料，請參閱先前建立的結構描述。 |
+| `datasetId` | 資料集ID **必須** 請參閱先前建立之資料集，以瞭解您剛才建立的成員資格方案。 |
+| `xdmEntity._id` | 適合的ID，用來唯一識別資料集中的記錄。 |
+| `{TENANT_NAME}.identities` | 此區段用於連線自訂身分的欄位群組與您先前匯入的使用者。 |
+| `segmentMembership.{IDENTITY_NAMESPACE}` | 這是先前建立的自訂身分名稱空間的標籤。 因此，舉例來說，如果您將身分名稱空間稱為「externalAudience」，您可以將其用作陣列的索引鍵。 |
 
 >[!NOTE]
 >
->默认情况下，外部受众成员资格仅保留30天。 若要将其保留超过30天，请使用 `validUntil` 字段。 有关此字段的更多信息，请阅读 [区段成员资格详细信息架构字段组](../../xdm/field-groups/profile/segmentation.md).
+>依預設，外部對象會籍僅保留30天。 若要保留超過30天，請使用 `validUntil` 欄位擷取您的對象資料時。 如需有關本欄位的詳細資訊，請閱讀 [區段會籍詳細資料結構描述欄位群組](../../xdm/field-groups/profile/segmentation.md).

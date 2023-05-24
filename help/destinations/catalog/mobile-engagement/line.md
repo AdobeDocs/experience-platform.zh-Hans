@@ -1,149 +1,149 @@
 ---
-keywords: 移动设备；移动设备参与目标；LINE;LINE移动设备参与目标
-title: 线路连接
-description: 利用LINE目标，可向Platform区段添加用户档案，并为连接的用户提供个性化体验。
+keywords: 行動；行動參與目的地；LINE；LINE行動參與目的地
+title: LINE連線
+description: LINE目的地可讓您新增設定檔至平台區段，並為已連線的使用者提供個人化體驗。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
 source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
-source-wordcount: '1183'
-ht-degree: 1%
+source-wordcount: '1180'
+ht-degree: 0%
 
 ---
 
-# [!DNL LINE] 连接
+# [!DNL LINE] 連線
 
 ## 概述 {#overview}
 
-[[!DNL LINE]](https://line.me/en/) 是一个热门的通信平台，可连接人员、服务和信息，并且已经从聊天应用程序发展为娱乐、社交和日常活动的中心。
+[[!DNL LINE]](https://line.me/en/) 是一個連線人物、服務和資訊的常用通訊平台，並且已從聊天應用程式成長為娛樂、社交和日常活動的中樞。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL LINE] 消息传送API](https://developers.line.biz/en/reference/messaging-api/). 您可以从Experience Platform区段中激活用户档案，作为 [!DNL LINE] 满足您的业务需求。
+此 [!DNL Adobe Experience Platform] [目的地](/help/destinations/home.md) 可運用 [[!DNL LINE] 傳訊API](https://developers.line.biz/en/reference/messaging-api/). 您可以從您的Experience Platform區段中啟用設定檔，作為內的連線 [!DNL LINE] 滿足您的業務需求。
 
-[!DNL LINE] 使用载体令牌作为与 [!DNL LINE] 消息传送API。 验证的说明 [!DNL LINE] 实例的后面，在 [对目标进行身份验证](#authenticate) 中。
+[!DNL LINE] 使用持有人權杖作為驗證機制，以與 [!DNL LINE] 傳訊API。 向您的驗證身分的說明 [!DNL LINE] 執行個體會位於以下更遠的位置： [驗證至目的地](#authenticate) 區段。
 
 ## 用例 {#use-cases}
 
-作为营销人员，您可以在移动设备参与目标中定位用户，并内置区段 [!DNL Adobe Experience Platform]. 此外，您还可以根据访客的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，在 [!DNL Adobe Experience Platform].
+行銷人員可以內建區段，鎖定行動參與目的地中的使用者 [!DNL Adobe Experience Platform]. 此外，您也可以根據客戶自己的屬性，為他們提供個人化體驗 [!DNL Adobe Experience Platform] 設定檔，一旦區段和設定檔在 [!DNL Adobe Experience Platform].
 
 ## 先决条件 {#prerequisites}
 
-### [!DNL LINE] 先决条件 {#prerequisites-destination}
+### [!DNL LINE] 必備條件 {#prerequisites-destination}
 
-请注意 [!DNL LINE]，以便将数据从Platform导出到 [!DNL LINE] 帐户：
+請注意下列中的先決條件 [!DNL LINE]，以將資料從Platform匯出至 [!DNL LINE] 帳戶：
 
-#### 你需要 [!DNL LINE] 帐户 {#prerequisites-account}
+#### 您需要擁有 [!DNL LINE] 帳戶 {#prerequisites-account}
 
-您需要注册并创建 [!DNL LINE] 帐户（如果您还没有）。 要创建帐户，请执行以下操作：
+您必須註冊並建立 [!DNL LINE] 帳戶（如果還沒有帳戶）。 若要建立帳戶：
 
-1. 导航到 [!DNL LINE] [帐户登录](https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F) 页面
-2. 选择 **[!UICONTROL 创建帐户]**.
+1. 導覽至 [!DNL LINE] [帳戶登入](https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F) 頁面
+2. 選取 **[!UICONTROL 建立帳戶]**.
 
-#### 收集 [!DNL LINE channel access token (long-lived)] 从 [!DNL LINE] 开发人员控制台 {#gather-credentials}
+#### 收集 [!DNL LINE channel access token (long-lived)] 從 [!DNL LINE] 開發人員主控台 {#gather-credentials}
 
-允许平台访问 [!DNL LINE] 资源，您将需要 *[!DNL Channel access token (long-lived)]* 从所需的 [!DNL LINE] *消息传送API* 渠道。
+允許平台存取 [!DNL LINE] 資源，您將需要 *[!DNL Channel access token (long-lived)]* 從所需 [!DNL LINE] *傳訊API* 頻道。
 
-1. 使用 [!DNL LINE] 帐户 [[!DNL LINE] 开发人员控制台](https://developers.line.biz/console).
-1. 接下来，访问 *[!DNL Providers]* 列表，然后选择 *[!DNL Provider]* 最后选择 *消息传送API* 渠道访问其设置。 如果您是首次访问开发人员控制台，请按照 [[!DNL LINE] 文档](https://developers.line.biz/en/docs/messaging-api/getting-started/) 以完成创建提供程序所需的步骤。
-1. 最后，导航到 ***[!DNL Channel access token]*** 部分和复制 ***[!DNL Channel access token (long-lived)]*** 值在 [对目标进行身份验证](#authenticate) 中。
+1. 使用您的登入 [!DNL LINE] 帳戶至 [[!DNL LINE] 開發人員主控台](https://developers.line.biz/console).
+1. 接下來，存取 *[!DNL Providers]* 清單，然後選取 *[!DNL Provider]* ，最後選取 *傳訊API* 存取其設定的管道。 如果您是第一次存取開發人員主控台，請遵循 [[!DNL LINE] 檔案](https://developers.line.biz/en/docs/messaging-api/getting-started/) 完成建立提供者所需的步驟。
+1. 最後，導覽至 ***[!DNL Channel access token]*** 區段並複製 ***[!DNL Channel access token (long-lived)]*** 以下範圍中所需的值： [驗證至目的地](#authenticate) 步驟。
 
-| 凭据 | 描述 | 示例 |
+| 認證 | 描述 | 示例 |
 | --- | --- | --- |
 | `[!DNL Channel access token (long-lived)]` | 您的 [!DNL LINE Channel access token (long-lived)]。 | `aaa2112XSMWqLXR7..........nyilFU=` |
 
-请参阅 [[!DNL LINE] 文档](https://developers.line.biz/en/docs/messaging-api/getting-started/) 以获取有关创建渠道或将渠道添加到现有渠道的指导 [!DNL LINE] 帐户 [!DNL LINE] 开发人员控制台。
+請參閱 [[!DNL LINE] 檔案](https://developers.line.biz/en/docs/messaging-api/getting-started/) 以取得建立管道或新增管道至現有管道的相關指引 [!DNL LINE] 帳戶透過 [!DNL LINE] 開發人員主控台。
 
-## 支持的身份 {#supported-identities}
+## 支援的身分 {#supported-identities}
 
-[!DNL LINE] 支持更新和导出下表所述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
+[!DNL LINE] 支援下表中描述的身分更新和匯出。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
 
-| Target标识 | 描述 |
+| 目標身分 | 描述 |
 |---|---|
-| 广告商的ID | 当源标识为IFA时，为广告商(IFA)目标标识选择ID *(适用于广告商的Apple ID)* 或GAID *(Google广告ID)命名空间。 |
-| 行用户ID | 当源标识为LINE用户ID时，选择用户ID目标标识。 |
+| 廣告商ID (IFA) | 當來源身分識別為IFA時，選取廣告商(IFA)目標身分識別的ID *(廣告商適用的Apple ID)* 或GAID *(Google Advertising ID)名稱空間。 |
+| LINE使用者ID | 當來源身分識別為LINE使用者ID時，選取UserID目標身分。 |
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段（受众）的所有成员，以及 [!DNL LINE] 目标。 |
-| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段（受眾）的所有成員，而這些成員具有「 」中使用的識別碼（名稱、電話號碼或其他）。 [!DNL LINE] 目的地。 |
+| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 连接到目标 {#connect}
-
->[!IMPORTANT]
->
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
-
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
-
-在 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL LINE]. 或者，您也可以在 **[!UICONTROL 移动参与度]** 类别。
-
-### 对目标进行身份验证 {#authenticate}
-
-要对目标进行身份验证，请选择 **[!UICONTROL 连接到目标]**.
-![Platform UI屏幕截图，其中显示了如何进行身份验证。](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
-
-填写以下必填字段。
-* **[!UICONTROL 载体令牌]**:您的 [!DNL LINE Channel access token (long-lived)] 从 [!DNL LINE] 开发人员控制台。 请参阅 [收集凭据](#gather-credentials) 中。
-
-如果提供的详细信息有效，UI会显示 **[!UICONTROL 已连接]** 状态为绿色复选标记。 然后，您可以继续执行下一步。
-
-### 填写目标详细信息 {#destination-details}
-
-要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
-![Platform UI屏幕截图，显示目标详细信息。](../../assets/catalog/mobile-engagement/line/destination-details.png)
-
-* **[!UICONTROL 名称]**:将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL 受众类型]**:选择 **[!UICONTROL 广告商的ID]** 如果要导出的身份类型为 *广告商的ID*. 选择 **[!UICONTROL 行用户ID]** 如果要导出的身份类型为 *行用户ID*. 请参阅 [支持的身份](#supported-identities) 部分以了解有关身份类型的更多信息。
-
-### 启用警报 {#enable-alerts}
-
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
-
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
-
-## 将区段激活到此目标 {#activate}
+## 連線到目的地 {#connect}
 
 >[!IMPORTANT]
 >
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
 
-### 映射属性和标识 {#map}
+範圍 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]** 搜尋 [!DNL LINE]. 或者，您也可以在 **[!UICONTROL 行動參與]** 類別。
 
-要将受众数据从Adobe Experience Platform正确发送到 [!DNL LINE] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。 要将XDM字段正确映射到 [!DNL LINE] 目标字段，请执行以下步骤：
+### 驗證至目的地 {#authenticate}
 
-必须根据源标识映射以下目标标识命名空间： |目标标识 |源字段 |目标字段 | | — | — | — | |广告商的ID(IFA) | `IDFA` 或 `GAID` | `LineId` | |行用户ID | `UserID` | `LineId` |
+若要驗證目的地，請選取 **[!UICONTROL 連線到目的地]**.
+![顯示如何驗證的平台UI熒幕擷圖。](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
 
-如果您的目标身份为 *行用户ID* 您将需要：
-![平台UI屏幕截图示例，显示了在将LINE用户ID用于目标标识时的Target映射。](../../assets/catalog/mobile-engagement/line/mappings-userid.png)
+填寫以下必填欄位。
+* **[!UICONTROL 持有人權杖]**：您的 [!DNL LINE Channel access token (long-lived)] 從 [!DNL LINE] 開發人員主控台。 請參閱 [收集認證](#gather-credentials) 區段。
 
-如果您的目标标识为 *广告商的ID* 您将需要：
-![Platform UI屏幕截图示例，显示了在将ID用于Target标识的广告商(IFA)时Target映射。](../../assets/catalog/mobile-engagement/line/mappings-idfa.png)
+如果提供的詳細資料有效，UI會顯示 **[!UICONTROL 已連線]** 帶有綠色核取記號的狀態。 然後您可以繼續下一步驟。
 
-## 验证数据导出 {#exported-data}
+### 填寫目的地詳細資料 {#destination-details}
 
-成功导出Experience Platform后， [!DNL LINE] 目标在 [!DNL LINE] 使用选定的区段名称。
+若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
+![顯示目的地詳細資訊的平台UI熒幕擷圖。](../../assets/catalog/mobile-engagement/line/destination-details.png)
 
-要验证您是否已正确设置目标，请执行以下步骤：
+* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
+* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL 對象型別]**：選取 **[!UICONTROL 廣告商ID (IFA)]** 如果您要匯出的身分屬於型別 *廣告商ID (IFA)*. 選取 **[!UICONTROL LINE使用者ID]** 如果您要匯出的身分屬於型別 *LINE使用者ID*. 請參閱 [支援的身分](#supported-identities) 區段，以瞭解身分型別的詳細資訊。
 
-1. 在 [!DNL LINE]，登录到 [管理器控制台](https://manager.line.biz/).
+### 啟用警示 {#enable-alerts}
 
-1. 接下来，导航到 **[!UICONTROL 数据控件]** > **[!UICONTROL 受众]** 并检查与 **[!UICONTROL 受众名称]** 列。
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-1. 更新的卷将匹配区段中的计数。
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-1. 的 *类型* 列将提及 **[!UICONTROL 用户ID]** 如果导出的标识类型为 *用户ID*. 同样， *类型* 列将提及 **[!UICONTROL 移动设备广告Id]** 如果导出的标识类型为 *IDFA*.
+## 啟用此目的地的區段 {#activate}
 
-中的设置示例 [!DNL LINE] 如下所示：
-![显示受众卷的行UI屏幕截图。](../../assets/catalog/mobile-engagement/line/audience-volume.png)
+>[!IMPORTANT]
+>
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-## 数据使用和管理 {#data-usage-governance}
+讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](/help/data-governance/home.md).
+### 對應屬性和身分 {#map}
+
+若要正確將對象資料從Adobe Experience Platform傳送至 [!DNL LINE] 目的地，您必須完成欄位對應步驟。 對應包括在Platform帳戶中的Experience Data Model (XDM)結構描述欄位與來自目標目的地的對應對應對應專案之間建立連結。 若要正確將XDM欄位對應至 [!DNL LINE] 目的地欄位，請依照下列步驟操作：
+
+根據您的來源身分，必須對應下列目標身分名稱空間： |目標身分 |來源欄位 |目標欄位 | | — | — | — | |廣告商ID (IFA) | `IDFA` 或 `GAID` | `LineId` | | LINE使用者ID | `UserID` | `LineId` |
+
+如果您的目標身分是 *LINE使用者ID* 您將需要下列專案：
+![Platform UI熒幕擷圖範例，顯示將LINE使用者ID用於目標身分識別時的Target對應。](../../assets/catalog/mobile-engagement/line/mappings-userid.png)
+
+如果您的目標身分是 *廣告商ID (IFA)* 您將需要下列專案：
+![平台UI熒幕擷圖範例，顯示將廣告商(IFA)的ID用於目標身分識別時的Target對應。](../../assets/catalog/mobile-engagement/line/mappings-idfa.png)
+
+## 驗證資料匯出 {#exported-data}
+
+成功將資料匯出Experience Platform後， [!DNL LINE] 目的地會在內建立新對象 [!DNL LINE] 使用選取的區段名稱。
+
+若要驗證您是否已正確設定目的地，請遵循下列步驟：
+
+1. 在 [!DNL LINE]，登入 [管理員主控台](https://manager.line.biz/).
+
+1. 接下來，導覽至 **[!UICONTROL 資料控制項]** > **[!UICONTROL 受眾]** ，並勾選內與所選區段相符的名稱 **[!UICONTROL 對象名稱]** 欄。
+
+1. 更新的磁碟區會符合區段內的計數。
+
+1. 此 *型別* 欄將提及 **[!UICONTROL 使用者ID]** 如果您匯出的身分屬於型別 *使用者ID*. 同樣地， *型別* 欄將提及 **[!UICONTROL 行動廣告ID]** 如果您匯出的身分屬於型別 *IDFA*.
+
+內的設定範例 [!DNL LINE] 如下所示：
+![顯示對象人數的LINE UI熒幕擷圖。](../../assets/catalog/mobile-engagement/line/audience-volume.png)
+
+## 資料使用與控管 {#data-usage-governance}
+
+全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).

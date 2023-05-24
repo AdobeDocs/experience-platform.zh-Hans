@@ -1,19 +1,19 @@
 ---
-title: 搜索端点
-description: 了解如何在Reactor API中调用/search端点。
+title: 搜尋端點
+description: 瞭解如何在Reactor API中呼叫/search端點。
 exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '655'
 ht-degree: 1%
 
 ---
 
-# 搜索端点
+# 搜尋端點
 
-的 `/search` Reactor API中的端点提供了一种查找符合所需标准的资源的方法，以查询形式表示。
+此 `/search` Reactor API中的端點提供尋找符合所需條件的資源的方法，以查詢表示。
 
-可以搜索以下API资源类型，利用与在API中返回的基于资源的文档相同的数据结构：
+下列API資源型別可供搜尋，其資料結構與透過API傳回的資源型檔案相同：
 
 * `audit_events`
 * `builds`
@@ -28,25 +28,25 @@ ht-degree: 1%
 * `rule_components`
 * `rules`
 
-所有查询的范围均为您当前的公司和可访问属性。
+所有查詢的範圍皆為您目前的公司和可存取的屬性。
 
 >[!IMPORTANT]
 >
->搜索功能有以下注意事项和例外：
->* 搜索结果中不会搜索和返回meta。
->* 扩展包代理（操作、条件等）的架构字段 可搜索为文本，而不是嵌套数据结构。
->* 范围查询当前仅支持整数。
+>搜尋功能具有下列注意事項和例外：
+>* 中繼無法搜尋，且未在搜尋結果中傳回。
+>* 擴充功能套件委派的結構描述欄位（動作、條件等） 可當作文字搜尋，而非巢狀資料結構搜尋。
+>* 範圍查詢目前僅支援整數。
 
 
-有关如何使用此功能的详细信息，请参阅 [搜索指南](../guides/search.md).
+如需如何使用此功能的詳細資訊，請參閱 [搜尋指南](../guides/search.md).
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 执行搜索 {#perform}
+## 執行搜尋 {#perform}
 
-您可以通过发出POST请求来执行搜索。
+您可以發出POST要求來執行搜尋。
 
 **API格式**
 
@@ -94,17 +94,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `from` | 要将响应偏移的结果数。 |
-| `size` | 要返回的最大结果量。 结果不能超过100项。 |
-| `query` | 表示搜索查询的对象。 对于此对象中的每个属性，键必须表示要查询的字段路径，并且值必须是其子属性确定要查询内容的对象。<br><br>对于每个字段路径，您可以使用以下子属性：<ul><li>`exists`:如果资源中存在字段，则返回true。</li><li>`value`:如果字段的值与此属性的值匹配，则返回true。</li><li>`value_operator`:用于确定 `value` 应处理查询。 允许的值为 `AND` 和 `OR`. 排除后， `AND` 逻辑。 请参阅 [值运算符逻辑](#value-operator) 以了解更多信息。</li><li>`range` 如果字段的值在特定的数字范围内，则返回true。 范围本身由以下子属性决定：<ul><li>`gt`:大于提供的值，不包括。</li><li>`gte`:大于或等于提供的值。</li><li>`lt`:小于提供的值，不包括。</li><li>`lte`:小于或等于提供的值。</li></ul></li></ul> |
-| `sort` | 对象数组，指示对结果排序的顺序。 每个对象必须包含单个属性：键表示要排序的字段路径，值表示排序顺序(`asc` 升序， `desc` )。 |
-| `resource_types` | 字符串数组，用于指示要搜索的特定资源类型。 |
+| `from` | 要位移回應的結果數目。 |
+| `size` | 要傳回的結果數量上限。 結果不能超過100個專案。 |
+| `query` | 代表搜尋查詢的物件。 對於此物件中的每個屬性，索引鍵必須代表查詢依據的欄位路徑，而且值必須是其子屬性決定要查詢什麼的物件。<br><br>對於每個欄位路徑，您可以使用以下子屬性：<ul><li>`exists`：如果資源中存在欄位，則傳回true。</li><li>`value`：如果欄位的值符合此屬性的值，則傳回true。</li><li>`value_operator`：布林值邏輯，用於判斷 `value` 應處理查詢。 允許值為 `AND` 和 `OR`. 排除時， `AND` 會假設邏輯。 請參閱以下小節： [值運運算元邏輯](#value-operator) 以取得詳細資訊。</li><li>`range` 如果欄位的值落在特定的數字範圍內，則傳回true。 範圍本身由以下子屬性決定：<ul><li>`gt`：大於提供的值（非包含）。</li><li>`gte`：大於或等於提供的值。</li><li>`lt`：小於提供的值，不含。</li><li>`lte`：小於或等於提供的值。</li></ul></li></ul> |
+| `sort` | 一個物件陣列，指示排序結果的順序。 每個物件都必須包含單一屬性：索引鍵代表排序依據的欄位路徑，值代表排序順序(`asc` 若為升序， `desc` （遞減）。 |
+| `resource_types` | 字串陣列，指出要搜尋的特定資源型別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回查询的匹配资源列表。 有关API如何确定特定值匹配情况的详细信息，请参阅附录部分 [匹配约定](#conventions).
+成功的回應會傳回查詢的相符資源清單。 如需API如何判斷符合特定值的詳細資訊，請參閱 [比對慣例](#conventions).
 
 ```json
 {
@@ -211,37 +211,37 @@ curl -X POST \
 
 ## 附录
 
-以下部分包含有关使用 `/search` 端点。
+下節包含有關使用的其他資訊 `/search` 端點。
 
-### 值运算符逻辑 {#value-operator}
+### 值運運算元邏輯 {#value-operator}
 
-搜索查询值被拆分为术语以与索引文档匹配。 每个术语之间 `AND` 关系。
+搜尋查詢值會分割成字詞，以比對已編制索引的檔案。 在每個字詞之間， `AND` 會假設為關聯性。
 
-使用 `AND` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含 `My AND Rule AND Holiday AND Sale`.
+使用時 `AND` 作為 `value_operator`，的查詢值 `My Rule Holiday Sale` 會解譯為包含下列欄位的檔案： `My AND Rule AND Holiday AND Sale`.
 
-使用 `OR` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含 `My OR Rule OR Holiday OR Sale`. 匹配的术语越多，越高 `match_score`. 由于部分术语匹配的性质，当没有与所需值紧密匹配的内容时，您可以获得一个结果集，其中该值仅在非常基本的级别上进行匹配，例如一些文本字符。
+使用時 `OR` 作為 `value_operator`，的查詢值 `My Rule Holiday Sale` 會解譯為包含下列欄位的檔案： `My OR Rule OR Holiday OR Sale`. 相符的字詞越多，字詞越多 `match_score`. 由於部分字詞比對的性質，當沒有任何字元與所需值幾乎相符時，您可以取得只符合非常基本層級的值（例如幾個文字字元）的結果集。
 
-### 匹配约定 {#conventions}
+### 比對慣例 {#conventions}
 
-搜索与回答文档与提供查询的相关程度有关。 文档数据的分析和索引方式直接影响到这一点。
+搜尋著重於回答檔案與所提供查詢的相關程度。 檔案資料的分析和索引方式會直接影響這一點。
 
-下表划分了常用字段类型的匹配约定：
+下表劃分常見欄位型別的比對慣例：
 
-| 字段类型 | 匹配约定 |
+| 欄位型別 | 比對慣例 |
 | --- | --- |
-| 字符串 | 包含部分术语分析的文本，不区分大小写 |
-| 枚举值 | 完全匹配，区分大小写 |
-| 整数 | 完全匹配 |
-| 浮动 | 完全匹配 |
-| 时间戳 | 精确匹配（DateTime格式） |
-| 显示名称 | 包含部分术语分析的文本，不区分大小写 |
+| 字符串 | 含有部分詞語分析的文字，不區分大小寫 |
+| 列舉值 | 完全相符，區分大小寫 |
+| 整數 | 完全相符 |
+| 浮動 | 完全相符 |
+| 時間戳記 | 完全相符（日期時間格式） |
+| 顯示名稱 | 含有部分詞語分析的文字，不區分大小寫 |
 
-API中显示了其他有关特定字段的约定：
+API中出現的特定欄位還有其他慣例：
 
-| 字段 | 匹配约定 |
+| 字段 | 比對慣例 |
 | --- | --- |
-| `id` | 完全匹配，区分大小写 |
-| `delegate_descriptor_id` | 精确匹配，区分大小写，且术语拆分为 `::` |
-| `name` | 完全匹配，区分大小写 |
-| `settings` | 包含部分术语分析的文本，不区分大小写 |
-| `type` | 完全匹配，区分大小写 |
+| `id` | 完全相符，區分大小寫 |
+| `delegate_descriptor_id` | 完全相符、區分大小寫、字詞分割於 `::` |
+| `name` | 完全相符，區分大小寫 |
+| `settings` | 含有部分詞語分析的文字，不區分大小寫 |
+| `type` | 完全相符，區分大小寫 |

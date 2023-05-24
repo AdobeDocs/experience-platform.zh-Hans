@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；流连接；创建流连接；API指南；教程；创建流连接；流摄取；摄取；
+keywords: Experience Platform；首頁；熱門主題；串流連線；建立串流連線；API指南；教學課程；建立串流連線；串流擷取；擷取；
 solution: Experience Platform
-title: 使用API创建流连接
+title: 使用API建立串流連線
 type: Tutorial
-description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
+description: 本教學課程將幫助您開始使用串流獲取API，這是Adobe Experience Platform資料獲取服務API的一部分。
 exl-id: 23c03ace-795f-4a92-a220-c47ee86cec64
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -12,10 +12,10 @@ ht-degree: 0%
 
 ---
 
-# 使用API创建流连接
+# 使用API建立串流連線
 
-要开始将数据流式传输到Adobe Experience Platform，需要注册流连接。 在注册流连接时，您需要提供一些关键详细信息，如流数据源。
+需要串流連線註冊，才能開始將資料串流到Adobe Experience Platform。 註冊串流連線時，您需要提供一些關鍵細節，例如串流資料的來源。
 
-注册流连接后，作为数据生成者，您将拥有一个唯一的URL，可用于将数据流式传输到Platform。
+註冊串流連線後，身為資料製作者的您將擁有唯一URL，此URL可用來將資料串流至Platform。
 
-要了解如何创建经过身份验证的流连接，请阅读 [HTTP API源API指南](../../sources/tutorials/api/create/streaming/http.md).
+若要瞭解如何建立已驗證的串流連線，請參閱 [HTTP API來源API指南](../../sources/tutorials/api/create/streaming/http.md).

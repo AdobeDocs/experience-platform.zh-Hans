@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首頁；熱門主題
 solution: Experience Platform
-title: 配置数据集以捕获同意和首选项数据
-description: 了解如何配置体验数据模型(XDM)架构和数据集，以在Adobe Experience Platform中捕获同意和首选项数据。
+title: 設定資料集以擷取同意和偏好設定資料
+description: 瞭解如何設定Experience Data Model (XDM)結構描述和資料集，以擷取Adobe Experience Platform中的同意和偏好設定資料。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
@@ -11,40 +11,40 @@ ht-degree: 0%
 
 ---
 
-# 配置数据集以捕获同意和首选项数据
+# 設定資料集以擷取同意和偏好設定資料
 
-为了让Adobe Experience Platform处理您的客户同意/首选项数据，必须将该数据发送到架构中包含与同意和其他权限相关字段的数据集。 具体而言，此数据集必须基于 [!DNL XDM Individual Profile] 类，并启用以在中使用 [!DNL Real-Time Customer Profile].
+為了讓Adobe Experience Platform處理您的客戶同意/偏好設定資料，該資料必須傳送至其結構描述包含與同意和其他許可權相關欄位的資料集。 具體而言，此資料集必須以 [!DNL XDM Individual Profile] 類別，並啟用以用於中 [!DNL Real-Time Customer Profile].
 
-本文档提供了配置数据集以处理Experience Platform中的同意数据的步骤。 有关在平台中处理同意/首选项数据的完整工作流程的概述，请参阅 [同意处理概述](./overview.md).
+本檔案提供設定資料集的步驟，以便在Experience Platform中處理同意資料。 如需Platform中處理同意/偏好設定資料的完整工作流程總覽，請參閱 [同意處理概觀](./overview.md).
 
 >[!IMPORTANT]
 >
->本指南中的示例使用一组标准化字段来表示客户同意值，这些字段由 [[!UICONTROL 同意和首选项详细信息] 架构字段组](../../../../xdm/field-groups/profile/consents.md). 这些字段的结构旨在提供一个高效的数据模型，以涵盖许多常见的同意收集用例。
+>本指南中的範例使用標準化的欄位集來代表客戶同意值，如以下所定義 [[!UICONTROL 同意和偏好設定詳細資料] 結構描述欄位群組](../../../../xdm/field-groups/profile/consents.md). 這些欄位的結構，是為了提供有效的資料模型，以涵蓋許多常見的同意收集使用案例。
 >
->但是，您也可以定义自己的字段组，以根据自己的数据模型表示同意。 根据以下选项，请咨询您的法律团队，以获得符合您业务需求的同意数据模型的批准：
+>不過，您也可以根據自己的資料模型定義自己的欄位群組來表示同意。 請洽詢您的法律團隊，以根據下列選項取得符合您業務需求的同意資料模型核准：
 >
->* 标准化的同意字段组
->* 由贵组织创建的自定义同意字段组
->* 自定义同意字段组提供的标准化同意字段组和其他字段的组合
+>* 標準化的同意欄位群組
+>* 由您的組織建立的自訂同意欄位群組
+>* 標準化同意欄位群組和自訂同意欄位群組提供之其他欄位的組合
 
 
 ## 先决条件
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [体验数据模型(XDM)](../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-   * [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块。
-* [实时客户资料](../../../../profile/home.md):将来自不同来源的客户数据整合到一个完整、统一的视图中，同时为每个客户交互提供一个加盖时间戳的可操作帐户。
+* [體驗資料模型(XDM)](../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+   * [結構描述組合基本概念](../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊。
+* [即時客戶個人檔案](../../../../profile/home.md)：將不同來源的客戶資料整合至完整、統一的檢視中，並針對每個客戶互動提供可採取行動且附有時間戳記的說明。
 
 >[!IMPORTANT]
 >
->本教程假定您知道 [!DNL Profile] 平台中用于捕获客户属性信息的架构。 无论您使用何种方法收集同意数据，此模式都必须 [为实时客户用户档案启用](../../../../xdm/ui/resources/schemas.md#profile). 此外，架构的主标识不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受到限制，请咨询您的法律顾问。
+>本教學課程假設您知道 [!DNL Profile] Platform中要用來擷取客戶屬性資訊的結構描述。 無論您使用何種方法來收集同意資料，此結構描述都必須 [啟用即時客戶個人檔案](../../../../xdm/ui/resources/schemas.md#profile). 此外，結構描述的主要身分不能是禁止用於興趣型廣告（例如電子郵件地址）的直接可識別欄位。 如果您不確定哪些欄位受到限制，請洽詢法律顧問。
 
-## [!UICONTROL 同意和首选项详细信息] 字段组结构 {#structure}
+## [!UICONTROL 同意和偏好設定詳細資料] 欄位群組結構 {#structure}
 
-的 [!UICONTROL 同意和首选项详细信息] 字段组为架构提供标准化的同意字段。 目前，此字段组仅与基于 [!DNL XDM Individual Profile] 类。
+此 [!UICONTROL 同意和偏好設定詳細資料] 欄位群組提供標準化同意欄位給結構描述。 目前，此欄位群組僅與根據下列條件的結構描述相容： [!DNL XDM Individual Profile] 類別。
 
-字段组提供单个对象类型字段， `consents`，其子属性将捕获一组标准化同意字段。 以下JSON是数据类型的示例 `consents` 在摄取数据时预期：
+欄位群組提供單一物件型別欄位， `consents`，其子屬性會擷取一組標準化的同意欄位。 以下JSON為資料型別的範例 `consents` 資料擷取時預期：
 
 ```json
 {
@@ -91,124 +91,124 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关 `consents`，请参阅 [[!UICONTROL 同意和首选项详细信息] 字段组](../../../../xdm/field-groups/profile/consents.md).
+>如需中子屬性的結構和意義的詳細資訊 `consents`，請參閱 [[!UICONTROL 同意和偏好設定詳細資料] 欄位群組](../../../../xdm/field-groups/profile/consents.md).
 
-## 将必填字段组添加到 [!DNL Profile] 模式 {#add-field-group}
+## 將必要的欄位群組新增至 [!DNL Profile] 綱要 {#add-field-group}
 
-要使用Adobe标准收集同意数据，您必须具有启用了用户档案的架构，该架构包含以下两个字段组：
+為了使用Adobe標準收集同意資料，您必須具有包含下列兩個欄位群組的設定檔啟用結構描述：
 
-* [!UICONTROL 同意和首选项详细信息]
-* [!UICONTROL IdentityMap] （使用Platform Web或Mobile SDK发送同意信号时需要使用此参数）
+* [!UICONTROL 同意和偏好設定詳細資料]
+* [!UICONTROL 身分對應] （使用Platform Web或Mobile SDK傳送同意訊號時需要）
 
-在平台UI中，选择 **[!UICONTROL 模式]** 在左侧导航中，选择 **[!UICONTROL 浏览]** 选项卡，以显示现有架构的列表。 从此处，选择 [!DNL Profile] — 启用了要向其添加同意字段的架构。 此部分中的屏幕截图使用 [模式创建教程](../../../../xdm/tutorials/create-schema-ui.md) 例如。
+在Platform UI中選取 **[!UICONTROL 結構描述]** 在左側導覽中，然後選取 **[!UICONTROL 瀏覽]** 標籤來顯示現有結構描述的清單。 從這裡，選取 [!DNL Profile] — 您想要新增同意欄位的已啟用結構描述。 本節中的熒幕擷取畫面使用內建於 [結構描述建立教學課程](../../../../xdm/tutorials/create-schema-ui.md) 例如。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/select-schema.png)
 
 >[!TIP]
 >
->您可以使用工作区的搜索和筛选功能来帮助更轻松地查找架构。 请参阅 [浏览XDM资源](../../../../xdm/ui/explore.md) 以了解更多信息。
+>您可以使用工作區的搜尋和篩選功能，輕鬆找到您的結構描述。 請參閱指南： [探索XDM資源](../../../../xdm/ui/explore.md) 以取得詳細資訊。
 
-的 [!DNL Schema Editor] ，显示画布中架构的结构。 在画布的左侧，选择 **[!UICONTROL 添加]** 下 **[!UICONTROL 字段组]** 中。
+此 [!DNL Schema Editor] 會出現，並在畫布中顯示結構描述的結構。 在畫布左側，選取 **[!UICONTROL 新增]** 在 **[!UICONTROL 欄位群組]** 區段。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-field-group.png)
 
-的 **[!UICONTROL 添加字段组]** 对话框。 从此处选择 **[!UICONTROL 同意和首选项详细信息]** 列表。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。
+此 **[!UICONTROL 新增欄位群組]** 對話方塊隨即顯示。 從此處選取 **[!UICONTROL 同意和偏好設定詳細資料]** 從清單中。 您可以選擇使用搜尋列來縮小結果範圍，以便更輕鬆地找到欄位群組。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-group-dialog.png)
 
-接下来，查找 **[!UICONTROL IdentityMap]** 字段组，并将其选中。 在右边栏中列出两个字段组后，选择 **[!UICONTROL 添加字段组]**.
+接下來，尋找 **[!UICONTROL 身分對應]** 欄位群組，並加以選取。 將兩個欄位群組都列在右側邊欄中後，選取 **[!UICONTROL 新增欄位群組]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/identitymap.png)
 
-画布将重新出现，显示 `consents` 和 `identityMap` 字段已添加到架构结构中。 如果您需要标准字段组未捕获的其他同意和首选项字段，请参阅 [向架构添加自定义同意和首选项字段](#custom-consent). 否则，请选择 **[!UICONTROL 保存]** 完成对架构的更改。
+畫布會重新出現，並顯示 `consents` 和 `identityMap` 欄位已新增至結構描述結構。 如果您需要標準欄位群組未擷取的其他同意和偏好設定欄位，請參閱附錄 [將自訂同意和偏好設定欄位新增到結構描述](#custom-consent). 否則，請選取 **[!UICONTROL 儲存]** 以完成架構的變更。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/save-schema.png)
 
 >[!IMPORTANT]
 >
->如果要创建新架构，或编辑尚未为配置文件启用的现有架构，则必须 [为配置文件启用架构](../../../../xdm/ui/resources/schemas.md#profile) 保存之前。
+>如果您要建立新結構描述，或編輯尚未為設定檔啟用的現有結構描述，您必須 [為設定檔啟用結構描述](../../../../xdm/ui/resources/schemas.md#profile) 儲存之前。
 
-如果您编辑的架构由 [!UICONTROL 配置文件数据集] 在您的Platform Web SDK数据流中指定，该数据集现在将包含新的同意字段。 您现在可以返回到 [同意处理指南](./overview.md#merge-policies) 继续配置Experience Platform以处理同意数据的过程。 如果您尚未为此架构创建数据集，请按照下一部分中的步骤操作。
+如果您編輯的結構描述是由 [!UICONTROL 設定檔資料集] 已在您的Platform Web SDK資料流中指定，該資料集現在會包含新的同意欄位。 您現在可以返回 [同意處理指南](./overview.md#merge-policies) 以繼續設定Experience Platform以處理同意資料的程式。 如果您尚未為此結構描述建立資料集，請依照下一節中的步驟操作。
 
-## 根据您的同意架构创建数据集 {#dataset}
+## 根據您的同意結構描述建立資料集 {#dataset}
 
-在创建包含同意字段的架构后，您必须创建一个数据集，以最终摄取客户的同意数据。 必须为 [!DNL Real-Time Customer Profile].
+使用同意欄位建立結構描述後，您必須建立資料集，以便最終擷取客戶的同意資料。 此資料集必須啟用 [!DNL Real-Time Customer Profile].
 
-要开始，请选择 **[!UICONTROL 数据集]** 在左侧导航中，选择 **[!UICONTROL 创建数据集]** 中。
+若要開始，請選取 **[!UICONTROL 資料集]** 在左側導覽中，然後選取 **[!UICONTROL 建立資料集]** 右上角。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/create-dataset.png)
 
-在下一页，选择 **[!UICONTROL 从架构创建数据集]**.
+在下一頁，選取 **[!UICONTROL 從結構描述建立資料集]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/from-schema.png)
 
-的 **[!UICONTROL 从架构创建数据集]** 此时会显示工作流，从 **[!UICONTROL 选择架构]** 中。 在提供的列表中，找到您之前创建的同意架构之一。 您可以选择使用搜索栏来缩小结果范围并更轻松地查找架构。 选择所需架构旁边的单选按钮，然后选择 **[!UICONTROL 下一个]** 继续。
+此 **[!UICONTROL 從結構描述建立資料集]** 工作流程隨即出現，從 **[!UICONTROL 選取結構描述]** 步驟。 在提供的清單中，找到您先前建立的其中一個同意結構描述。 您可以選擇使用搜尋列來縮小結果範圍，並更容易找到您的結構描述。 選取所需綱要旁的單選按鈕，然後選取 **[!UICONTROL 下一個]** 以繼續。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/select-dataset-schema.png)
 
-的 **[!UICONTROL 配置数据集]** 中。 在选择之前，为数据集提供唯一且易于识别的名称和描述 **[!UICONTROL 完成]**.
+此 **[!UICONTROL 設定資料集]** 步驟隨即顯示。 在選取之前，為資料集提供唯一、易於識別的名稱和說明 **[!UICONTROL 完成]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/dataset-details.png)
 
-此时会显示新创建数据集的详细信息页面。 如果数据集基于您的时间系列架构，则该过程会完成。 如果数据集基于您的记录架构，则此过程的最后一步是启用该数据集以在中使用 [!DNL Real-Time Customer Profile].
+新建立資料集的詳細資訊頁面隨即顯示。 如果資料集是以您的時間序列結構描述為基礎，則程式已完成。 如果資料集是以您的記錄結構描述為基礎，則此程式的最後一步是啟用資料集以用於中 [!DNL Real-Time Customer Profile].
 
-在右边栏中，选择 **[!UICONTROL 用户档案]** 切换。
+在右邊欄中，選取 **[!UICONTROL 設定檔]** 切換。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/profile-toggle.png)
 
-最后，选择 **[!UICONTROL 启用]** 在确认弹出窗口中，为 [!DNL Profile].
+最後，選取 **[!UICONTROL 啟用]** 在確認彈出視窗中啟用結構描述 [!DNL Profile].
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-数据集现已保存并启用，可在中使用 [!DNL Profile]. 如果您计划使用Platform Web SDK将同意数据发送到用户档案，则必须选择此数据集作为 [!UICONTROL 配置文件数据集] 设置 [数据流](../../../../edge/datastreams/overview.md).
+資料集現在已儲存並啟用，以供使用 [!DNL Profile]. 如果您打算使用Platform Web SDK將同意資料傳送至設定檔，您必須選取此資料集作為 [!UICONTROL 設定檔資料集] 設定您的 [資料串流](../../../../edge/datastreams/overview.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已将同意字段添加到 [!DNL Profile] — 已启用架构，其数据集将用于使用Platform Web SDK或直接摄取XDM来摄取同意数据。
+依照本教學課程，您已新增同意欄位至 [!DNL Profile] — 啟用的結構描述，其資料集將用於使用Platform Web SDK或直接XDM擷取來擷取同意資料。
 
-您现在可以返回到 [同意处理概述](./overview.md#merge-policies) 继续配置Experience Platform以处理同意数据。
+您現在可以返回 [同意處理概觀](./overview.md#merge-policies) 以繼續設定Experience Platform以處理同意資料。
 
 ## 附录
 
-以下部分包含有关创建数据集以摄取客户同意和首选项数据的其他信息。
+下節包含建立資料集以擷取客戶同意和偏好設定資料的其他資訊。
 
-### 在架构中添加自定义同意和首选项字段 {#custom-consent}
+### 將自訂同意和偏好設定欄位新增到結構描述 {#custom-consent}
 
-如果您需要捕获标准所表示的同意信号以外的其他同意信号 [!UICONTROL 同意和首选项详细信息] 字段组中，您可以使用自定义XDM组件来增强您的同意架构，以满足您的特定业务需求。 本节概述了如何自定义同意模式以将这些信号摄取到用户档案的基本原则。
+如果您需要擷取標準所代表同意訊號以外的其他同意訊號 [!UICONTROL 同意和偏好設定詳細資料] 欄位群組，則可使用自訂XDM元件來增強同意綱要，以符合您的特定業務需求。 本節概述如何自訂您的同意綱要的基本原則，以便將這些訊號擷取到設定檔中。
 
 >[!IMPORTANT]
 >
->平台Web SDK和移动SDK不支持在其同意更改命令中使用自定义字段。 目前，将自定义同意字段摄取到用户档案的唯一方法是 [批量摄取](../../../../ingestion/batch-ingestion/overview.md) 或 [源连接](../../../../sources/home.md).
+>Platform Web和Mobile SDK的同意變更命令不支援自訂欄位。 目前將自訂同意欄位擷取至設定檔的唯一方式是透過 [批次擷取](../../../../ingestion/batch-ingestion/overview.md) 或 [來源連線](../../../../sources/home.md).
 
-强烈建议您使用 [!UICONTROL 同意和首选项详细信息] 字段组作为同意数据结构的基线，并根据需要添加其他字段，而不是尝试从头开始创建整个结构。
+強烈建議您使用 [!UICONTROL 同意和偏好設定詳細資料] 欄位群組作為同意資料結構的基準，並根據需要新增其他欄位，而不是嘗試從頭開始建立整個結構。
 
-要向标准字段组的结构添加自定义字段，您必须首先创建自定义字段组。 添加 [!UICONTROL 同意和首选项详细信息] 字段组，选择 **加号(+)** 图标 **[!UICONTROL 字段组]** ，然后选择 **[!UICONTROL 创建新字段组]**. 为字段组提供名称和可选描述，然后选择 **[!UICONTROL 添加字段组]**.
+若要將自訂欄位新增至標準欄位群組的結構，您必須先建立自訂欄位群組。 新增 [!UICONTROL 同意和偏好設定詳細資料] 欄位群組至結構描述，選取 **加(+)** 圖示於 **[!UICONTROL 欄位群組]** 區段，然後選取 **[!UICONTROL 建立新欄位群組]**. 提供欄位群組的名稱和選擇性說明，然後選取 **[!UICONTROL 新增欄位群組]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field-group.png)
 
-的 [!DNL Schema Editor] 在左边栏中选中新的自定义字段组后，将重新显示。 在画布中，将显示用于向架构结构添加自定义字段的控件。 要添加新的同意或首选项字段，请选择 **加号(+)** 图标 `consents` 对象。
+此 [!DNL Schema Editor] 會在左側邊欄中選取新的自訂欄位群組時重新顯示。 在畫布中顯示可讓您新增自訂欄位到結構描述結構的控制項。 若要新增同意或偏好設定欄位，請選取 **加(+)** 圖示加以存取 `consents` 物件。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field.png)
 
-在 `consents` 对象。 由于您将自定义字段添加到标准XDM对象，因此新字段会在与租户ID命名的对象下创建。
+新欄位會出現在 `consents` 物件。 由於您要將自訂欄位新增至標準XDM物件，新欄位會在以租使用者ID命名的物件下建立。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/nested-tenantId.png)
 
-在右边栏的 **[!UICONTROL 字段属性]**，提供字段的名称和描述。 选择字段的 **[!UICONTROL 类型]**，则必须在自定义同意或首选项字段中使用相应的标准数据类型：
+在右邊欄中，於 **[!UICONTROL 欄位屬性]**，提供欄位的名稱和說明。 選取欄位的 **[!UICONTROL 型別]**，您必須對自訂同意或偏好設定欄位使用適當的標準資料型別：
 
-* [[!UICONTROL 一般同意字段]](../../../../xdm/data-types/consent-field.md)
-* [[!UICONTROL 一般营销首选项字段]](../../../../xdm/data-types/marketing-field.md)
-* [[!UICONTROL 包含订阅的通用营销首选项字段]](../../../../xdm/data-types/marketing-field-subscriptions.md)
-* [[!UICONTROL 一般个性化首选项字段]](../../../../xdm/data-types/personalization-field.md)
+* [[!UICONTROL 一般同意欄位]](../../../../xdm/data-types/consent-field.md)
+* [[!UICONTROL 通用行銷偏好設定欄位]](../../../../xdm/data-types/marketing-field.md)
+* [[!UICONTROL 具有訂閱的一般行銷偏好設定欄位]](../../../../xdm/data-types/marketing-field-subscriptions.md)
+* [[!UICONTROL 通用個人化偏好設定欄位]](../../../../xdm/data-types/personalization-field.md)
 
-完成后，选择 **[!UICONTROL 应用]**.
+完成後，選取 **[!UICONTROL 套用]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-properties.png)
 
-同意或首选项字段将添加到架构结构中。 请注意， [!UICONTROL 路径] 显示在右边栏中的包含 `_tenantId` 命名空间。 每当您在数据操作中引用此字段的路径时，都必须包含此命名空间。
+同意或偏好設定欄位會新增至結構描述結構。 請注意 [!UICONTROL 路徑] 顯示在右側邊欄中，包含 `_tenantId` 名稱空間。 每當您在資料作業中參照此欄位的路徑時，都必須包含此名稱空間。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-added.png)
 
-按照上述步骤继续添加您需要的同意和首选项字段。 完成后，选择 **[!UICONTROL 保存]** 确认更改。
+請依照上述步驟繼續新增您需要的同意和偏好設定欄位。 完成後，選取 **[!UICONTROL 儲存]** 以確認您的變更。
 
-如果尚未为此架构创建数据集，请继续 [创建数据集](#dataset).
+如果您尚未為此結構描述建立資料集，請繼續前往一節： [建立資料集](#dataset).

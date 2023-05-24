@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实例；敏感的机器学习api
+keywords: Experience Platform；開發人員指南；端點；Data Science Workspace；熱門主題；mlinstances；sensei機器學習api
 solution: Experience Platform
-title: MLInstances API端点
-description: MLInstance是现有引擎与一组适当的配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
+title: MLInstances API端點
+description: MLInstance是現有引擎與定義任何訓練引數、評分引數或硬體資源設定的適當設定組的配對。
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 4%
 
 ---
 
-# MLInstances端点
+# MLInstances端點
 
-MLInstance是现有 [引擎](./engines.md) 使用一组适当的配置来定义任何培训参数、评分参数或硬件资源配置。
+MLInstance是現有專案的配對 [引擎](./engines.md) 搭配適當的設定集，以定義任何訓練引數、評分引數或硬體資源設定。
 
-## 创建MLInstance {#create-an-mlinstance}
+## 建立MLInstance {#create-an-mlinstance}
 
-您可以通过执行POST请求来创建MLInstance，同时提供由有效引擎ID(`{ENGINE_ID}`)和一组适当的默认配置。
+您可以在提供包含有效引擎ID的要求裝載時，執行POST要求來建立MLInstance (`{ENGINE_ID}`)和一組適當的預設設定。
 
-如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行培训和评分。 请参阅 [PySpark和Spark资源配置](./appendix.md#resource-config) 和 [Python CPU和GPU配置](./appendix.md#cpu-gpu-config) 以了解更多信息。
+如果「引擎ID」參照PySpark或Spark引擎，您就可以設定計算資源的數量，例如核心數量或記憶體數量。 如果參考了Python引擎，您可以選擇使用CPU或GPU進行訓練和評分。 請參閱附錄中有關 [PySpark和Spark資源設定](./appendix.md#resource-config) 和 [Python CPU和GPU設定](./appendix.md#cpu-gpu-config) 以取得詳細資訊。
 
 **API格式**
 
@@ -75,14 +75,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | MLInstance的所需名称。 与此MLInstance对应的模型将继承此值，该值将作为模型的名称显示在UI中。 |
-| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，该值将在UI中显示为模型的描述。 此属性是必需的。如果不想提供描述，请将其值设置为空字符串。 |
-| `engineId` | 现有引擎的ID。 |
-| `tasks` | 一组用于培训、评分或功能管道的配置。 |
+| `name` | 所需的MLInstance名稱。 與此MLInstance對應的模型將繼承此值，以作為模型的名稱顯示在UI中。 |
+| `description` | MLInstance的可選說明。 與此MLInstance對應的模型將繼承此值，以作為模型的說明顯示在UI中。 此属性是必需的。如果您不想提供說明，請將其值設為空字串。 |
+| `engineId` | 現有引擎的識別碼。 |
+| `tasks` | 訓練、評分或功能管道的一組設定。 |
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含新创建的MLInstance的详细信息，包括其唯一标识符(`id`)。
+成功回應會傳回包含新建立MLInstance詳細資訊的裝載，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -127,9 +127,9 @@ curl -X POST \
 }
 ```
 
-## 检索MLInstances列表
+## 擷取MLInstances清單
 
-您可以通过执行单个GET请求来检索MLInstances列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
+您可以透過執行單一GET要求來擷取MLInstances清單。 若要協助篩選結果，您可以在請求路徑中指定查詢引數。 如需可用查詢的清單，請參閱附錄 [用於資產擷取的查詢引數](./appendix.md#query).
 
 **API格式**
 
@@ -141,8 +141,8 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 其中一个 [可用查询参数](./appendix.md#query) 用于筛选结果。 |
-| `{VALUE}` | 前一查询参数的值。 |
+| `{QUERY_PARAMETER}` | 其中一項 [可用的查詢引數](./appendix.md#query) 用於篩選結果。 |
+| `{VALUE}` | 上一個查詢引數的值。 |
 
 **请求**
 
@@ -157,7 +157,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回MLInstances列表及其详细信息。
+成功的回應會傳回MLInstances清單及其詳細資料。
 
 ```json
 {
@@ -195,9 +195,9 @@ curl -X GET \
 }
 ```
 
-## 检索特定MLInstance {#retrieve-specific}
+## 擷取特定MLInstance {#retrieve-specific}
 
-您可以通过执行GET请求来检索特定MLInstance的详细信息，该请求在请求路径中包含所需MLInstance的ID。
+您可以執行GET要求，在要求路徑中包含所需MLInstance的ID，藉此擷取特定MLInstance的詳細資訊。
 
 **API格式**
 
@@ -222,7 +222,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回MLInstance的详细信息。
+成功的回應會傳回MLInstance的詳細資訊。
 
 ```json
 {
@@ -270,13 +270,13 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以通过PUT请求覆盖现有MLInstance的属性来更新现有MLInstance，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负载。
+您可以透過PUT要求（要求路徑中包含目標MLInstance的ID）來覆寫其屬性，並提供包含已更新屬性的JSON裝載，以更新現有的MLInstance。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求， [通过ID检索MLInstance](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改的JSON对象的整个作为PUT请求的有效负载应用。
+>為確保此PUT請求成功，建議您先執行GET請求 [依ID擷取MLInstance](#retrieve-specific). 接著，修改並更新傳回的JSON物件，並將整個修改過的JSON物件套用為PUT請求的裝載。
 
-以下示例API调用将在最初具有这些属性的同时更新MLInstance的培训和评分参数：
+以下範例API呼叫最初擁有這些屬性時，將會更新MLInstance的訓練和評分引數：
 
 ```json
 {
@@ -365,7 +365,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回包含MLInstance更新详细信息的有效负载。
+成功的回應會傳回包含MLInstance更新詳細資訊的裝載。
 
 ```json
 {
@@ -402,9 +402,9 @@ curl -X PUT \
 }
 ```
 
-## 按引擎ID删除MLInstances
+## 依引擎ID刪除MLInstances
 
-您可以通过执行包含引擎ID作为查询参数的DELETE请求，删除共享同一引擎的所有MLInstance。
+您可以透過執行包含引擎ID作為查詢引數的DELETE請求來刪除共用相同引擎的所有MLInstances。
 
 **API格式**
 
@@ -414,7 +414,7 @@ DELETE /mlInstances?engineId={ENGINE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENGINE_ID}` | 有效的引擎ID。 |
+| `{ENGINE_ID}` | 有效的引擎識別碼。 |
 
 **请求**
 
@@ -437,9 +437,9 @@ curl -X DELETE \
 }
 ```
 
-## 删除MLInstance
+## 刪除MLInstance
 
-您可以通过执行DELETE请求来删除单个MLInstance，该请求在请求路径中包含目标MLInstance的ID。
+您可以透過執行DELETE要求（要求路徑中包含目標MLInstance的ID）來刪除單一MLInstance。
 
 **API格式**
 

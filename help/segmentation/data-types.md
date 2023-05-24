@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据类型；数据类型；数据类型；分段数据类型；分段；分段服务；分段服务数据类型；
+keywords: Experience Platform；首頁；熱門主題；資料型別；資料型別；資料型別；資料型別；分段資料型別；分段；分段；分段服務；分段服務資料型別；
 solution: Experience Platform
-title: Segmentation Service中支持的数据类型
-description: Adobe分段服务支持所有体验数据模型(XDM)数据类型。 构成区段定义的规则通过以下数据类型进行了上下文相关化。
+title: 分段服務中支援的資料型別
+description: Adobe細分服務支援所有Experience Data Model (XDM)資料型別。 構成區段定義的規則會依下列資料型別進行內容化。
 exl-id: 73f932a7-f864-4566-ade7-c148a12dc83c
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,66 +11,66 @@ ht-degree: 3%
 
 ---
 
-# Segmentation Service中支持的数据类型
+# 分段服務中支援的資料型別
 
-Adobe Experience Platform Segmentation Service支持所有体验数据模型(XDM)数据类型。 构成区段定义的规则通过以下数据类型进行了上下文相关化。
+Adobe Experience Platform Segmentation Service支援所有Experience Data Model (XDM)資料型別。 構成區段定義的規則會依下列資料型別進行內容化。
 
-## 字符串数据
+## 字串資料
 
-区段定义使用字符串数据为区段受众定义非数值约束，如“国家/地区名称”或“忠诚度计划级别”。
+區段定義會使用字串資料來定義區段對象的非數值限制，例如「國家/地區名稱」或「忠誠計畫等級」。
 
-使用逻辑、包含/排除和比较语句将字符串数据包含在区段定义中。 在将字符串属性添加到区段定义后，您可以使用字符串相关语句根据其他字符串字段对其进行评估。
+字串資料會使用邏輯、包含/排除和比較陳述式包含在區段定義中。 將字串屬性新增至區段定義後，您可以使用字串相關陳述式，根據其他字串欄位評估該屬性。
 
-| 语句类型 | 示例 |
+| 陳述式型別 | 示例 |
 | -------------- | -------- |
-| 逻辑 | `and`、`or`、`not` |
-| 包容/排斥 | `include`, `must` `exist`, `exclude`, `must not exist` |
-| 比较 | `equals`、`does not equal`、`contains`、`starts with` |
+| 邏輯 | `and`、`or`、`not` |
+| 包含/排除 | `include`, `must` `exist`, `exclude`, `must not exist` |
+| 比較 | `equals`、`does not equal`、`contains`、`starts with` |
 
-## 日期数据
+## 日期資料
 
-日期数据允许您通过使用特定的开始/结束日期或使用与日期相关的语句（如下表所示），将基于时间的上下文分配给区段定义。 一种实施方式可能是创建随时与您的品牌进行交互的客户受众 *今年* 而且也很活跃 *within* 最近几天。
+日期資料可讓您透過使用特定開始/結束日期或使用日期相關陳述式，將基於時間的內容指派給區段定義，如下表所示。 其中一項實作可能是建立隨時與您的品牌互動的客戶受眾 *今年* 並且也一直處於活動狀態 *範圍* 過去幾天。
 
-| 示例字段 | 与日期相关的报表 | 时间线 |
+| 範例欄位 | 日期相關陳述式 | 时间线 |
 | ------------- | ------------------------ | --------- |
-| person.firstPurchase | `today`、`yesterday`、`this month`、`this year` | 与区段构建日期相关。 |
-| person.lastPurchase | `in last`、`during`、`before`、`after`、`within` | 在任何给定周/月内相关。 |
+| person.firstPurchase | `today`、`yesterday`、`this month`、`this year` | 與建立區段的日期相關。 |
+| person.lastPurchase | `in last`、`during`、`before`、`after`、`within` | 在任何指定周/月內皆相關。 |
 
-## 体验事件
+## 體驗事件
 
-作为Adobe Experience Platform模式， [!DNL XDM ExperienceEvents] 记录显式和隐式客户与 [!DNL Platform] — 集成应用程序，包括交互时系统的快照。 [!DNL ExperienceEvents] 是事实记录。 因此，它们是区段定义期间可供您使用的数据源。
+身為Adobe Experience Platform結構描述， [!DNL XDM ExperienceEvents] 紀錄以下專案的明確和隱含客戶互動： [!DNL Platform] — 整合的應用程式，包括進行互動時的系統快照。 [!DNL ExperienceEvents] 是事實記錄。 因此，區段是您在區段定義期間可用的資料來源。
 
-如下表所示，事件数据使用有助于优化事件行为和指定事件属性的关键词进行呈现。
+如下表所示，事件資料會使用關鍵字呈現，以協助調整事件行為並指定事件屬性。
 
-| 关键词 | 使用 |
+| 關鍵字 | 使用 |
 | ------- | --- |
-| 包括/排除 | 通过包含或遗漏数据描述事件的行为。 |
-| 任意/全部 | 帮助确定符合条件的区段的数量。 |
-| “应用时间规则”切换按钮 | 合并日期数据。 |
-| 等于、不等于、开始于、不开始于、结束于、不结束于、包含、不包含、存在、不存在 | 合并字符串数据。 |
+| 包括/排除 | 透過包含或遺漏資料來說明事件的行為。 |
+| 任何/全部 | 協助判斷合格區段的數量。 |
+| 「套用時間規則」切換按鈕 | 合併日期資料。 |
+| 等於、不等於、開頭為、開頭為、結尾為、結尾為、包含、不包含、存在、不存在 | 合併字串資料。 |
 
 ### 受众共享
 
-外部受众还可以用作新区段定义的组件，从而将其属性规则添加到新区段。
+外部受眾也可作為新區段定義的元件，將其屬性規則新增至新區段。
 
-目前，仅Adobe Audience Manager作为外部受众受支持，并且将来会启用其他源。 有关在Platform中使用Adobe Audience Manager受众的更多信息，请参阅 [Adobe Audience Manager文档中的受众共享指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+目前僅支援Adobe Audience Manager作為外部對象，未來會啟用其他來源。 如需有關搭配Platform使用Adobe Audience Manager對象的詳細資訊，請參閱 [Adobe Audience Manager檔案中的對象共用指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
 
-### 区段共享
+### 區段共用
 
-在Platform中创建的区段可以在其他 [Adobe Experience Cloud Core Services](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). 要启用此功能，您需要联系解决方案架构师或顾问。
+在Platform中建立的區段可以用在其他 [Adobe Experience Cloud核心服務](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). 若要啟用此功能，您需要連絡解決方案架構師或顧問。
 
-## 其他数据类型
+## 其他資料型別
 
-除了上述数据类型之外，支持的数据类型列表还包括：
+除了上述的資料型別之外，支援的資料型別清單也包含：
 
-- 统一资源标识符(URI)
-- 枚举
+- 統一資源識別碼(URI)
+- 列舉
 - 数值
-- 长
+- 長
 - 整数
 - 短
-- 字节
-- 布尔型
-- 数组
+- 位元組
+- 布尔值
+- 陣列
 - 对象
 - 地图

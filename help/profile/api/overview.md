@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件
-title: 实时客户资料API指南
-description: 实时客户配置文件API允许开发人员探索和使用配置文件数据，包括查看配置文件、创建和更新合并策略、导出或采样配置文件数据，以及删除不再需要或错误添加的配置文件数据。 参阅本指南，了解如何使用 API 执行关键操作。
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；統一設定檔；統一設定檔；統一；設定檔；rtcp；啟用設定檔；啟用設定檔
+title: Real-Time Customer Profile API指南
+description: 即時客戶設定檔API可讓開發人員探索和使用設定檔資料，包括檢視設定檔、建立和更新合併原則、匯出或範例設定檔資料，以及刪除不再需要或錯誤新增的設定檔資料。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
 source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
@@ -12,13 +12,13 @@ ht-degree: 1%
 
 # [!DNL Real-Time Customer Profile] API指南
 
-[!DNL Real-Time Customer Profile] 使您能够在Adobe Experience Platform中全面了解每个客户。 [!DNL Profile] 允许您将来自多个渠道（如在线、离线、CRM和第三方数据）的不同客户数据整合到一个统一视图中，为每次客户交互提供一个可操作且带有时间戳的帐户。
+[!DNL Real-Time Customer Profile] 可讓您在Adobe Experience Platform中檢視每個個別客戶的整體檢視。 [!DNL Profile] 可讓您將來自多個管道（例如線上、離線、CRM和協力廠商資料）的不同客戶資料整合為統一的檢視，針對每個客戶互動提供可採取行動且附有時間戳記的帳戶。
 
-的 [!DNL Real-Time Customer Profile] API包括多个端点，如下所述。 有关详细信息，请访问各个端点指南，并参阅 [入门指南](getting-started.md) 有关所需标头、读取示例API调用等的重要信息。
+此 [!DNL Real-Time Customer Profile] API包含多個端點，概述如下。 如需詳細資訊，請參閱個別端點指南，並參閱 [快速入門手冊](getting-started.md) 如需必要標題的重要資訊，請參閱範例API呼叫等。
 
-要查看所有可用的端点和CRUD操作，请访问 [实时客户配置文件API引用调整器](https://www.adobe.com/go/profile-apis-en).
+若要檢視所有可用的端點和CRUD作業，請造訪 [即時客戶設定檔API參考Swagger](https://www.adobe.com/go/profile-apis-en).
 
-有关使用的指南 [!DNL Real-Time Customer Profile] 数据 [!DNL Experience Platform] UI，请参阅 [用户档案用户指南](../ui/user-guide.md).
+使用指南 [!DNL Real-Time Customer Profile] 中的資料 [!DNL Experience Platform] UI，請參閱 [設定檔使用手冊](../ui/user-guide.md).
 
 <!-- ## (Alpha) Computed attributes {#computed-attributes}
 
@@ -32,36 +32,36 @@ Each computed attribute contains an expression, or "rule", that evaluates incomi
 
 You can create, view, edit, and delete computed attributes using the `config/computedAttributes` endpoint. To learn how to use computed attributes, refer to the [computed attributes overview](../computed-attributes/overview.md). For API operations, visit the [computed attributes API endpoint guide](../computed-attributes/ca-api.md). -->
 
-## 边缘投影 {#edge-projections}
+## 邊緣投影 {#edge-projections}
 
-Adobe Experience Platform通过使数据能够在战略位置称为“边缘”的服务器上轻松访问，从而实现客户体验的实时个性化。 的 [!DNL Real-Time Customer Profile] API通过称为“投影”的组件提供了用于处理边缘的端点。 这包括用于确定应将哪些数据投影到每个边缘的投影配置，以及用于定义投影路由位置的投影目标。 有关使用边缘预测的详细信息，请访问 [投影配置和目标端点指南](edge-projections.md).
+Adobe Experience Platform可讓位於策略性位置（稱為「邊緣」）的伺服器輕鬆存取資料，進而實現客戶體驗的即時個人化。 此 [!DNL Real-Time Customer Profile] API透過稱為「投影」的元件提供處理邊緣的端點。 這包括投影設定，以決定要將哪些資料投影到每個邊緣，以及投影目的地，以定義要路由投影的位置。 如需使用Edge投影的詳細資訊，請瀏覽 [投影設定和目的地端點指南](edge-projections.md).
 
-## 实体([!DNL Profile] access) {#entities}
+## 實體([!DNL Profile] access) {#entities}
 
-通过Adobe Experience Platform，您可以 [!DNL Real-Time Customer Profile] 使用RESTful API或用户界面的数据。 要了解如何使用API访问实体（通常称为“用户档案”），请按照 [entities endpoint指南](entities.md). 使用 [!DNL Platform] UI，请参阅 [用户档案用户指南](../ui/user-guide.md).
+透過Adobe Experience Platform，您可以存取 [!DNL Real-Time Customer Profile] 使用RESTful API或使用者介面的資料。 若要瞭解如何使用API存取實體（通常稱為「設定檔」），請遵循以下說明的步驟 [實體端點指南](entities.md). 若要使用存取設定檔 [!DNL Platform] UI，請參閱 [設定檔使用手冊](../ui/user-guide.md).
 
-## 导出作业([!DNL Profile] 导出) {#profile-export}
+## 匯出工作([!DNL Profile] export) {#profile-export}
 
-[!DNL Real-Time Customer Profile] 数据可导出到数据集以进行进一步处理，如导出受众区段以进行激活或配置文件属性以进行报告。 受众区段的导出作业是 [!DNL Adobe Experience Platform Segmentation Service] API，请阅读 [segmentation export jobs endpoint指南](../../profile/api/export-jobs.md) 以了解更多。 有关如何为配置文件属性创建和管理导出作业的分步说明，请访问 [导出作业端点指南](export-jobs.md).
+[!DNL Real-Time Customer Profile] 資料可匯出至資料集以供進一步處理，例如匯出受眾區段以供啟用，或匯出設定檔屬性以供報告。 匯出對象區段的工作是 [!DNL Adobe Experience Platform Segmentation Service] API，請閱讀 [分段匯出作業端點指南](../../profile/api/export-jobs.md) 以深入瞭解。 如需如何建立和管理設定檔屬性的匯出工作的逐步指示，請造訪 [匯出作業端點指南](export-jobs.md).
 
-## 合并策略 {#merge-policies}
+## 合併原則 {#merge-policies}
 
-将来自多个源的数据汇集到 [!DNL Experience Platform]，合并策略是 [!DNL Platform] 用于确定数据的优先级以及将合并哪些数据以创建单个客户用户档案。 使用 [!DNL Real-Time Customer Profile] API中，您可以创建新的合并策略、管理现有策略，并为您的组织设置默认的合并策略。 要使用API处理合并策略，请访问 [合并策略终结点指南](merge-policies.md).
+將來自多個來源的資料彙集在一起時 [!DNL Experience Platform]，合併原則是指 [!DNL Platform] 使用來決定資料的優先順序以及將合併哪些資料以建立個別客戶設定檔。 使用 [!DNL Real-Time Customer Profile] API後，您可以建立新的合併原則、管理現有原則，並為您的組織設定預設合併原則。 若要使用API合併原則，請造訪 [合併原則端點指南](merge-policies.md).
 
-要进一步了解合并策略及其在Platform中的角色，请首先阅读 [合并策略概述](../merge-policies/overview.md).
+若要進一步瞭解合併原則及其在Platform中的角色，請先閱讀 [合併原則概觀](../merge-policies/overview.md).
 
-## 预览示例状态([!DNL Profile] 预览) {#profile-preview}
+## 預覽範例狀態([!DNL Profile] 預覽) {#profile-preview}
 
-将数据摄取到Platform后，将运行一个示例作业以更新用户档案计数和其他与实时客户档案数据相关的量度。 可以使用 `/previewsamplestatus` 端点，实时客户配置文件API的一部分。 此端点还可用于按数据集和身份命名空间列出配置文件分配，以及生成多个报表，以便查看您组织的配置文件存储的组成。  开始使用 `/profilepreviewstatus` 端点，请参阅 [预览示例状态端点指南](preview-sample-status.md).
+將資料內嵌至Platform後，會執行範例工作以更新設定檔計數和其他即時客戶設定檔資料相關量度。 此範例工作的結果可以使用檢視 `/previewsamplestatus` 端點，即時客戶設定檔API的一部分。 此端點也可用來依資料集和身分名稱空間列出設定檔分佈，以及產生多個報表，以瞭解貴組織設定檔存放區的組成。  若要開始使用 `/profilepreviewstatus` 端點，請參閱 [預覽範例狀態端點指南](preview-sample-status.md).
 
-## 配置文件系统作业 {#profile-system-jobs}
+## 設定檔系統工作 {#profile-system-jobs}
 
-引入到的启用了用户档案的数据 [!DNL Platform] 存储在 [!DNL Data Lake] 以及 [!DNL Real-Time Customer Profile] 数据存储。 有时可能需要从 [!DNL Profile] 存储以删除不再需要或错误添加的数据。 这需要使用API创建 [!DNL Profile System Job]，也称为“[!DNL delete request]“ ”，可以根据需要修改、监视或删除。 了解如何使用 `/system/jobs` 的端点 [!DNL Real-Time Customer Profile] API，请按照 [配置文件系统作业端点指南](profile-system-jobs.md).
+已擷取到的設定檔啟用資料 [!DNL Platform] 儲存在 [!DNL Data Lake] 以及 [!DNL Real-Time Customer Profile] 資料存放區。 有時候，可能有必要從刪除資料集或批次 [!DNL Profile] 以移除您不再需要或錯誤新增的資料。 這需要使用API來建立 [!DNL Profile System Job]，也稱為「[!DNL delete request]「」，可視需要修改、監視或刪除。 若要瞭解如何使用來處理刪除請求 `/system/jobs` 中的端點 [!DNL Real-Time Customer Profile] API，請依照以下範例中概述的步驟： [設定檔系統作業端點指南](profile-system-jobs.md).
 
-## 更新配置文件属性 {#update-profile}
+## 更新設定檔屬性 {#update-profile}
 
-有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅 [为配置文件启用数据集并重新插入](../../catalog/datasets/enable-upsert.md).
+有時候，您可能需要更新組織設定檔存放區中的資料。 例如，您可能需要更正記錄或變更屬性值。 這可以透過批次擷取完成，並需要設定檔啟用的資料集，以更新插入標籤。 如需如何設定屬性更新資料集的詳細資訊，請參閱的教學課程 [為設定檔和更新插入啟用資料集](../../catalog/datasets/enable-upsert.md).
 
 ## 后续步骤 {#next-steps}
 
-要开始使用 [!DNL Real-Time Customer Profile] API，阅读 [入门指南](getting-started.md) 然后，选择一个端点指南以了解如何使用特定 [!DNL Profile]相关端点。 使用 [!DNL Profile] 使用 [!DNL Experience Platform] UI，请参阅 [Real-Time Customer Profile用户指南](../ui/user-guide.md).
+若要開始使用進行呼叫 [!DNL Real-Time Customer Profile] API，請閱讀 [快速入門手冊](getting-started.md) 然後選取其中一個端點指南，以瞭解如何使用特定的 [!DNL Profile] — 相關端點。 使用方式 [!DNL Profile] 資料使用 [!DNL Experience Platform] UI，請參閱 [即時客戶設定檔使用手冊](../ui/user-guide.md).

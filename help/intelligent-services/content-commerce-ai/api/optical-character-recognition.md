@@ -1,8 +1,8 @@
 ---
-keywords: OCR；文本存在；光学字符识别
+keywords: OCR；文字出現；光學字元辨識
 solution: Experience Platform
-title: 文本存在与光学字符识别
-description: 在内容标记API中，文本存在/光学字符识别(OCR)服务可指示给定图像中是否存在文本。 如果存在文本，则OCR可返回该文本。
+title: 文字出現與光學字元辨識
+description: 在內容標籤API中，文字存在/光學字元辨識(OCR)服務可以指出文字是否存在於給定的影像中。 如果文字存在，OCR可以傳回文字。
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
 source-git-commit: 82722ddf7ff543361177b555fffea730a7879886
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 3%
 
 ---
 
-# 文本存在与光学字符识别
+# 文字出現與光學字元辨識
 
-文本存在/光学字符识别(OCR)服务在给定图像时，可以指示图像中是否存在文本。 如果存在文本，则OCR可返回该文本。
+指定影像時，文字存在/光學字元辨識(OCR)服務可指出影像中是否有文字。 如果文字存在，OCR可以傳回文字。
 
-本文档中显示的示例请求使用了下图：
+本檔案所示的範例請求中使用了下列影像：
 
-![示例图像](../images/sample_image.png)
+![範例影像](../images/sample_image.png)
 
 **API格式**
 
@@ -27,9 +27,9 @@ POST /services/v2/predict
 
 **请求**
 
-以下请求根据有效载荷中提供的输入图像检查文本是否存在。 有关所示输入参数的更多信息，请参阅有效负载示例下表。
+以下請求會根據承載中提供的輸入影像檢查文字是否存在。 請參閱裝載範例下表，以瞭解有關所示輸入引數的詳細資訊。
 
-使用内联图像执行：
+使用內嵌影像執行：
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -74,13 +74,13 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **响应**
 
-成功响应会返回在 `tags` 列表。 如果特定图像中没有文本， `is_text_present` 表示0和 `tags` 为空列表。
+成功的回應會傳回在中偵測到的文字 `tags` 要求中傳遞的每個影像的清單。 如果特定影像中沒有文字， `is_text_present` 為0且 `tags` 是空白清單。
 
-[结果0，结果1, ...]:每个输入文档的响应列表。 每个结果都有一个带键的dict :
+[result0， result1， ...]：每個輸入檔案的回應清單。 每個結果都是一個含有鍵的指令：
 
-1. request_element_id:对应于此响应的输入文件的索引，对于请求文档列表中的第一个图像为0，对于下一个图像为1，依此类推。
-2. 标记：词典列表中，每个词典有两个键：文本，该文本是从图像中识别出的单词，以及相关性，该文本计算为与全图像相比，所提取文本的边界框的面积的分数。 0.01将翻译成至少占图像1%的文本。
-3. is_text_present:0或1，具体取决于图像中是否存在文本。 如果标记为0，则列表为空。
+1. request_element_id：此回應之輸入檔案的對應索引，0代表請求檔案清單中的第一個影像，1代表下一個影像，以此類推。
+2. 標籤：字典清單，每個字典有兩個索引鍵：文字（從影像中可辨識的字詞）和關聯性（計算為擷取文字的邊界方塊區域與完整影像相較之下的分數）。 0.01會翻譯成至少佔影像1%的文字。
+3. is_text_present： 0或1 （視影像中是否有文字而定）。 如果標籤為0，則清單為空白。
 
 ```json
 {
@@ -121,9 +121,9 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 
 **请求**
 
-以下请求根据有效载荷中提供的输入图像检查文本是否存在。 有关所示输入参数的更多信息，请参阅有效负载示例下表。
+以下請求會根據承載中提供的輸入影像檢查文字是否存在。 請參閱裝載範例下表，以瞭解有關所示輸入引數的詳細資訊。
 
-通过URL执行：
+以URL執行：
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -195,21 +195,21 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 }
 ```
 
-| 属性 | 描述 | 必需 |
+| 属性 | 描述 | 強制 |
 | --- | --- | --- |
-| `documents` | JSON元素列表，列表中每个项目表示一个图像。 作为此列表的一部分传递的任何参数都会覆盖在列表外部为相应列表元素指定的全局参数。 | 是 |
-| `sensei:multipart_field_name` | field_name，从中读取输入文件路径。 | 是 |
-| `repo:path` | 预签名的图像资产URL。 | 是 |
-| `sensei:repoType` | &quot;HTTP&quot;（对于presigned-url）。 | 否 |
-| `dc:format` | 输入图像的编码格式。 图像编码仅允许使用jpeg、jpg、png和tiff等图像格式。 dc:format与允许的格式匹配。 | 否 |
-| `correct_with_dictionary` | 是否用英语词典来更正单词？ 如果未打开此设置，则可能会识别非英语单词。 默认值为True:打开。) 请注意，打开字典时，不必总是得到一个英文单词。 我们会尝试更正它，但如果它无法在一定的编辑距离内完成，我们会返回原始单词。 | 否 |
-| `filter_with_dictionary` | 是否过滤词语以仅包含来自英语词典的词语？ 如果启用此设置，则返回的词语将始终属于包含47万个词的大型英语。 | 否 |
-| `min_probability` | 可识别词语的最小概率是多少？ 服务仅返回从图像中提取的概率大于min_probability的词。 默认值为0.2。 | 否 |
-| `min_relevance` | 可识别词语的最低相关性是多少？ 服务仅返回从图像中提取的与min_relevace有较大相关性的词语。 默认值设置为0.01。与全图相比，相关性计算为提取文本边界框的面积比。 0.01将翻译成至少占图像1%的文本。 | 否 |
+| `documents` | JSON元素清單，清單中的每個專案代表一個影像。 作為此清單的一部分傳遞的任何引數，都會針對對應的清單元素覆寫在清單外部指定的全域引數。 | 是 |
+| `sensei:multipart_field_name` | 要讀取輸入檔案路徑的field_name。 | 是 |
+| `repo:path` | 影像資產的預先簽署url。 | 是 |
+| `sensei:repoType` | &quot;HTTP&quot; （適用於預先簽署的url）。 | 否 |
+| `dc:format` | 輸入影像的編碼格式。 影像編碼僅允許影像格式，例如jpeg、jpg、png和tiff。 dc：format與允許的格式相符。 | 否 |
+| `correct_with_dictionary` | 是否使用英文字典來更正這些字詞？ 如果未開啟此功能，您可能會識別出非英文單字。 預設值為True：開啟。) 請注意，開啟字典時，您不一定一定要收到英文單字。 我們會嘗試修正它，但如果無法在特定的編輯距離內修正，我們會傳回原始單字。 | 否 |
+| `filter_with_dictionary` | 是否要篩選單字，使其只包含英文字典中的單字？ 如果開啟此功能，傳回的單字將一律屬於大型英文，包含47萬個單字。 | 否 |
+| `min_probability` | 已識別字詞的最小機率為何？ 服務只會傳回從影像擷取而來的單字，而且這些字的機率大於min_probability。 預設值設定為0.2。 | 否 |
+| `min_relevance` | 已識別字詞的最低關聯性為何？ 服務只會傳回從影像擷取而來的單字，而且這些單字的相關性比min_relevance還大。 預設值設定為0.01。相關性的計算方式為擷取文字的邊界方塊區域與完整影像的比較比例。 0.01會翻譯成至少佔影像1%的文字。 | 否 |
 
 | 名称 | 数据类型 | 必需 | 默认 | 值 | 描述 |
 | -----| --------- | -------- | ------- | ------ | ----------- |
-| `repo:path` | 字符串 | - | - | - | 需要从中提取文本的图像的预签名URL。 |
-| `sensei:repoType` | 字符串 | - | - | HTTPS | 存储图像的存储库类型。 |
-| `sensei:multipart_field_name` | 字符串 | - | - | - | 在将图像作为多部分参数传递时，请使用此参数，而不是使用预签名的url。 |
-| `dc:format` | 字符串 | 是 | - | &quot;image/jpg&quot;, <br>&quot;image/jpeg&quot;, <br>&quot;image/png&quot;, <br>&quot;image/tiff&quot; | 在处理之前，将针对允许的输入编码类型检查图像编码。 |
+| `repo:path` | 字符串 | - | - | - | 需要從中擷取文字之影像的預留URL。 |
+| `sensei:repoType` | 字符串 | - | - | HTTPS | 儲存影像的存放庫型別。 |
+| `sensei:multipart_field_name` | 字符串 | - | - | - | 將影像作為多部分引數傳遞時，請使用此選項，而不使用預先簽署的URL。 |
+| `dc:format` | 字符串 | 是 | - | &quot;image/jpg&quot;， <br>&quot;image/jpeg&quot;， <br>&quot;image/png&quot;， <br>&quot;image/tiff&quot; | 影像編碼在處理前會根據允許的輸入編碼型別進行檢查。 |

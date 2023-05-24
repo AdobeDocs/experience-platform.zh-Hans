@@ -1,24 +1,24 @@
 ---
-title: Adobe Experience Platform Cloud Connector扩展的发行说明
-description: Adobe Experience Platform中Cloud Connector扩展的最新发行说明。
-source-git-commit: e232ad7a9b581e65f7f4240bbc06155aec409eb7
+title: Adobe Experience Platform Cloud Connector擴充功能發行說明
+description: Adobe Experience Platform中Cloud Connector擴充功能的最新發行說明。
+exl-id: 5ee85d9f-71f4-46ee-9064-4ceee1cf90e7
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 22%
 
 ---
 
-# Adobe Experience Platform Cloud Connector扩展发行说明
+# Adobe Experience Platform Cloud Connector擴充功能發行說明
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2023 年 1 月 17 日
 
 v1.0.1
 
-* 修复了在Body Raw文本区域中粘贴的有效JSON被另存为字符串而非JSON的问题。
-* 不允许在GET或HEAD请求中设置主体。
-* 修复了以下错误：保存大于5kb的响应会导致规则执行失败。
-
+* 修正Body Raw文字區域中貼上的有效JSON儲存為字串而非JSON的問題。
+* 不允許在GET或HEAD要求上設定內文。
+* 修正儲存大於5kb的回應會導致規則執行失敗的錯誤。

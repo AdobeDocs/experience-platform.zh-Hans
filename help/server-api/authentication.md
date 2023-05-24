@@ -1,6 +1,6 @@
 ---
 title: 身份验证
-description: 了解如何为Adobe Experience Platform Edge Network Server API配置身份验证。
+description: 瞭解如何設定Adobe Experience Platform Edge Network Server API的驗證。
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -13,64 +13,64 @@ ht-degree: 2%
 
 ## 概述
 
-的 [!DNL Edge Network Server API] 根据事件源和API收集域，处理经过身份验证和未经身份验证的数据收集。
+此 [!DNL Edge Network Server API] 根據事件來源和API收集網域，處理已驗證和未驗證的資料收集。
 
-对于每个请求， [!DNL Server API] 验证数据流 [!DNL access type] 设置。 使用此设置，客户可以配置数据流以接受经过身份验证的数据，或者同时接受经过身份验证的数据和未经身份验证的数据。 默认情况下，两种类型的数据均被接受。
+對於每個請求， [!DNL Server API] 驗證資料流 [!DNL access type] 設定。 使用此設定，客戶可以設定資料串流以接受已驗證的資料，或同時接受已驗證和未驗證的資料。 預設情況下，接受兩種型別的資料。
 
-有关配置数据流访问类型的详细信息，请参阅有关如何 [创建和配置数据流](../edge/datastreams/overview.md#create).
+如需設定資料流存取型別的詳細資訊，請參閱如何設定的檔案。 [建立及設定資料串流](../edge/datastreams/overview.md#create).
 
-以下是基于数据流的行为摘要 [!DNL Access Type] 配置和接收请求的端点。
+以下是根據資料流的行為摘要 [!DNL Access Type] 設定和接收請求的端點。
 
 | [!DNL Access Type] | edge.adobedc.net | server.adobedc.net |
 |-----------------|-------------------------------|-----------------------|
-| 混合（默认） | 不验证请求 | 验证请求 |
-| 已验证 | 验证请求 | 验证请求 |
+| 混合（預設） | 不驗證請求 | 驗證請求 |
+| 已驗證 | 驗證請求 | 驗證請求 |
 
-来自上的专用服务器的API调用 `server.adobedc.net` 应始终进行身份验证。
+來自私人伺服器的API呼叫位於 `server.adobedc.net` 應一律進行驗證。
 
 ## 先决条件 {#prerequisites}
 
-在对 [!DNL Server API]，确保满足以下先决条件：
+呼叫 [!DNL Server API]，確認您符合下列先決條件：
 
-* 您拥有有权访问Adobe Experience Platform的组织帐户。
-* 您的Experience Platform帐户具有 `developer` 和 `user` 为Adobe Experience Platform API产品配置文件启用了角色。 联系您的 [Admin Console](../access-control/home.md) 管理员为您的帐户启用这些角色。
-* 你有Adobe ID。 如果您没有Adobe ID，请转到 [Adobe Developer控制台](https://developer.adobe.com/console) 并创建一个新帐户。
+* 您擁有可存取Adobe Experience Platform的組織帳戶。
+* 您的Experience Platform帳戶具有 `developer` 和 `user` Adobe Experience Platform API產品設定檔啟用的角色。 聯絡您的 [Admin Console](../access-control/home.md) 管理員為您的帳戶啟用這些角色。
+* 您有Adobe ID。 如果您沒有Adobe ID，請前往 [Adobe Developer主控台](https://developer.adobe.com/console) 並建立新帳戶。
 
-## 收集凭据 {#credentials}
+## 收集認證 {#credentials}
 
-要调用Platform API，您必须先完成 [身份验证教程](../landing/api-authentication.md). 完成身份验证教程可为所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+若要對Platform API發出呼叫，您必須先完成 [驗證教學課程](../landing/api-authentication.md). 完成驗證教學課程後，會提供所有Experience PlatformAPI呼叫中每個必要標題的值，如下所示：
 
-* 授权：持有者 `{ACCESS_TOKEN}`
+* 授權：持有人 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-Experience Platform中的资源可以与特定虚拟沙箱隔离。 在对Platform API的请求中，您可以指定操作将在其中进行的沙盒的名称和ID。 这些是可选参数。
+Experience Platform中的資源可隔離至特定的虛擬沙箱。 在對Platform API的請求中，您可以指定將在其中執行操作的沙箱的名稱和ID。 這些是選用引數。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关Experience Platform中沙箱的详细信息，请参阅 [沙盒概述文档](../sandboxes/home.md).
+>如需Experience Platform中沙箱的詳細資訊，請參閱 [沙箱概述檔案](../sandboxes/home.md).
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
 
 * Content-Type: `application/json`
 
-## 配置数据集写入权限 {#dataset-write-permissions}
+## 設定資料集寫入許可權 {#dataset-write-permissions}
 
-要配置数据集写入权限，请转到 [Admin Console](https://adminconsole.adobe.com)，找到附加到您的API密钥的产品配置文件，并设置以下权限：
+若要設定資料集寫入許可權，請前往 [Admin Console](https://adminconsole.adobe.com)，找到附加至您API金鑰的產品設定檔，並設定下列許可權：
 
-* 在 [!UICONTROL 沙箱] ，请选择数据流沙盒。
-* 在 [!UICONTROL 数据管理] 选择 **[!UICONTROL 管理数据集]** 权限。
+* 在 [!UICONTROL 沙箱] 區段，選取資料流沙箱。
+* 在 [!UICONTROL 資料管理] 區段，選取 **[!UICONTROL 管理資料集]** 許可權。
 
-## 授权错误疑难解答 {#troubleshooting-authorization}
+## 疑難排解授權錯誤 {#troubleshooting-authorization}
 
 | 错误代码 | 错误消息 | 描述 |
 | --- | --- | --- |
-| `EXEG-0500-401` | 授权令牌无效 | 出现以下任何情况时，都会显示此错误消息：  <ul><li>的 `authorization` 缺少标头值。</li><li>的 `authorization` 标头值不包括必需的 `Bearer` 令牌。</li><li>提供的授权令牌的格式无效。</li><li>数据流需要进行身份验证，但请求缺少必需的标头。</li></ul> |
-| `EXEG-0501-401` | 用户授权令牌无效 | 出现以下任何情况时，都会显示此错误消息： <ul><li>API调用缺少必需的 `x-user-token` 标题。</li><li>提供的用户令牌的格式无效。</li></ul> |
-| `EXEG-0502-401` | 授权令牌无效 | 当提供的授权令牌具有有效格式(JWT)，但其签名无效时，将显示此错误消息。 检查 [身份验证教程](../landing/api-authentication.md) 了解如何获取有效的JWT令牌。 |
-| `EXEG-0503-401` | 授权令牌无效 | 当提供的授权令牌过期时，将显示此错误消息。 通过 [身份验证教程](../landing/api-authentication.md) 以生成新令牌。 |
-| `EXEG-0504-401` | 缺少必需的产品上下文 | 出现以下任何情况时，都会显示此错误消息：  <ul><li>开发人员帐户无权访问Adobe Experience Platform产品上下文。</li><li>公司帐户尚无权AdobeExperience Platform。</li></ul> |
-| `EXEG-0505-401` | 缺少所需的授权令牌范围 | 此错误仅适用于服务帐户身份验证。 当调用中包含的服务授权令牌属于无权访问的服务帐户时，将显示错误消息 `acp.foundation` IMS范围。 |
-| `EXEG-0506-401` | 无法写入的沙盒 | 当开发人员帐户没有 `WRITE` 对其中定义了数据流的Experience Platform沙盒的访问。 |
+| `EXEG-0500-401` | 無效的授權權杖 | 此錯誤訊息會顯示在下列任一情況中：  <ul><li>此 `authorization` 缺少標頭值。</li><li>此 `authorization` 標頭值未包含必要的 `Bearer` token。</li><li>提供的授權權杖格式無效。</li><li>資料流需要驗證，但請求缺少必要的標頭。</li></ul> |
+| `EXEG-0501-401` | 無效的使用者授權權杖 | 此錯誤訊息會顯示在下列任一情況中： <ul><li>API呼叫遺漏必要的專案 `x-user-token` 標頭。</li><li>提供的使用者權杖格式無效。</li></ul> |
+| `EXEG-0502-401` | 無效的授權權杖 | 當提供的授權權杖具有有效格式(JWT)，但其簽章無效時，會顯示此錯誤訊息。 檢查 [驗證教學課程](../landing/api-authentication.md) 以瞭解如何取得有效的JWT權杖。 |
+| `EXEG-0503-401` | 無效的授權權杖 | 當提供的授權權杖過期時，會顯示此錯誤訊息。 前往 [驗證教學課程](../landing/api-authentication.md) 以產生新Token。 |
+| `EXEG-0504-401` | 缺少必要的產品內容 | 此錯誤訊息會顯示在下列任一情況中：  <ul><li>開發人員帳戶無法存取Adobe Experience Platform產品內容。</li><li>公司帳戶尚未取得Adobe Experience Platform的權益。</li></ul> |
+| `EXEG-0505-401` | 缺少必要的授權權杖範圍 | 此錯誤僅適用於服務帳戶驗證。 當呼叫中包含的服務授權權杖屬於無權存取的服務帳戶時，會顯示錯誤訊息 `acp.foundation` IMS範圍。 |
+| `EXEG-0506-401` | 沙箱無法供寫入 | 當開發人員帳戶沒有下列專案時，會顯示此錯誤訊息 `WRITE` 存取定義資料流的Experience Platform沙箱。 |

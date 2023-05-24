@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用
-title: 编辑架构以创建自定义功能板小组件
-description: 本指南提供了有关选择属性和配置贵组织架构以便为Adobe Experience Platform功能板创建自定义小组件的分步说明。
+keywords: Experience Platform；使用者介面；UI；控制面板；控制面板；設定檔；區段；目的地；授權使用情況
+title: 編輯結構描述以建立自訂儀表板Widget
+description: 本指南逐步說明如何選取屬性和設定您組織的架構，為Adobe Experience Platform儀表板建立自訂Widget。
 exl-id: a744eb24-5ba7-4971-9183-3f891e807863
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,55 +10,55 @@ ht-degree: 0%
 
 ---
 
-# 编辑模式以创建自定义小组件
+# 編輯結構描述以建立自訂Widget
 
-要为Adobe Experience Platform功能板创建自定义小组件，您必须首先确定该小组件所依据的实时客户配置文件属性。
+若要建立Adobe Experience Platform儀表板的自訂Widget，您必須先識別Widget所根據的即時客戶設定檔屬性。
 
-本指南提供了通过选择属性以创建自定义功能板小组件来编辑组织架构的分步说明。
+本指南透過選取屬性以建立自訂儀表板Widget，提供編輯組織架構的逐步指示。
 
-选择属性并配置架构后，您可以继续执行 [创建功能板的自定义小组件](custom-widgets.md).
+選取屬性並設定結構描述後，您可以繼續下列步驟： [為您的儀表板建立自訂Widget](custom-widgets.md).
 
 >[!NOTE]
 >
->必须向用户授予“管理标准功能板”权限，才能编辑架构。 有关授予功能板的访问权限的步骤，请参阅 [功能板权限指南](../permissions.md).
+>必須授予使用者「管理標準儀表板」許可權，才能編輯結構。 如需授予控制面板存取許可權的詳細步驟，請參閱 [儀表板許可權指南](../permissions.md).
 
-## 构件库 {#widget-library}
+## Widget資料庫 {#widget-library}
 
-本指南需要访问 [!UICONTROL 构件库] Experience Platform。 要进一步了解小组件库以及如何在UI中访问它，请首先阅读 [构件库概述](widget-library.md).
+本指南需要存取 [!UICONTROL Widget資料庫] 在Experience Platform內。 若要進一步瞭解Widget程式庫，以及如何在UI中存取它，請從閱讀 [Widget程式庫概觀](widget-library.md).
 
 ## 编辑架构
 
-在小组件库中， **[!UICONTROL 自定义]** 选项卡，您可以创建小组件并将其与组织中的其他用户共享，以便自定义功能板的外观。
+在Widget程式庫中， **[!UICONTROL 自訂]** 索引標籤可讓您建立Widget並與您組織中的其他使用者共用，以自訂儀表板的外觀。
 
-在创建自定义小组件之前，必须选择实时客户配置文件属性，以确保数据包含在每日快照中。
+建立自訂Widget之前，必須選取「即時客戶設定檔」屬性，以確保資料包含在每日快照中。
 
 >[!IMPORTANT]
 >
->贵组织最多可选择20个属性。
+>您的組織最多可以選取20個屬性。
 
-如果贵组织未选择任何配置文件属性，请首先选择 **[!UICONTROL 配置]** 在屏幕的中央。
+如果您的組織尚未選取任何設定檔屬性，請從選取 **[!UICONTROL 設定]** 在熒幕中央。
 
-![小组件库工作区的“自定义”选项卡，其中突出显示了“配置”。](../images/customization/configure-schema.png)
+![突出顯示「設定」之Widget程式庫工作區的「自訂」標籤。](../images/customization/configure-schema.png)
 
-创建至少一个自定义属性后，选择 **[!UICONTROL 编辑架构]** 查看所选属性并添加更多。
+建立至少一個自訂屬性後，選取 **[!UICONTROL 編輯結構描述]** 以檢視選取的屬性並新增更多屬性。
 
-![小组件库工作区的“自定义”选项卡突出显示“编辑”模式。](../images/customization/edit-schema.png)
+![反白顯示「編輯」結構描述之Widget程式庫工作區的「自訂」索引標籤。](../images/customization/edit-schema.png)
 
-## 选择属性
+## 選取屬性
 
-在 **[!UICONTROL 选择并集架构字段]** 对话框中，导航到并集架构中的属性（或使用搜索），然后选中属性旁边的复选框。 选中此复选框还会将属性添加到 **[!UICONTROL 选定属性]** 列表。
+若要選取中的屬性 **[!UICONTROL 選取聯合結構描述欄位]** 對話方塊，導覽至聯合結構描述中的屬性（或使用搜尋），並選取屬性旁的核取方塊。 選取核取方塊也會將屬性新增至 **[!UICONTROL 選取的屬性]** 清單顯示在對話方塊的右側。
 
 >[!NOTE]
 >
->要使属性可见以供选择，该属性必须是以下属性之一：字符串、日期、日期时间、布尔值、短、长、整数或字节。 映射和双重数据类型不受支持，且呈灰显状态，因此无法选择它们。
+>若要讓屬性在選取時可見，它必須是下列其中一項： String、Date、Date-Time、Boolean、Short、Long、Integer或Byte。 不支援Map和Double資料型別，且為灰色，因此無法選取。
 
-选择要添加的属性后，选择 **[!UICONTROL 保存]** 保存属性并返回到自定义小组件选项卡。
+選擇您要新增的屬性後，選取 **[!UICONTROL 儲存]** 以儲存屬性並返回自訂Widget標籤。
 
 >[!WARNING]
->刷新数据后，新选择的属性将在下一个每日快照之后变为可用。
+>重新整理資料時，新選取的屬性可在下一個每日快照後使用。
 
-![用于选择具有属性的架构属性并突出显示“保存”的对话框。](../images/customization/select-attribute.png)
+![用來選取結構描述屬性（具有屬性）和「儲存」的對話方塊會反白顯示。](../images/customization/select-attribute.png)
 
 ## 后续步骤
 
-阅读本指南后，您能够导航到小组件库，并选择实时客户资料属性以配置您的架构。 选择配置文件属性后，您可以开始 [创建功能板的自定义小组件](custom-widgets.md).
+閱讀本指南後，您可以導覽至Widget程式庫，並選取「即時客戶個人檔案」屬性以設定您的結構。 選取設定檔屬性後，您就可以開始 [為您的儀表板建立自訂Widget](custom-widgets.md).

@@ -1,46 +1,46 @@
 ---
-title: 监控批量查询许可证使用情况
-description: Adobe Experience Platform UI提供了一个功能板，您可以通过该功能板查看有关贵组织的Data Distiller许可证使用情况的重要信息。
+title: 監控批次查詢授權使用情況
+description: Adobe Experience Platform UI提供控制面板，讓您檢視有關貴組織Data Distiller授權使用情況的重要資訊。
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
 hide: true
 hidefromtoc: true
 recommendations: noCatalog, display
 source-git-commit: fa573dcf03eb711e946afe40d107871f5166ff58
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '352'
 ht-degree: 0%
 
 ---
 
-# (Alpha)监控批量查询许可证的使用情况 {#monitor-license-usage}
+# (Alpha)監控批次查詢授權使用情況 {#monitor-license-usage}
 
 >[!IMPORTANT]
 >
->尚未向所有用户提供通过UI监控批量查询许可证使用情况的功能。 此功能位于Alpha中，且仍在测试中。 本文档可能会更改。
+>並非所有使用者都能透過UI監控批次查詢授權使用情況。 此功能目前處於Alpha測試階段，仍在測試中。 此檔案可能會有變動。
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织查询服务许可证使用情况的重要信息。
+Adobe Experience Platform使用者介面(UI)提供了一個儀表板，您可以通過該儀表板檢視有關您組織的Query Service授權使用情況的重要資訊。
 
-有关如何访问UI中的许可证使用功能板并与之交互，以及了解有关该功能板中显示的可用量度的更多信息，请访问 [许可证使用仪表板指南](../../dashboards/guides/license-usage.md).
+如需如何在UI中存取授權使用儀表板並與之互動的詳細指示，以及深入瞭解儀表板中顯示的可用量度，請造訪 [授權使用儀表板指南](../../dashboards/guides/license-usage.md).
 
-请阅读 [功能板概述](../../dashboards/home.md) 以概要了解Experience Platform中的所有功能板功能。
+請閱讀 [儀表板概觀](../../dashboards/home.md) 以取得Experience Platform中所有儀表板功能的摘要。
 
-## 小组件 {#widgets}
+## Widget {#widgets}
 
-许可证使用功能板由小组件组成，这些小组件显示只读量度，提供有关贵组织许可证使用情况的重要信息。 可见量度取决于贵组织的特定许可。
+授權使用儀表板是由Widget組成，這些介面會以唯讀方式顯示度量，提供關於您組織授權使用的重要資訊。 可見的量度取決於您組織的特定授權。
 
-选择一个单选按钮以选择用于分析的沙盒，然后使用下拉菜单选择分析的时间段。 可用选项包括30天、90天、12个月期间、最后一年、完整合同期或自定义日期。
+選取選項按鈕以選擇要分析的沙箱，並使用下拉式選單來選取分析的時間段。 可用的選項包括30天、90天、12個月期間、去年、完整合約期間或自訂日期。
 
-## 计算小时数 {#compute-hours}
+## 計算時數 {#compute-hours}
 
-的 [!UICONTROL 计算小时数] 小组件每天使用折线图来可视化组织的批量查询处理时间。 小组件在小组件的左上角显示三个由数字表示的量度。 这些是
+此 [!UICONTROL 計算時數] Widget會使用線圖，以視覺效果呈現貴組織每天的批次查詢處理時間。 Widget會在Widget左上角顯示三個以數字表示的量度。 這些是
 
-- [!UICONTROL 实际]:在概述下拉菜单中选择的时间段的总计计算小时数。 此量度还在图表上以实线表示。
-- [!UICONTROL 许可]:贵组织的许可协议允许的计算小时数总数。 此量度还通过虚线在图表上指示。
-- [!UICONTROL 使用情况]:这是您的使用量相对于许可证商定的最大计算小时数的百分比。
+- [!UICONTROL 實際]：在概覽下拉式清單中選擇的時段的總運算時數。 此量度也會在圖形中以實線表示。
+- [!UICONTROL 已授權]：貴組織的授權合約所允許的運算時數總計。 此量度也會在圖表中以虛線表示。
+- [!UICONTROL 使用狀況]：這是您的使用量相對於授權所同意的最大運算時數的百分比。
 
 >[!IMPORTANT]
 >
->的 [!UICONTROL 计算小时数] 小组件仅适用于拥有Data Distiller批量查询许可证的客户。
+>此 [!UICONTROL 計算時數] widget僅適用於擁有Data Distiller授權進行批次查詢的客戶。
 
-![突出显示了“计算时间”小组件的许可证使用功能板。](../images/data-distiller/compute-hours.png)
+![已反白顯示計算時數Widget的授權使用儀表板。](../images/data-distiller/compute-hours.png)
 

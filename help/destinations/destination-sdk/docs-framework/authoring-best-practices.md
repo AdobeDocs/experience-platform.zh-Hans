@@ -1,6 +1,6 @@
 ---
-title: 创作最佳实践
-description: 了解在创作目标文档页面时应遵循的规则和提示，以确保它符合Adobe Experience Platform文档质量标准。
+title: 製作最佳實務
+description: 瞭解編寫目的地檔案頁面時應遵循的規則和秘訣，以確保頁面符合Adobe Experience Platform檔案品質標準。
 exl-id: b12059f1-6635-41cd-acc5-6ff471111164
 source-git-commit: e239de97a26ea2ff36bb74390e249851a13d2e13
 workflow-type: tm+mt
@@ -9,52 +9,52 @@ ht-degree: 0%
 
 ---
 
-# 创作最佳实践
+# 製作最佳實務
 
 ## 概述 {#overview}
 
-本页介绍了在 [创作目标文档](./documentation-instructions.md) 页面，以确保其符合Adobe Experience Platform文档质量标准。
+本頁面說明您應在下列情況下遵循的規則： [編寫您的目的地檔案](./documentation-instructions.md) 頁面，確保其符合Adobe Experience Platform檔案品質標準。
 
-## 一般指导 {#general-guidance}
+## 一般指引 {#general-guidance}
 
-* 在 [模板](./self-service-template.md) 有关目标文档，请参阅Adobe参与者指南，以了解有关 [链接](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en), [表](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#tables), [支持的markdown语法](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en), [编写指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en)，等等。
-* 在产品文档中不要包含观察和估计。
-* 在Experience Platform文档中，Adobe作者使用 **粗体格式** 要引用用户界面控件，请如下所示：
-   * 转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 查看 [目标教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#select-destination).
+* 填寫時 [範本](./self-service-template.md) 如需目的地檔案，請參閱Adobe投稿人指南，以瞭解有關 [連結](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en)， [表格](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#tables)，則 [支援的Markdown語法](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en)， [撰寫指引](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en)、等等。
+* 請勿在產品檔案中包含觀察和估計。
+* 在Experience Platform檔案中，Adobe作者會使用 **粗體格式設定** 參照使用者介面控制項，如下所示：
+   * 前往 **[!UICONTROL 連線]** > **[!UICONTROL 目的地]**，然後選取 **[!UICONTROL 目錄]** 標籤。 檢視如何在中記錄使用者介面控制項的範例 [目的地教學課程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#select-destination).
 
-## 书写样式
+## 寫入樣式
 
 >[!IMPORTANT]
 >
->读取 [Adobe文档编写指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) 在开始创作目标文档页面之前。
+>讀取 [Adobe檔案撰寫指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) 開始編寫目的地檔案頁面之前。
 
-* 你的句子要短一些，要快一点。 如果您的句子超过20个词或使用多个逗号，请考虑将其分成不同的句子。 长度超过20个词的句子对读者来说尤其具有挑战性。
-* 别太客气。 请避免使用“请”或“请……” 中。
+* 讓您的句子保持短小並快速切入正題。 如果您的句子超過20個單詞，或是使用多個逗號，請考慮將其分成個別的句子。 長度超過20個字的句子對讀者來說特別具有挑戰性。
+* 不要過於客氣。 避免在技術檔案中使用「請」或「請……」。
 
 ## 链接 {#linking}
 
-按照提供的文档模板操作，但不要编辑模板中的现有链接。 包含新链接时，请阅读 [在文档中使用链接](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en) 参与者指南中的。
+依照提供的檔案範本操作，請勿編輯範本中現有的連結。 加入新連結時，請閱讀 [在檔案中使用連結](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en) 投稿人指南中的。
 
-## 品牌策略准则 {#branding}
+## 品牌指南 {#branding}
 
-* AEP不是已批准的面向公众的术语。 请先使用Adobe Experience Platform，然后Experience Platform，再使用Platform。
-   * **不使用**:在将数据从AEP导出到YourDestination之前，请确保已阅读并完成这些先决条件。
-   * **使用**:在将数据从Adobe Experience Platform导出到YourDestination之前，请确保已阅读并完成这些先决条件。
+* AEP不是經核准的公開術語。 請先使用Adobe Experience Platform，然後使用Experience Platform，再使用平台。
+   * **不要使用**：將資料從AEP匯出至YourDestination之前，請務必閱讀並完成這些必要條件。
+   * **使用**：將資料從Adobe Experience Platform匯出至YourDestination之前，請務必閱讀並完成這些必要條件。
 
-## 图像和屏幕截图 {#images-and-screenshots}
+## 影像和熒幕擷取畫面 {#images-and-screenshots}
 
-* 有关 [如何链接到图像](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#images)，请参阅参与者指南。
-* 使用屏幕截图时，请确保您的屏幕截图可捕获整个Platform UI屏幕。
-* 在标记图像以突出显示页面上的特定控件或标签时，请尝试遵循Experience Platform文档团队使用的标记样式。 请注意基于用户档案的内容如何在 [此屏幕截图](/help/destinations/catalog/cloud-storage/amazon-s3.md#export-type-frequency).
-* 请使用 `png` 设置图像格式。
-* 请勿使用编号的屏幕截图作为文件名。 图像文件名应具有描述性。
-   * **不使用**: `1.png`, `2.png`, `3.png`
+* 有關以下專案的資訊： [如何連結至影像](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#images)，請參閱投稿人指南。
+* 使用熒幕擷取畫面時，請確保您的熒幕擷取畫面能擷取整個Platform UI畫面。
+* 標示影像以反白顯示頁面上的特定控制項或標籤時，請嘗試遵循Experience Platform檔案團隊使用的標示樣式。 請注意中如何反白以設定檔為基礎的 [此熒幕擷圖](/help/destinations/catalog/cloud-storage/amazon-s3.md#export-type-frequency).
+* 請使用 `png` 格式化影像。
+* 請勿使用編號熒幕擷取畫面作為檔案名稱。 影像檔案名稱應為描述性。
+   * **不要使用**： `1.png`， `2.png`， `3.png`
    * **使用**: `yourdestination-authentication-details.png`, `yourdestination-destination-details.png`
-* 请对您添加到文档中的任何图像使用替换文本，并在替换文本中使用正确的语法。
-   * **不使用**:目标连接详细信息
-   * **使用**:平台UI的图像，显示已填充的目标连接详细信息。
+* 請針對您新增至檔案的所有影像使用替代文字，並在替代文字中使用適當的文法。
+   * **不要使用**：目的地連線詳細資料
+   * **使用**：平台UI的影像，顯示已填入的目的地連線詳細資訊。
 
 ## 过程 {#process}
 
-* 的 [文档模板](./self-service-template.md) 会根据合作伙伴的反馈，偶尔更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](../assets/docs-framework/yourdestination-template.zip).
-* 创作文档并从分支的分支创建文档拉取请求(PR) *除主分支之外*. 在中创作时，请参阅提交目标以供审阅一节 [GitHub界面](./use-github-interface-to-create-documentation.md#submit-review) 或 [您的本地环境](./work-in-local-environment.md#submit-review).
+* 此 [檔案範本](./self-service-template.md) 不常根據合作夥伴的意見更新。 開始編寫目的地的檔案之前，請確定您已下載 [範本的最新版本](../assets/docs-framework/yourdestination-template.zip).
+* 撰寫檔案，並從復本的分支建立檔案提取請求(PR) *主分支以外的分支*. 在中製作時，請參閱提交目的地以供檢閱區段 [GitHub介面](./use-github-interface-to-create-documentation.md#submit-review) 或 [您的本機環境](./work-in-local-environment.md#submit-review).

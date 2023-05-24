@@ -1,35 +1,35 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；xdm；体验数据模型；命名空间；命名空间；兼容性模式；已修复；
+keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；xdm；體驗資料模型；名稱空間；名稱空間；相容性模式；xed；
 solution: Experience Platform
-title: Experience Data Model(XDM)中的名称步调
-description: 了解体验数据模型(XDM)中的名称步调如何允许您在将不同架构组件汇集在一起时扩展架构并防止字段冲突。
+title: Experience Data Model (XDM)中的名稱空間
+description: 瞭解Experience Data Model (XDM)中的名稱空間如何讓您擴充結構描述，並在不同結構描述元件彙整時防止欄位衝突。
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
 source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '634'
-ht-degree: 1%
+source-wordcount: '631'
+ht-degree: 0%
 
 ---
 
-# Experience Data Model(XDM)中的名称步调
+# Experience Data Model (XDM)中的名稱空間
 
-体验数据模型(XDM)架构中的所有字段都具有关联的命名空间。 这些命名空间允许您扩展架构，并在不同架构组件汇集在一起时防止字段冲突。 本文档概述了XDM中的命名空间以及它们在 [架构注册表API](../api/overview.md).
+Experience Data Model (XDM)結構描述中的所有欄位都有關聯的名稱空間。 這些名稱空間可讓您擴充結構描述，並在不同結構描述元件彙整時防止欄位衝突。 本檔案概述XDM中的名稱空間，以及這些名稱空間在 [結構描述登入API](../api/overview.md).
 
-命名空间允许您在一个命名空间中定义一个字段，作为表示不同命名空间中不同于同一字段的内容。 实际上，字段的命名空间会指示字段的创建者(例如标准XDM(Adobe)、供应商或您的组织)。
+名稱空間可讓您在一個名稱空間中定義欄位，以表示與不同名稱空間中相同欄位不同的內容。 實際上，欄位的名稱空間會指出建立欄位的人員(例如標準XDM (Adobe)、廠商或您的組織)。
 
-例如，假定XDM架构使用 [[!UICONTROL 个人联系详细信息] 字段组](../field-groups/profile/demographic-details.md)，它具有标准 `mobilePhone` 中存在的字段 `xdm` 命名空间。 在同一架构中，您还可以自由创建单独的 `mobilePhone` 字段(您的 [租户ID](../api/getting-started.md#know-your-tenant_id))。 这两个字段可以共存，同时具有不同的基本含义或限制。
+例如，假設某個XDM結構描述使用 [[!UICONTROL 個人聯絡詳細資訊] 欄位群組](../field-groups/profile/demographic-details.md)，此版本含有標準 `mobilePhone` 存在於中的欄位 `xdm` 名稱空間。 在同一個結構描述中，您也可以自行建立個別的 `mobilePhone` 不同名稱空間下的欄位(您的 [租使用者ID](../api/getting-started.md#know-your-tenant_id))。 這兩個欄位可以共存，但具有不同的基本含義或限制。
 
-## 名称步调语法
+## 名稱空間語法
 
-以下各节演示了如何使用XDM语法分配命名空间。
+以下章節示範如何以XDM語法指派名稱空間。
 
-### 标准XDM {#standard}
+### 標準XDM {#standard}
 
-标准XDM语法可深入分析命名空间在架构中的表示方式(包括 [如何在Adobe Experience Platform翻译](#compatibility))。
+標準XDM語法可讓您深入瞭解名稱空間在結構描述中的呈現方式(包括 [如何在Adobe Experience Platform中翻譯它們](#compatibility))。
 
-标准XDM使用 [JSON-LD](https://www.w3.org/TR/json-ld11/#basic-concepts) 用于将命名空间分配给字段的语法。 此命名空间以URI的形式提供(例如 `https://ns.adobe.com/xdm` 对于 `xdm` 命名空间)，或作为在 `@context` 架构的属性。
+標準XDM使用 [JSON-LD](https://www.w3.org/TR/json-ld11/#basic-concepts) 指派名稱空間至欄位的語法。 此名稱空間採用URI的形式(例如 `https://ns.adobe.com/xdm` 的 `xdm` 名稱空間)，或是在下列位置設定的速記首碼： `@context` 結構描述的屬性。
 
-以下是标准XDM语法中产品的示例架构。 除 `@id` （由JSON-LD规范定义的唯一标识符）， `properties` 以命名空间开头，以字段名称结尾。 如果使用 `@context`，命名空间和字段名称之间用冒号(`:`)。 如果不使用前缀，则命名空间和字段名称将以斜杠(`/`)。
+以下是標準XDM語法中產品的結構描述範例。 以下專案除外： `@id` （由JSON-LD規格定義的唯一識別碼），下方的每個欄位 `properties` 以名稱空間開頭並以欄位名稱結尾。 如果使用下定義的速記首碼 `@context`，名稱空間和欄位名稱會以冒號(`:`)。 如果不使用首碼，則名稱空間和欄位名稱會以斜線(`/`)。
 
 ```json
 {
@@ -74,20 +74,20 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 | --- | --- |
-| `@context` | 一个对象，它定义了可用的简写前缀，而不是下面的完整命名空间URI `properties`. |
-| `@id` | 记录的唯一标识符，由 [JSON-LD规范](https://www.w3.org/TR/json-ld11/#node-identifiers). |
-| `xdm:sku` | 使用短前缀表示命名空间的字段示例。 在这种情况下， `xdm` 是命名空间(`https://ns.adobe.com/xdm`)和 `sku` 是字段名称。 |
-| `https://ns.adobe.com/xdm/channels/application` | 使用完整命名空间URI的字段示例。 在这种情况下， `https://ns.adobe.com/xdm/channels` 是命名空间，和 `application` 是字段名称。 |
-| `https://ns.adobe.com/vendorA/product/stockNumber` | 供应商资源提供的字段使用它们自己的唯一命名空间。 在本例中， `https://ns.adobe.com/vendorA/product` 是供应商命名空间，并且 `stockNumber` 是字段名称。 |
-| `tenantId:internalSku` | 贵组织定义的字段会使用您的唯一租户ID作为其命名空间。 在本例中， `tenantId` 是租户命名空间(`https://ns.adobe.com/tenantId`)和 `internalSku` 是字段名称。 |
+| `@context` | 一個物件，定義可以使用的速記首碼，而不是底下的完整名稱空間URI `properties`. |
+| `@id` | 記錄的唯一識別碼，由 [JSON-LD規格](https://www.w3.org/TR/json-ld11/#node-identifiers). |
+| `xdm:sku` | 使用速記首碼表示名稱空間的欄位範例。 在這種情況下， `xdm` 是名稱空間(`https://ns.adobe.com/xdm`)，以及 `sku` 是欄位名稱。 |
+| `https://ns.adobe.com/xdm/channels/application` | 使用完整名稱空間URI的欄位範例。 在這種情況下， `https://ns.adobe.com/xdm/channels` 是名稱空間，且 `application` 是欄位名稱。 |
+| `https://ns.adobe.com/vendorA/product/stockNumber` | 廠商資源提供的欄位會使用其專屬的名稱空間。 在此範例中， `https://ns.adobe.com/vendorA/product` 是廠商名稱空間，而且 `stockNumber` 是欄位名稱。 |
+| `tenantId:internalSku` | 貴組織定義的欄位會使用您的唯一租使用者ID作為其名稱空間。 在此範例中， `tenantId` 是租使用者名稱空間(`https://ns.adobe.com/tenantId`)，以及 `internalSku` 是欄位名稱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-### 兼容性模式 {#compatibility}
+### 相容性模式 {#compatibility}
 
-在Adobe Experience Platform中，XDM模式在 [兼容性模式](../api/appendix.md#compatibility) 语法，该语法不使用JSON-LD语法来表示命名空间。 Platform而是将命名空间转换为父字段（以下划线开头），并将字段嵌套到其下。
+在Adobe Experience Platform中，XDM結構描述會顯示在 [相容性模式](../api/appendix.md#compatibility) 語法，不會使用JSON-LD語法來表示名稱空間。 Platform會將名稱空間轉換為父欄位（以底線開頭），並將欄位巢狀在其下。
 
-例如，标准XDM `repo:createdDate` 转换为 `_repo.createdDate` 和将显示在兼容模式下的以下结构下：
+例如，標準XDM `repo:createdDate` 已轉換為 `_repo.createdDate` 和會顯示在「相容性模式」的下列結構下：
 
 ```json
 "_repo": {
@@ -101,9 +101,9 @@ ht-degree: 1%
 }
 ```
 
-使用 `xdm` 命名空间显示为根字段， `properties` 然后放下 `xdm:` 显示在 [标准XDM语法](#standard). 例如， `xdm:sku` 只是列为 `sku` 中。
+使用 `xdm` 名稱空間會顯示為下的根欄位 `properties` 並放置 `xdm:` 前置詞： [標準XDM語法](#standard). 例如， `xdm:sku` 只會列為 `sku` 而非。
 
-以下JSON表示如何将上面显示的标准XDM语法示例转换为兼容性模式。
+以下JSON代表如何將以上所示的標準XDM語法範例轉譯為相容性模式。
 
 ```json
 {
@@ -172,4 +172,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本指南概述了XDM命名空间以及它们在JSON中的显示方式。 有关如何使用API配置XDM模式的更多信息，请参阅 [架构注册API指南](../api/overview.md).
+本指南概述XDM名稱空間及其在JSON中的呈現方式。 如需有關如何使用API設定XDM結構的詳細資訊，請參閱 [Schema Registry API指南](../api/overview.md).

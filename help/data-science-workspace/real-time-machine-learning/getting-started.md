@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；Data Science Workspace；热门主题；实时机器学习；
+keywords: Experience Platform；開發人員指南；Data Science Workspace；熱門主題；即時機器學習；
 solution: Experience Platform
-title: 实时机器学习入门
-description: 以下文档概述了在Adobe Experience Platform中创建实时机器学习模型所需的步骤。
+title: Real-time Machine Learning快速入門
+description: 以下檔案概述在Adobe Experience Platform中建立Real-time Machine Learning模型所需的步驟。
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,42 +11,42 @@ ht-degree: 0%
 
 ---
 
-# 实时机器学习(Alpha)入门
+# Real-time Machine Learning (Alpha)快速入門
 
 >[!IMPORTANT]
 >
->尚未向所有用户提供实时机器学习功能。 此功能位于Alpha中，且仍在测试中。 本文档可能会更改。
+>即時機器學習尚未開放所有使用者使用。 此功能目前處於Alpha測試階段，仍在測試中。 此檔案可能會有變動。
 
-要利用实时机器学习，您需要有权访问配置了Adobe Experience Platform和 [!DNL Data Science Workspace]. 此外，您还需要有一个完整的数据集，以用于培训和评分。
+若要使用即時機器學習，您必須具備已布建Adobe Experience Platform的組織的存取權，並且 [!DNL Data Science Workspace]. 此外，您還需要完整資料集，才能用於訓練和評分。
 
-实时机器学习指南需要对Python 3进行有效的了解， [Jupyter笔记本](../jupyterlab/overview.md)、数据科学和机器学习。
+即時機器學習指南需要實際瞭解Python 3， [Jupyter Notebooks](../jupyterlab/overview.md)、資料科學和機器學習。
 
-**关键术语：**
+**主要條款：**
 
-- **DSL:** 域特定语言。
-- **边缘：** 实时机器学习评分服务可以在离激活和应用程序更近的Edge群集上运行。
-- **中心：** 当前的Alpha在开发Experience Edge Network时，正在Adobe Experience Platform集线器上运行实时机器学习评分服务。
-- **节点：** 节点是图形的基本单位。 每个节点都执行特定任务，并且可以使用链接将它们链接在一起，以形成表示ML管道的图形。 节点执行的任务表示对输入数据的操作，如数据或模式的转换或机器学习推理。 节点将转换或推断的值输出到下一个节点。
+- **DSL：** 網域特定語言。
+- **Edge：** Real-time Machine Learning評分服務可在距離您啟動和應用程式較近的邊緣叢集上執行。
+- **集線器：** 目前的Alpha在Adobe Experience Platform Hub上執行Real-time Machine Learning評分服務，而Experience Edge Network正在開發中。
+- **節點：** 節點是形成圖形的基本單位。 每個節點會執行特定工作，而且它們可以使用連結連結連結在一起，以形成代表ML管道的圖形。 節點所執行的任務代表對輸入資料的操作，例如資料或結構描述的轉換，或機器學習推斷。 節點會將轉換或推斷的值輸出到下一個節點。
 
-## Adobe Experience Platform中的数据集
+## Adobe Experience Platform中的資料集
 
-要开始使用实时机器学习，您必须有权访问数据集。 您可以选择使用外部数据集并将其上传到您的 [!DNL JupyterLab] 环境，或在Platform中创建新数据集（如果尚未创建）。
+若要開始使用Real-time Machine Learning，您必須擁有資料集的存取權。 您可以選擇使用外部資料集並將其上傳至 [!DNL JupyterLab] 環境或在Platform中建立新資料集（如果尚未這麼做的話）。
 
 >[!NOTE]
 >
->如果您已经有要使用的数据集，则可以跳到 [后续步骤](#next-steps).
+>如果您已有資料集要使用，可以跳至 [後續步驟](#next-steps).
 
-### 使用外部数据集
+### 使用外部資料集
 
-了解有关使用外部数据集(例如，将数据上传到 [!DNL JupyterLab] 环境，请访问 [使用笔记本分析数据](../jupyterlab/analyze-your-data.md#external-data).
+若要進一步瞭解如何使用外部資料集，例如將資料上傳至 [!DNL JupyterLab] 環境，請造訪本教學課程： [使用筆記型電腦分析資料](../jupyterlab/analyze-your-data.md#external-data).
 
-### 创建新数据集
+### 建立新的資料集
 
-要创建用于实时机器学习的新数据集，您需要为数据集提供一个数据架构。 接下来，您需要使用您创建的架构摄取数据。 请通过以下教程为 [!DNL Platform]:
+若要建立新資料集以用於Real-time Machine Learning，您的資料集需要資料結構描述。 接下來，您需要使用您建立的結構描述擷取資料。 使用下列教學課程來建立和填入資料集 [!DNL Platform]：
 
-- [在API中创建和填充数据集](../../catalog/datasets/create.md)
-- [在UI中创建和填充数据集](../../ingestion/tutorials/ingest-batch-data.md)
+- [在API中建立並填入資料集](../../catalog/datasets/create.md)
+- [在UI中建立並填入資料集](../../ingestion/tutorials/ingest-batch-data.md)
 
 ## 后续步骤 {#next-steps}
 
-准备好数据进行实时机器学习后，请首先按照 [实时机器学习笔记本用户指南](./rtml-authoring-notebook.md) 了解如何创建ONNX模型并将其上传到实时机器学习模型库。
+當您準備好資料以進行即時機器學習後，請依照以下步驟開始 [Real-time Machine Learning筆記本使用手冊](./rtml-authoring-notebook.md) 瞭解如何建立ONNX模型並上傳到Real-time Machine Learning模型存放區。

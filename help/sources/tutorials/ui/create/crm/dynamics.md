@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；Microsoft Dynamics;Microsoft Dynamics;Dynamics;Dynamics
+keywords: Experience Platform；首頁；熱門主題；Microsoft Dynamics；microsoft dynamics；Dynamics；dynamics
 solution: Experience Platform
-title: 在UI中创建Microsoft Dynamics源连接
+title: 在使用者介面中建立Microsoft Dynamics來源連線
 type: Tutorial
-description: 了解如何使用Microsoft UI创建Adobe Experience Platform Dynamics源连接。
+description: 瞭解如何使用Microsoft UI建立Adobe Experience Platform Dynamics來源連線。
 exl-id: 1a7a66de-dc57-4a72-8fdd-5fd80175db69
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,76 +12,76 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Microsoft Dynamics] UI中的源连接
+# 建立 [!DNL Microsoft Dynamics] ui中的來源連線
 
-本教程提供了创建 [!DNL Microsoft Dynamics] (以下简称“[!DNL Dynamics]&quot;)使用Adobe Experience Platform UI进行源连接。
+本教學課程提供建立 [!DNL Microsoft Dynamics] (以下稱&quot;[!DNL Dynamics]&quot;)來源連線使用Adobe Experience Platform UI。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-如果您已经拥有 [!DNL Dynamics] 帐户，您可以跳过本文档的其余部分，并继续阅读本教程 [为CRM源配置数据流](../../dataflow/crm.md).
+如果您已有有效的 [!DNL Dynamics] 帳戶，您可以略過本檔案的其餘部分，並前往上的教學課程 [為CRM來源設定資料流](../../dataflow/crm.md).
 
-### 收集所需的凭据
+### 收集必要的認證
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `serviceUri` | 您的 [!DNL Dynamics] 实例。 |
-| `username` | 您的用户名 [!DNL Dynamics] 用户帐户。 |
-| `password` | 您的密码 [!DNL Dynamics] 帐户。 |
-| `servicePrincipalId` | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
-| `servicePrincipalKey` | 服务主密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
+| `serviceUri` | 您的服務URL [!DNL Dynamics] 執行個體。 |
+| `username` | 您的使用者名稱 [!DNL Dynamics] 使用者帳戶。 |
+| `password` | 您的密碼 [!DNL Dynamics] 帳戶。 |
+| `servicePrincipalId` | 您的使用者端識別碼 [!DNL Dynamics] 帳戶。 使用服務主體和金鑰式驗證時，需要此ID。 |
+| `servicePrincipalKey` | 服務主體秘密金鑰。 使用服務主體和基於金鑰的驗證時，需要此認證。 |
 
-有关入门的更多信息，请参阅 [此 [!DNL Dynamics] 文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
+如需入門的詳細資訊，請參閱 [此 [!DNL Dynamics] 檔案](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
-## 连接 [!DNL Dynamics] 帐户
+## 連線您的 [!DNL Dynamics] 帳戶
 
-收集所需的凭据后，您可以按照以下步骤链接 [!DNL Dynamics] 帐户到平台。
+收集完所需的認證後，您可以依照下列步驟連結 [!DNL Dynamics] 至平台的帳戶。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 **[!UICONTROL 目录]** 屏幕会显示您可为其创建帐户的各种源。
+登入 [Adobe Experience Platform](https://platform.adobe.com) 然後選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 **[!UICONTROL 目錄]** 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 **[!UICONTROL CRM]** 类别，选择 **[!UICONTROL Microsoft Dynamics]**. 如果这是您首次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，请选择 **[!UICONTROL 添加数据]** 创建新 [!DNL Dynamics] 连接器。
+在 **[!UICONTROL CRM]** 類別，選取 **[!UICONTROL Microsoft Dynamics]**. 如果您是第一次使用此聯結器，請選取 **[!UICONTROL 設定]**. 否則，請選取 **[!UICONTROL 新增資料]** 以建立新的 [!DNL Dynamics] 聯結器。
 
-![目录](../../../../images/tutorials/create/ms-dynamics/catalog.png)
+![目錄](../../../../images/tutorials/create/ms-dynamics/catalog.png)
 
-的 **[!UICONTROL 连接到Dynamics]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線到Dynamics]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 新帐户
+### 新帳戶
 
-如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体上，为您的新 [!DNL Dynamics] 帐户。
+如果您使用新認證，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，為您的新輸入提供名稱和選擇性說明 [!DNL Dynamics] 帳戶。
 
-的 [!DNL Dynamics] 连接器为您提供不同的访问身份验证类型。 在 [!UICONTROL 帐户身份验证] 选择 **[!UICONTROL 基本身份验证]** 使用基于密码的凭据。
+此 [!DNL Dynamics] connector提供您不同的驗證型別以進行存取。 下 [!UICONTROL 帳戶驗證] 選取 **[!UICONTROL 基本驗證]** 以使用以密碼為基礎的認證。
 
-完成后，选择 **[!UICONTROL 连接到源]** 然后再给新帐户留些时间。
+完成後，選取 **[!UICONTROL 連線到來源]** 然後留出時間建立新帳戶。
 
-![基本身份验证](../../../../images/tutorials/create/ms-dynamics/basic-auth.png)
+![basic-authentication](../../../../images/tutorials/create/ms-dynamics/basic-auth.png)
 
-或者，您也可以选择 **[!UICONTROL 服务主体和密钥验证]** 连接 [!DNL Dynamics] 帐户使用 [!UICONTROL 服务主体ID] 和 [!UICONTROL 服务主密钥].
+或者，您可以選取 **[!UICONTROL 服務主體和金鑰驗證]** 並連線您的 [!DNL Dynamics] 帳戶使用以下專案的組合： [!UICONTROL 服務主體ID] 和 [!UICONTROL 服務主體金鑰].
 
 >[!IMPORTANT]
 >
-> 中的基本身份验证 [!DNL Dynamics] 可能会被双重身份验证阻止，而Platform当前不支持此身份验证。 在这种情况下，建议使用基于密钥的身份验证来创建源连接器，该连接器使用 [!DNL Dynamics].
+> 中的基本驗證 [!DNL Dynamics] 雙因素驗證可能會加以封鎖，目前Platform不支援雙因素驗證。 在這種情況下，建議使用金鑰式驗證來建立來源聯結器，使用 [!DNL Dynamics].
 
-![基于密钥的身份验证](../../../../images/tutorials/create/ms-dynamics/key-based-auth.png)
+![金鑰型驗證](../../../../images/tutorials/create/ms-dynamics/key-based-auth.png)
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| [!UICONTROL 服务主体ID] | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
-| [!UICONTROL 服务主密钥] | 服务主密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
+| [!UICONTROL 服務主體ID] | 您的使用者端識別碼 [!DNL Dynamics] 帳戶。 使用服務主體和金鑰式驗證時，需要此ID。 |
+| [!UICONTROL 服務主體金鑰] | 服務主體秘密金鑰。 使用服務主體和基於金鑰的驗證時，需要此認證。 |
 
-### 现有帐户
+### 現有帳戶
 
-要连接现有帐户，请选择 [!DNL Dynamics] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 的问题。
+若要連線現有帳戶，請選取 [!DNL Dynamics] 您要連線的帳戶，然後選取 **[!UICONTROL 下一個]** 前往右上角以繼續。
 
-![现有](../../../../images/tutorials/create/ms-dynamics/existing.png)
+![現有](../../../../images/tutorials/create/ms-dynamics/existing.png)
 
 ## 后续步骤
 
-通过阅读本教程，您已经与 [!DNL Dynamics] 帐户。 您现在可以继续下一个教程和 [配置数据流以将数据导入平台](../../dataflow/crm.md).
+依照本教學課程，您已建立與的連線， [!DNL Dynamics] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流以將資料匯入Platform](../../dataflow/crm.md).

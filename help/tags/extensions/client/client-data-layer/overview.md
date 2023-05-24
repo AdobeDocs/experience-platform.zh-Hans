@@ -1,6 +1,6 @@
 ---
-title: Adobe客户端数据层扩展
-description: 了解Adobe Experience Platform中的Adobe客户端数据层标记扩展。
+title: Adobe使用者端資料層擴充功能
+description: 瞭解Adobe Experience Platform中的Adobe Client Data Layer標籤擴充功能。
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ---
 
-# Adobe客户端数据层扩展
+# Adobe使用者端資料層擴充功能
 
-本文档提供了有关如何使用Adobe客户端数据层扩展的示例和最佳实践。
+本檔案提供如何使用Adobe Client Data Layer擴充功能的範例和最佳作法。
 
 <!-- (Missing document?)
 If you would like to have more details on development consideration, [please reach this page](./dev.md). -->
 
 ## 安装
 
-要安装扩展，请导航到Experience PlatformUI或数据收集UI中的扩展目录，然后选择Adobe客户端数据层。
+若要安裝擴充功能，請導覽至Experience PlatformUI或資料收集UI中的擴充功能目錄，然後選取「Adobe使用者端資料層」。
 
-![目录中的ACDL扩展视图](./images/catalog.png)
+![目錄中的ACDL擴充功能檢視](./images/catalog.png)
 
 <!-- (GitHub link?)
 There is also the possibility to fork this project. You can download this github project, realize the change that you deem required for your specific use-case and re-upload it on your Organization as a private extension.
@@ -29,77 +29,77 @@ This installation will not be supported on our end.<br>
 >
 > _Consider renaming the extension name in the extension.json file_ -->
 
-## 扩展视图
+## 擴充功能檢視
 
-默认情况下，ACDL脚本会使用变量名称创建新数据层 `adobeDataLayer`. 扩展视图可让您根据需要更改此名称。 加载标记后，您设置的名称将被实例化。
+根據預設，ACDL指令碼會以變數名稱建立新的資料層 `adobeDataLayer`. 擴充功能檢視可讓您視需要變更此名稱。 載入標籤時，您設定的名稱將會具現化。
 
 >[!NOTE]
 >
->更改对象名称时，原始 `adobeDataLayer` 对象仍在实例化中，然后被复制到您选择的新变量名称中。
+>變更物件名稱時，原始物件 `adobeDataLayer` 物件仍在具現化，然後複製到您選取的新變數名稱。
 
 ## 事件
 
-利用扩展，可监听数据层上的事件。 以下事件可用：
+擴充功能可讓您接聽Data Layer上的事件。 可使用下列事件：
 
-### 监听所有数据更改
+### 接聽所有資料變更
 
-如果选择此选项，则事件侦听器将侦听对数据层所做的任何更改。
+如果您選取此選項，事件接聽程式會接聽資料層所做的任何變更。
 
 >[!IMPORTANT]
 >
->推送事件不会更改数据层本身。
+>推播事件不會變更資料層本身。
 
-监听器将跟踪以下推送事件示例：
+監聽器會追蹤下列範例推送事件：
 
 * ` adobeDataLayer.push({"data":"something"})`
 * ` adobeDataLayer.push({"event":"myevent","data":"something"})`
 
-监听程序不会跟踪以下示例推送事件：
+監聽器不會追蹤下列範例推送事件：
 
 * ` adobeDataLayer.push({"event":"myevent"})`
 
-### 监听所有事件
+### 聆聽所有事件
 
-如果选择此选项，则事件侦听器将侦听推送到数据层的任何事件。
+如果您選取此選項，事件接聽程式會接聽推播至資料層的任何事件。
 
-监听器将跟踪以下推送事件示例：
+監聽器會追蹤下列範例推送事件：
 
 * ` adobeDataLayer.push({"event":"myevent"})`
 * ` adobeDataLayer.push({"event":"myevent","data":"something"})`
 
-监听程序不会跟踪以下示例推送事件：
+監聽器不會追蹤下列範例推送事件：
 
 * ` adobeDataLayer.push({"data":"something"}) `
 
-### 监听特定事件
+### 接聽特定事件
 
-在指定事件的情况下，事件侦听器会跟踪与特定字符串匹配的任何事件。
+如果您指定事件，則事件接聽程式會追蹤符合特定字串的任何事件。
 
-例如，设置 `myEvent` 使用此配置时，侦听器将只跟踪以下推送事件：
+例如，設定 `myEvent` 使用此設定時，監聽器只會追蹤下列推播事件：
 
 * `adobeDataLayer.push({"event":"myEvent"})`
 
-您还可以更改事件侦听器的范围。 不同选项概述如下：
+您也可以變更事件接聽程式的範圍。 不同選項概述如下：
 
-* `all`:这是默认选项，在过去满足您选择的上述条件或将来推送该条件时，都会触发规则。 如果您使用异步实施，则最安全的选项是。
-* `future`:仅当将与您的条件匹配的新推送事件发送到数据层时，此选项才会触发规则。
-* `past`:此选项仅针对与您的条件匹配的旧推送事件触发规则。 将忽略与您的条件匹配的新推送，并且不再触发规则。
+* `all`：這是預設選項，會在您選取的上述條件過去曾經符合，或未來會推送時觸發規則。 如果您使用非同步實施，這是最安全的選項。
+* `future`：只有將符合您條件的新推送事件傳送至Data Layer時，此選項才會觸發規則。
+* `past`：此選項只會針對符合您條件的舊推送事件觸發規則。 符合您條件的新推播會遭忽略，且不再觸發規則。
 
 ## 操作
 
-以下各节概述了扩展支持的操作。
+以下各節概述擴充功能支援的動作。
 
-### 重置数据层
+### 重設資料層
 
-扩展为您提供了一种重置数据层长度的方法，这有助于保持单页应用程序(SPA)的有限大小。
+擴充功能提供重設資料層長度的方法，可協助您將單頁應用程式(SPA)的大小維持在有限範圍內。
 
-但是，当前不可能在推送方法期间完全删除以前设置的信息。
+不過，目前不可能完全移除先前在推送方法期間設定的資訊。
 
-的 **重置和设置计算状态** 操作会复制最后一个计算状态，清空数据层对象，并重新推送最后一个状态。
+此 **重設和設定計算狀態** 動作會複製上次計算狀態、清空資料層物件，並重新推送上次狀態。
 
-### 推送到数据层
+### 推送至資料層
 
-该扩展为您提供了一项操作，可将JSON内容推送到数据层本身。此操作可让您直接在JSON中使用数据元素。 在JSON编辑器中，数据元素应使用百分比表示法引用(例如， `%dataElementName%`)。
+擴充功能提供將JSON內容推送至資料層本身的動作。此動作讓直接在JSON中使用資料元素成為可能。 在JSON編輯器中，應使用百分比標籤法參考資料元素(例如 `%dataElementName%`)。
 
 ```json
 {
@@ -113,20 +113,20 @@ This installation will not be supported on our end.<br>
 
 ## 数据元素
 
-以下部分涵盖扩展提供的唯一数据元素类型。
+以下各節說明擴充功能所提供的獨特資料元素型別。
 
-### 计算状态
+### 計算狀態
 
-数据层计算状态数据元素可返回以下两项之一，具体取决于您配置它的方式：
+根據您的設定方式，「資料層計算狀態」資料元素可以傳回下列兩個專案之一：
 
-* 完整的数据层状态：默认情况下，会返回完整的数据层计算状态。
-* 特定路径：您可以指定要在数据层中返回的路径。 使用点表示法指定路径(例如， `data.foo`)。
+* 完整的資料層狀態：依預設，會傳回完整的資料層計算狀態。
+* 特定路徑：您可以指定要在資料層中傳回的路徑。 路徑是使用點標籤法來指定(例如， `data.foo`)。
 
-### 数据层大小
+### 資料層大小
 
-此数据元素返回数据层的大小。 数据层的大小由已推送到此对象的元素数量表示。
+此資料元素會傳回資料層的大小。 資料層的大小是以已推送至此物件的元素數量表示。
 
-根据以下推送事件列表，此数据元素将返回整数 `2`:
+在下列推送事件清單中，此資料元素會傳回整數 `2`：
 
 ```js
 adobeDataLayer.push({"event":"myEvent"})

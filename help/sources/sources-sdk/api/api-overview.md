@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 自助源（批量SDK）API指南
-description: 本文档概述了创建新源的过程，包括有关如何使用流服务API检索、写入和提交新连接规范的步骤。
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+title: 自助來源（批次SDK） API指南
+description: 本檔案提供建立新來源的程式概述，包括如何使用「流程服務API」擷取、寫入及提交新連線規格的步驟。
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -10,38 +10,38 @@ ht-degree: 0%
 
 ---
 
-# 自助源（批量SDK）API指南
+# 自助來源（批次SDK） API指南
 
-本文档概述了创建新源的过程，包括有关如何使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本檔案概述建立新來源的過程，包括有關如何使用編寫並提交新連線規格的步驟。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-[!DNL Flow Service] 用于从平台内各种不同来源收集客户数据并将其集中在一起。 该服务提供了用户界面和RESTful API，可让您轻松设置与各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
+[!DNL Flow Service] 用於收集並集中來自Platform內各種不同來源的客戶資料。 此服務提供使用者介面和RESTful API，可讓您輕鬆設定與各種資料提供者的來源連線。 這些來源連線可讓您驗證協力廠商系統、設定擷取執行時間，以及管理資料擷取輸送量。
 
-的 [!DNL Flow Service] API提供了多个端点，允许您以编程方式管理要通过自助源(Batch SDK)集成的新源的连接和流程规范。
+此 [!DNL Flow Service] API提供數個端點，可讓您以程式設計方式管理要透過自助式來源（批次SDK）整合之新來源的連線和流程規格。
 
-## 创建新的连接规范
+## 建立新的連線規格
 
-配置新源的第一步是创建新的连接规范。
+設定新來源的第一步是建立新的連線規格。
 
-连接规范返回源的连接器属性。 它们包括与创建基连接和源连接相关的验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和组织无关。 典型的连接规范包含有关给定源的基本信息以及三个不同的部分： `authSpec`, `sourceSpec`和 `exploreSpec`.
+連線規格會傳回來源的聯結器屬性。 它們包括與建立基礎和來源連線相關的驗證規格，以及指派給特定來源的固定連線規格ID。 連線規格與租使用者和組織無關。 典型的連線規格包含指定來源的基本資訊，以及三個不同的區段： `authSpec`， `sourceSpec`、和 `exploreSpec`.
 
-有关详细说明，请参阅 [创建新连接规范](./create.md). 有关用于连接规范的属性和值的信息（包括有关配置身份验证、源和浏览规范的详细信息），请参阅 [配置选项文档](../config/config.md).
+如需詳細指示，請參閱以下指南： [建立新的連線規格](./create.md). 如需用於連線規格的屬性和值的詳細資訊，包括設定驗證、來源和探索規格的詳細資訊，請參閱 [組態選項檔案](../config/config.md).
 
-## 更新流程规范
+## 更新流程規格
 
-成功创建连接规范后，必须附加 `RestStorageToAEP` 流规范，使源能够创建数据流。
+成功建立連線規格後，您必須附加 `RestStorageToAEP` 流量規格，讓您的來源能夠建立資料流。
 
-流量规范包含定义流量的信息，包括它支持的源连接ID和目标连接ID、需要应用于数据的转换规范以及生成流量所需的计划参数。
+流程規格包含定義流程的資訊，包括它支援的來源和目標連線ID、需要套用至資料的轉換規格，以及產生流程所需的排程引數。
 
-有关详细说明，请参阅 [更新流程规范](./update-flow-specs.md).
+如需詳細指示，請參閱以下指南： [更新流程規格](./update-flow-specs.md).
 
-## 更新连接规范
+## 更新您的連線規格
 
-您可以通过向 [!DNL Flow Service] API。 请参阅 [更新连接规范](./update-connection-specs.md) 以了解更多信息。
+您可以向以下網址發出PUT要求，更新您的連線規格： [!DNL Flow Service] API。 請參閱指南： [更新您的連線規格](./update-connection-specs.md) 以取得詳細資訊。
 
-## 提交源
+## 提交您的來源
 
-要提交源以集成到Experience Platform，您必须先完成整个 [!DNL Flow Service] 源的API工作流程，以确保源成功工作。 如果源运行成功，则可以继续并联系Adobe代表以进行验证和升级。 请参阅 [测试和提交源](./submit.md) 有关详细信息
+若要提交您的來源以整合至Experience Platform，您必須先完成整個 [!DNL Flow Service] 來源的API工作流程，以確保您的來源可成功運作。 如果您的來源成功執行，則可以繼續並聯絡您的Adobe代表以進行驗證和提升。 請參閱指南： [測試和提交您的來源](./submit.md) 以取得詳細資訊
 
 ## 后续步骤
 
-要开始使用 [!DNL Flow Service] API并通过自助源（批量SDK）创建新源，请阅读 [入门指南](./getting-started.md) 然后，选择一个端点指南以了解如何使用特定端点。
+若要開始使用 [!DNL Flow Service] API和透過自助來源（批次SDK）建立新來源，請參閱 [快速入門手冊](./getting-started.md) 然後選取其中一個端點指南，以瞭解如何使用特定端點。

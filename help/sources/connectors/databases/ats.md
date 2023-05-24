@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；Azure表存储；Azure表存储；ATS;ATS
+keywords: Experience Platform；首頁；熱門主題；Azure表格儲存體；Azure表格儲存體；ATS；ats
 solution: Experience Platform
-title: Azure表存储源连接器概述
-description: 了解如何使用API或用户界面将Azure表存储连接到Adobe Experience Platform。
+title: Azure表格儲存體來源聯結器總覽
+description: 瞭解如何使用API或使用者介面將Azure Table Storage連線至Adobe Experience Platform。
 exl-id: 096e01b1-7e95-4e30-87de-d0976f8b438a
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Azure Table Storage] 连接器
+# [!DNL Azure Table Storage] 聯結器
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-Experience Platform支持从第三方数据库摄取数据。 平台可以连接到不同类型的数据库，如关系数据库、 NoSQL数据库或data warehouse。 对数据库提供程序的支持包括 [!DNL Azure Table Storage].
+Experience Platform支援從協力廠商資料庫擷取資料。 Platform可以連線到不同型別的資料庫，例如關聯式、NoSQL或資料倉儲。 對資料庫提供者的支援包括 [!DNL Azure Table Storage].
 
-## IP地址允许列表
+## IP位址允許清單
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
 
-以下文档提供了有关如何连接的信息 [!DNL Azure Table Storage] 要使用API或用户界面实现平台，请执行以下操作：
+以下檔案提供有關如何連線的資訊 [!DNL Azure Table Storage] 使用API或使用者介面的to Platform：
 
-## 连接 [!DNL Azure Table Storage] 到使用API的平台
+## Connect [!DNL Azure Table Storage] 使用API移至Platform
 
-- [使用流服务API创建Azure表存储基连接](../../tutorials/api/create/databases/ats.md)
-- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
-- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
+- [使用Flow Service API建立Azure Table Storage基本連線](../../tutorials/api/create/databases/ats.md)
+- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
+- [使用流程服務API為資料庫來源建立資料流](../../tutorials/api/collect/database-nosql.md)
 
-## 连接 [!DNL Azure Table Storage] 到使用UI的平台
+## Connect [!DNL Azure Table Storage] 使用UI移至Platform
 
-- [在UI中创建Azure表存储源连接](../../tutorials/ui/create/databases/ats.md)
-- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
+- [在UI中建立Azure資料表儲存體來源連線](../../tutorials/ui/create/databases/ats.md)
+- [在UI中建立資料庫來源連線的資料流](../../tutorials/ui/dataflow/databases.md)

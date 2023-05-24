@@ -1,8 +1,8 @@
 ---
-keywords: 更新目标帐户、目标帐户、如何更新帐户、更新目标
-title: 更新目标帐户
+keywords: 更新目的地帳戶、目的地帳戶、如何更新帳戶、更新目的地
+title: 更新目的地帳戶
 type: Tutorial
-description: 本教程列出了在Adobe Experience Platform UI中更新目标帐户的步骤
+description: 本教學課程列出在Adobe Experience Platform UI中更新目的地帳戶的步驟
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
 source-git-commit: f31b54622c63f96fb8fa727f80dda295a926e2c7
 workflow-type: tm+mt
@@ -11,58 +11,58 @@ ht-degree: 0%
 
 ---
 
-# 更新目标帐户
+# 更新目的地帳戶
 
 ## 概述 {#overview}
 
-的 **[!UICONTROL 帐户]** 选项卡会显示有关您已与各种目标建立的连接的详细信息。 请参阅 [帐户概述](../ui/destinations-workspace.md#accounts) 您可以获取每个目标帐户的所有信息。
+此 **[!UICONTROL 帳戶]** 索引標籤會顯示您已建立與不同目的地的連線的詳細資訊。 請參閱 [帳戶總覽](../ui/destinations-workspace.md#accounts) 取得每個目的地帳戶的所有資訊。
 
-本教程介绍了使用Experience PlatformUI更新目标帐户详细信息的步骤。
+本教學課程涵蓋使用Experience PlatformUI更新目的地帳戶詳細資訊的步驟。
 
-您可以更新目标帐户详细信息，以刷新和重新验证当前或过期帐户的凭据，以获取您当前使用的目标。 通常，OAuth和载体令牌的生命周期有限，具体取决于目标平台。 当这些令牌过期时，您可以在下面进一步描述的工作流中刷新它们。 此工作流将指导您完成OAuth工作流或重新插入令牌。 同样，如果下游平台中的密码或用户访问权限发生更改，则可以刷新凭据。
+您可以更新目的地帳戶詳細資料，以重新整理和重新驗證您目前使用之目的地的目前或過期帳戶的認證。 通常，OAuth和持有人權杖的期限有限，具體取決於目的地平台。 當這些Token過期時，您可以在下面進一步說明的工作流程中重新整理它們。 此工作流程會指導您完成OAuth工作流程或重新插入權杖。 同樣地，如果密碼或使用者存取權在下游平台中變更，您可以重新整理認證。
 
-对于批处理目标，您可以更新访问密钥或密钥（如果其中任何目标已更改）。 此外，如果您希望加密文件，则可以插入RSA公钥，导出的文件将随后进行加密。
+對於批次目的地，您可以更新存取權或秘密金鑰（如果其中任何一項已變更）。 此外，如果您想要繼續加密檔案，可以插入RSA公開金鑰，而且您匯出的檔案將會繼續加密。
 
-![“帐户”选项卡](../assets/ui/update-accounts/destination-accounts.png)
+![帳戶標籤](../assets/ui/update-accounts/destination-accounts.png)
 
-## 更新帐户 {#update}
+## 更新帳戶 {#update}
 
-请按照以下步骤将连接详细信息更新到现有目标。
+請依照下列步驟，將連線詳細資料更新至現有目的地。
 
-1. 登录到 [Experience PlatformUI](https://platform.adobe.com/) 选择 **[!UICONTROL 目标]** 中。 选择 **[!UICONTROL 帐户]** 来查看您的现有帐户。
+1. 登入 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 並選取 **[!UICONTROL 目的地]** 左側導覽列中的。 選取 **[!UICONTROL 帳戶]** 以檢視您現有的帳戶。
 
-   ![“帐户”选项卡](../assets/ui/update-accounts/accounts-tab.png)
+   ![帳戶標籤](../assets/ui/update-accounts/accounts-tab.png)
 
-2. 选择过滤器图标 ![过滤器图标](../assets/ui/update-accounts/filter.png) 来启动排序面板。 排序面板提供了所有目标的列表。 您可以从列表中选择多个目标，以查看与选定目标关联的已筛选帐户选择。
+2. 選取篩選圖示 ![篩選圖示](../assets/ui/update-accounts/filter.png) 以啟動「排序」面板。 排序面板會提供您所有目的地的清單。 您可以從清單中選取多個目的地，以檢視與所選目的地相關聯的已篩選帳戶選擇。
 
-   ![筛选目标帐户](../assets/ui/update-accounts/filter-accounts.png)
+   ![篩選目的地帳戶](../assets/ui/update-accounts/filter-accounts.png)
 
-3. 选择省略号(`...`)。 此时会出现一个弹出面板，其中提供了 **[!UICONTROL 激活区段]**, **[!UICONTROL 编辑详细信息]**&#x200B;和 **[!UICONTROL 删除]** 帐户。 选择 ![“编辑详细信息”按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 编辑详细信息]** 按钮以编辑帐户信息。
+3. 選取省略符號(`...`)的名稱旁。 快顯面板隨即出現，其中提供選項至 **[!UICONTROL 啟用區段]**， **[!UICONTROL 編輯詳細資料]**、和 **[!UICONTROL 刪除]** 帳戶。 選取 ![編輯詳細資訊按鈕](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 編輯詳細資料]** 按鈕以編輯帳戶資訊。
 
-   ![编辑帐户](../assets/ui/update-accounts/accounts-edit.png)
+   ![編輯帳戶](../assets/ui/update-accounts/accounts-edit.png)
 
-4. 输入更新的帐户凭据。
+4. 輸入更新後的帳戶認證。
 
-   * 对于使用 `OAuth1` 或 `OAuth2` 连接类型，选择 **[!UICONTROL 重新连接OAuth]** 续订帐户凭据。 您还可以更新帐户的名称和描述。
+   * 針對使用 `OAuth1` 或 `OAuth2` 連線型別，選取 **[!UICONTROL 重新連線OAuth]** 以更新您的帳戶認證。 您也可以更新帳戶的名稱和說明。
 
-   ![编辑详细信息OAuth](../assets/ui/update-accounts/edit-details-oauth.png)
+   ![編輯詳細資料OAuth](../assets/ui/update-accounts/edit-details-oauth.png)
 
-   * 对于使用 `Access Key` 或 `ConnectionString` 连接类型，则可以编辑帐户身份验证信息，包括访问ID、密钥或连接字符串等信息。 您还可以更新帐户的名称和描述。
+   * 針對使用 `Access Key` 或 `ConnectionString` 連線型別，您可以編輯帳戶驗證資訊，包括存取ID、秘密金鑰或連線字串等資訊。 您也可以更新帳戶的名稱和說明。
 
-   ![编辑详细信息访问密钥](../assets/ui/update-accounts/edit-details-key.png)
+   ![編輯詳細資料存取金鑰](../assets/ui/update-accounts/edit-details-key.png)
 
-   * 对于使用 `Bearer token` 连接类型，则可以根据需要输入新的载体令牌。 您还可以更新帐户的名称和描述。
+   * 針對使用 `Bearer token` 連線型別，您可以視需要輸入新的持有人權杖。 您也可以更新帳戶的名稱和說明。
 
-   ![编辑详细信息载体令牌](../assets/ui/update-accounts/edit-details-bearer.png)
+   ![編輯詳細資訊持有人權杖](../assets/ui/update-accounts/edit-details-bearer.png)
 
-   * 对于使用 `Server to server` 连接类型，则可以更新帐户的名称和说明。
+   * 針對使用 `Server to server` 連線型別，您可以更新帳戶的名稱和說明。
 
-   ![编辑详细信息服务器到服务器](../assets/ui/update-accounts/edit-details-s2s.png)
+   ![編輯伺服器對伺服器的詳細資訊](../assets/ui/update-accounts/edit-details-s2s.png)
 
-5. 选择 **[!UICONTROL 保存]** 完成帐户详细信息更新。
+5. 選取 **[!UICONTROL 儲存]** 以完成帳戶詳細資訊更新。
 
 ## 后续步骤
 
-通过阅读本教程，您已成功使用 **[!UICONTROL 目标]** 工作区以更新现有帐户。
+依照本教學課程，您已成功使用 **[!UICONTROL 目的地]** 工作區以更新現有帳戶。
 
-有关目标的更多信息，请参阅 [目标概述](../catalog/overview.md).
+如需有關目的地的詳細資訊，請參閱 [目的地概觀](../catalog/overview.md).

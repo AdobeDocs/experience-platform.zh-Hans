@@ -1,8 +1,8 @@
 ---
-keywords: 编辑激活，编辑目标，编辑目标
-title: 编辑激活数据流
+keywords: 編輯啟動、編輯目的地、編輯目的地
+title: 編輯啟動資料流程
 type: Tutorial
-description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活数据流。
+description: 依照本文的步驟操作，即可在Adobe Experience Platform中編輯現有的啟用資料流。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
 source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
@@ -11,39 +11,39 @@ ht-degree: 0%
 
 ---
 
-# 编辑激活数据流 {#edit-activation-flows}
+# 編輯啟動資料流程 {#edit-activation-flows}
 
-在Adobe Experience Platform中，您可以编辑目标的现有激活数据流的各种组件，如导出的区段和配置文件属性、导出频率、激活数据流是启用还是禁用等。
+在Adobe Experience Platform中，您可以編輯現有啟用資料流到目的地的各種元件，例如匯出的區段和設定檔屬性、匯出頻率、啟用資料流是啟用還是停用等等。
 
-## 编辑数据流 {#edit-dataflows}
+## 編輯資料流 {#edit-dataflows}
 
-请按照以下步骤编辑现有激活数据流：
+請依照下列步驟編輯現有的啟用資料流程：
 
-1. 登录到 [Experience PlatformUI](https://platform.adobe.com/) 选择 **[!UICONTROL 目标]** 中。 选择 **[!UICONTROL 浏览]** 来查看现有目标数据流。
+1. 登入 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 並選取 **[!UICONTROL 目的地]** 左側導覽列中的。 選取 **[!UICONTROL 瀏覽]** 以檢視您現有的目的地資料流。
 
-   ![浏览目标](../assets/ui/edit-activation/browse-destinations.png)
+   ![瀏覽目的地](../assets/ui/edit-activation/browse-destinations.png)
 
-2. 选择过滤器图标 ![过滤器图标](../assets/ui/edit-activation/filter.png) 来启动排序面板。 排序面板提供了所有目标的列表。 您可以从列表中选择多个目标，以查看与选定目标关联的已过滤数据流选项。
+2. 選取篩選圖示 ![篩選圖示](../assets/ui/edit-activation/filter.png) 以啟動「排序」面板。 排序面板會提供您所有目的地的清單。 您可以從清單中選取多個目的地，以檢視與所選目的地相關聯的資料流篩選選取專案。
 
-   ![筛选目标](../assets/ui/edit-activation/filter-destinations.png)
+   ![篩選目的地](../assets/ui/edit-activation/filter-destinations.png)
 
-3. 选择要编辑的目标数据流的名称。
+3. 選取您要編輯的目的地資料流名稱。
 
-   ![选择目标](../assets/ui/edit-activation/destination-select.png)
+   ![選取目的地](../assets/ui/edit-activation/destination-select.png)
 
-4. 的 **[!UICONTROL 数据流运行]** 页面，显示其可用控件。 此时，您可以编辑目标数据流的多个组件：
+4. 此 **[!UICONTROL 資料流執行]** 目的地頁面隨即顯示，並顯示其可用的控制項。 此時，您可以編輯目的地資料流的幾個元件：
 
-   * 选择 **[!UICONTROL 激活区段]** 用于更改要发送到目标的区段或配置文件属性。 此操作会转到激活工作流，该工作流因目标类型而异。 有关更多信息，请参阅以下指南：
-      * [将受众数据激活为区段流目标](./activate-segment-streaming-destinations.md) (例如，Facebook或Twitter);
-      * [将受众数据激活到批量基于配置文件的目标](./activate-batch-profile-destinations.md) (例如，Amazon S3或OracleEloqua);
-      * [将受众数据激活到基于用户档案的流目标](./activate-streaming-profile-destinations.md) (例如，HTTP API或Amazon Kinesis)。
-   * 此外，您还可以编辑目标数据流名称和描述。
-   * 您可以使用 **[!UICONTROL 已启用]/[!UICONTROL 已禁用]** 切换以开始和暂停所有数据导出到目标。
+   * 選取 **[!UICONTROL 啟用區段]** ，以變更要傳送至目的地的區段或設定檔屬性。 此動作會帶您進入啟動工作流程，此工作流程會依目的地型別而異。 如需詳細資訊，請參閱以下指南：
+      * [啟用對象資料以區段串流目的地](./activate-segment-streaming-destinations.md) (例如Facebook或Twitter)；
+      * [啟用受眾資料以批次設定檔為基礎的目的地](./activate-batch-profile-destinations.md) (例如Amazon S3或Oracle Eloqua)；
+      * [啟用以串流設定檔為基礎的目的地的受眾資料](./activate-streaming-profile-destinations.md) (例如HTTP API或Amazon Kinesis)。
+   * 此外，您也可以編輯目的地資料流名稱和說明。
+   * 您可以使用 **[!UICONTROL 已啟用]/[!UICONTROL 已停用]** 切換以開始和暫停所有匯出至目的地的資料。
 
-   ![目标详细信息](../assets/ui/edit-activation/destination-details.png)
+   ![目的地詳細資料](../assets/ui/edit-activation/destination-details.png)
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已成功使用 **[!UICONTROL 目标]** 工作区来更新现有的目标数据流。
+依照本教學課程，您已成功使用 **[!UICONTROL 目的地]** 工作區以更新現有的目的地資料流。
 
-有关目标的更多信息，请参阅 [目标概述](../catalog/overview.md).
+如需有關目的地的詳細資訊，請參閱 [目的地概觀](../catalog/overview.md).

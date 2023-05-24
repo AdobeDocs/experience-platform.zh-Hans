@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式；
+keywords: Experience Platform；首頁；熱門主題；資料準備；api指南；結構描述；
 solution: Experience Platform
-title: 架构API端点
-description: 您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与Platform中的映射器一起使用。
+title: 結構描述API端點
+description: 您可以在Adobe Experience Platform API中使用「/schemas」端點，以程式設計方式擷取、建立和更新方案，以便在Platform中與對應程式搭配使用。
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
 source-wordcount: '611'
@@ -12,21 +12,21 @@ ht-degree: 4%
 
 
 
-# 架构端点
+# 結構描述端點
 
-架构可以与映射器一起使用，以确保已摄取到Adobe Experience Platform中的数据与您要摄取的数据匹配。 您可以使用 `/schemas` 端点，以编程方式创建、列出和获取自定义架构，以便与平台中的映射器一起使用。
+結構描述可與對應程式搭配使用，以確保您擷取到Adobe Experience Platform的資料與您想要擷取的資料相符。 您可以使用 `/schemas` 端點，以程式設計方式建立、列出和取得自訂結構描述，以便在Platform中搭配對應程式使用。
 
 >[!NOTE]
 >
->使用此端点创建的架构将专门与映射器和映射集一起使用。 要创建可由其他Platform服务访问的模式，请阅读 [架构注册开发人员指南](../../xdm/api/schemas.md).
+>使用此端點建立的結構描述只會搭配對應程式和對應集使用。 若要建立其他平台服務可存取的結構描述，請參閱 [Schema Registry開發人員指南](../../xdm/api/schemas.md).
 
-## 获取所有模式
+## 取得所有結構描述
 
-通过向 `/schemas` 端点。
+您可以透過向以下專案發出GET要求，擷取貴組織所有可用對應程式結構的清單： `/schemas` 端點。
 
 **API格式**
 
-的 `/schemas` 端点支持多个查询参数，以帮助您筛选结果。 虽然这些参数大多是可选的，但强烈建议使用这些参数来帮助减少昂贵的开销。 但是，您必须同时包含 `start` 和 `limit` 参数。 可以包含多个参数，这些参数之间用与号(`&`)。
+此 `/schemas` 端點支援數個查詢引數，可協助您篩選結果。 雖然這些引數大部分是選用的，但強烈建議使用它們來協助減少昂貴的額外負荷。 不過，您必須同時包含 `start` 和 `limit` 請求中的引數。 可包含多個引數，以&amp;符號(`&`)。
 
 ```http
 GET /schemas?limit={LIMIT}&start={START}
@@ -36,14 +36,14 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定返回的架构数。 |
-| `{START}` | **必需**. 指定结果页的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
-| `{NAME}` | 根据名称筛选架构。 |
-| `{ORDER_BY}` | 对结果的顺序进行排序。 支持的字段包括 `modifiedDate` 和 `createdDate`. 您可以在资产的前面添加 `+` 或 `-` 分别按升序或降序排序。 |
+| `{LIMIT}` | **必需**. 指定傳回的結構描述數目。 |
+| `{START}` | **必需**. 指定結果頁面的位移。 若要取得結果的第一頁，請將值設為 `start=0`. |
+| `{NAME}` | 根據名稱篩選結構。 |
+| `{ORDER_BY}` | 排序結果的順序。 支援的欄位包括 `modifiedDate` 和 `createdDate`. 您可以在屬性前面加上 `+` 或 `-` 以分別依遞增或遞減順序排序。 |
 
 **请求**
 
-以下请求可检索为贵组织创建的最后两个架构。
+以下請求會擷取您組織最後兩個建立的結構描述。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0&limit=2 \
@@ -55,11 +55,11 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0
 
 **响应**
 
-以下响应通过请求的架构列表返回HTTP状态200。
+以下回應會傳回HTTP狀態200及要求的結構描述清單。
 
 >[!NOTE]
 >
->以下响应已被截断为空格。
+>下列回應已因空格而截斷。
 
 ```json
 {
@@ -132,17 +132,17 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0
 
 ## 创建架构
 
-您可以通过向 `/schemas` 端点。 创建模式的方法有三种：发送 [JSON架构](https://json-schema.org/)、使用示例数据或引用现有XDM架构。
+您可以透過向以下發出POST請求，建立要驗證的結構描述： `/schemas` 端點。 建立結構描述的方法有三種：傳送 [JSON結構描述](https://json-schema.org/)，使用範例資料或參考現有XDM結構描述。
 
 ```http
 POST /schemas
 ```
 
-### 使用JSON架构
+### 使用JSON結構描述
 
 **请求**
 
-以下请求允许您通过发送 [JSON架构](https://json-schema.org/).
+以下請求可讓您透過傳送 [JSON結構描述](https://json-schema.org/).
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -163,7 +163,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
+成功的回應會傳回HTTP狀態200，其中包含您新建立之結構描述的相關資訊。
 
 ```json
 {
@@ -177,11 +177,11 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-### 使用示例数据
+### 使用範例資料
 
 **请求**
 
-以下请求允许您使用之前上传的示例数据创建架构。
+下列請求可讓您使用先前上傳的範例資料建立結構描述。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -198,11 +198,11 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sampleId` | 您的架构所依据的示例数据的ID。 |
+| `sampleId` | 架構所依據的範例資料ID。 |
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
+成功的回應會傳回HTTP狀態200，其中包含您新建立之結構描述的相關資訊。
 
 ```json
 {
@@ -242,11 +242,11 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-### 请参阅XDM架构
+### 參考XDM結構描述
 
 **请求**
 
-以下请求允许您通过引用现有XDM架构来创建架构。
+以下請求可讓您參照現有的XDM結構描述來建立結構描述。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
@@ -267,17 +267,17 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 要创建的架构的名称。 |
-| `schemaRef.id` | 您引用的架构的ID。 |
-| `schemaRef.contentType` | 确定引用架构的响应格式。 有关此字段的详细信息，请参阅 [架构注册开发人员指南](../../xdm/api/schemas.md#lookup) |
+| `name` | 您要建立的結構描述名稱。 |
+| `schemaRef.id` | 您參考的結構描述ID。 |
+| `schemaRef.contentType` | 決定參考之結構描述的回應格式。 如需此欄位的詳細資訊，請參閱 [結構描述登入開發人員指南](../../xdm/api/schemas.md#lookup) |
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
+成功的回應會傳回HTTP狀態200，其中包含您新建立之結構描述的相關資訊。
 
 >[!NOTE]
 >
->以下响应已被截断为空格。
+>下列回應已因空格而截斷。
 
 ```json
 {
@@ -292,9 +292,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-## 使用文件上传创建架构
+## 使用檔案上傳建立結構描述
 
-您可以通过上传JSON文件以创建架构，以便从中进行转换。
+您可以上傳要轉換的JSON檔案來建立結構描述。
 
 **API格式**
 
@@ -304,7 +304,7 @@ POST /schemas/upload
 
 **请求**
 
-以下请求允许您从上传的JSON文件创建架构。
+以下請求可讓您從上傳的JSON檔案建立結構描述。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload \
@@ -318,7 +318,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
+成功的回應會傳回HTTP狀態200，其中包含您新建立之結構描述的相關資訊。
 
 ```json
 {
@@ -332,9 +332,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 }
 ```
 
-## 检索特定架构
+## 擷取特定結構描述
 
-您可以通过向 `/schemas` 端点，并提供您希望在请求路径中检索的架构的ID。
+您可以透過向以下網址發出GET要求，擷取有關特定結構的資訊： `/schemas` 端點，並提供您要在請求路徑中擷取的結構描述ID。
 
 **API格式**
 
@@ -344,11 +344,11 @@ GET /schemas/{SCHEMA_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEMA_ID}` | 要查找的架构的ID。 |
+| `{SCHEMA_ID}` | 您要查詢的結構描述ID。 |
 
 **请求**
 
-以下请求会检索有关指定架构的信息。
+下列要求會擷取指定之結構描述的相關資訊。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas/0f868d3a1b804fb0abf738306290ae79 \
@@ -360,7 +360,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas/0f868d3
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关指定架构的信息。
+成功的回應會傳回HTTP狀態200，其中包含指定結構描述的相關資訊。
 
 ```json
 {

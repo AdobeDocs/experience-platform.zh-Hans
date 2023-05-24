@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；流；流式引入；流式引入验证；验证；流式引入验证；验证；同步验证；同步验证；异步验证；异步验证；
+keywords: Experience Platform；首頁；熱門主題；串流；串流擷取；串流擷取驗證；驗證；串流擷取驗證；驗證；同步驗證；同步驗證；非同步驗證；非同步驗證；
 solution: Experience Platform
-title: 流式摄取验证
+title: 串流擷取驗證
 type: Tutorial
-description: 流式摄取允许您使用流式端点实时将数据上传到Adobe Experience Platform。 流摄取API支持两种验证模式 — 同步和异步。
+description: 串流內嵌可讓您使用串流端點即時將資料上傳到Adobe Experience Platform。 串流獲取API支援兩種驗證模式 — 同步和非同步。
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -12,66 +12,66 @@ ht-degree: 3%
 
 ---
 
-# 流式摄取验证
+# 串流擷取驗證
 
-流式摄取允许您使用流式端点实时将数据上传到Adobe Experience Platform。 流摄取API支持两种验证模式 — 同步和异步。
+串流內嵌可讓您使用串流端點即時將資料上傳到Adobe Experience Platform。 串流獲取API支援兩種驗證模式 — 同步和非同步。
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
-- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md):将数据发送到的方法之一 [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
+- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md)：資料可傳送至的其中一種方法 [!DNL Experience Platform].
 
-### 读取示例API调用
+### 讀取範例API呼叫
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
 
-### 收集所需标题的值
+### 收集必要標題的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授權：持有人 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Schema Registry]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
+中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Schema Registry]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+>如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
 
 - Content-Type: `application/json`
 
-### 验证范围
+### 驗證涵蓋範圍
 
-[!DNL Streaming Validation Service] 涵盖以下方面的验证：
+[!DNL Streaming Validation Service] 涵蓋下列領域的驗證：
 - Range
-- 存在
-- 枚举
+- 是否存在
+- 列舉
 - 图案
 - 类型
 - 格式
 
-## 同步验证
+## 同步驗證
 
-同步验证是一种验证方法，可提供有关摄取失败原因的即时反馈。 但是，失败时，验证失败的记录会被丢弃，并阻止下游发送。 因此，只应在开发过程中使用同步验证。 进行同步验证时，将通知呼叫者XDM验证的结果，如果验证失败，则还将告知失败原因。
+同步驗證是一種驗證方法，可針對擷取失敗的原因提供立即回饋。 但是，失敗時，會捨棄驗證失敗的記錄，並阻止將其傳送至下游。 因此，同步驗證只應在開發過程中使用。 執行同步驗證時，會向呼叫者通知XDM驗證的結果，以及失敗的原因（如果失敗）。
 
-默认情况下，不会打开同步验证。 要启用此查询，必须传入可选查询参数 `syncValidation=true` 进行API调用时。 此外，当前，仅当流端点位于VA7数据中心时，才可使用同步验证。
-
->[!NOTE]
->
->的 `syncValidation` 查询参数仅适用于单个消息端点，不能用于批处理端点。
-
-如果消息在同步验证期间失败，则消息将不会写入输出队列，从而为用户提供即时反馈。
+依預設，同步驗證不會開啟。 若要啟用，您必須傳入選用查詢引數 `syncValidation=true` 進行API呼叫時。 此外，目前只有在您的串流端點位於VA7資料中心時，才可使用同步驗證。
 
 >[!NOTE]
 >
->由于已缓存更改，因此架构更改可能不会立即可用。 最长需要15分钟才能刷新缓存。
+>此 `syncValidation` 查詢引數僅適用於單一訊息端點，且不能用於批次端點。
+
+如果訊息在同步驗證期間失敗，訊息將不會寫入輸出佇列，這會為使用者提供立即的回饋。
+
+>[!NOTE]
+>
+>結構描述變更可能無法立即使用，因為已快取變更。 快取最多允許15分鐘重新整理。
 
 **API格式**
 
@@ -81,11 +81,11 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 的 `id` 之前创建的流连接的值。 |
+| `{CONNECTION_ID}` | 此 `id` 先前建立的串流連線的值。 |
 
 **请求**
 
-提交以下请求，以通过同步验证将数据摄取到数据入口：
+提交下列請求，以透過同步驗證將資料擷取至您的資料匯入：
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
@@ -95,11 +95,11 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{JSON_PAYLOAD}` | 要摄取的数据的JSON正文。 |
+| `{JSON_PAYLOAD}` | 您要內嵌之資料的JSON內文。 |
 
 **响应**
 
-启用同步验证后，成功响应的有效负载中包含遇到的任何验证错误：
+啟用同步驗證後，成功的回應會在其裝載中包含任何遇到的驗證錯誤：
 
 ```json
 {
@@ -144,11 +144,11 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 }
 ```
 
-上述响应列出了发现的架构违规数量以及违规的数量。 例如，此响应声明键 `workEmail` 和 `person` 未在架构中定义，因此不允许。 它还会标记 `_id` 不正确，因为架构需要 `string`，但 `long` 的值。 请注意，遇到5个错误后，验证服务将 **stop** 正在处理该消息。 但是，其他消息将继续进行解析。
+上述回應會列出找到多少綱要違規，以及違規是什麼。 例如，此回應會指出索引鍵 `workEmail` 和 `person` 結構描述中未定義，因此是不允許的。 它也會標示以下專案的值： `_id` 不正確，因為結構描述預期 `string`，但 `long` 已改為插入。 請注意，一旦發生5個錯誤，驗證服務將 **停止** 正在處理該訊息。 不過，其他訊息仍會繼續剖析。
 
-## 异步验证
+## 非同步驗證
 
-异步验证是一种不提供即时反馈的验证方法。 相反，数据会在 [!DNL Data Lake] 以防止数据丢失。 稍后可以检索此失败数据，以便进一步分析和重播。 此方法应用于生产中。 除非另有请求，否则流摄取在异步验证模式下运行。
+非同步驗證是一種不會立即提供回饋的驗證方法。 而是將資料傳送至中的失敗批次 [!DNL Data Lake] 以防止資料遺失。 此失敗的資料稍後可擷取，以供進一步分析和重播。 此方法應用於生產環境。 除非另有要求，否則串流擷取會以非同步驗證模式運作。
 
 **API格式**
 
@@ -158,11 +158,11 @@ POST /collection/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 的 `id` 之前创建的流连接的值。 |
+| `{CONNECTION_ID}` | 此 `id` 先前建立的串流連線的值。 |
 
 **请求**
 
-通过异步验证提交以下请求，将数据摄取到数据入口：
+提交下列請求，以使用非同步驗證將資料擷取至您的資料入口：
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
@@ -172,15 +172,15 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{JSON_PAYLOAD}` | 要摄取的数据的JSON正文。 |
+| `{JSON_PAYLOAD}` | 您要內嵌之資料的JSON內文。 |
 
 >[!NOTE]
 >
->由于默认启用异步验证，因此不需要额外的查询参数。
+>不需要額外的查詢引數，因為預設會啟用非同步驗證。
 
 **响应**
 
-启用异步验证后，成功的响应会返回以下内容：
+啟用非同步驗證時，成功回應會傳回以下內容：
 
 ```json
 {
@@ -193,19 +193,19 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 }
 ```
 
-请注意响应如何声明已跳过同步验证，因为尚未明确请求同步验证。
+請注意回應如何指出已略過同步驗證，因為並未明確要求同步驗證。
 
 ## 附录
 
-本节包含有关各种状态代码对于摄取数据的响应意味着什么的信息。
+本節包含各種狀態代碼對擷取資料的回應有何意義的資訊。
 
-### 状态代码
+### 狀態代碼
 
-| 状态代码 | 这是什么意思 |
+| 狀態代碼 | 其含義 |
 | ----------- | ------------- |
-| 200 | 成功. 对于同步验证，这意味着它已通过验证检查。 对于异步验证，这意味着它仅成功接收了消息。 用户可以通过观察数据集来查找最终的消息状态。 |
-| 400 | 错误. 你的请求有问题。 从流验证服务中接收了包含更多详细信息的错误消息。 |
-| 401 | 错误. 您的请求未授权 — 您将需要使用载体令牌请求。 有关如何请求访问权限的更多信息，请参阅此 [教程](https://www.adobe.com/go/platform-api-authentication-en) 或 [博客帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f). |
-| 500 | 错误. 出现内部系统错误。 |
-| 501 | 错误. 这意味着同步验证 **not** 支持此位置。 |
-| 503 | 错误. 服务当前不可用。 客户端应使用指数回退策略至少重试3次。 |
+| 200 | 成功. 對於同步驗證，這表示它已通過驗證檢查。 對於非同步驗證，這表示它僅成功收到訊息。 使用者可透過觀察資料集來瞭解最終的訊息狀態。 |
+| 400 | 错误. 您的請求發生問題。 從串流驗證服務收到包含進一步詳細資訊的錯誤訊息。 |
+| 401 | 错误. 您的請求未獲授權 — 您需要使用持有人權杖請求。 如需有關如何請求存取權的進一步資訊，請檢視此 [教學課程](https://www.adobe.com/go/platform-api-authentication-en) 或這個 [部落格貼文](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f). |
+| 500 | 错误. 發生內部系統錯誤。 |
+| 501 | 错误. 這表示同步驗證是 **not** 支援此位置。 |
+| 503 | 错误. 服務目前無法使用。 使用者端應使用指數回退策略至少重試三次。 |

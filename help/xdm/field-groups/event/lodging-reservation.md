@@ -1,76 +1,76 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；预订；住宿；
-title: 寄宿保留方案字段组
-description: 本文档概述了“住宿预订”架构字段组。
-source-git-commit: d230cfa9e74eb96aa44e8b83ca8f2306db4ba4ec
+keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；ExperienceEvent；欄位；結構描述；結構描述設計；欄位群組；欄位群組；預訂；住宿；
+title: 住宿預訂結構描述欄位群組
+description: 本檔案提供住宿預訂結構描述欄位群組的概觀。
+exl-id: f0eafc83-21f1-483d-9397-1133e3777699
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '679'
 ht-degree: 5%
 
 ---
 
+# [!UICONTROL 住宿預訂] 結構描述欄位群組
 
-# [!UICONTROL Lodging ] Reservationschema字段组
+[!UICONTROL 住宿預訂] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md) 用於擷取住宿預訂的相關資訊。
 
-[!UICONTROL Lodging Reservation] 是类的标准架构字段组， [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) 用于捕获有关Lodging Reservation的信息。
-
-字段组是[!UICONTROL Reservation Details]字段组的扩展，并包含单个对象类型字段`reservations`下的所有相同字段。 除了这些通用字段外，[!UICONTROL Lodging Reservation]还包含`lodgingReservations`数组。 此对象数组用于描述一个或多个保留，该保留具有对于Lodging而言是唯一的属性。
+欄位群組是 [!UICONTROL 預訂詳細資料] 欄位群組，並在單一物件型別欄位下包含所有相同的欄位， `reservations`. 除了這些通用欄位外， [!UICONTROL 住宿預訂] 也包含 `lodgingReservations` 陣列。 這個物件陣列可用來說明一或多個訂房，以及住宿特有的屬性。
 
 >[!NOTE]
 >
->本文档介绍`lodgingReservations`阵列的详细信息。 有关在`reservations`对象下提供的其他字段的信息，请参阅[[!UICONTROL 保留详细信息]字段组引用](./reservation-details.md)。
+>本檔案涵蓋以下專案的詳細資訊： `lodgingReservations` 陣列。 如需底下其他欄位的詳細資訊， `reservations` 物件，請參閱 [[!UICONTROL 預訂詳細資料] 欄位群組參考](./reservation-details.md).
 
-![住宿预订结构](../../images/field-groups/lodging-reservation/structure.png)
+![住宿預訂結構](../../images/field-groups/lodging-reservation/structure.png)
 
 ## `lodgingReservations`
 
-`lodgingReservations` 是表示住宿预订列表的对象数组。例如，如果预订事件涉及沿行程路线在多家不同酒店的预订，则这些预订可以列为单个事件的`lodgingReservations`下的单个对象。
+`lodgingReservations` 是一個物件陣列，代表住宿預訂清單。 例如，如果預訂事件涉及在旅行路線上的多個不同飯店的預訂，這些預訂可以列為下的個別物件 `lodgingReservations` （針對單一事件）。
 
-下面提供了`lodgingReservations`下提供的每个对象的结构。
+下提供的每個物件的結構 `lodgingReservations` 提供如下。
 
-![lodgingReservations结构](../../images/field-groups/lodging-reservation/lodgingReservations.png)
+![loggingReservations結構](../../images/field-groups/lodging-reservation/lodgingReservations.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `averageDailyPrice` | [[!UICONTROL 货币]](../../data-types/currency.md) | 旅馆房间的平均日价。 |
-| `lodgingCheckIn` | 对象 | 描述提交签入详细信息的对象。 包括以下值：<ul><li>`digitalKey`:（整数）指示来宾在签入时选择使用数字键的时间。</li><li>`earlyCheckInRequested`:（整数）指示来宾请求在正常签入小时之前签入的时间。</li><li>`lateCheckInRequested`:（整数）指示来宾请求在正常签入小时之后签入的时间。</li><li>`noRoomCheckIn`:（整数）当来宾在当时没有可用的房间时完成签入时，将捕获此值。</li><li>`oneRoomCheckIn`:（整数）当来宾完成签入时，当时只有一个可用房间时，会捕获此值。</li><li>`roomKeys`:（整数）签入时提供的标准房间键数。</li><li>`userSelectedRoom`:（布尔值）指示来宾是否在签入时选择了其房间。</li></ul> |
-| `rackrate` | [[!UICONTROL 货币]](../../data-types/currency.md) | 当天预订的成本，无需事先预订。 |
-| `ID` | 字符串 | 保留编号或标识符。 |
-| `agentID` | 字符串 | 与酒店预订关联的代理ID。 |
-| `basePrice` | 字符串 | 在添加任何折扣前的基价。 |
-| `bookingID` | 字符串 | 与酒店预订关联的预订ID。 |
-| `cancellation` | 整数 | 在取消保留时会捕获此值。 |
-| `checkInDate` | DateTime | 房间预订的登记日期。 |
-| `checkOutDate` | DateTime | 房间预订的结帐日期。 |
-| `confirmationNumber` | 字符串 | 预订确认号或标识符。 |
-| `couponCode` | 字符串 | 与酒店预订关联的优惠券代码。 |
-| `created` | 整数 | 创建保留后会捕获此值。 |
-| `currencyCode` | 字符串 | 用于购买的ISO 4217货币代码。 |
-| `discountPercent` | 双精度 | 与预订关联的折扣百分比。 |
-| `freeCancelation` | 布尔型 | 指示文件室是否具有免费取消策略。 |
-| `guestID` | 字符串 | 与酒店预订关联的来宾ID。 |
-| `length` | 整数 | 保留的总天数。 |
-| `loyaltyID` | 字符串 | 预订中列出的来宾的忠诚度计划ID。 |
-| `modification` | 整数 | 在修改保留时会捕获此值。 |
-| `modificationDate` | DateTime | 上次修改保留的时间。 |
-| `numberOfAdults` | 整数 | 与保留关联的成人数。 |
-| `numberOfChildren` | 整数 | 与保留关联的子项数。 |
-| `numberOfRooms` | 整数 | 与预订关联的房间数。 |
-| `propertyID` | 字符串 | 预订酒店或度假村的标识符。 |
-| `propertyName` | 字符串 | 预订的酒店或度假村的名称。 |
-| `purpose` | 字符串 | 保留的目的，通常是企业或个人。 |
-| `ratePlan` | 字符串 | 房间卖的费率协议。 |
-| `refundable` | 布尔型 | 指示文件室是否可退款。 |
-| `reservationStatus` | 字符串 | 保留的状态。 |
-| `roomAccessibilityType` | 字符串 | 房间的辅助功能类型，如移动、听力或其他。 |
-| `roomCapacity` | 整数 | 酒店房间的住客人数。 |
-| `roomType` | 字符串 | 要保留的房间类型。 |
-| `smoking` | 布尔型 | 指示房间是否允许吸烟。 |
-| `tripType` | 字符串 | 指示预订是单程旅行、往返旅行还是多城市旅行。 |
+| `averageDailyPrice` | [[!UICONTROL 货币]](../../data-types/currency.md) | 飯店房間的平均每日價格。 |
+| `lodgingCheckIn` | 对象 | 說明住宿簽到詳細資訊的物件。 包含下列值：<ul><li>`digitalKey`：（整數）指出訪客何時在登入時選取使用數位金鑰。</li><li>`earlyCheckInRequested`：（整數）指出訪客要求籤入的時間早於正常簽入時間。</li><li>`lateCheckInRequested`：（整數）指出訪客要求登入的時間晚於正常登入時間。</li><li>`noRoomCheckIn`：（整數）當訪客完成簽入且當時沒有可用聊天室時，會擷取此值。</li><li>`oneRoomCheckIn`：（整數）當只有一間房間可供使用時，當訪客完成簽入時擷取此值。</li><li>`roomKeys`：（整數）簽到時提供的標準房鑰匙數量。</li><li>`userSelectedRoom`：（布林值）指出訪客是否於簽到時選取其房間。</li></ul> |
+| `rackrate` | [[!UICONTROL 货币]](../../data-types/currency.md) | 未事先預訂安排的當天預訂成本。 |
+| `ID` | 字符串 | 預訂編號或識別碼。 |
+| `agentID` | 字符串 | 和飯店預訂相關聯的代理程式ID。 |
+| `basePrice` | 字符串 | 新增任何折扣前的基準價格。 |
+| `bookingID` | 字符串 | 和飯店預訂相關聯的預訂ID。 |
+| `cancellation` | 整数 | 此值會在預訂取消時擷取。 |
+| `checkInDate` | 日期時間 | 訂房的簽到日期。 |
+| `checkOutDate` | 日期時間 | 訂房的結帳日期。 |
+| `confirmationNumber` | 字符串 | 預訂確認號碼或識別碼。 |
+| `couponCode` | 字符串 | 和飯店預訂相關聯的抵用券代碼。 |
+| `created` | 整数 | 此值會在建立預訂時擷取。 |
+| `currencyCode` | 字符串 | 用於進行購買的ISO 4217貨幣代碼。 |
+| `discountPercent` | 双精度 | 和預訂相關聯的折扣百分比。 |
+| `freeCancelation` | 布尔值 | 指出會議室是否有免費取消原則。 |
+| `guestID` | 字符串 | 和飯店預訂相關聯的賓客ID。 |
+| `length` | 整数 | 預訂的總天數。 |
+| `loyaltyID` | 字符串 | 預訂中列出的賓客的熟客方案ID。 |
+| `modification` | 整数 | 此值會在預訂被修改時擷取。 |
+| `modificationDate` | 日期時間 | 上次修改預訂的時間。 |
+| `numberOfAdults` | 整数 | 和預訂相關聯的成人數量。 |
+| `numberOfChildren` | 整数 | 和預訂相關聯的子項數目。 |
+| `numberOfRooms` | 整数 | 和預訂相關聯的房間數。 |
+| `propertyID` | 字符串 | 預訂的飯店或渡假村的識別碼。 |
+| `propertyName` | 字符串 | 預訂的飯店或度假村名稱。 |
+| `purpose` | 字符串 | 預訂的目的，通常為商業或個人目的。 |
+| `ratePlan` | 字符串 | 房間售出的費率交易。 |
+| `refundable` | 布尔值 | 指出房間是否可退款。 |
+| `reservationStatus` | 字符串 | 預訂的狀態。 |
+| `roomAccessibilityType` | 字符串 | 房間的無障礙型別，例如行動力、聽力或其他。 |
+| `roomCapacity` | 整数 | 飯店房間容納的人數。 |
+| `roomType` | 字符串 | 預訂的房間型別。 |
+| `smoking` | 布尔值 | 指出房間是否允許吸菸。 |
+| `tripType` | 字符串 | 表示此預訂是單程旅行、往返還是多城市旅行。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json)

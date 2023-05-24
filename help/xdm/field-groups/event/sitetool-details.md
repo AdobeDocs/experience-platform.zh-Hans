@@ -1,28 +1,29 @@
 ---
-title: 站点工具详细信息架构字段组
-description: 本文档概述了“站点工具详细信息”架构字段组。
-source-git-commit: 3937963ceee8502b0669a3f007fd38ecf2824e9b
+title: Sitetool詳細資料結構欄位群組
+description: 本檔案提供「Sitetool詳細資訊」結構描述欄位群組的概觀。
+exl-id: 472c0a3f-efda-49af-9490-f2de90b348c0
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '198'
-ht-degree: 5%
+source-wordcount: '195'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL 站点工具详细信息] 架构字段组
+# [!UICONTROL Sitetool詳細資料] 結構描述欄位群組
 
-[!UICONTROL 站点工具详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供了 `sitetool` 对象，该模式可捕获由站点工具收集的信息。
+[!UICONTROL Sitetool詳細資料] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md). 欄位群組提供單一 `sitetool` 物件變更為結構描述，以擷取sitetool所收集的資訊。
 
-![字段组结构](../../images/field-groups/sitetool-details.png)
+![欄位群組結構](../../images/field-groups/sitetool-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `dataGatheringEvent` | 对象 | 指示此事件是否是数据收集事件以及其他相关详细信息。 包含以下属性：<ul><li>`data`:（映射）包含作为测验、调查或投票提交事件的一部分收集和提交的JSON数据。</li><li>`isTrue`:（布尔值）指示此事件是否是数据收集事件，如测验、调查或投票。</li><li>`score`:（整数）由演员根据事件响应获得的分数。</li></ul> |
-| `actor` | 字符串 | 执行操作的人员/成员。 |
-| `actorID` | 字符串 | 执行操作的人员/成员的唯一标识符。 |
-| `isKeyEvent` | 布尔型 | 指示此事件是否为关键事件。 |
-| `name` | 字符串 | 站点工具的名称，如聊天、调查等。 |
-| `section` | 字符串 | 站点工具的相关部分，如主工具或子工具。 |
+| `dataGatheringEvent` | 对象 | 指出此事件是否與其他相關詳細資料一起屬於資料收集事件。 包含以下屬性：<ul><li>`data`：（對應）包含所收集的JSON資料，這些資料會隨著測驗、調查或輪詢提交事件而提交。</li><li>`isTrue`：（布林值）指出此事件是否為測驗、調查或輪詢等資料收集事件。</li><li>`score`：（整數）執行者根據事件回應保護的分數。</li></ul> |
+| `actor` | 字符串 | 執行此動作的人員/成員。 |
+| `actorID` | 字符串 | 執行此動作之人員/成員的唯一識別碼。 |
+| `isKeyEvent` | 布尔值 | 指出此事件是否為關鍵事件。 |
+| `name` | 字符串 | Sitetool的名稱，例如聊天機器人、調查等。 |
+| `section` | 字符串 | Sitetool的相關區段，例如main或sub。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).
+如需欄位群組的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).

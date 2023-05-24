@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 使用流服务API更新连接规范
-description: 可以通过PUT操作更新连接规范的属性。
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+title: 使用流程服務API更新連線規格
+description: 您可以透過PUT操作更新連線規格的屬性。
 exl-id: fcb00521-8fc2-491e-aa35-6e0f9b730dd4
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -10,9 +10,9 @@ ht-degree: 1%
 
 ---
 
-# 使用流服务API更新连接规范
+# 使用流程服務API更新連線規格
 
-可以通过PUT操作更新连接规范的属性。 通过PUT请求更新连接规范时，主体必须包括在POST请求中创建新连接规范时需要的所有字段。
+您可以透過PUT操作更新連線規格的屬性。 透過PUT要求更新連線規格時，內文必須包含在POST要求中建立新連線規格時所需的所有欄位。
 
 **API格式**
 
@@ -22,7 +22,7 @@ PUT /connectionSpecs/{CONNECTION_SPEC_ID}
 
 **请求**
 
-以下请求更新了 `name` 的 [!DNL MailChimp] 在上一步中创建的源。
+以下請求會更新 `name` 的 [!DNL MailChimp] 在上一步建立的來源。
 
 ```shell
 PUT -X GET \
@@ -205,7 +205,7 @@ PUT -X GET \
 
 **响应**
 
-成功的调用会返回更新的连接规范详细信息，包括其更新名称。
+成功的呼叫會傳回更新的連線規格詳細資料，包括其更新的名稱。
 
 ```json
 {

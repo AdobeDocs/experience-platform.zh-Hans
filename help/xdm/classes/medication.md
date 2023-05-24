@@ -1,25 +1,26 @@
 ---
-title: 药物治疗类
-description: 本文档概述了Experience Data Model(XDM)中的“药物”类。
-source-git-commit: cf39f943e27cd11b0eabbc344774fa12482a8f92
+title: 藥物類別
+description: 本檔案提供Experience Data Model (XDM)中Media類別的概觀。
+exl-id: e5786241-dd6e-450f-98c8-2de46affb3e2
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 5%
+source-wordcount: '149'
+ht-degree: 3%
 
 ---
 
-# [!UICONTROL 药物] 类
+# [!UICONTROL 藥物] 類別
 
-在Experience Data Model(XDM)中， [!UICONTROL 药物] 类可捕获定义用于医疗的物质（特别是药物或药物）的最小属性集。
+在Experience Data Model (XDM)中， [!UICONTROL 藥物] class會擷取定義用於醫療的物質（尤其是藥物或藥物）的最小屬性集。
 
-![类结构](../images/classes/medication.png)
+![類別結構](../images/classes/medication.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `_id` | [!UICONTROL 字符串] | 记录的唯一、系统生成的字符串标识符。 此字段用于跟踪单个记录的唯一性，防止重复数据，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此在数据摄取期间不会为其提供显式值。 但是，如果您愿意，您仍可以选择提供您自己的唯一ID值。 |
-| `medicationId` | [!UICONTROL 字符串] | 药物的唯一标识符。 |
-| `medicationName` | [!UICONTROL 字符串] | 药物的名字。 |
+| `_id` | [!UICONTROL 字符串] | 記錄的唯一、系統產生的字串識別碼。 此欄位用於追蹤個別記錄的唯一性、防止資料重複，以及在下游服務中查詢該記錄。<br><br>由於此欄位是系統產生的，因此在資料擷取期間不會向其提供明確值。 不過，您仍然可以視需要選擇提供自己的唯一ID值。 |
+| `medicationId` | [!UICONTROL 字符串] | 適用於藥物的唯一識別碼。 |
+| `medicationName` | [!UICONTROL 字符串] | 藥物名稱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-类可以使用 [[!UICONTROL 一种保健药物] 字段组](../field-groups/medication/healthcare-medication.md) 以详细描述药物或药物。
+可以使用來擴充類別 [[!UICONTROL 醫療保健] 欄位群組](../field-groups/medication/healthcare-medication.md) 以進一步說明藥物或藥物的詳細資訊。

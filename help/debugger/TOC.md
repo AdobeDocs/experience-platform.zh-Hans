@@ -14,20 +14,20 @@ ht-degree: 48%
 
 # Adobe Experience Platform Debugger {#debugger}
 
-* [Platform Debugger概述](./home.md)
-* [安装扩展](./install-debugger.md)
+* [Platform Debugger概觀](./home.md)
+* [安裝擴充功能](./install-debugger.md)
 * [配置扩展](./configure-debugger.md)
-* [“摘要”选项卡](./summary.md)
-* “解决方案”选项卡 {#solutions}
+* [摘要標籤](./summary.md)
+* 解決方案索引標籤 {#solutions}
    * [概述](./solutions/overview.md)
    * [Adobe Target](./solutions/target.md)
-* [“日志”选项卡](./logs.md)
-* [“网络”选项卡](./network.md)
-* [“事件”选项卡](./events.md)
-* “Auditor”选项卡 {#auditor}
+* [記錄檔標籤](./logs.md)
+* [網路標籤](./network.md)
+* [事件標籤](./events.md)
+* Auditor索引標籤 {#auditor}
    * [概述](./auditor/overview.md)
-   * [标记一致性测试](./auditor/tag-consistency.md)
-   * [标记存在测试](./auditor/tag-presence.md)
-   * [配置测试](./auditor/configuration.md)
-   * [警报测试](./auditor/alerts.md)
+   * [標籤一致性測試](./auditor/tag-consistency.md)
+   * [標籤存在性測試](./auditor/tag-presence.md)
+   * [設定測試](./auditor/configuration.md)
+   * [警示測試](./auditor/alerts.md)
 * [发行说明](./release-notes.md)

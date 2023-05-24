@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题
+keywords: Experience Platform；首頁；熱門主題
 solution: Experience Platform
-title: 隐私作业API端点
-description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的隐私作业。
+title: 隱私權工作API端點
+description: 瞭解如何使用Privacy Service API管理Experience Cloud應用程式的隱私權工作。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,21 +11,21 @@ ht-degree: 1%
 
 ---
 
-# 隐私作业端点
+# 隱私權工作端點
 
-本文档介绍如何使用API调用处理隐私作业。 具体而言，它涵盖 `/job` 的端点 [!DNL Privacy Service] API。 在阅读本指南之前，请参阅 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本文介紹如何使用API呼叫處理隱私權工作。 具體來說，它涵蓋了 `/job` 中的端點 [!DNL Privacy Service] API。 閱讀本指南前，請參閱 [快速入門手冊](./getting-started.md) 如需成功呼叫API所需的重要資訊，包括必要的標頭及如何讀取範例API呼叫。
 
 >[!NOTE]
 >
->如果您尝试管理客户的同意或选择退出请求，请参阅 [consent endpoint指南](./consent.md).
+>如果您嘗試管理客戶的同意或選擇退出請求，請參閱 [同意端點指南](./consent.md).
 
-## 列出所有作业 {#list}
+## 列出所有工作 {#list}
 
-您可以通过向 `/jobs` 端点。
+您可以透過向以下網站發出GET請求，檢視組織內所有可用隱私權工作的清單： `/jobs` 端點。
 
 **API格式**
 
-此请求格式使用 `regulation` 查询参数 `/jobs` 端点，因此以问号(`?`)，如下所示。 响应将分页，以便您使用其他查询参数(`page` 和 `size`)来筛选响应。 您可以使用与号(`&`)。
+此請求格式使用 `regulation` 上的查詢引數 `/jobs` 端點，因此開頭為問號(`?`)，如下所示。 回應會分頁，讓您能夠使用其他查詢引數(`page` 和 `size`)以篩選回應。 您可以使用&amp;符號(`&`)。
 
 ```http
 GET /jobs?regulation={REGULATION}
@@ -36,15 +36,15 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的规则类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅 [受支持法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
-| `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
-| `{SIZE}` | 要在每个页面上显示的结果数。 默认值为 `1` 最大值是 `100`. 超过最大值会导致API返回400代码错误。 |
+| `{REGULATION}` | 要查詢的規則型別。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>請參閱以下文章的概觀： [支援的法規](../regulations/overview.md) 以取得上述值所代表之隱私權法規的詳細資訊。 |
+| `{PAGE}` | 要顯示的資料頁（使用0編號）。 默认值为 `0`。 |
+| `{SIZE}` | 要在每個頁面上顯示的結果數量。 預設值為 `1` 最大值為 `100`. 超過上限會導致API傳回400程式碼錯誤。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求从页面大小为50的第三页开始，检索组织内所有作业的分页列表。
+下列請求會從頁面大小為50的第三個頁面開始，擷取組織內所有工作的分頁清單。
 
 ```shell
 curl -X GET \
@@ -56,38 +56,38 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回作业列表，每个作业都包含其 `jobId`. 在此示例中，响应将包含从结果第三页开始的50个作业列表。
+成功的回應會傳回工作清單，而每個工作都包含詳細資訊，例如 `jobId`. 在此範例中，回應會包含50個作業的清單，從結果的第三個頁面開始。
 
-### 访问后续页面
+### 存取後續頁面
 
-要在分页响应中获取下一组结果，您必须对同一端点再进行一次API调用，同时将 `page` 按1查询参数。
+若要在分頁回應中擷取下一組結果，您必須對相同端點進行另一個API呼叫，同時增加 `page` 查詢引數，按1。
 
-## 创建隐私作业 {#create-job}
+## 建立隱私權工作 {#create-job}
 
 >[!IMPORTANT]
 >
->Privacy Service仅适用于数据主体和消费者权限请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有法律义务及时履行这些义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅生产环境，并且会造成有效隐私请求的不必要积压。
+>Privacy Service僅適用於資料主體和消費者權利請求。 不支援或不允許將Privacy Service用於資料清理或維護的任何其他用途。 Adobe有法定義務須及時履行。 因此，不允許在Privacy Service上進行負載測試，因為這是僅限生產的環境，且會建立有效隱私權請求的不必要待處理專案。
 >
->现已设置硬性的每日上载限制，以帮助防止滥用服务。 发现滥用系统的用户将禁用其对服务的访问权限。 随后将与他们举行会议，讨论他们的行动并讨论可接受的Privacy Service用途。
+>現已設定每日硬性上傳限制，以防止服務被濫用。 發現濫用系統的使用者將會停用其服務的存取權。 隨後將與其舉行會議，討論其行動並討論可接受的Privacy Service用途。
 
-在创建新作业请求之前，您必须首先收集有关要访问、删除或选择退出销售其数据的数据主体的标识信息。 获得所需数据后，必须在向发送的POST请求的有效负载中提供该数据 `/jobs` 端点。
+在建立新的工作請求之前，您必須先收集有關您要存取、刪除或選擇退出銷售的資料主體的識別資訊。 擁有所需資料後，您必須在向發出的POST請求的有效負載中提供該資料 `/jobs` 端點。
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来识别数据主体。 请参阅 [Privacy Service和Experience Cloud应用程序](../experience-cloud-apps.md) 有关应用程序所需标识符的更多信息。 有关确定要发送到的ID的更一般指导 [!DNL Privacy Service]，请参阅 [隐私请求中的身份数据](../identity-data.md).
+>相容的Adobe Experience Cloud應用程式使用不同的值來識別資料主體。 請參閱指南： [Privacy Service和Experience Cloud應用程式](../experience-cloud-apps.md) 以取得應用程式所需識別碼的詳細資訊。 如需判斷要傳送至哪些ID的一般指引 [!DNL Privacy Service]，請參閱本檔案： [隱私權請求中的身分資料](../identity-data.md).
 
-的 [!DNL Privacy Service] API支持两种类型的个人数据作业请求：
+此 [!DNL Privacy Service] API支援兩種針對個人資料的工作請求：
 
-* [访问和/或删除](#access-delete):访问（读取）或删除个人数据。
-* [选择退出销售](#opt-out):将个人数据标记为不出售。
+* [存取和/或刪除](#access-delete)：存取（讀取）或刪除個人資料
+* [選擇退出銷售](#opt-out)：將個人資料標籤為不出售。
 
 >[!IMPORTANT]
 >
->虽然访问和删除请求可以合并为单个API调用，但是必须单独发出选择退出请求。
+>雖然存取和刪除請求可以合併為單一API呼叫，但選擇退出請求必須單獨提出。
 
-### 创建访问/删除作业 {#access-delete}
+### 建立存取/刪除工作 {#access-delete}
 
-本节演示如何使用API发出访问/删除作业请求。
+本節示範如何使用API提出存取/刪除工作請求。
 
 **API格式**
 
@@ -97,7 +97,7 @@ POST /jobs
 
 **请求**
 
-以下请求会创建一个新的作业请求，该请求由有效负载中提供的属性进行配置，如下所述。
+以下請求會建立新的作業請求，由承載中提供的屬性進行設定，如下所述。
 
 ```shell
 curl -X POST \
@@ -159,20 +159,20 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` **（必需）** | 包含贵组织的身份验证信息的数组。 列出的每个标识符都包含以下属性： <ul><li>`namespace`:标识符的命名空间。</li><li>`value`:标识符的值。</li></ul>是 **必需** 标识符之一使用 `imsOrgId` as `namespace`, `value` 包含贵组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符(例如， `Campaign`)，用于识别与属于贵组织的Adobe应用程序的集成。 潜在值包括帐户名称、客户端代码、租户ID或其他应用程序标识符。 |
-| `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您要访问或删除其信息。 在单个请求中最多可以提供1000个用户ID。 每个用户对象包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中单独的作业ID。 最好为此值选择一个唯一且易于识别的字符串，以便以后可以轻松引用或查找该字符串。</li><li>`action`:一个数组，其中列出了对用户数据执行的所需操作。 根据您要执行的操作，此数组必须包括 `access`, `delete`，或两者兼有。</li><li>`userIDs`:用户的标识集合。 单个用户可以拥有的身份数量最多为9个。 每个标识都包含 `namespace`, a `value`，和命名空间限定符(`type`)。 请参阅 [附录](appendix.md) 以了解有关这些必需属性的更多详细信息。</li></ul> 更详细的说明 `users` 和 `userIDs`，请参阅 [疑难解答指南](../troubleshooting-guide.md#user-ids). |
-| `include` **（必需）** | 要包含在处理中的Adobe产品数组。 如果此值缺失或为空，则请求将被拒绝。 仅包括贵组织与集成的产品。 请参阅 [接受的产品值](appendix.md) ，以了解详细信息。 |
-| `expandIDs` | 可选属性，当设置为 `true`，表示针对处理应用程序中的ID而进行的优化(当前仅受 [!DNL Analytics])。 如果忽略，则此值默认为 `false`. |
-| `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值为 `normal` 和 `low`. 如果 `priority` ，则默认行为为 `normal`. |
-| `analyticsDeleteMethod` | 一个可选属性，用于指定Adobe Analytics如何处理个人数据。 此属性可接受两个可能的值： <ul><li>`anonymize`:给定用户ID集合引用的所有数据均设为匿名。 如果 `analyticsDeleteMethod` ，这是默认行为。</li><li>`purge`:所有数据都将被完全删除。</li></ul> |
-| `mergePolicyId` | 在对实时客户资料提出隐私请求时(`profileService`)，则可以选择提供特定 [合并策略](../../profile/merge-policies/overview.md) 用于ID拼合的ID。 通过指定合并策略，在返回客户数据时，隐私请求可以包含区段信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不会包含分段信息。 |
-| `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅 [受支持法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
+| `companyContexts` **（必要）** | 包含貴組織驗證資訊的陣列。 每個列出的識別碼都包含以下屬性： <ul><li>`namespace`：識別碼的名稱空間。</li><li>`value`：識別碼的值。</li></ul>它是 **必填** 其中一個識別碼使用 `imsOrgId` 作為其 `namespace`，及其他 `value` 包含貴組織的唯一ID。 <br/><br/>其他識別碼可以是產品特定的公司限定詞(例如， `Campaign`)，可識別與您組織所屬之Adobe應用程式的整合。 可能的值包括帳戶名稱、使用者端代碼、租使用者ID或其他應用程式識別碼。 |
+| `users` **（必要）** | 一個陣列，包含您要存取或刪除其資訊之至少一個使用者的集合。 單一請求中最多可提供1000個使用者ID。 每個使用者物件包含下列資訊： <ul><li>`key`：使用者的識別碼，用於限定回應資料中的個別作業ID。 最佳實務是為這個值選擇唯一且易於識別的字串，以便日後可以輕鬆參考或查閱。</li><li>`action`：列出對使用者資料所需採取的動作的陣列。 根據您要採取的動作，此陣列必須包括 `access`， `delete`，或兩者。</li><li>`userIDs`：使用者的身分識別集合。 單一使用者可擁有的身分數量限製為九個。 每個身分都包含 `namespace`， a `value`，和名稱空間限定詞(`type`)。 請參閱 [附錄](appendix.md) 以取得這些必要屬性的詳細資訊。</li></ul> 如需更詳細的說明，請參閱： `users` 和 `userIDs`，請參閱 [疑難排解指南](../troubleshooting-guide.md#user-ids). |
+| `include` **（必要）** | 要包含在處理中的一系列Adobe產品。 如果此值遺失或空白，將會拒絕要求。 僅包含貴組織與其整合的產品。 請參閱以下小節： [接受的產品值](appendix.md) 詳細資訊。 |
+| `expandIDs` | 選擇性屬性，設定為時 `true`，代表應用程式中ID處理的最佳化(目前僅支援 [!DNL Analytics])。 如果省略，此值會預設為 `false`. |
+| `priority` | Adobe Analytics使用的選用屬性，可設定處理請求的優先順序。 接受的值為 `normal` 和 `low`. 若 `priority` 省略，預設行為為 `normal`. |
+| `analyticsDeleteMethod` | 選擇性屬性，指定Adobe Analytics應如何處理個人資料。 這個屬性接受兩個可能的值： <ul><li>`anonymize`：特定使用者ID集合所參考的所有資料都會設為匿名。 若 `analyticsDeleteMethod` 省略，此為預設行為。</li><li>`purge`：所有資料都會完全移除。</li></ul> |
+| `mergePolicyId` | 向Real-Time Customer Profile提出隱私權請求時(`profileService`)，您可以選擇性地提供特定 [合併原則](../../profile/merge-policies/overview.md) ，以便用於ID拼接。 透過指定合併原則，隱私權請求可在傳回客戶資料時包含區段資訊。 每個請求只能指定一個合併原則。 如果未提供合併原則，則回應中不會包含分段資訊。 |
+| `regulation` **（必要）** | 隱私權工作的法規。 接受下列值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>請參閱以下文章的概觀： [支援的法規](../regulations/overview.md) 以取得上述值所代表之隱私權法規的詳細資訊。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新创建作业的详细信息。
+成功的回應會傳回新建立工作的詳細資訊。
 
 ```json
 {
@@ -218,19 +218,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `jobId` | 作业的只读、唯一的系统生成ID。 此值用于查找特定作业的下一步。 |
+| `jobId` | 作業唯讀、系統產生的唯一ID。 此值用於查詢特定工作的下一個步驟。 |
 
 {style="table-layout:auto"}
 
-成功提交作业请求后，可以继续执行 [检查作业的状态](#check-status).
+成功提交工作請求後，您可以繼續的下一個步驟 [檢查工作狀態](#check-status).
 
-## 检查作业的状态 {#check-status}
+## 檢查工作的狀態 {#check-status}
 
-您可以通过包含特定作业的来检索有关特定作业的信息，如其当前处理状态 `jobId` 在GET请求的路径中 `/jobs` 端点。
+您可以擷取特定工作的相關資訊，例如其目前的處理狀態，方法是加入該工作的 `jobId` 在GET請求的路徑中 `/jobs` 端點。
 
 >[!IMPORTANT]
 >
->之前创建的作业的数据只能在作业完成日期后的30天内检索。
+>先前建立之工作的資料只能在工作完成日期後30天內擷取。
 
 **API格式**
 
@@ -240,13 +240,13 @@ GET /jobs/{JOB_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{JOB_ID}` | 要查找的作业的ID。 此ID在 `jobId` 成功响应 [创建工作](#create-job) 和 [列出所有作业](#list). |
+| `{JOB_ID}` | 您要查閱之工作的ID。 此ID會傳回至 `jobId` 在成功的API回應中 [建立工作](#create-job) 和 [列出所有工作](#list). |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求可检索其 `jobId` 在请求路径中提供。
+以下請求會擷取下列工作之詳細資訊： `jobId` 請求路徑中會提供。
 
 ```shell
 curl -X GET \
@@ -258,7 +258,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定作业的详细信息。
+成功的回應會傳回指定工作的詳細資訊。
 
 ```json
 {
@@ -332,33 +332,33 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `productStatusResponse` | 中的每个对象 `productResponses` 数组包含有关作业当前状态(与特定 [!DNL Experience Cloud] 应用程序。 |
-| `productStatusResponse.status` | 作业的当前状态类别。 有关 [可用状态类别](#status-categories) 以及它们的对应含义。 |
-| `productStatusResponse.message` | 作业的特定状态，对应于状态类别。 |
-| `productStatusResponse.responseMsgCode` | 收到的产品响应消息的标准代码 [!DNL Privacy Service]. 详情请见 `responseMsgDetail`. |
-| `productStatusResponse.responseMsgDetail` | 有关作业状态的更详细说明。 不同产品中状态相似的消息可能会有所不同。 |
-| `productStatusResponse.results` | 对于某些状态，某些产品可能会返回 `results` 提供未涵盖的其他信息的对象 `responseMsgDetail`. |
-| `downloadURL` | 如果作业的状态为 `complete`，此属性会提供一个URL，用于将作业结果下载为ZIP文件。 此文件可在作业完成后60天内下载。 |
+| `productStatusResponse` | 內的每個物件 `productResponses` 陣列包含有關特定工作目前狀態的資訊 [!DNL Experience Cloud] 應用程式。 |
+| `productStatusResponse.status` | 工作的目前狀態類別。 請參閱下表，瞭解以下清單 [可用狀態類別](#status-categories) 以及它們對應的意義。 |
+| `productStatusResponse.message` | 工作的特定狀態，對應於狀態類別。 |
+| `productStatusResponse.responseMsgCode` | 收到的產品回應訊息的標準代碼 [!DNL Privacy Service]. 此訊息的詳細資訊提供於 `responseMsgDetail`. |
+| `productStatusResponse.responseMsgDetail` | 有關工作狀態的更詳細說明。 類似狀態的訊息可能因產品而異。 |
+| `productStatusResponse.results` | 對於特定狀態，某些產品可能會傳回 `results` 提供未涵蓋之其他資訊的物件 `responseMsgDetail`. |
+| `downloadURL` | 如果工作的狀態為 `complete`，此屬性會提供一個URL來將工作結果下載為ZIP檔案。 工作完成後60天內可下載此檔案。 |
 
 {style="table-layout:auto"}
 
-### 作业状态类别 {#status-categories}
+### 工作狀態類別 {#status-categories}
 
-下表列出了不同的可能职务状态类别及其相应含义：
+下表列出不同的可能工作狀態類別及其對應含義：
 
-| 状态类别 | 含义 |
+| 狀態類別 | 含义 |
 | -------------- | -------- |
-| `complete` | 作业已完成，并且（如果需要）会从每个应用程序上传文件。 |
-| `processing` | 应用程序已确认该作业，并且当前正在处理。 |
-| `submitted` | 作业会提交到每个适用的应用程序。 |
-| `error` | 处理作业时出现故障 — 可通过检索单个作业详细信息来获取更具体的信息。 |
+| `complete` | 工作已完成，且會從每個應用程式上傳檔案（如有需要）。 |
+| `processing` | 應用程式已確認工作且目前正在處理中。 |
+| `submitted` | 工作已提交給每個適用的應用程式。 |
+| `error` | 處理作業時某些失敗 — 擷取個別作業詳細資料可能會獲得更具體的資訊。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->提交的作业可能保留在 `processing` 状态（如果它有一个从属子作业仍在处理）。
+>提交的工作可能保留在 `processing` 指出是否有仍在處理的相依子作業。
 
 ## 后续步骤
 
-您现在知道如何使用 [!DNL Privacy Service] API。 有关如何使用用户界面执行相同任务的信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md).
+您現在知道如何使用 [!DNL Privacy Service] API。 如需有關如何使用使用者介面執行相同工作的資訊，請參閱 [Privacy ServiceUI總覽](../ui/overview.md).

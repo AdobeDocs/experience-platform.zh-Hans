@@ -1,31 +1,32 @@
 ---
-title: 医疗保健计划详细信息架构字段组
-description: 本文档概述了医疗保健计划详细信息架构字段组。
-source-git-commit: 3937963ceee8502b0669a3f007fd38ecf2824e9b
+title: 醫療保健計畫詳細資料結構欄位群組
+description: 本檔案提供「醫療保健計畫詳細資訊」結構描述欄位群組的概觀。
+exl-id: 5a480c5b-74f8-48dd-858a-5cf2628dc7f0
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '219'
-ht-degree: 5%
+source-wordcount: '216'
+ht-degree: 3%
 
 ---
 
-# [!UICONTROL 医疗保健计划详细信息] 架构字段组
+# [!UICONTROL 醫療保健計畫詳細資料] 結構描述欄位群組
 
-[!UICONTROL 医疗保健计划详细信息] 是的标准架构字段组 [[!UICONTROL 计划] 类](../../classes/plan.md). 它提供单个对象类型字段 `healthcarePlanDetails` 用于捕获与医疗计划相关的属性。
+[!UICONTROL 醫療保健計畫詳細資料] 是的標準結構描述欄位群組 [[!UICONTROL 計畫] 類別](../../classes/plan.md). 它提供單一物件型別欄位 `healthcarePlanDetails` 擷取和醫療計畫相關的屬性。
 
 ![](../../images/field-groups/plan/healthcare-plan-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `networkDetails` | 对象数组 | 列出受益人可能寻求治疗的保险商定义的提供商网络的详细信息，并将按“网络内”费率提供。 每个对象包含以下属性： <ul><li>`networkID`:（字符串）网络的保险商特定ID。</li><li>`networkName`:（字符串）网络的保险人特定名称。</li></ul> |
-| `affiliations` | 字符串数组 | 与计划关联的业务实体列表。 |
-| `coverageType` | 字符串 | 计划覆盖类型。 接受的值包括：<ul><li>`medical`</li><li>`dental`</li><li>`vision`</li><li>`accident`</li></ul> |
-| `isActive` | 布尔型 | 指示计划是否处于活动状态。 |
-| `lastVerificationDate` | DateTime | 计划上次验证的日期。 |
-| `payerID` | 字符串 | 付款人的唯一标识符（即计划的保险提供商）。 |
-| `planLevel` | 字符串 | 指示计划级别。 接受的值包括：<ul><li>`primary`</li><li>`secondary`</li><li>`tertiary`</li><li>`quaternary`</li></ul> |
-| `planType` | 字符串 | 指示计划类型。 接受的值包括：<ul><li>`hmo`</li><li>`epo`</li><li>`pos`</li><li>`hdhp`</li></ul> |
-| `targetOwnerType` | 字符串 | 计划所适用的所有者类型。 示例包括个人、组、组织等。 |
+| `networkDetails` | 物件陣列 | 列出由保險公司定義且受益人可能尋求治療的提供者網路的詳細資訊，並將以「網路內」費率承保。 每個物件包含下列屬性： <ul><li>`networkID`：（字串）網路的保險公司專用ID。</li><li>`networkName`：（字串）網路的保險公司特定名稱。</li></ul> |
+| `affiliations` | 字串陣列 | 與計畫相關聯的商業實體清單。 |
+| `coverageType` | 字符串 | 計畫涵蓋範圍型別。 接受的值包括：<ul><li>`medical`</li><li>`dental`</li><li>`vision`</li><li>`accident`</li></ul> |
+| `isActive` | 布尔值 | 指出計畫是否有效。 |
+| `lastVerificationDate` | 日期時間 | 上次驗證計畫的日期。 |
+| `payerID` | 字符串 | 付款人的唯一識別碼（換言之，計畫的保險提供者）。 |
+| `planLevel` | 字符串 | 表示計畫層次。 接受的值包括：<ul><li>`primary`</li><li>`secondary`</li><li>`tertiary`</li><li>`quaternary`</li></ul> |
+| `planType` | 字符串 | 指示計畫型別。 接受的值包括：<ul><li>`hmo`</li><li>`epo`</li><li>`pos`</li><li>`hdhp`</li></ul> |
+| `targetOwnerType` | 字符串 | 計畫適用的擁有者型別。 範例包括個人、群組、組織等。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/plan/healthcare-plan-details.schema.json).
+如需欄位群組的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/plan/healthcare-plan-details.schema.json).

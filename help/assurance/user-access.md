@@ -1,50 +1,50 @@
 ---
-title: Adobe Experience Platform保证用户访问权限
-description: 本指南介绍如何通过Admin Console管理Adobe Experience Platform Assurance，以保持用户对Assurance的访问权限。
-source-git-commit: 6aee145c6c778730d1c2728d7463e8b54a7aab8e
+title: Adobe Experience Platform保證使用者存取
+description: 本指南說明如何透過Admin Console管理Adobe Experience Platform Assurance，以保留使用者對Assurance的存取權。
+exl-id: b26ff857-5486-4391-b5a0-1e5cb05a1f11
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 3%
 
 ---
 
-
 # 用户访问
 
 >[!WARNING]
 >
->请注意，用户对“保证”的访问权限正在更改。 鉴于Assurance将测试版(Project Griffon)正式提供给所有Adobe Experience Cloud客户（作为Assurance），因此对Assurance的访问将通过 [Admin Console](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
+>請注意，使用者對Assurance的存取權正在變更。 由於Assurance讓Beta版(Project Griffon)可供所有Adobe Experience Cloud客戶普遍使用（作為保證） — 將透過以下方式管理對Assurance的存取 [Admin Console](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
 >
->如果您需要帮助，请联系贵公司的Adobe Experience Cloud管理员。
+>如果您需要協助，請聯絡貴公司的Adobe Experience Cloud管理員。
 
-要接收或保持对保证的不间断访问，请确保在Admin Console中完成以下步骤：
+若要接收或維持對Assurance的不間斷存取，請確定已在Admin Console中完成下列步驟：
 
-## 创建产品配置文件
+## 建立產品設定檔
 
 >[!NOTE]
 >
->如果您使用的是现有配置文件，则可以跳转到下一部分。
+>如果您使用現有的設定檔，可以跳至下一節。
 
-登录 [Admin Console](https://adminconsole.adobe.com/) 并创建新的Adobe Experience Platform产品配置文件。
+登入 [Admin Console](https://adminconsole.adobe.com/) 和建立新的Adobe Experience Platform產品設定檔。
 
-选择 **产品** 选项卡，然后是Adobe Experience Platform产品卡。
+選取 **產品** 索引標籤後按一下「 」，接著按「 Adobe Experience Platform產品卡」。
 
-![Adobe Experience Platform保障分析视图](./images/get-access/analytics-view.png)
+![Adobe Experience Platform保證分析檢視](./images/get-access/analytics-view.png)
 
-## 将用户添加到产品配置文件
+## 將使用者新增至產品設定檔
 
-访问产品信息卡后，提供名称并选择 **保存**.
+存取產品卡後，提供名稱並選取 **儲存**.
 
 >[!NOTE]
 >
->您打算用于“保证”访问的产品用户档案可以 **not** 需要任何其他权限。
+>您打算用於保證存取的產品設定檔會 **not** 需要任何其他許可權。
 
-![Adobe Experience Platform产品配置文件](./images/get-access/product-profile.png)
+![Adobe Experience Platform產品設定檔](./images/get-access/product-profile.png)
 
-现在，您已创建产品卡，接下来可以将用户分配到Adobe Experience Platform产品配置文件。 选择 **产品** 选项卡，后跟 **分配用户** 在Adobe Experience Platform卡上。
+現在您已建立產品卡，您可以將使用者指派至Adobe Experience Platform產品設定檔。 選取 **產品** 索引標籤，後面接著 **指派使用者** 在Adobe Experience Platform卡上。
 
-![将用户分配到产品配置文件](./images/get-access/assign-users.png)
+![將使用者指派至產品設定檔](./images/get-access/assign-users.png)
 
-将一个或多个用户添加到产品配置文件并保存。
+將一個或多個使用者新增到產品設定檔並儲存。
 
-![将用户添加到产品配置文件](./images/get-access/add-users.png)
+![將使用者新增至產品設定檔](./images/get-access/add-users.png)

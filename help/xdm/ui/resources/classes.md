@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；类；类；
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；資料模型；ui；工作區；類別；類別；
 solution: Experience Platform
-title: 在UI中创建和编辑类
-description: 了解如何在Experience Platform用户界面中创建和编辑类。
+title: 在UI中建立和編輯類別
+description: 瞭解如何在Experience Platform使用者介面中建立和編輯類別。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
 source-git-commit: 3a9b97b25980d88e0fff3d71e43407b641e6454d
 workflow-type: tm+mt
@@ -11,90 +11,90 @@ ht-degree: 0%
 
 ---
 
-# 在UI中创建和编辑类
+# 在UI中建立和編輯類別
 
-在Adobe Experience Platform中，架构的类定义架构将包含的数据的行为方面（记录或时间系列）。 除此之外，类还描述了所有基于该类的架构需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
+在Adobe Experience Platform中，結構描述的類別會定義結構描述將包含的資料的行為方面（記錄或時間序列）。 除此之外，類別會說明所有根據該類別的結構描述都必須包含的最少數目的共同屬性，並提供方法來合併多個相容的資料集。
 
-Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 [!DNL XDM Individual Profile] 和 [!DNL XDM ExperienceEvent]. 除了这些核心类之外，您还可以创建自己的自定义类，以描述贵组织的更具体用例。
+Adobe提供幾個標準（「核心」）體驗資料模型(XDM)類別，包括 [!DNL XDM Individual Profile] 和 [!DNL XDM ExperienceEvent]. 除了這些核心類別之外，您也可以建立自己的自訂類別，以說明貴組織的更具體使用案例。
 
-本文档概述了如何在Experience PlatformUI中创建、编辑和管理自定义类。
+本檔案概述如何在Experience PlatformUI中建立、編輯和管理自訂類別。
 
 ## 先决条件
 
-本指南需要对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [架构组合基础知识](../../schema/composition.md) 以了解类对XDM模式的贡献。
+本指南需要實際瞭解XDM系統。 請參閱 [XDM概觀](../../home.md) 介紹XDM在Experience Platform生態系統內的角色，以及 [結構描述組合基本概念](../../schema/composition.md) 以瞭解類別如何對XDM結構描述產生作用。
 
-虽然本指南不是必需的，但建议您也要遵循 [在UI中合成架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+雖然本指南不需要，但建議您也參閱以下主題的相關教學課程： [在UI中構成結構描述](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
 
-## 创建新类 {#create}
+## 建立新類別 {#create}
 
-在 **[!UICONTROL 模式]** 工作区，选择 **[!UICONTROL 创建架构]**，然后选择 **[!UICONTROL 浏览]** 从下拉菜单中。
+在 **[!UICONTROL 結構描述]** 工作區，選取 **[!UICONTROL 建立結構描述]**，然後選取 **[!UICONTROL 瀏覽]** 下拉式清單中的。
 
 ![](../../images/ui/resources/classes/browse-classes.png)
 
-此时会出现一个对话框，允许您从可用类的列表中进行选择。 在对话框顶部，选择 **[!UICONTROL 创建新类]**. 然后，您可以为新类提供一个显示名称（类的简短、描述性、唯一性和用户友好名称）、描述以及架构将定义的数据的行为(**[!UICONTROL 记录]** 或 **[!UICONTROL 时间系列]**)。
+會出現一個對話方塊，可讓您從可用類別清單中進行選取。 在對話方塊頂端，選取 **[!UICONTROL 建立新類別]**. 然後，您可以為新類別提供顯示名稱（類別的簡短、描述性、唯一且方便使用的名稱）、說明，以及結構描述將定義之資料的行為(**[!UICONTROL 記錄]** 或 **[!UICONTROL 時間序列]**)。
 
-完成后，选择 **[!UICONTROL 分配类]**.
+完成後，選取 **[!UICONTROL 指派類別]**.
 
 ![](../../images/ui/resources/classes/class-details.png)
 
-的 [!DNL Schema Editor] 显示，画布中显示了一个基于您刚刚创建的自定义类的新架构。 由于尚未向类添加字段，因此架构仅包含 `_id` 字段，表示系统生成的唯一标识符，该标识符将自动应用于 [!DNL Schema Registry].
+此 [!DNL Schema Editor] 會出現，並在畫布中顯示以您剛建立的自訂類別為基礎的新結構描述。 由於類別尚未新增任何欄位，因此結構描述僅包含 `_id` 欄位，代表系統產生的唯一識別碼，會自動套用至 [!DNL Schema Registry].
 
 ![](../../images/ui/resources/classes/schema.png)
 
 >[!IMPORTANT]
 >
->在构建实现由组织定义的类的架构时，请记住，架构字段组仅可与兼容类一起使用。 由于您定义的类是新类，因此 **[!UICONTROL 添加字段组]** 对话框。 相反，您需要 [创建新字段组](./field-groups.md#create) 用于该类。 下次构建实现新类的架构时，将列出您定义的字段组以供使用。
+>當建置實作由您的組織定義之類別的結構描述時，請記住，結構描述欄位群組只能與相容的類別一起使用。 由於您定義的類別是新的，因此清單中沒有相容的欄位群組。 **[!UICONTROL 新增欄位群組]** 對話方塊。 反之，您將需要 [建立新的欄位群組](./field-groups.md#create) 以便與該類別搭配使用。 下次當您撰寫實作新類別的結構描述時，將會列出您定義的欄位群組並可供使用。
 
-您现在可以开始 [向类添加字段](#add-fields)，所有使用类的架构都将共享该内容。
+您現在可以開始 [將欄位新增至類別](#add-fields)，所有採用類別的結構描述都會共用。
 
-## 编辑现有类 {#edit}
+## 編輯現有類別 {#edit}
 
 >[!NOTE]
 >
->只能完全编辑和自定义由您的组织定义的自定义类。 对于由Adobe定义的核心类，在单个架构的上下文中只能编辑其字段的显示名称。 请参阅 [编辑架构字段的显示名称](./schemas.md#display-names) 以了解详细信息。
+>只有貴組織定義的自訂類別才能完全編輯和自訂。 對於由Adobe定義的核心類別，只能在個別結構描述的內容中編輯其欄位的顯示名稱。 請參閱以下小節： [編輯結構描述欄位的顯示名稱](./schemas.md#display-names) 以取得詳細資訊。
 >
->保存自定义类并在数据摄取中使用后，以后只能对其进行附加更改。 请参阅 [模式演化规则](../../schema/composition.md#evolution) 以了解更多信息。
+>儲存自訂類別並用於資料內嵌後，之後只能對其執行附加變更。 請參閱 [結構描述演化規則](../../schema/composition.md#evolution) 以取得詳細資訊。
 
-要编辑现有类，请选择 **[!UICONTROL 浏览]** 选项卡，然后选择使用要编辑的类的架构的名称。
+若要編輯現有類別，請選取 **[!UICONTROL 瀏覽]** 標籤，然後選取使用您要編輯之類別的結構描述名稱。
 
 ![](../../images/ui/resources/classes/select-for-edit.png)
 
 >[!TIP]
 >
->您可以使用工作区的搜索和筛选功能来帮助更轻松地查找架构。 请参阅 [浏览XDM资源](../explore.md) 以了解更多信息。
+>您可以使用工作區的搜尋和篩選功能來協助您更輕鬆地尋找結構。 請參閱指南： [探索XDM資源](../explore.md) 以取得詳細資訊。
 
-的 [!DNL Schema Editor] 显示，画布中显示了架构的结构。 您现在可以开始 [向类添加字段](#add-fields).
+此 [!DNL Schema Editor] 會出現，而結構描述的結構會顯示在畫布中。 您現在可以開始 [將欄位新增至類別](#add-fields).
 
 ![](../../images/ui/resources/classes/edit.png)
 
-## 向类添加字段 {#add-fields}
+## 將欄位新增至類別 {#add-fields}
 
-在中打开使用自定义类的架构后， [!UICONTROL 架构编辑器]，则可以开始向类添加字段。 要添加新字段，请选择 **加号(+)** 图标。
+一旦您有採用自訂類別的結構描述，在 [!UICONTROL 結構描述編輯器]，您就可以開始將欄位新增至類別。 若要新增欄位，請選取 **加(+)** 圖示加以識別。
 
 ![](../../images/ui/resources/classes/add-field.png)
 
 >[!IMPORTANT]
 >
->请记住，您添加到类的任何字段都将用于使用该类的所有架构中。 因此，您应仔细考虑哪些字段在所有架构用例中都将很有用。 如果您想要添加一个字段，该字段可能只能看到此类下某些架构中的使用，则可能需要考虑通过 [创建字段组](./field-groups.md#create) 中。
+>請記住，您新增到類別的任何欄位都將用於使用該類別的所有結構描述。 因此，您應該仔細考慮哪些欄位在所有結構描述使用案例中都將很有用。 如果您考慮新增一個欄位，而該欄位可能只會在此類別底下的某些結構描述中使用，建議您考慮透過以下方式將其新增到這些結構描述 [建立欄位群組](./field-groups.md#create) 而非。
 
-安 **[!UICONTROL 无标题字段]** 占位符显示在画布中，右边栏会更新以显示用于配置字段属性的控件。 在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**.
-
-![](../../images/ui/resources/classes/assign-to-class.png)
+一個 **[!UICONTROL 未命名的欄位]** 預留位置會顯示在畫布中，而右邊欄會更新以顯示控制項來設定欄位的屬性。 下 **[!UICONTROL 指派給]**，選取 **[!UICONTROL 類別]**.
 
 ![](../../images/ui/resources/classes/assign-to-class.png)
 
-请参阅 [在UI中定义字段](../fields/overview.md#define) 以了解有关如何配置字段并将其添加到类的具体步骤。 继续向类中添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 以保存架构和类。
+![](../../images/ui/resources/classes/assign-to-class.png)
+
+請參閱指南： [在UI中定義欄位](../fields/overview.md#define) 有關如何設定欄位並將其新增到類別的特定步驟。 繼續將所需數量的欄位新增至類別。 完成後，選取 **[!UICONTROL 儲存]** 以儲存結構描述和類別。
 
 ![](../../images/ui/resources/classes/save.png)
 
-如果您之前创建了使用此类的架构，则新添加的字段将自动显示在这些架构中。
+如果您先前已建立採用此類別的結構描述，則新新增的欄位會自動出現在這些結構描述中。
 
-## 更改架构的类 {#schema}
+## 變更結構描述的類別 {#schema}
 
-在保存架构之前，您可以在初始创建过程中的任意时刻更改该架构的类。 请参阅 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
+您可以在儲存結構描述之前，於初始建立程式期間隨時變更其類別。 請參閱指南： [建立和編輯方案](./schemas.md#change-class) 以取得詳細資訊。
 
 ## 后续步骤
 
-本文档介绍了如何使用Platform UI创建和编辑类。 有关 [!UICONTROL 模式] 工作区，请参阅 [[!UICONTROL 模式] 工作区概述](../overview.md).
+本檔案說明如何使用Platform UI建立和編輯類別。 如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區，請參閱 [[!UICONTROL 結構描述] 工作區概觀](../overview.md).
 
-了解如何使用 [!DNL Schema Registry] API，请参阅 [classes endpoint guide](../../api/classes.md).
+若要瞭解如何使用 [!DNL Schema Registry] API，請參閱 [類別端點指南](../../api/classes.md).

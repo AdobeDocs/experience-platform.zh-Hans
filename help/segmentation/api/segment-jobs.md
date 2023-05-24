@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；区段作业；区段作业；API;API;
+keywords: Experience Platform；首頁；熱門主題；細分；細分；細分服務；細分工作；細分工作；API；API；
 solution: Experience Platform
-title: 区段作业API端点
-description: Adobe Experience Platform Segmentation Service API中的区段作业端点允许您以编程方式管理贵组织的区段作业。
+title: 區段作業API端點
+description: Adobe Experience Platform Segmentation Service API中的區段作業端點可讓您以程式設計方式管理組織的區段作業。
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,38 +11,38 @@ ht-degree: 2%
 
 ---
 
-# 区段作业端点
+# 區段作業端點
 
-区段作业是一种异步流程，可根据需要创建受众区段。 它引用了 [区段定义](./segment-definitions.md)，以及任何 [合并策略](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。
+區段作業為非同步程式，可依需求建立對象區段。 它參照 [區段定義](./segment-definitions.md)，以及任何 [合併原則](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-Time Customer Profile] 合併您的設定檔片段中的重疊屬性。 當區段工作成功完成時，您可以收集關於區段的各種資訊，例如處理期間可能發生的任何錯誤以及您的對象的最終規模。
 
-本指南提供了一些信息，可帮助您更好地了解区段作业，并包含用于使用API执行基本操作的示例API调用。
+本指南提供的資訊可協助您更清楚瞭解區段作業，並包含使用API執行基本動作的範例API呼叫。
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端點是 [!DNL Adobe Experience Platform Segmentation Service] API。 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需成功呼叫API所需的重要資訊，包括必要的標頭及如何讀取範例API呼叫。
 
-## 检索区段作业列表 {#retrieve-list}
+## 擷取區段作業清單 {#retrieve-list}
 
-通过向 `/segment/jobs` 端点。
+您可以透過向以下專案發出GET請求，擷取組織的所有區段作業清單： `/segment/jobs` 端點。
 
 **API格式**
 
-的 `/segment/jobs` 端点支持多个查询参数来帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数，以帮助减少昂贵的开销。 对此端点进行无参数调用将检索适用于贵组织的所有导出作业。 可以包含多个参数，这些参数之间用与号(`&`)。
+此 `/segment/jobs` 端點支援數個查詢引數，以協助篩選結果。 雖然這些引數是選用的，但強烈建議使用它們來協助減少昂貴的額外負荷。 在不使用引數的情況下呼叫此端點將擷取可用於您的組織的所有匯出作業。 可包含多個引數，以&amp;符號(`&`)。
 
 ```http
 GET /segment/jobs
 GET /segment/jobs?{QUERY_PARAMETERS}
 ```
 
-**查询参数**
+**查詢引數**
 
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
-| `start` | 指定返回的区段作业的起始偏移。 | `start=1` |
-| `limit` | 指定每页返回的区段作业数。 | `limit=20` |
-| `status` | 根据状态筛选结果。 支持的值包括新值、排队值、处理值、成功值、失败值、取消值、取消值 | `status=NEW` |
-| `sort` | 对返回的区段作业进行排序。 以格式写入 `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
-| `property` | 过滤区段作业，并获得与给定过滤器完全匹配的结果。 它可以采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]`  — 对对象键值进行筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]`  — 在数组内过滤</li></ul> | `property=segments~segmentId==workInUS` |
+| `start` | 指定傳回之區段作業的起始位移。 | `start=1` |
+| `limit` | 指定每頁傳回的區段作業數。 | `limit=20` |
+| `status` | 根據狀態篩選結果。 支援的值為NEW、QUEUED、PROCESSING、SUCCEEDED、FAILED、CANCELING、CANCELLED | `status=NEW` |
+| `sort` | 區段作業傳回的訂單。 以格式撰寫 `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
+| `property` | 篩選區段作業，並取得指定篩選器的完全相符專案。 可採用下列任一格式撰寫： <ul><li>`[jsonObjectPath]==[value]`  — 篩選物件索引鍵</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]`  — 在陣列中篩選</li></ul> | `property=segments~segmentId==workInUS` |
 
 **请求**
 
@@ -56,15 +56,15 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定组织的区段作业列表(JSON)。 但是，响应将因区段作业中的区段数量而异。
+成功回應會傳回HTTP狀態200，其中包含指定組織的區段作業清單(JSON)。 不過，回應會因區段作業內的區段數而異。
 
-**区段作业中小于或等于1500个区段**
+**區段作業中的區段數量少於或等於1500個**
 
-如果您的区段作业中运行的区段少于1500个，则所有区段的完整列表将显示在 `children.segments` 属性。
+如果您的區段作業中執行的區段少於1500個，則所有區段的完整清單將顯示在 `children.segments` 屬性。
 
 >[!NOTE]
 >
->以下响应已被截断为空格，并且将仅显示返回的第一个作业。
+>下列回應已截斷空格，且僅會顯示第一個傳回的工作。
 
 ```json
 {
@@ -166,13 +166,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 }
 ```
 
-**超过1500个区段**
+**超過1500個區段**
 
-如果您的区段作业中运行的区段超过1500个，则 `children.segments` 属性将显示 `*`，表示正在评估所有区段。
+如果您的區段作業中執行的區段超過1500個，則 `children.segments` 屬性將會顯示 `*`，表示正在評估所有區段。
 
 >[!NOTE]
 >
->以下响应已被截断为空格，并且将仅显示返回的第一个作业。
+>下列回應已截斷空格，且僅會顯示第一個傳回的工作。
 
 ```json
 {
@@ -263,22 +263,22 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 区段作业的系统生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
-| `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
-| `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关段定义表达式的信息，用PQL编写。 |
-| `metrics` | 包含有关区段作业的诊断信息的对象。 |
-| `metrics.totalTime` | 一个对象，其中包含有关分段作业开始和结束的时间以及所用总时间的信息。 |
-| `metrics.profileSegmentationTime` | 一个对象，其中包含有关分段评估开始和结束的时间以及所用总时间的信息。 |
-| `metrics.segmentProfileCounter` | 每个区段符合条件的用户档案数。 |
-| `metrics.segmentedProfileByNamespaceCounter` | 每个区段中符合每个身份命名空间条件的配置文件数。 |
-| `metrics.segmentProfileByStatusCounter` | 每个状态的用户档案计数。 支持以下三种状态： <ul><li>“已实现” — 符合区段资格的用户档案数。</li><li>“已退出” — 区段中不再存在的用户档案区段数。</li></ul> |
-| `metrics.totalProfilesByMergePolicy` | 每个合并策略的合并用户档案总数。 |
+| `id` | 區段作業的系統產生唯讀識別碼。 |
+| `status` | 區段作業的目前狀態。 狀態的潛在值包括「NEW」、「PROCESSING」、「CANCELING」、「CANCELLED」、「FAILED」和「SUCCEEDED」。 |
+| `segments` | 此物件包含區段作業中傳回之區段定義的相關資訊。 |
+| `segments.segment.id` | 區段定義的ID。 |
+| `segments.segment.expression` | 一個物件，包含有關以PQL寫入的區段定義運算式的資訊。 |
+| `metrics` | 包含區段作業之診斷資訊的物件。 |
+| `metrics.totalTime` | 一個物件，包含分段工作開始和結束的時間以及花費的總時間的相關資訊。 |
+| `metrics.profileSegmentationTime` | 一個物件，包含區段評估開始和結束的時間以及花費的總時間的相關資訊。 |
+| `metrics.segmentProfileCounter` | 每個區段符合資格的設定檔數。 |
+| `metrics.segmentedProfileByNamespaceCounter` | 每個區段符合每個身分名稱空間資格的設定檔數。 |
+| `metrics.segmentProfileByStatusCounter` | 每個狀態的設定檔計數。 支援下列三種狀態： <ul><li>「已實現」 — 符合區段資格的設定檔數。</li><li>「已退出」 — 區段中不再存在的設定檔區段數。</li></ul> |
+| `metrics.totalProfilesByMergePolicy` | 根據合併原則，合併的設定檔總數。 |
 
-## 创建新区段作业 {#create}
+## 建立新的區段工作 {#create}
 
-您可以通过向 `/segment/jobs` 端点并在主体中包含要从中创建新受众的区段定义的ID。
+您可以透過向以下專案發出POST請求，以建立新的區段作業： `/segment/jobs` 端點，並在內文中包含您要建立新對象之區段定義的ID。
 
 **API格式**
 
@@ -286,9 +286,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 POST /segment/jobs
 ```
 
-创建新区段作业时，请求和响应将因区段作业中的区段数量而异。
+建立新區段作業時，請求和回應會因區段作業內的區段數而異。
 
-**区段作业中小于或等于1500个区段**
+**區段作業中的區段數量少於或等於1500個**
 
 **请求**
 
@@ -308,11 +308,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentId` | 要为其创建区段作业的区段定义的ID。 这些区段定义可以属于不同的合并策略。 有关区段定义的更多信息，请参阅 [segment definition endpoint wide](./segment-definitions.md). |
+| `segmentId` | 您要為其建立區段作業的區段定義ID。 這些區段定義可屬於不同的合併原則。 如需區段定義的詳細資訊，請參閱 [區段定義端點指南](./segment-definitions.md). |
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关新创建的区段作业的信息。
+成功的回應會傳回HTTP狀態200，其中包含新建立區段工作的相關資訊。
 
 ```json
 {
@@ -405,19 +405,19 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 新创建的区段作业的系统生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 由于区段作业是新创建的，因此状态将始终为“新”。 |
-| `segments` | 一个对象，其中包含有关此区段作业正在运行的区段定义的信息。 |
-| `segments.segment.id` | 您提供的区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关段定义表达式的信息，用PQL编写。 |
+| `id` | 系統產生的唯讀識別碼，用於新建立的區段作業。 |
+| `status` | 區段作業的目前狀態。 由於區段作業是新建立的，因此狀態將一律為「新」。 |
+| `segments` | 一個物件，其中包含執行此區段工作的區段定義相關資訊。 |
+| `segments.segment.id` | 您提供的區段定義ID。 |
+| `segments.segment.expression` | 一個物件，包含有關以PQL寫入的區段定義運算式的資訊。 |
 
-**超过1500个区段**
+**超過1500個區段**
 
 **请求**
 
 >[!NOTE]
 >
->虽然您可以创建具有1500个以上区段的区段作业，但这是 **不建议**.
+>雖然您可以建立包含超過1500個區段的區段作業，但這會 **強烈不建議**.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -440,12 +440,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schema.name` | 区段的架构名称。 |
-| `segments.segmentId` | 运行区段作业时，区段数量超过1500个，您需要通过 `*` 作为区段ID，表示您希望运行具有所有区段的分段作业。 |
+| `schema.name` | 區段的結構描述名稱。 |
+| `segments.segmentId` | 執行含有超過1500個區段的區段工作時，您需要通過 `*` 作為區段ID，表示您要使用所有區段執行分段作業。 |
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含新创建的区段作业的详细信息。
+成功的回應會傳回HTTP狀態200以及您新建立的區段工作的詳細資訊。
 
 ```json
 {
@@ -525,14 +525,14 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 新创建的区段作业的系统生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 由于区段作业是新创建的，因此状态将始终为 `NEW`. |
-| `segments` | 一个对象，其中包含有关此区段作业正在运行的区段定义的信息。 |
-| `segments.segment.id` | 的 `*` 表示此区段作业正在为组织内的所有区段运行。 |
+| `id` | 系統產生的唯讀識別碼，用於新建立的區段作業。 |
+| `status` | 區段作業的目前狀態。 由於區段作業是新建立的，因此狀態將一律為 `NEW`. |
+| `segments` | 一個物件，其中包含執行此區段工作的區段定義相關資訊。 |
+| `segments.segment.id` | 此 `*` 表示此區段工作正在組織內的所有區段執行。 |
 
-## 检索特定区段作业 {#get}
+## 擷取特定區段工作 {#get}
 
-您可以通过向 `/segment/jobs` 端点和提供您希望在请求路径中检索的区段作业的ID。
+您可以透過向以下專案發出GET請求，擷取有關特定區段作業的詳細資訊： `/segment/jobs` 端點，並提供您要在請求路徑中擷取的區段作業ID。
 
 **API格式**
 
@@ -542,7 +542,7 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | 的 `id` 要检索的区段作业的值。 |
+| `{SEGMENT_JOB_ID}` | 此 `id` 您要擷取之區段工作的值。 |
 
 **请求**
 
@@ -556,11 +556,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关指定区段作业的详细信息。  但是，响应将因区段作业中的区段数量而异。
+成功的回應會傳回HTTP狀態200，其中包含指定區段工作的詳細資訊。  不過，回應會因區段作業內的區段數而異。
 
-**区段作业中小于或等于1500个区段**
+**區段作業中的區段數量少於或等於1500個**
 
-如果您的区段作业中运行的区段少于1500个，则所有区段的完整列表将显示在 `children.segments` 属性。
+如果您的區段作業中執行的區段少於1500個，則所有區段的完整清單將顯示在 `children.segments` 屬性。
 
 ```json
 {
@@ -622,9 +622,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 }
 ```
 
-**超过1500个区段**
+**超過1500個區段**
 
-如果您的区段作业中运行的区段超过1500个，则 `children.segments` 属性将显示 `*`，表示正在评估所有区段。
+如果您的區段作業中執行的區段超過1500個，則 `children.segments` 屬性將會顯示 `*`，表示正在評估所有區段。
 
 ```json
 {
@@ -704,16 +704,16 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 区段作业的系统生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
-| `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
-| `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关段定义表达式的信息，用PQL编写。 |
-| `metrics` | 包含有关区段作业的诊断信息的对象。 |
+| `id` | 區段作業的系統產生唯讀識別碼。 |
+| `status` | 區段作業的目前狀態。 狀態的潛在值包括「NEW」、「PROCESSING」、「CANCELING」、「CANCELLED」、「FAILED」和「SUCCEEDED」。 |
+| `segments` | 此物件包含區段作業中傳回之區段定義的相關資訊。 |
+| `segments.segment.id` | 區段定義的ID。 |
+| `segments.segment.expression` | 一個物件，包含有關以PQL寫入的區段定義運算式的資訊。 |
+| `metrics` | 包含區段作業之診斷資訊的物件。 |
 
-## 批量检索区段作业 {#bulk-get}
+## 大量擷取區段作業 {#bulk-get}
 
-您可以通过向 `/segment/jobs/bulk-get` 端点和提供  `id` 请求正文中区段作业的值。
+您可以透過向以下專案發出POST請求，擷取多個區段作業的詳細資訊： `/segment/jobs/bulk-get` 端點，並提供  `id` 請求內文中的區段作業值。
 
 **API格式**
 
@@ -744,11 +744,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 **响应**
 
-成功响应会在请求的区段作业中返回HTTP状态207。 但是， `children.segments` 属性会因区段作业为1500个以上的区段而异。
+成功的回應會傳回HTTP狀態207以及請求的區段作業。 然而，此 `children.segments` 屬性會因區段作業的執行是否超過1500個區段而有所不同。
 
 >[!NOTE]
 >
->以下响应因空间而被截断，仅显示每个区段作业的部分详细信息。 完整响应将列出所请求区段作业的完整详细信息。
+>以下回應已截斷空間，僅顯示每個區段工作的部分詳細資訊。 完整回應將列出請求區段作業的完整詳細資料。
 
 ```json
 {
@@ -798,19 +798,19 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 区段作业的系统生成的只读标识符。 |
-| `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
-| `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
-| `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关段定义表达式的信息，用PQL编写。 |
+| `id` | 區段作業的系統產生唯讀識別碼。 |
+| `status` | 區段作業的目前狀態。 狀態的潛在值包括「NEW」、「PROCESSING」、「CANCELING」、「CANCELLED」、「FAILED」和「SUCCEEDED」。 |
+| `segments` | 此物件包含區段作業中傳回之區段定義的相關資訊。 |
+| `segments.segment.id` | 區段定義的ID。 |
+| `segments.segment.expression` | 一個物件，包含有關以PQL寫入的區段定義運算式的資訊。 |
 
-## 取消或删除特定区段作业 {#delete}
+## 取消或刪除特定區段工作 {#delete}
 
-您可以通过向 `/segment/jobs` 端点和提供您希望在请求路径中删除的区段作业的ID。
+您可以透過向以下專案發出DELETE請求來刪除特定區段作業： `/segment/jobs` 端點，並在請求路徑中提供您要刪除之區段作業的ID。
 
 >[!NOTE]
 >
->对删除请求的API响应会立即进行。 但是，实际删除区段作业是异步的。 换言之，对区段作业发出删除请求与应用删除请求之间存在时间差。
+>對刪除請求的API回應是立即的。 不過，實際刪除區段作業為非同步。 換句話說，對區段工作提出刪除請求的時間與套用請求的時間之間會存在時間差異。
 
 **API格式**
 
@@ -820,7 +820,7 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | 的 `id` 要删除的区段作业的值。 |
+| `{SEGMENT_JOB_ID}` | 此 `id` 您要刪除之區段工作的值。 |
 
 **请求**
 
@@ -834,7 +834,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
 
 **响应**
 
-成功响应会返回包含以下信息的HTTP状态204。
+成功的回應會傳回HTTP狀態204，並提供下列資訊。
 
 ```json
 {
@@ -845,4 +845,4 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfe
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解区段作业的工作方式。
+閱讀本指南後，您現在已能更清楚瞭解區段工作的運作方式。

@@ -1,29 +1,30 @@
 ---
-title: 升级详细信息架构字段组
-description: 本文档概述了升级详细信息架构字段组。
-source-git-commit: 4a74faad811d9b13f93799686df44f04a8d1b784
+title: 升級詳細資料結構描述欄位群組
+description: 本檔案提供「升級詳細資料」結構描述欄位群組的概觀。
+exl-id: cd3f4cd9-ee0e-4bdf-a630-dd2c3c3cc8c7
+source-git-commit: afdac5ce2ed967b4688d456a586c946bc2cf4179
 workflow-type: tm+mt
-source-wordcount: '154'
-ht-degree: 3%
+source-wordcount: '151'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL 升级详] 细信息架构字段组
+# [!UICONTROL 升級詳細資料] 結構描述欄位群組
 
-[!UICONTROL 升级] 详细信息类的标准架构字段组 [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) ，用于捕获有关升级营销事件的信息，包括有关交易的详细信息以及向客户显示选件的不同方式。
+[!UICONTROL 升級詳細資料] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md) 用於擷取有關升級行銷事件的資訊，包括有關交易的詳細資訊和向客戶顯示優惠的不同方式。
 
-字段组提供单个对象类型字段`upgrades`。 此对象中包含的属性说明如下。
+欄位群組提供單一物件型別欄位， `upgrades`. 此物件中包含的屬性說明如下。
 
-![升级详细信息结构](../../images/field-groups/upgrade-details.png)
+![升級詳細資料結構](../../images/field-groups/upgrade-details.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `upgradeImpressions` | [展示次数](../../data-types/impressions.md)的数组 | 一个数组，列出客户记录的展示次数（数字查看次数或升级选件的参与次数）。 |
-| `upgradeTransaction` | [交易](../../data-types/transaction.md) | 描述升级的货币交易记录。 |
+| `upgradeImpressions` | 陣列 [曝光次數](../../data-types/impressions.md) | 列出客戶錄製的印象（數位檢視或升級優惠方案的參與）的陣列。 |
+| `upgradeTransaction` | [交易](../../data-types/transaction.md) | 說明升級的貨幣交易。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upgrade-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upgrade-details.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upgrade-details.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-upgrade-details.schema.json)

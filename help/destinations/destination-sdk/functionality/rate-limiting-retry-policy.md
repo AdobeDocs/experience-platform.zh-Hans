@@ -1,6 +1,6 @@
 ---
-description: 了解Experience Platform如何处理由流目标返回的不同类型错误，以及如何重试将数据发送到目标平台。
-title: 针对通过Destination SDK构建的流目标的速率限制和重试策略
+description: 瞭解Experience Platform如何處理串流目的地傳回的不同錯誤型別，以及如何重試將資料傳送至目的地平台。
+title: 使用Destination SDK建立的串流目的地的速率限制和重試原則
 source-git-commit: 8c8026b1180775dddd9517fc88727749678a5613
 workflow-type: tm+mt
 source-wordcount: '426'
@@ -8,39 +8,39 @@ ht-degree: 0%
 
 ---
 
-# 针对通过Destination SDK构建的流目标的速率限制和重试策略
+# 使用Destination SDK建立的串流目的地的速率限制和重試原則
 
-合作伙伴构建的目标可能会返回各种错误，并具有不同的限速策略。 本页介绍Experience Platform如何处理由流目标返回的不同类型的错误。
+合作夥伴建立的目的地可能會傳回各種錯誤，並有不同的速率限制原則。 此頁面說明Experience Platform如何處理串流目的地傳回的不同錯誤型別。
 
-使用Destination SDK配置目标时，您可以选择两种聚合类型 —  [最佳工作聚合](../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 和 [可配置聚合](../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation). 根据您选择的聚合类型，阅读下面Experience Platform如何处理错误和速率限制的内容。
+使用Destination SDK設定目的地時，您可以在兩種彙總型別之間選取 —  [最大努力彙總](../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 和 [可設定的彙總](../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation). 根據您選取的聚總型態，請閱讀下文「Experience Platform」處理錯誤與比率限制的方式。
 
-## 尽力汇总 {#best-effort-aggregation}
+## 最大努力彙總 {#best-effort-aggregation}
 
-对于对目标进行的任何HTTP调用失败，Experience Platform会尝试在首次调用后立即再次进行调用。 如果第二次尝试时调用仍然失败，则Experience Platform将放弃调用，并且不会第三次重新尝试它。
+對於任何向目的地進行的失敗的HTTP呼叫，Experience Platform會嘗試在第一次呼叫後立即再次進行呼叫。 如果呼叫在第二次嘗試時仍失敗，Experience Platform會捨棄呼叫，且不會第三次重新嘗試。
 
-## 可配置聚合 {#configurable-aggregation}
+## 可設定的彙總 {#configurable-aggregation}
 
-对于通过可配置聚合设置的目标平台，Experience Platform会区分您的平台返回的错误类型：
+在使用可設定的彙總設定目的地平台的情況下，Experience Platform會區分您的平台傳回的錯誤型別：
 
-* Experience Platform重试将数据发送到平台的错误：
-   * HTTP响应代码420和429
-   * 大于500的HTTP响应代码
-* Experience Platform错误 *不* 重试将数据发送到您的平台：平台返回的所有其他内容
+* Experience Platform重試將資料傳送至您的平台的錯誤：
+   * HTTP回應代碼420和429
+   * HTTP回應程式碼大於500
+* Experience Platform的錯誤 *不會* 重試將資料傳送至您的平台：您的平台傳回的所有其他資料
 
-### 描述的重试方法 {#retry-approach}
+### 重試方法說明 {#retry-approach}
 
-下面介绍了可配置聚合的Experience Platform方法。 此示例假定Experience Platform每分钟收到超过5万个请求时，会将数据发送到开始返回429个错误代码的目标平台：
+可設定彙總的Experience Platform方法說明如下。 此範例假設Experience Platform會傳送資料至目標平台，而如果每分鐘收到超過50,000個請求，目標平台就會開始傳回429個錯誤代碼：
 
-* 第1分钟：Experience Platform将40,000批与用户档案聚合，以发送到目标平台。 Experience Platform发出4万个HTTP请求，所有请求都成功。
-* 第2分钟：Experience Platform将70,000批与用户档案聚合，以发送到目标平台。 Experience Platform发出70,000个HTTP请求，50,000个请求成功。 其他20k从您的端点收到速率限制错误，将在30分钟后重试。
-* 第3分钟：Experience Platform将30,000批与用户档案聚合，以发送到目标平台。 Experience Platform发出3万个HTTP请求，所有请求都成功。
+* 分鐘1：Experience Platform會使用要傳送至目的地平台的設定檔來彙總40,000個批次。 Experience Platform發出40,000個HTTP請求，而且全都成功。
+* 分鐘2：Experience Platform會使用要傳送至目的地平台的設定檔來彙總70,000個批次。 Experience Platform發出70k HTTP請求並成功50k。 其他20k收到來自您端點的速率限制錯誤，將在30分鐘後重新嘗試。
+* 第3分鐘：Experience Platform會使用要傳送至目的地平台的設定檔來彙總30,000個批次。 Experience Platform發出30,000個HTTP請求，而且全都成功。
 * ...
 * ...
-* 第32分钟：Experience Platform重新尝试发送在第2分钟失败的20,000批。 所有调用均成功。
+* 第32分鐘：Experience Platform會再次嘗試傳送在第2分鐘失敗的20,000批次資料。 所有呼叫均成功。
 
 ## 后续步骤 {#next-steps}
 
-现在，您可以了解Experience Platform如何处理来自目标平台的错误和速率限制，具体取决于您在配置流目标时选择的聚合策略。 接下来，您可以查看以下文档：
+您現在知道Experience Platform如何處理來自目的地平台的錯誤和速率限制，具體取決於您在設定串流目的地時選取的彙總原則。 接下來，您可以檢閱下列檔案：
 
-* [测试目标配置](../testing-api/streaming-destinations/streaming-destination-testing-overview.md)
-* [提交以供审核在Destination SDK中创作的目标](../guides/submit-destination.md)
+* [測試您的目的地設定](../testing-api/streaming-destinations/streaming-destination-testing-overview.md)
+* [提交以Destination SDK撰寫的目的地，以供複查](../guides/submit-destination.md)

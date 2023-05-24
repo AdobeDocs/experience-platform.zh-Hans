@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；统一；配置文件；rtcp;XDM图形
-title: 平台中的常规辅助功能
+keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；統一設定檔；統一設定檔；統一；設定檔；rtcp；XDM圖形
+title: Platform的一般協助工具功能
 type: Documentation
-description: 进一步了解Adobe Experience Platform支持的常规辅助功能，包括键盘导航、调色板和对比度以及辅助技术支持。
+description: 進一步瞭解Adobe Experience Platform支援的一般協助工具功能，包括鍵盤導覽、調色盤和對比以及輔助技術支援。
 exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
@@ -11,36 +11,36 @@ ht-degree: 3%
 
 ---
 
-# Experience Platform中的辅助功能
+# Experience Platform中的協助工具功能
 
-Adobe Experience Platform致力于向所有个人提供无障碍且包含所有内容的功能，包括使用语音识别软件和屏幕阅读器等辅助设备的用户。 本文档概述了平台支持的常规辅助功能，包括键盘导航、语义结构、前景元素和背景元素之间的充分对比度，以及对辅助技术的支持。
+Adobe Experience Platform致力為所有個人提供無障礙和包容的功能，包括使用語音辨識軟體和熒幕閱讀器等輔助裝置的使用者。 本檔案概述Platform支援的一般協助工具功能，包括鍵盤導覽、語意結構、前景元素和背景元素之間的充分對比，以及對輔助技術的支援。
 
-## 辅助技术
+## 輔助技術
 
-残障用户经常依赖硬件和软件（称为辅助技术）来访问数字内容和使用软件产品。 Adobe Experience Platform通过遵循辅助功能最佳实践（如在需要时使用语义代码、对等文本、标签和ARIA）来支持多种类型的辅助技术(AT)，例如屏幕阅读器、缩放和语音识别软件。 Experience Platform用户界面(UI)中的交互式元素使用相应的标签、可访问名称和角色来标识其用途和当前状态。 这可确保辅助技术（如屏幕阅读器）能够向用户朗读标签和其他信息，以便他们能够轻松与应用程序控件进行交互。
+殘障使用者經常依賴軟硬體（稱為輔助技術）來存取數位內容和使用軟體產品。 Adobe Experience Platform透過遵循協助工具最佳實務（如使用語意代碼、對等文字、標籤和在需要時使用ARIA），支援多種型別的輔助技術(AT)，例如熒幕閱讀器、縮放和語音辨識軟體。 Experience Platform使用者介面(UI)中的互動式元素會使用對應的標籤、可存取的名稱以及可識別其用途和目前狀態的角色。 這可確保輔助技術（例如熒幕閱讀程式）可朗讀標籤和其他資訊給使用者，以便他們能夠輕鬆與應用程式控制項互動。
 
 ## 键盘辅助功能
 
-Experience Platform努力支持完整的键盘无障碍功能。
+Experience Platform致力於支援完整的鍵盤協助功能。
 
 以下导航元素有助于促进无障碍功能：
-* 选项卡键在UI元素、部分和菜单组之间移动。
-* 箭头键在菜单组内移动，以将焦点设置到单个活动元素。
-* Shift + Tab按制表符顺序向后移动。
-* 返回键(Enter)和空格键可激活选定项目。
-* 转义键(ESC)用作取消按钮，在出现时关闭对话框。
-* Experience Platform在选定元素周围显示一个蓝色边框，以明确指示当前具有焦点的UI元素。
+* Tab鍵可在UI元素、區段和功能表群組之間移動。
+* 箭頭鍵可在選單群組中移動，以將焦點設定為個別活動元素。
+* Shift + Tab鍵會向後移動並經過Tab鍵順序。
+* Return (Enter)和空白鍵會啟動選取的專案。
+* 逸出索引鍵(ESC)可作為取消按鈕，在出現時關閉對話方塊。
+* Experience Platform會在選取的元素周圍顯示藍色邊框，以清楚指出目前取得焦點的UI元素。
 
-![选定元素周围显示蓝色边框，指示已应用焦点。](images/profile-overview-tab.png)
+![所選元素周圍出現藍色邊框，表示已套用焦點。](images/profile-overview-tab.png)
 
 ## 调色板和对比度
 
-Experience Platform努力 [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) 符合性，包括对颜色对比度的要求。 Experience PlatformUI在应用程序中提供了足够的对比度，以确保视力低下或色觉缺失的用户具有无障碍的观看体验。
+Experience Platform努力爭取 [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) 符合性，包括色彩對比的要求。 Experience PlatformUI在應用程式中提供足夠的對比功能，以確保為視力不足或色彩缺乏的使用者提供可存取的檢視體驗。
 
-![Experience PlatformUI的主页上显示的调色板和对比度。](images/homepage.png)
+![Experience PlatformUI首頁上顯示的調色盤和對比。](images/homepage.png)
 
-## 必填字段验证
+## 必要欄位驗證
 
-添加数据、创建架构或定义区段时，必填字段以可视方式（在字段的文本标签旁边使用星号）以及以编程方式指示。 当您在字段中输入无效数据并在保存时，这些字段会触发验证。 如果必填字段未通过验证，则会以红色列出，并带有错误图标，同时还会显示需要修复的问题的书面说明。
+新增資料、建立結構描述或定義區段時，必填欄位會以視覺化方式並以程式設計方式標示（在欄位的文字標籤旁使用星號）。 當您在欄位中輸入無效資料並儲存時，這些欄位會觸發驗證。 如果必要欄位未通過驗證，則會以紅色列出，並出現錯誤圖示，以及需要修正的問題的書面說明。
 
-![未通过验证的必填字段的特写。 该字段以红色显示，并显示错误图标。](images/field-validation.png)
+![尚未通過驗證的必要欄位的特寫。 欄位會以紅色顯示，並顯示錯誤圖示。](images/field-validation.png)

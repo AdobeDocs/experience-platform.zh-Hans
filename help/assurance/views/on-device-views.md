@@ -1,30 +1,30 @@
 ---
-title: 设备内查看次数
-description: 本指南显示了使用Adobe Experience Platform Assurance的设备上的不同视图。
-source-git-commit: e054c8a605557a8c78d89c1a9bf562b9298cc260
+title: 裝置上檢視
+description: 本指南說明使用Adobe Experience Platform Assurance的裝置上的不同檢視畫面。
+exl-id: aa0b09e6-88e0-4f06-be57-df7536a9fa2f
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '34'
 ht-degree: 0%
 
 ---
 
+# 裝置上檢視
 
-# 设备内视图
+## 已連線
 
-## 已连接
-
-(由红色Adobe“A”表示)
+(以紅色Adobe「A」表示)
 
 ![](./images/on-device-views/connected.png)
 
-## 打开日志面板
+## 開啟記錄面板
 
 ![](./images/on-device-views/logs-panel.png)
 
-## 清除日志面板
+## 清除記錄面板
 
 ![](./images/on-device-views/clear-logs-panel.png)
 
-## 已断开连接
+## 已中斷連線
 
 ![](./images/on-device-views/disconnected.png)

@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据使用合规性；强制；强制数据使用合规性；分段服务；分段；分段；
+keywords: Experience Platform；首頁；熱門主題；資料使用規範；強制執行；強制執行資料使用規範；細分服務；細分；細分；
 solution: Experience Platform
-title: 使用API为受众区段强制实施数据使用合规性
+title: 使用API強制執行受眾區段的資料使用合規性
 type: Tutorial
-description: 本教程介绍了使用API强制实时客户资料受众区段符合数据使用要求的步骤。
+description: 本教學課程涵蓋使用API對「即時客戶個人檔案」對象區段強制執行資料使用合規性的步驟。
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,54 +12,54 @@ ht-degree: 1%
 
 ---
 
-# 使用API为受众区段强制实施数据使用合规性
+# 使用API對受眾區段強制執行資料使用合規性
 
-本教程介绍了实施 [!DNL Real-Time Customer Profile] 受众区段。
+本教學課程涵蓋強制資料使用法規遵循的步驟 [!DNL Real-Time Customer Profile] 使用API的對象區段。
 
 ## 快速入门
 
-本教程需要对的以下组件有一定的了解 [!DNL Adobe Experience Platform]:
+本教學課程需要您深入瞭解下列元件 [!DNL Adobe Experience Platform]：
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md): [!DNL Real-Time Customer Profile] 是通用的查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 数据内 [!DNL Platform]. 配置文件可跨各种企业数据资产合并数据，并以统一的形式提供对该数据的访问。
-   - [合并策略](../../profile/api/merge-policies.md):使用的规则 [!DNL Real-Time Customer Profile] 以确定在特定条件下哪些数据可以合并到统一视图中。 可以为“数据管理”目的配置合并策略。
-- [[!DNL Segmentation]](../home.md):如何 [!DNL Real-Time Customer Profile] 将配置文件存储中包含的大量个人划分为具有相似特征且响应类似营销策略的较小群组。
-- [数据管理](../../data-governance/home.md):“数据管理”使用以下组件为数据使用标签和执行提供了基础架构：
-   - [数据使用标签](../../data-governance/labels/user-guide.md):标签用于根据处理数据集和字段各自数据的敏感程度来描述数据集和字段。
-   - [数据使用策略](../../data-governance/policies/overview.md):配置，用于指示允许对按特定数据使用标签分类的数据执行哪些营销操作。
-   - [策略执行](../../data-governance/enforcement/overview.md):允许您强制实施数据使用策略，并防止构成策略违规的数据操作。
-- [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md)： [!DNL Real-Time Customer Profile] 是一般查詢實體存放區，用於管理 [!DNL Experience Data Model (XDM)] 資料範圍 [!DNL Platform]. 設定檔可合併各種企業資料資產中的資料，並在統一的簡報中提供該資料的存取權。
+   - [合併原則](../../profile/api/merge-policies.md)：使用的規則 [!DNL Real-Time Customer Profile] 以判斷在特定條件下可以將哪些資料合併到統一檢視中。 可針對資料控管目的設定合併原則。
+- [[!DNL Segmentation]](../home.md)：如何 [!DNL Real-Time Customer Profile] 會將設定檔存放區中包含的大量個人群組劃分為具有類似特徵且對行銷策略有類似回應的較小群組。
+- [資料控管](../../data-governance/home.md)：資料控管使用下列元件，為資料使用標籤和強制執行提供基礎架構：
+   - [資料使用標籤](../../data-governance/labels/user-guide.md)：用來根據處理資料集和欄位各自資料的敏感度層級描述資料集和欄位的標籤。
+   - [資料使用原則](../../data-governance/policies/overview.md)：指出對依特定資料使用標籤分類的資料允許哪些行銷動作的設定。
+   - [原則執行](../../data-governance/enforcement/overview.md)：可讓您強制執行資料使用原則，並防止構成原則違規的資料作業。
+- [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
 
-以下部分提供了成功调用所需了解的其他信息 [!DNL Platform] API。
+以下小節提供您需瞭解的其他資訊，才能成功對 [!DNL Platform] API。
 
-### 读取示例API调用
+### 讀取範例API呼叫
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
 
-### 收集所需标题的值
+### 收集必要標題的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
-- 授权：持有者 `{ACCESS_TOKEN}`
+- 授權：持有人 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
+中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+>如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
 
-- Content-Type:application/json
+- Content-Type： application/json
 
-## 查找区段定义的合并策略 {#merge-policy}
+## 查詢區段定義的合併原則 {#merge-policy}
 
-此工作流从访问已知的受众区段开始。 已启用以供在 [!DNL Real-Time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
+此工作流程從存取已知受眾區段開始。 已啟用以用於中的區段 [!DNL Real-Time Customer Profile] 在其區段定義中包含合併原則ID。 此合併原則包含要將哪些資料集納入區段的相關資訊，而這些資料集又包含任何適用的資料使用標籤。
 
-使用 [!DNL Segmentation] API中，您可以通过其ID查找区段定义，以查找其关联的合并策略。
+使用 [!DNL Segmentation] API的相關資訊，您可以透過區段的ID來查詢區段定義，以尋找與其關聯的合併原則。
 
 **API格式**
 
@@ -69,7 +69,7 @@ GET /segment/definitions/{SEGMENT_DEFINITION_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SEGMENT_DEFINITION_ID}` | 要查找的区段定义的ID。 |
+| `{SEGMENT_DEFINITION_ID}` | 您要查閱的區段定義ID。 |
 
 **请求**
 
@@ -84,7 +84,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回区段定义的详细信息。
+成功的回應會傳回區段定義的詳細資料。
 
 ```json
 {
@@ -122,11 +122,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `mergePolicyId` | 用于区段定义的合并策略的ID。 此操作将在下一步中使用。 |
+| `mergePolicyId` | 用於區段定義的合併原則ID。 這將在下一個步驟中使用。 |
 
-## 从合并策略中查找源数据集 {#datasets}
+## 從合併原則尋找來源資料集 {#datasets}
 
-合并策略包含有关其源数据集的信息，这些数据集又包含数据使用标签。 通过在GET请求中将合并策略ID提供给 [!DNL Profile] API。 有关合并策略的更多信息，请参阅 [合并策略终结点指南](../../profile/api/merge-policies.md).
+合併原則包含其來源資料集的相關資訊，而這些資料集又包含資料使用標籤。 您可以在GET要求中提供合併原則ID，查詢合併原則的詳細資料 [!DNL Profile] API。 有關合併原則的更多資訊可在以下網址找到： [合併原則端點指南](../../profile/api/merge-policies.md).
 
 **API格式**
 
@@ -136,7 +136,7 @@ GET /config/mergePolicies/{MERGE_POLICY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{MERGE_POLICY_ID}` | 在 [上一步](#merge-policy). |
+| `{MERGE_POLICY_ID}` | 在中取得的合併原則ID [上一步](#merge-policy). |
 
 **请求**
 
@@ -151,7 +151,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回合并策略的详细信息。
+成功的回應會傳回合併原則的詳細資訊。
 
 ```json
 {
@@ -177,19 +177,19 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schema.name` | 与合并策略关联的架构的名称。 |
-| `attributeMerge.type` | 合并策略的数据优先配置类型。 如果值为 `dataSetPrecedence`，则与此合并策略关联的数据集将列在 `attributeMerge > data > order`. 如果值为 `timestampOrdered`，则是与 `schema.name` 合并策略使用。 |
-| `attributeMerge.data.order` | 如果 `attributeMerge.type` is `dataSetPrecedence`，此属性将是一个数组，其中包含此合并策略所使用数据集的ID。 这些ID将用在下一步中。 |
+| `schema.name` | 與合併原則關聯的結構描述名稱。 |
+| `attributeMerge.type` | 合併原則的資料優先順序設定型別。 如果值為 `dataSetPrecedence`，與此合併原則關聯的資料集會列在 `attributeMerge > data > order`. 如果值為 `timestampOrdered`，然後是與中參考的結構描述相關聯的所有資料集 `schema.name` 由合併原則使用。 |
+| `attributeMerge.data.order` | 如果 `attributeMerge.type` 是 `dataSetPrecedence`，此屬性會是陣列，包含此合併原則所使用的資料集ID。 這些ID會用於下一個步驟。 |
 
-## 评估数据集是否存在策略违规
+## 評估原則違規的資料集
 
 >[!NOTE]
 >
-> 此步骤假定您至少有一个活动的数据使用策略，该策略可阻止对包含特定标签的数据执行特定营销操作。 如果您对评估的数据集没有任何适用的使用策略，请遵循 [策略创建教程](../../data-governance/policies/create.md) ，以在继续执行此步骤之前创建一个。
+> 此步驟假設您至少有一個有效資料使用原則，可防止對包含特定標籤的資料執行特定行銷動作。 如果您沒有任何適用的使用原則適用於正在評估的資料集，請遵循 [原則建立教學課程](../../data-governance/policies/create.md) 以建立一個，然後再繼續此步驟。
 
-获取合并策略源数据集的ID后，即可使用 [策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 来根据特定营销操作评估这些数据集，以检查是否存在数据使用策略违规情况。
+取得合併原則的來源資料集的ID後，您可以使用 [原則服務API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 根據特定行銷動作評估這些資料集，以檢查資料使用原則違規。
 
-要评估POST集，您必须在请求正文中提供请求路径中的营销操作名称，同时在请求正文中提供数据集ID，如以下示例所示。
+若要評估資料集，您必須在POST請求的路徑中提供行銷動作的名稱，同時在請求內文中提供資料集ID，如下列範例所示。
 
 **API格式**
 
@@ -200,11 +200,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与要评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是您的组织定义，您必须使用 `/marketingActions/core` 或 `/marketingActions/custom`，分别为。 |
+| `{MARKETING_ACTION_NAME}` | 與您評估資料集的資料使用原則相關聯的行銷動作名稱。 視原則是由Adobe定義還是您的組織定義而定，您必須使用 `/marketingActions/core` 或 `/marketingActions/custom`（分別）。 |
 
 **请求**
 
-以下请求测试 `exportToThirdParty` 针对在 [上一步](#datasets). 请求有效负载是一个包含每个数据集ID的数组。
+以下請求會測試 `exportToThirdParty` 針對中取得的資料集採取行銷動作 [上一步](#datasets). 請求承載是包含每個資料集ID的陣列。
 
 ```shell
 curl -X POST \
@@ -228,12 +228,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityType` | 有效负载数组中的每个项目必须指示正在定义的实体类型。 对于此用例，值将始终为“dataSet”。 |
-| `entityID` | 有效负载数组中的每个项目都必须提供数据集的唯一ID。 |
+| `entityType` | 承載陣列中的每個專案都必須指出所定義的實體型別。 對於此使用案例，值將一律為「dataSet」。 |
+| `entityID` | 承載陣列中的每個專案都必須提供資料集的唯一ID。 |
 
 **响应**
 
-成功的响应会返回营销操作的URI、从提供的数据集收集的数据使用情况标签，以及由于针对这些标签测试操作而违反的任何数据使用策略的列表。 在此示例中，“将数据导出到第三方”策略显示在 `violatedPolicies` 数组，指示营销操作触发了策略违规。
+成功回應會傳回行銷動作的URI、從所提供資料集收集的資料使用標籤，以及針對這些標籤測試動作所違反的任何資料使用原則清單。 在此範例中，「將資料匯出至第三方」原則顯示在 `violatedPolicies` 陣列，指出行銷動作已觸發原則違規。
 
 ```json
 {
@@ -359,28 +359,28 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `duleLabels` | 从提供的数据集提取的数据使用标签列表。 |
-| `discoveredLabels` | 请求有效负载中提供的数据集列表，其中显示了在每个请求中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 列出测试营销操作(在 `marketingActionRef`) `duleLabels`. |
+| `duleLabels` | 從提供的資料集中擷取的資料使用標籤清單。 |
+| `discoveredLabels` | 請求承載中提供的資料集清單，顯示可在每個資料集中找到之資料集層級和欄位層級標籤。 |
+| `violatedPolicies` | 陣列會列出測試行銷動作所違反的任何資料使用原則(指定於 `marketingActionRef`)與提供的 `duleLabels`. |
 
-使用API响应中返回的数据，您可以在体验应用程序中设置协议，以在发生策略违规时相应地强制执行这些协议。
+您可以使用API回應中傳回的資料，在體驗應用程式中設定通訊協定，以便在發生原則違規時適當地強制執行。
 
-## 过滤数据字段
+## 篩選資料欄位
 
-如果您的受众区段未通过评估，则可以通过下面概述的两种方法之一调整区段中包含的数据。
+如果您的受眾區段沒有通過評估，您可以透過下列兩種方法之一調整區段中包含的資料。
 
-### 更新区段定义的合并策略
+### 更新區段定義的合併原則
 
-更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 请参阅 [更新现有合并策略](../../profile/api/merge-policies.md#update) （详细信息）。
+更新區段定義的合併原則將會調整資料集和執行區段作業時要包含的欄位。 請參閱以下小節： [更新現有的合併原則](../../profile/api/merge-policies.md#update) 在API合併原則教學課程中取得更多資訊。
 
-### 在导出区段时限制特定数据字段
+### 匯出區段時限制特定資料欄位
 
-在使用 [!DNL Segmentation] API中，您可以使用 `fields` 参数。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
+使用將區段匯出至資料集時 [!DNL Segmentation] API時，您可以使用 `fields` 引數。 新增至此引數的任何資料欄位都將包含在匯出中，而所有其他資料欄位則會被排除。
 
-考虑具有名为“A”、“B”和“C”的数据字段的区段。 如果只想导出字段“C”，则 `fields` 参数将仅包含字段“C”。 这样，在导出区段时将排除字段“A”和“B”。
+假設區段有名為「A」、「B」和「C」的資料欄位。 如果您只想匯出欄位「C」，則 `fields` 引數只會包含&quot;C&quot;欄位。 如此，匯出區段時就會排除「A」和「B」欄位。
 
-请参阅 [导出区段](./evaluate-a-segment.md#export) ，以了解更多信息。
+請參閱以下小節： [匯出區段](./evaluate-a-segment.md#export) 如需詳細資訊，請參閱區段教學課程。
 
 ## 后续步骤
 
-通过阅读本教程，您查找了与受众区段关联的数据使用标签，并对它们进行了测试，以确定是否存在针对特定营销操作的策略违规。 有关中数据管理的更多信息，请参阅 [!DNL Experience Platform]，请阅读的概述 [数据管理](../../data-governance/home.md).
+依照本教學課程，您已查詢與對象區段相關聯的資料使用標籤，並測試這些標籤是否違反特定行銷動作的原則。 如需中資料控管的詳細資訊 [!DNL Experience Platform]，請閱讀 [資料控管](../../data-governance/home.md).

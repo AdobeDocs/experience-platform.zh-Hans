@@ -1,27 +1,27 @@
 ---
-title: 应用程序配置端点
-description: 了解如何在Reactor API中调用/app_configurations端点。
+title: 應用程式設定端點
+description: 瞭解如何在Reactor API中呼叫/app_configurations端點。
 exl-id: 88a1ec36-b4d2-4fb6-92cb-1da04268492a
 source-git-commit: 36320addc790e844a1102314890e8692841dc5d0
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 8%
+source-wordcount: '565'
+ht-degree: 4%
 
 ---
 
-# 应用程序配置端点
+# 應用程式設定端點
 
 >[!WARNING]
 >
->实施 `/app_configurations` 端点在通量中，因为添加、删除和重新工作了功能。
+>實作 `/app_configurations` 端點會隨著特徵的加入、移除和重新加工而變動。
 
-应用程序配置允许存储和检索凭据以供日后使用。 的 `/app_configurations` reactor API中的端点允许您以编程方式管理体验应用程序中的应用程序配置。
+應用程式設定可儲存及擷取認證，以供日後使用。 此 `/app_configurations` Reactor API中的端點可讓您以程式設計方式管理體驗應用程式內的應用程式設定。
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索应用程序配置列表 {#list}
+## 擷取應用程式設定清單 {#list}
 
 **API格式**
 
@@ -31,13 +31,13 @@ GET /companies/{COMPANY_ID}/app_configurations
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 的 `id` 的 [公司](./companies.md) 拥有应用程序配置的用户。 |
+| `COMPANY_ID` | 此 `id` 的 [公司](./companies.md) 擁有應用程式設定的使用者。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的应用程序配置：<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
+>您可以使用查詢引數，根據下列屬性篩選列出的應用程式設定：<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
 
 **请求**
 
@@ -53,7 +53,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回应用程序配置的列表。
+成功回應會傳回應用程式設定清單。
 
 ```json
 {
@@ -99,9 +99,9 @@ curl -X GET \
 }
 ```
 
-## 查找应用程序配置 {#lookup}
+## 查詢應用程式設定 {#lookup}
 
-您可以通过在GET请求的路径中提供应用程序配置的ID来查找该配置。
+您可以在GET請求的路徑中提供其ID，以查詢應用程式設定。
 
 **API格式**
 
@@ -111,9 +111,9 @@ GET /app_configurations/{APP_CONFIGURATION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | 的 `id` 查找的应用程序配置的子目录。 |
+| `APP_CONFIGURATION_ID` | 此 `id` ，屬於您要查閱的應用程式設定。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -129,7 +129,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回应用程序配置的详细信息。
+成功回應會傳回應用程式設定的詳細資料。
 
 ```json
 {
@@ -164,9 +164,9 @@ curl -X GET \
 }
 ```
 
-## 创建应用程序配置 {#create}
+## 建立應用程式設定 {#create}
 
-您可以通过发出POST请求来创建新的应用程序配置。
+您可以發出POST要求，以建立新的應用程式設定。
 
 **API格式**
 
@@ -176,9 +176,9 @@ POST /companies/{COMPANY_ID}/app_configurations
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 的 `id` 的 [公司](./companies.md) 定义应用程序配置时，您需要执行以下操作： |
+| `COMPANY_ID` | 此 `id` 的 [公司](./companies.md) 您正於下方定義應用程式設定。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -212,16 +212,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `platform` | 应用程序在（Web或移动设备）上运行的平台。 这可确定哪些消息传送服务可用。 |
-| `messaging_service` | 与应用程序关联的消息传送服务，如 [Apple推送通知服务(APNs)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) 和 [Firebase Cloud Messaging(FCM)](https://firebase.google.com/docs/cloud-messaging). 这可确定可以使用哪些键类型。 |
-| `key_type` | 表示推送服务供应商支持的协议，并确定 `push_credential` 对象。 随着报文传送服务协议的不断发展，新 `key_type` 将创建值以支持更新的协议。 |
-| `push_credential` | 实际凭据值，在静态时加密。 此字段通常不会解密或包含在API响应中。 只有某些Adobe服务可以获取包含解密的推送凭据的响应。 |
+| `platform` | 應用程式執行所在的平台（網頁或行動裝置）。 這會決定可用的傳訊服務。 |
+| `messaging_service` | 與應用程式相關聯的訊息服務，例如 [Apple推播通知服務(APN)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) 和 [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging). 這會決定可以使用哪些索引鍵型別。 |
+| `key_type` | 代表推送服務廠商支援的通訊協定，並決定 `push_credential` 物件。 隨著通訊協定的發展，訊息服務將不斷更新， `key_type` 建立值以支援更新的通訊協定。 |
+| `push_credential` | 靜態加密的實際認證值。 此欄位通常不會解密或包含在API回應中。 只有特定的Adobe服務才能取得包含解密推送認證的回應。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新创建的应用程序配置的详细信息。
+成功的回應會傳回新建立的應用程式設定的詳細資料。
 
 ```json
 {
@@ -256,9 +256,9 @@ curl -X POST \
 }
 ```
 
-## 更新应用程序配置
+## 更新應用程式設定
 
-您可以通过在应用程序请求的路径中包含应用程序配置的ID来更新PATCH配置。
+您可以在PATCH請求的路徑中包含應用程式的ID來更新應用程式設定。
 
 **API格式**
 
@@ -268,13 +268,13 @@ PATCH /app_configurations/{APP_CONFIGURATION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | 的 `id` 要更新的应用程序配置。 |
+| `APP_CONFIGURATION_ID` | 此 `id` ，屬於您要更新的應用程式設定。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求更新了 `app_id` ，用于现有应用程序配置。
+以下請求會更新 `app_id` 適用於現有應用程式設定。
 
 ```shell
 curl -X PATCH \
@@ -297,15 +297,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 一个对象，其属性表示要为应用程序配置更新的属性。 每个键值都表示要更新的特定应用程序配置属性，以及应将其更新到的相应值。<br><br>可以为应用程序配置更新以下属性：<ul><li>`app_id`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`push_credential`</li></ul> |
-| `id` | 的 `id` 要更新的应用程序配置的子目录。 这应该与 `{APP_CONFIGURATION_ID}` 值。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为 `app_configurations`. |
+| `attributes` | 物件，其屬性代表應用程式設定中要更新的屬性。 每個索引鍵代表要更新的特定應用程式設定屬性，以及應更新到的對應值。<br><br>可針對應用程式設定更新下列屬性：<ul><li>`app_id`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`push_credential`</li></ul> |
+| `id` | 此 `id` 要更新的應用程式設定。 這應該符合 `{APP_CONFIGURATION_ID}` 請求路徑中提供的值。 |
+| `type` | 正在更新的資源型別。 此端點的值必須為 `app_configurations`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回更新的应用程序配置的详细信息。
+成功回應會傳回已更新應用程式設定的詳細資料。
 
 ```json
 {
@@ -340,9 +340,9 @@ curl -X PATCH \
 }
 ```
 
-## 删除应用程序配置
+## 刪除應用程式設定
 
-您可以删除应用程序配置，方法是将其ID包含在DELETE请求的路径中。
+您可以在DELETE請求的路徑中包含應用程式的ID以刪除應用程式設定。
 
 **API格式**
 
@@ -352,9 +352,9 @@ DELETE /app_configurations/{APP_CONFIGURATION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | 的 `id` 您要删除的应用程序配置。 |
+| `APP_CONFIGURATION_ID` | 此 `id` 要刪除的應用程式設定的ID。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -370,4 +370,4 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回没有响应正文的HTTP状态204（无内容），表示应用程序配置已被删除。
+成功的回應會傳回HTTP狀態204 （無內容），沒有回應內文，表示應用程式設定已刪除。

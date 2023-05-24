@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；FTP;FTP
+keywords: Experience Platform；首頁；熱門主題；FTP；ftp
 solution: Experience Platform
-title: 在UI中创建FTP源连接
+title: 在使用者介面中建立FTP來源連線
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建FTP源连接。
+description: 瞭解如何使用Adobe Experience Platform UI建立FTP來源連線。
 exl-id: 8e505ead-4bae-43fe-830b-75620e8fba28
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,61 +12,61 @@ ht-degree: 1%
 
 ---
 
-# 在UI中创建FTP源连接
+# 在使用者介面中建立FTP來源連線
 
 >[!NOTE]
 >
->FTP连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+>FTP聯結器為Beta版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
 
-本教程提供了使用Adobe Experience Platform UI创建FTP源连接的步骤。
+本教學課程提供使用Adobe Experience Platform UI建立FTP來源連線的步驟。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-如果您已经拥有有效的FTP连接，则可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/batch/cloud-storage.md).
+如果您已經有有效的FTP連線，可以略過本檔案的其餘部分，並前往上的教學課程 [設定資料流](../../dataflow/batch/cloud-storage.md).
 
-### 收集所需的凭据
+### 收集必要的認證
 
-要连接到FTP，必须为以下连接属性提供值：
+若要連線至FTP，您必須提供下列連線屬性的值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `host` | 与FTP服务器关联的名称或IP地址。 |
-| `username` | 有权访问您的FTP服务器的用户名。 |
-| `password` | FTP服务器的密码。 |
+| `host` | 與您的FTP伺服器關聯的名稱或IP位址。 |
+| `username` | 有權存取您FTP伺服器的使用者名稱。 |
+| `password` | FTP伺服器的密碼。 |
 
-## 连接到FTP服务器
+## 連線至您的FTP伺服器
 
-收集所需的凭据后，可以按照以下步骤创建新的FTP帐户以连接到平台。
+收集完所需的認證後，您可以依照下列步驟建立新的FTP帳戶以連線至平台。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建入站帐户的各种源。
+登入 [Adobe Experience Platform](https://platform.adobe.com) 然後選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示各種來源，您可透過這些來源建立入站帳戶。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL FTP]**. 如果这是您首次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，请选择 **[!UICONTROL 添加数据]** 创建新的FTP连接。
+在 [!UICONTROL 雲端儲存空間] 類別，選取 **[!UICONTROL FTP]**. 如果您是第一次使用此聯結器，請選取 **[!UICONTROL 設定]**. 否則，請選取 **[!UICONTROL 新增資料]** 以建立新的FTP連線。
 
-![目录](../../../../images/tutorials/create/ftp/catalog.png)
+![目錄](../../../../images/tutorials/create/ftp/catalog.png)
 
-的 **[!UICONTROL 连接到FTP]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
+此 **[!UICONTROL 連線至FTP]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
 
-### 新帐户
+### 新帳戶
 
-如果您使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接]** 然后，再留出一些时间建立新连接。
+如果您使用新認證，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供名稱、選擇性說明和您的認證。 完成後，選取 **[!UICONTROL Connect]** 然後等待一段時間以建立新連線。
 
-![新建](../../../../images/tutorials/create/ftp/new.png)
+![新](../../../../images/tutorials/create/ftp/new.png)
 
-### 现有帐户
+### 現有帳戶
 
-要连接现有帐户，请选择要连接的FTP帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+若要連線現有帳戶，請選取您要連線的FTP帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![现有](../../../../images/tutorials/create/ftp/existing.png)
+![現有](../../../../images/tutorials/create/ftp/existing.png)
 
 ## 后续步骤
 
-在本教程中，您已建立与FTP帐户的连接。 您现在可以继续下一个教程和 [配置数据流，以将云存储中的数据引入平台](../../dataflow/batch/cloud-storage.md).
+依照本教學課程，您已建立與FTP帳戶的連線。 您現在可以繼續下一節教學課程和 [設定資料流，將雲端儲存空間中的資料匯入Platform](../../dataflow/batch/cloud-storage.md).

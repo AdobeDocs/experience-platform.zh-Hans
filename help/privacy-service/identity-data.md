@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；ECID;ecid
+keywords: Experience Platform；首頁；熱門主題；ECID；ecid
 solution: Experience Platform
-title: 隐私请求的身份数据
-description: 本文档就如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息提供了一般指导。
+title: 隱私權請求的身分資料
+description: 本檔案提供一般指引，說明如何設定資料作業並運用Adobe技術，有效擷取適合客戶隱私權請求的身分資訊。
 exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,36 +11,36 @@ ht-degree: 2%
 
 ---
 
-# 隐私请求的标识数据
+# 隱私權請求的身分資料
 
-为了Adobe Experience Platform [!DNL Privacy Service] 要处理客户的私有数据请求（包括访问、删除或选择退出销售请求），必须向其提供唯一标识符，以将特定客户关联到在您启用了Adobe Experience Cloud的应用程序中存储的私有数据。 [!DNL Privacy Service] 然后使用这些标识符收集存储在 [!DNL Experience Cloud]，并根据客户的请求进行处理。
+為了使用Adobe Experience Platform [!DNL Privacy Service] 若要處理客戶對其私人資料的請求（包括存取、刪除或選擇退出銷售請求），必須提供唯一識別碼，將特定客戶連結至其儲存在已啟用Adobe Experience Cloud應用程式中的私人資料。 [!DNL Privacy Service] 然後使用這些識別碼來收集內儲存在客戶身分下的所有資料 [!DNL Experience Cloud]，並根據客戶要求加以處理。
 
-本文档就如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息提供了一般指导。
+本檔案提供一般指引，說明如何設定資料作業並運用Adobe技術，有效擷取適合客戶隱私權請求的身分資訊。
 
-## 身份和命名空间
+## 身分和名稱空間
 
-当客户可以通过多个不同渠道与您的品牌进行交互时，协调从这些多次交互中记录的不同标识符可能会非常困难。 这反过来又会导致难以确定哪些数据属于您的 [!DNL Experience Cloud] 应用程序。
+當客戶可以透過數個不同的管道與您的品牌互動時，要調和從這些許多互動中記錄的不同識別碼可能會很困難。 這進而會使得難以判斷哪些資料屬於您中的特定人員 [!DNL Experience Cloud] 應用程式。
 
-例如，在处理 [!DNL Privacy Service]，标识可以表示在Adobe控制域下设置的Cookie值、在第三方域下与Adobe共享的Cookie值，或您在组织内明确定义的自定义标识符。
+例如，在中處理客戶資料請求時 [!DNL Privacy Service]，身分可代表在Adobe控制網域下設定的Cookie值、在第三方網域下並與Adobe共用的Cookie值，或您在組織內明確定義的自訂識別碼。
 
-因此，每个身份都必须发送到 [!DNL Privacy Service] 与一个命名空间相伴，该命名空间通过将标识值与其源系统相关联来提供上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe Target ID(“TNTID”))相关联。
+因此，每個傳送至的身分都必須是 [!DNL Privacy Service] 會隨附名稱空間，透過將身分值與其來源系統建立關聯來提供相關情境。 名稱空間可代表一般概念，例如電子郵件地址（「電子郵件」），或將身分與特定應用程式相關聯，例如Adobe Advertising Cloud ID (「AdCloud」)或Adobe Target ID (「TNTID」)。
 
-Adobe Experience Platform Identity服务维护全局定义和用户定义的身份命名空间的存储。 有关命名空间的更多详细信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md). 有关中常用的标准命名空间和命名空间限定符列表 [!DNL Privacy Service]，请参阅 [附录节](api/appendix.md) （在API指南中）。
+Adobe Experience Platform Identity Service維護全域定義和使用者定義的身分名稱空間存放區。 如需名稱空間的詳細資訊，請參閱 [身分名稱空間總覽](../identity-service/namespaces.md). 適用於的標準名稱空間和名稱空間限定詞清單 [!DNL Privacy Service]，請參閱 [附錄部分](api/appendix.md) （在API指南中）。
 
-## ECID和选择加入服务
+## ECID和選擇加入服務
 
-Adobe Experience Cloud [!DNL Identity Service] 用作 [!DNL Experience Cloud]，并为每个网站访客分配一个唯一的永久性ID。 的 [!DNL Experience Cloud] ID(ECID)通过使用第一方Cookie跟踪客户的活动，可以跨多个应用程序唯一标识设备，并允许您识别同一网站访客及其在不同应用程序中的数据 [!DNL Experience Cloud] 应用程序。 请参阅 [Experience Cloud标识服务概述](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) 以了解更多信息。
+Adobe Experience Cloud [!DNL Identity Service] 作為通用的識別架構使用，適用於 [!DNL Experience Cloud]，並為每個網站訪客指派不重複的永久ID。 此 [!DNL Experience Cloud] ID (ECID)可透過使用第一方Cookie追蹤客戶活動、唯一識別多個應用程式中的裝置，並可讓您識別不同網站訪客及其資料 [!DNL Experience Cloud] 應用程式。 請參閱 [Experience CloudIdentity服務總覽](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) 以取得詳細資訊。
 
-选择加入服务， [!DNL Experience Cloud Identity Service]，用于在应用程序上设置协议，以允许访客确定您是否可以在访客的设备或浏览器上设置Cookie。 有关选择加入服务（包括如何为您的应用程序设置服务）的更多详细信息，请参阅 [选择加入服务文档](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans).
+選擇加入服務，此服務的擴充功能 [!DNL Experience Cloud Identity Service]，可讓您在應用程式上設定通訊協定，讓訪客決定是否可以在訪客的裝置或瀏覽器上設定Cookie。 如需選擇加入服務的詳細資訊，包括如何為應用程式設定服務，請參閱 [選擇加入服務檔案](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans).
 
-为您的网站访客分配ECID后，您便可以利用Adobe [!DNL Privacy JavaScript Library] 以检索这些ID以在隐私请求中使用，如下一节中所述。
+為您的網站訪客指派ECID後，您就可以使用Adobe [!DNL Privacy JavaScript Library] 擷取這些ID以用於隱私權請求，如下節所述。
 
 ## [!DNL Privacy JS Library]
 
-的 [!DNL Adobe Privacy JavaScript Library] 提供了多个函数，用于检索和删除存储在浏览器中的客户身份。 库可以配置为从多个Adobe应用程序（包括ECID）中检索身份信息。 通过使用回调或承诺，您可以以编程方式处理成功检索的ID，并将它们发送到 [!DNL Privacy Service] API。
+此 [!DNL Adobe Privacy JavaScript Library] 提供數個功能，可讓您擷取及移除儲存在瀏覽器中的客戶身分識別。 程式庫可設定為從多個Adobe應用程式（包括ECID）擷取身分資訊。 透過使用回呼或承諾，您可以以程式設計方式處理成功擷取的ID，並將其傳送至 [!DNL Privacy Service] API。
 
-有关 [!DNL Privacy JS Library]，包括几个常见用例的代码示例，请参阅 [隐私JS库概述](js-library.md).
+如需有關的詳細資訊 [!DNL Privacy JS Library]，包括數種常見使用案例的程式碼範例，請參閱 [隱私權JS資料庫概述](js-library.md).
 
 ## 后续步骤
 
-本文档简要概述了检索客户身份数据以用于隐私请求所涉及的核心概念。 建议您查看每个部分中提供的文档链接，以了解有关这些概念和服务的更多详细信息。 有关如何将检索到的ID发送到 [!DNL Privacy Service] 要创建访问、删除或选择退出销售请求，请参阅 [Privacy ServiceAPI指南](api/overview.md).
+本檔案簡要概述擷取客戶身分資料以用於隱私權請求時的核心概念。 建議您檢閱每個區段提供的檔案連結，以取得有關這些概念與服務的詳細資訊。 如需如何將擷取的ID傳送至的相關步驟 [!DNL Privacy Service] 如需建立存取、刪除或選擇退出銷售的要求，請參閱 [Privacy Service API指南](api/overview.md).

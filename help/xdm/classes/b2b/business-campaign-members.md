@@ -1,34 +1,34 @@
 ---
-title: XDM Business Campaign成员类
-description: 本文档概述了Experience Data Model(XDM)中的XDM Business Campaign成员类。
+title: XDM商業活動會員類別
+description: 本檔案提供Experience Data Model (XDM)中XDM商業活動會員類別的概觀。
 exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '249'
-ht-degree: 2%
+source-wordcount: '246'
+ht-degree: 1%
 
 ---
 
-# [!UICONTROL XDM Business Campaign成员] 类
+# [!UICONTROL XDM商業活動會員] 類別
 
 >[!IMPORTANT]
 >
->此类旨在供具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-Time CDP B2B Edition的访问权限，才能参加此类 [实时客户资料](../../../profile/home.md).
+>此類別旨在供擁有下列許可權的組織使用： [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必須擁有Real-Time CDP B2B Edition的存取權，此類別才能參與 [即時客戶個人檔案](../../../profile/home.md).
 
-[!UICONTROL XDM Business Campaign成员] 是一个标准的体验数据模型(XDM)类，用于描述与业务活动关联的联系人或潜在客户。
+[!UICONTROL XDM商業活動會員] 是一個標準的體驗資料模型(XDM)類別，可描述與商業促銷活動相關聯的聯絡人或銷售機會。
 
-![XDM Business Campaign成员类在UI中显示的结构](../../images/classes/b2b/business-campaign-members.png)
+![XDM商業活動成員類別在UI中的結構](../../images/classes/b2b/business-campaign-members.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `campaignKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 关联营销活动的组合标识符。 |
-| `campaignMemberKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 促销活动成员身份实体的组合标识符。 |
-| `extSourceSystemAudit` | [[!UICONTROL 外部源系统审核属性]](../../data-types/external-source-system-audit-attributes.md) | 如果促销活动成员资格来自外部源系统，则此对象会捕获该系统的审核属性。 |
-| `personKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 作为关联营销活动成员的人员的复合标识符。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `campaignMemberID`. |
+| `campaignKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 相關行銷活動的複合識別碼。 |
+| `campaignMemberKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 行銷活動會籍實體的複合識別碼。 |
+| `extSourceSystemAudit` | [[!UICONTROL 外部來源系統稽核屬性]](../../data-types/external-source-system-audit-attributes.md) | 如果促銷活動會籍來自外部來源系統，此物件會擷取該系統的稽核屬性。 |
+| `personKey` | [[!UICONTROL B2B來源]](../../data-types/b2b-source.md) | 關聯行銷活動會員個人的複合識別碼。 |
+| `_id` | 字符串 | 記錄的唯一識別碼。 這是系統產生的值，與 `campaignMemberID`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-要了解此类在概念上如何与其他B2B类相关以及如何在Adobe Experience Platform UI中建立这些关系，请参阅 [Real-Time CDP B2B版中的模式关系](../../tutorials/relationship-b2b.md)
+若要瞭解此類別與其他B2B類別在概念上的關聯性，以及如何在Adobe Experience Platform UI中建立這些關聯性，請參閱以下指南： [Real-Time CDP B2B Edition中的結構描述關係](../../tutorials/relationship-b2b.md)
 
-有关与此类兼容的其他字段，请参阅的字段组引用 [[!UICONTROL XDM Business Campaign成员详细信息]](../../field-groups/b2b-campaign-members/details.md).
+如需與此類別相容的其他欄位，請參閱欄位群組參考資料， [[!UICONTROL XDM商業活動會員詳細資料]](../../field-groups/b2b-campaign-members/details.md).

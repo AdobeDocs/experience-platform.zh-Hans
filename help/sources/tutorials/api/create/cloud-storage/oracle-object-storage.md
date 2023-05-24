@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；Oracle对象存储；oracle对象存储
+keywords: Experience Platform；首頁；熱門主題；Oracle物件儲存；oracle物件儲存
 solution: Experience Platform
-title: 使用流服务API创建Oracle对象存储库连接
+title: 使用Flow Service API建立Oracle物件儲存基礎連線
 type: Tutorial
-description: 了解如何使用流服务API将Adobe Experience Platform连接到Oracle对象存储。
+description: 瞭解如何使用Flow Service API將Adobe Experience Platform連線到Oracle物件儲存。
 exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,45 +12,45 @@ ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Oracle Object Storage] 基本连接使用 [!DNL Flow Service] API
+# 建立 [!DNL Oracle Object Storage] 基礎連線使用 [!DNL Flow Service] API
 
-基本连接表示源与Adobe Experience Platform之间经过验证的连接。
+基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
 
-本教程将指导您完成为 [!DNL Oracle Object Storage] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Oracle Object Storage] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-以下部分提供了成功连接到所需了解的其他信息 [!DNL Oracle Object Storage] 使用 [!DNL Flow Service] API。
+以下小節提供成功連線所需瞭解的其他資訊 [!DNL Oracle Object Storage] 使用 [!DNL Flow Service] API。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-为 [!DNL Flow Service] 连接到 [!DNL Oracle Object Storage]，则必须为以下连接属性提供值：
+為了 [!DNL Flow Service] 以連線到 [!DNL Oracle Object Storage]，您必須提供下列連線屬性的值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `serviceUrl` | 的 [!DNL Oracle Object Storage] 身份验证所需的端点。 端点格式为： `https://{OBJECT_STORAGE_NAMESPACE}.compat.objectstorage.eu-frankfurt-1.oraclecloud.com` |
-| `accessKey` | 的 [!DNL Oracle Object Storage] 访问密钥ID，这是进行身份验证所需的。 |
-| `secretKey` | 的 [!DNL Oracle Object Storage] 验证所需的密码。 |
-| `bucketName` | 如果用户具有受限访问权限，则需要允许的存储段名称。 存储段名称必须介于3到63个字符之间，且必须以字母或数字开头和结尾，并且只能包含小写字母、数字或连字符(`-`)。 存储段名称的格式不能与IP地址类似。 |
-| `folderPath` | 用户具有受限访问权限时需要的允许文件夹路径。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL Oracle Object Storage] 为： `c85f9425-fb21-426c-ad0b-405e9bd8a46c`. |
+| `serviceUrl` | 此 [!DNL Oracle Object Storage] 驗證所需的端點。 端點格式為： `https://{OBJECT_STORAGE_NAMESPACE}.compat.objectstorage.eu-frankfurt-1.oraclecloud.com` |
+| `accessKey` | 此 [!DNL Oracle Object Storage] 驗證所需的存取金鑰ID。 |
+| `secretKey` | 此 [!DNL Oracle Object Storage] 驗證所需的密碼。 |
+| `bucketName` | 如果使用者擁有受限制的存取權，則需要允許的bucket名稱。 貯體名稱的長度必須介於3到63個字元之間，開頭和結尾必須是字母或數字，而且只能包含小寫字母、數字或連字型大小(`-`)。 儲存貯體名稱的格式不得類似於IP位址。 |
+| `folderPath` | 如果使用者擁有受限存取權，則需要允許的資料夾路徑。 |
+| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Oracle Object Storage] 為： `c85f9425-fb21-426c-ad0b-405e9bd8a46c`. |
 
-有关如何获取这些值的更多信息，请参阅 [Oracle对象存储身份验证指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
+如需如何取得這些值的詳細資訊，請參閱 [oracle物件儲存驗證指南](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
 
-## 创建基本连接
+## 建立基礎連線
 
-基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
 
-要创建基本连接ID，请向 `/connections` 提供 [!DNL Oracle Object Storage] 身份验证凭据作为请求参数的一部分。
+POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL Oracle Object Storage] 要求引數中的驗證認證。
 
 **API格式**
 
@@ -60,7 +60,7 @@ POST /connections
 
 **请求**
 
-以下请求会为 [!DNL Oracle Object Storage]:
+下列要求會建立 [!DNL Oracle Object Storage]：
 
 ```shell
 curl -X POST \
@@ -92,16 +92,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.serviceUrl` | 的 [!DNL Oracle Object Storage] 身份验证所需的端点。 |
-| `auth.params.accessKey` | 的 [!DNL Oracle Object Storage] 访问密钥ID，这是进行身份验证所需的。 |
-| `auth.params.secretKey` | 的 [!DNL Oracle Object Storage] 验证所需的密码。 |
-| `auth.params.bucketName` | 如果用户具有受限访问权限，则需要允许的存储段名称。 |
-| `auth.params.folderPath` | 用户具有受限访问权限时需要的允许文件夹路径。 |
-| `connectionSpec.id` | 的 [!DNL Oracle Object Storage] 连接规范ID: `c85f9425-fb21-426c-ad0b-405e9bd8a46c`. |
+| `auth.params.serviceUrl` | 此 [!DNL Oracle Object Storage] 驗證所需的端點。 |
+| `auth.params.accessKey` | 此 [!DNL Oracle Object Storage] 驗證所需的存取金鑰ID。 |
+| `auth.params.secretKey` | 此 [!DNL Oracle Object Storage] 驗證所需的密碼。 |
+| `auth.params.bucketName` | 如果使用者擁有受限制的存取權，則需要允許的bucket名稱。 |
+| `auth.params.folderPath` | 如果使用者擁有受限存取權，則需要允許的資料夾路徑。 |
+| `connectionSpec.id` | 此 [!DNL Oracle Object Storage] 連線規格ID： `c85f9425-fb21-426c-ad0b-405e9bd8a46c`. |
 
 **响应**
 
-成功的响应会返回新创建连接的连接ID。 在下一个教程中探索云存储数据时需要此ID。
+成功的回應會傳回新建立連線的連線ID。 在下一個教學課程中，探索您的雲端儲存空間資料時，需要此ID。
 
 ```json
 {
@@ -112,4 +112,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL Oracle Object Storage] 使用 [!DNL Flow Service] API，并已获得其唯一连接ID。 您可以将此连接ID用于 [使用流量服务API浏览云存储](../../explore/cloud-storage.md).
+依照本教學課程，您已建立 [!DNL Oracle Object Storage] 使用下列專案的連線： [!DNL Flow Service] API，並已取得其唯一的連線ID。 您可以使用此連線ID來 [使用流量服務API探索雲端儲存空間](../../explore/cloud-storage.md).

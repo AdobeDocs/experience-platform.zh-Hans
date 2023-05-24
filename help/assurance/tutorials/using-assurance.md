@@ -1,52 +1,52 @@
 ---
 title: 使用Adobe Experience Platform Assurance
-description: 本指南介绍在安装和实施Adobe Experience Platform Assurance后如何使用它。
-source-git-commit: 24f452bdb923179eefe53fdb28d3a92d43e533cd
+description: 本指南說明在安裝及實作後，如何使用Adobe Experience Platform Assurance。
+exl-id: 872c83d1-82e8-40d8-9b66-3e51a91a955f
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '402'
 ht-degree: 0%
 
 ---
 
-
 # 使用Adobe Experience Platform Assurance
 
-本教程介绍如何使用Adobe Experience Platform Assurance。 有关如何安装和实施Adobe Experience Platform Assurance扩展的说明，请阅读 [实施保证扩展](./implement-assurance.md).
+本教學課程說明如何使用Adobe Experience Platform保證。 如需如何安裝及實作Adobe Experience Platform Assurance擴充功能的說明，請閱讀以下教學課程： [實作Assurance擴充功能](./implement-assurance.md).
 
-## 创建会话
+## 建立工作階段
 
-登录后 [保证UI](https://experience.adobe.com/assurance)，您可以选择 **[!UICONTROL 创建会话]** 开始创建会话。
+登入之後 [保證UI](https://experience.adobe.com/assurance)，您可以選取 **[!UICONTROL 建立工作階段]** 以開始建立工作階段。
 
-![此时会突出显示创建会话按钮，其中显示了可在何处创建会话。](./images/using-assurance/create-session.png)
+![建立工作階段按鈕會反白顯示，顯示您可以在何處建立工作階段。](./images/using-assurance/create-session.png)
 
-的 **[!UICONTROL 创建新会话]** 对话框。 请查看给定的说明，并通过选择 **[!UICONTROL 开始]**.
+此 **[!UICONTROL 建立新工作階段]** 對話方塊隨即顯示。 請檢閱指定的指示，然後繼續選取 **[!UICONTROL 開始]**.
 
-![此时会显示“创建新会话”对话框，其中显示了有关如何使用“保证”的说明。](./images/using-assurance/create-new-session.png)
+![「建立新工作階段」對話方塊隨即顯示，其中顯示如何使用「保證」的說明。](./images/using-assurance/create-new-session.png)
 
-您现在可以输入用于标识会话的名称，然后提供 **[!UICONTROL 基本URL]** （您的应用程序的深层链接URL）。 提供这些详细信息后，选择 **[!UICONTROL 下一个]**.
+您現在可以輸入名稱來識別工作階段，然後提供 **[!UICONTROL 基本URL]** （應用程式的深層連結URL）。 提供這些詳細資料後，請選取 **[!UICONTROL 下一個]**.
 
 >[!INFO]
 >
->基本URL是用于从URL启动应用程序的根定义。 会话URL将生成，您可以通过该URL启动保证会话。 示例值可能如下所示： `myapp://default` 在 **[!UICONTROL 基本URL]** 字段中，键入应用程序的基本深层链接定义。
+>基礎URL是用來從URL啟動應用程式的根定義。 產生工作階段URL，您可以透過它啟動Assurance工作階段。 範例值可能如下所示： `myapp://default` 在 **[!UICONTROL 基本URL]** 欄位中，輸入應用程式的基本深層連結定義。
 
-![将显示创建新会话的完整工作流。](./images/using-assurance/create-session.gif)
+![隨即顯示建立新工作階段的完整工作流程。](./images/using-assurance/create-session.gif)
 
-## 连接到会话
+## 連線至工作階段
 
-创建会话后，请确保看到 **[!UICONTROL 创建新会话]** 对话框现在会显示链接、二维码和个人识别码。
+建立工作階段後，請確定您看到 **[!UICONTROL 建立新工作階段]** 對話方塊現在會顯示連結、QR碼和PIN。
 
-![将显示一个对话框，其中显示了用于连接到保证会话的选项。](./images/using-assurance/create-new-session-pin.png)
+![會顯示一個對話方塊，顯示連線至您的保證工作階段的選項。](./images/using-assurance/create-new-session-pin.png)
 
-如果出现此对话框，您可以使用设备的相机应用程序扫描二维码并打开应用程序，或复制链接并在应用程序中打开。 当您的应用程序启动时，您应会看到覆盖的PIN条目屏幕。 在上一步中键入PIN并按 **[!UICONTROL 连接]**.
+如果出現此對話方塊，您可以使用裝置的相機應用程式來掃描二維碼並開啟應用程式，或複製連結並在應用程式中開啟。 應用程式啟動時，應該會看到PIN輸入畫面重疊。 輸入上一步驟的PIN並按下 **[!UICONTROL Connect]**.
 
-当应用程序上显示Adobe Experience Platform图标(红色Adobe“A”)时，您可以验证您的应用程序是否已连接到保障。
+當應用程式上顯示Adobe Experience Platform圖示(紅色Adobe「A」)時，您可驗證應用程式是否已連線至Assurance。
 
-![将显示将应用程序连接到保证会话的完整工作流。](./images/using-assurance/connect-session.gif)
+![顯示將應用程式連線至保證工作階段的完整工作流程。](./images/using-assurance/connect-session.gif)
 
-## 导出会话
+## 匯出工作階段
 
-要导出保证会话，请在应用程序的会话详细信息页面上，选择 **[!UICONTROL 导出到JSON]** 在会话中：
+若要匯出保證工作階段，請在應用程式的工作階段詳細資訊頁面上，選取 **[!UICONTROL 匯出至JSON]** 在工作階段中：
 
-![导出会话](./images/using-assurance/export-session.png)
+![匯出工作階段](./images/using-assurance/export-session.png)
 
-导出选项遵循搜索过滤器结果，并且只导出事件视图中显示的事件。 例如，如果您搜索了“track”事件，然后选择 **[!UICONTROL 导出到JSON]**，则仅导出“track”事件结果。
+匯出選項會遵從搜尋篩選結果，並只匯出事件檢視中顯示的事件。 例如，如果您搜尋&quot;track&quot;事件，然後選取 **[!UICONTROL 匯出至JSON]**，只會匯出「追蹤」事件結果。

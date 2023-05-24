@@ -1,6 +1,6 @@
 ---
-title: “常用Analytics扩展”概述
-description: 了解Adobe Experience Platform中的“常用Analytics标记”扩展。
+title: 常見Analytics擴充功能概觀
+description: 瞭解Adobe Experience Platform中的常見Analytics標籤擴充功能。
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 77%
 
 ---
 
-# “常用Analytics插件”扩展概述
+# 常見Analytics外掛程式擴充功能概觀
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文的参考信息可了解有关配置“常用 Analytics 插件”扩展，以及使用此扩展增强 [!DNL Adobe Analytics] 扩展时可用选项的信息。
 
@@ -56,9 +56,9 @@ ht-degree: 77%
 
 这些操作可以分别初始化要使用的特定插件。若要初始化您打算在资产中使用的所有插件，只需将相应的操作添加到规则并保存规则即可。虽然这种方式在配置扩展方面需要的工作量稍大一些，但它的代码效率更高。因此，Adobe 建议采用此方法。
 
-## “常用Analytics插件”扩展数据元素
+## 常見Analytics外掛程式擴充功能資料元素
 
-“常用Analytics插件”扩展中提供了以下数据元素，这些数据元素利用标记功能在Analytics中设置和配置其相应插件：
+「常用Analytics外掛程式」擴充功能提供下列資料元素，這些資料元素會運用標籤功能，在Analytics中設定對應的外掛程式：
 
 * `getGeoCoordinates`
 * `getNewRepeat`
@@ -71,4 +71,4 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->有关上述插件的更多信息，请查阅 [Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+>如需上述外掛程式的詳細資訊，請參閱 [Analytics檔案](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).

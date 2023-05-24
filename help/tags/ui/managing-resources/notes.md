@@ -1,10 +1,11 @@
 ---
 title: 注释
-description: 了解如何向Adobe Experience Platform中的特定标记资源添加文本批注。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+description: 瞭解如何在Adobe Experience Platform中新增文字註釋至特定標籤資源。
+exl-id: 14d6b6a1-3bd0-4181-8181-e6b35c197a44
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '309'
-ht-degree: 56%
+ht-degree: 65%
 
 ---
 
@@ -12,9 +13,9 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-注释是可添加到Adobe Experience Platform中某些标记资源的文本批注。 注释可附加到以下资源：
+附註是可新增至Adobe Experience Platform中特定標籤資源的文字註釋。 注释可附加到以下资源：
 
 * 扩展
 * 数据元素
@@ -38,10 +39,10 @@ ht-degree: 56%
 
 可注释的资源在屏幕的右侧显示窄边栏。边栏包括注释的图标。此图标显示当前附加到该资源的注释数量。
 
-选择&#x200B;**[!UICONTROL 注释]**&#x200B;可展开右边栏并显示注释，最近的注释将位于顶部。  要添加新注释，请在顶部的框中输入注释文本，然后选择&#x200B;**[!UICONTROL Add Note]**。
+選取 **[!UICONTROL 附註]** 展開右側邊欄並顯示附註。最新的附註會顯示於最上方。  若要新增附註，請在頂端的方塊輸入附註文字，然後選取 **[!UICONTROL 新增附註]**.
 
 ## 其他
 
-* 标记资源上的注释与DTM中的注释行为相匹配，因为这些注释不可变，并且无法编辑或删除。
+* 標籤資源上的附註會與DTM中的附註行為一致，且在DTM中不可變動，無法編輯或刪除。
 * 查看资源的旧版修订版时，只显示在该修版订的 `created_at` 日期之前创建的注释。
 * 删除资源时，附加到该资源的所有注释也会被删除。

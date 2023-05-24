@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；查询服务；查询服务；嵌套数据结构；嵌套数据；扁平化；扁平化嵌套数据；
-title: 扁平化嵌套数据结构以与BI工具一起使用
-description: 本文档介绍在查询服务中使用第三方BI工具时，如何在会话期间扁平化所有表和视图的XDM模式。
+keywords: Experience Platform；查詢服務；查詢服務；巢狀資料結構；巢狀資料；平面化；平面化巢狀資料；
+title: 平面化巢狀資料結構以與BI工具一起使用
+description: 本檔案說明如何將協力廠商BI工具與查詢服務搭配使用時，在工作階段期間所有表格和檢視的XDM結構描述平面化。
 exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
 source-git-commit: 1c590350c9d519dba60375b92de7bbbbd77961dc
 workflow-type: tm+mt
@@ -10,43 +10,43 @@ ht-degree: 0%
 
 ---
 
-# 扁平化嵌套数据结构以与第三方BI工具一起使用
+# 平面化巢狀資料結構以搭配協力廠商BI工具使用
 
-Adobe Experience Platform查询服务支持 `FLATTEN` 通过第三方BI工具连接到数据库时进行设置。 此功能可拼合第三方BI工具中的嵌套数据结构，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。
+Adobe Experience Platform查詢服務支援 `FLATTEN` 透過協力廠商BI工具連線至資料庫時設定。 此功能可平面化協力廠商BI工具中的巢狀資料結構，以改善其可用性並減少擷取、分析、轉換和報告資料所需的工作負載。
 
-许多BI工具，如 [!DNL Tableau] 和 [!DNL Power BI] 本身不支持嵌套的数据结构。 的 `FLATTEN` 设置消除了在数据上创建SQL视图以提供平面版本或使用查询服务的需要 `CTAS` 或 `INSERT INTO` 使用临时模式时，将数据集复制到平面版本的作业。
+許多BI工具如下 [!DNL Tableau] 和 [!DNL Power BI] 不原生支援巢狀資料結構。 此 `FLATTEN` 設定會移除在資料上建立SQL檢視以提供平面版本或使用查詢服務的需要 `CTAS` 或 `INSERT INTO` 使用臨時結構描述時，將資料集複製到平面版本的工作。
 
-的 `FLATTEN` 设置会将每个叶字段的结构提取到表的根中，并将字段命名为原始命名空间之后的字段。 这允许您使用点表示法将字段与其体验数据模型(XDM)路径匹配，同时保留字段的上下文。
+此 `FLATTEN` 設定會將每個分葉欄位的結構提取到表格的根中，並將欄位命名在原始名稱空間之後。 這可讓您使用點標籤法來比對欄位與其體驗資料模型(XDM)路徑，同時保留欄位的內容。
 
 ## 先决条件
 
-使用 `FLATTEN` 设置需要对Adobe Experience Platform的以下组件有一定的了解：
+使用 `FLATTEN` 設定需要深入瞭解下列Adobe Experience Platform元件：
 
-* [XDM系统](../../xdm/home.md):XDM及其在Experience Platform中实施的高级概述。
+* [XDM系統](../../xdm/home.md)：XDM及其在Experience Platform中實作的高層級概觀。
 
-   * [创建临时架构](../../xdm/tutorials/ad-hoc.md):XDM架构（其字段名称仅由单个数据集使用）称为临时架构。 Ad hoc架构用于各种数据摄取工作流，用于Experience Platform和创建特定类型的源连接。
+   * [建立臨時結構描述](../../xdm/tutorials/ad-hoc.md)：XDM結構描述中的欄位已命名為只供單一資料集使用，即稱為臨時結構描述。 臨時結構用於各種資料擷取工作流程，以供Experience Platform和建立特定型別的來源連線。
 
-* [沙箱](../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙箱](../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-* [嵌套的数据结构](./nested-data-structures.md):本文档提供了有关如何创建、处理或转换具有复杂数据类型（包括嵌套数据结构）的数据集的示例。
+* [巢狀資料結構](./nested-data-structures.md)：本檔案提供範例，說明如何建立、處理或轉換具有複雜資料型別（包括巢狀資料結構）的資料集。
 
-## 使用FLATTEN设置连接到数据库 {#connect-with-flatten}
+## 使用FLATTEN設定連線到資料庫 {#connect-with-flatten}
 
-的 `FLATTEN` 设置会将嵌套数据结构拼合到单独的列中，其中属性名称将变为保存行值的列名称。 当在不支持嵌套数据结构的BI工具中处理数据时，此设置可提高临时架构的可用性并减少必要的工作量。
+此 `FLATTEN` 設定平面化將巢狀資料結構分成個別的欄，其中屬性名稱會成為保留列值的欄名稱。 在不支援巢狀資料結構的BI工具中使用資料時，此設定可改善臨時結構描述的可用性並減少必要的工作負載。
 
-使用所选的第三方客户端连接到查询服务时，请附加 `FLATTEN` 设置为数据库名称。 有关如何连接特定BI工具的信息，请参阅 [将客户端连接到查询服务概述](../clients/overview.md). 连接字符串应包含：
+使用您選擇的協力廠商使用者端連線至查詢服務時，請附加 `FLATTEN` 設定為資料庫名稱。 如需如何連線特定BI工具的詳細資訊，請參閱 [將使用者端連線至查詢服務概述](../clients/overview.md). 連線字串應包含：
 
-* 沙盒名称。
-* 冒号后跟 `all` 或特定数据集ID、视图ID或数据库名称。
-* 问号(?) 后跟 `FLATTEN` 关键词。
+* 沙箱名稱。
+* 冒號後接 `all` 或特定資料集ID、檢視ID或資料庫名稱。
+* 問號(？) 後面接著 `FLATTEN` 關鍵字。
 
-输入应采用以下格式：
+輸入內容應採用以下格式：
 
 ```terminal
 {sandbox_name}:{all/ID/database_name}?FLATTEN
 ```
 
-连接字符串示例如下所示：
+連線字串範例可能如下所示：
 
 ```terminal
 prod:all?FLATTEN
@@ -54,19 +54,19 @@ prod:all?FLATTEN
 
 ## 示例 {#example}
 
-本指南中使用的示例架构采用标准字段组 [!UICONTROL 商务详细信息]，利用 `commerce` 对象结构和 `productListItems` 数组。 有关 [有关 [!UICONTROL 商务详细信息] 字段组](../../xdm/field-groups/event/commerce-details.md). 架构结构的表示形式可在下图中查看。
+本指南中使用的範例結構描述會採用標準欄位群組 [!UICONTROL 商務詳細資料]，會使用 `commerce` 物件結構和 `productListItems` 陣列。 請參閱XDM檔案以瞭解 [有關以下專案的更多資訊： [!UICONTROL 商務詳細資料] 欄位群組](../../xdm/field-groups/event/commerce-details.md). 結構描述結構的代表可以在下圖中看到。
 
-![商务详细信息字段组的架构图，包括 `commerce` 和 `productListItems` 结构。](../images/essential-concepts/commerce-details.png)
+![商務詳細資料欄位群組的結構描述圖，包括 `commerce` 和 `productListItems` 結構。](../images/essential-concepts/commerce-details.png)
 
-如果BI工具不支持嵌套数据结构，则当嵌套字段包含序列化值(例如 `commerce` 和 `productListItems` （在示例架构中）。 这些值可能显示为单个编码的一部分 `commerce` 字符串字段，不会实际无法使用。
+如果您的BI工具不支援巢狀資料結構，則可能很難參考巢狀欄位，因為這些欄位包含序列化的值(例如 `commerce` 和 `productListItems` （在範例結構描述中）。 這些值可能會顯示為單一編碼的一部分 `commerce` 字串欄位和並非實際無法使用。
 
-以下值表示 `commerce.order.priceTotal` (3018.0), `commerce.order.purchaseID` (c9b5aff9-25de-450b-98f4-4484a2170180)和 `commerce.purchases.value`(1.0)。
+下列值代表 `commerce.order.priceTotal` (3018.0)， `commerce.order.purchaseID` (c9b5aff9-25de-450b-98f4-4484a2170180)，以及 `commerce.purchases.value`(1.0)在格式不正確的巢狀欄位中。
 
 ```terminal
 ("(3018.0,c9b5aff9-25de-450b-98f4-4484a2170180)","(1.0)")
 ```
 
-通过使用 `FLATTEN` 设置后，您可以使用点表示法及其原始路径名访问架构或嵌套数据结构整个部分中的单独字段。 此格式的示例使用 `commerce` 字段组如下所示。
+藉由使用 `FLATTEN` 設定，您可以使用點標籤法及其原始路徑名稱，來存取架構內的個別欄位或巢狀資料結構的整個區段。 此格式的範例，使用 `commerce` 欄位群組如下。
 
 ```terminal
 commerce.order.priceTotal
@@ -74,13 +74,13 @@ commerce.order.purchaseID
 commerce.purchases.value
 ```
 
-的 `FLATTEN` 设置在处理其他数据结构时存在一些限制。 有关详细信息，请参阅 [限制部分](#limitations).
+此 `FLATTEN` 設定在處理其他資料結構時有一定的限制。 完整的詳細資料請參見 [限制區段](#limitations).
 
-### 在查询中对字段使用引号 {#quotation-marks}
+### 查詢中的欄位使用引號 {#quotation-marks}
 
-扁平化根字段现在使用点表示法来匹配其XDM路径。 在查询中使用时，需要将字段用引号(&quot; &quot;)括起来。
+平面化的根欄位現在使用點標籤法來比對其XDM路徑。 在查詢中使用時，欄位需要用引號(「 」)括住。
 
-以下SQL示例显示嵌套查询的原始状态：
+下列SQL範例顯示巢狀查詢的原始狀態：
 
 ```sql
 SELECT YEAR(timestamp) AS year,
@@ -90,7 +90,7 @@ WHERE commerce.purchases.value > 0
 GROUP BY 1;
 ```
 
-使用扁平化数据字段时，查询使用点表示法编写，并用引号括起来，如下所示：
+使用平面化資料欄位時，查詢會使用點標籤法撰寫，並括在引號中，如下所示：
 
 ```sql
 SELECT YEAR(timestamp) AS year,
@@ -102,17 +102,17 @@ GROUP BY 1;
 
 ## 限制 {#limitations}
 
-的 `FLATTEN` 设置当前不会扁平化以下数据结构：
+此 `FLATTEN` 設定目前不會平面化下列資料結構：
 
-| 数据结构 | 限制 |
+| 資料結構 | 限制 |
 |---|---|
-| 数组 | 使用显式数组索引或 `EXPLODE` 函数访问数组。 |
-| 地图 | 使用字符串键访问映射下的值以访问映射。 |
+| 数组 | 使用明確的陣列索引或 `EXPLODE` 函式以存取陣列。 |
+| 地图 | 使用字串索引鍵來存取對應下的值，以存取對應。 |
 
-要同时解决映射和数组限制，您需要使用BI工具原始SQL编辑，如Power BI中的Advanced Options -> SQL语句。
+若要解決Map和Array限制，您需要使用BI工具原始SQL編輯，例如Power BI中的[進階選項] -> [SQL陳述式]。
 
-要解决映射和数组限制，必须使用诸如原始SQL编辑之类的BI工具。 请参阅指南以了解操作方法 [使用Power BI高级选项输入自定义SQL查询](../clients/power-bi.md#import-tables-using-custom-sql) 在SQL语句部分中。
+需要原始SQL編輯等BI工具來解決對應和陣列限制。 請參閱操作方法指南 [使用Power BI進階選項輸入自訂SQL查詢](../clients/power-bi.md#import-tables-using-custom-sql) SQL陳述式區段中的。
 
 ## 后续步骤
 
-本文档介绍了如何扁平化嵌套数据结构以与第三方BI工具一起使用。 如果您尚未连接客户端，请参阅 [客户端连接概述](../clients/overview.md) ，以获取受支持的第三方客户的列表。
+本檔案說明如何平面化巢狀資料結構，以搭配協力廠商BI工具使用。 如果您尚未連線使用者端，請參閱 [使用者端連線概觀](../clients/overview.md) 以取得支援的協力廠商使用者端清單。

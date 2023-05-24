@@ -1,20 +1,21 @@
 ---
-title: 适用于Web扩展的核心库模块
-description: 了解可以在Web扩展中使用的核心库模块。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+title: Web擴充功能的核心程式庫模組
+description: 瞭解您可以在Web擴充功能中使用的核心程式庫模組。
+exl-id: 7fb63208-aed0-4add-b6da-8e4aea063d0a
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '350'
-ht-degree: 75%
+ht-degree: 82%
 
 ---
 
-# 适用于Web扩展的核心库模块
+# Web擴充功能的核心程式庫模組
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-本文档提供了可在Web扩展中使用的核心库模块列表。 您可以使用 `require('@adobe/{MODULE}')` 访问这些模块，其中 `{MODULE}` 是要使用的核心模块的名称。
+本檔案提供您可以在Web擴充功能中使用的核心程式庫模組清單。 您可以使用 `require('@adobe/{MODULE}')` 访问这些模块，其中 `{MODULE}` 是要使用的核心模块的名称。
 
 ## [!DNL reactor-object-assign]
 
@@ -78,7 +79,7 @@ loadScript(url).then(function() {
 
 ### [!DNL reactor-promise]
 
-`reactor-promise` 是一个模拟 ECMAScript 6 中本机 [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 的构造函数。如果本机 Promise API 可用，则将返回该 API。
+`reactor-promise` 是一个模拟 ECMAScript 6 中本机 [Promise API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 的构造函数。如果本机 Promise API 可用，则将返回该 API。
 
 ```javascript
 var Promise = require('@adobe/reactor-promise');

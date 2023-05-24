@@ -1,6 +1,6 @@
 ---
 title: SFTP 主机
-description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
+description: 瞭解如何在Adobe Experience Platform中設定標籤，以將程式庫組建傳送至安全的自行託管SFTP伺服器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 19%
 
 ---
 
-# SFTP主机
+# SFTP主機
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Experience Platform允许您将标签库内部版本交付到托管的安全SFTP服务器，从而更好地控制内部版本的存储和管理方式。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
+Adobe Experience Platform可讓您將標籤程式庫組建傳送至您自行託管的安全SFTP伺服器，讓您更能掌控組建的儲存和管理方式。 本指南說明如何在Experience PlatformUI或資料收集UI中為標籤屬性設定SFTP主機。
 
 >[!NOTE]
 >
->您还可以选择使用由Adobe管理的主机。 请参阅 [Adobe管理的主机](./managed-by-adobe-host.md) 以了解更多信息。
+>您也可以選擇改用Adobe管理的主機。 請參閱指南： [Adobe管理主機](./managed-by-adobe-host.md) 以取得詳細資訊。
 >
->有关自托管库的优势和限制的信息，请参阅 [自托管指南](./self-hosting-libraries.md).
+>如需自行託管程式庫的優點與限制的詳細資訊，請參閱 [自行託管指南](./self-hosting-libraries.md).
 
-## 为服务器设置访问密钥 {#access-key}
+## 設定伺服器的存取金鑰 {#access-key}
 
 Platform 会使用加密密钥连接到 SFTP 站点。可以通过以下几步来正确设置此操作：
 
-### 创建公钥/私钥对
+### 建立公開/私密金鑰組
 
-您必须在 SFTP 服务器上安装公钥/私钥对。您可以在服务器上生成这些密钥，也可以在其他位置生成这些密钥，然后在服务器上安装它们。 请参阅GitHub文档，其中介绍 [如何生成SSH密钥](https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) 以了解更多信息。
+您必须在 SFTP 服务器上安装公钥/私钥对。您可以在伺服器上產生這些金鑰，也可以在其他地方產生金鑰並安裝在伺服器上。 請參閱GitHub檔案，瞭解 [如何產生SSH金鑰](https://help.github.com/cn/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) 以取得詳細資訊。
 
-### 加密密钥
+### 加密您的金鑰
 
-私钥用于加密公钥。 在SFTP主机创建过程中，您需要提供私钥。 请参阅 [加密值](../../../api/guides/encrypting-values.md) 中有关对公钥进行加密的说明。 除非您知道自己需要特定的GPG密钥，否则请使用生产环境的GPG密钥。 最后，您可以从任何计算机加密私钥，您无需在服务器上安装 GPG 即可完成此步骤。
+私密金鑰是用來加密公開金鑰。 在SFTP主機建立過程中，您需要提供私密金鑰。 請參閱以下小節： [加密值](../../../api/guides/encrypting-values.md) Reactor API指南中取得加密公開金鑰的指示。 使用生產環境的GPG金鑰，除非您知道您需要特定金鑰。 最后，您可以从任何计算机加密私钥，您无需在服务器上安装 GPG 即可完成此步骤。
 
-### 允许列表管理平台IP地址
+### 允許清單平台IP位址
 
-您可能需要批准要在公司防火墙内使用的一组IP地址，以便Platform能够访问您的SFTP服务器并连接到该服务器。 这些IP地址是：
+您可能需要核准一組IP位址，以便在公司防火牆內使用，以允許Platform連線您的SFTP伺服器並進行連線。 這些IP位址包括：
 
 * `184.72.239.68`
 * `23.20.85.113`
@@ -45,41 +45,41 @@ Platform 会使用加密密钥连接到 SFTP 站点。可以通过以下几步�
 
 >[!NOTE]
 >
->标记内部版本的结构会随着时间的推移而发生更改。 它们在内部使用符号链接来保持向后兼容性，以便之前嵌入的代码可以继续与最新的内部版本结构配合使用。您的SFTP服务器必须支持使用符号链接，才能用作标记生成的有效目标。
+>標籤組建的結構已隨著時間而改變。 它们在内部使用符号链接来保持向后兼容性，以便之前嵌入的代码可以继续与最新的内部版本结构配合使用。您的SFTP伺服器必須支援使用symlink，才能當做標籤組建的有效目的地。
 
-欲知更多详情，请参阅以下关于 [如何设置SFTP服务器以交付内部版本](https://medium.com/launch-by-adobe/configuring-an-sftp-server-for-use-with-adobe-launch-bc626027e5a6).
+如需更多詳細資訊，請參閱以下媒體文章： [如何設定SFTP伺服器以傳遞組建](https://medium.com/launch-by-adobe/configuring-an-sftp-server-for-use-with-adobe-launch-bc626027e5a6).
 
 ## 创建 SFTP 主机 {#create}
 
-选择 **[!UICONTROL 主机]** 在左侧导航中，然后是 **[!UICONTROL 添加主机]**.
+選取 **[!UICONTROL 主機]** 在左側導覽列中，後面接著 **[!UICONTROL 新增主機]**.
 
-![显示在UI中选择的添加主机按钮的图像](../../../images/ui/publishing/sftp-hosts/add-host-button.png)
+![此影像顯示正在UI中選取新增主機按鈕](../../../images/ui/publishing/sftp-hosts/add-host-button.png)
 
-此时将显示主机创建对话框。 为主机提供名称，并在下 **[!UICONTROL 类型]**，选择 **[!UICONTROL SFTP]**.
+主機建立對話方塊隨即顯示。 提供主機的名稱，並在 **[!UICONTROL 型別]**，選取 **[!UICONTROL SFTP]**.
 
-![显示已选择SFTP托管选项的图像](../../../images/ui/publishing/sftp-hosts/select-sftp.png)
+![顯示正在選取SFTP託管選項的影像](../../../images/ui/publishing/sftp-hosts/select-sftp.png)
 
-### 配置SFTP主机 {#configure}
+### 設定SFTP主機 {#configure}
 
-该对话框将展开以包含SFTP主机的其他配置选项。 下文对此进行了说明。
+此對話方塊會展開，包含SFTP主機的其他設定選項。 下文將說明這些內容。
 
-![显示SFTP主机连接所需详细信息的图像](../../../images/ui/publishing/sftp-hosts/host-details.png)
+![顯示SFTP主機連線所需詳細資料的影像](../../../images/ui/publishing/sftp-hosts/host-details.png)
 
-| 配置字段 | 描述 |
+| 設定欄位 | 描述 |
 | --- | --- |
-| [!UICONTROL 不使用符号链接] | 默认情况下，所有SFTP主机都使用符号链接来引用库 [内部版本](../builds.md) 保存到服务器。 但是，并非所有服务器都支持使用符号链接。 选择此选项后，主机会使用复制操作直接更新内部版本资产，而不是使用符号链接。 |
-| [!UICONTROL SFTP服务器URL] | 服务器的URL基本路径。 |
-| [!UICONTROL 路径] | 附加到此主机的基础服务器URL的路径。 |
-| [!UICONTROL 端口] | 端口必须是以下端口之一：<ul><li>`21`</li><li>`22`</li><li>`80`</li><li>`200-299`</li><li>`443`</li><li>`2000-2999`</li><li>`4343`</li><li>`8080`</li><li>`8888`</li></ul>作为最佳安全做法，Adobe 会限制用于传出流量的端口数量。通常允许所选端口通过公司防火墙，并包括一些灵活性范围。 |
-| [!UICONTROL 用户名] | 访问服务器时要使用的用户名。 |
-| [!UICONTROL 加密私钥] | 您在 [上一步](#access-key). |
+| [!UICONTROL 不要使用符號連結] | 依預設，所有SFTP主機都會使用符號連結（符號連結）來參考程式庫 [組建](../builds.md) 已儲存至伺服器的虛擬報表套裝。 不過，並非所有伺服器都支援使用symlink。 選取此選項時，主機會使用複製操作直接更新組建資產，而非使用符號連結。 |
+| [!UICONTROL SFTP伺服器URL] | 伺服器的URL基底路徑。 |
+| [!UICONTROL 路径] | 要附加至此主機之基本伺服器URL的路徑。 |
+| [!UICONTROL 端口] | 端口必须是以下端口之一：<ul><li>`21`</li><li>`22`</li><li>`80`</li><li>`200-299`</li><li>`443`</li><li>`2000-2999`</li><li>`4343`</li><li>`8080`</li><li>`8888`</li></ul>作为最佳安全做法，Adobe 会限制用于传出流量的端口数量。通常允許選取的連線埠通過公司防火牆，並包含一些彈性範圍。 |
+| [!UICONTROL 用户名] | 存取伺服器時要使用的使用者名稱。 |
+| [!UICONTROL 加密的私密金鑰] | 您在中建立的加密私密金鑰 [上一步](#access-key). |
 
-选择 **[!UICONTROL 保存]** 创建具有所选配置的主机。
+選取 **[!UICONTROL 儲存]** 以使用選取的組態建立主機。
 
-![显示正在保存的SFTP主机的图像](../../../images/ui/publishing/sftp-hosts/save-host.png)
+![顯示正在儲存的SFTP主機的影像](../../../images/ui/publishing/sftp-hosts/save-host.png)
 
-选择 **[!UICONTROL 保存]**，则测试了将文件交付到SFTP服务器的连接和功能。 平台会创建一个文件夹，在该文件夹中写入文件，检查以确保文件存在，然后自行清理。 如果SFTP服务器上的用户帐户（附加到您提供给平台的安全证书的用户帐户）没有执行此操作所需的权限，则主机将进入“失败”状态。
+當您選取 **[!UICONTROL 儲存]**，則會測試連線以及將檔案傳送至SFTP伺服器的能力。 Platform會建立資料夾、在該資料夾中寫入檔案、檢查檔案是否確實存在，然後自行清除。 若您SFTP伺服器上的使用者帳戶（與您提供給Platform的安全憑證連結的帳戶）沒有執行此動作的必要許可權，則主機會進入「失敗」狀態。
 
 ## 后续步骤
 
-本指南介绍了如何设置用于标记的自托管SFTP服务器。 建立主机后，您可以将其与 [环境](../environments.md) ，以发布标记库。 有关在Web或移动资产上激活标记功能的高级过程的更多信息，请参阅 [发布概述](../overview.md).
+本指南說明如何設定自家託管的SFTP伺服器，以用於標籤。 建立主機後，您就可以將其與您的一個或多個建立關聯。 [環境](../environments.md) 用於發佈標籤庫。 如需在網頁或行動屬性上啟用標籤功能高層級流程的詳細資訊，請參閱 [發佈概觀](../overview.md).

@@ -1,6 +1,6 @@
 ---
-description: 了解如何设置发送到您端点的HTTP请求的格式。 使用/authoring/destination-servers端点在Adobe Experience Platform Destination SDK中配置目标服务器模板规范。
-title: 使用Destination SDK创建的目标的模板规范
+description: 瞭解如何格式化傳送至您端點的HTTP請求。 使用/authoring/destination-servers端點在Adobe Experience Platform Destination SDK中設定目的地伺服器範本規格。
+title: 以Destination SDK建立的目的地的範本規格
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '524'
@@ -9,50 +9,50 @@ ht-degree: 4%
 ---
 
 
-# 使用Destination SDK创建的目标的模板规范
+# 以Destination SDK建立之目的地的範本規格
 
-使用目标服务器配置的模板规范部分配置如何设置发送到目标的HTTP请求的格式。
+使用目的地伺服器設定的範本規格部分，設定如何格式化傳送到目的地的HTTP請求。
 
-在模板规范中，您可以定义如何在XDM架构和平台支持的格式之间转换配置文件属性字段。
+在範本規格中，您可以定義如何在XDM結構描述和平台支援的格式之間轉換設定檔屬性欄位。
 
-模板规范是实时（流）目标的目标服务器配置的一部分。
+範本規格是即時（串流）目的地的目的地伺服器設定的一部分。
 
-要了解此组件在与Destination SDK创建的集成中的位置，请参阅 [配置选项](../configuration-options.md) 文档，或参阅有关如何 [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-server-template-configuration).
+若要瞭解此元件在何處適合使用Destination SDK建立的整合，請參閱 [設定選項](../configuration-options.md) 檔案或參閱操作說明指南 [使用Destination SDK設定串流目的地](../../guides/configure-destination-instructions.md#create-server-template-configuration).
 
-您可以通过 `/authoring/destination-servers` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以透過以下方式設定目的地的範本規格 `/authoring/destination-servers` 端點。 請參閱下列API參考頁面，以取得詳細的API呼叫範例，您可在此範例設定本頁面所示的元件。
 
-* [创建目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)
-* [更新目标服务器配置](../../authoring-api/destination-server/update-destination-server.md)
+* [建立目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md)
+* [更新目的地伺服器設定](../../authoring-api/destination-server/update-destination-server.md)
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均为 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
 
-## 支持的集成类型 {#supported-integration-types}
+## 支援的整合型別 {#supported-integration-types}
 
-有关哪些类型的集成支持本页所述功能的详细信息，请参阅下表。
+請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
 
-| 集成类型 | 支持功能 |
+| 整合型別 | 支援功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件的（批处理）集成 | 否 |
+| 即時（串流）整合 | 是 |
+| 檔案式（批次）整合 | 否 |
 
-## 配置模板规范 {#configure-template-spec}
+## 設定範本規格 {#configure-template-spec}
 
-Adobe使用类似于 [金子](https://jinja.palletsprojects.com/en/2.11.x/) 将XDM架构中的字段转换为目标支持的格式。
+Adobe使用的範本語言類似於 [金家](https://jinja.palletsprojects.com/en/2.11.x/) 將欄位從XDM結構描述轉換為目的地支援的格式。
 
-![高亮显示模板配置](../../assets/functionality/destination-server/template-configuration.png)
+![醒目提示的範本設定](../../assets/functionality/destination-server/template-configuration.png)
 
-有关转换的更多信息，请访问以下链接：
+如需轉換的詳細資訊，請瀏覽下列連結：
 
 * [消息格式](message-format.md)
-* [对身份、属性和区段成员资格转换使用模板语言 ](message-format.md#using-templating)
+* [使用範本語言進行身分、屬性和區段成員資格轉換 ](message-format.md#using-templating)
 
 >[!TIP]
 >
->Adobe [开发人员工具](../../testing-api/streaming-destinations/create-template.md) 可帮助您创建和测试消息转换模板。
+>Adobe選件 [開發人員工具](../../testing-api/streaming-destinations/create-template.md) 可協助您建立和測試訊息轉換範本。
 
-请参阅下面的HTTP请求模板示例，以及每个参数的描述。
+請參閱以下的HTTP要求範本範例，以及各個引數的說明。
 
 ```json
 {
@@ -69,19 +69,19 @@ Adobe使用类似于 [金子](https://jinja.palletsprojects.com/en/2.11.x/) 将X
 
 | 参数 | 类型 | 描述 |
 |---|---|---|
-| `httpMethod` | 字符串 | *必需。* Adobe在对服务器的调用中将使用的方法。 支持的方法： `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
+| `httpMethod` | 字符串 | *必需。* Adobe將在對伺服器呼叫中使用的方法。 支援的方法： `GET`， `PUT`， `POST`， `DELETE`， `PATCH`. |
 | `templatingStrategy` | 字符串 | *必需。*&#x200B;使用 `PEBBLE_V1`。 |
-| `value` | 字符串 | *必需。* 此字符串是模板的字符转义版本，模板会将Platform发送的HTTP请求格式设置为目标所预期的格式。 <br> 有关如何编写模板的信息，请阅读 [用模板](message-format.md#using-templating). <br> 有关字符转义的更多信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). <br> 有关简单转换的示例，请参阅 [配置文件属性](message-format.md#attributes) 转换。 |
-| `contentType` | 字符串 | *必需。* 服务器接受的内容类型。 根据转换模板生成的输出类型，可以是任何受支持的 [HTTP应用程序内容类型](https://www.iana.org/assignments/media-types/media-types.xhtml#application). 在大多数情况下，此值应设置为 `application/json`. |
+| `value` | 字符串 | *必需。* 此字串是範本的字元逸出版本，可將Platform傳送的HTTP請求格式化為目的地預期的格式。 <br> 如需如何寫入範本的詳細資訊，請閱讀以下章節： [使用範本](message-format.md#using-templating). <br> 如需字元逸出的詳細資訊，請參閱 [RFC JSON標準，第七節](https://tools.ietf.org/html/rfc8259#section-7). <br> 如需簡單轉換的範例，請參閱 [設定檔屬性](message-format.md#attributes) 轉換。 |
+| `contentType` | 字符串 | *必需。* 您的伺服器接受的內容型別。 根據轉換範本產生的輸出型別，這可以是任何支援的 [HTTP應用程式內容型別](https://www.iana.org/assignments/media-types/media-types.xhtml#application). 在大多數情況下，此值應設為 `application/json`. |
 
 {style="table-layout:auto"}
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该更好地了解模板规范是什么以及如何配置它。
+閱讀本文章後，您應該對範本規格的含義以及如何進行設定有更深入的瞭解。
 
-要了解有关其他目标服务器组件的更多信息，请参阅以下文章：
+若要深入瞭解其他目的地伺服器元件，請參閱下列文章：
 
-* [使用Destination SDK创建的目标的服务器规范](server-specs.md)
+* [以Destination SDK建立的目的地的伺服器規格](server-specs.md)
 * [消息格式](message-format.md)
-* [文件格式配置](file-formatting.md)
+* [檔案格式設定](file-formatting.md)

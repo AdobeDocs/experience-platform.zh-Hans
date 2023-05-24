@@ -1,40 +1,40 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；类注册表；架构注册表；类；类；类；类；类；类；类；创建
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；類別登入；架構登入；類別；類別；類別；類別；建立
 solution: Experience Platform
-title: 类API端点
-description: 架构注册表API中的/classes端点允许您以编程方式管理体验应用程序中的XDM类。
+title: 類別API端點
+description: Schema Registry API中的/classes端點可讓您以程式設計方式管理體驗應用程式中的XDM類別。
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '1532'
-ht-degree: 3%
+source-wordcount: '1508'
+ht-degree: 1%
 
 ---
 
-# 类端点
+# 類別端點
 
-所有体验数据模型(XDM)架构都必须基于类。 类确定基于该类的所有架构都必须包含的通用属性的基本结构，以及哪些架构字段组有资格在这些架构中使用。 此外，架构的类还确定架构将包含的数据的行为方面，其中有两种类型：
+所有Experience Data Model (XDM)結構描述都必須根據類別。 類別決定了該類別的所有結構描述都必須包含的通用屬性的基本結構，以及哪些結構描述欄位群組適合用於這些結構描述。 此外，結構描述的類別會決定結構描述將包含之資料的行為方面，其中有兩種型別：
 
-* **[!UICONTROL 记录]**:提供有关主题属性的信息。 主题可以是组织或个人。
-* **[!UICONTROL 时间系列]**:提供记录主体直接或间接执行某项操作时系统的快照。
+* **[!UICONTROL 記錄]**：提供主旨屬性的相關資訊。 主體可以是組織或個人。
+* **[!UICONTROL 時間序列]**：提供記錄主體直接或間接執行動作時的系統快照。
 
 >[!NOTE]
 >
->有关数据行为类如何影响模式组成的详细信息，请参阅 [架构组合基础知识](../schema/composition.md).
+>如需資料行為類別如何影響結構描述構成的詳細資訊，請參閱 [結構描述組合基本概念](../schema/composition.md).
 
-的 `/classes` 的端点 [!DNL Schema Registry] API允许您以编程方式管理体验应用程序中的类。
+此 `/classes` 中的端點 [!DNL Schema Registry] API可讓您以程式設計方式管理體驗應用程式中的類別。
 
 ## 快速入门
 
-本指南中使用的端点是 [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端點是 [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
 
-## 检索类列表 {#list}
+## 擷取類別清單 {#list}
 
-可以在 `global` 或 `tenant` 容器，方法是向 `/global/classes` 或 `/tenant/classes`，分别为。
+您可以列出所有類別在 `global` 或 `tenant` 向發出GET請求來建立容器 `/global/classes` 或 `/tenant/classes`（分別）。
 
 >[!NOTE]
 >
->列出资源时，方案注册表将结果集限制为300个项目。 要返回超出此限制的资源，您必须使用分页参数。 还建议您使用其他查询参数来筛选结果并减少返回的资源数。 请参阅 [查询参数](./appendix.md#query) ，以了解详细信息。
+>列出資源時，結構描述登入將結果集限製為300個專案。 若要傳回超出此限制的資源，您必須使用分頁引數。 也建議您使用其他查詢引數來篩選結果並減少傳回的資源數量。 請參閱以下小節： [查詢引數](./appendix.md#query) 詳細資訊。
 
 **API格式**
 
@@ -44,14 +44,14 @@ GET /{CONTAINER_ID}/classes?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 要从以下位置检索类的容器： `global` 对于Adobe创建的类或 `tenant` 适用于贵组织拥有的类。 |
-| `{QUERY_PARAMS}` | 用于按筛选结果的可选查询参数。 请参阅 [附录文档](./appendix.md#query) ，以获取可用参数列表。 |
+| `{CONTAINER_ID}` | 您要擷取類別的容器： `global` Adobe建立的類別或 `tenant` 適用於貴組織擁有的類別。 |
+| `{QUERY_PARAMS}` | 篩選結果的選用查詢引數。 請參閱 [附錄檔案](./appendix.md#query) 以取得可用引數的清單。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求从 `tenant` 容器，使用 `orderby` 查询参数来按类的 `title` 属性。
+下列要求會從 `tenant` 容器，使用 `orderby` 查詢引數，依類別排序 `title` 屬性。
 
 ```shell
 curl -X GET \
@@ -63,18 +63,18 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于 `Accept` 请求中发送的标头。 以下 `Accept` 标头可用于列表类：
+回應格式取決於 `Accept` 標頭已在請求中傳送。 下列專案 `Accept` 標頭可用於列出類別：
 
-| `Accept` 标题 | 描述 |
+| `Accept` 頁首 | 描述 |
 | --- | --- |
-| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
-| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON类（原始） `$ref` 和 `allOf` 包含。 (限制：300) |
+| `application/vnd.adobe.xed-id+json` | 傳回每個資源的簡短摘要。 這是列出資源的建議標頭。 （上限： 300） |
+| `application/vnd.adobe.xed+json` | 傳回每個資源的完整JSON類別（含原始專案） `$ref` 和 `allOf` 包含。 （上限： 300） |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-上述请求使用 `application/vnd.adobe.xed-id+json` `Accept` 标头，因此响应仅包含 `title`, `$id`, `meta:altId`和 `version` 属性。 使用其他 `Accept` 标题(`application/vnd.adobe.xed+json`)返回每个类的所有属性。 选择相应的 `Accept` 标头，具体取决于您在响应中需要的信息。
+上述請求使用的是 `application/vnd.adobe.xed-id+json` `Accept` 標題，因此回應僅包含 `title`， `$id`， `meta:altId`、和 `version` 每個類別的屬性。 使用另一個 `Accept` 頁首(`application/vnd.adobe.xed+json`)會傳回每個類別的所有屬性。 選取適當的 `Accept` 標題依您在回應中所需的資訊而定。
 
 ```json
 {
@@ -112,9 +112,9 @@ curl -X GET \
 }
 ```
 
-## 查一堂课 {#lookup}
+## 查詢類別 {#lookup}
 
-您可以通过在GET请求的路径中包含类的ID来查找特定类。
+您可以在GET要求的路徑中包含類別ID來查詢特定類別。
 
 **API格式**
 
@@ -124,14 +124,14 @@ GET /{CONTAINER_ID}/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 存放要检索的类的容器： `global` 对于Adobe创建的类或 `tenant` 您组织拥有的类。 |
-| `{CLASS_ID}` | 的 `meta:altId` 或URL编码 `$id` 你想查的那门课。 |
+| `{CONTAINER_ID}` | 容納您要擷取之類別的容器： `global` Adobe建立的類別或 `tenant` 適用於貴組織擁有的類別。 |
+| `{CLASS_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要查閱的類別中。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求通过 `meta:altId` 值。
+下列要求會依照類別類別的 `meta:altId` 路徑中提供的值。
 
 ```shell
 curl -X GET \
@@ -143,21 +143,21 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于 `Accept` 请求中发送的标头。 所有查找请求都需要 `version` 包括在 `Accept` 标题。 以下 `Accept` 标头可用：
+回應格式取決於 `Accept` 標頭已在請求中傳送。 所有查詢請求都需要 `version` 包含在 `Accept` 標頭。 下列專案 `Accept` 標頭可供使用：
 
-| `Accept` 标题 | 描述 |
+| `Accept` 頁首 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version=1` | 原始 `$ref` 和 `allOf`的标题和描述。 |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 已解析，具有标题和描述。 |
-| `application/vnd.adobe.xed-notext+json; version=1` | 原始 `$ref` 和 `allOf`，无标题或描述。 |
-| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 和 `allOf` 已解析，无标题或描述。 |
-| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和 `allOf` 已解析，包含描述符。 |
+| `application/vnd.adobe.xed+json; version=1` | 原始 `$ref` 和 `allOf`，有標題和說明。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 已解決，具有標題和說明。 |
+| `application/vnd.adobe.xed-notext+json; version=1` | 原始 `$ref` 和 `allOf`，無標題或說明。 |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 和 `allOf` 已解決，無標題或說明。 |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和 `allOf` 已解決，包含描述項。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回类的详细信息。 返回的字段取决于 `Accept` 请求中发送的标头。 试验 `Accept` 标头来比较响应并确定最适合您的用例的标头。
+成功的回應會傳回類別的詳細資料。 傳回的欄位取決於 `Accept` 標頭已在請求中傳送。 使用不同的實驗 `Accept` 標頭，用來比較回應及判斷哪個標頭最適合您的使用案例。
 
 ```json
 {
@@ -246,15 +246,15 @@ curl -X GET \
 }
 ```
 
-## 创建类 {#create}
+## 建立類別 {#create}
 
-您可以在 `tenant` 容器，方法是发出POST请求。
+您可以在下定義自訂類別 `tenant` 容器建立POST要求。
 
 >[!IMPORTANT]
 >
->在基于您定义的自定义类合成架构时，您将无法使用标准字段组。 每个字段组定义它们在 `meta:intendedToExtend` 属性。 开始定义与新类兼容的字段组后(使用 `$id` 你新班的 `meta:intendedToExtend` 字段)，则每次定义用于实现所定义类的架构时，都可以重用这些字段组。 请参阅 [创建字段组](./field-groups.md#create) 和 [创建模式](./schemas.md#create) ，以了解更多信息。
+>根據您定義的自訂類別構成結構描述時，您將無法使用標準欄位群組。 每個欄位群組都會定義與其相容的類別 `meta:intendedToExtend` 屬性。 開始定義與新類別相容的欄位群組後(透過使用 `$id` 的新類別 `meta:intendedToExtend` 欄位群組的欄位群組)，則每次定義實作您所定義之類別的結構描述時，都可以重複使用這些欄位群組。 請參閱以下小節： [建立欄位群組](./field-groups.md#create) 和 [建立方案](./schemas.md#create) 在其各自的端點指南中瞭解更多資訊。
 >
->如果您计划在实时客户资料中使用基于自定义类的架构，则还请记住，合并架构仅基于共享同一类的架构来构建。 如果要在并集中包含其他类(如 [!UICONTROL XDM个人配置文件] 或 [!UICONTROL XDM ExperienceEvent]，则必须与使用该类的其他架构建立关系。 请参阅 [在API中两个架构之间建立关系](../tutorials/relationship-api.md) 以了解更多信息。
+>如果您打算根據即時客戶設定檔中的自訂類別使用結構描述，請記住，聯合結構描述僅根據共用相同類別的結構描述來建構。 如果您想將自訂類別結構描述包含在另一個類別(例如 [!UICONTROL XDM個別設定檔] 或 [!UICONTROL XDM ExperienceEvent]，您必須與使用該類別的其他結構描述建立關係。 請參閱教學課程，位置如下： [在API中的兩個結構描述之間建立關係](../tutorials/relationship-api.md) 以取得詳細資訊。
 
 **API格式**
 
@@ -264,9 +264,9 @@ POST /tenant/classes
 
 **请求**
 
-创建(POST)类的请求必须包括 `allOf` 包含属性 `$ref` 值之一： `https://ns.adobe.com/xdm/data/record` 或 `https://ns.adobe.com/xdm/data/time-series`. 这些值表示类所基于的行为（分别为记录或时间序列）。 有关记录数据与时间序列数据之间差异的更多信息，请参阅 [架构组合基础知识](../schema/composition.md).
+建立(POST)類別的要求必須包括 `allOf` 包含 `$ref` 變更為下列兩個值之一： `https://ns.adobe.com/xdm/data/record` 或 `https://ns.adobe.com/xdm/data/time-series`. 這些值代表類別所依據的行為（分別是記錄或時間序列）。 如需記錄資料與時間序列資料之間差異的詳細資訊，請參閱 [結構描述組合基本概念](../schema/composition.md).
 
-在定义类时，还可以在类定义中包含字段组或自定义字段。 这会导致添加的字段组和字段包含在实现类的所有架构中。 以下示例请求定义了一个名为“Property”的类，该类可捕获有关公司拥有和运营的不同属性的信息。 它包括 `propertyId` 字段。
+定義類別時，您也可以在類別定義中包含欄位群組或自訂欄位。 這會導致新增的欄位群組和欄位包含在實作類別的所有結構描述中。 以下範例請求會定義一個名為「Property」的類別，用於擷取有關公司擁有和經營的不同屬性的資訊。 它包含 `propertyId` 每次使用類別時要包含的欄位。
 
 ```SHELL
 curl -X POST \
@@ -317,14 +317,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_{TENANT_ID}` | 的 `TENANT_ID` 命名空间。 贵组织创建的所有资源都必须包含此属性，以避免与 [!DNL Schema Registry]. |
-| `allOf` | 要由新类继承其属性的资源列表。 其中一个 `$ref` 数组中的对象定义类的行为。 在本例中，类会继承“record”行为。 |
+| `_{TENANT_ID}` | 此 `TENANT_ID` 適用於您組織的名稱空間。 貴組織建立的所有資源都必須包含此屬性，以避免與中的其他資源衝突。 [!DNL Schema Registry]. |
+| `allOf` | 新類別要繼承其屬性的資源清單。 其中一項 `$ref` 陣列中的物件會定義類別的行為。 在此範例中，類別會繼承「記錄」行為。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功响应会返回HTTP状态201（已创建）和包含新创建类详细信息(包括 `$id`, `meta:altId`和 `version`. 这三个值是只读的，由 [!DNL Schema Registry].
+成功的回應會傳回HTTP狀態201 （已建立）以及包含新建立類別詳細資訊的裝載，包括 `$id`， `meta:altId`、和 `version`. 這三個值均為唯讀，並由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -388,15 +388,15 @@ curl -X POST \
 }
 ```
 
-执行GET请求 [列出所有类](#list) 在 `tenant` 容器现在将包含Property类。 您还可以 [执行查找(GET)请求](#lookup) 使用URL编码 `$id` 以直接查看新类。
+執行GET要求至 [列出所有類別](#list) 在 `tenant` 容器現在會包含Property類別。 您也可以 [執行查詢(GET)請求](#lookup) 使用URL編碼 `$id` 以直接檢視新類別。
 
-## 更新类 {#put}
+## 更新類別 {#put}
 
-您可以通过PUT操作替换整个类，实质上重写资源。 通过PUT请求更新类时，主体必须包含在 [创建新类](#create) POST请求中。
+您可以透過PUT操作取代整個類別，基本上是重寫資源。 透過PUT要求更新類別時，本文必須包含以下情況所需的所有欄位： [建立新類別](#create) 在POST請求中。
 
 >[!NOTE]
 >
->如果只想更新类的一部分而不想完全替换它，请参阅 [更新类的一部分](#patch).
+>如果您只想更新類別的一部分而不是完全取代它，請參閱以下小節： [更新類別的一部分](#patch).
 
 **API格式**
 
@@ -406,13 +406,13 @@ PUT /tenant/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 的 `meta:altId` 或URL编码 `$id` 你想重写的那门课。 |
+| `{CLASS_ID}` | 此 `meta:altId` 或URL編碼 `$id` 要重新寫入的類別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求会重写现有类，并更改其 `description` 和 `title` 其中一个领域。
+下列要求會重新寫入現有類別，變更其 `description` 和 `title` 其中一個欄位的。
 
 ```SHELL
 curl -X PUT \
@@ -463,7 +463,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回更新类的详细信息。
+成功的回應會傳回更新類別的詳細資料。
 
 ```JSON
 {
@@ -527,13 +527,13 @@ curl -X PUT \
 }
 ```
 
-## 更新类的一部分 {#patch}
+## 更新類別的一部分 {#patch}
 
-您可以使用PATCH请求更新类的一部分。 的 [!DNL Schema Registry] 支持所有标准JSON修补程序操作，包括 `add`, `remove`和 `replace`. 有关JSON修补程序的更多信息，请参阅 [API基础知识指南](../../landing/api-fundamentals.md#json-patch).
+您可以使用PATCH請求來更新類別的一部分。 此 [!DNL Schema Registry] 支援所有標準JSON修補程式操作，包括 `add`， `remove`、和 `replace`. 如需JSON修補程式的詳細資訊，請參閱 [API基礎指南](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->如果要使用新值而不是更新单个字段替换整个资源，请参阅 [使用PUT操作替换类](#put).
+>如果您想使用新值取代整個資源，而不是更新個別欄位，請參閱 [使用PUT作業取代類別](#put).
 
 **API格式**
 
@@ -543,15 +543,15 @@ PATCH /tenant/class/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | URL编码 `$id` URI或 `meta:altId` 要更新的类。 |
+| `{CLASS_ID}` | URL編碼 `$id` URI或 `meta:altId` 要更新的類別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下示例请求更新了 `description` 现有课程， `title` 其中一个领域。
+以下範例請求會更新 `description` 現有類別的，以及 `title` 其中一個欄位的。
 
-请求正文采用数组的形式，每个列出的对象都表示对单个字段的特定更改。 每个对象都包括要执行的操作(`op`)，应对(`path`)，以及该操作中应包含哪些信息(`value`)。
+請求內文採用陣列形式，每個列出的物件都代表個別欄位的特定變更。 每個物件都包含要執行的操作(`op`)，操作應執行於哪個欄位(`path`)，以及該作業應包含哪些資訊(`value`)。
 
 ```SHELL
 curl -X PATCH \
@@ -569,7 +569,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示两个操作均已成功执行。 的 `description` 已更新，以及 `title` 的 `propertyId` 字段。
+回應顯示兩個操作都已成功執行。 此 `description` 已更新，以及 `title` 的 `propertyId` 欄位。
 
 ```JSON
 {
@@ -633,9 +633,9 @@ curl -X PATCH \
 }
 ```
 
-## 删除类 {#delete}
+## 刪除類別 {#delete}
 
-有时可能需要从架构注册表中删除类。 这是通过使用路径中提供的类ID执行DELETE请求来完成的。
+有時可能需要從結構描述登入中移除類別。 這是透過使用路徑中提供的類別ID執行DELETE要求來完成。
 
 **API格式**
 
@@ -645,9 +645,9 @@ DELETE /tenant/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | URL编码 `$id` URI或 `meta:altId` 的子类。 |
+| `{CLASS_ID}` | URL編碼 `$id` URI或 `meta:altId` 要刪除的類別。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -662,6 +662,6 @@ curl -X DELETE \
 
 **响应**
 
-成功响应会返回HTTP状态204（无内容）和空白正文。
+成功的回應會傳回HTTP狀態204 （無內容）和空白內文。
 
-您可以通过尝试 [查找(GET)请求](#lookup) 为班级。 您需要包含 `Accept` 标头，但应会收到HTTP状态404（未找到），因为类已从架构注册表中删除。
+您可以嘗試 [查詢(GET)請求](#lookup) 類別的。 您需要包含 `Accept` 標頭中，但是應該會收到HTTP狀態404 （找不到），因為類別已從Schema Registry中移除。

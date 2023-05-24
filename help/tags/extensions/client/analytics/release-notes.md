@@ -1,6 +1,6 @@
 ---
-title: Adobe Analytics扩展的发行说明
-description: Adobe Experience Platform中Adobe Analytics标记扩展的最新发行说明。
+title: Adobe Analytics擴充功能發行說明
+description: Adobe Experience Platform中Adobe Analytics標籤擴充功能的最新發行說明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 84%
 
 ---
 
-# Adobe Analytics扩展发行说明
+# Adobe Analytics擴充功能發行說明
 
-以下是Adobe Analytics标记扩展的发行说明列表。
+以下為Adobe Analytics標籤擴充功能的發行說明清單。
 
 >[!NOTE]
 >
->Analytics标记扩展(如果通常为响应 [AppMeasurement JavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下面提及的特定版本的详细信息。
+>Analytics標籤擴充功能(如果經常更新以回應 [AppMeasurement JavaScript程式庫](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 請參閱 [AppMeasurement發行說明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 以取得以下提及之特定版本的詳細資訊。
 
 ## 2022 年 9 月 23 日
 
@@ -23,8 +23,8 @@ ht-degree: 84%
 
 **功能**:
 
-* 已升级到AppMeasurement v2.23.0。
-* 扩展现在可以收集高熵 [用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 受最新版本AppMeasurement的支持。
+* 已升級至AppMeasurement v2.23.0。
+* 擴充功能現在可以收集高平均資訊量 [使用者代理使用者端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 最新版的AppMeasurement所支援。
 
 ## 2022 年 2 月 28 日
 
@@ -32,7 +32,7 @@ ht-degree: 84%
 
 **错误修复**:
 
-* 删除了AppMeasurement中的一些调试语句。
+* 移除AppMeasurement中的一些除錯陳述式。
 
 ## 2021 年 11 月 29 日
 
@@ -40,7 +40,7 @@ ht-degree: 84%
 
 **错误修复**:
 
-* 已将AppMeasurement升级到v2.22.3。
+* 將AppMeasurement升級至v2.22.3。
 
 ## 2021 年 9 月 16 日
 
@@ -48,17 +48,17 @@ ht-degree: 84%
 
 **错误修复**:
 
-* 已将AppMeasurement升级到v2.22.2。
-* 已删除已弃用的buildInfo.environment
+* 將AppMeasurement升級至v2.22.2。
+* 移除已過時的buildInfo.environment
 
-## 2021 年 8 月 24 日
+## 2021年8月24日
 
 **Adobe Analytics 扩展 1.8.6**
 
 **错误修复**:
 
-* 已升级 [从AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
-* 更新了回退linkName以镜像Activity Map逻辑，而不是使用innerHTML。
+* 已升級 [AppMeasurement至v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans).
+* 更新備援linkName以映象Activity Map邏輯，而不使用innerHTML。
 
 ## 2020 年 8 月 6 日
 
@@ -70,7 +70,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)。
+* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
 * 少量 UI 发生了更改，为此，如今将以可折叠项的形式折叠显示其他设置，而并非显示在复选框中。
 
 ## 2020 年 6 月 2 日
@@ -98,7 +98,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
 
 ## 2020 年 3 月 2 日
 
@@ -110,7 +110,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
 * 将 Audience Manager 模块中的 DIL 库更新为 9.4
 * 增加了扩展中输入字段的长度
 * 扩展和操作配置中的 eVar 和 prop 现在显示 Analytics 中的友好名称
@@ -172,7 +172,7 @@ ht-degree: 84%
 * 更新了 Adobe Analytics 扩展，以支持用于 Audience Manager 的 DIL 9.2
 
 * 更新了扩展以支持 [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
-* 删除了以下复选框，因为它不再受支持：&quot;请勿将目标发布IFRAME附加到DOM或火灾目标&quot;
+* 移除下列核取方塊，因為已不再支援：「不要將目的地發佈IFRAME附加至DOM或引發目的地」
 
 ## 2019 年 6 月 4 日
 
@@ -301,7 +301,7 @@ ht-degree: 84%
 **功能**:
 
 * 已将 AppMeasurement 更新到版本 2.6
-* 现在，在Adobe Experience Platform标记扩展中，已初始化的Analytics跟踪器将通过共享模块公开，以便其他扩展可以包含用于与其交互的代码。
+* 初始化的Analytics追蹤器現在會透過Adobe Experience Platform標籤擴充功能中的共用模組公開，因此其他擴充功能可包含程式碼以與其互動。
 
 **错误修复**:
 

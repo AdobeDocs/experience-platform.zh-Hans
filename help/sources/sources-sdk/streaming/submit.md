@@ -1,108 +1,109 @@
 ---
-title: 测试并提交源
-description: 以下文档提供了有关如何使用流服务API测试和验证新源，以及如何通过自助源（流SDK）集成新源的步骤。
+title: 測試並提交您的來源
+description: 以下檔案提供如何使用Flow Service API測試及驗證新來源，以及透過Self-Serve Sources (Streaming SDK)整合新來源的步驟。
 hide: true
 hidefromtoc: true
-source-git-commit: 7744fef9751212a40f8f20df52812d38130c42fc
+exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1249'
 ht-degree: 0%
 
 ---
 
-# 测试和提交源
+# 測試並提交您的來源
 
-使用自助源（流SDK）将新源集成到Adobe Experience Platform的最后步骤是测试和提交新源。 完成连接规范并更新流流规范后，即可通过API或UI开始测试源的功能。 成功后，您可以联系Adobe代表以提交新来源。
+使用自助式來源（串流SDK）將新來源整合到Adobe Experience Platform的最後步驟，是測試並提交新來源。 完成連線規格並更新串流流程規格後，您就可以透過API或UI開始測試來源的功能。 成功後，您可以連絡您的Adobe代表來提交新的來源。
 
-以下文档提供了有关如何使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下檔案提供如何使用測試和偵錯來源的步驟 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-* 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
-* 有关如何为Platform API生成凭据的信息，请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md).
-* 有关如何设置 [!DNL Postman] 对于Platform API，请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md).
-* 要帮助您的测试和调试过程，请下载 [此处的自助源验证收集和环境](../assets/sdk-verification.zip) 并按照下面列出的步骤操作。
+* 如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
+* 如需如何為Platform API產生認證的詳細資訊，請參閱以下教學課程： [驗證和存取Experience PlatformAPI](../../../landing/api-authentication.md).
+* 如需如何設定的詳細資訊 [!DNL Postman] 若為Platform API，請參閱以下教學課程： [設定開發人員控制檯和 [!DNL Postman]](../../../landing/postman.md).
+* 為協助您的測試和偵錯程式，請下載 [在此提供自助來源驗證收集與環境](../assets/sdk-verification.zip) 並依照下列步驟進行。
 
-## 使用API测试源
+## 使用API測試您的來源
 
-要使用API测试源，您必须运行 [自助源验证收集和环境](../assets/sdk-verification.zip) on [!DNL Postman] 同时提供与您的源相关的适当环境变量。
+若要使用API測試您的來源，您必須執行 [自助來源驗證收集與環境](../assets/sdk-verification.zip) 於 [!DNL Postman] 同時提供與您的來源相關的適當環境變數。
 
-要开始测试，您必须先在 [!DNL Postman]. 接下来，指定要测试的连接规范ID。
+若要開始測試，您必須先設定集合和環境 [!DNL Postman]. 接下來，指定您要測試的連線規格ID。
 
 >[!NOTE]
 >
->以下所有示例变量都是必须更新的占位符值，但 `flowSpecificationId` 和 `targetConnectionSpecId`，它们是固定值。
+>以下所有範例變數都是您必須更新的預留位置值，以下除外 `flowSpecificationId` 和 `targetConnectionSpecId`，為固定值。
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `x-api-key` | 用于验证对Experience PlatformAPI的调用的唯一标识符。 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 有关如何检索 `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
-| `x-gw-ims-org-id` | 拥有或许可产品和服务并允许其成员访问的公司实体。 请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md) 有关如何检索 `x-gw-ims-org-id` 信息。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `authorizationToken` | 完成对Experience PlatformAPI的调用所需的授权令牌。 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 有关如何检索 `authorizationToken`. | `Bearer authorizationToken` |
-| `schemaId` | 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
-| `schemaVersion` | 与您的架构对应的唯一版本。 | `application/vnd.adobe.xed-full-notext+json; version=1` |
-| `schemaAltId` | 的 `meta:altId` 与  `schemaId` 创建新模式时。 | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
-| `dataSetId` | 有关如何创建目标数据集的详细步骤，请参阅 [使用API创建数据集](../../../catalog/api/create-dataset.md). | `5f3c3cedb2805c194ff0b69a` |
-| `mappings` | 映射集可用于定义源架构中的数据如何映射到目标架构的数据。 有关如何创建映射的详细步骤，请参阅 [使用API创建映射集](../../../data-prep/api/mapping-set.md). | `[{"destinationXdmPath":"person.name.firstName","sourceAttribute":"email.email_id","identity":false,"version":0},{"destinationXdmPath":"person.name.lastName","sourceAttribute":"email.activity.action","identity":false,"version":0}]` |
-| `mappingId` | 与映射集对应的唯一ID。 | `bf5286a9c1ad4266baca76ba3adc9366` |
-| `connectionSpecId` | 与源对应的连接规范ID。 这是您在 [创建新连接规范](./create.md). | `2e8580db-6489-4726-96de-e33f5f60295f` |
-| `flowSpecificationId` | 流量规范ID `GenericStreamingAEP`. **这是一个固定值**. | `e77fde5a-22a8-11ed-861d-0242ac120002` |
-| `targetConnectionSpecId` | 摄取的数据所登陆的数据湖的目标连接ID。 **这是一个固定值**. | `c604ff05-7f1a-43c0-8e18-33bf874cb11c` |
-| `verifyWatTimeInSecond` | 检查流运行是否完成时要遵循的指定时间间隔。 | `40` |
-| `startTime` | 数据流的指定开始时间。 开始时间必须采用unix时间格式。 | `1597784298` |
+| `x-api-key` | 用於驗證Experience Platform API呼叫的唯一識別碼。 請參閱教學課程，位置如下： [驗證和存取Experience PlatformAPI](../../../landing/api-authentication.md) 以取得如何擷取 `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-gw-ims-org-id` | 企業實體，可以擁有或授權產品及服務，並允許存取其成員。 請參閱教學課程，位置如下： [設定開發人員控制檯和 [!DNL Postman]](../../../landing/postman.md) 以取得如何擷取 `x-gw-ims-org-id` 資訊。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `authorizationToken` | 完成對Experience Platform API的呼叫所需的授權權杖。 請參閱教學課程，位置如下： [驗證和存取Experience PlatformAPI](../../../landing/api-authentication.md) 以取得如何擷取 `authorizationToken`. | `Bearer authorizationToken` |
+| `schemaId` | 為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `schemaVersion` | 與您的結構描述對應的唯一版本。 | `application/vnd.adobe.xed-full-notext+json; version=1` |
+| `schemaAltId` | 此 `meta:altId` 此引數會與  `schemaId` 建立新結構描述時。 | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
+| `dataSetId` | 如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](../../../catalog/api/create-dataset.md). | `5f3c3cedb2805c194ff0b69a` |
+| `mappings` | 對應集可用來定義來源結構描述中的資料如何對應到目的地結構描述。 如需如何建立對應的詳細步驟，請參閱以下教學課程： [使用API建立對應集](../../../data-prep/api/mapping-set.md). | `[{"destinationXdmPath":"person.name.firstName","sourceAttribute":"email.email_id","identity":false,"version":0},{"destinationXdmPath":"person.name.lastName","sourceAttribute":"email.activity.action","identity":false,"version":0}]` |
+| `mappingId` | 與對應集對應的唯一ID。 | `bf5286a9c1ad4266baca76ba3adc9366` |
+| `connectionSpecId` | 與您的來源對應的連線規格ID。 這是您產生的ID [建立新的連線規格](./create.md). | `2e8580db-6489-4726-96de-e33f5f60295f` |
+| `flowSpecificationId` | 的流程規格ID `GenericStreamingAEP`. **此為固定值**. | `e77fde5a-22a8-11ed-861d-0242ac120002` |
+| `targetConnectionSpecId` | 擷取資料所在的資料湖的目標連線ID。 **此為固定值**. | `c604ff05-7f1a-43c0-8e18-33bf874cb11c` |
+| `verifyWatTimeInSecond` | 檢查流程執行的完成時要遵循的指定時間間隔。 | `40` |
+| `startTime` | 為資料流指定的開始時間。 開始時間的格式必須是unix時間。 | `1597784298` |
 
-提供所有环境变量后，您便可以使用 [!DNL Postman] 界面。 在 [!DNL Postman] 界面中，选择省略号(**...**&#x200B;旁边 [!DNL Sources SSSs Verification Collection] 然后选择 **运行集合**.
+提供所有環境變數後，您就可以使用 [!DNL Postman] 介面。 在 [!DNL Postman] 介面，選取省略符號(**...**)旁邊 [!DNL Sources SSSs Verification Collection] 然後選取 **執行集合**.
 
-![运行者](../assets/runner.png)
+![執行者](../assets/runner.png)
 
-的 [!DNL Runner] 界面，用于配置数据流的运行顺序。 选择 **运行SSS验证收集** 来运行集合。
+此 [!DNL Runner] 介面會出現，讓您設定資料流的執行順序。 選取 **執行SSS驗證集合** 以執行集合。
 
 >[!NOTE]
 >
->您可以禁用 **删除流程** 运行顺序检查列表（如果您希望使用Platform UI中的源监控功能板）中的。 但是，完成测试后，必须确保删除测试流。
+>您可以停用 **刪除流量** 如果您偏好使用Platform UI中的來源監控儀表板，請參閱執行訂單檢查清單。 不過，測試完成後，您必須確保刪除測試流程。
 
-![run-collection](../assets/run-collection.png)
+![執行集合](../assets/run-collection.png)
 
-## 使用UI测试源
+## 使用UI測試您的來源
 
-要在UI中测试源，请转到平台UI中贵组织沙盒的源目录。 从此处，您应会看到新源显示在 *流* 类别。
+若要在UI中測試您的來源，請前往Platform UI中您組織沙箱的來源目錄。 從這裡，您應該會看到新來源顯示在 *串流* 類別。
 
-现在，您的沙盒中提供了新源，因此您必须按照源工作流来测试功能。 要开始，请选择 **[!UICONTROL 设置]**.
+由於您的沙箱中現在提供了新來源，您必須按照來源工作流程來測試功能。 若要開始，請選取 **[!UICONTROL 設定]**.
 
-![显示新流源的源目录。](../assets/testing/catalog-test.png)
+![顯示新串流來源的來源目錄。](../assets/testing/catalog-test.png)
 
-的 [!UICONTROL 添加数据] 中。 要测试源是否可以流式传输数据，请使用界面的左侧上传 [JSON数据示例](../assets/testing/raw.json.zip). 上传数据后，界面的右侧会更新为数据的文件层次结构预览。 选择 **[!UICONTROL 下一个]** 以继续。
+此 [!UICONTROL 新增資料] 步驟隨即顯示。 若要測試您的來源可以串流資料，請使用介面的左側進行上傳 [JSON資料範例](../assets/testing/raw.json.zip). 上傳資料後，介面的右側會更新為資料的檔案階層預覽。 選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![源工作流中的“添加数据”步骤，您可以在此步骤中上传和预览摄取前的数据。](../assets/testing/add-data-test.png)
+![來源工作流程的新增資料步驟，您可以在其中上傳資料並在擷取前預覽。](../assets/testing/add-data-test.png)
 
-的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集还是新数据集。 在此过程中，您还可以配置要摄取到配置文件的数据，并启用如下设置 [!UICONTROL 错误诊断] 和 [!UICONTROL 部分摄取].
+此 [!UICONTROL 資料流詳細資料] 頁面可讓您選取要使用現有資料集還是新資料集。 在此過程中，您也可以設定要擷取至設定檔的資料，並啟用以下設定 [!UICONTROL 錯誤診斷] 和 [!UICONTROL 部分擷取].
 
-要进行测试，请选择 **[!UICONTROL 新数据集]** 和提供输出数据集名称。 在此步骤中，您还可以提供可选描述，以向数据集添加更多信息。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 选择架构后，请为数据流提供名称和描述。
+若要進行測試，請選取「 」 **[!UICONTROL 新資料集]** 並提供輸出資料集名稱。 在此步驟中，您也可以提供選用的說明，將更多資訊新增至資料集。 接下來，使用 [!UICONTROL 進階搜尋] 選項或透過捲動下拉式選單中的現有結構描述清單的方式。 選取結構描述後，請為資料流提供名稱和說明。
 
-完成后，选择 **[!UICONTROL 下一个]**.
+完成後，選取 **[!UICONTROL 下一個]**.
 
-![源工作流中的数据流详细步骤。](../assets/testing/dataflow-details-test.png)
+![來源工作流程中的資料流詳細資料步驟。](../assets/testing/dataflow-details-test.png)
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../data-prep/ui/mapping.md)
+Platform會根據您選取的目標結構描述或資料集，為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。 您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../data-prep/ui/mapping.md)
 
-成功映射源数据后，选择 **[!UICONTROL 下一个]**.
+成功對應來源資料後，請選取 **[!UICONTROL 下一個]**.
 
-![源工作流的映射步骤。](../assets/testing/mapping-test.png)
+![來源工作流程的對應步驟。](../assets/testing/mapping-test.png)
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示您的帐户名称、源类型以及特定于您所使用的流云存储源的其他信息。
-* **[!UICONTROL 分配数据集和映射字段]**:显示用于数据流的目标数据集和架构。
+* **[!UICONTROL 連線]**：顯示您的帳戶名稱、來源型別，以及您使用之串流雲端儲存空間來源的其他特定資訊。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示您用於資料流的目標資料集和結構描述。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
-![源工作流的审核步骤。](../assets/testing/review-test.png)
+![來源工作流程的稽核步驟。](../assets/testing/review-test.png)
 
-最后，必须检索数据流的流端点。 此端点将用于订阅您的Webhook，从而允许您的流源与Experience Platform通信。 要检索流端点，请转到 [!UICONTROL 数据流活动] 数据流的页面，并从 [!UICONTROL 属性] 的上界。
+最後，您必須擷取資料流的串流端點。 此端點將用於訂閱您的webhook，允許您的串流來源與Experience Platform通訊。 若要擷取您的串流端點，請前往 [!UICONTROL 資料流活動] 您剛建立之資料流的頁面，並從底部複製端點 [!UICONTROL 屬性] 面板。
 
-![数据流活动中的流端点。](../assets/testing/endpoint-test.png)
+![資料流活動中的串流端點。](../assets/testing/endpoint-test.png)
 
-## 提交源
+## 提交您的來源
 
-在您的Adobe源能够完成整个工作流后，您可以继续联系您的Experience Platform代表并提交您的源以便与其他客户组织进行集成。
+您的來源能夠完成整個工作流程後，您可以繼續聯絡您的Adobe代表，並提交您的來源，以跨其他Experience Platform組織整合。

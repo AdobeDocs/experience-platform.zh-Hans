@@ -1,6 +1,6 @@
 ---
-title: Snap Inc连接
-description: 了解如何连接到Snapchat Ads平台并从Experience Platform中导出受众区段。
+title: Snap Inc連線
+description: 瞭解如何連線至Snapchat Ads平台，並從Experience Platform匯出您的對象區段。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
 source-git-commit: 988ecbed3084ef162453c9f1124998c6e9ae2e45
 workflow-type: tm+mt
@@ -9,126 +9,126 @@ ht-degree: 1%
 
 ---
 
-# Snap Inc连接
+# Snap Inc連線
 
 ## 概述 {#overview}
 
-[Snapchat Ads](https://forbusiness.snapchat.com/) 不管规模大小或行业如何，每家企业都会生产。 通过全屏数字广告成为Snapchatters日常对话的一部分，这些广告能够激励那些对您的业务最为重要的人采取行动。
+[Snapchat廣告](https://forbusiness.snapchat.com/) 適用於所有企業，無論規模或產業規模為何。 全熒幕數位廣告可激發對您業務最重要的人員採取行動，成為Snapchaters日常對話的一部分。
 
 >[!IMPORTANT]
 >
->此文档页面由 *Snap Inc* 团队。 如有任何查询或更新请求，请直接联系 *dev-support@snap.com*
+>此檔案頁面是由 *Snap Inc* 團隊。 如有任何查詢或更新請求，請直接聯絡他們： *dev-support@snap.com*
 
 ## 用例 {#use-cases}
 
-此目标允许营销人员将Experience Platform中创建的用户区段导入Snapchat Ads，并使用这些区段定位其广告。
+此目的地可讓行銷人員將Experience Platform中建立的使用者區段匯入Snapchat廣告，並使用這些區段來鎖定其廣告。
 
 ## 先决条件 {#prerequisites}
 
-要使用此目的地，您必须拥有Snapchat Ads帐户。 有关如何创建文档的信息，请参阅此文档：
+若要使用此目的地，您必須擁有Snapchat Ads帳戶。 請參閱本檔案以瞭解如何建立虛擬報表套裝：
 
-[Snapchat广告入门](https://businesshelp.snapchat.com/s/article/overview?language=en_US)
+[開始使用Snapchat廣告](https://businesshelp.snapchat.com/s/article/overview?language=en_US)
 
 ## 限制 {#limitations}
 
-* Snap Inc不支持给定受众区段的多个标识。 激活区段时，请仅映射一个身份。
-* Snap Inc不支持重命名区段。 要重命名区段，必须先将其停用、重命名，然后将其激活。
-* 无法为受众区段的成员定义保留期。 所有成员都具有生命周期保留，并将一直保留在区段中，直到将其删除为止。
+* Snap Inc不支援特定對象區段的多個身分。 啟用區段時，請僅對應一個身分。
+* Snap Inc不支援重新命名區段。 若要重新命名區段，您必須先停用、重新命名區段，然後再加以啟用。
+* 無法定義對象區段成員的保留期間。 所有成員都具有期限保留期，而且會一直保留在區段中，直到將其移除為止。
 
-## 支持的身份 {#supported-identities}
+## 支援的身分 {#supported-identities}
 
-的 *Snap Inc* 目标支持激活下表中描述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
+此 *Snap Inc* 目的地支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
 
-发送到的所有标识符 *Snap Inc* 目标必须以SHA-256格式进行哈希处理。 要在将纯文本标识符发送到目标之前对其进行哈希处理，请检查 **[!UICONTROL 应用转换]** 选项。
+所有傳送至的識別碼 *Snap Inc* 目的地必須以SHA-256格式進行雜湊處理。 若要在傳送純文字識別碼至目的地之前先進行雜湊處理，請檢查 **[!UICONTROL 套用轉換]** 對應目的地目標識別碼時的選項。
 
 >[!WARNING]
 > 
-> Snap Inc目标将不接受经过未哈希处理的标识符，并且发送它们可能会导致错误。
+> Snap Inc目的地不會接受未雜湊的識別碼，傳送這些識別碼可能會導致錯誤。
 
 
 >[!IMPORTANT]
 > 
-> Snap Inc目标不支持多个标识。 请只选择一个身份。
+> Snap Inc目的地不支援多個身分。 請僅選取一個身分。
 
-| Target标识 | 描述 | 注意事项 |
+| 目標身分 | 描述 | 注意事项 |
 |---|---|---|
-| Email Address | SHA-256经过哈希处理的电子邮件地址 | 将电子邮件地址映射到目标身份字段 *emailAddress*. |
-| 电话号码 | SHA-256哈希电话号码 | 将电子邮件地址映射到目标身份字段 *phoneNumber*. |
-| GAID | SHA-256经过哈希处理的Google广告ID | 将Google广告ID映射到目标标识字段 *gaid*. |
-| IDFA | SHA-256经过哈希处理的Apple广告ID | 将Apple广告ID映射到目标标识字段 *idfa*. |
+| Email Address | SHA-256雜湊電子郵件地址 | 將電子郵件地址對應至目標身分欄位 *電子郵件地址*. |
+| 電話號碼 | SHA-256雜湊電話號碼 | 將電子郵件地址對應至目標身分欄位 *phonenumber*. |
+| GAID | SHA-256雜湊的Google Advertising ID | 將Google Advertising ID對應至目標身分欄位 *gaid*. |
+| IDFA | SHA-256雜湊的Apple Advertising ID | 將Apple Advertising ID對應至目標身分欄位 *idfa*. |
 
 {style="table-layout:auto"}
 
-## 导出类型和频度 {#export-type-frequency}
+## 匯出型別和頻率 {#export-type-frequency}
 
-有关目标导出类型和频率的信息，请参阅下表。
+請參閱下表以取得目的地匯出型別和頻率的資訊。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *您的目标* 目标。 |
-| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 匯出型別 | **[!UICONTROL 区段导出]** | 您正在匯出區段（受眾）的所有成員，而這些成員具有「 」中使用的識別碼（名稱、電話號碼或其他）。 *您的目的地* 目的地。 |
+| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
-## 连接到Snap Inc {#connect}
+## 正在連線到Snap Inc {#connect}
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-### 对目标进行身份验证 {#authenticate}
+### 驗證至目的地 {#authenticate}
 
-要对目标进行身份验证，请执行以下步骤：
+若要驗證目的地，請遵循下列步驟：
 
-1. 查找 *Snap Inc* 目标，并选择 **设置**.
-2. 选择 **[!UICONTROL 连接到目标]**. 您将被重定向到以下屏幕：
-   ![身份验证屏幕1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
-3. 输入您的Snapchat凭据并选择 **登录**.
-4. 您将看到Adobe Experience Platform能够访问的Snapchat数据。 选择 **继续** 以继续连接过程。
+1. 尋找 *Snap Inc* 從Adobe Experience Platform的目的地目錄選取目的地，然後選取 **設定**.
+2. 選取 **[!UICONTROL 連線到目的地]**. 系統會將您重新導向至下列畫面：
+   ![驗證畫面1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
+3. 輸入您的Snapchat認證，然後選取 **登入**.
+4. 您將會看到Adobe Experience Platform能夠存取的Snapchat資料。 選取 **繼續** 以繼續連線程式。
 
-![身份验证屏幕2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
+![驗證畫面2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
 
-选择继续后，等待您被重定向回Adobe Experience Platform。
+選取「繼續」後，請等待直到您重新導向回Adobe Experience Platform。
 
-### 填写目标详细信息 {#destination-details}
+### 填寫目的地詳細資料 {#destination-details}
 
-![目标详细信息](/help/destinations/assets/catalog/advertising/snapchat-ads/destinationdetails.png)
+![目的地詳細資料](/help/destinations/assets/catalog/advertising/snapchat-ads/destinationdetails.png)
 
-要配置目标的详细信息，请填写必填字段并选择 **[!UICONTROL 下一个]**.
+若要設定目的地的詳細資訊，請填寫必填欄位並選取 **[!UICONTROL 下一個]**.
 
-* **[!UICONTROL 名称]**:将来用于识别此目标的名称。
-* **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL 帐户ID]**:与您要将区段导入的广告帐户关联的广告帐户ID。 有关如何查找此内容的更多信息，请参阅 [有关Snapchat业务帮助中心的文档](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
-
->[!IMPORTANT]
-> 
->输入不正确或无效的Snapchat广告帐户ID将导致区段激活失败。 请仔细检查您是否输入了正确的广告帐户ID。
-
-### 启用警报 {#enable-alerts}
-
-您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
-
-完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
-
-## 将区段激活到此目标 {#activate}
+* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
+* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL 帳戶ID]**：與您要匯入區段的廣告帳戶相關聯的廣告帳戶ID。 如需如何找到此專案的詳細資訊，請參閱 [此檔案位於Snapchat商務說明中心](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>輸入不正確或無效的Snapchat廣告帳戶ID將導致區段啟用失敗。 請仔細檢查您是否已輸入正確的廣告帳戶ID。
 
-读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+### 啟用警示 {#enable-alerts}
 
-## 验证数据导出 {#exported-data}
+您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
 
-在将区段激活到 *Snap Inc* 目标，您将能够在快照广告管理器的 [**受众** 部分](https://businesshelp.snapchat.com/s/article/audience-sharing). 要导航到此部分，请执行以下步骤：
+當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
 
-1. 登录 [快照广告管理器](https://ads.snapchat.com/)
-2. 选择 **受众** 菜单。 您将在受众库中看到在Adobe Experience Platform中激活的区段：
+## 啟用此目的地的區段 {#activate}
+
+>[!IMPORTANT]
+> 
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+
+讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+
+## 驗證資料匯出 {#exported-data}
+
+對啟用區段後 *Snap Inc* 目的地，您將能夠在「貼齊廣告管理員」的 [**受眾** 區段](https://businesshelp.snapchat.com/s/article/audience-sharing). 若要導覽至本區段，請依照下列步驟進行：
+
+1. 登入 [貼齊廣告管理員](https://ads.snapchat.com/)
+2. 選取 **受眾** 從畫面左上角的下拉式功能表。 您會在對象庫中看到您在Adobe Experience Platform中啟用的區段：
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，首次将Adobe区段激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估区段之前不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估区段的更多信息，请参阅 [Segmentation Service概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=en#evaluate-segments).
+請注意，當Adobe區段首次啟動至Snap Inc時，您一開始會將其視為空白對象。 這是因為Adobe Experience Platform在評估區段之前，不會將成員資料匯出到Snap Inc。 如需如何在Experience Platform中評估區段的詳細資訊，請參閱 [Segmentation Service概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=en#evaluate-segments).
 
-## 数据使用和管理 {#data-usage-governance}
+## 資料使用與控管 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).

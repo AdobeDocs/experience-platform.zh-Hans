@@ -1,28 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 为自助源（批处理SDK）配置身份验证规范
-description: 本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+title: 設定自助式來源的驗證規格（批次SDK）
+description: 本檔案提供使用Self-Serve Sources (Batch SDK)所需準備的設定概觀。
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '525'
-ht-degree: 2%
+source-wordcount: '519'
+ht-degree: 1%
 
 ---
 
-# 为自助源（批处理SDK）配置身份验证规范
+# 設定自助式來源的驗證規格（批次SDK）
 
-身份验证规范定义Adobe Experience Platform用户如何连接到源。
+驗證規格會定義Adobe Experience Platform使用者如何連線至您的來源。
 
-的 `authSpec` 数组包含有关将源连接到平台所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
+此 `authSpec` 陣列包含將來源連線至Platform所需的驗證引數資訊。 任何特定來源都可以支援多種不同型別的驗證。
 
-## 身份验证规范
+## 驗證規格
 
-自助源（批处理SDK）支持OAuth 2刷新代码和基本身份验证。 有关使用OAuth 2刷新代码和基本身份验证的指导，请参阅下表
+自助來源（批次SDK）支援OAuth 2重新整理程式碼和基本驗證。 請參閱下表，取得使用OAuth 2重新整理程式碼和基本驗證的指引
 
-### OAuth 2刷新代码
+### OAuth 2重新整理程式碼
 
-OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全访问应用程序。 使用访问令牌，您无需提供其他凭据即可安全访问您的资源，而使用刷新令牌，您可以在访问令牌过期后生成新的访问令牌。
+OAuth 2重新整理程式碼可產生暫時存取權杖和重新整理權杖，以安全地存取應用程式。 存取權杖可讓您安全地存取您的資源，而無需提供其他認證，而重新整理權杖可讓您在存取權杖過期後產生新的存取權杖。
 
 ```json
 {
@@ -112,30 +112,30 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 | 属性 | 描述 | 示例 |
 | --- | --- | --- |
-| `authSpec.name` | 显示支持的身份验证类型的名称。 | `oAuth2-refresh-code` |
-| `authSpec.type` | 定义源支持的身份验证类型。 | `oAuth2-refresh-code` |
-| `authSpec.spec` | 包含有关身份验证的架构、数据类型和属性的信息。 |
-| `authSpec.spec.$schema` | 定义用于身份验证的架构。 | `http://json-schema.org/draft-07/schema#` |
-| `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
-| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
-| `authSpec.spec.properties.description` | 显示有关凭据的简短描述。 |
-| `authSpec.spec.properties.type` | 定义凭据的数据类型。 | `string` |
-| `authSpec.spec.properties.clientId` | 与您的应用程序关联的客户端ID。 客户端ID与客户端密钥结合使用，以检索您的访问令牌。 |
-| `authSpec.spec.properties.clientSecret` | 与您的应用程序关联的客户端密钥。 客户端密钥与您的客户端ID结合使用，以检索您的访问令牌。 |
-| `authSpec.spec.properties.accessToken` | 访问令牌可授权您对应用程序的安全访问。 |
-| `authSpec.spec.properties.refreshToken` | 刷新令牌用于在访问令牌过期时生成新的访问令牌。 |
-| `authSpec.spec.properties.expirationDate` | 定义访问令牌的过期日期。 |
-| `authSpec.spec.properties.refreshTokenUrl` | 用于检索刷新令牌的URL。 |
-| `authSpec.spec.properties.accessTokenUrl` | 用于检索刷新令牌的URL。 |
-| `authSpec.spec.properties.requestParameterOverride` | 允许您指定要在进行身份验证时覆盖的凭据参数。 |
-| `authSpec.spec.required` | 显示验证所需的凭据。 | `accessToken` |
+| `authSpec.name` | 顯示支援的驗證型別名稱。 | `oAuth2-refresh-code` |
+| `authSpec.type` | 定義來源支援的驗證型別。 | `oAuth2-refresh-code` |
+| `authSpec.spec` | 包含有關驗證的結構描述、資料型別和屬性的資訊。 |
+| `authSpec.spec.$schema` | 定義用於驗證的結構描述。 | `http://json-schema.org/draft-07/schema#` |
+| `authSpec.spec.type` | 定義結構描述的資料型別。 | `object` |
+| `authSpec.spec.properties` | 包含用於驗證的認證的相關資訊。 |
+| `authSpec.spec.properties.description` | 顯示認證的簡短說明。 |
+| `authSpec.spec.properties.type` | 定義認證的資料型別。 | `string` |
+| `authSpec.spec.properties.clientId` | 與您的應用程式相關聯的使用者端ID。 使用者端ID會與使用者端密碼搭配使用，以擷取您的存取權杖。 |
+| `authSpec.spec.properties.clientSecret` | 與您的應用程式相關聯的使用者端密碼。 使用者端密碼會與使用者端ID搭配使用，以擷取您的存取權杖。 |
+| `authSpec.spec.properties.accessToken` | 存取權杖會授權您對應用程式的安全存取。 |
+| `authSpec.spec.properties.refreshToken` | 重新整理權杖是用來在存取權杖過期時產生新的存取權杖。 |
+| `authSpec.spec.properties.expirationDate` | 定義存取權杖的到期日。 |
+| `authSpec.spec.properties.refreshTokenUrl` | 用來擷取重新整理權杖的URL。 |
+| `authSpec.spec.properties.accessTokenUrl` | 用來擷取重新整理權杖的URL。 |
+| `authSpec.spec.properties.requestParameterOverride` | 可讓您指定認證引數以在驗證時覆寫。 |
+| `authSpec.spec.required` | 顯示驗證所需的認證。 | `accessToken` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
-### 基本身份验证
+### 基本驗證
 
-基本身份验证是一种身份验证类型，允许您使用帐户用户名和帐户密码的组合访问应用程序。
+基本驗證是一種驗證型別，可讓您使用帳戶使用者名稱和帳戶密碼的組合來存取應用程式。
 
 ```json
 {
@@ -166,22 +166,22 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 | 属性 | 描述 | 示例 |
 | --- | --- | --- |
-| `authSpec.name` | 显示支持的身份验证类型的名称。 | `Basic Authentication` |
-| `authSpec.type` | 定义源支持的身份验证类型。 | `BasicAuthentication` |
-| `authSpec.spec` | 包含有关身份验证的架构、数据类型和属性的信息。 |
-| `authSpec.spec.$schema` | 定义用于身份验证的架构。 | `http://json-schema.org/draft-07/schema#` |
-| `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
-| `authSpec.spec.description` | 显示特定于您的身份验证类型的更多信息。 |
-| `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
-| `authSpec.spec.properties.username` | 与您的应用程序关联的帐户用户名。 |
-| `authSpec.spec.properties.password` | 与您的应用程序关联的帐户密码。 |
-| `authSpec.spec.required` | 指定在Platform中输入的必需值所需的字段。 | `username` |
+| `authSpec.name` | 顯示支援的驗證型別名稱。 | `Basic Authentication` |
+| `authSpec.type` | 定義來源支援的驗證型別。 | `BasicAuthentication` |
+| `authSpec.spec` | 包含有關驗證的結構描述、資料型別和屬性的資訊。 |
+| `authSpec.spec.$schema` | 定義用於驗證的結構描述。 | `http://json-schema.org/draft-07/schema#` |
+| `authSpec.spec.type` | 定義結構描述的資料型別。 | `object` |
+| `authSpec.spec.description` | 顯示驗證型別的進一步特定資訊。 |
+| `authSpec.spec.properties` | 包含用於驗證的認證的相關資訊。 |
+| `authSpec.spec.properties.username` | 與您的應用程式相關聯的帳戶使用者名稱。 |
+| `authSpec.spec.properties.password` | 與您的應用程式相關聯的帳戶密碼。 |
+| `authSpec.spec.required` | 指定在Platform中輸入必填欄位作為必要值。 | `username` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 验证规范示例
+## 範例驗證規格
 
-以下是使用 [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md) 来源。
+以下範例是使用 [[!DNL MailChimp Members]](../../tutorials/api/create/marketing-automation/mailchimp-members.md) 來源。
 
 ```json
   "authSpec": [
@@ -237,4 +237,4 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 ## 后续步骤
 
-填充身份验证规范后，您可以继续为要集成到平台的源配置源规范。 查看 [配置源规范](./sourcespec.md) 以了解更多信息。
+填入驗證規格後，您可以繼續設定要整合至平台的來源的來源規格。 檢視檔案： [設定來源規格](./sourcespec.md) 以取得詳細資訊。

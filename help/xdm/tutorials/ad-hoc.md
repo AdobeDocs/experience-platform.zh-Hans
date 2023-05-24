@@ -1,35 +1,35 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册表；架构注册表；ad-hoc;adhoc;ad-hoc;Ad hoc;Ad hoc；教程；教程；创建；架构；架构
+keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；結構描述登入；結構描述登入；ad-hoc；ad-hoc；ad-hoc；Ad-hoc；教學課程；教學課程；建立；結構描述；結構描述
 solution: Experience Platform
-title: 创建临时架构
-description: 在特定情况下，可能需要创建体验数据模型(XDM)架构，其中的字段名称仅由单个数据集使用。 这称为“临时”架构。 临时架构用于各种Experience Platform数据摄取工作流，包括摄取CSV文件和创建特定类型的源连接。
+title: 建立臨時結構描述
+description: 在特定情況下，可能有必要建立體驗資料模型(XDM)結構描述，其中包含僅供單一資料集使用的名稱空間欄位。 這稱為「臨機」結構描述。 臨機結構用於各種資料擷取工作流程中以進行Experience Platform，包括擷取CSV檔案和建立特定型別的來源連線。
 type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 3%
+source-wordcount: '819'
+ht-degree: 2%
 
 ---
 
-# 创建临时架构
+# 建立臨時結構描述
 
-在特定情况下，可能需要创建 [!DNL Experience Data Model] (XDM)架构，其中的字段名称仅由单个数据集使用。 这称为“临时”架构。 临时架构用于各种数据获取工作流中，用于 [!DNL Experience Platform]，包括摄取CSV文件并创建特定类型的源连接。
+在特定情況下，您可能需要建立 [!DNL Experience Data Model] (XDM)結構描述，其欄位已命名為僅供單一資料集使用。 這稱為「臨機」結構描述。 臨時結構用於各種資料擷取工作流程 [!DNL Experience Platform]，包括擷取CSV檔案和建立特定型別的來源連線。
 
-本文档提供了使用创建临时架构的一般步骤 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 它打算与其他 [!DNL Experience Platform] 教程，这些教程需要在其工作流中创建临时架构。 这些文档中的每个文档都提供了有关如何为其特定用例正确配置临时架构的详细信息。
+本檔案提供使用來建立臨時結構描述的一般步驟。 [結構描述登入API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 此函式旨在搭配其他 [!DNL Experience Platform] 需要建立隨選結構描述作為其工作流程一部分的教學課程。 其中每份檔案都提供有關如何為其特定使用案例正確設定臨時結構的詳細資訊。
 
 ## 快速入门
 
-本教程需要对 [!DNL Experience Data Model] (XDM)系统。 在开始本教程之前，请查阅以下XDM文档：
+本教學課程需要您實際瞭解 [!DNL Experience Data Model] (XDM)系統。 開始進行本教學課程之前，請先檢閱下列XDM檔案：
 
-- [XDM系统概述](../home.md):XDM及其在 [!DNL Experience Platform].
-- [架构组合的基础知识](../schema/composition.md):XDM模式的基本组件概述。
+- [XDM系統總覽](../home.md)：XDM及其在下列專案實作的高層級概觀： [!DNL Experience Platform].
+- [結構描述組合基本概念](../schema/composition.md)：XDM結構描述的基本元件概觀。
 
-在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意接受标头及其可能值）。
+在開始本教學課程之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需您成功對 [!DNL Schema Registry] API。 這包括您的 `{TENANT_ID}`、「容器」的概念，以及發出請求所需的標頭（特別注意「接受」標頭及其可能的值）。
 
-## 创建临时类
+## 建立臨時類別
 
-XDM架构的数据行为由其底层类决定。 创建临时架构的第一步是根据 `adhoc` 行为。 这是通过向 `/tenant/classes` 端点。
+XDM結構描述的資料行為由其基礎類別決定。 建立臨時結構描述的第一步，是根據 `adhoc` 行為。 這是透過向發出POST請求來完成 `/tenant/classes` 端點。
 
 **API格式**
 
@@ -39,11 +39,11 @@ POST /tenant/classes
 
 **请求**
 
-以下请求会创建一个新的XDM类，该类由有效负载中提供的属性进行配置。 通过提供 `$ref` 属性设置为 `https://ns.adobe.com/xdm/data/adhoc` 在 `allOf` 数组，此类会继承 `adhoc` 行为。 该请求还定义了 `_adhoc` 对象，其中包含类的自定义字段。
+以下請求會建立新的XDM類別，由承載中提供的屬性設定。 藉由提供 `$ref` 屬性設定為 `https://ns.adobe.com/xdm/data/adhoc` 在 `allOf` 陣列，此類別會繼承 `adhoc` 行為。 此請求也會定義 `_adhoc` 物件，其中包含類別的自訂欄位。
 
 >[!NOTE]
 >
->下定义的自定义字段 `_adhoc` 因临时架构的用例而异。 有关基于用例的必需自定义字段，请参阅相应教程中的特定工作流。
+>下定義的自訂欄位 `_adhoc` 會因臨時結構描述的使用案例而異。 如需根據使用案例所需的自訂欄位，請參閱相應教學課程中的特定工作流程。
 
 ```shell
 curl -X POST \
@@ -82,14 +82,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `$ref` | 新类的数据行为。 对于临时类，必须将此值设置为 `https://ns.adobe.com/xdm/data/adhoc`. |
-| `properties._adhoc` | 一个对象，其中包含类的自定义字段，以字段名称和数据类型的键值对表示。 |
+| `$ref` | 新類別的資料行為。 若為臨機類別，此值必須設為 `https://ns.adobe.com/xdm/data/adhoc`. |
+| `properties._adhoc` | 包含類別自訂欄位的物件，以欄位名稱和資料型別的索引鍵值配對表示。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **响应**
 
-成功的响应会返回新类的详细信息，替换 `properties._adhoc` 对象的名称，其GUID是系统生成的类唯一标识符。 的 `meta:datasetNamespace` 属性也会自动生成并包含在响应中。
+成功的回應會傳回新類別的詳細資料，取代 `properties._adhoc` 具有GUID的物件名稱，該GUID是系統產生的類別的唯讀唯一識別碼。 此 `meta:datasetNamespace` 屬性也會自動產生，並包含在回應中。
 
 ```json
 {
@@ -146,13 +146,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `$id` | 一个URI，用作新Ad-hoc类的只读、系统生成的唯一标识符。 此值用于创建临时架构的下一步。 |
+| `$id` | 作為唯讀的URI，系統為新的ad-hoc類別產生的唯一識別碼。 此值用於建立臨時結構描述的下一個步驟。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## 创建临时架构
+## 建立臨時結構描述
 
-创建临时类后，您可以通过向 `/tenant/schemas` 端点。
+建立臨時類別後，您可以透過向以下專案發出POST要求，建立實作該類別的新結構描述： `/tenant/schemas` 端點。
 
 **API格式**
 
@@ -162,7 +162,7 @@ POST /tenant/schemas
 
 **请求**
 
-以下请求会创建一个新架构，提供引用(`$ref`) `$id` 之前创建的ad-hoc类的有效负载中的其他值。
+以下請求會建立新結構描述，並提供參考(`$ref`)重新命名為 `$id` 其裝載中先前建立的臨機類別。
 
 ```shell
 curl -X POST \
@@ -186,7 +186,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建架构的详细信息，包括其系统生成的只读模式 `$id`.
+成功的回應會傳回新建立之綱要的詳細資訊，包括其系統產生的唯讀 `$id`.
 
 ```json
 {
@@ -223,13 +223,13 @@ curl -X POST \
 }
 ```
 
-## 查看完整的临时架构
+## 檢視完整的臨時結構描述
 
 >[!NOTE]
 >
->此步骤是可选的。如果您不想检查临时架构的字段结构，则可以跳转到 [后续步骤](#next-steps) 部分。
+>此步骤是可选的。如果您不想要檢查臨機操作結構描述的欄位結構，您可以跳至 [後續步驟](#next-steps) 區段（在本教學課程結束時）。
 
-创建临时架构后，您可以发出查找(GET)请求，以查看其扩展形式的架构。 这是通过在GET请求中使用相应的Accept标头来完成的，如下所示。
+建立臨時結構描述後，您可以提出查詢(GET)請求，以展開形式檢視結構描述。 若要這麼做，請在GET要求中使用適當的Accept標頭，如下所示。
 
 **API格式**
 
@@ -239,13 +239,13 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | URL编码 `$id` URI或 `meta:altId` 要访问的临时架构。 |
+| `{SCHEMA_ID}` | URL編碼 `$id` URI或 `meta:altId` 您想要存取的臨時結構描述中。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
-以下请求使用Accept标头 `application/vnd.adobe.xed-full+json; version=1`，返回模式的扩展形式。 请注意，在从 [!DNL Schema Registry]，请求的Accept标头必须包含相关资源的主要版本。
+以下請求使用Accept標頭 `application/vnd.adobe.xed-full+json; version=1`，會傳回結構描述的展開形式。 請注意，從擷取特定資源時 [!DNL Schema Registry]，請求的Accept標頭必須包含相關資源的主要版本。
 
 ```shell
 curl -X GET \
@@ -259,7 +259,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回架构的详细信息，包括嵌套在 `properties`.
+成功的回應會傳回結構描述的詳細資訊，包括巢狀至下的所有欄位 `properties`.
 
 ```json
 {
@@ -309,6 +309,6 @@ curl -X GET \
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已成功创建新的临时架构。 如果您是作为另一个教程的一部分带到本文档的，您现在可以使用 `$id` 来按照指导完成工作流。
+依照本教學課程，您已成功建立新的臨時結構描述。 如果您是其他教學課程的一部分，現在可以使用 `$id` 以依照指示完成工作流程。
 
-有关使用的更多信息 [!DNL Schema Registry] API，请参阅 [开发人员指南](../api/getting-started.md).
+有關使用的詳細資訊 [!DNL Schema Registry] API，請參閱 [開發人員指南](../api/getting-started.md).

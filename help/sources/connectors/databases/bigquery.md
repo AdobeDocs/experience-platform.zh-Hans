@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；BigQuery;bigquery;Google BigQuery;google bigquery
+keywords: Experience Platform；首頁；熱門主題；BigQuery；bigquery；Google BigQuery；google bigquery
 solution: Experience Platform
-title: Google BigQuery源连接器概述
-description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
+title: Google BigQuery來源聯結器概述
+description: 瞭解如何使用API或使用者介面將Google BigQuery連線至Adobe Experience Platform。
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -13,43 +13,43 @@ ht-degree: 0%
 
 # [!DNL Google BigQuery]
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
 
-[!DNL Experience Platform] 支持从第三方数据库摄取数据。 平台可以连接到不同类型的数据库，如关系数据库、 NoSQL数据库或data warehouse。 对数据库提供程序的支持包括 [!DNL Google BigQuery].
+[!DNL Experience Platform] 支援從第三方資料庫擷取資料。 Platform可以連線到不同型別的資料庫，例如關聯式、NoSQL或資料倉儲。 對資料庫提供者的支援包括 [!DNL Google BigQuery].
 
-## IP地址允许列表
+## IP位址允許清單
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
+在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
 
 ## 先决条件
 
-以下部分提供了在创建 [!DNL Google BigQuery] 源连接。
+下節提供建立之前所需的先決條件設定的進一步資訊 [!DNL Google BigQuery] 來源連線。
 
-### 生成 [!DNL Google BigQuery] 凭据
+### 產生您的 [!DNL Google BigQuery] 認證
 
-连接 [!DNL Google BigQuery] 要使用Platform，您需要为以下凭据生成值：
+若要連線 [!DNL Google BigQuery] 若使用Platform，您必須產生下列認證的值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `project` | 项目是您的 [!DNL Google Cloud] 资源，包括 [!DNL Google BigQuery]. |
-| `clientID` | 客户ID是您的 [!DNL Google BigQuery] OAuth 2.0凭据。 |
-| `clientSecret` | 客户机密是 [!DNL Google BigQuery] OAuth 2.0凭据。 |
-| `refreshToken` | 刷新令牌允许您为API获取新的访问令牌。 访问令牌的生命周期有限，且可能会在您的项目过程中过期。 您可以根据需要使用刷新令牌来验证并请求项目的后续访问令牌。 |
-| `largeResultsDataSetId` | 预先创建的  [!DNL Google BigQuery] 为启用对大型结果集的支持而需要的数据集ID。 |
+| `project` | 專案是您的的基本層級組織實體。 [!DNL Google Cloud] 資源，包括 [!DNL Google BigQuery]. |
+| `clientID` | 使用者端ID是 [!DNL Google BigQuery] OAuth 2.0認證。 |
+| `clientSecret` | 使用者端密碼是您的密碼的另一半， [!DNL Google BigQuery] OAuth 2.0認證。 |
+| `refreshToken` | 重新整理權杖可讓您取得API的新存取權杖。 存取Token的生命週期有限，可在您的專案期間過期。 您可以視需要使用重新整理權杖來驗證及請求專案的後續存取權杖。 |
+| `largeResultsDataSetId` | 預先建立的  [!DNL Google BigQuery] 啟用大型結果集支援所需的資料集ID。 |
 
-有关如何为生成OAuth 2.0凭据的详细说明 [!DNL Google] API，请参阅以下内容 [[!DNL Google] OAuth 2.0身份验证指南](https://developers.google.com/identity/protocols/oauth2).
+有關如何為產生OAuth 2.0憑證的詳細說明 [!DNL Google] API，請參閱下列內容 [[!DNL Google] OAuth 2.0驗證指南](https://developers.google.com/identity/protocols/oauth2).
 
-## 连接 [!DNL Google BigQuery] 到平台
+## Connect [!DNL Google BigQuery] 至平台
 
-以下文档提供了有关如何连接的信息 [!DNL Google BigQuery] 要使用API或用户界面实现平台，请执行以下操作：
+以下檔案提供有關如何連線的資訊 [!DNL Google BigQuery] 使用API或使用者介面的to Platform：
 
 ### 使用API
 
-- [使用流服务API创建Google BigQuery基连接](../../tutorials/api/create/databases/bigquery.md)
-- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
-- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
+- [使用Flow Service API建立Google BigQuery基本連線](../../tutorials/api/create/databases/bigquery.md)
+- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
+- [使用流程服務API為資料庫來源建立資料流](../../tutorials/api/collect/database-nosql.md)
 
 ### 使用UI
 
-- [在UI中创建Google BigQuery源连接](../../tutorials/ui/create/databases/bigquery.md)
-- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
+- [在使用者介面中建立Google BigQuery來源連線](../../tutorials/ui/create/databases/bigquery.md)
+- [在UI中建立資料庫來源連線的資料流](../../tutorials/ui/dataflow/databases.md)

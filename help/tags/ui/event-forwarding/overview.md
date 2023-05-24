@@ -1,5 +1,5 @@
 ---
-title: 事件转发概述
+title: 事件轉送概觀
 description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Platform Edge Network 执行任务。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
@@ -10,93 +10,93 @@ ht-degree: 7%
 
 ---
 
-# 事件转发概述
+# 事件轉送概觀
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-Adobe Experience Platform中的事件转发允许您将收集的事件数据发送到服务器端处理的目标。 事件转发使用Adobe Experience Platform边缘网络执行在客户端上正常完成的任务，从而减少网页和应用程序重量。 事件转发规则以与标记类似的方式实施，可以转换数据并将其发送到新目标，但是，它不是从客户端应用程序（如Web浏览器）发送此数据，而是从Adobe的服务器发送。
+Adobe Experience Platform中的事件轉送可讓您將收集的事件資料傳送至目的地，以進行伺服器端處理。 事件轉送使用Adobe Experience Platform Edge Network執行通常在使用者端上完成的工作，以降低網頁和應用程式的負載。 以與標籤類似的方式實作，事件轉送規則可以轉換資料並傳送至新目的地，但此資料不會從使用者端應用程式（如網頁瀏覽器）傳送，而是從Adobe的伺服器傳送。
 
-本文档简要概述了Platform中的事件转发。
+本檔案提供Platform中事件轉送的整體概觀。
 
-![数据收集生态系统中的事件转发](../../../collection/images/home/event-forwarding.png)
+![資料收集生態系統中的事件轉送](../../../collection/images/home/event-forwarding.png)
 
 >[!NOTE]
 >
->有关事件转发如何在Platform的数据收集生态系统中发挥作用的信息，请参阅 [数据收集概述](../../../collection/home.md).
+>如需事件轉送如何在Platform的資料收集生態系統中適應的詳細資訊，請參閱 [資料彙集概觀](../../../collection/home.md).
 
-事件转发与Adobe Experience Platform结合 [Web SDK](../../../edge/home.md) 和 [Mobile SDK](https://aep-sdks.gitbook.io/docs/) 提供以下优势：
+事件轉送與Adobe Experience Platform結合 [Web SDK](../../../edge/home.md) 和 [行動SDK](https://aep-sdks.gitbook.io/docs/) 提供下列優點：
 
-**性能**:
+**效能**：
 
-* 从包含数据有效负载的页面进行单次调用，该负载随后会联合到服务器端，以减少客户端网络流量并为客户提供更快的体验。
-* 减少网页加载所花费的时间，以提高网站性能。
-* 减少提供体验并将数据发送到多个目标所需的客户端技术数量。
+* 從包含資料裝載的頁面發出單一呼叫，然後這些資料在伺服器端組成聯盟，以減少使用者端網路流量，並為客戶提供更快速的體驗。
+* 減少載入網頁所需的時間以改善網站效能。
+* 減少提供您的體驗並將資料傳送至許多目的地所需的使用者端技術數量。
 
-**数据管理**:
+**資料控管**：
 
-* 提高透明度并控制在所有属性中发送哪些数据。
+* 增加透明度，並控制要在所有屬性中將哪些資料傳送至何處。
 
-## 事件转发和标记之间的差异 {#differences-from-tags}
+## 事件轉送與標籤之間的差異 {#differences-from-tags}
 
-在配置方面，事件转发使用与标记相同的许多概念，例如 [规则](../managing-resources/rules.md), [数据元素](../managing-resources/data-elements.md)和 [扩展](../managing-resources/extensions/overview.md). 二者之间的主要区别可概括如下：
+在設定方面，事件轉送使用許多與標籤相同的概念，例如 [規則](../managing-resources/rules.md)， [資料元素](../managing-resources/data-elements.md)、和 [擴充功能](../managing-resources/extensions/overview.md). 兩者之間的主要差異可概括如下：
 
-* 标记 **收集** 网站或本机移动应用程序中的事件数据，并将其发送到Platform Edge Network。
-* 事件转发 **发送** 将事件数据从Platform Edge Network发送到端点，该端点表示最终目标或端点，提供要用来扩充原始有效负载的数据。
+* 標籤 **收集** 來自網站或原生行動應用程式的事件資料，並傳送至Platform Edge Network。
+* 事件轉送 **傳送** 從Platform Edge Network傳入事件資料至端點，該端點代表最終目的地或端點，提供您要用來擴充原始裝載的資料。
 
-当标记使用Platform Web和Mobile SDK直接从您的网站或本机移动应用程序收集事件数据时，事件转发要求事件数据已通过Platform Edge Network发送，以将其转发到目标。 换言之，您必须在数字资产（通过标记或使用原始代码）上实施Platform Web或Mobile SDK，才能使用事件转发。
+雖然標籤會使用Platform Web和Mobile SDK直接從您的網站或原生行動應用程式收集事件資料，但事件轉送需先透過Platform Edge Network傳送事件資料，才能轉送至目的地。 換言之，您必須在數位屬性上實作Platform Web或Mobile SDK （透過標籤或使用原始程式碼），才能使用事件轉送。
 
 ### 属性 {#properties}
 
-事件转发保留其自身的属性存储区，这些属性与标记分开，您可以通过选择在Experience PlatformUI或数据收集UI中查看 **[!UICONTROL 事件转发]** 中。
+事件轉送會維護其自身與標籤分開的屬性儲存，您可以在Experience PlatformUI或資料收集UI中透過選取這些屬性來檢視 **[!UICONTROL 事件轉送]** 左側導覽列中。
 
-![数据收集UI中的事件转发属性](../../images/ui/event-forwarding/overview/properties.png)
+![資料收集UI中的事件轉送屬性](../../images/ui/event-forwarding/overview/properties.png)
 
-所有事件转发属性列表 **[!UICONTROL Edge]** 作为平台。 它们不区分Web和移动设备，因为它们只处理从平台边缘网络接收的数据，而平台边缘网络本身可以从Web平台和移动平台接收事件数据。
+所有事件轉送屬性清單 **[!UICONTROL Edge]** 作為他們的平台。 它們不會區分Web或行動裝置，因為它們只會處理從Platform Edge Network收到的資料，而該網路本身可同時接收來自Web和行動平台的事件資料。
 
 ### 扩展 {#extensions}
 
-事件转发有其自己的兼容扩展目录，如 [核心](../../extensions/server/core/overview.md) 扩展和 [Adobe云连接器](../../extensions/server/cloud-connector/overview.md) 扩展。 您可以通过选择 **[!UICONTROL 扩展]** 在左侧导航中，然后是 **[!UICONTROL 目录]**.
+事件轉送有其專屬的相容擴充功能目錄，例如 [核心](../../extensions/server/core/overview.md) 擴充功能和 [Adobe雲端聯結器](../../extensions/server/cloud-connector/overview.md) 副檔名。 您可以在UI中檢視事件轉送屬性的可用擴充功能，方法是選取 **[!UICONTROL 擴充功能]** 在左側導覽列中，後面接著 **[!UICONTROL 目錄]**.
 
-![数据收集UI中的事件转发扩展](../../images/ui/event-forwarding/overview/extensions.png)
+![資料收集UI中的事件轉送擴充功能](../../images/ui/event-forwarding/overview/extensions.png)
 
 ### 数据元素 {#data-elements}
 
-事件转发中可用的数据元素类型仅限于兼容的目录 [扩展](#extensions) 提供它们。
+事件轉送中可用的資料元素型別僅限於相容的目錄 [擴充功能](#extensions) 會提供這些資訊。
 
-虽然数据元素本身在事件转发中的创建和配置方式与标记相同，但在涉及如何引用来自Platform Edge Network的数据时，仍存在一些重要的语法差异。
+雖然在事件轉送中，資料元素本身的建立與設定方式與標籤相同，但在如何參照Platform Edge Network的資料方面，有一些重要的語法差異。
 
-#### 从Platform Edge Network引用数据 {#data-element-path}
+#### 引用Platform Edge Network的資料 {#data-element-path}
 
-要引用来自Platform Edge Network的数据，必须创建一个数据元素，以提供该数据的有效路径。 在UI中创建数据元素时，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 路径]** 的子项。
+若要參照來自Platform Edge Network的資料，您必須建立提供該資料的有效路徑的資料元素。 在UI中建立資料元素時，請選取 **[!UICONTROL 核心]** 擴充功能和 **[!UICONTROL 路徑]** 型別。
 
-的 **[!UICONTROL 路径]** 数据元素的值必须遵循模式 `arc.event.{ELEMENT}` (例如： `arc.event.xdm.web.webPageDetails.URL`)。 必须正确指定此路径才能发送数据。
+此 **[!UICONTROL 路徑]** 資料元素的值必須遵循此模式 `arc.event.{ELEMENT}` (例如： `arc.event.xdm.web.webPageDetails.URL`)。 必須正確指定此路徑，才能傳送資料。
 
-![用于事件转发的路径类型数据元素示例](../../images/ui/event-forwarding/overview/data-reference.png)
+![用於事件轉送的路徑型別資料元素範例](../../images/ui/event-forwarding/overview/data-reference.png)
 
 ### 规则 {#rules}
 
-在事件转发属性中创建规则的方式与标记类似，主要区别在于您无法选择事件作为规则组件。 事件转发规则而是会处理它从 [数据流](../../../edge/datastreams/overview.md) 并在满足某些条件时将这些事件转发到目标。
+在事件轉送屬性中建立規則的運作方式與標籤類似，主要差異在於您無法選取事件作為規則元件。 事件轉送規則會處理所有從接收的事件。 [資料串流](../../../edge/datastreams/overview.md) 並在符合特定條件時將事件轉送至目的地。
 
-此外，还有一个30秒的超时，该超时适用于事件转发属性内的单个事件，因为该事件会在所有规则（以及由此产生的所有操作）中进行处理。 这意味着必须在此时间范围内完成单个事件的所有规则和所有操作。
+此外，有一個30秒的逾時，會套用至單一事件，因為單一事件會在事件轉送屬性內的所有規則（以及因此產生的所有動作）中處理。 這表示單一事件的所有規則和所有動作都必須在此時間範圍內完成。
 
-![数据收集UI中的事件转发规则](../../images/ui/event-forwarding/overview/rules.png)
+![資料收集UI中的事件轉送規則](../../images/ui/event-forwarding/overview/rules.png)
 
 #### 数据元素标记化 {#tokenization}
 
-在标记规则中，数据元素使用 `%` 数据元素名称的开头和结尾(例如： `%viewportHeight%`)。 在事件转发规则中，数据元素使用进行标记 `{{` 开始时和 `}}` 数据元素名称的末尾(例如： `{{viewportHeight}}`)。
+在標籤規則中，資料元素會使用 `%` 位於資料元素名稱的開頭和結尾處(例如： `%viewportHeight%`)。 在事件轉送規則中，資料元素會改用代碼化 `{{` 開頭和 `}}` 位於資料元素名稱結尾(例如： `{{viewportHeight}}`)。
 
-![用于事件转发的路径类型数据元素示例](../../images/ui/event-forwarding/overview/tokenization.png)
+![用於事件轉送的路徑型別資料元素範例](../../images/ui/event-forwarding/overview/tokenization.png)
 
 #### 规则的操作顺序 {#action-sequencing}
 
-的 [!UICONTROL 操作] 事件转发规则的部分始终按顺序执行。 例如，如果规则具有两个操作，则第二个操作将在上一个操作完成后才开始执行（如果需要端点响应，则该端点已响应）。 您在保存规则时，应确保操作顺序正确。无法像使用标记规则一样异步执行此执行序列。
+此 [!UICONTROL 動作] 事件轉送規則的區段一律依序執行。 例如，如果規則有兩個動作，則第二個動作要等到前一個動作完成時才會開始執行（而且如果預期端點會回應，則表示該端點已回應）。 您在保存规则时，应确保操作顺序正确。此執行序列無法像使用標籤規則時一樣以非同步方式執行。
 
 ## 秘密 {#secrets}
 
-事件转发允许您创建、管理和存储可用于对要向其发送数据的服务器进行身份验证的密钥。 请参阅 [秘密](./secrets.md) 不同类型的可用密钥类型及其在UI中的实施方式。
+事件轉送可讓您建立、管理和儲存秘密，這些秘密可用於驗證您所傳送資料的伺服器。 請參閱指南： [秘密](./secrets.md) 不同型別的可用密碼型別，以及在UI中如何實作。
 
 ## 后续步骤
 
-本文档简要介绍了事件转发。 有关如何为贵组织设置此功能的更多信息，请参阅 [入门指南](./getting-started.md).
+本檔案提供事件轉送的高層級簡介。 如需如何為貴組織設定此功能的詳細資訊，請參閱 [快速入門手冊](./getting-started.md).

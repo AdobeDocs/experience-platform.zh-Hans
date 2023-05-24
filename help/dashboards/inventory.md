@@ -1,6 +1,6 @@
 ---
-title: 查看配置的功能板
-description: 在Experience PlatformUI中查看组织配置的功能板列表。
+title: 檢視已設定的儀表板
+description: 在Experience PlatformUI中檢視貴組織已設定的儀表板清單。
 exl-id: b1fdb1aa-2d09-4c21-9c84-be379f34a9b7
 source-git-commit: bc3db67b5b9e3bfb98571541d6e4dd2ca19b3303
 workflow-type: tm+mt
@@ -9,22 +9,22 @@ ht-degree: 0%
 
 ---
 
-# 查看配置的功能板
+# 檢視已設定的儀表板
 
-如果贵组织在Adobe Experience Platform中有多个可用的功能板，则可以在用户界面(UI)中查看功能板清单。
+如果您的組織在Adobe Experience Platform中有多個儀表板可用，您可以在使用者介面(UI)中檢閱儀表板詳細目錄。
 
-要查看贵组织配置的功能板，请选择 **[!UICONTROL 功能板]** ，然后选择 **[!UICONTROL 浏览]** 选项卡。
+若要檢視貴組織已設定的儀表板，請選取 **[!UICONTROL 儀表板]** 在左側導覽中，然後選取 **[!UICONTROL 瀏覽]** 標籤。
 
-Platform实例上可用的所有功能板的列表显示在 [!UICONTROL 浏览] 选项卡。 这包括由贵组织创建的集成功能板，这些功能板已通过第三方应用程序进行配置。
+您的Platform執行個體上可用的所有儀表板清單會顯示在 [!UICONTROL 瀏覽] 標籤。 這包括貴組織建立並已透過協力廠商應用程式設定的整合儀表板。
 
-![UI功能板部分中的浏览选项卡。](./images/inventory/browse-tab.png)
+![UI的儀表板區段內的「瀏覽」標籤。](./images/inventory/browse-tab.png)
 
-您可以通过从列表中选择功能板的名称来查看单个功能板。
+您可以從清單中選取圖示板的名稱，以檢視個別圖示板。
 
-![突出显示功能板名称的“浏览”选项卡。](./images/inventory/dashboard-name.png)
+![反白顯示控制面板名稱的「瀏覽」標籤。](./images/inventory/dashboard-name.png)
 
-选择后，功能板会在平台UI中或完全集成的应用程序工作区中打开，该工作区要求您使用必要的凭据登录。
+選取後，儀表板會在Platform UI中或需要您使用必要憑證登入的完全整合應用程式工作區中開啟。
 
-## 创建自定义功能板
+## 建立自訂儀表板
 
-Adobe Experience Platform功能板允许您构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。 请参阅 [用户定义的仪表板指南](./user-defined-dashboards.md) 有关创建和配置自定义功能板的完整说明。
+Adobe Experience Platform儀表板可讓您建置和管理自訂儀表板，以便在其中建立、新增和編輯客製化Widget，以視覺化與您的組織相關的關鍵量度。 請參閱 [使用者定義儀表板指南](./user-defined-dashboards.md) 以取得建立和設定自訂儀表板的完整指示。

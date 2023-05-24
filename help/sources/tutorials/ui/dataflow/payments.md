@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；付款连接器
+keywords: Experience Platform；首頁；熱門主題；付款聯結器
 solution: Experience Platform
-title: 在UI中使用支付源创建数据流
+title: 在UI中使用付款來源建立資料流
 type: Tutorial
-description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为支付源创建数据流的步骤。
+description: 資料流是排程的工作，可擷取來源中的資料並將其擷取至Platform資料集。 本教學課程提供如何使用Platform UI為付款來源建立資料流的步驟。
 exl-id: 7355435b-c038-4310-b04a-8ac6b6723b9b
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
@@ -12,133 +12,133 @@ ht-degree: 0%
 
 ---
 
-# 在UI中为支付源创建数据流
+# 在UI中建立付款來源的資料流
 
-数据流是一项计划任务，用于从源中检索数据并将其摄取到Adobe Experience Platform中的数据集。 本教程提供了有关如何使用Platform UI为支付源创建数据流的步骤。
+資料流是排程的工作，可從Adobe Experience Platform的來源擷取資料並擷取資料到資料集。 本教學課程提供如何使用Platform UI為付款來源建立資料流的步驟。
 
 >[!NOTE]
 >
->要创建数据流，您必须已经拥有具有支付源的经过身份验证的帐户。 有关在UI中创建不同付款源帐户的教程列表，请参阅 [源概述](../../../home.md#payments).
+>為了建立資料流，您必須擁有具有付款來源的已驗證帳戶。 若要在UI中建立不同付款來源帳戶的教學課程清單，請參閱 [來源概觀](../../../home.md#payments).
 
 ## 快速入门
 
-本教程需要对Platform的以下组件有一定的了解：
+本教學課程需要深入瞭解下列Platform元件：
 
-* [源](../../../home.md):平台允许从各种源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Data Prep]](../../../../data-prep/home.md):允许数据工程师映射、转换和验证来自体验数据模型(XDM)的数据。
+* [來源](../../../home.md)：Platform可從各種來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Data Prep]](../../../../data-prep/home.md)：讓資料工程師可對應、轉換及驗證來往於Experience Data Model (XDM)的資料。
 
-## 添加数据
+## 新增資料
 
-创建付款来源帐户后， **[!UICONTROL 添加数据]** 此步骤将显示，为您提供一个界面以浏览支付源帐户的表层次结构。
+建立您的付款來源帳戶後， **[!UICONTROL 新增資料]** 步驟隨即顯示，為您提供瀏覽付款來源科目表格階層的介面。
 
-* 界面的左半部分是浏览器，其中显示了帐户中包含的数据表列表。 该界面还包含一个搜索选项，通过该选项，您可以快速识别要使用的源数据。
-* 界面的右半部是一个预览面板，允许您预览多达100行数据。
+* 介面的左半部分是瀏覽器，顯示帳戶中包含的資料表清單。 介面也包含搜尋選項，可讓您快速識別要使用的來源資料。
+* 介面的右半部分是預覽面板，可讓您預覽最多100列資料。
 
 >[!NOTE]
 >
->搜索源数据选项适用于所有基于表的源(不包括Adobe Analytics、 [!DNL Amazon Kinesis]和 [!DNL Azure Event Hubs].
+>搜尋來源資料選項適用於除Adobe Analytics以外的所有表格來源。 [!DNL Amazon Kinesis]、和 [!DNL Azure Event Hubs].
 
-找到源数据后，选择表，然后选择 **[!UICONTROL 下一个]**.
+找到來源資料後，請選取表格，然後選取 **[!UICONTROL 下一個]**.
 
 ![select-data](../../../images/tutorials/dataflow/table-based/select-data.png)
 
-## 提供数据流详细信息
+## 提供資料流詳細資料
 
-的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集还是新数据集。 在此过程中，您还可以配置 [!UICONTROL 配置文件数据集], [!UICONTROL 错误诊断], [!UICONTROL 部分摄取]和 [!UICONTROL 警报].
+此 [!UICONTROL 資料流詳細資料] 頁面可讓您選取要使用現有資料集還是新資料集。 在此程式中，您也可以為以下專案進行設定： [!UICONTROL 設定檔資料集]， [!UICONTROL 錯誤診斷]， [!UICONTROL 部分擷取]、和 [!UICONTROL 警報].
 
-![数据流详细信息](../../../images/tutorials/dataflow/table-based/dataflow-detail.png)
+![資料流 — 詳細資料](../../../images/tutorials/dataflow/table-based/dataflow-detail.png)
 
-### 使用现有数据集
+### 使用現有的資料集
 
-要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。 选择数据集后，请为数据流提供名称和描述。
+若要將資料內嵌至現有資料集，請選取「 」 **[!UICONTROL 現有資料集]**. 您可以使用來擷取現有的資料集 [!UICONTROL 進階搜尋] 選項，或是透過在下拉式選單中捲動現有資料集清單的方式。 選取資料集後，請為資料流提供名稱和說明。
 
-![现有数据集](../../../images/tutorials/dataflow/table-based/existing-dataset.png)
+![existing-data](../../../images/tutorials/dataflow/table-based/existing-dataset.png)
 
-### 使用新数据集
+### 使用新資料集
 
-要摄取到新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 选择架构后，请为数据流提供名称和描述。
+若要內嵌至新資料集，請選取「 」 **[!UICONTROL 新資料集]** 然後提供輸出資料集名稱和選擇性說明。 接下來，使用 [!UICONTROL 進階搜尋] 選項或透過捲動下拉式選單中的現有結構描述清單的方式。 選取結構描述後，請為資料流提供名稱和說明。
 
-![新数据集](../../../images/tutorials/dataflow/table-based/new-dataset.png)
+![新資料集](../../../images/tutorials/dataflow/table-based/new-dataset.png)
 
-### 启用 [!DNL Profile] 和错误诊断
+### 啟用 [!DNL Profile] 和錯誤診斷
 
-接下来，选择 **[!UICONTROL 配置文件数据集]** 切换为启用数据集 [!DNL Profile]. 这允许您创建实体属性和行为的整体视图。 所有数据 [!DNL Profile]-enabled数据集将包含在 [!DNL Profile] 和更改将在您保存数据流时应用。
+接下來，選取 **[!UICONTROL 設定檔資料集]** 切換以啟用您的資料集 [!DNL Profile]. 這可讓您建立實體屬性和行為的整體檢視。 來自所有人的資料 [!DNL Profile] — 啟用的資料集將包含在 [!DNL Profile] 和變更會在您儲存資料流時套用。
 
-[!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，最多可达您手动定义的特定阈值。 请参阅 [部分批量摄取概述](../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
+[!UICONTROL 錯誤診斷] 針對資料流中發生的任何錯誤記錄，啟用詳細的錯誤訊息產生，同時 [!UICONTROL 部分擷取] 可讓您擷取包含錯誤的資料，最多可擷取您手動定義的特定臨界值。 請參閱 [部分批次擷取概觀](../../../../ingestion/batch-ingestion/partial.md) 以取得詳細資訊。
 
-![配置文件和错误](../../../images/tutorials/dataflow/table-based/profile-and-errors.png)
+![設定檔與錯誤](../../../images/tutorials/dataflow/table-based/profile-and-errors.png)
 
-### 启用警报
+### 啟用警示
 
-您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅源警报](../alerts.md).
+您可以啟用警報以接收有關資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱來源警報](../alerts.md).
 
-完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+當您完成提供詳細資訊給資料流時，請選取「 」 **[!UICONTROL 下一個]**.
 
-![警报](../../../images/tutorials/dataflow/table-based/alerts.png)
+![警報](../../../images/tutorials/dataflow/table-based/alerts.png)
 
-## 将数据字段映射到XDM架构
+## 將資料欄位對應至XDM結構描述
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../data-prep/ui/mapping.md).
+Platform會根據您選取的目標結構描述或資料集，為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。 您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../../data-prep/ui/mapping.md).
 
-成功映射源数据后，选择 **[!UICONTROL 下一个]**.
+成功對應來源資料後，請選取 **[!UICONTROL 下一個]**.
 
-![映射](../../../images/tutorials/dataflow/table-based/mapping.png)
+![對應](../../../images/tutorials/dataflow/table-based/mapping.png)
 
-## 计划摄取运行
+## 排程內嵌執行
 
-的 [!UICONTROL 计划] 步骤，允许您配置摄取计划以使用配置的映射自动摄取选定的源数据。 默认情况下，计划设置为 `Once`. 要调整摄取频率，请选择 **[!UICONTROL 频率]** ，然后从下拉菜单中选择一个选项。
+此 [!UICONTROL 排程] 步驟隨即顯示，可讓您設定擷取排程，以使用已設定的對應自動擷取選取的來源資料。 根據預設，排程設定為 `Once`. 若要調整您的擷取頻率，請選取 **[!UICONTROL 頻率]** ，然後從下拉式選單中選取選項。
 
 >[!TIP]
 >
->在一次性摄取期间，间隔和回填不可见。
+>間隔和回填在一次性內嵌期間不可見。
 
-![调度](../../../images/tutorials/dataflow/table-based/scheduling.png)
+![排程](../../../images/tutorials/dataflow/table-based/scheduling.png)
 
-如果将摄取频度设置为 `Minute`, `Hour`, `Day`或 `Week`，则必须设置一个间隔，以在每次摄取之间建立一个设置的时间范围。 例如，摄取频度设置为 `Day` 和间隔设置为 `15` 意味着您的数据流计划每15天摄取一次数据。
+如果您將擷取頻率設為 `Minute`， `Hour`， `Day`，或 `Week`，則必須設定間隔，以建立每次擷取之間所設定的時間範圍。 例如，擷取頻率設為 `Day` 而間隔設定為 `15` 表示您的資料流已排程每15天擷取一次資料。
 
-在此步骤中，您还可以启用 **回填** 并为数据的增量摄取定义一列。 回填用于摄取历史数据，而您为增量摄取定义的列允许将新数据与现有数据区分开。
+在此步驟中，您也可以啟用 **回填** 和定義資料增量擷取的欄。 回填是用來擷取歷史資料，而您為增量擷取定義的欄則允許將新資料與現有資料區分開來。
 
-有关计划配置的更多信息，请参阅下表。
+請參閱下表以取得排程設定的詳細資訊。
 
 | 字段 | 描述 |
 | --- | --- |
-| 频度 | 发生摄取的频率。 可选频率包括 `Once`, `Minute`, `Hour`, `Day`和 `Week`. |
-| 间隔 | 一个整数，用于设置所选频率的间隔。 间隔的值应为非零整数，并应设置为大于或等于15。 |
-| 开始时间 | UTC时间戳，指示何时设置进行第一次摄取。 开始时间必须大于或等于当前UTC时间。 |
-| 回填 | 一个布尔值，用于确定最初摄取的数据。 如果启用了回填，则在首次计划摄取期间将摄取指定路径中的所有当前文件。 如果禁用回填，则只会摄取在首次摄取运行到开始时间之间加载的文件。 不会摄取在开始时间之前加载的文件。 |
-| 加载增量数据的方式 | 一个选项，其中包含一组类型、日期或时间的筛选源架构字段。 此字段用于区分新数据和现有数据。 将根据选定列的时间戳摄取增量数据。 |
+| 频度 | 內嵌發生的頻率。 可選擇頻率包括 `Once`， `Minute`， `Hour`， `Day`、和 `Week`. |
+| 間隔 | 設定所選頻率間隔的整數。 間隔值應為非零整數，且應設定為大於或等於15。 |
+| 開始時間 | UTC時間戳記，指出第一次內嵌設定於何時發生。 開始時間必須大於或等於您目前的UTC時間。 |
+| 回填 | 布林值，決定最初擷取的資料。 如果已啟用回填，則在第一次排程的擷取期間，將會擷取指定路徑中的所有目前檔案。 如果停用回填，則只會擷取在第一次執行擷取和開始時間之間載入的檔案。 將不會擷取在開始時間之前載入的檔案。 |
+| 載入增量資料的方式 | 一個選項，其中包含一組型別、日期或時間的篩選來源結構描述欄位。 此欄位用於區分新資料和現有資料。 將根據所選欄的時間戳記擷取增量資料。 |
 
 ![回填](../../../images/tutorials/dataflow/table-based/backfill.png)
 
-## 查看数据流
+## 檢閱您的資料流
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
-* **[!UICONTROL 计划]**:显示摄取计划的活动期、频率和间隔。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源檔案的相關路徑，以及該來源檔案中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
+* **[!UICONTROL 排程]**：顯示內嵌排程的作用中期間、頻率和間隔。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
 
-![审查](../../../images/tutorials/dataflow/table-based/review.png)
+![檢閱](../../../images/tutorials/dataflow/table-based/review.png)
 
-## 监控数据流
+## 監視資料流
 
-创建数据流后，您可以监控通过其摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监控数据流的更多信息，请参阅 [监控UI中的帐户和数据流](../monitor.md).
+建立資料流後，您可以監視透過它擷取的資料，以檢視有關擷取率、成功和錯誤的資訊。 如需如何監視資料流的詳細資訊，請參閱以下教學課程： [在UI中監視帳戶和資料流](../monitor.md).
 
-## 删除数据流
+## 刪除您的資料流
 
-您可以删除不再需要或使用错误创建的数据流 **[!UICONTROL 删除]** 函数 **[!UICONTROL 数据流]** 工作区。 有关如何删除数据流的更多信息，请参阅 [删除UI中的数据流](../delete.md).
+您可以刪除不再必要或已使用建立錯誤的資料流 **[!UICONTROL 刪除]** 函式位於 **[!UICONTROL 資料流]** 工作區。 如需如何刪除資料流的詳細資訊，請參閱以下教學課程： [在UI中刪除資料流](../delete.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了一个数据流，以将数据从支付源引入Platform。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+依照本教學課程所述，您已成功建立資料流，將付款來源的資料匯入Platform。 傳入資料現在可供下游使用 [!DNL Platform] 服務，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 如需更多詳細資訊，請參閱下列檔案：
 
 * [[!DNL Real-Time Customer Profile] 概述](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] 概述](../../../../data-science-workspace/home.md)
@@ -146,6 +146,6 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!WARNING]
 >
-> 以下视频中显示的平台UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+> 以下影片中顯示的Platform UI已過期。 請參閱上述檔案，瞭解最新的UI熒幕擷取畫面及功能。
 >
 >[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)

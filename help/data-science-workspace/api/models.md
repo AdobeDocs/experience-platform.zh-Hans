@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；模型；Sensei机器学习API
+keywords: Experience Platform；開發人員指南；端點；Data Science Workspace；熱門主題；模型；sensei機器學習api
 solution: Experience Platform
-title: 模型API端点
-description: 模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行求解。
+title: 模型API端點
+description: 模型是機器學習方法的執行個體，會使用歷史資料和設定進行訓練，以針對業務使用案例進行解析。
 exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 4%
 
 ---
 
-# 模型端点
+# 模型端點
 
-模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行求解。
+模型是機器學習方法的執行個體，會使用歷史資料和設定進行訓練，以針對業務使用案例進行解析。
 
-## 检索模型列表
+## 擷取模型清單
 
-通过对/models执行单个GET请求，可检索属于所有模型的模型详细信息列表。 默认情况下，此列表将自行从最早创建的模型中排序，并将结果限制为25。 您可以选择通过指定一些查询参数来筛选结果。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
+您可以透過對/models執行單一GET請求來擷取屬於所有「模型」的「模型」詳細資訊清單。 依預設，此清單會根據最舊建立的模型來排序自身，並將結果限製為25個。 您可以指定一些查詢引數來篩選結果。 如需可用查詢的清單，請參閱附錄 [用於資產擷取的查詢引數](./appendix.md#query).
 
 **API格式**
 
@@ -38,7 +38,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含模型的详细信息，包括每个模型的唯一标识符(`id`)。
+成功回應會傳回包含模型詳細資訊的裝載，包括每個模型的唯一識別碼(`id`)。
 
 ```json
 {
@@ -92,14 +92,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与模型对应的ID。 |
-| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `name` 值。 |
-| `experimentId` | 有效的实验ID。 |
-| `experimentRunId` | 有效的实验运行ID。 |
+| `id` | 與模型相對應的ID。 |
+| `modelArtifactUri` | 指示模型儲存位置的URI。 URI結尾是 `name` 模型的值。 |
+| `experimentId` | 有效的實驗ID。 |
+| `experimentRunId` | 有效的實驗回合ID。 |
 
-## 检索特定模型
+## 擷取特定模型
 
-通过执行单个GET请求并在请求路径中提供有效的模型ID，可以检索属于特定模型的模型详细信息列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
+您可以透過執行單一GET請求並在請求路徑中提供有效的模型ID來擷取屬於特定模型的模型詳細資訊清單。 若要協助篩選結果，您可以在請求路徑中指定查詢引數。 如需可用查詢的清單，請參閱附錄 [用於資產擷取的查詢引數](./appendix.md#query).
 
 **API格式**
 
@@ -110,12 +110,12 @@ GET /models/?property=experimentRunID=={EXPERIMENT_RUN_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
-| `{EXPERIMENT_RUN_ID}` | 运行实验的标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的識別碼。 |
+| `{EXPERIMENT_RUN_ID}` | 實驗回合的識別碼。 |
 
 **请求**
 
-以下请求包含一个查询，并检索共享相同experienceRunID({EXPERIENCE_RUN_ID})的受训模型列表。
+以下請求包含查詢，並擷取共用相同experimentRunID ({EXPERIMENT_RUN_ID})的已訓練模型清單。
 
 ```shell
 curl -X GET \
@@ -128,7 +128,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回包含模型详细信息(包括模型唯一标识符(`id`)。
+成功回應會傳回包含模型詳細資訊的裝載，包括模型唯一識別碼(`id`)。
 
 ```json
 {
@@ -156,14 +156,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与模型对应的ID。 |
-| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `name` 值。 |
-| `experimentId` | 有效的实验ID。 |
-| `experimentRunId` | 有效的实验运行ID。 |
+| `id` | 與模型相對應的ID。 |
+| `modelArtifactUri` | 指示模型儲存位置的URI。 URI結尾是 `name` 模型的值。 |
+| `experimentId` | 有效的實驗ID。 |
+| `experimentRunId` | 有效的實驗回合ID。 |
 
-## 注册预生成的模型 {#register-a-model}
+## 註冊預先產生的模型 {#register-a-model}
 
-您可以通过向 `/models` 端点。 为注册模型， `modelArtifact` 文件和 `model` 属性值需要包含在请求正文中。
+您可以透過向以下網站發出POST請求來註冊預先產生的模型： `/models` 端點。 為了註冊您的模型， `modelArtifact` 檔案和 `model` 屬性值必須包含在請求內文中。
 
 **API格式**
 
@@ -173,7 +173,7 @@ POST /models
 
 **请求**
 
-以下POST包含 `modelArtifact` 文件和 `model` 所需的属性值。 有关这些值的更多信息，请参阅下表。
+以下POST包含 `modelArtifact` 檔案和 `model` 所需的屬性值。 如需這些值的詳細資訊，請參閱下表。
 
 ```shell
 curl -X POST \
@@ -191,12 +191,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `modelArtifact` | 要包括的完整模型对象的位置。 |
-| `model` | 需要创建的模型对象的表单数据。 |
+| `modelArtifact` | 您要包括的完整「模型」成品位置。 |
+| `model` | 需要建立的模型物件的表單資料。 |
 
 **响应**
 
-成功的响应会返回包含模型详细信息(包括模型唯一标识符(`id`)。
+成功回應會傳回包含模型詳細資訊的裝載，包括模型唯一識別碼(`id`)。
 
 ```json
 {
@@ -212,16 +212,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与模型对应的ID。 |
-| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `id` 值。 |
+| `id` | 與模型相對應的ID。 |
+| `modelArtifactUri` | 指示模型儲存位置的URI。 URI結尾是 `id` 模型的值。 |
 
-## 按ID更新模型
+## 依ID更新模型
 
-您可以通过覆盖现有模型的属性来更新现有模型，方法是：通过PUT请求覆盖其属性，该请求在请求路径中包含目标模型的ID，并提供包含已更新属性的JSON有效负载。
+您可以透過PUT請求（請求路徑中包含目標模型的ID）來覆寫現有模型的屬性，並提供包含已更新屬性的JSON裝載，藉此更新現有模型。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并将修改的JSON对象的整个作为PUT请求的有效负载应用。
+>為確保此PUT請求成功，建議您先執行GET請求，以依ID擷取模型。 接著，修改並更新傳回的JSON物件，並將整個修改過的JSON物件套用為PUT請求的裝載。
 
 **API格式**
 
@@ -231,7 +231,7 @@ PUT /models/{MODEL_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的識別碼。 |
 
 **请求**
 
@@ -260,7 +260,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回包含实验更新详细信息的有效负载。
+成功的回應會傳回包含實驗更新詳細資訊的裝載。
 
 ```json
 {
@@ -278,9 +278,9 @@ curl -X PUT \
     }
 ```
 
-## 按ID删除模型
+## 依ID刪除模型
 
-您可以通过执行DELETE请求来删除单个模型，该请求在请求路径中包含目标模型的ID。
+您可以透過執行DELETE請求（請求路徑中包含目標模型的ID）來刪除單一模型。
 
 **API格式**
 
@@ -290,7 +290,7 @@ DELETE /models/{MODEL_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的識別碼。 |
 
 **请求**
 
@@ -305,7 +305,7 @@ curl -X DELETE \
 
 **响应**
 
-成功响应会返回包含200状态的有效负载，该状态确认删除模型。
+成功回應會傳回包含200個狀態的裝載，以確認刪除模型。
 
 ```json
 {
@@ -315,9 +315,9 @@ curl -X DELETE \
 }
 ```
 
-## 为模型创建新转码 {#create-transcoded-model}
+## 為模型建立新的轉碼 {#create-transcoded-model}
 
-转码是指将一种编码直接进行数字到数字的转换。 通过提供 `{MODEL_ID}` 和 `targetFormat` 您希望新输出包含在中。
+轉碼是將一種編碼直接數位轉換為另一種編碼。 您可以透過提供 `{MODEL_ID}` 和 `targetFormat` 您希望新輸出位於。
 
 **API格式**
 
@@ -327,7 +327,7 @@ POST /models/{MODEL_ID}/transcodings
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的識別碼。 |
 
 **请求**
 
@@ -354,7 +354,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回一个有效负载，该负载包含包含转码信息的JSON对象。 这包括转码的唯一标识符(`id`)在 [检索特定转码模型](#retrieve-transcoded-model).
+成功的回應會傳回包含JSON物件的裝載，其中包含您轉碼的相關資訊。 這包括轉碼唯一識別碼(`id`)用於 [擷取特定的轉碼模型](#retrieve-transcoded-model).
 
 ```json
 {
@@ -370,9 +370,9 @@ curl -X POST \
 }
 ```
 
-## 检索模型的转码列表 {#retrieve-transcoded-model-list}
+## 擷取模型的轉碼清單 {#retrieve-transcoded-model-list}
 
-您可以通过使用 `{MODEL_ID}`.
+您可以透過執行GET請求，擷取已在模型上執行的轉碼清單。 `{MODEL_ID}`.
 
 **API格式**
 
@@ -382,7 +382,7 @@ GET /models/{MODEL_ID}/transcodings
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的識別碼。 |
 
 **请求**
 
@@ -397,7 +397,7 @@ curl -X GET \
 
 **响应**
 
-成功响应会返回一个包含json对象的有效负载，其中包含对模型执行的每个转码的列表。 每个转码模型接收唯一标识符(`id`)。
+成功的回應會傳回包含json物件的裝載，其中包含模型上執行的每個轉碼清單。 每個轉碼模型都會收到唯一識別碼(`id`)。
 
 ```json
 {
@@ -430,9 +430,9 @@ curl -X GET \
 }
 ```
 
-## 检索特定的转码模型 {#retrieve-transcoded-model}
+## 擷取特定的轉碼模型 {#retrieve-transcoded-model}
 
-您可以通过执行GET请求来检索特定的转码模型 `{MODEL_ID}` 和转码模型的id。
+您可以透過以下方式執行GET請求，擷取特定的轉碼模型： `{MODEL_ID}` 和轉碼模型的id。
 
 **API格式**
 
@@ -442,8 +442,8 @@ GET /models/{MODEL_ID}/transcodings/{TRANSCODING_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布的模型的唯一标识符。 |
-| `{TRANSCODING_ID}` | 转码模型的唯一标识符。 |
+| `{MODEL_ID}` | 已訓練或已發佈模型的唯一識別碼。 |
+| `{TRANSCODING_ID}` | 轉碼模型的唯一識別碼。 |
 
 **请求**
 
@@ -458,7 +458,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个有效负载，该有效负载中包含具有转码模型数据的JSON对象。
+成功的回應會傳回包含JSON物件的裝載，其中包含轉碼模型的資料。
 
 ```json
 {

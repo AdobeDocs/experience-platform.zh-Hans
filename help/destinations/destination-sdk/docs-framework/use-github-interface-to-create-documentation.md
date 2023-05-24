@@ -1,6 +1,6 @@
 ---
-title: 使用GitHub Web界面创建目标文档页面
-description: 本页中的说明向您展示了如何使用GitHub Web界面为您的Experience Platform目标创作文档页面，并提交该页面以供审阅。
+title: 使用GitHub網頁介面建立目的地檔案頁面
+description: 本頁上的指示會示範如何使用GitHub網頁介面為您的Experience Platform目的地撰寫檔案頁面，並提交該頁面以供檢閱。
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
 source-git-commit: e239de97a26ea2ff36bb74390e249851a13d2e13
 workflow-type: tm+mt
@@ -9,78 +9,78 @@ ht-degree: 1%
 
 ---
 
-# 使用GitHub Web界面创建目标文档页面 {#github-interface}
+# 使用GitHub網頁介面建立目的地檔案頁面 {#github-interface}
 
-以下说明将向您展示如何使用GitHub Web界面创作文档和提交拉取请求(PR)。 完成此处指定的步骤之前，请确保已阅读 [在Adobe Experience Platform目标中记录您的目标](./documentation-instructions.md).
+以下指示會示範如何使用GitHub網頁介面來撰寫檔案及提交提取請求(PR)。 在依照此處指出的步驟進行之前，請務必閱讀 [在Adobe Experience Platform目的地中記錄您的目的地](./documentation-instructions.md).
 
 >[!TIP]
 >
->另请参阅Adobe参与者指南中的支持文档：
->* [安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)
+>另請參閱Adobe投稿人指南中的支援檔案：
+>* [安裝Git和Markdown編寫工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)
 >* [在本地设置适用于文档的 Git 存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)
 >* [针对主要更改的 GitHub 参与工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en).
 
 
-## 设置GitHub创作环境 {#set-up-environment}
+## 設定您的GitHub製作環境 {#set-up-environment}
 
-1. 在您的浏览器中，导航到 `https://github.com/AdobeDocs/experience-platform.en`.
-2. 至 [分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) 在 **分叉** 如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
+1. 在您的瀏覽器中，導覽至 `https://github.com/AdobeDocs/experience-platform.en`.
+2. 至 [分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) 存放庫，按一下 **分支** 如下所示。 這會在您自己的GitHub帳戶中建立Experience Platform存放庫的復本。
 
-   ![分支Adobe文档存储库](../assets/docs-framework/ssd-fork-repository.gif)
+   ![復本Adobe檔案存放庫](../assets/docs-framework/ssd-fork-repository.gif)
 
-3. 在存储库的分支中，为项目创建新分支，如下所示。 将这个新分支用于您的工作。
+3. 在存放庫復本中，為您的專案建立新分支，如下所示。 將此新分支用於您的工作。
 
-   ![新建GitHub分支](../assets/docs-framework/new-branch-github.gif)
+   ![建立新的GitHub分支](../assets/docs-framework/new-branch-github.gif)
 
-4. 在分支存储库的GitHub文件夹结构中，导航到 `experience-platform.en/help/destinations/catalog/[...]`，其中 `[...]` 是目标的所需类别。 例如，如果您要将个性化目标添加到Experience Platform，请选择 `personalization` 类别。 选择 **添加文件>创建新文件**.
+4. 在分支存放庫的GitHub資料夾結構中，導覽至 `experience-platform.en/help/destinations/catalog/[...]`，其中 `[...]` 是您目的地所需的類別。 例如，如果您要將個人化目的地新增至Experience Platform，請選取 `personalization` 類別。 選取 **新增檔案>建立新檔案**.
 
-   ![添加新文件](../assets/docs-framework/github-navigate-and-create-file.gif)
+   ![新增檔案](../assets/docs-framework/github-navigate-and-create-file.gif)
 
-5. 命名目标 `YOURDESTINATION.md`，其中YOURDESTINATION是您在Adobe Experience Platform中的目标名称。 例如，如果您的公司名为Moviestar，则需要为文件命名 `moviestar.md`.
+5. 為您的目的地命名 `YOURDESTINATION.md`，其中YOURDESTINATION是您在Adobe Experience Platform中的目的地名稱。 例如，如果您的公司名為Moviestar，您可以將您的檔案命名為 `moviestar.md`.
 
-## 为您的目标创作文档页面 {#author-documentation}
+## 為您的目的地撰寫檔案頁面 {#author-documentation}
 
-1. 您将根据 [文档自助模板](./self-service-template.md). **[下载](../assets/docs-framework/yourdestination-template.zip)** 然后解压缩该模板以提取 `.md` 文件模板。
-2. 在在线标记编辑器中粘贴和编辑包含目标相关信息的模板内容，例如 [dillinger.io](https://dillinger.io/). 有关应填写哪些内容以及可以删除哪些段落的详细信息，请按照模板中的说明进行操作。
+1. 您將根據以下專案建立目的地頁面的內容： [檔案自助服務範本](./self-service-template.md). **[下載](../assets/docs-framework/yourdestination-template.zip)** 並解壓縮範本以解壓縮 `.md` 檔案範本。
+2. 線上上Markdown編輯器中，貼上並編輯範本內容以及目的地的相關資訊，例如 [dillinger.io](https://dillinger.io/). 請依照範本中的指示操作，以取得關於您應填寫的內容以及哪些段落可以移除的詳細資訊。
 
    >[!TIP]
    >
-   >您可以随时关闭浏览器窗口，稍后重新打开。 您的工作会自动保存，在您重新打开浏览器时，将等待您完成。
-3. 将内容从Markdown编辑器复制到GitHub中的新文件中。
-4. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到 `experience-platform.en/help/destinations/assets/catalog/[...]`，其中 `[...]` 是目标的所需类别。 例如，如果您要将个性化目标添加到Experience Platform，请选择 `personalization` 类别。 您需要从要创作的页面链接到图像。 请参阅 [说明如何链接到图像](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images).
+   >您可以隨時關閉瀏覽器視窗，稍後再重新開啟。 系統會自動儲存您的工作，當您重新開啟瀏覽器時，系統會在您面前等待您。
+3. 將內容從Markdown編輯器複製到GitHub的新檔案中。
+4. 對於您打算使用的任何熒幕擷取畫面或影像，請使用GitHub介面將檔案上傳至 `experience-platform.en/help/destinations/assets/catalog/[...]`，其中 `[...]` 是您目的地所需的類別。 例如，如果您要將個人化目的地新增至Experience Platform，請選取 `personalization` 類別。 您需要從正在編寫的頁面連結至影像。 另請參閱 [如何連結至影像的說明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images).
 
-   ![将图像上传到GitHub](../assets/docs-framework/upload-image.gif)
+   ![將影像上傳至GitHub](../assets/docs-framework/upload-image.gif)
 
-5. 准备就绪后，将文件保存在分支中。
+5. 準備就緒後，將檔案儲存在分支中。
 
-![确认文件创建](../assets/docs-framework/ssd-confirm-file-creation.png)
+![確認檔案建立](../assets/docs-framework/ssd-confirm-file-creation.png)
 
-## 提交文档以供审核 {#submit-review}
+## 提交您的檔案以供檢閱 {#submit-review}
 
 >[!TIP]
 >
->请注意，这里没有什么可以打破的。 按照此部分中的说明，您只是建议进行文档更新。 您建议的更新将由Adobe Experience Platform文档团队批准或编辑。
+>請注意，您無法在此處中斷任何內容。 依照本節的指示，您只是建議更新檔案。 您建議的更新將由Adobe Experience Platform檔案團隊核准或編輯。
 
-1. 保存文件并上传所需的图像后，您可以打开拉取请求(PR)，以将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支并选择 **Contribute >打开拉取请求**.
+1. 儲存檔案並上傳所需影像後，您可以開啟提取請求(PR)，將工作分支合併至Adobe檔案存放庫的主分支。 確定已選取並選取您處理的分支 **Contribute >開啟提取請求**.
 
-![创建拉取请求](../assets/docs-framework/ssd-create-pull-request-1.gif)
+![建立提取請求](../assets/docs-framework/ssd-create-pull-request-1.gif)
 
-1. 确保基分支和比较分支正确无误。 向PR中添加说明更新的注释，然后选择 **创建拉取请求**. 此操作将打开一个PR，将分支的工作分支合并到Adobe存储库的主控分支中。
+1. 請確定基底和比較分支正確無誤。 在PR中新增附註，說明您的更新，然後選取 **建立提取請求**. 這會開啟PR，以將復本的工作分支合併到Adobe存放庫的主分支。
 
    >[!TIP]
    >
-   >离开 **允许维护者进行编辑** 复选框，以便Adobe文档团队可以对PR进行编辑。
+   >離開 **允許維護者編輯** 核取方塊已選取，以便Adobe檔案團隊可以編輯PR。
 
-   ![创建拉取请求以Adobe文档存储库](../assets/docs-framework/ssd-create-pull-request-2.png)
+   ![建立提取請求以Adobe檔案存放庫](../assets/docs-framework/ssd-create-pull-request-2.png)
 
-1. 此时会显示一则通知，提示您签署Adobe参与者许可协议(CLA)。 这是强制步骤。 签署CLA后，刷新PR页面并提交拉取请求。
+1. 此時，會出現通知，提示您簽署Adobe貢獻者授權合約(CLA)。 此為必要步驟。 在您簽署CLA後，請重新整理PR頁面並提交提取請求。
 
-1. 您可以通过检查 **拉取请求** 选项卡 `https://github.com/AdobeDocs/experience-platform.en`.
+1. 您可以透過檢查 **提取請求** 定位於 `https://github.com/AdobeDocs/experience-platform.en`.
 
    ![PR成功](../assets/docs-framework/ssd-pr-successful.png)
 
-1. 谢谢！Adobe文档团队将在PR中联系，以防需要进行任何编辑，并告知您文档何时发布。
+1. 谢谢！若需要編輯檔案，Adobe檔案團隊會與PR聯絡，告知您檔案將於何時發佈。
 
 >[!TIP]
 >
->要添加图像和文档链接，以及有关Markdown的任何其他问题，请阅读 [使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) Adobe的协作编写指南。
+>若要新增影像和連結至您的檔案，以及有關Markdown的其他問題，請閱讀 [使用Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) 在Adobe的合作撰寫指南中。

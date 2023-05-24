@@ -1,6 +1,6 @@
 ---
-title: 在UI中创建Marketo Engage源连接和数据流
-description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将B2B数据引入Adobe Experience Platform的步骤。
+title: 在UI中建立Marketo Engage來源連線和資料流
+description: 本教學課程提供在UI中建立Marketo Engage來源連線和資料流的步驟，以便將B2B資料引進Adobe Experience Platform。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
 source-git-commit: b271d28677543f773fe1ba471fc08574e7c5542b
 workflow-type: tm+mt
@@ -9,198 +9,198 @@ ht-degree: 0%
 
 ---
 
-# 创建 [!DNL Marketo Engage] UI中的源连接和数据流
+# 建立 [!DNL Marketo Engage] UI中的來源連線和資料流
 
 >[!IMPORTANT]
 >
->在创建 [!DNL Marketo Engage] 源连接和数据流之间，您必须首先确保 [已映射Adobe组织ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. 此外，您还必须确保您已完成 [自动填充 [!DNL Marketo] B2B命名空间和架构](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) 创建源连接和数据流之前。
+>建立之前 [!DNL Marketo Engage] 來源連線和資料流，您必須先確定 [已對應您的Adobe組織ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) 在 [!DNL Marketo]. 此外，您也必須確保已完成 [自動填入 [!DNL Marketo] B2B名稱空間和結構描述](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) 建立來源連線和資料流之前。
 
-本教程提供了创建 [!DNL Marketo Engage] (以下简称“[!DNL Marketo]“)UI中的源连接器，将B2B数据导入Adobe Experience Platform。
+本教學課程提供建立 [!DNL Marketo Engage] (以下稱&quot;[!DNL Marketo]&quot;) UI中的來源聯結器，可將B2B資料帶入Adobe Experience Platform。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [B2B命名空间和模式自动生成实用程序](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md):B2B命名空间和模式自动生成实用程序允许您使用 [!DNL Postman] 为B2B命名空间和模式自动生成值。 在创建 [!DNL Marketo] 源连接和数据流。
-* [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [体验数据模型(XDM)](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md):了解如何在UI中创建和编辑模式。
-* [身份命名空间](../../../../../identity-service/namespaces.md):身份命名空间是 [!DNL Identity Service] 作为身份相关背景的指标。 完全限定的标识包括ID值和命名空间。
-* [[!DNL Real-Time Customer Profile]](/help/profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [B2B名稱空間和結構描述自動產生公用程式](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md)：B2B名稱空間和結構描述自動產生公用程式可讓您使用 [!DNL Postman] 自動產生B2B名稱空間和結構描述的值。 您必須先完成B2B名稱空間和結構描述，才能建立 [!DNL Marketo] 來源連線和資料流。
+* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [體驗資料模型(XDM)](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
+   * [在UI中建立和編輯結構描述](../../../../../xdm/ui/resources/schemas.md)：瞭解如何在UI中建立和編輯結構描述。
+* [身分名稱空間](../../../../../identity-service/namespaces.md)：身分名稱空間是元件 [!DNL Identity Service] 做為身分識別相關內容的指示器。 完整身分包含ID值和名稱空間。
+* [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-### 收集所需的凭据
+### 收集必要的認證
 
-为了访问 [!DNL Marketo] 帐户时，必须提供以下值：
+為了存取您的 [!DNL Marketo] account on Platform，您必須提供下列值：
 
-| 凭据 | 描述 |
+| 認證 | 描述 |
 | ---------- | ----------- |
-| `munchkinId` | Munchkin ID是特定 [!DNL Marketo] 实例。 |
-| `clientId` | 您的 [!DNL Marketo] 实例。 |
-| `clientSecret` | 您的唯一客户端密钥 [!DNL Marketo] 实例。 |
+| `munchkinId` | Munchkin ID是特定識別碼的唯一識別碼 [!DNL Marketo] 執行個體。 |
+| `clientId` | 您的唯一使用者端ID [!DNL Marketo] 執行個體。 |
+| `clientSecret` | 您專屬的唯一使用者端密碼 [!DNL Marketo] 執行個體。 |
 
-有关获取这些值的更多信息，请参阅 [[!DNL Marketo] 身份验证指南](../../../../connectors/adobe-applications/marketo/marketo-auth.md).
+如需取得這些值的詳細資訊，請參閱 [[!DNL Marketo] 驗證指南](../../../../connectors/adobe-applications/marketo/marketo-auth.md).
 
-收集所需的凭据后，即可执行下一节中的步骤。
+收集完所需的認證後，您可以依照下一節中的步驟操作。
 
-## 连接 [!DNL Marketo] 帐户
+## 連線您的 [!DNL Marketo] 帳戶
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
 
-在 [!UICONTROL Adobe应用程序] 类别，选择 **[!UICONTROL Marketo Engage]**. 然后，选择 **[!UICONTROL 添加数据]** 创建新 [!DNL Marketo] 数据流。
+在 [!UICONTROL Adobe應用程式] 類別，選取 **[!UICONTROL Marketo Engage]**. 然後，選取 **[!UICONTROL 新增資料]** 以建立新的 [!DNL Marketo] 資料流。
 
-![目录](../../../../images/tutorials/create/marketo/catalog.png)
+![目錄](../../../../images/tutorials/create/marketo/catalog.png)
 
-的 **[!UICONTROL 连接Marketo Engage帐户]** 页面。 在此页面上，您可以使用新帐户或访问现有帐户。
+此 **[!UICONTROL 連線Marketo Engage帳戶]** 頁面便會顯示。 您可以在此頁面使用新帳戶或存取現有帳戶。
 
-### 现有帐户
+### 現有帳戶
 
-要使用现有帐户创建数据流，请选择 **[!UICONTROL 现有帐户]** ，然后选择 [!DNL Marketo] 帐户。 选择 **[!UICONTROL 下一个]** 以继续。
+若要使用現有帳戶建立資料流，請選取「 」 **[!UICONTROL 現有帳戶]** 然後選取 [!DNL Marketo] 您要使用的帳戶。 選取 **[!UICONTROL 下一個]** 以繼續進行。
 
-![现有](../../../../images/tutorials/create/marketo/existing.png)
+![現有](../../../../images/tutorials/create/marketo/existing.png)
 
-### 新帐户
+### 新帳戶
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供帐户名称、可选描述和 [!DNL Marketo] 身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供帳戶名稱、選擇性說明，以及 [!DNL Marketo] 驗證認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
 
-![新建](../../../../images/tutorials/create/marketo/new.png)
+![新](../../../../images/tutorials/create/marketo/new.png)
 
 ## 选择数据集
 
-创建 [!DNL Marketo] 帐户，下一步会提供一个界面供您浏览 [!DNL Marketo] 数据集。
+建立您的 [!DNL Marketo] 帳戶，下一個步驟會提供介面供您探索 [!DNL Marketo] 資料集。
 
-界面的左半部分是目录浏览器，显示 [!DNL Marketo] 数据集。 功能齐全 [!DNL Marketo] 源连接需要摄取九个不同的数据集。 如果您还在使用 [!DNL Marketo] 基于帐户的营销(ABM)功能，则还必须创建第10个数据流以引入 [!UICONTROL 指定帐户] 数据集。
+介面的左半部分是目錄瀏覽器，顯示10 [!DNL Marketo] 資料集。 功能齊全的 [!DNL Marketo] 來源連線需要擷取9個不同的資料集。 如果您也使用 [!DNL Marketo] 帳戶型行銷(ABM)功能，則您還必須建立第10個資料流以擷取 [!UICONTROL 具名帳戶] 資料集。
 
 >[!NOTE]
 >
->为简短起见，以下教程使用 [!UICONTROL 机会] 例如，但下面列出的步骤适用于以下10个 [!DNL Marketo] 数据集。
+>為了簡單起見，下列教學課程使用 [!UICONTROL 機會] 例如，以下概述的步驟適用於下列10個步驟中的任一個 [!DNL Marketo] 資料集。
 
-选择要先摄取的数据集，然后选择 **[!UICONTROL 下一个]**.
+選取您要先擷取的資料集，然後選取「 」 **[!UICONTROL 下一個]**.
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## 提供数据流详细信息 {#provide-dataflow-details}
+## 提供資料流詳細資料 {#provide-dataflow-details}
 
-的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集还是新数据集。 在此过程中，您还可以配置 [!UICONTROL 配置文件数据集], [!UICONTROL 错误诊断], [!UICONTROL 部分摄取]和 [!UICONTROL 警报].
+此 [!UICONTROL 資料流詳細資料] 頁面可讓您選取要使用現有資料集還是新資料集。 在此程式中，您也可以為以下專案進行設定： [!UICONTROL 設定檔資料集]， [!UICONTROL 錯誤診斷]， [!UICONTROL 部分擷取]、和 [!UICONTROL 警報].
 
-![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-details.png)
+![資料流 — 詳細資料](../../../../images/tutorials/create/marketo/dataflow-details.png)
 
 >[!BEGINTABS]
 
->[!TAB 使用现有数据集]
+>[!TAB 使用現有的資料集]
 
-要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。 选择数据集后，请为数据流提供名称和描述。
+若要將資料內嵌至現有資料集，請選取「 」 **[!UICONTROL 現有資料集]**. 您可以使用來擷取現有的資料集 [!UICONTROL 進階搜尋] 選項，或是透過在下拉式選單中捲動現有資料集清單的方式。 選取資料集後，請為資料流提供名稱和說明。
 
-![现有数据集](../../../../images/tutorials/create/marketo/existing-dataset.png)
+![existing-data](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
->[!TAB 使用新数据集]
+>[!TAB 使用新資料集]
 
-要摄取到新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 选择架构后，请为数据流提供名称和描述。
+若要內嵌至新資料集，請選取「 」 **[!UICONTROL 新資料集]** 然後提供輸出資料集名稱和選擇性說明。 接下來，使用 [!UICONTROL 進階搜尋] 選項或透過捲動下拉式選單中的現有結構描述清單的方式。 選取結構描述後，請為資料流提供名稱和說明。
 
-![新数据集](../../../../images/tutorials/create/marketo/new-dataset.png)
+![新資料集](../../../../images/tutorials/create/marketo/new-dataset.png)
 
 >[!ENDTABS]
 
-### 启用 [!DNL Profile] 和错误诊断
+### 啟用 [!DNL Profile] 和錯誤診斷
 
-接下来，选择 **[!UICONTROL 配置文件数据集]** 切换为启用数据集 [!DNL Profile]. 这允许您创建实体属性和行为的整体视图。 所有数据 [!DNL Profile]-enabled数据集将包含在 [!DNL Profile] 和更改将在您保存数据流时应用。
+接下來，選取 **[!UICONTROL 設定檔資料集]** 切換以啟用您的資料集 [!DNL Profile]. 這可讓您建立實體屬性和行為的整體檢視。 來自所有人的資料 [!DNL Profile] — 啟用的資料集將包含在 [!DNL Profile] 和變更會在您儲存資料流時套用。
 
-[!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，最多可达您手动定义的特定阈值。 请参阅 [部分批量摄取概述](../../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
+[!UICONTROL 錯誤診斷] 針對資料流中發生的任何錯誤記錄，啟用詳細的錯誤訊息產生，同時 [!UICONTROL 部分擷取] 可讓您擷取包含錯誤的資料，最多可擷取您手動定義的特定臨界值。 請參閱 [部分批次擷取概觀](../../../../../ingestion/batch-ingestion/partial.md) 以取得詳細資訊。
 
 >[!IMPORTANT]
 >
->的 [!DNL Marketo] 源使用批量摄取来摄取所有历史记录，并使用流式摄取来进行实时更新。 这允许源在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 以防止数据流失败。
+>此 [!DNL Marketo] 來源會使用批次擷取來擷取所有歷史記錄，並使用串流擷取來即時更新。 這可讓來源在擷取任何錯誤記錄時繼續串流。 啟用 **[!UICONTROL 部分擷取]** 切換，然後設定 [!UICONTROL 錯誤臨界值%] 達到最大值，以防止資料流失敗。
 
-![配置文件和错误](../../../../images/tutorials/create/marketo/profile-and-errors.png)
+![設定檔與錯誤](../../../../images/tutorials/create/marketo/profile-and-errors.png)
 
-### 启用警报
+### 啟用警示
 
-您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅源警报](../../alerts.md).
+您可以啟用警報以接收有關資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱來源警報](../../alerts.md).
 
-完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+當您完成提供詳細資訊給資料流時，請選取「 」 **[!UICONTROL 下一個]**.
 
-![警报](../../../../images/tutorials/create/marketo/alerts.png)
+![警報](../../../../images/tutorials/create/marketo/alerts.png)
 
-### 在摄取公司数据时跳过未声明的帐户
+### 擷取公司資料時略過無人認領的帳戶
 
-创建数据流以从公司数据集摄取数据时，您可以配置 [!UICONTROL 排除未声明的帐户] 从摄取中排除或包含未声明的帐户。
+建立資料流以從公司資料集中擷取資料時，您可以設定 [!UICONTROL 排除無人認領的帳戶] 從內嵌中排除或包含無人認領的帳戶。
 
-当个人填写表格时， [!DNL Marketo] 根据不包含其他数据的公司名称创建虚拟帐户记录。 对于新数据流，默认情况下会启用用于排除未声明帐户的切换开关。 对于现有数据流，您可以启用或禁用该功能，其更改将应用于新摄取的数据，而非现有数据。
+當個人填寫表單時， [!DNL Marketo] 根據不含其他資料的公司名稱建立虛擬帳戶記錄。 對於新資料流，預設會啟用排除無人認領帳戶的切換。 對於現有資料流，您可以啟用或停用該功能，而變更會套用至新擷取的資料，而非現有資料。
 
-![未声明的帐户](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
+![無人認領的帳戶](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
 
-## 映射 [!DNL Marketo] 用于定位XDM字段的数据集源字段
+## 對應您的 [!DNL Marketo] 資料集來源欄位至目標XDM欄位
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-每个 [!DNL Marketo] 数据集有其自己的特定映射规则可遵循。 有关如何映射的更多信息，请参阅以下内容 [!DNL Marketo] 数据集到XDM:
+每個 [!DNL Marketo] 資料集有其專屬的對應規則可遵循。 如需如何對應的詳細資訊，請參閱下列內容 [!DNL Marketo] 資料集至XDM：
 
 * [活动](../../../../connectors/adobe-applications/mapping/marketo.md#activities)
 * [项目](../../../../connectors/adobe-applications/mapping/marketo.md#programs)
-* [方案成员资格](../../../../connectors/adobe-applications/mapping/marketo.md#program-memberships)
+* [計畫成員資格](../../../../connectors/adobe-applications/mapping/marketo.md#program-memberships)
 * [公司](../../../../connectors/adobe-applications/mapping/marketo.md#companies)
-* [静态列表](../../../../connectors/adobe-applications/mapping/marketo.md#static-lists)
-* [静态列表成员关系](../../../../connectors/adobe-applications/mapping/marketo.md#static-list-memberships)
-* [指定帐户](../../../../connectors/adobe-applications/mapping/marketo.md#named-accounts)
-* [机会](../../../../connectors/adobe-applications/mapping/marketo.md#opportunities)
-* [机会联系角色](../../../../connectors/adobe-applications/mapping/marketo.md#opportunity-contact-roles)
-* [人员](../../../../connectors/adobe-applications/mapping/marketo.md#persons)
+* [靜態清單](../../../../connectors/adobe-applications/mapping/marketo.md#static-lists)
+* [靜態清單成員資格](../../../../connectors/adobe-applications/mapping/marketo.md#static-list-memberships)
+* [具名帳戶](../../../../connectors/adobe-applications/mapping/marketo.md#named-accounts)
+* [機會](../../../../connectors/adobe-applications/mapping/marketo.md#opportunities)
+* [機會聯絡人角色](../../../../connectors/adobe-applications/mapping/marketo.md#opportunity-contact-roles)
+* [人員](../../../../connectors/adobe-applications/mapping/marketo.md#persons)
 
-根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射界面的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應介面的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
 
-![映射](../../../../images/tutorials/create/marketo/mapping.png)
+![對應](../../../../images/tutorials/create/marketo/mapping.png)
 
-映射集准备就绪后，选择 **[!UICONTROL 下一个]** 并且需要片刻时间才能创建新数据流。
+對應集準備就緒後，請選取 **[!UICONTROL 下一個]** 並留出一些時間，以便建立新的資料流。
 
-## 查看数据流
+## 檢閱您的資料流
 
-的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
 
-* **[!UICONTROL 连接]**:显示源类型、所选源实体的相关路径以及该源实体中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
+* **[!UICONTROL 連線]**：顯示來源型別、所選來源實體的相關路徑，以及該來源實體中的欄數。
+* **[!UICONTROL 指派資料集和對應欄位]**：顯示要將來源資料擷取到哪個資料集中，包括資料集所堅持的結構描述。
 
-审核数据流后，选择 **[!UICONTROL 保存并摄取]** 并为创建数据流留出一些时间。
+檢閱資料流後，選取 **[!UICONTROL 儲存並擷取]** 並留出一些時間來建立資料流。
 
-![审查](../../../../images/tutorials/create/marketo/review.png)
+![檢閱](../../../../images/tutorials/create/marketo/review.png)
 
-## 监控数据流
+## 監視資料流
 
-创建数据流后，您可以监控通过其摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的更多信息，请参阅 [监控UI中的数据流](../../../../../dataflows/ui/monitor-sources.md).
+建立資料流後，您可以監視透過它擷取的資料，以檢視有關擷取率、成功和錯誤的資訊。 如需如何監視資料流的詳細資訊，請參閱以下教學課程： [在UI中監控資料流](../../../../../dataflows/ui/monitor-sources.md).
 
-## 删除属性
+## 刪除您的屬性
 
-数据集中的自定义属性不能以追溯方式隐藏或删除。 如果要隐藏或删除现有数据集中的自定义属性，则必须创建一个没有此自定义属性的新数据集、一个新的XDM架构，并为您创建的新数据集配置新的数据流。 您还必须禁用或删除原始数据流，该数据流包含具有您要隐藏或删除的自定义属性的数据集。
+資料集中的自訂屬性無法回溯隱藏或移除。 如果您想要從現有資料集中隱藏或移除自訂屬性，則必須建立不含此自訂屬性的新資料集、新的XDM結構描述，並為您建立的新資料集設定新的資料流。 您也必須停用或刪除原始資料流，該資料流包含您要隱藏或移除自訂屬性的資料集。
 
-## 删除数据流
+## 刪除您的資料流
 
-您可以删除不再需要或使用错误创建的数据流 **[!UICONTROL 删除]** 函数 [!UICONTROL 数据流] 工作区。 有关如何删除数据流的更多信息，请参阅 [删除UI中的数据流](../../delete.md).
+您可以刪除不再必要或已使用建立錯誤的資料流 **[!UICONTROL 刪除]** 函式位於 [!UICONTROL 資料流] 工作區。 如需如何刪除資料流的詳細資訊，請參閱以下教學課程： [在UI中刪除資料流](../../delete.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已成功创建了要引入的数据流 [!DNL Marketo] 数据。 传入数据现在可由下游Platform服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
+依照本教學課程所述，您已成功建立資料流以引入 [!DNL Marketo] 資料。 傳入資料現在可供下游平台服務使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 如需更多詳細資訊，請參閱下列檔案：
 
 * [[!DNL Real-Time Customer Profile] 概述](/help/profile/home.md)
 * [[!DNL Data Science Workspace] 概述](/help/data-science-workspace/home.md)
 
 ## 附录 {#appendix}
 
-以下部分提供了在使用 [!DNL Marketo] 来源。
+以下小節提供您在使用時，可能會遵循的其他准則 [!DNL Marketo] 來源。
 
-### UI中的错误消息 {#error-messages}
+### UI中的錯誤訊息 {#error-messages}
 
-当Platform检测到您的设置存在问题时，UI中会显示以下错误消息：
+當Platform偵測到您的設定發生問題時，UI中會顯示下列錯誤訊息：
 
-#### [!DNL Munchkin ID] 未映射到相应的组织
+#### [!DNL Munchkin ID] 未對應至適當的組織
 
-如果您的 [!DNL Munchkin ID] 未映射到您使用的平台组织。 配置 [!DNL Munchkin ID] 和贵组织使用 [[!DNL Marketo] 界面](https://app-sjint.marketo.com/#MM0A1).
+如果您 [!DNL Munchkin ID] 未對應至您正在使用的平台組織。 設定以下專案之間的對應： [!DNL Munchkin ID] 以及您的組織使用 [[!DNL Marketo] 介面](https://app-sjint.marketo.com/#MM0A1).
 
-![显示Marketo实例未正确映射到Adobe组织的错误消息。](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
+![錯誤訊息顯示Marketo執行個體未正確對應至Adobe組織。](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
 
-#### 缺少主标识
+#### 缺少主要身分
 
-如果缺少主标识，则数据流将无法保存和摄取。 确保 [XDM架构中存在主标识](../../../../../xdm/tutorials/create-schema-ui.md)，然后再尝试配置数据流。
+如果缺少主要身分，資料流將無法儲存和擷取。 確定 [您的XDM結構描述中存在主要身分](../../../../../xdm/tutorials/create-schema-ui.md)，然後再嘗試設定資料流。
 
-![显示XDM架构中缺少主标识的错误消息。](../../../../images/tutorials/create/marketo/no-primary-identity.png)
+![錯誤訊息顯示XDM結構描述中缺少主要身分。](../../../../images/tutorials/create/marketo/no-primary-identity.png)
 

@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；主页；热门主题；本地系统；文件上传；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；
+keywords: Experience Platform；首頁；熱門主題；本機系統；檔案上傳；對應csv；對應csv檔案；將csv檔案對應至xdm；將csv對應至xdm；ui指南；
 solution: Experience Platform
-title: 在UI中创建本地文件上传源连接器
+title: 在UI中建立本機檔案上傳來源聯結器
 type: Tutorial
-description: 了解如何为本地系统创建源连接以将本地文件引入平台
+description: 瞭解如何建立本機系統的來源連線，以將本機檔案帶到Platform
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,83 +12,83 @@ ht-degree: 1%
 
 ---
 
-# 在UI中创建本地文件上传源连接器
+# 在UI中建立本機檔案上傳來源聯結器
 
-本教程提供了创建本地文件上传源连接器以使用用户界面将本地文件摄取到平台的步骤。
+本教學課程提供建立本機檔案上傳來源聯結器的步驟，以便使用使用者介面將本機檔案擷取到Platform。
 
 ## 快速入门
 
-本教程需要对Platform的以下组件有一定的了解：
+本教學課程需要深入瞭解下列Platform元件：
 
-* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。
-   * [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Platform組織客戶體驗資料的標準化架構。
+   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
+   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
 
-## 将本地文件上传到平台
+## 將本機檔案上傳至Platform
 
-在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种源。
+在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以建立帳戶的各種來源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项找到要处理的特定源。
+您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
 
-在 [!UICONTROL 本地系统] 类别，选择 **[!UICONTROL 本地文件上传]**，然后选择 **[!UICONTROL 添加数据]**.
+在 [!UICONTROL 本機系統] 類別，選取 **[!UICONTROL 本機檔案上傳]**，然後選取 **[!UICONTROL 新增資料]**.
 
-![目录](../../../../images/tutorials/create/local/catalog.png)
+![目錄](../../../../images/tutorials/create/local/catalog.png)
 
-### 使用现有数据集
+### 使用現有的資料集
 
-的 [!UICONTROL 数据流详细信息] 页面允许您选择是将CSV数据摄取到现有数据集还是新数据集。
+此 [!UICONTROL 資料流詳細資料] 頁面可讓您選擇是否要將CSV資料擷取至現有資料集或新資料集。
 
-要将CSV数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。
+若要將CSV資料內嵌至現有資料集，請選取 **[!UICONTROL 現有資料集]**. 您可以使用來擷取現有的資料集 [!UICONTROL 進階搜尋] 選項，或是透過在下拉式選單中捲動現有資料集清單的方式。
 
-选择数据集后，为数据流提供名称和可选描述。
+選取資料集後，為資料流命名並選填說明。
 
-在此过程中，您还可以启用 [!UICONTROL 错误诊断] 和 [!UICONTROL 部分摄取]. [!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，最多可达您手动定义的特定阈值。 请参阅 [部分批量摄取概述](../../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
+在此過程中，您也可以啟用 [!UICONTROL 錯誤診斷] 和 [!UICONTROL 部分擷取]. [!UICONTROL 錯誤診斷] 針對資料流中發生的任何錯誤記錄，啟用詳細的錯誤訊息產生，同時 [!UICONTROL 部分擷取] 可讓您擷取包含錯誤的資料，最多可擷取您手動定義的特定臨界值。 請參閱 [部分批次擷取概觀](../../../../../ingestion/batch-ingestion/partial.md) 以取得詳細資訊。
 
-![现有数据集](../../../../images/tutorials/create/local/existing-dataset.png)
+![existing-data](../../../../images/tutorials/create/local/existing-dataset.png)
 
-### 使用新数据集
+### 使用新資料集
 
-要将CSV数据摄取到新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。
+若要將CSV資料內嵌至新資料集，請選取「 」 **[!UICONTROL 新資料集]** 然後提供輸出資料集名稱和選擇性說明。 接下來，使用 [!UICONTROL 進階搜尋] 選項或透過捲動下拉式選單中的現有結構描述清單的方式。
 
-选择架构后，为数据流提供名称和可选描述，然后应用 [!UICONTROL 错误诊断] 和 [!UICONTROL 部分摄取] 数据流所需的设置。 完成后，选择 **[!UICONTROL 下一个]**.
+在選取結構描述後，為您的資料流命名並選填說明，然後套用 [!UICONTROL 錯誤診斷] 和 [!UICONTROL 部分擷取] 資料流所需設定。 完成後，選取 **[!UICONTROL 下一個]**.
 
-![新数据集](../../../../images/tutorials/create/local/new-dataset.png)
+![新資料集](../../../../images/tutorials/create/local/new-dataset.png)
 
 ### 选择数据
 
-的 [!UICONTROL 选择数据] 步骤，为您提供一个界面来上载本地文件并预览其结构和内容。 选择 **[!UICONTROL 选择文件]** 从本地系统上传CSV文件。 或者，您也可以将要上传的CSV文件拖放到 [!UICONTROL 拖放文件] 的上界。
+此 [!UICONTROL 選取資料] 步驟隨即顯示，為您提供可上傳本機檔案並預覽其結構和內容的介面。 選取 **[!UICONTROL 選擇檔案]** 以從您的本機系統上傳CSV檔案。 或者，您也可以將要上傳的CSV檔案拖放至 [!UICONTROL 拖放檔案] 面板。
 
 >[!TIP]
 >
->本地文件上传当前仅支持CSV文件。 每个文件的最大文件大小为1 GB。
+>本機檔案上傳目前僅支援CSV檔案。 每個檔案的最大檔案大小為1 GB。
 
-![选择文件](../../../../images/tutorials/create/local/choose-files.png)
+![choose-files](../../../../images/tutorials/create/local/choose-files.png)
 
-上传文件后，预览界面会随之更新，以显示文件的内容和结构。
+上傳檔案後，預覽介面會更新以顯示檔案的內容和結構。
 
 ![preview-sample-data](../../../../images/tutorials/create/local/preview-sample-data.png)
 
-根据您的文件，您可以为源数据选择列分隔符，如制表符、逗号、管道分隔符或自定义列分隔符。 选择 **[!UICONTROL 分隔符]** 下拉箭头，然后从菜单中选择相应的分隔符。
+根據您的檔案，您可以選取欄分隔符號，例如定位字元、逗號、垂直號，或是來源資料的自訂欄分隔符號。 選取 **[!UICONTROL 分隔符號]** 下拉式箭頭，然後從選單中選取適當的分隔符號。
 
-完成后，选择 **[!UICONTROL 下一个]**.
+完成後，選取 **[!UICONTROL 下一個]**.
 
-![分隔符](../../../../images/tutorials/create/local/delimiter.png)
+![分隔字元](../../../../images/tutorials/create/local/delimiter.png)
 
 ## 映射
 
-的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 對應] 步驟隨即顯示，為您提供介面，用於將來源結構描述中的來源欄位對應到目標結構描述中適當的目標XDM欄位。
 
-根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射界面的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應介面的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
 
-映射集准备就绪后，选择 **[!UICONTROL 完成]** 并且需要片刻时间才能创建新数据流。
+對應集準備就緒後，請選取 **[!UICONTROL 完成]** 並留出一些時間，以便建立新的資料流。
 
-![映射](../../../../images/tutorials/create/local/mapping.png)
+![對應](../../../../images/tutorials/create/local/mapping.png)
 
 ## 监测数据提取
 
-映射和创建CSV文件后，您可以使用监控仪表板监控通过其摄取的数据。 有关更多信息，请参阅 [在UI中监控源数据流](../../../../../dataflows/ui/monitor-sources.md).
+對應和建立CSV檔案後，您就可以使用監控儀表板監控透過該檔案擷取的資料。 如需詳細資訊，請參閱以下教學課程： [在UI中監控來源資料流](../../../../../dataflows/ui/monitor-sources.md).
 
 ## 后续步骤
 
-通过阅读本教程，您已成功将平面CSV文件映射到XDM架构，并将其摄取到平台。 此数据现在可供下游使用 [!DNL Platform] 诸如 [!DNL Real-Time Customer Profile]. 请参阅 [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md) 以了解更多信息。
+依照本教學課程所述，您已成功將一般CSV檔案對應至XDM結構描述，並將其內嵌至Platform。 此資料現在可供下游使用 [!DNL Platform] 服務，例如 [!DNL Real-Time Customer Profile]. 請參閱「 」概觀 [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md) 以取得詳細資訊。

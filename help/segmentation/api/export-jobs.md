@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；导出作业；API;
+keywords: Experience Platform；首頁；熱門主題；細分；細分；細分服務；匯出工作；API；
 solution: Experience Platform
-title: 区段导出作业API端点
-description: 导出作业是用于将受众区段成员保留到数据集的异步进程。 您可以在Adobe Experience Platform Segmentation Service API中使用/export/jobs端点，该端点允许您以编程方式检索、创建和取消导出作业。
+title: 區段匯出作業API端點
+description: 匯出作業是用來將受眾區段成員保留至資料集的非同步程式。 您可以使用Adobe Experience Platform Segmentation Service API中的/export/jobs端點，以程式設計方式擷取、建立和取消匯出作業。
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 2%
 
 ---
 
-# 区段导出作业端点
+# 區段匯出作業端點
 
-导出作业是用于将受众区段成员保留到数据集的异步进程。 您可以使用 `/export/jobs` Adobe Experience Platform分段API中的端点，它允许您以编程方式检索、创建和取消导出作业。
+匯出作業是用來將受眾區段成員保留至資料集的非同步程式。 您可以使用 `/export/jobs` Adobe Experience Platform Segmentation API中的端點，可讓您以程式設計方式擷取、建立和取消匯出作業。
 
 >[!NOTE]
 >
->本指南介绍如何在 [!DNL Segmentation API]. 有关如何管理的导出作业的信息 [!DNL Real-Time Customer Profile] 数据，请参阅 [导出配置文件API中的作业](../../profile/api/export-jobs.md)
+>本指南說明中匯出工作的使用 [!DNL Segmentation API]. 有關如何管理匯出工作的資訊 [!DNL Real-Time Customer Profile] 資料，請參閱以下指南： [匯出設定檔API中的工作](../../profile/api/export-jobs.md)
 
 ## 快速入门
 
-本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端點是 [!DNL Adobe Experience Platform Segmentation Service] API。 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需成功呼叫API所需的重要資訊，包括必要的標頭及如何讀取範例API呼叫。
 
-## 检索导出作业列表 {#retrieve-list}
+## 擷取匯出作業清單 {#retrieve-list}
 
-通过向 `/export/jobs` 端点。
+您可以透過向以下專案發出GET請求，擷取組織的所有匯出作業清單： `/export/jobs` 端點。
 
 **API格式**
 
-的 `/export/jobs` 端点支持多个查询参数来帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数，以帮助减少昂贵的开销。 对此端点进行无参数调用将检索适用于贵组织的所有导出作业。 可以包含多个参数，这些参数之间用与号(`&`)。
+此 `/export/jobs` 端點支援數個查詢引數，以協助篩選結果。 雖然這些引數是選用的，但強烈建議使用它們來協助減少昂貴的額外負荷。 在不使用引數的情況下呼叫此端點將擷取可用於您的組織的所有匯出作業。 可包含多個引數，以&amp;符號(`&`)。
 
 ```http
 GET /export/jobs
@@ -40,13 +40,13 @@ GET /export/jobs?status={STATUS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | 指定返回的导出作业数。 |
-| `{OFFSET}` | 指定结果页的偏移。 |
-| `{STATUS}` | 根据状态筛选结果。 支持的值为“NEW”、“SUCCEEDED”和“FAILED”。 |
+| `{LIMIT}` | 指定傳回的匯出工作數目。 |
+| `{OFFSET}` | 指定結果頁面的位移。 |
+| `{STATUS}` | 根據狀態篩選結果。 支援的值為「NEW」、「SUCCEEDED」和「FAILED」。 |
 
 **请求**
 
-以下请求将检索您组织内的最后两个导出作业。
+以下請求將擷取組織內最後兩個匯出工作。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
@@ -58,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
 
 **响应**
 
-以下响应会根据请求路径中提供的查询参数，返回包含已成功完成导出作业列表的HTTP状态200。
+下列回應會根據請求路徑中提供的查詢引數，傳回HTTP狀態200，其中包含成功完成的匯出作業清單。
 
 ```json
 {
@@ -197,19 +197,19 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `destination` | 导出数据的目标信息：<ul><li>`datasetId`:导出数据的数据集的ID。</li><li>`segmentPerBatch`:一个布尔值，用于显示区段ID是否已合并。 值“false”表示所有区段ID都导出为单个批量ID。 值“true”表示将一个区段ID导出为一个批量ID。 **注意：** 将值设置为true可能会影响批量导出性能。</li></ul> |
-| `fields` | 导出字段的列表，用逗号分隔。 |
-| `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:将用户档案导出到的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`. 值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
-| `mergePolicy` | 导出数据的合并策略信息。 |
-| `metrics.totalTime` | 一个字段，用于指示导出作业运行所用的总时间。 |
-| `metrics.profileExportTime` | 一个字段，用于指示用户档案导出所用的时间。 |
-| `page` | 有关所请求导出作业分页的信息。 |
-| `link.next` | 指向导出作业下一页的链接。 |
+| `destination` | 匯出資料的目的地資訊：<ul><li>`datasetId`：資料匯出處的資料集ID。</li><li>`segmentPerBatch`：顯示是否合併區段ID的布林值。 「false」值表示所有區段ID會匯出至單一批次ID。 「true」值表示將一個區段ID匯出至一個批次ID。 **注意：** 將值設定為true可能會影響批次匯出效能。</li></ul> |
+| `fields` | 匯出的欄位清單，以逗號分隔。 |
+| `schema.name` | 與要匯出資料的資料集相關聯的結構描述名稱。 |
+| `filter.segments` | 匯出的區段。 包括下列欄位：<ul><li>`segmentId`：設定檔將匯出到的區段ID。</li><li>`segmentNs`：指定的區段名稱空間 `segmentID`.</li><li>`status`：為提供狀態篩選器的字串陣列 `segmentID`. 依預設， `status` 將具有值 `["realized"]` 代表目前屬於區段的所有設定檔。 可能的值包括： `realized` 和 `exited`. 值 `realized` 表示設定檔符合區段的資格。 值 `exiting` 表示設定檔正在退出區段。</li></ul> |
+| `mergePolicy` | 合併已匯出資料的原則資訊。 |
+| `metrics.totalTime` | 表示執行匯出作業所花總時間的欄位。 |
+| `metrics.profileExportTime` | 表示設定檔匯出所需時間的欄位。 |
+| `page` | 請求之匯出工作分頁的相關資訊。 |
+| `link.next` | 匯出作業下一頁的連結。 |
 
-## 创建新导出作业 {#create}
+## 建立新的匯出工作 {#create}
 
-您可以通过向 `/export/jobs` 端点。
+您可以透過向以下專案發出POST請求來建立新的匯出作業： `/export/jobs` 端點。
 
 **API格式**
 
@@ -219,7 +219,7 @@ POST /export/jobs
 
 **请求**
 
-以下请求会创建一个新的导出作业，该作业由有效负载中提供的参数进行配置。
+以下請求會建立新的匯出作業，由承載中提供的引數設定。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
@@ -276,23 +276,23 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `fields` | 导出字段的列表，用逗号分隔。 如果留空，则将导出所有字段。 |
-| `mergePolicy` | 指定用于管理导出数据的合并策略。 当有多个区段要导出时，请包含此参数。 如果未提供，则导出将采用与给定区段相同的合并策略。 |
-| `filter` | 一个对象，根据下面列出的子属性，指定将按ID、鉴别时间或摄取时间包含在导出作业中的区段。 如果留空，则会导出所有数据。 |
-| `filter.segments` | 指定要导出的区段。 省略此值将导致导出所有用户档案的所有数据。 接受区段对象的数组，每个数组都包含以下字段：<ul><li>`segmentId`: **(使用时需要 `segments`)** 要导出的用户档案的区段ID。</li><li>`segmentNs` *（可选）* 给定的区段命名空间 `segmentID`.</li><li>`status` *（可选）* 字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
-| `filter.segmentQualificationTime` | 根据区段鉴别时间进行筛选。 可以提供开始时间和/或结束时间。 |
-| `filter.segmentQualificationTime.startTime` | 给定状态的区段ID的区段鉴别开始时间。 未提供，将不会对区段ID鉴别的开始时间进行过滤。 必须在 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
-| `filter.segmentQualificationTime.endTime` | 给定状态的区段ID的区段鉴别结束时间。 如果未提供，则不会对区段ID鉴别的结束时间进行过滤。 必须在 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
-| `filter.fromIngestTimestamp ` | 将导出的用户档案限制为仅包含在此时间戳后更新的用户档案。 必须在 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 <ul><li>`fromIngestTimestamp` 表示 **用户档案**，如果提供：包括所有合并的用户档案，其中合并的更新时间戳大于给定的时间戳。 支持 `greater_than` 操作数。</li><li>`fromIngestTimestamp` 表示 **事件**:在此时间戳之后摄取的所有事件都将导出与结果用户档案结果对应的事件。 这不是事件时间本身，而是事件的摄取时间。</li> |
-| `filter.emptyProfiles` | 一个布尔值，指示是否过滤空配置文件。 配置文件可以包含配置文件记录和/或ExperienceEvent记录。 没有用户档案记录且只有ExperienceEvent记录的用户档案称为“emptyProfiles”。 要导出配置文件存储中的所有配置文件（包括“emptyProfiles”），请将 `emptyProfiles` to `true`. 如果 `emptyProfiles` 设置为 `false`，则只会导出存储中具有用户档案记录的用户档案。 默认情况下，如果 `emptyProfiles` 属性时，只会导出包含用户档案记录的用户档案。 |
-| `additionalFields.eventList` | 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`fields`:控制要导出的字段。</li><li>`filter`:指定限制关联对象中包含的结果的标准。 预期导出所需的最小值，通常为日期。</li><li>`filter.fromIngestTimestamp`:将时间系列事件筛选为在提供的时间戳后摄取的事件。 这不是事件时间本身，而是事件的摄取时间。</li><li>`filter.toIngestTimestamp`:将时间戳过滤为在提供的时间戳之前摄取的时间戳。 这不是事件时间本身，而是事件的摄取时间。</li></ul> |
-| `destination` | **（必需）** 有关导出数据的信息：<ul><li>`datasetId`: **（必需）** 要导出数据的数据集的ID。</li><li>`segmentPerBatch`: *（可选）* 一个布尔值，如果未提供，则默认为“false”。 值“false”会将所有区段ID导出为单个批量ID。 值“true”会将一个区段ID导出为一个批量ID。 请注意，将值设置为“true”可能会影响批量导出性能。</li></ul> |
-| `schema.name` | **（必需）** 与要导出数据的数据集关联的架构的名称。 |
-| `evaluationInfo.segmentation` | *（可选）* 一个布尔值，如果未提供，则默认为 `false`. 值 `true` 表示需要在导出作业中完成分段。 |
+| `fields` | 匯出的欄位清單，以逗號分隔。 如果保留為空白，則會匯出所有欄位。 |
+| `mergePolicy` | 指定合併原則以控管匯出的資料。 匯出多個區段時包含此引數。 如果未提供，匯出將會採用與指定區段相同的合併原則。 |
+| `filter` | 此物件會根據下列子屬性，依ID、資格時間或擷取時間指定要包含在匯出作業中的區段。 如果保留為空白，將會匯出所有資料。 |
+| `filter.segments` | 指定要匯出的區段。 省略此值將導致所有設定檔中的所有資料被匯出。 接受區段物件的陣列，每個物件包含下列欄位：<ul><li>`segmentId`： **（使用時為必要） `segments`)** 要匯出的設定檔的區段ID。</li><li>`segmentNs` *（可選）* 指定的區段名稱空間 `segmentID`.</li><li>`status` *（可選）* 為提供狀態篩選器的字串陣列 `segmentID`. 依預設， `status` 將具有值 `["realized"]` 代表目前屬於區段的所有設定檔。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示設定檔符合區段的資格。 值 `exiting` 表示設定檔正在退出區段。</li></ul> |
+| `filter.segmentQualificationTime` | 根據區段資格時間進行篩選。 可以提供開始時間和/或結束時間。 |
+| `filter.segmentQualificationTime.startTime` | 指定狀態的區段ID的區段資格開始時間。 若未提供，區段ID資格的開始時間將沒有篩選器。 時間戳記必須提供於 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
+| `filter.segmentQualificationTime.endTime` | 指定狀態的區段ID的區段資格結束時間。 若未提供，區段ID資格的結束時間將沒有篩選器。 時間戳記必須提供於 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
+| `filter.fromIngestTimestamp ` | 限制匯出的設定檔僅包含在此時間戳記之後更新的設定檔。 時間戳記必須提供於 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 <ul><li>`fromIngestTimestamp` 的 **設定檔**，若提供：包含合併更新時間戳記大於指定時間戳記的所有合併設定檔。 支援 `greater_than` 運算元。</li><li>`fromIngestTimestamp` 的 **事件**：所有在此時間戳記之後擷取的事件，都會匯出與產生的設定檔結果相對應的結果。 這不是事件時間本身，而是事件的擷取時間。</li> |
+| `filter.emptyProfiles` | 布林值，指出是否篩選空白設定檔。 設定檔可包含設定檔記錄、ExperienceEvent記錄，或同時包含兩者。 沒有設定檔記錄且只有ExperienceEvent記錄的設定檔稱為「emptyProfiles」。 若要匯出設定檔存放區中的所有設定檔，包括「emptyProfiles」，請設定 `emptyProfiles` 至 `true`. 若 `emptyProfiles` 設為 `false`，只會匯出存放區中具有設定檔記錄的設定檔。 根據預設，如果 `emptyProfiles` 屬性不包括在內，只會匯出包含設定檔記錄的設定檔。 |
+| `additionalFields.eventList` | 提供下列一或多個設定，控制為子或關聯物件匯出的時間序列事件欄位：<ul><li>`fields`：控制要匯出的欄位。</li><li>`filter`：指定限制從關聯物件包含之結果的條件。 需要匯出所需的最小值，通常為日期。</li><li>`filter.fromIngestTimestamp`：將時間序列事件篩選為提供的時間戳記之後所擷取的事件。 這不是事件時間本身，而是事件的擷取時間。</li><li>`filter.toIngestTimestamp`：將時間戳記篩選為提供的時間戳記之前所擷取的時間戳記。 這不是事件時間本身，而是事件的擷取時間。</li></ul> |
+| `destination` | **（必要）** 有關匯出資料的資訊：<ul><li>`datasetId`： **（必要）** 要匯出資料的資料集ID。</li><li>`segmentPerBatch`： *（可選）* Boolean值，若未提供，預設值為「false」。 若值為「false」，則會將所有區段ID匯出至單一批次ID。 若值為「true」，會將一個區段ID匯出為一個批次ID。 請注意，將值設定為「true」可能會影響批次匯出效能。</li></ul> |
+| `schema.name` | **（必要）** 與要匯出資料的資料集相關聯的結構描述名稱。 |
+| `evaluationInfo.segmentation` | *（可選）* 布林值；若未提供，預設為 `false`. 值 `true` 指出需要對匯出作業執行分段。 |
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含新创建的导出作业的详细信息。
+成功的回應會傳回HTTP狀態200，其中包含您新建立的匯出工作的詳細資訊。
 
 ```json
 {
@@ -355,9 +355,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 系统生成的只读值，用于标识刚刚创建的导出作业。 |
+| `id` | 系統產生的唯讀值，用來識別剛建立的匯出作業。 |
 
-或者，如果 `destination.segmentPerBatch` 已设置为 `true`, `destination` 上面的对象将具有 `batches` 数组，如下所示：
+或者，如果 `destination.segmentPerBatch` 已設為 `true`，則 `destination` 上方的物件會有 `batches` 陣列，如下所示：
 
 ```json
     "destination": {
@@ -380,9 +380,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
     }
 ```
 
-## 检索特定导出作业 {#get}
+## 擷取特定的匯出作業 {#get}
 
-您可以通过向 `/export/jobs` 端点和提供您希望在请求路径中检索的导出作业的ID。
+您可以透過向以下專案發出GET請求，擷取有關特定匯出作業的詳細資訊： `/export/jobs` 端點，並提供您要在請求路徑中擷取的匯出作業ID。
 
 **API格式**
 
@@ -392,7 +392,7 @@ GET /export/jobs/{EXPORT_JOB_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{EXPORT_JOB_ID}` | 的 `id` 要访问的导出作业。 |
+| `{EXPORT_JOB_ID}` | 此 `id` 要存取之匯出作業的檔案。 |
 
 **请求**
 
@@ -406,7 +406,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关指定导出作业的详细信息。
+成功的回應會傳回HTTP狀態200，其中包含指定匯出工作的詳細資訊。
 
 ```json
 {
@@ -467,18 +467,18 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `destination` | 导出数据的目标信息：<ul><li>`datasetId`:导出数据的数据集的ID。</li><li>`segmentPerBatch`:一个布尔值，用于显示区段ID是否已合并。 值 `false` 表示所有区段ID都归为一个批处理ID。 值 `true` 表示将一个区段ID导出为一个批量ID。</li></ul> |
-| `fields` | 导出字段的列表，用逗号分隔。 |
-| `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`:要导出的用户档案的区段ID。</li><li>`segmentNs`:给定的区段命名空间 `segmentID`.</li><li>`status`:字符串数组，为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
-| `mergePolicy` | 导出数据的合并策略信息。 |
-| `metrics.totalTime` | 一个字段，用于指示导出作业运行所用的总时间。 |
-| `metrics.profileExportTime` | 一个字段，用于指示用户档案导出所用的时间。 |
-| `totalExportedProfileCounter` | 所有批次中导出的配置文件总数。 |
+| `destination` | 匯出資料的目的地資訊：<ul><li>`datasetId`：資料匯出所在的資料集ID。</li><li>`segmentPerBatch`：顯示是否合併區段ID的布林值。 值 `false` 表示所有區段ID都放入單一批次ID中。 值 `true` 表示會將一個區段ID匯出至一個批次ID。</li></ul> |
+| `fields` | 匯出的欄位清單，以逗號分隔。 |
+| `schema.name` | 與要匯出資料的資料集相關聯的結構描述名稱。 |
+| `filter.segments` | 匯出的區段。 包括下列欄位：<ul><li>`segmentId`：要匯出的設定檔的區段ID。</li><li>`segmentNs`：指定的區段名稱空間 `segmentID`.</li><li>`status`：為提供狀態篩選器的字串陣列 `segmentID`. 依預設， `status` 將具有值 `["realized"]` 代表目前屬於區段的所有設定檔。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示設定檔符合區段的資格。 值 `exiting` 表示設定檔正在退出區段。</li></ul> |
+| `mergePolicy` | 合併已匯出資料的原則資訊。 |
+| `metrics.totalTime` | 表示執行匯出作業所花總時間的欄位。 |
+| `metrics.profileExportTime` | 表示設定檔匯出所需時間的欄位。 |
+| `totalExportedProfileCounter` | 跨所有批次匯出的設定檔總數。 |
 
-## 取消或删除特定导出作业 {#delete}
+## 取消或刪除特定匯出工作 {#delete}
 
-您可以通过向 `/export/jobs` 端点和提供您希望在请求路径中删除的导出作业的ID。
+您可以透過向以下專案發出DELETE請求，請求刪除指定的匯出作業： `/export/jobs` 端點並在請求路徑中提供您要刪除之匯出作業的ID。
 
 **API格式**
 
@@ -488,7 +488,7 @@ DELETE /export/jobs/{EXPORT_JOB_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{EXPORT_JOB_ID}` | 的 `id` 要删除的导出作业。 |
+| `{EXPORT_JOB_ID}` | 此 `id` 要刪除的匯出作業的ID。 |
 
 **请求**
 
@@ -502,7 +502,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_I
 
 **响应**
 
-成功响应会返回HTTP状态204，并显示以下消息：
+成功的回應會傳回HTTP狀態204，並出現以下訊息：
 
 ```json
 {
@@ -513,4 +513,4 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_I
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解导出作业的工作方式。
+閱讀本指南後，您現在已能更清楚瞭解匯出工作的運作方式。

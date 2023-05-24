@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；主页；热门主题；流连接；创建流连接；API指南；教程；创建流连接；流摄取；摄取；
-title: 使用流服务API创建HTTP API流连接
-description: 本教程提供了有关如何使用流服务API，为原始和XDM数据使用HTTP API源创建流连接的步骤
+keywords: Experience Platform；首頁；熱門主題；串流連線；建立串流連線；API指南；教學課程；建立串流連線；串流擷取；擷取；
+title: 使用Flow Service API建立HTTP API串流連線
+description: 本教學課程提供如何使用Flow Service API使用HTTP API來源為原始資料和XDM資料建立串流連線的步驟
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
 source-git-commit: 7ff297973f951d7bfd940983bf4fa39dcc9f1542
 workflow-type: tm+mt
@@ -11,34 +11,34 @@ ht-degree: 2%
 ---
 
 
-# 使用创建HTTP API流连接 [!DNL Flow Service] API
+# 使用建立HTTP API串流連線 [!DNL Flow Service] API
 
-流量服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
+流量服務是用來從Adobe Experience Platform內的不同來源收集及集中客戶資料。 此服務提供可連線所有支援來源的使用者介面和RESTful API。
 
-本教程使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) 来指导您完成使用 [!DNL Flow Service] API。
+本教學課程使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) 逐步引導您使用建立串流連線的步驟 [!DNL Flow Service] API。
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南需要您實際瞭解下列Adobe Experience Platform元件：
 
-* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md):标准化框架， [!DNL Platform] 组织体验数据。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
+* [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織體驗資料。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，即時提供統一的消費者設定檔。
 
-此外，创建流连接需要您具有目标XDM架构和数据集。 要了解如何创建这些模板，请阅读 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md) 或 [流时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md).
+此外，建立串流連線需要您具備目標XDM結構描述和資料集。 若要瞭解如何建立這些內容，請閱讀以下教學課程： [串流記錄資料](../../../../../ingestion/tutorials/streaming-record-data.md) 或上的教學課程 [串流時間序列資料](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
-### 使用Platform API
+### 使用平台API
 
-有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
+如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
 
-## 创建基本连接
+## 建立基礎連線
 
-基本连接指定源，并包含使流与流摄取API兼容所需的信息。 创建基本连接时，您可以选择创建未验证和已验证的连接。
+基礎連線會指定來源，並包含讓流量與串流獲取API相容所需的資訊。 建立基本連線時，您可以選擇建立未驗證和已驗證的連線。
 
-### 未验证连接
+### 未驗證的連線
 
-非身份验证连接是您在要将数据流式传输到Platform时可以创建的标准流连接。
+未驗證的連線是標準串流連線，您可以在想要將資料串流到Platform時建立。
 
-要创建未经身份验证的基本连接，请向 `/connections` 端点，同时为连接、数据类型和HTTP API连接规范ID提供名称。 此ID为 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
+若要建立未驗證的基礎連線，請向以下連線發出POST要求： `/connections` 端點，同時提供連線的名稱、資料型別和HTTP API連線規格ID。 此ID為 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`.
 
 **API格式**
 
@@ -48,7 +48,7 @@ POST /flowservice/connections
 
 **请求**
 
-以下请求为HTTP API创建基连接。
+以下要求會建立HTTP API的基本連線。
 
 >[!BEGINTABS]
 
@@ -77,7 +77,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
   }'
 ```
 
->[!TAB 原始数据]
+>[!TAB 原始資料]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -106,15 +106,15 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基本连接的名称。 确保该名称具有描述性，因为您可以使用该名称查找有关基本连接的信息。 |
-| `description` | （可选）可包含的属性，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 与HTTP API对应的连接规范ID。 此ID为 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`. |
-| `auth.params.dataType` | 流连接的数据类型。 支持的值包括： `xdm` 和 `raw`. |
-| `auth.params.name` | 要创建的流连接的名称。 |
+| `name` | 基礎連線的名稱。 請確定名稱是描述性的，因為您可以使用此名稱來查閱基礎連線的資訊。 |
+| `description` | （選用）您可以包含的屬性，以提供基礎連線的詳細資訊。 |
+| `connectionSpec.id` | 與HTTP API對應的連線規格ID。 此ID為 `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`. |
+| `auth.params.dataType` | 串流連線的資料型別。 支援的值包括： `xdm` 和 `raw`. |
+| `auth.params.name` | 您要建立的串流連線名稱。 |
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建连接的详细信息，包括其唯一标识符(`id`)。
+成功回應會傳回HTTP狀態201，其中包含新建立連線的詳細資訊，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -125,14 +125,14 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 的 `id` 新建的基本连接。 |
-| `etag` | 分配给连接的标识符，用于指定基本连接的版本。 |
+| `id` | 此 `id` 建立的基礎連線的ID。 |
+| `etag` | 指定給連線的識別碼，指定基本連線的版本。 |
 
-### 已验证的连接
+### 已驗證的連線
 
-当您需要区分来自可信来源和不可信来源的记录时，应使用经过身份验证的连接。 要通过个人身份信息(PII)发送信息的用户，应在将信息流式传输到Platform时创建经过身份验证的连接。
+當您需要區分來自受信任和不受信任來源的記錄時，應使用已驗證的連線。 想要傳送個人識別資訊(PII)資訊的使用者，應在將資訊串流至Platform時建立已驗證的連線。
 
-要创建经过身份验证的基连接，您必须包括 `authenticationRequired` 参数，将其值指定为 `true`. 在此步骤中，您还可以为已验证的基连接提供源ID。 此参数是可选的，将使用与 `name` 属性（如果未提供）。
+若要建立已驗證的基礎連線，您必須包含 `authenticationRequired` 請求中的引數，並將其值指定為 `true`. 在此步驟中，您也可以提供已驗證基本連線的來源ID。 此引數為選用引數，將使用與相同的值 `name` 屬性（若未提供）。
 
 
 **API格式**
@@ -143,7 +143,7 @@ POST /flowservice/connections
 
 **请求**
 
-以下请求会为HTTP API创建经过身份验证的基连接。
+以下要求會為HTTP API建立已驗證的基本連線。
 
 >[!BEGINTABS]
 
@@ -175,7 +175,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
  }
 ```
 
->[!TAB 原始数据]
+>[!TAB 原始資料]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -207,12 +207,12 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.sourceId` | 可在创建经过身份验证的基本连接时使用的其他标识符。 此参数是可选的，将使用与 `name` 属性（如果未提供）。 |
-| `auth.params.authenticationRequired` | 此参数指定流连接是否需要身份验证。 如果 `authenticationRequired` 设置为 `true` 然后，必须为流连接提供身份验证。 如果 `authenticationRequired` 设置为 `false` 则不需要进行身份验证。 |
+| `auth.params.sourceId` | 建立已驗證的基礎連線時，可以使用的其他識別碼。 此引數為選用引數，將使用與相同的值 `name` 屬性（若未提供）。 |
+| `auth.params.authenticationRequired` | 此引數會指定串流連線是否需要驗證。 若 `authenticationRequired` 設為 `true` 則必須為串流連線提供驗證。 若 `authenticationRequired` 設為 `false` 則不需要驗證。 |
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建连接的详细信息，包括其唯一标识符(`id`)。
+成功回應會傳回HTTP狀態201，其中包含新建立連線的詳細資訊，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -221,9 +221,9 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 }
 ```
 
-## 获取流端点URL
+## 取得串流端點URL
 
-创建基本连接后，您现在可以检索流端点URL。
+在建立基本連線後，您現在可以擷取串流端點URL。
 
 **API格式**
 
@@ -233,7 +233,7 @@ GET /flowservice/connections/{BASE_CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 的 `id` 之前创建的连接的值。 |
+| `{BASE_CONNECTION_ID}` | 此 `id` 您先前建立之連線的值。 |
 
 **请求**
 
@@ -247,7 +247,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{B
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关所请求连接的详细信息。 流端点URL将自动通过该连接创建，并可使用 `inletUrl` 值。
+成功的回應會傳回HTTP狀態200，其中包含請求連線的詳細資訊。 串流端點URL會使用連線自動建立，並可使用 `inletUrl` 值。
 
 ```json
 {
@@ -288,9 +288,9 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{B
 }
 ```
 
-## 创建源连接 {#source}
+## 建立來源連線 {#source}
 
-要创建源连接，请向 `/sourceConnections` 端点。
+POST若要建立來源連線，請向 `/sourceConnections` 端點並提供您的基本連線ID。
 
 **API格式**
 
@@ -321,7 +321,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建的源连接的详细信息，包括其唯一标识符(`id`)。
+成功的回應會傳回HTTP狀態201，其中包含新建立的來源連線的詳細資料，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -330,23 +330,23 @@ curl -X POST \
 }
 ```
 
-## 创建目标XDM架构 {#target-schema}
+## 建立目標XDM結構描述 {#target-schema}
 
-要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。
+為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 然後，目標結構描述會用於建立包含來源資料的Platform資料集。
 
-通过对 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+可透過對以下專案執行POST請求來建立目標XDM結構描述： [結構描述登入API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](../../../../../xdm/api/schemas.md).
+如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](../../../../../xdm/api/schemas.md).
 
-### 创建目标数据集 {#target-dataset}
+### 建立目標資料集 {#target-dataset}
 
-通过对 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
+您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在裝載中提供目標結構描述的ID。
 
-有关如何创建目标数据集的详细步骤，请参阅 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
+如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](../../../../../catalog/api/create-dataset.md).
 
-## 创建目标连接 {#target}
+## 建立目標連線 {#target}
 
-目标连接表示所摄取数据所登陆目标的连接。 要创建目标连接，请向发出POST请求 `/targetConnections` 为目标数据集和目标XDM架构提供ID时，不会将ID与ID关联。 在此步骤中，您还必须提供数据湖连接规范ID。 此ID为 `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目標連線代表所擷取資料登陸目的地之間的連線。 若要建立Target連線，請向發出POST要求 `/targetConnections` 為您的目標資料集和目標XDM結構描述提供ID時。 在此步驟中，您也必須提供Data Lake連線規格ID。 此ID為 `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API格式**
 
@@ -385,7 +385,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建的目标连接的详细信息，包括其唯一标识符(`id`)。
+成功回應會傳回HTTP狀態201，其中包含新建立的目標連線的詳細資訊，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -394,11 +394,11 @@ curl -X POST \
 }
 ```
 
-## 创建映射 {#mapping}
+## 建立對應 {#mapping}
 
-要将源数据摄取到目标数据集，必须先将其映射到目标数据集所附加的目标架构。
+為了將來源資料內嵌到目標資料集中，必須先將其對應到目標資料集所遵守的目標結構描述。
 
-要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM模式时 `$id` 以及要创建的映射集的详细信息。
+若要建立對應集，請向以下發出POST請求： `mappingSets` 的端點 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供您的目標XDM結構描述時 `$id` 以及要建立的對應集的詳細資訊。
 
 **API格式**
 
@@ -439,11 +439,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `xdmSchema` | 的 `$id` 目标XDM架构的URL。 |
+| `xdmSchema` | 此 `$id` 目標XDM結構描述的。 |
 
 **响应**
 
-成功的响应会返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要此ID才能创建数据流。
+成功回應會傳回新建立對應的詳細資料，包括其唯一識別碼(`id`)。 此ID在後續步驟中是建立資料流的必要專案。
 
 ```json
 {
@@ -459,9 +459,9 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 
-## 创建数据流
+## 建立資料流
 
-创建源连接和目标连接后，您现在可以创建数据流。 数据流负责从源中调度和收集数据。 您可以通过执行对的POST请求来创建数据流 `/flows` 端点。
+建立來源和目標連線後，您現在可以建立資料流。 資料流負責從來源排程及收集資料。 您可以透過對執行POST請求來建立資料流 `/flows` 端點。
 
 **API格式**
 
@@ -473,9 +473,9 @@ POST /flows
 
 >[!BEGINTABS]
 
->[!TAB 无转换]
+>[!TAB 不轉換]
 
-以下请求会为没有数据转换的HTTP API创建流数据流。
+以下請求會為HTTP API建立串流資料流，而不進行資料轉換。
 
 ```shell
 curl -X POST \
@@ -501,11 +501,11 @@ curl -X POST \
     }'
 ```
 
->[!TAB 具有转换]
+>[!TAB 使用轉換]
 
-以下请求会为HTTP API创建一个流数据流，并且映射转换已应用于您的数据。
+以下請求會為HTTP API建立串流資料流，並將對應轉換套用至您的資料。
 
-创建包含转换的数据流时， `name` 参数无法更改。 此值必须始终设置为 `Mapping`.
+建立包含轉換的資料流時， `name` 無法變更引數。 此值必須一律設為 `Mapping`.
 
 ```shell
 curl -X POST \
@@ -544,16 +544,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 数据流的名称。 确保数据流的名称具有描述性，因为您可以使用该名称查找有关数据流的信息。 |
-| `description` | （可选）可包含的属性，用于提供有关数据流的更多信息。 |
-| `flowSpec.id` | 的流量规范ID [!DNL HTTP API]. 要创建包含转换的数据流，您必须使用  `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. 要创建不带转换的数据流，请使用 `d8a6f005-7eaf-4153-983e-e8574508b877`. |
-| `sourceConnectionIds` | 的 [源连接ID](#source) 在之前的步骤中检索。 |
-| `targetConnectionIds` | 的 [目标连接ID](#target) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 的 [映射ID](#mapping) 在之前的步骤中检索。 |
+| `name` | 資料流的名稱。 確保資料流的名稱是描述性的，因為您可以使用此名稱來查閱資料流上的資訊。 |
+| `description` | （選用）可包含的屬性，可提供資料流的詳細資訊。 |
+| `flowSpec.id` | 的流程規格ID [!DNL HTTP API]. 若要建立包含轉換的資料流，您必須使用  `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. 若要在不轉換的情況下建立資料流，請使用 `d8a6f005-7eaf-4153-983e-e8574508b877`. |
+| `sourceConnectionIds` | 此 [來源連線ID](#source) 已在先前步驟中擷取。 |
+| `targetConnectionIds` | 此 [目標連線ID](#target) 已在先前步驟中擷取。 |
+| `transformations.params.mappingId` | 此 [對應ID](#mapping) 已在先前步驟中擷取。 |
 
 **响应**
 
-成功响应会返回HTTP状态201，其中包含新创建的数据流的详细信息，包括其唯一标识符(`id`)。
+成功的回應會傳回HTTP狀態201，其中包含您新建立資料流的詳細資訊，包括其唯一識別碼(`id`)。
 
 ```json
 {
@@ -563,9 +563,9 @@ curl -X POST \
 ```
 
 
-## 要摄取到平台的帖子数据 {#ingest-data}
+## 張貼要擷取至平台的資料 {#ingest-data}
 
-现在，您已创建流程，接下来可以将JSON消息发送到之前创建的流端点。
+現在您已建立流程，可以將JSON訊息傳送至您先前建立的串流端點。
 
 **API格式**
 
@@ -575,7 +575,7 @@ POST /collection/{INLET_URL}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{INLET_URL}` | 您的流端点URL。 您可以通过向 `/connections` 端点。 |
+| `{INLET_URL}` | 您的串流端點URL。 您可以向以下網址發出GET要求來擷取此URL： `/connections` 端點並提供您的基本連線ID。 |
 
 **请求**
 
@@ -622,7 +622,7 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
       }'
 ```
 
->[!TAB 原始数据]
+>[!TAB 原始資料]
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
@@ -648,7 +648,7 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含新摄取的信息的详细信息。
+成功的回應會傳回HTTP狀態200以及新擷取的資訊的詳細資訊。
 
 ```json
 {
@@ -660,26 +660,26 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 之前创建的流连接的ID。 |
-| `xactionId` | 您刚刚发送的记录在服务器端生成的唯一标识符。 此ID可帮助Adobe通过各种系统和调试来跟踪此记录的生命周期。 |
-| `receivedTimeMs` | 时间戳（以毫秒为单位），显示收到请求的时间。 |
+| `{BASE_CONNECTION_ID}` | 先前建立的串流連線的ID。 |
+| `xactionId` | 伺服器端為您剛傳送的記錄產生的唯一識別碼。 此ID有助於Adobe透過各種系統和偵錯追蹤此記錄的生命週期。 |
+| `receivedTimeMs` | 顯示收到要求的時間戳記（紀元，以毫秒為單位）。 |
 
 
 ## 后续步骤
 
-在本教程之后，您创建了一个流HTTP连接，使您能够使用流端点将数据摄取到平台。 有关在UI中创建流连接的说明，请阅读 [创建流连接教程](../../../ui/create/streaming/http.md).
+依照本教學課程所述，您已建立串流HTTP連線，讓您能夠使用串流端點將資料擷取到Platform。 如需在UI中建立串流連線的指示，請參閱 [建立串流連線教學課程](../../../ui/create/streaming/http.md).
 
-要了解如何将数据流式传输到Platform，请阅读 [流时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md).
+若要瞭解如何將資料串流到Platform，請閱讀以下任一教學課程： [串流時間序列資料](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或上的教學課程 [串流記錄資料](../../../../../ingestion/tutorials/streaming-record-data.md).
 
 ## 附录
 
-本节提供了有关使用API创建流连接的补充信息。
+本節提供有關使用API建立串流連線的補充資訊。
 
-### 向经过验证的流连接发送消息
+### 傳送訊息至已驗證的串流連線
 
-如果流连接启用了身份验证，则将需要客户端添加 `Authorization` 头。
+如果串流連線已啟用驗證，使用者端必須新增 `Authorization` 標頭做為其請求的。
 
-如果 `Authorization` 标头不存在，或者发送了无效/过期的访问令牌，则将返回HTTP 401未授权响应，其响应类似于以下：
+如果 `Authorization` 標頭不存在或傳送了無效/過期的存取Token，則會傳回HTTP 401未授權的回應，並具有類似回應，如下所示：
 
 **响应**
 

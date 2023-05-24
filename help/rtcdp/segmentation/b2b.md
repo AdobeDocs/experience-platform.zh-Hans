@@ -1,6 +1,6 @@
 ---
-title: Real-time Customer Data Platform B2B版本的分段用例
-description: 各种可用的Adobe Real-time Customer Data Platform B2B版本用例的概述。
+title: Real-time Customer Data Platform B2B版本的分段使用案例
+description: 各種可用Adobe Real-time Customer Data Platform B2B版本使用案例的概觀。
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
 source-git-commit: b436aeb8a8628d9b481041be518c1113fb54c342
 workflow-type: tm+mt
@@ -9,133 +9,133 @@ ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B版本的分段用例
+# Real-time Customer Data Platform B2B版本的分段使用案例
 
-本文档提供了Adobe Real-time Customer Data Platform B2B版本中的区段定义示例，以及针对常见B2B用例如何组合不同类型的属性。 要了解目标如何适合您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
+本檔案提供Adobe Real-time Customer Data Platform B2B Edition中的區段定義範例，並說明如何針對常見B2B使用案例來合併不同型別的屬性。 若要瞭解目的地如何適合您的B2B工作流程，請參閱 [端到端教學課程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
 >[!NOTE]
 >
->这些分段用例所需的属性仅适用于Real-time Customer Data Platform B2B版本客户。 如果您没有使用Real-time Customer Data Platform B2B版本，请参阅 [分段概述](./segmentation-overview.md) 而是。
+>這些細分使用案例所需的屬性僅供Real-time Customer Data Platform B2B Edition客戶使用。 如果您沒有使用Real-time Customer Data Platform B2B版本，請參閱 [區段概述](./segmentation-overview.md) 而非。
 
 ## 先决条件 {#prerequisites}
 
-必须先完成以下步骤，然后才能对B2B类使用分段属性：
+您必須先完成下列步驟，才能對B2B類別使用分段屬性：
 
-1. 创建使用B2B类的架构。 B2B版本类包括Account、Campaign、Opportunity、Marketing List等。 有关以下项的信息 [如何设置与B2B类一起使用的架构](../schemas/b2b.md) 请参阅架构文档。
-1. 在体验数据模型(XDM) B2B架构之间创建关系。 基于B2B版本属性的区段需要类之间的关系，以充分利用扩展的B2B分段功能。 请参阅相关文档 [如何定义两个B2B架构之间的关系](../../xdm/tutorials/relationship-b2b.md) 了解更多信息。
-1. 使用基于B2B架构的数据集来引入数据。 请参阅源文档，了解 [有关如何摄取数据的信息](../../sources/connectors/adobe-applications/marketo/marketo.md).
-1. 阅读 [区段生成器用户指南](../../segmentation/ui/segment-builder.md) 以获取有关如何构建区段的更详细指南。
+1. 建立使用B2B類別的結構描述。 B2B版本類別包括Account、Campaign、Opportunity、Marketing List等。 有關以下專案的資訊： [如何設定與B2B類別一起使用的結構描述](../schemas/b2b.md) 請參閱結構描述檔案。
+1. 在您的Experience Data Model (XDM) B2B結構描述之間建立關係。 以B2B版本屬性為基礎的區段需要類別之間的關係，才能完全使用擴充的B2B區段功能。 請參閱以下說明檔案： [如何定義兩個B2B結構描述之間的關係](../../xdm/tutorials/relationship-b2b.md) 以取得詳細資訊。
+1. 使用根據您的B2B結構描述的資料集來擷取資料。 請參閱來原始檔，瞭解 [有關如何內嵌資料的資訊](../../sources/connectors/adobe-applications/marketo/marketo.md).
+1. 閱讀 [區段產生器使用手冊](../../segmentation/ui/segment-builder.md) 以取得如何建立區段的詳細指引。
 
-在满足这些要求后，您就能够为常见的B2B用例组合这些属性。
+滿足這些需求後，您就可以針對常見的B2B使用案例來組合這些屬性。
 
 ## 快速入门 {#getting-started}
 
-一旦B2B类的合并架构建立了关系并已用于摄取数据，则其属性在区段生成器的左边栏中可用。
+一旦B2B類別的聯合結構描述建立關係並用於擷取資料後，其屬性即可在區段產生器的左側邊欄中使用。
 
-B2B类及其属性会附加 `B2B` 区段工作区中的标签，以区分它们与Real-time Customer Data Platform中可用的标准区段。
+B2B類別及其屬性會附加 `B2B` 區段工作區中的標籤，以區隔Real-time Customer Data Platform中的標準區段。
 
-为了有效地为B2B用例创建区段，请务必熟悉架构并了解数据模型的外观。 了解数据从一个数据对象移动到另一个数据对象的路径也很有用。
+為了有效建立B2B使用案例的區段，請務必熟悉結構並瞭解資料模型外觀。 瞭解資料從一個資料物件前往另一個資料物件的路徑也很有用。
 
-下图说明了Real-Time CDP B2B版本中可用的B2B类之间的关系。
+下圖說明Real-Time CDP B2B版本中可用的B2B類別之間的關係。
 
-![B2B类ERD](../assets/segmentation/b2b-classes.png)
+![B2B類別ERD](../assets/segmentation/b2b-classes.png)
 
-由于数据模型可能很复杂，因此您可以使用Platform UI查看数据模型的更详细的可视化表示形式，以帮助查找用例的相关属性。 要开始配置，请转到Platform UI，然后在左侧导航中选择架构。
+由於您的資料模型可能很複雜，因此您可以使用Platform UI來檢視資料模型的更詳細視覺化表示法，以協助尋找使用案例的相關屬性。 若要開始，請前往Platform UI，然後在左側導覽中選取結構描述。
 
-从可用列表中选择相应的架构，然后从中选择相应的关系 [!UICONTROL 合成] 侧边栏。 在以下示例中，选择“人员”关系可揭示当前架构中的哪个属性引用了相关的“人员”架构（如果它是关系中的源架构），或被“人员”架构引用（如果它是关系中的引用架构）。
+從可用清單中選取適當的結構描述，然後從 [!UICONTROL 組合] 側邊欄。 在以下範例中，選取「Person」關係會顯示目前結構描述中哪個屬性會參考相關的「Person」結構描述（如果它是關係中的來源結構描述），或被「Person」結構描述參考（如果它是關係中的參考結構描述）。
 
-![在架构工作区中使用人员关系的源密钥示例](../assets/segmentation/source-key-schema-relationship-example.png)
+![來源金鑰在結構描述工作區中使用人員關係的範例](../assets/segmentation/source-key-schema-relationship-example.png)
 
-此关系通过使用反映在区段生成器中 `Key` 文件夹，如下图所示。
+此關係會透過使用的反映在區段產生器中 `Key` 資料夾，如下圖所示。
 
-![在分段工作区中使用区段生成器的源键示例](../assets/segmentation/source-key-segmentation-example.png)
+![在區段工作區中使用區段產生器的來源索引鍵範例](../assets/segmentation/source-key-segmentation-example.png)
 
-请参阅 [Real-time Customer Data Platform B2B版本文档中的架构](../schemas/b2b.md) 有关可用B2B类的详细信息。
+請參閱 [Real-time Customer Data Platform B2B版本檔案中的結構描述](../schemas/b2b.md) 以取得可用B2B類別的詳細資訊。
 
-以下用例提供了有关使用哪些类在不同架构之间建立关系以实现这些结果的信息。 这些示例可用于帮助您创建自己的区段。
+以下使用案例提供相關資訊，說明使用哪些類別在不同結構描述之間建立關係來達成這些結果。 這些範例可用來協助您建立自己的區段。
 
-## 不同分段用例的示例 {#use-cases}
+## 不同區段使用案例的範例 {#use-cases}
 
-以下用例可用于B2B版本的分段。 每个示例都提供了区段功能的说明以及用于创建它们的类的说明。 提供的图像突出显示 [!UICONTROL 属性] 反映架构结构的侧边栏。 此 [!UICONTROL 区段属性] 右侧部分包含区段属性的书面细分。
+下列使用案例可用於B2B版本的分段。 每個範例都會提供區段用途的描述，以及用來建立區段的類別描述。 提供的影像會反白顯示 [!UICONTROL 屬性] 反映結構描述的側邊欄。 此 [!UICONTROL 區段屬性] 右側區段包含區段屬性的書面劃分。
 
-### 示例1：查找B2B机会的“决策者” {#find-decision-maker}
+### 範例1：尋找B2B機會的「決策者」 {#find-decision-maker}
 
-查找所有作为任何机会的“决策者”的人员。 此区段需要 [!UICONTROL XDM个人资料] 类和 [!UICONTROL XDM业务机会人员关系] 类。
+尋找任何機會的「決策者」所有人員。 此區段需要 [!UICONTROL XDM個別設定檔] 類別與 [!UICONTROL XDM商業機會個人關係] 類別。
 
-![显示示例1设置的UI](../assets/segmentation/example-1.png)
+![顯示範例1設定的UI](../assets/segmentation/example-1.png)
 
-### 示例2：查找分配给超过特定美元金额的业务机会的B2B配置文件 {#find-opportunities-amount}
+### 範例2：搜尋指定給超過特定金額之商機的B2B設定檔 {#find-opportunities-amount}
 
-查找直接分配到任何商机金额超过给定金额（100万美元）的商机的所有人员。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM业务机会人员关系] 类，和 [!UICONTROL XDM商业机会] 类。
+尋找直接指派給任何商機金額超過指定金額（100萬美元）之商機的所有人員。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業機會個人關係] 類別，以及 [!UICONTROL XDM商業機會] 類別。
 
-![显示示例2设置的UI](../assets/segmentation/example-2.png)
+![顯示範例2設定的UI](../assets/segmentation/example-2.png)
 
-### 实例3：按地点查找分配给业务机会的B2B配置文件 {#find-opportunities-location}
+### 範例3：依地點搜尋指定給商機的B2B設定檔 {#find-opportunities-location}
 
-查找直接分配到客户位于给定位置（加拿大）的任何业务机会的所有人员。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM商业机会] 类，和 [!UICONTROL XDM商业帐户] 类。
+尋找直接指派給客戶位於指定位置（加拿大）之任何商機的所有人員。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業機會個人關係] 類別， [!UICONTROL XDM商業機會] 類別，以及 [!UICONTROL XDM商業帳戶] 類別。
 
-![显示示例3设置的UI](../assets/segmentation/example-3.png)
+![顯示範例3設定的UI](../assets/segmentation/example-3.png)
 
-### 示例4：按行业和浏览行为查找机会的“决策者” {#find-industry-browsing-behavior}
+### 範例4：依產業和瀏覽行為尋找商機的「決策者」 {#find-industry-browsing-behavior}
 
-查找客户处于“金融”行业的任何机会的“决策者”并在过去三天中访问过定价页面的所有人员。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM商业机会] 类，和 [!UICONTROL XDM商业帐户] 类，和 [!UICONTROL XDM ExperienceEvent] 类。
+尋找客戶屬於「金融」產業的任何機會的「決策者」所有人員，並在過去三天中造訪定價頁面。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業機會個人關係] 類別， [!UICONTROL XDM商業機會] 類別，以及 [!UICONTROL XDM商業帳戶] 類別，以及 [!UICONTROL XDM ExperienceEvent] 類別。
 
-![显示示例4设置的UI](../assets/segmentation/example-4.png)
+![顯示範例4設定的UI](../assets/segmentation/example-4.png)
 
-### 示例5：按部门名称和业务机会金额查找业务机会的B2B配置文件 {#find-department-opportunity-amount}
+### 範例5：依部門名稱與商機金額搜尋商機的B2B設定檔 {#find-department-opportunity-amount}
 
-查找所有在人力资源(HR)部门工作并具有至少一个与给定金额（100万美元）或以上金额相当的未完成机会的帐户的人员。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM商业帐户] 类，和 [!UICONTROL XDM商业机会] 类。
+尋找在人力資源(HR)部門工作的所有人員，以及擁有至少一個與指定金額（100萬美元）或以上價值相符的未結機會的任何帳戶。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業帳戶] 類別，以及 [!UICONTROL XDM商業機會] 類別。
 
-![显示示例5设置的UI](../assets/segmentation/example-5.png)
+![顯示範例5設定的UI](../assets/segmentation/example-5.png)
 
-### 示例6：按职称和年度帐户收入查找B2B用户档案 {#find-by-job-title-and-revenue}
+### 範例6：依職稱和年度帳戶收入搜尋B2B設定檔 {#find-by-job-title-and-revenue}
 
-查找所有其职衔是副总裁并且拥有任何账户具有给定金额（1亿美元）或以上年收入的人员，并且在上个月至少访问过3次定价页面。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM商业帐户] 类，和 [!UICONTROL XDM ExperienceEvent] 类。
+尋找所有職銜為「副總裁」且帳戶年收入達到或超過指定金額（1億美元）的人，並在上個月至少造訪定價頁面3次的人。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業帳戶] 類別，以及 [!UICONTROL XDM ExperienceEvent] 類別。
 
-![显示示例6设置的UI](../assets/segmentation/example-6.png)
+![顯示範例6設定的UI](../assets/segmentation/example-6.png)
 
-### 示例7：按机会状态和浏览行为查找“决策者” {#find-by-opportunity-status-and-browsing-behavior}
+### 範例7：依機會狀態和瀏覽行為尋找「決策者」 {#find-by-opportunity-status-and-browsing-behavior}
 
-查找所有作为任何已结束的失去的机会的“决策者”的人员，并在上周访问过定价页面。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM商业机会] 类，和 [!UICONTROL XDM ExperienceEvent] 类。
+尋找任何已結束但失去的機會的「決策者」所有人員，並在上週造訪定價頁面。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業機會個人關係] 類別， [!UICONTROL XDM商業機會] 類別，以及 [!UICONTROL XDM ExperienceEvent] 類別。
 
-![显示示例7设置的UI](../assets/segmentation/example-7.png)
+![顯示範例7設定的UI](../assets/segmentation/example-7.png)
 
-### 示例8：使用相关帐户扩大分段范围 {#related-accounts}
+### 範例8：使用相關帳戶來擴大細分範圍 {#related-accounts}
 
-查找在人力资源(HR)部门工作并与任何帐户相关的所有人员 *或任何帐户的相关帐户* 至少有一个与给定金额（100万美元）或以上相同的未完成机会。 此区段需要 [!UICONTROL XDM个人资料] 类， [!UICONTROL XDM商业帐户] 类，和 [!UICONTROL XDM商业机会] 类。
+尋找在人力資源(HR)部門工作且與任何帳戶相關的所有人員 *或任何帳戶的相關帳戶* 至少有一個價值等於或大於指定金額（100萬美元）的未完成機會。 此區段需要 [!UICONTROL XDM個別設定檔] 類別， [!UICONTROL XDM商業帳戶] 類別，以及 [!UICONTROL XDM商業機會] 類別。
 
-![显示相关帐户分段的UI](../assets/segmentation/example-8.png)
+![顯示相關帳戶區段的UI](../assets/segmentation/example-8.png)
 
-### 示例9：使用潜在客户得分和/或客户得分来限定用户档案 {#account-scoring}
+### 範例9：使用潛在客戶分數和/或帳戶分數來限定個人檔案 {#account-scoring}
 
-查找商机得分超过80的所有用户档案。
+尋找潛在客戶分數超過80的所有設定檔。
 
-![显示预测性商机和帐户评分分段的UI](../assets/segmentation/example-9.png)
+![顯示預測性銷售線索和帳戶評分分段的UI](../assets/segmentation/example-9.png)
 
-### 示例10：查找与父组织收入超过特定美元金额的帐户关联的B2B配置文件 {#find-parent-org-amount}
+### 範例10：搜尋與帳戶相關聯的B2B設定檔，其父組織的收入超過特定美元金額 {#find-parent-org-amount}
 
-查找与父组织收入超过给定金额($100,000,000)的帐户关联的所有人员。
+尋找與上層組織的收入超過指定金額($100,000,000)的帳戶相關聯的所有人員。
 
-![显示分段父组织的UI](../assets/segmentation/example-10.png)
+![顯示細分父級組織的UI](../assets/segmentation/example-10.png)
 
-### 示例11：按职务和具有有效关系的帐户名查找B2B配置文件 {#find-by-job-title-and-account-name}
+### 範例11：依職稱與帳戶名稱搜尋具有有效關係的B2B設定檔 {#find-by-job-title-and-account-name}
 
-查找客户“Acme”（帐户关系为“活动”）上所有身为“经理”的人员。
+尋找帳戶「Acme」（帳戶關係為「作用中」）上所有身為「經理」的人。
 
-![显示分段父组织的UI](../assets/segmentation/example-11.png)
+![顯示細分父級組織的UI](../assets/segmentation/example-11.png)
 
-### 示例12：查找actualCost超过budgetedCost的营销活动所定向的B2B配置文件 {#find-actualcost-exceed-budgetcost}
+### 範例12：尋找actualCost超過budgetedCost之行銷活動的目標B2B設定檔 {#find-actualcost-exceed-budgetcost}
 
-查找actualCost超过budgetedCost的营销活动所针对的所有人员。
+尋找actualCost超過budgetedCost之行銷活動的所有目標人員。
 
-![显示分段父组织的UI](../assets/segmentation/example-12.png)
+![顯示細分父級組織的UI](../assets/segmentation/example-12.png)
 
-### 示例13：查找属于Marketo静态列表的B2B配置文件和isDeleted=false {#find-marketo-static-list}
+### 範例13：尋找屬於Marketo靜態清單的B2B設定檔和isDeleted=false {#find-marketo-static-list}
 
-查找所有属于Marketo静态列表“周年纪念用户”的人员，其中isDeleted=false。
+尋找屬於Marketo靜態清單「週年紀念使用者」的所有人員，其中isDeleted=false。
 
-![显示分段父组织的UI](../assets/segmentation/example-13.png)
+![顯示細分父級組織的UI](../assets/segmentation/example-13.png)
 
 ## 后续步骤 {#next-steps}
 
-阅读本概述后，您现在了解了使用Real-Time CDP B2B版本时可用的分段可能性。 欲知分段服务的详情，请阅读 [分段文档](../../segmentation/home.md).
+閱讀本概述後，您現在瞭解了使用Real-Time CDP B2B版本時可用的分段可能性。 如需Segmentation Service的詳細資訊，請參閱 [區段檔案](../../segmentation/home.md).

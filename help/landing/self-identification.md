@@ -1,95 +1,96 @@
 ---
-title: 使用自我识别调查构建您的Experience Platform个人用户档案
-description: 了解如何使用自我识别调查UI根据您的工作职能和相关目标接收相关内容。
-badge: "Beta"
-source-git-commit: 30fdad7f84a49a8e0db6fdf6571d1742de53ac2d
+title: 使用自我識別調查來建置您的Experience Platform個人設定檔
+description: 瞭解如何使用自我識別調查UI，根據您的工作職能和相關目標接收相關內容。
+badge: Beta
+exl-id: 80b3f55f-1eab-4a99-be75-49bd091f9739
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 1%
 
 ---
 
-# 使用自我识别调查构建您的Experience Platform个人用户档案
+# 使用自我識別調查來建置您的Experience Platform個人設定檔
 
 >[!NOTE]
 >
->自我识别调查是测试版。 其功能和文档可能会发生更改。
+>自我識別問卷為測試版。 其功能和檔案可能會有所變更。
 
-自我识别调查是在Adobe Experience Platform用户界面主页上提供的一份简短调查问卷。 您可以填写调查以提供有关工作职能和一般目标的信息。 然后，可使用此信息更好地调整产品内指南，并最终提供与您的目标更相关的内容。
+自我識別問卷是提供在Adobe Experience Platform UI首頁的簡短問卷。 您可以填寫問卷以提供工作職能與一般目標的相關資訊。 然後，這些資訊會用於更妥善地協調產品內指南，最終提供更符合您目標的內容。
 
-本文档提供了有关如何使用Platform UI中的自身识别调查来根据您的目标和任务接收相关内容的信息，以及如何使用UI重新配置您的个人配置文件属性的信息。
+本檔案提供如何在Platform UI中使用自我識別調查，根據您的目標和任務接收相關內容，以及如何使用UI重新設定個人設定檔屬性的相關資訊。
 
-要了解有关Adobe Experience Platform的更多信息，请阅读 [Experience Platform概述](home.md).
+若要進一步瞭解Adobe Experience Platform，請閱讀 [Experience Platform概觀](home.md).
 
-## 平台UI中的自识别调查
+## Platform UI中的自我識別調查
 
-登录时，Platform UI主页右下方会显示自识别调查提示。
+登入後，自我識別調查提示會顯示在Platform UI首頁的右下方。
 
-要开始调查，请选择 **[!UICONTROL 开始]**.
+若要開始問卷調查，請選取 **[!UICONTROL 開始]**.
 
-![Platform UI主页，带有Toast消息，提示您启动自识别调查。](./images/survey/survey-prompt.png)
+![Platform UI首頁，其中包含Toast訊息，提示您開始自我識別調查。](./images/survey/survey-prompt.png)
 
-对于第一个调查问题，请选择最能描述您工作的函数。
+對於第一個調查問題，請選取最能描述您工作的函式。
 
 可用的选项为：
 
 * 管理
 * 工程
-* 隐私和管理
-* 营销
+* 隱私權與治理
+* 行銷
 * 其他
 
 >[!NOTE]
 >
->您可以从选项列表中选择多个函数。 如果您选择 [!UICONTROL 其他]时，系统会提示您提供有关目标的详细信息。
+>您可以從選項清單中選取多個函式。 如果您選取 [!UICONTROL 其他]，系統會提示您提供目標的詳細資訊。
 
-要继续，请选择最能描述您当前工作的函数，然后选择 **[!UICONTROL 下一个]**.
+若要繼續，請選取最能描述您目前工作的函式，然後選取 **[!UICONTROL 下一個]**.
 
-![选择了两个工作功能的自我识别调查。](./images/survey/select-functions.png)
+![已選取兩個工作職能的自我識別調查。](./images/survey/select-functions.png)
 
-接下来，选择最适合您的工作的特定目标。
+接下來，選取最適合您工作的特定目標。
 
-可用目标列表包括：
+可用目標清單包括：
 
-* 创建和管理用户
-* 分配角色、权限和产品配置文件
-* 管理许可证使用情况、沙箱和警报
-* 配置用于数据摄取的系统
-* 为我的组织的数据结构建模
-* 查询、过滤和优化数据以生成分析
-* 配置同意和数据策略
-* 数据管理和隐私合规性
-* 制定营销策略
-* 创建、管理和划分受众
-* 设置功能板以分析业务影响
-* 将数据激活到目标以进行下游定位
+* 建立和管理使用者
+* 指派角色、許可權和產品設定檔
+* 管理授權使用情況、沙箱和警報
+* 設定系統以進行資料擷取
+* 為我的組織的資料結構建模
+* 查詢、篩選和最佳化資料以產生深入分析
+* 設定同意和資料原則
+* 資料控管和隱私權法規遵循
+* 開發行銷策略
+* 建立、管理和細分對象
+* 設定儀表板以分析業務影響
+* 針對下游目標定位啟用目的地的資料
 
-完成后，选择 **[!UICONTROL 提交]**.
+完成後，選取 **[!UICONTROL 提交]**.
 
-![自我识别调查显示可从中选择的目标列表。](./images/survey/select-objectives.png)
+![自我識別調查，顯示您可從中選取的目標清單。](./images/survey/select-objectives.png)
 
-完成自我识别调查后，选择 **[!UICONTROL 完成]**.
+完成自我識別調查後，選取 **[!UICONTROL 完成]**.
 
-![自我识别调查的最后确认步骤。](./images/survey/survey-complete.png)
+![自我識別調查的最後確認步驟。](./images/survey/survey-complete.png)
 
 >[!NOTE]
 >
->目标和建议（如果存在）将根据所选的工作职能而发生更改。
+>目標與建議（如果存在）會根據選取的職務功能而變更。
 
-## 更新调查响应
+## 更新您的調查回覆
 
-使用“Experience Cloud首选项”菜单更新作业功能和对象。 要访问首选项菜单，请在顶部导航中选择您的配置文件图标，然后选择 **[!UICONTROL 首选项]**.
+使用Experience Cloud偏好設定選單更新您的工作功能和物件。 若要存取偏好設定功能表，請選取頂端導覽列中的設定檔圖示，然後選取「 」 **[!UICONTROL 偏好設定]**.
 
-![选择了配置文件图标和首选项按钮的Platform UI主页。](./images/survey/preferences.png)
+![Platform UI首頁，其中包含已選取的設定檔圖示和偏好設定按鈕。](./images/survey/preferences.png)
 
-接下来，在 [!UICONTROL 常规] “配置文件首选项”菜单的部分，选择 **[!UICONTROL 更新您的工作职能和目标]**.
+接下來，在 [!UICONTROL 一般] 部分，選取 **[!UICONTROL 更新您的工作職能和目標]**.
 
-![Platform UI配置文件首选项页面的常规部分](./images/survey/update.png)
+![Platform UI設定檔偏好設定頁面的一般區段](./images/survey/update.png)
 
-此时将显示自我识别调查，以便您重新配置响应并更新用户档案。
+自我識別調查會出現，讓您重新設定回應並更新設定檔。
 
-![Platform UI配置文件首选项页面显示自身识别调查，以允许用户更新其个人配置文件。](./images/survey/new-survey.png)
+![Platform UI設定檔偏好設定頁面會顯示自我識別調查，以允許使用者更新其個人設定檔。](./images/survey/new-survey.png)
 
 ## 后续步骤
 
-通过阅读本文档，您现在已提交并更新了有关您的工作职能和目标的信息，以便在使用Platform UI时接收更多相关内容。 有关Platform UI的更多信息，请阅读 [Experience Platform概述](home.md).
+閱讀本檔案後，您現已提交並更新有關工作職能和目標的資訊，以便在使用Platform UI時接收更相關的內容。 如需Platform UI的詳細資訊，請閱讀 [Experience Platform概觀](home.md).

@@ -1,65 +1,65 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；预订；用餐；
-title: 用餐预订架构字段组
-description: 本文档概述了“餐饮预订”架构字段组。
-source-git-commit: d230cfa9e74eb96aa44e8b83ca8f2306db4ba4ec
+keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；ExperienceEvent；欄位；結構描述；結構描述；結構描述設計；欄位群組；欄位群組；預訂；就餐；
+title: 餐飲預訂結構描述欄位群組
+description: 本檔案提供「餐飲預訂」結構描述欄位群組的概觀。
+exl-id: 672b7a77-c433-4502-a1ad-a17c811b253e
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '459'
 ht-degree: 5%
 
 ---
 
+# [!UICONTROL 餐飲預訂] 結構描述欄位群組
 
-# [!UICONTROL Dining Reservationschema] 字段组
+[!UICONTROL 餐飲預訂] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md) 用於擷取關於餐飲預訂的資訊。
 
-[!UICONTROL Dining Reservation是] 类的标准架构字段组，用 [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) 于捕获有关用餐预订的信息。
-
-字段组是[!UICONTROL Reservation Details]字段组的扩展，并包含单个对象类型字段`reservations`下的所有相同字段。 除了这些通用字段外，[!UICONTROL Dining Reservation]还包含`diningReservations`数组。 此对象数组用于描述一个或多个具有餐厅特定属性的预订。
+欄位群組是 [!UICONTROL 預訂詳細資料] 欄位群組，並在單一物件型別欄位下包含所有相同的欄位， `reservations`. 除了這些通用欄位外， [!UICONTROL 餐飲預訂] 也包含 `diningReservations` 陣列。 這個物件陣列可用來說明一或多個保留區與餐廳特定屬性。
 
 >[!NOTE]
 >
->本文档介绍`diningReservations`阵列的详细信息。 有关在`reservations`对象下提供的其他字段的信息，请参阅[[!UICONTROL 保留详细信息]字段组引用](./reservation-details.md)。
+>本檔案涵蓋以下專案的詳細資訊： `diningReservations` 陣列。 如需底下其他欄位的詳細資訊， `reservations` 物件，請參閱 [[!UICONTROL 預訂詳細資料] 欄位群組參考](./reservation-details.md).
 
-![餐饮预订结构](../../images/field-groups/dining-reservation/structure.png)
+![餐飲預訂結構](../../images/field-groups/dining-reservation/structure.png)
 
 ## `diningReservations`
 
-`diningReservations` 是表示餐饮预订列表的对象数组。例如，如果预订事件涉及在一天中不同时间在多个不同餐馆预订，则这些预订可以列为单个事件`diningReservations`下的单个对象。
+`diningReservations` 是一個物件陣列，代表一個餐飲預訂清單。 例如，如果預訂事件涉及在一天中的不同時間在多個不同餐廳的預訂，則這些預訂可以列為下的個別物件 `diningReservations` （針對單一事件）。
 
-下面提供了`diningReservations`下提供的每个对象的结构。
+下提供的每個物件的結構 `diningReservations` 提供如下。
 
-![diningReservations结构](../../images/field-groups/dining-reservation/diningReservations.png)
+![diningReservations結構](../../images/field-groups/dining-reservation/diningReservations.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `ID` | 字符串 | 保留编号或标识符。 |
-| `cancellation` | 整数 | 在取消保留时会捕获此值。 |
-| `confirmationNumber` | 字符串 | 预订确认号或标识符。 |
-| `created` | 整数 | 创建保留后会捕获此值。 |
-| `cuisine` | 整数 | 餐厅菜的种类。 |
-| `currencyCode` | 字符串 | 用于购买的ISO 4217货币代码。 |
-| `deliveryPartners` | 字符串 | 餐厅提供送货合作伙伴。 |
-| `diningOptions` | 字符串 | 餐厅提供送货和餐饮服务。 |
-| `groupReservation` | 布尔型 | 指示是否正在为组进行保留。 |
-| `length` | 整数 | 保留的总天数。 |
-| `loyaltyID` | 字符串 | 预订中列出的来宾的忠诚度计划ID。 |
-| `modification` | 整数 | 在修改保留时会捕获此值。 |
-| `modificationDate` | DateTime | 上次修改保留的时间。 |
-| `numberOfAdults` | 整数 | 与保留关联的成人数。 |
-| `numberOfChildren` | 整数 | 与保留关联的子项数。 |
-| `numberOfRooms` | 整数 | 与预订关联的房间数。 |
-| `partySize` | 整数 | 用餐聚会上的个人数。 |
-| `priceCategory` | 字符串 | 所保留的价格类别。 |
-| `purpose` | 字符串 | 保留的目的，通常是企业或个人。 |
-| `reservationTime` | DateTime | 预订餐饮预订的时间。 |
-| `restaurantID` | 字符串 | 餐厅或餐饮场所的标识符。 |
-| `reservationStatus` | 字符串 | 保留的状态。 |
-| `specialOccasion` | 布尔型 | 指示是否为特殊场合提出保留。 |
-| `status` | 整数 | 餐饮预订的状态。 |
+| `ID` | 字符串 | 預訂編號或識別碼。 |
+| `cancellation` | 整数 | 此值會在預訂取消時擷取。 |
+| `confirmationNumber` | 字符串 | 預訂確認號碼或識別碼。 |
+| `created` | 整数 | 此值會在建立預訂時擷取。 |
+| `cuisine` | 整数 | 餐廳菜餚的型別。 |
+| `currencyCode` | 字符串 | 用於進行購買的ISO 4217貨幣代碼。 |
+| `deliveryPartners` | 字符串 | 餐廳提供的送餐合作夥伴。 |
+| `diningOptions` | 字符串 | 餐廳提供外賣和餐飲選擇。 |
+| `groupReservation` | 布尔值 | 指出是否為群組進行預訂。 |
+| `length` | 整数 | 預訂的總天數。 |
+| `loyaltyID` | 字符串 | 預訂中列出的賓客的熟客方案ID。 |
+| `modification` | 整数 | 此值會在預訂被修改時擷取。 |
+| `modificationDate` | 日期時間 | 上次修改預訂的時間。 |
+| `numberOfAdults` | 整数 | 和預訂相關聯的成人數量。 |
+| `numberOfChildren` | 整数 | 和預訂相關聯的子項數目。 |
+| `numberOfRooms` | 整数 | 和預訂相關聯的房間數。 |
+| `partySize` | 整数 | 宴會中的人數。 |
+| `priceCategory` | 字符串 | 進行預訂的價格類別。 |
+| `purpose` | 字符串 | 預訂的目的，通常為商業或個人目的。 |
+| `reservationTime` | 日期時間 | 餐飲預訂的時間。 |
+| `restaurantID` | 字符串 | 餐廳或就餐位置的識別碼。 |
+| `reservationStatus` | 字符串 | 預訂的狀態。 |
+| `specialOccasion` | 布尔值 | 表示此預訂是否為特別場合所做。 |
+| `status` | 整数 | 餐飲預訂的狀態。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-dining-reservation.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-dining-reservation.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-dining-reservation.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-dining-reservation.schema.json)

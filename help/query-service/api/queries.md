@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；API指南；查询；查询；查询服务；
+keywords: Experience Platform；首頁；熱門主題；查詢服務；API指南；查詢；查詢；查詢服務；
 solution: Experience Platform
-title: 查询API端点
-description: 以下各节介绍了可以使用查询服务API中的/querys端点进行的调用。
+title: 查詢API端點
+description: 以下小節會逐步說明您可以使用/queries端點（在查詢服務API中）進行的呼叫。
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 2%
 
 ---
 
-# 查询端点
+# 查詢端點
 
-## API调用示例
+## API呼叫範例
 
-以下部分将介绍您可以使用 `/queries` 的端点 [!DNL Query Service] API。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
+以下小節會逐步引導您透過以下工具呼叫： `/queries` 中的端點 [!DNL Query Service] API。 每個呼叫都包含一般API格式、顯示必要標題的範例要求以及範例回應。
 
-### 检索查询列表
+### 擷取查詢清單
 
-您可以通过向 `/queries` 端点。
+您可以透過向以下網站發出GET請求，擷取貴組織的所有查詢清單： `/queries` 端點。
 
 **API格式**
 
@@ -28,25 +28,25 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`:(*可选*)参数已添加到请求路径，用于配置响应中返回的结果。 可以包含多个参数，这些参数之间用与号(`&`)。 以下列出了可用参数。
+- `{QUERY_PARAMETERS}`： (*可選*)將引數新增至要求路徑，以設定回應中傳回的結果。 可包含多個引數，以&amp;符號(`&`)。 可用的引數列示如下。
 
-**查询参数**
+**查詢引數**
 
-以下是用于列出查询的可用查询参数列表。 所有这些参数都是可选的。 对此端点进行无参数调用将检索适用于贵组织的所有查询。
+以下是列出查詢的可用查詢引數清單。 所有這些引數都是選用的。 在不使用引數的情況下呼叫此端點將會擷取您的組織可用的所有查詢。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果排序所依据的字段。 支持的字段包括 `created` 和 `updated`. 例如， `orderby=created` 将按创建的结果进行升序排序。 添加 `-` 创建之前(`orderby=-created`)将按创建的项目进行降序排序。 |
-| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
-| `start` | 使用从零开始的编号来偏移响应列表。 例如， `start=2` 将返回从第三个列出的查询开始的列表。 (*默认值：0*) |
-| `property` | 根据字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括 `created`, `updated`, `state`和 `id`. 支持的运算符列表包括 `>` （大于）， `<` （小于）， `>=` （大于或等于）， `<=` （小于或等于）， `==` （等于）， `!=` （不等于）和 `~` （包含）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有指定ID的所有查询。 |
-| `excludeSoftDeleted` | 指示是否应包含已软删除的查询。 例如， `excludeSoftDeleted=false` will **包含** 软删除的查询。 (*布尔值，默认值：true*) |
-| `excludeHidden` | 指示是否应显示非用户驱动的查询。 将此值设置为false将会 **包含** 非用户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
-| `isPrevLink` | 的 `isPrevLink` 查询参数用于分页。 API调用的结果使用 `created` 时间戳和 `orderby` 属性。 导航结果页面时， `isPrevLink` 向后分页时设置为true。 它会反转查询的顺序。 例如，请参阅“下一步”和“上一步”链接。 |
+| `orderby` | 指定排序結果時所依據的欄位。 支援的欄位包括 `created` 和 `updated`. 例如， `orderby=created` 將依建立的結果遞增順序來排序結果。 新增 `-` 建立前(`orderby=-created`)會依建立的順序遞減排序專案。 |
+| `limit` | 指定頁面大小限制，以控制頁面中包含的結果數量。 (*預設值： 20*) |
+| `start` | 使用以零為基準的編號來位移回應清單。 例如， `start=2` 會傳回從第三個查詢開始的清單。 (*預設值： 0*) |
+| `property` | 根據欄位篩選結果。 篩選器 **必須** 已逸出HTML。 逗號可用來組合多組篩選器。 支援的欄位包括 `created`， `updated`， `state`、和 `id`. 支援的運運算元清單包括 `>` （大於）， `<` （小於）， `>=` （大於或等於）， `<=` （小於或等於）， `==` （等於）， `!=` （不等於），以及 `~` （包含）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 將傳回具有指定ID的所有查詢。 |
+| `excludeSoftDeleted` | 指示是否應包含已軟刪除的查詢。 例如， `excludeSoftDeleted=false` 將 **包括** 軟刪除的查詢。 (*布林值，預設值： true*) |
+| `excludeHidden` | 指示是否應顯示非使用者導向的查詢。 將此值設為false會 **包括** 非使用者導向的查詢，例如CURSOR定義、FETCH或中繼資料查詢。 (*布林值，預設值： true*) |
+| `isPrevLink` | 此 `isPrevLink` 查詢引數用於分頁。 API呼叫的結果會使用它們的 `created` 時間戳記和 `orderby` 屬性。 導覽結果頁面時， `isPrevLink` 向後分頁時設為true。 這會反轉查詢的順序。 請參閱「下一個」和「上一個」連結作為範例。 |
 
 **请求**
 
-以下请求会检索为贵组织创建的最新查询。
+以下請求會擷取為您的組織建立的最新查詢。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
@@ -58,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含指定组织的查询列表(JSON)。 以下响应会返回为您的组织创建的最新查询。
+成功的回應會傳回HTTP狀態200，其中包含指定組織的查詢清單，其形式為JSON。 下列回應會傳回為您的組織建立的最新查詢。
 
 ```json
 {
@@ -117,9 +117,9 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 }
 ```
 
-### 创建查询
+### 建立查詢
 
-您可以通过向 `/queries` 端点。
+您可以透過向以下專案發出POST請求來建立新查詢： `/queries` 端點。
 
 **API格式**
 
@@ -129,7 +129,7 @@ POST /queries
 
 **请求**
 
-以下请求将创建一个新查询，并在有效负载中提供SQL语句：
+下列要求會建立新查詢，並在裝載中提供SQL陳述式：
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
@@ -149,7 +149,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
     }  
 ```
 
-以下请求示例使用现有查询模板ID创建新查询。
+以下請求範例會使用現有查詢範本ID建立新查詢。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
@@ -168,18 +168,18 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `dbName` | 要为其创建SQL查询的数据库的名称。 |
-| `sql` | 要创建的SQL查询。 |
-| `name` | SQL查询的名称。 |
-| `description` | SQL查询的描述。 |
-| `queryParameters` | 用于替换SQL语句中任何参数化值的键值配对。 它只是必需的 **if** 您正在提供的SQL中使用参数替换。 不会对这些键值对进行值类型检查。 |
-| `templateId` | 预先存在的查询的唯一标识符。 您可以提供它，而不是SQL语句。 |
-| `insertIntoParameters` | （可选）如果定义了此属性，则此查询将转换为INSERT INTO查询。 |
-| `ctasParameters` | （可选）如果定义此属性，则此查询将转换为CTAS查询。 |
+| `dbName` | 您正在建立SQL查詢的資料庫名稱。 |
+| `sql` | 您要建立的SQL查詢。 |
+| `name` | SQL查詢的名稱。 |
+| `description` | SQL查詢的說明。 |
+| `queryParameters` | 用來取代SQL陳述式中任何引數化值的索引鍵值配對。 此為必要專案 **如果** 您正在提供的SQL中使用引數取代。 不會對這些索引鍵值配對執行任何值型別檢查。 |
+| `templateId` | 預先存在的查詢的唯一識別碼。 您可以提供此陳述式，而不是SQL陳述式。 |
+| `insertIntoParameters` | （選擇性）如果此屬性已定義，則此查詢將轉換為INSERT INTO查詢。 |
+| `ctasParameters` | （選用）如果定義了此屬性，此查詢將轉換為CTAS查詢。 |
 
 **响应**
 
-成功响应会返回HTTP状态202（已接受），其中包含新创建查询的详细信息。 查询激活完成并成功运行后， `state` 将从 `SUBMITTED` to `SUCCESS`.
+成功的回應會傳回HTTP狀態202 （已接受）以及您新建立查詢的詳細資訊。 一旦查詢完成啟動並成功執行， `state` 將變更自 `SUBMITTED` 至 `SUCCESS`.
 
 ```json
 {
@@ -222,11 +222,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 >[!NOTE]
 >
->您可以使用 `_links.cancel` to [取消创建的查询](#cancel-a-query).
+>您可以使用以下專案的值： `_links.cancel` 至 [取消您建立的查詢](#cancel-a-query).
 
-### 按ID检索查询
+### 依ID擷取查詢
 
-您可以通过向 `/queries` 端点和提供查询的 `id` 值。
+您可以透過向以下網址發出GET要求，擷取有關特定查詢的詳細資訊： `/queries` 端點並提供查詢的 `id` 請求路徑中的值。
 
 **API格式**
 
@@ -236,7 +236,7 @@ GET /queries/{QUERY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 的 `id` 要检索的查询的值。 |
+| `{QUERY_ID}` | 此 `id` 您要擷取的查詢值。 |
 
 **请求**
 
@@ -250,7 +250,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含有关指定查询的详细信息。
+成功的回應會傳回HTTP狀態200，其中包含指定查詢的詳細資訊。
 
 ```json
 {
@@ -293,11 +293,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8
 
 >[!NOTE]
 >
->您可以使用 `_links.cancel` to [取消创建的查询](#cancel-a-query).
+>您可以使用以下專案的值： `_links.cancel` 至 [取消您建立的查詢](#cancel-a-query).
 
-### 取消或软删除查询
+### 取消或軟刪除查詢
 
-您可以通过向 `/queries` 端点和提供查询的 `id` 值。
+您可以透過向以下發出PATCH請求，請求取消或軟刪除指定的查詢： `/queries` 端點並提供查詢的 `id` 請求路徑中的值。
 
 **API格式**
 
@@ -307,12 +307,12 @@ PATCH /queries/{QUERY_ID}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 的 `id` 要对其执行操作的查询的值。 |
+| `{QUERY_ID}` | 此 `id` 您要執行作業的查詢值。 |
 
 
 **请求**
 
-此API请求的有效负载使用JSON修补程序语法。 有关JSON修补程序工作方式的更多信息，请阅读API基础知识文档。
+此API要求對其裝載使用JSON修補程式語法。 如需JSON修補程式運作方式的詳細資訊，請參閱API基礎檔案。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8f-463a-a182-54bccb9954fc \
@@ -328,11 +328,11 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要对资源执行的操作类型。 接受的值为 `cancel` 和 `soft_delete`. 要取消查询，必须使用值设置op参数 `cancel `. 请注意，软删除操作会在GET请求中停止返回查询，但不会将其从系统中删除。 |
+| `op` | 要對資源執行的作業型別。 接受的值為 `cancel` 和 `soft_delete`. 若要取消查詢，您必須使用值設定作業引數 `cancel `. 請注意，軟刪除作業會停止在GET請求時傳回查詢，但不會將其從系統中刪除。 |
 
 **响应**
 
-成功响应会通过以下消息返回HTTP状态202（已接受）：
+成功的回應會傳回HTTP狀態202 （已接受），並出現以下訊息：
 
 ```json
 {

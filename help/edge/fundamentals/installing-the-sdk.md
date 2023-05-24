@@ -1,7 +1,7 @@
 ---
-title: 安装Adobe Experience Platform Web SDK
-description: 了解如何安装Experience PlatformWeb SDK。
-keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
+title: 安裝Adobe Experience Platform Web SDK
+description: 瞭解如何安裝Experience PlatformWeb SDK。
+keywords: web sdk安裝；安裝web sdk；internet explorer；promise；npm套件
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
 source-git-commit: e0fc9708edec3b36bed9925f12fca9db8b477262
 workflow-type: tm+mt
@@ -10,34 +10,34 @@ ht-degree: 2%
 
 ---
 
-# 安装SDK {#installing-the-sdk}
+# 安裝SDK {#installing-the-sdk}
 
-使用Adobe Experience Platform Web SDK的方法有三种：
+使用Adobe Experience Platform Web SDK有三種受支援的方式：
 
-1. 使用Adobe Experience Platform Web SDK的首选方式是通过数据收集UI或Experience PlatformUI。
-1. Adobe Experience Platform Web SDK还可在内容交付网络(CDN)上提供，供您使用。
-1. 使用用于导出EcmaScript 5和EcmaScript 2015(ES6)模块的NPM库。
+1. 使用Adobe Experience Platform Web SDK的偏好方式為透過資料收集UI或Experience PlatformUI。
+1. 內容傳遞網路(CDN)上也提供Adobe Experience Platform Web SDK供您使用。
+1. 使用匯出EcmaScript 5和EcmaScript 2015 (ES6)模組的NPM程式庫。
 
-## 选项1:安装标记扩展
+## 選項1：安裝標籤擴充功能
 
-有关标记扩展的文档，请参阅 [标记文档](../../tags/extensions/client/sdk/overview.md)
+如需有關標籤擴充功能的檔案，請參閱 [標籤檔案](../../tags/extensions/client/sdk/overview.md)
 
-## 选项2:安装预建的独立版本
+## 選項2：安裝預先建立的獨立版本
 
-预建版本可在CDN上使用。 您可以直接在页面上引用CDN上的库，或在自己的基础架构下载并托管该库。 它以缩小和未缩小的格式提供。 未缩小版本有助于进行调试。
+預先建立的版本可在CDN上取得。 您可以直接在頁面上的CDN上參考程式庫，也可以下載並在您自己的基礎架構上代管程式庫。 它提供縮制和未縮制的格式。 未縮制的版本對於除錯用途很有幫助。
 
-URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.js（用于非缩小版本）。
+URL結構： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.js （非縮製版本）。
 
 例如：
 
 
-* 缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
-* 未缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
+* 縮制： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
+* 未縮制： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
 
 
-### 添加代码 {#adding-the-code}
+### 新增程式碼 {#adding-the-code}
 
-预建的独立版本要求直接将“基础代码”添加到页面。 在 `<head>` 标记：
+預先建立的獨立版本需要直接新增至頁面的「基底程式碼」。 複製並貼上下列「基本程式碼」，儘可能貼到中最高的位置 `<head>` 標籤的HTML：
 
 ```markup
 <script>
@@ -49,7 +49,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 <script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js" async></script>
 ```
 
-“基础代码”将创建一个名为 `alloy`. 使用此函数与SDK进行交互。 如果要为全局函数命名其他名称，请更改 `alloy` 名称如下所示：
+「基底程式碼」會建立名為的全域函式 `alloy`. 使用此函式與SDK互動。 如果您想要將全域函式命名為其他名稱，請變更 `alloy` 名稱如下：
 
 ```markup
 <script>
@@ -61,45 +61,45 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 <script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js" async></script>
 ```
 
-在本例中，全局函数被重命名 `mycustomname`，而不是 `alloy`.
+在此範例中，全域函式已重新命名 `mycustomname`，而非 `alloy`.
 
 >[!IMPORTANT]
 >
->为避免出现潜在问题，请使用至少包含一个非数字且与上已找到的属性名称不冲突的字符的名称 `window`.
+>為避免潛在問題，請使用至少包含一個非數字字元且不會與已找到的屬性名稱衝突的名稱 `window`.
 
-除了创建全局函数外，此基本代码还加载外部文件\(`alloy.js`\)托管在服务器上。 默认情况下，此代码会异步加载，以尽可能提高网页的性能。 这是建议的实施。
+此基底程式碼除了建立全域函式外，也會載入外部檔案中包含的其他程式碼\(`alloy.js`\)在伺服器上託管。 依預設，系統會以非同步方式載入此程式碼，讓您的網頁儘可能發揮效能。 此為建議的實作。
 
-### 支持Internet Explorer {#support-internet-explore}
+### 支援Internet Explorer {#support-internet-explore}
 
-此SDK使用promise，promise是用于传递异步任务完成情况的方法。 的 [承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 除外，所有target浏览器都本地支持SDK使用的实施 [!DNL Internet Explorer]. 要在 [!DNL Internet Explorer]，您必须 `window.Promise` [填充](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+此SDK使用promise ，這是通訊非同步工作完成的方法。 此 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) SDK使用的實作原生受到所有目標瀏覽器的支援，但 [!DNL Internet Explorer]. 若要在上使用SDK [!DNL Internet Explorer]，您必須擁有 `window.Promise` [多面體](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
-确定您是否已 `window.Promise` 填充：
+若要判斷您是否擁有 `window.Promise` 多面體：
 
-1. 在 [!DNL Internet Explorer].
-1. 打开浏览器的调试控制台。
-1. 类型 `window.Promise` 进入控制台，然后按Enter。
+1. 在中開啟您的網站 [!DNL Internet Explorer].
+1. 開啟瀏覽器的偵錯主控台。
+1. 型別 `window.Promise` 進入主控台，然後按Enter。
 
-如果 `undefined` 显示，您可能已填充 `window.Promise`. 确定 `window.Promise` 填充是在完成上述安装说明后加载您的网站。 如果SDK引发提及承诺内容的错误，则您可能尚未填充 `window.Promise`.
+如果是 `undefined` 出現，表示您可能已經填滿 `window.Promise`. 另一種判斷是否需要 `window.Promise` 「 」為polyfilled，方法是在完成上述安裝指示後載入您的網站。 如果SDK擲回提及Promise的錯誤，表示您可能尚未填滿 `window.Promise`.
 
-如果您确定必须填充 `window.Promise`，请在先前提供的基础代码上方包含以下脚本标记：
+如果您已決定您必須使用polyfill `window.Promise`，請在先前提供的基底程式碼上方加入下列指令碼標籤：
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
 ```
 
-此标记会加载一个脚本，以确保 `window.Promise` 是有效的Promise实施。
+此標籤會載入指令碼，確保 `window.Promise` 是有效的Promise實作。
 
 >[!NOTE]
 >
->如果您选择加载其他Promise实施，请确保它支持 `Promise.prototype.finally`.
+>如果您選擇載入不同的Promise實作，請確定它支援 `Promise.prototype.finally`.
 
-### 同步加载JavaScript文件 {#loading-javascript-synchronously}
+### 同步載入JavaScript檔案 {#loading-javascript-synchronously}
 
-如 [添加代码](#adding-the-code)，则您复制并粘贴到网站HTML的基本代码会加载外部文件。 外部文件包含SDK的核心功能。 加载此文件时尝试执行的任何命令都将排入队列，然后在加载文件后进行处理。 异步加载文件是安装效率最高的方法。
+如一節中所述 [新增程式碼](#adding-the-code)，您複製並貼至網站HTML的基礎程式碼會載入外部檔案。 外部檔案包含SDK的核心功能。 您嘗試在此檔案載入時執行的任何命令都會排入佇列，然後在檔案載入後處理。 以非同步方式載入檔案是最有效的安裝方法。
 
-但是，在某些情况下，您可能希望同步加载文件\（以后将记录有关这些情况的更多详细信息\）。 这样做会阻止浏览器解析和呈现HTML文档的其余部分，直到加载和执行外部文件为止。 在向用户显示主内容之前，通常不会采取这种额外的延迟措施，但具体情况可能会有所不同。
+但在特定情況下，您可能會想要同步載入檔案\（稍後將記錄這些情況的更多詳細資料\）。 在載入並執行外部檔案之前，這麼做會防止瀏覽器剖析及轉譯HTML檔案的其餘部分。 通常不建議在向使用者顯示主要內容之前額外延遲一次，但可視情況而定。
 
-要同步而不是异步加载文件，请删除 `async` 属性 `script` 标记如下所示：
+若要同步載入檔案而非非同步載入，請移除 `async` 屬性來自第二個 `script` 標籤如下所示：
 
 ```markup
 <script>
@@ -111,17 +111,17 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.
 <script src="https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js"></script>
 ```
 
-## 选项3:使用NPM包
+## 選項3：使用NPM套件
 
-Adobe Experience Platform Web SDK也作为NPM包提供。 [NPM](https://www.npmjs.com) 是适用于JavaScript的包管理器。 通过安装NPM包，您可以控制Adobe Experience Platform Web SDK JavaScript的构建过程。 NPM包会公开EcmaScript版本5模块或EcmaScript版本2015(ES6)模块，这些模块将在浏览器中运行。
+Adobe Experience Platform Web SDK也以NPM套件提供。 [NPM](https://www.npmjs.com) 是JavaScript的套件管理員。 安裝NPM套件可讓您控制Adobe Experience Platform Web SDK JavaScript的建置流程。 NPM套件會公開要在瀏覽器中執行的EcmaScript 5版模組或EcmaScript 2015版(ES6)模組。
 
 ```bash
 npm install @adobe/alloy
 ```
 
-Adobe Experience Platform Web SDK的NPM包会公开 `createInstance` 函数。 此函数用于创建实例。 传递给函数的名称选项控制日志记录中使用的前缀。 以下是使用包的示例。
+Adobe Experience Platform Web SDK的NPM套件會公開 `createInstance` 函式。 此函式用於建立例項。 傳遞至函式的name選項可控制記錄中所使用的首碼。 以下是使用該套件的範例。
 
-### 将包用作ECMAScript 2015(ES6)模块
+### 將套件用作ECMAScript 2015 (ES6)模組
 
 ```javascript
 import { createInstance } from "@adobe/alloy";
@@ -132,9 +132,9 @@ alloy("sendEvent", { ... });
 
 >[!NOTE]
 >
->NPM包依赖于CommonJS模块；因此，使用捆绑器时，请确保捆绑器支持CommonJS模块。 一些捆绑器，例如 [汇总](https://rollupjs.org)，需要 [插件](https://www.npmjs.com/package/@rollup/plugin-commonjs) 提供CommonJS支持。
+>NPM套件仰賴CommonJS模組；因此，在使用套件組合時，請確定套件組合支援CommonJS模組。 部分套件組合，例如 [統計](https://rollupjs.org)，需要 [外掛程式](https://www.npmjs.com/package/@rollup/plugin-commonjs) 提供CommonJS支援。
 
-### 将包用作ECMAScript 5模块
+### 將套件用作ECMAScript 5模組
 
 ```javascript
 var alloyLibrary = require("@adobe/alloy");
@@ -143,12 +143,12 @@ alloy("config", { ... });
 alloy("sendEvent", { ... });
 ```
 
-### 支持Internet Explorer
+### 支援Internet Explorer
 
-Adobe Experience Platform SDK使用promise，promise是一种通信完成异步任务的方法。 的 [承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 除外，所有target浏览器都本地支持SDK使用的实施 [!DNL Internet Explorer]. 要在 [!DNL Internet Explorer]，您必须 `window.Promise` [填充](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+Adobe Experience Platform SDK使用promise ，這是通訊非同步工作完成的方法。 此 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) SDK使用的實作原生受到所有目標瀏覽器的支援，但 [!DNL Internet Explorer]. 若要在上使用SDK [!DNL Internet Explorer]，您必須擁有 `window.Promise` [多面體](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
-一个用于polyfill promise的库是promise-polyfill。 请参阅 [promise-polyfill文档](https://www.npmjs.com/package/promise-polyfill) 有关如何使用NPM进行安装的更多信息。
+您可以用來進行polyfill promise的資料庫是promise-polyfill。 請參閱 [promise-polyfill檔案](https://www.npmjs.com/package/promise-polyfill) 瞭解如何使用NPM安裝的詳細資訊。
 
 >[!NOTE]
 >
->如果您选择加载其他Promise实施，请确保它支持 `Promise.prototype.finally`.
+>如果您選擇載入不同的Promise實作，請確定它支援 `Promise.prototype.finally`.

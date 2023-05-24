@@ -1,7 +1,7 @@
 ---
-title: （测试版）使用Experience PlatformUI将文件按需导出到批量目标
+title: （測試版）使用Experience PlatformUI隨選將檔案匯出至批次目的地
 type: Tutorial
-description: 了解如何使用Experience PlatformUI将文件按需导出到批处理目标。
+description: 瞭解如何使用Experience PlatformUI隨選將檔案匯出至批次目的地。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
 source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
@@ -10,80 +10,80 @@ ht-degree: 8%
 
 ---
 
-# （测试版）使用Experience PlatformUI将文件按需导出到批量目标
+# （測試版）使用Experience PlatformUI隨選將檔案匯出至批次目的地
 
 >[!IMPORTANT]
 >
->的 **[!UICONTROL 立即导出文件]** Adobe Experience Platform中的选项当前处于测试阶段。 文档和功能可能会发生更改。
->请联系您的Adobe代表以获取此功能的访问权限。
+>此 **[!UICONTROL 立即匯出檔案]** Adobe Experience Platform中的選專案前為Beta版。 檔案和功能可能會有所變更。
+>請聯絡您的Adobe代表以取得此功能的存取權。
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
 
-## **[!UICONTROL 立即导出文件]** 概述 {#overview}
+## **[!UICONTROL 立即匯出檔案]** 概觀 {#overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
 >title="立即导出文件"
 >abstract="选择此控件可交付完整文件导出以及任何之前计划的导出。将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。"
 
-本文介绍如何使用Experience PlatformUI将文件按需导出到批处理目标，例如 [云存储](/help/destinations/catalog/cloud-storage/overview.md) 和 [电子邮件营销](/help/destinations/catalog/email-marketing/overview.md) 目标。
+本文說明如何使用Experience PlatformUI，隨選將檔案匯出至批次目的地，例如 [雲端儲存空間](/help/destinations/catalog/cloud-storage/overview.md) 和 [電子郵件行銷](/help/destinations/catalog/email-marketing/overview.md) 目的地。
 
-的 **[!UICONTROL 立即导出文件]** 利用控制，可导出完整文件，而不会中断先前计划区段的当前导出计划。 此导出操作除了之前计划的导出之外，还不会更改区段的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
+此 **[!UICONTROL 立即匯出檔案]** 控制項可讓您匯出完整的檔案，而不會中斷先前排程區段的目前匯出排程。 此匯出除了先前排程的匯出之外還會進行，不會變更區段的匯出頻率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
 
-您还可以为此目的使用Experience PlatformAPI。 阅读操作说明 [通过临时激活API按需激活受众区段以实现批量目标](/help/destinations/api/ad-hoc-activation-api.md).
+您也可以將Experience Platform API用於此目的。 閱讀如何 [透過Ad Hoc Activation API依需求對批次目的地啟用對象區段](/help/destinations/api/ad-hoc-activation-api.md).
 
 ## 先决条件 {#prerequisites}
 
-要按需将文件导出到批处理目标，您必须成功 [连接到目标](./connect-destination.md). 如果您尚未执行此操作，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
+若要隨選將檔案匯出至批次目的地，您必須已成功完成 [已連線至目的地](./connect-destination.md). 如果您尚未這麼做，請前往 [目的地目錄](../catalog/overview.md)，瀏覽支援的目的地並設定您要使用的目的地。
 
-## 如何按需导出文件 {#how-to-export-files-on-demand}
+## 如何隨選匯出檔案 {#how-to-export-files-on-demand}
 
-1. 转到 **[!UICONTROL 连接>目标]**，选择 **[!UICONTROL 浏览]** 选项卡和过滤器符号来显示与所需批处理目标的现有连接。
+1. 前往 **[!UICONTROL 連線>目的地]**，選取 **[!UICONTROL 瀏覽]** 標籤和篩選符號來顯示與所需批次目的地的現有連線。
 
-   ![图像突出显示了如何访问浏览选项卡和筛选现有数据流。](../assets/ui/activate-on-demand/browse-tab.png)
+   ![反白顯示如何前往瀏覽標籤並篩選現有資料流的影像。](../assets/ui/activate-on-demand/browse-tab.png)
 
-2. 选择所需的目标连接以检查目标的现有数据流。
+2. 選取您需要的目的地連線，以檢查到目的地的現有資料流。
 
-   ![突出显示过滤的数据流的图像。](../assets/ui/activate-on-demand/filtered-dataflow.png)
+   ![反白篩選資料流的影像。](../assets/ui/activate-on-demand/filtered-dataflow.png)
 
-3. 选择 **[!UICONTROL 激活数据]** 选项卡上，选择要根据需要导出文件的区段，然后选择 **[!UICONTROL 立即导出文件]** 控件来触发一次性导出，该导出会将文件交付到批处理目标。
+3. 選取 **[!UICONTROL 啟用資料]** 標籤並選取您要隨選匯出檔案的區段，然後選取 **[!UICONTROL 立即匯出檔案]** 控制以觸發一次性匯出，將檔案傳送到批次目的地。
 
    >[!IMPORTANT]
    >
-   >UI当前不支持选择多个区段以按需批量导出文件。 使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md) 为此。
+   >UI目前不支援選取多個區段來隨選大量匯出檔案。 使用 [臨機啟動API](/help/destinations/api/ad-hoc-activation-api.md) 為此目的。
 
-   ![突出显示“立即导出文件”按钮的图像。](../assets/ui/activate-on-demand/activate-segment-on-demand.png)
+   ![反白顯示「立即匯出檔案」按鈕的影像。](../assets/ui/activate-on-demand/activate-segment-on-demand.png)
 
-4. 选择 **[!UICONTROL 是]** 以确认并触发文件导出。
+4. 選取 **[!UICONTROL 是]** 以確認並觸發檔案匯出。
 
-   ![显示“立即导出文件”确认对话框的图像。](../assets/ui/activate-on-demand/confirm-activation.png)
+   ![此影像顯示立即匯出檔案確認對話方塊。](../assets/ui/activate-on-demand/confirm-activation.png)
 
-5. 此时会显示确认消息，告知您文件导出已开始。
+5. 確認訊息隨即顯示，讓您知道檔案匯出已開始。
 
-   ![显示确认Ad-Hoc激活成功的图像。](../assets/ui/activate-on-demand/ad-hoc-success.png)
+   ![顯示成功隨選啟用的確認影像。](../assets/ui/activate-on-demand/ad-hoc-success.png)
 
-6. 您还可以切换到 **[!UICONTROL 数据流运行]** 选项卡，以确认文件导出已开始。
+6. 您也可以切換至 **[!UICONTROL 資料流執行]** 索引標籤以確認檔案匯出已啟動。
 
 ## 注意事项 {#considerations}
 
-使用 **[!UICONTROL 立即导出文件]** 控制：
+使用時，請牢記以下注意事項 **[!UICONTROL 立即匯出檔案]** 控制：
 
-* **[!UICONTROL 立即导出文件]** 仅适用于批处理激活数据流中的计划与当前日期重叠的区段。 这包括具有没有结束日期(导出频率为 **[!UICONTROL 一次]**)，或结束日期尚未过去的情况。
-* 将区段添加到现有数据流时，请至少等待15分钟，直到使用 **[!UICONTROL 立即导出文件]** 控制。
-* 如果更改区段的合并策略，或者创建使用新合并策略的区段，则需等待24小时，直到使用 **[!UICONTROL 立即导出文件]** 控制。
+* **[!UICONTROL 立即匯出檔案]** 僅適用於批次啟用資料流中的排程與目前日期重疊的區段。 這包括排程沒有結束日期(匯出頻率 **[!UICONTROL 一次]**)，或尚未超過結束日期時。
+* 將區段新增至現有資料流時，請等候至少15分鐘，直到使用 **[!UICONTROL 立即匯出檔案]** 控制。
+* 如果您變更區段的合併原則，或如果您建立的區段使用新的合併原則，請等待24小時，直到使用 **[!UICONTROL 立即匯出檔案]** 控制。
 
-## UI错误消息 {#ui-error-messages}
+## UI錯誤訊息 {#ui-error-messages}
 
-使用 **[!UICONTROL 立即导出文件]** 控制，您可能会遇到下面列出的任何错误消息。 查看表格，了解在表格显示时如何解决这些问题。
+使用時 **[!UICONTROL 立即匯出檔案]** 控制，您可能會遇到下列任何錯誤訊息。 請檢閱表格以瞭解如何在它們出現時加以處理。
 
 | 错误消息 | 解决方法 |
 |---------|----------|
-| 已针对区段运行 `segment ID` 订购 `dataflow ID` 使用运行id `flow run ID` | 此错误消息表示当前正在为区段进行临时激活流程。 等待作业完成，然后再次触发激活作业。 |
-| 区段 `<segment name>` 不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择激活的区段未映射到数据流，或者为区段设置的激活计划已过期或尚未启动。 检查区段是否确实映射到数据流，并验证区段激活计划是否与当前日期重叠。 |
+| 已為區段執行 `segment ID` 訂購 `dataflow ID` 具有執行id `flow run ID` | 此錯誤訊息指出區段的隨選啟用流程目前正在進行中。 再次觸發啟動工作之前，請等待工作完成。 |
+| 區段 `<segment name>` 不是此資料流的一部分或超出排程範圍！ | 此錯誤訊息指出您選取要啟動的區段未對應至資料流，或是為區段設定的啟動排程已過期或尚未開始。 檢查區段是否確實對應至資料流，並確認區段啟用排程與目前日期重疊。 |
 
-## 相关信息 {#related-information}
+## 相關資訊 {#related-information}
 
-* [使用Experience PlatformAPI，按需激活受众区段以批量目标](/help/destinations/api/ad-hoc-activation-api.md)
-* [激活受众数据以批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)
+* [使用Experience PlatformAPI依需求啟用批次目的地的受眾區段](/help/destinations/api/ad-hoc-activation-api.md)
+* [啟用對象資料以批次設定檔匯出目的地](/help/destinations/ui/activate-batch-profile-destinations.md)

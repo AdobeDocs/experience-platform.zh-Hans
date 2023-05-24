@@ -1,7 +1,8 @@
 ---
-title: 审核查询API指南
-description: 审核查询是一个RESTful API，它允许开发人员查看谁在Adobe Experience Platform中执行了哪些操作。
-source-git-commit: 5b3459711f41430977f9d7b06f8b35801739207c
+title: 稽核查詢API指南
+description: 稽核查詢是RESTful API，可讓開發人員檢視誰在Adobe Experience Platform中執行了哪些動作。
+exl-id: 9ed291c6-ff8b-4d9b-9fed-d1e3fa8f92fb
+source-git-commit: c2c5778e0a3fff7f488ad7a672123c813cca59f1
 workflow-type: tm+mt
 source-wordcount: '175'
 ht-degree: 1%
@@ -10,14 +11,14 @@ ht-degree: 1%
 
 # [!DNL Audit Query] API指南
 
-的 [!DNL Audit Query] API提供了端点，允许您以编程方式检索和监视各种Adobe Experience Platform功能的事件数据。 端点概述如下。 请访问 [入门指南](./getting-started.md) 有关所需标头、读取示例API调用等的重要信息。
+此 [!DNL Audit Query] API提供端點，可讓您以程式設計方式擷取和監控各種Adobe Experience Platform功能的事件資料。 端點概述如下。 請造訪 [快速入門手冊](./getting-started.md) 如需必要標題的重要資訊，請參閱範例API呼叫等。
 
-要查看所有可用的端点和CRUD操作，请访问 [[!DNL Audit Query] API Swagger](https://www.adobe.io/experience-platform-apis/references/audit-query/).
+若要檢視所有可用的端點和CRUD作業，請造訪 [[!DNL Audit Query] API swagger](https://www.adobe.io/experience-platform-apis/references/audit-query/).
 
 ## 事件
 
-审核事件可提供对Platform中用户操作的分析，包括操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与Adobe Experience Platform中各项功能的操作类型相关的其他属性。 要了解如何使用API检索量度，请参阅 [events endpoint指南](./events.md).
+稽核事件提供對Platform中使用者動作的深入分析，包括動作型別、日期和時間、執行動作之使用者的電子郵件ID，以及與Adobe Experience Platform各種功能的動作型別相關的其他屬性。 若要瞭解如何使用API擷取量度，請參閱 [事件端點指南](./events.md).
 
 ## 导出
 
-审核导出允许您通过指定要在有效负载中检索的事件来检索事件数据。 要了解如何使用API检索量度，请参阅 [导出端点指南](./export.md).
+稽核匯出可讓您指定要在裝載中擷取的事件，以擷取事件資料。 若要瞭解如何使用API擷取量度，請參閱 [匯出端點指南](./export.md).

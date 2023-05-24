@@ -1,42 +1,42 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地址；xdm:address；数据类型；数据类型；
+keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；位址；xdm：位址；資料型別；資料型別；
 solution: Experience Platform
-title: 产品列表项数据类型
-description: 本文档概述了产品列表项XDM数据类型。
+title: 產品清單專案資料型別
+description: 本檔案提供產品清單專案XDM資料型別的概觀。
 exl-id: 056fdb5b-6782-4e29-9d62-90b270c05795
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '370'
-ht-degree: 4%
+source-wordcount: '367'
+ht-degree: 3%
 
 ---
 
-# [!UICONTROL 产品列表项] 数据类型
+# [!UICONTROL 產品清單專案] 資料型別
 
-[!UICONTROL 产品列表项] 是一种标准XDM数据类型，用于描述客户选择的产品，以及特定时间点的特定选项、定价和使用情况上下文。
+[!UICONTROL 產品清單專案] 是標準XDM資料型別，說明客戶所選產品的特定時間點，包含特定選項、定價和使用內容。
 
-此数据类型中捕获的值可能与产品记录不同。 例如，产品记录包含产品信息系统中与所有客户一致的详细信息，其中产品清单项目具有在购买时向客户提供的实际价格，这可能因促销活动或季节性定价而异。
+此資料型別中擷取的值可能與產品記錄不同。 例如，產品記錄包含來自產品資訊系統的細節，這些細節對所有客戶都是一致的，其中產品清單專案具有在購買時提供給客戶的實際價格，這可能因銷售活動或季節性定價而有所不同。
 
 ![](../images/data-types/product-list-item.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `selectedOptions` | 对象数组 | 包含为可配置产品选择的自定义选项。 每个列表项都是具有以下属性的对象：<ul><li>`attribute`:可配置属性的名称。</li><li>`value`:属性的值。</li></ul> |
-| `SKU` | [!UICONTROL 字符串] | 库存单位(SKU)，由供应商定义的产品的唯一标识符。 |
-| `_id` | [!UICONTROL 字符串] | 此产品条目的行项目标识符。 产品本身通过 `product`. |
-| `currencyCode` | [!UICONTROL 字符串] | 的 [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) 用于为产品定价的字母货币代码。 |
-| `discountAmount` | [!UICONTROL 双精度] | 如果产品已折扣，则表示产品的正常价格与特殊价格之间的差额。 |
-| `name` | [!UICONTROL 字符串] | 产品的显示名称，显示给此产品视图的用户。 |
-| `priceTotal` | [!UICONTROL 双精度] | 产品行项目的总价格。 |
-| `product` | [!UICONTROL 字符串] (URI) | URI `$id` 用于捕获产品本身的XDM模式。 |
-| `productAddMethod` | [!UICONTROL 字符串] | 访客用于将产品项目添加到列表的方法。 |
-| `productImageUrl` | [!UICONTROL 字符串] | 产品主图像的URL。 |
-| `quantity` | [!UICONTROL 整数] | 客户表示他们需要产品的件数。 |
-| `unitOfMeasureCode` | [!UICONTROL 字符串] | 标准 [度量代码单位](https://ucum.org/ucum) 与 `quantity` 属性。 |
+| `selectedOptions` | 物件陣列 | 包含為可設定產品選擇的自訂選項。 每個清單專案都是一個物件，具有下列屬性：<ul><li>`attribute`：可設定屬性的名稱。</li><li>`value`：屬性的值。</li></ul> |
+| `SKU` | [!UICONTROL 字符串] | 庫存單位(SKU)，供應商所定義之產品的唯一識別碼。 |
+| `_id` | [!UICONTROL 字符串] | 此產品專案的明細專案識別碼。 產品本身的識別方式 `product`. |
+| `currencyCode` | [!UICONTROL 字符串] | 此 [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) 用於為產品定價的字母貨幣代碼。 |
+| `discountAmount` | [!UICONTROL 双精度] | 如果產品已貼現，這表示產品的一般價格與特殊價格之間的差額。 |
+| `name` | [!UICONTROL 字符串] | 針對此產品檢視向使用者展示的產品顯示名稱。 |
+| `priceTotal` | [!UICONTROL 双精度] | 產品明細專案的總價。 |
+| `product` | [!UICONTROL 字串] (URI) | URI `$id` 擷取產品本身的XDM結構描述。 |
+| `productAddMethod` | [!UICONTROL 字符串] | 訪客用來將產品專案新增至清單的方法。 |
+| `productImageUrl` | [!UICONTROL 字符串] | 產品主要影像的URL。 |
+| `quantity` | [!UICONTROL 整数] | 客戶表示所需的產品單位數。 |
+| `unitOfMeasureCode` | [!UICONTROL 字符串] | 標準 [單位代碼](https://ucum.org/ucum) 與相關的產品 `quantity` 屬性。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关邮政地址数据类型的更多详细信息，请参阅公共XDM存储库：
+如需郵寄地址資料型別的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json)

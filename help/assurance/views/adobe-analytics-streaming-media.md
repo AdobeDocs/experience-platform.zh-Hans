@@ -1,57 +1,57 @@
 ---
-title: 适用于流媒体的 Adobe Analytics在保证中的视图
-description: 本指南介绍如何将适用于流媒体的 Adobe Analytics与Adobe Experience Platform Assurance结合使用。
-source-git-commit: 07dc01c11c79ac2dad05d89309cabb5715c0b63c
+title: Assurance中的適用於流媒體的 Adobe Analytics檢視
+description: 本指南說明如何搭配使用適用於流媒體的 Adobe Analytics與Adobe Experience Platform Assurance。
+exl-id: 9a9c2c64-e9ed-4d58-b936-d802f1c3b7d3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '412'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
+# 在Assurance中檢視適用於流媒體的 Adobe Analytics
 
-# 适用于流媒体的 Adobe Analytics保障视图
+透過適用於流媒體的 Adobe Analytics與Adobe Experience Platform Assurance的整合，您現在可以在行動應用程式中驗證Media Analytics實施。 Media Analytics檢視會顯示媒體工作階段中追蹤的內容，例如：
 
-通过适用于流媒体的 Adobe Analytics与Adobe Experience Platform保证之间的集成，您现在可以在移动设备应用程序中验证Media Analytics实施。 Media Analytics视图显示媒体会话中跟踪的内容，例如：
+- 工作階段開始事件，包含所有內容核心、標準中繼資料和自訂中繼資料屬性，以及工作階段結束和工作階段完成事件。
+- 具有所有附加廣告屬性的廣告插播開始和廣告開始事件，以及兩者的略過和完成事件。
+- 章節開始時會附加所有屬性，以及章節略過和章節完成事件。
+- 所有播放變更事件（播放、暫停、緩衝、錯誤、位元速率變更）。
+- 所有播放器狀態變更追蹤事件（開始、結束）。
 
-- 会话开始事件，其中包含所有内容核心、标准元数据和自定义元数据属性，以及会话结束事件和会话结束事件。
-- 附加了所有广告属性的广告时间开始事件和广告开始事件，以及两者的跳过和结束事件。
-- 章节开始，其中包含所有属性，以及章节跳过和章节结束事件。
-- 所有播放更改事件（播放、暂停、缓冲、错误、比特率更改）。
-- 所有播放器状态更改跟踪事件（开始、结束）。
-
-在Analytics中处理数据后，后处理状态和数据（如媒体逗留时间和暂停总持续时间）也会在事件详细信息视图中可用。
+在Analytics中處理資料後，後續處理的狀態和資料（例如媒體逗留時間和總暫停期間）也可在事件詳細資料檢視中使用。
 
 ## 快速入门
 
-在继续操作之前，请确保您具有以下服务：
+繼續之前，請確認您擁有下列服務：
 
-- 的 [Adobe Experience Platform数据收集UI](https://experience.adobe.com/#/data-collection/)
-- [Adobe Experience Platform保障](https://experience.adobe.com/assurance)
+- 此 [Adobe Experience Platform資料彙集UI](https://experience.adobe.com/#/data-collection/)
+- [Adobe Experience Platform Assurance](https://experience.adobe.com/assurance)
 
-要了解如何在应用程序中安装保障，请阅读 [实施保证指南](../tutorials/implement-assurance.md).
+若要瞭解如何在應用程式中安裝Assurance，請閱讀 [實作保證指南](../tutorials/implement-assurance.md).
 
-## 对适用于流媒体的 Adobe Analytics使用保证
+## 透過適用於流媒體的 Adobe Analytics使用Assurance
 
-连接并设置Adobe Analytics应用程序后，便可以为流媒体分析配置它。 在左侧面板的底部，选择 **[!UICONTROL 配置]** 添加Media Analytics“事件”视图和 **保存** 它。
+在您連線並設定Adobe Analytics的應用程式後，就能為Streaming Media Analytics設定它了。 在左側面板底部，選取 **[!UICONTROL 設定]** 新增Media Analytics事件檢視和 **儲存** it.
 
 ![配置](./images/adobe-analytics-streaming-media/configure.png)
 
-添加后，选择 **[!UICONTROL Media Analytics事件]** 视图 **[!UICONTROL Adobe Analytics]** 部分以验证会话跟踪。
+新增後，選取 **[!UICONTROL Media Analytics事件]** 在中檢視 **[!UICONTROL Adobe Analytics]** 區段來驗證工作階段追蹤。
 
 ![选择](./images/adobe-analytics-streaming-media/select.png)
 
-在 **[!UICONTROL Media Analytics事件]** 查看时，您可以按会话ID(VSID)搜索和过滤，以查看特定的媒体会话。 要查看其他事件详细信息，请选择一个特定事件。
+在 **[!UICONTROL Media Analytics事件]** 檢視，您可以依工作階段ID (VSID)進行搜尋和篩選，以檢視特定的媒體工作階段。 若要檢視其他事件詳細資訊，請選取特定事件。
 
 ![媒体事件](./images/adobe-analytics-streaming-media/media-events.png)
 
-对于API调用的更简洁视图，您还可以通过选择 **[!UICONTROL 隐藏播放头更新事件]** 过滤器。
+如需更簡潔的API呼叫檢視，您也可以透過選取 **[!UICONTROL 隱藏播放點更新事件]** 篩選。
 
-![隐藏播放头](./images/adobe-analytics-streaming-media/hide-playhead.png)
+![隱藏播放點](./images/adobe-analytics-streaming-media/hide-playhead.png)
 
 >[!INFO]
 >
->查看处理后的媒体分析数据需要使用SDK版本：Android Media 2.1.2和iOS AEPMedia 3.0.1（或更高版本）
+>檢視後續處理的媒體分析資料需要使用SDK版本： Android Media 2.1.2和iOS AEPMedia 3.0.1 （或以上版本）
 
-要查看后处理的数据，请查找会话开始事件并在状态列中验证会话是否已完成。 如果完成，请单击事件以在事件详细信息视图中查看媒体会话摘要。 有关更多详细信息，请向下滚动以查找后处理的详细信息。
+若要檢視後續處理的資料，請尋找工作階段開始事件，並在狀態列中驗證工作階段已完成。 如果完成，請按一下事件以在事件詳細資料檢視中檢視媒體工作階段摘要。 如需詳細資訊，請向下捲動以尋找後續處理的詳細資訊。
 
-![后处理视图](./images/adobe-analytics-streaming-media/post-processed-view.png)
+![處理後檢視](./images/adobe-analytics-streaming-media/post-processed-view.png)

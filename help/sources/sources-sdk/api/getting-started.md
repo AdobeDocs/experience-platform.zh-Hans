@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
+keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
 solution: Experience Platform
-title: 自助源入门（批量SDK）
-description: 本文档简要介绍在尝试使用自助源（批处理SDK）创建新源之前您需要了解的先决条件信息。
+title: 自助來源快速入門(Batch SDK)
+description: 本檔案會介紹在嘗試使用自助式來源（批次SDK）建立新來源之前，需要知道的先決條件資訊。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
 source-git-commit: 2a5d545db18a5dd33c5ff2ac5c543ec35db4ca00
 workflow-type: tm+mt
@@ -11,43 +11,43 @@ ht-degree: 0%
 
 ---
 
-# 自助源入门（批量SDK）
+# 自助來源快速入門(Batch SDK)
 
-自助源（批量SDK）允许您集成自己的基于REST的源，以将批量数据导入Adobe Experience Platform。 本文档简要介绍在尝试调用 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+自助來源（批次SDK）可讓您整合自己的REST型來源，以將批次資料帶入Adobe Experience Platform。 本檔案會介紹您在嘗試呼叫「 」之前需要瞭解的核心概念。 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## 先决条件
 
-要使用自助源（批量SDK），您必须确保您有权访问已使用Adobe Experience Platform源进行设置的组织沙盒。
+若要使用自助式來源（批次SDK），您必須確保您有權存取以Adobe Experience Platform來源布建的組織沙箱。
 
-本指南还要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南也需要深入瞭解下列Adobe Experience Platform元件：
 
-* [源](../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙箱](../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
+* [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
 
-## 读取示例API调用
+## 讀取範例API呼叫
 
-自助源（批处理SDK）和 [!DNL Flow Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) (位于Experience Platform疑难解答指南中)。
+自助來源（批次SDK）和 [!DNL Flow Service] API檔案提供範例API呼叫，示範如何格式化請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑難排解指南中。
 
-## 收集所需标题的值
+## 收集必要標題的值
 
-要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
+若要對Platform API發出呼叫，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-平台中的所有资源，包括属于 [!DNL Flow Service]，与特定虚拟沙箱隔离。 对Platform API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+Platform中的所有資源，包括屬於 [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 對Platform API的所有請求都需要標頭，用於指定將在其中執行操作的沙箱名稱：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关Platform中沙箱的更多信息，请参阅 [沙盒文档](../../../sandboxes/home.md).
+>如需Platform中沙箱的詳細資訊，請參閱 [沙箱檔案](../../../sandboxes/home.md).
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
+包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
 
 * `Content-Type: application/json`
 
 ## 后续步骤
 
-要开始使用自助源（批处理SDK）创建新源，请参阅 [创建新源](./create.md).
+若要開始使用自助來源（批次SDK）建立新來源，請參閱以下主題上的教學課程： [建立新來源](./create.md).

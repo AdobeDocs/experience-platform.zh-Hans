@@ -1,111 +1,111 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；电信；订阅；电信；架构设计；字段组；字段组；
+keywords: Experience Platform；首頁；熱門主題；綱要；綱要；XDM；個人設定檔；欄位；綱要；綱要；電信；訂閱；電信；綱要設計；欄位群組；欄位群組；
 solution: Experience Platform
-title: 电信订阅模式字段组
-description: 本文档概述了电信订阅架构字段组。
+title: 電信訂閱結構描述欄位群組
+description: 本檔案提供Telecom Subscription結構描述欄位群組的概觀。
 exl-id: 00c20081-09d0-425c-9894-0f957558bd43
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '730'
-ht-degree: 6%
+source-wordcount: '715'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL 电信订购] 架构字段组
+# [!UICONTROL 電信訂閱] 結構描述欄位群組
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
+>數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
 
-[!UICONTROL 电信订购] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 描述客户的电信订阅计划，包括定价、软件包和单个产品订阅。
+[!UICONTROL 電信訂閱] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md) 說明客戶的電信訂閱計畫，包括定價、套件和個別產品訂閱。
 
-字段组提供单个对象类型字段， `telecomSubscription`，其属性如下所述。
+欄位群組提供單一物件型別欄位， `telecomSubscription`，其屬性如下所述。
 
-![电信订购结构](../../images/field-groups/telecom-subscription/structure.png)
+![電信訂閱結構](../../images/field-groups/telecom-subscription/structure.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `internetSubscription` | 对象数组 | 介绍Internet订阅计划详细信息，如数据上限、连接类型和速度详细信息。 请参阅 [下方](#internetSubscription) 以了解更多信息。 |
-| `landlineSubscription` | 对象数组 | 介绍固定电话订阅计划详细信息，包括选定功能、分钟数和拨号计划。 请参阅 [下方](#landlineSubscription) 以了解更多信息。 |
-| `mediaSubscription` | 对象数组 | 介绍媒体订阅计划详细信息，包括渠道数量和包含的流服务。 请参阅 [下方](#mediaSubscription) 以了解更多信息。 |
-| `mobileSubscription` | 对象数组 | 介绍移动订阅计划详细信息，包括行数、数据费率、成本等。 请参阅 [下方](#mobileSubscription) 以了解更多信息。 |
-| `primarySubscriber` | [[!UICONTROL 人员]](../../data-types/person.md) | 描述订阅的所有者。 |
-| `bundleName` | 字符串 | 捕获在其中注册客户的任何类型订阅包的名称，例如 `Internet + Media`. |
-| `primaryPartyID` | 字符串 | 负责订阅的主要人员的标识符，通常可能是其设备电话号码。 |
+| `internetSubscription` | 物件陣列 | 說明網際網路訂閱計畫細節，例如，資料上限、連線型別和速度細節。 請參閱 [以下區段](#internetSubscription) 以取得詳細資訊。 |
+| `landlineSubscription` | 物件陣列 | 說明有線電話訂閱計畫詳細資料，包括選取的功能、分鐘數和撥號計畫。 請參閱 [以下區段](#landlineSubscription) 以取得詳細資訊。 |
+| `mediaSubscription` | 物件陣列 | 說明媒體訂閱計畫詳細資料，包括頻道數量和包含的串流服務。 請參閱 [以下區段](#mediaSubscription) 以取得詳細資訊。 |
+| `mobileSubscription` | 物件陣列 | 說明行動訂閱計畫詳細資料，包括線路數、資料費率、成本等。 請參閱 [以下區段](#mobileSubscription) 以取得詳細資訊。 |
+| `primarySubscriber` | [[!UICONTROL 人员]](../../data-types/person.md) | 說明訂閱的擁有者。 |
+| `bundleName` | 字符串 | 擷取客戶註冊的任何型別訂閱套件的名稱，例如 `Internet + Media`. |
+| `primaryPartyID` | 字符串 | 負責訂閱的主要人員識別碼，通常可能是他們的裝置電話號碼。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
 
 ## `internetSubscription` {#internetSubscription}
 
-`internetSubscription` 作为对象数组提供。 每个对象的结构如下所述。
+`internetSubscription` 以物件陣列的形式提供。 每個物件的結構如下所述。
 
 ![internetSubscription](../../images/field-groups/telecom-subscription/internetSubscription.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `subscriptionDetails` | [[!UICONTROL 电信订购]](../../data-types/telecom-subscription.md) | 介绍有关订阅的一般详细信息，包括订阅时长、费用、状态等。 介绍有关订阅的一般详细信息，包括订阅时长、费用、状态等。 |
-| `connectionType` | 字符串 | 订阅的连接类型。 |
-| `dataCap` | 整数 | 帐户的数据上限限制（以MB为单位）。 |
-| `downloadSpeed` | 整数 | 订阅可用的最大下载速度，以MB(MB)为单位。 |
-| `selfSetup` | 布尔型 | 指示客户是否有资格进行Internet设置，而无需技术人员的访问。 |
-| `uploadSpeed` | 整数 | 订阅可用的最大上传速度，以MB(MB)为单位。 |
+| `subscriptionDetails` | [[!UICONTROL 電信訂閱]](../../data-types/telecom-subscription.md) | 說明訂閱的一般詳細資料，包括訂閱長度、費用、狀態等。 說明訂閱的一般詳細資料，包括訂閱長度、費用、狀態等。 |
+| `connectionType` | 字符串 | 訂閱的連線型別。 |
+| `dataCap` | 整数 | 帳戶的資料上限，以兆位元組(MB)為單位。 |
+| `downloadSpeed` | 整数 | 訂閱可用的最大下載速度（百萬位元組，簡稱MB）。 |
+| `selfSetup` | 布尔值 | 指出客戶是否有資格在沒有技術人員造訪的情況下進行網際網路設定。 |
+| `uploadSpeed` | 整数 | 訂閱可用的最大上傳速度（百萬位元組，簡稱MB）。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `landlineSubscription` {#landlineSubscription}
 
-`landlineSubscription` 作为对象数组提供。 每个对象的结构如下所述。
+`landlineSubscription` 以物件陣列的形式提供。 每個物件的結構如下所述。
 
-![landlineSubscription](../../images/field-groups/telecom-subscription/landlineSubscription.png)
+![有線電話訂閱](../../images/field-groups/telecom-subscription/landlineSubscription.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `phoneNumber` | [[!UICONTROL 电话号码]](../../data-types/telecom-subscription.md) | 分配给此订阅的电话号码。 |
-| `subscriptionDetails` | [[!UICONTROL 电信订购]](../../data-types/telecom-subscription.md) | 介绍有关订阅的一般详细信息，包括订阅时长、费用、状态等。 |
-| `callBlocking` | 布尔型 | 指示固定电话订阅功能是否包括呼叫阻止。 |
-| `callForwarding` | 布尔型 | 指示固定电话订阅功能是否包括呼叫转发。 |
-| `callWaiting` | 布尔型 | 指示固定电话订阅功能是否包括等待呼叫。 |
-| `callerID` | 布尔型 | 指示固定电话订阅功能是否包括呼叫者ID。 |
-| `internationalCalling` | 布尔型 | 指示固定电话订购功能是否包括国际电话。 |
-| `minutes` | 整数 | 订阅内每月可用的分钟数。 |
-| `threeWayCalling` | 布尔型 | 指示固定电话订阅功能是否包含三向调用。 |
-| `unlimitedDomesticLongDistance` | 布尔型 | 指示固定电话订购功能是否包括无限制的国内长途呼叫。 |
-| `unlimitedLocalCalling` | 布尔型 | 指示固定电话订阅功能是否包括无限制的本地呼叫。 |
-| `voicemail` | 布尔型 | 指示固定电话订阅功能是否包含语音邮件。 |
+| `phoneNumber` | [[!UICONTROL 電話號碼]](../../data-types/telecom-subscription.md) | 指派給此訂閱的電話號碼。 |
+| `subscriptionDetails` | [[!UICONTROL 電信訂閱]](../../data-types/telecom-subscription.md) | 說明訂閱的一般詳細資料，包括訂閱長度、費用、狀態等。 |
+| `callBlocking` | 布尔值 | 指出有線電話訂閱功能是否包含來電封鎖。 |
+| `callForwarding` | 布尔值 | 指出有線電話訂閱功能是否包含來電轉接。 |
+| `callWaiting` | 布尔值 | 指出有線電話訂閱功能是否包含來電等候。 |
+| `callerID` | 布尔值 | 指示有線電話訂閱功能是否包含來電顯示。 |
+| `internationalCalling` | 布尔值 | 指出有線電話訂閱功能是否包含國際通話。 |
+| `minutes` | 整数 | 訂閱內可用的每月分鐘數。 |
+| `threeWayCalling` | 布尔值 | 指出有線電話訂閱功能是否包含三方通話。 |
+| `unlimitedDomesticLongDistance` | 布尔值 | 指出有線電話訂閱功能是否包含不限次數的國內長途電話。 |
+| `unlimitedLocalCalling` | 布尔值 | 指示有線電話訂閱功能是否包含無限制的本機通話。 |
+| `voicemail` | 布尔值 | 指出有線電話訂閱功能是否包含語音信箱。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `mediaSubscription` {#mediaSubscription}
 
-`mediaSubscription` 作为对象数组提供。 每个对象的结构如下所述。
+`mediaSubscription` 以物件陣列的形式提供。 每個物件的結構如下所述。
 
 ![mediaSubscription](../../images/field-groups/telecom-subscription/mediaSubscription.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `streamingServices` | 对象数组 | 订阅中包含的所有流服务的列表。 每个数组项目包含以下属性： <ul><li>`promotionLength`:如果作为促销活动的一部分添加了流服务，则促销活动的时长（以月为单位）。</li><li>`promotionalAddition`:指示流服务是否已添加为促销活动的一部分。</li><li>`serviceName`:流服务的名称。</li></ul> |
-| `subscriptionDetails` | [[!UICONTROL 电信订购]](../../data-types/telecom-subscription.md) | 介绍有关订阅的一般详细信息，包括订阅时长、费用、状态等。 |
-| `channels` | 整数 | 媒体订阅中包含的频道数。 |
+| `streamingServices` | 对象数组 | 訂閱隨附的所有串流服務清單。 每個陣列專案都包含以下屬性： <ul><li>`promotionLength`：促銷活動的時長（以月為單位），前提是已將串流服務新增為促銷活動的一部分。</li><li>`promotionalAddition`：指出是否將串流服務新增為促銷優惠的一部分。</li><li>`serviceName`：串流服務的名稱。</li></ul> |
+| `subscriptionDetails` | [[!UICONTROL 電信訂閱]](../../data-types/telecom-subscription.md) | 說明訂閱的一般詳細資料，包括訂閱長度、費用、狀態等。 |
+| `channels` | 整数 | 媒體訂閱包含的頻道數。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `mobileSubscription` {#mobileSubscription}
 
-`mobileSubscription` 作为对象数组提供。 每个对象的结构如下所述。
+`mobileSubscription` 以物件陣列的形式提供。 每個物件的結構如下所述。
 
 ![mobileSubscription](../../images/field-groups/telecom-subscription/mobileSubscription.png)
 
-| 属性 | 数据类型 | 描述 |
+| 属性 | 資料型別 | 描述 |
 | --- | --- | --- |
-| `phoneNumber` | [[!UICONTROL 电话号码]](../../data-types/telecom-subscription.md) | 分配给此订阅的电话号码。 |
-| `subscriptionDetails` | [[!UICONTROL 电信订购]](../../data-types/telecom-subscription.md) | 介绍有关订阅的一般详细信息，包括订阅时长、费用、状态等。 |
-| `earlyUpgradeEnrollment` | 布尔型 | 指示客户是否选择提前升级。 |
-| `planLevel` | 字符串 | 分配给此订阅的移动计划的名称。 |
-| `portedNumber` | 布尔型 | 指示客户是否从其他运营商端口其号码。 |
+| `phoneNumber` | [[!UICONTROL 電話號碼]](../../data-types/telecom-subscription.md) | 指派給此訂閱的電話號碼。 |
+| `subscriptionDetails` | [[!UICONTROL 電信訂閱]](../../data-types/telecom-subscription.md) | 說明訂閱的一般詳細資料，包括訂閱長度、費用、狀態等。 |
+| `earlyUpgradeEnrollment` | 布尔值 | 指出客戶是否選擇提早升級。 |
+| `planLevel` | 字符串 | 指派給此訂閱的行動方案名稱。 |
+| `portedNumber` | 布尔值 | 指出客戶是否從其他電信業者移轉其號碼。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

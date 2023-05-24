@@ -1,6 +1,6 @@
 ---
-title: Google Ads增强转化扩展
-description: 了解用于Adobe Experience Platform中事件转发的Google广告增强转化扩展。
+title: Google Ads增強型轉換擴充功能
+description: 瞭解Adobe Experience Platform中用於事件轉送的Google Ads Enhanced Conversions擴充功能。
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
 last-substantial-update: 2022-11-23T00:00:00Z
 source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
@@ -10,137 +10,137 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Google Ads] 增强的转化扩展
+# [!DNL Google Ads] 增強型轉換延伸功能
 
-使用 [!DNL Google Ads] API，您可以利用 [增强转化](https://support.google.com/google-ads/answer/9888656) 以转化调整的形式发送第一方客户数据。 Google使用这些附加数据来改进由广告交互驱动的在线转化报表。
+使用 [!DNL Google Ads] API，您可以善用 [增強型轉換](https://support.google.com/google-ads/answer/9888656) 透過以轉換調整的形式傳送第一方客戶資料。 Google會使用這項額外資料，改善由廣告互動驅動的線上轉換報表。
 
-的 [[!DNL Google Ads] 增强的转化事件转发扩展](https://exchange.adobe.com/apps/ec/108630/google-ads-enhanced-conversions) (前称 [!DNL Enhanced Conversions] 扩展)提供了一个用户友好的模板，以便轻松地为 [!DNL Google Ads] API。
+此 [[!DNL Google Ads] 增強型轉換事件轉送擴充功能](https://exchange.adobe.com/apps/ec/108630/google-ads-enhanced-conversions) (先前稱為 [!DNL Enhanced Conversions] 擴充功能)提供使用者易記的範本，以輕鬆實作的 [!DNL Google Ads] API。
 
 >[!IMPORTANT]
 >
->增强的转化仅适用于存在客户数据的转化类型，例如订阅、注册和购买。 以下一个或多个客户数据必须可用，因为在 [配置转化操作](#conversion-action-event-forwarding) 对于事件转发规则：
+>增強型轉換僅適用於存在客戶資料的轉換型別，例如訂閱、註冊和購買。 下列一或多個客戶資料片段必須可供使用，因為它們在下列情況下是必要的： [設定轉換動作](#conversion-action-event-forwarding) 若為事件轉送規則：
 >
->* 电子邮件地址（首选）
->* 姓名和住址（街道地址、城市、州/地区和邮政编码）
->* 电话号码（除上述另外两个信息之一外，还必须提供）
+>* 電子郵件地址（偏好設定）
+>* 名稱和住家地址（街道地址、城市、州/地區和郵遞區號）
+>* 電話號碼（除了上述另外兩則資訊之一外，另外必須提供）
 
 
 ## 实施概述
 
-增强的转化利用 [!DNL Google Ads] 用于将第一方数据添加到客户端设备（通常是网站）上发生的转化的API。 这意味着要实施增强的转化，需分两个步骤：
+增強型轉換可運用 [!DNL Google Ads] 將第一方資料新增至使用者端裝置（通常是網站）上發生的轉換的API。 這表示實作增強型轉換有兩個步驟：
 
-1. 从客户端发送转化。
-1. 使用事件转发发送其他第一方数据，以增强从客户端发送的转化数据。
+1. 從使用者端傳送轉換。
+1. 使用事件轉送來傳送其他第一方資料，以增強從使用者端傳送的轉換資料。
 
 >[!TIP]
 >
->要将客户端转化事件与从事件转发发送的第一方数据关联，请 `transaction_ID` 在两个调用中必须相同。 有关必须在何处为每项服务提供此值的更多信息，请参阅有关为 [标记](#conversion-action-tags) 和 [事件转发](#conversion-action-event-forwarding)，分别为。
+>若要將使用者端轉換事件與事件轉送所傳送的第一方資料建立關聯， `transaction_ID` 兩個呼叫中的內容必須相同。 如需每個服務必須提供此值的位置的詳細資訊，請參閱有關設定轉換動作的區段 [標籤](#conversion-action-tags) 和 [事件轉送](#conversion-action-event-forwarding)（分別）。
 
-由于发送转化事件涉及客户端和服务器端实施，因此本文档介绍了设置客户端的先决条件步骤 [[!DNL Google Global Site Tag] (gtag)扩展](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) 除 [!DNL Enhanced Conversions] 用于事件转发的扩展。
+由於傳送轉換事件涉及使用者端和伺服器端實施，因此本檔案涵蓋設定使用者端的先決條件步驟 [[!DNL Google Global Site Tag] (gtag)擴充功能](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) 除了 [!DNL Enhanced Conversions] 事件轉送的擴充功能。
 
-以下视频介绍 [!DNL Enhanced Conversions] 扩展和逐步完成高级实施步骤：
+以下影片會介紹 [!DNL Enhanced Conversions] 擴充功能並從高層級逐步說明實作步驟：
 
 >[!VIDEO](https://video.tv.adobe.com/v/3411365?quality=12&learn=on)
 
-## 使用标记发送转化
+## 使用標籤傳送轉換
 
-要从网站上的发送转化事件， [!DNL Google Global Site Tag] (gtag)。 您可以通过配置和安装 [!DNL Google Global Site Tag] (gtag)扩展。
+若要從網站上傳送轉換事件， [!DNL Google Global Site Tag] (gtag)必須部署。 您可以透過設定和安裝 [!DNL Google Global Site Tag] (gtag)擴充功能。
 
-### 配置和安装 [!DNL Google Global Site Tag] 扩展
+### 設定並安裝 [!DNL Google Global Site Tag] 擴充功能
 
-导航到 [!UICONTROL 数据收集] UI或Experience PlatformUI，然后选择 **[!UICONTROL 标记]** 中。 选择要在上安装扩展的标记资产，然后选择 **[!UICONTROL 扩展]** 中。 在 **[!UICONTROL 目录]** ，找到 [!UICONTROL Google全局网站标记(gtag)] 扩展和选择 **[!UICONTROL 安装]**.
+導覽至 [!UICONTROL 資料彙集] UI或Experience PlatformUI並選取 **[!UICONTROL 標籤]** 左側導覽列中。 選取您要安裝擴充功能的標籤屬性，然後選取 **[!UICONTROL 擴充功能]** 左側導覽列中。 在 **[!UICONTROL 目錄]** 索引標籤中，找到 [!UICONTROL Google全域網站標籤(gtag)] 擴充功能並選取 **[!UICONTROL 安裝]**.
 
-![的 [!UICONTROL Google全局网站标记(gtag)] 正在下选择的扩展 [!UICONTROL 扩展] 视图 [!UICONTROL 数据收集] UI。](../../../images/extensions/server/google-ads-enhanced-conversions/install-gtag-extension.png)
+![此 [!UICONTROL Google全域網站標籤(gtag)] 擴充功能選取於 [!UICONTROL 擴充功能] 在中檢視 [!UICONTROL 資料彙集] UI。](../../../images/extensions/server/google-ads-enhanced-conversions/install-gtag-extension.png)
 
-出现安装对话框。 从此处选择 **[!UICONTROL 添加帐户]** 和会在出现提示时提供以下值：
+安裝對話方塊隨即顯示。 從此處選取 **[!UICONTROL 新增帳戶]** 並在出現提示時提供下列值：
 
-| 帐户属性 | 描述 |
+| 帳戶屬性 | 描述 |
 | --- | --- |
-| 帐户名称 | 帐户的唯一名称。 此名称仅在标记UI中使用。 |
-| 帐户 ID | 您的 [!DNL Google Ads] 帐户ID。 要查找此值，请登录 [!DNL Google Ads] 并导航到： **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Install the Tag yourself]**. 帐户ID字符串可在以开头的代码段窗口中找到 `AW-` 或 `d`. |
-| 产品 | 选择 **[!UICONTROL Google Ads(AdWords)]**. |
+| 帳戶名稱 | 帳戶的唯一名稱。 此名稱僅用於標籤UI。 |
+| 帐户 ID | 您的 [!DNL Google Ads] 帳戶ID。 若要尋找此值，請登入 [!DNL Google Ads] 並導覽至： **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Install the Tag yourself]**. 帳戶ID字串可在開頭為的程式碼片段視窗中找到 `AW-` 或 `d`. |
+| 产品 | 選取 **[!UICONTROL Google Ads (AdWords)]**. |
 
 {style="table-layout:auto"}
 
-完成后，选择 **[!UICONTROL 添加帐户]**，然后选择 **[!UICONTROL 保存]**.
+完成後，選取 **[!UICONTROL 新增帳戶]**，然後選取 **[!UICONTROL 儲存]**.
 
-### 添加发送转化操作 {#conversion-action-tags}
+### 新增傳送轉換動作 {#conversion-action-tags}
 
-安装扩展后，您可以开始在标记规则中包含转化操作。 创建或编辑监听要增强的转化的规则时，请选择 **[!UICONTROL 添加]** 在 [!UICONTROL 操作]. 在下一个对话框中，选择 **[!UICONTROL Google全局网站标记(gtag)]** 从 [!UICONTROL 扩展] 下拉列表，然后选择 **[!UICONTROL 发送事件]** 在 [!UICONTROL 操作类型].
+安裝擴充功能後，您就可以開始將轉換動作納入標籤規則。 建立或編輯監聽要增強之轉換的規則時，請選取 **[!UICONTROL 新增]** 在 [!UICONTROL 動作]. 在下一個對話方塊中，選取 **[!UICONTROL Google全域網站標籤(gtag)]** 從 [!UICONTROL 副檔名] 下拉式清單，然後選取 **[!UICONTROL 傳送事件]** 在 [!UICONTROL 動作型別].
 
-![的 [!UICONTROL 发送事件] 操作类型。](../../../images/extensions/server/google-ads-enhanced-conversions/select-client-action.png)
+![此 [!UICONTROL 傳送事件] 在規則編輯工作流程的動作設定檢視中選取的動作型別。](../../../images/extensions/server/google-ads-enhanced-conversions/select-client-action.png)
 
-此时会显示允许您配置 [!DNL gtag] 事件。 必须至少填写以下字段：
+會出現其他控制項，讓您設定 [!DNL gtag] 事件。 至少必須填寫下列欄位：
 
-1. **[!UICONTROL 事件名称（操作）]**:输入 `conversion` 作为值。
-1. 添加键为 `transaction_id` 值是 [数据元素](../../../ui/managing-resources/data-elements.md) 包含 [交易ID](https://support.google.com/google-ads/answer/6386790) 值。
-1. **[!UICONTROL 转化标签]**:从 [!DNL Google Ads] 帐户。 要查找此值，请登录Google Ads，然后导航到 **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Use Google Tag Manager]**. 转换标签位于 [!DNL Instructions].
+1. **[!UICONTROL 事件名稱（動作）]**：輸入 `conversion` 做為值。
+1. 新增索引鍵為的新欄位 `transaction_id` 而值是 [資料元素](../../../ui/managing-resources/data-elements.md) 包含 [交易ID](https://support.google.com/google-ads/answer/6386790) 值。
+1. **[!UICONTROL 轉換標籤]**：輸入適當的轉換標籤，來自 [!DNL Google Ads] 帳戶。 若要尋找此值，請登入Google Ads並導覽至 **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Use Google Tag Manager]**. 轉換標籤位於 [!DNL Instructions].
    >[!IMPORTANT]
    >
-   >当您位于 [!DNL Google Ads] 帐户，请确保启用增强的转化。 要执行此操作，请查看并接受服务条款，然后选择 **[!DNL Turn on enhanced conversions]** 和 **[!DNL API]** 作为实现方法。
+   >當您在「 」的標籤設定區域時， [!DNL Google Ads] 帳戶，確定已啟用增強型轉換。 若要這麼做，請檢閱並接受服務條款，然後選取 **[!DNL Turn on enhanced conversions]** 和 **[!DNL API]** 作為實作方法。
 
-配置操作后，选择 **[!UICONTROL 保留更改]** 将操作添加到规则配置。 如果您对规则满意，请选择 **[!UICONTROL 保存到库]**.
+設定動作後，選取 **[!UICONTROL 保留變更]** 以將動作新增至規則設定。 如果您對規則滿意，請選取 **[!UICONTROL 儲存至程式庫]**.
 
-最后，发布新 [构建](../../../ui/publishing/builds.md) 以启用对库的更改。
+最後，發佈新的 [建置](../../../ui/publishing/builds.md) 以啟用程式庫的變更。
 
-## 使用事件转发发送第一方数据
+## 使用事件轉送功能傳送第一方資料
 
-从客户端发送转化事件后，您可以使用 [!DNL Enhanced Conversions] 事件转发扩展。
+一旦您能夠從使用者端傳送轉換事件，您就可以使用 [!DNL Enhanced Conversions] 事件轉送擴充功能。
 
-### 创建Google OAuth 2密钥和数据元素 {#create-secret-data-element}
+### 建立Google OAuth 2密碼和資料元素 {#create-secret-data-element}
 
-在配置扩展之前，必须在事件转发中创建访问令牌以验证到 [!DNL Google Ads] API。
+在設定擴充功能之前，您必須在事件轉送中建立存取Token，以驗證至 [!DNL Google Ads] API。
 
-请参阅 [创建事件转发密钥](../../../ui/event-forwarding/secrets.md) 以了解详细步骤。 确保您选择 **[!UICONTROL Google OAuth 2]** 作为密钥类型。 继续按照提示操作，当要求选择Google帐户配置文件时，请选择有权访问要配置的转换操作的帐户。
+請參閱指南： [建立事件轉送密碼](../../../ui/event-forwarding/secrets.md) 以取得詳細步驟。 確定您選取 **[!UICONTROL Google OAuth 2]** 作為秘密型別。 繼續依照提示進行，並在系統要求您選取Google帳戶設定檔時，請選取可存取您正在設定的轉換動作的帳戶。
 
-一旦秘密被创造， [创建新数据元素](../../../ui/managing-resources/data-elements.md#create-a-data-element) 选择 **[!UICONTROL 密码]** （对于数据元素类型）。 为每个环境选择相应的Google OAuth 2密钥，然后选择 **[!UICONTROL 保存到库]**.
+建立密碼後， [建立新資料元素](../../../ui/managing-resources/data-elements.md#create-a-data-element) 並選取 **[!UICONTROL 密碼]** （資料元素型別）。 為每個環境選取適當的Google OAuth 2密碼，然後選取 **[!UICONTROL 儲存至程式庫]**.
 
-### 配置和安装 [!DNL Enhanced Conversions] 扩展 {#install-enhanced-conversions}
+### 設定並安裝 [!DNL Enhanced Conversions] 擴充功能 {#install-enhanced-conversions}
 
-查找 [!UICONTROL Google Ads增强的转化] 扩展，然后选择 **[!UICONTROL 安装]**.
+尋找 [!UICONTROL Google Ads增強型轉換] 事件轉送目錄中的擴充功能並選取「 」 **[!UICONTROL 安裝]**.
 
-![的 [!UICONTROL Google Ads增强的转化] 正在下选择的扩展 [!UICONTROL 扩展] 视图 [!UICONTROL 数据收集] UI。](../../../images/extensions/server/google-ads-enhanced-conversions/install-enhanced-conversions.png)
+![此 [!UICONTROL Google Ads增強型轉換] 擴充功能選取於 [!UICONTROL 擴充功能] 在中檢視 [!UICONTROL 資料彙集] UI。](../../../images/extensions/server/google-ads-enhanced-conversions/install-enhanced-conversions.png)
 
-要配置扩展，必须填充以下两个必填字段：
+若要設定擴充功能，您必須填入兩個必填欄位：
 
-1. **[!UICONTROL 客户ID]**:唯一标识您的 [!DNL Google Ads] 帐户。 要查找此值，请登录 [!DNL Google Ads] 并导航到 **[!DNL Help]** > **[!DNL Customer ID]**.
-1. **[!UICONTROL 访问令牌数据元素]**:选择数据元素图标(![数据元素图标](../../../images/extensions/server/google-ads-enhanced-conversions/data-element-icon.png))，然后选择您的Google OAuth 2密钥数据元素 [在上一步中配置](#create-secret-data-element) 中。
+1. **[!UICONTROL 客戶ID]**：可唯一識別您的 [!DNL Google Ads] 帳戶。 若要尋找此值，請登入 [!DNL Google Ads] 並導覽至 **[!DNL Help]** > **[!DNL Customer ID]**.
+1. **[!UICONTROL 存取Token資料元素]**：選取資料元素圖示(![資料元素圖示](../../../images/extensions/server/google-ads-enhanced-conversions/data-element-icon.png))，然後選擇您所使用的Google OAuth 2機密資料元素 [在上一步中設定](#create-secret-data-element) 功能表中的。
 
-完成后，选择 **[!UICONTROL 保存]** 以安装扩展。
+完成後，選取 **[!UICONTROL 儲存]** 以安裝擴充功能。
 
-### 添加 [!UICONTROL 发送转化] 对规则的操作 {#conversion-action-event-forwarding}
+### 新增 [!UICONTROL 傳送轉換] 規則的動作 {#conversion-action-event-forwarding}
 
-安装扩展后，您可以开始包含 [!UICONTROL 发送转化] 事件转发规则中的操作。 创建或编辑监听要增强的转化的规则时，请选择 **[!UICONTROL 添加]** 在 [!UICONTROL 操作]. 在下一个对话框中，选择 **[!UICONTROL Google Ads增强的转化]** 从 [!UICONTROL 扩展] 下拉列表，然后选择 **[!UICONTROL 发送转化]** 在 [!UICONTROL 操作类型].
+安裝擴充功能後，您可以開始包含 [!UICONTROL 傳送轉換] 動作。 建立或編輯監聽要增強之轉換的規則時，請選取 **[!UICONTROL 新增]** 在 [!UICONTROL 動作]. 在下一個對話方塊中，選取 **[!UICONTROL Google Ads增強型轉換]** 從 [!UICONTROL 副檔名] 下拉式清單，然後選取 **[!UICONTROL 傳送轉換]** 在 [!UICONTROL 動作型別].
 
-![的 [!UICONTROL 发送转化] 操作类型。](../../../images/extensions/server/google-ads-enhanced-conversions/select-server-action.png)
+![此 [!UICONTROL 傳送轉換] 在規則編輯工作流程的動作設定檢視中選取的動作型別。](../../../images/extensions/server/google-ads-enhanced-conversions/select-server-action.png)
 
-右侧面板中会显示允许您配置转化的新控件。 必须至少填写以下字段：
+新的控制項會顯示在右側面板中，供您設定轉換。 至少必須完成下列欄位：
 
-**转化信息**
+**轉換資訊**
 
-| 输入 | 描述 |
+| 輸入 | 描述 |
 | --- | --- |
-| 客户 ID | 您的 [!DNL Google Ads] 客户ID。 默认为您在 [安装扩展](#install-enhanced-conversions). |
-| 转化ID或转化标签 | 从获取的跟踪值 [!DNL Google Ads] 设置转化跟踪时。 值以 `AW-`.<br><br>有关如何查找这些值的详细信息，请参阅 [[!DNL Google Ads] 文档](https://support.google.com/tagmanager/answer/6105160?hl=en). |
-| Transaction ID | 选择具有与 [从客户端发送](#conversion-action-tags) 使用 [!DNL Google Global Site Tag] 扩展。 |
+| 客户 ID | 您的 [!DNL Google Ads] 客戶ID。 預設為您在下列情況下輸入的客戶識別碼： [安裝擴充功能](#install-enhanced-conversions). |
+| 轉換ID或轉換標籤 | 追蹤值取得自 [!DNL Google Ads] 設定轉換追蹤時。 值開頭為 `AW-`.<br><br>如需如何尋找這些值的詳細資訊，請參閱 [[!DNL Google Ads] 檔案](https://support.google.com/tagmanager/answer/6105160?hl=en). |
+| Transaction ID | 選取具有相同交易ID值的資料元素，該值 [從使用者端傳送](#conversion-action-tags) 使用 [!DNL Google Global Site Tag] 副檔名。 |
 
-**用户标识**
+**使用者識別**
 
-* 必须至少包含三个用户标识符之一：
+* 至少必須包含三個使用者識別碼中的一個：
    * 电子邮件
-   * 电话号码
+   * 電話號碼
    * 完整地址
 
 >[!TIP]
 >
->用户标识数据在发送到Google之前必须经过哈希处理。 如果数据在事件转发收到时没有经过哈希处理，请选择 **[!UICONTROL 标准化和哈希]** 打开给定字段，以指示扩展对值进行哈希处理。
+>必須先雜湊使用者識別資料，才能將其傳送至Google。 如果事件轉送收到資料時，資料並未進行雜湊處理，請選取 **[!UICONTROL 標準化與雜湊]** 開啟指定欄位，指示擴充功能將值雜湊。
 >
->![的 [!UICONTROL 标准化和哈希] 为 [!UICONTROL 电子邮件] 输入 [!UICONTROL 发送转化] 操作配置表单。](../../../images/extensions/server/google-ads-enhanced-conversions/hash-user-id-values.png)
+>![此 [!UICONTROL 標準化與雜湊] 已為以下專案啟用切換： [!UICONTROL 電子郵件] 輸入於 [!UICONTROL 傳送轉換] 動作設定表單。](../../../images/extensions/server/google-ads-enhanced-conversions/hash-user-id-values.png)
 
-完成后，选择 **[!UICONTROL 保留更改]** 将操作添加到规则配置。 如果您对规则满意，请选择 **[!UICONTROL 保存到库]**.
+完成後，選取 **[!UICONTROL 保留變更]** 以將動作新增至規則設定。 如果您對規則滿意，請選取 **[!UICONTROL 儲存至程式庫]**.
 
-最后，发布新的事件转发 [构建](../../../ui/publishing/builds.md) 以启用对库的更改。
+最後，發佈新的事件轉送 [建置](../../../ui/publishing/builds.md) 以啟用程式庫的變更。
 
 ## 后续步骤
 
-本指南介绍如何将转化事件发送到 [!DNL Google Ads] 使用 [!DNL Enhanced Conversions] 事件转发扩展。 有关Experience Platform中事件转发功能的更多信息，请参阅 [事件转发概述](../../../ui/event-forwarding/overview.md).
+本指南說明如何將轉換事件傳送至 [!DNL Google Ads] 使用 [!DNL Enhanced Conversions] 事件轉送擴充功能。 如需Experience Platform中事件轉送功能的詳細資訊，請參閱 [事件轉送概觀](../../../ui/event-forwarding/overview.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；区段匹配；区段匹配
+keywords: Experience Platform；首頁；熱門主題；分段；區段比對；區段比對
 solution: Experience Platform
-title: 区段匹配概述
-description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
+title: 區段比對概觀
+description: 「區段比對」是Adobe Experience Platform中的區段共用服務，可讓兩名或以上Platform使用者以安全、受管且隱私權友好的方式交換區段資料。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -13,107 +13,107 @@ ht-degree: 2%
 
 # [!DNL Segment Match] 概述
 
-Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。 [!DNL Segment Match] 使用平台隐私标准和个人标识符，如经过哈希处理的电子邮件、经过哈希处理的电话号码，以及设备标识符（如IDFA和GAID）。
+Adobe Experience Platform區段比對是一項區段共用服務，可讓兩位或以上的Platform使用者以安全、受管且隱私權友好的方式交換區段資料。 [!DNL Segment Match] 會使用Platform隱私權標準和個人識別碼，例如雜湊電子郵件、雜湊電話號碼，以及裝置識別碼（例如IDFA和GAID）。
 
-使用 [!DNL Segment Match] 您可以：
+替換為 [!DNL Segment Match] 您可以：
 
-* 管理身份重叠流程。
-* 查看共享前估计。
-* 应用数据使用标签以控制是否可以与合作伙伴共享数据。
-* 在发布信息源后维护共享的受众生命周期管理，并通过添加、删除和取消共享的功能继续动态交换数据。
+* 管理身分重疊程式。
+* 檢視預先共用預估值。
+* 套用資料使用標籤以控制資料是否可與合作夥伴共用。
+* 在發佈摘要後維護共用的對象生命週期管理，並透過新增、刪除和取消共用的功能繼續動態交換資料。
 
-[!DNL Segment Match] 使用身份重叠流程确保以安全且注重隐私的方式完成区段共享。 安 **重叠特征** 是您的区段和选定合作伙伴区段中具有匹配项的标识。 在发送者和接收者之间共享区段之前，身份重叠过程会检查命名空间中的重叠以及发送者和接收者之间的同意检查。 要共享区段，必须通过两个重叠检查。
+[!DNL Segment Match] 使用身分重疊程式，確保區段共用以安全和以隱私權為中心的方式進行。 一個 **重疊的身分** 是在您的區段和您選取的合作夥伴區段中都相符的身分。 在傳送者與接收者之間共用區段之前，身分重疊程式會檢查名稱空間中的重疊，並檢查傳送者與接收者之間的同意檢查。 必須傳遞兩個重疊檢查才能共用區段。
 
-以下各节提供了有关 [!DNL Segment Match]，包括有关设置及其端到端工作流的详细信息。
+以下小節提供以下專案的詳細資訊： [!DNL Segment Match]，包括設定及其端對端工作流程的詳細資訊。
 
 ## 设置
 
-以下各节概述了如何设置和配置 [!DNL Segment Match]:
+以下各節概述如何設定和配置 [!DNL Segment Match]：
 
-### 设置身份数据和命名空间 {#namespaces}
+### 設定身分資料和名稱空間 {#namespaces}
 
-入门的第一步 [!DNL Segment Match] 是为了确保根据支持的身份命名空间摄取数据。
+開始使用的第一步 [!DNL Segment Match] 是確保您擷取的是支援的身分名稱空間資料。
 
-身份命名空间是 [Adobe Experience Platform Identity Service](../../../identity-service/home.md). 每个客户身份都包含一个指示身份上下文的关联命名空间。 例如，命名空间可以区分“name”的值<span>@email.com”作为电子邮件地址，或“443522”作为数字CRM ID。
+身分名稱空間是的元件 [Adobe Experience Platform Identity Service](../../../identity-service/home.md). 每個客戶身分都包含一個關聯的名稱空間，可指出身分的上下文。 例如，名稱空間可以區分「name」的值<span>@email.com」作為電子郵件地址，或「443522」作為數值CRM ID。
 
-完全限定的标识包括ID值和命名空间。 在配置文件片段之间匹配记录数据时(例如， [!DNL Real-Time Customer Profile] 合并配置文件数据)，标识值和命名空间必须匹配。
+完整身分包含ID值和名稱空間。 跨設定檔片段比對記錄資料時(例如 [!DNL Real-Time Customer Profile] 合併設定檔資料)，身分值和名稱空間必須相符。
 
-在 [!DNL Segment Match]，则共享数据时会在重叠过程中使用命名空间。
+在的內容中 [!DNL Segment Match]，共用資料時，名稱空間會用於重疊程式中。
 
-支持的命名空间列表如下所示：
+支援的名稱空間清單如下：
 
 | 命名空间 | 描述 |
 | --------- | ----------- |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 在使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在电子邮件地址被标准化之前，需要裁剪前导和尾随空格。 此设置不能以追溯方式更改。 Platform提供两种方法，支持通过对数据收集进行哈希处理 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) 通过 [数据准备](../../../data-prep/functions.md#hashing). |
-| 电话(SHA256_E.164) | 表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码的命名空间。 |
-| ECID | 表示Experience CloudID(ECID)值的命名空间。 此命名空间也可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅 [ECID概述](../../../identity-service/ecid.md) 以了解更多信息。 |
-| Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 请参阅以下文档(位于 [基于兴趣的广告](https://support.apple.com/en-us/HT202074) 以了解更多信息。 |
-| Google广告ID | 表示Google广告ID的命名空间。 请参阅以下文档(位于 [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) 以了解更多信息。 |
+| 電子郵件（SHA256，小寫） | 預先雜湊電子郵件地址的名稱空間。 使用SHA256雜湊之前，此名稱空間中提供的值會轉換為小寫。 在電子郵件地址標準化之前，需要修剪開頭和結尾的空格。 此設定無法回溯變更。 Platform提供兩種支援資料收集雜湊的方法，透過 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) 和至 [資料準備](../../../data-prep/functions.md#hashing). |
+| 電話(SHA256_E.164) | 代表需要使用SHA256和E.164格式雜湊的原始電話號碼的名稱空間。 |
+| ECID | 代表Experience CloudID (ECID)值的名稱空間。 此名稱空間也可以以下列别名表示：「Adobe Marketing Cloud ID」、「Adobe Experience Cloud ID」、「Adobe Experience Platform ID」。 請參閱 [ECID概觀](../../../identity-service/ecid.md) 以取得詳細資訊。 |
+| Apple IDFA （廣告商的ID） | 代表廣告商Apple ID的名稱空間。 請參閱以下檔案： [興趣型廣告](https://support.apple.com/en-us/HT202074) 以取得詳細資訊。 |
+| Google Ad ID | 代表Google Advertising ID的名稱空間。 請參閱以下檔案： [Google廣告ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) 以取得詳細資訊。 |
 
-### 设置同意配置
+### 設定同意設定
 
-您必须提供同意配置，并将其默认值设置为 `opt-in` 或 `opt-out` 进行同意检查。
+您必須提供同意設定，並將其預設值設為 `opt-in` 或 `opt-out` 進行同意檢查。
 
-选择加入和选择退出同意检查决定您是否可以在获得同意的情况下运行以在默认情况下共享用户数据。 如果同意配置默认设置为 `opt-out`，则可以共享用户数据，除非用户明确选择禁用。 如果默认设置为 `opt-in`，则无法共享用户数据，除非用户明确选择加入。
+選擇加入和選擇退出同意檢查會決定您預設是否可以在同意的情況下操作以共用使用者資料。 如果同意設定預設值設為 `opt-out`，則使用者資料可以共用，除非使用者明確選擇退出。 如果預設值設為 `opt-in`，則無法共用使用者資料，除非使用者明確選擇加入。
 
-的默认同意配置 [!DNL Segment Match] 设置为 `opt-out`. 要为您的数据强制实施选择加入模型，请向您的Adobe帐户团队发送电子邮件请求。
+預設同意設定 [!DNL Segment Match] 設為 `opt-out`. 若要對您的資料強制執行選擇加入模式，請傳送電子郵件要求給您的Adobe帳戶團隊。
 
-有关 `share` 用于设置数据共享同意值的属性，请参阅以下文档 [隐私和同意字段组](../../../xdm/field-groups/profile/consents.md). 有关用于捕获消费者同意以收集和使用与隐私、个性化和营销首选项相关数据的特定字段组的信息，请参阅以下内容 [隐私、个性化和营销首选项同意GitHub示例](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md).
+如需詳細資訊，請參閱 `share` 用於設定資料共用同意值的屬性，請參閱以下檔案： [隱私權與同意欄位群組](../../../xdm/field-groups/profile/consents.md). 如需用於擷取消費者同意，以收集及使用與隱私權、個人化和行銷偏好設定相關之資料的特定欄位群組的相關資訊，請參閱下列內容 [隱私權、個人化和行銷偏好設定的同意GitHub範例](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md).
 
-### 配置数据使用情况标签
+### 設定資料使用標籤
 
-您必须建立的最后一个先决条件是配置新的数据使用标签以防止数据共享。 通过数据使用标签，您可以管理允许通过共享的数据 [!DNL Segment Match].
+您必須建立的最後一個先決條件是設定新的資料使用標籤，以防止資料共用。 透過資料使用標籤，您可以管理允許透過分享的資料 [!DNL Segment Match].
 
-数据使用情况标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 标签可随时应用，从而在您选择如何管理数据方面提供了灵活性。 最佳实践是：在将数据摄取到Experience Platform中后，或当数据在Platform中可用时，立即为数据设置标签。
+資料使用標籤可讓您根據套用至該資料的使用原則來分類資料集和欄位。 標籤可隨時套用，讓您靈活選擇控管資料的方式。 最佳實務建議在資料內嵌至Experience Platform後，或資料可在Platform中使用時，立即為資料加上標籤。
 
-[!DNL Segment Match] 使用C11标签，该标签是特定于 [!DNL Segment Match] 可手动添加到任何数据集或属性的量度，以确保将这些量度从 [!DNL Segment Match] 合作伙伴共享流程。 C11标签表示不应在 [!DNL Segment Match] 进程。 确定要从中排除的数据集和/或字段后 [!DNL Segment Match] 并相应地添加了C11标签，则标签将由 [!DNL Segment Match] 工作流。 [!DNL Segment Match] 自动启用 [!UICONTROL 限制数据共享] 核心政策。 有关如何将数据使用情况标签应用于数据集的特定说明，请参阅 [在UI中管理数据使用情况标签](../../../data-governance/labels/user-guide.md).
+[!DNL Segment Match] 使用C11標籤，此合約標籤特定於 [!DNL Segment Match] 手動新增至任何資料集或屬性，以確保將其從 [!DNL Segment Match] 合作夥伴共用程式。 C11標籤表示不應在下列位置使用的資料： [!DNL Segment Match] 程式。 在您決定好要排除的資料集和/或欄位後 [!DNL Segment Match] 並據此新增C11標籤，而標籤會由 [!DNL Segment Match] 工作流程。 [!DNL Segment Match] 自動啟用 [!UICONTROL 限制資料共用] 核心原則。 如需如何將資料使用標籤套用至資料集的特定指示，請參閱以下教學課程： [在UI中管理資料使用標籤](../../../data-governance/labels/user-guide.md).
 
-有关数据使用标签及其定义的列表，请参阅 [数据使用标签术语表](../../../data-governance/labels/reference.md). 有关数据使用策略的信息，请参阅 [数据使用策略概述](../../../data-governance/policies/overview.md).
+如需資料使用標籤及其定義的清單，請參閱 [資料使用標籤字彙表](../../../data-governance/labels/reference.md). 如需資料使用原則的相關資訊，請參閱 [資料使用原則概觀](../../../data-governance/policies/overview.md).
 
-### 了解 [!DNL Segment Match] 权限
+### 瞭解 [!DNL Segment Match] 許可權
 
-有两个权限与 [!DNL Segment Match]:
+有兩個相關許可權 [!DNL Segment Match]：
 
 | 权限 | 描述 |
 | --- | --- |
-| 管理受众共享连接 | 此权限允许您完成合作伙伴握手过程，该过程会连接两个组织以启用 [!DNL Segment Match] 流量。 |
-| 管理受众共享 | 此权限允许您创建、编辑和发布信息源(用于 [!DNL Segment Match])与积极合作伙伴(管理员用户已与 **[!UICONTROL 受众共享连接]** 访问)。 |
+| 管理對象共用連線 | 此許可權可讓您完成合作夥伴交握程式，該程式會連線兩個要啟用的組織 [!DNL Segment Match] 流程。 |
+| 管理對象共用 | 此許可權可讓您建立、編輯和發佈摘要（用於下列專案的資料套件）： [!DNL Segment Match])與作用中合作夥伴(由管理員使用者透過以下連結的合作夥伴： **[!UICONTROL 對象共用連線]** 存取)。 |
 
-请参阅 [访问控制概述](../../../access-control/home.md) 以了解有关访问控制和权限的更多信息。
+請參閱 [存取控制總覽](../../../access-control/home.md) 以取得存取控制和許可權的詳細資訊。
 
-## [!DNL Segment Match] 端到端工作流
+## [!DNL Segment Match] 端對端工作流程
 
-设置身份数据和命名空间、同意配置和数据使用标签后，即可开始使用 [!DNL Segment Match] 及其特性。
+設定好身分資料和名稱空間、同意設定和資料使用標籤後，您就可以開始使用 [!DNL Segment Match] 及其功能。
 
-### 管理合作伙伴
+### 管理合作夥伴
 
-在平台UI中，选择 **[!UICONTROL 区段]** 从左侧导航中，然后选择 **[!UICONTROL 信息源]** 中。
+在Platform UI中選取 **[!UICONTROL 區段]** 從左側導覽列中，然後選取 **[!UICONTROL 摘要]** 從頂端標題。
 
 ![segments-feed.png](./images/segments-feed.png)
 
-的 [!UICONTROL 信息源] 页面包含从合作伙伴收到的信息源列表以及您共享的信息源。 要查看现有合作伙伴的列表或与新合作伙伴建立连接，请选择 **[!UICONTROL 管理合作伙伴]**.
+此 [!UICONTROL 摘要] 頁面包含從合作夥伴收到的摘要清單，以及您共用的摘要。 若要檢視現有合作夥伴的清單或建立與新合作夥伴的連線，請選取 **[!UICONTROL 管理合作夥伴]**.
 
 ![manage-partners.png](./images/manage-partners.png)
 
-两个合作伙伴之间的连接是一种“双向握手”，它充当用户在沙盒级别将其Platform组织连接在一起的自助服务方法。 需要建立连接，才能告知Platform已经建立协议，并且Platform可以帮助您与合作伙伴共享服务。
+兩個合作夥伴之間的連線是「雙向交握」，可作為使用者在沙箱層級將其Platform組織連結在一起的自助方法。 需要連線，才能通知Platform已建立合約，且Platform可協助您與合作夥伴共用服務。
 
 >[!NOTE]
 >
->你和你的伴侣之间的“双向握手”完全是一种联系。 在此过程中不会交换任何数据。
+>您與合作夥伴之間的「雙向握手」純屬連線。 在此過程中不會交換任何資料。
 
-您可以在的主界面中查看与现有合作伙伴的连接列表 [!UICONTROL 管理合作伙伴] 屏幕。 右边栏上的 [!UICONTROL 共享设置] 面板，该面板提供了用于生成新 [!UICONTROL 连接ID] 以及一个输入框，您可以在其中输入合作伙伴的 [!UICONTROL 连接ID].
+您可以在的主要介面中檢視與現有合作夥伴的連線清單 [!UICONTROL 管理合作夥伴] 畫面。 右邊欄上是 [!UICONTROL 共用設定] 面板，可讓您選擇產生新的 [!UICONTROL 連線ID] 以及輸入方塊，您可以在其中輸入合作夥伴的 [!UICONTROL 連線ID].
 
-![sutalish-connection.png](./images/establish-connection.png)
+![establish-connection.png](./images/establish-connection.png)
 
-创建新 [!UICONTROL 连接ID]，选择 **[!UICONTROL 重新生成]** 在 [!UICONTROL 共享设置] 然后，选择新生成ID旁边的复制图标。
+若要建立新的 [!UICONTROL 連線ID]，選取 **[!UICONTROL 重新產生]** 在 [!UICONTROL 共用設定] 然後選取新產生的ID旁邊的復製圖示。
 
 ![share-setting.png](./images/share-setting.png)
 
-使用 [!UICONTROL 连接ID]，请在下的输入框中输入其唯一ID值 [!UICONTROL Connect合作伙伴] 然后选择 **[!UICONTROL 请求]**.
+若要使用下列專案連線合作夥伴： [!UICONTROL 連線ID]，請在下的輸入方塊中輸入其唯一ID值 [!UICONTROL 連線合作夥伴] 然後選取 **[!UICONTROL 請求]**.
 
 ![connect-partner.png](./images/connect-partner.png)
 
-### 创建馈送 {#create-feed}
+### 建立摘要 {#create-feed}
 
 >[!CONTEXTUALHELP]
 >id="platform_segment_match_marketing"
@@ -121,85 +121,85 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 >abstract="受限的营销用例有助于为您的合作伙伴提供指导，确保根据您的数据治理限制正确使用共享区段。"
 >text="Learn more in documentation"
 
-A **馈送** 是一组数据（区段）、用于显示或使用该数据的规则，以及用于确定如何将您的数据与合作伙伴数据进行匹配的配置。 信息源可以通过以下方式独立管理，并与其他平台用户交换 [!DNL Segment Match].
+A **摘要** 是一組資料（區段）、如何公開或使用這些資料的規則，以及決定如何將您的資料與合作夥伴的資料進行比對的設定。 摘要可透過以下方式獨立管理，並與其他Platform使用者交換： [!DNL Segment Match].
 
-要创建新馈送，请选择 **[!UICONTROL 创建馈送]** 从 [!UICONTROL 信息源] 功能板。
+若要建立新的摘要，請選取 **[!UICONTROL 建立摘要]** 從 [!UICONTROL 摘要] 儀表板。
 
 ![create-feed.png](./images/create-feed.png)
 
-信息源的基本设置包括有关营销用例和身份设置的名称、描述和配置。 为您的信息源提供名称和描述，然后应用您希望从中排除数据的营销用例。 您可以从列表中选择多个用例，这些用例包括：
+摘要的基本設定包括關於行銷使用案例和身分設定的名稱、說明和設定。 提供摘要的名稱和說明，然後套用您要排除其資料的行銷使用案例。 您可以從清單中選取多個使用案例，包括：
 
 * [!UICONTROL Analytics]
-* [!UICONTROL 与PII组合]
-* [!UICONTROL 跨站点定位]
+* [!UICONTROL 與PII結合]
+* [!UICONTROL 跨網站目標定位]
 * [!UICONTROL 数据科学]
-* [!UICONTROL 电子邮件定位]
-* [!UICONTROL 导出到第三方]
-* [!UICONTROL 现场广告]
-* [!UICONTROL 现场个性化]
-* [!UICONTROL 区段匹配]
-* [!UICONTROL 单个身份个性化]
+* [!UICONTROL 電子郵件目標定位]
+* [!UICONTROL 匯出至第三方]
+* [!UICONTROL 站上廣告]
+* [!UICONTROL 站上個人化]
+* [!UICONTROL 區段比對]
+* [!UICONTROL 單一身分個人化]
 
-最后，为您的信息源选择适当的身份命名空间。 有关支持的特定命名空间的信息 [!DNL Segment Match]，请参阅 [身份数据和命名空间表](#namespaces). 完成后，选择 **[!UICONTROL 下一个]**.
+最後，請為您的摘要選取適當的身分名稱空間。 有關支援的特定名稱空間的資訊 [!DNL Segment Match]，請參閱 [身分資料和名稱空間表格](#namespaces). 完成後，選取 **[!UICONTROL 下一個]**.
 
 ![audience-sharing.png](./images/audience-sharing.png)
 
-建立信息源设置后，从第一方区段列表中选择要共享的区段。 您可以从列表中选择多个区段，并且可以使用右边栏管理选定区段的列表。 完成后，选择 **[!UICONTROL 下一个]**.
+建立摘要的設定後，請從第一方區段清單中選取要共用的區段。 您可以從清單中選取多個區段，也可以使用滑鼠右欄來管理所選區段的清單。 完成後，選取 **[!UICONTROL 下一個]**.
 
 ![select-segments.png](./images/select-segments.png)
 
-的 [!UICONTROL 共享] 页面，为您提供一个界面来选择要与其共享信息源的合作伙伴。 在此步骤中，您还可以查看预共享重叠估计报告，并按您与合作伙伴之间的命名空间查看重叠身份的数量，以及同意共享数据的重叠身份的数量。
+此 [!UICONTROL 共用] 頁面隨即顯示，提供您選擇要與其共用摘要的合作夥伴介面。 在此步驟中，您也可以檢視預先共用重疊預估報表，並依名稱空間檢視您與合作夥伴之間的重疊身分數目，以及同意共用資料的重疊身分數目。
 
-选择 **[!UICONTROL 按区段分析]** 以查看估计报告。
+選取 **[!UICONTROL 依區段分析]** 檢視預估報表。
 
 ![analyze.png](./images/analyze.png)
 
-重叠估计报表允许您在共享信息源之前，管理每个合作伙伴和每个区段的重叠和同意检查。
+重疊預估報表可讓您在共用摘要之前，管理每個合作夥伴和每個區段的重疊和同意檢查。
 
 | 量度 | 描述 |
 | ------- | ----------- |
-| 经同意的估计身份 | 符合为您的组织配置的同意要求的重叠身份总数。 |
-| 估计重叠恒等式 | 符合选定区段资格且与选定合作伙伴具有匹配项的身份数。 这些标识按命名空间显示，而不代表单个配置文件标识。 重叠估计基于配置文件草图。 |
+| 經同意的預估身分 | 符合為貴組織設定的同意要求的重疊身分總數。 |
+| 預估的重疊身分 | 符合所選區段資格且與所選合作夥伴相符的身分數量。 這些身分會依名稱空間顯示，不代表個別設定檔身分。 重疊的預估值是根據輪廓草圖。 |
 
-完成后，选择 **[!UICONTROL 关闭]**.
+完成後，選取 **[!UICONTROL 關閉]**.
 
 ![overlap-report.png](./images/overlap-report.png)
 
-选择合作伙伴并查看重叠估计报表后，请选择 **[!UICONTROL 下一个]** 以继续。
+選取合作夥伴並檢視重疊預估報表後，請選取「 」 **[!UICONTROL 下一個]** 以繼續進行。
 
 ![share.png](./images/share.png)
 
-的 [!UICONTROL 审阅] ，允许您在共享和发布新信息源之前查看该信息源。 此步骤包括有关您应用的身份设置的详细信息，以及有关您选择的营销用例、区段和合作伙伴的信息。
+此 [!UICONTROL 檢閱] 步驟隨即顯示，可讓您在共用和發佈新摘要之前先檢閱該摘要。 此步驟包含您套用的身分設定詳細資訊，以及您選取的行銷使用案例、區段和合作夥伴的相關資訊。
 
-选择 **[!UICONTROL 完成]** 以继续。
+選取 **[!UICONTROL 完成]** 以繼續進行。
 
 ![review.png](./images/review.png)
 
-### 更新馈送
+### 更新摘要
 
-要添加或删除区段，请选择 **[!UICONTROL 创建馈送]** 从 [!UICONTROL 信息源] 页面，然后选择 **[!UICONTROL 现有馈送]**. 在显示的现有馈送列表中，选择要更新的馈送，然后选择 **[!UICONTROL 下一个]**.
+若要新增或移除區段，請選取 **[!UICONTROL 建立摘要]** 從 [!UICONTROL 摘要] 頁面，然後選取 **[!UICONTROL 現有摘要]**. 在出現的現有摘要清單中，選取您要更新的摘要，然後選取 **[!UICONTROL 下一個]**.
 
-![信息源列表](./images/feed-list.png)
+![摘要 — 清單](./images/feed-list.png)
 
-此时会显示区段列表。 从此处，您可以向信息源添加新区段，并且可以使用右边栏删除不再需要的任何区段。 完成对信息源中的区段的管理后，请选择 **[!UICONTROL 下一个]** 然后，按照上述步骤完成更新的信息源。
+區段清單隨即顯示。 從這裡，您可以新增區段至摘要，並使用滑鼠右欄來移除您不再需要的任何區段。 管理完摘要中的區段後，請選取「 」 **[!UICONTROL 下一個]** 然後依照上述步驟完成更新的摘要。
 
-![更新](./images/update.png)
+![update](./images/update.png)
 
 >[!NOTE]
 >
->在您从共享馈送添加或删除区段时，接收合作伙伴必须通过重新启用 [!DNL Profile] 切换其已接收馈送列表。
+>當您從共用摘要新增或移除區段時，接收合作夥伴必須透過重新啟用 [!DNL Profile] 切換其已接收摘要的清單。
 
-### 接受传入的馈送
+### 接受傳入摘要
 
-要查看传入的馈送，请选择 **[!UICONTROL 已接收]** 从 [!UICONTROL 信息源] 页面，然后从列表中选择要查看的馈送。 要接受馈送，请选择 **[!UICONTROL 为配置文件启用]** 并允许稍候从 [!UICONTROL 待定] to [!UICONTROL 已启用].
+若要檢視傳入摘要，請選取 **[!UICONTROL 已接收]** 從「 」的標題 [!UICONTROL 摘要] 頁面，然後從清單中選取您要檢視的摘要。 若要接受摘要，請選取 **[!UICONTROL 為設定檔啟用]** 並留出片刻讓狀態從更新 [!UICONTROL 擱置中] 至 [!UICONTROL 已啟用].
 
 ![received.png](./images/received.png)
 
-接受共享馈送后，您可以开始使用共享数据来构建新区段。
+接受共用摘要後，您就可以開始使用共用資料來建立新區段。
 
 ## 后续步骤
 
-通过阅读本文档，您对 [!DNL Segment Match]、其功能以及端到端工作流。 请参阅以下文档，了解有关其他Platform服务的更多信息：
+閱讀本檔案後，您已瞭解 [!DNL Segment Match]、其功能及其端對端工作流程。 請參閱下列檔案，進一步瞭解其他Platform服務：
 
 * [[!DNL Segmentation Service]](../../home.md)
 * [[!DNL Identity Service]](../../../identity-service/home.md)

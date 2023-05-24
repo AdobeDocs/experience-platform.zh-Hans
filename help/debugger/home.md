@@ -13,29 +13,29 @@ ht-degree: 21%
 
 ---
 
-# Adobe Experience Platform Debugger概述
+# Adobe Experience Platform Debugger概觀
 
-适用于的Adobe Experience Platform Debugger扩展 [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) 和 [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/) 检查您的网页，并帮助您发现Adobe Experience Cloud解决方案的实施存在哪些问题。
+適用於的Adobe Experience Platform Debugger擴充功能 [鉻黃](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) 和 [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/) 會檢查您的網頁，並協助您找出Adobe Experience Cloud解決方案實作方式的相關問題。
 
-您可以将Platform Debugger与其他Adobe激活解决方案结合使用，以执行以下操作：
+您可以搭配使用Platform Debugger與其他Adobe啟用解決方案來執行下列作業：
 
-1. 使用 [标记](../tags/home.md) 插入可激活的代码 [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) 产品。
-1. 使用 [**[!UICONTROL Auditor ]**选项卡](./auditor/overview.md) 中，用于测试您的实施。
-1. 使用Platform Debugger中基于事件且特定于解决方案的工具来调试Auditor发现的问题或检查有关您的实施的其他信息。
+1. 使用 [標籤](../tags/home.md) 插入啟動的程式碼 [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) 產品。
+1. 使用 [**[!UICONTROL Auditor ]**標籤](./auditor/overview.md) （在Platform Debugger中）測試您的實作。
+1. 在Platform Debugger中使用事件型和解決方案專用工具，針對Auditor發現的問題進行偵錯，或檢查實作的其他相關資訊。
 
 >[!NOTE]
 >
->虽然上述步骤是一个共同的过程，但不一定按照规定的顺序执行。
+>雖然上述步驟代表常見程式，但並不一定按上述順序執行。
 
-您可以在任何网页上运行Platform Debugger，该扩展将有权访问公共数据。 要使用扩展访问非公共数据，您必须在打开的浏览器选项卡中通过Experience Cloud身份验证。
+您可以在任何網頁上執行Platform Debugger，此擴充功能將可存取公開資料。 若要使用擴充功能存取非公開資料，您必須在開啟的瀏覽器分頁中通過Experience Cloud驗證。
 
 ## 用例 {#section-9fcd0583ed184943a8f0c2d3c00658e0}
 
-您可以使用Platform Debugger收集的信息，更好地了解Experience Cloud解决方案的实施方式。 例如：
+您可以使用Platform Debugger收集的資訊，進一步瞭解Experience Cloud解決方案的實作方式。 例如：
 
-* **标记**:查看页面上部署的属性、环境和内部版本。
-* **Adobe Target**:查看您有无资格参与哪些活动以及原因。
-* **Adobe Analytics**:查看当前页面上哪些报表包处于活动状态。
+* **標籤**：檢視頁面上部署了哪些屬性、環境和版本。
+* **Adobe Target**：檢視您符合或不符合哪些活動的資格及其原因。
+* **Adobe Analytics**：檢視目前頁面上作用中的報表套裝。
 
 ## 视频教程
 

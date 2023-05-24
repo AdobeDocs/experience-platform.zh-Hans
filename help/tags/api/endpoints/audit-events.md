@@ -1,25 +1,25 @@
 ---
-title: 审核事件端点
-description: 了解如何在Reactor API中调用/audit_events端点。
+title: 稽核事件端點
+description: 瞭解如何在Reactor API中呼叫/audit_events端點。
 exl-id: 59cd58dc-4085-47b7-846f-d3937740dd9b
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '262'
-ht-degree: 4%
+source-wordcount: '259'
+ht-degree: 3%
 
 ---
 
-# 审核事件端点
+# 稽核事件端點
 
 >[!WARNING]
 >
->实施 `/audit_events` 端点在通量中，因为添加、删除和重新工作了功能。
+>實作 `/audit_events` 端點會隨著特徵的加入、移除和重新加工而變動。
 
-审核事件是对Reactor API中其他资源进行特定更改的记录，在进行更改时生成。 这些是系统事件，可通过使用 [回调](./callbacks.md). 的 `/audit_events` reactor API中的端点允许您以编程方式管理体验应用程序中的审核事件。
+稽核事件是對Reactor API中其他資源進行特定變更的記錄，會在進行變更時產生。 這些是可透過使用訂閱的系統事件 [callback](./callbacks.md). 此 `/audit_events` Reactor API中的端點可讓您以程式設計方式管理體驗應用程式內的稽核事件。
 
-审核事件的结构形式为 `{RESOURCE_TYPE}.{EVENT}`，例如 `build.created` 或 `rule.updated`.
+稽核事件的結構形式為 `{RESOURCE_TYPE}.{EVENT}`，例如 `build.created` 或 `rule.updated`.
 
-资源类型可以是以下任一类型：
+資源型別可以是下列任一專案：
 
 * `property`
 * `extension`
@@ -31,7 +31,7 @@ ht-degree: 4%
 * `environment`
 * `host`
 
-每种资源类型支持以下事件：
+每種資源型別都支援下列事件：
 
 * `created`
 * `updated`
@@ -39,11 +39,11 @@ ht-degree: 4%
 
 ## 快速入门
 
-本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
 
-## 检索审核事件列表 {#list}
+## 擷取稽核事件清單 {#list}
 
-您可以通过向 `/audit_events` 端点。
+您可以透過向以下專案發出GET要求，擷取貴組織擁有之所有屬性的稽核事件清單： `/audit_events` 端點。
 
 **API格式**
 
@@ -65,7 +65,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回审核事件的列表。 以下示例响应已被截断为空格。
+成功的回應會傳回稽核事件清單。 以下範例回應已因空格而截斷。
 
 ```json
 {
@@ -158,9 +158,9 @@ curl -X GET \
 }
 ```
 
-## 查找审核事件 {#lookup}
+## 查詢稽核事件 {#lookup}
 
-您可以通过在GET请求的路径中提供审核事件的ID来查找审核事件。
+您可以在GET請求的路徑中提供稽核事件的ID，以查詢稽核事件。
 
 **API格式**
 
@@ -170,9 +170,9 @@ GET /audit_events/{AUDIT_EVENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `AUDIT_EVENT_ID` | 的 `id` 查找的审核事件。 |
+| `AUDIT_EVENT_ID` | 此 `id` 要查閱之稽核事件的詳細資訊。 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **请求**
 
@@ -188,7 +188,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回审核事件的详细信息。
+成功的回應會傳回稽核事件的詳細資料。
 
 ```json
 {
