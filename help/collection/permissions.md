@@ -2,9 +2,9 @@
 title: Experience Platform中資料收集的許可權管理
 description: 有關如何在Adobe Experience Platform中管理許可權和控制資料收集功能存取的高級概觀。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 876339019b324d4483152ed6f24bd6ad749ea7ba
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1318'
 ht-degree: 5%
 
 ---
@@ -54,6 +54,7 @@ Adobe Experience Platform資料收集下的許可權可控制對標籤和事件�
 | --- | --- | --- |
 | 平台 | Web | 授予存取權 [Web屬性](../tags/ui/administration/companies-and-properties.md) 與其他屬性權利結合時。 |
 | 平台 | 移动设备 | 授予存取權 [行動屬性](../tags/ui/administration/companies-and-properties.md) 與其他屬性權利結合時。 |
+| 平台 | Edge | 授予存取權 [事件轉送邊緣屬性](../tags/ui/event-forwarding/getting-started.md) 與其他屬性權利結合時。 |
 | 属性 | (不适用) | 根據已在您的組織下建立的屬性，您可以透過Admin Console中的此許可權類別控制對每一個屬性的存取。<br><br>使用者的指派屬性許可權僅適用於他們透過此許可權類別被授予存取權的屬性。 |
 | 资产权限 | 批准 | 授予核准程式庫組建的能力，使其成為 [發佈流程](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 开发 | 授予開發程式庫組建作為一部分的能力 [發佈流程](../tags/ui/publishing/publishing-flow.md). |
