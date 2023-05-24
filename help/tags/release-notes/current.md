@@ -2,14 +2,18 @@
 title: 標籤和事件轉送的發行說明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
+source-git-commit: 626330395c2d6b813d5d2157e92ada77ab4f96b1
 workflow-type: tm+mt
-source-wordcount: '798'
-ht-degree: 4%
+source-wordcount: '841'
+ht-degree: 3%
 
 ---
 
 # 標籤和事件轉送的發行說明
+
+>[!IMPORTANT]
+>
+>往前看，本頁將不再提供標籤和事件轉送發行說明。 請參閱最新版本 [Adobe Experience Platform發行說明](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html?lang=en#data-collection) 以取得詳細的標籤和事件轉送更新。
 
 ## 2023 年 4 月 26 日
 
