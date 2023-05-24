@@ -1,51 +1,862 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；流量服務；
-title: 使用流程服務API的資料流草稿
-description: 瞭解如何使用流量服務API將資料流設定為草稿狀態。
-badge: label="新功能" type="Positive"
+title: 创建流服务实体API的草稿
+description: 了解如何使用流服务API创建基本连接、源连接、目标连接和数据流的草稿
 exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: ebd650355a5a4c2a949739384bfd5c8df9577075
 workflow-type: tm+mt
-source-wordcount: '591'
-ht-degree: 2%
+source-wordcount: '1192'
+ht-degree: 3%
 
 ---
 
-# 使用Flow Service API的資料流草稿
+# 创建您的草稿 [!DNL Flow Service] 使用API的实体
 
-使用流量服務API時，請提供以下專案將您的資料流儲存為草稿： `mode=draft` 建立流程呼叫期間的查詢引數。 草稿稍後可使用新資訊進行更新，並在準備就緒後發佈。 本教學課程涵蓋使用Flow Service API將資料流設定為草稿狀態的步驟。
+您可以使用 `mode=draft` 中的查询参数 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) 设置 [!DNL Flow Service] 实体（例如基本连接、源连接、目标连接和数据流）变为草稿状态。
+
+草稿可稍后使用新信息更新，并在准备就绪后使用 `op=publish` 查询参数。
+
+本教程提供了有关如何设置 [!DNL Flow Service] 实体变为草稿状态，并允许您暂停和保存工作流以供稍后完成。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解Adobe Experience Platform的下列元件：
+本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
-
-### 先决条件
-
-本教學課程要求您已經產生建立資料流所需的資產。 其中包括下列專案：
-
-* 已驗證的基本連線
-* 來源連線
-* 目標XDM結構描述
-* 目標資料集
-* 目標連線
-* 對應
-
-如果您還沒有這些值，請從中選擇來源 [來源概觀中的目錄](../../home.md). 然後，依照該指定來源的指示產生所需的資產，以草擬資料流。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-## 將資料流設定為草稿狀態
+### 检查草稿模式支持
 
-以下各節會概述將資料流設定為草稿、更新資料流、發佈資料流，以及最終刪除資料流的程式。
+还必须检查是否针对草稿模式启用了正在使用的源的连接规范ID和相应的流规范ID。
 
-### 草稿資料流
+>[!BEGINTABS]
 
-若要將資料流設定為草稿，請向以下發出POST請求： `/flows` 端點 `mode=draft` 作為查詢引數。 這可讓您建立資料流並將其另存為草稿。
+>[!TAB 查找连接规范详细信息]
+
++++请求以下请求检索连接规范信息 [!DNL Azure File Storage]：
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/be5ec48c-5b78-49d5-b8fa-7c89ec4569b8' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
++++响应
+
+成功的响应将返回源的连接规范信息。 要验证您的源是否支持草稿模式，请检查 `items[0].attributes.isDraftModeSupported` 具有值 `true`.
+
+```json {line-numbers="true" start-line="1" highlight="252"}
+{
+    "items": [
+        {
+            "id": "be5ec48c-5b78-49d5-b8fa-7c89ec4569b8",
+            "name": "azure-file-storage",
+            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
+            "version": "1.0",
+            "authSpec": [
+                {
+                    "name": "Basic Authentication",
+                    "type": "basicAuthentication",
+                    "spec": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "type": "object",
+                        "description": "defines auth params",
+                        "properties": {
+                            "host": {
+                                "type": "string",
+                                "description": "Specifies the Azure File Storage endpoint."
+                            },
+                            "userid": {
+                                "type": "string",
+                                "description": "Specify the user to access the Azure File Storage."
+                            },
+                            "password": {
+                                "type": "string",
+                                "description": "Specify the storage access key",
+                                "format": "password"
+                            }
+                        },
+                        "required": [
+                            "host",
+                            "userid",
+                            "password"
+                        ]
+                    }
+                }
+            ],
+            "sourceSpec": {
+                "name": "CloudStorage",
+                "type": "CloudStorage",
+                "spec": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string",
+                            "description": "input path for copying files, can be a folder path, file path or a wildcard pattern"
+                        },
+                        "recursive": {
+                            "type": "boolean",
+                            "description": "indicates recursive copy in case of folder or wild card path, default is false"
+                        }
+                    },
+                    "required": [
+                        "path"
+                    ]
+                },
+                "attributes": {
+                    "uiAttributes": {
+                        "documentationLink": "http://www.adobe.com/go/sources-azure-file-storage-en",
+                        "isSource": true,
+                        "category": {
+                            "key": "cloudStorage"
+                        },
+                        "icon": {
+                            "key": "azureFileStorage"
+                        },
+                        "description": {
+                            "key": "azureFileStorageDescription"
+                        },
+                        "label": {
+                            "key": "azureFileStorageLabel"
+                        }
+                    }
+                }
+            },
+            "exploreSpec": {
+                "name": "FileSystem",
+                "type": "FileSystem",
+                "requestSpec": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "description": "defines explorable objects",
+                    "properties": {
+                        "objectType": {
+                            "type": "string",
+                            "enum": [
+                                "file",
+                                "folder",
+                                "root"
+                            ]
+                        }
+                    },
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "objectType": {
+                                        "enum": [
+                                            "file"
+                                        ]
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "object": {
+                                        "type": "string",
+                                        "description": "defines file to get schema or preview of."
+                                    },
+                                    "fileType": {
+                                        "type": "string",
+                                        "enum": [
+                                            "delimited"
+                                        ]
+                                    },
+                                    "preview": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": [
+                                    "object",
+                                    "fileType"
+                                ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "objectType": {
+                                        "enum": [
+                                            "folder"
+                                        ]
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "object": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "object"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "responseSpec": {
+                    "root": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "type": "array",
+                        "description": "lists tables/items under the database/container requested.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "description": "defines type of an item."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "defines display name of an item."
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "description": "defines path of an item."
+                                },
+                                "canPreview": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "defines whether an item is previewable or not."
+                                },
+                                "canFetchSchema": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "defines whether schema can be fetched for an item or not."
+                                }
+                            }
+                        }
+                    },
+                    "folder": {
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "path": {
+                                    "type": "string"
+                                },
+                                "canPreview": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "canFetchSchema": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        }
+                    },
+                    "file": {
+                        "delimited": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "type": "object",
+                            "properties": {
+                                "format": {
+                                    "type": "string"
+                                },
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "columns": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "attributes": {
+                "category": "Cloud Storage",
+                "connectorName": "Azure File Storage",
+                "isSource": true,
+                "isDraftModeSupported": true,
+                "uiAttributes": {
+                    "apiFeatures": {
+                        "explorePaginationSupported": false
+                    }
+                }
+            },
+            "permissionsInfo": {
+                "manage": [
+                    {
+                        "@type": "lowLevel",
+                        "name": "EnterpriseSource",
+                        "permissions": [
+                            "write"
+                        ]
+                    }
+                ],
+                "view": [
+                    {
+                        "@type": "lowLevel",
+                        "name": "EnterpriseSource",
+                        "permissions": [
+                            "read"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
++++
+
+>[!TAB 查找流规范详细信息]
+
++++请求以下请求检索云存储源的流规范详细信息：
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/flowSpecs?property=name==%22CloudStorageToAEP%22' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++
+
++++响应
+
+成功的响应将返回源的流规范信息。 要验证您的源是否支持草稿模式，请检查 `items[0].attributes.isDraftModeSupported` 具有值 `true`.
+
+```json {line-numbers="true" start-line="1" highlight="167"}
+{
+  "items": [
+    {
+      "id": "9753525b-82c7-4dce-8a9b-5ccfce2b9876",
+      "name": "CloudStorageToAEP",
+      "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
+      "version": "1.0",
+      "sourceConnectionSpecIds": [
+        "b3ba5556-48be-44b7-8b85-ff2b69b46dc4",
+        "ecadc60c-7455-4d87-84dc-2a0e293d997b",
+        "b7829c2f-2eb0-4f49-a6ee-55e33008b629",
+        "4c10e202-c428-4796-9208-5f1f5732b1cf",
+        "fb2e94c9-c031-467d-8103-6bd6e0a432f2",
+        "32e8f412-cdf7-464c-9885-78184cb113fd",
+        "b7bf2577-4520-42c9-bae9-cad01560f7bc",
+        "998b8ae3-cec0-43b7-8abe-40b1eb4ee069",
+        "be5ec48c-5b78-49d5-b8fa-7c89ec4569b8",
+        "54e221aa-d342-4707-bcff-7a4bceef0001",
+        "c85f9425-fb21-426c-ad0b-405e9bd8a46c",
+        "26f526f2-58f4-4712-961d-e41bf1ccc0e8"
+      ],
+      "targetConnectionSpecIds": [
+        "c604ff05-7f1a-43c0-8e18-33bf874cb11c"
+      ],
+      "optionSpec": {
+        "name": "OptionSpec",
+        "spec": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "errorDiagnosticsEnabled": {
+              "title": "Error diagnostics.",
+              "description": "Flag to enable detailed and sample error diagnostics summary.",
+              "type": "boolean",
+              "default": false
+            },
+            "partialIngestionPercent": {
+              "title": "Partial ingestion threshold.",
+              "description": "Percentage which defines the threshold of errors allowed before the run is marked as failed.",
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        }
+      },
+      "transformationSpecs": [
+        {
+          "name": "Mapping",
+          "spec": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "defines various params required for different mapping from source to target",
+            "properties": {
+              "mappingId": {
+                "type": "string"
+              },
+              "mappingVersion": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "name": "Encryption",
+          "spec": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "defines various params required for encrypted data ingestion",
+            "properties": {
+              "publicKeyId": {
+                "type": "string",
+                "description": "publicKeyId returned in encryptionKey creation API. One must use the publicKeyId corresponding to the same publicKey they used for encrypting the files"
+              }
+            }
+          }
+        }
+      ],
+      "scheduleSpec": {
+        "name": "PeriodicSchedule",
+        "type": "Periodic",
+        "spec": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "startTime": {
+              "description": "epoch time",
+              "type": "integer"
+            },
+            "frequency": {
+              "type": "string",
+              "enum": [
+                "once",
+                "minute",
+                "hour",
+                "day",
+                "week"
+              ]
+            },
+            "interval": {
+              "type": "integer"
+            },
+            "backfill": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "startTime",
+            "frequency"
+          ],
+          "if": {
+            "properties": {
+              "frequency": {
+                "const": "once"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "required": [
+                    "interval"
+                  ]
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "backfill"
+                  ]
+                }
+              }
+            ]
+          },
+          "else": {
+            "required": [
+              "interval"
+            ],
+            "if": {
+              "properties": {
+                "frequency": {
+                  "const": "minute"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "interval": {
+                  "minimum": 15
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "interval": {
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "attributes": {
+        "isSourceFlow": true,
+        "flacValidationSupported": true,
+        "isDraftModeSupported": true,
+        "frequency": "batch",
+        "notification": {
+          "category": "sources",
+          "flowRun": {
+            "enabled": true
+          }
+        }
+      },
+      "permissionsInfo": {
+        "manage": [
+          {
+            "@type": "lowLevel",
+            "name": "EnterpriseSource",
+            "permissions": [
+              "write"
+            ]
+          }
+        ],
+        "view": [
+          {
+            "@type": "lowLevel",
+            "name": "EnterpriseSource",
+            "permissions": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
++++
+
+>[!ENDTABS]
+
+
+
+## 创建草稿基本连接 {#create-a-draft-base-connection}
+
+要创建草稿基本连接，请向发出POST请求 `/connections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
+
+**API格式**
+
+```http
+POST /connections?mode=draft
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `mode` | 用户提供的查询参数，用于决定基本连接的状态。 要将基本连接设置为草稿，请设置 `mode` 到 `draft`. |
+
+**请求**
+
+以下请求为创建草稿基本连接 [!DNL Azure File Storage] 来源：
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "name": "ACME Azure File Storage Base Connection",
+        "description": "Azure File Storage base connection for ACME data (DRAFT)",
+        "auth": {
+            "specName": "Basic Authentication",
+            "params": {
+                    "host": "{HOST}",
+                    "userId": "{USER_ID}",
+                    "password": "{PASSWORD}"
+                }
+        },
+        "connectionSpec": {
+            "id": "be5ec48c-5b78-49d5-b8fa-7c89ec4569b8",
+            "version": "1.0"
+        }
+      }'
+```
+
+**响应**
+
+成功响应将返回草稿基本连接的基本连接ID和相应的etag。 您可以稍后使用此ID来更新和发布基本连接。
+
+```json
+{
+    "id": "f9377f50-607a-4818-b77f-50607a181860",
+    "etag": "\"2f0276fa-0000-0200-0000-5eab3abb0000\""
+}
+```
+
+## 发布草稿基本连接 {#publish-your-draft-base-connection}
+
+准备好发布草稿后，请向发出POST请求 `/connections` 端点，并提供要发布的草稿基本连接的ID，以及用于发布的操作操作。
+
+**API格式**
+
+```http
+POST /connections/{BASE_CONNECTION_ID}/action?op=publish
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `op` | 一个操作操作，用于更新查询的基本连接的状态。 要发布草稿基本连接，请设置 `op` 到 `publish`. |
+
+**请求**
+
+以下请求发布草稿基本连接 [!DNL Azure File Storage] 之前步骤创建的。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/f9377f50-607a-4818-b77f-50607a181860/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**响应**
+
+成功的响应将返回已发布基本连接的ID和相应的etag。
+
+```json
+{
+    "id": "f9377f50-607a-4818-b77f-50607a181860",
+    "etag": "\"2f0276fa-0000-0200-0000-5eab3abb0000\""
+}
+```
+
+## 创建草稿源连接 {#create-a-draft-source-connection}
+
+要创建草稿源连接，请向发出POST请求 `/sourceConnections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
+
+**API格式**
+
+```http
+POST /sourceConnections?mode=draft
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `mode` | 用户提供的查询参数，用于决定源连接的状态。 要将源连接设置为草稿，请设置 `mode` 到 `draft`. |
+
+**请求**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections?mode=draft' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+      "name": "ACME Azure File Storage Source Connection",
+      "description: "Azure File Storage source connection for ACME data (DRAFT)",
+      "baseConnectionId": "f9377f50-607a-4818-b77f-50607a181860",
+      "data": {
+          "format": "delimited",
+      },
+      "params": {
+          "path": "/acme/summerCampaign/account.csv",
+          "type": "file"
+      },
+      "connectionSpec": {
+          "id": "be5ec48c-5b78-49d5-b8fa-7c89ec4569b8",
+          "version": "1.0"
+      }
+  }'
+```
+
+**响应**
+
+成功响应将返回草稿源连接的源连接ID和相应的etag。 您可以稍后使用此ID来更新和发布源连接。
+
+```json
+{
+    "id": "26b53912-1005-49f0-b539-12100559f0e2",
+    "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
+}
+```
+
+## 发布草稿源连接 {#publish-your-draft-source-connection}
+
+>[!NOTE]
+>
+>如果与源连接关联的基本连接仍处于草稿状态，则无法发布源连接。 请确保先发布基本连接，然后再发布源连接。
+
+准备好发布草稿后，请向发出POST请求 `/sourceConnections` 端点，并提供要发布的草稿源连接的ID，以及用于发布的操作操作。
+
+**API格式**
+
+```http
+POST /sourceConnections/{SOURCE_CONNECTION_ID}/action?op=publish
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `op` | 一个操作操作，用于更新查询的源连接的状态。 要发布草稿源连接，请设置 `op` 到 `publish`. |
+
+**请求**
+
+以下请求发布以下对象的草稿源连接： [!DNL Azure File Storage] 之前步骤创建的。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/26b53912-1005-49f0-b539-12100559f0e2/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**响应**
+
+成功的响应将返回已发布源连接的ID和相应的etag。
+
+```json
+{
+    "id": "26b53912-1005-49f0-b539-12100559f0e2",
+    "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
+}
+```
+
+## 创建草稿目标连接 {#create-a-draft-target-connection}
+
+要创建草稿POST连接，请向 `/targetConnections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
+
+**API格式**
+
+```http
+POST /targetConnections?mode=draft
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `mode` | 用户提供的查询参数，用于决定目标连接的状态。 要将目标连接设置为草稿，请设置 `mode` 到 `draft`. |
+
+**请求**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/targetConnections?mode=draft' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+      "name": "ACME Azure File Storage Target Connection",
+      "description": "Azure File Storage target connection ACME data (DRAFT)",
+      "data": {
+          "schema": {
+              "id": "{SCHEMA_ID}",
+              "version": "application/vnd.adobe.xed-full+json;version=1"
+          }
+      },
+      "params": {
+          "dataSetId": "{DATASET_ID}"
+      },
+          "connectionSpec": {
+          "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
+          "version": "1.0"
+      }
+  }'
+```
+
+**响应**
+
+成功响应将返回目标连接ID和草稿目标连接的相应etag。 您可以稍后使用此ID来更新和发布目标连接。
+
+```json
+{
+    "id": "dbc5c132-bc2a-4625-85c1-32bc2a262558",
+    "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
+}
+```
+
+## 发布草稿目标连接 {#publish-your-draft-target-connection}
+
+>[!NOTE]
+>
+>如果关联的基本连接仍处于草稿状态，则无法发布目标连接。 请确保先发布基本连接，然后再发布目标连接。
+
+准备好发布草稿后，请向发出POST请求 `/targetConnections` 端点并提供要发布的草稿目标连接的ID，以及用于发布的操作操作。
+
+**API格式**
+
+```http
+POST /targetConnections/{TARGET_CONNECTION_ID}/action?op=publish
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `op` | 一个操作操作，用于更新查询的目标连接的状态。 要发布草稿目标连接，请设置 `op` 到 `publish`. |
+
+**请求**
+
+以下请求发布的目标连接草稿 [!DNL Azure File Storage] 之前步骤创建的。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections/dbc5c132-bc2a-4625-85c1-32bc2a262558/action?op=publish' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**响应**
+
+成功的响应将返回已发布目标连接的ID和相应的etag。
+
+```json
+{
+    "id": "dbc5c132-bc2a-4625-85c1-32bc2a262558",
+    "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
+}
+```
+
+## 创建草稿数据流 {#create-a-draft-dataflow}
+
+POST要将数据流设置为草稿，请向 `/flows` 添加时的端点 `mode=draft` 作为查询参数。 这允许您创建数据流并将其另存为草稿。
 
 **API格式**
 
@@ -55,29 +866,30 @@ POST /flows?mode=draft
 
 | 参数 | 描述 |
 | --- | --- |
-| `mode` | 使用者提供的查詢引數，可決定資料流的狀態。 若要將資料流設定為草稿，請設定 `mode` 至 `draft`. |
+| `mode` | 用户提供的查询参数，用于决定数据流的状态。 要将数据流设置为草稿，请设置 `mode` 到 `draft`. |
 
 **请求**
 
-以下請求會建立草稿資料流。
+以下请求将创建一个草稿数据流。
 
 ```shell
-  'https://platform-int.adobe.io/data/foundation/flowservice/flows?mode=draft' \
+  'https://platform.adobe.io/data/foundation/flowservice/flows?mode=draft' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
   -d '{
-    "name": "HTTP source dataflow for ACME data",
+    "name": "ACME Azure File Storage Dataflow",
+    "description": "Azure File Storage dataflow for ACME data (DRAFT)",
     "sourceConnectionIds": [
-        "61c0c5f1-bfe5-40f7-8f8c-a4dc175ddac6"
+        "26b53912-1005-49f0-b539-12100559f0e2"
     ],
     "targetConnectionIds": [
-        "78f41c31-3652-4a5e-b264-74331226dcf3"
+        "dbc5c132-bc2a-4625-85c1-32bc2a262558"
     ],
     "flowSpec": {
-        "id": "c1a19761-d2c7-4702-b9fa-fe91f0613e81",
+        "id": "9753525b-82c7-4dce-8a9b-5ccfce2b9876",
         "version": "1.0"
     }
   }'
@@ -85,7 +897,7 @@ POST /flows?mode=draft
 
 **响应**
 
-成功的回應會傳回 `id` 和對應的 `etag` 您的資料流的。
+成功响应将返回草稿数据流的流ID和相应的电子标记。 您可以稍后使用此ID来更新和发布数据流。
 
 ```json
 {
@@ -94,59 +906,13 @@ POST /flows?mode=draft
 }
 ```
 
-### 更新資料流
+## 发布草稿数据流 {#publish-your-draft-dataflow}
 
-若要更新您的草稿，請向發出PATCH請求 `/flows` 端點，同時提供您要更新的資料流ID。 在此步驟中，您還必須提供 `If-Match` 標頭引數，對應至 `etag` 要更新的資料流的ID。
+>[!NOTE]
+>
+>如果与数据流关联的源连接和目标连接仍处于草稿状态，则无法发布数据流。 请确保先发布源连接和目标连接，然后再发布数据流。
 
-**API格式**
-
-```http
-PATCH /flows/{FLOW_ID}
-```
-
-**请求**
-
-下列請求會將對應轉換新增至草擬的資料流。
-
-```shell
-curl -X PATCH \
-  'https://platform.adobe.io/data/foundation/flowservice/flows/c9751426-dff8-49b0-965f-50defcf4187b' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-  -H 'If-Match: "69057131-0000-0200-0000-640f48320000"' \
-  -d '[
-        {
-          "op": "add",
-          "path": "/transformations",
-          "value": [
-              {
-                  "name": "Mapping",
-                  "params": {
-                      "mappingId": "44d42ed27c46499a80eb0c0705c38cbd",
-                      "mappingVersion": 0
-                  }
-              }
-          ]
-      }
-  ]'
-```
-
-**响应**
-
-成功的回應會傳回您的流量ID和 `etag`. 若要驗證變更，您可以向以下發出GET要求： `/flows` 端點，並提供您的流量ID。
-
-```json
-{
-  "id": "c9751426-dff8-49b0-965f-50defcf4187b",
-  "etag": "\"69057131-0000-0200-0000-640f48320000\""
-}
-```
-
-### 發佈資料流
-
-準備好發佈草稿後，請向發出POST請求 `/flows` 端點，同時提供您要發佈的草稿資料流ID以及發佈的動作操作。
+准备好发布草稿后，请向发出POST请求 `/flows` 端点，同时提供要发布的草稿数据流的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -156,16 +922,17 @@ POST /flows/{FLOW_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 更新查詢資料流狀態的動作操作。 若要發佈草稿資料流，請設定 `op` 至 `publish`. |
+| `op` | 一个操作操作，用于更新查询的数据流的状态。 要发布草稿数据流，请设置 `op` 到 `publish`. |
 
 **请求**
 
-以下請求會發佈您的草稿資料流。
+以下请求将发布草稿数据流。
 
 ```shell
 curl -X POST \
   'https://platform.adobe.io/data/foundation/flowservice/flows/c9751426-dff8-49b0-965f-50defcf4187b/action?op=publish' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
@@ -173,7 +940,7 @@ curl -X POST \
 
 **响应**
 
-成功的回應會傳回ID和對應的 `etag` 您的資料流的。
+成功的响应会返回ID和相应的 `etag` 您的数据流。
 
 ```json
 {
@@ -182,6 +949,6 @@ curl -X POST \
 }
 ```
 
-### 刪除資料流
+## 后续步骤
 
-若要刪除您的資料流，請向以下發出DELETE請求： `/flows` 端點，同時提供您要刪除的資料流ID。 如需有關如何使用流量服務API刪除資料流的詳細步驟，請閱讀以下指南中的 [刪除API中的資料流](./delete-dataflows.md).
+通过学习本教程，您已了解如何创建 [!DNL Flow Service] 发行该等草稿。 欲知关于来源的更多信息，请阅读 [源概述](../../home.md).
