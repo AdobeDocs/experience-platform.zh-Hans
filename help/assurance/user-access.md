@@ -2,9 +2,9 @@
 title: Adobe Experience Platform保證使用者存取
 description: 本指南說明如何透過Admin Console管理Adobe Experience Platform Assurance，以保留使用者對Assurance的存取權。
 exl-id: b26ff857-5486-4391-b5a0-1e5cb05a1f11
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 95e5dad03741d06ee33a10c48b481b792140f7f1
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '203'
 ht-degree: 3%
 
 ---
@@ -19,32 +19,14 @@ ht-degree: 3%
 
 若要接收或維持對Assurance的不間斷存取，請確定已在Admin Console中完成下列步驟：
 
-## 建立產品設定檔
+## 透過產品設定檔新增使用者至Experience Platform
 
->[!NOTE]
->
->如果您使用現有的設定檔，可以跳至下一節。
+若要將使用者新增至產品設定檔，請登入Admin Console並選取 **新增使用者**.
 
-登入 [Admin Console](https://adminconsole.adobe.com/) 和建立新的Adobe Experience Platform產品設定檔。
+![會反白顯示「新增使用者」按鈕。](./images/get-access/product-profile-add-users.png)
 
-選取 **產品** 索引標籤後按一下「 」，接著按「 Adobe Experience Platform產品卡」。
+此 **新增使用者至您的團隊** 對話方塊隨即顯示。 您可以在此對話方塊中輸入要新增之使用者的詳細資訊。 輸入使用者的電子郵件地址、名字（選用）和姓氏（選用）。
 
-![Adobe Experience Platform保證分析檢視](./images/get-access/analytics-view.png)
+選取鉛筆圖示以選擇產品和使用者群組。 從此處選取 **Adobe Experience Platform**，則 **AEP-Default-All-Users**，後接 **儲存**.
 
-## 將使用者新增至產品設定檔
-
-存取產品卡後，提供名稱並選取 **儲存**.
-
->[!NOTE]
->
->您打算用於保證存取的產品設定檔會 **not** 需要任何其他許可權。
-
-![Adobe Experience Platform產品設定檔](./images/get-access/product-profile.png)
-
-現在您已建立產品卡，您可以將使用者指派至Adobe Experience Platform產品設定檔。 選取 **產品** 索引標籤，後面接著 **指派使用者** 在Adobe Experience Platform卡上。
-
-![將使用者指派至產品設定檔](./images/get-access/assign-users.png)
-
-將一個或多個使用者新增到產品設定檔並儲存。
-
-![將使用者新增至產品設定檔](./images/get-access/add-users.png)
+![隨即顯示對話方塊，其中顯示如何新增產品設定檔。](./images/get-access/product-profile-add-profile.png)
