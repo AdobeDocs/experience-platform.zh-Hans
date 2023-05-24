@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
-keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；發行說明；
+keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 952ffa14537058ad03121747846a96c7c978b833
+source-git-commit: 97ae7002d4bacb224f7cd57cca4a0c1ede11dd26
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1549'
 ht-degree: 3%
 
 ---
@@ -13,169 +13,175 @@ ht-degree: 3%
 
 # 发行说明
 
-本文介紹Adobe Experience Platform Web SDK的發行說明。
-如需Web SDK標籤擴充功能的最新發行說明，請參閱 [Web SDK標籤擴充功能發行說明](extension/web-sdk-ext-release-notes.md).
+本文档介绍了Adobe Experience Platform Web SDK的发行说明。
+有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](extension/web-sdk-ext-release-notes.md).
 
-## 2.16.0版 — 2023年4月25日
-
-**新增功能**
-
-* 新增支援 [資料流設定覆寫](datastreams/overrides.md).
-
-## 2.15.0版 — 2023年3月30日
-
-**新增功能**
-
-* 新增支援 [`onBeforeLinkClickSend`](fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) 連結按一下回撥。
-* 新增Adobe Journey Optimizer點選追蹤支援。
+## 版本2.16.0 - 2023年5月17日
 
 **修复和改进功能**
 
-* 連結集合現在包含連結名稱和訪客地區。
-* 已移除失敗URL目的地的主控台錯誤。
+* Web SDK现在对Audience ManagerCookie目标值进行编码，类似于 [Data Integration Library(DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en).
 
-## 2.14.0版 — 2023年1月25日
-
-* （測試版）新增對Adobe Journey Optimizer介面和主張的支援。
-
-**修复和改进功能**
-
-* 修正Adobe Target VEC自訂程式碼動作的問題，此問題導致程式碼被插入至的替代位置， [!DNL at.js].
-* 修正部分邊緣案例中，對Edge Network的請求未正確設定「referer」標題的問題。
-* 修正以下問題： [使用者代理使用者端提示](fundamentals/user-agent-client-hints.md) 屬性可能設定為不正確的型別。
-* 修正以下問題： `placeContext.localTime` 不符合結構描述。
-
-## 2.13.1版 — 2022年10月13日
-
-* 修正設定後定義window.Visitor時，訪客移轉無法運作的問題。 使用Adobe標籤執行時，這個問題尤其嚴重。
-* 修正以下問題： `device.screenWidth` 和 `device.screenHeight` 在某些環境中填入為字串。
-
-## 2.13.0版 — 2022年9月28日
+## 版本2.16.0 - 2023年4月25日
 
 **新增功能**
 
-* 新增支援 [逐頁完整移轉](home.md#migrating-to-web-sdk). 當訪客在at.js和Web SDK頁面之間移動時，Adobe Target設定檔現在會保留。
-* 新增可設定的支援 [高平均資訊量使用者代理使用者端提示](fundamentals/user-agent-client-hints.md#high-entropy).
-* 新增對新增的支援 `applyResponse` 命令。 如此可透過以下方式啟用混合式個人化： [Edge Network Server API](../server-api/overview.md).
-* QA模式連結現在可跨多個頁面運作。
+* 添加了对的支持 [数据流配置覆盖](datastreams/overrides.md).
 
-**修复和改进功能**
-
-* 修正當連結追蹤停用時，個人化點選追蹤量度未更新的問題。
-* 更新指定未知選項時擲回驗證錯誤的命令。
-* 此 `_experience.decisioning.propositionEventType` 屬性現在會在自動傳送顯示和互動個人化事件時填入。
-* 已新增的重複名稱空間驗證 `getIdentity` 命令。
-* 新增的重複決定範圍驗證 `sendEvent` 命令。
-
-## 2.12.0版 — 2022年6月29日
-
-* 變更對Edge Network的請求，以使用 `cluster` URL中的Cookie位置提示。 這可確保在工作階段中變更位置（例如透過VPN或透過行動裝置駕駛等）的使用者點選相同的邊緣並具有相同的個人化設定檔。
-* 將getLibraryInfo命令回應中設定的函式字串化。
-
-## 2.11.0版 — 2022年6月13日
+## 版本2.15.0 - 2023年3月30日
 
 **新增功能**
 
-* 您現在可以在行動應用程式和行動網站內容之間以及跨網域共用訪客ID，以更準確地提供個人化體驗。 請參閱 [專屬檔案](identity/id-sharing.md) 以深入瞭解。
-* 您現在可以從以下位置呈現或執行一系列主張： [!DNL Adobe Target] 至單頁應用程式，而不增加analytics量度。 這樣可以減少報告錯誤並提高分析準確性。 請參閱 [專屬檔案](personalization/rendering-personalization-content.md#applypropositions) 以深入瞭解。
-* 已新增其他資訊至 `getLibraryInfo` 命令，包括可用的命令和例證的最終組態。
+* 添加了对的支持 [`onBeforeLinkClickSend`](fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) 链接单击回调。
+* 添加了对Adobe Journey Optimizer点击跟踪的支持。
 
 **修复和改进功能**
 
-* 更新要使用的Cookie設定 `sameSite="none"` 和 `secure` 標幟於 [!DNL HTTPS] 頁面。
-* 修正使用時，無法正確套用個人化內容的問題 `eq` 虛擬選取器。
-* 修正以下問題： `localTimezoneOffset` Experience Platform驗證可能失敗。
+* 链接收藏集现在包括链接名称和访客区域。
+* 已删除失败URL目标的控制台错误。
 
-## 2.10.1版 — 2022年5月3日
+## 版本2.14.0 - 2023年1月25日
 
-* 修正為ID同步和區段目的地建立多個永久iframe的問題。
+* (Beta)添加了对Adobe Journey Optimizer表面和建议的支持。
 
-## 2.10.0版 — 2022年4月22日
+**修复和改进功能**
 
-* 對所有ID同步和區段目的地使用永續性iframe。
-* 修正合併量度主張在 `sendEvent` 結果。
+* 修复了Adobe Target VEC自定义代码操作的一个问题，该问题导致代码被插入到替代位置，而不是使用 [!DNL at.js].
+* 修复了在某些边缘情况下，对边缘网络的请求未正确设置“referer”标头的问题。
+* 修复了以下问题： [用户代理客户端提示](fundamentals/user-agent-client-hints.md) 属性可能设置为不正确的类型。
+* 修复了以下问题： `placeContext.localTime` 不匹配架构。
 
-## 2.9.0版 — 2022年3月10日
+## 版本2.13.1 - 2022年10月13日
 
-* 新增追蹤支援 [!DNL control (default)] Adobe Target體驗。
-* 已針對單頁應用程式最佳化檢視 — 變更事件。 呈現個人化體驗時，顯示通知現在會包含在檢視 — 變更事件中。
-* 沒有時移除主控台警告 `eventType` 存在。
-* 修正以下問題： `propositions` 屬性只從 `sendEvent` 命令來要求或從快取中擷取體驗。 此 `propositions` 屬性現在一律會定義為陣列。
-* 修正從Adobe Experience Edge傳回錯誤時，未顯示隱藏容器的問題。
-* 修正Adobe Target中未計算interact事件的問題。 已透過在web.webPageDetails.viewName將檢視名稱新增至XDM來修正此問題。
-* 修正主控台訊息中的中斷檔案連結。
+* 修复了在配置后定义window.Visitor的情况下，访客迁移不起作用的问题。 当使用Adobe标记运行时，这个问题尤为突出。
+* 修复了以下问题： `device.screenWidth` 和 `device.screenHeight` 在某些环境中以字符串形式填充。
 
-## 2.8.0版 — 2022年1月19日
+## 版本2.13.0 - 2022年9月28日
 
-* 支援個人化的影子DOM選取器。
-* 已重新命名個人化事件型別。 (`display` 和 `click` 成為 `decisioning.propositionDisplay` 和 `decisioning.propositionInteract`)
-* 修正具有內嵌指令碼標籤的HTML選件將指令碼標籤新增兩次至頁面的問題，即使指令碼僅執行一次。
+**新增功能**
 
-## 2.7.0版 — 2021年10月26日
+* 添加了对的支持 [分页完整迁移](home.md#migrating-to-web-sdk). 现在，当访客在at.js和Web SDK页面之间移动时，将保留Adobe Target配置文件。
+* 添加了对的可配置支持 [高熵用户代理客户端提示](fundamentals/user-agent-client-hints.md#high-entropy).
+* 添加了对新版本的支持 `applyResponse` 命令。 这可通过以下方式启用混合个性化 [边缘网络服务器API](../server-api/overview.md).
+* QA模式链接现在可以在多个页面中使用。
 
-* 在的傳回值中公開來自Experience Edge的其他資訊 `sendEvent`，包括 `inferences` 和 `destinations`. 這些屬性的格式可能會隨著這些功能目前在Beta版中推出而改變。 如需詳細資訊，請參閱 [追蹤事件。](fundamentals/tracking-events.md)
+**修复和改进功能**
 
-## 2.6.4版 — 2021年9月7日
+* 修复了在禁用链接跟踪时个性化点击跟踪量度未更新的问题。
+* 更新了在指定未知选项时引发验证错误的命令。
+* 此 `_experience.decisioning.propositionEventType` 属性现在在自动发送显示和交互个性化事件时填充。
+* 为添加了重复的命名空间验证 `getIdentity` 命令。
+* 为添加了重复的决策范围验证 `sendEvent` 命令。
 
-* 修正設定HTMLAdobe Target動作套用至 `head` 元素正在取代整個 `head` 內容。 現在設定套用至「 」的HTML動作 `head` 元素會變更為附加HTML。
+## 版本2.12.0 - 2022年6月29日
 
-## 2.6.3版 — 2021年8月16日
+* 将请求更改为Edge Network以使用 `cluster` URL中包含的Cookie位置提示。 这可确保会话期间更改其位置（例如，通过VPN或使用移动设备驾驶等）的用户点击同一边缘并具有相同的个性化配置文件。
+* 在getLibraryInfo命令响应中字符串化配置的函数。
 
-* 修正非公開用途的物件透過已解析的Promise公開 `configure` 命令。
+## 版本2.11.0 - 2022年6月13日
 
-## 2.6.2版 — 2021年8月4日
+**新增功能**
 
-* 修正棄用警告的問題 `result.decisions` (由 `sendEvent` 命令)，即使在 `result.decisions` 未存取屬性。 存取時不會記錄任何警告 `result.decisions` 屬性，但屬性仍被取代。
+* 现在，通过在移动应用程序和移动Web内容之间以及跨域共享访客ID，您可以更准确地提供个性化体验。 请参阅 [专用文档](identity/id-sharing.md) 了解更多信息。
+* 您现在可以从以下位置渲染或执行建议数组 [!DNL Adobe Target] 添加到单页应用程序中，而不增加Analytics量度。 这减少了报告错误并提高了分析准确性。 请参阅 [专用文档](personalization/rendering-personalization-content.md#applypropositions) 了解更多信息。
+* 已将其他信息添加到 `getLibraryInfo` 命令，其中包括可用命令和实例的最终配置。
 
-## 2.6.1版 — 2021年7月29日
+**修复和改进功能**
 
-* 修正針對沒有個人化內容的單頁應用程式檢視呈現個人化時，會擲回錯誤並導致 `sendEvent` 要拒絕的命令。
+* 更新了要使用的Cookie设置 `sameSite="none"` 和 `secure` 标记于 [!DNL HTTPS] 页数。
+* 修复了在使用时个性化内容未正确应用的问题 `eq` 伪选择器。
+* 修复了以下问题： `localTimezoneOffset` 可能无法通过Experience Platform验证。
 
-## 2.6.0版 — 2021年7月27日
+## 版本2.10.1 - 2022年5月3日
 
-* 在中提供更多個人化內容 `sendEvent` 已解決Promise，包括Adobe Target回應Token。 當 `sendEvent` 會執行命令、傳回promise，最後以 `result` 包含從伺服器收到的資訊的物件。 以前，此結果物件包含名為的屬性 `decisions`. 此 `decisions` 屬性已過時。 新屬性， `propositions`，已新增。 此新屬性讓客戶可存取更多個人化內容，包括 [回應Token](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html).
+* 修复了为ID同步和区段目标创建多个永久iframe的问题。
 
-## 2.5.0版 — 2021年6月
+## 版本2.10.0 - 2022年4月22日
 
-* 新增重新導向個人化選件的支援。
-* 自動收集的檢視區寬度和高度若為負值，則不會再傳送至伺服器。
-* 當傳回以取消事件時 `false` 從 `onBeforeEventSend` callback，現在會記錄訊息。
-* 修正多個事件中包含針對單一事件特定XDM資料片段的問題。
+* 对所有ID同步和区段目标使用永久性iframe。
+* 修复了合并指标建议在中复制的问题 `sendEvent` 结果。
 
-## 2.4.0版 — 2021年3月
+## 版本2.9.0 - 2022年3月10日
 
-* SDK現在可以是 [安裝為npm套件](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html?lang=zh-Hans).
-* 新增對的支援 `out` 選項時機 [設定預設同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)，會捨棄所有事件，直到收到同意為止(現有 `pending` 選項會將事件排入佇列，並在收到同意後傳送事件)。
-* 此 [onBeforeEventSend回呼](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#onbeforeeventsend) 現在可用於防止傳送事件。
-* 現在使用XDM結構描述欄位群組，而不是 `meta.personalization` 傳送有關已轉譯或點按的個人化內容的事件時。
-* 此 [getIdentity命令](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html#retrieving-the-visitor-id) 現在會連同身分傳回邊緣區域ID。
-* 已改善從伺服器收到的警告和錯誤，並以更適當的方式加以處理。
-* 新增支援 [Adobe的Consent 2.0標準](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).
-* 收到同意偏好設定後，會進行雜湊處理，並儲存在本機儲存體中，以最佳化CMP、Platform Web SDK和Platform Edge Network之間的整合。 如果您正在收集同意偏好設定，我們現在鼓勵您致電 `setConsent` 在每次載入頁面時。
-* 二 [監視鉤點](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)， `onCommandResolved` 和 `onCommandRejected`，已新增。
-* 錯誤修正：當使用者導覽至新的單頁應用程式檢視、返回原始檢視，並按一下符合轉換資格的元素時，個人化互動通知事件將包含有關相同活動的重複資訊。
-* 錯誤修正：如果SDK傳送的第一個事件已 `documentUnloading` 設定為 `true`， [`sendBeacon`](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon) 會用來傳送事件，導致有關未建立身分的錯誤。
+* 添加了对跟踪的支持 [!DNL control (default)] Adobe Target体验。
+* 优化了单页应用程序的查看 — 更改事件。 现在，呈现个性化体验时，显示通知包含在查看更改事件中。
+* 删除控制台警告（若否） `eventType` 存在。
+* 修复了以下问题 `propositions` 资产仅从 `sendEvent` 命令来指示何时请求体验或从缓存中检索体验。 此 `propositions` 属性现在将始终定义为数组。
+* 修复了从Adobe Experience Edge返回错误时未显示隐藏容器的问题。
+* 修复了Interact事件未计入Adobe Target中的问题。 通过将视图名称添加到XDM （网址为web.webPageDetails.viewName）解决了此问题。
+* 修复控制台消息中损坏的文档链接。
 
-## 2.3.0版 — 2020年11月
+## 版本2.8.0 - 2022年1月19日
 
-* 新增Nonce支援，以允許更嚴格的內容安全性原則。
-* 新增對單頁應用程式的個人化支援。
-* 改善與其他可能遭覆寫之頁面上JavaScript程式碼的相容性 `window.console` API。
-* 錯誤修正： `sendBeacon` 未使用時機 `documentUnloading` 已設為 `true` 或是在自動追蹤連結點按次數時。
-* 錯誤修正：如果錨點元素包含HTML內容，系統不會自動追蹤連結。
-* 錯誤修正：某些包含唯讀的瀏覽器錯誤 `message` 屬性未適當處理，導致向客戶公開不同的錯誤。
-* 錯誤修正：如果iframe的HTML頁面來自與上層視窗的HTML頁面不同的子網域，則在iframe中執行SDK會導致錯誤。
+* 支持用于个性化的影子DOM选择器。
+* 重命名了个性化事件类型。 (`display` 和 `click` 成为 `decisioning.propositionDisplay` 和 `decisioning.propositionInteract`)
+* 修复了以下问题：具有内联脚本标记的HTML选件将脚本标记两次添加到页面中，即使脚本仅运行一次。
 
-## 2.2.0版 — 2020年10月
+## 版本2.7.0 - 2021年10月26日
 
-* 錯誤修正：當發生下列情況時，選擇加入物件會封鎖Alloy進行呼叫 `idMigrationEnabled` 是 `true`.
-* 錯誤修正：讓Alloy知道應傳回個人化選件的請求，以避免發生閃爍問題。
+* 在来自的返回值中公开来自Experience Edge的其他信息 `sendEvent`，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随着这些功能当前作为Beta版的一部分推出而更改。 有关更多信息，请参阅 [跟踪事件。](fundamentals/tracking-events.md)
 
-## 2.1.0版 — 2020年8月
+## 版本2.6.4 - 2021年9月7日
 
-* 移除 `syncIdentity` 命令並支援將這些ID傳入 `sendEvent` 命令。
-* 支援IAB 2.0 Consent Standard。
-* 支援在中傳遞其他ID `setConsent` 命令。
-* 支援覆寫 `datasetId` 在 `sendEvent` 命令。
-* 支援Alloy顯示器([瞭解詳情](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
-* 通過 `environment: browser` 在實作詳細資訊內容資料中。
+* 修复了设置HTMLAdobe Target操作应用于的问题 `head` 元素替换了整个 `head` 内容。 现在，设置应用于的HTML操作 `head` 元素更改为附加HTML。
+
+## 版本2.6.3 - 2021年8月16日
+
+* 修复了以下问题：非公共用途的对象通过已解析的承诺公开 `configure` 命令。
+
+## 版本2.6.2 - 2021年8月4日
+
+* 修复了以下问题：关于弃用的警告 `result.decisions` (由 `sendEvent` 命令)将被记录到控制台，即使 `result.decisions` 未访问属性。 访问时不会记录任何警告 `result.decisions` 资产，但该资产仍被弃用。
+
+## 版本2.6.1 - 2021年7月29日
+
+* 修复了以下问题：对于没有个性化内容的单页面应用程序视图，呈现个性化操作会引发错误，并导致从 `sendEvent` 命令被拒绝。
+
+## 版本2.6.0 - 2021年7月27日
+
+* 在中提供更多的个性化内容 `sendEvent` 已解决承诺，包括Adobe Target响应令牌。 当 `sendEvent` 执行命令，返回promise，最终使用 `result` 包含从服务器收到的信息的对象。 以前，此结果对象包含一个名为的属性 `decisions`. 此 `decisions` 属性已弃用。 新资产， `propositions`，已添加。 这个新资产使客户能够访问更多个性化内容，包括 [响应令牌](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html).
+
+## 版本2.5.0 - 2021年6月
+
+* 添加了对重定向个性化选件的支持。
+* 自动收集的负值视区宽度和高度将不再发送到服务器。
+* 当通过返回取消事件时 `false` 从 `onBeforeEventSend` callback，现在会记录一条消息。
+* 修复了用于单个事件的特定XDM数据片段包含在多个事件中的问题。
+
+## 版本2.4.0 - 2021年3月
+
+* 现在，SDK可以是 [安装为npm包](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html?lang=zh-Hans).
+* 添加了对的支持 `out` 选项条件 [配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)，丢弃所有事件，直到获得用户同意(现有 `pending` 选项将事件排入队列，并在收到同意后发送它们)。
+* 此 [onBeforeEventSend回调](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#onbeforeeventsend) 现在可用于阻止发送事件。
+* 现在使用XDM架构字段组，而不是 `meta.personalization` 发送有关正在呈现或单击的个性化内容的事件时。
+* 此 [getIdentity命令](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html#retrieving-the-visitor-id) 现在，将随身份返回边缘区域ID。
+* 从服务器收到的警告和错误已得到改进，并以更合适的方式进行处理。
+* 添加了对的支持 [Adobe的Consent 2.0标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).
+* 收到同意首选项后，将对首选项进行哈希处理并将其存储在本地存储中，以优化CMP、Platform Web SDK和Platform Edge Network之间的集成。 如果您正在收集同意首选项，我们现在鼓励您致电 `setConsent` 每次页面加载时。
+* 二 [监测挂钩](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)， `onCommandResolved` 和 `onCommandRejected`，已添加。
+* 错误修复：当用户导航到新的单页应用程序视图、返回原始视图，并单击符合转化条件的元素时，个性化交互通知事件将包含有关相同活动的重复信息。
+* 错误修复：如果SDK发送的第一个事件具有 `documentUnloading` 设置为 `true`， [`sendBeacon`](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon) 将用于发送事件，从而导致有关未建立标识的错误。
+
+## 版本2.3.0 - 2020年11月
+
+* 添加了nonce支持，以允许实施更严格的内容安全策略。
+* 添加了对单页应用程序的个性化支持。
+* 改进了与其他可能正在覆盖的页面上JavaScript代码的兼容性 `window.console` API。
+* 错误修复： `sendBeacon` 未使用，当时 `documentUnloading` 已设置为 `true` 或在自动跟踪链接点击量时。
+* 错误修复：如果锚点元素包含HTML内容，则不会自动跟踪链接。
+* 错误修复：某些包含只读的浏览器错误 `message` 未正确处理资产，导致向客户公开其他错误。
+* 错误修复：如果iframe的HTML页面来自与父窗口的HTML页面不同的子域，则在iframe中运行SDK会导致错误。
+
+## 版本2.2.0 - 2020年10月
+
+* 错误修复：选择加入对象在以下情况下阻止Alloy进行调用： `idMigrationEnabled` 是 `true`.
+* 错误修复：使Alloy知道应返回个性化选件的请求，以防止出现闪烁问题。
+
+## 版本2.1.0 - 2020年8月
+
+* 删除 `syncIdentity` 命令并支持将这些ID传递到 `sendEvent` 命令。
+* 支持IAB 2.0 Consent Standard。
+* 支持在中传递其他ID `setConsent` 命令。
+* 支持覆盖 `datasetId` 在 `sendEvent` 命令。
+* 支持Alloy显示器([了解更多](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
+* 通过 `environment: browser` 在实施详细信息上下文数据中。
