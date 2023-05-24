@@ -2,7 +2,8 @@
 keywords: 事件轉送擴充功能；twitter；twitter事件轉送擴充功能
 title: twitter事件轉送擴充功能
 description: 此Adobe Experience Platform事件轉送擴充功能可讓您將事件擷取至Twitter，以滿足您的業務需求。
-source-git-commit: d51dae024da0cce770be91601c52b8c2958c3f64
+last-substantial-update: 2023-05-24T00:00:00Z
+source-git-commit: c5cc36d9530ff6fbb52a1995844f495b38e938b3
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 3%
