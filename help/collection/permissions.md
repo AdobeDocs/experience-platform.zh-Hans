@@ -2,9 +2,9 @@
 title: Experience Platform中資料收集的許可權管理
 description: 有關如何在Adobe Experience Platform中管理許可權和控制資料收集功能存取的高級概觀。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 876339019b324d4483152ed6f24bd6ad749ea7ba
+source-git-commit: e24cb8ad6b714a60363bcbec26e453f6445af1ac
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1274'
 ht-degree: 5%
 
 ---
@@ -41,11 +41,6 @@ Adobe Experience Platform下的許可權包括存取資料串流、身分、結�
 
 {style="table-layout:auto"}
 
-<!-- (Feature not yet available?)
-| Dashboards | Manage Custom Dashboards | |
-| Dashboards | View Custom Dashboards | |
--->
-
 ### Adobe Experience Platform資料收集許可權
 
 Adobe Experience Platform資料收集下的許可權可控制對標籤和事件轉送功能（包括屬性、擴充功能和環境）的存取。 如需設定Adobe Experience Platform資料收集許可權的相關步驟，請參閱 [以下區段](#manage).
@@ -73,16 +68,16 @@ Adobe Experience Platform資料收集下的許可權可控制對標籤和事件�
 
 ## 管理权限 {#manage}
 
-如上一節所述，資料收集的許可權是透過Admin Console中的兩個產品名稱來管理： **Adobe Experience Platform** 和 **Adobe Experience Platform資料彙集**.
+資料收集的許可權透過兩個產品名稱管理： **Adobe Experience Platform** 和 **Adobe Experience Platform資料彙集**.
 
-若要管理這些許可權，請登入 [Admin Console](https://adminconsole.adobe.com/) 並選取 **[!UICONTROL 產品]** 從頂端導覽列中。 從這裡，選取您要設定之許可權的產品卡。 如需如何管理Admin Console中每個產品下相關許可權的步驟，請參閱以下小節：
+如需如何管理Admin Console中每個產品下相關許可權的步驟，請參閱以下小節：
 
 * [Adobe Experience Platform許可權](#manage-platform)
 * [Adobe Experience Platform資料收集許可權](#manage-collection)
 
 ### 在Adobe Experience Platform下管理許可權 {#manage-platform}
 
-從 **[!UICONTROL 產品]** 在Admin Console中檢視，選取 **[!UICONTROL Adobe Experience Platform資料彙集]**. 選取您要編輯許可權的產品設定檔，然後導覽至 **[!UICONTROL 許可權]** 標籤。
+從 **[!UICONTROL 許可權]** Adobe Experience Platform區域，選取您要編輯的角色。
 
 若要存取資料收集功能，您必須啟用 **[!UICONTROL 沙箱]**， **[!UICONTROL 資料模型]**， **[!UICONTROL Identity Management]**、和 **[!UICONTROL 資料彙集]** 類別。
 
@@ -96,7 +91,7 @@ Adobe Experience Platform資料收集下的許可權可控制對標籤和事件�
 
 ### 在Adobe Experience Platform資料收集下管理許可權 {#manage-collection}
 
-從 **[!UICONTROL 產品]** 在Admin Console中檢視，選取 **[!UICONTROL Adobe Experience Platform資料彙集]**.
+若要管理這些許可權，請登入「Admin Console」並選取 **[!UICONTROL 產品]** 在頂端導覽列中，然後選取 **[!UICONTROL Adobe Experience Platform資料彙集]**.
 
 ![以Admin Console顯示資料收集產品卡的影像](./images/permissions/data-collection-card.png)
 
