@@ -2,7 +2,7 @@
 title: 配置文件导出行为
 description: 了解Experience Platform目标支持的不同集成模式之间的配置文件导出行为差异。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
+source-git-commit: c54fa206b673868ca3d0ccfa5b0936b83cfd3ed4
 workflow-type: tm+mt
 source-wordcount: '2933'
 ht-degree: 0%
@@ -29,10 +29,10 @@ Experience Platform目标将数据导出到基于API的集成，作为HTTPS调�
 
 获取 [facebook目标](/help/destinations/catalog/social/facebook.md) 带有 *[可配置聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* 例如，策略 — 数据以聚合方式发送，其中，目标服务在上游获取来自配置文件服务的所有传入数据，并在将数据调度到Facebook之前按以下方式之一聚合这些数据：
 
-* 记录数（最多10.000条）或
+* 记录数（最多10,000条）或
 * 时间窗口间隔（30分钟）
 
-首次满足上述阈值的任何一个都会触发导出到Facebook。 因此，在 [!DNL Facebook Custom Audiences] 在功能板中，您可能会看到以10.000个记录增量从Experience Platform传入的受众。 您可能会每10-15分钟看到10,000条记录，因为处理和聚合数据的速度比30分钟的导出间隔要快，而且发送速度也快，所以大约每10-15分钟就会处理一次所有记录。 如果没有足够的记录来构成10.000批次，则当前记录数将按在达到时间窗口阈值时的情况发送，因此您也可能会看到发送到Facebook的较小批次。
+首次满足上述阈值的任何一个都会触发导出到Facebook。 因此，在 [!DNL Facebook Custom Audiences] 仪表板，您可能会看到以10,000笔记录增量从Experience Platform中进入的受众。 您可能会每10-15分钟看到10,000条记录，因为处理和聚合数据的速度比30分钟的导出间隔要快，而且发送速度也快，所以大约每10-15分钟就会处理一次所有记录。 如果没有足够的记录来组成10,000批次，则当前记录数将按在达到时间窗口阈值时的情况发送，因此您也可能会看到发送到Facebook的较小批次。
 
 作为另一个示例，请考虑 [HTTP API目标](/help/destinations/catalog/streaming/http-destination.md)，它具有 *[尽力而为聚合](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* 策略，使用 `maxUsersPerRequest: 10`. 这意味着，在触发对此目标的HTTP调用之前，最多将汇总10个配置文件，但是Experience Platform会在目标服务收到来自上游服务的更新重新评估信息后立即尝试将配置文件调度到目标。
 
