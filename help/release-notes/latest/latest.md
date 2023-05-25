@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年5月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fea5fdf4b4982b59fb1c4954b8f81e131af9955b
+source-git-commit: e705d6c38bc1a81ee5d2c31a3097e1dba8f5cf7f
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1360'
 ht-degree: 4%
 
 ---
@@ -33,6 +33,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [数据治理](#data-governance)
 - [数据引入](#data-ingestion)
 - [目标](#destinations)
+- [Identity Service](#identity-service)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -104,9 +105,21 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版）SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
+- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版） SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+
+## Identity Service {#identity-service}
+
+Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，让您能够实时提供有影响力的个人数字体验，从而为您提供有关客户及其行为的全面视图。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持Adobe Experience Cloud应用程序中的合作伙伴ID | Identity Service中现在提供了合作伙伴ID。 合作伙伴ID是数据合作伙伴用来表示人员的标识符。 在Real-time Customer Data Platform中，合作伙伴ID主要用于扩展受众激活和数据扩充。 合作伙伴ID不会存储在身份图中。 有关详细信息，请阅读以下文档： [身份类型](../../identity-service/namespaces.md#identity-types). |
+
+要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md)
 
 ## 查询服务 {#query-service}
 
@@ -132,6 +145,7 @@ Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数
 
 | 功能 | 描述 |
 | --- | --- |
+| API支持来自的流数据 [!DNL Snowflake] 数据库 | 您现在可以从以下位置流式传输数据： [[!DNL Snowflake] 源](../../sources/connectors/databases/snowflake-streaming.md) 使用 [!DNL Flow Service] API。 |
 | 扩展了对草稿模式的API支持 | 现在，在使用时，您可以在源工作流中暂停并保存进度 [!DNL Flow Service] API的任何时间。 使用 `mode=draft` 将基础、源和目标连接另存为草稿的状态。 可稍后重新访问所有草绘图元，以便完成。 阅读以下内容中的指南： [设置您的 [!DNL Flow Service] 图元到草稿状态](../../sources/tutorials/api/draft.md) 了解更多信息。 |
 | 正式发布 [!DNL Salesforce Marketing Cloud] 源 | 此 [[!DNL Salesforce Marketing Cloud source] 现在为GA版](../../sources/connectors/marketing-automation/salesforce-marketing-cloud.md). 使用此源将您的 [!DNL Salesforce Marketing Cloud] Experience Platform数据。 |
 | [!DNL Google Ads] 身份验证更新 | 现在，您可以在验证您的帐户时，提供登录客户ID。 [!DNL Google Ads] 从特定操作客户获取报表数据的源帐户。 阅读 [[!DNL Google Ads] 源文档](../../sources/connectors/advertising/ads.md) 了解更多信息。 |
@@ -142,5 +156,3 @@ Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数
 {style="table-layout:auto"}
 
 要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
-
-<!-- | API support for streaming data from a [!DNL Snowflake] database | You can now stream data from a [[!DNL Snowflake] source](../../sources/connectors/databases/snowflake.md) using the [!DNL Flow Service] API. | -->
