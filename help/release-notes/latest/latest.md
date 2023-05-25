@@ -104,7 +104,7 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版） SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
+- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版）SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
