@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年5月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 85401e3abfd7d5d1d84e082d20a1a064760c4e19
+source-git-commit: fea5fdf4b4982b59fb1c4954b8f81e131af9955b
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1224'
 ht-degree: 4%
 
 ---
@@ -32,6 +32,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [数据收集](#data-collection)
 - [数据治理](#data-governance)
 - [数据引入](#data-ingestion)
+- [目标](#destinations)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -75,6 +76,37 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 | 数据摄取模板的Beta版可用性 | 数据摄取模板为数据架构师和工程师提供了标准模板和自动化工具，可加快数据摄取过程，包括架构和数据集创建以及映射规则配置。 数据摄取模板当前可用于 [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md)， [[!DNL Salesforce]](../../sources/connectors/crm/salesforce.md) 和 [[!DNL Microsoft Dynamics]](../../sources/connectors/crm/ms-dynamics.md) 源。 有关详细信息，请阅读以下指南： [在UI中使用模板](../../sources/tutorials/ui/templates.md). |
 
 要了解有关数据摄取的更多信息，请参阅 [数据摄取概述](../../ingestion/home.md).
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+
+**新目标** {#new-destinations}
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| **[[!UICONTROL Mailchimp兴趣类别]](../../destinations/catalog/email-marketing/mailchimp-interest-categories.md)** | **[!UICONTROL Mailchimp]** 是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他感兴趣的方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对联系人进行排序。 |
+
+{style="table-layout:auto"}
+
+<!--
+
+**New or updated functionality** {#destinations-new-updated-functionality}
+
+| Functionality | Description |
+| ----------- | ----------- |
+| General availability of attribute-based personalization through the [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) and [Custom personalization](../../destinations/catalog/personalization/custom-personalization.md) destinations. | Leverage profile attributes in real-time to deliver one-to-one web and mobile personalization, via Adobe Target or other custom personalization destinations in Experience Platform. See the [dedicated documentation](../../destinations/ui/activate-edge-personalization-destinations.md) for more details. |
+| Destination SDK support for grouping exported audiences based on merge policy. | When building a file-based destination with Destination SDK, you can now configure the grouping of exported audiences into one or multiple files, based on merge policy. <br><br> Additionally, you can now include the merge policy ID and merge policy name in the exported file names, by using the dedicated template macros. <br><br>See the [batch configuration documentation](../../destinations/destination-sdk/functionality/destination-configuration/batch-configuration.md) for more details on how to use the `segmentGroupingEnabled` parameter and the new file name template macros.|
+
+{style="table-layout:auto"}
+
+-->
+
+**修复和增强功能** {#destinations-fixes-and-enhancements}
+
+- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版） SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 查询服务 {#query-service}
 
