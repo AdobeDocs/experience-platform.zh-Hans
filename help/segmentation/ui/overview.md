@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmentation Service用户界面指南
 description: Adobe Experience Platform Segmentation Service提供了一个用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: 207cddae6b632866d564729de49d28fc5c29ef7f
 workflow-type: tm+mt
-source-wordcount: '2650'
+source-wordcount: '2646'
 ht-degree: 3%
 
 ---
@@ -69,12 +69,13 @@ ht-degree: 3%
 
 您可以通过选择向此显示添加其他字段 ![过滤器属性图标](../images/ui/overview/filter-attribute.png). 这些附加字段包括划分、评估方法和作业ID。
 
-如果选择了“划分”，则显示区会显示一个条形图，其中概述了属于以下每种已计算用户档案状态的用户档案的百分比： [!UICONTROL 已实现] 和 [!UICONTROL 正在退出]. 此外，上显示的细分 [!UICONTROL 浏览] 选项卡是对区段状态最准确的划分。 如果此数字与 [!UICONTROL 概述] 选项卡中，您应使用 [!UICONTROL 浏览] 制表符作为正确的信息源，因为 [!UICONTROL 概述] 选项卡编号每天仅更新一次。
+如果选择了“划分”，则显示区会显示一个条形图，其中概述了属于以下每种已计算用户档案状态的用户档案的百分比： [!UICONTROL 已实现]， [!UICONTROL 现有]、和 [!UICONTROL 正在退出]. 此外，上显示的细分 [!UICONTROL 浏览] 选项卡是对区段状态最准确的划分。 如果此数字与 [!UICONTROL 概述] 选项卡中，您应使用 [!UICONTROL 浏览] 制表符作为正确的信息源，因为 [!UICONTROL 概述] 选项卡编号每天仅更新一次。
 
 | 状态 | 描述 |
 | ------ | ----------- |
-| 已实现 | 过去24小时内符合区段资格的用户档案计数。 因此，自上次运行批处理区段作业以来，符合区段资格的用户档案数。 |
-| 正在退出 | 过去24小时内退出区段的配置文件数。 因此，自上次运行批处理区段作业以来，不再符合区段资格的用户档案数。 |
+| [!UICONTROL 已实现] | 符合以下条件的配置文件计数： **合格** 自上次运行批处理区段作业以来过去24小时内的区段。 |
+| [!UICONTROL 现有] | 符合以下条件的配置文件计数： **剩余** 自上次运行批处理区段作业以来的最后24小时内的区段中。 |
+| [!UICONTROL 正在退出] | 符合以下条件的配置文件计数： **已退出** 自上次运行批处理区段作业以来的最后24小时内的区段。 |
 
 评估方法可以是流式、批量或边缘。 当数据进入系统时，会不断评估流区段。 根据设定的计划评估批次区段。 将实时评估边缘区段，以允许使用相同的页面和下一页面个性化用例。
 
@@ -186,7 +187,7 @@ ht-degree: 3%
 
 当前只能使用API创建计划。 有关使用API创建、编辑和使用计划的详细步骤，请阅读有关评估和访问区段结果的教程，特别是以下部分： [使用API的计划评估](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
-![“区段浏览”页面上会突出显示用于将所有区段添加到计划的切换开关。](../images/ui/overview/segment-browse-scheduled.png)
+![“区段浏览”页面上会突出显示“将所有区段添加到计划”切换开关。](../images/ui/overview/segment-browse-scheduled.png)
 
 ## 受众 {#audiences}
 
