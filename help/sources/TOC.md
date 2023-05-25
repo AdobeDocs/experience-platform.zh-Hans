@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 1a6282104af60d66c54bfb20c3c4e8eb74427461
+source-git-commit: f93ee2bc10135fee0c2d77629ee10901010b744b
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '979'
 ht-degree: 11%
 
 ---
@@ -87,6 +87,7 @@ ht-degree: 11%
       - [oracle连接器](connectors/databases/oracle.md)
       - [Phoenix连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
+      - [Snowflake流连接器](connectors/databases/snowflake-streaming.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [teradata优势连接器](connectors/databases/teradata-vantage.md)
    - 电子商务 {#ecommerce}
@@ -163,6 +164,7 @@ ht-degree: 11%
          - [Oracle](tutorials/api/create/databases/oracle.md)
          - [凤凰城](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
+         - [Snowflake流](tutorials/api/create/databases/snowflake-streaming.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
          - [teradata优势](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
