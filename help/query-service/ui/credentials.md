@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: aed521bf50c301148c10b98021f1a3df0ed45278
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1462'
 ht-degree: 3%
 
 ---
@@ -48,6 +48,10 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 您可以使用不会过期的凭据来设置与外部客户端的更永久的连接。
 
+>[!NOTE]
+>
+>未过期的凭据具有以下限制：<br><ul><li>用户必须使用由以下内容组成的用户名和密码登录 `{technicalAccountId}:{credential}`. 欲知更多信息，请参见 [生成凭据](#generate-credentials) 部分。</li><li>创建过期凭据后，将创建一个具有一组基本权限的新角色，允许用户查看架构和数据集。 “管理查询”权限也分配给此角色，以便与查询服务一起使用。</li><li>当列出查询对象时，第三方客户端可能会执行与预期不同的操作。 例如，某些第三方客户端，如 [!DNL DB Visualizer] 不会在左侧面板中显示视图名称。 但是，如果在SELECT查询中调用视图名称，则视图名称可访问。 同样， [!DNL PowerUI] 可能不会列出通过SQL创建的要选择用于创建功能板的临时视图。</li></ul>
+
 ### 先决条件
 
 在生成不会过期的凭据之前，必须在Adobe Admin Console中完成以下步骤：
@@ -63,7 +67,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 现在，已在Adobe Developer Console中配置了用户使用过期凭据功能所需的所有权限。
 
-### 生成凭据
+### 生成凭据 {#generate-credentials}
 
 要创建一组不会过期的凭据，请返回平台UI并选择 **[!UICONTROL 查询]** 从左侧导航访问 [!UICONTROL 查询] 工作区。 接下来，选择 **[!UICONTROL 凭据]** 选项卡，后接 **[!UICONTROL 生成凭据]**.
 
