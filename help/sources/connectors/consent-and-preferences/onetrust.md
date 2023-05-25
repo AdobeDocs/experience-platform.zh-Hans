@@ -3,8 +3,9 @@ keywords: Experience Platform；主页；热门主题；OneTrust；onetrust；�
 solution: Experience Platform
 title: OneTrust集成源连接器概述
 description: 了解如何使用API或用户界面将OneTrust集成连接到Adobe Experience Platform。
+last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: f2229d4d-8aa6-483a-9156-403309f80007
-source-git-commit: 9846dc24321d7b32a110cfda9df3511b1e3a82ed
+source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
 workflow-type: tm+mt
 source-wordcount: '174'
 ht-degree: 0%

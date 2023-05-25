@@ -2,8 +2,9 @@
 keywords: Experience Platform；主页；热门主题；Oracle服务云；oracle服务云
 title: oracle服务云源连接器概述
 description: 了解如何使用API或用户界面将Oracle服务云连接到Adobe Experience Platform。
+last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
-source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
+source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
 workflow-type: tm+mt
 source-wordcount: '249'
 ht-degree: 0%
