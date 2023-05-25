@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Zoho CRM；zoho crm；Zoho；zoho
+keywords: Experience Platform；主页；热门主题；Zoho CRM；zoho crm；Zoho；Zoho
 solution: Experience Platform
-title: 使用Flow Service API建立Zoho CRM基本連線
+title: 使用流服务API创建Zoho CRM基本连接
 type: Tutorial
-description: 瞭解如何使用流量服務API將Adobe Experience Platform連線至Zoho CRM。
+description: 了解如何使用流服务API将Adobe Experience Platform连接到Zoho CRM。
 exl-id: 33995927-8f5e-44c5-b809-4db8706bbd34
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,46 +12,46 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Zoho CRM] 基礎連線使用 [!DNL Flow Service] API
+# 创建 [!DNL Zoho CRM] 基本连接使用 [!DNL Flow Service] API
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Zoho CRM] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Zoho CRM] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功連線所需瞭解的其他資訊 [!DNL Zoho CRM] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接时需要了解的其他信息 [!DNL Zoho CRM] 使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL Zoho CRM]，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 以连接 [!DNL Zoho CRM]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | --- | --- |
-| `endpoint` | 的端點 [!DNL Zoho CRM] 您向其提出要求的伺服器。 |
-| `accountsUrl` | 帳戶URL可用來產生存取和重新整理Token。 URL必須是網域專屬的。 |
-| `clientId` | 與您的對應之使用者端ID [!DNL Zoho CRM] 使用者帳戶。 |
-| `clientSecret` | 與您的對應之使用者端密碼 [!DNL Zoho CRM] 使用者帳戶。 |
-| `accessToken` | 存取權杖會授權您對的安全及臨時存取 [!DNL Zoho CRM] 帳戶。 |
-| `refreshToken` | 重新整理權杖是在您的存取權杖過期後，用來產生新存取權杖的權杖。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Zoho CRM] 為： `929e4450-0237-4ed2-9404-b7e1e0a00309`. |
+| `endpoint` | 的端点 [!DNL Zoho CRM] 您向其发出请求的服务器。 |
+| `accountsUrl` | 帐户URL用于生成访问和刷新令牌。 URL必须特定于域。 |
+| `clientId` | 与您的对应的客户端ID [!DNL Zoho CRM] 用户帐户。 |
+| `clientSecret` | 与您的对应的客户端密钥 [!DNL Zoho CRM] 用户帐户。 |
+| `accessToken` | 访问令牌可授权您对的安全临时访问 [!DNL Zoho CRM] 帐户。 |
+| `refreshToken` | 刷新令牌是在您的访问令牌过期后用于生成新访问令牌的令牌。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Zoho CRM] 为： `929e4450-0237-4ed2-9404-b7e1e0a00309`. |
 
-如需這些憑證的詳細資訊，請參閱以下檔案： [[!DNL Zoho CRM] 驗證](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
+有关这些凭据的更多信息，请参阅以下文档： [[!DNL Zoho CRM] 身份验证](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL Zoho CRM] 要求引數中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Zoho CRM] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -63,9 +63,9 @@ POST /connections
 
 >[!TIP]
 >
->您的帳戶URL網域必須與適當的網域位置相對應。 以下是各種網域及其對應的帳戶URL：<ul><li>美國： https://accounts.zoho.com</li><li>澳洲： https://accounts.zoho.com.au</li><li>歐洲： https://accounts.zoho.eu</li><li>印度： https://accounts.zoho.in</li><li>中國： https://accounts.zoho.com.cn</li></ul>
+>您的帐户URL域必须与适当的域位置相对应。 以下是各种域及其相应的帐户URL：<ul><li>美国： https://accounts.zoho.com</li><li>澳大利亚： https://accounts.zoho.com.au</li><li>欧洲： https://accounts.zoho.eu</li><li>印度： https://accounts.zoho.in</li><li>中国： https://accounts.zoho.com.cn</li></ul>
 
-下列要求會建立 [!DNL Zoho CRM]：
+以下请求创建基本连接 [!DNL Zoho CRM]：
 
 ```shell
 curl -X POST \
@@ -98,20 +98,20 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `name` | 您的名稱 [!DNL Zoho CRM] 基礎連線。 您可以使用此名稱來查詢 [!DNL Zoho CRM] 基礎連線。 |
-| `description` | 選用的說明 [!DNL Zoho CRM] 基礎連線。 |
-| `auth.specName` | 用於連線的驗證型別。 |
-| `auth.params.endpoint` | 的端點 [!DNL Zoho CRM] 您向其提出要求的伺服器。 |
-| `auth.params.accountsUrl` | 帳戶URL可用來產生存取和重新整理Token。 URL必須是網域專屬的。 |
-| `auth.params.clientId` | 與您的對應之使用者端ID [!DNL Zoho CRM] 使用者帳戶。 |
-| `auth.params.clientSecret` | 與您的對應之使用者端密碼 [!DNL Zoho CRM] 使用者帳戶。 |
-| `auth.params.accessToken` | 存取權杖會授權您對的安全及臨時存取 [!DNL Zoho CRM] 帳戶。 |
-| `auth.params.refreshToken` | 重新整理權杖是在您的存取權杖過期後，用來產生新存取權杖的權杖。 |
-| `connectionSpec.id` | 的連線規格ID [!DNL Zoho CRM]： `929e4450-0237-4ed2-9404-b7e1e0a00309`. |
+| `name` | 您的名称 [!DNL Zoho CRM] 基本连接。 您可以使用此名称查找 [!DNL Zoho CRM] 基本连接。 |
+| `description` | 的可选描述 [!DNL Zoho CRM] 基本连接。 |
+| `auth.specName` | 用于连接的身份验证类型。 |
+| `auth.params.endpoint` | 的端点 [!DNL Zoho CRM] 您向其发出请求的服务器。 |
+| `auth.params.accountsUrl` | 帐户URL用于生成访问和刷新令牌。 URL必须特定于域。 |
+| `auth.params.clientId` | 与您的对应的客户端ID [!DNL Zoho CRM] 用户帐户。 |
+| `auth.params.clientSecret` | 与您的对应的客户端密钥 [!DNL Zoho CRM] 用户帐户。 |
+| `auth.params.accessToken` | 访问令牌可授权您对的安全临时访问 [!DNL Zoho CRM] 帐户。 |
+| `auth.params.refreshToken` | 刷新令牌是在您的访问令牌过期后用于生成新访问令牌的令牌。 |
+| `connectionSpec.id` | 的连接规范ID [!DNL Zoho CRM]： `929e4450-0237-4ed2-9404-b7e1e0a00309`. |
 
 **响应**
 
-成功回應會傳回新建立的基本連線的詳細資料，包括其唯一識別碼(`id`)。 建立來源連線的下一個步驟需要此ID。
+成功响应将返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步中创建源连接时需要此ID。
 
 ```json
 {
@@ -122,7 +122,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Zoho] 基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL Zoho] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流，以將CRM資料帶到Platform，使用 [!DNL Flow Service] API](../../collect/crm.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将CRM数据引入平台 [!DNL Flow Service] API](../../collect/crm.md)

@@ -1,6 +1,6 @@
 ---
-title: 結構描述編輯器（測試版）中的欄位式工作流程
-description: 瞭解如何將現有欄位群組中的欄位個別新增至您的Experience Data Model (XDM)結構描述。
+title: 架构编辑器（测试版）中基于字段的工作流
+description: 了解如何将现有字段组中的字段单独添加到您的体验数据模型(XDM)架构。
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
@@ -11,108 +11,108 @@ ht-degree: 0%
 
 ---
 
-# 結構描述編輯器（測試版）中的欄位式工作流程
+# 架构编辑器（测试版）中基于字段的工作流
 
 >[!IMPORTANT]
 >
->此測試版檔案中說明的工作流程現在通常可在Adobe Experience Platform中使用。 如需結構描述編輯器中欄位式工作流程的最新指引，請參閱 [結構描述UI指南](./resources/schemas.md) 而非。 本指南即將移除。
+>此测试版文档中描述的工作流现在通常可在Adobe Experience Platform中获取。 有关架构编辑器中基于字段的工作流的最新指南，请参阅 [架构UI指南](./resources/schemas.md) 而是。 本指南将很快被删除。
 
-Adobe Experience Platform提供一組強大的標準化功能 [欄位群組](../schema/composition.md#field-group) 用於Experience Data Model (XDM)結構描述。 這些欄位群組背後的結構和語意經過精心設計，以符合各種細分使用案例和Platform中其他下游應用程式。 您也可以定義自己的自訂欄位群組，以滿足獨特的業務需求。
+Adobe Experience Platform提供一组强大的标准化功能 [字段组](../schema/composition.md#field-group) 用于Experience Data Model (XDM)架构。 这些字段组背后的结构和语义经过仔细设计，可满足各种分段用例和Platform中的其他下游应用程序。 您还可以定义自己的自定义字段组，以满足独特的业务需求。
 
-當您將欄位群組新增到結構描述時，該結構描述會繼承該群組包含的所有欄位。 不過，您現在可以將個別欄位新增到結構描述中，而無需包含您可能不一定使用的相關欄位群組中的其他欄位。
+将字段组添加到架构时，该架构会继承该组中包含的所有字段。 但是，您现在可以将各个字段添加到架构中，而无需包含您可能不一定使用的关联字段组中的其他字段。
 
-本指南說明在Platform UI中新增個別欄位至結構描述的不同方法。
+本指南介绍了在Platform UI中将各个字段添加到架构的不同方法。
 
 ## 先决条件
 
-本教學課程假設您熟悉 [XDM結構描述的組成](../schema/composition.md) 以及如何在平台UI中使用結構描述編輯器。 若要繼續進行，您應該開始 [建立新結構描述](./resources/schemas.md) 並將它指派給標準類別，再繼續本指南。
+本教程假设您熟悉 [XDM模式的组成](../schema/composition.md) 以及如何在Platform UI中使用架构编辑器。 要继续操作，您应该开始 [创建新架构](./resources/schemas.md) 并将其分配到标准类中，然后再继续阅读本指南。
 
-## 移除從標準欄位群組新增的欄位 {#remove-field-group}
+## 删除从标准字段组添加的字段 {#remove-field-group}
 
-將標準欄位群組新增到結構描述後，您可以移除任何您不需要的標準欄位。
+将标准字段组添加到架构后，您可以删除任何不需要的标准字段。
 
 >[!NOTE]
 >
->從標準欄位群組中移除欄位只會影響正在處理的結構描述，不會影響欄位群組本身。 如果您移除一個結構描述中的標準欄位，這些欄位在採用相同欄位群組的所有其他結構描述中仍然可用。
+>从标准字段组中删除字段只会影响正在处理的架构，而不会影响字段组本身。 如果删除一个架构中的标准字段，则这些字段在使用相同字段组的所有其他架构中仍然可用。
 
-在以下範例中，標準欄位群組 **[!UICONTROL 人口統計細節]** 已新增至結構描述。 若要移除單一欄位，例如 `taxId`，選取畫布中的欄位，然後選取 **[!UICONTROL 移除]** 在右側邊欄中。
+在以下示例中，标准字段组 **[!UICONTROL 人口统计详细信息]** 已添加到架构。 要删除单个字段，例如 `taxId`，选择画布中的字段，然后选择 **[!UICONTROL 移除]** 在右边栏中。
 
-![移除單一欄位](../images/ui/field-based-workflows/remove-single-field.png)
+![删除单个字段](../images/ui/field-based-workflows/remove-single-field.png)
 
-如果您想要移除多個欄位，可以整體管理欄位群組。 選取屬於畫布中群組的欄位，然後選取 **[!UICONTROL 管理相關欄位]** 在右側邊欄中。
+如果要删除多个字段，则可以整体管理字段组。 在画布中选择属于该组的字段，然后选择 **[!UICONTROL 管理相关字段]** 在右边栏中。
 
-![管理相關欄位](../images/ui/field-based-workflows/manage-related-fields.png)
+![管理相关字段](../images/ui/field-based-workflows/manage-related-fields.png)
 
-會出現一個對話方塊，顯示相關欄位群組的結構。 在此，您可以使用提供的核取方塊來選取或取消選取所需的欄位。 滿意後，選取 **[!UICONTROL 確認]**.
+此时将显示一个对话框，其中显示了相关字段组的结构。 在此处，您可以使用提供的复选框选择或取消选择所需的字段。 满意后，选择 **[!UICONTROL 确认]**.
 
-![從欄位群組選取欄位](../images/ui/field-based-workflows/select-fields.png)
+![从字段组选择字段](../images/ui/field-based-workflows/select-fields.png)
 
-畫布會重新出現，架構結構中只會顯示選取的欄位。
+画布会重新显示，架构结构中只显示选定的字段。
 
-![欄位已新增](../images/ui/field-based-workflows/fields-added.png)
+![已添加字段](../images/ui/field-based-workflows/fields-added.png)
 
-## 直接將標準欄位新增到結構描述
+## 将标准字段直接添加到架构
 
-您可以將標準欄位群組中的欄位直接新增到結構描述，而無需預先知道其對應的欄位群組。 若要將標準欄位新增到結構描述，請選取加號(**+**)圖示加以識別（位於畫布中的結構描述名稱旁）。 一個 **[!UICONTROL 未命名的欄位]** 結構描述結構中會顯示預留位置，而右側邊欄會更新，以顯示設定欄位的控制項。
+您可以将标准字段组中的字段直接添加到架构中，而无需预先知道其对应的字段组。 要将标准字段添加到架构，请选择加号(**+**)图标图标。 An **[!UICONTROL 无标题字段]** 架构结构中会显示占位符，右边栏更新会显示用于配置该字段的控件。
 
-![欄位預留位置](../images/ui/field-based-workflows/root-custom-field.png)
+![字段占位符](../images/ui/field-based-workflows/root-custom-field.png)
 
-下 **[!UICONTROL 欄位名稱]**，開始輸入您要新增的欄位名稱。 系統會自動搜尋符合查詢的標準欄位，並將其列在下 **[!UICONTROL 建議的標準欄位]**，包括所屬欄位群組。
+下 **[!UICONTROL 字段名称]**，开始键入要添加字段的名称。 系统会自动搜索与查询匹配的标准字段，并在下面列出它们 **[!UICONTROL 推荐的标准字段]**，包括它们所属的字段组。
 
-![建議的標準欄位](../images/ui/field-based-workflows/standard-field-search.png)
+![推荐的标准字段](../images/ui/field-based-workflows/standard-field-search.png)
 
-雖然某些標準欄位共用相同的名稱，但其結構可能會因來自的欄位群組而異。 如果標準欄位巢狀內嵌在欄位群組結構的父物件中，如果新增了子欄位，則父欄位也將包含在結構描述中。
+虽然某些标准字段具有相同的名称，但它们的结构可能会因它们来自的字段组而异。 如果标准字段嵌套在字段组结构的父对象中，则添加子字段时，该父字段也将包含在架构中。
 
-選取預覽圖示(![預覽圖示](../images/ui/field-based-workflows/preview-icon.png))，檢視其欄位群組的結構，並更能瞭解其巢狀化方式。 若要將標準欄位新增至結構描述，請選取加號圖示(![加號圖示](../images/ui/field-based-workflows/add-icon.png))。
+选择预览图标(![“预览”图标](../images/ui/field-based-workflows/preview-icon.png))，以查看其字段组的结构，并更好地了解如何嵌套该字段。 要将标准字段添加到架构，请选择加号图标(![加号图标](../images/ui/field-based-workflows/add-icon.png))。
 
-![新增標準欄位](../images/ui/field-based-workflows/add-standard-field.png)
+![添加标准字段](../images/ui/field-based-workflows/add-standard-field.png)
 
-畫布會更新以顯示新增到結構描述的標準欄位，包括它巢狀內嵌在欄位群組結構下的任何父欄位。 欄位群組的名稱也會列在 **[!UICONTROL 欄位群組]** 在左側邊欄中。 如果您想從相同的欄位群組新增更多欄位，請選取 **[!UICONTROL 管理相關欄位]** 在右側邊欄中。
+画布将更新以显示添加到架构的标准字段，包括嵌套在字段组结构下的任何父字段。 字段组的名称也会列在 **[!UICONTROL 字段组]** 在左边栏中。 如果要从同一字段组添加更多字段，请选择 **[!UICONTROL 管理相关字段]** 在右边栏中。
 
-![已新增標準欄位](../images/ui/field-based-workflows/standard-field-added.png)
+![已添加标准字段](../images/ui/field-based-workflows/standard-field-added.png)
 
-## 直接將自訂欄位新增到結構描述
+## 将自定义字段直接添加到架构
 
-與標準欄位的工作流程類似，您也可以直接將自己的自訂欄位新增到結構描述。
+与标准字段的工作流类似，您还可以将自己的自定义字段直接添加到架构。
 
-若要將欄位新增至結構的根層級，請選取加號(**+**)圖示加以識別（位於畫布中的結構描述名稱旁）。 一個 **[!UICONTROL 未命名的欄位]** 結構描述結構中會顯示預留位置，而右側邊欄會更新，以顯示設定欄位的控制項。
+要将字段添加到架构的根级别，请选择加号(**+**)图标图标。 An **[!UICONTROL 无标题字段]** 架构结构中会显示占位符，右边栏更新会显示用于配置该字段的控件。
 
-![根自訂欄位](../images/ui/field-based-workflows/root-custom-field.png)
+![根自定义字段](../images/ui/field-based-workflows/root-custom-field.png)
 
-開始輸入您要新增的欄位名稱，系統就會自動開始搜尋相符的標準欄位。 若要建立新的自訂欄位，請選取最上方的附加選項 **([!UICONTROL 新增欄位])**.
+开始键入要添加的字段的名称，系统会自动开始搜索匹配的标准字段。 要创建新的自定义字段，请选择附加了的顶部选项 **([!UICONTROL 新建字段])**.
 
-![新欄位](../images/ui/field-based-workflows/custom-field-search.png)
+![新建字段](../images/ui/field-based-workflows/custom-field-search.png)
 
-從這裡，提供欄位的顯示名稱和資料型別。 下 **[!UICONTROL 指派欄位群組]**，您必須選取要與新欄位相關聯的欄位群組。 開始輸入欄位群組的名稱，如果您之前已輸入 [已建立自訂欄位群組](./resources/field-groups.md#create) 它們會顯示在下拉式清單中。 或者，您可以在欄位中輸入唯一名稱，以建立新的欄位群組。
+在此处，提供字段的显示名称和数据类型。 下 **[!UICONTROL 分配字段组]**&#x200B;中，您必须为要关联的新字段选择字段组。 开始键入字段组的名称，如果您之前已输入 [已创建自定义字段组](./resources/field-groups.md#create) 它们将显示在下拉列表中。 或者，您可以在字段中键入唯一名称，以创建新字段组。
 
-![選取欄位群組](../images/ui/field-based-workflows/select-field-group.png)
+![选择字段组](../images/ui/field-based-workflows/select-field-group.png)
 
 >[!WARNING]
 >
->如果您選取現有的自訂欄位群組，在您儲存變更後，採用該欄位群組的任何其他結構描述也將繼承新新增的欄位。 因此，如果您想要此型別的傳輸，請僅選取現有的欄位群組。 否則，您應該選擇建立新的自訂欄位群組。
+>如果选择现有的自定义字段组，则在保存更改后，使用该字段组的任何其他架构也将继承新添加的字段。 因此，如果需要此类型的传播，请仅选择现有的字段组。 否则，您应该选择创建新的自定义字段组。
 
-完成後，選取 **[!UICONTROL 套用]**.
+完成后，选择 **[!UICONTROL 应用]**.
 
-![套用欄位](../images/ui/field-based-workflows/apply-field.png)
+![应用字段](../images/ui/field-based-workflows/apply-field.png)
 
-新欄位會新增至畫布，並會以名稱空間位於 [租使用者ID](../api/getting-started.md#know-your-tenant_id) 以避免與標準XDM欄位衝突。 您與新欄位相關聯的欄位群組也會顯示在 **[!UICONTROL 欄位群組]** 在左側邊欄中。
+新字段将添加到画布中，并在下方 [租户ID](../api/getting-started.md#know-your-tenant_id) 以避免与标准XDM字段冲突。 与新字段关联的字段组也显示在下方 **[!UICONTROL 字段组]** 在左边栏中。
 
-![租使用者ID](../images/ui/field-based-workflows/tenantId.png)
+![租户ID](../images/ui/field-based-workflows/tenantId.png)
 
 >[!NOTE]
 >
->依預設，所選自訂欄位群組提供的其餘欄位會從結構描述中移除。 如果您想要將其中一些欄位新增至結構描述，請選取屬於群組的欄位，然後選取 **[!UICONTROL 管理相關欄位]** 在右側邊欄中。
+>默认情况下，所选自定义字段组提供的其余字段将从架构中删除。 如果要将其中一些字段添加到架构，请选择属于该组的字段，然后选择 **[!UICONTROL 管理相关字段]** 在右边栏中。
 
-### 將自訂欄位新增至標準欄位群組的結構
+### 将自定义字段添加到标准字段组的结构
 
-如果您使用的結構描述具有標準欄位群組提供的物件型別欄位，您可以將自己的自訂欄位新增到該標準物件。 選取加號(**+**)圖示來顯示區段，並在右側邊欄中提供自訂欄位的詳細資訊。
+如果您正在处理的架构具有由标准字段组提供的对象类型字段，则可以将自己的自定义字段添加到该标准对象。 选择加号(**+**)图标，并在右边栏中提供自定义字段的详细信息。
 
-![新增欄位至標準物件](../images/ui/field-based-workflows/add-field-to-standard-object.png)
+![将字段添加到标准对象](../images/ui/field-based-workflows/add-field-to-standard-object.png)
 
-套用變更後，新欄位會顯示在標準物件的租使用者ID名稱空間下。 此巢狀名稱空間可防止欄位群組本身內的欄位名稱衝突，以避免使用相同欄位群組的其他結構描述發生重大變更。
+应用更改后，新字段将显示在标准对象中的租户ID命名空间下。 此嵌套命名空间可防止字段组自身内的字段名称冲突，以避免破坏使用同一字段组的其他架构中的更改。
 
-![新增至標準物件的欄位](../images/ui/field-based-workflows/added-to-standard-object.png)
+![添加到标准对象的字段](../images/ui/field-based-workflows/added-to-standard-object.png)
 
 ## 后续步骤
 
-本指南涵蓋Platform UI中結構描述編輯器的全新欄位式工作流程。 如需在UI中管理結構描述的詳細資訊，請參閱 [UI總覽](./overview.md).
+本指南介绍了Platform UI中新的基于字段的架构编辑器工作流。 有关在UI中管理架构的更多信息，请参阅 [UI概述](./overview.md).

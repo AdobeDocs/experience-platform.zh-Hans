@@ -1,7 +1,7 @@
 ---
-keywords: 廣告；必應；
-title: Microsoft Bing連線
-description: 透過Microsoft Bing連線目的地，您可以在Microsoft顯示廣告中執行重新定位以及以受眾為目標的數位行銷活動。
+keywords: 广告；必应；
+title: Microsoft Bing连接
+description: 通过Microsoft Bing连接目标，您可以在Microsoft展示广告中执行重新定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
@@ -10,38 +10,38 @@ ht-degree: 8%
 
 ---
 
-# [!DNL Microsoft Bing] 連線 {#bing-destination}
+# [!DNL Microsoft Bing] 连接 {#bing-destination}
 
 ## 概述 {#overview}
 
-此 [!DNL Microsoft Bing] 目的地可協助您將設定檔資料傳送至 [!DNL Microsoft Display Advertising].
+此 [!DNL Microsoft Bing] 目标可帮助您将配置文件数据发送到 [!DNL Microsoft Display Advertising].
 
-若要將設定檔資料傳送至 [!DNL Microsoft Bing]，您必須先連線至目的地。
+要将配置文件数据发送到 [!DNL Microsoft Bing]，您必须先连接到目标。
 
 ## 用例 {#use-cases}
 
-身為行銷人員，我想能夠使用以下專案建立的區段： [!DNL Microsoft Advertising IDs] 透過顯示廣告定位使用者 [!DNL Microsoft Advertising] 管道。
+作为营销人员，我希望能够使用由构建的区段 [!DNL Microsoft Advertising IDs] 要通过显示广告定位用户，请执行以下操作 [!DNL Microsoft Advertising] 渠道。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Microsoft Bing] 支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL Microsoft Bing] 支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 描述 |
+| 目标身份 | 描述 |
 |---|---|
-| MAID | Microsoft廣告ID |
+| MAID | Microsoft广告ID |
 
 {style="table-layout:auto"}
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-**[!DNL Segment Export]**  — 您正在將區段（對象）的所有成員匯出至 [!DNL Microsoft Bing] 目的地。
+**[!DNL Segment Export]**  — 您要将区段（受众）的所有成员导出到 [!DNL Microsoft Bing] 目标。
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 区段导出]** | 您正在將區段（受眾）的所有成員匯出至 [!DNL Microsoft Bing] 目的地。 |
-| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到 [!DNL Microsoft Bing] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -49,35 +49,35 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
->如果您想要使用建立您的第一個目的地 [!DNL Microsoft Bing] 且尚未啟用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 若是過去的Experience CloudID服務(使用Adobe Audience Manager或其他應用程式)，請聯絡Adobe諮詢或客戶服務以啟用ID同步。 如果您先前已設定 [!DNL Microsoft Bing] Audience Manager中的整合，您所設定的ID同步會結轉到Platform。
+>如果您希望使用创建您的第一个目标 [!DNL Microsoft Bing] 且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Adobe Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Microsoft Bing] Audience Manager中的集成，您设置的ID同步会转移到平台。
 
-設定目的地時，您必須提供下列資訊：
+配置目标时，必须提供以下信息：
 
-* [!UICONTROL 帳戶ID]：這是您的 [!DNL Bing Ads CID]，以整數格式顯示。
+* [!UICONTROL 帐户ID]：这是您的 [!DNL Bing Ads CID]，采用整数格式。
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
-### 連線引數 {#parameters}
+### 连接参数 {#parameters}
 
-當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
+While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
-* **[!UICONTROL 帳戶ID]**：您的 [!DNL Bing Ads Customer ID] (CID)。 您的CID是整數，在您登入時可在URL中找到 [!DNL Microsoft Advertising].
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL 帐户ID]**：您的 [!DNL Bing Ads Customer ID] (CID)。 您的CID是一个整数，在登录时可在URL中找到 [!DNL Microsoft Advertising].
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
@@ -86,14 +86,14 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-另請參閱 [啟用串流區段匯出目的地的受眾資料](../../ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-在 [區段排程](../../ui/activate-segment-streaming-destinations.md#scheduling) 步驟，您必須手動對應 [!UICONTROL 對應ID] 欄位。 這可確保區段中繼資料可正確傳遞至 [!DNL Bing].
+在 [区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动将区段名称 [!UICONTROL 映射Id] 字段。 这可确保区段元数据正确传递到 [!DNL Bing].
 
-![顯示區段排程畫面的UI影像，其中包含如何將區段名稱對應至Bing對應ID的範例。](../../assets/catalog/advertising/bing/mapping-id.png)
+![显示区段计划屏幕的UI图像，其中包含如何将区段名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
 
-## 匯出的資料 {#exported-data}
+## 导出的数据 {#exported-data}
 
-驗證資料是否已成功匯出至 [!DNL Microsoft Bing] 目的地，檢查您的 [!DNL Microsoft Bing Ads] 帳戶。 如果成功啟用，系統會將對象填入您的帳戶。
+验证数据是否已成功导出到 [!DNL Microsoft Bing] 目标，检查您的 [!DNL Microsoft Bing Ads] 帐户。 如果激活成功，则会在您的帐户中填充受众。

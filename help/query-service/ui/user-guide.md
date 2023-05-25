@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢編輯器；查詢編輯器；查詢服務；查詢服務；
+keywords: Experience Platform；主页；热门主题；查询编辑器；查询编辑器；查询服务；查询服务；
 solution: Experience Platform
-title: 查詢編輯器UI指南
-description: 查詢編輯器是Adobe Experience Platform查詢服務提供的互動式工具，可讓您在Experience Platform使用者介面中撰寫、驗證和執行客戶體驗資料的查詢。 查詢編輯器支援開發查詢以進行分析和資料探索，並可讓您執行互動式查詢以進行開發，以及執行非互動式查詢來填入Experience Platform中的資料集。
+title: 查询编辑器UI指南
+description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发查询以进行分析和数据探索，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
 source-git-commit: 90829713e85e930e4fd6a32b0dbd38aeb837b84e
 workflow-type: tm+mt
@@ -13,160 +13,160 @@ ht-degree: 0%
 
 # [!DNL Query Editor] UI指南
 
-[!DNL Query Editor] 是Adobe Experience Platform提供的互動式工具 [!DNL Query Service]，可讓您針對內的客戶體驗資料寫入、驗證及執行查詢 [!DNL Experience Platform] 使用者介面。 [!DNL Query Editor] 支援開發查詢以進行分析和資料探索，並可讓您執行互動式查詢以進行開發，以及執行非互動式查詢來填入資料集 [!DNL Experience Platform].
+[!DNL Query Editor] 是Adobe Experience Platform提供的交互式工具 [!DNL Query Service]，允许您在中编写、验证和运行客户体验数据查询 [!DNL Experience Platform] 用户界面。 [!DNL Query Editor] 支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询来填充数据集 [!DNL Experience Platform].
 
-如需有關概念和功能的詳細資訊， [!DNL Query Service]，請參閱 [查詢服務總覽](../home.md). 若要進一步瞭解如何導覽查詢服務使用者介面，請前往 [!DNL Platform]，請參閱 [查詢服務UI總覽](./overview.md).
+有关概念和功能的更多信息 [!DNL Query Service]，请参见 [查询服务概述](../home.md). 要了解有关如何导航查询服务用户界面的更多信息，请访问 [!DNL Platform]，请参见 [查询服务UI概述](./overview.md).
 
 ## 快速入门 {#getting-started}
 
-[!DNL Query Editor] 透過連線至，提供靈活的查詢執行 [!DNL Query Service]，而且只有在此連線作用中時，查詢才會執行。
+[!DNL Query Editor] 通过连接到 [!DNL Query Service]和查询将仅在此连接处于活动状态时运行。
 
-### 正在連線到 [!DNL Query Service] {#connecting-to-query-service}
+### 正在连接到 [!DNL Query Service] {#connecting-to-query-service}
 
-[!DNL Query Editor] 需要幾秒鐘的時間來初始化並連線到 [!DNL Query Service] 開啟時。 主控台會告訴您何時連線，如下所示。 如果您嘗試在編輯器連線之前執行查詢，則會延遲執行，直到連線完成。
+[!DNL Query Editor] 需要几秒钟才能初始化并连接到 [!DNL Query Service] 打开时。 控制台将告诉您连接的时机，如下所示。 如果在编辑器连接之前尝试运行查询，则会在连接完成之前延迟执行。
 
-![初次連線時查詢編輯器的主控台輸出。](../images/ui/query-editor/connect.png)
+![初始连接时查询编辑器的控制台输出。](../images/ui/query-editor/connect.png)
 
-### 查詢的執行方式 [!DNL Query Editor] {#run-a-query}
+### 如何从运行查询 [!DNL Query Editor] {#run-a-query}
 
-查詢執行自 [!DNL Query Editor] 以互動方式執行。 這表示如果您關閉瀏覽器或離開瀏覽器，查詢就會被取消。 這也適用於透過查詢輸出產生資料集的查詢。
+查询执行自 [!DNL Query Editor] 交互运行。 这意味着如果关闭浏览器或离开浏览器，查询将被取消。 对于为了从查询输出生成数据集而进行的查询，也是如此。
 
-## 查詢編寫，使用 [!DNL Query Editor] {#query-authoring}
+## 查询创作，使用 [!DNL Query Editor] {#query-authoring}
 
-使用 [!DNL Query Editor]，您可以編寫、執行和儲存客戶體驗資料的查詢。 所有執行或儲存的查詢 [!DNL Query Editor] 可供貴組織中的所有使用者使用，並有權存取 [!DNL Query Service].
+使用 [!DNL Query Editor]，您可以编写、执行和保存客户体验数据查询。 执行或保存的所有查询 [!DNL Query Editor] 可供贵组织中的所有用户访问 [!DNL Query Service].
 
 ### 访问 [!DNL Query Editor] {#accessing-query-editor}
 
-在 [!DNL Experience Platform] UI，選取 **[!UICONTROL 查詢]** 在左側導覽選單中開啟 [!DNL Query Service] 工作區。 接下來，選取 **[!UICONTROL 建立查詢]** 以開始撰寫查詢。 此連結可從 [!DNL Query Service] 工作區。
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开 [!DNL Query Service] 工作区。 接下来，选择 **[!UICONTROL 创建查询]** 开始编写查询。 此链接可从 [!DNL Query Service] 工作区。
 
-![反白顯示「建立查詢」的查詢工作區概述索引標籤。](../images/ui/query-editor/create-query.png)
+![突出显示了“创建查询”的“查询”工作区概述选项卡。](../images/ui/query-editor/create-query.png)
 
-### 寫入查詢 {#writing-queries}
+### 编写查询 {#writing-queries}
 
-[!UICONTROL 查詢編輯器] 組織方式，讓撰寫查詢儘可能容易。 以下熒幕擷圖顯示編輯器在UI中的顯示方式，其中包含SQL輸入欄位和 **播放** 反白顯示。
+[!UICONTROL 查询编辑器] 经过整理，以便尽可能轻松编写查询。 下面的屏幕截图显示了编辑器在UI中的显示方式，包括SQL输入字段和 **播放** 突出显示。
 
-![「查詢編輯器」中反白顯示SQL輸入欄位和播放。](../images/ui/query-editor/editor.png)
+![高亮显示SQL输入字段和播放的查询编辑器。](../images/ui/query-editor/editor.png)
 
-為了將開發時間縮到最短，建議您使用傳回列的限制來開發查詢。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。在您確認查詢產生預期的輸出後，請移除限制並使用執行查詢 `CREATE TABLE tablename AS SELECT` 以使用輸出產生資料集。
+为了最大限度地缩短开发时间，建议您使用对返回行的限制来开发查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询生成预期输出后，删除限制并使用运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。
 
-### 寫入工具 [!DNL Query Editor] {#writing-tools}
+### 在中编写工具 [!DNL Query Editor] {#writing-tools}
 
-- **自動語法反白顯示：** 使讀取及組織SQL更容易。
+- **自动语法突出显示：** 使读取和组织SQL更容易。
 
-![查詢編輯器中的SQL陳述式，示範語法色彩醒目提示。](../images/ui/query-editor/syntax-highlight.png)
+![查询编辑器中的SQL语句，用于演示语法颜色突出显示。](../images/ui/query-editor/syntax-highlight.png)
 
-- **SQL關鍵字自動完成：** 開始輸入查詢，然後使用方向鍵導覽至所需辭彙，然後按下 **輸入**.
+- **SQL关键字自动完成：** 开始键入您的查询，然后使用箭头键导航到所需的搜索词并按 **输入**.
 
-![自動完成下拉式功能表提供查詢編輯器中的選項，提供SQL的幾個字元。](../images/ui/query-editor/syntax-auto.png)
+![带有自动完成下拉菜单的SQL的一些字符，提供查询编辑器中的选项。](../images/ui/query-editor/syntax-auto.png)
 
-- **表格和欄位自動完成：** 開始輸入您想要的表格名稱 `SELECT` 從中，然後使用方向鍵導覽至您要尋找的表格，然後按下 **輸入**. 選取表格後，自動完成將可識別該表格中的欄位。
+- **表和字段自动完成：** 开始键入所需的表名 `SELECT` 从中，然后使用箭头键导航到要查找的表，然后按 **输入**. 选择表后，自动完成将识别该表中的字段。
 
-![顯示下拉式表格名稱建議的「查詢編輯器」輸入。](../images/ui/query-editor/tables-auto.png)
+![查询编辑器输入显示下拉表名称建议。](../images/ui/query-editor/tables-auto.png)
 
-### 自動完成UI設定切換 {#auto-complete}
+### 自动完成UI配置切换 {#auto-complete}
 
-此 [!DNL Query Editor] 會在您撰寫查詢時，自動建議可能的SQL關鍵字以及表格或資料行詳細資訊。 自動完成功能預設為啟用，並可透過選取 [!UICONTROL 語法自動完成] 切換至「查詢編輯器」的右上方。
+此 [!DNL Query Editor] 在编写查询时，自动为查询建议潜在的SQL关键字以及表或列详细信息。 默认情况下，自动完成功能处于启用状态，可以通过选择 [!UICONTROL 语法自动完成] 切换到“查询编辑器”的右上方。
 
-自動完成組態設定是每個使用者設定的，並會在該使用者連續登入時被記住。
+自动完成配置设置是每个用户设置的，并且在该用户连续登录时记住该设置。
 
-![語法自動完成切換的查詢編輯器反白顯示。](../images/ui/query-editor/auto-complete-toggle.png)
+![突出显示语法自动完成切换的查询编辑器。](../images/ui/query-editor/auto-complete-toggle.png)
 
-停用此功能會停止處理數個中繼資料命令，並提供通常有利於作者編輯查詢之速度的建議。
+禁用此功能会阻止处理多个元数据命令，并提供通常有助于作者在编辑查询时提高速度的推荐。
 
-當您使用切換來啟用自動完成功能時，在短暫的暫停後，即可使用建議的表格和資料行名稱以及SQL關鍵字。 控制檯中「查詢編輯器」下方的成功訊息表示功能處於活動狀態。
+使用切换启用自动完成功能时，在短暂暂停后即可获得有关表和列名称以及SQL关键字的建议建议。 控制台中查询编辑器下方的成功消息指示该功能处于活动状态。
 
-如果您停用自動完成功能，則需要重新整理頁面才能讓功能生效。 當您停用「 」時，會出現一個包含三個選項的確認對話方塊 [!UICONTROL 語法自動完成] 切換：
+如果禁用自动完成功能，则需刷新页面才能使功能生效。 禁用时，将显示一个包含三个选项的确认对话框 [!UICONTROL 语法自动完成] 切换：
 
 - [!UICONTROL 取消]
-- [!UICONTROL 儲存變更並重新整理]
-- [!UICONTROL 重新整理而不儲存變更]
+- [!UICONTROL 保存更改并刷新]
+- [!UICONTROL 刷新而不保存更改]
 
 >[!IMPORTANT]
 >
->如果您在停用此功能時正在撰寫或編輯查詢，則必須在重新整理頁面之前儲存對查詢所做的任何變更，否則所有進度都將遺失。
+>如果您在禁用此功能时正在编写或编辑查询，则必须在刷新页面之前保存对查询所做的任何更改，否则所有进度都将丢失。
 
-![用於停用自動完成功能的確認對話方塊。](../images/ui/query-editor/confirmation-dialog.png)
+![用于禁用自动完成功能的确认对话框。](../images/ui/query-editor/confirmation-dialog.png)
 
-選取適當的選項以停用自動完成功能。
+选择相应的选项以禁用自动完成功能。
 
-### 錯誤偵測 {#error-detection}
+### 错误检测 {#error-detection}
 
-[!DNL Query Editor] 會在您撰寫查詢時自動驗證查詢，提供一般SQL驗證和特定執行驗證。 如果查詢下方出現紅色底線（如下圖所示），表示查詢中的錯誤。
+[!DNL Query Editor] 在编写查询时自动验证查询，提供通用SQL验证和特定执行验证。 如果查询下方出现红色下划线（如下图所示），则表示查询中存在错误。
 
-![查詢編輯器輸入顯示紅色底線的SQL表示錯誤。](../images/ui/query-editor/syntax-error-highlight.png)
+![查询编辑器输入以红色下划线显示SQL以指示错误。](../images/ui/query-editor/syntax-error-highlight.png)
 
-偵測到錯誤時，您可以暫留在SQL程式碼上來檢視特定的錯誤訊息。
+检测到错误时，可通过将鼠标悬停在SQL代码上来查看特定的错误消息。
 
-![含有錯誤訊息的對話方塊。](../images/ui/query-editor/linting-error.png)
+![带有错误消息的对话框。](../images/ui/query-editor/linting-error.png)
 
-### 查詢詳細資料 {#query-details}
+### 查询详细信息 {#query-details}
 
-從中選擇任何已儲存的範本 [!UICONTROL 範本] 索引標籤以在「查詢編輯器」中檢視。 查詢詳細資訊面板提供管理所選查詢的更多資訊和工具。
+从中选择任何已保存的模板 [!UICONTROL 模板] 选项卡，以在查询编辑器中查看它。 “查询详细信息”面板提供管理所选查询的更多信息和工具。
 
-![反白顯示查詢詳細資訊面板的查詢編輯器。](../images/ui/query-editor/query-details.png)
+![高亮显示查询详细信息面板的查询编辑器。](../images/ui/query-editor/query-details.png)
 
-此面板可讓您直接從UI產生輸出資料集、刪除或命名顯示的查詢，以及向查詢新增排程。
+此面板允许您直接从UI生成输出数据集、删除或命名显示的查询，以及向查询添加计划。
 
-此面板也會顯示有用的中繼資料，例如上次修改查詢的時間及修改者（如適用）。 若要產生資料集，請選取 **[!UICONTROL 輸出資料集]**. 此 **[!UICONTROL 輸出資料集]** 對話方塊隨即顯示。 輸入名稱和說明，然後選取 **[!UICONTROL 執行查詢]**. 新資料集會顯示在 **[!UICONTROL 資料集]** 標籤上的 [!DNL Query Service] 使用者介面於 [!DNL Platform].
+此面板还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。 要生成数据集，请选择 **[!UICONTROL 输出数据集]**. 此 **[!UICONTROL 输出数据集]** 对话框。 输入名称和说明，然后选择 **[!UICONTROL 运行查询]**. 新数据集将显示在 **[!UICONTROL 数据集]** 选项卡 [!DNL Query Service] 上的用户界面 [!DNL Platform].
 
-### 排定的查詢 {#scheduled-queries}
+### 计划的查询 {#scheduled-queries}
 
-已儲存為範本的查詢可以從「查詢編輯器」排程。 這可讓您以自訂步調自動執行查詢。 您可以根據頻率、日期和時間排程查詢，並視需要選擇結果的輸出資料集。 您也可以透過UI停用或刪除查詢排程。
+可以从“查询编辑器”安排已另存为模板的查询。 这允许您以自定义节奏自动运行查询。 您可以根据频率、日期和时间安排查询，还可以根据需要为结果选择输出数据集。 也可以通过UI禁用或删除查询计划。
 
-排程是從「查詢編輯器」設定的。 以下是使用「查詢編輯器」時排程查詢的限制清單。 它們不適用於 [!DNL Query Service] API：
+通过查询编辑器设置计划。 以下是使用查询编辑器时计划查询的限制列表。 它们不适用于 [!DNL Query Service] API：
 
-- 您只能將排程新增至已建立、儲存和執行的查詢。
-- 您 **無法** 將排程新增至引數化查詢。
-- 排定的查詢 **無法** 包含匿名區塊。
+- 您只能向已创建、保存和运行的查询添加计划。
+- 您 **无法** 将计划添加到参数化查询。
+- 计划的查询 **无法** 包含匿名块。
 
-請參閱查詢排程檔案，瞭解如何 [在UI中建立查詢排程](./query-schedules.md). 或者，若要瞭解如何使用API新增排程，請參閱 [排程查詢端點指南](../api/scheduled-queries.md).
+请参阅查询计划文档，了解如何 [在UI中创建查询计划](./query-schedules.md). 或者，要了解如何使用API添加计划，请阅读 [计划查询端点指南](../api/scheduled-queries.md).
 
-任何已排程的查詢都會新增至 [!UICONTROL 排定的查詢] 標籤。 您可以從該工作區透過UI監控所有已排程查詢工作的狀態。 於 [!UICONTROL 排定的查詢] 索引標籤可讓您找到有關查詢執行的重要資訊，並訂閱警示。 可用的資訊包括狀態、排程詳細資料，以及執行失敗時的錯誤訊息/代碼。 請參閱 [監視排定的查詢檔案](./monitor-queries.md) 以取得詳細資訊。
+任何计划的查询都会添加到的列表 [!UICONTROL 计划的查询] 选项卡。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在 [!UICONTROL 计划的查询] 选项卡，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括运行失败时的状态、计划详细信息和错误消息/代码。 请参阅 [监视计划查询文档](./monitor-queries.md) 了解更多信息。
 
-### 儲存查詢 {#saving-queries}
+### 保存查询 {#saving-queries}
 
-此 [!DNL Query Editor] 提供儲存功能，可讓您儲存查詢並稍後處理。 若要儲存查詢，請選取 **[!UICONTROL 儲存]** 在的右上角 [!DNL Query Editor]. 在儲存查詢之前，必須使用為查詢提供名稱 **[!UICONTROL 查詢詳細資料]** 面板。
-
->[!NOTE]
->
->使用查詢編輯器命名並儲存在中的查詢在查詢儀表板中作為範本提供 [!UICONTROL 範本] 標籤。 請參閱 [範本檔案](./query-templates.md) 以取得詳細資訊。
-
-### 如何尋找先前的查詢 {#previous-queries}
-
-所有查詢執行自 [!DNL Query Editor] 記錄檔表格中擷取。 您可以在以下位置使用搜尋功能： **[!UICONTROL 記錄]** 索引標籤以尋找查詢執行。 已儲存的查詢會列在 **[!UICONTROL 範本]** 標籤。
-
-如果已排程查詢，則 [!UICONTROL 排定的查詢] 索引標籤透過UI改善這些查詢作業的可見度。 請參閱 [查詢監視檔案](./monitor-queries.md) 以取得詳細資訊。
+此 [!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理。 要保存查询，请选择 **[!UICONTROL 保存]** 在的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用为查询提供一个名称 **[!UICONTROL 查询详细信息]** 面板。
 
 >[!NOTE]
 >
->記錄檔不會儲存未執行的查詢。 為了讓查詢可用於 [!DNL Query Service]，它必須執行或儲存在 [!DNL Query Editor].
+>使用查询编辑器在中命名和保存的查询可用作查询仪表板中的模板 [!UICONTROL 模板] 选项卡。 请参阅 [模板文档](./query-templates.md) 了解更多信息。
 
-## 使用查詢編輯器執行查詢 {#executing-queries}
+### 如何查找以前的查询 {#previous-queries}
 
-若要在中執行查詢，請執行下列動作 [!DNL Query Editor]，您可在編輯器中輸入SQL，或從 **[!UICONTROL 記錄]** 或 **[!UICONTROL 範本]** 標籤，然後選取 **播放**. 查詢執行的狀態會顯示在 **[!UICONTROL 主控台]** 標籤，而輸出資料會顯示在 **[!UICONTROL 結果]** 標籤。
+从以下位置执行的所有查询 [!DNL Query Editor] 将在Log表中捕获。 您可以使用中的搜索功能 **[!UICONTROL 日志]** 选项卡查找查询执行。 已保存的查询列在 **[!UICONTROL 模板]** 选项卡。
+
+如果计划了查询，则 [!UICONTROL 计划的查询] 选项卡提高了这些查询作业在UI中的可见性。 请参阅 [查询监控文档](./monitor-queries.md) 了解更多信息。
+
+>[!NOTE]
+>
+>日志不保存未执行的查询。 为了使查询可用于 [!DNL Query Service]，它必须运行或保存在中 [!DNL Query Editor].
+
+## 使用查询编辑器执行查询 {#executing-queries}
+
+在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL或从以下位置加载上一个查询： **[!UICONTROL 日志]** 或 **[!UICONTROL 模板]** 选项卡，然后选择 **播放**. 查询执行的状态显示在 **[!UICONTROL 控制台]** 选项卡，并且输出数据显示在 **[!UICONTROL 结果]** 选项卡。
 
 ### 控制台 {#console}
 
-主控台會提供有關下列專案的狀態和操作的資訊： [!DNL Query Service]. 主控台顯示連線至 [!DNL Query Service]、正在執行的查詢作業，以及因這些查詢而產生的任何錯誤訊息。
+控制台提供有关以下项目的状态和操作的信息 [!DNL Query Service]. 控制台显示与的连接状态 [!DNL Query Service]、正在执行的查询操作以及这些查询产生的任何错误消息。
 
-![查詢編輯器控制檯的控制檯索引標籤。](../images/ui/query-editor/console.png)
+![查询编辑器控制台的控制台选项卡。](../images/ui/query-editor/console.png)
 
 >[!NOTE]
 >
->主控台只會顯示執行查詢所產生的錯誤。 它不會在執行查詢之前顯示查詢驗證錯誤。
+>控制台仅显示执行查询导致的错误。 它不会在执行查询之前显示查询验证错误。
 
-### 查詢結果 {#query-results}
+### 查询结果 {#query-results}
 
-完成查詢後，結果會顯示在 **[!UICONTROL 結果]** 標籤，在 **[!UICONTROL 主控台]** 標籤。 此檢視顯示查詢的表格輸出，最多可顯示100列。 此檢視可讓您驗證查詢是否產生預期的輸出。 若要使用您的查詢產生資料集，請移除傳回列的限制，然後使用執行查詢 `CREATE TABLE tablename AS SELECT` 以使用輸出產生資料集。 請參閱 [產生資料集教學課程](./create-datasets.md) 以取得有關如何從中的查詢結果產生資料集的指示 [!DNL Query Editor].
+查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，最多显示100行。 利用此视图，可验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从中的查询结果生成数据集的说明 [!DNL Query Editor].
 
-![「查詢編輯器」控制檯的「結果」標籤會顯示查詢執行的結果。](../images/ui/query-editor/query-results.png)
+![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
-## 執行查詢，使用 [!DNL Query Service] 教學課程影片 {#query-tutorial-video}
+## 运行查询 [!DNL Query Service] 教程视频 {#query-tutorial-video}
 
-以下影片說明如何在Adobe Experience Platform介面和PSQL使用者端中執行查詢。 此外，示範如何在XDM物件中使用個別屬性、使用Adobe定義的函式，以及使用CREATE TABLE AS SELECT (CTAS)。
+以下视频说明如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT (CTAS)等方法。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 后续步骤
 
-現在您知道有哪些功能可用於 [!DNL Query Editor] 以及如何導覽應用程式，您可以直接在中開始編寫自己的查詢 [!DNL Platform]. 如需對中的資料集執行SQL查詢的詳細資訊 [!DNL Data Lake]，請參閱以下內容的相關指南： [正在執行查詢](../best-practices/writing-queries.md).
+现在您知道了中提供了哪些功能 [!DNL Query Editor] 以及如何导航应用程序，您可以直接在中开始创作自己的查询 [!DNL Platform]. 有关在中针对数据集运行SQL查询的详细信息 [!DNL Data Lake]，请参阅指南，网址为 [正在运行查询](../best-practices/writing-queries.md).

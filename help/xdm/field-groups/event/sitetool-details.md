@@ -1,6 +1,6 @@
 ---
-title: Sitetool詳細資料結構欄位群組
-description: 本檔案提供「Sitetool詳細資訊」結構描述欄位群組的概觀。
+title: Sitetool详细信息架构字段组
+description: 本文档概述了Sitetool详细信息架构字段组。
 exl-id: 472c0a3f-efda-49af-9490-f2de90b348c0
 source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL Sitetool詳細資料] 結構描述欄位群組
+# [!UICONTROL Sitetool详细信息] 架构字段组
 
-[!UICONTROL Sitetool詳細資料] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md). 欄位群組提供單一 `sitetool` 物件變更為結構描述，以擷取sitetool所收集的資訊。
+[!UICONTROL Sitetool详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供一个 `sitetool` 架构的对象，用于捕获sitetool收集的信息。
 
-![欄位群組結構](../../images/field-groups/sitetool-details.png)
+![字段组结构](../../images/field-groups/sitetool-details.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `dataGatheringEvent` | 对象 | 指出此事件是否與其他相關詳細資料一起屬於資料收集事件。 包含以下屬性：<ul><li>`data`：（對應）包含所收集的JSON資料，這些資料會隨著測驗、調查或輪詢提交事件而提交。</li><li>`isTrue`：（布林值）指出此事件是否為測驗、調查或輪詢等資料收集事件。</li><li>`score`：（整數）執行者根據事件回應保護的分數。</li></ul> |
-| `actor` | 字符串 | 執行此動作的人員/成員。 |
-| `actorID` | 字符串 | 執行此動作之人員/成員的唯一識別碼。 |
-| `isKeyEvent` | 布尔值 | 指出此事件是否為關鍵事件。 |
-| `name` | 字符串 | Sitetool的名稱，例如聊天機器人、調查等。 |
-| `section` | 字符串 | Sitetool的相關區段，例如main或sub。 |
+| `dataGatheringEvent` | 对象 | 指示此事件是否是数据收集事件，以及其他相关详细信息。 包含以下属性：<ul><li>`data`：（映射）包含作为测验、调查或轮询提交事件的一部分收集和提交的JSON数据。</li><li>`isTrue`：（布尔值）指示此事件是测验、调查还是投票等数据收集事件。</li><li>`score`：（整数）操作者根据事件响应所保护的分数。</li></ul> |
+| `actor` | 字符串 | 执行操作的人员/成员。 |
+| `actorID` | 字符串 | 执行操作的人员/成员的唯一标识符。 |
+| `isKeyEvent` | 布尔值 | 指示此事件是否为关键事件。 |
+| `name` | 字符串 | Sitetool的名称，例如聊天机器人、调查等。 |
+| `section` | 字符串 | Sitetool的相关部分，如main或sub。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).
+有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).

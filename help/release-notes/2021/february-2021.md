@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2021年2月
-description: Adobe Experience Platform 2021年2月版本注意事項。
+title: Adobe Experience Platform发行说明2021年2月
+description: Adobe Experience Platform 2021年2月版发行说明。
 doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
@@ -16,9 +16,9 @@ ht-degree: 6%
 
 **发行日期：2021 年 2 月 24 日**
 
-Adobe Experience Platform中的新功能：
+Adobe Experience Platform中的新增功能：
 
-- [(Beta)控制面板](#dashboards)
+- [(Beta)功能板](#dashboards)
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -30,105 +30,105 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
-## (Beta)控制面板 {#dashboards}
+## (Beta)功能板 {#dashboards}
 
-Adobe Experience Platform提供多個控制面板，您可檢視有關組織資料的重要資訊，這些資訊是在每日快照期間擷取的。
+Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要信息，如在每日快照期间捕获的数据。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 設定檔、區段、目的地和授權使用儀表板（測試版） | **注意：控制面板功能目前為測試版，並非所有使用者都可使用。 文档和功能可能会发生变化。**<br/><br/>&#x200B;控制面板提供組織資料的現成報告，並直接內建於Platform內的行銷人員工作流程中。 這些儀表板不需要額外的IT支援，也不需要透過其他資料倉儲設計與實作匯出及處理資料所需的時間和精力。 |
+| 配置文件、区段、目标和许可证使用功能板（测试版） | **注意：功能板功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。**<br/><br/>&#x200B;功能板提供有关组织数据的现成报告，并且直接内置到Platform中的营销人员工作流程中。 无需额外的IT支持，也不必花时间和精力通过额外的数据仓库设计和实施导出和处理数据，即可使用这些功能板。 |
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Data Science Workspace使用機器學習和人工智慧，從您的資料建立深入分析。 Data Science Workspace已整合至Adobe Experience Platform，可協助您跨多個Adobe解決方案使用您的內容和資料資產進行預測。
+数据科学工作区使用机器学习和人工智能从您的数据创建见解。 数据科学工作区集成到Adobe Experience Platform中，可帮助您跨Adobe解决方案使用内容和数据资源做出预测。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| JupyterLab EDA筆記本 | 探索性資料分析(EDA) Python筆記型電腦現在可在Jupyterlab中使用。 此筆記型電腦的設計目的，是協助您探索資料模式、檢查資料健全度，以及彙總預測性模型的相關資料。 請參閱教學課程，位置如下： [探索預測性模型的網頁型資料](../../data-science-workspace/jupyterlab/eda-notebook.md) 以取得詳細資訊。 |
+| JupyterLab EDA笔记本 | Jupyterlab现已提供Exploration Data Analysis (EDA) Python笔记本。 此笔记本旨在帮助您发现数据模式、检查数据健全度并总结预测模型的相关数据。 请参阅上的教程 [探索基于Web的数据以获取预测模型](../../data-science-workspace/jupyterlab/eda-notebook.md) 了解更多信息。 |
 
-如需資料科學工作區的詳細一般資訊，請參閱 [資料科學工作區概觀](../../data-science-workspace/home.md).
+有关数据科学工作区的更多常规信息，请参阅 [数据科学工作区概述](../../data-science-workspace/home.md).
 
 ## [!DNL Dataflows] {#dataflows}
 
-在Adobe Experience Platform中，資料會從各種來源擷取、在Experience Platform中分析，並啟用至各種目的地。 Platform藉由提供資料流透明度，讓追蹤這種潛在非線性資料流的程式變得更輕鬆。
+在Adobe Experience Platform中，数据从各种来源摄取，在Experience Platform中进行分析，并激活到各种目的地。 Platform通过提供数据流透明性，使跟踪这种潜在非线性数据流的过程更加容易。
 
-数据流是跨平台移动数据的数据作业的表示方法。這些資料流是跨不同服務設定的，有助於將資料從來源聯結器移至目標資料集，然後由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最終啟用之前 [!DNL Destinations].
+数据流是跨平台移动数据的数据作业的表示方法。这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和 [!DNL Real-Time Customer Profile] 最终激活到 [!DNL Destinations].
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的監視儀表板 | 您現在可以使用監視儀表板來確保跨服務透明度，並針對來源資料擷取提供可操作的深入分析。 新的監控儀表板提供處理自的資料的完整檢視 [!DNL Data Lake] 至 [!DNL Identity Service] 和 [!DNL Profile]，也可讓您監視擷取率、成功和失敗。 請參閱教學課程，位置如下： [在UI中監控來源資料流](../../dataflows/ui/monitor-sources.md) 以取得詳細資訊。 |
+| 新的监视仪表板 | 您现在可以使用监视仪表板实现跨服务透明度和对源数据摄取的可操作性洞察。 新的监视仪表板全面查看从处理过的数据 [!DNL Data Lake] 到 [!DNL Identity Service] 和 [!DNL Profile]，同时还允许您监控摄取率、成功和失败。 请参阅上的教程 [在UI中监控源数据流](../../dataflows/ui/monitor-sources.md) 了解更多信息。 |
 
-如需資料流的詳細一般資訊，請參閱 [資料流概觀](../../dataflows/home.md).
+有关数据流的更多常规信息，请参阅 [数据流概述](../../dataflows/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是預先建立的與目標平台的整合，可無縫啟用Adobe Experience Platform的資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
+[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
 
-**新目的地**
+**新目标**
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | 此 [!DNL LinkedIn Matched Audiences] 連線可讓您在中啟用對象 [!DNL LinkedIn] 社交平台。 |
+| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | 此 [!DNL LinkedIn Matched Audiences] 连接允许您在中激活受众 [!DNL LinkedIn] 社交平台。 |
 
-如需有關目的地的詳細一般資訊，請參閱 [目的地概觀](../../destinations/home.md).
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
-標準化和互用性是背後的重要概念 [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM)以Adobe為導向，致力於標準化客戶體驗資料並定義客戶體驗管理的結構。
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM)由Adobe驱动，致力于标准化客户体验数据并定义用于客户体验管理的架构。
 
-XDM是公開記錄的規格，旨在改善數位體驗的力量。 它為任何應用程式提供通用結構和定義，以便與Adobe Experience Platform上的服務通訊。 藉由遵守XDM標準，所有客戶體驗資料都可以整合到通用表示中，以更快、更整合的方式提供深入分析。 您可以從客戶動作獲得有價值的深入分析、透過區段定義客戶對象，以及使用客戶屬性進行個人化。
+XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Adobe Experience Platform上的服务进行通信。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 已升級搜尋UI | 改善的搜尋功能現在可在 [!UICONTROL 瀏覽] 索引標籤中的 [!UICONTROL 結構描述] 工作區與結構描述欄位群組選擇對話方塊 [!DNL Schema Editor].<br><br>先前搜尋辭彙時，結果將僅包含名稱符合搜尋查詢的XDM資源。 現在，除了名稱符合查詢的資源外，也會包含符合字詞的個別屬性資源。 這可讓您根據XDM資源包含的屬性而不是資源名稱來搜尋這些資源。<br><br>檢視檔案： [探索XDM資源](../../xdm/ui/explore.md) 和 [管理結構描述](../../xdm/ui/resources/schemas.md) （在UI中）以取得詳細資訊。 |
+| 已升级搜索UI | 现在，中提供了改进的搜索功能 [!UICONTROL 浏览] 在中选项卡 [!UICONTROL 架构] 工作区中的“架构字段组选择”对话框 [!DNL Schema Editor].<br><br>以前搜索术语时，结果将仅包含名称与搜索查询匹配的XDM资源。 现在，除了名称与查询匹配的资源外，还将包含包含与术语匹配的各个属性的资源。 这样，您就可以根据XDM资源包含的属性而不是资源名称来搜索这些资源。<br><br>查看文档 [探索XDM资源](../../xdm/ui/explore.md) 和 [管理架构](../../xdm/ui/resources/schemas.md) （在UI中）以了解更多信息。 |
 
-如需XDM的一般資訊，請參閱 [XDM系統總覽](../../xdm/home.md).
+有关XDM的更多常规信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## [!DNL Identity Service] {#identity}
 
-提供相關的數位體驗需要完全瞭解您的客戶。 當您的客戶資料分散於不同的系統時，這會使情況更困難，導致每個個別客戶似乎有多個「身分」。
+提供相关的数字体验需要全面了解您的客户。 当您的客户数据分散在不同的系统上，导致每个客户似乎都有多个“身份”时，就会使这一点变得更加困难。
 
-Adobe Experience Platform [!DNL Identity Service] 透過跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，協助您更好地瞭解客戶及其行為。
+Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，帮助您更好地了解客户及其行为。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 身分圖表檢視器 | 身分圖表檢視器可讓您驗證和視覺化UI中拼接在一起的身分，進而改善偵錯和透明度。 請參閱 [身分圖表檢視器檔案](../../identity-service/ui/identity-graph-viewer.md) 以取得詳細資訊。 |
+| 身份图查看器 | 通过身份图查看器，您可以验证和可视化在UI中拼接在一起的身份，从而改进调试和透明度。 请参阅 [身份图查看器文档](../../identity-service/ui/identity-graph-viewer.md) 了解更多信息。 |
 
-如需更多一般資訊，請參閱 [!DNL Identity Service]，請參閱 [Identity Service概觀](../../identity-service/home.md).
+有关以下内容的更多常规信息： [!DNL Identity Service]，请参阅 [Identity服务概述](../../identity-service/home.md).
 
 ## 实时客户资料 {#profile}
 
-Adobe Experience Platform可讓您為客戶推動協調、一致且相關的體驗，無論客戶在哪裡或何時與您的品牌互動。 透過即時客戶個人檔案，您可以檢視結合來自多個管道（包括線上、離線、CRM和第三方資料）之資料的每個個別客戶的整體檢視。 [!DNL Profile] 可讓您將客戶資料合併成統一的檢視，針對每個客戶互動提供可採取行動且附有時間戳記的說明。
+通过Adobe Experience Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。 利用实时客户档案，您可以查看合并了来自多个渠道（包括在线、离线、CRM和第三方数据）的数据的每个单个客户的整体视图。 [!DNL Profile] 允许您将客户数据整合到一个统一的视图中，并提供每个客户交互的带时间戳的可操作帐户。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 計算屬性(Alpha) | ***注意：此功能目前為Alpha版，並非所有使用者都可使用。 文档和功能可能会发生变化。*** <br/><br/>計算屬性是用來將事件層級資料彙總到設定檔層級屬性的函式。 然後，您就可以在分段、啟動和個人化中使用彙總。 這些函式的一些範例包括count、sum、average、min、max、true/false。 計算屬性目前只能透過API使用。 |
+| 计算属性(Alpha) | ***注意：此功能当前为Alpha版，并非对所有用户都可用。 文档和功能可能会发生变化。*** <br/><br/>计算属性是用于将事件级数据聚合到配置文件级属性的函数。 然后，您可以在分段、激活和个性化中使用聚合。 这些函数的一些示例包括count、sum、average、min、max、true/false。 计算属性当前只能通过API使用。 |
 
-如需即時客戶個人檔案的詳細資訊，包括使用的教學課程和最佳實務 [!DNL Profile] 資料，請先閱讀 [即時客戶個人檔案總覽](../../profile/home.md).
+有关Real-Time Customer Profile的更多信息，包括有关使用的教程和最佳实践 [!DNL Profile] 数据，请首先阅读 [Real-time Customer Profile概述](../../profile/home.md).
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可從外部來源擷取資料，同時允許您使用Platform服務來建構、加標籤及增強該資料。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-Experience Platform提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
-**新來源**
+**新源**
 
 | 功能 | 描述 |
 | --- | --- |
-| [!DNL Google PubSub] | 您現在可以連線 [!DNL Google PubSub] 至 [!DNL Experience Platform] 使用 [!DNL Flow Service] API或UI。 請參閱 [[!DNL Google PubSub] 聯結器概述](../../sources/connectors/cloud-storage/google-pubsub.md) 以取得詳細資訊。 |
-| [!DNL Oracle Object Storage] | 您現在可以連線 [!DNL Oracle Object Storage] 至 [!DNL Experience Platform] 使用 [!DNL Flow Service] API或UI。 請參閱 [[!DNL Oracle Object Storage] 聯結器概述](../../sources/connectors/cloud-storage/oracle-object-storage.md) 以取得詳細資訊。 |
+| [!DNL Google PubSub] | 您现在可以连接 [!DNL Google PubSub] 到 [!DNL Experience Platform] 使用 [!DNL Flow Service] API或用户界面。 请参阅 [[!DNL Google PubSub] 连接器概述](../../sources/connectors/cloud-storage/google-pubsub.md) 了解更多信息。 |
+| [!DNL Oracle Object Storage] | 您现在可以连接 [!DNL Oracle Object Storage] 到 [!DNL Experience Platform] 使用 [!DNL Flow Service] API或用户界面。 请参阅 [[!DNL Oracle Object Storage] 连接器概述](../../sources/connectors/cloud-storage/oracle-object-storage.md) 了解更多信息。 |
 
-如需來源的一般詳細資訊，請參閱 [來源概觀](../../sources/home.md).
+有关源的更多常规信息，请参阅 [源概述](../../sources/home.md).

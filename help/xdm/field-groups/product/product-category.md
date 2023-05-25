@@ -1,6 +1,6 @@
 ---
-title: 產品類別結構描述欄位群組
-description: 本檔案提供「產品類別」結構描述欄位群組的概觀。
+title: 产品类别架构字段组
+description: 本文档概述了“产品类别”架构字段组。
 exl-id: 80825bcf-e646-426b-a3d6-f6759f6cd5cf
 source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 產品類別] 結構描述欄位群組
+# [!UICONTROL 产品类别] 架构字段组
 
-[!UICONTROL 產品類別] 是的標準結構描述欄位群組 [[!UICONTROL 產品] 類別](../../classes/product.md) 會擷取和產品類別相關的屬性。
+[!UICONTROL 产品类别] 是的标准架构字段组 [[!UICONTROL 产品] 类](../../classes/product.md) 用于捕获与产品类别相关的属性。
 
 ![](../../images/field-groups/product/product-category.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `productCategoryDescription` | 字符串 | 產品類別的說明。 |
-| `productCategoryName` | 字符串 | 產品類別的名稱。 |
-| `productSubcategoryDescription` | 字符串 | 產品次類別的說明。 |
-| `productSubcategoryName` | 字符串 | 產品次類別的名稱。 |
+| `productCategoryDescription` | 字符串 | 产品类别的描述。 |
+| `productCategoryName` | 字符串 | 产品类别的名称。 |
+| `productSubcategoryDescription` | 字符串 | 产品子类别的描述。 |
+| `productSubcategoryName` | 字符串 | 产品子类别的名称。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).
+有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 solution: Experience Platform
-title: 使用Platform UI建立MailChimp成員來源連線
-description: 瞭解如何使用Platform UI將Adobe Experience Platform連線至MailChimp成員。
+title: 使用Platform UI创建MailChimp成员源连接
+description: 了解如何使用Platform UI将Adobe Experience Platform连接到MailChimp成员。
 exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -11,90 +11,90 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Mailchimp Members] 使用Platform UI的來源連線
+# 创建 [!DNL Mailchimp Members] 使用Platform UI的源连接
 
-本教學課程提供建立 [!DNL Mailchimp] 要內嵌的來源聯結器 [!DNL Mailchimp Members] 使用使用者介面將資料匯入Adobe Experience Platform。
+本教程提供了用于创建 [!DNL Mailchimp] 要摄取的源连接器 [!DNL Mailchimp Members] 使用用户界面将数据发送到Adobe Experience Platform。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Platform可從各種來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)：Platform提供虛擬沙箱，可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)：Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 收集必要的認證
+## 收集所需的凭据
 
-為了將您的 [!DNL Mailchimp Members] 資料傳送至Platform時，您必須先提供與您對應的適當驗證認證 [!DNL Mailchimp] 帳戶。
+为了将您的 [!DNL Mailchimp Members] 数据到Platform时，您必须首先提供与 [!DNL Mailchimp] 帐户。
 
-此 [!DNL Mailchimp Members] 原始碼支援OAuth 2重新整理程式碼和基本驗證。 如需這些驗證型別的詳細資訊，請參閱下表。
+此 [!DNL Mailchimp Members] 源支持OAuth 2刷新代码和基本身份验证。 有关这些身份验证类型的详细信息，请参阅下表。
 
-### OAuth 2重新整理程式碼
-
-| 凭据 | 描述 |
-| --- | --- |
-| Domain | 用來連線至MailChimp API的根URL。 根URL的格式為 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 代表與您的帳戶對應的資料中心。 |
-| 授權測試URL | 授權測試URL用於驗證連線時的認證 [!DNL Mailchimp] 至平台。 如果未提供，則會在來源連線建立步驟期間自動檢查認證。 |
-| 存取Token | 用於驗證您的來源的對應存取權杖。 這是OAuth型驗證的必要專案。 |
-
-如需使用OAuth 2驗證您的身分的詳細資訊 [!DNL Mailchimp] Platform帳戶，請參閱此 [[!DNL Mailchimp] 有關使用OAuth 2的檔案](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
-
-### 基本驗證
+### OAuth 2刷新代码
 
 | 凭据 | 描述 |
 | --- | --- |
-| Domain | 用來連線至MailChimp API的根URL。 根URL的格式為 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 代表與您的帳戶對應的資料中心。 |
-| 用户名 | 與您的MailChimp帳戶對應的使用者名稱。 這是進行基本驗證所必需的。 |
-| 密码 | 與您的MailChimp帳戶對應的密碼。 這是進行基本驗證所必需的。 |
+| Domain | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| 授权测试URL | 授权测试URL用于在连接时验证凭据 [!DNL Mailchimp] 到Platform。 如果未提供，则在源连接创建步骤期间将自动检查凭据。 |
+| 访问令牌 | 用于对源进行身份验证的相应访问令牌。 基于OAuth的身份验证需要此项。 |
 
-## 連線您的 [!DNL Mailchimp Members] 平台帳戶
+有关使用OAuth 2对您的进行身份验证的更多信息 [!DNL Mailchimp] Platform帐户，请参阅此 [[!DNL Mailchimp] 关于使用OAuth 2的文档](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/).
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+### 基本身份验证
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+| 凭据 | 描述 |
+| --- | --- |
+| Domain | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| 用户名 | 与您的MailChimp帐户对应的用户名。 这是基本身份验证所必需的。 |
+| 密码 | 与您的MailChimp帐户对应的密码。 这是基本身份验证所必需的。 |
 
-在 [!UICONTROL 行銷自動化] 類別，選取 **[!UICONTROL Mailchimp行銷活動]**，然後選取 **[!UICONTROL 新增資料]**.
+## 连接您的 [!DNL Mailchimp Members] 平台帐户
 
-![目錄](../../../../images/tutorials/create/mailchimp-members/catalog.png)
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-此 **[!UICONTROL 連線Mailchimp行銷活動帳戶]** 頁面便會顯示。 在此頁面中，您可以選取是要存取現有帳戶，還是選擇建立新帳戶。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-### 現有帳戶
+在 [!UICONTROL 营销自动化] 类别，选择 **[!UICONTROL Mailchimp营销活动]**，然后选择 **[!UICONTROL 添加数据]**.
 
-若要使用現有帳戶，請選取 [!DNL Mailchimp Members] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+![目录](../../../../images/tutorials/create/mailchimp-members/catalog.png)
 
-![現有](../../../../images/tutorials/create/mailchimp-members/existing.png)
+此 **[!UICONTROL 连接Mailchimp营销活动帐户]** 页面。 在此页面上，您可以选择是访问现有帐户，还是选择创建新帐户。
 
-### 新帳戶
+### 现有帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後為提供名稱和說明 [!DNL Mailchimp Members] 來源連線詳細資料。
+要使用现有帐户，请选择 [!DNL Mailchimp Members] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+
+![现有](../../../../images/tutorials/create/mailchimp-members/existing.png)
+
+### 新帐户
+
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为提供名称和描述 [!DNL Mailchimp Members] 源连接详细信息。
 
 ![新](../../../../images/tutorials/create/mailchimp-members/new.png)
 
 
-#### 使用OAuth 2進行驗證
+#### 使用OAuth 2进行身份验证
 
-若要使用OAuth 2，請選取 [!UICONTROL OAuth 2重新整理程式碼]，為您的網域、授權測試URL和存取權杖提供值，然後選取 **[!UICONTROL 連線到來源]**. 請稍候片刻讓您的認證進行驗證，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用OAuth 2，请选择 [!UICONTROL OAuth 2刷新代码]，为您的域、授权测试URL和访问令牌提供值，然后选择 **[!UICONTROL 连接到源]**. 请稍等片刻，让您的凭据进行验证，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![OAuth 身份验证](../../../../images/tutorials/create/mailchimp-members/oauth.png)
 
-#### 使用基本驗證進行驗證
+#### 使用基本身份验证进行身份验证
 
-若要使用基本驗證，請選取 [!UICONTROL 基本驗證]，提供網域、使用者名稱和密碼的值，然後選取 **[!UICONTROL 連線到來源]**. 請稍候片刻讓您的認證進行驗證，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用基本身份验证，请选择 [!UICONTROL 基本身份验证]，提供域、用户名和密码的值，然后选择 **[!UICONTROL 连接到源]**. 请稍等片刻，让您的凭据进行验证，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![基本](../../../../images/tutorials/create/mailchimp-members/basic.png)
 
-### 選取 [!DNL Mailchimp Members] 資料
+### 选择 [!DNL Mailchimp Members] 数据
 
-來源通過驗證後，您必須提供 `listId` 與您的 [!DNL Mailchimp Members] 帳戶。
+在您的源进行身份验证后，您必须提供 `listId` 与您的 [!DNL Mailchimp Members] 帐户。
 
-於 [!UICONTROL 選取資料] 頁面，輸入您的 `listId` 然後選取 **[!UICONTROL 探索]**.
+在 [!UICONTROL 选择数据] 页面，输入您的 `listId` 然后选择 **[!UICONTROL 探索]**.
 
 ![探索](../../../../images/tutorials/create/mailchimp-members/explore.png)
 
-頁面會更新為互動式結構描述樹狀結構，讓您探索及檢查資料的階層。 選取 **[!UICONTROL 下一個]** 以繼續進行。
+该页面将更新为交互式架构树，允许您浏览和检查数据的层次结构。 选择 **[!UICONTROL 下一个]** 以继续。
 
 ![select-data](../../../../images/tutorials/create/mailchimp-members/select-data.png)
 
 ## 后续步骤
 
-搭配您的 [!DNL Mailchimp] 帳戶已驗證，且 [!DNL Mailchimp Members] 選取的資料，您現在可以開始建立資料流，將您的資料匯入Platform。 如需建立資料流的詳細步驟，請參閱以下檔案： [建立資料流以將行銷自動化資料帶入Platform](../../dataflow/marketing-automation.md).
+通过您的 [!DNL Mailchimp] 经过身份验证的帐户以及 [!DNL Mailchimp Members] 选择的数据，您现在可以开始创建数据流以将您的数据传送到Platform。 有关如何创建数据流的详细步骤，请参阅此文档： [创建数据流以将营销自动化数据引入平台](../../dataflow/marketing-automation.md).

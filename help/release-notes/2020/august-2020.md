@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2020年8月
-description: Adobe Experience Platform的2020年8月發行說明。
+title: Adobe Experience Platform发行说明2020年8月
+description: Adobe Experience Platform 2020年8月版发行说明。
 doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
@@ -25,59 +25,59 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-[!DNL Data Science Workspace] 使用機器學習和人工智慧從您的資料中釋放見解。 整合至Adobe Experience Platform， [!DNL Data Science Workspace] 可協助您在各種Adobe解決方案中使用您的內容和資料資產進行預測。
+[!DNL Data Science Workspace] 使用机器学习和人工智能从您的数据中释放见解。 集成到Adobe Experience Platform中， [!DNL Data Science Workspace] 帮助您在各种Adobe解决方案中使用内容和数据资源做出预测。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| VM改善專案 [!DNL JupyterLab] | 改善長期執行的穩定性 [!DNL JupyterLab notebook] 虛擬機器器。 |
+| 虚拟机改进 [!DNL JupyterLab] | 提高了长期运行的稳定性 [!DNL JupyterLab notebook] 虚拟机。 |
 
-如需詳細資訊，請參閱 [!DNL JupyterLab]，請參閱 [[!DNL JupyterLab] 使用手冊](../../data-science-workspace/jupyterlab/overview.md).
+有关的详细信息 [!DNL JupyterLab]，请参阅 [[!DNL JupyterLab] 用户指南](../../data-science-workspace/jupyterlab/overview.md).
 
 ## 目标 {#destinations}
 
-在 [Real-time Customer Data Platform](../../rtcdp/overview.md)，目的地是預先建立的與目的地平台的整合，可透過順暢的方式為這些合作夥伴啟用資料。
+In [Real-time Customer Data Platform](../../rtcdp/overview.md)，目标是预先构建的与目标平台的集成，可无缝地向这些合作伙伴激活数据。
 
-**新目的地**
+**新目标**
 
-有新的目的地可供您啟用Adobe Experience Platform資料。 如需詳細資訊，請參閱下文：
+提供了一些新目标，您可以在其中激活Adobe Experience Platform数据。 有关详细信息，请参阅下文：
 
 | 目标 | 描述 |
 |--- | ---|
-| [!DNL Google Customer Match] | Google Customer Match可讓您使用線上和離線資料，透過Google所擁有和經營的屬性來聯絡客戶並重新與其互動，例如： [!DNL Search]， [!DNL Shopping]、 Gmail和YouTube。 <br><br> 造訪 [!DNL Google Customer Match] [頁面](../../destinations/catalog/advertising/google-customer-match.md) 目的地目錄，以取得有關目的地以及如何在Real-Time CDP中設定目的地的詳細資訊。 |
+| [!DNL Google Customer Match] | 通过Google Customer Match，您可以使用在线和离线数据在Google拥有和运营的资产中联系和重新吸引客户，例如： [!DNL Search]， [!DNL Shopping]、 Gmail和YouTube。 <br><br> 访问 [!DNL Google Customer Match] [页面](../../destinations/catalog/advertising/google-customer-match.md) 有关目标以及如何在Real-Time CDP中设置目标的更多信息，请参阅目标目录。 |
 
 **新增功能**
 
 | 功能 | 描述 |
 |------- | -----------|
-| 自訂檔案名稱編輯器 | 電子郵件行銷目標和雲端儲存體目標的資料啟用工作流程更新，可讓您編輯匯出檔案的名稱。 如需詳細資訊，請參閱 [ 設定步驟](../../destinations/ui/activate-batch-profile-destinations.md) 啟動工作流程中。 |
-| 建議的屬性 | 更新電子郵件行銷目標和雲端儲存體目標的資料啟用工作流程，以顯示建議屬性，供您新增至匯出的檔案。 如需詳細資訊，請參閱 [選取屬性步驟](../../destinations/ui/activate-batch-profile-destinations.md) 啟動工作流程中。 |
+| 自定义文件名编辑器 | 更新了电子邮件营销目标和云存储目标的数据激活工作流，通过该工作流可编辑导出文件的名称。 欲了解更多信息，请参见 [ 配置步骤](../../destinations/ui/activate-batch-profile-destinations.md) 在激活工作流中。 |
+| 推荐的属性 | 更新了电子邮件营销目标和云存储目标的数据激活工作流，该工作流可显示建议您添加到导出文件的属性。 欲了解更多信息，请参见 [选择属性步骤](../../destinations/ui/activate-batch-profile-destinations.md) 在激活工作流中。 |
 
 ## [!DNL Real-Time Customer Data Platform] {#rtcdp}
 
-以Experience Platform為基礎，Real-time Customer Data Platform ([!DNL Real-Time CDP])可協助公司整合已知和未知的資料，透過整個客戶歷程的智慧型決策來啟用客戶設定檔。 [!DNL Real-Time CDP] 結合多個企業資料來源，即時建立客戶設定檔。 然後，根據這些設定檔建立的區段可傳送至下游目的地，以跨所有管道和裝置提供一對一的個人化客戶體驗。
+Real-time Customer Data Platform ()构建于Experience Platform之上[!DNL Real-Time CDP])帮助公司整合已知和未知数据，在整个客户历程中通过智能决策激活客户档案。 [!DNL Real-Time CDP] 可合并多个企业数据源以实时创建客户配置文件。 根据这些配置文件构建的区段随后可以发送到下游目标，以便在所有渠道和设备中提供一对一的个性化客户体验。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| IAB TCF 2.0支援 | [!DNL Real-Time CDP] 現在是2.0版的 [!DNL Transparency & Consent Framework] (TCF)，如 [!DNL Interactive Advertising Bureau] (IAB)。 您可以將資料作業和設定檔結構描述設定為接受CMP產生的客戶同意資料，並在對下游目的地啟用區段時強制執行客戶的同意偏好設定。 |
+| IAB TCF 2.0支持 | [!DNL Real-Time CDP] 现在是2.0版本的 [!DNL Transparency & Consent Framework] (TCF)，如 [!DNL Interactive Advertising Bureau] (IAB)。 您可以将数据操作和配置文件架构配置为接受CMP生成的客户同意数据，并在将区段激活到下游目标时强制实施客户的同意偏好设置。 |
 
-如需詳細資訊，請參閱 [!DNL Real-Time CDP]，請參閱 [[!DNL Real-Time CDP] 概觀](../../rtcdp/overview.md).
+有关的详细信息 [!DNL Real-Time CDP]，请参见 [[!DNL Real-Time CDP] 概述](../../rtcdp/overview.md).
 
 ## 源 {#sources}
 
-Adobe Experience Platform可從外部來源內嵌資料，同時允許您使用建構、加標籤及增強該資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用来构建、标记和增强这些数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 流量執行監視 | 使用者可以監視所有流程執行，並檢視每個執行的詳細檢視，包括完成狀態、執行持續時間、已處理檔案的清單、錯誤和量度。 請參閱 [監控資料流](../../sources/tutorials/ui/monitor.md) 檔案以取得詳細資訊。 |
-| 流程執行通知 | 使用者可以訂閱事件並註冊Webhook，以接收有關流量執行的狀態、量度和錯誤的即時通知。 |
-| UI目錄改良 | 更新來源目錄畫面，以便更輕鬆地存取所選物件的主要動作。 |
+| 流量运行监控 | 用户可以监控所有流运行并查看每次运行的详细视图，包括完成状态、运行持续时间、已处理文件列表、错误和量度。 请参阅 [监测数据流](../../sources/tutorials/ui/monitor.md) 文档，以了解更多信息。 |
+| 流运行通知 | 用户可以订阅事件并注册Webhook以接收有关流运行的状态、量度和错误的实时通知。 |
+| UI目录改进 | 更新了源目录屏幕，以便更轻松地访问所选对象的主要操作。 |
 
-若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).
+要了解有关源的更多信息，请参阅 [源概述](../../sources/home.md).

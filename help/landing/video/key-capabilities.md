@@ -1,6 +1,6 @@
 ---
 title: Experience Platform的主要功能
-description: 這部影片將檢閱Adobe Experience Platform&mdash的主要功能；建立可操作、智慧型的即時客戶設定檔；透過AI/ML模型和資料查詢豐富資料並獲得更多深入分析；使用開放和可撰寫元件進行創新；增強即時體驗的交付和個人化；以及透過治理、安全和隱私權控制獲得信任。
+description: 此视频回顾了Adobe Experience Platform&mdash的关键功能；创建可操作、智能的实时客户档案；利用AI/ML模型和数据查询丰富数据并得出更多见解；利用开放和可组合组件进行创新；增强实时体验的交付和个性化；以及在治理、安全和隐私控制方面赢得信任。
 kt: 4332
 audience: all
 doc-type: video
@@ -16,12 +16,12 @@ ht-degree: 0%
 
 # Experience Platform的主要功能
 
-本影片將回顧Experience Platform的主要功能：
+本视频回顾了Experience Platform的主要功能：
 
-1. 建立可操作、智慧型的即時客戶設定檔
-1. 透過AI/ML模型和資料查詢豐富資料並獲得更多深入分析
-1. 使用開放式、可撰寫的元件進行創新
-1. 增強即時體驗的交付與個人化
-1. 在治理、安全性與隱私權控制方面獲得信任
+1. 创建可操作、智能、实时的客户档案
+1. 利用AI/ML模型和数据查询丰富数据并获取更多见解
+1. 使用开放和可组合的组件进行创新
+1. 增强实时体验的交付和个性化
+1. 通过治理、安全和隐私控制赢得信任
 
 >[!VIDEO](https://video.tv.adobe.com/v/32502?quality=12&learn=on)

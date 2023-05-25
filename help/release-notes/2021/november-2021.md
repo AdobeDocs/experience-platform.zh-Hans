@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2021年11月
-description: Adobe Experience Platform的2021年11月發行說明。
+title: Adobe Experience Platform发行说明2021年11月
+description: Adobe Experience Platform 2021年11月版发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
@@ -15,58 +15,58 @@ ht-degree: 12%
 
 ## 新增功能
 
-Adobe Experience Platform中的新功能：
+Adobe Experience Platform中的新增功能：
 
 - [Real-Time Customer Data Platform B2B 版](#B2B)
-- [（測試版）透過臨機啟動API將受眾區段啟動至批次目的地](#ad-hoc-activation)
+- [（测试版）通过临时激活API将受众区段激活到批量目标](#ad-hoc-activation)
 
-## 現有功能的更新
+## 现有功能的更新
 
 Adobe Experience Platform 现有功能的更新包括：
 
 - [归因人工智能](#attribution-ai)
-- [Customer AI](#customer-ai)
+- [客户人工智能](#customer-ai)
 
 ### Real-Time Customer Data Platform B2B 版 {#B2B}
 
 **发行日期：2021 年 11 月 12 日**
 
-Real-Time CDP B2B Edition以Real-time Customer Data Platform (Real-Time CDP)為基礎，專為以B2B服務模式運作的行銷人員所打造。 它會整合來自多個來源的資料，並將其合併為單一檢視的人員與帳戶設定檔。 此統一的資料可讓行銷人員精準鎖定特定對象，並透過所有可用管道吸引這些對象。
+Real-Time CDP B2B版构建于Real-time Customer Data Platform (Real-Time CDP)之上，专为以B2B服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其合并到人员和帐户配置文件的单一视图中。 此统一数据允许营销人员准确地定位特定受众，并在所有可用渠道中吸引这些受众。
 
-有各種Adobe Experience Platform功能的改善，可區分Real-Time CDP B2B版本與其B2C版本。 其中包括改善B2B使用案例的Experience Data Model (XDM)、升級身分解析和設定檔分段，以及自訂建置的聯結器和Marketo Engage目的地。 Marketo聯結器可讓B2B品牌將其領先業界的B2B參與資料與行為資訊連結，以培育潛在客戶並增強以帳戶為基礎的行銷作業。
+多项Adobe Experience Platform功能都得到了改进，从而将Real-Time CDP B2B版本与其对应的B2C版本区分开来。 这些改进包括改进了用于B2B用例的Experience Data Model (XDM)，升级了身份解析和用户档案分段，以及自定义构建的连接器和用于Marketo Engage的目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培育潜在客户并加强基于帐户的营销操作。
 
--[全新B2B和B2P版本](#editions)
--[全新Marketo資料來源和目的地聯結器](#marketo)
--[標準B2B XDM](#XDM)
+-[新的B2B和B2P版本](#editions)
+-[新的Marketo数据源和目标连接器](#marketo)
+-[标准B2B XDM](#XDM)
 
-### 全新B2B和B2P版本 {#editions}
+### 新的B2B和B2P版本 {#editions}
 
-您可購買新版B2B和B2P，這些版本將B2B資料和功能整合至Real-Time CDP和Platform Activation產品。
+现已推出新的B2B和B2P版本，这些版本为Real-Time CDP和Platform Activation产品都提供了B2B数据和功能，可供您购买。
 
-若要進一步瞭解Real-Time CDP B2B版本，請參閱 [概觀](../../rtcdp/overview.md).
+要了解有关Real-Time CDP B2B版本的更多信息，请参阅 [概述](../../rtcdp/overview.md).
 
-### 全新Marketo資料來源和目的地聯結器 {#marketo}
+### 新的Marketo数据源和目标连接器 {#marketo}
 
-新的Marketo資料來源和目的地聯結器可將Marketo資料串流至Platform和Platform受眾，回到Marketo。 適用於所有Platform使用者。
+新的Marketo数据源和目标连接器可将Marketo数据流式传输到Platform和Platform受众，然后返回到Marketo。 适用于所有Platform用户。
 
 | 功能 | 描述 |
 |----------|-------------|
-| Marketo Engage來源聯結器 | 此 [Marketo Engage來源聯結器](../../sources/connectors/adobe-applications/marketo/marketo.md) 可讓行銷人員順暢地將一或多個Marketo執行個體的資料擷取到其Adobe Experience Platform執行個體中，並提供適用於潛在客戶管理和B2B行銷人員的完整解決方案。 |
-| Marketo Engage目的地 | 此 [Marketo目的地](../../destinations/catalog/adobe/marketo-engage.md) 可讓行銷人員將在Adobe Experience Platform中建立的區段推送至Marketo，並在其中顯示為靜態清單。 |
+| Marketo Engage源连接器 | 此 [Marketo Engage源连接器](../../sources/connectors/adobe-applications/marketo/marketo.md) 允许营销人员将数据从一个或多个Marketo实例无缝地摄取到其Adobe Experience Platform实例中，并为商机管理和B2B营销人员提供了完整的解决方案。 |
+| Marketo Engage目标 | 此 [Marketo目标](../../destinations/catalog/adobe/marketo-engage.md) 允许营销人员将在Adobe Experience Platform中创建的区段推送到Marketo，并在其中显示为静态列表。 |
 
-### 標準B2B XDM {#XDM}
+### 标准B2B XDM {#XDM}
 
-標準B2B XDM類別、欄位群組和資料型別適用於所有Platform使用者。
+标准B2B XDM类、字段组和数据类型适用于所有Platform用户。
 
 | 功能 | 描述 |
 |-----------|--------------|
-| 標準B2B XDM類別 | Real-time Customer Data Platform B2B Edition提供數個標準XDM，可擷取基本B2B資料實體的詳細資訊，例如帳戶、商機、促銷活動等。 |
+| 标准B2B XDM类 | Real-time Customer Data Platform B2B版本提供了多个标准XDM，用于捕获有关基本B2B数据实体（如客户、机会、营销活动等）的详细信息。 |
 
-請參閱 [Real-time Customer Data Platform B2B版本中的結構描述](../../rtcdp/schemas/b2b.md) 檔案以瞭解更多有關擷取B2B資料實體的資訊。
+请参阅 [Real-time Customer Data Platform B2B版本中的架构](../../rtcdp/schemas/b2b.md) 文档，了解有关捕获B2B数据实体的更多信息。
 
-### （測試版）透過臨機啟動API將受眾區段啟動至批次目的地 {#ad-hoc-activation}
+### （测试版）通过临时激活API将受众区段激活到批量目标 {#ad-hoc-activation}
 
-隨選啟用API可讓行銷人員針對需要立即啟用的情況，以快速且有效率的方式以程式設計方式啟用目的地的受眾區段。 僅支援隨選對象啟用 [批次檔案型目的地](../../destinations/destination-types.md#file-based) 且目前為測試版。 如需詳細資訊，請參閱 [臨機啟動API檔案](../../destinations/api/ad-hoc-activation-api.md).
+通过临时激活API，营销人员可以快速高效地以编程方式将受众区段激活到目标，以满足立即激活的需求。 仅支持临时受众激活 [基于文件的批处理目标](../../destinations/destination-types.md#file-based) 目前处于测试阶段。 欲了解更多信息，请参见 [临时激活API文档](../../destinations/api/ad-hoc-activation-api.md).
 
 ### 归因人工智能 {#attribution-ai}
 
@@ -74,20 +74,20 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 |-----------|---------------|
-| 支援多個資料集 | Attribution AI現在可以輕鬆地直接在UI中擷取多個資料集，而無需對應和拼接每個資料集。 這項新的省時功能提供更強大且更精確的分數，包含來自多個資料集的更豐富資料。 |
-| 媒體頻道與行銷活動欄位對應 | Attribution AI現在支援媒體頻道與行銷活動欄位的對應。 資料集之間的媒體管道對應可改善從Attribution AI衍生的見解，並有助於提供更清晰、易於解讀的結果。 |
+| 支持多个数据集 | 现在，Attribution AI可以直接在UI中轻松摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据提供了更强大且更准确的分数。 |
+| 媒体渠道和营销活动字段映射 | Attribution AI现在支持媒体渠道和营销活动字段的映射。 数据集之间的媒体渠道映射可改进从Attribution AI推导出的见解，并帮助提供更清晰、易于解释的结果。 |
 
-如需Attribution AI的詳細資訊，請參閱 [Attribution AI檔案](../../intelligent-services/attribution-ai/overview.md).
+欲知有关Attribution AI的更多信息，请参见 [Attribution AI文档](../../intelligent-services/attribution-ai/overview.md).
 
-### Customer AI {#customer-ai}
+### 客户人工智能 {#customer-ai}
 
-Real-time Customer Data Platform中提供的Customer AI可產生自訂傾向評分，例如大規模個別設定檔的流失和轉換情形。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Real-time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，例如大规模单个用户档案的流失和转化率。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 **更新的功能**
 
 | 功能 | 描述 |
 |-----------|-------------|
-| 支援多個資料集 | Customer AI現在可以輕鬆地直接在UI中擷取多個資料集，而無需對應和拼接每個資料集。 這項新的省時功能提供更強大且更精確的分數，包含來自多個資料集的更豐富資料。 |
-| 自訂設定檔屬性 | 除了標準事件欄位外，Customer AI現在還支援在資料中定義自訂設定檔資料集欄位（含時間戳記）。 使用此選項可讓您新增您認為有影響力的其他設定檔屬性，這些屬性可能會改善模型的品質，並提供更準確的結果。 |
+| 支持多个数据集 | 客户人工智能现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据提供了更强大且更准确的分数。 |
+| 自定义配置文件属性 | 除了标准事件字段外，客户人工智能现在还支持在数据中定义自定义用户档案数据集字段（带有时间戳）。 利用此选项，可添加您认为有影响力的其他配置文件属性，这些配置文件属性可提高模型的质量并提供更准确的结果。 |
 
-如需Customer AI的詳細資訊，請參閱 [Customer AI檔案](../../intelligent-services/customer-ai/overview.md).
+有关客户人工智能的更多信息，请参阅 [客户人工智能文档](../../intelligent-services/customer-ai/overview.md).

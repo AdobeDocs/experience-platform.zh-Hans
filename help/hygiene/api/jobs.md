@@ -1,6 +1,6 @@
 ---
-title: 使用資料衛生API刪除記錄
-description: 瞭解如何以程式設計方式修正或刪除客戶在Adobe Experience Platform中儲存的個人資料。
+title: 使用数据卫生API删除记录
+description: 了解如何以编程方式在Adobe Experience Platform中更正或删除客户存储的个人数据。
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
@@ -11,39 +11,39 @@ ht-degree: 1%
 
 ---
 
-# 使用資料衛生API刪除記錄
+# 使用数据卫生API删除记录
 
 <!-- >[!IMPORTANT]
 >
 >This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. -->
 
-資料衛生API可讓您以程式設計方式更正或刪除客戶儲存在Adobe Experience Platform中的個人資料。
+数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 
-您可以透過與相同的根路徑存取API [PRIVACY SERVICEAPI](../../privacy-service/api/overview.md)： `https://platform.adobe.io/data/core/privacy/`
+您可以通过与相同的根路径访问API [PRIVACY SERVICEAPI](../../privacy-service/api/overview.md)： `https://platform.adobe.io/data/core/privacy/`
 
 ## 快速入门
 
-本節提供您在嘗試呼叫資料衛生API之前需要瞭解的核心概念簡介。
+本节介绍了您在尝试调用数据卫生API之前需要了解的核心概念。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-若要呼叫資料衛生API，您必須先收集驗證認證。 這些是用於存取Privacy ServiceAPI的相同認證。 請參閱 [API概觀](./overview.md#getting-started) 為資料衛生API的每個必要標題產生值，如下所示：
+要调用数据卫生API，您必须首先收集身份验证凭据。 这些是用于访问Privacy ServiceAPI的相同凭据。 请参阅 [API概述](./overview.md#getting-started) 为数据卫生API的每个所需标头生成值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
 
 * `Content-Type: application/json`
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本檔案提供範例API呼叫，示範如何格式化您的請求。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/api-guide.md#sample-api) (位於Experience PlatformAPI快速入門手冊中)。
+本文档提供了一个示例API调用，以演示如何设置请求的格式。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/api-guide.md#sample-api) 《Experience PlatformAPI快速入门指南》中的。
 
-## 建立刪除工作
+## 创建删除作业
 
-您可以發出POST要求來建立刪除工作。
+您可以通过发出POST请求来创建删除作业。
 
 **API格式**
 
@@ -53,7 +53,7 @@ POST /jobs
 
 **请求**
 
-要求裝載的結構類似於 [刪除Privacy ServiceAPI中的請求](../../privacy-service/api/privacy-jobs.md#access-delete). 它包含 `users` 陣列，其物件代表要刪除其資料的使用者。
+请求有效负载的结构与 [Privacy ServiceAPI中的delete请求](../../privacy-service/api/privacy-jobs.md#access-delete). 它包括 `users` 数组，其对象表示要删除其数据的用户。
 
 ```shell
 curl -X POST \
@@ -107,14 +107,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` | 包含貴組織驗證資訊的陣列。 它必須包含具有下列屬性的單一物件： <ul><li>`namespace`：必須設定為 `imsOrgID`.</li><li>`value`：您的組織ID。 此值與提供的值相同。 `x-gw-ims-org-id` 標頭。</li></ul> |
-| `users` | 一個陣列，包含您要刪除其資訊之至少一個使用者的集合。 每個使用者物件包含下列資訊： <ul><li>`key`：使用者的識別碼，用於限定回應資料中的個別作業ID。 最佳實務是為這個值選擇唯一且易於識別的字串，以便稍後參考或查詢。</li><li>`action`：列出對使用者資料所需採取的動作的陣列。 必須包含單一字串值： `delete`.</li><li>`userIDs`：使用者的身分識別集合。 單一使用者可擁有的身分數量限製為九個。 每個身分包含以下屬性： <ul><li>`namespace`：此 [身分名稱空間](../../identity-service/namespaces.md) 與ID相關聯。 這可以是 [標準名稱空間](../../privacy-service/api/appendix.md#standard-namespaces) 可由Platform識別，或可為貴組織定義的自訂名稱空間。 使用的名稱空間型別必須反映在 `type` 屬性。</li><li>`value`：身分值。</li><li>`type`：必須設定為 `standard` 若使用全域辨識的名稱空間，或 `custom` 如果您使用貴組織定義的名稱空間。</li></ul></li></ul> |
+| `companyContexts` | 包含贵组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`：必须设置为 `imsOrgID`.</li><li>`value`：您的组织ID。 此值与 `x-gw-ims-org-id` 标头。</li></ul> |
+| `users` | 一个数组，其中包含您要删除其信息的至少一个用户的集合。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最佳实践是为此值选择唯一的、易于识别的字符串，以便稍后可以引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 必须包含单个字符串值： `delete`.</li><li>`userIDs`：用户的身份集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含以下属性： <ul><li>`namespace`：此 [身份命名空间](../../identity-service/namespaces.md) 与ID关联。 这可以是 [标准命名空间](../../privacy-service/api/appendix.md#standard-namespaces) 可由Platform识别，也可以是由您的组织定义的自定义命名空间。 使用的命名空间类型必须反映在 `type` 属性。</li><li>`value`：标识值。</li><li>`type`：必须设置为 `standard` 如果使用全局识别的命名空间，或者 `custom` 如果您使用的是组织定义的命名空间。</li></ul></li></ul> |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回已建立工作的詳細資訊。
+成功的响应将返回已创建作业的详细信息。
 
 ```json
 {

@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2019年9月
-description: Adobe Experience Platform 2019年9月發行說明。
+title: Adobe Experience Platform发行说明2019年9月
+description: Adobe Experience Platform 2019年9月版发行说明。
 doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
@@ -24,49 +24,49 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Data Ingestion] {#ingestion}
 
-Adobe Experience Platform提供豐富的功能，可擷取任何型別和延遲的資料。 Adobe Experience Platform [!DNL Data Ingestion] 提供多種擷取資料的替代方案，包括批次API、串流API、原生Adobe聯結器、資料整合合作夥伴或Adobe Experience Platform UI。
+Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何类型和延迟的数据。 Adobe Experience Platform [!DNL Data Ingestion] 为摄取数据提供了多个替代方案，包括批处理API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience Platform UI。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ----------- | ---------- |
-| 串流擷取的新網域 | 此 `dcs.data.adobe.net` 網域已移至新的通用資料收集網域 `dcs.adobedc.net`. 使用者必須根據修訂後的Adobe Experience Platform串流擷取檔案更新其實作。 所有與Adobe Experience Platform串流擷取相關的檔案已更新，以使用新網域。 |
+| 用于流式摄取的新域 | 此 `dcs.data.adobe.net` 域已移至新的通用数据收集域 `dcs.adobedc.net`. 用户必须根据修订的Adobe Experience Platform流摄取文档更新其实施。 所有与Adobe Experience Platform流摄取相关的文档已更新为使用新域。 |
 
-如需詳細資訊，請瀏覽 [資料擷取檔案](../../ingestion/home.md).
+欲知更多信息，请访问 [数据引入文档](../../ingestion/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] 是一項完全受管理的服務，位於 [!DNL Experience Platform] 可讓資料科學家透過建立並操作機器學習模型，從Adobe解決方案和協力廠商系統的資料和內容順暢地產生深入分析。 [!DNL Data Science Workspace] 緊密整合 [!DNL Platform] 和支援端對端資料科學生命週期，包括探索和準備XDM資料，然後開發和實施模型以自動擴充 [!DNL Real-Time Customer Profile] 搭配機器學習深入分析。
+Adobe Experience Platform [!DNL Data Science Workspace] 是一项完全托管的服务，位于 [!DNL Experience Platform] 它使数据科学家能够通过构建和运行机器学习模型，从Adobe解决方案和第三方系统中的数据和内容无缝地生成见解。 [!DNL Data Science Workspace] 紧密集成 [!DNL Platform] 并支持端到端的数据科学生命周期，包括XDM数据的探索和准备，然后开发和实施模型以自动丰富 [!DNL Real-Time Customer Profile] 使用机器学习分析。
 
 **新增功能**
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 透過UI排程服務 | 與整合 [!DNL Platform] 協調服務，可使用UI透過使用者定義的排程來自動化模型訓練和評分。 |
-| [!DNL Service Gallery] | 瀏覽、監控及存取機器學習服務，並排程自動化訓練和評分工作，這一切都在重新設計的範圍內 [!DNL Service Gallery]. |
-| [!DNL JupyterLab] 5.0.0 | [!DNL JupyterLab] UI改良。 |
+| 通过UI计划服务 | 与集成 [!DNL Platform] 编排服务可使用UI通过用户定义的计划自动进行模型训练和评分。 |
+| [!DNL Service Gallery] | 浏览、监控和访问机器学习服务，并安排自动培训和评分工作，所有这些都在重新设计的范围内 [!DNL Service Gallery]. |
+| [!DNL JupyterLab] 5.0.0 | [!DNL JupyterLab] UI改进。 |
 
 **已知问题**
 
-* 中目前沒有可存取的方式 [!DNL Service Gallery] 刪除現有服務。 同時，請參閱 [Sensei Machine Learning API參考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 透過API呼叫刪除現有服務。
-* 此 [!DNL Service Gallery] 不支援分頁以篩選服務的訓練和評分回合。
-* 設定排程的訓練或評分回合時，透過 [!DNL Service Gallery]，將頻率設定為每小時可防止套用排程。
+* 中目前没有可访问的方式 [!DNL Service Gallery] 删除现有服务。 同时，请参阅 [Sensei机器学习API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 通过API调用删除现有服务。
+* 此 [!DNL Service Gallery] 不支持分页以过滤服务的训练和评分运行。
+* 在配置计划的培训或评分时，通过 [!DNL Service Gallery]，将频率设置为每小时，可阻止应用计划。
 
-如需詳細資訊，請瀏覽 [資料科學工作區概觀](../../data-science-workspace/home.md).
+欲知更多信息，请访问 [数据科学工作区概述](../../data-science-workspace/home.md).
 
 ## [!DNL Query Service] {#query}
 
-[!DNL Query Service] 提供在Adobe Experience Platform中使用標準SQL查詢資料的功能，以支援各種分析和資料管理使用案例。 這是一種無伺服器工具，可讓您從 [!DNL Data Lake] 並將查詢結果擷取為新資料集，以用於報表， [!DNL Data Science Workspace]，或用於內嵌至 [!DNL Real-Time Customer Profile].
+[!DNL Query Service] 提供了在Adobe Experience Platform中使用标准SQL查询数据的能力，以支持各种分析和数据管理用例。 它是一个无服务器工具，允许您从 [!DNL Data Lake] 并将查询结果捕获为新的数据集以用于报告， [!DNL Data Science Workspace]，或进行摄取 [!DNL Real-Time Customer Profile].
 
-您可以使用 [!DNL Query Service] 以建立資料分析生態系統，進而瞭解客戶在不同互動管道中的行為。 這些管道可能包括銷售點系統、網路、行動裝置或CRM系統。
+您可以使用 [!DNL Query Service] 构建数据分析生态系统，全面了解客户在不同互动渠道中的行为。 这些渠道可能包括销售点系统、Web、移动或CRM系统。
 
 **新增功能**
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 改善以下專案： [!DNL Query Editor] | 新增儲存功能，可讓您儲存查詢並稍後處理。 新增「瀏覽」標籤至 [!DNL Query Service] Adobe Experience Platform的使用者介面，顯示貴組織使用者儲存的查詢。 實作「查詢詳細資訊」面板，顯示有關正在檢視的查詢的有用中繼資料。 |
-| 新的歸因函式 | 中的Adobe定義函式 [!DNL Query Service] 以使用到期引數查詢管道歸因。 |
-| SQL語法的增強功能 | 支援iLike語法。 |
-| 使用定義的XDM結構描述產生資料集 | 在Create Table as Select (CTAS)查詢中新增子句，可讓您指定目標綱要。 |
+| 改进 [!DNL Query Editor] | 添加了保存功能，可让您保存查询并稍后处理。 向添加了“浏览”选项卡 [!DNL Query Service] Adobe Experience Platform的用户界面，其中显示由您组织中的用户保存的查询。 实施了“查询详细信息”面板，该面板显示有关正在查看的查询的有用元数据。 |
+| 新的归因函数 | 中的Adobe定义函数 [!DNL Query Service] 使用过期参数查询渠道归因。 |
+| 对SQL语法的增强 | 支持iLike语法。 |
+| 使用定义的XDM架构生成数据集 | 在Create Table as Select (CTAS)查询中添加了新的子句，用于指定目标模式。 |
 
-如需詳細資訊，請參閱 [查詢服務檔案](../../query-service/home.md).
+欲了解更多信息，请参见 [查询服务文档](../../query-service/home.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Oracle；oracle
+keywords: Experience Platform；主页；热门主题；Oracle；oracle
 solution: Experience Platform
-title: oracle來源聯結器總覽
-description: 瞭解如何使用API或使用者介面將Oracle連結至Adobe Experience Platform。
+title: oracle源连接器概述
+description: 了解如何使用API或用户界面将Oracle连接到Adobe Experience Platform。
 exl-id: be422cf8-fb24-48c7-8369-34f0f2ec95fc
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Oracle] 聯結器
+# [!DNL Oracle] 连接器
 
-Adobe Experience Platform為資料庫提供者提供原生連線，例如 [!DNL Microsoft]、 MySQL和 [!DNL Azure]. 您可以將來自這些系統的資料帶入 [!DNL Platform].
+Adobe Experience Platform为数据库提供商提供本机连接，例如 [!DNL Microsoft]、 MySQL和 [!DNL Azure]. 您可以将来自这些系统的数据导入 [!DNL Platform].
 
-支援不同型別的第三方資料庫，包括關聯式、NoSQL或資料倉儲。 對資料庫提供者的支援包括 [!DNL Oracle].
+支持不同类型的第三方数据库，包括关系数据库、NoSQL数据库或data warehouse数据库。 对数据库提供商的支持包括 [!DNL Oracle].
 
-## IP位址允許清單
+## IP地址允许列表
 
-在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
 
-以下檔案提供有關如何連線的資訊 [!DNL Oracle] 至 [!DNL Platform] 使用API或使用者介面：
+以下文档提供了有关如何连接的信息 [!DNL Oracle] 到 [!DNL Platform] 使用API或用户界面：
 
-## Connect [!DNL Oracle] 至 [!DNL Platform] 使用API
+## Connect [!DNL Oracle] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API建立Oracle基礎連線](../../tutorials/api/create/databases/oracle.md)
-- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
-- [使用流程服務API為資料庫來源建立資料流](../../tutorials/api/collect/database-nosql.md)
+- [使用流服务API创建基于Oracle的连接](../../tutorials/api/create/databases/oracle.md)
+- [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
-## Connect [!DNL Oracle] 至 [!DNL Platform] 使用UI
+## Connect [!DNL Oracle] 到 [!DNL Platform] 使用UI
 
-- [在使用者介面中建立Oracle來源連線](../../tutorials/ui/create/databases/oracle.md)
-- [在UI中建立資料庫來源連線的資料流](../../tutorials/ui/dataflow/databases.md)
+- [在UI中创建Oracle源连接](../../tutorials/ui/create/databases/oracle.md)
+- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

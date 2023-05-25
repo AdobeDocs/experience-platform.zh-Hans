@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料來源連線
+keywords: Experience Platform；主页；热门主题；数据源连接
 solution: Experience Platform
-title: 使用流量服務API從協力廠商雲端儲存系統擷取Parquet資料
+title: 使用流服务API从第三方云存储系统摄取Parquet数据
 type: Tutorial
-description: 本教學課程使用流量服務API來逐步引導您完成從協力廠商雲端儲存系統擷取Apache Parquet資料的步驟。
+description: 本教程使用流服务API来指导您完成从第三方云存储系统摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,58 +12,58 @@ ht-degree: 2%
 
 ---
 
-# 使用從第三方雲端儲存系統擷取Parquet資料 [!DNL Flow Service] API
+# 使用从第三方云存储系统摄取Parquet数据 [!DNL Flow Service] API
 
-[!DNL Flow Service] 用於收集及集中Adobe Experience Platform內各種不同來源的客戶資料。 此服務提供可連線所有支援來源的使用者介面和RESTful API。
+[!DNL Flow Service] 用于从Adobe Experience Platform中各种不同的来源收集客户数据并对其进行集中。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从此API进行连接。
 
-本教學課程使用 [!DNL Flow Service] 此API可引導您完成從協力廠商雲端儲存系統擷取Parquet資料的步驟。
+本教程使用 [!DNL Flow Service] 此API可引导您完成从第三方云存储系统摄取Parquet数据的步骤。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-- [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+- [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+- [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您需要瞭解的其他資訊，才能使用從第三方雲端儲存空間成功擷取Parquet資料。 [!DNL Flow Service] API。
+以下部分提供了使用，从第三方云存储中成功摄取Parquet数据所需了解的其他信息 [!DNL Flow Service] API。
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
 
 - `Content-Type: application/json`
 
 ## 创建连接
 
-為了擷取Parquet資料，使用 [!DNL Platform] API中，您必須擁有您要存取之協力廠商雲端儲存空間來源的有效連線。 如果您尚未建立要使用的儲存裝置連線，您可以透過下列教學課程來建立連線：
+为了摄取Parquet数据，使用 [!DNL Platform] API中，您必须拥有要访问的第三方云存储源的有效连接。 如果您还没有要使用的存储的连接，可以通过以下教程创建一个连接：
 
 - [Amazon S3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
 - [Azure Data Lake Storage Gen2](./create/cloud-storage/adls-gen2.md)
-- [Google雲端商店](./create/cloud-storage/google.md)
+- [Google Cloud Store](./create/cloud-storage/google.md)
 - [SFTP](./create/cloud-storage/sftp.md)
 
-取得並儲存唯一識別碼(`$id`)，然後繼續本教學課程的下一步。
+获取并存储唯一标识符(`$id`)，然后继续本教程的下一步。
 
-## 建立目標結構描述
+## 创建目标架构
 
-為了將來源資料用於 [!DNL Platform]，您也必須建立目標結構描述，以根據您的需求建構來源資料。 然後目標結構描述會用來建立 [!DNL Platform] 包含來源資料的資料集。
+为了使源数据用于 [!DNL Platform]，还必须创建目标架构以根据需要构建源数据。 然后，使用目标架构创建 [!DNL Platform] 包含源数据的数据集。
 
-如果您偏好在中使用使用者介面 [!DNL Experience Platform]，則 [結構描述編輯器教學課程](../../../xdm/tutorials/create-schema-ui.md) 提供在架構編輯器中執行類似動作的逐步指示。
+如果您希望在中使用用户界面 [!DNL Experience Platform]，则 [架构编辑器教程](../../../xdm/tutorials/create-schema-ui.md) 提供了在架构编辑器中执行类似操作的分步说明。
 
 **API格式**
 
@@ -73,7 +73,7 @@ POST /schemaregistry/tenant/schemas
 
 **请求**
 
-以下範例請求會建立可擴充XDM的XDM結構描述 [!DNL Individual Profile] 類別。
+以下示例请求创建一个扩展XDM的XDM架构 [!DNL Individual Profile] 类。
 
 ```shell
 curl -X POST \
@@ -116,7 +116,7 @@ curl -X POST \
 
 **响应**
 
-成功的回應會傳回新建立之綱要的詳細資料，包括其唯一識別碼(`$id`)。 建立來源連線的下一個步驟需要此ID。
+成功响应将返回新创建架构的详细信息，包括其唯一标识符(`$id`)。 在下一步中创建源连接时需要此ID。
 
 ```json
 {
@@ -196,9 +196,9 @@ curl -X POST \
 }
 ```
 
-## 建立來源連線 {#source}
+## 创建源连接 {#source}
 
-在建立目標XDM結構描述後，現在可以使用對的POST請求來建立來源連線 [!DNL Flow Service] API。 來源連線包含API的連線、來源資料格式，以及對上一步驟中擷取的目標XDM架構的參考。
+在创建目标XDM架构后，现在可以使用对的POST请求创建源连接 [!DNL Flow Service] API。 源连接包括API连接、源数据格式以及对上一步中检索到的目标XDM架构的引用。
 
 **API格式**
 
@@ -240,13 +240,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `baseConnectionId` | 代表您雲端儲存空間的API連線。 |
-| `data.schema.id` | (`$id`)如果目標xdm結構描述在上一步中擷取。 |
-| `params.path` | 來源檔案的路徑。 |
+| `baseConnectionId` | 表示云存储的API的连接。 |
+| `data.schema.id` | (`$id`)如果在上一步中检索到目标xdm架构。 |
+| `params.path` | 源文件的路径。 |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 將此值儲存為建立目標連線的後續步驟所需的值。
+成功响应将返回唯一标识符(`id`)。 将此值存储为以后创建目标连接步骤中所需的值。
 
 ```json
 {
@@ -255,17 +255,17 @@ curl -X POST \
 }
 ```
 
-## 建立資料集基礎連線
+## 创建数据集基本连接
 
-為了將外部資料擷取到 [!DNL Platform]，和 [!DNL Experience Platform] 必須先取得資料集基礎連線。
+为了将外部数据摄取到 [!DNL Platform]，和 [!DNL Experience Platform] 必须首先获取数据集基本连接。
 
-若要建立資料集基礎連線，請依照以下說明的步驟： [資料集基本連線教學課程](./create-dataset-base-connection.md).
+要创建数据集基本连接，请按照 [数据集基本连接教程](./create-dataset-base-connection.md).
 
-繼續依照開發人員指南中概述的步驟進行，直到您建立資料集基礎連線為止。 取得並儲存唯一識別碼(`$id`)，然後繼續將它當做建立目標連線的下一個步驟中的基本連線ID。
+继续按照开发人员指南中概述的步骤操作，直到创建数据集基本连接为止。 获取并存储唯一标识符(`$id`)，然后继续将其用作创建目标连接的下一步中的基本连接ID。
 
-## 建立目標資料集
+## 创建目标数据集
 
-您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/experience-platform-apis/references/catalog/)，在裝載中提供目標結構描述的ID。
+可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)，在有效负载中提供目标架构的ID。
 
 **API格式**
 
@@ -294,11 +294,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `schemaRef.id` | 目標XDM結構描述的ID。 |
+| `schemaRef.id` | 目标XDM架构的ID。 |
 
 **响应**
 
-成功的回應會傳回陣列，其中包含以格式建立的新資料集的ID `"@/datasets/{DATASET_ID}"`. 資料集ID是系統產生的唯讀字串，用來參考API呼叫中的資料集。 儲存目標資料集ID，因為建立目標連線和資料流的後續步驟需要它。
+成功的响应会返回一个数组，其中包含以格式表示的新创建数据集的ID `"@/datasets/{DATASET_ID}"`. 数据集ID是系统生成的只读字符串，用于在API调用中引用数据集。 存储目标数据集ID，因为稍后创建目标连接和数据流步骤需要它。
 
 ```json
 [
@@ -306,9 +306,9 @@ curl -X POST \
 ]
 ```
 
-## 建立目標連線 {#target}
+## 创建目标连接 {#target}
 
-您現在擁有資料集基本連線、目標結構描述和目標資料集的唯一識別碼。 使用這些識別碼，您可以使用 [!DNL Flow Service] 指定將包含傳入來源資料之資料集的API。
+现在，您拥有数据集基本连接、目标架构和目标数据集的唯一标识符。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -348,14 +348,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `baseConnectionId` | 資料集基礎連線的ID。 |
-| `data.schema.id` | 此 `$id` 目標XDM結構描述的。 |
-| `params.dataSetId` | 目標資料集的識別碼。 |
-| `connectionSpec.id` | 雲端儲存空間的連線規格ID。 |
+| `baseConnectionId` | 数据集基本连接的ID。 |
+| `data.schema.id` | 此 `$id` 目标XDM架构的。 |
+| `params.dataSetId` | 目标数据集的ID。 |
+| `connectionSpec.id` | 云存储的连接规范ID。 |
 
 **响应**
 
-成功回應會傳回新目標連線的唯一識別碼(`id`)。 將此值儲存為後續步驟中所需的值。
+成功响应将返回新目标连接的唯一标识符(`id`)。 将此值存储为后续步骤中所需的值。
 
 ```json
 {
@@ -364,14 +364,14 @@ curl -X POST \
 }
 ```
 
-## 建立資料流
+## 创建数据流
 
-從協力廠商雲端儲存空間擷取Parquet資料的最後一步是建立資料流。 到現在為止，您已準備下列必要值：
+从第三方云存储中摄取Parquet数据的最后一步是创建数据流。 现在，您已准备以下必需值：
 
-- [來源連線ID](#source)
-- [目標連線ID](#target)
+- [源连接ID](#source)
+- [目标连接ID](#target)
 
-資料流負責從來源排程及收集資料。 您可以執行POST要求，同時在裝載中提供先前提及的值，藉此建立資料流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
 
 **API格式**
 
@@ -411,12 +411,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sourceConnectionIds` | 在先前步驟中擷取的來源連線ID。 |
-| `targetConnectionIds` | 在先前步驟中擷取的目標連線ID。 |
+| `sourceConnectionIds` | 在之前的步骤中检索的源连接ID。 |
+| `targetConnectionIds` | 在之前的步骤中检索到的目标连接ID。 |
 
 **响应**
 
-成功的回應會傳回ID (`id`)。
+成功的响应会返回ID (`id`)。
 
 ```json
 {
@@ -427,7 +427,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程所述，您已建立來源聯結器，以依排程從您的協力廠商雲端儲存系統收集Parquet資料。 傳入資料現在可供下游使用 [!DNL Platform] 服務，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 如需更多詳細資訊，請參閱下列檔案：
+在本教程之后，您已创建一个源连接器，以按计划从第三方云存储系统中收集Parquet数据。 传入数据现在可供下游使用 [!DNL Platform] 服务，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
-- [即時客戶個人檔案總覽](../../../profile/home.md)
-- [資料科學工作區概觀](../../../data-science-workspace/home.md)
+- [Real-time Customer Profile概述](../../../profile/home.md)
+- [数据科学工作区概述](../../../data-science-workspace/home.md)

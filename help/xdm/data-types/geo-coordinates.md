@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；地理；座標；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地域；坐标；数据类型；数据类型；
 solution: Experience Platform
-title: 地理座標資料型別
-description: 本檔案提供地理座標XDM資料型別的概觀。
+title: 地理坐标数据类型
+description: 本文档概述了地理坐标XDM数据类型。
 exl-id: 3c80eb44-852f-4a95-bd13-b6197ffe62da
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,16 +11,16 @@ ht-degree: 5%
 
 ---
 
-# [!UICONTROL 地理座標] 資料型別
+# [!UICONTROL 地理坐标] 数据类型
 
-[!UICONTROL 地理座標] 是標準XDM資料型別，可描述地標的地理座標。 此資料型別以記錄的公開規格為基礎 [schema.org](https://schema.org/GeoCoordinates).
+[!UICONTROL 地理坐标] 是描述位置地理坐标的标准XDM数据类型。 此数据类型基于上记录的公共规范 [schema.org](https://schema.org/GeoCoordinates).
 
 <img src="../images/data-types/geo-coordinates.png" width="400" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_schema.description` | 字符串 | 座標識別內容的說明。 |
-| `_schema.elevation` | 双精度 | 已定義座標的特定上升量。 值必須符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基準，並以公尺測量。 |
-| `_schema.latitude` | 双精度 | 地理點的已簽署垂直座標。 |
-| `_schema.longitude` | 双精度 | 地理點的已簽署水平座標。 |
-| `_id` | 字符串 | 系統產生的唯一座標ID。 |
+| `_schema.description` | 字符串 | 坐标标识的内容的描述。 |
+| `_schema.elevation` | 双精度 | 定义的坐标的特定高程。 该值必须符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基准，以米为测量单位。 |
+| `_schema.latitude` | 双精度 | 地理点的带符号垂直坐标。 |
+| `_schema.longitude` | 双精度 | 地理点的带符号水平坐标。 |
+| `_id` | 字符串 | 系统生成的唯一坐标ID。 |

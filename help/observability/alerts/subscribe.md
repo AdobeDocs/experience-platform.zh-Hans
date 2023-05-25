@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；日期範圍
-title: 訂閱Adobe I/O事件通知
-description: 本檔案提供如何訂閱Adobe Experience Platform服務Adobe I/O事件通知的步驟。 此外，也提供可用事件型別的參考資訊，以及有關如何解譯每個適用之傳回事件資料的更多檔案連結 [!DNL Platform] 服務。
+keywords: Experience Platform；主页；热门主题；日期范围
+title: 订阅Adobe I/O事件通知
+description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向更多文档的链接，这些文档说明了如何解释每个适用的返回的事件数据 [!DNL Platform] 服务。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
 source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
@@ -11,52 +11,52 @@ ht-degree: 1%
 
 ---
 
-# 訂閱Adobe I/O事件通知
+# 订阅Adobe I/O事件通知
 
-[!DNL Observability Insights] 可讓您訂閱有關Adobe Experience Platform活動的Adobe I/O事件通知。 這些事件會傳送至已設定的webhook，以促進活動監控的有效自動化。
+[!DNL Observability Insights] 允许您订阅有关Adobe Experience PlatformAdobe I/O的活动通知。 这些事件将发送到配置的webhook，以促进活动监控的高效自动化。
 
-本檔案提供如何訂閱Adobe Experience Platform服務Adobe I/O事件通知的步驟。 此外，也提供可用事件型別的參考資訊，以及有關如何解譯每個適用之傳回事件資料的更多檔案連結 [!DNL Platform] 服務。
+本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向更多文档的链接，这些文档说明了如何解释每个适用的返回的事件数据 [!DNL Platform] 服务。
 
 ## 快速入门
 
-本檔案需要實際瞭解Webhook以及如何將Webhook從一個應用程式連線到另一個應用程式。 請參閱 [[!DNL I/O Events] 檔案](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) 以瞭解webhook。
+本文档需要深入了解Webhook以及如何将Webhook从一个应用程序连接到另一个应用程序。 请参阅 [[!DNL I/O Events] 文档](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) 有关webhook的介绍。
 
-## 建立webhook
+## 创建webhook
 
-為了接收 [!DNL I/O Event] 通知，您必須透過指定唯一的webhook URL來註冊webhook，作為事件註冊詳細資訊的一部分。
+为了接收 [!DNL I/O Event] 通知，您必须通过在事件注册详细信息中指定唯一的webhook URL来注册webhook。
 
-您可以使用所選的使用者端來設定webhook。 如需暫時的webhook位址，請造訪 [Webhook.site](https://webhook.site/) 並複製提供的唯一URL。
+您可以使用所选客户端配置webhook。 有关要在本教程中使用的临时webhook地址，请访问 [Webhook.site](https://webhook.site/) 并复制提供的唯一URL。
 
 ![](../images/notifications/webhook-url.png)
 
-在初始驗證程式期間， [!DNL I/O Events] 傳送 `challenge` 向webhook發出的GET請求中的查詢引數。 您必須設定webhook，以在回應裝載中傳回此引數的值。 如果您使用的是Webhook.site，請選取 **[!DNL Edit]** 然後在右上角輸入 `$request.query.challenge$` 在 **[!DNL Response body]** 選取之前 **[!DNL Save]**.
+在初始验证过程中， [!DNL I/O Events] 发送 `challenge` 向webhook发出的GET请求中的查询参数。 您必须配置webhook以在响应有效负载中返回此参数的值。 如果您使用的是Webhook.site，请选择 **[!DNL Edit]** 然后在右上角输入 `$request.query.challenge$` 下 **[!DNL Response body]** 选择之前 **[!DNL Save]**.
 
 ![](../images/notifications/response-challenge.png)
 
-## 在Adobe Developer Console中建立新專案
+## 在Adobe Developer控制台中创建新项目
 
-前往 [Adobe Developer主控台](https://www.adobe.com/go/devs_console_ui) 並使用您的Adobe ID登入。 接下來，請依照以下教學課程中概述的步驟操作： [建立空白專案](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 在Adobe Developer Console檔案中。
+转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照教程中概述的以下步骤进行操作： [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 在Adobe Developer Console文档中。
 
-## 訂閱事件
+## 订阅事件
 
-建立新專案後，請導覽至該專案的概述畫面。 從此處選取 **[!UICONTROL 新增事件]**.
+创建新项目后，导航到该项目的概述屏幕。 从此处选择 **[!UICONTROL 添加事件]**.
 
 ![](../images/notifications/add-event-button.png)
 
-會出現一個對話方塊，可讓您將事件提供者新增至專案：
+此时将显示一个对话框，您可以在其中向项目添加事件提供程序：
 
-* 如果您訂閱Experience Platform警示，請選取 **[!UICONTROL 平台通知]**
-* 如果您訂閱Adobe Experience Platform [!DNL Privacy Service] 通知，選取 **[!UICONTROL Privacy Service事件]**
+* 如果要订阅Experience Platform警报，请选择 **[!UICONTROL 平台通知]**
+* 如果您正在订阅Adobe Experience Platform [!DNL Privacy Service] 通知，选择 **[!UICONTROL Privacy Service事件]**
 
-選擇事件提供者後，請選取 **[!UICONTROL 下一個]**.
+选择事件提供程序后，选择 **[!UICONTROL 下一个]**.
 
 ![](../images/notifications/event-provider.png)
 
-下一個畫面會顯示要訂閱的事件型別清單。 選取您要訂閱的事件，然後選取 **[!UICONTROL 下一個]**.
+下一个屏幕显示要订阅的事件类型列表。 选择要订阅的事件，然后选择 **[!UICONTROL 下一个]**.
 
 >[!NOTE]
 >
->如果您不確定要訂閱使用之服務的哪些事件，請參閱下列檔案：
+>如果您不确定要订阅您正在使用的服务的哪些事件，请查阅以下文档：
 >
 >* [平台通知](./rules.md)
 >* [Privacy Service通知](../../privacy-service/privacy-events.md)
@@ -64,38 +64,38 @@ ht-degree: 1%
 
 ![](../images/notifications/choose-event-subscriptions.png)
 
-下一個畫面會提示您建立JSON Web權杖(JWT)。 您可以選擇自動產生金鑰組，或上傳您在終端機中產生的公開金鑰。
+下一个屏幕提示您创建JSON Web令牌(JWT)。 您可以选择自动生成密钥对，或者上传您在终端中生成的公共密钥。
 
-在本教學課程中，會使用第一個選項。 選取選項方塊 **[!UICONTROL 產生金鑰組]**，然後選取 **[!UICONTROL 產生金鑰組]** 按鈕。
+在本教程中，我们将介绍第一个选项。 选择选项框 **[!UICONTROL 生成密钥对]**，然后选择 **[!UICONTROL 生成密钥对]** 按钮。
 
 ![](../images/notifications/generate-keypair.png)
 
-當金鑰組產生時，瀏覽器會自動下載金鑰。 您必須自行儲存此檔案，因為它並未儲存在開發人員主控台中。
+生成密钥对后，浏览器会自动下载该密钥对。 您必须自行存储此文件，因为它未保存在开发人员控制台中。
 
-下一個畫面可讓您檢閱新產生的金鑰組的詳細資訊。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+下一个屏幕允许您查看新生成的密钥对的详细信息。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![](../images/notifications/keypair-generated.png)
 
-在下一個畫面中，提供事件註冊的名稱和說明，在 [!UICONTROL 事件註冊詳細資料] 區段。 最佳實務是建立唯一且易於識別的名稱，以協助將此事件註冊與相同專案中的其他事件註冊區分開來。
+在下一个屏幕中，为中的事件注册提供名称和描述 [!UICONTROL 事件注册详细信息] 部分。 最佳实践是创建一个唯一的、易于识别的名称，以帮助将此事件注册与同一项目中的其他事件注册区分开来。
 
 ![](../images/notifications/registration-details.png)
 
-在底下的相同熒幕上再往下看 [!UICONTROL 如何接收事件] 區段，您可以選擇設定接收事件的方式。 **[!UICONTROL Webhook]** 可讓您提供自訂webhook位址來接收事件，而 **[!UICONTROL 執行階段動作]** 可讓您透過以下方式執行相同操作： [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
+在下面的同一屏幕上 [!UICONTROL 如何接收事件] 部分，您可以选择配置如何接收事件。 **[!UICONTROL Webhook]** 允许您提供自定义webhook地址来接收事件，而 **[!UICONTROL 运行时操作]** 允许您使用执行相同的操作 [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
 
-在本教學課程中，選取 **[!UICONTROL Webhook]** 並提供您先前建立的webhook的URL。 完成後，選取 **[!UICONTROL 儲存已設定的事件]** 以完成事件註冊。
+在本教程中，选择 **[!UICONTROL Webhook]** 并提供您之前创建的webhook的URL。 完成后，选择 **[!UICONTROL 保存配置的事件]** 以完成事件注册。
 
 ![](../images/notifications/receive-events.png)
 
-新建立的事件註冊的詳細資訊頁面隨即顯示，您可以在此編輯其設定、檢閱已接收的事件、執行偵錯追蹤，以及新增事件提供者。
+此时将显示新创建的事件注册的详细信息页面，您可以在其中编辑其配置、查看已接收的事件、执行调试跟踪以及添加新的事件提供程序。
 
 ![](../images/notifications/registration-complete.png)
 
 ## 后续步骤
 
-依照本教學課程，您已註冊一個webhook以接收 [!DNL I/O Event] 通知 [!DNL Experience Platform] 和/或 [!DNL Privacy Service]. 如需可用事件的詳細資訊，以及如何解譯每個服務的通知裝載，請參閱以下檔案：
+按照本教程，您已注册要接收的webhook [!DNL I/O Event] 通知 [!DNL Experience Platform] 和/或 [!DNL Privacy Service]. 有关可用事件以及如何解释每个服务的通知负载的详细信息，请参阅以下文档：
 
 * [[!DNL Privacy Service] 通知](../../privacy-service/privacy-events.md)
 * [[!DNL Data Ingestion] 通知](../../ingestion/quality/subscribe-events.md)
-* [[!DNL Flow Service] （來源）通知](../../sources/notifications.md)
+* [[!DNL Flow Service] （源）通知](../../sources/notifications.md)
 
-請參閱 [[!DNL Observability Insights] 概觀](../home.md) 以取得如何監視活動的詳細資訊 [!DNL Experience Platform] 和 [!DNL Privacy Service].
+请参阅 [[!DNL Observability Insights] 概述](../home.md) 了解有关如何监控您的活动的更多信息，请访问 [!DNL Experience Platform] 和 [!DNL Privacy Service].

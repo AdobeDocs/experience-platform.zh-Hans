@@ -1,6 +1,6 @@
 ---
-title: 在Reactor API中分頁回應
-description: 瞭解在Reactor API中列出資源時，如何分頁結果。
+title: 在Reactor API中分页响应
+description: 了解在Reactor API中列出资源时如何分页结果。
 exl-id: bccb6e78-4ac8-4786-b398-6e55109d99dd
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# 在Reactor API中分頁回應
+# 在Reactor API中分页响应
 
-Reactor API傳回的回應會分頁。 預設頁面大小為25個元素。 有關分頁的詳細資訊，請參見 `meta.pagination `API回應物件的區段：
+Reactor API返回的响应将分页。 默认页面大小为25个元素。 有关分页的详细信息，请参见 `meta.pagination `API响应对象的部分：
 
 ```json
 "meta": {
@@ -25,25 +25,25 @@ Reactor API傳回的回應會分頁。 預設頁面大小為25個元素。 有�
 }
 ```
 
-您可以取得特定頁面，並加入以修改頁面大小。 `page` 請求路徑中的查詢引數。
+可以通过包含来获取特定页面并修改页面大小 `page` 查询参数。
 
-## 擷取特定頁面
+## 检索特定页面
 
-若要取得特定頁面：
+获取特定页面：
 
 ```http
 GET /{RESOURCE_TYPE}/{RESOURCE_ID}?page[number]={PAGE_NUMBER}
 ```
 
-## 變更頁面大小
+## 更改页面大小
 
-若要變更頁面大小：
+要更改页面大小，请执行以下操作：
 
 ```http
 GET /{RESOURCE_TYPE}/{RESOURCE_ID}?page[size]={PAGE_SIZE}
 ```
 
-不同的選項可以合併在一起：
+不同的选项可以组合在一起：
 
 ```http
 GET /{RESOURCE_TYPE}/{RESOURCE_ID}?page[size]={PAGE_SIZE}&page[number]={PAGE_NUMBER}

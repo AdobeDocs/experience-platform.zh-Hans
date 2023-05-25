@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題
+keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 使用流程服務API連線到批次目的地並啟用資料
-description: 使用流程服務API的逐步指示，在Experience Platform中建立批次雲端儲存空間或電子郵件行銷目的地並啟用資料
+title: 使用流服务API连接到批处理目标并激活数据
+description: 分步说明如何使用Flow Service API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
@@ -12,80 +12,80 @@ ht-degree: 1%
 
 ---
 
-# 使用流程服務API連線到批次目的地並啟用資料
+# 使用流服务API连接到批处理目标并激活数据
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions).
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
 >
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions).
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
 >
->閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-本教學課程示範如何使用流量服務API建立批次 [雲端儲存空間](../catalog/cloud-storage/overview.md) 或 [電子郵件行銷目的地](../catalog/email-marketing/overview.md)，建立資料流至您新建立的目的地，並透過CSV檔案將資料匯出至您新建立的目的地。
+本教程演示如何使用流服务API创建批处理 [云存储](../catalog/cloud-storage/overview.md) 或 [电子邮件营销目标](../catalog/email-marketing/overview.md)，创建一个数据流到新创建的目标，并通过CSV文件将数据导出到新创建的目标。
 
-本教學課程使用 [!DNL Adobe Campaign] 目的地的所有範例，但步驟對於所有批次雲端儲存和電子郵件行銷目的地都相同。
+本教程使用 [!DNL Adobe Campaign] 所有示例中的目标，但所有批处理云存储和电子邮件营销目标的步骤都相同。
 
-![概述 — 建立目的地和啟用區段的步驟](../assets/api/email-marketing/overview.png)
+![概述 — 创建目标和激活区段的步骤](../assets/api/email-marketing/overview.png)
 
-如果您偏好使用平台使用者介面來連線至目的地並啟用資料，請參閱 [連線目的地](../ui/connect-destination.md) 和 [啟用對象資料以批次設定檔匯出目的地](../ui/activate-batch-profile-destinations.md) 教學課程。
+如果您希望使用Platform用户界面连接到目标并激活数据，请参阅 [连接目标](../ui/connect-destination.md) 和 [将受众数据激活到批量配置文件导出目标](../ui/activate-batch-profile-destinations.md) 教程。
 
 ## 快速入门 {#get-started}
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 可讓您在中建立區段及產生對象 [!DNL Adobe Experience Platform] 從您的 [!DNL Real-Time Customer Profile] 資料。
-* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建区段并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
+* [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您啟動資料至Platform中的批次目的地所需的其他資訊。
+以下部分提供了将数据激活到Platform中的批处理目标所需的其他信息。
 
-### 收集必要的認證 {#gather-required-credentials}
+### 收集所需的凭据 {#gather-required-credentials}
 
-若要完成本教學課程中的步驟，您應準備好下列憑證，端視您要連線及啟用區段的目的地型別而定。
+要完成本教程中的步骤，您应该准备好以下凭据，具体取决于要连接和激活区段的目标类型。
 
-* 對象 [!DNL Amazon S3] 連線： `accessId`， `secretKey`
-* 對象 [!DNL Amazon S3] 連線至 [!DNL Adobe Campaign]： `accessId`， `secretKey`
-* 對於SFTP連線： `domain`， `port`， `username`， `password` 或 `sshKey` （視與FTP位置的連線方法而定）
-* 對象 [!DNL Azure Blob] 連線： `connectionString`
+* 对象 [!DNL Amazon S3] 连接： `accessId`， `secretKey`
+* 对象 [!DNL Amazon S3] 连接至 [!DNL Adobe Campaign]： `accessId`， `secretKey`
+* 对于SFTP连接： `domain`， `port`， `username`， `password` 或 `sshKey` （具体取决于与FTP位置的连接方法）
+* 对象 [!DNL Azure Blob] 连接： `connectionString`
 
 >[!NOTE]
 >
->認證 `accessId`， `secretKey` 的 [!DNL Amazon S3] 連線和 `accessId`， `secretKey` 的 [!DNL Amazon S3] 連線至 [!DNL Adobe Campaign] 相同。
+>凭据 `accessId`， `secretKey` 对象 [!DNL Amazon S3] 连接和 `accessId`， `secretKey` 对象 [!DNL Amazon S3] 连接至 [!DNL Adobe Campaign] 完全相同。
 
-### 讀取範例API呼叫 {#reading-sample-api-calls}
+### 正在读取示例API调用 {#reading-sample-api-calls}
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要和選用標題的值 {#gather-values-headers}
+### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
-* 授權：持有人 `{ACCESS_TOKEN}`
+* 授权：持有者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-中的資源 [!DNL Experience Platform] 可隔離至特定的虛擬沙箱。 在請求中 [!DNL Platform] API中，您可以指定在其中執行作業的沙箱名稱和ID。 這些是選用引數。
+中的资源 [!DNL Experience Platform] 可以隔离到特定的虚拟沙箱。 在请求中 [!DNL Platform] API中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需中沙箱的詳細資訊 [!DNL Experience Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
+>有关中沙箱的详细信息 [!DNL Experience Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
 
 * Content-Type: `application/json`
 
-### API參考檔案 {#api-reference-documentation}
+### API参考文档 {#api-reference-documentation}
 
-在本教學課程中，您可以找到所有API操作的隨附參考檔案。 請參閱 [有關Adobe I/O的流程服務API檔案](https://www.adobe.io/experience-platform-apis/references/flow-service/). 建議您同時使用本教學課程和API參考檔案。
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅 [有关Adobe I/O的流服务API文档](https://www.adobe.io/experience-platform-apis/references/flow-service/). 我们建议您并行使用此教程和API参考文档。
 
-## 取得可用目的地的清單 {#get-the-list-of-available-destinations}
+## 获取可用目标列表 {#get-the-list-of-available-destinations}
 
-![目的地步驟概述步驟1](../assets/api/batch-destination/step1.png)
+![目标步骤概述步骤1](../assets/api/batch-destination/step1.png)
 
-首先，您應決定要將資料啟用至哪個目的地。 首先，請執行呼叫以請求您可以連線並啟用區段的可用目的地清單。 對執行以下GET要求 `connectionSpecs` 端點以傳回可用目的地的清單：
+第一步，您应该决定要将数据激活到的目标。 首先，执行调用以请求可连接和激活区段的可用目标列表。 GET向 `connectionSpecs` 端点返回可用目标列表：
 
 **API格式**
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功的回應包含可用目的地的清單及其唯一識別碼(`id`)。 儲存您計畫使用的目的地值，因為後續步驟會需要該值。 例如，如果您想要連線並傳送區段至 [!DNL Adobe Campaign]，在回應中尋找下列程式碼片段：
+成功响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为后续步骤将要求使用该值。 例如，如果要将区段连接并交付到 [!DNL Adobe Campaign]，在响应中查找以下代码片段：
 
 ```json
 {
@@ -118,9 +118,9 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 }
 ```
 
-下表包含常用批次目的地的連線規格ID以供您參考：
+下表包含常用批处理目标的连接规范ID，供您参考：
 
-| 目标 | 連線規格ID |
+| 目标 | 连接规范ID |
 ---------|----------|
 | [!DNL Adobe Campaign] | `0b23e41a-cb4a-4321-a78f-3b654f5d7d97` |
 | [!DNL Amazon S3] | `4890fc95-5a1f-4983-94bb-e060c08e3f81` |
@@ -132,16 +132,16 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 {style="table-layout:auto"}
 
-## 連線至您的 [!DNL Experience Platform] 資料 {#connect-to-your-experience-platform-data}
+## 连接到您的 [!DNL Experience Platform] 数据 {#connect-to-your-experience-platform-data}
 
-![目的地步驟概述步驟2](../assets/api/batch-destination/step2.png)
+![目标步骤概述步骤2](../assets/api/batch-destination/step2.png)
 
-接下來，您必須連線至 [!DNL Experience Platform] 資料，以便您匯出設定檔資料，並在您偏好的目的地將其啟用。 這包含兩個子步驟，如下所述。
+接下来，您必须连接到 [!DNL Experience Platform] 数据，以便您可以导出配置文件数据并在首选目标中激活它。 这包含下面描述的两个子步骤。
 
-1. 首先，您必須執行呼叫以授權存取中的資料 [!DNL Experience Platform]，方法是設定基礎連線。
-2. 然後，使用基本連線ID執行另一個呼叫，您會在其中建立 *來源連線*，會建立與的連線， [!DNL Experience Platform] 資料。
+1. 首先，您必须执行调用以授权对中的数据的访问 [!DNL Experience Platform]，通过设置基本连接。
+2. 然后，使用基本连接ID执行另一个调用，您将在其中创建 *源连接*，以建立与贵机构的 [!DNL Experience Platform] 数据。
 
-### 授權存取您的資料，於 [!DNL Experience Platform]
+### 授权对您数据的访问 [!DNL Experience Platform]
 
 **API格式**
 
@@ -170,15 +170,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 為Experience Platform的基本連線提供名稱 [!DNL Profile Store]. |
-| `description` | 您可以選擇是否提供基本連線的說明。 |
-| `connectionSpec.id` | 使用連線規格ID進行 [Experience Platform設定檔存放區](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `name` | 提供到Experience Platform的基本连接的名称 [!DNL Profile Store]. |
+| `description` | 或者，您可以为基本连接提供描述。 |
+| `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應包含基本連線的唯一識別碼(`id`)。 將此值儲存為建立來源連線之下一個步驟所需的值。
+成功的响应包含基本连接的唯一标识符(`id`)。 将此值存储为创建源连接的下一步中所需的值。
 
 ```json
 {
@@ -186,7 +186,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 連線至您的 [!DNL Experience Platform] 資料 {#connect-to-platform-data}
+### 连接到您的 [!DNL Experience Platform] 数据 {#connect-to-platform-data}
 
 **API格式**
 
@@ -221,17 +221,17 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供來源連線至Experience Platform的名稱 [!DNL Profile Store]. |
-| `description` | 您可以選擇是否提供來源連線的說明。 |
-| `connectionSpec.id` | 使用連線規格ID進行 [Experience Platform設定檔存放區](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
-| `baseConnectionId` | 使用您在上一步中取得的基本連線ID。 |
-| `data.format` | `CSV` 是目前唯一支援的檔案匯出格式。 |
+| `name` | 为与Experience Platform的源连接提供一个名称 [!DNL Profile Store]. |
+| `description` | 或者，您可以为源连接提供描述。 |
+| `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+| `baseConnectionId` | 使用您在上一步中获取的基本连接ID。 |
+| `data.format` | `CSV` 是当前唯一支持的文件导出格式。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)時，會將來源連線新增至 [!DNL Profile Store]. 這可確認您已成功連線至您的 [!DNL Experience Platform] 資料。 將此值儲存為後續步驟所需的值。
+成功响应将返回唯一标识符(`id`)作为新创建的源连接 [!DNL Profile Store]. 这表示您已成功连接到 [!DNL Experience Platform] 数据。 将此值存储为后续步骤中所需的值。
 
 ```json
 {
@@ -239,16 +239,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-## 連線到批次目的地 {#connect-to-batch-destination}
+## 连接到批处理目标 {#connect-to-batch-destination}
 
-![目的地步驟概述步驟3](../assets/api/batch-destination/step3.png)
+![目标步骤概述步骤3](../assets/api/batch-destination/step3.png)
 
-在此步驟中，您會設定與所需的批次雲端儲存空間或電子郵件行銷目的地的連線。 這包含兩個子步驟，如下所述。
+在此步骤中，您将设置与所需的批处理云存储或电子邮件营销目标的连接。 这包含下面描述的两个子步骤。
 
-1. 首先，您必須透過設定基本連線，執行呼叫以授權對目的地平台的存取。
-2. 然後，使用基本連線ID進行另一個呼叫，您會在其中建立 *目標連線*，會指定儲存體帳戶中傳送已匯出資料檔案的位置，以及匯出資料的格式。
+1. 首先，您必须执行调用以通过设置基本连接来授权对目标平台的访问。
+2. 然后，使用基本连接ID再次调用，并在其中创建 *目标连接*，指定存储帐户中用于提交导出数据文件的位置，以及要导出的数据格式。
 
-### 授權對批次目的地的存取權 {#authorize-access-to-batch-destination}
+### 授权对批次目标的访问 {#authorize-access-to-batch-destination}
 
 **API格式**
 
@@ -258,7 +258,7 @@ POST /connections
 
 **请求**
 
-以下請求會建立與的基本連線 [!DNL Adobe Campaign] 目的地。 視您要將檔案匯出至的儲存位置而定([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])，保留適當的 `auth` 規格並刪除其他專案。
+下面的请求建立与的基本连接 [!DNL Adobe Campaign] 目标。 根据要将文件导出到的存储位置([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])，保留相应的 `auth` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -308,11 +308,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-請參閱下列請求範例，以連線至其他支援的批次雲端儲存空間及電子郵件行銷目的地。
+请参阅下面的示例请求，以连接到其他受支持的批量云存储和电子邮件营销目标。
 
-+++ 連線至的範例要求 [!DNL Amazon S3] 目的地
++++ 要连接的示例请求 [!DNL Amazon S3] 目标
 
-以下請求會建立與的基本連線 [!DNL Amazon S3] 目的地。
+下面的请求建立与的基本连接 [!DNL Amazon S3] 目标。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -340,9 +340,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 連線至的範例要求 [!DNL Azure Blob] 目的地
++++ 要连接的示例请求 [!DNL Azure Blob] 目标
 
-以下請求會建立與的基本連線 [!DNL Azure Blob] 目的地。
+下面的请求建立与的基本连接 [!DNL Azure Blob] 目标。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -369,9 +369,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 連線至的範例要求 [!DNL Oracle Eloqua] 目的地
++++ 要连接的示例请求 [!DNL Oracle Eloqua] 目标
 
-以下請求會建立與的基本連線 [!DNL Oracle Eloqua] 目的地。 根據您要將檔案匯出到的儲存位置，保留適當的 `auth` 規格並刪除其他專案。
+下面的请求建立与的基本连接 [!DNL Oracle Eloqua] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -410,9 +410,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 連線至的範例要求 [!DNL Oracle Responsys] 目的地
++++ 要连接的示例请求 [!DNL Oracle Responsys] 目标
 
-以下請求會建立與的基本連線 [!DNL Oracle Responsys] 目的地。 根據您要將檔案匯出到的儲存位置，保留適當的 `auth` 規格並刪除其他專案。
+下面的请求建立与的基本连接 [!DNL Oracle Responsys] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -451,9 +451,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 連線至的範例要求 [!DNL Salesforce Marketing Cloud] 目的地
++++ 要连接的示例请求 [!DNL Salesforce Marketing Cloud] 目标
 
-以下請求會建立與的基本連線 [!DNL Salesforce Marketing Cloud] 目的地。 根據您要將檔案匯出到的儲存位置，保留適當的 `auth` 規格並刪除其他專案。
+下面的请求建立与的基本连接 [!DNL Salesforce Marketing Cloud] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -492,9 +492,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 使用密碼目的地連線至SFTP的請求範例
++++ 使用密码目标连接到SFTP的请求示例
 
-以下請求會建立與SFTP目的地的基本連線。
+以下请求将建立与SFTP目标的基本连接。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -525,17 +525,17 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供批次目的地的基本連線名稱。 |
-| `description` | 您可以選擇是否提供基本連線的說明。 |
-| `connectionSpec.id` | 使用所需批次目的地的連線規格ID。 您已在步驟中取得此ID [取得可用目的地的清單](#get-the-list-of-available-destinations). |
-| `auth.specname` | 表示目的地的驗證格式。 若要找出目的地的specName，請執行 [對連線規格端點的GET呼叫](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供您所需目的地的連線規格。 尋找引數 `authSpec.name` 在回應中。 <br> 例如，對於Adobe Campaign目的地，您可以使用任何 `S3`， `SFTP with Password`，或 `SFTP with SSH Key`. |
-| `params` | 根據您連線的目的地，您必須提供不同的必要驗證引數。 針對Amazon S3連線，您必須提供Amazon S3儲存位置的存取ID和秘密金鑰。 <br> 若要找出目的地所需的引數，請執行 [對連線規格端點的GET呼叫](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供您所需目的地的連線規格。 尋找引數 `authSpec.spec.required` 在回應中。 |
+| `name` | 为到批处理目标的基本连接提供一个名称。 |
+| `description` | 或者，您可以为基本连接提供描述。 |
+| `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤中获取了此ID [获取可用目标列表](#get-the-list-of-available-destinations). |
+| `auth.specname` | 指示目标的身份验证格式。 要了解目标的specName，请执行 [对连接规范端点的GET调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `authSpec.name` 作为回应。 <br> 例如，对于Adobe Campaign目标，您可以使用任意 `S3`， `SFTP with Password`，或 `SFTP with SSH Key`. |
+| `params` | 根据要连接的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br> 要了解目标所需的参数，请执行 [对连接规范端点的GET调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `authSpec.spec.required` 作为回应。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應包含基本連線的唯一識別碼(`id`)。 將此值儲存為下一個步驟建立目標連線所需的值。
+成功的响应包含基本连接的唯一标识符(`id`)。 将此值存储为创建目标连接时在下一步中所需的值。
 
 ```json
 {
@@ -543,15 +543,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 指定儲存位置和資料格式 {#specify-storage-location-data-format}
+### 指定存储位置和数据格式 {#specify-storage-location-data-format}
 
-[!DNL Adobe Experience Platform] 以下列形式匯出批次電子郵件行銷和雲端儲存目的地的資料： [!DNL CSV] 檔案。 在此步驟中，您可以決定檔案匯出所在儲存位置的路徑。
+[!DNL Adobe Experience Platform] 以以下形式导出批量电子邮件营销和云存储目标的数据 [!DNL CSV] 文件。 在此步骤中，您可以确定导出文件的存储位置中的路径。
 
 >[!IMPORTANT]
 > 
->[!DNL Adobe Experience Platform] 自動將匯出檔案分割為每個檔案500萬筆記錄（列）。 每一列代表一個設定檔。
+>[!DNL Adobe Experience Platform] 自动以每个文件500万条记录（行）拆分导出文件。 每一行表示一个配置文件。
 >
->分割檔案名稱會附加一個數字，指示檔案是較大匯出的一部分，例如： `filename.csv`， `filename_2.csv`， `filename_3.csv`.
+>拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`， `filename_2.csv`， `filename_3.csv`.
 
 **API格式**
 
@@ -561,7 +561,7 @@ POST /targetConnections
 
 **请求**
 
-以下請求會建立目標連線，以 [!DNL Adobe Campaign] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。 根據您要將檔案匯出到的儲存位置，保留適當的 `params` 規格並刪除其他專案。
+以下请求建立了目标连接 [!DNL Adobe Campaign] 目标，以确定导出的文件在存储位置中的登陆位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -604,11 +604,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-請參閱下列範例要求，為其他支援的批次雲端儲存和電子郵件行銷目的地設定儲存位置。
+请参阅下面的示例请求，为其他受支持的批处理云存储和电子邮件营销目标设置存储位置。
 
-+++ 設定儲存位置的請求範例 [!DNL Amazon S3] 目的地
++++ 设置存储位置的示例请求 [!DNL Amazon S3] 目标
 
-以下請求會建立目標連線，以 [!DNL Amazon S3] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。
+以下请求建立了目标连接 [!DNL Amazon S3] 目标，以确定导出的文件在存储位置中的登陆位置。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -642,9 +642,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 設定儲存位置的請求範例 [!DNL Azure Blob] 目的地
++++ 设置存储位置的示例请求 [!DNL Azure Blob] 目标
 
-以下請求會建立目標連線，以 [!DNL Azure Blob] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。
+以下请求建立了目标连接 [!DNL Azure Blob] 目标，以确定导出的文件在存储位置中的登陆位置。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -678,9 +678,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 設定儲存位置的請求範例 [!DNL Oracle Eloqua] 目的地
++++ 设置存储位置的示例请求 [!DNL Oracle Eloqua] 目标
 
-以下請求會建立目標連線，以 [!DNL Oracle Eloqua] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。 根據您要將檔案匯出到的儲存位置，保留適當的 `params` 規格並刪除其他專案。
+以下请求建立了目标连接 [!DNL Oracle Eloqua] 目标，以确定导出的文件在存储位置中的登陆位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -719,9 +719,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 設定儲存位置的請求範例 [!DNL Oracle Responsys] 目的地
++++ 设置存储位置的示例请求 [!DNL Oracle Responsys] 目标
 
-以下請求會建立目標連線，以 [!DNL Oracle Responsys] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。 根據您要將檔案匯出到的儲存位置，保留適當的 `params` 規格並刪除其他專案。
+以下请求建立了目标连接 [!DNL Oracle Responsys] 目标，以确定导出的文件在存储位置中的登陆位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -760,9 +760,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 設定儲存位置的請求範例 [!DNL Salesforce Marketing Cloud] 目的地
++++ 设置存储位置的示例请求 [!DNL Salesforce Marketing Cloud] 目标
 
-以下請求會建立目標連線，以 [!DNL Salesforce Marketing Cloud] 目的地，以判斷匯出的檔案會著陸至您的儲存位置。 根據您要將檔案匯出到的儲存位置，保留適當的 `params` 規格並刪除其他專案。
+以下请求建立了目标连接 [!DNL Salesforce Marketing Cloud] 目标，以确定导出的文件在存储位置中的登陆位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他项。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -801,9 +801,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 設定SFTP目的地儲存位置的請求範例
++++ 为SFTP目标设置存储位置的示例请求
 
-以下請求會建立與SFTP目的地的目標連線，以判斷匯出的檔案會著陸到您的儲存位置。
+以下请求会建立与SFTP目标的目标连接，以确定导出的文件将登陆到您的存储位置的位置。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -838,21 +838,21 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供批次目的地的目標連線名稱。 |
-| `description` | 您可以選擇是否提供目標連線的說明。 |
-| `baseConnectionId` | 使用您在上面步驟中建立之基本連線的ID。 |
-| `connectionSpec.id` | 使用所需批次目的地的連線規格ID。 您已在步驟中取得此ID [取得可用目的地的清單](#get-the-list-of-available-destinations). |
-| `params` | 根據您連線的目的地，您必須為儲存位置提供不同的必要引數。 針對Amazon S3連線，您必須提供Amazon S3儲存位置的存取ID和秘密金鑰。 <br> 若要找出目的地所需的引數，請執行 [對連線規格端點的GET呼叫](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供您所需目的地的連線規格。 尋找引數 `targetSpec.spec.required` 在回應中。 |
-| `params.mode` | 根據目的地支援的模式，您必須在此處提供不同的值。 若要找出目的地所需的引數，請執行 [對連線規格端點的GET呼叫](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供您所需目的地的連線規格。 尋找引數 `targetSpec.spec.properties.mode.enum` ，並選取所需的模式。 |
-| `params.bucketName` | 對於S3連線，請提供要匯出檔案的儲存貯體名稱。 |
-| `params.path` | 對於S3連線，請在要匯出檔案的儲存位置中提供檔案路徑。 |
-| `params.format` | `CSV` 是目前唯一支援的檔案匯出型別。 |
+| `name` | 为到批处理目标的目标连接提供一个名称。 |
+| `description` | 或者，您可以为目标连接提供描述。 |
+| `baseConnectionId` | 使用您在上面步骤中创建的基本连接的ID。 |
+| `connectionSpec.id` | 使用连接规范ID作为所需的批处理目标。 您在步骤中获取了此ID [获取可用目标列表](#get-the-list-of-available-destinations). |
+| `params` | 根据要连接的目标，必须为存储位置提供不同的必需参数。 对于Amazon S3连接，您必须向Amazon S3存储位置提供访问ID和密钥。 <br> 要了解目标所需的参数，请执行 [对连接规范端点的GET调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `targetSpec.spec.required` 作为回应。 |
+| `params.mode` | 根据目标支持的模式，必须在此处提供不同的值。 要了解目标所需的参数，请执行 [对连接规范端点的GET调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `targetSpec.spec.properties.mode.enum` ，然后选择所需的模式。 |
+| `params.bucketName` | 对于S3连接，提供文件将导出到的存储段的名称。 |
+| `params.path` | 对于S3连接，在要导出文件的存储位置中提供文件路径。 |
+| `params.format` | `CSV` 是当前唯一支持的文件导出类型。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)，作為新建立的批次目的地目標連線。 將此值儲存為後續步驟中所需的值。
+成功响应将返回唯一标识符(`id`)，以获取指向批处理目标的新创建目标连接。 将此值存储为后续步骤中所需的值。
 
 ```json
 {
@@ -860,13 +860,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-## 建立資料流 {#create-dataflow}
+## 创建数据流 {#create-dataflow}
 
-![目的地步驟概述步驟4](../assets/api/batch-destination/step4.png)
+![目标步骤概述步骤4](../assets/api/batch-destination/step4.png)
 
-您現在可以使用先前步驟中取得的流量規格、來源連線及目標連線ID，建立您與網站之間 [!DNL Experience Platform] 資料以及匯出資料檔案的目的地。 將此步驟視為建構稍後資料將流經的管道 [!DNL Experience Platform] 以及您想要的目的地。
+现在，您可以使用在之前步骤中获得的流规范、源连接和目标连接ID，在 [!DNL Experience Platform] 数据以及导出数据文件的目标。 将此步骤视为构建管道，数据稍后将通过该管道在 [!DNL Experience Platform] 以及您想要的目的地。
 
-若要建立資料流，請執行POST請求，如下所示，同時在裝載中提供下列提及的值。
+要创建数据流，请执行如下所示的POST请求，同时在有效负载中提供下面提到的值。
 
 **API格式**
 
@@ -916,24 +916,24 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供您正在建立的資料流名稱。 |
-| `description` | 您可以選擇是否提供資料流的說明。 |
-| `flowSpec.Id` | 使用您要連線之批次目的地的流程規格ID。 GET若要擷取流量規格ID，請對 `flowspecs` 端點，如 [流程規格API參考檔案](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). 在回應中，尋找 `upsTo` 並複製您要連線的批次目的地對應ID。 例如，若為Adobe Campaign，請尋找 `upsToCampaign` 並複製 `id` 引數。 |
-| `sourceConnectionIds` | 使用您在步驟中取得的來源連線ID [連線至您的Experience Platform資料](#connect-to-your-experience-platform-data). |
-| `targetConnectionIds` | 使用您在步驟中取得的目標連線ID [連線到批次目的地](#connect-to-batch-destination). |
-| `transformations` | 在下一步中，您將使用要啟動的區段和設定檔屬性填入此區段。 |
+| `name` | 提供正在创建的数据流的名称。 |
+| `description` | 或者，您可以为数据流提供描述。 |
+| `flowSpec.Id` | 为要连接的批处理目标使用流规范ID。 GET要检索流规范ID，请对 `flowspecs` 端点，如 [流量规范API参考文档](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). 在响应中，查找 `upsTo` 并复制要连接的批处理目标的相应ID。 例如，对于Adobe Campaign，查找 `upsToCampaign` 并复制 `id` 参数。 |
+| `sourceConnectionIds` | 使用在步骤中获得的源连接ID [连接到您的Experience Platform数据](#connect-to-your-experience-platform-data). |
+| `targetConnectionIds` | 使用在步骤中获取的目标连接ID [连接到批处理目标](#connect-to-batch-destination). |
+| `transformations` | 在下一步中，您将使用要激活的区段和用户档案属性填充此部分。 |
 
-下表包含常用批次目的地的流量規格ID，供您參考：
+下表包含常用批处理目标的流规范ID以供您参考：
 
-| 目标 | 流量規格ID |
+| 目标 | 流量规范ID |
 ---------|----------|
-| 所有雲端儲存空間目的地([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])和 [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
+| 所有云存储目标([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])和 [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
 | [!DNL Oracle Responsys] | `51d675ce-e270-408d-91fc-22717bdf2148` |
 | [!DNL Salesforce Marketing Cloud] | `493b2bd6-26e4-4167-ab3b-5e910bba44f0` |
 
 **响应**
 
-成功的回應會傳回ID (`id`)的資料流和 `etag`. 請記下這兩個值，因為您會在下一個步驟中需要它們，以啟動區段並匯出資料檔案。
+成功的响应会返回ID (`id`)和 `etag`. 记下这两个值，以便在下一步激活区段和导出数据文件时使用这些值。
 
 ```json
 {
@@ -943,15 +943,15 @@ curl -X POST \
 ```
 
 
-## 將資料啟用至您的新目的地 {#activate-data}
+## 将数据激活到新目标 {#activate-data}
 
-![目的地步驟概述步驟5](../assets/api/batch-destination/step5.png)
+![目标步骤概述步骤5](../assets/api/batch-destination/step5.png)
 
-建立所有連線和資料流後，您現在可以將設定檔資料啟動至目的地平台。 在此步驟中，您可以選取要匯出至目的地的區段和設定檔屬性。
+创建了所有连接和数据流后，您现在可以将配置文件数据激活到目标平台。 在此步骤中，选择要导出到目标的区段和配置文件属性。
 
-您也可以決定匯出檔案的檔案命名格式，以及應該使用哪些屬性 [重複資料刪除索引鍵](../ui/activate-batch-profile-destinations.md#mandatory-keys) 或 [強制屬性](../ui/activate-batch-profile-destinations.md#mandatory-attributes). 在此步驟中，您也可以決定傳送資料至目的地的排程。
+您还可以确定导出文件的文件命名格式以及应使用的属性 [重复数据删除键](../ui/activate-batch-profile-destinations.md#mandatory-keys) 或 [必需属性](../ui/activate-batch-profile-destinations.md#mandatory-attributes). 在此步骤中，您还可以确定将数据发送到目标的计划。
 
-若要啟用新目的地的區段，您必須執行JSONPATCH操作，類似於以下範例。 您可以在一次呼叫中啟用多個區段和設定檔屬性。 若要進一步瞭解JSONPATCH，請參閱 [RFC規格](https://tools.ietf.org/html/rfc6902).
+要将区段激活到新目标，您必须执行JSONPATCH操作，如下所示。 您可以在一次调用中激活多个区段和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902).
 
 **API格式**
 
@@ -1024,40 +1024,40 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `{DATAFLOW_ID}` | 在URL中，使用您在上一步建立的資料流ID。 |
-| `{ETAG}` | 取得 `{ETAG}` 根據上一步驟的回應， [建立資料流](#create-dataflow). 上一步中的回應格式有逸出引號。 您必須在請求的標頭中使用未逸出的值。 請參閱下列範例： <br> <ul><li>回應範例： `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在您的請求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> 每次成功更新資料流時，etag值都會隨之更新。 |
-| `{SEGMENT_ID}` | 提供您要匯出至此目的地的區段ID。 若要擷取您要啟用的區段的區段ID，請參閱 [擷取區段定義](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience Platform API參考中)。 |
+| `{DATAFLOW_ID}` | 在URL中，使用您在上一步中创建的数据流的ID。 |
+| `{ETAG}` | 获取 `{ETAG}` 根据上一步的响应， [创建数据流](#create-dataflow). 上一步中的响应格式带有转义引号。 您必须在请求的标头中使用未转义值。 请参阅以下示例： <br> <ul><li>响应示例： `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> 每次成功更新数据流时，etag值都会更新。 |
+| `{SEGMENT_ID}` | 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请参阅 [检索区段定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience PlatformAPI引用中)。 |
 | `{PROFILE_ATTRIBUTE}` | 例如：`"person.lastName"` |
-| `op` | 用於定義更新資料流所需動作的操作呼叫。 作業包括： `add`， `replace`、和 `remove`. 若要將區段新增至資料流，請使用 `add` 作業。 |
-| `path` | 定義要更新的流程部分。 將區段新增至資料流時，請使用範例中指定的路徑。 |
-| `value` | 您想要用來更新引數的新值。 |
-| `id` | 指定您要新增至目的地資料流的區段ID。 |
-| `name` | *可选*. 指定您要新增至目的地資料流的區段名稱。 請注意，此欄位並非必填欄位，您可以成功將區段新增至目的地資料流，而不需要提供其名稱。 |
-| `filenameTemplate` | 此欄位會決定匯出至目的地之檔案的檔案名稱格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必要。 匯出的檔案包含目的地名稱。</li><li>`%SEGMENT_ID%`：必要。 匯出的檔案包含匯出區段的ID。</li><li>`%SEGMENT_NAME%`: 可选. 匯出的檔案包含匯出的區段名稱。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：選擇性。 選取這兩個選項之一，讓您的檔案包含Experience Platform產生檔案的時間。</li><li>`custom-text`: 可选. 將此預留位置取代為您要在檔案名稱結尾附加的任何自訂文字。</li></ul> <br> 如需設定檔案名稱的詳細資訊，請參閱 [設定檔案名稱](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 批次目的地啟動教學課程中的區段。 |
-| `exportMode` | 必填。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。如需有關這兩個選項的詳細資訊，請參閱 [匯出完整檔案](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [匯出增量檔案](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教學課程中。 |
-| `startDate` | 選取區段應該開始將設定檔匯出至您的目的地的日期。 |
-| `frequency` | 必填。 <br> <ul><li>對於 `"DAILY_FULL_EXPORT"` 匯出模式，您可以選取 `ONCE` 或 `DAILY`.</li><li>對於 `"FIRST_FULL_THEN_INCREMENTAL"` 匯出模式，您可以選取 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
-| `triggerType` | 對象 *批次目的地* 僅限。 只有在選取 `"DAILY_FULL_EXPORT"` 中的模式 `frequency` 選擇器。 <br> 必填。 <br> <ul><li>選取 `"AFTER_SEGMENT_EVAL"` 讓啟動工作在每日Platform批次細分工作完成後立即執行。 這可確保在啟動工作執行時，最新的設定檔會匯出至您的目的地。</li><li>選取 `"SCHEDULED"` 讓啟動工作在固定時間執行。 這可確保Experience Platform設定檔資料在每天的同一時間匯出，但您匯出的設定檔可能不是最新的，這取決於批次細分工作是否在啟動工作開始之前完成。 選取此選項時，您也必須新增 `startTime` 以指出每日匯出應在UTC的哪個時間發生。</li></ul> |
-| `endDate` | 對象 *批次目的地* 僅限。 只有在批次檔案匯出目的地(例如Amazon S3、SFTP或Azure Blob)中將區段新增至資料流時，才需要此欄位。 <br> 選取時不適用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 設定區段成員停止匯出至目的地的日期。 |
-| `startTime` | 對象 *批次目的地* 僅限。 只有在批次檔案匯出目的地(例如Amazon S3、SFTP或Azure Blob)中將區段新增至資料流時，才需要此欄位。 <br> 必填。 選取應產生包含區段成員的檔案並將其匯出至目的地的時間。 |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将区段添加到数据流，请使用 `add` 操作。 |
+| `path` | 定义要更新的流部分。 将区段添加到数据流时，请使用示例中指定的路径。 |
+| `value` | 您希望使用更新参数的新值。 |
+| `id` | 指定要添加到目标数据流的区段的ID。 |
+| `name` | *可选*. 指定要添加到目标数据流的区段名称。 请注意，此字段不是必填字段，您可以成功地将区段添加到目标数据流，而无需提供其名称。 |
+| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必需。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必需。 导出的文件包含导出区段的ID。</li><li>`%SEGMENT_NAME%`: 可选. 导出的文件包含导出区段的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: 可选. 将此占位符替换为您要在文件名末尾附加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
+| `exportMode` | 必需。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
+| `startDate` | 选择区段应开始将用户档案导出到目标的日期。 |
+| `frequency` | 必需。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
+| `triggerType` | 对象 *批处理目标* 仅此而已。 只有在选择 `"DAILY_FULL_EXPORT"` 中的模式 `frequency` 选择器。 <br> 必需。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 使激活作业在每日平台批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。</li><li>选择 `"SCHEDULED"` 使激活作业在固定时间运行。 这可以确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 选择此选项时，您还必须添加 `startTime` 用于指示每日导出应在UTC中的哪个时间发生。</li></ul> |
+| `endDate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 选择时不适用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
+| `startTime` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 必需。 选择应生成包含区段成员的文件并将其导出到目标的时间。 |
 
 {style="table-layout:auto"}
 
 >[!TIP]
 >
-> 另請參閱 [更新資料流中區段的元件](/help/destinations/api/update-destination-dataflows.md#update-segment) 瞭解如何更新匯出區段的各種元件（檔案名稱範本、匯出時間等）。
+> 参见 [更新数据流中区段的组件](/help/destinations/api/update-destination-dataflows.md#update-segment) 了解如何更新导出区段的各种组件（文件名模板、导出时间等）。
 
 **响应**
 
-尋找「202已接受」的回應。 未傳回任何回應內文。 若要驗證請求是否正確，請參閱下一個步驟， [驗證資料流](#validate-dataflow).
+查找202 Accepted响应。 未返回响应正文。 要验证请求是否正确，请参阅下一步， [验证数据流](#validate-dataflow).
 
-## 驗證資料流 {#validate-dataflow}
+## 验证数据流 {#validate-dataflow}
 
-![目的地步驟概述步驟6](../assets/api/batch-destination/step6.png)
+![目标步骤概述步骤6](../assets/api/batch-destination/step6.png)
 
-在教學課程的最後一步，您應驗證區段和設定檔屬性是否確實已正確對應至資料流。
+作为本教程的最后一步，您应该验证区段和配置文件属性是否确实已正确映射到数据流。
 
-若要驗證此正確性，請執行下列GET要求：
+要验证这一点，请执行以下GET请求：
 
 **API格式**
 
@@ -1077,12 +1077,12 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 --header 'If-Match: "{ETAG}"' 
 ```
 
-* `{DATAFLOW_ID}`：使用上一步驟的資料流。
-* `{ETAG}`：使用上一個步驟的etag。
+* `{DATAFLOW_ID}`：使用上一步骤的数据流。
+* `{ETAG}`：使用上一步骤中的etag。
 
 **响应**
 
-傳回的回應應包含在 `transformations` 引數您在上一步中提交的區段和設定檔屬性。 範例 `transformations` 回應中的引數可能如下所示：
+返回的响应应包含在 `transformations` 参数是您在上一步中提交的区段和配置文件属性。 示例 `transformations` 响应中的参数可能如下所示：
 
 ```json
 "transformations":[
@@ -1235,14 +1235,14 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]
 ```
 
-## API錯誤處理 {#api-error-handling}
+## API错误处理 {#api-error-handling}
 
-本教學課程中的API端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](/help/landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](/help/landing/troubleshooting.md#request-header-errors) （位於Platform疑難排解指南中），以取得有關解釋錯誤回應的詳細資訊。
+本教程中的API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](/help/landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](/help/landing/troubleshooting.md#request-header-errors) 有关解释错误响应的更多信息，请参阅Platform疑难解答指南。
 
 ## 后续步骤 {#next-steps}
 
-依照本教學課程所述，您已成功將Platform連線至您偏好的批次雲端儲存空間或電子郵件行銷目的地，並設定資料流至個別目的地，以匯出資料檔案。 傳出資料現在可用於電子郵件行銷活動、目標定位廣告和許多其他使用案例的目的地。 如需詳細資訊，請參閱下列頁面，例如如何使用流量服務API編輯現有資料流：
+通过阅读本教程，您已成功将Platform连接到其中一个首选批量云存储或电子邮件营销目标，并设置了到相应目标的数据流以导出数据文件。 现在，传出数据可用于电子邮件促销活动、定向广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
-* [目的地目錄概觀](../catalog/overview.md)
-* [使用流程服務API更新目的地資料流程](../api/update-destination-dataflows.md)
+* [目标目录概述](../catalog/overview.md)
+* [使用流服务API更新目标数据流](../api/update-destination-dataflows.md)

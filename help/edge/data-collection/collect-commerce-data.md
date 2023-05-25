@@ -1,7 +1,7 @@
 ---
-title: 使用Adobe Experience Platform Web SDK收集商業和產品資訊
-description: 瞭解如何使用Adobe Experience Platform Web SDK新增與產品或購物車相關的資料。
-keywords: 產品；商務；測量；訂購；cartAbandons；結帳；productListAdds；productListOpens；productListRemovals；productListReopens；productListViews；productViews；購買；saveForLaters；currencyCode；付款；paymentAmount；paymentType；transactionID；priceTotal；purceID；purceOrderNumber；
+title: 使用Adobe Experience Platform Web SDK收集商业和产品信息
+description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
+keywords: 产品；商务；测量；量度；订单；cartAbandons；结账；productListAdds；productListOpens；productListRemovals；productListReopens；productListViews；productViews；购买；saveForLaters；currencyCode；付款；paymentAmount；paymentType；transactionID；priceTotal；purceID；purceOrderNumber；
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
 source-git-commit: 51a18ca3a9d0817eafeecea328900eb2f4d1d9a4
 workflow-type: tm+mt
@@ -10,38 +10,38 @@ ht-degree: 6%
 
 ---
 
-# 收集商業和產品資訊
+# 收集商业和产品信息
 
-如果您的網站上有產品，則這是您可能想要傳送以啟用Adobe中大部分功能的預設專案集。 雖然這是建議，但它從一開始就提供一組非常強大的資料。
+如果您的网站上有产品，那么这是您可能需要发送的默认功能集，用于启用Adobe中的大多数功能。 尽管这是一个建议，但它从一开始就提供了一组非常强大的数据。
 
-本檔案使用 [ExperienceEvent商務詳細資料](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 結構描述欄位群組。 此 `commerce` 欄位群組分為兩個部分： `commerce` 物件與 `productListItems` 陣列。 此 `commerce` 物件可讓您指出哪些動作正在發生 `productListItems` 陣列。
-
->[!TIP]
->
->如果您熟悉Adobe Analytics，請參閱 `commerce` 與以下專案關係最密切： `events` 變數。 此 `productListItems` 與 `products` 變數。
-
-## 與產品相關的動作
-
-以下是以下清單 `measures` 可在 `commerce` 物件。
+本文档使用 [ExperienceEvent商业详细信息](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 架构字段组。 此 `commerce` 字段组分为两部分： `commerce` 对象和 `productListItems` 数组。 此 `commerce` 对象可让您指示对以下对象执行的操作 `productListItems` 数组。
 
 >[!TIP]
 >
->測量有兩個欄位： `id` 和 `value`. 大部分時間，您會使用 `value` 僅限欄位(例如， `'value':1`)。 此 `id` 欄位可讓您設定唯一識別碼，以便用於追蹤測量傳送的時間。 請參閱XDM檔案以瞭解 [測量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md).
+>如果您熟悉Adobe Analytics， `commerce` 与以下项目关系最密切： `events` 变量。 此 `productListItems` 与更密切相关的 `products` 变量。
 
-| **測量** | **推荐** | **描述** |
+## 与产品相关的操作
+
+以下是 `measures` 中提供 `commerce` 对象。
+
+>[!TIP]
+>
+>度量值包含两个字段： `id` 和 `value`. 大多数情况下，您将使用 `value` 仅字段(例如， `'value':1`)。 此 `id` 字段允许您设置唯一标识符，用于跟踪度量的发送时间。 请参阅XDM文档，了解 [衡量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md).
+
+| **衡量** | **推荐** | **描述** |
 |---|---|---|
-| [cartAbandons](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmcartabandons) | 可选 | 使用者無法再存取或購買購物車。 |
-| [結帳](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmcheckouts) | 强烈建议 | 使用者不再瀏覽產品，而是正在購買產品。 |
-| [productListAdds](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistadds) | 强烈建议 | 產品會新增至清單。 請務必在 `productListItems` 同時。 |
-| [productListOpens](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistopens) | 可选 | 已建立新的產品清單。 （例如，建立新的購物車。） |
-| [productListRemovals](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistremovals) | 强烈建议 | 產品會從產品清單中移除。 |
-| [productListReopens](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistreopens) | 可选 | 使用者會重新啟用產品清單。 這通常發生在再行銷活動中。 |
-| [productListView](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistviews) | 强烈建议 | 已檢視產品清單。 |
-| [產品檢視](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductviews) | 强烈建议 | 產品檢視。 請務必設定在中檢視的產品 `productListItems`. |
-| [購買](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmpurchases) | 强烈建议 | 已接受訂單。 必須有產品清單。 |
-| [saveForLaters](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmsaveforlaters) | 可选 | 儲存產品以供日後使用。 |
+| [cartAbandons](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmcartabandons) | 可选 | 用户无法再访问或购买购物车。 |
+| [结账](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmcheckouts) | 强烈建议 | 用户不再浏览产品，而是正在购买产品。 |
+| [productListAdd](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistadds) | 强烈建议 | 将产品添加到列表。 请务必在 `productListItems` 同时。 |
+| [productListOpens](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistopens) | 可选 | 将创建新的产品列表。 （例如，创建一个新的购物车。） |
+| [productListRemovals](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistremovals) | 强烈建议 | 从产品列表中删除产品。 |
+| [productListReopens](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistreopens) | 可选 | 用户重新激活产品列表。 这通常发生在再营销活动中。 |
+| [productListView](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductlistviews) | 强烈建议 | 已查看产品列表。 |
+| [产品查看](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmproductviews) | 强烈建议 | 产品视图。 请务必设置在中查看的产品 `productListItems`. |
+| [购买](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmpurchases) | 强烈建议 | 订单已接受。 必须具有产品列表。 |
+| [saveForLaters](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/commerce.schema.md#xdmsaveforlaters) | 可选 | 保存产品以供将来使用。 |
 
-以下是如何設定這些專案的範例 `Measures` （在SDK中）。
+以下是如何设置这些参数的示例 `Measures` 在SDK中。
 
 ```javascript
 alloy("sendEvent", {
@@ -55,21 +55,21 @@ alloy("sendEvent", {
 });
 ```
 
-商務物件也有收集訂單詳細資料的特殊欄位，稱為 `order`.
+商业对象还具有一个用于收集订单详细信息的特殊字段，称为 `order`.
 
-| **訂購** | **Option** | **推荐** | **描述** |
+| **订购** | **Option** | **推荐** | **描述** |
 |---|---|---|---|
-| [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmcurrencycode) |  |  | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 訂單總計的貨幣。 |
-| [payments[paymentItems]](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpayments) |  |  | 訂單上的付款清單。 A [paymentItem](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#payment-item-schema) 包含下列專案。 |
-|  | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmcurrencycode) | 可选 | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 此付款方式的貨幣。 |
-|  | [paymentAmount](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymentamount) | 强烈建议 | 以指定貨幣代碼表示的付款值。 |
-|  | [paymentType](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymenttype) | 强烈建议 | 付款型別(例如： `credit_card`， `gift_card`， `paypal`)。 檢視清單 [已知值](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymenttype-known-values) 以取得詳細資訊。 |
-|  | [transactionID](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmtransactionid) | 可选 | 此付款交易的唯一識別碼。 |
-| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpricetotal) |  | 强烈建议 | 此訂單套用所有折扣和稅金後的總計。 |
-| [purchaseID](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpurchaseid) |  | 強烈建議 | 賣家為此購買所指派的唯一識別碼。 |
-| [purchaseOrderNumber](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpurchaseordernumber) |  | 可选 | 購買者為此購買所指派的唯一識別碼。 |
+| [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmcurrencycode) |  |  | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 订单总计的货币。 |
+| [payments[paymentItems]](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpayments) |  |  | 订单上的付款列表。 A [paymentitem](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#payment-item-schema) 包括以下内容。 |
+|  | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmcurrencycode) | 可选 | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 此付款方式的货币。 |
+|  | [paymentAmount](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymentamount) | 强烈建议 | 以指定的货币代码表示的付款值。 |
+|  | [paymentType](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymenttype) | 强烈建议 | 付款类型(例如， `credit_card`， `gift_card`， `paypal`)。 查看列表 [已知值](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmpaymenttype-known-values) 了解详细信息。 |
+|  | [transactionID](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#xdmtransactionid) | 可选 | 此付款交易记录的唯一ID。 |
+| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpricetotal) |  | 强烈建议 | 应用所有折扣和税费后此订单的总额。 |
+| [purchaseID](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpurchaseid) |  | 强烈推荐 | 卖方为此购买分配的唯一标识符。 |
+| [purchaseOrderNumber](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpurchaseordernumber) |  | 可选 | 购买者为此购买分配的唯一标识符。 |
 
-以下是SDK中典型購買的範例。
+以下是SDK中典型购买的示例。
 
 ```javascript
 alloy("sendEvent",{
@@ -107,19 +107,19 @@ alloy("sendEvent",{
 });
 ```
 
-## 產品清單
+## 产品列表
 
-產品清單會指出哪些產品與對應動作相關。 此清單包含 [productListItems](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md). 每個產品都有許多選用欄位。
+产品列表会指示哪些产品与相应的操作相关。 它是一个 [productListItems](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md). 每个产品都有许多可选字段。
 
 | **字段** | **推荐** | **描述** |
 |---|---|---|
-| [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmcurrencycode) | 可选 | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 產品的貨幣。 只有在您可以擁有具有不同貨幣代碼的產品且套用時，此功能才有用。 例如，當有購買或加入購物車時。 |
-| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | 强烈建议 | 應僅在適用時設定。 例如，可能無法將設定在 `productView` 事件，因為不同產品變數可能會有不同的價格，但 `productListAdds` 事件。 |
-| [product](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | 强烈建议 | 產品的XDM ID。 |
-| [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 訪客用來將產品專案新增至清單的方法。 設定方式 `productListAdds` 測量，且只應在將產品新增至清單時使用。 示例包括 `add to cart button`、`quick add` 和 `upsell`。 |
-| [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | 强烈建议 | 這會設定為產品的顯示名稱或人類看得懂的名稱。 |
-| [數量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmquantity) | 强烈建议 | 客戶表示所需的產品單位數。 應設定於 `productListAdds`， `productListRemoves`， `purchases`， `saveForLaters`、等等。 |
-| [SKU](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md) | 强烈建议 | 存放區維護單位。 這是產品的唯一識別碼。 |
+| [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmcurrencycode) | 可选 | 此 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 产品的货币。 仅当您可以拥有具有不同货币代码的产品并且适用时，此功能才有用。 例如，当有购买或添加到购物车时。 |
+| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | 强烈建议 | 应仅在适用时设置。 例如，可能无法将设置为 `productView` 事件，因为产品不同变体可能具有不同的价格，但 `productListAdds` 事件。 |
+| [product](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | 强烈建议 | 产品的XDM ID。 |
+| [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 访客用来将产品项目添加到列表的方法。 设置方式 `productListAdds` 度量，并且仅当将产品添加到列表时才应使用和。 示例包括 `add to cart button`、`quick add` 和 `upsell`。 |
+| [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | 强烈建议 | 设置为产品的显示名称或人类可读的名称。 |
+| [数量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmquantity) | 强烈建议 | 客户表明的产品需求单位数。 应设置于 `productListAdds`， `productListRemoves`， `purchases`， `saveForLaters`，等等。 |
+| [SKU](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md) | 强烈建议 | 商店保管单位。 它是产品的唯一标识符。 |
 
 ## 示例
 

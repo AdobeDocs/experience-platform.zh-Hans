@@ -1,8 +1,8 @@
 ---
 solution: Experience Platform
-title: 使用查詢服務來探索、驗證及處理儀表板資料集
+title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
-description: 瞭解如何使用查詢服務來探索及處理原始資料集，以便在Experience Platform中支援設定檔、區段和目的地儀表板。
+description: 了解如何使用查询服务来探索和处理原始数据集，以便在Experience Platform中提升用户档案、区段和目标仪表板的性能。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -11,100 +11,100 @@ ht-degree: 0%
 
 ---
 
-# 探索、驗證及處理儀表板資料集，使用 [!DNL Query Service]
+# 使用以下方式浏览、验证和处理功能板数据集 [!DNL Query Service]
 
-Adobe Experience Platform透過Experience PlatformUI中提供的控制面板，提供您組織設定檔、區段和目的地資料的重要資訊。 然後您可以使用Adobe Experience Platform [!DNL Query Service] 探索、驗證及處理原始資料集，以便在資料湖中支援這些儀表板。
+Adobe Experience Platform通过Experience PlatformUI中提供的功能板，提供有关您组织的配置文件、区段和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理数据湖中用于驱动这些功能板的原始数据集。
 
-## 開始使用 [!DNL Query Service]
+## 快速入门 [!DNL Query Service]
 
-Adobe Experience Platform [!DNL Query Service] 透過啟用標準SQL在Data Lake中查詢資料，支援行銷人員從其資料中獲得深入分析。 [!DNL Query Service] 提供使用者介面和API，可用於聯結Data Lake中的任何資料集，以及將查詢結果擷取為新資料集，以用於報表、機器學習或內嵌至Real-Time Customer Profile。
+Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标准SQL在Data Lake中查询数据，从他们的数据中获取见解。 [!DNL Query Service] 提供了一个用户界面和API，可用于连接数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、机器学习或将其摄取到Real-time Customer Profile中。
 
-若要深入瞭解 [!DNL Query Service] 及其在Experience Platform中的角色，請先閱讀 [[!DNL Query Service] 概觀](../query-service/home.md).
+要了解有关 [!DNL Query Service] 及其在Experience Platform中的角色，请首先阅读 [[!DNL Query Service] 概述](../query-service/home.md).
 
-## 存取可用的資料集
+## 访问可用数据集
 
-您可以使用 [!DNL Query Service] 以查詢設定檔、區段和目的地儀表板的原始資料集。 若要檢視您的可用資料集，請在Experience PlatformUI中選取 **資料集** 在左側導覽中開啟「資料集」控制面板。 儀表板會列出貴組織的所有可用資料集。 系統會顯示每個列出資料集的詳細資訊，包括其名稱、資料集所遵守的結構描述，以及最近一次擷取執行的狀態。
+您可以使用 [!DNL Query Service] 查询用户档案、区段和目标功能板的原始数据集。 要查看可用数据集，请在Experience PlatformUI中，选择 **数据集** 在左侧导航中打开数据集仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
-![左側導覽中反白顯示「資料集」索引標籤的「資料集瀏覽」控制面板。](./images/query/browse-datasets.png)
+![左侧导航中突出显示“数据集”选项卡的数据集浏览仪表板。](./images/query/browse-datasets.png)
 
-### 系統產生的資料集
+### 系统生成的数据集
 
 >[!IMPORTANT]
 >
->系統產生的資料集預設為隱藏。 根據預設， [!UICONTROL 瀏覽] 索引標籤僅顯示您已擷取資料的資料集。
+>默认情况下，系统生成的数据集是隐藏的。 默认情况下， [!UICONTROL 浏览] 选项卡仅显示您已将数据摄取到的数据集。
 
-若要檢視系統產生的資料集，請選取篩選圖示(![篩選圖示。](./images/query/filter.png))。
+要查看系统生成的数据集，请选择过滤器图标(![过滤器图标。](./images/query/filter.png))。
 
-![「資料集瀏覽」索引標籤中會反白顯示篩選圖示。](./images/query/filter-datasets.png)
+![突出显示过滤器图标的数据集浏览选项卡。](./images/query/filter-datasets.png)
 
-會顯示一個側欄，其中包含兩個切換 [!UICONTROL 包含在設定檔中] 和 [!UICONTROL 顯示系統資料集]. 選取以下專案的切換： [!UICONTROL 顯示系統資料集] 在資料集的可瀏覽清單中包含系統產生的資料集。
+此时会显示一个侧栏，其中包含两个切换， [!UICONTROL 包含在配置文件中] 和 [!UICONTROL 显示系统数据集]. 选择切换 [!UICONTROL 显示系统数据集] 在数据集的可浏览列表中包含系统生成的数据集。
 
-![「資料集瀏覽」索引標籤中的「顯示系統資料集」切換會反白顯示。](./images/query/show-system-datasets.png)
+![突出显示显示系统数据集切换开关的数据集浏览选项卡。](./images/query/show-system-datasets.png)
 
-### 設定檔屬性資料集
+### 配置文件属性数据集
 
-設定檔儀表板深入分析會繫結至您的組織所定義的合併原則。 對於每個使用中的合併原則，資料湖中都會有一個可用的設定檔屬性資料集。
+配置文件仪表板分析绑定到您的组织定义的合并策略。 对于每个活动的合并策略，数据湖中都有一个可用的配置文件属性数据集。
 
-這些資料集的命名慣例是 **Profile-Snapshot-Export** 後面接著系統產生的隨機英數字元。 例如：`Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`。
+这些数据集的命名规则是 **Profile-Snapshot-Export** 后跟系统生成的随机字母数字值。 例如：`Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`。
 
-若要瞭解每個設定檔快照集匯出資料集的完整結構描述，您可以預覽和探索資料集 [使用資料集檢視器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
+要了解每个配置文件快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![個人資料快照匯出資料集的預覽。](images/query/profile-attribute.png)
+![配置文件快照导出数据集的预览。](images/query/profile-attribute.png)
 
-#### 將設定檔屬性資料集對應到合併原則ID
+#### 将配置文件属性数据集映射到合并策略ID
 
-指派給每個系統產生之設定檔屬性資料集的英數字元值是一個隨機字串，可對應至您的組織所建立其中一個合併原則的合併原則ID。 每個合併原則ID與其相關設定檔屬性資料集字串的對應，會保留在 `adwh_dim_merge_policies` 資料集。
+分配给每个系统生成的配置文件属性数据集的字母数字值是一个随机字符串，可映射到您的组织创建的某个合并策略的合并策略ID。 每个合并策略ID与其相关配置文件属性数据集字符串的映射在 `adwh_dim_merge_policies` 数据集。
 
-此 `adwh_dim_merge_policies` 資料集包含以下欄位：
+此 `adwh_dim_merge_policies` 数据集包含以下字段：
 
 * `merge_policy_name`
 * `merge_policy_id`
 * `merge_policy`
 * `dataset_id`
 
-您可以使用Experience Platform中的查詢編輯器UI探索此資料集。 若要進一步瞭解如何使用查詢編輯器，請參閱 [查詢編輯器UI指南](../query-service/ui/user-guide.md).
+可以使用Experience Platform中的查询编辑器UI浏览此数据集。 要了解有关使用查询编辑器的更多信息，请参阅 [查询编辑器UI指南](../query-service/ui/user-guide.md).
 
-### 區段中繼資料資料集
+### 区段元数据数据集
 
-資料湖中有可用的區段中繼資料資料集，其中包含您組織的每個區段的中繼資料。
+数据湖中有一个可用的区段元数据数据集，其中包含您组织的每个区段的元数据。
 
-此資料集的命名慣例是 **Segmentdefinition-Snapshot-Export** 後面接著英數字元。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
+此数据集的命名约定是 **段定义 — 快照 — 导出** 后跟一个字母数字值。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
-若要瞭解每個區段定義快照匯出資料集的完整結構描述，您可以預覽和探索資料集 [使用資料集檢視器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
+要了解每个区段定义快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![Segmentdefinition-Snapshot-Export資料集的預覽。](images/query/segment-metadata.png)
+![区段定义 — 快照 — 导出数据集的预览。](images/query/segment-metadata.png)
 
-### 目的地中繼資料資料集
+### 目标元数据数据集
 
-貴組織所有已啟用目的地的中繼資料都可作為Data Lake中的原始資料集使用。
+贵组织所有已激活目标的元数据作为原始数据集在数据湖中提供。
 
-此資料集的命名慣例是 **DIM_Destination**.
+此数据集的命名约定是 **DIM_Destination**.
 
-若要瞭解DIM目的地資料集的完整結構描述，您可以預覽和探索資料集 [使用資料集檢視器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
+要了解DIM目标数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
-![DIM_Destination資料集的預覽。](images/query/destinations-metadata.png)
+![DIM_Destination数据集的预览。](images/query/destinations-metadata.png)
 
-## (Beta) Customer Data Platform (CDP)深入分析報表
+## （测试版）客户数据平台(CDP)分析报表
 
 >[!IMPORTANT]
 >
->CDP Insights資料模型功能為Beta版。 其功能和檔案可能會有所變更。
+>CDP分析数据模型功能处于测试阶段。 其功能和文档可能会发生更改。
 
-CDP見解資料模型功能會公開可為各種設定檔、目的地和分段Widget提供見解的SQL。 您可以自訂這些SQl查詢範本，為您的行銷和KPI使用案例建立CDP報表。
+CDP分析数据模型功能可公开支持各种用户档案、目标和分段构件的分析的SQL。 您可以自定义这些SQl查询模板，以便为营销和KPI用例创建CDP报告。
 
-CDP報告提供您設定檔資料及其區段和目的地關係的深入分析。 如需如何操作的詳細資訊，請參閱CDP見解資料模型檔案 [將CDP見解資料模型套用至您的特定KPI使用案例](./cdp-insights-data-model.md).
+CDP报告可让您深入了解用户档案数据及其与区段和目标的关系。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
 
-## 範例查詢
+## 示例查询
 
-以下查詢範例包含可用於下列專案的範例SQL： [!DNL Query Service] 探索、驗證及處理儀表板所需的原始資料集。
+以下示例查询包含可用于以下示例的SQL： [!DNL Query Service] 探索、验证和处理为功能板提供支持的原始数据集。
 
-### 依身分割槽分的設定檔計數
+### 按身份列出的配置文件计数
 
-此設定檔分析提供資料集中所有合併設定檔的身分劃分。
+此配置文件分析提供数据集中所有合并配置文件中的身份划分。
 
 >[!NOTE]
 >
->依身分割槽分的設定檔總數（換言之，將針對每個名稱空間顯示的值相加）可能會高於合併的設定檔總數，因為一個設定檔可能會有多個相關聯的名稱空間。 例如，如果客戶在多個頻道上與您的品牌互動，則多個名稱空間會與該個別客戶相關聯。
+>按身份划分的配置文件总数（即为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
 **查询**
 
@@ -123,9 +123,9 @@ Select
         namespace;
 ```
 
-### 依區段的設定檔計數
+### 按区段列出的配置文件计数
 
-此對象分析提供資料集中每個區段內的合併設定檔總數。 此數字是將區段合併原則套用至設定檔資料的結果，以便將設定檔片段合併在一起，為區段中的每個人形成一個設定檔。
+此受众分析提供数据集中每个区段内合并的用户档案总数。 此数字是将区段合并策略应用于配置文件数据以将配置文件片段合并在一起，从而为区段中的每个人形成一个配置文件的结果。
 
 ```sql
 Select          
@@ -150,6 +150,6 @@ Select
 
 ## 后续步骤
 
-閱讀本指南後，您現在可以使用 [!DNL Query Service] 執行數個查詢，以探索及處理原始資料集，為您的設定檔、區段和目的地儀表板提供強大的功能。
+通过阅读本指南，您现在可以使用 [!DNL Query Service] 执行多个查询以浏览和处理用于支持您的个人资料、区段和目标功能板的原始数据集。
 
-若要進一步瞭解每個儀表板及其量度，請從檔案導覽的可用儀表板清單中選取儀表板。
+要了解有关每个功能板及其量度的更多信息，请从文档导航中的可用功能板列表中选择一个功能板。

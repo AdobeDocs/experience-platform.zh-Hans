@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2020年9月
-description: Adobe Experience Platform 2020年9月發行說明。
+title: Adobe Experience Platform发行说明2020年9月
+description: Adobe Experience Platform 2020年9月版发行说明。
 doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
@@ -28,88 +28,88 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## 数据治理 {#governance}
 
-Adobe Experience Platform資料控管是用於管理客戶資料並確保遵守適用於資料使用的法規、限制和政策的一系列策略與技術。 它在以下方面發揮著關鍵作用 [!DNL Experience Platform] 包括目錄、資料譜系、資料使用標籤、資料存取原則，以及行銷動作資料的存取控制。
+Adobe Experience Platform数据管理是用于管理客户数据并确保遵守适用于数据使用的法规、限制和策略的一系列策略和技术。 它在以下方面发挥着关键作用 [!DNL Experience Platform] 在不同的级别，包括编目、数据谱系、数据使用标签、数据访问策略和对营销活动数据的访问控制。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 資料集標籤UI增強功能 | 已將數個新的排序和篩選控制項新增至資料集標籤UI，以便更輕鬆地使用大型結構描述： <ul><li>根據完整結構描述路徑，依字母順序排序欄位。</li><li>對欄位路徑名稱執行部分搜尋。</li><li>篩選沒有標籤、選定標籤或標籤類別的欄位。</li></ul> |
+| 数据集标签UI增强功能 | 已将多个新的排序和筛选控件添加到数据集标签UI，以便更轻松地使用大型架构： <ul><li>根据完整架构路径按字母顺序对字段排序。</li><li>对字段路径名执行部分搜索。</li><li>筛选没有标签、选定标签或标签类别的字段。</li></ul> |
 
-請參閱 [資料控管概觀](../../data-governance/home.md) 以取得服務的詳細資訊。
+请参阅 [数据治理概述](../../data-governance/home.md) 以了解有关该服务的更多信息。
 
 ## 目标 {#destinations}
 
-在 [Real-time Customer Data Platform](../../rtcdp/overview.md)，目的地是預先建立的與目的地平台的整合，可透過順暢的方式為這些合作夥伴啟用資料。
+In [Real-time Customer Data Platform](../../rtcdp/overview.md)，目标是预先构建的与目标平台的集成，可无缝地向这些合作伙伴激活数据。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| UX改良 | 使用者可以存取內嵌表格動作，以便更輕鬆地存取主要動作，例如新增資料、編輯排程和新增區段。 請參閱 [目的地工作區](../../destinations/ui/destinations-workspace.md) 檔案以取得詳細資訊。 |
+| UX改进 | 用户可以访问内联表操作，以便更轻松地访问主要操作，例如添加数据、编辑计划和添加区段。 请参阅 [目标工作区](../../destinations/ui/destinations-workspace.md) 文档，以了解更多信息。 |
 
-若要進一步瞭解，請造訪 [目的地概觀](../../destinations/home.md)
+要了解更多信息，请访问 [目标概述](../../destinations/home.md)
 
 ## [!DNL Observability Insights] {#observability}
 
-[!DNL Observability Insights] 可讓您透過使用統計量度和事件通知來監視Adobe Experience Platform上的活動。
+[!DNL Observability Insights] 允许您通过使用统计指标和事件通知来监控Adobe Experience Platform上的活动。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe I/O事件通知 | [!DNL Observability Insights] 運用Adobe I/O事件為多個Experience Platform服務建立事件通知。 通知裝載會傳送至已設定的webhook，您隨後可以使用它來自動化後續的流程。 |
+| Adobe I/O事件通知 | [!DNL Observability Insights] 利用Adobe I/O事件为多个Experience Platform服务创建事件通知。 通知有效负载将发送到配置的webhook，然后您可以使用它来自动化进一步的下游进程。 |
 
-請參閱 [[!DNL Observability Insights] 概觀](../../observability/home.md) 以取得服務的詳細資訊。
+请参阅 [[!DNL Observability Insights] 概述](../../observability/home.md) 以了解有关该服务的更多信息。
 
 ## [!DNL Privacy Service] {#privacy}
 
-幾項法律和組織法規授予使用者權利，讓使用者有權應要求從您的資料存放區存取或刪除其個人資料。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和使用者介面，協助您管理客戶的這些資料請求。 替換為 [!DNL Privacy Service]，您可以提交存取和刪除Adobe Experience Cloud應用程式中私人或個人客戶資料的請求，協助實現法律和組織隱私法規的自動合規性。
+一些法律和组织法规授予用户权利，允许他们根据请求从您的数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，以帮助您管理来自客户的数据请求。 替换为 [!DNL Privacy Service]，您可以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 支援LGPD （巴西） | 隱私權工作現在可以在巴西的 [!DNL Lei Geral de Proteção de Dados] (LGPD)法規。 這些工作會根據法規代碼進行追蹤 `lgpd_bra`. |
+| 支持LGPD（巴西） | 现在，隐私工作可以在巴西的 [!DNL Lei Geral de Proteção de Dados] (LGPD)法规。 这些作业根据法规代码进行跟踪 `lgpd_bra`. |
 
-請參閱 [Privacy Service概觀](../../privacy-service/home.md) 以取得服務的詳細資訊。
+请参阅 [Privacy Service概述](../../privacy-service/home.md) 以了解有关该服务的更多信息。
 
 ## 实时客户资料 {#profile}
 
-Adobe Experience Platform可讓您為客戶推動協調、一致且相關的體驗，無論客戶在哪裡或何時與您的品牌互動。 替換為 [!DNL Real-Time Customer Profile]，您可以看到結合來自多個管道（包括線上、離線、CRM和第三方資料）之資料的每個個別客戶的整體檢視。 [!DNL Profile] 可讓您將不同的客戶資料合併成統一的檢視，針對每個客戶互動提供可採取行動且附有時間戳記的說明。
+通过Adobe Experience Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。 替换为 [!DNL Real-Time Customer Profile]，您可以看到合并了来自多个渠道（包括在线、离线、CRM和第三方数据）的数据的每个客户的整体视图。 [!DNL Profile] 允许您将不同的客户数据整合到一个统一的视图中，并提供每个客户交互的可操作、带时间戳的帐户。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 設定檔檢視器 | Platform UI中的設定檔檢視器已更新，成為具有完整自訂功能的儀表板。 使用者現在可以選擇執行下列工作： <ul><li>更新基本資訊Widget中選取的標準與自訂屬性。</li><li>建立、編輯和移除自訂Widget</li><li>調整大小並重新排列Widget</li></ul> |
+| 配置文件查看器 | 平台UI中的配置文件查看器已更新为带有完全自定义的功能板。 用户现在可以选择执行以下任务： <ul><li>更新基本信息小部件中选定的标准和自定义属性。</li><li>创建、编辑和删除自定义构件</li><li>调整构件大小并重新排列构件</li></ul> |
 
-如需詳細資訊，請參閱 [!DNL Real-Time Customer Profile]，包括使用的教學課程和最佳實務 [!DNL Profile] 資料，請閱讀 [即時客戶個人檔案總覽](../../profile/home.md).
+有关的详细信息 [!DNL Real-Time Customer Profile]，包括有关使用的教程和最佳实践 [!DNL Profile] 数据，请阅读 [Real-time Customer Profile概述](../../profile/home.md).
 
 ## 分段服务 {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供使用者介面和RESTful API，可讓您建立區段並從 [!DNL Real-Time Customer Profile] 資料。 這些區段會集中設定並維護於 [!DNL Platform]，讓任何Adobe應用程式都能輕鬆存取。
+Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您从构建区段和生成受众。 [!DNL Real-Time Customer Profile] 数据。 这些区段集中配置并维护于 [!DNL Platform]，便于任何Adobe应用程序访问。
 
-[!DNL Segmentation Service] 透過描述可區分客戶群內可銷售人員群組的條件，來定義設定檔的特定子集。 區段能以記錄資料（例如人口資訊）或代表客戶與品牌互動的時間序列事件為基礎。
+[!DNL Segmentation Service] 通过描述用于区分客户群内可销售人员组的标准，来定义用户档案的特定子集。 区段可以基于记录数据（例如人口统计信息）或表示客户与您的品牌互动的时间系列事件。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 匯出工作 | 已新增旗標，以允許將區段評估為匯出作業的一部分。 因此，使用者可以在單一工作中執行細分和匯出。 |
-| 合併原則 | 單一批次分段工作中可包含多個合併原則。 |
+| 导出作业 | 添加了一个标志，以允许将区段作为导出作业的一部分进行评估。 因此，用户可以在单个作业中运行分段和导出。 |
+| 合并策略 | 可以在单个批量分段作业中包含多个合并策略。 |
 
-如需詳細資訊，請參閱 [!DNL Segmentation Service]，請參閱 [區段概觀](../../segmentation/home.md)
+有关的详细信息 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md)
 
 ## 源 {#sources}
 
-Adobe Experience Platform可從外部來源內嵌資料，同時允許您使用建構、加標籤及增強該資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用来构建、标记和增强这些数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 自動對應 | [!DNL Platform] 根據使用者選取的目標結構描述或資料集，在資料擷取工作流程期間提供自動對應的智慧型建議。 您可以手動調整彈性的自動對應規則，以符合您的使用案例。 |
-| UX改良 | 使用者可以存取內嵌表格動作，以便更輕鬆地存取主要動作，例如新增資料、編輯排程和新增區段。 請參閱 [監控資料流](../../sources/tutorials/ui/monitor.md) 檔案以取得詳細資訊。 |
+| 自动映射 | [!DNL Platform] 根据用户选择的目标架构或数据集，在数据摄取工作流期间为自动映射提供智能推荐。 您可以手动调整灵活的自动映射规则以适合您的用例。 |
+| UX改进 | 用户可以访问内联表操作，以便更轻松地访问主要操作，例如添加数据、编辑计划和添加区段。 请参阅 [监测数据流](../../sources/tutorials/ui/monitor.md) 文档，以了解更多信息。 |
 
-若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).
+要了解有关源的更多信息，请参阅 [源概述](../../sources/home.md).

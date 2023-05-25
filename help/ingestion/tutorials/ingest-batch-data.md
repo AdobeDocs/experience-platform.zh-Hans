@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；擷取；擷取批次資料；教學課程；批次擷取；教學課程；ui指南；
+keywords: Experience Platform；主页；热门主题；摄取；摄取批量数据；教程；批量摄取；教程；ui指南；
 solution: Experience Platform
-title: 將資料擷取至Experience Platform
+title: 将数据摄取到Experience Platform
 type: Tutorial
-description: Adobe Experience Platform可讓您輕鬆地將資料匯入Parquet檔案形式的批次檔案，或是符合已知Experience Data Model (XDM)結構的資料。
+description: Adobe Experience Platform允许您轻松地将数据作为Parquet文件形式的批处理文件或与已知Experience Data Model (XDM)架构相符的数据导入。
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -14,142 +14,142 @@ ht-degree: 1%
 
 # 将数据摄取到 Adobe Experience Platform
 
-Adobe Experience Platform可讓您輕鬆將資料匯入 [!DNL Platform] 作為批次檔案。 要擷取的資料範例可能包括來自CRM系統中平面檔案（例如Parquet檔案）的設定檔資料，或是符合已知的資料 [!DNL Experience Data Model] (XDM)結構描述。
+Adobe Experience Platform允许您轻松地将数据导入 [!DNL Platform] 作为批处理文件。 要引入的数据的示例可能包括CRM系统中平面文件（如Parquet文件）的配置文件数据或与已知数据相符的数据 [!DNL Experience Data Model] 架构注册表中的(XDM)架构。
 
 ## 快速入门
 
-若要完成本教學課程，您必須擁有 [!DNL Experience Platform]. 如果您無權存取中的組織 [!DNL Experience Platform]，請在繼續之前聯絡您的系統管理員。
+要完成本教程，您必须拥有 [!DNL Experience Platform]. 如果您无权访问中的组织 [!DNL Experience Platform]，请在继续之前与系统管理员联系。
 
-如果您偏好使用資料擷取API來擷取資料，請先閱讀 [批次擷取開發人員指南](../batch-ingestion/api-overview.md).
+如果您希望使用数据摄取API来摄取数据，请首先阅读 [批量摄取开发人员指南](../batch-ingestion/api-overview.md).
 
-## 資料集工作區
+## 数据集工作区
 
-內的資料集工作區 [!DNL Experience Platform] 可讓您檢視和管理貴組織建立的所有資料集，以及建立新的資料集。
+中的数据集工作区 [!DNL Experience Platform] 允许您查看和管理组织创建的所有数据集，并创建新数据集。
 
-按一下以檢視資料集工作區 **[!UICONTROL 資料集]** 左側導覽中的。 資料集工作區包含資料集清單，包括顯示名稱、建立日期（日期和時間）、來源、結構描述和上次批次狀態，以及上次更新資料集的日期和時間的欄。
+通过单击查看数据集工作区 **[!UICONTROL 数据集]** 在左侧导航栏中。 数据集工作区包含数据集列表，其中包括显示名称、创建（日期和时间）、源、架构和上次批次状态以及上次更新数据集的日期和时间的列。
 
 >[!NOTE]
 >
->按一下搜尋列旁的篩選圖示，即可使用篩選功能，只檢視針對以下專案啟用的資料集： [!DNL Profile].
+>单击搜索栏旁的过滤器图标可使用过滤功能仅查看那些启用的数据集 [!DNL Profile].
 
-![檢視所有資料集](../images/tutorials/ingest-batch-data/datasets-overview.png)
+![查看所有数据集](../images/tutorials/ingest-batch-data/datasets-overview.png)
 
-## 建立資料集
+## 创建数据集
 
-若要建立資料集，請按一下 **[!UICONTROL 建立資料集]** 資料集工作區的右上角。
+要创建数据集，请单击 **[!UICONTROL 创建数据集]** 数据集工作区的右上角。
 
 ![](../images/tutorials/ingest-batch-data/click-create-datasets.png)
 
-於 **[!UICONTROL 建立資料集]** 畫面，選擇您是否要&quot;[!UICONTROL 從結構描述建立資料集]「或」[!UICONTROL 從CSV檔案建立資料集]「。
+在 **[!UICONTROL 创建数据集]** 屏幕中，选择是否要“[!UICONTROL 从架构创建数据集]“或”[!UICONTROL 从CSV文件创建数据集]“。
 
-在本教學課程中，將使用結構描述來建立資料集。 按一下 **[!UICONTROL 從結構描述建立資料集]** 以繼續。
+在本教程中，将使用架构创建数据集。 单击 **[!UICONTROL 从架构创建数据集]** 以继续。
 
-![選取資料來源](../images/tutorials/ingest-batch-data/create-dataset.png)
+![选择数据源](../images/tutorials/ingest-batch-data/create-dataset.png)
 
-## 選取資料集結構描述
+## 选择数据集架构
 
-於 **[!UICONTROL 選取結構描述]** 熒幕上，按一下您要使用之綱要旁的單選按鈕來選擇綱要。 在本教學課程中，將使用忠誠會員結構描述建立資料集。 使用搜尋列篩選結構描述是尋找確切結構描述的實用方法。
+在 **[!UICONTROL 选择架构]** 屏幕上，通过单击要使用的方案旁边的单选按钮来选择方案。 在本教程中，将使用忠诚度成员架构创建数据集。 使用搜索栏筛选架构是一种查找您要查找的确切架构的有用方法。
 
-選取要使用的綱要旁的單選按鈕後，請按一下 **[!UICONTROL 下一個]**.
+选中要使用的模式旁边的单选按钮后，单击 **[!UICONTROL 下一个]**.
 
-![選取結構描述](../images/tutorials/ingest-batch-data/select-schema.png)
+![选择架构](../images/tutorials/ingest-batch-data/select-schema.png)
 
 ## 配置数据集
 
-於 **[!UICONTROL 設定資料集]** 畫面中，您必須為資料集命名，並可能提供資料集的說明。
+在 **[!UICONTROL 配置数据集]** 屏幕中，您需要为数据集命名，并且还可以提供数据集的描述。
 
-**資料集名稱附註：**
+**有关数据集名称的注释：**
 
-- 資料集名稱應簡短且具有描述性，以便日後在程式庫中輕鬆找到資料集。
-- 資料集名稱必須是唯一的，這表示資料集名稱也應足夠具體，以便將來不會重複使用。
-- 最佳實務是使用說明欄位來提供資料集的額外資訊，因為這樣可協助其他使用者日後區分資料集。
+- 数据集名称应简短且具有描述性，以便以后可以在库中轻松找到数据集。
+- 数据集名称必须是唯一的，这意味着它还应该足够具体，以便将来不会重复使用。
+- 最佳实践是使用描述字段提供有关数据集的附加信息，因为它可能有助于其他用户将来区分数据集。
 
-資料集有了名稱和說明後，請按一下 **[!UICONTROL 完成]**.
+在数据集具有名称和描述后，单击 **[!UICONTROL 完成]**.
 
 ![配置数据集](../images/tutorials/ingest-batch-data/configure-dataset.png)
 
-## 資料集活動
+## 数据集活动
 
-現在已建立空白的資料集，且您已返回 **[!UICONTROL 資料集活動]** 資料集工作區中的「 」索引標籤。 您應該會在工作區的左上角看到資料集的名稱，同時會看到「尚未新增任何批次」的通知。 這是正常現象，因為您尚未將任何批次新增至此資料集。
+现在已创建一个空数据集，并且您已经返回到 **[!UICONTROL 数据集活动]** 选项卡。 您应该会在工作区的左上角看到数据集的名称，并显示“未添加任何批次”的通知。 这是正常情况，因为您尚未将任何批次添加到此数据集。
 
-在資料集工作區的右側，您會看到 **[!UICONTROL 資訊]** 索引標籤內含與新資料集相關的資訊，例如資料集ID、名稱、說明、表格名稱、結構、串流和來源。 「資訊」索引標籤也包含資料集的建立時間及其上次修改日期的相關資訊。
+在数据集工作区的右侧，您将看到 **[!UICONTROL 信息]** 选项卡，其中包含与新数据集相关的信息，例如数据集ID、名称、描述、表名称、架构、流和源。 信息选项卡还包括有关数据集的创建时间及其上次修改日期的信息。
 
-另外，在「資訊」標籤中為  **[!UICONTROL 設定檔]** 用於啟用您的資料集以搭配使用的切換按鈕 [!DNL Real-Time Customer Profile]. 使用此切換開關，以及 [!DNL Real-Time Customer Profile]，將於下一節中更詳細地說明。
+另外，“信息”选项卡中的  **[!UICONTROL 个人资料]** 用于启用数据集以供使用的切换开关 [!DNL Real-Time Customer Profile]. 使用此切换开关，以及 [!DNL Real-Time Customer Profile]，将在下一节中详细解释。
 
-![資料集活動](../images/tutorials/ingest-batch-data/sample-dataset.png)
+![数据集活动](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
-## 啟用資料集 [!DNL Real-Time Customer Profile]
+## 为以下项启用数据集 [!DNL Real-Time Customer Profile]
 
-資料集是用來將資料擷取到 [!DNL Experience Platform]，而這些資料最終可用來識別個人，並將來自多個來源的資訊彙整在一起。 將資訊拼接在一起稱為 [!DNL Real-Time Customer Profile]. 為了 [!DNL Platform] 以得知哪些資訊應包含在 [!DNL Real-Time Profile]，資料集可以使用以下專案標籤為包含： **[!UICONTROL 設定檔]** 切換。
+数据集用于将数据摄取到 [!DNL Experience Platform]，该数据最终用于识别个人并将来自多个来源的信息拼合在一起。 将信息拼合在一起称为 [!DNL Real-Time Customer Profile]. 为了 [!DNL Platform] 了解应包含在 [!DNL Real-Time Profile]，可以使用将数据集标记为包含 **[!UICONTROL 个人资料]** 切换。
 
-依預設，此切換為關閉。 如果您選擇開啟 [!DNL Profile]，所有內嵌至資料集的資料，都會用於協助識別個人並將其 [!DNL Real-Time Profile].
+默认情况下，此切换处于关闭状态。 如果您选择打开 [!DNL Profile]，则摄取到数据集中的所有数据将用于帮助识别个人并将其 [!DNL Real-Time Profile].
 
-若要深入瞭解 [!DNL Real-Time Customer Profile] 並使用身分，請檢閱 [Identity Service](../../identity-service/home.md) 說明檔案。
+要了解有关 [!DNL Real-Time Customer Profile] 并使用标识，请查看 [Identity Service](../../identity-service/home.md) 文档。
 
-啟用資料集的方式 [!DNL Real-Time Customer Profile]，按一下 **[!UICONTROL 設定檔]** 切換至 **[!UICONTROL 資訊]** 標籤。
+启用数据集 [!DNL Real-Time Customer Profile]，单击 **[!UICONTROL 个人资料]** 切换到 **[!UICONTROL 信息]** 选项卡。
 
-![設定檔切換](../images/tutorials/ingest-batch-data/dataset-profile-toggle.png)
+![配置文件切换](../images/tutorials/ingest-batch-data/dataset-profile-toggle.png)
 
-系統會顯示一個對話方塊，要求您確認要啟用資料集 [!DNL Real-Time Customer Profile].
+此时将显示一个对话框，要求您确认要为以下项启用数据集 [!DNL Real-Time Customer Profile].
 
-![啟用設定檔對話方塊](../images/tutorials/ingest-batch-data/enable-dataset-for-profile.png)
+![启用配置文件对话框](../images/tutorials/ingest-batch-data/enable-dataset-for-profile.png)
 
-按一下 **[!UICONTROL 啟用]** 而且切換會變成藍色，表示已開啟。
+单击 **[!UICONTROL 启用]** 并且切换将变为蓝色，表示已打开。
 
-![已為設定檔啟用](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)
+![已为配置文件启用](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)
 
-## 新增資料到資料集
+## 将数据添加到数据集
 
-資料可以透過多種不同方式新增到資料集中。 您可以選擇使用 [!DNL Data Ingestion] API或ETL合作夥伴，例如 [!DNL Unifi] 或 [!DNL Informatica]. 在本教學課程中，將會使用將資料新增至資料集 **[!UICONTROL 新增資料]** UI中的索引標籤。
+可以通过多种不同的方式将数据添加到数据集中。 您可以选择使用 [!DNL Data Ingestion] API或ETL合作伙伴，例如 [!DNL Unifi] 或 [!DNL Informatica]. 在本教程中，将使用将数据添加到数据集 **[!UICONTROL 添加数据]** 选项卡。
 
-若要開始將資料新增至資料集，請按一下 **[!UICONTROL 新增資料]** 標籤。 您現在可以拖放檔案，或瀏覽電腦尋找要新增的檔案。
+要开始将数据添加到数据集，请单击 **[!UICONTROL 添加数据]** 选项卡。 您现在可以拖放文件或浏览计算机以查找要添加的文件。
 
 >[!NOTE]
 >
->Platform支援兩種檔案型別以進行資料擷取：Parquet或JSON。 您一次最多可以新增5個檔案，每個檔案的最大檔案大小為1 GB。
+>Platform支持两种文件类型以进行数据摄取：Parquet或JSON。 一次最多可以添加5个文件，每个文件的最大文件大小为1 GB。
 
-![新增資料索引標籤](../images/tutorials/ingest-batch-data/drag-and-drop.png)
+![“添加数据”选项卡](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
-## 上傳檔案
+## 上传文件
 
-拖放（或瀏覽並選取）您要上傳的Parquet或JSON檔案後， [!DNL Platform] 將立即開始處理檔案，並 **[!UICONTROL 正在上傳]** 對話方塊將顯示在 **[!UICONTROL 新增資料]** 標籤中顯示的檔案上傳進度。
+拖放（或浏览并选择）要上载的Parquet或JSON文件后， [!DNL Platform] 将立即开始处理该文件并 **[!UICONTROL 正在上传]** 对话框将显示在 **[!UICONTROL 添加数据]** 选项卡中显示文件上传的进度。
 
-![上傳對話方塊](../images/tutorials/ingest-batch-data/uploading-file.png)
+![上传对话框](../images/tutorials/ingest-batch-data/uploading-file.png)
 
-## 資料集量度
+## 数据集量度
 
-檔案上傳完成後， **[!UICONTROL 資料集活動]** 索引標籤不再顯示「未新增任何批次」。 取而代之的是 **[!UICONTROL 資料集活動]** 索引標籤現在會顯示資料集量度。 在此階段，所有量度都會顯示「0」，因為批次尚未載入。
+文件上传完成后， **[!UICONTROL 数据集活动]** 选项卡不再显示“未添加任何批次”。 相反， **[!UICONTROL 数据集活动]** 选项卡现在显示数据集量度。 此时，所有量度都将显示“0”，因为批次尚未加载。
 
-標籤底部有一個清單，顯示 **[!UICONTROL 批次識別碼]** 剛從擷取的資料中 [「新增資料至資料集」](#add-data-to-dataset) 程式。 也包括與批次相關的資訊，包括擷取日期、擷取的記錄數以及目前的批次狀態。
+选项卡底部是一个列表，其中显示 **[!UICONTROL 批次ID]** 从以下位置摄取的数据： [&quot;将数据添加到数据集&quot;](#add-data-to-dataset) 进程。 还包括与批相关的信息，包括摄取日期、摄取记录数和当前批状态。
 
-![資料集量度](../images/tutorials/ingest-batch-data/batch-id.png)
+![数据集量度](../images/tutorials/ingest-batch-data/batch-id.png)
 
-## 批次詳細資料
+## 批次详细信息
 
-按一下 **[!UICONTROL 批次識別碼]** 若要檢視 **[!UICONTROL 批次總覽]**，顯示批次的其他詳細資訊。 批次載入完成後，批次的相關資訊將會更新，以顯示擷取的記錄數量和檔案大小。 狀態也會變更為「成功」或「失敗」。 如果批次失敗 **[!UICONTROL 錯誤代碼]** 區段將包含有關擷取期間任何錯誤的詳細資訊。
+单击 **[!UICONTROL 批次ID]** 查看 **[!UICONTROL 批次概述]**，显示有关批次的其他详细信息。 加载完批次后，批次的相关信息将更新以显示摄取的记录数和文件大小。 状态也将更改为“成功”或“失败”。 如果批次失败， **[!UICONTROL 错误代码]** 部分将包含有关摄取期间出现的任何错误的详细信息。
 
-如需有關批次擷取的詳細資訊和常見問題，請參閱 [批次擷取疑難排解指南](../batch-ingestion/troubleshooting.md).
+有关批量摄取的更多信息和常见问题解答，请参阅 [批量摄取疑难解答指南](../batch-ingestion/troubleshooting.md).
 
-若要返回 **[!UICONTROL 資料集活動]** 畫面中，按一下資料集的名稱(**[!UICONTROL 熟客方案細節]**)中。
+要返回到 **[!UICONTROL 数据集活动]** 屏幕中，单击数据集的名称(**[!UICONTROL 忠诚度详细信息]**)。
 
-![批次總覽](../images/tutorials/ingest-batch-data/batch-details.png)
+![批次概述](../images/tutorials/ingest-batch-data/batch-details.png)
 
-## 預覽資料集
+## 预览数据集
 
-資料集準備就緒後，將有一個選項可 **[!UICONTROL 預覽資料集]** 顯示在上方 **[!UICONTROL 資料集活動]** 標籤。
+在数据集准备就绪后，可以使用一个选项来 **[!UICONTROL 预览数据集]** 显示在顶部 **[!UICONTROL 数据集活动]** 选项卡。
 
-按一下 **[!UICONTROL 預覽資料集]** 以開啟顯示資料集內範例資料的對話方塊。 如果資料集是使用結構描述建立的，則資料集結構描述的詳細資料將顯示在預覽的左側。 您可以使用箭頭來展開結構描述，以檢視結構描述結構。 預覽資料中的每個欄標題都代表資料集中的欄位。
+单击 **[!UICONTROL 预览数据集]** 打开一个对话框，其中显示数据集中的示例数据。 如果数据集是使用架构创建的，则数据集架构的详细信息将显示在预览的左侧。 您可以使用箭头展开架构以查看架构结构。 预览数据中的每个列标题表示数据集中的一个字段。
 
 ![数据集详细信息](../images/tutorials/ingest-batch-data/dataset-preview.png)
 
-## 後續步驟和其他資源
+## 后续步骤和其他资源
 
-現在您已建立資料集並成功將資料內嵌至 [!DNL Experience Platform]，您可以重複這些步驟來建立新資料集，或將更多資料擷取至現有資料集。
+现在，您已创建一个数据集并成功将数据摄取到 [!DNL Experience Platform]，您可以重复这些步骤以创建新数据集或将更多数据摄取到现有数据集。
 
-若要進一步瞭解批次擷取，請閱讀 [批次擷取概觀](../batch-ingestion/overview.md) 並透過觀看以下影片來補充您的學習。
+要了解有关批量摄取的更多信息，请阅读 [批量摄取概述](../batch-ingestion/overview.md) 并通过观看以下视频来补充您的学习。
 
 >[!WARNING]
 >
->此 [!DNL Platform] 以下影片中顯示的UI已過期。 請參閱上述檔案，瞭解最新的UI熒幕擷取畫面及功能。
+>此 [!DNL Platform] 以下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)

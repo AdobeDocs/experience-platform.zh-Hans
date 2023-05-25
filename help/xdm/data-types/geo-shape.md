@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；地理；地理形狀；資料型別；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地域；地理形状；数据类型；数据类型；
 solution: Experience Platform
-title: 地理形狀資料型別
-description: 本檔案提供地理形狀XDM資料型別的概觀。
+title: 地理形状数据类型
+description: 本文档概述了地理形状XDM数据类型。
 exl-id: 50b9d783-a555-45eb-b154-7dc71389e224
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,18 +11,18 @@ ht-degree: 2%
 
 ---
 
-# [!UICONTROL 地理形狀] 資料型別
+# [!UICONTROL 地理形状] 数据类型
 
-[!UICONTROL 地理形狀] 是描述地理區域形狀的標準XDM資料型別。 此資料型別以記錄的公開規格為基礎 [schema.org](https://schema.org/GeoShape).
+[!UICONTROL 地理形状] 是描述地理区域形状的标准XDM数据类型。 此数据类型基于上记录的公共规范 [schema.org](https://schema.org/GeoShape).
 
 <img src="../images/data-types/geo-shape.png" width="500" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_schema.box` | 陣列 [[!UICONTROL 地理座標]](./geo-coordinates.md) | 描述由兩個座標形成的矩形所圍起來的地理區域。 第一個座標是矩形的下角，第二個座標是上角。 |
-| `_schema.circle` | 陣列 [[!UICONTROL 地理座標]](./geo-coordinates.md) | 描述以地理座標為中心的特定半徑圓形區域。 |
-| `_schema.polygon` | [[!UICONTROL 地理圈]](./geo-circle.md) | 一系列四個或更多座標，其中第一個和最後一個座標完全相同。 |
-| `_schema.description` | 字符串 | 形狀定義內容的說明。 |
-| `_schema.elevation` | 双精度 | 形狀的特定或最小仰角。 此值符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基準，並以公尺測量。 搭配 `ceiling`，此屬性可用來表示位置的三維邊界方框。 |
-| `_id` | 字符串 | 形狀的系統產生的唯一識別碼。 |
-| `ceiling` | 双精度 | 形狀的最大上升量。 此屬性只有在搭配使用時才有效 `elevation`. 該值符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基準，並以公尺測量。 搭配 `elevation`，此屬性可用來表示位置的三維邊界方框。 |
+| `_schema.box` | 数组 [[!UICONTROL 地理坐标]](./geo-coordinates.md) | 描述由两个坐标形成的矩形包围的地理区域。 第一个坐标是矩形的下角，第二个坐标是上角。 |
+| `_schema.circle` | 数组 [[!UICONTROL 地理坐标]](./geo-coordinates.md) | 描述以地理坐标为中心的具有特定半径的圆形区域。 |
+| `_schema.polygon` | [[!UICONTROL 地理圈]](./geo-circle.md) | 四个或更多坐标的系列，其中第一个坐标和最后一个坐标相同。 |
+| `_schema.description` | 字符串 | 形状定义的内容的描述。 |
+| `_schema.elevation` | 双精度 | 形状的特定或最小标高。 此值符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基准，以米为测量单位。 与 `ceiling`，此属性可用于表示位置的三维边界框。 |
+| `_id` | 字符串 | 形状的系统生成的唯一标识符。 |
+| `ceiling` | 双精度 | 形状的最大标高。 此属性仅在与结合使用时有效 `elevation`. 该值符合 [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) 基准，以米为测量单位。 与 `elevation`，此属性可用于表示位置的三维边界框。 |

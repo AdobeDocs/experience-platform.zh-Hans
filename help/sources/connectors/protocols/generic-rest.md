@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；一般REST；一般rest
+keywords: Experience Platform；主页；热门主题；通用REST；通用Rest
 solution: Experience Platform
-title: 一般REST API來源聯結器概述
-description: 瞭解如何使用API或使用者介面將Generic REST API連線到Adobe Experience Platform。
+title: 通用REST API源连接器概述
+description: 了解如何使用API或用户界面将Generic REST API连接到Adobe Experience Platform。
 exl-id: e3449e33-7261-4aa2-bce9-5530eb4fcc68
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -15,22 +15,22 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此 [!DNL Generic REST API] 來源為測試版。 請參閱 [來源概觀](../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
+>此 [!DNL Generic REST API] 源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Platform支援從通訊協定應用程式擷取資料，包括 [!DNL Generic REST API].
+Platform支持从协议应用程序中摄取数据，包括 [!DNL Generic REST API].
 
-此 [!DNL Generic REST API] 來源可讓您將資料從REST型應用程式帶入Platform。 [!DNL Generic REST API] 支援基本驗證和OAuth 2重新整理程式碼型驗證。
+此 [!DNL Generic REST API] 源允许您将数据从基于REST的应用程序带入Platform。 [!DNL Generic REST API] 支持基本身份验证和OAuth 2刷新基于代码的身份验证。
 
-## IP位址允許清單
+## IP地址允许列表
 
-在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
 
-以下檔案提供如何連線的相關資訊 [!DNL Generic REST API] 使用API的平台原始碼。
+以下文档提供了有关如何连接 [!DNL Generic REST API] 源到平台使用API。
 
-## Connect [!DNL Generic REST API] 至 [!DNL Platform] 使用API
+## Connect [!DNL Generic REST API] 到 [!DNL Platform] 使用API
 
-- [使用流程服務API建立一般REST API基本連線](../../tutorials/api/create/protocols/generic-rest.md)
-- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
-- [使用流量服務API為通訊協定來源建立資料流](../../tutorials/api/collect/protocols.md)
+- [使用流服务API创建通用REST API基本连接](../../tutorials/api/create/protocols/generic-rest.md)
+- [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+- [使用流服务API为协议源创建数据流](../../tutorials/api/collect/protocols.md)

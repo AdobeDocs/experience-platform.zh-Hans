@@ -1,6 +1,6 @@
 ---
-title: 使用流量服務API建立串流SDK的新連線規格
-description: 以下檔案提供如何使用「流程服務API」建立連線規格，以及透過「自助來源」整合新來源的步驟。
+title: 使用流服务API为流SDK创建新的连接规范
+description: 以下文档提供了有关如何使用Flow Service API创建连接规范以及通过自助服务源集成新源的步骤。
 hide: true
 hidefromtoc: true
 exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
@@ -11,53 +11,53 @@ ht-degree: 1%
 
 ---
 
-# 使用建立新的連線規格 [!DNL Flow Service] API
+# 使用创建新的连接规范 [!DNL Flow Service] API
 
-連線規格代表來源的結構。 它包含有關來源的驗證需求的資訊，定義如何探索和檢查來源資料，並提供有關給定來源屬性的資訊。 此 `/connectionSpecs` 中的端點 [!DNL Flow Service] API可讓您以程式設計方式管理組織內的連線規格。
+连接规范表示源的结构。 它包含有关源身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源属性的信息。 此 `/connectionSpecs` 中的端点 [!DNL Flow Service] API允许您以编程方式管理组织内的连接规范。
 
-以下檔案提供如何建立連線對規格的步驟。 [!DNL Flow Service] API並透過自助來源（串流SDK）整合新來源。
+以下文档提供了有关如何使用创建连接规范的步骤 [!DNL Flow Service] API并通过自助服务源(Streaming SDK)集成新源。
 
 ## 快速入门
 
-在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
+在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
-## 收整合品
+## 收集工件
 
-若要使用自助式來源建立新的串流來源，您必須先協調Adobe、請求私人Git存放庫，並對齊有關來源標籤、說明、類別和圖示詳細資訊的Adobe。
+要使用自助式源创建新的流源，您必须首先与Adobe协调，请求专用Git存储库，并与Adobe对齐有关源的标签、描述、类别和图标的详细信息。
 
-提供後，您必須建構您的私人Git存放庫，如下所示：
+提供后，您必须构建私有Git存储库，如下所示：
 
 * 源
    * {your_source}
-      * 成品
+      * 工件
          * {your_source}-category.txt
          * {your_source}-description.txt
          * {your_source}-icon.svg
          * {your_source}-label.txt
          * {your_source}-connectionSpec.json
 
-| 成品（檔案名稱） | 描述 | 示例 |
+| 工件（文件名） | 描述 | 示例 |
 | --- | --- | --- |
-| {your_source} | 來源的名稱。 此資料夾應包含您的私人Git存放庫中與您的來源相關的所有成品。 | `medallia` |
-| {your_source}-category.txt | 您的來源所屬的類別，格式為文字檔。 **注意**：如果您認為您的來源不符合上述任何類別，請聯絡您的Adobe代表以進行討論。 | `medallia-category.txt` 在檔案內，請指定來源的類別，例如： `streaming`. |
-| {your_source}-description.txt | 來源的簡短說明。 | [!DNL Medallia] 是行銷自動化來源，可用來提供 [!DNL Medallia] 要Experience Platform的資料。 |
-| {your_source}-icon.svg | 用來在Experience Platform來源目錄中表示來源的影像。 此圖示必須是SVG檔案。 |
-| {your_source}-label.txt | 您應顯示在Experience Platform來源目錄中的來源名稱。 | 梅迪亞文 |
-| {your_source}-connectionSpec.json | 包含您來源之連線規格的JSON檔案。 一開始不需要此檔案，因為當您完成本指南時，會填入您的連線規格。 | `medallia-connectionSpec.json` |
+| {your_source} | 源的名称。 此文件夹应包含您的专用Git存储库中与您的源相关的所有工件。 | `medallia` |
+| {your_source}-category.txt | 源所属的类别，格式为文本文件。 **注释**：如果您认为您的信息源不符合以上任何类别，请联系您的Adobe代表进行讨论。 | `medallia-category.txt` 在文件中，请指定源的类别，例如： `streaming`. |
+| {your_source}-description.txt | 源的简短描述。 | [!DNL Medallia] 是营销自动化源，可用于提供 [!DNL Medallia] Experience Platform数据。 |
+| {your_source}-icon.svg | 用于在Experience Platform源目录中表示源的图像。 此图标必须是SVG文件。 |
+| {your_source}-label.txt | 您源的名称，它应显示在Experience Platform源目录中。 | 梅达利亚 |
+| {your_source}-connectionSpec.json | 包含源连接规范的JSON文件。 此文件最初不是必需的，因为您将在完成本指南时填充连接规范。 | `medallia-connectionSpec.json` |
 
 {style="table-layout:auto"}
 
 >[!TIP]
 >
->在連線規格的測試期間，您可以使用 `text` 在連線規格中。
+>在连接规范的测试期间，您可以使用 `text` 在连接规范中。
 
-將必要的檔案新增至私人Git存放庫後，您必須建立提取請求(PR)供Adobe檢閱。 您的PR獲得核准並合併後，將會為您提供一個ID，可用於您的連線規格，以參考來源的標籤、說明和圖示。
+将必要的文件添加到专用Git存储库后，您必须创建一个拉取请求(PR)供Adobe审查。 您的PR获得批准并合并后，您将会获得一个ID，该ID可用于连接规范，以引用源的标签、描述和图标。
 
-接下來，請依照下列步驟設定您的連線規格。 如需可新增至來源的不同功能（例如進階排程、自訂結構描述或不同分頁型別）的額外指引，請檢閱以下指南： [設定來源規格](../config/sourcespec.md).
+接下来，按照下面列出的步骤配置连接规范。 有关可添加到源的不同功能（如高级计划、自定义架构或不同分页类型）的其他指导，请查看以下方面的指南： [配置源规范](../config/sourcespec.md).
 
-## 複製連線規格範本
+## 复制连接规范模板
 
-收集到所需的成品後，請將下方的連線規格範本複製並貼到您選擇的文字編輯器中，然後更新方括弧中的屬性 `{}` ，其中包含與您特定來源相關的資訊。
+收集完所需的工件后，将下面的连接规范模板复制并粘贴到您选择的文本编辑器中，然后更新括号中的属性 `{}` ，其中包含与您的特定来源相关的信息。
 
 ```json
 {
@@ -130,18 +130,18 @@ ht-degree: 1%
 }
 ```
 
-## 建立連線規格 {#create}
+## 创建连接规范 {#create}
 
-取得連線規格範本後，您現在可以填入與來源對應的適當值，開始編寫新的連線規格。
+获得连接规范模板后，您现在可以通过填写与源对应的相应值来开始创作新的连接规范。
 
-連線規格可分成兩個不同的部分：來源規格和探索規格。
+连接规范可以分为两个不同的部分：源规范和浏览规范。
 
-請參閱下列檔案，以取得有關連線規格各節的詳細資訊：
+有关连接规范各部分的更多信息，请参阅以下文档：
 
-* [設定您的來源規格](../config/sourcespec.md)
-* [設定您的瀏覽規格](../config/explorespec.md)
+* [配置源规范](../config/sourcespec.md)
+* [配置浏览规范](../config/explorespec.md)
 
-更新您的規格資訊後，您可以透過向以下發出POST請求來提交新的連線規格： `/connectionSpecs` 的端點 [!DNL Flow Service] API。
+更新了规范信息后，您可以通过向以下网站发出POST请求来提交新的连接规范： `/connectionSpecs` 的端点 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -151,7 +151,7 @@ POST /connectionSpecs
 
 **请求**
 
-以下請求是串流來源的完整編寫連線規格的範例：
+以下请求是流源的完全编写的连接规范示例：
 
 ```shell
 curl -X POST \
@@ -233,7 +233,7 @@ curl -X POST \
 
 **响应**
 
-成功的回應會傳回新建立的連線規格，包括其唯一的 `id`.
+成功响应将返回新创建的连接规范，包括其唯一的 `id`.
 
 ```json
 {
@@ -318,6 +318,6 @@ curl -X POST \
 
 ## 后续步骤
 
-現在您已建立新的連線規格，您必須將其對應的連線規格ID新增至現有的流程規格。 請參閱教學課程，位置如下： [更新流程規格](./update-flow-specs.md) 以取得詳細資訊。
+现在您已经创建了新的连接规范，则必须将其对应的连接规范ID添加到现有流规范中。 请参阅上的教程 [更新流程规范](./update-flow-specs.md) 了解更多信息。
 
-若要修改您建立的連線規格，請參閱以下教學課程： [更新連線規格](./update-connection-specs.md).
+要对您创建的连接规范进行修改，请参阅以下教程： [更新连接规范](./update-connection-specs.md).

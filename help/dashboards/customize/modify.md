@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；使用者介面；UI；控制面板；控制面板；設定檔；區段；目的地；授權使用情況
-title: 在UI中修改Platform儀表板
-description: 本指南提供逐步指示，讓您自訂組織的Adobe Experience Platform資料在儀表板中的顯示方式。
+keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用情况
+title: 在UI中修改平台功能板
+description: 本指南提供了有关自定义组织的Adobe Experience Platform数据在功能板中的显示方式的分步说明。
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
 source-git-commit: 338aa6849f58b3c0fd6c871f1e199ebf6a73d115
 workflow-type: tm+mt
@@ -10,52 +10,52 @@ ht-degree: 0%
 
 ---
 
-# 修改儀表板 {#modify-dashboards}
+# 修改仪表板 {#modify-dashboards}
 
-在Adobe Experience Platform使用者介面(UI)中，您可以使用多個儀表板檢視組織的資料並與之互動。 控制面板中顯示的預設Widget和量度可在個別使用者層級調整以顯示偏好資料，而Widget可在相同組織中的使用者之間建立和共用。
+在Adobe Experience Platform用户界面(UI)中，您可以使用多个功能板查看组织数据并与之交互。 功能板中显示的默认小部件和量度可以在单个用户级别调整以显示首选数据，并且可以在同一组织中的用户之间创建和共享小部件。
 
-本指南提供逐步指示，讓您自訂儀表板資料在 [!UICONTROL 設定檔]， [!UICONTROL 區段]、和 [!UICONTROL 目的地] 平台UI中的儀表板。
+本指南提供了有关自定义仪表板数据在中的显示方式的分步说明 [!UICONTROL 配置文件]， [!UICONTROL 区段]、和 [!UICONTROL 目标] Platform UI中的功能板。
 
 >[!NOTE]
 >
->無法自訂授權使用儀表板中顯示的Widget。 請參閱 [授權使用情況儀表板檔案](../guides/license-usage.md) 以進一步瞭解此不重複儀表板。
+>无法自定义许可证使用情况仪表板中显示的构件。 请参阅 [许可证使用情况仪表板文档](../guides/license-usage.md) 以了解有关此独特功能板的更多信息。
 
 ## 快速入门
 
-從任何儀表板(例如 [!UICONTROL 設定檔] 控制面板)，您可以選取 **[!UICONTROL 修改儀表板]** 以調整現有Widget的大小及重新排序。
+从任意仪表板(例如， [!UICONTROL 配置文件] （功能板），您可以选择 **[!UICONTROL 修改仪表板]** 以调整现有小部件的大小并重新排序。
 
-![會反白顯示「修改」圖示板的「輪廓」圖示板。](../images/customization/modify-dashboard.png)
+![突出显示“修改”功能板的“配置文件”功能板。](../images/customization/modify-dashboard.png)
 
-## 重新排序Widget
+## 重新排序小组件
 
-選擇修改儀表板後，您可以選取Widget標題並將Widget拖放至所需順序來重新排序Widget。 在此範例中， **[!UICONTROL 設定檔計數趨勢]** widget會移至頂列，而 **[!UICONTROL 設定檔計數]** Widget現在會出現在第二列。
+选择修改仪表板后，您可以通过选择小组件标题并将小组件拖放到所需的顺序来重新排序小组件。 在此示例中， **[!UICONTROL 配置文件计数趋势]** 构件将移至顶行，并且 **[!UICONTROL 配置文件计数]** 构件现在显示在第二行。
 
-![反白顯示具有兩個重新排序Widget的「設定檔」儀表板。](../images/customization/move-widget.png)
+![突出显示具有两个重新排序小部件的配置文件仪表板。](../images/customization/move-widget.png)
 
-## 調整介面工具大小
+## 调整构件大小
 
-您也可以選取Widget右下角的角度符號(`⌟`)並將Widget拖曳至所需大小。 在此範例中， **[!UICONTROL 依身分割槽分的設定檔]** Widget會調整大小以填滿整個頂列，自動將其他Widget移至第二列。 請注意水平軸如何調整，以隨著Widget變大而提供更詳細的增量。
+也可以通过选择构件右下角的角度符号来调整构件大小(`⌟`)，并将构件拖动到所需的大小。 在此示例中， **[!UICONTROL 按身份列出的配置文件]** 小组件会调整大小以填充整个顶行，从而自动将其他小组件移动到第二行。 请注意水平轴如何调整以随着构件变大提供更详细的增量。
 
 >[!NOTE]
 >
->當Widget調整大小時，周圍的Widget會動態重新定位。 這可能會造成某些Widget被移動到其他列，需要您捲動才能檢視所有Widget。
+>随着小部件的大小得到调整，周围的小部件会动态重新定位。 这可能会导致某些构件被移动到其他行，从而需要您滚动才能查看所有构件。
 
-![反白顯示調整大小的Widget的「設定檔」圖示板。](../images/customization/resize-widget.png)
+![突出显示了调整大小的Widget的“配置文件”仪表板。](../images/customization/resize-widget.png)
 
-## 儲存儀表板更新
+## 保存仪表板更新
 
-完成移動和調整Widget大小之後，請選取 **[!UICONTROL 儲存並退出]** 以儲存您的變更並返回主儀表板檢視。 如果您不想保留變更，請選取 **[!UICONTROL 取消]** 以重設儀表板並返回主儀表板檢視。
+移动完小组件并调整其大小后，选择 **[!UICONTROL 保存并退出]** 以保存所做更改并返回到主仪表板视图。 如果不希望保留更改，请选择 **[!UICONTROL 取消]** 重置仪表板并返回到主仪表板视图。
 
-![「設定檔」圖示板會反白顯示「取消」和「儲存並退出」。](../images/customization/save-changes.png)
+![“配置文件”仪表板中突出显示“取消”和“保存并退出”。](../images/customization/save-changes.png)
 
-## Widget資料庫
+## 构件库
 
-除了調整大小與重新排序Widget，請選取 **[!UICONTROL 修改儀表板]** 在 [!UICONTROL 設定檔]， [!UICONTROL 區段]、和 [!UICONTROL 目的地] 控制面板可讓您存取 **[!UICONTROL Widget資料庫]** 您可在此找到更多Widget來顯示或建立組織的自訂Widget。
+除了调整小部件的大小和重新排序之外，选择 **[!UICONTROL 修改仪表板]** 在 [!UICONTROL 配置文件]， [!UICONTROL 区段]、和 [!UICONTROL 目标] 通过功能板，您可以访问 **[!UICONTROL 构件库]** 可在其中找到更多要显示的构件或为贵组织创建自定义构件。
 
-如需如何存取和使用的逐步指示 [!UICONTROL Widget資料庫]，請參閱 [Widget程式庫指南](widget-library.md).
+有关如何访问和使用 [!UICONTROL 构件库]，请参阅 [构件库指南](widget-library.md).
 
-![反白顯示「標準」和「自訂」的Widget程式庫工作區。](../images/customization/widget-library.png)
+![突出显示“标准”和“自定义”的Widget库工作区。](../images/customization/widget-library.png)
 
 ## 后续步骤
 
-閱讀本檔案後，您已瞭解如何使用修改儀表板功能來重新排序和調整Widget大小以自訂您的儀表板檢視。 若要瞭解如何建立並新增Widget至您的儀表板，請閱讀 [Widget程式庫指南](widget-library.md).
+阅读本文档后，您已了解如何使用修改功能板功能重新排序和调整构件大小以自定义您的功能板视图。 要了解如何创建小组件并将其添加到功能板，请阅读 [构件库指南](widget-library.md).

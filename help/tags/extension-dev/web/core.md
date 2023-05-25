@@ -1,6 +1,6 @@
 ---
-title: Web擴充功能的核心程式庫模組
-description: 瞭解您可以在Web擴充功能中使用的核心程式庫模組。
+title: Web扩展的核心库模块
+description: 了解可以在Web扩展中使用的核心库模块。
 exl-id: 7fb63208-aed0-4add-b6da-8e4aea063d0a
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 82%
 
 ---
 
-# Web擴充功能的核心程式庫模組
+# Web扩展的核心库模块
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-本檔案提供您可以在Web擴充功能中使用的核心程式庫模組清單。 您可以使用 `require('@adobe/{MODULE}')` 访问这些模块，其中 `{MODULE}` 是要使用的核心模块的名称。
+本文档提供了可在Web扩展中使用的核心库模块的列表。 您可以使用 `require('@adobe/{MODULE}')` 访问这些模块，其中 `{MODULE}` 是要使用的核心模块的名称。
 
 ## [!DNL reactor-object-assign]
 

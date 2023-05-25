@@ -1,7 +1,7 @@
 ---
-title: 在Adobe Experience Platform Web SDK中偵錯
-description: 瞭解如何在Experience PlatformWeb SDK中切換偵錯功能。
-keywords: 偵錯web sdk；偵錯；設定；設定命令；偵錯命令；edgeConfigId；setDebug；debugEnabled；偵錯；
+title: 在Adobe Experience Platform Web SDK中进行调试
+description: 了解如何在Experience PlatformWeb SDK中切换调试功能。
+keywords: 调试web sdk；调试；配置；配置命令；调试命令；edgeConfigId；setDebug；debugEnabled；调试；
 exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
 source-git-commit: f5270d1d1b9697173bc60d16c94c54d001ae175a
 workflow-type: tm+mt
@@ -12,20 +12,20 @@ ht-degree: 2%
 
 # 调试
 
-啟用偵錯功能後，SDK會將訊息輸出至瀏覽器主控台，有助於對實作進行偵錯，並瞭解SDK的表現。
+启用调试后，SDK会将消息输出到浏览器控制台，这有助于调试实施和了解SDK的行为。
 
-除錯功能預設為停用，但可透過四種不同方式開啟：
+默认情况下禁用调试，但可以通过四种不同的方式切换调试：
 
 * `configure` 命令
 * `setDebug` 命令
-* 查詢字串引數
-* 在Adobe Experience Platform Debugger中切換啟用偵錯。 Adobe Experience Platform是一款功能強大的工具，可檢查您的網頁，並協助您針對Experience Cloud產品的實作問題進行偵錯。 Adobe Experience Platform Debugger可同時作為 [鉻黃](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) 和 [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/) 副檔名。 您可以從AEP Web SDK區段的設定標籤啟用偵錯。
+* 查询字符串参数
+* 在Adobe Experience Platform Debugger中切换启用调试。 Adobe Experience Platform是一款功能强大的工具，可检查您的网页，并帮助您调试Experience Cloud产品的实施问题。 Adobe Experience Platform Debugger以两种形式提供 [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) 和 [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/) 扩展。 可以从AEP Web SDK部分的配置选项卡启用调试。
 
 ![](../assets/enable-debugging.png)
 
-## 使用Configure命令切換偵錯
+## 使用Configure命令切换调试
 
-使用設定SDK時 `configure` 命令，透過設定 `debugEnabled` 選項至 `true`.
+使用配置SDK时 `configure` 命令，通过设置 `debugEnabled` 选项至 `true`.
 
 ```javascript
 alloy("configure", {
@@ -37,11 +37,11 @@ alloy("configure", {
 
 >[!TIP]
 >
->這可讓網頁的所有使用者進行偵錯，而不只是您的個人瀏覽器。
+>这样可针对网页的所有用户进行调试，而不仅仅是针对您的个人浏览器。
 
-## 使用Debug命令切換偵錯
+## 使用Debug命令切换调试
 
-使用個別專案切換除錯 `debug` 命令，如下所示：
+使用单独的调试进行切换 `debug` 命令，如下所示：
 
 ```javascript
 alloy("setDebug", {
@@ -49,29 +49,29 @@ alloy("setDebug", {
 });
 ```
 
-如果您不想變更網頁上的程式碼，或不想為網站的所有使用者產生記錄訊息，這會特別有用，因為您可以執行 `debug` 命令來執行。
+如果您不希望更改网页上的代码，或者不希望为网站的所有用户生成日志消息，则此功能特别有用，因为您可以运行 `debug` 命令。
 
-## 使用查詢字串引數切換除錯
+## 使用查询字符串参数切换调试
 
-透過設定來切換偵錯 `alloy_debug` 查詢字串引數至 `true` 或 `false` 如下所示：
+通过设置 `alloy_debug` 查询字符串参数到 `true` 或 `false` 如下所示：
 
 ```HTTP
 http://example.com/?alloy_debug=true
 ```
 
-類似於 `debug` 命令，如果您不想變更網頁上的程式碼，或不想為網站的所有使用者產生記錄訊息，這會特別有用，因為您可以在瀏覽器中載入網頁時設定查詢字串引數。
+与 `debug` 命令，如果您不希望更改网页上的代码或者不希望为网站的所有用户生成日志消息，则此选项特别有用，因为您可以在浏览器中加载网页时设置查询字符串参数。
 
-## 優先順序和期間
+## 优先级和持续时间
 
-當透過設定偵錯時 `debug` 命令或查詢字串引數，會覆寫任何 `debug` 選項設定於 `configure` 命令。 在這兩種情況下，在工作階段期間，除錯功能也會保持開啟狀態。 換言之，如果您使用debug命令或查詢字串引數啟用偵錯，則會保持啟用狀態，直到下列其中一項：
+当通过设置调试时 `debug` 命令或查询字符串参数，它会覆盖任何 `debug` 选项集于 `configure` 命令。 在这两种情况下，在会话期间，调试功能也会保持打开状态。 换言之，如果使用调试命令或查询字符串参数启用调试，则该调试将保持启用状态，直到出现以下情况之一：
 
-* 工作階段結束
-* 您執行 `debug` 命令
-* 您再次設定查詢字串引數
+* 会话结束
+* 您运行 `debug` 命令
+* 再次设置查询字符串参数
 
-## 正在擷取程式庫資訊
+## 正在检索库信息
 
-存取您已載入網站之程式庫背後的某些詳細資訊，通常會有幫助。 若要這麼做，請執行 `getLibraryInfo` 命令，如下所示：
+通常，访问已加载到网站中的库背后的某些详细信息会很有帮助。 为此，请执行 `getLibraryInfo` 命令，如下所示：
 
 ```js
 alloy("getLibraryInfo").then(function(result) {
@@ -81,8 +81,8 @@ alloy("getLibraryInfo").then(function(result) {
 });
 ```
 
-目前，提供 `libraryInfo` 物件包含下列屬性：
+目前，提供的 `libraryInfo` 对象包含以下属性：
 
-* `version`：這是載入的程式庫版本。 例如，如果要載入的程式庫版本是1.0.0，則值會是 `1.0.0`. 當程式庫在標籤擴充功能（名為「AEP Web SDK」）中執行時，版本為程式庫版本，而標籤擴充功能版本以「+」符號連結。 例如，如果程式庫的版本是1.0.0，而標籤擴充功能的版本是1.2.0，則值會是 `1.0.0+1.2.0`.
-* `commands`：這些是載入的程式庫支援的所有可用命令。
-* `configs`：這些是載入的程式庫中所有的目前設定。
+* `version`：这是已加载库的版本。 例如，如果要加载的库版本为1.0.0，则值将为 `1.0.0`. 当库在标记扩展（名为“AEP Web SDK”）中运行时，版本是库版本，标记扩展版本使用“+”符号连接。 例如，如果库的版本为1.0.0，而标记扩展的版本为1.2.0，则值将为 `1.0.0+1.2.0`.
+* `commands`：这些是加载的库支持的所有可用命令。
+* `configs`：这些是加载的库中的所有当前配置。

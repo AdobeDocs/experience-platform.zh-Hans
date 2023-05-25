@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；JupyterLab；筆記型電腦；資料科學工作區；熱門主題；%資料集；互動模式；批次模式；Spark sdk；python sdk；存取資料；筆記型電腦資料存取
+keywords: Experience Platform；JupyterLab；笔记本；Data Science Workspace；热门主题；%dataset；交互式模式；批处理模式；Spark sdk；python sdk；访问数据；笔记本数据访问
 solution: Experience Platform
-title: Jupyterlab Notebooks中的資料存取
-description: 本指南著重於說明如何使用Jupyter Notebooks （內建於Data Science Workspace中）來存取您的資料。
+title: Jupyterlab Notebooks中的数据访问
+description: 本指南重点介绍如何使用Jupyter Notebooks（内置于Data Science Workspace中）访问您的数据。
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,118 +11,118 @@ ht-degree: 8%
 
 ---
 
-# 中的資料存取 [!DNL Jupyterlab] 筆記本
+# 中的数据访问 [!DNL Jupyterlab] notebooks
 
-每個支援的核心都提供內建功能，可讓您從筆記本內的資料集讀取Platform資料。 Adobe Experience Platform Data Science Workspace目前的JupyterLab支援 [!DNL Python]、 R 、 PySpark和Scala。 不過，對分頁資料的支援僅限於 [!DNL Python] 和R筆記型電腦。 本指南著重於說明如何使用JupyterLab Notebooks來存取您的資料。
+每个受支持的内核都提供了内置功能，允许您从笔记本内的数据集读取Platform数据。 目前，Adobe Experience Platform Data Science Workspace中的JupyterLab支持 [!DNL Python]、 R 、 PySpark和Scala。 但是，对分页数据的支持仅限于 [!DNL Python] 和R笔记本。 本指南重点介绍如何使用JupyterLab笔记本访问您的数据。
 
 ## 快速入门
 
-閱讀本指南前，請先檢閱 [[!DNL JupyterLab] 使用手冊](./overview.md) 如需深入瞭解 [!DNL JupyterLab] 及其在資料科學工作區中的角色。
+在阅读本指南之前，请查阅 [[!DNL JupyterLab] 用户指南](./overview.md) ，了解关于 [!DNL JupyterLab] 以及它在数据科学工作区中的角色。
 
-## 筆記型電腦資料限制 {#notebook-data-limits}
+## 笔记本数据限制 {#notebook-data-limits}
 
 >[!IMPORTANT]
 >
->對於PySpark和Scala筆記型電腦，如果您收到原因為「遠端RPC使用者端解除關聯」的錯誤。 這通常表示驅動程式或執行器的記憶體不足。 嘗試切換到 [「批次」模式](#mode) 以解決此錯誤。
+>对于PySpark和Scala笔记本，如果您收到错误的原因是“远程RPC客户端已取消关联”。 这通常意味着驱动程序或执行器的内存不足。 尝试切换到 [“批处理”模式](#mode) 以解决此错误。
 
-下列資訊會定義可讀取的最大資料量、使用的資料型別，以及讀取資料所需的估計時間範圍。
+以下信息定义了可读取的最大数据量、使用的数据类型以及读取数据所用的估计时间范围。
 
-對象 [!DNL Python] 和R，效能標竿使用配置為40GB RAM的筆記型伺服器。 對於PySpark和Scala，設定為64GB RAM、8個核心、2個DBU且最多4個工作者的資料庫叢集用於下列基準。
+对象 [!DNL Python] 和R，使用配置为40GB RAM的笔记本电脑服务器进行基准测试。 对于PySpark和Scala，在64GB RAM、8核、2个DBU（最多4个工作程序）配置的数据块群集用于下面列出的基准。
 
-使用的ExperienceEvent結構描述資料大小不一，從1,000列(1K)到10億(1B)列不等。 請注意，對於PySpark和 [!DNL Spark] 量度時，XDM資料使用的日期跨度為10天。
+使用的ExperienceEvent架构数据大小不一，从1,000行(1K)到最多10亿(1B)行。 请注意，对于PySpark和 [!DNL Spark] 量度时，XDM数据使用的日期跨度为10天。
 
-已使用預先處理臨時結構描述資料 [!DNL Query Service] 建立表格為選取(CTAS)。 此資料的大小也有所不同，從1,000列(1K)到最多10億(1B)列。
+使用对临时架构数据进行预处理 [!DNL Query Service] 创建表作为选择(CTAS)。 这些数据大小也各不相同，从1,000行(1K)到最多10亿(1B)行。
 
-### 批次模式與互動模式的使用時機 {#mode}
+### 何时使用批处理模式与交互模式 {#mode}
 
-使用PySpark和Scala筆記型電腦讀取資料集時，您可以選擇使用互動模式或批次模式來讀取資料集。 互動式有助於快速獲得結果，而批次模式適用於大型資料集。
+在读取包含PySpark和Scala笔记本的数据集时，您可以选择使用交互模式或批处理模式来读取数据集。 交互模式适用于快速结果，而批处理模式适用于大型数据集。
 
-- 若是PySpark和Scala筆記型電腦，讀取超過500萬筆資料列時，應使用批次處理模式。 如需每種模式效率的詳細資訊，請參閱 [PySpark](#pyspark-data-limits) 或 [Scala](#scala-data-limits) 資料限制表格如下。
+- 对于PySpark和Scala笔记本，在读取500万行或更多数据时应使用批处理模式。 有关每种模式效率的更多信息，请参见 [PySpark](#pyspark-data-limits) 或 [Scala](#scala-data-limits) 数据限制表如下。
 
-### [!DNL Python] 筆記型電腦資料限制
+### [!DNL Python] 笔记本数据限制
 
-**XDM ExperienceEvent結構描述：** 您應該可以在22分鐘內讀取最多200萬列（磁碟上約6.1 GB的資料）的XDM資料。 新增其他列可能會導致錯誤。
+**XDM ExperienceEvent架构：** 您应能够在22分钟内最多读取200万行（磁盘上约6.1 GB的数据）的XDM数据。 添加其他行可能会导致错误。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M |
+| 行数 | 1K | 10K | 100K | 1M | 2M |
 | ----------------------- | ------ | ------ | ----- | ----- | ----- |
-| 磁碟大小(MB) | 18.73 | 187.5 | 308 | 3000 | 6050 |
-| SDK （以秒為單位） | 20.3 | 86.8 | 63 | 659 | 1315 |
+| 磁盘大小(MB) | 18.73 | 187.5 | 308 | 3000 | 6050 |
+| SDK（以秒为单位） | 20.3 | 86.8 | 63 | 659 | 1315 |
 
-**臨時結構描述：** 您應該能夠在14分鐘內讀取最多500萬列非XDM （臨機）資料（磁碟上約5.6 GB的資料）。 新增其他列可能會導致錯誤。
+**临时架构：** 在14分钟内，您最多可以读取500万行非XDM (ad-hoc)数据（磁盘上大约5.6 GB的数据）。 添加其他行可能会导致错误。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M | 5M |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M | 5M |
 | ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- | ------ |
-| 磁碟大小（以MB為單位） | 1.21 | 11.72 | 115 | 1120 | 2250 | 3380 | 5630 |
-| SDK （以秒為單位） | 7.27 | 9.04 | 27.3 | 180 | 346 | 487 | 819 |
+| 磁盘大小（以MB为单位） | 1.21 | 11.72 | 115 | 1120 | 2250 | 3380 | 5630 |
+| SDK（以秒为单位） | 7.27 | 9.04 | 27.3 | 180 | 346 | 487 | 819 |
 
-### R筆記型電腦資料限制
+### R笔记本数据限制
 
-**XDM ExperienceEvent結構描述：** 您在13分鐘內最多可讀取100萬列XDM資料（磁碟上的3GB資料）。
+**XDM ExperienceEvent架构：** 在13分钟内，您最多可以读取100万行XDM数据（磁盘上的3GB数据）。
 
-| 列數 | 1K | 10K | 100K | 1M |
+| 行数 | 1K | 10K | 100K | 1M |
 | ----------------------- | ------ | ------ | ----- | ----- |
-| 磁碟大小(MB) | 18.73 | 187.5 | 308 | 3000 |
-| R核心（以秒為單位） | 14.03 | 69.6 | 86.8 | 775 |
+| 磁盘大小(MB) | 18.73 | 187.5 | 308 | 3000 |
+| R内核（以秒为单位） | 14.03 | 69.6 | 86.8 | 775 |
 
-**臨時結構描述：** 您最多應能在10分鐘內讀取300萬列臨機操作資料（磁碟上有293MB的資料）。
+**临时架构：** 您最多可以在10分钟内读取300万行临时数据（磁盘上有293MB数据）。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M |
 | ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- |
-| 磁碟大小（以MB為單位） | 0.082 | 0.612 | 9.0 | 91 | 188 | 293 |
-| R SDK （以秒為單位） | 7.7 | 4.58 | 35.9 | 233 | 470.5 | 603 |
+| 磁盘大小（以MB为单位） | 0.082 | 0.612 | 9.0 | 91 | 188 | 293 |
+| R SDK（以秒为单位） | 7.7 | 4.58 | 35.9 | 233 | 470.5 | 603 |
 
-### PySpark ([!DNL Python] kernel) notebook資料限制： {#pyspark-data-limits}
+### PySpark ([!DNL Python] 内核)笔记本数据限制： {#pyspark-data-limits}
 
-**XDM ExperienceEvent結構描述：** 在互動模式中，您應該能夠在大約20分鐘內讀取最多500萬列（磁碟上約13.42GB的資料）的XDM資料。 互動模式僅支援最多500萬列。 如果您想要讀取較大的資料集，建議您切換到批次模式。 在批次模式中，您應該可以在大約14小時內讀取最多5億列（磁碟上約1.31TB的資料）的XDM資料。
+**XDM ExperienceEvent架构：** 在交互模式下，您应该能够在大约20分钟内最多读取500万行（磁盘上大约13.42GB的数据）的XDM数据。 交互模式最多仅支持500万行。 如果要读取更大的数据集，建议切换到批处理模式。 在批处理模式下，您应该能够在大约14小时内读取最多5亿行（磁盘上大约1.31TB的数据）的XDM数据。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
 |-------------------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
-| 磁碟大小 | 2.93MB | 4.38MB | 29.02 | 2.69 GB | 5.39 GB | 8.09 GB | 13.42 GB | 26.82 GB | 134.24 GB | 268.39 GB | 1.31TB |
-| SDK （互動模式） | 33s | 32.4s | 55.1s | 253.5s | 489.2s | 729.6s | 1206.8s | - | - | - | - |
-| SDK （批次模式） | 815.8s | 492.8s | 379.1s | 637.4s | 624.5s | 869.2s | 1104.1s | 1786s | 5387.2s | 10624.6s | 50547s |
+| 磁盘大小 | 2.93MB | 4.38MB | 29.02 | 2.69 GB | 5.39 GB | 8.09 GB | 13.42 GB | 26.82 GB | 134.24 GB | 268.39 GB | 1.31TB |
+| SDK（交互模式） | 33s | 32.4s | 55.1s | 253.5s | 489.2s | 729.6s | 1206.8s | - | - | - | - |
+| SDK（批处理模式） | 815.8s | 492.8s | 379.1s | 637.4s | 624.5s | 869.2s | 1104.1s | 1786s | 5387.2s | 10624.6s | 50547s |
 
-**臨時結構描述：** 在互動模式中，您應該可以在3分鐘內讀取最多500萬列非XDM資料（磁碟上約5.36GB的資料）。 在批次模式中，您應該可以在大約18分鐘內讀取最多10億列（磁碟上約1.05TB的資料）非XDM資料。
+**临时架构：** 在交互模式中，您应该能够在3分钟内最多读取非XDM数据的500万行（磁盘上大约5.36GB的数据）。 在批处理模式下，您应该能够在大约18分钟内读取最多10亿行（磁盘上大约1.05TB的数据）的非XDM数据。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|--------|--------|---------|--------|---------|-------|
-| 磁碟大小 | 1.12MB | 11.24MB | 109.48MB | 2.69 GB | 2.14 GB | 3.21 GB | 5.36 GB | 10.71 GB | 53.58 GB | 107.52 GB | 535.88 GB | 1.05TB |
-| SDK互動模式（以秒為單位） | 28.2s | 18.6s | 20.8s | 20.9s | 23.8s | 21.7s | 24.7s | - | - | - | - | - |
-| SDK批次模式（以秒為單位） | 428.8s | 578.8s | 641.4s | 538.5s | 630.9s | 467.3s | 411s | 675s | 702s | 719.2s | 1022.1s | 1122.3s |
+| 磁盘大小 | 1.12MB | 11.24MB | 109.48MB | 2.69 GB | 2.14 GB | 3.21 GB | 5.36 GB | 10.71 GB | 53.58 GB | 107.52 GB | 535.88 GB | 1.05TB |
+| SDK交互模式（以秒为单位） | 28.2s | 18.6s | 20.8s | 20.9s | 23.8s | 21.7s | 24.7s | - | - | - | - | - |
+| SDK批处理模式（以秒为单位） | 428.8s | 578.8s | 641.4s | 538.5s | 630.9s | 467.3s | 411s | 675s | 702s | 719.2s | 1022.1s | 1122.3s |
 
-### [!DNL Spark] （Scala核心）筆記型電腦資料限制： {#scala-data-limits}
+### [!DNL Spark] （Scala内核）笔记本数据限制： {#scala-data-limits}
 
-**XDM ExperienceEvent結構描述：** 在互動模式中，您應該可以在大約18分鐘內讀取最多500萬列（磁碟上約13.42GB的資料）的XDM資料。 互動模式僅支援最多500萬列。 如果您想要讀取較大的資料集，建議您切換到批次模式。 在批次模式中，您應該可以在大約14小時內讀取最多5億列（磁碟上約1.31TB的資料）的XDM資料。
+**XDM ExperienceEvent架构：** 在交互模式下，您应该能够在大约18分钟内最多读取500万行（磁盘上大约13.42GB的数据）的XDM数据。 交互模式最多仅支持500万行。 如果要读取更大的数据集，建议切换到批处理模式。 在批处理模式下，您应该能够在大约14小时内读取最多5亿行（磁盘上大约1.31TB的数据）的XDM数据。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
 |---------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
-| 磁碟大小 | 2.93MB | 4.38MB | 29.02 | 2.69 GB | 5.39 GB | 8.09 GB | 13.42 GB | 26.82 GB | 134.24 GB | 268.39 GB | 1.31TB |
-| SDK互動模式（以秒為單位） | 37.9s | 22.7s | 45.6s | 231.7s | 444.7s | 660.6s | 1100s | - | - | - | - |
-| SDK批次模式（以秒為單位） | 374.4s | 398.5s | 527s | 487.9s | 588.9s | 829s | 939.1s | 1441s | 5473.2s | 10118.8 | 49207.6 |
+| 磁盘大小 | 2.93MB | 4.38MB | 29.02 | 2.69 GB | 5.39 GB | 8.09 GB | 13.42 GB | 26.82 GB | 134.24 GB | 268.39 GB | 1.31TB |
+| SDK交互模式（以秒为单位） | 37.9s | 22.7s | 45.6s | 231.7s | 444.7s | 660.6s | 1100s | - | - | - | - |
+| SDK批处理模式（以秒为单位） | 374.4s | 398.5s | 527s | 487.9s | 588.9s | 829s | 939.1s | 1441s | 5473.2s | 10118.8 | 49207.6 |
 
-**臨時結構描述：** 在互動模式中，您應該可以在3分鐘內讀取最多500萬列非XDM資料（磁碟上約5.36GB的資料）。 在批次模式中，您應該可以在大約16分鐘內讀取最多10億列（磁碟上約1.05TB的資料）非XDM資料。
+**临时架构：** 在交互模式下，您应该能够在3分钟内读取最多500万行非XDM数据（磁盘上大约5.36GB的数据）。 在批处理模式下，您应该能够在大约16分钟内读取最多10亿行（磁盘上大约1.05TB的数据）的非XDM数据。
 
-| 列數 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
+| 行数 | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|---------|---------|---------|--------|---------|-------|
-| 磁碟大小 | 1.12MB | 11.24MB | 109.48MB | 2.69 GB | 2.14 GB | 3.21 GB | 5.36 GB | 10.71 GB | 53.58 GB | 107.52 GB | 535.88 GB | 1.05TB |
-| SDK互動模式（以秒為單位） | 35.7s | 31s | 19.5s | 25.3s | 23s | 33.2s | 25.5s | - | - | - | - | - |
-| SDK批次模式（以秒為單位） | 448.8s | 459.7s | 519s | 475.8s | 599.9s | 347.6s | 407.8s | 397s | 518.8s | 487.9s | 760.2s | 975.4s |
+| 磁盘大小 | 1.12MB | 11.24MB | 109.48MB | 2.69 GB | 2.14 GB | 3.21 GB | 5.36 GB | 10.71 GB | 53.58 GB | 107.52 GB | 535.88 GB | 1.05TB |
+| SDK交互模式（以秒为单位） | 35.7s | 31s | 19.5s | 25.3s | 23s | 33.2s | 25.5s | - | - | - | - | - |
+| SDK批处理模式（以秒为单位） | 448.8s | 459.7s | 519s | 475.8s | 599.9s | 347.6s | 407.8s | 397s | 518.8s | 487.9s | 760.2s | 975.4s |
 
-## Python筆記本 {#python-notebook}
+## Python笔记本 {#python-notebook}
 
-[!DNL Python] Notebooks可讓您在存取資料集時分頁資料。 底下示範使用分頁或不使用分頁讀取資料的範常式式碼。 如需可用入門Python筆記型電腦的詳細資訊，請造訪 [[!DNL JupyterLab] 啟動器](./overview.md#launcher) 章節。
+[!DNL Python] 笔记本允许您在访问数据集时分页数据。 下面演示了使用分页和不使用分页读取数据的示例代码。 有关可用的入门Python笔记本的更多信息，请访问 [[!DNL JupyterLab] 启动器](./overview.md#launcher) 部分。
 
-以下Python檔案會概述下列概念：
+以下Python文档概述了以下概念：
 
-- [從資料集讀取](#python-read-dataset)
-- [寫入資料集](#write-python)
+- [从数据集中读取](#python-read-dataset)
+- [写入数据集](#write-python)
 - [查询数据](#query-data-python)
-- [篩選ExperienceEvent資料](#python-filter)
+- [筛选ExperienceEvent数据](#python-filter)
 
-### 從Python中的資料集讀取 {#python-read-dataset}
+### 从Python中的数据集中读取 {#python-read-dataset}
 
-**沒有分頁：**
+**无分页：**
 
-執行以下程式碼將會讀取整個資料集。 如果執行成功，則資料將儲存為變數參考的Pandas資料流 `df`.
+执行以下代码将读取整个数据集。 如果执行成功，则数据将另存为变量引用的Pandas数据流 `df`.
 
 ```python
 # Python
@@ -133,9 +133,9 @@ df = dataset_reader.read()
 df.head()
 ```
 
-**使用分頁：**
+**分页：**
 
-執行以下程式碼將會從指定的資料集中讀取資料。 分頁是透過函式限制和位移資料來達成 `limit()` 和 `offset()` （分別）。 限制資料是指要讀取的資料點數上限，而位移是指在讀取資料之前要略過的資料點數。 如果成功執行讀取作業，資料將會儲存為變數參考的Pandas資料流 `df`.
+执行以下代码将从指定的数据集中读取数据。 通过限制和偏移函数中的数据来实现分页 `limit()` 和 `offset()` 的量度。 限制数据是指要读取的数据点的最大数量，而偏移是指在读取数据之前要跳过的数据点数量。 如果读取操作执行成功，则数据将另存为变量引用的Pandas数据流 `df`.
 
 ```python
 # Python
@@ -146,17 +146,17 @@ dataset_reader = DatasetReader(get_platform_sdk_client_context(), dataset_id="{D
 df = dataset_reader.limit(100).offset(10).read()
 ```
 
-### 寫入Python中的資料集 {#write-python}
+### 写入Python中的数据集 {#write-python}
 
-若要寫入JupyterLab筆記本中的資料集，請在JupyterLab的左側導覽中選取「資料」圖示標籤（以下反白顯示）。 此 **[!UICONTROL 資料集]** 和 **[!UICONTROL 結構描述]** 目錄出現。 選取 **[!UICONTROL 資料集]** 並按一下滑鼠右鍵，然後選取 **[!UICONTROL 在筆記型電腦中寫入資料]** 從下拉式選單中選取您要使用的選項。 筆記本底部會出現一個可執行程式碼專案。
+要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（突出显示如下）。 此 **[!UICONTROL 数据集]** 和 **[!UICONTROL 架构]** 目录出现。 选择 **[!UICONTROL 数据集]** 并右键单击，然后选择 **[!UICONTROL 在笔记本中写入数据]** 选项。 笔记本底部会显示一个可执行代码条目。
 
 ![](../images/jupyterlab/data-access/write-dataset.png)
 
-- 使用 **[!UICONTROL 在筆記型電腦中寫入資料]** 以使用您選取的資料集產生寫入儲存格。
-- 使用 **[!UICONTROL 探索筆記本中的資料]** 以使用您選取的資料集產生讀取儲存格。
-- 使用 **[!UICONTROL 在筆記本中查詢資料]** 以使用您選取的資料集產生基本查詢儲存格。
+- 使用 **[!UICONTROL 在笔记本中写入数据]** 以使用所选数据集生成写单元格。
+- 使用 **[!UICONTROL 浏览笔记本中的数据]** 以使用所选数据集生成读取单元格。
+- 使用 **[!UICONTROL 在笔记本中查询数据]** 以使用所选数据集生成基本查询单元格。
 
-或者，您可以複製並貼上下列程式碼儲存格。 取代兩者 `{DATASET_ID}` 和 `{PANDA_DATAFRAME}`.
+或者，您可以复制并粘贴以下代码单元格。 将两者 `{DATASET_ID}` 和 `{PANDA_DATAFRAME}`.
 
 ```python
 from platform_sdk.models import Dataset
@@ -167,23 +167,23 @@ dataset_writer = DatasetWriter(get_platform_sdk_client_context(), dataset)
 write_tracker = dataset_writer.write({PANDA_DATAFRAME}, file_format='json')
 ```
 
-### 查詢資料，使用 [!DNL Query Service] 在 [!DNL Python] {#query-data-python}
+### 查询数据，使用 [!DNL Query Service] 在 [!DNL Python] {#query-data-python}
 
-[!DNL JupyterLab] 於 [!DNL Platform] 可讓您使用SQL於 [!DNL Python] 筆記型電腦，可透過存取資料 [Adobe Experience Platform查詢服務](https://www.adobe.com/go/query-service-home-en). 透過存取資料 [!DNL Query Service] 由於其卓越的執行時間，可用於處理大型資料集。 請注意，查詢資料時使用 [!DNL Query Service] 具有十分鐘的處理時間限制。
+[!DNL JupyterLab] 日期 [!DNL Platform] 允许您在中使用SQL [!DNL Python] 笔记本访问数据 [Adobe Experience Platform查询服务](https://www.adobe.com/go/query-service-home-en). 通过访问数据 [!DNL Query Service] 由于其卓越的运行时间，可用于处理大型数据集。 请注意，使用查询数据 [!DNL Query Service] 具有十分钟的处理时间限制。
 
-使用前 [!DNL Query Service] 在 [!DNL JupyterLab]，請務必實際瞭解 [[!DNL Query Service] SQL語法](https://www.adobe.com/go/query-service-sql-syntax-en).
+使用前 [!DNL Query Service] 在 [!DNL JupyterLab]，确保您实际了解 [[!DNL Query Service] SQL语法](https://www.adobe.com/go/query-service-sql-syntax-en).
 
-查詢資料，使用 [!DNL Query Service] 需要您提供目標資料集的名稱。 您可以使用「 」尋找所需的資料集，以產生必要的程式碼儲存格。 **[!UICONTROL 資料總管]**. 以滑鼠右鍵按一下資料集清單，然後按一下 **[!UICONTROL 在筆記本中查詢資料]** 以在您的記事本中產生兩個程式碼儲存格。 這兩個儲存格在下文將更詳細地概述。
+使用查询数据 [!DNL Query Service] 需要您提供目标数据集的名称。 您可以使用查找所需的数据集来生成必要的代码单元格。 **[!UICONTROL 数据资源管理器]**. 右键单击数据集列表并单击 **[!UICONTROL 在笔记本中查询数据]** 在笔记本中生成两个代码单元格。 下面将更详细地概述这两个单元格。
 
 ![](../images/jupyterlab/data-access/python-query-dataset.png)
 
-為了利用 [!DNL Query Service] 在 [!DNL JupyterLab]，您必須先建立工作環境之間的連線， [!DNL Python] 筆記型電腦和 [!DNL Query Service]. 這可以透過執行第一個產生的儲存格來完成。
+为了利用 [!DNL Query Service] 在 [!DNL JupyterLab]，您必须首先创建工作流程之间的连接 [!DNL Python] 笔记本和 [!DNL Query Service]. 这可以通过执行第一个生成的单元来实现。
 
 ```python
 qs_connect()
 ```
 
-在第二個產生的儲存格中，第一行必須在SQL查詢之前定義。 依預設，產生的儲存格會定義選用變數(`df0`)會將查詢結果儲存為Pandas資料流。 <br>此 `-c QS_CONNECTION` 引數是必要的，會告訴核心執行SQL查詢 [!DNL Query Service]. 請參閱 [附錄](#optional-sql-flags-for-query-service) 以取得其他引數的清單。
+在第二个生成的单元格中，必须在SQL查询之前定义第一行。 默认情况下，生成的单元格定义一个可选变量(`df0`)将查询结果保存为Pandas数据流。 <br>此 `-c QS_CONNECTION` 参数是必需的，用于告知内核执行SQL查询 [!DNL Query Service]. 请参阅 [附录](#optional-sql-flags-for-query-service) 以获取其他参数的列表。
 
 ```python
 %%read_sql df0 -c QS_CONNECTION
@@ -193,7 +193,7 @@ LIMIT 10
 /* Querying table "name_of_the_dataset" (datasetId: {DATASET_ID})*/
 ```
 
-您可以使用字串格式語法，將變數包裝在大括弧(`{}`)，如下列範例所示：
+通过使用字符串格式语法并将变量换成大括号(`{}`)，如以下示例所示：
 
 ```python
 table_name = 'name_of_the_dataset'
@@ -206,21 +206,21 @@ SELECT {table_columns}
 FROM {table_name}
 ```
 
-### 篩選 [!DNL ExperienceEvent] 資料 {#python-filter}
+### 筛选条件 [!DNL ExperienceEvent] 数据 {#python-filter}
 
-為了存取和篩選 [!DNL ExperienceEvent] 中的資料集 [!DNL Python] notebook，您必須提供資料集的ID (`{DATASET_ID}`)，並使用邏輯運運算元定義特定時間範圍的篩選規則。 定義時間範圍時，會忽略任何指定的分頁，並考量整個資料集。
+要访问和筛选 [!DNL ExperienceEvent] 数据集在 [!DNL Python] 笔记本，您必须提供数据集的ID (`{DATASET_ID}`)以及使用逻辑运算符定义特定时间范围的过滤器规则。 定义时间范围后，将忽略任何指定的分页，并会考虑整个数据集。
 
-篩選運運算元清單說明如下：
+筛选运算符列表如下所述：
 
 - `eq()`: 等于
 - `gt()`: 大于
 - `ge()`: 大于或等于
 - `lt()`: 小于
 - `le()`: 小于或等于
-- `And()`：邏輯AND運運算元
-- `Or()`：邏輯或運運算元
+- `And()`：逻辑AND运算符
+- `Or()`：逻辑OR运算符
 
-下列儲存格會篩選 [!DNL ExperienceEvent] 資料集至獨家存在於2019年1月1日至2019年12月31日之間的資料。
+以下单元格筛选 [!DNL ExperienceEvent] 数据集中的数据，这些数据在2019年1月1日至2019年12月31日终了期间专门存在。
 
 ```python
 # Python
@@ -234,21 +234,21 @@ df = dataset_reader.\
 ).read()
 ```
 
-## R notebooks {#r-notebooks}
+## R笔记本 {#r-notebooks}
 
-R Notebooks可讓您在存取資料集時分頁資料。 底下示範使用分頁或不使用分頁讀取資料的範常式式碼。 如需可用入門或筆記型電腦的詳細資訊，請瀏覽 [[!DNL JupyterLab] 啟動器](./overview.md#launcher) 章節。
+R笔记本允许您在访问数据集时分页数据。 下面演示了使用分页和不使用分页读取数据的示例代码。 有关可用的入门R笔记本电脑的详细信息，请访问 [[!DNL JupyterLab] 启动器](./overview.md#launcher) 部分。
 
-以下R檔案會概述下列概念：
+下面的R文档概述了以下概念：
 
-- [從資料集讀取](#r-read-dataset)
-- [寫入資料集](#write-r)
-- [篩選ExperienceEvent資料](#r-filter)
+- [从数据集中读取](#r-read-dataset)
+- [写入数据集](#write-r)
+- [筛选ExperienceEvent数据](#r-filter)
 
-### 從R中的資料集讀取 {#r-read-dataset}
+### 从R中的数据集读取 {#r-read-dataset}
 
-**沒有分頁：**
+**无分页：**
 
-執行以下程式碼將會讀取整個資料集。 如果執行成功，則資料將儲存為變數參考的Pandas資料流 `df0`.
+执行以下代码将读取整个数据集。 如果执行成功，则数据将另存为变量引用的Pandas数据流 `df0`.
 
 ```R
 # R
@@ -264,9 +264,9 @@ df0 <- dataset_reader$read()
 head(df0)
 ```
 
-**使用分頁：**
+**分页：**
 
-執行以下程式碼將會從指定的資料集中讀取資料。 分頁是透過函式限制和位移資料來達成 `limit()` 和 `offset()` （分別）。 限制資料是指要讀取的資料點數上限，而位移是指在讀取資料之前要略過的資料點數。 如果成功執行讀取作業，資料將會儲存為變數參考的Pandas資料流 `df0`.
+执行以下代码将从指定的数据集中读取数据。 通过限制和偏移函数中的数据来实现分页 `limit()` 和 `offset()` 的量度。 限制数据是指要读取的数据点的最大数量，而偏移是指在读取数据之前要跳过的数据点数量。 如果读取操作执行成功，则数据将另存为变量引用的Pandas数据流 `df0`.
 
 ```R
 # R
@@ -282,16 +282,16 @@ dataset_reader <- DatasetReader(py$get_platform_sdk_client_context(), dataset_id
 df0 <- dataset_reader$limit(100L)$offset(10L)$read()
 ```
 
-### 寫入R中的資料集 {#write-r}
+### 写入R中的数据集 {#write-r}
 
-若要寫入JupyterLab筆記本中的資料集，請在JupyterLab的左側導覽中選取「資料」圖示標籤（以下反白顯示）。 此 **[!UICONTROL 資料集]** 和 **[!UICONTROL 結構描述]** 目錄出現。 選取 **[!UICONTROL 資料集]** 並按一下滑鼠右鍵，然後選取 **[!UICONTROL 在筆記型電腦中寫入資料]** 從下拉式選單中選取您要使用的選項。 筆記本底部會出現一個可執行程式碼專案。
+要写入JupyterLab笔记本中的数据集，请在JupyterLab的左侧导航中选择“数据”图标选项卡（突出显示如下）。 此 **[!UICONTROL 数据集]** 和 **[!UICONTROL 架构]** 目录出现。 选择 **[!UICONTROL 数据集]** 并右键单击，然后选择 **[!UICONTROL 在笔记本中写入数据]** 选项。 笔记本底部会显示一个可执行代码条目。
 
 ![](../images/jupyterlab/data-access/r-write-dataset.png)
 
-- 使用 **[!UICONTROL 在筆記型電腦中寫入資料]** 以使用您選取的資料集產生寫入儲存格。
-- 使用 **[!UICONTROL 探索筆記本中的資料]** 以使用您選取的資料集產生讀取儲存格。
+- 使用 **[!UICONTROL 在笔记本中写入数据]** 以使用所选数据集生成写单元格。
+- 使用 **[!UICONTROL 浏览笔记本中的数据]** 以使用所选数据集生成读取单元格。
 
-或者，您也可以複製並貼上下列程式碼儲存格：
+或者，您可以复制并粘贴以下代码单元格：
 
 ```R
 psdk <- import("platform_sdk")
@@ -300,21 +300,21 @@ dataset_writer <- psdk$dataset_writer$DatasetWriter(py$get_platform_sdk_client_c
 write_tracker <- dataset_writer$write(df, file_format='json')
 ```
 
-### 篩選 [!DNL ExperienceEvent] 資料 {#r-filter}
+### 筛选条件 [!DNL ExperienceEvent] 数据 {#r-filter}
 
-為了存取和篩選 [!DNL ExperienceEvent] 在R筆記本中的資料集，您必須提供資料集的ID (`{DATASET_ID}`)，並使用邏輯運運算元定義特定時間範圍的篩選規則。 定義時間範圍時，會忽略任何指定的分頁，並考量整個資料集。
+要访问和筛选 [!DNL ExperienceEvent] 数据集时，您必须提供数据集的ID (`{DATASET_ID}`)以及使用逻辑运算符定义特定时间范围的过滤器规则。 定义时间范围后，将忽略任何指定的分页，并会考虑整个数据集。
 
-篩選運運算元清單說明如下：
+筛选运算符列表如下所述：
 
 - `eq()`: 等于
 - `gt()`: 大于
 - `ge()`: 大于或等于
 - `lt()`: 小于
 - `le()`: 小于或等于
-- `And()`：邏輯AND運運算元
-- `Or()`：邏輯或運運算元
+- `And()`：逻辑AND运算符
+- `Or()`：逻辑OR运算符
 
-下列儲存格會篩選 [!DNL ExperienceEvent] 資料集至獨家存在於2019年1月1日至2019年12月31日之間的資料。
+以下单元格筛选 [!DNL ExperienceEvent] 数据集中的数据，这些数据在2019年1月1日至2019年12月31日终了期间专门存在。
 
 ```R
 # R
@@ -335,27 +335,27 @@ df0 <- dataset_reader$
 )$read()
 ```
 
-## PySpark 3筆記本 {#pyspark-notebook}
+## PySpark 3笔记本 {#pyspark-notebook}
 
-以下PySpark檔案概述下列概念：
+下面的PySpark文档概述了以下概念：
 
 - [初始化sparkSession](#spark-initialize)
-- [讀取和寫入資料](#magic)
-- [建立本機資料流](#pyspark-create-dataframe)
-- [篩選ExperienceEvent資料](#pyspark-filter-experienceevent)
+- [读取和写入数据](#magic)
+- [创建本地数据流](#pyspark-create-dataframe)
+- [筛选ExperienceEvent数据](#pyspark-filter-experienceevent)
 
-### 正在初始化sparkSession {#spark-initialize}
+### 初始化sparkSession {#spark-initialize}
 
-全部 [!DNL Spark] 2.4 notebooks要求您使用下列樣板程式碼來初始化工作階段。
+全部 [!DNL Spark] 2.4 notebooks要求您使用以下样板代码初始化会话。
 
 ```scala
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 ```
 
-### 使用%dataset來讀取和寫入PySpark 3筆記本 {#magic}
+### 使用%dataset对PySpark 3笔记本进行读取和写入 {#magic}
 
-透過以下主題介紹 [!DNL Spark] 2.4， `%dataset` 提供自訂魔術以用於PySpark 3 ([!DNL Spark] 2.4)筆記本。 如需IPython核心中可用之魔法命令的詳細資訊，請造訪 [Ipython魔術檔案](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
+随着 [!DNL Spark] 2.4， `%dataset` 提供了自定义魔术以用于PySpark 3 ([!DNL Spark] 2.4)笔记本。 有关IPython内核中可用的幻数命令的更多详细信息，请访问 [IPython魔法文档](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
 
 
 **用法**
@@ -366,46 +366,46 @@ spark = SparkSession.builder.getOrCreate()
 
 **描述**
 
-自訂 [!DNL Data Science Workspace] 用於從讀取或寫入資料集的magic命令 [!DNL PySpark] 筆記本([!DNL Python] 3核心)。
+自定义 [!DNL Data Science Workspace] 用于从读取或写入数据集的magic命令 [!DNL PySpark] 笔记本([!DNL Python] 3个内核)。
 
 | 名称 | 描述 | 必需 |
 | --- | --- | --- |
-| `{action}` | 要在資料集上執行的動作型別。 有兩個動作可使用「讀取」或「寫入」。 | 是 |
-| `--datasetId {id}` | 用於提供要讀取或寫入的資料集ID。 | 是 |
-| `--dataFrame {df}` | 熊貓資料流。 <ul><li> 當動作為「讀取」時，{df}是變數，資料集讀取操作的結果在此可用（例如資料流）。 </li><li> 當動作為「寫入」時，此資料流{df}會寫入資料集。 </li></ul> | 是 |
-| `--mode` | 變更資料讀取方式的其他引數。 允許的引數為「batch」和「interactive」。 依預設，模式會設為「batch」。<br> 建議您「互動」模式，在較小的資料集上提高查詢效能。 | 是 |
+| `{action}` | 要对数据集执行的操作的类型。 有两个操作可用“读取”或“写入”。 | 是 |
+| `--datasetId {id}` | 用于提供要读取或写入的数据集的ID。 | 是 |
+| `--dataFrame {df}` | 大熊猫数据流。 <ul><li> 当操作为“读取”时，{df}是变量，其中数据集读取操作的结果可用（例如数据流）。 </li><li> 当操作为“写入”时，此数据流{df}将写入数据集。 </li></ul> | 是 |
+| `--mode` | 更改数据读取方式的其他参数。 允许的参数为“batch”和“interactive”。 默认情况下，该模式设置为“批处理”。<br> 建议您“交互式”模式以提高在较小数据集上的查询性能。 | 是 |
 
 >[!TIP]
 >
->檢閱以下專案中的PySpark表格： [筆記型電腦資料限制](#notebook-data-limits) 區段以確定 `mode` 應設為 `interactive` 或 `batch`.
+>在中查看PySpark表 [笔记本数据限制](#notebook-data-limits) 部分，以确定是否 `mode` 应设置为 `interactive` 或 `batch`.
 
 **示例**
 
-- **閱讀範例**： `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0 --mode batch`
-- **撰寫範例**： `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0 --mode batch`
+- **阅读示例**： `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0 --mode batch`
+- **写入示例**： `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0 --mode batch`
 
 >[!IMPORTANT]
 >
-> 快取資料使用 `df.cache()` 在寫入資料之前，可以大幅提升筆記型電腦的效能。 如果您收到下列任何錯誤，此設定會有所幫助：
+> 缓存数据，使用 `df.cache()` 在写入数据之前，可以大大提高笔记本电脑的性能。 如果您收到以下任何错误，这将很有帮助：
 > 
-> - 工作已中止，因為中繼失敗……只能壓縮每個磁碟分割中具有相同元素數量的RDD。
-> - 遠端RPC使用者端已解除關聯和其他記憶體錯誤。
-> - 讀取和寫入資料集時效能不佳。
+> - 由于暂存失败，作业已中止……只能压缩每个分区中具有相同元素数的RDD。
+> - 远程RPC客户端已取消关联和其他内存错误。
+> - 读取和写入数据集时性能不佳。
 > 
-> 請參閱 [疑難排解指南](../troubleshooting-guide.md) 以取得詳細資訊。
+> 请参阅 [疑难解答指南](../troubleshooting-guide.md) 了解更多信息。
 
-您可以使用下列方法，在JupyterLab buy中自動產生上述範例：
+您可以使用以下方法在JupyterLab buy中自动生成上述示例：
 
-在JupyterLab的左側導覽區中選取「資料」圖示標籤（在下方醒目提示）。 此 **[!UICONTROL 資料集]** 和 **[!UICONTROL 結構描述]** 目錄出現。 選取 **[!UICONTROL 資料集]** 並按一下滑鼠右鍵，然後選取 **[!UICONTROL 在筆記型電腦中寫入資料]** 從下拉式選單中選取您要使用的選項。 筆記本底部會出現一個可執行程式碼專案。
+在JupyterLab的左侧导航中，选择数据图标选项卡（突出显示如下）。 此 **[!UICONTROL 数据集]** 和 **[!UICONTROL 架构]** 目录出现。 选择 **[!UICONTROL 数据集]** 并右键单击，然后选择 **[!UICONTROL 在笔记本中写入数据]** 选项。 笔记本底部会显示一个可执行代码条目。
 
-- 使用 **[!UICONTROL 探索筆記本中的資料]** 以產生讀取儲存格。
-- 使用 **[!UICONTROL 在筆記型電腦中寫入資料]** 產生寫入儲存格。
+- 使用 **[!UICONTROL 浏览笔记本中的数据]** 以生成读取单元格。
+- 使用 **[!UICONTROL 在笔记本中写入数据]** 以生成写入单元格。
 
 ![](../images/jupyterlab/data-access/pyspark-write-dataset.png)
 
-### 建立本機資料流 {#pyspark-create-dataframe}
+### 创建本地数据流 {#pyspark-create-dataframe}
 
-若要使用PySpark 3建立本機資料流，請使用SQL查詢。 例如：
+要使用PySpark 3创建本地数据流，请使用SQL查询。 例如：
 
 ```scala
 date_aggregation.createOrReplaceTempView("temp_df")
@@ -432,13 +432,13 @@ sample_df = df.sample(fraction)
 
 >[!TIP]
 >
->您也可以指定選用的種子範例，例如withReplacement、double fraction或long seed。
+>您还可以指定可选种子样本，例如withReplacement布尔值、双精度分数或长种子。
 
-### 篩選 [!DNL ExperienceEvent] 資料 {#pyspark-filter-experienceevent}
+### 筛选条件 [!DNL ExperienceEvent] 数据 {#pyspark-filter-experienceevent}
 
-存取和篩選 [!DNL ExperienceEvent] PySpark筆記本中的資料集需要您提供資料集身分識別(`{DATASET_ID}`)、您組織的IMS身分以及定義特定時間範圍的篩選規則。 篩選時間範圍是使用函式來定義 `spark.sql()`，其中函式引數是SQL查詢字串。
+访问和筛选 [!DNL ExperienceEvent] PySpark笔记本中的数据集要求您提供数据集标识(`{DATASET_ID}`)、贵组织的IMS身份以及定义特定时间范围的过滤器规则。 使用函数定义过滤时间范围 `spark.sql()`，其中函数参数是SQL查询字符串。
 
-下列儲存格會篩選 [!DNL ExperienceEvent] 資料集至獨家存在於2019年1月1日至2019年12月31日之間的資料。
+以下单元格筛选 [!DNL ExperienceEvent] 数据集中的数据，这些数据在2019年1月1日至2019年12月31日终了期间专门存在。
 
 ```python
 # PySpark 3 (Spark 2.4)
@@ -458,19 +458,19 @@ timepd = spark.sql("""
 timepd.show()
 ```
 
-## Scala筆記本 {#scala-notebook}
+## Scala笔记本 {#scala-notebook}
 
-以下檔案包含下列概念的範例：
+以下文档包含以下概念的示例：
 
 - [初始化sparkSession](#scala-initialize)
-- [讀取資料集](#read-scala-dataset)
-- [寫入資料集](#scala-write-dataset)
-- [建立本機資料流](#scala-create-dataframe)
-- [篩選ExperienceEvent資料](#scala-experienceevent)
+- [读取数据集](#read-scala-dataset)
+- [写入数据集](#scala-write-dataset)
+- [创建本地数据流](#scala-create-dataframe)
+- [筛选ExperienceEvent数据](#scala-experienceevent)
 
-### 正在初始化SparkSession {#scala-initialize}
+### 初始化SparkSession {#scala-initialize}
 
-所有Scala Notebooks都需要您使用下列樣板程式碼來初始化工作階段：
+所有Scala笔记本都要求您使用以下样板代码初始化会话：
 
 ```scala
 import org.apache.spark.sql.{ SparkSession }
@@ -480,19 +480,19 @@ val spark = SparkSession
   .getOrCreate()
 ```
 
-### 讀取資料集 {#read-scala-dataset}
+### 读取数据集 {#read-scala-dataset}
 
-在Scala中，您可以匯入 `clientContext` 若要取得和傳回Platform值，就不需要定義變數，例如 `var userToken`. 在下面的Scala範例中， `clientContext` 用於取得及傳回讀取資料集所需的所有必要值。
+在Scala中，您可以导入 `clientContext` 要获取并返回Platform值，无需定义变量，例如 `var userToken`. 在下面的Scala示例中， `clientContext` 用于获取和返回读取数据集所需的所有值。
 
 >[!IMPORTANT]
 >
-> 快取資料使用 `df.cache()` 在寫入資料之前，可以大幅提升筆記型電腦的效能。 如果您收到下列任何錯誤，此設定會有所幫助：
+> 缓存数据，使用 `df.cache()` 在写入数据之前，可以大大提高笔记本电脑的性能。 如果您收到以下任何错误，这将很有帮助：
 > 
-> - 工作已中止，因為中繼失敗……只能壓縮每個磁碟分割中具有相同元素數量的RDD。
-> - 遠端RPC使用者端已解除關聯和其他記憶體錯誤。
-> - 讀取和寫入資料集時效能不佳。
+> - 由于暂存失败，作业已中止……只能压缩每个分区中具有相同元素数的RDD。
+> - 远程RPC客户端已取消关联和其他内存错误。
+> - 读取和写入数据集时性能不佳。
 > 
-> 請參閱 [疑難排解指南](../troubleshooting-guide.md) 以取得詳細資訊。
+> 请参阅 [疑难解答指南](../troubleshooting-guide.md) 了解更多信息。
 
 ```scala
 import org.apache.spark.sql.{Dataset, SparkSession}
@@ -516,38 +516,38 @@ df1.show(10)
 
 | 元素 | 描述 |
 | ------- | ----------- |
-| df1 | 一個變數，代表用來讀取和寫入資料的Pandas資料流。 |
-| user-token | 您使用自動擷取的使用者權杖 `clientContext.getUserToken()`. |
-| service-token | 您的服務權杖已使用自動擷取 `clientContext.getServiceToken()`. |
-| ims-org | 您的組織ID會使用自動擷取 `clientContext.getOrgId()`. |
-| api-key | 您使用自動擷取的API金鑰 `clientContext.getApiKey()`. |
+| df1 | 一个变量，表示用于读取和写入数据的Pandas数据流。 |
+| user-token | 您的用户令牌，将使用自动获取 `clientContext.getUserToken()`. |
+| service-token | 使用以下方式自动获取的服务令牌 `clientContext.getServiceToken()`. |
+| ims-org | 您的组织ID，将使用自动获取 `clientContext.getOrgId()`. |
+| api-key | 使用以下方式自动获取的API密钥 `clientContext.getApiKey()`. |
 
 >[!TIP]
 >
->檢閱內的Scala表格 [筆記型電腦資料限制](#notebook-data-limits) 區段以確定 `mode` 應設為 `interactive` 或 `batch`.
+>查看Scala表中的 [笔记本数据限制](#notebook-data-limits) 部分，以确定是否 `mode` 应设置为 `interactive` 或 `batch`.
 
-您可以使用下列方法，在JupyterLab buy中自動產生上述範例：
+您可以使用以下方法在JupyterLab buy中自动生成上述示例：
 
-在JupyterLab的左側導覽區中選取「資料」圖示標籤（在下方醒目提示）。 此 **[!UICONTROL 資料集]** 和 **[!UICONTROL 結構描述]** 目錄出現。 選取 **[!UICONTROL 資料集]** 並按一下滑鼠右鍵，然後選取 **[!UICONTROL 探索筆記本中的資料]** 從下拉式選單中選取您要使用的選項。 筆記本底部會出現一個可執行程式碼專案。
+在JupyterLab的左侧导航中，选择数据图标选项卡（突出显示如下）。 此 **[!UICONTROL 数据集]** 和 **[!UICONTROL 架构]** 目录出现。 选择 **[!UICONTROL 数据集]** 并右键单击，然后选择 **[!UICONTROL 浏览笔记本中的数据]** 选项。 笔记本底部会显示一个可执行代码条目。
 和
-- 使用 **[!UICONTROL 探索筆記本中的資料]** 以產生讀取儲存格。
-- 使用 **[!UICONTROL 在筆記型電腦中寫入資料]** 產生寫入儲存格。
+- 使用 **[!UICONTROL 浏览笔记本中的数据]** 以生成读取单元格。
+- 使用 **[!UICONTROL 在笔记本中写入数据]** 以生成写入单元格。
 
 ![](../images/jupyterlab/data-access/scala-write-dataset.png)
 
-### 寫入資料集 {#scala-write-dataset}
+### 写入数据集 {#scala-write-dataset}
 
-在Scala中，您可以匯入 `clientContext` 若要取得和傳回Platform值，就不需要定義變數，例如 `var userToken`. 在下面的Scala範例中， `clientContext` 用於定義並傳回寫入資料集所需的所有必要值。
+在Scala中，您可以导入 `clientContext` 要获取并返回Platform值，无需定义变量，例如 `var userToken`. 在下面的Scala示例中， `clientContext` 用于定义并返回写入数据集所需的所有值。
 
 >[!IMPORTANT]
 >
-> 快取資料使用 `df.cache()` 在寫入資料之前，可以大幅提升筆記型電腦的效能。 如果您收到下列任何錯誤，此設定會有所幫助：
+> 缓存数据，使用 `df.cache()` 在写入数据之前，可以大大提高笔记本电脑的性能。 如果您收到以下任何错误，这将很有帮助：
 > 
-> - 工作已中止，因為中繼失敗……只能壓縮每個磁碟分割中具有相同元素數量的RDD。
-> - 遠端RPC使用者端已解除關聯和其他記憶體錯誤。
-> - 讀取和寫入資料集時效能不佳。
+> - 由于暂存失败，作业已中止……只能压缩每个分区中具有相同元素数的RDD。
+> - 远程RPC客户端已取消关联和其他内存错误。
+> - 读取和写入数据集时性能不佳。
 > 
-> 請參閱 [疑難排解指南](../troubleshooting-guide.md) 以取得詳細資訊。
+> 请参阅 [疑难解答指南](../troubleshooting-guide.md) 了解更多信息。
 
 ```scala
 import org.apache.spark.sql.{Dataset, SparkSession}
@@ -568,19 +568,19 @@ df1.write.format("com.adobe.platform.query")
 
 | element | 描述 |
 | ------- | ----------- |
-| df1 | 一個變數，代表用來讀取和寫入資料的Pandas資料流。 |
-| user-token | 您使用自動擷取的使用者權杖 `clientContext.getUserToken()`. |
-| service-token | 您的服務權杖已使用自動擷取 `clientContext.getServiceToken()`. |
-| ims-org | 您的組織ID會使用自動擷取 `clientContext.getOrgId()`. |
-| api-key | 您使用自動擷取的API金鑰 `clientContext.getApiKey()`. |
+| df1 | 一个变量，表示用于读取和写入数据的Pandas数据流。 |
+| user-token | 您的用户令牌，将使用自动获取 `clientContext.getUserToken()`. |
+| service-token | 使用以下方式自动获取的服务令牌 `clientContext.getServiceToken()`. |
+| ims-org | 您的组织ID，将使用自动获取 `clientContext.getOrgId()`. |
+| api-key | 使用以下方式自动获取的API密钥 `clientContext.getApiKey()`. |
 
 >[!TIP]
 >
->檢閱內的Scala表格 [筆記型電腦資料限制](#notebook-data-limits) 區段以確定 `mode` 應設為 `interactive` 或 `batch`.
+>查看Scala表中的 [笔记本数据限制](#notebook-data-limits) 部分，以确定是否 `mode` 应设置为 `interactive` 或 `batch`.
 
-### 建立本機資料流 {#scala-create-dataframe}
+### 创建本地数据流 {#scala-create-dataframe}
 
-若要使用Scala建立本機資料流，需要SQL查詢。 例如：
+要使用Scala创建本地数据流，需要SQL查询。 例如：
 
 ```scala
 sparkdf.createOrReplaceTempView("sparkdf")
@@ -588,11 +588,11 @@ sparkdf.createOrReplaceTempView("sparkdf")
 val localdf = spark.sql("SELECT * FROM sparkdf LIMIT 1)
 ```
 
-### 篩選 [!DNL ExperienceEvent] 資料 {#scala-experienceevent}
+### 筛选条件 [!DNL ExperienceEvent] 数据 {#scala-experienceevent}
 
-存取和篩選 [!DNL ExperienceEvent] Scala筆記本中的資料集需要您提供資料集身分識別(`{DATASET_ID}`)、您組織的IMS身分以及定義特定時間範圍的篩選規則。 篩選時間範圍是使用函式來定義 `spark.sql()`，其中函式引數是SQL查詢字串。
+访问和筛选 [!DNL ExperienceEvent] scala笔记本中的数据集要求您提供数据集标识(`{DATASET_ID}`)、贵组织的IMS身份以及定义特定时间范围的过滤器规则。 使用函数定义过滤时间范围 `spark.sql()`，其中函数参数是SQL查询字符串。
 
-下列儲存格會篩選 [!DNL ExperienceEvent] 資料集至獨家存在於2019年1月1日至2019年12月31日之間的資料。
+以下单元格筛选 [!DNL ExperienceEvent] 数据集中的数据，这些数据在2019年1月1日至2019年12月31日终了期间专门存在。
 
 ```scala
 // Spark (Spark 2.4)
@@ -635,15 +635,15 @@ timedf.show()
 
 ## 后续步骤
 
-本檔案說明使用JupyterLab Notebooks存取資料集的一般准則。 如需查詢資料集的更深入範例，請造訪 [JupyterLab Notebooks中的查詢服務](./query-service.md) 說明檔案。 如需如何探索和視覺化資料集的詳細資訊，請瀏覽以下檔案： [使用筆記型電腦分析資料](./analyze-your-data.md).
+本文档介绍了使用JupyterLab Notebooks访问数据集的一般准则。 有关查询数据集的更深入示例，请访问 [JupyterLab笔记本中的查询服务](./query-service.md) 文档。 有关如何浏览和可视化数据集的更多信息，请访问 [使用笔记本分析数据](./analyze-your-data.md).
 
-## 的可選SQL標幟 [!DNL Query Service] {#optional-sql-flags-for-query-service}
+## 的可选SQL标记 [!DNL Query Service] {#optional-sql-flags-for-query-service}
 
-此表格概述可用於下列專案的可選SQL旗標： [!DNL Query Service].
+此表概述了可用于的可选SQL标记 [!DNL Query Service].
 
-| **標幟** | **描述** |
+| **标志** | **描述** |
 | --- | --- |
-| `-h`、`--help` | 顯示說明訊息並退出。 |
-| `-n`、`--notify` | 通知查詢結果的切換選項。 |
-| `-a`、`--async` | 使用此旗標可非同步執行查詢，並可在查詢執行時釋放核心。 將查詢結果指派給變數時請務必小心，因為如果查詢未完成，變數可能會有未定義的情形。 |
-| `-d`、`--display` | 使用此旗標可防止顯示結果。 |
+| `-h`、`--help` | 显示帮助消息并退出。 |
+| `-n`、`--notify` | 用于通知查询结果的切换选项。 |
+| `-a`、`--async` | 使用此标记可异步执行查询，并可在查询执行时释放内核。 将查询结果分配给变量时请务必谨慎，因为如果查询不完整，变量可能会未定义。 |
+| `-d`、`--display` | 使用此标记可阻止显示结果。 |

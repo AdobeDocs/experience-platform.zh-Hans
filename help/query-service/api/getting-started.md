@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；查詢
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询
 solution: Experience Platform
-title: 查詢服務API指南
-description: 查詢服務API可讓開發人員使用標準SQL查詢其Adobe Experience Platform資料。 参阅本指南，了解如何使用 API 执行关键操作。
+title: 查询服务API指南
+description: 查询服务API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 2f4a156b-5623-419a-a9b2-72310f755708
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
@@ -13,50 +13,50 @@ ht-degree: 5%
 
 # [!DNL Query Service] API指南
 
-本開發人員指南提供在Adobe Experience Platform中執行各種操作的步驟 [!DNL Query Service] API。
+本开发人员指南提供了在Adobe Experience Platform中执行各种操作的步骤 [!DNL Query Service] API。
 
 ## 快速入门
 
-本指南需要您實際瞭解使用的各種Adobe Experience Platform服務 [!DNL Query Service].
+本指南要求您实际了解使用中所涉及的各种Adobe Experience Platform服务 [!DNL Query Service].
 
-- [[!DNL Query Service]](../home.md)：提供查詢資料集並將產生的查詢擷取為新資料集的能力 [!DNL Experience Platform].
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-- [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+- [[!DNL Query Service]](../home.md)：提供查询数据集并将生成的查询捕获为中的新数据集的能力 [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功使用所需的其他資訊 [!DNL Query Service] 使用API。
+以下部分提供了成功使用时需要了解的其他信息 [!DNL Query Service] 使用API。
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本指南提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需本檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本指南提供了示例API调用，以演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关本文档中用于示例API调用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Experience Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Platform] API呼叫，如下所示：
+为了调用 [!DNL Experience Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Platform] API调用，如下所示：
 
 - Authorization: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，指定將執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform] 与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需在中使用沙箱的詳細資訊 [!DNL Experience Platform]，請參閱 [沙箱概觀檔案](../../sandboxes/home.md).
+>有关在中使用沙箱的详细信息 [!DNL Experience Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-## API呼叫範例
+## 示例API调用
 
-現在您已瞭解要使用哪些標頭，可以開始對 [!DNL Query Service] API。 以下檔案會逐步說明您可以使用進行的各種API呼叫。 [!DNL Query Service] API。 每個呼叫範例都包含一般API格式、顯示必要標題的範例要求以及範例回應。
+现在您了解了要使用哪些标头，就可以开始调用 [!DNL Query Service] API。 以下文档介绍了您可以使用进行的各种API调用 [!DNL Query Service] API。 每个示例调用包括常规API格式、显示所需标头的示例请求和示例响应。
 
 - [查询](queries.md)
-- [連線引數](connection-parameters.md)
-- [排定的查詢](scheduled-queries.md)
-- [針對排定的查詢執行](runs-scheduled-queries.md)
-- [查詢範本](query-templates.md)
-- [加速的查詢](./accelerated-queries.md)
-- [警報訂閱](./alert-subscriptions.md)
+- [连接参数](connection-parameters.md)
+- [计划的查询](scheduled-queries.md)
+- [针对计划查询运行](runs-scheduled-queries.md)
+- [查询模板](query-templates.md)
+- [加速查询](./accelerated-queries.md)
+- [警报订阅](./alert-subscriptions.md)
 
 ## 后续步骤
 
-現在您已瞭解如何使用 [!DNL Query Service] API，您可以建立自己的非互動式查詢。 如需如何建立查詢的詳細資訊，請參閱 [SQL參考指南](../sql/overview.md).
+现在您已了解如何使用 [!DNL Query Service] API中，您可以创建自己的非交互式查询。 有关如何创建查询的更多信息，请阅读 [SQL参考指南](../sql/overview.md).

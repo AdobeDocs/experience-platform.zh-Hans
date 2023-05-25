@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題
+keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Privacy Service疑難排解指南
-description: 本檔案提供有關Privacy Service常見問題的解答，以及API中常見錯誤的資訊。
+title: Privacy Service疑难解答指南
+description: 本文档提供了有关Privacy Service的常见问题解答，以及有关API中常见错误的信息。
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,19 +11,19 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Privacy Service] 疑難排解指南
+# [!DNL Privacy Service] 疑难解答指南
 
-Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和使用者介面，以協助公司管理客戶資料隱私權請求。 替換為 [!DNL Privacy Service]，您可以提交存取和刪除私人或個人客戶資料的請求，促進自動遵守組織和法律隱私權法規。
+Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助公司管理客户数据隐私请求。 替换为 [!DNL Privacy Service]，您可以提交访问和删除私人或个人客户数据的请求，从而促进自动遵守组织和法律隐私法规。
 
-本檔案提供以下專案的常見問題解答： [!DNL Privacy Service]以及API中常見錯誤的資訊。
+本文档提供有关以下内容的常见问题解答： [!DNL Privacy Service]以及API中经常遇到的错误的相关信息。
 
-## 在API中提出隱私權請求時，使用者與使用者ID之間有何差異？ {#user-ids}
+## 在API中提出隐私请求时，用户和用户ID之间有何区别？ {#user-ids}
 
-為了在API中建立新的隱私權工作，請求的JSON裝載必須包含 `users` 陣列，列出隱私權請求適用的每個使用者的特定資訊。 中的每一個專案 `users` array是代表特定使用者的物件，由其 `key` 值。
+要在API中生成新的隐私作业，请求的JSON有效负载必须包含 `users` 数组，其中列出了隐私请求应用于的每个用户的特定信息。 中的每项 `users` 数组是表示特定用户的对象，由其 `key` 值。
 
-反過來，每個使用者物件(或 `key`)包含自己的 `userIDs` 陣列。 此陣列會列出特定的ID值 **針對該特定使用者**.
+反过来，每个用户对象(或 `key`)包含它自己的 `userIDs` 数组。 此数组列出特定的ID值 **针对该特定用户**.
 
-考量下列範例 `users` 陣列：
+请考虑以下示例 `users` 数组：
 
 ```json
 "users": [
@@ -58,56 +58,56 @@ Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和使用者�
 ]
 ```
 
-陣列包含兩個物件，代表各自識別的使用者 `key` 值(「DavidSmith」和「user12345」)。 「DavidSmith」只有一個列出的ID （他們的電子郵件地址），而「user12345」有兩個的（他們的電子郵件地址和ECID）。
+数组包含两个对象，分别表示由其 `key` 值(“DavidSmith”和“user12345”)。 “DavidSmith”只有一个列出的ID（他们的电子邮件地址），而“user12345”有两个列出的ID（他们的电子邮件地址和ECID）。
 
-如需有關提供使用者身分資訊的詳細資訊，請參閱以下指南： [隱私權請求的身分資料](identity-data.md).
+有关提供用户标识信息的更多信息，请参阅以下指南中的 [隐私请求的身份数据](identity-data.md).
 
 
-## 我可以使用 [!DNL Privacy Service] 以清除不小心傳送到的資料 [!DNL Platform]？
+## 我可以使用吗 [!DNL Privacy Service] 以清理意外发送到的数据 [!DNL Platform]？
 
-Adobe不支援使用 [!DNL Privacy Service] 用於清除意外提交給產品的資料。 [!DNL Privacy Service] 旨在協助您履行資料主體（或消費者）存取或刪除請求的義務。 不支援或不允許將Privacy Service用於資料清理或維護的任何其他用途。
+Adobe不支持使用 [!DNL Privacy Service] 用于清除意外提交给产品的数据。 [!DNL Privacy Service] 旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。
 
-隱私權請求常有時效性，而且是根據適用的隱私權法律完成。 提交非資料主體/消費者存取或刪除請求的請求會影響所有 [!DNL Privacy Service] 客戶及以下功能 [!DNL Privacy Service] 以支援適當的法律時間表。 現已設定每日硬性上傳限制，以防止服務被濫用。
+隐私请求对时间敏感，并且是根据适用的隐私法完成的。 提交不是数据主体/消费者访问或删除请求的请求会影响所有 [!DNL Privacy Service] 客户和 [!DNL Privacy Service] 支持适当的法定时限。 现已设定每日硬性上传限制，以帮助防止滥用服务。
 
-請聯絡您的Adobe客戶團隊，以協調並提供移除任何PII或資料問題的幫助。
+请联系您的Adobe客户团队以协调并提供一定程度的工作来移除任何PII或数据问题。
 
-## 如何取得隱私權請求或工作狀態的相關資訊？
+## 如何获取有关隐私请求或作业状态的信息？
 
-您可以使用來擷取特定工作的詳細資訊 [!DNL Privacy Service] API或使用者介面。
-
-### 使用 API
-
-若要使用擷取特定工作的狀態 [!DNL Privacy Service] API，向根提出請求(`GET /`)端點，使用請求路徑中作業的ID。 如需詳細資訊，請參閱以下章節： [檢查工作狀態](api/privacy-jobs.md#check-the-status-of-a-job) 在 [!DNL Privacy Service] API指南。
-
-### 使用UI
-
-所有作用中的工作請求都會列在 **[!UICONTROL 工作請求]** 上的Widget [!DNL Privacy Service] UI儀表板。 每個工作請求的狀態都會顯示在 **[!UICONTROL 狀態]** 欄。 如需在UI中檢視工作請求的詳細資訊，請參閱 [Privacy Service使用手冊](ui/user-guide.md).
-
-## 如何下載已完成的隱私權工作的結果？
-
-此 [!DNL Privacy Service] API和使用者介面都提供以ZIP格式下載已完成作業結果的方法。
+您可以使用检索有关特定作业的详细信息 [!DNL Privacy Service] api或用户界面。
 
 ### 使用 API
 
-向根提出請求(`GET /`)端點(在 [!DNL Privacy Service] API，使用您要在請求路徑中下載其結果的工作的ID。 如果工作的狀態為完成，則API將包含 `downloadURL` 屬性。 此屬性包含一個URL，您可以將其貼到瀏覽器的位址列來下載ZIP檔案。
-
-如需詳細資訊，請參閱以下章節： [依作業ID查詢作業](api/privacy-jobs.md#check-the-status-of-a-job) 在 [!DNL Privacy Service] API指南。
+要使用检索特定作业的状态，请执行以下操作 [!DNL Privacy Service] API，向根发出请求(`GET /`)端点，在请求路径中使用作业的ID。 有关更多详细信息，请参阅 [检查作业状态](api/privacy-jobs.md#check-the-status-of-a-job) 在 [!DNL Privacy Service] API指南。
 
 ### 使用UI
 
-於 [!DNL Privacy Service] UI控制面板，找出您要從下載的工作 **工作請求** Widget. 選取工作的ID以開啟「工作詳細資訊」頁面。 從此處選取 **下載** 右上角下載ZIP檔案。 請參閱 [Privacy Service使用手冊](ui/user-guide.md) 以取得更詳細的步驟。
+所有活动作业请求都列在 **[!UICONTROL 作业请求]** 上的构件 [!DNL Privacy Service] UI仪表板。 每个作业请求的状态显示在 **[!UICONTROL 状态]** 列。 有关在UI中查看作业请求的更多信息，请参阅 [Privacy Service用户指南](ui/user-guide.md).
+
+## 如何下载已完成的隐私作业的结果？
+
+此 [!DNL Privacy Service] API和用户界面都提供了以ZIP格式下载已完成作业结果的方法。
+
+### 使用 API
+
+向根发出请求(`GET /`)中的端点 [!DNL Privacy Service] API，使用要在请求路径中下载其结果的作业的ID。 如果作业的状态为“完成”，则API将包含 `downloadURL` 属性。 此属性包含一个URL，您可以将其粘贴到浏览器的地址栏来下载ZIP文件。
+
+有关更多详细信息，请参阅 [按作业ID查找作业](api/privacy-jobs.md#check-the-status-of-a-job) 在 [!DNL Privacy Service] API指南。
+
+### 使用UI
+
+在 [!DNL Privacy Service] UI仪表板，从查找要下载的作业 **作业请求** 构件。 选择作业的ID以打开“作业详细信息”页。 从此处选择 **下载** 下载ZIP文件。 请参阅 [Privacy Service用户指南](ui/user-guide.md) 了解更多详细步骤。
 
 ## 常见错误消息
 
-下表概述中的幾個常見錯誤 [!DNL Privacy Service]，並提供說明，以協助解決各自的問題。
+下表概述了中的一些常见错误 [!DNL Privacy Service]，其中包含帮助解决其各自问题的描述。
 
 | 错误消息 | 描述 |
 | --- | --- |
-| 找不到使用者識別碼。 | 找不到請求中提供的部分使用者ID，已略過。 確保您在請求裝載中使用正確的名稱空間和ID值。 檢視檔案： [提供身分資料](./identity-data.md) 以取得更詳細的說明。 |
-| 無效的名稱空間 | 為使用者ID提供的身分名稱空間無效。 請參閱以下小節： [標準身分名稱空間](./api/appendix.md#standard-namespaces) 在 [!DNL Privacy Service] API指南附錄，以取得接受的名稱空間清單。 如果您使用自訂名稱空間，請務必設定ID的 `type` 屬性重新命名為「custom」。 |
-| 部分完成 | 工作已成功完成，但部分資料不適用於特定請求，已略過。 |
-| 資料不是要求的格式。 | 指定應用程式的一個或多個資料值格式不正確。 如需詳細資訊，請檢視工作詳細資料。 |
-| 尚未布建IMS組織。 | 當您的組織尚未布建時，就會出現此訊息 [!DNL Privacy Service]. 如需詳細資訊，請聯絡管理員。 |
-| 需要存取權和許可權。 | 需要存取權和許可權才能使用 [!DNL Privacy Service]. 請聯絡您的管理員以取得存取權。 |
-| 上傳和封存存取資料時發生問題。 | 發生此錯誤時，請重新上傳存取資料，然後重試。 |
-| 工作負載超過目前的檔案速率限制。 | 發生此錯誤時，請降低提交率並重試。 |
+| 未找到用户ID。 | 无法找到请求中提供的某些用户ID，已跳过这些ID。 确保您在请求有效负载中使用正确的命名空间和ID值。 查看文档 [提供身份数据](./identity-data.md) 以取得更详细的解释。 |
+| 命名空间无效 | 为用户ID提供的身份命名空间无效。 请参阅以下部分： [标准身份命名空间](./api/appendix.md#standard-namespaces) 在 [!DNL Privacy Service] API指南附录，以查看已接受的命名空间列表。 如果您使用的是自定义命名空间，请确保设置ID的 `type` 属性更改为“custom”。 |
+| 部分完成 | 作业已成功完成，但某些数据不适用于给定的请求，已跳过。 |
+| 数据格式不符合要求。 | 指定应用程序的一个或多个数据值的格式不正确。 有关更多信息，请查看作业详细信息。 |
+| 尚未配置IMS组织。 | 当您的组织尚未配置以下项时，会出现此消息： [!DNL Privacy Service]. 有关详细信息，请与管理员联系。 |
+| 需要访问和权限。 | 必须具有访问权限才能使用 [!DNL Privacy Service]. 请联系您的管理员以获取访问权限。 |
+| 上载和存档访问数据时出现问题。 | 发生此错误时，请重新上传访问数据并重试。 |
+| 工作负载超出了当前的文档速率限制。 | 发生此错误时，请降低提交率并重试。 |

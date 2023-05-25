@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；篩選；篩選；篩選資料；篩選資料
+keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据
 solution: Experience Platform
-title: 列出目錄物件
-description: 您可以透過單一API呼叫擷取特定型別的所有可用物件清單，最佳實務是加入限制回應大小的篩選器。
+title: 列出目录对象
+description: 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳做法是包含限制响应大小的过滤器。
 exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -11,9 +11,9 @@ ht-degree: 1%
 
 ---
 
-# 列出目錄物件
+# 列出目录对象
 
-您可以透過單一API呼叫擷取特定型別的所有可用物件清單，最佳實務是加入限制回應大小的篩選器。
+您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳做法是包含限制响应大小的过滤器。
 
 **API格式**
 
@@ -24,12 +24,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 型別 [!DNL Catalog] 要列出的物件。 有效物件包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | 用來篩選回應中傳回結果的查詢引數。 多個引數以&amp;符號(`&`)。 請參閱指南： [篩選目錄資料](filter-data.md) 以取得詳細資訊。 |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要列出的对象。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)。 请参阅指南，网址为 [筛选目录数据](filter-data.md) 了解更多信息。 |
 
 **请求**
 
-以下範例請求會擷取資料集清單，並附上 `limit` 篩選條件將回應減少為五個結果，以及 `properties` 限制每個資料集所顯示屬性的篩選器。
+下面的示例请求检索数据集列表，其中 `limit` 筛选条件将响应减少到五个结果，以及 `properties` 用于限制为每个数据集显示的属性的过滤器。
 
 ```shell
 curl -X GET \
@@ -42,11 +42,11 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回以下清單： [!DNL Catalog] 索引鍵值配對形式的物件，依請求中提供的查詢引數篩選。 對於每個機碼 — 值組，機碼代表 [!DNL Catalog] 有問題的物件，然後可用於對的其他呼叫 [檢視該特定物件](look-up-object.md) 以取得更多詳細資料。
+成功的响应返回一个列表，其中 [!DNL Catalog] 键值对形式的对象，按请求中提供的查询参数进行筛选。 对于每个键值对，键值表示以下项的唯一标识符： [!DNL Catalog] 有问题的对象，该对象随后可用于对的其他调用 [查看该特定对象](look-up-object.md) 了解更多详细信息。
 
 >[!NOTE]
 >
->如果傳回的物件不包含 `properties` 查詢時，回應只會傳回所請求的屬性，如所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下方的。
+>如果返回的对象不包含由指示的一个或多个请求属性 `properties` 查询时，响应仅返回它包含的要求属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下面的。
 
 ```json
 {

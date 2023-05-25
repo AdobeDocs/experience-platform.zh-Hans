@@ -1,6 +1,6 @@
 ---
-title: 資料彙集
-description: 瞭解Adobe Experience Platform Edge Network Server API如何建構收集的資料。
+title: 数据收集
+description: 了解Adobe Experience Platform Edge Network Server API如何构建收集的数据。
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
 source-wordcount: '131'
@@ -9,16 +9,16 @@ ht-degree: 5%
 ---
 
 
-# 資料彙集
+# 数据收集
 
-此 [!DNL Server API] 提供兩種型別的資料收集端點：
+此 [!DNL Server API] 提供两种类型的数据收集端点：
 
-* [互動式資料收集端點](interactive-data-collection.md)，用於使用者端預期伺服器會傳回回應時。 在執行資料收集時，這些端點也可以從其他Edge Network服務傳回內容。
-* [非互動式事件資料彙集](non-interactive-data-collection.md)，在預期伺服器沒有回應時使用。 這些端點僅用於資料收集。
+* [交互式数据收集端点](interactive-data-collection.md)，在客户端预期服务器返回响应时使用。 在执行数据收集时，这些端点还可以从其他边缘网络服务返回内容。
+* [非交互式事件数据收集](non-interactive-data-collection.md)，在不需要服务器响应时使用。 这些端点仅用于数据收集。
 
-## `Event` 物件 {#event-object}
+## `Event` 对象 {#event-object}
 
-由收集的資料 [!DNL Server API] 在中建構 `Event` 物件。 此物件的結構如下所述。
+由收集的数据 [!DNL Server API] 在中构建 `Event` 对象。 此对象的结构如下所述。
 
 ```json
 {
@@ -56,6 +56,6 @@ ht-degree: 5%
 
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
-| `xdm` | 对象 | *必需*. 包含XDM格式資料（對應於資料集結構）的JSON物件。 |
-| `data` | 对象 | *可选*. 包含自由格式資料的JSON物件，可由Edge Network對應至XDM。 |
+| `xdm` | 对象 | *必需*. 包含XDM格式数据的JSON对象，对应于数据集架构。 |
+| `data` | 对象 | *可选*. 包含自由格式数据的JSON对象，它可以由Edge Network映射到XDM。 |
 

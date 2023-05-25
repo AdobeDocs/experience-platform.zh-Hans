@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；poi；互動；興趣點；興趣點；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；POI；交互；兴趣点；兴趣点；数据类型；数据类型；
 solution: Experience Platform
-title: 興趣點互動資料型別
-description: 本檔案提供興趣點互動XDM資料型別的概觀。
+title: 兴趣点交互数据类型
+description: 本文档概述兴趣点交互XDM数据类型。
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,21 +11,21 @@ ht-degree: 2%
 
 ---
 
-# [!UICONTROL 興趣點互動] 資料型別
+# [!UICONTROL 兴趣点互动] 数据类型
 
-[!UICONTROL 興趣點互動] 是標準的XDM資料型別，說明在行動裝置進入範圍內時，將身分資訊傳遞給行動應用程式的無線裝置。
+[!UICONTROL 兴趣点互动] 是标准的XDM数据类型，描述在移动设备进入范围内时将身份信息传递给移动应用程序的无线设备。
 
 <img src="../images/data-types/poi-interaction.png" width="400" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `poiDetail` | [[!UICONTROL 興趣點細節]](./poi-details.md) | 說明導致事件的POI的詳細資料。 |
-| `poiEntries` | 对象 | 說明個人已進入POI的次數。 包含兩個屬性： <ul><li>`id`：測量的唯一識別碼。</li><li>`value`：測量的可量化值。</li></ul> |
-| `poiExits` | 对象 | 說明個人已退出POI的次數。 包含兩個屬性： <ul><li>`id`：測量的唯一識別碼。</li><li>`value`：測量的可量化值。</li></ul> |
+| `poiDetail` | [[!UICONTROL 兴趣点详细信息]](./poi-details.md) | 描述导致事件的POI的详细信息。 |
+| `poiEntries` | 对象 | 描述人员进入POI的次数。 包含两个属性： <ul><li>`id`：度量的唯一标识符。</li><li>`value`：测量的可量化值。</li></ul> |
+| `poiExits` | 对象 | 描述人员退出POI的次数。 包含两个属性： <ul><li>`id`：度量的唯一标识符。</li><li>`value`：测量的可量化值。</li></ul> |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.schema.json)

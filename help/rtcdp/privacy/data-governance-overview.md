@@ -1,7 +1,7 @@
 ---
-keywords: 資料控管rtcdp；rtcdp資料控管；即時客戶資料設定檔資料控管
-title: 資料控管概觀
-description: 資料控管可讓您管理客戶資料，並確保遵守適用於資料使用的法規、限制和原則。
+keywords: 数据治理rtcdp；rtcdp数据治理；实时客户数据配置文件数据治理
+title: 数据治理概述
+description: 通过数据治理，您可以管理客户数据并确保遵守适用于数据使用的法规、限制和策略。
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
@@ -10,52 +10,52 @@ ht-degree: 3%
 
 ---
 
-# Real-Time CDP中的資料控管
+# Real-Time CDP中的数据治理
 
-[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)將來自多個企業系統的資料彙集在一起，讓行銷人員更能識別、瞭解客戶，並與客戶互動。 贵组织或法律法规可能会对此数据设置使用限制。因此，在處理您的資料時，請務必確保Real-Time CDP符合使用原則。
+[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)将来自多个企业系统的数据汇集在一起，使营销人员能够更好地识别、了解客户并与他们互动。 贵组织或法律法规可能会对此数据设置使用限制。因此，在处理您的数据时，请务必确保Real-Time CDP符合使用策略。
 
-Adobe Experience Platform資料控管可讓您管理客戶資料，並確保遵守適用於資料使用的法規、限制和原則。 它在Real-Time CDP中起著關鍵作用，可讓您定義使用原則、根據這些原則將資料分類，以及在執行某些行銷動作時檢查原則違規。
+Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在Real-Time CDP中起着关键作用，允许您定义使用策略、根据这些策略对数据进行分类，以及在执行某些营销操作时检查策略违规。
 
-Real-Time CDP是以Adobe Experience Platform為基礎所打造，因此，大多數資料控管功能都涵蓋在 [!DNL Experience Platform] 說明檔案。 本檔案旨在補充 [資料控管概觀](../../data-governance/home.md) 的 [!DNL Experience Platform]，並概述Real-Time CDP中可用的控管功能。 涵盖以下主题：
+Real-Time CDP构建于Adobe Experience Platform之上，因此大多数数据管理功能都涵盖在 [!DNL Experience Platform] 文档。 本文档旨在补充 [数据治理概述](../../data-governance/home.md) 对象 [!DNL Experience Platform]，并概述了Real-Time CDP中可用的治理功能。 涵盖以下主题：
 
-* [將使用標籤套用至您的資料](#labels)
-* [管理資料使用原則](#policies)
-* [強制執行資料使用規範](#enforce)
+* [将使用标签应用于您的数据](#labels)
+* [管理数据使用策略](#policies)
+* [强制执行数据使用合规性](#enforce)
 
-## 將使用標籤套用至您的資料 {#labels}
+## 将使用标签应用于您的数据 {#labels}
 
-資料控管可讓您在資料集或資料集欄位層級，將使用標籤套用至您的資料。 資料使用標籤可讓您根據套用至該資料的使用原則來分類資料。
+数据管理允许您在数据集或数据集字段级别将使用标签应用于数据。 数据使用标签允许您根据应用于数据的使用策略对数据分类。
 
-如需有關使用資料使用標籤的詳細資訊，請參閱 [資料使用標籤使用手冊](../../data-governance/labels/overview.md) 適用於Adobe Experience Platform。
+有关使用数据使用标签的详细信息，请参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) 适用于Adobe Experience Platform的。
 
-## 設定目的地的行銷動作 {#destinations}
+## 配置目标的营销操作 {#destinations}
 
-您可以定義目的地的行銷動作（也稱為行銷使用案例），以設定目的地的資料使用限制。 目的地的行銷動作會指出匯出至該目的地的資料意圖。
+您可以通过定义目标的营销操作（也称为营销用例），在该目标上设置数据使用限制。 目标的营销操作指示将导出到该目标的数据的意图。
 
 >[!NOTE]
 >
->如需行銷動作及其在資料使用原則中之使用的詳細資訊，請參閱 [資料使用原則概觀](../../data-governance/policies/overview.md) 在 [!DNL Experience Platform] 說明檔案。
+>有关营销操作及其在数据使用策略中的使用的更多信息，请参阅 [数据使用策略概述](../../data-governance/policies/overview.md) 在 [!DNL Experience Platform] 文档。
 
-在目的地上定義行銷動作可讓您確保傳送至這些目的地的任何設定檔或區段都符合資料使用原則。 因此，您應該根據貴組織強制執行啟用原則限制的需求，將適當的行銷動作新增至目的地。
+通过在目标上定义营销操作，您可以确保发送到这些目标的任何用户档案或区段都符合数据使用策略。 因此，您应根据组织对激活实施策略限制的需要，向目标添加适当的营销操作。
 
-行銷動作只能在第一次設定目的地時選取。 根據您使用的目的地型別，設定行銷動作的機會將顯示在設定工作流程的不同時間點。 請參閱 [目的地檔案](../destinations/overview.md) 瞭解如何設定特定目的地的步驟。
+只有在首次设置目标时，才能选择营销操作。 根据您使用的目标类型，配置营销操作的机会将显示在设置工作流的不同位置。 请参阅 [目标文档](../destinations/overview.md) 了解有关如何配置特定目标的步骤。
 
-## 管理資料使用原則 {#policies}
+## 管理数据使用策略 {#policies}
 
-為了使資料使用標籤有效地支援資料合規性，必須定義並啟用資料使用原則。 資料使用原則是描述允許或限制您在Real-Time CDP中對資料執行的行銷動作型別的規則。 請參閱以下主題中的「資料使用原則」一節： [!DNL Experience Platform] [資料控管概觀](../../data-governance/home.md) 以取得詳細資訊。
+为了使数据使用标签有效地支持数据合规性，必须定义和启用数据使用策略。 数据使用策略是描述允许或限制您对Real-Time CDP中的数据执行的营销操作类型的规则。 请参阅以下文章中的“数据使用策略”部分： [!DNL Experience Platform] [数据治理概述](../../data-governance/home.md) 了解更多信息。
 
-Adobe Experience Platform為常見客戶體驗使用案例提供數個核心原則。 您可以導覽至「 」，在UI中檢視這些原則 **[!UICONTROL 原則]** 工作區並選取 **[!UICONTROL 瀏覽]** 標籤。 請參閱 [原則使用手冊](../../data-governance/policies/user-guide.md) 在 [!DNL Experience Platform] 說明檔案，以取得在UI中使用原則的更詳細步驟，包括如何建立自己的自訂原則。
+Adobe Experience Platform为常见客户体验用例提供了多个核心策略。 这些策略可通过导航到 **[!UICONTROL 策略]** 工作区并选择 **[!UICONTROL 浏览]** 选项卡。 请参阅 [策略用户指南](../../data-governance/policies/user-guide.md) 在 [!DNL Experience Platform] 提供了有关在UI中使用策略的更详细步骤的文档，包括如何制定您自己的自定义策略。
 
-## 強制執行資料使用規範 {#enforce}
+## 强制执行数据使用合规性 {#enforce}
 
-標籤資料並定義使用原則後，您就可以強制資料使用符合原則。 在Real-Time CDP中將受眾區段啟用至目的地時，資料控管會在任何違規發生時自動強制執行使用原則。
+标记数据并定义使用策略后，您可以强制实施符合策略的数据使用。 在Real-Time CDP中将受众区段激活到目标时，数据管理会在发生任何违规时自动实施使用策略。
 
-檢視檔案： [自動原則執行](../../data-governance/enforcement/auto-enforcement.md) 以取得詳細資訊。
+查看文档 [自动策略执行](../../data-governance/enforcement/auto-enforcement.md) 了解更多信息。
 
 ## 后续步骤
 
-現在您已經瞭解Real-Time CDP上的重要資料控管功能，以及如何 [!DNL Experience Platform] 會啟用這些功能，請繼續瀏覽 [Adobe Experience Platform上的資料控管檔案](../../data-governance/home.md). 本檔案提供基本資料控管概念的概觀，以及管理資料使用標籤和原則的逐步工作流程。
+现在您已经了解了Real-Time CDP上的关键数据管理功能以及如何 [!DNL Experience Platform] 启用它们，请继续访问 [Adobe Experience Platform上的数据管理文档](../../data-governance/home.md). 本文档概述了基本的数据管理概念，以及管理数据使用标签和策略的分步工作流。
 
-以下影片提供Real-Time CDP中資料控管的概觀，包括在目的地使用行銷使用案例，以及不同案例的範例工作流程：
+以下视频概述了Real-Time CDP中的数据治理，包括在目标上使用营销用例，以及不同情景下的示例工作流：
 
 >[!VIDEO](https://video.tv.adobe.com/v/33631?quality=12&learn=on)

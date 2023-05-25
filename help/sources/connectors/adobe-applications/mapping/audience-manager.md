@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Audience Manager對應；audience manager對應
+keywords: Experience Platform；主页；热门主题；Audience Manager映射；audience manager映射
 solution: Experience Platform
-title: Adobe Audience Manager來源聯結器的對應欄位
-description: 瞭解如何將Adobe Audience Manager資料（即時、已上線和設定檔資料）對應至Audience Manager來源聯結器的對應Experience Data Model (XDM)欄位。
+title: Adobe Audience Manager源连接器的映射字段
+description: 了解如何将Adobe Audience Manager数据（实时、已载入和配置文件数据）映射到Audience Manager源连接器的相应Experience Data Model (XDM)字段。
 exl-id: b800ba43-c308-4334-adce-3d554d50cefb
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,38 +11,38 @@ ht-degree: 0%
 
 ---
 
-# Audience Manager欄位對應
+# Audience Manager字段映射
 
-下表包含Adobe Audience Manager資料（「即時」、「已上線」和「設定檔」資料）中的欄位與其對應的XDM欄位之間的對應。
+下表包含Adobe Audience Manager数据（实时、已载入和配置文件数据）中的字段与其对应的XDM字段之间的映射。
 
-請參閱 [XDM欄位字典](../../../../xdm/schema/field-dictionary.md) 以取得每個XDM欄位的詳細資訊。
+请查看 [XDM字段字典](../../../../xdm/schema/field-dictionary.md) 以了解有关每个XDM字段的更多信息。
 
-## 即時資料
+## 实时数据
 
-型別：即時資料
+类型：实时数据
 
-| 即時資料欄位 | XDM欄位 |
+| 实时数据字段 | XDM字段 |
 | --- | --- |
 | `requestIds[]` | `ExperienceEvent.identityMap["ECID"]` |
-| `requestIds[]` | `ExperienceEvent.endUserIds` - *僅適用於endUserIds中存在的名稱空間和第一個值。* |
+| `requestIds[]` | `ExperienceEvent.endUserIds` - *仅适用于endUserIds中存在的命名空间和第一个值。* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
-| `primaryDeviceId` | ExperienceEvent.endUserIds - *僅適用於endUserIds中存在的名稱空間和第一個值。* |
+| `primaryDeviceId` | ExperienceEvent.endUserIds - *仅适用于endUserIds中存在的命名空间和第一个值。* |
 | `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
 | `segments[]` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |
 | `timestamps` | `ExperienceEvent.timeStamp` |
-| `deviceMetadata` | `ExperienceEvent.device` <ul><li>primaryHardwareType →型別</li><li>製造商→製造商</li><li>marketingName →模型</li><li>modelNumber → model</li></ul> |
-| `location` | `ExperienceEvent.placeContext.geo` <ul><li>d_country → countryCode</li><li>d_state → stateProvince</li><li>d_city → city</li><li>d_postal → postalCode</li><li>d_lat → latitude</li><li>d_longitude → longitude</li></ul> |
-| `request_user_agent` | `ExperienceEvent.environment.browserDetails` <ul><li>h_user-agent → userAgent</li><li>h_accept-language → acceptLanguage</li></ul> |
-| `client_ip` | `ExperienceEvent.environment` <ul><li>d_os_name →作業系統名稱 </li><li>d_os_version → os_version</li></ul> |
+| `deviceMetadata` | `ExperienceEvent.device` <ul><li>primaryHardwareType→类型</li><li>制造商→制造商</li><li>marketingName →模型</li><li>modelNumber → model</li></ul> |
+| `location` | `ExperienceEvent.placeContext.geo` <ul><li>d_country → countryCode</li><li>d_state→stateProvince</li><li>d_city → city</li><li>d_postal → postalCode</li><li>d_lat → latitude</li><li>d_longitude → longitude</li></ul> |
+| `request_user_agent` | `ExperienceEvent.environment.browserDetails` <ul><li>h_user-agent→userAgent</li><li>h_accept-language → acceptLanguage</li></ul> |
+| `client_ip` | `ExperienceEvent.environment` <ul><li>d_os_name →操作系统名称 </li><li>d_os_version → os_version</li></ul> |
 
 {style="table-layout:auto"}
 
-## 設定檔資料
+## 配置文件数据
 
-型別：設定檔XDM
+类型：配置文件XDM
 
-| 設定檔欄位 | XDM欄位 |
+| 配置文件字段 | XDM字段 |
 | --- | --- |
 | `ids` | `identityMap` |
 | `smem` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |

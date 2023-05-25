@@ -1,7 +1,7 @@
 ---
-keywords: media analytics擴充功能；media analytics；audio and video擴充功能
+keywords: media analytics扩展；media analytics；audio and video扩展
 title: Adobe Media Analytics for Audio and Video 扩展
-description: Adobe Medium Analytics for Audio and Video擴充功能是Adobe Experience Platform中的分析目的地。 如需擴充功能的相關詳細資訊，請參閱Adobe交換上的擴充功能頁面。
+description: Adobe Medium Analytics for Audio and Video扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe交换上的扩展页面。
 exl-id: bf33e3e8-a95b-47e3-a1dc-c8f68f80b080
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -14,48 +14,48 @@ ht-degree: 8%
 
 ## 概述 {#overview}
 
-Adobe Medium Analytics for Audio and Video是基礎Analytics產品的附加元件，可提供客戶強大的視訊、音訊和廣告測量。
+Adobe Medium Analytics for Audio and Video是基础Analytics产品的附加产品，可为客户提供可靠的视频、音频和广告测量。
 
-Adobe Medium Analytics for Audio and Video是Adobe Experience Platform中的Analytics擴充功能。 如需擴充功能的相關詳細資訊，請參閱擴充功能頁面，網址為 [Adobe交換](https://exchange.adobe.com/experiencecloud.details.100157.html).
+Adobe Medium Analytics for Audio and Video是Adobe Experience Platform中的一个Analytics扩展。 有关扩展功能的更多信息，请参阅上的扩展页面 [Adobe交换](https://exchange.adobe.com/experiencecloud.details.100157.html).
 
-此目的地是標籤延伸模組。 如需標籤擴充功能在Platform中如何運作的詳細資訊，請參閱 [標籤擴充功能概觀](../launch-extensions/overview.md).
+此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅 [标记扩展概述](../launch-extensions/overview.md).
 
 ![Adobe Media Analytics for Audio and Video 扩展](../../assets/catalog/analytics/adobe-video-analytics/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此擴充功能適用於 [!DNL Destinations] 已購買Platform之所有客戶的目錄。
+此扩展位于 [!DNL Destinations] 适用于已购买Platform的所有客户的目录。
 
-若要使用此擴充功能，您需要存取Adobe Experience Platform中的標籤。 標籤是以隨附的加值功能形式提供給Adobe Experience Cloud客戶。 請聯絡您的組織管理員以取得標籤的存取權，並要求他們授予您 **[!UICONTROL manage_properties]** 許可權，方便您安裝擴充功能。
+要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** 权限，以便您可以安装扩展。
 
-## 安裝擴充功能 {#install-extension}
+## 安装扩展 {#install-extension}
 
-若要安裝Adobe Analytics for Video擴充功能：
+要安装Adobe Analytics for Video扩展，请执行以下操作：
 
-在 [平台介面](https://platform.adobe.com/)，前往 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**.
+在 [平台界面](https://platform.adobe.com/)，转到 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**.
 
-從目錄選取擴充功能或使用搜尋列。
+从目录中选择扩展或使用搜索栏。
 
-按一下目的地以反白顯示，然後選取 **[!UICONTROL 設定]** 在右側邊欄中。 如果 **[!UICONTROL 設定]** 控制項呈現灰色，表示您遺漏 **[!UICONTROL manage_properties]** 許可權。 另請參閱 [必要條件](#prerequisites).
+单击目标以将其突出显示，然后选择 **[!UICONTROL 配置]** 在右边栏中。 如果 **[!UICONTROL 配置]** 控件呈灰显状态，您缺少的是 **[!UICONTROL manage_properties]** 许可。 参见 [先决条件](#prerequisites).
 
-選取您要安裝擴充功能的標籤屬性。 您也可以選擇建立新屬性。 资产是规则、数据元素、配置的扩展、环境和库的集合。瞭解中的屬性 [標籤檔案](../../../tags/ui/administration/companies-and-properties.md).
+选择要在其中安装扩展的标记属性。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解中的属性 [标记文档](../../../tags/ui/administration/companies-and-properties.md).
 
-工作流程會將您帶到資料收集UI以完成安裝。
+该工作流会将您转到数据收集UI以完成安装。
 
-如需擴充功能組態選項的相關資訊，請參閱 [Adobe Medium Analytics for Audio and Video擴充功能頁面](../../../tags/extensions/client/media-analytics/overview.md) 標籤檔案中。
+有关扩展配置选项的信息，请参见 [“Adobe Medium Analytics for Audio and Video”扩展页](../../../tags/extensions/client/media-analytics/overview.md) 标记文档中的。
 
-您也可以直接在中安裝擴充功能 [資料彙集UI](https://experience.adobe.com/#/data-collection/). 請參閱指南： [新增擴充功能](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 以取得詳細資訊。
+您还可以直接在中安装扩展 [数据收集UI](https://experience.adobe.com/#/data-collection/). 请参阅指南，网址为 [添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 了解更多信息。
 
-## 如何使用擴充功能 {#how-to-use}
+## 如何使用扩展 {#how-to-use}
 
-安裝擴充功能後，您就可以開始設定規則。 在資料收集UI中，您可以為已安裝的擴充功能設定規則，以只在某些情況下將事件資料傳送至擴充功能目的地。 如需為擴充功能設定規則的詳細資訊，請參閱以下主題的概觀： [規則](../../../tags/ui/managing-resources/rules.md) 標籤檔案中。
+安装扩展后，即可开始设置规则。 在数据收集UI中，您可以为已安装的扩展设置规则，以便仅在特定情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅 [规则](../../../tags/ui/managing-resources/rules.md) 标记文档中的。
 
-## 設定、升級和刪除擴充功能 {#configure-upgrade-delete}
+## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
-您可以在資料收集UI中設定、升級和刪除擴充功能。
+您可以在数据收集UI中配置、升级和删除扩展。
 
 >[!TIP]
 >
->如果擴充功能已安裝在您的其中一個屬性上，UI仍會顯示 **[!UICONTROL 安裝]** 用於擴充功能。 依照中的說明開始安裝工作流程 [安裝擴充功能](#install-extension) 以設定或刪除您的擴充功能。
+>如果某个资产上已安装该扩展，则仍会显示UI **[!UICONTROL 安装]** 作为扩展。 启动安装工作流，如中所述 [安装扩展](#install-extension) 以配置或删除扩展。
 
-若要升級您的擴充功能，請參閱 [擴充功能升級程式](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 標籤檔案中。
+要升级扩展，请参阅 [扩展升级过程](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 标记文档中的。

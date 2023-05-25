@@ -1,7 +1,7 @@
 ---
-keywords: 標籤擴充功能；標籤擴充功能；Launch目的地；Platform標籤擴充功能；Platform標籤擴充功能；platform launch目的地
-title: Adobe Experience Platform中的標籤擴充功能
-description: Adobe Experience Platform提供Adobe新一代的標籤管理功能。 Platform可讓您透過簡單的方式部署及管理所有必要的分析、行銷及廣告標籤功能，以便支援相關客戶體驗。
+keywords: 标记扩展；标记扩展；Launch目标；Platform标记扩展；Platform标记扩展；platform launch目标
+title: Adobe Experience Platform中的标记扩展
+description: Adobe Experience Platform通过Adobe提供了新一代标签管理功能。 Platform为您提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
 source-git-commit: fe71294cb73a25c2c4708b0a6ebe04fc2b97afdf
 workflow-type: tm+mt
@@ -10,26 +10,26 @@ ht-degree: 1%
 
 ---
 
-# Adobe Experience Platform中的標籤擴充功能
+# Adobe Experience Platform中的标记扩展
 
-Adobe Experience Platform提供新一代Adobe標籤管理功能。 Platform可讓您透過簡單的方式部署及管理所有必要的分析、行銷及廣告標籤功能，以便支援相關客戶體驗。 標籤是以隨附的加值功能形式提供給Adobe Experience Cloud客戶。
+Adobe Experience Platform通过Adobe提供了新一代标签管理功能。 Platform为您提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。 标记以内置增值功能的方式提供给Adobe Experience Cloud客户。
 
-如需標籤的簡介，請參閱下列資源：
+有关标记的简介，请参阅以下资源：
 
 - [标记概述](../../../tags/home.md)
 - [快速入门指南](../../../tags/quick-start/quick-start.md)
 
-## 如何在Platform介面中尋找標籤擴充功能 {#how-to-find-extensions-in-interface}
+## 如何在Platform界面中找到标记扩展 {#how-to-find-extensions-in-interface}
 
-若要在Platform介面中尋找擴充功能，請瀏覽 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]** 並選取 **[!UICONTROL 擴充功能]** 在 **[!UICONTROL 型別]** 篩選。
+要在Platform界面中查找扩展，请浏览 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 并选择 **[!UICONTROL 扩展]** 在 **[!UICONTROL 类型]** 筛选条件。
 
-![介面中的擴充功能篩選器](../../assets/catalog/launch-extensions/filter.png)
+![界面中的“扩展”过滤器](../../assets/catalog/launch-extensions/filter.png)
 
-## 標籤擴充功能的運作方式 {#how-extensions-work}
+## 标记扩展的工作方式 {#how-extensions-work}
 
-A [標籤延伸模組](../../../tags/home.md#extensions) 是程式碼套件，可增強網站或行動應用程式的功能。 這可能包括傳送原始事件資料到目的地，例如 [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) 但它們也可用於其他功能。
+A [标记扩展](../../../tags/home.md#extensions) 是一个代码包，用于增强网站或移动设备应用程序的功能。 这可能包括向目标（如）发送原始事件数据 [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) 但是它们还可以用于其他功能。
 
-請務必區分標籤和事件轉送擴充功能。 Platform目的地使用者介面中浮現的擴充功能包括 *標籤延伸模組*. 如需詳細資訊，請參閱事件轉送概觀。 [標籤和事件轉送之間的差異](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags).
+区分标记扩展和事件转发扩展非常重要。 Platform目标用户界面中显示的扩展包括 *标记扩展*. 请参阅事件转发概述，了解有关 [标记和事件转发之间的区别](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags).
 
 
 
@@ -43,28 +43,28 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 -->
 
-## 使用標籤擴充功能的好處 {#extensions-benefits}
+## 使用标记扩展的优势 {#extensions-benefits}
 
-現有的Experience Cloud客戶可免費使用Platform的標籤功能。 透過您可安裝、設定、更新和刪除的簡單易用擴充功能，此系統可簡化網站上的標籤部署作業。 標籤在您的網站上留下很小的空間，並可讓您保持頁面快速載入。
+现有Experience Cloud客户可以免费使用Platform的标记功能。 通过易于使用的扩展（您可以安装、配置、更新和删除），该系统简化了您网站上的标记部署。 标记在您的网站上留下很小的痕迹，并允许您保持页面快速加载。
 
-雖然您無法啟用區段來標籤擴充功能，但您可以設定規則，只在某些情況下轉送事件資料。 這項強大的功能可讓您只在某些情況下轉送事件資料，而不是每次互動時都傳送事件資料。 如需詳細資訊，請閱讀 [標籤檔案](../../../tags/ui/managing-resources/rules.md).
+虽然无法激活区段来标记扩展，但您可以设置规则以仅在某些情况下转发事件数据。 此功能强大，您只能在特定情况下转发事件数据，而不是每次交互时发送事件数据。 有关详细信息，请阅读 [标记文档](../../../tags/ui/managing-resources/rules.md).
 
-## 擴充功能的範例使用案例 {#extensions-use-cases}
+## 扩展的示例用例 {#extensions-use-cases}
 
-擴充功能可讓您滿足各種客戶使用案例。 使用擴充功能的一些範例使用案例包括：
+通过扩展，您可以满足各种客户用例。 使用扩展的一些示例用例包括：
 
-- 您可以透過Facebook畫素擴充功能，將網站或原生應用程式資料傳送至Facebook。 facebook Pixel指出訪客導覽至您網站或應用程式的哪些部分、將該資訊轉送至Facebook，而且您可以透過Facebook重新鎖定訪客。
-- 您可以將網站和應用程式的事件資料轉送至Google Analytics，以便根據該資料進行分析並做出決策。
-- 您可以根據使用者與頁面互動的方式，根據您設定的規則，在適當的時間開啟使用者端聊天箱應用程式。
+- 您可以通过Facebook pixel扩展将网站或本机应用程序数据发送到Facebook。 facebook Pixel指示访客导航到网站或应用程序的哪些部分，将该信息转发到Facebook，并且您可以通过Facebook重新定位访客。
+- 您可以将网站和应用程序的事件数据转发到Google Analytics中，以便根据该数据分析和做出决策。
+- 根据您设置的规则，您可以根据用户与页面的交互方式，在适当的时间打开客户端聊天盒应用程序。
 
-## 擴充功能類別 {#extension-categories}
+## 扩展类别 {#extension-categories}
 
-擴充功能在Platform中可能屬於下列類別：
+在Platform中，扩展可以属于以下类别：
 
 - [Advertising](../advertising/overview.md)
 - [Analytics](../analytics/overview.md)
-- [資料管理平台](../data-management/overview.md)
-- [電子郵件行銷目的地](../email-marketing/overview.md)
+- [数据管理平台](../data-management/overview.md)
+- [电子邮件营销目标](../email-marketing/overview.md)
 - [个性化](../personalization/overview.md)
 - [调查](../survey/overview.md)
-- [客戶的心聲](../voice/overview.md)
+- [客户的声音](../voice/overview.md)

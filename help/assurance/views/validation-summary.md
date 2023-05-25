@@ -1,6 +1,6 @@
 ---
-title: 驗證編輯器檢視
-description: 本指南詳細說明Adobe Experience Platform Assurance中驗證編輯器檢視的相關資訊。
+title: 验证编辑器视图
+description: 本指南详细介绍了有关Adobe Experience Platform Assurance中的验证编辑器视图的信息。
 exl-id: 09be531c-8dc3-48b8-814f-b7a06adf1da3
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -9,71 +9,71 @@ ht-degree: 3%
 
 ---
 
-# 驗證編輯器檢視
+# 验证编辑器视图
 
-驗證編輯器可讓您快速輕鬆地管理JavaScript函式，以驗證Adobe Experience Platform保證工作階段中的事件。 每個函式都會在保證工作階段中接收事件。 您可以撰寫函式來驗證使用者端設定、事件條件、測試和使用案例。
+通过验证编辑器，您可以快速轻松地管理JavaScript功能，以验证Adobe Experience Platform保障会话中的事件。 每个函数都会在保证会话中接收事件。 您可以编写函数来验证客户端配置、事件条件、测试和用例。
 
-## 開始使用驗證編輯器
+## 验证编辑器入门
 
-晚於 [設定Assurance](../tutorials/implement-assurance.md)，位於 **[!UICONTROL 首頁]** 檢視，選取 **[!UICONTROL 驗證編輯器]**.
+晚于 [设置Assurance](../tutorials/implement-assurance.md)，位于 **[!UICONTROL 主页]** 视图，选择 **[!UICONTROL 验证编辑器]**.
 
-![Validation-Editor-Screen-Shot](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
+![Validation-Editor — 屏幕快照](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
 
-## 撰寫驗證函式
+## 编写验证函数
 
-此功能可讓您建立、編輯或刪除Adobe Experience Platform保證工作階段的驗證功能。
+此功能允许您创建、编辑或删除Adobe Experience Platform保障会话的验证功能。
 
-1. 選取 **[!UICONTROL 建立新驗證]**.
-2. 輸入 **名稱** 以識別驗證，然後提供 **類別** 和 **說明**.
-3. 編輯編輯器中的程式碼以驗證保證工作階段的事件。
+1. 选择 **[!UICONTROL 创建新验证]**.
+2. 输入 **name** 要标识验证，请提供 **类别** 和 **描述**.
+3. 在编辑器中编辑代码以验证您的保障会话的事件。
 
-完成功能測試後，選取 **[!UICONTROL 發佈]** 以儲存驗證。
+完成功能测试后，选择 **[!UICONTROL Publish]** 以保存您的验证。
 
-### 事件定義
-
-| 键 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| `uuid` | 字符串 | 事件的通用唯一識別碼。 |
-| `timestamp` | 数值 | 將事件傳送至Assurance時來自使用者端的時間戳記。 |
-| `eventNumber` | 数值 | 用於排序事件的傳送時間。 當事件具有相同的時間戳記時，此金鑰很有用。 |
-| `vendor` | 字符串 | 反向網域名稱格式的廠商識別字串（例如com.adobe.assurance）。 |
-| `type` | 字符串 | 用於表示事件型別。 |
-| `payload` | 对象 | 定義事件的資料，並包含唯一和常見屬性。 一些常見屬性包括 `ACPExtensionEventSource` 和 `ACPExtensionEventType`. |
-| `annotations` | 陣列 | 註釋物件的陣列。 |
-
-### 附註定義
+### 事件定义
 
 | 键 | 类型 | 描述 |
 | :--- | :--- | :--- |
-| `uuid` | 字符串 | 註解的通用唯一識別碼。 |
-| `type` | 字符串 | 用來表示註解的型別，通常是外掛程式的名稱（例如analytics）。 |
-| `payload` | 对象 | 定義應補充事件的資料。 對於Adobe Analytics，這是包含處理後點選資料的位置。 |
+| `uuid` | 字符串 | 事件的通用唯一标识符。 |
+| `timestamp` | 数值 | 将事件发送到Assurance时客户端的时间戳。 |
+| `eventNumber` | 数值 | 用于排序事件的发送时间。 当事件具有相同的时间戳时，此键非常有用。 |
+| `vendor` | 字符串 | 采用反向域名格式的供应商标识字符串（例如，com.adobe.assurance）。 |
+| `type` | 字符串 | 用于表示事件的类型。 |
+| `payload` | 对象 | 为事件定义数据，并包含唯一属性和常用属性。 一些常见属性包括 `ACPExtensionEventSource` 和 `ACPExtensionEventType`. |
+| `annotations` | 数组 | 批注对象的数组。 |
 
-### 驗證結果
-
-驗證函式應傳回包含以下內容的物件：
+### 注释定义
 
 | 键 | 类型 | 描述 |
 | :--- | :--- | :--- |
-| `message` | 字符串 | 要在摘要結果中顯示的驗證訊息。 |
-| `events` | 陣列 | 要報告為已比對或未比對的事件uuid陣列。 |
-| `links` | 陣列 | 陣列 `ValidationResultLink` 物件以參考檔案和其他資源 `{( type: 'doc'|'product', url: String )}` |
-| `result` | 字符串 | 這是驗證結果，而且應該是列舉字串之一：「相符」、「不相符」、「未知」 |
+| `uuid` | 字符串 | 注释的通用唯一标识符。 |
+| `type` | 字符串 | 用于表示注释的类型，通常是插件的名称（例如analytics）。 |
+| `payload` | 对象 | 定义应补充事件的数据。 对于Adobe Analytics，这是包含处理后点击数据的位置。 |
 
-## 檢視驗證結果
+### 验证结果
 
-函式的結果會顯示在程式碼編輯器下方的結果區段中。 如果驗證結果為 `unknown` 或 `not matched` 和 `events` 陣列有一或多個 `uuids`時，事件會在時間軸中以下列顏色反白顯示：
+验证函数应返回包含以下内容的对象：
 
-* 綠色 — 相符
+| 键 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| `message` | 字符串 | 要在摘要结果中显示的验证消息。 |
+| `events` | 数组 | 要报告为匹配或不匹配的事件uuid数组。 |
+| `links` | 数组 | 一个数组 `ValidationResultLink` 引用文档和其他资源的对象 `{( type: 'doc'|'product', url: String )}` |
+| `result` | 字符串 | 这是验证结果，应是枚举字符串之一：“matched”、“not matched”、“unknown” |
+
+## 查看验证结果
+
+函数的结果显示在代码编辑器下的结果部分中。 如果验证结果为 `unknown` 或 `not matched` 和 `events` 数组有一个或多个 `uuids`时，事件将在时间轴中用以下颜色突出显示：
+
+* 绿色 — 匹配
 * 橙色 — 未知
-* 紅色 — 不相符
+* 红色 — 不匹配
 
-![Timeling-Validation-Highlights-Screen-shot](https://user-images.githubusercontent.com/6597105/198681412-93d10a5a-3212-4e85-850a-aeaf5caf0521.png)
+![Timeling-Validation-Highlights-Screen-Shot](https://user-images.githubusercontent.com/6597105/198681412-93d10a5a-3212-4e85-850a-aeaf5caf0521.png)
 
 ## 故障排除
 
-您可以新增 `console.log()` ，以將專案列印至開發人員主控台。 或者，您可以使用結果物件的message屬性來偵錯傳送至結果面板的訊息。
+您可以添加 `console.log()` 以将项目打印到开发人员控制台的功能。 或者，您可以使用结果对象的message属性调试发送到结果面板的消息。
 
-如果JavaScript程式碼編輯器中發生錯誤，則會顯示錯誤狀態及原因。
+如果JavaScript代码编辑器中发生错误，则会显示错误状态以及原因。
 
-若要進一步瞭解驗證，請造訪 [Adobe Experience Platform保證驗證](https://github.com/adobe/griffon-validation-plugins) GitHub。 您會在這裡找到Adobe擁有的驗證範例。 請參閱 [Wiki](https://github.com/adobe/griffon-validation-plugins/wiki) 以取得更詳細的驗證說明。
+要了解有关验证的更多信息，请访问 [Adobe Experience Platform保证验证](https://github.com/adobe/griffon-validation-plugins) GitHub。 您将在其中找到Adobe拥有的验证示例。 请参阅 [维客](https://github.com/adobe/griffon-validation-plugins/wiki) 以获取有关验证的更多详细说明。

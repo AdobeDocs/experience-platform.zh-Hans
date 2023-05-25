@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；個人設定檔；欄位；結構；結構；忠誠度詳細資料；結構描述設計；欄位群組；欄位群組；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人资料；字段；架构；架构；忠诚度详细信息；架构设计；字段组；字段组；
 solution: Experience Platform
-title: 熟客方案詳細資料結構欄位群組
-description: 本檔案提供「熟客方案詳細資料」結構欄位群組的概觀。
+title: 忠诚度详细信息架构字段组
+description: 本文档概述了“忠诚度详细信息”架构字段组。
 exl-id: 12c9fef5-4f9e-49b5-894f-f4938bb95c23
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,31 +11,31 @@ ht-degree: 2%
 
 ---
 
-# [!UICONTROL 熟客方案細節] 結構描述欄位群組
+# [!UICONTROL 忠诚度详细信息] 架构字段组
 
 >[!NOTE]
 >
->數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
 
-[!UICONTROL 熟客方案細節] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md). 欄位群組提供單一物件型別欄位， `loyalty`，會擷取和客戶忠誠度計畫中的個人會籍相關的資訊。
+[!UICONTROL 忠诚度详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供单个对象类型字段， `loyalty`，可捕获与客户忠诚度计划中的人员会员资格相关的信息。
 
 ![](../../images/field-groups/loyalty-details.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `pointsExpiration` | 物件陣列 | 列出任何即將過期的熟客點數（或熟客點數群組），以及到期日期。 每個陣列專案都必須是包含下列兩個屬性的物件： <ul><li>`pointsExpirationDate`：點到期的ISO 8601日期時間。</li><li>`pointsExpiring`：截至相關到期日的點數餘額。</li></ul> |
-| `joinDate` | 日期時間 | 個人加入忠誠度計畫的ISO 8601日期時間。 |
-| `loyaltyID` | 字串陣列 | 代表與熟客方案會員相關聯的熟客方案ID。 |
-| `points` | 双精度 | 目前忠誠會員的忠誠度積分或獎勵餘額。 |
-| `pointsRedeemed` | 双精度 | 忠誠會員已套用於購買或以其他方式兌換的積分數。 |
-| `program` | 字符串 | 個人註冊的熟客方案名稱。 |
-| `status` | 字符串 | 個人忠誠度會籍的目前狀態，例如 `active`， `disabled`，或 `suspended`. |
-| `tier` | 字符串 | 擷取人員註冊的熟客方案層級。 |
-| `upgradeDate` | 字符串 | 忠誠會員升級至其最近層級的日期。 |
+| `pointsExpiration` | 对象数组 | 列出任何将过期的忠诚度积分（或忠诚度积分组）及其到期日期。 每个数组项都必须是一个包含以下两个属性的对象： <ul><li>`pointsExpirationDate`：点到期的ISO 8601日期时间。</li><li>`pointsExpiring`：截至相关到期日到期的积分余额。</li></ul> |
+| `joinDate` | 日期时间 | 人员加入忠诚度计划的ISO 8601日期时间。 |
+| `loyaltyID` | 字符串数组 | 表示与忠诚度计划成员关联的忠诚度计划ID。 |
+| `points` | 双精度 | 忠诚度会员的忠诚度积分或奖励的当前余额。 |
+| `pointsRedeemed` | 双精度 | 忠诚度会员对购买申请积分或以其他方式兑换的积分数。 |
+| `program` | 字符串 | 人员注册的忠诚度计划的名称。 |
+| `status` | 字符串 | 人员的忠诚度会员的当前状态，例如 `active`， `disabled`，或 `suspended`. |
+| `tier` | 字符串 | 捕获人员注册的忠诚度计划级别。 |
+| `upgradeDate` | 字符串 | 忠诚度会员升级到其最新层级的日期。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
+有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.schema.json)

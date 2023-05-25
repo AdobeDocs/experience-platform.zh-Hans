@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；購物；購物；
+keywords: Experience Platform；主页；热门主题；购物；购物；
 solution: Experience Platform
-title: Shopify來源聯結器概述
-description: 瞭解如何使用API或使用者介面將Shopify連線至Adobe Experience Platform。
+title: Shopify源连接器概述
+description: 了解如何使用API或用户界面将Shopify连接到Adobe Experience Platform。
 exl-id: 636b31a7-e5f9-434a-acd1-226096522495
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,21 +11,21 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Shopify] 聯結器
+# [!DNL Shopify] 连接器
 
-Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-[!DNL Experience Platform] 支援從電子商務來源擷取資料。 對電子商務提供者的支援包括 [!DNL Shopify].
+[!DNL Experience Platform] 支持从电子商务源摄取数据。 对电子商务提供商的支持包括 [!DNL Shopify].
 
-以下檔案提供有關如何連線的資訊 [!DNL Shopify] 至 [!DNL Platform] 使用API或使用者介面：
+以下文档提供了有关如何连接的信息 [!DNL Shopify] 到 [!DNL Platform] 使用API或用户界面：
 
-## Connect [!DNL Shopify] 至 [!DNL Platform] 使用API
+## Connect [!DNL Shopify] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API建立Shopify基本連線](../../tutorials/api/create/ecommerce/shopify.md)
-- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
-- [使用Flow Service API建立電子商務來源的資料流](../../tutorials/api/collect/ecommerce.md)
+- [使用Flow Service API创建Shopify基本连接](../../tutorials/api/create/ecommerce/shopify.md)
+- [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+- [使用流服务API为电子商务来源创建数据流](../../tutorials/api/collect/ecommerce.md)
 
-## Connect [!DNL Shopify] 至 [!DNL Platform] 使用UI
+## Connect [!DNL Shopify] 到 [!DNL Platform] 使用UI
 
-- [在使用者介面中建立Shopify來源連線](../../tutorials/ui/create/ecommerce/shopify.md)
-- [在UI中建立電子商務來源連線的資料流](../../tutorials/ui/dataflow/ecommerce.md)
+- [在UI中创建Shopify源连接](../../tutorials/ui/create/ecommerce/shopify.md)
+- [在UI中为电子商务源连接创建数据流](../../tutorials/ui/dataflow/ecommerce.md)

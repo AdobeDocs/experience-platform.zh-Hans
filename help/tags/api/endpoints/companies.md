@@ -1,6 +1,6 @@
 ---
-title: 公司端點
-description: 瞭解如何在Reactor API中呼叫/companies端點。
+title: 公司端点
+description: 了解如何在Reactor API中调用/companies端点。
 exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 3%
 
 ---
 
-# 公司端點
+# 公司端点
 
-公司代表客戶組織，通常是企業。 在Reactor API中，這些公司將1:1與組織ID配對。 API使用者只能檢視他們有權存取的公司。 公司可能包含許多 [屬性](./properties.md). 屬性只屬於一個公司。
+公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与组织ID进行匹配。 API用户只能查看他们有权访问的公司。 公司可能包含多个 [属性](./properties.md). 资产只属于一个公司。
 
-此 `/companies` Reactor API中的端點可讓您以程式設計方式擷取您在體驗應用程式中有權存取的公司。
+此 `/companies` Reactor API中的端点允许您以编程方式检索您在体验应用程序中有权访问的公司。
 
 ## 快速入门
 
-本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
 
-## 擷取公司清單 {#list}
+## 检索公司列表 {#list}
 
-您可以透過向以下網站發出GET請求，列出您有權使用的公司： `/companies` 端點。 在大多數情況下，只會有一個。
+您可以向以下网站发出GET请求，列出您有权使用的公司： `/companies` 端点。 在大多数情况下，只有一个。
 
 **API格式**
 
@@ -31,7 +31,7 @@ GET /companies
 
 >[!NOTE]
 >
->使用查詢引數，可以根據以下屬性篩選上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
+>使用查询参数，可以根据以下属性筛选上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
 
 **请求**
 
@@ -47,7 +47,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回您有權存取的公司清單。
+成功响应将返回您有权访问的公司列表。
 
 ```json
 {
@@ -107,9 +107,9 @@ curl -X GET \
 }
 ```
 
-## 查詢公司 {#lookup}
+## 查找公司 {#lookup}
 
-您可以在GET請求的路徑中包含其ID來查詢特定公司。
+通过在GET请求的路径中包含特定公司的ID，您可以查找该公司。
 
 **API格式**
 
@@ -119,7 +119,7 @@ GET /companies/{COMPANY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{COMPANY_ID}` | 此 `id` 您要查閱之公司的價值。 |
+| `{COMPANY_ID}` | 此 `id` 要查找的公司的价值。 |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回公司的詳細資料。
+成功响应将返回公司的详细信息。
 
 ```json
 {

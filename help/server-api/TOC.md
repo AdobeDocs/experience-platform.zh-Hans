@@ -16,18 +16,18 @@ ht-degree: 50%
 # Edge Network Server API 文档 {#edge-network-server-api}
 
 
-* [Edge Network Server API總覽](overview.md)
-* [Edge Network Server API的效能護欄](guardrails.md)
+* [Edge Network服务器API概述](overview.md)
+* [Edge Network Server API的性能护栏](guardrails.md)
 * [身份验证](authentication.md)
 * 数据收集 {#data-collection}
-   * [單一事件資料彙集](interactive-data-collection.md)
-   * [批次事件資料收集](non-interactive-data-collection.md)
-* 與其他Adobe解決方案互動 {#interacting-other-adobe-solutions}
-   * [與Adobe Analytics互動](interacting-adobe-analytics.md)
+   * [单事件数据收集](interactive-data-collection.md)
+   * [批量事件数据收集](non-interactive-data-collection.md)
+* 与其他Adobe解决方案交互 {#interacting-other-adobe-solutions}
+   * [与Adobe Analytics交互](interacting-adobe-analytics.md)
 * 个性化 {#personalization}
-   * [個人化概覽](personalization-overview.md)
-   * [透過Adobe Target個人化](personalization-target.md)
-   * [透過Offer decisioning個人化](personalization-offer-decisioning.md)
+   * [个性化概述](personalization-overview.md)
+   * [通过Adobe Target进行个性化](personalization-target.md)
+   * [通过Offer decisioning进行个性化](personalization-offer-decisioning.md)
 * [位置提示](location-hints.md)
-* [錯誤處理](error-handling.md)
+* [错误处理](error-handling.md)
 * [故障排除](troubleshooting.md)

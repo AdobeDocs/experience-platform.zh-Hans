@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；Zendesk；來源；聯結器；來源聯結器；來源sdk；sdk；SDK；Zendesk；Zendesk
-title: 在使用者介面中建立Zendesk來源連線
-description: 瞭解如何使用Adobe Experience Platform UI建立Zendesk來源連線。
+keywords: Experience Platform；Zendesk；源；连接器；源连接器；源SDK；SDK；Zendesk；Zendesk
+title: 在UI中创建Zendesk源连接
+description: 了解如何使用Adobe Experience Platform UI创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,109 +10,109 @@ ht-degree: 6%
 
 ---
 
-# (Beta)建立 [!DNL Zendesk] ui中的來源連線
+# (Beta)创建 [!DNL Zendesk] UI中的源连接
 
 >[!NOTE]
 >
->此 [!DNL Zendesk] 來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
+>此 [!DNL Zendesk] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
 
-本教學課程提供建立 [!DNL Zendesk] 使用Adobe Experience Platform使用者介面的來源連線。
+本教程提供了用于创建 [!DNL Zendesk] 源连接(使用Adobe Experience Platform用户界面)。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了存取您的 [!DNL Zendesk] Platform上的帳戶，您必須提供下列認證的值：
+要访问您的 [!DNL Zendesk] 帐户，则必须提供以下凭据的值：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| Subdomain | 您在註冊過程中建立之帳戶的特定唯一網域。 | `yoursubdomain` |
-| 存取權杖 | Zendesk API權杖。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
+| Subdomain | 注册过程中创建的特定于您帐户的唯一域。 | `yoursubdomain` |
+| 访问令牌 | Zendesk API令牌。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
-如需驗證您的憑證的詳細資訊 [!DNL Zendesk] 來源，請參閱 [[!DNL Zendesk] 來源概觀](../../../../connectors/customer-success/zendesk.md).
+有关验证的详细信息 [!DNL Zendesk] 源，请参见 [[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md).
 
-![Zendesk API權杖](../../../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
+![Zendesk API令牌](../../../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-### 建立平台結構描述 [!DNL Zendesk]
+### 为创建平台架构 [!DNL Zendesk]
 
-建立之前 [!DNL Zendesk] 來源連線時，您必須先建立平台結構描述以用於您的來源。 請參閱教學課程，位置如下： [建立平台結構描述](../../../../../xdm/schema/composition.md) 有關如何建立方案的完整步驟。
+创建之前 [!DNL Zendesk] 源连接时，还必须确保首先创建用于源的Platform架构。 请参阅上的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建架构的全面步骤。
 
-如需更多有關您的電腦的指引， [!DNL Zendesk] 結構描述是 [!DNL Zendesk Search API]，請參閱 [限制](#limits) 區段底下。
+欲知对贵机构的其他指导， [!DNL Zendesk] 架构是 [!DNL Zendesk Search API]，请参阅 [限制](#limits) 部分。
 
-![建立結構描述](../../../../images/tutorials/create/zendesk/schema.png)
+![创建架构](../../../../images/tutorials/create/zendesk/schema.png)
 
-## 連線您的 [!DNL Zendesk] 帳戶
+## 连接您的 [!DNL Zendesk] 帐户
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 *客戶成功* 類別，選取 **[!UICONTROL Zendesk]**，然後選取 **[!UICONTROL 新增資料]**.
+在 *客户成功* 类别，选择 **[!UICONTROL Zendesk]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![目錄](../../../../images/tutorials/create/zendesk/catalog.png)
+![目录](../../../../images/tutorials/create/zendesk/catalog.png)
 
-此 **[!UICONTROL 連線Zendesk帳戶]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接Zendesk帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取 *Zendesk* 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择 *Zendesk* 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![現有](../../../../images/tutorials/create/zendesk/existing.png)
+![现有](../../../../images/tutorials/create/zendesk/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、選擇性說明和您的認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
 
 ![新](../../../../images/tutorials/create/zendesk/new.png)
 
 ### 选择数据
 
-來源通過驗證後，頁面會更新為互動式結構描述樹狀結構，讓您探索和檢查資料的階層。 選取 **[!UICONTROL 下一個]** 以繼續進行。
+在您的源通过身份验证后，页面将更新为交互式架构树，允许您浏览和检查数据的层次结构。 选择 **[!UICONTROL 下一个]** 以继续。
 
 ![select-data](../../../../images/tutorials/create/zendesk/select-data.png)
 
 ## 后续步骤
 
-依照本教學課程所述，您已驗證並建立您與 [!DNL Zendesk] 帳戶和平台。 您現在可以繼續下一節教學課程和 [建立資料流，將客戶成功資料匯入Platform](../../dataflow/customer-success.md).
+按照本教程，您已验证并创建了源连接，该连接位于 [!DNL Zendesk] 帐户和平台。 您现在可以继续下一教程和 [创建数据流以将客户成功数据引入Platform](../../dataflow/customer-success.md).
 
 ## 其他资源
 
-以下各節提供您在使用時，可參考的其他資源 [!DNL Zendesk] 來源。
+以下部分提供了在使用时可以参考的其他资源 [!DNL Zendesk] 源。
 
 ### 验证 {#validation}
 
-以下概述驗證您已成功連線至您的主機時可採取的步驟。 [!DNL Zendesk] 來源及 [!DNL Zendesk] 設定檔正在擷取至Platform。
+下面概述了验证是否成功连接 [!DNL Zendesk] 来源和 [!DNL Zendesk] 配置文件正在被摄取到Platform。
 
-在Platform UI中選取 **[!UICONTROL 資料集]** 從左側導覽存取 [!UICONTROL 資料集] 工作區。 此 [!UICONTROL 資料集活動] 畫面會顯示執行的詳細資訊。
+在Platform UI中，选择 **[!UICONTROL 数据集]** 从左侧导航访问 [!UICONTROL 数据集] 工作区。 此 [!UICONTROL 数据集活动] 屏幕显示执行的详细信息。
 
-![活動頁面](../../../../images/tutorials/create/zendesk/dataset-activity.png)
+![活动页面](../../../../images/tutorials/create/zendesk/dataset-activity.png)
 
-接著，選取您要檢視之資料流的資料流執行ID，以檢視有關該資料流執行的特定詳細資訊。
+接下来，选择要查看的数据流的数据流运行ID，以查看有关该数据流运行的特定详细信息。
 
-![資料流頁面](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
+![数据流页面](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
 
-最後，選取 **[!UICONTROL 預覽資料集]** 以顯示所擷取的資料。
+最后，选择 **[!UICONTROL 预览数据集]** 以显示所摄取的数据。
 
-![Zendesk資料集](../../../../images/tutorials/create/zendesk/preview-dataset.png)
+![Zendesk数据集](../../../../images/tutorials/create/zendesk/preview-dataset.png)
 
-您也可以根據您網站上的資料，驗證Platform資料。 [!DNL Zendesk] > [!DNL Customers] 頁面。
+您还可以根据以下网站上的数据验证Platform数据： [!DNL Zendesk] > [!DNL Customers] 页面。
 
 ![zendesk-customers](../../../../images/tutorials/create/zendesk/zendesk-customers.png)
 
-### Zendesk結構描述
+### Zendesk架构
 
-下表列出必須為Zendesk設定的支援對應。
+下表列出了必须为Zendesk设置的受支持映射。
 
 >[!TIP]
 >
->另請參閱 [Zendesk Search API >匯出搜尋結果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 以取得有關API的詳細資訊。
+>参见 [Zendesk搜索API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 以了解有关API的更多信息。
 
 | 来源 | 类型 |
 |---|---|
@@ -157,8 +157,8 @@ ht-degree: 6%
 
 ### 限制 {#limits}
 
-* 此 [Zendesk Search API >匯出搜尋結果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 每頁最多傳回1000筆記錄。
-   * 的值 ``filter[type]`` 引數已設為 ``user`` 因此，Zendesk連線只會傳回使用者。
-   * 每頁的結果數量由 ``page[size]`` 引數。 值設為 ``100``. 這麼做是為了減少Zendesk設定的減速限制的影響。
-   * 另請參閱 [限制](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#limits) 和 [分頁](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#pagination-1).
-   * 您也可以參閱 [使用游標分頁來分頁清單](https://developer.zendesk.com/documentation/developer-tools/pagination/paginating-through-lists-using-cursor-pagination/).
+* 此 [Zendesk搜索API >导出搜索结果](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) 每页最多返回1000条记录。
+   * 的值 ``filter[type]`` 参数设置为 ``user`` 因此，Zendesk连接仅返回用户。
+   * 每页的结果数由 ``page[size]`` 参数。 该值设置为 ``100``. 这样做是为了减少Zendesk设置的减速限制的影响。
+   * 参见 [限制](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#limits) 和 [分页](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#pagination-1).
+   * 您还可以参阅 [使用光标分页来分页列表](https://developer.zendesk.com/documentation/developer-tools/pagination/paginating-through-lists-using-cursor-pagination/).

@@ -1,6 +1,6 @@
 ---
-title: 刪除資源
-description: 瞭解如何刪除Adobe Experience Platform中的標籤資源。
+title: 删除资源
+description: 了解如何在Adobe Experience Platform中删除标记资源。
 exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -13,9 +13,9 @@ ht-degree: 79%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-刪除資源是將該資源從Adobe Experience Platform中永久移除。 如果您想要從特定標籤程式庫中移除資源，但仍希望該資源可用於其他程式庫，請參閱以下指南中的內容： [從程式庫中移除資源](remove-resources-from-library.md).
+删除资源是从Adobe Experience Platform中永久移除该资源。 如果要从特定标记库中移除资源，但仍希望该资源在其他库中可用，请参阅上的指南 [从库中移除资源](remove-resources-from-library.md).
 
 您可以删除数据元素、规则、扩展、主机、环境和资产。删除后，这些资源将无法恢复。
 
@@ -50,7 +50,7 @@ ht-degree: 79%
 
 扩展会提供所有其他资源（规则、规则组件和数据元素）。
 
-規則元件和資料元素視擴充功能而定，但也只會顯示在資料收集使用者介面中。 如果在解决依赖关系之前删除扩展，则将无法再查看这些孤立的资源。这些孤立的资源会显示在列表视图中，但在尝试打开详细信息视图时，您会收到一个错误。
+规则组件和数据元素依赖于扩展才能执行其行为，但也只是在数据收集用户界面中显示。 如果在解决依赖关系之前删除扩展，则将无法再查看这些孤立的资源。这些孤立的资源会显示在列表视图中，但在尝试打开详细信息视图时，您会收到一个错误。
 
 因此，在删除扩展时应格外谨慎，且应在删除它们之前解决依赖关系。
 
@@ -78,4 +78,4 @@ ht-degree: 79%
 
 ## 删除资源
 
-從適當的清單檢視中，選取您要刪除的資源，然後選取 **[!UICONTROL 刪除]**.
+从相应的列表视图中，选择要删除的资源，然后选择 **[!UICONTROL 删除]**.

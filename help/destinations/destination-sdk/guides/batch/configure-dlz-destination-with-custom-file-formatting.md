@@ -1,6 +1,6 @@
 ---
-description: 瞭解如何使用Destination SDK以自訂檔案格式選項和自訂檔案名稱設定來設定資料登陸區域(DLZ)目的地。
-title: 使用自訂檔案格式選項和自訂檔案名稱設定來設定資料登陸區域(DLZ)目的地。
+description: 了解如何使用Destination SDK通过自定义文件格式选项和自定义文件名配置来配置数据登陆区(DLZ)目标。
+title: 使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标。
 exl-id: 3a5c1188-c2b5-4e81-ae41-9fff797f08a6
 source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# 設定 [!DNL Data Landing Zone (DLZ)] 具有自訂檔案格式選項和自訂檔案名稱設定的目的地
+# 配置 [!DNL Data Landing Zone (DLZ)] 具有自定义文件格式选项和自定义文件名配置的目标
 
 ## 概述 {#overview}
 
-此頁面說明如何使用Destination SDK來設定 [!DNL Data Landing Zone] 具有自訂功能的目的地 [檔案格式選項](configure-file-formatting-options.md) 和自訂 [檔案名稱設定](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
+此页介绍如何使用Destination SDK配置 [!DNL Data Landing Zone] 具有自定义的目标 [文件格式选项](configure-file-formatting-options.md) 和自定义 [文件名配置](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
-此頁面顯示以下專案可用的所有組態選項： [!DNL Data Landing Zone] 目的地。 您可以視需要編輯下列步驟中顯示的配置，或刪除配置的某些部分。
+此页显示以下项可用的所有配置选项： [!DNL Data Landing Zone] 目标。 您可以根据需要编辑以下步骤中显示的配置或删除配置的某些部分。
 
-如需以下所使用引數的詳細說明，請參閱 [目的地SDK中的設定選項](../../functionality/configuration-options.md).
+有关下面使用的参数的详细说明，请参阅 [目标SDK中的配置选项](../../functionality/configuration-options.md).
 
 ## 先决条件 {#prerequisites}
 
-在繼續進行下列步驟之前，請閱讀 [Destination SDK快速入門](../../getting-started.md) 頁面以取得必要的Adobe I/O驗證認證，以及使用Destination SDKAPI的其他先決條件。
+在继续执行以下步骤之前，请阅读 [Destination SDK快速入门](../../getting-started.md) 页面，以了解有关获取使用Adobe I/OAPI所需的身份验证Destination SDK凭据和其他先决条件的信息。
 
-## 步驟1：建立伺服器和檔案組態 {#create-server-file-configuration}
+## 步骤1：创建服务器和文件配置 {#create-server-file-configuration}
 
-首先使用 `/destination-server` 端點至 [建立伺服器和檔案組態](../../authoring-api/destination-server/create-destination-server.md).
+首先使用 `/destination-server` 终结点至 [创建服务器和文件配置](../../authoring-api/destination-server/create-destination-server.md).
 
 **API格式**
 
@@ -35,8 +35,8 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 **请求**
 
-以下請求會建立新的目的地伺服器設定，由承載中提供的引數設定。
-以下裝載包含通用 [!DNL Data Landing Zone] 設定，使用自訂 [CSV檔案格式設定](../../functionality/destination-server/file-formatting.md) 使用者可在Experience PlatformUI中定義的設定引數。
+以下请求创建新的目标服务器配置，该配置由有效负载中提供的参数配置。
+以下有效负载包含通用 [!DNL Data Landing Zone] 配置，使用自定义 [CSV文件格式](../../functionality/destination-server/file-formatting.md) 用户可以在Experience PlatformUI中定义的配置参数。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \
@@ -118,13 +118,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-成功的回應會傳回新的目的地伺服器設定，包括唯一識別碼(`instanceId`)。 將此值儲存為下一個步驟所需的值。
+成功响应将返回新的目标服务器配置，包括唯一标识符(`instanceId`)。 将此值存储为下一步中所需的值。
 
-## 步驟2：建立目的地設定 {#create-destination-configuration}
+## 步骤2：创建目标配置 {#create-destination-configuration}
 
-在上一步中建立目的地伺服器和檔案格式設定後，您現在可以使用 `/destinations` API端點以建立目的地設定。
+在上一步中创建目标服务器和文件格式配置后，您现在可以使用 `/destinations` 用于创建目标配置的API端点。
 
-若要在中連線伺服器組態 [步驟1](#create-server-file-configuration) 對於此目的地設定，將 `destinationServerId` 值放入下列API請求中，並使用在中建立您的目的地伺服器時獲得的值 [步驟1](#create-server-file-configuration).
+在中连接服务器配置 [步骤1](#create-server-file-configuration) 对于此目标配置，将 `destinationServerId` 值以及在中创建目标服务器时获得的值，检查以下API请求中的值 [步骤1](#create-server-file-configuration).
 
 **API格式**
 
@@ -409,48 +409,48 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-成功的回應會傳回新的目的地設定，包括唯一識別碼(`instanceId`)。 如果您需要進一步提出HTTP請求來更新您的目的地設定，請視需要儲存此值。
+成功响应将返回新的目标配置，包括唯一标识符(`instanceId`)。 如果需要进一步提出HTTP请求来更新目标配置，请根据需要存储此值。
 
-## 步驟3：驗證Experience PlatformUI {#verify-ui}
+## 步骤3：验证Experience PlatformUI {#verify-ui}
 
-根據上述設定，Experience Platform目錄現在會顯示新的私人目的地卡供您使用。
+根据上述配置，Experience Platform目录现在将显示一张新的专用目标卡供您使用。
 
-![熒幕錄製，顯示具有選定目的地卡片的目的地目錄頁面。](../../assets/guides/batch/dlz-destination-card.gif)
+![屏幕录制，其中显示具有选定目标卡的目标目录页面。](../../assets/guides/batch/dlz-destination-card.gif)
 
-在以下影像和錄製中，請注意中的選項 [檔案型目的地的啟用工作流程](../../../ui/activate-batch-profile-destinations.md) 符合您在目的地設定中選取的選項。
+在下面的图像和录制中，请注意中的选项 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 匹配您在目标配置中选择的选项。
 
-填寫有關目的地的詳細資料時，請注意顯示的欄位是您在設定中設定的自訂資料欄位。
+填写有关目标的详细信息时，请注意这些字段是如何出现在配置中设置的自定义数据字段的。
 
 >[!TIP]
 >
->您新增自訂資料欄位至目的地設定的順序不會反映在UI中。 自訂資料欄位一律會以下方熒幕錄製中顯示的順序顯示。
+>您向目标配置添加自定义数据字段的顺序未反映在UI中。 自定义数据字段始终按照以下屏幕录制中显示的顺序显示。
 
-![填寫目的地詳細資料](../../assets/guides/batch/file-configuration-options.gif)
+![填写目标详细信息](../../assets/guides/batch/file-configuration-options.gif)
 
-排程匯出間隔時，請注意欄位顯示方式為您在中設定的欄位 `batchConfig` 設定。
-![匯出排程選項](../../assets/guides/batch/file-export-scheduling.png)
+在计划导出间隔时，请注意显示的字段是您在 `batchConfig` 配置。
+![导出计划选项](../../assets/guides/batch/file-export-scheduling.png)
 
-檢視檔案名稱組態選項時，請注意出現的欄位如何表示 `filenameConfig` 您在設定中設定的選項。
-![檔案名稱組態選項](../../assets/guides/batch/file-naming-options.gif)
+查看文件名配置选项时，请注意出现的字段如何表示 `filenameConfig` 您在配置中设置的选项。
+![文件名配置选项](../../assets/guides/batch/file-naming-options.gif)
 
-如果您想要調整任何上述欄位，請重複 [步驟一](#create-server-file-configuration) 和 [二](#create-destination-configuration) 以根據您的需求修改設定。
+如果要调整上述任何字段，请重复 [步骤1](#create-server-file-configuration) 和 [二](#create-destination-configuration) 以根据需要修改配置。
 
-## 步驟4： （選用）發佈您的目的地 {#publish-destination}
-
->[!NOTE]
->
->如果您要建立私人目的地以供您自己使用，且不想將其發佈到目的地目錄以供其他客戶使用，則不需要執行此步驟。
-
-設定目的地後，請使用 [目的地發佈API](../../publishing-api/create-publishing-request.md) 以將您的設定提交至Adobe以供檢閱。
-
-## 步驟5：（選擇性）記錄您的目的地 {#document-destination}
+## 步骤4：（可选）发布目标 {#publish-destination}
 
 >[!NOTE]
 >
->如果您要建立私人目的地以供您自己使用，且不想將其發佈到目的地目錄以供其他客戶使用，則不需要執行此步驟。
+>如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-如果您是獨立軟體廠商(ISV)或系統整合商(SI)，請建立 [產品化整合](../../overview.md#productized-custom-integrations)，使用 [自助服務檔案程式](../../docs-framework/documentation-instructions.md) 若要在中建立您目的地的產品檔案頁面 [Experience Platform目的地目錄](../../../catalog/overview.md).
+配置目标后，使用 [目标发布API](../../publishing-api/create-publishing-request.md) 以将您的配置提交到Adobe以供审查。
+
+## 步骤5：（可选）记录您的目标 {#document-destination}
+
+>[!NOTE]
+>
+>如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
+
+如果您是独立软件供应商(ISV)或系统集成商(SI)，请创建 [产品化集成](../../overview.md#productized-custom-integrations)，使用 [自助式文档流程](../../docs-framework/documentation-instructions.md) 在中为您的目标创建产品文档页面 [Experience Platform目标目录](../../../catalog/overview.md).
 
 ## 后续步骤 {#next-steps}
 
-閱讀本文章，您現在瞭解如何撰寫自訂 [!DNL Data Landing Zone] 目的地使用Destination SDK。 接下來，您的團隊可以使用 [檔案型目的地的啟用工作流程](../../../ui/activate-batch-profile-destinations.md) 將資料匯出至目的地。
+阅读本文后，您现在知道如何创作自定义 [!DNL Data Landing Zone] 目标(使用Destination SDK)。 接下来，您的团队可以使用 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 将数据导出到目标。

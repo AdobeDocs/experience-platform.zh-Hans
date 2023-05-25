@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform Web SDK擴充功能中的事件型別
-description: 瞭解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK擴充功能提供的事件型別。
+title: Adobe Experience Platform Web SDK扩展中的事件类型
+description: 了解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的事件类型。
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
 source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
@@ -12,39 +12,39 @@ ht-degree: 1%
 
 # 事件类型
 
-本頁說明Adobe Experience Platform Web SDK標籤擴充功能提供的Adobe Experience Platform事件型別。 這些已用來 [建置規則](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) 且不應與 [`eventType` xdm中的欄位](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans).
+本页介绍了由Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 这些已用于 [生成规则](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) 也不应混淆 [`eventType` xdm中的字段](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans).
 
-## [!UICONTROL 傳送事件完成]
+## [!UICONTROL 发送事件完成]
 
-通常，您的屬性會有一或多個規則使用 [[!UICONTROL 傳送事件] 動作](action-types.md#send-event) 傳送事件至Adobe Experience Platform Edge Network。 每次將事件傳送至Edge Network時，都會傳回包含有用資料的回應給瀏覽器。 不含 [!UICONTROL 傳送事件完成] 事件型別，則您沒有許可權存取此傳回的資料。
+通常，您的资产会有一个或多个规则使用 [[!UICONTROL 发送事件] 操作](action-types.md#send-event) 将事件发送到Adobe Experience Platform Edge Network。 每次将事件发送到Edge Network时，都会向浏览器返回一个包含有用数据的响应。 不使用 [!UICONTROL 发送事件完成] 事件类型时，您将无权访问此返回的数据。
 
-若要存取傳回的資料，請建立個別規則，然後新增 [!UICONTROL 傳送事件完成] 事件至規則。 每次從伺服器收到成功的回應時，就會觸發此規則。 [!UICONTROL 傳送事件] 動作。
+要访问返回的数据，请创建一个单独的规则，然后添加 [!UICONTROL 发送事件完成] 事件到规则。 每次从服务器收到作为响应结果而发出的成功响应时，都会触发此规则。 [!UICONTROL 发送事件] 操作。
 
-當 [!UICONTROL 傳送事件完成] 事件會觸發規則，提供從伺服器傳回的有助於完成特定任務的資料。 通常，您會新增 [!UICONTROL 自訂程式碼] 動作(來自 [!UICONTROL 核心] 擴充功能)，與包含 [!UICONTROL 傳送事件完成] 事件。 在 [!UICONTROL 自訂程式碼] 動作，您的自訂程式碼將可存取名為的變數 `event`. 此 `event` 變數會包含從伺服器傳回的資料。
+当 [!UICONTROL 发送事件完成] 事件触发规则，它提供从服务器返回的数据，这些数据可能有助于完成某些任务。 通常，您将添加 [!UICONTROL 自定义代码] 操作(来自 [!UICONTROL 核心] 扩展名)添加到包含 [!UICONTROL 发送事件完成] 事件。 在 [!UICONTROL 自定义代码] 操作，则自定义代码将有权访问名为的变量 `event`. 此 `event` 变量将包含从服务器返回的数据。
 
-處理從Edge Network傳回之資料的規則可能如下所示：
+用于处理从Edge Network返回的数据的规则可能如下所示：
 
 ![](./assets/send-event-complete.png)
 
-以下是如何使用執行特定工作的一些範例。 [!UICONTROL 自訂程式碼] 動作。
+以下是如何使用执行某些任务的一些示例 [!UICONTROL 自定义代码] 操作。
 
-### 手動呈現個人化內容
+### 手动渲染个性化内容
 
-在「自訂程式碼」動作（位於處理回應資料的規則中）中，您可以存取從伺服器傳回的個人化主張。 若要這麼做，您可以輸入下列自訂程式碼：
+在处理响应数据的规则中的Custom Code操作中，您可以访问从服务器返回的个性化建议。 为此，您需要键入以下自定义代码：
 
 ```javascript
 var propositions = event.propositions;
 ```
 
-若 `event.propositions` 存在，它是包含個人化主張物件的陣列。 陣列中包含的建議在很大程度上取決於事件傳送至伺服器的方式。
+如果 `event.propositions` 存在，它是一个包含个性化建议对象的数组。 数组中包括的建议在很大程度上取决于将事件发送到服务器的方式。
 
-對於第一個案例，假設您尚未核取 [!UICONTROL 呈現決定] 核取方塊，且尚未提供任何 [!UICONTROL 決定範圍] 內部 [!UICONTROL 傳送事件] 負責傳送事件的動作。
+对于第一个方案，假定您尚未检查 [!UICONTROL 渲染决策] 复选框，但未提供任何 [!UICONTROL 决策范围] 内部 [!UICONTROL 发送事件] 负责发送事件的操作。
 
 ![img.png](assets/send-event-render-unchecked-without-scopes.png)
 
-在此範例中， `propositions` 陣列僅包含與事件相關的主張，這些事件符合自動轉譯的條件。
+在此示例中， `propositions` 数组仅包含与事件相关的建议，这些建议符合自动渲染的条件。
 
-此 `propositions` 陣列看起來可能類似於此範例：
+此 `propositions` 数组可能与以下示例类似：
 
 ```json
 [
@@ -85,17 +85,17 @@ var propositions = event.propositions;
 ]
 ```
 
-傳送事件時， [!UICONTROL 呈現決定] 未勾選核取方塊，因此SDK未嘗試自動轉譯任何內容。 不過，SDK仍會自動擷取符合自動轉譯資格的內容，並提供給您手動轉譯（如果您想要這麼做）。 請注意，每個主張物件都有其 `renderAttempted` 屬性設定為 `false`.
+发送事件时， [!UICONTROL 渲染决策] 未选中复选框，因此SDK不会尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，并在您希望手动渲染时提供该内容。 请注意，每个建议对象都有其 `renderAttempted` 属性设置为 `false`.
 
-如果您選擇不檢查 [!UICONTROL 呈現決定] 核取方塊傳送事件時，SDK會嘗試轉譯任何符合自動轉譯資格的主張。 因此，每個主張物件都會有其 `renderAttempted` 屬性設定為 `true`. 在此情況下，不需要手動轉譯這些主張。
+如果您选择的是 [!UICONTROL 渲染决策] 复选框。在发送事件时，SDK会尝试渲染任何符合自动渲染条件的建议。 因此，每个建议对象将具有其 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
 
-到目前為止，您只檢視了符合自動轉譯資格的個人化內容(例如，任何在Adobe Target視覺化體驗撰寫器中建立的內容)。 擷取任何個人化內容 _not_ 符合自動轉譯的條件，請使用 [!UICONTROL 決定範圍] 中的欄位 [!UICONTROL 傳送事件] 動作。 範圍是字串，可識別您要從伺服器擷取的特定主張。
+到目前为止，您仅查看了符合自动呈现条件的个性化内容(例如，在Adobe Target可视化体验编辑器中创建的任何内容)。 检索任何个性化内容 _非_ 符合自动呈现的条件，通过使用提供决策范围来请求内容 [!UICONTROL 决策范围] 中的字段 [!UICONTROL 发送事件] 操作。 范围是一个字符串，它标识您要从服务器检索的特定建议。
 
-此 [!UICONTROL 傳送事件] 動作如下所示：
+此 [!UICONTROL 发送事件] 操作将如下所示：
 
 ![img.png](assets/send-event-render-unchecked-with-scopes.png)
 
-在此範例中，如果在伺服器上找到符合以下條件的建議： `salutation` 或 `discount` 範圍，它們會傳回並包含在 `propositions` 陣列。 請注意，符合自動轉譯資格的主張將繼續包含在 `propositions` 陣列，無論您如何設定 [!UICONTROL 呈現決定] 或 [!UICONTROL 決定範圍] 中的欄位 [!UICONTROL 傳送事件] 動作。 此 `propositions` 在此範例中，陣列看起來會類似於以下範例：
+在此示例中，如果在服务器上找到与 `salutation` 或 `discount` 范围，它们将返回并包含在 `propositions` 数组。 请注意，符合自动呈现条件的主张将继续包含在 `propositions` 阵列，无论如何配置 [!UICONTROL 渲染决策] 或 [!UICONTROL 决策范围] 中的字段 [!UICONTROL 发送事件] 操作。 此 `propositions` 在此例中，数组类似于以下示例：
 
 ```json
 [
@@ -169,14 +169,14 @@ var propositions = event.propositions;
 ]
 ```
 
-此時，您可以視需要演算主張內容。 在此範例中，主張符合 `discount` scope是使用Adobe Target的表單式體驗撰寫器建立的HTML主張。 假設您的頁面上有一個元素，其ID為 `daily-special` 並希望從呈現內容 `discount` 中的主張 `daily-special` 元素。 执行以下操作：
+此时，您可以按照自己认为合适的方式呈现建议内容。 在此示例中，建议与 `discount` scope是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假设您的页面上有一个元素，其ID为 `daily-special` 并希望从呈现内容 `discount` 中的建议 `daily-special` 元素。 执行以下操作：
 
-1. 從擷取主張 `event` 物件。
-1. 循環瀏覽每個主張，尋找具有下列範圍的主張 `discount`.
-1. 如果您找到主張，會在主張中的每個專案之間回圈，尋找是HTML內容的專案。 （檢查總比假設要好。）
-1. 如果您找到包含HTML內容的專案，請找到 `daily-special` 元素並以個人化內容取代其HTML。
+1. 从提取建议 `event` 对象。
+1. 循环查看每个建议，寻找具有以下范围的建议： `discount`.
+1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找内容为HTML的项目。 (检查总比假设要好。
+1. 如果找到一个包含HTML内容的项目，请找到 `daily-special` 元素，并将其HTML替换为个性化内容。
 
-您在中建立的自訂程式碼 [!UICONTROL 自訂程式碼] 動作可能如下所示：
+您在中的自定义代码 [!UICONTROL 自定义代码] 操作可能如下所示：
 
 ```javascript
 var propositions = event.propositions;
@@ -215,27 +215,27 @@ if (discountHtml) {
 }
 ```
 
-### 存取Adobe Target回應Token
+### 访问Adobe Target响应令牌
 
-Adobe Target傳回的個人化內容包括 [回應Token](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，此為有關活動、選件、體驗、使用者設定檔、地理資訊等專案的詳細資訊。 這些詳細資料可與協力廠商工具共用，或用於偵錯。 可在Adobe Target使用者介面中設定回應Token。
+从Adobe Target返回的个性化内容包括 [响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，其中包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 可在Adobe Target用户界面中配置响应令牌。
 
-在「自訂程式碼」動作（位於處理回應資料的規則中）中，您可以存取從伺服器傳回的個人化主張。 若要這麼做，請輸入下列自訂程式碼：
+在处理响应数据的规则中的Custom Code操作中，您可以访问从服务器返回的个性化建议。 为此，请键入以下自定义代码：
 
 ```javascript
 var propositions = event.propositions;
 ```
 
-若 `event.propositions` 存在，它是包含個人化主張物件的陣列。 另請參閱 [手動呈現個人化內容](#manually-render-personalized-content) 以取得有關以下專案的內容的詳細資訊： `result.propositions`.
+如果 `event.propositions` 存在，它是一个包含个性化建议对象的数组。 参见 [手动渲染个性化内容](#manually-render-personalized-content) ，以了解有关 `result.propositions`.
 
-假設您想從Web SDK自動轉譯的所有主張中收集所有活動名稱，並將其推送到單一陣列中。 然後，您可以將單一陣列傳送給協力廠商。 在此情況下，請撰寫自訂程式碼至 [!UICONTROL 自訂程式碼] 動作至：
+假设您要从Web SDK自动渲染的所有建议中收集所有活动名称，并将它们推入单个数组中。 然后，您可以将单个阵列发送给第三方。 在这种情况下，请将自定义代码写入 [!UICONTROL 自定义代码] 操作目标：
 
-1. 從擷取主張 `event` 物件。
-1. 循環瀏覽每個主張。
-1. 判斷SDK是否呈現主張。
-1. 如果是，則重複檢查主張中的每個專案。
-1. 從擷取活動名稱 `meta` 屬性，包含回應Token的物件。
-1. 將活動名稱推入陣列。
-1. 將活動名稱傳送給第三方。
+1. 从提取建议 `event` 对象。
+1. 循环访问每个建议。
+1. 确定SDK是否呈现了建议。
+1. 如果是这样，则循环访问建议中的每个项目。
+1. 从检索活动名称 `meta` 属性，它是一个包含响应令牌的对象。
+1. 将活动名称推入数组中。
+1. 将活动名称发送给第三方。
 
 ```javascript
 var propositions = event.propositions;

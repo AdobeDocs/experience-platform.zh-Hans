@@ -1,6 +1,6 @@
 ---
-title: 程式庫端點
-description: 瞭解如何在Reactor API中呼叫/libraries端點。
+title: 库端点
+description: 了解如何在Reactor API中调用/libraries端点。
 exl-id: 0f7bc10f-2e03-43fa-993c-a2635f4d0c64
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 5%
 
 ---
 
-# 程式庫端點
+# 库端点
 
-程式庫是標籤資源的集合([擴充功能](./extensions.md)， [規則](./rules.md)、和 [資料元素](./data-elements.md))代表所需行為的 [屬性](./properties.md). 此 `/libraries` Reactor API中的端點可讓您以程式設計方式管理標籤屬性中的程式庫。
+库是标记资源的集合([扩展](./extensions.md)， [规则](./rules.md)、和 [数据元素](./data-elements.md))来表示所需的行为 [属性](./properties.md). 此 `/libraries` Reactor API中的端点允许您以编程方式管理标记属性中的库。
 
-程式庫只屬於一個屬性。 屬性可以有許多程式庫。
+库只属于一个资产。 一个资产可以有许多库。
 
 ## 快速入门
 
-本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
 
-在Reactor API中使用程式庫之前，請務必瞭解程式庫狀態和環境在決定您可以對特定程式庫執行哪些動作時所扮演的角色。 請參閱 [程式庫發佈流程](../../ui/publishing/publishing-flow.md) 以取得詳細資訊。
+在使用Reactor API中的库之前，请务必了解库状态和环境在决定您可以对特定库执行哪些操作方面扮演的角色。 请参阅 [库发布流](../../ui/publishing/publishing-flow.md) 了解更多信息。
 
-## 擷取程式庫清單 {#list}
+## 检索库列表 {#list}
 
-您可以在GET要求的路徑中包含屬性的ID，以擷取屬性的程式庫清單。
+通过在GET请求的路径中包含资产的ID，可以检索资产的库列表。
 
 **API格式**
 
@@ -33,13 +33,13 @@ GET /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 擁有程式庫的屬性。 |
+| `PROPERTY_ID` | 此 `id` 拥有库的资产的属性。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查詢引數，可根據下列屬性篩選列出的程式庫：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
+>使用查询参数，可以根据以下属性筛选列出的库：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
 
 **请求**
 
@@ -55,7 +55,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回指定屬性的程式庫清單。
+成功的响应将返回指定属性的库列表。
 
 ```json
 {
@@ -147,9 +147,9 @@ curl -X GET \
 }
 ```
 
-## 查詢資料庫 {#lookup}
+## 查找库 {#lookup}
 
-您可以在GET請求的路徑中提供程式庫ID以查詢程式庫。
+您可以通过在GET请求的路径中提供库ID来查找库。
 
 **API格式**
 
@@ -159,7 +159,7 @@ GET /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` ，屬於您要查閱的程式庫。 |
+| `LIBRARY_ID` | 此 `id` 要查找的库的URL。 |
 
 {style="table-layout:auto"}
 
@@ -177,7 +177,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回程式庫的詳細資料。
+成功响应将返回库的详细信息。
 
 ```json
 {
@@ -260,7 +260,7 @@ curl -X GET \
 
 ## 创建库 {#create}
 
-您可以發出POST要求來建立新程式庫。
+您可以通过发出POST请求来创建新库。
 
 **API格式**
 
@@ -270,13 +270,13 @@ POST /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [屬性](./properties.md) 您正在定義下方的程式庫。 |
+| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 您正在其下定义库。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列要求會針對指定的屬性建立新程式庫。 第一次建立程式庫時，只會 `name` 屬性可設定。 若要將資料元素、擴充功能和規則新增至程式庫，您必須建立關係。 請參閱以下小節： [管理程式庫資源](#resources) 以取得詳細資訊。
+以下请求为指定的属性创建新库。 首次创建库时，仅其 `name` 属性可进行配置。 要将数据元素、扩展和规则添加到库，您必须创建关系。 请参阅以下部分： [管理库资源](#resources) 了解更多信息。
 
 ```shell
 curl -X POST \
@@ -297,14 +297,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必要）** 可讀取的資料庫名稱。 |
-| `type` | 正在更新的資源型別。 此端點的值必須為 `libraries`. |
+| `attributes.name` | **（必需）** 易于用户识别的库名称。 |
+| `type` | 正在更新的资源类型。 对于此端点，值必须为 `libraries`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回新建立程式庫的詳細資料。
+成功响应将返回新创建的库的详细信息。
 
 ```json
 {
@@ -404,13 +404,13 @@ curl -X POST \
 }
 ```
 
-## 管理程式庫的資源 {#resources}
+## 管理库的资源 {#resources}
 
-與程式庫相關聯的資料元素、擴充功能、規則和環境會透過關係建立。 以下各節說明如何透過API呼叫管理這些關係。
+与库关联的数据元素、扩展、规则和环境是通过关系建立的。 以下部分介绍了如何通过API调用管理这些关系。
 
-### 將資源新增至程式庫 {#add-resources}
+### 将资源添加到库 {#add-resources}
 
-您可以藉由附加來將資源新增至程式庫 `/relationships` 前往POST請求的路徑，後接資源型別。
+您可以通过附加来将资源添加到库 `/relationships` POST请求的路径，后跟资源类型。
 
 **API格式**
 
@@ -420,14 +420,14 @@ POST /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 您要新增資源的資料庫ID。 |
-| `{RESOURCE_TYPE}` | 您要新增至程式庫的資源型別。 接受下列值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
+| `{LIBRARY_ID}` | 要将资源添加到的库的ID。 |
+| `{RESOURCE_TYPE}` | 要添加到库的资源类型。 接受以下值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列請求會將兩個資料元素新增至程式庫。
+以下请求向库中添加两个数据元素。
 
 ```shell
 curl -X POST \
@@ -453,14 +453,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 要新增至程式庫的資源ID。 |
-| `type` | 您要新增至程式庫的資源型別。 |
+| `id` | 要添加到库的资源的ID。 |
+| `type` | 要添加到库的资源类型。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回新增關係的詳細資料。 執行 [查詢請求](#lookup) 對於資料庫，會在下方顯示新增的關係 `relationships` 屬性。
+成功的响应将返回添加关系的详细信息。 执行 [查找请求](#lookup) （对于库），显示在 `relationships` 属性。
 
 ```json
 {
@@ -481,9 +481,9 @@ curl -X POST \
 }
 ```
 
-### 取代程式庫的資源 {#replace-resources}
+### 替换库的资源 {#replace-resources}
 
-您可以藉由附加以取代程式庫特定型別的所有現有資源 `/relationships` 前往PATCH請求的路徑，後接您要取代的資源型別。
+您可以通过附加来替换库的特定类型的所有现有资源 `/relationships` 到PATCH请求的路径，后跟要替换的资源类型。
 
 **API格式**
 
@@ -493,14 +493,14 @@ PATCH /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 您要取代其關係的程式庫ID。 |
-| `{RESOURCE_TYPE}` | 要取代的資源型別。 接受下列值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
+| `{LIBRARY_ID}` | 要替换其关系的库的ID。 |
+| `{RESOURCE_TYPE}` | 要替换的资源类型。 接受以下值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列要求會將程式庫的擴充功能取代為 `data` 陣列。
+以下请求会将库的扩展替换为 `data` 数组。
 
 ```shell
 curl -X PATCH \
@@ -522,14 +522,14 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 要新增至程式庫的資源ID。 |
-| `type` | 您要新增至程式庫的資源型別。 |
+| `id` | 要添加到库的资源的ID。 |
+| `type` | 要添加到库的资源类型。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回已更新關係的詳細資料。 執行 [查詢請求](#lookup) 對於程式庫，會顯示以下專案下的關係 `relationships` 屬性。
+成功的响应将返回已更新关系的详细信息。 执行 [查找请求](#lookup) （对于库）显示 `relationships` 属性。
 
 ```json
 {
@@ -546,9 +546,9 @@ curl -X PATCH \
 }
 ```
 
-### 移除程式庫的資源 {#remove-resources}
+### 删除库的资源 {#remove-resources}
 
-您可以藉由附加，從程式庫中移除現有資源 `/relationships` 前往DELETE請求的路徑，後接您要移除的資源型別。
+您可以通过附加，从库中移除现有资源 `/relationships` DELETE请求的路径，后跟要删除的资源类型。
 
 **API格式**
 
@@ -558,14 +558,14 @@ DELETE /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 您要移除其資源的程式庫ID。 |
-| `{RESOURCE_TYPE}` | 您要移除的資源型別。 接受下列值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
+| `{LIBRARY_ID}` | 要删除其资源的库的ID。 |
+| `{RESOURCE_TYPE}` | 正在删除的资源类型。 接受以下值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列要求會將規則從程式庫中移除。 任何未包含在中的現有規則 `data` 陣列不會被刪除。
+以下请求从库中移除规则。 任何未包含在 `data` 阵列未被删除。
 
 ```shell
 curl -X DELETE \
@@ -587,14 +587,14 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 您要從程式庫中移除之資源的ID。 |
-| `type` | 您要從程式庫中移除的資源型別。 |
+| `id` | 要从库中移除的资源的ID。 |
+| `type` | 要从库中移除的资源类型。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回資源型別已更新關係的詳細資料。 如果此資源型別不存在任何關係，則 `data` 屬性會以空白陣列傳回。 執行 [查詢請求](#lookup) 對於程式庫，會顯示以下專案下的關係 `relationships` 屬性。
+成功的响应会返回资源类型已更新关系的详细信息。 如果此资源类型不存在任何关系，则 `data` 属性作为空数组返回。 执行 [查找请求](#lookup) （对于库）显示 `relationships` 属性。
 
 ```json
 {
@@ -608,9 +608,9 @@ curl -X DELETE \
 }
 ```
 
-## 將程式庫指派至環境 {#environment}
+## 将库分配给环境 {#environment}
 
-您可以將程式庫指派給環境  `/relationships/environment` 到POST請求的路徑。
+您可以将库分配到环境  `/relationships/environment` 到POST请求的路径。
 
 **API格式**
 
@@ -620,7 +620,7 @@ POST /libraries/{LIBRARY_ID}/relationships/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 您要指派的程式庫ID。 |
+| `{LIBRARY_ID}` | 要分配的库的ID。 |
 
 {style="table-layout:auto"}
 
@@ -644,14 +644,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 您指派程式庫的目標環境ID。 |
-| `type` | 必須設定為 `environments`. |
+| `id` | 您为库分配的环境的ID。 |
+| `type` | 必须设置为 `environments`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回關係的詳細資料。 執行 [查詢請求](#lookup) （對於資料庫），會在下方顯示新增的關係 `relationships` 屬性。
+成功的响应将返回关系的详细信息。 执行 [查找请求](#lookup) （对于库），会在下显示添加的关系 `relationships` 属性。
 
 ```json
 {
@@ -666,9 +666,9 @@ curl -X POST \
 }
 ```
 
-## 轉換程式庫 {#transition}
+## 过渡库 {#transition}
 
-您可以在PATCH請求的路徑中包含程式庫的ID，並提供適當的程式庫，將程式庫轉換為其他發佈狀態 `meta.action` 值。
+通过在PATCH请求的路径中包含库的ID并提供相应的路径，可以将库转换为其他发布状态 `meta.action` 有效负载中的值。
 
 **API格式**
 
@@ -678,13 +678,13 @@ PATCH /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要轉換的程式庫中。 |
+| `LIBRARY_ID` | 此 `id` 要转换的库的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會根據的值，轉換現有程式庫的狀態 `meta.action` 已在裝載中提供。 程式庫的可用動作取決於其目前的發佈狀態，如 [發佈流程](../../ui/publishing/publishing-flow.md#state).
+以下请求根据 `meta.action` 有效负载中提供的。 库的可用操作取决于其当前发布状态，如 [发布流](../../ui/publishing/publishing-flow.md#state).
 
 ```shell
 curl -X PATCH \
@@ -706,15 +706,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `meta.action` | 您要在程式庫上進行的特定轉變動作。 視程式庫目前的發佈狀態而定，下列動作可供使用： <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
-| `id` | 此 `id` 要更新的程式庫的。 這應該符合 `{LIBRARY_ID}` 請求路徑中提供的值。 |
-| `type` | 正在更新的資源型別。 此端點的值必須為 `libraries`. |
+| `meta.action` | 要在库中进行的特定过渡操作。 根据库的当前发布状态，可以使用以下操作： <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
+| `id` | 此 `id` 要更新的库的。 这应该与 `{LIBRARY_ID}` 请求路径中提供的值。 |
+| `type` | 正在更新的资源类型。 对于此端点，值必须为 `libraries`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功回應會傳回已更新程式庫的詳細資料。
+成功响应将返回已更新库的详细信息。
 
 ```json
 {
@@ -798,13 +798,13 @@ curl -X PATCH \
 }
 ```
 
-## 發佈程式庫 {#publish}
+## 发布库 {#publish}
 
 >[!NOTE]
 >
->只有已核准的程式庫才能發佈至生產環境。
+>只有已获批准的库才能发布到生产环境。
 
-若要將程式庫發佈至生產環境，請確定生產環境已新增至程式庫，然後建立組建。
+要将库发布到生产环境，请确保已将生产环境添加到库，然后创建内部版本。
 
 **API格式**
 
@@ -814,13 +814,13 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` ，位於您要發佈的程式庫中。 |
+| `LIBRARY_ID` | 此 `id` 要发布的库的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-此請求不需要裝載。
+此请求不需要有效负载。
 
 ```shell
 curl -X POST \
@@ -903,19 +903,19 @@ curl -X POST \
 }
 ```
 
-## 管理程式庫的附註 {#notes}
+## 管理库的注释 {#notes}
 
-程式庫是「重要」資源，這表示您可以在每個個別資源上建立和擷取文字型附註。 請參閱 [附註端點指南](./notes.md) 如需如何管理程式庫和其他相容資源的附註的詳細資訊。
+库是“重要”资源，这意味着您可以创建和检索每个单独资源中基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理库和其他兼容资源的注释的更多信息。
 
-## 擷取程式庫的相關資源 {#related}
+## 检索库的相关资源 {#related}
 
-下列呼叫示範如何擷取程式庫的相關資源。 時間 [查詢資料庫](#lookup)，這些關係會列在 `relationships` 屬性。
+以下调用演示了如何检索库的相关资源。 时间 [查找库](#lookup)，这些关系列在 `relationships` 属性。
 
-請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
-### 列出程式庫的相關資料元素 {#data-elements}
+### 列出库的相关数据元素 {#data-elements}
 
-您可以藉由附加，列出程式庫所使用的資料元素 `/data_elements` 至查閱請求的路徑。
+您可以通过附加来列出库所使用的数据元素 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -925,7 +925,7 @@ GET  /libraries/{LIBRARY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其資料元素的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要列出其数据元素的库的。 |
 
 {style="table-layout:auto"}
 
@@ -943,7 +943,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回使用指定程式庫的資料元素清單。
+成功响应将返回使用指定库的数据元素列表。
 
 ```json
 {
@@ -1054,9 +1054,9 @@ curl -X GET \
 }
 ```
 
-### 列出程式庫的相關擴充功能 {#extensions}
+### 列出库的相关扩展 {#extensions}
 
-您可以藉由附加，列出程式庫使用的擴充功能 `/extensions` 至查閱請求的路徑。
+您可以通过附加来列出库使用的扩展 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -1066,7 +1066,7 @@ GET  /libraries/{LIBRARY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其副檔名的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要列出其扩展名的库的。 |
 
 {style="table-layout:auto"}
 
@@ -1084,7 +1084,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回使用指定程式庫的擴充功能清單。
+成功的响应将返回使用指定库的扩展列表。
 
 ```json
 {
@@ -1185,9 +1185,9 @@ curl -X GET \
 }
 ```
 
-### 列出程式庫的相關規則 {#rules}
+### 列出库的相关规则 {#rules}
 
-您可以透過附加來列出程式庫使用的規則 `/rules` 至查閱請求的路徑。
+您可以通过附加来列出库使用的规则 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -1197,7 +1197,7 @@ GET  /libraries/{LIBRARY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要列出其規則的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要列出其规则的库的。 |
 
 {style="table-layout:auto"}
 
@@ -1215,7 +1215,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回使用指定程式庫的規則清單。
+成功响应将返回使用指定库的规则列表。
 
 ```json
 {
@@ -1298,9 +1298,9 @@ curl -X GET \
 }
 ```
 
-### 查詢程式庫的相關環境 {#related-environment}
+### 查找库的相关环境 {#related-environment}
 
-您可以藉由附加來查詢已指派程式庫的環境 `/environment` 到GET請求的路徑。
+您可以通过附加来查找库已分配到的环境 `/environment` 到GET请求的路径。
 
 **API格式**
 
@@ -1310,7 +1310,7 @@ GET  /libraries/{LIBRARY_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查詢其環境的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要查找其环境的库的。 |
 
 {style="table-layout:auto"}
 
@@ -1328,7 +1328,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回指定程式庫所指派環境的詳細資料。
+成功响应将返回指定库所分配到的环境的详细信息。
 
 ```json
 {
@@ -1410,9 +1410,9 @@ curl -X GET \
 }
 ```
 
-### 查詢程式庫的相關屬性 {#property}
+### 查找库的相关属性 {#property}
 
-您可以透過附加來查詢擁有程式庫的屬性 `/property` 到GET請求的路徑。
+您可以通过附加来查找拥有库的资产 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -1422,7 +1422,7 @@ GET  /libraries/{LIBRARY_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查詢其屬性的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要查找其属性的库的。 |
 
 {style="table-layout:auto"}
 
@@ -1440,7 +1440,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回擁有指定程式庫之屬性的詳細資料。
+成功响应将返回拥有指定库的属性的详细信息。
 
 ```json
 {
@@ -1533,9 +1533,9 @@ curl -X GET \
 }
 ```
 
-### 查詢上游的程式庫 {#upstream}
+### 查找库的上游 {#upstream}
 
-您可以藉由附加，從程式庫上游查詢下一個程式庫 `/upstream_library` 到GET請求的路徑。
+您可以通过附加，从库上游查找下一个库 `/upstream_library` 到GET请求的路径。
 
 **API格式**
 
@@ -1545,7 +1545,7 @@ GET  /libraries/{LIBRARY_ID}/upstream_library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 此 `id` 要查詢其上遊程式庫的程式庫。 |
+| `{LIBRARY_ID}` | 此 `id` 要查找其上游库的库。 |
 
 {style="table-layout:auto"}
 
@@ -1563,7 +1563,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回上遊程式庫的詳細資訊。
+成功响应将返回上游库的详细信息。
 
 ```json
 {

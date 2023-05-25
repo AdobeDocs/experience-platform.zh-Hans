@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；連線；連線到查詢服務；aqua data Studio；Aqua Data Studio；Looker；looker；Postico；postico；Power BI；power bi；psql；rstudio；PSQL；RStudio；Tableau；tableau；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；连接；连接到查询服务；aqua data studio；Aqua Data Studio；查找器；Postico；postico；Power BI；power bi；psql；rstudio；PSQL；RStudio；Tableau；tableau；
 solution: Experience Platform
-title: 將使用者端連線至查詢服務
-description: 本檔案說明如何從各種案頭使用者端應用程式連線至查詢服務，以及如何驗證這些連線。
+title: 将客户端连接到查询服务
+description: 本文档介绍如何从各种桌面客户端应用程序连接到查询服务，以及如何验证这些连接。
 exl-id: 2ba20179-5adb-4259-a120-231a40e78054
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 ---
 
-# 連線使用者端至 [!DNL Query Service]
+# 将客户端连接到 [!DNL Query Service]
 
-本節說明如何連線至 [!DNL Query Service] 各種案頭使用者端應用程式，以及如何驗證這些連線。 [!DNL Query Service] 使用 [!DNL PostgreSQL] 通訊協定，所以本節中的指示說明如何使用 [!DNL PostgreSQL] 連線和寫入查詢的工具和驅動程式。
+本节介绍如何连接到 [!DNL Query Service] 各种桌面客户端应用程序，以及如何验证这些连接。 [!DNL Query Service] 使用 [!DNL PostgreSQL] 协议，因此本节中的说明将介绍如何使用 [!DNL PostgreSQL] 用于连接和编写查询的工具和驱动程序。
 
-提供下列使用者端的指示：
+为以下客户端提供了说明：
 
 - [[!DNL Aqua Data Studio]](./aqua-data-studio.md)
 - [[!DNL DbVisualizer]](./dbvisulaizer.md)

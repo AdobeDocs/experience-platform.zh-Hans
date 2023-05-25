@@ -1,9 +1,9 @@
 ---
-title: Platform Web SDK中的Adobe Analytics for Target (A4T)記錄
-description: 瞭解如何使用Experience PlatformWeb SDK控制Adobe Analytics for Target (A4T)資料的收集。
+title: Platform Web SDK中的Adobe Analytics for Target (A4T)记录
+description: 了解如何使用Experience PlatformWeb SDK控制Adobe Analytics for Target (A4T)数据的收集。
 seo-title: Adobe Analytics for Target (A4T) Logging in the Platform Web SDK
 seo-description: Learn how to control the collection of Adobe Analytics for Target (A4T) data using the Experience Platform Web SDK.
-keywords: a4t；記錄；analytics；sdk；web sdk；
+keywords: a4t；日志记录；analytics；sdk；web sdk；
 exl-id: f1c90ccd-48a9-4668-b2ac-eacd5bec0b91
 source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
@@ -12,30 +12,30 @@ ht-degree: 2%
 
 ---
 
-# Platform Web SDK中的Adobe Analytics for Target (A4T)記錄
+# Platform Web SDK中的Adobe Analytics for Target (A4T)记录
 
-使用Adobe Target進行個人化時，您可以選擇要使用哪個系統進行效能測量。 每個 [Target活動](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) 可讓您在Target報表和Adobe Analytics報表之間選取。
+在使用Adobe Target进行个性化时，您可以选择想要用于性能测量的系统。 每个 [Target活动](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) 允许您在Target报表和Adobe Analytics报表之间进行选择。
 
-如果您使用Analytics報表，Adobe Target必須向Analytics傳達下列內容：
+如果您使用的是Analytics报表，则Adobe Target必须向Analytics传达以下信息：
 
-* 訪客已進入哪個Adobe Target活動
-* 他們已看過的體驗
-* 已達到哪個轉換
+* 您的访客已进入哪个Adobe Target活动
+* 他们看到的体验
+* 已达到哪个转化
 
-Adobe Experience Platform Web SDK支援兩種型別的Analytics Logging for Target (A4T)使用案例：
+Adobe Experience Platform Web SDK支持两种类型的Analytics Logging for Target (A4T)用例：
 
-| 記錄方法 | 描述 |
+| 日志记录方法 | 描述 |
 | --- | --- |
-| 伺服器端Analytics記錄 | 所有透過Edge Network傳送的Analytics點選，都可在伺服器端以Target詳細資料強化，不必經過點選拼接程式。 |
-| 客户端分析日志记录 | Target資料會傳回使用者端，讓您能夠手動增加，並使用將資料傳送至Analytics [資料插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
+| 服务器端Analytics | 通过Edge Network发送的所有Analytics点击在服务器端都通过Target详细信息进行增强，而无需经过点击拼合过程。 |
+| 客户端分析日志记录 | Target数据会在客户端返回，从而允许您使用 [数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
 
-記錄方法取決於您已設定的是否啟用Adobe Analytics [資料串流](../../../datastreams/overview.md)：
+日志记录方法取决于您配置的服务器上是否启用了Adobe Analytics [数据流](../../../datastreams/overview.md)：
 
-![記錄方法決定流程](../assets/analytics-logging.png)
+![日志记录方法决策流程](../assets/analytics-logging.png)
 
 ## 后续步骤
 
-本檔案簡要介紹Web SDK中A4T資料的不同記錄方法。 如需上述各方法的詳細資訊，請參閱下列檔案：
+本文档简要介绍了Web SDK中针对A4T数据的各种记录方法。 有关上述每种方法的更多详细信息，请参阅以下文档：
 
-* [Platform Web SDK中A4T資料的伺服器端記錄](./server-side.md)
-* [Platform Web SDK中A4T資料的使用者端記錄](./client-side.md)
+* [Platform Web SDK中的A4T数据的服务器端日志记录](./server-side.md)
+* [Platform Web SDK中A4T数据的客户端日志记录](./client-side.md)

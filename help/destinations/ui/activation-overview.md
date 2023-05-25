@@ -1,8 +1,8 @@
 ---
-keywords: 啟用目的地；啟用資料
+keywords: 激活目标；激活数据
 title: 激活概述
 type: Tutorial
-description: 瞭解如何將Adobe Experience Platform中的受眾資料啟用至各種型別的目的地。
+description: 了解如何将Adobe Experience Platform中的受众数据激活到各种类型的目标。
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
 source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
@@ -15,46 +15,46 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-Adobe Experience Platform支援廣泛的目的地。 受眾啟用工作流程因目標而異，取決於其支援的受眾資料型別，以及資料匯出的頻率。
+Adobe Experience Platform支持范围广泛的目标。 受众激活工作流因目标而异，具体取决于目标支持的受众数据类型以及数据导出频率。
 
-## 啟用方法 {#activation-methods}
+## 激活方法 {#activation-methods}
 
-在您之後 [設定您的目的地](connect-destination.md)，您可用多種方式啟用受眾區段：
+在您之后 [配置目标](connect-destination.md)，您可以通过多种方式激活受众区段：
 
-### 從目的地目錄啟用對象
+### 从目标目录激活受众
 
-如需從目的地目錄啟用對象至您的目的地的詳細資訊，請參閱下列指南：
+有关从目标目录将受众激活到您的目标的详细信息，请参阅以下指南：
 
-* [啟用串流區段匯出目的地的受眾資料](activate-segment-streaming-destinations.md)
-* [將受眾資料啟用至串流設定檔匯出目的地](activate-streaming-profile-destinations.md)
-* [啟用對象資料以批次設定檔匯出目的地](activate-batch-profile-destinations.md)
+* [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+* [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
+* [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)
 
-### 從啟動對象 [!UICONTROL 瀏覽] 頁面
+### 从激活受众 [!UICONTROL 浏览] 页面
 
-請依照下列步驟，從「 」啟用您目的地的資料 **[!UICONTROL 瀏覽]** 頁面。
+请按照以下步骤将数据激活到 **[!UICONTROL 浏览]** 页面。
 
-1. 前往 **[!UICONTROL 連線>目的地]**，然後選取 **[!UICONTROL 瀏覽]** 標籤。
+1. 转到 **[!UICONTROL 连接>目标]**，并选择 **[!UICONTROL 浏览]** 选项卡。
 
-   ![瀏覽標籤](../assets/ui/activation-overview/browse-tab.png)
+   ![“浏览”选项卡](../assets/ui/activation-overview/browse-tab.png)
 
-1. 尋找您要用來啟用區段的目的地連線，選取 [!UICONTROL 名稱] 欄，然後選取 **[!UICONTROL 啟用區段]**.
+1. 查找要用于激活区段的目标连接，选择 [!UICONTROL 名称] 列，然后选择 **[!UICONTROL 激活区段]**.
 
-   ![啟用區段按鈕](../assets/ui/activation-overview/activate-segments.png)
+   ![“激活区段”按钮](../assets/ui/activation-overview/activate-segments.png)
 
-1. 根據所選目的地，請遵循以下文章中所述的步驟，從 **[!UICONTROL 選取區段]** 步驟，完成啟動工作流程：
+1. 根据所选目标，请按照以下文章中所述的步骤操作，从 **[!UICONTROL 选择区段]** 步骤，完成激活工作流：
 
-   * [啟用串流區段匯出目的地的受眾資料](activate-segment-streaming-destinations.md)
-   * [將受眾資料啟用至串流設定檔匯出目的地](activate-streaming-profile-destinations.md)
-   * [啟用對象資料以批次設定檔匯出目的地](activate-batch-profile-destinations.md)
+   * [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+   * [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
+   * [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)
 
-### 從區段詳細資訊頁面啟用對象 {#activate-segment-details}
+### 从区段详细信息页面激活受众 {#activate-segment-details}
 
-您可以從區段詳細資訊頁面啟用目的地的區段。 另請參閱 [區段詳細資料](../../segmentation/ui/overview.md#segment-details) 以取得詳細資訊。
+您可以从区段详细信息页面将区段激活到目标。 参见 [区段详细信息](../../segmentation/ui/overview.md#segment-details) 了解更多信息。
 
-根據選取的目的地，請依照下列文章中所述的步驟完成啟動工作流程：
+根据所选目标，请按照以下文章中描述的步骤完成激活工作流：
 
-* [啟用串流區段匯出目的地的受眾資料](activate-segment-streaming-destinations.md)
-* [將受眾資料啟用至串流設定檔匯出目的地](activate-streaming-profile-destinations.md)
-* [啟用對象資料以批次設定檔匯出目的地](activate-batch-profile-destinations.md)
+* [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+* [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
+* [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)

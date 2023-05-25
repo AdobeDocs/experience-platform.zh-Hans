@@ -1,6 +1,6 @@
 ---
-title: 報告套裝資料的Adobe Analytics來源聯結器
-description: 本檔案提供Analytics概觀及說明Analytics資料的使用案例。
+title: 用于报表包数据的Adobe Analytics Source Connector
+description: 本文档概述了Analytics并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
 source-git-commit: 83ce7d46e4e64fbe961c964ed5a17ec12a7ec15f
 workflow-type: tm+mt
@@ -11,84 +11,84 @@ ht-degree: 7%
 
 # 报告包数据的 Adobe Analytics Source Connector
 
-Adobe Experience Platform可讓您透過Analytics來源聯結器內嵌Adobe Analytics資料。 此 [!DNL Analytics] 來源聯結器串流資料收集者 [!DNL Analytics] 即時轉換至Platform，轉換SCDS格式 [!DNL Analytics] 資料匯入 [!DNL Experience Data Model] (XDM)欄位供平台使用。
+Adobe Experience Platform允许您通过Analytics Source Connector摄取Adobe Analytics数据。 此 [!DNL Analytics] 源连接器流式传输由收集的数据 [!DNL Analytics] 实时转换到Platform，转换SCDS格式 [!DNL Analytics] 数据进入 [!DNL Experience Data Model] (XDM)供平台使用的字段。
 
-本檔案提供下列專案的概觀： [!DNL Analytics] 和說明的使用案例 [!DNL Analytics] 資料。
+本文档提供了以下内容的概述 [!DNL Analytics] 和介绍了的用例 [!DNL Analytics] 数据。
 
-## Adobe Analytics和Analytics資料
+## Adobe Analytics和Analytics数据
 
-[!DNL Analytics] 是一款強大的引擎，可協助您進一步瞭解客戶、客戶如何與您的Web屬性互動、瞭解您的數位行銷支出在何處有效，並找出需改善的領域。 [!DNL Analytics] 每年處理數萬億次的Web交易，以及 [!DNL Analytics] 來源聯結器可讓您輕鬆利用這項豐富的行為資料，並將 [!DNL Real-Time Customer Profile] 幾分鐘內。
+[!DNL Analytics] 是一个功能强大的引擎，可帮助您了解有关客户的更多信息，了解他们如何与您的Web资产进行交互，了解您的数字营销支出在何处有效，并确定需要改进的方面。 [!DNL Analytics] 每年处理数万亿次的Web交易，并且 [!DNL Analytics] source connector允许您轻松利用这种丰富的行为数据并扩充 [!DNL Real-Time Customer Profile] 几分钟内。
 
-![說明不同Adobe應用程式(包括Adobe Analytics)之資料歷程的圖形。](./images/analytics-data-experience-platform.png)
+![一个图形，用于说明来自各种Adobe应用程序(包括Adobe Analytics)的数据的历程。](./images/analytics-data-experience-platform.png)
 
-高階， [!DNL Analytics] 從全球各地的各種數位頻道和多個資料中心收集資料。 收集到資料後，會套用訪客識別、細分和轉換架構(VISTA)規則和處理規則來塑造傳入的資料。 原始資料經過此輕量級處理後，即可由以下人員使用 [!DNL Real-Time Customer Profile]. 在上述平行處理程式中，相同的已處理資料會經過微批次處理，並擷取至Platform資料集，供下列人員使用： [!DNL Data Science Workspace]， [!DNL Query Service]和其他資料探索應用程式。
+从高层次上说， [!DNL Analytics] 从世界各地的各种数字渠道和多个数据中心收集数据。 收集数据后，会应用访客识别、分段和转换架构(VISTA)规则和处理规则来塑造传入数据。 原始数据经过此轻量级处理后，即可由以下人员使用 [!DNL Real-Time Customer Profile]. 在与上述过程平行的一个过程中，将相同的处理过的数据进行微批次处理，并将其摄取到Platform数据集中，以供以下人员使用 [!DNL Data Science Workspace]， [!DNL Query Service]和其他数据发现应用程序。
 
-請參閱 [處理規則概觀](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=zh-Hans) 以取得處理規則的詳細資訊。
+请参阅 [处理规则概述](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=zh-Hans) 以了解有关处理规则的更多信息。
 
-## 體驗資料模型(XDM)
+## 体验数据模型(XDM)
 
-XDM是公開記錄的規格，提供通用結構和定義，以供應用程式用於與Experience Platform的服務通訊。
+XDM是一个公开记录的规范，为应用程序提供了通用结构和定义，以用于Experience Platform上与服务进行通信。
 
-遵守XDM標準可讓資料以統一方式合併，讓您更輕鬆地傳送資料和收集資訊。
+遵守XDM标准允许统一合并数据，使提交数据和收集信息更容易。
 
-若要進一步瞭解XDM，請參閱 [XDM系統總覽](../../../xdm/home.md).
+要了解有关XDM的更多信息，请参阅 [XDM系统概述](../../../xdm/home.md).
 
-## 如何將欄位從Adobe Analytics對應至XDM？
+## 字段如何从Adobe Analytics映射到XDM？
 
 >[!IMPORTANT]
 >
->「資料準備」轉換可能會增加整個資料流程的延遲。 新增的額外延遲因轉換邏輯的複雜度而異。
+>数据准备转换可能会增加整个数据流的延迟。 附加的延迟根据转换逻辑的复杂性而有所不同。
 
-建立來源連線以帶來 [!DNL Analytics] 資料使用Platform使用者介面進入Experience Platform，資料欄位會自動對應並擷取到 [!DNL Real-Time Customer Profile] 幾分鐘內。 有關建立來源連線的指示 [!DNL Analytics] 使用Platform UI，請參閱 [Analytics來源聯結器教學課程](../../tutorials/ui/create/adobe-applications/analytics.md).
+建立源连接以引入 [!DNL Analytics] 数据通过Platform用户界面进入Experience Platform，数据字段自动映射并引入 [!DNL Real-Time Customer Profile] 几分钟内。 有关创建源连接的说明 [!DNL Analytics] 使用Platform UI，请参阅 [Analytics源连接器教程](../../tutorials/ui/create/adobe-applications/analytics.md).
 
-有關之間發生的欄位對應的詳細資訊 [!DNL Analytics] 和Experience Platform，請參閱 [Adobe Analytics欄位對應](./mapping/analytics.md) 指南。
+有关以下时间之间发生的字段映射的详细信息： [!DNL Analytics] 和Experience Platform，请参见 [Adobe Analytics字段映射](./mapping/analytics.md) 指南。
 
-## Platform上Analytics資料的預期延遲為何？
+## Platform上Analytics数据的预期滞后时间是多少？
 
-下表列出Platform上Analytics資料的預期延遲。 延遲會依客戶組態、資料量和消費者應用程式而有所不同。 例如，如果Analytics實作設定為 `A4T` 管道的延遲將增加到5-10分鐘。
+下表列出了Platform上Analytics数据的预期延迟。 滞后时间因客户配置、数据量和客户应用程序而异。 例如，如果将Analytics实施配置为 `A4T` 管道的延迟将增加到5-10分钟。
 
-| Analytics 数据 | 預期延遲 |
+| Analytics 数据 | 预期延迟 |
 | -------------- | ---------------- |
-| 將新資料新增至 [!DNL Real-Time Customer Profile] (A4T **not** enabled) | &lt; 2 分钟 |
-| 將新資料新增至 [!DNL Real-Time Customer Profile] (A4T **是** enabled) | 最多30分鐘 |
-| 將新資料新增至Data Lake | &lt; 90 分钟 |
-| 少於100億個事件的回填 | &lt; 4 周 |
+| 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** enabled) | &lt; 2 分钟 |
+| 新数据到 [!DNL Real-Time Customer Profile] (A4T **是** enabled) | 长达30分钟 |
+| 数据湖的新数据 | &lt; 90 分钟 |
+| 少于100亿个事件的回填 | &lt; 4 周 |
 
-生產沙箱的Analytics回填預設為13個月。 對於非生產沙箱中的Analytics資料，回填會設定為三個月。 上表提到的100億個事件上限與預期延遲有關。
+生产沙盒的Analytics回填默认为13个月。 对于非生产沙盒中的Analytics数据，回填将设置为3个月。 上表中提到的100亿个事件的限制严格地限于预期延迟。
 
-在生產沙箱中建立Analytics來源資料流時，會建立兩個資料流：
+在生产沙盒中创建Analytics源数据流时，将创建两个数据流：
 
-* 此資料流會將13個月的歷史報告套裝資料回填至Data Lake。 此資料流會在回填完成時結束。
-* 將即時資料傳送至資料湖和的資料流流程 [!DNL Real-Time Customer Profile]. 此資料流會持續執行。
+* 一个数据流，可将历史报表包数据回填13个月到数据湖。 此数据流在回填完成后结束。
+* 将实时数据发送到数据湖和的数据流 [!DNL Real-Time Customer Profile]. 此数据流持续运行。
 
 >[!NOTE]
 >
->Analytics回填資料未內嵌至 [!DNL Profile] 因此不會計入授權設定檔中。
+>Analytics回填数据未引入 [!DNL Profile] 因此，许可证配置文件中不会计入此项。
 
-## 中的主要識別碼 [!DNL Analytics] 資料
+## 中的主要标识符 [!DNL Analytics] 数据
 
-來自的每次點選 [!DNL Analytics] 來源聯結器包含取決於ECID或AAID存在與否的主要識別碼。 如果存在ECID，則會將ECID指定為主要識別碼。 如果有AAID，則會將AAID指定為主要的。
+每次点击 [!DNL Analytics] source connector包含一个主要标识符，该主要标识符取决于ECID或AAID是否存在。 如果存在ECID，则ECID被指定为主要标识符。 如果存在AAID，则将AAID指定为主要的。
 
-下表提供「 」中身分識別欄位的詳細資訊 [!DNL Analytics] 資料。
+下表提供有关中标识字段的更多信息 [!DNL Analytics] 数据。
 
-| 身分欄位 | 描述 |
+| 标识字段 | 描述 |
 | --- | --- |
-| AAID | AAID是Adobe Analytics中的主要裝置識別碼，並且保證存在於每個透過 [!DNL Analytics] 來源。 AAID有時稱為 *舊版Analytics ID* 或作為 `s_vi` Cookie ID。 儘管如此，仍會建立AAID，即使 `s_vi` Cookie不存在。 AAID由 `post_visid_high` 和 `post_visid_low` 中的欄 [[!DNL Analytics] 資料摘要](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 在任何指定事件中，AAID欄位都包含單一身分識別，該身分識別可能是 [的作業順序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **注意**：在整個報表套裝中，AAID可能包含跨事件的多種型別。 |
-| ECID | ECID (Experience CloudAdobe Analytics ID)是獨立的裝置識別碼欄位，此欄位會在 [!DNL Analytics] 是使用Experience CloudIdentity服務實作。 ECID有時也稱為MCID (Marketing CloudID)。 如果事件中存在ECID，則AAID可能會以ECID為基礎，具體取決於Analytics是否會 [寬限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) 已設定。 ECID由 `mcvisid` Analytics資料摘要中的。 如需ECID的詳細資訊，請參閱 [ECID概觀](../../../identity-service/ecid.md). 如需ECID如何搭配使用的詳細資訊 [!DNL Analytics]，請參閱本檔案： [Analytics與Experience CloudID請求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html?lang=zh-Hans). |
-| AACUSTOMID | Adobe Analytics AACUSTOMID是一個單獨的識別碼欄位，根據 `s.VisitorID` 中的變數 [!DNL Analytics] 實作。 AACUSTOMID由 `cust_visid` 中的欄 [[!DNL Analytics] 資料摘要](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 如果AACUSTOMID存在，則AAID將以AACUSTOMID為基礎，因為AACUSTOMID勝過 [的作業順序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
+| AAID | AAID是Adobe Analytics中的主要设备标识符，并且必定存在于通过 [!DNL Analytics] 源。 AAID有时称为 *旧版Analytics ID* 或作为 `s_vi` Cookie ID。 尽管如此，即使 `s_vi` Cookie不存在。 AAID由 `post_visid_high` 和 `post_visid_low` 中的列 [[!DNL Analytics] 数据馈送](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 对于任何给定事件，AAID字段都包含单个标识，它可能是 [操作顺序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **注释**：在整个报表包中，AAID可能包含跨事件的多种类型。 |
+| ECID | ECID(Experience CloudID)是一个单独的设备标识符字段，在以下情况下会在Adobe Analytics中填充该字段： [!DNL Analytics] 是使用Experience CloudIdentity服务实现的。 ECID有时也称为MCID(Marketing CloudID)。 如果事件中存在ECID，则AAID可能基于ECID，具体取决于Analytics [宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) 已配置。 ECID由 `mcvisid` Analytics数据馈送中的。 有关ECID的更多信息，请参见 [ECID概述](../../../identity-service/ecid.md). 有关ECID如何与配合使用的信息 [!DNL Analytics]，请参阅文档 [Analytics和Experience CloudID请求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html?lang=zh-Hans). |
+| AACUSTOMID | Adobe Analytics AACUSTOMID是一个单独的标识符字段，根据对 `s.VisitorID` 中的变量 [!DNL Analytics] 实现。 AACUSTOMID由 `cust_visid` 中的列 [[!DNL Analytics] 数据馈送](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 如果AACUSTOMID存在，则AAID将基于AACUSTOMID，因为AACUSTOMID比 [操作顺序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
 
-### 如何 [!DNL Analytics] 來源處理身分
+### 如何 [!DNL Analytics] 源处理身份
 
-此 [!DNL Analytics] 來源將這些身分識別以XDM形式傳遞給Experience Platform，如下所示：
+此 [!DNL Analytics] 源将这些标识以XDM形式传递给Experience Platform，如下所示：
 
 * `endUserIDs._experience.aaid.id`
 * `endUserIDs._experience.mcid.id`
 * `endUserIDs._experience.aacustomid.id`
 
-这些字段未标记为标识。而是將相同的身分識別複製到XDM的 `identityMap` 做為機碼值組：
+这些字段未标记为标识。相反，相同的身份将复制到XDM的 `identityMap` 作为键值对：
 
 * `{ "key": "AAID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
 
-在身分對應中，如果ECID存在，則會標示為事件的主要身分。 在此情況下，AAID可能以ECID為基礎，原因如下 [Identity Service寬限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，会将 AAID 标记为事件的主标识。绝不会将 AACUSTOMID 标记为事件的主 ID。不過，如果AACUSTOMID存在，則AAID會以AACUSTOMID為基礎，因為操作順序是Experience Cloud的。
+在身份映射中，如果存在ECID，则将其标记为事件的主要身份。 在这种情况下，AAID可能基于ECID，这是由于 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，会将 AAID 标记为事件的主标识。绝不会将 AACUSTOMID 标记为事件的主 ID。但是，如果存在AACUSTOMID，则由于操作顺序的Experience Cloud，AAID将基于AACUSTOMID。

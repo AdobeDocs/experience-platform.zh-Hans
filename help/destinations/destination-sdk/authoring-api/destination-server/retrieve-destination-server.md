@@ -1,6 +1,6 @@
 ---
-description: 此頁面是用來透過Adobe Experience Platform Destination SDK擷取目的地伺服器設定的API呼叫的範例。
-title: 擷取目的地伺服器設定
+description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索目标服务器配置的API调用。
+title: 检索目标服务器配置
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '464'
@@ -9,56 +9,56 @@ ht-degree: 2%
 ---
 
 
-# 擷取目的地伺服器設定
+# 检索目标服务器配置
 
-此頁面以範例說明API要求與裝載，您可使用這些API要求與裝載來擷取有關使用之現有目的地伺服器設定的資訊。 `/authoring/destination-servers` api端點。
+本页举例说明了API请求和有效负载，您可以使用这些API请求和有效负载检索有关现有目标服务器配置的信息。 `/authoring/destination-servers` API端点。
 
-如需目的地伺服器所使用功能的詳細說明，請閱讀以下文章：
+有关目标服务器使用的功能的详细说明，请阅读以下文章：
 
-* [以Destination SDK建立的目的地的伺服器規格](../../../destination-sdk/functionality/destination-server/server-specs.md)
-* [以Destination SDK建立的目的地的範本規格](../../../destination-sdk/functionality/destination-server/templating-specs.md)
+* [使用Destination SDK创建的目标的服务器规范](../../../destination-sdk/functionality/destination-server/server-specs.md)
+* [使用Destination SDK创建的目标的模板规范](../../../destination-sdk/functionality/destination-server/templating-specs.md)
 * [消息格式](../../../destination-sdk/functionality/destination-server/message-format.md)
-* [檔案格式設定](../../../destination-sdk/functionality/destination-server/file-formatting.md)
+* [文件格式配置](../../../destination-sdk/functionality/destination-server/file-formatting.md)
 
 >[!IMPORTANT]
 >
->Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
 
-## 開始使用目的地伺服器API作業 {#get-started}
+## 目标服务器API操作快速入门 {#get-started}
 
-在繼續之前，請檢閱 [快速入門手冊](../../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
-## 擷取目的地伺服器設定 {#retrieve}
+## 检索目标服务器配置 {#retrieve}
 
-您可以擷取現有的目的地伺服器組態，方法是 `GET` 向以下專案提出的請求： `/authoring/destination-servers` 端點。
+您可以通过以下方式检索现有的目标服务器配置： `GET` 请求 `/authoring/destination-servers` 端点。
 
 >[!TIP]
 >
->**API端點**： `platform.adobe.io/data/core/activation/authoring/destination-servers`
+>**API端点**： `platform.adobe.io/data/core/activation/authoring/destination-servers`
 
 **API格式**
 
-使用下列API格式來擷取您帳戶的所有目的地伺服器設定。
+使用以下API格式检索您帐户的所有目标服务器配置。
 
 ```http
 GET /authoring/destination-servers
 ```
 
-使用下列API格式來擷取特定的目的地伺服器設定，其定義為 `{INSTANCE_ID}` 引數。
+使用以下API格式检索由定义的特定目标服务器配置 `{INSTANCE_ID}` 参数。
 
 ```http
 GET /authoring/destination-servers/{INSTANCE_ID}
 ```
 
-以下兩個要求會擷取您IMS組織的所有目的地伺服器設定，或特定的目的地伺服器設定，端視您是否傳遞 `INSTANCE_ID` 請求中的引數。
+以下两个请求检索IMS组织的所有目标服务器配置或特定的目标服务器配置，具体取决于您是否传递 `INSTANCE_ID` 请求中的参数。
 
-選取下方的每個標籤，以檢視對應的裝載及其回應。
+选择下面的每个选项卡以查看相应的有效负载及其响应。
 
 >[!BEGINTABS]
 
->[!TAB 擷取所有目的地伺服器設定]
+>[!TAB 检索所有目标服务器配置]
 
-以下請求將依據以下內容，擷取您有權存取的目的地伺服器設定清單 [!DNL IMS Org ID] 和沙箱設定。
+以下请求将根据以下内容，检索您有权访问的目标服务器配置列表 [!DNL IMS Org ID] 和沙盒配置。
 
 +++请求
 
@@ -74,7 +74,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功的回應會傳回HTTP狀態200，其中包含您有權存取的目的地伺服器設定清單，根據 [!DNL IMS Org ID] 以及您使用的沙箱名稱。 一 `instanceId` 對應至一個目的地伺服器。 以下範例回應包含兩個目的地伺服器設定。
+成功的响应会根据 [!DNL IMS Org ID] 以及你使用的沙盒名称。 一个 `instanceId` 对应于一个目标服务器。 下面的示例响应包括两个目标服务器配置。
 
 ```json
 {
@@ -151,9 +151,9 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++
 
->[!TAB 擷取特定目的地伺服器設定]
+>[!TAB 检索特定的目标服务器配置]
 
-以下請求將擷取以下定義的特定目的地伺服器設定： `{INSTANCE_ID}` 引數。
+以下请求将检索 `{INSTANCE_ID}` 参数。
 
 +++请求
 
@@ -167,13 +167,13 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | 您要擷取的目的地伺服器組態ID。 |
+| `{INSTANCE_ID}` | 要检索的目标服务器配置的ID。 |
 
 +++
 
 +++响应
 
-成功的回應會傳回HTTP狀態200，且目的地伺服器的設定會與 `{INSTANCE_ID}` 您已提供。
+成功响应会返回HTTP状态200，并且目标服务器的配置与 `{INSTANCE_ID}` 你提供的。
 
 ```json
 {
@@ -219,16 +219,16 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 >[!ENDTABS]
 
-## API錯誤處理 {#error-handling}
+## API错误处理 {#error-handling}
 
-Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
 
 ## 后续步骤 {#next-steps}
 
-閱讀本檔案後，您現在知道如何透過Destination SDK擷取目的地伺服器設定 `/authoring/destination-servers` api端點。
+阅读本文档后，您现在知道如何通过Destination SDK检索目标服务器配置 `/authoring/destination-servers` API端点。
 
-若要進一步瞭解您可以使用此端點做什麼，請參閱下列文章：
+要了解有关可使用此端点执行的操作的更多信息，请参阅以下文章：
 
-* [建立目的地伺服器設定](create-destination-server.md)
-* [更新目的地伺服器設定](update-destination-server.md)
-* [刪除目的地伺服器設定](delete-destination-server.md)
+* [创建目标服务器配置](create-destination-server.md)
+* [更新目标服务器配置](update-destination-server.md)
+* [删除目标服务器配置](delete-destination-server.md)

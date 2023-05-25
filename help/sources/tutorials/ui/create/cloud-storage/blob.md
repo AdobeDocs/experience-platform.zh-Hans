@@ -1,6 +1,6 @@
 ---
-title: 在使用者介面中建立Azure Blob來源連線
-description: 瞭解如何使用Platform使用者介面建立Azure Blob來源聯結器。
+title: 在UI中创建Azure Blob源连接
+description: 了解如何使用Platform用户界面创建Azure Blob源连接器。
 exl-id: 0e54569b-7305-4065-981e-951623717648
 source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
@@ -9,83 +9,83 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Azure Blob] ui中的來源連線
+# 创建 [!DNL Azure Blob] UI中的源连接
 
-本教學課程提供建立 [!DNL Azure Blob] (以下稱&quot;[!DNL Blob]&quot;)來源連線使用Platform使用者介面。
+本教程提供了创建 [!DNL Azure Blob] (以下简称“ ”[!DNL Blob]“)源连接（使用Platform用户界面）。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：以Experience Platform組織客戶體驗資料的標準化架構。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于在Experience Platform中整理客户体验数据的标准化框架。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-如果您已有有效的 [!DNL Blob] 連線時，您可以略過本檔案的其餘部分，並繼續進行上的教學課程 [設定資料流](../../dataflow/batch/cloud-storage.md).
+如果您已经拥有有效的 [!DNL Blob] 连接，您可以跳过本文档的其余部分，并继续阅读以下教程： [配置数据流](../../dataflow/batch/cloud-storage.md).
 
 ### 支持的文件格式
 
-Experience Platform支援從外部儲存體擷取下列檔案格式：
+Experience Platform支持从外部存储摄取的以下文件格式：
 
-* 分隔符號分隔值(DSV)：您可以使用任何單一欄分隔符號（例如定位字元、逗號、垂直號、分號或雜湊）來收集任何格式的平面檔案。
-* JavaScript物件標籤法(JSON)： JSON格式資料檔案必須符合XDM規範。
-* Apache Parquet： Parquet格式資料檔案必須符合XDM標準。
+* 分隔符分隔值(DSV)：可使用任何单列分隔符（如制表符、逗号、竖线、分号或哈希）收集任何格式的平面文件。
+* JavaScript对象表示法(JSON)： JSON格式的数据文件必须与XDM兼容。
+* Apache Parquet： Parquet格式的数据文件必须与XDM兼容。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了存取您的 [!DNL Blob] 存放於Platform時，您必須提供下列認證的有效值：
+要访问您的 [!DNL Blob] 存储时，必须为以下凭据提供有效值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| 連線字串 | 包含驗證所需授權資訊的字串 [!DNL Blob] 以Experience Platform。 此 [!DNL Blob] 連線字串模式為： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. 如需有關連線字串的詳細資訊，請參閱此 [!DNL Blob] 檔案於 [設定連線字串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
-| SAS URI | 共用存取簽章URI，您可將其作為替代驗證型別來連線 [!DNL Blob] 帳戶。 此 [!DNL Blob] SAS URI模式為： `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` 如需詳細資訊，請參閱此 [!DNL Blob] 檔案於 [共用存取權簽章URI](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
-| 容器 | 您要指定存取權的容器名稱。 使用建立新帳戶時 [!DNL Blob] 來源，您可以提供容器名稱，以指定使用者對所選子資料夾的存取權。 |
-| 文件夹路径 | 您要提供存取權的資料夾路徑。 |
+| 连接字符串 | 一个字符串，其中包含进行身份验证所需的授权信息 [!DNL Blob] 以Experience Platform。 此 [!DNL Blob] 连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. 有关连接字符串的详细信息，请参阅此 [!DNL Blob] 文档 [配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
+| SAS URI | 共享访问签名URI，可用作替代身份验证类型以连接 [!DNL Blob] 帐户。 此 [!DNL Blob] SAS URI模式为： `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` 有关更多信息，请参阅此 [!DNL Blob] 文档 [共享访问签名URI](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
+| 容器 | 要为其指定访问权限的容器的名称。 使用创建新帐户时 [!DNL Blob] 源，您可以提供容器名称以指定用户对所选子文件夹的访问权限。 |
+| 文件夹路径 | 要提供访问权限的文件夹的路径。 |
 
-收集完所需的認證後，您可以依照下列步驟連結 [!DNL Blob] 至平台的帳戶。
+收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Blob] Platform帐户。
 
-## 連線您的 [!DNL Blob] 帳戶
+## 连接您的 [!DNL Blob] 帐户
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋列來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
-在 [!UICONTROL 雲端儲存空間] 類別，選取 **[!UICONTROL Azure Blob儲存體]**，然後選取 **[!UICONTROL 新增資料]**.
+在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL Azure Blob存储]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![已選取Azure Blob儲存體來源的Experience Platform來源目錄。](../../../../images/tutorials/create/blob/catalog.png)
+![已选择Azure BlobExperience Platform源的存储源目录。](../../../../images/tutorials/create/blob/catalog.png)
 
-此 **[!UICONTROL 連線到Azure Blob儲存體]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接到Azure Blob存储]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取 [!DNL Blob] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择 [!DNL Blob] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![現有](../../../../images/tutorials/create/blob/existing.png)
+![现有](../../../../images/tutorials/create/blob/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後為您的新提供名稱和說明（選用） [!DNL Blob] 帳戶。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为新页面提供名称和可选描述 [!DNL Blob] 帐户。
 
-![Azure Blob儲存體來源的新帳戶畫面。](../../../../images/tutorials/create/blob/new.png)
+![Azure Blob存储源的新帐户屏幕。](../../../../images/tutorials/create/blob/new.png)
 
-此 [!DNL Blob] 來源支援帳戶金鑰驗證和共用存取簽章(SAS)驗證。 帳戶金鑰型驗證需要連線字串來進行驗證，而SAS驗證則使用URI，允許對您的帳戶進行安全委派的授權。
+此 [!DNL Blob] 源支持帐户密钥身份验证和共享访问签名(SAS)身份验证。 基于帐户密钥的身份验证需要使用连接字符串进行验证，而SAS身份验证则使用允许对您的帐户进行安全委托授权的URI。
 
-在此步驟中，您還可以定義容器的名稱和子資料夾的路徑，以指定您的帳戶將有權存取的子資料夾。
+在此步骤中，您还可以通过定义容器名称和子文件夹的路径，指定您的帐户将有权访问的子文件夹。
 
 >[!BEGINTABS]
 
->[!TAB 連線字串]
+>[!TAB 连接字符串]
 
-若要使用帳戶金鑰進行驗證，請選取 **[!UICONTROL 帳戶金鑰驗證]** 並提供您的連線字串。 在此步驟中，您也可以指定容器名稱和要存取的子資料夾路徑。 完成後，選取 **[!UICONTROL 連線到來源]**.
+要使用帐户密钥进行身份验证，请选择 **[!UICONTROL 帐户密钥身份验证]** 并提供连接字符串。 在此步骤中，您还可以指定容器名称和要访问的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
 
-![連線字串](../../../../images/tutorials/create/blob/connectionstring.png)
+![连接字符串](../../../../images/tutorials/create/blob/connectionstring.png)
 
 >[!TAB SAS URI]
 
-您可以使用SAS建立具有不同存取許可權的驗證認證，因為以SAS為基礎的驗證可讓您設定許可權、開始和到期日，以及特定資源的布建。
+您可以使用SAS创建具有不同访问级别的身份验证凭据，因为基于SAS的身份验证允许您设置权限、开始日期和到期日期，以及针对特定资源的设置。
 
-若要使用共用存取權簽名進行驗證，請選取 **[!UICONTROL 共用存取權簽名驗證]** 然後提供您的SAS URI。 在此步驟中，您也可以指定容器名稱和要存取的子資料夾路徑。 完成後，選取 **[!UICONTROL 連線到來源]**.
+要使用共享访问签名进行身份验证，请选择 **[!UICONTROL 共享访问签名身份验证]** 然后提供您的SAS URI。 在此步骤中，您还可以指定容器名称和要访问的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
 
 ![sas-uri](../../../../images/tutorials/create/blob/sas-uri.png)
 
@@ -93,4 +93,4 @@ Experience Platform支援從外部儲存體擷取下列檔案格式：
 
 ## 后续步骤
 
-依照本教學課程，您已建立與的連線， [!DNL Blob] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流，將雲端儲存空間中的資料匯入Platform](../../dataflow/batch/cloud-storage.md).
+按照本教程，您已建立与的连接 [!DNL Blob] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md).

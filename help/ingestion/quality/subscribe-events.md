@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料擷取通知；通知；訂閱事件；資料擷取狀態事件；狀態事件；訂閱；狀態通知；
+keywords: Experience Platform；主页；热门主题；数据摄取通知；通知；订阅事件；数据摄取状态事件；状态事件；订阅；状态通知；
 solution: Experience Platform
-title: 資料擷取通知
-description: 為協助監控擷取程式，Adobe Experience Platform可讓您訂閱由程式的每個步驟發佈的一組事件，通知您擷取資料的狀態和任何可能的失敗。
+title: 数据摄取通知
+description: 为了帮助监控摄取过程，Adobe Experience Platform允许订阅由摄取过程的每个步骤发布的一组事件，向您通知摄取数据的状态和任何可能的失败。
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
 source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
@@ -11,29 +11,29 @@ ht-degree: 1%
 
 ---
 
-# 資料擷取通知
+# 数据摄取通知
 
-將資料內嵌至Adobe Experience Platform的程式由多個步驟組成。 識別需要內嵌到中的資料檔案後 [!DNL Platform]，擷取程式隨即開始，每個步驟會連續進行，直到資料成功擷取或失敗為止。 內嵌程式可透過以下方式啟動： [Adobe Experience Platform批次擷取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 或使用 [!DNL Experience Platform] 使用者介面。
+将数据摄取到Adobe Experience Platform的过程由多个步骤组成。 确定需要引入的数据文件后 [!DNL Platform]，摄取过程随即开始，每个步骤都连续进行，直到成功摄取数据或数据失败为止。 可以使用启动摄取过程 [Adobe Experience Platform批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 或使用 [!DNL Experience Platform] 用户界面。
 
-資料載入到 [!DNL Platform] 必須執行多個步驟才能到達其目的地： [!DNL Data Lake] 或 [!DNL Real-Time Customer Profile] 資料存放區。 每個步驟都涉及處理資料、驗證資料，然後儲存資料，再將其傳遞至下一個步驟。 根據所擷取的資料量，這會成為一個耗時的程式，而且該程式總是有可能因驗證、語意或處理錯誤而失敗。 如果失敗，則需要修正資料問題，然後必須使用修正的資料檔案重新啟動整個擷取程式。
+数据加载到 [!DNL Platform] 必须经过多个步骤才能到达其目标，即 [!DNL Data Lake] 或 [!DNL Real-Time Customer Profile] 数据存储。 每个步骤都涉及处理数据、验证数据，然后存储数据，然后再将其传递到下一个步骤。 根据所摄取的数据量，此过程可能会变成一个耗时的过程，并且始终有可能由于验证、语义或处理错误而失败。 如果出现故障，则需要修复数据问题，然后必须使用纠正的数据文件重新启动整个摄取过程。
 
-若要協助監控擷取程式， [!DNL Experience Platform] 可讓您訂閱流程每個步驟所發佈的一組事件，通知您所擷取資料的狀態和任何可能的失敗。
+为了帮助监测摄取过程， [!DNL Experience Platform] 使您可以订阅该过程的每个步骤发布的一组事件，向您通知摄取数据的状态和任何可能的故障。
 
-## 註冊webhook以取得資料擷取通知
+## 注册webhook以获取数据摄取通知
 
-若要接收資料擷取通知，您必須使用 [Adobe Developer主控台](https://www.adobe.com/go/devs_console_ui) 將webhook註冊到您的Experience Platform整合。
+要接收数据摄取通知，您必须使用 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 将webhook注册到Experience Platform集成。
 
-請依照上的教學課程進行 [訂閱 [!DNL Adobe I/O Event] 通知](../../observability/alerts/subscribe.md) 以取得如何完成此作業的詳細步驟。
+请阅读以下教程： [订阅 [!DNL Adobe I/O Event] 通知](../../observability/alerts/subscribe.md) 有关如何完成此操作的详细步骤。
 
 >[!IMPORTANT]
 >
->在訂閱程式期間，請確定您選取 **[!UICONTROL 平台通知]** 作為事件提供者，並選取 **[!UICONTROL 資料擷取通知]** 出現提示時，提供事件訂閱。
+>在订阅过程中，请确保选择 **[!UICONTROL 平台通知]** 作为事件提供程序，然后选择 **[!UICONTROL 数据摄取通知]** 事件订阅（出现提示时）。
 
-## 接收資料擷取通知
+## 接收数据摄取通知
 
-成功註冊webhook並擷取新資料後，您就可以開始接收事件通知。 您可以使用webhook本身或選取 **[!UICONTROL 偵錯追蹤]** 索引標籤(位於您專案的Adobe Developer Console中的事件註冊概覽中)。
+成功注册webhook并摄取新数据后，即可开始接收事件通知。 可以使用webhook本身或通过选择 **[!UICONTROL 调试跟踪]** Adobe Developer选项卡。
 
-以下JSON為通知裝載的範例，此裝載會在批次擷取事件失敗的情況下傳送至您的webhook：
+以下JSON是在批量摄取事件失败的情况下发送到webhook的通知有效负载示例：
 
 ```json
 {
@@ -62,34 +62,34 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 | --- | --- |
-| `event_id` | 系統產生的通知唯一ID。 |
-| `event` | 包含觸發通知之事件詳細資料的物件。 |
-| `event.xdm:datasetId` | 要套用內嵌事件的資料集ID。 |
-| `event.xdm:eventCode` | 狀態代碼，指出針對資料集觸發的事件型別。 請參閱 [附錄](#event-codes) 以取得特定值及其定義。 |
+| `event_id` | 系统为通知生成的唯一ID。 |
+| `event` | 包含触发通知的事件详细信息的对象。 |
+| `event.xdm:datasetId` | 提取事件应用于的数据集的ID。 |
+| `event.xdm:eventCode` | 状态代码，指示为数据集触发的事件类型。 请参阅 [附录](#event-codes) 的特定值及其定义。 |
 
-若要檢視事件通知的完整結構描述，請參閱 [公用GitHub存放庫](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json).
+要查看事件通知的完整模式，请参阅 [公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json).
 
 ## 后续步骤
 
-註冊之後 [!DNL Platform] 通知您的專案，您可以檢視收到的以下事件： [!UICONTROL 專案概述]. 請參閱以下指南： [追蹤Adobe I/O事件](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) 以取得有關如何追蹤事件的詳細指示。
+注册后 [!DNL Platform] 通知您的项目，您可以从 [!UICONTROL 项目概述]. 请参阅指南，网址为 [跟踪Adobe I/O事件](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) 以获取有关如何跟踪事件的详细说明。
 
 ## 附录
 
-下節包含有關解譯資料擷取通知裝載的額外資訊。
+以下部分包含有关解释数据摄取通知有效负载的其他信息。
 
-### 可用的狀態通知事件 {#event-codes}
+### 可用状态通知事件 {#event-codes}
 
-下表列出您可以訂閱的可用資料擷取狀態通知。
+下表列出了您可以订阅的可用数据摄取状态通知。
 
-| 事件代碼 | 平台服務 | 状态 | 事件描述 |
+| 事件代码 | 平台服务 | 状态 | 事件描述 |
 | --- | ---------------- | ------ | ----------------- |
-| `ing_load_success` | [!DNL Data Ingestion] | success | 批次已成功內嵌至的資料集 [!DNL Data Lake]. |
-| `ing_load_failure` | [!DNL Data Ingestion] | 失敗 | 批次無法內嵌到資料集中 [!DNL Data Lake]. |
-| `ps_load_success` | [!DNL Real-Time Customer Profile] | success | 批次已成功內嵌至 [!DNL Profile] 資料存放區。 |
-| `ps_load_failure` | [!DNL Real-Time Customer Profile] | 失敗 | 無法將批次擷取到 [!DNL Profile] 資料存放區。 |
-| `ig_load_success` | [!DNL Identity Service] | success | 資料已成功載入身分圖表。 |
-| `ig_load_failure` | [!DNL Identity Service] | 失敗 | 資料無法載入身分圖表。 |
+| `ing_load_success` | [!DNL Data Ingestion] | success | 已成功将批次摄取到 [!DNL Data Lake]. |
+| `ing_load_failure` | [!DNL Data Ingestion] | 失败 | 批次无法摄取到的数据集内 [!DNL Data Lake]. |
+| `ps_load_success` | [!DNL Real-Time Customer Profile] | success | 批次已成功引入 [!DNL Profile] 数据存储。 |
+| `ps_load_failure` | [!DNL Real-Time Customer Profile] | 失败 | 无法将批次摄取到 [!DNL Profile] 数据存储。 |
+| `ig_load_success` | [!DNL Identity Service] | success | 数据已成功加载到身份图中。 |
+| `ig_load_failure` | [!DNL Identity Service] | 失败 | 未能将数据加载到身份图中。 |
 
 >[!NOTE]
 >
->所有資料擷取通知僅提供一個事件主題。 為了區分不同的狀態，可以使用事件程式碼。
+>对于所有数据摄取通知，仅提供一个事件主题。 为了区分不同的状态，可以使用事件代码。

@@ -1,6 +1,6 @@
 ---
-description: 瞭解如何為使用Destination SDK建立的目的地設定支援的目標身分。
-title: 身分名稱空間設定
+description: 了解如何为使用Destination SDK构建的目标配置受支持的目标身份。
+title: 身份命名空间配置
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '842'
@@ -9,55 +9,55 @@ ht-degree: 4%
 ---
 
 
-# 身分名稱空間設定
+# 身份命名空间配置
 
-Experience Platform使用身分名稱空間來說明特定身分的型別。 例如，身分名稱空間稱為 `Email` 會識別類似以下的值 `name@email.com` 作為電子郵件地址。
+Experience Platform使用身份命名空间来描述特定身份的类型。 例如，一个名为的身份命名空间 `Email` 标识如下值 `name@email.com` 作为电子邮件地址。
 
-透過Destination SDK建立目的地時，除了 [設定合作夥伴結構描述](schema-configuration.md) 讓使用者可將設定檔屬性和身分對應至，您也可以定義目的地平台支援的身分名稱空間。
+通过Destination SDK创建目标时，除了 [配置合作伙伴架构](schema-configuration.md) 用户可以将配置文件属性和身份映射到，您还可以定义目标平台支持的身份命名空间。
 
-執行此操作時，除了目標設定檔屬性外，使用者還可以選擇目標身分。
+执行此操作时，除了目标配置文件属性外，用户还可以选择目标身份。
 
-若要進一步瞭解Experience Platform中的身分識別名稱空間，請參閱 [身分名稱空間檔案](../../../../identity-service/namespaces.md).
+要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/namespaces.md).
 
-設定目的地的身分識別名稱空間時，您可以微調目的地支援的目標身分對應，例如：
+在为目标配置身份命名空间时，可以优化目标支持的目标身份映射，例如：
 
-* 允許使用者將XDM屬性對應至身分名稱空間。
-* 允許使用者對應 [標準身分名稱空間](../../../../identity-service/namespaces.md#standard) 至您自己的身分識別名稱空間。
-* 允許使用者對應 [自訂身分名稱空間](../../../../identity-service/namespaces.md#manage-namespaces) 至您自己的身分識別名稱空間。
+* 允许用户将XDM属性映射到身份命名空间。
+* 允许用户映射 [标准身份命名空间](../../../../identity-service/namespaces.md#standard) 到您自己的身份命名空间。
+* 允许用户映射 [自定义身份命名空间](../../../../identity-service/namespaces.md#manage-namespaces) 到您自己的身份命名空间。
 
-若要瞭解此元件在何處適合使用Destination SDK建立的整合，請參閱 [設定選項](../configuration-options.md) 檔案或參閱操作說明指南 [使用Destination SDK設定以檔案為基礎的目的地](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
-您可以透過以下方式設定支援的身分識別名稱空間： `/authoring/destinations` 端點。 請參閱下列API參考頁面，以取得詳細的API呼叫範例，您可在此範例設定本頁面所示的元件。
+您可以通过以下方式配置支持的身份命名空间： `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
-* [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)
-* [更新目的地設定](../../authoring-api/destination-configuration/update-destination-configuration.md)
+* [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
+* [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文會說明您可用於目的地的所有支援身分識別名稱空間設定選項，並顯示客戶會在Platform UI中看到的內容。
+本文介绍了可用于目标的所有受支持的身份命名空间配置选项，并展示了客户将在Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
->Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
 
-## 支援的整合型別 {#supported-integration-types}
+## 支持的集成类型 {#supported-integration-types}
 
-請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
+有关哪些类型的集成支持此页面上描述的功能，请参阅下表。
 
-| 整合型別 | 支援功能 |
+| 集成类型 | 支持功能 |
 |---|---|
-| 即時（串流）整合 | 是 |
-| 檔案式（批次）整合 | 是 |
+| 实时（流）集成 | 是 |
+| 基于文件（批处理）的集成 | 是 |
 
-## 支援的引數 {#supported-parameters}
+## 支持的参数 {#supported-parameters}
 
-定義目的地支援的目標身分時，您可以使用下表所述的引數來設定其行為。
+在定义目标支持的目标身份时，您可以使用下表中描述的参数配置其行为。
 
 | 参数 | 类型 | 必填/可选 | 描述 |
 |---------|----------|---|------|
-| `acceptsAttributes` | 布尔值 | 可选 | 指出客戶是否可將標準設定檔屬性對應至您正在設定的身分。 |
-| `acceptsCustomNamespaces` | 布尔值 | 可选 | 指出客戶是否可將自訂身分名稱空間對應至您正在設定的身分名稱空間。 |
-| `acceptedGlobalNamespaces` | - | 可选 | 指示哪一個 [標準身分名稱空間](../../../../identity-service/namespaces.md#standard) (例如， [!UICONTROL IDFA])客戶可對應至您正在設定的身分識別。 |
-| `transformation` | 字符串 | 可选 | 顯示 [[!UICONTROL 套用轉換]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 如果來源欄位是XDM屬性或自訂身分名稱空間，請核取平台UI中的方塊。 使用此選項可讓使用者在匯出時雜湊來源屬性。 若要啟用此選項，請將值設為 `sha256(lower($))`. |
-| `requiredTransformation` | 字符串 | 可选 | 當客戶選取此來源身分名稱空間時， [[!UICONTROL 套用轉換]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 核取方塊會自動套用至對應，而客戶無法將其停用。 若要啟用此選項，請將值設為 `sha256(lower($))`. |
+| `acceptsAttributes` | 布尔值 | 可选 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
+| `acceptsCustomNamespaces` | 布尔值 | 可选 | 指示客户是否可以将自定义身份命名空间映射到您配置的身份命名空间。 |
+| `acceptedGlobalNamespaces` | - | 可选 | 指示哪些 [标准身份命名空间](../../../../identity-service/namespaces.md#standard) (例如， [!UICONTROL IDFA])客户可以映射到您正在配置的身份。 |
+| `transformation` | 字符串 | 可选 | 显示 [[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 如果源字段是XDM属性或自定义身份命名空间，请选中Platform UI中的复选框。 使用此选项可让用户在导出时散列源属性。 要启用此选项，请将值设置为 `sha256(lower($))`. |
+| `requiredTransformation` | 字符串 | 可选 | 当客户选择此源身份命名空间时， [[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 复选框会自动应用于映射，而客户无法禁用它。 要启用此选项，请将值设置为 `sha256(lower($))`. |
 
 {style="table-layout:auto"}
 
@@ -79,22 +79,22 @@ Experience Platform使用身分名稱空間來說明特定身分的型別。 例
    }
 ```
 
-您必須指出哪一個 [!DNL Platform] 身分客戶可以匯出至您的目的地。 部分範例包括 [!DNL Experience Cloud ID]，雜湊電子郵件，裝置ID ([!DNL IDFA]， [!DNL GAID])。 這些值為 [!DNL Platform] 客戶可對應至目的地中身分名稱空間的身分識別名稱空間。
+您必须指示哪个 [!DNL Platform] 身份客户能够导出到您的目标。 一些示例包括 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID ([!DNL IDFA]， [!DNL GAID])。 这些值为 [!DNL Platform] 客户可以映射到目标中的身份命名空间的身份命名空间。
 
-身分名稱空間不需要1對1的對應 [!DNL Platform] 以及您的目的地。
-例如，客戶可將 [!DNL Platform] [!DNL IDFA] 名稱空間變更為 [!DNL IDFA] 名稱空間，或可對應相同的名稱空間 [!DNL Platform] [!DNL IDFA] 名稱空間重新命名為 [!DNL Customer ID] 目的地中的名稱空間。
+身份命名空间不需要1到1之间的对应 [!DNL Platform] 以及你的目的地。
+例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL IDFA] 命名空间进行映射，或者他们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL Customer ID] 命名空间中包含的区段。
 
-深入瞭解中的身分識別 [身分名稱空間總覽](../../../../identity-service/namespaces.md).
+有关标识的更多信息，请参阅 [身份命名空间概述](../../../../identity-service/namespaces.md).
 
-## 對應考量事項
+## 映射注意事项
 
-如果客戶選取來源身分名稱空間但未選取目標對應，Platform會自動以相同名稱的屬性填入目標對應。
+如果客户选择了源身份命名空间但未选择目标映射，则Platform会自动使用具有相同名称的属性填充目标映射。
 
-## 設定選擇性來源欄位雜湊
+## 配置可选源字段散列
 
-Experience Platform客戶可以選擇以雜湊格式或純文字將資料擷取到Platform。 如果您的目的地平台接受雜湊和未雜湊的資料，您可以讓客戶選擇當來源欄位值匯出至您的目的地時，是否應該讓平台雜湊來源欄位值。
+Experience Platform客户可以选择以哈希格式或纯文本格式将数据摄取到Platform中。 如果您的目标平台接受经过哈希处理的和未经过哈希处理的数据，则可以让客户选择在将源字段值导出到目标时，平台是否应该对这些值进行哈希处理。
 
-下列設定可啟用選擇性 [套用轉換](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) Platform UI中的選項，位於「對應」步驟中。
+以下配置启用可选 [应用转换](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 选项，位于Platform UI中的“映射”步骤中。
 
 ```json {line-numbers="true" highlight="5"}
 "identityNamespaces":{
@@ -114,11 +114,11 @@ Experience Platform客戶可以選擇以雜湊格式或純文字將資料擷取�
 
 使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。
 
-將未雜湊的來源屬性對應至目的地預期會雜湊的目標屬性時(例如： `email_lc_sha256` 或 `phone_sha256`)，檢查 **套用轉換** 讓Adobe Experience Platform在啟動時自動雜湊來源屬性的選項。
+将未经过哈希处理的源属性映射到目标预期进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 选项使Adobe Experience Platform在激活时自动对源属性进行哈希处理。
 
-## 設定必要來源欄位雜湊
+## 配置强制源字段哈希处理
 
-如果您的目的地只接受雜湊資料，您可以設定匯出的屬性，讓Platform自動進行雜湊。 以下設定會自動檢查 **套用轉換** 選項，當 `Email` 和 `Phone` 身分已對應。
+如果您的目标仅接受哈希数据，则可以配置导出的属性，以使其由Platform自动进行哈希处理。 以下配置会自动检查 **应用转换** 选项，当 `Email` 和 `Phone` 标识已映射。
 
 ```json {line-numbers="true" highlight="8,11"}
 "identityNamespaces":{
@@ -140,19 +140,19 @@ Experience Platform客戶可以選擇以雜湊格式或純文字將資料擷取�
 
 ## 后续步骤 {#next-steps}
 
-閱讀本文章後，您應該更瞭解如何為使用Destination SDK建立的目的地設定身分識別名稱空間。
+阅读本文后，您应该更好地了解如何为使用Destination SDK构建的目标配置身份命名空间。
 
-若要深入瞭解其他目的地元件，請參閱下列文章：
+要了解有关其他目标组件的更多信息，请参阅以下文章：
 
-* [客戶驗證](customer-authentication.md)
-* [OAuth2驗證](oauth2-authentication.md)
-* [客戶資料欄位](customer-data-fields.md)
-* [UI屬性](ui-attributes.md)
-* [結構描述設定](schema-configuration.md)
-* [身分名稱空間設定](identity-namespace-configuration.md)
-* [支援的對應設定](supported-mapping-configurations.md)
-* [目的地傳遞](destination-delivery.md)
-* [對象中繼資料設定](audience-metadata-configuration.md)
-* [彙總原則](aggregation-policy.md)
-* [批次設定](batch-configuration.md)
-* [歷史設定檔資格](historical-profile-qualifications.md)
+* [客户身份验证](customer-authentication.md)
+* [OAuth2身份验证](oauth2-authentication.md)
+* [客户数据字段](customer-data-fields.md)
+* [UI属性](ui-attributes.md)
+* [架构配置](schema-configuration.md)
+* [身份命名空间配置](identity-namespace-configuration.md)
+* [支持的映射配置](supported-mapping-configurations.md)
+* [目标投放](destination-delivery.md)
+* [受众元数据配置](audience-metadata-configuration.md)
+* [聚合策略](aggregation-policy.md)
+* [批次配置](batch-configuration.md)
+* [历史配置文件资格](historical-profile-qualifications.md)

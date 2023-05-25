@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；串流連線；建立串流連線；ui指南；教學課程；建立串流連線；串流擷取；擷取；
+keywords: Experience Platform；主页；热门主题；流连接；创建流连接；ui指南；教程；创建流连接；流摄取；摄取；
 solution: Experience Platform
-title: 使用UI建立HTTP API串流連線
+title: 使用UI创建HTTP API流连接
 type: Tutorial
-description: 本UI指南將協助您使用Adobe Experience Platform建立串流連線。
+description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -13,136 +13,136 @@ ht-degree: 0%
 ---
 
 
-# 建立 [!DNL HTTP API] 使用UI的串流連線
+# 创建 [!DNL HTTP API] 使用UI的流连接
 
-本教學課程提供使用建立串流來源連線的步驟 [!UICONTROL 來源] 工作區。
+本教程提供了使用创建流源连接的步骤。 [!UICONTROL 源] 工作区。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-- [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   - [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   - [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+- [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   - [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   - [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-## 建立串流連線
+## 创建流连接
 
-在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 **[!UICONTROL 串流]** 類別，選取 **[!UICONTROL HTTP API]** 然後選取 **[!UICONTROL 新增資料]**.
+在 **[!UICONTROL 流]** 类别，选择 **[!UICONTROL HTTP API]** 然后选择 **[!UICONTROL 添加数据]**.
 
-![目錄](../../../../images/tutorials/create/http/catalog.png)
+![目录](../../../../images/tutorials/create/http/catalog.png)
 
-此 **[!UICONTROL 連線HTTP API帳戶]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接HTTP API帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取您要用來建立新資料流的HTTP API帳戶，然後選取「 」 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择要通过创建新数据流的HTTP API帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![existing-account](../../../../images/tutorials/create/http/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**. 在出現的輸入表單上，提供帳戶名稱和選擇性說明。 您也可以選擇提供下列設定屬性：
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在显示的输入表单上，提供帐户名称和可选描述。 您还可以选择提供以下配置属性：
 
-- **[!UICONTROL 驗證]：** 此屬性決定串流連線是否需要驗證。 驗證可確保從信任的來源收集資料。 如果您處理的是個人識別資訊(PII)，則應開啟此屬性。 此屬性預設為關閉。
-- **[!UICONTROL XDM相容]：** 此屬性代表此串流連線是否將傳送與XDM結構描述相容的事件。 此屬性預設為關閉。
+- **[!UICONTROL 身份验证]：** 此属性确定流连接是否需要身份验证。 身份验证确保从可信来源收集数据。 如果您处理的是个人身份信息(PII)，则应该启用此属性。 默认情况下，此属性处于关闭状态。
+- **[!UICONTROL 与XDM兼容]：** 此属性表示此流连接是否将发送与XDM架构兼容的事件。 默认情况下，此属性处于关闭状态。
 
-完成後，選取 **[!UICONTROL 連線到來源]** 然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+完成后，选择 **[!UICONTROL 连接到源]** 然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![new-account](../../../../images/tutorials/create/http/new.png)
 
 ## 选择数据
 
-建立HTTP API連線後， **[!UICONTROL 選取資料]** 步驟隨即顯示，為您提供上傳和預覽資料的介面。
+创建HTTP API连接后， **[!UICONTROL 选择数据]** 步骤，为您提供上传和预览数据的界面。
 
-選取 **[!UICONTROL 上傳檔案]** 以上傳您的資料。 或者，您也可以將資料拖放至 [!UICONTROL 拖放檔案] 區段。
+选择 **[!UICONTROL 上传文件]** 以上传您的数据。 或者，您也可以将数据拖放到 [!UICONTROL 拖放文件] 部分。
 
 ![add-data](../../../../images/tutorials/create/http/add-data.png)
 
-上傳資料後，您可以使用介面的右側來預覽檔案階層。 選取 **[!UICONTROL 下一個]** 以繼續進行。
+上传数据后，您可以使用界面的右侧预览文件层次结构。 选择 **[!UICONTROL 下一个]** 以继续。
 
 ![preview-sample-data](../../../../images/tutorials/create/http/preview-sample-data.png)
 
-## 將資料欄位對應至XDM結構描述
+## 将数据字段映射到XDM架构
 
-此 [!UICONTROL 對應] 步驟隨即顯示，提供將來源資料對應至Platform資料集的介面。
+此 [!UICONTROL 映射] 此时将显示步骤，其中提供了一个将源数据映射到Platform数据集的界面。
 
-Parquet檔案必須與XDM相容，並且不需要您手動設定對應，而CSV檔案則需要您明確設定對應，但允許您選取要對應的來源資料欄位。 若標示為XDM投訴，則JSON檔案不需要手動設定。 但是，如果它未標籤為XDM相容，則需要您明確設定對應。
+Parquet文件必须与XDM兼容，并且不需要手动配置映射，而CSV文件需要您明确配置映射，但允许您选择要映射的源数据字段。 如果标记为XDM投诉，则JSON文件不需要手动配置。 但是，如果它未标记为XDM兼容，则需要您明确配置映射。
 
-選擇要將傳入資料擷取的資料集。 您可以使用現有的資料集或建立新的資料集。
+选择要引入的集客数据的数据集。 您可以使用现有数据集或创建新数据集。
 
-### 建立新的資料集
+### 创建新数据集
 
-若要建立新資料集，請選取 **[!UICONTROL 新資料集]**. 在出現的表單上，提供資料集的名稱、選擇性說明以及目標結構描述。 如果您選取 [!DNL Profile]-enabled結構描述，您可以選擇資料集是否也應該是 [!DNL Profile]-enabled.
+要创建新数据集，请选择 **[!UICONTROL 新建数据集]**. 在显示的表单上，提供名称、可选描述以及数据集的目标架构。 如果您选择 [!DNL Profile]-enabled架构，您可以选择数据集是否还应 [!DNL Profile]-enabled.
 
-![新資料集](../../../../images/tutorials/create/http/new-dataset.png)
+![new-dataset](../../../../images/tutorials/create/http/new-dataset.png)
 
-### 使用現有的資料集
+### 使用现有数据集
 
-若要使用現有的資料集，請選取 **[!UICONTROL 現有資料集]**. 在出現的表單上，選取您要使用的資料集。 選取資料集後，您可以選擇資料集是否應 [!DNL Profile]-enabled.
+要使用现有数据集，请选择 **[!UICONTROL 现有数据集]**. 在显示的表单上，选择要使用的数据集。 选择数据集后，您可以选择数据集是否应为 [!DNL Profile]-enabled.
 
-![existing-data](../../../../images/tutorials/create/http/existing-dataset.png)
+![existing-dataset](../../../../images/tutorials/create/http/existing-dataset.png)
 
-### 對應標準欄位
+### 映射标准字段
 
 
-您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
+根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
-若要新增來源欄位，請選取 **[!UICONTROL 新增對應]**.
+要添加新源字段，请选择 **[!UICONTROL 添加新映射]**.
 
 ![add-new-mapping](../../../../images/tutorials/create/http/add-new-mapping.png)
 
-會出現新的來源欄位和目標欄位配對。 若要新增來源欄位，請選取 [!UICONTROL 選取來源欄位] 輸入列。
+此时将显示一个新的源字段与目标字段配对。 要添加新源字段，请选择 [!UICONTROL 选择源字段] 输入栏。
 
 ![select-source-field](../../../../images/tutorials/create/http/select-source-field.png)
 
-此 [!UICONTROL 選取屬性] 面板可讓您探索檔案階層並選取特定的來源欄位，以對應至目標XDM欄位。 選取要對應的來源欄位後，請選取 **[!UICONTROL 選取]** 以繼續進行。
+此 [!UICONTROL 选择属性] 面板允许您浏览文件层次结构并选择要映射到目标XDM字段的特定源字段。 选择要映射的源字段后，选择 **[!UICONTROL 选择]** 以继续。
 
-![select-attributes](../../../../images/tutorials/create/http/select-attributes.png)
+![select-attribute](../../../../images/tutorials/create/http/select-attributes.png)
 
-選取來源欄位後，您現在可以識別要對應的適當目標XDM欄位。 選取目標欄位區段下的結構描述圖示。
+选择源字段后，您现在可以标识要映射到的适当目标XDM字段。 选择目标字段部分下的架构图标。
 
 ![select-target-field](../../../../images/tutorials/create/http/select-target-field.png)
 
-此 [!UICONTROL 將來源欄位對應到目標欄位] 視窗隨即顯示，為您提供可探索目標資料集架構的介面。 選取與來源欄位相符的目標欄位，然後選取 **[!UICONTROL 選取]** 以繼續進行。
+此 [!UICONTROL 将源字段映射到目标字段] 窗口，为您提供用于浏览目标数据集架构的界面。 选择与源字段匹配的目标字段，然后选择 **[!UICONTROL 选择]** 以继续。
 
-![對應至目標欄位](../../../../images/tutorials/create/http/map-to-target-field.png)
+![映射到目标字段](../../../../images/tutorials/create/http/map-to-target-field.png)
 
-將來源欄位全部對應到適當的目標XDM欄位後，請選取 **[!UICONTROL 下一個]**
+将源字段全部映射到相应的目标XDM字段后，选择 **[!UICONTROL 下一个]**
 
 ![data-prep-complete](../../../../images/tutorials/create/http/data-prep-complete.png)
 
 ## 数据流详细信息
 
-此 **[!UICONTROL 資料流詳細資料]** 步驟隨即顯示。 您可以在此頁面提供名稱和說明（選擇性），以提供已建立資料流的詳細資訊。
+此 **[!UICONTROL 数据流详细信息]** 步骤。 在此页面上，您可以通过提供名称和可选描述来提供已创建数据流的详细信息。
 
-為資料流提供詳細資訊後，選取 **[!UICONTROL 下一個]**.
+为数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
 
-![資料流 — 詳細資料](../../../../images/tutorials/create/http/dataflow-detail.png)
+![数据流 — 详细信息](../../../../images/tutorials/create/http/dataflow-detail.png)
 
 ## 请查看
 
-此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立資料流之前先檢閱其詳細資訊。 詳細資料分為下列類別：
+此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在创建数据流之前查看其详细信息。 详细信息分为以下类别：
 
-- **[!UICONTROL 連線]**：顯示帳戶名稱、來源平台和來源名稱。
-- **[!UICONTROL 指派資料集和對應欄位]**：顯示目標資料集和資料集所遵守的結構描述。
+- **[!UICONTROL 连接]**：显示帐户名称、源平台和源名称。
+- **[!UICONTROL 分配数据集和映射字段]**：显示目标数据集以及该数据集所遵循的架构。
 
-確認詳細資料正確後，選取「 」 **[!UICONTROL 完成]**.
+确认详细信息正确后，选择 **[!UICONTROL 完成]**.
 
-![檢閱](../../../../images/tutorials/create/http/review.png)
+![审核](../../../../images/tutorials/create/http/review.png)
 
-## 取得串流端點URL
+## 获取流端点URL
 
-建立連線後，就會顯示來源詳細資訊頁面。 此頁面顯示您新建立之連線的詳細資料，包括先前執行的資料流、ID和串流端點URL。
+创建连接后，将显示源详细信息页面。 此页面显示新创建连接的详细信息，包括以前运行的数据流、ID和流端点URL。
 
-![端點](../../../../images/tutorials/create/http/endpoint.png)
+![端点](../../../../images/tutorials/create/http/endpoint.png)
 
 ## 后续步骤
 
-依照本教學課程所述，您已建立串流HTTP連線，讓您能夠使用串流端點來存取各種 [!DNL Data Ingestion] API。 如需在API中建立串流連線的指示，請參閱 [建立串流連線教學課程](../../../api/create/streaming/http.md).
+通过遵循本教程，您已创建一个流HTTP连接，从而能够使用流端点访问各种内容 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读 [创建流连接教程](../../../api/create/streaming/http.md).
 
-若要瞭解如何將資料串流到Platform，請閱讀以下任一教學課程： [串流時間序列資料](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或上的教學課程 [串流記錄資料](../../../../../ingestion/tutorials/streaming-record-data.md).
+要了解如何将数据流式传输到Platform，请阅读以下任一教程： [流式时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或上的教程 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md).

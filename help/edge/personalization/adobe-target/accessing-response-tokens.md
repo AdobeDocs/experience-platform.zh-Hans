@@ -1,7 +1,7 @@
 ---
-title: 使用Adobe Experience Platform Web SDK存取回應Token
-description: 瞭解如何使用Adobe Experience Platform Web SDK存取回應Token。
-keywords: 個人化；target；adobe target；renderDecisions；sendEvent；decisionScopes；result.decisions，回應Token；
+title: 使用Adobe Experience Platform Web SDK访问响应令牌
+description: 了解如何使用Adobe Experience Platform Web SDK访问响应令牌。
+keywords: 个性化；target；adobe target；renderDecisions；sendEvent；decisionScopes；result.decisions，响应令牌；
 exl-id: fc9d552a-29ba-4693-9ee2-599c7bc76cdf
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# 存取回應Token
+# 访问响应令牌
 
-Adobe Target傳回的個人化內容包括 [回應Token](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，此為有關活動、選件、體驗、使用者設定檔、地理資訊等專案的詳細資訊。 這些詳細資料可與協力廠商工具共用，或用於偵錯。 可在Adobe Target使用者介面中設定回應Token。
+从Adobe Target返回的个性化内容包括 [响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，其中包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 可在Adobe Target用户界面中配置响应令牌。
 
-若要存取任何個人化內容，請在傳送事件時提供回呼函式。 SDK收到來自伺服器的成功回應後，就會呼叫此回呼。 您的回撥將會獲得 `result` 物件，其中可能包含 `propositions` 包含任何傳回的個人化內容的屬性。 以下是提供回呼函式的範例。
+要访问任何个性化内容，请在发送事件时提供回调函数。 SDK收到来自服务器的成功响应后，将调用此回调。 将为您的回调提供 `result` 对象，其中可能包含 `propositions` 包含任何返回的个性化内容的属性。 以下是提供回调函数的示例。
 
 ```javascript
 alloy("sendEvent", {
@@ -27,19 +27,19 @@ alloy("sendEvent", {
   });
 ```
 
-在此範例中， `result.propositions`，如果存在的話，是包含與事件相關之個人化主張的陣列。 請參閱 [呈現個人化內容](../rendering-personalization-content.md) 以取得有關以下專案的內容的詳細資訊： `result.propositions`.
+在此示例中， `result.propositions`如果存在，则是一个数组，其中包含与事件相关的个性化建议。 请参阅 [呈现个性化内容](../rendering-personalization-content.md) ，以了解有关 `result.propositions`.
 
-假設您要從Web SDK自動轉譯的所有主張中收集所有活動名稱，並將其推送到單一陣列中。 然後，您可以將單一陣列傳送給協力廠商。 在此案例中：
+假设您要从Web SDK自动渲染的所有建议中收集所有活动名称，并将它们推入单个数组中。 然后，您可以将单个阵列发送给第三方。 在本例中：
 
-1. 從擷取主張 `result` 物件。
-1. 循環瀏覽每個主張。
-1. 判斷SDK是否呈現主張。
-1. 如果是，則重複檢查主張中的每個專案。
-1. 從擷取活動名稱 `meta` 屬性，包含回應Token的物件。
-1. 將活動名稱推入陣列。
-1. 將活動名稱傳送給第三方。
+1. 从提取建议 `result` 对象。
+1. 循环访问每个建议。
+1. 确定SDK是否呈现了建议。
+1. 如果是这样，则循环访问建议中的每个项目。
+1. 从检索活动名称 `meta` 属性，它是一个包含响应令牌的对象。
+1. 将活动名称推入数组中。
+1. 将活动名称发送给第三方。
 
-您的程式碼如下所示：
+您的代码如下所示：
 
 ```javascript
 alloy("sendEvent", {

@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；一般REST；一般rest
+keywords: Experience Platform；主页；热门主题；通用REST；通用Rest
 solution: Experience Platform
-title: 使用流程服務API建立一般REST API基本連線
+title: 使用流服务API创建通用REST API基本连接
 type: Tutorial
-description: 瞭解如何使用流量服務API將Generic REST API連線到Adobe Experience Platform。
+description: 了解如何使用流服务API将Generic REST API连接到Adobe Experience Platform。
 exl-id: 6b414868-503e-49d5-8f4a-5b2fc003dab0
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
@@ -12,62 +12,62 @@ ht-degree: 1%
 
 ---
 
-# 使用建立一般REST API基本連線 [!DNL Flow Service] API
+# 使用创建通用REST API基本连接 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->此 [!DNL Generic REST API] 來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
+>此 [!DNL Generic REST API] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Generic REST API] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Generic REST API] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL Generic REST API]，您必須提供所選驗證型別的有效認證。 [!DNL Generic REST API] 支援OAuth 2重新整理程式碼和基本驗證。 請參閱下清單格，瞭解兩種支援的驗證型別之證明資料的資訊。
+为了 [!DNL Flow Service] 以连接 [!DNL Generic REST API]，您必须为所选身份验证类型提供有效凭据。 [!DNL Generic REST API] 支持OAuth 2刷新代码和基本身份验证。 有关两种受支持的身份验证类型的凭据的信息，请参阅下表。
 
-#### OAuth 2重新整理程式碼
+#### OAuth 2刷新代码
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | --- | --- |
-| `host` | 您向其提出請求的來源的主機URL。 此值為必填，不能使用略過 `requestParameterOverride`. |
-| `authorizationTestUrl` | （選用）建立基本連線時，會使用授權測試URL來驗證認證。 如果未提供，則會在來源連線建立步驟期間自動檢查認證。 |
-| `clientId` | （選用）與您的使用者帳戶相關聯的使用者端ID。 |
-| `clientSecret` | （選用）與您的使用者帳戶相關聯的使用者端密碼。 |
-| `accessToken` | 用來存取您的應用程式的主要驗證認證。 存取權杖代表應用程式的授權，可存取使用者資料的特定方面。 此值為必填，不能使用略過 `requestParameterOverride`. |
-| `refreshToken` | （選用）當存取權杖過期時，用來產生新存取權杖的權杖。 |
-| `expirationDate` | （選用）定義存取Token到期日的隱藏值。 |
-| `accessTokenUrl` | （選用）用來擷取存取權杖的URL端點。 |
-| `requestParameterOverride` | （選用）屬性，可讓您指定要覆寫哪些認證引數。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Generic REST API] 為： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
+| `host` | 您向其发出请求的源的主机URL。 此值为必需，不能使用绕过 `requestParameterOverride`. |
+| `authorizationTestUrl` | （可选）授权测试URL用于在创建基本连接时验证凭据。 如果未提供，则在源连接创建步骤期间将自动检查凭据。 |
+| `clientId` | （可选）与您的用户帐户关联的客户端ID。 |
+| `clientSecret` | （可选）与您的用户帐户关联的客户端密钥。 |
+| `accessToken` | 用于访问应用程序的主要身份验证凭据。 访问令牌表示应用程序对访问用户数据特定方面的授权。 此值为必需，不能使用绕过 `requestParameterOverride`. |
+| `refreshToken` | （可选）当访问令牌过期时，用于生成新访问令牌的令牌。 |
+| `expirationDate` | （可选）定义访问令牌的过期日期的隐藏值。 |
+| `accessTokenUrl` | （可选）用于获取访问令牌的URL端点。 |
+| `requestParameterOverride` | （可选）一个属性，它允许您指定要覆盖的凭据参数。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Generic REST API] 为： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
 
-#### 基本驗證
+#### 基本身份验证
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | --- | --- |
-| `host` | 您向其提出請求的來源的主機URL。 |
-| `username` | 與您的使用者帳戶對應的使用者名稱。 |
-| `password` | 與您的使用者帳戶對應的密碼。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Generic REST API] 為： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
+| `host` | 您向其发出请求的源的主机URL。 |
+| `username` | 与您的用户帐户对应的用户名。 |
+| `password` | 与您的用户帐户对应的密码。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Generic REST API] 为： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-[!DNL Generic REST API] 支援基本驗證和OAuth 2重新整理程式碼。 請參閱下列範例，以取得如何使用任一驗證型別進行驗證的指引。
+[!DNL Generic REST API] 支持基本身份验证和OAuth 2刷新代码。 有关如何使用任一身份验证类型进行身份验证的指导，请参阅以下示例。
 
-### 建立 [!DNL Generic REST API] 使用OAuth 2重新整理程式碼的基礎連線
+### 创建 [!DNL Generic REST API] 使用OAuth 2刷新代码的基本连接
 
-POST若要使用OAuth 2重新整理程式碼建立基本連線ID，請向 `/connections` 端點，同時提供您的OAuth 2認證。
+POST要使用OAuth 2刷新代码创建基本连接ID，请向 `/connections` 端点，同时提供OAuth 2凭据。
 
 **API格式**
 
@@ -77,7 +77,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Generic REST API]：
+以下请求创建基本连接 [!DNL Generic REST API]：
 
 ```shell
 curl -X POST \
@@ -106,16 +106,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | （選用）您可以包含的屬性，以提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 關聯的連線規格ID [!DNL Generic REST API]. 此固定ID為： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
-| `auth.specName` | 您用來向Platform驗證來源的驗證型別。 |
-| `auth.params.host` | 用來連線至您的網站的根URL [!DNL Generic REST API] 來源。 |
-| `auth.params.accessToken` | 用於驗證您的來源的對應存取權杖。 這是OAuth型驗證的必要專案。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | （可选）可包含的资产，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 与关联的连接规范ID [!DNL Generic REST API]. 此固定ID为： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
+| `auth.specName` | 用于向Platform验证源的身份验证类型。 |
+| `auth.params.host` | 用于连接到 [!DNL Generic REST API] 源。 |
+| `auth.params.accessToken` | 用于对源进行身份验证的相应访问令牌。 基于OAuth的身份验证需要此项。 |
 
 **响应**
 
-成功回應會傳回新建立的連線，包括其唯一連線識別碼(`id`)。 在下一個教學課程中探索您的資料時，需要此ID。
+成功响应将返回新创建的连接，包括其唯一连接标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
 
 ```json
 {
@@ -124,9 +124,9 @@ curl -X POST \
 }
 ```
 
-### 建立 [!DNL Generic REST API] 使用基本驗證的基本連線
+### 创建 [!DNL Generic REST API] 使用基本身份验证的基本连接
 
-若要建立 [!DNL Generic REST API] 使用基本驗證的基礎連線，向發出POST要求 `/connections` 端點 [!DNL Flow Service] API，同時提供您的基本驗證認證。
+创建 [!DNL Generic REST API] POST基本连接使用基本身份验证，向 `/connections` 端点 [!DNL Flow Service] API，同时提供基本的身份验证凭据。
 
 **API格式**
 
@@ -136,7 +136,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Generic REST API]：
+以下请求创建基本连接 [!DNL Generic REST API]：
 
 ```shell
 curl -X POST \
@@ -166,17 +166,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | （選用）您可以包含的屬性，以提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 關聯的連線規格ID [!DNL Generic REST API]. 此固定ID為： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
-| `auth.specName` | 您用來將來源連線到Platform的驗證型別。 |
-| `auth.params.host` | 用來連線至您的網站的根URL [!DNL Generic REST API] 來源。 |
-| `auth.params.username` | 與您的對應之使用者名稱 [!DNL Generic REST API] 來源。 這是進行基本驗證所必需的。 |
-| `auth.params.password` | 與您的對應之密碼 [!DNL Generic REST API] 來源。 這是進行基本驗證所必需的。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | （可选）可包含的资产，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 与关联的连接规范ID [!DNL Generic REST API]. 此固定ID为： `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
+| `auth.specName` | 用于将源连接到Platform的身份验证类型。 |
+| `auth.params.host` | 用于连接到 [!DNL Generic REST API] 源。 |
+| `auth.params.username` | 与您的对应的用户名 [!DNL Generic REST API] 源。 这是基本身份验证所必需的。 |
+| `auth.params.password` | 与您的密码对应的密码 [!DNL Generic REST API] 源。 这是基本身份验证所必需的。 |
 
 **响应**
 
-成功回應會傳回新建立的基本連線，包括其唯一連線識別碼(`id`)。 在下一個步驟中探索來源的檔案結構和內容時，需要此ID。
+成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -187,7 +187,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Generic REST API] 基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL Generic REST API] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流，以使用將通訊協定資料帶入Platform [!DNL Flow Service] API](../../collect/protocols.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将协议数据引入Platform [!DNL Flow Service] API](../../collect/protocols.md)

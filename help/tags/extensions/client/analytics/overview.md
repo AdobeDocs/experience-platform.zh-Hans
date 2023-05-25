@@ -1,6 +1,6 @@
 ---
-title: Adobe Analytics擴充功能概觀
-description: 瞭解Adobe Experience Platform中的Adobe Analytics標籤擴充功能。
+title: Adobe Analytics扩展概述
+description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 83%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关配置 Adobe Analytics 扩展以及使用此扩展构建规则时可用的选项的信息。
 
@@ -21,9 +21,9 @@ ht-degree: 83%
 
 此部分提供有关配置 Adobe Analytics 扩展时可用的选项的参考。
 
-如果尚未安裝Adobe Analytics擴充功能，請開啟您的屬性，然後選取「 」 **[!UICONTROL 擴充功能>目錄]**，將游標暫留在Adobe Analytics擴充功能上，然後選取「 」 **[!UICONTROL 安裝]**.
+如果尚未安装Adobe Analytics扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Analytics扩展上，然后选择 **[!UICONTROL 安装]**.
 
-若要設定擴充功能，請開啟「擴充功能」標籤、將游標暫留在擴充功能上方，然後選取「 」 **[!UICONTROL 設定]**.
+要配置该扩展，请打开Extensions选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/ext-analytics-config.png)
 
@@ -85,11 +85,11 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 #### Open Editor
 
-可讓您插入核心 [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) 程式碼。 使用自动配置方法时会自动填充此代码。
+允许您插入核心 [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) 代码。 使用自动配置方法时会自动填充此代码。
 
 >[!NOTE]
 >
->標籤程式碼編輯器中使用的驗證器，專門用於識別開發人員所編寫程式碼的問題。 經過縮製程式的程式碼（例如從Code Manager下載的AppMeasurement.js程式碼）可能會遭標籤驗證器誤判而標示為有問題，通常可予以忽略。
+>标记代码编辑器中使用的验证器可识别开发人员编写的代码中存在的问题。 经过缩小的代码（例如从代码管理器中下载的AppMeasurement.js代码）可能会被标记验证器错误地标记为存在问题，这通常可以忽略不计。
 
 #### Set the following report suites on tracker
 
@@ -111,7 +111,7 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 基于 EU 隐私 Cookie，启用或禁用跟踪。
 
-當您勾選「歐盟法規遵循」核取方塊時， [!UICONTROL 追蹤Cookie名稱] 欄位隨即顯示。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自訂標籤在追蹤您對於接收其他Cookie的選擇退出狀態時所使用的名稱。
+当您选中EU Compliance复选框时， [!UICONTROL 跟踪Cookie名称] 字段。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自定义标记用于跟踪您的选择退出状态的名称，以便接收其他Cookie。
 
 在加载页面时，系统会检查是否设置了名为 sat\_track 的 Cookie（或在 Edit Property 页面中指定的自定义 Cookie 名称）。请考虑以下信息：
 
@@ -270,7 +270,7 @@ _satellite.cookie.set("sat_track", "true");
 
 Audience Manager 子域由 Adobe Audience Manager 分配。它有时称为“合作伙伴名称”或“合作伙伴子域”。如果您不知道自己的合作伙伴名称，请联系您的 Adobe 顾问或 Adobe 客户关怀团队。
 
-您可以選取「 」，設定進階設定 **顯示進階設定** 並輸入您的偏好設定。
+您可以通过选择 **显示高级设置** 并输入您的首选项。
 
 ![](../../../images/an-ext-aam-adv.png)
 
@@ -307,7 +307,7 @@ Analytics 扩展提供了以下操作：
 1. 从下拉菜单中选择一个 prop。
 1. 指定是要将 prop 设置为值 (Set As) 还是复制 (Duplicate From) 其他 eVar。
 1. 提供 Set As 值，或选择要从中复制 prop 的 eVar。
-1. （選用）選取 **[!UICONTROL 新增prop]** 以設定更多prop。
+1. （可选）选择 **[!UICONTROL 添加prop]** 以设置更多prop。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。
 
 #### 事件
@@ -316,7 +316,7 @@ Analytics 扩展提供了以下操作：
 
 1. 从下拉菜单中选择一个事件。
 1. （可选）选择或指定用于[事件序列化](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html?lang=zh-Hans)的数据元素。
-1. （選用）選取 **[!UICONTROL 新增事件]** 以設定更多事件。
+1. （可选）选择 **[!UICONTROL 添加事件]** 以设置更多事件。
 1. 选择&#x200B;**[!UICONTROL 保留更改]**。
 
 #### 层级
@@ -327,15 +327,15 @@ Analytics 扩展提供了以下操作：
 
 如果需要，请配置其他层级。
 
-#### 頁面名稱
+#### 页面名称
 
-此值是指指定頁面的名稱，並與 [`pageName` 變數](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) （在Analytics中）。
+此值是指给定页面的名称，对应于 [`pageName` 变量](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) Analytics中的。
 
 >[!IMPORTANT]
 >
->在Adobe Experience Manager實作中，此變數可告知AEM將擷取的Analytics報表儲存於何處。 為確保報表能正確持續儲存，頁面名稱字串必須格式化為以冒號分隔的網站路徑。
+>在Adobe Experience Manager实施中，此变量可告知AEM将获取的Analytics报表存储在何处。 要确保正确保留报表，页面名称字符串必须设置为以冒号分隔的网站路径格式。
 >
->例如，位於以下位置的網頁 `content/we-retail/language-masters/en/men.html` 的頁面名稱值應為 `content:we-retail:language-masters:en:men`.
+>例如，位于以下位置的网页 `content/we-retail/language-masters/en/men.html` 的页面名称值应为 `content:we-retail:language-masters:en:men`.
 
 #### Other information
 
@@ -366,7 +366,7 @@ Analytics 扩展提供了以下操作：
 
 **Settings**
 
-1. 選取 **[!UICONTROL 開啟編輯器]**.
+1. 选择 **[!UICONTROL 打开编辑器]**.
 1. 键入自定义代码。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
@@ -376,7 +376,7 @@ Analytics 扩展提供了以下操作：
 
 选择是否要递增一次页面查看。
 
-#### 不要遞增頁面檢視 — s.tl()
+#### 不递增页面查看 — s.tl()
 
 选择是否不要递增一次页面查看。
 

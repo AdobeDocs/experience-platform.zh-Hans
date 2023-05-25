@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；監控帳戶；監控資料流；資料流；來源
-description: 本教學課程提供使用彙總監視檢視和跨服務監視來監視資料流的步驟。
+keywords: Experience Platform；主页；热门主题；监控帐户；监控数据流；数据流；源
+description: 本教程提供了使用聚合监视视图和跨服务监视来监视数据流的步骤。
 solution: Experience Platform
-title: 在UI中監視來源的資料流
+title: 在UI中监控源的数据流
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
@@ -16,26 +16,26 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 >
->串流來源，例如 [HTTP API來源](../../sources/connectors/streaming/http.md) 目前不受監視儀表板支援。 目前，您只能使用儀表板來監視批次來源。
+>流源，如 [HTTP API源](../../sources/connectors/streaming/http.md) 当前不受监控功能板支持。 目前，您只能使用功能板监控批量源。
 
-在Adobe Experience Platform中，資料會從各種來源擷取、在Experience Platform中分析，並啟用至各種目的地。 Platform藉由提供資料流透明度，讓追蹤這種潛在非線性資料流的程式變得更輕鬆。
+在Adobe Experience Platform中，数据从各种来源摄取，在Experience Platform中进行分析，并激活到各种目的地。 Platform通过提供数据流透明性，使跟踪这种潜在非线性数据流的过程更加容易。
 
-監控儀表板可讓您以視覺化方式呈現資料流的歷程。 您可以使用彙總的監控檢視，並從來源層級垂直導覽至資料流，以及資料流執行，讓您檢視對資料流成功或失敗有貢獻的對應量度。 您也可以使用監控儀表板的跨服務監控容量，監控資料流從來源到目的地的歷程。 [!DNL Identity Service]，並至 [!DNL Profile].
+监控仪表板为您提供了数据流历程的可视表示形式。 您可以使用聚合监控视图，从源级别垂直导航到数据流以及数据流运行，从而查看有助于数据流成功或失败的相应量度。 您还可以使用监控仪表板的跨服务监控功能来监控数据流从源到目的地的历程。 [!DNL Identity Service]、和 [!DNL Profile].
 
-本教學課程提供使用彙總監視檢視和跨服務監視來監視資料流的步驟。
+本教程提供了使用聚合监视视图和跨服务监视来监视数据流的步骤。
 
 ## 快速入门 {#getting-started}
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [資料流](../home.md)：資料流可呈現跨平台行動資料的資料作業。 資料流會跨不同服務進行設定，有助於將資料從來源聯結器移至目標資料集，以及 [!DNL Identity] 和 [!DNL Profile]，並至 [!DNL Destinations].
-   * [資料流執行](../../sources/notifications.md)：資料流執行是根據所選資料流的頻率設定的週期性排程作業。
-* [來源](../../sources/home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [Identity Service](../../identity-service/home.md)：透過跨裝置和系統橋接身分，更能瞭解個別客戶及其行為。
-* [即時客戶個人檔案](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
-* [沙箱](../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以及 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
+   * [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的定期计划作业。
+* [源](../../sources/home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [Identity Service](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
+* [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+* [沙盒](../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 聚總監視檢視 {#aggregated-monitoring-view}
+## 聚合监控视图 {#aggregated-monitoring-view}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
@@ -49,89 +49,89 @@ ht-degree: 8%
 >abstract="源处理包含有关数据湖服务中的数据活动状态和量度的信息，包括提取的记录和失败的记录。查看量度定义指南以了解有关量度和图表的更多信息。"
 >text="Learn more in documentation"
 
-在 [平台UI](https://platform.adobe.com)，選取 **[!UICONTROL 監視]** 從左側導覽存取 [!UICONTROL 監視] 儀表板。 此 [!UICONTROL 監視] 儀表板包含所有來源資料流的量度和資訊，包括從來源到來源之資料流量的健康情況分析 [!DNL Identity Service]，並至 [!DNL Profile].
+在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 监测]** 从左侧导航访问 [!UICONTROL 监测] 仪表板。 此 [!UICONTROL 监测] 仪表板包含有关所有源数据流的量度和信息，包括对从源到的数据流量运行状况的分析 [!DNL Identity Service]、和 [!DNL Profile].
 
-圖示板中心是 [!UICONTROL 來源擷取] 面板，其中包含顯示擷取記錄和失敗記錄之資料的量度和圖形。
+操控板的中心是 [!UICONTROL 源摄取] 面板，其中包含显示有关已摄取记录和失败记录的数据的量度和图形。
 
-![monitoring-dashard](../assets/ui/monitor-sources/monitoring-dashboard.png)
+![monitoring-dashboard](../assets/ui/monitor-sources/monitoring-dashboard.png)
 
-依預設，顯示的資料包含過去24小時的擷取率。 選取 **[!UICONTROL 過去24小時]** 以調整記錄顯示的時間範圍。
+默认情况下，显示的数据包含过去24小时的摄取率。 选择 **[!UICONTROL 最近24小时]** 以调整所显示记录的时间范围。
 
-![變更日期](../assets/ui/monitor-sources/change-date.png)
+![change-date](../assets/ui/monitor-sources/change-date.png)
 
-此時會出現一個日曆快顯視窗，為您提供替代擷取時間範圍的選項。 選取 **[!UICONTROL 過去30天]** 然後選取 **[!UICONTROL 套用]**
+此时会出现一个日历弹出窗口，为您提供替代摄取时间范围的选项。 选择 **[!UICONTROL 最近30天]** 然后选择 **[!UICONTROL 应用]**
 
-![調整時間範圍](../assets/ui/monitor-sources/adjust-timeframe.png)
+![调整时间范围](../assets/ui/monitor-sources/adjust-timeframe.png)
 
-圖表預設為啟用，您可以停用它們以展開下面的來源清單。 選取 **[!UICONTROL 度量和圖表]** 切換以停用圖形。
+这些图形默认处于启用状态，您可以禁用它们以展开下面的源列表。 选择 **[!UICONTROL 量度和图形]** 切换可禁用图形。
 
-![量度與圖表](../assets/ui/monitor-sources/metrics-graphs.png)
+![量度与图形](../assets/ui/monitor-sources/metrics-graphs.png)
 
 | 源提取 | 描述 |
 | ---------------- | ----------- |
-| [!UICONTROL 已提取的记录 ] | 擷取的記錄總數。 |
-| [!UICONTROL 失败的记录] | 因資料錯誤而未擷取的記錄總數。 |
-| [!UICONTROL 失敗的資料流總數] | 具有「 」的資料流總數 `failed` 狀態。 |
+| [!UICONTROL 已提取的记录 ] | 已摄取的记录总数。 |
+| [!UICONTROL 失败的记录] | 由于数据错误而未摄取的记录总数。 |
+| [!UICONTROL 失败的数据流总数] | 具有的数据流总数 `failed` 状态。 |
 
-來源擷取清單會顯示包含至少一個現有帳戶的所有來源。 此清單也包含每個來源的擷取率、失敗記錄數，以及根據您套用之時間範圍的失敗資料流總數的資訊。
+源摄取列表显示至少包含一个现有帐户的所有源。 该列表还包括有关每个源的摄取率、失败记录数和基于您应用的时间范围的失败数据流总数的信息。
 
-![來源擷取](../assets/ui/monitor-sources/source-ingestion.png)
+![源摄取](../assets/ui/monitor-sources/source-ingestion.png)
 
-若要排序來源清單，請選取 **[!UICONTROL 我的來源]** 然後從下拉式選單中選取您選擇的類別。 例如，若要聚焦於雲端儲存，請選取  **[!UICONTROL 雲端儲存空間]**
+要对源列表进行排序，请选择 **[!UICONTROL 我的源]** ，然后从下拉菜单中选择您选择的类别。 例如，要专注于云存储，请选择  **[!UICONTROL 云存储]**
 
-![按類別排序](../assets/ui/monitor-sources/sort-by-category.png)
+![按类别排序](../assets/ui/monitor-sources/sort-by-category.png)
 
-若要檢視所有來源的所有現有資料流，請選取「 」 **[!UICONTROL 資料流]**.
+要查看所有源中的所有现有数据流，请选择 **[!UICONTROL 数据流]**.
 
 ![view-all-dataflows](../assets/ui/monitor-sources/view-all-dataflows.png)
 
-或者，您可以在搜尋列中輸入來源，以隔離單一來源。 識別來源後，請選取篩選器圖示 ![篩選](../assets/ui/monitor-sources/filter.png) 旁邊，可檢視其作用中資料流的清單。
+或者，也可以在搜索栏中输入源以隔离单个源。 标识源后，选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) ，查看其活动数据流的列表。
 
 ![搜索](../assets/ui/monitor-sources/search.png)
 
-資料流清單隨即顯示。 若要縮小清單範圍並專注於有錯誤的資料流，請選取「 」 **[!UICONTROL 僅顯示失敗]**.
+此时将显示数据流列表。 要缩小列表范围并关注有错误的数据流，请选择 **[!UICONTROL 仅显示故障]**.
 
-![僅顯示 — 失敗](../assets/ui/monitor-sources/show-failures-only.png)
+![仅显示故障](../assets/ui/monitor-sources/show-failures-only.png)
 
-找到您要監控的資料流，然後選取篩選圖示 ![篩選](../assets/ui/monitor-sources/filter.png) 旁邊，可檢視其執行狀態的詳細資訊。
+找到要监视的数据流，然后选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 此外，还可以查看有关其运行状态的更多信息。
 
-![資料流](../assets/ui/monitor-sources/dataflow.png)
+![数据流](../assets/ui/monitor-sources/dataflow.png)
 
-資料流執行頁面會顯示資料流執行開始日期、資料大小、狀態及其處理持續時間的資訊。 選取篩選圖示 ![篩選](../assets/ui/monitor-sources/filter.png) 資料流執行開始時間旁邊，可檢視其資料流執行詳細資料。
+数据流运行页面显示有关数据流的运行开始日期、数据大小、状态及其处理持续时间的信息。 选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 数据流运行开始时间旁边，查看其数据流运行详细信息。
 
-![資料流 — run-start](../assets/ui/monitor-sources/dataflow-run-start.png)
+![数据流 — 运行 — 启动](../assets/ui/monitor-sources/dataflow-run-start.png)
 
-此 [!UICONTROL 資料流執行詳細資料] 頁面會顯示資料流的中繼資料、部分擷取狀態和錯誤摘要的相關資訊。 錯誤摘要包含特定的頂層錯誤，會顯示擷取程式在哪個步驟遇到錯誤。
+此 [!UICONTROL 数据流运行详细信息] 页面显示有关数据流的元数据、部分摄取状态和错误摘要的信息。 错误摘要包含特定的顶级错误，该错误显示了摄取过程在哪个步骤遇到错误。
 
-向下捲動以檢視有關所發生錯誤的更多具體資訊。
+向下滚动查看有关所发生错误的更多具体信息。
 
-![資料流 — 執行 — 詳細資料](../assets/ui/monitor-sources/dataflow-run-details.png)
+![数据流 — 运行 — 详细信息](../assets/ui/monitor-sources/dataflow-run-details.png)
 
-此 [!UICONTROL 資料流執行錯誤] 面板會顯示導致資料流擷取失敗的特定錯誤和錯誤代碼。 在此案例中，發生對應程式轉換錯誤，導致24筆記錄失敗。
+此 [!UICONTROL 数据流运行错误] 面板显示导致数据流摄取失败的特定错误和错误代码。 在此场景中，发生映射器转换错误，导致24条记录失败。
 
-選取 **[!UICONTROL 檔案]** 以取得詳細資訊。
+选择 **[!UICONTROL 文件]** 了解更多信息。
 
-![資料流 — 執行 — 錯誤](../assets/ui/monitor-sources/dataflow-run-errors.png)
+![数据流运行错误](../assets/ui/monitor-sources/dataflow-run-errors.png)
 
-此 [!UICONTROL 檔案] 面板包含檔案名稱和路徑的資訊。
+此 [!UICONTROL 文件] 面板包含有关文件名称和路径的信息。
 
-如需更精細的錯誤表示法，請選取 **[!UICONTROL 預覽錯誤診斷]**.
+要获得更细粒度的错误表示形式，请选择 **[!UICONTROL 预览错误诊断]**.
 
-![檔案](../assets/ui/monitor-sources/files.png)
+![文件](../assets/ui/monitor-sources/files.png)
 
-此 [!UICONTROL 錯誤診斷預覽] 視窗隨即顯示，在資料流中顯示最多100個錯誤的預覽。 您可以選取 **[!UICONTROL 下載]** 擷取curl指令，然後可讓您下載錯誤診斷。
+此 [!UICONTROL 错误诊断预览] 窗口，显示数据流中最多100个错误的预览。 您可以选择 **[!UICONTROL 下载]** 检索curl命令，然后可下载错误诊断程序。
 
-完成後，選取 **[!UICONTROL 關閉]**
+完成后，选择 **[!UICONTROL 关闭]**
 
-![錯誤診斷](../assets/ui/monitor-sources/error-diagnostics.png)
+![错误诊断](../assets/ui/monitor-sources/error-diagnostics.png)
 
-您可以使用頂端標題的階層連結系統，導覽回至 [!UICONTROL 監視] 儀表板。 選取 **[!UICONTROL 執行開始：2021年2月14日，晚上9:47]** 以返回上一頁，然後選取 **[!UICONTROL 資料流：忠誠度資料擷取示範 — 失敗]** 以返回「資料流」頁面。
+您可以使用顶部标题的痕迹导航系统导航回 [!UICONTROL 监测] 仪表板。 选择 **[!UICONTROL 运行开始：2021年2月14日，晚上9:47]** 以返回上一页，然后选择 **[!UICONTROL 数据流：忠诚度数据摄取演示 — 失败]** 以返回数据流页面。
 
-![階層連結](../assets/ui/monitor-sources/breadcrumbs.png)
+![痕迹导航](../assets/ui/monitor-sources/breadcrumbs.png)
 
 ## 后续步骤 {#next-steps}
 
-依照本教學課程，您已使用成功監視來源層級的擷取資料流 **[!UICONTROL 監視]** 儀表板。 您也已成功識別在擷取程式期間導致資料流失敗的錯誤。 如需更多詳細資訊，請參閱下列檔案：
+通过阅读本教程，您已经使用成功监视了从源级别摄取的数据流 **[!UICONTROL 监测]** 仪表板。 您还已成功识别出在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
 
-* [監控資料流中的身分](./monitor-identities.md)
-* [在資料流中監視設定檔](./monitor-profiles.md)
+* [监视数据流中的身份](./monitor-identities.md)
+* [监测数据流中的用户档案](./monitor-profiles.md)

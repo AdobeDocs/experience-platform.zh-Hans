@@ -1,6 +1,6 @@
 ---
-title: Adobe Medium Analytics for Audio and Video擴充功能的發行說明
-description: Adobe Experience Platform中Adobe Medium Analytics for Audio and Video標籤擴充功能的最新發行說明。
+title: Adobe Medium Analytics for Audio and Video扩展的发行说明
+description: Adobe Experience Platform中的Adobe Medium Analytics for Audio and Video标记扩展的最新发行说明。
 exl-id: 79d92f42-795f-4685-926f-ebe6f4125539
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 67%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2019 年 10 月 25 日
 
@@ -42,7 +42,7 @@ ht-degree: 67%
 
 #### **功能**
 
-[Adobe Analytics for Video 扩展](../media-analytics/overview.md)添加了核心 Video Analytics JavaScript 库。此程式庫提供將mediaHeartbeat例項新增至已啟用標籤的網站或專案的功能。 Adobe Analytics for Video 扩展（VA 扩展）需要使用其他两个扩展：
+[Adobe Analytics for Video 扩展](../media-analytics/overview.md)添加了核心 Video Analytics JavaScript 库。此库提供了将mediaHeartbeat实例添加到启用了标记的网站或项目的功能。 Adobe Analytics for Video 扩展（VA 扩展）需要使用其他两个扩展：
 
 * Analytics 扩展
 * Experience Cloud ID 扩展

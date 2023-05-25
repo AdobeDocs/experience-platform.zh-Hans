@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；擷取失敗的批次；失敗的批次；批次擷取；批次擷取；失敗的批次；取得失敗的批次；取得失敗的批次；下載失敗的批次；下載失敗的批次；
+keywords: Experience Platform；主页；热门主题；检索失败的批次；失败的批次；批次摄取；批次摄取；失败的批次；获取失败的批次；获取失败的批次；下载失败的批次；下载失败的批次；
 solution: Experience Platform
-title: 使用資料存取API擷取失敗的批次
+title: 使用数据访问API检索失败的批次
 type: Tutorial
-description: 本教學課程涵蓋使用資料擷取API擷取失敗批次相關資訊的步驟。
+description: 本教程介绍了使用数据摄取API检索有关失败批次信息的步骤。
 exl-id: 5fb9f28d-091e-4124-8d8e-b8a675938d3a
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -12,46 +12,46 @@ ht-degree: 2%
 
 ---
 
-# 使用資料存取API擷取失敗的批次
+# 使用数据访问API检索失败的批次
 
-Adobe Experience Platform提供兩種上傳和擷取資料的方法。 您可以使用批次擷取(可讓您使用各種檔案型別（例如CSV）插入其資料)或串流擷取（可讓您將其資料插入） [!DNL Platform] 即時使用串流端點。
+Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入其数据；也可以使用流式摄取，这允许您将其数据插入到 [!DNL Platform] 实时使用流式端点。
 
-本教學課程涵蓋使用擷取失敗批次相關資訊的步驟 [!DNL Data Ingestion] API。
+本教程介绍了使用检索有关失败批次信息的步骤 [!DNL Data Ingestion] API。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-- [[!DNL Data Ingestion]](../home.md)：資料可傳送至的方法 [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Data Ingestion]](../home.md)：将数据发送到的方法 [!DNL Experience Platform].
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Schema Registry]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform]，包括那些属于 [!DNL Schema Registry]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
+>有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
 
 - `Content-Type: application/json`
 
-### 失敗的批次範例
+### 失败的批次示例
 
-本教學課程將使用具有錯誤格式時間戳記的範例資料，該錯誤時間戳記會將月份值設為 **00**，如下所示：
+本教程将使用具有错误格式时间戳（将月份值设置为）的示例数据 **00**，如下所示：
 
 ```json
 {
@@ -76,9 +76,9 @@ Adobe Experience Platform提供兩種上傳和擷取資料的方法。 您可以
 }
 ```
 
-由於格式錯誤的時間戳記，上述裝載將不會針對XDM結構正確驗證。
+由于格式错误的时间戳，上述有效负载无法针对XDM架构正确验证。
 
-## 擷取失敗的批次
+## 检索失败的批次
 
 **API格式**
 
@@ -88,7 +88,7 @@ GET /batches/{BATCH_ID}/failed
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 您要查詢之批次的ID。 |
+| `{BATCH_ID}` | 要查找的批次的ID。 |
 
 **请求**
 
@@ -133,11 +133,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-透過上述回應，您可以檢視批次的哪些區塊成功和失敗。 從這個回應中，您可以看到檔案 `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` 包含失敗的批次。
+通过上述响应，您可以查看批次的哪些块成功和失败。 从此响应中，您可以看到文件 `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` 包含失败的批次。
 
-## 下載失敗的批次
+## 下载失败的批次
 
-知道批次中的哪個檔案失敗後，您可以下載失敗的檔案並檢視錯誤訊息。
+知道批处理中的哪个文件失败后，您可以下载失败的文件并查看错误消息。
 
 **API格式**
 
@@ -147,12 +147,12 @@ GET /batches/{BATCH_ID}/failed?path={FAILED_FILE}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 包含失敗檔案的批次識別碼。 |
-| `{FAILED_FILE}` | 格式設定失敗的檔案名稱。 |
+| `{BATCH_ID}` | 包含失败文件的批次的ID。 |
+| `{FAILED_FILE}` | 格式设置失败的文件名。 |
 
 **请求**
 
-以下請求可讓您下載發生內嵌錯誤的檔案。
+以下请求允许您下载出现摄取错误的文件。
 
 ```shell
 curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/failed?path={FAILED_FILE}' \
@@ -166,7 +166,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 **响应**
 
-由於前一個擷取的批次有無效的日期時間，將會顯示以下驗證錯誤。
+由于上一个摄取的批次的日期时间无效，因此将显示以下验证错误。
 
 ```json
 {
@@ -184,19 +184,19 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ## 后续步骤
 
-閱讀本教學課程後，您已瞭解如何從失敗的批次中擷取錯誤。 如需批次擷取的詳細資訊，請參閱 [批次擷取開發人員指南](../batch-ingestion/overview.md). 如需串流擷取的詳細資訊，請閱讀 [建立串流連線教學課程](../tutorials/create-streaming-connection.md).
+阅读本教程后，您已了解如何从失败的批次中检索错误。 有关批量摄取的更多信息，请阅读 [批量摄取开发人员指南](../batch-ingestion/overview.md). 有关流式摄取的更多信息，请阅读 [创建流连接教程](../tutorials/create-streaming-connection.md).
 
 ## 附录
 
-本節包含可能發生的其他擷取錯誤型別相關資訊。
+此部分包含有关可能发生的其他摄取错误类型的信息。
 
-### XDM格式不正確
+### XDM格式不正确
 
-如同上一個範例流程中的時間戳記錯誤，這些錯誤是由於XDM的格式不正確。 這些錯誤訊息會因問題性質而異。 因此，無法顯示特定錯誤範例。
+与上一个示例流中的时间戳错误一样，这些错误是由于XDM格式不正确造成的。 根据问题的性质，这些错误消息会有所不同。 因此，无法显示具体的错误示例。
 
-### 組織ID遺失或無效
+### 组织ID缺失或无效
 
-如果承載中缺少組織ID或組織識別碼無效，便會顯示此錯誤。
+如果有效负载中缺少组织ID无效，则会显示此错误。
 
 ```json
 {
@@ -209,9 +209,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-### 缺少XDM結構描述
+### 缺少XDM架构
 
-如果出現以下情況，則會顯示此錯誤： `schemaRef` 的 `xdmMeta` 遺失。
+在以下情况下显示此错误： `schemaRef` 对于 `xdmMeta` 缺失。
 
 ```json
 {
@@ -224,9 +224,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-### 缺少來源名稱
+### 缺少源名称
 
-如果出現以下情況，則會顯示此錯誤： `source` 標頭中缺少其 `name`.
+在以下情况下显示此错误： `source` 标头中缺少其 `name`.
 
 ```json
 {
@@ -240,9 +240,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-### 缺少XDM實體
+### 缺少XDM实体
 
-如果沒有其他專案，則會顯示此錯誤 `xdmEntity` 存在。
+如果没有，则显示此错误 `xdmEntity` 存在。
 
 ```json
 {

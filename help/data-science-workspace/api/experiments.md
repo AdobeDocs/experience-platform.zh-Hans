@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；開發人員指南；端點；Data Science Workspace；熱門主題；實驗；sensei機器學習api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实验；sensei机器学习api
 solution: Experience Platform
-title: 實驗API端點
-description: 模型開發和訓練會在實驗層級進行，其中實驗包括MLInstance、訓練回合和評分回合。
+title: 试验API端点
+description: 模型开发和培训在试验级别进行，试验包括MLInstance、培训运行和评分运行。
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,17 +11,17 @@ ht-degree: 4%
 
 ---
 
-# 實驗端點
+# 试验端点
 
-模型開發和訓練會在實驗層級進行，其中實驗包括MLInstance、訓練回合和評分回合。
+模型开发和培训在试验级别进行，试验包括MLInstance、培训运行和评分运行。
 
-## 建立實驗 {#create-an-experiment}
+## 创建试验 {#create-an-experiment}
 
-您可以在要求裝載中提供名稱和有效的MLInstance ID時，透過執行POST要求來建立實驗。
+您可以通过在请求有效负载中提供名称和有效的MLInstance ID时执行POST请求来创建试验。
 
 >[!NOTE]
 >
->與UI中的模型訓練不同，透過明確API呼叫建立實驗不會自動建立和執行訓練回合。
+>与UI中的模型训练不同，通过显式API调用创建试验不会自动创建和执行训练运行。
 
 **API格式**
 
@@ -47,12 +47,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 實驗所需的名稱。 與此實驗對應的訓練回合將繼承此值，以作為訓練回合名稱顯示在UI中。 |
+| `name` | 试验所需的名称。 与此试验对应的训练运行将继承此值，以作为训练运行名称显示在UI中。 |
 | `mlInstanceId` | 有效的MLInstance ID。 |
 
 **响应**
 
-成功回應會傳回包含新建立實驗詳細資訊的裝載，包括其唯一識別碼(`id`)。
+成功响应将返回一个有效负载，其中包含新创建的试验的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -68,9 +68,9 @@ curl -X POST \
 }
 ```
 
-## 建立並執行訓練或評分回合 {#experiment-training-scoring}
+## 创建和执行训练或评分运行 {#experiment-training-scoring}
 
-您可以透過執行POST請求並提供有效的實驗ID和指定執行任務來建立訓練或評分回合。 只有在實驗具有現有且成功的訓練回合時，才能建立評分回合。 成功建立訓練回合將初始化模型訓練程式，其成功完成將生成訓練好的模型。 產生經過訓練的模型將取代任何先前存在的模型，因此實驗在任何給定時間都只能利用單一經過訓練的模型。
+可通过执行POST请求并提供有效的试验ID并指定运行任务来创建训练或评分运行。 仅当试验已经存在且成功的训练运行时，才能创建评分运行。 成功创建训练运行将初始化模型训练过程，成功完成该过程将生成经过训练的模型。 生成经过训练的模型将替换任何以前已有的模型，以便试验在任何给定时间只能使用单个经过训练的模型。
 
 **API格式**
 
@@ -80,7 +80,7 @@ POST /experiments/{EXPERIMENT_ID}/runs
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPERIMENT_ID}` | 有效的實驗ID。 |
+| `{EXPERIMENT_ID}` | 有效的试验ID。 |
 
 **请求**
 
@@ -99,11 +99,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `{TASK}` | 指定執行的工作。 將此值設定為 `train` 訓練方面， `score` 評分，或 `featurePipeline` 用於功能管道。 |
+| `{TASK}` | 指定运行的任务。 将此值设置为 `train` 用于培训， `score` 用于评分，或 `featurePipeline` 用于功能管道。 |
 
 **响应**
 
-成功回應會傳回包含新建立回合詳細資訊的裝載，包括繼承的預設訓練或評分引數，以及回合的唯一ID (`{RUN_ID}`)。
+成功响应将返回一个有效负载，其中包含新创建的运行的详细信息（包括继承的默认训练或评分参数），以及运行的唯一ID (`{RUN_ID}`)。
 
 ```json
 {
@@ -130,9 +130,9 @@ curl -X POST \
 }
 ```
 
-## 擷取實驗清單
+## 检索试验列表
 
-您可以執行單一GET要求，並提供有效的MLInstance ID作為查詢引數，以擷取屬於特定MLInstance的實驗清單。 如需可用查詢的清單，請參閱附錄 [用於資產擷取的查詢引數](./appendix.md#query).
+通过执行单个GET请求并提供有效的MLInstance ID作为查询参数，可以检索属于特定MLInstance的试验列表。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
 
 
 **API格式**
@@ -144,7 +144,7 @@ GET /experiments?property=mlInstanceId=={MLINSTANCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MLINSTANCE_ID}` | 提供有效的MLInstance ID以擷取屬於該特定MLInstance的實驗清單。 |
+| `{MLINSTANCE_ID}` | 提供有效的MLInstance ID以检索属于该特定MLInstance的试验列表。 |
 
 **请求**
 
@@ -159,7 +159,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回共用相同MLInstance ID (`{MLINSTANCE_ID}`)。
+成功响应将返回共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
 
 ```json
 {
@@ -196,9 +196,9 @@ curl -X GET \
 }
 ```
 
-## 擷取特定實驗 {#retrieve-specific}
+## 检索特定试验 {#retrieve-specific}
 
-您可以透過執行GET請求，在請求路徑中包含所需的實驗ID，來擷取特定實驗的詳細資訊。
+您可以通过执行GET请求（请求路径中包含所需试验的ID）来检索特定试验的详细信息。
 
 **API格式**
 
@@ -208,7 +208,7 @@ GET /experiments/{EXPERIMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPERIMENT_ID}` | 有效的實驗ID。 |
+| `{EXPERIMENT_ID}` | 有效的试验ID。 |
 
 **请求**
 
@@ -223,7 +223,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回包含所請求實驗詳細資訊的裝載。
+成功的响应将返回一个包含所请求试验详细信息的有效负载。
 
 ```json
 {
@@ -239,13 +239,13 @@ curl -X GET \
 }
 ```
 
-## 擷取實驗回合清單
+## 检索试验运行的列表
 
-您可以執行單一GET要求並提供有效的實驗ID，以擷取屬於特定實驗的訓練或評分回合清單。 若要協助篩選結果，您可以在請求路徑中指定查詢引數。 如需可用查詢引數的完整清單，請參閱 [用於資產擷取的查詢引數](./appendix.md#query).
+通过执行单个GET请求并提供有效的试验ID，可检索属于特定试验的训练或评分运行的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参见 [用于资源检索的查询参数](./appendix.md#query).
 
 >[!NOTE]
 >
->合併多個查詢引數時，必須以&amp;符號分隔。
+>组合多个查询参数时，必须使用&amp;符号分隔。
 
 **API格式**
 
@@ -257,13 +257,13 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPERIMENT_ID}` | 有效的實驗ID。 |
-| `{QUERY_PARAMETER}` | 其中一項 [可用的查詢引數](./appendix.md#query) 用於篩選結果。 |
-| `{VALUE}` | 上一個查詢引數的值。 |
+| `{EXPERIMENT_ID}` | 有效的试验ID。 |
+| `{QUERY_PARAMETER}` | 其中一项 [可用的查询参数](./appendix.md#query) 用于筛选结果。 |
+| `{VALUE}` | 上一个查询参数的值。 |
 
 **请求**
 
-以下請求包含一個查詢，並擷取屬於某些實驗的訓練回合清單。
+以下请求包含一个查询，并检索属于某个试验的训练运行列表。
 
 ```shell
 curl -X GET \
@@ -276,7 +276,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回一個裝載，其中包含執行清單及其每個詳細資訊，包括其實驗執行ID (`{RUN_ID}`)。
+成功的响应会返回一个有效负载，其中包含运行的列表及其每个详细信息，包括其试验运行ID (`{RUN_ID}`)。
 
 ```json
 {
@@ -300,15 +300,15 @@ curl -X GET \
 }
 ```
 
-## 更新實驗
+## 更新试验
 
-您可以透過PUT請求（請求路徑中包含目標實驗ID）來覆寫現有實驗的屬性，並提供包含已更新屬性的JSON裝載，藉此更新現有實驗。
+您可以更新现有试验，方法是通过PUT请求（请求路径中包含目标试验的ID）覆盖其属性，并提供包含已更新属性的JSON有效负载。
 
 >[!TIP]
 >
->為確保此PUT請求成功，建議您先執行GET請求 [依ID擷取實驗](#retrieve-specific). 接著，修改並更新傳回的JSON物件，並將整個修改過的JSON物件套用為PUT請求的裝載。
+>为了确保此PUT请求成功，建议您首先执行GET请求 [按ID检索试验](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
 
-以下範例API呼叫最初具有這些屬性時會更新實驗的名稱：
+以下示例API调用最初具有这些属性时会更新实验的名称：
 
 ```json
 {
@@ -330,7 +330,7 @@ PUT /experiments/{EXPERIMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPERIMENT_ID}` | 有效的實驗ID。 |
+| `{EXPERIMENT_ID}` | 有效的试验ID。 |
 
 **请求**
 
@@ -355,7 +355,7 @@ curl -X PUT \
 
 **响应**
 
-成功的回應會傳回包含實驗更新詳細資訊的裝載。
+成功的响应将返回包含试验更新详细信息的有效负载。
 
 ```json
 {
@@ -371,9 +371,9 @@ curl -X PUT \
 }
 ```
 
-## 刪除實驗
+## 删除试验
 
-您可以透過執行DELETE請求（請求路徑中包含目標實驗ID）來刪除單一實驗。
+您可以通过执行DELETE请求（请求路径中包含目标试验的ID）来删除单个试验。
 
 **API格式**
 
@@ -383,7 +383,7 @@ DELETE /experiments/{EXPERIMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXPERIMENT_ID}` | 有效的實驗ID。 |
+| `{EXPERIMENT_ID}` | 有效的试验ID。 |
 
 **请求**
 
@@ -406,9 +406,9 @@ curl -X DELETE \
 }
 ```
 
-## 依MLInstance ID刪除實驗
+## 按MLInstance ID删除试验
 
-您可以執行包含MLInstance ID作為查詢引數的DELETE要求，以刪除屬於特定MLInstance的所有實驗。
+通过执行包含MLInstance ID作为查询参数的DELETE请求，可以删除属于特定MLInstance的所有试验。
 
 **API格式**
 

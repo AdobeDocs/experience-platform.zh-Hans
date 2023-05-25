@@ -1,5 +1,5 @@
 ---
-description: 此頁面說明從Adobe Experience Platform匯出至目的地的資料中的訊息格式和設定檔轉換。
+description: 本页介绍了从Adobe Experience Platform导出到目标的数据中的消息格式和用户档案转换。
 title: 消息格式
 source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
 workflow-type: tm+mt
@@ -11,43 +11,43 @@ ht-degree: 1%
 
 # 消息格式
 
-## 先決條件 — Adobe Experience Platform概念 {#prerequisites}
+## 先决条件 — Adobe Experience Platform概念 {#prerequisites}
 
-若要瞭解Adobe端的訊息格式及設定檔設定和轉換程式，請熟悉下列Experience Platform概念：
+要了解Adobe端的报文格式以及用户档案配置和转换过程，请熟悉以下Experience Platform概念：
 
-* **體驗資料模型(XDM)**. [XDM概觀](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中建立XDM結構描述](../../../../xdm/tutorials/create-schema-ui.md).
-* **类**. [在UI中建立和編輯類別](../../../../xdm/ui/resources/classes.md).
-* **身分對應**. 身分對應代表Adobe Experience Platform中所有一般使用者身分的對應。 請參閱 `xdm:identityMap` 在 [XDM欄位字典](../../../../xdm/schema/field-dictionary.md).
-* **SegmentMembership**. 此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM屬性會通知設定檔是哪些區段的成員。 對於 `status` 欄位，請閱讀以下檔案： [區段會籍詳細資料結構描述欄位群組](../../../../xdm/field-groups/profile/segmentation.md).
+* **体验数据模型(XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
+* **类**. [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md).
+* **Identitymap**. 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅 `xdm:identityMap` 在 [XDM字段字典](../../../../xdm/schema/field-dictionary.md).
+* **区段成员资格**. 此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的区段。 对于 `status` 字段，请阅读相关文档 [“区段成员资格详细信息”架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
->Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
 
-## 支援的整合型別 {#supported-integration-types}
+## 支持的集成类型 {#supported-integration-types}
 
-請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
+有关哪些类型的集成支持此页面上描述的功能，请参阅下表。
 
-| 整合型別 | 支援功能 |
+| 集成类型 | 支持功能 |
 |---|---|
-| 即時（串流）整合 | 是 |
-| 檔案式（批次）整合 | 是（只有下圖中的步驟1和2） |
+| 实时（流）集成 | 是 |
+| 基于文件（批处理）的集成 | 是（下面图中仅步骤1和2） |
 
 ## 概述 {#overview}
 
-此頁面說明從Adobe Experience Platform匯出至目的地的資料中的訊息格式和設定檔轉換。
+本页介绍了从Adobe Experience Platform导出到目标的数据中的消息格式和用户档案转换。
 
-Adobe Experience Platform會以各種資料格式，將資料匯出至許多目的地。 目的地型別的一些範例為廣告平台(Google)、社交網路(Facebook)和雲端儲存位置(Amazon S3、Azure事件中樞)。
+Adobe Experience Platform以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置(Amazon S3、Azure事件中心)。
 
-Experience Platform可以調整匯出設定檔的訊息格式，以符合您側的預期格式。 若要瞭解此自訂，請務必注意下列概念：
+Experience Platform可以调整导出用户档案的消息格式，以与您这边的预期格式匹配。 要了解此自定义设置，请务必注意以下概念：
 
-* Adobe Experience Platform中的來源(1)和目標(2) XDM結構
-* 合作夥伴端的預期訊息格式(3)，以及
-* XDM結構描述和預期訊息格式之間的轉換層，您可透過建立 [訊息轉換範本](#using-templating).
+* Adobe Experience Platform中的源(1)和目标(2) XDM架构
+* 合作伙伴端的预期消息格式(3)，以及
+* XDM架构和预期消息格式之间的转换层，您可以通过创建 [消息转换模板](#using-templating).
 
-![結構描述到JSON的轉換](../../assets/functionality/destination-server/transformations-3-steps.png)
+![架构到JSON的转换](../../assets/functionality/destination-server/transformations-3-steps.png)
 
-Experience Platform使用XDM結構描述，以一致且可重複使用的方式描述資料結構。
+Experience Platform使用XDM架构以一致且可重用的方式描述数据结构。
 
 <!--
 
@@ -55,25 +55,25 @@ Users who want to activate data to your destination need to map the fields in th
 
 -->
 
-**來源XDM結構描述(1)**：此專案是指客戶在Experience Platform中使用的結構描述。 在Experience Platform中、在 [對應步驟](../../../ui/activate-segment-streaming-destinations.md#mapping) 在啟用目的地工作流程中，客戶會將欄位從其XDM結構描述對應到您目的地的目標結構描述(2)。
+**源XDM架构(1)**：此项目是指客户在Experience Platform中使用的架构。 在Experience Platform中，在 [映射步骤](../../../ui/activate-segment-streaming-destinations.md#mapping) 在激活目标工作流中，客户将字段从其XDM架构映射到目标的目标架构(2)。
 
-**目標XDM結構描述(2)**：根據目的地預期格式的JSON標準結構描述(3)和目的地可解譯的屬性，您可以在目標XDM結構描述中定義設定檔屬性和身分。 您可以在目的地設定的下列位置執行此操作： [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) 和 [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) 物件。
+**目标XDM架构(2)**：根据目标预期格式的JSON标准架构(3)以及目标可以解释的属性，您可以在目标XDM架构中定义配置文件属性和身份。 您可以在目标配置中执行此操作，只需在 [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) 和 [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) 对象。
 
-**目的地設定檔屬性的JSON標準結構描述(3)**：此範例代表 [JSON結構](https://json-schema.org/learn/miscellaneous-examples.html) 平台支援的所有設定檔屬性及其型別（例如：物件、字串、陣列）。 目的地可支援的範例欄位 `firstName`， `lastName`， `gender`， `email`， `phone`， `productId`， `productName`、等等。 您需要 [訊息轉換範本](#using-templating) 量身打造資料匯出Experience Platform後的預期格式。
+**目标配置文件属性的JSON标准架构(3)**：此示例表示 [JSON架构](https://json-schema.org/learn/miscellaneous-examples.html) 平台支持的所有配置文件属性及其类型（例如：对象、字符串、数组）。 您的目标可能支持的示例字段 `firstName`， `lastName`， `gender`， `email`， `phone`， `productId`， `productName`，等等。 您需要一个 [消息转换模板](#using-templating) 定制导出为Experience Platform的数据以符合您的预期格式。
 
-根據上述結構描述轉換，以下說明來源XDM結構描述和合作夥伴端範例結構描述之間的設定檔設定如何變更：
+基于上述架构转换，下面介绍了配置文件配置如何在源XDM架构和合作伙伴端的示例架构之间发生更改：
 
-![轉換訊息範例](../../assets/functionality/destination-server/transformations-with-examples.png)
+![转换消息示例](../../assets/functionality/destination-server/transformations-with-examples.png)
 
-## 快速入門 — 轉換三個基本屬性 {#getting-started}
+## 入门 — 转换三个基本属性 {#getting-started}
 
-為了示範設定檔轉換程式，以下範例使用Adobe Experience Platform中的三個常見設定檔屬性： **名字**， **姓氏**、和 **電子郵件地址**.
+为了演示配置文件转换过程，以下示例在Adobe Experience Platform中使用了三个常见的配置文件属性： **名字**， **姓氏**、和 **电子邮件地址**.
 
 >[!NOTE]
 >
->客戶將屬性從來源XDM結構描述對應到Adobe Experience Platform UI中的合作夥伴XDM結構描述，在 **對應** 步驟 [啟用目的地工作流程](../../../ui/activate-segment-streaming-destinations.md#mapping).
+>客户将属性从源XDM架构映射到Adobe Experience Platform UI中的合作伙伴XDM架构，在 **映射** 的步骤 [激活目标工作流](../../../ui/activate-segment-streaming-destinations.md#mapping).
 
-假設您的平台可以接收如下的訊息格式：
+假设您的平台可以接收如下消息格式：
 
 ```shell
 POST https://YOUR_REST_API_URL/users/
@@ -90,9 +90,9 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-考慮訊息格式，對應的轉換如下：
+考虑到报文格式，相应的转换如下：
 
-| Adobe端的合作夥伴XDM結構描述中的屬性 | 轉換 | 您這邊HTTP訊息中的屬性 |
+| Adobe端的合作伙伴XDM架构中的属性 | 转换 | 您这边HTTP消息中的属性 |
 |---------|----------|---------|
 | `_your_custom_schema.firstName` | ` attributes.first_name` | `first_name` |
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
@@ -100,23 +100,23 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 {style="table-layout:auto"}
 
-## Experience Platform中的設定檔結構 {#profile-structure}
+## Experience Platform中的配置文件结构 {#profile-structure}
 
-若要進一步瞭解頁面上下方的範例，請務必瞭解Experience Platform中的設定檔結構。
+要进一步了解页面上下面的示例，请务必了解Experience Platform中配置文件的结构。
 
-設定檔有3個區段：
+配置文件包含3个部分：
 
-* `segmentMembership` （永遠出現在設定檔上）
-   * 本節包含存在於設定檔上的所有區段。 區段可以有兩種狀態之一： `realized` 或 `exited`.
-* `identityMap` （永遠出現在設定檔上）
-   * 本節包含設定檔上存在的所有身分識別(電子郵件、Google GAID、Apple IDFA等)，以及使用者在啟動工作流程中對應以匯出的身分識別。
-* 屬性（視目的地設定而定，這些屬性可能存在於設定檔中）。 預先定義的屬性與自由格式屬性之間也有細微的差異：
-   * 的 *自由格式屬性*，這些內含 `.value` 路徑（如果屬性出現在設定檔上） (請參閱 `lastName` 屬性（來自範例1）。 如果設定檔上沒有這些變數，則不會包含 `.value` 路徑(請參閱 `firstName` 屬性（來自範例1）。
-   * 的 *預先定義的屬性*，這些不包含 `.value` 路徑。 所有存在於設定檔上的對應屬性都會出現在屬性對應中。 不會出現不存在的專案(請參閱範例2 - `firstName` 屬性不存在於設定檔上)。
+* `segmentMembership` （始终显示在配置文件上）
+   * 此部分包含用户档案中存在的所有区段。 区段可以具有以下两种状态之一： `realized` 或 `exited`.
+* `identityMap` （始终显示在配置文件上）
+   * 此部分包含用户档案中存在的所有身份(电子邮件、Google GAID、Apple IDFA等)，以及映射为在激活工作流中导出的用户。
+* 属性（根据目标配置，这些属性可能存在于配置文件中）。 要注意的是，预定义属性和自由格式属性之间也存在一些差异：
+   * 对象 *自由格式属性*，这些包含 `.value` 路径（如果属性存在于配置文件中）(请参阅 `lastName` 属性（示例1）。 如果它们不存在于配置文件中，则不会包含 `.value` 路径(请参阅 `firstName` 属性（示例1）。
+   * 对象 *预定义属性*，这些不包含 `.value` 路径。 配置文件中存在的所有映射属性都将出现在属性映射中。 不存在的ID(请参阅示例2 - `firstName` 属性在配置文件中不存在)。
 
-請參閱以下兩個Experience Platform設定檔範例：
+请参阅下面两个Experience Platform配置文件示例：
 
-### 範例1，具有 `segmentMembership`， `identityMap` 自由格式屬性的和屬性 {#example-1}
+### 示例1，带有 `segmentMembership`， `identityMap` 自由格式属性的和属性 {#example-1}
 
 ```json
 {
@@ -145,7 +145,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-### 範例2，具有 `segmentMembership`， `identityMap` 預先定義屬性的和屬性 {#example-2}
+### 示例2，带有 `segmentMembership`， `identityMap` 预定义属性的和属性 {#example-2}
 
 ```json
 {
@@ -170,28 +170,28 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-## 使用範本語言進行身分、屬性和區段成員資格轉換 {#using-templating}
+## 使用模板语言进行身份、属性和区段成员资格转换 {#using-templating}
 
-Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](https://jinja.palletsprojects.com/en/2.11.x/)，將欄位從Experience PlatformXDM結構描述轉換為目的地支援的格式。
+Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语言，类似于 [金家](https://jinja.palletsprojects.com/en/2.11.x/)，以将字段从Experience PlatformXDM架构转换为目标支持的格式。
 
-本節提供如何進行這些轉換的數個範例 — 從輸入XDM結構描述，透過範本，以及輸出為目的地接受的裝載格式。 透過增加複雜性來呈現以下範例，如下所示：
+此部分提供了如何进行这些转换的几个示例 — 从输入XDM架构，通过模板，以及输出到目标接受的有效负载格式。 以下示例通过提高复杂性提供，如下所示：
 
-1. 簡單轉換範例。 瞭解範本化如何與的簡單轉換搭配運作 [設定檔屬性](#attributes)， [區段會籍](#segment-membership)、和 [身分](#identities) 欄位。
-2. 結合上述欄位的範本範例複雜性增加： [建立可傳送區段和身分的範本](./message-format.md#segments-and-identities) 和 [建立可傳送區段、身分和設定檔屬性的範本](#segments-identities-attributes).
-3. 包含彙總索引鍵的範本。 當您使用 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目標設定中，Experience Platform會根據區段ID、區段狀態或身分名稱空間等條件，將匯出至目標的設定檔分組。
+1. 简单转换示例。 了解模板化如何与的简单转换一起使用 [配置文件属性](#attributes)， [区段成员资格](#segment-membership)、和 [身份](#identities) 字段。
+2. 将上述字段组合在一起的模板的复杂性增加： [创建发送区段和标识的模板](./message-format.md#segments-and-identities) 和 [创建用于发送区段、身份和配置文件属性的模板](#segments-identities-attributes).
+3. 包含聚合键的模板。 当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，Experience Platform根据区段ID、区段状态或身份命名空间等条件对导出到目标的用户档案进行分组。
 
-### 設定檔屬性 {#attributes}
+### 配置文件属性 {#attributes}
 
-若要轉換匯出至目的地的設定檔屬性，請參閱以下的JSON和程式碼範例。
+要转换导出到目标的配置文件属性，请参阅下面的JSON和代码示例。
 
 >[!IMPORTANT]
 >
->如需Adobe Experience Platform中所有可用設定檔屬性的清單，請參閱 [XDM欄位字典](../../../../xdm/schema/field-dictionary.md).
+>有关Adobe Experience Platform中所有可用配置文件属性的列表，请参阅 [XDM字段字典](../../../../xdm/schema/field-dictionary.md).
 
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -204,7 +204,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -223,7 +223,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -265,12 +265,12 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 ### 区段会员资格 {#segment-membership}
 
-此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM屬性會通知設定檔是哪些區段的成員。
-對於 `status` 欄位，請閱讀以下檔案： [區段會籍詳細資料結構描述欄位群組](../../../../xdm/field-groups/profile/segmentation.md).
+此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的区段。
+对于 `status` 字段，请阅读相关文档 [“区段成员资格详细信息”架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -293,7 +293,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -320,7 +320,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 
 ```python
@@ -380,11 +380,11 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 ### 标识 {#identities}
 
-如需Experience Platform中身分的相關資訊，請參閱 [身分名稱空間總覽](../../../../identity-service/namespaces.md).
+有关Experience Platform中标识的信息，请参见 [身份命名空间概述](../../../../identity-service/namespaces.md).
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -406,7 +406,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -424,7 +424,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -490,14 +490,14 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-### 建立可傳送區段和身分的範本 {#segments-and-identities}
+### 创建发送区段和标识的模板 {#segments-and-identities}
 
-本節提供AdobeXDM結構描述和合作夥伴目的地結構描述之間常用轉換的範例。
-以下範例說明如何轉換區段會籍和身分格式，並將其輸出至您的目的地。
+本节提供了AdobeXDM架构和合作伙伴目标架构之间常用转换的示例。
+以下示例说明如何转换区段成员资格和身份格式并将它们输出到您的目标。
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -535,7 +535,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -561,7 +561,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -609,7 +609,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 **结果**
 
-此 `json` 以下表示從Adobe Experience Platform匯出的資料。
+此 `json` 以下表示从Adobe Experience Platform中导出的数据。
 
 ```json
 {
@@ -657,15 +657,15 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-### 建立可傳送區段、身分和設定檔屬性的範本 {#segments-identities-attributes}
+### 创建用于发送区段、身份和配置文件属性的模板 {#segments-identities-attributes}
 
-本節提供AdobeXDM結構描述和合作夥伴目的地結構描述之間常用轉換的範例。
+本节提供了AdobeXDM架构和合作伙伴目标架构之间常用转换的示例。
 
-另一個常見的使用案例是匯出包含區段會籍、身分（例如：電子郵件地址、電話號碼、廣告ID）和個人資料屬性的資料。 若要以此方式匯出資料，請參閱下列範例：
+另一个常见用例是导出包含区段成员资格、身份（例如：电子邮件地址、电话号码、广告ID）和配置文件属性的数据。 要以这种方式导出数据，请参阅以下示例：
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -709,7 +709,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -743,7 +743,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -801,7 +801,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 **结果**
 
-此 `json` 以下表示從Adobe Experience Platform匯出的資料。
+此 `json` 以下表示从Adobe Experience Platform中导出的数据。
 
 ```json
 {
@@ -857,25 +857,25 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-### 在您的範本中包含彙總金鑰，以存取按不同條件分組的匯出設定檔 {#template-aggregation-key}
+### 在模板中包含Aggregation Key以访问按各种标准分组的导出用户档案 {#template-aggregation-key}
 
-當您使用 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目標設定中，您可以根據區段ID、區段別名、區段會籍或身分名稱空間等條件，將匯出至目標的設定檔分組。
+当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，您可以根据区段ID、区段别名、区段成员资格或身份命名空间等条件，对导出到目标的配置文件进行分组。
 
-在訊息轉換範本中，您可以存取上述彙總索引鍵，如下列各節的範例所示。 使用彙總金鑰來建構匯出為Experience Platform的HTTP訊息，以符合目的地預期的格式和速率限制。
+在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造导出为Experience Platform的HTTP消息，以匹配目标预期的格式和速率限制。
 
-#### 在範本中使用區段ID彙總金鑰 {#aggregation-key-segment-id}
+#### 在模板中使用区段ID聚合密钥 {#aggregation-key-segment-id}
 
-如果您使用 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 並設定 `includeSegmentId` 若設為true，則匯出至目的地的HTTP訊息中的設定檔會依區段ID分組。 請參閱以下說明如何存取範本中的區段ID。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 如果设置为true，则导出到目标的HTTP消息中的用户档案将按区段ID进行分组。 请参阅以下内容，了解如何在模板中访问区段ID。
 
-**輸入**
+**输入**
 
-請考量下列四個設定檔，其中：
+请考虑以下四个配置文件，其中：
 
-* 前兩個是具有區段ID的區段的一部分 `788d8874-8007-4253-92b7-ee6b6c20c6f3`
-* 第三個設定檔是具有區段ID的區段的一部分 `8f812592-3f06-416b-bd50-e7831848a31a`
-* 第四個設定檔是上述兩個區段的一部分。
+* 前两个是具有区段ID的区段的一部分 `788d8874-8007-4253-92b7-ee6b6c20c6f3`
+* 第三个配置文件是具有区段ID的区段的一部分 `8f812592-3f06-416b-bd50-e7831848a31a`
+* 第四个配置文件是上述两个区段的一部分。
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -895,7 +895,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -915,7 +915,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔3：
+配置文件3：
 
 ```json
 {
@@ -935,7 +935,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-設定檔4：
+配置文件4：
 
 ```json
 {
@@ -963,9 +963,9 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-請注意以下方式 `audienceId` 用於範本中存取區段ID。 此範例假設您使用 `audienceId` 目的地分類法中的區段會籍。 您可以改用任何其他欄位名稱，視您自己的分類法而定。
+请注意以下方式 `audienceId` 在模板中用于访问区段ID。 此示例假定您使用 `audienceId` 目标分类中的区段成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
 
 ```python
 {
@@ -982,7 +982,7 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 
 **结果**
 
-將設定檔匯出至目的地時，會根據其區段ID將設定檔分割為兩個群組。
+导出到目标时，用户档案会根据其区段ID拆分为两个组。
 
 ```json
 {
@@ -1015,39 +1015,39 @@ Adobe使用 [Pebble範本](https://pebbletemplates.io/)，類似於 [金家](htt
 }
 ```
 
-#### 在範本中使用區段別名彙總金鑰 {#aggregation-key-segment-alias}
+#### 在模板中使用区段别名聚合密钥 {#aggregation-key-segment-alias}
 
-如果您使用 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 並設定 `includeSegmentId` 若設為true，您也可以在範本中存取區段別名。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 设置为true时，您还可以访问模板中的区段别名。
 
-將以下行新增至範本，以存取按區段別名分組的匯出設定檔。
+将以下行添加到模板，以访问按区段别名分组的导出用户档案。
 
 ```python
 customerList={{input.aggregationKey.segmentAlias}}
 ```
 
-#### 在範本中使用區段狀態彙總索引鍵 {#aggregation-key-segment-status}
+#### 在模板中使用区段状态聚合密钥 {#aggregation-key-segment-status}
 
-如果您使用 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 並設定 `includeSegmentId` 和 `includeSegmentStatus` 若設為true，則您可存取範本中的區段狀態。 如此一來，您就可以根據應從區段新增還是移除設定檔，將匯出至目的地的HTTP訊息中的設定檔分組。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 和 `includeSegmentStatus` 设置为true时，您可以访问模板中的区段状态。 这样，您可以根据是否应从区段添加或删除用户档案，对导出到目标的HTTP消息中的用户档案进行分组。
 
 可能的值包括：
 
-* 已實現
-* 現有
+* 已实现
+* 现有
 * 已退出
 
-根據上述值，將以下行新增至範本，以在區段中新增或移除設定檔：
+根据上述值，将以下行添加到模板中以添加或从区段中删除配置文件：
 
 ```python
 action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}
 ```
 
-#### 在範本中使用身分名稱空間彙總金鑰 {#aggregation-key-identity}
+#### 在模板中使用身份命名空间聚合密钥 {#aggregation-key-identity}
 
-以下範例說明 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目的地設定中，已設定為以表單依身分名稱空間彙總匯出的設定檔 `"namespaces": ["email", "phone"]` 和 `"namespaces": ["GAID", "IDFA"]`. 請參閱 `groups` 中的引數 [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md) 說明檔案，以取得有關分組的更多詳細資料。
+以下是一个示例，其中 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，设置为在表单中按身份命名空间聚合导出的用户档案 `"namespaces": ["email", "phone"]` 和 `"namespaces": ["GAID", "IDFA"]`. 请参阅 `groups` 中的参数 [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md) 文档，以了解有关分组的更多详细信息。
 
-**輸入**
+**输入**
 
-設定檔1：
+配置文件1：
 
 ```json
 {
@@ -1079,7 +1079,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 }
 ```
 
-設定檔2：
+配置文件2：
 
 ```json
 {
@@ -1115,9 +1115,9 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 >[!IMPORTANT]
 >
->對於您使用的所有範本，您必須逸出非法字元，例如雙引號 `""` 插入之前 [範本](../../functionality/destination-server/templating-specs.md) 在 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 如需有關逸出雙引號的詳細資訊，請參閱 [JSON標準](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
+>对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-請注意 `input.aggregationKey.identityNamespaces` 用於以下的範本中
+请注意 `input.aggregationKey.identityNamespaces` 在下面的模板中使用
 
 ```python
 {
@@ -1139,7 +1139,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 **结果**
 
-將設定檔匯出至目的地時，會根據其身分名稱空間將設定檔分割為兩個群組。 電子郵件和電話位於一個群組中，而GAID和IDFA位於另一個群組中。
+导出到目标时，用户档案会根据其身份命名空间拆分为两个组。 电子邮件和电话位于一个组中，而GAID和IDFA位于另一个组中。
 
 ```json
 {
@@ -1189,40 +1189,40 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 }
 ```
 
-#### 在URL範本中使用彙總金鑰 {#aggregation-key-url-template}
+#### 在URL模板中使用聚合密钥 {#aggregation-key-url-template}
 
-視您的使用案例而定，您也可以在URL中使用這裡所述的彙總索引鍵，如下所示：
+根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
 
 ```python
 https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 ```
 
-### 參考資料：轉換範本中使用的內容與函式 {#reference}
+### 引用：转换模板中使用的上下文和函数 {#reference}
 
-提供給範本的內容包含 `input`  （此呼叫中匯出的設定檔/資料）和 `destination` (有關Adobe將資料傳送至的目的地資料，對所有設定檔都有效)。
+提供给模板的上下文包含 `input`  （此调用中导出的用户档案/数据）和 `destination` (有关Adobe将数据发送到的目标的数据，对所有配置文件有效)。
 
-下表提供上述範例中函式的說明。
+下表提供了上述示例中函数的说明。
 
 | 函数 | 描述 |
 |---------|----------|
-| `input.profile` | 設定檔，表示為 [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). 遵循本頁前面提到的合作夥伴XDM結構描述。 |
-| `destination.segmentAliases` | 從Adobe Experience Platform名稱空間中的區段ID對應至合作夥伴系統中的區段別名。 |
-| `destination.segmentNames` | 從Adobe Experience Platform名稱空間中的區段名稱對應到合作夥伴系統中的區段名稱。 |
-| `addedSegments(listOfSegments)` | 僅傳回具有狀態的區段 `realized`. |
-| `removedSegments(listOfSegments)` | 僅傳回具有狀態的區段 `exited`. |
+| `input.profile` | 用户档案，表示为 [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). 遵循本页前面提到的合作伙伴XDM架构。 |
+| `destination.segmentAliases` | 从Adobe Experience Platform命名空间中的区段ID映射到合作伙伴系统中的区段别名。 |
+| `destination.segmentNames` | 从Adobe Experience Platform命名空间中的区段名称映射到合作伙伴系统中的区段名称。 |
+| `addedSegments(listOfSegments)` | 仅返回具有状态的区段 `realized`. |
+| `removedSegments(listOfSegments)` | 仅返回具有状态的区段 `exited`. |
 
 {style="table-layout:auto"}
 
 ## 后续步骤 {#next-steps}
 
-閱讀本檔案後，您現在瞭解從Experience Platform匯出的資料如何轉換。 接下來，請閱讀下列頁面，以完整瞭解如何為目的地建立訊息轉換範本：
+阅读本文档后，您现在知道如何转换从Experience Platform中导出的数据。 接下来，请阅读以下页面，以了解有关为目标创建消息转换模板的知识：
 
-* [建立及測試訊息轉換範本](../../testing-api/streaming-destinations/create-template.md)
-* [演算範本API作業](../../testing-api/streaming-destinations/render-template-api.md)
-* [Destination SDK中支援的轉換函式](../destination-server/supported-functions.md)
+* [创建和测试消息转换模板](../../testing-api/streaming-destinations/create-template.md)
+* [渲染模板API操作](../../testing-api/streaming-destinations/render-template-api.md)
+* [Destination SDK中支持的转换函数](../destination-server/supported-functions.md)
 
-若要深入瞭解其他目的地伺服器元件，請參閱下列文章：
+要了解有关其他目标服务器组件的更多信息，请参阅以下文章：
 
-* [以Destination SDK建立的目的地的伺服器規格](server-specs.md)
-* [範本規格](templating-specs.md)
-* [檔案格式設定](file-formatting.md)
+* [使用Destination SDK创建的目标的服务器规范](server-specs.md)
+* [模板规范](templating-specs.md)
+* [文件格式配置](file-formatting.md)

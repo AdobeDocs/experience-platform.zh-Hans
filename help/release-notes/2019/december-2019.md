@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2019年12月
-description: Adobe Experience Platform的2019年12月發行說明。
+title: Adobe Experience Platform发行说明2019年12月
+description: Adobe Experience Platform 2019年12月版发行说明。
 doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 # Adobe Experience Platform 发行说明
 
-**發行日期： 2019年12月11日**
+**发行日期： 2019年12月11日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -25,32 +25,32 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform Segmentation Service提供使用者介面和RESTful API，可讓您建立區段並從 [!DNL Real-Time Customer Profile] 資料。 這些區段會集中設定並維護於 [!DNL Platform]，讓任何Adobe應用程式都能輕鬆存取。
+Adobe Experience Platform Segmentation Service提供了一个用户界面和RESTful API，允许您从构建区段和生成受众。 [!DNL Real-Time Customer Profile] 数据。 这些区段集中配置并维护于 [!DNL Platform]，便于任何Adobe应用程序访问。
 
-[!DNL Segmentation Service] 透過描述可區分客戶群內可銷售人員群組的條件，來定義設定檔的特定子集。 區段能以記錄資料（例如人口資訊）或代表客戶與品牌互動的時間序列事件為基礎。
+[!DNL Segmentation Service] 通过描述用于区分客户群内可销售人员组的标准，来定义用户档案的特定子集。 区段可以基于记录数据（例如人口统计信息）或表示客户与您的品牌互动的时间系列事件。
 
 **新增功能**
 
 | 功能 | 描述 |
 |--- | ---|
-| 「合併的對象」索引標籤位於 [!DNL Segment Builder] | 此 [!UICONTROL 區段] 和 [!UICONTROL 受眾] 索引標籤 [!DNL Segment Builder] 已合併到單一 [!UICONTROL 受眾] 標籤。 此索引標籤可讓您瀏覽及搜尋現有對象，然後將其拖放至規則產生器畫布中以建立新的區段定義。 參照對象可將下列規則邏輯集合之一新增至新的區段定義：對象成員資格如規則，定義參照對象的完整規則邏輯集合。 |
-| 合併原則選擇器的新位置 | 中合併原則選擇器的位置 [!DNL Segment Builder] 已變更。 若要選取區段定義的合併原則，請選取 **[!UICONTROL 欄位]** 標籤，然後使用 **[!UICONTROL 合併原則]** 下拉式選單，以選取您要使用的合併原則。 |
+| 中的“合并的受众”选项卡 [!DNL Segment Builder] | 此 [!UICONTROL 区段] 和 [!UICONTROL 受众] 选项卡位于 [!DNL Segment Builder] 已合并为一个 [!UICONTROL 受众] 选项卡。 利用此选项卡，可浏览和搜索现有受众，然后将其拖放到规则生成器画布中以创建新的区段定义。 引用受众可以向新区段定义添加以下规则逻辑集之一：受众成员资格作为规则，定义引用受众的完整规则逻辑集。 |
+| 合并策略选择器的新位置 | 合并策略选择器在 [!DNL Segment Builder] 已更改。 要为区段定义选择合并策略，请选择 **[!UICONTROL 字段]** 选项卡，然后使用 **[!UICONTROL 合并策略]** 下拉菜单选择要使用的合并策略。 |
 
 **已知问题**
 
 * None
 
-如需詳細資訊，請參閱 [Segmentation Service概述](../../segmentation/home.md).
+欲知更多信息，请参见 [分段服务概述](../../segmentation/home.md).
 
 ## [!DNL Decisioning Service] {#decisioning}
 
-Adobe Experience Platform [!DNL Decisioning Service] 提供以程式設計方式、聰明地從特定個人的一組可用選項中選取「下一個最佳體驗」的功能，將其傳送至任何管道或應用程式，以及執行報告和分析。
+Adobe Experience Platform [!DNL Decisioning Service] 提供以下能力：以编程方式智能地从给定个人的一组可用选项中选择“下一个最佳体验”，将其交付到任何渠道或应用程序，以及执行报告和分析。
 
 **新增功能**
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 排名函式 | 設定檔的優惠方案順序現在透過排名函式衍生，而不是所有設定檔的固定優惠方案集。 |
+| 排名函数 | 现在，用户档案的优惠顺序是通过排名函数派生的，而不是通过所有用户档案中的固定优惠集派生的。 |
 
 **已知问题**
 
@@ -58,42 +58,42 @@ Adobe Experience Platform [!DNL Decisioning Service] 提供以程式設計方式
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可從外部來源內嵌資料，同時允許您使用建構、加標籤及增強該資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe解決方案、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用来构建、标记和增强这些数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證儲存系統和CRM服務、設定擷取執行時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您对存储系统和CRM服务进行身份验证，设置引入运行的时间，并管理数据引入吞吐量。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ---------- | ------------ |
-| 串流連線 | 串流擷取可讓您從使用者端和伺服器端裝置傳送資料至 [!DNL Experience Platform] 即時。 此版本包含新的串流連線使用者介面。 |
-| 的聯結器支援 [!DNL Google Cloud Store] | 支援從收集資料 [!DNL Google Cloud Store]. |
+| 流连接 | 流式摄取允许您将数据从客户端和服务器端设备发送到 [!DNL Experience Platform] 实时。 此版本包括新的流连接用户界面。 |
+| 连接器支持 [!DNL Google Cloud Store] | 支持从中收集数据 [!DNL Google Cloud Store]. |
 
 **已知问题**
 
 * None.
 
-如需來源的詳細資訊，請參閱 [來源概觀](../../sources/home.md).
+有关源的更多信息，请参见 [源概述](../../sources/home.md).
 
-## [!DNL Experience Data Model] (XDM)系統 {#xdm}
+## [!DNL Experience Data Model] (XDM)系统 {#xdm}
 
-標準化和互用性是背後的重要概念 [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM)以Adobe為導向，致力於標準化客戶體驗資料並定義客戶體驗管理的結構。
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM)由Adobe驱动，致力于标准化客户体验数据并定义用于客户体验管理的架构。
 
-XDM是公開記錄的規格，旨在改善數位體驗的力量。 它為任何應用程式提供通用結構和定義，以便與Adobe Experience Platform上的服務通訊。 藉由遵守XDM標準，所有客戶體驗資料都可以整合到通用表示中，以更快、更整合的方式提供深入分析。 您可以從客戶動作獲得有價值的深入分析、透過區段定義客戶對象，以及使用客戶屬性進行個人化。
+XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Adobe Experience Platform上的服务进行通信。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 |--- | ---|
-| 改善的結構描述驗證 | 新檢查可確保參考按預期解析為其他欄位。 新增其他檢查至定義為物件陣列的欄位，以確保物件已完全定義。 改善錯誤訊息，以協助識別及修正問題。 |
+| 改进了架构验证 | 新检查可确保引用按预期解析为其他字段。 向定义为对象数组的字段添加了其他检查，以确保完全定义了对象。 改进了错误消息，以帮助识别和修复问题。 |
 
 **错误修复**
 
-* 與存取控制和沙箱相關的維護和改善。
-* 支援 `eTag` 的 `/descriptors` 中的端點 [!DNL Schema Registry] API。
+* 与访问控制和沙盒相关的维护和改进。
+* 支持 `eTag` 对于 `/descriptors` 中的端点 [!DNL Schema Registry] API。
 
 **已知问题**
 
 * None
 
-若要進一步瞭解如何使用XDM [!DNL Schema Registry] API和 [!DNL Schema Editor] 使用者介面，請閱讀 [XDM系統檔案](../../xdm/home.md).
+要了解有关使用XDM的更多信息，请使用 [!DNL Schema Registry] API和 [!DNL Schema Editor] 用户界面，请阅读 [XDM系统文档](../../xdm/home.md).

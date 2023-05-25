@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Microsoft Dynamics；microsoft dynamics；Dynamics；Dynamics
+keywords: Experience Platform；主页；热门主题；Microsoft Dynamics；Microsoft Dynamics；Dynamics；Dynamics
 solution: Experience Platform
-title: 使用Flow Service API建立Microsoft Dynamics基本連線
+title: 使用流服务API创建Microsoft Dynamics基本连接
 type: Tutorial
-description: 瞭解如何使用Flow Service API將Platform連線至Microsoft Dynamics帳戶。
+description: 了解如何使用Flow Service API将Platform连接到Microsoft Dynamics帐户。
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,49 +12,49 @@ ht-degree: 2%
 
 ---
 
-# 建立 [!DNL Microsoft Dynamics] 基礎連線使用 [!DNL Flow Service] API
+# 创建 [!DNL Microsoft Dynamics] 基本连接使用 [!DNL Flow Service] API
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Microsoft Dynamics] (以下稱&quot;[!DNL Dynamics]&quot;)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Microsoft Dynamics] (以下简称“ ”[!DNL Dynamics]&quot;)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您需要瞭解的其他資訊，才能使用成功將Platform連線至Dynamics帳戶 [!DNL Flow Service] API。
+以下部分提供了使用Platform成功连接到Dynamics帐户时需要了解的其他信息 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線到 [!DNL Dynamics]，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 以连接到 [!DNL Dynamics]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `serviceUri` | 您的服務URL [!DNL Dynamics] 執行個體。 |
-| `username` | 您的使用者名稱 [!DNL Dynamics] 使用者帳戶。 |
-| `password` | 您的密碼 [!DNL Dynamics] 帳戶。 |
-| `servicePrincipalId` | 您的使用者端識別碼 [!DNL Dynamics] 帳戶。 使用服務主體和金鑰式驗證時，需要此ID。 |
-| `servicePrincipalKey` | 服務主體秘密金鑰。 使用服務主體和基於金鑰的驗證時，需要此認證。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Dynamics] 為： `38ad80fe-8b06-4938-94f4-d4ee80266b07`. |
+| `serviceUri` | 您的服务URL [!DNL Dynamics] 实例。 |
+| `username` | 的用户名 [!DNL Dynamics] 用户帐户。 |
+| `password` | 您的密码 [!DNL Dynamics] 帐户。 |
+| `servicePrincipalId` | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
+| `servicePrincipalKey` | 服务主体密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Dynamics] 为： `38ad80fe-8b06-4938-94f4-d4ee80266b07`. |
 
-如需開始使用的詳細資訊，請造訪 [此 [!DNL Dynamics] 檔案](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
+有关入门的详细信息，请访问 [此 [!DNL Dynamics] 文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL Dynamics] 要求引數中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Dynamics] 作为请求参数一部分的身份验证凭据。
 
-### 建立 [!DNL Dynamics] 使用基本驗證的基本連線
+### 创建 [!DNL Dynamics] 使用基本身份验证的基本连接
 
-若要建立 [!DNL Dynamics] 使用基本驗證的基礎連線，向發出POST要求 [!DNL Flow Service] API同時為您的連線提供值 `serviceUri`， `username`、和 `password`.
+创建 [!DNL Dynamics] POST基本连接使用基本身份验证，向 [!DNL Flow Service] API，同时为您的连接的提供值 `serviceUri`， `username`、和 `password`.
 
 **API格式**
 
@@ -92,14 +92,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.serviceUri` | 與您的關聯的服務URI [!DNL Dynamics] 執行個體。 |
-| `auth.params.username` | 與您的相關聯的使用者名稱 [!DNL Dynamics] 帳戶。 |
-| `auth.params.password` | 與您的關聯的密碼 [!DNL Dynamics] 帳戶。 |
-| `connectionSpec.id` | 此 [!DNL Dynamics] 連線規格ID： `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
+| `auth.params.serviceUri` | 与您的关联的服务URI [!DNL Dynamics] 实例。 |
+| `auth.params.username` | 与您的关联的用户名 [!DNL Dynamics] 帐户。 |
+| `auth.params.password` | 与您的关联的密码 [!DNL Dynamics] 帐户。 |
+| `connectionSpec.id` | 此 [!DNL Dynamics] 连接规范ID： `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
 **响应**
 
-成功回應會傳回新建立的連線，包括其唯一識別碼(`id`)。 在下一個步驟中探索您的CRM系統時，需要此ID。
+成功响应将返回新创建的连接，包括其唯一标识符(`id`)。 在下一步中浏览您的CRM系统时需要此ID。
 
 ```json
 {
@@ -108,9 +108,9 @@ curl -X POST \
 }
 ```
 
-### 建立 [!DNL Dynamics] 使用服務主體金鑰型驗證的基礎連線
+### 创建 [!DNL Dynamics] 使用基于服务主体密钥的身份验证的基本连接
 
-若要建立 [!DNL Dynamics] 使用服務主體金鑰型驗證的基礎連線，向發出POST要求 [!DNL Flow Service] API同時為您的連線提供值 `serviceUri`， `servicePrincipalId`、和 `servicePrincipalKey`.
+创建 [!DNL Dynamics] 基本连接使用基于服务主体密钥的身份验证，向发出POST请求 [!DNL Flow Service] API，同时为您的连接的提供值 `serviceUri`， `servicePrincipalId`、和 `servicePrincipalKey`.
 
 **API格式**
 
@@ -148,14 +148,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.serviceUri` | 與您的關聯的服務URI [!DNL Dynamics] 執行個體。 |
-| `auth.params.servicePrincipalId` | 您的使用者端識別碼 [!DNL Dynamics] 帳戶。 使用服務主體和金鑰式驗證時，需要此ID。 |
-| `auth.params.servicePrincipalKey` | 服務主體秘密金鑰。 使用服務主體和基於金鑰的驗證時，需要此認證。 |
-| `connectionSpec.id` | 此 [!DNL Dynamics] 連線規格ID： `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
+| `auth.params.serviceUri` | 与您的关联的服务URI [!DNL Dynamics] 实例。 |
+| `auth.params.servicePrincipalId` | 您的客户端ID [!DNL Dynamics] 帐户。 使用服务主体和基于密钥的身份验证时需要此ID。 |
+| `auth.params.servicePrincipalKey` | 服务主体密钥。 使用服务主体和基于密钥的身份验证时需要此凭据。 |
+| `connectionSpec.id` | 此 [!DNL Dynamics] 连接规范ID： `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
 **响应**
 
-成功回應會傳回新建立的連線，包括其唯一識別碼(`id`)。 在下一個步驟中探索您的CRM系統時，需要此ID。
+成功响应将返回新创建的连接，包括其唯一标识符(`id`)。 在下一步中浏览您的CRM系统时需要此ID。
 
 ```json
 {
@@ -166,7 +166,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Microsoft Dynamics] 基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL Microsoft Dynamics] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流，以將CRM資料帶到Platform，使用 [!DNL Flow Service] API](../../collect/crm.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将CRM数据引入平台 [!DNL Flow Service] API](../../collect/crm.md)

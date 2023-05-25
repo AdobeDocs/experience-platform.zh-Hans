@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；批次擷取；批次擷取；部分擷取；擷取錯誤；擷取錯誤；部分批次擷取；部分批次擷取；部分；擷取；擷取；錯誤診斷；擷取錯誤診斷；取得錯誤診斷；取得錯誤；擷取錯誤；
+keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分批量摄取；部分；摄取；摄取；错误诊断；检索错误诊断；获取错误诊断；获取错误；获取错误；
 solution: Experience Platform
-title: 正在擷取資料擷取錯誤診斷
-description: 本檔案提供有關監控批次擷取、管理部分批次擷取錯誤的資訊，以及部分批次擷取型別的參考。
+title: 检索数据引入错误诊断
+description: 本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
 source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
@@ -11,46 +11,46 @@ ht-degree: 2%
 
 ---
 
-# 正在擷取資料擷取錯誤診斷
+# 检索数据引入错误诊断
 
-Adobe Experience Platform提供兩種上傳和擷取資料的方法。 您可以使用批次擷取(可讓您使用各種檔案型別（例如CSV）插入資料)或串流擷取（可讓您將其資料插入） [!DNL Platform] 即時使用串流端點。
+Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，这允许您使用各种文件类型（如CSV）插入数据；也可以使用流式摄取，这允许您将其数据插入到 [!DNL Platform] 实时使用流式端点。
 
-本檔案提供有關監控批次擷取、管理部分批次擷取錯誤的資訊，以及部分批次擷取型別的參考。
+本文档提供了有关监控批次摄取、管理部分批次摄取错误的信息，以及部分批次摄取类型的参考。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md)：資料可傳送至的方法 [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md)：将数据发送到的方法 [!DNL Experience Platform].
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Schema Registry]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform]，包括那些属于 [!DNL Schema Registry]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
+>有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-## 正在下載錯誤診斷 {#download-diagnostics}
+## 正在下载错误诊断 {#download-diagnostics}
 
-Adobe Experience Platform可讓使用者下載輸入檔案的錯誤診斷。 診斷將保留在 [!DNL Platform] 最多30天。
+Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断程序将保留在 [!DNL Platform] 最多30天。
 
-### 列出輸入檔案 {#list-files}
+### 列出输入文件 {#list-files}
 
-下列請求會擷取已完成批次中提供的所有檔案清單。
+以下请求检索在最终确定的批次中提供的所有文件的列表。
 
 **API格式**
 
@@ -60,7 +60,7 @@ GET /batches/{BATCH_ID}/meta?path=input_files
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 您要查詢之批次的ID。 |
+| `{BATCH_ID}` | 要查找的批次的ID。 |
 
 **请求**
 
@@ -74,7 +74,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的回應將傳回JSON物件，詳細說明診斷的儲存位置。
+成功响应将返回JSON对象，其中详细说明诊断的保存位置。
 
 ```json
 {
@@ -105,9 +105,9 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 }
 ```
 
-### 擷取輸入檔案診斷 {#retrieve-diagnostics}
+### 检索输入文件诊断 {#retrieve-diagnostics}
 
-擷取所有不同輸入檔案的清單後，您可以使用以下請求來擷取個別檔案的診斷。
+检索完所有不同输入文件的列表后，可以使用以下请求检索单个文件的诊断。
 
 **API格式**
 
@@ -117,8 +117,8 @@ GET /batches/{BATCH_ID}/meta?path=input_files/{FILE}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 您要查詢之批次的ID。 |
-| `{FILE}` | 您正在存取的檔案名稱。 |
+| `{BATCH_ID}` | 要查找的批次的ID。 |
+| `{FILE}` | 您正在访问的文件的名称。 |
 
 **请求**
 
@@ -132,20 +132,20 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的回應將傳回包含的JSON物件 `path` 詳細說明診斷儲存位置的物件。 回應會傳回 `path` 中的物件 [JSON行](https://jsonlines.readthedocs.io/en/latest/) 格式。
+成功的响应将返回包含以下内容的JSON对象 `path` 详细说明诊断保存位置的对象。 响应将返回 `path` 中的对象 [JSON行](https://jsonlines.readthedocs.io/en/latest/) 格式。
 
 ```json
 {"path": "F1.json"}
 {"path": "etc/F2.json"}
 ```
 
-## 擷取批次擷取錯誤 {#retrieve-errors}
+## 检索批次摄取错误 {#retrieve-errors}
 
-如果批次包含失敗，您應該擷取有關這些失敗的錯誤資訊，以便您可以重新擷取資料。
+如果批次包含故障，则应检索有关这些故障的错误信息，以便重新摄取数据。
 
-### 檢查狀態 {#check-status}
+### 检查状态 {#check-status}
 
-若要檢查所擷取批次的狀態，您必須在GET請求的路徑中提供批次ID。 若要進一步瞭解如何使用此API呼叫，請閱讀 [目錄端點指南](../../catalog/api/list-objects.md).
+要检查摄取的批的状态，必须在GET请求的路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读 [目录端点指南](../../catalog/api/list-objects.md).
 
 **API格式**
 
@@ -156,8 +156,8 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 此 `id` 要檢查其狀態的批次值。 |
-| `{FILTER}` | 用來篩選回應中傳回結果的查詢引數。 多個引數以&amp;符號(`&`)。 如需詳細資訊，請閱讀 [篩選目錄資料](../../catalog/api/filter-data.md). |
+| `{BATCH_ID}` | 此 `id` 要检查其状态的批的值。 |
+| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)。 欲知更多信息，请阅读 [筛选目录数据](../../catalog/api/filter-data.md). |
 
 **请求**
 
@@ -169,9 +169,9 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**無錯誤回應**
+**无错误响应**
 
-成功回應會傳回批次狀態的詳細資訊。
+成功响应将返回，其中包含有关批次状态的详细信息。
 
 ```json
 {
@@ -214,11 +214,11 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由於剖析、轉換或驗證而無法處理的列數。 此值可透過減去 `inputRecordCount` 從 `outputRecordCount`. 此值會在所有批次上產生，無論是否為 `errorDiagnostics` 已啟用。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去以下值得出： `inputRecordCount` 从 `outputRecordCount`. 此值将在所有批次中生成，无论是否为 `errorDiagnostics` 已启用。 |
 
-**有錯誤的回應**
+**有错误的响应**
 
-如果批次發生一或多個錯誤，且已啟用錯誤診斷，回應會傳回有關錯誤的更多資訊，包括有效負載本身以及可下載的錯誤檔案。 請注意，包含錯誤的批次狀態可能仍具有成功狀態。
+如果批次具有一个或多个错误，并且启用了错误诊断，则响应将返回有关错误的更多信息，包括有效负载本身以及可下载的错误文件。 请注意，包含错误的批的状态可能仍具有成功状态。
 
 ```json
 {
@@ -277,12 +277,12 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由於剖析、轉換或驗證而無法處理的列數。 此值可透過減去 `inputRecordCount` 從 `outputRecordCount`. 此值會在所有批次上產生，無論是否為 `errorDiagnostics` 已啟用。 |
-| `errors.recordCount` | 指定錯誤碼失敗的列數。 此值為 **僅限** 產生條件 `errorDiagnostics` 已啟用。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去以下值得出： `inputRecordCount` 从 `outputRecordCount`. 此值将在所有批次中生成，无论是否为 `errorDiagnostics` 已启用。 |
+| `errors.recordCount` | 指定错误代码失败的行数。 此值为 **仅限** 生成条件 `errorDiagnostics` 已启用。 |
 
 >[!NOTE]
 >
->如果無法使用錯誤診斷，則會顯示下列錯誤訊息：
+>如果没有错误诊断程序可用，则会显示以下错误消息：
 >
 ```json
 >{
@@ -295,31 +295,31 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ## 后续步骤 {#next-steps}
 
-本教學課程說明如何監控部分批次擷取錯誤。 如需批次擷取的詳細資訊，請閱讀 [批次擷取開發人員指南](../batch-ingestion/api-overview.md).
+本教程介绍了如何监测部分批次摄取错误。 有关批量摄取的更多信息，请阅读 [批量摄取开发人员指南](../batch-ingestion/api-overview.md).
 
 ## 附录 {#appendix}
 
-本節提供有關內嵌錯誤型別的補充資訊。
+本节提供有关摄取错误类型的补充信息。
 
-### 部分批次擷取錯誤型別 {#partial-ingestion-types}
+### 部分批次摄取错误类型 {#partial-ingestion-types}
 
-擷取資料時，部分批次擷取有三種不同的錯誤型別：
+摄取数据时，部分批量摄取有三种不同的错误类型：
 
-- [無法讀取的檔案](#unreadable)
-- [無效的結構描述或標頭](#schemas-headers)
-- [無法剖析的列](#unparsable)
+- [无法读取的文件](#unreadable)
+- [无效的架构或标头](#schemas-headers)
+- [不可分析的行](#unparsable)
 
-### 無法讀取的檔案 {#unreadable}
+### 无法读取的文件 {#unreadable}
 
-如果擷取的批次有無法讀取的檔案，該批次的錯誤將附加到該批次本身。 有關擷取失敗批次的更多資訊，請參閱 [擷取失敗的批次指南](../quality/retrieve-failed-batches.md).
+如果摄取的批次具有不可读的文件，则该批次的错误将附加到批次本身。 有关检索失败批次的更多信息，请参阅 [检索失败的批次指南](../quality/retrieve-failed-batches.md).
 
-### 無效的結構描述或標頭 {#schemas-headers}
+### 无效的架构或标头 {#schemas-headers}
 
-如果擷取的批次具有無效的結構描述或無效的標頭，批次的錯誤將附加在批次本身。 有關擷取失敗批次的更多資訊，請參閱 [擷取失敗的批次指南](../quality/retrieve-failed-batches.md).
+如果摄取的批次具有无效架构或无效标头，则批次的错误将附加到批次本身。 有关检索失败批次的更多信息，请参阅 [检索失败的批次指南](../quality/retrieve-failed-batches.md).
 
-### 無法剖析的列 {#unparsable}
+### 不可分析的行 {#unparsable}
 
-如果您擷取的批次有無法剖析的列，您可以使用以下請求來檢視包含錯誤的檔案清單。
+如果您摄取的批次具有不可分析的行，则可以使用以下请求查看包含错误的文件列表。
 
 **API格式**
 
@@ -329,7 +329,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 此 `id` 您正在擷取錯誤資訊之批次的值。 |
+| `{BATCH_ID}` | 此 `id` 从中检索错误信息的批次的值。 |
 
 **请求**
 
@@ -343,7 +343,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
 
 **响应**
 
-成功的回應會傳回含有錯誤的檔案清單。
+成功响应将返回包含错误的文件列表。
 
 ```json
 {
@@ -374,9 +374,9 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
 }
 ```
 
-然後，您就可以使用 [診斷擷取端點](#retrieve-diagnostics).
+然后，您可以使用检索有关错误的详细信息 [诊断检索端点](#retrieve-diagnostics).
 
-擷取錯誤檔案的範例回應如下所示：
+检索错误文件的示例响应如下所示：
 
 ```json
 {

@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；JupyterLab；筆記型電腦；資料科學工作區；熱門主題；分析資料筆記型電腦；eda；探索性資料分析；資料科學
+keywords: Experience Platform；JupyterLab；笔记本；数据科学工作区；热门主题；分析数据笔记本；eda；探索性数据分析；数据科学
 solution: Experience Platform
-title: 探索資料分析(EDA)筆記本
+title: 探索数据分析(EDA)笔记本
 type: Tutorial
-description: 本指南著重於如何使用探索資料分析(EDA) Notebook來探索網路資料中的模式、彙總具有預測目標的事件、清除彙總資料，以及瞭解預測值和目標之間的關係。
+description: 本指南重点介绍如何使用探索数据分析(EDA) Notebook发现Web数据中的模式、聚合具有预测目标的事件、清除聚合数据，以及了解预测器和目标之间的关系。
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -12,29 +12,29 @@ ht-degree: 0%
 
 ---
 
-# 使用探索資料分析(EDA)筆記本探索預測模型的Web型資料
+# 使用探索数据分析(EDA)笔记本探索预测模型的基于Web的数据
 
-探索性資料分析(EDA)筆記本的設計目的，是協助您探索資料中的模式、檢查資料健全度，以及彙總預測模型的相關資料。
+探索数据分析(EDA)笔记本旨在帮助您发现数据模式、检查数据健全度并总结预测模型的相关数据。
 
-EDA筆記型電腦範例已針對網頁型資料進行最佳化，並包含兩個部分。 第一部分從使用查詢服務來檢視趨勢和資料快照開始。 接下來，以探索性資料分析為目標，在設定檔和訪客層級彙總資料。
+针对Web数据对EDA笔记本实例进行了优化，优化实例由两部分组成。 第一部分从使用查询服务查看趋势和数据快照开始。 接下来，考虑到探索性数据分析的目标，将在用户档案和访客级别聚合数据。
 
-第二部分首先使用Python程式庫對彙總資料執行描述性分析。 此筆記本會展示各種視覺效果，例如長條圖、散佈圖、方塊圖和關聯矩陣，以得出可操作的深入分析，用於判斷哪些功能最可能有助於預測目標。
+第二部分从使用Python库对聚合数据执行描述性分析开始。 此笔记本展示各种可视化图表，例如直方图、散点图、框图和关联矩阵，这些可视化图表可得出可操作见解，用于确定哪些功能最可能有助于预测目标。
 
 ## 快速入门
 
-閱讀本指南前，請先檢閱 [[!DNL JupyterLab] 使用手冊](./overview.md) 如需深入瞭解 [!DNL JupyterLab] 及其在資料科學工作區中的角色。 此外，如果您使用自己的資料，請檢視以下檔案： [中的資料存取 [!DNL Jupyterlab] 筆記本](./access-notebook-data.md). 本指南包含有關筆記本資料限制的重要資訊。
+在阅读本指南之前，请查阅 [[!DNL JupyterLab] 用户指南](./overview.md) ，了解关于 [!DNL JupyterLab] 以及它在数据科学工作区中的角色。 此外，如果您使用的是自己的数据，请查看文档 [数据访问 [!DNL Jupyterlab] notebooks](./access-notebook-data.md). 本指南包含有关笔记本数据限制的重要信息。
 
-此筆記本使用Analytics Analysis Workspace中的Adobe Analytics Experience Events資料形式的中值資料集。 若要使用EDA筆記本，您必須使用下列值來定義資料表格 `target_table` 和 `target_table_id`. 可以使用任何中值資料集。
+此笔记本使用Analytics Analysis Workspace中的Adobe Analytics Experience Events数据形式的中值数据集。 要使用EDA笔记本，您需要使用以下值定义数据表 `target_table` 和 `target_table_id`. 可以使用任何中间值数据集。
 
-若要尋找這些值，請遵循以下說明的步驟： [寫入python中的資料集](./access-notebook-data.md#write-python) JupyterLab資料存取指南的部分提供。 資料集名稱(`target_table`)位於資料集目錄中。 以滑鼠右鍵按一下資料集，在記事本中探索或寫入資料後，資料集ID (`target_table_id`)會顯示在可執行檔程式碼專案內。
+要查找这些值，请按照 [写入python中的数据集](./access-notebook-data.md#write-python) JupyterLab数据访问指南的部分。 数据集名称(`target_table`)位于数据集目录中。 右键单击数据集以在笔记本中浏览或写入数据后，数据集ID (`target_table_id`)在可执行文件代码条目中提供。
 
-## 資料探索
+## 数据发现
 
-本節包含用於檢視趨勢（例如「依使用者活動排名的前十個城市」或「檢視次數排名前十的產品」）的設定步驟和查詢範例。
+本节包含用于查看趋势（如“按用户活动分类的前10个城市”或“查看的前10个产品”）的配置步骤和示例查询。
 
-### 程式庫的設定
+### 库配置
 
-JupyterLab支援多個程式庫。 下列程式碼可貼上並在程式碼儲存格中執行，以收集並安裝此範例使用的所有必要套件。 您可以在此範例之外使用其他或替代套件進行自己的資料分析。 如需支援的套件清單，請複製並貼上 `!pip list --format=columns` 在新儲存格中。
+JupyterLab支持多个库。 可以在代码单元格中粘贴和运行以下代码，以收集并安装此示例中使用的所有必需包。 您可以使用此示例之外的其他或替代包来进行您自己的数据分析。 有关支持的包的列表，请复制并粘贴 `!pip list --format=columns` 在新单元格中。
 
 ```python
 !pip install colorama
@@ -62,37 +62,37 @@ pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.max_colwidth', -1)
 ```
 
-### 連線至Adobe Experience Platform [!DNL Query Service]
+### 连接到Adobe Experience Platform [!DNL Query Service]
 
-[!DNL JupyterLab] on Platform可讓您將SQL用於 [!DNL Python] 筆記型電腦，可透過存取資料 [查詢服務](https://www.adobe.com/go/query-service-home-en). 透過存取資料 [!DNL Query Service] 由於其卓越的執行時間，可用於處理大型資料集。 請注意，查詢資料時使用 [!DNL Query Service] 具有十分鐘的處理時間限制。
+[!DNL JupyterLab] 使用SQL on Platform可在 [!DNL Python] 笔记本访问数据 [查询服务](https://www.adobe.com/go/query-service-home-en). 通过访问数据 [!DNL Query Service] 由于其卓越的运行时间，可用于处理大型数据集。 请注意，使用查询数据 [!DNL Query Service] 具有十分钟的处理时间限制。
 
-使用前 [!DNL Query Service] 在 [!DNL JupyterLab]，請務必實際瞭解 [[!DNL Query Service] SQL語法](https://www.adobe.com/go/query-service-sql-syntax-en).
+使用前 [!DNL Query Service] 在 [!DNL JupyterLab]，确保您实际了解 [[!DNL Query Service] SQL语法](https://www.adobe.com/go/query-service-sql-syntax-en).
 
-若要在JupyterLab中利用查詢服務，您必須先建立正在運作的Python筆記本與查詢服務之間的連線。 這可以透過執行以下儲存格來達成。
+要在JupyterLab中使用查询服务，必须首先在正在工作的Python笔记本和查询服务之间创建连接。 这可以通过执行以下单元格来实现。
 
 ```python
 qs_connect()
 ```
 
-### 定義要探索的中值資料集
+### 定义用于探索的中值数据集
 
-為了開始查詢和探索資料，必須提供中值資料集表格。 複製並取代 `table_name` 和 `table_id` 具有您自己的資料表格值的值。
+要开始查询和浏览数据，必须提供中间值数据集表。 复制并替换 `table_name` 和 `table_id` 您自己的数据表值。
 
 ```python
 target_table = "table_name"
 target_table_id = "table_id"
 ```
 
-完成後，此儲存格看起來應該類似於以下範例：
+完成后，此单元格应类似于以下示例：
 
 ```python
 target_table = "cross_industry_demo_midvalues"
 target_table_id = "5f7c40ef488de5194ba0157a"
 ```
 
-### 探索資料集以取得可用日期
+### 浏览数据集以获取可用日期
 
-使用下方提供的儲存格，您可以檢視表格中涵蓋的日期範圍。 探索天數、第一個日期和最後一個日期的目的是協助選取日期範圍以供進一步分析。
+使用下面提供的单元格，您可以查看表中包含的日期范围。 探索天数、第一个日期和最后一个日期的目的是帮助选择日期范围以供进一步分析。
 
 ```python
 %%read_sql -c QS_CONNECTION
@@ -102,13 +102,13 @@ group by Month(timestamp), Year(timestamp)
 order by Year, Month;
 ```
 
-執行儲存格會產生下列輸出：
+运行单元格将产生以下输出：
 
-![查詢日期輸出](../images/jupyterlab/eda/query-date-output.PNG)
+![查询日期输出](../images/jupyterlab/eda/query-date-output.PNG)
 
-### 設定資料集探索日期
+### 配置数据集发现日期
 
-在決定資料集探索的可用日期後，需要更新以下引數。 在此儲存格中設定的日期僅用於查詢形式的資料探索。 日期會再次更新至適合的範圍，以供本指南稍後章節的探索性資料分析使用。
+在确定数据集发现的可用日期后，需要更新以下参数。 在此单元格中配置的日期仅用于查询形式的数据发现。 日期会再次更新到适合的范围，以便在本指南的后面部分进行探索性数据分析。
 
 ```python
 target_year = "2020" ## The target year
@@ -116,9 +116,9 @@ target_month = "02" ## The target month
 target_day = "(01,02,03)" ## The target days
 ```
 
-### 資料集探索
+### 数据集发现
 
-設定好所有引數後，即可開始 [!DNL Query Service]，並擁有日期範圍，您就可以開始讀取資料列了。 您應限制讀取的列數。
+配置完所有参数后，开始 [!DNL Query Service]，并且有一个日期范围，则表示您已经可以开始读取数据行。 您应该限制读取的行数。
 
 ```python
 from platform_sdk.dataset_reader import DatasetReader
@@ -128,21 +128,21 @@ dataset_reader = DatasetReader(PLATFORM_SDK_CLIENT_CONTEXT, dataset_id=target_ta
 Table = dataset_reader.limit(5).read()
 ```
 
-若要檢視資料集中可用的欄數，請使用下列儲存格：
+要查看数据集中可用的列数，请使用以下单元格：
 
 ```python
 print("\nNumber of columns:",len(Table.columns))
 ```
 
-若要檢視資料集的列，請使用下列儲存格。 在此範例中，列數限製為五。
+要查看数据集的行，请使用以下单元格。 在本例中，行数限制为5。
 
 ```python
 Table.head(5)
 ```
 
-![表格列輸出](../images/jupyterlab/eda/data-table-overview.PNG)
+![表格行输出](../images/jupyterlab/eda/data-table-overview.PNG)
 
-瞭解資料集中包含哪些資料後，進一步劃分資料集就變得很有價值。 在此範例中，會列出每個欄的欄名稱和資料型別，而輸出會用於檢查資料型別是否正確。
+了解数据集中包含哪些数据后，进一步划分数据集可能很有价值。 在此示例中，将列出每个列的列名和数据类型，而输出将用于检查数据类型是否正确。
 
 ```python
 ColumnNames_Types = pd.DataFrame(Table.dtypes)
@@ -151,15 +151,15 @@ ColumnNames_Types.columns = ["Column_Name", "Data_Type"]
 ColumnNames_Types
 ```
 
-![欄名稱和資料型別清單](../images/jupyterlab/eda/data-columns.PNG)
+![列名和数据类型列表](../images/jupyterlab/eda/data-columns.PNG)
 
-### 資料集趨勢探索
+### 数据集趋势探索
 
-下節包含四個查詢範例，用於探索資料中的趨勢和模式。 以下提供的範例並非詳盡無遺，但涵蓋一些較常檢視的功能。
+以下部分包含四个用于探索数据趋势和模式的示例查询。 下面提供的示例并非详尽无遗，但涵盖了一些更常用的功能。
 
-**指定日的每小時活動計數**
+**给定日的每小时活动计数**
 
-此查詢會分析一天中的動作和點按次數。 輸出會以表格的形式呈現，其中包含一天中每個小時的活動計數量度。
+此查询分析一天中的操作数和点击数。 输出以表的形式表示，该表包含一天中每小时的活动计数的量度。
 
 ```sql
 %%read_sql query_2_df -c QS_CONNECTION
@@ -174,9 +174,9 @@ GROUP  BY Hour
 ORDER  BY Hour;
 ```
 
-![查詢1輸出](../images/jupyterlab/eda/hour-count-raw.PNG)
+![查询1输出](../images/jupyterlab/eda/hour-count-raw.PNG)
 
-確認查詢正常運作後，資料可以呈現在單變數繪圖長條圖中，以清楚顯示。
+确认查询工作后，数据可以呈现为单变量直方图，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -197,11 +197,11 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![查詢1的橫條圖輸出](../images/jupyterlab/eda/activity-count-by-hour-of-day.png)
+![查询1的条形图输出](../images/jupyterlab/eda/activity-count-by-hour-of-day.png)
 
-**指定日期前10個檢視頁面**
+**给定日期查看的前10个页面**
 
-此查詢會分析在指定日期中檢視次數最多的頁面。 輸出會以表格形式呈現，表格包含頁面名稱和頁面檢視計數的量度。
+此查询分析在给定的一天内查看次数最多的页面。 输出以表的形式表示，该表包含有关页面名称和页面查看次数的量度。
 
 ```sql
 %%read_sql query_4_df -c QS_CONNECTION
@@ -217,7 +217,7 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-確認查詢正常運作後，資料可以呈現在單變數繪圖長條圖中，以清楚顯示。
+确认查询工作后，数据可以呈现为单变量直方图，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -238,11 +238,11 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![檢視次數最多的十個頁面](../images/jupyterlab/eda/top-ten-viewed-pages-for-a-given-day.png)
+![查看的前10页](../images/jupyterlab/eda/top-ten-viewed-pages-for-a-given-day.png)
 
-**依使用者活動分組的前10個城市**
+**按用户活动分组的前10个城市**
 
-此查詢會分析資料源自哪些城市。
+此查询分析数据来自哪些城市。
 
 ```sql
 %%read_sql query_6_df -c QS_CONNECTION
@@ -258,7 +258,7 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-確認查詢正常運作後，資料可以呈現在單變數繪圖長條圖中，以清楚顯示。
+确认查询工作后，数据可以呈现为单变量直方图，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -281,9 +281,9 @@ iplot(fig)
 
 ![十大城市](../images/jupyterlab/eda/top-ten-cities-by-user-activity.png)
 
-**檢視次數前十的產品**
+**查看的前10项产品**
 
-此查詢提供檢視次數前十名的產品清單。 在以下範例中， `Explode()` 函式用於傳回 `productlistitems` 物件放入自己的列。 這可讓您執行巢狀查詢，以彙總不同SKU的產品檢視。
+此查询提供查看的前10项产品的列表。 在以下示例中， `Explode()` 函数用于返回 `productlistitems` 对象到其自身的行。 这样，您就可以执行嵌套查询来聚合不同SKU的产品视图。
 
 ```sql
 %%read_sql query_7_df -c QS_CONNECTION
@@ -302,7 +302,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-確認查詢正常運作後，資料可以呈現在單變數繪圖長條圖中，以清楚顯示。
+确认查询工作后，数据可以呈现为单变量直方图，以便更加清晰地显示。
 
 ```python
 trace = go.Bar(
@@ -323,35 +323,35 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![十大產品檢視](../images/jupyterlab/eda/top-ten-viewed-products.png)
+![十大产品查看次数](../images/jupyterlab/eda/top-ten-viewed-products.png)
 
-探索資料的趨勢和模式後，您應該清楚知道要建置哪些功能來預測目標。 略過表格可以快速反白顯示每個資料屬性的形式、明顯的錯誤表示和值中的大型離群值，並開始建議屬性之間要探索的候選關係。
+在探索数据的趋势和模式后，您应该很好地了解要构建哪些功能来预测目标。 快速浏览表格可以快速突出显示每个数据属性的形式、明显的错误表示和值中的大型离群值，并开始建议属性之间要探索的候选关系。
 
-## 探索性資料分析
+## 探索性数据分析
 
-探索性資料分析可用來改善您對資料的瞭解，並針對可用作模型基礎的緊迫問題建立直覺。
+探索性数据分析用于提高您对数据的理解，并对可用作建模基础的紧迫问题建立直觉。
 
-完成資料探索步驟後，您將會在事件層級探索資料，以及事件、城市或使用者ID層級的一些彙總，以檢視一天的趨勢。 雖然此資料很重要，但並未提供全貌。 您仍然不瞭解促使您購買網站的原因。
+完成数据发现步骤后，您将使用事件、城市或用户ID级别的一些聚合来探索事件级别的数据，以查看一天的趋势。 尽管这些数据很重要，但它并未提供全貌。 您仍然不了解促使您购买网站的因素。
 
-若要瞭解這一點，您需要在設定檔/訪客層級彙總資料、定義購買目標，並套用統計概念，例如關聯、方塊圖和散佈圖。 在您定義的預測視窗中，這些方法可用來比較買方與非買方的活動模式。
+要理解这一点，您需要聚合用户档案/访客级别的数据，定义购买目标，并应用统计概念，如关联、框图和散点图。 这些方法用于在您定义的预测窗口中比较买方和非买方的活动模式。
 
-本節將建立並探討下列功能：
+本节将创建并探讨以下功能：
 
-- `COUNT_UNIQUE_PRODUCTS_PURCHASED`：購買的不重複產品數量。
-- `COUNT_CHECK_OUTS`：結帳次數。
-- `COUNT_PURCHASES`：購買次數。
-- `COUNT_INSTANCE_PRODUCTADDS`：產品新增執行個體的數量。
-- `NUMBER_VISITS`：造訪次數。
-- `COUNT_PAID_SEARCHES`：付費搜尋的次數。
-- `DAYS_SINCE_VISIT`：自上次造訪以來的天數。
-- `TOTAL_ORDER_REVENUE`：訂單收入總計。
-- `DAYS_SINCE_PURCHASE`：自上次購買以來的天數。
-- `AVG_GAP_BETWEEN_ORDERS_DAYS`：購買之間的平均差距（以天為單位）。
-- `STATE_CITY`：包含州和市。
+- `COUNT_UNIQUE_PRODUCTS_PURCHASED`：购买的唯一产品数。
+- `COUNT_CHECK_OUTS`：结帐次数。
+- `COUNT_PURCHASES`：购买次数。
+- `COUNT_INSTANCE_PRODUCTADDS`：产品添加实例数。
+- `NUMBER_VISITS`：访问次数。
+- `COUNT_PAID_SEARCHES`：付费搜索的次数。
+- `DAYS_SINCE_VISIT`：自上次访问以来的天数。
+- `TOTAL_ORDER_REVENUE`：总订单收入。
+- `DAYS_SINCE_PURCHASE`：自上次购买以来的天数。
+- `AVG_GAP_BETWEEN_ORDERS_DAYS`：购买之间的平均差距（以天为单位）。
+- `STATE_CITY`：包含州和市/自治区。
 
-在繼續資料彙總之前，您需要定義用於探索性資料分析的預測變數引數。 換言之，您想要從資料科學模型中獲得什麼？ 常見引數包括目標、預測時段和分析時段。
+在继续数据聚合之前，您需要定义用于探索性数据分析中的预测变量的参数。 换句话说，您想要从数据科学模型中获取什么？ 常见参数包括目标、预测时段和分析时段。
 
-如果您使用EDA筆記本，您必須先取代下列值才能繼續。
+如果您使用的是EDA笔记本，则需要在继续之前替换以下值。
 
 ```python
 goal = "commerce.`order`.purchaseID" #### prediction variable
@@ -365,9 +365,9 @@ analysis_period_day_end = "2020-02-28" #### YYYY-MM-DD
 threshold = 1
 ```
 
-### 用於功能和目標建立的資料彙總
+### 用于功能和目标创建的数据聚合
 
-若要開始探索性分析，您需要在設定檔層級建立目標，然後彙總您的資料集。 在此範例中，提供了兩個查詢。 第一個查詢包含目標的建立。 第二個查詢需要更新，以包含第一個查詢中變數以外的任何變數。 您可能需要更新 `limit` 以取得您的查詢。 執行以下查詢後，現在可探索彙總的資料。
+要开始探索性分析，您需要在用户档案级别创建目标，然后聚合数据集。 在此示例中，提供了两个查询。 第一个查询包含创建目标。 需要更新第二个查询以包含第一个查询中的变量以外的任何变量。 您可能需要更新 `limit` ，作为您的查询的参考。 在执行以下查询后，聚合数据现在可用于探索。
 
 ```sql
 %%read_sql target_df -d -c QS_CONNECTION
@@ -440,46 +440,46 @@ on z.ID = z1.ID)
 limit 500000;
 ```
 
-### 將彙總資料集中的功能與目標合併
+### 将聚合数据集中的功能与目标合并
 
-下列儲存格可用來合併上一個範例中概述之彙總資料集的功能與您的預測目標。
+以下单元格用于将上例中概述的聚合数据集中的功能与您的预测目标合并。
 
 ```python
 Data = pd.merge(agg_data,target_df, on='ID',how='left')
 Data['TARGET'].fillna(0, inplace=True)
 ```
 
-以下三個儲存格範例用於確認合併成功。
+下面三个示例单元格用于确保合并成功。
 
-`Data.shape` 傳回欄數後跟列數，例如： (11913， 12)。
+`Data.shape` 返回列数后跟行数，例如： (11913， 12)。
 
 ```python
 Data.shape
 ```
 
-`Data.head(5)` 傳回包含5列資料的表格。 傳回的表格包含對應至設定檔ID的所有12欄彙總資料。
+`Data.head(5)` 返回一个包含5行数据的表。 返回的表包含映射到用户档案ID的所有12列聚合数据。
 
 ```python
 Data.head(5)
 ```
 
-![範例表格](../images/jupyterlab/eda/raw-aggregate-data.PNG)
+![示例表](../images/jupyterlab/eda/raw-aggregate-data.PNG)
 
-此儲存格會列印不重複設定檔的數量。
+此单元格打印唯一配置文件的数量。
 
 ```python
 print("Count of unique profiles:", (len(Data)))
 ```
 
-### 偵測遺漏值和離群值
+### 检测缺失值和异常值
 
-完成資料彙總並將其與目標合併後，您需要檢視有時稱為資料健康情況檢查的資料。
+完成数据聚合并将其与目标合并后，您需要查看有时称为数据运行状况检查的数据。
 
-此程式涉及識別遺漏值和離群值。 確定問題後，下一個任務就是提出處理這些問題的特定策略。
+此过程涉及识别缺失值和异常值。 确定问题后，下一个任务是提出处理这些问题的具体策略。
 
 >[!NOTE]
 >
->在此步驟中，您可能會發現值損毀，這可能表示資料記錄程式中發生錯誤。
+>在此步骤中，您可能会发现值损坏，这可能表示数据记录过程中存在故障。
 
 ```python
 Missing = pd.DataFrame(round(Data.isnull().sum()*100/len(Data),2))
@@ -487,7 +487,7 @@ Missing.columns =['Percentage_missing_values']
 Missing['Features'] = Missing.index
 ```
 
-下列儲存格可用來視覺化遺失的值。
+以下单元格用于显示缺少的值。
 
 ```python
 trace = go.Bar(
@@ -509,13 +509,13 @@ iplot(fig)
 
 ![缺少值](../images/jupyterlab/eda/missing-values.png)
 
-偵測到遺漏值後，識別離群值至關重要。 引數統計資料（例如平均值、標準差和相關性）對離群值非常敏感。 此外，線性回歸等常見統計程式的假設也以這些統計資料為基礎。 這表示離群值可能真的會擾亂分析。
+在检测到缺失值后，识别异常值至关重要。 参数统计量如平均值、标准差和相关性对异常值高度敏感。 此外，常用统计程序（如线性回归）的假设也基于这些统计值。 这意味着，离群值可能真的会扰乱分析。
 
-為了識別離群值，此範例使用四分位數之間的範圍。 四分位數間範圍(IQR)是介於第一個和第三個四分位數（第25個和第75個百分位數）之間的範圍。 此範例會收集所有低於25%以上的IQR 1.5倍，或高於75%以上的IQR 1.5倍的資料點。 屬於其中任一類別的值會在下列儲存格中定義為離群值。
+为了识别离群值，此示例使用四分位数之间的范围。 四分位数间范围(IQR)是介于第一个和第三个四分位数（第25个和第75个百分位数）之间的范围。 此示例收集的所有数据点要么位于第25百分位数下方的IQR的1.5倍，要么位于第75百分位数上方的IQR的1.5倍。 属于其中任一类型的值在下面的单元格中定义为异常值。
 
 >[!TIP]
 >
->修正離群值需要您瞭解您從事的業務和產業。 有時候，您無法僅因為觀察為離群值而捨棄它。 離群值可能是合法的觀察結果，通常是最有趣的觀察結果。 若要進一步瞭解捨棄離群值，請造訪 [選擇性資料清理步驟](#optional-data-clean).
+>修正离群值需要您了解您所从事的业务和行业。 有时候，您不能仅仅因为观察值是异常值而放弃观察值。 异常值可能是合理的观察结果，通常是最有趣的观察结果。 要了解有关删除离群值的更多信息，请访问 [可选数据清理步骤](#optional-data-clean).
 
 ```python
 TARGET = Data.TARGET
@@ -536,7 +536,7 @@ Outlier.columns =['Percentage_outliers']
 Outlier['Features'] = Outlier.index   
 ```
 
-和往常一樣，將結果視覺化是很重要的。
+与往常一样，将结果直观地展示出来很重要。
 
 ```python
 trace = go.Bar(
@@ -556,13 +556,13 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-![離群值圖表](../images/jupyterlab/eda/outliers.png)
+![离群值图](../images/jupyterlab/eda/outliers.png)
 
-### 單變數分析
+### 单变量分析
 
-一旦您的資料針對遺漏值和離群值進行了修正，您就可以開始分析。 有三種分析型別：單變數、雙變數和多變數分析。 單變數分析會使用單一變數關係，取得資料、摘要並尋找資料中的模式。 雙變數分析一次會檢視多個變數，而多變數分析一次會檢視三個或更多變數。
+在纠正数据中的缺失值和异常值后，您便可以开始分析。 分析分为三类：单变量、双变量和多变量分析。 单变量分析使用单变量关系获取数据、总结和查找数据中的模式。 双变量分析一次查看多个变量，而多变量分析一次查看三个或更多变量。
 
-下列範例會產生一個表格，以視覺化特徵的分佈。
+以下示例生成一个表以可视化特征的分布。
 
 ```python
 Data_numerical = Data.select_dtypes(include=['float64', 'int64'])
@@ -574,9 +574,9 @@ distribution.columns = ['Count', 'Mean', 'Min', '1st_perc','5th_perc','25th_perc
 distribution
 ```
 
-![功能分佈](../images/jupyterlab/eda/distribution-of-features.PNG)
+![功能分布](../images/jupyterlab/eda/distribution-of-features.PNG)
 
-功能分佈完畢後，即可使用陣列建立視覺化資料圖表。 下列儲存格可用數值資料將上表視覺化。
+功能分布完毕后，即可使用数组创建可视化数据图表。 以下单元格用于使用数值数据可视化上表。
 
 ```python
 A = sns.palplot(sns.color_palette("Blues"))
@@ -589,11 +589,11 @@ for column in Data_numerical.columns[0:]:
     sns.distplot(Data_numerical[column], color = A, kde=False, bins=6, hist_kws={'alpha': 0.4});
 ```
 
-![數值資料圖表](../images/jupyterlab/eda/univaiate-graphs.png)
+![数值数据图](../images/jupyterlab/eda/univaiate-graphs.png)
 
-### 類別資料
+### 类别数据
 
-分組類別資料是用來瞭解彙總資料的每個欄中所包含的值及其分佈。 此範例使用前10個類別來協助繪製分配。 請務必注意，欄中可能包含數千個唯一值。 您不想呈現雜亂的情節，使內容難以辨認。 依據您的業務目標，分組資料會產生更有意義的結果。
+分组类别数据用于了解聚合数据各列及其分布中包含的值。 此示例使用前10个类别来帮助绘制分配。 请务必注意，列中可能包含数千个唯一值。 你不想让一个混乱的情节变得难以辨认。 根据您的业务目标，分组数据可产生更有意义的结果。
 
 ```python
 Data_categorical = Data.select_dtypes(include='object')
@@ -610,11 +610,11 @@ for column in Data_categorical.columns[0:]:
         sns.countplot(x=column, data = Data_categorical, palette="Set2");
 ```
 
-![類別欄](../images/jupyterlab/eda/graph-category.PNG)
+![分类列](../images/jupyterlab/eda/graph-category.PNG)
 
-### 移除只有單一相異值的欄
+### 删除仅具有单个非重复值的列
 
-只有值1的欄不會將任何資訊新增至分析，並且可以移除。
+只有值1的列不会向分析添加任何信息，并且可以删除。
 
 ```python
 for col in Data.columns:
@@ -628,14 +628,14 @@ for col in Data.columns:
             Data.drop(col,inplace=True,axis=1)
 ```
 
-移除單值欄之後，請使用檢查剩餘的欄是否有任何錯誤。 `Data.columns` 命令來修改儲存格。
+删除单值列后，使用检查剩余列是否存在任何错误 `Data.columns` 命令。
 
 ### 更正缺少的值
 
-下節包含一些更正遺失值的範例方法。 雖然在上述資料中，只有一欄遺漏值，但下列範例儲存格會更正所有資料型別的值。 其中包括：
+以下部分包含一些有关更正缺失值的示例方法。 事件，尽管在上述数据中，只有一列缺少值，但下面的示例单元格为所有数据类型都纠正了值。 其中包括：
 
-- 數值資料型別：輸入0或最大值（如適用）
-- 類別資料型別：輸入模型值
+- 数字数据类型：输入0或最大值（如果适用）
+- 类别数据类型：输入模态值
 
 ```python
 #### Select only numerical data
@@ -668,23 +668,23 @@ for column in Missing_cat:
     Data[column].fillna(Data[column].mode()[0], inplace=True)
 ```
 
-完成後，乾淨的資料即可供雙變數分析使用。
+完成后，清理的数据即可进行双变量分析。
 
-### 雙變數分析
+### 双变量分析
 
-雙變數分析用於協助瞭解兩組值（例如您的功能和目標變數）之間的關係。 由於不同的繪圖適用於分類和數值資料型別，因此應分別針對每種資料型別執行此分析。 建議使用下列圖表進行雙變數分析：
+双变量分析用于帮助了解两组值（例如您的功能和目标变量）之间的关系。 由于不同的图形适用于分类和数字数据类型，因此应分别为每个数据类型完成此分析。 建议使用下列图表进行双变量分析：
 
-- **關聯**：相關係數是測量兩個功能之間關係的強度。 關聯具有介於–1和1之間的值，其中： 1表示強正關聯性，-1表示強負關聯性，而0則表示完全沒有關聯性。
-- **配對繪圖**：配對繪圖是視覺化每個變數之間關係的簡單方法。 它會產生資料中每個變數之間的關係矩陣。
-- **熱度圖**：熱度圖是資料集中所有變數的相關係數。
-- **方塊圖**：方塊圖是根據五個數字摘要(最小值、第一個四分位數(Q1)、中位數、第三個四分位數(Q3)和最大值)的標準化資料分佈顯示方式。
-- **計數圖**：計數圖就像某些分類功能的長條圖或橫條圖。 它根據特定類別型別顯示專案的發生次數。
+- **关联**：相关系数是测量两个特征之间关系的强度。 相关值介于–1和1之间，其中：1表示强正相关，-1表示强负相关，零表示完全不相关。
+- **配对绘图**：使用配对图可轻松可视化每个变量之间的关系。 它生成数据中每个变量之间的关系矩阵。
+- **热图**：热图是数据集中所有变量的相关系数。
+- **框图**：方框图是一种基于五位数摘要(最小值、第一四分位数(Q1)、中间值、第三四分位数(Q3)和最大值)显示数据分布的标准化方式。
+- **计数图**：对于某些分类特征，计数图类似于直方图或条形图。 它根据特定类别显示项目的发生次数。
 
-為了瞭解「目標」變數與預測值/功能之間的關係，會根據資料型別使用圖表。 對於數值功能，如果「目標」變數是分類的，您應該使用方塊圖，如果「目標」變數是數值的，則應使用配對圖和熱度圖。
+为了了解“目标”变量与预测器/功能之间的关系，会根据数据类型使用图表。 对于数字功能，如果“goal”变量是分类变量，则应该使用方框图；如果“goal”变量是数字变量，则应该使用配对图和热图。
 
-對於分類功能，如果「目標」變數是分類的，您應該使用計數圖，如果「目標」變數是數值的，則應使用方塊圖。 使用這些方法有助於瞭解關係。 這些關係可以是功能或預測值和目標的形式。
+对于分类功能，如果“目标”变量是分类的，则应该使用计数图；如果“目标”变量是数字，则应该使用方框图。 使用这些方法有助于了解关系。 这些关系可以是功能或预测值和目标的形式。
 
-**數值預測值**
+**数值预测器**
 
 ```python
 if len(Data) == 1:
@@ -719,15 +719,15 @@ else:
         corr = Data_numerical.corr()
 ```
 
-執行儲存格會產生下列輸出：
+运行单元格将产生以下输出：
 
-![繪圖](../images/jupyterlab/eda/bivariant-graphs.png)
+![绘图](../images/jupyterlab/eda/bivariant-graphs.png)
 
-![熱度圖](../images/jupyterlab/eda/bi-graph10.PNG)
+![热图](../images/jupyterlab/eda/bi-graph10.PNG)
 
-**類別預測值**
+**类别预测值**
 
-下列範例可用來繪製和檢視每個分類變數前10個類別的頻率圖。
+以下示例用于绘制和查看每个分类变量的前10个类别的频率图。
 
 ```python
 if len(Data) == 1:
@@ -761,13 +761,13 @@ else:
             sns.catplot(x=column, y="TARGET", kind = "boxen", data =Data_categorical1, height=5, aspect=13/5);
 ```
 
-執行儲存格會產生下列輸出：
+运行单元格将产生以下输出：
 
-![類別關係](../images/jupyterlab/eda/categorical-predictor.PNG)
+![类别关系](../images/jupyterlab/eda/categorical-predictor.PNG)
 
-### 重要數值功能
+### 重要数字特征
 
-使用關聯分析，您可以建立前10個重要數值特徵的清單。 這些功能都可用來預測「目標」功能。 當您開始建立模型時，此清單可作為的功能清單使用。
+使用相关性分析，可以创建前十个重要数字特征的列表。 这些特征都可以用于预测“目标”特征。 此列表可用作开始构建模型时的特征列表。
 
 ```python
 if len(Data) == 1:
@@ -786,9 +786,9 @@ else:
 
 ![重要功能](../images/jupyterlab/eda/important-feature-model.PNG)
 
-### 範例分析
+### 示例分析
 
-雖然您正在分析資料，但發掘深入分析是很常見的事。 以下範例是對映目標事件的造訪間隔和貨幣值的分析。
+虽然您正在分析数据，但发现洞察的情况并不少见。 以下示例是一个洞察，它映射目标事件的回访间隔和货币值。
 
 ```python
 # Proxy for monetary value is TOTAL_ORDER_REVENUE and proxy for frequency is NUMBER_VISITS
@@ -800,15 +800,15 @@ else:
     sns.lmplot("DAYS_SINCE_VISIT", "TOTAL_ORDER_REVENUE", Data, hue="TARGET", fit_reg=False);
 ```
 
-![範例分析](../images/jupyterlab/eda/insight.PNG)
+![示例分析](../images/jupyterlab/eda/insight.PNG)
 
-## 選擇性資料清理步驟 {#optional-data-clean}
+## 可选数据清理步骤 {#optional-data-clean}
 
-修正離群值需要您瞭解您從事的業務和產業。 有時候，您無法僅因為觀察為離群值而捨棄它。 離群值可能是合法的觀察結果，通常是最有趣的觀察結果。
+修正离群值需要您了解您所从事的业务和行业。 有时候，您不能仅仅因为观察值是异常值而放弃观察值。 异常值可能是合理的观察结果，通常是最有趣的观察结果。
 
-如需離群值以及是否要捨棄離群值的詳細資訊，請從 [分析因數](https://www.theanalysisfactor.com/outliers-to-drop-or-not-to-drop/).
+有关离群值以及是否删除离群值的详细信息，请从 [分析因子](https://www.theanalysisfactor.com/outliers-to-drop-or-not-to-drop/).
 
-下列範例儲存格大寫值和樓層資料點為使用的離群值 [四分位數範圍](https://www.thoughtco.com/what-is-the-interquartile-range-rule-3126244).
+以下示例使用作为离群值的单元格大写和楼层数据点 [四分位数范围](https://www.thoughtco.com/what-is-the-interquartile-range-rule-3126244).
 
 ```python
 TARGET = Data.TARGET
@@ -828,6 +828,6 @@ Data = pd.concat([Data_categorical, Data_numerical, TARGET], axis = 1)
 
 ## 后续步骤
 
-完成探索性資料分析後，您就可以開始建立模型了。 或者，您也可以使用衍生的資料和深入分析，使用Power BI等工具建立控制面板。
+完成探索性数据分析后，即可开始创建模型。 或者，您可以使用派生的数据和见解来创建包含Power BI等工具的功能板。
 
-Adobe Experience Platform將模型建立程式分成兩個不同的階段：配方（模型例項）和模型。 若要開始配方建立程式，請瀏覽以下檔案： [在JupyerLab Notebooks中建立配方](./create-a-model.md). 本檔案包含建立、訓練和評分的資訊和範例，配方位於 [!DNL JupyterLab] Notebooks。
+Adobe Experience Platform将模型创建过程分为两个不同的阶段：配方（模型实例）和模型。 要开始方法创建过程，请访问文档 [在JupyerLab Notebooks中创建方法](./create-a-model.md). 本文档包含有关在中创建、培训和评分方法的信息和示例 [!DNL JupyterLab] 笔记本。

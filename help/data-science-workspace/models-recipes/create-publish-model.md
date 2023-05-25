@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；機器學習模型；Data Science Workspace；熱門主題；建立和發佈模型
+keywords: Experience Platform；机器学习模型；Data Science Workspace；热门主题；创建和发布模型
 solution: Experience Platform
-title: 建立及發佈機器學習模型
+title: 创建和发布机器学习模型
 type: Tutorial
-description: 以下指南說明建立和發佈機器學習模型所需的步驟。
+description: 以下指南介绍了创建和发布机器学习模型所需的步骤。
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -13,88 +13,88 @@ ht-degree: 0%
 ---
 
 
-# 建立並發佈機器學習模型
+# 创建和发布机器学习模型
 
-以下指南說明建立和發佈機器學習模型所需的步驟。 每個區段都包含您所要執行的操作的說明，以及UI和API檔案的連結，以便執行所述步驟。
+以下指南介绍了创建和发布机器学习模型所需的步骤。 每个部分都包含将要执行的操作的描述，以及一个指向UI和API文档的链接，以便执行所述步骤。
 
 ## 快速入门
 
-開始進行本教學課程之前，您必須具備下列必要條件：
+在开始本教程之前，您必须满足以下先决条件：
 
-- 存取 [!DNL Adobe Experience Platform]. 如果您無權存取中的組織 [!DNL Experience Platform]，請在繼續之前聯絡您的系統管理員。
+- 访问 [!DNL Adobe Experience Platform]. 如果您无权访问中的组织 [!DNL Experience Platform]，请在继续之前与系统管理员联系。
 
-- 所有Data Science Workspace教學課程都使用Luma傾向模型。 為了遵循，您必須已建立 [Luma傾向模型結構描述和資料集](./create-luma-data.md).
+- 所有数据科学工作区教程都使用Luma倾向模型。 为了遵循，您必须已创建 [Luma倾向模型架构和数据集](./create-luma-data.md).
 
-### 探索資料並瞭解結構描述
+### 浏览数据并了解架构
 
-登入 [Adobe Experience Platform](https://platform.adobe.com/) 並選取 **[!UICONTROL 資料集]** 以列出所有現有資料集，並選取您要探索的資料集。 在此情況下，您應選取 **Luma網頁資料** 資料集。
+登录 [Adobe Experience Platform](https://platform.adobe.com/) 并选择 **[!UICONTROL 数据集]** 以列出所有现有数据集并选择要浏览的数据集。 在这种情况下，您应选择 **Luma Web数据** 数据集。
 
-![選取Luma網路資料集](../images/models-recipes/model-walkthrough/luma-dataset.png)
+![选择Luma Web数据集](../images/models-recipes/model-walkthrough/luma-dataset.png)
 
-資料集活動頁面隨即開啟，列出與資料集相關的資訊。 您可以選取 **[!UICONTROL 預覽資料集]** 右上角附近，檢查範例記錄。 您也可以檢視所選資料集的結構描述。
+随即会打开数据集活动页面，其中列出与数据集相关的信息。 您可以选择 **[!UICONTROL 预览数据集]** 右上角附近，用于检查样本记录。 您还可以查看选定数据集的架构。
 
-![預覽Luma網頁資料](../images/models-recipes/model-walkthrough/preview-dataset.png)
+![预览Luma Web数据](../images/models-recipes/model-walkthrough/preview-dataset.png)
 
-選取右側欄中的結構描述連結。 彈出視窗隨即顯示，請選取下方的連結 **[!UICONTROL 結構描述名稱]** 在新標籤中開啟結構。
+在右边栏中选择架构链接。 此时会出现一个弹出窗口，选择下面的链接 **[!UICONTROL 架构名称]** 在新选项卡中打开架构。
 
-![預覽luma web資料結構](../images/models-recipes/model-walkthrough/preview-schema.png)
+![预览luma web数据架构](../images/models-recipes/model-walkthrough/preview-schema.png)
 
-您可以使用提供的探索資料分析(EDA)筆記本進一步探索資料。 此筆記本可用來協助瞭解Luma資料中的模式、檢查資料是否健全以及總結預測性傾向模型的相關資料。 若要進一步瞭解探索資料分析，請造訪 [EDA檔案](../jupyterlab/eda-notebook.md).
+您可以使用提供的探索数据分析(EDA)笔记本进一步浏览数据。 此笔记本可用于帮助了解Luma数据中的模式、检查数据是否正常以及总结预测倾向模型的相关数据。 要了解有关探索性数据分析的更多信息，请访问 [EDA文档](../jupyterlab/eda-notebook.md).
 
-## 建立Luma傾向配方 {#author-your-model}
+## 创建Luma倾向方法 {#author-your-model}
 
-的主要元件 [!DNL Data Science Workspace] 生命週期涉及編寫配方和模型。 Luma傾向模型旨在預測客戶是否有從Luma購買產品的高傾向。
+的主要组件 [!DNL Data Science Workspace] 生命周期涉及创作方法和模型。 Luma倾向模型旨在预测客户是否有从Luma购买产品的高倾向。
 
-若要建立Luma傾向模型，系統會使用配方產生器範本。 配方是模型的基礎，因為它們包含為解決特定問題而設計的機器學習演演算法和邏輯。 更重要的是，訣竅可讓您普及整個組織的機器學習，讓其他使用者不需撰寫任何程式碼即可存取不同使用案例的模型。
+要创建Luma倾向模型，请使用方法生成器模板。 配方是模型的基础，因为它们包含用于解决特定问题的机器学习算法和逻辑。 更重要的是，“方法”使您能够让整个组织的机器学习普及化，使其他用户无需编写任何代码即可访问用于不同用例的模型。
 
-請遵循 [使用JupyterLab Notebooks建立模型](../jupyterlab/create-a-model.md) 教學課程，建立用於後續教學課程的Luma傾向模型配方。
+请遵循 [使用JupyterLab Notebooks创建模型](../jupyterlab/create-a-model.md) 本教程将创建在后续教程中使用的Luma倾向模型方法。
 
-## 從外部來源匯入及封裝配方(*可選*)
+## 从外部源导入和打包方法(*可选*)
 
-如果您想要匯入並封裝配方以用於Data Science Workspace，您必須將來源檔案封裝到封存檔案中。 請遵循 [將來源檔案封裝到配方中](./package-source-files-recipe.md) 教學課程。 本教學課程說明如何將來源檔案封裝到配方中，這是將配方匯入資料科學工作區的必要步驟。 完成本教學課程後，Azure容器登入中會為您提供Docker影像，以及對應的影像URL，換句話說，即封存檔案。
+如果您希望导入并打包方法以用于Data Science Workspace，则必须将源文件打包到存档文件中。 请遵循 [将源文件打包到方法中](./package-source-files-recipe.md) 教程。 本教程向您展示了如何将源文件打包到方法中，这是将方法导入数据科学工作区的先决条件步骤。 完成本教程后，将在Azure容器注册表中为您提供Docker图像，以及相应的图像URL，即存档文件。
 
-此封存檔案可用於在Data Science Workspace中建立配方，方法是使用配方匯入工作流程 [UI工作流程](./import-packaged-recipe-ui.md) 或 [API工作流程](./import-packaged-recipe-api.md).
+此存档文件可用于在数据科学工作区中创建方法，方法是使用遵循方法导入工作流 [UI工作流](./import-packaged-recipe-ui.md) 或 [API工作流](./import-packaged-recipe-api.md).
 
-## 訓練及評估模型 {#train-and-evaluate-your-model}
+## 训练和评估模型 {#train-and-evaluate-your-model}
 
-現在您的資料已備妥且配方已備妥，您便能進一步建立、訓練及評估您的機器學習模型。 使用配方產生器時，您應該先訓練、評分和評估模型，再將其封裝到配方中。
+现在您的数据已准备好，方法已准备就绪，您能够进一步创建、训练和评估您的机器学习模型。 在使用方法生成器时，您应该先对模型进行培训、评分和评估，然后再将其打包到方法中。
 
-資料科學工作區UI和API可讓您以模型形式發佈配方。 此外，您可以進一步微調模型的特定方面，例如新增、移除和變更超引數。
+数据科学工作区UI和API允许您将方法作为模型发布。 此外，还可进一步微调模型的特定方面，如添加、删除和更改超参数。
 
 ### 创建模型
 
-若要瞭解有關使用UI建立模型的詳細資訊，請造訪火車，並在資料科學工作區中評估模型 [UI教學課程](./train-evaluate-model-ui.md) 或 [api教學課程](./train-evaluate-model-api.md). 本教學課程提供如何建立、訓練及更新超引數以微調模型的範例。
+要了解有关使用UI创建模型的更多信息，请访问培训并在数据科学工作区中评估模型 [用户界面教程](./train-evaluate-model-ui.md) 或 [api教程](./train-evaluate-model-api.md). 本教程提供了一个示例，说明如何创建、训练和更新超参数以微调模型。
 
 >[!NOTE]
 >
-> 無法學習超引數，因此必須在執行訓練前指派它們。 調整超引數可能會改變已訓練模型的精確度。 由於模型最佳化是一個反複的過程，因此在獲得令人滿意的評估之前，可能需要多次訓練回合。
+> 无法学习超参数，因此必须在运行训练之前分配超参数。 调整超参数可能会改变已训练模型的精度。 由于优化模型是一个迭代过程，可能需要多次训练才能获得满意的评价。
 
-## 為模型評分 {#score-a-model}
+## 为模型评分 {#score-a-model}
 
-建立和發佈模型的下一步是將模型投入運作，以便對Data Lake和即時客戶個人檔案的深入分析進行評分和使用。
+创建和发布模型的下一步是使模型可操作化，以便从数据湖和实时客户档案为见解评分和使用。
 
-將輸入資料饋送至現有的已訓練模型，即可達到「資料科學工作區」中的評分。 評分結果會儲存於指定的輸出資料集，並可作為新批次檢視。
+数据科学工作区中的评分可通过将输入数据馈送到现有的已训练模型来实现。 评分结果将作为新批次存储在指定的输出数据集中以供查看。
 
-若要瞭解如何為模型評分，請造訪模型評分 [UI教學課程](./score-model-ui.md) 或 [api教學課程](./score-model-api.md).
+要了解如何为模型评分，请访问模型评分 [用户界面教程](./score-model-ui.md) 或 [api教程](./score-model-api.md).
 
-## 將已評分的模型發佈為服務
+## 将已评分模型发布为服务
 
-Data Science Workspace可讓您將經過訓練的模型發佈為服務。 這可讓貴組織內的使用者對資料評分，而不需要建立自己的模型。
+Data Science Workspace允许您将经过培训的模型发布为服务。 这使您组织内的用户无需创建自己的模型即可对数据进行评分。
 
-若要瞭解如何將模型發佈為服務，請造訪 [UI教學課程](./publish-model-service-ui.md) 或 [api教學課程](./publish-model-service-api.md).
+要了解如何将模型发布为服务，请访问 [用户界面教程](./publish-model-service-ui.md) 或 [api教程](./publish-model-service-api.md).
 
-### 排程服務的自動化訓練
+### 安排服务的自动培训
 
-將模型發佈為服務後，您就可以為機器學習服務設定已排程的評分和訓練回合。 自動化訓練和評分程式，可隨時掌握資料中的模式，協助維持及改善服務的效率。 造訪 [在資料科學工作區UI中排程模型](./schedule-models-ui.md) 教學課程。
+将模型发布为服务后，即可为机器学习服务设置计划的评分和训练运行。 自动化培训和评分过程有助于通过及时了解数据中的模式来维护和改进服务的效率。 访问 [在数据科学工作区UI中计划模型](./schedule-models-ui.md) 教程。
 
 >[!NOTE]
 >
-> 您只能從UI排程模型進行自動化訓練和評分。
+> 您只能通过UI计划用于自动训练和评分的模型。
 
 ## 后续步骤 {#next-steps}
 
-Adobe Experience Platform [!DNL Data Science Workspace] 提供建立、評估及利用機器學習模型的工具和資源，以產生資料預測和見解。 將機器學習深入分析擷取至 [!DNL Profile]-enabled資料集，相同的資料也會擷取為 [!DNL Profile] 接著可使用下列方式分段的記錄： [!DNL Adobe Experience Platform Segmentation Service].
+Adobe Experience Platform [!DNL Data Science Workspace] 提供用于创建、评估和利用机器学习模型以生成数据预测和洞察的工具和资源。 将机器学习分析摄取到 [!DNL Profile] — 启用的数据集，则同样的数据也会被摄取为 [!DNL Profile] 记录，然后可以使用以下方式对其进行分段： [!DNL Adobe Experience Platform Segmentation Service].
 
-在擷取設定檔和時間序列資料時，即時客戶設定檔會透過稱為串流細分的持續程式，自動決定從區段包含或排除該資料，然後再將其與現有資料合併並更新聯合檢視。 因此，您可以即時執行計算並作出決定，在客戶與您的品牌互動時，向客戶傳遞增強、個人化的體驗。
+在摄取用户档案和时间序列数据时，实时客户档案会通过称为流式客户细分的持续过程自动决定从区段包含或排除该数据，然后再将其与现有数据合并并更新合并视图。 因此，您可以即时执行计算并做出决策，以便在客户与您的品牌互动时为他们提供经过增强、个性化的体验。
 
-造訪的教學課程 [透過機器學習深入分析來擴充即時客戶設定檔](./enrich-profile.md) 以進一步瞭解如何使用機器學習深入分析。
+访问教程，了解 [利用机器学习见解丰富Real-time Customer Profile](./enrich-profile.md) 详细了解如何利用机器学习见解。

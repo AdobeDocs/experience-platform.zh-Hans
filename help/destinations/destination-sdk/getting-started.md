@@ -1,6 +1,6 @@
 ---
-description: 本頁面說明如何驗證並開始使用Adobe Experience Platform Destination SDK。 其中包括如何取得Adobe I/O驗證認證、沙箱名稱和目的地編寫存取控制許可權的指示。
-title: Destination SDK快速入門
+description: 本页介绍如何进行身份验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
+title: Destination SDK快速入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
 source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
 workflow-type: tm+mt
@@ -13,21 +13,21 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-本頁面說明如何驗證並開始使用Adobe Experience Platform Destination SDK。 其中包括如何取得Adobe I/O驗證認證、沙箱名稱和目的地編寫存取控制許可權的指示。
+本页介绍如何进行身份验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 
 ## 术语 {#terminology}
 
-本指南使用平台特定概念，例如組織和沙箱。 請參閱 [Experience Platform字彙表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) 以取得這些辭彙和其他辭彙的定義。
+本指南使用平台特定的概念，例如组织和沙盒。 请参阅 [Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) 此等词汇及其他词汇的定义。
 
-## 取得必要的驗證認證 {#obtain-authentication-credentials}
+## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
-Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用於驗證的閘道。 若要對Destination SDK端點進行API呼叫，您必須在API呼叫中提供某些標題。 與AdobeExchange團隊合作，為您設定對的驗證 [Adobe Developer主控台](https://developer.adobe.com/console).
+Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对Destination SDK端点进行API调用，必须在API调用中提供某些标头。 与AdobeExchange团队合作，为您设置对的身份验证 [Adobe Developer控制台](https://developer.adobe.com/console).
 
-若要成功呼叫Destination SDK API端點，請遵循 [Experience Platform驗證教學課程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 從「 」開始教學課程[產生API金鑰、組織ID和使用者端密碼](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)」步驟。 Adobe交換團隊將為您處理先前的步驟。 完成驗證教學課程後，會提供Destination SDK API呼叫中每個必要標題的值，如下所示：
+要成功调用Destination SDKAPI端点，请按照 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 从“ ”开始教程[生成API密钥、组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)”步骤。 Adobe交换团队将为您处理上述步骤。 完成身份验证教程将为Destination SDKAPI调用中的每个所需标头提供值，如下所示：
 
-* `x-api-key: {API_KEY}`，也稱為使用者端ID
-* `x-gw-ims-org-id: {ORG_ID}`，也稱為組織ID
-* `Authorization: Bearer {ACCESS_TOKEN}`的问题。存取權杖的到期時間為24小時（以毫秒為單位），因此您必須重新整理。 若要重新整理存取Token，請重複驗證教學課程中概述的步驟。
+* `x-api-key: {API_KEY}`，也称为客户端ID
+* `x-gw-ims-org-id: {ORG_ID}`，也称为组织ID
+* `Authorization: Bearer {ACCESS_TOKEN}`的问题。访问令牌的过期时间为24小时（以毫秒为单位），因此您必须刷新它。 要刷新访问令牌，请重复身份验证教程中概述的步骤。
 
 <!--
 
@@ -46,39 +46,39 @@ You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-i
 
 -->
 
-## 目的地所有權與沙箱 {#destination-ownership}
+## 目标所有权和沙盒 {#destination-ownership}
 
-Experience Platform中的所有資源都與特定的虛擬沙箱隔離。 請求Destination SDK需要標頭，指定執行操作的沙箱名稱：
+Experience Platform中的所有资源都与特定的虚拟沙盒隔离。 请求Destination SDK需要标头，用于指定在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-AdobeExchange團隊會提供您沙箱名稱，您必須在呼叫Destination SDKAPI端點時使用它。
+AdobeExchange团队为您提供沙盒名称，您需要将其用于对Destination SDKAPI端点的调用。
 
-## 角色型存取控制(RBAC) {#rbac}
+## 基于角色的访问控制(RBAC) {#rbac}
 
-若要使用Destination SDKAPI端點，請參閱 [參考檔案](functionality/configuration-options.md)，您需要 **[!UICONTROL 目的地製作]** 存取控制許可權。 與AdobeExchange團隊合作，取得指派給您的此許可權 [Adobe Admin Console](https://adminconsole.adobe.com/).
+要使用Destination SDKAPI端点，请参阅 [参考文档](functionality/configuration-options.md)，您需要 **[!UICONTROL 目标创作]** 访问控制权限。 与AdobeExchange团队合作，在中为您分配此权限 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-![目的地編寫許可權](./assets/destination-authoring-permission.png)
+![目标创作权限](./assets/destination-authoring-permission.png)
 
-如需詳細資訊，請閱讀下列Experience Platform存取控制檔案：
+有关详细信息，请阅读以下Experience Platform访问控制文档：
 
-* [管理產品設定檔的許可權](/help/access-control/ui/permissions.md)
-* [Experience Platform的可用許可權](/help/access-control/home.md#permissions)
-* [Adobe Admin Console檔案](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)
+* [管理产品配置文件的权限](/help/access-control/ui/permissions.md)
+* [Experience Platform的可用权限](/help/access-control/home.md#permissions)
+* [Adobe Admin Console文档](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)
 
 ## 其他注意事项 {#additional-considerations}
 
-* 對於已生產/公開目的地，無論您對目的地設定進行的任何變更（建立或編輯目的地設定）都需要Adobe稽核和核准。 您的變更只會反映在檢閱完成後。 這不適用於只有您才能使用的私人目的地。
-* 只有屬於相同組織且具有沙箱存取許可權的使用者才能編輯目的地設定。
+* 对于生产/公共目标，无论您是创建或编辑目标配置，您对目标配置所做的任何更改都需要Adobe审查和批准。 只有在完成审阅后，您的更改才会反映在您的目标中。 这不适用于仅供您使用的专用目标。
+* 只有属于同一组织并且有权访问沙盒的用户才能编辑目标配置。
 
 ## 后续步骤 {#next-steps}
 
-依照本文的步驟操作，您已取得Adobe I/O的驗證認證、沙箱名稱和目的地編寫存取控制許可權。 接下來，您可以使用Destination SDK設定目的地。
+按照本文中的步骤，您获得了Adobe I/O的身份验证凭据、沙盒名称和目标创作访问控制权限。 接下来，您可以使用Destination SDK设置目标。
 
-* 根據您的目的地型別，閱讀下列設定指南：
+* 根据您的目标类型，阅读以下配置指南：
 
-   * [使用Destination SDK設定串流目的地](guides/configure-destination-instructions.md)
-   * [使用Destination SDK設定檔案型目的地](guides/configure-file-based-destination-instructions.md)
+   * [使用Destination SDK配置流目标](guides/configure-destination-instructions.md)
+   * [使用Destination SDK配置基于文件的目标](guides/configure-file-based-destination-instructions.md)
 
-* 如需所有作業，請參閱 [Destination Authoring API檔案](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
-* 使用 [目的地編寫API Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 以使用Destination SDKAPI端點設定您的目的地。 若要開始使用Postman，請參閱 [匯入環境和集合的步驟](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [建立Postman環境的影片指南](https://video.tv.adobe.com/v/28832).
+* 有关所有操作，请参阅 [目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
+* 使用 [目标创作API Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 以使用Destination SDKAPI端点配置目标。 要开始使用Postman，请参阅 [导入环境和收藏集的步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832).

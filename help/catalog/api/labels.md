@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料使用標籤；目錄服務
+keywords: Experience Platform；主页；热门主题；数据使用标签；目录服务
 solution: Experience Platform
-title: 資料集服務API中的資料使用情況標籤
-description: 資料集服務API提供端點，可管理資料集的資料使用標籤。
+title: 数据集服务API中的数据使用情况标签
+description: 数据集服务API提供了一些端点，用于管理数据集的数据使用标签。
 exl-id: 2451e5b0-b117-4465-8e58-70fc341c0748
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -11,6 +11,6 @@ ht-degree: 0%
 
 ---
 
-# 資料集服務API中的資料使用標籤
+# 数据集服务API中的数据使用标签
 
-與目錄服務API不同， [!DNL Dataset Service] API提供端點來管理資料集的資料使用標籤。 如需如何呼叫這些端點的步驟，請參閱以下指南： [使用API管理資料使用標籤](../../data-governance/labels/dataset-api.md) Adobe Experience Platform資料控管檔案中的資訊。
+与目录服务API不同， [!DNL Dataset Service] API提供端点来管理数据集的数据使用标签。 有关如何调用这些端点的步骤，请参阅以下指南中的 [使用API管理数据使用标签](../../data-governance/labels/dataset-api.md) 《Adobe Experience Platform数据管理》文档。

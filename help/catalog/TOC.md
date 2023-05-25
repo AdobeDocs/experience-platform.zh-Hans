@@ -11,28 +11,28 @@ ht-degree: 22%
 ---
 
 
-# 目錄和資料集 {#catalog}
+# 目录和数据集 {#catalog}
 
-* [目錄服務概觀](home.md)
-* 目錄服務API {#api}
+* [目录服务概述](home.md)
+* 目录服务API {#api}
    * [快速入门](api/getting-started.md)
-   * [使用查詢引數篩選目錄資料](api/filter-data.md)
-   * [列出物件](api/list-objects.md)
-   * [查詢物件](api/look-up-object.md)
-   * [查詢多個物件](api/look-up-multiple-objects.md)
-   * [更新物件](api/update-object.md)
-   * [取代物件](api/replace-object.md)
-   * [刪除物件](api/delete-object.md)
-   * [建立資料集](api/create-dataset.md)
-   * [建立批次](api/create-batch.md)
-   * [資料使用標籤](api/labels.md)
+   * [使用查询参数筛选目录数据](api/filter-data.md)
+   * [列出对象](api/list-objects.md)
+   * [查找对象](api/look-up-object.md)
+   * [查找多个对象](api/look-up-multiple-objects.md)
+   * [更新对象](api/update-object.md)
+   * [替换对象](api/replace-object.md)
+   * [删除对象](api/delete-object.md)
+   * [创建数据集](api/create-dataset.md)
+   * [创建批次](api/create-batch.md)
+   * [数据使用情况标签](api/labels.md)
    * [附录](api/appendix.md)
 * 数据集 {#datasets}
-   * [資料集總覽](datasets/overview.md)
-   * [資料集使用手冊](datasets/user-guide.md)
-   * [使用API建立並填入資料集](datasets/create.md)
-   * [為設定檔和身分啟用資料集](datasets/enable-for-profile.md)
-   * [為設定檔更新啟用資料集（更新插入）](datasets/enable-upsert.md)
-* [Data Lake中的隱私權請求處理](privacy.md)
-* [API參考](https://www.adobe.io/experience-platform-apis/references/catalog/)
-* [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+   * [数据集概述](datasets/overview.md)
+   * [数据集用户指南](datasets/user-guide.md)
+   * [使用API创建和填充数据集](datasets/create.md)
+   * [为配置文件和标识启用数据集](datasets/enable-for-profile.md)
+   * [为配置文件更新启用数据集(upsert)](datasets/enable-upsert.md)
+* [数据湖中的隐私请求处理](privacy.md)
+* [API参考](https://www.adobe.io/experience-platform-apis/references/catalog/)
+* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

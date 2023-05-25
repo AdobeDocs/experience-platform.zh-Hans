@@ -1,6 +1,6 @@
 ---
-title: 複製資源
-description: 瞭解如何使用Adobe Experience Platform中現有標籤資源的設定來建立新標籤資源。
+title: 复制资源
+description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 79%
 
 ---
 
-# 複製資源
+# 复制资源
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 有时，使用现有资源的设置制作新资源会很方便。在这些情况下，您可以制作副本。
 
@@ -23,11 +23,11 @@ ht-degree: 79%
 
 ## 启动复制操作
 
-您可以檢視已安裝的擴充功能，並選取 **[!UICONTROL 設定]** 按鈕並選取 **[!UICONTROL 複製]**.
+您可以启动扩展的复制操作，方法是查看已安装的扩展，选择 **[!UICONTROL 配置]** 按钮并选择 **[!UICONTROL 复制]**.
 
 ![复制 Analytics 扩展](../../images/copy-initiate-extension.png)
 
-若是屬性、規則和資料元素，只要選取您要複製的資源，然後選取「 」即可 **[!UICONTROL 複製]** （在動作功能表中）。
+对于属性、规则和数据元素，只需选择要复制的资源，然后选择 **[!UICONTROL 复制]** （在“操作”菜单中）。
 
 ![复制 Analytics 规则](../../images/copy-initiate-rule.png)
 
@@ -35,9 +35,9 @@ ht-degree: 79%
 
 >[!NOTE]
 >
->如果一個屬性設定為擴充開發，而另一個屬性並未設定，則無法將資源複製到另一個屬性。
+>如果一个资产配置了进行扩展开发，而另一个资产没有配置，则无法将资源复制到另一个资产。
 
-設定您要的行為之後，請選取 **[!UICONTROL 複製]**.
+配置所需的行为后，选择 **[!UICONTROL 复制]**.
 
 ## 复制资产
 
@@ -60,11 +60,11 @@ ht-degree: 79%
 
 ## 复制规则和数据元素
 
-所有規則和資料元素都由擴充功能提供，因此當您跨屬性複製時，Platform必須考慮這些基礎擴充功能。
+所有规则和数据元素均由扩展提供，因此当您跨资产复制时，Platform必须考虑这些底层扩展。
 
 ![将规则复制到演示资产](../../images/copy-rules-dialog1.png)
 
-「複製」對話方塊會提供開始複製前將發生的確切情況的說明。 上面显示的是规则的复制对话框，但同样也适用于数据元素。
+“复制”对话框提供了在开始复制之前将发生的确切情况的说明。 上面显示的是规则的复制对话框，但同样也适用于数据元素。
 
 1. **Extensions required by these rules are copied。**&#x200B;这告知您所需的扩展将随规则一起复制。这些复制操作遵循的规则与上面概述的常规扩展复制操作相同。
 1. **Extension settings will NOT be copied if the extension is already installed。**&#x200B;这表示如果目标资产上已存在所需的扩展，则扩展将保持不变。如果您还希望复制扩展设置，则可以使用 **Replace extension settings on destination property** 切换开关，此时显示的说明将会相应地更新。

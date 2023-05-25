@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；存取控制許可權；存取控制資源型別；存取控制api
+keywords: Experience Platform；主页；热门主题；访问控制权限；访问控制资源类型；访问控制api
 solution: Experience Platform
-title: 參考API端點
-description: 存取控制API中的參考端點可讓您檢視可用許可權和資源型別的名稱，然後可以使用這些名稱來檢視目前使用者的有效存取控制原則。
+title: 引用API端点
+description: 访问控制API中的引用端点允许您查看可用权限和资源类型的名称，然后可以使用它们查看当前用户的有效访问控制策略。
 exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
 source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 1%
 
 ---
 
-# 參考端點
+# 引用端点
 
 >[!NOTE]
 >
->如果傳遞的是使用者權杖，則權杖的使用者必須具有請求組織的「組織管理員」角色。
+>如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-您可以透過向以下專案發出GET請求，列出所有許可權和資源型別的名稱： `/acl/reference` 端點。 這些名稱隨後可用於對發出的API呼叫 [檢視有效的存取控制原則](./effective-policies.md) （目前使用者）。
+您可以通过对以下项发出GET请求，列出所有权限和资源类型的名称： `/acl/reference` 端点。 然后，这些名称可用于对发起的API调用 [查看有效的访问控制策略](./effective-policies.md) 当前用户。
 
-許可權是透過Adobe Admin Console管理的原則，並對應至零個或多個資源型別原則。 資源型別是啟用特定型別之讀取、寫入和/或刪除功能的原則 [!DNL Platform] 資源（例如資料集或結構描述）。
+权限是通过Adobe Admin Console管理的策略，可映射到零个或多个资源类型策略。 资源类型是一种策略，它针对特定类型的资源启用读取、写入和/或删除功能 [!DNL Platform] 资源（如数据集或架构）。
 
 **API格式**
 
@@ -39,7 +39,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回 `permissions` 物件和 `resource-types` 物件，分別包含存取許可權或資源型別的完整名稱清單。
+成功响应将返回 `permissions` 对象和 `resource-types` 对象，每个对象分别包含访问权限或资源类型的完整名称列表。
 
 ```json
 {

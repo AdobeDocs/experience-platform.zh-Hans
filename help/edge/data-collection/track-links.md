@@ -1,7 +1,7 @@
 ---
-title: 使用Adobe Experience Platform Web SDK追蹤連結
-description: 瞭解如何使用Experience Platform Web SDK將連結資料傳送至Adobe Analytics
-keywords: adobe analytics；analytics；sendEvent；s.t()；s.tl()；webPageDetails；pageViews；webInteraction；網頁互動；頁面檢視；連結追蹤；連結；追蹤連結；clickCollection；點選集合；
+title: 使用Adobe Experience Platform Web SDK跟踪链接
+description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
+keywords: adobe analytics；analytics；sendEvent；s.t()；s.tl()；webPageDetails；pageViews；webInteraction；Web交互；页面查看；链接跟踪；链接；跟踪链接；clickCollection；点击收藏集；
 exl-id: d5a1804c-8f91-4083-a46e-ea8f7edf36b6
 source-git-commit: 04078a53bc6bdc01d8bfe0f2e262a28bbaf542da
 workflow-type: tm+mt
@@ -10,9 +10,9 @@ ht-degree: 1%
 
 ---
 
-# 追蹤連結
+# 跟踪链接
 
-可以手動設定或追蹤連結 [自動](#automaticLinkTracking). 手動追蹤是透過在底下新增詳細資訊來完成 `web.webInteraction` 結構描述的一部分。 有三個必要的變數：
+可以手动设置链接或跟踪链接 [自动](#automaticLinkTracking). 手动跟踪可通过在下面添加详细信息来完成 `web.webInteraction` 架构的一部分。 有三个必需变量：
 
 * `web.webInteraction.name`
 * `web.webInteraction.type`
@@ -35,47 +35,47 @@ alloy("sendEvent", {
 });
 ```
 
-從2.15.0版開始，Web SDK會擷取 `region` HTML元素的URL編號。 如此可啟用 [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html?lang=zh-Hans) Adobe Analytics的報告功能。
+从版本2.15.0开始，Web SDK捕获 `region` 点击的HTML元素的URL值。 这样可启用 [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html?lang=zh-Hans) Adobe Analytics中的报表功能。
 
-連結型別可以是下列三個值之一：
+链接类型可以是以下三个值之一：
 
-* **`other`：** 自訂連結
-* **`download`：** 下載連結
-* **`exit`：** 退出連結
+* **`other`：** 自定义链接
+* **`download`：** 下载链接
+* **`exit`：** 退出链接
 
-這些值為 [自動對應](adobe-analytics/automatically-mapped-vars.md) 進入Adobe Analytics，如果 [已設定](adobe-analytics/analytics-overview.md) 以達成此目的。
+这些值为 [自动映射](adobe-analytics/automatically-mapped-vars.md) 若为，则进入Adobe Analytics [已配置](adobe-analytics/analytics-overview.md) 才能做到这一点。
 
-## 自動連結追蹤 {#automaticLinkTracking}
+## 自动链接跟踪 {#automaticLinkTracking}
 
-根據預設，Web SDK會擷取、標籤符合條件的連結標籤上的點選次數，並加以記錄。 點按次數會透過擷取 [capture](https://www.w3.org/TR/uievents/#capture-phase) 按一下附加至檔案的事件監聽器。
+默认情况下，Web SDK会捕获、标记和记录符合条件的链接标记的点击次数。 点击量捕获方式 [capture](https://www.w3.org/TR/uievents/#capture-phase) 单击附加到文档的事件侦听器。
 
-自動連結追蹤的停用方式如下 [設定](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK。
+可以通过以下方式禁用自动链接跟踪 [配置](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK。
 
 ```javascript
 clickCollectionEnabled: false
 ```
 
-### 哪些標籤符合連結追蹤的資格？{#qualifyingLinks}
+### 哪些标记符合链接跟踪的条件？{#qualifyingLinks}
 
-已完成錨點的自動連結追蹤 `A` 和 `AREA` 標籤之間。 但是，如果這些標籤已附加，則不會考慮用於連結追蹤 `onclick` 處理常式。
+对锚点执行自动链接跟踪 `A` 和 `AREA` 标记之间。 但是，如果这些标记具有附件，则不会考虑用于链接跟踪 `onclick` 处理程序。
 
-### 連結的標籤如何設定？{#labelingLinks}
+### 如何标记链接？{#labelingLinks}
 
-如果錨點標籤包含下載屬性，或連結結尾是熱門的副檔名，則連結會被標籤為下載連結。 下載連結限定詞可以是 [已設定](../fundamentals/configuring-the-sdk.md) 使用規則運算式：
+如果锚点标记包含下载属性或链接以常用的文件扩展名结尾，则链接被标记为下载链接。 下载链接限定符可以是 [已配置](../fundamentals/configuring-the-sdk.md) 使用正则表达式：
 
 ```javascript
 downloadLinkQualifier: "\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"
 ```
 
-如果連結目標網域與目前不同，則連結會被標籤為退出連結 `window.location.hostname`.
+如果链接目标域与当前域不同，则链接被标记为退出链接 `window.location.hostname`.
 
-不符合下載或退出連結資格的連結會標示為「其他」。
+不符合下载或退出链接的条件的链接将标记为“其他”。
 
-### 如何篩選連結追蹤值？
+### 如何过滤链接跟踪值？
 
-透過自動連結追蹤收集的資料，可透過提供 [onBeforeEventSend回呼函式](../fundamentals/tracking-events.md#modifying-events-globally).
+通过自动链接跟踪收集的数据可以通过提供 [onBeforeEventSend回调函数](../fundamentals/tracking-events.md#modifying-events-globally).
 
-為Analytics報表準備資料時，篩選連結追蹤資料會很有用。 自動連結追蹤會擷取連結名稱和連結URL。 在Analytics報表中，連結名稱的優先順序高於連結URL。 如果您想要回報連結URL，則需要移除連結名稱。 下列範例顯示 `onBeforeEventSend` 移除下載連結之連結名稱的函式：
+在为Analytics报表准备数据时，筛选链接跟踪数据可能很有用。 自动链接跟踪会捕获链接名称和链接URL。 在Analytics报表中，链接名称优先于链接URL。 如果要报告链接URL，则需要删除链接名称。 以下示例显示了 `onBeforeEventSend` 函数中删除下载链接的链接名称：
 
 ```javascript
 alloy("configure", {
@@ -92,9 +92,9 @@ alloy("configure", {
 });
 ```
 
-從Web SDK 2.15.0版開始，透過自動連結追蹤收集的資料可以透過提供 [onBeforeLinkClickSend回呼函式](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend).
+从Web SDK版本2.15.0开始，通过自动链接跟踪收集的数据可以通过提供 [onBeforeLinkClickSend回调函数](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend).
 
-只有在發生自動連結點選事件時，才會執行此回呼函式。
+此回调函数仅在发生自动链接点击事件时执行。
 
 ```javascript
 alloy("configure", {
@@ -106,9 +106,9 @@ alloy("configure", {
 });
 ```
 
-使用篩選連結追蹤事件時 `onBeforeLinkClickSend` 命令，Adobe建議傳回 `false` 不應追蹤的連結點選次數。 任何其他回應都會讓Web SDK將資料傳送至Edge Network。
+使用过滤链接跟踪事件时 `onBeforeLinkClickSend` 命令，Adobe建议返回 `false` 不应跟踪的链接点击量。 任何其他响应都会使Web SDK将数据发送到Edge Network。
 
 
 >[!NOTE]
 >
->**當兩個 `onBeforeEventSend` 和 `onBeforeLinkClickSend` 回撥函式已設定，Web SDK會執行 `onBeforeLinkClickSend` 回呼函式以篩選及增強連結點選互動事件，然後按一下 `onBeforeEventSend` 回呼函式。
+>**当两个 `onBeforeEventSend` 和 `onBeforeLinkClickSend` 设置了回调函数，Web SDK将运行 `onBeforeLinkClickSend` 用于过滤和增强链接点击交互事件的回调函数，其后跟 `onBeforeEventSend` 回调函数。

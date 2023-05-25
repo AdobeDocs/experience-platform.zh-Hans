@@ -1,6 +1,6 @@
 ---
-title: 存取ECID
-description: 瞭解如何從「資料準備」或「標籤」存取Experience CloudID
+title: 访问ECID
+description: 了解如何从数据准备或标记访问Experience CloudID
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
 source-git-commit: dee04f2cdeb9057ac10e27a17f9db3f065712618
 workflow-type: tm+mt
@@ -10,32 +10,32 @@ ht-degree: 3%
 ---
 
 
-# 存取ECID
+# 访问ECID
 
-此 [!DNL Experience Cloud Identity (ECID)] 是使用者造訪您的網站時指派給使用者的永久識別碼。 在某些情況下，您可能會偏好存取 [!DNL ECID] （例如，傳送給協力廠商）。 另一個使用案例是設定 [!DNL ECID] 在自訂XDM欄位中，身分對應中也會有。
+此 [!DNL Experience Cloud Identity (ECID)] 是用户访问您的网站时分配给用户的永久标识符。 在某些情况下，您可能希望访问 [!DNL ECID] （例如，发送给第三方）。 另一个用例是设置 [!DNL ECID] 在自定义XDM字段中，以及标识映射。
 
-您可以透過以下方式存取ECID： [資料收集的資料準備](../datastreams/data-prep.md) （建議使用）或透過標籤。
+您可以通过以下任一方式访问ECID [为数据收集准备数据](../datastreams/data-prep.md) （推荐）或通过标记进行标记。
 
-## 透過資料準備存取ECID （偏好方法） {#accessing-ecid-data-prep}
+## 通过数据准备访问ECID（首选方法） {#accessing-ecid-data-prep}
 
-如果您想在自訂XDM欄位中設定ECID，除了在身分對應中擁有它之外，您還可以透過設定 `source` 至下列路徑：
+如果您希望在自定义XDM字段中设置ECID，则除了在身份映射中使其可用外，您还可以通过设置 `source` 到以下路径：
 
 ```js
 xdm.identityMap.ECID[0].id
 ```
 
-然後，將目標設定為欄位為型別的XDM路徑 `string`.
+然后，将目标设置为字段为类型的XDM路径 `string`.
 
 ![](./assets/access-ecid-data-prep.png)
 
 ## 标记
 
-如果您需要存取 [!DNL ECID] 在使用者端，使用如下所述的標籤方法。
+如果您需要访问 [!DNL ECID] 在客户端，使用如下所述的标记方法。
 
-1. 確保您的屬性已設定為 [規則元件排序](../../tags/ui/managing-resources/rules.md#sequencing) 已啟用。
+1. 确保您的资产配置有 [规则组件排序](../../tags/ui/managing-resources/rules.md#sequencing) 已启用。
 1. 创建新规则。
-1. 新增 [!UICONTROL 程式庫已載入] 事件至規則。
-1. 新增 [!UICONTROL 自訂條件] 對規則的動作，包含下列程式碼(假設您已為SDK執行個體設定的名稱為 `alloy`)：
+1. 添加 [!UICONTROL 库已加载] 事件到规则。
+1. 添加 [!UICONTROL 自定义完成情况] 对规则的操作，代码如下(假定您为SDK实例配置的名称为 `alloy`)：
 
    ```js
     return alloy("getIdentity")
@@ -46,4 +46,4 @@ xdm.identityMap.ECID[0].id
 
 1. 保存规则。
 
-之後，您應該就能存取 [!DNL ECID] 在後續規則中，使用 `%ECID%` 或 `_satellite.getVar("ECID")`，就像存取任何其他資料元素一樣。
+然后，您应该能够访问 [!DNL ECID] 在后续规则中，使用 `%ECID%` 或 `_satellite.getVar("ECID")`，就像您会访问任何其他数据元素一样。

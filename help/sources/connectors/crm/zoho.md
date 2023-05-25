@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Zoho CRM；zoho crm；Zoho；zoho
+keywords: Experience Platform；主页；热门主题；Zoho CRM；zoho crm；Zoho；Zoho
 solution: Experience Platform
-title: Zoho CRM來源聯結器概述
-description: 瞭解如何使用API或使用者介面將Zoho CRM連線至Adobe Experience Platform。
+title: Zoho CRM Source Connector概述
+description: 了解如何使用API或用户界面将Zoho CRM连接到Adobe Experience Platform。
 exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -13,47 +13,47 @@ ht-degree: 0%
 
 # [!DNL Zoho CRM]
 
-Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Experience Platform提供從協力廠商CRM系統擷取資料的支援。 CRM提供者的支援包括 [!DNL Zoho CRM].
+Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的支持包括 [!DNL Zoho CRM].
 
-## IP位址允許清單
+## IP地址允许列表
 
-在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
 
-## 擷取您的驗證認證 [!DNL Zoho CRM]
+## 检索您的身份验证凭据 [!DNL Zoho CRM]
 
-在您從帶入資料之前 [!DNL Zoho CRM] Platform的帳戶，您必須先擷取認證以驗證您的 [!DNL Zoho CRM] 來源。 請依照下列步驟擷取您的使用者端ID、使用者端密碼、存取權杖和重新整理權杖。
+在将数据从您的 [!DNL Zoho CRM] 帐户到Platform时，您必须首先检索凭据来验证您的 [!DNL Zoho CRM] 源。 按照以下步骤检索您的客户端ID、客户端密钥、访问令牌和刷新令牌。
 
-### 註冊您的應用程式
+### 注册您的应用程序
 
-擷取驗證認證的第一步，是使用 [[!DNL Zoho CRM] 開發人員主控台](https://accounts.zoho.com/). 若要註冊您的應用程式，您必須從下列專案選取使用者端型別：Java Script、網頁式、行動裝置、非瀏覽器行動應用程式或自行使用者端。 接下來，提供應用程式名稱、網頁URL及授權重新導向URI的值， [!DNL Zoho CRM] 然後可以使用以授與Token來重新導向。
+检索身份验证凭据的第一步是使用 [[!DNL Zoho CRM] 开发人员控制台](https://accounts.zoho.com/). 要注册应用程序，您必须从以下内容中选择客户端类型：Java脚本、基于Web的移动应用程序、非浏览器移动应用程序或自客户端。 接下来，为应用程序名称、网页URL和授权重定向URI提供值， [!DNL Zoho CRM] 然后，可以使用通过授权令牌重定向您。
 
-成功註冊會傳回您的使用者端ID和使用者端密碼。
+成功注册将返回您的客户端ID和客户端密钥。
 
-### 建立授權請求
+### 创建授权请求
 
-接下來，您必須建立 [授權請求](https://www.zoho.com/crm/developer/docs/api/v2/auth-request.html) 使用網頁式應用程式或自我使用者端。 授權請求會傳回您的授與Token，讓您擷取存取Token。
+接下来，您必须创建 [授权请求](https://www.zoho.com/crm/developer/docs/api/v2/auth-request.html) 使用基于Web的应用程序或自客户端。 授权请求将返回您的授权令牌，从而允许您检索访问令牌。
 
-建立授權請求時，您必須填寫兩者的值 **範圍** 和 **存取型別**. 請參閱此 [[!DNL Zoho CRM] 檔案](https://www.zoho.com/crm/developer/docs/api/v2/scopes.html) 以取得有關範圍的詳細資訊，而 **存取型別** 應一律設為 `offline`.
+创建授权请求时，必须填写两者的值 **范围** 和 **访问类型**. 请参阅此 [[!DNL Zoho CRM] 文档](https://www.zoho.com/crm/developer/docs/api/v2/scopes.html) 以了解有关范围的更多信息，同时 **访问类型** 应始终设置为 `offline`.
 
-### 產生存取權並重新整理Token
+### 生成访问权杖并刷新令牌
 
-擷取您的授權Token後，您就可以產生 [存取和重新整理Token](https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html) 向發出POST請求 `{ACCOUNTS_URL}/oauth/v2/token` 提供使用者端ID、使用者端密碼、授與權杖和重新導向URI時。 在此步驟中，您還必須包含 `grant_type` 作為引數，並將值設定為 `"authorization_code"`.
+检索授权令牌后，即可生成 [访问和刷新令牌](https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html) 向发出POST请求 `{ACCOUNTS_URL}/oauth/v2/token` 提供客户端ID、客户端密钥、授权令牌和重定向URI时。 在此步骤中，您还必须包含 `grant_type` 作为参数，并将值设置为 `"authorization_code"`.
 
-成功的請求會傳回您的存取和重新整理Token，然後您可使用它進行驗證。
+成功的请求会返回您的访问和刷新令牌，然后您可以使用这些令牌进行身份验证。
 
-如需取得認證的詳細步驟，請參閱 [[!DNL Zoho CRM] 驗證指南](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
+有关获取凭据的详细步骤，请参阅 [[!DNL Zoho CRM] 身份验证指南](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
 
-## Connect [!DNL Zoho CRM] 至 [!DNL Platform] 使用API
+## Connect [!DNL Zoho CRM] 到 [!DNL Platform] 使用API
 
-以下檔案提供有關如何連線的資訊 [!DNL Zoho CRM] 使用API或使用者介面的to Platform：
+以下文档提供了有关如何连接的信息 [!DNL Zoho CRM] 至使用API或用户界面的Platform：
 
-- [建立 [!DNL Zoho CRM] 使用流量服務API的基礎連線](../../tutorials/api/create/crm/zoho.md)
-- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
-- [使用流量服務API為CRM來源建立資料流](../../tutorials/api/collect/crm.md)
+- [创建 [!DNL Zoho CRM] 使用流服务API进行基本连接](../../tutorials/api/create/crm/zoho.md)
+- [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+- [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-## Connect [!DNL Zoho CRM] 至 [!DNL Platform] 使用UI
+## Connect [!DNL Zoho CRM] 到 [!DNL Platform] 使用UI
 
-- [建立 [!DNL Zoho CRM] ui中的來源連線](../../tutorials/ui/create/crm/zoho.md)
-- [在UI中為CRM來源連線建立資料流](../../tutorials/ui/dataflow/crm.md)
+- [创建 [!DNL Zoho CRM] UI中的源连接](../../tutorials/ui/create/crm/zoho.md)
+- [在UI中为CRM源连接创建数据流](../../tutorials/ui/dataflow/crm.md)

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API
-title: 如何設定計算屬性欄位
+keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+title: 如何配置计算属性字段
 type: Documentation
-description: 計算屬性是用來將事件層級資料彙總到設定檔層級屬性的函式。 若要設定計算屬性，您必須先識別將儲存計算屬性值的欄位。 此欄位可使用Schema Registry API來建立，以定義結構描述和將儲存計算屬性欄位的自訂欄位群組。
+description: 计算属性是用于将事件级数据聚合到配置文件级属性的函数。 要配置计算属性，您首先需要标识将保存计算属性值的字段。 此字段可以使用架构注册表API创建，以定义架构和将保存计算属性字段的自定义字段组。
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
 hide: true
 hidefromtoc: true
@@ -13,19 +13,19 @@ ht-degree: 2%
 
 ---
 
-# (Alpha)使用Schema Registry API設定計算屬性欄位
+# (Alpha)使用架构注册表API配置计算属性字段
 
 >[!IMPORTANT]
 >
->計算屬性功能目前為Alpha版，並非所有使用者都可使用。 文档和功能可能会发生变化。
+>计算属性功能当前为Alpha版，并非对所有用户都可用。 文档和功能可能会发生变化。
 
-若要設定計算屬性，您必須先識別將儲存計算屬性值的欄位。 此欄位可使用Schema Registry API來建立以定義結構描述以及將儲存計算屬性欄位的自訂結構描述欄位群組。 建議的最佳實務是建立個別的「計算屬性」方案和欄位群組，您的組織可以新增任何屬性以作為計算屬性。 這可讓您的組織將計算屬性結構描述與其他用於資料內嵌的結構描述完全分開。
+要配置计算属性，您首先需要标识将保存计算属性值的字段。 此字段可以使用架构注册表API创建，以定义架构和将保存计算属性字段的自定义架构字段组。 建议最好创建一个单独的“计算属性”架构和字段组，贵组织可以添加任何要用作计算属性的属性。 这使您的组织能够将计算属性架构与用于数据摄取的其他架构完全分离。
 
-本檔案的工作流程概述如何使用結構描述登入API來建立已啟用設定檔的「計算屬性」結構描述，該結構描述會參考自訂欄位群組。 本檔案包含運算屬性特有的範常式式碼，但請參考 [Schema Registry API指南](../../xdm/api/overview.md) 有關使用API定義欄位群組和結構描述的詳細資訊。
+本文档中的工作流概述如何使用架构注册表API创建启用了配置文件的“计算属性”架构，该架构引用自定义字段组。 本文档包含特定于计算属性的示例代码，但是，请参阅 [架构注册表API指南](../../xdm/api/overview.md) 有关使用API定义字段组和架构的详细信息。
 
-## 建立計算屬性欄位群組
+## 创建计算属性字段组
 
-POST若要使用Schema Registry API建立欄位群組，請從對 `/tenant/fieldgroups` 端點，並在請求內文中提供欄位群組的詳細資訊。 有關使用結構描述登入API使用欄位群組的詳細資訊，請參閱 [欄位群組API端點指南](../../xdm/api/field-groups.md).
+POST要使用Schema Registry API创建字段组，请首先向 `/tenant/fieldgroups` 端点并在请求正文中提供字段组的详细信息。 有关使用架构注册表API处理字段组的详细信息，请参阅 [字段组API端点指南](../../xdm/api/field-groups.md).
 
 **API格式**
 
@@ -80,12 +80,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `title` | 您正在建立的欄位群組名稱。 |
-| `meta:intendedToExtend` | 可使用此欄位群組的XDM類別。 |
+| `title` | 正在创建的字段组的名称。 |
+| `meta:intendedToExtend` | 可用于字段组的XDM类。 |
 
 **响应**
 
-成功的要求會傳回HTTP回應狀態201 （已建立），其回應本文包含新建立欄位群組的詳細資訊，包括 `$id`， `meta:altIt`、和 `version`. 這些值是唯讀的，並由結構描述登入指派。
+成功的请求会返回HTTP响应状态201（已创建），并且响应正文包含新创建的字段组的详细信息，包括 `$id`， `meta:altIt`、和 `version`. 这些值是只读的，由架构注册表分配。
 
 ```json
 {
@@ -145,11 +145,11 @@ curl -X POST \
 }
 ```
 
-## 使用其他計算屬性更新欄位群組
+## 使用其他计算属性更新字段组
 
-由於需要更多計算屬性，您可以透過向以下專案發出PUT要求，以其他屬性更新計算屬性欄位群組： `/tenant/fieldgroups` 端點。 此請求需要您在路徑中建立之欄位群組的唯一ID，以及您想新增到內文中的所有新欄位。
+PUT由于需要更多计算属性，您可以通过向 `/tenant/fieldgroups` 端点。 此请求要求您在路径中创建的字段组的唯一ID以及要添加到正文中的所有新字段。
 
-如需有關使用結構描述登入API更新欄位群組的詳細資訊，請參閱 [欄位群組API端點指南](../../xdm/api/field-groups.md).
+有关使用架构注册表API更新字段组的更多信息，请参阅 [字段组API端点指南](../../xdm/api/field-groups.md).
 
 **API格式**
 
@@ -159,11 +159,11 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 **请求**
 
-此請求會新增與以下專案相關的新欄位： `purchaseSummary` 資訊。
+此请求添加与相关的新字段 `purchaseSummary` 信息。
 
 >[!NOTE]
 >
->透過PUT請求更新欄位群組時，本文必須包含在POST請求中建立新欄位群組時所需的所有欄位。
+>通过PUT请求更新字段组时，正文必须包括在POST请求中创建新字段组时所需的所有字段。
 
 ```shell
 curl -X PUT \
@@ -230,7 +230,7 @@ curl -X PUT \
 
 **响应**
 
-成功的回應會傳回已更新欄位群組的詳細資訊。
+成功响应将返回已更新字段组的详细信息。
 
 ```json
 {
@@ -310,11 +310,11 @@ curl -X PUT \
 }
 ```
 
-## 建立已啟用設定檔的結構描述
+## 创建启用配置文件的架构
 
-POST若要使用Schema Registry API建立結構描述，請從對 `/tenant/schemas` 端點，並在請求內文中提供結構的詳細資訊。 此結構描述也必須啟用 [!DNL Profile] 和會顯示為結構描述類別的聯合結構描述的一部分。
+POST要使用Schema Registry API创建架构，请从向 `/tenant/schemas` 端点并在请求正文中提供架构的详细信息。 还必须为以下项启用架构 [!DNL Profile] 和显示为架构类的合并架构的一部分。
 
-如需詳細資訊，請參閱 [!DNL Profile] — 啟用的結構描述和聯合結構描述，請檢視 [[!DNL Schema Registry] API指南](../../xdm/api/overview.md) 和 [結構描述組合基本概唸檔案](../../xdm/schema/composition.md).
+有关的详细信息 [!DNL Profile] — 启用的架构和合并架构，请查看 [[!DNL Schema Registry] API指南](../../xdm/api/overview.md) 和 [架构组合基础文档](../../xdm/schema/composition.md).
 
 **API格式**
 
@@ -324,7 +324,7 @@ POST /tenants/schemas
 
 **请求**
 
-以下請求會建立參照 `computedAttributesFieldGroup` 在此檔案中先前建立（使用其唯一ID），並為設定檔聯合結構描述啟用(使用 `meta:immutableTags` 陣列)。 如需有關如何使用Schema Registry API建立結構描述的詳細指示，請參閱 [結構描述API端點指南](../../xdm/api/schemas.md).
+以下请求将创建一个引用 `computedAttributesFieldGroup` 之前在本文档中创建的（使用其唯一ID），并且已为配置文件合并架构启用(使用 `meta:immutableTags` 数组)。 有关如何使用架构注册表API创建架构的详细说明，请参阅 [架构API端点指南](../../xdm/api/schemas.md).
 
 ```shell
 curl -X POST \
@@ -367,7 +367,7 @@ curl -X POST \
 
 **响应**
 
-成功的回應會傳回HTTP狀態201 （已建立）以及包含新建立之結構描述詳細資訊的裝載，包括 `$id`， `meta:altId`、和 `version`. 這些值是唯讀的，並由結構描述登入指派。
+成功的响应会返回HTTP状态201（已创建）以及包含新创建架构的详细信息的有效负载，包括 `$id`， `meta:altId`、和 `version`. 这些值是只读的，由架构注册表分配。
 
 ```json
 {
@@ -435,4 +435,4 @@ curl -X POST \
 
 ## 后续步骤
 
-現在您已建立要儲存計算屬性的結構描述和欄位群組，您可以使用 `/computedattributes` api端點。 如需在API中建立計算屬性的詳細步驟，請依照以下提供的步驟操作： [計算屬性API端點指南](ca-api.md).
+现在您已经创建了架构和字段组，计算属性将存储到该架构和字段组中，接下来可以使用 `/computedattributes` API端点。 有关在API中创建计算属性的详细步骤，请按照 [计算属性API端点指南](ca-api.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；更新資料流；編輯排程
-description: 本教學課程涵蓋使用「來源」工作區更新資料流排程的步驟，包括其擷取頻率和間隔率。
+keywords: Experience Platform；主页；热门主题；更新数据流；编辑计划
+description: 本教程介绍了使用源工作区更新数据流计划的步骤，包括其摄取频率和间隔率。
 solution: Experience Platform
-title: 更新UI中的來源連線資料流
+title: 在UI中更新源连接数据流
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
@@ -12,99 +12,99 @@ ht-degree: 1%
 
 ---
 
-# 更新UI中的資料流
+# 更新UI中的数据流
 
-本教學課程提供您如何使用「來源」工作區更新現有資料流的步驟，包括其排程和對應。
+本教程提供了有关如何使用源工作区更新现有数据流（包括其计划和映射）的步骤。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 更新資料流
+## 更新数据流
 
-在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 選取 **[!UICONTROL 資料流]** 以檢視現有資料流的清單。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 选择 **[!UICONTROL 数据流]** 查看现有数据流的列表。
 
-![目錄](../../images/tutorials/update-dataflows/catalog.png)
+![目录](../../images/tutorials/update-dataflows/catalog.png)
 
-此 [!UICONTROL 資料流] 頁面包含所有現有資料流的清單，包括關於其對應目標資料集、來源和帳戶名稱的資訊。
+此 [!UICONTROL 数据流] 页面包含所有现有数据流的列表，包括有关其相应的目标数据集、源和帐户名称的信息。
 
-若要排序清單，請選取篩選器圖示 ![篩選](../../images/tutorials/update/filter.png) 左上角以使用「排序」面板。
+要对列表进行排序，请选择过滤器图标 ![过滤器](../../images/tutorials/update/filter.png) 以使用“排序”面板。
 
 ![filter-dataflows](../../images/tutorials/update-dataflows/filter-dataflows.png)
 
-排序面板提供所有可用來源的清單。 您可以從清單中選取多個來源，以存取屬於不同來源的資料流篩選選取專案。
+排序面板提供了所有可用源的列表。 您可以从列表中选择多个源，以访问属于不同源的数据流的过滤选择。
 
-選取您要使用的來源，以檢視其現有資料流的清單。 識別您要更新的資料流後，選取省略符號(`...`)時，不會變更資料流名稱。
+选择要使用的源以查看其现有数据流的列表。 标识要更新的数据流后，选择省略号(`...`)。
 
 ![edit-source](../../images/tutorials/update-dataflows/edit-source.png)
 
-下拉式選單隨即出現，為您提供更新所選資料流的選項。 從這裡，您可以選擇更新資料流的對應集和擷取排程。 您也可以選取選項，以在監視控制面板中檢查資料流、訂閱警示，以及停用或刪除資料流。
+此时会显示一个下拉菜单，其中提供了用于更新所选数据流的选项。 在此处，您可以选择更新数据流的映射集和摄取计划。 您还可以选择以下选项：在监视功能板中检查数据流、订阅警报，以及禁用或删除数据流。
 
-若要更新資料流的資訊，請選取 **[!UICONTROL 更新資料流]**.
+要更新数据流的信息，请选择 **[!UICONTROL 更新数据流]**.
 
 ![update-dataflow](../../images/tutorials/update-dataflows/update-dataflow.png)
 
-### 新增資料
+### 添加数据
 
-此 [!UICONTROL 新增資料] 步驟隨即顯示。 選取適當的資料格式以檢閱所選資料的內容，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+此 [!UICONTROL 添加数据] 步骤。 选择适当的数据格式以查看所选数据的内容，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![add-data](../../images/tutorials/update-dataflows/add-data.png)
 
 ### 数据流详细信息
 
-在 [!UICONTROL 資料流詳細資料] 頁面，您可以為資料流提供更新的名稱和說明，並重新設定資料流的錯誤臨界值。 在此步驟中，您也可以設定或修改警示訂閱的設定。
+在 [!UICONTROL 数据流详细信息] 页面，您可以为数据流提供更新的名称和描述，并重新配置数据流的错误阈值。 在此步骤中，您还可以配置或修改警报订阅的设置。
 
-提供更新的值後，請選取 **[!UICONTROL 下一個]**.
+提供更新的值后，选择 **[!UICONTROL 下一个]**.
 
-![資料流 — 詳細資料](../../images/tutorials/update-dataflows/dataflow-detail.png)
+![数据流 — 详细信息](../../images/tutorials/update-dataflows/dataflow-detail.png)
 
 ### 映射
 
 >[!NOTE]
 >
->下列來源目前不支援編輯對應功能： Adobe Analytics、Adobe Audience Manager、HTTP API以及 [!DNL Marketo Engage].
+>以下源当前不支持编辑映射功能： Adobe Analytics、Adobe Audience Manager、HTTP API和 [!DNL Marketo Engage].
 
-此 [!UICONTROL 對應] 頁面提供您一個介面，您可以在其中新增和移除與資料流關聯的對應集。
+此 [!UICONTROL 映射] 页面提供了一个界面，您可以在其中添加和删除与数据流关联的映射集。
 
-對應介面會顯示資料流的現有對應集，而不是新的建議對應集。 對應更新僅適用於未來排程的資料流執行。 排程進行一次性內嵌的資料流無法更新其對應集。
+映射界面显示数据流的现有映射集，而不是新的推荐映射集。 映射更新仅适用于计划在未来运行的数据流。 计划进行一次性摄取的数据流无法更新其映射集。
 
-從這裡，您可以使用對應介面來修改套用至資料流的對應集。 如需如何使用對應介面的完整步驟，請參閱 [資料準備UI指南](../../../data-prep/ui/mapping.md) 以取得詳細資訊。
+在此处，您可以使用映射界面修改应用于数据流的映射集。 有关如何使用映射界面的完整步骤，请参见 [数据准备UI指南](../../../data-prep/ui/mapping.md) 了解更多信息。
 
-![對應](../../images/tutorials/update-dataflows/mapping.png)
+![映射](../../images/tutorials/update-dataflows/mapping.png)
 
 ### 计划
 
-此 [!UICONTROL 排程] 步驟隨即顯示，可讓您更新資料流的擷取排程，並使用更新的對應自動擷取選取的來源資料。
+此 [!UICONTROL 计划] 此时将显示步骤，允许您更新数据流的摄取计划并自动使用更新的映射摄取选定的源数据。
 
 >[!NOTE]
 >
->您無法重新排程要進行一次性內嵌的資料流。
+>您无法重新计划计划一次性摄取的数据流。
 
 ![new-schedule](../../images/tutorials/update-dataflows/new-schedule.png)
 
-您也可以使用資料流頁面提供的內嵌更新選項，更新資料流的擷取排程。
+您还可以使用数据流页面中提供的内联更新选项更新数据流的摄取计划。
 
-從資料流頁面，選取省略符號(`...`)，然後選取「 」 **[!UICONTROL 編輯排程]** 從出現的下拉式功能表中。
+从数据流页面中，选择省略号(`...`)，然后选择 **[!UICONTROL 编辑计划]** 从出现的下拉菜单中。
 
 ![edit-schedule](../../images/tutorials/update-dataflows/edit-schedule.png)
 
-此 **[!UICONTROL 編輯排程]** 對話方塊提供更新資料流擷取頻率和間隔率的選項。 設定更新的頻率和間隔值後，請選取 **[!UICONTROL 儲存]**.
+此 **[!UICONTROL 编辑计划]** 对话框为您提供了更新数据流的摄取频率和间隔率的选项。 设置更新的频率和间隔值后，选择 **[!UICONTROL 保存]**.
 
-![排程快顯視窗](../../images/tutorials/update-dataflows/schedule-pop-up.png)
+![计划弹出窗口](../../images/tutorials/update-dataflows/schedule-pop-up.png)
 
 ### 请查看
 
-此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在更新資料流之前先檢閱資料流。
+此 **[!UICONTROL 审核]** 步骤，允许您在更新数据流之前对其进行查看。
 
-檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間，以便建立具有新對應集的資料流。
+查看数据流后，选择 **[!UICONTROL 完成]** 留出一些时间，以便使用新映射集创建数据流。
 
-![檢閱](../../images/tutorials/update-dataflows/review.png)
+![审核](../../images/tutorials/update-dataflows/review.png)
 
 ## 后续步骤
 
-依照本教學課程，您已成功使用 [!UICONTROL 來源] 工作區以更新資料流的擷取排程和對應集。
+按照本教程中的说明，您已成功使用了 [!UICONTROL 源] 工作区，以更新数据流的摄取计划和映射集。
 
-如需如何以程式設計方式執行這些操作的步驟，請使用 [!DNL Flow Service] API，請參考以下教學課程： [使用流量服務API更新資料流](../../tutorials/api/update-dataflows.md).
+有关如何使用以编程方式执行这些操作的步骤 [!DNL Flow Service] API，请参考以下教程： [使用流服务API更新数据流](../../tutorials/api/update-dataflows.md).

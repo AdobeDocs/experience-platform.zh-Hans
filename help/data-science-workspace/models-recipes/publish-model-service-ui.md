@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；發佈模型；Data Science Workspace；熱門主題；為服務評分
+keywords: Experience Platform；发布模型；Data Science Workspace；热门主题；为服务评分
 solution: Experience Platform
-title: 在Data Science Workspace UI中發佈模型作為服務
+title: 在数据科学工作区UI中发布模型即服务
 type: Tutorial
-description: Adobe Experience Platform Data Science Workspace可讓您發佈經過訓練及評估的模型即服務，讓組織內的使用者無需建立自己的模型，即可對資料評分。
+description: Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而使贵组织内的用户无需创建自己的模型即可对数据进行评分。
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -12,62 +12,62 @@ ht-degree: 0%
 
 ---
 
-# 在資料科學工作區UI中將模型發佈為服務
+# 在数据科学工作区UI中发布模型作为服务
 
-Adobe Experience Platform Data Science Workspace可讓您發佈經過訓練及評估的模型即服務，讓組織內的使用者無需建立自己的模型，即可對資料評分。
+Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而使贵组织内的用户无需创建自己的模型即可对数据进行评分。
 
 ## 快速入门
 
-若要完成本教學課程，您必須擁有 [!DNL Experience Platform]. 如果您無權存取中的組織 [!DNL Experience Platform]，請在繼續之前聯絡您的系統管理員。
+要完成本教程，您必须拥有 [!DNL Experience Platform]. 如果您无权访问中的组织 [!DNL Experience Platform]，请在继续之前与系统管理员联系。
 
-本教學課程需要現有模型且訓練回合成功。 如果您沒有可發佈的模型，請遵循 [在UI中訓練及評估模型](./train-evaluate-model-ui.md) 繼續之前，請先參閱教學課程。
+本教程要求一个成功运行培训的现有模型。 如果您没有可发布的模型，请按照 [在UI中训练和评估模型](./train-evaluate-model-ui.md) 教程，然后再继续。
 
-如果您偏好使用Sensei Machine Learning API發佈模型，請參閱 [api教學課程](./publish-model-service-api.md).
+如果您希望使用Sensei机器学习API发布模型，请参阅 [api教程](./publish-model-service-api.md).
 
-## 發佈模型 {#publish-a-model}
+## 发布模型 {#publish-a-model}
 
-在Adobe Experience Platform中選取 **[!UICONTROL 模型]** 位於左側導覽欄，然後選取 **[!UICONTROL 瀏覽]** 標籤以列出所有現有模型。 選取您要作為服務發佈的模型名稱。
+在Adobe Experience Platform中，选择 **[!UICONTROL 模型]** （位于左侧导航列），然后选择 **[!UICONTROL 浏览]** 选项卡，列出所有现有模型。 选择要作为服务发布的模型的名称。
 
 ![](../images/models-recipes/publish-model/browse_model.png)
 
-選取 **[!UICONTROL 發佈]** 在「模型概覽」頁面的右上角附近，開始建立服務的程式。
+选择 **[!UICONTROL Publish]** 在模型概述页面的右上角附近，开始服务创建过程。
 
 ![](../images/models-recipes/publish-model/view_training.png)
 
-輸入所需的服務名稱，並選擇性地提供服務說明，然後選取 **[!UICONTROL 下一個]** 完成後。
+输入所需的服务名称并提供服务说明（可选），选择 **[!UICONTROL 下一个]** 完成后。
 
 ![](../images/models-recipes/publish-model/configure_training.png)
 
-系統會列出模型的所有成功訓練回合。 新服務將會從選取的訓練回合繼承訓練和評分設定。
+将列出模型的所有成功训练运行。 新服务将从选定的训练运行继承训练和评分配置。
 
 ![](../images/models-recipes/publish-model/select_training_run.png)
 
-選取 **[!UICONTROL 完成]** 以建立服務並重新導向至 **[!UICONTROL 服務庫]** 顯示所有可用的服務，包括新建立的服務。
+选择 **[!UICONTROL 完成]** 以创建服务并重定向到 **[!UICONTROL 服务库]** 显示所有可用的服务，包括新创建的服务。
 
 ![](../images/models-recipes/publish-model/service_gallery.png)
 
-## 使用服務計分 {#access-a-service}
+## 使用服务计分 {#access-a-service}
 
-在Adobe Experience Platform中，選取 **[!UICONTROL 服務]** 標籤以存取 **[!UICONTROL 服務庫]**. 尋找您要使用的服務並選取 **[!UICONTROL 開啟]**.
+在Adobe Experience Platform中，选择 **[!UICONTROL 服务]** 选项卡访问 **[!UICONTROL 服务库]**. 找到要使用的服务并选择 **[!UICONTROL 打开]**.
 
 ![](../images/models-recipes/publish-model/open_service.png)
 
-在服務概觀頁面中，選取 **[!UICONTROL 分數]**.
+在服务概述页面中，选择 **[!UICONTROL 分数]**.
 
 ![](../images/models-recipes/publish-model/score_service.png)
 
-為評分回合選取適當的輸入資料集，然後選取 **[!UICONTROL 下一個]**. 系統會要求您對評分資料集執行相同步驟。 選取輸入和輸出資料集後，您可以更新設定。
+为评分运行选择适当的输入数据集，然后选择 **[!UICONTROL 下一个]**. 系统会要求您对评分数据集执行相同的步骤。 选择输入和输出数据集后，您可以更新配置。
 
 ![](../images/models-recipes/publish-model/select_datasets.png)
 
-建立服務時，會繼承預設評分設定。 您可以檢閱這些設定，並視需要按兩下值來調整它們。 在您滿意設定後，請選取 **[!UICONTROL 完成]** 以開始評分回合。
+创建服务时，它会继承默认评分配置。 您可以查看这些配置，并根据需要双击值来调整它们。 对配置满意后，选择 **[!UICONTROL 完成]** 开始评分运行。
 
 ![](../images/models-recipes/publish-model/scoring_configs.png)
 
-在服務的 **概觀** 頁面，會顯示新評分工作及其進度的詳細資訊。 工作完成後， **[!UICONTROL 最近]** 中的標題 **[!UICONTROL 評分]** 容器已更新。
+在服务的 **概述** 页面，将显示新评分作业及其进度的详细信息。 作业完成后， **[!UICONTROL 最近]** 中的标题 **[!UICONTROL 评分]** 容器已更新。
 
 ![](../images/models-recipes/publish-model/pending_scoring.png)
 
 ## 后续步骤 {#next-steps}
 
-依照本教學課程所述，您已成功將模型發佈為可存取的服務，並透過使用新服務對資料進行評分。 [!UICONTROL 服務庫]. 繼續下一節教學課程，瞭解如何 [排程服務的自動化訓練和評分回合](./schedule-models-ui.md).
+按照本教程，您已成功将模型发布为可访问服务，并通过使用新服务对数据进行评分。 [!UICONTROL 服务库]. 继续阅读下一教程，了解如何 [安排服务的自动训练和评分运行](./schedule-models-ui.md).

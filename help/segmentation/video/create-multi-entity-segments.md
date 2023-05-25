@@ -1,6 +1,6 @@
 ---
-title: 在Adobe Experience Platform中建立多實體區段
-description: 本影片提供使用Platform UI建立多實體區段的基本介紹。
+title: 在Adobe Experience Platform中创建多实体区段
+description: 本视频提供了有关使用Platform UI创建多实体区段的基本知识。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -17,12 +17,12 @@ ht-degree: 0%
 
 ---
 
-# 在Experience PlatformUI中建立多實體區段
+# 在Experience PlatformUI中创建多实体区段
 
-以下影片旨在協助您瞭解如何建立動態區段。 它顯示一個客戶體驗範例，然後快速導覽中的主要功能 [!DNL Platform] 介面。 若要進一步瞭解多實體分段，請閱讀以下指南： [多實體分段](../multi-entity-segmentation.md).
+以下视频旨在帮助您了解如何创建动态区段。 它展示了一个客户体验示例，然后快速浏览中的主要功能 [!DNL Platform] 界面。 要了解有关多实体分段的更多信息，请阅读以下页面上的指南： [多实体分割](../multi-entity-segmentation.md).
 
 >[!NOTE]
 >
->Experience Platform使用者介面經常更新，自從錄製此影片後，可能有所變更。 如需最新資訊，請參閱 [區段產生器指南](../ui/segment-builder.md).
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经更改。 有关最新信息，请参阅 [Segment Builder指南](../ui/segment-builder.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/32179?quality=12&learn=on)

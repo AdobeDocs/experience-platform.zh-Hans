@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；GDPR；gdpr；ccpa：CCPA；PDPA；PDPA_that；PDPA_THA；lgpd；LGPD；lgpd_bra；LGPD_BRA；
+keywords: Experience Platform；主页；热门主题；GDPR；gdpr；ccpa：CCPA；PDPA；PDPA_that；PDPA_THA；lgpd；LGPD；lgpd_bra；LGPD_BRA；
 solution: Experience Platform
-title: Privacy Service概觀
-description: Privacy Service可讓您在Experience Cloud資料作業中促進自動遵守法律隱私權法規。
+title: Privacy Service概述
+description: Privacy Service使您能够在Experience Cloud数据操作中促进自动遵守法律隐私法规。
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
 source-git-commit: 3296209a15a5f88ab14e16de25d554b9df712445
 workflow-type: tm+mt
@@ -15,95 +15,95 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Privacy Service的許可權已得到改善，以提高其精細度等級。 這些變更可讓組織管理員以所需的角色和許可權層級，授予更多使用者存取權。 技術帳戶使用者必須更新其Privacy Service許可權，因為此即將進行的更新對他們而言是重大變更。 此許可權變更的強制實施將發生在 **2023年4月13日**. 請參閱以下說明檔案： [移轉舊版API認證](./permissions.md#migrate-tech-accounts) 以取得解決此問題的指引。
+>Adobe Experience Platform Privacy Service的权限已得到改进，以提高其粒度级别。 这些更改使组织管理员能够通过所需的角色和权限级别授予更多用户访问权限。 技术帐户用户必须更新其Privacy Service权限，因为此即将进行的更新对他们来说是一项重大更改。 此权限更改的实施将发生在 **2023年4月13日**. 请参阅相关文档 [迁移旧版API凭据](./permissions.md#migrate-tech-accounts) 以获取有关解决此问题的指导。
 >
->企業客戶可使用技術帳戶，這些帳戶是透過Adobe開發人員控制檯建立的。 技術帳戶持有人的Adobe ID結尾為 `@techacct.adobe.com`. 如果您不確定您是否為技術帳戶擁有者，請聯絡您的組織管理員。
+>企业客户可以使用技术帐户，这些帐户是通过Adobe开发人员控制台创建的。 技术帐户持有人的Adobe ID结束于 `@techacct.adobe.com`. 如果您不确定您是否是技术帐户所有者，请联系您的组织管理员。
 
-為了提供更好的客戶體驗，您需要收集和儲存客戶的個人資料。 使用此資料時，請務必瞭解並尊重客戶的隱私權。 新的法律和组织规定正在用户提供相应的权利，允许他们请求访问或删除您的数据存储中的用户个人数据。
+为了提供更好的客户体验，您需要收集和存储客户的个人数据。 在使用此类数据时，请务必了解和尊重客户的隐私。 新的法律和组织规定正在用户提供相应的权利，允许他们请求访问或删除您的数据存储中的用户个人数据。
 
-Adobe Experience Platform [!DNL Privacy Service] 因應企業管理客戶個人資料的方式發生根本性轉變而開發。 的核心目的 [!DNL Privacy Service] 是自動化資料隱私權法規合規性，一旦違規，可能導致重大罰款並中斷貴企業的資料營運。
+Adobe Experience Platform [!DNL Privacy Service] 旨在应对要求企业管理其客户个人数据的方式发生的根本性变化。 的中心目的 [!DNL Privacy Service] 是自动遵守数据隐私法规，一旦违反这些法规，可能会导致严重罚款并中断业务的数据运营。
 
-[!DNL Privacy Service] 提供RESTful API和使用者介面，協助您管理客戶資料請求。 替換為 [!DNL Privacy Service]，您可以提交存取和刪除Adobe Experience Cloud應用程式中個人客戶資料的請求，協助實現法律和組織隱私法規的自動合規性。
+[!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理客户数据请求。 替换为 [!DNL Privacy Service]，您可以提交从Adobe Experience Cloud应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 >[!IMPORTANT]
 >
->Privacy Service僅適用於資料主體和消費者權利請求。 不支援或不允許將Privacy Service用於資料清理或維護的任何其他用途。 Adobe有法定義務須及時履行。 因此，不允許在Privacy Service上進行負載測試，因為這是僅限生產的環境，且會建立有效隱私權請求的不必要待處理專案。
+>Privacy Service仅适用于数据主体和消费者权利请求。 不支持或允许将Privacy Service用于数据清理或维护的任何其他用途。 Adobe有及时履行这些义务的法律义务。 因此，不允许对Privacy Service进行负载测试，因为它是仅用于生产的环境，并会创建有效隐私请求的不必要积压。
 >
->現已設定每日硬性上傳限制，以防止服務被濫用。 發現濫用系統的使用者將會停用其服務的存取權。 隨後將與其舉行會議，討論其行動並討論可接受的Privacy Service用途。
+>现已设定每日硬性上传限制，以帮助防止滥用服务。 发现滥用系统的用户将禁用其对该服务的访问权限。 随后将与他们举行一次会议，讨论他们的行动并讨论可以接受的Privacy Service用途。
 
-## 開始使用 [!DNL Privacy Service] {#getting-started}
+## 快速入门 [!DNL Privacy Service] {#getting-started}
 
-為了使用 [!DNL Privacy Service]，您需根據貴組織的隱私權要求、您從客戶那裡收集的身分資料型別，以及將CRM系統與服務介面的最佳方式，來做出幾項重要決定。
+为了利用 [!DNL Privacy Service]，需要根据贵组织的隐私要求、您从客户那里收集的身份数据类型以及将CRM系统与该服务连接的最佳方式做出几个关键决策。
 
-這些決定可透過下列問題加以摘要：
+可通过以下问题对这些决策进行总结：
 
-1. **我從客戶那裡收集哪些資訊？**
-   * 善加利用 [!DNL Privacy Service]，您必須詳細瞭解您從客戶那裡收集的資料型別，以及哪些資料受到隱私權法規的約束。 請參閱以下小節： [判斷隱私權需求](#requirements) 以取得詳細資訊。
-1. **我是否正確標示我的資料？**
-   * 資料必須正確加上標籤，服務才能在隱私權工作期間決定要存取或刪除哪些欄位。 請參閱以下小節： [標籤資料](#label) 以取得詳細資訊。
-1. **我是否知道要將哪些ID傳送至 [!DNL Privacy Service]？**
-   * 傳送隱私權請求時，必須提供特定Adobe應用程式專用的個別客戶ID。 請參閱以下小節： [提供身分資料](#identity)  和 [提出隱私權請求](#requests) 以取得詳細資訊。
-1. **如何追蹤我的隱私權工作？**
-   * 提出隱私權請求後，您可使用數個選項來追蹤其狀態和結果。 請參閱以下小節： [監控隱私權工作](#monitor) 以取得詳細資訊。
+1. **我从客户那里收集了哪些信息？**
+   * 充分利用 [!DNL Privacy Service]中，您必须详细了解从客户那里收集的数据类型，以及哪些类型的数据受隐私法规的约束。 请参阅以下部分： [确定隐私要求](#requirements) 了解更多信息。
+1. **我是否正确标记了数据？**
+   * 必须正确标记数据，服务才能确定在隐私作业期间要访问或删除哪些字段。 请参阅以下部分： [标签数据](#label) 了解更多信息。
+1. **我知不知道要将哪些ID发送到 [!DNL Privacy Service]？**
+   * 在发送隐私请求时，必须提供特定Adobe应用程序特有的单个客户ID。 请参阅以下章节： [提供身份数据](#identity)  和 [提出隐私请求](#requests) 了解更多信息。
+1. **如何跟踪我的隐私作业？**
+   * 提出隐私请求后，有几个选项可用于跟踪其状态和结果。 请参阅以下部分： [监控隐私作业](#monitor) 了解更多信息。
 
-以下各節提供這些重要先決條件步驟的一般指引，也提供進一步連結 [!DNL Privacy Service] 說明檔案以取得更多詳細資料。
+以下部分提供了有关这些重要先决条件步骤的一般指导，同时还提供了指向更多步骤的链接 [!DNL Privacy Service] 文档，以了解更多详细信息。
 
-### 判斷貴組織的隱私權要求 {#requirements}
+### 确定贵组织的隐私要求 {#requirements}
 
-根据您的业务性质及运营所在的司法管辖区，您的数据运营可能会受到隐私法规的约束。这些法规通常赋予您的客户请求访问您从他们那里收集的数据的权利，并且这些客户有权请求删除所存储的数据。客戶對其個人資料的請求，在本檔案稱為「隱私權請求」。
+根据您的业务性质及运营所在的司法管辖区，您的数据运营可能会受到隐私法规的约束。这些法规通常赋予您的客户请求访问您从他们那里收集的数据的权利，并且这些客户有权请求删除所存储的数据。在整个文档中，这些客户对其个人数据的请求称为“隐私请求”。
 
-如需不同法律隱私權法規的詳細資訊，請參閱 [!DNL Privacy Service] 管理請求，包括關鍵術語和常見問題的解答，請參閱 [隱私權法規檔案](./regulations/overview.md).
+有关不同法律隐私法规的详细信息，这些法规 [!DNL Privacy Service] 管理对的请求，包括关键术语和常见问题的解答，请参阅 [隐私法规文档](./regulations/overview.md).
 
-如果您的資料作業屬於任何受支援法規的管轄範圍，請檢閱其檔案以取得重要資訊，例如他們提供給客戶的特定隱私權，以及遵循隱私權要求的合規視窗。 在決定如何整合時，應將此資訊列入考量 [!DNL Privacy Service] 以及客戶應如何與您的網站互動以提出隱私權請求。
+如果您的数据操作属于任何受支持法规的管辖范围，请查看其文档以了解重要信息，例如他们授予客户的特定隐私权，以及用于履行隐私请求的合规窗口。 在决定如何集成时，应考虑此信息 [!DNL Privacy Service] ，以及客户应如何与您的网站交互以便提出隐私请求。
 
-除了法律規範外，在做出這些決定時，也應考慮適用於您組織的任何組織或行業標準。
+除了法律法规之外，在做出这些决策时还应考虑适用于您组织的任何组织或行业标准。
 
-### 隱私權請求的標籤資料 {#label}
+### 为隐私请求设置数据标签 {#label}
 
-根據 [!DNL Experience Cloud] 您正在使用的應用程式，必須標示回應隱私權請求時應存取或刪除的特定資料欄位。 標籤資料的程式因應用程式而異。 若要瞭解如何為每個支援的Adobe應用程式加上資料標籤，請參閱以下檔案： [Experience Cloud應用程式](./experience-cloud-apps.md).
+根据 [!DNL Experience Cloud] 对于您正在使用的应用程序，您必须为响应隐私请求而应该访问或删除的特定数据字段设置标签。 标记数据的过程因应用程序而异。 要了解如何为每个受支持的Adobe应用程序标记数据，请参阅以下文档： [Experience Cloud应用程序](./experience-cloud-apps.md).
 
-### 決定要傳送至的身分資料型別 [!DNL Privacy Service] {#identity}
+### 确定要发送到的身份数据的类型 [!DNL Privacy Service] {#identity}
 
-為了 [!DNL Privacy Service] 若要處理來自客戶的隱私權請求，該請求本身必須提供至少一個唯一身分值。 唯一身分值是可用於識別個人及其在您網站中儲存之個人資料的任何資訊， [!DNL Experience Cloud] 資料存放區。 [!DNL Privacy Service] 根據請求的性質（存取、刪除或選擇退出），使用此身分資訊來尋找和處理客戶的個人資料。
+为了 [!DNL Privacy Service] 要处理来自客户的隐私请求，必须在请求本身中为该客户至少提供一个唯一标识值。 唯一标识值是指可用于识别个人及其存储在您网站上的个人数据的任何信息， [!DNL Experience Cloud] 数据存储。 [!DNL Privacy Service] 根据请求的性质（访问、删除或选择退出），使用此身份信息查找和处理客户的个人数据。
 
-根據 [!DNL Experience Cloud] 您的CRM系統所使用的應用程式，您必須為每個客戶提供的身分值型別和數量會有所不同。 有些應用程式會使用自己的內部客戶ID值(例如Adobe Target ID)，而其他解決方案則需仰賴Adobe的全域識別碼 [!DNL Experience Cloud Identity Service] (ECID)追蹤所有客戶活動 [!DNL Experience Cloud] 應用程式。 此外，電子郵件地址或電話號碼等一般個人資訊也可以作為有效的身分資料。
+根据 [!DNL Experience Cloud] 您的CRM系统所使用的应用程序，您必须为每个客户提供的标识值的类型和数量会有所不同。 某些应用程序使用自己的内部客户ID值(例如Adobe Target ID)，而其他解决方案依赖来自Adobe的全局标识符 [!DNL Experience Cloud Identity Service] (ECID)，用于跟踪所有报表包中的客户活动 [!DNL Experience Cloud] 应用程序。 此外，电子邮件地址或电话号码等通用个人信息也可以作为有效的身份数据。
 
-上的檔案 [隱私權請求的身分資料](./identity-data.md) 提供接受的身分資訊型別的詳細資訊 [!DNL Privacy Service]. 本檔案也提供相關指引，說明如何運用Adobe技術，在客戶與您的網站互動時，有效從客戶擷取適當的身分資訊，並將資料傳送至 [!DNL Privacy Service] （在API要求中）。
+上的文档 [隐私请求的身份数据](./identity-data.md) 提供有关接受的身份信息类型的更多详细信息 [!DNL Privacy Service]. 本文档还提供了有关如何利用Adobe技术在客户与您的网站交互时有效地从客户那里检索适当的身份信息并将该数据发送到的指导 [!DNL Privacy Service] 在API请求中。
 
-### 開始提出隱私權請求 {#requests}
+### 开始提出隐私请求 {#requests}
 
-在您決定企業的隱私權需求，並決定要傳送至哪些身分值後， [!DNL Privacy Service]，您就可以開始提出隱私權請求。 [!DNL Privacy Service] 可讓您透過API或UI傳送隱私權請求。
+确定企业的隐私需求并决定要将哪些身份值发送到后 [!DNL Privacy Service]，您可以开始提出隐私请求。 [!DNL Privacy Service] 允许您通过API或UI发送隐私请求。
 
 >[!IMPORTANT]
 >
->以下各節提供檔案連結，說明如何在API或UI中提出一般隱私權請求。 然而，取決於 [!DNL Experience Cloud] 若您正在使用的應用程式，您在要求裝載中必須傳送的欄位可能會與這些指南中顯示的範例不同。
+>以下部分提供了指向文档的链接，这些文档介绍了如何在API或UI中提出通用隐私请求。 但是，取决于 [!DNL Experience Cloud] 如果您使用的应用程序，则您在请求有效负载中必须发送的字段可能与这些指南中显示的示例不同。
 >
->當您遵循API或UI指南，請參閱以下檔案： [Privacy Service和Experience Cloud應用程式](./experience-cloud-apps.md) 如需進一步檔案，瞭解如何針對您的特定設定隱私權請求的格式 [!DNL Experience Cloud] 應用程式。
+>当您遵循API或UI指南时，请参阅上的文档 [Privacy Service和Experience Cloud应用程序](./experience-cloud-apps.md) 有关如何为特定隐私请求设置格式的更多文档 [!DNL Experience Cloud] 应用程序。
 >
->同時請務必注意，隱私權請求會跨Experience Cloud應用程式以非同步方式處理。 當Privacy Service收到要求後，每個應用程式可能需要幾分鐘到數週的時間才能完成要求。 完成每個請求所花的時間取決於您所使用的應用程式，以及需要處理的資料量。
+>还需要注意的是，隐私请求会在Experience Cloud应用程序之间异步处理。 Privacy Service收到请求后，每个应用程序可能需要几分钟到几周的时间才能完成请求。 完成每个请求所需的时间取决于您所使用的应用程序，以及需要处理的数据量。
 
 #### 使用 API
 
-此 [[!DNL Privacy Service API]](https://www.adobe.io/experience-platform-apis/references/privacy-service/) 提供幾個端點，可讓您使用RESTful API呼叫來建立和管理隱私權工作，讓您以程式設計方式處理隱私權法規遵循。 [!DNL Experience Cloud] 應用程式。 如需如何使用API的詳細步驟，請參閱 [Privacy Service API指南](api/overview.md).
+此 [[!DNL Privacy Service API]](https://www.adobe.io/experience-platform-apis/references/privacy-service/) 提供了多个端点，用于使用RESTful API调用创建和管理隐私作业，允许您以编程方式实现隐私法规的合规性。 [!DNL Experience Cloud] 应用程序。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI指南](api/overview.md).
 
 #### 使用UI
 
 >[!NOTE]
 >
->此 [!DNL Privacy Service] UI目前僅支援存取和刪除請求。 所有選擇退出請求必須改透過API提出。
+>此 [!DNL Privacy Service] UI当前仅支持访问和删除请求。 所有选择退出请求必须改通过API发出。
 
-此 [!DNL Privacy Service] UI可讓您使用圖形介面建立及監控隱私權工作。 UI包含 **[!UICONTROL 狀態報告]** widget，以視覺化方式呈現所有作用中請求的狀態，並允許您使用內建來建立新請求 **[!UICONTROL 請求產生器]** 或上傳JSON檔案。 如需使用UI的詳細資訊，請參閱 [Privacy Service使用手冊](ui/overview.md).
+此 [!DNL Privacy Service] UI允许您使用图形界面创建和监控隐私作业。 UI包括 **[!UICONTROL 状态报告]** 此构件可提供所有活动请求状态的可视表示形式，并允许您使用内置的创建新请求 **[!UICONTROL 请求生成器]** 或上传JSON文件。 有关使用UI的更多信息，请参阅 [Privacy Service用户指南](ui/overview.md).
 
-### 監視隱私權工作 {#monitor}
+### 监控隐私作业 {#monitor}
 
-完成隱私權工作後，您有數個選項可監控其狀態和結果：
+制定隐私作业后，您有多个选项可用于监控其状态和结果：
 
-| 監視方法 | 描述 |
+| 监控方法 | 描述 |
 | --- | --- |
-| [!DNL Privacy Service] UI | 此 [!DNL Privacy Service] UI提供監視儀表板，可讓您檢視所有作用中請求狀態的視覺化表示。 請參閱 [Privacy Service使用手冊](ui/overview.md) 以取得詳細資訊。 |
-| [!DNL Privacy Service] API | 您可以使用提供的查詢端點，以程式設計方式監控隱私權工作的狀態。 [!DNL Privacy Service] API。 請參閱 [Privacy Service API指南](./api/overview.md) 瞭解如何使用API的詳細步驟。 |
-| [!DNL Privacy Events] | [!DNL Privacy Events] 善用傳送至已設定webhook的Adobe I/O事件，以促進有效的工作請求自動化。 如此一來，您就不需要輪詢 [!DNL Privacy Service] API，以檢查工作是否已完成，或工作流程中是否已達到特定里程碑。 請參閱教學課程，位置如下： [訂閱隱私權事件](./privacy-events.md) 以取得詳細資訊。 |
+| [!DNL Privacy Service] UI | 此 [!DNL Privacy Service] UI提供了一个监视仪表板，允许您查看所有活动请求状态的可视表示形式。 请参阅 [Privacy Service用户指南](ui/overview.md) 了解更多信息。 |
+| [!DNL Privacy Service] API | 您可以使用提供的查找端点以编程方式监控隐私作业的状态。 [!DNL Privacy Service] API。 请参阅 [Privacy ServiceAPI指南](./api/overview.md) 有关如何使用API的详细步骤。 |
+| [!DNL Privacy Events] | [!DNL Privacy Events] 利用发送到配置的webhook的Adobe I/O事件，以促进高效的作业请求自动化。 他们减少了或消除了投票 [!DNL Privacy Service] API，以检查作业是否已完成或是否已达到工作流中的某个里程碑。 请参阅上的教程 [订阅隐私事件](./privacy-events.md) 了解更多信息。 |
 
 ## 后续步骤
 
-本檔案提供以下專案的概觀： [!DNL Privacy Service] 以及開始使用服務功能所需的主要步驟。 如需有關使用的各個方面的更深入資訊，請參閱整份概觀中所連結的檔案 [!DNL Privacy Service].
+本文档提供了以下内容的高级概述 [!DNL Privacy Service] 以及开始使用该服务的功能所需的主要步骤。 有关使用的各个方面的更深入信息，请参阅整个概述中链接的文档 [!DNL Privacy Service].

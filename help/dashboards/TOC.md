@@ -12,28 +12,28 @@ ht-degree: 38%
 ---
 
 
-# Adobe Experience Platform儀表板 {#dashboards}
+# Adobe Experience Platform功能板 {#dashboards}
 
-* [儀表板概觀](home.md)
-* [儀表板存取許可權](permissions.md)
-* [儀表板詳細目錄](inventory.md)
-* [使用者定義儀表板](user-defined-dashboards.md)
-* [下載儀表板以PDF](download.md)
-* 可用的儀表板 {#guides}
+* [功能板概述](home.md)
+* [仪表板访问权限](permissions.md)
+* [功能板库存](inventory.md)
+* [用户定义的仪表板](user-defined-dashboards.md)
+* [下载功能板以PDF](download.md)
+* 可用仪表板 {#guides}
    * [用户档案](guides/profiles.md)
-   * [帳戶設定檔](guides/account-profiles.md)
+   * [帐户配置文件](guides/account-profiles.md)
    * [区段](guides/segments.md)
    * [目标](guides/destinations.md)
    * [许可证使用](guides/license-usage.md)
-* 自訂儀表板 {#customize}
-   * [自訂概述](customize/overview.md)
-   * [修改儀表板](customize/modify.md)
-   * [Widget資料庫](customize/widget-library.md)
-   * [標準Widget](customize/standard-widgets.md)
-   * [自訂Widget](customize/custom-widgets.md)
+* 自定义仪表板 {#customize}
+   * [自定义概述](customize/overview.md)
+   * [修改仪表板](customize/modify.md)
+   * [构件库](customize/widget-library.md)
+   * [标准构件](customize/standard-widgets.md)
+   * [自定义构件](customize/custom-widgets.md)
    * [编辑架构](customize/edit-schema.md)
-* 應用程式整合 {#integrations}
+* 应用程序集成 {#integrations}
    * [Power BI](integrations/power-bi.md)
-* [查詢儀表板資料集](query.md)
-* [Real-time Customer Data Platform Insights資料模型](cdp-insights-data-model.md)
-* [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+* [查询功能板数据集](query.md)
+* [Real-time Customer Data Platform Insights数据模型](cdp-insights-data-model.md)
+* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

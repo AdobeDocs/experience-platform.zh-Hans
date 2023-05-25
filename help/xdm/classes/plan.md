@@ -1,6 +1,6 @@
 ---
-title: 計畫類別
-description: 本檔案提供Experience Data Model (XDM)中Plan類別的概觀。
+title: 计划类
+description: 本文档概述了Experience Data Model (XDM)中的Plan类。
 exl-id: ccff962d-3104-482c-8d65-d2bd2602a9be
 source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
@@ -9,18 +9,18 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL 計畫] 類別
+# [!UICONTROL 计划] 类
 
-在Experience Data Model (XDM)中， [!UICONTROL 計畫] class會擷取定義計畫的最小屬性集，例如健康計畫或保險計畫。
+在Experience Data Model (XDM)中， [!UICONTROL 计划] class捕获定义计划（如健康计划或保险计划）的最小属性集。
 
-![類別結構](../images/classes/plan.png)
+![类结构](../images/classes/plan.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_id` | [!UICONTROL 字符串] | 記錄的唯一、系統產生的字串識別碼。 此欄位用於追蹤個別記錄的唯一性、防止資料重複，以及在下游服務中查詢該記錄。<br><br>由於此欄位是系統產生的，因此在資料擷取期間不會向其提供明確值。 不過，您仍然可以視需要選擇提供自己的唯一ID值。 |
-| `planId` | [!UICONTROL 字符串] | 計畫的唯一識別碼。 |
-| `planName` | [!UICONTROL 字符串] | 計畫的名稱。 |
+| `_id` | [!UICONTROL 字符串] | 系统为记录生成的唯一字符串标识符。 此字段用于跟踪单个记录的唯一性，防止数据重复，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此不会在数据引入期间向其提供显式值。 但是，如果您愿意，仍然可以选择提供自己的唯一ID值。 |
+| `planId` | [!UICONTROL 字符串] | 计划的唯一标识符。 |
+| `planName` | [!UICONTROL 字符串] | 计划的名称。 |
 
 {style="table-layout:auto"}
 
-可以使用來擴充類別 [[!UICONTROL 醫療保健計畫詳細資料] 欄位群組](../field-groups/plan/healthcare-plan-details.md) 說明健康保險計畫的詳細資訊。
+可以使用扩展类 [[!UICONTROL 医疗保健计划详细信息] 字段组](../field-groups/plan/healthcare-plan-details.md) 描述有关健康保险计划的更多详细信息。

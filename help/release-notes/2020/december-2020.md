@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2020年12月
-description: Adobe Experience Platform的2020年12月發行說明。
+title: Adobe Experience Platform发行说明2020年12月
+description: Adobe Experience Platform 2020年12月版发行说明。
 doc-type: release notes
 last-update: December 9, 2020
 author: ens60013 & ens72471
@@ -14,9 +14,9 @@ ht-degree: 8%
 
 # Adobe Experience Platform 发行说明
 
-**發行日期： 2020年12月9日**
+**发行日期： 2020年12月9日**
 
-Adobe Experience Platform中的新功能：
+Adobe Experience Platform中的新增功能：
 
 - [[!DNL Dataflows]](#dataflows)
 
@@ -27,39 +27,39 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## [!DNL Dataflows] {#dataflows}
 
-数据流是跨平台移动数据的数据作业的表示方法。這些資料流會在不同的服務之間設定，有助於將資料從來源聯結器移至目標資料集、身分和設定檔服務以及目的地。
+数据流是跨平台移动数据的数据作业的表示方法。这些数据流在不同的服务中配置，可帮助将数据从源连接器移动到目标数据集、身份和配置文件服务以及目标。
 
 **主要功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 資料流程的透明度 | 您可以監視來源和目的地的資料流。 如需詳細資訊，請閱讀 [監控來源的教學課程](../../dataflows/ui/monitor-sources.md) 或 [監控目的地的教學課程](../../dataflows/ui/monitor-destinations.md). |
+| 数据流透明度 | 您可以监视源数据流和目标数据流。 欲知更多信息，请阅读 [有关监控源的教程](../../dataflows/ui/monitor-sources.md) 或 [有关监视目标的教程](../../dataflows/ui/monitor-destinations.md). |
 
-若要進一步瞭解資料流，請閱讀 [資料流概觀](../../dataflows/home.md).
+要了解有关数据流的更多信息，请阅读 [数据流概述](../../dataflows/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Data Science Workspace使用機器學習和人工智慧，從您的資料建立深入分析。 Data Science Workspace已整合至Adobe Experience Platform，可協助您跨多個Adobe解決方案使用您的內容和資料資產進行預測。
+数据科学工作区使用机器学习和人工智能从您的数据创建见解。 数据科学工作区集成到Adobe Experience Platform中，可帮助您跨Adobe解决方案使用内容和数据资源做出预测。
 
 **主要功能**
 
 | 功能 | 描述 |
 | --- | ---|
-| Adobe Experience Platform Intelligence套件附加元件 | Adobe Experience Platform Intelligence套件附加元件是資料科學工作區升級，可解鎖其他重要功能，例如： <li> UI導向的模型實驗與評估。</li><li> 能夠透過排程的培訓和推斷工作來部署及操作模型。</li><li> 支援Tensorflow模型（GPU運算）的深度學習。</li><li> 以Spark為基礎的分散式計算，可針對大型資料集（10MM +列）進行訓練和評分。</li><li>及更多內容</li> |
+| Adobe Experience Platform Intelligence包加载项 | Adobe Experience Platform Intelligence包加载项是数据科学工作区升级，可解锁其他关键功能，例如： <li> UI驱动的模型实验与评估。</li><li> 能够通过计划的培训和引用作业来部署和操作模型。</li><li> 支持Tensorflow模型中的深度学习（GPU计算）。</li><li> 基于Spark的分布式计算，针对大型数据集（10MM +行）进行训练和评分。</li><li>等等</li> |
 
-若要深入瞭解Adobe Experience Platform Intelligence套件附加元件，請參閱以下檔案： [資料科學工作區存取與功能](../../data-science-workspace/access-features-dsw.md).
+要了解有关Adobe Experience Platform Intelligence包加载项的更多信息，请参阅以下文档： [数据科学工作区访问和功能](../../data-science-workspace/access-features-dsw.md).
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可從外部來源內嵌資料，同時允許您使用建構、加標籤及增強該資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用来构建、标记和增强这些数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
 **主要功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 更新串流來源的帳戶和連線詳細資料 | 您現在可以使用更新現有串流連線的名稱、說明和認證 [!DNL Flow Service] API和UI。 如需詳細資訊，請參閱以下教學課程： [使用API更新連線](../../sources/tutorials/api/update.md) 和 [使用UI編輯帳戶詳細資料](../../sources/tutorials/ui/monitor.md). |
-| 刪除資料流 | 現在可以使用刪除包含錯誤或變得不必要的串流資料流 [!DNL Flow Service] API和UI。 如需詳細資訊，請參閱以下教學課程： [使用API刪除資料流](../../sources/tutorials/api/delete-dataflows.md) 和 [使用UI刪除資料流](../../sources/tutorials/ui/delete.md). |
+| 更新流源的帐户和连接详细信息 | 您现在可以使用更新现有流连接的名称、描述和凭据 [!DNL Flow Service] API和UI。 有关更多信息，请参阅以下教程： [使用API更新连接](../../sources/tutorials/api/update.md) 和 [使用UI编辑帐户详细信息](../../sources/tutorials/ui/monitor.md). |
+| 删除数据流 | 现在可以使用删除包含错误或变得不必要的流数据流 [!DNL Flow Service] API和UI。 有关更多信息，请参阅以下教程： [使用API删除数据流](../../sources/tutorials/api/delete-dataflows.md) 和 [使用UI删除数据流](../../sources/tutorials/ui/delete.md). |
 
-若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).
+要了解有关源的更多信息，请参阅 [源概述](../../sources/home.md).

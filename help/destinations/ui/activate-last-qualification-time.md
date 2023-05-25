@@ -1,6 +1,6 @@
 ---
-title: 使用新Beta版雲端儲存空間目的地中的上次資格取得時間XDM屬性
-description: 瞭解如何在新的Beta版雲端儲存目的地中使用上次資格取得時間XDM屬性
+title: 在新的Beta版云存储目标中使用最后一次XDM资格鉴定时间
+description: 了解如何在新的Beta版云存储目标中使用上次资格授予时间XDM属性
 hidefromtoc: y
 hide: y
 exl-id: d077ea10-5ff2-4acc-8ee6-78ea6cd752d1
@@ -11,26 +11,26 @@ ht-degree: 0%
 
 ---
 
-# 使用新Beta版雲端儲存空間目的地中的上次資格取得時間XDM屬性 {#last-qualification-time}
+# 在新的Beta版云存储目标中使用最后一次XDM资格鉴定时间 {#last-qualification-time}
 
 >[!IMPORTANT]
 > 
->本頁說明測試版中的功能。 功能和檔案可能會有所變更。 如果您想要存取此Beta版計畫，請聯絡您的Adobe代表或客戶服務。
+>本页介绍了测试版中的功能。 功能和文档可能会发生更改。 如果您希望访问此Beta计划，请联系您的Adobe代表或客户关怀。
 
 ## 先决条件 {#prerequisites}
 
-若要使用上次合格時間(`lastQualificationTime`) XDM屬性，您必須註冊 [Beta版計畫](/help/release-notes/2022/october-2022.md#destinations) 使用改良的檔案匯出功能，並將資料匯出至六項功能之一 [beta雲端儲存空間目的地](/help/release-notes/2022/october-2022.md#destinations) ([[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md)， [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md)， [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)， [SFTP](/help/destinations/catalog/cloud-storage/sftp.md))。 如果您能在目錄中看到雲端儲存空間目的地的新Beta版卡，請註冊，如下所示 [!DNL Amazon S3].
+使用上次资格取得时间(`lastQualificationTime`) XDM属性，您必须在 [Beta计划](/help/release-notes/2022/october-2022.md#destinations) 使用改进的文件导出功能将数据导出到六个导出功能之一 [测试版云存储目标](/help/release-notes/2022/october-2022.md#destinations) ([[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md)， [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md)， [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)， [SFTP](/help/destinations/catalog/cloud-storage/sftp.md))。 如果您在目录中能够看到云存储目标的新Beta卡，则会注册该卡，如下所示 [!DNL Amazon S3].
 
-![顯示新Amazon S3 Beta卡的影像](/help/destinations/assets/ui/activate-destinations/new-amazon-s3-beta-card.png)
+![显示新Amazon S3 Beta卡的图像](/help/destinations/assets/ui/activate-destinations/new-amazon-s3-beta-card.png)
 
-## 如何使用最後合格時間XDM屬性 {#how-to-use}
+## 如何使用最后限定时间XDM属性 {#how-to-use}
 
-如果您使用六個新Cloud Storage Beta聯結器之一，則可以在中使用最後資格取得時間XDM屬性 [對應步驟](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 啟動工作流程的資訊，以在匯出的檔案中建立欄，且最新時間戳記為設定檔符合區段資格的時間。 這可協助您處理某些測量或分析使用案例，也可讓您更清楚瞭解何時啟用某些對象。
+如果您使用的是六个新的Cloud Storage Beta连接器之一，则可以使用 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 激活工作流的组成部分，以便在导出文件中创建一个列，其最新时间戳为配置文件符合区段资格的时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
 
-請注意，若要新增 `lastQualificationTime` 在檔案匯出中，您目前需要手動插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 放入來源欄位中，如下所示。 您也可以將目標欄位編輯為 `lastQualificationTime` 或您想要命名此欄的任何其他值。 請注意，由於這是測試版功能，因此其 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 值未來可能會變更。
+请注意，要添加 `lastQualificationTime` 对于文件导出，当前需要手动插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 放入源字段中，如下所示。 您还可以将目标字段编辑为 `lastQualificationTime` 或任何其他要为此列命名的值。 请注意，由于这是测试版功能，因此， `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 价值未来可能会改变。
 
-![熒幕錄製，顯示將XDM屬性貼入對應步驟的最後合格時間](/help/destinations/ui/last-qualification-time.gif)
+![屏幕录制，其中显示XDM属性粘贴到映射步骤中的最后限定时间](/help/destinations/ui/last-qualification-time.gif)
 
 ## 更多信息 {#more-information}
 
-如需將資料啟用至檔案型目的地的詳細資訊，包括工作流程中的所有步驟和必要許可權，請參閱 [啟用檔案型目的地教學課程](/help/destinations/ui/activate-batch-profile-destinations.md).
+有关将数据激活到基于文件的目标的详细信息（包括工作流中的所有步骤和必要权限），请参阅 [激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md).

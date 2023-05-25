@@ -1,7 +1,7 @@
 ---
-title: 搭配Platform Web SDK使用Adobe Analytics
-description: 瞭解如何使用Adobe Experience Platform Web SDK傳送資料至Adobe Analytics。
-keywords: adobe analytics；analytics；對應的資料；對應的變數；
+title: 在Platform Web SDK中使用Adobe Analytics
+description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
+keywords: adobe analytics；analytics；映射的数据；映射的变量；
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
 source-git-commit: 836fa7814a6966903639e871bfaea0563847f363
 workflow-type: tm+mt
@@ -10,27 +10,27 @@ ht-degree: 0%
 
 ---
 
-# 搭配Platform Web SDK使用Adobe Analytics
+# 在Platform Web SDK中使用Adobe Analytics
 
-Adobe Experience Platform [!DNL Web SDK] 可將資料傳送至Adobe Analytics。 這可透過翻譯來運作 `xdm` 轉換為Adobe Analytics可以使用的格式。
+Adobe Experience Platform [!DNL Web SDK] 可以向Adobe Analytics发送数据。 这可以通过翻译实现 `xdm` 转换为Adobe Analytics可以使用的格式。
 
 ## 设置
 
-如果您的Customer Config UI中有對應的報表套裝，Adobe Analytics會自動挑選您傳送的資料。 您可以在此處將一個或多個報告對應到指定的設定。 報表套裝對應後，資料會自動開始流動。
+如果您在客户配置UI中映射了报表包，则Adobe Analytics会自动选取您发送的数据。 在这里，您可以将一个或多个报表映射到给定的配置。 在映射报表包后，数据将自动开始流动。
 
-## xdm欄位群組
+## XDM字段组
 
-為了更方便擷取最常見的Adobe Analytics量度，我們提供您可使用的Analytics欄位群組。 如需此結構的詳細資訊，請參閱 [Adobe Analytics ExperienceEvent完整擴充功能結構描述欄位群組](../../../xdm/field-groups/event/analytics-full-extension.md)
+为了更便于捕获最常见的Adobe Analytics量度，我们提供了一个您可以使用的Analytics字段组。 有关此架构的更多详细信息，请参阅 [Adobe Analytics ExperienceEvent完整扩展架构字段组](../../../xdm/field-groups/event/analytics-full-extension.md)
 
-## 自動對應的資料
+## 自动映射的数据
 
-Adobe Experience Platform [!DNL Edge Network] 自動對應許多XDM變數。 下列為這些變數的完整清單 [此處](automatically-mapped-vars.md).
+Adobe Experience Platform [!DNL Edge Network] 自动映射许多XDM变量。 将列出这些变量的完整列表 [此处](automatically-mapped-vars.md).
 
-## 手動對應資料
+## 手动映射的数据
 
-任何未由自動對應的資料 [!DNL Edge Network] 可透過處理規則存取。 資料會使用點標籤法扁平化，並可用作contextData。
+任何未由自动映射的数据 [!DNL Edge Network] 可以通过处理规则访问。 数据使用点表示法扁平化，并可用作contextData。
 
-如果您的結構描述看起來像這樣。
+如果你有一个类似这样的结构描述。
 
 ```javascript
 {
@@ -55,7 +55,7 @@ Adobe Experience Platform [!DNL Edge Network] 自動對應許多XDM變數。 下
 }
 ```
 
-這些會是您可用的內容資料索引鍵。
+然后，这些将是可供您使用的上下文数据键。
 
 ```javascript
 a.x.key //value
@@ -68,10 +68,10 @@ a.x.arrayofobjects.0.obj1key //objval0
 a.x.arrayofobjects.1.obj2key //objval1
 ```
 
-以下是會使用此資料的處理規則範例。
+以下是将使用此数据的处理规则的示例。
 
-![處理規則介面](./assets/edge_analytics_processing_rules.png)
+![处理规则界面](./assets/edge_analytics_processing_rules.png)
 
 >[!NOTE]
 >
->透過Experience Edge收集，所有事件都會傳送至Analytics，以及您為資料串流設定的任何其他服務。 例如，如果您將Analytics和Target都設定為服務，且您分別針對Analytics和Analytics進行呼叫，則這兩個事件都會傳送至Analytics和Target。 這些事件將記錄在Analytics報表中，並可能影響跳出率等量度。
+>通过Experience Edge收集，所有事件都会发送到Analytics，以及您为数据流配置的任何其他服务。 例如，如果您将Analytics和Target配置为服务，并且分别发起个性化调用和Analytics调用，则这两个事件都将发送到Analytics和Target。 这些事件将记录在Analytics报表中，并且可能会影响跳出率等量度。

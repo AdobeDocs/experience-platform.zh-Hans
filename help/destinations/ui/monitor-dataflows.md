@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform、首頁、熱門主題、監控帳戶、監控資料流、資料流、目的地
-description: 目的地是預先建立的與目的地平台的整合，可無縫地從Adobe Experience Platform啟用資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
+keywords: Experience Platform、主页、热门主题、监控帐户、监控数据流、数据流、目标
+description: 目标是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
 solution: Experience Platform
-title: 監視資料流
+title: 监测数据流
 type: Tutorial
 exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
@@ -12,10 +12,10 @@ ht-degree: 0%
 
 ---
 
-# 監視資料流
+# 监测数据流
 
-[!UICONTROL 目的地] 可讓您從Adobe Experience Platform向無數的外部合作夥伴啟用資料。
+[!UICONTROL 目标] 允许您将数据从Adobe Experience Platform激活到无数外部合作伙伴。
 
-資料流可呈現跨資料行動資料的資料作業 [!DNL Platform]. 這些資料流是跨不同服務設定的，有助於將資料從來源聯結器移至目標資料集，然後由使用 [!DNL Identity Service] 和[!DNL Real-Time Customer Profile] 最終啟用至目的地之前。
+数据流是跨多个对象移动数据的数据作业的表示形式 [!DNL Platform]. 这些数据流在不同的服务中配置，有助于将数据从源连接器移动到目标数据集，然后由使用 [!DNL Identity Service] 和[!DNL Real-Time Customer Profile] 最终被激活到目标之前。
 
-若要進一步瞭解監控目的地的資料流，請閱讀 [在UI中監視目的地的資料流](../../dataflows/ui/monitor-destinations.md) 教學課程。
+要了解有关监视目标的数据流的更多信息，请阅读 [在UI中监视目标的数据流](../../dataflows/ui/monitor-destinations.md) 教程。

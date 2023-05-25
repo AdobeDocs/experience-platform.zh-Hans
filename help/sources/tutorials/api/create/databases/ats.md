@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；[!DNL Azure Table Storage]；[!DNL Azure Table Storage]；Azure資料表儲存體
+keywords: Experience Platform；主页；热门主题；[!DNL Azure Table Storage]；[!DNL Azure Table Storage]；Azure表存储
 solution: Experience Platform
-title: 使用Flow Service API建立Azure資料表儲存基礎連線
+title: 使用流服务API创建Azure表存储基连接
 type: Tutorial
-description: 瞭解如何使用Flow Service API將Azure Table Storage連線至Adobe Experience Platform。
+description: 了解如何使用流服务API将Azure Table Storage连接到Adobe Experience Platform。
 exl-id: 8ebd5d77-ed1f-47e1-8212-efb6c5e84ec1
 source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
 workflow-type: tm+mt
@@ -12,45 +12,45 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Azure Table Storage] 基礎連線使用 [!DNL Flow Service] API
+# 创建 [!DNL Azure Table Storage] 基本连接使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->此 [!DNL Azure Table Storage] 聯結器為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
+>此 [!DNL Azure Table Storage] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Azure Table Storage] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Azure Table Storage] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功連線所需瞭解的其他資訊 [!DNL Azure Table Storage] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接时需要了解的其他信息 [!DNL Azure Table Storage] 使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL Azure Table Storage]，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 以连接 [!DNL Azure Table Storage]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用來連線至的連線字串 [!DNL Azure Table Storage] 執行個體。 的連線字串模式 [!DNL Azure Table Storage] 為： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Azure Table Storage] 是 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `connectionString` | 用于连接到的连接字符串 [!DNL Azure Table Storage] 实例。 的连接字符串模式 [!DNL Azure Table Storage] 为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Azure Table Storage] 是 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
-如需有關取得連線字串的詳細資訊，請參閱 [此 [!DNL Azure Table Storage] 檔案](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
+有关获取连接字符串的更多信息，请参阅 [此 [!DNL Azure Table Storage] 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL Azure Table Storage] 要求引數中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Azure Table Storage] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -60,7 +60,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Azure Table Storage]：
+以下请求创建基本连接 [!DNL Azure Table Storage]：
 
 ```shell
 curl -X POST \
@@ -88,12 +88,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 用來連線至的連線字串 [!DNL Azure Table Storage] 執行個體。 的連線字串模式 [!DNL Azure Table Storage] 為： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
-| `connectionSpec.id` | 此 [!DNL Azure Table Storage] 連線規格ID： `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `auth.params.connectionString` | 用于连接到的连接字符串 [!DNL Azure Table Storage] 实例。 的连接字符串模式 [!DNL Azure Table Storage] 为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | 此 [!DNL Azure Table Storage] 连接规范ID： `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
 **响应**
 
-成功回應會傳回新建立連線的詳細資料，包括其唯一識別碼(`id`)。 在下一個教學課程中探索您的資料時，需要此ID。
+成功响应将返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
 
 ```json
 {
@@ -104,7 +104,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Azure Table Storage] 基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL Azure Table Storage] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流以使用將資料庫資料帶到Platform [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)

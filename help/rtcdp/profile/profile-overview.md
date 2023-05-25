@@ -1,7 +1,7 @@
 ---
-keywords: rtcdp設定檔；設定檔rtcdp；rtcdp身分；rtcdp合併原則；即時客戶設定檔
-title: 瞭解Real-Time CDP中的即時客戶個人檔案
-description: 瞭解Adobe Real-time Customer Data Platform如何讓您使用即時客戶設定檔，為客戶推動協調、一致、相關的體驗。
+keywords: rtcdp配置文件；配置文件rtcdp；rtcdp身份；rtcdp合并策略；实时客户配置文件
+title: 了解Real-Time CDP中的Real-time Customer Profile
+description: 了解Adobe Real-time Customer Data Platform如何让您使用Real-Time Customer Profile为您的客户推动协调一致、相关的体验。
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,32 +10,32 @@ ht-degree: 0%
 
 ---
 
-# 即時客戶個人檔案總覽
+# Real-time Customer Profile概述
 
-即時客戶設定檔可讓您透過合併來自多個管道的資料（包括線上、離線、CRM和第三方資料），檢視每個個別客戶的整體檢視。 每個個別客戶設定檔可讓您將不同的客戶資料合併成統一的檢視，針對每個客戶互動提供可採取行動且附有時間戳記的說明。
+Real-Time Customer Profile允许您通过组合来自多个渠道的数据（包括在线、离线、CRM和第三方数据）来查看每个客户的整体视图。 通过每个客户个人资料，您可以将不同的客户数据整合到一个统一的视图中，并提供每个客户互动的可操作、带时间戳的帐户。
 
-## 中的設定檔 [!DNL Real-Time Customer Data Platform]
+## 中的配置文件 [!DNL Real-Time Customer Data Platform]
 
-[!DNL Adobe Real-Time Customer Data Platform] 可讓您為客戶推動協調一致的體驗，無論客戶在哪裡或何時與您的品牌互動。 提供這些個人化體驗，讓客戶覺得自己與時俱進，這並非易事，但可透過使用Adobe Experience Platform的即時客戶個人檔案來達成。
+[!DNL Adobe Real-Time Customer Data Platform] 使您无论客户在何处或何时与您的品牌互动，都能为其推动协调一致的体验。 提供这些个性化体验，让他们觉得自己与时俱进，这并非易事，但它可以通过使用Adobe Experience Platform的Real-Time Customer Profile实现。
 
-Real-Time CDP是以Experience Platform為建置基礎，並利用許多核心Experience Platform特色和功能，包括建立設定檔。 這些個別客戶的彙總檢視彙集來自您多個行銷管道的資料，以及您的組織目前用來儲存客戶資料的各種系統。
+Real-Time CDP构建于Experience Platform之上，并利用了许多核心Experience Platform特性和功能，包括创建用户档案。 单个客户的这些汇总视图汇集来自您的多个营销渠道以及您的组织当前用于存储客户数据的各种系统的数据。
 
-## Real-Time CDP B2B版本的設定檔增強功能
+## Real-Time CDP B2B版本的配置文件增强功能
 
-除了Real-Time CDP支援的設定檔功能外，您還可以使用Real-Time CDP， B2B版本瀏覽與個人相關的重要資訊，例如帳戶和機會。 若要進一步瞭解Real-Time CDP， B2B版本的設定檔增強功能，請從閱讀 [設定檔瀏覽指南](profile-browse.md).
+除了Real-Time CDP支持的配置文件功能外，您还可以使用Real-Time CDP B2B版浏览与个人相关的重要信息，如客户和商机。 要了解有关Real-Time CDP B2B版配置文件增强功能的更多信息，请从阅读 [配置文件浏览指南](profile-browse.md).
 
-## 身分和身分名稱空間
+## 身份和身份命名空间
 
-當客戶資料彙集一起時，會透過使用身分來將其合併到單一設定檔中，並可在瞭解每個客戶的更多資訊時將這些身分拼接在一起。 若要進一步瞭解身分識別與身分識別名稱空間，請參閱 [身分概述](identities-overview.md).
+当客户数据汇集在一起时，它通过使用身份以及随着关于每个客户的更多信息逐渐为人所知而将这些身份拼合在一起的能力，被合并到单个配置文件中。 要了解有关身份和身份命名空间的更多信息，请参阅 [身份概述](identities-overview.md).
 
-## 合併原則
+## 合并策略
 
-將客戶資料彙集一起時，合併原則是Platform用來決定資料優先順序的方式以及將合併哪些資料以建立該統一檢視的規則。 如需合併原則的詳細資訊，請參閱 [合併原則概觀](merge-policies.md).
+在汇总客户数据时，合并策略是Platform用来确定数据优先顺序的方式以及合并哪些数据以创建该统一视图的规则。 有关合并策略的详细信息，请参阅 [合并策略概述](merge-policies.md).
 
-## 設定檔檢視器
+## 配置文件查看器
 
-Platform可讓您輕鬆檢視客戶設定檔，並使用各種屬性搜尋特定設定檔。 如需有關如何在Platform中檢視設定檔的詳細資訊，請參閱 [設定檔瀏覽概觀](profile-browse.md).
+Platform允许您轻松查看客户配置文件，并使用各种属性搜索特定配置文件。 有关如何在Platform中查看配置文件的详细信息，请参阅 [配置文件浏览概述](profile-browse.md).
 
 ## 后续步骤
 
-將不同來源的資料彙整在一起，您可以看到每個個別客戶的完整面貌，讓您的行銷活動提升到全新的境界。 如需更多詳細資訊，包括使用者介面中及透過API使用即時客戶設定檔資料的最佳實務和教學課程，請參閱 [即時客戶個人檔案檔案](../../profile/home.md).
+通过拼接来自不同来源的数据，您可以看到每个客户的完整信息，从而使您的营销活动达到一个全新的水平。 有关更多详细信息（包括在用户界面中通过API使用实时客户档案数据的最佳实践和教程），请参阅 [Real-time Customer Profile文档](../../profile/home.md).

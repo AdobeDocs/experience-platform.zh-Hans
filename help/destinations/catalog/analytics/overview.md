@@ -1,7 +1,7 @@
 ---
-keywords: analytics目的地；analytics目的地
-title: Analytics目的地概觀
-description: Analytics目的地會追蹤訪客與您網站上的內容互動的方式，並收集資料以瞭解您的對象行為。 這些平台可針對您最有價值的訪客的參與度和轉換率提供獨特的見解。
+keywords: analytics目标；analytics目标
+title: Analytics目标概述
+description: Analytics目标跟踪访客与您网站上的内容进行交互的方式，并收集数据以了解受众的行为。 这些平台为您最有价值的访客的参与度和转化率提供了独特的见解。
 exl-id: d7a2351b-c2ce-4776-a2b7-f8bb5e73b45b
 source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
@@ -10,32 +10,32 @@ ht-degree: 6%
 
 ---
 
-# Analytics目的地概觀 {#analytics-destinations}
+# Analytics目标概述 {#analytics-destinations}
 
 ## 概述 {#overview}
 
-Analytics目的地會追蹤訪客與您網站上的內容互動的方式，並收集資料以瞭解您的對象行為。 這些平台可針對您最有價值的訪客的參與度和轉換率提供獨特的見解。
+Analytics目标跟踪访客与您网站上的内容进行交互的方式，并收集数据以了解受众的行为。 这些平台为您最有价值的访客的参与度和转化率提供了独特的见解。
 
-## 支援的分析目的地 {#supported-destinations}
+## 支持的分析目标 {#supported-destinations}
 
-目前，Adobe Experience Platform支援下列分析目的地。 如需如何連線至這些目的地的詳細資訊，請參閱個別連結：
+目前，Adobe Experience Platform支持下面列出的Analytics目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
-* [Adform網站追蹤擴充功能](adform.md)
+* [Adform网站跟踪扩展](adform.md)
 * [Adobe Analytics 扩展](adobe-analytics.md)
 * [Adobe Media Analytics for Audio and Video 扩展](adobe-video-analytics.md)
-* [Clicktale擴充功能](clicktale.md)
-* [Contentsquare擴充功能](contentsquare.md)
-* [分貝延伸](decibel.md)
-* [Demandbase擴充功能](demandbase.md)
-* [Dialogtech擴充功能](dialogtech.md)
-* [Google全域網站標籤分析擴充功能](gtag-analytics.md)
-* [Google Universal Analytics擴充功能](google-universal-analytics.md)
-* [JW Player Analytics (Beta)擴充功能](jw-player-analytics.md)
-* [Nielsen BSDK擴充功能](nielsen-bsdk.md)
-* [Nielsen IMA處理常式擴充功能](nielsen-ima.md)
-* [Nielsen VideoJS播放器處理常式擴充功能](nielsen-videojs.md)
-* [Parse.ly Analytics擴充功能](parsely.md)
-* [Quantum Metric擴充功能](quantum-metric.md)
-* [SessionCam延伸](sessioncam.md)
-* [TMMData延伸模組](tmmdata.md)
-* [Yext轉換追蹤擴充功能](yext.md)
+* [Clicktale扩展](clicktale.md)
+* [Contentsquare扩展](contentsquare.md)
+* [分贝扩展](decibel.md)
+* [Demandbase扩展](demandbase.md)
+* [Dialogtech扩展](dialogtech.md)
+* [Google全局站点标记分析扩展](gtag-analytics.md)
+* [Google Universal Analytics扩展](google-universal-analytics.md)
+* [JW Player Analytics (Beta)扩展](jw-player-analytics.md)
+* [Nielsen BSDK扩展](nielsen-bsdk.md)
+* [Nielsen IMA处理程序扩展](nielsen-ima.md)
+* [Nielsen VideoJS播放器处理程序扩展](nielsen-videojs.md)
+* [Parse.ly Analytics扩展](parsely.md)
+* [量子量度扩展](quantum-metric.md)
+* [SessionCam扩展](sessioncam.md)
+* [TMMData扩展](tmmdata.md)
+* [Yext Conversion Tracking扩展](yext.md)

@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Apache Spark；Apache Spark；Azure HDInsights
+keywords: Experience Platform；主页；热门主题；Apache Spark；apache spark；Azure HDInsights
 solution: Experience Platform
-title: 使用流量服務API在Azure HDInsights基本連線上建立Apache Spark
+title: 使用流服务API在Azure HDInsights基本连接上创建Apache Spark
 type: Tutorial
-description: 瞭解如何使用Flow Service API將Azure HDInsights上的Apache Spark連線到Adobe Experience Platform。
+description: 了解如何使用流服务API将Azure HDInsights上的Apache Spark连接到Adobe Experience Platform。
 exl-id: 1f7ca86e-32f4-45f7-92c2-f87c5c0c4ea4
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
@@ -12,47 +12,47 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Apache Spark] 於 [!DNL Azure] HDInsights基本連線使用 [!DNL Flow Service] API
+# 创建 [!DNL Apache Spark] 日期 [!DNL Azure] HDInsights基本连接使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->此 [!DNL Apache Spark] 於 [!DNL Azure HDInsights] 聯結器為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
+>此 [!DNL Apache Spark] 日期 [!DNL Azure HDInsights] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL Apache Spark] 於 [!DNL Azure HDInsights] (以下稱&quot;[!DNL Spark]&quot;)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Apache Spark] 日期 [!DNL Azure HDInsights] (以下简称“ ”[!DNL Spark]&quot;)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功連線所需瞭解的其他資訊 [!DNL Spark] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接时需要了解的其他信息 [!DNL Spark] 使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL Spark]，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 以连接 [!DNL Spark]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 的IP位址或主機名稱 [!DNL Spark] 伺服器。 |
-| `username` | 您用來存取的使用者名稱 [!DNL Spark] 伺服器。 |
-| `password` | 與使用者對應的密碼。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL Spark] 為： `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
+| `host` | 的IP地址或主机名 [!DNL Spark] 服务器。 |
+| `username` | 用于访问的用户名 [!DNL Spark] 服务器。 |
+| `password` | 对应于用户的密码。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Spark] 为： `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
 
-如需入門的詳細資訊，請參閱 [此Spark檔案](https://docs.microsoft.com/en-us/azure/hdinsight/spark/apache-spark-overview).
+有关入门指南的更多信息，请参阅 [此Spark文档](https://docs.microsoft.com/en-us/azure/hdinsight/spark/apache-spark-overview).
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL Spark] 要求引數中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Spark] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -62,7 +62,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Spark]：
+以下请求创建基本连接 [!DNL Spark]：
 
 
 ```shell
@@ -93,14 +93,14 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.host` | 的主機 [!DNL Spark] 伺服器。 |
-| `auth.params.username` | 與您的相關聯的使用者名稱 [!DNL Spark] 連線。 |
-| `auth.params.password` | 與您的關聯的密碼 [!DNL Spark] 連線。 |
-| `connectionSpec.id` | 此 [!DNL Spark] 連線規格ID： `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
+| `auth.params.host` | 的主机 [!DNL Spark] 服务器。 |
+| `auth.params.username` | 与您的关联的用户名 [!DNL Spark] 连接。 |
+| `auth.params.password` | 与您的关联的密码 [!DNL Spark] 连接。 |
+| `connectionSpec.id` | 此 [!DNL Spark] 连接规范ID： `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
 
 **响应**
 
-成功回應會傳回新建立連線的詳細資料，包括其唯一識別碼(`id`)。 在下一個教學課程中探索您的資料時，需要此ID。
+成功响应将返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
 
 ```json
 {
@@ -111,7 +111,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Spark] 基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL Spark] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流以使用將資料庫資料帶到Platform [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)

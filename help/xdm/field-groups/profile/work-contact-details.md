@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；個人設定檔；欄位；結構描述；結構描述設計；mixin；mixin；工作詳細資訊；設定檔工作；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；架构设计；mixin；mixin；工作详细信息；配置文件工作；
 solution: Experience Platform
-title: 工作連絡人詳細資料結構描述欄位群組
-description: 本檔案提供「工作連絡人詳細資訊」結構描述欄位群組的概觀。
+title: 工作联系人详细信息架构字段组
+description: 本文档概述了“工作联系人详细信息”架构字段组。
 exl-id: 0133622c-e95f-4833-b2f8-3694d41751b4
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -12,26 +12,26 @@ ht-degree: 3%
 ---
 
 
-# [!UICONTROL 工作聯絡詳細資訊] 結構描述欄位群組
+# [!UICONTROL 工作联系人详细信息] 架构字段组
 
 >[!NOTE]
 >
->數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
 
-[!UICONTROL 工作聯絡詳細資訊] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md). 欄位群組提供數個欄位，可擷取有關個人的職業資訊，例如工作地址、工作電子郵件、工作電話號碼和個人所屬的組織。
+[!UICONTROL 工作联系人详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供了多个字段，用于捕获有关个人的职业信息，例如工作地址、工作电子邮件、工作电话号码和人员所属的组织。
 
 ![](../../images/field-groups/work-contact-details.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `workAddress` | [郵寄地址](../../data-types/postal-address.md) | 說明人員的工作地址。 |
-| `workEmail` | [电子邮件地址](../../data-types/email-address.md) | 說明個人的工作電子郵件地址。 |
-| `workPhone` | [电话号码](../../data-types/phone-number.md) | 說明個人的工作電話號碼。 |
-| `organizations` | 字串（陣列） | 自由格式字串陣列，代表該人員所屬的組織。 |
+| `workAddress` | [邮政地址](../../data-types/postal-address.md) | 描述人员的工作地址。 |
+| `workEmail` | [电子邮件地址](../../data-types/email-address.md) | 描述人员的工作电子邮件地址。 |
+| `workPhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的工作电话号码。 |
+| `organizations` | 字符串（数组） | 自由格式字符串的数组，表示人员所属的组织。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
+有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-work-details.schema.json)

@@ -1,6 +1,6 @@
 ---
-title: 使用Flow Service API建立Google Ads基本連線
-description: 瞭解如何使用Flow Service API將Adobe Experience Platform連結至Google Ads。
+title: 使用流服务API创建Google Ads基本连接
+description: 了解如何使用流服务API将Adobe Experience Platform连接到Google Ads。
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
 source-git-commit: 7c77b0dc658ad45a25f4ead4e14f5826701cf645
 workflow-type: tm+mt
@@ -9,50 +9,50 @@ ht-degree: 1%
 
 ---
 
-# 建立Google Ads基本連線，使用 [!DNL Flow Service] API
+# 使用创建Google Ads基本连接 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->Google Ads來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
+>Google广告源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步帶您瞭解如何使用，為Google Ads建立基本連線。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成使用为Google Ads创建基本连接的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Experience Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Experience Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您需要瞭解的其他資訊，以便使用成功連線到Google Ads [!DNL Flow Service] API。
+Google以下部分提供了您需要了解的其他信息，以便您能够使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 若要與Google Ads連線，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 要与Google Ads连接，您必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `clientCustomerId` | 使用者端客戶ID是對應至您要使用Google Ads API管理的Google Ads使用者端帳戶的帳號。 此ID遵循的範本 `123-456-7890`. |
-| `loginCustomerId` | 登入客戶ID是與您的Google Ads管理員帳戶對應的帳號，用於從特定的作業客戶擷取報表資料。 如需登入客戶ID的詳細資訊，請閱讀 [Google Ads API檔案](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
-| `developerToken` | 開發人員權杖可讓您存取Google Ads API。 您可以使用相同的開發人員Token，對所有Google Ads帳戶提出請求。 透過以下方式擷取您的開發人員權杖： [登入您的管理員帳戶](https://ads.google.com/home/tools/manager-accounts/) 然後導覽至 [!DNL API Center] 頁面。 |
-| `refreshToken` | 重新整理權杖屬於 [!DNL OAuth2] 驗證。 此權杖可讓您在存取權杖過期後重新產生存取權杖。 |
-| `clientId` | 使用者端ID會與使用者端密碼搭配使用，作為的一部分 [!DNL OAuth2] 驗證。 使用者端ID和使用者端密碼可讓您的應用程式藉由在Google中識別您的應用程式，以代表您的帳戶運作。 |
-| `clientSecret` | 使用者端密碼會與使用者端ID搭配使用，作為的一部分 [!DNL OAuth2] 驗證。 使用者端ID和使用者端密碼可讓您的應用程式藉由在Google中識別您的應用程式，以代表您的帳戶運作。 |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 Google Ads的連線規格ID為： `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
+| `clientCustomerId` | 客户端客户ID是与您要使用Google Ads API管理的Google Ads客户端帐户对应的帐号。 此ID遵循的模板 `123-456-7890`. |
+| `loginCustomerId` | 登录客户ID是与您的Google Ads管理器帐户对应的帐号，用于从特定的运营客户获取报表数据。 有关登录客户ID的更多信息，请阅读 [Google Ads API文档](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
+| `developerToken` | 通过开发人员令牌，您可以访问Google Ads API。 您可以使用相同的开发人员令牌针对您的所有Google Ads帐户发出请求。 通过以下方式检索您的开发人员令牌 [登录到您的经理帐户](https://ads.google.com/home/tools/manager-accounts/) 然后导航到 [!DNL API Center] 页面。 |
+| `refreshToken` | 刷新令牌是的一部分 [!DNL OAuth2] 身份验证。 此令牌允许您在访问令牌过期后重新生成访问令牌。 |
+| `clientId` | 客户端ID与客户端密钥一起使用，作为的一部分 [!DNL OAuth2] 身份验证。 客户端ID和客户端密钥共同支持您的应用程序通过向Google标识来代表您的帐户运行。 |
+| `clientSecret` | 客户端密钥与客户端ID一起使用，作为的一部分 [!DNL OAuth2] 身份验证。 客户端ID和客户端密钥共同支持您的应用程序通过向Google标识来代表您的帐户运行。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 Google Ads的连接规范ID为： `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
 
-閱讀API概觀檔案，瞭解 [Google Ads快速入門的詳細資訊](https://developers.google.com/google-ads/api/docs/first-call/overview).
+阅读API概述文档，了解 [有关Google Ads入门的更多信息](https://developers.google.com/google-ads/api/docs/first-call/overview).
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供您的Google Ads驗證認證作為請求引數的一部分。
+POST要创建基本连接ID，请向 `/connections` 端点，同时将您的Google Ads身份验证凭据作为请求参数的一部分提供。
 
 **API格式**
 
@@ -62,7 +62,7 @@ POST /connections
 
 **请求**
 
-以下請求會建立Google Ads的基本連線：
+以下请求将创建Google Ads的基本连接：
 
 ```shell
 curl -X POST \
@@ -96,17 +96,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.clientCustomerID` | 您的Google Ads帳戶的使用者端客戶ID。 |
-| `auth.params.loginCustomerID` | 與您的Google Ads管理員帳戶對應的登入客戶ID。 |
-| `auth.params.developerToken` | 您Google Ads帳戶的開發人員權杖。 |
-| `auth.params.refreshToken` | Google Ads帳戶的重新整理Token。 |
-| `auth.params.clientID` | Google Ads帳戶的使用者端ID。 |
-| `auth.params.clientSecret` | 您的Google Ads帳戶的使用者端密碼。 |
-| `connectionSpec.id` | Google Ads連線規格ID： `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
+| `auth.params.clientCustomerID` | 您的Google Ads帐户的客户端客户ID。 |
+| `auth.params.loginCustomerID` | 与您的Google广告管理器帐户对应的登录客户ID。 |
+| `auth.params.developerToken` | Google Ads帐户的开发人员令牌。 |
+| `auth.params.refreshToken` | Google Ads帐户的刷新令牌。 |
+| `auth.params.clientID` | Google Ads帐户的客户端ID。 |
+| `auth.params.clientSecret` | Google Ads帐户的客户端密钥。 |
+| `connectionSpec.id` | Google Ads连接规范ID： `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
 
 **响应**
 
-成功回應會傳回新建立的基本連線的詳細資料，包括其唯一識別碼(`id`)。 建立來源連線的下一個步驟需要此ID。
+成功响应将返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步中创建源连接时需要此ID。
 
 ```json
 {
@@ -117,7 +117,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已使用建立Google Ads基本連線： [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+在本教程之后，您已使用创建了Google Ads基本连接。 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流，以使用將廣告資料帶入Platform [!DNL Flow Service] API](../../collect/advertising.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流以使用将广告数据引入平台 [!DNL Flow Service] API](../../collect/advertising.md)

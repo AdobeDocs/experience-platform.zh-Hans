@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料存取；python sdk；spark sdk；資料存取api；匯出；匯出
+keywords: Experience Platform；主页；热门主题；数据访问；python sdk；spark sdk；数据访问api；导出；导出
 solution: Experience Platform
 title: Data Access API指南
-description: 資料存取API為開發人員提供RESTful介面，著重於Experience Platform內擷取資料集的可發現性和可存取性，藉此支援Adobe Experience Platform。
+description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -13,26 +13,26 @@ ht-degree: 4%
 
 # Data Access API指南
 
-資料存取API透過為使用者提供RESTful介面來支援Adobe Experience Platform，該介面著重於內擷取資料集的可發現性和可存取性 [!DNL Experience Platform].
+数据访问API通过向用户提供一个RESTful界面来支持Adobe Experience Platform，该界面侧重于在中摄取的数据集的可发现性和可访问性 [!DNL Experience Platform].
 
-![Experience Platform上的資料存取](images/Data_Access_Experience_Platform.png)
+![Experience Platform上的数据访问](images/Data_Access_Experience_Platform.png)
 
-## API規格參考
+## API规范参考
 
-Swagger API參考檔案可找到 [此處](https://www.adobe.io/experience-platform-apis/references/data-access/).
+可以找到Swagger API参考文档 [此处](https://www.adobe.io/experience-platform-apis/references/data-access/).
 
 ## 术语
 
-本檔案中一些常用辭彙的說明。
+本文档中一些常用术语的描述。
 
 | 搜索词 | 描述 |
 | ----- | ------------ |
-| 数据集 | 包含結構和欄位的資料集合。 |
-| 批次 | 一段時間內收集並作為單一單位一起處理的一組資料。 |
+| 数据集 | 包含架构和字段的数据集合。 |
+| 批次 | 一段时间内收集的一组数据，并作为一个单元一起处理。 |
 
-## 擷取批次中的檔案清單
+## 检索批次中的文件列表
 
-透過使用批次識別碼(batchID)，資料存取API可以擷取屬於該特定批次的檔案清單。
+通过使用批处理标识符(batchID)，数据访问API可以检索属于该特定批次的文件列表。
 
 **API格式**
 
@@ -42,7 +42,7 @@ GET /batches/{BATCH_ID}/files
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 指定批次的識別碼。 |
+| `{BATCH_ID}` | 指定批次的ID。 |
 
 **请求**
 
@@ -93,18 +93,18 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-此 `"data"` 陣列包含指定批次中所有檔案的清單。 每個傳回的檔案都有自己的唯一ID (`{FILE_ID}`)內含於 `"dataSetFileId"` 欄位。 然後可使用此唯一ID來存取或下載檔案。
+此 `"data"` 数组包含指定批处理中所有文件的列表。 返回的每个文件都有自己的唯一ID (`{FILE_ID}`)包含在 `"dataSetFileId"` 字段。 然后，可使用此唯一ID访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.dataSetFileId` | 指定批次中每個檔案的檔案識別碼。 |
-| `data._links.self.href` | 存取檔案的URL。 |
+| `data.dataSetFileId` | 指定批次中每个文件的文件ID。 |
+| `data._links.self.href` | 用于访问文件的url。 |
 
-## 存取和下載批次中的檔案
+## 访问和下载批次中的文件
 
-透過使用檔案識別碼(`{FILE_ID}`)，則資料存取API可用於存取檔案的特定詳細資料，包括其名稱、大小（位元組）和下載連結。
+使用文件标识符(`{FILE_ID}`)，数据访问API可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）和下载链接。
 
-回應將包含資料陣列。 根據ID指向的檔案是個別檔案還是目錄，傳回的資料陣列可能包含單一專案或屬於該目錄的檔案清單。 每個檔案元素都會包含檔案的詳細資訊。
+响应将包含一个数据数组。 根据ID指向的文件是单个文件还是目录，返回的数据数组可能包含单个条目或属于该目录的文件列表。 每个文件元素都将包含文件的详细信息。
 
 **API格式**
 
@@ -114,7 +114,7 @@ GET /files/{FILE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID}` | 等於 `"dataSetFileId"`，要存取之檔案的ID。 |
+| `{FILE_ID}` | 等于 `"dataSetFileId"`，要访问的文件的ID。 |
 
 **请求**
 
@@ -126,7 +126,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**單一檔案回應**
+**单个文件响应**
 
 ```JSON
 {
@@ -150,11 +150,11 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 檔案名稱（例如profiles.csv）。 |
-| `data.length` | 檔案的大小（以位元組為單位）。 |
-| `data._links.self.href` | 下載檔案的URL。 |
+| `data.name` | 文件的名称（例如profiles.csv）。 |
+| `data.length` | 文件大小（以字节为单位）。 |
+| `data._links.self.href` | 用于下载文件的URL。 |
 
-**目錄回應**
+**目录响应**
 
 ```JSON
 {
@@ -193,16 +193,16 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 }
 ```
 
-傳回目錄時，它包含目錄中所有檔案的陣列。
+当返回目录时，它包含目录中所有文件的数组。
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 檔案名稱（例如profiles.csv）。 |
-| `data._links.self.href` | 下載檔案的URL。 |
+| `data.name` | 文件的名称（例如profiles.csv）。 |
+| `data._links.self.href` | 用于下载文件的URL。 |
 
-## 存取檔案內容
+## 访问文件的内容
 
-此 [!DNL Data Access] API也可用來存取檔案的內容。 然後，您便可以使用此項將內容下載至外部來源。
+此 [!DNL Data Access] API还可用于访问文件的内容。 然后，可以使用此项将内容下载到外部源。
 
 **API格式**
 
@@ -212,7 +212,7 @@ GET /files/{dataSetFileId}?path={FILE_NAME}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_NAME}` | 您嘗試存取的檔案名稱。 |
+| `{FILE_NAME}` | 尝试访问的文件的名称。 |
 
 **请求**
 
@@ -226,17 +226,17 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID}` | 資料集中檔案的ID。 |
-| `{FILE_NAME}` | 檔案的全名（例如profiles.csv）。 |
+| `{FILE_ID}` | 数据集内文件的ID。 |
+| `{FILE_NAME}` | 文件的全名（例如profiles.csv）。 |
 
 **响应**
 
 `Contents of the file`
 
-## 其他程式碼範例
+## 其他代码示例
 
-如需其他範例，請參閱 [資料存取教學課程](tutorials/dataset-data.md).
+有关其他示例，请参阅 [数据访问教程](tutorials/dataset-data.md).
 
-## 訂閱資料擷取事件
+## 订阅数据摄取事件
 
-[!DNL Platform] 讓特定的高價值事件可透過 [Adobe Developer主控台](https://www.adobe.com/go/devs_console_ui). 例如，您可以訂閱資料擷取事件，以接收潛在延遲和失敗的通知。 請參閱教學課程，位置如下： [訂閱資料擷取通知](../ingestion/quality/subscribe-events.md) 以取得詳細資訊。
+[!DNL Platform] 使特定的高价值事件可通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 请参阅上的教程 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 了解更多信息。

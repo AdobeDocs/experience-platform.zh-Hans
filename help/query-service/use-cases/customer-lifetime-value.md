@@ -1,6 +1,6 @@
 ---
-title: 追蹤資料訊號以產生客戶期限值
-description: 本指南提供端對端示範，說明如何搭配Real-time Customer Data Platform使用Data Distiller和使用者定義儀表板，以測量及視覺化客戶期限值。
+title: 跟踪数据信号以生成客户存留期值
+description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -9,109 +9,109 @@ ht-degree: 0%
 
 ---
 
-# 追蹤資料訊號以產生您的客戶期限值
+# 跟踪数据信号以生成客户存留期值
 
-您可以使用Real-time Customer Data Platform追蹤客戶期限值(CLV)，並使用使用者定義的儀表板將該量度視覺化。 透過使用Data Distiller和使用者定義儀表板，您可以測量客戶在整個關係中對您公司的價值。 瞭解CLV可以協助您制定企業策略，以爭取新客戶，同時保留現有客戶，並維持利潤率。
+您可以使用Real-time Customer Data Platform跟踪客户存留期值(CLV)，并通过用户定义的功能板将该量度可视化。 通过使用Data Distiller和用户定义的功能板，您可以测量客户在整个关系中对您公司的价值。 了解CLV可以帮助您制定企业战略，以吸引新客户，同时保留现有客户并保持利润率。
 
-下列資訊圖表說明產生高效能資料以改善行銷活動的資料收集、操控、分析和操作的週期。
+以下信息图表描述了数据收集、操作、分析和操作的周期，可生成高性能数据以改进营销活动。
 
-![從觀察到分析再到行動的資料往返資訊圖。](../images/use-cases/infographic-use-case-cycle.png)
+![从观察、分析到行动的往返数据信息图。](../images/use-cases/infographic-use-case-cycle.png)
 
-此端對端使用案例示範如何擷取及修改資料訊號，以計算衍生自客戶期限值的屬性。 這些衍生屬性然後可套用至您的Real-Time CDP設定檔資料，並可用於使用者定義的儀表板，以建立用於深入分析的控制面板。 透過Data Distiller，您可以擴充Real-Time CDP見解資料模型，並使用CLV衍生的屬性和儀表板見解來建立新區段，並將其啟用至所需的目的地。 然後，這些區段可用於建立高效能受眾，以支援您的下一個行銷活動。
+此端到端用例演示了如何捕获和修改数据信号以计算客户生命周期值派生的属性。 然后，这些派生属性可以应用于您的Real-Time CDP配置文件数据，并且可以与用户定义的功能板一起使用，以构建用于洞察分析的功能板。 通过Data Distiller，您可以扩展Real-Time CDP分析数据模型，并使用CLV派生的属性和功能板分析来构建新区段并将其激活到所需的目标。 然后，这些区段可用于创建高性能受众，为您的下一个营销活动提供支持。
 
-本指南旨在透過測量推動CLV的關鍵接觸點上的資料訊號，並在您的環境中實作類似的使用案例，協助您更好地瞭解您的客戶體驗。 下圖會概述整個程式。
+本指南旨在通过测量推动CLV的关键接触点上的数据信号并在您的环境中实施类似用例，帮助您更好地了解您的客户体验。 下图概述了整个过程。
 
-![運用客戶期限值所需的大範圍步驟資訊圖。](../images/use-cases/implementation-steps.png)
+![利用客户存留期值所需的广泛步骤的信息图表。](../images/use-cases/implementation-steps.png)
 
 ## 快速入门 {#getting-started}
 
-本指南需要您實際瞭解Adobe Experience Platform的下列元件：
+本指南要求您实际了解Adobe Experience Platform的以下组件：
 
-* [查詢服務](../home.md)：提供使用者介面和RESTful API，您可在其中使用SQL查詢來分析和擴充資料。
-* [細分服務](../../segmentation/home.md)：可讓您建立區段，並從即時客戶設定檔資料產生對象。
+* [查询服务](../home.md)：提供用户界面和RESTful API，您可以在其中使用SQL查询分析和扩充数据。
+* [分段服务](../../segmentation/home.md)：用于构建区段并根据实时客户档案数据生成受众。
 
 ## 先决条件
 
-本指南要求您具備 [資料Distiller](../data-distiller/overview.md) SKU作為套件方案的一部分。 如果您不確定您是否擁有此服務，請洽詢您的Adobe服務代表。
+本指南要求您拥有 [数据Distiller](../data-distiller/overview.md) SKU作为程序包的一部分。 如果您不确定您是否拥有此功能，请咨询您的Adobe服务代表。
 
-## 建立衍生屬性 {#create-derived-attribute}
+## 创建派生属性 {#create-derived-attribute}
 
-建立CLV的第一步是從使用者動作擷取的資料訊號建立衍生屬性。 此特定使用案例記錄於有關航空公司忠誠度方案的獨立檔案中。 請參閱指南以瞭解如何 [使用查詢服務來建立以十等分為基礎的衍生屬性，以便與您的設定檔資料搭配使用](./deciles-use-case.md). 說明下列步驟的檔案提供完整範例和說明：
+建立CLV的第一步是根据从用户操作捕获的数据信号创建派生属性。 此特定用例包含在关于航空忠诚度方案的单独文档中。 请参阅指南以了解如何 [使用查询服务可创建基于十分位数的派生属性，以供配置文件数据使用](./deciles-use-case.md). 文档中提供了完整的示例和说明，其中说明了以下步骤：
 
-* 建立結構描述以允許十等分分組。
-* 使用查詢服務來建立十進位。
-* 產生十等分的資料集。
-* 啟用結構描述以用於Real-Time Customer Profile。
-* 建立身分名稱空間並將其標示為主要識別碼。
-* 建立查詢以計算回顧期間內的十分位數。
+* 创建一个架构以允许进行十分位数分段。
+* 使用查询服务创建十分位。
+* 生成十进制数据集。
+* 启用架构以在Real-time Customer Profile中使用。
+* 创建身份命名空间并将其标记为主要标识符。
+* 创建查询以计算回顾期间的十分位数。
 
-## 擴充見解資料模型和排程更新 {#extend-data-model-and-set-refresh-schedule}
+## 扩展分析数据模型和计划更新 {#extend-data-model-and-set-refresh-schedule}
 
-接下來，您必須建立自訂資料模型或擴充現有的Adobe Real-Time CDP資料模型，以與您的CLV報告深入分析互動。 請參閱檔案以瞭解如何 [透過Query Service建立報告見解資料模型，以搭配加速商店資料和使用者定義的儀表板使用](../data-distiller/query-accelerated-store/reporting-insights-data-model.md#build-a-reporting-insights-data-model). 本教學課程涵蓋下列步驟：
+接下来，您必须构建自定义数据模型或扩展现有Adobe Real-Time CDP数据模型，以便与CLV报表分析互动。 请参阅文档以了解如何 [通过Query Service构建报表见解数据模型，用于加速商店数据和用户定义的仪表板](../data-distiller/query-accelerated-store/reporting-insights-data-model.md#build-a-reporting-insights-data-model). 本教程涵盖以下步骤：
 
-* 使用Data Distiller建立報告深入分析的模型。
-* 建立表格、關係及填入資料。
-* 查詢報表分析資料模型。
-* 使用Real-Time CDP見解資料模型擴充您的資料模型。
-* 建立維度表格以擴充您的報表見解模型。
-* 查詢您的擴充式加速存放區報告見解資料模型
+* 使用Data Distiller创建报表见解模型。
+* 创建表、关系和填充数据。
+* 查询报表分析数据模型。
+* 使用Real-Time CDP分析数据模型扩展您的数据模型。
+* 创建维度表以扩展您的报表见解模型。
+* 查询扩展加速商店报告见解数据模型
 
-請參閱Real-time Customer Data Platform Insights資料模型檔案以瞭解如何 [自訂SQL查詢範本，為您的行銷和關鍵績效指標(KPI)使用案例建立Real-Time CDP報表](../../dashboards/cdp-insights-data-model.md).
+请参阅Real-time Customer Data Platform Insights数据模型文档，了解如何 [自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/cdp-insights-data-model.md).
 
-請務必設定排程，以定期重新整理您的自訂資料模型。 這可確保資料會視需要傳回作為您擷取管道的一部分，並填入您的使用者定義儀表板。 請參閱 [排程查詢指南](../ui/query-schedules.md#create-schedule) 以瞭解如何設定排程。
+确保设置计划以定期刷新自定义数据模型。 这可确保根据需要将数据作为摄取管道的一部分返回，并填充用户定义的仪表板。 请参阅 [计划查询指南](../ui/query-schedules.md#create-schedule) 了解如何设置计划。
 
-## 建立儀表板以擷取深入分析 {#build-a-custom-dashboard}
+## 构建用于捕获见解的仪表板 {#build-a-custom-dashboard}
 
-現在您已建立自訂資料模型，您可以利用自訂查詢和使用者定義儀表板將資料視覺化。 如需操作方法的完整指引，請參閱使用者定義控制面板概觀 [建立自訂儀表板](../../dashboards/user-defined-dashboards.md). UI指南包含下列專案的詳細資訊：
+现在您已经创建了自定义数据模型，接下来可以使用自定义查询和用户定义的仪表板可视化您的数据。 有关如何执行操作的完整指导，请参阅用户定义的功能板概述 [构建自定义仪表板](../../dashboards/user-defined-dashboards.md). UI指南包括以下方面的详细信息：
 
-* 如何建立Widget。
-* 如何使用Widget撰寫器。
+* 如何创建构件。
+* 如何使用构件编辑器。
 
-以下提供使用十等分儲存貯體的自訂CLV Widget範例。
+下面显示了使用十分位数存储桶的自定义CLV构件示例。
 
-![以十等分為基礎的自訂CLTV Widget集合。](../images/use-cases/deciles-user-defined-dashboard.png)
+![自定义基于十分位数的CLTV小部件的集合。](../images/use-cases/deciles-user-defined-dashboard.png)
 
-## 建立和啟用區段以建立高效能對象 {#create-and-activate-segments}
+## 创建和激活区段以构建高性能受众 {#create-and-activate-segments}
 
-下一步是建立區段，並從您的即時客戶設定檔資料產生對象。 請參閱區段產生器UI指南以瞭解如何 [在Platform中建立及啟用區段](../../segmentation/ui/segment-builder.md). 本指南提供幾個小節，說明如何：
+下一步是构建区段，并根据实时客户档案数据生成受众。 请参阅区段生成器UI指南，了解如何 [在Platform中创建和激活区段](../../segmentation/ui/segment-builder.md). 该指南提供了有关如何完成以下操作的部分：
 
-* 使用屬性、事件和現有對象的組合作為建置組塊，以建立區段定義。
-* 使用規則產生器畫布和容器可控制區段規則的執行順序。
-* 檢視潛在對象的預估值，讓您視需要調整區段定義。
-* 啟用已排程區段的所有區段定義。
-* 啟用串流區段的指定區段定義。
+* 使用属性、事件和现有受众的组合作为构建块来创建区段定义。
+* 使用规则生成器画布和容器可控制区段规则的执行顺序。
+* 查看潜在受众的估计值，允许您根据需要调整区段定义。
+* 为计划分段启用所有区段定义。
+* 为流式分段启用指定的区段定义。
 
-另外，也有 [區段產生器影片教學課程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 以取得詳細資訊。
+另外，还有一个 [区段生成器视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 了解更多信息。
 
-## 為電子郵件行銷活動啟用區段 {#activate-segment-for-campaign}
+## 为电子邮件营销活动激活区段 {#activate-segment-for-campaign}
 
-建立區段後，您就可以將其啟動至目的地。 Platform支援各種電子郵件服務提供者(ESP)，可讓您管理電子郵件行銷活動，例如傳送促銷電子郵件行銷活動。
+构建区段后，便可以将其激活到目标。 Platform支持各种电子邮件服务提供商(ESP)，使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。
 
-檢查 [電子郵件行銷目的地概觀](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/overview.html?lang=en#connect-destination) 以取得您要將資料匯出至的支援目的地清單(例如 [oracleEloqua](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/oracle-eloqua-api.html?lang=en) 頁面)。
+查看 [电子邮件营销目标概述](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/overview.html?lang=en#connect-destination) 以获取要将数据导出到的受支持目标的列表(例如 [oracleEloqua](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/oracle-eloqua-api.html?lang=en) 页面)。
 
-## 檢視從行銷活動傳回的分析資料 {#post-campaign-data-analysis}
+## 查看从营销活动返回的分析数据 {#post-campaign-data-analysis}
 
-來源中的資料現在可以是 [逐步處理](../essential-concepts/incremental-load.md) 在加速的資料存放區中，作為排程的資料模型重新整理的一部分。 客戶的任何回應事件都可在發生時或批次匯入Adobe Experience Platform。 您的資料模型可能會重新整理一次，或一天重新整理多次，視您的設定或來源聯結器而定。 請參閱 [批次擷取API概觀](../../ingestion/batch-ingestion/api-overview.md) 或 [串流擷取概觀](../../ingestion/streaming-ingestion/overview.md) 以取得詳細資訊。
+现在，源中的数据可以 [增量处理](../essential-concepts/incremental-load.md) 作为对加速数据存储中数据模型的计划刷新的一部分。 客户的任何响应事件都可以在发生时或批量摄取到Adobe Experience Platform中。 您的数据模型可能会刷新一次，或每天刷新多次，具体取决于您的设置或源连接器。 请参阅 [批量摄取API概述](../../ingestion/batch-ingestion/api-overview.md) 或 [流式摄取概述](../../ingestion/streaming-ingestion/overview.md) 了解更多信息。
 
-更新資料模型後，您的自訂儀表板Widget會提供有意義的訊號，讓您測量並視覺化客戶期限值。
+数据模型更新后，您的自定义仪表板小组件会提供有意义的信号，让您能够测量并可视化客户存留期值。
 
-![自訂Widget，根據電子郵件區段和電子郵件促銷活動顯示已開啟的電子郵件數量。](../images/use-cases/post-activation-and-email-response-kpis.png)
+![一个自定义构件，用于显示根据其区段和电子邮件促销活动打开的电子邮件数量。](../images/use-cases/post-activation-and-email-response-kpis.png)
 
-為您的自訂分析提供各種視覺效果選項。
+为您的自定义分析提供了各种可视化图表选项。
 
-![行銷活動貯體Widget開啟的電子郵件。](../images/use-cases/email-opened-by-campaign-buckets.png)
+![营销活动存储桶小组件打开的电子邮件。](../images/use-cases/email-opened-by-campaign-buckets.png)
 
-這些見解進而可協助您為後續行銷活動開發業務策略。
+这些见解进而可以帮助您为后续营销活动制定业务策略。
 
-![四個自訂Widget的集合，用於詳細說明電子郵件促銷活動的結果。](../images/use-cases/example-widgets.png)
+![四个自定义小部件的集合，用于详细描述电子邮件促销活动的结果。](../images/use-cases/example-widgets.png)
 
 ## 后续步骤
 
-閱讀本檔案後，您應能更瞭解如何使用Real-time Customer Data Platform追蹤及視覺化客戶期限值(CLV)量度。 若要進一步瞭解查詢服務和Experience Platform所提供的許多業務使用案例，建議您閱讀下列檔案：
+通过阅读本文档，您应该更好地了解如何使用Real-time Customer Data Platform跟踪和可视化客户存留期值(CLV)指标。 要了解有关通过查询服务和Experience Platform提供的许多业务用例的更多信息，建议您阅读以下文档：
 
-* [已放棄的瀏覽使用案例的端對端範例，可示範Query Service的多功能性和優點。](./abandoned-browse.md)
-* [如何使用查詢服務和機器學習來判斷並篩選真正線上網站訪客流量的機器人活動](./bot-filtering.md)
-* [如何在您的Platform資料上執行比對，該資料會透過大致比對您選擇的字串來合併來自多個資料集的結果。](./fuzzy-match.md)
+* [一个端到端示例，展示了Query Service的通用性和好处，该示例展示了一个放弃的Browse用例。](./abandoned-browse.md)
+* [如何使用查询服务和机器学习从真正的在线网站访客流量中确定和过滤机器人活动](./bot-filtering.md)
+* [如何对Platform数据执行匹配，该匹配通过大致匹配所选的字符串来组合来自多个数据集的结果。](./fuzzy-match.md)
 
 <!-- "Data signals are actions taken by consumers while online that offer clues about intent that can be acted upon. This includes anything from visiting a website to filling out a change of address or clicking an ad."  -->
 

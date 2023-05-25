@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；ExperienceEvent；欄位；結構描述；結構描述設計；欄位群組；欄位群組；enduserids；一般使用者；id；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；enduserids；最终用户；ID；
 solution: Experience Platform
-title: 一般使用者ID詳細資料結構描述欄位群組
-description: 本檔案提供「一般使用者ID詳細資訊」結構描述欄位群組的概觀。
+title: 最终用户ID详细信息架构字段组
+description: 本文档概述了“最终用户ID详细信息”架构字段组。
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -12,30 +12,30 @@ ht-degree: 4%
 ---
 
 
-# [!UICONTROL 一般使用者ID詳細資訊] 結構描述欄位群組
+# [!UICONTROL 最终用户ID详细信息] 架构字段组
 
 >[!NOTE]
 >
->數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
 
-[!UICONTROL 一般使用者ID詳細資訊] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md)，用於說明個人在多個Adobe應用程式中的身分資訊。 欄位群組提供根層級 `endUserIDs` 物件，其本身包含唯讀 `_experience` 其值會在擷取資料時自動更新的欄位。
+[!UICONTROL 最终用户ID详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述跨多个Adobe应用程序的个人身份信息。 字段组提供根级别 `endUserIDs` 对象，其本身包含只读 `_experience` 字段，其值会在摄取数据时自动更新。
 
 <img src="../../images/field-groups/enduserids.png" width="700" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `aacustomid` | [标识](../../data-types/identity.md) | Adobe Analytics Cloud的自訂一般使用者ID。 |
-| `aaid` | [标识](../../data-types/identity.md) | Adobe Analytics Cloud的一般使用者ID。 |
-| `acid` | [标识](../../data-types/identity.md) | Adobe Campaign的一般使用者ID。 |
-| `adcloud` | [标识](../../data-types/identity.md) | Adobe Advertising Cloud的一般使用者ID。 |
-| `emailid` | [标识](../../data-types/identity.md) | 電子郵件地址ID。 |
-| `mcid` | [标识](../../data-types/identity.md) | Adobe Marketing Cloud ID (MCID)。 MCID現在稱為Experience CloudID (ECID)。 |
-| `phonenumberid` | [标识](../../data-types/identity.md) | 電話號碼識別碼。 |
-| `tntid` | [标识](../../data-types/identity.md) | Adobe Target的一般使用者ID。 |
+| `aacustomid` | [标识](../../data-types/identity.md) | Adobe Analytics Cloud的自定义最终用户ID。 |
+| `aaid` | [标识](../../data-types/identity.md) | Adobe Analytics Cloud的最终用户ID。 |
+| `acid` | [标识](../../data-types/identity.md) | Adobe Campaign的最终用户ID。 |
+| `adcloud` | [标识](../../data-types/identity.md) | Adobe Advertising Cloud的最终用户ID。 |
+| `emailid` | [标识](../../data-types/identity.md) | 电子邮件地址ID |
+| `mcid` | [标识](../../data-types/identity.md) | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
+| `phonenumberid` | [标识](../../data-types/identity.md) | 电话号码ID |
+| `tntid` | [标识](../../data-types/identity.md) | Adobe Target的最终用户ID。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
+有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.schema.json)

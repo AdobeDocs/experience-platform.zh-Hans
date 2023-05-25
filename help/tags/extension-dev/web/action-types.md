@@ -1,6 +1,6 @@
 ---
-title: Web擴充功能的動作型別
-description: 瞭解如何為Web屬性中的標籤擴充功能定義動作型別程式庫模組。
+title: Web扩展的操作类型
+description: 了解如何在Web属性中为标记扩展定义操作类型库模块。
 exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -13,24 +13,24 @@ ht-degree: 50%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-在資料收集標籤的內容中，動作是在規則事件發生且所有條件都通過評估後執行的動作。
+在数据收集标记的上下文中，操作是在发生规则事件且所有条件都通过评估后执行的操作。
 
 例如，扩展可以提供“显示支持聊天”操作类型，该操作类型可以显示支持聊天对话框，以帮助在注销时可能遇到困难的用户。
 
-本文介紹如何在Adobe Experience Platform中定義Web擴充功能的動作型別。
+本文档介绍如何在Adobe Experience Platform中定义Web扩展的操作类型。
 
 >[!IMPORTANT]
 >
 >本文档介绍 Web 扩展的操作类型。如果您正在开发 Edge 扩展，请另外参阅关于 [Edge 扩展的操作类型](../edge/action-types.md)的指南。
 >
->本檔案也假設您熟悉程式庫模組，以及如何將這些模組整合在Web擴充功能中。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本文档还假设您熟悉库模块以及库模块在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
 
-動作型別通常包含下列專案：
+操作类型通常包含以下内容：
 
-1. A [檢視](./views.md) 顯示在Experience PlatformUI和資料收集UI中，可讓使用者修改動作的設定。
-2. 在標籤執行階段程式庫內發出的程式庫模組，用於解譯設定及執行動作。
+1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改操作的设置。
+2. 在标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 ```js
 module.exports = function(settings) {
@@ -38,7 +38,7 @@ module.exports = function(settings) {
 };
 ```
 
-例如，若要讓Adobe Experience Platform使用者能夠設定訊息，您可以允許使用者輸入訊息，並將其儲存至設定物件。 物件看起來像這樣：
+例如，要使Adobe Experience Platform用户可以配置消息，您可以允许用户输入消息并将其保存到设置对象。 该对象如下所示：
 
 ```json
 {
@@ -56,7 +56,7 @@ module.exports = function(settings) {
 
 ## 上下文事件数据
 
-接著，系統必須將第二個引數傳遞至模組，該模組包含引發規則之事件的相關內容資訊。 该参数在某些情况下可能会有所帮助并且可以按如下方式访问：
+然后，必须将第二个参数传递到包含有关触发规则的事件的上下文信息的模块。 该参数在某些情况下可能会有所帮助并且可以按如下方式访问：
 
 ```js
 module.exports = function(settings, event) {

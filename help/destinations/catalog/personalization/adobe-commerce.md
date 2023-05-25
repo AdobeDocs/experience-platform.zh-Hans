@@ -1,6 +1,6 @@
 ---
-title: Adobe Commerce目的地聯結器
-description: 瞭解Adobe Commerce和Real-Time CDP商家如何透過提供高度相關的網站內容和促銷活動，並根據Real-Time CDP內建立和管理之客戶對象進行自訂，來個人化購物體驗。
+title: Adobe Commerce目标连接器
+description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，根据Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
 source-git-commit: 813a564eb02a5366945468ee689b2744e31baaa8
 workflow-type: tm+mt
@@ -9,76 +9,76 @@ ht-degree: 3%
 
 ---
 
-# Adobe Commerce連線 {#adobe-commerce}
+# Adobe Commerce连接 {#adobe-commerce}
 
 ## 概述 {#overview}
 
-此 [!DNL Adobe Commerce] 目的地聯結器可讓您選取一或多個Real-Time CDP對象，以啟用至 [!DNL Adobe Commerce] 帳戶，為購物者提供動態的個人化體驗。 範圍 [!DNL Adobe Commerce]，然後您可以選取這些Real-Time CDP對象，以個人化購物車中的獨特選件，例如「購買2 get 1 free」。 您也可以顯示主圖橫幅，並透過促銷優惠修改產品定價，所有優惠方案都可根據Adobe Real-Time CDP受眾自訂。
+此 [!DNL Adobe Commerce] 目标连接器允许您选择一个或多个要激活到的Real-Time CDP受众 [!DNL Adobe Commerce] 帐户，为购物者提供动态的个性化体验。 范围 [!DNL Adobe Commerce]之后，您可以选择这些Real-Time CDP受众来个性化购物车中的独特优惠，例如“购买2 get 1免费”。 您还可以显示主页横幅，并通过促销优惠修改产品定价，所有这些都可根据Adobe Real-Time CDP受众进行自定义。
 
 ## 先决条件 {#prerequisites}
 
-已購買Real-Time CDP Prime或Ultimate和Adobe Commerce的客戶可在目的地目錄中使用此聯結器。
+目标目录中提供了此连接器，适用于已购买Real-Time CDP Prime或Ultimate以及Adobe Commerce的客户。
 
-若要使用此目的地連線，請確定您有權存取：
+要使用此目标连接，请确保您有权访问：
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 您可以存取開發人員主控台，檢視所需的服務帳戶和認證資訊 [完成設定](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) Adobe Commerce中擴充功能的ID。
-- [Adobe Commerce Cloud 2.4.4版或更新版本](https://business.adobe.com/products/magento/magento-commerce.html)
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 通过访问开发人员控制台，您可以查看所需的服务帐户和凭据信息 [完成配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) Adobe Commerce扩展的ID为ID。
+- [Adobe Commerce Cloud版本2.4.4或更高版本](https://business.adobe.com/products/magento/magento-commerce.html)
 
-在Experience Platform中，建立下列專案：
+在Experience Platform中，创建以下内容：
 
-- [架构](../../../xdm/schema/composition.md). 您建立的結構描述代表您計畫從Adobe Commerce擷取的資料。 [瞭解更多](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) 有關如何建立包含Commerce特定欄位群組的結構描述。
-- [数据集](../../../catalog/datasets/user-guide.md#create). 資料集是資料集合的儲存和管理結構。 您會使用先前建立的結構描述建立此資料集。
-- [資料流](../../../edge/datastreams/overview.md#create). 可讓資料從Adobe Experience Platform流向其他AdobeDX產品的ID。 此ID必須與您特定Adobe Commerce執行個體中的特定網站相關聯。 當您建立此資料流時，請指定您在上面建立的XDM結構描述。
+- [架构](../../../xdm/schema/composition.md). 您创建的架构表示计划从Adobe Commerce中摄取的数据。 [了解详情](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) 有关如何创建包含特定于Commerce的字段组的架构。
+- [数据集](../../../catalog/datasets/user-guide.md#create). 数据集是用于数据收集的存储和管理结构。 从上面创建的架构创建此数据集。
+- [数据流](../../../edge/datastreams/overview.md#create). 允许数据从Adobe Experience Platform流向其他AdobeDX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
-完成先決條件後，請連線至 [!DNL Commerce] 目的地。
+完成先决条件后，连接到 [!DNL Commerce] 目标。
 
-## 連線到目的地 {#connect}
-
->[!IMPORTANT]
-> 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
-
-若要連線至 [!DNL Adobe Commerce] 目的地：
-
-1. 在 [平台介面](https://experience.adobe.com/platform/)，前往 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**.
-1. 選取 **[!UICONTROL 個人化]**.
-1. 選取Adobe Commerce目的地以反白顯示，然後選取「 」 **[!UICONTROL 設定]**.
-1. 請依照以下說明步驟操作： [目的地設定教學課程](../../ui/connect-destination.md).
-
-### 連線引數 {#parameters}
-
-當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
-
-- **[!UICONTROL 名稱]**：填寫此目的地的偏好名稱。
-- **[!UICONTROL 說明]**：輸入目的地的說明。 例如，您可以提及要將此目的地用於哪個行銷活動。 此欄位為選用。
-- **[!UICONTROL 整合別名]**：此值會以JSON物件名稱的形式傳送至Experience PlatformWeb SDK。
-- **[!UICONTROL 資料串流ID]**：這會決定哪些資料收集資料串流包含頁面回應中所包含的對象。 下拉菜单仅显示已启用目标配置的数据流。另請參閱 [設定資料串流](../../../edge/datastreams/overview.md) 以取得更多詳細資料。
-
-### 啟用警示 {#enable-alerts}
-
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
-
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
-
-## 啟用對象至 [!DNL Commerce] 目的地 {#activate}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-讀取 [對設定檔請求目的地啟用設定檔和區段](../../ui/activate-profile-request-destinations.md) 以取得啟用對象至 [!DNL Commerce] 目的地。
+要连接到 [!DNL Adobe Commerce] 目标：
 
-## 中的後續步驟 [!DNL Adobe Commerce]
+1. 在 [平台界面](https://experience.adobe.com/platform/)，转到 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**.
+1. 选择 **[!UICONTROL 个性化]**.
+1. 选择要高亮显示的Adobe Commerce目标，然后选择 **[!UICONTROL 设置]**.
+1. 请按照 [目标配置教程](../../ui/connect-destination.md).
 
-現在您已設定 [!DNL Commerce] 目的地(在Experience Platform中)，您必須安裝 [!DNL Audience Activation] 中的擴充功能 [!DNL Commerce] 並設定 [!DNL Commerce Admin] 以匯入您建立的Real-Time CDP對象。 請參閱 [[!DNL Commerce] 檔案](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html) 以深入瞭解。
+### 连接参数 {#parameters}
 
-## 驗證Commerce中的對象啟用 {#exported-data}
+While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
-在您啟動Real-Time CDP對象至 [!DNL Adobe Commerce] 帳戶，您會看到這些對象在您前往 _管理員_ 側欄，然後前往 **[!UICONTROL 客戶]** > **[!UICONTROL Real-time CDP對象]**.
+- **[!UICONTROL 名称]**：填写此目标的首选名称。
+- **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段是可选的。
+- **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
+- **[!UICONTROL 数据流ID]**：确定哪个数据收集数据流包含响应页面时包含的受众。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../edge/datastreams/overview.md) 了解更多详细信息。
 
-![Real-Time CDP Audiences控制面板](../../assets/catalog/personalization/adobe-commerce/audience-library.png)
+### 启用警报 {#enable-alerts}
 
-## 資料使用與控管 {#data-usage-governance}
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請閱讀 [資料控管概觀](/help/data-governance/home.md).
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
+
+## 将受众激活到 [!DNL Commerce] 目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+
+读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众激活到 [!DNL Commerce] 目标。
+
+## 中的后续步骤 [!DNL Adobe Commerce]
+
+现在您已配置 [!DNL Commerce] Experience Platform目标，您需要安装 [!DNL Audience Activation] 中的扩展 [!DNL Commerce] 并配置 [!DNL Commerce Admin] 以导入您创建的Real-Time CDP受众。 请参阅 [[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html) 了解更多信息。
+
+## 验证Commerce中的受众激活 {#exported-data}
+
+在将Real-Time CDP受众激活到您的 [!DNL Adobe Commerce] 帐户，您将会在转到 _管理员_ 侧栏，然后转到 **[!UICONTROL 客户]** > **[!UICONTROL 实时CDP受众]**.
+
+![Real-Time CDP受众功能板](../../assets/catalog/personalization/adobe-commerce/audience-library.png)
+
+## 数据使用和管理 {#data-usage-governance}
+
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).

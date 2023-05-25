@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；ETL；etl；ETL工作流程；ETL工作流程
+keywords: Experience Platform；主页；热门主题；ETL；ETL；ETL工作流；ETL工作流
 solution: Experience Platform
-title: ETL工作流程
-description: 各種提取、轉換和載入(ETL)工具在格式上可能有所不同，但大多數工具都公開類似的功能，以協助合併多個資料來源。
+title: ETL工作流
+description: 各种提取、转换和加载(ETL)工具在格式上可能有所不同，但大多数工具都公开类似的功能，以帮助合并多个数据源。
 exl-id: 09de6c50-ad04-4d7c-99e6-33784fb0dd58
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
@@ -11,60 +11,60 @@ ht-degree: 0%
 
 ---
 
-# ETL工作流程
+# ETL工作流
 
-各種提取、轉換和載入(ETL)工具在格式上可能有所不同，但大多數工具都公開類似的功能，以協助合併多個資料來源。
+各种提取、转换和加载(ETL)工具在格式上可能有所不同，但大多数工具都公开类似的功能，以帮助合并多个数据源。
 
-## ETL工具範例
+## ETL工具示例
 
-下列圖表提供一般ETL動作的模型，以及基於標準互動的一般使用者體驗。 這些影像可輕鬆適應特定的ETL使用者體驗。
+下图提供了常见ETL操作的模型以及基于标准交互的通用用户体验。 这些图像可以容易地适应特定的ETL用户体验。
 
-以下說明的動作會在中概述的步驟中進行說明 [ETL整合指南](home.md). 有些步驟會參考特定的「圖」，有些則說明與此處顯示的工作流程類似的動作。
+在中概述的步骤中说明了以下操作 [ETL集成指南](home.md). 一些步骤引用了特定的“数字”，而另一些步骤则描述了与此处显示的工作流类似的操作。
 
-### 圖1 — 設定新的Adobe Experience Platform聯結器：
+### 图1 — 配置新的Adobe Experience Platform连接器：
 
 ![](images/image2.png)
 
-### 圖2 - [!DNL Experience Platform] 聯結器已啟用：
+### 图2 - [!DNL Experience Platform] 连接器已激活：
 
 ![](images/image3.png)
 
-### 圖3 - ETL Transformation Management UI：
+### 图3 - ETL Transformation Management UI：
 
 ![](images/image4.png)
 
-### 圖4 — 新轉換UI，選取 [!DNL Experience Platform] 連線：
+### 图4 — 新建转换UI，选择 [!DNL Experience Platform] 连接：
 
 ![](images/image5.png)
 
-### 圖5 — 瀏覽來源 [!DNL Experience Platform] 資料集：
+### 图5 — 浏览源 [!DNL Experience Platform] 数据集：
 
 ![](images/image6.png)
 
-### 圖6 - ETL UI中資料集的中繼資料和範例資料：
+### 图6 - ETL UI中数据集的元数据和示例数据：
 
 ![](images/image7.png)
 
-### 圖7 — 從資料集檢視欄位結構描述資訊：
+### 图7 — 查看数据集的字段架构信息：
 
 ![](images/image8.png)
 
-### 圖8 — 預覽資料集中的資料：
+### 图8 — 预览数据集中的数据：
 
 ![](images/image9.png)
 
-### 圖9 — 定義轉換作業的資料同步引數：
+### 图9 — 为转换操作定义数据同步参数：
 
 ![](images/image10.png)
 
-### 圖10 — 定義 [!DNL Experience Data Model] (XDM)目標資料集：
+### 图10 — 定义 [!DNL Experience Data Model] (XDM)目标数据集：
 
 ![](images/image11.png)
 
-### 圖11 — 檢視XDM階層架構和中繼資料以支援對應/轉換：
+### 图11 — 查看XDM分层架构和元数据以支持映射/转换：
 
 ![](images/image12.png)
 
-### 圖12 — 儲存並執行/排程轉換：
+### 图12 — 保存并运行/计划转换：
 
 ![](images/image13.png)

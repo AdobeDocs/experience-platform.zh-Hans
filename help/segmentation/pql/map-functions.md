@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；pql；PQL；設定檔查詢語言；地圖函式；地圖；
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；映射函数；映射；
 solution: Experience Platform
-title: PQL對應函式
-description: 設定檔查詢語言(PQL)提供可讓您更輕鬆地與地圖互動的功能。
+title: PQL映射函数
+description: 配置文件查询语言(PQL)提供了一些功能，使与地图的交互更轻松。
 exl-id: f23616f2-c0dd-40ce-8cfc-c757542fbd05
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 5%
 
 # 映射函数
 
-[!DNL Profile Query Language] (PQL)提供可讓您更輕鬆與地圖互動的功能。 如需其他PQL函式的詳細資訊，請參閱 [[!DNL Profile Query Language] 概觀](./overview.md).
+[!DNL Profile Query Language] (PQL)提供了一些功能，使与映射的交互更轻松。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
 
-## 取得
+## Get
 
-此 `get` 函式用於擷取給定索引鍵的對映值。
+此 `get` 函数用于检索给定键的映射值。
 
 **格式**
 
@@ -27,15 +27,15 @@ ht-degree: 5%
 
 **示例**
 
-以下PQL查詢取得索引鍵的身分對應值 `example@example.com`.
+以下PQL查询获取键的标识映射值 `example@example.com`.
 
 ```sql
 identityMap.get("example@example.com")
 ```
 
-## 金鑰
+## 键
 
-此 `keys` 函式來擷取給定對應的所有索引鍵。
+此 `keys` 函数用于检索给定映射的所有键。
 
 **格式**
 
@@ -45,7 +45,7 @@ identityMap.get("example@example.com")
 
 **示例**
 
-以下PQL查詢取得對應的所有索引鍵 `identityMap`.
+以下PQL查询获取映射的所有键 `identityMap`.
 
 ```sql
 identityMap.keys()
@@ -53,7 +53,7 @@ identityMap.keys()
 
 ## 值
 
-此 `values` 函式來擷取給定對應的所有值。
+此 `values` 函数用于检索给定映射的所有值。
 
 **格式**
 
@@ -63,7 +63,7 @@ identityMap.keys()
 
 **示例**
 
-下列PQL查詢會取得對應的所有值 `identityMap`.
+以下PQL查询获取映射的所有值 `identityMap`.
 
 ```sql
 identityMap.values()
@@ -71,4 +71,4 @@ identityMap.values()
 
 ## 后续步骤
 
-現在您已瞭解對應函式，可以在PQL查詢中使用它們。 如需其他PQL功能的詳細資訊，請參閱 [設定檔查詢語言概觀](./overview.md).
+现在您已了解映射函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).

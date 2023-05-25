@@ -1,6 +1,6 @@
 ---
-title: 衍生屬性的無縫SQL流程
-description: Query Service SQL已擴充為提供衍生屬性的緊密支援。 瞭解如何使用此SQL擴充功能建立針對設定檔啟用的衍生屬性，以及如何將屬性用於即時客戶設定檔和細分服務。
+title: 派生属性的无缝SQL流
+description: 查询服务SQL已扩展，以提供对派生属性的无缝支持。 了解如何使用此SQL扩展创建为配置文件启用的派生属性，以及如何将属性用于Real-time Customer Profile和Segmentation Service。
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
 source-git-commit: 6202b1a5956da83691eeb5422d3ebe7f3fb7d974
 workflow-type: tm+mt
@@ -9,41 +9,41 @@ ht-degree: 1%
 
 ---
 
-# 衍生屬性的無縫SQL流程
+# 派生属性的无缝SQL流
 
-Query Service SQL已擴充為提供衍生屬性的緊密支援。 這為您Real-Time Customer Profile業務使用案例建立衍生屬性的有效替代方法。
+查询服务SQL已扩展，以提供对派生属性的无缝支持。 这为创建Real-Time Customer Profile业务用例的派生属性提供了一种有效的替代方法。
 
-本檔案概述各種方便使用的SQL擴充功能，這些擴充功能會產生衍生屬性，以與即時客戶設定檔搭配使用。 工作流程簡化了原本您必須透過各種API呼叫或Platform UI互動完成的程式。
+本文档概述了各种方便的SQL扩展，这些扩展可生成用于实时客户个人资料的派生属性。 该工作流简化了原本必须通过各种API调用或Platform UI交互完成的流程。
 
-通常，產生和發佈即時客戶個人檔案的屬性會涉及以下步驟：
+通常，为实时客户配置文件生成和发布属性需要以下步骤：
 
-* 建立身分名稱空間（如果尚未存在）。
-* 如有必要，建立資料型別以儲存衍生屬性。
-* 使用該資料型別建立欄位群組以儲存衍生的屬性資訊。
-* 使用先前建立的名稱空間建立或指派主要身分資料行。
-* 使用先前建立的欄位群組和資料型別建立結構描述。
-* 使用您的結構描述建立新資料集，並視需要為設定檔啟用它。
-* 選擇性地將資料集標示為已啟用設定檔。
+* 创建一个标识命名空间（如果尚未存在）。
+* 如有必要，创建数据类型以存储派生属性。
+* 使用该数据类型创建字段组以存储派生的属性信息。
+* 使用之前创建的命名空间创建或分配主身份列。
+* 使用之前创建的字段组和数据类型创建架构。
+* 使用您的架构创建新数据集，并根据需要为用户档案启用该数据集。
+* 可以选择将数据集标记为已启用配置文件。
 
-完成上述步驟後，您就可以填入資料集。 如果您為設定檔啟用資料集，您也可以建立參照新屬性的區段，並開始產生深入分析。
+完成上述步骤后，即可填充数据集。 如果您为用户档案启用了数据集，则还可以创建引用新属性的区段并开始生成见解。
 
-「查詢服務」可讓您使用SQL查詢來執行上述所有動作。 這包括視需要變更資料集和欄位群組。
+查询服务允许您使用SQL查询执行上面列出的所有操作。 这包括在需要时更改数据集和字段组。
 
-## 使用為設定檔啟用它的選項來建立表格 {#enable-dataset-for-profile}
+## 创建一个表，并带有为配置文件启用该表的选项 {#enable-dataset-for-profile}
 
 >[!NOTE]
 >
->下面提供的SQL查詢假設使用預先存在的名稱空間。
+>下面提供的SQL查询假定使用预先存在的命名空间。
 
-使用「建立表格為選取」(CTAS)查詢來建立資料集、指派資料型別、設定主要身分、建立結構描述，以及將其標籤為已啟用設定檔。 以下範例SQL陳述式會建立屬性，並讓它可用於即時客戶資料設定檔(Real-Time CDP)。 您的SQL查詢將遵循以下範例中顯示的格式：
+使用创建表作为选择(CTAS)查询创建数据集、分配数据类型、设置主标识、创建架构并将其标记为启用配置文件。 下面的示例SQL语句创建属性，并使其可用于实时客户数据配置文件(Real-Time CDP)。 您的SQL查询将遵循以下示例中显示的格式：
 
 ```sql
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
 ```
 
-支援的資料型別為：布林值、日期、日期時間、文字、浮點數、bigint、整數、對應、陣列和結構/列。
+支持的数据类型包括：布尔值、日期、日期时间、文本、浮点数、bigint、整数、映射、数组和struct/row。
 
-下列SQl程式碼區塊提供定義結構/列、對應和陣列資料型別的範例。 第一行示範列語法。 第二行示範對應語法，第三行示範陣列語法。
+下面的SQl代码块提供了用于定义结构/行、映射和数组数据类型的示例。 第一行演示了行语法。 第二行演示映射语法，第三行演示数组语法。
 
 ```sql {line-numbers="true"}
 ROW (Column_name <data_type> [, column name <data_type> ]*)
@@ -51,16 +51,16 @@ MAP <data_type, data_type>
 ARRAY <data_type>
 ```
 
-或者，也可以透過Platform UI為設定檔啟用資料集。 如需將資料集標示為已啟用設定檔的詳細資訊，請參閱 [啟用即時客戶個人檔案檔案的資料集](../../../catalog/datasets/user-guide.md#enable-profile).
+或者，也可以通过Platform UI为配置文件启用数据集。 有关将数据集标记为已为用户档案启用的更多信息，请参阅 [为实时客户档案文档启用数据集](../../../catalog/datasets/user-guide.md#enable-profile).
 
-在以下範例查詢中， `decile_table` 資料集建立方式 `id` 作為主要身分資料行，並具有名稱空間 `IDFA`. 它還有一個欄位，名為 `decile1Month` 對應資料型別的底層。 建立的表格(`decile_table`)已針對設定檔啟用。
+在下面的示例查询中， `decile_table` 数据集创建方式 `id` 作为主标识列，具有命名空间 `IDFA`. 它还具有一个名为的字段 `decile1Month` 映射数据类型的ID。 创建的表(`decile_table`)已为配置文件启用。
 
 ```sql
 CREATE TABLE decile_table (id text PRIMARY KEY NAMESPACE 'IDFA', 
             decile1Month map<text, integer>) WITH (label='PROFILE');
 ```
 
-成功執行查詢後，資料集ID會傳回至主控台，如下列範例所示。
+成功执行查询后，数据集ID将返回到控制台，如下面的示例所示。
 
 ```console
 Created Table DataSet Id
@@ -69,21 +69,21 @@ Created Table DataSet Id
 (1 row)
 ```
 
-使用 `label='PROFILE'` 於 `CREATE TABLE` 命令以建立啟用設定檔的資料集。 此 `upsert` 功能預設為開啟。 此 `upsert` 功能可使用以下專案覆寫： `ALTER` 命令，如下列範例所示。
+使用 `label='PROFILE'` 在 `CREATE TABLE` 创建启用配置文件的数据集的命令。 此 `upsert` 默认情况下，功能处于打开状态。 此 `upsert` 功能可使用覆盖 `ALTER` 命令，如下面的示例所示。
 
 ```sql
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-請參閱SQl語法檔案，以瞭解如何使用 [變更表格](../../sql/syntax.md#alter-table) 命令和 [標籤做為CTAS查詢的一部分](../../sql/syntax.md#create-table-as-select).
+有关使用的更多信息，请参阅SQl语法文档 [更改表](../../sql/syntax.md#alter-table) 命令和 [标签作为CTAS查询的一部分](../../sql/syntax.md#create-table-as-select).
 
-## 協助透過SQL管理衍生屬性的建構
+## 帮助通过SQL管理派生属性的构造
 
-透過SQL管理衍生屬性時，以下說明的功能非常有用。
+在通过SQL管理派生属性时，下面描述的功能非常有用。
 
-### 變更要針對設定檔啟用的現有資料集 {#enable-existing-dataset-for-profile}
+### 更改要为配置文件启用的现有数据集 {#enable-existing-dataset-for-profile}
 
-ALTER TABLE SQL建構可用來讓現有的資料集為設定檔啟用。 這要求架構和對應的資料集都要新增已啟用設定檔的標籤。
+ALTER TABLE SQL构造可用于为配置文件启用现有数据集。 这要求向架构和相应的数据集中添加启用配置文件的标记。
 
 ```sql
 ALTER TABLE your_decile_table ADD label 'PROFILE';
@@ -91,11 +91,11 @@ ALTER TABLE your_decile_table ADD label 'PROFILE';
 
 >[!NOTE]
 >
->成功執行 `ALTER TABLE` 命令，主控台會傳回 `ALTER SUCCESS`.
+>成功执行 `ALTER TABLE` 命令，控制台将返回 `ALTER SUCCESS`.
 
-### 將主要身分新增至現有資料集 {#add-primary-identity}
+### 向现有数据集添加主要身份 {#add-primary-identity}
 
-將資料集中的現有欄標示為主要身分集，否則會導致錯誤。 若要使用SQL設定主要身分，請使用下面顯示的查詢格式。
+将数据集中的现有列标记为主标识集，否则会导致错误。 要使用SQL设置主标识，请使用下面显示的查询格式。
 
 ```sql
 ALTER TABLE <your_table_name> ADD CONSTRAINT primary identity NAMESPACE
@@ -107,11 +107,11 @@ ALTER TABLE <your_table_name> ADD CONSTRAINT primary identity NAMESPACE
 ALTER TABLE test1_dataset ADD CONSTRAINT PRIMARY KEY(id2) NAMESPACE 'IDFA';
 ```
 
-在提供的範例中， `id2` 是中現有的欄 `test1_dataset`.
+在提供的示例中， `id2` 是中的现有列 `test1_dataset`.
 
-### 停用設定檔的資料集 {#disable-dataset-for-profile}
+### 为配置文件禁用数据集 {#disable-dataset-for-profile}
 
-如果您想要針對設定檔用途停用表格，則必須使用DROP指令。 使用的SQL陳述式範例 `DROP` 如下所示。
+如果要为配置文件禁用表，则必须使用DROP命令。 使用SQL语句的示例 `DROP` 如下所示。
 
 ```sql
 ALTER TABLE table_name DROP LABEL 'PROFILE';
@@ -123,13 +123,13 @@ ALTER TABLE table_name DROP LABEL 'PROFILE';
 ALTER TABLE decile_table DROP label 'PROFILE';
 ```
 
-此SQL陳述式提供使用API呼叫的有效替代方法。 如需詳細資訊，請參閱如何操作的檔案 [使用資料集API停用資料集以與Real-Time CDP搭配使用](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile).
+此SQL语句提供了使用API调用的有效替代方法。 有关更多信息，请参阅有关如何执行操作的文档 [使用数据集API禁用用于Real-Time CDP的数据集](../../../catalog/datasets/enable-upsert.md#disable-the-dataset-for-profile).
 
-### 允許資料集的更新和插入功能 {#enable-upsert-functionality-for-dataset}
+### 允许对数据集使用更新和插入功能 {#enable-upsert-functionality-for-dataset}
 
-UPSERT指令可讓您插入新記錄或更新表格中的現有資料。 具體來說，如果表格中已存在指定的值，它可讓您更新現有列，或者如果指定的值尚未存在，則插入新列。
+UPSERT命令允许您插入新记录或更新表中的现有数据。 具体来说，如果表中已存在指定的值，它允许您更新现有行；如果指定的值不存在，它允许您插入新行。
 
-以下是使用正確格式的範例陳述式。
+下面显示了一个使用正确格式的示例语句。
 
 ```sql
 ALTER TABLE table_name ADD LABEL 'UPSERT';
@@ -141,13 +141,13 @@ ALTER TABLE table_name ADD LABEL 'UPSERT';
 ALTER TABLE table_with_a_decile ADD label 'UPSERT';
 ```
 
-此SQL陳述式提供使用API呼叫的有效替代方法。 如需詳細資訊，請參閱如何操作的檔案 [啟用資料集，以搭配使用資料集API的Real-Time CDP和UPSERT使用](../../../catalog/datasets/enable-upsert.md#enable-the-dataset).
+此SQL语句提供了使用API调用的有效替代方法。 有关更多信息，请参阅有关如何执行操作的文档 [使用数据集API启用用于Real-Time CDP和UPSERT的数据集](../../../catalog/datasets/enable-upsert.md#enable-the-dataset).
 
-### 停用資料集的更新和插入功能 {#disable-upsert-functionality-for-dataset}
+### 禁用数据集的更新和插入功能 {#disable-upsert-functionality-for-dataset}
 
-此命令會停用更新資料集並將資料列插入資料集中的功能。
+此命令禁用更新行并将其插入到数据集的功能。
 
-以下是使用正確格式的範例陳述式。
+下面显示了一个使用正确格式的示例语句。
 
 ```sql
 ALTER TABLE table_name DROP LABEL 'UPSERT';
@@ -159,11 +159,11 @@ ALTER TABLE table_name DROP LABEL 'UPSERT';
 ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 ```
 
-### 顯示與每個表格關聯的其他表格資訊 {#show-labels-for-tables}
+### 显示与每个表关联的其他表信息 {#show-labels-for-tables}
 
-會為啟用設定檔的資料集保留其他中繼資料。 使用 `SHOW TABLES` 顯示額外內容的命令 `labels` 欄提供與表格相關聯之任何標籤的資訊。
+为启用配置文件的数据集保留其他元数据。 使用 `SHOW TABLES` 用于显示额外内容的命令 `labels` 列提供有关与表关联的任何标签的信息。
 
-此命令的輸出範例如下所示：
+此命令的输出示例如下所示：
 
 ```sql
        name          |        dataSetId         |     dataSet    | description | labels 
@@ -174,13 +174,13 @@ ALTER TABLE table_with_a_decile DROP label 'UPSERT';
 (3 rows)
 ```
 
-您可從範例中看出 `table_with_a_decile` 已為設定檔啟用並套用標籤，例如 [&#39;更新插入&#39;](#enable-upsert-functionality-for-dataset)， [&#39;設定檔&#39;](#enable-existing-dataset-for-profile) 如先前所述。
+从示例中可以看到 `table_with_a_decile` 已为配置文件启用并已应用标签，例如 [&#39;更新插入&#39;](#enable-upsert-functionality-for-dataset)， [&#39;配置文件&#39;](#enable-existing-dataset-for-profile) 如前所述。
 
-### 使用SQL建立欄位群組
+### 使用SQL创建字段组
 
-現在可以透過使用SQL來建立欄位群組。 除了在Platform UI中使用結構描述編輯器，或向結構描述登入進行API呼叫以外，此功能提供了替代方法。
+现在可以通过使用SQL创建字段组。 为在平台UI中使用架构编辑器或对架构注册表进行API调用提供了替代方法。
 
-建立欄位群組的範例陳述式如下所示。
+下面显示了创建字段组的示例语句。
 
 ```sql
 CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> primary identity namespace <namespace>, [field_name_2 >data_type>]) [ WITH(LABEL='PROFILE') ];
@@ -188,22 +188,22 @@ CREATE FIELDGROUP <field_group_name> [IF NOT EXISTS]  (field_name <data_type> pr
 
 >[!IMPORTANT]
 >
->若發生下列情況，透過SQL建立欄位群組將會失敗： `label` 陳述式中未提供標幟，或欄位群組已存在。
->確保查詢包含 `IF NOT EXISTS` 子句以避免查詢失敗，因為欄位群組已存在。
+>如果通过SQL创建字段组失败，则 `label` 语句中未提供标志，或者字段组已存在。
+>确保查询包含 `IF NOT EXISTS` 子句以避免查询失败，因为字段组已存在。
 
-真實世界的範例看起來可能類似於下面所示的範例。
+一个现实世界的例子可能类似于下面的例子。
 
 ```sql
 CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, decile3Month map<text, integer>, decile6Month map<text, integer>, decile9Month map<text, integer>, decile12Month map<text, integer>, decilelietime map<text, integer>) WITH (LABEL-'PROFILE');
 ```
 
-成功執行此陳述式會傳回建立的欄位群組ID。 例如：`c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`。
+成功执行此语句将返回创建的字段组ID。 例如：`c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`。
 
-請參閱檔案，瞭解如何 [在結構描述編輯器中建立新的欄位群組](../../../xdm/ui/resources/field-groups.md#create) 或使用 [結構描述登入API](../../../xdm/api/field-groups.md#create) 以取得替代方法的詳細資訊。
+请参阅有关如何执行操作的文档 [在架构编辑器中创建新字段组](../../../xdm/ui/resources/field-groups.md#create) 或使用 [架构注册表API](../../../xdm/api/field-groups.md#create) 以了解有关替代方法的更多信息。
 
-### 放置欄位群組
+### 放置字段组
 
-有時可能需要從結構描述登入中移除欄位群組。 這是透過執行 `DROP FIELDGROUP` 具有欄位群組ID的命令。
+有时可能需要从架构注册表中删除字段组。 这是通过执行 `DROP FIELDGROUP` 命令和字段组ID。
 
 ```sql
 DROP FIELDGROUP [IF EXISTS] <your_field_group_id>;
@@ -217,13 +217,13 @@ DROP FIELDGROUP field_group_for_test123;
 
 >[!IMPORTANT]
 >
->如果欄位群組不存在，則透過SQL刪除欄位群組將會失敗。 確定陳述式包含 `IF EXISTS` 子句以避免查詢失敗。
+>如果字段组不存在，则通过SQL删除字段组将失败。 确保语句包含 `IF EXISTS` 子句以避免查询失败。
 
-### 顯示表格的所有欄位群組名稱和ID
+### 显示表的所有字段组名和ID
 
-此 `SHOW FIELDGROUPS` command會傳回包含表格名稱、fieldgroupId和擁有者的表格。
+此 `SHOW FIELDGROUPS` 命令返回一个表，其中包含表的名称、fieldgroupId和所有者。
 
-此命令的輸出範例如下所示：
+此命令的输出示例如下所示：
 
 ```sql
        name                      |        fieldgroupId                             |     owner      |
@@ -237,4 +237,4 @@ DROP FIELDGROUP field_group_for_test123;
 
 ## 后续步骤
 
-閱讀本檔案後，您對於如何使用SQL建立設定檔及根據衍生屬性啟用更新插入的資料集有了更深入的瞭解。 您現在已準備好將此資料集與批次擷取工作流程搭配使用，以更新您的設定檔資料。 若要進一步瞭解如何將資料擷取至Adobe Experience Platform，請先閱讀 [資料擷取概觀](../../../ingestion/home.md).
+阅读本文档后，您对如何使用SQL基于派生属性创建用户档案和启用了更新插入的数据集有了更好的了解。 现在，您可以将此数据集与批量摄取工作流结合使用，以更新用户档案数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请首先阅读 [数据摄取概述](../../../ingestion/home.md).

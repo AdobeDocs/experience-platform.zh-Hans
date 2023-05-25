@@ -1,6 +1,6 @@
 ---
-title: 工單API端點
-description: 資料衛生API中的/workorder端點可讓您以程式設計方式管理身分的刪除任務。
+title: 工单API端点
+description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
 hide: true
 hidefromtoc: true
@@ -11,24 +11,24 @@ ht-degree: 3%
 
 ---
 
-# 工單端點
+# 工单端点
 
-此 `/workorder` 資料衛生API中的端點可讓您以程式設計方式管理Adobe Experience Platform中的記錄刪除請求。
+此 `/workorder` 数据卫生API中的端点允许您以编程方式管理Adobe Experience Platform中的记录删除请求。
 
 >[!IMPORTANT]
 >
->記錄刪除請求僅適用於已購買的組織 **AdobeHealthcare Shield**.
+>记录删除请求仅适用于已购买的组织 **AdobeHealth Shield**.
 >
 >
->記錄刪除旨在用於資料清理、匿名資料移除或資料最小化。 它們是 **not** 根據一般資料保護規範(GDPR)等隱私權法規用於資料主體權利請求（法規遵循）。 對於所有合規性使用案例，請使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而非。
+>记录删除旨在用于数据清理、匿名数据删除或数据最小化。 它们是 **非** 用于数据主体权利请求（合规性），与通用数据保护条例(GDPR)等隐私法规相关。 对于所有合规性用例，使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而是。
 
 ## 快速入门
 
-本指南中使用的端點屬於資料衛生API。 在繼續之前，請檢閱 [概觀](./overview.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
+本指南中使用的端点属于数据卫生API。 在继续之前，请查看 [概述](./overview.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
-## 建立記錄刪除請求 {#create}
+## 创建记录删除请求 {#create}
 
-您可以透過向以下專案發出POST請求，從單一資料集或所有資料集中刪除一個或多個身分： `/workorder` 端點。
+您可以通过向以下对象发出POST请求，从单个数据集或所有数据集中删除一个或多个身份： `/workorder` 端点。
 
 **API格式**
 
@@ -38,7 +38,7 @@ POST /workorder
 
 **请求**
 
-根據 `datasetId` API呼叫會從您指定的所有資料集或單一資料集中刪除身分。 以下請求會從特定資料集中刪除三個身分。
+取决于 `datasetId` API调用在请求有效负载中提供，它将从所有数据集或您指定的单个数据集中删除身份。 以下请求从特定数据集中删除三个标识。
 
 ```shell
 curl -X POST \
@@ -78,17 +78,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `action` | 要執行的動作。 值必須設定為 `delete_identity` 記錄刪除。 |
-| `datasetId` | 如果您要從單一資料集中刪除，此值必須是相關資料集的ID。 如果您要從所有資料集中刪除，請將值設定為 `ALL`.<br><br>如果您指定單一資料集，資料集的相關Experience Data Model (XDM)結構描述必須定義主要身分。 |
-| `displayName` | 記錄刪除請求的顯示名稱。 |
-| `description` | 記錄刪除請求的說明。 |
-| `identities` | 一個陣列，包含您要刪除其資訊之至少一個使用者的身分。 每個身分識別都由 [身分名稱空間](../../identity-service/namespaces.md) 和一個值：<ul><li>`namespace`：包含單一字串屬性， `code`，代表身分名稱空間。 </li><li>`id`：身分值。</ul>若 `datasetId` 會指定單一資料集，每個實體位於 `identities` 必須使用與結構描述的主要身分相同的身分名稱空間。<br><br>若 `datasetId` 設為 `ALL`，則 `identities` 陣列不受限於任何單一名稱空間，因為每個資料集可能不同。 不過，您的請求仍受限於貴組織可用的名稱空間，如報告所述 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
+| `action` | 要执行的操作。 该值必须设置为 `delete_identity` 用于记录删除。 |
+| `datasetId` | 如果您要从单个数据集中删除，此值必须是相关数据集的ID。 如果要从所有数据集中删除，则将值设置为 `ALL`.<br><br>如果要指定单个数据集，则该数据集的关联体验数据模型(XDM)架构必须定义主标识。 |
+| `displayName` | 记录删除请求的显示名称。 |
+| `description` | 记录删除请求的描述。 |
+| `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的身份。 每个身份都由 [身份命名空间](../../identity-service/namespaces.md) 和一个值：<ul><li>`namespace`：包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`：标识值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主要身份相同的身份命名空间。<br><br>如果 `datasetId` 设置为 `ALL`，则 `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，您的请求仍会限制可用于贵组织的命名空间，如所报告 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回記錄刪除的詳細資料。
+成功的响应将返回记录删除的详细信息。
 
 ```json
 {
@@ -108,21 +108,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 刪除訂單的ID。 這可用於稍後查詢刪除狀態。 |
+| `workorderId` | 删除订单的ID。 这可用于以后查找删除状态。 |
 | `orgId` | 您的组织 ID。 |
-| `bundleId` | 與此刪除順序相關聯的套件組合ID，用於偵錯。 多個刪除訂單會整合在一起，由下游服務處理。 |
-| `action` | 工單正在執行的動作。 對於記錄刪除，值為 `identity-delete`. |
-| `createdAt` | 建立刪除順序的時間戳記。 |
-| `updatedAt` | 上次更新刪除順序的時間戳記。 |
-| `status` | 刪除順序的目前狀態。 |
-| `createdBy` | 建立刪除訂單的使用者。 |
-| `datasetId` | 受限於請求的資料集的ID。 如果請求是針對所有資料集，則值將設為 `ALL`. |
+| `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
+| `createdAt` | 创建删除顺序的时间戳。 |
+| `updatedAt` | 上次更新删除顺序的时间戳。 |
+| `status` | 删除订单的当前状态。 |
+| `createdBy` | 创建删除订单的用户。 |
+| `datasetId` | 受请求约束的数据集的ID。 如果请求针对所有数据集，则值将设置为 `ALL`. |
 
 {style="table-layout:auto"}
 
-## 擷取記錄刪除的狀態(#lookup)
+## 检索记录删除的状态(#lookup)
 
-晚於 [建立記錄刪除請求](#create)，您可以使用GET要求來檢查其狀態。
+晚于 [创建记录删除请求](#create)，您可以使用GET请求检查其状态。
 
 **API格式**
 
@@ -132,7 +132,7 @@ GET /workorder/{WORK_ORDER_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{WORK_ORDER_ID}` | 此 `workorderId` 您正在查詢的記錄刪除專案。 |
+| `{WORK_ORDER_ID}` | 此 `workorderId` 您正在查找的记录删除的编号。 |
 
 {style="table-layout:auto"}
 
@@ -149,7 +149,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回刪除操作的詳細資訊，包括其目前狀態。
+成功的响应将返回删除操作的详细信息，包括其当前状态。
 
 ```json
 {
@@ -186,20 +186,20 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 刪除訂單的ID。 這可用於稍後查詢刪除狀態。 |
+| `workorderId` | 删除订单的ID。 这可用于以后查找删除状态。 |
 | `orgId` | 您的组织 ID。 |
-| `bundleId` | 與此刪除順序相關聯的套件組合ID，用於偵錯。 多個刪除訂單會整合在一起，由下游服務處理。 |
-| `action` | 工單正在執行的動作。 對於記錄刪除，值為 `identity-delete`. |
-| `createdAt` | 建立刪除順序的時間戳記。 |
-| `updatedAt` | 上次更新刪除順序的時間戳記。 |
-| `status` | 刪除順序的目前狀態。 |
-| `createdBy` | 建立刪除訂單的使用者。 |
-| `datasetId` | 受限於請求的資料集的ID。 如果請求是針對所有資料集，則值將設為 `ALL`. |
-| `productStatusDetails` | 一個陣列，列出與請求相關的下游處理序的目前狀態。 每個陣列物件都包含以下屬性：<ul><li>`productName`：下游服務的名稱。</li><li>`productStatus`：來自下游服務的請求的目前處理狀態。</li><li>`createdAt`：服務發佈最新狀態的時間戳記。</li></ul> |
+| `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
+| `createdAt` | 创建删除顺序的时间戳。 |
+| `updatedAt` | 上次更新删除顺序的时间戳。 |
+| `status` | 删除订单的当前状态。 |
+| `createdBy` | 创建删除订单的用户。 |
+| `datasetId` | 受请求约束的数据集的ID。 如果请求针对所有数据集，则值将设置为 `ALL`. |
+| `productStatusDetails` | 一个数组，列出与请求相关的下游进程的当前状态。 每个数组对象包含以下属性：<ul><li>`productName`：下游服务的名称。</li><li>`productStatus`：来自下游服务的请求的当前处理状态。</li><li>`createdAt`：服务发布最新状态的时间戳。</li></ul> |
 
-## 更新記錄刪除請求
+## 更新记录删除请求
 
-您可以更新 `displayName` 和 `description` 請求刪除PUT記錄。
+您可以更新 `displayName` 和 `description` 请求删除PUT记录。
 
 **API格式**
 
@@ -209,7 +209,7 @@ PUT /workorder{WORK_ORDER_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{WORK_ORDER_ID}` | 此 `workorderId` 您正在查詢的記錄刪除專案。 |
+| `{WORK_ORDER_ID}` | 此 `workorderId` 您正在查找的记录删除的编号。 |
 
 {style="table-layout:auto"}
 
@@ -230,14 +230,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `displayName` | 記錄刪除請求的更新顯示名稱。 |
-| `description` | 記錄刪除請求的更新說明。 |
+| `displayName` | 记录删除请求的更新显示名称。 |
+| `description` | 更新了记录删除请求的描述。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回記錄刪除的詳細資料。
+成功的响应将返回记录删除的详细信息。
 
 ```json
 {
@@ -274,15 +274,15 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `workorderId` | 刪除訂單的ID。 這可用於稍後查詢刪除狀態。 |
+| `workorderId` | 删除订单的ID。 这可用于以后查找删除状态。 |
 | `orgId` | 您的组织 ID。 |
-| `bundleId` | 與此刪除順序相關聯的套件組合ID，用於偵錯。 多個刪除訂單會整合在一起，由下游服務處理。 |
-| `action` | 工單正在執行的動作。 對於記錄刪除，值為 `identity-delete`. |
-| `createdAt` | 建立刪除順序的時間戳記。 |
-| `updatedAt` | 上次更新刪除順序的時間戳記。 |
-| `status` | 刪除順序的目前狀態。 |
-| `createdBy` | 建立刪除訂單的使用者。 |
-| `datasetId` | 受限於請求的資料集的ID。 如果請求是針對所有資料集，則值將設為 `ALL`. |
-| `productStatusDetails` | 一個陣列，列出與請求相關的下游處理序的目前狀態。 每個陣列物件都包含以下屬性：<ul><li>`productName`：下游服務的名稱。</li><li>`productStatus`：來自下游服務的請求的目前處理狀態。</li><li>`createdAt`：服務發佈最新狀態的時間戳記。</li></ul> |
+| `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
+| `createdAt` | 创建删除顺序的时间戳。 |
+| `updatedAt` | 上次更新删除顺序的时间戳。 |
+| `status` | 删除订单的当前状态。 |
+| `createdBy` | 创建删除订单的用户。 |
+| `datasetId` | 受请求约束的数据集的ID。 如果请求针对所有数据集，则值将设置为 `ALL`. |
+| `productStatusDetails` | 一个数组，列出与请求相关的下游进程的当前状态。 每个数组对象包含以下属性：<ul><li>`productName`：下游服务的名称。</li><li>`productStatus`：来自下游服务的请求的当前处理状态。</li><li>`createdAt`：服务发布最新状态的时间戳。</li></ul> |
 
 {style="table-layout:auto"}

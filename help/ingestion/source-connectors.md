@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題
+keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 來源聯結器
-description: 來源連線可讓您驗證儲存系統和CRM服務、設定擷取執行時間，以及管理資料擷取輸送量。
+title: 源连接器
+description: 通过源连接，可对存储系统和CRM服务进行身份验证，设置引入运行的时间，并管理数据引入吞吐量。
 exl-id: 6e4f1688-6fe8-4ee7-996e-bcdf942cea17
 source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
@@ -13,8 +13,8 @@ ht-degree: 1%
 
 # 源连接器
 
-Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證儲存系統和CRM服務、設定擷取執行時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以对存储系统和CRM服务进行身份验证、设置引入运行的时间，以及管理数据引入吞吐量。
 
-如需這些來源聯結器的詳細資訊，請參閱 [來源聯結器檔案](../sources/home.md).
+有关这些源连接器的更多信息，请参阅 [源连接器文档](../sources/home.md).

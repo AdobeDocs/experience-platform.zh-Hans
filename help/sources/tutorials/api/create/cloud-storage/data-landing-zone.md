@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；
+keywords: Experience Platform；主页；热门主题；
 solution: Experience Platform
-title: 使用Flow Service API將資料登陸區域連線至Adobe Experience Platform
+title: 使用流服务API将数据登陆区连接到Adobe Experience Platform
 type: Tutorial
-description: 瞭解如何使用Flow Service API將Adobe Experience Platform連線至資料登陸區。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -12,30 +12,30 @@ ht-degree: 4%
 
 ---
 
-# Connect [!DNL Data Landing Zone] 使用Flow Service API移至Adobe Experience Platform
+# Connect [!DNL Data Landing Zone] 使用流服务API迁移到Adobe Experience Platform
 
 >[!IMPORTANT]
 >
->此頁面專屬於 [!DNL Data Landing Zone] *source* Experience Platform中的聯結器。 如需有關連線至 [!DNL Data Landing Zone] *目的地* 聯結器，請參閱 [[!DNL Data Landing Zone] 目的地檔案頁面](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
+>此页面特定于 [!DNL Data Landing Zone] *源* Experience Platform中的连接器。 有关连接到 [!DNL Data Landing Zone] *目标* 连接器，请参阅 [[!DNL Data Landing Zone] 目标文档页面](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
-[!DNL Data Landing Zone] 是安全的雲端型檔案儲存設施，可將檔案帶入Adobe Experience Platform。 資料會自動從 [!DNL Data Landing Zone] 7天之後。
+[!DNL Data Landing Zone] 是一个安全的基于云的文件存储设施，可将文件导入Adobe Experience Platform。 数据将自动从 [!DNL Data Landing Zone] 7天之后。
 
-本教學課程將逐步引導您完成如何建立 [!DNL Data Landing Zone] 來源連線使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). 本教學課程也提供如何擷取 [!DNL Data Landing Zone]以及檢視和重新整理您的認證。
+本教程将指导您完成有关如何创建 [!DNL Data Landing Zone] 源连接使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). 本教程还提供了有关如何检索 [!DNL Data Landing Zone]以及查看和刷新凭据。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Experience Platform元件：
+本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功建立所需的其他資訊 [!DNL Data Landing Zone] 來源連線使用 [!DNL Flow Service] API。
+以下部分提供成功创建所需的其他信息 [!DNL Data Landing Zone] 源连接使用 [!DNL Flow Service] API。
 
-本教學課程也要求您閱讀以下專案的指南： [Platform API快速入門](../../../../../landing/api-guide.md) 瞭解如何驗證Platform API並解譯檔案中提供的呼叫範例。
+本教程还要求您阅读以下方面的指南： [Platform API快速入门](../../../../../landing/api-guide.md) 了解如何对Platform API进行身份验证并解释文档中提供的示例调用。
 
-## 擷取可用的登陸區域
+## 检索可用的登陆区域
 
-使用API來存取的第一步 [!DNL Data Landing Zone] 是要向發出GET要求 `/landingzone` 的端點 [!DNL Connectors] API同時提供 `type=user_drop_zone` 作為請求標頭的一部分。
+使用API访问的第一步 [!DNL Data Landing Zone] GET是向 `/landingzone` 的端点 [!DNL Connectors] API同时提供 `type=user_drop_zone` 作为请求标头的一部分。
 
 **API格式**
 
@@ -45,11 +45,11 @@ GET /data/foundation/connectors/landingzone?type=user_drop_zone
 
 | 标头 | 描述 |
 | --- | --- |
-| `user_drop_zone` | 此 `user_drop_zone` type可讓API將登陸區域容器與其他型別的容器區分開來。 |
+| `user_drop_zone` | 此 `user_drop_zone` type允许API将登陆区域容器与您可用的其他类型容器区分开来。 |
 
 **请求**
 
-以下請求會擷取現有的登陸區域。
+以下请求将检索现有的登陆区域。
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
 
 **响应**
 
-下列回應會傳回著陸區域的資訊，包括其對應的資訊 `containerName` 和 `containerTTL`.
+以下响应返回有关登陆区域的信息，包括其对应的 `containerName` 和 `containerTTL`.
 
 ```json
 {
@@ -74,12 +74,12 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `containerName` | 您擷取的登陸區域名稱。 |
-| `containerTTL` | 登陸區域內套用至您資料的到期時間（以天為單位）。 指定登陸區域中的任何專案都會在七天後刪除。 |
+| `containerName` | 您检索的登陆区域的名称。 |
+| `containerTTL` | 适用于登陆区域内数据的过期时间（以天为单位）。 七天后会删除给定登陆区域中的任何。 |
 
-## 擷取 [!DNL Data Landing Zone] 認證
+## Retrieve [!DNL Data Landing Zone] 凭据
 
-擷取認證 [!DNL Data Landing Zone]，向發出GET要求 `/credentials` 的端點 [!DNL Connectors] API。
+要检索凭据，请执行以下操作 [!DNL Data Landing Zone]GET ，向 `/credentials` 的端点 [!DNL Connectors] API。
 
 **API格式**
 
@@ -89,7 +89,7 @@ GET /data/foundation/connectors/landingzone/credentials?type=user_drop_zone
 
 **请求**
 
-以下請求範例會擷取現有登陸區域的認證。
+以下请求示例检索现有登陆区域的凭据。
 
 ```shell
 curl -X GET \
@@ -103,7 +103,7 @@ curl -X GET \
 
 **响应**
 
-以下回應會傳回您登陸區域的認證資訊，包括您目前的 `SASToken` 和 `SASUri`，以及 `storageAccountName` 與您的登陸區域容器相對應。
+以下响应将返回登陆区域的凭据信息，包括您当前的 `SASToken` 和 `SASUri`以及 `storageAccountName` 与您的登陆区域容器对应的区域。
 
 ```json
 {
@@ -116,14 +116,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `containerName` | 您的登陸區域的名稱。 |
-| `SASToken` | 登陸區域的共用存取權簽章權杖。 此字串包含授權請求所需的所有資訊。 |
-| `SASUri` | 登陸區域的共用存取簽名URI。 此字串是URI的組合，包含您要驗證身分的登陸區域及其對應的SAS權杖。 |
+| `containerName` | 您的登陆区域的名称。 |
+| `SASToken` | 登陆区域的共享访问签名令牌。 此字符串包含授权请求所需的所有信息。 |
+| `SASUri` | 登陆区域的共享访问签名URI。 此字符串是您要进行身份验证的登陆区域的URI及其对应的SAS令牌的组合， |
 
 
-## 更新 [!DNL Data Landing Zone] 認證
+## 更新 [!DNL Data Landing Zone] 凭据
 
-您可以更新 `SASToken` 向發出POST要求 `/credentials` 的端點 [!DNL Connectors] API。
+您可以更新 `SASToken` 向发出POST请求 `/credentials` 的端点 [!DNL Connectors] API。
 
 **API格式**
 
@@ -133,12 +133,12 @@ POST /data/foundation/connectors/landingzone/credentials?type=user_drop_zone&act
 
 | 标头 | 描述 |
 | --- | --- |
-| `user_drop_zone` | 此 `user_drop_zone` type可讓API將登陸區域容器與其他型別的容器區分開來。 |
-| `refresh` | 此 `refresh` 動作可讓您重設登陸區域認證並自動產生新的 `SASToken`. |
+| `user_drop_zone` | 此 `user_drop_zone` type允许API将登陆区域容器与您可用的其他类型容器区分开来。 |
+| `refresh` | 此 `refresh` 操作允许您重置登陆区域凭据并自动生成新的 `SASToken`. |
 
 **请求**
 
-以下請求會更新您的登陸區域認證。
+以下请求会更新您的登陆区域凭据。
 
 ```shell
 curl -X POST \
@@ -152,7 +152,7 @@ curl -X POST \
 
 **响应**
 
-以下回應會傳回您的的更新值 `SASToken` 和 `SASUri`.
+以下响应返回已更新的 `SASToken` 和 `SASUri`.
 
 ```json
 {
@@ -163,9 +163,9 @@ curl -X POST \
 }
 ```
 
-## 探索登陸區域檔案結構和內容
+## 探索登陆区域文件结构和内容
 
-您可以透過向以下網站發出GET請求，探索您的登陸區域的檔案結構和內容： `connectionSpecs` 的端點 [!DNL Flow Service] API。
+您可以向以下网站发出GET请求，以浏览登陆区的文件结构和内容： `connectionSpecs` 的端点 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -175,7 +175,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONNECTION_SPEC_ID}` | 對應至的連線規格ID [!DNL Data Landing Zone]. 此固定ID為： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `{CONNECTION_SPEC_ID}` | 与对应的连接规范ID [!DNL Data Landing Zone]. 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **请求**
 
@@ -190,7 +190,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回在查詢的目錄中找到的檔案和資料夾陣列。 記下 `path` 要上傳之檔案的屬性，因為您必須在下一個步驟中提供它以檢查其結構。
+成功的响应会返回在查询的目录中找到的文件和文件夹数组。 请注意 `path` 要上传的文件的属性，因为需要在下一步中提供它以检查其结构。
 
 ```json
 [
@@ -218,9 +218,9 @@ curl -X GET \
 ]
 ```
 
-## 預覽登陸區域檔案結構和內容
+## 预览登陆区域文件结构和内容
 
-若要檢查登入區域中的檔案結構，請在提供檔案路徑並輸入作為查詢引數的同時，執行GET要求。
+要检查登陆区域中文件的结构，请在提供文件的路径并键入作为查询参数时执行GET请求。
 
 **API格式**
 
@@ -230,11 +230,11 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `{CONNECTION_SPEC_ID}` | 對應至的連線規格ID [!DNL Data Landing Zone]. 此固定ID為： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
-| `{OBJECT_TYPE}` | 您要存取的物件型別。 | `file` |
-| `{OBJECT}` | 您要存取之物件的路徑和名稱。 | `dlz-user-container/data8.csv` |
-| `{FILE_TYPE}` | 檔案的型別。 | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
-| `{PREVIEW}` | 定義是否支援檔案預覽的布林值。 | </ul><li>`true`</li><li>`false`</li></ul> |
+| `{CONNECTION_SPEC_ID}` | 与对应的连接规范ID [!DNL Data Landing Zone]. 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `{OBJECT_TYPE}` | 要访问的对象的类型。 | `file` |
+| `{OBJECT}` | 要访问的对象的路径和名称。 | `dlz-user-container/data8.csv` |
+| `{FILE_TYPE}` | 文件的类型。 | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
+| `{PREVIEW}` | 一个布尔值，定义是否支持文件预览。 | </ul><li>`true`</li><li>`false`</li></ul> |
 
 **请求**
 
@@ -249,7 +249,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回查詢檔案的結構，包括檔案名稱和資料型別。
+成功的响应将返回查询文件的结构，包括文件名和数据类型。
 
 ```json
 {
@@ -312,20 +312,20 @@ curl -X GET \
 }
 ```
 
-### 使用 `determineProperties` 自動偵測的檔案屬性資訊 [!DNL Data Landing Zone]
+### 使用 `determineProperties` 自动检测 [!DNL Data Landing Zone]
 
-您可以使用 `determineProperties` 用於自動偵測檔案內容之屬性資訊的引數， [!DNL Data Landing Zone] 進行GET呼叫以探索來源的內容和結構時。
+您可以使用 `determineProperties` 用于自动检测文件内容的属性信息的参数 [!DNL Data Landing Zone] 进行GET调用以浏览源的内容和结构时。
 
-#### `determineProperties` 使用案例
+#### `determineProperties` 用例
 
-下表概述您使用時可能會遇到的不同情境 `determineProperties` 查詢引數或手動提供檔案資訊。
+下表概述了使用时可能会遇到的不同场景 `determineProperties` 查询参数或手动提供有关您的文件的信息。
 
 | `determineProperties` | `queryParams` | 响应 |
 | --- | --- | --- |
-| True | 不适用 | 若 `determineProperties` 會提供作為查詢引數，然後就會進行檔案屬性偵測，而且回應會傳回新的 `properties` 包含檔案型別、壓縮型別和欄分隔符號相關資訊的金鑰。 |
-| 不适用 | True | 如果檔案型別、壓縮型別和欄分隔符號的值是手動提供的，則為的一部分 `queryParams`，然後會用來產生結構，而相同的屬性會作為回應的一部分傳回。 |
-| True | True | 如果兩個選項同時完成，則會傳回錯誤。 |
-| 不适用 | 不适用 | 如果兩個選項均未提供，則會傳回錯誤，因為無法取得回應的屬性。 |
+| True | 不适用 | 如果 `determineProperties` 作为查询参数提供，则进行文件属性检测并且响应返回一个新内容 `properties` 键，其中包含有关文件类型、压缩类型和列分隔符的信息。 |
+| 不适用 | True | 如果文件类型、压缩类型和列分隔符的值是作为的一部分手动提供的 `queryParams`，然后使用它们来生成架构，并在响应中返回相同的属性。 |
+| True | True | 如果同时执行这两个选项，则会返回错误。 |
+| 不适用 | 不适用 | 如果两个选项均未提供，则会返回错误，因为无法获取响应的属性。 |
 
 **API格式**
 
@@ -335,7 +335,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `determineProperties` | 此查詢引數允許 [!DNL Flow Service] 偵測檔案屬性相關資訊的API，包括檔案型別、壓縮型別和欄分隔符號的相關資訊。 | `true` |
+| `determineProperties` | 此查询参数允许 [!DNL Flow Service] 用于检测有关文件属性的信息的API，包括有关文件类型、压缩类型和列分隔符的信息。 | `true` |
 
 **请求**
 
@@ -350,7 +350,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回查詢檔案的結構，包括檔案名稱和資料型別，以及 `properties` 索引鍵，包含相關資訊 `fileType`， `compressionType`、和 `columnDelimiter`.
+成功的响应将返回查询文件的结构，包括文件名和数据类型，以及 `properties` 键，包含有关以下项的信息 `fileType`， `compressionType`、和 `columnDelimiter`.
 
 +++单击这里
 
@@ -445,16 +445,16 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `properties.fileType` | 查詢檔案的對應檔案型別。 支援的檔案型別為： `delimited`， `json`、和 `parquet`. |
-| `properties.compressionType` | 用於查詢檔案的對應壓縮型別。 支援的壓縮型別包括： <ul><li>`bzip2`</li><li>`gzip`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
-| `properties.columnDelimiter` | 用於查詢檔案的對應欄分隔符號。 任何單一字元值都是允許的欄分隔符號。 預設值為逗號 `(,)`. |
+| `properties.fileType` | 查询文件的相应文件类型。 支持的文件类型包括： `delimited`， `json`、和 `parquet`. |
+| `properties.compressionType` | 用于查询文件的相应压缩类型。 支持的压缩类型包括： <ul><li>`bzip2`</li><li>`gzip`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
+| `properties.columnDelimiter` | 用于查询文件的相应列分隔符。 任何单个字符值都是允许的列分隔符。 默认值为逗号 `(,)`. |
 
 
-## 建立來源連線
+## 创建源连接
 
-來源連線會建立和管理與擷取資料之外部來源的連線。 來源連線包含資料來源、資料格式及建立資料流所需的來源連線ID等資訊。 租使用者和組織專屬的來源連線例項。
+源连接创建和管理与摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
-POST若要建立來源連線，請向 `/sourceConnections` 的端點 [!DNL Flow Service] API。
+POST要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
 
 
 **API格式**
@@ -490,14 +490,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 您的名稱 [!DNL Data Landing Zone] 來源連線。 |
-| `data.format` | 您要帶到Platform的資料格式。 |
-| `params.path` | 您要帶到Platform的檔案路徑。 |
-| `connectionSpec.id` | 對應至的連線規格ID [!DNL Data Landing Zone]. 此固定ID為： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `name` | 您的名称 [!DNL Data Landing Zone] 源连接。 |
+| `data.format` | 您要带到Platform的数据的格式。 |
+| `params.path` | 要带到Platform的文件的路径。 |
+| `connectionSpec.id` | 与对应的连接规范ID [!DNL Data Landing Zone]. 此固定ID为： `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 在下個教學課程中，需要此ID才能建立資料流。
+成功响应将返回唯一标识符(`id`)。 在下一个教程中，创建数据流时需要此ID。
 
 ```json
 {
@@ -508,4 +508,4 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已擷取 [!DNL Data Landing Zone] 認證，探索其檔案結構以尋找您要帶到Platform的檔案，並建立來源連線以開始將您的資料帶到Platform。 您現在可以繼續進行下一個教學課程，瞭解如何 [建立資料流，以使用將雲端儲存空間資料帶入Platform [!DNL Flow Service] API](../../collect/cloud-storage.md).
+按照本教程，您已检索 [!DNL Data Landing Zone] 凭据、探索其文件结构以查找要带到Platform的文件，并创建了源连接以开始将您的数据带到Platform。 您现在可以继续下一教程，了解如何 [创建数据流以使用将云存储数据引入平台 [!DNL Flow Service] API](../../collect/cloud-storage.md).

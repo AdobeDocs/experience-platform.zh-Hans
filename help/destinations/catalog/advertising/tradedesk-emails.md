@@ -1,6 +1,6 @@
 ---
-title: (Beta)交易平台 — CRM連線
-description: 對您的交易台帳戶啟用設定檔，以根據CRM資料進行受眾目標定位和隱藏。
+title: (Beta)交易台 — CRM连接
+description: 将配置文件激活到您的交易台帐户，以便根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
 source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
@@ -10,136 +10,136 @@ ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Trade Desk] - CRM連線
+# (Beta) [!DNL Trade Desk] - CRM连接
 
 >[!IMPORTANT]
 >
->[!DNL The Trade Desk - CRM] Platform中的目的地目前為測試版。 檔案和功能可能會有所變更。
+>[!DNL The Trade Desk - CRM] Platform中的目标当前为测试版。 文档和功能可能会发生更改。
 >
->隨著EUID (European Unified ID)的推出，您現在可以看到兩個 [!DNL The Trade Desk - CRM] 中的目的地 [目的地目錄](/help/destinations/catalog/overview.md).
->* 若您的資料來源是歐盟，請使用 **[!DNL The Trade Desk - CRM (EU)]** 目的地。
->* 如果您在APAC或NAMER地區取得資料，請使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目的地。
+>随着EUID (European Unified ID)的发布，您现在可以看到两个 [!DNL The Trade Desk - CRM] 中的目标 [目标目录](/help/destinations/catalog/overview.md).
+>* 如果您从欧盟地区获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
+>* 如果您在APAC或NAMER地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
 >
->Experience Platform中的兩個目的地目前都處於測試階段。 此檔案頁面是由 *[!DNL Trade Desk]* 團隊。 如有任何查詢或更新請求，請聯絡您的 [!DNL Trade Desk] 代表，說明檔案和功能可能會有所變更。
+>Experience Platform中的两个目标当前均处于测试阶段。 此文档页面由创建 *[!DNL Trade Desk]* 团队。 如有任何查询或更新请求，请联系 [!DNL Trade Desk] 代表，文档和功能可能会发生更改。
 
 ## 概述 {#overview}
 
-本檔案旨在協助您啟用設定檔至 [!DNL Trade Desk] 根據CRM資料進行對象鎖定和隱藏的帳戶。
+本文档旨在帮助您将配置文件激活到 [!DNL Trade Desk] 用于基于CRM数据的受众定位和禁止的帐户。
 
-[!DNL The Trade Desk(TTD)] 不會隨時直接處理電子郵件地址的上傳檔案，也不會 [!DNL The Trade Desk] 儲存您的原始（未雜湊）電子郵件。
+[!DNL The Trade Desk(TTD)] 不会随时直接处理电子邮件地址的上传文件，也不会 [!DNL The Trade Desk] 存储原始（未哈希处理的）电子邮件。
 
 >[!TIP]
 >
->使用 [!DNL The Trade Desk] CRM資料對應的CRM目的地，例如電子郵件或雜湊電子郵件地址。 使用 [其他交易台目的地](/help/destinations/catalog/advertising/tradedesk.md) Adobe Experience Platform目錄中的Cookie和裝置ID對應。
+>使用 [!DNL The Trade Desk] CRM数据映射的CRM目标，如电子邮件或哈希电子邮件地址。 使用 [其他交易台目标](/help/destinations/catalog/advertising/tradedesk.md) 用于Cookie和设备ID映射的Adobe Experience Platform目录中。
 
 ## 先决条件 {#prerequisites}
 
-在您可以啟用區段至 [!DNL The Trade Desk]，您必須聯絡 [!DNL The Trade Desk] 帳戶管理員以簽署CRM入門合約。 [!DNL The Trade Desk] 然後會授予許可權並共用您的廣告商ID以設定您的目的地。
+在将区段激活到之前 [!DNL The Trade Desk]，您必须联系 [!DNL The Trade Desk] 客户经理签署CRM入门培训合同。 [!DNL The Trade Desk] 将授予权限并共享您的广告商ID以配置您的目标。
 
-## ID比對需求 {#id-matching-requirements}
+## ID匹配要求 {#id-matching-requirements}
 
-根據您擷取至Adobe Experience Platform的ID型別，您必須遵守其對應的要求。 請閱讀 [身分名稱空間總覽](/help/identity-service/namespaces.md) 以取得詳細資訊。
+根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。 请阅读 [身份命名空间概述](/help/identity-service/namespaces.md) 了解更多信息。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL The Trade Desk] 支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL The Trade Desk] 支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-Adobe Experience Platform支援純文字和SHA256雜湊電子郵件地址。 請依照ID比對需求一節中的指示，針對純文字和雜湊電子郵件地址分別使用適當的名稱空間。
+Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照ID匹配要求部分中的说明进行操作，并分别将适当的命名空间用于纯文本和经过哈希处理的电子邮件地址。
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| 电子邮件 | 電子郵件地址（純文字） | 輸入 `email` 當您的來源身分是電子郵件名稱空間或屬性時，作為目標身分。 |
-| Email_LC_SHA256 | 電子郵件地址需要使用SHA256和小寫進行雜湊處理。 請務必遵循下列任一選項 [電子郵件標準化](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) 規則為必填。 您稍後將無法變更此設定。 | 輸入 `hashed_email` 當您的來源身分是Email_LC_SHA256名稱空間或屬性時，作為目標身分。 |
+| 电子邮件 | 电子邮件地址（纯文本） | 输入 `email` 当源身份是电子邮件命名空间或属性时作为目标身份。 |
+| Email_LC_SHA256 | 电子邮件地址需要使用SHA256和小写进行哈希处理。 请务必遵循任意 [电子邮件标准化](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) 需要规则。 您以后将无法更改此设置。 | 输入 `hashed_email` 当源身份是Email_LC_SHA256命名空间或属性时作为目标身份。 |
 
 {style="table-layout:auto"}
 
-## 電子郵件雜湊需求 {#hashing-requirements}
+## 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在電子郵件地址擷取到Adobe Experience Platform前加以雜湊處理，或使用原始電子郵件地址。
+您可以在将电子邮件地址摄取到Adobe Experience Platform中之前对其进行哈希处理，或者使用原始电子邮件地址。
 
-若要瞭解如何在Experience Platform中擷取電子郵件地址，請閱讀 [批次擷取概觀](/help/ingestion/batch-ingestion/overview.md).
+要了解如何在Experience Platform中摄取电子邮件地址，请阅读 [批量摄取概述](/help/ingestion/batch-ingestion/overview.md).
 
-如果您選擇自行雜湊電子郵件地址，請務必符合下列要求：
+如果您选择自己对电子邮件地址进行哈希处理，请确保符合以下要求：
 
-* 移除開頭和結尾的空格。
-* 將所有ASCII字元轉換為小寫。
-* 在 `gmail.com` 電子郵件地址，從電子郵件地址的使用者名稱部分移除下列字元：
-   * 句點(. （ASCII代碼46）。 例如，標準化 `jane.doe@gmail.com` 至 `janedoe@gmail.com`.
-   * 加號(+ （ASCII代碼43）)和所有後續字元。 例如，標準化 `janedoe+home@gmail.com` 至 `janedoe@gmail.com`.
+* 删除前导空格和尾随空格。
+* 将所有ASCII字符转换为小写。
+* In `gmail.com` 电子邮件地址，从电子邮件地址的用户名部分删除以下字符：
+   * 句点(. （ASCII代码46）。 例如，标准化 `jane.doe@gmail.com` 到 `janedoe@gmail.com`.
+   * 加号(+ （ASCII代码43）)和所有后续字符。 例如，标准化 `janedoe+home@gmail.com` 到 `janedoe@gmail.com`.
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 区段导出]** | 您正在匯出區段（受眾）的所有成員，其中包含交易台目的地使用的識別碼（電子郵件或雜湊電子郵件）。 |
-| 匯出頻率 | **[!UICONTROL 每日批次]** | 由於設定檔會根據區段評估在Experience Platform中更新，因此設定檔（身分）會每天更新一次，以流向目的地平台。 深入瞭解 [批次匯出](/help/destinations/destination-types.md#file-based). |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，其中包含交易台目标中使用的标识符（电子邮件或哈希电子邮件）。 |
+| 导出频率 | **[!UICONTROL 每日批次]** | 由于配置文件是根据区段评估在Experience Platform中更新的，因此配置文件（身份）每天都会更新一次，以流向目标平台。 详细了解 [批量导出](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-[!DNL The Trade Desk] CRM目的地是每日批次檔案上傳，不需要使用者驗證。
+[!DNL The Trade Desk] CRM目标是每天批量上传文件，不需要用户进行身份验证。
 
-### 填寫目的地詳細資訊 {#fill-in-details}
+### 填写目标详细信息 {#fill-in-details}
 
-您必須先設定與您自己的目的地平台的連線，才能將對象資料傳送或啟用至目的地。 當 [設定](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 您必須提供下列資訊：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 While [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 必须提供以下信息，才能使用此目标：
 
-* **[!UICONTROL 帳戶型別]**：請選擇 **[!UICONTROL 現有帳戶]** 選項。
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
-* **[!UICONTROL 廣告商ID]**：您的 [!DNL Trade Desk Advertiser ID]，可由您的 [!DNL Trade Desk] 帳戶管理員或位於以下位置： [!DNL Advertiser Preferences] 在 [!DNL Trade Desk] UI。
+* **[!UICONTROL 帐户类型]**：请选择 **[!UICONTROL 现有帐户]** 选项。
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL 广告商ID]**：您的 [!DNL Trade Desk Advertiser ID]，可以由您的 [!DNL Trade Desk] 客户经理或位于以下位置： [!DNL Advertiser Preferences] 在 [!DNL Trade Desk] UI。
 
-![顯示如何填寫目的地詳細資料的Platform UI熒幕擷圖。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
+![显示如何填写目标详细信息的Platform UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
 
-連線到目的地時，設定資料治理原則是完全選用的。 請檢閱Experience Platform [資料控管概觀](/help/data-governance/policies/overview.md) 以取得更多詳細資料。
+连接到目标时，设置数据治理策略是完全可选的。 请查看Experience Platform [数据治理概述](/help/data-governance/policies/overview.md) 了解更多详细信息。
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
-讀取 [啟用對象資料以批次設定檔匯出目的地](/help/destinations/ui/activate-batch-profile-destinations.md) 以取得啟用目的地受眾區段的指示。
+读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到目标的说明。
 
-在 **[!UICONTROL 排程]** 頁面上，您可以為要匯出的每個區段設定排程和檔案名稱。 必須設定排程，但可選擇是否設定檔案名稱。
+在 **[!UICONTROL 计划]** 页面上，您可以为要导出的每个区段配置计划和文件名。 必须配置计划，但可以选择是否配置文件名。
 
-![用於排程區段啟用的平台UI熒幕擷圖。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
+![用于计划区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
->所有已啟用的區段 [!DNL The Trade Desk] CRM目的地會自動設定為每日頻率和完整檔案匯出。
+>所有区段均激活至 [!DNL The Trade Desk] CRM目标会自动设置为每日频率和完整文件导出。
 
-![用於排程區段啟用的平台UI熒幕擷圖。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+![用于计划区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
-在 **[!UICONTROL 對應]** 頁面，您必須從來源資料欄選取屬性或身分識別名稱空間，並對應至目標資料欄。
+在 **[!UICONTROL 映射]** 页上，您必须从源列中选择属性或身份命名空间并映射到目标列。
 
-![對應區段啟用的平台UI熒幕擷圖。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
+![用于映射区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
-以下是啟用區段至時的正確身分對應範例 [!DNL The Trade Desk] CRM目的地。
+下面是激活区段到时正确的标识映射示例 [!DNL The Trade Desk] CRM目标。
 
 >[!IMPORTANT]
 >
-> [!DNL The Trade Desk] CRM目的地不接受原始和雜湊電子郵件地址作為相同啟用流程中的身分。 為原始和雜湊電子郵件地址建立個別的啟用流程。
+> [!DNL The Trade Desk] CRM目标不接受原始和经过哈希处理的电子邮件地址作为同一激活流中的身份。 为原始电子邮件地址和经过哈希处理的电子邮件地址创建单独的激活流程。
 
-選取來源欄位：
+选择源字段：
 
-* 選取 `Email` 如果資料擷取時使用原始電子郵件地址，則名稱空間或屬性會作為來源身分。
-* 選取 `Email_LC_SHA256` 如果您在資料擷取至Platform時雜湊了客戶電子郵件地址，請使用名稱空間或屬性作為來源身分。
+* 选择 `Email` 如果在数据摄取时使用原始电子邮件地址，则使用命名空间或属性作为源身份。
+* 选择 `Email_LC_SHA256` 如果在数据摄取到Platform时为客户电子邮件地址进行了哈希处理，则使用命名空间或属性作为源身份。
 
-選取目標欄位：
+选择目标字段：
 
-* 輸入  `email` 當來源名稱空間或屬性為 `Email`.
-* 輸入  `hashed_email` 當來源名稱空間或屬性為 `Email_LC_SHA256`.
+* 输入  `email` 当源命名空间或属性为 `Email`.
+* 输入  `hashed_email` 当源命名空间或属性为 `Email_LC_SHA256`.
 
-## 驗證資料匯出 {#validate}
+## 验证数据导出 {#validate}
 
-驗證資料是否已正確從Experience Platform匯出並匯入 [!DNL The Trade Desk]，請在Adobe1PD資料拼貼下方找到區段， [!DNL The Trade Desk] 資料管理平台(DMP)。 以下是在中找到對應ID的步驟 [!DNL Trade Desk] UI：
+验证数据是否已正确地从Experience Platform导出并导出到 [!DNL The Trade Desk]，请在Adobe1PD数据拼贴下找到区段 [!DNL The Trade Desk] 数据管理平台(DMP)。 以下是在中找到相应ID的步骤 [!DNL Trade Desk] UI：
 
-1. 首先，按一下 **[!UICONTROL 資料]** 索引標籤和檢閱 **[!UICONTROL 第一方]**.
-2. 向下捲動頁面，在底下 **[!UICONTROL 匯入的資料]**，您會找到 **[!UICONTROL Adobe1PD圖磚]**.
-3. 按一下**[!UICONTROL Adobe1PD]圖磚**會列出所有啟用至「 」的區段 [!DNL Trade Desk] 您的廣告商目的地。 您也可以使用搜尋功能。
-4. 來自Experience Platform的區段ID #將顯示為 [!DNL Trade Desk] UI。
+1. 首先，单击 **[!UICONTROL 数据]** 选项卡，然后查看 **[!UICONTROL 第一方]**.
+2. 向下滚动页面，在下 **[!UICONTROL 导入的数据]**，您将找到 **[!UICONTROL Adobe1PD磁贴]**.
+3. 单击**[!UICONTROL Adobe1PD]**图块，它将列出激活到的所有区段 [!DNL Trade Desk] 广告商的目标。 您还可以使用搜索功能。
+4. Experience Platform中的区段ID #将显示为中的区段名称， [!DNL Trade Desk] UI。
 
-## 資料使用與控管 {#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](/help/data-governance/home.md).

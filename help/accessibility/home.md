@@ -1,6 +1,6 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；統一設定檔；統一設定檔；統一；設定檔；rtcp；XDM圖形
-title: Experience Platform中的協助工具功能概觀
+keywords: Experience Platform；个人资料；实时客户个人资料；故障排除；API；统一个人资料；统一个人资料；统一；个人资料；rtcp；XDM图形
+title: Experience Platform中的辅助功能概述
 type: Documentation
 description: Adobe Experience Platform 致力于为所有个人提供可访问的包容性功能。
 exl-id: 54ce6826-09ee-4716-8237-ef904a41986f
@@ -11,18 +11,18 @@ ht-degree: 26%
 
 ---
 
-# Adobe Experience Platform中的協助工具
+# Adobe Experience Platform中的辅助功能
 
-辅助功能是指让存在视觉、听觉、认知、运动或其他类型障碍的用户尽可能轻松使用软件产品的一系列功能。Adobe 是无障碍领域的行业领先者，鼓励开发人员制作可供所有用户访问的丰富且引人入胜的内容，从而为创造出色的 Web 体验提供支持。如需Adobe對協助工具的承諾詳細資訊，請參閱 [Adobe協助工具](https://www.adobe.com/accessibility.html).
+辅助功能是指让存在视觉、听觉、认知、运动或其他类型障碍的用户尽可能轻松使用软件产品的一系列功能。Adobe 是无障碍领域的行业领先者，鼓励开发人员制作可供所有用户访问的丰富且引人入胜的内容，从而为创造出色的 Web 体验提供支持。有关Adobe对辅助功能的承诺的更多详细信息，请参阅 [Adobe辅助功能](https://www.adobe.com/accessibility.html).
 
-Adobe Experience Platform致力為所有個人提供無障礙和包容的功能，包括使用語音辨識軟體和熒幕閱讀器等輔助裝置的使用者。 Experience Platform持續強化，以符合各類使用者的需求，並遵守全球標準，包括視覺、聽覺、行動能力或其他殘疾人士。
+Adobe Experience Platform致力于为所有用户提供无障碍和具有包容性的功能，包括使用语音识别软件和屏幕阅读器等辅助设备的用户。 Experience Platform不断得到增强，以满足所有类型的用户的需求，并遵守包括视觉、听觉、行动不便或有其他障碍的个人在内的全球标准。
 
-Platform支援的其他協助工具功能包括鍵盤導覽、語意結構、前景元素和背景元素之間的充分對比、輔助技術支援以及清除元素標籤。
+Platform支持的其他辅助功能包括键盘导航、语义结构、前景元素和背景元素之间的充分对比度、辅助技术支持和清晰的元素标签。
 
-若要進一步瞭解Experience Platform支援的一般協助工具功能，請造訪 [協助工具功能指南](features.md).
+要了解有关Experience Platform支持的常规辅助功能的更多信息，请访问 [辅助功能指南](features.md).
 
-如需Platform使用者介面特定區段中的自訂協助工具功能相關資訊，請造訪 [適用於Experience Platform的自訂協助工具解決方案](custom.md).
+有关Platform用户界面特定部分中自定义辅助功能的信息，请访问 [适用于Experience Platform的自定义辅助功能解决方案](custom.md).
 
-為協助達成無障礙合規的目標，Experience Platform會遵循網頁內容無障礙指引(WCAG) 2.1 A級和AA級的國際認可最佳實務。 如需Experience Platform近期協助工具改善的詳細資訊，請檢閱最新的 [Platform發行說明](../release-notes/latest/latest.md).
+为了帮助实现无障碍合规的目标，Experience Platform遵循Web内容无障碍准则(WCAG) 2.1 A级和AA级中的国际公认最佳实践。 有关Experience Platform最近辅助功能改进的更多详细信息，请参阅最新的 [Platform发行说明](../release-notes/latest/latest.md).
 
-若要閱讀Adobe應用程式如何滿足各層級法規遵循的詳細報告，請參閱 [協助工具符合性報表](https://www.adobe.com/cn/accessibility/compliance.html) (ACR)檔案。
+要阅读有关Adobe应用程序如何满足各个级别合规性的详细报告，请参阅 [无障碍合规性报告](https://www.adobe.com/cn/accessibility/compliance.html) (ACR)文档。

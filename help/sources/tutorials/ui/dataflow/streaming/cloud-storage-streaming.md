@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；串流；雲端儲存聯結器；雲端儲存
+keywords: Experience Platform；主页；热门主题；流；云存储连接器；云存储
 solution: Experience Platform
-title: 在UI中為雲端儲存空間來源建立串流資料流
+title: 在UI中为云存储源创建流数据流
 type: Tutorial
-description: 資料流是排程的工作，可擷取來源中的資料並將其擷取至Platform資料集。 本教學課程提供使用雲端儲存基礎聯結器設定新資料流的步驟。
+description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了使用云存储基本连接器配置新数据流的步骤。
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
@@ -12,11 +12,11 @@ ht-degree: 1%
 
 ---
 
-# 在UI中為雲端儲存空間來源建立串流資料流
+# 在UI中为云存储源创建流数据流
 
-資料流是排程的工作，會從來源擷取資料並擷取資料到Adobe Experience Platform資料集。 本教學課程提供在UI中為雲端儲存空間來源建立串流資料流的步驟。
+数据流是一种计划任务，用于在源中检索数据并将其摄取到Adobe Experience Platform数据集。 本教程提供了在UI中为云存储源创建流数据流的步骤。
 
-在嘗試進行本教學課程之前，您必須先在雲端儲存空間帳戶和平台之間建立有效且已驗證的連線。 如果您尚未驗證連線，請參閱下列教學課程之一，以瞭解如何驗證串流雲端儲存空間帳戶的資訊：
+在尝试本教程之前，您必须首先在云存储帐户和平台之间建立有效且经过身份验证的连接。 如果您还没有经过身份验证的连接，请参阅以下教程之一，了解有关对您的流媒体云存储帐户进行身份验证的信息：
 
 - [[!DNL Amazon Kinesis]](../../../ui/create/cloud-storage/kinesis.md)
 - [[!DNL Azure Event Hubs]](../../../ui/create/cloud-storage/eventhub.md)
@@ -24,118 +24,118 @@ ht-degree: 1%
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-- [資料流](../../../../../dataflows/home.md)：資料流可呈現跨平台行動資料的資料作業。 資料流會跨不同的服務進行設定，從來源到 [!DNL Identity Service]，至 [!DNL Profile]，並至 [!DNL Destinations].
-- [資料準備](../../../../../data-prep/home.md)：資料準備可讓資料工程師對應、轉換和驗證與Experience Data Model (XDM)之間的資料。 「資料準備」在資料擷取程式（包括CSV擷取工作流程）中顯示為「對應」步驟。
-- [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   - [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   - [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+- [数据流](../../../../../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同的服务之间配置，从源到 [!DNL Identity Service]，至 [!DNL Profile]、和 [!DNL Destinations].
+- [数据准备](../../../../../data-prep/home.md)：数据准备允许数据工程师映射、转换和验证数据到/传出体验数据模型(XDM)。 数据准备在数据提取流程（包括CSV提取工作流）中显示为“映射”步骤。
+- [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   - [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   - [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+- [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-## 新增資料
+## 添加数据
 
-建立驗證串流雲端儲存空間帳戶後， **[!UICONTROL 選取資料]** 步驟隨即顯示，提供介面供您選取要帶至Platform的資料流。
+在创建您的流云存储帐户身份验证后， **[!UICONTROL 选择数据]** 步骤随即显示，为您提供了一个界面来选择要将哪些数据流引入平台。
 
-- 介面的左側是瀏覽器，可讓您檢視帳戶內的可用資料流；
-- 介面的右側部分可讓您預覽來自JSON檔案的最多100列資料。
+- 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
+- 界面的右侧部分允许您预览来自JSON文件的最多100行数据。
 
 ![界面](../../../../images/tutorials/dataflow/cloud-storage/streaming/interface.png)
 
-選取您要使用的資料流，然後選取 **[!UICONTROL 選擇檔案]** 以上傳範例結構描述。
+选择要使用的数据流，然后选择 **[!UICONTROL 选择文件]** 以上传示例架构。
 
 >[!TIP]
 >
->如果您的資料符合XDM標準，您可以略過上傳範例結構描述，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+>如果您的数据符合XDM标准，则可以跳过上传示例架构，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![select-stream](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-stream.png)
+![选择流](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-stream.png)
 
-上傳結構描述後，預覽介面會更新，以顯示您上傳之結構描述的預覽。 預覽介面可讓您檢查檔案的內容和結構。 您也可以使用 [!UICONTROL 搜尋欄位] 用於從結構描述中存取特定專案的公用程式。
+上传架构后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
 
-完成後，選取 **[!UICONTROL 下一個]**.
+完成后，选择 **[!UICONTROL 下一个]**.
 
 ![schema-preview](../../../../images/tutorials/dataflow/cloud-storage/streaming/schema-preview.png)
 
 ## 映射
 
-此 **[!UICONTROL 對應]** 步驟隨即顯示，提供將來源資料對應至Platform資料集的介面。
+此 **[!UICONTROL 映射]** 此时将显示步骤，其中提供了一个将源数据映射到Platform数据集的界面。
 
-選擇要將傳入資料擷取的資料集。 您可以使用現有的資料集或建立新的資料集。
+选择要引入的集客数据的数据集。 您可以使用现有数据集或创建新数据集。
 
-### 新資料集
+### 新建数据集
 
-若要將資料內嵌至新資料集，請選取「 」 **[!UICONTROL 新資料集]** 並在提供的欄位中輸入資料集的名稱和說明。 若要新增綱要，您可以在 **[!UICONTROL 選取結構描述]** 對話方塊。 或者，您可以選取 **[!UICONTROL 結構描述進階搜尋]** 以搜尋適當的結構描述。
+要将数据摄取到新数据集中，请选择 **[!UICONTROL 新建数据集]** 并在提供的字段中输入数据集的名称和描述。 要添加架构，您可以在以下位置输入现有架构名称： **[!UICONTROL 选择架构]** 对话框。 或者，您可以选择 **[!UICONTROL 架构高级搜索]** 以搜索适当的架构。
 
-![新資料集](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-dataset.png)
+![new-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-dataset.png)
 
-此 [!UICONTROL 選取結構描述] 視窗隨即顯示，為您提供可供選擇的可用結構描述清單。 從清單中選取結構描述，以更新右側邊欄以顯示所選結構描述的特定詳細資訊，包括有關是否已為啟用結構描述的資訊 [!DNL Profile].
+此 [!UICONTROL 选择架构] 窗口出现，为您提供可从中进行选择的可用架构列表。 从列表中选择一个架构以更新右边栏以显示特定于所选架构的详细信息，包括有关是否已为其启用架构的信息 [!DNL Profile].
 
-識別並選取您要使用的結構描述後，請選取 **[!UICONTROL 完成]**.
+标识并选择要使用的架构后，选择 **[!UICONTROL 完成]**.
 
 ![select-schema](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-schema.png)
 
-此 [!UICONTROL 目標資料集] 頁面會更新，而您選取的結構描述會顯示為資料集的一部分。 在此步驟中，您可以啟用資料集 [!DNL Profile] 和建立實體屬性和行為的整體檢視。 來自所有已啟用資料集的資料將包含在 [!DNL Profile] 和變更會在您儲存資料流時套用。
+此 [!UICONTROL 目标数据集] 页面更新时，您选择的架构会作为数据集的一部分显示。 在此步骤中，您可以为以下项启用数据集 [!DNL Profile] 并创建实体的属性和行为的整体视图。 来自所有启用数据集的数据将包含在 [!DNL Profile] 在保存数据流时，将应用更改。
 
-切換 **[!UICONTROL 設定檔資料集]** 按鈕以啟用您的目標資料集 [!DNL Profile].
+切换 **[!UICONTROL 配置文件数据集]** 用于启用目标数据集的按钮 [!DNL Profile].
 
 ![new-profile](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-profile.png)
 
-### 現有資料集
+### 现有数据集
 
-若要將資料內嵌至現有資料集，請選取「 」 **[!UICONTROL 現有資料集]**，然後選取資料集圖示。
+要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**，然后选择数据集图标。
 
-![existing-data](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-dataset.png)
+![existing-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-dataset.png)
 
-此 **[!UICONTROL 選取資料集]** 對話方塊隨即顯示，為您提供可供選擇的可用資料集清單。 從清單中選取資料集，以更新右側邊欄來顯示您所選取資料集的特定詳細資訊，包括是否可以為啟用資料集的資訊 [!DNL Profile].
+此 **[!UICONTROL 选择数据集]** 此时会显示一个对话框，为您提供了一个可供选择的数据集列表。 从列表中选择一个数据集以更新右边栏以显示特定于您选择的数据集的详细信息，包括关于是否可以为启用数据集的信息 [!DNL Profile].
 
-識別並選取您要使用的資料集後，請選取 **[!UICONTROL 完成]**.
+标识并选择要使用的数据集后，选择 **[!UICONTROL 完成]**.
 
-![選取資料集](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-dataset.png)
+![select-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-dataset.png)
 
-選取資料集後，請選取 [!DNL Profile] 切換以啟用您的資料集 [!DNL Profile].
+选择数据集后，选择 [!DNL Profile] 切换以启用您的数据集 [!DNL Profile].
 
 ![existing-profile](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-profile.png)
 
-### 對應標準欄位
+### 映射标准字段
 
-建立資料集和結構描述後， **[!UICONTROL 對應標準欄位]** 介面，可讓您手動設定資料的對應欄位。
+建立数据集和架构后， **[!UICONTROL 映射标准字段]** 界面，允许您手动配置数据的映射字段。
 
 >[!TIP]
 >
->Platform會根據您選取的目標結構描述或資料集，為自動對應的欄位提供智慧型建議。 您可以手動調整對應規則以符合您的使用案例。
+>Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
 
-您可以視需要選擇直接對應欄位，或使用資料準備函式來轉換來源資料，以衍生計算值或計算值。 如需使用對應程式介面和計算欄位的完整步驟，請參閱 [資料準備UI指南](../../../../../data-prep/ui/mapping.md).
+根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
-在對應來源資料後，選取 **[!UICONTROL 下一個]**.
+映射源数据后，选择 **[!UICONTROL 下一个]**.
 
-![對應](../../../../images/tutorials/dataflow/cloud-storage/streaming/mapping.png)
+![映射](../../../../images/tutorials/dataflow/cloud-storage/streaming/mapping.png)
 
 ## 数据流详细信息
 
-此 **[!UICONTROL 資料流詳細資料]** 步驟隨即顯示，讓您為新資料流命名並提供簡短說明。
+此 **[!UICONTROL 数据流详细信息]** 步骤，允许您命名新数据流并提供简短说明。
 
-提供資料流的值並選取 **[!UICONTROL 下一個]**.
+提供数据流的值并选择 **[!UICONTROL 下一个]**.
 
-![資料流 — 詳細資料](../../../../images/tutorials/dataflow/cloud-storage/streaming/dataflow-detail.png)
+![数据流 — 详细信息](../../../../images/tutorials/dataflow/cloud-storage/streaming/dataflow-detail.png)
 
 ### 请查看
 
-此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新資料流之前對其進行檢閱。 詳細資料會分組到以下類別中：
+此 **[!UICONTROL 审核]** 步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
-- **[!UICONTROL 連線]**：顯示您的帳戶名稱、來源型別，以及您使用之串流雲端儲存空間來源的其他特定資訊。
-- **[!UICONTROL 指派資料集和對應欄位]**：顯示您用於資料流的目標資料集和結構描述。
+- **[!UICONTROL 连接]**：显示您的帐户名称、源类型以及特定于您使用的流云存储源的其他其他信息。
+- **[!UICONTROL 分配数据集和映射字段]**：显示用于数据流的目标数据集和架构。
 
-檢閱資料流後，選取 **[!UICONTROL 完成]** 並留出一些時間來建立資料流。
+查看数据流后，选择 **[!UICONTROL 完成]** 并留出一些时间来创建数据流。
 
-![檢閱](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
+![审核](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
 
-## 監視和刪除資料流
+## 监视和删除数据流
 
-建立串流雲端儲存空間資料流後，您可以監視從中擷取的資料。 如需監控及刪除串流資料流的詳細資訊，請參閱以下教學課程： [監控串流資料流](../../monitor-streaming.md).
+创建流媒体云存储数据流后，您可以监控通过它摄取的数据。 有关监视和删除流数据流的更多信息，请参阅关于的教程 [监控流数据流](../../monitor-streaming.md).
 
 ## 后续步骤
 
-依照本教學課程所述，您已成功建立資料流，以從雲端儲存空間來源串流資料。 傳入資料現在可供下游平台服務使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 如需更多詳細資訊，請參閱下列檔案：
+通过阅读本教程，您已成功创建了数据流以从云存储源流式传输数据。 传入数据现在可供下游平台服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 - [[!DNL Real-Time Customer Profile] 概述](../../../../../profile/home.md)
 - [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)

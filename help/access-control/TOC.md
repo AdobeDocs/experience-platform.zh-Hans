@@ -17,7 +17,7 @@ ht-degree: 48%
 * [访问控制概述](home.md)
 * 基于属性的访问控制 {#abac}
    * [概述](abac/overview.md)
-   * [端對端指南](abac/end-to-end-guide.md)
+   * [端到端指南](abac/end-to-end-guide.md)
    * 权限 {#permissions-ui}
       * [浏览](abac/ui/browse.md)
       * [标签](abac/ui/labels.md)
@@ -26,23 +26,23 @@ ht-degree: 48%
       * [角色](abac/ui/roles.md)
       * [沙盒](abac/ui/sandboxes.md)
       * [用户](abac/ui/users.md)
-   * 屬性型存取控制API {#abac-api}
+   * 基于属性的访问控制API {#abac-api}
       * [概述](abac/api/overview.md)
       * [快速入门](abac/api/getting-started.md)
       * [角色](abac/api/roles.md)
       * [支持](abac/api/policies.md)
       * [产品](abac/api/products.md)
-* 存取控制UI {#ui}
+* 访问控制用户界面 {#ui}
    * [概述](ui/overview.md)
-   * [選取產品設定檔](ui/browse.md)
-   * [管理產品設定檔的許可權](ui/permissions.md)
-   * [管理產品設定檔的詳細資訊和其他服務](ui/details-and-services.md)
-   * [建立新的產品設定檔](ui/create-profile.md)
-   * [管理產品設定檔的使用者](ui/users.md)
-* 存取控制API {#api}
+   * [选择产品配置文件](ui/browse.md)
+   * [管理产品配置文件的权限](ui/permissions.md)
+   * [管理产品配置文件的详细信息和其他服务](ui/details-and-services.md)
+   * [创建新的产品配置文件](ui/create-profile.md)
+   * [管理产品配置文件的用户](ui/users.md)
+* 访问控制API {#api}
    * [快速入门](api/getting-started.md)
-   * [許可權和資源型別的清單名稱](api/permissions-and-resource-types.md)
-   * [檢視有效原則](api/effective-policies.md)
-* [疑難排解指南](troubleshooting-guide.md)
-* [API參考](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+   * [权限和资源类型的列表名称](api/permissions-and-resource-types.md)
+   * [查看有效策略](api/effective-policies.md)
+* [疑难解答指南](troubleshooting-guide.md)
+* [API参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
+* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -1,6 +1,6 @@
 ---
-description: 瞭解如何使用目的地測試API，在發佈目的地之前測試串流目的地訊息轉換範本。
-title: 建立及測試訊息轉換範本
+description: 了解如何在发布目标之前使用目标测试API测试流目标消息转换模板。
+title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
 source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
 workflow-type: tm+mt
@@ -10,61 +10,61 @@ ht-degree: 0%
 ---
 
 
-# 建立及測試訊息轉換範本 {#create-template}
+# 创建和测试消息转换模板 {#create-template}
 
 ## 概述 {#overview}
 
-在Destination SDK過程中，Adobe會提供開發人員工具，協助您設定和測試目的地。 此頁面說明如何建立和測試訊息轉換範本。 如需如何測試目的地的詳細資訊，請閱讀 [測試您的目的地設定](streaming-destination-testing-overview.md).
+作为Destination SDK的一部分，Adobe提供开发人员工具来帮助您配置和测试目标。 本页介绍如何创建和测试消息转换模板。 有关如何测试目标的信息，请阅读 [测试目标配置](streaming-destination-testing-overview.md).
 
-至 **建立及測試訊息轉換範本** 在Adobe Experience Platform的目標結構描述和目的地支援的訊息格式之間，使用 *範本製作工具* 如下所述。  深入瞭解中的來源和目標結構描述之間的資料轉換 [訊息格式檔案](../../functionality/destination-server/message-format.md#using-templating).
+至 **创建和测试消息转换模板** 在Adobe Experience Platform的目标架构和目标支持的消息格式之间，使用 *模板创作工具* 如下所述。  有关源架构和目标架构之间数据转换的更多信息，请参阅 [消息格式文档](../../functionality/destination-server/message-format.md#using-templating).
 
-以下說明建立和測試訊息轉換範本如何符合 [目的地設定工作流程](../../guides/configure-destination-instructions.md) Destination SDK：
+下图说明了创建和测试报文转换模板如何适应 [目标配置工作流](../../guides/configure-destination-instructions.md) Destination SDK：
 
-![建立範本步驟符合目的地設定工作流程的圖形](../../assets/testing-api/create-template-step.png)
+![此图显示了创建模板步骤在目标配置工作流中的位置](../../assets/testing-api/create-template-step.png)
 
-## 為何需要建立和測試訊息轉換範本 {#why-create-message-transformation-template}
+## 为什么需要创建和测试消息转换模板 {#why-create-message-transformation-template}
 
-在Destination SDK中建立目的地的首要步驟之一，就是思考將區段會籍、身分和設定檔屬性的資料格式從Adobe Experience Platform匯出至目的地時，如何進行轉換。 在中尋找有關AdobeXDM結構描述和您的目的地結構描述之間轉換的資訊 [訊息格式檔案](../../functionality/destination-server/message-format.md#using-templating).
+在Destination SDK中创建目标的第一步之一是考虑在从Adobe Experience Platform导出到目标时，如何转换区段成员资格、身份和配置文件属性的数据格式。 在中查找有关AdobeXDM架构与目标架构之间转换的信息 [消息格式文档](../../functionality/destination-server/message-format.md#using-templating).
 
-若要轉換成功，您必須提供轉換範本，類似於以下範例： [建立可傳送區段、身分和設定檔屬性的範本](../../functionality/destination-server/message-format.md#segments-identities-attributes).
+要使转换成功，必须提供类似于以下示例的转换模板： [创建用于发送区段、身份和配置文件属性的模板](../../functionality/destination-server/message-format.md#segments-identities-attributes).
 
-Adobe提供範本工具，可讓您建立並測試訊息範本，將資料從AdobeXDM格式轉換為目的地支援的格式。 此工具有兩個API端點可供您使用：
+Adobe提供了一个template工具，允许您创建和测试消息模板，以便将数据从AdobeXDM格式转换为目标支持的格式。 该工具具有两个API端点，您可以使用这些端点：
 
-* 使用 *範例範本API* 以取得範例範本。
-* 使用 *轉譯器範本API* 以轉譯範例範本，使您可以將結果與目的地的預期資料格式進行比較。 將匯出的資料與目的地預期的資料格式比較後，您可以編輯範本。 如此一來，您產生的匯出資料就會符合目的地預期的資料格式。
+* 使用 *示例模板API* 以获取示例模板。
+* 使用 *渲染模板API* 渲染示例模板，以便您可以将结果与目标的预期数据格式进行比较。 将导出的数据与目标所需的数据格式进行比较后，可以编辑模板。 这样，您生成的导出数据与目标预期的数据格式相匹配。
 
-## 建立範本前需完成的步驟 {#prerequisites}
+## 创建模板前要完成的步骤 {#prerequisites}
 
-在您準備好建立範本之前，請務必完成下列步驟：
+在创建模板之前，请确保完成以下步骤：
 
-1. [建立目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md). 根據您為提供的值，將產生的範本會有所不同 `maxUsersPerRequest` 引數。
-   * 使用 `maxUsersPerRequest=1` 如果您希望目的地的API呼叫包含單一設定檔，以及其區段資格、身分和設定檔屬性。
-   * 使用 `maxUsersPerRequest` 大於一的值（如果您希望目的地的API呼叫包含多個設定檔，以及其區段資格、身分和設定檔屬性）。
-2. [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md) 並將目的地伺服器設定的ID新增至 `destinationDelivery.destinationServerId`.
-3. [取得目的地設定的ID](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 您剛剛建立的，所以您可以在範本建立工具中使用它。
-4. 瞭解 [您可以使用哪些函式和篩選器](../../functionality/destination-server/supported-functions.md) 在訊息轉換範本中。
+1. [创建目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 根据您为提供的值，将生成的模板有所不同 `maxUsersPerRequest` 参数。
+   * 使用 `maxUsersPerRequest=1` 如果您希望对目标的某个API调用包含单个配置文件，以及其区段资格、身份和配置文件属性。
+   * 使用 `maxUsersPerRequest` （如果想要对目标的API调用包含多个配置文件，以及其区段资格、身份和配置文件属性），则值为1。
+2. [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md) 并将目标服务器配置的ID添加到中 `destinationDelivery.destinationServerId`.
+3. [获取目标配置的ID](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 您刚刚创建的，因此您可以在模板创建工具中使用它。
+4. 了解 [可以使用哪些函数和过滤器](../../functionality/destination-server/supported-functions.md) 在消息转换模板中。
 
-## 如何使用範例範本API和轉譯範本API為您的目的地建立範本 {#iterative-process}
+## 如何使用示例模板API和渲染模板API为您的目标创建模板 {#iterative-process}
 
 >[!TIP]
 >
->在建立及編輯訊息轉換範本之前，您可以先呼叫 [轉譯範本API端點](../../testing-api/streaming-destinations/render-template-api.md#render-exported-data) 使用簡單範本匯出原始設定檔，而不套用任何轉換。 簡單範本的語法為： <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
+>在构建和编辑消息转换模板之前，您可以调用 [渲染模板API端点](../../testing-api/streaming-destinations/render-template-api.md#render-exported-data) 使用简单模板导出原始配置文件，而不应用任何转换。 简单模板的语法为： <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
-取得和測試範本的程式是反複進行的。 重複下列步驟，直到匯出的設定檔符合目的地預期的資料格式。
+模板的获取和测试过程是迭代的。 重复以下步骤，直到导出的用户档案与目标的预期数据格式匹配。
 
-1. 首先， [取得範例範本](../../testing-api/streaming-destinations/create-template.md#sample-template-api).
-2. 使用範例範本作為建立您自己的草稿的起點。
-3. 呼叫 [轉譯範本API端點](../../testing-api/streaming-destinations/create-template.md#render-template-api) 使用您自己的範本。 Adobe會根據您的結構描述產生範例設定檔，並傳回結果或任何遇到的錯誤。
-4. 將匯出的資料與目的地預期的資料格式進行比較。 如有需要，請編輯範本。
-5. 重複此程式，直到匯出的設定檔符合目的地預期的資料格式。
+1. 首先， [获取示例模板](../../testing-api/streaming-destinations/create-template.md#sample-template-api).
+2. 使用示例模板作为创建自己的草稿的起点。
+3. 调用 [渲染模板API端点](../../testing-api/streaming-destinations/create-template.md#render-template-api) 使用您自己的模板。 Adobe根据您的架构生成示例配置文件，并返回结果或任何遇到的错误。
+4. 将导出的数据与目标所需的数据格式进行比较。 如果需要，可编辑模板。
+5. 重复此过程，直到导出的用户档案与目标的预期数据格式匹配。
 
-## 使用範本範例API取得範本範例 {#sample-template-api}
+## 使用示例模板API获取示例模板 {#sample-template-api}
 
 >[!NOTE]
 >
->如需完整的API參考檔案，請閱讀 [取得範例範本API作業](../../testing-api/streaming-destinations/sample-template-api.md).
+>有关完整的API参考文档，请阅读 [获取示例模板API操作](../../testing-api/streaming-destinations/sample-template-api.md).
 
-將目的地ID新增至呼叫，如下所示，回應會傳回與目的地ID對應的範本範例。
+将目标ID添加到调用，如下所示，响应将返回与目标ID对应的模板示例。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/testing/template/sample/5114d758-ce71-43ba-b53e-e2a91d67b67f' \
@@ -76,7 +76,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-如果您提供的目的地ID對應至具有的目的地設定 [最大努力彙總](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 和 `maxUsersPerRequest=1` 在彙總原則中，要求會傳回類似以下的範例範本：
+如果您提供的目标ID对应于具有以下属性的目标配置 [尽力而为聚合](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 和 `maxUsersPerRequest=1` 在聚合策略中，请求返回一个与以下模板类似的示例模板：
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -109,7 +109,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 }
 ```
 
-如果您提供的目的地ID對應至目的地伺服器範本，並附有 [可設定的彙總](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 或 [最大努力彙總](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 替換為 `maxUsersPerRequest` 大於一個時，請求會傳回類似以下的範例範本：
+如果您提供的目标ID对应于目标服务器模板，请使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 或 [尽力而为聚合](../../functionality/destination-configuration/aggregation-policy.md#best-effort-aggregation) 替换为 `maxUsersPerRequest` 如果大于一，请求将返回一个与以下模板类似的示例模板：
 
 ```python
 {#- THIS is an example template for multiple profiles -#}
@@ -148,25 +148,25 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 }
 ```
 
-## 逸出範本的字元 {#character-escape-template}
+## 对模板进行字符转义 {#character-escape-template}
 
-在使用範本轉譯符合目的地預期格式的設定檔之前，您必須對範本進行字元逸出，如下面的熒幕錄製所示。
+在使用模板渲染符合目标预期格式的用户档案之前，您必须对模板进行字符转义，如下面的屏幕录制所示。
 
-![此影片說明如何使用線上字元逸出工具來逸出範本](../../assets/testing-api/escape-characters.gif)
+![此视频演示如何使用在线字符转义工具对模板进行字符转义](../../assets/testing-api/escape-characters.gif)
 
-您可以使用線上字元逸出工具。 上述示範使用 [JSON逸出格式器](https://jsonformatter.org/json-escape).
+可以使用联机字符转义工具。 上述演示使用 [JSON转义格式化程序](https://jsonformatter.org/json-escape).
 
-## 轉譯器範本API {#render-template-api}
+## 渲染模板API {#render-template-api}
 
-使用建立訊息轉換範本後 [範例範本API](create-template.md#sample-template-api)，您可以 [演算範本](render-template-api.md) 以根據它產生匯出的資料。 這可讓您驗證Adobe Experience Platform要匯出至目的地的設定檔是否符合目的地的預期格式。
+使用创建消息转换模板后 [示例模板API](create-template.md#sample-template-api)，您可以 [渲染模板](render-template-api.md) 以基于它生成导出的数据。 这允许您验证Adobe Experience Platform将导出到目标的配置文件是否与目标的预期格式匹配。
 
-請參考API參考以取得您可以進行的呼叫範例：
+有关可以进行的调用的示例，请参阅API引用：
 
-* [演算沒有在正文中傳送設定檔的範本](render-template-api.md#multiple-profiles-no-body)
-* [使用傳送於內文中的設定檔演算範本](render-template-api.md#multiple-profiles-with-body)
+* [渲染没有在正文中发送用户档案的模板](render-template-api.md#multiple-profiles-no-body)
+* [渲染包含正文中发送的用户档案的模板](render-template-api.md#multiple-profiles-with-body)
 
-編輯範本並呼叫轉譯器範本API端點，直到匯出的設定檔符合目的地的預期資料格式為止。
+编辑模板并调用渲染模板API端点，直到导出的配置文件与目标的预期数据格式匹配。
 
-## 將您的字元逸出範本新增至目的地伺服器設定
+## 将字符转义模板添加到目标服务器配置
 
-在您滿意訊息轉換範本後，請將其新增至您的 [目的地伺服器設定](../../authoring-api/destination-server/create-destination-server.md)，在 `httpTemplate.requestBody.value`.
+对消息转换模板满意后，将其添加到您的 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)，在 `httpTemplate.requestBody.value`.

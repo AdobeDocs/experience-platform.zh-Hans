@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；
-title: (Beta) Adobe Workfront來源
-description: Adobe Workfront是行銷工作管理應用程式，協助您在一個地方管理整個工作生命週期。 Workfront包含報告和分析工具，可用來更清楚瞭解並最佳化組織內的工作流程。
+keywords: Experience Platform；主页；热门主题；
+title: (Beta) Adobe Workfront源
+description: Adobe Workfront是一个营销工作管理应用程序，可帮助您在一个位置管理整个工作生命周期。 Workfront包括报告和分析工具，可用于更好地了解和优化组织内的工作流程。
 exl-id: ea714278-d84d-4929-9a34-81fc5fb70871
 source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
@@ -10,32 +10,32 @@ ht-degree: 1%
 
 ---
 
-# (Beta) Adobe Workfront來源
+# (Beta) Adobe Workfront源
 
 >[!NOTE]
 >
->Adobe Workfront來源為測試版。 請參閱 [來源概觀](../../home.md#terms-and-conditions) 以取得使用Beta標籤聯結器的詳細資訊。
+>Adobe Workfront源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-Adobe Workfront是行銷工作管理應用程式，協助您在一個地方管理整個工作生命週期。 Workfront包含報告和分析工具，可用來更清楚瞭解並最佳化組織內的工作流程。
+Adobe Workfront是一个营销工作管理应用程序，可帮助您在一个位置管理整个工作生命周期。 Workfront包括报告和分析工具，可用于更好地了解和优化组织内的工作流程。
 
-Workfront與Adobe Experience Platform來源目錄的整合可讓您將您的Workfront資料帶入Experience Platform並執行使用案例，例如：
+Workfront与Adobe Experience Platform源目录集成允许您将Workfront数据纳入Experience Platform并执行用例，例如：
 
-* 結合工作記錄與第三方資料。
-* 在工作記錄上套用歷史和時間序列分析。
-* 透過協力廠商商業智慧工具(例如 [!DNL PowerBI].
-* 使用標準SQL查詢工作資料。
+* 将工作记录与第三方数据相结合。
+* 对工作记录应用历史和时间序列分析。
+* 通过第三方业务智能工具(如 [!DNL PowerBI].
+* 使用标准SQL查询工作数据。
 
-以下工作專案及其對應的屬性符合透過Workfront來源納入Experience Platform的條件：
+以下工作项及其相应的属性有资格通过Workfront源包含在Experience Platform中：
 
 * 组合
 * 项目
 * 项目
 * 任务
-* 作業任務（問題）
+* 操作任务（问题）
 * 用户
 
-Workfront來源會串流這些屬性的所有新更新，並回填最多一年的歷史變更事件。 將Workfront資料放入Platform資料集後，您就可以運用 [查詢服務](../../../query-service/home.md) 和其他工具，以進一步分析您的工作相關資料，或視需要與其他資料集聯結。
+Workfront源可流式传输这些属性的所有新更新，并回填至多一年的历史更改事件。 将Workfront数据放入Platform数据集后，您便可以利用 [查询服务](../../../query-service/home.md) 和其他工具，以根据需要进一步分析工作相关数据或将其与其他数据集联接。
 
-## 使用UI將Workfront連線至平台
+## 使用UI将Workfront连接到平台
 
-如需將Workfront資料帶入平台的詳細指示，請閱讀以下網站上的指南： [建立來源連線以將您的Workfront資料帶到Platform](../../tutorials/ui/create/adobe-applications/workfront.md).
+有关如何将Workfront数据引入平台的详细说明，请阅读以下网站上的指南： [创建源连接以将Workfront数据引入平台](../../tutorials/ui/create/adobe-applications/workfront.md).

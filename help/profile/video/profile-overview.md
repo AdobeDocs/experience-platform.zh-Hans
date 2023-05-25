@@ -1,6 +1,6 @@
 ---
-title: 即時客戶設定檔影片概觀
-description: 本影片提供對Adobe Experience Platform中即時客戶設定檔的基本瞭解，並概述如何在Platform UI中瀏覽設定檔。
+title: Real-Time Customer Profile视频概述
+description: 此视频提供了对Adobe Experience Platform中的实时客户配置文件的基本了解，并概述了如何在Platform UI中浏览配置文件。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -16,12 +16,12 @@ ht-degree: 0%
 
 ---
 
-# 即時客戶個人檔案總覽
+# Real-time Customer Profile概述
 
-此影片提供對Adobe Experience Platform中即時客戶個人檔案的基本瞭解，並概述如何將來自多個來源的資料彙集在一起，為每個個別客戶形成一個集中式個人檔案。 若要進一步瞭解即時客戶個人檔案的特性和功能，請先閱讀 [即時客戶個人檔案總覽](../home.md).
+此视频概要介绍了Adobe Experience Platform中的实时客户资料，并概述了如何将来自多个来源的数据汇集在一起，以便为每位客户形成集中式资料。 要了解有关Real-time Customer Profile特性和功能的更多信息，请从阅读 [Real-time Customer Profile概述](../home.md).
 
 >[!NOTE]
 >
->Experience Platform使用者介面經常更新，自從錄製此影片後，可能有所變更。 如需最新資訊，請參閱 [設定檔UI指南](../ui/user-guide.md).
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经更改。 有关最新信息，请参阅 [配置文件UI指南](../ui/user-guide.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12&learn=on&captions=eng)

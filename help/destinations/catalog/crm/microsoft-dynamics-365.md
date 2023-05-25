@@ -1,7 +1,7 @@
 ---
-keywords: crm；CRM；crm目的地；Microsoft Dynamics 365；Microsoft Dynamics 365 crm目的地
-title: Microsoft Dynamics 365連線
-description: Microsoft Dynamics 365目的地可讓您匯出帳戶資料，並在Microsoft Dynamics 365中根據您的業務需求加以啟用。
+keywords: crm；CRM；CRM目标；Microsoft Dynamics 365；Microsoft Dynamics 365 crm目标
+title: Microsoft Dynamics 365连接
+description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
 source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
@@ -11,208 +11,208 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Microsoft Dynamics 365] 連線
+# [!DNL Microsoft Dynamics 365] 连接
 
 ## 概述 {#overview}
 
-[[!DNL Microsoft Dynamics 365]](https://dynamics.microsoft.com/en-us/) 是以雲端為基礎的業務應用程式平台，結合企業資源規劃(ERP)和客戶關係管理(CRM)以及生產力應用程式和AI工具，以實現端對端更順暢、更可控的營運、更佳的增長潛力和更低的成本。
+[[!DNL Microsoft Dynamics 365]](https://dynamics.microsoft.com/en-us/) 是一个基于云的业务应用程序平台，它将企业资源规划(ERP)和客户关系管理(CRM)与生产力应用程序和AI工具相结合，以实现更加顺畅、受控程度更高的端到端操作、更好的增长潜力和更低的成本。
 
-此 [!DNL Adobe Experience Platform] [目的地](/help/destinations/home.md) 可運用 [[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1)，可讓您將區段內的身分更新為 [!DNL Dynamics 365].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL Contact Entity Reference API]](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1)，这允许您将区段中的标识更新为 [!DNL Dynamics 365].
 
-[!DNL Dynamics 365] 使用具有授權授予的OAuth 2作為驗證機制，與 [!DNL Contact Entity Reference API]. 向您的驗證身分的說明 [!DNL Dynamics 365] 執行個體的詳細資訊如下： [驗證至目的地](#authenticate) 區段。
+[!DNL Dynamics 365] 使用具有授权授予的OAuth 2作为身份验证机制，与 [!DNL Contact Entity Reference API]. 向您的验证的说明 [!DNL Dynamics 365] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-作為行銷人員，您可以根據使用者的Adobe Experience Platform設定檔屬性，將個人化體驗提供給使用者。 您可以從離線資料建立區段，並將這些區段傳送至 [!DNL Dynamics 365]，以便在Adobe Experience Platform中更新區段和設定檔後立即顯示在使用者的摘要中。
+作为营销人员，您可以根据用户的Adobe Experience Platform配置文件中的属性，为其提供个性化体验。 您可以从离线数据构建区段并将这些区段发送到 [!DNL Dynamics 365]，以便在Adobe Experience Platform中更新区段和配置文件后立即显示在用户的馈送中。
 
 ## 先决条件 {#prerequisites}
 
-### Experience Platform必要條件 {#prerequisites-in-experience-platform}
+### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在將資料啟用至 [!DNL Dynamics 365] 目的地，您必須擁有 [綱要](/help/xdm/schema/composition.md)， a [資料集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [區段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 建立於 [!DNL Experience Platform].
+将数据激活到之前 [!DNL Dynamics 365] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-請參閱Adobe的檔案以瞭解 [區段會籍詳細資料結構描述欄位群組](/help/xdm/field-groups/profile/segmentation.md) 如果您需要區段狀態的指引。
+请参阅Adobe的文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
 
-### [!DNL Microsoft Dynamics 365] 必備條件 {#prerequisites-destination}
+### [!DNL Microsoft Dynamics 365] 先决条件 {#prerequisites-destination}
 
-請注意下列中的先決條件 [!DNL Dynamics 365]，以將資料從Platform匯出至 [!DNL Dynamics 365] 帳戶：
+请注意中的以下先决条件 [!DNL Dynamics 365]，以便将数据从Platform导出到 [!DNL Dynamics 365] 帐户：
 
-#### 您需要擁有 [!DNL Microsoft Dynamics 365] 帳戶 {#prerequisites-account}
+#### 您需要拥有 [!DNL Microsoft Dynamics 365] 帐户 {#prerequisites-account}
 
-前往 [!DNL Dynamics 365] [試用版](https://dynamics.microsoft.com/en-us/dynamics-365-free-trial/) 頁面，以註冊及建立帳戶（如果尚未建立）。
+转到 [!DNL Dynamics 365] [试用版](https://dynamics.microsoft.com/en-us/dynamics-365-free-trial/) 页面注册并创建帐户（如果尚未注册）。
 
-#### 在中建立欄位 [!DNL Dynamics 365] {#prerequisites-custom-field}
+#### 在中创建字段 [!DNL Dynamics 365] {#prerequisites-custom-field}
 
-建立型別的自訂欄位 `Simple` 欄位資料型別為 `Single Line of Text` 將使用哪個Experience Platform來更新內的區段狀態 [!DNL Dynamics 365].
-請參閱 [!DNL Dynamics 365] 檔案至 [建立欄位（屬性）](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) 如果您需要其他指引。
+创建类型的自定义字段 `Simple` 字段数据类型为 `Single Line of Text` 使用哪个Experience Platform来更新中的区段状态 [!DNL Dynamics 365].
+请参阅 [!DNL Dynamics 365] 文档目标 [创建字段（属性）](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) 如果您需要其他指导。
 
-內的設定範例 [!DNL Dynamics 365] 如下所示：
-![顯示自訂欄位的Dynamics 365 UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/dynamics-365-fields.png)
+中的示例设置 [!DNL Dynamics 365] 如下所示：
+![显示自定义字段的Dynamics 365 UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/dynamics-365-fields.png)
 
-#### 在Azure Active Directory中註冊應用程式和應用程式使用者 {#prerequisites-app-user}
+#### 在Azure Active Directory中注册应用程序和应用程序用户 {#prerequisites-app-user}
 
-若要啟用 [!DNL Dynamics 365] 若要存取資源，您必須使用 [!DNL Azure Account] 至 [[!DNL Azure Active Directory]](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) 並建立下列專案：
-* 一個 [!DNL Azure Active Directory] 應用計畫
-* 服務主體
-* 應用程式密碼
+启用 [!DNL Dynamics 365] 要访问资源，您需要使用 [!DNL Azure Account] 到 [[!DNL Azure Active Directory]](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) 并创建以下内容：
+* An [!DNL Azure Active Directory] 应用程序
+* 服务主体
+* 应用程序密码
 
-您還需要 [建立應用程式使用者](https://docs.microsoft.com/en-us/power-platform/admin/manage-application-users#create-an-application-user) 在 [!DNL Azure Active Directory] 並將其與新建立的應用程式建立關聯。
+您还需要 [创建应用程序用户](https://docs.microsoft.com/en-us/power-platform/admin/manage-application-users#create-an-application-user) 在 [!DNL Azure Active Directory] 并将其与新创建的应用程序关联。
 
-#### 收集 [!DNL Dynamics 365] 認證 {#gather-credentials}
+#### 收集 [!DNL Dynamics 365] 凭据 {#gather-credentials}
 
-在驗證之前，請記下以下專案 [!DNL Dynamics 365] CRM目的地：
+在对进行身份验证之前，请记下以下各项 [!DNL Dynamics 365] CRM目标：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `Client ID` | 此 [!DNL Dynamics 365] 您的使用者端識別碼 [!DNL Azure Active Directory] 應用程式。 請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) 以取得指引。 | `ababbaba-abab-baba-acac-acacacacacac` |
-| `Client Secret` | 此 [!DNL Dynamics 365] 您的使用者端密碼 [!DNL Azure Active Directory] 應用程式。 您可能會使用「 」中的「 」選項#2 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#authentication-two-options). | `abcde~abcdefghijklmnopqrstuvwxyz12345678` 以取得指引。 |
-| `Tenant ID` | 此 [!DNL Dynamics 365] 您的租使用者ID [!DNL Azure Active Directory] 應用程式。 請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) 以取得指引。 | `1234567-aaaa-12ab-ba21-1234567890` |
-| `Environment URL` | 請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/org-service/discover-url-organization-organization-service?view=op-9-1) 以取得指引。 | 若您的 [!DNL Dynamics 365] 網域如下所示，您需要反白顯示的值。<br> *`org57771b33`.crm.dynamics.com* |
+| `Client ID` | 此 [!DNL Dynamics 365] 您的客户端ID [!DNL Azure Active Directory] 应用程序。 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) 以获取指导。 | `ababbaba-abab-baba-acac-acacacacacac` |
+| `Client Secret` | 此 [!DNL Dynamics 365] 您的客户端密钥 [!DNL Azure Active Directory] 应用程序。 您应使用#2 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#authentication-two-options). | `abcde~abcdefghijklmnopqrstuvwxyz12345678` 以获取指导。 |
+| `Tenant ID` | 此 [!DNL Dynamics 365] 您的租户ID [!DNL Azure Active Directory] 应用程序。 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) 以获取指导。 | `1234567-aaaa-12ab-ba21-1234567890` |
+| `Environment URL` | 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/org-service/discover-url-organization-organization-service?view=op-9-1) 以获取指导。 | 如果您的 [!DNL Dynamics 365] 域如下所示，您需要高亮显示的值。<br> *`org57771b33`.crm.dynamics.com* |
 
 ## 护栏 {#guardrails}
 
-此 [要求限制和配置](https://docs.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations) 頁面詳細資訊 [!DNL Dynamics 365] 與以下專案相關的API限制： [!DNL Dynamics 365] 授權。 您需要確保您的資料和裝載在這些限制內。
+此 [请求限制和分配](https://docs.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations) 页面详细信息 [!DNL Dynamics 365] 与相关的API限制 [!DNL Dynamics 365] 许可证。 您需要确保您的数据和有效负载处于这些限制范围内。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Dynamics 365] 支援下表中描述的身分更新。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL Dynamics 365] 支持更新下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 示例 | 描述 | 注意事项 |
+| 目标身份 | 示例 | 描述 | 注意事项 |
 |---|---|---|---|
-| `contactId` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | 連絡人的唯一識別碼。 | **強制**. 請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) 以取得更多詳細資料。 |
+| `contactId` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | 联系人的唯一标识符。 | **必需**. 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) 了解更多详细信息。 |
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | <ul><li>您正在匯出區段的所有成員，以及所需的結構描述欄位 *（例如：電子郵件地址、電話號碼、姓氏）*，根據您的欄位對應。</li><li> 中的每個區段狀態 [!DNL Dynamics 365] 會根據 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example) 步驟。</li></ul> |
-| 匯出頻率 | **[!UICONTROL 串流]** | <ul><li>串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Dynamics 365] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 >
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-範圍 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]** 搜尋 [!DNL Dynamics 365]. 或者，您也可以在 **[!UICONTROL CRM]** 類別。
+范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Dynamics 365]. 或者，您也可以在 **[!UICONTROL CRM]** 类别。
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-若要驗證目的地，請選取 **[!UICONTROL 連線到目的地]**.
-![顯示如何驗證的平台UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
+要对目标进行身份验证，请选择 **[!UICONTROL 连接到目标]**.
+![显示如何进行身份验证的Platform UI屏幕快照。](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
 
-填寫以下必填欄位。 請參閱 [收集Dynamics 365認證](#gather-credentials) 區段以取得指引。
-* **[!UICONTROL 使用者端ID]**：此 [!DNL Dynamics 365] 您的使用者端識別碼 [!DNL Azure Active Directory] 應用程式。
-* **[!UICONTROL 租使用者ID]**：此 [!DNL Dynamics 365] 您的租使用者ID [!DNL Azure Active Directory] 應用程式。
-* **[!UICONTROL 使用者端密碼]**：此 [!DNL Dynamics 365] 您的使用者端密碼 [!DNL Azure Active Directory] 應用程式。
-* **[!UICONTROL 環境URL]**：您的 [!DNL Dynamics 365] 環境URL
+填写下面的必填字段。 请参阅 [收集Dynamics 365凭据](#gather-credentials) 部分获取任何指导。
+* **[!UICONTROL 客户端ID]**：此 [!DNL Dynamics 365] 您的客户端ID [!DNL Azure Active Directory] 应用程序。
+* **[!UICONTROL 租户ID]**：此 [!DNL Dynamics 365] 您的租户ID [!DNL Azure Active Directory] 应用程序。
+* **[!UICONTROL 客户端密码]**：此 [!DNL Dynamics 365] 您的客户端密钥 [!DNL Azure Active Directory] 应用程序。
+* **[!UICONTROL 环境URL]**：您的 [!DNL Dynamics 365] 环境URL。
 
-如果提供的詳細資料有效，UI會顯示 **[!UICONTROL 已連線]** 帶有綠色核取記號的狀態。 然後您可以繼續下一步驟。
+如果提供的详细信息有效，则UI将显示 **[!UICONTROL 已连接]** 带有绿色复选标记的状态。 然后，您可以继续执行下一步。
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
-![顯示目的地詳細資訊的平台UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+![显示目标详细信息的Platform UI屏幕快照。](../../assets/catalog/crm/microsoft-dynamics-365/destination-details.png)
 
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-### 對應考量事項和範例 {#mapping-considerations-example}
+### 映射注意事项和示例 {#mapping-considerations-example}
 
-若要正確將對象資料從Adobe Experience Platform傳送至 [!DNL Dynamics 365] 目的地，您必須完成欄位對應步驟。 對應包括在Platform帳戶中的Experience Data Model (XDM)結構描述欄位與來自目標目的地的對應對應對應專案之間建立連結。 若要正確將XDM欄位對應至 [!DNL Dynamics 365] 目的地欄位，請依照下列步驟操作：
+要正确地将受众数据从Adobe Experience Platform发送到 [!DNL Dynamics 365] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的Experience Data Model (XDM)架构字段与其与目标目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到 [!DNL Dynamics 365] 目标字段，请执行以下步骤：
 
-1. 在 **[!UICONTROL 對應]** 步驟，選取 **[!UICONTROL 新增對應]**. 您會在畫面上看到新的對應列。
-   ![「新增對應」的平台UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
+1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新映射行。
+   ![“添加新映射”的平台UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
 
-1. 在 **[!UICONTROL 選取來源欄位]** 視窗，選擇 **[!UICONTROL 選取身分名稱空間]** 類別並選取 `contactId`.
-   ![來源對應的平台UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
+1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 类别并选择 `contactId`.
+   ![源映射的平台UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
 
-1. 在 **[!UICONTROL 選取目標欄位]** 視窗中，選取您要將來源欄位對應到的目標欄位型別。
-   * **[!UICONTROL 選取身分名稱空間]**：選取此選項，從清單中將來源欄位對應到身分名稱空間。
-      ![平台UI熒幕擷圖顯示contactId的Target對應。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
+1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择要将源字段映射到的目标字段类型。
+   * **[!UICONTROL 选择身份命名空间]**：选择此选项可从列表中将源字段映射到身份命名空间。
+      ![平台UI屏幕截图显示了contactId的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
-   * 在您的XDM設定檔結構描述與您的設定檔結構描述之間新增以下對應： [!DNL Dynamics 365] 例項： |XDM設定檔結構描述|[!DNL Dynamics 365] 例項|必要| |—|—|—| |`contactId`|`contactId`|是 |
+   * 在XDM配置文件架构和您的配置文件架构之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例|必需| |—|—|—| |`contactId`|`contactId`|是 |
 
-   * **[!UICONTROL 選取自訂屬性]**：選取此選項可將來源欄位對應至您在 **[!UICONTROL 屬性名稱]** 欄位。 請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) 以取得支援屬性的完整清單。
-      ![顯示LastName目標對應的平台UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-lastname.png)
+   * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) 以获取支持的属性的完整列表。
+      ![显示LastName的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-lastname.png)
 
       >[!IMPORTANT]
       >
-      >如果您有已對應至的日期或時間戳記來源欄位 [!DNL Dynamics 365] [日期或時間戳記](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) 目標欄位，確保對應的值不是空的。 如果傳遞的值是空的，您將會遇到 *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* 錯誤訊息，且資料將不會更新。 這是 [!DNL Dynamics 365] 限制。
+      >如果您有一个日期或时间戳源字段已映射到 [!DNL Dynamics 365] [日期或时间戳](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) 目标字段，请确保映射的值不为空。 如果传递的值为空，您将遇到 *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* 错误消息和数据将不更新。 这是 [!DNL Dynamics 365] 限制。
 
-   * 例如，根據您要更新的值，在您的XDM設定檔結構描述與您的 [!DNL Dynamics 365] 例項： |XDM設定檔結構描述|[!DNL Dynamics 365] 例項| |—|—| |`person.name.firstName`|`FirstName`| |`person.name.lastName`|`LastName`| |`personalEmail.address`|`Email`|
+   * 例如，根据要更新的值，添加以下XDM配置文件架构与您的配置文件架构之间的映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例| |—|—| |`person.name.firstName`|`FirstName`| |`person.name.lastName`|`LastName`| |`personalEmail.address`|`Email`|
 
-   * 使用這些對應的範例如下所示：
-      ![顯示Target對應的平台UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
+   * 下面显示了使用这些映射的示例：
+      ![显示Target映射的平台UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
 
-### 排程區段匯出和範例 {#schedule-segment-export-example}
+### 计划区段导出和示例 {#schedule-segment-export-example}
 
-在 [[!UICONTROL 排程區段匯出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 啟動工作流程的步驟，您必須手動將Platform區段對應至中的自訂欄位屬性 [!DNL Dynamics 365].
+在 [[!UICONTROL 计划区段导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 在激活工作流的步骤中，您必须手动将Platform区段映射到中的自定义字段属性 [!DNL Dynamics 365].
 
-若要這麼做，請選取每個區段，然後輸入對應的自訂欄位屬性 [!DNL Dynamics 365] 在 **[!UICONTROL 對應ID]** 欄位。
+为此，请选择每个区段，然后从中输入相应的自定义字段属性 [!DNL Dynamics 365] 在 **[!UICONTROL 映射Id]** 字段。
 
 >[!IMPORTANT]
 >
->用於 **[!UICONTROL 對應ID]** 應該與中建立的自訂欄位屬性名稱完全相符 [!DNL Dynamics 365]. 另請參閱 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) 如果您需要有關尋找自訂欄位屬性的指引。
+>用于 **[!UICONTROL 映射Id]** 应与在中创建的自定义字段属性的名称完全匹配 [!DNL Dynamics 365]. 参见 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/create-edit-fields?view=op-9-1) 如果您需要有关查找自定义字段属性的指导。
 
-範例如下：
-![顯示「排程區段匯出」的Platform UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
+下面显示了一个示例：
+![显示计划区段导出的平台UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/schedule-segment-export.png)
 
-## 驗證資料匯出 {#exported-data}
+## 验证数据导出 {#exported-data}
 
-若要驗證您是否已正確設定目的地，請遵循下列步驟：
+要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 選取 **[!UICONTROL 目的地]** > **[!UICONTROL 瀏覽]** 以導覽至目的地清單。
-   ![顯示「瀏覽目的地」的平台UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
+1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 导航到目标列表。
+   ![显示浏览目标的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/browse-destinations.png)
 
-1. 選取目的地並驗證狀態是否為 **[!UICONTROL 已啟用]**.
-   ![顯示目的地資料流執行的平台UI熒幕擷圖。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
+1. 选择目标并验证状态为 **[!UICONTROL 已启用]**.
+   ![显示目标数据流运行的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/destination-dataflow-run.png)
 
-1. 切換至 **[!DNL Activation data]** 標籤，然後選取區段名稱。
-   ![顯示目的地啟用資料的平台UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
+1. 切换到 **[!DNL Activation data]** 选项卡，然后选择区段名称。
+   ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/destinations-activation-data.png)
 
-1. 監控區段摘要，並確保設定檔計數對應於在區段內建立的計數。
-   ![顯示區段的平台UI熒幕擷圖範例。](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
+1. 监控区段摘要，并确保配置文件计数对应于在区段内创建的计数。
+   ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/segment.png)
 
-1. 登入 [!DNL Dynamics 365] 網站，然後導覽至 [!DNL Customers] > [!DNL Contacts] 頁面，並檢查是否已新增區段中的設定檔。 您可以在中看到每個區段狀態 [!DNL Dynamics 365] 已根據「 」更新Platform中的對應區段狀態 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example) 步驟。
-   ![Dynamics 365 UI熒幕擷圖顯示具有更新區段狀態的「連絡人」頁面。](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
+1. 登录到 [!DNL Dynamics 365] 网站，然后导航到 [!DNL Customers] > [!DNL Contacts] 页面，并检查是否已添加区段中的配置文件。 您可以在中看到每个区段状态 [!DNL Dynamics 365] 已根据，从Platform更新了相应的区段状态 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。
+   ![显示“联系人”页面及更新的区段状态的Dynamics 365 UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/contacts.png)
 
-## 資料使用與控管 {#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](/help/data-governance/home.md).
 
-## 錯誤與疑難排解 {#errors-and-troubleshooting}
+## 错误和疑难解答 {#errors-and-troubleshooting}
 
-### 將事件推播到目的地時遇到未知錯誤 {#unknown-errors}
+### 将事件推送到目标时遇到了未知错误 {#unknown-errors}
 
-檢查資料流執行時，如果收到下列錯誤訊息： `Bad request reported while pushing events to the destination. Please contact the administrator and try again.`
+在检查数据流运行时，如果收到以下错误消息： `Bad request reported while pushing events to the destination. Please contact the administrator and try again.`
 
-![平台UI熒幕擷圖顯示錯誤請求錯誤。](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
+![平台UI屏幕截图显示错误请求错误。](../../assets/catalog/crm/microsoft-dynamics-365/error.png)
 
-若要修正此錯誤，請確認 **[!UICONTROL 對應ID]** 您提供於 [!DNL Dynamics 365] 的有效性並存在於中 [!DNL Dynamics 365].
+要修复此错误，请验证 **[!UICONTROL 映射Id]** 您提供于 [!DNL Dynamics 365] 的有效区段，且该区段存在于 [!DNL Dynamics 365].
 
 ## 其他资源 {#additional-resources}
 
-其他實用資訊來自 [[!DNL Dynamics 365] 檔案](https://docs.microsoft.com/en-us/dynamics365/) 如下：
-* [IOrganizationService.Update(Entity)方法](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.iorganizationservice.update?view=dataverse-sdk-latest)
-* [使用Web API更新和刪除表格列](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/update-delete-entities-using-web-api#basic-update)
+其他有用信息来自 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/) 如下所示：
+* [IOrorganizationService.Update(Entity)方法](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.iorganizationservice.update?view=dataverse-sdk-latest)
+* [使用Web API更新和删除表行](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/update-delete-entities-using-web-api#basic-update)

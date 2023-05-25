@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2020年3月
-description: Adobe Experience Platform的2020年3月發行說明。
+title: Adobe Experience Platform发行说明2020年3月
+description: Adobe Experience Platform 2020年3月版发行说明。
 doc-type: release notes
 last-update: March 10, 2020
 author: ens71067
@@ -27,97 +27,97 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## 数据治理 {#governance}
 
-[!DNL Experience Platform] 可讓公司整合來自多個企業系統的資料，讓行銷人員更能識別、瞭解客戶並與客戶互動。 [!DNL Experience Platform] 包括端對端的資料控管基礎架構，以確保資料在 [!DNL Platform] 在系統之間共用時。
+[!DNL Experience Platform] 允许公司将来自多个企业系统的数据汇集在一起，以便更好地让营销人员识别、了解和吸引客户。 [!DNL Experience Platform] 包括一个端到端的数据治理基础架构，以确保数据在 [!DNL Platform] 在系统之间共享时。
 
-Adobe Experience Platform資料控管是用於管理客戶資料並確保遵守適用於資料使用的法規、限制和政策的一系列策略與技術。 它在以下方面發揮著關鍵作用 [!DNL Experience Platform] 包括目錄、資料譜系、資料使用標籤、資料存取原則，以及行銷動作資料的存取控制。
+Adobe Experience Platform数据管理是用于管理客户数据并确保遵守适用于数据使用的法规、限制和策略的一系列策略和技术。 它在以下方面发挥着关键作用 [!DNL Experience Platform] 在不同的级别，包括编目、数据谱系、数据使用标签、数据访问策略和对营销活动数据的访问控制。
 
 **新增功能**
 
 >[!NOTE]
 >
->以下部分新功能目前為測試版，並未開放所有使用者使用。 Beta版功能可能會有變動。
+>以下某些新功能目前处于测试阶段，并非对所有用户都可用。 Beta版功能可能会发生更改。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 自動強制資料使用原則 [!DNL Real-Time Customer Data Platform] | 在啟用資料至目的地的工作流程中，現在會強制執行資料使用原則。 資料控管也會內嵌在並對現有啟用產生影響時（例如變更資料集標籤、合併原則、區段定義等），強制執行。 |
-| 用於強制執行的資料譜系 | 在Real-Time CDP中違反資料使用原則時，UI會顯示包含資料譜系資訊的通知，以協助使用者瞭解違反原則的原因以及他們可以採取哪些行動來解決違規。 |
+| 自动强制实施的数据使用策略 [!DNL Real-Time Customer Data Platform] | 现在，在将数据激活到目标的工作流中强制执行数据使用策略。 在进行影响现有激活的更改（例如更改数据集标签、合并策略、区段定义等）时，也会嵌入并强制执行数据管理。 |
+| 用于强制实施的数据谱系 | 在Real-Time CDP中违反数据使用策略时，UI会显示一个包含数据谱系信息的通知，以帮助用户了解违反策略的原因以及他们可以采取哪些措施来解决违规。 |
 
 
 **已知问题**
 
 * None
 
-如需資料控管的詳細資訊，請參閱 [資料控管概觀](../../data-governance/home.md).
+有关“数据管理”的更多信息，请参阅 [数据治理概述](../../data-governance/home.md).
 
 ## 数据引入 {#ingestion}
 
-Adobe Experience Platform提供豐富的功能，可擷取任何型別和延遲的資料。 Adobe Experience Platform [!DNL Data Ingestion] 提供多種擷取資料的替代方案，包括批次API、串流API、原生Adobe聯結器、資料整合合作夥伴或Adobe Experience Platform UI。
+Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何类型和延迟的数据。 Adobe Experience Platform [!DNL Data Ingestion] 为摄取数据提供了多个替代方案，包括批处理API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience Platform UI。
 
 **新增功能**
 
 | 功能 | 描述 |
 |------- | -----------|
-| 部分批次擷取 | 部分批次擷取是擷取包含錯誤的資料的能力，上限為特定臨界值。 透過此功能，使用者可成功將其所有正確資料擷取到Adobe Experience Platform，同時將其所有不正確的資料單獨分批處理。 會將詳細資料新增至失敗的批次，以說明這些批次未通過驗證的原因。 如需部分批次擷取的詳細資訊，請參閱 [部分批次擷取檔案](../../ingestion/batch-ingestion/partial.md). |
+| 部分批次摄取 | 部分批量摄取是指在一定阈值内摄取包含错误的数据的能力。 借助此功能，用户可以成功地将其所有正确数据摄取到Adobe Experience Platform中，同时对其所有不正确的数据进行单独批处理。 详细信息将添加到不成功的批次，以解释它们未通过验证的原因。 有关部分批量摄取的更多信息，请参阅 [部分批量摄取文档](../../ingestion/batch-ingestion/partial.md). |
 
 **已知问题**
 
 * None
 
-若要進一步瞭解將資料擷取至Platform，請造訪 [資料擷取檔案](../../ingestion/home.md).
+要了解有关将数据摄取到Platform的更多信息，请访问 [数据引入文档](../../ingestion/home.md).
 
 
 ## 目标 {#destinations}
 
-在 [Real-time Customer Data Platform](../../rtcdp/overview.md)，目的地是預先建立的與目的地平台的整合，可透過順暢的方式為這些合作夥伴啟用資料。
+In [Real-time Customer Data Platform](../../rtcdp/overview.md)，目标是预先构建的与目标平台的集成，可无缝地向这些合作伙伴激活数据。
 
-**新目的地**
+**新目标**
 
-有新的目的地可供您啟用Adobe Experience Platform資料。 如需詳細資訊，請參閱下文：
+提供了一些新目标，您可以在其中激活Adobe Experience Platform数据。 有关详细信息，请参阅下文：
 
 | 目标 | 描述 |
 |--- | ---|
-| 雲端儲存空間目的地 | Real-Time CDP現在可以將區段以資料檔案的形式傳送至您的 [!DNL Amazon S3] 或SFTP雲端儲存位置。 這可讓您透過CSV或定位字元分隔檔案，將對象及其設定檔屬性傳送至您的內部系統。 |
-| 廣告目的地 | 此 [!DNL Google] 目的地卡現在分割為三個目的地卡（針對三個不同的目的地卡） [!DNL Google] Real-Time CDP目前支援的平台： [!DNL Google Ads]， [!DNL Google Ad Manager]， [!DNL Google] 顯示和視訊360。 |
+| 云存储目标 | Real-Time CDP现在可以将区段作为数据文件交付到 [!DNL Amazon S3] 或SFTP云存储位置。 这使您能够通过CSV或制表符分隔文件将受众及其配置文件属性发送到内部系统。 |
+| 广告目标 | 此 [!DNL Google] 对于三个不同的目标卡，目标卡现在拆分为三个目标卡 [!DNL Google] Real-Time CDP中当前支持的平台： [!DNL Google Ads]， [!DNL Google Ad Manager]， [!DNL Google] 显示和视频360。 |
 
-若要進一步瞭解，請造訪 [目的地概觀](../../destinations/home.md)
+要了解更多信息，请访问 [目标概述](../../destinations/home.md)
 
 ## [!DNL Identity Service] {#identity}
 
-提供相關的數位體驗需要完全瞭解您的客戶。 當您的客戶資料分散於不同的系統時，這會使情況更困難，導致每個個別客戶似乎有多個「身分」。
+提供相关的数字体验需要全面了解您的客户。 当您的客户数据分散在不同的系统上，导致每个客户似乎都有多个“身份”时，就会使这一点变得更加困难。
 
-Adobe Experience Platform [!DNL Identity Service] 透過跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，協助您更好地瞭解客戶及其行為。
+Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，帮助您更好地了解客户及其行为。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 增強式私密圖表 | 已增強專用圖表功能，將圖表產生延遲從每週批次程式縮短為每日重新整理圖表，允許 [!DNL Identity Service] 客戶存取更多最新的身分圖表和連結。 |
+| 增强专用图 | 专用图形功能已得到增强，可减少图形生成延迟，从每周批处理流程缩短为每日更新的图形，从而允许 [!DNL Identity Service] 客户访问更多最新的标识图和链接。 |
 
 **已知问题**
 
 * None
 
-如需有關的詳細資訊 [!DNL Identity Service]，請參閱 [Identity Service概觀](../../identity-service/home.md).
+有关详情，请参阅 [!DNL Identity Service]，请参见 [Identity服务概述](../../identity-service/home.md).
 
 ## 源 {#sources}
 
-Adobe Experience Platform可從外部來源內嵌資料，同時允許您使用建構、加標籤及增強該資料 [!DNL Platform] 服務。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用来构建、标记和增强这些数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-[!DNL Experience Platform] 提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+[!DNL Experience Platform] 提供了一个RESTful API和一个交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| Adobe Audience Manager聯結器已棄用的訊號 | 將不再傳送來自Audience Manger的訊號層級資料。 請注意，仍會包含特徵和區段的區段會籍。 由於此變更，將不再產生傳入資料集。 |
-| 已重新命名資料集 | Audience Manger聯結器產生的資料集將具有更新的名稱和說明。 |
-| 啟用 [!DNL Profile] 在Audience Manger中切換 | [!DNL Profile] 可啟用或停用切換以將資料集提升至 [!DNL Real-Time Customer Profile]. 切換預設為啟用。 |
-| 雲端儲存系統的UI支援 | 新的來源聯結器 [!DNL Azure Data Lake Storage Gen2] 在UI中。 |
-| CRM系統的UI支援 | 新的來源聯結器 [!DNL HubSpot]， [!DNL Salesforce Service Cloud]、和 [!DNL ServiceNow] 在UI中。 |
-| 資料庫系統的UI支援 | 新的來源聯結器 [!DNL AWS Redshift]， [!DNL Google BigQuery]， [!DNL MariaDB]， [!DNL Microsoft SQL Server]、和 [!DNL MySQL] 在UI中。 |
+| Adobe Audience Manager连接器的已弃用信号 | 将不再发送来自Audience Manger的信号级数据。 请注意，特征和区段的区段成员资格仍会包括在内。 由于此更改，将不再生成集客数据集。 |
+| 重命名的数据集 | Audience Manger连接器生成的数据集将具有更新的名称和描述。 |
+| 启用 [!DNL Profile] 在Audience Manger中切换 | [!DNL Profile] 可以启用或禁用切换以将数据集提升到 [!DNL Real-Time Customer Profile]. 默认情况下将启用切换功能。 |
+| 云存储系统的UI支持 | 新的源连接器 [!DNL Azure Data Lake Storage Gen2] 在UI中。 |
+| CRM系统的UI支持 | 新的源连接器 [!DNL HubSpot]， [!DNL Salesforce Service Cloud]、和 [!DNL ServiceNow] 在UI中。 |
+| 数据库系统的UI支持 | 新的源连接器 [!DNL AWS Redshift]， [!DNL Google BigQuery]， [!DNL MariaDB]， [!DNL Microsoft SQL Server]、和 [!DNL MySQL] 在UI中。 |
 
 **已知问题**
 
 * None
 
-若要進一步瞭解來源，請參閱 [來源概觀](../../sources/home.md).
+要了解有关源的更多信息，请参阅 [源概述](../../sources/home.md).

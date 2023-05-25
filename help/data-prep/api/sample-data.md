@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料準備；api指南；範例資料；
+keywords: Experience Platform；主页；热门主题；数据准备；API指南；示例数据；
 solution: Experience Platform
-title: 範例資料API端點
-description: 您可以使用Adobe Experience Platform API中的「/samples」端點，以程式設計方式擷取、建立、更新及驗證對應範例資料。
+title: 示例数据API端点
+description: 您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
 source-wordcount: '399'
@@ -11,17 +11,17 @@ ht-degree: 5%
 ---
 
 
-# 範例資料端點
+# 示例数据端点
 
-為對應集建立結構描述時，可以使用範例資料。 您可以使用 `/samples` 「資料準備API」中的端點，以程式設計方式擷取、建立和更新範例資料。
+在为映射集创建架构时，可以使用示例数据。 您可以使用 `/samples` 数据准备API中的端点，用于以编程方式检索、创建和更新示例数据。
 
-## 列出範例資料
+## 列出示例数据
 
-您可以透過向以下專案發出GET請求，擷取貴組織的所有對應範例資料清單： `/samples` 端點。
+您可以通过对以下网站发出GET请求，检索贵组织的所有映射示例数据的列表： `/samples` 端点。
 
 **API格式**
 
-此 `/samples` 端點支援數個查詢引數，以協助篩選結果。 目前，您必須同時包含 `start` 和 `limit` 請求中的引數。
+此 `/samples` 端点支持多个查询参数以帮助筛选结果。 目前，您必须同时包含 `start` 和 `limit` 请求中的参数。
 
 ```http
 GET /samples?limit={LIMIT}&start={START}
@@ -29,12 +29,12 @@ GET /samples?limit={LIMIT}&start={START}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定傳回的對應範例資料數目。 |
-| `{START}` | **必需**. 指定結果頁面的位移。 若要取得結果的第一頁，請將值設為 `start=0`. |
+| `{LIMIT}` | **必需**. 指定返回的映射示例数据的数量。 |
+| `{START}` | **必需**. 指定结果页面的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
 
 **请求**
 
-以下請求將擷取您組織內最後兩個對應範例資料。
+以下请求将检索组织内的最后两个映射示例数据。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \
@@ -46,7 +46,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含對應範例資料的最後兩個物件的相關資訊。
+成功的响应返回HTTP状态200，其中包含有关映射示例数据的最后两个对象的信息。
 
 ```json
 {
@@ -84,9 +84,9 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2
 | `sampleData` |  |
 | `sampleType` |  |
 
-## 建立範例資料
+## 创建示例数据
 
-您可以透過向以下發出POST請求來建立範例資料： `/samples` 端點。
+您可以通过对以下POST请求创建示例数据： `/samples` 端点。
 
 ```http
 POST /samples
@@ -110,7 +110,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含您新建立範例資料的相關資訊。
+成功的响应会返回HTTP状态200，其中包含有关新创建的示例数据的信息。
 
 ```json
 {
@@ -125,9 +125,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 }
 ```
 
-## 上傳檔案以建立範例資料
+## 通过上传文件创建示例数据
 
-您可以透過向以下網站發出POST請求，使用檔案建立範例資料： `/samples/upload` 端點。
+POST您可以使用文件创建示例数据，方法是向 `/samples/upload` 端点。
 
 **API格式**
 
@@ -149,7 +149,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含您新建立範例資料的相關資訊。
+成功的响应会返回HTTP状态200，其中包含有关新创建的示例数据的信息。
 
 ```json
 {
@@ -164,9 +164,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 }
 ```
 
-## 查詢特定範例資料物件
+## 查找特定的示例数据对象
 
-您可以在GET請求的路徑中提供其ID，以查詢範例資料的特定物件。 `/samples` 端點。
+通过在GET请求的路径中提供样本数据的特定对象ID，您可以查找该对象。 `/samples` 端点。
 
 **API格式**
 
@@ -176,7 +176,7 @@ GET /samples/{SAMPLE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{SAMPLE_ID}` | 您要擷取的範例資料物件的ID。 |
+| `{SAMPLE_ID}` | 要检索的示例数据对象的ID。 |
 
 **请求**
 
@@ -190,7 +190,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含您要擷取之範例資料物件的資訊。
+成功的响应会返回HTTP状态200，其中包含要检索的示例数据对象的信息。
 
 ```json
 {
@@ -205,9 +205,9 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 }
 ```
 
-## 更新範例資料
+## 更新示例数据
 
-您可以在PUT請求的路徑中提供特定範例資料物件的ID，以更新該物件。 `/samples` 端點。
+您可以通过在PUT请求的路径中提供特定示例数据对象的ID来更新该数据对象。 `/samples` 端点。
 
 **API格式**
 
@@ -217,11 +217,11 @@ PUT /samples/{SAMPLE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{SAMPLE_ID}` | 您要更新的範例資料物件的ID。 |
+| `{SAMPLE_ID}` | 要更新的示例数据对象的ID。 |
 
 **请求**
 
-以下請求會更新指定的範例資料。 具體來說，它會把姓氏從「Smith」更新為「Lee」。
+以下请求更新指定的示例数据。 具体来说，它将姓氏从“Smith”更新为“Lee”。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c20bae49d8ab33209ed126bdcd \
@@ -238,7 +238,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含更新後範例資料的相關資訊。
+成功的响应返回HTTP状态200，其中包含有关更新的示例数据的信息。
 
 ```json
 {

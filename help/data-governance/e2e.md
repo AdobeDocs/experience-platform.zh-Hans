@@ -2,7 +2,7 @@
 title: 数据管理端到端指南
 description: 按照完整流程来强制实施Adobe Experience Platform中字段和数据集的数据使用限制。
 exl-id: f18ae032-027a-4c97-868b-e04753237c81
-source-git-commit: 9f3fa696ed60ce85fa93515e39716d89ec80f1ec
+source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
 source-wordcount: '1881'
 ht-degree: 0%

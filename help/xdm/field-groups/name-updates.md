@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；ExperienceEvent；欄位；結構描述；結構描述設計；欄位群組；欄位群組；enduserids；一般使用者；id；更新；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；enduserids；最终用户；id；更新；
 solution: Experience Platform
-title: 結構描述欄位群組名稱更新
-description: 最近XDM結構描述欄位群組名稱變更的清單。
+title: 架构字段组名称更新
+description: 最近XDM架构字段组名称更改的列表。
 exl-id: 2c775b86-7262-4f05-b421-c626867de0a4
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -12,39 +12,39 @@ ht-degree: 2%
 ---
 
 
-# 結構描述欄位群組名稱更新
+# 架构字段组名称更新
 
-數個Experience Data Model (XDM)結構描述欄位群組的名稱已變更。 由於這些欄位群組的欄位結構維持不變，單是名稱變更不應影響採用這些欄位群組的任何現有結構描述。 但是，為了在Adobe Experience Platform使用者介面中查詢和使用這些欄位群組，必須使用它們的新名稱。
+多个Experience Data Model (XDM)架构字段组的名称已更改。 由于这些字段组的字段结构保持不变，因此，仅名称更改不应影响使用这些字段组的任何现有架构。 但是，要在Adobe Experience Platform用户界面中查找和使用这些字段组，必须使用它们的新名称。
 
-下表概述已更新的現有欄位群組，及其對應的新名稱：
+下表概述了已更新的现有字段组及其对应的新名称：
 
-| 前一個名稱 | 已更新名稱 |
+| 上一个名称 | 已更新名称 |
 | --- | --- |
-| [!UICONTROL 體驗事件隱私權mixin] | [!UICONTROL 隱私權詳細資料] |
-| [!UICONTROL ExperienceEvent應用程式詳細資料] | [!UICONTROL 應用程式詳細資料] |
-| [!UICONTROL ExperienceEvent頻道詳細資料] | [!UICONTROL 管道詳細資料] |
-| [!UICONTROL ExperienceEvent商務詳細資料] | [!UICONTROL 商務詳細資料] |
-| [!UICONTROL 廣告的ExperienceEvent詳細資料] | [!UICONTROL 廣告詳細資料] |
-| [!UICONTROL 行銷的ExperienceEvent詳細資料] | [!UICONTROL 行銷活動行銷細節] |
-| [!UICONTROL 媒體的ExperienceEvent詳細資料] | [!UICONTROL 媒體互動細節] |
-| [!UICONTROL 搜尋的ExperienceEvent詳細資料] | [!UICONTROL 搜尋詳細資料] |
-| [!UICONTROL ExperienceEvent直接行銷詳細資料] | [!UICONTROL 直銷詳細資料] |
-| [!UICONTROL ExperienceEvent使用者識別碼] | [!UICONTROL 一般使用者ID詳細資訊] |
-| [!UICONTROL ExperienceEvent環境詳細資料] | [!UICONTROL 环境详细信息] |
-| [!UICONTROL ExperienceEvent實作詳細資料] | [!UICONTROL 实施详细信息] |
-| [!UICONTROL ExperienceEvent個人資料拼接細節] | [!UICONTROL 個人資料拼接] |
-| [!UICONTROL ExperienceEvent區段會籍詳細資料] | [!UICONTROL 區段會籍細節] |
-| [!UICONTROL ExperienceEvent技術詳細資料] | [!UICONTROL 技术详细信息] |
-| [!UICONTROL ExperienceEvent Web詳細資料] | [!UICONTROL 網頁詳細資訊] |
-| [!UICONTROL 個人資料直銷] | [!UICONTROL 直銷連絡人詳細資料] |
-| [!UICONTROL 個人資料個人詳細資訊] | [!UICONTROL 人口統計細節] |
-| [!UICONTROL 個人資料個人詳細資料] | [!UICONTROL 個人聯絡詳細資訊] |
-| [!UICONTROL 設定檔電話] | [!UICONTROL 電話號碼詳細資料] |
-| [!UICONTROL 設定檔偏好設定詳細資料] | [!UICONTROL 偏好設定詳細資料] |
-| [!UICONTROL 設定檔隱私權] | [!UICONTROL 隱私權詳細資料] |
-| [!UICONTROL 設定檔推送詳細資料] | [!UICONTROL 推播通知權杖詳細資料] |
-| [!UICONTROL 設定檔分段] | [!UICONTROL 區段會籍細節] |
-| [!UICONTROL 設定檔訂閱] | [!UICONTROL 訂閱詳細資料] |
-| [!UICONTROL 設定檔工作詳細資訊] | [!UICONTROL 工作聯絡詳細資訊] |
-| [!UICONTROL 推播通知詳細資料] | [!UICONTROL 推播通知詳細資料] |
-| [!UICONTROL 區段運算式] | [!UICONTROL 區段運算式詳細資料] |
+| [!UICONTROL 体验事件隐私mixin] | [!UICONTROL 隐私详细信息] |
+| [!UICONTROL ExperienceEvent应用程序详细信息] | [!UICONTROL 应用程序详细信息] |
+| [!UICONTROL ExperienceEvent渠道详细信息] | [!UICONTROL 渠道详细信息] |
+| [!UICONTROL ExperienceEvent商务详细信息] | [!UICONTROL 商业详细信息] |
+| [!UICONTROL 适用于广告的ExperienceEvent详细信息] | [!UICONTROL 广告详细信息] |
+| [!UICONTROL 营销的ExperienceEvent详细信息] | [!UICONTROL 营销活动详细信息] |
+| [!UICONTROL 媒体的ExperienceEvent详细信息] | [!UICONTROL 媒体交互详细信息] |
+| [!UICONTROL 搜索的ExperienceEvent详细信息] | [!UICONTROL 搜索详细信息] |
+| [!UICONTROL ExperienceEvent直接营销详细信息] | [!UICONTROL 直接营销详细信息] |
+| [!UICONTROL ExperienceEvent最终用户ID] | [!UICONTROL 最终用户ID详细信息] |
+| [!UICONTROL ExperienceEvent环境详细信息] | [!UICONTROL 环境详细信息] |
+| [!UICONTROL ExperienceEvent实施详细信息] | [!UICONTROL 实施详细信息] |
+| [!UICONTROL ExperienceEvent个人资料拼接详细信息] | [!UICONTROL 个人资料拼接] |
+| [!UICONTROL ExperienceEvent区段成员资格详细信息] | [!UICONTROL 区段成员资格详细信息] |
+| [!UICONTROL ExperienceEvent技术详细信息] | [!UICONTROL 技术详细信息] |
+| [!UICONTROL ExperienceEvent Web详细信息] | [!UICONTROL Web详细信息] |
+| [!UICONTROL 个人资料直接营销] | [!UICONTROL 直接营销联系人详细信息] |
+| [!UICONTROL 个人资料人员详细信息] | [!UICONTROL 人口统计详细信息] |
+| [!UICONTROL 个人资料个人详细信息] | [!UICONTROL 个人联系人详细信息] |
+| [!UICONTROL 配置文件电话] | [!UICONTROL 电话号码详细信息] |
+| [!UICONTROL 配置文件首选项详细信息] | [!UICONTROL 首选项详细信息] |
+| [!UICONTROL 个人资料隐私] | [!UICONTROL 隐私详细信息] |
+| [!UICONTROL 个人资料推送详细信息] | [!UICONTROL 推送通知令牌详细信息] |
+| [!UICONTROL 个人资料分段] | [!UICONTROL 区段成员资格详细信息] |
+| [!UICONTROL 配置文件订阅] | [!UICONTROL 订阅详细信息] |
+| [!UICONTROL 配置文件工作详细信息] | [!UICONTROL 工作联系人详细信息] |
+| [!UICONTROL 推送通知详细信息] | [!UICONTROL 推送通知详细信息] |
+| [!UICONTROL 区段表达式] | [!UICONTROL 区段表达式详细信息] |

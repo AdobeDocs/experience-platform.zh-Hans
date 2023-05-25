@@ -1,6 +1,6 @@
 ---
-title: 廣告插播資料型別
-description: 本檔案提供廣告插播Experience Data Model (XDM)資料型別的概觀。
+title: 广告时间数据类型
+description: 本文档概述了广告时间体验数据模型(XDM)数据类型。
 exl-id: dfe0c386-8459-440d-95b5-b2139fac0fc3
 source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 廣告插播] 資料型別
+# [!UICONTROL 广告时间] 数据类型
 
-[!UICONTROL 廣告插播] 是標準的體驗資料模型(XDM)資料型別，可描述如何將計時廣告插入定時媒體中。
+[!UICONTROL 广告时间] 是一个标准的体验数据模型(XDM)数据类型，它描述如何将定时广告插入定时媒体中。
 
-![資料型別結構](../images/data-types/ad-break.png)
+![数据类型结构](../images/data-types/ad-break.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_dc.title` | 字符串 | 廣告插播的易記名稱。 |
-| `_id` | 字符串 | 廣告插播的唯一識別碼。 |
-| `offset` | 整数 | 從主要內容開始的廣告插播位移（以秒為單位）。 |
+| `_dc.title` | 字符串 | 广告时间的友好名称。 |
+| `_id` | 字符串 | 广告时间的唯一标识符。 |
+| `offset` | 整数 | 广告时间从主要内容开始的偏移，以秒为单位。 |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/advertising-break.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/advertising-break.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/advertising-break.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/advertising-break.schema.json)

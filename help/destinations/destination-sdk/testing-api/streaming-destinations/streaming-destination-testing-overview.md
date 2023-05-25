@@ -1,6 +1,6 @@
 ---
-description: 瞭解如何使用目的地測試API，在發佈之前測試您的串流目的地設定。
-title: 串流目的地測試API概覽
+description: 了解如何在发布流目标配置之前，使用目标测试API对其进行测试。
+title: 流媒体目标测试API概述
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
 source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
 workflow-type: tm+mt
@@ -10,48 +10,48 @@ ht-degree: 0%
 ---
 
 
-# 串流目的地測試API概覽
+# 流媒体目标测试API概述
 
-在Destination SDK過程中，Adobe會提供開發人員工具，協助您設定和測試目的地。 此頁面說明如何測試目的地組態。 如需如何建立訊息轉換範本的詳細資訊，請閱讀 [建立及測試訊息轉換範本](../../testing-api/streaming-destinations/create-template.md).
+作为Destination SDK的一部分，Adobe提供开发人员工具来帮助您配置和测试目标。 本页介绍如何测试目标配置。 有关如何创建消息转换模板的信息，请阅读 [创建和测试消息转换模板](../../testing-api/streaming-destinations/create-template.md).
 
-至 **測試您的目的地是否正確設定，並驗證流向您設定之目的地的資料流的完整性**，使用 *目的地測試工具*. 使用此工具，您可以傳送訊息至REST API端點以測試目的地設定。
+至 **测试目标是否正确配置，并验证流向已配置目标的数据流的完整性**，使用 *目标测试工具*. 使用此工具，您可以通过向REST API端点发送消息来测试目标配置。
 
-以下說明測試您的目的地如何符合 [目的地設定工作流程](../../guides/configure-destination-instructions.md) Destination SDK：
+下图说明了测试您的目标如何适应 [目标配置工作流](../../guides/configure-destination-instructions.md) Destination SDK：
 
-![目的地測試步驟適用於目的地設定工作流程的圖形](../../assets/testing-api/test-destination-step.png)
+![说明目标测试步骤在目标配置工作流程中的位置](../../assets/testing-api/test-destination-step.png)
 
-## 目的地測試工具 — 用途和先決條件 {#destination-testing-tool}
+## 目标测试工具 — 用途和先决条件 {#destination-testing-tool}
 
-使用目的地測試工具，透過傳送訊息至您在中提供的合作夥伴端點來測試您的目的地設定。 [伺服器設定](../../authoring-api/destination-server/create-destination-server.md).
+使用目标测试工具，通过向中提供的合作伙伴端点发送消息来测试目标配置。 [服务器配置](../../authoring-api/destination-server/create-destination-server.md).
 
-在使用工具之前，請確定：
-* 請依照以下說明的步驟設定您的目的地： [目的地設定工作流程](../../authoring-api/destination-configuration/create-destination-configuration.md) 和
-* 建立與目的地的連線，如所述 [如何取得目的地執行個體ID](../../testing-api/streaming-destinations/destination-testing-api.md#get-destination-instance-id).
+在使用工具之前，请确保：
+* 按照中概述的步骤配置目标 [目标配置工作流](../../authoring-api/destination-configuration/create-destination-configuration.md) 和
+* 建立与目标的连接，如中所述 [如何获取目标实例ID](../../testing-api/streaming-destinations/destination-testing-api.md#get-destination-instance-id).
 
-使用此工具，在設定目的地後，您可以：
-* 測試您的目的地是否已正確設定；
-* 驗證資料流至您設定之目的地的完整性。
+使用此工具，在配置目标后，您可以：
+* 测试目标配置是否正确；
+* 验证流向您配置的目标的数据流的完整性。
 
-### 使用方式 {#how-to-use}
-
->[!NOTE]
->
->如需完整的API參考檔案，請閱讀 [目的地測試API操作](../../testing-api/streaming-destinations/destination-testing-api.md).
-
-您可以呼叫目的地測試API端點，並在請求中新增或不新增設定檔。
-
-如果您未在請求中新增任何設定檔，Adobe會在內部為您產生這些設定檔，並將其新增至請求。 如果要產生設定檔以在此請求中使用，請參閱 [範例設定檔產生API參考](../../testing-api/streaming-destinations/sample-profile-generation-api.md). 您需要根據來源XDM結構描述產生設定檔，如 [API參考](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema). 請注意，來源結構描述是 [聯合結構描述](../../../../profile/ui/union-schema.md) 沙箱的使用者名稱。
-
-回應包含目的地請求處理的結果。 請求包含三個主要區段：
-* 由Adobe為目的地產生的請求。
-* 從您的目的地收到的回應。
-* 請求中傳送的設定檔清單，無論設定檔是 [由您在請求中新增](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)，或由Adobe產生，如果 [目的地測試請求的主體是空的](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles).
+### 使用方法 {#how-to-use}
 
 >[!NOTE]
 >
->Adobe可產生多個請求和回應配對。 例如，如果您傳送10個設定檔至某個目的地，而該目的地具有 `maxUsersPerRequest` 值為7，則會有一個具有7個設定檔的請求，以及另一個具有3個設定檔的請求。
+>有关完整的API参考文档，请阅读 [目标测试API操作](../../testing-api/streaming-destinations/destination-testing-api.md).
 
-**內文中具有設定檔引數的範例請求**
+您可以调用目标测试API端点，可以在请求中添加或不添加配置文件。
+
+如果您未在请求中添加任何配置文件，Adobe将在内部为您生成这些配置文件，并将它们添加到请求中。 如果要生成要在此请求中使用的配置文件，请参阅 [示例配置文件生成API参考](../../testing-api/streaming-destinations/sample-profile-generation-api.md). 您需要根据源XDM架构生成配置文件，如 [API参考](../../testing-api/streaming-destinations/sample-profile-generation-api.md#generate-sample-profiles-source-schema). 请注意，源架构是 [合并模式](../../../../profile/ui/union-schema.md) 沙盒的标头。
+
+响应包含目标请求处理的结果。 该请求包括三个主要部分：
+* Adobe为目标生成的请求。
+* 从目标收到的响应。
+* 请求中发送的用户档案列表，无论这些用户档案是 [由您在请求中添加](../../testing-api/streaming-destinations/destination-testing-api.md#test-with-added-profiles)，或由Adobe生成，如果 [目标测试请求的正文为空](../../testing-api/streaming-destinations/destination-testing-api.md#test-without-adding-profiles).
+
+>[!NOTE]
+>
+>Adobe可以生成多个请求和响应对。 例如，如果向具有 `maxUsersPerRequest` 值为7，则将有一个包含7个配置文件的请求和另一个包含3个配置文件的请求。
+
+**正文中包含配置文件参数的示例请求**
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/3e0ac39c-ef14-4101-9fd9-cf0909814510' \
@@ -108,7 +108,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }'
 ```
 
-**內文中沒有設定檔引數的範例請求**
+**正文中不含配置文件参数的示例请求**
 
 
 ```shell
@@ -124,7 +124,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 **示例响应**
 
-請注意， `results.httpCalls` 引數專屬於您的REST API。
+请注意， `results.httpCalls` 参数特定于您的REST API。
 
 ```json
 {
@@ -228,8 +228,8 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }
 ```
 
-有關請求和回應引數的說明，請參閱 [目的地測試API操作](../../testing-api/streaming-destinations/destination-testing-api.md).
+有关请求和响应参数的说明，请参阅 [目标测试API操作](../../testing-api/streaming-destinations/destination-testing-api.md).
 
 ## 后续步骤
 
-測試目的地並確認已正確設定後，請使用 [目的地發佈API](../../publishing-api/create-publishing-request.md) 以將您的設定提交至Adobe以供檢閱。
+测试目标并确认正确配置后，请使用 [目标发布API](../../publishing-api/create-publishing-request.md) 以将您的配置提交到Adobe以供审查。

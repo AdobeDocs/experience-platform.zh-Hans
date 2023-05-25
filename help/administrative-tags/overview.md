@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；統一標籤；標籤；
-title: 統一標籤總覽（測試版）
-description: 本檔案提供Adobe Experience Platform中統一標籤的相關資訊
+keywords: Experience Platform；主页；热门主题；统一标签；标签；
+title: 统一标记概述（测试版）
+description: 本文档提供了有关Adobe Experience Platform中统一标记的信息
 exl-id: a19e37c3-697a-4000-9cb8-d67478b47dc6
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -10,56 +10,56 @@ ht-degree: 1%
 
 ---
 
-# 統一標籤總覽（測試版）
+# 统一标记概述（测试版）
 
 >[!IMPORTANT]
 >
->統一標籤為測試版。 如果您想要留下意見回饋，請選取「標籤管理」頁面頂端的按鈕以提出意見。
+>统一标记处于测试阶段。 如果您想提供反馈，请选择“标记管理”页面顶部的按钮。
 
-標籤是Adobe Experience Platform的一項功能，可讓管理員管理中繼資料分類法，以便分類業務物件，以便於探索和分類。 標籤是中繼資料，可視為可附加至區段、資料集、歷程或其他物件的關鍵字，以啟用搜尋來尋找該物件和相關物件。 標籤分為兩種型別：已分類和未分類。
+标记是Adobe Experience Platform的一项功能，它使管理员能够管理元数据分类，以便对业务对象进行分类，从而更便于发现和分类。 标记是元数据，可以将其视为可附加到区段、数据集、历程或其他对象的关键字，以便搜索功能查找该对象和相关对象。 标记分为两种类型：已分类和未分类。
 
-為了提供更多上下文並定義標籤的目的，類別會將標籤組織成有用的集合。 管理員會定義哪些分類標籤可供使用者新增至物件。 不包含類別的新標籤也可以在套用標籤的工作流程中內聯建立。 這些標籤會顯示在標籤詳細目錄中未分類的部分中。 管理員和使用者均可套用標籤，無論其建立者為何。 指派給物件、搜尋或篩選時，所有型別的標籤都可供選取。
+为了提供更多上下文并定义标记的目的，类别将标记组织成有用的集。 管理员定义哪些分类标记可供用户添加到对象中。 此外，还可以在应用标记的工作流中内联创建不包含类别的新标记。 这些标记将显示在标记清单的未分类部分中。 标记可以由管理员和用户应用，无论其创建者如何。 在指定给对象、搜索或筛选时，所有类型的标记都可供选择。
 
-## 標籤術語
+## 标记术语
 
-標籤涉及下列元件：
+标记涉及以下组件：
 
 | 术语 | 定义 |
 | --- | --- |
-| 已封存 | 標籤的狀態，會保留目前與物件的關聯，但限制標籤無法套用至其他物件。  封存的標籤會隱藏在標籤選擇器中。 |
-| 对象 | 可套用標籤的Experience Cloud專案。  範例：區段、歷程、資料集。 |
-| 标记 | 標籤是中繼資料，可視為可附加至區段、資料集、歷程或其他物件的關鍵字，以啟用搜尋來尋找該物件和相關物件。 |
-| 標籤類別 | 「標籤類別」會將標籤分組為有意義的集合，以提供更大的內容或說明標籤的用途。  管理員管理標籤類別和類別中的標籤。 |
-| 未分類的標籤 | 在套用標籤的位置內嵌建立的新標籤。 這些標籤可由任何使用者建立和套用，但它們未繫結至類別。  管理員可以將這些標籤移動到類別，以便與其他類似標籤保持一致。 |
+| 已存档 | 标记的状态，它保持当前与对象的关联，但限制标记无法应用于其他对象。  已存档的标记在标记选取器中处于隐藏状态。 |
+| 对象 | 可应用标记的Experience Cloud项目。  示例：区段、历程、数据集。 |
+| 标记 | 标记是元数据，可视为可附加到区段、数据集、历程或其他对象的关键字，以便搜索功能查找该对象和相关对象。 |
+| 标记类别 | 标记类别可将标记分组为有意义的集，以提供更大的上下文或描述标记的目的。  管理员管理标记类别和类别中的标记。 |
+| 未分类的标记 | 在已应用标记的内联中创建的新标记。 这些标记可由任何用户创建和应用，但它们未绑定到类别。  管理员可以将这些标记移动到某个类别，以便与其他类似标记保持一致。 |
 
-## 標籤詳細目錄
+## 标记库存
 
-標籤類別和使用標籤庫存的標籤管理可在Experience Platform和Journey Optimizer導覽中取得。 庫存中標籤變更會反映在所有支援標籤的物件中。 所有使用者都能夠存取和瀏覽標籤詳細目錄，但標籤管理僅限於系統和產品管理員。
+在Experience Platform和Journey Optimizer导航中，可以使用标记清单进行标记类别和标记管理。 对清单中的标记所做的更改会反映在支持标记的所有对象中。 所有用户都能够访问和浏览标记清单，但标记管理仅限于系统和产品管理员。
 
-標籤詳細目錄有三層階層，可讓使用者管理標籤類別、類別內的標籤及個別標籤。 管理個別標籤時，使用者可以檢視並導覽至目前套用該標籤的任何物件。
+标记清单具有三个层级，允许用户管理标记类别、类别中的标记和单个标记。 管理单个标记时，用户可以查看和导航到当前应用该标记的任何对象。
 
-### 標籤類別
+### 标记类别
 
-類別會將標籤分組為有意義的集合，以提供更大的上下文或說明標籤的用途。 在任何具有類別的標籤上，標籤名稱前面都會是類別名稱，後面接著冒號。
+类别可将标记分组为有意义的集，以提供更大的上下文或描述标记的目的。 在包含类别的任何标记上，类别名称前跟一个冒号。
 
-使用標籤類別時，可能會執行下列動作：
+使用标记类别时，可以执行以下操作：
 
-* [建立標籤類別](./ui/tags-categories.md#create-tag-category)
-* [編輯標籤類別](./ui/tags-categories.md#edit-tag-category-edit-tag-category)
-* [刪除標籤類別](./ui/tags-categories.md#delete-tag-category-delete-tag-category)
+* [创建标记类别](./ui/tags-categories.md#create-tag-category)
+* [编辑标记类别](./ui/tags-categories.md#edit-tag-category-edit-tag-category)
+* [删除标记类别](./ui/tags-categories.md#delete-tag-category-delete-tag-category)
 
-### 管理類別中的標籤
+### 管理类别中的标记
 
 >[!NOTE]
 >
->若要管理Experience Cloud的標籤，您必須是貴組織擁有Experience Cloud訂閱的Adobe Experience Platform的系統管理員或產品管理員。
+>要管理Experience Cloud的标记，您必须是贵组织的系统管理员或Adobe Experience Platform产品管理员，贵组织已订阅Experience Cloud。
 
-在類別中（或預設的「未分類」群組），您可以建立和管理標籤。 管理標籤時，可能會執行下列動作：
+在类别（或默认的“未分类”组）中，您可以创建和管理标记。 可在管理标记时执行以下操作：
 
 * [创建标记](./ui/managing-tags.md#create-a-tag-create-tag)
-* [編輯標籤](./ui/managing-tags.md#edit-a-tag-edit-tag)
-* [在類別之間移動標籤](./ui/managing-tags.md#move-a-tag-between-categories-move-tag)
-* [封存標籤](./ui/managing-tags.md#archive-a-tag-archive-tag)
-* [還原已封存的標籤](./ui/managing-tags.md#restore-an-archived-tag-restore-archived-tag)
+* [编辑标记](./ui/managing-tags.md#edit-a-tag-edit-tag)
+* [在类别之间移动标记](./ui/managing-tags.md#move-a-tag-between-categories-move-tag)
+* [将标记存档](./ui/managing-tags.md#archive-a-tag-archive-tag)
+* [恢复已存档的标记](./ui/managing-tags.md#restore-an-archived-tag-restore-archived-tag)
 * [删除标记](./ui/managing-tags.md#delete-a-tag-delete-tag)
-* [檢視標籤的物件](./ui/managing-tags.md#viewing-tagged-objects-view-tagged)
+* [查看标记的对象](./ui/managing-tags.md#viewing-tagged-objects-view-tagged)

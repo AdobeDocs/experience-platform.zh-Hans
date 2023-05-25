@@ -1,7 +1,7 @@
 ---
-keywords: Azure事件中樞目的地；azure事件中樞；azure eventhub
-title: Azure事件中樞連線
-description: 建立與您的的即時輸出連線 [!DNL Azure Event Hubs] 從Experience Platform串流資料的儲存空間。
+keywords: Azure事件中心目标；Azure事件中心；Azure事件
+title: Azure事件中心连接
+description: 创建到 [!DNL Azure Event Hubs] 存储以从Experience Platform流式传输数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
 source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
 workflow-type: tm+mt
@@ -10,77 +10,77 @@ ht-degree: 4%
 
 ---
 
-# [!DNL Azure Event Hubs] 連線
+# [!DNL Azure Event Hubs] 连接
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
-> 此目的地僅適用於 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客戶。
+> 此目标仅适用于 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
-[!DNL Azure Event Hubs] 是大型資料串流平台和事件擷取服務。 其每秒可接收及處理數百萬個事件。 傳送至事件中樞的資料可以使用任何即時分析提供者或批次/儲存配接卡進行轉換和儲存。
+[!DNL Azure Event Hubs] 是一个大数据流式传输平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 发送到事件中心的数据可以使用任何实时分析提供程序或批处理/存储适配器进行转换和存储。
 
-您可以建立與的即時輸出連線 [!DNL Azure Event Hubs] 從Adobe Experience Platform串流資料的儲存空間。
+您可以创建到 [!DNL Azure Event Hubs] 用于从Adobe Experience Platform流式传输数据的存储。
 
-* 如需有關的詳細資訊 [!DNL Azure Event Hubs]，請參閱 [Microsoft檔案](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-* 若要連線到 [!DNL Azure Event Hubs] 以程式設計方式，請參閱 [串流目的地API教學課程](../../api/streaming-destinations.md).
-* 若要連線到 [!DNL Azure Event Hubs] 使用Platform使用者介面，請參閱下列章節。
+* 有关详情，请参阅 [!DNL Azure Event Hubs]，请参见 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
+* 要连接到 [!DNL Azure Event Hubs] 以编程方式查看 [流目标API教程](../../api/streaming-destinations.md).
+* 要连接到 [!DNL Azure Event Hubs] 使用Platform用户界面，请参阅以下部分。
 
 ![UI中的AWS Kinesis](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
 
 ## 用例 {#use-cases}
 
-使用串流目的地，例如 [!DNL Azure Event Hubs]，即可輕鬆將高價值分段事件和相關設定檔屬性饋送至您選擇的系統。
+通过使用流式目标，例如 [!DNL Azure Event Hubs]，您可以轻松地将高价值分段事件和关联的配置文件属性馈送到您选择的系统。
 
-例如，潛在客戶下載了白皮書，將其歸類為「高轉換傾向」區段。 將潛在客戶所屬的區段對應至 [!DNL Azure Event Hubs] 目的地，您會在以下位置收到此事件： [!DNL Azure Event Hubs]. 在這裡，您可以採用DIY（自己動手）方法，並在事件上方描述商業邏輯，因為您認為這種方式最適合您的企業IT系統。
+例如，潜在客户下载了一份白皮书，将其归类为“高转化倾向”区段。 通过将潜在客户所属的区段映射到 [!DNL Azure Event Hubs] 目标，您将在以下位置收到此事件： [!DNL Azure Event Hubs]. 在这里，您可以采用DIY（自己动手）方法并在事件之上描述业务逻辑，因为您认为这种方法最适合您的企业IT系统。
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段的所有成員，以及所需的結構描述欄位（例如：電子郵件地址、電話號碼、姓氏），如&lt;客戶名稱>的「選取設定檔屬性」畫面中所選。 [目的地啟用工作流程](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
-## IP位址允許清單 {#ip-address-allowlist}
+## 允许列表 IP地址 {#ip-address-allowlist}
 
-為了滿足客戶的安全性和合規性要求，Experience Platform提供您可以允許清單中的靜態IP [!DNL Azure Event Hubs] 目的地。 請參閱 [串流目的地的IP位址允許清單](/help/destinations/catalog/streaming/ip-address-allow-list.md) 以取得允許清單的IP完整清單。
+为了满足客户的安全性和法规遵从性要求， Experience Platform提供了一个您可以为其允许列表的静态IP列表， [!DNL Azure Event Hubs] 目标。 请参阅 [流目标的IP地址允许列表](/help/destinations/catalog/streaming/ip-address-allow-list.md) 要允许列表的IP的完整列表。
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 連線至此目的地時，您必須提供下列資訊：
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 连接到此目标时，必须提供以下信息：
 
-### 驗證資訊 {#authentication-information}
+### 身份验证信息 {#authentication-information}
 
-#### 標準驗證 {#standard-authentication}
+#### 标准身份验证 {#standard-authentication}
 
-![顯示Azure事件中樞標準驗證詳細資料已完成欄位的UI畫面影像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-standard-authentication.png)
+![显示Azure事件中心标准身份验证详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-standard-authentication.png)
 
-如果您選取 **[!UICONTROL 標準驗證]** 輸入以連線至您的HTTP端點，輸入以下欄位並選取 **[!UICONTROL 連線到目的地]**：
+如果您选择 **[!UICONTROL 标准身份验证]** 键入以连接到您的HTTP端点，输入以下字段并选择 **[!UICONTROL 连接到目标]**：
 
-* **[!UICONTROL SAS金鑰名稱]**：授權規則的名稱，也稱為SAS金鑰名稱。
-* **[!UICONTROL SAS金鑰]**：事件中樞名稱空間的主要索引鍵。 此 `sasPolicy` 此 `sasKey` 對應的必須具有 **管理** 為填入「事件中樞」清單而設定的許可權。 瞭解如何驗證 [!DNL Azure Event Hubs] 使用SAS金鑰 [Microsoft檔案](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* **[!UICONTROL 名稱空間]**：填入 [!DNL Azure Event Hubs] 名稱空間。 瞭解 [!DNL Azure Event Hubs] 中的名稱空間 [Microsoft檔案](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+* **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
+* **[!UICONTROL SAS密钥]**：事件中心命名空间的主键。 此 `sasPolicy` 该 `sasKey` 对应的必须具有 **管理** 为填充事件中心列表而配置的权限。 了解如何向进行身份验证 [!DNL Azure Event Hubs] 使用SAS密钥 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* **[!UICONTROL 命名空间]**：填写您的 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 中的命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
-#### 共用存取權簽章(SAS)驗證 {#sas-authentication}
+#### 共享访问签名(SAS)身份验证 {#sas-authentication}
 
-![顯示Azure事件中樞標準驗證詳細資料已完成欄位的UI畫面影像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
+![显示Azure事件中心标准身份验证详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
 
-如果您選取 **[!UICONTROL 標準驗證]** 輸入以連線至您的HTTP端點，輸入以下欄位並選取 **[!UICONTROL 連線到目的地]**：
+如果您选择 **[!UICONTROL 标准身份验证]** 键入以连接到您的HTTP端点，输入以下字段并选择 **[!UICONTROL 连接到目标]**：
 
-* **[!UICONTROL SAS金鑰名稱]**：授權規則的名稱，也稱為SAS金鑰名稱。
-* **[!UICONTROL SAS金鑰]**：事件中樞名稱空間的主要索引鍵。 此 `sasPolicy` 此 `sasKey` 對應的必須具有 **管理** 為填入「事件中樞」清單而設定的許可權。 瞭解如何驗證 [!DNL Azure Event Hubs] 使用SAS金鑰 [Microsoft檔案](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* **[!UICONTROL 名稱空間]**：填入 [!DNL Azure Event Hubs] 名稱空間。 瞭解 [!DNL Azure Event Hubs] 中的名稱空間 [Microsoft檔案](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
-* **[!UICONTROL 事件中心名稱]**：填入 [!DNL Azure Event Hub] 名稱。 瞭解 [!DNL Azure Event Hubs] 中的名稱 [Microsoft檔案](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub).
+* **[!UICONTROL SAS密钥名称]**：授权规则的名称，也称为SAS密钥名称。
+* **[!UICONTROL SAS密钥]**：事件中心命名空间的主键。 此 `sasPolicy` 该 `sasKey` 对应的必须具有 **管理** 为填充事件中心列表而配置的权限。 了解如何向进行身份验证 [!DNL Azure Event Hubs] 使用SAS密钥 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* **[!UICONTROL 命名空间]**：填写您的 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 中的命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+* **[!UICONTROL 事件中心名称]**：填写您的 [!DNL Azure Event Hub] 名称。 了解 [!DNL Azure Event Hubs] 中的名称 [Microsoft文档](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub).
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_eventhubs_includesegmentnames"
@@ -92,67 +92,67 @@ ht-degree: 4%
 >title="包括区段时间戳"
 >abstract="如果您希望数据导出包括区段创建时间和更新时间的 Unix 时间戳，以及区段映射到用于激活的目标时的 Unix 时间戳，请进行切换。在选中此选项后查看数据导出示例的文档。"
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![顯示Azure事件中樞目的地詳細資訊的已完成欄位的UI畫面影像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-destination-details.png)
+![显示Azure事件中心目标详细信息的已完成字段的用户界面屏幕图像](../../assets/catalog/cloud-storage/event-hubs/event-hubs-destination-details.png)
 
-* **[!UICONTROL 名稱]**：填寫與的連線名稱 [!DNL Azure Event Hubs].
-* **[!UICONTROL 說明]**：提供連線的說明。  範例：「優質層級客戶」、「對風箏衝浪感興趣的客戶」。
-* **[!UICONTROL eventHubName]**：為您的資料流提供名稱 [!DNL Azure Event Hubs] 目的地。
-* **[!UICONTROL 包含區段名稱]**：如果您希望資料匯出包含要匯出的區段名稱，請切換按鈕。 如需選取此選項後匯出資料的範例，請參閱 [匯出的資料](#exported-data) 區段下方。
-* **[!UICONTROL 包含區段時間戳記]**：如果您希望資料匯出包含建立和更新區段時的UNIX時間戳記，以及區段對應至要啟用的目的地時的UNIX時間戳記，請切換此設定。 如需選取此選項後匯出資料的範例，請參閱 [匯出的資料](#exported-data) 區段下方。
+* **[!UICONTROL 名称]**：填写与的连接名称 [!DNL Azure Event Hubs].
+* **[!UICONTROL 描述]**：提供连接的描述。  示例：“高级层客户”、“对风筝冲浪感兴趣的客户”。
+* **[!UICONTROL eventHubName]**：为您的流提供名称 [!DNL Azure Event Hubs] 目标。
+* **[!UICONTROL 包括区段名称]**：如果希望数据导出包含要导出的区段名称，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
+* **[!UICONTROL 包括区段时间戳]**：如果希望数据导出包括创建和更新区段时的UNIX时间戳，以及将区段映射到目标以供激活时的UNIX时间戳，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-另請參閱 [將受眾資料啟用至串流設定檔匯出目的地](../../ui/activate-streaming-profile-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+参见 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
-## 設定檔匯出行為 {#profile-export-behavior}
+## 配置文件导出行为 {#profile-export-behavior}
 
-Experience Platform會最佳化您對的設定檔匯出行為 [!DNL Azure Event Hubs] 目的地，僅在符合區段資格或其他重大事件後發生設定檔的相關更新時，將資料匯出至您的目的地。 設定檔會在下列情況下匯出至您的目的地：
+Experience Platform会优化将配置文件导出到 [!DNL Azure Event Hubs] 目标，用于在区段鉴别或其他重要事件后对配置文件进行相关更新时，仅将数据导出到您的目标。 在以下情况下，会将配置文件导出到您的目标：
 
-* 設定檔更新是由對應至目的地的至少一個區段的區段成員資格變更所決定。 例如，設定檔已符合其中一個對應至目的地的區段的資格，或已退出其中一個對應至目的地的區段。
-* 設定檔更新是由 [身分對應](/help/xdm/field-groups/profile/identitymap.md). 例如，已符合對應至目的地其中一個區段資格的設定檔，已在身分對應屬性中新增身分。
-* 設定檔更新是由至少一個對應至目的地的屬性變更所決定。 例如，會將對應步驟中對應至目的地的其中一個屬性新增至設定檔。
+* 配置文件更新由映射到目标的至少一个区段的区段成员资格更改确定。 例如，配置文件已符合映射到目标的其中一个区段的条件，或已退出映射到目标的其中一个区段。
+* 配置文件更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已经符合映射到目标的其中一个区段资格的配置文件，已在标识映射属性中添加了一个新标识。
+* 配置文件更新由映射到目标的至少一个属性的更改确定。 例如，会将映射步骤中映射到目标的某个属性添加到配置文件中。
 
-在上述所有情況下，只會將已發生相關更新的設定檔匯出至您的目的地。 例如，如果對應至目的地流程的一個區段有一百個成員，且有五個新設定檔符合區段的資格，則匯出至您的目的地的程式為遞增式，且僅包含五個新設定檔。
+在上述所有情况下，只会将已发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的区段具有一百个成员，并且有五个新用户档案符合该区段的条件，则导出到目标的操作将以增量方式进行，并且只包含五个新用户档案。
 
-請注意，無論變更位於何處，所有對映屬性都會匯出為設定檔。 因此，在上述範例中，即使屬性本身並未變更，也將匯出這五個新設定檔的所有對應屬性。
+请注意，无论更改发生在何处，都将为配置文件导出所有映射的属性。 因此，在上面的示例中，将导出这五个新配置文件的所有映射属性，即使属性本身未发生更改也是如此。
 
-### 決定資料匯出的因素，以及匯出中包括的因素 {#what-determines-export-what-is-included}
+### 决定数据导出的因素以及导出中包含的内容 {#what-determines-export-what-is-included}
 
-針對指定設定檔匯出的資料，請務必瞭解以下兩個不同的概念 *決定資料匯出至您的 [!DNL Azure Event Hubs] 目的地* 和 *匯出中包含哪些資料*.
+对于为给定用户档案导出的数据，了解以下两个不同的概念很重要： *决定数据导出到您的 [!DNL Azure Event Hubs] 目标* 和 *哪些数据包含在导出中*.
 
-| 決定目的地匯出的因素 | 目的地匯出包含的內容 |
+| 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>對應的屬性和區段可作為目的地匯出的提示。 這表示如果任何對應的區段變更狀態(從 `null` 至 `realized` 或從 `realized` 至 `exiting`)或更新任何對應的屬性，就會開始匯出目的地。</li><li>由於身分目前無法對應至 [!DNL Azure Event Hubs] 目的地、指定設定檔上任何身分的變更也會決定目的地匯出。</li><li>屬性的變更定義為屬性上的任何更新，無論其是否為相同的值。 這表示即使值本身並未變更，屬性上的覆寫也會被視為變更。</li></ul> | <ul><li>此 `segmentMembership` 物件包含啟動資料流中對應的區段，在資格或區段退出事件後，設定檔的狀態已針對該區段變更。 請注意，如果設定檔符合資格的其他未對應區段屬於相同區段，則這些區段可以屬於目標匯出的一部分 [合併原則](/help/profile/merge-policies/overview.md) 區段在啟動資料流中對應時相同。 </li><li>中的所有身分 `identityMap` 也包括物件(Experience Platform目前不支援中的身分對應 [!DNL Azure Event Hubs] destination)。</li><li>目的地匯出只會包含對應的屬性。</li></ul> |
+| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果任何映射的区段更改了状态(从 `null` 到 `realized` 或从 `realized` 到 `exiting`)或者更新任何映射的属性，则启动目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标，给定配置文件上任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论它是不是同一个值。 这意味着即使值本身未发生更改，对属性的覆盖也会被视为更改。</li></ul> | <ul><li>此 `segmentMembership` 对象包括激活数据流中映射的区段，在发生资格或区段退出事件后，用户档案的状态已发生更改。 请注意，配置文件符合条件的其他未映射区段也可以作为目标导出的一部分（如果这些区段属于同一个） [合并策略](/help/profile/merge-policies/overview.md) 区段在激活数据流中映射时相同。 </li><li>中的所有标识 `identityMap` 对象也包含在内(Experience Platform当前不支持中的标识映射) [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中仅包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
-例如，將此資料流視為 [!DNL Azure Event Hubs] 在資料流中選取三個區段，且四個屬性對應至目的地的目的地。
+例如，将此数据流视为 [!DNL Azure Event Hubs] 目标，其中在数据流中选择三个区段，并且四个属性映射到目标。
 
-![Amazon Kinesis目的地資料流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+![Amazon Kinesis目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-個人資料匯出至目的地可由符合或退出其中一個的個人資料決定。 *三個對應的區段*. 不過，在資料匯出中，在 `segmentMembership` 物件(請參閱 [匯出的資料](#exported-data) 區段)，如果該特定設定檔為其他未對應區段的成員，且這些區段與觸發匯出的區段共用相同的合併原則，則可能會顯示其他未對應區段。 如果設定檔符合 **擁有DeLorean Cars的客戶** 區段，但同時也是 **觀看「回到未來」** 影片和 **科幻愛好者** 區段，則其他這兩個區段也會出現在 `segmentMembership` 資料匯出的物件，即使這些物件未在資料流中對映，只要它們與共用相同的合併原則 **擁有DeLorean Cars的客戶** 區段。
+导出到目标的配置文件可由符合或退出其中一个配置文件的配置文件来确定 *三个映射区段*. 但是，在数据导出中，在 `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 如果特定配置文件是其他未映射区段的成员，并且这些区段与触发导出的区段共享相同的合并策略，则可能会显示其他未映射区段。 如果配置文件符合 **使用德洛雷亚汽车的客户** 区段，但同时也是 **观看了《回到未来》** 电影和 **科幻迷们** 区段，则其他这两个区段也将显示在 `segmentMembership` 数据导出对象，即使这些对象未在数据流中映射，只要它们与共享相同的合并策略 **使用德洛雷亚汽车的客户** 区段。
 
-從設定檔屬性的角度來看，對上述四個對應屬性所做的任何變更都將決定目的地匯出，而且設定檔上存在的四個對應屬性中的任何一個都會出現在資料匯出中。
+从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个都将出现在数据导出中。
 
-## 歷史資料回填 {#historical-data-backfill}
+## 历史数据回填 {#historical-data-backfill}
 
-當您新增區段至現有目的地，或當您建立新目的地並將區段對應至該目的地時，Experience Platform會將歷史區段資格資料匯出至該目的地。 符合區段資格的設定檔 *早於* 新增至目的地的區段會在約一小時內匯出至目的地。
+向现有目标添加新区段时，或者创建新目标并将区段映射到该目标时，Experience Platform会将历史区段资格数据导出到该目标。 符合区段资格的用户档案 *早于* 添加到目标的区段会在大约1小时内导出到目标。
 
-## 匯出的資料 {#exported-data}
+## 导出的数据 {#exported-data}
 
-您的匯出 [!DNL Experience Platform] 資料進入您的 [!DNL Azure Event Hubs] JSON格式的目標。 例如，下列匯出包含符合特定區段資格的設定檔、是另一個兩個區段的成員，且已退出另一個區段。 匯出也包含設定檔屬性的名字、姓氏、出生日期和個人電子郵件地址。 此設定檔的身分識別為ECID和電子郵件。
+已导出 [!DNL Experience Platform] 数据登陆您的 [!DNL Azure Event Hubs] JSON格式的目标。 例如，以下导出包含一个符合某个区段资格条件的配置文件，该配置文件是另一个区段的成员，并且退出另一个区段。 导出还包括配置文件属性的名字、姓氏、出生日期和个人电子邮件地址。 此配置文件的身份是ECID和电子邮件。
 
 ```json
 {
@@ -207,9 +207,9 @@ Experience Platform會最佳化您對的設定檔匯出行為 [!DNL Azure Event 
 }
 ```
 
-以下為更多匯出資料範例，具體取決於您在連線目的地流程中選取的UI設定 **[!UICONTROL 包含區段名稱]** 和 **[!UICONTROL 包含區段時間戳記]** 選項：
+下面是导出数据的更多示例，具体取决于您在连接目标流中为选择的UI设置 **[!UICONTROL 包括区段名称]** 和 **[!UICONTROL 包括区段时间戳]** 选项：
 
-+++ 以下資料匯出範例包含 `segmentMembership` 區段
++++ 以下数据导出示例包括 `segmentMembership` 部分
 
 ```json
 "segmentMembership": {
@@ -229,7 +229,7 @@ Experience Platform會最佳化您對的設定檔匯出行為 [!DNL Azure Event 
 
 +++
 
-+++ 以下資料匯出範例包含 `segmentMembership` 區段
++++ 以下数据导出示例包括 `segmentMembership` 部分
 
 ```json
 "segmentMembership": {
@@ -248,15 +248,15 @@ Experience Platform會最佳化您對的設定檔匯出行為 [!DNL Azure Event 
 
 +++
 
-## 限制和重試原則 {#limits-retry-policy}
+## 限制和重试策略 {#limits-retry-policy}
 
-在95%的時間中，Experience Platform會嘗試為成功傳送的訊息提供少於10分鐘的輸送量延遲，每個資料流向HTTP目的地的每秒請求率少於10,000個。
+在95%的时间中，Experience Platform会尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流向HTTP目标的请求速率低于每秒10,000个请求。
 
-如果對您的HTTP API目的地的請求失敗，Experience Platform會儲存失敗的請求，並重試兩次以將請求傳送至您的端點。
+如果对HTTP API目标的请求失败，Experience Platform会存储失败的请求，并重试两次以将请求发送到您的端点。
 
 >[!MORELIKETHIS]
 >
->* [連線到Azure事件中樞並使用流程服務API啟用資料](../../api/streaming-destinations.md)
->* [AWS Kinesis目的地](./amazon-kinesis.md)
->* [目的地型別和類別](../../destination-types.md)
+>* [连接到Azure事件中心并使用流服务API激活数据](../../api/streaming-destinations.md)
+>* [AWS Kinesis目标](./amazon-kinesis.md)
+>* [目标类型和类别](../../destination-types.md)
 

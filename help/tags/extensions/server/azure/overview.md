@@ -1,6 +1,6 @@
 ---
-title: Microsoft Azure擴充功能概觀
-description: 瞭解Adobe Experience Platform中用於事件轉送的Microsoft Azure擴充功能。
+title: Microsoft Azure扩展概述
+description: 了解Adobe Experience Platform中用于事件转发的Microsoft Azure扩展。
 exl-id: 2337d99d-861e-44e7-94ed-ba21ef28d815
 last-substantial-update: 2022-11-23T00:00:00Z
 source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
@@ -10,77 +10,77 @@ ht-degree: 3%
 
 ---
 
-# [!DNL Microsoft Azure] 擴充功能概觀
+# [!DNL Microsoft Azure] 扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-在 [!DNL Microsoft Azure]， [[!DNL Event Hubs]](https://azure.microsoft.com/en-us/products/event-hubs/#overview) 是一種高度可擴充的即時資料匯入服務，可讓您處理和分析連線裝置和應用程式所產生的大量資料。 一旦資料收集到事件中樞中，就可以使用任何即時分析提供者或批次/儲存配接卡來轉換和儲存資料。
+In [!DNL Microsoft Azure]， [[!DNL Event Hubs]](https://azure.microsoft.com/en-us/products/event-hubs/#overview) 是一种高度可扩展的实时数据输入服务，允许您处理和分析由连接的设备和应用程序产生的海量数据。 将数据收集到事件中心后，可以使用任何实时Analytics提供程序或批处理/存储适配器转换和存储数据。
 
-此 [!DNL Microsoft Azure] [事件轉送](../../../ui/event-forwarding/overview.md) 擴充功能運用 [!DNL Event Hubs] 將事件從Adobe Experience Platform Edge Network傳送至 [!DNL Azure] 以進一步處理。 本指南說明如何安裝擴充功能，以及在事件轉送規則中運用其功能。
+此 [!DNL Microsoft Azure] [事件转发](../../../ui/event-forwarding/overview.md) 扩展利用 [!DNL Event Hubs] 将事件从Adobe Experience Platform Edge Network发送到 [!DNL Azure] 以进行进一步处理。 本指南介绍如何安装扩展并将其功能用于事件转发规则。
 
 ## 先决条件
 
-若要使用此擴充功能，您必須具備有效的 [!DNL Azure] 有權存取的帳戶 [!DNL Event Hubs]. 您也必須 [使用建立事件中樞 [!DNL Azure] 入口網站](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create) 然後依照下列步驟進行。
+要使用此扩展，您必须拥有有效的 [!DNL Azure] 有权访问的帐户 [!DNL Event Hubs]. 您还必须 [使用创建事件中心 [!DNL Azure] 门户](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create) ，然后执行以下步骤。
 
-## 安裝擴充功能
+## 安装扩展
 
-安裝Microsoft的方式 [!DNL Azure] 擴充功能，導覽至資料收集UI或Experience PlatformUI並選取 **[!UICONTROL 事件轉送]** 從左側導覽列中。 從這裡，選取要新增擴充功能的屬性，或改為建立新屬性。
+安装Microsoft [!DNL Azure] 扩展上，导航到数据收集UI或Experience PlatformUI并选择 **[!UICONTROL 事件转发]** 从左侧导航栏中。 在此处，选择要将扩展添加到的资产，或改为创建新资产。
 
-選取或建立所需的屬性後，選取 **[!UICONTROL 擴充功能]** 在左側導覽中，然後選取 **[!UICONTROL 目錄]** 標籤。 搜尋 [!UICONTROL Microsoft Azure] 卡片，然後選取 **[!UICONTROL 安裝]**.
+选择或创建所需的属性后，选择 **[!UICONTROL 扩展]** 在左侧导航中，然后选择 **[!UICONTROL 目录]** 选项卡。 搜索 [!UICONTROL Microsoft Azure] 信息卡，然后选择 **[!UICONTROL 安装]**.
 
-![此 [!UICONTROL 安裝] 按鈕已選取 [!UICONTROL Microsoft Azure] 資料收集UI中的擴充功能。](../../../images/extensions/server/azure/install.png)
+![此 [!UICONTROL 安装] 已为选择按钮 [!UICONTROL Microsoft Azure] 数据收集UI中的扩展。](../../../images/extensions/server/azure/install.png)
 
-由於擴充功能沒有任何設定屬性，因此會立即將其新增至已安裝的擴充功能清單中。 您現在可以開始使用 [!DNL Event Hub] 設定事件轉送規則時的動作型別。
+由于扩展没有任何配置属性，因此会立即将其添加到已安装的扩展列表中。 您现在可以开始使用 [!DNL Event Hub] 配置事件转发规则时的操作类型。
 
-## 設定事件轉送規則 {#rule}
+## 配置事件转发规则 {#rule}
 
-開始建立新的事件轉送規則，並視需要設定其條件。 選取規則的動作時，選取 **[!UICONTROL Microsoft Azure]** 針對擴充功能，然後選取「 」 **[!UICONTROL 傳送資料至事件中樞]** （動作型別）。
+开始创建新的事件转发规则，并根据需要配置其条件。 为规则选择操作时，选择 **[!UICONTROL Microsoft Azure]** 对于扩展，然后选择 **[!UICONTROL 将数据发送到事件中心]** （对于操作类型）。
 
-![此 [!UICONTROL 傳送資料至事件中樞] 為資料收集UI中的規則選取的動作型別。](../../../images/extensions/server/azure/select-action-type.png)
+![此 [!UICONTROL 将数据发送到事件中心] 为数据收集UI中的规则选择的操作类型。](../../../images/extensions/server/azure/select-action-type.png)
 
-右側面板會更新，以顯示資料傳送方式的設定選項。 具體而言，您必須指派 [資料元素](../../../ui/managing-resources/data-elements.md) 至各種屬性，這些屬性代表 [!DNL Event Hub] 設定。
+右侧面板将更新，以显示应如何发送数据的配置选项。 具体而言，您必须指定 [数据元素](../../../ui/managing-resources/data-elements.md) 到各种属性，这些属性表示 [!DNL Event Hub] 配置。
 
-![的設定選項 [!UICONTROL 傳送資料至事件中樞] UI中顯示的動作型別。](../../../images/extensions/server/azure/event-hub-details.png)
+![的配置选项 [!UICONTROL 将数据发送到事件中心] UI中显示的操作类型。](../../../images/extensions/server/azure/event-hub-details.png)
 
-**[!UICONTROL 事件中心詳細資訊]**
+**[!UICONTROL 事件中心详细信息]**
 
-| 輸入 | 描述 |
+| 输入 | 描述 |
 | --- | --- |
-| [!UICONTROL 命名空间] | 的名稱 [!DNL Event Hubs] 您建立於 [設定事件中樞](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace). |
-| [!UICONTROL 名称] | 事件中樞的名稱。 |
-| [!UICONTROL SAS授權規則名稱] | 您整個專案的共用存取授權規則名稱 [!DNL Event Hubs] 名稱空間或您要傳送資料的特定事件中樞執行個體。 請參閱附錄中關於 [取得SAS授權值](#sas) 以取得詳細資訊。 |
-| [!UICONTROL SAS存取金鑰] | 共用存取授權規則的主要金鑰，適用於您的整個系統 [!DNL Event Hubs] 名稱空間或您要傳送資料的特定事件中樞執行個體。 請參閱附錄中關於 [取得SAS授權值](#sas) 以取得詳細資訊。 |
-| [!UICONTROL 資料分割ID] | [!DNL Event Hubs] 可讓您 [將事件直接傳送至特定分割區](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/event-hubs/partitioning-in-event-hubs-and-kafka). 若要運用此功能，請提供您要接收事件的分割識別碼。 |
+| [!UICONTROL 命名空间] | 的名称 [!DNL Event Hubs] 您在以下情况下创建的命名空间： [设置事件中心](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace). |
+| [!UICONTROL 名称] | 事件中心的名称。 |
+| [!UICONTROL SAS授权规则名称] | 您整个应用程序的共享访问授权规则的名称 [!DNL Event Hubs] 命名空间或要将数据发送到的特定事件中心实例。 请参阅附录中关于 [获取SAS授权值](#sas) 了解更多信息。 |
+| [!UICONTROL SAS访问密钥] | 共享访问授权规则的主要密钥，用于您的整个 [!DNL Event Hubs] 命名空间或要将数据发送到的特定事件中心实例。 请参阅附录中关于 [获取SAS授权值](#sas) 了解更多信息。 |
+| [!UICONTROL 分区Id] | [!DNL Event Hubs] 允许您 [将事件直接发送到特定分区](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/event-hubs/partitioning-in-event-hubs-and-kafka). 要利用此功能，请提供要接收事件的分区的ID。 |
 
 {style="table-layout:auto"}
 
 **数据**
 
-| 輸入 | 描述 |
+| 输入 | 描述 |
 | --- | --- |
-| [!UICONTROL 裝載] | 此欄位包含將轉送至 [!DNL Event Hubs]. 資料可以是JSON物件、字串或資料元素。 |
+| [!UICONTROL 有效负荷] | 此字段包含将转发到的数据 [!DNL Event Hubs]. 数据可以是JSON对象、字符串或数据元素。 |
 
 {style="table-layout:auto"}
 
-完成後，選取 **[!UICONTROL 保留變更]** 以將動作新增至規則設定。 如果您對規則滿意，請選取 **[!UICONTROL 儲存至程式庫]**.
+完成后，选择 **[!UICONTROL 保留更改]** 以将操作添加到规则配置。 如果对规则满意，请选择 **[!UICONTROL 保存到库]**.
 
-最後，發佈新的事件轉送 [建置](../../../ui/publishing/builds.md) 以啟用程式庫的變更。
+最后，发布新的事件转发 [生成](../../../ui/publishing/builds.md) 以启用对库的更改。
 
 ## 后续步骤
 
-本指南說明如何將資料傳送至 [!DNL Event Hubs] 使用 [!DNL Microsoft Azure] 事件轉送擴充功能。 如需Experience Platform中事件轉送功能的詳細資訊，請參閱 [事件轉送概觀](../../../ui/event-forwarding/overview.md).
+本指南介绍了如何将数据发送到 [!DNL Event Hubs] 使用 [!DNL Microsoft Azure] 事件转发扩展。 有关Experience Platform中事件转发功能的详细信息，请参阅 [事件转发概述](../../../ui/event-forwarding/overview.md).
 
-## 附錄：取得SAS授權值 {#sas}
+## 附录：获取SAS授权值 {#sas}
 
-外部應用程式被授與存取權 [!DNL Event Hubs] 到 [共用存取權簽章(SAS)](https://learn.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature). 每個 [!DNL Event Hubs] 名稱空間和事件中心執行個體會在建立時自動指派預設SAS授權規則，但您也可以視需要為每個資源建立其他原則。
+外部应用程序被授予访问 [!DNL Event Hubs] 到 [共享访问签名(SAS)](https://learn.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature). 每个 [!DNL Event Hubs] 命名空间和事件中心实例在创建时自动分配了默认SAS授权规则，但您也可以根据需要为每个资源创建其他策略。
 
-時間 [設定事件轉送規則](#rule) 使用 [!DNL Azure] 擴充功能上，您必須提供管理名稱空間或特定事件中樞的授權規則的名稱和主索引鍵，才能傳送資料。 有關如何從取得這些值的詳細資訊 [!DNL Azure] 入口網站，請參閱 [!DNL Azure] 檔案：
+时间 [配置事件转发规则](#rule) 使用 [!DNL Azure] 扩展中，您必须提供用于管理要向其发送数据的命名空间或特定事件中心的授权规则的名称和主键。 有关如何从获取这些值的详细信息 [!DNL Azure] 门户，请参阅 [!DNL Azure] 文档：
 
-* [取得的SAS值 [!DNL Event Hubs] 名稱空間](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#connection-string-for-a-namespace)
-* [取得名稱空間中特定事件中樞的SAS值](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#connection-string-for-a-specific-event-hub-in-a-namespace)
+* [获取的SAS值 [!DNL Event Hubs] 命名空间](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#connection-string-for-a-namespace)
+* [获取命名空间中特定事件中心的SAS值](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string#connection-string-for-a-specific-event-hub-in-a-namespace)
 
-當您擁有必要的值後，授權規則名稱可以直接提供為設定輸入中的字串，或者您可以建立字串型別資料元素來參照它。 不過，主要金鑰必須先包含在事件轉送密碼中，才能在規則設定中提供該金鑰，以保護您的資料安全性。
+获得所需的值后，可以在配置输入中直接将授权规则名称作为字符串提供，也可以创建字符串类型数据元素来引用它。 但是，主密钥必须首先包含在事件转发密码中，然后才能在规则配置中提供，以保护您的数据安全。
 
-在事件轉送UI中， [建立新密碼](../../../ui/event-forwarding/secrets.md) 並選取 **[!UICONTROL Token]** 作為秘密型別。 對於權杖值本身，請提供您先前複製的主金鑰。 建立密碼後，使用型別建立資料元素 **[!UICONTROL 密碼]** 並選取 [!DNL Event Hubs] 密碼來自清單。 設定機密資料元素後，您就可以在 **[!UICONTROL SAS存取金鑰]** 欄位。
+在事件转发UI中， [创建新密码](../../../ui/event-forwarding/secrets.md) 并选择 **[!UICONTROL 令牌]** 作为机密类型。 对于令牌值本身，请提供您之前复制的主键。 创建密钥后，创建一个具有类型的数据元素 **[!UICONTROL 密码]** 并选择 [!DNL Event Hubs] 密语。 设置机密数据元素后，您可以在 **[!UICONTROL SAS访问密钥]** 字段。

@@ -1,6 +1,6 @@
 ---
-title: Experience Platform的主要使用案例
-description: 這部影片會概略介紹Adobe Experience Platform&mdash；即時客戶資料平台、客戶歷程情報、傳遞和跨頻道體驗，以及客戶體驗應用程式開發的四個主要使用案例。
+title: Experience Platform的主要用例
+description: 此视频概述了Adobe Experience Platform&mdash、实时客户数据平台、客户历程智能、交付和跨渠道体验以及客户体验应用程序开发的四个关键用例。
 kt: 4337
 audience: all
 doc-type: video
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 ---
 
-# Experience Platform的主要使用案例
+# Experience Platform的主要用例
 
-此影片提供Experience Platform的四個主要使用案例的概觀：
+此视频概述了Experience Platform的四个主要用例：
 
 * Adobe Real-time Customer Data Platform
-* Customer journey intelligence
-* 傳遞和跨頻道體驗
-* 客戶體驗應用程式開發
+* 客户历程情报
+* 交付和跨渠道体验
+* 客户体验应用程序开发
 
 >[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)

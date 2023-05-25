@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API
-title: 即時客戶個人檔案疑難排解指南
+keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
+title: 实时客户配置文件故障排除指南
 type: Documentation
-description: 本檔案提供即時客戶設定檔相關常見問題的解答，以及使用Adobe Experience Platform處理設定檔資料時常見錯誤的疑難排解指南。
+description: 本文档提供有关实时客户个人资料的常见问题解答，以及有关使用Adobe Experience Platform处理个人资料数据时常见错误的疑难解答指南。
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
@@ -11,55 +11,55 @@ ht-degree: 0%
 
 ---
 
-# 即時客戶個人檔案疑難排解指南
+# 实时客户资料故障排除指南
 
-本檔案提供有關即時客戶個人檔案的常見問題解答，以及常見錯誤的疑難排解指南。 如需Adobe Experience Platform中其他服務的相關問題和疑難排解，請參閱 [Experience Platform疑難排解指南](../landing/troubleshooting.md).
+本文档提供有关实时客户个人资料的常见问题解答，以及常见错误的故障排除指南。 有关Adobe Experience Platform中其他服务的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
 
-替換為 [!DNL Real-Time Customer Profile]，您可以透過合併來自多個管道（包括線上、離線、CRM和協力廠商）的資料，檢視每個個別客戶的整體檢視。 這可讓行銷人員跨多個管道為客戶推動協調、一致且相關的體驗。
+替换为 [!DNL Real-Time Customer Profile]，您可以通过组合来自多个渠道（包括在线、离线、CRM和第三方）的数据来查看每个客户的整体视图。 这使营销人员能够跨多个渠道为客户推动协调、一致且相关的体验。
 
 ## 常见问题解答
 
-以下是有關Real-Time Customer Profile常見問題的回答清單。
+以下是有关Real-time Customer Profile的常见问题解答列表。
 
-### Real-time Customer Profile可接受哪些型別的資料？
+### Real-time Customer Profile接受哪些类型的数据？
 
-設定檔接受兩者 **記錄** 和 **時間序列** 資料，前提是有問題的資料至少包含一個身分值，可讓資料與不重複個人建立關聯。
+配置文件接受两者 **记录** 和 **时间序列** 数据，只要有关数据至少包含一个标识值，将数据与唯一个人相关联。
 
-和所有Platform服務一樣，Profile要求其資料在語義上結構化為體驗資料模型(XDM)結構描述。 反過來，此結構描述必須有 **主要身分** 已定義並已啟用，以便在設定檔中使用。
+与所有Platform服务一样，Profile要求它的数据在语义上采用Experience Data Model (XDM)架构进行结构化。 反过来，此架构必须 **主要身份** 已定义并已启用以便在配置文件中使用。
 
-如果您不熟悉XDM，請從 [XDM概觀](../xdm/home.md) 以深入瞭解。 接下來，請參閱XDM使用指南，以瞭解操作步驟 [設定身分欄位](../xdm/tutorials/create-schema-ui.md#identity-field) 和 [為設定檔啟用結構描述](../xdm/tutorials/create-schema-ui.md#profile).
+如果您不熟悉XDM，请从 [XDM概述](../xdm/home.md) 了解更多信息。 接下来，请参阅XDM用户指南，以了解操作步骤 [设置标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 和 [为配置文件启用架构](../xdm/tutorials/create-schema-ui.md#profile).
 
-### 設定檔資料會儲存在何處？
+### 配置文件数据存储在何处？
 
-Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定檔存放區」），與包含其他已擷取Platform資料的Data Lake分開。
+Real-time Customer Profile维护其自己的数据存储（称为“配置文件存储”），独立于包含其他摄取的Platform数据的Data Lake。
 
-### 如果我已經將資料內嵌至Platform，可以在設定檔存放區中使用嗎？
+### 如果我已将数据摄取到Platform，是否可以在配置文件存储区中提供该数据？
 
-如果資料已內嵌至非設定檔資料集，您必須將該資料重新內嵌至啟用設定檔的資料集，才能使其在設定檔存放區中使用。 可以為設定檔啟用現有資料集，但是在該設定之前擷取的任何資料仍將不會顯示在設定檔存放區中。
+如果数据被摄取到非配置文件数据集，您必须将该数据重新摄取到启用配置文件的数据集，才能使其在配置文件存储中可用。 可以为配置文件启用现有数据集，但是在该配置之前摄取的任何数据仍将不会显示在配置文件存储中。
 
-如果您想要將先前擷取的資料新增至設定檔存放區，請遵循 [資料集設定教學課程](./tutorials/dataset-configuration.md) 建立新資料集或轉換現有資料集以啟用設定檔，然後將所需資料重新內嵌至該資料集。
+如果您希望将之前摄取的数据添加到配置文件存储区，请按照 [数据集配置教程](./tutorials/dataset-configuration.md) 创建新数据集或将现有数据集转换为配置文件启用的数据集，然后将所需数据重新摄取到该数据集。
 
-### 如何檢視我內嵌的設定檔資料？
+### 如何查看我摄取的配置文件数据？
 
-檢視設定檔資料的方法有很多種，視您使用的是API還是UI而定。
+查看配置文件数据的方法多种多样，具体取决于您使用的是API还是UI。
 
 #### 使用 API
 
-如果您知道要存取之設定檔實體的ID，則可以使用 `/entities` （設定檔存取）設定檔API中的端點以查詢這些實體。 請參閱以下小節： [實體](./api/entities.md) 詳細資訊，請參閱開發人員指南。
+如果您知道要访问的配置文件实体的ID，则可以使用 `/entities` （配置文件访问）配置文件API中的端点以查找这些实体。 请参阅以下部分： [实体](./api/entities.md) 有关更多信息，请参阅开发人员指南。
 
-您也可以使用Adobe Experience Platform Segmentation Service API來存取符合區段會籍資格的客戶的個人設定檔。 請參閱 [Segmentation Service概述](../segmentation/home.md) 以取得詳細資訊。
+您还可以使用Adobe Experience Platform分段服务API来访问符合区段成员资格的客户的个人配置文件。 请参阅 [分段服务概述](../segmentation/home.md) 了解更多信息。
 
 #### 使用UI
 
-在Experience PlatformUI中， **[!UICONTROL 瀏覽]** 索引標籤中的 **[!UICONTROL 設定檔]** 工作區可讓您檢視設定檔總數，並按其身分值搜尋個別設定檔。 請參閱 [設定檔使用手冊](./ui/user-guide.md) 以取得詳細資訊。
+在Experience PlatformUI中， **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 配置文件]** 工作区允许您查看配置文件总数并按其标识值搜索各个配置文件。 请参阅 [配置文件用户指南](./ui/user-guide.md) 了解更多信息。
 
-您也可以在「 」下檢視區段清單 **[!UICONTROL 瀏覽]** 索引標籤中的 **[!UICONTROL 區段]** 工作區。 選取區段後，會顯示符合該區段資格的設定檔範例。 然後，您可以選取任何列出的設定檔來檢視其詳細資訊。 請參閱 [區段UI總覽](../segmentation/ui/overview.md) 以取得詳細資訊。
+您还可以在 **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 区段]** 工作区。 选择区段后，将显示符合该区段资格的用户档案示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 请参阅 [分段UI概述](../segmentation/ui/overview.md) 了解更多信息。
 
 ## 错误代码
 
-以下是您在使用Real-Time Customer Profile API時可能會遇到的錯誤訊息清單。 如果您遇到的錯誤未在此處列出，您可能會在一般中找到 [平台疑難排解指南](../landing/troubleshooting.md) 而非。
+以下是使用Real-time Customer Profile API时可能遇到的错误消息列表。 如果此处未列出您遇到的错误，您可能会在一般情况下找到它 [平台疑难解答指南](../landing/troubleshooting.md) 而是。
 
-### 無法查詢所提供路徑的計算屬性的結構描述
+### 无法查找所提供路径的计算属性的架构
 
 ```json
 {
@@ -68,11 +68,11 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-建立新的計算屬性時，當系統找不到要求裝載中提供的結構描述時，就會發生此錯誤。 確定您已在裝載的中提供正確的租使用者ID `path` 屬性，而且其值 `schema.name` 是有效的結構描述名稱。
+创建新的计算属性时，当系统找不到请求有效负载中提供的架构时，会发生此错误。 确保您已在有效负荷的中提供正确的租户ID `path` 属性，并且其值 `schema.name` 是有效的架构名称。
 
-如果您不知道租使用者ID，可以依照以下檔案中的步驟擷取它： [Schema Registry開發人員指南](../xdm/api/getting-started.md).
+如果您不知道租户ID，可以按照 [Schema Registry开发人员指南](../xdm/api/getting-started.md).
 
-### 指定的結構描述或definedOn已存在同名函式
+### 指定的架构或definedOn已存在同名函数
 
 ```json
 {
@@ -81,9 +81,9 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-建立新的計算屬性時，如果提供的是 `name` 屬性已用於 `schema.name`. 在重試之前，以唯一名稱取代值。
+创建新的计算属性时，如果提供的是 `name` 属性已用于下所示的架构 `schema.name`. 在重试之前，请将该值替换为唯一名称。
 
-### 運算式的傳回結構描述與XDM結構描述中運算屬性的結構描述不同
+### 表达式的返回架构与XDM架构中计算属性的架构不同
 
 ```json
 {
@@ -92,9 +92,9 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-建立新的計算屬性時，如果提供的是 `name` 屬性已用於 `schema.name`. 在重試之前，以唯一名稱取代值。
+创建新的计算属性时，如果提供的是 `name` 属性已用于下所示的架构 `schema.name`. 在重试之前，请将该值替换为唯一名称。
 
-### 無效的刪除請求（設定檔系統工作）
+### 删除请求无效（配置文件系统作业）
 
 ```json
 {
@@ -103,9 +103,9 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-為刪除系統作業提供無效的裝載時，會發生此錯誤。 確保您在有效負載的底下提供有效的資料集或批次ID `dataSetID` 或 `batchID` 屬性。 請參閱以下小節： [建立刪除請求](./api/profile-system-jobs.md#create-a-delete-request) 詳細資訊，請參閱個人資料開發人員指南。
+为删除系统作业提供了无效有效负载时，会发生此错误。 请确保您在有效负载下提供有效的数据集或批次ID `dataSetID` 或 `batchID` 属性。 请参阅以下部分： [创建删除请求](./api/profile-system-jobs.md#create-a-delete-request) 有关更多信息，请参阅配置文件开发人员指南。
 
-### 找不到設定檔資料集的批次
+### 未找到配置文件数据集的批次
 
 ```json
 {
@@ -121,9 +121,9 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-當嘗試建立設定檔資料的刪除請求時找不到有效的批次時，就會發生此錯誤。 在重試之前，請檢查您已為啟用設定檔的資料集輸入正確的ID。
+当尝试为配置文件数据创建删除请求时找不到有效的批次时，会发生此错误。 在重试之前，请检查您为启用配置文件的数据集输入了正确的ID。
 
-### 尚未建立投影目的地
+### 尚未创建投影目标
 
 ```json
 {
@@ -133,9 +133,9 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-此錯誤發生於 `destinationId` 提供於 `POST /config/projections` 請求無效。 在重試之前，請仔細檢查您是否已提供有效的目的地ID。 若要建立新目的地，請依照以下說明的步驟： [設定檔開發人員指南](./api/edge-projections.md#create-a-destination).
+此错误发生于 `destinationId` 提供于 `POST /config/projections` 请求无效。 在重试之前，请仔细检查您是否提供了有效的目标ID。 要创建新目标，请按照 [配置文件开发人员指南](./api/edge-projections.md#create-a-destination).
 
-### 不支援的媒體型別
+### 不支持的媒体类型
 
 ```json
 {
@@ -145,11 +145,11 @@ Real-Time Customer Profile會維護其本身的資料存放區（稱為「設定
 }
 ```
 
-傳送具有無效Content-Type標頭的POST或PUT請求時，會發生此錯誤。 仔細檢查您是否為使用的端點提供有效的Content-Type值。
+发送具有无效Content-Type标头的POST或PUT请求时，会发生此错误。 双击是否为您使用的端点提供有效的Content-Type值。
 
-大部分的設定檔端點都接受「application/json」做為其Content-Type標頭，但有下列例外：
+大多数配置文件端点都接受将“application/json”用于其Content-Type标头，但以下情况除外：
 
-| 端點 | Content-Type |
+| 端点 | Content-Type |
 | --- | --- |
 | `/config/projections` | application/vnd.adobe.platform.projectionConfig+json； version=1 |
 | `/config/destinations` | application/vnd.adobe.platform.projectionDestination+json； version=1 |

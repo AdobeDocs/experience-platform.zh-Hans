@@ -1,6 +1,6 @@
 ---
-title: 附註端點
-description: 瞭解如何在Reactor API中呼叫/notes端點。
+title: 注释端点
+description: 了解如何在Reactor API中调用/notes端点。
 exl-id: fa3bebc0-215e-4515-87b9-d195c9ab76c1
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 5%
 
 ---
 
-# 附註端點
+# 注释端点
 
-在Reactor API中，附註是可新增至特定資源的文字註釋。 附注本質上是對其各自資源的評論。 附註的內容對資源行為沒有影響，可用於各種使用案例，包括：
+在Reactor API中，注释是可以添加到特定资源的文本批注。 附注基本上是对各自资源的评论。 注释的内容对资源行为没有影响，可用于各种用例，包括：
 
-* 提供背景資訊
-* 作為待辦事項清單使用
-* 傳遞資源使用建議
-* 向其他團隊成員提供指示
-* 記錄歷史內容
+* 提供背景信息
+* 用作待办事项列表
+* 传递资源使用建议
+* 向其他团队成员提供说明
+* 记录历史上下文
 
-此 `/notes` Reactor API中的端點可讓您以程式設計方式管理這些備註。
+此 `/notes` Reactor API中的端点允许您以编程方式管理这些注释。
 
-附註可套用下列資源：
+注释可以应用于以下资源：
 
 * [数据元素](./data-elements.md)
 * [扩展](./extensions.md)
@@ -29,23 +29,23 @@ ht-degree: 5%
 * [属性](./properties.md)
 * [规则组件](./rule-components.md)
 * [规则](./rules.md)
-* [秘密](./secrets.md)
+* [密钥](./secrets.md)
 
-這六種型別統稱為「重要」資源。 刪除重要資源時，也會刪除其相關附註。
+这六种类型统称为“重要”资源。 删除重要资源时，也会删除其关联的注释。
 
 >[!NOTE]
 >
->對於可以有多個修訂版本的資源，必須在目前（標題）修訂版本上建立任何附註。 它們不能附加到其他修訂版本。
+>对于可以具有多个修订版本的资源，必须在当前（标题）修订版本上创建任何注释。 它们不能附加到其他修订版。
 >
->不過，仍可從修訂版本讀取附註。 在這種情況下，API只會傳回建立修訂版本之前存在的附註。 它們提供與剪下修訂版本時相同的註釋快照。 相較之下，從目前（標題）修訂版本讀取附註會傳回其所有附註。
+>但是，仍可以从修订版本中读取注释。 在这种情况下，API仅返回创建修订版本之前存在的注释。 它们提供了修改时注释的快照。 相反，从当前（标题）修订阅读注释将返回其所有注释。
 
 ## 快速入门
 
-本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
 
-## 擷取附註清單 {#list}
+## 检索注释列表 {#list}
 
-您可以藉由附加來擷取資源的附註清單 `/notes` 到相關資源的GET請求路徑。
+您可以通过附加来检索资源的注释列表 `/notes` 指向相关资源的GET请求的路径。
 
 **API格式**
 
@@ -55,14 +55,14 @@ GET /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 
 | 参数 | 描述 |
 | --- | --- |
-| `RESOURCE_TYPE` | 您要擷取備註的資源型別。 必須為下列其中一個值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | 此 `id` 要列出其附註的特定資源。 |
+| `RESOURCE_TYPE` | 您正在为其获取注释的资源类型。 必须为以下值之一： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
+| `RESOURCE_ID` | 此 `id` 要列出其注释的特定资源的。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列請求列出附加至程式庫的附註。
+以下请求列出了附加到库的注释。
 
 ```shell
 curl -X GET \
@@ -76,7 +76,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回附加至指定資源的附註清單。
+成功响应将返回附加到指定资源的注释列表。
 
 ```json
 {
@@ -119,9 +119,9 @@ curl -X GET \
 }
 ```
 
-## 查詢附註 {#lookup}
+## 查找注释 {#lookup}
 
-您可以在GET請求的路徑中提供其ID來查詢附註。
+您可以通过在GET请求的路径中提供注释的ID来查找注释。
 
 **API格式**
 
@@ -131,7 +131,7 @@ GET /notes/{NOTE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `NOTE_ID` | 此 `id` 要查閱的附註中。 |
+| `NOTE_ID` | 此 `id` 您想要查找的注释的。 |
 
 {style="table-layout:auto"}
 
@@ -149,7 +149,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回附註的詳細資料。
+成功响应将返回注释的详细信息。
 
 ```json
 {
@@ -185,9 +185,9 @@ curl -X GET \
 
 >[!WARNING]
 >
->建立新註記之前，請記住，註記不可編輯，刪除註記的唯一方式是刪除其對應的資源。
+>创建新注释之前，请记住，注释不可编辑，删除它们的唯一方法是删除其相应的资源。
 
-您可以藉由附加來建立新的附註 `/notes` 到相關資源的POST請求路徑。
+您可以通过附加来创建新注释 `/notes` 到相关资源的POST请求的路径。
 
 **API格式**
 
@@ -197,14 +197,14 @@ POST /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 
 | 参数 | 描述 |
 | --- | --- |
-| `RESOURCE_TYPE` | 您要建立註記的資源型別。 必須為下列其中一個值： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | 此 `id` 要為其建立附註的特定資源。 |
+| `RESOURCE_TYPE` | 正在为其创建注释的资源类型。 必须为以下值之一： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
+| `RESOURCE_ID` | 此 `id` 要为其创建注释的特定资源的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會為屬性建立新的附註。
+以下请求为资产创建新的注释。
 
 ```shell
 curl -X POST \
@@ -225,14 +225,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `type` | **（必要）** 正在更新的資源型別。 此端點的值必須為 `notes`. |
-| `attributes.text` | **（必要）** 組成註記的文字。 每個附註限定為512個Unicode字元。 |
+| `type` | **（必需）** 正在更新的资源类型。 对于此端点，值必须为 `notes`. |
+| `attributes.text` | **（必需）** 构成注释的文本。 每个注释最多可包含512个Unicode字符。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回新建立附註的詳細資訊。
+成功响应将返回新创建的注释的详细信息。
 
 ```json
 {

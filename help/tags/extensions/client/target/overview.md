@@ -1,6 +1,6 @@
 ---
-title: Adobe Target擴充功能概觀
-description: 瞭解Adobe Experience Platform中Adobe Target的標籤擴充功能。
+title: Adobe Target扩展概述
+description: 了解Adobe Experience Platform中的Adobe Target标记扩展。
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 73%
 
 ---
 
-# Adobe Target擴充功能概觀
+# Adobe Target扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -23,21 +23,21 @@ ht-degree: 73%
 >
 > Adobe Target 扩展需要使用 at.js。它不支持 mbox.js。
 
-如果尚未安裝Adobe Target擴充功能，請開啟您的屬性，然後選取「 」 **[!UICONTROL 擴充功能>目錄]**，將游標暫留在Target擴充功能上，然後選取 **[!UICONTROL 安裝]**.
+如果尚未安装Adobe Target扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Target扩展上，然后选择 **[!UICONTROL 安装]**.
 
-若要設定擴充功能，請開啟 [!UICONTROL 擴充功能] 索引標籤，將游標停留在擴充功能上，然後選取「 」 **[!UICONTROL 設定]**.
+要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/ext-target-config.png)
 
 ### at.js 设置
 
-所有的at.js設定（除了「逾時」以外）都會從Target使用者介面的at.js設定中自動擷取。 擴充功能只會在其首次新增時從Target使用者介面擷取設定，因此如有其他更新，應在UI中管理所有設定。
+所有at.js设置（Timeout除外）将自动从Target用户界面的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target用户界面中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-使用者端代碼是Target的帳戶識別碼。 此选项几乎应始终保留为默认值。
+客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。
 
 可使用数据元素进行更改。
 
@@ -72,7 +72,7 @@ ht-degree: 73%
 
 #### Target 用户界面中可用的其他 at.js 设置
 
-有數個設定可用於 [!UICONTROL 編輯at.js設定] Target UI的頁面不屬於Target擴充功能的一部分。 下面列出了建议的解决方法：
+上提供了多个设置 [!UICONTROL 编辑at.js设置] Target UI的页面不属于Target扩展的一部分。 下面列出了建议的解决方法：
 
 * 自动创建全局 mbox：此设置将在 Target 扩展中替换为 Fire Global Mbox 操作。
 * 库标题：此设置未包含在 Target 扩展中。可在使用 Load Target 操作之前，将需要在 at.js 之前加载的代码置于核心扩展的 Custom Code 操作中。
@@ -86,7 +86,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### Load Target
 
-將此動作新增至您的標籤規則，其中在此規則的內容中載入Target是可行的。 这会将 at.js 库加载到页面中。在大多数实施中，应在您网站的每个页面上加载 Target。
+将此操作添加到适合在上下文中加载Target的标记规则中。 这会将 at.js 库加载到页面中。在大多数实施中，应在您网站的每个页面上加载 Target。
 
 无需进行配置。
 
@@ -129,19 +129,19 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ## 使用异步部署的 Adobe Target 扩展
 
-標籤可非同步部署。 如果您以非同步方式載入標籤程式庫，且其中包含Target，則Target也會以非同步方式載入。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
+标记可以异步部署。 如果您异步加载标记库，且其中包含Target，则也将会异步加载Target。 这是一个完全支持的方案，但有一个额外的注意事项必须加以处理。
 
-在非同步部署中，頁面可以在Target程式庫完全載入並執行內容交換之前完成預設內容轉譯。 这可能会导致所谓的“闪烁”，在这种情况下，会先短暂显示默认内容，然后再将该内容替换为 Target 指定的个性化内容。若要避免這種閃爍問題，建議您使用預先隱藏的程式碼片段，然後非同步載入標籤套件組合，以避免任何內容閃爍。
+在异步部署中，页面可以在Target库完全加载并执行内容交换之前完成默认内容渲染。 这可能会导致所谓的“闪烁”，在这种情况下，会先短暂显示默认内容，然后再将该内容替换为 Target 指定的个性化内容。如果要避免出现这种闪烁情况，我们建议您使用预隐藏代码片段并异步加载标记包来避免任何内容闪烁。
 
 在使用预隐藏代码片段时，请谨记以下事项：
 
-* 載入標籤標頭內嵌程式碼之前，必須先新增程式碼片段。
-* 標籤無法管理此程式碼，因此必須直接新增至頁面。
+* 必须在加载标记标头嵌入代码之前添加代码片段。
+* 此代码不能由标记管理，因此必须将其直接添加到页面。
 * 当发生以下事件时（以最先发生者为准），将显示该页面：
    * 收到全局 mbox 响应
    * 全局 mbox 请求超时
    * 代码片段本身超时
-* 應使用預先隱藏程式碼片段，在所有頁面上使用「引發全域Mbox」動作，以將預先隱藏的時間減至最少。
+* 应在所有使用预隐藏代码片段的页面上使用“Fire Global Mbox”操作，以最大程度地缩短预隐藏的持续时间。
 
 预隐藏代码片段如下所示，该代码片段可以缩小。可配置的选项位于末尾：
 

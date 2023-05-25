@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；存取控制；api；快速入門
+keywords: Experience Platform；主页；热门主题；访问控制；API；入门
 solution: Experience Platform
 title: Access Control API指南
-description: Adobe Experience Platform中的存取控制可讓您使用Adobe Admin Console管理各種Platform功能的角色和許可權。 以下章節提供開發人員成功呼叫Schema Registry API所需的其他資訊。
+description: Adobe Experience Platform中的访问控制允许您使用Adobe Admin Console管理各种平台功能的角色和权限。 以下部分提供了开发人员成功调用Schema Registry API时需要了解的其他信息。
 exl-id: 6fd956fb-ade4-48d3-843f-4c9a605945c9
 source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
@@ -13,41 +13,41 @@ ht-degree: 2%
 
 # [!DNL Access Control] API指南
 
-[!DNL Access control] 的 [!DNL Experience Platform] 是透過 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能運用Admin Console中的產品設定檔，將使用者與許可權和沙箱連結。 請參閱 [存取控制總覽](../home.md) 以取得詳細資訊。
+[!DNL Access control] 对象 [!DNL Experience Platform] 是透过下列方式管理： [Adobe Admin Console](https://adminconsole.adobe.com). 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒相关联。 请参阅 [访问控制概述](../home.md) 了解更多信息。
 
-本開發人員指南提供如何格式化您向以下網址提出的請求的資訊： [[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/)，並涵蓋下列作業：
+本开发人员指南提供了有关如何将请求格式化的信息， [[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/)，并涵盖以下操作：
 
-- [許可權和資源型別的清單名稱](./permissions-and-resource-types.md)
-- [檢視目前使用者的有效存取原則](./effective-policies.md)
+- [权限和资源类型的列表名称](./permissions-and-resource-types.md)
+- [查看当前用户的有效访问策略](./effective-policies.md)
 
 ## 快速入门
 
-以下小節提供您需瞭解的其他資訊，才能成功對 [!DNL Access Control] API。
+以下部分提供了成功调用 [!DNL Access Control] API。
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本指南提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本指南提供了示例API调用，以演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
-- 授權：持有人 `{ACCESS_TOKEN}`
+- 授权：持有者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform] 与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
+>有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
 
 - Content-Type： application/json
 
 ## 后续步骤
 
-現在您已收集到所需的認證，您可以繼續閱讀開發人員指南的其餘部分。 每個區段都提供有關其端點的重要資訊，並示範用於執行CRUD操作的範例API呼叫。 每個呼叫都包含一般API格式、顯示必要標題和正確格式化的裝載的範例請求以及成功呼叫的範例回應。
+现在您已经收集了所需的凭据，接下来可以继续阅读开发人员指南的其余部分。 每个部分都提供了有关其端点的重要信息，并演示了用于执行CRUD操作的示例API调用。 每个调用都包含常规API格式、一个示例请求（显示所需的标头和格式正确的负载），以及一个成功调用的示例响应。

@@ -1,6 +1,6 @@
 ---
-title: Data Lake移轉至Gen2
-description: 瞭解將Data Lake移轉至Adobe Experience Platform中的Gen2所提供的新功能。
+title: Data Lake迁移到Gen2
+description: 了解Adobe Experience Platform中将Data Lake迁移到Gen2提供的新功能。
 exl-id: 56d9c77a-d7eb-498d-994f-b15d150dedb7
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# Adobe Experience Platform Data Lake移轉至Gen2
+# Adobe Experience Platform Data Lake迁移到Gen2
 
-Adobe Experience Platform正在移轉至Gen2 Data Lake。 這是新一代的資料湖，可為Platform使用者提供地理區域複製、更精細的角色型存取控制(RBAC)和更好的擴充等多項優勢。
+Adobe Experience Platform正在迁移到Gen2数据湖。 这是新一代的数据湖，可为Platform用户提供地域复制、更精细的基于角色的访问控制(RBAC)和更强大的扩展能力等优势。
 
-## 使用者影響
+## 用户影响
 
-當Adobe將Data Lake從Gen1移轉至Gen 2時，使用者將能夠 **讀取** 來自Data Lake，但所有 **寫入** 資料湖中的區段將會受到影響。 以下是受影響的功能清單：
+当Adobe将数据湖从Gen1迁移到Gen 2时，用户将能够 **读取** 来自数据湖，但所有功能 **写入** 到数据湖的操作将受影响。 以下是受影响的功能列表：
 
-- **來源**：來自來源和各種資料擷取工作流程的資料將延遲。 移轉完成後，使用者將看到其資料。
-- **查詢服務**：使用者可以執行查詢，但無法將查詢輸出寫入資料集。
-- **即時客戶個人檔案**：透過擷取至設定檔存放區的資料 **批次** 移轉期間將無法使用內嵌。 不過，資料擷取自 **串流** 內嵌作業將在移轉期間提供。 此外，在移轉期間將無法使用設定檔匯出。
-- **資料科學工作區**：從Data Science Workspace寫入將會失敗。
-- **細分服務**：衍生自下列專案的對象： **批次** 移轉期間無法啟用分段。 衍生自的對象 **串流** 區段不受影響。
-- **Customer Journey Analytics**：Customer Journey Analytics報表資料可能已過期，移轉期間不會重新整理，因為批次未擷取至Data Lake。
+- **源**：从源和各种数据摄取工作流传入的数据将延迟。 迁移完成后，用户将看到其数据。
+- **查询服务**：用户可以执行查询，但无法将查询输出写入数据集。
+- **Real-time Customer Profile**：通过摄取到配置文件存储的数据 **批次** 在迁移期间，摄取将不可用。 但是，摄取的数据来自 **流** 可在迁移期间进行摄取。 此外，配置文件导出在迁移期间不可用。
+- **数据科学工作区**：从Data Science Workspace写入数据将失败。
+- **分段服务**：受众派生自 **批次** 无法在迁移期间激活分段。 受众派生自 **流** 分段不会受到影响。
+- **Customer Journey Analytics**：Customer Journey Analytics报表数据可能已过期，在迁移期间不会刷新，因为批次未摄取到Data Lake。
 
-## 與Platform使用者的通訊
+## 与Platform用户的通信
 
-Adobe將會聯絡系統管理員，詳細討論移轉的影響，並確認特定組織的移轉日期和時間。
+Adobe将与系统管理员联系以详细讨论迁移的影响，并确认特定组织的迁移日期和时间。

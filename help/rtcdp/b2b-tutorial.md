@@ -1,8 +1,8 @@
 ---
-keywords: RTCDP；CDP；B2B版本；Real-time Customer Data Platform；即時客戶資料平台；real time cdp；b2b；cdp
+keywords: RTCDP；CDP；B2B版本；Real-time Customer Data Platform；实时客户数据平台；实时cdp；b2b；cdp
 solution: Experience Platform
-title: Real-time Customer Data Platform B2B版本快速入門
-description: 設定Adobe Real-time Customer Data Platform B2B Edition實作時，請使用此範例情境作為範例。
+title: Real-time Customer Data Platform B2B版快速入门
+description: 使用此情景作为示例，来设置Adobe Real-time Customer Data Platform B2B版本的实施。
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -11,97 +11,97 @@ ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B版本快速入門
+# Real-time Customer Data Platform B2B版本快速入门
 
-本檔案提供開始使用Real-time Customer Data Platform (CDP) B2B版本的高階端對端工作流程，使用範例使用案例來說明重要概念。
+本文档提供了一个用于Real-time Customer Data Platform (CDP) B2B版快速入门的高级端到端工作流，它使用一个示例用例来说明关键概念。
 
-技術公司Bodea想要結合來自不同獨立資料來源的人員和帳戶資料，以便透過電子郵件及其新產品的LinkedIn廣告促銷活動有效地鎖定客戶。 Bodea使用Marketo Engage作為其行銷自動化平台，並需要從包含客戶資料的多個CRM中區隔B2B特定對象。
+技术公司Bodea希望合并来自不同孤立数据源的个人和帐户数据，以便通过其新产品通过电子邮件和LinkedIn广告促销活动有效地定位客户。 Bodea使用Marketo Engage作为其营销自动化平台，并需要从包含客户数据的多个CRM中细分特定于B2B的受众。
 
 ## 快速入门
 
-此教學課程工作流程仰賴數項Adobe Experience Platform服務做為示範的一部分。 如果您想繼續進行，建議您充分瞭解下列服務：
+作为演示的一部分，本教程工作流依赖于多个Adobe Experience Platform服务。 如果您希望在此过程中遵循，建议您很好地了解以下服务：
 
-- [體驗資料模組(XDM)](../xdm/home.md)
+- [体验数据模式(XDM)](../xdm/home.md)
 - [源](../sources/home.md)
 - [区段](../segmentation/home.md)
 - [目标](../destinations/home.md)
 
-## 為您的資料建立結構描述
+## 为您的数据创建架构
 
-在初始設定過程中，Bodea的IT部門需要建立XDM結構描述，以確保將其資料匯入Platform時遵循標準格式，並可在不同的Platform服務和Adobe Experience Cloud產品(例如Adobe Analytics和Adobe Target)中操作。
+在初始设置过程中，Bodea的IT部门需要创建XDM架构，以确保将其数据引入平台时遵循标准格式，并且可在不同的Platform服务和Adobe Experience Cloud产品(例如Adobe Analytics和Adobe Target)中使用。
 
 >[!WARNING]
 >
->您必須依照本教學課程中連結到的相關來原始檔中的說明進行擷取模式。 無法保證其他欄位對應方法有效。
+>您必须按照本教程中链接到的相关源文档中所述的摄取模式进行操作。 不能保证其他字段映射方法有效。
 
-Adobe Experience Platform可讓您自動產生B2B資料來源所需的結構描述和名稱空間。 此工具可確保建立的結構描述能以結構化的可重複使用方式描述資料。 請遵循 [B2B名稱空間和結構描述自動產生公用程式檔案](../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) 以取得設定程式的完整參考。
+Adobe Experience Platform允许您自动生成B2B数据源所需的架构和命名空间。 此工具可确保创建的架构以结构化的可重用方式描述数据。 请遵循 [B2B命名空间和模式自动生成实用程序文档](../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) 以获取有关设置过程的完整参考。
 
-在Adobe Experience Platform UI中，Bodea行銷人員會選取 **[!UICONTROL 結構描述]** 左側邊欄中，後面接著 **[!UICONTROL 瀏覽]** 標籤。 由於它們使用Marketo Engage自動產生公用程式，新的空白結構描述會出現在清單中，而且全都有「B2B」前置詞。
+在Adobe Experience Platform UI中，Bodea营销人员选择 **[!UICONTROL 架构]** 左边栏中，后面是 **[!UICONTROL 浏览]** 选项卡。 由于它们使用了Marketo Engage自动生成实用程序，因此列表中会出现新的空架构，并且所有架构的前缀均为“B2B”。
 
-![結構描述工作區瀏覽索引標籤](./assets/b2b-tutorial/empty-b2b-schemas.png)
+![架构工作区浏览选项卡](./assets/b2b-tutorial/empty-b2b-schemas.png)
 
-自動產生公用程式使用標準XDM B2B類別(例如 [XDM商業帳戶](../xdm/classes/b2b/business-account.md) 和 [XDM商業機會](../xdm/classes/b2b/business-opportunity.md))擷取基本B2B資料實體。 此外，在這些類別上建置的自動產生B2B結構描述具有預先建立的關係，可允許進階細分使用案例。 您可以透過UI在這裡輕鬆建立資料結構所需的任何其他欄位群組。 請參閱 [XDM UI指南，將欄位群組新增至結構描述區段](../xdm/ui/resources/schemas.md#add-field-groups) 以取得詳細資訊。
-
->[!NOTE]
-> 
->如果您未使用auto-generator公用程式，或需要建立新關係，請參閱以下教學課程： [在B2B結構描述之間建立關係](../xdm/tutorials/relationship-b2b.md).
-
-Real-Time Customer Profile會合併來自不同來源的資料，以建立關鍵B2B實體的整合設定檔。 由於設定檔是根據單一類別產生的，因此自動產生公用程式會根據常見的業務使用案例來設定方案之間的關係。 因此，Bodea團隊現在已準備好根據其B2B結構描述擷取資料。
+自动生成实用程序使用标准XDM B2B类(例如 [XDM商业帐户](../xdm/classes/b2b/business-account.md) 和 [XDM商业机会](../xdm/classes/b2b/business-opportunity.md))来捕获基本B2B数据实体。 此外，基于这些类构建的自动生成的B2B架构具有预先建立的关系，允许进行高级分段用例。 在此可通过UI轻松创建数据结构所需的任何其他字段组。 请参阅 [XDM UI指南，将字段组添加到架构部分](../xdm/ui/resources/schemas.md#add-field-groups) 了解更多信息。
 
 >[!NOTE]
 > 
->透過自動產生公用程式為結構建立的預設身分名稱空間、主要金鑰和關係，可以在「結構描述」工作區中輕鬆找到。
+>如果您未使用自动生成器实用程序，或者需要创建新关系，请参阅上的教程 [在B2B架构之间创建关系](../xdm/tutorials/relationship-b2b.md).
+
+Real-Time Customer Profile合并来自不同来源的数据，以创建关键B2B实体的整合配置文件。 由于用户档案是基于单个类生成的，因此自动生成实用程序会根据常见的业务用例设置架构之间的关系。 因此，Bodea团队现在可以根据其B2B架构摄取数据。
+
+>[!NOTE]
+> 
+>通过自动生成实用程序为架构创建的默认身份命名空间、主键和关系可在架构工作区中轻松找到。
 >
->![預設結構描述身分和關係UI顯示](./assets/b2b-tutorial/schema-identity-relationship.png)
+>![默认架构标识和关系UI显示](./assets/b2b-tutorial/schema-identity-relationship.png)
 
-## 將您的資料內嵌至Experience Platform
+## 将数据摄取到Experience Platform
 
-接下來，Bodea行銷人員會使用 [Marketo Engage聯結器](../sources/connectors/adobe-applications/marketo/marketo.md) 將資料內嵌至Platform以用於下游服務。 您也可以使用Real-Time CDP B2B Edition的其中一個已核准來源來內嵌資料。
-
->[!NOTE]
-> 
->若要瞭解您的組織可以使用哪些來源聯結器，您可以在Platform UI中檢視來源目錄。 若要存取目錄，請選取 **來源** 在左側導覽中，然後選取 **目錄**.
-
-為了在Marketo帳戶和平台之間建立連線，您必須取得驗證認證。 請參閱 [取得Marketo來源聯結器驗證憑證的指南](../sources/connectors/adobe-applications/marketo/marketo-auth.md) 以取得詳細指示。
-
-取得驗證認證後，Bodea行銷人員會建立Marketo帳戶與其Platform組織之間的連線。 如需相關指示，請參閱檔案 [如何使用Platform UI連線Marketo帳戶](../sources/tutorials/ui/create/adobe-applications/marketo.md).
-
-Marketo Engage來源聯結器提供自動對應功能，讓您更輕鬆地將所有資料欄位對應到新建立的結構描述欄位。
+接下来，Bodea营销人员使用 [Marketo Engage连接器](../sources/connectors/adobe-applications/marketo/marketo.md) 将数据摄取到Platform以用于下游服务。 您还可以使用Real-Time CDP B2B版本的某个已批准源来摄取数据。
 
 >[!NOTE]
 > 
->如果您在XDM結構描述中建立了自訂欄位群組，在流程的這個階段，您可能會有未連線的欄位。 請務必檢查所有填入自訂欄位群組的值。
+>要了解您的组织可以使用哪些源连接器，您可以在Platform UI中查看源目录。 要访问目录，请选择 **源** 在左侧导航中，然后选择 **目录**.
 
-Bodea行銷人員會檢查所有欄位群組是否已適當對應，並透過初始化資料流來繼續來源設定程式。 藉由建立資料流以匯入Marketo資料，下游Platform服務即可使用傳入的資料。 在初始擷取程式期間，資料會以批次形式帶入Experience Platform。 之後，後續擷取的資料會以近乎即時更新的方式串流到設定檔中。
+为了在Marketo帐户和平台之间创建连接，您必须获取身份验证凭据。 请参阅 [有关获取Marketo源连接器身份验证凭据的指南](../sources/connectors/adobe-applications/marketo/marketo-auth.md) 以获取详细说明。
 
-## 建立區段以評估資料
+在获取身份验证凭据后，Bodea营销人员会在Marketo帐户与其Platform组织之间创建连接。 有关说明，请参阅文档 [如何使用Platform UI连接Marketo帐户](../sources/tutorials/ui/create/adobe-applications/marketo.md).
 
-下一個任務是根據來源資料中相關實體的特定屬性，為Bodea的新電子郵件行銷活動建立對象。 在Platform UI中，Bodea行銷人員會先選取 **[!UICONTROL 區段]** 在左側導覽中，然後 **[!UICONTROL 建立區段]**.
-
-在此範例中，區段會尋找所有在銷售部門工作並與至少有一個未結商機之任何帳戶相關的人員。 此區段需要XDM個人資料類別、XDM商業帳戶類別和XDM商業機會類別之間的連結。
-
-![使用案例區段](./assets/b2b-tutorial/use-case-segment.png)
+Marketo Engage源连接器提供自动映射功能，使将所有数据字段映射到新创建架构的数据字段的过程更加容易。
 
 >[!NOTE]
 > 
->如需如何建立區段以評估資料的指示，請參閱 [區段產生器UI指南](../segmentation/ui/segment-builder.md). 如需更具體的B2B細分使用案例，請參閱 [Real-Time CDP B2B版的區段概觀](./segmentation/b2b.md).
+>如果您在XDM架构中建立了自定义字段组，则在该过程的此阶段，您可能拥有未连接的字段。 确保检查填充自定义字段组的所有值。
 
-區段產生器可讓您從即時客戶設定檔資料建立可行銷的對象，並依據您定義的屬性、事件和現有對象的組合，檢視潛在對象的預估值。
+Bodea营销人员会检查所有字段组是否已正确映射，并通过初始化数据流来继续源设置过程。 通过创建数据流以引入Marketo数据，传入数据可供下游平台服务使用。 在初始摄取过程中，数据会作为批次Experience Platform。 之后，后续摄取的数据将通过近乎实时的更新流式传输到用户档案中。
 
-## 將評估過的資料啟用至目的地
+## 创建区段以评估数据
 
-成功建立區段後，摘要會提供在 [!UICONTROL 詳細資料] 區段。 由於目前沒有針對區段啟用的目的地，因此Bodea行銷人員需要將對象匯出至資料集，以便在其中進行存取和操作。
+下一个任务是，根据源数据中相关实体的特定属性，为Bodea的新电子邮件营销活动创建受众。 在Platform UI中，Bodea营销人员首先选择 **[!UICONTROL 区段]** 在左侧导航中，然后 **[!UICONTROL 创建区段]**.
 
-在內 [!UICONTROL 區段] Platform UI的工作區，Bodea行銷人員會選取 **[!UICONTROL 啟用到目的地]**.
+在此示例中，区段将查找所有在销售部门工作并与任何至少有一个未结销售机会的客户相关的人员。 此区段需要XDM Individual Profile类、XDM Business Account类和XDM Business Opportunity类之间的链接。
 
-![對目的地啟用區段](./assets/b2b-tutorial/activate-to-destination.png)
+![用例区段](./assets/b2b-tutorial/use-case-segment.png)
 
 >[!NOTE]
 > 
->請參閱教學課程，位置如下： [啟用區段至目的地](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) 以取得如何完成此作業的完整步驟。
+>有关如何创建区段以评估数据的说明，请参阅 [区段生成器UI指南](../segmentation/ui/segment-builder.md). 有关更具体的B2B分段用例，请参阅 [Real-Time CDP B2B版本的分段概述](./segmentation/b2b.md).
 
-Bodea行銷人員將區段啟用至Marketo目的地，這讓他們能以靜態清單的形式，將區段資料從Platform推送至Marketo Engage。 請參閱 [Marketo目的地](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) 以取得詳細資訊。
+区段生成器允许您根据实时客户档案数据创建适销受众，并根据您定义的属性、事件和现有受众的组合查看潜在受众的估计值。
+
+## 将评估的数据激活到目标
+
+成功创建区段后，中会提供摘要 [!UICONTROL 详细信息] 部分。 由于当前没有为该区段激活任何目标，因此Bodea营销人员需要将受众导出到可在其中进行访问和操作的数据集。
+
+在 [!UICONTROL 区段] Platform UI的工作区，Bodea营销人员选择 **[!UICONTROL 激活到目标]**.
+
+![将区段激活到目标](./assets/b2b-tutorial/activate-to-destination.png)
+
+>[!NOTE]
+> 
+>请参阅上的教程 [将区段激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) 以了解如何完成此任务的完整步骤。
+
+Bodea营销人员将区段激活到Marketo目标，这让他们能够以静态列表的形式将区段数据从Platform推送到Marketo Engage。 请参阅 [Marketo目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) 了解更多信息。
 
 ## 后续步骤
 
-依照本教學課程，您已成功運用Real-Time CDP B2B版所使用的各種Adobe Experience Platform服務。 因此，您已瞭解如何將B2B資料擷取、細分、評估和匯出為可跨不同管道參與的可操作對象。
+通过阅读本教程，您已成功利用Real-Time CDP B2B版本使用的各种Adobe Experience Platform服务。 因此，您已了解如何将B2B数据摄取、划分、评估和导出为可跨不同渠道参与的可操作受众。

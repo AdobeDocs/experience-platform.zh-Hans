@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；experienceevent查詢；experienceevent查詢；體驗事件查詢；
-title: 列出使用者的頁面檢視
-description: 瞭解如何使用體驗事件來建立指定使用者已使用的最後100頁的清單的查詢內容。
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；Experience Event查询；
+title: 列出用户的页面查看次数
+description: 了解如何使用Experience Events编写查询，以创建指定用户已使用的最后100页的列表。
 exl-id: d831910d-d3a4-4a5a-b897-b09f0546dab0
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -10,15 +10,15 @@ ht-degree: 1%
 
 ---
 
-# 列出使用者的頁面檢視
+# 列出用户的页面查看次数
 
-本檔案提供列出指定使用者的頁面檢視所需的SQL範例。 透過Adobe Experience Platform查詢服務，您可以編寫使用 [!DNL Experience Events] 以擷取各種使用案例。 體驗事件由Experience Data Model (XDM) ExperienceEvent類別表示，可在使用者與網站或服務互動時，擷取系統不可變且非彙總的快照。 體驗事件甚至可用於時間網域分析。 請參閱 [後續步驟區段](#next-steps) 有關更多使用案例，包括 [!DNL Experience Events] 以產生訪客報表。
+本文档提供了一个列出指定用户的页面查看次数所需的SQL示例。 借助Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 用于捕获各种用例。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变且非聚合的快照。 体验事件甚至可用于时域分析。 请参阅 [“后续步骤”部分](#next-steps) 有关更多用例，包括 [!DNL Experience Events] 以生成访客报表。
 
-有關XDM和的更多資訊 [!DNL Experience Events] 您可在以下網址找到： [[!DNL XDM System] 概觀](../../xdm/home.md). 透過結合查詢服務與 [!DNL Experience Events]，您就能有效追蹤使用者之間的行為趨勢。 以下檔案提供涉及下列專案的查詢範例： [!DNL Experience Events].
+有关XDM和的更多信息 [!DNL Experience Events] 可在以下位置找到： [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及以下内容的查询示例 [!DNL Experience Events].
 
 ## 目标
 
-以下範例列出指定使用者已檢視的最後100個頁面。
+以下示例列出了指定用户查看的最后100个页面。
 
 ```sql
 SELECT 
@@ -36,7 +36,7 @@ ORDER BY timestamp
 LIMIT 100;
 ```
 
-此查詢的結果如下所示。
+此查询的结果如下所示。
 
 ```console
       timestamp       |  referrerType  |                            referrer                                |                 pageName            |  A  |  B  |  C  | pageViews
@@ -65,10 +65,10 @@ LIMIT 100;
 
 ## 后续步骤 {#next-steps}
 
-閱讀本檔案可讓您更瞭解如何使用查詢服務搭配 [!DNL Experience Events] 以指定使用者的身分列出頁面檢視。
+通过阅读本文档，您可以更好地了解如何将查询服务与 [!DNL Experience Events] 以指定用户身份列出页面查看次数。
 
-請參閱下列使用案例，以瞭解其他以訪客為基礎的使用案例：
+请参阅以下用例，以了解其他基于访客的用例：
 
-- [擷取依頁面檢視次陣列織的訪客清單。](./visitors-by-number-of-page-views.md)
-- [檢視訪客的統計報表。](./roll-up-report-of-a-visitor.md)
-- [依日期建立事件的趨勢報表。](./trended-report-of-events.md)
+- [检索按页面查看次数组织的访客列表。](./visitors-by-number-of-page-views.md)
+- [查看访客的汇总报表。](./roll-up-report-of-a-visitor.md)
+- [按日期创建事件趋势报表。](./trended-report-of-events.md)

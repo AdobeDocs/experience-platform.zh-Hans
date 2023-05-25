@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；pql；PQL；設定檔查詢語言；算術函式；算術；
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；算术函数；算术；
 solution: Experience Platform
-title: PAL算術函式
-description: 算術函式用於對設定檔查詢語言(PQL)中的值執行基本計算。
+title: PAL算术函数
+description: 算术函数用于对配置文件查询语言(PQL)中的值进行基本计算。
 exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 5%
 
 # 算术函数
 
-算術函式用於對中的值進行基本計算 [!DNL Profile Query Language] (PQL)。 如需其他PQL函式的詳細資訊，請參閱 [[!DNL Profile Query Language] 概觀](./overview.md).
+算术函数用于对中的值进行基本计算 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## Add
 
-此 `+` （加法）函式用於找出兩個引數運算式的總和。
+此 `+` （加法）函数用于求两个参数表达式的总和。
 
 **格式**
 
@@ -27,7 +27,7 @@ ht-degree: 5%
 
 **示例**
 
-下列PQL查詢會加總兩個不同產品的價格。
+以下PQL查询对两个不同产品的价格求和。
 
 ```sql
 product1.price + product2.price
@@ -35,7 +35,7 @@ product1.price + product2.price
 
 ## 乘
 
-此 `*` （乘法）函式用於尋找兩個引數運算式的乘積。
+此 `*` （乘法）函数用于求两个参数表达式的乘积。
 
 **格式**
 
@@ -45,15 +45,15 @@ product1.price + product2.price
 
 **示例**
 
-下列PQL查詢會尋找存貨的產品與產品價格，以尋找產品的總值。
+以下PQL查询查找库存的产品和产品价格，以查找产品的总值。
 
 ```sql
 product.inventory * product.price
 ```
 
-## 減法
+## 减法
 
-此 `-` （減法）函式可用來找出兩個引數運算式的差異。
+此 `-` （减法）函数用于找出两个参数表达式的差异。
 
 **格式**
 
@@ -63,7 +63,7 @@ product.inventory * product.price
 
 **示例**
 
-下列PQL查詢會找出兩個不同產品之間的價格差異。
+以下PQL查询查找两个不同产品之间的价格差异。
 
 ```sql
 product1.price - product2.price
@@ -71,7 +71,7 @@ product1.price - product2.price
 
 ## 除
 
-此 `/` (division)函式用於尋找兩個引數運算式的商。
+此 `/` （除法）函数用于求两个参数表达式的商。
 
 **格式**
 
@@ -81,15 +81,15 @@ product1.price - product2.price
 
 **示例**
 
-下列PQL查詢會找出已售出產品總數與已賺取金額總數之間的商數，以檢視每個專案的平均成本。
+以下PQL查询查找已售产品总数与已挣总金额之间的商数，以查看每项产品的平均成本。
 
 ```sql
 totalProduct.price / totalProduct.sold
 ```
 
-## 餘數
+## 余数
 
-此 `%` （模數/餘數）函式用來找出兩個引數運算式相除後的餘數。
+此 `%` (modulo/remain)函数用于求两个参数表达式相除后的余数。
 
 **格式**
 
@@ -99,7 +99,7 @@ totalProduct.price / totalProduct.sold
 
 **示例**
 
-以下PQL查詢會檢查個人的年齡是否可被5歲整除。
+以下PQL查询检查人员的年龄是否可被5岁整除。
 
 ```sql
 person.age % 5 = 0
@@ -107,4 +107,4 @@ person.age % 5 = 0
 
 ## 后续步骤
 
-現在您已了解算術函式，可以在PQL查詢中使用它們。 如需其他PQL功能的詳細資訊，請參閱 [設定檔查詢語言概觀](./overview.md).
+现在，您已了解算术函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).

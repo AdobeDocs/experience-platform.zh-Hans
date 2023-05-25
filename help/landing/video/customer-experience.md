@@ -1,6 +1,6 @@
 ---
-title: 由Experience Platform提供支援的客戶體驗
-description: 本影片說明使用Adobe Experience Platform建立的假設體驗，從客戶的角度來看。 瞭解Experience Platform如何建立豐富、相關且即時的體驗。
+title: 由Experience Platform提供支持的客户体验
+description: 本视频介绍了使用Adobe Experience Platform构建的假设性体验，从客户的角度来看。 了解Experience Platform如何创建丰富、相关且实时的体验。
 kt: 4339
 audience: all
 doc-type: video
@@ -14,8 +14,8 @@ ht-degree: 0%
 
 ---
 
-# 由Experience Platform提供支援的客戶體驗
+# 由Experience Platform提供支持的客户体验
 
-觀賞此影片，瞭解Experience Platform如何透過使用Platform建立的假設體驗（從客戶的角度來看），為客戶建立豐富、相關且即時的體驗。
+通过观看此视频（该视频遵循使用Platform构建的假设体验，从客户的角度来看），了解Experience Platform如何为客户创造丰富、相关和实时的体验。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27361?quality=12&learn=on)

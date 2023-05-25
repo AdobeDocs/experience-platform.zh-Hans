@@ -1,6 +1,6 @@
 ---
-title: Adobe Medium Analytics for Audio and Video擴充功能概觀
-description: 瞭解Adobe Experience Platform中的Adobe Medium Analytics for Audio and Video標籤擴充功能。
+title: Adobe Medium Analytics for Audio and Video扩展概述
+description: 了解Adobe Experience Platform中的Adobe Medium Analytics for Audio and Video标记扩展。
 exl-id: 426cfd08-aead-4b35-824c-45494bca2fc8
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 82%
 
 ---
 
-# Adobe Medium Analytics for Audio and Video擴充功能概觀
+# Adobe Medium Analytics for Audio and Video扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文档了解有关安装、配置和实施 Adobe Media Analytics for Audio and Video 扩展（Media Analytics 扩展）的信息。其中包括使用此扩展构建规则时可用的选项，以及一些示例和指向示例的链接。
 
-Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)。此擴充功能提供新增 `MediaHeartbeat` 標籤網站或專案的追蹤器例項。 MA 扩展需要使用其他两个扩展：
+Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)。此扩展提供了用于添加 `MediaHeartbeat` 标记网站或项目的跟踪器实例。 MA 扩展需要使用其他两个扩展：
 
 * [Analytics 扩展](../analytics/overview.md)
 * [Experience Cloud ID 扩展](../id-service/overview.md)
@@ -26,16 +26,16 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)�
 >
 >音频跟踪要求使用 Analytics 扩展 v1.6 或更高版本。
 
-在標籤專案中納入上述的三個擴充功能後，您可以使用下列兩種方式之一繼續操作：
+在标记项目中包含上述所有三个扩展后，可以采用以下两种方法之一继续操作：
 
 * 使用您的 Web 应用程序中的 `MediaHeartbeat` API
 * 包含或构建特定于播放器的扩展，以便将特定媒体播放器事件映射到 `MediaHeartbeat` 跟踪器实例上的 API。此实例将通过 MA 扩展公开。
 
 ## 安装和配置 MA 扩展
 
-* **安裝 —** 若要安裝MA擴充功能，請開啟您的擴充功能屬性，選取 **[!UICONTROL 擴充功能>目錄]**，將游標暫留在 **[!UICONTROL 適用於音訊和視訊的Adobe Medium Analytics]** 擴充功能，並選取 **[!UICONTROL 安裝]**.
+* **安装 —** 要安装MA扩展，请打开您的扩展资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将光标悬停在 **[!UICONTROL Adobe Medium Analytics for Audio and Video]** 扩展并选择 **[!UICONTROL 安装]**.
 
-* **設定 —** 若要設定MA擴充功能，請開啟 [!UICONTROL 擴充功能] 索引標籤，將游標停留在擴充功能上，然後選取「 」 **[!UICONTROL 設定]**：
+* **配置 —** 要配置MA扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**：
 
 ![MA 扩展配置](../../../images/ext-va-config.jpg)
 
@@ -59,7 +59,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)�
 
 ### 通过网页/JS 应用程序使用
 
-MA擴充功能會啟用「 」中的「匯出視窗物件API」設定，將MediaHeartbeat API匯出至全域視窗物件中。 [!UICONTROL 設定] 頁面。 它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.MediaHeartbeat` 可以访问 MediaHeartbeat。
+MA扩展通过启用中的“Export APIs to Window Object”设置，在全局窗口对象中导出MediaHeartbeat API。 [!UICONTROL 配置] 页面。 它将在配置的变量名称下导出 API。例如，如果变量名称配置为 `ADB`，则 `window.ADB.MediaHeartbeat` 可以访问 MediaHeartbeat。
 
 >[!IMPORTANT]
 >

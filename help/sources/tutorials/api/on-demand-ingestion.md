@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；流量服務；
-title: （Beta版）使用流量服務API建立隨選擷取的流量執行
-description: 本教學課程涵蓋使用流量服務API建立隨選擷取之流量執行的步驟
+keywords: Experience Platform；主页；热门主题；流服务；
+title: （测试版）使用流服务API创建按需引入的流运行
+description: 本教程介绍了使用流服务API为按需引入创建流运行的步骤
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
 source-git-commit: 795b1af6421c713f580829588f954856e0a88277
 workflow-type: tm+mt
@@ -10,40 +10,40 @@ ht-degree: 1%
 
 ---
 
-# （測試版）使用建立隨選擷取的流程執行 [!DNL Flow Service] API
+# （测试版）使用创建按需引入的流运行 [!DNL Flow Service] API
 
 >[!IMPORTANT]
 >
->隨選擷取目前為測試版，貴組織可能尚未提供存取許可權。 本檔案中說明的功能可能會有所變更。
+>按需摄取当前为测试版，您的组织可能还不能访问它。 本文档中描述的功能可能会发生更改。
 
-流程執行代表流程執行的例項。 例如，如果流程排定在早上9:00、上午10:00及上午11:00每小時執行，則您會有三個流程執行例項。 流程執行是您的特定組織所專屬。
+流运行表示流执行的实例。 例如，如果某个流计划在上午9:00、上午10:00和上午11:00每小时运行一次，则您将运行该流的三个实例。 流运行特定于您的特定组织。
 
-隨選擷取可讓您針對指定的資料流建立資料流執行。 這可讓您的使用者根據指定的引數建立流程執行，並建立擷取週期，而不需要服務權杖。 僅批次來源支援隨選擷取。
+按需引入允许您针对给定数据流创建流运行。 这允许您的用户基于给定的参数创建流运行并创建引入周期，而无需服务令牌。 仅对批来源提供按需摄取支持。
 
-本教學課程涵蓋如何使用隨選擷取及使用建立流程執行的步驟。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程介绍了如何使用按需引入和创建流运行的步骤 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 >[!NOTE]
 >
->為了建立資料流執行，您必須先擁有排程為一次擷取的資料流的資料流ID。
+>要创建流运行，您必须首先具有计划一次性摄取的数据流的流ID。
 
-本教學課程需要您實際瞭解Adobe Experience Platform的下列元件：
+本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-## 為以表格為基礎的來源建立流程執行
+## 为基于表的源创建流运行
 
-若要建立以表格為基礎的來源的流程，請向以下網站發出POST請求： [!DNL Flow Service] API，並提供您要對其建立執行的流量ID，以及開始時間、結束時間和差異欄的值。
+要为基于表的来源创建流，请向以下地址发出POST请求： [!DNL Flow Service] API，同时提供要创建运行的流的ID，以及开始时间、结束时间和增量列的值。
 
 >[!TIP]
 >
->以表格為基礎的來源包括以下來源類別：廣告、分析、同意和偏好設定、CRM、客戶成功、資料庫、行銷自動化、付款和通訊協定。
+>基于表的源包括以下源类别：广告、分析、同意和偏好设置、CRM、客户成功、数据库、营销自动化、支付和协议。
 
 **API格式**
 
@@ -53,11 +53,11 @@ POST /runs/
 
 **请求**
 
-下列請求會建立流程ID的流程執行 `3abea21c-7e36-4be1-bec1-d3bad0e3e0de`.
+以下请求创建流ID的流运行 `3abea21c-7e36-4be1-bec1-d3bad0e3e0de`.
 
 >[!NOTE]
 >
->您只需提供 `deltaColumn` 建立您的第一個資料流執行時。 之後， `deltaColumn` 將修補為的一部分 `copy` 和中的轉換，將被視為真實來源。 任何變更 `deltaColumn` 流執行引數的值會產生錯誤。
+>您只需提供 `deltaColumn` 创建第一个流运行时。 之后， `deltaColumn` 将作为的一部分进行修补 `copy` 和的转变将被视为真理的来源。 任何更改 `deltaColumn` 流运行参数中的值将导致错误。
 
 ```shell
 curl -X POST \
@@ -82,16 +82,16 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `flowId` | 要針對其建立您的流程執行的流程ID。 |
-| `params.startTime` | 定義執行開始時間的整數。 值以unix epoch時間表示。 |
-| `params.windowStartTime` | 整數，定義提取資料期間的視窗開始時間。 值以Unix時間表示。 |
-| `params.windowEndTime` | 整數，定義提取資料期間的視窗結束時間。 值以Unix時間表示。 |
-| `params.deltaColumn` | 必須有delta欄才能分割資料，並將新擷取的資料與歷史資料分開。 **注意**：此 `deltaColumn` 只有在建立您的第一個流程執行時才需要。 |
-| `params.deltaColumn.name` | 差異資料行的名稱。 |
+| `flowId` | 将创建流运行的流的ID。 |
+| `params.startTime` | 一个整数，定义运行的开始时间。 该值以unix epoch时间表示。 |
+| `params.windowStartTime` | 一个整数，定义要在其中提取数据的窗口的开始时间。 该值以unix时间表示。 |
+| `params.windowEndTime` | 一个整数，定义要在其中提取数据的窗口的结束时间。 该值以unix时间表示。 |
+| `params.deltaColumn` | 需要增量列对数据分区并将新摄取的数据与历史数据分离。 **注释**：此 `deltaColumn` 仅在创建首次流运行时需要。 |
+| `params.deltaColumn.name` | 增量列的名称。 |
 
 **响应**
 
-成功的回應會傳回新建立的流程執行的詳細資訊，包括其唯一執行 `id`.
+成功的响应将返回新创建的流运行的详细信息，包括其唯一运行 `id`.
 
 ```json
 {
@@ -106,8 +106,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 新建立之流量執行的ID。 請參閱指南： [正在擷取流程規格](../api/collect/database-nosql.md#specs) 以取得以表格為基礎的執行規格的詳細資訊。 |
-| `etag` | 流程執行的資源版本。 |
+| `id` | 新创建的流运行的ID。 请参阅指南，网址为 [正在检索流规范](../api/collect/database-nosql.md#specs) 有关基于表的运行规范的详细信息。 |
+| `etag` | 流运行的资源版本。 |
 <!-- 
 | `createdAt` | The unix timestamp that designates when the flow run was created. |
 | `updatedAt` | The unix timestamp that designates when the flow run was last updated. |
@@ -126,13 +126,13 @@ curl -X POST \
 | `etag` | The resource version of the flow run. |
 | `metrics` | This property displays a status summary for the flow run. | -->
 
-## 為檔案型來源建立流程執行
+## 为基于文件的源创建流运行
 
-若要建立檔案型來源的流程，請向以下發出POST請求： [!DNL Flow Service] API，同時提供您要針對其建立執行的流程ID，以及開始時間和結束時間的值。
+POST要为基于文件的源创建流，请向 [!DNL Flow Service] API，同时提供要创建运行的流的ID，以及开始时间和结束时间的值。
 
 >[!TIP]
 >
->檔案型來源包含所有雲端儲存空間來源。
+>基于文件的源包括所有云存储源。
 
 **API格式**
 
@@ -142,7 +142,7 @@ POST /runs/
 
 **请求**
 
-下列請求會建立流程ID的流程執行 `3abea21c-7e36-4be1-bec1-d3bad0e3e0de`.
+以下请求创建流ID的流运行 `3abea21c-7e36-4be1-bec1-d3bad0e3e0de`.
 
 ```shell
 curl -X POST \
@@ -164,14 +164,14 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `flowId` | 要針對其建立您的流程執行的流程ID。 |
-| `params.startTime` | 定義執行開始時間的整數。 值以unix epoch時間表示。 |
-| `params.windowStartTime` | 整數，定義提取資料期間的視窗開始時間。 值以Unix時間表示。 |
-| `params.windowEndTime` | 整數，定義提取資料期間的視窗結束時間。 值以Unix時間表示。 |
+| `flowId` | 将创建流运行的流的ID。 |
+| `params.startTime` | 一个整数，定义运行的开始时间。 该值以unix epoch时间表示。 |
+| `params.windowStartTime` | 一个整数，定义要在其中提取数据的窗口的开始时间。 该值以unix时间表示。 |
+| `params.windowEndTime` | 一个整数，定义要在其中提取数据的窗口的结束时间。 该值以unix时间表示。 |
 
 **响应**
 
-成功的回應會傳回新建立的流程執行的詳細資訊，包括其唯一執行 `id`.
+成功的响应将返回新创建的流运行的详细信息，包括其唯一运行 `id`.
 
 
 ```json
@@ -187,9 +187,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 新建立之流量執行的ID。 請參閱指南： [正在擷取流程規格](../api/collect/database-nosql.md#specs) 以取得以表格為基礎的執行規格的詳細資訊。 |
-| `etag` | 流程執行的資源版本。 |
+| `id` | 新创建的流运行的ID。 请参阅指南，网址为 [正在检索流规范](../api/collect/database-nosql.md#specs) 有关基于表的运行规范的详细信息。 |
+| `etag` | 流运行的资源版本。 |
 
-## 監視您的流量執行
+## 监测流量运行
 
-建立流程執行後，您可以監視透過它擷取的資料，以檢視有關流程執行、完成狀態和錯誤的資訊。 若要使用API監控您的流量執行，請參閱以下主題上的教學課程： [監視API中的資料流 ](./monitor.md). 若要使用Platform UI監控您的流量執行，請參閱以下指南： [使用監視儀表板監視來源資料流](../../../dataflows/ui/monitor-sources.md).
+创建流运行后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 要使用API监控流量运行，请参阅关于的教程 [监测API中的数据流 ](./monitor.md). 要使用Platform UI监控流量运行，请参阅上的指南 [使用监视仪表板监视源数据流](../../../dataflows/ui/monitor-sources.md).

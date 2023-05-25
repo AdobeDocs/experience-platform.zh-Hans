@@ -2,7 +2,7 @@
 title: 查询服务中数据资产组织的最佳实践
 description: 本文档概述了整理数据以便通过查询服务使用的逻辑方法。
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: 6e2be299e3c1c0dfa2832ead22cdeaea0ca83591
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -45,13 +45,13 @@ ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 以下示例添加 `dataset1`， `dataset2`， `dataset3` 和 `v1` 到 `databaseA.schema1` 在上一个示例中创建的容器。
 
 ```SQL
-ALTER TABLE dataset1 ADD SCHEMA databaseA.schema1;
+ALTER TABLE dataset1 SET SCHEMA databaseA.schema1;
  
-ALTER TABLE dataset2 ADD SCHEMA databaseA.schema1;
+ALTER TABLE dataset2 SET SCHEMA databaseA.schema1;
  
-ALTER TABLE dataset3 ADD SCHEMA databaseA.schema1;
+ALTER TABLE dataset3 SET SCHEMA databaseA.schema1;
  
-ALTER VIEW v1  ADD SCHEMA databaseA.schema1;
+ALTER VIEW v1  SET SCHEMA databaseA.schema1;
 ```
 
 ## 从数据容器访问数据资产

@@ -1,7 +1,7 @@
 ---
-title: 執行Adobe Experience Platform Web SDK命令
-description: 瞭解如何執行Experience PlatformWeb SDK命令
-keywords: 執行命令；commandName；Promise；getLibraryInfo；回應物件；同意；
+title: 执行Adobe Experience Platform Web SDK命令
+description: 了解如何执行Experience PlatformWeb SDK命令
+keywords: 执行命令；commandName；Promise；getLibraryInfo；响应对象；同意；
 exl-id: dda98b3e-3e37-48ac-afd7-d8852b785b83
 source-git-commit: f3344c9c9b151996d94e40ea85f2b0cf9c9a6235
 workflow-type: tm+mt
@@ -10,26 +10,26 @@ ht-degree: 2%
 
 ---
 
-# 執行命令
+# 执行命令
 
 
-在您的網頁上實作基底程式碼後，您就可以開始使用SDK執行命令。 您不需要等待外部檔案(`alloy.js`)，以便在執行命令之前從伺服器載入。 如果SDK尚未完成載入，SDK會儘快將命令排入佇列及處理。
+在网页上实施基础代码后，您可以开始使用SDK执行命令。 您无需等待外部文件(`alloy.js`)，以便在执行命令之前从服务器加载。 如果SDK尚未完成加载，SDK会尽快将命令排入队列并进行处理。
 
-命令使用下列語法執行。
+命令使用以下语法执行。
 
 ```javascript
 alloy("commandName", options);
 ```
 
-此 `commandName` 告訴SDK該做什麼，同時 `options` 是您想要傳遞至命令的引數和資料。 由於可用選項取決於命令，請參考檔案以瞭解有關每個命令的更多詳細資訊。
+此 `commandName` 告诉SDK要执行的操作，同时 `options` 是要传递到命令中的参数和数据。 由于可用选项取决于命令，因此有关每个命令的更多详细信息，请参阅文档。
 
-## 承諾注意事項
+## 关于承诺的说明
 
-[Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK與網頁上程式碼通訊的基礎。 Promise是一種常見的程式設計結構，並非此SDK或JavaScript特有的。 Promise會作為建立Promise時未知之值的代理。 知道值後，就會使用值「解析」Promise。 處理常式函式可與Promise相關聯，以便在Promise已解決或在解析Promise的程式中發生錯誤時通知您。 若要進一步瞭解承諾，請閱讀 [本教學課程](https://javascript.info/promise-basics) 或網頁上的任何其他資源。
+[承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK如何与网页上的代码进行通信的基础。 promise是一种常见的编程结构，并非特定于此SDK甚至JavaScript。 promise充当创建promise时未知的值的代理。 知道该值后，将使用值“解析”promise。 处理程序函数可以与promise关联，以便在解析promise或过程中发生错误时通知您。 要了解有关承诺的更多信息，请阅读 [本教程](https://javascript.info/promise-basics) 或Web上的任何其他资源。
 
-## 處理成功或失敗 {#handling-success-or-failure}
+## 处理成功或失败 {#handling-success-or-failure}
 
-每次執行命令時，都會傳回Promise。 promise代表命令的最終完成。 在以下範例中，您可以使用 `then` 和 `catch` 用來判斷命令是否成功的方法。
+每次执行命令时，都会返回promise。 这个承诺意味着命令的最终完成。 在以下示例中，您可以使用 `then` 和 `catch` 确定命令成功或失败时间的方法。
 
 ```javascript
 alloy("commandName", options)
@@ -43,7 +43,7 @@ alloy("commandName", options)
   });
 ```
 
-如果知道指令何時成功對您來說並不重要，您可以移除 `then` 呼叫。
+如果知道命令何时成功对您来说并不重要，则可以删除 `then` 呼叫。
 
 ```javascript
 alloy("commandName", options)
@@ -53,7 +53,7 @@ alloy("commandName", options)
   });
 ```
 
-同樣地，如果知道命令何時失敗對您來說並不重要，您可以移除 `catch` 呼叫。
+同样，如果知道命令何时失败对您来说并不重要，则可以删除 `catch` 呼叫。
 
 ```javascript
 alloy("commandName", options)
@@ -63,9 +63,9 @@ alloy("commandName", options)
   });
 ```
 
-### 回應物件
+### 响应对象
 
-從命令傳回的所有promise都使用 `result` 物件。 根據命令和使用者的同意，結果物件將包含資料。 例如，程式庫資訊會作為結果物件的屬性在下列命令中傳遞。
+从命令返回的所有承诺都使用 `result` 对象。 结果对象将包含数据，具体取决于命令和用户的同意。 例如，库信息作为以下命令中结果对象的属性传递。
 
 ```js
 alloy("getLibraryInfo")
@@ -78,4 +78,4 @@ alloy("getLibraryInfo")
 
 ### 同意
 
-如果使用者未針對特定目的提供其同意，仍會解析Promise；不過，回應物件將僅包含可在使用者同意的內容中提供的資訊。
+如果用户未针对特定目的给出其同意，则承诺仍将被解析；但是，响应对象将仅包含可以在用户同意的内容上下文中提供的信息。

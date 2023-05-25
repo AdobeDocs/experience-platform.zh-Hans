@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Apache Cassandra；Apache cassandra；Cassandra；cassandra
+keywords: Experience Platform；主页；热门主题；Apache Cassandra；Apache cassandra；Cassandra；cassandra
 solution: Experience Platform
-title: 使用流量服務API建立Apache Cassandra來源連線
+title: 使用流服务API创建Apache Cassandra源连接
 type: Tutorial
-description: 瞭解如何使用流量服務API將Apache Cassandra連線至Adobe Experience Platform。
+description: 了解如何使用流服务API将Apache Cassandra连接到Adobe Experience Platform。
 source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
 workflow-type: tm+mt
 source-wordcount: '620'
@@ -12,58 +12,58 @@ ht-degree: 2%
 ---
 
 
-# 建立 [!DNL Apache Cassandra] 來源連線使用 [!DNL Flow Service] API
+# 创建 [!DNL Apache Cassandra] 源连接使用 [!DNL Flow Service] API
 
-[!DNL Flow Service] 用於收集及集中Adobe Experience Platform內各種不同來源的客戶資料。 此服務提供可連線所有支援來源的使用者介面和RESTful API。
+[!DNL Flow Service] 用于从Adobe Experience Platform中各种不同的来源收集客户数据并对其进行集中。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从此API进行连接。
 
-本教學課程使用 [!DNL Flow Service] API可引導您完成連線的步驟 [!DNL Apache Cassandra] （以下稱「Cassandra」）以 [!DNL Experience Platform].
+本教程使用 [!DNL Flow Service] API引导您完成连接的步骤 [!DNL Apache Cassandra] （以下称“Cassandra”） [!DNL Experience Platform].
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您需要瞭解的其他資訊，以便使用成功連線到Cassandra [!DNL Flow Service] API。
+以下部分提供您需要了解的其他信息，以便使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL Cassandra]，您必須提供下列連線屬性的值：
+为了 [!DNL Flow Service] 以连接 [!DNL Cassandra]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 的IP位址或主機名稱 [!DNL Cassandra] 伺服器。 |
-| `port` | TCP連線埠， [!DNL Cassandra] 伺服器使用來監聽使用者端連線。 預設連線埠為 `9042`. |
-| `username` | 用來連線至的使用者名稱 [!DNL Cassandra] 用於驗證的伺服器。 |
-| `password` | 連線至的密碼 [!DNL Cassandra] 用於驗證的伺服器。 |
-| `connectionSpec.id` | 建立連線所需的唯一識別碼。 的連線規格ID [!DNL Cassandra] 是 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
+| `host` | 的IP地址或主机名 [!DNL Cassandra] 服务器。 |
+| `port` | TCP端口， [!DNL Cassandra] 服务器使用来侦听客户端连接。 默认端口为 `9042`. |
+| `username` | 用于连接到 [!DNL Cassandra] 服务器进行身份验证。 |
+| `password` | 用于连接到 [!DNL Cassandra] 服务器进行身份验证。 |
+| `connectionSpec.id` | 创建连接所需的唯一标识符。 的连接规范ID [!DNL Cassandra] 是 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
 
-如需入門的詳細資訊，請參閱 [這個Cassandra檔案](https://cassandra.apache.org/doc/latest/operating/security.html#authentication).
+有关入门的更多信息，请参阅 [此Cassandra文档](https://cassandra.apache.org/doc/latest/operating/security.html#authentication).
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
-* 授權：持有人 `{ACCESS_TOKEN}`
+* 授权：持有者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform]，包括那些属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
 
 * Content-Type: `application/json`
 
 ## 创建连接
 
-連線會指定來源，並包含該來源的認證。 每個只需要一個聯結器 [!DNL Cassandra] 帳戶，因為它可用來建立多個來源聯結器以引入不同的資料。
+连接指定源，并包含该源的凭据。 每个只需要一个连接器 [!DNL Cassandra] 帐户，因为它可用于创建多个源连接器以引入不同的数据。
 
 **API格式**
 
@@ -73,7 +73,7 @@ POST /connections
 
 **请求**
 
-為了建立 [!DNL Cassandra] 連線，其唯一的連線規格ID必須作為POST請求的一部分提供。 的連線規格ID [!DNL Cassandra] 是 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`.
+为了创建 [!DNL Cassandra] 连接，其唯一连接规范ID必须作为POST请求的一部分提供。 的连接规范ID [!DNL Cassandra] 是 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`.
 
 ```shell
 curl -X POST \
@@ -104,15 +104,15 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.host` | 的IP位址或主機名稱 [!DNL Cassandra] 伺服器。 |
-| `auth.params.port` | TCP連線埠， [!DNL Cassandra] 伺服器使用來監聽使用者端連線。 預設連線埠為 `9042`. |
-| `auth.params.username` | 用來連線至的使用者名稱 [!DNL Cassandra] 用於驗證的伺服器。 |
-| `auth.params.password` | 連線至的密碼 [!DNL Cassandra] 用於驗證的伺服器。 |
-| `connectionSpec.id` | 此 [!DNL Cassandra] 連線規格ID： `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
+| `auth.params.host` | 的IP地址或主机名 [!DNL Cassandra] 服务器。 |
+| `auth.params.port` | TCP端口， [!DNL Cassandra] 服务器使用来侦听客户端连接。 默认端口为 `9042`. |
+| `auth.params.username` | 用于连接到 [!DNL Cassandra] 服务器进行身份验证。 |
+| `auth.params.password` | 用于连接到 [!DNL Cassandra] 服务器进行身份验证。 |
+| `connectionSpec.id` | 此 [!DNL Cassandra] 连接规范ID： `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
 
 **响应**
 
-成功回應會傳回新建立連線的詳細資料，包括其唯一識別碼(`id`)。 在下一個教學課程中探索您的資料時，需要此ID。
+成功响应将返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
 
 ```json
 {
@@ -123,4 +123,4 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL Cassandra] 使用下列專案的連線： [!DNL Flow Service] API且已取得連線的唯一ID值。 您可在下一個教學課程中使用此ID，瞭解如何 [使用流量服務API探索資料庫](../../explore/database-nosql.md).
+按照本教程，您已创建了一个 [!DNL Cassandra] 连接使用 [!DNL Flow Service] API并已获得连接的唯一ID值。 在学习如何执行以下操作，您可在下一个教程中使用此ID [使用流服务API浏览数据库](../../explore/database-nosql.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；OneTrust
+keywords: Experience Platform；主页；热门主题；OneTrust
 solution: Experience Platform
-title: 使用流量服務API為OneTrust整合來源建立資料流
-description: 瞭解如何使用Flow Service API將Adobe Experience Platform連線至OneTrust整合。
+title: 使用流服务API为OneTrust集成源创建数据流
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到OneTrust集成。
 exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
 source-git-commit: 9846dc24321d7b32a110cfda9df3511b1e3a82ed
 workflow-type: tm+mt
@@ -11,37 +11,37 @@ ht-degree: 1%
 
 ---
 
-# 為建立資料流 [!DNL OneTrust Integration] 來源使用 [!DNL Flow Service] API
+# 为创建数据流 [!DNL OneTrust Integration] 源使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->此 [!DNL OneTrust Integration] 來源僅支援擷取同意和偏好設定資料，不支援Cookie。
+>此 [!DNL OneTrust Integration] 源仅支持获取同意和偏好设置数据，而不支持Cookie。
 
-下列教學課程將逐步引導您完成建立來源連線和資料流的步驟，以便從取得歷史同意資料和排程同意資料 [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US) 至Adobe Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建源连接和数据流的步骤，以便从中获取历史同意数据和计划同意数据 [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US) 到Adobe Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 先决条件
 
 >[!IMPORTANT]
 >
->此 [!DNL OneTrust Integration] 來源聯結器和檔案是由 [!DNL OneTrust Integration] 團隊。 如有任何查詢或更新請求，請聯絡 [[!DNL OneTrust] 團隊](https://my.onetrust.com/s/contactsupport?language=en_US) 直接。
+>此 [!DNL OneTrust Integration] 源连接器和文档由创建 [!DNL OneTrust Integration] 团队。 如有任何查询或更新请求，请联系 [[!DNL OneTrust] 团队](https://my.onetrust.com/s/contactsupport?language=en_US) 直接。
 
-連線之前 [!DNL OneTrust Integration] 對於Platform，您必須先擷取存取權杖。 如需尋找存取權杖的詳細說明，請參閱 [[!DNL OneTrust Integration] OAuth 2指南](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
+连接之前 [!DNL OneTrust Integration] 到Platform，您必须首先检索您的访问令牌。 有关查找访问令牌的详细说明，请参阅 [[!DNL OneTrust Integration] OAuth 2指南](https://developer.onetrust.com/docs/api-docs-v3/b3A6MjI4OTUyOTc-generate-access-token).
 
-存取權杖過期後不會自動重新整理，因為系統間重新整理權杖不受支援 [!DNL OneTrust]. 因此，您必須確定您的存取權杖在過期之前已在連線中更新。 存取Token的最大可設定存留期為一年。 若要進一步瞭解如何更新存取權杖，請參閱 [[!DNL OneTrust] 有關管理您的OAuth 2.0使用者端憑證的檔案](https://developer.onetrust.com/docs/documentation/ZG9jOjIyODk1MTUw-managing-o-auth-2-0-client-credentials).
+访问令牌过期后不会自动刷新，因为系统到系统刷新令牌不受支持 [!DNL OneTrust]. 因此，在访问令牌过期之前，必须确保连接中的访问令牌已更新。 访问令牌的最长可配置生命周期为一年。 要了解有关更新访问令牌的更多信息，请参阅 [[!DNL OneTrust] 有关管理OAuth 2.0客户端凭据的文档](https://developer.onetrust.com/docs/documentation/ZG9jOjIyODk1MTUw-managing-o-auth-2-0-client-credentials).
 
-## Connect [!DNL OneTrust Integration] 至平台，使用 [!DNL Flow Service] API
+## Connect [!DNL OneTrust Integration] 到平台，使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->此 [!DNL OneTrust Integration] 正在與Adobe共用API規格以擷取資料。
+>此 [!DNL OneTrust Integration] 正在与Adobe共享API规范以进行数据摄取。
 
-以下教學課程將逐步引導您完成建立 [!DNL OneTrust Integration] 來源連線並建立資料流以帶來 [!DNL OneTrust Integration] 使用將資料傳送至Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建 [!DNL OneTrust Integration] 源连接并创建数据流以引入 [!DNL OneTrust Integration] 使用将数据发送到平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-### 建立基礎連線 {#base-connection}
+### 创建基本连接 {#base-connection}
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL OneTrust Integration] 要求內文中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL OneTrust Integration] 作为请求正文一部分的身份验证凭据。
 
 **API格式**
 
@@ -51,7 +51,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL OneTrust Integration] ：
+以下请求创建基本连接 [!DNL OneTrust Integration] ：
 
 ```shell
 curl -X POST \
@@ -79,16 +79,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 來源的連線規格ID。 在您的來源註冊並核准後，您便可以透過擷取此ID [!DNL Flow Service] API。 |
-| `auth.specName` | 您用來向Platform驗證來源的驗證型別。 |
-| `auth.params.` | 包含驗證您的來源所需的認證，包括連線至API的存取權杖。 |
-| `auth.params.accessToken` | 與您的對應的存取權杖 [!DNL OneTrust Integration] 帳戶。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 源的连接规范ID。 在您的源通过注册和批准后，可以检索此ID [!DNL Flow Service] API。 |
+| `auth.specName` | 用于向Platform验证源的身份验证类型。 |
+| `auth.params.` | 包含对源进行身份验证所需的凭据，包括用于连接到API的访问令牌。 |
+| `auth.params.accessToken` | 与您的对应的访问令牌 [!DNL OneTrust Integration] 帐户。 |
 
 **响应**
 
-成功回應會傳回新建立的基本連線，包括其唯一連線識別碼(`id`)。 在下一個步驟中探索來源的檔案結構和內容時，需要此ID。
+成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -97,11 +97,11 @@ curl -X POST \
 }
 ```
 
-### 探索您的來源 {#explore}
+### 浏览您的源 {#explore}
 
-使用您在上一步中產生的基本連線ID，您可以透過執行GET請求來探索檔案和目錄。
+使用上一步中生成的基本连接ID，您可以通过执行GET请求来浏览文件和目录。
 
-使用以下呼叫來尋找您要帶入的檔案路徑 [!DNL Platform]：
+使用以下调用查找要引入的文件的路径 [!DNL Platform]：
 
 **API格式**
 
@@ -109,16 +109,16 @@ curl -X POST \
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fileType={FILE_TYPE}&preview={PREVIEW}
 ```
 
-執行GET請求以探索來源的檔案結構和內容時，您必須包括下表列出的查詢引數：
+执行GET请求以浏览源的文件结构和内容时，必须包括下表列出的查询参数：
 
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 在上一步中產生的基本連線ID。 |
-| `objectType=rest` | 您要探索的物件型別。 目前，此值一律設為 `rest`. |
-| `{OBJECT}` | 只有在檢視特定目錄時才需要此引數。 其值代表您要探索的目錄路徑。 |
-| `fileType=json` | 您要帶到Platform的檔案型別。 目前， `json` 是唯一支援的檔案型別。 |
-| `{PREVIEW}` | 定義連線內容是否支援預覽的布林值。 |
+| `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
+| `objectType=rest` | 您希望浏览的对象类型。 目前，此值始终设置为 `rest`. |
+| `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 |
+| `fileType=json` | 要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
+| `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
 
 **请求**
 
@@ -133,11 +133,11 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回查詢檔案的結構。
+成功响应将返回查询文件的结构。
 
 >[!NOTE]
 >
->為了簡單起見，以下JSON回應裝載已隱藏。 選取「按一下我」以檢視回應裝載。
+>为简短起见，以下JSON响应有效负载已隐藏。 选择单击我以查看响应有效负载。
 
 +++单击这里
 
@@ -563,9 +563,9 @@ curl -X GET \
 
 +++
 
-### 建立來源連線 {#source-connection}
+### 创建源连接 {#source-connection}
 
-您可以向以下發出POST要求來建立來源連線： [!DNL Flow Service] API。 來源連線由連線ID、來源資料檔案的路徑和連線規格ID組成。
+您可以通过对以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -575,7 +575,7 @@ POST /sourceConnections
 
 **请求**
 
-以下請求會為建立來源連線 [!DNL OneTrust Integration] ：
+以下请求创建源连接 [!DNL OneTrust Integration] ：
 
 ```shell
 curl -X POST \
@@ -602,15 +602,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 來源連線的名稱。 確保來源連線的名稱是描述性的，因為您可以使用此名稱來查閱來源連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供來源連線的詳細資訊。 |
-| `baseConnectionId` | 的基礎連線ID： [!DNL OneTrust Integration]. 此ID是在先前的步驟中產生的。 |
-| `connectionSpec.id` | 與您的來源對應的連線規格ID。 |
-| `data.format` | 的格式 [!DNL OneTrust Integration] 您要擷取的資料。 目前唯一支援的資料格式為 `json`. |
+| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
+| `baseConnectionId` | 的基本连接ID [!DNL OneTrust Integration]. 此ID是在前面的步骤中生成的。 |
+| `connectionSpec.id` | 与源对应的连接规范ID。 |
+| `data.format` | 的格式 [!DNL OneTrust Integration] 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 此ID在後續步驟中是建立資料流的必要專案。
+成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
 
 ```json
 {
@@ -619,25 +619,25 @@ curl -X POST \
 }
 ```
 
-### 建立目標XDM結構描述 {#target-schema}
+### 创建目标XDM架构 {#target-schema}
 
-為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 然後，目標結構描述會用於建立包含來源資料的Platform資料集。
+为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可透過對以下專案執行POST請求來建立目標XDM結構描述： [結構描述登入API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](../../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../../xdm/api/schemas.md).
 
-### 建立目標資料集 {#target-dataset}
+### 创建目标数据集 {#target-dataset}
 
-您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在裝載中提供目標結構描述的ID。
+可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](../../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
 
-### 建立目標連線 {#target-connection}
+### 创建目标连接 {#target-connection}
 
-目標連線代表與要儲存所擷取資料的目的地之間的連線。 若要建立目標連線，您必須提供對應至 [!DNL Data Lake]. 此ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于目标连接的固定连接规范ID。 [!DNL Data Lake]. 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-您現在將目標結構描述、目標資料集和連線規格ID視為唯一識別碼。 [!DNL Data Lake]. 使用這些識別碼，您可以使用 [!DNL Flow Service] 指定將包含傳入來源資料之資料集的API。
+现在，目标架构和目标数据集的连接规范ID均为唯一标识符 [!DNL Data Lake]. 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -647,7 +647,7 @@ POST /targetConnections
 
 **请求**
 
-以下請求會建立目標連線 [!DNL OneTrust Integration] ：
+以下请求创建目标连接 [!DNL OneTrust Integration] ：
 
 ```shell
 curl -X POST \
@@ -675,16 +675,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 目標連線的名稱。 確保目標連線的名稱是描述性的，因為您可以使用此名稱來查詢目標連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供目標連線的詳細資訊。 |
-| `connectionSpec.id` | 對應至的連線規格ID [!DNL Data Lake]. 此固定ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | 的格式 [!DNL OneTrust Integration] 您要帶到Platform的資料。 |
-| `params.dataSetId` | 在上一步中擷取的目標資料集ID。 |
+| `name` | 目标连接的名称。 确保目标连接的名称是描述性的，因为您可以使用此名称查找有关目标连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
+| `connectionSpec.id` | 与对应的连接规范ID [!DNL Data Lake]. 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `data.format` | 的格式 [!DNL OneTrust Integration] 要带到Platform的数据。 |
+| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
 
 
 **响应**
 
-成功回應會傳回新目標連線的唯一識別碼(`id`)。 此ID在後續步驟中是必要的。
+成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -693,9 +693,9 @@ curl -X POST \
 }
 ```
 
-### 建立對應 {#mapping}
+### 创建映射 {#mapping}
 
-為了將來源資料內嵌到目標資料集中，必須先將其對應到目標資料集所遵守的目標結構描述。 這是透過向執行POST請求來達成 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 要求裝載中定義資料對應。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
 
 **API格式**
 
@@ -765,13 +765,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `xdmSchema` | 的ID [目標XDM結構描述](#target-schema) 已在先前步驟中產生。 |
-| `mappings.destinationXdmPath` | 來源屬性對應到的目的地XDM路徑。 |
-| `mappings.sourceAttribute` | 需要對映至目的地XDM路徑的來源屬性。 |
+| `xdmSchema` | 的ID [目标XDM架构](#target-schema) 在之前的步骤中生成。 |
+| `mappings.destinationXdmPath` | 源属性将映射到的目标XDM路径。 |
+| `mappings.sourceAttribute` | 需要映射到目标XDM路径的源属性。 |
 
 **响应**
 
-成功回應會傳回新建立對應的詳細資料，包括其唯一識別碼(`id`)。 在後續步驟中需要此值，才能建立資料流。
+成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -784,17 +784,17 @@ curl -X POST \
 }
 ```
 
-### 建立流程 {#flow}
+### 创建流 {#flow}
 
-從以下來源取得資料的最後一步 [!DNL OneTrust Integration] 對Platform而言，就是建立資料流。 到現在為止，您已準備下列必要值：
+从以下来源获取数据的最后一步 [!DNL OneTrust Integration] 到Platform就是创建数据流。 现在，您已准备以下必需值：
 
-* [來源連線ID](#source-connection)
-* [目標連線ID](#target-connection)
+* [源连接ID](#source-connection)
+* [目标连接ID](#target-connection)
 * [映射 ID](#mapping)
 
-資料流負責從來源排程及收集資料。 您可以執行POST要求，同時在裝載中提供先前提及的值，藉此建立資料流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
 
-若要排程內嵌，您必須先將開始時間值設為以秒為單位的epoch時間。 然後，您必須將頻率值設定為下列五個選項之一： `once`， `minute`， `hour`， `day`，或 `week`. 間隔值會指定兩個連續內嵌之間的期間，但是建立一次性內嵌不需要設定間隔。 對於所有其他頻率，間隔值必須設定為等於或大於 `15`.
+要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`， `minute`， `hour`， `day`，或 `week`. 间隔值用于指定两次连续摄取之间的时间段，但是，创建一次性摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
 **API格式**
 
@@ -843,23 +843,23 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 資料流的名稱。 確保資料流的名稱是描述性的，因為您可以使用此名稱來查閱資料流上的資訊。 |
-| `description` | 您可以納入的選用值，可提供資料流的詳細資訊。 |
-| `flowSpec.id` | 建立資料流所需的流量規格ID。 此固定ID為： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
-| `flowSpec.version` | 流程規格ID的對應版本。 此值預設為 `1.0`. |
-| `sourceConnectionIds` | 此 [來源連線ID](#source-connection) 已在先前步驟中產生。 |
-| `targetConnectionIds` | 此 [目標連線ID](#target-connection) 已在先前步驟中產生。 |
-| `transformations` | 此屬性包含套用至您的資料所需的各種轉換。 將非XDM相容的資料引進Platform時，需要此屬性。 |
-| `transformations.name` | 指定給轉換的名稱。 |
-| `transformations.params.mappingId` | 此 [對應ID](#mapping) 已在先前步驟中產生。 |
-| `transformations.params.mappingVersion` | 對應ID的對應版本。 此值預設為 `0`. |
-| `scheduleParams.startTime` | 此屬性包含資料流擷取排程的相關資訊。 |
-| `scheduleParams.frequency` | 資料流收集資料的頻率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 間隔會指定兩個連續資料流執行之間的期間。 間隔值應為非零整數。 當頻率設定為時，不需要間隔 `once` 和應大於或等於 `15` （其他頻率值）。 |
+| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
+| `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
+| `sourceConnectionIds` | 此 [源连接ID](#source-connection) 在之前的步骤中生成。 |
+| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
+| `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
+| `transformations.name` | 分配给转换的名称。 |
+| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
+| `scheduleParams.startTime` | 此属性包含有关数据流的摄取调度的信息。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 当频率设置为时，不需要间隔 `once` 和应大于或等于 `15` 其他频率值。 |
 
 **响应**
 
-成功的回應會傳回ID (`id`)。 您可以使用此ID來監視、更新或刪除資料流。
+成功的响应会返回ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
 
 ```json
 {
@@ -870,24 +870,24 @@ curl -X POST \
 
 ## 附录
 
-下節提供您可以監視、更新和刪除資料流的步驟相關資訊。
+以下部分提供了有关监视、更新和删除数据流的步骤的信息。
 
-### 監視資料流
+### 监测数据流
 
-建立資料流後，您可以監視透過它擷取的資料，以檢視有關資料流執行、完成狀態和錯誤的資訊。 如需完整的API範例，請閱讀以下指南： [使用API監控您的來源資料流](../../monitor.md).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读以下指南： [使用API监控源数据流](../../monitor.md).
 
-### 更新您的資料流
+### 更新您的数据流
 
-透過向以下專案發出PATCH請求，更新資料流的詳細資訊，例如其名稱和說明，及其執行排程和相關聯的對應集 `/flows` 端點 [!DNL Flow Service] API，同時提供資料流的ID。 提出PATCH請求時，您必須提供資料流的 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新來源資料流](../../update-dataflows.md).
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
 
-### 更新您的帳戶
+### 更新您的帐户
 
-透過對執行PATCH請求，更新來源帳戶的名稱、說明和認證 [!DNL Flow Service] API時，提供您的基本連線ID作為查詢引數。 提出PATCH請求時，您必須提供來源帳戶的唯一值 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新您的來源帳戶](../../update.md).
+PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
 
-### 刪除您的資料流
+### 删除数据流
 
-透過對執行DELETE請求來刪除您的資料流 [!DNL Flow Service] API，同時提供您要作為查詢引數的一部分刪除的資料流的ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的資料流](../../delete-dataflows.md).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
 
-### 刪除您的帳戶
+### 删除您的帐户
 
-透過對執行DELETE請求來刪除您的帳戶 [!DNL Flow Service] API，同時提供您要刪除之帳戶的基本連線ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的來源帳戶](../../delete.md).
+向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).

@@ -1,6 +1,6 @@
 ---
-title: 監視排定的查詢
-description: 瞭解如何透過查詢服務UI監視查詢。
+title: 监视计划查询
+description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
 source-git-commit: 1b4554e204663d40c3a18da792614305abb7d296
 workflow-type: tm+mt
@@ -9,133 +9,133 @@ ht-degree: 0%
 
 ---
 
-# 監視排定的查詢
+# 监视计划查询
 
-Adobe Experience Platform透過UI改善所有查詢作業的狀態可見性。 從 [!UICONTROL 排定的查詢] 索引標籤您現在可以找到有關查詢執行的重要資訊，包括狀態、排程詳細資訊，以及失敗時的錯誤訊息/代碼。 您還可以透過UI訂閱基於查詢狀態的查詢警報，用於以下任何查詢： [!UICONTROL 排定的查詢] 標籤。
+Adobe Experience Platform通过UI提高了所有查询作业状态的可见性。 起始日期 [!UICONTROL 计划的查询] 选项卡您现在可以找到有关查询运行的重要信息，包括状态、计划详细信息以及失败时的错误消息/代码。 您还可以通过UI为任何此类查询订阅基于其状态的查询警报，方法是使用 [!UICONTROL 计划的查询] 选项卡。
 
-## [!UICONTROL 排定的查詢]
+## [!UICONTROL 计划的查询]
 
-此 [!UICONTROL 排定的查詢] 索引標籤會提供所有已排程CTA和ITAS查詢的概觀。 您可以找到所有已排程查詢的執行詳細資料，以及任何失敗查詢的錯誤代碼和訊息。
+此 [!UICONTROL 计划的查询] 选项卡提供了所有计划CTA和ITAS查询的概述。 可以找到所有计划查询的运行详细信息，以及任何失败查询的错误代码和消息。
 
-若要導覽至 [!UICONTROL 排定的查詢] 索引標籤，選取 **[!UICONTROL 查詢]** 從左側導覽列，後面接著 **[!UICONTROL 排定的查詢]**
+要导航到 [!UICONTROL 计划的查询] 选项卡，选择 **[!UICONTROL 查询]** 导航栏中，后面是 **[!UICONTROL 计划的查询]**
 
-![「查詢」工作區中的「排程查詢」索引標籤。](../images/ui/monitor-queries/scheduled-queries.png)
+![“查询”工作区中的“计划查询”选项卡。](../images/ui/monitor-queries/scheduled-queries.png)
 
-下表說明每個可用的欄。
+下表描述了每个可用的列。
 
 >[!NOTE]
 >
->警示訂閱圖示包含在未命名欄的每一列中。 請參閱 [警報訂閱](#alert-subscription) 區段以取得詳細資訊。
+>警报订阅图标包含在无标题列的每一行中。 请参阅 [警报订阅](#alert-subscription) 部分以了解更多信息。
 
 | 栏目 | 描述 |
 |---|---|
-| **[!UICONTROL 名称]** | 名稱欄位可以是範本名稱或SQL查詢的前幾個字元。 使用查詢編輯器透過UI建立的任何查詢最初都會命名。 如果查詢是透過API建立的，則其名稱會變成用來建立查詢的初始SQL的片段。 從「 」中選取任何專案 [!UICONTROL 名稱] 欄，以檢視與查詢相關聯的所有執行專案清單。 如需詳細資訊，請參閱 [查詢執行排程詳細資料](#query-runs) 區段。 |
-| **[!UICONTROL 模板]** | 查詢的範本名稱。 選取範本名稱以導覽至「查詢編輯器」。 為方便起見，查詢範本會顯示在查詢編輯器中。 如果沒有範本名稱，資料列會標示一個連字型大小，且無法重新導向至「查詢編輯器」來檢視查詢。 |
-| **[!UICONTROL SQL]** | SQL查詢的片段。 |
-| **[!UICONTROL 執行頻率]** | 這是設定查詢執行的步調。 可用的值包括 `Run once` 和 `Scheduled`. 可以根據查詢的執行頻率來篩選查詢。 |
-| **[!UICONTROL 创建者]** | 建立查詢的使用者名稱。 |
-| **[!UICONTROL 已建立]** | 建立查詢時的時間戳記（UTC格式）。 |
-| **[!UICONTROL 上次執行時間戳記]** | 執行查詢時的最新時間戳記。 此欄會根據查詢目前的排程來反白顯示查詢是否已執行。 |
-| **[!UICONTROL 上次執行狀態]** | 最近查詢執行的狀態。 狀態值為： `Success`， `Failed`， `In progress`、和 `No runs`. |
+| **[!UICONTROL 名称]** | 名称字段是模板名称或SQL查询的前几个字符。 使用查询编辑器通过UI创建的任何查询都会在开始时命名。 如果查询是通过API创建的，则其名称将成为用于创建查询的初始SQL的片段。 从中选择任意项目 [!UICONTROL 名称] 列，以查看与查询关联的所有运行的列表。 欲了解更多信息，请参见 [查询运行计划详细信息](#query-runs) 部分。 |
+| **[!UICONTROL 模板]** | 查询的模板名称。 选择模板名称以导航到“查询编辑器”。 为方便起见，查询编辑器中会显示查询模板。 如果没有模板名称，该行将标有连字符，并且无法重定向到查询编辑器以查看查询。 |
+| **[!UICONTROL SQL]** | SQL查询的片段。 |
+| **[!UICONTROL 运行频率]** | 这是您的查询设置为运行的节奏。 可用的值包括 `Run once` 和 `Scheduled`. 可以根据查询的运行频率对其进行筛选。 |
+| **[!UICONTROL 创建者]** | 创建查询的用户的名称。 |
+| **[!UICONTROL 已创建]** | 创建查询时的时间戳（UTC格式）。 |
+| **[!UICONTROL 上次运行时间戳]** | 运行查询时的最新时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
+| **[!UICONTROL 上次运行状态]** | 最近查询执行的状态。 状态值包括： `Success`， `Failed`， `In progress`、和 `No runs`. |
 
 >[!TIP]
 >
->如果您導覽至「查詢編輯器」，可以選取 **[!UICONTROL 查詢]** 以返回 [!UICONTROL 範本] 標籤。
+>如果导航到查询编辑器，则可以选择 **[!UICONTROL 查询]** 以返回 [!UICONTROL 模板] 选项卡。
 
-### 自訂排程查詢的表格設定
+### 自定义计划查询的表设置
 
-您可以調整欄位 [!UICONTROL 排定的查詢] 定位鍵以符合您的需求。 選取設定圖示(![設定圖示。](../images/ui/monitor-queries/settings-icon.png))以開啟 [!UICONTROL 自訂表格] 設定對話方塊並編輯可用的欄。
+您可以调整上的列 [!UICONTROL 计划的查询] 轻松满足您的需求。 选择设置图标(![设置图标。](../images/ui/monitor-queries/settings-icon.png))以打开 [!UICONTROL 自定义表] “设置”对话框和编辑可用列。
 
-![自訂表格設定圖示。](../images/ui/monitor-queries/customze-table-settings-icon.png)
+![自定义表格设置图标。](../images/ui/monitor-queries/customze-table-settings-icon.png)
 
-切換相關的核取方塊以移除或新增表格欄。 接下來，選取 **[!UICONTROL 套用]** 以確認您的選擇。
-
->[!NOTE]
->
->透過UI建立的任何查詢都會在建立過程中成為具名範本。 範本名稱顯示在範本欄中。 如果查詢是透過API建立的，則範本欄為空白。
-
-![自訂表格設定對話方塊。](../images/ui/monitor-queries/customize-table-dialog.png)
-
-### 訂閱警示 {#alert-subscription}
-
-您可以訂閱以下專案的警示： [!UICONTROL 排定的查詢] 標籤。 選取警示通知圖示(![警示圖示。](../images/ui/monitor-queries/alerts-icon.png))以開啟 [!UICONTROL 警報] 對話方塊。 此 [!UICONTROL 警報] 對話方塊會訂閱UI通知和電子郵件警示。 警示是根據查詢的狀態。 有三個可用選項： `start`， `success`、和 `failure`. 核取適當的方塊並選取 **[!UICONTROL 儲存]** 以訂閱。
-
-![警示訂閱對話方塊。](../images/ui/monitor-queries/alert-subscription-dialog.png)
-
-請參閱 [警報訂閱API檔案](../api/alert-subscriptions.md) 以取得詳細資訊。
-
-### 篩選查詢 {#filter}
-
-您可以根據執行頻率來篩選查詢。 從 [!UICONTROL 排定的查詢] 索引標籤中，選取篩選圖示(![篩選圖示](../images/ui/monitor-queries/filter-icon.png))以開啟篩選器側欄。
-
-![已排程查詢索引標籤中反白了篩選圖示。](../images/ui/monitor-queries/filter-queries.png)
-
-選取 **[!UICONTROL 已排程]** 或 **[!UICONTROL 執行一次]** 執行頻率篩選核取方塊以篩選查詢清單。
+切换相关的复选框以删除或添加表列。 接下来，选择 **[!UICONTROL 应用]** 以确认您的选择。
 
 >[!NOTE]
 >
->任何已執行但未排程的查詢都符合資格 [!UICONTROL 執行一次].
+>通过UI创建的任何查询都将在创建过程中成为命名模板。 模板名称显示在模板列中。 如果查询是通过API创建的，则模板列为空。
 
-![反白顯示篩選側欄的已排程查詢索引標籤。](../images/ui/monitor-queries/filter-sidebar.png)
+![自定义表设置对话框。](../images/ui/monitor-queries/customize-table-dialog.png)
 
-啟用篩選條件後，請選取 **[!UICONTROL 隱藏篩選器]** 以關閉篩選面板。
+### 订阅警报 {#alert-subscription}
 
-## 查詢執行排程詳細資料 {#query-runs}
+您可以从以下位置订阅警报： [!UICONTROL 计划的查询] 选项卡。 选择警报通知图标(![警报图标。](../images/ui/monitor-queries/alerts-icon.png))以打开 [!UICONTROL 警报] 对话框。 此 [!UICONTROL 警报] 对话框同时订阅UI通知和电子邮件警报。 警报基于查询的状态。 有三个可用选项： `start`， `success`、和 `failure`. 选中相应的一个或多个框并选择 **[!UICONTROL 保存]** 订购。
 
-選取查詢名稱，以切換作業選項至排程詳細資訊頁面。 此檢視提供排程查詢中執行的所有執行清單。 提供的資訊包括開始和結束時間、狀態和使用的資料集。
+![警报订阅对话框。](../images/ui/monitor-queries/alert-subscription-dialog.png)
 
-![排程詳細資訊頁面。](../images/ui/monitor-queries/schedule-details.png)
+请参阅 [警报订阅API文档](../api/alert-subscriptions.md) 了解更多信息。
 
-此資訊會以五欄表格提供。 每一列表示查詢執行。
+### 筛选查询 {#filter}
+
+您可以根据运行频率筛选查询。 从 [!UICONTROL 计划的查询] 选项卡，选择过滤器图标(![过滤器图标](../images/ui/monitor-queries/filter-icon.png))以打开过滤器侧栏。
+
+![突出显示过滤器图标的计划查询选项卡。](../images/ui/monitor-queries/filter-queries.png)
+
+选择 **[!UICONTROL 已计划]** 或 **[!UICONTROL 运行一次]** 运行频率筛选器复选框以筛选查询列表。
+
+>[!NOTE]
+>
+>任何已执行但未计划的查询均符合 [!UICONTROL 运行一次].
+
+![突出显示过滤器侧栏的计划查询选项卡。](../images/ui/monitor-queries/filter-sidebar.png)
+
+启用筛选条件后，选择 **[!UICONTROL 隐藏筛选器]** 以关闭过滤器面板。
+
+## 查询运行计划详细信息 {#query-runs}
+
+选择查询名称以定位至“计划详细资料”页。 此视图提供在该计划查询中执行的所有运行的列表。 提供的信息包括开始和结束时间、状态以及所使用的数据集。
+
+![“调度详细资料”页。](../images/ui/monitor-queries/schedule-details.png)
+
+此信息以五列表格形式提供。 每一行表示查询执行。
 
 | 列名称 | 描述 |
 |---|---|
-| **[!UICONTROL 查詢執行ID]** | 每日執行的查詢執行識別碼。 選取 **[!UICONTROL 查詢執行ID]** 導覽至 [!UICONTROL 查詢執行總覽]. |
-| **[!UICONTROL 查詢執行開始]** | 執行查詢時的時間戳記。 這是UTC格式。 |
-| **[!UICONTROL 查詢執行完成]** | 查詢完成時的時間戳記。 這是UTC格式。 |
-| **[!UICONTROL 状态]** | 最近查詢執行的狀態。 三個狀態值包括： `successful` `failed` 或 `in progress`. |
-| **[!UICONTROL 数据集]** | 執行中涉及的資料集。 |
+| **[!UICONTROL 查询运行Id]** | 每日执行的查询运行ID。 选择 **[!UICONTROL 查询运行Id]** 导航到 [!UICONTROL 查询运行概述]. |
+| **[!UICONTROL 查询运行开始]** | 执行查询的时间戳。 这是UTC格式。 |
+| **[!UICONTROL 查询运行完成]** | 查询完成时的时间戳。 这是UTC格式。 |
+| **[!UICONTROL 状态]** | 最近查询执行的状态。 三个状态值包括： `successful` `failed` 或 `in progress`. |
+| **[!UICONTROL 数据集]** | 执行中涉及的数据集。 |
 
-欲知正在排程的查詢詳情，請參閱 [!UICONTROL 屬性] 面板。 此面板包含初始查詢ID、使用者端型別、範本名稱、查詢SQL和排程的步調。
+欲知正在计划的查询详情，请参阅 [!UICONTROL 属性] 面板。 此面板包括初始查询ID、客户端类型、模板名称、查询SQL和计划的节奏。
 
-![「排程詳細資訊」頁面中會反白顯示屬性面板。](../images/ui/monitor-queries/properties-panel.png)
+![突出显示属性面板的“计划详细信息”页面。](../images/ui/monitor-queries/properties-panel.png)
 
-選取查詢執行ID以切換作業選項至執行詳細資訊頁面並檢視查詢資訊。
+选择一个查询运行ID以定位至运行详细信息页并查看查询信息。
 
-![反白顯示執行ID的排程詳細資訊畫面。](../images/ui/monitor-queries/navigate-to-run-details.png)
+![突出显示运行ID的计划详细信息屏幕。](../images/ui/monitor-queries/navigate-to-run-details.png)
 
-## 查詢執行總覽 {#query-run-overview}
+## 查询运行概述 {#query-run-overview}
 
-此 [!UICONTROL 查詢執行總覽] 提供此排程查詢的個別執行的相關資訊，以及執行狀態的更詳細劃分。 此頁面也包含使用者端資訊，以及可能導致查詢失敗的任何錯誤的詳細資訊。
+此 [!UICONTROL 查询运行概述] 提供有关此计划查询的单独运行的信息，以及运行状态的更详细细分。 此页面还包括客户端信息以及可能导致查询失败的任何错误的详细信息。
 
-![執行詳細資訊畫面，其中總覽區段反白顯示。](../images/ui/monitor-queries/query-run-details.png)
+![运行详细信息屏幕，其中高亮显示概述部分。](../images/ui/monitor-queries/query-run-details.png)
 
-查詢狀態區段提供查詢失敗時的錯誤碼和錯誤訊息。
+查询状态部分提供了查询失败时的错误代码和错误消息。
 
-![執行詳細資訊畫面中反白了錯誤區段。](../images/ui/monitor-queries/failed-query.png)
+![运行详细信息屏幕，其中突出显示了错误部分。](../images/ui/monitor-queries/failed-query.png)
 
-您可以從此檢視將查詢SQL複製到剪貼簿。 選取SQL程式碼片段右上角的復製圖示，以複製查詢。 會出現快顯訊息，確認已復製程式碼。
+您可以从此视图将查询SQL复制到剪贴板。 选择SQL代码片段右上角的复制图标以复制查询。 此时会显示一条弹出消息，确认代码已被复制。
 
-![執行詳細資訊畫面中反白顯示SQL復製圖示。](../images/ui/monitor-queries/copy-sql.png)
+![突出显示SQL复制图标的运行详细信息屏幕。](../images/ui/monitor-queries/copy-sql.png)
 
-### 使用匿名區塊執行查詢的詳細資料 {#anonymous-block-queries}
+### 使用匿名块运行查询的详细信息 {#anonymous-block-queries}
 
-使用匿名區塊組成其SQL陳述式的查詢會分隔成其個別的子查詢。 這可讓您個別檢查每個查詢區塊的執行詳細資料。
+使用匿名块组成其SQL语句的查询被分隔到其各个子查询中。 这允许您分别检查每个查询块的运行详细信息。
 
 >[!NOTE]
 >
->使用DROP命令的匿名區塊的執行詳細資料 **not** 將作為單獨的子查詢報告。 CTAS查詢、ITAS查詢和用作匿名區塊子查詢的COPY陳述式有獨立的執行詳細資訊。 目前不支援DROP命令的執行詳細資料。
+>使用DROP命令的匿名块的运行详细信息将 **非** 将作为单独的子查询报告。 CTAS查询、ITAS查询和用作匿名块子查询的COPY语句有单独的运行详细信息。 当前不支持DROP命令的运行详细信息。
 
-匿名區塊是透過使用來表示 `$$` 查詢前的前置詞。 請參閱 [匿名封鎖檔案](../essential-concepts/anonymous-block.md) 以進一步瞭解查詢服務中的匿名區塊。
+匿名块通过使用 `$$` 在查询前添加前缀。 请参阅 [匿名阻止文档](../essential-concepts/anonymous-block.md) 以进一步了解查询服务中的匿名块。
 
-匿名區塊子查詢的執行狀態左側有標籤。 選取索引標籤以顯示執行詳細資料。
+匿名块子查询的运行状态左侧有选项卡。 选择一个选项卡以显示运行详细信息。
 
-![顯示匿名區塊查詢的查詢執行概觀。 多個查詢標籤會反白顯示。](../images/ui/monitor-queries/anonymous-block-overview.png)
+![显示匿名块查询的查询运行概述。 多个查询选项卡会突出显示。](../images/ui/monitor-queries/anonymous-block-overview.png)
 
-如果匿名區塊查詢失敗，您可以透過此UI找到該特定區塊的錯誤代碼。
+如果匿名块查询失败，您可以通过此UI找到该特定块的错误代码。
 
-![查詢執行概觀會顯示匿名區塊查詢，並反白顯示單一區塊的錯誤代碼。](../images/ui/monitor-queries/anonymous-block-failed-query.png)
+![查询运行概述显示一个匿名块查询，其中突出显示了一个块的错误代码。](../images/ui/monitor-queries/anonymous-block-failed-query.png)
 
-選取 **[!UICONTROL 查詢]** 返回「排程詳細資料」畫面，或 **[!UICONTROL 排定的查詢]** 以返回 [!UICONTROL 排定的查詢] 標籤。
+选择 **[!UICONTROL 查询]** 返回到“计划详细信息”屏幕，或 **[!UICONTROL 计划的查询]** 以返回 [!UICONTROL 计划的查询] 选项卡。
 
-![反白顯示「查詢」的執行詳細資訊畫面。](../images/ui/monitor-queries/return-navigation.png)
+![突出显示“查询”的“运行详细信息”屏幕。](../images/ui/monitor-queries/return-navigation.png)

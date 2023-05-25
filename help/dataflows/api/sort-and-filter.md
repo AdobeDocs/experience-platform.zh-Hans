@@ -1,6 +1,6 @@
 ---
-title: 排序和篩選流程服務API中的回應
-description: 本教學課程涵蓋在Flow Service API中使用查詢引數進行排序和篩選的語法，包括一些進階使用案例。
+title: 在流服务API中对响应进行排序和筛选
+description: 本教程介绍了使用流服务API中的查询参数进行排序和过滤的语法，包括一些高级用例。
 exl-id: 029c3199-946e-4f89-ba7a-dac50cc40c09
 source-git-commit: ef8db14b1eb7ea555135ac621a6c155ef920e89a
 workflow-type: tm+mt
@@ -9,28 +9,28 @@ ht-degree: 3%
 
 ---
 
-# 排序和篩選流程服務API中的回應
+# 对流量服务API中的响应进行排序和筛选
 
-在中執行清單(GET)請求時 [流程服務API](https://www.adobe.io/experience-platform-apis/references/flow-service/)，您可使用查詢引數來排序和篩選回應。 本指南提供在不同使用案例下如何使用這些引數的參考資料。
+在中执行列表(GET)请求时 [流服务API](https://www.adobe.io/experience-platform-apis/references/flow-service/)，则可以使用查询参数来排序和筛选响应。 本指南提供了有关如何针对不同用例使用这些参数的参考。
 
 ## 排序
 
-您可以使用 `orderby` 查詢引數。 下列資源可在API中排序：
+您可以使用对响应进行排序 `orderby` 查询参数。 可在API中对以下资源排序：
 
 * [连接](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Connections)
-* [來源連線](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Source-connections)
-* [目標連線](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Target-connections)
-* [流程](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Flows)
-* [執行](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Runs)
+* [源连接](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Source-connections)
+* [Target连接](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Target-connections)
+* [流](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Flows)
+* [运行](https://www.adobe.io/experience-platform-apis/references/flow-service/#tag/Runs)
 
-若要使用引數，您必須將其值設為排序依據的特定屬性(例如， `?orderby=name`)。 您可以在值前面加上加號(`+`)作為遞增順序或減號(`-`)以遞減順序排列。 如果未提供排序首碼，清單預設會依遞增順序排序。
+要使用参数，必须将其值设置为要作为排序依据的特定属性(例如， `?orderby=name`)。 您可以在该值前面添加一个加号(`+`)表示升序或减号(`-`)，以按降序排列。 如果未提供排序前缀，则默认情况下按升序对列表进行排序。
 
 ```http
 GET /flows?orderby=name
 GET /flows?orderby=-name
 ```
 
-您也可以使用&quot;and&quot;符號(`&`)。
+您还可以使用“和”符号(`&`)。
 
 ```http
 GET /flows?property=state==enabled&orderby=createdAt
@@ -38,59 +38,59 @@ GET /flows?property=state==enabled&orderby=createdAt
 
 ## 正在筛选
 
-您可以使用來篩選回應 `property` 使用索引鍵值運算式的引數。 例如， `?property=id==12345` 只傳回以下專案的資源： `id` 屬性完全等於 `12345`.
+您可以使用过滤响应 `property` 键值表达式的参数。 例如， `?property=id==12345` 仅返回满足以下条件的资源： `id` 属性完全等于 `12345`.
 
-只要知曉屬性的有效路徑，篩選功能通常可套用至實體中的任何屬性。
+只要知晓实体的任何属性的有效路径，就可以对该属性普遍应用筛选。
 
 >[!NOTE]
 >
->如果屬性巢狀內嵌於陣列專案中，您必須附加方括弧(`[]`)至路徑中的陣列。 請參閱以下小節： [篩選陣列屬性](#arrays) 例如。
+>如果某个属性嵌套在数组项中，则必须附加方括号(`[]`)到路径中的数组。 请参阅以下部分： [按数组属性筛选](#arrays) 例如。
 
-**傳回來源表格名稱為的所有來源連線 `lead`：**
+**返回源表名称为的所有源连接 `lead`：**
 
 ```http
 GET /sourceConnections?property=params.tableName==lead
 ```
 
-**傳回特定區段ID的所有流程：**
+**返回特定区段ID的所有流：**
 
 ```http
 GET /flows?property=transformations[].params.segmentSelectors.selectors[].value.id==5722a16f-5e1f-4732-91b6-3b03943f759a
 ```
 
-### 組合篩選器
+### 组合筛选器
 
-多個 `property` 篩選條件必須以「和」字元(`&`)。 組合篩選器時會假設AND關係，這表示實體必須滿足所有篩選器，才能將其包含在回應中。
+多个 `property` 过滤器可以包含在查询中，但必须以“和”字符(`&`)。 组合筛选器时假设为AND关系，这意味着实体必须满足所有筛选器才能将其包含在响应中。
 
-**傳回區段ID的所有啟用流程：**
+**返回一个区段ID的所有已启用的流：**
 
 ```http
 GET /flows?property=transformations[].params.segmentSelectors.selectors[].value.id==5722a16f-5e1f-4732-91b6-3b03943f759a&property=state==enabled
 ```
 
-### 篩選陣列屬性 {#arrays}
+### 对数组属性进行筛选 {#arrays}
 
-您可以根據陣列中專案的屬性進行篩選，方法是附加 `[]` 至陣列屬性的名稱。
+您可以通过附加，根据数组中项的属性进行筛选 `[]` 到数组属性的名称。
 
-**與特定來源連線相關聯的傳回流程：**
+**与特定源连接关联的返回流：**
 
 ```http
 GET /flows?property=sourceConnectionIds[]==9874984,6980696
 ```
 
-**傳回含有特定選取器值ID之轉換的資料流：**
+**返回其转换包含特定选择器值ID的流：**
 
 ```http
 GET /flows?property=transformations[].params.segmentSelectors.selectors[].value.id==5722a16f-5e1f-4732-91b6-3b03943f759a
 ```
 
-**傳回含有具有特定欄的來源連線 `name` 值：**
+**返回具有带特定列的源连接 `name` 值：**
 
 ```http
 GET /sourceConnections?property=params.columns[].name==firstName
 ```
 
-**透過篩選區段ID來查詢目的地的流程執行ID：**
+**通过对区段ID进行筛选来查找目标的流运行ID：**
 
 ```http
 GET /runs?property=metrics.recordSummary.targetSummaries[].entitySummaries[].id==segment:068d6e2c-b546-4c73-bfb7-9a9d33375659
@@ -98,15 +98,15 @@ GET /runs?property=metrics.recordSummary.targetSummaries[].entitySummaries[].id=
 
 ### `count`
 
-任何篩選查詢都可以附加 `count` 值為的查詢引數 `true` 以傳回結果的計數。 API回應包含 `count` 其值代表已篩選專案總數之屬性。 此呼叫中未傳回實際篩選的專案。
+任何筛选查询都可以附加 `count` 值为的查询参数 `true` 以返回结果的计数。 API响应包含 `count` 其值表示已筛选项目总数的属性。 此调用中未返回实际过滤的项目。
 
-**傳回系統中已啟用的資料流的計數：**
+**返回系统中已启用的流的计数：**
 
 ```http
 GET /flows?property=state==enabled&count=true
 ```
 
-對上述查詢的回應如下所示：
+对上述查询的响应如下所示：
 
 ```json
 {
@@ -114,9 +114,9 @@ GET /flows?property=state==enabled&count=true
 }
 ```
 
-### 可依資源篩選的屬性
+### 可按资源筛选的属性
 
-根據您正在擷取的流量服務實體，可能會使用不同的屬性進行篩選。 下錶針對篩選使用案例中常用的每個資源，劃分根層級欄位。
+根据要检索的流服务实体，可以使用不同的属性进行筛选。 下表列出了每个资源的根级别字段，这些字段通常用于筛选用例。
 
 **`connectionSpec`**
 
@@ -197,4 +197,4 @@ GET /flows?property=state==enabled&count=true
 
 ## 后续步骤
 
-本指南說明如何使用 `orderby` 和 `property` 查詢引數，用於排序和篩選流程服務API中的回應。 如需如何將API用於Platform中常見工作流程的逐步指南，請參閱 [來源](../../sources/home.md) 和 [目的地](../../destinations/home.md) 說明檔案。
+本指南介绍了如何使用 `orderby` 和 `property` 用于在流服务API中对响应进行排序和筛选的查询参数。 有关如何将API用于Platform中的常见工作流程的分步指南，请参阅 [源](../../sources/home.md) 和 [目标](../../destinations/home.md) 文档。

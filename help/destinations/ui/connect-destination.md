@@ -1,8 +1,8 @@
 ---
-keywords: 連線目的地；目的地連線；如何連線目的地
-title: 建立新的目的地連線
+keywords: 连接目标；目标连接；如何连接目标
+title: 创建新的目标连接
 type: Tutorial
-description: 瞭解如何在Adobe Experience Platform中連線至目的地、啟用警示，以及為已連線的目的地設定行銷動作。
+description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为已连接目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
 workflow-type: tm+mt
@@ -11,106 +11,106 @@ ht-degree: 0%
 
 ---
 
-# 建立新的目的地連線
+# 创建新的目标连接
 
 >[!IMPORTANT]
 > 
->* 若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
->* 若要連線至支援資料集匯出的目的地，您需要 **[!UICONTROL 管理和啟用資料集目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>* 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要连接到支持数据集导出的目标，您需要 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 
 ## 概述 {#overview}
 
-您必須先設定與目的地平台的連線，才能將對象資料傳送至目的地。 本文說明如何設定新的目的地連線，然後您可以使用Adobe Experience Platform使用者介面啟用區段或匯出資料集。
+在将受众数据发送到目标之前，必须设置与目标平台的连接。 本文介绍如何设置新的目标连接，然后可以使用Adobe Experience Platform用户界面激活区段或导出数据集。
 
-## 在目錄中尋找所需的目的地 {#setup}
+## 在目录中找到所需的目标 {#setup}
 
-1. 前往 **[!UICONTROL 連線]** > **[!UICONTROL 目的地]**，然後選取 **[!UICONTROL 目錄]** 標籤。
+1. 转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，并选择 **[!UICONTROL 目录]** 选项卡。
 
-   ![顯示目的地目錄頁面的Experience PlatformUI熒幕擷圖。](../assets/ui/connect-destinations/catalog.png)
+   ![Experience PlatformUI屏幕快照，显示目标目录页。](../assets/ui/connect-destinations/catalog.png)
 
-2. 目錄中的目的地卡片可能會有不同的動作控制項，具體取決於您是否有與目的地的現有連線，以及目的地是否支援啟用區段、匯出資料集或兩者。 您可能會看到目的地卡的下列任何控制項：
+2. 目录中的目标卡可能具有不同的操作控件，具体取决于您是否已与目标建立现有连接，以及目标是否支持激活区段和/或导出数据集。 您可能会看到目标信息卡的以下任意控件：
 
-   * **[!UICONTROL 設定]**. 在啟用區段或匯出資料集之前，必須先將連線設定到此目的地。
-   * **[!UICONTROL 激活]**. 已設定連線至此目的地。 此目的地支援區段啟用和資料集匯出。
-   * **[!UICONTROL 啟用區段]**. 已設定連線至此目的地。 此目的地僅支援區段啟用。
+   * **[!UICONTROL 设置]**. 在激活区段或导出数据集之前，需要先设置与此目标的连接。
+   * **[!UICONTROL 激活]**. 已设置与此目标的连接。 此目标支持区段激活和数据集导出。
+   * **[!UICONTROL 激活区段]**. 已设置与此目标的连接。 此目标仅支持区段激活。
 
-   如需這些控制項之間差異的詳細資訊，您也可以參閱 [目錄](../ui/destinations-workspace.md#catalog) 區段。
+   有关这些控件之间差异的更多信息，您还可以参阅 [目录](../ui/destinations-workspace.md#catalog) 部分。
 
-   選取 **[!UICONTROL 設定]**， **[!UICONTROL 啟動]**，或 **[!UICONTROL 啟用區段]**，視您可用的控制項而定。
+   选择 **[!UICONTROL 设置]**， **[!UICONTROL 激活]**，或 **[!UICONTROL 激活区段]**，具体取决于您可用的控件。
 
-   ![Experience PlatformUI的熒幕擷圖，其中顯示反白顯示「設定」控制項的目的地目錄頁面。](../assets/ui/connect-destinations/set-up.png)
+   ![Experience PlatformUI的屏幕快照，其中显示了高亮显示设置控件的目标目录页面。](../assets/ui/connect-destinations/set-up.png)
 
-   ![Experience PlatformUI的熒幕擷圖，其中顯示反白顯示「啟用區段」控制項的目的地目錄頁面。](../assets/ui/connect-destinations/activate-segments.png)
+   ![Experience PlatformUI的屏幕截图，其中显示了突出显示了“激活区段”控件的目标目录页。](../assets/ui/connect-destinations/activate-segments.png)
 
-3. 如果您已選取 **[!UICONTROL 設定]**，請跳至下一個步驟，即 [驗證](#authenticate) 到目的地。
+3. 如果您已选择 **[!UICONTROL 设置]**，请跳至下一步，即 [身份验证](#authenticate) 到目的地。
 
-   如果您已選取 **[!UICONTROL 啟動]**， **[!UICONTROL 啟用區段]**，或 **[!UICONTROL 匯出資料集]**，您現在可以看到現有目的地連線的清單。
+   如果您已选择 **[!UICONTROL 激活]**， **[!UICONTROL 激活区段]**，或 **[!UICONTROL 导出数据集]**，您现在可以看到现有目标连接的列表。
 
-   選取 **[!UICONTROL 設定新目的地]** 以建立與目的地的新連線。
+   选择 **[!UICONTROL 配置新目标]** 以建立与目标的新连接。
 
-   ![Experience PlatformUI的熒幕擷圖，其中顯示可用目的地的清單，並反白顯示「設定新目的地」控制項。](../assets/ui/connect-destinations/configure-new-destination.png)
+   ![Experience PlatformUI的屏幕快照，显示可用目标的列表，并突出显示配置新目标控件。](../assets/ui/connect-destinations/configure-new-destination.png)
 
-## 驗證至目的地 {#authenticate}
+## 向目标进行身份验证 {#authenticate}
 
-連線至目的地的第一個步驟是驗證至目的地平台。
+连接到目标的第一步是向目标平台进行身份验证。
 
-根據您連線的目的地，您可能會被帶往目的地合作夥伴的頁面進行驗證，或者系統可能會要求您直接在Platform工作流程中輸入驗證認證。 以下是驗證所需的輸入範例。 [!DNL Amazon S3] 目的地。 每個目的地檔案頁面都會提供必要輸入的詳細指示(例如，請參閱 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) 和for [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate))。
+根据您连接到的目标，系统可能会将您带到目标合作伙伴的页面进行身份验证，或者可能会要求您直接在Platform工作流中输入身份验证凭据。 以下是验证所需的输入示例 [!DNL Amazon S3] 目标。 每个目标文档页面中都提供了有关所需输入的详细说明(例如，请参阅 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#authenticate) 和 [[!DNL Facebook]](/help/destinations/catalog/social/facebook.md#authenticate))。
 
-**[!DNL Amazon S3]必要和選用驗證引數**
+**[!DNL Amazon S3]必需和可选的身份验证参数**
 
-![此影像顯示驗證Amazon S3目的地時的必要和選用輸入引數。](../assets/ui/connect-destinations/authenticate-amazon-s3-example.png)
+![该图像显示了对Amazon S3目标进行身份验证时必需的和可选的输入参数。](../assets/ui/connect-destinations/authenticate-amazon-s3-example.png)
 
-## 設定連線引數 {#set-up-connection-parameters}
+## 设置连接参数 {#set-up-connection-parameters}
 
-如果您已設定目的地驗證，您可以繼續使用現有帳戶，也可以設定新帳戶。
+如果您已经设置了目标身份验证，则可以继续使用现有帐户，也可以设置新帐户。
 
-視您連線的目的地而定，可能會要求您輸入不同型別的連線引數。 例如，當連線到 [!DNL Amazon S3] 目的地，請您提供以下相關詳細資訊 [!DNL Amazon S3] 儲存貯體名稱和將儲存檔案的資料夾路徑。 以下是兩個需要的輸入範例 [!DNL Amazon S3] 目的地和 [!DNL Trade Desk] 目的地。 每個目的地檔案頁面都會提供必要輸入的詳細指示。
+根据您连接到的目标，可能会要求您输入不同类型的连接参数。 例如，当连接到 [!DNL Amazon S3] 目标，请您提供有关 [!DNL Amazon S3] 存储段名称和将存储文件的文件夹路径。 以下是两个示例，说明了 [!DNL Amazon S3] 目标和 [!DNL Trade Desk] 目标。 有关所需输入的详细说明，请参阅每个目标文档页面。
 
 >[!IMPORTANT]
 >
->下列影像僅供說明之用。 目的地連線的詳細資料因目的地而異。 如需目的地連線詳細資訊的詳細資訊，請閱讀 **連線到目的地** 區段在每個 [目的地目錄](../catalog/overview.md) 頁面(例如， [[!DNL Google Customer Match]](../catalog/advertising/google-customer-match.md#connect)， [[!DNL Trade Desk]](/help/destinations/catalog/advertising/tradedesk.md#connect)，或 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details))。
+>以下图像仅用于说明目的。 目标连接详细信息因目标而异。 有关目标的连接详细信息，请阅读 **连接到目标** 部分(在每个 [目标目录](../catalog/overview.md) 页面(例如， [[!DNL Google Customer Match]](../catalog/advertising/google-customer-match.md#connect)， [[!DNL Trade Desk]](/help/destinations/catalog/advertising/tradedesk.md#connect)，或 [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md#destination-details))。
 
-**[!DNL Amazon S3]必要和選用輸入引數**
+**[!DNL Amazon S3]必需和可选输入参数**
 
-![此影像顯示連線至Amazon S3目的地時的必要和選用輸入引數。](../assets/ui/connect-destinations/connect-destination-amazons3-example.png)
+![该图像显示了连接到Amazon S3目标时必需的和可选的输入参数。](../assets/ui/connect-destinations/connect-destination-amazons3-example.png)
 
-**[!DNL The Trade Desk]必要和選用輸入引數**
+**[!DNL The Trade Desk]必需和可选输入参数**
 
-![此影像顯示連線至交易台目的地時的必要和選用輸入引數。](../assets/ui/connect-destinations/connect-destination-trade-desk-example.png)
+![此图像显示连接到Trade Desk目标时必需和可选的输入参数。](../assets/ui/connect-destinations/connect-destination-trade-desk-example.png)
 
-### （測試版）設定匯出檔案的檔案格式選項 {#file-formatting-and-compression-options}
+### （测试版）为导出的文件设置文件格式选项 {#file-formatting-and-compression-options}
 
-對於以檔案為基礎的目的地，您可以設定與匯出檔案的格式化和壓縮方式相關的各種設定。 如需所有可用格式設定和壓縮選項的詳細資訊，請閱讀 [針對以檔案為基礎的目的地教學課程，設定檔案格式選項](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+对于基于文件的目标，您可以配置与导出文件的格式化和压缩方式相关的各种设置。 有关所有可用格式设置和压缩选项的更多信息，请参阅 [基于文件的目标的配置文件格式选项教程](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
-![此影像顯示CSV檔案的檔案型別選取範圍及各種選項。](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
+![该图像显示了文件类型选择和CSV文件的各种选项。](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### 設定區段啟動或資料集匯出的目的地連線 {#segment-activation-or-dataset-exports}
+### 设置用于区段激活或数据集导出的目标连接 {#segment-activation-or-dataset-exports}
 
-有些檔案型目的地支援區段啟用和資料集匯出。 對於這些目的地，您可以選擇是否要建立連線，以啟用區段或匯出資料集。
+某些基于文件的目标支持区段激活和数据集导出。 对于这些目标，您可以选择是创建连接以激活区段还是导出数据集。
 
-![此影像顯示資料型別選擇控制項，可讓使用者在區段啟用和資料集匯出之間選擇。](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
+![此图像显示了数据类型选择控件，该控件允许用户在区段激活和数据集导出之间进行选择。](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
 
-### 啟用目的地警示 {#enable-alerts}
+### 启用目标警报 {#enable-alerts}
 
-1. （選用）選取您要訂閱的目的地資料流警示。 建立資料流以接收有關資料流執行的狀態、成功或失敗的警報訊息時，您可以訂閱警報。 可用的警報會因您連線的目的地型別（檔案型或串流）而異。 讀取 [訂閱內容感知目的地警示](alerts.md) 以取得目的地資料流警示的詳細資訊。
+1. （可选）选择要订阅的目标数据流警报。 在创建数据流以接收有关流运行的状态、成功或失败的警报消息时，您可以订阅警报。 可用的警报因您连接到的目标类型（基于文件或流）而异。 读取 [订阅上下文目标警报](alerts.md) 以了解有关目标数据流警报的详细信息。
 
-   ![「設定新目的地」對話方塊中反白了內容中目的地警示訂閱選項。](../assets/ui/connect-destinations/subscribe-to-alerts.png)
+   ![配置新目标对话框，其中突出显示了上下文目标警报订阅选项。](../assets/ui/connect-destinations/subscribe-to-alerts.png)
 
 2. 选择&#x200B;**[!UICONTROL 下一步]**。
 
-   ![「設定新目的地」對話方塊中反白顯示「下一步」控制項，可讓使用者繼續進行工作流程中的下一個步驟。](../assets/ui/connect-destinations/next.png)
+   ![突出显示“配置新目标”对话框，其中显示了“下一步”控件，允许用户继续执行工作流中的下一步。](../assets/ui/connect-destinations/next.png)
 
-## 選取行銷動作 {#select-marketing-actions}
+## 选择营销活动 {#select-marketing-actions}
 
-1. 選取適用於您要匯出至目的地之資料的行銷動作。 行銷動作會指出資料匯出至目的地的目的。 您可以從Adobe定義的行銷動作中進行選取，也可以建立自己的行銷動作。 如需行銷動作的詳細資訊，請參閱 [資料使用原則概觀](../../data-governance/policies/overview.md) 頁面。
+1. 选择适用于要导出到目标的数据的营销操作。 营销操作指示将数据导出到目标的意图。 您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销活动的更多信息，请参阅 [数据使用策略概述](../../data-governance/policies/overview.md) 页面。
 
-   ![「設定新目的地」對話方塊中會反白顯示可用的行銷動作。 用來完成「連線至目的地」工作流程的可用控制項也會反白顯示。](../assets/ui/connect-destinations/governance.png)
+   ![配置新目标对话框，突出显示可用的营销操作。 用于完成“连接到目标”工作流的可用控件也会突出显示。](../assets/ui/connect-destinations/governance.png)
 
-2. 選取 **[!UICONTROL 儲存並退出]** 以儲存目的地組態，或選取 **[!UICONTROL 下一個]** 以繼續前往對象資料 [啟用流程](activation-overview.md).
+2. 选择 **[!UICONTROL 保存并退出]** 保存目标配置，或选择 **[!UICONTROL 下一个]** 以继续访问受众数据 [激活流程](activation-overview.md).
 
 ## 后续步骤 {#next-steps}
 
-閱讀本檔案後，您已瞭解如何使用Experience PlatformUI建立與目的地的連線。 提醒您，可用和必要的連線引數會因目的地而異。 您也應該參閱 [目的地目錄](/help/destinations/catalog/overview.md) 以取得每個目的地型別的必要輸入和可用選項的特定資訊。
+通过阅读本文档，您已了解如何使用Experience PlatformUI建立与目标的连接。 提醒一下，可用和所需的连接参数因目标而异。 您还应该参阅 [目标目录](/help/destinations/catalog/overview.md) 以获取有关每个目标类型的所需输入和可用选项的特定信息。
 
-接下來，您可以繼續前往 [啟用區段](/help/destinations/ui/activation-overview.md) 或 [匯出資料集](/help/destinations/ui/export-datasets.md) 前往您的目的地。
+接下来，您可以继续执行 [激活区段](/help/destinations/ui/activation-overview.md) 或 [导出数据集](/help/destinations/ui/export-datasets.md) 去你的目的地。

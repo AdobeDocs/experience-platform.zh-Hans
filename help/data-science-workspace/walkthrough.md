@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；逐步說明；資料科學工作區；熱門主題；資料科學課程；課程；dsw
+keywords: Experience Platform；演练；数据科学工作区；热门主题；数据科学课程；课程；dsw
 solution: Experience Platform
-title: 資料科學工作區課程
-description: 本檔案提供Adobe Experience Platform資料科學工作區課程的連結和說明。
+title: 数据科学工作区课程
+description: 本文档提供了Adobe Experience Platform数据科学工作区课程的链接和描述。
 exl-id: d814846e-52a9-46c6-831a-3399241959f2
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -12,60 +12,60 @@ ht-degree: 2%
 ---
 
 
-# [!DNL Data Science Workspace] 課程
+# [!DNL Data Science Workspace] 课程
 
-本檔案說明Adobe Experience Platform Data Science Workspace課程的預期學習結果。 若要檢視課程，您必須使用Adobe ID登入以Experience League。
+本文档介绍了Adobe Experience Platform数据科学工作区课程中的预期学习结果。 要查看课程，您必须登录以使用Adobe IDExperience League。
 
-此 [資料科學家適用的資料科學工作區快速入門課程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) 專為想要瞭解如何使用JupyterLab Notebooks以獲得見解和查詢資料、建立具有描述檔功能的資料集、發佈自動化機器學習模型，以及對Adobe和非Adobe應用程式啟用機器學習見解的資料科學家所設計。
+此 [面向数据科学家的数据科学工作区快速入门课程](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) 专为数据科学家而设计，这些数据科学家想要了解如何使用JupyterLab Notebooks获取见解和查询数据、创建支持配置文件的数据集、发布自动化机器学习模型，以及对Adobe和非Adobe应用程序激活机器学习见解。
 
-## 課程必要條件
+## 课程先决条件
 
-- 已註冊的Adobe ID帳戶。
-   - 必須已將Adobe ID帳戶新增至可存取Adobe Experience Platform和的組織 [!DNL Data Science Workspace].
-- 非生產沙箱。
+- Adobe ID的注册帐户。
+   - 必须已将Adobe ID帐户添加到有权访问Adobe Experience Platform和的组织 [!DNL Data Science Workspace].
+- 非生产沙盒。
 
-### 預期學習結果
+### 预期学习成果
 
-資料科學工作區課程涵蓋下列學習成果。 此外，在建立及發佈為課程提供的傾向模型時，您可以選擇一併遵循。
+数据科学工作区课程涵盖以下学习结果。 此外，在创建和发布为课程提供的倾向模型时，您可以选择遵循。
 
-- 資料科學工作區的架構
+- 数据科学工作区的架构
 - 如何使用JupyterLab
-- 如何在資料科學工作區中存取資料和查詢資料
-- 探索性資料分析
-- 如何建立配方和模型
-- 用來訓練模型並為其評分的方法
-- 超引數在模型開發中的作用
-- 如何將經過訓練的模型發佈為服務
-- 如何使用資料科學工作區讓您的即時客戶設定檔資料更為豐富
-- 如何使用模型輸出建立串流區段
+- 如何访问数据科学工作区中的数据并查询数据
+- 探索性数据分析
+- 如何创建方法和模型
+- 用于训练和评分模型的方法
+- 超参数在模型开发中的作用
+- 如何将经过培训的模型发布为服务
+- 如何使用数据科学工作区丰富您的Real-time Customer Profile数据
+- 如何使用模型输出创建流区段
 
-## 課程
+## 课程
 
-資料科學工作區課程分為五個課程。
+数据科学工作区课程分为五节。
 
 ### 第 1 课
 
-**簡介（19分鐘）：** 瞭解課程並取得資料科學工作區的高階概觀，包括所需的課程資產。
+**简介（19分钟）：** 了解该课程并大致了解Data Science Workspace，包括所需的课程资产。
 
 ### 第 2 课
 
-**在JupyterLab中載入、查詢及探索資料（24分鐘）：** 瞭解JupyterLab在Experience Platform上如何協助簡化及促進資料科學家的關鍵工作流程，例如收集資料、清除資料、視覺化資料和探索見解。
+**在JupyterLab中加载、查询和浏览数据（24分钟）：** 了解JupyterLab在Experience Platform方面如何帮助简化和便利数据科学家的关键工作流程，例如收集数据、清理数据、可视化数据和发现见解。
 
 ### 第 3 课
 
-**在JupyterLab中建立模型（26分鐘）：** 瞭解如何開始在Data Science Workspace中建立模型。
+**在JupyterLab中创建模型（26分钟）：** 了解如何开始在数据科学工作区中构建模型。
 
 ### 第 4 课
 
-**使用資料科學工作區來訓練和評分模型（6分鐘）：** 瞭解如何建立模型並在Experience Platform中將其發佈為服務。
+**使用数据科学工作区对模型进行训练和评分（6分钟）：** 了解如何在Experience Platform中创建模型并将其作为服务发布。
 
 ### 第 5 课
 
-**消費並提供Data Science Insights （11分鐘）：** 瞭解如何在即時客戶個人檔案中使用Data Science Workspace模型輸出，以透過Adobe應用程式和服務提供個人化體驗。
+**使用并提供数据科学见解（11分钟）：** 了解如何在Real-time Customer Profile中使用Data Science Workspace模型输出，以通过Adobe应用程序和服务提供个性化体验。
 
 ## 后续步骤
 
-完成資料科學工作區課程後，請造訪 [Sensei Machine Learning API指南](./api/getting-started.md) 瞭解如何利用RESTful API完成您剛剛學到的所有事情等等。
+完成数据科学工作区课程后，请访问 [Sensei机器学习API指南](./api/getting-started.md) 了解如何利用RESTful API完成您刚刚学到的一切，等等。
 
 
 

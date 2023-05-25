@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；PostgreSQL；postgresql；PSQL；psql
+keywords: Experience Platform；主页；热门主题；PostgreSQL；postgresql；PSQL；psql
 solution: Experience Platform
-title: 使用Flow Service API建立PostgreSQL基本連線
+title: 使用流服务API创建PostgreSQL基本连接
 type: Tutorial
-description: 瞭解如何使用流量服務API將Adobe Experience Platform連線至PostgreSQL。
+description: 了解如何使用流服务API将Adobe Experience Platform连接到PostgreSQL。
 exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
@@ -12,53 +12,53 @@ ht-degree: 3%
 
 ---
 
-# 建立 [!DNL PostgreSQL] 基礎連線使用 [!DNL Flow Service] API
+# 创建 [!DNL PostgreSQL] 基本连接使用 [!DNL Flow Service] API
 
-基礎連線代表來源和Adobe Experience Platform之間已驗證的連線。
+基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教學課程將逐步引導您完成建立基礎連線的步驟。 [!DNL PostgreSQL] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL PostgreSQL] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功連線所需瞭解的其他資訊 [!DNL PostgreSQL] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接时需要了解的其他信息 [!DNL PostgreSQL] 使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了 [!DNL Flow Service] 以連線 [!DNL PostgreSQL]，您必須提供下列連線屬性：
+为了 [!DNL Flow Service] 以连接 [!DNL PostgreSQL]，您必须提供以下连接属性：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 與您的關聯的連線字串 [!DNL PostgreSQL] 帳戶。 此 [!DNL PostgreSQL] 連線字串模式為： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | 連線規格會傳回來源的聯結器屬性，包括與建立基礎連線和來源連線相關的驗證規格。 的連線規格ID [!DNL PostgreSQL] 是 `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
+| `connectionString` | 与您的关联的连接字符串 [!DNL PostgreSQL] 帐户。 此 [!DNL PostgreSQL] 连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL PostgreSQL] 是 `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
-如需有關取得連線字串的詳細資訊，請參閱此 [[!DNL PostgreSQL] 檔案](https://www.postgresql.org/docs/9.2/app-psql.html).
+有关获取连接字符串的更多信息，请参阅此 [[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/9.2/app-psql.html).
 
-#### 為您的連線字串啟用SSL加密
+#### 为连接字符串启用SSL加密
 
-您可以為啟用SSL加密 [!DNL PostgreSQL] 連線字串，方法是使用以下屬性附加您的連線字串：
+您可以为启用SSL加密 [!DNL PostgreSQL] 连接字符串，方法是：将连接字符串附加到以下属性：
 
 | 属性 | 描述 | 示例 |
 | --- | --- | --- |
-| `EncryptionMethod` | 可讓您對啟用SSL加密 [!DNL PostgreSQL] 資料。 | <uL><li>`EncryptionMethod=0`(已禁用)</li><li>`EncryptionMethod=1`(已启用)</li><li>`EncryptionMethod=6`(RequestSSL)</li></ul> |
-| `ValidateServerCertificate` | 驗證由您傳送的憑證 [!DNL PostgreSQL] 資料庫時間 `EncryptionMethod` 「 」已套用。 | <uL><li>`ValidationServerCertificate=0`(已禁用)</li><li>`ValidationServerCertificate=1`(已启用)</li></ul> |
+| `EncryptionMethod` | 允许您对启用SSL加密 [!DNL PostgreSQL] 数据。 | <uL><li>`EncryptionMethod=0`(已禁用)</li><li>`EncryptionMethod=1`(已启用)</li><li>`EncryptionMethod=6`(RequestSSL)</li></ul> |
+| `ValidateServerCertificate` | 验证由您发送的证书 [!DNL PostgreSQL] 数据库时间 `EncryptionMethod` 中所有规则都适用的URL的区域。 | <uL><li>`ValidationServerCertificate=0`(已禁用)</li><li>`ValidationServerCertificate=1`(已启用)</li></ul> |
 
-以下範例為 [!DNL PostgreSQL] 附加了SSL加密的連線字串： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD};EncryptionMethod=1;ValidateServerCertificate=1`.
+以下示例为 [!DNL PostgreSQL] 附加了SSL加密的连接字符串： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD};EncryptionMethod=1;ValidateServerCertificate=1`.
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 建立基礎連線
+## 创建基本连接
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL PostgreSQL] 要求引數中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL PostgreSQL] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -68,7 +68,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL PostgreSQL]：
+以下请求创建基本连接 [!DNL PostgreSQL]：
 
 ```shell
 curl -X POST \
@@ -96,12 +96,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | ------------- | --------------- |
-| `auth.params.connectionString` | 與您的關聯的連線字串 [!DNL PostgreSQL] 帳戶。 此 [!DNL PostgreSQL] 連線字串模式為： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | 此 [!DNL PostgreSQL] 連線規格ID： `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
+| `auth.params.connectionString` | 与您的关联的连接字符串 [!DNL PostgreSQL] 帐户。 此 [!DNL PostgreSQL] 连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | 此 [!DNL PostgreSQL] 连接规范ID： `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)建立的基礎連線。 探索您的網站時需要此ID [!DNL PostgreSQL] 資料庫。
+成功响应将返回唯一标识符(`id`)。 需要此ID才能探索您的 [!DNL PostgreSQL] 数据库。
 
 ```json
 {
@@ -112,7 +112,7 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程，您已建立 [!DNL PostgreSQL] 連線基礎連線使用 [!DNL Flow Service] API。 您可以在下列教學課程中使用此基本連線ID：
+按照本教程，您已创建了一个 [!DNL PostgreSQL] 连接基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
 
-* [使用探索資料表格的結構和內容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [建立資料流以使用將資料庫資料帶到Platform [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
+* [使用创建数据流以将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)

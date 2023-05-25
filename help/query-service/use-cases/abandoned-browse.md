@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；查詢服務；查詢服務；查詢
-title: Adobe Experience Platform查詢服務的範例使用案例
-description: 端對端範例，展示Adobe Experience Platform查詢服務的多功能性和優點。
+keywords: Experience Platform；查询服务；查询服务
+title: Adobe Experience Platform查询服务的示例用例
+description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的通用性和优势。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
 source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
@@ -10,31 +10,31 @@ ht-degree: 2%
 
 ---
 
-# Adobe Experience Platform的範例使用案例 [!DNL Query Service]
+# Adobe Experience Platform的示例用例 [!DNL Query Service]
 
-本檔案及隨附的影片簡報提供高階的端對端工作流程，展示Adobe Experience Platform運作方式 [!DNL Query Service] 讓貴組織的策略性業務見解更具效益。 本指南以瀏覽放棄使用案例為例，說明下列重要概念：
+此文档和随附的视频演示文稿提供了一个高级别的端到端工作流程，用于演示Adobe Experience Platform的工作原理 [!DNL Query Service] 使贵组织的战略性业务洞察力大有裨益。 本指南以浏览放弃用例为例，说明了以下关键概念：
 
-* 資料處理對於發揮Adobe Experience Platform的潛力至為重要。
-* 根據您現有的資料架構建置查詢的方法。
-* 確保資料品質符合您的需求，並採取方法減少任何不足。
-* 將查詢排程為以設定頻率執行，以用於下游的區段和個人化的目的地的程式。
-* 行銷人員可透過 [!DNL Query Service].
+* 数据处理对于最大限度地发挥Adobe Experience Platform的潜力至关重要。
+* 基于现有数据架构构建查询的方法。
+* 确保满足您需求的数据质量，以及减少任何不足的方法。
+* 安排查询以设定的频率运行的进程，以便在区段和个性化的目标中使用下游。
+* 营销人员可以轻松地将派生属性包含在其区段中，方法是使用 [!DNL Query Service].
 
 ## 目标 {#objectives}
 
-此工作流程示範仰賴多項Adobe Experience Platform服務。 如果您想要遵循，建議您充分瞭解下列功能和服務：
+此工作流演示依赖于多个Adobe Experience Platform服务。 如果您希望跟进，建议您很好地了解以下功能和服务：
 
-* 此 [Experience Data Model (XDM)結構描述組合基本概念](../../xdm/schema/composition.md)
-* 操作說明 [建立資料集並擷取資料](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
-* 操作說明 [使用Adobe Analytics來源聯結器內嵌資料](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
+* 此 [体验数据模型(XDM)架构组合基础](../../xdm/schema/composition.md)
+* 操作方法 [创建数据集并摄取数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)
+* 操作方法 [使用Adobe Analytics源连接器引入数据](https://experienceleague.adobe.com/docs/platform-learn/tutorials/sources/ingest-data-from-adobe-analytics.html)
 * [区段](../../segmentation/home.md)
 * [目标](../../destinations/home.md)
 
-瀏覽放棄範例的中心為使用Adobe [!DNL Analytics] 建立特定可操作受眾的資料。 對象經過改良，可包含過去四天瀏覽網站但未購買的每位客戶。 然後，對象中的每個設定檔都會以客戶行為模式所產生的最高價格SKU為目標。
+浏览放弃示例以使用Adobe为中心 [!DNL Analytics] 数据，用于创建特定可操作的受众。 优化受众，使其包含过去四天浏览网站但未购买的每位客户。 然后，受众中的每个用户档案都将定位为因客户行为模式而产生的最高价格SKU。
 
-查詢本身具有很強規範性且僅包括符合區段定義的使用案例條件的資料。 這樣可透過將數量減少到最少，進而提升效能 [!DNL Analytics] 正在處理資料。 此外也會依價格從最高到最低來排序資料，並選擇使用者瀏覽的最高價格SKU。
+查询本身具有非常强的说明性，并且只包含符合区段定义用例标准的数据。 这可以通过最大限度地减少 [!DNL Analytics] 正在处理数据。 它还按从高到低的价格对数据排序，并选择用户浏览的定价最高的SKU。
 
-簡報中使用的查詢如下所示：
+在演示文稿中使用的查询如下所示：
 
 ```sql
 INSERT INTO summit_adv_data_prep_dataset
@@ -55,31 +55,31 @@ GROUP BY customerId,sku
 order by price desc)D;
 ```
 
-## [!DNL Query Service] 使用adobe analytics瀏覽放棄範例 {#video-example}
+## [!DNL Query Service] 使用adobe analytics浏览放弃示例 {#video-example}
 
-以下影片說明提供您著重在的Experience Platform資料的全方位真實使用案例 [!DNL Query Service] 和Adobe分析整合。
+下面看到的视频演示为您的重点介绍的Experience Platform数据提供了一个全面、真实的用例 [!DNL Query Service] 和Adobe分析集成。
 
 >[!VIDEO](https://video.tv.adobe.com/v/342533?quality=12&learn=on)
 
-## 的優點 [!DNL Query Service] {#benefits}
+## 的好处 [!DNL Query Service] {#benefits}
 
-所提供的功能 [!DNL Query Service] 用途眾多。 您可以使用它來適應分段的複雜邏輯、計算各種個人化屬性以供下游使用，或大幅簡化建立區段的方式。
+提供的功能 [!DNL Query Service] 有许多用途。 您可以使用它来适应复杂的分段逻辑、计算各种个性化属性以供下游使用，或者大大简化构建区段的方式。
 
-[!DNL Query Service] 可讓您在查詢中加入限制，以簡化區段建置流程。 這可確保適合您區段的資料資格，並有助於建立更準確的對象，進而改善資料品質。 維護查詢品質可產生準確受眾並有助於提高資料可靠性。 您也可以根據從查詢衍生的屬性建立結構描述和自訂表格，以儲存對象。 可以為設定檔啟用自訂表格，並且您可以使用這些資料點進行細分和個人化。 此功能可協助想要建立明確受眾人群的行銷人員。
+[!DNL Query Service] 允许在查询中包含限制以简化区段构建过程。 这通过确保正确的数据符合区段资格并创建更准确的受众而提高了数据质量。 保持查询质量可生成准确的受众，并有助于提高数据的可靠性。 您还可以通过基于从查询派生的属性创建架构和自定义表来保存受众。 可以为配置文件启用自定义表，并且您可以使用这些数据点进行分段和个性化。 此功能可帮助希望创建明确受众人群的营销人员。
 
-此外，將滿足任何循環或靜態條件的邏輯包含到查詢中， [!DNL Query Service] 擷取複雜分段的重擔。
+此外，通过在查询中包含满足任何循环或静态条件的逻辑， [!DNL Query Service] 提取精细分段的负担。
 
-Adobe Experience Platform提供資料存放庫和必要工具，讓您以有效率且可靠的方式啟用資料。 藉由將資料保留在Platform內，您可以在執行其他程式時衍生屬性，並免除將資料匯出至協力廠商工具以進行操控和處理的需求。 處理數百個屬性或行銷活動時，這類處理間接成本可大幅影響專案時間表。 這可讓行銷人員透過單一位置存取其資料並建置行銷活動，以及透過非常動態的方式對其訊息進行分段和個人化。
+Adobe Experience Platform提供了一个数据存储库和必要的工具，以高效、可靠的方式激活您的数据。 通过将数据保留在Platform中，它允许您在运行其他流程时派生属性，并且无需将数据导出到第三方工具进行操作和处理。 在处理数百个属性或营销策划时，此类处理开销会极大地影响项目时间表。 这为营销人员提供了访问其数据和构建营销活动的单一位置，以及对其消息进行分段和个性化的非常动态的方式。
 
 ## 后续步骤
 
-閱讀本檔案後，您現在應該瞭解如何 [!DNL Query Service] 不僅會影響資料品質和區段的便利性，也會影響資料架構在整個端對端工作流程中的重要性。 如需更多適用的SQL範例，瞭解如何搭配使用Adobe Analytics [!DNL Query Service]，請參閱 [Adobe Analytics銷售變數使用案例](./merchandising-variables.md).
+通过阅读本文档，您现在应该了解如何 [!DNL Query Service] 不仅影响数据质量和区段的便利性，还会影响它在数据架构中对于整个端到端工作流程的重要性。 有关将Adobe Analytics与结合使用的更适用的SQL示例 [!DNL Query Service]，请参见 [Adobe Analytics促销变量用例](./merchandising-variables.md).
 
-其他說明下列專案優點的檔案： [!DNL Query Service] 對貴組織的策略性業務見解如下 [機器人篩選使用案例](./bot-filtering.md) 範例。
+其他文档展示了 [!DNL Query Service] 对于贵组织的战略业务洞察，应当 [机器人过滤用例](./bot-filtering.md) 示例。
 
-或者，這些檔案有助於您瞭解 [!DNL Query Service] 功能：
+或者，这些文档有助于您了解 [!DNL Query Service] 功能：
 
-* [查詢執行指南](../best-practices/writing-queries.md)
-* [資料資產組織指南](../best-practices/organize-data-assets.md).
+* [查询执行指南](../best-practices/writing-queries.md)
+* [数据资产组织指南](../best-practices/organize-data-assets.md).
 
 

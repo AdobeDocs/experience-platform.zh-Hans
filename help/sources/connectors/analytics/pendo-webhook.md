@@ -1,7 +1,7 @@
 ---
-title: Pendo來源概觀
-description: 瞭解如何使用API或使用者介面利用Webhook將Pendo連線至Adobe Experience Platform
-badge: Beta
+title: Pendo源概述
+description: 了解如何使用API或用户界面利用Webhook将Pendo连接到Adobe Experience Platform
+badge: 测试版
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 376f18ef-1eea-4c42-8041-6fadb5906e9b
 source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
@@ -15,40 +15,40 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此 [!DNL Pendo] 來源為測試版。 請閱讀 [來源概觀](../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
+>此 [!DNL Pendo] 源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
 
-Adobe Experience Platform可讓您從外部來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Experience Platform支援從協力廠商分析應用程式擷取資料。 Analytics提供者的支援包括 [!DNL Pendo].
+Experience Platform支持从第三方Analytics应用程序引入数据。 对分析提供商的支持包括 [!DNL Pendo].
 
-[[!DNL Pendo]](https://pendo.io/) 是產品分析應用程式，專為協助軟體公司開發可與客戶引起共鳴的產品而打造。 此應用程式可讓軟體製造商將產品與多種工具內嵌，讓使用者獲得更佳的產品體驗，產品團隊獲得新的見解。
+[[!DNL Pendo]](https://pendo.io/) 是一个产品分析应用程序，旨在帮助软件公司开发可与客户引起共鸣的产品。 该应用程序允许软件制造商将其产品与范围广泛的工具嵌入，这些工具可以为用户带来更好的产品体验，并为产品团队带来新的见解。
 
-此 [!DNL Pendo] 來源可讓您從擷取支援的webhook事件結構描述及其相關事件資料 [!DNL Pendo.io] 使用 [[!DNL Pendo] Webhook](https://support.pendo.io/hc/en-us/articles/360032285012-Webhooks). 此 [!DNL Pendo] 來源適用於 [!DNL Pendo] URL webhook。
+此 [!DNL Pendo] 源允许您从中摄取支持的webhook事件架构及其关联的事件数据 [!DNL Pendo.io] 使用 [[!DNL Pendo] Webhook](https://support.pendo.io/hc/en-us/articles/360032285012-Webhooks). 此 [!DNL Pendo] 源可与 [!DNL Pendo] URL Webhook。
 
-支援的Webhook包括：
+支持的Webhook包括：
 
-* [指南](https://support.pendo.io/hc/en-us/articles/8146679315867-Creating-a-Guide) 已顯示
-* [輪詢](https://support.pendo.io/hc/en-us/articles/360031867152-Polls-Classic-) 已顯示/已提交
-* [淨推廣者分數](https://support.pendo.io/hc/en-us/articles/360033527151-Set-up-an-NPS-Survey) 已顯示/已提交
+* [指南](https://support.pendo.io/hc/en-us/articles/8146679315867-Creating-a-Guide) 显示
+* [轮询](https://support.pendo.io/hc/en-us/articles/360031867152-Polls-Classic-) 显示/提交
+* [网络推广者得分](https://support.pendo.io/hc/en-us/articles/360033527151-Set-up-an-NPS-Survey) 显示/提交
 
 ## 先决条件 {#prerequisites}
 
-建立之前 [!DNL Pendo] 來源連線，您必須先確定您有以下專案：
+在创建 [!DNL Pendo] 源连接中，您必须首先确保具有以下内容：
 
-A [!DNL Pendo] 帳戶。 如果您還沒有這類檔案，請參閱 [[!DNL Pendo] 註冊](https://app.pendo.io/register) 頁面以註冊及建立您的帳戶。
+A [!DNL Pendo] 帐户。 如果您还没有这样的客户，请查看 [[!DNL Pendo] 注册](https://app.pendo.io/register) 注册和创建帐户页面。
 
-### 設定 [!DNL Pendo] Webhook {#set-up-webhook}
+### 设置 [!DNL Pendo] Webhook {#set-up-webhook}
 
-成功建立資料流後，您必須設定webhook以通知Platform以下事項 [!DNL Pendo] 事件。 [!DNL Pendo] Webhook可以在特定事件發生時將即時通知推送至其他服務，並將此資訊傳送至您的 [!DNL Pendo] 來源。 如需詳細資訊，請閱讀上的教學課程 [取得您的串流端點URL](../../tutorials/ui/create/analytics/pendo-webhook.md#get-streaming-endpoint) 和 [設定 [!DNL Pendo] Webhook](../../tutorials/ui/create/analytics/pendo-webhook.md#set-up-webhook).
+成功创建数据流后，必须设置webhook以通知Platform [!DNL Pendo] 事件。 [!DNL Pendo] Webhook可以在发生某些事件时将实时通知推送给其他服务，并将此信息发送给您的 [!DNL Pendo] 源。 有关更多信息，请阅读上的教程 [获取您的流端点URL](../../tutorials/ui/create/analytics/pendo-webhook.md#get-streaming-endpoint) 和 [设置 [!DNL Pendo] Webhook](../../tutorials/ui/create/analytics/pendo-webhook.md#set-up-webhook).
 
-## 正在連線 [!DNL Pendo] 至平台 {#connect-to-platform}
+## 正在连接 [!DNL Pendo] 目标平台 {#connect-to-platform}
 
-以下檔案提供如何建立 [!DNL Pendo] 要連線的串流聯結器 [!DNL Platform] 使用API或使用者介面：
+以下文档提供了有关如何创建 [!DNL Pendo] 要连接的流连接器 [!DNL Platform] 使用API或用户界面：
 
-### Connect [!DNL Pendo] 使用API移至Platform {#connect-to-platform-using-api}
+### Connect [!DNL Pendo] 到使用API的平台 {#connect-to-platform-using-api}
 
-* [建立來源連線以帶來 [!DNL Pendo] 使用API將資料傳輸至Platform。](../../tutorials/api/create/analytics/pendo-webhook.md)
+* [创建源连接以引入 [!DNL Pendo] 使用API将数据发送到Platform。](../../tutorials/api/create/analytics/pendo-webhook.md)
 
-### Connect [!DNL Pendo] 使用UI移至Platform {#connect-to-platform-using-ui}
+### Connect [!DNL Pendo] 使用UI到Platform {#connect-to-platform-using-ui}
 
-* [建立來源連線以帶來 [!DNL Pendo] 使用使用者介面將資料傳送至Platform](../../tutorials/ui/create/analytics/pendo-webhook.md)
+* [创建源连接以引入 [!DNL Pendo] 使用用户界面将数据发送到Platform](../../tutorials/ui/create/analytics/pendo-webhook.md)

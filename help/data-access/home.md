@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料存取；python sdk；spark sdk；資料存取api
+keywords: Experience Platform；主页；热门主题；数据访问；python sdk；spark sdk；数据访问api
 solution: Experience Platform
-title: 資料存取概觀
-description: 資料存取可支援Adobe Experience Platform，為使用者提供著重在擷取的Platform資料集的可探索性和可存取性的工具。
+title: 数据访问概述
+description: 数据访问通过为用户提供侧重于摄取的Platform数据集的可发现性和可访问性的工具来支持Adobe Experience Platform。
 exl-id: 76e3585b-44df-412e-9ac3-aeca5f85d403
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -13,20 +13,20 @@ ht-degree: 1%
 
 # [!DNL Data Access] 概述
 
-[!DNL Data Access] 透過為使用者提供專注於在中擷取資料集的可發現性和可存取性的工具，來支援Adobe Experience Platform [!DNL Experience Platform].
+[!DNL Data Access] 通过为用户提供侧重于在中摄取的数据集的可发现性和可访问性的工具来支持Adobe Experience Platform [!DNL Experience Platform].
 
-![Experience Platform上的資料存取](images/Data_Access_Experience_Platform.png)
+![Experience Platform上的数据访问](images/Data_Access_Experience_Platform.png)
 
 ## [!DNL Data Access] API
 
-有關使用的詳細資訊 [!DNL Data Access] 要連線的API [!DNL Platform] 您可在以下網址找到： [Data Access開發人員指南](api.md).
+有关使用的详细信息 [!DNL Data Access] 要连接的API [!DNL Platform] 可在以下位置找到： [Data Access开发人员指南](api.md).
 
-## 存取資料科學工作區中的資料
+## 访问数据科学工作区中的数据
 
-您可以使用讀取和寫入資料集 [!DNL Python] 和 [!DNL Spark] 資料科學工作區中的配方和模型開發。 若要進一步瞭解如何存取您的資料，請造訪 [Python資料存取](../data-science-workspace/authoring/python.md) 或 [Spark資料存取](../data-science-workspace/authoring/spark.md) 說明檔案。
+您可以使用读取和写入数据集 [!DNL Python] 和 [!DNL Spark] 用于数据科学工作区中的方法和model开发。 要了解有关访问数据的更多信息，请访问 [Python数据访问](../data-science-workspace/authoring/python.md) 或 [Spark数据访问](../data-science-workspace/authoring/spark.md) 文档。
 
-如需有關的詳細資訊 [!DNL Data Science Workspace]，首先請閱讀 [資料科學工作區概觀](../data-science-workspace/home.md).
+有关详情，请参阅 [!DNL Data Science Workspace]，首先阅读 [数据科学工作区概述](../data-science-workspace/home.md).
 
-## 訂閱資料擷取事件
+## 订阅数据摄取事件
 
-[!DNL Platform] 讓特定的高價值事件可透過 [Adobe Developer主控台](https://www.adobe.com/go/devs_console_ui). 例如，您可以訂閱資料擷取事件，以接收潛在延遲和失敗的通知。 請參閱教學課程，位置如下： [訂閱資料擷取通知](../ingestion/quality/subscribe-events.md) 以取得詳細資訊。
+[!DNL Platform] 使特定的高价值事件可通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 请参阅上的教程 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 了解更多信息。

@@ -1,6 +1,6 @@
 ---
-title: 在Reactor API中篩選回應
-description: 瞭解在Reactor API中列出資源時如何篩選結果。
+title: 筛选Reactor API中的响应
+description: 了解在Reactor API中列出资源时如何筛选结果。
 exl-id: 8a91f3dd-4ead-4a10-abb1-e71acb0d73b6
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 1%
 
 ---
 
-# 在Reactor API中篩選回應
+# 筛选Reactor API中的响应
 
-在Reactor API中使用清單(GET)端點時，您可能會發現有必要將傳回的結果限製為記錄子集。 為了完成這點，許多API的清單端點都支援依特定屬性篩選的功能。 如果您想改向API提出結構化查詢，請參閱以下指南： [搜尋](./search.md).
+在Reactor API中使用list (GET)端点时，您可能会发现有必要将返回的结果限制为记录子集。 为实现此目的，许多API列表端点都支持按特定属性过滤的功能。 如果您希望改为对API进行结构化查询，请参阅以下方面的指南： [搜索](./search.md).
 
-## 篩選語法
+## 过滤语法
 
-以下範例說明如何為GET請求實作篩選器。
+以下示例说明如何为GET请求实施过滤器。
 
 **API格式**
 
-若要篩選指定清單端點的回應，您必須提供 `filter` 請求路徑中的查詢引數。
+要筛选给定列表端点的响应，您必须提供 `filter` 查询参数。
 
 >[!NOTE]
 >
->下面的範本使用方括弧(`[]`)和空格字元來增加可讀性。 實際上，這些字元必須是URI編碼，如中所述 [RFC 3986](https://tools.ietf.org/html/rfc3986). 本指南稍後會顯示正確編碼的請求路徑的範例。
+>下面的模板使用方括号(`[]`)和空格字符以提高可读性。 实际上，这些字符必须采用URI编码，如中所述 [RFC 3986](https://tools.ietf.org/html/rfc3986). 本指南的后面部分显示了正确编码的请求路径的示例。
 >
->請注意，如果篩選器的結構不正確，則不會套用任何篩選器並傳回完整結果集。
+>请注意，如果筛选器的结构不正确，则不会应用任何筛选器并返回完整结果集。
 
 ```http
 GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE}
@@ -33,22 +33,22 @@ GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE}
 
 | 属性 | 描述 |
 | --- | --- |
-| `{ENDPOINT}` | Reactor API中支援篩選引數的清單端點。 |
-| `{ATTRIBUTE_NAME}` | 篩選結果所依據的特定屬性的名稱。 請記住，不同的端點支援不同的篩選屬性。 如需可用篩選屬性的清單，請參閱您正在使用的端點的參考指南。 |
-| `{OPERATOR}` | 決定如何根據提供的評估結果的運運算元 `{VALUE}`. 支援的運運算元列於 [附錄部分](#supported-operators). |
-| `{VALUE}` | 用來比較傳回結果的值。 使用比較相等時 `EQ` 運運算元，值必須是完全相符且區分大小寫的專案，才能包含在回應中。 |
+| `{ENDPOINT}` | Reactor API中支持过滤器参数的列表端点。 |
+| `{ATTRIBUTE_NAME}` | 用于筛选结果的特定属性的名称。 请记住，不同的端点支持不同的筛选属性。 有关可用的筛选属性列表，请参阅正在处理的端点的参考指南。 |
+| `{OPERATOR}` | 确定如何根据提供的评估结果的运算符 `{VALUE}`. 中列出了支持的运算符 [附录部分](#supported-operators). |
+| `{VALUE}` | 返回结果要与之比较的值。 当使用比较相等时 `EQ` 运算符，该值必须是完全匹配、区分大小写才能包含在响应中。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下範例請求會套用篩選器（需要程式庫的），以擷取已發佈程式庫的清單 `state` 屬性等於 `published`.
+下面的示例请求通过应用需要库的过滤器来检索已发布的库的列表 `state` 属性等于 `published`.
 
-在URI編碼之前，請求路徑中此篩選器的語法如下所示：
+在URI编码之前，请求路径中此过滤器的语法类似于以下内容：
 
 `https://reactor.adobe.io/properties/PR906238a59bbf4262bcedba248f483600/libraries?filter[state]=EQ published`
 
-路徑和查詢引數經過URI編碼後，便可用於API請求，如下所示：
+对路径和查询参数进行URI编码后，它们便可用于API请求，如下所示：
 
 ```shell
 curl -X GET \
@@ -58,17 +58,17 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
-## 篩選多個值 {#multiple-values}
+## 筛选多个值 {#multiple-values}
 
-若要依單一屬性的多個值篩選，請以逗號分隔清單的形式提供這些值。
+要按单个属性的多个值筛选，请以逗号分隔列表的形式提供这些值。
 
 ```http
 GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE_1},{VALUE_2}
 ```
 
-## 使用多個篩選器
+## 使用多个过滤器
 
-若要套用多個屬性的篩選器，請提供 `filter` 每個屬性的引數。 引數必須以&amp;符號分隔(`&`)個字元。
+要为多个属性应用过滤器，请提供 `filter` 每个属性的参数。 参数必须以&amp;号分隔(`&`)个字符。
 
 ```http
 GET {ENDPOINT}?filter[{ATTRIBUTE_NAME_1}]={OPERATOR} {VALUE}&filter[{ATTRIBUTE_NAME_2}]={OPERATOR} {VALUE}
@@ -76,21 +76,21 @@ GET {ENDPOINT}?filter[{ATTRIBUTE_NAME_1}]={OPERATOR} {VALUE}&filter[{ATTRIBUTE_N
 
 >[!NOTE]
 >
->如果您在相同要求的多個篩選條件中指定相同的屬性，則只會套用最後為該屬性提供的篩選條件。
+>如果在同一请求的多个筛选条件中指定同一属性，则只应用最后为该属性提供的筛选条件。
 
 ## 附录
 
-下節包含在Reactor API中使用篩選器的其他資訊。
+以下部分包含有关在Reactor API中使用过滤器的其他信息。
 
-### 支援的篩選器運運算元 {#operators}
+### 支持的筛选器运算符 {#operators}
 
-下表列出篩選引數支援的運運算元值。 請記住，根據您篩選依據的屬性，並非所有可用的篩選運運算元都適用，例如對字串屬性使用「小於」或「大於」運運算元。
+下表列出了过滤器参数支持的运算符值。 请记住，根据筛选依据的属性，并非所有可用的筛选运算符都适用，例如对字符串属性使用“小于”或“大于”运算符。
 
 | 操作员 | 描述 |
 | --- | --- |
-| `EQ` | 屬性必須等於提供的值。 |
-| `NOT` | 屬性不得等於提供的值。 |
-| `LT` | 屬性必須小於提供的值。 |
-| `GT` | 屬性必須大於提供的值。 |
-| `BETWEEN` | 屬性必須落在指定的值範圍內。 使用此運運算元時， [兩個值](#multiple-values) 必須提供以指示所需範圍的最小值和最大值。 |
-| `CONTAINS` | 屬性必須包含提供的值，例如字串屬性中的一組字元。 |
+| `EQ` | 属性必须等于提供的值。 |
+| `NOT` | 属性不得等于提供的值。 |
+| `LT` | 属性必须小于提供的值。 |
+| `GT` | 属性必须大于提供的值。 |
+| `BETWEEN` | 该属性必须属于指定的值范围。 使用此运算符时， [两个值](#multiple-values) 必须提供以指示所需范围的最小值和最大值。 |
+| `CONTAINS` | 属性必须包含提供的值，如字符串属性中的一组字符。 |

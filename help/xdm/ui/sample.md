@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: 在UI中產生XDM結構描述的範例資料
-description: 瞭解如何根據Adobe Experience Platform使用者介面中的現有結構描述產生範例JSON資料。
+title: 在UI中为XDM架构生成示例数据
+description: 了解如何根据Adobe Experience Platform用户界面中的现有架构生成示例JSON数据。
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
@@ -10,22 +10,22 @@ ht-degree: 0%
 
 ---
 
-# 在UI中產生XDM結構的範例資料
+# 在UI中生成XDM架构的示例数据
 
-若要將資料內嵌至Adobe Experience Platform，資料的格式和結構必須符合現有的Experience Data Model (XDM)結構。 根據特定資料集的結構描述複雜性，可能很難判斷資料集在擷取時預期的資料確切形狀。
+为了将数据摄取到Adobe Experience Platform，数据的格式和结构必须符合现有的Experience Data Model (XDM)架构。 根据特定数据集架构的复杂性，可能很难确定数据集在摄取时预期的数据的确切形状。
 
-對於您在Experience PlatformUI中定義的任何結構描述，您可以產生符合結構描述結構的範例JSON物件。 此物件可當作任何資料匯入使用相關結構描述的資料集中的範本。
+对于您在Experience PlatformUI中定义的任何架构，您可以生成符合架构结构的示例JSON对象。 此对象可以用作任何数据的模板，这些数据被摄取到采用相关架构的数据集中。
 
-在Platform UI中選取 **[!UICONTROL 結構描述]** 左側導覽列中。 在 **[!UICONTROL 瀏覽]** 索引標籤中，找到您要為其產生範例資料的結構描述。 從清單中選取它，右邊欄會更新以顯示有關結構的詳細資訊。 從此處選取 **[!UICONTROL 下載範例檔案]**.
+在Platform UI中，选择 **[!UICONTROL 架构]** 左侧导航栏中。 在 **[!UICONTROL 浏览]** 选项卡，找到要为其生成示例数据的架构。 从列表中选择它，右边栏更新以显示有关架构的详细信息。 从此处选择 **[!UICONTROL 下载样本文件]**.
 
 ![](../images/ui/sample/sample-data.png)
 
-瀏覽器會下載範例JSON檔案。 您現在可以使用此檔案作為參考，瞭解在擷取至採用此結構描述的資料集時，如何建構您的資料。
+浏览器下载了一个JSON示例文件。 现在，您可以将此文件用作参考，以了解在摄取到采用此架构的数据集中时，如何构建数据。
 
 ## 后续步骤
 
-本指南說明如何從Platform UI中的XDM結構描述產生範例JSON檔案。 若要瞭解如何使用結構描述登入API產生範例資料，請參閱 [範例資料端點指南](../api/sample-data.md).
+本指南介绍了如何从平台UI中的XDM架构生成示例JSON文件。 要了解如何使用架构注册表API生成示例数据，请参阅 [示例数据端点指南](../api/sample-data.md).
 
-在您準備好開始內嵌資料後，請參閱教學課程： [將CSV檔案對應至XDM](../../ingestion/tutorials/map-csv/overview.md) 瞭解如何將平面資料檔案（例如CSV）對應到XDM結構描述，並將其擷取到Platform。 或者，您可以建立 [來源連線](../../sources/home.md) 從外部來源匯入資料，並將其對應至XDM。
+准备好开始摄取数据后，请参阅上的教程 [将CSV文件映射到XDM](../../ingestion/tutorials/map-csv/overview.md) 了解如何将平面数据文件（如CSV）映射到XDM架构并将其摄取到Platform。 或者，您可以建立 [源连接](../../sources/home.md) 从外部源引入数据并将其映射到XDM。
 
-如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區在UI中，請參閱 [[!UICONTROL 結構描述] 工作區概觀](./overview.md).
+欲知关于 [!UICONTROL 架构] 工作区，请参阅 [[!UICONTROL 架构] 工作区概述](./overview.md).

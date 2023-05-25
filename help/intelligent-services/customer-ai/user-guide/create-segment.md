@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；深入分析；customer ai；熱門主題；customer ai區段
+keywords: Experience Platform；分析；客户人工智能；热门主题；客户人工智能区段
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
-title: 使用預測分數建立客戶區段
-description: 預測執行完成時，個人檔案會自動使用預測傾向分數。 使用Customer AI分數擴充設定檔可建立客戶區段，以根據其傾向分數尋找對象。 本節提供使用「區段產生器」建立區段的步驟。
+title: 使用预测得分创建客户区段
+description: 预测运行完成后，用户档案会自动使用预测的倾向分数。 通过Customer AI分数丰富用户档案，可以创建客户区段，以根据其倾向分数查找受众。 本节提供了使用区段生成器创建区段的步骤。
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
@@ -12,32 +12,32 @@ ht-degree: 0%
 
 ---
 
-# 使用預測分數建立客戶區段
+# 使用预测分数创建客户区段
 
-預測執行完成時，個人檔案會自動使用預測傾向分數。 使用Customer AI分數擴充設定檔可建立客戶區段，以根據其傾向分數尋找對象。 本節提供使用「區段產生器」建立區段的步驟。 如需建立區段的更強大教學課程，請參閱 [區段產生器使用手冊](../../../segmentation/ui/segment-builder.md).
+预测运行完成后，用户档案会自动使用预测的倾向分数。 通过Customer AI分数丰富用户档案，可以创建客户区段，以根据其倾向分数查找受众。 本节提供了使用区段生成器创建区段的步骤。 有关创建区段的更强大教程，请参阅 [Segment Builder用户指南](../../../segmentation/ui/segment-builder.md).
 
 >[!IMPORTANT]
 >
->若要使用此方法，必須為資料集啟用「即時客戶個人檔案」 。
+>为了利用这种方法，需要为数据集启用实时客户档案。
 
-在Platform UI中按一下 **[!UICONTROL 區段]** ，然後按一下 **[!UICONTROL 建立區段]**.
+在Platform UI中，单击 **[!UICONTROL 区段]** ，然后单击 **[!UICONTROL 创建区段]**.
 
 ![](../images/user-guide/segments.png)
 
-此 **區段產生器** 出現。 從左側 **[!UICONTROL 欄位]** 欄和 **[!UICONTROL 屬性]** 索引標籤，按一下名為的資料夾 **[!UICONTROL XDM個別設定檔]** 然後按一下包含您組織名稱空間的資料夾。 名為的資料夾 **[!UICONTROL Customer AI]** 包含預測執行的結果，並以分數所屬的執行個體命名。 按一下執行個體資料夾，即可存取其所需執行個體的結果。
+此 **区段生成器** 显示。 从左侧 **[!UICONTROL 字段]** 列和下 **[!UICONTROL 属性]** 选项卡，单击名为的文件夹 **[!UICONTROL XDM个人资料]** ，然后单击包含您组织的命名空间的文件夹。 名为的文件夹 **[!UICONTROL 客户人工智能]** 包含预测运行的结果，并以得分所属的实例命名。 单击实例文件夹可访问其所需实例的结果。
 
 ![](../images/user-guide/results.png)
 
-位於「區段產生器」的中央，拖放 **[!UICONTROL 分數]** 屬性至 *規則產生器畫布* 以定義規則。
+位于区段生成器的中心，拖放 **[!UICONTROL 分数]** 属性到 *规则生成器画布* 以定义规则。
 
-在右手下 *區段屬性* 欄中，為區段提供名稱。
+在右手下 *区段属性* 列中，为区段提供名称。
 
 ![](../images/user-guide/properties.png)
 
-左側上方 *欄位* 欄中，按一下 **齒輪** 圖示並選取 *合併原則* 下拉式清單。 按一下 **[!UICONTROL 儲存]** 以建立區段。
+左侧上方 *字段* 列中，单击 **齿轮** 图标并选择 *合并策略* 从下拉菜单中。 单击 **[!UICONTROL 保存]** 以创建区段。
 
 ![](../images/user-guide/merge_policy.png)
 
 ## 后续步骤
 
-依照本教學課程，您已成功使用區段產生器，根據其傾向分數找到對象。 您現在可以將受眾啟用至目的地，藉此鎖定受眾。 請參閱 [目的地概觀](../../../destinations/home.md) 以取得詳細資訊。
+通过学习本教程，您已成功使用区段生成器根据受众的倾向分数找到受众。 您现在可以通过将受众激活到目标来定位受众。 请参阅 [目标概述](../../../destinations/home.md) 了解更多信息。

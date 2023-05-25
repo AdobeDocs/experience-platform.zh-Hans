@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
-title: 設定自助式來源的探索規格（批次SDK）
-description: 本檔案提供使用Self-Serve Sources (Batch SDK)所需準備的設定概觀。
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+title: 为自助源配置浏览规范(Batch SDK)
+description: 本文档概述了要使用自助源(Batch SDK)需要准备的配置。
 exl-id: 423a7e56-9dd1-4071-bd26-ee4f9f206122
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 1%
 
 ---
 
-# 設定自助式來源的探索規格（批次SDK）
+# 为自助源配置浏览规范(Batch SDK)
 
-瀏覽規格定義瀏覽和檢查來源中所包含物件所需的引數。 探索規格也會定義探索及檢查物件時傳回的回應格式。
+浏览规范定义浏览和检查源中包含的对象所需的参数。 浏览规范还定义了浏览和检查对象时返回的响应格式。
 
 >[!TIP]
 >
->探索規格採用硬式編碼，您只需將下列裝載複製並貼到您的連線規格即可。
+>浏览规范是硬编码的，您只需将以下有效负载复制并粘贴到连接规范中即可。
 
 ```json
 "exploreSpec": {
@@ -63,25 +63,25 @@ ht-degree: 1%
 }
 ```
 
-| 探索規格 | 描述 | 示例 |
+| 浏览规范 | 描述 | 示例 |
 | --- | --- | --- |
-| `name` | 定義瀏覽規格的名稱或識別碼。 | `Resource` |
-| `type` | 定義瀏覽規格的型別。 | `Resource` |
-| `requestSpec` | 包含探索連線中物件所需的引數。 |
-| `requestSpec.type` | 定義要求規格的資料型別。 | `object` |
-| `responseSpec` | 包含定義回應訊息（針對探索呼叫傳回）的格式的引數。 |
-| `responseSpec.type` | 定義回應規格的資料型別。 | `object` |
-| `responseSpec.properties` | 包含與回應訊息的格式相關之資訊。 |
-| `responseSpec.properties.format` | 定義回應結構描述的格式。 | `object` |
-| `responseSpec.properties.format.type` | 定義屬性的資料型別。 | `string` |
-| `responseSpec.schema` | 包含有關回應結構描述格式化的資訊。 |
-| `responseSpec.schema.type` | 定義結構描述的資料型別。 | `object` |
-| `responseSpec.schema.properties` | 包含有關資料行、型別和結構描述中保留之專案的資訊。 |
-| `responseSpec.schema.properties.columns.items.properties.name` | 顯示檔案的名稱。 |
-| `responseSpec.schema.properties.columns.items.properties.name.type` | 定義檔案名稱的資料型別。 | `string` |
+| `name` | 定义浏览规格的名称或标识符。 | `Resource` |
+| `type` | 定义浏览规范的类型。 | `Resource` |
+| `requestSpec` | 包含浏览连接中的对象所需的参数。 |
+| `requestSpec.type` | 定义请求规范的数据类型。 | `object` |
+| `responseSpec` | 包含定义针对浏览调用返回的响应消息的格式的参数。 |
+| `responseSpec.type` | 定义响应规范的数据类型。 | `object` |
+| `responseSpec.properties` | 包含与响应消息的格式相关的信息。 |
+| `responseSpec.properties.format` | 定义响应架构的格式。 | `object` |
+| `responseSpec.properties.format.type` | 定义属性的数据类型。 | `string` |
+| `responseSpec.schema` | 包含与响应架构的格式相关的信息。 |
+| `responseSpec.schema.type` | 定义架构的数据类型。 | `object` |
+| `responseSpec.schema.properties` | 包含有关架构中保留的列、类型和项目的信息。 |
+| `responseSpec.schema.properties.columns.items.properties.name` | 显示文件的名称。 |
+| `responseSpec.schema.properties.columns.items.properties.name.type` | 定义文件名的数据类型。 | `string` |
 
 {style="table-layout:auto"}
 
 ## 后续步骤
 
-填入您的瀏覽規格後，您可以繼續使用 [!DNL Flow Service] API。 請參閱 [自助來源（批次SDK） API指南](../api/api-overview.md) 以取得詳細資訊。
+填充浏览规范后，您可以使用 [!DNL Flow Service] API。 请参见 [自助式源(Batch SDK) API指南](../api/api-overview.md) 了解更多信息。

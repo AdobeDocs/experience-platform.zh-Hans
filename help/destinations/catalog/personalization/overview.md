@@ -1,7 +1,7 @@
 ---
-keywords: 個人化；個人化
-title: 個人化目的地概觀
-description: 個人化平台會收集個人行為的資料和深入分析。 這些平台可協助行銷人員導覽匿名資料、根據先前的活動或作為具有類似習慣的受眾區段的一部分，向潛在客戶提供優惠或廣告。
+keywords: 个性化；个性化
+title: 个性化目标概述
+description: 个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
 source-git-commit: 0dbd050a9057f491537777ab539bfc687f8c89cb
 workflow-type: tm+mt
@@ -10,31 +10,31 @@ ht-degree: 12%
 
 ---
 
-# 個人化目的地概觀 {#personalization-destinations}
+# 个性化目标概述 {#personalization-destinations}
 
 ## 概述 {#overview}
 
-個人化平台會收集個人行為的資料和深入分析。 這些平台可協助行銷人員導覽匿名資料、根據先前的活動或作為具有類似習慣的受眾區段的一部分，向潛在客戶提供優惠或廣告。
+个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
 
-## 支援的個人化目的地 {#supported-destinations}
+## 支持的个性化目标 {#supported-destinations}
 
-目前Platform支援下列個人化目的地。 如需如何連線至這些目的地的詳細資訊，請參閱個別連結：
+目前，平台支持下面列出的个性化目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 **连接**
 
 * [Adobe Target](adobe-target-connection.md)
 * [Adobe Commerce](adobe-commerce.md)
-* [自訂個人化連線](custom-personalization.md)
-* [Pega客戶決策中心連線](pega.md)
-* [Pega設定檔連線](pega-profile.md)
+* [自定义个性化连接](custom-personalization.md)
+* [Pega客户决策中心连接](pega.md)
+* [Pega配置文件连接](pega-profile.md)
 
 **扩展**
 
 * [Adobe Target 扩展](adobe-target.md)
 * [Adobe Target v2 扩展](adobe-target-v2.md)
-* [Beemray擴充功能](beemray.md)
-* [D&amp;B Visitor Intelligence擴充功能](dnb.md)
+* [Beemray扩展](beemray.md)
+* [D&amp;B Visitor Intelligence扩展](dnb.md)
 * [Experience Cloud ID 服务扩展](adobe-ecid.md)
-* [Gainsight擴充功能](gainsight.md)
-* [Kickfire擴充功能](kickfire.md)
-* [Marketo Web Personalization擴充功能](marketo-web-personalization.md)
+* [Gainsight扩展](gainsight.md)
+* [Kickfire扩展](kickfire.md)
+* [Marketo Web Personalization扩展](marketo-web-personalization.md)

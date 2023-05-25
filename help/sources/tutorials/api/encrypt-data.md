@@ -1,6 +1,6 @@
 ---
-title: 加密的資料擷取
-description: Adobe Experience Platform可讓您透過雲端儲存批次來源內嵌加密的檔案。
+title: 加密数据摄取
+description: Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文件。
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
@@ -11,39 +11,39 @@ ht-degree: 2%
 
 ---
 
-# 加密的資料擷取
+# 加密数据摄取
 
-Adobe Experience Platform可讓您透過雲端儲存批次來源內嵌加密的檔案。 透過加密的資料擷取，您可以運用非對稱的加密機制，將批次資料安全地傳輸至Experience Platform。 目前，支援的非對稱加密機製為PGP和GPG。
+Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文件。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform。 目前，支持的不对称加密机制有PGP和GPG。
 
-加密的資料擷取程式如下：
+加密数据摄取过程如下：
 
-1. [使用Experience PlatformAPI建立加密金鑰組](#create-encryption-key-pair). 加密金鑰組由私密金鑰和公開金鑰組成。 建立後，您可以複製或下載公開金鑰，以及其對應的公開金鑰ID和到期時間。 在此過程中，私密金鑰將由Experience Platform儲存在安全的儲存庫中。 **注意：** 回應中的公開金鑰以Base64編碼，且必須在使用前解密。
-2. 使用公開金鑰來加密您要擷取的資料檔案。
-3. 將加密檔案放入雲端儲存空間。
-4. 加密檔案準備就緒後， [為您的雲端儲存空間來源建立來源連線和資料流](#create-a-dataflow-for-encrypted-data). 在流程建立步驟中，您必須提供 `encryption` 並包含您的公開金鑰ID。
-5. Experience Platform會從安全儲存庫中擷取私密金鑰，以在擷取資料時解密資料。
+1. [使用Experience PlatformAPI创建加密密钥对](#create-encryption-key-pair). 加密密钥对由私钥和公钥组成。 创建后，您可以复制或下载公钥及其对应的公钥ID和到期时间。 在此过程中，私钥将由Experience Platform存储在安全保险库中。 **注意：** 响应中的公钥采用Base64编码，必须在使用之前解密。
+2. 使用公钥加密要摄取的数据文件。
+3. 将加密文件放入云存储中。
+4. 加密文件准备就绪后， [为云存储源创建源连接和数据流](#create-a-dataflow-for-encrypted-data). 在流创建步骤中，您必须提供 `encryption` 参数，并包含您的公钥ID。
+5. Experience Platform从安全保险库中检索私钥，以在摄取数据时解密数据。
 
 >[!IMPORTANT]
 >
->單一加密檔案的大小上限為1 GB。 例如，您可以在單一資料流執行中擷取價值2 GB的資料，但該資料中的任何個別檔案不能超過1 GB。
+>单个加密文件的最大大小为1 GB。 例如，您可以在单个数据流运行中摄取价值2 GB的数据，但该数据中的任何单个文件不能超过1 GB。
 
-本檔案提供的步驟說明如何產生加密金鑰組，以加密您的資料，並使用雲端儲存來源將加密的資料擷取到Experience Platform。
+本文档提供了有关如何生成加密密钥对以加密数据的步骤，以及如何使用云存储源将加密的数据摄取到Experience Platform的步骤。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解Adobe Experience Platform的下列元件：
+本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-   * [雲端儲存空間來源](../api/collect/cloud-storage.md)：建立資料流，將雲端儲存空間來源中的批次資料帶入Experience Platform。
-* [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+   * [云存储源](../api/collect/cloud-storage.md)：创建数据流以将批量数据从云存储源引入Experience Platform。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-## 建立加密金鑰組 {#create-encryption-key-pair}
+## 创建加密密钥对 {#create-encryption-key-pair}
 
-將加密資料擷取至Experience Platform的第一步，是透過向發出POST要求來建立您的加密金鑰組。 `/encryption/keys` 的端點 [!DNL Connectors] API。
+将加密数据摄取到Experience Platform的第一步是通过向以下对象发出POST请求来创建加密密钥对： `/encryption/keys` 的端点 [!DNL Connectors] API。
 
 **API格式**
 
@@ -53,7 +53,7 @@ POST /data/foundation/connectors/encryption/keys
 
 **请求**
 
-下列要求會使用PGP加密演演算法產生加密金鑰組。
+以下请求使用PGP加密算法生成加密密钥对。
 
 ```shell
 curl -X POST \
@@ -73,12 +73,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `encryptionAlgorithm` | 您使用的加密演演算法型別。 支援的加密型別包括 `PGP` 和 `GPG`. |
-| `params.passPhrase` | 密碼可為您的加密金鑰提供額外的保護層。 建立後，Experience Platform會將複雜密碼與公開金鑰儲存在不同的安全儲存庫中。 您必須提供非空白字串作為複雜密碼。 |
+| `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型包括 `PGP` 和 `GPG`. |
+| `params.passPhrase` | 密码为加密密钥提供了一层额外的保护。 创建后，Experience Platform将密码存储在与公钥不同的安全保管库中。 您必须提供非空字符串作为密码短语。 |
 
 **响应**
 
-成功回應會傳回Base64編碼的公開金鑰、公開金鑰ID和金鑰的到期時間。 到期時間會自動設定為金鑰產生日期後的180天。 到期時間目前無法設定。
+成功响应将返回您的Base64编码公共密钥、公共密钥ID和密钥的过期时间。 到期时间自动设置为生成密钥日期后的180天。 到期时间当前不可配置。
 
 ```json
 {
@@ -88,37 +88,37 @@ curl -X POST \
 }
 ```
 
-## 使用將您的雲端儲存空間來源連線至Experience Platform [!DNL Flow Service] API
+## 使用将云存储源连接到Experience Platform [!DNL Flow Service] API
 
-擷取加密金鑰組後，您現在可以繼續並為雲端儲存空間來源建立來源連線，並將加密的資料帶到Platform。
+在检索到加密密钥对后，您现在可以继续为云存储源创建源连接，并将加密数据带到Platform。
 
-首先，您必須建立基礎連線，以針對Platform驗證您的來源。 若要建立基本連線並驗證您的來源，請從下列清單中選取您要使用的來源：
+首先，您必须创建一个基本连接，以根据Platform验证您的源。 要创建基本连接并对源进行身份验证，请从以下列表中选择要使用的源：
 
 * [Amazon S3](../api/create/cloud-storage/s3.md)
 * [[!DNL Apache HDFS]](../api/create/cloud-storage/hdfs.md)
 * [Azure Blob](../api/create/cloud-storage/blob.md)
 * [Azure Data Lake Storage Gen2](../api/create/cloud-storage/adls-gen2.md)
-* [Azure檔案儲存體](../api/create/cloud-storage/azure-file-storage.md)
+* [Azure文件存储](../api/create/cloud-storage/azure-file-storage.md)
 * [数据登陆区](../api/create/cloud-storage/data-landing-zone.md)
 * [FTP](../api/create/cloud-storage/ftp.md)
-* [Google雲端儲存空間](../api/create/cloud-storage/google.md)
-* [oracle物件儲存](../api/create/cloud-storage/oracle-object-storage.md)
+* [Google云存储](../api/create/cloud-storage/google.md)
+* [oracle对象存储](../api/create/cloud-storage/oracle-object-storage.md)
 * [SFTP](../api/create/cloud-storage/sftp.md)
 
-建立基礎連線後，您必須遵循的教學課程中概述的步驟 [為雲端儲存空間來源建立來源連線](../api/collect/cloud-storage.md) 以建立來源連線、目標連線和對應。
+创建基本连接后，您必须按照以下教程中概述的步骤操作： [为云存储源创建源连接](../api/collect/cloud-storage.md) 以创建源连接、目标连接和映射。
 
-## 為加密的資料建立資料流 {#create-a-dataflow-for-encrypted-data}
+## 为加密数据创建数据流 {#create-a-dataflow-for-encrypted-data}
 
 >[!NOTE]
 >
->您必須具備下列條件，才能建立資料流以進行加密的資料擷取：
->* [公開金鑰ID](#create-encryption-key-pair)
->* [來源連線ID](../api/collect/cloud-storage.md#source)
->* [目標連線ID](../api/collect/cloud-storage.md#target)
+>您必须具备以下条件，才能为加密的数据引入创建数据流：
+>* [公钥ID](#create-encryption-key-pair)
+>* [源连接ID](../api/collect/cloud-storage.md#source)
+>* [目标连接ID](../api/collect/cloud-storage.md#target)
 >* [映射 ID](../api/collect/cloud-storage.md#mapping)
 
 
-若要建立資料流，請向以下發出POST請求： `/flows` 的端點 [!DNL Flow Service] API。 若要內嵌加密的資料，您必須新增 `encryption` 區段至 `transformations` 屬性並包含 `publicKeyId` 之前步驟中建立的其他檔案。
+POST要创建数据流，请向 `/flows` 的端点 [!DNL Flow Service] API。 要摄取加密数据，您必须添加 `encryption` 部分到 `transformations` 属性并包括 `publicKeyId` 之前步骤创建的。
 
 **API格式**
 
@@ -128,7 +128,7 @@ POST /flows
 
 **请求**
 
-以下請求會建立資料流，以擷取雲端儲存空間來源的加密資料。
+以下请求将创建一个数据流以摄取云存储源的加密数据。
 
 ```shell
 curl -X POST \
@@ -174,19 +174,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `flowSpec.id` | 與雲端儲存空間來源對應的流量規格ID。 |
-| `sourceConnectionIds` | 來源連線識別碼。 此ID代表資料從來源傳輸至Platform的過程。 |
-| `targetConnectionIds` | 目標連線ID。 此ID代表資料傳至Platform後著陸的位置。 |
-| `transformations[x].params.mappingId` | 對應ID。 |
-| `transformations.name` | 擷取加密檔案時，您必須提供 `Encryption` 作為資料流的其他轉換引數。 |
-| `transformations[x].params.publicKeyId` | 您建立的公開金鑰ID。 此ID是用來加密雲端儲存體資料的加密金鑰組的一半。 |
-| `scheduleParams.startTime` | 資料流的開始時間（以Epoch時間計）。 |
-| `scheduleParams.frequency` | 資料流收集資料的頻率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 間隔會指定兩個連續資料流執行之間的期間。 間隔值應為非零整數。 當頻率設定為時，不需要間隔 `once` 和應大於或等於 `15` （其他頻率值）。 |
+| `flowSpec.id` | 与云存储源对应的流规范ID。 |
+| `sourceConnectionIds` | 源连接ID。 此ID表示数据从源传输到平台。 |
+| `targetConnectionIds` | 目标连接ID 此ID表示将数据提交到Platform后数据登陆的位置。 |
+| `transformations[x].params.mappingId` | 映射ID。 |
+| `transformations.name` | 摄取加密文件时，必须提供 `Encryption` 作为数据流的附加转换参数。 |
+| `transformations[x].params.publicKeyId` | 您创建的公钥ID。 此ID是用来加密云存储数据的加密密钥对的一半。 |
+| `scheduleParams.startTime` | 数据流的开始时间（以Epoch时间表示）。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 当频率设置为时，不需要间隔 `once` 和应大于或等于 `15` 其他频率值。 |
 
 **响应**
 
-成功的回應會傳回ID (`id`)中，所有新增的已加密資料流都會顯示這個訊息。
+成功的响应会返回ID (`id`)。
 
 ```json
 {
@@ -197,4 +197,4 @@ curl -X POST \
 
 ## 后续步骤
 
-依照本教學課程所述，您已針對雲端儲存空間資料建立加密金鑰組，並使用來擷取加密資料的資料流 [!DNL Flow Service API]. 如需資料流完整性、錯誤和量度的狀態更新，請閱讀以下指南： [使用監控資料流 [!DNL Flow Service] API](./monitor.md).
+通过阅读本教程，您已为云存储数据创建了一个加密密钥对，并创建了数据流以使用摄取您的加密数据 [!DNL Flow Service API]. 有关数据流完整性、错误和量度的状态更新，请阅读以下指南： [使用监控数据流 [!DNL Flow Service] API](./monitor.md).

@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；標籤類別；標籤；
-title: 標籤類別
-description: 本檔案提供在Adobe Experience Cloud中管理統一標籤類別的相關資訊
+keywords: Experience Platform；标记类别；标记；
+title: 标记类别
+description: 本文档提供了有关在Adobe Experience Cloud中管理统一标记类别的信息
 exl-id: 0369d4e1-c091-4702-890a-3882a4916217
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -10,66 +10,66 @@ ht-degree: 0%
 
 ---
 
-# 標籤類別指南
+# 标记类别指南
 
-標籤類別會將標籤分組為有意義的集合，以提供更多上下文並更好地釐清標籤的用途。 任何具有類別的標籤都會在標籤名稱前面加上類別名稱，然後是冒號。
+标记类别可将标记分组为有意义的集，以提供更多上下文并更好地阐明标记的用途。 任何具有类别的标记都会在标记名称之前添加类别名称，然后添加一个冒号。
 
-## 建立標籤類別 {#create-tag-category}
+## 创建标记类别 {#create-tag-category}
 
-若要建立新類別，請選取 **[!UICONTROL 標籤]** 在左側導覽中，然後選取 [!UICONTROL 建立標籤類別].
+要创建新类别，请选择 **[!UICONTROL 标记]** 在左侧导航中，然后选择 [!UICONTROL 创建标记类别].
 
-![建立標籤類別](./images/create-tag-category.png)
+![创建标记类别](./images/create-tag-category.png)
 
-此 **[!UICONTROL 建立標籤類別]** 對話方塊就會顯示，提示您輸入唯一的「類別」名稱和選擇性說明。 完成後，選取 **[!UICONTROL 儲存]**.
+此 **[!UICONTROL 创建标记类别]** 对话框，提示您输入唯一的类别名称和可选说明。 完成后，选择 **[!UICONTROL 保存]**.
 
-![建立標籤類別對話方塊](./images/create-tag-category-dialog.png)
+![“创建标记类别”对话框](./images/create-tag-category-dialog.png)
 
-新標籤類別已成功建立，而您被重新導向至標籤建立頁面，您可以在其中指派新標籤。 如需建立標籤的詳細資訊，請參閱 [管理標籤](./managing-tags.md#create-a-tag-create-tag) 檔案。
+新标记类别已成功创建，并且您被重定向到标记创建页面，您可以在其中分配新标记。 有关创建标记的更多信息，请参阅 [管理标记](./managing-tags.md#create-a-tag-create-tag) 文档。
 
-![在標籤類別詳細目錄中新建立的標籤類別](./images/new-tag-cateogry-listed.png)
+![标记类别库存中新建的标记类别](./images/new-tag-cateogry-listed.png)
 
-## 編輯標籤類別 {#edit-tag-category}
-
->[!NOTE]
->
->編輯或重新命名標籤類別可維持標籤與目前套用標籤的任何物件的關聯。
-
-若要編輯標籤類別，請選取「 」 **[!UICONTROL 標籤]** 在左側導覽中，然後選取您要編輯的標籤類別。
-
-![編輯標籤類別](./images/edit-tag-category.png)
-
-在標籤類別中，選取省略符號(`...`)旁邊 [!UICONTROL 建立標籤]. 下拉式清單會顯示要編輯類別或刪除的控制項，請選取 **[!UICONTROL 編輯類別]**.
-
-![從下拉式清單中選取編輯類別](./images/select-edit-tag-category.png)
-
-此 **[!UICONTROL 編輯類別]** 對話方塊隨即顯示，提示您更新類別名稱和選擇性說明。 完成後，選取 **[!UICONTROL 儲存]**.
-
-![編輯標籤類別對話方塊](./images/edit-category-dialog.png)
-
-標籤類別已成功更新，而您被重新導向至標籤類別。
-
-![已更新標籤類別詳細目錄中的標籤類別](./images/updated-tag-category.png)
-
-## 刪除標籤類別 {#delete-tag-category}
+## 编辑标记类别 {#edit-tag-category}
 
 >[!NOTE]
 >
->在可以刪除標籤類別之前，它必須是空的並且沒有標籤。
+>编辑或重命名标记类别可保持标记与当前应用这些标记的任何对象的关联。
 
-若要刪除標籤類別，請選取 **[!UICONTROL 標籤]** 在左側導覽中，然後選取您要刪除的標籤類別。
+要编辑标记类别，请选择 **[!UICONTROL 标记]** 在左侧导航中，选择要编辑的标记类别。
 
-![刪除標籤類別](./images/edit-tag-category.png)
+![编辑标记类别](./images/edit-tag-category.png)
 
-在標籤類別中，選取省略符號(`...`)旁邊 [!UICONTROL 建立標籤]. 下拉式清單會顯示要編輯類別或刪除的控制項，請選取 **[!UICONTROL 刪除類別]**.
+在标记类别中，选择省略号(`...`)旁边的 [!UICONTROL 创建标记]. 下拉菜单显示用于编辑类别或删除的控件，请选择 **[!UICONTROL 编辑类别]**.
 
-![從下拉式清單中選取刪除標籤類別](./images/select-delete-tag-category.png)
+![从下拉菜单中选择编辑类别](./images/select-edit-tag-category.png)
 
-此 **[!UICONTROL 刪除類別]** 對話方塊隨即顯示，提示您確認刪除標籤類別。 選取 **[!UICONTROL 刪除]** 以確認。
+此 **[!UICONTROL 编辑类别]** 对话框，提示您更新类别名称和可选说明。 完成后，选择 **[!UICONTROL 保存]**.
 
-![刪除類別對話方塊](./images/delete-category-dialog.png)
+![“编辑标记类别”对话框](./images/edit-category-dialog.png)
 
-標籤類別已成功刪除，而您被重新導向至標籤類別詳細目錄頁面。 標籤類別不再出現在清單中，且已完全移除。
+标记类别已成功更新，您将被重定向到标记类别。
+
+![更新了标记类别库存中的标记类别](./images/updated-tag-category.png)
+
+## 删除标记类别 {#delete-tag-category}
+
+>[!NOTE]
+>
+>在可以删除标记类别之前，该类别必须为空，并且不含标记。
+
+要删除标记类别，请选择 **[!UICONTROL 标记]** 在左侧导航中，选择要删除的标记类别。
+
+![删除标记类别](./images/edit-tag-category.png)
+
+在标记类别中，选择省略号(`...`)旁边的 [!UICONTROL 创建标记]. 下拉菜单显示用于编辑类别或删除的控件，请选择 **[!UICONTROL 删除类别]**.
+
+![从下拉菜单中选择删除标记类别](./images/select-delete-tag-category.png)
+
+此 **[!UICONTROL 删除类别]** 对话框，提示您确认删除标记类别。 选择 **[!UICONTROL 删除]** 以确认。
+
+![“删除类别”对话框](./images/delete-category-dialog.png)
+
+标记类别已成功删除，您将被重定向到标记类别清单页面。 标记类别不再出现在列表中，并且已被完全删除。
 
 ## 后续步骤
 
-您現已瞭解如何管理標籤類別。 您可以繼續進行下一個步驟，以 [管理標籤](./managing-tags.md).
+您现在已了解如何管理标记类别。 您可以继续下一步以 [管理标记](./managing-tags.md).

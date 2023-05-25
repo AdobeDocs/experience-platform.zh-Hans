@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；啟用資料集
-title: 使用API為設定檔和Identity服務啟用資料集
+keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；启用数据集
+title: 使用API为配置文件和身份服务启用数据集
 type: Tutorial
-description: 本教學課程說明如何啟用資料集，以搭配使用Adobe Experience Platform API的Real-time Customer Profile和Identity Service使用。
+description: 本教程向您展示了如何使用Adobe Experience Platform API启用数据集以用于Real-time Customer Profile和Identity Service。
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,53 +11,53 @@ ht-degree: 1%
 
 ---
 
-# 啟用資料集 [!DNL Profile] 和 [!DNL Identity Service] 使用API
+# 为以下项启用数据集 [!DNL Profile] 和 [!DNL Identity Service] 使用API
 
-本教學課程涵蓋啟用資料集以用於中的程式 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]，分為下列步驟：
+本教程介绍了启用数据集以供在中使用的过程 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]，可细分为以下步骤：
 
-1. 啟用資料集以用於 [!DNL Real-Time Customer Profile]，使用下列兩個選項之一：
-   - [建立新的資料集](#create-a-dataset-enabled-for-profile-and-identity)
-   - [設定現有的資料集](#configure-an-existing-dataset)
-1. [將資料內嵌至資料集](#ingest-data-into-the-dataset)
-1. [確認透過即時客戶設定檔擷取資料](#confirm-data-ingest-by-real-time-customer-profile)
-1. [確認由Identity Service擷取的資料](#confirm-data-ingest-by-identity-service)
+1. 启用数据集以用于中 [!DNL Real-Time Customer Profile]，使用以下两个选项之一：
+   - [创建新数据集](#create-a-dataset-enabled-for-profile-and-identity)
+   - [配置现有数据集](#configure-an-existing-dataset)
+1. [将数据摄取到数据集](#ingest-data-into-the-dataset)
+1. [确认通过实时客户资料摄取数据](#confirm-data-ingest-by-real-time-customer-profile)
+1. [确认由Identity Service引入的数据](#confirm-data-ingest-by-identity-service)
 
 ## 快速入门
 
-此教學課程需要您實際瞭解管理已啟用設定檔的資料集所涉及的幾項Adobe Experience Platform服務。 開始進行本教學課程之前，請先檢閱相關檔案 [!DNL Platform] 服務：
+要阅读本教程，您需要深入了解管理启用了配置文件的数据集所包含的多项Adobe Experience Platform服务。 在开始本教程之前，请查看相关文档 [!DNL Platform] 服务：
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
-- [[!DNL Identity Service]](../../identity-service/home.md)：啟用 [!DNL Real-Time Customer Profile] 透過橋接來自被擷取到的不同資料來源的身分 [!DNL Platform].
-- [[!DNL Catalog Service]](../../catalog/home.md)：RESTful API可讓您建立資料集並設定資料集，用於 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+- [[!DNL Identity Service]](../../identity-service/home.md)：启用 [!DNL Real-Time Customer Profile] 通过桥接来自被摄取到的不同数据源的身份 [!DNL Platform].
+- [[!DNL Catalog Service]](../../catalog/home.md)：一个RESTful API，允许您为创建数据集并配置数据集 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service].
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
-以下章節提供您成功呼叫Platform API所需的其他資訊。
+以下部分提供了成功调用Platform API时需要了解的其他信息。
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {ORG_ID}`
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的 `Content-Type` 標頭。 必要時，此標頭的正確值會顯示在範例要求中。
+包含有效负载(POST、PUT、PATCH)的所有请求都需要一个额外的 `Content-Type` 标头。 必要时，此标头的正确值会显示在示例请求中。
 
-中的所有資源 [!DNL Experience Platform] 隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要 `x-sandbox-name` 標頭，指定將在其中執行作業的沙箱名稱。 如需中沙箱的詳細資訊 [!DNL Platform]，請參閱 [沙箱概述檔案](../../sandboxes/home.md).
+中的所有资源 [!DNL Experience Platform] 与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要 `x-sandbox-name` 头，指定将在其中执行操作的沙盒的名称。 有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-## 建立已啟用設定檔和身分的資料集 {#create-a-dataset-enabled-for-profile-and-identity}
+## 创建启用配置文件和标识的数据集 {#create-a-dataset-enabled-for-profile-and-identity}
 
-您可以在建立資料集後或資料集建立後，立即為Real-time Customer Profile和Identity Service啟用資料集。 如果您想要啟用已建立的資料集，請遵循以下步驟 [設定現有資料集](#configure-an-existing-dataset) 稍後可在此檔案中找到。
+您可以在创建数据集后立即或创建数据集后的任何时候为Real-time Customer Profile和Identity Service启用数据集。 如果要启用已创建的数据集，请按照 [配置现有数据集](#configure-an-existing-dataset) 可在本文档的后文中找到。
 
 >[!NOTE]
 >
->若要建立已啟用設定檔的新資料集，您必須知道已為設定檔啟用的現有XDM結構描述的ID。 如需如何查詢或建立已啟用設定檔的結構描述的相關資訊，請參閱以下教學課程： [使用結構描述登入API建立結構描述](../../xdm/tutorials/create-schema-api.md).
+>要创建新的启用配置文件的数据集，您必须知道为配置文件启用的现有XDM架构的ID。 有关如何查找或创建启用配置文件的架构的信息，请参阅以下教程： [使用架构注册表API创建架构](../../xdm/tutorials/create-schema-api.md).
 
-若要建立為設定檔啟用的資料集，您可以使用對的POST請求 `/dataSets` 端點。
+要创建为配置文件启用的数据集，您可以使用POST请求 `/dataSets` 端点。
 
 **API格式**
 
@@ -67,7 +67,7 @@ POST /dataSets
 
 **请求**
 
-包含 `unifiedProfile` 和 `unifiedIdentity` 在 `tags` 在請求內文中，資料集將立即啟用 [!DNL Profile] 和 [!DNL Identity Service]（分別）。 這些標籤的值必須是包含字串的陣列 `"enabled:true"`.
+通过包含 `unifiedProfile` 和 `unifiedIdentity` 下 `tags` 在请求正文中，数据集将立即启用 [!DNL Profile] 和 [!DNL Identity Service]，则不会显示任何内容。 这些标记的值必须是包含字符串的数组 `"enabled:true"`.
 
 ```shell
 curl -X POST \
@@ -92,12 +92,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `schemaRef.id` | 的ID [!DNL Profile] — 啟用的結構描述，資料集將以此為基礎。 |
-| `{TENANT_ID}` | 內的名稱空間 [!DNL Schema Registry] ，其中包含屬於您組織的資源。 請參閱 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 開發人員指南，以取得詳細資訊。 |
+| `schemaRef.id` | 的ID [!DNL Profile]启用数据集所基于的架构。 |
+| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] ，其中包含属于您组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南，以了解更多信息。 |
 
 **响应**
 
-成功的回應會顯示陣列，其中包含新建立資料集的ID，其形式為 `"@/dataSets/{DATASET_ID}"`. 當您成功建立並啟用資料集後，請繼續以下專案的步驟： [上傳資料](#upload-data-to-the-dataset).
+成功的响应会显示一个数组，其中包含新创建的数据集的ID，其形式为 `"@/dataSets/{DATASET_ID}"`. 成功创建并启用数据集后，请继续执行以下操作的步骤 [上传数据](#upload-data-to-the-dataset).
 
 ```json
 [
@@ -105,13 +105,13 @@ curl -X POST \
 ] 
 ```
 
-## 設定現有的資料集 {#configure-an-existing-dataset}
+## 配置现有数据集 {#configure-an-existing-dataset}
 
-下列步驟說明如何啟用先前建立的資料集 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 如果您已建立已啟用設定檔的資料集，請繼續下列步驟： [擷取資料](#ingest-data-into-the-dataset).
+以下步骤介绍了如何为启用之前创建的数据集 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 如果您已创建启用了配置文件的数据集，请继续执行以下操作的步骤： [正在引入数据](#ingest-data-into-the-dataset).
 
-### 檢查資料集是否已啟用 {#check-if-the-dataset-is-enabled}
+### 检查数据集是否已启用 {#check-if-the-dataset-is-enabled}
 
-使用 [!DNL Catalog] API時，您可以檢查現有資料集以判斷是否已啟用它以用於中 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 以下呼叫會依ID擷取資料集的詳細資料。
+使用 [!DNL Catalog] API时，您可以检查现有数据集以确定是否已启用它以便在中使用 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service]. 以下调用按ID检索数据集的详细信息。
 
 **API格式**
 
@@ -121,7 +121,7 @@ GET /dataSets/{DATASET_ID}
 
 | 参数 | 描述 |
 |---|---|
-| `{DATASET_ID}` | 您要檢查的資料集ID。 |
+| `{DATASET_ID}` | 要检查的数据集的ID。 |
 
 **请求**
 
@@ -185,11 +185,11 @@ curl -X GET \
 }
 ```
 
-在 `tags` 屬性，您會看到 `unifiedProfile` 和 `unifiedIdentity` 都以值呈現 `enabled:true`. 因此， [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 分別為此資料集啟用。
+在 `tags` 属性，您可以看到 `unifiedProfile` 和 `unifiedIdentity` 同时存在值 `enabled:true`. 因此， [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 分别为此数据集启用。
 
-### 啟用資料集 {#enable-the-dataset}
+### 启用数据集 {#enable-the-dataset}
 
-如果現有資料集尚未啟用 [!DNL Profile] 或 [!DNL Identity Service]，您可使用資料集ID發出PATCH請求來啟用它。
+如果尚未为以下项启用现有数据集 [!DNL Profile] 或 [!DNL Identity Service]，则可以使用数据集ID发出PATCH请求来启用它。
 
 **API格式**
 
@@ -199,7 +199,7 @@ PATCH /dataSets/{DATASET_ID}
 
 | 参数 | 描述 |
 |---|---|
-| `{DATASET_ID}` | 您要更新的資料集ID。 |
+| `{DATASET_ID}` | 要更新的数据集的ID。 |
 
 **请求**
 
@@ -217,11 +217,11 @@ curl -X PATCH \
       ]'
 ```
 
-請求內文包含 `path` 兩種型別的標籤， `unifiedProfile` 和 `unifiedIdentity`. 此 `value` 每個是包含字串的陣列 `enabled:true`.
+请求正文包括 `path` 两种类型的标记， `unifiedProfile` 和 `unifiedIdentity`. 此 `value` 个是包含字符串的数组 `enabled:true`.
 
 **响应**
 
-成功的PATCH要求會傳回HTTP狀態200 （確定）以及包含已更新資料集ID的陣列。 此ID應與PATCH請求中傳送的ID相符。 此 `unifiedProfile` 和 `unifiedIdentity` 現在已新增標籤，且資料集已啟用供設定檔和身分識別服務使用。
+成功的PATCH请求会返回HTTP状态200 （正常）和一个包含已更新数据集ID的数组。 此ID应与PATCH请求中发送的ID匹配。 此 `unifiedProfile` 和 `unifiedIdentity` 现在添加了标记，并启用数据集以供Profile和Identity服务使用。
 
 ```json
 [
@@ -229,17 +229,17 @@ curl -X PATCH \
 ]
 ```
 
-## 將資料內嵌至資料集 {#ingest-data-into-the-dataset}
+## 将数据摄取到数据集 {#ingest-data-into-the-dataset}
 
-兩者 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 使用XDM資料，因為它正在被擷取到資料集中。 如需如何將資料上傳至資料集的說明，請參閱上的教學課程 [使用API建立資料集](../../catalog/datasets/create.md). 規劃要傳送哪些資料給您的時 [!DNL Profile]-enabled資料集，請考量下列最佳實務：
+两者 [!DNL Real-Time Customer Profile] 和 [!DNL Identity Service] 在将XDM数据摄取到数据集中时使用。 有关如何将数据上传到数据集的说明，请参阅关于的教程 [使用API创建数据集](../../catalog/datasets/create.md). 在计划向贵机构发送哪些数据时 [!DNL Profile]启用数据集时，请考虑以下最佳实践：
 
-- 包含您要用來作為分段條件的任何資料。
-- 包含您可從設定檔資料中確定的儘可能多的識別碼，以將您的身分圖表最大化。 這允許 [!DNL Identity Service] 更有效率地拼接資料集中的身分。
+- 包含要用作分段标准的任何数据。
+- 包括可从配置文件数据中确定的任意数量的标识符，以最大化您的身份图。 这允许 [!DNL Identity Service] 更有效地拼合数据集之间的身份。
 
-## 確認資料擷取依據 [!DNL Real-Time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
+## 确认数据摄取方式 [!DNL Real-Time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
 
-首次將資料上傳到新資料集時，或作為涉及新ETL或資料來源的程式的一部分，建議仔細檢查資料，以確保資料已按預期上傳。 使用 [!DNL Real-Time Customer Profile] 存取API，您可以在批次資料載入資料集時擷取該資料。 如果您無法擷取任何您預期的實體，您的資料集可能不會啟用 [!DNL Real-Time Customer Profile]. 確認您的資料集已啟用後，請確定來源資料格式和識別碼支援您的期望。 如需有關如何使用 [!DNL Real-Time Customer Profile] 要存取的API [!DNL Profile] 資料，請參閱 [實體端點指南](../../profile/api/entities.md)，也稱為「[!DNL Profile Access]&quot; API.
+首次将数据上载到新数据集时，或作为涉及新ETL或数据源的流程的一部分，建议仔细检查数据，以确保已按预期上载数据。 使用 [!DNL Real-Time Customer Profile] 访问API，您可以在批量数据加载到数据集时检索该数据。 如果您无法检索任何预期的实体，则您的数据集可能未启用 [!DNL Real-Time Customer Profile]. 确认已启用数据集后，请确保源数据格式和标识符支持您的预期。 有关如何使用 [!DNL Real-Time Customer Profile] 用于访问的API [!DNL Profile] 有关数据，请参阅 [实体端点指南](../../profile/api/entities.md)，也称为“[!DNL Profile Access]&quot; API.
 
-## 確認由Identity Service擷取的資料 {#confirm-data-ingest-by-identity-service}
+## 确认由Identity Service引入的数据 {#confirm-data-ingest-by-identity-service}
 
-每個內嵌包含多個身分的資料片段，都會在您的私人身分圖形中建立連結。 如需身分圖表和存取身分資料的詳細資訊，請先閱讀 [Identity Service概觀](../../identity-service/home.md).
+摄取的每个包含多个身份的数据片段都会在专用身份图中创建链接。 有关身份图形和访问身份数据的更多信息，请首先阅读 [Identity服务概述](../../identity-service/home.md).

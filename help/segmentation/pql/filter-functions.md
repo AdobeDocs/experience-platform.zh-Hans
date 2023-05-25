@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；分段；分段；分段服務；pql；PQL；設定檔查詢語言；篩選函式；篩選器；
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；过滤器函数；过滤器；
 solution: Experience Platform
-title: PQL篩選函式
-description: 篩選函式可用來篩選設定檔查詢語言(PQL)陣列中的資料。
+title: PQL筛选函数
+description: 筛选器函数用于筛选配置文件查询语言(PQL)数组内的数据。
 exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 4%
 
 ---
 
-# 篩選函式
+# 筛选器函数
 
-篩選函式是用來篩選陣列中的資料。 [!DNL Profile Query Language] (PQL)。 如需其他PQL函式的詳細資訊，請參閱 [[!DNL Profile Query Language] 概觀](./overview.md).
+筛选函数用于筛选数组中的数据。 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## 过滤器
 
-此 `[]` （篩選）函式可將篩選套用至陣列，並傳回符合指定條件的陣列子集。
+此 `[]` (filter)函数允许将过滤器应用于数组，并返回与指定条件匹配的数组子集。
 
 **格式**
 
@@ -27,15 +27,15 @@ ht-degree: 4%
 
 **示例**
 
-以下PQL查詢會取得至少有一個產品專案且SKU等於「PS」的所有事件。
+以下PQL查询可获取至少具有一个产品项目且SKU等于“PS”的所有事件。
 
 ```sql
 xEvent[productListItems[SKU="PS"]]
 ```
 
-## Up運運算元
+## Up运算符
 
-此 `^` (up)運運算元可讓您參照上層篩選中的屬性。
+此 `^` (up)运算符允许您引用过滤器较高层级的属性。
 
 **格式**
 
@@ -45,14 +45,14 @@ xEvent[productListItems[SKU="PS"]]
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{ARRAY}` | 正在篩選的陣列。 |
-| `{FILTER_1}` | 篩選的外層。 |
-| `{FILTER_2}` | 篩選的內部圖層 |
-| `^{PROPERTY}` | 正在篩選的屬性。 由於 `^`，則會根據filter1檢查屬性。 |
+| `{ARRAY}` | 正在过滤的数组。 |
+| `{FILTER_1}` | 过滤的外层。 |
+| `{FILTER_2}` | 滤镜的内层 |
+| `^{PROPERTY}` | 也正在被过滤的属性。 由于 `^`，它检查基于filter1的属性。 |
 
 **示例**
 
-以下PQL查詢會取得至少有一個產品專案且SKU等於「PS」的所有事件 **或** 有一個性別為女性的人。
+以下PQL查询可获取至少具有一个产品项目（SKU等于“PS”）的所有事件 **或** 有一个性别为女性的人。
 
 ```sql
 xEvent[productListItems[SKU="PS" or ^^.person.gender="female"]]
@@ -60,4 +60,4 @@ xEvent[productListItems[SKU="PS" or ^^.person.gender="female"]]
 
 ## 后续步骤
 
-現在您已瞭解篩選函式，可以在PQL查詢中使用它們。 如需其他PQL功能的詳細資訊，請參閱 [設定檔查詢語言概觀](./overview.md).
+现在，您已了解筛选器函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).

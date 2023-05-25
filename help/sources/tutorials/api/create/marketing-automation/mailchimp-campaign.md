@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 solution: Experience Platform
-title: 使用流量服務API為Mailchimp Campaign建立資料流
-description: 瞭解如何使用Flow Service API將Adobe Experience Platform連線至MailChimp Campaign。
+title: 使用流服务API为Mailchimp Campaign创建数据流
+description: 了解如何使用流量服务API将Adobe Experience Platform连接到MailChimp Campaign。
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 1%
 
 ---
 
-# 建立資料流用於 [!DNL Mailchimp Campaign] 使用流量服務API
+# 创建数据流，用于 [!DNL Mailchimp Campaign] 使用流服务API
 
-以下教學課程將逐步引導您完成建立來源連線和資料流的步驟，以便您帶入 [!DNL Mailchimp Campaign] 使用將資料傳送至Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Mailchimp Campaign] 使用将数据发送到平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 先决条件
 
-連線之前 [!DNL Mailchimp] 若要使用OAuth 2重新整理程式碼的Adobe Experience Platform，您必須先擷取您的存取權杖 [!DNL MailChimp.] 請參閱 [[!DNL Mailchimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) 以取得尋找存取Token的詳細指示。
+连接之前 [!DNL Mailchimp] 要使用OAuth 2刷新代码的Adobe Experience Platform，您必须首先检索您的访问令牌 [!DNL MailChimp.] 请参阅 [[!DNL Mailchimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) 以获取有关查找访问令牌的详细说明。
 
-## 建立基礎連線 {#base-connection}
+## 创建基本连接 {#base-connection}
 
-擷取您的 [!DNL Mailchimp] 驗證認證，您現在可以開始建立資料流的程式，以帶來 [!DNL Mailchimp Campaign] 資料傳送至Platform。 建立資料流的第一步是建立基礎連線。
+一旦您恢复了 [!DNL Mailchimp] 身份验证凭据，您现在可以开始创建数据流以引入 [!DNL Mailchimp Campaign] 数据到Platform。 创建数据流的第一步是创建基本连接。
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-[!DNL Mailchimp] 支援基本驗證和OAuth 2重新整理程式碼。 請參閱下列範例，以取得如何使用任一驗證型別進行驗證的指引。
+[!DNL Mailchimp] 支持基本身份验证和OAuth 2刷新代码。 有关如何使用任一身份验证类型进行身份验证的指导，请参阅以下示例。
 
-### 建立 [!DNL Mailchimp] 使用基本驗證的基本連線
+### 创建 [!DNL Mailchimp] 使用基本身份验证的基本连接
 
-若要建立 [!DNL Mailchimp] 使用基本驗證的基礎連線，向發出POST要求 `/connections` 端點 [!DNL Flow Service] 為API提供認證時 `authorizationTestUrl`， `username`、和 `password`.
+创建 [!DNL Mailchimp] POST基本连接使用基本身份验证，向 `/connections` 端点 [!DNL Flow Service] API同时为提供凭据 `authorizationTestUrl`， `username`、和 `password`.
 
 **API格式**
 
@@ -39,7 +39,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Mailchimp]：
+以下请求创建基本连接 [!DNL Mailchimp]：
 
 ```shell
 curl -X POST \
@@ -69,17 +69,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | （選用）您可以包含的屬性，以提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 來源的連線規格ID。 在您的來源註冊並核准後，您便可以透過擷取此ID [!DNL Flow Service] API。 |
-| `auth.specName` | 您用來將來源連線到Platform的驗證型別。 |
-| `auth.params.authorizationTestUrl` | （選用）建立基本連線時，會使用授權測試URL來驗證認證。 如果未提供，則會在來源連線建立步驟期間自動檢查認證。 |
-| `auth.params.username` | 與您的對應之使用者名稱 [!DNL Mailchimp] 帳戶。 這是進行基本驗證所必需的。 |
-| `auth.params.password` | 與您的對應之密碼 [!DNL Mailchimp] 帳戶。 這是進行基本驗證所必需的。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | （可选）可包含的资产，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 源的连接规范ID。 在您的源通过注册和批准后，可以检索此ID [!DNL Flow Service] API。 |
+| `auth.specName` | 用于将源连接到Platform的身份验证类型。 |
+| `auth.params.authorizationTestUrl` | （可选）授权测试URL用于在创建基本连接时验证凭据。 如果未提供，则在源连接创建步骤期间将自动检查凭据。 |
+| `auth.params.username` | 与您的对应的用户名 [!DNL Mailchimp] 帐户。 这是基本身份验证所必需的。 |
+| `auth.params.password` | 与您的密码对应的密码 [!DNL Mailchimp] 帐户。 这是基本身份验证所必需的。 |
 
 **响应**
 
-成功回應會傳回新建立的基本連線，包括其唯一連線識別碼(`id`)。 在下一個步驟中探索來源的檔案結構和內容時，需要此ID。
+成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -88,9 +88,9 @@ curl -X POST \
 }
 ```
 
-### 建立 [!DNL Mailchimp] 使用OAuth 2重新整理程式碼的基礎連線
+### 创建 [!DNL Mailchimp] 使用OAuth 2刷新代码的基本连接
 
-若要建立 [!DNL Mailchimp] 基礎連線使用OAuth 2重新整理程式碼，向發出POST要求 `/connections` 提供認證時的端點 `authorizationTestUrl`、和 `accessToken`.
+创建 [!DNL Mailchimp] 基本连接使用OAuth 2刷新代码，向发出POST请求 `/connections` 为提供凭据时的端点 `authorizationTestUrl`、和 `accessToken`.
 
 **API格式**
 
@@ -100,7 +100,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL Mailchimp]：
+以下请求创建基本连接 [!DNL Mailchimp]：
 
 ```shell
 curl -X POST \
@@ -129,16 +129,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | （選用）您可以包含的屬性，以提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 來源的連線規格ID。 在使用註冊來源後，可以擷取此ID [!DNL Flow Service] API。 |
-| `auth.specName` | 您用來向Platform驗證來源的驗證型別。 |
-| `auth.params.authorizationTestUrl` | （選用）建立基本連線時，會使用授權測試URL來驗證認證。 如果未提供，則會在來源連線建立步驟期間自動檢查認證。 |
-| `auth.params.accessToken` | 用於驗證您的來源的對應存取權杖。 這是OAuth型驗證的必要專案。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | （可选）可包含的资产，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 源的连接规范ID。 使用注册源后，可以检索此ID [!DNL Flow Service] API。 |
+| `auth.specName` | 用于向Platform验证源的身份验证类型。 |
+| `auth.params.authorizationTestUrl` | （可选）授权测试URL用于在创建基本连接时验证凭据。 如果未提供，则在源连接创建步骤期间将自动检查凭据。 |
+| `auth.params.accessToken` | 用于对源进行身份验证的相应访问令牌。 基于OAuth的身份验证需要此项。 |
 
 **响应**
 
-成功回應會傳回新建立的基本連線，包括其唯一連線識別碼(`id`)。 在下一個步驟中探索來源的檔案結構和內容時，需要此ID。
+成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -147,22 +147,22 @@ curl -X POST \
 }
 ```
 
-## 探索您的來源 {#explore}
+## 浏览您的源 {#explore}
 
-使用您在上一步中產生的基本連線ID，您可以透過執行GET請求來探索檔案和目錄。 執行GET請求以探索來源的檔案結構和內容時，您必須包括下表列出的查詢引數：
+使用上一步中生成的基本连接ID，您可以通过执行GET请求来浏览文件和目录。 执行GET请求以浏览源的文件结构和内容时，必须包括下表列出的查询参数：
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 在上一步中產生的基本連線ID。 |
-| `{OBJECT_TYPE}` | 您要探索的物件型別。 對於REST來源，此值預設為 `rest`. |
-| `{OBJECT}` | 您要探索的物件。 |
-| `{FILE_TYPE}` | 只有在檢視特定目錄時才需要此引數。 其值代表您要探索的目錄路徑。 |
-| `{PREVIEW}` | 定義連線內容是否支援預覽的布林值。 |
-| `{SOURCE_PARAMS}` | 的base64編碼字串 `campaign_id`. |
+| `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
+| `{OBJECT_TYPE}` | 要浏览的对象的类型。 对于REST源，此值默认为 `rest`. |
+| `{OBJECT}` | 您希望探索的对象。 |
+| `{FILE_TYPE}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 |
+| `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
+| `{SOURCE_PARAMS}` | 的base64编码字符串 `campaign_id`. |
 
 >[!TIP]
 >
->擷取接受的格式型別 `{SOURCE_PARAMS}`，您必須將整個 `campaignId` base64中的字串。 例如， `{"campaignId": "c66a200cda"}` 以base64編碼等於 `eyJjYW1wYWlnbklkIjoiYzY2YTIwMGNkYSJ9`.
+>检索接受的格式类型 `{SOURCE_PARAMS}`，您必须编码整个 `campaignId` base64中的字符串。 例如， `{"campaignId": "c66a200cda"}` 在base64中编码等于 `eyJjYW1wYWlnbklkIjoiYzY2YTIwMGNkYSJ9`.
 
 **API格式**
 
@@ -183,7 +183,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回查詢檔案的結構。
+成功响应将返回查询文件的结构。
 
 ```json
 {
@@ -250,21 +250,21 @@ curl -X GET \
 }
 ```
 
-## 建立來源連線 {#source-connection}
+## 创建源连接 {#source-connection}
 
-您可以向以下發出POST要求來建立來源連線： [!DNL Flow Service] API。 來源連線由連線ID、來源資料檔案的路徑和連線規格ID組成。
+您可以通过对以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
-若要建立來源連線，您也必須定義資料格式屬性的列舉值。
+要创建源连接，还必须为数据格式属性定义一个枚举值。
 
-對檔案型來源使用下列列舉值：
+为基于文件的源使用以下枚举值：
 
-| 資料格式 | 列舉值 |
+| 数据格式 | 枚举值 |
 | ----------- | ---------- |
 | 已分隔 | `delimited` |
 | JSON | `json` |
 | Parquet | `parquet` |
 
-對於所有以表格為基礎的來源，將值設定為 `tabular`.
+对于所有基于表的源，将值设置为 `tabular`.
 
 **API格式**
 
@@ -274,7 +274,7 @@ POST /sourceConnections
 
 **请求**
 
-以下請求會為建立來源連線 [!DNL Mailchimp]：
+以下请求创建源连接 [!DNL Mailchimp]：
 
 ```shell
 curl -X POST \
@@ -303,16 +303,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 來源連線的名稱。 確保來源連線的名稱是描述性的，因為您可以使用此名稱來查閱來源連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供來源連線的詳細資訊。 |
-| `baseConnectionId` | 的基礎連線ID： [!DNL Mailchimp]. 此ID是在先前的步驟中產生的。 |
-| `connectionSpec.id` | 與您的來源對應的連線規格ID。 |
-| `data.format` | 的格式 [!DNL Mailchimp] 您要擷取的資料。 |
-| `params.campaignId` | 此 [!DNL Mailchimp] 行銷活動ID可識別特定 [!DNL Mailchimp] campaign，然後可讓您傳送電子郵件給清單/對象。 |
+| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
+| `baseConnectionId` | 的基本连接ID [!DNL Mailchimp]. 此ID是在前面的步骤中生成的。 |
+| `connectionSpec.id` | 与源对应的连接规范ID。 |
+| `data.format` | 的格式 [!DNL Mailchimp] 要摄取的数据。 |
+| `params.campaignId` | 此 [!DNL Mailchimp] 营销活动ID标识特定的 [!DNL Mailchimp] campaign，然后允许您向列表/受众发送电子邮件。 |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 此ID在後續步驟中是建立資料流的必要專案。
+成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
 
 ```json
 {
@@ -321,25 +321,25 @@ curl -X POST \
 }
 ```
 
-## 建立目標XDM結構描述 {#target-schema}
+## 创建目标XDM架构 {#target-schema}
 
-為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 然後，目標結構描述會用於建立包含來源資料的Platform資料集。
+为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可透過對以下專案執行POST請求來建立目標XDM結構描述： [結構描述登入API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](../../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](../../../../../xdm/api/schemas.md).
 
-### 建立目標資料集 {#target-dataset}
+### 创建目标数据集 {#target-dataset}
 
-您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在裝載中提供目標結構描述的ID。
+可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](../../../../../catalog/api/create-dataset.md).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
 
-## 建立目標連線 {#target-connection}
+## 创建目标连接 {#target-connection}
 
-目標連線代表所擷取資料登陸目的地之間的連線。 若要建立目標連線，您必須提供對應至 [!DNL Data Lake]. 此ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供对应于目标连接的固定连接规范ID。 [!DNL Data Lake]. 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-您現在將目標結構描述、目標資料集和連線規格ID視為唯一識別碼。 [!DNL Data Lake]. 使用這些識別碼，您可以使用 [!DNL Flow Service] 指定將包含傳入來源資料之資料集的API。
+现在，目标架构和目标数据集的连接规范ID均为唯一标识符 [!DNL Data Lake]. 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -349,7 +349,7 @@ POST /targetConnections
 
 **请求**
 
-以下請求會建立目標連線 [!DNL Mailchimp]：
+以下请求创建目标连接 [!DNL Mailchimp]：
 
 ```shell
 curl -X POST \
@@ -381,16 +381,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 目標連線的名稱。 確保目標連線的名稱是描述性的，因為您可以使用此名稱來查詢目標連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供目標連線的詳細資訊。 |
-| `connectionSpec.id` | 對應至的連線規格ID [!DNL Data Lake]. 此固定ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | 的格式 [!DNL Mailchimp] 您要帶到Platform的資料。 |
-| `params.dataSetId` | 在上一步中擷取的目標資料集ID。 |
+| `name` | 目标连接的名称。 确保目标连接的名称是描述性的，因为您可以使用此名称查找有关目标连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
+| `connectionSpec.id` | 与对应的连接规范ID [!DNL Data Lake]. 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `data.format` | 的格式 [!DNL Mailchimp] 要带到Platform的数据。 |
+| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
 
 
 **响应**
 
-成功回應會傳回新目標連線的唯一識別碼(`id`)。 此ID在後續步驟中是必要的。
+成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -401,7 +401,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->目前不支援資料準備功能 [!DNL Mailchimp Campaign].
+>当前不支持数据准备功能 [!DNL Mailchimp Campaign].
 
 <!--
 ## Create a mapping {#mapping}
@@ -469,16 +469,16 @@ A successful response returns details of the newly created mapping including its
 
 --->
 
-## 建立流程 {#flow}
+## 创建流 {#flow}
 
-最後一步將推出 [!DNL Mailchimp] Platform的資料是用來建立資料流。 到現在為止，您已準備下列必要值：
+实现以下目标的最后一步： [!DNL Mailchimp] 数据到Platform就是创建一个数据流。 现在，您已准备以下必需值：
 
-* [來源連線ID](#source-connection)
-* [目標連線ID](#target-connection)
+* [源连接ID](#source-connection)
+* [目标连接ID](#target-connection)
 
-資料流負責從來源排程及收集資料。 您可以執行POST要求，同時在裝載中提供先前提及的值，藉此建立資料流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
 
-若要排程內嵌，您必須先將開始時間值設為以秒為單位的epoch時間。 然後，您必須將頻率值設定為下列五個選項之一： `once`， `minute`， `hour`， `day`，或 `week`. 間隔值會指定兩次連續內嵌與建立一次性內嵌之間的期間(`once`)不需要設定間隔。 對於所有其他頻率，間隔值必須設定為等於或大於 `15`.
+要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为五个选项之一： `once`， `minute`， `hour`， `day`，或 `week`. 间隔值用于指定两次连续摄取和创建一次性摄取之间的时段(`once`)不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
 
 **API格式**
@@ -520,19 +520,19 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 資料流的名稱。 確保資料流的名稱是描述性的，因為您可以使用此名稱來查閱資料流上的資訊。 |
-| `description` | （選用）可包含的屬性，可提供資料流的詳細資訊。 |
-| `flowSpec.id` | 建立資料流所需的流量規格ID。 此固定ID為： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
-| `flowSpec.version` | 流程規格ID的對應版本。 此值預設為 `1.0`. |
-| `sourceConnectionIds` | 此 [來源連線ID](#source-connection) 已在先前步驟中產生。 |
-| `targetConnectionIds` | 此 [目標連線ID](#target-connection) 已在先前步驟中產生。 |
-| `scheduleParams.startTime` | 第一次開始擷取資料的指定開始時間。 |
-| `scheduleParams.frequency` | 資料流收集資料的頻率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 間隔會指定兩個連續資料流執行之間的期間。 間隔值應為非零整數。 當頻率設定為時，不需要間隔 `once` 和應大於或等於 `15` （其他頻率值）。 |
+| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `description` | （可选）可包含的属性，用于提供有关数据流的更多信息。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
+| `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
+| `sourceConnectionIds` | 此 [源连接ID](#source-connection) 在之前的步骤中生成。 |
+| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
+| `scheduleParams.startTime` | 第一次引入数据时的指定开始时间。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 当频率设置为时，不需要间隔 `once` 和应大于或等于 `15` 其他频率值。 |
 
 **响应**
 
-成功的回應會傳回ID (`id`)。 您可以使用此ID來監視、更新或刪除資料流。
+成功的响应会返回ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
 
 ```json
 {
@@ -543,24 +543,24 @@ curl -X POST \
 
 ## 附录
 
-下節提供您可以監視、更新和刪除資料流的步驟相關資訊。
+以下部分提供了有关监视、更新和删除数据流的步骤的信息。
 
-### 監視資料流
+### 监测数据流
 
-建立資料流後，您可以監視透過它擷取的資料，以檢視有關資料流執行、完成狀態和錯誤的資訊。 如需完整的API範例，請閱讀以下指南： [使用API監控您的來源資料流](../../monitor.md).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读以下指南： [使用API监控源数据流](../../monitor.md).
 
-### 更新您的資料流
+### 更新您的数据流
 
-透過向以下專案發出PATCH請求，更新資料流的詳細資訊，例如其名稱和說明，及其執行排程和相關聯的對應集 `/flows` 端點 [!DNL Flow Service] API，同時提供資料流的ID。 提出PATCH請求時，您必須提供資料流的 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新來源資料流](../../update-dataflows.md).
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
 
-### 更新您的帳戶
+### 更新您的帐户
 
-透過對執行PATCH請求，更新來源帳戶的名稱、說明和認證 [!DNL Flow Service] API時，提供您的基本連線ID作為查詢引數。 提出PATCH請求時，您必須提供來源帳戶的唯一值 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新您的來源帳戶](../../update.md).
+PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
 
-### 刪除您的資料流
+### 删除数据流
 
-透過對執行DELETE請求來刪除您的資料流 [!DNL Flow Service] API，同時提供您要作為查詢引數的一部分刪除的資料流的ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的資料流](../../delete-dataflows.md).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
 
-### 刪除您的帳戶
+### 删除您的帐户
 
-透過對執行DELETE請求來刪除您的帳戶 [!DNL Flow Service] API，同時提供您要刪除之帳戶的基本連線ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的來源帳戶](../../delete.md).
+向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；個人設定檔；欄位；結構描述；結構描述設計；欄位群組；欄位群組；人員；個人詳細資訊；個人資料個人詳細資訊；人員；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人资料；字段；架构；架构；架构设计；字段组；字段组；人员；人员详细信息；个人资料；人员；
 solution: Experience Platform
-title: 人口統計詳細資料結構欄位群組
-description: 本檔案提供「人口統計詳細資訊」結構描述欄位群組的概觀。
+title: 人口统计详细信息架构字段组
+description: 本文档概述了“人口统计详细信息”架构字段组。
 exl-id: 588c044c-b80d-4cb9-9f97-92f040d54bb4
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -12,30 +12,30 @@ ht-degree: 3%
 ---
 
 
-# [!UICONTROL 人口統計細節] 結構描述欄位群組
+# [!UICONTROL 人口统计详细信息] 架构字段组
 
 >[!NOTE]
 >
->數個結構描述欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../name-updates.md) 以取得詳細資訊。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
 
-[!UICONTROL 人口統計細節] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md). 欄位群組提供根層級 `person` 物件，其子欄位描述有關個人的資訊。
+[!UICONTROL 人口统计详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供根级别 `person` 对象，其子字段描述有关个人的信息。
 
 ![](../../images/field-groups/demographic-details.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `person.name` | [個人名稱](../../data-types/person-name.md) | 此物件的子欄位可描述個人名稱的各種元素。 |
-| `person.birthDate` | 日期 | 個人出生的完整日期，採用ISO 8601時間戳記的形式。 |
-| `person.birthDayAndMonth` | 字符串 | 個人出生的日期和月份（MM-DD格式）。 若只知道個人出生的日期和月份，但不知道出生年份，應使用此欄位。 |
-| `person.birthYear` | 整数 | 個人出生的年份，包括世紀（例如1989）。 只知道個人的年齡而不知道完整的出生日期時，應使用此欄位。 |
-| `person.gender` | 字符串 | 個人的性別識別。 |
-| `person.martialStatus` | 字符串 | 說明個人與另一個重要的人的關係。 |
-| `person.nationality` | 字符串 | 個人與其使用ISO 3166-1 Alpha-2代碼表示的狀態之間的法律關係。 |
-| `person.taxId` | 字符串 | 個人的稅務/財政ID，例如美國的TIN或西班牙的CIF/NIF。 |
+| `person.name` | [人员姓名](../../data-types/person-name.md) | 其子字段描述人员名称各种元素的对象。 |
+| `person.birthDate` | 日期 | 人员的完整出生日期，采用ISO 8601时间戳的形式。 |
+| `person.birthDayAndMonth` | 字符串 | 一个人出生的日期和月份，格式为MM-DD。 当已知人员出生的日期和月份但不知道年份时，应使用此字段。 |
+| `person.birthYear` | 整数 | 一个人出生的年份，包括世纪（如1989年）。 当只知道个人的年龄而不是完整的出生日期时，应当使用此字段。 |
+| `person.gender` | 字符串 | 人员的性别标识。 |
+| `person.martialStatus` | 字符串 | 描述一个人与另一个重要的人的关系。 |
+| `person.nationality` | 字符串 | 一个人与其国家之间的法律关系，使用ISO 3166-1 Alpha-2代码表示。 |
+| `person.taxId` | 字符串 | 人员的税务/财政ID，例如美国的TIN或西班牙的CIF/NIF。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱公用XDM存放庫：
+有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-person-details.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-person-details.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-person-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-person-details.schema.json)

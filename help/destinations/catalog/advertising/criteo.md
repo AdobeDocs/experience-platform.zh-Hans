@@ -1,7 +1,7 @@
 ---
-keywords: 廣告；標準；
-title: 標準連線
-description: 標準提供值得信賴且具影響力的廣告，讓開放網際網路上的每位消費者都能獲得更豐富的體驗。 Criteo擁有世界上最大的商業資料集和同級最佳的AI，可確保整個購物歷程的每個接觸點都經過個人化，以便在適當的時間透過適當的廣告觸及客戶。
+keywords: 广告；标准；
+title: 标准连接
+description: 标准支持可信且有影响力的广告，为开放互联网上的每位消费者带来更丰富的体验。 凭借世界上最大的商业数据集和同类最佳的AI，Criteo可确保购物历程中的每个接触点都经过个性化，以便在适当的时间通过适当的广告吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
 source-git-commit: 8211ca28462548e1c17675e504e6de6f5cc55e73
 workflow-type: tm+mt
@@ -10,116 +10,116 @@ ht-degree: 3%
 
 ---
 
-# (Beta) Criteo連線
+# (Beta)标准连接
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->此檔案頁面是由Criteo建立。 此產品目前為測試版，功能可能會有所變更。 如有任何查詢或更新要求，請直接聯絡條件 [此處](mailto:criteoTechnicalPartnerships@criteo.com).
+>此文档页面由Criteo创建。 此产品目前为测试版，其功能可能会有变动。 如有任何查询或更新请求，请直接与标准联系 [此处](mailto:criteoTechnicalPartnerships@criteo.com).
 
-標準提供值得信賴且具影響力的廣告，讓開放網際網路上的每位消費者都能獲得更豐富的體驗。 Criteo擁有世界上最大的商業資料集和同級最佳的AI，可確保整個購物歷程的每個接觸點都經過個人化，以便在適當的時間透過適當的廣告觸及客戶。
+标准支持可信且有影响力的广告，为开放互联网上的每位消费者带来更丰富的体验。 凭借世界上最大的商业数据集和同类最佳的AI，Criteo可确保购物历程中的每个接触点都经过个性化，以便在适当的时间通过适当的广告吸引客户。
 
 ## 先决条件 {#prerequisites}
 
-* 您必須擁有管理員使用者帳戶 [標準管理中心](https://marketing.criteo.com).
-* 您將需要您的Criteo廣告商ID （如果您沒有此ID，請詢問您的Criteo聯絡人）。
-* 您需要提供 [!DNL GUM caller ID]，以備您使用 [!DNL GUM ID] 作為識別碼。
+* 您需要具有管理员用户帐户 [标准管理中心](https://marketing.criteo.com).
+* 您将需要您的Criteo广告商ID（如果您没有此ID，请咨询您的Criteo联系人）。
+* 您需要提供 [!DNL GUM caller ID]，以防您使用 [!DNL GUM ID] 作为标识符。
 
 ## 限制 {#limitations}
 
-* 標準僅接受 [!DNL SHA-256] — 雜湊和純文字電子郵件(將轉換為 [!DNL SHA-256] （在傳送之前）。 請勿傳送任何PII （個人識別資訊，例如個人姓名或電話號碼）。
-* 條件至少需要由使用者端提供一個識別碼。 它會排定優先順序 [!DNL GUM ID] 做為雜湊電子郵件上的識別碼，因為它有助於提高符合率。
+* 标准仅接受 [!DNL SHA-256] — 散列和纯文本电子邮件(将转换为 [!DNL SHA-256] 之前)。 请勿发送任何PII（个人身份信息，如个人姓名或电话号码）。
+* 标准要求客户端至少提供一个标识符。 它优先处理 [!DNL GUM ID] 作为经过哈希处理的电子邮件中的标识符，因为它有助于提高匹配率。
 
 ![先决条件](../../assets/catalog/advertising/criteo/prerequisites.png)
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-標準支援下表所述的身分啟用。 進一步瞭解 [身分](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+标准支持激活下表中描述的标识。 详细了解 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 | --- | --- | --- |
-| `email_sha256` | 使用SHA-256演演算法雜湊處理的電子郵件地址 | Adobe Experience Platform支援純文字和SHA-256雜湊電子郵件地址。 當來源欄位包含未雜湊屬性時，請檢查 [!UICONTROL 套用轉換] 選項，讓Platform在啟動時自動雜湊資料。 |
-| `gum_id` | 准則 [!DNL GUM] Cookie識別碼 | [!DNL GUM IDs] 允許客戶維持其使用者身分識別系統與Criteo的使用者身分識別([!DNL UID])。 如果識別碼型別為 `gum_id`，其他引數， [!DNL GUM Caller ID]，也必須包含。 請聯絡您的Criteo帳戶團隊以取得適當的 [!DNL GUM Caller ID] 或以取得此專案的詳細資訊 [!DNL GUM ID] 同步（如有需要）。 |
+| `email_sha256` | 使用SHA-256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA-256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 [!UICONTROL 应用转换] 选项，以使Platform在激活时自动散列数据。 |
+| `gum_id` | 标准 [!DNL GUM] Cookie标识符 | [!DNL GUM IDs] 允许客户在其用户标识系统与Criteo的用户标识之间保持通信([!DNL UID])。 如果标识符类型为 `gum_id`，另一个参数， [!DNL GUM Caller ID]还必须包含。 请联系您的Criteo客户团队获取相应的 [!DNL GUM Caller ID] 或获取有关此内容的更多信息 [!DNL GUM ID] 同步（如果需要）。 |
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 | --- | --- | --- |
-| 匯出型別 | 区段导出 | 您正在匯出區段（受眾）的所有成員，而這些成員具有「 」中使用的識別碼（名稱、電話號碼或其他）。 [!DNL Criteo] 目的地。 |
-| 匯出頻率 | 串流 | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](../../destination-types.md#streaming-destinations). |
+| 导出类型 | 区段导出 | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码或其他）。 [!DNL Criteo] 目标。 |
+| 导出频率 | 流 | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](../../destination-types.md#streaming-destinations). |
 
 ## 用例 {#use-cases}
 
-協助您更清楚瞭解如何使用 [!DNL Criteo] 目的地，以下是Adobe Experience Platform客戶可以達成的一些目標 [!DNL Criteo]：
+为了帮助您更好地了解如何使用 [!DNL Criteo] 目标，以下是Adobe Experience Platform客户可以通过实现的一些目标 [!DNL Criteo]：
 
-### 使用案例1 ：取得流量
+### 用例1 ：获取流量
 
-利用相關的產品優惠方案和彈性的創意來展示您的企業。 有了智慧型產品推薦，您的廣告會自動加入最有可能觸發造訪和參與的產品。 彈性的鎖定目標可讓您從Criteo的商務資料集或您自己的潛在客戶清單和AdobeCDP區段建立受眾。
+利用相关的产品选件和灵活的创意展示您的业务。 通过智能产品推荐，您的广告将自动包含最可能触发访问和参与度的产品。 通过灵活定位，您可以从Criteo的商务数据集或从您自己的潜在客户列表和AdobeCDP区段构建受众。
 
-### 使用案例2 ：提高網站轉換率
+### 用例2：提高网站转化率
 
-當訪客離開您的網站時，提醒他們缺少什麼，重新定位廣告可透過顯示特殊優惠和高度相關優惠方案來提高轉換率，無論他們接下來前往何處。 連線您的AdobeCDP區段，以重新吸引現有客戶或鎖定與您最忠誠的購物者類似的消費者。
+当访客离开您的网站时，提醒他们缺少什么，重新定位可通过显示特殊优惠和超级相关优惠来提高转化率的广告，无论他们接下来走到哪里。 连接您的AdobeCDP区段，重新吸引现有客户或定位类似于您最忠诚购物者的消费者。
 
-## 連線至標準 {#connect}
+## 连接到标准 {#connect}
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
-### 驗證至條件
+### 验证标准
 
-連線步驟如下：
+连接步骤如下：
 
-1. 登入Adobe Experience Platform並連線至標準目的地。
+1. 登录到Adobe Experience Platform并连接到Criteo目标。
 
    ![登录](../../assets/catalog/advertising/criteo/connect-destination.png)
 
-1. 系統會將您重新導向至條件以授權連線。 您可能需要先使用您的條件憑證登入：
+1. 您将被重定向到标准以授权连接。 您可能需要首先使用标准凭据登录：
 
-   ![標準登入](../../assets/catalog/advertising/criteo/log-in-1.png)
+   ![标准登录](../../assets/catalog/advertising/criteo/log-in-1.png)
 
-   ![標準登入](../../assets/catalog/advertising/criteo/log-in-2.png)
+   ![标准登录](../../assets/catalog/advertising/criteo/log-in-2.png)
 
-   ![標準登入](../../assets/catalog/advertising/criteo/log-in-3.png)
+   ![标准登录](../../assets/catalog/advertising/criteo/log-in-3.png)
 
 
-### 連線引數 {#connection-parameters}
+### 连接参数 {#connection-parameters}
 
-在對目的地進行驗證之後，請填寫以下連線引數。
+在对目标进行身份验证后，请填写以下连接参数。
 
-![連線引數](../../assets/catalog/advertising/criteo/connection-parameters.png)
+![连接参数](../../assets/catalog/advertising/criteo/connection-parameters.png)
 
 | 字段 | 描述 | 必需 |
 | --- | --- | --- |
-| 名称 | 可協助您日後辨識此目的地的名稱。 您在這裡選擇的名稱將是 [!DNL Audience] 名稱於「標準管理中心」，且無法在稍後階段修改。 | 是 |
-| 描述 | 可協助您日後識別此目的地的說明。 | 否 |
-| 廣告商ID | 貴組織的標準廣告商ID。 請聯絡您的Criteo客戶經理以取得此資訊。 | 是 |
-| 准則 [!DNL GUM caller ID] | [!DNL GUM Caller ID] 您的組織的所有成員。 請聯絡您的Criteo帳戶團隊以取得適當的 [!DNL GUM Caller ID] 或以取得此專案的詳細資訊 [!DNL GUM] 同步（如有需要）。 | 是，只要 [!DNL GUM ID] 提供為識別碼 |
+| 名称 | 帮助您将来识别此目标的名称。 您在此处选择的名称将为 [!DNL Audience] 名称时，无法在以后修改此名称。 | 是 |
+| 描述 | 帮助您将来标识此目标的描述。 | 否 |
+| 广告商ID | 您组织的标准广告商ID。 请联系您的Criteo客户经理以获取此信息。 | 是 |
+| 标准 [!DNL GUM caller ID] | [!DNL GUM Caller ID] 您的组织的所有成员。 请联系您的Criteo客户团队获取相应的 [!DNL GUM Caller ID] 或获取有关此内容的更多信息 [!DNL GUM] 同步（如果需要）。 | 是，无论何时 [!DNL GUM ID] 作为标识符提供 |
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate-segments}
+## 将区段激活到此目标 {#activate-segments}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-讀取 [對串流區段匯出目的地啟用設定檔和區段](../../ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+读取 [将配置文件和区段激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-## 匯出的資料 {#exported-data}
+## 导出的数据 {#exported-data}
 
-您可在以下位置檢視匯出的區段： [標準管理中心](https://marketing.criteo.com/audience-manager/dashboard).
+您可在以下位置查看导出的区段： [标准管理中心](https://marketing.criteo.com/audience-manager/dashboard).
 
-新增使用者個人資料的請求內文，接收者為 [!DNL Criteo] 連線看起來類似這樣：
+由收到的添加用户个人资料的请求正文 [!DNL Criteo] 连接看起来类似于下面的样子：
 
 ```json
 {
@@ -147,7 +147,7 @@ ht-degree: 3%
 }
 ```
 
-移除使用者個人資料的請求內文，已由 [!DNL Criteo] 連線看起來類似這樣：
+由收到的删除用户配置文件的请求正文 [!DNL Criteo] 连接看起来类似于下面的样子：
 
 ```json
 {
@@ -175,11 +175,11 @@ ht-degree: 3%
 }
 ```
 
-## 資料使用與控管 {#data-usage}
+## 数据使用和管理 {#data-usage}
 
-處理您的資料時，所有Adobe Experience Platform目的地都符合資料使用原則。 如需Adobe Experience Platform如何實施資料控管的詳細資訊，請閱讀 [資料控管概觀](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
+在处理您的数据时，所有Adobe Experience Platform目标都符合数据使用策略。 有关Adobe Experience Platform如何实施数据管理的详细信息，请参阅 [数据治理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
 
 ## 其他资源
 
-* [Criteo說明中心](https://help.criteo.com/kb/en)
-* [Criteo開發人員入口網站](https://developers.criteo.com)
+* [Criteo帮助中心](https://help.criteo.com/kb/en)
+* [标准开发人员门户](https://developers.criteo.com)

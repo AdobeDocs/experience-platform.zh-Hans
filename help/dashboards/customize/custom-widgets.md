@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；使用者介面；UI；控制面板；控制面板；設定檔；區段；目的地；授權使用；Widget；量度；
-title: 建立儀表板的自訂Widget
-description: 本指南提供建立用於Adobe Experience Platform控制面板的自訂Widget的逐步指示。
+keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用情况；构件；量度；
+title: 创建功能板的自定义构件
+description: 本指南提供了有关创建自定义构件以在Adobe Experience Platform功能板中使用的分步说明。
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
 source-git-commit: 386d805eadf335b95b6eac92c7663fcee17b4b2d
 workflow-type: tm+mt
@@ -10,108 +10,108 @@ ht-degree: 0%
 
 ---
 
-# 建立儀表板的自訂Widget
+# 创建功能板的自定义构件
 
-在Adobe Experience Platform中，您可以使用多個儀表板檢視組織的資料並與之互動。 您也可以將新Widget新增至儀表板檢視，以更新某些儀表板。 除了Adobe提供的標準Widget之外，您也可以建立自訂Widget，並在整個組織內共用。
+在Adobe Experience Platform中，您可以使用多个功能板查看组织的数据并与之交互。 您还可以通过向功能板视图添加新构件来更新某些功能板。 除了Adobe提供的标准构件之外，您还可以创建自定义构件并在整个组织内共享它们。
 
-本指南提供建立和新增自訂Widget至的逐步指示 [!UICONTROL 設定檔]， [!UICONTROL 區段]、和 [!UICONTROL 目的地] 平台UI中的儀表板。
+本指南提供了有关创建自定义构件并将其添加到 [!UICONTROL 配置文件]， [!UICONTROL 区段]、和 [!UICONTROL 目标] Platform UI中的功能板。
 
-若要進一步瞭解標準Widget，請參閱以下專案的指南： [新增標準Widget至您的儀表板](standard-widgets.md).
+要了解有关标准小组件的更多信息，请参阅指南，了解 [将标准构件添加到仪表板](standard-widgets.md).
 
 >[!NOTE]
 >
->Widget會顯示在 [!UICONTROL 授權使用情況] 無法自訂儀表板。 若要深入瞭解此獨特控制面板，請閱讀 [授權使用情況儀表板檔案](../guides/license-usage.md).
+>中显示的构件 [!UICONTROL 许可证使用情况] 无法自定义仪表板。 要了解有关此独特功能板的更多信息，请阅读 [许可证使用情况仪表板文档](../guides/license-usage.md).
 
-## Widget資料庫 {#widget-library}
+## 构件库 {#widget-library}
 
-本指南需要存取 [!UICONTROL Widget資料庫] 在Experience Platform內。 若要進一步瞭解Widget程式庫，以及如何在UI中存取它，請從閱讀 [Widget程式庫概觀](widget-library.md).
+本指南需要访问 [!UICONTROL 构件库] 在Experience Platform内。 要详细了解构件库以及如何在UI中访问它，请从阅读 [构件库概述](widget-library.md).
 
-## 自訂Widget快速入門
+## 自定义构件入门
 
-在Widget程式庫中， **[!UICONTROL 自訂]** 索引標籤可讓您建立Widget並與您組織中的其他使用者共用，以自訂儀表板的外觀。
+在Widget库中， **[!UICONTROL 自定义]** 选项卡允许您创建构件并与组织中的其他用户共享这些构件，以自定义功能板的外观。
 
 >[!IMPORTANT]
 >
->貴組織在Widget程式庫中最多可建立20個自訂Widget。
+>贵组织最多可以在构件库中创建20个自定义构件。
 
-選取 **[!UICONTROL 自訂]** 標籤以開始建立自訂Widget或檢視貴組織已建立的自訂Widget。
+选择 **[!UICONTROL 自定义]** 选项卡开始创建自定义构件，或查看贵组织已创建的自定义构件。
 
-![反白顯示「自訂」標籤的Widget程式庫工作區。](../images/customization/custom-widgets.png)
+![突出显示“自定义”选项卡的构件库工作区。](../images/customization/custom-widgets.png)
 
-## 建立自訂Widget
+## 创建自定义构件
 
-若要建立自訂Widget，請選取 **[!UICONTROL 建立Widget]** 從Widget程式庫的右上角，或如果這是您組織的第一個自訂Widget，請選取 **[!UICONTROL 建立]** 從Widget程式庫中心。
+要创建自定义构件，请选择 **[!UICONTROL 创建构件]** 从构件库的右上角，或者，如果这是您组织的第一个自定义构件，请选择 **[!UICONTROL 创建]** 从小组件库的中心。
 
-![反白顯示「建立」之Widget程式庫工作區的「自訂」標籤。](../images/customization/create-widget.png)
+![突出显示了创建的情况下构件库工作区的“自定义”选项卡。](../images/customization/create-widget.png)
 
-在 **[!UICONTROL 建立Widget]** 對話方塊，提供新Widget的標題和說明，並選擇您要讓Widget顯示的屬性。
-
->[!NOTE]
->
->可用屬性的清單取決於為您的組織設定的結構描述。 若要進一步瞭解屬性選擇和結構描述設定，請閱讀以下指南： [編輯結構描述以建立自訂Widget](edit-schema.md).
-
-若要選擇屬性，請選取要新增的屬性旁的單選按鈕。
+在 **[!UICONTROL 创建构件]** 对话框，为新构件提供标题和描述，然后选择您希望构件显示的属性。
 
 >[!NOTE]
 >
->每個Widget只能選取一個屬性，且每個屬性只能建立一個Widget。 如果已為屬性建立Widget，則屬性會顯示為灰色。
+>可用属性的列表取决于为您的组织配置的架构。 要了解有关属性选择和架构配置的更多信息，请阅读以下指南中的 [编辑架构以创建自定义构件](edit-schema.md).
 
-![建立Widget對話方塊。](../images/customization/create-widget-dialog.png)
-
-## 選取視覺效果
-
-選取屬性後，新介面工具集的預覽會顯示在對話方塊中。 人工智慧用於自動選取最符合屬性資料的視覺效果，並提供其他您可以手動選取的視覺效果選項。
-
-根據屬性，AI會建議不同的視覺效果選項。 完整的視覺效果清單包括：
-
-* 水準長條圖：水平線用來表示值。
-* 垂直長條圖：垂直線用來表示值。
-* 環圈圖：與圓形圖類似，值會顯示為整體的部分或片段。
-* 散點圖：使用水平軸和垂直軸來指示值。
-* 折線圖：值是使用單一線條來顯示，以顯示一段期間的變更。
-* 數字卡：顯示摘要數字，代表單一索引鍵值。
-* 資料表格：值在表格中顯示為列。
+要选择属性，请选择要添加属性旁边的单选按钮。
 
 >[!NOTE]
 >
->目前唯一支援所有屬性的量度是設定檔計數。
+>每个构件只能选择一个属性，且每个属性只能创建一个构件。 如果已为属性创建了构件，则该属性将显示为灰色。
+
+![“创建构件”对话框。](../images/customization/create-widget-dialog.png)
+
+## 选择可视化图表
+
+选择属性后，新小部件的预览将显示在对话框中。 人工智能用于自动选择最适合属性数据的可视化图表，并提供其他可视化图表选项，您可以手动选择。
+
+根据属性，AI会推荐不同的可视化图表选项。 可视化图表的完整列表包括：
+
+* 水平条形图：水平线用于表示值。
+* 垂直条形图：垂直线用于表示值。
+* 圆环图：与饼图类似，值显示为整体的一部分或片段。
+* 散点图：使用水平轴和垂直轴指示值。
+* 折线图：使用一条线显示值，以显示一段时间的变化。
+* 数字卡：显示用于表示单个键值的概要数字。
+* 数据表：值显示为表中的行。
+
+>[!NOTE]
 >
->範例Widget中顯示的資料僅供說明之用。 預覽不會顯示貴組織的實際資料。
+>当前唯一支持所有属性的指标是配置文件计数。
+>
+>示例构件中显示的数据仅供说明之用。 预览不显示贵组织的实际数据。
 
-若要儲存新的Widget並返回 [!UICONTROL 自訂] 索引標籤，選取 **[!UICONTROL 建立]**.
+保存您的新构件并返回至 [!UICONTROL 自定义] 选项卡，选择 **[!UICONTROL 创建]**.
 
-![「建立Widget」對話方塊中包含視覺效果選項和醒目提示的「建立」 。](../images/customization/create-widget-select-attribute.png)
+![创建构件对话框，其中可视化选项和创建突出显示。](../images/customization/create-widget-select-attribute.png)
 
-您的新介面工具集現在可以從資料庫中選擇介面工具集，然後選取 **[!UICONTROL 新增Widget]**.
+您的新构件现在可以通过从库中选择构件并选择 **[!UICONTROL 添加构件]**.
 
-![Widget程式庫工作區的「自訂」索引標籤，其中反白顯示新Widget和「新增Widget」。](../images/customization/custom-widgets-new.png)
+![突出显示具有新小部件和添加小部件的构件库工作区的“自定义”选项卡。](../images/customization/custom-widgets-new.png)
 
-## 隱藏自訂Widget
+## 隐藏自定义构件
 
-將Widget新增至程式庫後，可以選取省略符號(`...`)，然後選取 **[!UICONTROL 隱藏Widget]**. 您也可以從相同的下拉式清單預覽和編輯Widget。
+将构件添加到库后，可以通过选择省略号(`...`)，然后选择 **[!UICONTROL 隐藏构件]**. 您还可以从同一下拉列表中预览和编辑构件。
 
-若要檢視已隱藏的Widget，請選取 **[!UICONTROL 顯示隱藏的Widget]** 從Widget程式庫的右上角。
+要查看已隐藏的小部件，请选择 **[!UICONTROL 显示隐藏构件]** 从小组件库的右上角。
 
 >[!WARNING]
 >
->在程式庫中隱藏Widget並不會從個別使用者的控制面板中移除該Widget。 如果您的組織不應再使用Widget，請務必直接與所有Platform使用者溝通，因為他們需要將該Widget從其儀表板移除。
+>在库中隐藏小组件不会从单个用户的功能板中移除该小组件。 如果您的组织不应再使用构件，请确保将此构件直接传达给所有Platform用户，因为他们需要从其功能板中移除该构件。
 
-![Widget程式庫工作區的「自訂」索引標籤，其中的Widget下拉式選單選項和「顯示隱藏的Widget」會反白顯示。](../images/customization/hide-widget.png)
+![小组件库工作区的“自定义”选项卡，其中小组件下拉菜单选项和显示隐藏的小组件突出显示。](../images/customization/hide-widget.png)
 
-## 編輯自訂Widget
+## 编辑自定义构件
 
-您可以選取省略符號(`...`)，然後選取 **[!UICONTROL 編輯]** 下拉式選單中的。
+您可以通过选择省略号(`...`)，然后选择 **[!UICONTROL 编辑]** 下拉菜单中。
 
-![反白顯示橢圓形和「編輯」的Widget下拉式選單選項。](../images/customization/custom-widget-edit.png)
+![突出显示椭圆形和“编辑”的小组件下拉菜单选项。](../images/customization/custom-widget-edit.png)
 
-於 **[!UICONTROL 編輯Widget]** 您可以編輯工具集的標題和說明，以及預覽和選取不同的視覺效果。 完成編輯後，選取「 」 **[!UICONTROL 儲存]** 以儲存變更並返回自訂Widget標籤。
+在 **[!UICONTROL 编辑构件]** 对话框中，您可以编辑构件的标题和描述，以及预览和选择不同的可视化图表。 完成编辑后，选择 **[!UICONTROL 保存]** 以保存所做更改并返回到“自定义构件”选项卡。
 
 >[!WARNING]
 >
->編輯資料庫中的Widget不會更新個別使用者的Widget。 如果Widget已更新，請確定您將此資訊直接傳達給所有Platform使用者，因為他們需要從儀表板上移除過時的Widget，然後從Widget資料庫中選取並新增更新後的Widget。
+>编辑库中的小组件不会更新单个用户的小组件。 如果小组件已更新，请确保将此信息直接传达给所有Platform用户，因为他们需要从其功能板中删除过时的小组件，然后从小组件库中选择并添加更新的小组件。
 
-![「編輯Widget」對話方塊。](../images/customization/edit-widget.png)
+![编辑构件对话框。](../images/customization/edit-widget.png)
 
 ## 后续步骤
 
-閱讀本檔案後，您就能存取Widget程式庫，並使用它為您的組織建立和新增自訂Widget。 若要修改顯示於儀表板中的Widget大小與位置，請參閱 [修改儀表板指南](modify.md).
+阅读本文档后，您可以访问构件库，并使用它为您的组织创建和添加自定义构件。 要修改仪表板中显示的小部件的大小和位置，请参阅 [修改功能板指南](modify.md).

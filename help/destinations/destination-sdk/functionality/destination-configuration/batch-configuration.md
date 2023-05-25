@@ -1,6 +1,6 @@
 ---
-description: 瞭解如何為使用Destination SDK建立的目的地設定檔案匯出設定。
-title: 批次設定
+description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
+title: 批次配置
 source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
 workflow-type: tm+mt
 source-wordcount: '937'
@@ -9,44 +9,44 @@ ht-degree: 4%
 ---
 
 
-# 批次設定 {#batch-configuration}
+# 批次配置 {#batch-configuration}
 
-使用Destination SDK中的批次設定選項可讓使用者自訂匯出的檔案名稱，並根據其偏好設定匯出排程。
+使用Destination SDK中的批处理配置选项，允许用户自定义导出的文件名，并根据其偏好配置导出计划。
 
-當您透過Destination SDK建立以檔案為基礎的目的地時，可以設定預設檔案命名和匯出排程，也可以讓使用者選擇從Platform UI設定這些設定。 例如，您可以設定行為，例如：
+通过Destination SDK创建基于文件的目标时，可以配置默认的文件命名和导出计划，也可以为用户提供从Platform UI配置这些设置的选项。 例如，您可以配置行为，例如：
 
-* 在檔案名稱中包含特定資訊，例如區段ID、目的地ID或自訂資訊。
-* 允許使用者從Platform UI自訂檔案命名。
-* 設定檔案匯出在設定的時間間隔發生。
-* 定義使用者可在Platform UI中看到的檔案命名和匯出排程自訂選項。
+* 在文件名中包括特定信息，例如区段ID、目标ID或自定义信息。
+* 允许用户从Platform UI自定义文件命名。
+* 将文件导出配置为按设定的时间间隔进行。
+* 定义用户可以在Platform UI中看到的文件命名和导出计划自定义选项。
 
-批次組態設定是以檔案為基礎的目的地的目的地組態的一部分。
+批量配置设置是基于文件的目标的目标配置的一部分。
 
-若要瞭解此元件在何處適合使用Destination SDK建立的整合，請參閱 [設定選項](../configuration-options.md) 檔案或參閱操作說明指南 [使用Destination SDK設定以檔案為基礎的目的地](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
-您可以透過以下方式設定檔案命名和匯出排程設定： `/authoring/destinations` 端點。 請參閱下列API參考頁面，以取得詳細的API呼叫範例，您可在此範例設定本頁面所示的元件。
+您可以通过以下方式配置文件命名和导出调度设置 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
-* [建立目的地設定](../../authoring-api/destination-configuration/create-destination-configuration.md)
-* [更新目的地設定](../../authoring-api/destination-configuration/update-destination-configuration.md)
+* [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
+* [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文會說明您可用於目的地的所有支援批次設定選項，並顯示客戶會在Platform UI中看到的內容。
+本文介绍了可用于目标的所有受支持的批处理配置选项，并展示了客户将在Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
->Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
 
-## 支援的整合型別 {#supported-integration-types}
+## 支持的集成类型 {#supported-integration-types}
 
-請參閱下表，以取得關於哪些型別的整合支援本頁面所述功能的詳細資訊。
+有关哪些类型的集成支持此页面上描述的功能，请参阅下表。
 
-| 整合型別 | 支援功能 |
+| 集成类型 | 支持功能 |
 |---|---|
-| 即時（串流）整合 | 否 |
-| 檔案式（批次）整合 | 是 |
+| 实时（流）集成 | 否 |
+| 基于文件（批处理）的集成 | 是 |
 
-## 支援的引數 {#supported-parameters}
+## 支持的参数 {#supported-parameters}
 
-您在此設定的值會顯示在 [排程區段匯出](../../../ui/activate-batch-profile-destinations.md#scheduling) 檔案型目的地啟用工作流程的步驟。
+您在此处设置的值显示在 [计划区段导出](../../../ui/activate-batch-profile-destinations.md#scheduling) 基于文件的目标激活工作流的步骤。
 
 ```json
 "batchConfig":{
@@ -87,45 +87,45 @@ ht-degree: 4%
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `allowMandatoryFieldSelection` | 布尔值 | 設定為 `true` 讓客戶指定哪些設定檔屬性是強制性的。 默认值为 `false`。另請參閱 [必要屬性](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes) 以取得詳細資訊。 |
-| `allowDedupeKeyFieldSelection` | 布尔值 | 設定為 `true` 允許客戶指定重複資料刪除索引鍵。 默认值为 `false`。另請參閱 [重複資料刪除索引鍵](../../../ui/activate-batch-profile-destinations.md#deduplication-keys) 以取得詳細資訊。 |
-| `defaultExportMode` | 列舉 | 定義預設檔案匯出模式。 支援的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> 默认值为 `DAILY_FULL_EXPORT`。請參閱 [批次啟用檔案](../../../ui/activate-batch-profile-destinations.md#scheduling) 以取得檔案匯出排程的詳細資訊。 |
-| `allowedExportModes` | 列表 | 定義客戶可用的檔案匯出模式。 支援的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
-| `allowedScheduleFrequency` | 列表 | 定義可供客戶使用的檔案匯出頻率。 支援的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
-| `defaultFrequency` | 列舉 | 定義預設檔案匯出頻率。支援的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> 默认值为 `DAILY`。 |
-| `defaultStartTime` | 字符串 | 定義檔案匯出的預設開始時間。 使用24小時檔案格式。 預設值為「00:00」。 |
-| `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*. 可供使用者選擇的可用檔案名稱巨集清單。 這會決定要將哪些專案附加至匯出的檔案名稱（區段ID、組織名稱、匯出的日期和時間等）。 設定時 `defaultFilename`，請務必避免複製巨集。 <br><br>支援的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>無論定義巨集的順序為何，Experience PlatformUI一律會依此處顯示的順序顯示巨集。 <br><br> 若 `defaultFilename` 為空，則 `allowedFilenameAppendOptions` 清單必須至少包含一個巨集。 |
-| `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*. 預先選取的預設檔案名稱巨集，使用者可取消核取。<br><br> 此清單中的巨集是中定義巨集的子集 `allowedFilenameAppendOptions`. |
-| `filenameConfig.defaultFilename` | 字符串 | *可选*. 定義匯出檔案的預設檔案名稱巨集。 使用者無法覆寫這些專案。 <br><br>任何巨集定義者 `allowedFilenameAppendOptions` 將會附加在 `defaultFilename` 巨集。 <br><br>若 `defaultFilename` 空白，您必須在中至少定義一個巨集 `allowedFilenameAppendOptions`. |
+| `allowMandatoryFieldSelection` | 布尔值 | 设置为 `true` 允许客户指定哪些配置文件属性是必需的。 默认值为 `false`。参见 [必需属性](../../../ui/activate-batch-profile-destinations.md#mandatory-attributes) 了解更多信息。 |
+| `allowDedupeKeyFieldSelection` | 布尔值 | 设置为 `true` 允许客户指定重复数据删除键。 默认值为 `false`。参见 [重复数据删除键](../../../ui/activate-batch-profile-destinations.md#deduplication-keys) 了解更多信息。 |
+| `defaultExportMode` | 枚举 | 定义默认文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> 默认值为 `DAILY_FULL_EXPORT`。请参阅 [批量激活文档](../../../ui/activate-batch-profile-destinations.md#scheduling) 以获取有关文件导出计划的详细信息。 |
+| `allowedExportModes` | 列表 | 定义客户可用的文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
+| `allowedScheduleFrequency` | 列表 | 定义客户可用的文件导出频率。 支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
+| `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> 默认值为 `DAILY`。 |
+| `defaultStartTime` | 字符串 | 定义文件导出的默认开始时间。 使用24小时文件格式。 默认值为“00:00”。 |
+| `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*. 可供用户选择的可用文件名宏列表。 这会确定哪些项目已附加到导出的文件名（区段ID、组织名称、导出日期和时间等）。 设置时 `defaultFilename`中，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论定义宏的顺序如何，Experience PlatformUI将始终按此处显示的顺序显示它们。 <br><br> 如果 `defaultFilename` 为空，则 `allowedFilenameAppendOptions` 列表必须至少包含一个宏。 |
+| `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*. 用户可以取消勾选的预选默认文件名宏。<br><br> 此列表中的宏是中定义的宏的子集 `allowedFilenameAppendOptions`. |
+| `filenameConfig.defaultFilename` | 字符串 | *可选*. 为导出的文件定义缺省文件名宏。 用户无法覆盖这些内容。 <br><br>由定义的任何宏 `allowedFilenameAppendOptions` 将附加在 `defaultFilename` 宏。 <br><br>如果 `defaultFilename` 为空，则必须在中至少定义一个宏 `allowedFilenameAppendOptions`. |
 
 {style="table-layout:auto"}
 
-## 檔案名稱設定 {#file-name-configuration}
+## 文件名配置 {#file-name-configuration}
 
-使用檔案名稱組態巨集來定義匯出的檔案名稱應包含的內容。 下表中的巨集說明在UI中找到的元素 [檔案名稱設定](../../../ui/activate-batch-profile-destinations.md#file-names) 畫面。
+使用文件名配置宏定义导出的文件名应包含的内容。 下表中的宏描述了在UI中找到的元素 [文件名配置](../../../ui/activate-batch-profile-destinations.md#file-names) 屏幕。
 
 >[!TIP]
 > 
->作為最佳實務，您應一律包含 `SEGMENT_ID` 匯出檔案名稱中的巨集。 區段ID是唯一的，因此將區段ID包含在檔案名稱中也是確保檔案名稱唯一的最佳方式。
+>作为最佳实践，您应始终包含 `SEGMENT_ID` 宏在导出的文件名中。 区段ID是唯一的，因此将它们包含在文件名中是确保文件名唯一的最佳方法。
 
-| 巨集 | UI標籤 | 描述 | 示例 |
+| 宏 | UI标签 | 描述 | 示例 |
 |---|---|---|---|
-| `DESTINATION` | [!UICONTROL 目标] | ui中的目的地名稱。 | Amazon S3 |
-| `SEGMENT_ID` | [!UICONTROL 區段ID] | 平台產生的唯一區段ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
-| `SEGMENT_NAME` | [!UICONTROL 區段名稱] | 使用者定義的區段名稱 | VIP訂閱者 |
-| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目的地ID] | 目的地執行個體的唯一Platform產生ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
-| `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目的地名稱] | 目的地執行個體的使用者定義名稱。 | 我的2022年廣告目的地 |
-| `ORGANIZATION_NAME` | [!UICONTROL 組織名稱] | Adobe Experience Platform中的客戶組織名稱。 | 我的組織名稱 |
-| `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客戶使用的沙箱名稱。 | prod |
-| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 兩者都會定義產生檔案的時間，但格式不同。 <br><br><ul><li>`DATETIME` 會使用以下格式： YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位數Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 互斥，不能同時使用。 | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
-| `CUSTOM_TEXT` | [!UICONTROL 自訂文字] | 要包含在檔案名稱中的使用者定義自訂文字。 無法用於 `defaultFilename`. | My_Custom_Text |
-| `TIMESTAMP` | [!UICONTROL 日期和时间] | 檔案產生時間的10位數時間戳記，以Unix格式顯示。 | 1652131584 |
+| `DESTINATION` | [!UICONTROL 目标] | UI中的目标名称。 | Amazon S3 |
+| `SEGMENT_ID` | [!UICONTROL 区段ID] | 平台生成的唯一区段ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_NAME` | [!UICONTROL 区段名称] | 用户定义的区段名称 | VIP订阅者 |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目标ID] | 目标实例的平台生成的唯一ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目标名称] | 用户定义的目标实例名称。 | 我的2022年广告目标 |
+| `ORGANIZATION_NAME` | [!UICONTROL 组织名称] | Adobe Experience Platform中的客户组织的名称。 | 我的组织名称 |
+| `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客户使用的沙盒的名称。 | prod |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 两者都定义生成文件的时间，但格式不同。 <br><br><ul><li>`DATETIME` 使用以下格式：YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位数Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 是互斥的，不能同时使用。 | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
+| `CUSTOM_TEXT` | [!UICONTROL 自定文本] | 要包含在文件名中的用户定义的自定义文本。 不能用于 `defaultFilename`. | My_Custom_Text |
+| `TIMESTAMP` | [!UICONTROL 日期和时间] | 生成文件时的10位数时间戳（Unix格式）。 | 1652131584 |
 
 {style="table-layout:auto"}
 
-### 檔案名稱設定範例
+### 文件名配置示例
 
-以下設定範例顯示API呼叫中使用的設定與UI中顯示的選項之間的對應。
+以下配置示例显示了API调用中使用的配置与UI中显示的选项之间的对应关系。
 
 ```json
 "filenameConfig":{
@@ -142,22 +142,22 @@ ht-degree: 4%
 }
 ```
 
-![顯示具有預先選取之巨集的檔案名稱組態畫面的UI影像](../../assets/functionality/destination-configuration/file-name-configuration.png)
+![显示具有预选宏的文件名配置屏幕的用户界面图像](../../assets/functionality/destination-configuration/file-name-configuration.png)
 
 ## 后续步骤 {#next-steps}
 
-閱讀本文章後，您應該更瞭解如何為檔案型目的地設定檔案命名和匯出排程。
+阅读本文后，您应该更好地了解如何为基于文件的目标配置文件命名和导出计划。
 
-若要深入瞭解其他目的地元件，請參閱下列文章：
+要了解有关其他目标组件的更多信息，请参阅以下文章：
 
-* [客戶驗證設定](customer-authentication.md)
-* [OAuth2驗證](oauth2-authentication.md)
-* [客戶資料欄位](customer-data-fields.md)
-* [UI屬性](ui-attributes.md)
-* [結構描述設定](schema-configuration.md)
-* [身分名稱空間設定](identity-namespace-configuration.md)
-* [支援的對應設定](supported-mapping-configurations.md)
-* [目的地傳遞](destination-delivery.md)
-* [對象中繼資料設定](audience-metadata-configuration.md)
-* [彙總原則](aggregation-policy.md)
-* [歷史設定檔資格](historical-profile-qualifications.md)
+* [客户身份验证配置](customer-authentication.md)
+* [OAuth2身份验证](oauth2-authentication.md)
+* [客户数据字段](customer-data-fields.md)
+* [UI属性](ui-attributes.md)
+* [架构配置](schema-configuration.md)
+* [身份命名空间配置](identity-namespace-configuration.md)
+* [支持的映射配置](supported-mapping-configurations.md)
+* [目标投放](destination-delivery.md)
+* [受众元数据配置](audience-metadata-configuration.md)
+* [聚合策略](aggregation-policy.md)
+* [历史配置文件资格](historical-profile-qualifications.md)

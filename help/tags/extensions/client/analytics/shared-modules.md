@@ -1,6 +1,6 @@
 ---
 title: Adobe Analytics 扩展的共享模块
-description: 瞭解Adobe Experience Platform中的Adobe Analytics標籤擴充功能所提供的共用程式庫模組。
+description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展提供的共享库模块。
 exl-id: f1d7cb2b-0058-46f9-983c-079079e06057
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 [Adobe Analytics 扩展](./overview.md)提供两个不同的[共享模块](../../../extension-dev/web/shared.md)，您可以将这两个模块集成到体验应用程序中。以下各部分将对这些模块进行介绍。
 
@@ -33,7 +33,7 @@ getTracker().then(function(tracker) {
 
 ### 验证是否已安装 Adobe Analytics
 
-Adobe Analytics可能尚未安裝或包含在與您的擴充功能相同的標籤程式庫中。 因此，强烈建议您在代码中检查有无这种情况，并做出相应处理。以下的 JavaScript 是实施此功能的方法示例：
+Adobe Analytics可能尚未安装或包含在与您的扩展相同的标记库中。 因此，强烈建议您在代码中检查有无这种情况，并做出相应处理。以下的 JavaScript 是实施此功能的方法示例：
 
 ```js
 var getTracker = turbine.getSharedModule('adobe-analytics', 'get-tracker');
@@ -47,12 +47,12 @@ if (getTracker) {
 }
 ```
 
-若 `getTracker` 是 `undefined`，標籤程式庫中沒有Adobe Analytics擴充功能。 您可以自定义已记录的消息，以便准确反映未安装 Adobe Analytics 时可能丢失的功能。
+如果 `getTracker` 是 `undefined`中，Adobe Analytics扩展不存在于标记库中。 您可以自定义已记录的消息，以便准确反映未安装 Adobe Analytics 时可能丢失的功能。
 
 
 ## [!DNL augment-tracker]
 
-初始化跟踪器对象后，流程中的下一步是增强。此步驟可讓您的擴充功能在從Adobe Analytics擴充功能設定套用任何變數或傳送任何信標之前，使用任何必要的專案來增強追蹤器。
+初始化跟踪器对象后，流程中的下一步是增强。在从Adobe Analytics扩展配置应用任何变量之前或在发送任何信标之前，此步骤允许您的扩展使用任何必要的内容增强跟踪器。
 
 此外，当扩展执行其自身的任何异步任务（如从服务器中获取数据或 JavaScript）时，则有机会暂停跟踪器初始化过程。
 

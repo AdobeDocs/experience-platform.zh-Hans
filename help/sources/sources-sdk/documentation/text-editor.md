@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 solution: Experience Platform
-title: 在本機環境中使用文字編輯器來建立來原始檔頁面
-description: 本檔案提供相關步驟，說明如何使用本機環境編寫來原始檔，並提交提取請求(PR)。
+title: 在本地环境中使用文本编辑器创建源文档页面
+description: 本文档提供了有关如何使用本地环境为源创作文档并提交拉取请求(PR)的步骤。
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,92 +11,92 @@ ht-degree: 3%
 
 ---
 
-# 在本機環境中使用文字編輯器來建立來原始檔頁面
+# 在本地环境中使用文本编辑器创建源文档页面
 
-本檔案提供相關步驟，說明如何使用本機環境編寫來原始檔，並提交提取請求(PR)。
+本文档提供了有关如何使用本地环境为源创作文档并提交拉取请求(PR)的步骤。
 
 >[!TIP]
 >
->Adobe投稿指南中的下列檔案可用來進一步支援您的檔案流程： <ul><li>[安裝Git和Markdown編寫工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[在本地设置适用于文档的 Git 存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[针对主要更改的 GitHub 参与工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
+>Adobe投稿指南中的以下文档可用于进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[在本地设置适用于文档的 Git 存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[针对主要更改的 GitHub 参与工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
 
 ## 先决条件
 
-下列教學課程要求您在本機電腦上安裝GitHub Desktop。 如果您沒有GitHub Desktop，可以下載應用程式 [此處](https://desktop.github.com/).
+以下教程要求您在本机计算机上安装GitHub Desktop。 如果您没有GitHub Desktop，则可以下载应用程序 [此处](https://desktop.github.com/).
 
-## 連線至GitHub並設定您的本機撰寫環境
+## 连接到GitHub并设置您的本地创作环境
 
-設定本機編寫環境的第一個步驟是導覽至 [Adobe Experience Platform GitHub存放庫](https://github.com/AdobeDocs/experience-platform.en).
+设置本地创作环境的第一步是导航到 [Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.en).
 
 ![platform-repo](../assets/platform-repo.png)
 
-在Platform GitHub存放庫的首頁上，選取「 」 **分支**.
+在Platform GitHub存储库的主页上，选择 **分支**.
 
 ![分支存储库](../assets/fork.png)
 
-若要將存放庫複製到本機電腦，請選取 **程式碼**. 從出現的下拉式功能表中，選取 **HTTPS** 然後，選取 **使用GitHub Desktop開啟**.
+要将存储库克隆到本地计算机，请选择 **代码**. 从出现的下拉菜单中，选择 **HTTPS** 然后，选择 **使用GitHub Desktop打开**.
 
 >[!TIP]
 >
->如需詳細資訊，請參閱以下教學課程： [在本機設定適用於檔案的Git存放庫](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#create-a-local-clone-of-the-repository).
+>有关更多信息，请参阅以下教程： [在本地设置用于文档的Git存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#create-a-local-clone-of-the-repository).
 
 ![open-git-desktop](../assets/open-git-desktop.png)
 
-接下來，請稍候片刻，讓GitHub Desktop複製 `experience-platform.en` 存放庫。
+接下来，请稍等片刻，让GitHub Desktop克隆 `experience-platform.en` 存储库。
 
-![複製](../assets/cloning.png)
+![克隆](../assets/cloning.png)
 
-復製程式完成後，請前往GitHub Desktop建立新分支。 選取 **主版** 從頂端導覽列中，然後選取 **新增分支**
+克隆过程完成后，转到GitHub Desktop以创建新分支。 选择 **主控** 从顶部导航中，然后选择 **新建分支**
 
-![new-branch](../assets/new-branch.png)
+![新建分支](../assets/new-branch.png)
 
-在出現的彈出視窗面板中，輸入分支的描述性名稱，然後選取 **建立分支**.
+在显示的弹出面板中，输入分支的描述性名称，然后选择 **创建分支**.
 
 ![create-branch-vs](../assets/create-branch-vs.png)
 
-接下來，選取 **發佈分支**.
+接下来，选择 **发布分支**.
 
 ![publish-branch](../assets/publish-branch.png)
 
-## 為您的來源編寫檔案頁面
+## 为您的源编写文档页面
 
-將存放庫複製到本機電腦，並建立新分支後，您現在可以開始透過為您的新來源編寫檔案頁面 [您選擇的文字編輯器](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en#understand-markdown-editors).
+将存储库克隆到本地计算机并创建新分支后，您现在可以通过 [您选择的文本编辑器](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en#understand-markdown-editors).
 
-Adobe建議您使用 [Visual Studio Code](https://code.visualstudio.com/) 並安裝AdobeMarkdown Authoring擴充功能。 若要安裝擴充功能，請啟動Visual Studio Code，然後選取 **擴充功能** 標籤。
+Adobe建议您使用 [Visual Studio Code](https://code.visualstudio.com/) 并安装AdobeMarkdown创作扩展。 要安装该扩展，请启动Visual Studio Code ，然后选择 **扩展** 选项卡。
 
 ![扩展](../assets/extension.png)
 
-接下來，輸入 `Adobe Markdown Authoring` 放入搜尋列，然後選取 **安裝** 從出現的頁面。
+接下来，输入 `Adobe Markdown Authoring` 到搜索栏中，然后选择 **安装** 从显示的页面。
 
-![安裝](../assets/install.png)
+![安装](../assets/install.png)
 
-在本機電腦準備就緒後，下載 [來原始檔範本](../assets/api-template.zip) 並將檔案解壓縮至 `experience-platform.en/help/sources/tutorials/api/create/...` 替換為 [`...`] 代表您選擇的類別。 例如，如果您要建立資料庫來源，請選取資料庫資料夾。
+在本地计算机准备就绪后，下载 [源文档模板](../assets/api-template.zip) 并将文件提取到 `experience-platform.en/help/sources/tutorials/api/create/...` 替换为 [`...`] 代表您选择的类别。 例如，如果要创建数据库源，请选择数据库文件夹。
 
-最後，請遵循範本上概述的指示，使用與您的來源相關的資訊來編輯範本。
+最后，按照模板上列出的说明编辑模板，其中包含与您的源相关的信息。
 
 ![edit-template](../assets/edit-template.png)
 
-## 提交您的檔案以供檢閱
+## 提交您的文档以供审阅
 
-若要建立提取請求(PR)並提交檔案以供稽核，請先將您的工作儲存在 [!DNL Visual Studio Code] （或您選擇的文字編輯器）。 接下來，使用GitHub Desktop，輸入認可訊息並選取 **提交至create-source-documentation**.
+要创建拉取请求(PR)并提交文档以供审阅，请先将您的工作保存在 [!DNL Visual Studio Code] （或您选择的文本编辑器）。 接下来，使用GitHub Desktop，输入提交消息并选择 **提交到create-source-documentation**.
 
 ![commit-vs](../assets/commit-vs.png)
 
-接下來，選取 **推播來源** 將您的工作上傳至遠端分支。
+接下来，选择 **推送来源** 将您的工作上传到远程分支。
 
-![推播來源](../assets/push-origin.png)
+![推送来源](../assets/push-origin.png)
 
-若要建立提取請求，請選取 **建立提取請求**.
+要创建拉取请求，请选择 **创建拉取请求**.
 
 ![create-pr-vs](../assets/create-pr-vs.png)
 
-請確認基底和比較分支正確無誤。 在PR中新增附註，說明您的更新，然後選取 **建立提取請求**. 這會開啟PR，以將您工作的工作分支合併到Adobe存放庫的主分支。
+确保基础分支和比较分支正确无误。 向PR添加注释，描述您的更新，然后选择 **创建拉取请求**. 这将打开一个PR，将您工作的工作分支合并到Adobe存储库的主控分支中。
 
 >[!TIP]
 >
->離開 **允許維護者編輯** 核取方塊已選取，以確保Adobe檔案團隊可以編輯PR。
+>保留 **允许维护者编辑** 已选中此复选框以确保Adobe文档团队可以对PR进行编辑。
 
 ![create-pr](../assets/create-pr.png)
 
-您可以檢查https://github.com/AdobeDocs/experience-platform.en中的「提取請求」標籤，確認提取請求已提交。
+您可以通过检查https://github.com/AdobeDocs/experience-platform.en中的“拉取请求”选项卡，确认已提交拉取请求。
 
 ![confirm-pr](../assets/confirm-pr.png)

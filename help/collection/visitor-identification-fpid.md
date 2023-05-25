@@ -1,8 +1,8 @@
 ---
-title: 透過FPID的訪客身分識別
-description: 瞭解如何使用FPID，透過伺服器API一致地識別訪客
+title: 通过FPID进行访客识别
+description: 了解如何使用FPID通过服务器API一致地识别访客
 seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
-keywords: 邊緣網路；閘道；API；訪客；識別；fpid
+keywords: 边缘网络；网关；API；访客；标识；FPID
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
 source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
@@ -11,15 +11,15 @@ ht-degree: 0%
 
 ---
 
-# 透過FPID的訪客身分識別
+# 通过FPID进行访客识别
 
-[!DNL First-party IDs] (`FPIDs`)是由客戶產生、管理和儲存的裝置ID。 這可讓客戶控制識別使用者裝置。 透過傳送 `FPIDs`，Edge Network不會產生全新的 `ECID` 針對不包含此值的請求。
+[!DNL First-party IDs] (`FPIDs`)是由客户生成、管理和存储的设备ID。 这允许客户控制标识用户设备。 通过发送 `FPIDs`，Edge Network不会生成全新 `ECID` 用于不包含请求的请求。
 
-此 `FPID` 可包含在API要求內文中，作為 `identityMap` 或可作為Cookie傳送。
+此 `FPID` 可以包含在API请求正文中，作为 `identityMap` 也可以作为Cookie发送。
 
-一個 `FPID` 可決定性地轉譯為 `ECID` 由Edge Network提供，因此 `FPID` 身分與Experience Cloud解決方案完全相容。 取得 `ECID` 來自特定 `FPID` 一律會產生相同的結果，因此使用者將擁有一致的體驗。
+An `FPID` 可确定地转换为 `ECID` 由Edge Network提供，因此 `FPID` 标识与Experience Cloud解决方案完全兼容。 获取 `ECID` 来自特定 `FPID` 始终产生相同的结果，因此用户将获得一致的体验。
 
-此 `ECID` 以這種方式取得，可透過 `identity.fetch` 查詢：
+此 `ECID` 通过此方式获取，可通过 `identity.fetch` 查询：
 
 ```json
 {
@@ -33,15 +33,15 @@ ht-degree: 0%
 }
 ```
 
-對於同時包含 `FPID` 和 `ECID`，則 `ECID` 已存在於請求中的優先順序將高於可從產生的優先順序 `FPID`. 換言之，邊緣網路使用 `ECID` 已提供，而且 `FPID` 會忽略。 新 `ECID` 只有當 `FPID` 會自行提供。
+对于同时包含 `FPID` 和 `ECID`，则 `ECID` 请求中已经存在的将优先于可能从生成的请求 `FPID`. 换言之，边缘网络使用 `ECID` 已提供，并且 `FPID` 将被忽略。 新 `ECID` 仅当 `FPID` 自行提供。
 
-就裝置ID而言， `server` 資料串流應使用 `FPID` 做為裝置ID。 其他身分(即 `EMAIL`)也可在要求內文中提供，但Edge Network需要明確提供主要身分。 主要身分是將設定檔資料儲存到的基本身分。
+就设备ID而言， `server` 数据流应使用 `FPID` 作为设备ID。 其他身份(即 `EMAIL`)也可在请求正文中提供，但Edge Network要求显式提供主标识。 主要身份是将配置文件数据存储到的基本身份。
 
 >[!NOTE]
 >
->沒有身分的請求（分別在請求內文中未明確設定主要身分）將失敗。
+>没有标识的请求（分别在请求正文中未显式设置主标识）将失败。
 
-下列專案 `identityMap` 欄位群組的格式正確 `server` 資料流請求：
+以下各项 `identityMap` 字段组的格式正确 `server` 数据流请求：
 
 ```json
 {
@@ -63,7 +63,7 @@ ht-degree: 0%
 }
 ```
 
-下列專案 `identityMap` 在欄位群組上設定時，將導致錯誤回應 `server` 資料流請求：
+以下各项 `identityMap` 对字段组进行设置时，将导致错误响应 `server` 数据流请求：
 
 ```json
 {
@@ -84,7 +84,7 @@ ht-degree: 0%
 }
 ```
 
-在這種情況下，Edge Network傳回的錯誤回應類似於以下內容：
+在这种情况下，边缘网络返回的错误响应类似于以下内容：
 
 ```json
 {
@@ -100,9 +100,9 @@ ht-degree: 0%
 }
 ```
 
-## 訪客身分識別 `FPID`
+## 使用进行访客识别 `FPID`
 
-若要透過以下方式識別使用者： `FPID`，請確定 `FPID` 在向Edge Network提出任何請求之前，已傳送Cookie。 此 `FPID` 可在Cookie中傳遞，或作為 `identityMap` 在要求內文中。
+要通过标识用户，请执行以下操作 `FPID`，确保 `FPID` 在向Edge Network发出任何请求之前，已发送Cookie。 此 `FPID` 可以在Cookie中或作为 `identityMap` 在请求正文中。
 
 <!--
 
@@ -167,9 +167,9 @@ curl -X POST 'https://edge.adobedc.net/v2/interact?dataStreamId={Data Stream ID}
 ```
 -->
 
-## 以下列方式要求 `FPID` 傳遞為 `identityMap` 欄位
+## 请求方式 `FPID` 传递为 `identityMap` 字段
 
-以下範例會傳遞 [!DNL FPID] as a `identityMap` 引數。
+下面的示例传递 [!DNL FPID] 作为 `identityMap` 参数。
 
 ```shell
 curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}"

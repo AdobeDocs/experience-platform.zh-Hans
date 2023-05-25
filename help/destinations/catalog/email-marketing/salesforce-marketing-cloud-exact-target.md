@@ -1,7 +1,7 @@
 ---
-keywords: 電子郵件；電子郵件；電子郵件；電子郵件目的地；salesforce；api salesforce marketing cloud目的地
-title: (API) SalesforceMarketing Cloud連線
-description: SalesforceMarketing Cloud（先前稱為ExactTarget）目的地可讓您匯出帳戶資料，並在SalesforceMarketing Cloud中根據您的業務需求加以啟用。
+keywords: 电子邮件；电子邮件；电子邮件目标；salesforce；api salesforce marketing cloud目标
+title: (API) SalesforceMarketing Cloud连接
+description: SalesforceMarketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在SalesforceMarketing Cloud中根据您的业务需求激活该数据。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
 source-git-commit: 877bf4886e563e8a571f067c06107776a0c81d5d
 workflow-type: tm+mt
@@ -10,287 +10,287 @@ ht-degree: 1%
 
 ---
 
-# [!DNL (API) Salesforce Marketing Cloud] 連線
+# [!DNL (API) Salesforce Marketing Cloud] 连接
 
 ## 概述 {#overview}
 
-[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/engagement/) (先前稱為 [!DNL ExactTarget])是數位行銷套件，可讓您建置和自訂訪客和客戶的歷程，以個人化其體驗。
+[[!DNL (API) Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/engagement/) (以前称为 [!DNL ExactTarget])是一款数字营销套件，可让您为访客和客户构建和自定义历程，以个性化其体验。
 
 >[!IMPORTANT]
 >
->請注意此連線與其他連線之間的差異 [[!DNL Salesforce Marketing Cloud] 連線](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) 存在於電子郵件行銷目錄區段中的屬性。 另一個SalesforceMarketing Cloud連線可讓您將檔案匯出至指定的儲存位置，而此連線是以API為基礎的串流連線。
+>请注意此连接与其他连接之间的区别 [[!DNL Salesforce Marketing Cloud] 连接](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) 电子邮件营销目录部分中存在的电子邮件营销目录。 另一个SalesforceMarketing Cloud连接允许您将文件导出到指定的存储位置，而这是一个基于API的流连接。
 
-比較對象 [!DNL Salesforce Marketing Cloud Account Engagement] 更傾向於 **B2B** 行銷， [!DNL (API) Salesforce Marketing Cloud] 目的地非常適合 **B2C** 交易式決策週期較短的使用案例。 您可以合併代表目標對象行為的較大資料集，以透過優先順序和分段聯絡人（尤其是來自外部資料集）來調整和改善行銷活動 [!DNL Salesforce]. *請注意，Experience Platform也有 [[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*
+比较对象 [!DNL Salesforce Marketing Cloud Account Engagement] 更加面向 **B2B** 营销， [!DNL (API) Salesforce Marketing Cloud] 目标非常适合 **B2C** 事务性决策周期较短的用例。 您可以合并表示目标受众行为的较大数据集，以便通过优先排序和划分联系人（尤其是来自外部数据集）来调整和改进营销活动 [!DNL Salesforce]. *注意，Experience Platform还连接了 [[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*
 
-此 [!DNL Adobe Experience Platform] [目的地](/help/destinations/home.md) 可運用 [!DNL Salesforce Marketing Cloud] [更新連絡人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，可讓您 **新增聯絡人並更新聯絡人資料** 滿足您在新版本中啟用的業務需求 [!DNL Salesforce Marketing Cloud] 區段。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，允许您 **添加联系人并更新联系人数据** 满足贵机构的业务需求（在新版本中激活这些功能后） [!DNL Salesforce Marketing Cloud] 区段。
 
-[!DNL Salesforce Marketing Cloud] 使用具有使用者端憑證的OAuth 2作為驗證機制，與 [!DNL Salesforce Marketing Cloud] API。 向您的驗證身分的說明 [!DNL Salesforce Marketing Cloud] 執行個體的詳細資訊如下： [驗證至目的地](#authenticate) 區段。
+[!DNL Salesforce Marketing Cloud] 使用带有客户端凭据的OAuth 2作为身份验证机制来与 [!DNL Salesforce Marketing Cloud] API。 向您的验证的说明 [!DNL Salesforce Marketing Cloud] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-為了協助您更清楚瞭解應該如何及何時使用 [!DNL (API) Salesforce Marketing Cloud] 目的地，以下是Adobe Experience Platform客戶可使用此目的地解決的範例使用案例。
+为了帮助您更好地了解应该如何以及何时使用 [!DNL (API) Salesforce Marketing Cloud] 目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 傳送電子郵件給行銷活動的聯絡人 {#use-case-send-emails}
+### 向营销活动的联系人发送电子邮件 {#use-case-send-emails}
 
-家用出租平台的銷售部門想要廣播行銷電子郵件給目標客戶對象。 平台的行銷團隊可以新增聯絡人/更新現有聯絡人 *（及其電子郵件地址）* 透過Adobe Experience Platform，從自己的離線資料建立區段，並將這些區段傳送至 [!DNL Salesforce Marketing Cloud]，然後可用於傳送行銷活動電子郵件。
+家庭租赁平台的销售部门希望向目标客户受众广播营销电子邮件。 平台的营销团队可以添加新联系人/更新现有联系人 *（及其电子邮件地址）* 通过Adobe Experience Platform，根据区段自身的离线数据构建区段，并将这些区段发送到 [!DNL Salesforce Marketing Cloud]，然后可以将其用于发送营销活动电子邮件。
 
 ## 先决条件 {#prerequisites}
 
-### Experience Platform的必要條件 {#prerequisites-in-experience-platform}
+### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在將資料啟用至 [!DNL (API) Salesforce Marketing Cloud] 目的地，您必須擁有 [綱要](/help/xdm/schema/composition.md)， a [資料集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [區段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 建立於 [!DNL Experience Platform].
+将数据激活到之前 [!DNL (API) Salesforce Marketing Cloud] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-### 中的必要條件 [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
+### 中的先决条件 [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
 
-若要將資料從Platform匯出至您的 [!DNL Salesforce Marketing Cloud] 帳戶：
+请注意以下先决条件，以便将数据从Platform导出到 [!DNL Salesforce Marketing Cloud] 帐户：
 
-#### 您需要擁有 [!DNL Salesforce Marketing Cloud] 帳戶 {#prerequisites-account}
+#### 您需要拥有 [!DNL Salesforce Marketing Cloud] 帐户 {#prerequisites-account}
 
-A [!DNL Salesforce Marketing Cloud] 訂閱「 」的帳戶 [[!DNL Marketing Cloud Engagement]](https://www.salesforce.com/products/marketing-cloud/engagement/) 產品必須執行才能繼續。
+A [!DNL Salesforce Marketing Cloud] 订购 [[!DNL Marketing Cloud Engagement]](https://www.salesforce.com/products/marketing-cloud/engagement/) 必须提供产品才能继续。
 
-請聯絡 [[!DNL Salesforce] 支援](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) 如果您沒有 [!DNL Salesforce Marketing Cloud] 帳戶或您的帳戶遺失 [!DNL Marketing Cloud Engagement] 產品訂閱。
+联系至 [[!DNL Salesforce] 支持](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) 如果您没有 [!DNL Salesforce Marketing Cloud] 帐户或您的帐户缺少 [!DNL Marketing Cloud Engagement] 产品订阅。
 
-#### 在中建立屬性 [!DNL Salesforce Marketing Cloud] {#prerequisites-attribute}
+#### 在中创建属性 [!DNL Salesforce Marketing Cloud] {#prerequisites-attribute}
 
-將區段啟用至 [!DNL (API) Salesforce Marketing Cloud] 目的地，您必須在 **[!UICONTROL 對應ID]** 欄位中每個已啟用的區段 **[區段排程](#schedule-segment-export-example)** 步驟。
+将区段激活到 [!DNL (API) Salesforce Marketing Cloud] 目标，则必须在 **[!UICONTROL 映射Id]** 每个已激活区段的字段，位于 **[区段计划](#schedule-segment-export-example)** 步骤。
 
-[!DNL Salesforce] 需要此值才能正確讀取和解讀來自Experience Platform的區段，並在中更新其區段狀態 [!DNL Salesforce Marketing Cloud]. 請參閱Experience Platform檔案以瞭解 [區段會籍詳細資料結構描述欄位群組](/help/xdm/field-groups/profile/segmentation.md) 如果您需要區段狀態的指引。
+[!DNL Salesforce] 需要此值才能正确读取和解释从Experience Platform传入的区段，并在中更新其区段状态 [!DNL Salesforce Marketing Cloud]. 请参阅Experience Platform文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
 
-對於您從Platform啟用的每個區段 [!DNL Salesforce Marketing Cloud]，您需要建立型別的屬性 `Text` 範圍 [!DNL Salesforce]. 使用 [!DNL Salesforce Marketing Cloud] [!DNL Contact Builder] 以建立屬性。 屬性欄位名稱用於 [!DNL (API) Salesforce Marketing Cloud] 目的地欄位，且應建立在 `[!DNL Email Demographics system attribute-set]`. 您可以根據您的業務需求，定義最多4000個字元的欄位字元。 請參閱 [!DNL Salesforce Marketing Cloud] [資料擴充功能資料型別](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&amp;type=5) 說明檔案頁面，以取得屬性型別的詳細資訊。
+对于您从Platform激活到的每个区段 [!DNL Salesforce Marketing Cloud]，您需要创建类型的属性 `Text` 范围 [!DNL Salesforce]. 使用 [!DNL Salesforce Marketing Cloud] [!DNL Contact Builder] 以创建属性。 属性字段名称用于 [!DNL (API) Salesforce Marketing Cloud] 目标字段，应创建于 `[!DNL Email Demographics system attribute-set]`. 您可以根据业务需求定义最多4000个字符的字段字符。 请参阅 [!DNL Salesforce Marketing Cloud] [数据扩展数据类型](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&amp;type=5) 文档页面，以了解有关属性类型的更多信息。
 
-請參閱 [!DNL Salesforce Marketing Cloud] 檔案至 [建立屬性](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您需要有關建立屬性的指引。
+请参阅 [!DNL Salesforce Marketing Cloud] 文档目标 [创建属性](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您需要有关创建属性的指导。
 
-中的資料設計工具畫面範例 [!DNL Salesforce Marketing Cloud]，您會將屬性新增至其中，如下所示：
-![SalesforceMarketing CloudUI資料設計工具。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-data-designer.png)
+中的数据设计器屏幕示例 [!DNL Salesforce Marketing Cloud]，您将向其中添加属性，如下所示：
+![SalesforceMarketing CloudUI数据设计器。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-data-designer.png)
 
-的檢視 [!DNL Salesforce Marketing Cloud] [!DNL Email Demographics] attribute-set如下所示：
-![SalesforceMarketing CloudUI電子郵件人口統計屬性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-email-demograhics-fields.png)
+查看 [!DNL Salesforce Marketing Cloud] [!DNL Email Demographics] attribute-set如下所示：
+![SalesforceMarketing CloudUI电子邮件人口统计属性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-email-demograhics-fields.png)
 
-此 [!DNL (API) Salesforce Marketing Cloud] 目的地使用 [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) 以動態擷取在中定義的屬性及其屬性集 [!DNL Salesforce Marketing Cloud].
+此 [!DNL (API) Salesforce Marketing Cloud] 目标使用 [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) 以动态检索在中定义的属性及其属性集 [!DNL Salesforce Marketing Cloud].
 
-這些標籤會顯示在 **[!UICONTROL 目標欄位]** 選取視窗 [對應](#mapping-considerations-example) 在工作流程中至 [對目的地啟用區段](#activate). 請注意，只有在中定義的屬性的對應 [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` 屬性集受到支援。
+这些组件会显示在 **[!UICONTROL 目标字段]** 选择窗口 [映射](#mapping-considerations-example) 在至的工作流中 [将区段激活到目标](#activate). 请注意，只有在中定义的属性的映射 [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` 支持属性集。
 
 >[!IMPORTANT]
 >
->範圍 [!DNL Salesforce Marketing Cloud]，您必須使用建立屬性 **[!UICONTROL 欄位名稱]** 完全符合中指定的值 **[!UICONTROL 對應ID]** 用於每個已啟動的Platform區段。 例如，底下熒幕擷圖顯示名為的屬性 `salesforce_mc_segment_1`. 啟用區段至此目的地時，新增 `salesforce_mc_segment_1` 作為 **[!UICONTROL 對應ID]** 將區段對象從Experience Platform填入此屬性中。
+>范围 [!DNL Salesforce Marketing Cloud]，您必须使用创建属性 **[!UICONTROL 字段名称]** 与中指定的值完全匹配的值 **[!UICONTROL 映射Id]** 每个已激活的Platform区段。 例如，下面的屏幕快照显示了一个名为的属性 `salesforce_mc_segment_1`. 将区段激活到此目标时，添加 `salesforce_mc_segment_1` 作为 **[!UICONTROL 映射Id]** 用于将Experience Platform中的区段受众填充到此属性中。
 
-在中建立屬性的範例 [!DNL Salesforce Marketing Cloud]，如下所示：
-![顯示屬性的SalesforceMarketing CloudUI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
+中属性创建的示例 [!DNL Salesforce Marketing Cloud]，如下所示：
+![显示属性的SalesforceMarketing CloudUI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
 
 >[!TIP]
 >
->* 建立屬性時，請勿在欄位名稱中包含空白字元。 請改用底線 `(_)` 分隔符號的字元。
->* 區分用於Platform區段的屬性與內的其他屬性 [!DNL Salesforce Marketing Cloud]，您可以為用於Adobe區段的屬性包含可識別的前置詞或後置詞。 例如，而非 `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`.
->* 如果您已在中建立其他屬性 [!DNL Salesforce Marketing Cloud]，您可以使用與Platform區段相同的名稱，輕鬆識別 [!DNL Salesforce Marketing Cloud].
+>* 创建属性时，请勿在字段名称中包含空白字符。 请改用下划线 `(_)` 字符。
+>* 区分用于Platform区段的属性以及内的其他属性 [!DNL Salesforce Marketing Cloud]中，您可以为用于Adobe区段的属性包含可识别的前缀或后缀。 例如，而不是 `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`.
+>* 如果您已在中创建其他属性 [!DNL Salesforce Marketing Cloud]，您可以使用与Platform区段相同的名称，以便轻松地识别中的区段 [!DNL Salesforce Marketing Cloud].
 
 
-#### 在中指派使用者角色和許可權 [!DNL Salesforce Marketing Cloud] {#prerequisites-roles-permissions}
+#### 在中分配用户角色和权限 [!DNL Salesforce Marketing Cloud] {#prerequisites-roles-permissions}
 
-作為 [!DNL Salesforce Marketing Cloud] 支援自訂角色根據您的使用案例，應指派相關角色給您的使用者，以更新您內的屬性 [!DNL Salesforce Marketing Cloud] 屬性集。 指派給使用者的角色範例如下：
-![所選使用者的SalesforceMarketing CloudUI，其中顯示其指派的角色。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-edit-roles.png)
+作为 [!DNL Salesforce Marketing Cloud] 支持自定义角色，根据您的用例，应该为您的用户分配相关角色，以更新您的属性 [!DNL Salesforce Marketing Cloud] 属性集。 下面显示了分配给用户的角色示例：
+![选定用户的SalesforceMarketing CloudUI，其中显示为其分配的角色。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-edit-roles.png)
 
-視您的角色而定 [!DNL Salesforce Marketing Cloud] 使用者已指派，您也需要指派許可權給 [!DNL Salesforce Marketing Cloud] 屬性集，其中包含您要更新的欄位。
+根据您所使用的角色 [!DNL Salesforce Marketing Cloud] 用户已分配，您还需要将权限分配给 [!DNL Salesforce Marketing Cloud] 属性集，其中包含您要更新的字段。
 
-由於此目的地需要存取 `[!DNL Email Demographics system attribute-set]`，您需要允許 `Email` 如下所示：
-![SalesforceMarketing CloudUI顯示具有允許許可權的電子郵件屬性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-permisions-list.png)
+由于此目标需要访问 `[!DNL Email Demographics system attribute-set]`，您需要允许 `Email` 如下所示：
+![SalesforceMarketing CloudUI显示具有允许权限的电子邮件属性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-permisions-list.png)
 
-若要限制存取層級，您也可以使用精細許可權覆寫個別存取。
-![SalesforceMarketing CloudUI顯示具有精細許可權的電子郵件屬性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/sales-email-attribute-set-permission.png)
+要限制访问级别，您还可以使用粒度权限覆盖单个访问。
+![SalesforceMarketing CloudUI显示具有粒度权限的电子邮件属性集。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/sales-email-attribute-set-permission.png)
 
-請參閱 [[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_marketing_cloud_roles.htm&amp;type=5) 和 [[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_roles.htm&amp;type=5) 詳細指引頁面。
+请参阅 [[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_marketing_cloud_roles.htm&amp;type=5) 和 [[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_roles.htm&amp;type=5) 详细指导页面。
 
-#### 收集 [!DNL Salesforce Marketing Cloud] 認證 {#gather-credentials}
+#### 收集 [!DNL Salesforce Marketing Cloud] 凭据 {#gather-credentials}
 
-在驗證之前，請記下以下專案 [!DNL (API) Salesforce Marketing Cloud] 目的地。
+在对进行身份验证之前，请记下以下各项 [!DNL (API) Salesforce Marketing Cloud] 目标。
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| Subdomain | 另請參閱 [[!DNL Salesforce Marketing Cloud domain prefix]](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html) 以瞭解如何從取得此值 [!DNL Salesforce Marketing Cloud] 介面。 | 若您的 [!DNL Salesforce Marketing Cloud] 網域是<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br>您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 做為值。 |
-| 使用者端ID | 請參閱 [!DNL Salesforce Marketing Cloud] [檔案](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 以瞭解如何從取得此值 [!DNL Salesforce Marketing Cloud] 介面。 | r23kxxxxxxxx0z05xxxxxx |
-| 使用者端密碼 | 請參閱 [!DNL Salesforce Marketing Cloud] [檔案](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 以瞭解如何從取得此值 [!DNL Salesforce Marketing Cloud] 介面。 | ipxxxxxxxxxxT4xxxxxxxxxx |
+| Subdomain | 参见 [[!DNL Salesforce Marketing Cloud domain prefix]](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html) 以了解如何从获取此值 [!DNL Salesforce Marketing Cloud] 界面。 | 如果您的 [!DNL Salesforce Marketing Cloud] 域为<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br>您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 作为值。 |
+| 客户端ID | 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 以了解如何从获取此值 [!DNL Salesforce Marketing Cloud] 界面。 | r23kxxxxxxxx0z05xxxxxx |
+| 客户端密码 | 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 以了解如何从获取此值 [!DNL Salesforce Marketing Cloud] 界面。 | ipxxxxxxxxxxT4xxxxxxxxxx |
 
 {style="table-layout:auto"}
 
 ### 护栏 {#guardrails}
 
-* Salesforce強制特定 [速率限制](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting.html).
-   * 請參閱 [!DNL Salesforce Marketing Cloud] [檔案](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting-errors.html) 以解決您在執行期間可能遇到的任何限制，並減少錯誤。
-   * 請參閱 [[!DNL Salesforce Marketing Cloud] 參與定價](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) 頁面至 *下載完整版比較表* 以pdf格式呈現，詳細說明計畫所施加的限制。
-   * 此 [API概觀](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html) 頁面詳細說明其他限制。
-   * 參考 [此處](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits) 以取得整理這些詳細資料的頁面。
-* 計數 *每個物件允許的自訂欄位* 視您的Salesforce版本而定。
-   * 請參閱 [!DNL Salesforce] [檔案](https://help.salesforce.com/s/articleView?id=sf.custom_field_allocations.htm&amp;type=5) 以取得其他指引。
-   * 如果您已達到為定義的限制 *每個物件允許的自訂欄位* 範圍 [!DNL Salesforce Marketing Cloud] 您將需要
-      * 在新增屬性之前先移除較舊的屬性 [!DNL Salesforce Marketing Cloud].
-      * 更新或移除Platform目的地中任何已啟用的區段，這些區段會使用這些較舊的屬性名稱作為所提供的值 **[!UICONTROL 對應ID]** 期間 [區段排程](#schedule-segment-export-example) 步驟。
+* Salesforce强制特定 [速率限制](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting.html).
+   * 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting-errors.html) 解决您在执行期间可能会遇到的任何可能的限制并减少错误。
+   * 请参阅 [[!DNL Salesforce Marketing Cloud] 参与定价](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) 页面至 *下载完整版比较表* 作为PDF，详细说明您的计划所施加的限制。
+   * 此 [API概述](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html) 页面详细信息附加限制。
+   * 参考 [此处](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits) ，以了解有关这些详细信息的页面。
+* 计数 *每个对象允许的自定义字段* 根据您的Salesforce版而有所不同。
+   * 请参阅 [!DNL Salesforce] [文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_allocations.htm&amp;type=5) 以获取其他指导。
+   * 如果您已达到为定义的限制 *每个对象允许的自定义字段* 范围 [!DNL Salesforce Marketing Cloud] 您将需要
+      * 在新属性中添加之前删除旧属性 [!DNL Salesforce Marketing Cloud].
+      * 更新或删除Platform目标中任何已激活的区段，这些区段会使用这些较旧的属性名称作为提供的值 **[!UICONTROL 映射Id]** 期间 [区段调度](#schedule-segment-export-example) 步骤。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL (API) Salesforce Marketing Cloud] 支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL (API) Salesforce Marketing Cloud] 支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| contactKey | [!DNL Salesforce Marketing Cloud] 連絡人金鑰。 請參閱 [!DNL Salesforce Marketing Cloud] [檔案](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder_best_practices.htm&amp;type=5) 如果您需要其他指引。 | 強制 |
+| 联系人密钥 | [!DNL Salesforce Marketing Cloud] 联系键。 请参阅 [!DNL Salesforce Marketing Cloud] [文档](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder_best_practices.htm&amp;type=5) 如果您需要其他指导。 | 必需 |
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | <ul><li>您正在匯出區段的所有成員，以及所需的結構描述欄位 *（例如：電子郵件地址、電話號碼、姓氏）*，根據您的欄位對應。</li><li> 中的每個區段狀態 [!DNL Salesforce Marketing Cloud] 會根據 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example) 步驟。</li></ul> |
-| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Salesforce Marketing Cloud] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 >
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-範圍 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]**，搜尋 [!DNL (API) Salesforce Marketing Cloud]. 或者，您也可以在 **[!UICONTROL 電子郵件行銷]** 類別。
+范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**，搜索 [!DNL (API) Salesforce Marketing Cloud]. 或者，您也可以在 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-若要驗證到目的地，請填寫以下必填欄位並選取 **[!UICONTROL 連線到目的地]**. 請參閱 [收集 [!DNL Salesforce Marketing Cloud] 認證](#gather-credentials) 區段以取得指引。
+要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce Marketing Cloud] 凭据](#gather-credentials) 部分获取任何指导。
 
-| [!DNL (API) Salesforce Marketing Cloud] 目的地 | [!DNL Salesforce Marketing Cloud] |
+| [!DNL (API) Salesforce Marketing Cloud] 目标 | [!DNL Salesforce Marketing Cloud] |
 | --- | --- |
-| **[!UICONTROL Subdomain]** | 您的 [!DNL Salesforce Marketing Cloud] 網域前置詞。 <br>例如，如果您的網域為 <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br> 您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 做為值。 |
-| **[!UICONTROL 使用者端ID]** | 您的 [!DNL Salesforce Marketing Cloud] `Client ID`. |
-| **[!UICONTROL 使用者端密碼]** | 您的 [!DNL Salesforce Marketing Cloud] `Client Secret`. |
+| **[!UICONTROL Subdomain]** | 您的 [!DNL Salesforce Marketing Cloud] 域前缀。 <br>例如，如果您的域是 <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br> 您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 作为值。 |
+| **[!UICONTROL 客户端ID]** | 您的 [!DNL Salesforce Marketing Cloud] `Client ID`. |
+| **[!UICONTROL 客户端密码]** | 您的 [!DNL Salesforce Marketing Cloud] `Client Secret`. |
 
-![顯示如何驗證SalesforceMarketing Cloud的Platform UI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/authenticate-destination.png)
+![显示如何对SalesforceMarketing Cloud进行身份验证的Platform UI屏幕快照。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/authenticate-destination.png)
 
-如果提供的詳細資料有效，UI會顯示 **[!UICONTROL 已連線]** 狀態，並顯示綠色核取記號，您就可以繼續進行下一個步驟。
+如果提供的详细信息有效，则UI将显示 **[!UICONTROL 已连接]** 状态，带有绿色复选标记，您可以继续下一步骤。
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
-![顯示目的地詳細資訊的平台UI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-details.png)
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+![显示目标详细信息的Platform UI屏幕快照。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-details.png)
 
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
-
->[!IMPORTANT]
->
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
-
-讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
-
-### 對應考量事項和範例 {#mapping-considerations-example}
-
-若要正確將對象資料從Adobe Experience Platform傳送至 [!DNL (API) Salesforce Marketing Cloud] 目的地，您必須完成欄位對應步驟。 對應包括在Platform帳戶中的Experience Data Model (XDM)結構描述欄位與來自目標目的地的對應對應對應專案之間建立連結。
-
-若要正確將XDM欄位對應至 [!DNL (API) Salesforce Marketing Cloud] 目的地欄位，請遵循下列步驟。
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
->雖然您的屬性名稱會根據 [!DNL Salesforce Marketing Cloud] 帳戶，兩者的對應 `contactKey` 和 `personalEmail.address` 為必填欄位。 對應屬性時，僅來自Experience Platform的屬性 `Email Demographics` attribute-set應該用於目標欄位中。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-1. 在 **[!UICONTROL 對應]** 步驟，選取 **[!UICONTROL 新增對應]**. 您會在畫面上看到新的對應列。
-   ![「新增對應」的平台UI熒幕擷圖範例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
-1. 在 **[!UICONTROL 選取來源欄位]** 視窗，選擇 **[!UICONTROL 選取屬性]** 類別並選取XDM屬性，或選擇 **[!UICONTROL 選取身分名稱空間]** 並選取身分。
-1. 在 **[!UICONTROL 選取目標欄位]** 視窗，選擇 **[!UICONTROL 選取身分名稱空間]** 並選取身分或選擇 **[!UICONTROL 選取自訂屬性]** 類別並選取屬性，從 `Email Demographics` 屬性會視需要顯示。 此 [!DNL (API) Salesforce Marketing Cloud] 目的地使用 [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) 以動態擷取在中定義的屬性及其屬性集 [!DNL Salesforce Marketing Cloud]. 這些標籤會顯示在 **[!UICONTROL 目標欄位]** 設定時顯示的快顯視窗 [對應](#mapping-considerations-example) 在 [在工作流程中啟用區段](#activate). 注意，僅對映在中定義的屬性。 [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` 屬性集受到支援。
+读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-   * 重複這些步驟，在您的XDM設定檔結構描述和之間新增以下對應 [!DNL (API) Salesforce Marketing Cloud]： |來源欄位|目標欄位|必要| |—|—|—| |`IdentityMap: contactKey`|`Identity: salesforceContactKey`| `Mandatory` |\
+### 映射注意事项和示例 {#mapping-considerations-example}
+
+要正确地将受众数据从Adobe Experience Platform发送到 [!DNL (API) Salesforce Marketing Cloud] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的Experience Data Model (XDM)架构字段与其与目标目标中的相应等效字段之间创建链接。
+
+要将XDM字段正确映射到 [!DNL (API) Salesforce Marketing Cloud] 目标字段，请执行以下步骤。
+
+>[!IMPORTANT]
+>
+>尽管您的属性名称将根据 [!DNL Salesforce Marketing Cloud] 帐户，两者的映射 `contactKey` 和 `personalEmail.address` 是必填项。 映射属性时，仅映射Experience Platform中的属性 `Email Demographics` attribute-set应在目标字段中使用。
+
+1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新映射行。
+   ![“添加新映射”的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
+1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择属性]** 类别并选择XDM属性或选择 **[!UICONTROL 选择身份命名空间]** 并选择身份。
+1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 并选择身份或选择 **[!UICONTROL 选择自定义属性]** 类别并从中选择属性 `Email Demographics` 属性会根据需要显示。 此 [!DNL (API) Salesforce Marketing Cloud] 目标使用 [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) 动态检索在中定义的属性及其属性集 [!DNL Salesforce Marketing Cloud]. 这些组件会显示在 **[!UICONTROL 目标字段]** 弹出窗口 [映射](#mapping-considerations-example) 在 [将区段激活到工作流](#activate). 注意，只有在中定义的属性的映射 [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` 支持属性集。
+
+   * 重复这些步骤以在XDM配置文件架构和 [!DNL (API) Salesforce Marketing Cloud]： |源字段|目标字段|必填| |—|—|—| |`IdentityMap: contactKey`|`Identity: salesforceContactKey`| `Mandatory` |\
       |`xdm: person.name.firstName`|`Attribute: Email Demographics.First Name`| - |
 |`xdm: personalEmail.address`|`Attribute: Email Addresses.Email Address`| - |
 
-   * 使用這些對應的範例如下所示：
-      ![顯示Target對應的平台UI熒幕擷圖範例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/mappings.png)
+   * 下面显示了使用这些映射的示例：
+      ![显示Target映射的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/mappings.png)
 
-當您完成提供目的地連線的對應時，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的映射后，选择 **[!UICONTROL 下一个]**.
 
-### 排程區段匯出和範例 {#schedule-segment-export-example}
+### 计划区段导出和示例 {#schedule-segment-export-example}
 
-執行 [排程區段匯出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步驟，您必須手動將Platform區段對應至 [屬性](#prerequisites-attribute) 在 [!DNL Salesforce Marketing Cloud].
+执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动将Platform区段映射到 [属性](#prerequisites-attribute) 在 [!DNL Salesforce Marketing Cloud].
 
-若要這麼做，請選取每個區段，然後輸入屬性名稱，從 [!DNL Salesforce Marketing Cloud] 在 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 對應ID]** 欄位。 請參閱 [在中建立屬性 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) 區段，瞭解在中建立屬性的相關指引和最佳作法 [!DNL Salesforce Marketing Cloud].
+要执行此操作，请选择每个区段，然后输入属性名称 [!DNL Salesforce Marketing Cloud] 在 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射Id]** 字段。 请参阅 [在中创建属性 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) 有关在中创建属性的指导和最佳实践的部分 [!DNL Salesforce Marketing Cloud].
 
-例如，如果您的 [!DNL Salesforce Marketing Cloud] 屬性為 `salesforce_mc_segment_1`，請在 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 對應ID]** 將區段對象從Experience Platform填入此屬性中。
+例如，如果您的 [!DNL Salesforce Marketing Cloud] 属性为 `salesforce_mc_segment_1`，请在 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射Id]** 用于将Experience Platform中的区段受众填充到此属性中。
 
-範例屬性來自 [!DNL Salesforce Marketing Cloud] 如下所示：
-![顯示屬性的SalesforceMarketing CloudUI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
+示例属性来自 [!DNL Salesforce Marketing Cloud] 如下所示：
+![显示属性的SalesforceMarketing CloudUI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
 
-指示位置的 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 對應ID]** 如下所示：
-![顯示「排程區段匯出」的Platform UI熒幕擷圖範例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/schedule-segment-export.png)
+一个示例，指示的位置 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射Id]** 如下所示：
+![显示计划区段导出的平台UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/schedule-segment-export.png)
 
-如所示 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 對應ID]** 應完全符合中指定的值 [!DNL Salesforce Marketing Cloud] **[!UICONTROL 欄位名稱]**.
+如所示 [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射Id]** 应完全匹配中指定的值 [!DNL Salesforce Marketing Cloud] **[!UICONTROL 字段名称]**.
 
-對每個已啟動的Platform區段重複此章節。
+对每个激活的Platform区段重复此部分。
 
-根據您的使用案例，所有已啟用的區段都能對應至相同的 [!DNL Salesforce Marketing Cloud] **[!UICONTROL 欄位名稱]** 或變更為其他 **[!UICONTROL 欄位名稱]** 在 [!DNL (API) Salesforce Marketing Cloud]. 以上圖影像為基礎的典型範例可能是。
-| [!DNL (API) Salesforce Marketing Cloud] 區段名稱 | [!DNL Salesforce Marketing Cloud] **[!UICONTROL 欄位名稱]** | [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 對應ID]** | | — | — | — | | salesforce mc區段1 | `salesforce_mc_segment_1` | `salesforce_mc_segment_1` | | salesforce mc區段2 | `salesforce_mc_segment_2` | `salesforce_mc_segment_2` |
+根据您的用例，所有激活的区段都可以映射到相同的 [!DNL Salesforce Marketing Cloud] **[!UICONTROL 字段名称]** 或变更为其他 **[!UICONTROL 字段名称]** 在 [!DNL (API) Salesforce Marketing Cloud]. 基于上述图像的典型示例可以是。
+| [!DNL (API) Salesforce Marketing Cloud] 区段名称 | [!DNL Salesforce Marketing Cloud] **[!UICONTROL 字段名称]** | [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL 映射Id]** | | — | — | — | | salesforce mc段1 | `salesforce_mc_segment_1` | `salesforce_mc_segment_1` | | salesforce mc段2 | `salesforce_mc_segment_2` | `salesforce_mc_segment_2` |
 
-## 驗證資料匯出 {#exported-data}
+## 验证数据导出 {#exported-data}
 
-若要驗證您是否已正確設定目的地，請遵循下列步驟：
+要验证您是否正确设置了目标，请执行以下步骤：
 
-1. 選取 **[!UICONTROL 目的地]** > **[!UICONTROL 瀏覽]** 以導覽至目的地清單。
-   ![顯示「瀏覽目的地」的平台UI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
+1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 导航到目标列表。
+   ![显示浏览目标的平台UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/browse-destinations.png)
 
-1. 選取目的地並驗證狀態是否為 **[!UICONTROL 已啟用]**.
-   ![顯示目的地資料流執行的平台UI熒幕擷圖。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
+1. 选择目标并验证状态为 **[!UICONTROL 已启用]**.
+   ![显示目标数据流运行的平台UI屏幕截图。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destination-dataflow-run.png)
 
-1. 切換至 **[!DNL Activation data]** 標籤，然後選取區段名稱。
-   ![顯示目的地啟用資料的平台UI熒幕擷圖範例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
+1. 切换到 **[!DNL Activation data]** 选项卡，然后选择区段名称。
+   ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/destinations-activation-data.png)
 
-1. 監控區段摘要，並確保設定檔計數對應於在區段內建立的計數。
-   ![顯示區段的平台UI熒幕擷圖範例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
+1. 监控区段摘要，并确保配置文件计数对应于在区段内创建的计数。
+   ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/segment.png)
 
-1. 登入 [[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/) 網站。 然後導覽至 **[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]** 頁面，並檢查是否已新增區段中的設定檔。
-   ![SalesforceMarketing CloudUI熒幕擷圖顯示具有區段中所使用設定檔的「連絡人」頁面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
+1. 登录到 [[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/) 网站。 然后导航到 **[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]** 页面，并检查是否已添加区段中的配置文件。
+   ![SalesforceMarketing CloudUI屏幕截图，其中显示了“联系人”页面以及区段中使用的配置文件。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
-1. 若要檢查是否有任何設定檔已更新，請導覽至 **[!UICONTROL 電子郵件]** 頁面，並驗證區段中設定檔的屬性值是否已更新。 如果成功，您可以在中看到每個區段狀態 [!DNL Salesforce Marketing Cloud] 已根據「 」更新Platform中的對應區段狀態 **[!UICONTROL 對應ID]** 值提供於 [區段排程](#schedule-segment-export-example) 步驟。
-   ![SalesforceMarketing CloudUI熒幕擷取畫面，顯示具有更新區段狀態的所選連絡人電子郵件頁面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contact-detail.png)
+1. 要检查是否已更新任何用户档案，请导航到 **[!UICONTROL 电子邮件]** 页面，并验证区段中配置文件的属性值是否已更新。 如果成功，您可以在中看到每个区段状态 [!DNL Salesforce Marketing Cloud] 已根据，从Platform更新了相应的区段状态 **[!UICONTROL 映射Id]** 中提供的值 [区段调度](#schedule-segment-export-example) 步骤。
+   ![SalesforceMarketing CloudUI屏幕截图，其中显示具有更新区段状态的选定“联系人电子邮件”页面。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contact-detail.png)
 
-## 資料使用與控管 {#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](/help/data-governance/home.md).
 
-## 錯誤與疑難排解 {#errors-and-troubleshooting}
+## 错误和疑难解答 {#errors-and-troubleshooting}
 
-### 將事件推送至SalesforceMarketing Cloud時遇到未知錯誤 {#unknown-errors}
+### 将事件推送到SalesforceMarketing Cloud时遇到未知错误 {#unknown-errors}
 
-* 檢查資料流執行時，您可能會遇到下列錯誤訊息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
+* 在检查数据流运行时，您可能会遇到以下错误消息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
 
-   ![平台UI熒幕擷圖顯示錯誤。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/error.png)
+   ![平台UI屏幕截图显示错误。](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/error.png)
 
-   * 若要修正此錯誤，請確認 **[!UICONTROL 對應ID]** 您在啟用工作流程中提供的資料給 [!DNL (API) Salesforce Marketing Cloud] 目的地與您在中建立的屬性名稱完全相符 [!DNL Salesforce Marketing Cloud]. 請參閱 [在中建立屬性 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) 區段以取得指引。
+   * 要修复此错误，请验证 **[!UICONTROL 映射Id]** 您在激活工作流中提供给的 [!DNL (API) Salesforce Marketing Cloud] 目标与您在中创建的属性的名称完全匹配 [!DNL Salesforce Marketing Cloud]. 请参阅 [在中创建属性 [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) 部分提供指导。
 
-* 啟用區段時，您可能會收到錯誤訊息： `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修正此錯誤，請連絡 [!DNL Salesforce Marketing Cloud] 要新增的帳戶管理員 [Experience PlatformIP位址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 至您的 [!DNL Salesforce Marketing Cloud] 帳戶的受信任IP範圍。 請參閱 [!DNL Salesforce Marketing Cloud] [Marketing Cloud中允許清單中包含的IP位址](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5) 說明檔案（若您需要其他指引）。
+* 激活区段时，您可能会收到一条错误消息： `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
+   * 要修复此错误，请联系贵机构的 [!DNL Salesforce Marketing Cloud] 要添加的客户管理员 [Experience PlatformIP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 敬您的 [!DNL Salesforce Marketing Cloud] 帐户的受信任IP范围。 请参阅 [!DNL Salesforce Marketing Cloud] [允许列表 Marketing Cloud中包含的IP地址](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5) 文档（如果您需要其他指导）。
 
 ## 其他资源 {#additional-resources}
 
 * [!DNL Salesforce Marketing Cloud] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html)
-* [!DNL Salesforce Marketing Cloud] [檔案](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) 說明如何使用指定屬性群組中的指定資訊來更新連絡人。
+* [!DNL Salesforce Marketing Cloud] [文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) 说明如何使用指定属性组中的指定信息更新联系人。
 
 ### Changelog {#changelog}
 
-本節擷取此目的地聯結器的功能和重要檔案更新。
+此部分捕获此目标连接器的功能和重要文档更新。
 
-+++ 檢視變更記錄檔
++++ 查看更改日志
 
-| 發行月份 | 更新型別 | 描述 |
+| 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 4 月 | 檔案更新 | <ul><li>我們已更正 [(API) SalesforceMarketing Cloud的必要條件](#prerequisites-destination) 區段以指出 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目的地的強制訂閱。 區段先前錯誤地指出使用者需要訂閱Marketing Cloud **帳戶** 參與以繼續。</li> <li>我們在「 」下新增了區段 [必備條件](#prerequisites) 的 [角色和許可權](#prerequisites-roles-permissions) 將指派給 [!DNL Salesforce] 讓此目的地的使用者工作。 (PLATIR-26299)</li></ul> |
-| 2023 年 2 月 | 檔案更新 | 我們已更新 [(API) SalesforceMarketing Cloud的必要條件](#prerequisites-destination) 區段，以包含呼叫該區段的參考連結 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目的地的強制訂閱。 |
-| 2023 年 2 月 | 功能更新 | 我們已修正目的地中不正確的設定導致格式錯誤的JSON傳送至Salesforce的問題。 這會導致某些使用者在啟用時看到大量身分失敗。 (PLATIR-26299) |
-| 2023 年 1 月 | 檔案更新 | <ul><li>我們已更新 [中的必要條件 [!DNL Salesforce]](#prerequisites-destination) 區段來標註屬性需要在 [!DNL Salesforce] 側。 本節現在包含如何執行此動作的詳細指示，以及命名中屬性的最佳作法 [!DNL Salesforce]. (PLATIR-25602)</li><li>我們新增了明確指示，說明如何在中為每個已啟用的區段使用對應ID [區段排程](#schedule-segment-export-example) 步驟。 (PLATIR-25602)</li></ul> |
-| 2022 年 10 月 | 初始版本 | 初始目的地版本和檔案發佈。 |
+| 2023 年 4 月 | 文档更新 | <ul><li>我们更正了 [(API) SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 部分，用于指出 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目标的必需订阅。 之前错误地指出用户需要订阅Marketing Cloud的部分 **帐户** 参与以继续。</li> <li>我们在 [先决条件](#prerequisites) 对象 [角色和权限](#prerequisites-roles-permissions) 将分配给 [!DNL Salesforce] 用户才能使此目标正常工作。 (PLATIR-26299)</li></ul> |
+| 2023 年 2 月 | 文档更新 | 我们更新了 [(API) SalesforceMarketing Cloud中的先决条件](#prerequisites-destination) 部分，以包括一个引用链接，调用 [!DNL Salesforce Marketing Cloud Engagement] 是使用此目标的必需订阅。 |
+| 2023 年 2 月 | 功能更新 | 我们修复了目标中的错误配置导致向Salesforce发送格式错误的JSON的问题。 这导致某些用户看到大量身份激活失败。 (PLATIR-26299) |
+| 2023 年 1 月 | 文档更新 | <ul><li>我们更新了 [中的先决条件 [!DNL Salesforce]](#prerequisites-destination) 部分，用于标注需要在 [!DNL Salesforce] 侧面。 此部分现在包含有关如何执行此操作的详细说明以及有关在中命名属性的最佳实践 [!DNL Salesforce]. (PLATIR-25602)</li><li>我们添加了有关如何在中为每个激活的区段使用映射ID的明确说明 [区段调度](#schedule-segment-export-example) 步骤。 (PLATIR-25602)</li></ul> |
+| 2022 年 10 月 | 初始版本 | 初始目标版本和文档发布。 |
 
 {style="table-layout:auto"}
 

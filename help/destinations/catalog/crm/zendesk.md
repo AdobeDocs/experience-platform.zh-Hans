@@ -1,6 +1,6 @@
 ---
-title: Zendesk連線
-description: Zendesk目的地可讓您匯出帳戶資料，並在Zendesk中加以啟用，以滿足您的業務需求。
+title: Zendesk连接
+description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 source-git-commit: 55f1eafa68124b044d20f8f909f6238766076a7a
 workflow-type: tm+mt
@@ -9,173 +9,173 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Zendesk] 連線
+# [!DNL Zendesk] 连接
 
-[[!DNL Zendesk]](https://www.zendesk.com) 是客戶服務解決方案和銷售工具。
+[[!DNL Zendesk]](https://www.zendesk.com) 是一个客户服务解决方案和销售工具。
 
-此 [!DNL Adobe Experience Platform] [目的地](/help/destinations/home.md) 可運用 [[!DNL Zendesk] 連絡人API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/)，至 **建立和更新身分** 區段內的聯絡人 [!DNL Zendesk].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL Zendesk] 联系人API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/)，至 **创建和更新身份** 区段内的联系人 [!DNL Zendesk].
 
-[!DNL Zendesk] 使用持有人權杖作為驗證機制，與 [!DNL Zendesk] 連絡人API。 向您的驗證身分的說明 [!DNL Zendesk] 執行個體的詳細資訊如下： [驗證至目的地](#authenticate) 區段。
+[!DNL Zendesk] 使用持有者令牌作为身份验证机制与 [!DNL Zendesk] 联系人API。 向您的验证的说明 [!DNL Zendesk] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-多管道B2C平台的客戶服務部門想要確保其客戶獲得順暢的個人化體驗。 部門可以根據自己的離線資料建立區段，以建立新的使用者設定檔，或更新不同互動（例如購買、退貨等）的現有設定檔資訊。 並從Adobe Experience Platform將這些區段傳送至 [!DNL Zendesk]. 將更新的資訊存放在中 [!DNL Zendesk] 確保客戶服務代理程式能立即取得客戶的最新資訊，以便更快回應和解決問題。
+多渠道B2C平台的客户服务部门希望为其客户提供无缝的个性化体验。 部门可以根据自己的离线数据构建区段，以创建新用户配置文件或更新不同交互（例如购买、退货等）的现有配置文件信息 并将这些区段从Adobe Experience Platform发送到 [!DNL Zendesk]. 将更新的信息放在 [!DNL Zendesk] 确保客户服务代理能够立即获得客户的最新信息，从而加快响应和解决问题。
 
 ## 先决条件 {#prerequisites}
 
-### Experience Platform必要條件 {#prerequisites-in-experience-platform}
+### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-在將資料啟用至 [!DNL Zendesk] 目的地，您必須擁有 [綱要](/help/xdm/schema/composition.md)， a [資料集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [區段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 建立於 [!DNL Experience Platform].
+将数据激活到之前 [!DNL Zendesk] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-請參閱Experience Platform檔案，瞭解 [區段會籍詳細資料結構描述欄位群組](/help/xdm/field-groups/profile/segmentation.md) 如果您需要區段狀態的指引。
+请参阅Experience Platform文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
 
-### [!DNL Zendesk] 必備條件 {#prerequisites-destination}
+### [!DNL Zendesk] 先决条件 {#prerequisites-destination}
 
-為了將資料從Platform匯出至 [!DNL Zendesk] 您需要擁有 [!DNL Zendesk] 帳戶。
+为了将数据从Platform导出到 [!DNL Zendesk] 您需要拥有 [!DNL Zendesk] 帐户。
 
-#### 收集 [!DNL Zendesk] 認證 {#gather-credentials}
+#### 收集 [!DNL Zendesk] 凭据 {#gather-credentials}
 
-在驗證之前，請記下以下專案 [!DNL Zendesk] 目的地：
+在对进行身份验证之前，请记下以下各项 [!DNL Zendesk] 目标：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `Bearer token` | 您在中產生的存取Token [!DNL Zendesk] 帳戶。 <br> 請依照檔案說明進行 [產生 [!DNL Zendesk] 存取權杖](https://developer.zendesk.com/documentation/sales-crm/first-call/#1-generate-an-access-token) 如果您沒有。 | `a0b1c2d3e4...v20w21x22y23z` |
+| `Bearer token` | 您在中生成的访问令牌 [!DNL Zendesk] 帐户。 <br> 请按照文档中的说明，访问 [生成 [!DNL Zendesk] 访问令牌](https://developer.zendesk.com/documentation/sales-crm/first-call/#1-generate-an-access-token) 如果你没有。 | `a0b1c2d3e4...v20w21x22y23z` |
 
 ## 护栏 {#guardrails}
 
-此 [訂價與費率限制](https://developer.zendesk.com/api-reference/sales-crm/rate-limits/#pricing) 頁面詳細資訊 [!DNL Zendesk] 與您的帳戶相關聯的API限制。 您需要確保您的資料和裝載在這些限制內。
+此 [定价和费率限制](https://developer.zendesk.com/api-reference/sales-crm/rate-limits/#pricing) 页面详细信息 [!DNL Zendesk] 与您的帐户关联的API限制。 您需要确保您的数据和有效负载处于这些限制范围内。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Zendesk] 支援下表中描述的身分更新。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL Zendesk] 支持更新下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 示例 | 描述 | 強制 |
+| 目标身份 | 示例 | 描述 | 必需 |
 |---|---|---|---|
-| `email` | `test@test.com` | 連絡人的電子郵件地址。 | 是 |
+| `email` | `test@test.com` | 联系人的电子邮件地址。 | 是 |
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | <ul><li>您正在匯出區段的所有成員，以及所需的結構描述欄位 *（例如：電子郵件地址、電話號碼、姓氏）*，根據您的欄位對應。</li><li> 中的每個區段狀態 [!DNL Zendesk] 會根據 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example) 步驟。</li></ul> |
-| 匯出頻率 | **[!UICONTROL 串流]** | <ul><li>串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Zendesk] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 >
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-範圍 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]** 搜尋 [!DNL Zendesk]. 或者，您也可以在 **[!UICONTROL CRM]** 類別。
+范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Zendesk]. 或者，您也可以在 **[!UICONTROL CRM]** 类别。
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-填寫以下必填欄位。 請參閱 [收集 [!DNL Zendesk] 認證](#gather-credentials) 區段以取得指引。
-* **[!UICONTROL 持有人權杖]**：您在中產生的存取Token [!DNL Zendesk] 帳戶。
+填写下面的必填字段。 请参阅 [收集 [!DNL Zendesk] 凭据](#gather-credentials) 部分获取任何指导。
+* **[!UICONTROL 持有者令牌]**：您在中生成的访问令牌 [!DNL Zendesk] 帐户。
 
-若要驗證目的地，請選取 **[!UICONTROL 連線到目的地]**.
-![顯示如何驗證的平台UI熒幕擷圖。](../../assets/catalog/crm/zendesk/authenticate-destination.png)
+要对目标进行身份验证，请选择 **[!UICONTROL 连接到目标]**.
+![显示如何进行身份验证的Platform UI屏幕快照。](../../assets/catalog/crm/zendesk/authenticate-destination.png)
 
-如果提供的詳細資料有效，UI會顯示 **[!UICONTROL 已連線]** 帶有綠色核取記號的狀態。 然後您可以繼續下一步驟。
+如果提供的详细信息有效，则UI将显示 **[!UICONTROL 已连接]** 带有绿色复选标记的状态。 然后，您可以继续执行下一步。
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
-![顯示目的地詳細資訊的平台UI熒幕擷圖。](../../assets/catalog/crm/zendesk/destination-details.png)
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+![显示目标详细信息的Platform UI屏幕快照。](../../assets/catalog/crm/zendesk/destination-details.png)
 
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
-
->[!IMPORTANT]
->
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
-
-讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
-
-### 對應考量事項和範例 {#mapping-considerations-example}
-
-若要正確將對象資料從Adobe Experience Platform傳送至 [!DNL Zendesk] 目的地，您必須完成欄位對應步驟。 對應包括在Platform帳戶中的Experience Data Model (XDM)結構描述欄位與來自目標目的地的對應對應對應專案之間建立連結。
-
-中指定的屬性 **[!UICONTROL 目標欄位]** 應與「屬性對應」表格中所述完全相同的名稱，因為這些屬性會形成請求內文。
-
-中指定的屬性 **[!UICONTROL 來源欄位]** 請勿遵循任何此類限制。 您可以視需要加以對應，但如果推送至時的資料格式不正確 [!DNL Zendesk] 這會導致錯誤。
-
-若要正確將XDM欄位對應至 [!DNL Zendesk] 目的地欄位，請依照下列步驟操作：
-
-1. 在 **[!UICONTROL 對應]** 步驟，選取 **[!UICONTROL 新增對應]**. 您會在畫面上看到新的對應列。
-1. 在 **[!UICONTROL 選取來源欄位]** 視窗，選擇 **[!UICONTROL 選取屬性]** 類別並選取XDM屬性，或選擇 **[!UICONTROL 選取身分名稱空間]** 並選取身分。
-1. 在 **[!UICONTROL 選取目標欄位]** 視窗，選擇 **[!UICONTROL 選取身分名稱空間]** 類別並選取目標身分，或選擇 **[!UICONTROL 選取屬性]** 類別並選取其中一個支援的結構描述屬性。
-   * 重複這些步驟以新增以下強制對應，您也可以新增任何其他要在XDM設定檔結構描述和之間更新的屬性。 [!DNL Zendesk] 例項： |來源欄位|目標欄位|必要| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`|是 | |`IdentityMap: Email`|`Identity: email`|是 | |`xdm: person.name.firstName`|`xdm: first_name`| |
-
-   * 使用這些對應的範例如下所示：
-      ![具有屬性對應的平台UI熒幕擷圖範例。](../../assets/catalog/crm/zendesk/mappings.png)
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
->此 `Attribute: last_name` 和 `Identity: email` 目標對應是此目的地的必要專案。 如果缺少這些對應，則會忽略任何其他對應，且不會傳送至 [!DNL Zendesk].
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-當您完成提供目的地連線的對應時，請選取 **[!UICONTROL 下一個]**.
+读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-### 排程區段匯出和範例 {#schedule-segment-export-example}
+### 映射注意事项和示例 {#mapping-considerations-example}
 
-在 [[!UICONTROL 排程區段匯出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 啟動工作流程的步驟，您必須手動將Platform區段對應至中的自訂欄位屬性 [!DNL Zendesk].
+要正确地将受众数据从Adobe Experience Platform发送到 [!DNL Zendesk] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的Experience Data Model (XDM)架构字段与其与目标目标中的相应等效字段之间创建链接。
 
-若要這麼做，請選取每個區段，然後輸入對應的自訂欄位屬性 [!DNL Zendesk] 在 **[!UICONTROL 對應ID]** 欄位。
+中指定的属性 **[!UICONTROL 目标字段]** 应按照“属性映射”表中的说明进行命名，因为这些属性将构成请求正文。
 
-範例如下：
-![顯示「排程區段匯出」的Platform UI熒幕擷圖範例。](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
+中指定的属性 **[!UICONTROL 源字段]** 请勿遵守任何此类限制。 您可以根据需要进行映射，但是，如果数据格式在推送到时不正确 [!DNL Zendesk] 这会导致错误。
 
-## 驗證資料匯出 {#exported-data}
+要将XDM字段正确映射到 [!DNL Zendesk] 目标字段，请执行以下步骤：
 
-若要驗證您是否已正確設定目的地，請遵循下列步驟：
+1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新映射行。
+1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择属性]** 类别并选择XDM属性或选择 **[!UICONTROL 选择身份命名空间]** 并选择身份。
+1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 类别并选择目标身份，或选择 **[!UICONTROL 选择属性]** 类别并选择其中一个受支持的架构属性。
+   * 重复这些步骤以添加以下强制映射，您还可以添加要在XDM配置文件架构和您的配置文件架构之间更新的任何其他属性 [!DNL Zendesk] 实例： |源字段|目标字段|必填| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`|是 | |`IdentityMap: Email`|`Identity: email`|是 | |`xdm: person.name.firstName`|`xdm: first_name`| |
 
-1. 選取 **[!UICONTROL 目的地]** > **[!UICONTROL 瀏覽]** 並導覽至目的地清單。
-1. 接下來，選取目的地並切換至 **[!UICONTROL 啟用資料]** 標籤，然後選取區段名稱。
-   ![顯示目的地啟用資料的平台UI熒幕擷圖範例。](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
+   * 下面显示了使用这些映射的示例：
+      ![具有属性映射的平台UI屏幕快照示例。](../../assets/catalog/crm/zendesk/mappings.png)
 
-1. 監控區段摘要，並確保設定檔計數與區段內的計數相對應。
-   ![顯示區段的平台UI熒幕擷圖範例。](../../assets/catalog/crm/zendesk/segment.png)
+>[!IMPORTANT]
+>
+>此 `Attribute: last_name` 和 `Identity: email` 目标映射对于此目标是必需的。 如果缺少这些映射，则会忽略任何其他映射，并且不会将其发送到 [!DNL Zendesk].
 
-1. 登入 [!DNL Zendesk] 網站，然後導覽至 **[!UICONTROL 連絡人]** 頁面，以檢查是否已新增區段中的設定檔。 此清單可設定為顯示使用區段建立之其他欄位的欄 **[!UICONTROL 對應ID]** 和區段狀態。
-   ![Zendesk UI熒幕擷圖顯示「連絡人」頁面，其中包含以區段名稱建立的其他欄位。](../../assets/catalog/crm/zendesk/contacts.png)
+完成提供目标连接的映射后，选择 **[!UICONTROL 下一个]**.
 
-1. 或者，您也可以向下切入至個人 **[!UICONTROL 個人]** 頁面，並檢查 **[!UICONTROL 其他欄位]** 區段會顯示區段名稱和區段狀態。
-   ![Zendesk UI熒幕擷圖顯示「人員」頁面，而其他欄位區段顯示區段名稱和區段狀態。](../../assets/catalog/crm/zendesk/contact.png)
+### 计划区段导出和示例 {#schedule-segment-export-example}
 
-## 資料使用與控管 {#data-usage-governance}
+在 [[!UICONTROL 计划区段导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 在激活工作流的步骤中，您必须手动将Platform区段映射到中的自定义字段属性 [!DNL Zendesk].
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).
+为此，请选择每个区段，然后从中输入相应的自定义字段属性 [!DNL Zendesk] 在 **[!UICONTROL 映射Id]** 字段。
+
+下面显示了一个示例：
+![显示计划区段导出的平台UI屏幕截图示例。](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
+
+## 验证数据导出 {#exported-data}
+
+要验证您是否正确设置了目标，请执行以下步骤：
+
+1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 并导航到目标列表。
+1. 接下来，选择目标并切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择区段名称。
+   ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
+
+1. 监控区段摘要，并确保配置文件计数对应于区段内的计数。
+   ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/crm/zendesk/segment.png)
+
+1. 登录到 [!DNL Zendesk] 网站，然后导航到 **[!UICONTROL 联系人]** 页面以检查是否已添加区段中的配置文件。 可将此列表配置为显示使用区段创建的其他字段的列 **[!UICONTROL 映射Id]** 和区段状态。
+   ![Zendesk UI屏幕截图显示了“联系人”页面，其中包含使用区段名称创建的其他字段。](../../assets/catalog/crm/zendesk/contacts.png)
+
+1. 或者，您可以向下钻取到个人 **[!UICONTROL 人员]** 页面并检查 **[!UICONTROL 其他字段]** 部分显示区段名称和区段状态。
+   ![显示“人员”页面的Zendesk UI屏幕快照，其“其他字段”部分显示区段名称和区段状态。](../../assets/catalog/crm/zendesk/contact.png)
+
+## 数据使用和管理 {#data-usage-governance}
+
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](/help/data-governance/home.md).
 
 ## 其他资源 {#additional-resources}
 
-其他實用資訊來自 [!DNL Zendesk] 檔案如下：
-* [進行您的第一次通話](https://developer.zendesk.com/documentation/sales-crm/first-call/)
-* [自訂欄位](https://developer.zendesk.com/api-reference/sales-crm/requests/#custom-fields)
+其他有用信息来自 [!DNL Zendesk] 文档如下所示：
+* [进行首次调用](https://developer.zendesk.com/documentation/sales-crm/first-call/)
+* [自定义字段](https://developer.zendesk.com/api-reference/sales-crm/requests/#custom-fields)
 
 ### Changelog
 
-本節擷取此目的地聯結器的功能和重要檔案更新。
+此部分捕获此目标连接器的功能和重要文档更新。
 
-+++ 檢視變更記錄檔
++++ 查看更改日志
 
-| 發行月份 | 更新型別 | 描述 |
+| 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 4 月 | 檔案更新 | <ul><li>我們已更新 [使用案例](#use-cases) 區段，以更清楚的範例說明客戶何時可受益於使用此目的地。</li> <li>我們已更新 [對應](#mapping-considerations-example) 區段來反映正確的必要對應。 此 `Attribute: last_name` 和 `Identity: email` 目標對應是此目的地的必要專案。 如果缺少這些對應，則會忽略任何其他對應，且不會傳送至 [!DNL Zendesk].</li> <li>我們已更新 [對應](#mapping-considerations-example) 區段，其中包含強制和選擇性對應的明確範例。</li></ul> |
-| 2023 年 3 月 | 初始版本 | 初始目的地版本和檔案發佈。 |
+| 2023 年 4 月 | 文档更新 | <ul><li>我们更新了 [用例](#use-cases) 部分，其中包含客户何时可以受益于使用此目标的更清晰示例。</li> <li>我们更新了 [映射](#mapping-considerations-example) 部分，以反映正确的必需映射。 此 `Attribute: last_name` 和 `Identity: email` 目标映射对于此目标是必需的。 如果缺少这些映射，则会忽略任何其他映射，并且不会将其发送到 [!DNL Zendesk].</li> <li>我们更新了 [映射](#mapping-considerations-example) 部分，其中包含必需映射和可选映射的明确示例。</li></ul> |
+| 2023 年 3 月 | 初始版本 | 初始目标版本和文档发布。 |
 
 {style="table-layout:auto"}
 

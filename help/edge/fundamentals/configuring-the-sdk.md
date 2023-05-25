@@ -1,8 +1,8 @@
 ---
-title: 設定Adobe Experience Platform Web SDK
-description: 瞭解如何設定Adobe Experience Platform Web SDK。
+title: 配置Adobe Experience Platform Web SDK
+description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: Learn how to configure the Experience Platform Web SDK
-keywords: 設定；設定；SDK；Edge；Web SDK；設定；edgeConfigId；上下文；Web；裝置；環境；placeContext；debugEnabled；edgeDomain；orgId；clickCollectionEnabled；onBeforeEventSend；defaultConsent；Web sdk設定；prehidingStyle；不透明度；cookieDestinationsEnabled；urlDestinationsEnabled；idMigrationEnabled；therPartyCookiesEnabled；
+keywords: 配置；配置；SDK；edge；Web SDK；配置；edgeConfigId；上下文；Web；设备；环境；placeContext；debugEnabled；edgeDomain；orgId；clickCollectionEnabled；onBeforeEventSend；defaultConsent；Web SDK设置；prehidingStyle；不透明度；cookieDestinationsEnabled；urlDestinationsEnabled；idMigrationEnabled；therCookiesEnabled；
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
 source-git-commit: a192a746fa227b658fcdb8caa07ea6fb4ac1a944
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 9%
 
 ---
 
-# 設定Platform Web SDK
+# 配置平台Web SDK
 
-SDK的設定已完成 `configure` 命令。
+SDK的配置已完成 `configure` 命令。
 
 >[!IMPORTANT]
 >
->`configure` 是 *一律* 第一個命令稱為。
+>`configure` 是 *始终* 第一个命令名为。
 
 ```javascript
 alloy("configure", {
@@ -26,15 +26,15 @@ alloy("configure", {
 });
 ```
 
-設定期間可設定許多選項。 所有選項都可在下方找到，並按類別分組。
+可在配置期间设置许多选项。 所有选项均可在下面找到，并按类别分组。
 
-## 一般選項
+## 常规选项
 
 ### `edgeConfigId`
 
 >[!NOTE]
 >
->**Edge Configurations已重新命名為Datastreams。 資料串流ID與設定ID相同。**
+>**Edge Configurations已更名为数据流。 数据流ID与配置ID相同。**
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
@@ -42,25 +42,25 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-您指派的設定ID，可將SDK連結至適當的帳戶和設定。 在單一頁面中設定多個執行個體時，您必須設定不同的 `edgeConfigId` 每個執行個體使用。
+您分配的配置ID，用于将SDK链接到相应的帐户和配置。 在单个页面中配置多个实例时，必须配置不同的 `edgeConfigId` 针对每个实例。
 
 ### `context` {#context}
 
 | **类型** | 必需 | **默认值** |
 | ---------------- | ------------ | -------------------------------------------------- |
-| 字串陣列 | 否 | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
+| 字符串数组 | 否 | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
 
 {style="table-layout:auto"}
 
-指示要自動收集哪些內容類別，如中所述 [自動資訊](../data-collection/automatic-information.md). 如果未指定此設定，預設會使用所有類別。
+指示要自动收集的上下文类别，如中所述 [自动信息](../data-collection/automatic-information.md). 如果未指定此配置，则默认使用所有类别。
 
 >[!IMPORTANT]
 >
->所有內容屬性，但不包括 `highEntropyUserAgentHints`，預設為啟用。 如果您在Web SDK設定中手動指定內容屬性，則必須啟用所有內容屬性，才能繼續收集所需的資訊。
+>所有上下文属性，以下情况除外： `highEntropyUserAgentHints`，默认情况下处于启用状态。 如果您在Web SDK配置中手动指定了上下文属性，则必须启用所有上下文属性以继续收集所需信息。
 
-若要啟用 [高平均資訊量使用者端提示](user-agent-client-hints.md#enabling-high-entropy-client-hints) 在您的Web SDK部署中，您必須包含其他 `highEntropyUserAgentHints` 上下文選項，以及您現有的設定。
+启用 [高熵客户端提示](user-agent-client-hints.md#enabling-high-entropy-client-hints) 在Web SDK部署中，您必须包含其他 `highEntropyUserAgentHints` 上下文选项，以及您现有的配置。
 
-例如，若要從Web屬性擷取高平均資訊量使用者端提示，您的設定將如下所示：
+例如，要从Web属性检索高熵客户端提示，您的配置将如下所示：
 
 `context: ["highEntropyUserAgentHints", "web"]`
 
@@ -73,23 +73,23 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-指出是否已啟用偵錯。 將此設定設為 `true` 啟用下列功能：
+指示是否启用调试。 将此配置设置为 `true` 启用以下功能：
 
 | **功能** | **函数** |
 | ---------------------- | ------------------ |
-| 主控台記錄 | 啟用在瀏覽器的JavaScript主控台中顯示的偵錯訊息 |
+| 控制台日志记录 | 允许在浏览器的JavaScript控制台中显示调试消息 |
 
 {style="table-layout:auto"}
 
 ### `edgeDomain` {#edge-domain}
 
-將您的第一方網域填入此欄位。 如需詳細資訊，請參閱 [檔案](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans).
+使用您的第一方域填充此字段。 欲知更多详情，请参见 [文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans).
 
-網域類似於 `data.{customerdomain.com}` ，網址為www。{customerdomain.com}。
+该域类似于 `data.{customerdomain.com}` ，以访问www网站。{customerdomain.com}。
 
 ### `edgeBasePath` {#edge-base-path}
 
-用來與Adobe服務通訊和互動的edgeDomain之後的路徑。  通常這只有在未使用預設生產環境時才會變更。
+用于与Adobe服务通信及交互的edgeDomain之后的路径。  通常，只有在不使用默认生产环境时，此更改才会更改。
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
@@ -105,9 +105,9 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-您指派的 [!DNL Experience Cloud] 組織ID。 在一個頁面中設定多個執行個體時，您必須設定不同的 `orgId` 每個執行個體使用。
+您分配的 [!DNL Experience Cloud] 组织ID。 在页面中配置多个实例时，必须配置不同的 `orgId` 针对每个实例。
 
-## 資料彙集
+## 数据收集
 
 ### `clickCollectionEnabled` {#clickCollectionEnabled}
 
@@ -117,38 +117,38 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-指出是否自動收集與連結點選相關聯的資料。 另請參閱 [自動連結追蹤](../data-collection/track-links.md#automaticLinkTracking) 以取得詳細資訊。 如果連結包含下載屬性或結尾為副檔名的連結，也會標示為下載連結。 可使用規則運算式來設定下載連結限定詞。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
+指示是否自动收集与链接点击关联的数据。 参见 [自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking) 了解更多信息。 如果链接包含下载属性或以文件扩展名结尾，则还将其标记为下载链接。 可使用正则表达式配置下载链接限定符。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 函数 | 否 | () =>未定義 |
+| 函数 | 否 | () =>未定义 |
 
 {style="table-layout:auto"}
 
-設定在傳送前為每個事件呼叫的回呼。 具有欄位的物件 `xdm` 會傳送至回呼。 若要變更傳送的內容，請修改 `xdm` 物件。 在回呼內， `xdm` 物件已在事件命令中傳遞資料，且已自動收集資訊。 如需此回撥時間與範例的詳細資訊，請參閱 [全域修改事件](tracking-events.md#modifying-events-globally).
+配置在发送之前为每个事件调用的回调。 具有字段的对象 `xdm` 被发送到回调。 要更改发送的内容，请修改 `xdm` 对象。 在回调内部， `xdm` 对象已具有在event命令中传递的数据，以及自动收集的信息。 有关此回调时间及示例的更多信息，请参阅 [全局修改事件](tracking-events.md#modifying-events-globally).
 
 ### `onBeforeLinkClickSend` {#onBeforeLinkClickSend}
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
-| 函数 | 否 | () =>未定義 |
+| 函数 | 否 | () =>未定义 |
 
 {style="table-layout:auto"}
 
-設定在傳送前為每個連結點選追蹤事件呼叫的回呼。 callback傳送的物件具有 `xdm`， `clickedElement`、和 `data` 欄位。
+配置在发送之前为每个链接点击跟踪事件调用的回调。 callback发送一个对象，其中 `xdm`， `clickedElement`、和 `data` 字段。
 
-使用DOM元素結構來篩選連結追蹤時，您可以使用 `clickElement` 命令。 `clickedElement` 是已點按且已封裝上層節點樹狀結構的DOM元素節點。
+使用DOM元素结构过滤链接跟踪时，您可以使用 `clickElement` 命令。 `clickedElement` 是被单击并已封装父节点树的DOM元素节点。
 
-若要變更要傳送的資料，請修改 `xdm` 和/或 `data` 物件。 在回呼內， `xdm` 物件已在事件命令中傳遞資料，且已自動收集資訊。
+要更改发送的数据，请修改 `xdm` 和/或 `data` 对象。 在回调内部， `xdm` 对象已具有在event命令中传递的数据，以及自动收集的信息。
 
-* 任何以外的值 `false` 將允許處理事件並傳送回呼。
-* 如果回呼傳回 `false` 值、事件處理已停止（沒有錯誤），且事件未傳送。 此機制可讓您透過檢查事件資料並傳回 `false` 是否不應傳送事件。
-* 如果callback擲回例外狀況，則事件的處理會停止，且不會傳送事件。
+* 除以外的任何值 `false` 将允许处理事件并发送回调。
+* 如果回调返回 `false` 值，事件处理将停止，并且不会出现错误，并且不会发送事件。 此机制允许通过检查事件数据并返回来过滤掉某些事件 `false` 如果不发送该事件。
+* 如果回调引发异常，则停止处理该事件，并且不发送该事件。
 
 
-## 隱私權選項
+## 隐私选项
 
 ### `defaultConsent` {#default-consent}
 
@@ -158,13 +158,13 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-設定使用者的預設同意。 若尚未儲存使用者的同意偏好設定，請使用此設定。 其他有效值為 `"pending"` 和 `"out"`. 此預設值不會持續存在於使用者的設定檔中。 使用者的設定檔只有在以下情況下才會更新 `setConsent` 稱為。
-* `"in"`：若此設定已設定或未提供值，則工作無需使用者同意偏好設定即可進行。
-* `"pending"`：設定此設定時，工作會排入佇列，直到使用者提供同意偏好設定為止。
-* `"out"`：設定此設定時，會捨棄工作，直到使用者提供同意偏好設定為止。
-提供使用者的偏好設定後，工作會根據使用者的偏好設定進行或中止。 另請參閱 [支援同意](../consent/supporting-consent.md) 以取得詳細資訊。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，使用此设置。 其他有效值为 `"pending"` 和 `"out"`. 此默认值不会保留在用户配置文件中。 用户配置文件仅在以下情况下更新 `setConsent` 称为。
+* `"in"`：如果设置此设置或未提供值，则无需用户同意即可继续工作。
+* `"pending"`：设置此设置后，工作将排入队列，直到用户提供同意首选项。
+* `"out"`：设置此设置后，将放弃工作，直到用户提供同意首选项。
+提供用户的首选项后，工作会根据用户的首选项进行或中止。 参见 [支持同意](../consent/supporting-consent.md) 了解更多信息。
 
-## 個人化選項 {#personalization}
+## 个性化选项 {#personalization}
 
 ### `prehidingStyle` {#prehidingStyle}
 
@@ -174,9 +174,9 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-用來建立CSS樣式定義，在從伺服器載入個人化內容時隱藏網頁的內容區域。 如果未提供此選項，SDK在載入個人化內容時不會嘗試隱藏任何內容區域，這可能會導致「閃爍」。
+用于创建在从服务器加载个性化内容时隐藏网页内容区域的CSS样式定义。 如果未提供此选项，则SDK在加载个性化内容时不会尝试隐藏任何内容区域，这可能会导致“闪烁”。
 
-例如，如果網頁上的某個元素的ID為 `container`，在從伺服器載入個人化內容時，您要隱藏其預設內容，請使用下列預先隱藏樣式：
+例如，如果网页上的某个元素的ID为 `container`，在从服务器加载个性化内容时，要隐藏其默认内容，请使用以下预隐藏样式：
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -184,15 +184,15 @@ alloy("configure", {
 
 ### `targetMigrationEnabled` {#targetMigrationEnabled}
 
-從移轉個別頁面時，應使用此選項 [!DNL at.js] 至Web SDK。
+从迁移单个页面时应使用此选项 [!DNL at.js] 到Web SDK。
 
-使用此選項可讓Web SDK讀取和寫入舊版 `mbox` 和 `mboxEdgeCluster` 使用的Cookie [!DNL at.js]. 這可協助您在從使用Web SDK的頁面移至使用 [!DNL at.js] 資料庫或反之。
+使用此选项可使Web SDK能够读取和写入旧版 `mbox` 和 `mboxEdgeCluster` 使用的Cookie [!DNL at.js]. 这有助于您在从使用Web SDK的页面移动到使用 [!DNL at.js] 库或反之。
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `false` |
 
-## 對象選項
+## 受众选项
 
 ### `cookieDestinationsEnabled`
 
@@ -202,7 +202,7 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-啟用 [!DNL Audience Manager] Cookie目的地，可讓您根據區段資格來設定Cookie。
+启用 [!DNL Audience Manager] Cookie目标，用于根据区段鉴别设置Cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -212,9 +212,9 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-啟用 [!DNL Audience Manager] URL目的地，可讓您根據區段資格引發URL。
+启用 [!DNL Audience Manager] URL目标，允许根据区段鉴别触发URL。
 
-## 身分選項
+## 标识选项
 
 ### `idMigrationEnabled` {#id-migration-enabled}
 
@@ -224,9 +224,9 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-如果為true，SDK會讀取及設定舊的AMCV Cookie。 當網站某些部分仍可能使用Visitor.js時，此選項可協助您轉換至使用Adobe Experience Platform Web SDK。
+如果为true，则SDK会读取和设置旧的AMCV Cookie。 当网站的某些部分可能仍使用Visitor.js时，此选项有助于过渡到Adobe Experience Platform Web SDK的使用。
 
-如果頁面上定義了訪客API，SDK會查詢訪客API以取得ECID。 此選項可讓您使用Adobe Experience Platform Web SDK來雙標籤頁面，並且仍然擁有相同的ECID。
+如果页面上定义了访客API，则SDK会查询访客API以获取ECID。 通过此选项，您可以使用Adobe Experience Platform Web SDK对页面进行双重标记，并且仍然具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 
@@ -236,4 +236,4 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-啟用設定Adobe第三方Cookie。 SDK可在協力廠商內容中儲存訪客ID，以便跨網站使用相同的訪客ID。 如果您有多個網站或想與合作夥伴共用資料，請使用此選項；不過，有時基於隱私權原因並不需要此選項。
+启用设置Adobe第三方Cookie。 SDK可以在第三方上下文中保留访客ID，以便跨网站使用相同的访客ID。 如果您有多个网站或要与合作伙伴共享数据，请使用此选项；但是，出于隐私原因，有时并不需要使用此选项。

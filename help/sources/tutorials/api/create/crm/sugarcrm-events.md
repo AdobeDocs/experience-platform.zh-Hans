@@ -1,6 +1,6 @@
 ---
-title: 使用流量服務API為SugarCRM事件建立來源連線和資料流
-description: 瞭解如何使用Flow Service API將Adobe Experience Platform連結至SugarCRM Events。
+title: 使用流服务API为SugarCRM事件创建源连接和数据流
+description: 了解如何使用流服务API将Adobe Experience Platform连接到SugarCRM Events。
 exl-id: 12d08010-569c-4111-ba95-697c6ce6f637
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -9,42 +9,42 @@ ht-degree: 1%
 
 ---
 
-# (Beta)為以下專案建立來源連線和資料流： [!DNL SugarCRM Events] 使用流量服務API
+# （测试版）为以下对象创建源连接和数据流： [!DNL SugarCRM Events] 使用流服务API
 
 >[!NOTE]
 >
->此 [!DNL SugarCRM Events] 來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
+>此 [!DNL SugarCRM Events] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
 
-下列教學課程將逐步引導您完成建立 [!DNL SugarCRM Events] 來源連線並建立資料流以帶來 [[!DNL SugarCRM]](https://www.sugarcrm.com/) 使用將事件資料傳送至Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建 [!DNL SugarCRM Events] 源连接并创建数据流以引入 [[!DNL SugarCRM]](https://www.sugarcrm.com/) 使用将事件数据发送到Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Experience Platform元件：
+本指南要求您对Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下小節提供成功連線所需瞭解的其他資訊 [!DNL SugarCRM] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接时需要了解的其他信息 [!DNL SugarCRM] 使用 [!DNL Flow Service] API。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了連線 [!DNL SugarCRM Events] 至Platform，您必須提供下列連線屬性的值：
+为了连接 [!DNL SugarCRM Events] 到Platform时，必须提供以下连接属性的值：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `host` | 來源所連線的SugarCRM API端點。 | `developer.salesfusion.com` |
-| `username` | 您的SugarCRM開發人員帳戶使用者名稱。 | `abc.def@example.com@sugarmarketdemo000.com` |
-| `password` | 您的SugarCRM開發人員帳戶密碼。 | `123456789` |
+| `host` | 源连接到的SugarCRM API端点。 | `developer.salesfusion.com` |
+| `username` | 您的SugarCRM开发人员帐户用户名。 | `abc.def@example.com@sugarmarketdemo000.com` |
+| `password` | 您的SugarCRM开发人员帐户密码。 | `123456789` |
 
-## Connect [!DNL SugarCRM Events] 至平台，使用 [!DNL Flow Service] API
+## Connect [!DNL SugarCRM Events] 到平台，使用 [!DNL Flow Service] API
 
-以下概述驗證您的憑證所需的步驟 [!DNL SugarCRM] 來源、建立來源連線，以及建立資料流，以將您的事件資料帶到Experience Platform。
+下面概述了进行身份验证所需的步骤 [!DNL SugarCRM] 源，创建源连接，并创建数据流以将事件数据引入Experience Platform。
 
-### 建立基礎連線 {#base-connection}
+### 创建基本连接 {#base-connection}
 
-基礎連線會保留您的來源和平台之間的資訊，包括來源的驗證認證、連線的目前狀態，以及您唯一的基本連線ID。 基本連線ID可讓您瀏覽和瀏覽來源內的檔案，並識別您要擷取的特定專案，包括其資料型別和格式的資訊。
+基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST若要建立基本連線ID，請向 `/connections` 端點，同時提供 [!DNL SugarCRM Events] 要求內文中的驗證認證。
+POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL SugarCRM Events] 作为请求正文一部分的身份验证凭据。
 
 **API格式**
 
@@ -54,7 +54,7 @@ POST /connections
 
 **请求**
 
-下列要求會建立 [!DNL SugarCRM Events]：
+以下请求创建基本连接 [!DNL SugarCRM Events]：
 
 ```shell
 curl -X POST \
@@ -84,17 +84,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基礎連線的名稱。 確定基本連線的名稱是描述性的，因為您可以使用此名稱來查閱基本連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供基礎連線的詳細資訊。 |
-| `connectionSpec.id` | 來源的連線規格ID。 在您的來源註冊並核准後，您便可以透過擷取此ID [!DNL Flow Service] API。 |
-| `auth.specName` | 您用來向Platform驗證來源的驗證型別。 |
-| `auth.params.host` | SugarCRM API主機： *developer.salesfusion.com* |
-| `auth.params.username` | 您的SugarCRM開發人員帳戶使用者名稱。 |
-| `auth.params.password` | 您的SugarCRM開發人員帳戶密碼。 |
+| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
+| `connectionSpec.id` | 源的连接规范ID。 在您的源通过注册和批准后，可以检索此ID [!DNL Flow Service] API。 |
+| `auth.specName` | 用于向Platform验证源的身份验证类型。 |
+| `auth.params.host` | SugarCRM API主机： *developer.salesfusion.com* |
+| `auth.params.username` | 您的SugarCRM开发人员帐户用户名。 |
+| `auth.params.password` | 您的SugarCRM开发人员帐户密码。 |
 
 **响应**
 
-成功回應會傳回新建立的基本連線，包括其唯一連線識別碼(`id`)。 在下一個步驟中探索來源的檔案結構和內容時，需要此ID。
+成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -103,10 +103,10 @@ curl -X POST \
 }
 ```
 
-### 探索您的來源 {#explore}
+### 浏览您的源 {#explore}
 
-使用您在上一步中產生的基本連線ID，您可以透過執行GET請求來探索檔案和目錄。
-使用以下呼叫來尋找您要帶入的檔案路徑 [!DNL Platform]：
+使用上一步中生成的基本连接ID，您可以通过执行GET请求来浏览文件和目录。
+使用以下调用查找要引入的文件的路径 [!DNL Platform]：
 
 **API格式**
 
@@ -114,16 +114,16 @@ curl -X POST \
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fileType={FILE_TYPE}&preview={PREVIEW}&sourceParams={SOURCE_PARAMS}
 ```
 
-執行GET請求以探索來源的檔案結構和內容時，您必須包括下表列出的查詢引數：
+执行GET请求以浏览源的文件结构和内容时，必须包括下表列出的查询参数：
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 在上一步中產生的基本連線ID。 |
-| `objectType=rest` | 您要探索的物件型別。 目前，此值一律設為 `rest`. |
-| `{OBJECT}` | 只有在檢視特定目錄時才需要此引數。 其值代表您要探索的目錄路徑。 對於此來源，值將為 `json`. |
-| `fileType=json` | 您要帶到Platform的檔案型別。 目前， `json` 是唯一支援的檔案型別。 |
-| `{PREVIEW}` | 定義連線內容是否支援預覽的布林值。 |
-| `{SOURCE_PARAMS}` | 定義您要帶到Platform之來源檔案的引數。 擷取接受的格式型別 `{SOURCE_PARAMS}`，您必須以base64編碼整個字串。 <br> [!DNL SugarCRM Events] 不需要任何裝載。 的值 `{SOURCE_PARAMS}` 傳遞為 `{}`，以base64編碼，等同於 `e30=` 如下所示。 |
+| `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
+| `objectType=rest` | 您希望浏览的对象类型。 目前，此值始终设置为 `rest`. |
+| `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 对于此源，值将为 `json`. |
+| `fileType=json` | 要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
+| `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
+| `{SOURCE_PARAMS}` | 为要带到Platform的源文件定义参数。 检索接受的格式类型 `{SOURCE_PARAMS}`，则必须在base64中编码整个字符串。 <br> [!DNL SugarCRM Events] 不需要任何有效负载。 的值 `{SOURCE_PARAMS}` 传递为 `{}`，以base64编码，它等同于 `e30=` 如下所示。 |
 
 **请求**
 
@@ -138,7 +138,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回查詢檔案的結構。 *已移除部分記錄，以便提供更好的簡報。*
+成功响应将返回查询文件的结构。 *已删除一些记录，以便更好地呈现。*
 
 ```json
 {
@@ -293,9 +293,9 @@ curl -X GET \
 }
 ```
 
-### 建立來源連線 {#source-connection}
+### 创建源连接 {#source-connection}
 
-您可以向以下發出POST要求來建立來源連線： [!DNL Flow Service] API。 來源連線由連線ID、來源資料檔案的路徑和連線規格ID組成。
+您可以通过对以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -305,7 +305,7 @@ POST /sourceConnections
 
 **请求**
 
-以下請求會為建立來源連線 [!DNL SugarCRM Events]：
+以下请求创建源连接 [!DNL SugarCRM Events]：
 
 ```shell
 curl -X POST \
@@ -333,15 +333,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 來源連線的名稱。 確保來源連線的名稱是描述性的，因為您可以使用此名稱來查閱來源連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供來源連線的詳細資訊。 |
-| `baseConnectionId` | 的基礎連線ID： [!DNL SugarCRM Events]. 此ID是在先前的步驟中產生的。 |
-| `connectionSpec.id` | 與您的來源對應的連線規格ID。 |
-| `data.format` | 的格式 [!DNL SugarCRM Events] 您要擷取的資料。 目前唯一支援的資料格式為 `json`. |
+| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
+| `baseConnectionId` | 的基本连接ID [!DNL SugarCRM Events]. 此ID是在前面的步骤中生成的。 |
+| `connectionSpec.id` | 与源对应的连接规范ID。 |
+| `data.format` | 的格式 [!DNL SugarCRM Events] 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 此ID在後續步驟中是建立資料流的必要專案。
+成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
 
 ```json
 {
@@ -350,25 +350,25 @@ curl -X POST \
 }
 ```
 
-### 建立目標XDM結構描述 {#target-schema}
+### 创建目标XDM架构 {#target-schema}
 
-為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 然後，目標結構描述會用於建立包含來源資料的Platform資料集。
+为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可透過對以下專案執行POST請求來建立目標XDM結構描述： [結構描述登入API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
 
-### 建立目標資料集 {#target-dataset}
+### 创建目标数据集 {#target-dataset}
 
-您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在裝載中提供目標結構描述的ID。
+可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
 
-### 建立目標連線 {#target-connection}
+### 创建目标连接 {#target-connection}
 
-目標連線代表與要儲存所擷取資料的目的地之間的連線。 若要建立目標連線，您必須提供對應至資料湖的固定連線規格ID。 此ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-您現在擁有目標結構描述、目標資料集和到資料湖的連線規格ID的唯一識別碼。 使用這些識別碼，您可以使用 [!DNL Flow Service] 指定將包含傳入來源資料之資料集的API。
+现在，您拥有目标架构、目标数据集和到数据湖的连接规范ID的唯一标识符。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -378,7 +378,7 @@ POST /targetConnections
 
 **请求**
 
-以下請求會建立目標連線 [!DNL SugarCRM Events]：
+以下请求创建目标连接 [!DNL SugarCRM Events]：
 
 ```shell
 curl -X POST \
@@ -410,15 +410,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 目標連線的名稱。 確保目標連線的名稱是描述性的，因為您可以使用此名稱來查詢目標連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供目標連線的詳細資訊。 |
-| `connectionSpec.id` | 對應至Data Lake的連線規格ID。 此固定ID為： `6b137bf6-d2a0-48c8-914b-d50f4942eb85`. |
-| `data.format` | 的格式 [!DNL SugarCRM Events] 您要擷取的資料。 |
-| `params.dataSetId` | 在上一步中擷取的目標資料集ID。 |
+| `name` | 目标连接的名称。 确保目标连接的名称是描述性的，因为您可以使用此名称查找有关目标连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
+| `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `6b137bf6-d2a0-48c8-914b-d50f4942eb85`. |
+| `data.format` | 的格式 [!DNL SugarCRM Events] 要摄取的数据。 |
+| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
 
 **响应**
 
-成功回應會傳回新目標連線的唯一識別碼(`id`)。 此ID在後續步驟中是必要的。
+成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -427,9 +427,9 @@ curl -X POST \
 }
 ```
 
-### 建立對應 {#mapping}
+### 创建映射 {#mapping}
 
-為了將來源資料內嵌到目標資料集中，必須先將其對應到目標資料集所遵守的目標結構描述。 這是透過向執行POST請求來達成 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 要求裝載中定義資料對應。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
 
 **API格式**
 
@@ -536,14 +536,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `outputSchema.schemaRef.id` | 的ID [目標XDM結構描述](#target-schema) 已在先前步驟中產生。 |
-| `mappings.sourceType` | 正在對應的來源屬性型別。 |
-| `mappings.source` | 需要對映至目的地XDM路徑的來源屬性。 |
-| `mappings.destination` | 來源屬性對應到的目的地XDM路徑。 |
+| `outputSchema.schemaRef.id` | 的ID [目标XDM架构](#target-schema) 在之前的步骤中生成。 |
+| `mappings.sourceType` | 正在映射的源属性类型。 |
+| `mappings.source` | 需要映射到目标XDM路径的源属性。 |
+| `mappings.destination` | 源属性将映射到的目标XDM路径。 |
 
 **响应**
 
-成功回應會傳回新建立對應的詳細資料，包括其唯一識別碼(`id`)。 在後續步驟中需要此值，才能建立資料流。
+成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -556,17 +556,17 @@ curl -X POST \
 }
 ```
 
-### 建立流程 {#flow}
+### 创建流 {#flow}
 
-從以下來源取得資料的最後一步 [!DNL SugarCRM Events] 對Platform而言，就是建立資料流。 到現在為止，您已準備下列必要值：
+从以下来源获取数据的最后一步 [!DNL SugarCRM Events] 到Platform就是创建数据流。 现在，您已准备以下必需值：
 
-* [來源連線ID](#source-connection)
-* [目標連線ID](#target-connection)
+* [源连接ID](#source-connection)
+* [目标连接ID](#target-connection)
 * [映射 ID](#mapping)
 
-資料流負責從來源排程及收集資料。 您可以執行POST要求，同時在裝載中提供先前提及的值，藉此建立資料流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
 
-若要排程內嵌，您必須先將開始時間值設為以秒為單位的epoch時間。 然後，您必須將頻率值設定為以下之一 `hour` 或 `day`. 間隔值會指定兩個連續擷取之間的期間。 間隔值應設為 `1` 或 `24` 依據 `scheduleParams.frequency` 選取 `hour` 或 `day`.
+要计划摄取，您必须先将开始时间值设置为纪元时间（以秒为单位）。 然后，必须将频率值设置为以下值之一 `hour` 或 `day`. 间隔值用于指定两次连续摄取之间的时间段。 间隔值应设置为 `1` 或 `24` 根据 `scheduleParams.frequency` 选择 `hour` 或 `day`.
 
 **API格式**
 
@@ -615,23 +615,23 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 資料流的名稱。 確保資料流的名稱是描述性的，因為您可以使用此名稱來查閱資料流上的資訊。 |
-| `description` | 您可以納入的選用值，可提供資料流的詳細資訊。 |
-| `flowSpec.id` | 建立資料流所需的流量規格ID。 此固定ID為： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
-| `flowSpec.version` | 流程規格ID的對應版本。 此值預設為 `1.0`. |
-| `sourceConnectionIds` | 此 [來源連線ID](#source-connection) 已在先前步驟中產生。 |
-| `targetConnectionIds` | 此 [目標連線ID](#target-connection) 已在先前步驟中產生。 |
-| `transformations` | 此屬性包含套用至您的資料所需的各種轉換。 將非XDM相容的資料引進Platform時，需要此屬性。 |
-| `transformations.name` | 指定給轉換的名稱。 |
-| `transformations.params.mappingId` | 此 [對應ID](#mapping) 已在先前步驟中產生。 |
-| `transformations.params.mappingVersion` | 對應ID的對應版本。 此值預設為 `0`. |
-| `scheduleParams.startTime` | 此屬性包含資料流擷取排程的相關資訊。 |
-| `scheduleParams.frequency` | 資料流收集資料的頻率。 可接受的值包括： `hour` 或 `day`. |
-| `scheduleParams.interval` | 間隔會指定兩個連續資料流執行之間的期間。 間隔值應為非零整數。 間隔值應設為 `1` 或 `24` 依據 `scheduleParams.frequency` 選取 `hour` 或 `day`. |
+| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
+| `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
+| `sourceConnectionIds` | 此 [源连接ID](#source-connection) 在之前的步骤中生成。 |
+| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
+| `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
+| `transformations.name` | 分配给转换的名称。 |
+| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
+| `scheduleParams.startTime` | 此属性包含有关数据流的摄取调度的信息。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `hour` 或 `day`. |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 间隔值应设置为 `1` 或 `24` 根据 `scheduleParams.frequency` 选择 `hour` 或 `day`. |
 
 **响应**
 
-成功的回應會傳回ID (`id`)。 您可以使用此ID來監視、更新或刪除資料流。
+成功的响应会返回ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
 
 ```json
 {
@@ -642,24 +642,24 @@ curl -X POST \
 
 ## 附录
 
-下節提供您可以監視、更新和刪除資料流的步驟相關資訊。
+以下部分提供了有关监视、更新和删除数据流的步骤的信息。
 
-### 監視資料流
+### 监测数据流
 
-建立資料流後，您可以監視透過它擷取的資料，以檢視有關資料流執行、完成狀態和錯誤的資訊。 如需完整的API範例，請閱讀以下指南： [使用API監控您的來源資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读以下指南： [使用API监控源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
 
-### 更新您的資料流
+### 更新您的数据流
 
-透過向以下專案發出PATCH請求，更新資料流的詳細資訊，例如其名稱和說明，及其執行排程和相關聯的對應集 `/flows` 端點 [!DNL Flow Service] API，同時提供資料流的ID。 提出PATCH請求時，您必須提供資料流的 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新來源資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
-### 更新您的帳戶
+### 更新您的帐户
 
-透過對執行PATCH請求，更新來源帳戶的名稱、說明和認證 [!DNL Flow Service] API時，提供您的基本連線ID作為查詢引數。 提出PATCH請求時，您必須提供來源帳戶的唯一值 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新您的來源帳戶](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
-### 刪除您的資料流
+### 删除数据流
 
-透過對執行DELETE請求來刪除您的資料流 [!DNL Flow Service] API，同時提供您要作為查詢引數的一部分刪除的資料流的ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
 
-### 刪除您的帳戶
+### 删除您的帐户
 
-透過對執行DELETE請求來刪除您的帳戶 [!DNL Flow Service] API，同時提供您要刪除之帳戶的基本連線ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的來源帳戶](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

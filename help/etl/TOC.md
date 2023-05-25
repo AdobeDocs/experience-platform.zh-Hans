@@ -11,9 +11,9 @@ ht-degree: 58%
 ---
 
 
-# 以Experience Platform擷取、轉換和載入程式 {#etl}
+# 在Experience Platform中提取、转换和加载过程 {#etl}
 
-- [開發ETL整合](home.md)
-- [ETL轉換](transformations.md)
-- [ETL工作流程](workflow.md)
-- [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+- [开发ETL集成](home.md)
+- [ETL变换](transformations.md)
+- [ETL工作流](workflow.md)
+- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；建立批次；目錄服務；api
+keywords: Experience Platform；主页；热门主题；创建批处理；目录服务；API
 solution: Experience Platform
-title: 在API中建立批次
-description: 您可以在Catalog API中向/batches端點發出POST要求來建立批次。
+title: 在API中创建批次
+description: 您可以通过向Catalog API中的/batches端点发出POST请求来创建批处理。
 exl-id: 1d2cbca9-1cd6-4b89-9b77-3687268bd849
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -11,9 +11,9 @@ ht-degree: 3%
 
 ---
 
-# 建立批次
+# 创建批次
 
-為了讓資料集內嵌資料，資料集必須有關聯的批次。 使用 `id` 資料集的值，您可以透過向以下專案發出POST請求來建立批次： `/batches` 中的端點 [!DNL Catalog] API。
+为了让数据集摄取数据，它必须有一个关联的批次。 使用 `id` 值之外，还可以通过向以下对象发出POST请求来创建批次： `/batches` 中的端点 [!DNL Catalog] API。
 
 **API格式**
 
@@ -38,11 +38,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | 属性 | 描述 |
 | --- | --- |
-| `datasetId` | 此 `id` 批次將與之關聯的資料集的ID。 |
+| `datasetId` | 此 `id` 批次将关联的数据集的ID。 |
 
 **响应**
 
-成功的回應會傳回HTTP狀態201 （已建立）以及包含新建立批次詳細資訊的回應物件，包括其 `id`，系統產生的唯讀字串。
+成功的响应会返回HTTP状态201（已创建）和一个响应对象，其中包含新创建的批处理的详细信息，包括其 `id`，系统生成的只读字符串。
 
 ```JSON
 {

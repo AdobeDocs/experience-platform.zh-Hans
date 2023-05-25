@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；方形；方形
-title: 在UI中建立方形來源連線
-description: 瞭解如何使用Adobe Experience Platform UI建立方形來源連線。
+keywords: Experience Platform；主页；热门主题；方形；方形
+title: 在UI中创建正方形源连接
+description: 了解如何使用Adobe Experience Platform UI创建正方形源连接。
 exl-id: 7cdfeb36-c989-4875-bb94-e6594ddf30da
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
@@ -10,59 +10,59 @@ ht-degree: 1%
 
 ---
 
-# 建立 [!DNL Square] ui中的來源連線
+# 创建 [!DNL Square] UI中的源连接
 
-本教學課程提供建立 [!DNL Square] 使用Platform使用者介面的來源聯結器。
+本教程提供了用于创建 [!DNL Square] 源连接器，使用平台用户界面。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了存取您的 [!DNL Square] 帳戶平台，您必須提供下列值：
+要访问您的 [!DNL Square] 帐户平台，您必须提供以下值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | --- | --- |
-| Host | 的URL [!DNL Square] 執行個體。 |
-| 使用者端ID | 與您的關聯的使用者端ID [!DNL Square] 帳戶。 |
-| 使用者端密碼 | 與您的關聯的使用者端密碼 [!DNL Square] 帳戶。 |
-| 存取權杖 | 存取權杖會用於驗證您的 [!DNL Square] 具有OAuth 2.0驗證的帳戶。 存取權杖可以從 [!DNL Square]. |
-| 重新整理Token | 重新整理Token可在您目前的存取Token過期後，用來產生新的存取Token。 重新整理權杖可以從 [!DNL Square]. |
+| Host | 的URL [!DNL Square] 实例。 |
+| 客户端ID | 与您的关联的客户端ID [!DNL Square] 帐户。 |
+| 客户端密码 | 与您的关联的客户端密钥 [!DNL Square] 帐户。 |
+| 访问令牌 | 访问令牌用于验证您的 [!DNL Square] 具有OAuth 2.0身份验证的帐户。 访问令牌可从获取 [!DNL Square]. |
+| 刷新令牌 | 刷新令牌用于在当前访问令牌过期后生成新的访问令牌。 可以从获取刷新令牌 [!DNL Square]. |
 
-如需這些認證以及如何取得認證的詳細資訊，請參閱 [[!DNL Square] oauth上的檔案](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens).
+有关这些凭据以及如何获取这些凭据的更多信息，请参阅 [[!DNL Square] oauth上的文档](https://developer.squareup.com/docs/oauth-api/receive-and-manage-tokens).
 
-收集完所需的認證後，您可以依照下列步驟連結 [!DNL Square] 至平台的帳戶。
+收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Square] Platform帐户。
 
-## 連線您的 [!DNL Square] 帳戶
+## 连接您的 [!DNL Square] 帐户
 
-在Platform UI中選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 [!UICONTROL 付款] 類別，選取 **[!UICONTROL 方形]**，然後選取 **[!UICONTROL 新增資料]**.
+在 [!UICONTROL 支付] 类别，选择 **[!UICONTROL 方形]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![目錄](../../../../images/tutorials/create/square/catalog.png)
+![目录](../../../../images/tutorials/create/square/catalog.png)
 
-此 **[!UICONTROL 連線至方形]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接到方形]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取 [!DNL Square] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择 [!DNL Square] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![現有](../../../../images/tutorials/create/square/existing.png)
+![现有](../../../../images/tutorials/create/square/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、可選說明和適合您的專案的適當值。 [!DNL Square] 認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为提供名称、可选描述和相应的值 [!DNL Square] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
 
 ![新](../../../../images/tutorials/create/square/new.png)
 
 ## 后续步骤
 
-依照本教學課程所述，您已驗證並建立您與 [!DNL Square] 帳戶和平台。 您現在可以繼續下一節教學課程和 [建立資料流以將付款資料帶入Platform](../../dataflow/payments.md).
+按照本教程，您已验证并创建了源连接，该连接位于 [!DNL Square] 帐户和平台。 您现在可以继续下一教程和 [创建数据流以将支付数据引入Platform](../../dataflow/payments.md).

@@ -1,7 +1,7 @@
 ---
-title: 搭配Platform Web SDK使用Adobe Target
-description: 瞭解如何使用Adobe Target以Experience Platform Web SDK呈現個人化內容
-keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；預先隱藏程式碼片段；vec；表單式體驗撰寫器；xdm；對象；決定；範圍；結構；系統圖表；圖表
+title: 在Platform Web SDK中使用Adobe Target
+description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
+keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图表
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
 source-git-commit: 5a048505be139b58dbb3bf85120df5e3cc46881e
 workflow-type: tm+mt
@@ -12,69 +12,69 @@ ht-degree: 6%
 
 # 使用 [!DNL Adobe Target] 使用 [!DNL Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] 可以傳遞和轉譯受管理的個人化體驗 [!DNL Adobe Target] 至網路頻道。 您可以使用WYSIWYG編輯器，稱為 [視覺化體驗撰寫器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)或非視覺化介面， [表單式體驗撰寫器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)，以建立、啟用及傳遞您的活動和個人化體驗。
+[!DNL Adobe Experience Platform] [!DNL Web SDK] 可以投放和渲染在中管理的个性化体验 [!DNL Adobe Target] 到Web渠道。 您可以使用WYSIWYG编辑器，称为 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC)或非可视化界面， [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)，以创建、激活和交付您的活动和个性化体验。
 
 >[!IMPORTANT]
 >
->瞭解如何透過將您的Target實作移轉至Platform Web SDK [將Target從at.js 2.x移轉至Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) 教學課程。
+>了解如何使用，将您的Target实施迁移到Platform Web SDK [将Target从at.js 2.x迁移到Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) 教程。
 >
->瞭解如何使用第一次實作Target [使用Web SDK實作Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 教學課程。 如需Target的特定資訊，請參閱教學課程中標題為 [使用Platform Web SDK設定Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>了解如何使用首次实施Target [使用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 教程。 有关特定于Target的信息，请参阅名为的教程部分 [使用Platform Web SDK设置Target](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
 
 
-下列功能已經過測試，目前支援 [!DNL Target]：
+以下功能已经过测试，当前支持 [!DNL Target]：
 
-* [A/B測試](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T曝光和轉換報告](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
-* [Automated Personalization活動](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [體驗鎖定目標活動](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [多變數測試(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
+* [A/B测试](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
+* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
+* [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
+* [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
+* [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
 * [Recommendations 活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
-* [原生目標曝光和轉換報告](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
-* [VEC支援](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
+* [原生Target展示和转化报表](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
+* [VEC支持](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
-## [!DNL Platform Web SDK] 系統圖表
+## [!DNL Platform Web SDK] 系统图
 
-下圖可協助您瞭解 [!DNL Target] 和 [!DNL Platform Web SDK] 邊緣決策。
+下图可帮助您了解的工作流 [!DNL Target] 和 [!DNL Platform Web SDK] edge decisioning.
 
-![使用Platform Web SDK的Adobe Target邊緣決策圖表](./assets/target-platform-web-sdk.png)
+![Adobe Target Edge Decisioning与Platform Web SDK的示意图](./assets/target-platform-web-sdk.png)
 
 | 调用 | 详细信息 |
 | --- | --- |
-| 1 | 裝置載入 [!DNL Platform Web SDK]. 此 [!DNL Platform Web SDK] 會傳送要求至Edge網路，要求中包含XDM資料、資料串流環境ID、傳入引數和客戶ID （選用）。 頁面（或容器）已預先隱藏。 |
-| 2 | Edge Network會傳送要求給Edge Services，以使用訪客ID、同意和其他訪客內容資訊（例如地理位置和方便使用的裝置名稱）來擴充要求。 |
-| 3 | 邊緣網路會將擴充的個人化請求傳送至 [!DNL Target] 邊緣包含訪客ID和傳入的引數。 |
-| 4 | 個人資料指令碼執行，然後注入到 [!DNL Target] 設定檔儲存。 設定檔儲存體會從擷取區段 [!UICONTROL 對象庫] (例如，從以下專案共用的區段： [!DNL Adobe Analytics]， [!DNL Adobe Audience Manager]，則 [!DNL Adobe Experience Platform])。 |
-| 5 | 根據URL要求引數和設定檔資料， [!DNL Target] 決定要針對目前頁面檢視和未來預先擷取的檢視，為訪客顯示哪些活動和體驗。 [!DNL Target] 然後將此資料傳回邊緣網路。 |
-| 6 | a. Edge Network會將個人化回應傳送回頁面，選擇性地包括其他個人化的設定檔值。 目前頁面上的個人化內容會儘快顯示，不會有忽隱忽現的預設內容。<br>b.作為使用者在單頁應用程式(SPA)中的動作結果而針對檢視顯示的個人化內容會經過快取，以便在觸發檢視時立刻套用，不需額外的伺服器呼叫。 <br>c. Edge網路會傳送訪客ID和Cookie中的其他值，例如同意、工作階段ID、身分、Cookie檢查、個人化等。 |
-| 7 | 邊緣網路轉送 [!UICONTROL 目標分析] 「 」的(A4T)詳細資料（活動、體驗和轉換中繼資料） [!DNL Analytics] edge。 |
+| 1 | 设备加载 [!DNL Platform Web SDK]. 此 [!DNL Platform Web SDK] 使用XDM数据、数据流环境ID、传入参数和客户ID（可选）向边缘网络发送请求。 页面（或容器）已预先隐藏。 |
+| 2 | Edge Network将请求发送到边缘服务，以使用访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）对其进行扩充。 |
+| 3 | 边缘网络将扩充的个性化请求发送至 [!DNL Target] 使用访客ID和传入参数创建Edge。 |
+| 4 | 配置文件脚本执行，然后注入到 [!DNL Target] 配置文件存储。 配置文件存储从获取区段 [!UICONTROL 受众库] (例如，从以下对象共享的区段： [!DNL Adobe Analytics]， [!DNL Adobe Audience Manager]，则 [!DNL Adobe Experience Platform])。 |
+| 5 | 根据URL请求参数和配置文件数据， [!DNL Target] 确定可为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target] 然后将其发送回边缘网络。 |
+| 6 | a.边缘网络将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将被缓存，这样便可以在触发视图时即时应用而无需额外的服务器调用。 <br>c. Edge网络发送访客ID和Cookie中的其他值，如同意、会话ID、身份、Cookie检查、个性化等等。 |
+| 7 | 边缘网络转发 [!UICONTROL 目标分析] (A4T)的详细信息（活动、体验和转化元数据） [!DNL Analytics] 边缘。 |
 
-## 正在啟用 [!DNL Adobe Target]
+## 正在启用 [!DNL Adobe Target]
 
-若要啟用 [!DNL Target]，請執行下列動作：
+启用 [!DNL Target]，请执行以下操作：
 
-1. 啟用 [!DNL Target] 在您的 [資料串流](../../datastreams/overview.md) 並附上適當的使用者端代碼。
-1. 新增 `renderDecisions` 選項新增至您的事件。
+1. 启用 [!DNL Target] 在您的 [数据流](../../datastreams/overview.md) ，并提供相应的客户端代码。
+1. 添加 `renderDecisions` 选项添加到您的事件。
 
-然後，您也可選擇新增下列選項：
+然后，您还可以选择添加以下选项：
 
-* **`decisionScopes`**：將此選項新增至事件，擷取特定活動（適用於使用表單式撰寫器建立的活動）。
-* **[預先隱藏程式碼片段](../manage-flicker.md)**：僅隱藏頁面的某些部分。
+* **`decisionScopes`**：通过将此选项添加到事件，检索特定活动（对于使用基于表单的编辑器创建的活动很有用）。
+* **[预隐藏代码片段](../manage-flicker.md)**：仅隐藏页面的某些部分。
 
 ## 使用Adobe Target VEC
 
-若要搭配使用VEC [!DNL Platform Web SDK] 實作，安裝並啟動 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) 或 [鉻黃](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper擴充功能。
+要将VEC与 [!DNL Platform Web SDK] 实施，安装并激活 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) 或 [铬黄](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC助手扩展。
 
-如需詳細資訊，請參閱 [視覺化體驗撰寫器Helper擴充功能](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) 在 *Adobe Target指南*.
+有关更多信息，请参阅 [可视化体验编辑器助手扩展](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) 在 *Adobe Target指南*.
 
-## 呈現個人化內容
+## 呈现个性化内容
 
-另請參閱 [呈現個人化內容](../rendering-personalization-content.md) 以取得詳細資訊。
+参见 [呈现个性化内容](../rendering-personalization-content.md) 了解更多信息。
 
-## XDM中的對象
+## XDM中的受众
 
-為您的定義對象時 [!DNL Target] 透過傳遞的活動 [!DNL Platform Web SDK]， [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 必須定義及使用。 定義XDM結構描述、類別和結構描述欄位群組後，您可以建立 [!DNL Target] 由XDM資料定義的對象規則，用於鎖定目標。 範圍 [!DNL Target]，XDM資料會顯示在 [!UICONTROL Audience Builder] 作為自訂引數。 XDM是使用點標籤法序列化(例如， `web.webPageDetails.name`)。
+在为定义受众时 [!DNL Target] 通过交付的活动 [!DNL Platform Web SDK]， [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 必须定义和使用。 定义XDM架构、类和架构字段组后，您可以创建 [!DNL Target] 由XDM数据定义的用于定位的受众规则。 范围 [!DNL Target]，XDM数据显示在 [!UICONTROL Audience Builder] 作为自定义参数。 XDM使用点表示法序列化(例如， `web.webPageDetails.name`)。
 
-如果您有 [!DNL Target] 具有預先定義對象、使用自訂引數或使用者設定檔的活動，無法透過SDK正確傳送。 您必須改用XDM，而不是使用自訂引數或使用者設定檔。 不過，有現成的受眾目標定位欄位可透過 [!DNL Platform Web SDK] 不需要XDM的版本。 這些欄位位於 [!DNL Target] 不需要XDM的UI：
+如果您拥有 [!DNL Target] 包含使用自定义参数或用户配置文件的预定义受众的活动，无法通过SDK正确交付它们。 您必须改用XDM，而不是使用自定义参数或用户配置文件。 但是，提供开箱即用的受众定位字段，这些字段受支持的 [!DNL Platform Web SDK] 而不需要XDM。 这些字段位于 [!DNL Target] 不需要XDM的UI：
 
 * 定位库
 * 地域
@@ -85,11 +85,11 @@ ht-degree: 6%
 * 流量源
 * 时间范围
 
-如需詳細資訊，請參閱 [對象的類別](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) 在 *Adobe Target指南*.
+有关更多信息，请参阅 [受众类别](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) 在 *Adobe Target指南*.
 
 ### 响应令牌
 
-回應Token主要用於傳送中繼資料給第三方，例如Google、Facebook等。 回應Token會傳回 `meta` 欄位範圍 `propositions` -> `items`. 範例如下：
+响应令牌主要用于向Google、Facebook等第三方发送元数据。 响应令牌会返回到 `meta` 字段范围 `propositions` -> `items`. 以下是示例：
 
 ```json
 {
@@ -112,8 +112,8 @@ ht-degree: 6%
 }
 ```
 
-若要收集回應Token，您必須訂閱 `alloy.sendEvent` Promise，逐一檢視 `propositions`
-並從中擷取詳細資訊 `items` -> `meta`. 每 `proposition` 具有 `renderAttempted` 布林值欄位，指出 `proposition` 是否呈現。 請參閱下列範例：
+要收集响应令牌，您必须订阅 `alloy.sendEvent` promise，循环访问 `propositions`
+并从中提取详细信息 `items` -> `meta`. 每 `proposition` 具有 `renderAttempted` 布尔字段，指示是否 `proposition` 是否呈现。 请参阅下面的示例：
 
 ```js
 alloy("sendEvent",
@@ -141,50 +141,50 @@ alloy("sendEvent",
   
 ```
 
-啟用自動轉譯時，主張陣列包含：
+启用自动渲染时，建议数组包含：
 
-#### 在頁面載入時：
+#### 在页面加载时：
 
-* 表單式撰寫器型 `propositions` 替換為 `renderAttempted` 標幟設定為 `false`
-* 視覺化體驗撰寫器式主張，具有 `renderAttempted` 標幟設定為 `true`
-* 單一頁面應用程式檢視的視覺化體驗撰寫器型主張，具有 `renderAttempted` 標幟設定為 `true`
+* 基于表单的编辑器 `propositions` 替换为 `renderAttempted` 标志设置为 `false`
+* 基于可视化体验编辑器的建议，具有 `renderAttempted` 标志设置为 `true`
+* 基于可视化体验编辑器的建议，用于单页应用程序视图，具有 `renderAttempted` 标志设置为 `true`
 
-#### 檢視時 — 變更（針對快取檢視）：
+#### 在查看时 — 更改（对于缓存的视图）：
 
-* 單一頁面應用程式檢視的視覺化體驗撰寫器型主張，具有 `renderAttempted` 標幟設定為 `true`
+* 基于可视化体验编辑器的建议，用于单页应用程序视图，具有 `renderAttempted` 标志设置为 `true`
 
-停用自動轉譯時，主張陣列包含：
+禁用自动渲染时，建议数组包含：
 
-#### 在頁面載入時：
+#### 在页面加载时：
 
-* 表單式撰寫器型 `propositions` 替換為 `renderAttempted` 標幟設定為 `false`
-* 視覺化體驗撰寫器式主張，具有 `renderAttempted` 標幟設定為 `false`
-* 單一頁面應用程式檢視的視覺化體驗撰寫器型主張，具有 `renderAttempted` 標幟設定為 `false`
+* 基于表单的编辑器 `propositions` 替换为 `renderAttempted` 标志设置为 `false`
+* 基于可视化体验编辑器的建议，具有 `renderAttempted` 标志设置为 `false`
+* 基于可视化体验编辑器的建议，用于单页应用程序视图，具有 `renderAttempted` 标志设置为 `false`
 
-#### 檢視時 — 變更（針對快取檢視）：
+#### 在查看时 — 更改（对于缓存的视图）：
 
-* 單一頁面應用程式檢視的視覺化體驗撰寫器型主張，具有 `renderAttempted` 標幟設定為 `false`
+* 基于可视化体验编辑器的建议，用于单页应用程序视图，具有 `renderAttempted` 标志设置为 `false`
 
-### 單一設定檔更新
+### 单个配置文件更新
 
-此 [!DNL Platform Web SDK] 可讓您更新設定檔至 [!DNL Target] 設定檔和 [!DNL Platform Web SDK] 做為體驗事件。
+此 [!DNL Platform Web SDK] 允许您将配置文件更新到 [!DNL Target] 配置文件和 [!DNL Platform Web SDK] 作为体验事件。
 
-若要更新 [!DNL Target] 設定檔時，請確保已使用以下專案傳遞設定檔資料：
+要更新 [!DNL Target] 配置文件中，确保通过以下方式传递配置文件数据：
 
 * 在 `"data {"`
 * 在 `"__adobe.target"`
-* 前置詞 `"profile."` 例如，如下所示
+* 前缀 `"profile."` 例如，如下所示
 
 | 键 | 类型 | 描述 |
 | --- | --- | --- |
-| `renderDecisions` | 布尔值 | 指示個人化元件是否應解譯DOM動作 |
-| `decisionScopes` | 陣列 `<String>` | 要擷取決定的範圍清單 |
-| `xdm` | 对象 | 在Platform Web SDK中以體驗事件形式登陸的XDM格式資料 |
-| `data` | 对象 | 任意索引鍵/值組傳送至 [!DNL Target] 目標類別下的解決方案。 |
+| `renderDecisions` | 布尔值 | 指示个性化组件是否应解释DOM操作 |
+| `decisionScopes` | 数组 `<String>` | 要检索决策的作用域列表 |
+| `xdm` | 对象 | 在XDM中格式化并作为体验事件登陆Platform Web SDK的数据 |
+| `data` | 对象 | 任意键/值对发送到 [!DNL Target] 目标类下的解决方案。 |
 
-典型 [!DNL Platform Web SDK] 使用此命令的程式碼如下所示：
+典型 [!DNL Platform Web SDK] 使用此命令的代码如下所示：
 
-**`sendEvent`包含設定檔資料**
+**`sendEvent`包含配置文件数据**
 
 ```js
 alloy("sendEvent", {
@@ -194,7 +194,7 @@ alloy("sendEvent", {
 });
 ```
 
-**如何傳送設定檔屬性至Adobe Target：**
+**如何将配置文件属性发送到Adobe Target：**
 
 ```js
 alloy("sendEvent", {
@@ -210,13 +210,13 @@ alloy("sendEvent", {
 });
 ```
 
-## 要求建議
+## 请求建议
 
-下表列出 [!DNL Recommendations] 屬性以及是否透過 [!DNL Platform Web SDK]：
+下表列出了 [!DNL Recommendations] 属性以及是否通过 [!DNL Platform Web SDK]：
 
-| 类别 | 属性 | 支援狀態 |
+| 类别 | 属性 | 支持状态 |
 | --- | --- | --- |
-| Recommendations — 預設實體屬性 | entity.id | 受支持 |
+| Recommendations — 默认实体属性 | entity.id | 受支持 |
 |  | entity.name | 受支持 |
 |  | entity.categoryId | 受支持 |
 |  | entity.pageUrl | 受支持 |
@@ -227,13 +227,13 @@ alloy("sendEvent", {
 |  | entity.brand | 受支持 |
 |  | entity.margin | 受支持 |
 |  | entity.event.detailsOnly | 受支持 |
-| Recommendations — 自訂實體屬性 | entity.yourCustomAttributeName | 受支持 |
-| Recommendations — 保留的mbox/頁面引數 | excludedIds | 受支持 |
+| Recommendations — 自定义实体属性 | entity.yourCustomAttributeName | 受支持 |
+| Recommendations — 保留的mbox/页面参数 | excludedIds | 受支持 |
 |  | cartIds | 受支持 |
 |  | productPurchasedId | 受支持 |
-| 類別相關性的頁面或料號類別 | user.categoryId | 受支持 |
+| 类别亲和度的页面或物料类别 | user.categoryId | 受支持 |
 
-**如何將Recommendations屬性傳送至Adobe Target：**
+**如何将Recommendations属性发送到Adobe Target：**
 
 ```js
 alloy("sendEvent", {
@@ -251,14 +251,14 @@ alloy("sendEvent", {
 
 ## 调试
 
-已棄用mboxTrace和mboxDebug。 使用 [[!DNL Platform Web SDK] 偵錯](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/debugging.html).
+已弃用mboxTrace和mboxDebug。 使用 [[!DNL Platform Web SDK] 调试](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/debugging.html).
 
 ## 术语
 
-__主張：__ 在 [!DNL Target]，此主張與從活動選取的體驗相關聯。
+__建议：__ In [!DNL Target]，建议与从活动中选择的体验相关联。
 
-__結構描述：__ 決定的結構描述是中的優惠型別 [!DNL Target].
+__架构：__ 决策的结构是中的优惠类型 [!DNL Target].
 
-__範圍：__ 決定的範圍。 在 [!DNL Target]，範圍是mBox。 全域mBox是 `__view__` 範圍。
+__范围：__ 决定的范围。 In [!DNL Target]，范围是mBox。 全局mBox是 `__view__` 范围。
 
-__XDM：__ XDM會序列化為點標籤法，然後放入 [!DNL Target] 作為mBox引數。
+__XDM：__ XDM被序列化为点表示法，然后放入 [!DNL Target] 作为mBox参数。

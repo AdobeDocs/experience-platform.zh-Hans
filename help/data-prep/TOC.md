@@ -13,17 +13,17 @@ ht-degree: 46%
 
 # 数据准备 {#data-prep}
 
-- [資料準備總覽](home.md)
-- [資料準備函式](functions.md)
-- 對應服務API {#api}
+- [数据准备概述](home.md)
+- [数据准备函数](functions.md)
+- 映射服务API {#api}
    - [概述](./api/overview.md)
    - [快速入门](./api/getting-started.md)
    - [函数](./api/functions.md)
-   - [對應集](./api/mapping-set.md)
+   - [映射集](./api/mapping-set.md)
 - UI {#ui}
-   - [資料準備UI指南](./ui/mapping.md)
-- [處理資料格式](./data-handling.md)
-- [對應集](mapping-set.md)
-- [串流更新插入](upserts.md)
-- [疑難排解指南](troubleshooting-guide.md)
-- [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+   - [数据准备UI指南](./ui/mapping.md)
+- [处理数据格式](./data-handling.md)
+- [映射集](mapping-set.md)
+- [流更新插入](upserts.md)
+- [疑难解答指南](troubleshooting-guide.md)
+- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

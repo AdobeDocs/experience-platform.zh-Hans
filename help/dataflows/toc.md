@@ -13,16 +13,16 @@ ht-degree: 22%
 
 # 数据流 {#dataflows}
 
-- [資料流概觀](./home.md)
+- [数据流概述](./home.md)
 - API指南 {#api}
-   - [監視資料流](./api/monitor.md)
-   - [排序和篩選API回應](./api/sort-and-filter.md)
+   - [监测数据流](./api/monitor.md)
+   - [对API响应进行排序和筛选](./api/sort-and-filter.md)
 - UI指南 {#ui}
-   - [監視來源中的資料流](./ui/monitor-sources.md)
-   - [監視身分中的資料流](./ui/monitor-identities.md)
-   - [監視設定檔中的資料流](./ui/monitor-profiles.md)
-   - [監視區段中的資料流](./ui/monitor-segments.md)
-   - [監視目的地的資料流](./ui/monitor-destinations.md)
-   - B2B監視 {#b2b}
-      - [監視設定檔擴充工作](./ui/b2b/monitor-profile-enrichment.md)
-- [流程服務API](https://www.adobe.io/experience-platform-apis/references/flow-service/)
+   - [监测源中的数据流](./ui/monitor-sources.md)
+   - [监测标识中的数据流](./ui/monitor-identities.md)
+   - [监测配置文件中的数据流](./ui/monitor-profiles.md)
+   - [监测区段中的数据流](./ui/monitor-segments.md)
+   - [监视目标中的数据流](./ui/monitor-destinations.md)
+   - B2B监控 {#b2b}
+      - [监控配置文件扩充作业](./ui/b2b/monitor-profile-enrichment.md)
+- [流服务API](https://www.adobe.io/experience-platform-apis/references/flow-service/)

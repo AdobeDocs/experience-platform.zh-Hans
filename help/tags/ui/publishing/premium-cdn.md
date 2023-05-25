@@ -1,6 +1,6 @@
 ---
-title: 標籤的Premium CDN支援
-description: 瞭解標籤的頂級CDN功能，以及如何使用它來將您的內容傳送至多個地理區域。
+title: 标记的Premium CDN支持
+description: 了解标记的高级CDN功能，以及如何将其用于在多个地理区域交付内容。
 exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
@@ -9,42 +9,42 @@ ht-degree: 0%
 
 ---
 
-# 標籤的Premium CDN支援（測試版）
+# 标记的Premium CDN支持（测试版）
 
 >[!IMPORTANT]
 >
->標籤的高階CDN功能目前為測試版，貴組織可能尚未存取該功能。 本檔案內容可能會有變動。
+>标记的高级CDN功能当前为测试版，您的组织可能还不能访问它。 此文档可能会发生更改。
 
-當您使用 [Adobe管理主機](./hosts/managed-by-adobe-host.md) 為了在您的網站上傳遞Adobe Experience Platform標籤資產，這些資產會散佈在世界各地各種內容傳遞網路(CDN)中，以提供最快的下載速度。 不過，某些地區要求將所有網站資產複製並託管於該地區的伺服器上。
+当您使用 [Adobe管理的主机](./hosts/managed-by-adobe-host.md) 为了在您的网站上交付您的Adobe Experience Platform标记资产，这些资产在全球各地的各种内容交付网络(CDN)中分发，以提供最快的下载速度。 但是，某些区域要求将所有网站资产复制并托管到该区域的服务器上。
 
-為了說明此問題，Experience Platform中的標籤提供高級CDN功能，可讓您向這些特殊區域傳送內容。
+为此，Experience Platform中的标记提供了一项高级CDN功能，可让您向这些特殊区域交付内容。
 
-Premium CDN支援是付費功能，貴組織必須購買才能啟用及使用它。 本指南說明購買此功能後，如何在Experience PlatformUI或資料收集UI中設定和使用它。
+Premium CDN支持是一项付费功能，贵组织必须购买它才能启用和使用它。 本指南介绍购买此功能后，如何在Experience PlatformUI或数据收集UI中配置和使用此功能。
 
-## 為您的組織啟用優質CDN
+## 为您的组织启用Premium CDN
 
-Premium CDN已在公司層級啟用。 貴組織購買進階CDN功能後，Adobe管理員會在貴公司的UI中啟用該功能。
+Premium CDN在公司级别启用。 贵组织购买高级CDN功能后，Adobe管理员将在贵公司的UI中启用该功能。
 
-## 使用更新的內嵌程式碼重建和安裝標籤程式庫
+## 使用更新的嵌入代码重建和安装标记库
 
-啟用Premium CDN後，並不表示您的標籤資產會立即復寫並準備在新的區域使用。 這僅表示您現在可以選擇何時加入此功能。
+启用Premium CDN后，并不意味着您的标记资产会立即复制并在新区域中随时可用。 它仅意味着您现在可以选择何时选择启用此功能。
 
 >[!IMPORTANT]
 >
->在啟用優質CDN之前建立的程式庫將會繼續照常運作。 這也適用於不是由Adobe管理的程式庫，因為 [封存的環境](./environments.md#archive) 僅對其資產路徑使用相對URL。 請注意，啟用進階CDN後，您建置且非由Adobe管理的程式庫，其行為會與未啟用進階CDN功能相同。
+>在启用高级CDN之前构建的库将继续按原样运行。 这也适用于不由Adobe管理的库，因为 [存档环境](./environments.md#archive) 仅对其资源路径使用相对URL。 请注意，启用Premium CDN后，您构建的任何非由Adobe管理的库都将像未启用Premium CDN功能一样运行。
 
-啟用進階CDN並重新建置您要從新託管區域使用的任何程式庫後，您就可以擷取新的託管區域內嵌程式碼，以新增至您的網站。
+启用高级CDN并重建要从新托管区域使用的任何库后，您可以检索要添加到网站的新托管区域嵌入代码。
 
 >[!NOTE]
 >
->列於「 」下方的程式庫內嵌程式碼 [!UICONTROL 標準] 託管區域將繼續照原樣運作，並且您的網站上已有任何Page Top或Page Bottom內嵌程式碼。
+>列在下的库嵌入代码 [!UICONTROL 标准] 托管区域将继续按原样运行，并且您的网站上已存在的任何Page Top或Page Bottom嵌入代码也将按原样运行。
 
-造訪 **[!UICONTROL 環境]** 從「程式庫」編輯畫面頁面或檢視環境安裝指示，以尋找新的內嵌程式碼。 每個新支援的託管區域都會顯示在 [!UICONTROL 標準] 託管區域（用於世界上沒有優質CDN支援的區域）。 以下熒幕擷圖顯示中國地區的內嵌程式碼，該程式碼使用 `.cn` 作為其頂層網域(TLD)。
+访问 **[!UICONTROL 环境]** 从“库编辑”屏幕中页面或查看环境安装说明，以查找新的嵌入代码。 每个新的受支持托管区域都显示在 [!UICONTROL 标准] 托管区域（用于世界上受支持、但无高级CDN的地区）。 以下屏幕截图显示了用于“中国”区域的嵌入代码，该代码使用 `.cn` 作为其顶级域(TLD)。
 
-![中國地區的內嵌程式碼](../../images/ui/publishing/premium-cdn/embed-codes.png)
+![中国地区的嵌入代码](../../images/ui/publishing/premium-cdn/embed-codes.png)
 
-為網頁選擇適當的內嵌程式碼，並將其貼到 `<head>` 標籤之前。 如需使用內嵌程式碼安裝標籤程式庫的詳細資訊，請參閱 [環境UI指南](./environments.md#installation).
+为网页选择相应的嵌入代码，并将其粘贴到 `<head>` 标记的位置。 有关使用嵌入代码安装标记库的更多信息，请参阅 [环境用户界面指南](./environments.md#installation).
 
 ## 后续步骤
 
-本指南說明如何為您的標籤實作啟用和安裝進階CDN功能。 如需在Web和行動屬性上安裝及測試標籤程式庫的詳細資訊，請參閱 [發佈概觀](./overview.md).
+本指南介绍了如何为标记实施启用和安装高级CDN功能。 有关在Web和移动资产上安装和测试标记库的更多信息，请参阅 [发布概述](./overview.md).

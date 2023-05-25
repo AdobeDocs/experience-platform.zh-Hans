@@ -1,7 +1,7 @@
 ---
-keywords: 行動；炫耀；傳訊；
-title: 硬式連線
-description: Braze是全方位的客戶參與平台，可在客戶與所喜愛的品牌之間提供相關且令人難忘的體驗。
+keywords: 移动设备；炫耀；消息传送；
+title: 钎焊连接
+description: Braze是一个全面的客户参与平台，可在客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
@@ -10,149 +10,149 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Braze] 連線
+# [!DNL Braze] 连接
 
 ## 概述 {#overview}
 
-此 [!DNL Braze] 目的地可協助您將設定檔資料傳送至 [!DNL Braze].
+此 [!DNL Braze] 目标可帮助您将配置文件数据发送到 [!DNL Braze].
 
-[!DNL Braze] 是一個全面的客戶參與平台，可為客戶與所喜愛品牌之間提供相關且令人難忘的體驗。
+[!DNL Braze] 是一个全面的客户参与平台，为客户和他们喜爱的品牌之间令人难忘的相关体验提供支持。
 
-若要將設定檔資料傳送至 [!DNL Braze]，您必須先連線至目的地。
+要将配置文件数据发送到 [!DNL Braze]，您必须先连接到目标。
 
-## 目的地詳情 {#specifics}
+## 目标详情 {#specifics}
 
-請注意以下專屬於 [!DNL Braze] 目的地：
+请注意以下特定于的详细信息 [!DNL Braze] 目标：
 
-* [!DNL Adobe Experience Platform] 區段會匯出至 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 屬性。
+* [!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
 
 >[!NOTE]
 >
->請記住，傳送其他自訂屬性至 [!DNL Braze] 可能會導致 [!DNL Braze] 資料點使用量。 請洽詢您的 [!DNL Braze] 帳戶管理員，然後再傳送其他自訂屬性。
+>请记住，将其他自定义属性发送到 [!DNL Braze] 可能会导致您的帐户数量 [!DNL Braze] 数据点消耗。 请咨询您的 [!DNL Braze] 帐户管理器。
 
 ## 用例 {#use-cases}
 
-身為行銷人員，我想要在行動參與目的地中鎖定使用者，並內建區段 [!DNL Adobe Experience Platform]. 此外，我想要根據客戶自己的屬性，為他們提供個人化體驗 [!DNL Adobe Experience Platform] 設定檔，一旦區段和設定檔在 [!DNL Adobe Experience Platform].
+作为营销人员，我希望在内置区段的移动参与目标中定位用户 [!DNL Adobe Experience Platform]. 此外，我还希望根据用户体验中的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，一旦在中更新了区段和用户档案 [!DNL Adobe Experience Platform].
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Braze] 支援下表所述的身分啟用。
+[!DNL Braze] 支持激活下表中描述的标识。
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| external_id | 自訂 [!DNL Braze] 支援對應任何身分的識別碼。 | 您可以傳送任何 [身分](../../../identity-service/namespaces.md) 至 [!DNL Braze] 目的地，只要您將它對應到 [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
+| external_id | 自定义 [!DNL Braze] 支持映射任何标识的标识符。 | 您可以发送任何 [身份](../../../identity-service/namespaces.md) 到 [!DNL Braze] 目标，只要将其映射到 [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
 
 {style="table-layout:auto"}
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | 您正在匯出區段的所有成員，以及所需的結構描述欄位（例如：電子郵件地址、電話號碼、姓氏）和/或身分（根據您的欄位對應）。[!DNL Adobe Experience Platform] 區段會匯出至 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 屬性。 |
-| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在根据字段映射导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份。[!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-若要驗證目的地，請填入必填欄位並選取 **[!UICONTROL 連線到目的地]**.
+要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
-* **[!UICONTROL Braze帳戶權杖]**：這是您的 [!DNL Braze] [!DNL API] 金鑰。 您可以找到有關如何取得 [!DNL API] 索引鍵在此： [REST API金鑰概觀](https://www.braze.com/docs/api/api_key/).
+* **[!UICONTROL Braze帐户令牌]**：这是您的 [!DNL Braze] [!DNL API] 键。 您可以找到有关如何获取 [!DNL API] 此处键入： [REST API密钥概述](https://www.braze.com/docs/api/api_key/).
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-* **[!UICONTROL 名稱]**：輸入您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：輸入有助於您日後識別此目的地的說明。
-* **[!UICONTROL 端點例項]**：詢問您的 [!DNL Braze] 代表您應該使用哪個端點例項。
+* **[!UICONTROL 名称]**：输入将来识别此目标时所依据的名称。
+* **[!UICONTROL 描述]**：输入可帮助您将来识别此目标的描述。
+* **[!UICONTROL 端点实例]**：询问您的 [!DNL Braze] 表示您应使用的端点实例。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-另請參閱 [啟用串流區段匯出目的地的受眾資料](../../ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-## 對應考量事項 {#mapping-considerations}
+## 映射注意事项 {#mapping-considerations}
 
-若要正確傳送您的對象資料，請從 [!DNL Adobe Experience Platform] 至 [!DNL Braze] 目的地，您必須完成欄位對應步驟。
+要正确发送受众数据，请执行以下操作： [!DNL Adobe Experience Platform] 到 [!DNL Braze] 目标，您需要完成字段映射步骤。
 
-對應包括建立 [!DNL Experience Data Model] (XDM)結構描述欄位 [!DNL Platform] 帳戶，以及來自目標目的地的對應對應對應專案。
+映射包括在 [!DNL Experience Data Model] (XDM)架构字段 [!DNL Platform] 帐户以及它们与目标目标对应的对等项。
 
-若要正確將XDM欄位對應至 [!DNL Braze] 目的地欄位，請依照下列步驟操作：
+要将XDM字段正确映射到 [!DNL Braze] 目标字段，请执行以下步骤：
 
-在 [!UICONTROL 對應] 步驟，按一下 **[!UICONTROL 新增對應]**.
+在 [!UICONTROL 映射] 步骤，单击 **[!UICONTROL 添加新映射]**.
 
-![釺焊目的地新增對應](../../assets/catalog/mobile-engagement/braze/mapping.png)
+![钎焊目标添加映射](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
-在 [!UICONTROL 來源欄位] 區段，按一下空白欄位旁的箭頭按鈕。
+在 [!UICONTROL 源字段] 部分，单击空字段旁边的箭头按钮。
 
-![釺焊目的地來源對應](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
+![钎焊目标源映射](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
-在 [!UICONTROL 選取來源欄位] 視窗中，您可以在兩種類別的XDM欄位之間進行選擇：
-* [!UICONTROL 選取屬性]：使用此選項將特定欄位從XDM結構描述對應至 [!DNL Braze] 屬性。
+在 [!UICONTROL 选择源字段] 窗口中，您可以选择以下两种类别的XDM字段：
+* [!UICONTROL 选择属性]：使用此选项将特定字段从XDM架构映射到 [!DNL Braze] 属性。
 
-![釺焊目的地對映來源屬性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
+![钎焊目标映射源属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL 選取身分名稱空間]：使用此選項來對應 [!DNL Platform] 身分名稱空間重新命名為 [!DNL Braze] 名稱空間。
+* [!UICONTROL 选择身份命名空间]：使用此选项映射 [!DNL Platform] 将身份命名空间更改为 [!DNL Braze] 命名空间。
 
-![釺焊目的地對應來源名稱空間](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
+![钎焊目标映射源命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
-選擇您的來源欄位，然後按一下 **[!UICONTROL 選取]**.
+选择源字段，然后单击 **[!UICONTROL 选择]**.
 
-在 [!UICONTROL 目標欄位] 區段，按一下欄位右側的對應圖示。
+在 [!UICONTROL 目标字段] 部分，单击字段右侧的映射图标。
 
-![釺焊目的地目標對應](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
+![钎焊目标映射](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
-在 [!UICONTROL 選取目標欄位] 視窗中，您可以選擇以下兩種目標欄位類別：
-* [!UICONTROL 選取身分名稱空間]：使用此選項來對應 [!DNL Platform] 身分名稱空間至 [!DNL Braze] 身分名稱空間。
-* [!UICONTROL 選取自訂屬性]：使用此選項將XDM屬性對應至自訂 [!DNL Braze] 您在中定義的屬性 [!DNL Braze] 帳戶。 <br> 您也可以使用此選項將現有XDM屬性重新命名為 [!DNL Braze]. 例如，對應 `lastName` 自訂的XDM屬性 `Last_Name` 中的屬性 [!DNL Braze]，將會建立 `Last_Name` 中的屬性 [!DNL Braze]，如果尚未存在，則對應 `lastName` XDM屬性。
+在 [!UICONTROL 选择目标字段] 窗口中，您可以选择以下两种类别的目标字段：
+* [!UICONTROL 选择身份命名空间]：使用此选项进行映射 [!DNL Platform] 身份命名空间到 [!DNL Braze] 身份命名空间。
+* [!UICONTROL 选择自定义属性]：使用此选项可将XDM属性映射到自定义 [!DNL Braze] 您在 [!DNL Braze] 帐户。 <br> 您还可以使用此选项将现有XDM属性重命名为 [!DNL Braze]. 例如，映射 `lastName` 自定义的XDM属性 `Last_Name` 中的属性 [!DNL Braze]，将创建 `Last_Name` 中的属性 [!DNL Braze]，如果它尚不存在，则映射 `lastName` XDM属性。
 
-![釺焊目的地目標對應欄位](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
+![钎焊目标映射字段](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
 
-選擇您的目標欄位，然後按一下 **[!UICONTROL 選取]**.
+选择目标字段，然后单击 **[!UICONTROL 选择]**.
 
-您現在應該會在清單中看到您的欄位對應。
+现在，您应该会在列表中看到字段映射。
 
-![釺焊目的地對應完成](../../assets/catalog/mobile-engagement/braze/mapping-complete.png)
+![钎焊目标映射完成](../../assets/catalog/mobile-engagement/braze/mapping-complete.png)
 
-若要新增更多對應，請重複上述步驟。
+要添加更多映射，请重复上述步骤。
 
-## 對應範例 {#mapping-example}
+## 映射示例 {#mapping-example}
 
-假設您的XDM設定檔結構描述和 [!DNL Braze] 執行個體包含以下屬性和身分：
+比如您的XDM配置文件架构和 [!DNL Braze] 实例包含以下属性和身份：
 
-|  | XDM設定檔結構描述 | [!DNL Braze] 实例 |
+|  | XDM配置文件架构 | [!DNL Braze] 实例 |
 |---|---|---|
-| 属性 | <ul><li>person.name.firstName</code></li><li>person.name.lastName</code></li><li>mobilePhone.number</code></li></ul> | <ul><li>名字</code></li><li>姓氏</code></li><li>電話號碼</code></li></ul> |
-| 标识 | <ul><li>电子邮件</code></li><li>Google Ad ID (GAID)</code></li><li>廣告商適用的Apple ID (IDFA)</code></li></ul> | <ul><li>external_id</code></li></ul> |
+| 属性 | <ul><li>person.name.firstName</code></li><li>person.name.lastName</code></li><li>mobilePhone.number</code></li></ul> | <ul><li>名字</code></li><li>姓氏</code></li><li>电话号码</code></li></ul> |
+| 标识 | <ul><li>电子邮件</code></li><li>Google Ad ID (GAID)</code></li><li>广告商的Apple ID (IDFA)</code></li></ul> | <ul><li>external_id</code></li></ul> |
 
-正確的對應如下所示：
+正确的映射将如下所示：
 
-![釺焊目的地對應範例](../../assets/catalog/mobile-engagement/braze/mapping-example.png)
+![钎焊目标映射示例](../../assets/catalog/mobile-engagement/braze/mapping-example.png)
 
-## 匯出的資料 {#exported-data}
+## 导出的数据 {#exported-data}
 
-驗證資料是否已成功匯出至 [!DNL Braze] 目的地，檢查您的 [!DNL Braze] 帳戶。 [!DNL Adobe Experience Platform] 區段會匯出至 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 屬性。
+验证数据是否已成功导出到 [!DNL Braze] 目标，检查您的 [!DNL Braze] 帐户。 [!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
 
-## 資料使用與控管 {#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](../../../data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](../../../data-governance/home.md).

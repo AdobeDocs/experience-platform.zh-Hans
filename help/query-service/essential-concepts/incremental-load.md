@@ -1,6 +1,6 @@
 ---
-title: 查詢服務中的增量載入
-description: 增量載入功能同時使用匿名區塊和快照功能，以提供近乎即時的解決方案，將資料從資料湖移動至您的資料倉儲，同時忽略相符的資料。
+title: 查询服务中的增量加载
+description: 增量加载功能同时使用匿名块和快照功能，为在忽略匹配数据的同时将数据从数据湖移动到data warehouse提供了近乎实时的解决方案。
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
 source-git-commit: 11a947addce65887385c983ac81d884fb4244291
 workflow-type: tm+mt
@@ -9,25 +9,25 @@ ht-degree: 0%
 
 ---
 
-# 查詢服務中的增量載入
+# 查询服务中的增量加载
 
-累加式負載設計模式是管理資料的解決方案。 此模式只會處理資料集中自上次載入執行以來已建立或修改的資訊。
+增量式负载设计模式是一种用于管理数据的解决方案。 该模式仅处理自上次加载执行以来创建或修改的数据集中的信息。
 
-增量載入會使用Adobe Experience Platform查詢服務提供的各種功能，例如匿名區塊和快照。 此設計模式會提高處理效率，因為會略過已從來源處理的任何資料。 它可同時用於串流和批次資料處理。
+增量加载使用Adobe Experience Platform查询服务提供的各种功能，例如匿名块和快照。 此设计模式提高了处理效率，因为已跳过从源处理的任何数据。 它可以与流数据处理和批量数据处理结合使用。
 
-本檔案提供一系列指示，說明如何建立用於增量處理的設計模式。 這些步驟可用作範本，以建立您自己的增量資料載入查詢。
+本文档提供了一系列指令，用于构建用于增量处理的设计模式。 这些步骤可用作创建自己的增量数据加载查询的模板。
 
 ## 快速入门
 
-本檔案中的SQL範例需要您瞭解匿名區塊和快照集功能。 建議您閱讀 [範例匿名區塊查詢](./anonymous-block.md) 檔案以及 [快照子句](../sql/syntax.md#snapshot-clause) 說明檔案。
+本文档中的SQL示例要求您了解匿名块和快照功能。 建议您阅读 [示例匿名块查询](./anonymous-block.md) 文档以及 [snapshot子句](../sql/syntax.md#snapshot-clause) 文档。
 
-如需本指南使用之任何術語的指引，請參閱 [SQL語法指南](../sql/syntax.md).
+有关本指南中使用的任何术语的指导，请参阅 [SQL语法指南](../sql/syntax.md).
 
-## 逐步載入資料
+## 增量加载数据
 
-以下步驟示範如何使用快照和匿名區塊功能來建立和逐步載入資料。 設計模式可作為您自己的查詢序列的範本。
+以下步骤演示了如何使用快照和匿名块功能创建和增量加载数据。 设计模式可用作您自己的查询序列的模板。
 
-1. 建立 `checkpoint_log` 資料表，用來追蹤最近用來成功處理資料的快照。 追蹤表格(`checkpoint_log` 在此範例中)必須先初始化為 `null` 以逐步處理資料集。
+1. 创建 `checkpoint_log` 表以跟踪最近用于成功处理数据的快照。 跟踪表(`checkpoint_log` 在此示例中)必须首先初始化为 `null` 以逐步处理数据集。
 
    ```SQL
    DROP TABLE IF EXISTS checkpoint_log;
@@ -40,7 +40,7 @@ ht-degree: 0%
       WHERE false;
    ```
 
-1. 填入 `checkpoint_log` 資料集有一個空白記錄的表格，需要累加處理。 `DIM_TABLE_ABC` 是要在以下範例中處理的資料集。 首次處理時 `DIM_TABLE_ABC`，則 `last_snapshot_id` 已初始化為 `null`. 這可讓您在第一次處理整個資料集時，以及之後逐步處理。
+1. 填充 `checkpoint_log` 表，其中包含一个需要增量处理的数据集的空记录。 `DIM_TABLE_ABC` 是以下示例中要处理的数据集。 在首次处理时 `DIM_TABLE_ABC`，则 `last_snapshot_id` 初始化为 `null`. 这样，您就可以在第一次处理整个数据集时，并在以后逐步处理。
 
    ```SQL
    INSERT INTO
@@ -52,17 +52,17 @@ ht-degree: 0%
          CURRENT_TIMESTAMP process_timestamp;
    ```
 
-1. 接下來，初始化 `DIM_TABLE_ABC_Incremental` 以包含已處理的輸出 `DIM_TABLE_ABC`. 中的匿名區塊 **必填** 以下SQL範例的執行區段（如步驟1至4所述）會依序執行，以逐步處理資料。
+1. 接下来，初始化 `DIM_TABLE_ABC_Incremental` 以包含已处理的输出 `DIM_TABLE_ABC`. 中的匿名块 **必需** 以下SQL示例的执行部分（如步骤1至4中所述）按顺序执行，以增量方式处理数据。
 
-   1. 設定 `from_snapshot_id` 表示處理作業從何處開始。 此 `from_snapshot_id` 在此範例中，是從 `checkpoint_log` 搭配使用的表格 `DIM_TABLE_ABC`. 初次執行時，快照ID將會是 `null` 這表示會處理整個資料集。
-   1. 設定 `to_snapshot_id` 作為來源資料表的目前快照集ID (`DIM_TABLE_ABC`)。 在此範例中，這是從來源表格的中繼資料表中查詢的。
-   1. 使用 `CREATE` 要建立的關鍵字 `DIM_TABLE_ABC_Incremenal` 作為目的地表格。 目的地表格會儲存來自來源資料集的已處理資料(`DIM_TABLE_ABC`)。 這允許來自來源表格的已處理資料介於 `from_snapshot_id` 和 `to_snapshot_id`，以遞增方式附加至目的地表格。
-   1. 更新 `checkpoint_log` 表格與 `to_snapshot_id` 用於來源資料，該資料 `DIM_TABLE_ABC` 已成功處理。
-   1. 如果匿名區塊的任一循序執行查詢失敗， **可選** 例外狀況區段已執行。 這會傳回錯誤並結束程式。
+   1. 设置 `from_snapshot_id` 指示处理从何处开始。 此 `from_snapshot_id` 在本例中，是从 `checkpoint_log` 用于的表 `DIM_TABLE_ABC`. 初次运行时，快照ID将为 `null` 这意味着将处理整个数据集。
+   1. 设置 `to_snapshot_id` 作为源表的当前快照ID (`DIM_TABLE_ABC`)。 在本例中，这是从源表的元数据表中查询的。
+   1. 使用 `CREATE` 要创建的关键字 `DIM_TABLE_ABC_Incremenal` 作为目标表。 目标表保留来自源数据集的已处理数据(`DIM_TABLE_ABC`)。 这允许源表中处理过的数据介于 `from_snapshot_id` 和 `to_snapshot_id`，以增量方式附加到目标表中。
+   1. 更新 `checkpoint_log` 带有以下内容的表 `to_snapshot_id` 对于源数据， `DIM_TABLE_ABC` 已成功处理。
+   1. 如果匿名块的任何按顺序执行的查询失败， **可选** 异常部分已执行。 这将返回一个错误并结束该过程。
 
    >[!NOTE]
    >
-   >此 `history_meta('source table name')` 是一種用於存取資料集中可用快照的便利方法。
+   >此 `history_meta('source table name')` 是一种用于获取对数据集中可用快照的访问权限的简便方法。
 
    ```SQL
    $$ BEGIN
@@ -90,11 +90,11 @@ ht-degree: 0%
    $$;
    ```
 
-1. 在下列匿名區塊範例中使用增量資料載入邏輯，可允許源資料集的任何新資料（由於最近的時間戳記）以固定步調處理並附加至目的地表格。 在此範例中，資料變更為 `DIM_TABLE_ABC` 將會處理並附加至 `DIM_TABLE_ABC_incremental`.
+1. 使用下面匿名块示例中的增量数据加载逻辑，可允许定期处理源数据集中的任何新数据（自最近的时间戳以来）并将其附加到目标表中。 在本例中，数据将更改为 `DIM_TABLE_ABC` 将被处理并附加到 `DIM_TABLE_ABC_incremental`.
 
    >[!NOTE]
    >
-   > `_ID` 是兩者中的主索引鍵 `DIM_TABLE_ABC_Incremental` 和 `SELECT history_meta('DIM_TABLE_ABC')`.
+   > `_ID` 是两者中的主键 `DIM_TABLE_ABC_Incremental` 和 `SELECT history_meta('DIM_TABLE_ABC')`.
 
    ```SQL
    $$ BEGIN
@@ -122,21 +122,21 @@ ht-degree: 0%
    $$;
    ```
 
-此邏輯可套用至任何表格以執行增量載入。
+此逻辑可以应用于任何表以执行增量加载。
 
-## 過期的快照
+## 过期的快照
 
 >[!IMPORTANT]
 >
->快照中繼資料過期時間： **二** 天。 過期的快照會讓上述指令碼的邏輯失效。
+>快照元数据过期时间 **二** 天。 过期的快照使上面提供的脚本的逻辑失效。
 
-若要解決快照ID過期的問題，請在匿名區塊的開頭插入以下命令。 下列程式碼行會覆寫 `@from_snapshot_id` 具有最早可用的 `snapshot_id` 來自中繼資料。
+要解决快照ID过期的问题，请在匿名块的开头插入以下命令。 以下代码行将覆盖 `@from_snapshot_id` 具有可用的最早版本 `snapshot_id` 来自元数据。
 
 ```SQL
 SET resolve_fallback_snapshot_on_failure=true;
 ```
 
-整個程式碼區塊如下所示：
+整个代码块如下所示：
 
 ```SQL
 $$ BEGIN
@@ -166,4 +166,4 @@ $$;
 
 ## 后续步骤
 
-閱讀本檔案後，您應該更瞭解如何使用匿名區塊和快照功能來執行增量載入，並可將此邏輯套用至您自己的特定查詢。 如需查詢執行的一般指引，請參閱 [查詢服務中的查詢執行指南](../best-practices/writing-queries.md).
+通过阅读本文档，您应该更好地了解如何使用匿名块和快照功能执行增量加载，并且可以将此逻辑应用于您自己的特定查询。 有关查询执行的一般指导，请阅读 [查询服务中的查询执行指南](../best-practices/writing-queries.md).

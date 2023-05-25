@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；原則執行；自動執行；API型執行；資料控管
+keywords: Experience Platform；主页；热门主题；策略实施；自动实施；基于API的实施；数据治理
 solution: Experience Platform
-title: 原則執行概觀
-description: 瞭解如何在Adobe Experience Platform上執行資料使用原則。
+title: 策略实施概述
+description: 了解如何在Adobe Experience Platform上实施数据使用策略。
 exl-id: d19d8060-85a1-405c-856d-f59041947a33
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
@@ -11,22 +11,22 @@ ht-degree: 0%
 
 ---
 
-# 原則執行概觀
+# 策略实施概述
 
-一次 [資料使用標籤](../labels/overview.md) 已套用且 [資料使用原則](../policies/overview.md) 已定義，您可以強制執行這些原則，以防止構成原則違規的資料作業。
+一次 [数据使用标签](../labels/overview.md) 已应用，并且 [数据使用策略](../policies/overview.md) 定义之后，您可以强制实施这些策略以防止构成策略违规的数据操作。
 
 >[!NOTE]
 >
->本檔案著重於資料使用原則的實作。 如需有關存取控制原則的資訊，請參閱以下指南： [基於屬性的存取控制](../../access-control/abac/overview.md).
+>本文档重点介绍数据使用策略的实施。 有关访问控制策略的信息，请参阅以下指南： [基于属性的访问控制](../../access-control/abac/overview.md).
 
-在Adobe Experience Platform上執行原則的方法有兩種：自動執行和API型執行。
+在Adobe Experience Platform上实施策略有两种方法：自动实施以及基于API的实施。
 
-## 自動強制執行
+## 自动执行
 
-Experience Platform會利用資料譜系、資料分類和原則管理功能，自動評估並處理原則違規。 請參閱以下文章的概觀： [自動原則執行](./auto-enforcement.md) 以取得詳細資訊。
+Experience Platform利用数据谱系、数据分类和策略管理功能来自动评估和显示策略违规。 请参阅概述，位于 [自动策略执行](./auto-enforcement.md) 了解更多信息。
 
-## API型強制執行
+## 基于API的实施
 
-此 [!DNL Policy Service] API提供端點，可讓您根據資料集或資料使用標籤的任意組合來測試行銷動作，以檢查是否發生任何原則違規。 接著，您可以根據API回應，在體驗應用程式中設定通訊協定，以適當地強制資料控管原則相容。
+此 [!DNL Policy Service] API提供了一些端点，可让您根据数据集或数据使用标签的任意组合来测试营销操作，以检查是否发生了任何违反策略的情况。 然后，您可以根据API响应，在体验应用程序中设置协议，以适当强制实施数据治理策略合规性。
 
-請參閱教學課程，位置如下： [API型強制執行](./api-enforcement.md) 瞭解如何使用API評估政策的步驟。
+请参阅上的教程 [基于API的实施](./api-enforcement.md) 有关如何使用API评估策略的步骤。

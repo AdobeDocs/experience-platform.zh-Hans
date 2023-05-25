@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；警報；
-title: 警報訂閱端點
-description: 本指南提供您可以使用查詢服務API對警報訂閱端點進行各種API呼叫的HTTP請求和回應範例。
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；警报；
+title: 警报订阅端点
+description: 本指南提供您可以使用查询服务API对警报订阅端点进行的各种API调用的示例HTTP请求和响应。
 exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
 source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
@@ -10,41 +10,41 @@ ht-degree: 2%
 
 ---
 
-# 警報訂閱端點
+# 警报订阅端点
 
-Adobe Experience Platform查詢服務可讓您針對隨選和已排程的查詢訂閱警示。 警報可透過電子郵件、Platform UI內或兩者來接收。 平台內警報和電子郵件警報的通知內容相同。 目前，查詢警報只能透過以下方式訂閱： [查詢服務API](https://developer.adobe.com/experience-platform-apis/references/query-service/).
+Adobe Experience Platform查询服务允许您为临时查询和计划查询订阅警报。 警报可以通过电子邮件和/或Platform UI接收。 平台内警报和电子邮件警报的通知内容相同。 目前，查询警报只能通过使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/).
 
 >[!IMPORTANT]
 >
->若要接收電子郵件警示，您必須先在UI中啟用此設定。 請參閱以下檔案： [關於如何啟用電子郵件警示的說明](../../observability/alerts/ui.md#enable-email-alerts).
+>要接收电子邮件警报，您必须首先在UI中启用此设置。 请参阅相关文档 [有关如何启用电子邮件警报的说明](../../observability/alerts/ui.md#enable-email-alerts).
 
-下表說明不同查詢型別支援的警報型別：
+下表说明了不同类型的查询支持的警报类型：
 
-| 查詢型別 | 支援的警報型別 |
+| 查询类型 | 支持的警报类型 |
 |---|---|
-| 臨時查詢 | `success` 或 `failed` 執行。 |
-| 排定的查詢 | `start`， `success`，或 `failed` 執行。 |
+| 临时查询 | `success` 或 `failed` 执行。 |
+| 计划的查询 | `start`， `success`，或 `failed` 执行。 |
 
 >[!NOTE]
 >
->所有非SELECT查詢都支援警報訂閱，您不需要是查詢建立者即可訂閱警報。 其他使用者也可以在未建立的查詢上註冊警報。
+>所有非SELECT查询都支持警报订阅，您无需是查询创建者即可订阅警报。 其他用户还可以针对他们未创建的查询注册警报。
 
-下列警示套用時不含警示訂閱：
+以下警报适用于没有警报订阅的情况：
 
-* 批次查詢工作完成後，使用者會收到通知。
-* 當批次查詢工作的持續時間超過臨界值時，會向排定查詢的人員觸發警報。
+* 批处理查询作业完成后，用户会收到通知。
+* 当批量查询作业持续时间超过阈值时，会向安排查询的人员触发警报。
 
 >[!NOTE]
 >
->若正確設定，可將用於測試的查詢從這些警報中排除。
+>如果进行了适当配置，则可以从这些警报中排除用于测试的查询。
 
-## API呼叫範例
+## 示例API调用
 
-以下小節會逐步解說您可以使用查詢服務API進行的各種API呼叫。 每個呼叫都包含一般API格式、顯示必要標題的範例要求以及範例回應。
+以下部分介绍了您可以使用查询服务API进行的各种API调用。 每个调用包括常规API格式、显示所需标头的示例请求和示例响应。
 
-## 擷取組織和沙箱的所有警報清單 {#get-list-of-org-alert-subs}
+## 检索组织和沙盒的所有警报的列表 {#get-list-of-org-alert-subs}
 
-透過向以下專案發出GET請求，擷取組織沙箱的所有警報清單： `/alert-subscriptions` 端點。
+通过向发出一个GET请求，检索组织沙盒的所有警报的列表 `/alert-subscriptions` 端点。
 
 **API格式**
 
@@ -55,18 +55,18 @@ GET /alert-subscriptions?{QUERY_PARAMETERS}
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `{QUERY_PARAMETERS}` | （選用）新增至請求路徑的引數，可設定回應中傳回的結果。 可包含多個引數，以&amp;分隔。 可用的引數列示如下。 |
+| `{QUERY_PARAMETERS}` | （可选）添加到请求路径的参数，用于配置响应中返回的结果。 可以包含多个参数，以&amp;分隔。 下面列出了可用的参数。 |
 
-**查詢引數**
+**查询参数**
 
-以下是列出查詢的可用查詢引數清單。 所有這些引數都是選用的。 在不使用引數的情況下呼叫此端點將會擷取您的組織可用的所有查詢。
+以下是列出查询的可用查询参数列表。 所有这些参数都是可选的。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有查询。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定結果順序的欄位。 支援的欄位包括 `created` 和 `updated`. 在屬性名稱前面加上 `+` 升序和 `-` 以遞減順序排列。 默认值为 `-created`。請注意，加號(`+`)必須逸出 `%2B`. 例如 `%2Bcreated` 是遞增建立順序的值。 |
-| `pagesize` | 使用此引數可控制您要從每頁的API呼叫擷取的記錄數。 預設限制設定為每頁最多50筆記錄。 |
-| `page` | 指定您要檢視其記錄的傳回結果的頁碼。 |
-| `property` | 根據所選欄位篩選結果。 篩選器 **必須** 已逸出HTML。 逗號可用來組合多組篩選器。 下列屬性允許篩選： <ul><li>id</li><li>assetId</li><li>狀態</li><li>警報型別</li></ul> 支援的運運算元包括 `==` （等於）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 將會傳回具有相符識別碼的警報。 |
+| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前附加 `+` 升序和 `-` 降序排列。 默认值为 `-created`。请注意，加号(`+`)必须转义 `%2B`. 例如 `%2Bcreated` 是升序创建顺序的值。 |
+| `pagesize` | 使用此参数可控制要从每页的API调用中获取的记录数。 默认限制设置为每页最多50条记录。 |
+| `page` | 指示要查看其记录的返回结果的页码。 |
+| `property` | 根据所选字段筛选结果。 过滤器 **必须** 被HTML逃跑了。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>id</li><li>assetId</li><li>状态</li><li>警报类型</li></ul> 支持的运算符包括 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
 
 **请求**
 
@@ -82,11 +82,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的回應會傳回HTTP 200狀態，並且 `alerts` 陣列，包含分頁與版本資訊。 此 `alerts` 陣列包含組織和特定沙箱之所有警報的詳細資訊。 每個回應最多有三個警示，回應內文中會包含每個警示型別一個警示。
+成功的响应会返回HTTP 200状态，并且 `alerts` 数组，包含分页和版本信息。 此 `alerts` 数组包含组织和特定沙盒的所有警报的详细信息。 每个响应最多有三个警报可用，响应正文中包含每个警报类型的一个警报。
 
 >[!NOTE]
 >
->此 `alerts._links` 中的物件 `alerts` 為簡短起見，陣列已截斷。 的完整範例 `alerts._links` 物件可在以下位置找到： [POST要求的回應](#subscribe-users).
+>此 `alerts._links` 中的对象 `alerts` 为简短起见，数组已截断。 的完整示例 `alerts._links` 对象可在 [POST请求的响应](#subscribe-users).
 
 ```json
 {
@@ -151,17 +151,17 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `alerts.assetId` | 將警報與特定查詢相關聯的查詢ID。 |
-| `alerts.id` | 警示的名稱。 此名稱由「警示」服務產生，並用於「警示」控制面板。 警報名稱由儲存警報的資料夾組成， `alertType`，以及流量ID。 有關可用警報的資訊，請參閱 [平台警報儀表板檔案](../../observability/alerts/ui.md). |
-| `alerts.status` | 警示有四個狀態值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警報會主動接聽事件、暫停以供日後使用，同時保留所有相關訂閱者和設定，或在這些狀態之間轉換。 |
-| `alerts.alertType` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `alerts._links` | 提供可用於擷取、更新、編輯或刪除與此警示ID相關之資訊的可用方法和端點的相關資訊。 |
-| `_page` | 物件包含描述順序、大小、總頁數和目前頁面的屬性。 |
-| `_links` | 物件包含可用於取得下一頁或上一頁資源的URI參考。 |
+| `alerts.assetId` | 将警报与特定查询关联的查询ID。 |
+| `alerts.id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `alerts.status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件、在暂停以供将来使用的同时保留所有相关订阅者和设置，或者正在在这些状态之间转换。 |
+| `alerts.alertType` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `alerts._links` | 提供有关可用于检索、更新、编辑或删除与此警报ID相关的信息的可用方法和端点的信息。 |
+| `_page` | 对象包含用于描述顺序、大小、总页数和当前页面的属性。 |
+| `_links` | 对象包含可用于获取下一页或上一页资源的URI引用。 |
 
-## 擷取特定查詢或排程ID的警示訂閱資訊 {#retrieve-all-alert-subscriptions-by-id}
+## 检索特定查询或计划ID的警报订阅信息 {#retrieve-all-alert-subscriptions-by-id}
 
-透過向以下專案發出GET要求，擷取特定查詢ID或排程ID的警報訂閱資訊： `/alert-subscriptions/{QUERY_ID}` 或 `/alert-subscriptions/{SCHEDULE_ID}` 端點。
+通过向GET请求获取特定查询ID或计划ID的警报订阅信息 `/alert-subscriptions/{QUERY_ID}` 或 `/alert-subscriptions/{SCHEDULE_ID}` 端点。
 
 **API格式**
 
@@ -172,8 +172,8 @@ GET /alert-subscriptions/{SCHEDULE_ID}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 您要傳回訂閱資訊的查詢識別碼。 |
-| `{SCHEDULE_ID}` | 您要傳回訂閱資訊之排程查詢的ID。 |
+| `{QUERY_ID}` | 要为其返回订阅信息的查询的ID。 |
+| `{SCHEDULE_ID}` | 要为其返回订阅信息的计划查询的ID。 |
 
 **请求**
 
@@ -189,7 +189,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，並且 `alerts` 包含所提供查詢或排程ID之訂閱資訊的陣列。
+成功响应会返回HTTP状态200，并且 `alerts` 数组，其中包含所提供查询或计划ID的订阅信息。
 
 ```json
 {
@@ -280,16 +280,16 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `assetId` | 警示與此ID相關聯。 ID可以是查詢ID或排程ID。 |
-| `id` | 警示的名稱。 此名稱由「警示」服務產生，並用於「警示」控制面板。 警報名稱由儲存警報的資料夾組成， `alertType`，以及流量ID。 有關可用警報的資訊，請參閱 [平台警報儀表板檔案](../../observability/alerts/ui.md). |
-| `status` | 警示有四個狀態值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警報會主動接聽事件、暫停以供日後使用，同時保留所有相關訂閱者和設定，或在這些狀態之間轉換。 |
-| `alertType` | 每個警報可以有三種不同的警報型別。 包括： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `subscriptions.emailNotifications` | 訂閱接收警示電子郵件之使用者的Adobe註冊電子郵件地址陣列。 |
-| `subscriptions.inContextNotifications` | 訂閱警示UI通知的使用者之Adobe註冊電子郵件地址陣列。 |
+| `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件、在暂停以供将来使用的同时保留所有相关订阅者和设置，或者正在在这些状态之间转换。 |
+| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `subscriptions.emailNotifications` | 为订阅了接收警报电子邮件的Adobe注册电子邮件地址的数组。 |
+| `subscriptions.inContextNotifications` | 为订阅了警报UI通知的Adobe注册的一系列电子邮件地址。 |
 
-## 擷取特定查詢或排程ID和警示型別的警示訂閱資訊 {#get-alert-info-by-id-and-alert-type}
+## 检索特定查询或计划ID和警报类型的警报订阅信息 {#get-alert-info-by-id-and-alert-type}
 
-透過向以下發出GET要求，擷取特定ID和警報型別的警報訂閱資訊： `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 端點。 這同時適用於查詢或排程的查詢ID。
+通过向发出一个GET请求，检索特定ID和警报类型的警报订阅信息 `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 端点。 这同时适用于查询或计划的查询ID。
 
 **API格式**
 
@@ -300,9 +300,9 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 此屬性說明觸發警示的查詢執行狀態。 回應將僅包含此型別警示的警示訂閱資訊。 每個警報可以有三種不同的警報型別。 包括： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `QUERY_ID` | 要更新的查詢的唯一識別碼。 |
-| `SCHEDULE_ID` | 要更新的排程查詢的唯一識別碼。 |
+| `ALERT_TYPE` | 此属性描述触发警报的查询执行状态。 响应将仅包含此类警报的警报订阅信息。 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `QUERY_ID` | 要更新的查询的唯一标识符。 |
+| `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
 **请求**
 
@@ -318,7 +318,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的回應會傳回HTTP狀態200以及訂閱的所有警示。 這包括警示ID、警示型別、訂閱者的Adobe註冊電子郵件ID，以及他們偏好的通知通道。
+成功的响应会返回HTTP状态200以及订阅的所有警报。 这包括警报ID、警报类型、订阅者的Adobe注册的电子邮件ID及其首选通知渠道。
 
 ```json
 {
@@ -368,15 +368,15 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `assetId` | 將警報與特定查詢相關聯的查詢ID。 |
-| `alertType` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `subscriptions` | 用來傳遞與警示相關聯之Adobe註冊電子郵件ID的物件，以及使用者接收警示的通道。 |
-| `subscriptions.inContextNotifications` | 訂閱警示UI通知的使用者之Adobe註冊電子郵件地址陣列。 |
-| `subscriptions.emailNotifications` | 訂閱接收警示電子郵件之使用者的Adobe註冊電子郵件地址陣列。 |
+| `assetId` | 将警报与特定查询关联的查询ID。 |
+| `alertType` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户接收警报的渠道。 |
+| `subscriptions.inContextNotifications` | 为订阅了警报UI通知的Adobe注册的一系列电子邮件地址。 |
+| `subscriptions.emailNotifications` | 为订阅了接收警报电子邮件的Adobe注册电子邮件地址的数组。 |
 
-## 擷取使用者訂閱的所有警報清單 {#get-alert-subscription-list}
+## 检索用户订阅的所有警报的列表 {#get-alert-subscription-list}
 
-透過向以下專案發出GET請求，擷取使用者訂閱的所有警報清單： `/alert-subscriptions/user-subscriptions/{EMAIL_ID}` 端點。 回應包括警示名稱、ID、狀態、警示型別和通知通道。
+通过向GET发出请求，检索用户订阅的所有警报的列表 `/alert-subscriptions/user-subscriptions/{EMAIL_ID}` 端点。 响应包括警报名称、ID、状态、警报类型和通知渠道。
 
 **API格式**
 
@@ -386,11 +386,11 @@ GET /alert-subscriptions/user-subscriptions/{EMAIL_ID}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{EMAIL_ID}` | 註冊到Adobe帳戶的電子郵件地址用於識別訂閱了警報的使用者。 |
-| `orderby` | 指定結果順序的欄位。 支援的欄位包括 `created` 和 `updated`. 在屬性名稱前面加上 `+` 升序和 `-` 以遞減順序排列。 默认值为 `-created`。請注意，加號(`+`)必須逸出 `%2B`. 例如 `%2Bcreated` 是遞增建立順序的值。 |
-| `pagesize` | 使用此引數可控制您要從每頁的API呼叫擷取的記錄數。 預設限制設定為每頁最多50筆記錄。 |
-| `page` | 指定您要檢視其記錄的傳回結果的頁碼。 |
-| `property` | 根據所選欄位篩選結果。 篩選器 **必須** 已逸出HTML。 逗號可用來組合多組篩選器。 下列屬性允許篩選： <ul><li>id</li><li>assetId</li><li>狀態</li><li>警報型別</li></ul> 支援的運運算元包括 `==` （等於）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 將會傳回具有相符識別碼的警報。 |
+| `{EMAIL_ID}` | 注册到Adobe帐户的电子邮件地址用于标识订阅了警报的用户。 |
+| `orderby` | 指定结果顺序的字段。 支持的字段包括 `created` 和 `updated`. 在属性名称前附加 `+` 升序和 `-` 降序排列。 默认值为 `-created`。请注意，加号(`+`)必须转义 `%2B`. 例如 `%2Bcreated` 是升序创建顺序的值。 |
+| `pagesize` | 使用此参数可控制要从每页的API调用中获取的记录数。 默认限制设置为每页最多50条记录。 |
+| `page` | 指示要查看其记录的返回结果的页码。 |
+| `property` | 根据所选字段筛选结果。 过滤器 **必须** 被HTML逃跑了。 逗号用于组合多组过滤器。 以下属性允许筛选： <ul><li>id</li><li>assetId</li><li>状态</li><li>警报类型</li></ul> 支持的运算符包括 `==` （等于）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有匹配ID的警报。 |
 
 **请求**
 
@@ -406,7 +406,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，而且 `items` 陣列，其中包含訂閱的警報詳細資訊 `emailId` 已提供。
+成功的响应返回HTTP状态200，并且 `items` 阵列，其中包含由订阅的警报的详细信息 `emailId` 已提供。
 
 ```json
 {
@@ -499,21 +499,21 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 警示的名稱。 此名稱由「警示」服務產生，並用於「警示」控制面板。 警報名稱由儲存警報的資料夾組成， `alertType`，以及流量ID。 有關可用警報的資訊，請參閱 [平台警報儀表板檔案](../../observability/alerts/ui.md). |
-| `assetId` | 將警報與特定查詢相關聯的查詢ID。 |
-| `status` | 警示有四個狀態值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警報會主動接聽事件、暫停以供日後使用，同時保留所有相關訂閱者和設定，或在這些狀態之間轉換。 |
-| `alertType` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `subscriptions` | 用來傳遞與警示相關聯之Adobe註冊電子郵件ID的物件，以及使用者接收警示的通道。 |
-| `subscriptions.inContextNotifications` | 布林值，可決定使用者接收警報通知的方式。 A `true` 值會確認應透過UI提供警示。 A `false` 值可確保不會通過該頻道通知使用者。 |
-| `subscriptions.emailNotifications` | 布林值，可決定使用者接收警報通知的方式。 A `true` 值會確認電子郵件應提供警示。 A `false` 值可確保不會通過該頻道通知使用者。 |
+| `name` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `assetId` | 将警报与特定查询关联的查询ID。 |
+| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件、在暂停以供将来使用的同时保留所有相关订阅者和设置，或者正在在这些状态之间转换。 |
+| `alertType` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户接收警报的渠道。 |
+| `subscriptions.inContextNotifications` | 一个布尔值，确定用户接收警报通知的方式。 A `true` 值用于确认应通过UI提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
+| `subscriptions.emailNotifications` | 一个布尔值，确定用户接收警报通知的方式。 A `true` 值用于确认应通过电子邮件提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
 
-## 建立警報並訂閱使用者 {#subscribe-users}
+## 创建警报并订阅用户 {#subscribe-users}
 
-若要建立警報並訂閱使用者以接收警報，請發出 `POST` 向以下專案提出的請求： `/alert-subscriptions` 端點。 此請求會使用，將查詢與新建立的警報相關聯 `assetId` 屬性，並透過使用訂閱該查詢的警示 `emailIds`.
+要创建警报并订阅用户以接收警报，请发出 `POST` 请求 `/alert-subscriptions` 端点。 此请求使用将查询关联到新创建的警报 `assetId` 属性，并通过使用为用户订阅该查询的警报 `emailIds`.
 
 >[!IMPORTANT]
 >
->您最多可以在單一請求中傳遞5個Adobe註冊的電子郵件ID。 若要為超過五名使用者訂閱警報，必須提出後續請求。
+>在一个请求中最多可以传递5个Adobe注册的电子邮件ID。 要为5个以上的用户订阅警报，必须发出后续请求。
 
 **API格式**
 
@@ -546,18 +546,18 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `assetId` | 警示與此ID相關聯。 ID可以是查詢ID或排程ID。 |
-| `alertType` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `subscriptions` | 用來傳遞與警示相關聯之Adobe註冊電子郵件ID的物件，以及使用者接收警示的通道。 |
-| `subscriptions.emailIds` | 一系列電子郵件地址，用於識別應接收警報的使用者。 電子郵件地址 **必須** 已註冊至Adobe帳戶。 |
-| `subscriptions.inContextNotifications` | 布林值，可決定使用者接收警報通知的方式。 A `true` 值會確認應透過UI提供警示。 A `false` 值可確保不會通過該頻道通知使用者。 |
-| `subscriptions.emailNotifications` | 布林值，可決定使用者接收警報通知的方式。 A `true` 值會確認電子郵件應提供警示。 A `false` 值可確保不會通過該頻道通知使用者。 |
+| `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
+| `alertType` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `subscriptions` | 一个对象，用于传递与警报相关联的Adobe注册的电子邮件ID，以及用户接收警报的渠道。 |
+| `subscriptions.emailIds` | 一系列电子邮件地址，用于标识应接收警报的用户。 电子邮件地址 **必须** 注册到Adobe帐户。 |
+| `subscriptions.inContextNotifications` | 一个布尔值，确定用户接收警报通知的方式。 A `true` 值用于确认应通过UI提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
+| `subscriptions.emailNotifications` | 一个布尔值，确定用户接收警报通知的方式。 A `true` 值用于确认应通过电子邮件提供警报。 A `false` 值可确保不会通过该渠道通知用户。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回HTTP狀態202 （已接受）以及您新建立警報的詳細資訊。
+成功响应会返回HTTP状态202（已接受）以及新创建警报的详细信息。
 
 ```json
 {
@@ -600,12 +600,12 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 警示的名稱。 此名稱由「警示」服務產生，並用於「警示」控制面板。 警報名稱由儲存警報的資料夾組成， `alertType`，以及流量ID。 有關可用警報的資訊，請參閱 [平台警報儀表板檔案](../../observability/alerts/ui.md). |
-| `_links` | 提供可用於擷取、更新、編輯或刪除與此警示ID相關之資訊的可用方法和端點的相關資訊。 |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `_links` | 提供有关可用于检索、更新、编辑或删除与此警报ID相关的信息的可用方法和端点的信息。 |
 
-## 啟用或停用警示 {#enable-or-disable-alert}
+## 启用或禁用警报 {#enable-or-disable-alert}
 
-此請求會使用查詢或排程ID和警示型別來參考特定警示，並將警示狀態更新為 `enable` 或 `disable`. 您可以透過發出 `PATCH` 向以下專案提出的請求： `/alert-subscriptions/{queryId}/{alertType}` 或 `/alert-subscriptions/{scheduleId}/{alertType}` 端點。
+此请求使用查询或计划ID和警报类型引用特定警报，并将警报状态更新为 `enable` 或 `disable`. 您可以通过发出 `PATCH` 请求 `/alert-subscriptions/{queryId}/{alertType}` 或 `/alert-subscriptions/{scheduleId}/{alertType}` 端点。
 
 **API格式**
 
@@ -616,9 +616,9 @@ PATCH /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul>您必須在端點名稱空間中指定目前的警報型別，才能進行變更。 |
-| `QUERY_ID` | 要更新的查詢的唯一識別碼。 |
-| `SCHEDULE_ID` | 要更新的排程查詢的唯一識別碼。 |
+| `ALERT_TYPE` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul>必须在端点命名空间中指定当前警报类型才能更改它。 |
+| `QUERY_ID` | 要更新的查询的唯一标识符。 |
+| `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
 **请求**
 
@@ -639,15 +639,15 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要執行的操作。 目前唯一接受的值是 `replace`. |
-| `path` | 此值與端點中的名稱空間相關。 目前唯一接受的值是 `/status`. |
-| `value` | 在成功的PATCH要求中，這會變更 `status` 警示的值。 目前，接受的值包括 `enable` 或 `disable`. |
+| `op` | 要执行的操作。 目前，唯一接受的值是 `replace`. |
+| `path` | 此值与端点中的命名空间相关。 目前，唯一接受的值是 `/status`. |
+| `value` | 在成功的PATCH请求中，这会更改 `status` 警报的值。 目前，接受的值包括 `enable` 或 `disable`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回HTTP狀態200，其中包含警示狀態、型別和ID的詳細資訊，以及與其相關的查詢。
+成功的响应会返回HTTP状态200，其中包含警报状态、类型和ID的详细信息以及与其相关的查询。
 
 ```json
 {
@@ -660,14 +660,14 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 警示的名稱。 此名稱由「警示」服務產生，並用於「警示」控制面板。 警報名稱由儲存警報的資料夾組成， `alertType`，以及流量ID。 有關可用警報的資訊，請參閱 [平台警報儀表板檔案](../../observability/alerts/ui.md). |
-| `assetId` | 警示與此ID相關聯。 ID可以是查詢ID或排程ID。 |
-| `alertType` | 每個警報可以有三種不同的警報型別。 包括： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> |
-| `status` | 警示有四個狀態值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警報會主動接聽事件、暫停以供日後使用，同時保留所有相關訂閱者和設定，或在這些狀態之間轉換。 |
+| `id` | 警报的名称。 此名称由警报服务生成，并用于警报仪表板。 警报名称由存储警报的文件夹组成， `alertType`和流ID。 有关可用警报的信息，请参见 [平台警报仪表板文档](../../observability/alerts/ui.md). |
+| `assetId` | 警报与此ID关联。 该ID可以是查询ID或计划ID。 |
+| `alertType` | 每个警报可以有三种不同的警报类型。 它们是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> |
+| `status` | 警报有四个状态值： `enabled`， `enabling`， `disabled`、和 `disabling`. 警报正在主动侦听事件、在暂停以供将来使用的同时保留所有相关订阅者和设置，或者正在在这些状态之间转换。 |
 
-## 刪除特定查詢和警示型別的警示 {#delete-alert-info-by-id-and-alert-type}
+## 删除特定查询和警报类型的警报 {#delete-alert-info-by-id-and-alert-type}
 
-透過向以下專案發出DELETE請求，刪除特定查詢的警報或排程ID和警報型別： `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 或 `/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}` 端點。
+通过向发出一个DELETE请求，删除特定查询的警报，或计划ID和警报类型 `/alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}` 或 `/alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}` 端点。
 
 ```http
 DELETE /alert-subscriptions/{QUERY_ID}/{ALERT_TYPE}
@@ -676,9 +676,9 @@ DELETE /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `ALERT_TYPE` | 警示型別。 警報有三種可能的值，分別是： <ul><li>`start`：在查詢執行開始時通知使用者。</li><li>`success`：查詢完成時通知使用者。</li><li>`failure`：如果查詢失敗，則通知使用者。</li></ul> DELETE要求僅適用於所提供的特定警報型別。 |
-| `QUERY_ID` | 要更新的查詢的唯一識別碼。 |
-| `SCHEDULE_ID` | 要更新的排程查詢的唯一識別碼。 |
+| `ALERT_TYPE` | 警报的类型。 警报有三种潜在值，分别是： <ul><li>`start`：在查询开始执行时通知用户。</li><li>`success`：在查询完成时通知用户。</li><li>`failure`：在查询失败时通知用户。</li></ul> DELETE请求仅适用于提供的特定警报类型。 |
+| `QUERY_ID` | 要更新的查询的唯一标识符。 |
+| `SCHEDULE_ID` | 要更新的计划查询的唯一标识符。 |
 
 **请求**
 
@@ -694,7 +694,7 @@ curl -X DELETE 'https://platform.adobe.io/data/foundation/query/alert-subscripti
 
 **响应**
 
-成功的回應會傳回HTTP 200狀態和確認訊息，其中包含已刪除警報的資產ID和警報型別。
+成功的响应会返回HTTP 200状态和确认消息，其中包含已删除警报的资产ID和警报类型。
 
 ```json
 {
@@ -705,6 +705,6 @@ curl -X DELETE 'https://platform.adobe.io/data/foundation/query/alert-subscripti
 
 ## 后续步骤
 
-本指南涵蓋 `/alert-subscriptions` 查詢服務API中的端點。 閱讀本指南後，您現在已更瞭解如何為查詢建立警報、為使用者訂閱警報、可用警報型別，以及如何擷取、更新和刪除警報訂閱資訊。
+本指南涵盖了 `/alert-subscriptions` 查询服务API中的端点。 阅读本指南后，您现在可以更好地了解如何为查询创建警报、为用户订阅警报、可用警报类型以及如何检索、更新和删除警报订阅信息。
 
-請參閱 [查詢服務API指南](./getting-started.md) 以進一步瞭解其他可用功能和操作。
+请参阅 [查询服务API指南](./getting-started.md) 了解更多有关其他可用功能和操作的信息。

@@ -1,6 +1,6 @@
 ---
-title: 與Adobe Analytics互動
-description: 瞭解如何使用Edge Network Server API與Adobe Analytics互動。
+title: 与Adobe Analytics交互
+description: 了解如何使用Edge Network Server API与Adobe Analytics交互。
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 1%
 
 ---
 
-# 與Adobe Analytics互動
+# 与Adobe Analytics交互
 
 ## 概述 {#overview}
 
-Adobe Analytics資料彙集的運作方式是將XDM資料轉譯成Adobe Analytics可以理解的格式。 多個XDM欄位包括 [自動對應](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) 至Analytics變數。
+Adobe Analytics数据收集的工作方式是将XDM数据转换为Adobe Analytics可以理解的格式。 多个XDM字段包括 [自动映射](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) 到Analytics变量。
 
-您也可以 [手動對應XDM值](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) 至舊版Analytics變數。
+您还可以 [手动映射XDM值](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) 到旧版Analytics变量。
 
-若要讓Adobe Analytics接收來自伺服器API的資料，您需要 [設定您的資料串流](../edge/datastreams/overview.md#adobe-analytics-settings) 若要將事件轉送至Adobe Analytics，請在資料流設定頁面中輸入報表套裝ID。
+要使Adobe Analytics能够接收来自服务器API的数据，您需要 [配置数据流](../edge/datastreams/overview.md#adobe-analytics-settings) 要在数据流配置页面中输入报表包ID，将事件转发到Adobe Analytics。
 
-![Adobe Analytics資料流設定](assets/analytics-datastream.png)
+![Adobe Analytics数据流配置](assets/analytics-datastream.png)
 
-## 與Adobe Analytics互動 {#interacting-analytics}
+## 与Adobe Analytics交互 {#interacting-analytics}
 
 ### API格式 {#format}
 
@@ -31,9 +31,9 @@ POST /ee/v2/interact?dataStreamId={DATASTREAM_ID}
 
 ### 请求 {#request}
 
-以下範例包含下列專案中的數個自動對應值： `_experience.analytics` 欄位群組。 它也包括以JSON為基礎的資料層。 雖然這些資料層無法自動對應，但您可以使用 [資料收集的資料準備](../edge/datastreams/data-prep.md) 將這些值對應到包含上述欄位群組的結構描述。
+下面的示例包含来自以下项的多个自动映射值： `_experience.analytics` 字段组。 它还包含基于JSON的数据层。 虽然这些数据层无法自动映射，但可以使用 [为数据收集准备数据](../edge/datastreams/data-prep.md) 将这些值映射到包含上述字段组的架构。
 
-使用者對應至這些欄位的所有值都會自動對應至適當的Analytics值，就好像這些值包含在API請求中一樣。
+用户映射到这些字段的所有值将自动映射到相应的Analytics值，就像它们包含在API请求中一样。
 
 ```shell
 curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}" \
@@ -121,7 +121,7 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 }'
 ```
 
-### 回應 {#response}
+### 响应 {#response}
 
 ```json
 {

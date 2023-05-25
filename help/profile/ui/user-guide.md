@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；疑難排解；API；統一設定檔；統一設定檔；統一；設定檔；rtcp；啟用設定檔；啟用設定檔；聯合結構描述；聯合設定檔
-title: Real-Time Customer Profile UI指南
-description: 即時客戶設定檔可為個別客戶建立整體檢視，並結合來自多個管道的資料，包括線上、離線、CRM和第三方資料。 本檔案可作為在Adobe Experience Platform使用者介面中與Real-time Customer Profile互動的指南。
+keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件；联合架构；联合配置文件
+title: Real-Time Customer Profile用户界面指南
+description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档用作在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
@@ -12,170 +12,170 @@ ht-degree: 0%
 
 # [!DNL Real-Time Customer Profile] UI指南
 
-[!DNL Real-Time Customer Profile] 為每個個別客戶建立整體檢視，結合來自多個管道的資料，包括線上、離線、CRM和第三方資料。 本檔案可作為與互動的指南 [!DNL Real-Time Customer Profile] Adobe Experience Platform使用者介面(UI)中的資料。
+[!DNL Real-Time Customer Profile] 为每个客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档可用作与交互的指南 [!DNL Real-Time Customer Profile] Adobe Experience Platform用户界面(UI)中的数据。
 
 ## 快速入门
 
-本UI指南需要瞭解各種 [!DNL Experience Platform] 與管理相關的服務 [!DNL Real-Time Customer Profiles]. 在閱讀本指南或使用UI之前，請檢視以下服務的檔案：
+本UI指南要求您了解各种 [!DNL Experience Platform] 与管理有关的服务 [!DNL Real-Time Customer Profiles]. 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
-* [[!DNL Real-Time Customer Profile] 概觀](../home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
-* [[!DNL Identity Service]](../../identity-service/home.md)：啟用 [!DNL Real-Time Customer Profile] 在擷取身分時，透過橋接來自不同資料來源的身分 [!DNL Platform].
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。
+* [[!DNL Real-Time Customer Profile] 概述](../home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
+* [[!DNL Identity Service]](../../identity-service/home.md)：启用 [!DNL Real-Time Customer Profile] 在引入身份时，通过桥接来自不同数据源的身份 [!DNL Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
 ## [!UICONTROL 概述]
 
-在Experience PlatformUI中，選取 **[!UICONTROL 設定檔]** 在左側導覽以開啟 **[!UICONTROL 概觀]** 標籤顯示設定檔控制面板。
+在Experience PlatformUI中，选择 **[!UICONTROL 配置文件]** 在左侧导航中打开 **[!UICONTROL 概述]** 选项卡显示配置文件仪表板。
 
 >[!NOTE]
 >
->如果您的組織剛開始使用Platform，但尚未建立作用中的設定檔資料集或合併原則，請 [!UICONTROL 設定檔] 儀表板不可見。 取而代之的是 [!UICONTROL 概觀] 索引標籤會顯示連結和檔案，以幫助您開始使用即時客戶個人檔案。
+>如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则 [!UICONTROL 配置文件] 仪表板不可见。 相反， [!UICONTROL 概述] 选项卡显示链接和文档，以帮助您开始使用Real-Time Customer Profile。
 
-### 設定檔儀表板 {#profile-dashboard}
+### 配置文件仪表板 {#profile-dashboard}
 
-設定檔儀表板會概述與組織設定檔資料相關的關鍵量度。
+配置文件仪表板概述了与贵组织的配置文件数据相关的关键量度。
 
-若要進一步瞭解，請造訪 [設定檔儀表板指南](../../dashboards/guides/profiles.md).
+要了解更多信息，请访问 [个人资料仪表板指南](../../dashboards/guides/profiles.md).
 
-![「設定檔」儀表板隨即顯示。](../../dashboards/images/profiles/dashboard-overview.png)
+![此时将显示“配置文件”仪表板。](../../dashboards/images/profiles/dashboard-overview.png)
 
-## [!UICONTROL 瀏覽] 索引標籤量度
+## [!UICONTROL 浏览] 选项卡量度
 
-選取 **[!UICONTROL 瀏覽]** 標籤來顯示與您組織設定檔資料相關的數個量度。 您也可以使用此標籤來瀏覽使用合併原則或身分的設定檔存放區，如本指南下一節中所述。
+选择 **[!UICONTROL 浏览]** 选项卡以显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡来浏览使用合并策略或标识的配置文件存储区，如本指南下一节中所述。
 
-在的右側 **[!UICONTROL 瀏覽]** 索引標籤是 [設定檔計數](#profile-count) 以及清單 [依名稱空間的設定檔](#profiles-by-namespace).
+在右侧 **[!UICONTROL 浏览]** 选项卡是 [配置文件计数](#profile-count) 以及列表 [按命名空间列出的配置文件](#profiles-by-namespace).
 
 >[!NOTE]
 >
->這些設定檔量度可能與 [設定檔儀表板](#profile-dashboard) 因為它們是使用貴組織的預設合併原則來評估。 如需有關使用合併原則的詳細資訊，包括如何定義預設合併原則，請參閱 [合併原則概觀](../merge-policies/overview.md).
+>这些配置文件量度可能与 [配置文件仪表板](#profile-dashboard) 因为它们是使用贵组织的默认合并策略进行评估的。 有关使用合并策略的更多信息，包括如何定义默认合并策略，请参阅 [合并策略概述](../merge-policies/overview.md).
 
-除了這些量度外，本節還提供上次更新的日期和時間，顯示上次評估量度的時間。
+除了这些量度之外，此部分还提供上次更新的日期和时间，显示上次评估量度的时间。
 
-![設定檔量度會顯示並反白顯示。](../images/user-guide/browse-metrics.png)
+![此时会显示并突出显示配置文件量度。](../images/user-guide/browse-metrics.png)
 
 ### 配置文件计数 {#profile-count}
 
-在您組織的預設合併原則已與設定檔片段合併在一起，以為每個個別客戶形成單一設定檔後，設定檔計數會顯示貴組織在Experience Platform內的設定檔總數。 換言之，您的組織可能擁有多個與跨不同頻道與您的品牌互動的單一客戶相關的設定檔片段，但這些片段會合併在一起（根據預設合併原則）並傳回「1」設定檔計數，因為它們都與同一個人相關。
+配置文件计数显示贵组织在默认合并Experience Platform中将配置文件片段合并在一起，以便为每个单独客户形成一个配置文件后，在该策略下拥有的配置文件总数。 换言之，您的组织可能具有多个与跨不同渠道与您的品牌进行交互的单个客户相关的配置文件片段，但这些片段将合并在一起（根据默认合并策略），并将返回计数“1”个配置文件，因为它们都与同一个人相关。
 
-設定檔計數也包含具有屬性（記錄資料）的設定檔，以及僅包含時間序列（事件）資料(例如Adobe Analytics設定檔)的設定檔。 設定檔計數會定期更新，以提供Platform內最新的設定檔總數。
+配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 用户档案计数会定期刷新，以提供Platform内最新的用户档案总数。
 
-#### 更新設定檔計數量度
+#### 更新用户档案计数量度
 
-將記錄擷取至 [!DNL Profile] 存放區增加或減少計數超過5%，則會觸發工作以更新計數。 對於串流資料工作流程，會每小時進行一次檢查，以判斷是否符合增加或減少5%的臨界值。 如果有的話，系統會自動觸發工作以更新設定檔計數。 對於批次擷取，在成功將批次擷取到設定檔存放區後15分鐘內，如果符合5%增加或減少臨界值，則會執行工作以更新設定檔計數。
+当将记录摄取到 [!DNL Profile] 存储区计数增加或减少超过5%，将触发作业以更新计数。 对于流数据工作流，会每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果存在，则会自动触发作业以更新用户档案计数。 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新配置文件计数。
 
-### [!UICONTROL 依名稱空間的設定檔] {#profiles-by-namespace}
+### [!UICONTROL 按命名空间列出的配置文件] {#profiles-by-namespace}
 
-此 **[!UICONTROL 依名稱空間的設定檔]** 量度會顯示您的個人資料存放區中所有合併的個人資料中的名稱空間總計數和劃分。 依名稱空間區分的設定檔總數（也就是將每個名稱空間顯示的值相加）一律會高於設定檔計數量度，因為一個設定檔可能會有多個相關聯的名稱空間。 例如，如果客戶在多個頻道上與您的品牌互動，則多個名稱空間會與該個別客戶相關聯。
+此 **[!UICONTROL 按命名空间列出的配置文件]** 量度显示配置文件存储区中所有合并的配置文件中的命名空间的总计数和划分。 按命名空间划分的配置文件总数（即为每个命名空间显示的值相加）将始终高于配置文件计数量度，因为一个配置文件可能具有多个关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
-#### 更新 [!UICONTROL 依名稱空間的設定檔] 量度
+#### 更新 [!UICONTROL 按命名空间列出的配置文件] 量度
 
-類似於 [設定檔計數](#profile-count) 量度，將記錄擷取至 [!DNL Profile] 存放區增加或減少計數超過5%，則會觸發工作以更新名稱空間量度。 對於串流資料工作流程，會每小時進行一次檢查，以判斷是否符合增加或減少5%的臨界值。 如果有的話，系統會自動觸發工作以更新設定檔計數。 針對批次擷取，請在成功將批次擷取到 [!DNL Profile] 如果符合5%增加或減少臨界值，則會執行工作以更新量度。
+与 [配置文件计数](#profile-count) 量度，当将记录摄取到 [!DNL Profile] 存储增加或减少计数超过5%，将触发作业以更新命名空间量度。 对于流数据工作流，会每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果存在，则会自动触发作业以更新用户档案计数。 对于批量摄取，请在成功将批次摄取到 [!DNL Profile] 存储，如果满足5%增加或减少阈值，则运行作业以更新量度。
 
-## 使用 [!UICONTROL 瀏覽] 標籤以檢視設定檔
+## 使用 [!UICONTROL 浏览] 选项卡以查看配置文件
 
-於 **[!UICONTROL 瀏覽]** 索引標籤您可以使用合併原則檢視範例設定檔，或使用身分名稱空間和值查詢特定設定檔。
+在 **[!UICONTROL 浏览]** 选项卡，您可以使用合并策略查看示例配置文件，或使用身份命名空间和值查找特定配置文件。
 
-![此時會顯示屬於組織的設定檔。](../images/user-guide/none-selected.png)
+![此时将显示属于该组织的配置文件。](../images/user-guide/none-selected.png)
 
-### 瀏覽依據 [!UICONTROL 合併原則]
+### 浏览方式 [!UICONTROL 合并策略]
 
-此 **[!UICONTROL 瀏覽]** tab依預設會設定為您的組織的預設合併原則。 若要選擇不同的合併原則，請選取 `X` ，然後使用選取器開啟 **[!UICONTROL 選取合併原則]** 對話方塊。
-
->[!NOTE]
->
->如果未選取合併原則，請使用「 」旁邊的「 」選擇器按鈕 **[!UICONTROL 合併原則]** 欄位以開啟選取範圍對話方塊。
-
-![「合併原則」選擇器會反白顯示。](../images/user-guide/browse-by-merge-policy.png)
-
-若要從以下專案選擇合併原則： **[!UICONTROL 選取合併原則]** 對話方塊中，選取原則名稱旁的單選按鈕，然後使用 **[!UICONTROL 選取]** 以返回 [!UICONTROL 瀏覽] 標籤。 然後，您可以選取 **[!UICONTROL 檢視]** 以重新整理範例設定檔，並檢視已套用新合併原則的設定檔取樣。
-
-![會顯示一個對話方塊，您可在其中選取要作為篩選依據的合併原則。](../images/user-guide/select-merge-policy.png)
-
-顯示的設定檔代表在套用選取的合併原則後，貴組織設定檔存放區中最多20個設定檔的範例。 將新資料新增到貴組織的設定檔存放區時，會重新整理所選合併原則的範例設定檔。
-
-若要檢視其中一個範例設定檔的詳細資訊，請選取 **[!UICONTROL 設定檔ID]**. 如需詳細資訊，請參閱本指南後面關於 [檢視設定檔詳細資料](#profile-detail).
-
-![將顯示符合合併原則的範例設定檔。](../images/user-guide/sample-profiles.png)
-
-若要進一步瞭解合併原則及其在Platform中的角色，請參閱 [合併原則概觀](../merge-policies/overview.md).
-
-### 瀏覽依據 [!UICONTROL 身分] {#browse-identity}
-
-於 **[!UICONTROL 瀏覽]** 索引標籤中，您可以使用身分名稱空間，以便透過身分值查詢特定設定檔。 依身分瀏覽需要您提供合併原則、身分名稱空間和身分值。
-
-![合併原則選擇器會反白顯示。](../images/user-guide/browse-by-merge-policy.png)
-
-如有必要，請使用 **[!UICONTROL 合併原則]** 選擇器以開啟 **[!UICONTROL 選取合併原則]** 對話方塊，並選擇要使用的合併原則。
-
-![會顯示一個對話方塊，您可在其中選取要作為篩選依據的合併原則。](../images/user-guide/select-merge-policy.png)
-
-然後使用 **[!UICONTROL 身分名稱空間]** 選擇器以開啟 **[!UICONTROL 選取身分名稱空間]** 對話方塊，並選擇要搜尋的名稱空間。 如果您的組織有許多名稱空間，您可以使用對話方塊中的搜尋列，開始輸入名稱空間的名稱。
-
-您可以選取名稱空間以檢視其他詳細資訊，或選取選項按鈕以選擇名稱空間。 然後，您可以使用 **[!UICONTROL 選取]** 以繼續。
-
-![會顯示一個對話方塊，您可以在其中選取要作為篩選依據的身分名稱空間。](../images/user-guide/select-identity-namespace.png)
-
-選取 [!UICONTROL 身分名稱空間] 並返回 [!UICONTROL 瀏覽] 索引標籤中，您可以輸入 **[!UICONTROL 身分值]** 和您選取的名稱空間相關。
+此 **[!UICONTROL 浏览]** 选项卡。默认情况下，该选项卡设置为组织的默认合并策略。 要选择其他合并策略，请选择 `X` ，然后使用选择器打开 **[!UICONTROL 选择合并策略]** 对话框。
 
 >[!NOTE]
 >
->此值專屬於個別客戶設定檔，且必須是所提供名稱空間的有效專案。 例如，選取身分名稱空間「電子郵件」需要有效電子郵件地址形式的身分值。
+>如果未选择合并策略，请使用 **[!UICONTROL 合并策略]** 字段以打开选择对话框。
 
-![您要篩選的身分值會反白顯示。](../images/user-guide/filter-identity-value.png)
+![合并策略选择器会突出显示。](../images/user-guide/browse-by-merge-policy.png)
 
-輸入值後，選取 **[!UICONTROL 檢視]** 且會傳回符合值的單一設定檔。 選取 **[!UICONTROL 設定檔ID]** 以檢視設定檔詳細資料。
+要从 **[!UICONTROL 选择合并策略]** 对话框中，选择策略名称旁边的单选按钮，然后使用 **[!UICONTROL 选择]** 以返回 [!UICONTROL 浏览] 选项卡。 然后，您可以选择 **[!UICONTROL 视图]** 刷新示例配置文件并查看应用了新合并策略的配置文件采样。
 
-![符合身分值的設定檔會反白顯示。](../images/user-guide/filtered-identity-value.png)
+![将显示一个对话框，您可以在其中选择要作为筛选依据的合并策略。](../images/user-guide/select-merge-policy.png)
 
-## 檢視設定檔詳細資料 {#profile-detail}
+显示的配置文件表示在应用所选合并策略后，您组织的配置文件存储区中最多有20个配置文件的示例。 将新数据添加到贵组织的配置文件存储区后，将刷新所选合并策略的示例配置文件。
 
-選取 **[!UICONTROL 設定檔ID]**，則 **[!UICONTROL 詳細資訊]** 標籤開啟。 顯示在上的設定檔資訊 **[!UICONTROL 詳細資訊]** 索引標籤已從多個設定檔片段合併在一起，以形成個別客戶的單一檢視。 這包括基本屬性、連結的身分和管道偏好設定等客戶細節。
+要查看其中一个示例配置文件的详细信息，请选择 **[!UICONTROL 配置文件ID]**. 有关更多信息，请参阅本指南后面关于 [查看配置文件详细信息](#profile-detail).
 
-顯示的預設欄位也可以在組織層級變更以顯示偏好的設定檔屬性。 若要進一步瞭解如何自訂這些欄位，包括新增和移除屬性以及調整儀表板面板大小的逐步指示，請閱讀 [設定檔詳細資料自訂指南](profile-customization.md).
+![将显示与合并策略匹配的示例配置文件。](../images/user-guide/sample-profiles.png)
 
-![詳細資訊標籤會反白顯示。 設定檔詳細資訊隨即顯示。](../images/user-guide/profile-detail.png)
+要详细了解合并策略及其在Platform中的角色，请参阅 [合并策略概述](../merge-policies/overview.md).
 
-您可以選取其他可用的標籤，以檢視與個別客戶設定檔相關的額外資訊。 這些標籤包括屬性、事件和區段成員資格標籤，顯示設定檔目前符合資格的區段。
+### 浏览方式 [!UICONTROL 身份] {#browse-identity}
 
-### 屬性標籤
+在 **[!UICONTROL 浏览]** 选项卡，您可以使用身份命名空间，以便按身份值查找特定配置文件。 按身份浏览要求您提供合并策略、身份命名空间和身份值。
 
-此 **[!UICONTROL 屬性]** tab標籤提供清單檢視，在套用指定的合併原則後，彙總與單一設定檔相關的所有屬性。
+![合并策略选择器会突出显示。](../images/user-guide/browse-by-merge-policy.png)
 
-這些屬性也可以透過選取以下專案來檢視為JSON物件 **[!UICONTROL 檢視JSON]**. 對於想更瞭解如何將設定檔屬性擷取到Platform的使用者，這個用法很有幫助。
+如有必要，请使用 **[!UICONTROL 合并策略]** 选择器以打开 **[!UICONTROL 选择合并策略]** 对话框，然后选择要使用的合并策略。
 
-![「屬性」標籤會反白顯示。 設定檔屬性隨即顯示。](../images/user-guide/attributes.png)
+![将显示一个对话框，您可以在其中选择要作为筛选依据的合并策略。](../images/user-guide/select-merge-policy.png)
 
-### 事件標籤
+然后使用 **[!UICONTROL 身份命名空间]** 选择器以打开 **[!UICONTROL 选择身份命名空间]** 对话框，并选择要搜索的命名空间。 如果贵组织具有多个命名空间，则可以使用对话框中的搜索栏开始键入命名空间的名称。
 
-此 **[!UICONTROL 事件]** 索引標籤包含來自與客戶相關聯的100個最新ExperienceEvents的資料。 此資料可能包括電子郵件開啟、購物車活動和頁面檢視。 選取 **[!UICONTROL 檢視全部]** 對於任何個別事件，都會提供額外的欄位和值擷取，作為事件的一部分。
+您可以选择命名空间以查看其他详细信息，也可以选择单选按钮来选择命名空间。 然后，您可以使用 **[!UICONTROL 选择]** 以继续。
 
-您也可以選取「 」，將事件視為JSON物件 **[!UICONTROL 檢視JSON]**. 這有助於瞭解如何在Platform中擷取事件。
+![将显示一个对话框，您可以在其中选择要作为筛选依据的身份命名空间。](../images/user-guide/select-identity-namespace.png)
 
-![「事件」標籤會反白顯示。 設定檔事件隨即顯示。](../images/user-guide/events.png)
+选择 [!UICONTROL 身份命名空间] 并返回 [!UICONTROL 浏览] 选项卡，您可以输入 **[!UICONTROL 标识值]** 与所选的命名空间相关。
 
-### 區段會籍標籤
+>[!NOTE]
+>
+>此值特定于单个客户配置文件，并且必须是所提供命名空间的有效条目。 例如，选择身份命名空间“Email”将需要有效电子邮件地址形式的身份值。
 
-此 **[!UICONTROL 區段會籍]** 索引標籤會顯示清單，其中包含個別客戶設定檔目前所屬的區段的名稱和說明。 當設定檔符合區段的資格或過期時，此清單會自動更新。 設定檔目前符合資格的區段總數會顯示在標籤的右側。
+![要作为筛选依据的身份值会突出显示。](../images/user-guide/filter-identity-value.png)
 
-如需Experience Platform分段的詳細資訊，請參閱 [AdobeExperience Platform細分服務檔案](../../segmentation/home.md).
+输入值后，选择 **[!UICONTROL 视图]** 并返回一个与值匹配的配置文件。 选择 **[!UICONTROL 配置文件ID]** 查看配置文件详细信息。
 
-![「區段會籍」標籤會反白顯示。 設定檔區段會籍詳細資訊隨即顯示。](../images/user-guide/segment-membership.png)
+![与标识值匹配的配置文件会突出显示。](../images/user-guide/filtered-identity-value.png)
 
-## 合併原則
+## 查看配置文件详细信息 {#profile-detail}
 
-從主要 **[!UICONTROL 設定檔]** 功能表，選取 **[!UICONTROL 合併原則]** 標籤來檢視屬於您組織的合併原則清單。 每個列出的原則都會顯示其名稱（無論是否為預設的合併原則）及其套用的結構描述類別。
+选择 **[!UICONTROL 配置文件ID]**，则 **[!UICONTROL 详细信息]** 选项卡打开。 配置文件信息显示在 **[!UICONTROL 详细信息]** 选项卡已从多个配置文件片段合并在一起，以形成单个客户的视图。 这包括客户详细信息，如基本属性、链接身份和渠道偏好设置。
 
-如需合併原則的詳細資訊，請參閱 [合併原則概觀](../merge-policies/overview.md).
+显示的默认字段也可以在组织级别更改以显示首选用户档案属性。 要了解有关自定义这些字段的更多信息（包括添加和删除属性以及调整仪表板面板大小的分步说明），请阅读 [配置文件详细信息自定义指南](profile-customization.md).
 
-![「合併原則」標籤會反白顯示。 此時會顯示屬於組織的合併原則。](../images/user-guide/merge-policies.png)
+![Details （详细信息）选项卡会突出显示。 将显示配置文件详细信息。](../images/user-guide/profile-detail.png)
 
-## 聯合結構描述 {#union-schema}
+您可以通过选择另一个可用选项卡，查看与单个客户配置文件相关的附加信息。 这些选项卡包括属性、事件和区段成员资格选项卡，该选项卡显示配置文件当前符合条件的区段。
 
-從主要 **[!UICONTROL 設定檔]** 功能表，選取 **[!UICONTROL 聯合結構描述]** 標籤以檢視您擷取資料的可用聯合結構描述。 聯合結構描述是所有專案的合併 [!DNL Experience Data Model] (XDM)相同類別下的欄位，其結構描述已啟用以用於中 [!DNL Real-Time Customer Profile].
+### “属性”选项卡
 
-如需聯合結構描述的詳細資訊，請造訪 [聯合結構描述UI指南](union-schema.md).
+此 **[!UICONTROL 属性]** 选项卡提供一个列表视图，其中汇总了应用指定的合并策略后与单个配置文件相关的所有属性。
 
-![「聯合結構描述」標籤會反白顯示。 會顯示屬於組織的聯合結構描述。](../images/user-guide/union-schema.png)
+这些属性也可以通过选择 **[!UICONTROL 查看JSON]**. 对于希望更好地了解如何将配置文件属性摄取到Platform的任何用户，此功能非常有用。
+
+![“属性”选项卡会突出显示。 此时会显示配置文件属性。](../images/user-guide/attributes.png)
+
+### “事件”选项卡
+
+此 **[!UICONTROL 事件]** 选项卡包含来自与客户关联的100个最新ExperienceEvents的数据。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 选择 **[!UICONTROL 查看全部]** 对于任何单个事件，都会在事件过程中提供额外的字段和值捕获。
+
+通过选择以，事件也可以查看为JSON对象 **[!UICONTROL 查看JSON]**. 这有助于了解如何在Platform中捕获事件。
+
+![Events选项卡高亮显示。 此时会显示配置文件事件。](../images/user-guide/events.png)
+
+### “区段成员资格”选项卡
+
+此 **[!UICONTROL 区段成员资格]** 选项卡显示一个列表，其中包含单个客户配置文件当前所属的区段的名称和描述。 当配置文件符合区段资格或自区段过期时，此列表会自动更新。 用户档案当前符合条件的区段总数将显示在选项卡的右侧。
+
+有关Experience Platform分段的更多信息，请参阅 [AdobeExperience Platform分段服务文档](../../segmentation/home.md).
+
+![区段成员资格选项卡会突出显示。 此时将显示用户档案区段成员资格详细信息。](../images/user-guide/segment-membership.png)
+
+## 合并策略
+
+从主 **[!UICONTROL 配置文件]** 菜单中，选择 **[!UICONTROL 合并策略]** 选项卡，以查看属于贵组织的合并策略的列表。 每个列出的策略都会显示其名称（无论其是否是默认合并策略）及其应用的架构类。
+
+有关合并策略的详细信息，请参阅 [合并策略概述](../merge-policies/overview.md).
+
+![“合并策略”选项卡会突出显示。 将显示属于组织的合并策略。](../images/user-guide/merge-policies.png)
+
+## 合并模式 {#union-schema}
+
+从主 **[!UICONTROL 配置文件]** 菜单中，选择 **[!UICONTROL 合并架构]** 选项卡，以查看所摄取数据的可用合并架构。 合并模式是所有模式的合并 [!DNL Experience Data Model] (XDM)类下的字段，已启用其架构以便用于 [!DNL Real-Time Customer Profile].
+
+有关合并模式的更多信息，请访问 [合并架构UI指南](union-schema.md).
+
+![“合并架构”选项卡会突出显示。 将显示属于组织的合并架构。](../images/user-guide/union-schema.png)
 
 ## 后续步骤
 
-閱讀本指南後，您就會知道如何使用Experience PlatformUI檢視和管理組織的設定檔資料。 有關如何使用Experience Platform API處理設定檔資料的資訊，請參閱 [Real-Time Customer Profile API指南](../api/overview.md).
+阅读本指南后，您将了解如何使用Experience PlatformUI查看和管理组织的配置文件数据。 有关如何使用Experience PlatformAPI处理配置文件数据的信息，请参阅 [Real-Time Customer Profile API指南](../api/overview.md).

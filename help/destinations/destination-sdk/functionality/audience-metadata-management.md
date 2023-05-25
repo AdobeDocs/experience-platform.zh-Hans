@@ -1,6 +1,6 @@
 ---
-description: 使用對象中繼資料範本，以程式設計方式在您的目的地建立、更新或刪除對象。 Adobe提供可擴充的對象中繼資料範本，您可以根據行銷API的規格進行設定。 定義、測試及提交範本後，Adobe會使用範本來建構對目的地的API呼叫。
-title: 對象中繼資料管理
+description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 在定义、测试和提交模板后，Adobe将使用该模板来构建对目标的调用API。
+title: 受众元数据管理
 source-git-commit: e69bd819fb8ef6c2384a2b843542d1ddcea0661f
 workflow-type: tm+mt
 source-wordcount: '1038'
@@ -9,67 +9,67 @@ ht-degree: 0%
 ---
 
 
-# 對象中繼資料管理
+# 受众元数据管理
 
-使用對象中繼資料範本，以程式設計方式在您的目的地建立、更新或刪除對象。 Adobe提供可擴充的對象中繼資料範本，您可以根據行銷API的規格進行設定。 定義、測試及提交設定後，Adobe會使用該設定來建構對目的地的API呼叫。
+使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交配置后，Adobe将使用该配置来构造指向目标的API调用。
 
-您可以使用設定本檔案中描述的功能 `/authoring/audience-templates` api端點。 讀取 [建立中繼資料範本](../metadata-api/create-audience-template.md) 如需您可以在端點上執行的操作的完整清單。
+您可以使用配置本文档中描述的功能 `/authoring/audience-templates` API端点。 读取 [创建元数据模板](../metadata-api/create-audience-template.md) 有关可在端点上执行的操作的完整列表。
 
-## 何時使用對象中繼資料管理端點 {#when-to-use}
+## 何时使用受众元数据管理端点 {#when-to-use}
 
-根據您的API設定，當您在Experience Platform中設定目的地時，不一定需要使用對象中繼資料管理端點。 使用下方的決策樹圖表，瞭解何時應使用對象中繼資料端點，以及如何為目的地設定對象中繼資料範本。
+根据您的API配置，在Experience Platform中配置目标时，您可能需要也可能不需要使用受众元数据管理端点。 使用下面的决策树图表了解何时使用受众元数据端点以及如何为目标配置受众元数据模板。
 
-![決策樹圖表](../assets/functionality/audience-metadata-decision-tree.png)
+![决策树图](../assets/functionality/audience-metadata-decision-tree.png)
 
-## 受眾中繼資料管理支援的使用案例 {#use-cases}
+## 受众元数据管理支持的用例 {#use-cases}
 
-透過Destination SDK中的受眾中繼資料支援，當您設定Experience Platform目的地時，可以為Platform使用者提供下列其中一個選項，讓他們將區段對應及啟用至您的目的地。 您可以透過中的引數控制使用者可用的選項 [對象中繼資料設定](../functionality/destination-configuration/audience-metadata-configuration.md) 目的地設定的區段。
+借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Platform用户提供以下几个选项之一，以便他们映射区段并将其激活到您的目标。 您可以通过 [受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md) 部分。
 
-### 使用案例1 — 您有第三方API，使用者不需要輸入對應ID
+### 用例1 — 您有一个第三方API，用户无需输入映射ID
 
-如果您有建立/更新/刪除區段或受眾的API端點，則可以使用受眾中繼資料範本設定Destination SDK，以符合區段建立/更新/刪除端點的規格。 Experience Platform能以程式設計方式建立/更新/刪除區段，並將中繼資料同步回Experience Platform。
+如果您拥有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板来配置Destination SDK，以匹配区段创建/更新/删除端点的规范。 Experience Platform能够以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
 
-在Experience Platform使用者介面(UI)中將區段啟用至您的目的地時，使用者不需要手動填寫啟用工作流程中的區段對應ID欄位。
+在Experience Platform用户界面(UI)中将区段激活到目标时，用户无需在激活工作流中手动填写区段映射ID字段。
 
-### 使用案例2 — 使用者需要先在您的目的地中建立區段，並需要手動輸入對應ID
+### 用例2 — 用户需要首先在您的目标中创建区段，并需要手动输入映射ID
 
-如果您的目的地需要合作夥伴或使用者手動建立區段和其他中繼資料，則使用者必須在啟動工作流程中手動填寫區段對應ID欄位，以在目的地和Experience Platform之間同步區段中繼資料。
+如果需要合作伙伴或用户在您的目标中手动创建区段和其他元数据，则用户必须手动填写激活工作流中的区段映射ID字段，以在您的目标和Experience Platform之间同步区段元数据。
 
-![輸入對應ID](../assets/functionality/input-mapping-id.png)
+![输入映射Id](../assets/functionality/input-mapping-id.png)
 
-### 使用案例3 — 您的目的地接受Experience Platform區段ID，使用者不需要手動輸入對應ID
+### 用例3 — 您的目标接受Experience Platform区段ID，用户无需手动输入映射ID
 
-如果您的目的地系統接受Experience Platform區段ID，您可以在對象中繼資料範本中加以設定。 使用者啟用區段時，不必填入區段對應ID。
+如果目标系统接受Experience Platform区段ID，则可以在受众元数据模板中对其进行配置。 用户在激活区段时无需填充区段映射ID。
 
-## 通用且可擴充的對象範本 {#generic-and-extensible}
+## 通用且可扩展的受众模板 {#generic-and-extensible}
 
-為了支援上面列出的使用案例，Adobe提供您一個通用範本，您可以根據您的API規格來自訂該範本。
+为了支持上面列出的用例，Adobe为您提供了一个通用模板，可以自定义该模板以根据API规范进行调整。
 
-您可以使用通用範本來 [建立新的受眾範本](../metadata-api/create-audience-template.md) 如果您的API支援：
+您可以使用通用模板执行以下操作 [创建新的受众模板](../metadata-api/create-audience-template.md) 如果您的API支持：
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
-* 驗證型別：OAuth 1、具有重新整理權杖的OAuth 2、具有持有人權杖的OAuth 2
-* 函式：建立對象、更新對象、取得對象、刪除對象、驗證認證
+* 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有持有者令牌的OAuth 2
+* 其功能包括：创建受众、更新受众、获取受众、删除受众、验证凭据
 
-如果您的使用案例需要，Adobe工程團隊可以與您合作，使用自訂欄位展開通用範本。
+如果您的用例需要，Adobe工程团队可以与您一起使用自定义字段展开通用模板。
 
-## 設定範例 {#configuration-examples}
+## 配置示例 {#configuration-examples}
 
-本節包含三個一般受眾中繼資料設定的範例，以供您參考，以及設定的主要區段說明。 請注意三個設定範例之間的URL、標頭、請求和回應內文差異。 這是因為三個範例平台行銷API的規格不同。
+本节包含三个通用受众元数据配置示例，以供您参考，以及对配置的主要部分的描述。 请注意三个示例配置中的url、标头、请求和响应正文之间的差异。 这是因为三个示例平台的营销API的规范不同。
 
-請注意，在一些範例中，巨集欄位如 `{{authData.accessToken}}` 或 `{{segment.name}}` 用於URL，而在其他範例中，這些會用於標頭或請求內文。 這確實取決於您的行銷API規格。
+请注意，在一些示例中，宏字段 `{{authData.accessToken}}` 或 `{{segment.name}}` 在URL中使用，而在其他示例中，在标头或请求正文中使用它们。 这确实取决于您的营销API规范。
 
-| 範本區段 | 描述 |
+| 模板部分 | 描述 |
 |--- |--- |
-| `create` | 包含對API進行HTTP呼叫的所有必要元件（URL、HTTP方法、標題、要求與回應內文），以程式設計方式在您的平台中建立區段/對象，並將資訊同步回Adobe Experience Platform。 |
-| `update` | 包含對API進行HTTP呼叫的所有必要元件（URL、HTTP方法、標頭、要求與回應內文），以程式設計方式更新您平台中的區段/對象，並將資訊同步回Adobe Experience Platform。 |
-| `delete` | 包含對API進行HTTP呼叫的所有必要元件（URL、HTTP方法、標頭、要求與回應內文），以便以程式設計方式刪除平台中的區段/對象。 |
-| `validate` | 在呼叫合作夥伴API之前，執行範本設定中任何欄位的驗證。 例如，您可以驗證使用者的帳戶ID是否正確輸入。 |
-| `notify` | 僅適用於以檔案為基礎的目的地。 包含對API進行HTTP呼叫的所有必要元件（URL、HTTP方法、標頭、請求和回應內文），以通知您檔案匯出成功。 |
+| `create` | 包含对API进行HTTP调用、在平台中以编程方式创建区段/受众并将信息同步回Adobe Experience Platform所需的所有组件（URL、HTTP方法、标头、请求和响应正文）。 |
+| `update` | 包含对API进行HTTP调用、以编程方式更新平台中的区段/受众并将信息同步回Adobe Experience Platform所需的所有组件（URL、HTTP方法、标头、请求和响应正文）。 |
+| `delete` | 包含对API进行HTTP调用的所有必需组件（URL、HTTP方法、标头、请求和响应正文），以编程方式删除平台中的区段/受众。 |
+| `validate` | 在调用合作伙伴API之前，运行模板配置中任何字段的验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
+| `notify` | 仅适用于基于文件的目标。 包括所有必需的组件（URL、HTTP方法、标头、请求和响应正文），以便对API进行HTTP调用，通知您文件导出成功。 |
 
 {style="table-layout:auto"}
 
-### 串流範例1 {#example-1}
+### 流示例1 {#example-1}
 
 ```json
 {
@@ -178,7 +178,7 @@ ht-degree: 0%
 }
 ```
 
-### 串流範例2 {#example-2}
+### 流示例2 {#example-2}
 
 ```json
 {
@@ -272,7 +272,7 @@ ht-degree: 0%
 }
 ```
 
-### 串流範例3 {#example-3}
+### 流示例3 {#example-3}
 
 ```json
 {
@@ -375,7 +375,7 @@ ht-degree: 0%
 ```
 
 
-### 檔案型範例 {#example-file-based}
+### 基于文件的示例 {#example-file-based}
 
 ```json
 {
@@ -521,21 +521,21 @@ ht-degree: 0%
 }
 ```
 
-在中尋找範本中所有引數的說明 [建立對象範本](../metadata-api/create-audience-template.md) API參考。
+在中查找模板中所有参数的描述 [创建受众模板](../metadata-api/create-audience-template.md) API引用。
 
-## 對象中繼資料範本中使用的巨集
+## 受众元数据模板中使用的宏
 
-若要在Experience Platform與API之間傳遞區段ID、存取權杖、錯誤訊息等資訊，受眾範本包含您可使用的巨集。 請閱讀以下本頁面三個設定範例中所使用的巨集說明：
+要在Experience Platform与API之间传递区段ID、访问令牌、错误消息等信息，受众模板包含您可以使用的宏。 请阅读下面本页三个配置示例中使用的宏的说明：
 
-| 巨集 | 描述 |
+| 宏 | 描述 |
 |--- |--- |
-| `{{segment.alias}}` | 可讓您存取Experience Platform中的區段別名。 |
-| `{{segment.name}}` | 可讓您存取Experience Platform中的區段名稱。 |
-| `{{segment.id}}` | 可讓您存取Experience Platform中的區段ID。 |
-| `{{customerData.accountId}}` | 可讓您存取在目的地設定中設定的帳戶ID欄位。 |
-| `{{oauth2ServiceAccessToken}}` | 可讓您根據您的OAuth 2設定動態產生存取權杖。 |
-| `{{authData.accessToken}}` | 可讓您將存取Token傳遞至API端點。 使用 `{{authData.accessToken}}` 如果Experience Platform應使用不會到期的Token來連線至您的目的地，否則請使用 `{{oauth2ServiceAccessToken}}` 以產生存取Token。 |
-| `{{body.segments[0].segment.id}}` | 傳回已建立對象的唯一識別碼，作為索引鍵的值 `externalAudienceId`. |
-| `{{error.message}}` | 傳回將在Experience PlatformUI中向使用者顯示的錯誤訊息。 |
+| `{{segment.alias}}` | 允许您访问Experience Platform中的区段别名。 |
+| `{{segment.name}}` | 允许您访问Experience Platform中的区段名称。 |
+| `{{segment.id}}` | 允许您访问Experience Platform中的区段ID。 |
+| `{{customerData.accountId}}` | 用于访问在目标配置中设置的帐户ID字段。 |
+| `{{oauth2ServiceAccessToken}}` | 允许您根据OAuth 2配置动态生成访问令牌。 |
+| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 使用 `{{authData.accessToken}}` 如果Experience Platform应使用未过期的令牌连接到您的目标，否则使用 `{{oauth2ServiceAccessToken}}` 以生成访问令牌。 |
+| `{{body.segments[0].segment.id}}` | 返回所创建受众的唯一标识符，作为键的值 `externalAudienceId`. |
+| `{{error.message}}` | 返回将在Experience PlatformUI中向用户显示的错误消息。 |
 
 {style="table-layout:auto"}

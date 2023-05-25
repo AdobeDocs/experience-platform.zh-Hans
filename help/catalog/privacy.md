@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料湖隱私權；身分名稱空間；隱私權；資料湖
+keywords: Experience Platform；主页；热门主题；数据湖隐私；身份命名空间；隐私；数据湖
 solution: Experience Platform
-title: Data Lake中的隱私權請求處理
-description: Adobe Experience Platform Privacy Service會根據法律和組織隱私權法規，處理客戶存取、選擇退出銷售或刪除其個人資料的請求。 本檔案說明與處理儲存在Data Lake之客戶資料的隱私權請求相關的重要概念。
+title: 数据湖中的隐私请求处理
+description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理存储在Data Lake中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
@@ -11,69 +11,69 @@ ht-degree: 1%
 
 ---
 
-# Data Lake中的隱私權請求處理
+# 数据湖中的隐私请求处理
 
-Adobe Experience Platform [!DNL Privacy Service] 根據法律和組織隱私權法規，處理客戶存取、選擇退出銷售或刪除其個人資料的請求。
+Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退出销售或删除其个人数据的请求，如法律和组织隐私法规所述。
 
-本檔案說明與處理儲存在Data Lake之客戶資料的隱私權請求相關的重要概念。
+本文档介绍了与处理存储在Data Lake中的客户数据的隐私请求相关的基本概念。
 
 >[!NOTE]
 >
->本指南僅涵蓋如何在Experience Platform中提出Data Lake的隱私權請求。 如果您也計畫向即時客戶個人檔案資料存放區提出隱私權請求，請參閱以下指南： [設定檔的隱私權請求處理](../profile/privacy.md) 除了本教學課程外。
+>本指南仅介绍如何在Experience Platform中对Data Lake发出隐私请求。 如果您还计划向Real-time Customer Profile数据存储区发出隐私请求，请参阅以下指南： [配置文件的隐私请求处理](../profile/privacy.md) 以及本教程。
 >
->如需針對其他Adobe Experience Cloud應用程式提出隱私權請求的步驟，請參閱 [Privacy Service檔案](../privacy-service/experience-cloud-apps.md).
+>有关如何为其他Adobe Experience Cloud应用程序提出隐私请求的步骤，请参阅 [Privacy Service文档](../privacy-service/experience-cloud-apps.md).
 
 ## 快速入门
 
-建議您實際瞭解下列事項 [!DNL Experience Platform] 閱讀本指南之前的服務：
+建议您实际了解以下内容 [!DNL Experience Platform] 在阅读本指南之前，请先参阅以下内容：
 
-* [[!DNL Privacy Service]](../privacy-service/home.md)：管理客戶在Adobe Experience Cloud應用程式中存取、選擇退出銷售或刪除其個人資料的請求。
-* [[!DNL Catalog Service]](home.md)：資料位置與譜系內的記錄系統 [!DNL Experience Platform]. 提供可用於更新資料集中繼資料的API。
-* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-* [[!DNL Identity Service]](../identity-service/home.md)：透過跨裝置和系統橋接身分，解決客戶體驗資料分散所造成的根本挑戰。
+* [[!DNL Privacy Service]](../privacy-service/home.md)：管理客户跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的请求。
+* [[!DNL Catalog Service]](home.md)：记录系统中的数据位置和谱系 [!DNL Experience Platform]. 提供可用于更新数据集元数据的API。
+* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
-## 瞭解身分名稱空間 {#namespaces}
+## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] 跨系統和裝置橋接客戶身分資料。 [!DNL Identity Service] 使用身分識別名稱空間，透過將身分識別值與來源系統建立關聯來提供身分識別值的內容。 名稱空間可代表一般概念，例如電子郵件地址（「電子郵件」），或將身分與特定應用程式相關聯，例如Adobe Advertising Cloud ID (「AdCloud」)或Adobe Target ID (「TNTID」)。
+Adobe Experience Platform [!DNL Identity Service] 跨系统和设备桥接客户身份数据。 [!DNL Identity Service] 使用身份命名空间，通过将身份值与原始系统相关联，来为身份值提供上下文。 命名空间可以表示电子邮件地址（“电子邮件”）等通用概念，也可以将身份与特定应用程序相关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
 
-[!DNL Identity Service] 維護全域定義（標準）和使用者定義（自訂）的身分名稱空間存放區。 標準名稱空間適用於所有組織（例如「Email」和「ECID」），而您的組織也可以建立自訂名稱空間以滿足其特定需求。
+[!DNL Identity Service] 维护全局定义（标准）和用户定义（自定义）身份命名空间的存储。 标准命名空间适用于所有组织（例如，“Email”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
-如需中識別名稱空間的詳細資訊 [!DNL Experience Platform]，請參閱 [身分名稱空間總覽](../identity-service/namespaces.md).
+有关中标识命名空间的更多信息 [!DNL Experience Platform]，请参见 [身份命名空间概述](../identity-service/namespaces.md).
 
-## 將身分資料新增至資料集
+## 向数据集添加身份数据
 
-為Data Lake建立隱私權請求時，必須為每位客戶提供有效的身分值（及其關聯的名稱空間），以便找到其資料並據以處理。 因此，受隱私權請求約束的所有資料集都必須在其相關聯的XDM結構描述中包含身分描述項。
+为数据湖创建隐私请求时，必须为每位客户提供有效的身份值（及其关联的命名空间），以便找到其数据并相应地对其进行处理。 因此，受隐私请求约束的所有数据集必须在其关联的XDM架构中包含身份描述符。
 
 >[!NOTE]
 >
->任何以不支援身分描述項中繼資料的結構描述為基礎的資料集（例如臨時資料集），目前都無法在隱私權請求中處理。
+>任何基于不支持身份描述符元数据的架构的数据集（例如临时数据集）当前无法在隐私请求中处理。
 
-本節逐步說明將身分描述項新增至現有資料集的XDM結構描述的步驟。 如果您已有具有身分描述項的資料集，您可以向前跳至 [下一節](#nested-maps).
+本节介绍将身份描述符添加到现有数据集的XDM架构的步骤。 如果您已经有一个数据集带有身份描述符，则可以向前跳转到 [下一节](#nested-maps).
 
 >[!IMPORTANT]
 >
->在決定要將哪些結構描述欄位設定為身分時，請記住 [使用巢狀對應型別欄位的限制](#nested-maps).
+>在决定要将哪些架构字段设置为身份时，请记住 [使用嵌套映射类型字段的限制](#nested-maps).
 
-有兩種方法可以將身分描述項新增到資料集結構描述：
+有两种方法可以将身份描述符添加到数据集架构：
 
 * [使用UI](#identity-ui)
 * [使用 API](#identity-api)
 
 ### 使用UI {#identity-ui}
 
-在 [!DNL Experience Platform ]使用者介面， **[!UICONTROL 結構描述]** 工作區可讓您編輯現有的XDM結構描述。 若要將身分描述項新增至結構描述，請從清單中選取結構描述，然後遵循以下步驟： [將結構描述欄位設定為身分欄位](../xdm/tutorials/create-schema-ui.md#identity-field) 在 [!DNL Schema Editor] 教學課程。
+在 [!DNL Experience Platform ]用户界面， **[!UICONTROL 架构]** 工作区允许您编辑现有的XDM架构。 要向架构添加身份描述符，请从列表中选择架构并执行以下步骤 [将架构字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 在 [!DNL Schema Editor] 教程。
 
-一旦您將結構描述中的適當欄位設定為身分欄位，您可以繼續下一節： [提交隱私權請求](#submit).
+将架构中的相应字段设置为标识字段后，您可以转到以下内容的下一部分： [提交隐私请求](#submit).
 
 ### 使用 API {#identity-api}
 
 >[!NOTE]
 >
->本節假設您知道資料集XDM結構描述的唯一URI ID值。 如果您不知道此值，可以使用 [!DNL Catalog Service] API。 閱讀 [快速入門](./api/getting-started.md) 開發人員指南的區段，遵循中概述的步驟 [清單](./api/list-objects.md) 或 [查詢](./api/look-up-object.md) [!DNL Catalog] 物件以尋找您的資料集。 此結構描述ID位於 `schemaRef.id`
+>本节假设您知道数据集XDM架构的唯一URI ID值。 如果您不知道此值，可以使用 [!DNL Catalog Service] API。 在阅读 [快速入门](./api/getting-started.md) 部分，按照中概述的步骤操作 [列表](./api/list-objects.md) 或 [查找](./api/look-up-object.md) [!DNL Catalog] 对象以查找您的数据集。 架构ID位于 `schemaRef.id`
 >
->本節也假設您知道如何呼叫Schema Registry API。 如需與使用API相關的重要資訊，包括瞭解 `{TENANT_ID}` 以及容器的概念，請參閱 [快速入門](../xdm/api/getting-started.md) API指南的部分。
+>本节还假定您知道如何调用架构注册表API。 有关使用API的重要信息，包括了解 `{TENANT_ID}` 以及容器的概念，请参见 [快速入门](../xdm/api/getting-started.md) API指南的部分。
 
-您可以透過向以下專案發出POST請求，將身分描述項新增到資料集的XDM結構描述中： `/descriptors` 中的端點 [!DNL Schema Registry] API。
+您可以通过向以下对象发出POST请求，向数据集的XDM架构添加标识描述符： `/descriptors` 中的端点 [!DNL Schema Registry] API。
 
 **API格式**
 
@@ -83,7 +83,7 @@ POST /descriptors
 
 **请求**
 
-以下請求在範例結構描述中的「電子郵件地址」欄位上定義身分描述項。
+以下请求在示例架构中的“电子邮件地址”字段中定义一个身份描述符。
 
 ```shell
 curl -X POST \
@@ -107,17 +107,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 正在建立的描述項型別。 對於身分描述項，值必須是&quot;xdm：descriptorIdentity&quot;。 |
-| `xdm:sourceSchema` | 資料集XDM結構描述的唯一URI ID。 |
-| `xdm:sourceVersion` | 在中指定的XDM結構描述的版本 `xdm:sourceSchema`. |
-| `xdm:sourceProperty` | 描述項套用到的結構描述欄位路徑。 |
-| `xdm:namespace` | 其中一項 [標準身分名稱空間](../privacy-service/api/appendix.md#standard-namespaces) 識別者 [!DNL Privacy Service]，或由您的組織定義的自訂名稱空間。 |
-| `xdm:property` | 「xdm：id」或「xdm：code」，視下使用的名稱空間而定 `xdm:namespace`. |
-| `xdm:isPrimary` | 選用的布林值。 為true時，表示欄位是主要身分。 結構描述只能包含一個主要身分。 若不包含，則預設為false。 |
+| `@type` | 正在创建的描述符的类型。 对于身份描述符，该值必须为“xdm：descriptorIdentity”。 |
+| `xdm:sourceSchema` | 数据集XDM架构的唯一URI ID。 |
+| `xdm:sourceVersion` | 中指定的XDM架构的版本 `xdm:sourceSchema`. |
+| `xdm:sourceProperty` | 描述符所应用到的架构字段的路径。 |
+| `xdm:namespace` | 其中一项 [标准身份命名空间](../privacy-service/api/appendix.md#standard-namespaces) 识别者 [!DNL Privacy Service]，或由您的组织定义的自定义命名空间。 |
+| `xdm:property` | “xdm：id”或“xdm：code”，具体取决于下使用的命名空间 `xdm:namespace`. |
+| `xdm:isPrimary` | 可选的布尔值。 如果为true，则表示该字段是主标识。 架构只能包含一个主标识。 如果不包含，则默认为false。 |
 
 **响应**
 
-成功的回應會傳回HTTP狀態201 （已建立）和新建立之描述項的詳細資訊。
+成功的响应返回HTTP状态201（已创建）以及新创建的描述符的详细信息。
 
 ```json
 {
@@ -133,31 +133,31 @@ curl -X POST \
 }
 ```
 
-## 提交請求 {#submit}
+## 提交请求 {#submit}
 
 >[!NOTE]
 >
->本節說明如何格式化Data Lake的隱私權請求。 強烈建議您檢閱 [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) 或 [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) 有關如何提交隱私權工作的完整步驟的檔案，包括如何在請求裝載中正確格式化提交的使用者身分資料。
+>本节介绍如何设置Data Lake隐私请求的格式。 强烈建议您查看 [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) 或 [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) 有关如何提交隐私作业的完整步骤（包括如何在请求负载中正确格式化提交的用户身份数据）的文档。
 
-以下章節概述如何使用向Data Lake提出隱私權請求 [!DNL Privacy Service] UI或API。
+以下部分概述了如何使用对数据湖提出隐私请求 [!DNL Privacy Service] ui或API。
 
 >[!IMPORTANT]
 >
->無法保證完成隱私權請求所需的時間。 如果在請求仍在處理時資料湖內發生變更，也無法保證這些記錄是否也受到處理。
+>无法保证隐私请求可能需要多长时间才能完成。 如果在请求仍在处理期间数据湖内发生更改，则也无法保证这些记录是否也得到了处理。
 
 ### 使用UI
 
-在UI中建立工作請求時，請務必選取 **[!UICONTROL AEP資料湖]** 在 **[!UICONTROL 產品]** 以便處理儲存在data lake中之資料的工作。
+在UI中创建作业请求时，请确保选择 **[!UICONTROL AEP数据湖]** 下 **[!UICONTROL 产品]** 以便处理存储在数据湖中的数据的作业。
 
-![此影像顯示隱私權請求建立對話方塊中選取的Data Lake產品](./images/privacy/product-value.png)
+![该图像显示在隐私请求创建对话框中选择的Data Lake产品](./images/privacy/product-value.png)
 
 ### 使用 API
 
-在API中建立工作請求時， `userIDs` 提供的必須使用特定 `namespace` 和 `type` 視其套用的資料存放區而定。 資料湖的ID必須使用 `unregistered` 的 `type` 值和 `namespace` 值符合以下其中一項： [隱私權標籤](#privacy-labels) 已新增至適用資料集的URL名稱。
+在API中创建作业请求时， `userIDs` 提供的必须使用 `namespace` 和 `type` 取决于它们应用的数据存储。 数据湖的ID必须使用 `unregistered` 为其 `type` 值，以及 `namespace` 值，该值与 [隐私标签](#privacy-labels) 添加到适用数据集的属性。
 
-此外， `include` 請求承載的陣列必須包含請求所針對的不同資料存放區的產品值。 向Data Lake提出請求時，陣列必須包含值 `aepDataLake`.
+此外， `include` 请求有效负载的数组必须包含请求所针对的不同数据存储的产品值。 向数据湖发出请求时，数组必须包含值 `aepDataLake`.
 
-以下請求會使用未註冊的，為Data Lake建立新的隱私權工作 `email_label` 名稱空間。 此外，還包含中資料湖的產品值 `include` 陣列：
+以下请求使用未注册的，为数据湖创建新的隐私作业 `email_label` 命名空间。 它还包含中数据湖的产品值 `include` 数组：
 
 ```shell
 curl -X POST \
@@ -200,29 +200,29 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Platform會處理所有隱私權請求 [沙箱](../sandboxes/home.md) 屬於您的組織。 因此，任何 `x-sandbox-name` 請求中包含的標頭會被系統忽略。
+>Platform处理所有隐私请求 [沙盒](../sandboxes/home.md) 属于您的组织。 因此，任何 `x-sandbox-name` 请求中包含的标头将被系统忽略。
 
-## 正在處理刪除請求
+## 正在处理删除请求
 
-時間 [!DNL Experience Platform] 接收來自的刪除請求 [!DNL Privacy Service]， [!DNL Platform] 傳送確認至 [!DNL Privacy Service] 已收到請求，且受影響的資料已標示為刪除。 接著會在七天內從資料湖中移除記錄。 在這七天期間，資料會軟刪除，因此任何人都無法存取 [!DNL Platform] 服務。
+时间 [!DNL Experience Platform] 接收来自的删除请求 [!DNL Privacy Service]， [!DNL Platform] 将确认发送至 [!DNL Privacy Service] 请求已收到，且受影响的数据已标记为删除。 然后，这些记录会在七天内从数据湖中删除。 在这七天的时间段内，数据会被软删除，因此任何人都无法访问 [!DNL Platform] 服务。
 
-如果您也包含 `ProfileService` 或 `identity` 在隱私權請求中，會分別處理其關聯資料。 請參閱以下小節： [設定檔的刪除請求處理](../profile/privacy.md#delete) 以取得詳細資訊。
+如果您还包含 `ProfileService` 或 `identity` 在隐私请求中，会单独处理其关联数据。 请参阅以下部分： [配置文件的delete请求处理](../profile/privacy.md#delete) 了解更多信息。
 
 ## 后续步骤
 
-閱讀本檔案後，您將會瞭解處理Data Lake隱私權請求相關的重要概念。 建議您繼續閱讀本指南中提供的檔案，以加深您對如何管理身分資料和建立隱私權工作的瞭解。
+通过阅读本文档，您已经了解与处理Data Lake的隐私请求相关的重要概念。 建议您继续阅读本指南中提供的文档，以加深您对如何管理身份数据和创建隐私作业的理解。
 
-檢視檔案： [即時客戶個人檔案的隱私權請求處理](../profile/privacy.md) ，以瞭解處理隱私權請求的步驟。 [!DNL Profile] 商店。
+查看文档 [实时客户个人资料的隐私请求处理](../profile/privacy.md) ，以了解为的隐私请求处理步骤 [!DNL Profile] 商店。
 
 ## 附录
 
-以下小節包含在Data Lake中處理隱私權請求的其他資訊。
+以下部分包含有关在数据湖中处理隐私请求的其他信息。
 
-### 標籤巢狀對應型別欄位 {#nested-maps}
+### 为嵌套映射类型字段设置标签 {#nested-maps}
 
-請務必注意，有兩種巢狀對應型別欄位不支援隱私權標籤：
+需要注意的是，有两种嵌套映射类型字段不支持隐私标记：
 
-* 陣列型別欄位中的對應型別欄位
-* 另一個對應型別欄位中的對應型別欄位
+* 数组类型字段中的映射类型字段
+* 另一个映射类型字段中的映射类型字段
 
-上述兩個範例的隱私權工作處理最終都將失敗。 因此，建議您避免使用巢狀對應型別欄位來儲存私人客戶資料。 相關消費者ID應該以非對應資料型別儲存在 `identityMap` 記錄型資料集的欄位（本身是對應型別欄位），或 `endUserID` 時間序列資料集的欄位。
+上述两个示例中的任何一个的隐私作业处理最终都将失败。 因此，建议您避免使用嵌套映射类型字段存储专用客户数据。 相关使用者ID应作为非映射数据类型存储在中 `identityMap` 字段（本身为映射类型字段），或 `endUserID` 基于时间序列的数据集的字段。

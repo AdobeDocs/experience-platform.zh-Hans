@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；欄位；結構描述；結構描述；identityMap；身分對應；身分對應；結構描述設計；對應；事件模型；事件模型；最佳實務；事件；事件；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；身份映射；身份映射；架构设计；映射；事件建模；事件建模；最佳实践；事件；事件；
 solution: Experience Platform
-title: XDM ExperienceEvent類別
-description: 本檔案提供XDM ExperienceEvent類別的概觀，以及事件資料模型化的最佳實務。
+title: XDM ExperienceEvent类
+description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
@@ -13,146 +13,146 @@ ht-degree: 1%
 
 # [!DNL XDM ExperienceEvent] class
 
-[!DNL XDM ExperienceEvent] 是一個標準Experience Data Model (XDM)類別，可讓您在發生特定事件或達到特定條件集時，建立系統的時間戳記快照。
+[!DNL XDM ExperienceEvent] 是一个标准Experience Data Model (XDM)类，它允许您在发生特定事件或达到一组特定条件时，创建系统的带时间戳快照。
 
-體驗事件是所發生事件的事實記錄，包括時間點和所涉及個人的身分。 事件可以是明確的（直接可觀察的人類動作）或隱含的（在沒有直接人類動作的情況下引發），並且記錄時不會彙總或解釋。 如需有關在平台生態系統中使用此類別的詳細資訊，請參閱 [XDM概觀](../home.md#data-behaviors).
+体验事件是所发生事件的事实记录，包括时间点和所涉及个人的身份。 事件可以是显式的（直接可观察的人类行为）或隐式的（在没有直接人类行为的情况下引发），并且记录时不进行聚集或解释。 有关此类在平台生态系统中使用的更多高级信息，请参阅 [XDM概述](../home.md#data-behaviors).
 
-此 [!DNL XDM ExperienceEvent] 類別本身為結構描述提供幾個時間序列相關的欄位。 以下兩個欄位(`_id` 和 `timestamp`)為 **必填** 適用於以類別為基礎的所有結構描述，其餘則是選擇性的。 某些欄位的值會在擷取資料時自動填入。
+此 [!DNL XDM ExperienceEvent] 类本身为架构提供了多个与时序相关的字段。 其中两个字段(`_id` 和 `timestamp`)为 **必需** 对于所有基于类的架构，而其余架构是可选的。 某些字段的值会在摄取数据时自动填充。
 
-![Platform UI中顯示的XDM ExperienceEvent結構](../images/classes/experienceevent/structure.png)
+![Platform UI中显示的XDM ExperienceEvent的结构](../images/classes/experienceevent/structure.png)
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id`<br>**(必需)** | 事件的唯一字串識別碼。 此欄位用於追蹤個別事件的唯一性、防止資料重複，以及在下游服務中查詢該事件。 某些情況下， `_id` 可以是 [通用唯一識別碼(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全域唯一識別碼(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果您要從來源連線串流資料，或直接從Parquet檔案擷取資料，應串連特定欄位組合（例如主要ID、時間戳記、事件型別等）以產生此值。 串連值必須是 `uri-reference` 格式化字串，表示必須移除任何冒號字元。 之後，應該使用SHA-256或您選擇的其他演演算法來雜湊串連值。<br><br>請務必區分 **此欄位不代表與個人相關的身分**&#x200B;而是資料本身的記錄。 與個人相關的身分資料應委派至 [身分欄位](../schema/composition.md#identity) 由相容的欄位群組所提供。 |
-| `eventMergeId` | 若使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 若要內嵌資料，這代表導致建立記錄之內嵌批次的ID。 此欄位會在資料擷取時自動由系統填入。 不支援在Web SDK實作的內容之外使用此欄位。 |
-| `eventType` | 指出事件型別或類別的字串。 如果您想要區分相同結構描述和資料集中的不同事件型別（例如區分零售公司的產品檢視事件和加入購物車的事件），則可以使用此欄位。<br><br>此屬性的標準值提供在 [附錄部分](#eventType)，包括預期使用案例的說明。 此欄位是可擴充的列舉，這表示您也可以使用自己的事件型別字串來分類您正在追蹤的事件。<br><br>`eventType` 限制您僅能針對應用程式的每個點選使用單一事件，因此您必須使用計算欄位，讓系統知道哪個事件最重要。 如需詳細資訊，請參閱以下章節： [計算欄位的最佳實務](#calculated). |
-| `producedBy` | 描述事件製作者或來源的字串值。 如果需要，可使用此欄位來篩選掉某些事件產生者，以用於細分目的。<br><br>此屬性的部分建議值提供在 [附錄部分](#producedBy). 此欄位是可擴充的列舉，這表示您也可以使用自己的字串來代表不同的事件產生器。 |
-| `identityMap` | 對應欄位，其中包含套用事件之個人的名稱空間身分識別集。 系統會在擷取身分資料時自動更新此欄位。 為了正確使用此欄位 [即時客戶個人檔案](../../profile/home.md)，請勿嘗試手動更新資料作業中的欄位內容。<br /><br />請參閱「 」中有關身分對應的章節 [結構描述組合基本概念](../schema/composition.md#identityMap) 以取得其使用案例的詳細資訊。 |
-| `timestamp`<br>**(必需)** | 事件發生時間的ISO 8601時間戳記，格式如下 [RFC 3339第5.6節](https://tools.ietf.org/html/rfc3339#section-5.6). 此時間戳記必須發生在過去。 請參閱以下章節： [時間戳記](#timestamps) 以取得使用此欄位的最佳實務。 |
+| `_id`<br>**(必需)** | 事件的唯一字符串标识符。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。 在某些情况下， `_id` 可以是 [通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果要从源连接流式传输数据或直接从Parquet文件中摄取，则应通过连接使事件唯一的字段的特定组合来生成此值，如主ID、时间戳、事件类型等。 连接值必须为 `uri-reference` 带格式的字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>区分以下内容非常重要： **此字段不表示与个人相关的身份**&#x200B;而不是数据记录本身。 与人员相关的身份数据应委派到 [标识字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
+| `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，这表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
+| `eventType` | 一个字符串，指明事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开），则可以使用此字段。<br><br>此属性的标准值提供在 [附录部分](#eventType)，包括预期使用案例的描述。 此字段是一个可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType` 限制您只能对应用程序上的每次点击使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关更多信息，请参阅以下部分： [计算字段的最佳实践](#calculated). |
+| `producedBy` | 描述事件的制作者或起源的字符串值。 如果需要，此字段可用于过滤掉某些事件生成器，以实现分段。<br><br>此属性的一些建议值提供在 [附录部分](#producedBy). 此字段是一个可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
+| `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 为了正确使用此字段 [Real-time Customer Profile](../../profile/home.md)中，请勿尝试在数据操作中手动更新字段内容。<br /><br />请参阅中有关身份映射的部分 [模式组合基础](../schema/composition.md#identityMap) 以了解有关其用例的更多信息。 |
+| `timestamp`<br>**(必需)** | 事件发生时间的ISO 8601时间戳，格式为 [RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6). 此时间戳必须发生在过去。 请参阅以下部分： [时间戳](#timestamps) 以获取有关使用此字段的最佳实践。 |
 
 {style="table-layout:auto"}
 
-## 事件模型化的最佳實務
+## 事件建模的最佳实践
 
-以下小節涵蓋在Adobe Experience Platform中設計事件型Experience Data Model (XDM)結構描述的最佳實務。
+以下部分介绍了在Adobe Experience Platform中设计基于事件的Experience Data Model (XDM)架构的最佳实践。
 
-### 時間戳記 {#timestamps}
+### 时间戳 {#timestamps}
 
-根 `timestamp` 事件結構描述的欄位可以 **僅限** 代表觀察到的事件本身，且必須發生在過去。 如果您的細分使用案例需要使用未來可能發生的時間戳記，這些值必須限制在體驗事件結構描述中的其他位置。
+根 `timestamp` 事件架构的字段可以 **仅限** 表示对事件本身的观察，并且必须发生在过去。 如果您的分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
 
-例如，如果旅遊業及旅館業的企業正在模型化航班訂位事件，則類別層級 `timestamp` 欄位代表觀察到預訂事件的時間。 與事件相關的其他時間戳記（例如旅行預訂的開始日期）應擷取在標準或自訂欄位群組提供的單獨欄位中。
+例如，如果旅游和酒店业的某个企业正在建模航班预订事件，则班级级别 `timestamp` 字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应捕获在标准或自定义字段组提供的单独字段中。
 
-![反白顯示航班預訂和開始日期的體驗事件結構描述範例。](../images/classes/experienceevent/timestamps.png)
+![突出显示航班预订和开始日期的示例体验事件架构。](../images/classes/experienceevent/timestamps.png)
 
-將類別層級的時間戳記與事件結構描述中的其他相關日期時間值分開，您就可以實作靈活的分段使用案例，同時保留體驗應用程式中客戶歷程的時間戳記帳戶。
+通过将类级别时间戳与事件架构中的其他相关日期时间值分开，您可以实施灵活的分段用例，同时保留体验应用程序中客户历程的时间戳记帐户。
 
-### 使用計算欄位 {#calculated}
+### 使用计算字段 {#calculated}
 
-體驗應用程式中的某些互動可能會導致多個相關事件，在技術上會共用相同的事件時間戳記，因此可以呈現為單一事件記錄。 例如，如果客戶檢視您網站上的產品，這可能會導致事件記錄具有兩種可能性 `eventType` 值： 「產品檢視」事件(`commerce.productViews`)或一般「頁面檢視」事件(`web.webpagedetails.pageViews`)。 在這些情況下，您可以在單一點選中擷取多個事件時，使用計算欄位來擷取最重要的屬性。
+体验应用程序中的某些交互可能会导致技术上共享同一事件时间戳的多个相关事件，因此可以表示为单个事件记录。 例如，如果客户查看了您网站上的产品，这可能会导致事件记录具有两种可能性 `eventType` 值：“产品查看”事件(`commerce.productViews`)或通用“页面查看”事件(`web.webpagedetails.pageViews`)。 在这些情况下，您可以在单次点击中捕获多个事件时，使用计算字段捕获最重要的属性。
 
-[Adobe Experience Platform資料準備](../../data-prep/home.md) 可讓您對應、轉換及驗證XDM之間的資料。 使用可用的 [對應函式](../../data-prep/functions.md) 由服務提供，您可以叫用邏輯運運算元，以便在資料擷取至Experience Platform時，優先處理、轉換及/或合併多事件記錄中的資料。 在上述範例中，您可以指定 `eventType` 作為計算欄位，每當「產品檢視」和「頁面檢視」發生時，都會優先考慮「產品檢視」。
+[Adobe Experience Platform数据准备](../../data-prep/home.md) 允许您映射、转换和验证XDM之间的数据。 使用可用的 [映射函数](../../data-prep/functions.md) 通过此服务，您可以调用逻辑运算符，以便在数据被引入Experience Platform时优先考虑多事件记录中的数据、转换数据和/或合并这些数据。 在上面的示例中，您可以指定 `eventType` 作为计算字段，每当“产品视图”发生时，都会优先于“页面视图”。
 
-如果您是透過UI手動將資料擷取到Platform，請參閱以下指南： [計算欄位](../../data-prep/ui/mapping.md#calculated-fields) 有關如何建立計算欄位的特定步驟。
+如果您是通过UI手动将数据摄取到Platform，请参阅上的指南 [计算字段](../../data-prep/ui/mapping.md#calculated-fields) 有关如何创建计算字段的特定步骤。
 
-如果您使用來源連線將資料串流至Platform，您可以將來源設定為改用計算欄位。 請參閱 [您特定來源的檔案](../../sources/home.md) 瞭解如何在設定連線時實作計算欄位。
+如果您要使用源连接将数据流式传输到Platform，则可以配置源以利用计算字段。 请参阅 [特定源的文档](../../sources/home.md) 有关如何在配置连接时实施计算字段的说明。
 
-## 相容的結構描述欄位群組 {#field-groups}
+## 兼容的架构字段组 {#field-groups}
 
 >[!NOTE]
 >
->數個欄位群組的名稱已變更。 檢視檔案： [欄位群組名稱更新](../field-groups/name-updates.md) 以取得詳細資訊。
+>多个字段组的名称已更改。 查看文档 [字段组名称更新](../field-groups/name-updates.md) 了解更多信息。
 
-Adobe提供數個標準欄位群組，可搭配使用 [!DNL XDM ExperienceEvent] 類別。 以下是類別的一些常用欄位群組清單：
+Adobe提供了多个标准字段组以用于 [!DNL XDM ExperienceEvent] 类。 以下是类的一些常用字段组的列表：
 
-* [[!UICONTROL Adobe Analytics ExperienceEvent完整擴充功能]](../field-groups/event/analytics-full-extension.md)
-* [[!UICONTROL 餘額轉帳]](../field-groups/event/balance-transfers.md)
-* [[!UICONTROL 行銷活動行銷細節]](../field-groups/event/campaign-marketing-details.md)
-* [[!UICONTROL 卡片動作]](../field-groups/event/card-actions.md)
-* [[!UICONTROL 管道詳細資料]](../field-groups/event/channel-details.md)
-* [[!UICONTROL 商務詳細資料]](../field-groups/event/commerce-details.md)
-* [[!UICONTROL 存款細節]](../field-groups/event/deposit-details.md)
-* [[!UICONTROL 裝置折舊換新細節]](../field-groups/event/device-trade-in-details.md)
-* [[!UICONTROL 餐飲預訂]](../field-groups/event/dining-reservation.md)
-* [[!UICONTROL 一般使用者ID詳細資訊]](../field-groups/event/enduserids.md)
+* [[!UICONTROL Adobe Analytics ExperienceEvent完整扩展]](../field-groups/event/analytics-full-extension.md)
+* [[!UICONTROL 余额转帐]](../field-groups/event/balance-transfers.md)
+* [[!UICONTROL 营销活动详细信息]](../field-groups/event/campaign-marketing-details.md)
+* [[!UICONTROL 信息卡操作]](../field-groups/event/card-actions.md)
+* [[!UICONTROL 渠道详细信息]](../field-groups/event/channel-details.md)
+* [[!UICONTROL 商业详细信息]](../field-groups/event/commerce-details.md)
+* [[!UICONTROL 存款明细]](../field-groups/event/deposit-details.md)
+* [[!UICONTROL 设备以旧换新详细信息]](../field-groups/event/device-trade-in-details.md)
+* [[!UICONTROL 餐饮预订]](../field-groups/event/dining-reservation.md)
+* [[!UICONTROL 最终用户ID详细信息]](../field-groups/event/enduserids.md)
 * [[!UICONTROL 环境详细信息]](../field-groups/event/environment-details.md)
-* [[!UICONTROL 航班預訂]](../field-groups/event/flight-reservation.md)
+* [[!UICONTROL 航班预订]](../field-groups/event/flight-reservation.md)
 * [[!UICONTROL IAB TCF 2.0同意]](../field-groups/event/iab.md)
-* [[!UICONTROL 住宿預訂]](../field-groups/event/lodging-reservation.md)
-* [[!UICONTROL 報價請求細節]](../field-groups/event/quote-request-details.md)
-* [[!UICONTROL 預訂詳細資料]](../field-groups/event/reservation-details.md)
-* [[!UICONTROL 網頁詳細資訊]](../field-groups/event/web-details.md)
+* [[!UICONTROL 住宿预订]](../field-groups/event/lodging-reservation.md)
+* [[!UICONTROL 报价请求详细信息]](../field-groups/event/quote-request-details.md)
+* [[!UICONTROL 预订详细信息]](../field-groups/event/reservation-details.md)
+* [[!UICONTROL Web详细信息]](../field-groups/event/web-details.md)
 
 ## 附录
 
-以下小節包含更多關於 [!UICONTROL XDM ExperienceEvent] 類別。
+以下部分包含有关 [!UICONTROL XDM ExperienceEvent] 类。
 
 ### 接受的值 `eventType` {#eventType}
 
-下表概述下列專案的可接受值 `eventType`，以及其定義：
+下表概述了接受的值 `eventType`，以及它们的定义：
 
 | 值 | 定义 |
 | --- | --- |
-| `advertising.clicks` | 廣告上的點按動作。 |
-| `advertising.completes` | 定時媒體資產已觀看至完成。 這並不一定表示檢視者看完整段影片，因為檢視者可能略過前面。 |
-| `advertising.conversions` | 客戶所執行的預先定義動作，會觸發效能評估事件。 |
-| `advertising.federated` | 顯示是否透過資料同盟（客戶之間資料共用）建立體驗事件。 |
-| `advertising.firstQuartiles` | 數位影片廣告已使用正常速度播放其長度的25%。 |
-| `advertising.impressions` | 可能被檢視的客戶對廣告的閱聽。 |
-| `advertising.midpoints` | 數位影片廣告已使用正常速度播放其長度的50%。 |
-| `advertising.starts` | 數位影片廣告已開始播放。 |
-| `advertising.thirdQuartiles` | 數位影片廣告已使用正常速度播放其長度的75%。 |
-| `advertising.timePlayed` | 說明使用者在特定的定時媒體資產上所花費的時間。 |
-| `application.close` | 應用程式已關閉或傳送到背景。 |
-| `application.launch` | 應用程式已啟動或進入前景。 |
-| `commerce.checkouts` | 產品清單發生結帳事件。 如果結帳程式中有多個步驟，就可能有一個以上的結帳事件。 如果有多個步驟，則會使用每個事件的時間戳記和參考頁面/體驗來識別每個個別事件（步驟），並依序表示。 |
-| `commerce.productListAdds` | 產品已新增至產品清單或購物車。 |
-| `commerce.productListOpens` | 新產品清單（購物車）已初始化或建立。 |
-| `commerce.productListRemovals` | 一或多個產品專案已從產品清單或購物車中移除。 |
-| `commerce.productListReopens` | 客戶已重新啟用無法再存取（已捨棄）的產品清單（購物車），例如透過重新行銷活動。 |
-| `commerce.productListViews` | 產品清單或購物車已收到一個或多個檢視。 |
-| `commerce.productViews` | 產品已收到一或多個檢視。 |
-| `commerce.purchases` | 已接受訂單。 這是商務轉換中唯一需要的動作。 購買事件必須有參考的產品清單。 |
-| `commerce.saveForLaters` | 已儲存產品清單以供日後使用，例如產品願望清單。 |
-| `decisioning.propositionDisplay` | 決策主張已顯示給個人。 |
-| `decisioning.propositionInteract` | 與決策主張互動的人。 |
-| `delivery.feedback` | 傳送的意見回饋事件，例如電子郵件傳送。 |
-| `directMarketing.emailBounced` | 傳送給個人的電子郵件已跳出。 |
-| `directMarketing.emailBouncedSoft` | 傳送給個人的電子郵件已軟退回。 |
-| `directMarketing.emailClicked` | 有人點按了行銷電子郵件中的連結。 |
-| `directMarketing.emailDelivered` | 電子郵件已成功傳遞至個人的電子郵件服務 |
-| `directMarketing.emailOpened` | 有人已開啟行銷電子郵件。 |
-| `directMarketing.emailUnsubscribed` | 個人已取消訂閱行銷電子郵件。 |
-| `inappmessageTracking.dismiss` | 已解除應用程式內訊息。 |
-| `inappmessageTracking.display` | 已顯示應用程式內訊息。 |
-| `inappmessageTracking.interact` | 已互動應用程式內訊息。 |
-| `leadOperation.callWebhook` | 已呼叫webhook以回應銷售機會。 |
-| `leadOperation.convertLead` | 潛在客戶已轉換。 |
-| `leadOperation.interestingMoment` | 為個人錄製了一個有趣的時刻。 |
-| `leadOperation.newLead` | 已建立潛在客戶。 |
-| `leadOperation.scoreChanged` | 潛在客戶評分屬性的值已變更。 |
-| `leadOperation.statusInCampaignProgressionChanged` | 促銷活動中的潛在客戶狀態已變更。 |
-| `listOperation.addToList` | 已將個人新增至行銷清單。 |
-| `listOperation.removeFromList` | 已將個人從行銷清單中移除。 |
-| `message.feedback` | 針對傳送給客戶的訊息，提供意見回饋事件，例如已傳送/退回/錯誤。 |
-| `message.tracking` | 追蹤事件，例如傳送給客戶的訊息上的開啟/點選/自訂動作。 |
-| `opportunityEvent.addToOpportunity` | 已將個人新增至商機。 |
-| `opportunityEvent.opportunityUpdated` | 機會已更新。 |
-| `opportunityEvent.removeFromOpportunity` | 已將個人從機會中移除。 |
-| `pushTracking.applicationOpened` | 有人從推播通知開啟應用程式。 |
-| `pushTracking.customAction` | 有人點按了推播通知中的自訂動作。 |
-| `web.formFilledOut` | 有人在wep頁面上填寫表單。 |
-| `web.webinteraction.linkClicks` | 已選取連結一或多次。 |
-| `web.webpagedetails.pageViews` | 網頁已收到一或多個檢視。 |
+| `advertising.clicks` | 单击广告上的操作。 |
+| `advertising.completes` | 定时媒体资源已观看至结束。 这并不一定意味着观看者观看了整个视频，因为观看者可以跳过前面。 |
+| `advertising.conversions` | 客户执行的预定义操作，触发性能评估事件。 |
+| `advertising.federated` | 指示体验事件是否通过数据联合（客户之间共享数据）创建。 |
+| `advertising.firstQuartiles` | 一个数字视频广告以正常速度播放了其25%的时长。 |
+| `advertising.impressions` | 对可能观看的客户的广告展示。 |
+| `advertising.midpoints` | 数字视频广告以正常速度播放了其50%的时长。 |
+| `advertising.starts` | 数字视频广告已开始播放。 |
+| `advertising.thirdQuartiles` | 一个数字视频广告以正常速度播放了其75%的时长。 |
+| `advertising.timePlayed` | 描述用户在特定定时媒体资源上花费的时间。 |
+| `application.close` | 应用程序已关闭或发送到后台。 |
+| `application.launch` | 应用程序已启动或进入前台。 |
+| `commerce.checkouts` | 产品列表发生了签出事件。 如果结账过程包含多个步骤，则可能有多个结账事件。 如果有多个步骤，则使用每个事件的时间戳和引用的页面/体验来标识每个单独的事件（步骤），并按顺序表示。 |
+| `commerce.productListAdds` | 产品已添加到产品列表或购物车。 |
+| `commerce.productListOpens` | 新产品列表（购物车）已初始化或创建。 |
+| `commerce.productListRemovals` | 已从产品列表或购物车中删除一个或多个产品条目。 |
+| `commerce.productListReopens` | 客户已重新激活不再可访问（已放弃）的产品列表（购物车），例如通过再营销活动。 |
+| `commerce.productListViews` | 产品列表或购物车已收到一个或多个视图。 |
+| `commerce.productViews` | 产品已收到一个或多个视图。 |
+| `commerce.purchases` | 已接受订单。 这是商业转换中唯一需要的操作。 购买事件必须引用产品列表。 |
+| `commerce.saveForLaters` | 已保存产品列表以供将来使用，例如产品愿望清单。 |
+| `decisioning.propositionDisplay` | 向个人显示决策建议。 |
+| `decisioning.propositionInteract` | 与决策建议交互的人。 |
+| `delivery.feedback` | 投放的反馈事件，例如电子邮件投放。 |
+| `directMarketing.emailBounced` | 发送给某人的电子邮件已退回。 |
+| `directMarketing.emailBouncedSoft` | 发送给某人的电子邮件软退回。 |
+| `directMarketing.emailClicked` | 用户单击了营销电子邮件中的链接。 |
+| `directMarketing.emailDelivered` | 电子邮件已成功发送到人员的电子邮件服务 |
+| `directMarketing.emailOpened` | 人员已打开营销电子邮件。 |
+| `directMarketing.emailUnsubscribed` | 取消订阅营销电子邮件的人员。 |
+| `inappmessageTracking.dismiss` | 已取消应用程序内消息。 |
+| `inappmessageTracking.display` | 显示应用程序内消息。 |
+| `inappmessageTracking.interact` | 与应用程序内消息进行了交互。 |
+| `leadOperation.callWebhook` | 为响应潜在客户，调用了webhook。 |
+| `leadOperation.convertLead` | 商机已转化。 |
+| `leadOperation.interestingMoment` | 为一个人录制了一个有趣的时刻。 |
+| `leadOperation.newLead` | 已创建潜在客户。 |
+| `leadOperation.scoreChanged` | 商机的得分属性的值已更改。 |
+| `leadOperation.statusInCampaignProgressionChanged` | 营销活动中的商机状态已更改。 |
+| `listOperation.addToList` | 已将人员添加到营销列表。 |
+| `listOperation.removeFromList` | 从营销列表中删除了一个人员。 |
+| `message.feedback` | 发送给客户的消息的反馈事件，例如已发送/退回/错误。 |
+| `message.tracking` | 跟踪事件，如对发送给客户的消息的打开/点击/自定义操作。 |
+| `opportunityEvent.addToOpportunity` | 已向机会添加个人。 |
+| `opportunityEvent.opportunityUpdated` | 机会已更新。 |
+| `opportunityEvent.removeFromOpportunity` | 人员已从机会中删除。 |
+| `pushTracking.applicationOpened` | 用户从推送通知中打开了应用程序。 |
+| `pushTracking.customAction` | 人员单击了推送通知中的自定义操作。 |
+| `web.formFilledOut` | 有人在wep页面上填写表单。 |
+| `web.webinteraction.linkClicks` | 已选择链接一次或多次。 |
+| `web.webpagedetails.pageViews` | 网页已收到一个或多个视图。 |
 
 {style="table-layout:auto"}
 
-### 建議值 `producedBy` {#producedBy}
+### 建议值 `producedBy` {#producedBy}
 
-下表概述一些接受的值 `producedBy`：
+下表概述了一些接受的值 `producedBy`：
 
 | 值 | 定义 |
 | --- | --- |
-| `self` | 自我 |
+| `self` | 自身 |
 | `system` | 系统 |
-| `salesRef` | 銷售代表 |
-| `customerRep` | 客戶代表 |
+| `salesRef` | 销售代表 |
+| `customerRep` | 客户代表 |

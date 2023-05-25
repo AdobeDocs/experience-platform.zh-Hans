@@ -1,7 +1,7 @@
 ---
-title: 在Real-Time CDP B2B中管理預測性銷售線索和帳戶評分
+title: 在Real-Time CDP B2B中管理预测性商机和客户评分
 type: Documentation
-description: 本檔案提供在Experience PlatformCDP B2B中管理預測性銷售線索和帳戶評分功能的相關資訊。
+description: 本文档提供了有关管理Experience PlatformCDP B2B中的预测性商机和客户评分功能的信息。
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
@@ -10,151 +10,151 @@ ht-degree: 2%
 
 ---
 
-# 在Adobe Real-time Customer Data Platform， B2B版本中管理預測性銷售線索和帳戶評分
+# 在Adobe Real-time Customer Data Platform B2B版中管理预测性商机和客户评分
 
 >[!NOTE]
 >
->只有具有「管理B2B AI」許可權的使用者才能建立、變更和刪除分數目標。
+>只有具有“管理B2B人工智能”权限的用户才能创建、更改和删除得分目标。
 
-本教學課程將逐步帶您瞭解管理預測性銷售線索和帳戶評分服務之評分目標的步驟。 分數目標可用於個人設定檔或帳戶設定檔
+本教程将指导您完成管理预测性商机和帐户评分服务的评分目标的步骤。 得分目标可以是人员配置文件或帐户配置文件
 
-## 建立新分數
+## 创建新得分
 
-若要建立新分數，請選取 **[!UICONTROL 服務]** 在側邊欄中並選取 **[!UICONTROL 建立分數]**.
+要创建新得分，请选择 **[!UICONTROL 服务]** 在侧栏中选择 **[!UICONTROL 创建得分]**.
 
 ![plas-new-score](../assets/../b2b-ai-ml-services/assets/plas-create-score.png)
 
-此 **[!UICONTROL 基本資訊]** 畫面隨即顯示，提示您選取設定檔型別、輸入名稱及說明（選擇性）。 完成後，選取 **[!UICONTROL 下一個]**.
+此 **[!UICONTROL 基本信息]** 屏幕显示，提示您选择配置文件类型、输入名称和可选描述。 完成后，选择 **[!UICONTROL 下一个]**.
 
 ![plas-enter-basic-information](../assets/../b2b-ai-ml-services/assets/plas-basic-information.png)
 
-此 **[!UICONTROL 定義您的目標]** 畫面隨即顯示。 選取下拉箭頭，然後從出現的下拉式視窗中選取目標型別。
+此 **[!UICONTROL 定义您的目标]** 屏幕。 选择下拉箭头，然后从出现的下拉窗口中选择目标类型。
 
 ![plas-select-a-goal](../assets/../b2b-ai-ml-services/assets/plas-define-goal.png)
 
-此 **[!UICONTROL 目標細節]** 對話方塊開啟。 選取下拉箭頭，然後從出現的下拉式視窗中選取目標欄位名稱。
+此 **[!UICONTROL 目标详情]** 对话框打开。 选择下拉箭头，然后从出现的下拉窗口中选择目标字段名称。
 
 ![plas-select-a-goal-field-name](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-name.png)
 
-此 **[!UICONTROL 目標條件]** 選取範圍隨即顯示。 選取下拉箭頭，然後從出現的下拉式視窗中選取條件。
+此 **[!UICONTROL 目标条件]** 选定内容即会显示。 选择下拉箭头，然后从出现的下拉窗口中选择条件。
 
 ![plas-goal-specifics-condition](../assets/../b2b-ai-ml-services/assets/plas-goal-specidics-condition.png)
 
-此 **[!UICONTROL 目標值]** 欄位隨即顯示。 接下來，設定您的 [!UICONTROL 目標細節]. 選取 [!UICONTROL 輸入欄位值] 並輸入您的目標值。
+此 **[!UICONTROL 目标值]** 字段。 接下来，配置您的 [!UICONTROL 目标详情]. 选择 [!UICONTROL 输入字段值] 并输入目标值。
 
 >[!NOTE]
 >
->可以新增多個目標值。
+>可以添加多个目标值。
 
 ![plas-goal-specifics-field-value](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-value.png)
 
-若要新增其他欄位，請選取 **[!UICONTROL 新增欄位]**.
+要添加其他字段，请选择 **[!UICONTROL 添加字段]**.
 
 ![plas-goal-specifics-add-event](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-add-event.png)
 
-若要設定預測時間範圍，請選取下拉式箭頭，然後選取您選擇的時間範圍。
+要配置预测时间范围，请选择下拉箭头，然后选择您所选择的时间范围。
 
 ![plas-prediction-timeframe](../assets/../b2b-ai-ml-services/assets/plas-prediction-timeframe.png)
 
-選取的合併原則會決定如何選取人員設定檔的欄位值。 使用下拉式箭頭選取您選擇的合併原則，然後選取 **[!UICONTROL 完成]**.
+所选合并策略确定如何选择人员配置文件的字段值。 使用下拉箭头选择您选择的合并策略，然后选择 **[!UICONTROL 完成]**.
 
-此 **[!UICONTROL 評分設定完成]** 隨即顯示對話方塊，確認已建立新分數。 選取 **[!UICONTROL 確定]**.
+此 **[!UICONTROL 评分设置完成]** 此时将显示一个对话框，确认已创建新得分。 选择 **[!UICONTROL 确定]**.
 
 ![plas-score-complete](../assets/../b2b-ai-ml-services/assets/plas-score-complete.png)
 
 >[!NOTE]
 >
->完成每個評分程式最多可能需要24小時的時間。
+>每个评分过程可能需要24小时才能完成。
 
-您會返回 **[!UICONTROL 服務]** 索引標籤，您可在其中檢視在分數清單中建立的新分數。
+您将返回到 **[!UICONTROL 服务]** 选项卡，您可以在其中查看在分数列表中创建的新分数。
 
-![plas-score-create](../assets/../b2b-ai-ml-services/assets/plas-score-created.png)
+![plas-score-created](../assets/../b2b-ai-ml-services/assets/plas-score-created.png)
 
-選取分數以檢視詳細資訊和上次執行詳細資訊的其他資訊。
+选择得分以查看有关上次运行详细信息的详细信息和附加信息。
 
 ![plas-score-additional-information](../assets/../b2b-ai-ml-services/assets/plas-score-info.png)
 
-如需有關可在上次執行詳細資訊下看到的錯誤碼的詳細資訊，請參閱以下章節： [潛在客戶AI管道錯誤代碼](#leads-ai-pipeline-error-codes) 於本檔案中。
+有关可在上次运行详细信息下看到的错误代码的更多详细信息，请参阅以下章节： [商机AI管道错误代码](#leads-ai-pipeline-error-codes) 在本文档中。
 
-## 編輯分數
+## 编辑得分
 
-若要編輯分數，請從 **[!UICONTROL 服務]** 標籤並選取 **[!UICONTROL 編輯]** 從畫面右側的其他詳細資訊面板。
+要编辑分数，请从中选择一个分数 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 编辑]** 从屏幕右侧的其他详细信息面板中查看。
 
 ![plas-edit-score](../assets/../b2b-ai-ml-services/assets/plas-edit-score.png)
 
-此 **[!UICONTROL 編輯例項]** 對話方塊隨即顯示，您可以在其中編輯分數說明。 進行變更並選取 **[!UICONTROL 儲存]**.
+此 **[!UICONTROL 编辑实例]** 此时将显示一个对话框，您可以在其中编辑得分的说明。 进行更改并选择 **[!UICONTROL 保存]**.
 
 ![plas-edit-save](../assets/../b2b-ai-ml-services/assets/plas-edit-save.png)
 
 >[!NOTE]
 >
->無法變更分數設定，因為這會觸發模型重新訓練和重新評分。 這等同於刪除分數並建立新分數。 若要編輯評分的設定，您必須複製此評分或建立新評分。
+>无法更改得分配置，因为这将触发模型重新训练和重新评分。 此操作等同于删除得分并创建新得分。 要编辑得分的配置，您需要克隆此得分或创建新得分。
 
-您會返回 **[!UICONTROL 服務]** 標籤。 選取分數可在畫面右側的其他詳細資訊面板中檢視更新的說明詳細資訊。
+您将返回到 **[!UICONTROL 服务]** 选项卡。 选择分数可在屏幕右侧的其他详细信息面板中查看更新的描述详细信息。
 
-## 原地複製分數
+## 克隆得分
 
-若要複製分數，請從 **[!UICONTROL 服務]** 標籤並選取 **[!UICONTROL 原地複製]** 從畫面右側的其他詳細資訊面板。
+要克隆分数，请从中选择一个分数 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 克隆]** 从屏幕右侧的其他详细信息面板中查看。
 
 ![plas-clone-score](../assets/../b2b-ai-ml-services/assets/plas-clone-score.png)
 
-此 **[!UICONTROL 基本資訊]** 畫面隨即顯示。 設定檔型別、名稱和說明是從原始分數複製而來。 修改這些詳細資料並選取 **[!UICONTROL 下一個]**.
+此 **[!UICONTROL 基本信息]** 屏幕。 配置文件类型、名称和描述是从原始得分中克隆而来的。 修改这些详细信息并选择 **[!UICONTROL 下一个]**.
 
 ![plas-clone-basic-info](../assets/../b2b-ai-ml-services/assets/plas-clone-basic-info.png)
 
-此 **[!UICONTROL 定義您的目標]** 畫面隨即顯示。 完成目標區段，就像建立新分數時一樣，然後選取 **[!UICONTROL 完成]**.
+此 **[!UICONTROL 定义您的目标]** 屏幕。 像创建新得分时一样完成目标部分，然后选择 **[!UICONTROL 完成]**.
 
-您會返回 **[!UICONTROL 服務]** 索引標籤，您可在其中檢視清單中新複製的分數。
+您将返回到 **[!UICONTROL 服务]** 选项卡，您可以在其中查看列表中新克隆的分数。
 
 >[!NOTE]
 >
->此 **[!UICONTROL 定義您的目標]** 區段並非複製自原始分數。
+>此 **[!UICONTROL 定义您的目标]** 区域不是从原始分数克隆的。
 
-## 刪除分數
+## 删除得分
 
-若要刪除分數，請從 **[!UICONTROL 服務]** 標籤並選取 **[!UICONTROL 刪除]** 從畫面右側的其他詳細資訊面板。
+要删除分数，请从中选择一个分数 **[!UICONTROL 服务]** 选项卡并选择 **[!UICONTROL 删除]** 从屏幕右侧的其他详细信息面板中查看。
 
 ![plas-delete-score](../assets/../b2b-ai-ml-services/assets/plas-delete-score.png)
 
-此 **[!UICONTROL 刪除檔案]** 確認對話方塊隨即顯示。 选择&#x200B;**[!UICONTROL 删除]**。
+此 **[!UICONTROL 删除文档]** 确认对话框出现。 选择&#x200B;**[!UICONTROL 删除]**。
 
 ![plas-delete-score-confirmation](../assets/../b2b-ai-ml-services/assets/plas-delete-score-confirmation.png)
 
 >[!NOTE]
 >
->刪除分數定義也會刪除個人設定檔或帳戶設定檔上的所有預測分數，但不會刪除為分數定義建立的欄位群組。 欄位群組在資料模型中會保持「孤立」。
+>删除得分定义也会删除人员配置文件或帐户配置文件上的所有预测得分，但不删除为得分定义创建的字段组。 字段组在数据模型中将被保留为“孤立”。
 
-您會返回 **[!UICONTROL 服務]** 索引標籤中無法再看到清單中的分數。
+您将返回到 **[!UICONTROL 服务]** 选项卡，您将无法再在列表中看到分数。
 
-## 潛在客戶AI管道錯誤代碼
+## 商机AI管道错误代码
 
 | 错误代码 | 错误消息 |
 | --- | --- |
-| 401 | 錯誤401。 銷售機會AI管道已停止：帳戶評分的有效帳戶不足。 帳戶計數： {}。 |
-| 402 | 錯誤402。 銷售機會AI管道已停止：沒有足夠的有效聯絡人進行聯絡人評分。 連絡人計數： {}。 |
-| 403 | 錯誤403。 潛在客戶AI管道已停止：活動量不足以進行模型訓練。 事件計數： {}。 |
-| 404 | 錯誤404。 潛在客戶AI管道已停止：模型訓練的轉換不足。 轉換次數： {}。 |
-| 405 | 錯誤405。 潛在客戶AI管道已停止：活動太稀疏，無法用於有效的模型訓練。 只有{}%的帳戶有活動。 |
-| 406 | 錯誤406。 潛在客戶AI管道已停止：活動太稀疏，無法用於有效的模型訓練。 只有{}%的連絡人有活動。 |
-| 407 | 錯誤407。 銷售機會AI管道已停止：評分資料活動型別與訓練資料不符。 |
-| 408 | 錯誤408。 銷售機會AI管道已停止：活動功能的遺漏率太高。 遺漏率： {}。 |
-| 409 | 錯誤409。 潛在客戶AI管道已停止：測試auc太低。 測試auc： {}。 |
-| 410 | 錯誤410。 Leads AI管道已停止：引數調整後測試auc過低。 測試auc： {}。 |
-| 411 | 錯誤411。 Leads AI管道已停止：訓練資料沒有足夠的轉換來產生可靠的模型。 转化: {}. |
-| 412 | 錯誤412。 潛在客戶AI管道已停止：測試資料沒有任何可計算AUC-ROC的轉換。 |
+| 401 | 错误401。 潜在客户人工智能管道已停止：帐户评分的有效帐户不足。 帐户数： {}。 |
+| 402 | 错误402。 潜在客户AI管道已停止：没有足够的有效联系人来进行联系人评分。 联系人数： {}。 |
+| 403 | 错误403。 潜在客户AI管道已停止：活动量不足以进行模型训练。 事件数： {}。 |
+| 404 | 错误404。 潜在客户人工智能管道已停止：转化不足以进行模型训练。 转化次数： {}。 |
+| 405 | 错误405。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 只有{}%的帐户有活动。 |
+| 406 | 错误406。 潜在客户AI管道已停止：对于有效的模型训练，活动过于稀疏。 只有{}%的联系人有活动。 |
+| 407 | 错误407。 潜在客户人工智能管道已停止：评分数据活动类型与训练数据不匹配。 |
+| 408 | 错误408。 潜在客户AI管道已停止：活动功能的缺失率过高。 丢失率： {}。 |
+| 409 | 错误409。 潜在客户AI管道已停止：测试auc过低。 测试auc： {}。 |
+| 410 | 错误410。 Leads AI管道已停止：参数调整后，测试auc过低。 测试auc： {}。 |
+| 411 | 错误411。 潜在客户人工智能管道已停止：训练数据没有足够的转化来生成可靠的模型。 转化: {}. |
+| 412 | 错误412。 潜在客户AI管道已停止：测试数据不具有任何计算AUC-ROC的转换。 |
 
-| 警告/資訊代碼 | 消息 |
+| 警告/信息代码 | 消息 |
 | --- | --- |
-| 100 | 資訊100。 銷售機會AI品質檢查：帳戶數為： {}。 |
-| 101 | 資訊101。 銷售機會AI品質檢查：聯絡人數目是： {}。 |
-| 102 | 資訊102。 銷售機會AI品質檢查：機會數為： {}。 |
-| 103 | 資訊103。 潛在客戶AI品質檢查：測試auc為低。 開始引數調整。 正在測試auc： {}。 |
-| 200 | 警告200。 銷售機會AI品質檢查：第一影像功能的遺漏率為： {}。 |
-| 201 | 警告201。 銷售機會AI品質檢查：活動功能的遺漏率為： {}。 |
+| 100 | 信息100。 潜在客户人工智能质量检查：帐户数为： {}。 |
+| 101 | 信息101。 潜在客户AI质量检查：联系人数为： {}。 |
+| 102 | 信息102。 商机AI质量检查：机会数为： {}。 |
+| 103 | 信息103。 领导AI质量检查：测试auc较低。 开始参数调整。 正在测试auc： {}。 |
+| 200 | 警告200。 潜在客户AI质量检查：第一图形功能的缺失率为： {}。 |
+| 201 | 警告201。 潜在客户AI质量检查：活动功能的缺失率为： {}。 |
 
 ## 后续步骤
 
-依照此教學課程，您現在可以成功建立和管理分數。 如需更多詳細資訊，請參閱下列檔案：
+通过学习本教程，您现在可以成功创建和管理分数。 有关更多详细信息，请参阅以下文档：
 
-* [預測性銷售線索和帳戶評分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
-* [監控預測性銷售線索和帳戶評分工作](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)
+* [预测性商机和客户评分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
+* [监控预测性商机和客户评分作业](/help/dataflows/ui/b2b/monitor-profile-enrichment.md)

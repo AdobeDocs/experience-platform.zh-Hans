@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；Data Science Workspace；熱門主題；存取控制；沙箱；情報套件；dsw功能；dsw存取；Adobe Experience Platform Intelligence；情報；aep intelligence套件
+keywords: Experience Platform；主页；Data Science Workspace；热门主题；访问控制；沙盒；智能包；dsw功能；dsw访问；Adobe Experience Platform Intelligence；智能；aep intelligence包
 solution: Experience Platform
-title: 資料科學工作區存取與功能
-description: 以下檔案概述資料科學工作區許可權和功能的存取權。
+title: 数据科学工作区访问和功能
+description: 以下文档概述了Data Science Workspace的权限和功能访问权限。
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,65 +11,65 @@ ht-degree: 2%
 
 ---
 
-# 資料科學工作區存取與功能
+# 数据科学工作区访问和功能
 
-以下檔案概述資料科學工作區許可權和功能的存取權。
+以下文档概述了Data Science Workspace的权限和功能访问权限。
 
-![DSW標籤](./images/access/platform-tabs.png)
+![DSW选项卡](./images/access/platform-tabs.png)
 
-- **筆記本：** 提供互動式開發環境([JupyterLab](./jupyterlab/overview.md))來探索、分析您的資料，並在Experience Platform上建立模型。
-- **模型：** 提供用來建立、發佈和儲存進階機器學習配方和模型的工具。 如需詳細資訊，請瀏覽 [建立並發佈機器學習模型](./models-recipes/create-publish-model.md) 教學課程。
-- **服務：** 包含Adobe提供的兩種服務，例如 [AI/ML服務](../intelligent-services/home.md) 以及您使用Data Science Workspace建立的任何自訂服務。
+- **笔记本：** 提供交互式开发环境([JupyterLab](./jupyterlab/overview.md))，以在Experience Platform上探索、分析和建模您的数据。
+- **模型：** 提供用于创建、发布和存储高级机器学习方法和模型的工具。 欲知更多信息，请访问 [创建和发布机器学习模型](./models-recipes/create-publish-model.md) 教程。
+- **服务：** 包含Adobe提供的两种服务，例如 [AI/ML服务](../intelligent-services/home.md) 以及使用数据科学工作区创建的任何自定义服务。
 
-為什麼我只看到「服務」標籤？
+为什么我只看到“服务”选项卡？
 
-- 您的組織可能只有資格使用Adobe Real-time Customer Data Platform (Real-Time CDP)，其中包括Customer AI/ML服務。
+- 您的组织可能仅有权使用Adobe Real-time Customer Data Platform (Real-Time CDP)，其中包含客户人工智能/ML服务。
 
-如果您無法看到任何 **資料科學** 索引標籤並希望利用Data Science Workspace功能，請聯絡您的公司管理員以檢查您是否擁有Adobe Experience Platform Intelligence授權。
+如果您看不到任何 **数据科学** 选项卡并希望利用Data Science Workspace功能，请联系您的公司管理员以检查您是否拥有Adobe Experience Platform Intelligence许可证。
 
-## 資料科學工作區封裝
+## 数据科学工作区打包
 
-Adobe Experience Platform Intelligence套件和Advanced Intelligence Pack附加元件中提供Data Science Workspace功能
+可在Adobe Experience Platform Intelligence包和Advanced Intelligence Pack加载项中找到数据科学工作区功能
 
-下表概述使用與不使用Advanced Intelligence Pack附加元件時，資料科學工作區權益的一些主要差異：
+下表概述了使用和不使用高级智能包加载项时，数据科学工作区权利的一些主要差异：
 
 >[!NOTE]
 >
->您可以授權一個以上的Advanced Intelligence Pack附加元件，增加的容量會新增至您的整體權益。 例如，如果您授權2個Adobe Experience Platform Advanced Intelligence Pack Addon，則同時擁有20個Notebook使用者。
+>您可以许可多个高级智能包加载项，增加的容量会添加到您的总体权利文件。 例如，如果您许可了2个Adobe Experience Platform Advanced Intelligence Pack加载项，则您有权同时使用20个笔记本用户。
 
-| 資料科學工作區權益 | 僅限Adobe Experience Platform Intelligence套件 | Adobe Experience Platform Intelligence加上Advanced Intelligence Pack附加元件 |
+| 数据科学工作区权利 | 仅限Adobe Experience Platform Intelligence包 | Adobe Experience Platform Intelligence plus Advanced Intelligence Pack附加组件 |
 | --- | :---: | :---: |
-| 支援的Notebook使用者數目。 | 5位同時使用者 | 第一個套件同時新增5名使用者，而額外購買每個套件同時新增10名使用者。 |
-| 允許整合式Jupyter Notebooks進行探索性資料分析和模型製作。 | X （支援R、Python和Scala程式庫） | X （新增PySpark和Spark ML程式庫） |
-| 與查詢服務的原生整合。 能夠使用SQL在筆記型電腦中探索及設定資料集形狀。 | X | X |
-| 存取預先建立的筆記型電腦範本，以進行預測性分析。 | X | X |
-| 使用Jupyter Notebooks手動訓練模型並為其評分。 | X | X |
-| 部署模型並使其投入運作，同時能夠排程訓練和推斷工作。 |  | X |
-| 配方架構，可輕鬆設定、評估、訓練、評分並將模型發佈至生產環境。 |  | X |
-| UI導向的模型實驗與評估。 |  | X |
-| Tensorflow模型（GPU運算）的深度學習支援。 |  | X |
-| 以Spark為基礎的分散式計算，可針對大型資料集（10MM +列）進行訓練和評分。 |  | X |
+| 支持的笔记本用户数量。 | 5个并发用户 | 第一个包将添加5个并发用户，而额外的购买操作将添加每个包10个并发用户。 |
+| 允许集成的Jupyter Notebooks进行探索性数据分析和模型创作。 | X （支持R 、 Python和Scala库） | X（添加PySpark和Spark ML库） |
+| 与查询服务的本机集成。 能够使用SQL在笔记本中浏览数据集并设置其形状。 | X | X |
+| 访问用于预测分析的预建笔记本模板。 | X | X |
+| 使用Jupyter Notebooks手动训练模型和为模型评分。 | X | X |
+| 部署模型并使其可操作化，并能够安排培训和引用作业。 |  | X |
+| 方法框架，用于轻松配置、评估、训练、评分和将模型发布到生产环境中。 |  | X |
+| UI驱动的模型实验与评估。 |  | X |
+| Tensorflow模型（GPU计算）的深度学习支持。 |  | X |
+| 基于Spark的分布式计算，针对大型数据集（10MM +行）进行训练和评分。 |  | X |
 
 ## 访问控制
 
-Experience Platform的存取控制需透過 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能運用Admin Console中的產品設定檔，將使用者與許可權和沙箱連結。 請參閱 [存取控制總覽](../access-control/home.md) 以取得詳細資訊。
+Experience Platform的访问控制是通过 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒相关联。 请参阅 [访问控制概述](../access-control/home.md) 了解更多信息。
 
-若要使用資料科學工作區，必須啟用「管理資料科學工作區」許可權。 下表概述啟用或停用此許可權的效果：
+要使用数据科学工作区，必须启用“管理数据科学工作区”权限。 下表概述了启用或禁用此权限的影响：
 
 | 权限 | 已启用 | 已禁用 |
 |---|---|---|
-| 管理資料科學工作區 | 提供對資料科學工作區中所有服務的存取權。 | 已停用對Data Science Workspace中所有服務的API和UI存取。 停用時，選取 **Notebooks**， **模型**、和 **服務** 頁面被禁止。 <li>存取 **服務** 仍可透過Adobe Real-time Customer Data Platform (Real-Time CDP)使用。</li> |
+| 管理数据科学工作区 | 提供对数据科学工作区中所有服务的访问权限。 | 已禁用对数据科学工作区中所有服务的API和UI访问。 禁用时，选择 **Notebooks**， **模型**、和 **服务** 页面被阻止。 <li>访问 **服务** 仍可通过Adobe Real-time Customer Data Platform (Real-Time CDP)使用。</li> |
 
-## 沙箱支援
+## 沙盒支持
 
-沙箱是單一Experience Platform執行個體中的虛擬分割區。 每個Platform執行個體都支援多個生產和非生產沙箱，每個沙箱都維護自己的Platform資源庫。 非生產沙箱可讓您測試功能、執行實驗及進行自訂設定，而不會影響您的生產沙箱。 如需沙箱的詳細資訊，請參閱 [沙箱總覽](../sandboxes/home.md).
+沙盒是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产沙盒和非生产沙盒，每个沙盒都维护自己的Platform资源库。 非生产沙盒允许您在不影响生产沙盒的情况下测试功能、运行实验以及进行自定义配置。 有关沙箱的详细信息，请参阅 [沙盒概述](../sandboxes/home.md).
 
-目前，Data Science Workspace有下列沙箱限制：
+目前，数据科学工作区具有以下沙盒限制：
 
-- 計算資源會在生產和非生產沙箱之間共用。
+- 计算资源在生产沙盒和非生产沙盒之间共享。
 
 ## 后续步骤
 
-本檔案概述Data Science Workspace中可用的不同存取型別和功能。
+本文档概述了Data Science Workspace中可用的不同类型的访问和功能。
 
-若要進一步瞭解資料科學工作區，例如完整的日常工作流程，請從閱讀 [資料科學工作區逐步解說](./walkthrough.md) 說明檔案。 如需一般資訊，請瀏覽 [資料科學工作區概觀](./home.md).
+要了解有关数据科学工作区的更多信息（例如完整的日常工作流程），请从阅读 [数据科学工作区演练](./walkthrough.md) 文档。 欲知更多一般信息，请访问 [数据科学工作区概述](./home.md).

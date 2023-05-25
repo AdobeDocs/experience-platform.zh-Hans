@@ -1,6 +1,6 @@
 ---
-title: 自助式來源快速入門（串流SDK）
-description: 本檔案會介紹嘗試使用自助來源（串流SDK）建立新來源之前，需要知道的先決條件資訊。
+title: 自助式源快速入门(Streaming SDK)
+description: 本文档介绍了在尝试使用自助源(Streaming SDK)创建新源之前需要了解的先决条件信息。
 hide: true
 hidefromtoc: true
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
@@ -11,70 +11,70 @@ ht-degree: 0%
 
 ---
 
-# 自助式來源快速入門（串流SDK）
+# 自助式源快速入门(Streaming SDK)
 
-自助來源（串流SDK）可讓您整合自己的來源，以將串流資料帶到Adobe Experience Platform。 本檔案會介紹您在嘗試呼叫「 」之前需要瞭解的核心概念。 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+自助式源（流SDK）允许您集成自己的源，以将流数据引入到Adobe Experience Platform。 本文档介绍了在尝试调用 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
-## 高階流程
+## 高级流程
 
-以Experience Platform設定來源的逐步流程概述如下：
+下面概述了在Experience Platform中配置源的分步流程：
 
 ### 集成
 
-* [建立適用於串流SDK的新連線規格](create.md).
-* [使用新的連線規格ID更新串流流程規格](update-flow-specs.md).
-* [測試並提交您的串流來源](submit.md).
+* [为流SDK创建新的连接规范](create.md).
+* [使用新的连接规范ID更新流规范](update-flow-specs.md).
+* [测试和提交您的流源](submit.md).
 
 ### 文档
 
-* 若要開始記錄您的來源，請閱讀 [建立自助式來原始檔概覽](../documentation/doc-overview.md).
-* 閱讀指南： [使用GitHub網頁介面](../documentation/github.md) 有關如何使用GitHub建立檔案的步驟。
-* 閱讀指南： [使用文字編輯器](../documentation/text-editor.md) 有關如何使用本機電腦建立檔案的步驟。
-* [使用串流SDK API檔案範本在API中記錄您的來源](streaming-template-api.md).
-* [使用串流SDK UI檔案範本在UI中記錄您的來源](streaming-template-ui.md).
+* 要开始记录您的源，请阅读 [关于创建自助式源文档的概述](../documentation/doc-overview.md).
+* 阅读以下内容中的指南： [使用GitHub Web界面](../documentation/github.md) 有关如何使用GitHub创建文档的步骤。
+* 阅读以下内容中的指南： [使用文本编辑器](../documentation/text-editor.md) 有关如何使用本地计算机创建文档的步骤。
+* [使用流SDK API文档模板在API中记录您的源](streaming-template-api.md).
+* [使用流SDK UI文档模板在UI中记录源](streaming-template-ui.md).
 
-您也可以下載下列檔案範本：
+您还可以下载以下文档模板：
 
-* [api檔案範本](../assets/streaming/streaming-template-api.zip)
-* [UI檔案範本](../assets/streaming/streaming-template-ui.zip)
+* [API文档模板](../assets/streaming/streaming-template-api.zip)
+* [UI文档模板](../assets/streaming/streaming-template-ui.zip)
 
 ## 先决条件
 
 >[!IMPORTANT]
 >
->您與Experience Platform整合的來源必須能夠支援端點可訂閱的webhook，才能傳送更新。
+>要发送更新，您与Experience Platform集成的源必须能够支持端点可以订阅的webhook。
 
-若要使用自助式來源（串流SDK），您必須確保您有權存取已布建Adobe Experience Platform來源的沙箱組織。
+要使用自助源（流SDK），您必须确保您有权访问配置了Adobe Experience Platform源的沙盒组织。
 
-本指南也需要深入瞭解下列Adobe Experience Platform元件：
+本指南还需要深入了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-* [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 讀取範例API呼叫
+## 正在读取示例API调用
 
-自助服務來源（串流SDK）和 [!DNL Flow Service] API檔案提供範例API呼叫，示範如何格式化請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑難排解指南中。
+自助服务源(Streaming SDK)和 [!DNL Flow Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在Experience Platform疑难解答指南中。
 
-## 收集必要標題的值
+## 收集所需标题的值
 
-若要對Platform API發出呼叫，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {ORG_ID}`
 
-Platform中的所有資源，包括屬於 [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 對Platform API的所有請求都需要標頭，用於指定將在其中執行操作的沙箱名稱：
+Platform中的所有资源，包括属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 对Platform API的所有请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->如需Platform中沙箱的詳細資訊，請參閱 [沙箱檔案](../../../sandboxes/home.md).
+>有关Platform中沙盒的更多信息，请参阅 [沙盒文档](../../../sandboxes/home.md).
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
 
 * `Content-Type: application/json`
 
 ## 后续步骤
 
-若要開始使用自助來源（串流SDK）建立新來源，請參閱以下主題上的教學課程： [建立新來源](./create.md).
+要开始使用自助源（流SDK）创建新源，请参阅关于的教程 [创建新源](./create.md).

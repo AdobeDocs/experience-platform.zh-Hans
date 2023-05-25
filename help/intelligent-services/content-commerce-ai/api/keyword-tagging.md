@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；快速入門；內容；內容標籤ai；關鍵字標籤；關鍵字標籤
+keywords: Experience Platform；快速入门；内容；内容标记ai；关键词标记；关键词标记
 solution: Experience Platform
-title: 內容標籤API中的關鍵字標籤
-description: 「關鍵字標籤」服務在指定文字檔案時，會自動擷取最能描述檔案主題的關鍵字或關鍵片語。 為了擷取關鍵字，使用了命名實體識別(NER)和無監督關鍵字標籤演算法的組合。
+title: 内容标记API中的关键词标记
+description: 关键字标记服务在给定文本文档时，自动提取最能描述文档主题的关键字或关键词组。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
 source-git-commit: 7c8c1d69f4c4e0a1374603d541b634ac7f64ab38
 workflow-type: tm+mt
@@ -11,24 +11,24 @@ ht-degree: 5%
 
 ---
 
-# 關鍵字標籤
+# 关键词标记
 
-指定文字檔案時，關鍵字標籤服務會自動擷取最能描述檔案主題的關鍵字或關鍵片語。 為了擷取關鍵字，使用了命名實體識別(NER)和無監督關鍵字標籤演算法的組合。
+当给定一个文本文档时，关键字标记服务自动提取最能描述文档主题的关键字或关键短语。 为了提取关键词，使用命名实体识别(NER)和无监督关键词标记算法相结合。
 
-下表列出具有 [!DNL Content Tagging] 可以識別：
+下表列出了满足以下条件的命名实体 [!DNL Content Tagging] 可以识别：
 
-| 實體名稱 | 描述 |
+| 实体名称 | 描述 |
 | --- | --- |
-| 個人 | 人物，包括虛構的人。 |
-| GPE | 國家、城市和州。 |
-| LOC | 非GPE位置、山脈和水體。 |
-| FAC | 建築物、機場、高速公路、橋樑等。 |
-| 組織 | 公司、代理商、機構等。 |
-| 產品 | 物件、車輛、食品等。 （不是服務。） |
-| 事件 | 已命名的颶風、戰鬥、戰爭、體育賽事等。 |
-| 藝術作品 | 書籍、歌曲等標題。 |
-| 法律 | 成為法律的已命名檔案。 |
-| 語言 | 任何具名語言。 |
+| 人员 | 人，包括虚构的人。 |
+| GPE | 国家/地区、城市和州。 |
+| LOC | 非GPE位置、山脉和水体。 |
+| 常见问题解答 | 建筑、机场、高速公路、桥梁等。 |
+| 组织 | 公司、代理商、机构等 |
+| 产品 | 物品、车辆、食品等。 （不是服务。） |
+| 事件 | 命名为飓风、战斗、战争、体育赛事等。 |
+| 艺术作品 | 书籍、歌曲等标题。 |
+| 法律 | 被列为法律的文件。 |
+| 语言 | 任何命名语言。 |
 
 **API格式**
 
@@ -38,11 +38,11 @@ POST /services/v2/predict
 
 **请求**
 
-以下請求會根據承載中提供的輸入引數，從檔案中擷取關鍵字。
+以下请求基于有效负荷中提供的输入参数从文档中提取关键词。
 
-請參閱裝載範例下表，以瞭解有關所示輸入引數的詳細資訊。
+有关显示的输入参数的更多信息，请参阅示例有效负载下表。
 
-此 [範例pdf](../pdf-files/simple-text.pdf) 檔案已用於本檔案所示的範例中。
+此 [示例pdf](../pdf-files/simple-text.pdf) 在本文档所示的示例中使用了文件。
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -86,29 +86,29 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 -F 'infile_1=@simple-text.pdf'
 ```
 
-**輸入引數**
+**输入参数**
 
-| 属性 | 描述 | 強制 |
+| 属性 | 描述 | 必需 |
 | --- | --- | --- |
-| `top_n` | 要傳回的結果數。 0，傳回所有結果。 與臨界值搭配使用時，傳回的結果數量將少於任一限制。 | 否 |
-| `min_relevance` | 分數臨界值，低於該臨界值就必須傳回結果。 排除引數以傳回所有結果。 | 否 |
-| `min_key_phrase_length` | 關鍵短語中所需的最少字數。 | 否 |
-| `max_key_phrase_length` | 關鍵短語中所需的最大字數。 | 否 |
-| `last_semantic_unit_type` | 僅傳回階層式回應中最高至指定層級的語意單位。 &quot;key_phrase&quot;只會傳回關鍵片語，&quot;linked_entity&quot;只會傳回關鍵片語及其對應的連結實體，而&quot;concept&quot;則會傳回關鍵片語、連結實體和概念。 | 否 |
-| `entity_types` | 要以關鍵短語傳回的實體型別。 | 否 |
+| `top_n` | 要返回的结果数。 0，返回所有结果。 当与阈值一起使用时，返回的结果数将少于任一限制。 | 否 |
+| `min_relevance` | 分数阈值，必须低于该阈值返回结果。 排除参数可返回所有结果。 | 否 |
+| `min_key_phrase_length` | 关键短语中所需的最小字数。 | 否 |
+| `max_key_phrase_length` | 关键短语中所需的最大字数。 | 否 |
+| `last_semantic_unit_type` | 仅返回分层响应中最高到给定级别的语义单位。 “key_phrase”仅返回关键短语，“linked_entity”仅返回关键短语及其对应的链接实体，“concept”返回关键短语、链接实体和概念。 | 否 |
+| `entity_types` | 要作为关键短语返回的实体类型。 | 否 |
 
-**檔案物件**
+**文档对象**
 
 | 名称 | 数据类型 | 必需 | 默认 | 值 | 描述 |
 | -----| --------- | -------- | ------- | ------ | ----------- |
-| `repo:path` | 字符串 | - | - | - | 要從中擷取重要片語的檔案之預先簽署的URL。 |
-| `sensei:repoType` | 字符串 | - | - | HTTPS | 儲存檔案的存放庫型別。 |
-| `sensei:multipart_field_name` | 字符串 | - | - | - | 將檔案作為多部分引數傳遞時，請使用此選項，而不使用預先簽署的URL。 |
-| `dc:format` | 字符串 | 是 | - | &quot;text/plain&quot;，<br>&quot;application/pdf&quot;，<br>&quot;text/pdf&quot;，<br>&quot;text/html&quot;，<br>&quot;text/rtf&quot;，<br>&quot;application/rtf&quot;，<br>&quot;application/msword&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;，<br>&quot;application/mspowerpoint&quot;，<br>&quot;application/vnd.ms-powerpoint&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | 在處理之前，將根據允許的輸入編碼型別檢查檔案編碼。 |
+| `repo:path` | 字符串 | - | - | - | 要从中提取关键短语的文档的预签名URL。 |
+| `sensei:repoType` | 字符串 | - | - | HTTPS | 存储文档的存储库类型。 |
+| `sensei:multipart_field_name` | 字符串 | - | - | - | 将文档作为多部分参数传递时，请使用此选项，而不是使用预签名URL。 |
+| `dc:format` | 字符串 | 是 | - | &quot;text/plain&quot;，<br>&quot;application/pdf&quot;，<br>&quot;text/pdf&quot;，<br>&quot;text/html&quot;，<br>&quot;text/rtf&quot;，<br>&quot;application/rtf&quot;，<br>“application/msword”，<br>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;，<br>&quot;application/mspowerpoint&quot;，<br>&quot;application/vnd.ms-powerpoint&quot;，<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | 在处理之前，将根据允许的输入编码类型检查文档编码。 |
 
 **响应**
 
-成功的回應會傳回包含擷取關鍵字的JSON物件 `response` 陣列。
+成功的响应会返回一个JSON对象，其中包含提取的关键字，该对象位于 `response` 数组。
 
 ```json
 {

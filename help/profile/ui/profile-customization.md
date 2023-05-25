@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；設定檔；即時客戶設定檔；使用者介面；UI；自訂；設定檔詳細資料；詳細資料
-title: UI中的設定檔詳細資料自訂
-description: 本指南逐步說明如何自訂Adobe Experience Platform UI中即時客戶設定檔資料的顯示方式。
+keywords: Experience Platform；配置文件；实时客户配置文件；用户界面；自定义；配置文件详细信息；详细信息
+title: UI中的配置文件详细信息自定义
+description: 本指南提供了分步说明，用于自定义在Adobe Experience Platform UI中实时客户档案数据的显示方式。
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
@@ -10,100 +10,100 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Real-Time Customer Profile] 詳細資料自訂 {#profile-detail-customization}
+# [!DNL Real-Time Customer Profile] 详细信息自定义 {#profile-detail-customization}
 
-在Adobe Experience Platform使用者介面中，您可以檢視並與互動 [!DNL Real-Time Customer Profile] 客戶設定檔形式的資料。 UI中顯示的設定檔資訊已從多個設定檔片段合併在一起，以形成每個個別客戶的單一檢視。 這包括基本屬性、連結的身分和管道偏好設定等詳細資訊。 設定檔中顯示的預設欄位也可以在組織層級變更以顯示偏好設定 [!DNL Profile] 屬性。 本指南提供逐步指示，說明自訂的方式 [!DNL Profile] 資料會顯示在Platform UI中。
+在Adobe Experience Platform用户界面中，您可以查看并与之交互 [!DNL Real-Time Customer Profile] 以客户配置文件形式呈现的数据。 UI中显示的配置文件信息已从多个配置文件片段合并在一起，以形成每个客户的单个视图。 这包括基本属性、链接身份和渠道偏好设置等详细信息。 用户档案中显示的默认字段也可以在组织级别更改为显示首选字段 [!DNL Profile] 属性。 本指南提供了有关自定义以下各项的方式的分步说明： [!DNL Profile] 数据显示在Platform UI中。
 
-如需設定檔UI的完整指南，請造訪 [設定檔UI指南](user-guide.md).
+有关配置文件UI的完整指南，请访问 [配置文件UI指南](user-guide.md).
 
-## 重新排序卡片並調整其大小 {#reorder-and-resize-cards}
+## 重新排序卡片并调整其大小 {#reorder-and-resize-cards}
 
-從 **[!UICONTROL 詳細資訊]** 客戶設定檔的標籤中，您可以選取 **[!UICONTROL 自訂設定檔詳細資料]** 以調整現有卡片大小及重新排序。
+从 **[!UICONTROL 详细信息]** 选项卡，您可以选择 **[!UICONTROL 自定义配置文件详细信息]** 以调整现有卡的大小和重新排序。
 
-![「自訂設定檔詳細資料」按鈕會醒目提示在「設定檔」控制面板上。](../images/profile-customization/customize-profile-details.png)
+![自定义配置文件详细信息按钮在配置文件仪表板中突出显示。](../images/profile-customization/customize-profile-details.png)
 
-選擇修改控制面板後，您可以選取卡片標題並將卡片拖放至所需順序來重新排序卡片。 您也可以選取卡片右下角的角度符號(`⌟`)並將卡片拖曳至所需大小。 在此範例中， **[!UICONTROL 基本屬性]** 正在調整卡片大小。
+选择修改仪表板后，您可以通过选择卡片标题并将卡片拖放到所需的顺序来重新排序卡片。 您还可以通过选择卡片右下角的角度符号来调整卡片大小(`⌟`)，并将信息卡拖动到所需的大小。 在此示例中， **[!UICONTROL 基本属性]** 正在调整卡的大小。
 
-![調整大小按鈕會在基本屬性卡中反白顯示。](../images/profile-customization/resize.png)
+![调整大小按钮在基本属性卡中突出显示。](../images/profile-customization/resize.png)
 
-選取的卡片會調整至所需的大小，而周圍的卡片會動態重新定位。 這可能會導致某些卡片移動到其他列，需要您向下捲動才能看到所有卡片。 例如，當「[!UICONTROL 基本屬性]「卡片大小已調整為」[!UICONTROL 連結的身分]「卡片不再顯示在頂端列，現在顯示在設定檔內的新第二列（未顯示）。 傳回&quot;[!UICONTROL 連結的身分]「卡片拖放至頂列，您可將其拖放至「 」的目前位置[!UICONTROL 頻道偏好設定]「卡片。
+所选卡片会调整到所需的大小，并且周围卡片会动态重新定位。 这可能会导致某些信息卡移动到其他行，需要您向下滚动才能看到所有信息卡。 例如，当“[!UICONTROL 基本属性]“卡已调整大小”[!UICONTROL 链接的身份]“ ”信息卡不再显示在顶行，现在显示在配置文件内的新的第二行（未显示）。 要返回&quot;[!UICONTROL 链接的身份]”信息卡放到顶行，您可以将其拖放到的当前位置“[!UICONTROL 渠道首选项]“ ”卡。
 
-![重新調整大小的卡片會反白顯示。](../images/profile-customization/resized.png)
+![重新调整大小的卡会突出显示。](../images/profile-customization/resized.png)
 
-## 編輯和移除卡片
+## 编辑和移除信息卡
 
-除了調整卡片大小和重新排序卡片外，您還可以編輯特定卡片的內容，並從控制面板中完全移除某些卡片。 選取省略符號(`...`)以編輯或移除卡片。 這會開啟一個下拉式清單，內含編輯或移除卡片的選項，視所選卡片的屬性而定。
+除了调整卡片大小和重新排序卡片外，您还可以编辑某些卡片的内容并从功能板中完全删除某些卡片。 选择省略号(`...`)以对其进行编辑或将其删除。 这将打开一个下拉列表，其中包含编辑或移除信息卡的选项，具体取决于所选信息卡的属性。
 
 >[!NOTE]
 >
->並非所有卡片都可以編輯或移除。 這是因為有些卡片包含唯讀或必要資訊。 如果卡片右上角沒有橢圓，則包含唯讀的AND必要資訊，無法編輯或移除。 如果卡片角落有橢圓，並選取它只會顯示移除卡片的選項，則卡片資訊為唯讀且無法編輯。
+>并非所有信息卡都可以编辑或删除。 这是因为某些信息卡包含只读或必需信息。 如果卡片的右上角没有省略号，则它包含只读和必需信息，不能编辑也不能删除它。 如果信息卡在角部有椭圆，选择它时只显示删除信息卡的选项，则信息卡为只读信息，无法编辑。
 
-![編輯卡片下拉式清單會反白顯示。 這包括編輯或移除卡片的選項。](../images/profile-customization/edit-card.png)
+![编辑卡片下拉列表会突出显示。 其中包括编辑或移除卡片的选项。](../images/profile-customization/edit-card.png)
 
-選取 **[!UICONTROL 編輯]** 在下拉式清單中開啟 **[!UICONTROL 編輯Widget]** 工作區，您可以在其中更新卡片標題、重新排序或移除可見屬性，或使用 **[!UICONTROL 新增屬性]** 按鈕。
+选择 **[!UICONTROL 编辑]** 在下拉列表中打开 **[!UICONTROL 编辑构件]** 工作区，您可以在其中更新卡片标题、重新排序或删除可见属性，或者使用添加其他属性 **[!UICONTROL 添加属性]** 按钮。
 
-![隨即顯示「基本屬性」卡片。](../images/profile-customization/basic-attributes.png)
+![此时将显示“基本属性”卡。](../images/profile-customization/basic-attributes.png)
 
-## 新增屬性 {#add-attributes}
+## 添加属性 {#add-attributes}
 
-從 **[!UICONTROL 編輯Widget]** 畫面，選取 **[!UICONTROL 新增屬性]** 以開始向該卡片新增屬性。
+从 **[!UICONTROL 编辑构件]** 屏幕，选择 **[!UICONTROL 添加属性]** 以开始向该卡添加属性。
 
-![「基本屬性」卡片中的「新增屬性」按鈕會反白顯示。](../images/profile-customization/add-attributes.png)
+![“基本属性”信息卡中的“添加属性”按钮会突出显示。](../images/profile-customization/add-attributes.png)
 
-當 **[!UICONTROL 選取聯合結構描述欄位]** 對話方塊開啟，對話方塊的左側顯示完整的 [!UICONTROL XDM個別設定檔] 聯合結構描述，其欄位巢狀於下方。 如需聯合結構描述的詳細資訊，請參閱 [聯合結構描述區段 [!DNL Profile] 使用手冊](user-guide.md#union-schema).
+当 **[!UICONTROL 选择合并架构字段]** 对话框打开，对话框左侧显示完整的 [!UICONTROL XDM个人资料] 合并架构，字段嵌套在下。 有关合并模式的更多信息，请参阅 [合并模式部分 [!DNL Profile] 用户指南](user-guide.md#union-schema).
 
-此 **[!UICONTROL 選取的屬性]** 對話方塊右側的區段會顯示目前包含在您編輯的卡片中的屬性。 您也可以在此移除和重新排序屬性。 畫面會顯示選取的屬性總數，以及可新增至單一卡片的屬性數目上限(20)。
+此 **[!UICONTROL 选定的属性]** 对话框右侧的部分显示当前包含在正在编辑的信息卡中的属性。 您也可以在此处删除和重新排序属性。 显示选定的属性总数，以及可添加到单个卡片的最大属性数(20)。
 
-![目前構成卡片上的屬性的屬性會反白顯示。](../images/profile-customization/select-before.png)
+![当前构成信息卡上属性的属性会突出显示。](../images/profile-customization/select-before.png)
 
-您可以選取任何可用的聯合結構描述欄位，以自訂您正在編輯的卡片上的屬性。 選取的欄位旁邊會顯示勾號，並會自動新增至選取的屬性清單中。 新增您要顯示在卡片上的所有屬性後，請選擇 **[!UICONTROL 選取]** 以返回 **[!UICONTROL 編輯Widget]** 畫面。
+您可以选择任何可用的合并架构字段以自定义您正在编辑的卡片上的属性。 选定的字段旁边会显示一个复选标记，并且会自动添加到选定属性的列表中。 添加要在信息卡上显示的所有属性后，请选择 **[!UICONTROL 选择]** 以返回 **[!UICONTROL 编辑构件]** 屏幕。
 
-![新加入的屬性會反白顯示。](../images/profile-customization/select-after.png)
+![新添加的属性会突出显示。](../images/profile-customization/select-after.png)
 
-當您返回 **[!UICONTROL 編輯Widget]** 熒幕上，現在應更新卡片上的屬性清單以反映您的選擇。 您仍然可以根據需要移除或重新排序卡片屬性或編輯卡片標題。 編輯完成後，選取 **[!UICONTROL 儲存]** 以儲存變更。
+当您返回 **[!UICONTROL 编辑构件]** 屏幕上，卡片上的属性列表现在应该更新以反映您的选择。 您仍然可以根据需要删除卡片属性或重新排序卡片属性或编辑卡片标题。 编辑完成后，选择 **[!UICONTROL 保存]** 以保存更改。
 
-![新新增的屬性會顯示在編輯的卡片上。](../images/profile-customization/new-attributes.png)
+![新添加的属性显示在编辑的卡片上。](../images/profile-customization/new-attributes.png)
 
-儲存後，您會返回 **[!UICONTROL 詳細資訊]** 顯示更新卡片和屬性的標籤。
+保存后，您将返回到 **[!UICONTROL 详细信息]** 选项卡，其中显示了更新的信息卡和属性。
 
-![新新增的屬性會顯示在「設定檔」控制面板的卡片上。](../images/profile-customization/added-attributes.png)
+![新添加的属性显示在配置文件功能板的卡片上。](../images/profile-customization/added-attributes.png)
 
-## 新增卡片 {#add-a-new-card}
+## 添加新信息卡 {#add-a-new-card}
 
-若要進一步自訂Experience Platform中設定檔的外觀，您可以選取將新卡片新增至控制面板，並選取您想在這些卡片顯示的屬性。 若要開始，請選取 **[!UICONTROL 修改儀表板]** 於 **[!UICONTROL 詳細資訊]** 標籤。
+要进一步自定义Experience Platform中配置文件的外观，您可以选择向仪表板添加新信息卡，并选择想要在这些信息卡上显示的属性。 要开始，请选择 **[!UICONTROL 修改仪表板]** 在 **[!UICONTROL 详细信息]** 选项卡。
 
-![自訂設定檔詳細資訊按鈕會醒目提示。](../images/profile-customization/customize-profile-details.png)
+![自定义配置文件详细信息按钮突出显示。](../images/profile-customization/customize-profile-details.png)
 
-接下來，選取 **[!UICONTROL 新增Widget]** 圖示板的左上角。
+接下来，选择 **[!UICONTROL 添加构件]** 在仪表板的左上角。
 
-![「新增Widget」按鈕會反白顯示。](../images/profile-customization/add-widget.png)
+![“添加构件”按钮突出显示。](../images/profile-customization/add-widget.png)
 
-選擇新增卡片會開啟 **[!UICONTROL 編輯Widget]** 此畫面可讓您為新卡片提供標題，並選擇您希望卡片顯示的屬性。 若要開始將屬性新增至卡片，請選取 **[!UICONTROL 新增屬性]**.
+选择添加新信息卡会打开 **[!UICONTROL 编辑构件]** 一个屏幕，您可以在其中为新信息卡提供标题，并选择您希望信息卡显示的属性。 要开始向信息卡添加属性，请选择 **[!UICONTROL 添加属性]**.
 
-![「編輯Widget」畫面中會顯示空白的新Widget卡。](../images/profile-customization/edit-widget.png)
+![“编辑构件”屏幕中显示空白的新构件卡。](../images/profile-customization/edit-widget.png)
 
-當 **[!UICONTROL 選取聯合結構描述欄位]** 對話方塊開啟，對話方塊的左側顯示完整的 [!UICONTROL XDM個別設定檔] 聯合結構描述和 **[!UICONTROL 選取的屬性]** 對話方塊右側的區段會顯示您為卡片選取的屬性。 如需新增屬性的詳細資訊，請參閱 [新增屬性的區段](#add-attributes) 即會出現在此檔案的前面。
+当 **[!UICONTROL 选择合并架构字段]** 对话框打开，对话框左侧显示完整的 [!UICONTROL XDM个人资料] 合并模式和 **[!UICONTROL 选定的属性]** 对话框右侧的部分显示了您为信息卡选择的属性。 有关添加属性的更多信息，请参阅 [关于添加属性的部分](#add-attributes) 此文档前面显示的URL值。
 
-畫面會顯示選取的屬性總數，以及可新增至單一卡片的屬性數目上限(20)。 您也可以從此畫面移除並重新排序您選取的屬性。 新增您要顯示在卡片上的所有屬性後，請選擇 **[!UICONTROL 選取]** 以返回 **[!UICONTROL 編輯Widget]** 畫面。
+显示选定的属性总数，以及可添加到单个卡片的最大属性数(20)。 您还可以从此屏幕中删除所选属性并重新排序。 添加要在信息卡上显示的所有属性后，请选择 **[!UICONTROL 选择]** 以返回 **[!UICONTROL 编辑构件]** 屏幕。
 
-![您新增至卡片的欄位會反白顯示。](../images/profile-customization/add-widget-attributes.png)
+![您添加到信息卡的字段会突出显示。](../images/profile-customization/add-widget-attributes.png)
 
-當您返回 **[!UICONTROL 編輯Widget]** 熒幕上，卡片上的屬性清單應該會反映您在上一個熒幕所做的選擇。 您也可以視需要重新排序及移除卡片屬性。
+当您返回 **[!UICONTROL 编辑构件]** 屏幕时，卡片上的属性列表应反映您在上一个屏幕中所做的选择。 您还可以根据需要重新排序和移除卡属性。
 
-若要儲存新卡片，您必須先提供 **[!UICONTROL 卡片標題]**，然後您便能夠選取 **[!UICONTROL 儲存]** 並完成卡片建立程式。
+要保存新卡，您必须首先提供 **[!UICONTROL 卡片标题]**，则您将能够选择 **[!UICONTROL 保存]** 并完成信息卡创建过程。
 
-![新的Widget會在「編輯Widget」畫面中預覽。](../images/profile-customization/new-widget.png)
+![新构件会在“编辑构件”屏幕中预览。](../images/profile-customization/new-widget.png)
 
-儲存後，您會返回 **[!UICONTROL 詳細資訊]** 顯示新卡片和屬性的索引標籤。
+保存后，您将返回到 **[!UICONTROL 详细信息]** 选项卡，您可在其中看到新信息卡和属性。
 
-![新的Widget會新增至「設定檔」儀表板。](../images/profile-customization/added-widget.png)
+![新构件将添加到用户档案仪表板。](../images/profile-customization/added-widget.png)
 
-## 還原預設卡片
+## 恢复默认信息卡
 
-如果在任何時候您決定要恢復已移除的預設卡片，您就可以快速輕鬆地這樣做。 首先，選取 **[!UICONTROL 修改儀表板]**，然後選取 **[!UICONTROL 還原預設卡片]**. 顯示預設卡片後，您可以選取 **[!UICONTROL 儲存]** 儲存變更或選取 **[!UICONTROL 取消]** 如果您不想還原預設卡片。
+如果在任何时候您决定恢复已被删除的默认信息卡，则可以快速轻松地恢复默认信息卡。 首先，选择 **[!UICONTROL 修改仪表板]**，然后选择 **[!UICONTROL 恢复默认信息卡]**. 显示默认卡片后，您可以选择 **[!UICONTROL 保存]** 保存更改或选择 **[!UICONTROL 取消]** 如果您不想恢复默认卡。
 
-![「設定檔」儀表板中會反白顯示「還原預設卡片」按鈕。](../images/profile-customization/restore-default.png)
+![“配置文件”仪表板中会突出显示“恢复默认信息卡”按钮。](../images/profile-customization/restore-default.png)
 
 ## 后续步骤
 
-依照此檔案，您現在應該能夠更新您組織的設定檔檢視，包括新增和移除卡片、編輯卡片詳細資訊和屬性，以及重新排序卡片並重新調整卡片大小。 若要進一步瞭解使用 [!DNL Profile] Experience PlatformUI中的資料，請參閱 [[!DNL Profile] 使用手冊](user-guide.md).
+通过阅读本文档，您现在应该能够更新组织的配置文件视图，包括添加和删除信息卡、编辑信息卡详细信息和属性，以及重新排序信息卡和调整信息卡大小。 详细了解使用 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [[!DNL Profile] 用户指南](user-guide.md).

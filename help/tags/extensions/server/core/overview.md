@@ -1,6 +1,6 @@
 ---
-title: 核心事件轉送擴充功能概觀
-description: 瞭解Adobe Experience Platform中的核心事件轉送擴充功能。
+title: 核心事件转发扩展概述
+description: 了解Adobe Experience Platform中的核心事件转发扩展。
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
 source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
@@ -10,13 +10,13 @@ ht-degree: 91%
 
 ---
 
-# 核心事件轉送擴充功能概觀
+# 核心事件转发扩展概述
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-核心事件轉送擴充功能提供Adobe Experience Platform中事件轉送的預設事件、條件和資料型別。
+核心事件转发扩展为Adobe Experience Platform中的事件转发提供默认事件、条件和数据类型。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -26,9 +26,9 @@ ht-degree: 91%
 
 ### 自定义代码
 
-指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件轉送支援ES6。
+指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件转发支持ES6。
 
-1. 選取 **[!UICONTROL 開啟編輯器]**.
+1. 选择 **[!UICONTROL 打开编辑器]**.
 1. 键入自定义代码。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
@@ -155,11 +155,11 @@ module.exports = (context) => {
 
 ### 自定义代码
 
-提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件轉送支援ES6。
+提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件转发支持ES6。
 
 1. 命名操作代码。
-1. 選取 **[!UICONTROL 開啟編輯器]**.
-1. 編輯程式碼，然後選取 **[!UICONTROL 儲存]**.
+1. 选择 **[!UICONTROL 打开编辑器]**.
+1. 编辑代码，然后选择 **[!UICONTROL 保存]**.
 
 要访问自定义代码中数据元素的值，请使用 `getDataElementValue` 方法。例如，要检索名为 `productName` 的数据元素的值，请编写以下代码： 
 
@@ -167,7 +167,7 @@ module.exports = (context) => {
 getDataElementValue('productName') 
 ```
 
-事件轉送動作會依序執行。 对于某项操作中的自定义代码而言，也有可能会返回一个可用于后续操作的值。返回的值可能来自该操作中的代码，也可能来自对外部源发起调用的响应正文。要在使用核心扩展的单个规则中，引用先前执行的操作中的数据，请创建一个 `Path` 类型的数据元素，并使用以下路径引用名为 `productCategory` 的变量的值（该变量在核心扩展内的自定义代码中定义）：
+事件转发操作按顺序执行。 对于某项操作中的自定义代码而言，也有可能会返回一个可用于后续操作的值。返回的值可能来自该操作中的代码，也可能来自对外部源发起调用的响应正文。要在使用核心扩展的单个规则中，引用先前执行的操作中的数据，请创建一个 `Path` 类型的数据元素，并使用以下路径引用名为 `productCategory` 的变量的值（该变量在核心扩展内的自定义代码中定义）：
 
 ```javascript
 arc.ruleStash.[Extension-Name].[key-as-defined-by-action] 
@@ -183,7 +183,7 @@ arc.ruleStash.core.productCategory
 
 ### 自定义代码
 
-在UI中選取以下專案可輸入自訂JavaScript：  **[!UICONTROL 開啟編輯器]** 和將程式碼插入編輯器視窗中。
+通过选择，可以将自定义JavaScript输入到用户界面中  **[!UICONTROL 打开编辑器]** 并将代码插入编辑器窗口。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值用作数据元素值。如果不包含返回语句，或返回的值为 `null` 或 `undefined`，则数据元素的默认值反映为 `null` 或 `undefined`。
 
@@ -226,4 +226,4 @@ arc.event.xdm.page.pageName
 
 >[!NOTE]
 >
->此 `interact` 來自使用者端的呼叫具有 `events`，但若是事件轉送，您需要 `event`. 這是因為事件轉送會個別檢查每個事件，而非如使用者端所示，整批檢查多個事件。
+>此 `interact` 来自客户端的调用具有 `events`，但是要转发事件，您需要 `event`. 这是因为事件转发会单独检查每个事件，而不是像客户端上所示的一批检查多个事件。

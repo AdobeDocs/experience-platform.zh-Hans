@@ -1,6 +1,6 @@
 ---
-title: 檔案串流SDK API的自助服務範本
-description: 瞭解如何使用流量服務API，將串流資料從來源帶到Adobe Experience Platform。
+title: 流SDK API的文档自助服务模板
+description: 了解如何使用流服务API将流数据从源引入Adobe Experience Platform。
 hide: true
 hidefromtoc: true
 exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
@@ -11,52 +11,52 @@ ht-degree: 1%
 
 ---
 
-# 建立來源連線和資料流以進行串流 *YOURSOURCE* 資料使用 [!DNL Flow Service] API
+# 创建要流式处理的源连接和数据流 *YOURSOURCE* 数据使用 [!DNL Flow Service] API
 
-*瀏覽此範本時，請取代或刪除所有斜體段落（從此段落開始）。*
+*浏览此模板时，替换或删除所有斜体段落（从此段落开始）。*
 
-*首先在頁面頂端更新中繼資料（標題和說明）。 請忽略此頁面上的所有DNL執行個體。 此標籤可協助我們的機器翻譯程式將頁面正確翻譯為我們支援的多種語言。 我們會在您提交檔案後，將標籤新增至檔案。*
+*首先，在页面顶部更新元数据（标题和描述）。 请忽略此页面上的所有DNL实例。 此标记可帮助我们的机器翻译流程将页面正确翻译为我们支持的多种语言。 我们会在您提交文档后将标记添加到文档中。*
 
 ## 概述
 
-*提供貴公司的簡短概觀，包括其對客戶的價值。 加入產品檔案首頁的連結，以便進一步閱讀。*
+*提供贵公司的简短概览，包括贵公司为客户提供的价值。 添加指向产品文档主页的链接以供进一步阅读。*
 
 >[!IMPORTANT]
 >
->此檔案頁面是由 *YOURSOURCE* 團隊。 如有任何查詢或更新請求，請直接聯絡他們： *插入連結或電子郵件地址，您可在這裡取得更新*.
+>此文档页面由创建 *YOURSOURCE* 团队。 如有任何查询或更新请求，请直接通过 *插入链接或电子邮件地址，您可以从中获取更新*.
 
 ## 先决条件
 
-*在本節中新增客戶在Adobe Experience Platform使用者介面中開始設定來源之前需要注意的任何相關資訊。 這可能與以下內容有關：*
+*在此部分中添加有关客户在Adobe Experience Platform用户界面中开始设置源之前需要了解的任何信息。 这可能与以下内容有关：*
 
-* *需要新增至允許清單*
-* *電子郵件雜湊的需求*
-* *任何您這邊的帳戶細節*
-* *如何取得API金鑰以連線至您的平台*
+* *需要添加到允许列表*
+* *电子邮件哈希处理要求*
+* *任何账户详情*
+* *如何获取API密钥以连接到您的平台*
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了連線 *YOURSOURCE* 若要Experience Platform，您必須提供下列連線屬性的值：
+为了连接 *YOURSOURCE* 要Experience Platform，必须提供以下连接属性的值：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| *認證一* | *請在此新增來源驗證認證的簡短說明* | *請在此新增您來源的驗證認證範例* |
-| *認證二* | *請在此新增來源驗證認證的簡短說明* | *請在此新增您來源的驗證認證範例* |
-| *認證三* | *請在此新增來源驗證認證的簡短說明* | *請在此新增您來源的驗證認證範例* |
+| *凭据1* | *请在此处为源的身份验证凭据添加简短描述* | *请在此处添加源身份验证凭据的示例* |
+| *凭据二* | *请在此处为源的身份验证凭据添加简短描述* | *请在此处添加源身份验证凭据的示例* |
+| *凭据3* | *请在此处为源的身份验证凭据添加简短描述* | *请在此处添加源身份验证凭据的示例* |
 
-如需這些認證的詳細資訊，請參閱 *YOURSOURCE* 驗證檔案。 *請在這裡新增您平台驗證檔案的連結*.
+有关这些凭据的更多信息，请参阅 *YOURSOURCE* 身份验证文档。 *请在此处添加指向您平台的身份验证文档的链接*.
 
-### 整合 *YOURSOURCE* 使用您的webhook
+### 集成 *YOURSOURCE* 使用您的webhook
 
-*串流SDK需要您的來源能夠支援Webhook，才能與Experience Platform通訊。 在本節中，您必須提供使用者必須遵循的步驟，才能將YOURSOURCE與webhook整合。*
+*流SDK要求您的源能够支持Webhook，以便与Experience Platform通信。 在本节中，您必须提供用户必须遵循的步骤，才能将YOURSOURCE与webhook集成。*
 
-## Connect *YOURSOURCE* 至平台，使用 [!DNL Flow Service] API
+## Connect *YOURSOURCE* 到平台，使用 [!DNL Flow Service] API
 
-下列教學課程將逐步引導您完成建立 *YOURSOURCE* 來源連線並建立資料流以帶來 *YOURSOURCE* 使用將資料傳送至Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建 *YOURSOURCE* 源连接并创建数据流以引入 *YOURSOURCE* 使用将数据发送到平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-### 建立來源連線 {#source-connection}
+### 创建源连接 {#source-connection}
 
-向發出POST要求以建立來源連線 [!DNL Flow Service] API，同時提供來源的連線規格ID、名稱和說明等詳細資訊，以及資料的格式。
+通过向POST请求创建源连接 [!DNL Flow Service] API，同时提供源的连接规范ID、名称和描述等详细信息以及数据的格式。
 
 **API格式**
 
@@ -66,7 +66,7 @@ POST /sourceConnections
 
 **请求**
 
-以下請求會為建立來源連線 *YOURSOURCE*：
+以下请求创建源连接 *YOURSOURCE*：
 
 ```shell
 curl -X POST \
@@ -92,14 +92,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 來源連線的名稱。 確保來源連線的名稱是描述性的，因為您可以使用此名稱來查閱來源連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供來源連線的詳細資訊。 |
-| `connectionSpec.id` | 與您的來源對應的連線規格ID。 |
-| `data.format` | 的格式 *YOURSOURCE* 您要擷取的資料。 目前唯一支援的資料格式為 `json`. |
+| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
+| `connectionSpec.id` | 与源对应的连接规范ID。 |
+| `data.format` | 的格式 *YOURSOURCE* 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
 
 **响应**
 
-成功的回應會傳回唯一識別碼(`id`)。 此ID在後續步驟中是建立資料流的必要專案。
+成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
 
 ```json
 {
@@ -108,25 +108,25 @@ curl -X POST \
 }
 ```
 
-### 建立目標XDM結構描述 {#target-schema}
+### 创建目标XDM架构 {#target-schema}
 
-為了在Platform中使用來源資料，必須建立目標結構描述，以根據您的需求來建構來源資料。 然後，目標結構描述會用於建立包含來源資料的Platform資料集。
+为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
-可透過對以下專案執行POST請求來建立目標XDM結構描述： [結構描述登入API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-如需建立目標XDM結構的詳細步驟，請參閱以下教學課程： [使用API建立結構描述](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
 
-### 建立目標資料集 {#target-dataset}
+### 创建目标数据集 {#target-dataset}
 
-您可以透過對「 」執行POST請求來建立目標資料集 [目錄服務API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在裝載中提供目標結構描述的ID。
+可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-如需建立目標資料集的詳細步驟，請參閱以下教學課程： [使用API建立資料集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
 
-### 建立目標連線 {#target-connection}
+### 创建目标连接 {#target-connection}
 
-目標連線代表與要儲存所擷取資料的目的地之間的連線。 若要建立目標連線，您必須提供對應至資料湖的固定連線規格ID。 此ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-您現在擁有目標結構描述、目標資料集和到資料湖的連線規格ID的唯一識別碼。 使用這些識別碼，您可以使用 [!DNL Flow Service] 指定將包含傳入來源資料之資料集的API。
+现在，您拥有目标架构、目标数据集和到数据湖的连接规范ID的唯一标识符。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -136,7 +136,7 @@ POST /targetConnections
 
 **请求**
 
-以下請求會建立目標連線 *YOURSOURCE*：
+以下请求创建目标连接 *YOURSOURCE*：
 
 
 ```shell
@@ -170,16 +170,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 目標連線的名稱。 確保目標連線的名稱是描述性的，因為您可以使用此名稱來查詢目標連線的資訊。 |
-| `description` | 您可以納入的選擇性值，可提供目標連線的詳細資訊。 |
-| `connectionSpec.id` | 對應至Data Lake的連線規格ID。 此固定ID為： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | 的格式 *YOURSOURCE* 您要帶到Platform的資料。 |
-| `params.dataSetId` | 在上一步中擷取的目標資料集ID。 |
+| `name` | 目标连接的名称。 确保目标连接的名称是描述性的，因为您可以使用此名称查找有关目标连接的信息。 |
+| `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
+| `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `data.format` | 的格式 *YOURSOURCE* 要带到Platform的数据。 |
+| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
 
 
 **响应**
 
-成功回應會傳回新目標連線的唯一識別碼(`id`)。 此ID在後續步驟中是必要的。
+成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -188,9 +188,9 @@ curl -X POST \
 }
 ```
 
-### 建立對應 {#mapping}
+### 创建映射 {#mapping}
 
-為了將來源資料內嵌到目標資料集中，必須先將其對應到目標資料集所遵守的目標結構描述。 這是透過向執行POST請求來達成 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 要求裝載中定義資料對應。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
 
 **API格式**
 
@@ -231,14 +231,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `xdmSchema` | 的ID [目標XDM結構描述](#target-schema) 已在先前步驟中產生。 |
-| `mappings.destinationXdmPath` | 來源屬性對應到的目的地XDM路徑。 |
-| `mappings.sourceAttribute` | 需要對映至目的地XDM路徑的來源屬性。 |
-| `mappings.identity` | 布林值，指定是否將對應集標示為 [!DNL Identity Service]. |
+| `xdmSchema` | 的ID [目标XDM架构](#target-schema) 在之前的步骤中生成。 |
+| `mappings.destinationXdmPath` | 源属性将映射到的目标XDM路径。 |
+| `mappings.sourceAttribute` | 需要映射到目标XDM路径的源属性。 |
+| `mappings.identity` | 一个布尔值，指定是否将映射集标记为 [!DNL Identity Service]. |
 
 **响应**
 
-成功回應會傳回新建立對應的詳細資料，包括其唯一識別碼(`id`)。 在後續步驟中需要此值，才能建立資料流。
+成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -251,15 +251,15 @@ curl -X POST \
 }
 ```
 
-### 建立流程 {#flow}
+### 创建流 {#flow}
 
-從以下來源取得資料的最後一步 *YOURSOURCE* 對Platform而言，就是建立資料流。 到現在為止，您已準備下列必要值：
+从以下来源获取数据的最后一步 *YOURSOURCE* 到Platform就是创建数据流。 现在，您已准备以下必需值：
 
-* [來源連線ID](#source-connection)
-* [目標連線ID](#target-connection)
+* [源连接ID](#source-connection)
+* [目标连接ID](#target-connection)
 * [映射 ID](#mapping)
 
-資料流負責從來源排程及收集資料。 您可以執行POST要求，同時在裝載中提供先前提及的值，藉此建立資料流。
+数据流负责从源中计划和收集数据。 您可以通过在有效负载中提供上述值时执行POST请求来创建数据流。
 
 **API格式**
 
@@ -303,20 +303,20 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 資料流的名稱。 確保資料流的名稱是描述性的，因為您可以使用此名稱來查閱資料流上的資訊。 |
-| `description` | 您可以納入的選用值，可提供資料流的詳細資訊。 |
-| `flowSpec.id` | 建立資料流所需的流量規格ID。 此固定ID為： `e77fde5a-22a8-11ed-861d-0242ac120002`. |
-| `flowSpec.version` | 流程規格ID的對應版本。 此值預設為 `1.0`. |
-| `sourceConnectionIds` | 此 [來源連線ID](#source-connection) 已在先前步驟中產生。 |
-| `targetConnectionIds` | 此 [目標連線ID](#target-connection) 已在先前步驟中產生。 |
-| `transformations` | 此屬性包含套用至您的資料所需的各種轉換。 將非XDM相容的資料引進Platform時，需要此屬性。 |
-| `transformations.name` | 指定給轉換的名稱。 |
-| `transformations.params.mappingId` | 此 [對應ID](#mapping) 已在先前步驟中產生。 |
-| `transformations.params.mappingVersion` | 對應ID的對應版本。 此值預設為 `0`. |
+| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `e77fde5a-22a8-11ed-861d-0242ac120002`. |
+| `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
+| `sourceConnectionIds` | 此 [源连接ID](#source-connection) 在之前的步骤中生成。 |
+| `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
+| `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
+| `transformations.name` | 分配给转换的名称。 |
+| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
 
 **响应**
 
-成功的回應會傳回ID (`id`)。 您可以使用此ID來監視、更新或刪除資料流。
+成功的响应会返回ID (`id`)。 您可以使用此ID监视、更新或删除数据流。
 
 ```json
 {
@@ -325,11 +325,11 @@ curl -X POST \
 }
 ```
 
-### 取得您的串流端點URL
+### 获取您的流端点URL
 
-建立資料流後，您現在可以擷取串流端點URL。 您將使用此端點URL將您的來源訂閱到webhook，允許您的來源與Experience Platform通訊。
+创建数据流后，您现在可以检索流端点URL。 您将使用此端点URL将源订阅到webhook，从而允许源与Experience Platform通信。
 
-GET若要擷取您的串流端點URL，請向 `/flows` 端點並提供資料流的ID。
+GET要检索您的流端点URL，请向 `/flows` 端点并提供数据流的ID。
 
 **API格式**
 
@@ -350,7 +350,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回資料流上的資訊，包括標示為 `inletUrl`.
+成功响应将返回有关您的数据流的信息，包括您的端点URL，这些信息标记为 `inletUrl`.
 
 ```json
 {
@@ -431,24 +431,24 @@ curl -X GET \
 
 ## 附录
 
-下節提供您可以監視、更新和刪除資料流的步驟相關資訊。
+以下部分提供了有关监视、更新和删除数据流的步骤的信息。
 
-### 監視資料流
+### 监测数据流
 
-建立資料流後，您可以監視透過它擷取的資料，以檢視有關資料流執行、完成狀態和錯誤的資訊。 如需完整的API範例，請閱讀以下指南： [使用API監控您的來源資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关完整的API示例，请阅读以下指南： [使用API监控源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/monitor.html).
 
-### 更新您的資料流
+### 更新您的数据流
 
-透過向以下專案發出PATCH請求，更新資料流的詳細資訊，例如其名稱和說明，及其執行排程和相關聯的對應集 `/flows` 端點 [!DNL Flow Service] API，同時提供資料流的ID。 提出PATCH請求時，您必須提供資料流的 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新來源資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
-### 更新您的帳戶
+### 更新您的帐户
 
-透過對執行PATCH請求，更新來源帳戶的名稱、說明和認證 [!DNL Flow Service] API時，提供您的基本連線ID作為查詢引數。 提出PATCH請求時，您必須提供來源帳戶的唯一值 `etag` 在 `If-Match` 標頭。 如需完整的API範例，請閱讀以下指南： [使用API更新您的來源帳戶](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
-### 刪除您的資料流
+### 删除数据流
 
-透過對執行DELETE請求來刪除您的資料流 [!DNL Flow Service] API，同時提供您要作為查詢引數的一部分刪除的資料流的ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的資料流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
 
-### 刪除您的帳戶
+### 删除您的帐户
 
-透過對執行DELETE請求來刪除您的帳戶 [!DNL Flow Service] API，同時提供您要刪除之帳戶的基本連線ID。 如需完整的API範例，請閱讀以下指南： [使用API刪除您的來源帳戶](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

@@ -1,7 +1,7 @@
 ---
-keywords: google客戶比對；Google客戶比對；Google客戶比對
-title: Google Customer Match連線
-description: Google Customer Match可讓您使用線上和離線資料，透過Google所擁有和經營的屬性(例如搜尋、購物、Gmail和YouTube)聯絡客戶並重新與其互動。
+keywords: google客户匹配；Google客户匹配；Google客户匹配
+title: Google Customer Match连接
+description: 通过Google Customer Match，您可以在Google拥有和运营的资产(如Search、Shopping、Gmail和YouTube)中使用在线和离线数据联系客户并重新与其互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
 source-git-commit: d6b34f3bd3a432e1cf7d3dcce242934391b65d78
 workflow-type: tm+mt
@@ -10,105 +10,105 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Google Customer Match] 連線
+# [!DNL Google Customer Match] 连接
 
 ## 概述 {#overview}
 
-[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) 可讓您使用線上和離線資料，透過Google所擁有和經營的屬性觸及客戶，並與客戶重新互動，例如： [!DNL Search]， [!DNL Shopping]， [!DNL Gmail]、和 [!DNL YouTube].
+[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) 让您能够在Google自有资产和运营资产中，使用在线和离线数据联系客户并重新吸引客户，例如： [!DNL Search]， [!DNL Shopping]， [!DNL Gmail]、和 [!DNL YouTube].
 
-![Adobe Experience Platform UI中的Google Customer Match目的地。](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![Adobe Experience Platform UI中的Google客户匹配目标。](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
 ## 用例 {#use-cases}
 
-協助您更清楚瞭解使用的方法和時機 [!DNL Google Customer Match] 目的地，以下是Adobe Experience Platform客戶可以使用此功能解決的範例使用案例。
+为了帮助您更好地了解如何以及何时使用 [!DNL Google Customer Match] 目标，以下是Adobe Experience Platform客户可以使用此功能解决的示例用例。
 
-### 使用案例#1
+### 用例#1
 
-運動服裝品牌想要透過以下方式觸及現有客戶： [!DNL Google Search] 和 [!DNL Google Shopping] 根據優惠方案與專案的過去購買與瀏覽記錄，進行個人化。 服飾品牌可以從他們自己的CRM擷取電子郵件地址以Experience Platform，以及從他們自己的離線資料建立區段。 接著，他們便可將這些區段傳送至 [!DNL Google Customer Match] 使用範圍： [!DNL Search] 和 [!DNL Shopping]，將廣告支出最佳化。
+一家运动服装品牌希望通过下列渠道吸引现有客户 [!DNL Google Search] 和 [!DNL Google Shopping] 根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据构建区段。 然后，他们可以将这些区段发送到 [!DNL Google Customer Match] 要跨以下范围使用 [!DNL Search] 和 [!DNL Shopping]，优化他们的广告支出。
 
-### 使用案例#2
+### 用例#2
 
-一家知名科技公司推出了一部新手機。 為了推廣此新款手機，他們想要提高擁有舊款手機的客戶對手機新功能和新功能的認識。
+一家知名科技公司发布了一款新手机。 为了推广这种新款手机，他们希望让拥有旧款手机的客户了解这款手机的新特性和新功能。
 
-為了提升此版本，他們會使用電子郵件地址作為識別碼，從CRM資料庫將電子郵件地址上傳到Experience Platform。 區段是根據擁有舊款手機型號的客戶所建立。 然後區段會傳送至 [!DNL Google Customer Match]，因此公司可將目標鎖定在目前的客戶、擁有舊款手機型號的客戶，以及 [!DNL YouTube].
+为了提升版本，他们使用电子邮件地址作为标识符，将其CRM数据库中的电子邮件地址上传到Experience Platform中。 区段是根据拥有旧款手机型号的客户创建的。 然后，区段将发送到 [!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧款手机型号的客户以及在上启用的类似客户 [!DNL YouTube].
 
-## 的資料控管 [!DNL Google Customer Match] 目的地 {#data-governance}
+## 数据治理 [!DNL Google Customer Match] 目标 {#data-governance}
 
-對於傳送到目的地平台或從目的地平台接收的資料，Experience Platform中的某些目的地具有某些規則和義務。 您有責任瞭解您資料的限制與義務，以及如何在Adobe Experience Platform和目標平台中使用該資料。 Adobe Experience Platform提供資料控管工具，協助您管理其中一些資料使用義務。 [瞭解更多](../../../data-governance/labels/overview.md) 關於資料控管工具和原則。
+Experience Platform中的一些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解详情](../../../data-governance/labels/overview.md) 关于数据治理工具和策略。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Google Customer Match] 支援下表所述的身分啟用。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL Google Customer Match] 支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google廣告ID | 當您的來源身分是GAID名稱空間時，選取此目標身分。 |
-| IDFA | 廣告商適用的Apple ID | 當您的來源身分識別是IDFA名稱空間時，請選取此目標身分。 |
-| phone_sha256_e.164 | E164格式的電話號碼，以SHA256演演算法雜湊 | Adobe Experience Platform支援純文字和SHA256雜湊電話號碼。 請依照 [ID比對需求](#id-matching-requirements-id-matching-requirements) 區段並使用適當的名稱空間，分別用於純文字和雜湊電話號碼。 當來源欄位包含未雜湊屬性時，請檢查 **[!UICONTROL 套用轉換]** 選項，擁有 [!DNL Platform] 啟動時自動雜湊資料。 |
-| email_lc_sha256 | 使用SHA256演演算法雜湊處理的電子郵件地址 | Adobe Experience Platform支援純文字和SHA256雜湊電子郵件地址。 請依照 [ID比對需求](#id-matching-requirements-id-matching-requirements) 區段，並針對純文字和雜湊電子郵件地址分別使用適當的名稱空間。 當來源欄位包含未雜湊屬性時，請檢查 **[!UICONTROL 套用轉換]** 選項，擁有 [!DNL Platform] 啟動時自動雜湊資料。 |
-| user_id | 自訂使用者ID | 當您的來源身分是自訂名稱空間時，選取此目標身分。 |
+| GAID | Google广告ID | 当源身份是GAID命名空间时，选择此目标身份。 |
+| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择此目标身份。 |
+| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并分别使用适用于纯文本和经过哈希处理的电话号码的命名空间。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
+| email_lc_sha256 | 使用SHA256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并针对纯文本和经过哈希处理的电子邮件地址分别使用相应的命名空间。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
+| user_id | 自定义用户ID | 当源身份是自定义命名空间时，选择此目标身份。 |
 
 {style="table-layout:auto"}
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 区段导出]** | 您正在匯出區段（受眾）的所有成員，而這些成員具有「 」中使用的識別碼（名稱、電話號碼及其他）。 [!DNL Google Customer Match] 目的地。 |
-| 匯出頻率 | **[!UICONTROL 串流]** | 串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL Google Customer Match] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
-## [!DNL Google Customer Match] 帳戶必要條件 {#google-account-prerequisites}
+## [!DNL Google Customer Match] 帐户先决条件 {#google-account-prerequisites}
 
-設定前 [!DNL Google Customer Match] 目的地為Experience Platform，請務必閱讀並遵循Google的原則來使用 [!DNL Customer Match]，概述於 [Google支援檔案](https://support.google.com/google-ads/answer/6299717).
+在设置之前 [!DNL Google Customer Match] 目标Experience Platform，请确保已阅读并遵守Google关于使用的策略 [!DNL Customer Match]，在中概述 [Google支持文档](https://support.google.com/google-ads/answer/6299717).
 
-接下來，確定您的 [!DNL Google] 帳戶已設定為 [!DNL Standard] 或更高的許可權層級。 請參閱 [Google Ads檔案](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 以取得詳細資訊。
+接下来，确保您的 [!DNL Google] 帐户配置为 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 了解详细信息。
 
-### 允許清單 {#allowlist}
+### 允许列表 {#allowlist}
 
-建立之前 [!DNL Google Customer Match] 目的地在Experience Platform中，請確定您的 [!DNL Google Ads] 帳戶符合 [[!DNL Google Customer Match] 原則](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+创建之前 [!DNL Google Customer Match] 目标位置在Experience Platform中，请确保您的 [!DNL Google Ads] 帐户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
-Google會自動允許擁有符合規範帳戶的客戶列出。
+Google会自动允许具有合规帐户的客户列出。
 
-## ID比對需求 {#id-matching-requirements}
+## ID匹配要求 {#id-matching-requirements}
 
-[!DNL Google] 要求不會明確傳送任何個人識別資訊(PII)。 因此，啟用的對象 [!DNL Google Customer Match] 可以關閉 *雜湊* 識別碼，例如電子郵件地址或電話號碼。
+[!DNL Google] 要求不发送明确的个人身份信息(PII)。 因此，受众激活到 [!DNL Google Customer Match] 可以被关掉 *哈希* 标识符，例如电子邮件地址或电话号码。
 
-根據您擷取至Adobe Experience Platform的ID型別，您必須遵守其對應的要求。
+根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。
 
-### 電話號碼雜湊需求 {#phone-number-hashing-requirements}
+### 电话号码哈希处理要求 {#phone-number-hashing-requirements}
 
-啟用電話號碼的方法有兩種 [!DNL Google Customer Match]：
+激活中的电话号码的方法有两种 [!DNL Google Customer Match]：
 
-* **擷取原始電話號碼**：您可以將原始電話號碼擷取至 [!DNL E.164] 格式為 [!DNL Platform]，而且會在啟動時自動執行雜湊處理。 如果選擇此選項，請務必將原始電話號碼擷取到 `Phone_E.164` 名稱空間。
-* **擷取雜湊電話號碼**：您可以在擷取到之前預先雜湊您的電話號碼 [!DNL Platform]. 如果選擇此選項，請務必將雜湊電話號碼擷取至 `PHONE_SHA256_E.164` 名稱空間。
+* **正在摄取原始电话号码**：您可以将原始电话号码摄取到 [!DNL E.164] 格式化为 [!DNL Platform]，并且会在激活时自动对它们进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到 `Phone_E.164` 命名空间。
+* **正在摄取经过哈希处理的电话号码**：您可以先对电话号码进行预哈希处理，然后再将其引入 [!DNL Platform]. 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到 `PHONE_SHA256_E.164` 命名空间。
 
 >[!NOTE]
 >
->內嵌到中的電話號碼 `Phone` 名稱空間無法在中啟動 [!DNL Google Customer Match].
+>接收的电话号码 `Phone` 命名空间不能在中激活 [!DNL Google Customer Match].
 
-### 電子郵件雜湊需求 {#hashing-requirements}
+### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以將電子郵件地址雜湊後再擷取至Adobe Experience Platform，或使用Experience Platform中清楚的電子郵件地址，並擁有 [!DNL Platform] 在啟動時進行雜湊。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并具有 [!DNL Platform] 激活时进行哈希处理。
 
-如需Google雜湊要求和其他啟用限制的詳細資訊，請參閱Google檔案中的下列區段：
+有关Google的哈希处理要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
-* [[!DNL Customer Match] 包含電子郵件地址、地址或使用者ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
-* [[!DNL Customer Match] 考量事項](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
-* [[!DNL Customer Match] 含電話號碼](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* [[!DNL Customer Match] 使用行動裝置ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
+* [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
+* [[!DNL Customer Match] 带有电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
+* [[!DNL Customer Match] 使用移动设备ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
-若要瞭解如何在Experience Platform中擷取電子郵件地址，請參閱 [批次擷取概觀](../../../ingestion/batch-ingestion/overview.md) 和 [串流擷取概觀](../../../ingestion/streaming-ingestion/overview.md).
+要了解如何在Experience Platform中摄取电子邮件地址，请参阅 [批量摄取概述](../../../ingestion/batch-ingestion/overview.md) 和 [流式摄取概述](../../../ingestion/streaming-ingestion/overview.md).
 
-如果您選擇自行雜湊電子郵件地址，請務必符合Google的要求，如上述連結所述。
+如果您选择自己对电子邮件地址进行哈希处理，请确保符合Google的要求，如上面的链接中所述。
 
-### 使用自訂名稱空間 {#custom-namespaces}
+### 使用自定义命名空间 {#custom-namespaces}
 
-開始使用 `User_ID` 名稱空間若要將資料傳送至Google，請務必使用下列專案同步處理自己的識別碼： [!DNL gTag]. 請參閱 [Google正式檔案](https://support.google.com/google-ads/answer/9199250) 詳細資訊。
+在使用 `User_ID` 命名空间要将数据发送到Google，请确保使用同步自己的标识符 [!DNL gTag]. 请参阅 [Google官方文档](https://support.google.com/google-ads/answer/9199250) 以了解详细信息。
 
 <!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
 
@@ -121,93 +121,93 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
-### 連線引數 {#parameters}
+### 连接参数 {#parameters}
 
-當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
+While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
-* **[!UICONTROL 名稱]**：提供此目的地連線的名稱
-* **[!UICONTROL 說明]**：提供此目的地連線的說明
-* **[!UICONTROL 帳戶ID]**：您的 [Google Ads客戶ID](https://support.google.com/google-ads/answer/1704344?hl=en). ID的格式為xxx-xxx-xxxx。 如果您使用 [!DNL Google Ads Manager Account (My Client Center)]，請勿使用您的經理帳戶ID。 使用 [Google Ads客戶ID](https://support.google.com/google-ads/answer/1704344?hl=en) 而非。
+* **[!UICONTROL 名称]**：提供此目标连接的名称
+* **[!UICONTROL 描述]**：提供此目标连接的描述
+* **[!UICONTROL 帐户ID]**：您的 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en). ID的格式为xxx-xxx-xxxx。 如果您使用 [!DNL Google Ads Manager Account (My Client Center)]，请不要使用您的经理帐户ID。 使用 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en) 而是。
 
 >[!IMPORTANT]
 >
-> * 此 **[!UICONTROL 與PII結合]** 預設情況下會為以下專案選取行銷動作 [!DNL Google Customer Match] 目的地和無法移除。
+> * 此 **[!UICONTROL 与PII结合]** 默认情况下会为以下项选择营销操作 [!DNL Google Customer Match] 目标位置，无法删除。
 
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-另請參閱 [啟用串流區段匯出目的地的受眾資料](../../ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-在 **[!UICONTROL 區段排程]** 步驟，您必須提供 [!UICONTROL 應用程式ID] 傳送時 [!DNL IDFA] 或 [!DNL GAID] 區段至 [!DNL Google Customer Match].
+在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 应用程序ID] 发送时 [!DNL IDFA] 或 [!DNL GAID] 区段至 [!DNL Google Customer Match].
 
-![Google客戶比對應用程式ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
+![Google客户匹配应用程序ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-如需如何尋找 [!DNL App ID]，請參閱 [Google正式檔案](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
+有关如何查找 [!DNL App ID]，请参阅 [Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
 
-### 對應範例：啟用對象資料於 [!DNL Google Customer Match] {#example-gcm}
+### 映射示例：激活中的受众数据 [!DNL Google Customer Match] {#example-gcm}
 
-這是在中啟用受眾資料時，正確的身分對應範例 [!DNL Google Customer Match].
+这是激活中的受众数据时正确标识映射的示例 [!DNL Google Customer Match].
 
-選取來源欄位：
+选择源字段：
 
-* 選取 `Email` 如果您使用的電子郵件地址未進行雜湊處理，則名稱空間會作為來源身分。
-* 選取 `Email_LC_SHA256` 名稱空間作為來源身分（如果您在資料擷取時已將客戶電子郵件地址雜湊到） [!DNL Platform]，根據 [!DNL Google Customer Match] [電子郵件雜湊需求](#hashing-requirements).
-* 選取 `PHONE_E.164` 名稱空間作為來源身分（如果您的資料包含非雜湊電話號碼）。 [!DNL Platform] 將雜湊電話號碼以符合 [!DNL Google Customer Match] 需求。
-* 選取 `Phone_SHA256_E.164` 名稱空間作為來源身分（如果您在資料擷取時已將電話號碼雜湊至） [!DNL Platform]，根據 [!DNL Facebook] [電話號碼雜湊需求](#phone-number-hashing-requirements).
-* 選取 `IDFA` 名稱空間作為來源身分(如果您的資料包含 [!DNL Apple] 裝置ID。
-* 選取 `GAID` 名稱空間作為來源身分(如果您的資料包含 [!DNL Android] 裝置ID。
-* 選取 `Custom` 名稱空間作為來源身分（如果您的資料包含其他型別的識別碼）。
+* 选择 `Email` 命名空间作为源身份（如果您使用的电子邮件地址未经过哈希处理）。
+* 选择 `Email_LC_SHA256` 命名空间作为源身份（如果您在数据摄取时已将客户电子邮件地址哈希到） [!DNL Platform]，根据 [!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements).
+* 选择 `PHONE_E.164` 命名空间作为源标识（如果您的数据由非哈希电话号码组成）。 [!DNL Platform] 将按井号键处理电话号码 [!DNL Google Customer Match] 要求。
+* 选择 `Phone_SHA256_E.164` 命名空间作为源身份(如果您在数据摄取时已将电话号码散列到 [!DNL Platform]，根据 [!DNL Facebook] [电话号码哈希处理要求](#phone-number-hashing-requirements).
+* 选择 `IDFA` 命名空间作为源标识(如果您的数据包含 [!DNL Apple] 设备ID。
+* 选择 `GAID` 命名空间作为源标识(如果您的数据包含 [!DNL Android] 设备ID。
+* 选择 `Custom` 命名空间作为源标识（如果您的数据包含其他类型的标识符）。
 
-選取目標欄位：
+选择目标字段：
 
-* 選取 `Email_LC_SHA256` 當來源名稱空間為 `Email` 或 `Email_LC_SHA256`.
-* 選取 `Phone_SHA256_E.164` 當來源名稱空間為 `PHONE_E.164` 或 `Phone_SHA256_E.164`.
-* 選取 `IDFA` 或 `GAID` 當來源名稱空間為 `IDFA` 或 `GAID`.
-* 選取 `User_ID` 當您的來源名稱空間是自訂名稱空間時，名稱空間會作為目標身分。
+* 选择 `Email_LC_SHA256` 当源命名空间满足以下条件时，命名空间作为目标身份 `Email` 或 `Email_LC_SHA256`.
+* 选择 `Phone_SHA256_E.164` 当源命名空间满足以下条件时，命名空间作为目标身份 `PHONE_E.164` 或 `Phone_SHA256_E.164`.
+* 选择 `IDFA` 或 `GAID` 当源命名空间为 `IDFA` 或 `GAID`.
+* 选择 `User_ID` 当源命名空间是自定义命名空间时，将命名空间作为目标身份。
 
-![身分對應](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
+![标识映射](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
-來自未雜湊名稱空間的資料會自動透過雜湊處理 [!DNL Platform] 啟用時。
+来自未经过哈希处理的命名空间的数据自动进行哈希处理 [!DNL Platform] 激活时。
 
-屬性來源資料不會自動雜湊。 當來源欄位包含未雜湊屬性時，請檢查 **[!UICONTROL 套用轉換]** 選項，擁有 [!DNL Platform] 啟動時自動雜湊資料。
+属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。
 
-![身分對應轉換](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
+![标识映射转换](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
-## 驗證區段啟用是否成功 {#verify-activation}
+## 验证区段激活是否成功 {#verify-activation}
 
-完成啟動流程後，切換至 **[!UICONTROL Google Ads]** 帳戶。 啟用的區段會在您的Google帳戶中顯示為客戶清單。 請注意，根據您的區段大小，除非有100多位活躍使用者可服務，否則不會填入某些對象。
+完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的区段在您的Google帐户中显示为客户列表。 请注意，根据您的区段大小，除非要提供100多个活动用户，否则不会填充某些受众。
 
-將區段對應至兩者時 [!DNL IDFA] 和 [!DNL GAID] 行動ID、 [!DNL Google Customer Match] 會為每個ID對應建立個別的區段。 您的 [!DNL Google Ads] 帳戶會顯示兩個不同的區段，一個用於 [!DNL IDFA]，其中一個 [!DNL GAID] 對應。
+将区段映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建一个单独的区段。 您的 [!DNL Google Ads] 帐户显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
 
 ## 故障排除 {#troubleshooting}
 
-### 400 Bad Request錯誤訊息 {#bad-request}
+### 400错误请求错误消息 {#bad-request}
 
-設定此目的地時，您可能會收到下列錯誤：
+配置此目标时，您可能会收到以下错误：
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-當客戶帳戶不符合 [必備條件](#google-account-prerequisites). 若要修正此問題，請聯絡Google並確認您的帳戶已加入允許清單並設定為 [!DNL Standard] 或更高的許可權層級。 請參閱 [Google Ads檔案](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 以取得詳細資訊。
+当客户帐户不符合 [先决条件](#google-account-prerequisites). 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置为 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 了解详细信息。
 
 ## 其他资源 {#additional-resources}
 
-* [整合 [!DNL Google Customer Match]  — 教學課程影片](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+* [集成 [!DNL Google Customer Match]  — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
 

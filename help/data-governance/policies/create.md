@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料控管；資料使用原則
+keywords: Experience Platform；主页；热门主题；数据管理；数据使用策略
 solution: Experience Platform
-title: 在API中建立資料控管原則
+title: 在API中创建数据管理策略
 type: Tutorial
-description: 瞭解如何使用原則服務API建立資料治理原則。
+description: 了解如何使用策略服务API创建数据治理策略。
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -12,43 +12,43 @@ ht-degree: 2%
 
 ---
 
-# 在API中建立資料治理原則
+# 在API中创建数据治理策略
 
-此 [原則服務API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 可讓您建立和管理資料控管原則，以決定可以對包含特定資料使用標籤的資料採取哪些行銷動作。
+此 [策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/) 允许您创建和管理数据治理策略，以确定可以对包含特定数据使用标签的数据采取哪些营销行动。
 
-本檔案提供逐步教學課程，說明如何使用建立治理原則。 [!DNL Policy Service] API。
+本文档分步说明了如何使用，创建治理策略。 [!DNL Policy Service] API。
 
 >[!NOTE]
 >
->如需如何建立存取控制原則的步驟，請參閱 `/policies` 的端點指南 [存取控制API](../../access-control/abac/api/policies.md). 若要瞭解如何建立同意原則，請參閱 [原則UI指南](./user-guide.md#consent-policy).
+>有关如何创建访问控制策略的步骤，请参见 `/policies` 的端点指南 [访问控制API](../../access-control/abac/api/policies.md). 要了解如何创建同意策略，请参阅 [策略UI指南](./user-guide.md#consent-policy).
 
 ## 快速入门
 
-本教學課程需要深入瞭解建立與評估原則相關的下列重要概念：
+本教程需要对创建和评估策略所涉及的以下关键概念有一定的了解：
 
-* [Adobe Experience Platform資料控管](../home.md)：作為依據的框架 [!DNL Platform] 強制資料使用規範。
-   * [資料使用標籤](../labels/overview.md)：資料使用標籤會套用至XDM資料欄位，並指定存取該資料方式的限制。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：作為依據的標準化架構 [!DNL Platform] 組織客戶體驗資料。
-* [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [Adobe Experience Platform数据管理](../home.md)：用于执行操作的框架 [!DNL Platform] 强制执行数据使用合规性。
+   * [数据使用情况标签](../labels/overview.md)：数据使用标签应用于XDM数据字段，指定访问数据的限制。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
+* [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-在開始本教學課程之前，請檢閱 [開發人員指南](../api/getting-started.md) 如需您成功對 [!DNL Policy Service] API，包括必要的標頭以及如何讀取範例API呼叫。
+在开始本教程之前，请查看 [开发人员指南](../api/getting-started.md) 如需了解成功调用 [!DNL Policy Service] API，包括所需的标头以及如何读取示例API调用。
 
-## 定義行銷動作 {#define-action}
+## 定义营销活动 {#define-action}
 
-在資料控管框架中，行銷動作是指要 [!DNL Experience Platform] 資料取用者需要檢查資料使用原則是否違規。
+在数据治理框架中，营销行动是指 [!DNL Experience Platform] 数据使用者需要使用，为此，需要检查是否存在违反数据使用策略的情况。
 
-建立資料使用原則的第一步，是決定該原則將評估哪些行銷動作。 您可使用下列其中一個選項來達成此目的：
+创建数据使用策略的第一步是确定策略将评估什么营销操作。 可以使用以下选项之一完成此操作：
 
-* [查詢現有的行銷動作](#look-up)
-* [建立新的行銷動作](#create-new)
+* [查找现有营销操作](#look-up)
+* [创建新的营销操作](#create-new)
 
-### 查詢現有的行銷動作 {#look-up}
+### 查找现有营销操作 {#look-up}
 
-您可以透過向以下其中一項發出GET要求，查詢現有行銷動作，以由您的原則進行評估： `/marketingActions` 端點。
+您可以通过对以下项之一发出GET请求，查找要由策略评估的现有营销操作 `/marketingActions` 端点。
 
 **API格式**
 
-視您是否要查詢提供的行銷動作而定 [!DNL Experience Platform] 或您的組織建立的自訂行銷動作，使用 `marketingActions/core` 或 `marketingActions/custom` 端點。
+根据您是否查找由提供的营销操作 [!DNL Experience Platform] 或您的组织创建的自定义营销操作，请使用 `marketingActions/core` 或 `marketingActions/custom` 个端点。
 
 ```http
 GET /marketingActions/core
@@ -57,7 +57,7 @@ GET /marketingActions/custom
 
 **请求**
 
-以下請求使用 `marketingActions/custom` 端點會擷取貴組織定義的所有行銷動作清單。
+以下请求使用 `marketingActions/custom` 端点，用于获取您的组织定义的所有营销操作的列表。
 
 ```shell
 curl -X GET \
@@ -70,7 +70,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回找到的行銷動作總數(`count`)，並列出 `children` 陣列。
+成功的响应将返回找到的营销操作总数(`count`)，并列出了中营销操作本身的详细信息 `children` 数组。
 
 ```json
 {
@@ -123,13 +123,13 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_links.self.href` | 內的每個專案 `children` 陣列包含所列行銷動作的URI ID。 |
+| `_links.self.href` | 内的每个项目 `children` 数组包含列出的营销操作的URI ID。 |
 
-當您找到要使用的行銷動作時，請記錄其值 `href` 屬性。 此值會在的下一個步驟中使用 [建立原則](#create-policy).
+找到要使用的营销操作后，记录其值 `href` 属性。 此值在下一步中使用 [创建策略](#create-policy).
 
-### 建立新的行銷動作 {#create-new}
+### 创建新的营销操作 {#create-new}
 
-您可以透過向以下傳送PUT請求，建立新的行銷動作： `/marketingActions/custom/` 端點並在請求路徑結尾提供行銷動作的名稱。
+您可以通过向以下网站发出PUT请求来创建新的营销活动 `/marketingActions/custom/` 端点并在请求路径末尾提供营销操作的名称。
 
 **API格式**
 
@@ -139,11 +139,11 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 您要建立的新行銷動作名稱。 此名稱會作為行銷動作的主要識別碼，因此必須是唯一的。 最佳實務是為行銷動作提供描述性但簡潔的名稱。 |
+| `{MARKETING_ACTION_NAME}` | 要创建的新营销操作的名称。 此名称用作营销活动的主要标识符，因此必须是唯一的。 最佳实践是为营销操作提供一个描述性但简洁的名称。 |
 
 **请求**
 
-以下請求會建立名為「exportToThirdParty」的新自訂行銷動作。 請注意 `name` 請求裝載中的名稱與請求路徑中提供的名稱相同。
+以下请求将创建一个名为“exportToThirdParty”的新自定义营销操作。 请注意 `name` 请求有效负载中的名称与请求路径中提供的名称相同。
 
 ```shell
 curl -X PUT \  
@@ -161,12 +161,12 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 您要建立的行銷動作名稱。 此名稱必須符合請求路徑中提供的名稱，否則會發生400 （錯誤請求）錯誤。 |
-| `description` | 人類看得懂的行銷動作說明。 |
+| `name` | 要创建的营销操作的名称。 此名称必须与请求路径中提供的名称匹配，否则将发生400（错误请求）错误。 |
+| `description` | 易于用户识别的营销操作描述。 |
 
 **响应**
 
-成功的回應會傳回HTTP狀態201 （已建立）和新建立行銷動作的詳細資訊。
+成功的响应会返回HTTP状态201（已创建）以及新创建的营销操作的详细信息。
 
 ```json
 {
@@ -189,15 +189,15 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_links.self.href` | 行銷動作的URI ID。 |
+| `_links.self.href` | 营销活动的URI ID。 |
 
-記錄新建立之行銷動作的URI ID，因為它將用於建立原則的下一個步驟。
+记录新创建的营销活动的URI ID，因为它将在创建策略的下一个步骤中使用。
 
 ## 创建策略 {#create-policy}
 
-建立新原則需要您提供行銷動作的URI ID，以及禁止該行銷動作的使用標籤運算式。
+创建新策略需要您提供营销活动的URI ID，以及禁止该营销活动的使用标签表达式。
 
-此運算式稱為原則運算式，是包含(A)標籤或(B)運運算元和運算元的物件，但不能同時包含兩者。 反過來，每個運算元也是原則運算式物件。 例如，在下列情況下，可能會禁止將資料匯出至協力廠商 `C1 OR (C3 AND C7)` 標籤已存在。 此運算式將指定為：
+此表达式称为策略表达式，它是包含(A)标签或(B)运算符和操作数的对象，但不能同时包含两者。 反过来，每个操作数也是策略表达式对象。 例如，在以下情况下，可能会禁止将数据导出到第三方的政策 `C1 OR (C3 AND C7)` 存在标签。 此表达式将指定为：
 
 ```json
 "deny": {
@@ -223,9 +223,9 @@ curl -X PUT \
 
 >[!NOTE]
 >
->僅支援OR和AND運運算元。
+>仅支持OR和AND运算符。
 
-設定原則運算式後，您可以透過向以下專案發出POST請求來建立新原則： `/policies/custom` 端點。
+POST配置策略表达式后，您可以通过向 `/policies/custom` 端点。
 
 **API格式**
 
@@ -235,7 +235,7 @@ POST /policies/custom
 
 **请求**
 
-下列請求會建立名為「將資料匯出至第三方」的原則，方法是在請求承載中提供行銷動作和原則運算式。
+以下请求通过在请求有效负荷中提供营销操作和策略表达式，来创建名为“将数据导出到第三方”的策略。
 
 ```shell
 curl -X POST \
@@ -270,12 +270,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `marketingActionRefs` | 一個包含 `href` 行銷動作的值，取得於 [上一步](#define-action). 雖然上述範例僅列出一個行銷動作，但也可以提供多個動作。 |
-| `deny` | 原則運算式物件。 定義會使得原則拒絕中參考之行銷動作的使用標籤和條件 `marketingActionRefs`. |
+| `marketingActionRefs` | 一个包含 `href` 营销活动的价值，获取于 [上一步](#define-action). 虽然上述示例仅列出一个营销操作，但也可以提供多个操作。 |
+| `deny` | 策略表达式对象。 定义会导致策略拒绝中引用的营销操作的使用标签和条件 `marketingActionRefs`. |
 
 **响应**
 
-成功的回應會傳回HTTP狀態201 （已建立）和新建立原則的詳細資訊。
+成功的响应返回HTTP状态201（已创建）和新创建策略的详细信息。
 
 ```json
 {
@@ -322,17 +322,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 唯讀、系統產生的值，可唯一識別原則。 |
+| `id` | 系统生成的只读值，用于唯一标识策略。 |
 
-記錄新建立之原則的URI ID，因為它用於下一個步驟以啟用原則。
+记录新创建的策略的URI ID，以便在下一个步骤中启用该策略。
 
-## 啟用原則
+## 启用策略
 
 >[!NOTE]
 >
->如果您想要將原則保留在 `DRAFT` 狀態，請注意，原則預設必須將其狀態設定為 `ENABLED` 以參與評估。 請參閱指南： [原則執行](../enforcement/api-enforcement.md) 有關如何為中的原則制定例外的資訊 `DRAFT` 狀態。
+>如果您希望将策略保留在 `DRAFT` 状态，请注意，默认情况下，策略状态必须设置为 `ENABLED` 以参与评估。 请参阅指南，网址为 [策略执行](../enforcement/api-enforcement.md) 有关如何为中的策略设置例外的信息 `DRAFT` 状态。
 
-依預設，具備以下條件的原則： `status` 屬性設定為 `DRAFT` 不要參與評估。 您可以透過向以下網站發出PATCH請求，以啟用評估原則： `/policies/custom/` 端點並在要求路徑結尾提供原則的唯一識別碼。
+默认情况下，策略具有以下属性： `status` 属性设置为 `DRAFT` 不参与评估。 您可以向以下网站发出PATCH请求，以启用策略进行评估： `/policies/custom/` 端点并在请求路径末尾提供策略的唯一标识符。
 
 **API格式**
 
@@ -342,11 +342,11 @@ PATCH /policies/custom/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{POLICY_ID}` | 此 `id` 要啟用的原則值。 |
+| `{POLICY_ID}` | 此 `id` 要启用的策略的值。 |
 
 **请求**
 
-PATCH以下請求會對 `status` 原則的屬性，將其值從 `DRAFT` 至 `ENABLED`.
+以下请求对执行PATCH操作 `status` 策略的属性，更改其值 `DRAFT` 到 `ENABLED`.
 
 ```shell
 curl -X PATCH \
@@ -367,13 +367,13 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `op` | 要執行的PATCH作業型別。 此請求會執行「取代」操作。 |
-| `path` | 要更新之欄位的路徑。 啟用原則時，值必須設定為「/status」。 |
-| `value` | 要指派給中指定的屬性的新值 `path`. 此請求會設定原則的 `status` 屬性重新命名為「ENABLED」。 |
+| `op` | 要执行的PATCH操作的类型。 此请求执行“替换”操作。 |
+| `path` | 要更新的字段的路径。 启用策略时，必须将该值设置为“/status”。 |
+| `value` | 要分配给中指定的属性的新值 `path`. 此请求设置策略的 `status` 属性更改为“ENABLED”。 |
 
 **响应**
 
-成功的回應會傳回HTTP狀態200 （確定）和已更新原則的詳細資訊，以及其 `status` 現在設定為 `ENABLED`.
+成功的响应返回HTTP状态200 （正常）和已更新策略的详细信息，以及其 `status` 现在设置为 `ENABLED`.
 
 ```json
 {
@@ -420,8 +420,8 @@ curl -X PATCH \
 
 ## 后续步骤
 
-依照本教學課程，您已成功建立行銷動作的資料使用原則。 您現在可以繼續上的教學課程 [強制資料使用原則](../enforcement/api-enforcement.md) 瞭解如何檢查原則違規，並在您的體驗應用程式中處理這些違規。
+通过阅读本教程，您已成功为营销操作创建了数据使用策略。 现在，您可以继续阅读上的教程 [实施数据使用策略](../enforcement/api-enforcement.md) 了解如何检查策略违规并在体验应用程序中处理它们。
 
-如需中不同可用操作的詳細資訊， [!DNL Policy Service] API，請參閱 [原則服務開發人員指南](../api/getting-started.md). 如需如何強制執行原則的詳細資訊， [!DNL Real-Time Customer Profile] 資料，請參閱以下主題上的教學課程： [強制對象區段的資料使用合規性](../../segmentation/tutorials/governance.md).
+有关中不同可用操作的更多信息，请参见 [!DNL Policy Service] API，请参见 [策略服务开发人员指南](../api/getting-started.md). 有关如何强制实施策略的信息 [!DNL Real-Time Customer Profile] 有关数据，请参阅以下教程： [实施受众区段的数据使用合规性](../../segmentation/tutorials/governance.md).
 
-若要瞭解如何在中管理使用原則 [!DNL Experience Platform] 使用者介面，請參閱 [原則使用手冊](user-guide.md).
+要了解如何在中管理使用策略，请执行以下操作 [!DNL Experience Platform] 用户界面，请参见 [策略用户指南](user-guide.md).

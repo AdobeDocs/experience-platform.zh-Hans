@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；ui；UI；XDM；XDM系統；體驗資料模型；體驗資料模型；體驗資料模型；資料模型；資料模型；探索；類別；欄位群組；資料型別；結構描述；
+keywords: Experience Platform；主页；热门主题；UI；UI；XDM；XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；浏览；类；字段组；数据类型；架构；
 solution: Experience Platform
-title: 探索UI中的結構描述資源
-description: 瞭解如何在Experience Platform使用者介面中探索現有結構描述、類別、結構描述欄位群組和資料型別。
+title: 浏览UI中的架构资源
+description: 了解如何在Experience Platform用户界面中浏览现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
@@ -12,100 +12,100 @@ ht-degree: 0%
 
 ---
 
-# 探索UI中的結構描述資源
+# 浏览UI中的架构资源
 
-在Adobe Experience Platform中，所有Experience Data Model (XDM)結構描述資源都會儲存在 [!DNL Schema Library]，包括Adobe提供的標準資源以及貴組織定義的自訂資源。 在Experience PlatformUI中，您可以檢視中任何現有結構、類別、欄位群組或資料型別的結構和欄位 [!DNL Schema Library]. 這在計畫和準備資料擷取時特別有用，因為UI會提供關於這些XDM資源提供的每個欄位的預期資料型別和使用案例的資訊。
+在Adobe Experience Platform中，所有Experience Data Model (XDM)架构资源都存储在 [!DNL Schema Library]，包括由Adobe提供的标准资源和由贵组织定义的自定义资源。 在Experience PlatformUI中，您可以在中查看任何现有架构、类、字段组或数据类型的结构和字段。 [!DNL Schema Library]. 这在计划和准备数据引入时特别有用，因为UI提供有关这些XDM资源提供的每个字段的预期数据类型和用例的信息。
 
-本教學課程涵蓋在Experience PlatformUI中探索現有結構描述、類別、欄位群組和資料型別的步驟。
+本教程介绍了在Experience PlatformUI中浏览现有架构、类、字段组和数据类型的步骤。
 
-## 查詢結構描述資源 {#lookup}
+## 查找架构资源 {#lookup}
 
-在Platform UI中選取 **[!UICONTROL 結構描述]** 左側導覽列中。 此 [!UICONTROL 結構描述] 工作區提供 **[!UICONTROL 瀏覽]** 標籤以探索組織中的所有結構描述，以及其他用於探索的專用標籤 **[!UICONTROL 類別]**， **[!UICONTROL 欄位群組]**、和 **[!UICONTROL 資料型別]** （分別）。
+在Platform UI中，选择 **[!UICONTROL 架构]** 左侧导航栏中。 此 [!UICONTROL 架构] 工作区提供 **[!UICONTROL 浏览]** 选项卡，浏览组织中的所有架构，以及其他用于浏览的专用选项卡 **[!UICONTROL 类]**， **[!UICONTROL 字段组]**、和 **[!UICONTROL 数据类型]** 的量度。
 
 ![](../images/ui/explore/tabs.png)
 
-篩選圖示(![濾鏡圖示影像](../images/ui/explore/icon.png))在左側邊欄中顯示控制項，以縮小列出的結果。 顯示的控制項會因列出的資源型別而異。
+过滤器图标(![滤镜图标图像](../images/ui/explore/icon.png))在左边栏中显示控件，以缩小列出的结果的范围。 显示的控件因列出的资源类型而异。
 
-例如，若要篩選清單以僅顯示Adobe提供的標準資料型別，請選取 **[!UICONTROL 資料型別]** 和 **[!UICONTROL Adobe]** 在 **[!UICONTROL 型別]** 和 **[!UICONTROL 所有者]** 截面。
+例如，要筛选列表以仅显示Adobe提供的标准数据类型，请选择 **[!UICONTROL 数据类型]** 和 **[!UICONTROL Adobe]** 在 **[!UICONTROL 类型]** 和 **[!UICONTROL 所有者]** 部分。
 
-此 **[!UICONTROL 包含在設定檔中]** 切換可讓您篩選結果，以僅顯示用於已啟用 [即時客戶個人檔案](../../profile/home.md).
+此 **[!UICONTROL 包含在配置文件中]** 切换允许您筛选结果，以仅显示已在以下位置启用以供使用的架构中使用的资源： [Real-time Customer Profile](../../profile/home.md).
 
 ![](../images/ui/explore/filter.png)
 
-將資源列在 **[!UICONTROL 類別]**， **[!UICONTROL 欄位群組]**，或 **[!UICONTROL 資料型別]** 標籤，您可以選取 **[!UICONTROL Adobe]** 以僅顯示標準資源或 **[!UICONTROL 客戶]** 以僅顯示您的組織建立的資源。
+将资源列在 **[!UICONTROL 类]**， **[!UICONTROL 字段组]**，或 **[!UICONTROL 数据类型]** 选项卡，您可以选择 **[!UICONTROL Adobe]** 以仅显示标准资源或 **[!UICONTROL 客户]** 以仅显示您的组织创建的资源。
 
 ![](../images/ui/explore/filter-data-type.png)
 
-您也可以使用搜尋列進一步縮小結果的範圍。
+您还可以使用搜索栏进一步缩小结果的范围。
 
 ![](../images/ui/explore/search.png)
 
-搜尋結果中顯示的資源會先依標題比對排序，然後依說明比對排序。 反過來，符合這些類別中的字數越多，資源在清單中顯示的位置就越高。
+搜索结果中显示的资源首先按标题匹配项排序，然后按说明匹配项排序。 反过来，这两个类别中匹配的单词越多，列表中显示的资源就越多。
 
-找到要探索的資源後，從清單中選取其名稱，以在畫布中檢視其結構。
+找到要浏览的资源后，从列表中选择其名称，以在画布中查看其结构。
 
-## 探索畫布中的XDM資源 {#explore}
+## 在画布中浏览XDM资源 {#explore}
 
-選取資源後，其結構會在畫布中開啟。
+选择资源后，其结构将在画布中打开。
 
 ![](../images/ui/explore/canvas.png)
 
-包含子屬性的所有物件型別欄位首次出現在畫布中時，預設會收合。 若要顯示任何欄位的子屬性，請選取其名稱旁的圖示。
+默认情况下，包含子属性的所有对象类型字段首次出现在画布中时都会被折叠。 要显示任何字段的子属性，请选择其名称旁边的图标。
 
 ![](../images/ui/explore/field-expand.png)
 
-### 系統產生的欄位 {#system-fields}
+### 系统生成的字段 {#system-fields}
 
-某些欄位名稱會在前面加上底線，例如 `_repo` 和 `_id`. 這些代表系統將在擷取資料時自動產生並指派之欄位的預留位置。
+某些字段名称的前面带有下划线，例如 `_repo` 和 `_id`. 这些表示系统将在摄取数据时自动生成并分配的字段的占位符。
 
-因此，當內嵌至Platform時，這些欄位中的大部分都應該從資料結構中排除。 此規則的主要例外為 [`_{TENANT_ID}` 欄位](../api/getting-started.md#know-your-tenant_id)，貴組織下建立的所有XDM欄位都必須命名於其下。
+因此，当摄取到Platform中时，应该从数据的结构中排除这些字段中的大多数。 此规则的主要例外是 [`_{TENANT_ID}` 字段](../api/getting-started.md#know-your-tenant_id)，贵组织下创建的所有XDM字段都必须命名于其中。
 
 ### 数据类型 {#data-types}
 
-對於畫布中顯示的每個欄位，其對應的資料型別會顯示在名稱旁邊，一眼就能看出欄位預期要擷取的資料型別。
+对于画布中显示的每个字段，其对应的数据类型显示在名称旁边，这概览field希望摄取的数据类型。
 
 ![](../images/ui/explore/data-types.png)
 
-任何附加了方括弧(`[]`)代表該特定資料型別的陣列。 例如，資料型別為 **[!UICONTROL 字串]\[]** 表示欄位預期字串值的陣列。 的資料型別 **[!UICONTROL 付款專案]\[]** 表示符合下列條件的物件陣列： [!UICONTROL 付款專案] 資料型別。
+任何附加了方括号(`[]`)表示该特定数据类型的数组。 例如，数据类型为 **[!UICONTROL 字符串]\[]** 表示该字段需要字符串值的数组。 数据类型 **[!UICONTROL 付款项目]\[]** 表示符合 [!UICONTROL 付款项目] 数据类型。
 
-如果陣列欄位是以物件型別為基礎，您可以在畫布中選取其圖示，以顯示每個陣列專案的預期屬性。
+如果数组字段基于对象类型，您可以在画布中选择其图标，以显示每个数组项的预期属性。
 
 ![](../images/ui/explore/array-type.png)
 
-### [!UICONTROL 欄位屬性] {#field-properties}
+### [!UICONTROL 字段属性] {#field-properties}
 
-當您選取畫布中任何欄位的名稱時，右側欄會更新以顯示下方該欄位的詳細資訊 **[!UICONTROL 欄位屬性]**. 這可以包括欄位預期使用案例、預設值、模式、格式、欄位是否為必填等內容的說明。
+选择画布中任何字段的名称后，右边栏会更新以显示下该字段的详细信息 **[!UICONTROL 字段属性]**. 这可以包括字段的预期用例、默认值、模式、格式、字段是否为必需字段等的描述。
 
 ![](../images/ui/explore/field-properties.png)
 
-如果您要檢查的欄位是列舉欄位，右側邊欄也會顯示欄位預期會收到的可接受值。
+如果您要检查的字段是枚举字段，则右边栏还将显示该字段预期接收的可接受值。
 
 ![](../images/ui/explore/enum-field.png)
 
 ### 标识字段 {#identity}
 
-檢查包含身分欄位的結構描述時，這些欄位會列在左側邊欄中，在類別或欄位群組中，提供它們給結構描述。 在左側邊欄中選取身分欄位名稱，以顯示畫布中的欄位，無論其巢狀深度為何。
+检查包含标识字段的架构时，这些字段在左边栏中列在提供它们到架构的类或字段组下。 选择左边栏中的标识字段名称以显示画布中的字段，无论其嵌套程度如何。
 
-身分欄位會在畫布中反白顯示指紋圖示(![指紋圖示影像](../images/ui/explore/identity-symbol.png))。 如果您選取身分欄位的名稱，則可以檢視其他資訊，例如 [身分名稱空間](../../identity-service/namespaces.md) 以及欄位是否為結構描述的主要身分。
+标识字段在画布中用指纹图标(![指纹图标图像](../images/ui/explore/identity-symbol.png))。 如果选择身份字段的名称，则可以查看附加信息，例如 [身份命名空间](../../identity-service/namespaces.md) 以及字段是否是架构的主要标识。
 
 ![](../images/ui/explore/identity-field.png)
 
 >[!NOTE]
 >
->請參閱指南： [定義身分欄位](./fields/identity.md) 以取得身分欄位及其與下游Platform服務關係的詳細資訊。
+>请参阅指南，网址为 [定义身份字段](./fields/identity.md) 以了解有关标识字段及其与其与下游Platform服务的关系的更多信息。
 
-### 關係欄位 {#relationship}
+### 关系字段 {#relationship}
 
-如果您要檢查包含關係欄位的結構描述，該欄位將會列在下的左側邊欄中 **[!UICONTROL 關係]**. 選取左側邊欄中的關係欄位名稱，以顯示畫布中的欄位，無論其巢狀深度為何。
+如果要检查包含关系字段的架构，则该字段将列在左边栏中的 **[!UICONTROL 关系]**. 选择左边栏中的关系字段名称以显示画布中的字段，无论其嵌套深度如何。
 
-關聯性欄位也會在畫布中以唯一方式反白顯示，顯示該欄位連結到的參考結構描述名稱。 如果您選取關係欄位的名稱，則可以在右側邊欄中檢視參照結構描述主要身分的身分名稱空間。
+关系字段在画布中也会以唯一方式突出显示，显示字段链接到的引用架构的名称。 如果选择关系字段的名称，则可以在右边栏中查看引用架构的主要标识的标识命名空间。
 
 ![](../images/ui/explore/relationship-field.png)
 
 >[!NOTE]
 >
->請參閱教學課程，位置如下： [在UI中建立關係](../tutorials/relationship-ui.md) 以取得在XDM結構描述中使用關係的詳細資訊。
+>请参阅上的教程 [在用户界面中创建关系](../tutorials/relationship-ui.md) 有关在XDM架构中使用关系的更多信息。
 
 ## 后续步骤
 
-本檔案說明如何在Experience PlatformUI中探索現有XDM資源。 如需關於不同功能的詳細資訊， [!UICONTROL 結構描述] 工作區和 [!DNL Schema Editor]，請參閱 [[!UICONTROL 結構描述] 工作區概觀](./overview.md).
+本文档介绍了如何在Experience PlatformUI中探索现有XDM资源。 欲知关于 [!UICONTROL 架构] 工作区和 [!DNL Schema Editor]，请参见 [[!UICONTROL 架构] 工作区概述](./overview.md).

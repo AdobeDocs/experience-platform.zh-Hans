@@ -1,16 +1,16 @@
 ---
 title: 数据集统计信息计算
 description: 本文档介绍如何使用SQL命令计算Azure Data Lake Storage (ADLS)数据集的列级统计信息。
-source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
+source-git-commit: b063bcf7b3d2079715ac18fde55f47cea078b609
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
 
 # 数据集统计信息计算
 
-您现在可以计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集具有 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 用于计算数据集统计信息的SQL命令是 `ANALYZE TABLE` 命令。 有关以下内容的完整详细信息： `ANALYZE TABLE` 命令位于 [SQL参考文档](../sql/syntax.md#analyze-table).
+您现在可以计算列级别统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集具有 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 用于计算数据集统计信息的SQL命令是 `ANALYZE TABLE` 命令。 有关以下内容的完整详细信息： `ANALYZE TABLE` 命令位于 [SQL参考文档](../sql/syntax.md#analyze-table).
 
 >[!NOTE]
 >
@@ -87,7 +87,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 您可以将列限制和过滤器结合使用，为数据集列创建高度特定的计算查询。 例如，以下查询计算列的统计信息 `commerce`， `id`、和 `timestamp` 数据集 `tableName`，其中列时间戳的值介于指定的值范围 `2023-04-01 00:00:00` 和 `2023-04-05 00:00:00`.
 
 ```sql
-ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
+ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR (columns commerce, id, timestamp);
 ```
 
 <!-- ## Create an alias name {#alias-name}
@@ -125,6 +125,7 @@ SHOW STATISTICS FOR <STATISTICS_ID>;
                          columnName                         |      mean      |      max       |      min       | standardDeviation | approxDistinctCount | nullCount | dataType  
 ------------------------------------------------------------+----------------+----------------+----------------+-------------------+---------------------+-----------+-----------
  marketing.trackingcode                                     |            0.0 |            0.0 |            0.0 |               0.0 |              1213.0 |         0 | String
+ _experience.analytics.session.timestamp                    |            450 |          -2313 |          21903 |               7.0 |                 0.0 |         0 | Long
  _experience.analytics.customdimensions.evars.evar13        |            0.0 |            0.0 |            0.0 |               0.0 |              8765.0 |        20 | String
  _experience.analytics.customdimensions.evars.evar74        |            0.0 |            0.0 |            0.0 |               0.0 |                11.0 |         0 | String
  web.webpagedetails.name                                    |            0.0 |            0.0 |            0.0 |               0.0 |                 1.0 |         0 | String
@@ -136,7 +137,7 @@ SHOW STATISTICS FOR <STATISTICS_ID>;
  _experience.analytics.customdimensions.props.prop45        |            0.0 |            0.0 |            0.0 |               0.0 |                 1.0 |         0 | String
  environment.browserdetails.javaenabled                     |            0.0 |            0.0 |            0.0 |               0.0 |                 1.0 |         0 | Boolean
  timestamp                                                  |            0.0 |            0.0 |            0.0 |               0.0 |                98.0 |         3 | Timestamp
-(12 rows)
+(13 rows)
 ```
 
 ## 后续步骤 {#next-steps}

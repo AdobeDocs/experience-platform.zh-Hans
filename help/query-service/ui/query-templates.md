@@ -1,6 +1,6 @@
 ---
-title: 查詢範本
-description: 查詢範本是可重複使用的已儲存SQL查詢，其他使用者可重複使用以節省時間和精力。 它們可以使用查詢編輯器或查詢服務API建立，並可用於所有Experience Platform資料集。
+title: 查询模板
+description: 查询模板是可重用的已保存SQL查询，其他用户可以重复使用它们以节省时间和精力。 它们可以使用查询编辑器或查询服务API创建，并可在所有Experience Platform数据集上使用。
 exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
 source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
 workflow-type: tm+mt
@@ -9,51 +9,51 @@ ht-degree: 0%
 
 ---
 
-# 查詢範本
+# 查询模板
 
-Adobe Experience Platform查詢服務可讓您以查詢範本的形式儲存和重複使用SQL程式碼。 範本可避免重複執行常見的工作，從而節省精力。 您可以在組織內共用範本，輕鬆地變更查詢值，而不需要存取或瞭解底層SQL。
+Adobe Experience Platform查询服务允许您以查询模板的形式保存和重用SQL代码。 模板可避免重复执行常见任务，从而节省精力。 您可以在组织内共享模板，并轻松地更改查询值，而无需访问或了解底层SQL。
 
-本檔案提供在「查詢服務」中建立查詢範本所需的資訊。
+本文档提供了在查询服务中创建查询模板所需的信息。
 
 ## 先决条件
 
-您必須擁有 [!UICONTROL 管理查詢] 已啟用存取「查詢編輯器」的許可權，並在Platform UI中檢視查詢控制面板。 許可權會透過Adobe啟用 [Admin Console](https://adminconsole.adobe.com/). 如果您沒有啟用此許可權的管理員許可權，請聯絡貴組織的管理員。 請參閱存取控制檔案以瞭解 [透過Admin Console新增許可權的完整指示](../../access-control/home.md).
+您必须拥有 [!UICONTROL 管理查询] 启用了在Platform UI中访问查询编辑器和查看查询仪表板的权限。 权限通过Adobe启用 [Admin Console](https://adminconsole.adobe.com/). 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 请参阅访问控制文档，了解 [有关通过Admin Console添加权限的完整说明](../../access-control/home.md).
 
-## 建立查詢範本
+## 创建查询模板
 
-您可以透過兩種方法建立查詢範本，其中一種方法是向查詢服務API發出POST請求 `query-templates` 端點，或是透過查詢編輯器寫入、命名和儲存查詢。
+您可以通过两种方法创建查询模板，即向查询服务API发出POST请求 `query-templates` 端点，或通过查询编辑器编写、命名和保存查询来实现。
 
-### 使用查詢編輯器來編寫查詢並將其另存為範本
+### 使用查询编辑器创作查询并将其另存为模板
 
-請參閱檔案，瞭解如何使用查詢編輯器 [寫入](./user-guide.md#query-authoring) 和 [儲存查詢](./user-guide.md#saving-queries). 命名並儲存查詢後，即可將其當做查詢範本重複使用。 [!UICONTROL 範本] 標籤。
+有关如何使用查询编辑器执行以下操作的说明，请参阅文档 [写入](./user-guide.md#query-authoring) 和 [保存查询](./user-guide.md#saving-queries). 命名并保存查询后，即可将其用作查询模板 [!UICONTROL 模板] 选项卡。
 
-## 瀏覽查詢範本 {#browse}
+## 浏览查询模板 {#browse}
 
-從Platform UI的查詢工作區中，選取 **[!UICONTROL 範本]** 以顯示可用已儲存查詢的清單。
+从Platform UI的查询工作区中，选择 **[!UICONTROL 模板]** 以显示可用已保存查询的列表。
 
-![會反白顯示「範本」標籤的查詢工作區。](../images/ui/query-templates/query-templates.png)
+![突出显示“模板”选项卡的查询工作区。](../images/ui/query-templates/query-templates.png)
 
-若要尋找相關範本資訊，請從可用清單中選取任何查詢範本，以開啟詳細資訊面板。
+要查找相关的模板信息，请从可用列表中选择任意查询模板以打开详细信息面板。
 
-![查詢ID為反白的查詢工作區中的詳細資訊面板。](../images/ui/query-templates/details-panel.png)
+![查询工作区中查询ID突出显示的详细信息面板。](../images/ui/query-templates/details-panel.png)
 
-從詳細資訊面板中，您可以執行四個不同的動作：
+从详细信息面板中，您可以执行四个单独的操作：
 
-* 選取 **[!UICONTROL 輸出資料集]** 以編輯所選範本的輸出資料集。
-* 選取 **[!UICONTROL 檢視排程]** 導覽至 [!UICONTROL 時程表] 標籤。 此檢視包含與查詢相關聯的任何排程資訊。
-* 選取 **[!UICONTROL 刪除查詢]** 以刪除範本。
-* 選取範本名稱以瀏覽至查詢編輯器，其中會預先填入SQL以進行編輯。
+* 选择 **[!UICONTROL 输出数据集]** 以编辑所选模板的输出数据集。
+* 选择 **[!UICONTROL 查看计划]** 导航到 [!UICONTROL 时间表] 选项卡。 此视图包含与查询关联的任何计划信息。
+* 选择 **[!UICONTROL 删除查询]** 以删除模板。
+* 选择模板名称以导航到查询编辑器，其中预填充了SQL以进行编辑。
 
-### 使用查詢服務API建立範本
+### 使用查询服务API创建模板
 
-如需相關指示，請參閱檔案 [如何建立查詢範本](../api/query-templates.md#create-a-query-template) 使用查詢服務API。 新建立的查詢範本的詳細資料包含在回應本文中。
+有关说明，请参阅文档 [如何创建查询模板](../api/query-templates.md#create-a-query-template) 使用查询服务API。 新创建的查询模板的详细信息包含在响应正文中。
 
 >[!NOTE]
 >
->使用API建立的範本也可在Platform UI查詢服務範本索引標籤中看到。
+>使用API创建的模板也显示在Platform UI查询服务模板选项卡中。
 
 ## 后续步骤
 
-閱讀本檔案後，您現在已能更清楚瞭解如何在「查詢服務」中建立查詢範本。 請參閱 [UI總覽](./overview.md)，或 [查詢服務API指南](../api/getting-started.md) 以進一步瞭解查詢服務功能。
+通过阅读本文档，您现在对如何在查询服务中创建查询模板有了更好的了解。 请参阅 [UI概述](./overview.md)，或 [查询服务API指南](../api/getting-started.md) 了解有关查询服务功能的更多信息。
 
-請參閱 [排程查詢端點指南](../api/scheduled-queries.md) 瞭解如何使用API排程查詢，或 [查詢編輯器指南](./user-guide.md#scheduled-queries) 適用於UI。
+请参阅 [计划查询端点指南](../api/scheduled-queries.md) 了解如何使用API计划查询，或者 [查询编辑器指南](./user-guide.md#scheduled-queries) 用于UI。

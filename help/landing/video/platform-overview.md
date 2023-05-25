@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform概觀影片
-description: 這部影片會快速概述Adobe Experience Platform是什麼，及其解決的業務挑戰。
+title: Adobe Experience Platform概述视频
+description: 此视频简要概述了Adobe Experience Platform是什么及其解决的业务挑战。
 kt: 4804
 audience: all
 doc-type: video
@@ -14,10 +14,10 @@ ht-degree: 0%
 
 ---
 
-# Adobe Experience Platform概觀
+# Adobe Experience Platform概述
 
-本影片提供Experience Platform的快速簡介，並概述其解決的一些業務挑戰。
+此视频简要介绍了Experience Platform，并概述了它解决的一些业务挑战。
 
-若要進一步瞭解，請先閱讀 [Experience Platform概觀](../home.md).
+要了解更多信息，请从阅读 [Experience Platform概述](../home.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)

@@ -1,6 +1,6 @@
 ---
-title: 內容安全性原則(CSP)支援
-description: 瞭解將您的網站與Adobe Experience Platform中的標籤整合時，如何處理內容安全性原則(CSP)限制。
+title: 内容安全策略(CSP)支持
+description: 了解在将您的网站与Adobe Experience Platform中的标记集成时，如何处理内容安全策略(CSP)限制。
 exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
 source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 57%
 
 ---
 
-# 內容安全性原則(CSP)支援
+# 内容安全策略(CSP)支持
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。當瀏覽器受到誘騙而執行似乎來自信任的來源但實際上來自其他位置的惡意內容時，就會發生這種情況。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
+内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。当浏览器受到欺骗，运行似乎来自可靠来源但实际上来自其他来源的恶意内容时，就会发生这种情况。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
 
 CSP 通过以下两种方式来实施：将 `Content-Security-Policy` HTTP 标头添加到服务器响应，或者在 HTML 文件的 `<head>` 部分中添加已配置的 `<meta>` 元素。
 
@@ -23,18 +23,18 @@ CSP 通过以下两种方式来实施：将 `Content-Security-Policy` HTTP 标�
 >
 > 有关 CSP 的更多详细信息，请参阅 [MDN Web 文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP)。
 
-Adobe Experience Platform中的標籤是標籤管理系統，專為動態載入網站指令碼而設計。 由于潜在的安全问题，默认的 CSP 会阻止这些动态加载的脚本。本檔案提供如何設定CSP以允許從標籤動態載入指令碼的指引。
+Adobe Experience Platform中的标记是一个标记管理系统，旨在动态地在您的网站上加载脚本。 由于潜在的安全问题，默认的 CSP 会阻止这些动态加载的脚本。本文档提供了有关如何配置CSP以允许从标记动态加载脚本的指南。
 
-如果您希望標籤能與CSP搭配使用，有兩個主要難題需要克服：
+如果您希望标记与CSP配合使用，则需要克服两个主要挑战：
 
-* **標籤程式庫的來源必須受信任。** 若不符合這項條件，瀏覽器就會封鎖標籤程式庫和其他必要的JavaScript檔案，使其無法在頁面上載入。
+* **标记库的来源必须可信。** 如果不满足这项条件，则浏览器将阻止标记库和其他必需的JavaScript文件，并且不会在页面上加载。
 * **必须允许使用内联脚本。**&#x200B;如果不满足这项条件，则页面将阻止“自定义代码”规则操作，并且无法正常执行。
 
-提高安全性需要代表內容建立者增加工作量。 如果您想要使用標籤並部署CSP，請解決這兩項問題，並妥善將其他指令碼標示為安全指令碼。 本文档的其余部分提供了有关如何实现此目标的指南。
+提高安全性需要增加内容创建者的工作量。 如果您希望使用标记并实施CSP，则必须解决这两个问题，而又不能将其他脚本错误地标记为安全。 本文档的其余部分提供了有关如何实现此目标的指南。
 
-## 將標籤新增為信任的來源
+## 将标记添加为可信来源
 
-使用 CSP 时，必须在 `Content-Security-Policy` 标头值中包含任何可信域。您必須為標籤提供的值會因您使用的託管型別而異。
+使用 CSP 时，必须在 `Content-Security-Policy` 标头值中包含任何可信域。您必须为标记提供的值因您使用的托管类型而异。
 
 ### 自托管
 
@@ -54,7 +54,7 @@ Content-Security-Policy: script-src 'self'
 
 ### Adobe 管理的主机
 
-如果您使用的是 [Adobe 管理的主机](../publishing/hosts/managed-by-adobe-host.md)，则在 `assets.adobedtm.com` 上维护您的内部版本。您應指定 `self` 作為安全網域，這樣就不會破壞已載入的任何指令碼，但您也需要 `assets.adobedtm.com` 將列為安全，否則您的標籤庫不會載入頁面上。 在这种情况下，您应该使用以下配置：
+如果您使用的是 [Adobe 管理的主机](../publishing/hosts/managed-by-adobe-host.md)，则在 `assets.adobedtm.com` 上维护您的内部版本。您应指定 `self` 作为安全域，以便您不会破坏已经加载的脚本，但您还需要 `assets.adobedtm.com` 标记为安全，否则您的标记库将不会加载到页面上。 在这种情况下，您应该使用以下配置：
 
 **HTTP 标头**
 
@@ -65,7 +65,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML `<meta>` 标记**
 
 
-有一個非常重要的先決條件：您必須載入標籤程式庫 [非同步](./asynchronous-deployment.md). 無法同步載入標籤程式庫（這會導致主控台錯誤和規則無法正確執行）。
+有一个非常重要的先决条件：必须加载标记库 [非同步](./asynchronous-deployment.md). 同步加载标记库行不通（这会导致控制台错误和规则无法正确执行）。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
@@ -82,7 +82,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 
 >[!NOTE]
 >
->CSP規格有第三種方法，也就是使用雜湊的詳細資訊，但這種方法無法用於標籤等標籤管理系統。 如需搭配Platform中的標籤使用雜湊的限制詳細資訊，請參閱 [子資源完整性(SRI)指南](./sri.md).
+>CSP规范包含第三个选项“使用哈希”的详细信息，但是这种方法在搭配使用标记管理系统时不可行。 有关对Platform中的标记使用哈希的限制的更多信息，请参阅 [子资源完整性(SRI)指南](./sri.md).
 
 ### 允许特定场合使用 {#nonce}
 
@@ -106,7 +106,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c'">
 ```
 
-設定標頭或HTML標籤後，您必須告訴標籤在載入內嵌指令碼時要在哪裡找到Nonce。 若要讓標籤在載入指令碼時使用Nonce，您必須：
+配置标题或HTML标记后，在加载内联脚本时，必须告诉标记在何处查找nonce。 对于要在加载脚本时使用nonce的标记，您必须：
 
 1. 创建一个数据元素，使其引用 nonce 在数据层中的位置。
 1. 配置核心扩展，并指定要使用的数据元素。
@@ -114,7 +114,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'nonce-2726c7f26c
 
 >[!NOTE]
 >
->上述过程只处理自定义代码的加载，而不处理自定义代码的用途。如果内联脚本包含与 CSP 不兼容的自定义代码，则优先使用 CSP。例如，如果您使用自訂程式碼，透過將內嵌指令碼附加至DOM來執行載入作業，標籤將無法正確新增Nonce，導致該特定自訂程式碼動作無法正常運作。
+>上述过程只处理自定义代码的加载，而不处理自定义代码的用途。如果内联脚本包含与 CSP 不兼容的自定义代码，则优先使用 CSP。例如，如果您使用自定义代码，通过将代码附加到DOM来加载内联脚本，则标记无法正确添加nonce，进而导致特定的自定义代码操作无法按预期执行。
 
 ### 允许使用所有内联脚本 {#unsafe-inline}
 
@@ -156,6 +156,6 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com 'unsafe-inline'
 
 ## 后续步骤
 
-閱讀本檔案後，您現在應瞭解如何設定CSP標頭，以接受標籤程式庫檔案和內嵌指令碼。
+通过阅读本文档，您现在应该了解如何将CSP标头配置为接受标记库文件并允许使用内联脚本。
 
-作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。不過，此功能與標籤等標籤管理系統搭配使用時有一些重大限制。 請參閱指南： [平台中的SRI相容性](./sri.md) 以取得詳細資訊。
+作为一项额外的安全措施，您还可以选择使用子资源完整性 (SRI) 来验证已获取的库内部版本。但是，当与标记等标记管理系统一起使用时，此功能存在一些主要限制。 请参阅指南，网址为 [平台中的SRI兼容性](./sri.md) 了解更多信息。

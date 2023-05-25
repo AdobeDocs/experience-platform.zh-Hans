@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；資料控管；資料使用原則使用手冊
+keywords: Experience Platform；主页；热门主题；数据管理；数据使用策略用户指南
 solution: Experience Platform
-title: 在UI中管理資料使用原則
-description: Adobe Experience Platform資料控管提供使用者介面，可讓您建立和管理資料使用原則。 本檔案概述您可以在Experience Platform使用者介面的「原則」工作區中執行的動作。
+title: 在UI中管理数据使用策略
+description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在Experience Platform用户界面的“策略”工作区中执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
 source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
@@ -11,83 +11,83 @@ ht-degree: 19%
 
 ---
 
-# 在UI中管理資料使用原則 {#user-guide}
+# 在UI中管理数据使用策略 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"
 >title="在您的配置文件数据中集成并强制客户同意"
 >abstract="<h2>描述</h2><p>通过 Platform，可将从客户收集的同意数据集成到其各自的配置文件中。然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
 
-本檔案說明如何使用 **[!UICONTROL 原則]** Adobe Experience Platform UI中的工作區，用來建立和管理資料使用原則。
+本文档介绍如何使用 **[!UICONTROL 策略]** Adobe Experience Platform UI中的工作区，用于创建和管理数据使用策略。
 
 >[!NOTE]
 >
->有關如何在UI中管理存取控制原則的資訊，請參閱 [屬性型存取控制UI指南](../../access-control/abac/ui/policies.md) 而非。
+>有关如何在UI中管理访问控制策略的信息，请参阅 [基于属性的访问控制UI指南](../../access-control/abac/ui/policies.md) 而是。
 
 >[!IMPORTANT]
 >
->所有資料使用原則(包括Adobe提供的核心原則)預設為停用。 為了將個別原則考慮為強制執行，您必須手動啟用該原則。 請參閱以下小節： [啟用原則](#enable) 以瞭解如何在UI中執行此動作的步驟。
+>默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 为了考虑实施单个策略，您必须手动启用该策略。 请参阅以下部分： [启用策略](#enable) 以了解如何在UI中执行此操作的步骤。
 
 ## 先决条件
 
-本指南需要您深入瞭解下列各項 [!DNL Experience Platform] 概念：
+本指南要求您对以下内容有一定的了解 [!DNL Experience Platform] 概念：
 
-* [資料控管](../home.md)
+* [数据治理](../home.md)
 * [数据使用策略](./overview.md)
 
-## 檢視現有原則 {#view-policies}
+## 查看现有策略 {#view-policies}
 
-在 [!DNL Experience Platform] UI，選取 **[!UICONTROL 原則]** 以開啟 **[!UICONTROL 原則]** 工作區。 在 **[!UICONTROL 瀏覽]** 索引標籤中，您可以看到可用原則的清單，包括其關聯的標籤、行銷動作和狀態。
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 策略]** 以打开 **[!UICONTROL 策略]** 工作区。 在 **[!UICONTROL 浏览]** 选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
 
 ![](../images/policies/browse-policies.png)
 
-如果您有權存取同意政策，請選取 **[!UICONTROL 同意原則]** 切換即可在 [!UICONTROL 瀏覽] 標籤。
+如果您有权访问同意策略，请选择 **[!UICONTROL 同意政策]** 切换以在 [!UICONTROL 浏览] 选项卡。
 
 ![](../images/policies/consent-policy-toggle.png)
 
-選取列出的原則以檢視其說明和型別。 如果選取自訂原則，則會顯示其他控制項以編輯、刪除或 [啟用/停用原則](#enable).
+选择列出的策略以查看其说明和类型。 如果选择自定义策略，则会显示其他控件以编辑、删除或 [启用/禁用策略](#enable).
 
 ![](../images/policies/policy-details.png)
 
-## 建立自訂原則 {#create-policy}
+## 创建自定义策略 {#create-policy}
 
-若要建立新的自訂資料使用原則，請選取 **[!UICONTROL 建立原則]** 右上角 **[!UICONTROL 瀏覽]** 索引標籤中的 **[!UICONTROL 原則]** 工作區。
+要创建新的自定义数据使用策略，请选择 **[!UICONTROL 创建策略]** 右上角的 **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 策略]** 工作区。
 
 ![](../images/policies/create-policy-button.png)
 
-根據您是否為同意政策Beta版的一部分，會發生下列其中一種情況：
+根据您是否属于同意政策的Beta版，会发生以下情况之一：
 
-* 如果您不屬於Beta版，系統會立即將您帶至工作流程進行 [建立資料治理原則](#create-governance-policy).
-* 如果您是測試版的一部分，對話方塊會提供額外選項，可 [建立同意原則](#consent-policy).
+* 如果您不属于Beta版，则会立即转到以下项的工作流： [创建数据治理策略](#create-governance-policy).
+* 如果您是测试版的一部分，则会显示一个对话框，其中提供了一个额外选项，用于 [创建同意策略](#consent-policy).
    ![](../images/policies/choose-policy-type.png)
 
-### 建立資料治理原則 {#create-governance-policy}
+### 创建数据治理策略 {#create-governance-policy}
 
-此 **[!UICONTROL 建立原則]** 工作流程隨即顯示。 首先，提供新原則的名稱和說明。
+此 **[!UICONTROL 创建策略]** 此时会显示工作流。 首先，为新策略提供名称和描述。
 
 ![](../images/policies/create-policy-description.png)
 
-接下來，選取原則將依據的資料使用標籤。 選取多個標籤時，您可以選擇資料應包含所有標籤，還是僅包含其中一個標籤，以套用原則。 選取 **[!UICONTROL 下一個]** 完成後。
+接下来，选择策略将基于的数据使用标签。 选择多个标签时，您可以选择是让数据包含所有标签，还是只包含其中一个标签，以便应用策略。 选择 **[!UICONTROL 下一个]** 完成后。
 
 ![](../images/policies/add-labels.png)
 
-此 **[!UICONTROL 選取行銷動作]** 步驟隨即顯示。 從提供的清單中選擇適當的行銷動作，然後選取「 」 **[!UICONTROL 下一個]** 以繼續。
+此 **[!UICONTROL 选择营销活动]** 步骤。 从提供的列表中选择相应的营销活动，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 >[!NOTE]
 >
->選取多個行銷動作時，原則會將它們解譯為「或」規則。 換言之，此原則適用於 **任何** 所選行銷動作中的最後一個專案。
+>选择多个营销操作时，策略会将其解释为“OR”规则。 换言之，该策略适用于以下情况 **任意** 执行的营销操作。
 
 ![](../images/policies/add-marketing-actions.png)
 
-此 **[!UICONTROL 檢閱]** 步驟隨即顯示，可讓您在建立新原則之前先檢閱其詳細資訊。 在您滿意後，請選取 **[!UICONTROL 完成]** 以建立原則。
+此 **[!UICONTROL 审核]** 步骤，允许您在创建新策略之前查看其详细信息。 在您满意后，选择 **[!UICONTROL 完成]** 以创建策略。
 
 ![](../images/policies/policy-review.png)
 
-此 **[!UICONTROL 瀏覽]** 標籤會重新顯示，現在會列出「草稿」狀態的新建立原則。 若要啟用此原則，請參閱下一節。
+此 **[!UICONTROL 浏览]** 选项卡会重新显示，其中现在列出了处于“草稿”状态的新创建策略。 要启用策略，请参阅下一部分。
 
 ![](../images/policies/created-policy.png)
 
-### 建立同意原則 {#consent-policy}
+### 创建同意策略 {#consent-policy}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
@@ -96,119 +96,119 @@ ht-degree: 19%
 
 >[!IMPORTANT]
 >
->同意原則僅適用於已購買的組織 **AdobeHealthcare Shield** 或 **Adobe隱私權與安全性盾牌**.
+>同意策略仅适用于已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护**.
 
-如果您選擇建立同意原則，則會顯示一個新畫面，讓您設定新原則。
+如果您选择创建同意策略，则会显示一个新屏幕，通过该屏幕可配置新策略。
 
 ![](../images/policies/consent-policy-dialog.png)
 
-為了使用同意原則，您的設定檔資料中必須有同意屬性。 請參閱指南： [Experience Platform中的同意處理](../../landing/governance-privacy-security/consent/adobe/overview.md) 瞭解如何在聯合結構描述中包含所需屬性的詳細步驟。
+要使用同意策略，您的配置文件数据中必须存在同意属性。 请参阅指南，网址为 [Experience Platform中的同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md) 有关如何将所需属性包含在合并架构中的详细步骤。
 
-同意原則包含兩個邏輯元件：
+同意策略由两个逻辑组件组成：
 
-* **[!UICONTROL 若]**：將觸發原則檢查的條件。 這可能根據所執行的特定行銷動作、特定資料使用標籤的出現或兩者的組合而定。
-* **[!UICONTROL 則]**：設定檔必須存在的同意屬性，才能納入觸發原則的動作中。
+* **[!UICONTROL 如果]**：将触发策略检查的条件。 这可以基于正在执行的特定营销操作、特定数据使用标签的存在或两者的组合。
+* **[!UICONTROL 则]**：要使配置文件包含在触发策略的操作中，必须存在的同意属性。
 
-#### 設定條件 {#consent-conditions}
+#### 配置条件 {#consent-conditions}
 
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentif"
 >title="“如果”条件"
 >abstract="首先定义会触发策略检查的条件。条件可以包括正在采取的某些营销行动、存在的某些数据治理标签，或两者的组合。"
 
-在 **[!UICONTROL 若]** 區段，選取應該觸發此原則的行銷動作和/或資料使用標籤。 選取 **[!UICONTROL 檢視全部]** 和 **[!UICONTROL 選取標籤]** 以分別檢視可用行銷動作和標籤的完整清單。
+在 **[!UICONTROL 如果]** 区域，选择应触发此策略的营销操作和/或数据使用标签。 选择 **[!UICONTROL 查看全部]** 和 **[!UICONTROL 选择标签]** 查看可用的营销操作和标签的完整列表。
 
-新增至少一個條件後，您可以選取 **[!UICONTROL 新增條件]** 若要繼續視需要新增其他條件，請從下拉式選單中選擇適當的條件型別。
+添加至少一个条件后，您可以选择 **[!UICONTROL 添加条件]** 要继续根据需要添加更多条件，请从下拉菜单中选择相应的条件类型。
 
 ![](../images/policies/add-condition.png)
 
-如果您選取多個條件，您可以使用出現在它們之間的圖示，來切換「與」和「或」之間的條件關係。
+如果选择多个条件，则可以使用它们之间显示的图标在“AND”和“OR”之间切换条件关系。
 
 ![](../images/policies/and-or-selection.png)
 
-#### 選取同意屬性 {#consent-attributes}
+#### 选择同意属性 {#consent-attributes}
 
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentthen"
 >title="“则”条件"
 >abstract="定义“如果”条件后，使用“则”部分从联合架构中选择至少一个同意属性。这是必须存在的属性，以便配置文件包含在此策略所控制的操作中。"
 
-在 **[!UICONTROL 則]** 區段，從聯合結構描述中選取至少一個同意屬性。 这是必须存在的属性，以便配置文件包含在此策略所控制的操作中。您可以從清單中選擇其中一個提供的選項，或選取 **[!UICONTROL 檢視全部]** 以直接從聯合結構描述選擇屬性。
+在 **[!UICONTROL 则]** 部分，从合并架构中选择至少一个同意属性。 这是必须存在的属性，以便配置文件包含在此策略所控制的操作中。您可以从列表中选择提供的选项之一，或选择 **[!UICONTROL 查看全部]** 以直接从合并架构中选择属性。
 
-選取同意屬性時，請選擇您要此原則檢查的屬性值。
+选择同意属性时，选择要此策略检查的属性的值。
 
 ![](../images/policies/select-schema-field.png)
 
-選取至少一個同意屬性後， **[!UICONTROL 原則屬性]** 面板更新以顯示此原則允許的預估設定檔數目，包括設定檔存放區總數的百分比。 當您調整原則設定時，此估算會自動更新。
+选择至少一个同意属性后， **[!UICONTROL 策略属性]** 面板更新，以显示此策略允许的预估配置文件数，包括占配置文件存储总数的百分比。 当您调整策略配置时，此估算会自动更新。
 
 ![](../images/policies/audience-preview.png)
 
-若要進一步新增同意屬性至原則，請選取 **[!UICONTROL 新增結果]**.
+要进一步向策略添加同意属性，请选择 **[!UICONTROL 添加结果]**.
 
 ![](../images/policies/add-result.png)
 
-您可以視需要繼續新增和調整條件和同意屬性至原則。 當您對設定感到滿意時，請先提供原則的名稱和選擇性說明，然後再選取 **[!UICONTROL 儲存]**.
+您可以根据需要继续向策略添加和调整条件和同意属性。 如果您对配置感到满意，请在选择之前提供策略的名称和可选描述 **[!UICONTROL 保存]**.
 
 ![](../images/policies/name-and-save.png)
 
-同意原則現在已建立，其狀態已設為 [!UICONTROL 已停用] 依預設。 若要立即啟用原則，請選取 **[!UICONTROL 狀態]** 在右側邊欄中切換。
+现已创建同意策略，其状态设置为 [!UICONTROL 已禁用] 默认情况下。 要立即启用策略，请选择 **[!UICONTROL 状态]** 在右边栏中切换。
 
 ![](../images/policies/enable-consent-policy.png)
 
-#### 驗證原則執行
+#### 验证策略实施
 
-建立並啟用同意原則後，您可以預覽原則在啟用目的地的區段時如何影響您同意的對象。 請參閱以下小節： [同意原則評估](../enforcement/auto-enforcement.md#consent-policy-evaluation) 以取得詳細資訊。
+创建并启用同意策略后，您可以预览它在将区段激活到目标时如何影响您的同意受众。 请参阅以下部分： [同意政策评估](../enforcement/auto-enforcement.md#consent-policy-evaluation) 了解更多信息。
 
-## 啟用或停用原則 {#enable}
+## 启用或禁用策略 {#enable}
 
-所有資料使用原則(包括Adobe提供的核心原則)預設為停用。 對於要考慮強制執行的個別原則，您必須透過API或UI手動啟用該原則。
+默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 对于要考虑实施的单个策略，您必须通过API或UI手动启用该策略。
 
-您可以從以下位置啟用或停用原則： **[!UICONTROL 瀏覽]** 索引標籤中的 **[!UICONTROL 原則]** 工作區。 從清單中選取自訂原則，以在右側顯示其詳細資訊。 下 **[!UICONTROL 狀態]**，選取切換按鈕以啟用或停用原則。
+您可以从以下位置启用或禁用策略 **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 策略]** 工作区。 从列表中选择一个自定义策略，以在右侧显示其详细信息。 下 **[!UICONTROL 状态]**，选择切换按钮以启用或禁用策略。
 
 ![](../images/policies/enable-policy.png)
 
-## 檢視行銷動作 {#view-marketing-actions}
+## 查看营销活动 {#view-marketing-actions}
 
-在 **[!UICONTROL 原則]** 工作區中，選取 **[!UICONTROL 行銷動作]** 標籤以檢視Adobe與您自己的組織所定義的可用行銷動作清單。
+在 **[!UICONTROL 策略]** 工作区，选择 **[!UICONTROL 营销活动]** 选项卡以查看由Adobe和您自己的组织定义的可用营销操作列表。
 
 ![](../images/policies/marketing-actions.png)
 
-## 建立行銷動作 {#create-marketing-action}
+## 创建营销活动 {#create-marketing-action}
 
-若要建立新的自訂行銷動作，請選取 **[!UICONTROL 建立行銷動作]** 右上角 **[!UICONTROL 行銷動作]** 索引標籤中的 **[!UICONTROL 原則]** 工作區。
+要创建新的自定义营销操作，请选择 **[!UICONTROL 创建营销活动]** 右上角的 **[!UICONTROL 营销活动]** 在中选项卡 **[!UICONTROL 策略]** 工作区。
 
 ![](../images/policies/create-marketing-action.png)
 
-此 **[!UICONTROL 建立行銷動作]** 對話方塊隨即顯示。 輸入行銷動作的名稱和說明，然後選取 **[!UICONTROL 建立]**.
+此 **[!UICONTROL 创建营销活动]** 对话框。 输入营销活动的名称和描述，然后选择 **[!UICONTROL 创建]**.
 
 ![](../images/policies/create-marketing-action-details.png)
 
-新建立的動作會出現在 **[!UICONTROL 行銷動作]** 標籤。 您現在可以在以下情況下使用行銷動作： [建立新的資料使用原則](#create-policy).
+新创建的操作将显示在 **[!UICONTROL 营销活动]** 选项卡。 现在，您可以在以下情况下使用营销操作 [创建新的数据使用策略](#create-policy).
 
 ![](../images/policies/created-marketing-action.png)
 
-## 編輯或刪除行銷動作 {#edit-delete-marketing-action}
+## 编辑或删除营销操作 {#edit-delete-marketing-action}
 
 >[!NOTE]
 >
->只能編輯您的組織定義的自訂行銷動作。 無法變更或刪除Adobe定義的行銷動作。
+>只能编辑由您的组织定义的自定义营销操作。 无法更改或删除Adobe定义的营销操作。
 
-在 **[!UICONTROL 原則]** 工作區中，選取 **[!UICONTROL 行銷動作]** 標籤以檢視Adobe與您自己的組織所定義的可用行銷動作清單。 從清單中選取自訂行銷動作，然後使用右側區段中提供的欄位來編輯行銷動作的詳細資訊。
+在 **[!UICONTROL 策略]** 工作区，选择 **[!UICONTROL 营销活动]** 选项卡以查看由Adobe和您自己的组织定义的可用营销操作列表。 从列表中选择自定义营销操作，然后使用右侧部分中提供的字段编辑营销操作的详细信息。
 
 ![](../images/policies/edit-marketing-action.png)
 
-如果任何現有使用原則未使用行銷動作，您可以選取「 」，將其刪除 **[!UICONTROL 刪除行銷動作]**.
+如果营销操作未由任何现有使用策略使用，则可以通过选择将其删除 **[!UICONTROL 删除营销活动]**.
 
 >[!NOTE]
 >
->嘗試刪除現有原則正在使用的行銷動作會導致出現錯誤訊息，指出刪除嘗試失敗。
+>尝试删除现有策略正在使用的营销操作会导致出现错误消息，指示删除尝试失败。
 
 ![](../images/policies/delete-marketing-action.png)
 
 ## 后续步骤
 
-本檔案概述如何在中管理資料使用原則 [!DNL Experience Platform] UI。 有關如何使用管理原則的步驟 [!DNL Policy Service API]，請參閱 [開發人員指南](../api/getting-started.md). 如需如何強制執行資料使用原則的詳細資訊，請參閱 [原則執行概觀](../enforcement/overview.md).
+本文档概述了如何在中管理数据使用策略 [!DNL Experience Platform] UI。 有关如何使用管理策略的步骤 [!DNL Policy Service API]，请参见 [开发人员指南](../api/getting-started.md). 有关如何实施数据使用策略的信息，请参阅 [策略实施概述](../enforcement/overview.md).
 
-以下影片示範如何使用中的使用原則 [!DNL Experience Platform] UI：
+以下视频演示了如何在中使用使用策略 [!DNL Experience Platform] UI：
 
 >[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)

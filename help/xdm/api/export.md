@@ -1,6 +1,6 @@
 ---
-title: 匯出API端點
-description: Schema Registry API中的/export端點可讓您在沙箱之間共用XDM資源。
+title: 导出API端点
+description: 架构注册表API中的/export端点允许您在沙盒之间共享XDM资源。
 exl-id: 1dcbfa59-af98-4db5-b6f4-f848e5bf5e81
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 1%
 
 ---
 
-# 匯出端點
+# 导出端点
 
-內的所有資源 [!DNL Schema Library] 包含在Adobe Experience Platform內的特定沙箱中。 在某些情況下，您可能會想要在沙箱和組織之間共用Experience Data Model (XDM)資源。 此 `/rpc/export` 中的端點 [!DNL Schema Registry] API可讓您為中的任何結構描述、結構描述欄位群組或資料型別產生匯出裝載 [!DNL Schema Library]，然後使用該裝載，透過將該資源（以及所有相依資源）匯入目標沙箱和組織 [`/rpc/import` 端點](./import.md).
+内的所有资源 [!DNL Schema Library] 包含在Adobe Experience Platform中的特定沙盒中。 在某些情况下，您可能希望在沙盒和组织之间共享Experience Data Model (XDM)资源。 此 `/rpc/export` 中的端点 [!DNL Schema Registry] API允许您为中的任意架构、架构字段组或数据类型生成导出有效负载 [!DNL Schema Library]，然后使用该有效负载通过 [`/rpc/import` 端点](./import.md).
 
 ## 快速入门
 
-此 `/rpc/export` 端點是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在繼續之前，請檢閱 [快速入門手冊](./getting-started.md) 如需相關檔案的連結，請參閱本檔案範例API呼叫的閱讀指南，以及有關成功呼叫任何Experience PlatformAPI所需必要標題的重要資訊。
+此 `/rpc/export` 端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
-此 `/rpc/export` 端點是遠端程式呼叫(RPC)的一部分，受 [!DNL Schema Registry]. 不像 [!DNL Schema Registry] API、RPC端點不需要其他標頭，例如 `Accept` 或 `Content-Type`，且請勿使用 `CONTAINER_ID`. 相反地，他們必須使用 `/rpc` 名稱空間，如下方API呼叫所示。
+此 `/rpc/export` 终结点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与中的其他端点不同 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`，并且不要使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
 
-## 為資源產生匯出裝載 {#export}
+## 为资源生成导出有效负载 {#export}
 
-對於中的任何現有結構、欄位群組或資料型別 [!DNL Schema Library]，您可以透過向以下發出GET請求來產生匯出裝載： `/export` 端點，在路徑中提供資源的ID。
+对于中的任何现有架构、字段组或数据类型， [!DNL Schema Library]，您可以通过向以下对象发出GET请求来生成导出有效负载： `/export` 端点，提供路径中资源的ID。
 
 **API格式**
 
@@ -31,13 +31,13 @@ GET /rpc/export/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_ID}` | 此 `meta:altId` 或URL編碼 `$id` 匯出的XDM資源。 |
+| `{RESOURCE_ID}` | 此 `meta:altId` 或URL编码 `$id` 要导出的XDM资源的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會擷取匯出裝載 `Restaurant` 欄位群組。
+以下请求检索的导出有效负荷 `Restaurant` 字段组。
 
 ```shell
 curl -X GET \
@@ -51,9 +51,9 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回物件陣列，代表目標XDM資源及其所有相依資源。 在此範例中，陣列中的第一個物件是租使用者建立的 `Property` 資料型別 `Restaurant` 欄位群組採用，而第二個物件為 `Restaurant` 欄位群組本身。 然後，此裝載可用於 [匯入資源](#import) 放入不同的沙箱或組織。
+成功的响应将返回一个对象数组，这些对象表示目标XDM资源及其所有从属资源。 在此示例中，数组中的第一个对象是租户创建的 `Property` 数据类型 `Restaurant` 字段组使用，而第二个对象是 `Restaurant` 字段组本身。 然后，此有效负载可用于 [导入资源](#import) 到不同的沙盒或组织中。
 
-請注意，資源租使用者ID的所有例項都會取代為 `<XDM_TENANTID_PLACEHOLDER>`. 這可讓結構描述登入根據後續匯入呼叫中傳送的位置，自動將正確的租使用者ID套用至資源。
+请注意，资源租户ID的所有实例都将被替换 `<XDM_TENANTID_PLACEHOLDER>`. 这允许架构注册表根据在后续导入调用中发送租户ID的位置，自动将正确的租户ID应用于资源。
 
 ```json
 [
@@ -193,8 +193,8 @@ curl -X GET \
 ]
 ```
 
-## 匯入資源 {#import}
+## 导入资源 {#import}
 
-從CSV檔案產生匯出裝載後，您可以將該裝載傳送至 `/rpc/import` 端點，以產生結構描述。
+从CSV文件生成导出有效负载后，您可以将该有效负载发送到 `/rpc/import` 生成架构的端点。
 
-請參閱 [匯入端點指南](./import.md) 以取得有關如何從匯出裝載產生結構描述的詳細資訊。
+请参阅 [导入端点指南](./import.md) 有关如何从导出有效负载生成架构的详细信息。

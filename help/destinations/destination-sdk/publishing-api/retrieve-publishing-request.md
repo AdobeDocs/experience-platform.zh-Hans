@@ -1,6 +1,6 @@
 ---
-description: 此頁面是用來透過Adobe Experience Platform Destination SDK擷取目的地發佈請求之詳細資料的API呼叫範例。
-title: 擷取目的地發佈請求
+description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索有关目标发布请求详细信息的API调用。
+title: 检索目标发布请求
 source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
 workflow-type: tm+mt
 source-wordcount: '834'
@@ -9,44 +9,44 @@ ht-degree: 2%
 ---
 
 
-# 擷取目的地發佈請求
+# 检索目标发布请求
 
 >[!IMPORTANT]
 >
->只有在您提交產品化（公用）目的地以供其他Experience Platform客戶使用時，才需要使用此API端點。 如果您要建立私人目的地以供自己使用，則不需要使用發佈API正式提交目的地。
+>只有在提交要由其他Experience Platform客户使用的生产（公共）目标时，才需要使用此API端点。 如果要创建供自己使用的专用目标，则无需使用发布API正式提交目标。
 
 >[!IMPORTANT]
 >
->**API端點**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
+>**API端点**： `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-設定並測試目的地後，您可以將其提交至Adobe以供稽核和發佈。 讀取 [提交以Destination SDK撰寫的目的地，以供複查](../guides/submit-destination.md) 至於所有其他步驟，您必須在目的地提交程式中執行。
+配置并测试目标后，可将其提交到Adobe进行审查和发布。 读取 [提交供审核在Destination SDK中创作的目标](../guides/submit-destination.md) 对于所有其他步骤，您必须在目标提交流程中执行。
 
-在下列情況下，使用發佈目的地API端點提交發佈請求：
+在以下情况下，使用发布目标API端点提交发布请求：
 
-* 身為Destination SDK合作夥伴，您想要讓所有Experience Platform組織都能提供已生產化的目的地，以供所有Experience Platform客戶使用；
-* 您製作 *任何更新* 至您的設定。 只有在您提交經Experience Platform團隊核准的新發佈請求後，設定更新才會反映在目的地中。
+* 作为Destination SDK合作伙伴，您希望使您的产品化目标在所有Experience Platform组织中都可供所有Experience Platform客户使用；
+* 您制作 *任何更新* 到您的配置。 只有在提交新发布请求(经Experience Platform团队批准)后，配置更新才会反映在目标中。
 
 >[!IMPORTANT]
 >
->Destination SDK支援的所有引數名稱和值皆為 **區分大小寫**. 為避免區分大小寫錯誤，請完全按照檔案中所示使用引數名稱和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
 
-## Destination Publishing API操作快速入門 {#get-started}
+## 目标发布API操作快速入门 {#get-started}
 
-在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 如需成功呼叫API所需的重要資訊，包括如何取得必要的目的地撰寫許可權和必要的標頭。
+在继续之前，请查看 [快速入门指南](../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
-## 列出目的地發佈請求 {#retrieve-list}
+## 列出目标发布请求 {#retrieve-list}
 
-您可以透過向以下網站提出GET請求，擷取為您的IMS組織提交的所有目標清單： `/authoring/destinations/publish` 端點。
+GET您可以通过对 `/authoring/destinations/publish` 端点。
 
 **API格式**
 
-使用下列API格式來擷取您帳戶的所有發佈請求。
+使用以下API格式检索您帐户的所有发布请求。
 
 ```http
 GET /authoring/destinations/publish
 ```
 
-使用下列API格式來擷取特定的發佈請求，定義由 `{DESTINATION_ID}` 引數。
+使用以下API格式检索由定义的特定发布请求 `{DESTINATION_ID}` 参数。
 
 ```http
 GET /authoring/destinations/publish/{DESTINATION_ID}
@@ -54,17 +54,17 @@ GET /authoring/destinations/publish/{DESTINATION_ID}
 
 **请求**
 
-以下兩個請求會擷取您IMS組織的所有發佈請求或特定發佈請求，具體取決於您是否傳遞 `DESTINATION_ID` 請求中的引數。
+以下两个请求检索您的IMS组织的所有发布请求或特定发布请求，具体取决于您是否传递 `DESTINATION_ID` 请求中的参数。
 
-選取下方的每個索引標籤以檢視對應的裝載。
+选择下面的每个选项卡以查看相应的有效负载。
 
 >[!BEGINTABS]
 
->[!TAB 擷取所有發佈請求]
+>[!TAB 检索所有发布请求]
 
 +++请求
 
-下列請求將依據以下內容，擷取您提交的發佈請求清單 [!DNL IMS Org ID] 和沙箱設定。
+以下请求将基于以下条件检索您提交的发布请求列表 [!DNL IMS Org ID] 和沙盒配置。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -78,7 +78,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-以下回應會根據您使用的IMS組織ID和沙箱名稱，傳回HTTP狀態200，其中包含為了發佈而提交且您有權存取的所有目的地清單。 一 `configId` 對應至一個目的地的發佈要求。
+以下响应返回HTTP状态200，其中包含基于您使用的IMS组织ID和沙盒名称提交以进行发布且您有权访问的所有目标的列表。 一个 `configId` 对应于一个目标的发布请求。
 
 ```json
 {
@@ -116,18 +116,18 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `destinationId` | 字符串 | 您已提交以進行發佈的目的地設定的目的地ID。 |
-| `publishDetailsList.configId` | 字符串 | 您提交之目的地的目的地發佈要求唯一ID。 |
-| `publishDetailsList.allowedOrgs` | 字符串 | 傳回目的地可用的Experience Platform組織。 <br> <ul><li> 對象 `"destinationType": "PUBLIC"`，此引數會傳回 `"*"`，這表示所有Experience Platform組織都可使用目的地。</li><li> 對象 `"destinationType": "DEV"`，此引數會傳回您用來編寫和測試目的地的組織ID。</li></ul> |
-| `publishDetailsList.status` | 字符串 | 目的地發佈請求的狀態。 可能的值包括 `TEST`， `REVIEW`， `APPROVED`， `PUBLISHED`， `DENIED`， `REVOKED`， `DEPRECATED`. 具有值的目的地 `PUBLISHED` 為上線狀態，可供Experience Platform客戶使用。 |
-| `publishDetailsList.destinationType` | 字符串 | 目的地的型別。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 對應至您Experience Platform組織中的目的地。 `PUBLIC` 對應至您已提交發佈的目的地。 以Git術語來思考這兩個選項，其中 `DEV` 版本代表您的本機編寫分支，而 `PUBLIC` version代表遠端主要分支。 |
-| `publishDetailsList.publishedDate` | 字符串 | 以紀元時間提交目的地以供發佈的日期。 |
+| `destinationId` | 字符串 | 您已提交以进行发布的目标配置的目标ID。 |
+| `publishDetailsList.configId` | 字符串 | 已提交目标的目标发布请求的唯一ID。 |
+| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标可用的组织Experience Platform。 <br> <ul><li> 对象 `"destinationType": "PUBLIC"`，此参数会返回 `"*"`，这意味着目标对于所有Experience Platform组织都可用。</li><li> 对象 `"destinationType": "DEV"`，此参数会返回您用于创作和测试目标的组织的组织ID。</li></ul> |
+| `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值包括 `TEST`， `REVIEW`， `APPROVED`， `PUBLISHED`， `DENIED`， `REVOKED`， `DEPRECATED`. 具有值的目标 `PUBLISHED` 是实时的，可供Experience Platform客户使用。 |
+| `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 对应于Experience Platform组织中的目标。 `PUBLIC` 对应于您已提交以进行发布的目标。 以Git术语来考虑这两个选项，其中 `DEV` version表示您的本地创作分支，并且 `PUBLIC` version表示远程主分支。 |
+| `publishDetailsList.publishedDate` | 字符串 | 提交目标以进行发布的日期（以纪元时间计）。 |
 
 {style="table-layout:auto"}
 
 +++
 
->[!TAB 擷取特定發佈請求]
+>[!TAB 检索特定的发布请求]
 
 +++请求
 
@@ -141,13 +141,13 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_ID}` | 您要擷取其發佈狀態的目的地ID。 |
+| `{DESTINATION_ID}` | 要检索其发布状态的目标的ID。 |
 
 +++
 
 +++响应
 
-如果您傳入 `DESTINATION_ID` 在API呼叫中，回應會傳回HTTP狀態200，其中包含指定目的地發佈請求的詳細資訊。
+如果您通过 `DESTINATION_ID` 在API调用中，响应返回HTTP状态200，其中包含有关指定目标发布请求的详细信息。
 
 ```json
 {
@@ -168,12 +168,12 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `destinationId` | 字符串 | 您已提交以進行發佈的目的地設定的目的地ID。 |
-| `publishDetailsList.configId` | 字符串 | 您提交之目的地的目的地發佈要求唯一ID。 |
-| `publishDetailsList.allowedOrgs` | 字符串 | 傳回目的地可用的Experience Platform組織。 <br> <ul><li> 對象 `"destinationType": "PUBLIC"`，此引數會傳回 `"*"`，這表示所有Experience Platform組織都可使用目的地。</li><li> 對象 `"destinationType": "DEV"`，此引數會傳回您用來編寫和測試目的地的組織ID。</li></ul> |
-| `publishDetailsList.status` | 字符串 | 目的地發佈請求的狀態。 可能的值包括 `TEST`， `REVIEW`， `APPROVED`， `PUBLISHED`， `DENIED`， `REVOKED`， `DEPRECATED`. 具有值的目的地 `PUBLISHED` 為上線狀態，可供Experience Platform客戶使用。 |
-| `publishDetailsList.destinationType` | 字符串 | 目的地的型別。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 對應至您Experience Platform組織中的目的地。 `PUBLIC` 對應至您已提交發佈的目的地。 以Git術語來思考這兩個選項，其中 `DEV` 版本代表您的本機編寫分支，而 `PUBLIC` version代表遠端主要分支。 |
-| `publishDetailsList.publishedDate` | 字符串 | 以紀元時間提交目的地以供發佈的日期。 |
+| `destinationId` | 字符串 | 您已提交以进行发布的目标配置的目标ID。 |
+| `publishDetailsList.configId` | 字符串 | 已提交目标的目标发布请求的唯一ID。 |
+| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标可用的组织Experience Platform。 <br> <ul><li> 对象 `"destinationType": "PUBLIC"`，此参数会返回 `"*"`，这意味着目标对于所有Experience Platform组织都可用。</li><li> 对象 `"destinationType": "DEV"`，此参数会返回您用于创作和测试目标的组织的组织ID。</li></ul> |
+| `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值包括 `TEST`， `REVIEW`， `APPROVED`， `PUBLISHED`， `DENIED`， `REVOKED`， `DEPRECATED`. 具有值的目标 `PUBLISHED` 是实时的，可供Experience Platform客户使用。 |
+| `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 对应于Experience Platform组织中的目标。 `PUBLIC` 对应于您已提交以进行发布的目标。 以Git术语来考虑这两个选项，其中 `DEV` version表示您的本地创作分支，并且 `PUBLIC` version表示远程主分支。 |
+| `publishDetailsList.publishedDate` | 字符串 | 提交目标以进行发布的日期（以纪元时间计）。 |
 
 {style="table-layout:auto"}
 
@@ -181,6 +181,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 >[!ENDTABS]
 
-## API錯誤處理
+## API错误处理
 
-Destination SDKAPI端點遵循一般Experience PlatformAPI錯誤訊息原則。 請參閱 [API狀態代碼](../../../landing/troubleshooting.md#api-status-codes) 和 [請求標頭錯誤](../../../landing/troubleshooting.md#request-header-errors) （在平台疑難排解指南中）。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。

@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform示範擴充功能概觀
-description: 瞭解Adobe Experience Platform中的Adobe Experience Platform Demo擴充功能。
+title: Adobe Experience Platform演示扩展概述
+description: 了解Adobe Experience Platform中的Adobe Experience Platform Demo扩展。
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
@@ -13,18 +13,18 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已經過品牌重塑，現在是Adobe Experience Platform中的一套資料收集技術。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 >[!NOTE]
 >
->此擴充功能已過時，傾向於 [Adobe Experience Platform Web SDK](../sdk/overview.md).
+>此扩展已被弃用，取而代之的是 [Adobe Experience Platform Web SDK](../sdk/overview.md).
 
 此扩展的功能将移植到新扩展上。以下是当前功能的快速比较。
 
-| Platform示範擴充功能 | 平台Web SDK |
+| Platform演示扩展 | 平台Web SDK |
 | ------------------ | ----------- |
 | 支持自定义客户 ID | 支持自定义客户 ID |
-| XDM的使用者端對應UI | 在 ECID 中构建（无需 visitor.js） |
+| XDM的客户端映射UI | 在 ECID 中构建（无需 visitor.js） |
 | 能够创建流连接 | 选择加入支持 |
 |  | XDM 支持作为数据元素 |
 |  | 第一方域支持 |
@@ -37,21 +37,21 @@ ht-degree: 72%
 
 此部分提供有关配置 Adobe Experience Platform 扩展时可用的选项的参考。
 
-如果尚未安裝Adobe Experience Platform擴充功能，請開啟您的屬性，然後選取「 」 **[!UICONTROL 擴充功能>目錄]**，將游標暫留在Adobe Experience Platform擴充功能上，然後選取「 」 **[!UICONTROL 安裝]**.
+如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择 **[!UICONTROL 安装]**.
 
-若要設定擴充功能，請開啟 [!UICONTROL 擴充功能] 索引標籤，將游標停留在擴充功能上，然後選取「 」 **[!UICONTROL 設定]**.
+要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/adobe-experience-platform-extension-configuration.png)
 
 ### 流连接
 
-要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果您尚未建立任何串流連線，可以選取 **[!UICONTROL 建立串流連線]** 按鈕。
+要开始将数据流式传输到 Adobe Experience Platform，第一步便是选择一个流连接。您可以从流连接组合框中选择一个。流连接为必填字段。如果尚未创建任何流连接，则可以通过选择 **[!UICONTROL 创建流连接]** 按钮。
 
-如果您選取 **[!UICONTROL 建立串流連線]** 將會出現強制回應視窗。
+如果您选择 **[!UICONTROL 创建流连接]** 此时将显示一个模式窗口。
 
 ![](../../../images/adobe-experienc-platform-create-streaming-connection.png)
 
-该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您打算建立多個串流連線，請注意 **[!UICONTROL 資料來源]** 欄位必須是唯一的。 嘗試使用建立另一個串流連線 **[!UICONTROL 資料來源]** 已用於其他連線將會失敗。
+该模式窗口中包含预先填充了值的字段，您可以根据需要更改这些值。如果您计划创建多个流连接，则应当注意 **[!UICONTROL 数据源]** 字段必须唯一。 尝试使用创建另一个流连接 **[!UICONTROL 数据源]** 已用于其他连接将失败。
 
 选择流端点后，您将需要提供流端点 URL 和源。
 
@@ -81,7 +81,7 @@ ht-degree: 72%
 
 源值字段可接受值或数据元素。您可以通过选择位于源值字段旁边的数据元素按钮来添加数据元素。
 
-目標結構描述欄位包含資料集結構描述中定義的XDM欄位路徑。 對於在更深層架構階層定義的欄位，您可以在路徑各部之間使用點(例如： （例如 timeSeriesEvents.eventType）。
+目标架构字段包含数据集架构中定义的XDM字段的路径。 对于在更深层架构层次结构中定义的字段，您可以使用圆点作为路径各部分之间的分隔符(例如 （例如 timeSeriesEvents.eventType）。
 
 ### 架构字段选择器
 
@@ -91,7 +91,7 @@ ht-degree: 72%
 
 ### Adobe Experience Platform 内的标识字段
 
-記錄資料結構描述和時間序列資料結構描述可能包含一或多個身分欄位。 标识字段可拼合到一起组成一个主体的单一标识表示形式，这些字段中包含如下信息：CRM 标识符、Experience Cloud ID (ECID)、浏览器 Cookie、广告 ID 或不同域中的其他 ID 等等。
+记录数据架构和时序数据架构可以包含一个或多个标识字段。 标识字段可拼合到一起组成一个主体的单一标识表示形式，这些字段中包含如下信息：CRM 标识符、Experience Cloud ID (ECID)、浏览器 Cookie、广告 ID 或不同域中的其他 ID 等等。
 
 可以通过以下两种方式在架构内定义标识字段：
 
@@ -116,16 +116,16 @@ ht-degree: 72%
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section.png)
 
-标识映射部分可以包含多个行。每行可以定义一个特定标识类型。您可以為身分定義下列屬性：型別、驗證狀態、主要身分和值。
+标识映射部分可以包含多个行。每行可以定义一个特定标识类型。您可以为标识定义以下属性：类型、已验证状态、主标识和值。
 
 如果标识映射部分中有多个标识，则只能将一个标识标记为主标识。
 
-如果您的結構描述具有 `xdm:identityMap` 欄位，而同時有另一個欄位標示為主要身分欄位，則身分對應區段內的主要身分欄不會顯示。
+如果您的架构具有 `xdm:identityMap` 字段并同时另一个字段标记为主标识字段，则标识映射部分内的主列将不可见。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section-not-primary.png)
 
 ### 必填字段
 
-有些結構描述會有頂層必要欄位。 最常见的顶级必填字段为 `timestamp` 和 `_id`。如果未定义这两个字段，信标将无法正常运行。您可以在架構對應區段中加以定義。
+某些架构将具有顶级必填字段。 最常见的顶级必填字段为 `timestamp` 和 `_id`。如果未定义这两个字段，信标将无法正常运行。您可以在架构映射部分中定义它们。
 
 如果您的架构映射部分中未包含 `timestamp` 或 `_id`，但数据集架构需要使用这两个字段，则 Adobe Experience Platform 扩展将发送包含自动生成值的信标，以便信标可以正常运行。仅当未在架构映射部分中定义这两个字段时，才会将自动生成的值添加到信标数据中。

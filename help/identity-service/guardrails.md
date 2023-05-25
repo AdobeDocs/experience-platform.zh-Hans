@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；身分；身分服務；疑難排解；護欄；指引；限制；
-title: Identity Service的護欄
-description: 本檔案提供Identity Service資料的使用和速率限制相關資訊，以協助您最佳化身分圖表的使用方式。
+keywords: Experience Platform；身份；身份服务；故障排除；护栏；指南；限制；
+title: Identity Service的防护
+description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化对身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
 source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
@@ -10,49 +10,49 @@ ht-degree: 2%
 
 ---
 
-# 護欄 [!DNL Identity Service] 資料
+# 护栏 [!DNL Identity Service] 数据
 
-本檔案提供以下專案的使用與速率限制相關資訊： [!DNL Identity Service] 資料可協助您最佳化身分圖表的使用方式。 檢閱下列護欄時，系統假設您已正確模型化資料。 如果您有任何關於如何建立資料模型的問題，請聯絡您的客戶服務代表。
+本文档提供了以下各项的使用和速率限制信息： [!DNL Identity Service] 数据，以帮助您优化身份图的使用。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
 
 ## 快速入门
 
-下列Experience Platform服務與模型化身分資料有關：
+以下Experience Platform服务涉及对身份数据进行建模：
 
-* [身分](home.md)：橋接擷取至Platform時的不同資料來源身分。
-* [[!DNL Real-Time Customer Profile]](../profile/home.md)：使用來自多個來源的資料建立統一的消費者設定檔。
+* [身份](home.md)：将标识摄取到Platform中时桥接不同数据源中的标识。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md)：使用来自多个源的数据创建统一的使用者配置文件。
 
-## 資料模型限制
+## 数据模型限制
 
-下表提供靜態限制的護欄指南，以及身分名稱空間要考量的驗證規則。
+下表提供了有关静态限制的护栏以及身份命名空间要考虑的验证规则的指南。
 
-### 靜態限制
+### 静态限制
 
-下表概述套用至身分資料的靜態限制。
+下表概述了应用于身份数据的静态限制。
 
-| 護欄 | 限制 | 注释 |
+| 护栏 | 限制 | 注释 |
 | --- | --- | --- |
-| 圖表中的身分數量 | 150 | 此限制會套用至沙箱層級。 一旦達到限制，身分圖表將不會更新。 **注意**：身分圖表中的身分數量上限 **適用於個別合併的設定檔** 為50。 根據具有超過50個身分的身分圖表合併的設定檔會從即時客戶設定檔中排除。 如需詳細資訊，請閱讀以下指南： [設定檔資料的護欄](../profile/guardrails.md). |
-| XDM記錄中的身分數量 | 20 | 需要的XDM記錄數量下限為2。 |
-| 自訂名稱空間的數量 | None | 您可以建立的自訂名稱空間數量沒有限制。 |
-| 圖表數量 | None | 您可以建立的身分圖表數量沒有限制。 |
-| 名稱空間顯示名稱或身分符號的字元數 | None | 名稱空間顯示名稱或身分符號的字元數沒有限制。 |
+| 图表中的身份数 | 150 | 该限制在沙盒级别应用。 一旦达到限制，将不会更新身份图。 **注释**：标识图中的最大标识数 **对于单个合并的配置文件** 是50 Real-Time Customer Profile中排除了基于具有50多个标识的标识图的合并配置文件。 有关详细信息，请阅读以下指南： [配置文件数据的护栏](../profile/guardrails.md). |
+| XDM记录中的标识数 | 20 | 需要的最小XDM记录数为2。 |
+| 自定义命名空间的数量 | None | 您可以创建的自定义命名空间的数量没有限制。 |
+| 图表数量 | None | 您可以创建的标识图的数量没有限制。 |
+| 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
 
-### 身分值驗證
+### 身份值验证
 
-下表概述您必須遵循的現有規則，以確保身分值成功驗證。
+下表概述了为确保成功验证标识值而必须遵循的现有规则。
 
-| 命名空间 | 驗證規則 | 違反規則時的系統行為 |
+| 命名空间 | 验证规则 | 违反规则时的系统行为 |
 | --- | --- | --- |
-| ECID | <ul><li>ECID的身分值必須剛好38個字元。</li><li>ECID的身分值只能包含數字。</li></ul> | <ul><li>如果ECID的身分值不完全是38個字元，則會略過記錄。</li><li>如果ECID的身分值包含非數字字元，則會略過記錄。</li></ul> |
-| 非ECID | 身分值不可超過1024個字元。 | 如果身分值超過1024個字元，則會略過記錄。 |
+| ECID | <ul><li>ECID的标识值必须刚好38个字符。</li><li>ECID的标识值必须仅由数字组成。</li></ul> | <ul><li>如果ECID的标识值不是38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过该记录。</li></ul> |
+| 非ECID | 标识值不能超过1024个字符。 | 如果标识值超过1024个字符，则会跳过该记录。 |
 
-### 身分名稱空間擷取
+### 身份命名空间摄取
 
-自2023年3月31日起，Identity Service將封鎖新客戶的Adobe Analytics ID (AAID)擷取。 此身分通常是透過 [Adobe Analytics來源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager來源](../sources//connectors/adobe-applications/audience-manager.md) 和是多餘的，因為ECID代表相同的網頁瀏覽器。 如果您想要變更此預設設定，請聯絡您的Adobe客戶團隊。
+从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此身份通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
 
 ## 后续步骤
 
-請參閱下列檔案，瞭解更多關於 [!DNL Identity Service]：
+有关以下内容的更多信息，请参阅以下文档 [!DNL Identity Service]：
 
 * [[!DNL Identity Service] 概述](home.md)
-* [身分圖表檢視器](ui/identity-graph-viewer.md)
+* [身份图查看器](ui/identity-graph-viewer.md)

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；通訊協定
+keywords: Experience Platform；主页；热门主题；协议
 solution: Experience Platform
-title: 使用流量服務API探索通訊協定系統
-description: 本教學課程使用流量服務API來探索通訊協定應用程式。
+title: 使用流服务API探索协议系统
+description: 本教程使用流服务API来浏览协议应用程序。
 exl-id: e4b24312-543e-4014-aa53-e8ca9c620950
 source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
@@ -11,50 +11,50 @@ ht-degree: 2%
 
 ---
 
-# 探索通訊協定系統，使用 [!DNL Flow Service] API
+# 使用浏览协议系统 [!DNL Flow Service] API
 
-[!DNL Flow Service] 用於收集及集中Adobe Experience Platform內各種不同來源的客戶資料。 此服務提供可連線所有支援來源的使用者介面和RESTful API。
+[!DNL Flow Service] 用于从Adobe Experience Platform中各种不同的来源收集客户数据并对其进行集中。 该服务提供了一个用户界面和RESTful API，所有受支持的源均可从此API进行连接。
 
-本教學課程使用 [!DNL Flow Service] 用於探索通訊協定應用程式的API。
+本教程使用 [!DNL Flow Service] 用于浏览协议应用程序的API。
 
 ## 快速入门
 
-本指南需要您實際瞭解下列Adobe Experience Platform元件：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [來源](../../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下小節提供您需要瞭解的其他資訊，以便使用成功連線到通訊協定應用程式 [!DNL Flow Service] API。
+以下部分提供了成功连接到协议应用程序所需的其他信息 [!DNL Flow Service] API。
 
-### 取得基礎連線
+### 获取基本连接
 
-為了探索您的通訊協定系統，使用 [!DNL Platform] API，您必須擁有有效的基本連線ID。 如果您尚未建立要使用的通訊協定系統的基礎連線，您可以透過下列教學課程來建立基礎連線：
+为了使用探索您的协议系统 [!DNL Platform] API中，您必须拥有有效的基本连接ID。 如果您还没有要使用的协议系统的基本连接，可以通过以下教程创建一个连接：
 
 * [通用OData](../create/protocols/odata.md)
 
-### 讀取範例API呼叫
+### 正在读取示例API调用
 
-本教學課程提供範例API呼叫，示範如何格式化您的請求。 這些包括路徑、必要的標頭，以及正確格式化的請求裝載。 此外，也提供API回應中傳回的範例JSON。 如需檔案中用於範例API呼叫的慣例相關資訊，請參閱以下章節： [如何讀取範例API呼叫](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑難排解指南。
+本教程提供了示例API调用来演示如何设置请求的格式。 这些资源包括路径、必需的标头和格式正确的请求负载。 此外，还提供了在API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅以下章节： [如何读取示例API调用](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-### 收集必要標題的值
+### 收集所需标题的值
 
-為了呼叫 [!DNL Platform] API，您必須先完成 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en). 完成驗證教學課程後，會在所有標題中提供每個必要標題的值 [!DNL Experience Platform] API呼叫，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将提供所有中所有所需标头的值 [!DNL Experience Platform] API调用，如下所示：
 
-* 授權：持有人 `{ACCESS_TOKEN}`
+* 授权：持有者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{ORG_ID}`
 
-中的所有資源 [!DNL Experience Platform]，包括屬於 [!DNL Flow Service]，會隔離至特定的虛擬沙箱。 的所有要求 [!DNL Platform] API需要標頭，用於指定將在其中執行操作的沙箱名稱：
+中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定的虚拟沙盒隔离。 的所有请求 [!DNL Platform] API需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-包含裝載(POST、PUT、PATCH)的所有請求都需要額外的媒體型別標頭：
+包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的媒体类型标头：
 
 * Content-Type: `application/json`
 
-## 探索您的資料表格
+## 浏览您的数据表
 
-使用通訊協定應用程式的連線ID，您可以透過執行GET請求來探索資料表格。 使用以下呼叫來尋找您要檢查或擷取的表格路徑 [!DNL Platform].
+使用协议应用程序的连接ID，可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或摄取的表的路径 [!DNL Platform].
 
 **API格式**
 
@@ -64,7 +64,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 通訊協定基礎連線的ID。 |
+| `{BASE_CONNECTION_ID}` | 基于协议的连接的ID。 |
 
 **请求**
 
@@ -79,7 +79,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會從通訊協定應用程式傳回資料表陣列。 尋找您要加入的表格 [!DNL Platform] 並記下其 `path` 屬性，因為您必須在下一個步驟中提供它以檢查其結構。
+成功的响应会从协议应用程序中返回表的数组。 查找您要引入的表 [!DNL Platform] 并注意其 `path` 属性，因为您需要在下一步中提供它以检查其结构。
 
 ```json
 [
@@ -114,9 +114,9 @@ curl -X GET \
 ]
 ```
 
-## Inspect表格的結構
+## Inspect表的结构
 
-若要從通訊協定應用程式檢查表格的結構，請在將表格的路徑指定為查詢引數時執行GET要求。
+要从协议应用程序检查表的结构，请在将表的路径指定为查询参数时执行GET请求。
 
 **API格式**
 
@@ -126,8 +126,8 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 通訊協定應用程式的連線ID。 |
-| `{TABLE_PATH}` | 通訊協定應用程式中表格的路徑。 |
+| `{BASE_CONNECTION_ID}` | 协议应用程序的连接ID。 |
+| `{TABLE_PATH}` | 协议应用程序中表的路径。 |
 
 ```shell
 curl -X GET \
@@ -140,7 +140,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回指定資料表的結構。 有關每個表格欄的詳細資訊位於 `columns` 陣列。
+成功的响应将返回指定表的结构。 有关每个表列的详细信息位于 `columns` 数组。
 
 ```json
 {
@@ -188,4 +188,4 @@ curl -X GET \
 
 ## 后续步骤
 
-依照本教學課程，您已探索您的通訊協定應用程式，找到您要擷取的表格路徑 [!DNL Platform]，並取得有關其結構的資訊。 您可以在下一個教學課程中使用此資訊來 [從您的通訊協定應用程式收集資料，並將其帶入Platform](../collect/protocols.md).
+通过完成本教程，您已探索了协议应用，找到了要摄取的表的路径 [!DNL Platform]，并获得了有关其结构的信息。 您可以在下一教程中使用此信息来 [从协议应用程序中收集数据并将其引入平台](../collect/protocols.md).

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 solution: Experience Platform
-title: 使用GitHub網頁介面建立來原始檔頁面
-description: 本檔案提供如何使用GitHub網頁介面來編寫檔案及提交提取請求(PR)的步驟。
+title: 使用GitHub Web界面创建源文档页面
+description: 本文档提供了有关如何使用GitHub Web界面创作文档和提交拉取请求(PR)的步骤。
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,72 +11,72 @@ ht-degree: 2%
 
 ---
 
-# 使用GitHub網頁介面建立來原始檔頁面
+# 使用GitHub Web界面创建源文档页面
 
-本檔案提供如何使用GitHub網頁介面來編寫檔案及提交提取請求(PR)的步驟。
+本文档提供了有关如何使用GitHub Web界面创作文档和提交拉取请求(PR)的步骤。
 
 >[!TIP]
 >
->Adobe投稿指南中的下列檔案可用來進一步支援您的檔案流程： <ul><li>[安裝Git和Markdown編寫工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[在本地设置适用于文档的 Git 存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[针对主要更改的 GitHub 参与工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
+>Adobe投稿指南中的以下文档可用于进一步支持您的文档流程： <ul><li>[安装Git和Markdown创作工具](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[在本地设置适用于文档的 Git 存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[针对主要更改的 GitHub 参与工作流](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
 
-## 設定您的GitHub環境
+## 设置GitHub环境
 
-設定GitHub環境的第一個步驟是導覽至 [Adobe Experience Platform GitHub存放庫](https://github.com/AdobeDocs/experience-platform.en).
+设置GitHub环境的第一步是导航到 [Adobe Experience Platform GitHub存储库](https://github.com/AdobeDocs/experience-platform.en).
 
 ![platform-repo](../assets/platform-repo.png)
 
-接下來，選取 **分支**.
+接下来，选择 **分支**.
 
 ![分支存储库](../assets/fork.png)
 
-復本完成後，請選取 **主版** 並在出現的下拉式選單中輸入新分支的名稱。 請確定您為分支提供描述性名稱，因為這將用於包含您的工作，然後選取 **建立分支**.
+创建分支后，选择 **主控** 并在出现的下拉菜单中为新分支输入名称。 确保为分支提供描述性名称，因为这将用于包含您的工作，然后选择 **创建分支**.
 
-![create-branch](../assets/create-branch.png)
+![create — 分支](../assets/create-branch.png)
 
-在您取用的存放庫的GitHub資料夾結構中，導覽至 [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) 然後從清單中為您的來源選取適當的類別。 例如，如果您正在建立新CRM來源的檔案，請選取 **crm**.
+在分支存储库的GitHub文件夹结构中，导航到 [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) ，然后从列表中选择适合您的源的类别。 例如，如果要为新的CRM源创建文档，请选择 **crm**.
 
 >[!TIP]
 >
->如果您要建立UI的檔案，請導覽至 [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) 並為您的來源選取適當的類別。 若要新增影像，請導覽至 [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) 然後將熒幕擷取畫面新增至 `sdk` 資料夾。
+>如果要为UI创建文档，请导航到 [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) 并为您的源选择相应的类别。 要添加图像，请导航到 [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) 然后将屏幕截图添加到 `sdk` 文件夹。
 
 ![crm](../assets/crm.png)
 
-現有CRM來源的資料夾隨即顯示。 若要新增新來源的檔案，請選取「 」 **新增檔案** 然後選取 **建立新檔案** 從出現的下拉式功能表中。
+此时将显示现有CRM源的文件夹。 要添加新源的文档，请选择 **添加文件** 然后选择 **创建新文件** 从出现的下拉菜单中。
 
 ![create-new-file](../assets/create-new-file.png)
 
-為您的來源檔案命名 `YOURSOURCE.md` 其中YOURSOURCE是您在Platform中的來源名稱。 例如，如果您的公司是ACME CRM，則您的檔案名稱應該是 `acme-crm.md`.
+命名源文件 `YOURSOURCE.md` 其中YOURSOURCE是您在Platform中的源名称。 例如，如果您的公司是ACME CRM，则您的文件名应为 `acme-crm.md`.
 
 ![git-interface](../assets/git-interface.png)
 
-## 為您的來源編寫檔案頁面
+## 为您的源编写文档页面
 
-若要開始製作新來源的檔案，請貼上 [來原始檔範本](./template.md) 移至GitHub網頁編輯器中。 您也可以下載範本 [此處](../assets/api-template.zip).
+要开始记录您的新源，请粘贴以下内容的 [源文档模板](./template.md) 到GitHub Web编辑器中。 您还可以下载模板 [此处](../assets/api-template.zip).
 
-將範本複製到GitHub網頁編輯器介面後，請依照範本上概述的指示操作，並編輯包含來源相關資訊的值。
+将模板复制到GitHub Web编辑器界面后，按照模板中列出的说明操作，并编辑包含源相关信息的值。
 
-![貼上範本](../assets/paste-template.png)
+![paste-template](../assets/paste-template.png)
 
-完成後，在您的分支中提交檔案。
+完成后，在分支中提交文件。
 
-![認可](../assets/commit.png)
+![提交](../assets/commit.png)
 
-## 提交您的檔案以供檢閱
+## 提交您的文档以供审阅
 
-提交檔案後，您可以開啟提取請求(PR)，將工作分支合併到Adobe檔案存放庫的主分支。 確定已選取您正在處理的分支，然後選取 **比較和提取請求**.
+提交文件后，您可以打开拉取请求(PR)，将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您正在处理的分支，然后选择 **比较和拉取请求**.
 
 ![compare-pr](../assets/compare-pr.png)
 
-請確認基底和比較分支正確無誤。 在PR中新增附註，說明您的更新，然後選取 **建立提取請求**. 這會開啟PR，以將您工作的工作分支合併到Adobe存放庫的主分支。
+确保基础分支和比较分支正确无误。 向PR添加注释，描述您的更新，然后选择 **创建拉取请求**. 这将打开一个PR，将您工作的工作分支合并到Adobe存储库的主控分支中。
 
 >[!TIP]
 >
->離開 **允許維護者編輯** 核取方塊已選取，以確保Adobe檔案團隊可以編輯PR。
+>保留 **允许维护者编辑** 已选中此复选框以确保Adobe文档团队可以对PR进行编辑。
 
 ![create-pr](../assets/create-pr.png)
 
-此時，會出現通知，提示您簽署Adobe貢獻者授權合約(CLA)。 此為必要步驟。 在您簽署CLA後，請重新整理PR頁面並提交提取請求。
+此时，将显示一条通知，提示您签署Adobe参与者许可协议(CLA)。 这是强制步骤。 签署CLA后，刷新PR页面并提交拉取请求。
 
-您可以檢查https://github.com/AdobeDocs/experience-platform.en中的「提取請求」標籤，確認提取請求已提交。
+您可以通过检查https://github.com/AdobeDocs/experience-platform.en中的“拉取请求”选项卡，确认已提交拉取请求。
 
 ![confirm-pr](../assets/confirm-pr.png)

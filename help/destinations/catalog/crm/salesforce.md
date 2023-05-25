@@ -1,7 +1,7 @@
 ---
-keywords: crm；CRM；crm目的地；salesforce crm；salesforce crm目的地
-title: Salesforce CRM連線
-description: Salesforce CRM目的地可讓您匯出帳戶資料，並在Salesforce CRM中加以啟用，以符合您的業務需求。
+keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
+title: Salesforce CRM连接
+description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
 source-git-commit: edf49d8a52eeddea65a18c1dad0035ec7e5d2c12
 workflow-type: tm+mt
@@ -10,46 +10,46 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Salesforce CRM] 連線
+# [!DNL Salesforce CRM] 连接
 
 ## 概述 {#overview}
 
-[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) 是熱門的客戶關係管理(CRM)平台，支援下列專案：
+[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) 是一个流行的客户关系管理(CRM)平台，它支持以下内容：
 
-* [銷售機會](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm)  — 潛在客戶是可能對您銷售的產品或服務感興趣（或不感興趣）的個人或公司名稱。
-* [連絡人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm)  — 聯絡人是指您的代表已建立關係且已取得潛在客戶資格的個人。
+* [潜在客户](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm)  — 潜在客户是可能对您销售的产品或服务感兴趣（也可能不感兴趣）的个人或公司的名称。
+* [联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm)  — 联系人是您的代表之一已建立关系并已被认定为潜在客户的个人。
 
-此 [!DNL Adobe Experience Platform] [目的地](/help/destinations/home.md) 可運用 [[!DNL Salesforce composite API]](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_update.htm)，可支援上述兩種設定檔型別。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL Salesforce composite API]](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_update.htm)，它支持上述两种类型的用户档案。
 
-時間 [啟用區段](#activate)，您可在潛在客戶或聯絡人之間選取，並將屬性和區段資料更新至 [!DNL Salesforce CRM].
+时间 [激活区段](#activate)，您可以在潜在客户或联系人之间进行选择，并将属性和区段数据更新到 [!DNL Salesforce CRM].
 
-[!DNL Salesforce CRM] 使用具有密碼授予的OAuth 2作為驗證機制，與Salesforce REST API通訊。 向您的驗證身分的說明 [!DNL Salesforce CRM] 執行個體的詳細資訊如下： [驗證至目的地](#authenticate) 區段。
+[!DNL Salesforce CRM] 将带有密码授予的OAuth 2用作与Salesforce REST API通信的身份验证机制。 向您的验证的说明 [!DNL Salesforce CRM] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-作為行銷人員，您可以根據使用者的Adobe Experience Platform設定檔屬性，將個人化體驗提供給使用者。 您可以從離線資料建立區段，並將這些區段傳送至Salesforce CRM，以便在Adobe Experience Platform中更新區段和設定檔後，立即顯示在使用者的摘要中。
+作为营销人员，您可以根据用户的Adobe Experience Platform配置文件中的属性，为其提供个性化体验。 您可以从离线数据构建区段，并将这些区段发送到Salesforce CRM，以在Adobe Experience Platform中更新区段和配置文件后立即显示在用户的馈送中。
 
 ## 先决条件 {#prerequisites}
 
-### Experience Platform的必要條件 {#prerequisites-in-experience-platform}
+### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在啟用資料至Salesforce CRM目的地之前，您必須擁有 [綱要](/help/xdm/schema/composition.md)， a [資料集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [區段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 建立於 [!DNL Experience Platform].
+在将数据激活到Salesforce CRM目标之前，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-### 中的必要條件 [!DNL Salesforce CRM] {#prerequisites-destination}
+### 中的先决条件 [!DNL Salesforce CRM] {#prerequisites-destination}
 
-請注意下列中的先決條件 [!DNL Salesforce CRM]，將資料從Platform匯出至您的Salesforce帳戶：
+请注意中的以下先决条件 [!DNL Salesforce CRM]，以便将数据从Platform导出到您的Salesforce帐户：
 
-#### 您需要擁有 [!DNL Salesforce] 帳戶 {#prerequisites-account}
+#### 您需要拥有 [!DNL Salesforce] 帐户 {#prerequisites-account}
 
-前往 [!DNL Salesforce] [試用版](https://www.salesforce.com/in/form/signup/freetrial-sales/) 頁面以註冊及建立 [!DNL Salesforce] 帳戶（如果還沒有帳戶）。
+转到 [!DNL Salesforce] [试用版](https://www.salesforce.com/in/form/signup/freetrial-sales/) 页面以注册和创建 [!DNL Salesforce] 帐户（如果您还没有帐户）。
 
-#### 在中設定連線應用程式 [!DNL Salesforce] {#prerequisites-connected-app}
+#### 在中配置连接的应用程序 [!DNL Salesforce] {#prerequisites-connected-app}
 
-首先，您需要設定 [[!DNL Salesforce] 已連線的應用程式](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5) 在您的 [!DNL Salesforce] 帳戶（如果還沒有帳戶）。 [!DNL Salesforce CRM] 將善用已連線的應用程式來連線至 [!DNL Salesforce].
+首先，您需要配置 [[!DNL Salesforce] 连接的应用程序](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&amp;language=en_US&amp;r=https%3A%2F%2Fhelp.salesforce.com%2F&amp;type=5) 在您的 [!DNL Salesforce] 帐户（如果您还没有帐户）。 [!DNL Salesforce CRM] 将利用连接的应用程序连接到 [!DNL Salesforce].
 
-下一步，啟用 [!DNL OAuth Settings for API Integration] 的 [!DNL Salesforce connected app]. 請參閱 [[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 指南檔案。
+下一步，启用 [!DNL OAuth Settings for API Integration] 对于 [!DNL Salesforce connected app]. 请参阅 [[!DNL Salesforce]](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 指导文档。
 
-此外，請確保 [範圍](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 已為「 」選取 [!DNL Salesforce connected app].
+此外，确保 [范围](https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&amp;type=5&amp;language=en_US) 已选择下面提及的 [!DNL Salesforce connected app].
 
 * ``chatter_api``
 * ``lightning``
@@ -62,248 +62,248 @@ ht-degree: 0%
 * ``refresh_token``
 * ``offline_access``
 
-最後，確認 `password` 已在以下專案內啟用授予： [!DNL Salesforce] 帳戶。 請參閱 [!DNL Salesforce] [OAuth 2.0使用者名稱 — 密碼流程（針對特殊情況）](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&amp;type=5) 說明檔案（若您需要指引）。
+最后，确保 `password` 授权已在以下位置启用： [!DNL Salesforce] 帐户。 请参阅 [!DNL Salesforce] [用于特殊方案的OAuth 2.0用户名 — 密码流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_username_password_flow.htm&amp;type=5) 文档（如果您需要指南）。
 
 >[!IMPORTANT]
 >
->若您的 [!DNL Salesforce] 帳戶管理員已限制受信任IP範圍的存取權，您需要聯絡他們以取得 [EXPERIENCE PLATFORMIP](/help/destinations/catalog/streaming/ip-address-allow-list.md) 加入允許清單。 請參閱 [!DNL Salesforce] [限制連線應用程式可信任的IP範圍存取](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 說明檔案（若您需要其他指引）。
+>如果您的 [!DNL Salesforce] 帐户管理员限制了对受信任IP范围的访问，您需要联系他们以获取 [Experience PlatformIP的](/help/destinations/catalog/streaming/ip-address-allow-list.md) 已列入允许列表 请参阅 [!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档（如果您需要其他指导）。
 
-#### 在中建立自訂欄位 [!DNL Salesforce] {#prerequisites-custom-field}
+#### 在中创建自定义字段 [!DNL Salesforce] {#prerequisites-custom-field}
 
-將區段啟用至 [!DNL Salesforce CRM] 目的地，您必須在 **[!UICONTROL 對應ID]** 欄位中每個已啟用的區段 **[區段排程](#schedule-segment-export-example)** 步驟。
+将区段激活到 [!DNL Salesforce CRM] 目标，则必须在 **[!UICONTROL 映射Id]** 每个已激活区段的字段，位于 **[区段计划](#schedule-segment-export-example)** 步骤。
 
-[!DNL Salesforce CRM] 需要此值才能正確讀取和解讀來自Experience Platform的區段，並在中更新其區段狀態 [!DNL Salesforce]. 請參閱Experience Platform檔案以瞭解 [區段會籍詳細資料結構描述欄位群組](/help/xdm/field-groups/profile/segmentation.md) 如果您需要區段狀態的指引。
+[!DNL Salesforce CRM] 需要此值才能正确读取和解释从Experience Platform传入的区段，并在中更新其区段状态 [!DNL Salesforce]. 请参阅Experience Platform文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
 
-對於您從Platform啟用的每個區段 [!DNL Salesforce CRM]，您需要建立型別的自訂欄位 `Text Area (Long)` 範圍 [!DNL Salesforce]. 您可以根據您的業務需求，定義任何大小的欄位字元長度，介於256到131,072個字元之間。 請參閱 [!DNL Salesforce] [自訂欄位型別](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5) 說明檔案頁面，以取得自訂欄位型別的其他資訊。 另請參閱 [!DNL Salesforce] 檔案至 [建立自訂欄位](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您需要欄位建立的協助。
+对于您从Platform激活到的每个区段 [!DNL Salesforce CRM]，您需要创建类型的自定义字段 `Text Area (Long)` 范围 [!DNL Salesforce]. 您可以根据业务需求定义任意大小的字段字符长度，长度为256 - 131,072个字符。 请参阅 [!DNL Salesforce] [自定义字段类型](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5) 文档页面，以了解有关自定义字段类型的更多信息。 另请参阅 [!DNL Salesforce] 文档目标 [创建自定义字段](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您在字段创建方面需要帮助。
 
 >[!IMPORTANT]
 >
->請勿在欄位名稱中包含空白字元。 請改用底線 `(_)` 分隔符號的字元。
->範圍 [!DNL Salesforce] 您必須使用建立自訂欄位 **[!UICONTROL 欄位名稱]** 完全符合中指定的值 **[!UICONTROL 對應ID]** 用於每個已啟動的Platform區段。 例如，底下熒幕擷圖顯示一個自訂欄位，名為 `crm_2_seg`. 啟用區段至此目的地時，新增 `crm_2_seg` 作為 **[!UICONTROL 對應ID]** 將區段對象從Experience Platform填入此自訂欄位。
+>请勿在字段名称中包含空白字符。 请改用下划线 `(_)` 字符。
+>范围 [!DNL Salesforce] 您必须使用创建自定义字段 **[!UICONTROL 字段名称]** 与中指定的值完全匹配的值 **[!UICONTROL 映射Id]** 每个已激活的Platform区段。 例如，下面的屏幕快照显示了一个名为的自定义字段 `crm_2_seg`. 将区段激活到此目标时，添加 `crm_2_seg` 作为 **[!UICONTROL 映射Id]** 用于将Experience Platform中的区段受众填充到此自定义字段中。
 
-在中建立自訂欄位的範例 [!DNL Salesforce]， *步驟1 — 選取資料型別*，如下所示：
-![Salesforce UI熒幕擷圖顯示自訂欄位建立，步驟1 — 選取資料型別。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-1.png)
+中的自定义字段创建示例 [!DNL Salesforce]， *步骤1 — 选择数据类型*，如下所示：
+![显示自定义字段创建的Salesforce UI屏幕快照，步骤1 — 选择数据类型。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-1.png)
 
-在中建立自訂欄位的範例 [!DNL Salesforce]， *步驟2 — 輸入自訂欄位的詳細資料*，如下所示：
-![顯示自訂欄位建立的Salesforce UI熒幕擷圖，步驟2 — 輸入自訂欄位的詳細資料。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-2.png)
+中的自定义字段创建示例 [!DNL Salesforce]， *步骤2 — 输入自定义字段的详细信息*，如下所示：
+![显示自定义字段创建的Salesforce UI屏幕快照，步骤2 — 输入自定义字段的详细信息。](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-2.png)
 
 >[!TIP]
 >
->* 區分用於Platform區段的自訂欄位和中的其他自訂欄位 [!DNL Salesforce] 建立自訂欄位時，您可以包含可辨識的前置詞或後置詞。 例如，而非 `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`
->* 如果您已在中建立其他自訂欄位 [!DNL Salesforce]，您可以使用與Platform區段相同的名稱，輕鬆識別 [!DNL Salesforce].
+>* 区分用于Platform区段的自定义字段和中的其他自定义字段 [!DNL Salesforce] 创建自定义字段时，您可以包含可识别的前缀或后缀。 例如，而不是 `test_segment`，使用 `Adobe_test_segment` 或 `test_segment_Adobe`
+>* 如果您已在中创建其他自定义字段 [!DNL Salesforce]，您可以使用与Platform区段相同的名称，以便轻松地识别中的区段 [!DNL Salesforce].
 
 
 >[!NOTE]
 >
->* Salesforce中的物件限製為25個外部欄位，請參閱 [自訂欄位屬性](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
->* 此限制表示您在任何時候最多只能有25個作用中的Experience Platform區段會籍。
->* 如果您在Salesforce中達到此限制，則必須先從Salesforce中移除用來針對Experience Platform中舊區段儲存區段狀態的自訂屬性，然後再新增屬性 **[!UICONTROL 對應ID]** 可使用。
+>* Salesforce中的对象限制为25个外部字段，请参阅 [自定义字段属性](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
+>* 此限制意味着您在任何时候最多只能有25个Experience Platform区段成员资格处于活动状态。
+>* 如果您在Salesforce中达到此限制，则必须先从Salesforce中删除用于存储Experience Platform中旧区段的区段状态的自定义属性，然后再存储新区段 **[!UICONTROL 映射Id]** 可以使用。
 
 
-#### 收集 [!DNL Salesforce CRM] 認證 {#gather-credentials}
+#### 收集 [!DNL Salesforce CRM] 凭据 {#gather-credentials}
 
-在驗證之前，請記下以下專案 [!DNL Salesforce CRM] 目的地：
+在对进行身份验证之前，请记下以下各项 [!DNL Salesforce CRM] 目标：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `Username` | 您的 [!DNL Salesforce] 帳戶使用者名稱。 |  |
-| `Password` | 您的 [!DNL Salesforce] 帳戶密碼。 |  |
-| `Security Token` | 您的 [!DNL Salesforce] 安全性Token，您稍後會將其附加至您的 [!DNL Salesforce] 用來建立串連字串的密碼，以用作 **[!UICONTROL 密碼]** 時間 [正在向目的地進行驗證](#authenticate).<br> 請參閱 [!DNL Salesforce] 檔案至 [重設您的安全性權杖](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5) 以瞭解如何從重新產生 [!DNL Salesforce] 介面（如果您沒有安全性權杖）。 |  |
-| `Custom Domain` | 您的 [!DNL Salesforce] 網域前置詞。 <br> 請參閱 [[!DNL Salesforce] 檔案](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) 以瞭解如何從取得此值 [!DNL Salesforce] 介面。 | 若您的 [!DNL Salesforce] 網域是<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，<br> 您將需要 `d5i000000isb4eak-dev-ed` 做為值。 |
-| `Client ID` | 您的Salesforce `Consumer Key`. <br> 請參閱 [[!DNL Salesforce] 檔案](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 以瞭解如何從取得此值 [!DNL Salesforce] 介面。 |  |
-| `Client Secret` | 您的Salesforce `Consumer Secret`. <br> 請參閱 [[!DNL Salesforce] 檔案](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 以瞭解如何從取得此值 [!DNL Salesforce] 介面。 |  |
+| `Username` | 您的 [!DNL Salesforce] 帐户用户名。 |  |
+| `Password` | 您的 [!DNL Salesforce] 帐户密码。 |  |
+| `Security Token` | 您的 [!DNL Salesforce] 安全令牌，您稍后会将其附加到您的令牌的末尾。 [!DNL Salesforce] 用于创建要用作 **[!UICONTROL 密码]** 时间 [向目标进行身份验证](#authenticate).<br> 请参阅 [!DNL Salesforce] 文档目标 [重置安全令牌](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5) 以了解如何从重新生成 [!DNL Salesforce] 界面（如果您没有安全令牌）。 |  |
+| `Custom Domain` | 您的 [!DNL Salesforce] 域前缀。 <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) 以了解如何从获取此值 [!DNL Salesforce] 界面。 | 如果您的 [!DNL Salesforce] 域为<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，<br> 您将需要 `d5i000000isb4eak-dev-ed` 作为值。 |
+| `Client ID` | 您的Salesforce `Consumer Key`. <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 以了解如何从获取此值 [!DNL Salesforce] 界面。 |  |
+| `Client Secret` | 您的Salesforce `Consumer Secret`. <br> 请参阅 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) 以了解如何从获取此值 [!DNL Salesforce] 界面。 |  |
 
 ### 护栏 {#guardrails}
 
-[!DNL Salesforce] 透過強制要求、速率和逾時限制，平衡交易載入。 請參閱 [API要求限制和配置](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) 以取得詳細資訊。
+[!DNL Salesforce] 通过设置请求、速率和超时限制来平衡事务加载。 请参阅 [API请求限制和分配](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) 了解详细信息。
 
-若您的 [!DNL Salesforce] 帳戶管理員已強制執行IP限制，您將需要新增 [Experience PlatformIP位址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 至您的 [!DNL Salesforce] 帳戶的受信任IP範圍。 請參閱 [!DNL Salesforce] [限制連線應用程式可信任的IP範圍存取](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 說明檔案（若您需要其他指引）。
+如果您的 [!DNL Salesforce] 帐户管理员已强制执行IP限制，您需要添加 [Experience PlatformIP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 敬您的 [!DNL Salesforce] 帐户的受信任IP范围。 请参阅 [!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档（如果您需要其他指导）。
 
 >[!IMPORTANT]
 >
->時間 [啟用區段](#activate) 您必須選取 *連絡人* 或 *銷售機會* 型別。 您需要確保區段具有根據所選型別的適當資料對應。
+>时间 [激活区段](#activate) 您必须选择以下任一选项 *联系人* 或 *商机* 类型。 您需要确保区段具有适合选定类型的数据映射。
 
-## 支援的身分 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
-[!DNL Salesforce CRM] 支援下表中描述的身分更新。 進一步瞭解 [身分](/help/identity-service/namespaces.md).
+[!DNL Salesforce CRM] 支持更新下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
 
-| 目標身分 | 描述 | 注意事项 |
+| 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| `SalesforceId` | 此 [!DNL Salesforce CRM] 您透過區段匯出或更新之聯絡人或潛在客戶身分的識別碼。 | 強制 |
+| `SalesforceId` | 此 [!DNL Salesforce CRM] 通过区段导出或更新之联系人或潜在客户身份的标识符。 | 必需 |
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-請參閱下表以取得目的地匯出型別和頻率的資訊。
+有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 匯出型別 | **[!UICONTROL 以設定檔為基礎]** | <ul><li>您正在匯出區段的所有成員，以及所需的結構描述欄位 *（例如：電子郵件地址、電話號碼、姓氏）*，根據您的欄位對應。</li><li> 中的每個區段狀態 [!DNL Salesforce CRM] 會根據 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example) 步驟。</li></ul> |
-| 匯出頻率 | **[!UICONTROL 串流]** | <ul><li>串流目的地是「一律開啟」的API型連線。 一旦設定檔根據區段評估在Experience Platform中更新，聯結器就會將更新傳送至下游的目標平台。 深入瞭解 [串流目的地](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Salesforce CRM] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!IMPORTANT]
 >
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md). 在設定目標工作流程中，填寫以下兩個區段中列出的欄位。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-範圍 **[!UICONTROL 目的地]** > **[!UICONTROL 目錄]** 搜尋 [!DNL Salesforce CRM]. 或者，您也可以在 **[!UICONTROL CRM]** 類別。
+范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Salesforce CRM]. 或者，您也可以在 **[!UICONTROL CRM]** 类别。
 
-### 驗證至目的地 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
-若要驗證到目的地，請填寫以下必填欄位並選取 **[!UICONTROL 連線到目的地]**. 請參閱 [收集 [!DNL Salesforce CRM] 認證](#gather-credentials) 區段以取得指引。
-|認證 |說明 | | — | — | | **[!UICONTROL 使用者名稱]** |您的 [!DNL Salesforce] 帳戶使用者名稱。 | | **[!UICONTROL 密碼]** |由下列專案組成的串連字串： [!DNL Salesforce] 帳戶密碼已附加您的 [!DNL Salesforce] 安全性權杖。<br>串連值採用以下形式 `{PASSWORD}{TOKEN}`.<br> 請注意，請勿使用任何大括弧或空格。<br>例如，如果您的 [!DNL Salesforce] 密碼為 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全性權杖為 `TOKEN12345....0000`，即您將在下列專案中使用的串連值： **[!UICONTROL 密碼]** 欄位是 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自訂網域]** |您的 [!DNL Salesforce] 網域前置詞。 <br>例如，如果您的網域為 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 做為值。 | | **[!UICONTROL 使用者端ID]** |您的 [!DNL Salesforce] 已連線的應用程式 `Consumer Key`. | | **[!UICONTROL 使用者端密碼]** |您的 [!DNL Salesforce] 已連線的應用程式 `Consumer Secret`. |
+要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce CRM] 凭据](#gather-credentials) 部分获取任何指导。
+|凭据 |描述 | | — | — | | **[!UICONTROL 用户名]** |您的 [!DNL Salesforce] 帐户用户名。 | | **[!UICONTROL 密码]** |由以下对象组成的连接字符串： [!DNL Salesforce] 帐户密码已附加您的 [!DNL Salesforce] 安全令牌。<br>连接值采用以下形式 `{PASSWORD}{TOKEN}`.<br> 注意，请勿使用任何大括号或空格。<br>例如，如果 [!DNL Salesforce] 密码为 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全令牌为 `TOKEN12345....0000`，即您将在以下位置使用的拼接值： **[!UICONTROL 密码]** 字段为 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自定义域]** |您的 [!DNL Salesforce] 域前缀。 <br>例如，如果您的域是 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 作为值。 | | **[!UICONTROL 客户端ID]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Key`. | | **[!UICONTROL 客户端密码]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Secret`. |
 
-![顯示如何驗證的平台UI熒幕擷圖。](../../assets/catalog/crm/salesforce/authenticate-destination.png)
+![显示如何进行身份验证的Platform UI屏幕快照。](../../assets/catalog/crm/salesforce/authenticate-destination.png)
 
-如果提供的詳細資料有效，UI會顯示 **[!UICONTROL 已連線]** 狀態，並顯示綠色核取記號，您就可以繼續進行下一個步驟。
+如果提供的详细信息有效，则UI将显示 **[!UICONTROL 已连接]** 状态，带有绿色复选标记，您可以继续下一步骤。
 
-### 填寫目的地詳細資料 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
-若要設定目的地的詳細資訊，請填寫下列必要和選用欄位。 UI中欄位旁的星號表示該欄位為必填。
-* **[!UICONTROL 名稱]**：您日後用來辨識此目的地的名稱。
-* **[!UICONTROL 說明]**：可協助您日後識別此目的地的說明。
-* **[!UICONTROL Salesforce ID型別]**：
-   * 選取 **[!UICONTROL 連絡人]** 如果您要匯出或更新身分的型別為 *連絡人*.
-   * 選取 **[!UICONTROL 銷售機會]** 如果您要匯出或更新身分的型別為 *銷售機會*.
+要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+* **[!UICONTROL 名称]**：将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL Salesforce ID类型]**：
+   * 选择 **[!UICONTROL 联系人]** 如果您要导出或更新身份属于类型 *联系人*.
+   * 选择 **[!UICONTROL 商机]** 如果您要导出或更新身份属于类型 *商机*.
 
-![顯示目的地詳細資訊的平台UI熒幕擷圖。](../../assets/catalog/crm/salesforce/destination-details.png)
+![显示目标详细信息的Platform UI屏幕快照。](../../assets/catalog/crm/salesforce/destination-details.png)
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-讀取 [對串流區段匯出目的地啟用設定檔和區段](/help/destinations/ui/activate-segment-streaming-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-### 對應考量事項和範例 {#mapping-considerations-example}
+### 映射注意事项和示例 {#mapping-considerations-example}
 
-若要正確將對象資料從Adobe Experience Platform傳送至 [!DNL Salesforce CRM] 目的地，您必須完成欄位對應步驟。 對應包括在Platform帳戶中的Experience Data Model (XDM)結構描述欄位與來自目標目的地的對應對應對應專案之間建立連結。
+要正确地将受众数据从Adobe Experience Platform发送到 [!DNL Salesforce CRM] 目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的Experience Data Model (XDM)架构字段与其与目标目标中的相应等效字段之间创建链接。
 
-中指定的屬性 **[!UICONTROL 目標欄位]** 應與「屬性對應」表格中所述完全相同的名稱，因為這些屬性會形成請求內文。
+中指定的属性 **[!UICONTROL 目标字段]** 应按照“属性映射”表中的说明进行命名，因为这些属性将构成请求正文。
 
-中指定的屬性 **[!UICONTROL 來源欄位]** 請勿遵循任何此類限制。 您可以視需要加以對應，但請確定輸入資料的格式根據 [[!DNL Salesforce] 檔案](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5). 如果輸入資料無效，更新呼叫至 [!DNL Salesforce] 將會失敗，您的連絡人/潛在客戶將不會更新。
+中指定的属性 **[!UICONTROL 源字段]** 请勿遵守任何此类限制。 您可以根据需要进行映射，但请确保输入数据的格式根据 [[!DNL Salesforce] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5). 如果输入数据无效，则更新调用 [!DNL Salesforce] 将失败，您的联系人/潜在客户将无法更新。
 
-若要正確將XDM欄位對應至 [!DNL (API) Salesforce CRM] 目的地欄位，請依照下列步驟操作：
+要将XDM字段正确映射到 [!DNL (API) Salesforce CRM] 目标字段，请执行以下步骤：
 
-1. 在 **[!UICONTROL 對應]** 步驟，選取 **[!UICONTROL 新增對應]**，您會在畫面上看到新的對應列。
-   ![「新增對應」的平台UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/add-new-mapping.png)
-1. 在 **[!UICONTROL 選取來源欄位]** 視窗，選擇 **[!UICONTROL 選取屬性]** 類別並選取XDM屬性，或選擇 **[!UICONTROL 選取身分名稱空間]** 並選取身分。
-1. 在 **[!UICONTROL 選取目標欄位]** 視窗，選擇 **[!UICONTROL 選取身分名稱空間]** 並選取身分或選擇 **[!UICONTROL 選取自訂屬性]** 類別並選取屬性，或使用 **[!UICONTROL 屬性名稱]** 欄位。 請參閱 [[!DNL Salesforce CRM] 檔案](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5) 以取得支援屬性的指引。
-   * 重複這些步驟，在您的XDM設定檔結構描述和之間新增以下對應 [!DNL (API) Salesforce CRM]：
+1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**，您将在屏幕上看到一个新映射行。
+   ![“添加新映射”的平台UI屏幕快照示例。](../../assets/catalog/crm/salesforce/add-new-mapping.png)
+1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择属性]** 类别并选择XDM属性或选择 **[!UICONTROL 选择身份命名空间]** 并选择身份。
+1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 并选择身份或选择 **[!UICONTROL 选择自定义属性]** 类别并选择属性，或者使用 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Salesforce CRM] 文档](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5) 以获取有关支持的属性的指导。
+   * 重复这些步骤以在XDM配置文件架构和 [!DNL (API) Salesforce CRM]：
 
-   **使用連絡人**
+   **使用联系人**
 
-   * 如果您使用的是 *連絡人* 在區段內，請參閱Salesforce中的物件參考以瞭解 [連絡人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) 以定義要更新欄位的對應。
-   * 您可以搜尋字詞來識別必填欄位 *必填*，如上述連結的欄位說明中所述。
-   * 根據您要匯出或更新之欄位，在您的XDM設定檔結構描述和之間新增對應 [!DNL (API) Salesforce CRM]： |來源欄位|目標欄位|附註 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 連絡人的姓氏，最多80個字元。 |\
-      |`xdm: person.name.firstName`|`Attribute: FirstName`|連絡人的名字，最多40個字元。 | |`xdm: personalEmail.address`|`Attribute: Email`|連絡人的電子郵件地址。 |
+   * 如果您使用的是 *联系人* 在区段中，请参阅Salesforce中的对象引用，以了解 [联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) 为要更新的字段定义映射。
+   * 您可以通过搜索单词来标识必填字段 *必需*，如上述链接中的字段描述中所述。
+   * 根据要导出或更新字段，在XDM配置文件架构和 [!DNL (API) Salesforce CRM]： |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 联系人的姓氏，最多80个字符。 |\
+      |`xdm: person.name.firstName`|`Attribute: FirstName`|联系人的名字，最多40个字符。 | |`xdm: personalEmail.address`|`Attribute: Email`|联系人的电子邮件地址。 |
 
-   * 使用這些對應的範例如下所示：
-      ![顯示Target對應的平台UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
+   * 下面显示了使用这些映射的示例：
+      ![显示Target映射的平台UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
 
-   **使用銷售機會**
+   **使用潜在客户**
 
-   * 如果您使用的是 *銷售機會* 在區段內，請參閱Salesforce中的物件參考以瞭解 [銷售機會](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) 以定義要更新欄位的對應。
-   * 您可以搜尋字詞來識別必填欄位 *必填*，如上述連結的欄位說明中所述。
-   * 根據您要匯出或更新之欄位，在您的XDM設定檔結構描述和之間新增對應 [!DNL (API) Salesforce CRM]： |來源欄位|目標欄位|附註 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 潛在客戶的姓氏最多可達80個字元。 |\
-      |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. 潛在客戶的公司。 | |`xdm: personalEmail.address`|`Attribute: Email`|潛在客戶的電子郵件地址。 |
+   * 如果您使用的是 *潜在客户* 在区段中，请参阅Salesforce中的对象引用，以了解 [商机](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) 为要更新的字段定义映射。
+   * 您可以通过搜索单词来标识必填字段 *必需*，如上述链接中的字段描述中所述。
+   * 根据要导出或更新字段，在XDM配置文件架构和 [!DNL (API) Salesforce CRM]： |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 潜在客户的姓氏最多为80个字符。 |\
+      |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. 潜在客户的公司。 | |`xdm: personalEmail.address`|`Attribute: Email`|商机的电子邮件地址。 |
 
-   * 使用這些對應的範例如下所示：
-      ![顯示Target對應的平台UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/mappings-leads.png)
-
-
-
-當您完成提供目的地連線的對應時，請選取 **[!UICONTROL 下一個]**.
-
-### 排程區段匯出和範例 {#schedule-segment-export-example}
-
-執行 [排程區段匯出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 您必須手動將從Platform啟用的區段對應至中其對應的自訂欄位 [!DNL Salesforce].
-
-若要這麼做，請選取每個區段，然後輸入自訂欄位名稱 [!DNL Salesforce] 在 [!DNL Salesforce CRM] **[!UICONTROL 對應ID]** 欄位。 請參閱 [在中建立自訂欄位 [!DNL Salesforce]](#prerequisites-custom-field) 建立自訂欄位的相關指引和最佳作法區段 [!DNL Salesforce].
-
-例如，如果您的 [!DNL Salesforce] 自訂欄位是 `crm_2_seg`，請在 [!DNL Salesforce CRM] **[!UICONTROL 對應ID]** 將區段對象從Experience Platform填入此自訂欄位。
-
-自訂欄位範例 [!DNL Salesforce] 如下所示：
-![[!DNL Salesforce] 顯示自訂欄位的UI熒幕擷圖。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
-
-指示位置的 [!DNL Salesforce CRM] **[!UICONTROL 對應ID]** 如下所示：
-![顯示「排程區段匯出」的Platform UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
-
-如上所示 [!DNL Salesforce] **[!UICONTROL 欄位名稱]** 完全符合「 」中指定的值 [!DNL Salesforce CRM] **[!UICONTROL 對應ID]**.
-
-根據您的使用案例，所有已啟用的區段皆可對應至相同的 [!DNL Salesforce] 自訂欄位或變更為其他 **[!UICONTROL 欄位名稱]** 在 [!DNL Salesforce CRM]. 以上圖影像為基礎的典型範例可能是。
-| [!DNL Salesforce CRM] 區段名稱 | [!DNL Salesforce] **[!UICONTROL 欄位名稱]** | [!DNL Salesforce CRM] **[!UICONTROL 對應ID]** | | — | — | — | | crm_1_seg | `crm_1_seg` | `crm_1_seg` | | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
-
-對每個已啟動的Platform區段重複此章節。
-
-## 驗證資料匯出 {#exported-data}
-
-若要驗證您是否已正確設定目的地，請遵循下列步驟：
-
-1. 選取 **[!UICONTROL 目的地]** > **[!UICONTROL 瀏覽]** 以導覽至目的地清單。
-   ![顯示「瀏覽目的地」的平台UI熒幕擷圖。](../../assets/catalog/crm/salesforce/browse-destinations.png)
-
-1. 選取目的地並驗證狀態是否為 **[!UICONTROL 已啟用]**.
-   ![顯示目的地資料流執行的平台UI熒幕擷圖。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
-
-1. 切換至 **[!UICONTROL 啟用資料]** 標籤，然後選取區段名稱。
-   ![顯示目的地啟用資料的平台UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
-
-1. 監控區段摘要，並確保設定檔計數對應於在區段內建立的計數。
-   ![顯示區段的平台UI熒幕擷圖範例。](../../assets/catalog/crm/salesforce/segment.png)
-
-1. 最後，登入Salesforce網站並驗證區段中的設定檔是否已新增或更新。
-
-   **使用連絡人**
-
-   * 如果您已選取 *連絡人* 在您的Platform區段中，導覽至 **[!DNL Apps]** > **[!DNL Contacts]** 頁面。
-      ![Salesforce CRM熒幕擷圖顯示具有區段設定檔的「連絡人」頁面。](../../assets/catalog/crm/salesforce/contacts.png)
-
-   * 選取 *連絡人* 並檢查欄位是否已更新。 您可以在中看到每個區段狀態 [!DNL Salesforce CRM] 已根據「 」更新Platform中的對應區段狀態 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example).
-      ![Salesforce CRM熒幕擷取畫面顯示「聯絡人詳細資料」頁面，其中包含更新的區段狀態。](../../assets/catalog/crm/salesforce/contact-info.png)
-
-   **使用銷售機會**
-
-   * 如果您已選取 *銷售機會* 在您的Platform區段內，然後導覽至 **[!DNL Apps]** > **[!DNL Leads]** 頁面。
-      ![Salesforce CRM熒幕擷圖顯示具有區段設定檔的銷售機會頁面。](../../assets/catalog/crm/salesforce/leads.png)
-
-   * 選取 *銷售機會* 並檢查欄位是否已更新。 您可以在中看到每個區段狀態 [!DNL Salesforce CRM] 已根據「 」更新Platform中的對應區段狀態 **[!UICONTROL 對應ID]** 值期間提供 [區段排程](#schedule-segment-export-example).
-      ![Salesforce CRM熒幕擷圖顯示具有更新區段狀態的「銷售機會詳細資訊」頁面。](../../assets/catalog/crm/salesforce/lead-info.png)
+   * 下面显示了使用这些映射的示例：
+      ![显示Target映射的平台UI屏幕快照示例。](../../assets/catalog/crm/salesforce/mappings-leads.png)
 
 
-## 資料使用與控管 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請參閱 [資料控管概觀](/help/data-governance/home.md).
+完成提供目标连接的映射后，选择 **[!UICONTROL 下一个]**.
 
-## 錯誤與疑難排解 {#errors-and-troubleshooting}
+### 计划区段导出和示例 {#schedule-segment-export-example}
 
-### 將事件推播到目的地時遇到未知錯誤 {#unknown-errors}
+执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤您必须手动将从Platform激活的区段映射到中对应的自定义字段 [!DNL Salesforce].
 
-* 檢查資料流執行時，您可能會遇到下列錯誤訊息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
+要实现此目的，请选择每个区段，然后从中输入自定义字段名称 [!DNL Salesforce] 在 [!DNL Salesforce CRM] **[!UICONTROL 映射Id]** 字段。 请参阅 [在中创建自定义字段 [!DNL Salesforce]](#prerequisites-custom-field) 有关在中创建自定义字段的指导和最佳实践的部分 [!DNL Salesforce].
 
-   ![平台UI熒幕擷圖顯示錯誤。](../../assets/catalog/crm/salesforce/error.png)
+例如，如果您的 [!DNL Salesforce] 自定义字段为 `crm_2_seg`，请在 [!DNL Salesforce CRM] **[!UICONTROL 映射Id]** 用于将Experience Platform中的区段受众填充到此自定义字段中。
 
-   * 若要修正此錯誤，請確認 **[!UICONTROL 對應ID]** 您在啟用工作流程中提供的資料給 [!DNL Salesforce CRM] 目的地與您在中建立的自訂欄位型別的值完全相符 [!DNL Salesforce]. 請參閱 [在中建立自訂欄位 [!DNL Salesforce]](#prerequisites-custom-field) 區段以取得指引。
+中的自定义字段示例 [!DNL Salesforce] 如下所示：
+![[!DNL Salesforce] 显示自定义字段的UI屏幕快照。](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
-* 啟用區段時，您可能會收到錯誤訊息： `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
-   * 若要修正此錯誤，請連絡 [!DNL Salesforce] 要新增的帳戶管理員 [Experience PlatformIP位址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 至您的 [!DNL Salesforce] 帳戶的受信任IP範圍。 請參閱 [!DNL Salesforce] [限制連線應用程式可信任的IP範圍存取](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 說明檔案（若您需要其他指引）。
+一个示例，指示的位置 [!DNL Salesforce CRM] **[!UICONTROL 映射Id]** 如下所示：
+![显示计划区段导出的平台UI屏幕截图示例。](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
+
+如上所示 [!DNL Salesforce] **[!UICONTROL 字段名称]** 与 [!DNL Salesforce CRM] **[!UICONTROL 映射Id]**.
+
+根据您的用例，所有激活的区段都可以映射到相同的 [!DNL Salesforce] 自定义字段或更改为其他字段 **[!UICONTROL 字段名称]** 在 [!DNL Salesforce CRM]. 基于上述图像的典型示例可以是。
+| [!DNL Salesforce CRM] 区段名称 | [!DNL Salesforce] **[!UICONTROL 字段名称]** | [!DNL Salesforce CRM] **[!UICONTROL 映射Id]** | | — | — | — | | crm_1_seg | `crm_1_seg` | `crm_1_seg` | | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
+
+对每个激活的Platform区段重复此部分。
+
+## 验证数据导出 {#exported-data}
+
+要验证您是否正确设置了目标，请执行以下步骤：
+
+1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 导航到目标列表。
+   ![显示浏览目标的平台UI屏幕截图。](../../assets/catalog/crm/salesforce/browse-destinations.png)
+
+1. 选择目标并验证状态为 **[!UICONTROL 已启用]**.
+   ![显示目标数据流运行的平台UI屏幕截图。](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
+
+1. 切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择区段名称。
+   ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
+
+1. 监控区段摘要，并确保配置文件计数对应于在区段内创建的计数。
+   ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/crm/salesforce/segment.png)
+
+1. 最后，登录Salesforce网站并验证区段中的用户档案是否已添加或更新。
+
+   **使用联系人**
+
+   * 如果已选择 *联系人* 在您的Platform区段中，导航到 **[!DNL Apps]** > **[!DNL Contacts]** 页面。
+      ![Salesforce CRM屏幕快照，其中显示具有区段用户档案的“联系人”页面。](../../assets/catalog/crm/salesforce/contacts.png)
+
+   * 选择 *联系人* 并检查字段是否已更新。 您可以在中看到每个区段状态 [!DNL Salesforce CRM] 已根据，从Platform更新了相应的区段状态 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example).
+      ![Salesforce CRM屏幕截图，其中显示具有更新后的区段状态的“联系人详细信息”页面。](../../assets/catalog/crm/salesforce/contact-info.png)
+
+   **使用潜在客户**
+
+   * 如果已选择 *潜在客户* 在Platform区段中，导航到 **[!DNL Apps]** > **[!DNL Leads]** 页面。
+      ![Salesforce CRM屏幕截图，其中显示具有区段中的配置文件的“潜在客户”页面。](../../assets/catalog/crm/salesforce/leads.png)
+
+   * 选择 *商机* 并检查字段是否已更新。 您可以在中看到每个区段状态 [!DNL Salesforce CRM] 已根据，从Platform更新了相应的区段状态 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example).
+      ![Salesforce CRM屏幕截图，其中显示具有更新的区段状态的“潜在客户详细信息”页面。](../../assets/catalog/crm/salesforce/lead-info.png)
+
+
+## 数据使用和管理 {#data-usage-governance}
+
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](/help/data-governance/home.md).
+
+## 错误和疑难解答 {#errors-and-troubleshooting}
+
+### 将事件推送到目标时遇到了未知错误 {#unknown-errors}
+
+* 在检查数据流运行时，您可能会遇到以下错误消息： `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
+
+   ![平台UI屏幕截图显示错误。](../../assets/catalog/crm/salesforce/error.png)
+
+   * 要修复此错误，请验证 **[!UICONTROL 映射Id]** 您在激活工作流中提供给的 [!DNL Salesforce CRM] 目标与您在中创建的自定义字段类型的值完全匹配 [!DNL Salesforce]. 请参阅 [在中创建自定义字段 [!DNL Salesforce]](#prerequisites-custom-field) 部分提供指导。
+
+* 激活区段时，您可能会收到一条错误消息： `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
+   * 要修复此错误，请联系贵机构的 [!DNL Salesforce] 要添加的客户管理员 [Experience PlatformIP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 敬您的 [!DNL Salesforce] 帐户的受信任IP范围。 请参阅 [!DNL Salesforce] [限制对连接应用程序的受信任IP范围的访问](https://help.salesforce.com/s/articleView?id=sf.connected_app_edit_ip_ranges.htm&amp;type=5) 文档（如果您需要其他指导）。
 
 ## 其他资源 {#additional-resources}
 
-其他實用資訊來自 [Salesforce開發人員入口網站](https://developer.salesforce.com/) 如下：
+其他有用信息来自 [Salesforce开发人员门户](https://developer.salesforce.com/) 如下所示：
 * [快速入门](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart.htm)
-* [建立記錄](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_sobject_create.htm)
-* [自訂建議對象](https://developer.salesforce.com/docs/atlas.en-us.236.0.chatterapi.meta/chatterapi/connect_resources_recommendation_audiences_list.htm)
-* [使用複合資源](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/using_composite_resources.htm?q=composite)
-* 此目的地會利用 [更新插入多筆記錄](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_update.htm) API而非 [更新插入單一記錄](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_composite_upsert_example.htm?q=contacts) API呼叫。
+* [创建记录](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_sobject_create.htm)
+* [自定义推荐受众](https://developer.salesforce.com/docs/atlas.en-us.236.0.chatterapi.meta/chatterapi/connect_resources_recommendation_audiences_list.htm)
+* [使用复合资源](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/using_composite_resources.htm?q=composite)
+* 此目标利用 [更新插入多个记录](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_update.htm) API而不是 [更新插入单个记录](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_composite_upsert_example.htm?q=contacts) API调用。

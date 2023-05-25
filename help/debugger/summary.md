@@ -1,6 +1,6 @@
 ---
-title: 摘要標籤
-description: 瞭解如何使用Adobe Experience Platform Debugger中的「摘要」標籤。
+title: “摘要”选项卡
+description: 了解如何使用Adobe Experience Platform Debugger中的“摘要”选项卡。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;摘要;调试;请求;摘要屏幕;解决方案;信息;analytics;target;dtm;audience manager;launch;id 服务
 seo-description: Experience Platform Debugger Summary Screen
 seo-title: Summary Tab
@@ -13,9 +13,9 @@ ht-degree: 74%
 
 ---
 
-# 摘要標籤
+# “摘要”选项卡
 
-若要執行Adobe Experience Platform Debugger，請在瀏覽器中開啟您要檢查的頁面，然後選取圖示(![](images/start-icon.jpg))。 擴充功能會在 **摘要** 標籤。
+要运行Adobe Experience Platform Debugger，请在浏览器中打开要检查的页面，然后选择图标(![](images/start-icon.jpg))。 扩展将在 **摘要** 选项卡。
 
 ![](images/summary.jpg)
 
@@ -71,13 +71,13 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
  </tbody> 
 </table>
 
-**Adobe Experience Platform標籤**
+**Adobe Experience Platform标记**
 
 <table id="table_E9574975444A407887E26514D1BB1601"> 
  <tbody> 
   <tr> 
    <td colname="col1"> <p>名称 </p> </td> 
-   <td colname="col2"> <p>標籤的名稱 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html" format="https" scope="external"> 屬性</a> </p> </td> 
+   <td colname="col2"> <p>标记的名称 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html" format="https" scope="external"> 属性</a> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>版本 </p> </td> 
@@ -85,11 +85,11 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
   </tr> 
   <tr> 
    <td colname="col1"> <p>内部版本发布日期 </p> </td> 
-   <td colname="col2"> <p>標籤 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> 資料庫</a> 建置日期 </p> </td> 
+   <td colname="col2"> <p>标记 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> 库</a> 生成日期 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>环境 </p> </td> 
-   <td colname="col2"> <p>此 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" format="https" scope="external"> 環境</a> 由標籤庫使用 </p> </td> 
+   <td colname="col2"> <p>此 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" format="https" scope="external"> 环境</a> 由标记库使用 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>扩展 </p> </td> 
@@ -112,7 +112,7 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
   </tr> 
   <tr> 
    <td colname="col1"> <p>资产 ID </p> </td> 
-   <td colname="col2"> <p>擴充功能中指定的標籤屬性名稱 </p> </td> 
+   <td colname="col2"> <p>扩展中指定的标记属性的名称 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>边缘域 </p> </td> 

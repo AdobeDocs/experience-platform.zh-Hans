@@ -1,6 +1,6 @@
 ---
-title: 組建端點
-description: 瞭解如何在Reactor API中呼叫/builds端點。
+title: 生成端点
+description: 了解如何在Reactor API中调用/builds端点。
 exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 4%
 
 ---
 
-# 組建端點
+# 生成端点
 
-擴充功能、規則和資料元素是Adobe Experience Platform中標籤的建置組塊。 當您想要讓應用程式執行某項作業時，這些基礎要素會新增至 [資料庫](./libraries.md). 為了在您的體驗應用程式上部署程式庫，會將程式庫編譯為組建版本。 此 `/builds` Reactor API中的端點可讓您以程式設計方式管理體驗應用程式內的組建。
+扩展、规则和数据元素是Adobe Experience Platform中标记的构建块。 如果您希望应用程序执行一些操作，则需要将这些构建块添加到 [库](./libraries.md). 要在体验应用程序上部署库，需将该库编译为内部版本。 此 `/builds` Reactor API中的端点允许您以编程方式管理体验应用程序中的构建。
 
-組建是在您的網頁和行動應用程式中載入的實際檔案（或多個檔案）。 每個版本編號的內容會因下列因素而異：
+内部版本是在Web和移动应用程序中加载的实际文件（或多个文件）。 每个内部版本的内容因以下因素而异：
 
-* 資料庫中包含的資源
-* 的設定 [環境](./environments.md) 建置程式庫的位置
-* 的平台 [屬性](./properties.md) 組建所屬的
+* 库中包含的资源
+* 的配置 [环境](./environments.md) 在其中生成库的库
+* 的平台 [属性](./properties.md) 内部版本所属的
 
-一個組建只屬於一個程式庫。 一個程式庫可以有許多組建。
+一个内部版本只属于一个库。 一个库可以有许多内部版本。
 
-如需有關組建及其如何適合標籤發佈工作流程的更多一般資訊，請參閱 [發佈概觀](../../ui/publishing/overview.md).
+有关内部版本以及它们如何适应标记的发布工作流的更多常规信息，请参阅 [发布概述](../../ui/publishing/overview.md).
 
 ## 快速入门
 
-本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
 
-## 擷取組建清單 {#list}
+## 检索内部版本列表 {#list}
 
-您可以在GET請求的路徑中包含程式庫ID，以列出特定程式庫的組建。
+通过在GET请求的路径中包含库的ID，可以列出特定库的内部版本。
 
 **API格式**
 
@@ -39,13 +39,13 @@ GET /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` 要列出其組建的程式庫。 |
+| `LIBRARY_ID` | 此 `id` 要列出其内部版本的库。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查詢引數，可根據下列屬性篩選列出的組建：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
+>使用查询参数，可以根据以下属性筛选列出的内部版本：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
 
 **请求**
 
@@ -61,7 +61,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回指定程式庫的組建清單。
+成功响应将返回指定库的内部版本列表。
 
 ```json
 {
@@ -144,9 +144,9 @@ curl -X GET \
 }
 ```
 
-## 查詢組建 {#lookup}
+## 查找内部版本 {#lookup}
 
-您可以在GET請求的路徑中提供其ID來查詢組建。
+您可以通过在GET请求的路径中提供其ID来查找内部版本。
 
 **API格式**
 
@@ -156,7 +156,7 @@ GET /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 此 `id` 要查閱之組建的預設值。 |
+| `BUILD_ID` | 此 `id` 要查找的版本编号。 |
 
 {style="table-layout:auto"}
 
@@ -174,7 +174,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回組建的詳細資訊。
+成功响应将返回内部版本的详细信息。
 
 ```json
 {
@@ -246,9 +246,9 @@ curl -X GET \
 }
 ```
 
-## 建立組建 {#create}
+## 创建内部版本 {#create}
 
-您可以建立程式庫的組建，在POST請求的路徑中包含程式庫的ID。
+您可以为库创建内部版本，并在POST请求的路径中包含库的ID。
 
 **API格式**
 
@@ -258,13 +258,13 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 此 `id` ，位於您正在定義組建的程式庫中。 |
+| `LIBRARY_ID` | 此 `id` 库中，您将在该库下定义内部版本。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會為請求路徑中指定的程式庫建立新的組建。 不需要要求裝載。
+以下请求为请求路径中指定的库创建新内部版本。 无需请求有效负载。
 
 ```shell
 curl -X POST \
@@ -276,7 +276,7 @@ curl -X POST \
 
 **响应**
 
-成功的回應會傳回新建立組建的詳細資訊。
+成功响应将返回新创建的内部版本的详细信息。
 
 ```json
 {
@@ -348,9 +348,9 @@ curl -X POST \
 }
 ```
 
-## 重新發佈組建 {#republish}
+## 重新发布内部版本 {#republish}
 
-您可以從重新發佈組建 [已發佈程式庫](./libraries.md#publish) 在PATCH請求的路徑中包含其ID。
+您可以从重新发布内部版本 [已发布库](./libraries.md#publish) 在PATCH请求的路径中包含其ID。
 
 **API格式**
 
@@ -360,13 +360,13 @@ PATCH /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 此 `id` 重新發佈的組建版本編號。 |
+| `BUILD_ID` | 此 `id` 重新发布的内部版本。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會更新 `app_id` 適用於現有應用程式設定。
+以下请求将更新 `app_id` 对于现有应用程序配置。
 
 ```shell
 curl -X PATCH \
@@ -388,15 +388,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 此 `id` 要更新的版本編號。 這應該符合 `{BUILD_ID}` 請求路徑中提供的值。 |
-| `type` | 正在更新的資源型別。 此端點的值必須為 `builds`. |
-| `meta.action` | 要執行的PATCH動作型別。 必須設定為 `republish`. |
+| `id` | 此 `id` 要更新的内部版本的一部分。 这应该与 `{BUILD_ID}` 请求路径中提供的值。 |
+| `type` | 正在更新的资源类型。 对于此端点，值必须为 `builds`. |
+| `meta.action` | 要执行的PATCH操作的类型。 必须设置为 `republish`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功回應會傳回重新發佈的組建詳細資訊。
+成功响应将返回重新发布的内部版本的详细信息。
 
 ```json
 {
@@ -469,15 +469,15 @@ curl -X PATCH \
 }
 ```
 
-## 擷取組建的相關資源 {#related}
+## 检索内部版本的相关资源 {#related}
 
-以下呼叫示範如何擷取組建的相關資源。 時間 [查詢組建](#lookup)，這些關係會列在 `relationships` 屬性。
+以下调用演示了如何检索内部版本的相关资源。 时间 [查找内部版本](#lookup)，这些关系列在 `relationships` 属性。
 
-請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
-### 列出組建的相關資料元素 {#data-elements}
+### 列出内部版本的相关数据元素 {#data-elements}
 
-您可以透過附加來列出組建的相關資料元素 `/data_elements` 至查閱請求的路徑。
+您可以通过附加来列出内部版本的相关数据元素 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -487,7 +487,7 @@ GET  /builds/{BUILD_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其資料元素之組建的ID。 |
+| `{BUILD_ID}` | 此 `id` 要列出其数据元素的内部版本。 |
 
 {style="table-layout:auto"}
 
@@ -505,7 +505,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回與組建相關的資料元素清單。
+成功响应将返回与内部版本相关的数据元素列表。
 
 ```json
 {
@@ -616,9 +616,9 @@ curl -X GET \
 }
 ```
 
-### 列出組建的相關擴充功能 {#extensions}
+### 列出内部版本的相关扩展 {#extensions}
 
-您可以透過附加以下內容來列出組建的相關擴充功能 `/extensions` 至查閱請求的路徑。
+您可以通过附加来列出内部版本的相关扩展 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -628,7 +628,7 @@ GET  /builds/{BUILD_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其副檔名的組建。 |
+| `{BUILD_ID}` | 此 `id` 要列出其扩展名的内部版本。 |
 
 {style="table-layout:auto"}
 
@@ -646,7 +646,7 @@ curl -X GET \
 
 **响应**
 
-成功回應會傳回與組建相關的擴充功能清單。
+成功的响应将返回与内部版本相关的扩展列表。
 
 ```json
 {
@@ -747,9 +747,9 @@ curl -X GET \
 }
 ```
 
-### 列出組建的相關規則 {#rules}
+### 列出内部版本的相关规则 {#rules}
 
-您可以透過附加來列出組建的相關規則 `/rules` 至查閱請求的路徑。
+您可以通过附加来列出内部版本的相关规则 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -759,7 +759,7 @@ GET  /builds/{BUILD_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要列出其規則的建置。 |
+| `{BUILD_ID}` | 此 `id` 要列出其规则的内部版本。 |
 
 {style="table-layout:auto"}
 
@@ -777,7 +777,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回與組建相關的規則清單。
+成功响应将返回与内部版本相关的规则列表。
 
 ```json
 {
@@ -860,9 +860,9 @@ curl -X GET \
 }
 ```
 
-### 查詢組建的相關程式庫 {#library}
+### 查找内部版本的相关库 {#library}
 
-您可以透過附加來擷取組建的相關程式庫 `/library` 至查閱請求的路徑。
+您可以通过附加来检索内部版本的相关库 `/library` 到查找请求的路径。
 
 **API格式**
 
@@ -872,7 +872,7 @@ GET  /builds/{BUILD_ID}/library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要查詢其程式庫的組建。 |
+| `{BUILD_ID}` | 此 `id` 要查找其库的内部版本。 |
 
 {style="table-layout:auto"}
 
@@ -973,9 +973,9 @@ curl -X GET \
 }
 ```
 
-### 查詢組建的相關環境 {#environment}
+### 查找内部版本的相关环境 {#environment}
 
-您可以透過附加來擷取組建的相關環境 `/environment` 至查閱請求的路徑。
+您可以通过附加来检索内部版本的相关环境 `/environment` 到查找请求的路径。
 
 **API格式**
 
@@ -985,7 +985,7 @@ GET  /builds/{BUILD_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 此 `id` 要查詢其環境的組建。 |
+| `{BUILD_ID}` | 此 `id` 要查找其环境的版本。 |
 
 {style="table-layout:auto"}
 

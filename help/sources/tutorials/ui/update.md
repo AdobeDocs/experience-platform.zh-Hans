@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；更新帳戶
-description: 在某些情況下，可能需要更新現有來源帳戶的詳細資料。 來源工作區可讓您新增、編輯和刪除現有批次或串流連線的詳細資料，包括其名稱、說明和認證。
+keywords: Experience Platform；主页；热门主题；更新帐户
+description: 在某些情况下，可能需要更新现有源帐户的详细信息。 通过源工作区，您可以添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 solution: Experience Platform
-title: 在UI中更新來源連線帳戶詳細資料
+title: 在UI中更新源连接帐户详细信息
 type: Tutorial
 exl-id: de264bd4-fe3d-4622-9f24-f1612d8334c9
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
@@ -12,51 +12,51 @@ ht-degree: 1%
 
 ---
 
-# 在UI中更新帳戶詳細資料
+# 在UI中更新帐户详细信息
 
-在某些情況下，可能需要更新現有來源帳戶的詳細資料。 此 [!UICONTROL 來源] 工作區可讓您新增、編輯和刪除現有批次或串流連線的詳細資料，包括其名稱、說明和認證。
+在某些情况下，可能需要更新现有源帐户的详细信息。 此 [!UICONTROL 源] 通过工作区，您可以添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 
-本教學課程提供步驟，說明如何從更新現有帳戶的詳細資訊和認證。 [!UICONTROL 來源] 工作區。
+本教程提供了从以下位置更新现有帐户的详细信息和凭据的步骤： [!UICONTROL 源] 工作区。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-- [來源](../../home.md)：Experience Platform可讓您從各種來源擷取資料，同時使用Platform服務來建構、加標籤及增強傳入資料。
-- [沙箱](../../../sandboxes/home.md)：Experience Platform提供的虛擬沙箱可將單一Platform執行個體分割成個別的虛擬環境，以利開發及改進數位體驗應用程式。
+- [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+- [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 更新帳戶
+## 更新帐户
 
-登入 [EXPERIENCE PLATFORMUI](https://platform.adobe.com) 然後選取 **[!UICONTROL 來源]** 從左側導覽存取 [!UICONTROL 來源] 工作區。 選取 **[!UICONTROL 帳戶]** 以檢視現有帳戶。
+登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 选择 **[!UICONTROL 帐户]** 查看现有帐户。
 
-![目錄](../../images/tutorials/update/catalog.png)
+![目录](../../images/tutorials/update/catalog.png)
 
-此 **[!UICONTROL 帳戶]** 頁面便會顯示。 此頁面是可檢視帳戶的清單，包括有關其來源、使用者名稱、資料流數量和建立日期的資訊。
+此 **[!UICONTROL 帐户]** 页面。 本页列出了可查看的帐户，包括有关其源、用户名、数据流数量和创建日期的信息。
 
-選取篩選圖示 ![篩選](../../images/tutorials/update/filter.png) 以啟動「排序」面板。
+选择过滤器图标 ![过滤器](../../images/tutorials/update/filter.png) 以启动“排序”面板。
 
 ![accounts-list](../../images/tutorials/update/accounts-list.png)
 
-排序面板提供所有來源的清單。 您可以從清單中選取多個來源，以存取與不同來源關聯的已篩選帳戶選擇。
+排序面板提供所有源的列表。 您可以从列表中选择多个源，以访问与不同源关联的已过滤帐户选择。
 
-選取您要使用的來源，以檢視其現有帳戶的清單。 識別要更新的帳戶後，請選取省略符號(`...`)。
+选择要使用的源以查看其现有帐户的列表。 标识要更新的帐户后，选择省略号(`...`)。
 
-![帳戶排序](../../images/tutorials/update/accounts-sort.png)
+![accounts-sort](../../images/tutorials/update/accounts-sort.png)
 
-下拉式選單隨即出現，為您提供以下選項： **[!UICONTROL 新增資料]**， **[!UICONTROL 編輯詳細資料]**、和 **[!UICONTROL 刪除]**. 選取 **[!UICONTROL 編輯詳細資料]** 從功能表更新您的帳戶。
+此时会出现一个下拉菜单，为您提供以下选项 **[!UICONTROL 添加数据]**， **[!UICONTROL 编辑详细信息]**、和 **[!UICONTROL 删除]**. 选择 **[!UICONTROL 编辑详细信息]** 以更新您的帐户。
 
 ![update](../../images/tutorials/update/update.png)
 
-此 **[!UICONTROL 編輯帳戶詳細資料]** 對話方塊可讓您更新帳戶的名稱、說明和驗證認證。 更新所需的資訊後，請選取 **[!UICONTROL 儲存]**.
+此 **[!UICONTROL 编辑帐户详细信息]** 对话框允许您更新帐户的名称、说明和身份验证凭据。 更新所需信息后，选择 **[!UICONTROL 保存]**.
 
 ![edit-account-details](../../images/tutorials/update/edit-account-details.png)
 
-過了一會兒，畫面底部會顯示一個確認方塊，以確認更新成功。
+片刻后，屏幕底部会显示一个确认框，用于确认更新成功。
 
-![已確認更新](../../images/tutorials/update/update-confirmed.png)
+![update-confirmed](../../images/tutorials/update/update-confirmed.png)
 
 ## 后续步骤
 
-依照本教學課程，您已成功使用 [!UICONTROL 來源] 工作區以更新現有來源帳戶的資訊。
+按照本教程中的说明，您已成功使用了 [!UICONTROL 源] 工作区，以更新现有源帐户的信息。
 
-如需如何以程式設計方式執行這些操作的步驟，請使用 [!DNL Flow Service] API，請參考以下教學課程： [使用流量服務API更新連線資訊](../../tutorials/api/update.md).
+有关如何使用以编程方式执行这些操作的步骤 [!DNL Flow Service] API，请参考以下教程： [使用流服务API更新连接信息](../../tutorials/api/update.md).

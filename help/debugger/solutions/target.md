@@ -1,6 +1,6 @@
 ---
-title: 使用Adobe Experience Platform Debugger測試Adobe Target實作
-description: 瞭解如何使用Adobe Experience Platform Debugger測試並偵錯Adobe Target啟用的網站。
+title: 使用Adobe Experience Platform Debugger测试Adobe Target实施
+description: 了解如何使用Adobe Experience Platform Debugger测试和调试通过Adobe Target启用的网站。
 exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
 source-git-commit: c3b5b63767a934be16a479d04853e1250b3bf775
 workflow-type: tm+mt
@@ -9,107 +9,107 @@ ht-degree: 4%
 
 ---
 
-# 使用Adobe Experience Platform Debugger測試Adobe Target實作
+# 使用Adobe Experience Platform Debugger测试Adobe Target实施
 
-Adobe Experience Platform Debugger提供一套實用工具，可用來測試和偵錯已透過Adobe Target實作進行工具的網站。 本指南涵蓋在啟用Target的網站上使用Platform Debugger的一些常見工作流程和最佳實務。
+Adobe Experience Platform Debugger提供了一套有用的工具，可用于测试和调试使用Adobe Target实施进行测试的网站。 本指南介绍了在启用了Target的网站上使用Platform Debugger的一些常见工作流程和最佳实践。
 
 ## 先决条件
 
-若要使用Platform Debugger for Target，網站必須使用 [at.js資料庫](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/) 1.x版或更新版本。 不支援舊版。
+要使用Platform Debugger for Target，网站必须使用 [at.js库](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/) 版本1.x或更高版本。 不支持以前的版本。
 
-## 正在初始化Platform Debugger
+## 初始化Platform Debugger
 
-在瀏覽器中開啟您要測試的網站，然後開啟Platform Debugger擴充功能。
+在浏览器中打开要测试的网站，然后打开Platform Debugger扩展。
 
-選取 **[!DNL Target]** 左側導覽列中。 如果Platform Debugger偵測到網站上正在執行相容的at.js版本，則會顯示Adobe Target實作詳細資料。
+选择 **[!DNL Target]** 左侧导航栏中。 如果Platform Debugger检测到网站上正在运行兼容版本的at.js，则会显示Adobe Target实施详细信息。
 
-![在Platform Debugger中選取的Target檢視，表示Adobe Target在目前檢視的瀏覽器頁面上處於作用中狀態](../images/solutions/target/target-initialized.png)
+![在Platform Debugger中选择的Target视图，表示Adobe Target在当前查看的浏览器页面上处于活动状态](../images/solutions/target/target-initialized.png)
 
-## 全域設定資訊
+## 全局配置信息
 
-有關實作全域設定的資訊會顯示在Platform Debugger的Target檢視頂端。
+在Platform Debugger中，有关实施全局配置的信息显示在Target视图的顶部。
 
-![Platform Debugger中醒目提示的Target全域設定資訊](../images/solutions/target/global-config.png)
+![Platform Debugger中高亮显示的Target全局配置信息](../images/solutions/target/global-config.png)
 
 | 名称 | 描述 |
 | --- | --- |
-| 客户端代码 | 可識別您組織的唯一ID。 |
-| 版本 | 網站上目前安裝的Adobe Target程式庫版本。 |
-| 全局请求名称 | 的名稱 [全域mbox](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/?) 對於Target實作，預設名稱為 `target-global-mbox`. |
-| 页面加载事件 | 布林值，指出 [頁面載入事件](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/how-atjs-works/#atjs-2x-diagrams) 已發生。 只有at.js 2.x支援頁面載入事件。對於不相容的版本，此值預設為 `None`. |
+| 客户端代码 | 标识贵组织的唯一ID。 |
+| 版本 | 网站上当前安装的Adobe Target库的版本。 |
+| 全局请求名称 | 的名称 [全局mbox](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/?) 对于Target实施，默认名称为 `target-global-mbox`. |
+| 页面加载事件 | 布尔值，指示是否 [页面加载事件](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/how-atjs-works/#atjs-2x-diagrams) 已经发生。 只有at.js 2.x支持页面加载事件。对于不兼容的版本，此值默认为 `None`. |
 
 {style="table-layout:auto"}
 
 ## [!DNL Network Requests] {#network}
 
-選取 **[!DNL Network Requests]** 以檢視頁面上每個網路要求的摘要資訊。
+选择 **[!DNL Network Requests]** 查看页面上发出的每个网络请求的摘要信息。
 
-![此 [!DNL Network Requests] Platform Debugger中選取之Target的區段](../images/solutions/target/network-requests.png)
+![此 [!DNL Network Requests] Platform Debugger中选定的Target的部分](../images/solutions/target/network-requests.png)
 
-當您在頁面上執行動作（包括重新載入頁面）時，新欄會自動新增到表格中，讓您檢視動作的順序以及每個請求之間值的變更方式。
+在页面上执行操作（包括重新加载页面）时，新列会自动添加到表中，使您可以查看操作的顺序以及每个请求之间值的更改方式。
 
-![此 [!DNL Network Requests] Platform Debugger中選取之Target的區段](../images/solutions/target/new-request.png)
+![此 [!DNL Network Requests] Platform Debugger中选定的Target的部分](../images/solutions/target/new-request.png)
 
-擷取下列值：
+捕获了以下值：
 
 | 名称 | 描述 |
 | --- | --- |
-| [!DNL Page Title] | 起始此要求的頁面標題。 |
-| [!DNL Page URL] | 起始要求的頁面URL。 |
-| [!DNL URL] | 請求的原始URL。 |
-| [!DNL Method] | 請求的HTTP方法。 |
-| [!DNL Query String] | 要求的查詢字串，取自URL。 |
-| [!DNL POST Body] | 請求內文(僅針對POST請求而設定)。 |
-| [!DNL Pathname] | 請求URL的路徑名稱。 |
-| [!DNL Hostname] | 請求URL的主機名稱。 |
-| [!DNL Domain] | 請求URL的網域。 |
-| [!DNL Timestamp] | 請求（或事件）在瀏覽器時區內發生的時間戳記。 |
-| [!DNL Time Since Page Load] | 自頁面在請求時首次載入後所經過的時間。 |
-| [!DNL Initiator] | 請求的發起者。 換言之，是誰提出此要求？ |
-| [!DNL clientCode] | 貴組織帳戶的識別碼，已由Target識別。 |
-| [!DNL requestType] | 用於請求的API。 如果使用at.js 1.x，則值為 `/json`. 如果使用at.js 2.x，則值為 `delivery`. |
-| [!DNL Audience Manager Blob] | 提供有關稱為「blob」的加密Audience Manager中繼資料的資訊。 |
-| [!DNL Audience Location Hint] | 数据收集区域 ID。这是用于标识特定 ID 服务数据中心的地理位置的数字标识符。如需詳細資訊，請參閱Audience Manager檔案： [DCS地區ID、位置與主機名稱](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html?lang=zh-Hans) 以及上的Experience CloudIdentity Service指南 [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html?lang=en#reference-a761030ff06c4439946bb56febf42d4c). |
-| [!DNL Browser Height] | 瀏覽器高度（畫素）。 |
-| [!DNL Browser Time Offset] | 瀏覽器與其時區相關聯的時間位移。 |
-| [!DNL Browser Width] | 瀏覽器寬度（畫素）。 |
-| [!DNL Color Depth] | 熒幕的色彩深度。 |
-| [!DNL context] | 一個物件，包含發出請求所用瀏覽器的相關內容資訊，包括熒幕維度和使用者端平台。 |
-| [!DNL prefetch] | 期間使用的引數 `prefetch` 處理中。 |
-| [!DNL execute] | 期間使用的引數 `execute` 處理中。 |
-| [!DNL Experience Cloud Visitor ID] | 如果偵測到一個，會提供以下資訊： [Experience CloudID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) 指派給目前網站訪客的許可權。 |
-| [!DNL experienceCloud] | 儲存此特定使用者工作階段的Experience CloudID：A4T [補充資料ID](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html?#section_2C1F745A2B7D41FE9E30915539226E3A)，和 [訪客ID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html). |
-| [!DNL id] | 此 [目標ID](https://developers.adobetarget.com/api/delivery-api/#section/Identifying-Visitors/Target-ID) ，以供訪客使用。 |
-| [!DNL Mbox Host] | 此 [主機](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) 發出Target請求的目標位置。 |
-| [!DNL Mbox PC] | 封裝「 」的字串 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 工作階段ID與 [Adobe Target Edge](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html#concept_0AE2ED8E9DE64288A8B30FCBF1040934) 位置提示。 at.js使用此值來確保工作階段和Edge位置保持粘性。 |
-| [!DNL Mbox Referrer] | 特定的URL反向連結 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 要求。 |
-| [!DNL Mbox URL] | 的URL [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 伺服器。 |
+| [!DNL Page Title] | 发起此请求的页面的标题。 |
+| [!DNL Page URL] | 发起请求的页面的URL。 |
+| [!DNL URL] | 请求的原始网址。 |
+| [!DNL Method] | 请求的HTTP方法。 |
+| [!DNL Query String] | 请求的查询字符串，从URL获取。 |
+| [!DNL POST Body] | 请求正文(仅为POST请求设置)。 |
+| [!DNL Pathname] | 请求URL的路径名。 |
+| [!DNL Hostname] | 请求URL的主机名。 |
+| [!DNL Domain] | 请求URL的域。 |
+| [!DNL Timestamp] | 请求（或事件）在浏览器时区中发生的时间戳。 |
+| [!DNL Time Since Page Load] | 自请求时最初加载页面以来经过的时间。 |
+| [!DNL Initiator] | 请求的发起者。 换句话说，是谁提出这个请求的？ |
+| [!DNL clientCode] | 贵组织帐户的标识符，由Target识别。 |
+| [!DNL requestType] | 用于请求的API。 如果使用at.js 1.x，则值为 `/json`. 如果使用at.js 2.x，则值为 `delivery`. |
+| [!DNL Audience Manager Blob] | 提供有关称为“blob”的加密Audience Manager元数据的信息。 |
+| [!DNL Audience Location Hint] | 数据收集区域 ID。这是用于标识特定 ID 服务数据中心的地理位置的数字标识符。有关更多信息，请参阅有关的Audience Manager文档 [DCS区域ID、位置和主机名](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html?lang=zh-Hans) 以及上的Experience CloudIdentity Service指南 [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html?lang=en#reference-a761030ff06c4439946bb56febf42d4c). |
+| [!DNL Browser Height] | 浏览器高度（像素）。 |
+| [!DNL Browser Time Offset] | 浏览器与其时区关联的时间偏移。 |
+| [!DNL Browser Width] | 浏览器宽度（像素）。 |
+| [!DNL Color Depth] | 屏幕的颜色深度。 |
+| [!DNL context] | 一个对象，其中包含有关用于发出请求的浏览器的上下文信息，包括屏幕维度和客户端平台。 |
+| [!DNL prefetch] | 以下期间中使用的参数： `prefetch` 正在处理。 |
+| [!DNL execute] | 以下期间使用的参数： `execute` 正在处理。 |
+| [!DNL Experience Cloud Visitor ID] | 如果检测到，则提供以下信息： [Experience CloudID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) 分配给当前网站访客的区段。 |
+| [!DNL experienceCloud] | 包含此特定Experience Cloud会话的用户标识：A4T [补充数据ID](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html?#section_2C1F745A2B7D41FE9E30915539226E3A)，和 [访客ID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html). |
+| [!DNL id] | 此 [目标ID](https://developers.adobetarget.com/api/delivery-api/#section/Identifying-Visitors/Target-ID) 对于访客。 |
+| [!DNL Mbox Host] | 此 [主机](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) 发出Target请求的目标位置。 |
+| [!DNL Mbox PC] | 封装 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 会话ID和 [Adobe Target Edge](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html#concept_0AE2ED8E9DE64288A8B30FCBF1040934) 位置提示。 at.js使用此值来确保会话和Edge位置保持粘性。 |
+| [!DNL Mbox Referrer] | 特定的URL反向链接 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 请求。 |
+| [!DNL Mbox URL] | 的URL [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 服务器。 |
 | [!DNL Mbox Version] | 的版本 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 正在使用。 |
-| [!DNL mbox3rdPartyId] | 此 [`mbox3rdPartyId`](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html) 指派給目前訪客。 |
-| [!DNL mboxRid] | 此 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 請求ID。 |
-| [!DNL requestId] | 請求的唯一ID。 |
-| [!DNL Screen Height] | 熒幕的高度（畫素）。 |
-| [!DNL Screen Width] | 熒幕的寬度（畫素）。 |
-| [!DNL Supplemental Data ID] | 系統產生的ID，用於將訪客與對應的Adobe Target和Adobe Analytics呼叫進行比對。 請參閱 [A4T疑難排解指南](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/troubleshoot-a4t/a4t-troubleshooting.html?#section_75002584FA63456D8D9086172925DD8D) 以取得詳細資訊。 |
-| [!DNL vst] | 此 [Experience CloudIdentity服務API設定](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/configurations/function-vars.html). |
-| [!DNL webGLRenderer] | 提供頁面上使用的WebGL轉譯器資訊（如果適用）。 |
+| [!DNL mbox3rdPartyId] | 此 [`mbox3rdPartyId`](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html) 分配至当前访客。 |
+| [!DNL mboxRid] | 此 [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) 请求ID。 |
+| [!DNL requestId] | 请求的唯一ID。 |
+| [!DNL Screen Height] | 屏幕的高度（像素）。 |
+| [!DNL Screen Width] | 屏幕的宽度（像素）。 |
+| [!DNL Supplemental Data ID] | 系统生成的ID，用于将访客与相应的Adobe Target和Adobe Analytics调用进行匹配。 请参阅 [A4T疑难解答指南](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/troubleshoot-a4t/a4t-troubleshooting.html?#section_75002584FA63456D8D9086172925DD8D) 了解更多信息。 |
+| [!DNL vst] | 此 [Experience Cloud身份服务API配置](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/configurations/function-vars.html). |
+| [!DNL webGLRenderer] | 提供页面上使用的WebGL渲染器的信息（如果适用）。 |
 
 {style="table-layout:auto"}
 
-若要檢視特定網路事件上引數的詳細資訊，請選取相關表格儲存格。 此時會出現一個彈出視窗，提供有關引數的進一步資訊，包括說明及其值。 如果值是JSON物件，對話方塊會包含物件結構的完整可導覽檢視。
+要查看特定网络事件上某个参数的详细信息，请选择相关表单元格。 此时会出现一个弹出窗口，其中提供有关该参数的更多信息，包括描述及其值。 如果值是JSON对象，则对话框包含对象结构的完全可导航视图。
 
-![此 [!DNL Network Requests] Platform Debugger中選取之Target的區段](../images/solutions/target/request-param-details.png)
+![此 [!DNL Network Requests] Platform Debugger中选定的Target的部分](../images/solutions/target/request-param-details.png)
 
 ## [!DNL Configuration]
 
-選取 **[!DNL Configuration]** 啟用或停用為Target選取的其他偵錯工具。
+选择 **[!DNL Configuration]** 启用或禁用Target的其他调试工具选择。
 
-![此 [!DNL Configuration Requests] Platform Debugger中選取之Target的區段](../images/solutions/target/configuration.png)
+![此 [!DNL Configuration Requests] Platform Debugger中选定的Target的部分](../images/solutions/target/configuration.png)
 
-| 偵錯工具 | 描述 |
+| 调试工具 | 描述 |
 | --- | --- |
-| [!DNL Target Console Logging] | 啟用後，可讓您存取瀏覽器主控台標籤中的at.js記錄檔。 此功能也可以透過新增以下專案來啟用 `mboxDebug` 查詢引數（含任何值）至瀏覽器URL。 |
-| [!DNL Target Diable] | 啟用後，頁面上所有的Target功能都會停用。 這可用來判斷Target特定選件是否是導致頁面上問題的原因。 |
-| [!DNL Target Trace] | **注意**：您必須登入才能啟用此功能。<br><br>啟用後，追蹤權杖會隨每個要求傳送，且每個回應中會傳回追蹤物件。 `at.js` 剖析回應 `window.__targetTraces`. 每個追蹤物件都包含與[[!DNL Network Requests] 索引標籤]，以及下列新增專案：<ul><li>設定檔快照，可讓您檢視請求前後的屬性。</li><li>相符與不相符的 [活動](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html)，顯示目前設定檔符合或不符合特定活動資格的原因。<ul><li>這有助於識別設定檔在指定時間點符合哪些對象的資格及其原因。</li><li>Target檔案包含不同活動型別的更多資訊</li></ul></li></ul> |
+| [!DNL Target Console Logging] | 启用后，允许您在浏览器的控制台选项卡中访问at.js日志。 此功能也可以通过添加 `mboxDebug` 查询参数（具有任意值）。 |
+| [!DNL Target Diable] | 启用后，页面上会禁用所有Target功能。 这可用于确定特定于Target的选件是否是导致页面上出现问题的原因。 |
+| [!DNL Target Trace] | **注释**：您必须登录才能启用此功能。<br><br>启用后，跟踪令牌将随每次请求一起发送，并在每次响应中返回跟踪对象。 `at.js` 解析响应 `window.__targetTraces`. 每个跟踪对象包含的信息与[[!DNL Network Requests] 选项卡]，添加了以下内容：<ul><li>配置文件快照，允许您查看请求之前和请求之后的属性。</li><li>匹配项和不匹配项 [活动](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html)，显示当前配置文件符合或不符合特定活动资格的原因。<ul><li>这有助于确定用户档案在给定时间点符合哪些受众资格及其原因。</li><li>Target文档包含有关不同活动类型的更多信息</li></ul></li></ul> |
 
 {style="table-layout:auto"}

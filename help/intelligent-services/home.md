@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；家庭；智慧型服務；熱門主題；智慧型服務；智慧型服務
+keywords: Experience Platform；家庭；智能服务；热门主题；智能服务；智能服务
 solution: Experience Platform
-title: Intelligent Services概述
-description: Intelligent Services可讓行銷分析師和從業人員運用客戶體驗使用案例中人工智慧和機器學習的強大功能。 這可讓行銷分析人員使用業務層級設定，針對公司需求設定專屬預測，而不需要資料科學專業知識。 此外，行銷從業人員可以在Adobe Experience Cloud、Adobe Experience Platform和第三方應用程式中啟用預測。
+title: 智能服务概述
+description: 智能服务可让营销分析师和从业人员在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
@@ -11,48 +11,48 @@ ht-degree: 0%
 
 ---
 
-# Intelligent Services概觀
+# 智能服务概述
 
-Intelligent Services可讓行銷分析師和從業人員運用客戶體驗使用案例中人工智慧和機器學習的強大功能。 這可讓行銷分析人員使用業務層級設定，針對公司需求設定專屬預測，而不需要資料科學專業知識。 此外，行銷人員可以在以下位置啟用預測： [!DNL Adobe Experience Cloud]， [!DNL Adobe Experience Platform]和第三方應用程式。
+智能服务可让营销分析师和从业人员在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在以下位置激活预测： [!DNL Adobe Experience Cloud]， [!DNL Adobe Experience Platform]和第三方应用程序。
 
-下列影片的設計目的是協助您瞭解Intelligent Services。 本影片透過業務使用案例範例，說明高階工作流程，並概述Attribution AI和Customer AI的功能。
+以下视频旨在支持您对Intelligent Services的理解。 此视频通过使用示例业务用例，说明了高级工作流程，并概述了Attribution AI和客户人工智能的功能。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
 
-## 智慧型服務的優點
+## 智能服务的好处
 
-Intelligent Services，內建於 [!DNL Adobe Experience Platform]，讓負責客戶體驗的行銷人員能夠存取AI-as-a-service，讓任何人都能輕鬆預測客戶行為、衡量行銷活動的影響，或確保每一筆投資都能獲得更好的回報。 以下列出Intelligent Services提供的一些優點。
+智能服务，构建于 [!DNL Adobe Experience Platform]，使负责客户体验的营销人员能够访问AI-as-a-service，从而让任何人能够轻松预测客户行为、衡量营销活动的影响或确保提高每项投资的回报。 下面列出了Intelligent Services提供的一些好处。
 
-### 符合成本效益的上市速度
+### 以符合成本效益的速度上市
 
-Adobe擁有AI/ML專業知識以及深入的CXM經驗，而Intelligent Services是專為行銷人員所設計，可讓AI/ML立即投入常見的行銷使用案例，而不需要僱用稀缺且昂貴的資料科學家，加速上市速度及可操作性。
+Adobe具有AI/ML专业知识以及丰富的CXM经验，并且智能服务是专门为营销人员设计的，旨在让AI/ML立即投入使用以用于常见的营销用例，而无需雇用稀缺而昂贵的数据科学家，从而加快上市速度并提高可操作性。
 
-### 預測性深入分析有更高的準確性
+### 预测洞察的准确性更高
 
-透過採用進階演演算法AI/ML模型，以最高精確度開發；能夠使用深度和詳細程度在通用資料集上執行AI/ML，以實現預測的分割和分割；以及智慧型功能，以提供預測性客戶深入分析背後的原因和內容。
+通过采用高级算法AI/ML模型而获得的最高精度开发；能够在具有深度和粒度的公共数据集上运行AI/ML以实现预测切片和切片；以及智能提供预测性客户见解背后的原因和内容。
 
-### 快速獲得深入見解和ROI
+### 快速获得见解和ROI
 
-行銷人員立即開始使用AI/ML，並透過新的自助服務工作流程、自訂設定和彈性選項來開始提高行銷ROI，以可操作預測性深入分析。
+使营销人员能够立即开始使用AI/ML，并通过新的自助服务工作流、自定义配置和灵活选项来使预测性分析可操作化，从而开始提高营销ROI。
 
-## 智慧型服務工作流程
+## 智能服务工作流程
 
-### 擷取
+### 摄取
 
-客戶資料會於上透過體驗資料模型(XDM)擷取和轉換 [!DNL Adobe Experience Platform]. 若要進一步瞭解XDM，請造訪 [XDM概觀](../xdm/home.md).
+客户数据通过上的体验数据模型(XDM)进行摄取和转换 [!DNL Adobe Experience Platform]. 要了解有关XDM的更多信息，请访问 [XDM概述](../xdm/home.md).
 
 ### 配置
 
-行銷分析人員會指定商業規則和識別相關資料，以設定所需的預測。
+营销分析人员通过指定业务规则和标识相关数据来配置所需的预测。
 
-### 預測
+### 预测
 
-模型完成訓練和評分後，分數會回寫至Platform。
+训练结束后，评分回传到Platform。
 
-### 採取動作
+### 采取行动
 
-最後，您可以決定要對預測採取哪些動作，例如消耗深入分析、在整個範圍內啟用應用程式 [!DNL Adobe Experience Cloud]，以及建置自訂儀表板。
+最后，您可以决定要对预测执行哪些操作，例如使用洞察、激活整个中的应用程序 [!DNL Adobe Experience Cloud]，并构建自定义功能板。
 
 ## 后续步骤
 
-目前，Intelligent Services提供Attribution AI和Customer AI。 Attribution AI可讓行銷人員聰明地提升各管道和行銷活動的行銷效率。 若要進一步瞭解Attribution AI，請造訪 [Attribution AI概觀](./attribution-ai/overview.md). Customer AI可讓行銷人員超個人化客戶體驗。 若要進一步瞭解Customer AI，請造訪 [Customer AI概述](./customer-ai/overview.md).
+目前，智能服务提供Attribution AI和客户人工智能。 Attribution AI允许营销人员跨渠道和营销活动智能地提高营销效率。 要了解有关Attribution AI的更多信息，请访问 [Attribution AI概述](./attribution-ai/overview.md). 客户人工智能使营销人员能够超级个性化客户体验。 要了解有关Customer AI的更多信息，请访问 [Customer AI概述](./customer-ai/overview.md).

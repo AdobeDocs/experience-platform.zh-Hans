@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；流量服務；刪除帳戶；刪除；api
+keywords: Experience Platform；主页；热门主题；流服务；删除帐户；删除；API
 solution: Experience Platform
-title: 使用流程服務API刪除帳戶
+title: 使用流服务API删除帐户
 type: Tutorial
-description: 瞭解如何使用Flow Service API刪除帳戶。
+description: 了解如何使用流服务API删除帐户。
 exl-id: 3d07ab7d-c012-472e-8db4-b19e3936dcba
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -12,32 +12,32 @@ ht-degree: 2%
 
 ---
 
-# 使用流程服務API刪除帳戶
+# 使用流服务API删除帐户
 
-您可以使用刪除包含錯誤或已過時的來源帳戶 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+您可以使用删除包含错误或已过期的源帐户 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-請參閱下列教學課程，以瞭解如何使用API刪除帳戶的步驟。
+有关如何使用API删除帐户的步骤，请参阅以下教程。
 
 ## 快速入门
 
-本教學課程要求您具備有效的連線ID。 如果您沒有有效的連線ID，請從 [來源概觀](../../home.md) 並依照在嘗試本教學課程之前概述的步驟進行。
+本教程要求您拥有有效的连接ID。 如果您没有有效的连接ID，请从 [源概述](../../home.md) 并按照尝试阅读本教程之前概述的步骤操作。
 
-本教學課程也要求您實際瞭解Adobe Experience Platform的下列元件：
+本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [來源](../../home.md)： [!DNL Experience Platform] 允許從各種來源擷取資料，同時讓您能夠使用來建構、加標籤和增強傳入資料 [!DNL Platform] 服務。
-* [沙箱](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
-如需如何成功呼叫Platform API的詳細資訊，請參閱以下指南中的 [Platform API快速入門](../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-## 刪除帳戶
+## 删除帐户
 
 >[!TIP]
 >
->在刪除來源帳戶之前，您必須先刪除與來源帳戶關聯的任何現有資料流。 若要刪除現有的資料流，請參閱上的教學課程 [刪除來源資料流](./delete-dataflows.md).
+>在删除源帐户之前，必须首先删除与源帐户关联的任何现有数据流。 要删除现有数据流，请参阅上的教程 [删除源数据流](./delete-dataflows.md).
 
-若要刪除帳戶，請向發出DELETE要求 [!DNL Flow Service] API，同時提供與您要刪除的帳戶對應的基本連線ID。
+DELETE要删除帐户，请向 [!DNL Flow Service] API，同时提供与要删除的帐户对应的基本连接ID。
 
 **API格式**
 
@@ -47,7 +47,7 @@ DELETE /connections/{BASE_CONNECTION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 您要刪除之來源帳戶的基本連線ID。 |
+| `{BASE_CONNECTION_ID}` | 要删除的源帐户的基本连接ID。 |
 
 **请求**
 
@@ -62,12 +62,12 @@ curl -X DELETE \
 
 **响应**
 
-成功的回應會傳回HTTP狀態204 （無內容）和空白內文。
+成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
-您可以嘗試向連線查詢(GET)要求以確認刪除。
+您可以通过尝试对连接进行查找(GET)请求来确认删除。
 
 ## 后续步骤
 
-依照本教學課程，您已成功使用 [!DNL Flow Service] 用於刪除現有帳戶的API。
+按照本教程中的说明，您已成功使用了 [!DNL Flow Service] 用于删除现有帐户的API。
 
-如需如何使用使用者介面執行這些操作的步驟，請參閱以下教學課程： [在UI中刪除帳戶](../../tutorials/ui/delete-accounts.md).
+有关如何使用用户界面执行这些操作的步骤，请参阅关于的教程 [在UI中删除帐户](../../tutorials/ui/delete-accounts.md).

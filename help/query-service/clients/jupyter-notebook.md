@@ -1,6 +1,6 @@
 ---
-title: 將Jupyter Notebook連線至查詢服務
-description: 瞭解如何連結Jupyter Notebook與Adobe Experience Platform查詢服務。
+title: 将Jupyter Notebook连接到查询服务
+description: 了解如何将Jupyter Notebook与Adobe Experience Platform查询服务连接。
 exl-id: 358eab67-538f-4ada-931f-783b92db4a1c
 source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
 workflow-type: tm+mt
@@ -9,56 +9,56 @@ ht-degree: 0%
 
 ---
 
-# Connect [!DNL Jupyter Notebook] 至查詢服務
+# Connect [!DNL Jupyter Notebook] 查询服务
 
-本檔案說明連線所需的步驟 [!DNL Jupyter Notebook] 使用Adobe Experience Platform查詢服務。
+本文档介绍了连接所需的步骤 [!DNL Jupyter Notebook] 使用Adobe Experience Platform查询服务。
 
 ## 快速入门
 
-本指南要求您已擁有 [!DNL Jupyter Notebook] 並熟悉其介面。 若要下載 [!DNL Jupyter Notebook] 或如需詳細資訊，請參閱 [正式 [!DNL Jupyter Notebook] 檔案](https://jupyter.org/).
+本指南要求您已有权访问 [!DNL Jupyter Notebook] 并熟悉其界面。 要下载 [!DNL Jupyter Notebook] 有关更多信息，请参阅 [正式 [!DNL Jupyter Notebook] 文档](https://jupyter.org/).
 
-取得連線所需的認證 [!DNL Jupyter Notebook] 若要Experience Platform，您必須擁有 [!UICONTROL 查詢] Platform UI中的工作區。 如果您目前沒有「 」的存取權，請聯絡您的組織管理員 [!UICONTROL 查詢] 工作區。
+获取进行连接所需的凭据 [!DNL Jupyter Notebook] 要Experience Platform，您必须有权访问 [!UICONTROL 查询] Platform UI中的工作区。 如果您当前无权访问 [!UICONTROL 查询] 工作区。
 
 >[!TIP]
 >
->[!DNL Anaconda Navigator] 是桌上型圖形化使用者介面(GUI)，可讓您更輕鬆地安裝及啟動一般功能 [!DNL Python] 計畫，例如 [!DNL Jupyter Notebook]. 它還有助於在不使用命令列命令的情況下管理套件、環境和通道。
->請依照其網站上的引導式安裝程式，前往 [安裝您偏好的應用程式版本](https://docs.anaconda.com/anaconda/install/).
->從「蟒蛇導覽器」首頁畫面中選取 **[!DNL Jupyter Notebook]** 從支援的應用程式清單中啟動程式。
->如需詳細資訊，請參閱 [Anaconda官方檔案](https://docs.anaconda.com/anaconda/navigator/).
+>[!DNL Anaconda Navigator] 是一个桌面图形用户界面(GUI)，它提供了一种更容易安装和启动通用的方法 [!DNL Python] 程序，例如 [!DNL Jupyter Notebook]. 它还有助于在不使用命令行命令的情况下管理包、环境和通道。
+>按照其网站上的引导式安装过程操作，以便 [安装您的首选应用程序版本](https://docs.anaconda.com/anaconda/install/).
+>从“Anaconda导航器”主屏幕中，选择 **[!DNL Jupyter Notebook]** 从支持的应用程序列表中启动该程序。
+>欲知更多信息，请参见 [Anaconda官方文档](https://docs.anaconda.com/anaconda/navigator/).
 
-官方Jupyter檔案提供以下指示： [從命令列介面執行筆記本](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI)。
+Jupyter官方文档提供了以下说明： [从命令行界面运行笔记本](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI)。
 
 ## Launch [!DNL Jupyter Notebook]
 
-在您開啟新之後 [!DNL Jupyter Notebook] 網頁應用程式，選取 **[!DNL New]** UI中的下拉式清單，後面接著 **[!DNL Python 3]** 以建立新的Notebook。 此 [!DNL Notebook] 編輯器出現。
+在您打开新的 [!DNL Jupyter Notebook] Web应用程序，选择 **[!DNL New]** UI中的下拉列表，其后是 **[!DNL Python 3]** 以创建新的笔记本。 此 [!DNL Notebook] 编辑器出现。
 
-在 [!DNL Notebook] 編輯器中，輸入下列值： `pip install psycopg2-binary` 並選取 **[!DNL Run]** 命令列中的。 成功訊息會顯示在輸入行下方。
-
->[!IMPORTANT]
->
->在此過程中，您必須選取 **[!DNL Run]** 以執行每一行程式碼。
-
-接下來，匯入 [!DNL PostgreSQL] 資料庫配接器 [!DNL Python]. 輸入值： `import psycopg2`並選取 **[!DNL Run]**. 此程式沒有成功訊息。 如果沒有錯誤訊息，請繼續進行下一個步驟。
-
-您現在必須輸入值來提供您的Adobe Experience Platform認證： `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. 您的連線認證可在以下網址找到： [!UICONTROL 查詢] 區段，在 [!UICONTROL 認證] Platform UI的索引標籤。 請參閱檔案，瞭解如何 [尋找您的組織認證](../ui/credentials.md) 以取得詳細指示。
-
-使用協力廠商使用者端時，建議使用不會到期的認證，以省下重複輸入詳細資料的工作。 如需相關指示，請參閱檔案 [如何產生和使用不會到期的認證](../ui/credentials.md#non-expiring-credentials).
+在 [!DNL Notebook] 编辑器中，输入以下值： `pip install psycopg2-binary` 并选择 **[!DNL Run]** 命令栏中的。 输入行下方会显示一条成功消息。
 
 >[!IMPORTANT]
 >
->從Platform UI複製認證時，不需要其他認證格式。 它們可以在一行中指定，屬性和值之間有單一空格。 認證會以引號括住，且 **not** 以逗號分隔。
+>在形成连接的过程中，您必须选择 **[!DNL Run]** 执行每行代码。
+
+接下来，导入 [!DNL PostgreSQL] 数据库适配器 [!DNL Python]. 输入值： `import psycopg2`并选择 **[!DNL Run]**. 此进程没有成功消息。 如果没有错误消息，请继续执行下一步。
+
+您现在必须输入值以提供Adobe Experience Platform凭据： `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. 您的连接凭据可在 [!UICONTROL 查询] 部分，在 [!UICONTROL 凭据] Platform UI的选项卡。 请参阅有关如何执行操作的文档 [查找您的组织凭据](../ui/credentials.md) 以获取详细说明。
+
+在使用第三方客户端时，建议使用不会过期的凭据，以节省重复输入详细信息的工作量。 有关说明，请参阅文档 [如何生成和使用不会过期的凭据](../ui/credentials.md#non-expiring-credentials).
+
+>[!IMPORTANT]
+>
+>从Platform UI复制凭据时，不需要凭据的其他格式。 它们可以在一行中给出，属性和值之间只有一段空格。 凭据用引号括起来，并且 **非** 逗号分隔。
 
 ```python
 conn = psycopg2.connect('''sslmode=require host=<YOUR_HOST_CREDENTIAL> port=80 dbname=prod:all user=<YOUR_ORGANIZATION_ID> password=<YOUR_PASSWORD>''')"
 ```
 
-您的 [!DNL Jupyter Notebook] 執行個體現在已連線至查詢服務。
+您的 [!DNL Jupyter Notebook] 实例现在已连接到查询服务。
 
-## 查詢執行範例
+## 示例查询执行
 
-現在您已連線 [!DNL Jupyter Notebook] 若要查詢服務，您可以使用以下專案對資料集執行查詢： [!DNL Notebook] 輸入。 以下範例使用簡單查詢來示範此程式。
+现在您已连接 [!DNL Jupyter Notebook] 要查询服务，您可以使用以下工具对数据集执行查询： [!DNL Notebook] 输入。 以下示例使用一个简单的查询来演示该过程。
 
-輸入下列值：
+输入以下值：
 
 ```python
 cur = conn.cursor()
@@ -66,9 +66,9 @@ cur.execute('''<YOUR_QUERY_HERE>''')
 data = [r for r in cur]
 ```
 
-接下來，呼叫引數(`data` （在上述範例中），以未格式化的回應顯示查詢結果。
+接下来，调用参数(`data` （在上例中）以非格式化的响应显示查询结果。
 
-若要以更易懂的方式格式化結果，請使用下列命令：
+要以更易于用户识别的方式格式化结果，请使用以下命令：
 
 - `colnames = [desc[0] for desc in cur.description]`
 - `import pandas as pd`
@@ -76,10 +76,10 @@ data = [r for r in cur]
 - `df = pd.DataFrame(samples,columns=colnames)`
 - `df.fillna(0,inplace=True)`
 
-這些命令不會產生成功訊息。 如果沒有錯誤訊息，您可以使用函式以表格格式輸出SQL查詢的結果。
+这些命令不会生成成功消息。 如果没有错误消息，您可以使用函数以表格式输出SQL查询的结果。
 
-輸入並執行 `df.head()` 函式以檢視清單化的查詢結果。
+输入并运行 `df.head()` 函数以查看列表化的查询结果。
 
 ## 后续步骤
 
-現在您已連線至查詢服務，您可以使用 [!DNL Jupyter Notebook] 以寫入查詢。 如需如何寫入和執行查詢的詳細資訊，請參閱 [running queries指南](../best-practices/writing-queries.md).
+现在，您已连接查询服务，您可以使用 [!DNL Jupyter Notebook] 以编写查询。 有关如何编写和运行查询的更多信息，请阅读 [运行查询指南](../best-practices/writing-queries.md).

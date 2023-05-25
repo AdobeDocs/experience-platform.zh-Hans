@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；查詢服務；查詢服務；experienceevent查詢；experienceevent查詢；體驗事件查詢；
-title: 檢視特定訪客的統計報表
-description: 以下檔案提供在Adobe Experience Platform查詢服務中涉及Experience事件的查詢範例。
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；experienceevent查询；experienceevent查询；Experience Event查询；
+title: 查看特定访客的汇总报表
+description: 以下文档提供了与Adobe Experience Platform查询服务中的Experience事件有关的查询示例。
 exl-id: 1348503f-65c1-41f9-b111-1284a49449a1
 source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
@@ -10,15 +10,15 @@ ht-degree: 1%
 
 ---
 
-# 檢視特定訪客的統計報表
+# 查看特定访客的汇总报表
 
-本檔案提供了一個SQL範例，可彙總特定使用者的多個分析屬性的資料，並在一個報表中檢視這些資料。 透過Adobe Experience Platform查詢服務，您可以編寫使用 [!DNL Experience Events] 以擷取各種使用案例。 體驗事件由Experience Data Model (XDM) ExperienceEvent類別表示，可在使用者與網站或服務互動時，擷取系統不可變且非彙總的快照。 體驗事件甚至可用於時間網域分析。 請參閱 [後續步驟區段](#next-steps) 有關更多使用案例，包括 [!DNL Experience Events] 以產生訪客報表。
+本文档提供了一个SQL示例，用于聚合特定用户的多个分析属性中的数据，并在一个报表中查看这些数据。 借助Adobe Experience Platform查询服务，您可以编写使用 [!DNL Experience Events] 用于捕获各种用例。 体验事件由体验数据模型(XDM) ExperienceEvent类表示，该类捕获用户与网站或服务交互时系统的不可变且非聚合的快照。 体验事件甚至可用于时域分析。 请参阅 [“后续步骤”部分](#next-steps) 有关更多用例，包括 [!DNL Experience Events] 以生成访客报表。
 
-有關XDM和的更多資訊 [!DNL Experience Events] 您可在以下網址找到： [[!DNL XDM System] 概觀](../../xdm/home.md). 透過結合查詢服務與 [!DNL Experience Events]，您就能有效追蹤使用者之間的行為趨勢。 以下檔案提供涉及下列專案的查詢範例： [!DNL Experience Events].
+有关XDM和的更多信息 [!DNL Experience Events] 可在以下位置找到： [[!DNL XDM System] 概述](../../xdm/home.md). 通过将查询服务与 [!DNL Experience Events]，您可以有效地跟踪用户之间的行为趋势。 以下文档提供了涉及以下内容的查询示例 [!DNL Experience Events].
 
 ## 目标
 
-下列SQL範例顯示如何檢視指定使用者之各種分析值的彙總報表。
+以下SQL示例显示如何查看指定用户的各种分析值的聚合报表。
 
 ```sql
 SELECT 
@@ -39,7 +39,7 @@ GROUP BY endUserIds._experience.aaid.id
 ORDER BY pageViews DESC;
 ```
 
-查詢結果顯示在下表中。
+查询结果显示在下表中。
 
 ```console
                id                 | pageViews |   A   |   B   |   C   | viewedParkas
@@ -49,10 +49,10 @@ ORDER BY pageViews DESC;
 
 ## 后续步骤 {#next-steps}
 
-閱讀本檔案可讓您更瞭解如何使用查詢服務搭配 [!DNL Experience Events] 以檢視指定使用者的analytics值彙總報表。
+通过阅读本文档，您可以更好地了解如何将查询服务与 [!DNL Experience Events] 查看指定用户的analytics值的汇总报表。
 
-請參閱下列使用案例，以瞭解其他以訪客為基礎的使用案例：
+请参阅以下用例，以了解其他基于访客的用例：
 
-- [擷取依頁面檢視次陣列織的訪客清單。](./visitors-by-number-of-page-views.md)
-- [列出訪客之前的工作階段。](./list-visitor-sessions.md)
-- [依日期建立事件的趨勢報表。](./trended-report-of-events.md)
+- [检索按页面查看次数组织的访客列表。](./visitors-by-number-of-page-views.md)
+- [列出访客的以前会话。](./list-visitor-sessions.md)
+- [按日期创建事件趋势报表。](./trended-report-of-events.md)

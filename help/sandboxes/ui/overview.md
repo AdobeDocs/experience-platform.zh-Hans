@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；沙箱總覽
+keywords: Experience Platform；主页；热门主题；沙盒概述
 solution: Experience Platform
-title: 沙箱UI總覽
-description: Adobe Experience Platform提供可將單一Platform執行個體分割成個別獨立虛擬環境的虛擬沙箱。 您可以在Experience PlatformUI中找到沙箱使用者介面。
+title: 沙盒UI概述
+description: Adobe Experience Platform提供了将单个Platform实例分区为单独的独立虚拟环境的虚拟沙箱。 可在Experience PlatformUI中找到沙盒用户界面。
 exl-id: d86e282c-6231-490f-a6c8-dbd12bf2341e
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,10 +11,10 @@ ht-degree: 0%
 
 ---
 
-# 沙箱UI總覽
+# 沙盒UI概述
 
-Adobe Experience Platform提供可將單一Platform執行個體分割成個別獨立虛擬環境的虛擬沙箱。 沙箱使用者介面可在以下網址找到： [EXPERIENCE PLATFORMUI](https://platform.adobe.com).
+Adobe Experience Platform提供了将单个Platform实例分区为单独的独立虚拟环境的虚拟沙箱。 沙盒用户界面可以在以下位置找到： [EXPERIENCE PLATFORMUI](https://platform.adobe.com).
 
-登入Experience PlatformUI後，請繼續前往 [沙箱使用手冊](user-guide.md) 瞭解如何在沙箱工作區中執行各種工作的步驟。
+登录Experience PlatformUI后，请转到 [沙盒用户指南](user-guide.md) 以了解如何在沙盒工作区中执行各种任务的步骤。
 
-如需使用沙箱API執行不同操作的步驟，請參閱 [沙箱開發人員指南](../api/getting-started.md). 如需Experience Platform沙箱的整體概觀，請參閱 [概述檔案](../home.md).
+有关使用沙盒API执行不同操作的步骤，请参阅 [沙盒开发人员指南](../api/getting-started.md). 有关Experience Platform中沙盒的高级概述，请参阅 [概述文档](../home.md).

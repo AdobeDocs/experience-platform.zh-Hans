@@ -1,6 +1,6 @@
 ---
-title: 卡片動作結構描述欄位群組
-description: 本檔案提供「卡片動作」結構描述欄位群組的概觀。
+title: 信息卡操作架构字段组
+description: 本文档概述了“卡片操作”架构字段组。
 exl-id: 49851544-9118-4b73-b1d1-4cf49b3f1dee
 source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 6%
 
 ---
 
-# [!UICONTROL 卡片動作] 結構描述欄位群組
+# [!UICONTROL 信息卡操作] 架构字段组
 
-[!UICONTROL 卡片動作] 是的標準結構描述欄位群組 [[!DNL XDM ExperienceEvent] 類別](../../classes/experienceevent.md). 欄位群組提供單一 `personalFinances.cardActions` 結構描述的欄位，可擷取有關卡片動作的詳細資訊，例如卡片型別、啟用狀態和鎖定狀態。
+[!UICONTROL 信息卡操作] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供一个 `personalFinances.cardActions` 架构的字段，用于捕获有关信息卡操作的详细信息，例如信息卡类型、激活状态和锁定状态。
 
 ![](../../images/field-groups/card-actions.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `cardActivated` | 整数 | 追蹤卡片何時已成功啟動。 |
-| `cardActivationStart` | 整数 | 追蹤卡片啟用程式何時開始。 |
-| `cardCancelled` | 整数 | 追蹤卡片何時已取消。 |
-| `cardControlsLocked` | 整数 | 追蹤卡片的控制何時已鎖定。 |
-| `cardControlsUnlocked` | 整数 | 追蹤卡片的控制何時已解鎖。 |
-| `cardID` | 字符串 | 正在啟用的卡片識別碼。 此值可能與卡片編號不同。 |
-| `cardLocked` | 整数 | 追蹤卡片何時已鎖定。 |
-| `cardOrderNew` | 整数 | 追蹤何時已要求卡片。 |
-| `cardOrderType` | 字符串 | 與卡片訂購事件相關聯的卡片訂購型別。 |
-| `cardType` | 字符串 | 卡片型別。 |
-| `cardUnlocked` | 整数 | 追蹤卡片何時已解鎖。 |
+| `cardActivated` | 整数 | 在成功激活信息卡后进行跟踪。 |
+| `cardActivationStart` | 整数 | 在信息卡激活流程启动时进行跟踪。 |
+| `cardCancelled` | 整数 | 在取消信息卡后进行跟踪。 |
+| `cardControlsLocked` | 整数 | 在锁定信息卡的控制后进行跟踪。 |
+| `cardControlsUnlocked` | 整数 | 在解锁信息卡的控制后进行跟踪。 |
+| `cardID` | 字符串 | 正在激活的卡的标识符。 该值可能与卡号不同。 |
+| `cardLocked` | 整数 | 在锁定信息卡后进行跟踪。 |
+| `cardOrderNew` | 整数 | 在请求信息卡后进行跟踪。 |
+| `cardOrderType` | 字符串 | 与卡订单事件关联的卡订单类型。 |
+| `cardType` | 字符串 | 信息卡的类型。 |
+| `cardUnlocked` | 整数 | 在解锁信息卡后进行跟踪。 |
 
 {style="table-layout:auto"}
 
-如需欄位群組的詳細資訊，請參閱 [公用XDM存放庫](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).
+有关字段组的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).

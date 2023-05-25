@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；開發人員指南；端點；資料科學工作區；熱門主題；
+keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；
 solution: Experience Platform
-title: Sensei Machine Learning API指南附錄
-description: 以下小節提供Sensei Machine Learning API各種功能的參考資訊。
+title: Sensei机器学习API指南附录
+description: 以下部分提供Sensei机器学习API各种功能的参考信息。
 exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,30 +11,30 @@ ht-degree: 3%
 
 ---
 
-# [!DNL Sensei Machine Learning] API指南附錄
+# [!DNL Sensei Machine Learning] API指南附录
 
-以下各節提供各種功能的參考資訊 [!DNL Sensei Machine Learning] API。
+以下部分提供各种功能的参考信息 [!DNL Sensei Machine Learning] API。
 
-## 用於資產擷取的查詢引數 {#query}
+## 用于资源检索的查询参数 {#query}
 
-此 [!DNL Sensei Machine Learning] API支援擷取資產的查詢引數。 下表說明可用的查詢引數及其用途：
+此 [!DNL Sensei Machine Learning] API为检索资产的查询参数提供支持。 下表描述了可用的查询参数及其用法：
 
 | 查询参数 | 描述 | 默认值 |
 | --------------- | ----------- | ------- |
-| `start` | 表示分頁的起始索引。 | `start=0` |
-| `limit` | 表示要傳回的結果數目上限。 | `limit=25` |
-| `orderby` | 指示要用於依優先順序排序的屬性。 包含破折號(**-**)，然後依遞減順序排序，否則結果會依遞增順序排序。 | `orderby=created` |
-| `property` | 表示物件必須滿足才能傳回的比較運算式。 | `property=deleted==false` |
+| `start` | 指示分页的起始索引。 | `start=0` |
+| `limit` | 指示要返回的最大结果数。 | `limit=25` |
+| `orderby` | 指示用于按优先级排序的属性。 包含短划线(**-**)，属性名称之前将按降序排序，否则结果将按升序排序。 | `orderby=created` |
+| `property` | 指示对象必须满足才能返回的比较表达式。 | `property=deleted==false` |
 
 >[!NOTE]
 >
->合併多個查詢引數時，必須以&amp;符號(**和**)。
+>组合多个查询参数时，必须使用&amp;符号(**和**)。
 
-## Python CPU和GPU設定 {#cpu-gpu-config}
+## Python CPU和GPU配置 {#cpu-gpu-config}
 
-Python引擎能夠選擇CPU或GPU，用於訓練或評分目的，並定義於 [MLInstance](./mlinstances.md) 作為任務規格(`tasks.specification`)。
+Python引擎能够选择CPU或GPU以进行训练或评分，并且在 [MLInstance](./mlinstances.md) 作为任务规范(`tasks.specification`)。
 
-以下是指定使用CPU進行訓練，並使用GPU進行評分的設定範例：
+以下是指定使用CPU进行训练和GPU进行评分的示例配置：
 
 ```json
 [
@@ -69,21 +69,21 @@ Python引擎能夠選擇CPU或GPU，用於訓練或評分目的，並定義於 [
 
 >[!NOTE]
 >
->的值 `cpus` 和 `gpus` 並不表示CPU或GPU的數量，而是表示實體機器的數量。 這些值是可允許的 `"1"` 否則和會擲回例外狀況。
+>的值 `cpus` 和 `gpus` 并不表示CPU或GPU的数量，而是表示物理机的数量。 这些值是允许的 `"1"` 否则，和将引发异常。
 
-## PySpark和Spark資源設定 {#resource-config}
+## PySpark和Spark资源配置 {#resource-config}
 
-Spark引擎能夠修改運算資源，以用於訓練和評分目的。 下表說明這些資源：
+Spark引擎能够修改计算资源以进行训练和评分。 下表介绍了这些资源：
 
 | 资源 | 描述 | 类型 |
 | -------- | ----------- | ---- |
-| driverMemory | 驅動程式的記憶體(MB) | int |
-| driverCores | 驅動程式使用的核心數目 | int |
-| executorMemory | 執行器的記憶體(MB) | int |
-| executorCores | 執行程式使用的核心數目 | int |
-| numExecutors | 執行者數量 | int |
+| drivermemory | 驱动程序内存(MB) | int |
+| driverCores | 驱动程序使用的内核数 | int |
+| executorMemory | 执行器的内存(MB) | int |
+| executorCores | 执行器使用的内核数 | int |
+| numExecuters | 执行者数量 | int |
 
-資源可在 [MLInstance](./mlinstances.md) 作為(A)個別訓練或評分引數，或(B)其他規格物件內(`specification`)。 例如，下列資源設定對於訓練和評分都是相同的：
+资源可在 [MLInstance](./mlinstances.md) 作为(A)单独的训练或评分参数，或(B)在附加的规范对象内(`specification`)。 例如，以下资源配置对于训练和评分都是相同的：
 
 ```json
 [

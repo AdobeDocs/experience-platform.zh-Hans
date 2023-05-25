@@ -1,6 +1,6 @@
 ---
-title: 設定Adobe Experience Platform Web SDK擴充功能
-description: 如何在UI中設定Adobe Experience Platform Web SDK標籤擴充功能。
+title: 配置Adobe Experience Platform Web SDK扩展
+description: 如何在UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
 source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
 workflow-type: tm+mt
@@ -9,121 +9,121 @@ ht-degree: 6%
 
 ---
 
-# 設定Adobe Experience Platform Web SDK擴充功能
+# 配置Adobe Experience Platform Web SDK扩展
 
-Adobe Experience Platform Web SDK標籤擴充功能會透過Adobe Experience Cloud Edge Network，將資料從Web屬性傳送至Adobe Experience Platform。 擴充功能可讓您將資料串流至Platform、同步身分、處理客戶同意訊號，以及自動收集內容資料。
+Adobe Experience Platform Web SDK标记扩展通过Adobe Experience Platform Edge Network从Web资产向Adobe Experience Cloud发送数据。 扩展允许您将数据流式传输到Platform、同步身份、处理客户同意信号以及自动收集上下文数据。
 
-本文介紹如何在UI中設定擴充功能。
+本文档介绍如何在UI中配置扩展。
 
 ## 快速入门
 
-如果已經為某個屬性安裝了Platform Web SDK擴充功能，請在UI中開啟該屬性，然後選取 **[!UICONTROL 擴充功能]** 標籤。 在Platform Web SDK底下，選取 **[!UICONTROL 設定]**.
+如果已为某个资产安装了Platform Web SDK扩展，请在UI中打开该资产，然后选择 **[!UICONTROL 扩展]** 选项卡。 在Platform Web SDK下，选择 **[!UICONTROL 配置]**.
 
 ![](../assets/extension/overview/configure.png)
 
-如果您尚未安裝擴充功能，請選取 **[!UICONTROL 目錄]** 標籤。 從可用擴充功能清單中，找到Platform Web SDK擴充功能，然後選取「 」 **[!UICONTROL 安裝]**.
+如果尚未安装扩展，请选择 **[!UICONTROL 目录]** 选项卡。 从可用扩展的列表中，找到Platform Web SDK扩展，然后选择 **[!UICONTROL 安装]**.
 
 ![](../assets/extension/overview/install.png)
 
-在這兩種情況下，您都會進入Platform Web SDK的設定頁面。 以下各節說明擴充功能的設定選項。
+在这两种情况下，您都会转到Platform Web SDK的配置页面。 以下部分介绍了扩展的配置选项。
 
 ![](../assets/extension/overview/config-screen.png)
 
-## 一般設定選項
+## 常规配置选项
 
-頁面頂端的設定選項可告知Adobe Experience Platform將資料路由到何處以及要在伺服器上使用哪些設定。
+页面顶部的配置选项可告知Adobe Experience Platform将数据路由到何处以及要在服务器上使用哪些配置。
 
 ### [!UICONTROL 名称]
 
-Adobe Experience Platform Web SDK擴充功能支援頁面上的多個執行個體。 此名稱可用來透過標籤設定將資料傳送至多個組織。
+Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。
 
-擴充功能的名稱預設為&quot;[!DNL alloy]「。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
+扩展名默认为&quot;[!DNL alloy]“。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
 
 ### **[!UICONTROL IMS 组织 ID]**
 
-此 [!UICONTROL IMS組織ID] 是您想要在Adobe時傳送資料的組織。 大多數情況下，會使用自動填入的預設值。 頁面上有多個例項時，請使用此欄位填入您要傳送資料的第二個組織的值。
+此 [!UICONTROL IMS组织ID] 是您希望在Adobe时将数据发送到的organization。 大多数情况下，使用自动填充的默认值。 当页面上有多个实例时，使用要将数据发送到的第二个组织的值填充此字段。
 
 ### **[!UICONTROL 边缘域]**
 
-此 [!UICONTROL 邊緣網域] 是Adobe Experience Platform擴充功能傳送及接收資料的網域。 Adobe建議對此擴充功能使用第一方網域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
+此 [!UICONTROL 边缘域] 是Adobe Experience Platform扩展发送和接收数据的域。 Adobe建议对此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
 ## [!UICONTROL 数据流]
 
-當請求傳送至Adobe Experience Platform Edge Network時，會使用資料串流ID來參考伺服器端設定。 您可以更新設定，而無須在您的網站上變更程式碼。
+当请求发送至Adobe Experience Platform Edge Network时，将使用数据流ID来引用服务器端配置。 您可以更新配置，而无需在网站上更改代码。
 
-請參閱指南： [資料串流](../datastreams/overview.md) 以取得詳細資訊。
+请参阅指南，网址为 [数据流](../datastreams/overview.md) 了解更多信息。
 
 
 ## [!UICONTROL Privacy]
 
 ![](../assets/extension/overview/privacy.png)
 
-此 [!UICONTROL 隱私權] 區段可讓您設定SDK如何處理來自您網站的使用者同意訊號。 具體來說，它可讓您選取在未提供其他明確同意偏好設定時假設為使用者的預設同意層級。 預設同意層級不會儲存至使用者的設定檔。 下表會劃分每個選項的含意：
+此 [!UICONTROL 隐私] 部分允许您配置SDK如何处理来自您网站的用户同意信号。 具体来说，它允许您选择在没有提供其他明确同意首选项的情况下假定为用户的默认同意级别。 默认同意级别不会保存到用户的配置文件中。 下表列出了每个选项的具体内容：
 
-| [!UICONTROL 預設同意層級] | 描述 |
+| [!UICONTROL 默认同意级别] | 描述 |
 | --- | --- |
-| [!UICONTROL 在] | 收集在使用者提供同意偏好設定之前發生的事件。 |
-| [!UICONTROL 輸出] | 捨棄在使用者提供同意偏好設定之前發生的事件。 |
-| [!UICONTROL 擱置中] | 在使用者提供同意偏好設定之前發生的佇列事件。 提供同意偏好設定時，會根據提供的偏好設定收集或捨棄事件。 |
-| [!UICONTROL 資料元素提供] | 預設同意層級由您定義的個別資料元素決定。 使用此選項時，您必須使用提供的下拉式選單指定資料元素。 |
+| [!UICONTROL In] | 收集在用户提供同意首选项之前发生的事件。 |
+| [!UICONTROL 去话] | 丢弃在用户提供同意首选项之前发生的事件。 |
+| [!UICONTROL 待处理] | 在用户提供同意首选项之前发生的队列事件。 提供同意首选项时，将根据提供的首选项收集或丢弃事件。 |
+| [!UICONTROL 由数据元素提供] | 默认同意级别由您定义的单独数据元素决定。 使用此选项时，必须使用提供的下拉菜单指定数据元素。 |
 
-如果您的業務操作需要明確的使用者同意，請使用「退出」或「擱置中」。
+如果您的业务操作需要明确的用户同意，请使用“去话”或“挂起”。
 
 ## [!UICONTROL 标识]
 
 ![](../assets/extension/overview/identity.png)
 
-### [!UICONTROL 從VisitorAPI移轉ECID]
+### [!UICONTROL 从VisitorAPI迁移ECID]
 
-默认启用选项。啟用此功能後，SDK就能讀取AMCV和s_ecid Cookie，並設定Visitor.js使用的AMCV Cookie。 移轉至Adobe Experience Platform Web SDK時，此功能很重要，因為有些頁面可能仍在使用Visitor.js。 它可讓SDK繼續使用相同的ECID，因此不會將使用者識別為兩個不同的使用者。
+默认启用选项。启用此功能后，SDK可以读取AMCV和s_ecid Cookie，并设置Visitor.js使用的AMCV Cookie。 在迁移到Adobe Experience Platform Web SDK时，此功能很重要，因为某些页面可能仍在使用Visitor.js。 它允许SDK继续使用同一ECID，以便用户不会被标识为两个单独的用户。
 
 ### [!UICONTROL 使用第三方Cookie]
 
-此選項可讓SDK嘗試將使用者識別碼儲存在第三方Cookie中。 如果成功，則會在使用者瀏覽多個網域時將其識別為單一使用者，而不是在每個網域上將其識別為單獨的使用者。 如果啟用此選項，如果瀏覽器不支援第三方Cookie或使用者已設定不允許第三方Cookie，SDK仍可能無法將使用者識別碼儲存在第三方Cookie中。 在此情況下，SDK只會將識別碼儲存在第一方網域中。
+此选项使SDK能够尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用此选项，则如果浏览器不支持第三方Cookie，或者用户已将其配置为不允许第三方Cookie，则SDK可能仍无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK仅将标识符存储在第一方域中。
 
 ## [!UICONTROL 个性化]
 
 ![](../assets/extension/overview/personalization.png)
 
-如果您想要在個人化內容載入時隱藏網站上的某些零件，您可以在預先隱藏樣式編輯器中指定要隱藏的元素。 然後您可以複製提供給您的預設預先隱藏程式碼片段，並將其貼到中 `<head>`HTML網站的元素。
+如果要在加载个性化内容时隐藏网站的某些部分，您可以在预隐藏样式编辑器中指定要隐藏的元素。 然后，您可以复制提供给您的默认预隐藏代码片段，并将其粘贴到 `<head>`HTML站点的元素。
 
 ## [!UICONTROL 数据收集]
 
 ![](../assets/extension/overview/data-collection.png)
 
-### [!UICONTROL 回呼函式]
+### [!UICONTROL 回调函数]
 
-擴充功能中提供的回呼函式也稱為 [`onBeforeEventSend` 函式](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=zh-Hans) 在程式庫中。 此函式可讓您在事件傳送至Adobe Edge Network之前，先全域修改事件。 如需如何使用此函式的詳細資訊，請參閱 [此處](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
+扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=zh-Hans) 在图书馆里。 此函数允许您在将事件发送到Adobe Edge Network之前对其进行全局修改。 有关如何使用此函数的更多详细信息，请参阅 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
 
-### [!UICONTROL 按一下資料收集]
+### [!UICONTROL 单击数据收集]
 
-SDK可以自動收集您的連結點選資訊。 此功能預設為啟用，但可使用此選項加以停用。 如果連結包含「 」中列出的下載運算式之一，這些連結也會標示為下載連結。 [!UICONTROL 下載連結限定詞] 文字方塊。 Adobe會提供您一些預設的下載連結限定詞，但這些限定詞可隨時編輯。
+SDK可以自动为您收集链接点击信息。 默认情况下，此功能处于启用状态，但可以使用此选项禁用该功能。 如果链接包含中列出的下载表达式之一，则这些链接也标记为下载链接。 [!UICONTROL 下载链接限定符] 文本框。 Adobe会为您提供一些默认的下载链接限定符，但这些限定符可以随时编辑。
 
-### [!UICONTROL 自動收集的內容資料]
+### [!UICONTROL 自动收集的上下文数据]
 
-依預設，SDK會收集關於裝置、Web、環境和地標內容的特定內容資料。 如果您想檢視Adobe收集的資訊清單，可以找到 [此處](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). 如果您不想收集這些資料，或只想收集特定類別的資料，可以變更這些選項。
+默认情况下，SDK会收集有关设备、Web、环境和位置上下文的特定上下文数据。 如果您想查看Adobe收集的信息列表，可以找到该列表 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). 如果不希望收集此数据，或者只希望收集某些类别的数据，则可以更改这些选项。
 
-## [!UICONTROL 資料流設定覆寫]
+## [!UICONTROL 数据流配置覆盖]
 
-資料串流覆寫可讓您為資料串流定義其他設定，這些設定會透過Web SDK傳遞到Edge Network。
+数据流覆盖允许您为数据流定义其他配置，这些配置将通过Web SDK传递到Edge Network。
 
-這有助於您觸發與預設資料流行為不同的資料流行為，而不會建立新的資料流或修改現有的設定。
+这有助于触发与默认数据流行为不同的数据流行为，而无需创建新数据流或修改现有设置。
 
-資料流設定覆寫是兩個步驟的程式：
+数据流配置覆盖是一个两步过程：
 
-1. 首先，您必須在以下位置定義資料流設定覆寫： [資料流設定頁面](../datastreams/configure.md).
-2. 然後，您必須透過Web SDK命令或使用Web SDK標籤擴充功能，將覆寫傳送至Edge Network。
+1. 首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](../datastreams/configure.md).
+2. 然后，您必须通过Web SDK命令或Web SDK标记扩展将覆盖发送到Edge Network。
 
-檢視資料流 [設定覆寫檔案](../datastreams/overrides.md) 以取得有關如何覆寫資料流設定的詳細說明。
+查看数据流 [配置覆盖文档](../datastreams/overrides.md) 有关如何覆盖数据流配置的详细说明。
 
-除了透過Web SDK命令傳遞覆寫外，您也可以在下面顯示的標籤擴充功能畫面中設定覆寫。
+作为通过Web SDK命令传递覆盖的替代方法，您可以在下面显示的标记扩展屏幕中配置覆盖。
 
-![此影像顯示Web SDK標籤擴充功能頁面中的資料流設定覆寫。](../assets/extension/overview/datastream-overrides.png)
+![该图像在Web SDK标记扩展页面中显示数据流配置覆盖。](../assets/extension/overview/datastream-overrides.png)
 
 ## [!UICONTROL 高级设置]
 
 ![](../assets/extension/overview/advanced-settings.png)
 
-### [!UICONTROL 邊緣基底路徑]
+### [!UICONTROL 边缘基本路径]
 
-如果您需要變更用來與Adobe Edge Network互動的基本路徑，請使用此欄位。 這應該不需要更新，但在您參與Beta或Alpha版的情況下，Adobe可能會要求您變更此欄位。
+如果需要更改用于与Adobe Edge Network交互的基本路径，请使用此字段。 这应该不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。

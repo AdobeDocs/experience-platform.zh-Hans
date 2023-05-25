@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API管理数据集的数据使用标签
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 9f3fa696ed60ce85fa93515e39716d89ec80f1ec
+source-git-commit: 1f7a1bcf5aaf694ca2d3416c9c98f37b66adc69f
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1153'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 >[!NOTE]
 >
->如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，这需要一个 `If-Match` 标头。 将标签添加到数据集后，最近的 `etag` 以后更新或删除标签时需要值。
+>如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，这需要一个 `If-Match` 标头。 将标签添加到数据集后， `etag` 指定值，以便以后更新或删除标签。
 
 要检索最新版本的dataset-label实体，请将 [GET请求](#look-up) 到 `/datasets/{DATASET_ID}/labels` 端点。 当前值在响应中返回，位于 `etag` 标头。 更新现有数据集标签时，最佳实践是首先执行数据集的查找请求，以获取其最新数据 `etag` 值之前，该值的使用范围 `If-Match` 后续PUT请求的标头。
 

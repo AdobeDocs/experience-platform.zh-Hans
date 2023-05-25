@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；身分；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；身份；数据类型；数据类型；
 solution: Experience Platform
-title: 身分資料型別
-description: 本檔案提供身分XDM資料型別的概觀。
+title: 身份数据类型
+description: 本文档概述了Identity XDM数据类型。
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,37 +11,37 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL 身分] 資料型別
+# [!UICONTROL 身份] 数据类型
 
-[!UICONTROL 身分] 是標準XDM資料型別，用來明確區分與數位體驗互動的人。 身分由身分提供者建立，其本身會在以下專案中參照： `namespace` 屬性。 在每個 `namespace`，此身分是唯一的。
+[!UICONTROL 身份] 是一个标准XDM数据类型，用于明确区分与数字体验互动的人。 标识由标识提供者建立，它本身在中被引用。 `namespace` 属性。 在每一个 `namespace`，则标识是唯一的。
 
 <img src="../images/data-types/identity.png" width="550" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `namespace` | 对象 | 包含單一字串欄位(`code`)，表示與提供的相關聯的名稱空間 `id` 屬性。 |
-| `authenticatedState` | 字符串 | 觀察到Experience事件時此身分的驗證狀態。 請參閱 [附錄](#authenticatedState) 以取得接受的值和定義。 |
-| `id` | 字符串 | 消費者在相關名稱空間中的身分。 |
-| `primary` | 布尔值 | 指出這是否為個人的主要身分。 每個個人只能有一個主要身分。 |
-| `xid` | 字符串 | 當出現時，這個值代表跨名稱空間的識別碼，在所有名稱空間中都是唯一，也就是所有名稱空間中的範圍識別碼。 |
+| `namespace` | 对象 | 包含单个字符串字段(`code`)，表示与提供的关联的命名空间 `id` 属性。 |
+| `authenticatedState` | 字符串 | 在观察到Experience Event时此标识的身份验证状态。 请参阅 [附录](#authenticatedState) 以获取接受的值和定义。 |
+| `id` | 字符串 | 消费者在相关命名空间中的身份。 |
+| `primary` | 布尔值 | 指示这是否为个人的主要身份。 每个个人只能有一个主要身份。 |
+| `xid` | 字符串 | 如果存在，则此值表示跨命名空间标识符，该标识符在所有命名空间中的所有命名空间范围内的标识符中是唯一的。 |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.schema.json)
 
 ## 附录
 
-以下小節包含更多關於 [!UICONTROL 身分] 資料型別。
+以下部分包含有关 [!UICONTROL 身份] 数据类型。
 
 ## authenticatedState的接受值 {#authenticatedState}
 
-下表概述下列專案的可接受值 `authenticatedState` 及其相關涵義：
+下表概述了接受的值 `authenticatedState` 及其相关含义：
 
 | 值 | 描述 |
 | --- | --- |
-| `ambiguous` | 驗證狀態不明確。 |
-| `authenticated` | 透過在事件觀察時有效的登入或類似動作來識別使用者。 |
-| `loggedOut` | 在先前某個時間點，使用者已由登入動作識別，但在事件觀察時未登入。 |
+| `ambiguous` | 身份验证状态不明确。 |
+| `authenticated` | 用户由观察事件时有效的登录或类似操作标识。 |
+| `loggedOut` | 用户在之前某个时间点由登录操作识别，但在事件观察时未登录。 |

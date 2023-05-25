@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；存取控制；adobe admin console
+keywords: Experience Platform；主页；热门主题；访问控制；adobe admin console
 solution: Experience Platform
 title: 访问控制概述
-description: Adobe Experience Platform的存取控制需透過Adobe Admin Console提供。 此功能運用Admin Console中的產品設定檔，將使用者與許可權和沙箱連結。
+description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
 source-git-commit: 88bfcdef65b4a938d573b1beb1952c7e030ebc13
 workflow-type: tm+mt
@@ -13,119 +13,119 @@ ht-degree: 2%
 
 # 访问控制概述
 
-Adobe Experience Platform的存取控制需透過 **[!UICONTROL 許可權]** 在 [Adobe Experience Cloud](https://experience.adobe.com/). 此功能利用角色和原則，將使用者與許可權和沙箱連結。
+Adobe Experience Platform的访问控制是通过 **[!UICONTROL 权限]** 在 [Adobe Experience Cloud](https://experience.adobe.com/). 此功能利用角色和策略，将用户与权限和沙盒相关联。
 
-## 存取控制階層與工作流程
+## 访问控制层级和工作流
 
-若要設定Experience Platform的存取控制，您必須擁有擁有Experience Platform產品的組織的系統或產品管理員許可權。 可授予或撤銷許可權的最小角色為產品管理員。 可以管理許可權的其他管理員角色是系統管理員（無限制）。 請參閱以下文章中的Adobe Help Center： [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 以取得詳細資訊。
+要为Experience Platform配置访问控制，您必须对拥有Experience Platform产品的组织具有系统或产品管理员权限。 可以授予或撤销权限的最低角色是产品管理员。 可以管理权限的其他管理员角色是系统管理员（无限制）。 请参阅Adobe Help Center文章，网址为 [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 了解更多信息。
 
 >[!NOTE]
 >
->從此刻起，本檔案提及的「管理員」一律指產品管理員或以上人員（如上所述）。
+>从此刻起，本文档中对“管理员”的任何提及都指产品管理员或更高版本（如上所述）。
 
-取得和指派存取許可權的高層級工作流程可概述如下：
+获取和分配访问权限的高级工作流可概括如下：
 
-- 在授權Adobe Experience Platform或使用Experience Platform的應用程式/應用程式服務後，系統會傳送電子郵件給授權期間指定的管理員。
-- 管理員登入 [Adobe Admin Console](#adobe-admin-console) 並選取 **Adobe Experience Platform** 從總覽頁面上的產品清單。
-- 若要授與Experience Platform的存取權，管理員需要將使用者新增至預設產品設定檔： `AEP-Default-All-Users`.
-- 在「Experience Platform許可權」中，管理員可以建立新角色，或編輯任何現有角色的許可權和使用者。
-- 建立或編輯角色時，管理員會使用 **[!UICONTROL 使用者]** 標籤，並授予這些使用者許可權(例如&quot;[!UICONTROL 讀取資料集]「或」[!UICONTROL 管理結構描述]「)，方式是編輯角色的許可權。 同樣地，管理員可以使用相同的編輯選項指派沙箱的存取權。
-- 當使用者登入Experience Platform使用者介面時，他們對Experience Platform功能的存取權是由上一步授予他們的許可權所驅動。 例如，如果使用者沒有 [!UICONTROL 檢視資料集] 許可權， **[!UICONTROL 資料集]** 該使用者看不到側邊功能表中的索引標籤。
+- 在许可Adobe Experience Platform或使用Experience Platform的应用程序/应用程序服务后，会向在许可期间指定的管理员发送电子邮件。
+- 管理员登录到 [Adobe Admin Console](#adobe-admin-console) 并选择 **Adobe Experience Platform** 从概述页面上的产品列表中。
+- 要授予对Experience Platform的访问权限，管理员需要将用户添加到默认产品配置文件： `AEP-Default-All-Users`.
+- 在“Experience Platform权限”中，管理员可以创建新角色，或编辑任何现有角色的权限和用户。
+- 创建或编辑角色时，管理员使用将用户添加到角色 **[!UICONTROL 用户]** 选项卡，并向这些用户授予权限(例如“[!UICONTROL 读取数据集]“或”[!UICONTROL 管理架构]“)，方法是编辑角色的权限。 同样，管理员可以使用相同的编辑选项为沙盒分配访问权限。
+- 当用户登录Experience Platform用户界面时，他们对Experience Platform功能的访问权限由上一步授予他们的权限驱动。 例如，如果用户没有 [!UICONTROL 查看数据集] 权限， **[!UICONTROL 数据集]** 选项卡时，该用户将不可见。
 
-如需如何在Experience Platform中管理存取控制的詳細步驟，請參閱 [存取控制使用手冊](./ui/overview.md).
+有关如何在Experience Platform中管理访问控制的更多详细步骤，请参阅 [访问控制用户指南](./ui/overview.md).
 
-對Experience Platform API的所有呼叫都會驗證許可權，如果在目前使用者內容中找不到適當的許可權，則會傳回錯誤。 在UI中，將根據授予目前使用者的許可權，隱藏或更改元素。
+所有对Experience PlatformAPI的调用均会验证权限，如果在当前用户上下文中未找到相应的权限，则将返回错误。 在UI中，将根据授予当前用户的权限，隐藏或更改元素。
 
 ## 权限 {#platform-permissions}
 
-[!UICONTROL 許可權] 提供管理組織Experience Platform存取的中央位置。 到 [!UICONTROL 許可權]，您可以授予使用者群組各種Experience Platform功能的存取許可權，例如 [!UICONTROL 管理資料集]， [!UICONTROL 檢視資料集]，或 [!UICONTROL 管理設定檔].
+[!UICONTROL 权限] 提供一个中心位置，用于管理组织的Experience Platform访问权限。 到 [!UICONTROL 权限]，您可以为多组用户授予各种Experience Platform功能的访问权限，例如 [!UICONTROL 管理数据集]， [!UICONTROL 查看数据集]，或 [!UICONTROL 管理配置文件].
 
 ### 角色
 
-在 [!UICONTROL 角色] 區段，許可權會透過使用角色指派給使用者。 角色可讓您向一個或多個使用者授予許可權，並且還包含他們透過角色指派給他們的沙箱範圍的存取權。 您可以將使用者指派給屬於您組織的一或多個角色。
+在 [!UICONTROL 角色] 部分，权限是通过使用角色分配给用户的。 角色允许您向一个或多个用户授予权限，并且还包含他们对通过角色分配给他们的沙盒范围的访问权限。 可以将用户分配给属于您组织的一个或多个角色。
 
-### 預設角色
+### 默认角色
 
-Experience Platform隨附兩個預先設定的預設角色。 下表概述每個預設設定檔中提供的內容，包括他們授予存取許可權的沙箱，以及他們在該沙箱範圍內授予的許可權。
+Experience Platform附带两个预配置的默认角色。 下表概述了每个默认配置文件中提供的内容，包括它们授予访问权限的沙盒以及它们在该沙盒范围内授予的权限。
 
-| 角色 | 沙箱存取 | 权限 |
+| 角色 | 沙盒访问 | 权限 |
 | --- | --- | --- |
-| 預設的生產所有存取權 | 生产 | 所有適用於Experience Platform的許可權，「沙箱管理」許可權除外。 |
-| 沙箱管理員 | 不适用 | 僅提供對沙箱管理許可權的存取。 |
+| 默认的生产所有访问权限 | 生产 | 适用于Experience Platform的所有权限，沙盒管理权限除外。 |
+| 沙盒管理员 | 不适用 | 仅提供对沙盒管理权限的访问。 |
 
-## 沙箱和許可權
+## 沙盒和权限
 
-非生產沙箱是資料虛擬化的一種形式，可讓您將資料與其他沙箱隔離，通常用於開發實驗、測試或試用。 角色的許可權可讓角色的使用者存取他們有權存取的沙箱環境中的Experience Platform功能。 預設Experience Platform授權會授予您5個沙箱（一個生產環境和4個非生產環境）。 您可以新增10個非生產沙箱的套件，最多總共75個沙箱。 如需詳細資訊，請聯絡貴組織的管理員或您的Adobe銷售代表。
+非生产沙盒是一种数据虚拟化形式，它允许您将数据与其他沙盒隔离，通常用于开发实验、测试或试用。 角色的权限可让角色的用户在有权访问的沙盒环境中访问Experience Platform功能。 默认Experience Platform许可证授予您5个沙盒（一个生产沙盒和4个非生产沙盒）。 您可以添加包含10个非生产沙箱的包，最多总共75个沙箱。 有关更多详细信息，请联系贵组织的管理员或您的Adobe销售代表。
 
-如需Experience Platform沙箱的詳細資訊，請參閱 [沙箱總覽](../sandboxes/home.md).
+有关Experience Platform沙箱的更多信息，请参阅 [沙盒概述](../sandboxes/home.md).
 
-### 沙箱的存取權
+### 沙盒访问权限
 
-沙箱的存取權透過角色進行管理。 如需如何為角色啟用沙箱存取權的詳細步驟，請參閱 [屬性型存取控制角色指南](./abac/ui/roles.md).
+沙盒的访问通过角色进行管理。 有关如何为角色启用沙盒访问权限的详细步骤，请参阅 [基于属性的访问控制角色指南](./abac/ui/roles.md).
 
-可授予使用者角色中一或多個沙箱的存取權。 如果一位使用者包含在兩個或多個角色中，則該使用者將可存取這些角色中包含的所有沙箱。
+可以授予用户访问角色中一个或多个沙箱的权限。 如果一个用户包含在两个或更多角色中，则该用户将有权访问这些角色中包含的所有沙盒。
 
-「沙箱管理」許可權可讓使用者管理、檢視或重設沙箱。
+“沙盒管理”权限允许用户管理、查看或重置沙盒。
 
-### 資源許可權 {#permissions}
+### 资源权限 {#permissions}
 
-資源 [!UICONTROL 許可權] 角色中的標籤會顯示該角色的有效沙箱和許可權：
+资源 [!UICONTROL 权限] 角色中的选项卡会显示该角色的活动沙盒和权限：
 
-![許可權 — 概觀](./images/permissions.png)
+![permissions-overview](./images/permissions.png)
 
-透過資源許可權授與的許可權會依類別排序，有些許可權會授與對多個低階功能的存取權。
+通过资源权限授予的权限按类别排序，有些权限授予对多个低级功能的访问权限。
 
-下表概述角色中Experience Platform的可用許可權，以及使用者授予存取權的特定Experience Platform功能說明。 如需有關如何將許可權新增至角色的詳細步驟，請參閱 [屬性型存取控制角色指南](./abac/ui/roles.md).
+下表概述了角色中Experience Platform的可用权限，并说明了他们授予访问权限的特定Experience Platform功能。 有关如何向角色添加权限的详细步骤，请参阅 [基于属性的访问控制角色指南](./abac/ui/roles.md).
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| [!DNL Alerts] | [!UICONTROL 檢視警示歷史記錄] | 警示歷程記錄的唯讀存取權。 |
-| [!DNL Alerts] | [!UICONTROL 解決警示] | 讀取、編輯和刪除警示的存取權。 |
-| [!DNL Alerts] | [!UICONTROL 檢視警示] | 警示的唯讀存取權。 |
-| [!DNL Alerts] | [!UICONTROL 管理警報] | 讀取、建立、編輯和刪除警示歷程記錄的存取權。 |
-| [!DNL Data Hygiene] | [!UICONTROL 檢視資料衛生] | 資料檢疫的唯讀存取。 |
-| [!DNL Data Hygiene] | [!UICONTROL 管理資料衛生] | 讀取、建立、編輯和刪除資料檢疫的存取權。 |
-| [!DNL Data Modeling] | [!UICONTROL 管理架构] | 讀取、建立、編輯和刪除結構描述和相關資源的存取權。 |
-| [!DNL Data Modeling] | [!UICONTROL 查看架构] | 對結構描述和相關資源的唯讀存取權。 |
-| [!DNL Data Modeling] | [!UICONTROL 管理關係] | 讀取、建立、編輯和刪除綱要關係的存取權。 |
-| [!DNL Data Modeling] | [!UICONTROL 管理身分中繼資料] | 讀取、建立、編輯和刪除結構描述身分中繼資料的存取權。 |
-| [!DNL Data Management] | [!UICONTROL 管理資料集] | 讀取、建立、編輯和刪除資料集的存取權。 結構描述的唯讀存取權。 |
-| [!DNL Data Management] | [!UICONTROL 查看数据集] | 資料集和結構描述的唯讀存取權。 |
-| [!DNL Data Management] | [!UICONTROL 資料監視] | 以唯讀方式存取監督資料集和資料流。 |
-| [!DNL Profile Management] | [!UICONTROL 管理設定檔] | 存取讀取、建立、編輯和刪除用於客戶設定檔的資料集。 對可用設定檔的唯讀存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 檢視設定檔] | 對可用設定檔的唯讀存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 管理区段] | 讀取、建立、編輯和刪除區段的存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 檢視區段] | 可用區段的唯讀存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 管理合併原則] | 讀取、建立、編輯和刪除合併原則的存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 檢視合併原則] | 對可用合併原則的唯讀存取權。 |
-| [!DNL Profile Management] | [!UICONTROL 匯出區段的對象] | 能夠將評估的對象區段匯出至資料集。 |
-| [!DNL Profile Management] | [!UICONTROL 評估區段給對象] | 可透過評估區段定義來為對象產生設定檔。 |
-| [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 讀取、建立、編輯和刪除身分名稱空間的存取權。 |
-| [!DNL Identity Management] | [!UICONTROL 查看标识命名空间] | 身分識別名稱空間的唯讀存取。 |
-| [!DNL Identity Management] | [!UICONTROL 檢視身分圖表] | 身分圖的唯讀存取。 |
-| [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 讀取、建立、編輯和刪除沙箱的存取權。 |
-| [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 屬於您組織的沙箱的唯讀存取權。 |
-| [!DNL Sandbox Administration] | [!UICONTROL 重設沙箱] | 可重設沙箱。 |
-| [!DNL Destinations] | [!UICONTROL 管理目的地] | 讀取、建立和刪除目的地啟用流程和目的地帳戶的存取權。 |
-| [!DNL Destinations] | [!UICONTROL 檢視目的地] | 以唯讀方式存取中的可用目的地 **[!UICONTROL 目錄]** 索引標籤和已驗證的目標 **[!UICONTROL 瀏覽]** 標籤。 |
-| [!DNL Destinations] | [!UICONTROL 啟用目的地] | 讓使用者能啟用現有目的地的區段。 在啟動工作流程中啟用對應步驟。 此許可權需要 [!UICONTROL 檢視目的地] 或 [!UICONTROL 管理目的地] 將授與將對目的地啟用資料的使用者。 |
-| [!DNL Destinations] | [!UICONTROL 啟用區段而不進行對應] | 讓使用者能在不顯示 [對應步驟](../destinations/ui/activate-batch-profile-destinations.md#mapping). 使用者可以在啟動工作流程中新增和移除區段，但無法新增或移除對應的屬性或身分。 此許可權需要 [!UICONTROL 啟用目的地] 將許可權授與將啟用目的地資料的使用者。 |
-| [!DNL Destinations] | [!UICONTROL 管理和啟用資料集目的地] | 能夠讀取、建立、編輯和停用資料集匯出流程。 還能對已建立的作用中資料集啟用資料。 |
-| [!DNL Destinations] | [!UICONTROL 目的地製作] | 能夠使用編寫目的地 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
-| [!DNL Data Ingestion] | [!UICONTROL 管理來源] | 讀取、建立、編輯和停用來源的存取權。 |
-| [!DNL Data Ingestion] | [!UICONTROL 檢視來源] | 對中的可用來源具有唯讀存取權 **[!UICONTROL 目錄]** 索引標籤和已驗證的來源 **[!UICONTROL 瀏覽]** 標籤。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 存取建立、接受和拒絕合作夥伴握手以連線兩個組織並啟用 [!DNL Segment Match] 流程。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 讀取、建立、編輯和發佈的存取權 [!DNL Segment Match] 使用中合作夥伴的摘要。 |
-| [!DNL Data Science Workspace] | [!UICONTROL 管理資料科學工作區] | 在中讀取、建立、編輯和刪除的存取權 [!DNL Data Science Workspace]. |
-| 数据治理 | [!UICONTROL 套用資料使用標籤] | 讀取、建立和刪除使用標籤的存取權。 |
-| 数据治理 | [!UICONTROL 管理資料使用原則] | 讀取、建立、編輯和刪除資料使用原則的存取權。 |
-| 数据治理 | [!UICONTROL 檢視資料使用原則] | 屬於您組織的資料使用原則的唯讀存取權。 |
-| 数据治理 | [!UICONTROL 檢視使用者活動記錄] | 唯讀存取權，可檢視錄製的影像 [稽核記錄](../landing/governance-privacy-security/audit-logs/overview.md) 平台活動的URL編號。 |
-| [!DNL Dashboards] | [!UICONTROL 檢視授權使用量儀表板] | 唯讀存取權，可檢視授權使用情況儀表板。 |
-| [!DNL Dashboards] | [!UICONTROL 管理標準儀表板] | 新增尚未在Data Warehouse中的自訂屬性。 |
-| [!DNL Query Service] | [!UICONTROL 管理查詢] | 存取Platform資料的讀取、建立、編輯和刪除結構化SQL查詢。 |
-| [!DNL Query Service] | [!UICONTROL 管理查詢服務整合] | 存取以建立、更新和刪除不會到期的認證以進行查詢服務存取。 |
+| [!DNL Alerts] | [!UICONTROL 查看警报历史记录] | 对警报历史记录的只读访问权限。 |
+| [!DNL Alerts] | [!UICONTROL 解决警报] | 有权读取、编辑和删除警报。 |
+| [!DNL Alerts] | [!UICONTROL 查看警报] | 警报的只读访问权限。 |
+| [!DNL Alerts] | [!UICONTROL 管理警报] | 有权读取、创建、编辑和删除警报历史记录。 |
+| [!DNL Data Hygiene] | [!UICONTROL 查看数据保健] | 数据卫生的只读访问。 |
+| [!DNL Data Hygiene] | [!UICONTROL 管理数据卫生] | 有权读取、创建、编辑和删除数据保健。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理架构] | 有权读取、创建、编辑和删除架构和相关资源。 |
+| [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对架构和相关资源的只读访问权限。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理关系] | 有权读取、创建、编辑和删除架构关系。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理身份元数据] | 有权读取、创建、编辑和删除架构的身份元数据。 |
+| [!DNL Data Management] | [!UICONTROL 管理数据集] | 有权读取、创建、编辑和删除数据集。 对架构的只读访问权限。 |
+| [!DNL Data Management] | [!UICONTROL 查看数据集] | 对数据集和架构的只读访问权限。 |
+| [!DNL Data Management] | [!UICONTROL 数据监测] | 对监控数据集和流的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 管理配置文件] | 有权读取、创建、编辑和删除用于客户配置文件的数据集。 对可用配置文件的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 查看配置文件] | 对可用配置文件的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 管理区段] | 有权读取、创建、编辑和删除区段。 |
+| [!DNL Profile Management] | [!UICONTROL 查看区段] | 对可用区段的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 管理合并策略] | 有权读取、创建、编辑和删除合并策略。 |
+| [!DNL Profile Management] | [!UICONTROL 查看合并策略] | 对可用合并策略的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 导出区段的受众] | 能够将评估的受众区段导出到数据集。 |
+| [!DNL Profile Management] | [!UICONTROL 评估受众的区段] | 能够通过评估区段定义为受众生成用户档案。 |
+| [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
+| [!DNL Identity Management] | [!UICONTROL 查看标识命名空间] | 对身份命名空间的只读访问。 |
+| [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 管理沙盒] | 有权读取、创建、编辑和删除沙箱。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙盒具有只读访问权限。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
+| [!DNL Destinations] | [!UICONTROL 管理目标] | 有权读取、创建和删除目标激活流和目标帐户。 |
+| [!DNL Destinations] | [!UICONTROL 查看目标] | 对中的可用目标的只读访问 **[!UICONTROL 目录]** 选项卡和中的已验证目标 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限需要 [!UICONTROL 查看目标] 或 [!UICONTROL 管理目标] 将授予将数据激活到目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限需要 [!UICONTROL 激活目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 能够将数据激活到已创建的活动数据集。 |
+| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用创作目标 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
+| [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
+| [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对中的可用源的只读访问权限 **[!UICONTROL 目录]** 选项卡和经过验证的源 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流量。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 读取、创建、编辑和发布的权限 [!DNL Segment Match] 信息源中包含活跃的合作伙伴。 |
+| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中读取、创建、编辑和删除数据的权限 [!DNL Data Science Workspace]. |
+| 数据治理 | [!UICONTROL 应用数据使用情况标签] | 读取、创建和删除使用标签的权限。 |
+| 数据治理 | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
+| 数据治理 | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
+| 数据治理 | [!UICONTROL 查看用户活动日志] | 查看录制的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) Platform活动。 |
+| [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况仪表板] | 查看许可证使用情况仪表板的只读访问权限。 |
+| [!DNL Dashboards] | [!UICONTROL 管理标准功能板] | 添加data warehouse中尚未包含的自定义属性。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询] | 有权读取、创建、编辑和删除针对Platform数据的结构化SQL查询。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询服务集成] | 有权创建、更新和删除未过期的凭据，以便访问查询服务。 |
 
 ## 后续步骤
 
-閱讀本指南後，您已瞭解Experience Platform中存取控制的主要原則。 您現在可以繼續前往 [屬性型存取控制使用手冊](./abac/overview.md) 有關如何使用Experience Cloud建立Experience Platform和指派角色的許可權的詳細步驟。
+通过阅读本指南，您已经了解了Experience Platform中访问控制的主要原则。 您现在可以继续访问 [基于属性的访问控制用户指南](./abac/overview.md) 有关如何使用Experience Cloud创建Experience Platform和分配角色的权限的详细步骤。

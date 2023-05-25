@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；監控身分；監控資料流；資料流；身分；
-description: Adobe Experience Platform Identity Service可跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，藉此全面瞭解客戶及其行為。 本教學課程提供如何使用Experience Platform使用者介面監控具有身分的資料流的指示。
-title: 在UI中監視身分識別的資料流
+keywords: Experience Platform；主页；热门主题；监控身份；监控数据流；数据流；身份；
+description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，让您能够实时提供有影响力的个人数字体验，从而为您提供有关客户及其行为的全面视图。 本教程提供了有关如何使用Experience Platform用户界面监视带标识的数据流的说明。
+title: 在UI中监控数据流以查找标识
 type: Tutorial
 exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
@@ -11,20 +11,20 @@ ht-degree: 8%
 
 ---
 
-# 監視UI中身分的資料流
+# 在UI中监视数据流中的标识
 
-Adobe Experience Platform Identity Service可跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，藉此全面瞭解客戶及其行為。
+Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，让您能够实时提供有影响力的个人数字体验，从而为您提供有关客户及其行为的全面视图。
 
-監控儀表板可讓您以視覺化方式呈現身分內的資料活動，包括資料身分的狀態。 本教學課程提供有關如何使用監控儀表板來使用Experience Platform使用者介面監控資料身分的說明，讓您能夠追蹤身分處理狀態。
+监视功能板提供了数据在身份中的活动的可视表示形式，包括数据身份的状态。 本教程介绍了如何使用监视仪表板通过Experience Platform用户界面监视数据的身份，从而允许您跟踪身份处理的状态。
 
 ## 快速入门 {#getting-started}
 
-- [資料流](../home.md)：資料流可呈現跨平台行動資料的資料作業。 資料流會跨不同服務進行設定，有助於將資料從來源聯結器移至目標資料集，以及 [!DNL Identity] 和 [!DNL Profile]，並至 [!DNL Destinations].
-   - [資料流執行](../../sources/notifications.md)：資料流執行是根據所選資料流的頻率設定的週期性排程作業。
-- [Identity Service](../../identity-service/home.md)：透過跨裝置和系統橋接身分，更能瞭解個別客戶及其行為。
-- [沙箱](../../sandboxes/home.md)： [!DNL Experience Platform] 提供分割單一區域的虛擬沙箱 [!DNL Platform] 將執行個體整合至個別的虛擬環境中，以協助開發及改進數位體驗應用程式。
+- [数据流](../home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以及 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
+   - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的定期计划作业。
+- [Identity Service](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
+- [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-## 監控身分儀表板 {#identity-metrics}
+## 监视身份仪表板 {#identity-metrics}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
@@ -37,80 +37,80 @@ Adobe Experience Platform Identity Service可跨裝置和系統橋接身分，�
 >title="数据流运行详细信息"
 >abstract="数据流运行详细信息页面显示有关标识数据流运行的更多信息，包括其组织 ID 和数据流运行 ID。"
 
-若要存取 **[!UICONTROL 身分]** 儀表板，選取 **[!UICONTROL 監視]** 左側導覽列中。 一次於 **[!UICONTROL 監視]** 頁面，選取 **[!UICONTROL 身分]** 卡片。
+要访问 **[!UICONTROL 身份]** 仪表板，选择 **[!UICONTROL 监测]** 左侧导航栏中。 一旦在 **[!UICONTROL 监测]** 页面上，选择 **[!UICONTROL 身份]** 信息卡。
 
-![身分卡。 畫面上會顯示有關已接收記錄數、已擷取記錄數以及成功率的資訊。](../assets/ui/monitor-identities/focus-card.png)
+![身份卡。 其中显示了有关接收的记录数、摄取的记录数和成功率的信息。](../assets/ui/monitor-identities/focus-card.png)
 
-在主要上 **[!UICONTROL 身分]** 儀表板， **[!UICONTROL 身分]** 卡片會顯示所接收記錄總數、所擷取的記錄數以及記錄擷取成功率的相關資訊。
+在主页面 **[!UICONTROL 身份]** 仪表板， **[!UICONTROL 身份]** 卡片可显示有关接收的记录总数、提取的记录数以及记录提取成功率的信息。
 
-儀表板本身包含有關身分處理的量度。 預設情況下，儀表板將顯示您組織過去24小時來源的身分處理詳細資訊。
+仪表板本身包含有关身份处理的指标。 默认情况下，仪表板将显示过去24小时内贵组织源的身份处理详细信息。
 
-![身分控制面板。 顯示每個來源接收之記錄數目的相關資訊。](../assets/ui/monitor-identities/sources.png)
+![身份仪表板。 显示有关每个源接收的记录数的信息。](../assets/ui/monitor-identities/sources.png)
 
-此 [!UICONTROL 身分處理中] 頁面包含擷取到的記錄資訊 [!DNL Identity Service]，包括新增的身分數量、建立的圖表和更新的圖表。
+此 [!UICONTROL 身份处理] 页面包含有关摄取到的记录的信息 [!DNL Identity Service]，包括添加的身份数量、创建的图形以及更新的图形。
 
-下列量度適用於此儀表板檢視：
+以下指标可用于此仪表板视图：
 
-| 身分量度 | 描述 |
+| 身份量度 | 描述 |
 | ---------------- | ----------- |
-| **[!UICONTROL 已接收的记录]** | 從資料湖接收的記錄數。 |
-| **[!UICONTROL 失败的记录]** | 因資料錯誤而未擷取至Platform的記錄數。 |
-| **[!UICONTROL 跳过的记录数]** | 已擷取但未擷取的記錄數 [!DNL Identity Service] 因為記錄列中只有一個識別碼。 |
-| **[!UICONTROL 已提取的记录]** | 擷取的記錄數 [!DNL Identity Service]. |
-| **[!UICONTROL 身分已新增]** | 新增至的淨新識別碼數目 [!DNL Identity Service]. |
-| **[!UICONTROL 已建立的圖表]** | 在中建立的淨新身分圖表數目 [!DNL Identity Service]. |
-| **[!UICONTROL 圖表已更新]** | 以新邊更新的現有身分圖表數量。 |
-| **[!UICONTROL 失敗的資料流總數]** | 失敗的資料流執行次數。 |
+| **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
+| **[!UICONTROL 失败的记录]** | 由于数据错误而未引入Platform的记录数。 |
+| **[!UICONTROL 跳过的记录数]** | 已摄取但未摄取的记录数 [!DNL Identity Service] 因为记录行中只有一个标识符。 |
+| **[!UICONTROL 已提取的记录]** | 摄取到的记录数 [!DNL Identity Service]. |
+| **[!UICONTROL 已添加身份]** | 添加到的新标识符的净数量 [!DNL Identity Service]. |
+| **[!UICONTROL 创建的图形]** | 在中创建的净新标识图的数量 [!DNL Identity Service]. |
+| **[!UICONTROL 已更新图形]** | 使用新边更新的现有身份图的数量。 |
+| **[!UICONTROL 失败的数据流总数]** | 失败的数据流运行次数。 |
 
-您可以選取篩選器圖示 ![篩選圖示](../assets/ui/monitor-identities/filter.png) 在來源名稱旁邊，可檢視該所選來源資料流的身分處理資訊。
+您可以选择过滤器图标 ![过滤器图标](../assets/ui/monitor-identities/filter.png) 位于源名称旁边，可查看所选源数据流的身份处理信息。
 
-![篩選圖示會反白顯示。 選取此圖示可讓您檢視所選來源的資料流。](../assets/ui/monitor-identities/sources-filter.png)
+![过滤器图标会突出显示。 选择此图标可查看所选源的数据流。](../assets/ui/monitor-identities/sources-filter.png)
 
-或者，您可以選取 **[!UICONTROL 資料流]** 在切換上，可檢視您組織過去24小時資料流的身分處理詳細資料。
+或者，您可以选择 **[!UICONTROL 数据流]** 打开该切换开关以查看贵组织过去24小时的数据流的身份处理详细信息。
 
-![身分控制面板。 顯示有關每個資料流接收的身分數目的資訊。](../assets/ui/monitor-identities/dataflows.png)
+![身份仪表板。 显示关于每个数据流接收的身份数的信息。](../assets/ui/monitor-identities/dataflows.png)
 
-下列量度適用於此儀表板檢視：
-
-| 量度 | 描述 |
-| -------| ----------- |
-| **[!UICONTROL 数据流]** | 資料流的名稱。 |
-| **[!UICONTROL 数据集]** | 資料流所插入的資料集名稱。 |
-| **[!UICONTROL 來源名稱]** | 資料流所屬的來源名稱。 |
-| **[!UICONTROL 已接收的记录]** | 從資料湖接收的記錄數。 |
-| **[!UICONTROL 失败的记录]** | 因資料錯誤而未擷取至Platform的記錄數。 |
-| **[!UICONTROL 跳过的记录数]** | 已擷取但未擷取的記錄數 [!DNL Identity Service] 因為記錄列中只有一個識別碼。 |
-| **[!UICONTROL 已提取的记录]** | 擷取的記錄數 [!DNL Identity Service]. |
-| **[!UICONTROL 記錄總數]** | 所有記錄的總數，包括失敗的記錄、略過的記錄、新增的身分和重複的記錄。 |
-| **[!UICONTROL 身分已新增]** | 新增至的淨新識別碼數目 [!DNL Identity Service]. |
-| **[!UICONTROL 已建立的圖表]** | 在中建立的淨新身分圖表數目 [!DNL Identity Service]. |
-| **[!UICONTROL 圖表已更新]** | 以新邊更新的現有身分圖表數量。 |
-| **[!UICONTROL 失敗的資料流總數]** | 失敗的資料流執行次數。 |
-
-選取篩選圖示 ![篩選](../assets/ui/monitor-identities/filter.png) 資料流執行開始時間旁邊，檢視更多有關您的資訊 [!DNL Identity] 資料流執行。
-
-![篩選圖示會反白顯示。 選取此圖示可讓您檢視所選資料流的詳細資訊。](../assets/ui/monitor-identities/dataflows-filter.png)
-
-此 [!UICONTROL 資料流執行詳細資料] 頁面顯示更多關於您的資訊 [!DNL Identity] 資料流執行，包括其組織ID和資料流執行ID。 此頁面也會顯示提供的對應錯誤碼和錯誤訊息 [!DNL Identity Service]，以瞭解擷取過程中是否發生任何錯誤。
-
-![此時會顯示一個儀表板，顯示所選資料流的詳細資訊。](../assets/ui/monitor-identities/dataflow-run-details.png)
-
-下列量度適用於此儀表板檢視：
+以下指标可用于此仪表板视图：
 
 | 量度 | 描述 |
 | -------| ----------- |
-| **[!UICONTROL 已接收的记录]** | 從資料湖接收的記錄數。 |
-| **[!UICONTROL 失败的记录]** | 因資料錯誤而未擷取至Platform的記錄數。 |
-| **[!UICONTROL 跳过的记录数]** | 已擷取但未擷取的記錄數 [!DNL Identity Service] 因為記錄列中只有一個識別碼。 |
-| **[!UICONTROL 已提取的记录]** | 擷取的記錄數 [!DNL Identity Service]. |
-| **[!UICONTROL 身分已新增]** | 新增至的淨新識別碼數目 [!DNL Identity Service]. |
-| **[!UICONTROL 已建立的圖表]** | 在中建立的淨新身分圖表數目 [!DNL Identity Service]. |
-| **[!UICONTROL 圖表已更新]** | 以新邊更新的現有身分圖表數量。 |
-| **[!UICONTROL 状态]** | 定義資料流的整體狀態。 可能的狀態值包括： <ul><li>`Success`：指出資料流作用中，且正在根據提供的排程擷取資料。</li><li>`Failed`：指出資料流的啟用程式已因錯誤而中斷。 </li><li>`Processing`：指出資料流尚未啟用。 建立新資料流後，經常會立即出現此狀態。</li></ul> |
-| **[!UICONTROL 資料流執行開始]** | 資料流開始執行的日期和時間。 |
-| **[!UICONTROL 上次更新时间]** | 資料流上次更新的日期和時間。 |
-| **[!UICONTROL 錯誤摘要]** | 如果資料流執行失敗，這會顯示錯誤碼和資料流執行失敗原因的摘要。 |
-| **[!UICONTROL 資料流執行ID]** | 資料流執行的ID。 |
-| **[!UICONTROL IMS組織ID]** | 資料流執行所屬的組織ID。 |
+| **[!UICONTROL 数据流]** | 数据流的名称。 |
+| **[!UICONTROL 数据集]** | 数据流正在插入的数据集的名称。 |
+| **[!UICONTROL 源名称]** | 数据流所属的源的名称。 |
+| **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
+| **[!UICONTROL 失败的记录]** | 由于数据错误而未引入Platform的记录数。 |
+| **[!UICONTROL 跳过的记录数]** | 已摄取但未摄取的记录数 [!DNL Identity Service] 因为记录行中只有一个标识符。 |
+| **[!UICONTROL 已提取的记录]** | 摄取到的记录数 [!DNL Identity Service]. |
+| **[!UICONTROL 记录总数]** | 所有记录的总数，包括失败的记录、跳过的记录、添加的身份和重复的记录。 |
+| **[!UICONTROL 已添加身份]** | 添加到的新标识符的净数量 [!DNL Identity Service]. |
+| **[!UICONTROL 创建的图形]** | 在中创建的净新标识图的数量 [!DNL Identity Service]. |
+| **[!UICONTROL 已更新图形]** | 使用新边更新的现有身份图的数量。 |
+| **[!UICONTROL 失败的数据流总数]** | 失败的数据流运行次数。 |
 
-此外，您可以選取切換來檢視失敗的記錄或略過的記錄。 錯誤區段包含有關錯誤代碼和失敗或排除的記錄數的詳細資訊。
+选择过滤器图标 ![过滤器](../assets/ui/monitor-identities/filter.png) ，查看有关您的应用程序的 [!DNL Identity] 数据流运行。
+
+![过滤器图标会突出显示。 选择此图标可查看有关所选数据流的详细信息。](../assets/ui/monitor-identities/dataflows-filter.png)
+
+此 [!UICONTROL 数据流运行详细信息] 页面显示更多有关 [!DNL Identity] 数据流运行，包括其组织ID和数据流运行ID。 此页面还显示提供的相应错误代码和错误消息。 [!DNL Identity Service]时，如果摄取过程中发生任何错误。
+
+![此时会显示一个仪表板，其中显示有关所选数据流的详细信息。](../assets/ui/monitor-identities/dataflow-run-details.png)
+
+以下指标可用于此仪表板视图：
+
+| 量度 | 描述 |
+| -------| ----------- |
+| **[!UICONTROL 已接收的记录]** | 从数据湖接收的记录数。 |
+| **[!UICONTROL 失败的记录]** | 由于数据错误而未引入Platform的记录数。 |
+| **[!UICONTROL 跳过的记录数]** | 已摄取但未摄取的记录数 [!DNL Identity Service] 因为记录行中只有一个标识符。 |
+| **[!UICONTROL 已提取的记录]** | 摄取到的记录数 [!DNL Identity Service]. |
+| **[!UICONTROL 已添加身份]** | 添加到的新标识符的净数量 [!DNL Identity Service]. |
+| **[!UICONTROL 创建的图形]** | 在中创建的净新标识图的数量 [!DNL Identity Service]. |
+| **[!UICONTROL 已更新图形]** | 使用新边更新的现有身份图的数量。 |
+| **[!UICONTROL 状态]** | 定义数据流的整体状态。 可能的状态值包括： <ul><li>`Success`：表示数据流处于活动状态并根据提供的计划摄取数据。</li><li>`Failed`：表示数据流的激活过程因错误而中断。 </li><li>`Processing`：表示数据流尚未处于活动状态。 创建新数据流后，通常会立即出现此状态。</li></ul> |
+| **[!UICONTROL 数据流运行开始]** | 数据流开始运行的日期和时间。 |
+| **[!UICONTROL 上次更新时间]** | 上次更新数据流的日期和时间。 |
+| **[!UICONTROL 错误摘要]** | 如果数据流运行失败，将显示错误代码和数据流运行失败原因的摘要。 |
+| **[!UICONTROL 数据流运行Id]** | 数据流运行的ID。 |
+| **[!UICONTROL IMS组织ID]** | 数据流运行所属的组织ID。 |
+
+此外，您还可以选择切换以查看失败的记录或跳过的记录。 错误部分包含有关错误代码以及失败或排除的记录数的详细信息。

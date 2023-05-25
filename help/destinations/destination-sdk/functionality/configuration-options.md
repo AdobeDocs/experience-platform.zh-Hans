@@ -1,6 +1,6 @@
 ---
-description: Adobe Experience Platform中的目的地服務使用數個元件的設定端點，這些元件會建立目的地功能。 瞭解這些元件結合後，Experience Platform如何在整個數位生態系統中，連線至目的地合作夥伴、傳送自訂訊息及啟用設定檔資料。
-title: Destination SDK中的設定選項
+description: Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。 了解这些组件如何组合使Experience Platform能够连接到目标合作伙伴、发送自定义消息并在数字生态系统中激活用户档案数据。
+title: Destination SDK中的配置选项
 source-git-commit: 65a658208b48a50184e55a6d64cdf7ad6de0f04f
 workflow-type: tm+mt
 source-wordcount: '829'
@@ -9,51 +9,51 @@ ht-degree: 0%
 ---
 
 
-# Destination SDK中的設定選項
+# Destination SDK中的配置选项
 
-Adobe Experience Platform中的目的地服務使用數個元件的設定端點，這些元件會建立目的地功能。
+Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。
 
-結合這些元件，Experience Platform就能在數位生態系統中連線至目的地平台、傳送自訂訊息、匯出自訂檔案，以及啟用設定檔資料。
+通过结合这些组件，Experience Platform可以连接到目标平台、发送自定义消息、导出自定义文件并在数字生态系统中激活配置文件数据。
 
-下圖顯示您可以透過Destination SDK設定以建置您自己的目的地的元件概觀。 這些元件將於下文進一步說明。
+下图显示了一些组件的高级概述，您可以通过Destination SDK配置这些组件来构建自己的目标。 这些组件将在下面进一步说明。
 
-![圖表顯示Destination SDK元件、設定端點及其支援的操作。](../assets/functionality/destination-sdk-components-diagram.png)
+![该图显示了Destination SDK组件、配置端点及其支持的操作。](../assets/functionality/destination-sdk-components-diagram.png)
 
 ## 服务器配置 {#server-configuration}
 
-目的地伺服器設定會將伺服器規格的相關資訊與Adobe用來將負載傳送至目的地的範本連結在一起。
+目标服务器配置将有关服务器规范的信息与Adobe用来将负载交付到目标的模板绑定在一起。
 
-例如，您可以在此處指定Experience Platform需要連線到的API端點，以及Platform將進行API呼叫的標題和格式。
+例如，您可以在此处指定Experience Platform需要连接到的API端点，以及Platform将进行的API调用的标题和格式。
 
-針對以檔案為基礎的目的地，此設定也包含支援的目的地檔案格式和壓縮格式。 您可以透過 [destination-servers端點](../authoring-api/destination-server/create-destination-server.md).
+对于基于文件的目标，此配置还包括目标支持的文件格式和压缩格式。 您可以通过 [destination-servers端点](../authoring-api/destination-server/create-destination-server.md).
 
-* [伺服器規格](destination-server/server-specs.md)：包含資料傳送目的地之儲存位置或HTTP端點相關資訊的設定範本。
-* [範本規格](destination-server/templating-specs.md)：在此範本中，您可以定義如何建構HTTP API要求至您的端點，包括如何在XDM結構描述和平台支援的格式之間轉換設定檔屬性欄位。 將此資訊與 [訊息格式](destination-server/message-format.md) 說明檔案。
-* [訊息格式](destination-server/message-format.md)：本節深入探討支援的範本語言、訊息格式的相關資訊，以及Adobe設定與平台整合所需的資訊。 將此資訊與 [範本規格](destination-server/templating-specs.md) 說明檔案。
-* [檔案規格](destination-server/file-formatting.md)：包含批次目的地檔案格式和壓縮選項的設定範本。
+* [服务器规范](destination-server/server-specs.md)：包含有关数据发送到的存储位置或HTTP端点的信息的配置模板。
+* [模板规范](destination-server/templating-specs.md)：在此模板中，您可以定义如何构造指向端点的HTTP API请求，包括如何在XDM架构和平台支持的格式之间转换配置文件属性字段。 请将此信息与 [消息格式](destination-server/message-format.md) 文档。
+* [消息格式](destination-server/message-format.md)：本节深入介绍支持的模板语言、消息格式以及Adobe设置与您的平台的集成所需的信息。 请将此信息与 [模板规范](destination-server/templating-specs.md) 文档。
+* [文件规范](destination-server/file-formatting.md)：一个配置模板，其中包含用于批处理目标的文件格式和压缩选项。
 
-## 目的地設定 {#destination-configuration}
+## 目标配置 {#destination-configuration}
 
-此設定端點包含有關您的目的地的基本和進階資訊。 例如，您可以在此處指定目的地可支援的身分型別、匯出檔案的所需格式（針對檔案型目的地），以及Adobe Experience Platform使用者介面中目的地卡片的各種UI屬性。
+此配置端点包含有关目标的基本和高级信息。 例如，您可以在此处指定目标可以支持的身份类型、所需的导出文件格式（适用于基于文件的目标）以及Adobe Experience Platform用户界面中目标卡的各种UI属性。
 
-如需每個目的地設定元件的詳細資訊，請參閱以下檔案。 您可以透過 [目的地端點](../authoring-api/destination-configuration/create-destination-configuration.md).
+有关每个目标配置组件的详细信息，请参阅下面的文档。 您可以通过 [目标端点](../authoring-api/destination-configuration/create-destination-configuration.md).
 
-* [客戶驗證設定](destination-configuration/customer-authentication.md)：選取Experience Platform用來連線至目的地的驗證機制。 此設定會產生 [設定新目的地](../../ui/connect-destination.md) 頁面，使用者可在此頁面將Experience Platform連線至他們與您的目的地所擁有的帳戶。Experience Platform
-* [OAuth2驗證](destination-configuration/oauth2-authentication.md)：瞭解所有 [!DNL OAuth2] Destination SDK支援的驗證流程，並取得設定指示 [!DNL OAuth2] 驗證您的目的地……
-* [客戶資料欄位](destination-configuration/customer-data-fields.md)：瞭解如何在Experience PlatformUI中建立輸入欄位，讓使用者指定與如何連線及匯出資料至目的地相關的各種資訊。
-* [UI屬性](destination-configuration/ui-attributes.md)：瞭解如何為使用Destination SDK建立的目的地設定UI屬性，例如檔案連結、目的地卡類別以及目的地連線型別和頻率。
-* [結構描述設定](destination-configuration/schema-configuration.md)：瞭解如何定義使用者的目標結構描述，以便對應設定檔屬性和身分。
-* [身分名稱空間設定](destination-configuration/identity-namespace-configuration.md)：瞭解如何設定目的地支援的身分。 此設定會將目標身分填入 [對應步驟](../../ui/activate-segment-streaming-destinations.md#mapping) Experience Platform使用者介面中，使用者將其XDM結構描述中的身分和屬性對應到您目的地中的結構描述。
-* [目的地傳遞](destination-configuration/destination-delivery.md)：瞭解如何設定匯出資料的確切前往位置，以及在資料著陸位置中使用的驗證規則。
-* [對象中繼資料設定](destination-configuration/audience-metadata-configuration.md)：瞭解區段名稱或ID等區段中繼資料應如何在Experience Platform和您的目的地之間共用。
-* [彙總原則](destination-configuration/aggregation-policy.md)：瞭解如何設定彙總原則，以判斷應如何分組和批次處理目的地的HTTP請求。
-* [批次設定](destination-configuration/batch-configuration.md)：設定使用者在Experience Platform使用者介面中連線至您的目的地時，可用的各種檔案命名和匯出排程設定。
-* [歷史設定檔資格](destination-configuration/historical-profile-qualifications.md)：瞭解使用Destination SDK建立的目的地所支援的歷史設定檔資格。
+* [客户身份验证配置](destination-configuration/customer-authentication.md)：选择Experience Platform连接到目标时应使用的身份验证机制。 此配置会生成 [配置新目标](../../ui/connect-destination.md) “Experience Platform”用户界面中的页面，在该页面中，用户将Experience Platform连接到他们与您的目标关联的帐户。
+* [OAuth2身份验证](destination-configuration/oauth2-authentication.md)：了解所有 [!DNL OAuth2] Destination SDK支持的身份验证流程，并获取设置说明 [!DNL OAuth2] 目标身份验证……
+* [客户数据字段](destination-configuration/customer-data-fields.md)：了解如何在Experience PlatformUI中创建输入字段，以便用户指定与如何连接数据并将其导出到目标相关的各种信息。
+* [UI属性](destination-configuration/ui-attributes.md)：了解如何为使用Destination SDK构建的目标配置UI属性，例如文档链接、目标卡类别以及目标连接类型和频率。
+* [架构配置](destination-configuration/schema-configuration.md)：了解如何定义用户可将配置文件属性和身份映射到的目标架构。
+* [身份命名空间配置](destination-configuration/identity-namespace-configuration.md)：了解如何配置目标支持的标识。 此配置会将目标身份填充 [映射步骤](../../ui/activate-segment-streaming-destinations.md#mapping) Experience Platform用户界面的，用户可以在其中将标识和属性从其XDM架构映射到目标中的架构。
+* [目标投放](destination-configuration/destination-delivery.md)：了解如何配置导出数据的确切放置位置以及在数据放置位置使用的身份验证规则。
+* [受众元数据配置](destination-configuration/audience-metadata-configuration.md)：了解区段名称或ID等区段元数据应如何在Experience Platform和目标之间共享。
+* [聚合策略](destination-configuration/aggregation-policy.md)：了解如何设置聚合策略，以确定应如何对发送到目标的HTTP请求进行分组和批处理。
+* [批次配置](destination-configuration/batch-configuration.md)：在Experience Platform用户界面中设置用户连接到目标时可用的各种文件命名和导出计划设置。
+* [历史配置文件资格](destination-configuration/historical-profile-qualifications.md)：了解使用Destination SDK构建的目标所支持的历史配置文件资格。
 
-## 對象中繼資料設定 {#audience-metadata-configuration}
+## 受众元数据配置 {#audience-metadata-configuration}
 
-此元件可讓您設定如何以程式設計方式在您的目的地建立、更新或刪除對象/區段。 對於以檔案為基礎的目的地，它可讓您在檔案成功傳送至目的地時設定通知。 您可以透過以下方式設定此功能 [對象範本端點](../metadata-api/create-audience-template.md).
+利用此组件，可配置如何在目标中以编程方式创建、更新或删除受众/区段。 对于基于文件的目标，它允许您在文件成功传送到目标时设置通知。 您可以通过以下方式配置此功能 [受众模板端点](../metadata-api/create-audience-template.md).
 
 ## 后续步骤 {#next-steps}
 
-閱讀本文章，您現在已大致瞭解Destination SDK所提供的功能，以及需閱讀哪些頁面以取得特定設定的詳細資訊。 接下來，您可以閱讀包含所有步驟的指南 [設定串流](../guides/configure-destination-instructions.md) 或 [檔案型目的地](../guides/configure-file-based-destination-instructions.md) 使用Destination SDK。
+通过阅读本文，您现在可以大致了解Destination SDK提供的功能，以及要阅读哪些页面以了解有关特定配置的更多信息。 接下来，您可以阅读包含所有步骤的指南 [配置流](../guides/configure-destination-instructions.md) 或 [基于文件的目标](../guides/configure-file-based-destination-instructions.md) 使用Destination SDK。

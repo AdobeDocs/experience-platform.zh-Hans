@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；個別設定檔；欄位；結構描述；結構描述設計；欄位群組；欄位群組；iab；tcf；同意；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；架构设计；字段组；字段组；iab；tcf；同意；
 solution: Experience Platform
-title: 設定檔結構描述的IAB TCF 2.0同意欄位群組
-description: 本檔案提供XDM Individual Profile類別的IAB TCF 2.0同意結構描述欄位群組概覽。
+title: 配置文件架构的IAB TCF 2.0同意字段组
+description: 本文档概述了XDM Individual Profile类的IAB TCF 2.0同意架构字段组。
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,23 +11,23 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL IAB TCF 2.0同意] 設定檔結構的欄位群組
+# [!UICONTROL IAB TCF 2.0同意] 配置文件架构的字段组
 
 >[!NOTE]
 >
->本檔案涵蓋 [!UICONTROL IAB TCF 2.0同意] XDM個別設定檔類別的結構描述欄位群組。 若為XDM ExperienceEvent類別設計的欄位群組，請參閱下列內容 [檔案](../event/iab.md) 而非。
+>本文档涵盖 [!UICONTROL IAB TCF 2.0同意] xdm Individual Profile类的架构字段组。 有关用于XDM ExperienceEvent类的字段组，请参阅以下内容 [文档](../event/iab.md) 而是。
 
-[!UICONTROL IAB TCF 2.0同意] 是的標準結構描述欄位群組 [[!DNL XDM Individual Profile] 類別](../../classes/individual-profile.md) 用於擷取時間戳記系列IAB同意字串，以追蹤隨著時間變化的同意變更模式。
+[!UICONTROL IAB TCF 2.0同意] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 用于捕获带有时间戳的系列IAB同意字符串，以跟踪随时间变化的同意更改模式。
 
 ![](../../images/field-groups/iab-profile.png)
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `identityPrivacyInfo` | 地图 | 對應型別物件，將客戶的個別身分值與不同的TCF同意字串建立關聯。 以下提供此物件結構的範例。 |
+| `identityPrivacyInfo` | 地图 | 将客户的各个标识值与不同的TCF同意字符串关联的映射类型对象。 下面提供了此对象的结构示例。 |
 
 {style="table-layout:auto"}
 
-下列JSON示範了 `identityPrivacyInfo` 地圖。
+以下JSON演示了 `identityPrivacyInfo` 映射。
 
 ```json
 {
@@ -50,15 +50,15 @@ ht-degree: 0%
 }
 ```
 
-如範例所示，下列專案的每個根層級索引鍵 `xdm:identityPrivacyInfo` 對應至Identity Service識別的身分名稱空間。 反過來，每個名稱空間屬性必須至少有一個子屬性，其索引鍵與該名稱空間中客戶對應的身分值相符。 在此範例中，客戶以Experience CloudID (`ECID`)值 `13782522493631189`.
+如示例所示，每个根级别键 `xdm:identityPrivacyInfo` 与Identity Service识别的身份命名空间相对应。 反过来，每个命名空间属性必须具有至少一个子属性，其键与该命名空间中客户的相应标识值相匹配。 在此示例中，客户使用Experience CloudID (`ECID`)的值 `13782522493631189`.
 
 >[!NOTE]
 >
->雖然上述範例使用單一名稱空間/值組來代表客戶的身分，但您可以為其他名稱空間新增其他金鑰，而每個名稱空間可以有多個身分值，每個值都有自己的TCF同意偏好設定集。
+>虽然上述示例使用单个命名空间/值对来表示客户的身份，但您可以为其他命名空间添加其他键，并且每个命名空间可以有多个身份值，每个值都有自己的一组TCF同意首选项。
 
-對於每個身分值， `identityIABConsent` 必須提供屬性，為身分提供TCF同意值。 此屬性的值必須符合 [[!UICONTROL 同意字串] 資料型別](../../data-types/consent-string.md).
+对于每个标识值，使用 `identityIABConsent` 必须提供属性，该属性为身份提供TCF同意值。 此属性的值必须符合 [[!UICONTROL 同意字符串] 数据类型](../../data-types/consent-string.md).
 
-請參閱指南： [平台中的IAB TCF 2.0支援](../../../landing/governance-privacy-security/consent/iab/overview.md) 以取得此欄位群組使用案例的詳細資訊。 如需欄位群組本身的詳細資訊，請參閱公用XDM存放庫：
+请参阅指南，网址为 [平台中的IAB TCF 2.0支持](../../../landing/governance-privacy-security/consent/iab/overview.md) 有关此字段组用例的更多信息。 有关字段组本身的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

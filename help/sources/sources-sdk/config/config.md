@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
-title: 自助來源中的設定選項（批次SDK）
-description: 本檔案提供使用Self-Serve Sources (Batch SDK)所需準備的設定概觀。
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+title: 自助源中的配置选项(Batch SDK)
+description: 本文档概述了要使用自助源(Batch SDK)需要准备的配置。
 exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -10,28 +10,28 @@ ht-degree: 0%
 
 ---
 
-# 自助來源中的設定選項（批次SDK）
+# 自助源中的配置选项(Batch SDK)
 
-本檔案提供使用Self-Serve Sources (Batch SDK)所需準備的設定概觀。
+本文档概述了要使用自助源(Batch SDK)需要准备的配置。
 
-## 連線規格
+## 连接规范
 
-連線規格會傳回來源的聯結器屬性。 它們包括與建立基礎和來源連線相關的驗證規格，以及指派給特定來源的固定連線規格ID。 連線規格與租使用者和組織無關。 典型的連線規格包含指定來源的基本資訊，以及三個不同的區段： `authSpec`， `sourceSpec`、和 `exploreSpec`.
+连接规范返回源的连接器属性。 它们包括与创建基本连接和源连接相关的身份验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和组织无关。 典型的连接规范包含有关给定源的基本信息，以及三个不同的部分： `authSpec`， `sourceSpec`、和 `exploreSpec`.
 
-| 規格 | 描述 |
+| 规格 | 描述 |
 | --- | --- |
-| `authSpec` | 此 `authSpec` 陣列包含將來源連線至Platform所需的驗證引數資訊。 任何特定來源都可以支援多種不同型別的驗證。 |
-| `sourceSpec` | 此 `sourceSpec` 陣列包含與來源相關的一般資訊，包括在UI中顯示來源所需的屬性資訊、檔案連結，以及有關分頁、標題、內文和排程的引數。 此外， `sourceSpec` 說明從基本連線建立來源連線所需的引數結構，以及建立來源連線所需的引數結構。 |
-| `exploreSpec` | 此 `exploreSpec` array定義探索和檢查來源中所包含物件所需的引數。 此 `exploreSpec` 也會定義探索及檢查物件時傳回的回應格式。 |
+| `authSpec` | 此 `authSpec` 数组包含有关将源连接到Platform所需的身份验证参数的信息。 任何给定源都可以支持多种不同类型的身份验证。 |
+| `sourceSpec` | 此 `sourceSpec` 数组包含与源相关的一般信息，其中包括在UI中显示源所需的属性信息、文档链接，以及有关分页、标题、正文和调度的参数。 此外， `sourceSpec` 描述从基本连接创建源连接所需的参数的架构，在创建源连接时需要用到这些参数。 |
+| `exploreSpec` | 此 `exploreSpec` 数组定义浏览和检查源中包含的对象所需的参数。 此 `exploreSpec` 还定义了探索和检查对象时返回的响应格式。 |
 
 {style="table-layout:auto"}
 
-## 填入連線規格值
+## 填充连接规范值
 
-連線規格可分成三個不同的部分：驗證規格、來源規格和探索規格。
+连接规范可以分为三个不同的部分：身份验证规范、源规范和浏览规范。
 
-如需如何填入連線規格每個部分的值的說明，請參閱下列檔案：
+有关如何填充连接规范每个部分的值的说明，请参阅以下文档：
 
-* [設定您的驗證規格](./authspec.md)
-* [設定您的來源規格](./sourcespec.md)
-* [設定您的瀏覽規格](./explorespec.md)
+* [配置身份验证规范](./authspec.md)
+* [配置源规范](./sourcespec.md)
+* [配置浏览规范](./explorespec.md)

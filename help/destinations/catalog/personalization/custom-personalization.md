@@ -1,7 +1,7 @@
 ---
-keywords: 自訂個人化；目的地；experience platform自訂目的地；
-title: 自訂個人化連線
-description: 此目的地提供外部個人化、內容管理系統、廣告伺服器，以及在您的網站上執行的其他應用程式，以便從Adobe Experience Platform擷取區段資訊。 此目的地會根據使用者設定檔區段成員資格，提供即時個人化。
+keywords: 自定义个性化；目标；experience platform自定义目标；
+title: 自定义个性化连接
+description: 此目标为网站上运行的外部个性化、内容管理系统、广告服务器和其他应用程序提供了一种从Adobe Experience Platform检索区段信息的方法。 此目标根据用户个人资料区段会员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
 source-git-commit: 09e81093c2ed2703468693160939b3b6f62bc5b6
 workflow-type: tm+mt
@@ -10,68 +10,68 @@ ht-degree: 6%
 
 ---
 
-# 自訂個人化連線 {#custom-personalization-connection}
+# 自定义个性化连接 {#custom-personalization-connection}
 
-## 目的地變更記錄檔 {#changelog}
+## 目标更改日志 {#changelog}
 
-透過增強功能的Beta版 **[!UICONTROL 自訂個人化]** 目的地聯結器，您可能會看到兩個 **[!UICONTROL 自訂個人化]** 目的地目錄中的卡片。
+通过Beta版的 **[!UICONTROL 自定义个性化]** 目标连接器，您可能会看到两个 **[!UICONTROL 自定义个性化]** 目标目录中的信息卡。
 
-此 **[!UICONTROL 使用屬性自訂個人化]** 聯結器目前為測試版，僅供特定數量的客戶使用。 除了 **[!UICONTROL 自訂個人化]**，則 **[!UICONTROL 使用屬性自訂個人化]** 聯結器新增選購專案 [對應步驟](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 至啟用工作流程，可讓您將設定檔屬性對應至自訂個人化目的地，啟用以屬性為基礎的相同頁面和下一頁個人化。
+此 **[!UICONTROL 使用属性进行自定义个性化]** connector目前为测试版，仅向部分客户提供。 除了提供的功能外， **[!UICONTROL 自定义个性化]**，则 **[!UICONTROL 使用属性进行自定义个性化]** 连接器添加一个可选 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，它允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。
 
 >[!IMPORTANT]
 >
->設定檔屬性可能包含敏感資料。 為了保護此資料， **[!UICONTROL 使用屬性自訂個人化]** 目的地要求您使用 [Edge Network Server API](/help/server-api/overview.md) 用於資料彙集。 此外，所有伺服器API呼叫都必須在 [已驗證的內容](../../../server-api/authentication.md).
+>配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 使用属性进行自定义个性化]** 目标要求您使用 [边缘网络服务器API](/help/server-api/overview.md) 用于数据收集。 此外，所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
 >
->如果您已在使用Web SDK或Mobile SDK進行整合，您可以透過兩種方式透過伺服器API擷取屬性：
+>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过两种方式通过服务器API检索属性：
 >
-> * 新增透過伺服器API擷取屬性的伺服器端整合。
-> * 使用自訂Javascript程式碼更新您的使用者端設定，以透過伺服器API擷取屬性。
+> * 添加通过服务器API检索属性的服务器端集成。
+> * 使用自定义Javascript代码更新客户端配置，以通过服务器API检索属性。
 >
-> 如果您未遵循上述要求，個人化將僅以區段成員資格為基礎，與提供的體驗相同。 **[!UICONTROL 自訂個人化]** 聯結器。
+> 如果不遵循上述要求，则个性化将仅基于区段成员资格，与提供的体验相同。 **[!UICONTROL 自定义个性化]** 连接器。
 
-![並排檢視中兩張自訂個人化目的地卡的影像。](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
+![并排视图中两张自定义个性化目标卡的图像。](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
 
 ## 概述 {#overview}
 
-此目的地提供從Adobe Experience Platform擷取區段資訊至外部個人化平台、內容管理系統、廣告伺服器和客戶網站上執行的其他應用程式的方法。
+此目标提供了一种方法，可将区段信息从Adobe Experience Platform检索到外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序。
 
 ## 先决条件 {#prerequisites}
 
-這項整合由以下支援： [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/). 您必須使用其中一個SDK才能使用此目的地。
+此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/). 您必须使用这些SDK之一才能使用此目标。
 
 >[!IMPORTANT]
 >
->在建立自訂個人化連線之前，請閱讀以下操作指南： [設定相同頁面和下一頁個人化的個人化目的地](../../ui/configure-personalization-destinations.md). 本指南會針對跨多個Experience Platform元件的相同頁面和下一頁個人化使用案例，引導您進行必要的設定步驟。
+>在创建自定义个性化连接之前，请阅读有关如何执行以下操作 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
-## 匯出型別和頻率 {#export-type-frequency}
+## 导出类型和频率 {#export-type-frequency}
 
-**設定檔請求**  — 您正在要求已對映於單一設定檔之自訂個人化目的地的所有區段。 可以為不同的設定不同的自訂個人化目的地 [Adobe資料收集資料串流](../../../edge/datastreams/overview.md).
+**配置文件请求**  — 您正在请求在单个配置文件的自定义个性化目标中映射的所有区段。 可以为不同的设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/datastreams/overview.md).
 
 ## 用例 {#use-cases}
 
-此 [!DNL Custom Personalization Connection] 可讓您使用自己的個人化合作夥伴平台(例如 [!DNL Optimizely]， [!DNL Pega])以及專屬系統（例如內部CMS），同時運用Experience Platform邊緣網路資料收集和細分功能，提供更深入的客戶個人化體驗。
+此 [!DNL Custom Personalization Connection] 使您能够使用自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如，内部CMS），同时利用Experience Platform边缘网络数据收集和分段功能，以提供更深入的客户个性化体验。
 
-以下說明的使用案例包含網站個人化和目標網站上的廣告。
+下面介绍的用例包括网站个性化和有针对性的网站广告。
 
-若要啟用這些使用案例，客戶需要一種快速且簡化的方式，從Experience Platform擷取區段資訊，並將此資訊傳送至其指定的系統，這些系統已在Experience PlatformUI中設定為自訂個人化連線。
+要启用这些用例，客户需要一种快速、简化的方式，从Experience Platform检索区段信息，并将该信息发送到他们在Experience PlatformUI中配置为自定义个性化连接的指定系统。
 
-這些系統可以是外部個人化平台、內容管理系統、廣告伺服器，以及其他在客戶的網頁和行動屬性中執行的應用程式。
+这些系统可以是外部个性化平台、内容管理系统、广告服务器，以及跨客户的Web和移动资产运行的其他应用程序。
 
 ### 同一页面个性化 {#same-page}
 
-使用者造訪您網站的某個頁面。 客戶可以使用目前頁面瀏覽資訊（例如，反向連結URL、瀏覽器語言、內嵌的產品資訊）來選取下一個動作/決定（例如，個人化），對非Adobe平台使用自訂個人化連線(例如， [!DNL Pega]， [!DNL Optimizely]、等)。
+用户访问您网站的页面。 客户可以使用当前页面访问信息（例如，引荐URL、浏览器语言、嵌入的产品信息）选择下一个操作/决策（例如，个性化），对非Adobe平台使用自定义个性化连接(例如， [!DNL Pega]， [!DNL Optimizely]、等)。
 
-### 下一頁個人化 {#next-page}
+### 下一页面个性化 {#next-page}
 
-使用者造訪您網站上的頁面A。 根據此互動，使用者已符合一組區段的資格。 然後，使用者按一下連結，該連結會將使用者從頁面A帶往頁面B。使用者在頁面A的上一個互動期間符合資格的區段，加上目前網站造訪決定的設定檔更新，將用來支援下一個動作/決定（例如，要向訪客顯示哪個廣告橫幅，或在A/B測試的情況下，要顯示哪個頁面版本）。
+用户访问您网站上的页面A。 基于此交互，用户已获得一组区段的资格。 然后，用户单击一个链接，该链接会将用户从页面A转到页面B。用户在上次与页面A进行交互期间符合条件的区段，以及当前网站访问决定的用户档案更新，将用于支持下一个操作/决策（例如，向访客显示哪个广告横幅，或者在A/B测试的情况下，显示哪个页面版本）。
 
 ### 下一个会话个性化 {#next-session}
 
-使用者造訪您網站上的數個頁面。 根據這些互動，使用者已符合一組區段的資格。 然後，使用者會終止目前的瀏覽工作階段。
+用户访问您网站上的多个页面。 根据这些交互，用户已符合一组区段的条件。 然后，用户终止当前浏览会话。
 
-第二天，使用者返回相同的客戶網站。 他們之前與所有造訪的網站頁面互動期間符合資格的區段，加上目前網站造訪決定的設定檔更新，將用於選取下一個動作/決定（例如，要向訪客顯示哪個廣告橫幅，或在A/B測試的情況下，要顯示哪個頁面版本）。
+第二天，用户返回到同一客户网站。 之前与所有访问过的网站页面交互时，他们符合条件的区段，以及当前网站访问决定的用户档案更新，将用于选择下一个操作/决策（例如，向访客显示哪个广告横幅，或者，在A/B测试的情况下，用于显示页面的哪个版本）。
 
-## 連線到目的地 {#connect}
+## 连接到目标 {#connect}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_custom_personalization_datastream"
@@ -81,38 +81,38 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 > 
->若要連線到目的地，您需要 **[!UICONTROL 管理目的地]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-若要連線至此目的地，請遵循以下說明的步驟： [目的地設定教學課程](../../ui/connect-destination.md).
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
-### 連線引數 {#parameters}
+### 连接参数 {#parameters}
 
-當 [設定](../../ui/connect-destination.md) 您必須提供下列資訊：
+While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
-* **[!UICONTROL 名稱]**：填寫此目的地的偏好名稱。
-* **[!UICONTROL 說明]**：輸入目的地的說明。 例如，您可以提及要將此目的地用於哪個行銷活動。 此欄位為選用。
-* **[!UICONTROL 整合別名]**：此值會以JSON物件名稱的形式傳送至Experience PlatformWeb SDK。
-* **[!UICONTROL 資料串流ID]**：這會決定區段會包含在頁面的回應中的資料收集資料串流。 下拉菜单仅显示已启用目标配置的数据流。另請參閱 [設定資料串流](../../../edge/datastreams/overview.md) 以取得更多詳細資料。
+* **[!UICONTROL 名称]**：填写此目标的首选名称。
+* **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段是可选的。
+* **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
+* **[!UICONTROL 数据流ID]**：此值确定在响应页面时将包含区段的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../edge/datastreams/overview.md) 了解更多详细信息。
 
-### 啟用警示 {#enable-alerts}
+### 启用警报 {#enable-alerts}
 
-您可以啟用警報，以接收有關傳送到您目的地的資料流狀態的通知。 從清單中選取警報以訂閱接收有關資料流狀態的通知。 如需警示的詳細資訊，請參閱以下指南： [使用UI訂閱目的地警示](../../ui/alerts.md).
+您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
-當您完成提供目的地連線的詳細資訊後，請選取 **[!UICONTROL 下一個]**.
+完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 啟用此目的地的區段 {#activate}
+## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
->若要啟用資料，您需要 **[!UICONTROL 管理目的地]**， **[!UICONTROL 啟用目的地]**， **[!UICONTROL 檢視設定檔]**、和 **[!UICONTROL 檢視區段]** [存取控制許可權](/help/access-control/home.md#permissions). 閱讀 [存取控制總覽](/help/access-control/ui/overview.md) 或聯絡您的產品管理員以取得必要許可權。
+>要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-讀取 [對設定檔請求目的地啟用設定檔和區段](../../ui/activate-profile-request-destinations.md) 以取得啟用此目的地的受眾區段的指示。
+读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
 
-## 匯出的資料 {#exported-data}
+## 导出的数据 {#exported-data}
 
-如果您使用 [Adobe Experience Platform中的標籤](../../../tags/home.md) 若要部署Experience PlatformWeb SDK，請使用 [傳送事件完成](../../../edge/extension/event-types.md) 功能和您的自訂程式碼動作將具有 `event.destinations` 可用來檢視匯出資料的變數。
+如果您使用 [Adobe Experience Platform中的标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [发送事件完成](../../../edge/extension/event-types.md) 功能和自定义代码操作将具有 `event.destinations` 用于查看导出数据的变量。
 
-以下是的範例值 `event.destinations` 變數：
+以下是的示例值 `event.destinations` 变量：
 
 ```
 [
@@ -132,9 +132,9 @@ ht-degree: 6%
 ]
 ```
 
-如果您沒有使用 [標籤](../../../tags/home.md) 若要部署Experience PlatformWeb SDK，請使用 [處理來自事件的回應](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) 功能以檢視匯出的資料。
+如果您没有使用 [标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [处理来自事件的响应](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) 功能以查看导出的数据。
 
-來自Adobe Experience Platform的JSON回應可加以剖析，以找出您要與Adobe Experience Platform整合之應用程式的對應整合別名。 區段ID可作為定位引數傳遞至應用程式的程式碼中。 以下是目標回應專屬內容的範例。
+可以解析来自Adobe Experience Platform的JSON响应，以查找要与Adobe Experience Platform集成的应用程序的相应集成别名。 区段ID可以作为定位参数传递到应用程序的代码中。 下面是目标响应特有的内容示例。
 
 ```
 alloy("sendEvent", {
@@ -168,11 +168,11 @@ alloy("sendEvent", {
   });
 ```
 
-### 的範例回應 [!UICONTROL 使用屬性自訂個人化]
+### 的示例响应 [!UICONTROL 使用属性进行自定义个性化]
 
-使用時 **[!UICONTROL 使用屬性自訂個人化]**，API回應將與以下範例類似。
+使用时 **[!UICONTROL 使用属性进行自定义个性化]**，则API响应将类似于以下示例。
 
-兩者之間的差異 **[!UICONTROL 使用屬性自訂個人化]** 和 **[!UICONTROL 自訂個人化]** 是納入 `attributes` API回應中的區段。
+两者之间的差异 **[!UICONTROL 使用属性进行自定义个性化]** 和 **[!UICONTROL 自定义个性化]** 是包含 `attributes` API响应中的部分。
 
 ```json
 [
@@ -200,6 +200,6 @@ alloy("sendEvent", {
 ]
 ```
 
-## 資料使用與控管 {#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 處理您的資料時，目的地符合資料使用原則。 如需如何操作的詳細資訊 [!DNL Adobe Experience Platform] 強制執行資料控管，請閱讀 [資料控管概觀](../../../data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](../../../data-governance/home.md).

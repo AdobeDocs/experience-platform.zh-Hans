@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；API；API；XDM；XDM系統；體驗資料模型；資料模型；ui；工作區；欄位；
+keywords: Experience Platform；主页；热门主题；API；API；XDM；XDM系统；体验数据模型；数据模型；ui；工作区；字段；
 solution: Experience Platform
-title: 在使用者介面中定義XDM欄位
-description: 瞭解如何在Experience Platform使用者介面中定義XDM欄位。
+title: 在UI中定义XDM字段
+description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
 source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
@@ -11,109 +11,109 @@ ht-degree: 4%
 
 ---
 
-# 在UI中定義XDM欄位
+# 在用户界面中定义XDM字段
 
-此 [!DNL Schema Editor] 在Adobe Experience Platform使用者介面中，您可以在自訂體驗資料模型(XDM)類別和結構描述欄位群組中定義自己的欄位。 本指南涵蓋在UI中定義XDM欄位的步驟，包括每個欄位型別的可用設定選項。
+此 [!DNL Schema Editor] 在Adobe Experience Platform用户界面中，您可以在自定义体验数据模型(XDM)类和架构字段组中定义自己的字段。 本指南涵盖在UI中定义XDM字段的步骤，包括每个字段类型的可用配置选项。
 
 ## 先决条件
 
-本指南需要實際瞭解XDM系統。 請參閱 [XDM概觀](../../home.md) 介紹XDM在Experience Platform生態系統內的角色，以及 [結構描述組合基本概念](../../schema/composition.md) 以瞭解類別和欄位群組如何為XDM結構描述貢獻欄位。
+本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用以及 [模式组合基础](../../schema/composition.md) 了解类和字段组如何向XDM架构贡献字段。
 
-雖然本指南不需要，但建議您也參閱以下主題的相關教學課程： [在UI中構成結構描述](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+虽然本指南并非必需，但建议您也遵循以下方面的教程： [在UI中构成架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
 
-## 選取要新增欄位的資源 {#select-resource}
+## 选择要向其添加字段的资源 {#select-resource}
 
-若要在UI中定義新的XDM欄位，您必須先在 [!DNL Schema Editor]. 根據您目前在「 」中可用的結構描述 [!DNL Schema Library]，您可以選擇 [建立新結構描述](../resources/schemas.md#create) 或 [選取要編輯的現有結構描述](../resources/schemas.md#edit).
+要在UI中定义新的XDM字段，您必须首先在 [!DNL Schema Editor]. 根据您在以下位置当前可用的架构： [!DNL Schema Library]，您可以选择 [创建新架构](../resources/schemas.md#create) 或 [选择要编辑的现有架构](../resources/schemas.md#edit).
 
-一旦您擁有 [!DNL Schema Editor] 開啟，畫布中會顯示新增欄位的控制項。 這些控制項會顯示在結構描述名稱旁邊，也會顯示在選取的類別或欄位群組下定義的任何物件型別欄位旁邊。
+一旦您拥有 [!DNL Schema Editor] 打开，画布中会显示用于添加字段的控件。 这些控件显示在架构的名称旁边，以及选定类或字段组下定义的任何对象类型字段。
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
 >[!WARNING]
 >
->如果您嘗試將欄位新增到由標準欄位群組提供的物件，該欄位群組將轉換為自訂欄位群組，並且原始欄位群組將不再可用。 請參閱以下小節： [新增欄位至標準欄位群組](../resources/schemas.md#custom-fields-for-standard-groups) 如需詳細資訊，請參閱結構描述UI指南。
+>如果尝试将字段添加到由标准字段组提供的对象，则该字段组将转换为自定义字段组，并且原始字段组将不再可用。 请参阅以下部分： [将字段添加到标准字段组](../resources/schemas.md#custom-fields-for-standard-groups) 有关更多信息，请参阅架构UI指南。
 
-若要將新欄位新增至資源，請選取 **加(+)** 圖示來定義結構描述名稱，或位於要定義其下欄位的物件型別欄位旁。
+要向资源添加新字段，请选择 **加(+)** 图标，或者位于要定义其下的字段的对象类型字段旁边。
 
 ![](../../images/ui/fields/overview/plus-icon.png)
 
-根據您是將欄位直接新增到結構描述或其組成類別和欄位群組，新增欄位的必要步驟將會有所不同。 本檔案的其餘部分著重於如何設定欄位的屬性，無論該欄位出現在結構描述中的何處。 如需欄位新增到結構描述的不同方式的詳細資訊，請參閱結構描述UI指南中的下列區段：
+根据您是将字段直接添加到架构还是其组成类和字段组，添加字段所需的步骤将有所不同。 本文档的其余部分侧重于如何配置字段的属性，而不管该字段在架构中的显示位置。 有关可向架构添加字段的不同方式的更多信息，请参阅架构UI指南中的以下部分：
 
-* [新增欄位至欄位群組](../resources/schemas.md#add-fields)
-* [將欄位直接新增到結構描述](../resources/schemas.md#add-individual-fields)
+* [将字段添加到字段组](../resources/schemas.md#add-fields)
+* [将字段直接添加到架构](../resources/schemas.md#add-individual-fields)
 
-## 定義欄位的屬性 {#define}
+## 定义字段的属性 {#define}
 
-選取 **加(+)** 圖示，一個 **[!UICONTROL 未命名的欄位]** 預留位置會顯示在畫布中。
+选择 **加(+)** 图标，一个 **[!UICONTROL 无标题字段]** 占位符显示在画布中。
 
 ![](../../images/ui/fields/overview/new-field.png)
 
-在右邊欄中，於 **[!UICONTROL 欄位屬性]**，您可以設定新欄位的詳細資訊。 每個欄位都需要下列資訊：
+在右边栏中，位于 **[!UICONTROL 字段属性]**，您可以配置新字段的详细信息。 每个字段都需要以下信息：
 
-| 欄位屬性 | 描述 |
+| 字段属性 | 描述 |
 | --- | --- |
-| [!UICONTROL 字段名称] | 欄位的唯一描述性名稱。 請注意，一旦結構描述已儲存，欄位名稱就無法變更。 此值用於識別和參考程式碼和其他下游應用程式中的欄位<br><br>最好是以camelCase撰寫名稱。 它可包含英數、破折號或底線字元，但它 **可能不會** 以底線開頭。<ul><li>**正確**： `fieldName`</li><li>**可接受：** `field_name2`， `Field-Name`， `field-name_3`</li><li>**不正確**： `_fieldName`</li></ul> |
-| [!UICONTROL 显示名称] | 欄位的顯示名稱。 這是將用於表示結構描述編輯器畫布中欄位的名稱。 可使用將欄位名稱變更為顯示名稱 [顯示名稱切換](../resources/schemas.md#display-name-toggle). |
-| [!UICONTROL 类型] | 欄位將包含的資料型別。 從此下拉式功能表中，您可以選取 [標準純量型別](../../schema/field-constraints.md) 受XDM支援，或多重欄位之一 [資料型別](../resources/data-types.md) 之前在中定義的 [!DNL Schema Registry].<br><br>您也可以選取 **[!UICONTROL 進階型別搜尋]** 搜尋和篩選現有資料型別，更輕鬆地找到所需型別。 |
+| [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码和其他下游应用程序中的字段<br><br>理想情况下，名称应以camelCase编写。 它可包含字母数字、短划线或下划线字符，但它 **可能不会** 从下划线开始。<ul><li>**正确**： `fieldName`</li><li>**可接受：** `field_name2`， `Field-Name`， `field-name_3`</li><li>**不正确**： `_fieldName`</li></ul> |
+| [!UICONTROL 显示名称] | 字段的显示名称。 这是将用于表示架构编辑器画布中的字段的名称。 可使用将字段名称更改为显示名称 [显示名称切换](../resources/schemas.md#display-name-toggle). |
+| [!UICONTROL 类型] | 字段将包含的数据类型。 从该下拉菜单中，您可以选择以下任一项 [标准标量类型](../../schema/field-constraints.md) 受XDM或多字段之一支持 [数据类型](../resources/data-types.md) 之前在中定义的 [!DNL Schema Registry].<br><br>您还可以选择 **[!UICONTROL 高级类型搜索]** 搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
 
 {style="table-layout:auto"}
 
-您也可以提供使用者看得懂的選購內容 **[!UICONTROL 說明]** 至欄位，以提供有關欄位預期使用案例的更多內容。
+您还可以提供易于用户阅读的可选内容 **[!UICONTROL 描述]** 到字段以提供有关字段预期用例的更多上下文。
 
 >[!NOTE]
 >
->根據 **[!UICONTROL 型別]** 您為欄位選取了，其他設定控制項可能會顯示在右側邊欄中。 請參閱以下小節： [型別特定欄位屬性](#type-specific-properties) 以取得這些控制項的詳細資訊。
+>根据 **[!UICONTROL 类型]** 您为字段选择了其他配置控件，则右边栏中可能会显示其他配置控件。 请参阅以下部分： [特定类型的字段属性](#type-specific-properties) 以了解有关这些控件的详细信息。
 >
->右邊欄也提供用於指定特殊欄位型別的核取方塊。 請參閱以下小節： [特殊欄位型別](#special) 以取得詳細資訊。
+>右边栏还提供了用于指定特殊字段类型的复选框。 请参阅以下部分： [特殊字段类型](#special) 了解更多信息。
 
-完成欄位設定後，選取 **[!UICONTROL 套用]**.
+配置完字段后，选择 **[!UICONTROL 应用]**.
 
 ![](../../images/ui/fields/overview/field-details.png)
 
-畫布會更新以顯示新新增的欄位，該欄位位於以您唯一租使用者ID命名的物件內(如下所示 `_tenantId` （在以下範例中）。 新增到結構描述的所有自訂欄位會自動放置在此名稱空間中，以防止與Adobe提供的類別和欄位群組中的其他欄位衝突。 右側邊欄現在會列出欄位路徑以及其他屬性。
+画布将更新以显示新添加的字段，该字段位于以您的唯一租户ID命名的对象中(如下所示 `_tenantId` （在以下示例中）。 添加到架构的所有自定义字段都会自动放置在此命名空间中，以防止与Adobe提供的类和字段组中的其他字段冲突。 现在，右边栏会列出字段的路径及其其他属性。
 
 ![](../../images/ui/fields/overview/field-added.png)
 
-您可以繼續依照上述步驟，將更多欄位新增至結構描述。 儲存結構描述後，如果對其進行任何變更，也會儲存其基底類別和欄位群組。
+您可以继续按照上述步骤向架构添加更多字段。 保存架构后，如果对其进行了任何更改，也会保存其基类和字段组。
 
 >[!NOTE]
 >
->您對一個結構描述的欄位群組或類別所做的任何變更，都將反映在採用它們的所有其他結構描述中。
+>您对字段组或一个架构的类所做的任何更改都将反映在使用这些字段组或类的所有其他架构中。
 
-## 型別特定欄位屬性 {#type-specific-properties}
+## 特定于类型的字段属性 {#type-specific-properties}
 
-定義新欄位時，其他設定選項可能會顯示在右側邊欄中，具體取決於 **[!UICONTROL 型別]** 您為欄位選擇。 下表概述這些額外的欄位屬性及其相容型別：
+定义新字段时，右侧边栏中可能会显示其他配置选项，具体取决于 **[!UICONTROL 类型]** 为字段选择。 下表概述了这些附加字段属性及其兼容类型：
 
-| 欄位屬性 | 相容型別 | 描述 |
+| 字段属性 | 兼容类型 | 描述 |
 | --- | --- | --- |
-| [!UICONTROL 默认值] | [!UICONTROL 字串]， [!UICONTROL 兩次]， [!UICONTROL 長]， [!UICONTROL 整數]， [!UICONTROL 短]， [!UICONTROL 位元組]， [!UICONTROL 布林值] | 如果在擷取期間沒有提供其他值，則會指派給此欄位的預設值。 此值必須符合欄位選取的型別。 |
-| [!UICONTROL 图案] | [!UICONTROL 字符串] | A [規則運算式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) 此欄位的值必須符合以便在擷取期間被接受。 |
-| [!UICONTROL 格式] | [!UICONTROL 字符串] | 從預先定義的字串格式清單中選取值必須符合的格式。 可用的格式包括： <ul><li>[[!UICONTROL 日期時間]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主機名稱]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json指標]](https://tools.ietf.org/html/rfc6901)</li></ul> |
-| [!UICONTROL 最小長度] | [!UICONTROL 字符串] | 為了在內嵌期間接受值，字串必須包含的最小字元數。 |
-| [!UICONTROL 最大长度] | [!UICONTROL 字符串] | 若要讓值在擷取期間被接受，字串必須包含的最大字元數。 |
-| [!UICONTROL 最小值] | [!UICONTROL 双精度] | 內嵌期間接受的Double的最小值。 如果擷取的值與此處輸入的值完全相符，則會接受該值。 使用此限制時， 「[!UICONTROL 專屬最小值]「條件約束必須保留空白。 |
-| [!UICONTROL 最大值] | [!UICONTROL 双精度] | 在內嵌期間接受的Double最大值。 如果擷取的值與此處輸入的值完全相符，則會接受該值。 使用此限制時， 「[!UICONTROL 獨佔最大值]「條件約束必須保留空白。 |
-| [!UICONTROL 專屬最小值] | [!UICONTROL 双精度] | 在內嵌期間接受的Double最大值。 如果擷取的值與此處輸入的值完全相符，則會拒絕該值。 使用此限制時， 「[!UICONTROL 最小值]「 （非獨佔）限制必須保留空白。 |
-| [!UICONTROL 獨佔最大值] | [!UICONTROL 双精度] | 在內嵌期間接受的Double最大值。 如果擷取的值與此處輸入的值完全相符，則會拒絕該值。 使用此限制時， 「[!UICONTROL 最大值]「 （非獨佔）限制必須保留空白。 |
+| [!UICONTROL 默认值] | [!UICONTROL 字符串]， [!UICONTROL 双精度]， [!UICONTROL 长]， [!UICONTROL 整数]， [!UICONTROL 短]， [!UICONTROL 字节]， [!UICONTROL 布尔型] | 如果在摄取期间未提供其他值，则将分配给此字段的默认值。 此值必须符合字段的选定类型。 |
+| [!UICONTROL 图案] | [!UICONTROL 字符串] | A [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) 此字段的值必须符合才能在摄取期间被接受。 |
+| [!UICONTROL 格式] | [!UICONTROL 字符串] | 从值必须符合的预定义字符串格式列表中进行选择。 可用的格式包括： <ul><li>[[!UICONTROL 日期时间]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主机名]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
+| [!UICONTROL 最小长度] | [!UICONTROL 字符串] | 为使值在摄取期间被接受，字符串必须包含的最小字符数。 |
+| [!UICONTROL 最大长度] | [!UICONTROL 字符串] | 字符串必须包含的最大字符数，才能在引入期间接受该值。 |
+| [!UICONTROL 最小值] | [!UICONTROL 双精度] | 摄取期间接受的Double的最小值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 使用此约束时， “[!UICONTROL 独占最小值]”约束必须留空。 |
+| [!UICONTROL 最大值] | [!UICONTROL 双精度] | 摄取期间接受的Double最大值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 使用此约束时， “[!UICONTROL 独占最大值]”约束必须留空。 |
+| [!UICONTROL 独占最小值] | [!UICONTROL 双精度] | 摄取期间接受的Double最大值。 如果摄取的值与此处输入的值完全匹配，则该值会被拒绝。 使用此约束时， “[!UICONTROL 最小值]“（非独占）约束必须留空。 |
+| [!UICONTROL 独占最大值] | [!UICONTROL 双精度] | 摄取期间接受的Double最大值。 如果摄取的值与此处输入的值完全匹配，则该值会被拒绝。 使用此约束时， “[!UICONTROL 最大值]“（非独占）约束必须留空。 |
 
 {style="table-layout:auto"}
 
-## 特殊欄位型別 {#special}
+## 特殊字段类型 {#special}
 
-右邊欄提供數個核取方塊，可指定所選欄位的特殊角色。 其中一些選項的使用案例涉及有關您的資料模型化策略以及您打算如何使用下游Platform服務的重要考量。
+右边栏提供了多个复选框，用于为所选字段指定特殊角色。 其中某些选项的用例涉及有关数据建模策略以及如何使用下游Platform服务的重要注意事项。
 
-若要深入瞭解這些特殊型別，請參閱下列檔案：
+要了解有关这些特殊类型的更多信息，请参阅以下文档：
 
 * [[!UICONTROL 必需]](./required.md)
-* [[!UICONTROL 陣列]](./array.md)
-* [[!UICONTROL 列舉]](./enum.md)
-* [[!UICONTROL 身分]](./identity.md) （僅適用於字串欄位）
-* [[!UICONTROL 關係]](./relationship.md) （僅適用於字串欄位）
+* [[!UICONTROL 数组]](./array.md)
+* [[!UICONTROL 枚举]](./enum.md)
+* [[!UICONTROL 身份]](./identity.md) （仅适用于字符串字段）
+* [[!UICONTROL 关系]](./relationship.md) （仅适用于字符串字段）
 
-雖然從技術上講不是特殊欄位型別，但建議您造訪本指南 [定義物件型別欄位](./object.md) 以進一步瞭解如何在結構描述結構時定義巢狀子欄位。
+虽然从技术上讲不是特殊字段类型，但还建议您在以下位置访问指南： [定义对象类型字段](./object.md) 了解有关在架构结构中定义嵌套子字段的更多信息。
 
 ## 后续步骤
 
-本指南提供如何在UI中定義XDM欄位的概觀。 請記住，欄位只能透過使用類別和欄位群組新增到結構描述。 若要進一步瞭解如何在UI中管理這些資源，請參閱建立和編輯指南 [類別](../resources/classes.md) 和 [欄位群組](../resources/field-groups.md).
+本指南概述了如何在UI中定义XDM字段。 请记住，字段只能通过使用类和字段组添加到架构中。 要详细了解如何在UI中管理这些资源，请参阅有关创建和编辑的指南 [类](../resources/classes.md) 和 [字段组](../resources/field-groups.md).
 
-如需功能的詳細資訊， [!UICONTROL 結構描述] 工作區，請參閱 [[!UICONTROL 結構描述] 工作區概觀](../overview.md).
+欲知关于 [!UICONTROL 架构] 工作区，请参见 [[!UICONTROL 架构] 工作区概述](../overview.md).

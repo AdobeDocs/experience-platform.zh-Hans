@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform中的串流區段
-description: 本影片提供對Adobe Experience Platform中串流區段的基本瞭解，並概述如何使用Platform UI進行串流區段。
+title: Adobe Experience Platform中的流式客户细分
+description: 本视频概要介绍了Adobe Experience Platform中的流分段，并概述了如何使用Platform UI进行流分段。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 ---
 
-# Experience Platform UI中的串流區段
+# Experience PlatformUI中的流式分段
 
-以下影片旨在協助您瞭解串流區段。 它顯示一個客戶體驗範例，然後快速導覽中的主要功能 [!DNL Platform] 介面。 若要進一步瞭解串流細分以及如何在UI中進行串流細分，請參閱 [串流區段UI指南](../ui/streaming-segmentation.md).
+以下视频旨在支持您了解流分段。 它展示了一个客户体验示例，然后快速浏览中的主要功能 [!DNL Platform] 界面。 要了解有关流式分段以及如何在UI中进行流式分段的更多信息，请参阅 [流式分段UI指南](../ui/streaming-segmentation.md).
 
-如果您想使用分段API串流分段，請參閱 [串流區段API指南](../api/streaming-segmentation.md).
+如果您有兴趣使用分段API进行流式分段，请阅读 [流式分段API指南](../api/streaming-segmentation.md).
 
 >[!NOTE]
 >
->Experience Platform使用者介面經常更新，自從錄製此影片後，可能有所變更。 如需最新資訊，請參閱 [串流區段UI指南](../ui/streaming-segmentation.md).
+>Experience Platform用户界面经常更新，自从录制此视频以来，可能已经更改。 有关最新信息，请参阅 [流式分段UI指南](../ui/streaming-segmentation.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)

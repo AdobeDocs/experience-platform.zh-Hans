@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；使用者介面；UI；控制面板；控制面板；設定檔；區段；目的地；授權使用情況
-title: 標準儀表板Widget
-description: 本指南提供將標準Widget新增至Adobe Experience Platform儀表板的逐步指示。
+keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用情况
+title: 标准功能板小组件
+description: 本指南提供了将标准构件添加到Adobe Experience Platform功能板的分步说明。
 exl-id: 37353e73-b207-444a-b2b5-a20a3628086b
 source-git-commit: 0391c15e959ab25604a70c163fa7a5ed53e78993
 workflow-type: tm+mt
@@ -10,48 +10,48 @@ ht-degree: 0%
 
 ---
 
-# 新增標準Widget至儀表板
+# 将标准构件添加到仪表板
 
-在Adobe Experience Platform中，您可以使用多個儀表板檢視組織的資料並與之互動。 您也可以將新Widget新增至儀表板檢視，以更新某些儀表板。 Adobe提供一系列標準Widget，您可以選擇將其新增到您的儀表板。
+在Adobe Experience Platform中，您可以使用多个功能板查看您的组织数据并与之交互。 您还可以通过向功能板视图添加新构件来更新某些功能板。 Adobe提供一系列标准构件，您可以选择将其添加到功能板。
 
-本指南提供新增標準Widget以自訂 [!UICONTROL 設定檔]， [!UICONTROL 區段]、和 [!UICONTROL 目的地] 平台UI中的儀表板。
+本指南提供了添加标准构件以自定义的 [!UICONTROL 配置文件]， [!UICONTROL 区段]、和 [!UICONTROL 目标] Platform UI中的功能板。
 
-若要進一步瞭解自訂Widget，請參閱以下專案的指南： [建立自訂Widget](custom-widgets.md).
-
->[!NOTE]
->
->Widget會顯示在 [!UICONTROL 授權使用情況] 無法自訂儀表板。 若要深入瞭解此獨特控制面板，請閱讀 [授權使用情況儀表板檔案](../guides/license-usage.md).
-
-## Widget資料庫 {#widget-library}
-
-本指南需要存取 [!UICONTROL Widget資料庫] 在Experience Platform內。 若要進一步瞭解Widget程式庫，以及如何在UI中存取它，請從閱讀 [Widget程式庫概觀](widget-library.md).
-
-## 開始使用標準Widget {#standard-widgets}
-
-在Widget程式庫中， **[!UICONTROL 標準]** 索引標籤包含由Adobe建立的Widget，會根據可用的儀表板劃分類別。
-
-選取的類別與您輸入Widget程式庫時所在的儀表板相符。 換言之，如果您是從「 」內選取Widget程式庫， [!UICONTROL 設定檔] 儀表板， [!UICONTROL 設定檔] 類別已選取，而其他類別會顯示為灰色。
-
-隨即顯示所選類別的標準Widget。 每個Widget都會顯示為卡片，提供量度的標題、說明和範例視覺效果。
+要了解有关自定义小组件的更多信息，请参阅以下内容的指南： [创建自定义构件](custom-widgets.md).
 
 >[!NOTE]
 >
->Widget只能新增到符合所選類別的控制面板。 例如，只有來自 [!UICONTROL 設定檔] 類別可新增至 [!UICONTROL 設定檔] 儀表板。
+>中显示的构件 [!UICONTROL 许可证使用情况] 无法自定义仪表板。 要了解有关此独特功能板的更多信息，请阅读 [许可证使用情况仪表板文档](../guides/license-usage.md).
 
-![Widget程式庫工作區中的「標準」標籤和可用類別會反白顯示。](../images/customization/standard-widgets.png)
+## 构件库 {#widget-library}
 
-## 將標準Widget新增至儀表板
+本指南需要访问 [!UICONTROL 构件库] 在Experience Platform内。 要详细了解构件库以及如何在UI中访问它，请从阅读 [构件库概述](widget-library.md).
 
-若要選擇要新增至儀表板的標準Widget，請反白顯示Widget並選取核取方塊。 選取至少一個Widget後， **[!UICONTROL 新增Widget]** 按鈕變為可用。
+## 标准构件快速入门 {#standard-widgets}
+
+在Widget库中， **[!UICONTROL 标准]** 选项卡包含由Adobe创建的构件，这些构件根据可用的功能板划分为不同的类别。
+
+所选类别与您从中输入构件库的仪表板匹配。 换言之，如果您从 [!UICONTROL 配置文件] 仪表板， [!UICONTROL 配置文件] 类别处于选中状态，其他类别将显示为灰色。
+
+将显示选定类别的标准构件。 每个小组件都显示为卡片，提供量度的标题、描述和可视化示例。
 
 >[!NOTE]
 >
->Widget程式庫右上角的計數器會顯示所選Widget的總數。
+>只能将小组件添加到与所选类别匹配的仪表板。 例如，只有来自 [!UICONTROL 配置文件] 类别可以添加到 [!UICONTROL 配置文件] 仪表板。
 
-選取 **[!UICONTROL 新增Widget]** 以將選取的Widget新增至您的儀表板。
+![突出显示“标准”选项卡和可用类别的Widget库工作区。](../images/customization/standard-widgets.png)
 
-![已選取Widget的Widget程式庫工作區，並反白顯示「新增Widget」和「取消」。](../images/customization/add-widget.png)
+## 将标准构件添加到仪表板
+
+要选择要添加到仪表板的标准构件，请突出显示构件并选中复选框。 选择至少一个构件后， **[!UICONTROL 添加构件]** 按钮将变为可用。
+
+>[!NOTE]
+>
+>构件库右上角的计数器显示所选构件的总数。
+
+选择 **[!UICONTROL 添加构件]** 以将所选构件添加到您的仪表板。
+
+![已选择小部件的小部件库工作区，且突出显示了“添加小部件”和“取消”。](../images/customization/add-widget.png)
 
 ## 后续步骤
 
-閱讀本檔案後，您就能存取Widget程式庫，並使用它來將標準Widget新增到儀表板。 若要修改顯示於儀表板中的Widget的大小和位置，請參閱 [修改儀表板指南](modify.md).
+阅读本文档后，您可以访问构件库，并使用它向仪表板添加标准构件。 要修改仪表板中显示的小部件的大小和位置，请参阅 [修改功能板指南](modify.md).

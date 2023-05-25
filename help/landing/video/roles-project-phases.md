@@ -1,6 +1,6 @@
 ---
-title: 角色和專案階段
-description: 這部影片會概述成功Experience Platform專案所涉及的角色、階段和關鍵成果。
+title: 角色和项目阶段
+description: 此视频概述了成功的Experience Platform项目所涉及的角色、阶段和关键成果。
 kt: 4338
 audience: all
 doc-type: video
@@ -14,8 +14,8 @@ ht-degree: 0%
 
 ---
 
-# 角色和專案階段
+# 角色和项目阶段
 
-這部影片會概略介紹成功的Adobe Experience Platform專案所涉及的角色、階段和關鍵成果。
+此视频概述了成功的Adobe Experience Platform项目所涉及的角色、阶段和关键成果。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32807?quality=12&learn=on)

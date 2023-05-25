@@ -1,6 +1,6 @@
 ---
-title: 主機端點
-description: 瞭解如何在Reactor API中呼叫/hosts端點。
+title: 主机端点
+description: 了解如何在Reactor API中调用/hosts端点。
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
 source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 3%
 
 ---
 
-# 主機端點
+# 主机端点
 
 >[!NOTE]
 >
->本文介紹如何在Reactor API中管理主機。 如需標籤主機的一般詳細資訊，請參閱以下指南： [主機概觀](../../ui/publishing/hosts/hosts-overview.md) 在發佈檔案中。
+>本文档介绍了如何在Reactor API中管理主机。 有关标记主机的更多常规信息，请参阅 [主机概述](../../ui/publishing/hosts/hosts-overview.md) 在发布文档中。
 
-在Reactor API中，主機會定義 [建置](./builds.md) 可以傳送。
+在Reactor API中，主机定义了一个目标，其中 [生成](./builds.md) 可以投放。
 
-當Adobe Experience Platform中的標籤使用者請求組建時，系統會檢查程式庫以判斷哪一個 [環境](./environments.md) 程式庫應建置到。 每個環境都與主機有關係，指出應在何處傳送組建。
+当Adobe Experience Platform中的标记用户请求生成内部版本时，系统会检查库以确定是哪个 [环境](./environments.md) 库应构建到。 每个环境都与一个主机有关系，指示将内部版本交付到何处。
 
-主機只屬於一個 [屬性](./properties.md)，而屬性可以有許多主機。 屬性必須至少有一個主機，您才能發佈。
+一个主机只属于一个 [属性](./properties.md)，而资产可以具有多个主机。 在发布之前，资产必须至少有一个主机。
 
-一個主機可供一個屬性中的多個環境使用。 屬性上通常會有單一主機，且該屬性上的所有環境都會使用相同主機。
+一个主机可以由资产中的多个环境使用。 资产上通常只有一台主机，并且该资产上的所有环境都使用同一台主机。
 
 ## 快速入门
 
-本指南中使用的端點是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在繼續之前，請檢閱 [快速入門手冊](../getting-started.md) 有關如何向API驗證的重要資訊。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [快速入门指南](../getting-started.md) 有关如何对API进行身份验证的重要信息。
 
-## 擷取主機清單 {#list}
+## 检索主机列表 {#list}
 
-您可以在GET要求的路徑中包含屬性的ID，以擷取屬性的主機清單。
+通过在GET请求的路径中包含资产的ID，可以检索资产的主机列表。
 
 **API格式**
 
@@ -39,13 +39,13 @@ GET /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 擁有主機的屬性。 |
+| `PROPERTY_ID` | 此 `id` 拥有主机的资产的属性。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查詢引數時，可根據下列屬性篩選列出的主機：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>請參閱指南： [篩選回應](../guides/filtering.md) 以取得詳細資訊。
+>使用查询参数，可以根据以下属性筛选列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
 
 **请求**
 
@@ -61,7 +61,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回指定屬性的主機清單。
+成功的响应将返回指定属性的主机列表。
 
 ```json
 {
@@ -109,9 +109,9 @@ curl -X GET \
 }
 ```
 
-## 查詢主機 {#lookup}
+## 查找主机 {#lookup}
 
-您可以在GET請求的路徑中提供主機的ID以查詢主機。
+您可以通过在GET请求的路径中提供其ID来查找主机。
 
 **API格式**
 
@@ -121,7 +121,7 @@ GET /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要查閱的主機的ID。 |
+| `HOST_ID` | 此 `id` 要查找的主机的ID。 |
 
 {style="table-layout:auto"}
 
@@ -139,7 +139,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回主機的詳細資訊。
+成功的响应将返回主机的详细信息。
 
 ```json
 {
@@ -176,9 +176,9 @@ curl -X GET \
 }
 ```
 
-## 建立主機 {#create}
+## 创建主机 {#create}
 
-您可以發出POST要求來建立新主機。
+您可以通过发出POST请求来创建新主机。
 
 **API格式**
 
@@ -188,13 +188,13 @@ POST /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [屬性](./properties.md) 您正在定義下的主機。 |
+| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 要在其中定义主机的主机。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-下列要求會為指定的屬性建立新的主機。 此呼叫也會透過以下方式將主機與現有擴充功能建立關聯： `relationships` 屬性。 請參閱指南： [關係](../guides/relationships.md) 以取得詳細資訊。
+以下请求为指定的属性创建新主机。 该调用还会通过以下方式将主机与现有分机关联： `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 了解更多信息。
 
 ```shell
 curl -X POST \
@@ -222,21 +222,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必要）** 人類看得懂的主機名稱。 |
-| `attributes.type_of` | **（必要）** 主機的型別。 可以是下列兩個選項之一： <ul><li>`akamai` 的 [Adobe管理主機](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` 的 [SFTP主機](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
-| `attributes.encrypted_private_key` | 用於主機驗證的可選私密金鑰。 |
-| `attributes.path` | 附加至 `server` URL。 |
-| `attributes.port` | 表示要使用的特定伺服器連線埠的整數。 |
-| `attributes.server` | 伺服器的主機URL。 |
-| `attributes.skip_symlinks`<br><br>（僅適用於SFTP主機） | 依預設，所有SFTP主機都會使用符號連結(symlink)來參照儲存至伺服器的程式庫組建。 不過，並非所有伺服器都支援使用symlink。 當包含此屬性且設為 `true`，主機會使用複製操作直接更新組建資產，而非使用符號連結。 |
-| `attributes.username` | 用於驗證的選用使用者名稱。 |
-| `type` | 正在更新的資源型別。 此端點的值必須為 `hosts`. |
+| `attributes.name` | **（必需）** 易于用户识别的主机名称。 |
+| `attributes.type_of` | **（必需）** 主机的类型。 可以是以下两个选项之一： <ul><li>`akamai` 对象 [Adobe管理的主机](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` 对象 [SFTP主机](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
+| `attributes.encrypted_private_key` | 用于主机身份验证的可选私钥。 |
+| `attributes.path` | 要附加到 `server` URL。 |
+| `attributes.port` | 一个整数，表示要使用的特定服务器端口。 |
+| `attributes.server` | 服务器的主机URL。 |
+| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接(symlink)来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 包括此属性并将其设置为时 `true`，主机将使用复制操作直接更新构建资产，而不是使用符号链接。 |
+| `attributes.username` | 身份验证的可选用户名。 |
+| `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回新建立主機的詳細資訊。
+成功的响应将返回新创建主机的详细信息。
 
 ```json
 {
@@ -274,13 +274,13 @@ curl -X POST \
 }
 ```
 
-## 更新主機 {#update}
+## 更新主机 {#update}
 
 >[!NOTE]
 >
->只能更新SFTP主機。
+>只能更新SFTP主机。
 
-您可以在PATCH請求的路徑中包含主機的ID來更新主機。
+您可以通过在PATCH请求的路径中包含主机ID来更新主机。
 
 **API格式**
 
@@ -290,13 +290,13 @@ PATCH /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要更新的主機。 |
+| `HOST_ID` | 此 `id` 要更新的主机的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下請求會更新 `name` 適用於現有主機。
+以下请求将更新 `name` 对于现有主机。
 
 ```shell
 curl -X PATCH \
@@ -318,15 +318,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 物件，其屬性代表主機要更新的屬性。 可針對主機更新下列屬性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
-| `id` | 此 `id` 要更新的主機。 這應該符合 `{HOST_ID}` 請求路徑中提供的值。 |
-| `type` | 正在更新的資源型別。 此端點的值必須為 `hosts`. |
+| `attributes` | 一个对象，其属性表示主机要更新的属性。 可以为主机更新以下属性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
+| `id` | 此 `id` 要更新的主机的ID。 这应该与 `{HOST_ID}` 请求路径中提供的值。 |
+| `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的回應會傳回更新主機的詳細資訊。
+成功的响应将返回更新主机的详细信息。
 
 ```json
 {
@@ -364,9 +364,9 @@ curl -X PATCH \
 }
 ```
 
-## 刪除主機
+## 删除主机
 
-您可以在DELETE請求的路徑中包含主機ID來刪除主機。
+您可以在DELETE请求的路径中包含主机ID来删除主机。
 
 **API格式**
 
@@ -376,7 +376,7 @@ DELETE /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要刪除的主機的ID。 |
+| `HOST_ID` | 此 `id` 要删除的主机的ID。 |
 
 {style="table-layout:auto"}
 
@@ -392,17 +392,17 @@ curl -X DELETE \
 
 **响应**
 
-成功的回應會傳回HTTP狀態204 （無內容），且沒有回應內文，表示主機已刪除。
+成功的响应返回HTTP状态204（无内容），没有响应正文，这表示主机已被删除。
 
-## 擷取主機的相關資源 {#related}
+## 检索主机的相关资源 {#related}
 
-下列呼叫示範如何擷取主機的相關資源。 時間 [查詢主機](#lookup)，這些關係會列在 `relationships` 屬性。
+以下调用演示了如何检索主机的相关资源。 时间 [查找主机](#lookup)，这些关系列在 `relationships` 属性。
 
-請參閱 [關係指南](../guides/relationships.md) 以取得有關Reactor API中關係的詳細資訊。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
-### 查詢主機的相關屬性 {#property}
+### 查找主机的相关属性 {#property}
 
-您可以透過附加來查詢擁有主機的屬性 `/property` 至查閱請求的路徑。
+您可以通过附加来查找拥有主机的资产 `/property` 到查找请求的路径。
 
 **API格式**
 
@@ -412,7 +412,7 @@ GET /hosts/{HOST_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{HOST_ID}` | 此 `id` 要查詢其屬性的主機的ID。 |
+| `{HOST_ID}` | 此 `id` 要查找其属性的主机的。 |
 
 {style="table-layout:auto"}
 
@@ -430,7 +430,7 @@ curl -X GET \
 
 **响应**
 
-成功的回應會傳回指定主機屬性的詳細資訊。
+成功的响应将返回指定主机的属性的详细信息。
 
 ```json
 {

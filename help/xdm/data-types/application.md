@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；應用程式；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；应用程序；数据类型；数据类型；
 solution: Experience Platform
-title: 應用程式資料型別
-description: 本檔案提供應用程式體驗資料模型(XDM)資料型別的概觀。
+title: 应用程序数据类型
+description: 本文档概述了Application Experience Data Model (XDM)数据类型。
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
@@ -11,29 +11,29 @@ ht-degree: 1%
 
 ---
 
-# [!UICONTROL 應用] 資料型別
+# [!UICONTROL 应用程序] 数据类型
 
-[!UICONTROL 應用] 是標準的體驗資料模型(XDM)資料型別，可描述與應用程式產生的互動相關的詳細資訊。 應用程式是指軟體體驗，例如可由一般使用者安裝、執行、關閉或解除安裝的行動或案頭應用程式。 此資料型別的屬性並非旨在說明聊天機器人、瀏覽器外掛程式等代理程式，或其他不適用於應用程式的體驗。
+[!UICONTROL 应用程序] 是一种标准的体验数据模型(XDM)数据类型，用于描述与应用程序生成的交互相关的详细信息。 应用程序是指软件体验，例如可由最终用户安装、运行、关闭或卸载的移动或桌面应用程序。 此数据类型的属性并非用于描述代理，例如聊天机器人、基于浏览器的插件或其他不适用于应用程序的体验。
 
 <img src="../images/data-types/application.PNG" width="500" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `applicationCloses` | [[!UICONTROL 測量]](./measure.md) | 說明應用程式終止的詳細資訊。 |
-| `crashes` | [[!UICONTROL 測量]](./measure.md) | 當應用程式未如預期結束時，就會觸發此屬性。 |
-| `featureUsages` | [[!UICONTROL 測量]](./measure.md) | 說明啟動所測量之應用程式功能的任何資料。 |
-| `firstLaunches` | [[!UICONTROL 測量]](./measure.md) | 包含首次啟動時的資料。 此屬性會在安裝後的首次啟動時觸發。 |
-| `installs` | [[!UICONTROL 測量]](./measure.md) | 當有特定的安裝事件可用時，會記錄應用程式在裝置上的安裝。 |
-| `launches` | [[!UICONTROL 測量]](./measure.md) | 說明與應用程式啟動相關的值。 每次執行時都會觸發此動作，包括當機、安裝，以及超過工作階段逾時時時從背景恢復。 |
-| `upgrades` | [[!UICONTROL 測量]](./measure.md) | 包含有關升級先前已安裝之應用程式的資料。 這會在升級後的首次啟動時觸發。 |
-| `id` | 字符串 | 適用於應用程式的唯一識別碼。 |
-| `name` | 字符串 | 應用程式的名稱。 |
-| `userPerspective` | 字符串 | 事件發生時使用者與應用程式或品牌之間的觀點或實體關係。 瞭解使用者相對於應用程式的觀點，有助於在大部分情況下準確地產生工作階段，因為您不想包括 `background` 和 `detached` 事件作為「作用中」工作階段的一部分。 此屬性的值必須等於下列其中一個列舉值。 <li> `foreground`：使用者和應用程式直接互動。 </li> <li> `background`：應用程式和使用者間接互動。 例如，應用程式可測量值，並在熒幕鎖定或前景中使用另一個應用程式時重新整理。  </li> <li> `detached`：分離表示事件與應用程式相關，但並非直接來自應用程式，例如從外部系統傳送電子郵件或推播通知。 |
-| `version` | 字符串 | 應用程式的版本。 |
+| `applicationCloses` | [[!UICONTROL 衡量]](./measure.md) | 描述有关应用程序终止的详细信息。 |
+| `crashes` | [[!UICONTROL 衡量]](./measure.md) | 当应用程序未按预期退出时，将触发此属性。 |
+| `featureUsages` | [[!UICONTROL 衡量]](./measure.md) | 描述激活正在测量的应用程序功能所产生的任何数据。 |
+| `firstLaunches` | [[!UICONTROL 衡量]](./measure.md) | 包含有关首次启动的数据。 此属性在安装后首次启动时触发。 |
+| `installs` | [[!UICONTROL 衡量]](./measure.md) | 在特定安装事件可用时，记录应用程序在设备上的安装。 |
+| `launches` | [[!UICONTROL 衡量]](./measure.md) | 描述与应用程序启动关联的值。 每次运行时，都会触发此事件，包括崩溃、安装，以及在超出会话超时后从后台恢复。 |
+| `upgrades` | [[!UICONTROL 衡量]](./measure.md) | 包含有关升级之前已安装的应用程序的数据。 这会在升级后的首次启动时触发。 |
+| `id` | 字符串 | 应用程序的唯一标识符。 |
+| `name` | 字符串 | 应用程序的名称。 |
+| `userPerspective` | 字符串 | 事件发生时用户和应用程序或品牌之间的视角或物理关系。 了解用户相对于应用程序的视角，有助于在大部分情况下准确地生成会话，因为您不希望将会话包含在内 `background` 和 `detached` 作为“活动”会话一部分的事件。 此属性的值必须等于下面列出的枚举值之一。 <li> `foreground`：用户和应用程序正在直接彼此交互。 </li> <li> `background`：应用程序和用户正在间接彼此进行交互。 例如，应用程序可以测量值，并在屏幕锁定或前台使用其他应用程序时刷新。  </li> <li> `detached`：分离是指该事件与应用程序相关，但并非直接来自应用程序，例如从外部系统发送电子邮件或推送通知。 |
+| `version` | 字符串 | 应用程序的版本。 |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/channels/application.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/channels/application.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/channels/application.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/channels/application.schema.json)

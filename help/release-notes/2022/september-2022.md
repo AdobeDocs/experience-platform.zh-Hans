@@ -1,6 +1,6 @@
 ---
-title: Adobe Experience Platform發行說明2022年9月
-description: Adobe Experience Platform 2022年9月版本注意事項。
+title: Adobe Experience Platform发行说明2022年9月
+description: Adobe Experience Platform 2022年9月版发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
 source-git-commit: 8904d44cc8d289d103ec6d65116b8385ed615c4d
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 5%
 
 **发布日期：2022 年 9 月 28 日**
 
-Adobe Experience Platform中的新功能：
+Adobe Experience Platform中的新增功能：
 
 - [基于属性的访问控制](#abac)
 
@@ -22,9 +22,9 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
-- [資料彙集](#data-collection)
+- [数据收集](#data-collection)
 - [目标](#destinations)
-- [體驗資料模型(XDM)](#xdm)
+- [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [查询服务](#query-service)
 - [源](#sources)
@@ -33,22 +33,22 @@ Adobe Experience Platform 现有功能的更新包括：
 
 >[!IMPORTANT]
 >
->以屬性為基礎的存取控制將從2022年10月開始啟用。 如果您想要成為率先採用者，請聯絡您的Adobe代表。
+>基于属性的访问控制将从2022年10月开始启用。 如果您希望成为率先采用者，请联系您的Adobe代表。
 
-以屬性為基礎的存取控制是Adobe Experience Platform的一項功能，可讓注重隱私權的品牌在管理使用者存取許可權時擁有更大的彈性。 可將個別物件（例如結構描述欄位和區段）指派給使用者角色。 此功能可讓您為貴組織中的特定Platform使用者授予或撤銷個別物件的存取權。
+基于属性的访问控制是Adobe Experience Platform的一项功能，它使关注隐私的品牌在管理用户访问方面拥有更大的灵活性。 可以将各个对象（如架构字段和区段）分配给用户角色。 通过此功能，您可以授予或撤销组织中特定Platform用户对各个对象的访问权限。
 
-透過屬性型存取控制，貴組織的管理員可控制使用者對所有Platform工作流程與資源的機密個人資料(SPD)、個人識別資訊(PII)及其他自訂資料型別的存取。 管理員可以定義僅能存取特定欄位的使用者角色，以及對應至這些欄位的資料。
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义仅有权访问特定字段的用户角色以及与这些字段对应的数据的用户角色。
 
 | 功能 | 描述 |
 | --- | --- |
-| 基于属性的访问控制 | 屬性型存取控制可讓您使用可定義組織或資料使用範圍的標籤，來標籤Experience Data Model (XDM)結構描述欄位和區段。 同時，管理員可以使用使用者和角色管理介面來定義涵蓋XDM結構描述欄位和區段的存取原則，以便更好地管理使用者或使用者群組（內部、外部或第三方使用者）的存取許可權。 如需詳細資訊，請參閱 [屬性型存取控制概觀](../../access-control/abac/overview.md). |
-| 权限 | 許可權是Experience Cloud的區域，管理員可以在其中定義使用者角色和存取原則，以管理產品應用程式內功能和物件的存取許可權。 透過許可權，您可以建立和管理角色、為這些角色指派所需的資源許可權，以及建立原則以運用標籤，並定義哪些使用者角色有權存取特定Platform資源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。如需詳細資訊，請參閱 [許可權UI指南](../../access-control/abac/ui/browse.md). |
+| 基于属性的访问控制 | 基于属性的访问控制允许您使用定义组织或数据使用范围的标签来标记体验数据模型(XDM)架构字段和区段。 同时，管理员可以使用用户和角色管理界面定义涵盖XDM架构字段和区段的访问策略，以便更好地管理授予用户或用户组（内部、外部或第三方用户）的访问权限。 欲了解更多信息，请参见 [基于属性的访问控制概述](../../access-control/abac/overview.md). |
+| 权限 | 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序内功能和对象的访问权限。 通过权限，您可以创建和管理角色、为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定Platform资源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。欲了解更多信息，请参见 [权限UI指南](../../access-control/abac/ui/browse.md). |
 
-如需以屬性為基礎的存取控制的詳細資訊，請參閱 [屬性型存取控制概觀](../../access-control/abac/overview.md). 如需以屬性為基礎的存取控制工作流程的完整指南，請閱讀 [屬性型存取控制端對端指南](../../access-control/abac/end-to-end-guide.md).
+有关基于属性的访问控制的详细信息，请参见 [基于属性的访问控制概述](../../access-control/abac/overview.md). 有关基于属性的访问控制工作流的全面指南，请阅读 [基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md).
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
-AI/ML服務可讓行銷分析師和從業人員運用客戶體驗使用案例中人工智慧和機器學習的力量。 這可讓行銷分析人員使用商業層級的設定，針對公司的需求設定模型，而不需要資料科學的專業知識。
+AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这样，营销分析人员就可以使用业务级别配置来设置特定于公司需求的模型，而无需具备数据科学专业知识。
 
 ### 归因人工智能
 
@@ -56,185 +56,185 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 | --- | --- |
-| 儲存草稿執行個體 | 此新功能可讓行銷分析師將模型設定儲存為草稿執行個體，並繼續編輯直到完成訓練和評分為止。 此功能有用的情況包括：使用者在工作流程中有多個要定義的欄位，但由於時間限制而無法完成。 另一個案例是正在處理一個或多個資料集統計資料，但還不能使用。 閱讀 [Attribution AI使用手冊](../../intelligent-services/attribution-ai/user-guide.md#governance-policies) 以深入瞭解。 |
-| 治理原則 | 使用者透過設定工作流程提交以建立執行個體後，新的原則執行服務會檢查是否有任何違反資料使用的原則並在彈出視窗中顯示詳細資訊。 它可確保資料作業和行銷動作符合Adobe Experience Platform上設定的資料使用原則。 |
+| 保存草稿实例 | 借助此新功能，营销分析人员可以将模型配置另存为草稿实例，并继续编辑直到训练和评分前完成。 此功能有用的情况包括：用户在工作流中有多个要定义的字段，但由于时间限制无法完成它。 另一种情况是当一个或多个数据集统计信息正在处理中但尚未可用时。 阅读 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md#governance-policies) 了解更多信息。 |
+| 治理策略 | 用户通过配置工作流提交以创建实例后，新的策略实施服务会检查是否存在任何违反数据使用的策略，并在弹出窗口中显示详细信息。 它确保数据操作和营销操作符合Adobe Experience Platform上配置的数据使用策略。 |
 
-如需Attribution AI的詳細資訊，請參閱 [Attribution AI概觀](../../intelligent-services/attribution-ai/overview.md). 如需資料控管原則的資訊，請閱讀 [原則概觀](../../data-governance/policies/overview.md).
+欲了解有关Attribution AI的更多信息，请参见 [Attribution AI概述](../../intelligent-services/attribution-ai/overview.md). 有关数据治理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
 
-### Customer AI
+### 客户人工智能
 
-Real-time Customer Data Platform中提供的Customer AI可產生自訂傾向評分，例如大規模個別設定檔的流失和轉換情形。
+Real-time Customer Data Platform中提供的客户人工智能，用于生成自定义倾向分数，例如大规模单个用户档案的流失和转化率。
 
 | 功能 | 描述 |
 | --- | --- |
-| 儲存草稿執行個體 | 此新功能可讓行銷分析師將模型設定儲存為草稿執行個體，並繼續編輯直到完成訓練和評分為止。 此功能有用的情況包括：使用者在工作流程中有多個要定義的欄位，但由於時間限制而無法完成。 另一個案例是正在處理一個或多個資料集統計資料，但還不能使用。 閱讀 [Customer AI使用手冊](../../intelligent-services/customer-ai/user-guide/configure.md#governance-policies) 以深入瞭解。 |
-| 治理原則 | 使用者透過設定工作流程提交以建立執行個體後，新的原則執行服務會檢查是否有任何違反資料使用的原則並在彈出視窗中顯示詳細資訊。 它可確保資料作業和行銷動作符合Adobe Experience Platform上設定的資料使用原則。 |
+| 保存草稿实例 | 借助此新功能，营销分析人员可以将模型配置另存为草稿实例，并继续编辑直到训练和评分前完成。 此功能有用的情况包括：用户在工作流中有多个要定义的字段，但由于时间限制无法完成它。 另一种情况是当一个或多个数据集统计信息正在处理中但尚未可用时。 阅读 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md#governance-policies) 了解更多信息。 |
+| 治理策略 | 用户通过配置工作流提交以创建实例后，新的策略实施服务会检查是否存在任何违反数据使用的策略，并在弹出窗口中显示详细信息。 它确保数据操作和营销操作符合Adobe Experience Platform上配置的数据使用策略。 |
 
-如需Customer AI的詳細資訊，請閱讀 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 如需資料控管原則的資訊，請閱讀 [原則概觀](../../data-governance/policies/overview.md).
+有关客户人工智能的更多信息，请阅读 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 有关数据治理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
 
 ## 审核日志 {#audit-logs}
 
-Experience Platform可讓您稽核各種服務和功能的使用者活動。 稽核記錄會提供有關誰做了哪些事、何時做的資訊。
+Experience Platform允许您审核各种服务和功能的用户活动。 审核日志提供有关谁在什么时候做了哪些事情的信息。
 
 **更新的功能**
 
 | 功能 | 名称 | 描述 |
 | --- | --- | --- |
-| 已新增資源 | <ul><li>Attribution AI執行個體</li><li>Customer AI執行個體</li><li>資料流</li></ul> | 當活動發生時，會自動記錄稽核記錄資源。 如果已啟用此功能，您就不需要手動啟用記錄收集。 |
+| 已添加资源 | <ul><li>Attribution AI实例</li><li>客户人工智能实例</li><li>数据流</li></ul> | 审计日志资源在活动发生时自动记录。 如果启用了此功能，则无需手动启用日志收集。 |
 
 {style="table-layout:auto"}
 
-如需Platform中稽核記錄所追蹤之不同資源特定事件型別的詳細資訊，請參閱 [稽核記錄概觀](../../landing/governance-privacy-security/audit-logs/overview.md).
+有关Platform中由审核日志跟踪的不同特定于资源的事件类型的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform提供多個儀表板，您可以透過這些儀表板檢視有關您組織資料的重要深入分析，如每日快照期間所擷取。
+Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
 
 | 功能 | 描述 |
 | --- | --- |
-| 使用中標籤 | 在Widget資料庫中檢視時，使用中標籤可輕鬆識別儀表板中現有Widget的存在。 這可讓您輕鬆避免重複，不過您仍然可以新增相同的Widget多次。 |
-| 使用者定義儀表板 | 使用者定義儀表板可讓您建置和管理自訂儀表板，有助於加速深入分析和自訂視覺效果。 透過使用者定義儀表板，您可以建立、新增和編輯自訂的Widget，以視覺化方式呈現與貴組織相關的關鍵量度。 閱讀 [功能指南](../../dashboards/user-defined-dashboards.md) 以深入瞭解。 |
-| Customer Data Platform分析資料模型 | Customer Data Platform (CDP) Insights資料模型功能可公開資料模型和SQL，以支援各種設定檔、目的地和分段Widget的深入分析。 您可以自訂這些SQL查詢範本，為您的行銷和關鍵績效指標使用案例建立CDP報表。 這些見解然後可用作使用者定義儀表板的自訂Widget。 閱讀 [CDP Insights資料模型功能指南](../../dashboards/cdp-insights-data-model.md) 以深入瞭解。 |
-| 對象重疊報表Widget | 此Widget同時適用於兩者 [!UICONTROL 設定檔] 和 [!UICONTROL 區段] 儀表板。 報表提供依所選區段之最高或最低重疊百分比排名的有序對象清單。 從 [!UICONTROL 設定檔] 控制面板您可以透過所有可用區段的合併原則，篩選及檢視對象重疊。 此 [!UICONTROL 區段] 控制面板可讓您依特定區段篩選對象重疊。<br>使用此分析來建立新的、高效能區段，並避免將相同的對象傳送至不同的目的地。 報表也有助於識別隱藏的深入分析，以改善細分或找出要追求的不重複設定檔。 閱讀個別 [設定檔](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [區段](../../dashboards/guides/segments.md#audience-overlap-report) Widget指南以瞭解更多資訊。 |
+| 使用中标签 | 在Widget库中查看时，使用中标签可以轻松识别仪表板中现有构件是否存在。 这样可以轻松避免重复，不过您仍然可以根据需要多次添加同一构件。 |
+| 用户定义的仪表板 | 通过允许您构建和管理自定义仪表板，用户定义的仪表板有助于加快洞察和自定义可视化图表。 通过用户定义的仪表板，您可以创建、添加和编辑定制的小部件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 了解更多信息。 |
+| 客户数据平台分析数据模型 | 客户数据平台(CDP)分析数据模型功能可公开为各种用户档案、目标和分段构件提供分析功能的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 阅读 [CDP Insights数据模型功能指南](../../dashboards/cdp-insights-data-model.md) 了解更多信息。 |
+| 受众重叠报表构件 | 此构件可用于两者 [!UICONTROL 配置文件] 和 [!UICONTROL 区段] 功能板。 此报表按所选区段的最高或最低重叠百分比排名的有序受众列表。 从 [!UICONTROL 配置文件] 仪表板您可以按合并策略从所有可用区段中过滤和查看受众重叠。 此 [!UICONTROL 区段] 利用功能板，可按特定区段筛选受众重叠。<br>使用此分析构建新的、高性能区段，并避免将相同的受众发送到不同的目标。 报表还有助于识别隐藏的洞察信息以改进分段或找到要追求的独特用户档案。 阅读相应的 [用户档案](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [区段](../../dashboards/guides/segments.md#audience-overlap-report) 构件指南，以了解更多信息。 |
 
-如需詳細資訊，請參閱 [!DNL Dashboards]，請參閱 [[!DNL Dashboards] 概觀](../../dashboards/home.md).
+有关的详细信息 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
-## 資料彙集 {#data-collection}
+## 数据收集 {#data-collection}
 
-Adobe Experience Platform提供了一套技術，可讓您收集使用者端客戶體驗資料，並將其傳送至Adobe Experience Platform Edge Network，在那裡可以擴充和轉換資料，並將其分發到Adobe或非Adobe目的地。
+Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中扩充和转换数据，并将其分发到Adobe或非Adobe目标。
 
-**新功能或更新功能**
+**新增或更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 平台UI中的左側導覽整合 | 先前專屬於資料收集UI的所有功能（包括標籤、事件轉送和資料串流）現在也可透過Experience Platform左側導覽的類別下取得 **[!UICONTROL 資料彙集]**. 如此一來，當您在Platform中使用資料收集功能時，便不需要在UI之間切換。 |
-| 標籤和事件轉送中的使用者歸因 | 清單可用時 [!UICONTROL 屬性] 在標籤和事件轉送中，每個列出的屬性現在會顯示其上次更新時間，以及進行更新的使用者。 |
-| [[!DNL Snap Conversions API] 擴充功能](https://exchange.adobe.com/apps/ec/108550) 用於事件轉送 | 您現在可以將資料傳送至 [!DNL Snapchat Conversions API] 使用 [事件轉送](../../tags/ui/event-forwarding/overview.md) 副檔名。 有關如何驗證和使用API的詳細資訊，請參閱 [[!DNL Snapchat Marketing API] 檔案](https://marketingapi.snapchat.com/docs/conversion.html). |
-| [[!DNL User-Agent Client Hints] 在Web SDK中](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK現在支援 [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 使用者端提示可讓網站擁有者存取 [!DNL User-Agent] 字串，但採用更能保護隱私的方式。 |
-| [Web SDK逐頁移轉](../../edge/home.md#migrating-to-web-sdk) | 您現在可以從其他Experience Cloud程式庫移轉現有的Web屬性，例如 [!DNL at.js]，一次一個頁面。 如此可分階段移轉Web SDK，而不需要一次移轉所有頁面。 |
-| [[!DNL Adobe Journey Optimizer] 支援資料串流](../../edge/datastreams/overview.md#aep) | 適用於資料串流的Adobe Experience Platform服務現在支援 [!DNL Adobe Journey Optimizer]. 此選項可讓您在中使用網頁和應用程式型傳入頻道 [!DNL Adobe Journey Optimizer]. |
+| Platform UI中的左侧导航集成 | 之前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过左侧导航中的Experience Platform类别下使用 **[!UICONTROL 数据收集]**. 当在Platform中使用数据收集功能时，无需在UI之间切换。 |
+| 标记中的用户归因和事件转发 | 当列表可用时 [!UICONTROL 属性] 在标记和事件转发中，每个列出的属性现在会显示其上次更新时间以及进行更新的用户。 |
+| [[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) 用于事件转发 | 您现在可以将数据发送到 [!DNL Snapchat Conversions API] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 有关如何验证和使用API的更多信息，请参阅 [[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html). |
+| [[!DNL User-Agent Client Hints] 在Web SDK中](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK现在支持 [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但采用更保护隐私的方式。 |
+| [Web SDK逐页迁移](../../edge/home.md#migrating-to-web-sdk) | 您现在可以从其他Experience Cloud库中迁移现有Web资产，例如 [!DNL at.js]，转到Web SDK，一次显示一个页面。 这支持分阶段进行Web SDK迁移，而无需一次迁移所有页面。 |
+| [[!DNL Adobe Journey Optimizer] 支持数据流](../../edge/datastreams/overview.md#aep) | 适用于数据流的Adobe Experience Platform服务现在支持 [!DNL Adobe Journey Optimizer]. 此选项允许您在中使用基于Web和应用程序的入站渠道 [!DNL Adobe Journey Optimizer]. |
 
 {style="table-layout:auto"}
 
-如需Platform資料收集的詳細資訊，請參閱 [資料彙集概觀](../../collection/home.md).
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是預先建立的與目標平台的整合，可無縫啟用Adobe Experience Platform的資料。 您可以使用目的地，針對跨頻道行銷活動、電子郵件行銷活動、目標定位廣告和許多其他使用案例，啟用已知和未知的資料。
+[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
 
-**新功能或更新功能**
+**新增或更新功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 目标 SDK | Destination SDK現在為建立批次（或檔案式）生產或私人目的地的合作夥伴和客戶提供完整支援。 如需詳細資訊，請參閱下列檔案頁面： <ul><li>[Destination SDK概觀](../../destinations/destination-sdk/overview.md)</li><li>[設定以檔案為基礎的目的地](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[設定檔案型目的地的檔案格式選項](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[測試您的檔案型目的地](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
+| 目标 SDK | Destination SDK现在为创建批量（或基于文件）生产目的地或专用目的地的合作伙伴和客户提供全面支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](../../destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[测试您的基于文件的目标](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
 
 {style="table-layout:auto"}
 
-**新的或更新目的地**
+**新的或更新后的目标**
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services為跨頻道客戶體驗設計提供平台，並為視覺行銷活動的策劃、即時互動管理和跨頻道執行提供環境。 [開始使用行銷活動](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). 請注意，這項整合可搭配使用 [Adobe Campaign 8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
-| [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 此 [!DNL Salesforce CRM] 目的地已更新，可支援聯絡人和潛在客戶更新，以及效能改善，以更快更新。 |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [Campaign入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). 请注意，此集成可与 [Adobe Campaign版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
+| [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 此 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新，以及性能改进，以实现更快的更新。 |
 
 {style="table-layout:auto"}
 
-**新增或更新後的檔案**
+**新增或更新文档**
 
 | 文档 | 描述 |
 | ----------- | ----------- |
-| 目的地流程服務API檔案 | 此 [目的地API參考檔案](https://developer.adobe.com/experience-platform-apis/references/destinations/) 已更新，加入如何對檔案型目的地執行作業的指引。 稍後將新增串流目的地的作業。 |
+| 目标流服务API文档 | 此 [目标API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/) 更新了内容，以包括关于如何对基于文件的目标执行操作的指导。 稍后将添加流目标的操作。 |
 
-如需有關目的地的詳細一般資訊，請參閱 [目的地概觀](../../destinations/home.md).
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
-## 體驗資料模型(XDM) {#xdm}
+## 体验数据模型(XDM) {#xdm}
 
-XDM是開放原始碼規格，針對帶入Adobe Experience Platform的資料提供通用結構和定義（結構描述）。 藉由遵守XDM標準，所有客戶體驗資料都可以整合到通用表示中，以更快、更整合的方式提供深入分析。 您可以從客戶動作獲得有價值的深入分析、透過區段定義客戶對象，以及使用客戶屬性進行個人化。
+XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| UI支援列舉和建議值 | 除了啟用資料驗證的列舉之外，您現在還可以 [新增或移除建議值](../../xdm/ui/fields/enum.md) 標準或自訂字串欄位，好讓Platform使用者在建立區段時可以從中選擇好記的值清單。 |
+| UI支持枚举和建议值 | 除了启用数据验证的枚举之外，您现在还可以 [添加或删除建议值](../../xdm/ui/fields/enum.md) 用于标准或自定义字符串字段，以便Platform用户可在创建区段时从中选择一个友好的值列表。 |
 
-**新XDM元件**
-
-| 组件类型 | 名称 | 描述 |
-| --- | --- | --- |
-| 字段组 | [[!UICONTROL AJO分類欄位]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | 與互動導致主張事件觸發的特定元素的屬性。 |
-| 字段组 | [[!UICONTROL MediaAnalytics互動細節]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | 追蹤一段時間內的媒體互動。 |
-| 字段组 | [[!UICONTROL 媒體詳細資訊]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | 追蹤媒體詳細資訊。 |
-| 字段组 | [[!UICONTROL AdobeCJM ExperienceEvent — 表面]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | 說明Adobe Journey Optimizer中體驗事件的介面。 |
-
-{style="table-layout:auto"}
-
-**已更新XDM元件**
+**新XDM组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 行为 | [[!UICONTROL 時間序列]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | <ul><li>已新增以下專案的值： `eventType`：<ul><li>`decisioning.propositionSend`</li><li>`decisioning.propositionDismiss`</li><li>`decisioning.propositionTrigger`</li><li>`media.downloaded`</li><li>`location.entry`</li><li>`location.exit`</li></ul></li><li>已移除下列專案的值： `eventType`：<ul><li>`decisioning.propositionDeliver`</li><li>`media.stateStart`</li><li>`media.stateEnd`</li></ul></li></ul> |
-| 字段组 | （多個） | [已更新數個欄位說明](https://github.com/adobe/xdm/pull/1628/files) 橫跨Journey Orchestration元件。 |
-| 字段组 | （多個） | [更新數個Adobe Workfront元件的標題](https://github.com/adobe/xdm/pull/1634/files) 以保持一致性。 |
-| 字段组 | [[!UICONTROL AJO分類欄位]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | 將數個欄位的名稱空間更新為 `xdm`. |
-| 字段组 | [[!UICONTROL Journey Orchestration步驟事件常見欄位]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | 新增欄位， `isReadSegmentTriggerStartEvent`. |
-| 字段组 | [[!UICONTROL 預測性氣象]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | 已變更 `xdm:uvIndex` 欄位新增至整數型別，並新增 `xdm` 名稱空間至缺少的多個欄位。 |
-| 字段组 | [[!UICONTROL 媒體詳細資訊]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` 和 `xdm:implementationDetails` 已從欄位群組中移除。 |
-| 資料型別 | （多個） | [已更新數個媒體屬性名稱](https://github.com/adobe/xdm/pull/1626/files) 資料型別之間的一致性。 |
-| 資料型別 | [[!UICONTROL 實作詳細資料]](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json) | 新增顫振的已知名稱。 |
-| 資料型別 | [[!UICONTROL 興趣點細節]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | 資料型別現在可以接受與地標關聯的中繼資料索引鍵/值組清單。 |
-| 資料型別 | [[!UICONTROL 主張動作]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | [!DNL AJO Classification Fields] 已重新命名為 [!UICONTROL 主張動作]. |
-| 資料型別 | [[!UICONTROL 主張事件型別]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | [!DNL AJO Classification Fields] 已重新命名為 [!UICONTROL 主張動作]. |
-| （多個） | （多個） | 實驗性質已經過 [已在所有B2B元件上穩定](https://github.com/adobe/xdm/pull/1617/files). |
-| （多個） | （多個） | Adobe Journey Optimizer實體已 [已穩定](https://github.com/adobe/xdm/pull/1625/files). |
-| （多個） | （多個） | 跨多個實驗元件的特定欄位名稱空間已 [已更新以保持一致性](https://github.com/adobe/xdm/pull/1626/files). |
+| 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | 与交互导致建议事件触发的特定元素的属性。 |
+| 字段组 | [[!UICONTROL MediaAnalytics交互详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | 随时间跟踪媒体交互。 |
+| 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | 跟踪媒体详细信息。 |
+| 字段组 | [[!UICONTROL AdobeCJM ExperienceEvent — 表面]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | 描述Adobe Journey Optimizer中体验事件的表面。 |
 
 {style="table-layout:auto"}
 
-如需有關Platform中XDM的詳細資訊，請參閱 [XDM系統總覽](../../xdm/home.md).
+**更新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 行为 | [[!UICONTROL 时间序列]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | <ul><li>已添加以下项的值： `eventType`：<ul><li>`decisioning.propositionSend`</li><li>`decisioning.propositionDismiss`</li><li>`decisioning.propositionTrigger`</li><li>`media.downloaded`</li><li>`location.entry`</li><li>`location.exit`</li></ul></li><li>已移除以下项的值： `eventType`：<ul><li>`decisioning.propositionDeliver`</li><li>`media.stateStart`</li><li>`media.stateEnd`</li></ul></li></ul> |
+| 字段组 | （多个） | [更新了多个字段描述](https://github.com/adobe/xdm/pull/1628/files) 跨Journey Orchestration组件。 |
+| 字段组 | （多个） | [更新了多个Adobe Workfront组件的标题](https://github.com/adobe/xdm/pull/1634/files) 以保持一致性。 |
+| 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | 已将多个字段的命名空间更新为 `xdm`. |
+| 字段组 | [[!UICONTROL Journey Orchestration步骤事件常用字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | 添加了一个新字段， `isReadSegmentTriggerStartEvent`. |
+| 字段组 | [[!UICONTROL 天气预报]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | 已更改 `xdm:uvIndex` 字段中的任意值，并将 `xdm` 名称空间到缺少的多个字段。 |
+| 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` 和 `xdm:implementationDetails` 已从字段组删除。 |
+| 数据类型 | （多个） | [更新了多个媒体属性名称](https://github.com/adobe/xdm/pull/1626/files) 跨多种数据类型实现一致性。 |
+| 数据类型 | [[!UICONTROL 实施详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json) | 添加了颤振的已知名称。 |
+| 数据类型 | [[!UICONTROL 兴趣点详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | 数据类型现在可以接受与目标点关联的元数据键值对列表。 |
+| 数据类型 | [[!UICONTROL 建议操作]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | [!DNL AJO Classification Fields] 已重命名为 [!UICONTROL 建议操作]. |
+| 数据类型 | [[!UICONTROL 建议事件类型]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | [!DNL AJO Classification Fields] 已重命名为 [!UICONTROL 建议操作]. |
+| （多个） | （多个） | 实验性能已经达到 [在所有B2B组件中稳定](https://github.com/adobe/xdm/pull/1617/files). |
+| （多个） | （多个） | Adobe Journey Optimizer实体已 [已稳定](https://github.com/adobe/xdm/pull/1625/files). |
+| （多个） | （多个） | 某些字段的命名空间跨多个实验组件 [已更新以保持一致性](https://github.com/adobe/xdm/pull/1626/files). |
+
+{style="table-layout:auto"}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## Identity Service {#identity-service}
 
-提供相關的數位體驗需要完全瞭解您的客戶。 當您的客戶資料分散於不同的系統時，這會使情況更困難，導致每個客戶似乎都有多個「身分」。
+提供相关的数字体验需要全面了解您的客户。 当您的客户数据分散在不同的系统上，导致每个客户似乎都有多个“身份”时，这会使问题变得更加困难。
 
-Adobe Experience Platform Identity Service可跨裝置和系統橋接身分，讓您即時提供具影響力的個人數位體驗，協助您更清楚瞭解客戶及其行為。
+Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 支援資料集刪除 | Identity Service現在支援透過請求資料集時刪除資料集 [目錄服務API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、UI或資料衛生。 閱讀指南： [刪除UI中的資料集](../../catalog/datasets/user-guide.md#delete-a-dataset) 以取得詳細資訊。 |
+| 支持数据集删除 | 现在，Identity Service在通过 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、UI或数据卫生。 阅读以下内容中的指南： [在UI中删除数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 了解更多信息。 |
 
-若要進一步瞭解Identity Service，請閱讀 [Identity Service概觀](../../identity-service/home.md).
+要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
 
 ## 查询服务 {#query-service}
 
-查詢服務可讓您使用標準SQL在Adobe Experience Platform中查詢資料 [!DNL Data Lake]. 您可以從以下位置聯結任何資料集： [!DNL Data Lake] 並將查詢結果擷取為新資料集，以用於報表、資料科學工作區或內嵌至即時客戶個人檔案。
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以从以下位置连接任何数据集 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 警報訂閱API | Adobe Experience Platform查詢服務可讓您針對隨選和已排程的查詢訂閱警示。 警報可透過電子郵件、Platform UI內或兩者來接收。 目前，查詢警報只能使用訂閱 [查詢服務API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
-| 資料集範例 | 查詢服務資料集範例可讓您對大資料執行探索性查詢，並大幅縮短處理時間，但代價是查詢準確性。 請參閱 [資料集範例指南](../../query-service/essential-concepts/dataset-samples.md) 以深入瞭解。 |
+| 警报订阅API | Adobe Experience Platform查询服务允许您为临时查询和计划查询订阅警报。 警报可以通过电子邮件和/或Platform UI接收。 目前，查询警报只能使用订阅 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
+| 数据集示例 | 查询服务数据集示例使您能够针对大数据执行探索性查询，并显着减少处理时间，而代价是查询准确性。 请参阅 [数据集示例指南](../../query-service/essential-concepts/dataset-samples.md) 了解更多信息。 |
 
-如需詳細資訊，請參閱 [!DNL Query Service]，請參閱 [[!DNL Query Service] 概觀](../../query-service/home.md).
+有关的详细信息 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 
-請參閱 [查詢警示檔案](../../query-service/api/alert-subscriptions.md) 以深入瞭解。
+请参阅 [查询警报文档](../../query-service/api/alert-subscriptions.md) 了解更多信息。
 
 ## 源 {#sources}
 
-Adobe Experience Platform可從外部來源擷取資料，同時允許您使用Platform服務來建構、加標籤及增強該資料。 您可以內嵌來自各種來源的資料，例如Adobe應用程式、雲端儲存、協力廠商軟體和您的CRM系統。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-Experience Platform提供RESTful API和互動式UI，讓您輕鬆設定各種資料提供者的來源連線。 這些來源連線可讓您驗證並連線至外部儲存系統和CRM服務、設定擷取執行的時間，以及管理資料擷取輸送量。
+Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Audience Manager區段母體對即時客戶個人檔案的影響 | 當您首次使用Audience Manager來源將Audience Manager區段傳送至Platform時，大量的Audience Manager區段母體的擷取會直接影響您的總設定檔計數。 這表示選取所有區段可能會導致「設定檔」計數超過您的授權使用權益。 如需詳細資訊，請閱讀 [Audience Manager來源概觀](../../sources/connectors/adobe-applications/audience-manager.md). 如需授權使用方式的詳細資訊，請閱讀以下檔案： [使用授權使用情況儀表板](../../dashboards/guides/license-usage.md). |
-| 支援Adobe Campaign託管Cloud Service | 使用Adobe Campaign託管Cloud Service來源，將您的Adobe Campaign v8.4傳遞和追蹤記錄資料帶入Experience Platform。 閱讀指南： [在UI中建立Adobe Campaign ManagedCloud Service來源連線](../../sources/tutorials/ui/create/adobe-applications/campaign.md) 以取得詳細資訊。 |
-| 批次來源的隨選擷取的API支援 | 使用隨選擷取為具有的指定資料流建立隨選資料流執行 [!DNL Flow Service] API。 建立的流程執行必須設定為一次性內嵌。 如需詳細資訊，請閱讀以下指南： [使用API建立隨選擷取的流程執行](../../sources/tutorials/api/on-demand-ingestion.md) 以取得詳細資訊。 |
-| API支援重試批次來源的失敗資料流執行 | 使用 `re-trigger` 操作，透過API重試失敗的資料流。 閱讀指南： [使用API重試失敗的資料流執行](../../sources/tutorials/api/retry-flows.md) 以取得詳細資訊。 |
-| API支援篩選的列層級資料 [!DNL Google BigQuery] 和 [!DNL Snowflake] 來源 | 使用邏輯和比較運運算元來篩選的列層級資料 [!DNL Google BigQuery] 和 [!DNL Snowflake] 來源。 閱讀指南： [使用API篩選來源的資料](../../sources/tutorials/api/filter.md) 以取得詳細資訊。 |
+| Audience Manager区段人口对实时客户个人资料的影响 | 当您首次使用Audience Manager源向Platform发送Audience Manager区段时，大量的Audience Manager区段群体的摄取会直接影响您的总配置文件计数。 这意味着选择所有区段可能会导致配置文件计数超过您的许可证使用授权。 有关详细信息，请阅读 [Audience Manager源概述](../../sources/connectors/adobe-applications/audience-manager.md). 有关许可证使用情况的信息，请阅读以下文档： [使用许可证使用情况仪表板](../../dashboards/guides/license-usage.md). |
+| 支持Adobe Campaign托管Cloud Service | 使用Adobe Campaign托管Cloud Service源将Adobe Campaign v8.4投放和跟踪日志数据引入Experience Platform。 阅读以下内容中的指南： [在UI中创建Adobe Campaign托管Cloud Service源连接](../../sources/tutorials/ui/create/adobe-applications/campaign.md) 了解更多信息。 |
+| API支持批量来源的按需摄取 | 使用按需引入为给定数据流创建临时流运行，使用 [!DNL Flow Service] API。 创建的流运行必须设置为一次性摄取。 有关详细信息，请阅读以下指南： [使用API为按需引入创建流运行](../../sources/tutorials/api/on-demand-ingestion.md) 了解更多信息。 |
+| API支持重试批处理源的失败数据流运行 | 使用 `re-trigger` 操作，以通过API重试失败的数据流。 阅读以下内容中的指南： [使用API重试失败的数据流运行](../../sources/tutorials/api/retry-flows.md) 了解更多信息。 |
+| API支持筛选的行级别数据 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源 | 使用逻辑运算符和比较运算符筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源。 阅读以下内容中的指南： [使用API筛选源的数据](../../sources/tutorials/api/filter.md) 了解更多信息。 |
 
-若要進一步瞭解來源，請閱讀 [來源概觀](../../sources/home.md).
+要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).

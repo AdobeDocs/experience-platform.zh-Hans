@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構；結構；XDM；欄位；結構；結構；地理；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地域；数据类型；数据类型；
 solution: Experience Platform
-title: 地理資料型別
-description: 本檔案提供地理XDM資料型別的概觀。
+title: 地理数据类型
+description: 本文档提供了地域XDM数据类型的概述。
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,26 +11,26 @@ ht-degree: 4%
 
 ---
 
-# [!UICONTROL 地理] 資料型別
+# [!UICONTROL 地域] 数据类型
 
-[!UICONTROL 地理] 是標準XDM資料型別，可描述觀察事件的地理區域。
+[!UICONTROL 地域] 是一个标准XDM数据类型，用于描述观察到事件的地理区域。
 
 <img src="../images/data-types/geo.png" width="400" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_schema` | [[!UICONTROL 地理座標]](./geo-coordinates.md) | 說明地點的地理座標。 |
-| `_id` | 字符串 | 系統產生的唯一座標ID。 |
-| `city` | 字符串 | 城市名稱。 |
-| `countryCode` | 字符串 | 兩個字元 <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> 國家/地區的代碼。 |
-| `dmaID` | 整数 | Nielsen媒體研究指定的市場區域。 |
-| `msaID` | 整数 | 進行觀察的美國大都會統計區域。 |
-| `postalCode` | 字符串 | 地點的郵遞區號。 郵遞區號並非適用於所有國家/地區。 在某些國家/地區，這僅包含部分郵遞區號。 |
-| `stateProvince` | 字符串 | 觀察的州或省的部分。 格式會遵循 [ISO 3166-2 （國家/地區和細分）](https://www.unece.org/cefact/locode/subdivisions.html) 標準。 |
+| `_schema` | [[!UICONTROL 地理坐标]](./geo-coordinates.md) | 描述位置的地理坐标。 |
+| `_id` | 字符串 | 系统生成的唯一坐标ID。 |
+| `city` | 字符串 | 城市的名称。 |
+| `countryCode` | 字符串 | 两个字符 <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> 国家/地区的代码。 |
+| `dmaID` | 整数 | Nielsen媒体研究指定的市场区域。 |
+| `msaID` | 整数 | 美国发生观测的大都市统计区。 |
+| `postalCode` | 字符串 | 位置的邮政编码。 并非所有国家/地区都提供邮政编码。 在一些国家/地区，这仅包含邮政编码的一部分。 |
+| `stateProvince` | 字符串 | 观察的省/市/自治区部分。 格式遵循 [ISO 3166-2（国家/地区和细分）](https://www.unece.org/cefact/locode/subdivisions.html) 标准。 |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.schema.json)

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；批次擷取；批次擷取；開發人員指南；API指南；上傳；擷取Parquet；擷取json；
+keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；开发人员指南；API指南；上传；摄取Parquet；摄取json；
 solution: Experience Platform
-title: 批次擷取API指南
-description: 本檔案為使用Adobe Experience Platform批次擷取API的開發人員提供完整指南。
+title: 批量摄取API指南
+description: 本文档为使用Adobe Experience Platform批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,31 +11,31 @@ ht-degree: 4%
 
 ---
 
-# 批次擷取開發人員指南
+# 批量摄取开发人员指南
 
-本檔案提供使用的完整指南 [批次擷取API端點](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 在Adobe Experience Platform中。 如需批次擷取API的概觀，包括先決條件和最佳實務，請從閱讀 [批次擷取API概觀](overview.md).
+本文档提供了全面的使用指南 [批量摄取API端点](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) 在Adobe Experience Platform中。 有关批量摄取API的概述，包括先决条件和最佳实践，请从阅读 [批量摄取API概述](overview.md).
 
-本檔案的附錄提供以下專案的資訊： [格式化要用於內嵌的資料](#data-transformation-for-batch-ingestion)，包括範例CSV和JSON資料檔案。
+本文档的附录提供了 [设置用于摄取的数据格式](#data-transformation-for-batch-ingestion)，包括示例CSV和JSON数据文件。
 
 ## 快速入门
 
-本指南中使用的API端點屬於 [批次擷取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 批次擷取是透過RESTful API提供，您可以在其中對支援的物件型別執行基本CRUD操作。
+本指南中使用的API端点是 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). 通过RESTful API提供批量摄取，您可以在其中对支持的对象类型执行基本CRUD操作。
 
-在繼續之前，請檢閱 [批次擷取API概觀](overview.md) 和 [快速入門手冊](getting-started.md).
+在继续之前，请查看 [批量摄取API概述](overview.md) 和 [快速入门指南](getting-started.md).
 
-## 內嵌JSON檔案
-
->[!NOTE]
->
->以下步驟適用於小型檔案（256 MB以下）。 如果您遇到閘道逾時或請求內文大小錯誤，您必須切換到大型檔案上傳。
-
-### 建立批次
-
-首先，您需要以JSON作為輸入格式建立批次。 建立批次時，您需要提供資料集ID。 您還需要確保批次中上傳的所有檔案都符合連結到所提供資料集的XDM結構。
+## 摄取JSON文件
 
 >[!NOTE]
 >
->以下範例適用於單行JSON。 若要內嵌多行JSON，請 `isMultiLineJson` 需要設定標幟。 如需詳細資訊，請閱讀 [批次擷取疑難排解指南](./troubleshooting.md).
+>以下步骤适用于小文件（256 MB或更小）。 如果遇到网关超时或请求正文大小错误，则需要切换到大型文件上传。
+
+### 创建批次
+
+首先，您需要创建一个批次，以JSON作为输入格式。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到所提供数据集的XDM架构。
+
+>[!NOTE]
+>
+>以下示例适用于单行JSON。 要摄取多行JSON，请 `isMultiLineJson` 需要设置标志。 欲知更多信息，请阅读 [批量摄取疑难解答指南](./troubleshooting.md).
 
 **API格式**
 
@@ -62,7 +62,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
 
@@ -88,16 +88,16 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
-### 上傳檔案
+### 上传文件
 
-現在您已建立批次，您可以使用批次建立回應中的批次ID來上傳檔案至批次。 您可以將多個檔案上傳至批次。
+现在您已经创建了批次，可以使用批次创建响应中的批次ID将文件上传到批次。 您可以将多个文件上载到批处理。
 
 >[!NOTE]
 >
->請參閱附錄一節，瞭解 [正確格式化的JSON資料檔案範例](#data-transformation-for-batch-ingestion).
+>请参阅附录部分，了解 [格式正确的JSON数据文件示例](#data-transformation-for-batch-ingestion).
 
 **API格式**
 
@@ -107,15 +107,15 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要上傳的檔案名稱。 請確定您使用唯一的檔案名稱，這樣它就不會與要提交之批次檔案的其他檔案衝突。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要上载的文件的名称。 确保使用唯一的文件名，以便它不会与要提交的批量文件的另一个文件冲突。 |
 
 **请求**
 
 >[!NOTE]
 >
->API支援單一部分上傳。 確保內容型別是application/octet-stream。
+>API支持单部分上传。 确保内容类型为application/octet-stream。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.json \
@@ -129,7 +129,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您嘗試上傳之檔案的完整路徑和名稱。 此檔案路徑是本機檔案路徑，例如 `acme/customers/campaigns/summer.json`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
 
 **响应**
 
@@ -137,9 +137,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 200 OK
 ```
 
-### 完成批次
+### 完成批处理
 
-完成上傳檔案的所有不同部分後，您需要指出資料已完全上傳，且批次已準備好進行升級。
+上传完文件的所有不同部分后，您需要表明数据已完全上传，并且批次已准备好进行升级。
 
 **API格式**
 
@@ -149,7 +149,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
 
 **请求**
 
@@ -167,15 +167,15 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 200 OK
 ```
 
-## 擷取Parquet檔案 {#ingest-parquet-files}
+## 摄取Parquet文件 {#ingest-parquet-files}
 
 >[!NOTE]
 >
->以下步驟適用於小型檔案（256 MB以下）。 如果您遇到閘道逾時或請求內文大小錯誤，您將需要切換到大型檔案上傳。
+>以下步骤适用于小文件（256 MB或更小）。 如果遇到网关超时或请求正文大小错误，则需要切换到大型文件上传。
 
-### 建立批次
+### 创建批次
 
-首先，您需要建立批次，以Parquet作為輸入格式。 建立批次時，您需要提供資料集ID。 您還需要確保批次中上傳的所有檔案都符合連結到所提供資料集的XDM結構。
+首先，需要创建一个批次，以Parquet作为输入格式。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到所提供数据集的XDM架构。
 
 **请求**
 
@@ -196,7 +196,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 | 参数 | 描述 |
 | --------- | ------------ |
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
 
@@ -226,13 +226,13 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
-| `{USER_ID}` | 建立批次的使用者ID。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
+| `{USER_ID}` | 创建批次的用户的ID。 |
 
-### 上傳檔案
+### 上传文件
 
-現在您已建立批次，您可以使用 `batchId` 從之前將檔案上傳至批次。 您可以將多個檔案上傳至批次。
+现在您已经创建了批次，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -242,15 +242,15 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要上傳的檔案名稱。 請確定您使用唯一的檔案名稱，這樣它就不會與要提交之批次檔案的其他檔案衝突。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要上载的文件的名称。 确保使用唯一的文件名，以便它不会与要提交的批量文件的另一个文件冲突。 |
 
 **请求**
 
 >[!CAUTION]
 >
->此API支援單一部分上傳。 確保內容型別是application/octet-stream。
+>此API支持单部分上传。 确保内容类型为application/octet-stream。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.parquet \
@@ -264,7 +264,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您嘗試上傳之檔案的完整路徑和名稱。 此檔案路徑是本機檔案路徑，例如 `acme/customers/campaigns/summer.parquet`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.parquet`. |
 
 **响应**
 
@@ -272,9 +272,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 200 OK
 ```
 
-### 完成批次
+### 完成批处理
 
-完成上傳檔案的所有不同部分後，您需要指出資料已完全上傳，且批次已準備好進行升級。
+上传完文件的所有不同部分后，您需要表明数据已完全上传，并且批次已准备好进行升级。
 
 **API格式**
 
@@ -284,7 +284,7 @@ POST /batches/{BATCH_ID}?action=complete
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要訊號之批次的ID已準備好完成。 |
+| `{BATCH_ID}` | 要发出信号的批次ID已准备好完成。 |
 
 **请求**
 
@@ -302,15 +302,15 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
-## 擷取大型Parquet檔案
+## 摄取大型Parquet文件
 
 >[!NOTE]
 >
->本節詳細說明如何上傳大於256 MB的檔案。 大型檔案會以區塊上傳，然後透過API訊號拼接。
+>本节详细介绍如何上载大于256 MB的文件。 将大文件上传为块，然后通过API信号拼合。
 
-### 建立批次
+### 创建批次
 
-首先，您需要建立批次，以Parquet作為輸入格式。 建立批次時，您需要提供資料集ID。 您還需要確保批次中上傳的所有檔案都符合連結到所提供資料集的XDM結構。
+首先，需要创建一个批次，以Parquet作为输入格式。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到所提供数据集的XDM架构。
 
 **API格式**
 
@@ -337,7 +337,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
 
@@ -367,13 +367,13 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
-| `{USER_ID}` | 建立批次的使用者ID。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
+| `{USER_ID}` | 创建批次的用户的ID。 |
 
-### 初始化大型檔案
+### 初始化大文件
 
-建立批次後，您必須先初始化大型檔案，才能將區塊上傳至批次。
+创建批次后，您需要先初始化大文件，然后再将块上传到批次。
 
 **API格式**
 
@@ -383,9 +383,9 @@ POST /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
-| `{FILE_NAME}` | 即將初始化的檔案名稱。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
+| `{FILE_NAME}` | 即将初始化的文件的名称。 |
 
 **请求**
 
@@ -403,9 +403,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 201 Created
 ```
 
-### 上傳大型檔案區塊
+### 上载大文件块
 
-現在檔案已建立，您可以透過進行重複的PATCH請求（檔案的每個區段各一個）來上傳所有後續區塊。
+现在文件已创建，可以通过重复的PATCH请求（文件的每个部分各一个）上传所有后续块。
 
 **API格式**
 
@@ -415,15 +415,15 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要上傳的檔案名稱。 請確定您使用唯一的檔案名稱，這樣它就不會與要提交之批次檔案的其他檔案衝突。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要上载的文件的名称。 确保使用唯一的文件名，以便它不会与要提交的批量文件的另一个文件冲突。 |
 
 **请求**
 
 >[!CAUTION]
 >
->此API支援單一部分上傳。 確保內容型別是application/octet-stream。
+>此API支持单部分上传。 确保内容类型为application/octet-stream。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.parquet \
@@ -438,8 +438,8 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONTENT_RANGE}` | 以整數表示要求的範圍的開頭和結尾。 |
-| `{FILE_PATH_AND_NAME}` | 您嘗試上傳之檔案的完整路徑和名稱。 此檔案路徑是本機檔案路徑，例如 `acme/customers/campaigns/summer.json`. |
+| `{CONTENT_RANGE}` | 在整数中，为请求范围的开始和结束。 |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
 
 
 **响应**
@@ -448,9 +448,9 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 200 OK
 ```
 
-### 完成大型檔案
+### 完整的大文件
 
-現在您已建立批次，您可以使用 `batchId` 從之前將檔案上傳至批次。 您可以將多個檔案上傳至批次。
+现在您已经创建了批次，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -460,9 +460,9 @@ POST /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 要表示完成的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要表示完成的檔案名稱。 |
+| `{BATCH_ID}` | 要表示已完成的批次ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要表示已完成的文件的名称。 |
 
 **请求**
 
@@ -480,9 +480,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 201 Created
 ```
 
-### 完成批次
+### 完成批处理
 
-完成上傳檔案的所有不同部分後，您需要指出資料已完全上傳，且批次已準備好進行升級。
+上传完文件的所有不同部分后，您需要表明数据已完全上传，并且批次已准备好进行升级。
 
 **API格式**
 
@@ -492,7 +492,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要訊號為完成的批次ID。 |
+| `{BATCH_ID}` | 要发出信号的批次的ID已完成。 |
 
 
 **请求**
@@ -511,17 +511,17 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
-## 擷取CSV檔案
+## 摄取CSV文件
 
-若要內嵌CSV檔案，您需要建立支援CSV的類別、結構描述和資料集。 如需如何建立必要類別和結構的詳細資訊，請依照 [隨選結構描述建立教學課程](../../xdm/api/ad-hoc.md).
+为了摄取CSV文件，您需要创建一个支持CSV的类、架构和数据集。 有关如何创建必要类和架构的详细信息，请按照 [临时架构创建教程](../../xdm/api/ad-hoc.md).
 
 >[!NOTE]
 >
->以下步驟適用於小型檔案（256 MB以下）。 如果您遇到閘道逾時或請求內文大小錯誤，您將需要切換到大型檔案上傳。
+>以下步骤适用于小文件（256 MB或更小）。 如果遇到网关超时或请求正文大小错误，则需要切换到大型文件上传。
 
 ### 创建数据集
 
-依照上述指示建立必要的類別和結構描述後，您需要建立可支援CSV的資料集。
+按照上面的说明创建必要的类和架构后，您将需要创建可支持CSV的数据集。
 
 **API格式**
 
@@ -549,12 +549,12 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{TENANT_ID}` | 此ID可用來確保您建立的資源能正確建立名稱空間，並包含在您的組織內。 |
-| `{SCHEMA_ID}` | 您已建立的結構描述ID。 |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源被正确命名并包含在您的组织中。 |
+| `{SCHEMA_ID}` | 您已创建的架构的ID。 |
 
-### 建立批次
+### 创建批次
 
-接下來，您需要以CSV作為輸入格式來建立批次。 建立批次時，您需要提供資料集ID。 您還需要確保批次中上傳的所有檔案都與連結至所提供資料集的結構描述相符。
+接下来，您需要创建一个将CSV作为输入格式的批次。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件都符合链接到所提供数据集的架构。
 
 **API格式**
 
@@ -581,7 +581,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
 
@@ -611,17 +611,17 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
-| `{USER_ID}` | 建立批次的使用者ID。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
+| `{USER_ID}` | 创建批次的用户的ID。 |
 
-### 上傳檔案
+### 上传文件
 
-現在您已建立批次，您可以使用 `batchId` 從之前將檔案上傳至批次。 您可以將多個檔案上傳至批次。
+现在您已经创建了批次，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上载到批处理。
 
 >[!NOTE]
 >
->請參閱附錄一節，瞭解 [正確格式化的CSV資料檔案範例](#data-transformation-for-batch-ingestion).
+>请参阅附录部分，了解 [格式正确的CSV数据文件示例](#data-transformation-for-batch-ingestion).
 
 **API格式**
 
@@ -631,15 +631,15 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要上傳的檔案名稱。 請確定您使用唯一的檔案名稱，這樣它就不會與要提交之批次檔案的其他檔案衝突。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要上载的文件的名称。 确保使用唯一的文件名，以便它不会与要提交的批量文件的另一个文件冲突。 |
 
 **请求**
 
 >[!CAUTION]
 >
->此API支援單一部分上傳。 確保內容型別是application/octet-stream。
+>此API支持单部分上传。 确保内容类型为application/octet-stream。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.csv \
@@ -653,7 +653,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您嘗試上傳之檔案的完整路徑和名稱。 此檔案路徑是本機檔案路徑，例如 `acme/customers/campaigns/summer.csv`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.csv`. |
 
 
 **响应**
@@ -662,9 +662,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 200 OK
 ```
 
-### 完成批次
+### 完成批处理
 
-完成上傳檔案的所有不同部分後，您需要指出資料已完全上傳，且批次已準備好進行升級。
+完成上载文件的所有不同部分后，您需要发出信号表明数据已完全上载，并且批次已准备好进行升级。
 
 **API格式**
 
@@ -690,7 +690,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 取消批次
 
-批次處理期間，仍可取消。 不過，一旦批次完成（例如成功或失敗狀態），就無法取消批次。
+在处理批次时，仍可取消它。 但是，一旦完成批处理（例如成功或失败状态），就无法取消批处理。
 
 **API格式**
 
@@ -700,7 +700,7 @@ POST /batches/{BATCH_ID}?action=ABORT
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要取消的批次ID。 |
+| `{BATCH_ID}` | 要取消的批次ID。 |
 
 **请求**
 
@@ -718,9 +718,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
-## 刪除批次 {#delete-a-batch}
+## 删除批次 {#delete-a-batch}
 
-您可以使用執行以下POST請求來刪除批次 `action=REVERT` 您要刪除之批次識別碼的查詢引數。 該批次被標籤為「非使用中」，因此符合垃圾收集的條件。 系統會以非同步方式收集批次，並標示為「已刪除」。
+通过使用执行以下POST请求，可以删除批次 `action=REVERT` 查询要删除的批次ID的参数。 该批次被标记为“不活动”，因此可用于垃圾收集。 将异步收集批次，然后将其标记为“已删除”。
 
 **API格式**
 
@@ -730,7 +730,7 @@ POST /batches/{BATCH_ID}?action=REVERT
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要刪除之批次的ID。 |
+| `{BATCH_ID}` | 要删除的批次的ID。 |
 
 **请求**
 
@@ -748,28 +748,28 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
-## 修補批次
+## 修补批次
 
-有時候，您可能需要更新組織設定檔存放區中的資料。 例如，您可能需要更正記錄或變更屬性值。 Adobe Experience Platform支援透過更新插入動作或「修補批次」來更新或修補設定檔存放區資料。
+有时候，可能需要更新您组织的配置文件存储区中的数据。 例如，您可能需要更正记录或更改属性值。 Adobe Experience Platform支持通过更新插入操作或“修补批次”来更新或修补配置文件存储区数据。
 
 >[!NOTE]
 >
->這些更新僅允許在設定檔記錄上進行，不允許在體驗事件上進行。
+>这些更新仅允许在配置文件记录中进行，不允许在体验事件中进行。
 
-若要修補批次，需要下列專案：
+要修补批次，需要满足以下条件：
 
-- **已啟用設定檔和屬性更新的資料集。** 這是透過資料集標籤完成的，並需要特定 `isUpsert:true` 標籤已新增至 `unifiedProfile` 陣列。 如需詳細步驟，說明如何建立資料集或設定現有資料集以進行更新，請遵循的教學課程 [為設定檔更新啟用資料集](../../catalog/datasets/enable-upsert.md).
-- **包含要修補的欄位和設定檔的身分欄位的Parquet檔案。** 修補批次的資料格式與一般批次擷取程式類似。 需要的輸入是Parquet檔案，除了要更新的欄位外，上傳的資料必須包含身分欄位，以便與設定檔存放區中的資料相符。
+- **为配置文件和属性更新启用的数据集。** 这是通过数据集标记完成的，需要特定 `isUpsert:true` 标签添加到 `unifiedProfile` 数组。 有关显示如何创建数据集或配置现有数据集进行更新插入的详细步骤，请阅读的教程 [为配置文件更新启用数据集](../../catalog/datasets/enable-upsert.md).
+- **包含要修补的字段和配置文件的标识字段的Parquet文件。** 为批次打补丁的数据格式与常规批次摄取过程类似。 所需的输入是一个Parquet文件，除了要更新的字段外，上传的数据必须包含身份字段，以便与配置文件存储区中的数据匹配。
 
-一旦您為Profile和upsert啟用了資料集，並且有一個Parquet檔案，其中包含您要修補的欄位以及必要的身分識別欄位，您可以遵循以下步驟 [擷取Parquet檔案](#ingest-parquet-files) 以透過批次擷取完成修補程式。
+在为Profile和upsert启用了数据集，并且有一个Parquet文件包含要修补的字段以及必要的标识字段后，您可以执行以下步骤 [正在摄取Parquet文件](#ingest-parquet-files) 以通过批量摄取完成修补程序。
 
 ## 重播批次
 
-如果您想要取代已擷取的批次，可以使用「批次重播」來進行 — 此動作等同於刪除舊批次並擷取新批次。
+如果要替换已摄取的批次，可以使用“批量重播”来执行此操作 — 此操作等同于删除旧批次并摄取新批次。
 
-### 建立批次
+### 创建批次
 
-首先，您需要以JSON作為輸入格式建立批次。 建立批次時，您需要提供資料集ID。 您還需要確保批次中上傳的所有檔案都符合連結到所提供資料集的XDM結構。 此外，您還需要在重播區段中提供舊批次作為參考。 在下列範例中，您正在使用ID重播批次 `batchIdA` 和 `batchIdB`.
+首先，您需要创建一个批次，以JSON作为输入格式。 创建批次时，您需要提供数据集ID。 您还需要确保作为批次的一部分上传的所有文件符合链接到所提供数据集的XDM架构。 此外，您还需要提供旧批次作为重播部分中的引用。 在下面的示例中，您将使用ID重播批次 `batchIdA` 和 `batchIdB`.
 
 **API格式**
 
@@ -800,7 +800,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- | 
-| `{DATASET_ID}` | 參考資料集的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
 
 **响应**
 
@@ -836,14 +836,14 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 新建立批次的ID。 |
-| `{DATASET_ID}` | 參考資料集的ID。 |
-| `{USER_ID}` | 建立批次的使用者ID。 |
+| `{BATCH_ID}` | 新创建的批次的ID。 |
+| `{DATASET_ID}` | 引用数据集的ID。 |
+| `{USER_ID}` | 创建批次的用户的ID。 |
 
 
-### 上傳檔案
+### 上传文件
 
-現在您已建立批次，您可以使用 `batchId` 從之前將檔案上傳至批次。 您可以將多個檔案上傳至批次。
+现在您已经创建了批次，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上载到批处理。
 
 **API格式**
 
@@ -853,15 +853,15 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要上傳至的批次ID。 |
-| `{DATASET_ID}` | 批次參考資料集的ID。 |
-| `{FILE_NAME}` | 您要上傳的檔案名稱。 請確定您使用唯一的檔案名稱，這樣它就不會與要提交之批次檔案的其他檔案衝突。 |
+| `{BATCH_ID}` | 要上传到的批次的ID。 |
+| `{DATASET_ID}` | 批次的引用数据集的ID。 |
+| `{FILE_NAME}` | 要上载的文件的名称。 确保使用唯一的文件名，以便它不会与要提交的批量文件的另一个文件冲突。 |
 
 **请求**
 
 >[!CAUTION]
 >
->此API支援單一部分上傳。 確保內容型別是application/octet-stream。 請勿使用curl -F選項，因為它預設為與API不相容的多部分請求。
+>此API支持单部分上传。 确保内容类型为application/octet-stream。 请勿使用curl -F选项，因为它默认为与API不兼容的多部分请求。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.json \
@@ -875,7 +875,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您嘗試上傳之檔案的完整路徑和名稱。 此檔案路徑是本機檔案路徑，例如 `acme/customers/campaigns/summer.json`. |
+| `{FILE_PATH_AND_NAME}` | 尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，例如 `acme/customers/campaigns/summer.json`. |
 
 **响应**
 
@@ -883,9 +883,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 200 OK
 ```
 
-### 完成批次
+### 完成批处理
 
-完成上傳檔案的所有不同部分後，您需要指出資料已完全上傳，且批次已準備好進行升級。
+上传完文件的所有不同部分后，您需要表明数据已完全上传，并且批次已准备好进行升级。
 
 **API格式**
 
@@ -895,7 +895,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 您要完成的批次ID。 |
+| `{BATCH_ID}` | 要完成的批次的ID。 |
 
 **请求**
 
@@ -915,13 +915,13 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 附录
 
-下節包含使用批次擷取以Experience Platform擷取資料的其他資訊。
+以下部分包含有关使用批量摄取在Experience Platform中摄取数据的其他信息。
 
-### 批次擷取的資料轉換
+### 批量摄取的数据转换
 
-為了將資料檔案擷取到 [!DNL Experience Platform]，檔案的階層結構必須符合 [體驗資料模型(XDM)](../../xdm/home.md) 與上傳目標資料集相關聯的結構描述。
+为了将数据文件摄取到 [!DNL Experience Platform]，文件的层次结构必须符合 [体验数据模型(XDM)](../../xdm/home.md) 与要上载到的数据集关联的架构。
 
-有關如何對應CSV檔案以符合XDM結構的資訊，請參閱 [範例轉換](../../etl/transformations.md) 以及正確格式化的JSON資料檔案的範例。 檔案中提供的範例檔案可在此處找到：
+有关如何映射CSV文件以符合XDM架构的信息，请参阅 [示例转换](../../etl/transformations.md) 文档，以及格式正确的JSON数据文件示例。 文档中提供的示例文件可在此处找到：
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)

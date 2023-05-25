@@ -1,7 +1,7 @@
 ---
-title: 使用者代理使用者端提示
-description: 瞭解使用者代理程式使用者端提示在Web SDK中的運作方式。 使用者端提示可讓網站擁有者存取使用者代理字串中提供的大部分相同資訊，但採用更能保護隱私的方式。
-keywords: 使用者代理；使用者端提示；字串；使用者代理字串；低平均資訊量；高平均資訊量
+title: 用户代理客户端提示
+description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问User-Agent字符串中提供的许多相同信息，但采用更保护隐私的方式。
+keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
 source-git-commit: 29679e85943f16bcb02064cc60a249a3de61e022
 workflow-type: tm+mt
@@ -10,17 +10,17 @@ ht-degree: 7%
 
 ---
 
-# 使用者代理使用者端提示
+# 用户代理客户端提示
 
 ## 概述 {#overview}
 
-每次網頁瀏覽器向網頁伺服器提出請求時，請求的標題都會包含有關瀏覽器和執行瀏覽器環境的資訊。 所有這些資料都會彙總為一個字串，稱為 [!DNL User-Agent] 字串。
+每次Web浏览器向Web服务器发出请求时，请求的标头都包含有关浏览器和运行浏览器的环境的信息。 所有这些数据都会聚合为一个字符串，称为 [!DNL User-Agent] 字符串。
 
-以下範例說明 [!DNL User-Agent] 字串看起來像請求中的文字，該請求來自於在上執行的Chrome瀏覽器 [!DNL Mac OS] 裝置。
+以下是一个示例， [!DNL User-Agent] 字符串看起来像是在上运行的Chrome浏览器发出的请求中 [!DNL Mac OS] 设备。
 
 >[!NOTE]
 >
->多年以來，中包含的瀏覽器和裝置資訊量 [!DNL User-Agent] 字串已成長和修改多次。 以下範例顯示一系列最常見的選項 [!DNL User-Agent] 資訊。
+>多年来，中包含的浏览器和设备信息量 [!DNL User-Agent] 字符串已多次增长和修改。 以下示例显示了一组最常见的选项 [!DNL User-Agent] 信息。
 
 ```shell
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36`
@@ -35,38 +35,38 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 | 版面引擎版本 | 537.36 |
 | Operating system | Mac OS X |
 | 操作系统版本 | 10.15.7 |
-| 设备 | Intel Mac OS X 10_15_7 |
+| 设备 | 英特尔Mac OS X 10_15_7 |
 
 ## 用例 {#use-cases}
 
-[!DNL User-Agent] 長期以來，字串一直被用來為行銷和開發團隊提供重要見解，以說明瀏覽器、作業系統和裝置如何顯示網站內容，以及使用者如何與網站互動。
+[!DNL User-Agent] 长期以来，字符串一直被用来为营销和开发团队提供有关浏览器、操作系统和设备如何显示网站内容以及用户如何与网站交互的重要见解。
 
-[!DNL User-Agent] 字串也可用來封鎖垃圾郵件，以及篩選機器人，這些機器人會為各種其他目的對網站進行編目。
+[!DNL User-Agent] 出于其他各种目的，字符串还用于阻止垃圾邮件并过滤抓取网站的机器人。
 
-## [!DNL User-Agent] Adobe Experience Cloud中的字串 {#user-agent-in-adobe}
+## [!DNL User-Agent] Adobe Experience Cloud中的字符串 {#user-agent-in-adobe}
 
-Adobe Experience Cloud解決方案利用 [!DNL User-Agent] 字串。
+Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方式显示。
 
-* Adobe Analytics利用 [!DNL User-Agent] 字串：用來增加和衍生與用來造訪網站的作業系統、瀏覽器和裝置相關的其他資訊。
-* Adobe Audience Manager和Adobe Target根據 [!DNL User-Agent] 字串。
+* Adobe Analytics利用 [!DNL User-Agent] 字符串，用于增强和派生与用于访问网站的操作系统、浏览器和设备相关的其他信息。
+* Adobe Audience Manager和Adobe Target根据 [!DNL User-Agent] 字符串。
 
-## 引入使用者代理使用者端提示 {#ua-ch}
+## 用户代理客户端提示简介 {#ua-ch}
 
-近幾年，網站擁有者和行銷供應商已使用 [!DNL User-Agent] 字串以及請求標頭中包含的其他資訊一起建立數位指紋。 這些指紋可用作為在使用者不知情的情況下識別使用者的手段。
+近年来，网站所有者和营销供应商使用 [!DNL User-Agent] 字符串以及请求标头中包含的其他信息以创建数字指纹。 这些指纹可以用作在用户不知情的情况下识别用户的手段。
 
-儘管此專案的重要目的 [!DNL User-Agent] 字串會為網站擁有者服務，瀏覽器開發人員已決定變更做法 [!DNL User-Agent] 字串會運作，以限制使用者的潛在隱私權問題。
+尽管这其中的重要目的 [!DNL User-Agent] 字符串为站点所有者服务，浏览器开发人员已决定更改方法 [!DNL User-Agent] 字符串发挥作用，以限制最终用户的潜在隐私问题。
 
-他們開發的解決方案稱為 [使用者代理使用者端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 使用者端提示仍可讓網站收集必要的瀏覽器、作業系統和裝置資訊，同時針對秘密追蹤方法（例如指紋）提供更強大的保護。
+他们开发的解决方案称为 [用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示仍然允许网站收集必要的浏览器、操作系统和设备信息，同时还可以增强对隐蔽跟踪方法（如指纹）的防范。
 
-使用者端提示可讓網站擁有者存取 [!DNL User-Agent] 字串，但採用更能保護隱私的方式。
+客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但采用更保护隐私的方式。
 
-當現代瀏覽器將使用者傳送至網頁伺服器時， [!DNL User-Agent] 字串；無論是否需要，都會在每次請求時傳送。 另一方面，使用者端提示會強制執行模型，其中伺服器必須要求瀏覽器提供它想要瞭解的使用者端的其他資訊。 在收到此請求後，瀏覽器可以套用自己的原則或使用者設定，以決定要傳回哪些資料。 不要公開整個 [!DNL User-Agent] 字串)，現在會以明確且可稽核的方式管理存取。
+当现代浏览器将用户发送到Web服务器时，整个 [!DNL User-Agent] 无论是否需要，都会在每次请求时发送字符串。 另一方面，客户端提示会强制执行一种模型，其中服务器必须向浏览器询问它想要了解的有关客户端的其他信息。 在收到此请求后，浏览器可以应用其自己的策略或用户配置来确定返回的数据。 而不是公开整个 [!DNL User-Agent] 默认情况下，所有请求的访问都以明确且可审核的方式进行管理。
 
-## 瀏覽器支援 {#browser-support}
+## 浏览器支持 {#browser-support}
 
-[使用者代理使用者端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) 推出於 [!DNL Google Chrome ]89版。
+[用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) 引入于 [!DNL Google Chrome ]版本89。
 
-其他以Chromium為基礎的瀏覽器支援使用者端提示API，例如：
+其他基于Chromium的浏览器支持客户端提示API，例如：
 
 * [!DNL Microsoft Edge]
 * [!DNL Opera]
@@ -77,28 +77,28 @@ Adobe Experience Cloud解決方案利用 [!DNL User-Agent] 字串。
 
 ## 类别 {#categories}
 
-使用者代理程式使用者端提示分為兩類：
+用户代理客户端提示分为两类：
 
-* [低平均資訊量使用者端提示](#low-entropy)
-* [高平均資訊量使用者端提示](#high-entropy)
+* [低熵客户端提示](#low-entropy)
+* [高熵客户端提示](#high-entropy)
 
-### 低平均資訊量使用者端提示 {#low-entropy}
+### 低熵客户端提示 {#low-entropy}
 
-低平均資訊量使用者端提示包含無法用於指紋識別使用者的基本資訊。 瀏覽器品牌、平台，以及請求是否來自行動裝置等資訊。
+低熵客户端提示包括不能用于指纹识别用户的基本信息。 信息，例如浏览器品牌、平台以及请求是否来自移动设备。
 
-Web SDK預設會啟用低平均資訊量使用者端提示，並在每個請求時傳遞。
+默认情况下，Web SDK中会启用低熵客户端提示，并在每个请求中传递。
 
-| HTTP 标头 | JavaScript | 預設包含在使用者代理程式中 | 預設包含在使用者端提示中 |
+| HTTP 标头 | JavaScript | 默认情况下包含在用户代理中 | 默认情况下包含在客户端提示中 |
 |---|---|---|---|
 | `Sec-CH-UA` | `brands` | 是 | 是 |
 | `Sec-CH-UA-Platform` | `platform` | 是 | 是 |
 | `Sec-CH-UA-Mobile` | `mobile` | 是 | 是 |
 
-### 高平均資訊量使用者端提示 {#high-entropy}
+### 高熵客户端提示 {#high-entropy}
 
-高平均資訊量使用者端提示是有關使用者端裝置的更詳細資訊，例如平台版本、架構、型號、位元（64位元或32位元平台）或完整作業系統版本。 此資訊可能用於指紋識別。
+高熵客户端提示是有关客户端设备的更详细信息，例如平台版本、架构、模型、位（64位或32位平台）或完整操作系统版本。 这些信息可能用于指纹。
 
-| HTTP 标头 | JavaScript | 預設包含在使用者代理程式中 | 預設包含在使用者端提示中 |
+| HTTP 标头 | JavaScript | 默认情况下包含在用户代理中 | 默认情况下包含在客户端提示中 |
 |---|---|---|---|
 | `Sec-CH-UA-Platform-Version` | `platformVersion` | 是 | 否 |
 | `Sec-CH-UA-Arc` | `architecture` | 是 | 否 |
@@ -106,35 +106,35 @@ Web SDK預設會啟用低平均資訊量使用者端提示，並在每個請求�
 | `Sec-CH-UA-Bitness` | `Bitness` | 是 | 否 |
 | `Sec-CH-UA-Full-Version-List` | `fullVersionList` | 是 | 否 |
 
-Web SDK預設會停用高平均資訊量使用者端提示。 若要啟用這些功能，您必須手動設定Web SDK以請求高平均資訊量使用者端提示。
+默认情况下，Web SDK中禁用高熵客户端提示。 要启用它们，您必须手动配置Web SDK以请求高熵客户端提示。
 
-## 高平均資訊量使用者端提示對Experience Cloud解決方案的影響 {#impact-in-experience-cloud-solutions}
+## 高熵客户端提示对Experience Cloud解决方案的影响 {#impact-in-experience-cloud-solutions}
 
-有些Adobe Experience Cloud解決方案在產生報表時，會仰賴高平均資訊量使用者端提示中包含的資訊。
+某些Adobe Experience Cloud解决方案在生成报告时依赖高熵客户端提示中包含的信息。
 
-如果您未在環境中啟用高平均資訊量使用者端提示，則以下說明的Adobe Analytics和Audience Manager報表和特徵將無法運作。
+如果您没有在环境中启用高熵客户端提示，则下面描述的Adobe Analytics和Audience Manager报表和特征将无法工作。
 
-### 依賴高平均資訊量使用者端提示的Adobe Analytics報告 {#analytics}
+### Adobe Analytics报表依赖高熵客户端提示 {#analytics}
 
-此 [作業系統](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans) dimension包含儲存為高平均資訊量使用者端提示的作業系統版本。 如果未啟用高平均資訊量使用者端提示，從Chromium瀏覽器收集之點選的作業系統版本可能不準確。
+此 [操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans) 维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
 
-### 依賴高平均資訊量使用者端提示的Audience Manager特徵 {#aam}
+### 依赖高熵客户端提示的Audience Manager特征 {#aam}
 
-[!DNL Google] 已更新 [!DNL Chrome] 瀏覽器功能可將透過 `User-Agent` 標頭。 因此，Audience Manager客戶使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 將不會再收到基於下列條件之特徵的可靠資訊： [平台層級索引鍵](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
+[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能，可最大限度地减少通过 `User-Agent` 标头。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 将不再收到基于以下特征的可靠信息： [平台级别键](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
 
-使用平台層級索引鍵進行目標定位的Audience Manager客戶必須切換至 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) 而非 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，並啟用 [高平均資訊量使用者端提示](#enabling-high-entropy-client-hints) 以繼續接收可靠的特徵資料。
+使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 以继续接收可靠特征数据。
 
-## 啟用高平均資訊量使用者端提示 {#enabling-high-entropy-client-hints}
+## 启用高熵客户端提示 {#enabling-high-entropy-client-hints}
 
-若要在Web SDK部署上啟用高平均資訊量使用者端提示，您必須包含其他 `highEntropyUserAgentHints` 內容選項，如 [設定檔案](configuring-the-sdk.md#context)，以及您現有的設定。
+要在Web SDK部署中启用高熵客户端提示，您必须包含其他 `highEntropyUserAgentHints` 上下文选项，如 [配置文档](configuring-the-sdk.md#context)，以及您现有的配置。
 
-例如，若要從Web屬性擷取高平均資訊量使用者端提示，您的設定將如下所示：
+例如，要从Web属性检索高熵客户端提示，您的配置将如下所示：
 
 `context: ["highEntropyUserAgentHints", "web"]`
 
 ## 示例 {#example}
 
-瀏覽器向網頁伺服器發出的第一個請求標題中所包含的使用者端提示將包含瀏覽器品牌、瀏覽器的主要版本，以及使用者端是否為行動裝置的指標。 每段資料都有自己的標題值，而非分組到單一資料中 [!DNL User-Agent] 字串，如下所示：
+浏览器向Web服务器发出的第一个请求的标头中包含的客户端提示将包含浏览器品牌、浏览器的主要版本以及客户端是否为移动设备的指示器。 每段数据都将有自己的标头值，而不是分组到单个中 [!DNL User-Agent] 字符串，如下所示：
 
 ```shell
 Sec-CH-UA: "Chromium";v="101", "Google Chrome";v="101", " Not;A Brand";v="99"
@@ -144,17 +144,17 @@ Sec-CH-UA-Mobile: ?0
 Sec-CH-UA-Platform: "macOS
 ```
 
-同等專案 [!DNL User-Agent] 相同瀏覽器的標題看起來像這樣：
+等同的 [!DNL User-Agent] 同一浏览器的标题将如下所示：
 
 ```shell
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36
 ```
 
-雖然資訊類似，但對伺服器的第一個請求包含使用者端提示。 這些僅包括 [!DNL User-Agent] 字串。 請求中沒有作業系統架構、完整作業系統版本、版面引擎名稱、版面引擎版本和完整瀏覽器版本。
+尽管信息类似，但对服务器的第一个请求包含客户端提示。 这些仅包括 [!DNL User-Agent] 字符串。 请求中缺少的是操作系统体系结构、完整操作系统版本、版面引擎名称、版面引擎版本和完整浏览器版本。
 
-但在後續請求中， [!DNL Client Hints API] 可讓網頁伺服器詢問關於裝置的其他詳細資訊。 當請求這些值時，根據瀏覽器原則或使用者設定，瀏覽器回應可能包含該資訊。
+然而，在接获要求时， [!DNL Client Hints API] 允许Web服务器询问有关设备的其他详细信息。 当请求这些值时，根据浏览器策略或用户设置，浏览器响应可能包含该信息。
 
-以下是由傳回的JSON物件範例 [!DNL Client Hints API] 當請求高平均資訊量值時：
+以下是由返回的JSON对象示例 [!DNL Client Hints API] 当请求高熵值时：
 
 
 ```json

@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；JupyterLab；筆記型電腦；資料科學工作區；熱門主題；jupyterlab
+keywords: Experience Platform；JupyterLab；笔记本；Data Science Workspace；热门主题；jupyterlab
 solution: Experience Platform
 title: JupyterLab UI概述
-description: JupyterLab是Project Jupyter的網頁式使用者介面，並緊密整合至Adobe Experience Platform。 它提供互動式開發環境，讓資料科學家能夠使用Jupyter Notebooks、程式碼和資料。 本檔案概述JupyterLab及其功能，以及執行常見動作的指示。
+description: JupyterLab是Project Jupyter的基于Web的用户界面，并且已紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。 本文档概述了JupyterLab及其功能，并提供了执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
 source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
@@ -11,185 +11,185 @@ ht-degree: 3%
 
 ---
 
-# [!DNL JupyterLab] UI總覽
+# [!DNL JupyterLab] UI概述
 
-[!DNL JupyterLab] 是Web型使用者介面，用於 [Jupyter專案](https://jupyter.org/) 並緊密整合至Adobe Experience Platform。 它提供互動式開發環境，讓資料科學家能夠使用Jupyter Notebooks、程式碼和資料。
+[!DNL JupyterLab] 是基于Web的用户界面，用于 [Jupyter项目](https://jupyter.org/) 并紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，以便使用Jupyter Notebooks、代码和数据。
 
-本檔案提供下列專案的概觀： [!DNL JupyterLab] 及其功能，以及執行常見動作的指示。
+本文档提供了以下内容的概述 [!DNL JupyterLab] 及其功能以及执行常见操作的说明。
 
-## [!DNL JupyterLab] 於 [!DNL Experience Platform]
+## [!DNL JupyterLab] 日期 [!DNL Experience Platform]
 
-Experience Platform的JupyterLab整合可搭配架構變更、設計考量、自訂的筆記型電腦擴充功能、預先安裝的程式庫，以及Adobe主題的介面。
+Experience Platform的JupyterLab集成伴随着体系结构变化、设计注意事项、自定义的笔记本扩展、预安装的库和Adobe主题界面。
 
-下列清單概述JupyterLab on Platform的獨特功能：
+下表概述了JupyterLab on Platform的一些独特功能：
 
 | 功能 | 描述 |
 | --- | --- |
-| **核心** | 核心，提供筆記型電腦及其他 [!DNL JupyterLab] 前端能以不同的程式設計語言執行及內嵌程式碼。 [!DNL Experience Platform] 提供其他核心以支援中的開發 [!DNL Python]、R、PySpark和 [!DNL Spark]. 請參閱 [核心](#kernels) 區段以取得更多詳細資料。 |
-| **資料存取** | 直接從存取現有的資料集 [!DNL JupyterLab] 全面支援讀寫功能。 |
-| **[!DNL Platform]服務整合** | 內建整合可讓您利用其他 [!DNL Platform] 直接從中取得服務 [!DNL JupyterLab]. 支援整合的完整清單可在以下連結的區段中取得： [與其他Platform服務整合](#service-integration). |
-| **身份验证** | 除了 <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab的內建安全性模型</a>，應用程式和Experience Platform之間的每次互動（包括平台服務對服務通訊）都會透過進行加密和驗證 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
-| **开发库** | 在 [!DNL Experience Platform]， [!DNL JupyterLab] 提供預先安裝的程式庫，用於 [!DNL Python]、 R和PySpark。 請參閱 [附錄](#supported-libraries) 以取得支援程式庫的完整清單。 |
-| **程式庫控制器** | 當您的需求缺乏預先安裝的程式庫時，可以為Python和R安裝其他程式庫，並暫時儲存在隔離的容器中，以保持 [!DNL Platform] 並確保資料安全。 請參閱 [核心](#kernels) 區段以取得更多詳細資料。 |
+| **内核** | 内核提供笔记本和其他 [!DNL JupyterLab] 前端能够以不同的编程语言执行和检查代码。 [!DNL Experience Platform] 提供了额外的内核来支持中的开发 [!DNL Python]、 R 、 PySpark和 [!DNL Spark]. 请参阅 [内核](#kernels) 部分以了解更多详细信息。 |
+| **数据访问** | 直接从访问现有数据集 [!DNL JupyterLab] 完全支持读写功能。 |
+| **[!DNL Platform]服务集成** | 内置的集成允许您利用其他 [!DNL Platform] 内直接提供服务 [!DNL JupyterLab]. 支持的集成的完整列表在以下位置提供： [与其他Platform服务集成](#service-integration). |
+| **身份验证** | 除此之外 <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab的内置安全模型</a>，您的应用程序和Experience Platform之间的每次交互（包括Platform服务到服务通信）都经过加密和身份验证，具体方式为 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| **开发库** | In [!DNL Experience Platform]， [!DNL JupyterLab] 提供预安装的库用于 [!DNL Python]、 R和PySpark。 请参阅 [附录](#supported-libraries) 以获取支持的库的完整列表。 |
+| **库控制器** | 当预安装的库无法满足您的需求时，可以为Python和R安装其他库，并临时存储在独立的容器中，以保持 [!DNL Platform] 并确保数据安全。 请参阅 [内核](#kernels) 部分以了解更多详细信息。 |
 
 >[!NOTE]
 >
->其他程式庫僅適用於已安裝程式庫的工作階段。 您必須重新安裝啟動新工作階段時所需的任何其他程式庫。
+>其他库仅适用于安装这些库的会话。 在启动新会话时，必须重新安装所需的任何其他库。
 
-## 與其他整合 [!DNL Platform] 服務 {#service-integration}
+## 与其他集成 [!DNL Platform] 服务 {#service-integration}
 
-標準化和互用性是背後的重要概念 [!DNL Experience Platform]. 整合 [!DNL JupyterLab] 於 [!DNL Platform] 作為內嵌IDE，可以與其他 [!DNL Platform] 服務，讓您能夠利用 [!DNL Platform] 充分發揮其潛力。 下列專案 [!DNL Platform] 以下位置提供服務： [!DNL JupyterLab]：
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]. 集成 [!DNL JupyterLab] 日期 [!DNL Platform] 作为嵌入式IDE，它允许与其他对象交互 [!DNL Platform] 服务，让您能够利用 [!DNL Platform] 充分发挥它的潜能。 以下各项 [!DNL Platform] 在以下位置提供了服务： [!DNL JupyterLab]：
 
-* **[!DNL Catalog Service]：** 使用讀取和寫入功能存取及探索資料集。
-* **[!DNL Query Service]：** 使用SQL存取及探索資料集，可在處理大量資料時提供較低的資料存取開銷。
-* **[!DNL Sensei ML Framework]：** 模型開發，能夠訓練及評分資料，以及按一下即可建立配方。
-* **[!DNL Experience Data Model (XDM)]：** 標準化和互用性是Adobe Experience Platform背後的重要概念。 [體驗資料模型(XDM)](https://www.adobe.com/go/xdm-home-en)由Adobe推動，致力於標準化客戶體驗資料並定義客戶體驗管理的結構。
+* **[!DNL Catalog Service]：** 使用读取和写入功能访问和浏览数据集。
+* **[!DNL Query Service]：** 使用SQL访问和浏览数据集，在处理大量数据时提供较低的数据访问开销。
+* **[!DNL Sensei ML Framework]：** 能够训练数据和评分数据的模型开发，以及只需单击一下即可创建方法。
+* **[!DNL Experience Data Model (XDM)]：** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [体验数据模型(XDM)](https://www.adobe.com/go/xdm-home-en)(由Adobe推动)致力于标准化客户体验数据并定义客户体验管理的模式。
 
 >[!NOTE]
 >
->部分 [!DNL Platform] 上的服務整合 [!DNL JupyterLab] 僅限特定核心。 請參閱以下章節： [核心](#kernels) 以取得更多詳細資料。
+>部分 [!DNL Platform] 上的服务集成 [!DNL JupyterLab] 仅限特定内核。 请参阅以下部分： [内核](#kernels) 了解更多详细信息。
 
-## 主要功能與常見操作
+## 主要功能和常见操作
 
-關於主要功能的資訊 [!DNL JupyterLab] 以下各節提供執行常見操作的說明：
+有关的主要功能的信息 [!DNL JupyterLab] 以下各节提供了有关执行常见操作的说明：
 
-* [存取JupyterLab](#access-jupyterlab)
-* [JupyterLab介面](#jupyterlab-interface)
-* [程式碼儲存格](#code-cells)
-* [核心](#kernels)
-* [核心階段作業](#kernel-sessions)
-* [啟動器](#launcher)
+* [访问JupyterLab](#access-jupyterlab)
+* [JupyterLab接口](#jupyterlab-interface)
+* [编码单元格](#code-cells)
+* [内核](#kernels)
+* [内核会话](#kernel-sessions)
+* [启动器](#launcher)
 
 ### 访问 [!DNL JupyterLab] {#access-jupyterlab}
 
-在 [Adobe Experience Platform](https://platform.adobe.com)，選取 **[!UICONTROL Notebooks]** 左側導覽欄中的。 允許一些時間 [!DNL JupyterLab] 以完全初始化。
+In [Adobe Experience Platform](https://platform.adobe.com)，选择 **[!UICONTROL Notebooks]** （从左侧导航列中）。 留出一些时间 [!DNL JupyterLab] 以完全初始化。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
 ### [!DNL JupyterLab] 界面 {#jupyterlab-interface}
 
-此 [!DNL JupyterLab] 介麵包含功能表列、可摺疊的左側邊欄，以及包含檔案和活動索引標籤的主要工作區域。
+此 [!DNL JupyterLab] 界面由一个菜单栏、一个可折叠的左侧边栏和一个包含文档和活动选项卡的主工作区组成。
 
 **菜单栏**
 
-介面頂端的功能表列有頂層功能表，這些功能表會顯示 [!DNL JupyterLab] 使用鍵盤快速鍵：
+界面顶部的菜单栏有顶级菜单，其中显示可用的操作 [!DNL JupyterLab] 使用键盘快捷键：
 
-* **檔案：** 與檔案和目錄相關的動作
-* **編輯：** 與編輯檔案和其他活動相關的動作
-* **檢視：** 變更外觀的動作 [!DNL JupyterLab]
-* **執行：** 在不同活動（例如筆記型電腦和程式碼主控台）中執行程式碼的動作
-* **核心：** 管理核心的動作
-* **標籤：** 開啟的檔案和活動清單
-* **設定：** 通用設定和進階設定編輯器
-* **說明：** 清單 [!DNL JupyterLab] 與核心說明連結
+* **文件：** 与文件和目录相关的操作
+* **编辑：** 与编辑文档和其他活动相关的操作
+* **查看：** 更改外观的操作 [!DNL JupyterLab]
+* **运行：** 用于在不同的活动（如笔记本和代码控制台）中运行代码的操作
+* **内核：** 用于管理内核的操作
+* **选项卡：** 未结文档和活动的列表
+* **设置：** 通用设置和高级设置编辑器
+* **帮助：** 列表 [!DNL JupyterLab] 和内核帮助链接
 
-**左側欄**
+**左侧边栏**
 
-左側邊欄包含可點按的標籤，可讓您存取以下功能：
+左侧边栏包含可单击的选项卡，通过这些选项卡可访问以下功能：
 
-* **檔案瀏覽器：** 已儲存的筆記本檔案和目錄清單
-* **資料總管：** 瀏覽、存取及探索資料集和結構描述
-* **執行核心與終端機：** 具有終止能力的作用中核心與終端機階段作業清單
-* **命令：** 有用的命令清單
-* **儲存格檢測器：** 提供工具和中繼資料的存取的儲存格編輯器，可用於設定筆記本以進行簡報
-* **索引標籤：** 開啟的標籤清單
+* **文件浏览器：** 已保存的笔记本文档和目录的列表
+* **数据资源管理器：** 浏览、访问和浏览数据集和架构
+* **运行内核和终端：** 能够终止的活动内核和终端会话的列表
+* **命令：** 有用的命令列表
+* **单元格检查器：** 单元格编辑器，提供对工具和元数据的访问，用于设置笔记本以进行演示
+* **选项卡：** 打开的选项卡列表
 
-選取標籤以公開其功能，或在展開的標籤上選取以摺疊左側邊欄，如下所示：
+选择选项卡以显示其功能，或在展开的选项卡上选择以折叠左侧边栏，如下所示：
 
 ![](../images/jupyterlab/user-guide/left_sidebar_collapse.gif)
 
-**主要工作區域**
+**主要工作区域**
 
-中的主要工作區域 [!DNL JupyterLab] 可讓您將檔案和其他活動安排到標籤面板中，這些標籤面板可以調整大小或進行細分。 將索引標籤拖曳至索引標籤面板的中心以移轉索引標籤。 將標籤拖曳至面板的左側、右側、上方或底部，以分割面板：
+中的主要工作区域 [!DNL JupyterLab] 使您可以将文档和其他活动排列到选项卡面板中，这些面板可以调整大小或进行细分。 将选项卡拖动到选项卡面板的中心以迁移选项卡。 通过将选项卡拖动到面板的左侧、右侧、顶部或底部来划分面板：
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
-### 中的GPU和記憶體伺服器組態 [!DNL Python]/R
+### 中的GPU和内存服务器配置 [!DNL Python]/R
 
-在 [!DNL JupyterLab] 選取右上角的齒輪圖示以開啟 *Notebook伺服器設定*. 您可以開啟GPU，並使用滑桿來分配所需的記憶體容量。 您可以配置的記憶體數量取決於您的組織已布建的記憶體數量。 選取 **[!UICONTROL 更新設定]** 以儲存。
+In [!DNL JupyterLab] 选择右上角的齿轮图标以打开 *笔记本服务器配置*. 您可以通过滑块打开GPU并分配所需的内存量。 可分配的内存量取决于您的组织已配置的内存量。 选择 **[!UICONTROL 更新配置]** 以保存。
 
 >[!NOTE]
 >
->每個組織只能布建一個GPU來使用Notebooks。 如果GPU正在使用中，您需要等待目前已保留GPU的使用者將其釋出。 登出或讓GPU處於閒置狀態四個小時以上，即可完成這項作業。
+>每个组织只能为笔记本配置一个GPU。 如果GPU正在使用中，则需要等待当前已保留GPU的用户将其释放。 可以通过注销或让GPU处于空闲状态四个小时或更长时间来完成此操作。
 
 ![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
 
-### 終止和重新啟動 [!DNL JupyterLab]
+### 终止和重新启动 [!DNL JupyterLab]
 
-在 [!DNL JupyterLab]，您可以終止工作階段以防止其他資源被使用。 從選取 **電源圖示** ![電源圖示](../images/jupyterlab/user-guide/power_button.png)，然後選取 **[!UICONTROL 關閉]** 從顯示終止工作階段的彈出視窗。 Notebook工作階段會在12小時沒有活動後自動終止。
+In [!DNL JupyterLab]，您可以终止会话以防止其他资源被占用。 首先，选择 **电源图标** ![电源图标](../images/jupyterlab/user-guide/power_button.png)，然后选择 **[!UICONTROL 关闭]** 从显示终止会话的弹出窗口。 笔记本会话在12小时不活动后自动终止。
 
-若要重新啟動 [!DNL JupyterLab]，選取 **重新啟動圖示** ![重新啟動圖示](../images/jupyterlab/user-guide/restart_button.png) 位於電源圖示左側，然後選取 **[!UICONTROL 重新啟動]** 從出現的彈出視窗。
+重新启动 [!DNL JupyterLab]，选择 **重新启动图标** ![重新启动图标](../images/jupyterlab/user-guide/restart_button.png) 直接位于电源图标左侧，然后选择 **[!UICONTROL 重新启动]** 从显示的弹出窗口中。
 
-![終止jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
+![终止jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 
-### 程式碼儲存格 {#code-cells}
+### 编码单元格 {#code-cells}
 
-程式碼儲存格是Notebooks的主要內容。 它們包含筆記型電腦相關核心語言的原始程式碼，以及執行程式碼儲存格後的輸出。 每個程式碼儲存格的右側會顯示執行計數，代表其執行順序。
+代码单元格是笔记本的主要内容。 它们包含以笔记本相关内核的语言编写的源代码，以及执行代码单元后得到的输出。 每个代码单元格的右侧会显示执行计数，表示其执行顺序。
 
 ![](../images/jupyterlab/user-guide/code_cell.png)
 
-常見的儲存格動作說明如下：
+下面介绍了常见的单元格操作：
 
-* **新增儲存格：** 按一下加號(**+**)，以新增空白儲存格。 新儲存格會放置在目前互動的儲存格下方，如果沒有特定儲存格成為焦點，則位於筆記本的結尾。
+* **添加单元格：** 单击加号(**+**)，以添加空单元格。 新单元格放置在当前正在交互的单元格下方，如果没有特定单元格处于焦点位置，则位于笔记本的末尾。
 
-* **移動儲存格：** 將游標放在您要移動的儲存格右側，然後按一下並將儲存格拖曳到新位置。 此外，將儲存格從一個筆記本移至另一個筆記本，會複製儲存格及其內容。
+* **移动单元格：** 将光标放在要移动的单元格的右侧，然后单击并将单元格拖动到新位置。 此外，将单元格从一个笔记本移动到另一个笔记本会复制单元格及其内容。
 
-* **執行儲存格：** 按一下要執行的儲存格內文，然後按一下 **play** 圖示(**▶**)。 星號(**\***)會在核心處理執行時顯示在儲存格的執行計數器中，並在完成後以整數取代。
+* **执行单元格：** 单击要执行的单元格的正文，然后单击 **play** 图标(**▶**)。 星号(**\***)在内核处理执行时显示在单元格的执行计数器中，并在完成后替换为整数。
 
-* **刪除儲存格：** 按一下要刪除的儲存格內文，然後按一下 **剪刀** 圖示。
+* **删除单元格：** 单击要删除的单元格的正文，然后单击 **剪刀** 图标。
 
-### 核心 {#kernels}
+### 内核 {#kernels}
 
-筆記型電腦核心是處理筆記型電腦儲存格的語言專屬運算引擎。 除了 [!DNL Python]， [!DNL JupyterLab] 在R、PySpark和 [!DNL Spark] (Scala)。 當您開啟筆記本檔案時，會啟動相關聯的核心。 執行notebook儲存格時，核心會執行計算並產生可能耗用大量CPU和記憶體資源的結果。 請注意，在關閉核心之前，不會釋放配置的記憶體。
+笔记本内核是用于处理笔记本单元格的语言特定计算引擎。 除此之外 [!DNL Python]， [!DNL JupyterLab] 在R、PySpark和 [!DNL Spark] (Scala)。 打开笔记本文档时，将启动关联的内核。 当执行笔记本单元时，内核执行计算并产生可能消耗大量CPU和内存资源的结果。 请注意，在关闭内核之前，不会释放分配的内存。
 
-某些特色和功能僅限於特定核心，如下表所述：
+某些特性和功能仅限于下表所述的特定内核：
 
-| 核心 | 程式庫安裝支援 | [!DNL Platform] 集成 |
+| 内核 | 库安装支持 | [!DNL Platform] 集成 |
 | :----: | :--------------------------: | :-------------------- |
 | **[!DNL Python]** | 是 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li><li>[!DNL Query Service]</li></ul> |
 | **R** | 是 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
 | **Scala** | 否 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
 
-### 核心階段作業 {#kernel-sessions}
+### 内核会话 {#kernel-sessions}
 
-上的每個使用中筆記本或活動 [!DNL JupyterLab] 會使用核心工作階段。 展開「 」，即可找到所有作用中的工作階段 **執行終端機與核心** tab鍵（從左側邊欄）。 您可以透過觀察筆記型電腦介面的右上角來識別筆記型電腦核心的型別和狀態。 在下圖中，筆記本的相關核心為 **[!DNL Python]3** 其目前狀態由右側的灰色圓圈表示。 空心圓表示閒置核心，實心圓表示忙碌核心。
+上的每个活动笔记本或活动 [!DNL JupyterLab] 利用内核会话。 通过展开 **运行终端和核心** tab键。 通过观察笔记本界面的右上角，可以识别笔记本内核的类型和状态。 在下图中，笔记本的相关内核为 **[!DNL Python]3** 它的当前状态用右边的灰色圆圈表示。 空心圆表示空闲核，实心圆表示繁忙核。
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
-如果核心關機或長時間未啟用，則 **無核心！** 會顯示實心圓。 按一下核心狀態並選取適當的核心型別，以啟動核心，如下所示：
+如果内核关闭或长时间不活动，则 **无内核！** 显示带实心的圆。 单击内核状态并选择适当的内核类型以激活内核，如下所示：
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
 
-### 啟動器 {#launcher}
+### 启动器 {#launcher}
 
 [//]: # (Talk about the different Notebooks, introduce that certain starter notebooks are limited to particular kernels)
 
-自訂的 *啟動器* 提供支援的筆記型電腦核心的實用範本，協助您開始工作，包括：
+自定义的 *启动器* 为支持的内核提供有用的笔记本模板，以帮助您开始任务，包括：
 
 | 模板 | 描述 |
 | --- | --- |
-| 空白 | 空的筆記本檔案。 |
-| 入門者 | 預先填入的筆記型電腦，示範使用範例資料進行資料探索。 |
-| 零售業 | 預先填滿的筆記型電腦，具備 [零售指導方針](../pre-built-recipes/retail-sales.md) 使用範例資料。 |
-| 配方產生器 | 用於建立配方的筆記本範本 [!DNL JupyterLab]. 它預先填入了示範和說明配方建立流程的程式碼和註解。 請參閱 [筆記本至配方教學課程](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) 以取得詳細逐步解說。 |
-| [!DNL Query Service] | 預先填入的筆記型電腦，展示 [!DNL Query Service] 直接在 [!DNL JupyterLab] 提供大規模分析資料的工作流程範例。 |
-| XDM事件 | 預先填寫的筆記型電腦，示範有關後值體驗事件資料的資料探索，著重於整個資料結構的共同功能。 |
-| XDM查詢 | 預先填寫的筆記本，示範有關體驗事件資料的範例業務查詢。 |
-| 聚合 | 預先填入的筆記型電腦，展示將大量資料彙總成可管理之較小區塊的範例工作流程。 |
-| 聚类 | 預先填寫的筆記型電腦，示範使用叢集演演算法的端對端機器學習模型化程式。 |
+| 空白 | 空的笔记本文件。 |
+| 起始者 | 一个预填充的笔记本，演示使用示例数据探索数据。 |
+| 零售业 | 预填充的笔记本，其特点是 [零售方法](../pre-built-recipes/retail-sales.md) 使用示例数据。 |
+| 方法生成器 | 用于在中创建方法的笔记本模板 [!DNL JupyterLab]. 它预先填充了代码和注释，用于演示和描述方法创建过程。 请参阅 [笔记本到方法教程](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) 详细介绍。 |
+| [!DNL Query Service] | 预填充笔记本演示使用 [!DNL Query Service] 直接位于 [!DNL JupyterLab] 提供了大规模分析数据的示例工作流。 |
+| XDM事件 | 一个预填充的笔记本，演示对后值体验事件数据的数据探索，重点介绍数据结构中的共有功能。 |
+| XDM查询 | 一个预填充的笔记本，演示有关体验事件数据的示例业务查询。 |
+| 聚合 | 一个预填充的笔记本，演示将大量数据聚合到较小、可管理的块中的示例工作流。 |
+| 聚类 | 一个预填充的笔记本，演示使用聚类算法的端到端机器学习建模过程。 |
 
-有些筆記型電腦範本僅限於某些核心。 每個核心的範本可用性如下表所示：
+某些笔记本模板仅限于某些内核。 下表映射了每个内核的模板可用性：
 
 <table>
     <tr>
         <td></td>
         <th><strong>空白</strong></th>
-        <th><strong>入門者</strong></th>
-        <th><strong>零售業</strong></th>
-        <th><strong>配方產生器</strong></th>
+        <th><strong>起始者</strong></th>
+        <th><strong>零售业</strong></th>
+        <th><strong>方法生成器</strong></th>
         <th><strong>[!DNL Query Service]</strong></th>
         <th><strong>XDM事件</strong></th>
-        <th><strong>XDM查詢</strong></th>
+        <th><strong>XDM查询</strong></th>
         <th><strong>聚合</strong></th>
         <th><strong>聚类</strong></th>
     </tr>
@@ -243,21 +243,21 @@ Experience Platform的JupyterLab整合可搭配架構變更、設計考量、自
     </tr>
 </table>
 
-若要開啟新的 *啟動器*，按一下 **檔案>新增啟動器**. 或者，展開 **檔案瀏覽器** 然後按一下加號(**+**)：
+打开新的 *启动器*，单击 **文件>新建启动器**. 或者，展开 **文件浏览器** 单击左侧的加号(**+**)：
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
 ## 后续步骤
 
-若要進一步瞭解每部支援的筆記型電腦及其使用方法，請造訪 [Jupyterlab notebooks資料存取](./access-notebook-data.md) 開發人員指南。 本指南著重於如何使用JupyterLab Notebooks存取您的資料，包括讀取、寫入和查詢資料。 資料存取指南也包含每個支援筆記型電腦可讀取的最大資料量資訊。
+要了解有关每个受支持的笔记本及其使用方式的更多信息，请访问 [Jupyterlab notebooks数据访问](./access-notebook-data.md) 开发人员指南。 本指南重点介绍如何使用JupyterLab笔记本访问您的数据，包括读取、写入和查询数据。 数据访问指南还包含有关每个受支持的笔记本可读取的最大数据量的信息。
 
-## 支援的程式庫 {#supported-libraries}
+## 支持的库 {#supported-libraries}
 
-如需Python、R和PySpark支援的套件清單，請複製並貼上 `!conda list` 然後，在新儲存格中執行儲存格。 支援的套件清單會依字母順序填入。
+有关Python、R和PySpark中支持的包列表，请复制并粘贴 `!conda list` 然后，在新单元格中运行单元格。 按字母顺序填充的支持资源包列表。
 
-![範例](../images/jupyterlab/user-guide/libraries.PNG)
+![示例](../images/jupyterlab/user-guide/libraries.PNG)
 
-此外，下列相依性已使用但未列出：
+此外，还使用了以下依赖项，但未列出：
 * CUDA 11.2
 * CUDNN 8.1
 

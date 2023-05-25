@@ -1,6 +1,6 @@
 ---
-title: 互動式資料彙集
-description: 瞭解Adobe Experience Platform Edge Network Server API如何執行互動式資料收集。
+title: 交互式数据收集
+description: 了解Adobe Experience Platform Edge Network Server API如何执行交互式数据收集。
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 6%
 
 ---
 
-# 互動式資料彙集
+# 交互式数据收集
 
 ## 概述 {#overview}
 
-互動式資料收集端點會接收單一事件，並在使用者端預期Adobe Experience Platform Edge Network伺服器傳回回應時使用。 在執行資料收集時，這些端點也可以從其他Experience Edge服務傳回內容。
+交互式数据收集端点接收单个事件，并在客户端预期Adobe Experience Platform Edge Network服务器返回响应时使用。 在执行数据收集时，这些端点还可以从其他Experience Edge服务返回内容。
 
-伺服器回應包含一或多個 `Handle` 物件，如下所示。
+服务器响应包括一个或多个 `Handle` 对象，如下所示。
 
-## API呼叫範例
+## API调用示例
 
 ### API格式 {#format}
 
@@ -62,12 +62,12 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
-| `dataStreamId` | `String` | 可以。 | 資料串流ID。 |
-| `requestId` | `String` | 否 | 提供用於關聯內部伺服器請求的使用者端隨機ID。 如果未提供，Edge Network將會產生一個，並在回應中傳回。 |
+| `dataStreamId` | `String` | 可以。 | 数据流ID。 |
+| `requestId` | `String` | 否 | 提供用于关联内部服务器请求的客户端随机ID。 如果未提供任何内容，Edge Network将生成一个，并在响应中返回它。 |
 
 ### 响应 {#response}
 
-成功的回應會傳回HTTP狀態 `200 OK`，包含一或多個 `Handle` 物件，視資料流設定中啟用的即時邊緣服務而定。
+成功的响应返回HTTP状态 `200 OK`，带有一个或多个 `Handle` 对象，具体取决于数据流配置中启用的实时边缘服务。
 
 ```json
 {

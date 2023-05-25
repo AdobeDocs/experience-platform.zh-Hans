@@ -14,8 +14,8 @@ ht-degree: 68%
 
 # Adobe Experience Platform 数据访问 {#data-access}
 
-- [資料存取總覽](home.md)
-- [資料存取API](api.md)
+- [数据访问概述](home.md)
+- [数据访问API](api.md)
 - 教程 {#tutorials}
-   - [檢視資料集資料](tutorials/dataset-data.md)
-- [Platform發行說明](https://www.adobe.com/go/platform-release-notes_cn)
+   - [查看数据集数据](tutorials/dataset-data.md)
+- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

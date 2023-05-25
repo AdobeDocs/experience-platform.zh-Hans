@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Zoho CRM；zoho crm；Zoho；zoho
+keywords: Experience Platform；主页；热门主题；Zoho CRM；zoho crm；Zoho；Zoho
 solution: Experience Platform
-title: 在使用者介面中建立Zoho CRM來源連線
+title: 在UI中创建Zoho CRM源连接
 type: Tutorial
-description: 瞭解如何使用Adobe Experience Platform UI建立Zoho CRM來源連線。
+description: 了解如何使用Adobe Experience Platform UI创建Zoho CRM源连接。
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
@@ -12,66 +12,66 @@ ht-degree: 0%
 
 ---
 
-# 建立 [!DNL Zoho CRM] ui中的來源連線
+# 创建 [!DNL Zoho CRM] UI中的源连接
 
-Adobe Experience Platform中的來源聯結器可讓您依排程擷取外部來源的CRM資料。 本教學課程提供建立 [!DNL Zoho CRM] 來源聯結器使用 [!DNL Platform] 使用者介面。
+Adobe Experience Platform中的源连接器提供了按计划摄取外部源CRM数据的功能。 本教程提供了用于创建 [!DNL Zoho CRM] 源连接器使用 [!DNL Platform] 用户界面。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Adobe Experience Platform元件：
+本教程需要深入了解Adobe Experience Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-如果您已有有效的 [!DNL Zoho CRM] 帳戶，您可以略過本檔案的其餘部分，並前往上的教學課程 [設定資料流](../../dataflow/crm.md).
+如果您已经拥有有效的 [!DNL Zoho CRM] 帐户，您可以跳过本文档的其余部分并继续阅读关于的教程 [配置数据流](../../dataflow/crm.md).
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了連線 [!DNL Zoho CRM] 至Platform，您必須提供下列連線屬性的值：
+为了连接 [!DNL Zoho CRM] 到Platform时，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | --- | --- |
-| 端點 | 的端點 [!DNL Zoho CRM] 您向其提出要求的伺服器。 |
-| 帳戶URL | 帳戶URL可用來產生存取和重新整理Token。 URL必須是網域專屬的。 |
-| 使用者端ID | 與您的對應之使用者端ID [!DNL Zoho CRM] 使用者帳戶。 |
-| 使用者端密碼 | 與您的對應之使用者端密碼 [!DNL Zoho CRM] 使用者帳戶。 |
-| 存取Token | 存取權杖會授權您對的安全及臨時存取 [!DNL Zoho CRM] 帳戶。 |
-| 重新整理Token | 重新整理權杖是在您的存取權杖過期後，用來產生新存取權杖的權杖。 |
+| 端点 | 的端点 [!DNL Zoho CRM] 您向其发出请求的服务器。 |
+| 帐户URL | 帐户URL用于生成访问和刷新令牌。 URL必须特定于域。 |
+| 客户端ID | 与您的对应的客户端ID [!DNL Zoho CRM] 用户帐户。 |
+| 客户端密码 | 与您的对应的客户端密钥 [!DNL Zoho CRM] 用户帐户。 |
+| 访问令牌 | 访问令牌可授权您对的安全临时访问 [!DNL Zoho CRM] 帐户。 |
+| 刷新令牌 | 刷新令牌是在您的访问令牌过期后用于生成新访问令牌的令牌。 |
 
-如需這些憑證的詳細資訊，請參閱以下檔案： [[!DNL Zoho CRM] 驗證](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
+有关这些凭据的更多信息，请参阅以下文档： [[!DNL Zoho CRM] 身份验证](https://www.zoho.com/crm/developer/docs/api/v2/oauth-overview.html).
 
-## 連線您的 [!DNL Zoho CRM] 帳戶
+## 连接您的 [!DNL Zoho CRM] 帐户
 
-收集完所需的認證後，您可以依照下列步驟連結 [!DNL Zoho CRM] 帳戶至 [!DNL Platform].
+收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Zoho CRM] 目标帐户 [!DNL Platform].
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 [!UICONTROL CRM] 類別，選取 **[!UICONTROL Zoho CRM]**，然後選取 **[!UICONTROL 新增資料]**.
+在 [!UICONTROL CRM] 类别，选择 **[!UICONTROL Zoho CRM]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![目錄](../../../../images/tutorials/create/zoho/catalog.png)
+![目录](../../../../images/tutorials/create/zoho/catalog.png)
 
-此 **[!UICONTROL 連線Zoho CRM帳戶]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接Zoho CRM帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取 [!DNL Zoho CRM] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择 [!DNL Zoho CRM] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![現有](../../../../images/tutorials/create/zoho/existing.png)
+![现有](../../../../images/tutorials/create/zoho/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、選擇性說明和您的 [!DNL Zoho CRM] 認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的 [!DNL Zoho CRM] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
 
 >[!TIP]
 >
->您的帳戶URL網域必須與適當的網域位置相對應。 以下是各種網域及其對應的帳戶URL：<ul><li>美國： https://accounts.zoho.com</li><li>澳洲： https://accounts.zoho.com.au</li><li>歐洲： https://accounts.zoho.eu</li><li>印度： https://accounts.zoho.in</li><li>中國： https://accounts.zoho.com.cn</li></ul>
+>您的帐户URL域必须与适当的域位置相对应。 以下是各种域及其相应的帐户URL：<ul><li>美国： https://accounts.zoho.com</li><li>澳大利亚： https://accounts.zoho.com.au</li><li>欧洲： https://accounts.zoho.eu</li><li>印度： https://accounts.zoho.in</li><li>中国： https://accounts.zoho.com.cn</li></ul>
 
 ![新](../../../../images/tutorials/create/zoho/new.png)
 
 ## 后续步骤
 
-依照本教學課程，您已建立與的連線， [!DNL Zoho CRM] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流以將資料匯入Platform](../../dataflow/crm.md).
+按照本教程，您已建立与的连接 [!DNL Zoho CRM] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入平台](../../dataflow/crm.md).

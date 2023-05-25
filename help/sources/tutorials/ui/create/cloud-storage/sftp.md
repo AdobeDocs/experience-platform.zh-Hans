@@ -1,6 +1,6 @@
 ---
-title: 在使用者介面中建立SFTP來源連線
-description: 瞭解如何使用Adobe Experience Platform UI建立SFTP來源連線。
+title: 在UI中创建SFTP源连接
+description: 了解如何使用Adobe Experience Platform UI创建SFTP源连接。
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
 source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
@@ -9,88 +9,88 @@ ht-degree: 0%
 
 ---
 
-# 建立 [!DNL SFTP] ui中的來源連線
+# 创建 [!DNL SFTP] UI中的源连接
 
-本教學課程提供建立 [!DNL SFTP] 來源連線使用Adobe Experience Platform UI。
+本教程提供了创建 [!DNL SFTP] 源连接(使用Adobe Experience Platform UI)。
 
 ## 快速入门
 
-本教學課程需要深入瞭解下列Platform元件：
+本教程需要深入了解Platform的以下组件：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：Experience Platform用來組織客戶體驗資料的標準化架構。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
 >[!IMPORTANT]
 >
->建議在使用擷取JSON物件時避免換行或歸位 [!DNL SFTP] 來源連線。 若要繞過此限制，請在每行使用單一JSON物件，並在後續檔案中使用多行。
+>建议在使用引入JSON对象时避免换行或回车 [!DNL SFTP] 源连接。 要解决此限制，请每行使用一个JSON对象，并使用多行来生成文件。
 
-如果您已有有效的 [!DNL SFTP] 連線時，您可以略過本檔案的其餘部分，並繼續進行上的教學課程 [設定資料流](../../dataflow/batch/cloud-storage.md).
+如果您已经拥有有效的 [!DNL SFTP] 连接，您可以跳过本文档的其余部分，并继续阅读以下教程： [配置数据流](../../dataflow/batch/cloud-storage.md).
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了連線到 [!DNL SFTP]，您必須提供下列連線屬性的值：
+为了连接到 [!DNL SFTP]中，必须提供以下连接属性的值：
 
-| 認證 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 與您的關聯的名稱或IP位址 [!DNL SFTP] 伺服器。 |
-| `port` | 此 [!DNL SFTP] 您正在連線的伺服器連線埠。 如果未提供，值會預設為 `22`. |
-| `username` | 您擁有存取許可權的使用者名稱 [!DNL SFTP] 伺服器。 |
-| `password` | 您的密碼 [!DNL SFTP] 伺服器。 |
-| `privateKeyContent` | Base64編碼的SSH私密金鑰內容。 OpenSSH金鑰型別必須分類為RSA或DSA。 |
-| `passPhrase` | 如果金鑰檔案或金鑰內容受到密語保護，則用來解密私密金鑰的密語或密碼。 如果PrivateKeyContent受密碼保護，則此引數必須搭配PrivateKeyContent的密碼短語作為值使用。 |
-| `maxConcurrentConnections` | 此引數可讓您指定Platform在連線至您的SFTP伺服器時將建立的同時連線數目上限。 您必須將此值設定為小於SFTP設定的限制。 **注意**：為現有SFTP帳戶啟用此設定時，只會影響未來的資料流，而不會影響現有的資料流。 |
-| 文件夹路径 | 您要提供存取權的資料夾路徑。 [!DNL SFTP] 來源，您可以提供資料夾路徑，以指定使用者對所選子資料夾的存取權。 |
+| `host` | 与您的关联的名称或IP地址 [!DNL SFTP] 服务器。 |
+| `port` | 此 [!DNL SFTP] 您正在连接的服务器端口。 如果未提供，则值默认为 `22`. |
+| `username` | 您具有访问权限的用户名 [!DNL SFTP] 服务器。 |
+| `password` | 您的密码 [!DNL SFTP] 服务器。 |
+| `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥类型必须分类为RSA或DSA。 |
+| `passPhrase` | 如果密钥文件或密钥内容受密码词组保护，则用于解密私钥的密码词组或密码。 如果PrivateKeyContent受密码保护，则此参数需要与PrivateKeyContent的密码作为值一起使用。 |
+| `maxConcurrentConnections` | 此参数允许您指定在连接到SFTP服务器时，平台将创建的并发连接数的最大限制。 必须将此值设置为小于SFTP设置的限制。 **注释**：为现有SFTP帐户启用此设置时，它只会影响未来的数据流，而不会影响现有的数据流。 |
+| 文件夹路径 | 要提供访问权限的文件夹的路径。 [!DNL SFTP] 源，您可以提供文件夹路径以指定用户对所选子文件夹的访问权限。 |
 
-收集完所需的認證後，您可以依照下列步驟建立新的 [!DNL SFTP] 用於連線至Platform的帳戶。
+收集完所需的凭据后，您可以执行以下步骤以新建 [!DNL SFTP] 用于连接到Platform的帐户。
 
-## 連線至您的 [!DNL SFTP] 伺服器
+## 连接到您的 [!DNL SFTP] 服务器
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 [!UICONTROL 雲端儲存空間] 類別，選取 **[!UICONTROL SFTP]** 然後選取 **[!UICONTROL 新增資料]**.
+在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL SFTP]** 然后选择 **[!UICONTROL 添加数据]**.
 
-![已選取SFTP來源的Experience Platform來源目錄。](../../../../images/tutorials/create/sftp/catalog.png)
+![选择了SFTP源的Experience Platform源目录。](../../../../images/tutorials/create/sftp/catalog.png)
 
-此 **[!UICONTROL 連線至SFTP]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接到SFTP]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要連線現有帳戶，請選取您要連線的FTP或SFTP帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要连接现有帐户，请选择要连接的FTP或SFTP帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![Experience PlatformUI上的現有SFTP帳戶清單。](../../../../images/tutorials/create/sftp/existing.png)
+![Experience PlatformUI上现有SFTP帐户的列表。](../../../../images/tutorials/create/sftp/existing.png)
 
-### 新帳戶
+### 新帐户
 
 >[!IMPORTANT]
 >
->SFTP支援RSA或DSA型別的OpenSSH金鑰。 確定您的關鍵檔案內容開頭為 `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` 結束於 `"-----END [RSA/DSA] PRIVATE KEY-----"`. 如果私密金鑰檔案是PPK格式檔案，請使用PuTTY工具從PPK轉換為OpenSSH格式。
+>SFTP支持RSA或DSA类型的OpenSSH密钥。 确保您的密钥文件内容开头为 `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` 结束于 `"-----END [RSA/DSA] PRIVATE KEY-----"`. 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK转换为OpenSSH格式。
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後為您的新提供名稱和說明（選用） [!DNL SFTP] 帳戶。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为新页面提供名称和可选描述 [!DNL SFTP] 帐户。
 
-![SFTP的新帳戶畫面](../../../../images/tutorials/create/sftp/new.png)
+![SFTP的新帐户屏幕](../../../../images/tutorials/create/sftp/new.png)
 
-此 [!DNL SFTP] 來源支援基本驗證和透過SSH公開金鑰的驗證。
+此 [!DNL SFTP] 源支持基本身份验证和通过SSH公钥进行身份验证。
 
 >[!BEGINTABS]
 
->[!TAB 基本驗證]
+>[!TAB 基本身份验证]
 
-若要使用基本驗證，請選取 **[!UICONTROL 密碼]** 然後提供要連線到的主機和連線埠值，以及您的使用者名稱和密碼。 在此步驟中，您也可以指定要提供存取權的子資料夾的路徑。 完成後，選取 **[!UICONTROL 連線到來源]**.
+要使用基本身份验证，请选择 **[!UICONTROL 密码]** 然后提供要连接的主机值和端口值，以及您的用户名和密码。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
 
-![使用基本驗證的SFTP來源的新帳戶畫面](../../../../images/tutorials/create/sftp/password.png)
+![使用基本身份验证的SFTP源的新帐户屏幕](../../../../images/tutorials/create/sftp/password.png)
 
->[!TAB SSH公開金鑰驗證]
+>[!TAB SSH公钥身份验证]
 
-若要使用SSH公開金鑰型認證，請選取 **[!UICONTROL SSH公開金鑰]**  然後提供您的主機和連線埠值，以及您的私密金鑰內容和密碼組合。 在此步驟中，您也可以指定要提供存取權的子資料夾的路徑。 完成後，選取 **[!UICONTROL 連線到來源]**.
+要使用基于SSH公钥的凭据，请选择 **[!UICONTROL SSH公钥]**  然后提供主机和端口值，以及私钥内容和密码组合。 在此步骤中，您还可以指定要提供访问权限的子文件夹的路径。 完成后，选择 **[!UICONTROL 连接到源]**.
 
-![使用SSH公開金鑰的SFTP來源的新帳戶畫面。](../../../../images/tutorials/create/sftp/ssh.png)
+![使用SSH公钥的SFTP源的新帐户屏幕。](../../../../images/tutorials/create/sftp/ssh.png)
 
 >[!ENDTABS]
 
 ## 后续步骤
 
-依照本教學課程，您已建立與SFTP帳戶的連線。 您現在可以繼續下一節教學課程和 [設定資料流，將雲端儲存空間中的資料匯入Platform](../../dataflow/batch/cloud-storage.md).
+按照本教程，您已建立与SFTP帐户的连接。 您现在可以继续下一教程和 [配置数据流以将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md).

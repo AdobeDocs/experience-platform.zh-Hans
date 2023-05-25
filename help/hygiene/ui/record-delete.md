@@ -1,6 +1,6 @@
 ---
-title: 刪除記錄
-description: 瞭解如何刪除Adobe Experience Platform UI中的記錄。
+title: 删除记录
+description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
@@ -11,56 +11,56 @@ ht-degree: 10%
 
 ---
 
-# 刪除記錄
+# 删除记录
 
-此 [[!UICONTROL 資料衛生] 工作區](./overview.md) Adobe Experience Platform UI可讓您刪除參與Identity Service和即時客戶個人檔案的記錄。 這些記錄可以與個別消費者或包含在身分圖表中的任何其他實體繫結。
+此 [[!UICONTROL 数据卫生] 工作区](./overview.md) 在Adobe Experience Platform UI中，您可以删除参与Identity Service和Real-Time Customer Profile的记录。 这些记录可以绑定到个人消费者或身份图中包含的任何其他实体。
 
 >[!IMPORTANT]
 >
->記錄刪除請求僅適用於已購買的組織 **AdobeHealthcare Shield**.
+>记录删除请求仅适用于已购买的组织 **AdobeHealth Shield**.
 >
 >
->記錄刪除旨在用於資料清理、匿名資料移除或資料最小化。 它們是 **not** 根據一般資料保護規範(GDPR)等隱私權法規用於資料主體權利請求（法規遵循）。 對於所有合規性使用案例，請使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而非。
+>记录删除旨在用于数据清理、匿名数据删除或数据最小化。 它们是 **非** 用于数据主体权利请求（合规性），与通用数据保护条例(GDPR)等隐私法规相关。 对于所有合规性用例，使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而是。
 
 ## 先决条件
 
-刪除記錄需要深入瞭解身分欄位在Experience Platform中的運作方式。 具體而言，您必須知道要刪除其記錄之實體的主要身分值，視您要從中刪除這些記錄的資料集（或資料集）而定。
+删除记录需要深入了解身份字段在Experience Platform中的工作原理。 具体而言，您必须知道要删除其记录的实体的主要标识值，具体取决于从中删除这些记录的数据集（或数据集）。
 
-請參閱下列檔案，以取得有關Platform中身分的詳細資訊：
+有关Platform中标识的更多信息，请参阅以下文档：
 
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md)：跨裝置和系統橋接身分，根據資料集符合的XDM結構描述所定義的身分欄位將其連結在一起。
-   * [身分名稱空間](../../identity-service/namespaces.md)：身分名稱空間會定義可與單一人員相關的不同型別的身分資訊，且是每個身分欄位的必要元件。
-* [即時客戶個人檔案](../../profile/home.md)：運用身分圖表，根據來自多個來源的彙總資料提供統一的消費者設定檔，且會近乎即時更新。
-* [體驗資料模型(XDM)](../../xdm/home.md)：透過使用結構描述，為Platform資料提供標準定義和結構。 所有Platform資料集都符合特定的XDM結構描述，而結構描述會定義哪些欄位是身分。
-   * [身分欄位](../../xdm/ui/fields/identity.md)：瞭解身分欄位在XDM結構描述中的定義。
+* [Adobe Experience Platform Identity服务](../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集符合的XDM架构定义的身份字段将数据集链接在一起。
+   * [身份命名空间](../../identity-service/namespaces.md)：身份命名空间定义了可与单个人员相关的不同类型的身份信息，并且是每个身份字段的必需组件。
+* [Real-time Customer Profile](../../profile/home.md)：利用身份图根据来自多个来源的汇总数据提供统一的用户配置文件，近乎实时更新。
+* [体验数据模型(XDM)](../../xdm/home.md)：通过使用架构提供Platform数据的标准定义和结构。 所有Platform数据集都符合特定的XDM架构，该架构定义哪些字段是标识。
+   * [标识字段](../../xdm/ui/fields/identity.md)：了解如何在XDM架构中定义标识字段。
 
-## 建立新請求
+## 创建新请求
 
-若要啟動程式，請選取 **[!UICONTROL 建立請求]** 從工作區的首頁面。
+要启动流程，请选择 **[!UICONTROL 创建请求]** 从工作区的主页中。
 
-![影像顯示 [!UICONTROL 建立請求] 正在選取按鈕](../images/ui/record-delete/create-request-button.png)
+![图像显示 [!UICONTROL 创建请求] 正在选择按钮](../images/ui/record-delete/create-request-button.png)
 
-此時會出現請求建立對話方塊。 根據預設， **[!UICONTROL 刪除消費者]** 已選取「 」選項下的 **[!UICONTROL 請求的動作]** 區段。 保留選取此選項。
+此时将显示请求创建对话框。 默认情况下， **[!UICONTROL 删除消费者]** 选项已选中 **[!UICONTROL 请求的操作]** 部分。 保持选中此选项。
 
-![顯示建立對話方塊中選取的刪除取用者選項的影像](../images/ui/record-delete/consumer-action.png)
+![此图像显示在创建对话框中选择的删除使用者选项](../images/ui/record-delete/consumer-action.png)
 
-## 選取資料集
+## 选择数据集
 
-在 **[!UICONTROL 消費者詳細資料]** 區段，下一步是決定要從單一資料集還是所有資料集中刪除記錄。
+在 **[!UICONTROL 使用者详细信息]** 章节，下一步是确定要从单个数据集还是所有数据集中删除记录。
 
-如果您選擇 **[!UICONTROL 選取資料集]**，選取資料庫圖示(![資料庫圖示的影像](../images/ui/record-delete/database-icon.png))並出現對話方塊，可讓您從清單中選取所需的資料集。
+如果您选择 **[!UICONTROL 选择数据集]**，选择数据库图标(![数据库图标的图像](../images/ui/record-delete/database-icon.png))并出现一个对话框，允许您从列表中选择所需的数据集。
 
-![顯示資料集選取對話方塊的影像](../images/ui/record-delete/select-dataset.png)
+![显示数据集选择对话框的图像](../images/ui/record-delete/select-dataset.png)
 
-如果您想要刪除所有資料集中的記錄，請選取 **[!UICONTROL 所有資料集]**.
+如果要删除所有数据集的记录，请选择 **[!UICONTROL 所有数据集]**.
 
-![影像顯示 [!UICONTROL 所有資料集] 已選取選項](../images/ui/record-delete/all-datasets.png)
+![图像显示 [!UICONTROL 所有数据集] 已选择选项](../images/ui/record-delete/all-datasets.png)
 
 >[!NOTE]
 >
->選取 **[!UICONTROL 所有資料集]** 選項可能會導致刪除操作花費更長的時間，並且可能不會導致準確的記錄刪除。
+>选择 **[!UICONTROL 所有数据集]** 选项可能会导致删除操作花费更长时间，并且可能不会导致准确的记录删除。
 
-## 提供身分 {#provide-identities}
+## 提供身份 {#provide-identities}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
@@ -72,30 +72,30 @@ ht-degree: 10%
 >title="标识值"
 >abstract="在此列中，您必须提供记录的主要标识的值，该值必须与左列中提供的标识类型相对应。如果主要标识类型是 `email`，则值应是记录的电子邮件地址。要了解更多信息，请参阅《数据卫生 UI 指南》。"
 
-刪除記錄時，您必須提供身分資訊，讓系統能夠判斷哪些記錄必須刪除。 對於Platform中的任何資料集，記錄會根據以下條件刪除： **主要身分** 由資料集的結構描述定義的欄位。
+删除记录时，必须提供身份信息，以便系统能够确定哪些记录必须删除。 对于Platform中的任何数据集，记录会根据以下规则删除： **主要身份** 由数据集的架构定义的字段。
 
-和Platform中的所有身分識別欄位一樣，主要身分識別由兩部分組成： **type** （有時稱為身分名稱空間）和 **值**. 身分型別會提供欄位如何識別記錄（例如電子郵件地址）的相關內容，而值代表該型別記錄的特定身分(例如， `jdoe@example.com` 的 `email` 身分型別)。 作為身分識別的常見欄位包括帳戶資訊、裝置ID和Cookie ID。
+与Platform中的所有标识字段一样，主标识由两部分组成： **type** （有时称为身份命名空间）和 **值**. 身份类型提供有关字段如何标识记录的上下文（如电子邮件地址），该值表示该类型记录的特定身份(例如， `jdoe@example.com` 对于 `email` 标识类型)。 用作标识的常见字段包括帐户信息、设备ID和Cookie ID。
 
 >[!TIP]
 >
->如果您不知道特定資料集的主要身分，可以在Platform UI中找到。 在 **[!UICONTROL 資料集]** 工作區中，從清單中選取有問題的資料集。 在資料集的詳細資訊頁面上，將滑鼠移到右側邊欄中資料集的結構描述名稱上。 主要身分會與結構描述名稱和說明一起顯示。
+>如果您不知道特定数据集的主要标识，则可以在Platform UI中找到它。 在 **[!UICONTROL 数据集]** 在工作区中，从列表中选择有问题的数据集。 在数据集的详细信息页面上，将鼠标悬停在右边栏中数据集架构的名称上。 主标识与架构名称和描述一起显示。
 >
->![此影像顯示UI中醒目提示之資料集的主要身分識別](../images/ui/record-delete/dataset-primary-identity.png)
+>![该图像显示UI中高亮显示的数据集的主要身份](../images/ui/record-delete/dataset-primary-identity.png)
 
-如果您要從單一資料集中刪除記錄，您提供的所有身分都必須有相同的型別，因為資料集只能有一個主要身分。 如果您要從所有資料集刪除，則可以包含多個身分型別，因為不同的資料集可能具有不同的主要身分。
+如果要从单个数据集删除记录，则提供的所有标识必须具有相同的类型，因为一个数据集只能有一个主标识。 如果要从所有数据集中删除，则可以包含多个标识类型，因为不同的数据集可能具有不同的主标识。
 
-刪除記錄時，有兩個選項可提供身分識別：
+删除记录时，提供身份有两个选项：
 
-* [上傳JSON檔案](#upload-json)
-* [手動輸入身分值](#manual-identity)
+* [上传JSON文件](#upload-json)
+* [手动输入身份值](#manual-identity)
 
-### 上傳JSON檔案 {#upload-json}
+### 上传JSON文件 {#upload-json}
 
-若要上傳JSON檔案，您可以將檔案拖放至提供區域，或選取 **[!UICONTROL 選擇檔案]** 瀏覽並從本機目錄中選取。
+要上传JSON文件，您可以将该文件拖放到提供区域，或选择 **[!UICONTROL 选择文件]** 浏览并从本地目录中选择。
 
-![顯示在UI中上傳JSON方法的影像](../images/ui/record-delete/upload-json.png)
+![该图像显示了在UI中上传JSON的方法](../images/ui/record-delete/upload-json.png)
 
-JSON檔案必須格式化為物件陣列，每個物件代表一個身分。
+JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ```json
 [
@@ -112,43 +112,43 @@ JSON檔案必須格式化為物件陣列，每個物件代表一個身分。
 
 | 属性 | 描述 |
 | --- | --- |
-| `namespaceCode` | 身分型別。 |
-| `value` | 型別所表示的身分值。 |
+| `namespaceCode` | 身份类型。 |
+| `value` | 类型表示的标识值。 |
 
-上傳檔案後，您可以繼續 [提交請求](#submit).
+上传文件后，您可以继续 [提交请求](#submit).
 
-### 手動輸入身分 {#manual-identity}
+### 手动输入身份 {#manual-identity}
 
-若要手動輸入身分，請選取 **[!UICONTROL 新增身分]**.
+要手动输入身份，请选择 **[!UICONTROL 添加身份]**.
 
-![影像顯示 [!UICONTROL 新增身分] 正在選取按鈕](../images/ui/record-delete/add-identity.png)
+![图像显示 [!UICONTROL 添加身份] 正在选择按钮](../images/ui/record-delete/add-identity.png)
 
-顯示的控制項可讓您一次輸入一個身分。 下 **[!UICONTROL 主要身分]**，使用下拉式選單來選取身分型別。 下 **[!UICONTROL 身分值]**，提供記錄的主要身分值。
+显示的控件允许您一次输入一个标识。 下 **[!UICONTROL 主要身份]**，使用下拉菜单选择身份类型。 下 **[!UICONTROL 标识值]**，为记录提供主要标识值。
 
-![顯示手動新增的身分欄位的影像](../images/ui/record-delete/identity-added.png)
+![显示手动添加的标识字段的图像](../images/ui/record-delete/identity-added.png)
 
-若要新增更多身分，請選取加號圖示(![加號圖示的影像](../images/ui/record-delete/plus-icon.png))或選取 **[!UICONTROL 新增身分]**.
+要添加更多身份，请选择加号图标(![加号图标的图像](../images/ui/record-delete/plus-icon.png))或选择 **[!UICONTROL 添加身份]**.
 
-![顯示如何將更多身分新增至請求的影像](../images/ui/record-delete/more-identities.png)
+![显示如何向请求添加更多标识的图像](../images/ui/record-delete/more-identities.png)
 
-## 提交請求(#submit)
+## 提交请求(#submit)
 
-完成向請求新增身分後，請在 **[!UICONTROL 請求設定]**，在選取之前提供請求的名稱和選擇性說明 **[!UICONTROL 提交]**.
+完成向请求添加身份后，位于 **[!UICONTROL 请求设置]**，在选择之前提供请求的名称和可选描述 **[!UICONTROL 提交]**.
 
-![影像顯示 [!UICONTROL 提交] 正在選取按鈕](../images/ui/record-delete/submit.png)
+![图像显示 [!UICONTROL 提交] 正在选择按钮](../images/ui/record-delete/submit.png)
 
-系統會要求您確認要刪除其資料的身分清單。 選取 **[!UICONTROL 提交]** 以確認您的選取。
+系统会要求您确认要删除其数据的标识列表。 选择 **[!UICONTROL 提交]** 以确认您的选择。
 
-![顯示確認對話方塊的影像](../images/ui/record-delete/confirm-request.png)
+![显示确认对话框的图像](../images/ui/record-delete/confirm-request.png)
 
-提交請求後，即會建立工單並出現在 [!UICONTROL 消費者] 的標籤 [!UICONTROL 資料衛生] 工作區。 從這裡，您可以在工單處理請求時監視工單的狀態。
+提交请求后，将创建一个工作单，该工作单将显示在 [!UICONTROL 消费者] 的选项卡 [!UICONTROL 数据卫生] 工作区。 从此处，您可以监控工作单在处理请求时的状态。
 
 >[!NOTE]
 >
->請參閱概述一節，網址為 [時間表與透明度](../home.md#record-delete-transparency) 以取得記錄刪除執行後如何處理的詳細資訊。
+>请参阅概述部分，了解 [时间轴和透明度](../home.md#record-delete-transparency) 以了解记录删除在执行后如何处理的详细信息。
 
 ## 后续步骤
 
-本檔案說明如何刪除Experience PlatformUI中的記錄。 有關如何在UI中執行其他資料檢疫工作的資訊，請參閱 [資料衛生UI總覽](./overview.md).
+本文档介绍了如何删除Experience PlatformUI中的记录。 有关如何在UI中执行其他数据卫生任务的信息，请参阅 [数据卫生UI概述](./overview.md).
 
-若要瞭解如何使用資料衛生API刪除記錄，請參閱 [工單端點指南](../api/workorder.md).
+要了解如何使用数据卫生API删除记录，请参阅 [工单终结点指南](../api/workorder.md).

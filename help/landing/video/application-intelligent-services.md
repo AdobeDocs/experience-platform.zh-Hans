@@ -1,6 +1,6 @@
 ---
-title: 以Experience Platform為基礎的應用程式和智慧型服務
-description: 這部影片會概略介紹以Adobe Experience Platform為基礎建立的應用程式服務和智慧型服務，這些服務可補充Experience Cloud應用程式&mdash；Real-time Customer Data Platform、Journey Orchestration、Customer Journey Analytics、Attribution AI和Customer AI。
+title: 基于Experience Platform构建应用程序和智能服务
+description: 此视频概述了基于Adobe Experience Platform构建的Application Services和Intelligent Services，它们补充了Experience Cloud应用程序&mdash；Real-time Customer Data Platform、Journey Orchestration、Customer Journey Analytics、Attribution AI和客户人工智能。
 kt: 4333
 audience: all
 doc-type: video
@@ -14,11 +14,11 @@ ht-degree: 17%
 
 ---
 
-# 以Experience Platform為基礎的應用程式和智慧型服務
+# 基于Experience Platform构建的应用和智能服务
 
-這部影片會概略介紹以Experience Platform為基礎建立的應用程式和智慧型服務。
+此视频概述了基于Experience Platform构建的应用程序和Intelligent Services。
 
-若要深入瞭解，請使用連結來瀏覽每個個別應用程式的檔案：
+要了解更多信息，请使用链接访问每个应用程序的文档：
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-landing.html)
 * [智能服务](https://experienceleague.adobe.com/docs/intelligent-services.html)

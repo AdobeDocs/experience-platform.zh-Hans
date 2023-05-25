@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；來源；聯結器；來源聯結器；來源sdk；sdk；SDK
-title: （測試版）在UI中建立Mixpanel來源連線
-description: 瞭解如何使用Adobe Experience Platform UI建立Mixpanel來源連線。
+keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
+title: （测试版）在UI中创建Mixpanel源连接
+description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: 6b9e5da9e552d93ff174d1d65dabb0ffd3128c1a
 workflow-type: tm+mt
@@ -10,61 +10,61 @@ ht-degree: 10%
 
 ---
 
-# (Beta)建立 [!DNL Mixpanel] ui中的來源連線
+# (Beta)创建 [!DNL Mixpanel] UI中的源连接
 
 >[!NOTE]
 >
->此 [!DNL Mixpanel] 來源為測試版。 請參閱 [來源概觀](../../../../home.md#terms-and-conditions) 以取得有關使用測試版標籤來源的詳細資訊。
+>此 [!DNL Mixpanel] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
 
-本教學課程提供建立 [!DNL Mixpanel] 使用Adobe Experience Platform平台使用者介面的來源連線。
+本教程提供了用于创建 [!DNL Mixpanel] 源连接，使用Adobe Experience Platform Platform用户界面。
 
 ## 快速入门
 
-本教學課程需要您實際瞭解下列Experience Platform元件：
+本教程需要对以下Experience Platform组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM)] 系統](../../../../../xdm/home.md)：作為依據的標準化架構 [!DNL Experience Platform] 組織客戶體驗資料。
-   * [結構描述組合基本概念](../../../../../xdm/schema/composition.md)：瞭解XDM結構描述的基本建置組塊，包括結構描述組合中的關鍵原則和最佳實務。
-   * [結構描述編輯器教學課程](../../../../../xdm/tutorials/create-schema-ui.md)：瞭解如何使用結構描述編輯器UI建立自訂結構描述。
-* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根據來自多個來源的彙總資料，提供統一的即時消費者設定檔。
+* [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+   * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
+   * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-### 收集必要的認證
+### 收集所需的凭据
 
-為了連線 [!DNL Mixpanel] 至Platform，您必須提供下列連線屬性的值：
+为了连接 [!DNL Mixpanel] 到Platform时，必须提供以下连接属性的值：
 
-| 認證 | 描述 | 示例 |
+| 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| 用户名 | 與您對應的服務帳戶使用者名稱 [!DNL Mixpanel] 帳戶。 請參閱 [[!DNL Mixpanel] 服務帳戶檔案](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 以取得詳細資訊。 | `Test8.6d4ee7.mp-service-account` |
-| 密码 | 與您對應的服務帳戶密碼 [!DNL Mixpanel] 帳戶。 | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
-| 项目ID | 您的 [!DNL Mixpanel] 專案ID。 建立來源連線時需要此ID。 請參閱 [[!DNL Mixpanel] 專案設定檔案](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 建立和管理專案指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 以取得詳細資訊。 | `2384945` |
-| 时区 | 與您的時區對應的時區 [!DNL Mixpanel] 專案。 需要時區才能建立來源連線。 請參閱 [Mixpanel專案設定檔案](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 以取得詳細資訊。 | `Pacific Standard Time` |
+| 用户名 | 与您的帐户对应的服务帐户用户名 [!DNL Mixpanel] 帐户。 请参阅 [[!DNL Mixpanel] 服务帐户文档](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 了解更多信息。 | `Test8.6d4ee7.mp-service-account` |
+| 密码 | 与您的帐户对应的服务帐户密码 [!DNL Mixpanel] 帐户。 | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
+| 项目ID | 您的 [!DNL Mixpanel] 项目ID。 创建源连接时需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 关于创建和管理项目的指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 了解更多信息。 | `2384945` |
+| 时区 | 与您的对应的时区 [!DNL Mixpanel] 项目。 创建源连接需要时区。 请参阅 [Mixpanel项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 了解更多信息。 | `Pacific Standard Time` |
 
-如需驗證您的憑證的詳細資訊 [!DNL Mixpanel] 來源，請參閱 [[!DNL Mixpanel] 來源概觀](../../../../connectors/analytics/mixpanel.md).
+有关验证的详细信息 [!DNL Mixpanel] 源，请参见 [[!DNL Mixpanel] 源概述](../../../../connectors/analytics/mixpanel.md).
 
-## 連線您的 [!DNL Mixpanel] 帳戶
+## 连接您的 [!DNL Mixpanel] 帐户
 
-在Platform UI中選取 **[!UICONTROL 來源]** 以存取 [!UICONTROL 來源] 工作區。 此 [!UICONTROL 目錄] 畫面會顯示您可以用來建立帳戶的各種來源。
+在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
 
-您可以從畫面左側的目錄中選取適當的類別。 或者，您也可以使用搜尋選項來尋找您要使用的特定來源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
 
-在 *分析* 類別，選取 [!DNL Mixpanel]，然後選取 **[!UICONTROL 新增資料]**.
+在 *分析* 类别，选择 [!DNL Mixpanel]，然后选择 **[!UICONTROL 添加数据]**.
 
-![目錄](../../../../images/tutorials/create/mixpanel-export-events/catalog.png)
+![目录](../../../../images/tutorials/create/mixpanel-export-events/catalog.png)
 
-此 **[!UICONTROL 連線Mixpanel帳戶]** 頁面便會顯示。 您可以在此頁面使用新的證明資料或現有的證明資料。
+此 **[!UICONTROL 连接Mixpanel帐户]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
-### 現有帳戶
+### 现有帐户
 
-若要使用現有帳戶，請選取 [!DNL Mixpanel] 要用來建立新資料流的帳戶，然後選取 **[!UICONTROL 下一個]** 以繼續進行。
+要使用现有帐户，请选择 [!DNL Mixpanel] 要用于创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![現有](../../../../images/tutorials/create/mixpanel-export-events/existing.png)
+![现有](../../../../images/tutorials/create/mixpanel-export-events/existing.png)
 
-### 新帳戶
+### 新帐户
 
-如果您要建立新帳戶，請選取 **[!UICONTROL 新帳戶]**，然後提供名稱、選擇性說明和您的認證。 完成後，選取 **[!UICONTROL 連線到來源]** 然後等待一段時間以建立新連線。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
 
 ![新](../../../../images/tutorials/create/mixpanel-export-events/new.png)
 
-## 選取您的專案ID和時區 {#project-id-and-timezone}
+## 选择项目ID和时区 {#project-id-and-timezone}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"
@@ -72,49 +72,49 @@ ht-degree: 10%
 >abstract="时区必须与您的 Mixpanel 配置文件时区设置相同，因为 Platform 使用指定的项目时区来从 Mixpanel 提取相关数据。在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=zh-Hans#project-id-and-timezone" text="请参阅文档以了解详情"
 
-來源通過驗證後，請提供您的專案ID和時區，然後選取 **[!UICONTROL 選取]**.
+在您的源经过身份验证后，提供您的项目ID和时区，然后选择 **[!UICONTROL 选择]**.
 
-您在擷取之前指定的時區 [!DNL Mixpanel] 資料傳送至Platform時，必須與您的 [!DNL Mixpanel] 設定檔時區設定。 資料時區的任何變更只會套用至新事件，而舊事件將保留在您先前指定的時區內。 [!DNL Mixpanel] 因應日光節約時間，並適當調整您的擷取時間戳記。 如需時區如何影響資料的詳細資訊，請參閱 [!DNL Mixpanel] 指南： [管理專案的時區](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
+您在摄取之前指定的时区 [!DNL Mixpanel] 到Platform的数据必须与 [!DNL Mixpanel] 配置文件时区设置。 对数据时区所做的任何更改将仅适用于新事件，而旧事件将保留在您之前指定的时区内。 [!DNL Mixpanel] 可适应夏令时，并将相应地调整您的摄取时间戳。 有关时区如何影响数据的更多信息，请参见 [!DNL Mixpanel] 指南 [管理项目时区](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
 
-過了一會兒，正確的介面會更新為預覽面板，讓您在建立資料流之前先檢查結構。 完成後，選取 **[!UICONTROL 下一個]**.
+片刻后，正确的界面将更新为预览面板，让您能够在创建数据流之前检查架构。 完成后，选择 **[!UICONTROL 下一个]**.
 
-![設定](../../../../images/tutorials/create/mixpanel-export-events/authentication-configuration.png)
+![配置](../../../../images/tutorials/create/mixpanel-export-events/authentication-configuration.png)
 
 ## 后续步骤
 
-依照本教學課程，您已建立與的連線， [!DNL Mixpanel] 帳戶。 您現在可以繼續下一節教學課程和 [設定資料流以將分析資料匯入Platform](../../dataflow/analytics.md).
+按照本教程，您已建立与的连接 [!DNL Mixpanel] 帐户。 您现在可以继续下一教程和 [配置数据流以将分析数据引入Platform](../../dataflow/analytics.md).
 
 ## 其他资源 {#additional-resources}
 
-以下各節提供您在使用時，可參考的其他資源 [!DNL Mixpanel] 來源。
+以下部分提供了在使用时可以参考的其他资源 [!DNL Mixpanel] 源。
 
 ### 验证 {#validation}
 
-以下概述驗證您已成功連線至您的主機時可採取的步驟。 [!DNL Mixpanel] 來源及 [!DNL Mixpanel] 事件正在內嵌至Platform。
+下面概述了验证是否成功连接 [!DNL Mixpanel] 来源和 [!DNL Mixpanel] 正在将事件摄取到Platform。
 
-在Platform UI中選取 **[!UICONTROL 資料集]** 以存取 [!UICONTROL 資料集] 工作區。 此 [!UICONTROL 資料集活動] 畫面會顯示執行的詳細資訊。
+在Platform UI中，选择 **[!UICONTROL 数据集]** 以访问 [!UICONTROL 数据集] 工作区。 此 [!UICONTROL 数据集活动] 屏幕显示执行的详细信息。
 
-![資料集 — 活動](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
+![数据集活动](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
 
-接著，選取您要檢視之資料流的資料流執行ID，以檢視有關該資料流執行的特定詳細資訊。
+接下来，选择要查看的数据流的数据流运行ID，以查看有关该数据流运行的特定详细信息。
 
-![資料流監視](../../../../images/tutorials/create/mixpanel-export-events/dataflow-monitoring.png)
+![数据流监测](../../../../images/tutorials/create/mixpanel-export-events/dataflow-monitoring.png)
 
-最後，選取 **[!UICONTROL 預覽資料集]** 以顯示所擷取的資料。
+最后，选择 **[!UICONTROL 预览数据集]** 以显示所摄取的数据。
 
-![預覽資料集](../../../../images/tutorials/create/mixpanel-export-events/preview-dataset.png)
+![预览数据集](../../../../images/tutorials/create/mixpanel-export-events/preview-dataset.png)
 
-您可以根據 [!DNL Mixpanel] > [!DNL Events] 頁面。 請參閱 [[!DNL Mixpanel] 事件相關檔案](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-) 以取得詳細資訊。
+您可以根据 [!DNL Mixpanel] > [!DNL Events] 页面。 请参阅 [[!DNL Mixpanel] 事件文档](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-) 了解更多信息。
 
 ![mixpanel-events](../../../../images/tutorials/create/mixpanel-export-events/mixpanel-events.png)
 
-### Mixpanel結構描述
+### Mixpanel架构
 
-下表列出必須為設定的支援對應 [!DNL Mixpanel].
+下表列出了必须设置的受支持映射 [!DNL Mixpanel].
 
 >[!TIP]
 >
->另請參閱 [事件匯出API >下載](https://developer.mixpanel.com/reference/raw-event-export) 以取得有關API的詳細資訊。
+>参见 [“事件导出API”>“下载”](https://developer.mixpanel.com/reference/raw-event-export) 以了解有关API的更多信息。
 
 
 | 来源 | 类型 |
@@ -133,4 +133,4 @@ ht-degree: 10%
 
 ### 限制 {#limits}
 
-* 您每小時最多有100個並行查詢和60個查詢，如所示 [匯出API速率限制](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).
+* 您每小时最多有100个并发查询和60个查询，如所示 [导出API速率限制](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).

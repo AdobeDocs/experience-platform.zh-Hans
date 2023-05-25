@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；結構描述；結構描述；XDM；欄位；結構描述；信標；互動細節；資料型別；資料型別；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；信标；交互详细信息；数据类型；数据类型；
 solution: Experience Platform
-title: 信標資料型別
-description: 本檔案提供XDM個別設定檔類別的概觀。
+title: 信标数据类型
+description: 本文档概述了XDM Individual Profile类。
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
@@ -11,37 +11,37 @@ ht-degree: 3%
 
 ---
 
-# [!UICONTROL Beacon] 資料型別
+# [!UICONTROL Beacon] 数据类型
 
-[!UICONTROL Beacon] 是標準的XDM資料型別，說明在行動裝置進入範圍內時，將身分資訊傳遞給行動應用程式的無線裝置。
+[!UICONTROL Beacon] 是标准的XDM数据类型，描述在移动设备进入范围内时将身份信息传递给移动应用程序的无线设备。
 
 <img src="../images/data-types/beacon.png" width="450" /><br />
 
-| 属性 | 資料型別 | 描述 |
+| 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `beaconMajor` | 双精度 | 主要值會識別和區分1和65,535之間的群組值與不帶正負號的整數值。 |
-| `beaconMinor` | 双精度 | 次要值會識別和區分1和65,535之間的個別值與不帶正負號的整數值。 |
-| `proximity` | 字符串 | 與信標的預估距離。 請參閱 [附錄](#proximity) 以取得接受的值和定義。 |
-| `proximityUUID` | 字符串 | 近似程度UUID （通用唯一識別碼）是一種特殊型別的識別碼，可用來將您網路中的信標與非您控制之網路中的所有其他信標區分開來。 近似程度UUID會設定為信標，以傳輸到範圍內的行動裝置，藉以識別組織的信標。 |
+| `beaconMajor` | 双精度 | 主要值标识和区分1和65,535之间的组和无符号整数值。 |
+| `beaconMinor` | 双精度 | 次要值标识和区分1到65,535之间的单个无符号整数值。 |
+| `proximity` | 字符串 | 与信标的估计距离。 请参阅 [附录](#proximity) 以获取接受的值和定义。 |
+| `proximityUUID` | 字符串 | 邻近UUID（通用唯一标识符）是一种特殊类型的标识符，用于将您的网络信标与非您控制网络中的所有其他信标区分开。 邻近UUID被配置为信标，以发送到范围内的移动设备，从而标识组织的信标。 |
 
 {style="table-layout:auto"}
 
-如需資料型別的詳細資訊，請參閱公用XDM存放庫：
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填入範例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/beacon-interaction-details.example.1.json)
-* [完整結構描述](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/beacon-interaction-details.schema.json)
+* [填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/beacon-interaction-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/beacon-interaction-details.schema.json)
 
 ## 附录
 
-以下小節包含更多關於 [!UICONTROL Beacon] 資料型別。
+以下部分包含有关 [!UICONTROL Beacon] 数据类型。
 
-## 近似程度的接受值 {#proximity}
+## 近似程度接受的值 {#proximity}
 
-下表概述下列專案的可接受值 `proximity` 及其相關涵義：
+下表概述了接受的值 `proximity` 及其相关含义：
 
 | 值 | 描述 |
 | --- | --- |
-| `immediate` | 幾公分以內。 |
-| `near` | 距離不到10米。 |
+| `immediate` | 几厘米以内。 |
+| `near` | 离这里不到10米。 |
 | `far` | 10米以外。 |
-| `unknown` | 無法判斷距離，可能是因為訊號太弱。 |
+| `unknown` | 无法确定距离，可能是因为信号较弱。 |

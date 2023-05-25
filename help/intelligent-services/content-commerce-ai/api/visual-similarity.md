@@ -1,8 +1,8 @@
 ---
-keywords: 視覺相似度；視覺相似度；ccai api
+keywords: 视觉相似度；视觉相似度；ccai api
 solution: Experience Platform
-title: Content and Commerce AI API中的視覺相似度
-description: 視覺相似度服務在指定影像時，會自動從目錄中尋找視覺上相似的影像。
+title: Content and Commerce AI API中的视觉相似性
+description: 视觉相似性服务在给定图像时，自动从目录中找到视觉上相似的图像。
 exl-id: fe31d9be-ee42-44fa-b83f-3b8a718cb4e3
 source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
 workflow-type: tm+mt
@@ -11,17 +11,17 @@ ht-degree: 2%
 
 ---
 
-# 視覺相似度
+# 视觉相似度
 
 >[!NOTE]
 >
->[!DNL Content and Commerce AI] 為測試版。 檔案內容可能會有變動。
+>[!DNL Content and Commerce AI] 是测试版。 文档可能会发生更改。
 
-視覺相似度服務在指定影像時，會自動從目錄中尋找視覺上相似的影像。
+视觉相似性服务在给定图像时，自动从目录中找到视觉上相似的图像。
 
-本檔案所示的範例請求中使用了下列影像：
+以下图像已用于本文档中所示的示例请求：
 
-![測試影像](../images/Query_Image.jpeg)
+![测试图像](../images/Query_Image.jpeg)
 
 **API格式**
 
@@ -31,11 +31,11 @@ POST /services/v1/predict
 
 **请求**
 
-以下請求會根據裝載中提供的輸入引數，從目錄中擷取視覺上類似的影像。 請參閱裝載範例下表，以瞭解有關所示輸入引數的詳細資訊。
+以下请求根据有效负载中提供的输入参数，从目录中检索视觉上相似的图像。 有关显示的输入参数的更多信息，请参阅示例有效负载下表。
 
 >[!CAUTION]
 >
->`analyzer_id` 決定哪些 [!DNL Sensei Content Framework] 已使用。 請檢查您是否擁有適當的 `analyzer_id` 進行要求之前。 聯絡Content and Commerce AI測試版團隊，接收您的 `analyzer_id` 以取得此服務。
+>`analyzer_id` 确定哪些 [!DNL Sensei Content Framework] 已使用。 请检查您是否拥有 `analyzer_id` 然后再提出请求。 联系Content and Commerce AI测试版团队，接收 `analyzer_id` 用于此服务。
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -72,27 +72,27 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 }'
 ```
 
-| 属性 | 描述 | 強制 |
+| 属性 | 描述 | 必需 |
 | --- | --- | --- |
-| `analyzer_id` | 此 [!DNL Sensei] 您的請求部署在下的服務ID。 此ID會決定 [!DNL Sensei Content Frameworks] 已使用。 若要使用自訂服務，請聯絡Content and Commerce AI團隊以設定自訂ID。 | 是 |
-| `application-id` | 您建立之應用程式的ID。 | 是 |
-| `data` | 一個陣列，其中包含JSON物件，且陣列中的每個物件都代表一個影像。 在此陣列中傳遞的任何引數都會覆寫在 `data` 陣列。 此表格中下面列出的任何剩餘屬性，都可以從內覆寫 `data`. | 是 |
-| `content-id` | 回應中傳回之資料元素的唯一ID。 如果未傳遞，則會指派自動產生的ID。 | 否 |
-| `content` | 視覺相似度服務要分析的內容。 如果影像是請求內文的一部分，請使用 `-F file=@<filename>` 在curl命令中傳遞影像，將此引數保留為空字串。 <br> 如果影像是S3上的檔案，請傳遞已簽署的URL。 當內容是請求內文的一部分時，資料元素清單應該只有一個物件。 如果傳遞了多個物件，則只會處理第一個物件。 | 是 |
-| `content-type` | 用於指出輸入是請求內文的一部分，還是S3儲存貯體的已簽署URL。 此屬性的預設值為 `inline`. | 否 |
-| `encoding` | 輸入影像的檔案格式。 目前只能處理JPEG和PNG影像。 此屬性的預設值為 `jpeg`. | 否 |
-| `threshold` | 分數臨界值（0至1），超過該臨界值即需要傳回結果。 使用值 `0` 以傳回所有結果。 此屬性的預設值為 `0`. | 否 |
-| `top-N` | 要傳回的結果數（不能為負整數）。 使用值 `0` 以傳回所有結果。 當與搭配使用時 `threshold`，傳回的結果數是設定的任一限制中的較小值。 此屬性的預設值為 `0`. | 否 |
-| `custom` | 任何要傳遞的自訂引數。 | 否 |
-| `historic-metadata` | 可傳遞中繼資料的陣列。 | 否 |
+| `analyzer_id` | 此 [!DNL Sensei] 您的请求部署在下的服务ID。 此ID确定 [!DNL Sensei Content Frameworks] 已使用。 对于自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
+| `application-id` | 您创建的应用程序的ID。 | 是 |
+| `data` | 一个数组，其中包含一个JSON对象，该数组中的每个对象都表示一个图像。 作为此数组的一部分传递的任何参数都将覆盖 `data` 数组。 此表下面列出的任何剩余属性都可从中覆盖 `data`. | 是 |
+| `content-id` | 响应中返回的数据元素的唯一ID。 如果未传递此ID，则会分配自动生成的ID。 | 否 |
+| `content` | 视觉相似性服务分析的内容。 如果图像是请求正文的一部分，请使用 `-F file=@<filename>` 在curl命令中传递图像，将此参数保留为空字符串。 <br> 如果图像是S3上的文件，请传递已签名的URL。 当内容是请求正文的一部分时，数据元素列表应只包含一个对象。 如果传递了多个对象，则仅处理第一个对象。 | 是 |
+| `content-type` | 用于指示输入是请求正文的一部分，还是S3存储桶的已签名URL。 此属性的默认值为 `inline`. | 否 |
+| `encoding` | 输入图像的文件格式。 当前只能处理JPEG和PNG图像。 此属性的默认值为 `jpeg`. | 否 |
+| `threshold` | 分数阈值（0到1），超过该阈值需要返回结果。 使用值 `0` 以返回所有结果。 此属性的默认值为 `0`. | 否 |
+| `top-N` | 要返回的结果数（不能为负整数）。 使用值 `0` 以返回所有结果。 当与结合使用时 `threshold`，则返回的结果数是设置的任一限制中的较小值。 此属性的默认值为 `0`. | 否 |
+| `custom` | 要传递的任何自定义参数。 | 否 |
+| `historic-metadata` | 可以传递元数据的数组。 | 否 |
 
 **响应**
 
-成功的回應會傳回 `response` 包含 `feature_value` 和 `feature_name` 目錄中找到每個視覺上相似的影像。
+成功响应将返回 `response` 包含 `feature_value` 和 `feature_name` 目录中找到的所有视觉上相似的图像。
 
-下列視覺上相似的影像會傳回至下列範例回應中：
+在下面显示的示例响应中返回了以下在视觉上相似的图像：
 
-![類似影像](../images/results.jpg)
+![相似图像](../images/results.jpg)
 
 ```json
 {

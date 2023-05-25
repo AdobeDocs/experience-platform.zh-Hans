@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；API；API；沙箱；沙箱；沙箱
+keywords: Experience Platform；主页；热门主题；API；API；沙盒；沙盒；沙盒
 solution: Experience Platform
-title: Sandbox API指南附錄
-description: 本檔案提供與使用沙箱API相關的補充資訊。
+title: 沙盒API指南附录
+description: 本文档提供有关使用沙盒API的补充信息。
 exl-id: 48ffea01-f1b4-48c6-a6f5-c321074023d3
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,19 +11,19 @@ ht-degree: 1%
 
 ---
 
-# Sandbox API指南附錄
+# 沙盒API指南附录
 
-本檔案提供與使用相關的補充資訊 [!DNL Sandbox] API。
+本文档提供了与使用 [!DNL Sandbox] API。
 
-## 使用查詢引數 {#query}
+## 使用查询参数 {#query}
 
-此 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) 支援在列出沙箱時使用查詢引數來頁面和篩選結果。
+此 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) 支持在列出沙盒时使用查询参数来页面和筛选结果。
 
 >[!NOTE]
 >
->此 `limit` 和 `offset` 必須一起指定查詢引數。 如果您只指定一個，API會傳回錯誤。 如果您指定「無」，預設限製為50，位移為0。
+>此 `limit` 和 `offset` 查询参数必须一起指定。 如果您只指定一个，则API将返回错误。 如果指定“无”，则缺省限制为50，偏移量为0。
 
 | 参数 | 描述 |
 | --- | --- |
-| `limit` | 回應中可傳回的最大記錄數。 |
-| `offset` | 從第一個記錄開始（位移）回應清單的實體數。 |
+| `limit` | 响应中返回的最大记录数。 |
+| `offset` | 从第一个记录开始（偏移）响应列表的实体数。 |

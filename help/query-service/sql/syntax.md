@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
+source-git-commit: 2a5dd20d99f996652de5ba84246c78a1f7978693
 workflow-type: tm+mt
-source-wordcount: '3761'
+source-wordcount: '3706'
 ht-degree: 2%
 
 ---
@@ -570,10 +570,6 @@ SET property_key = property_value
 
 ### 分析表 {#analyze-table}
 
-此 `ANALYZE TABLE` 命令对命名表执行分布分析和统计计算。 使用 `ANALYZE TABLE` 根据数据集是否存储在 [加速存储](#compute-statistics-accelerated-store) 或 [数据湖](#compute-statistics-data-lake). 有关其用法的更多信息，请参阅各自部分。
-
-#### 加速存储的计算统计信息 {#compute-statistics-accelerated-store}
-
 此 `ANALYZE TABLE` 命令计算加速存储上表的统计信息。 统计是在加速存储上给定表的已执行CTAS或ITAS查询上计算的。
 
 **示例**
@@ -596,9 +592,9 @@ ANALYZE TABLE <original_table_name>
 | `mean` | 分析表的平均值。 |
 | `stdev` | 分析表的标准偏差。 |
 
-#### 计算数据湖上的统计信息 {#compute-statistics-data-lake}
+#### 计算统计信息 {#compute-statistics}
 
-您现在可以计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集具有 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集上的列统计信息。
+您现在可以计算列级别统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集具有 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集上的列统计信息。
 
 `COMPUTE STATISTICS` 扩展 `ANALYZE TABLE` 命令。 但是， `COMPUTE STATISTICS`， `FILTERCONTEXT`， `FOR COLUMNS`、和 `SHOW STATISTICS` data warehouse表不支持命令。 的这些扩展 `ANALYZE TABLE` 命令当前仅支持ADLS表。
 

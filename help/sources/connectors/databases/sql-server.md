@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；Microsoft SQL；microsoft sql；SQL；sql
+keywords: Experience Platform；主页；热门主题；Microsoft SQL；microsoft sql；SQL；sql
 solution: Experience Platform
-title: SQL Server來源聯結器概述
-description: 瞭解如何使用API或使用者介面將Microsoft SQL Server連線至Adobe Experience Platform。
+title: SQL Server源连接器概述
+description: 了解如何使用API或用户界面将Microsoft SQL Server连接到Adobe Experience Platform。
 exl-id: 8a77f108-7e82-4e14-a470-a4ea97def89d
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
@@ -11,25 +11,25 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Microsoft] SQL Server聯結器
+# [!DNL Microsoft] SQL Server连接器
 
-Adobe Experience Platform可從外部來源擷取資料，同時讓您能夠使用來建構、加標籤及增強傳入資料 [!DNL Platform] 服務。 您可以從多種來源(例如Adobe應用程式、雲端儲存、資料庫和許多其他來源)內嵌資料。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-[!DNL Experience Platform] 支援從第三方資料庫擷取資料。 [!DNL Platform] 可以連線到不同型別的資料庫，例如關聯式、NoSQL或資料倉儲。 對資料庫提供者的支援包括 [!DNL Microsoft] SQL Server。
+[!DNL Experience Platform] 支持从第三方数据库引入数据。 [!DNL Platform] 可以连接到各种类型的数据库，例如关系数据库、NoSQL数据库或data warehouse数据库。 对数据库提供商的支持包括 [!DNL Microsoft] SQL Server。
 
-## IP位址允許清單
+## IP地址允许列表
 
-在使用來源聯結器之前，必須將IP位址清單新增至允許清單。 使用來源時，若未將您地區專屬的IP位址新增至允許清單，可能會導致錯誤或效能不佳。 請參閱 [IP位址允許清單](../../ip-address-allow-list.md) 頁面以取得詳細資訊。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
 
-以下檔案提供有關如何連線的資訊 [!DNL Microsoft] SQL Server至 [!DNL Platform] 使用API或使用者介面：
+以下文档提供了有关如何连接的信息 [!DNL Microsoft] SQL Server到 [!DNL Platform] 使用API或用户界面：
 
-## Connect [!DNL Microsoft] SQL Server至 [!DNL Platform] 使用API
+## Connect [!DNL Microsoft] SQL Server到 [!DNL Platform] 使用API
 
-- [使用Flow Service API建立Microsoft SQL Server基本連線](../../tutorials/api/create/databases/sql-server.md)
-- [使用Flow Service API探索資料表](../../tutorials/api/explore/tabular.md)
-- [使用流程服務API為資料庫來源建立資料流](../../tutorials/api/collect/database-nosql.md)
+- [使用流服务API创建Microsoft SQL Server基本连接](../../tutorials/api/create/databases/sql-server.md)
+- [使用流服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
-## Connect [!DNL Microsoft] SQL Server至 [!DNL Platform] 使用UI
+## Connect [!DNL Microsoft] SQL Server到 [!DNL Platform] 使用UI
 
-- [在使用者介面中建立Microsoft SQL Server來源連線](../../tutorials/ui/create/databases/sql-server.md)
-- [在UI中建立資料庫來源連線的資料流](../../tutorials/ui/dataflow/databases.md)
+- [在用户界面中创建Microsoft SQL Server源连接](../../tutorials/ui/create/databases/sql-server.md)
+- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

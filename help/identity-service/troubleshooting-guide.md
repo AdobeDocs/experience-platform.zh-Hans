@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；首頁；熱門主題；身分名稱空間；身分名稱空間
+keywords: Experience Platform；主页；热门主题；身份命名空间；身份命名空间
 solution: Experience Platform
-title: Identity Service疑難排解指南
-description: 本檔案提供有關Adobe Experience Platform Identity Service常見問題的解答，以及常見錯誤的疑難排解指南。
+title: Identity Service疑难解答指南
+description: 本文档提供了有关Adobe Experience Platform Identity服务的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
 source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
@@ -11,89 +11,89 @@ ht-degree: 0%
 
 ---
 
-# Identity Service疑難排解指南
+# Identity Service疑难解答指南
 
-本檔案提供有關Adobe Experience Platform常見問題的解答 [!DNL Identity Service]以及常見錯誤的疑難排解指南。 有關下列專案的問題和疑難排解： [!DNL Platform] API一般而言，請參閱 [Adobe Experience Platform API疑難排解指南](../landing/troubleshooting.md).
+本文档提供了有关Adobe Experience Platform的常见问题解答 [!DNL Identity Service]以及常见错误的疑难解答指南。 有关以下内容的问题和疑难解答： [!DNL Platform] API一般而言，请参阅 [Adobe Experience Platform API疑难解答指南](../landing/troubleshooting.md).
 
-用來識別單一客戶的資料，通常分散於客戶用來與您的品牌互動的各種裝置和系統。 [!DNL Identity Service] 將這些分散的身分識別彙集在一起，有助於全面瞭解客戶行為，以便您即時提供具影響力的數位體驗。 如需詳細資訊，請參閱 [Identity Service概觀](./home.md).
+用于标识单个客户的数据通常分散在客户用来与您的品牌互动的各种设备和系统中。 [!DNL Identity Service] 将这些分散的身份聚合在一起，有助于全面了解客户行为，以便您实时提供有影响力的数字体验。 欲了解更多信息，请参见 [Identity服务概述](./home.md).
 
 ## 常见问题解答
 
-以下為常見問題集的回答清單 [!DNL Identity Service].
+以下是有关以下内容的常见问题解答列表 [!DNL Identity Service].
 
-## 什麼是身分資料？
+## 什么是身份数据？
 
-身分資料是指可用於識別個人身分的任何資料。 根據組織內使用資料的方式環境，身分資料可以包含來自CRM系統的使用者名稱、電子郵件地址和ID。 身分資料不限於您網站或服務的註冊使用者，因為匿名使用者也可以透過其裝置或Cookie ID識別。
+身份数据是指可用于识别个人的任何数据。 根据组织中如何使用数据的上下文，身份数据可以包括来自CRM系统的用户名、电子邮件地址和ID。 身份数据不仅限于您网站或服务的注册用户，因为匿名用户也可以通过其设备或Cookie ID进行标识。
 
-## 將資料欄位標示為身分有什麼好處？
+## 将数据字段标记为身份有什么好处？
 
-將特定資料欄位標示為記錄和時間序列資料中的身分，可讓您在資料的自然結構內對應身分關係，並跨管道調解重複資料。 請參閱 [Identity Service概觀](./home.md) 以取得詳細資訊。
+通过将某些数据字段标记为记录数据和时间序列数据中的身份，您可以在数据的自然结构中映射身份关系，并跨渠道协调重复数据。 请参阅 [Identity服务概述](./home.md) 了解更多信息。
 
-## 什麼是已知和匿名的身分？
+## 什么是已知身份和匿名身份？
 
-已知的身分識別是指一個身分識別值，可以單獨使用，或搭配其他資訊使用，以識別、聯絡或尋找個別人員。 已知的身分範例可能包括電子郵件地址、電話號碼和CRM ID。
+已知身份是指可以单独使用的身份值，也可以与其他信息结合使用来识别、联系或查找个人。 已知身份的示例可能包括电子邮件地址、电话号码和CRM ID。
 
-匿名身分是指無法單獨使用或搭配其他資訊使用，以識別、聯絡或尋找個別人員（例如Cookie ID）的身分值。
+匿名身份是指无法单独使用或与其他信息配合使用来识别、联系或查找个人（例如Cookie ID）的身份值。
 
-## 什麼是私人身分圖表？
+## 什么是专用身份图？
 
-私人身分圖表是拼接和連結的身分之間關係的私人對應，僅對您的組織可見。
+专用身份图是缝合身份和链接身份之间关系的专用映射，仅对您的组织可见。
 
-從串流端點擷取或傳送至啟用的資料集的任何資料中包含多個身分時 [!DNL Identity Service]，這些身分會在私人身分圖表中進行連結。 [!DNL Identity Service] 會利用此圖表來收集指定消費者或實體的身分，以允許身分拼接和設定檔合併。
+当从流端点摄取或发送到启用的数据集的任何数据中包含多个标识时 [!DNL Identity Service]，则这些身份将在专用身份图中进行链接。 [!DNL Identity Service] 利用此图表获取给定使用者或实体的身份，从而允许身份拼接和配置文件合并。
 
-## 如何在XDM結構描述中建立多個身分欄位？
+## 如何在XDM架构中创建多个标识字段？
 
-[體驗資料模型(XDM)](../xdm/home.md) 結構描述支援多個身分欄位。 任何型別的資料欄位 `string` 在實作XDM Individual Profile或XDM ExperienceEvent類別的結構描述中，可以標籤為身分欄位。 在標籤後，這些欄位中包含的任何資料都會新增到設定檔的身分對應。
+[体验数据模型(XDM)](../xdm/home.md) 架构支持多个标识字段。 任何类型的数据字段 `string` 在实施XDM Individual Profile或XDM ExperienceEvent类的架构中，可以标记为标识字段。 标记后，这些字段中包含的任何数据都会添加到用户档案的标识映射中。
 
-有關如何使用使用者介面將XDM欄位標示為身分欄位的步驟，請參閱 [身分段落](../xdm/tutorials/create-schema-ui.md) 架構編輯器教學課程中的。 如果您使用API，請參閱 [身分描述項段落](../xdm/tutorials/create-schema-api.md) 在Schema Registry API教學課程中。
+有关如何使用用户界面将XDM字段标记为标识字段的步骤，请参阅 [“身份”部分](../xdm/tutorials/create-schema-ui.md) 在架构编辑器教程中。 如果您使用的是API，请参阅 [“身份描述符”部分](../xdm/tutorials/create-schema-api.md) 在架构注册表API教程中。
 
-## 是否有某些欄位不應標示為身分的上下文？
+## 是否存在某些字段不应标记为标识的上下文？
 
-身分欄位應該保留給每個人的唯一值。 例如，考慮客戶忠誠度計畫的資料集。 「忠誠度」欄位（金級、銀級、銅級）不是實用的身分欄位，而「忠誠度ID」（唯一值）則是。
+应为每个人的唯一值保留身份字段。 例如，考虑客户忠诚度计划的数据集。 “忠诚度”字段（金牌、银牌、铜牌）不是有用的标识字段，而忠诚度ID（唯一值）则是。
 
-郵遞區號和IP位址等欄位不應標籤為個人的身分，因為這些值可套用至多個個人。 這些型別的欄位應該只標籤為家庭層級行銷策略的身分。
+邮政编码和IP地址等字段不应标记为个人的身份，因为这些值可以应用于多个个人。 这些类型的字段只应标记为家庭级营销策略的标识。
 
-## 為什麼我的身分識別欄位沒有依照我預期的方式連結？
+## 为什么我的身份字段没有按预期方式关联？
 
-使用 [`/cluster/members` 端點](./api/list-cluster-identites.md) 在Identity Service API中，您可以檢視一或多個身分欄位的關聯身分。 如果回應未傳回您期望的連結身分，請確定您在XDM資料中提供適當的身分資訊。 請參閱以下小節： [向Identity Service提供XDM資料](./home.md) 如需詳細資訊，請參閱Identity Service概觀。
+使用 [`/cluster/members` 端点](./api/list-cluster-identites.md) 在Identity Service API中，您可以查看一个或多个标识字段的关联标识。 如果响应未返回预期的链接身份，请确保在XDM数据中提供适当的身份信息。 请参阅以下部分： [向Identity服务提供XDM数据](./home.md) 有关更多信息，请参阅Identity Service概述。
 
-## 什麼是身分名稱空間？
+## 什么是身份命名空间？
 
-身分名稱空間會提供身分欄位與客戶身分的相關性的上下文。 例如，「電子郵件」名稱空間下的身分欄位應符合標準電子郵件格式（名稱）<span>@emailprovider.com)，而使用「電話」名稱空間的欄位應符合標準電話號碼（例如在北美洲987-555-1234）。
+身份命名空间为身份字段如何与客户身份关联提供了上下文。 例如，“电子邮件”命名空间下的身份字段应符合标准电子邮件格式（名称）<span>@emailprovider.com)，而使用“Phone”命名空间的字段应符合标准电话号码（例如，在北美为987-555-1234）。
 
-名稱空間會區分不同CRM系統之間的類似身分值。 例如，假設某個設定檔包含與公司獎勵計畫相關聯的數位熟客ID。 「忠誠度」的名稱空間會將此值與也出現在相同設定檔中的電子商務系統的類似數值ID分開。
+命名空间可以区分不同CRM系统之间的相似标识值。 例如，假定某个用户档案包含与公司奖励计划关联的数字忠诚度ID。 “忠诚度”命名空间会将此值与同样显示在同一配置文件中的电子商务系统的类似数值ID分隔开。
 
-請參閱 [身分名稱空間總覽](./home.md) 以取得詳細資訊。
+请参阅 [身份命名空间概述](./home.md) 了解更多信息。
 
-## 如何將身分與身分名稱空間建立關聯？
+## 如何将身份与身份命名空间关联？
 
-身分欄位建立時，必須與現有的身分名稱空間相關聯。 任何新名稱空間都必須是 [使用API建立](#how-do-i-create-a-custom-namespace-for-my-organization) 將它們與身分欄位建立關聯之前。
+创建身份字段时，必须将身份字段与现有身份命名空间关联。 任何新命名空间必须 [使用API创建](#how-do-i-create-a-custom-namespace-for-my-organization) 将它们与标识字段关联之前。
 
-如需在使用API建立身分描述項時定義名稱空間的逐步指示，請參閱 [建立描述項](../xdm/tutorials/create-schema-ui.md) 在Schema Registry開發人員指南中。 若要在UI中將結構描述欄位標示為身分，請依照 [結構描述編輯器教學課程](../xdm/tutorials/create-schema-api.md).
+有关在使用API创建身份描述符时定义命名空间的分步说明，请参阅 [创建描述符](../xdm/tutorials/create-schema-ui.md) 在Schema Registry开发人员指南中。 要在UI中将架构字段标记为标识，请按照 [架构编辑器教程](../xdm/tutorials/create-schema-api.md).
 
-## Experience Platform提供哪些標準身分名稱空間？ {#standard-namespaces}
+## Experience Platform提供的标准身份命名空间是什么？ {#standard-namespaces}
 
-標準身分名稱空間是可供所有組織使用的名稱空間。 請參閱 [身分名稱空間概觀](./namespaces.md) 以取得可用標準名稱空間的完整清單。
+标准身份命名空间是可用于所有组织的命名空间。 请参阅 [身份命名空间概述](./namespaces.md) 以获取可用标准命名空间的完整列表。
 
-## 我可以在哪裡找到我的組織可用的身分名稱空間清單？
+## 可在何处找到可用于我的组织的身份命名空间列表？
 
-使用 [身分識別服務API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可以透過向以下網站發出GET請求，列出貴組織所有可用的身分名稱空間： `/idnamespace/identities` 端點。 請參閱以下小節： [列出可用的名稱空間](./api/list-namespaces.md) 如需詳細資訊，請參閱Identity Service API總覽。
+使用 [身份服务API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可通过向以下网站发出GET请求，列出贵组织的所有可用身份命名空间： `/idnamespace/identities` 端点。 请参阅以下部分： [列出可用命名空间](./api/list-namespaces.md) 有关更多信息，请参阅Identity Service API概述。
 
-## 如何為我的組織建立自訂名稱空間？
+## 如何为我的组织创建自定义命名空间？
 
-使用 [身分識別服務API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可以透過向以下網站發出POST請求，為您的組織建立自訂身分名稱空間： `/idnamespace/identities` 端點。 請參閱以下小節： [建立自訂名稱空間](./api/create-custom-namespace.md) 如需詳細資訊，請參閱Identity Service API總覽。
+使用 [身份服务API](https://www.adobe.io/experience-platform-apis/references/identity-service)，您可以通过向POST请求为您的组织创建自定义身份命名空间 `/idnamespace/identities` 端点。 请参阅以下部分： [创建自定义命名空间](./api/create-custom-namespace.md) 有关更多信息，请参阅Identity Service API概述。
 
-## 什麼是複合身分和XID？
+## 什么是复合身份和XID？
 
-在API呼叫中，身分會由其複合身分或XID參照。 複合身分是包含ID值和名稱空間的身分的表示法。 XID是單值識別碼，代表與複合身分相同的結構（ID和名稱空間），當身分識別服務持續存在時，會自動指派給新身分。 請參閱 [Identity Service API總覽](./home.md) 以取得詳細資訊。
+在API调用中，身份由其复合身份或XID引用。 复合身份是包含ID值和命名空间的身份的表示形式。 XID是一个单值标识符，它表示与复合身份（ID和命名空间）相同的构造，当身份服务持久化时，会自动分配给新身份。 请参阅 [Identity服务API概述](./home.md) 了解更多信息。
 
-## Identity Service如何處理個人識別資訊(PII)？
+## Identity Service如何处理个人身份信息(PII)？
 
-Identity Service具有標準名稱空間，可支援擷取電話號碼和電子郵件的雜湊身分值。 不過，您必須負責雜湊值。 若要進一步瞭解如何對擷取至Platform的資料進行雜湊處理，請參閱 [[!DNL Data Prep] 對應函式指南](../data-prep/functions.md#hashing).
+Identity Service具有标准命名空间，用于支持为电话号码和电子邮件摄取经过哈希处理的身份值。 但是，您应负责对值进行哈希处理。 要了解有关对摄取到Platform的数据进行哈希处理的更多信息，请参阅 [[!DNL Data Prep] 映射函数指南](../data-prep/functions.md#hashing).
 
-## 雜湊處理PII型身分時，是否有任何考量事項？
+## 在对基于PII的标识进行哈希处理时是否有任何注意事项？
 
-如果您將雜湊PII值傳送至Identity Service，您必須在資料集中使用相同的加密方法。 這可確保跨資料集的相同身分值會產生相同的雜湊值，並能夠在身分圖表中正確比對和連結。
+如果要将经过哈希处理的PII值发送到Identity Service，则必须在数据集中使用相同的加密方法。 这可确保跨数据集的相同身份值生成相同的哈希值，并能够在身份图中进行正确匹配和链接。
 
 <!-- Documentation does not show any methods of editing the identityMap directly, and this table never overtly recommends using identityMap anyway. This should probably be removed unless PM thinks otherwise. -->
 <!-- ## When should I use the Identity map rather than labeling individual XDM schema fields?
@@ -113,19 +113,19 @@ Internal solutions|Preferred|Common
 
 --- -->
 
-## 為何無法存取身分圖表頁面或API？
+## 为何无法访问身份图页面或API？
 
-您的平台管理員必須為您布建 `view-identity-graph` 許可權供您檢視身分圖表資料。 若沒有此許可權，您將在身分圖表檢視器頁面上以及呼叫Platform API時，收到許可權遭拒訊息。 請參閱 [存取控制概述](../access-control/home.md) 以取得許可權的詳細資訊。
+您的平台管理员必须为您预配 `view-identity-graph` 权限，以便您查看身份图数据。 如果没有此权限，您将在身份图查看器页面上以及调用平台API时收到权限被拒绝消息。 请参阅 [访问控制概述](../access-control/home.md) 以了解有关权限的更多信息。
 
 ## 故障排除
 
-下節針對您在使用時可能會遇到的特定錯誤碼和意外行為，提供疑難排解建議 [!DNL Identity Service] API。
+以下部分针对您在使用时可能会遇到的具体错误代码和意外行为提供故障排除建议 [!DNL Identity Service] API。
 
-## [!DNL Identity Service] 錯誤訊息
+## [!DNL Identity Service] 错误消息
 
-以下為使用時可能會遇到的錯誤訊息清單 [!DNL Identity Service] API。
+以下是使用时可能遇到的错误消息列表 [!DNL Identity Service] API。
 
-### 缺少必要的查詢引數
+### 缺少所需的查询参数
 
 ```json
 {
@@ -135,17 +135,17 @@ Internal solutions|Preferred|Common
 }
 ```
 
-請求路徑中未包含必要的查詢引數時，便會顯示此錯誤。 此 `detail` 錯誤訊息的)提供遺失引數的名稱。 此錯誤訊息的變化包括：
+当请求路径中未包含所需的查询参数时，将显示此错误。 此 `detail` 错误消息的名称提供了缺失参数的名称。 此错误消息的变体包括：
 
-- 缺少必要的查詢引數 — nsId
-- 缺少必要的查詢引數 — id
-- 缺少必要的查詢引數 — xid或(nsid，id)
-- 缺少必要的查詢引數 — targetNs
-- 缺少必要的查詢引數 — xids或compositeXids
+- 缺少所需的查询参数 — nsId
+- 缺少所需的查询参数 — id
+- 缺少所需的查询参数 — xid或(nsid，id)
+- 缺少所需的查询参数 — targetNs
+- 缺少所需的查询参数 — xids或compositeXids
 
-在重試之前，請檢查您在請求路徑中是否正確包含指示的引數。
+在重试之前，请检查请求路径中是否正确包含指示的参数。
 
-### 時間戳記應在過去180天內
+### 时间戳应在过去180天内
 
 ```json
 {
@@ -155,9 +155,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-[!DNL Identity Service] 會清除超過180天的資料。 當您嘗試存取超過此的資料時，會顯示此錯誤訊息。
+[!DNL Identity Service] 清除超过180天的数据。 当您尝试访问早于此日期的数据时，会显示此错误消息。
 
-### 單一呼叫中有1000個XID的限制
+### 单个调用中存在1000个XID的限制
 
 ```json
 {
@@ -167,10 +167,10 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當您嘗試擷取的身分資訊超過最大數量時，此錯誤訊息便會顯示 [XID](#what-are-composite-identities-and-xids) 單一API呼叫中允許。 將請求中的XID數量減少至顯示限制以下，即可解決此問題。
+当您尝试检索的标识信息超过最大数量时，将显示此错误消息。 [XID](#what-are-composite-identities-and-xids) 允许在一个API调用中使用。 将请求中的XID数量减少到显示限制以下可解决此问题。
 
 
-### 單一呼叫中有1000個compositeXid的限制
+### 单个调用中存在1000个compositeXid的限制
 
 ```json
 {
@@ -180,9 +180,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當您嘗試擷取的身分資訊超過最大數量時，此錯誤訊息便會顯示 [複合身分](#what-are-composite-identities-and-xids) 單一API呼叫中允許。 將請求中的複合身分數量減少到低於顯示的限制以解決此問題。
+当您尝试检索的标识信息超过最大数量时，将显示此错误消息。 [复合身份](#what-are-composite-identities-and-xids) 允许在一个API调用中使用。 将请求中的复合身份数减少到低于显示的限制以解决此问题。
 
-### 指定的圖表型別無效
+### 指定的图形类型无效
 
 ```json
 {
@@ -192,9 +192,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-此錯誤訊息會在以下情況下顯示： `graph-type` 請求路徑中的查詢引數指定了無效值。 請參閱以下小節： [身分圖表](./home.md) 在 [!DNL Identity Service] 概觀以瞭解支援的圖表型別。
+出现以下错误消息时 `graph-type` 在请求路径中，为查询参数指定了无效值。 请参阅以下部分： [身份图](./home.md) 在 [!DNL Identity Service] 概述，了解支持的图形类型。
 
-### 服務權杖沒有有效的範圍
+### 服务令牌没有有效的范围
 
 ```json
 {
@@ -204,9 +204,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當您的組織尚未布建適當的許可權時，此錯誤訊息便會顯示 [!DNL Identity Service]. 請聯絡您的系統管理員以解決此問題。
+当您的组织尚未为配置适当的权限时，显示此错误消息。 [!DNL Identity Service]. 请与系统管理员联系以解决此问题。
 
-### 閘道服務權杖無效
+### 网关服务令牌无效
 
 ```json
 {
@@ -216,9 +216,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-發生此錯誤時，您的存取Token無效。 存取權杖每24小時過期一次，且必須重新產生才能繼續使用 [!DNL Platform] API。 請參閱 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en) 以取得有關產生新存取Token的說明。
+如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用 [!DNL Platform] API。 请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以获取有关生成新访问令牌的说明。
 
-### 授權服務權杖無效
+### 授权服务令牌无效
 
 ```json
 {
@@ -228,9 +228,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-發生此錯誤時，您的存取Token無效。 存取權杖每24小時過期一次，且必須重新產生才能繼續使用 [!DNL Platform] API。 請參閱 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en) 以取得有關產生新存取Token的說明。
+如果出现此错误，您的访问令牌无效。 访问令牌每24小时过期一次，必须重新生成才能继续使用 [!DNL Platform] API。 请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以获取有关生成新访问令牌的说明。
 
-### 使用者權杖沒有有效的產品內容
+### 用户令牌没有有效的产品上下文
 
 ```json
 {
@@ -240,9 +240,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-尚未從「 」產生存取權杖時，此錯誤訊息便會顯示。 [!DNL Experience Platform] 整合。 請參閱 [驗證教學課程](https://www.adobe.com/go/platform-api-authentication-en) 以取得為使用者產生新存取權杖的說明。 [!DNL Experience Platform] 整合。
+当您的访问令牌不是从 [!DNL Experience Platform] 集成。 请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 有关为生成新的访问令牌的说明 [!DNL Experience Platform] 集成。
 
-### 從身分和名稱空間程式碼取得原生XID時發生內部錯誤
+### 从标识和命名空间代码获取本机XID时出现内部错误
 
 ```json
 {
@@ -252,9 +252,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-時間 [!DNL Identity Service] 會儲存身分，身分的ID和關聯的名稱空間ID會指派一個稱為XID的唯一識別碼。 在尋找指定ID值和名稱空間的XID過程中發生錯誤時，會顯示此訊息。
+时间 [!DNL Identity Service] 保留一个身份，该身份的ID和关联的命名空间ID将分配一个称为XID的唯一标识符。 在查找给定ID值和命名空间的XID的过程中发生错误时，将显示此消息。
 
-### IMS組織未布建給 [!DNL Identity Service] 使用狀況
+### 未配置IMS组织 [!DNL Identity Service] 使用情况
 
 ```json
 {
@@ -264,9 +264,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當您的組織尚未布建適當的許可權時，此錯誤訊息便會顯示 [!DNL Identity Service]. 請聯絡您的系統管理員以解決此問題。
+当您的组织尚未为配置适当的权限时，显示此错误消息。 [!DNL Identity Service]. 请与系统管理员联系以解决此问题。
 
-### 內部伺服器錯誤
+### 内部服务器错误
 
 ```json
 {
@@ -276,15 +276,15 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當執行時發生非預期的例外狀況時，就會顯示此錯誤 [!DNL Platform] 維修電話。 最佳實務是在收到此錯誤時，設定您的自動呼叫程式，以某個計時間隔重試其要求。 如果問題仍然存在，請聯絡您的系統管理員。
+当执行中出现意外异常时，显示此错误 [!DNL Platform] 维修电话。 最佳做法是在收到此错误时，对自动调用进行编程，以按一定的时间间隔重试其请求。 如果问题仍然存在，请与系统管理员联系。
 
-## 批次擷取錯誤代碼
+## 批量摄取错误代码
 
-[!DNL Identity Service] 從記錄中擷取身分資料，並將時間序列資料上傳至 [!DNL Platform] 使用批次擷取。 由於批次擷取是非同步流程，因此您必須檢視批次的詳細資料才能檢視錯誤。 錯誤會隨著批次進行而累積，直到批次完成。
+[!DNL Identity Service] 从记录中摄取身份数据以及上传到的时间序列数据 [!DNL Platform] 使用批量摄取。 由于批处理摄取是异步过程，因此您必须查看批处理的详细信息才能查看错误。 错误将随着批的进行累积，直到批完成。
 
-以下是與相關的錯誤訊息清單 [!DNL Identity Service] 您在使用時可能會遇到 [批次擷取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).
+以下是与相关的错误消息列表 [!DNL Identity Service] 在使用时，您可能会遇到 [批量摄取API](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).
 
-### 未知的XDM結構描述
+### 未知的XDM架构
 
 ```json
 {
@@ -294,9 +294,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-[!DNL Identity Service] 僅會使用符合「 」之記錄或時間序列資料的身分 [!DNL Profile] 或 [!DNL ExperienceEvent] 類別。 嘗試擷取以下專案的資料： [!DNL Identity Service] 不符合任一類別的動作都會觸發此錯誤。
+[!DNL Identity Service] 仅使用符合以下条件的记录或时间序列数据的身份： [!DNL Profile] 或 [!DNL ExperienceEvent] 类别进行分类识别。 正在尝试摄取以下项的数据 [!DNL Identity Service] 不遵守任一类都将触发此错误。
 
-### 已處理批次的前100列中有0個有效身分
+### 已处理批次的前100行中有0个有效标识
 
 ```json
 {
@@ -306,9 +306,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當批次的前100列未顯示任何身分時，會顯示此錯誤。 不過，此錯誤並未明確表示在後續記錄中找不到身分。
+当批次的前100行不显示标识时，显示此错误。 但是，此错误并未最终指示在后续记录中未找到身份。
 
-### 已略過記錄，因為每個XDM記錄只有1個身分
+### 跳过了记录，因为它们每个XDM记录只有1个身份
 
 ```json
 {
@@ -318,9 +318,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-[!DNL Identity Service] 僅當單一記錄存在兩個或多個身分值時，才會連結身分。 此錯誤訊息會針對每個擷取的批次出現一次，並顯示僅能找到一個身分且不會導致身分圖表發生任何變更的記錄數量。
+[!DNL Identity Service] 仅当单个记录存在两个或多个标识值时，才会链接标识。 此错误消息对于每个摄取的批次出现一次，并显示仅能找到一个身份并导致身份图未发生更改的记录数。
 
-### 此IMS組織未註冊名稱空間程式碼
+### 未为此IMS组织注册命名空间代码
 
 ```json
 {
@@ -330,9 +330,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當擷取的記錄呈現的身分關聯名稱空間不存在或您的組織無法存取時，會顯示此錯誤。
+当摄取的记录呈现的标识关联命名空间不存在或您的组织无法访问时，将显示此错误。
 
-### 正在略過批次內嵌，因為未針對私人身分圖表布建IMS組織
+### 正在跳过批量摄取，因为没有为专用标识图配置IMS组织
 
 ```json
 {
@@ -342,9 +342,9 @@ Internal solutions|Preferred|Common
 }
 ```
 
-擷取批次資料時，如果您的組織尚未布建適當的許可權，系統會顯示此錯誤訊息。 [!DNL Identity Service]. 請聯絡您的系統管理員以解決此問題。
+摄取批处理数据时，如果您的组织尚未为设置适当的权限，则会显示此错误消息。 [!DNL Identity Service]. 请与系统管理员联系以解决此问题。
 
-### 內部錯誤
+### 内部错误
 
 ```json
 {
@@ -354,4 +354,4 @@ Internal solutions|Preferred|Common
 }
 ```
 
-當批次擷取期間發生非預期的例外狀況時，會顯示此錯誤。 最佳實務是在收到此錯誤時，設定您的自動呼叫程式，以某個計時間隔重試其要求。 如果問題仍然存在，請聯絡您的系統管理員。
+当批处理摄取期间发生意外异常时，显示此错误。 最佳做法是在收到此错误时，对自动调用进行编程，以按一定的时间间隔重试其请求。 如果问题仍然存在，请与系统管理员联系。

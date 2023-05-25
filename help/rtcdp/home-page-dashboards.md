@@ -1,6 +1,6 @@
 ---
-keywords: 量度概觀； rtcdp量度概觀
-title: Real-time Customer Data Platform首頁和控制面板
+keywords: 量度概述； rtcdp量度概述
+title: Real-time Customer Data Platform主页和功能板
 description: Adobe Experience Platform 的仪表板、主页和首次用户体验
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
 source-git-commit: 8ea657e379248616d3140bc0a7b0c25a918bc857
@@ -10,64 +10,64 @@ ht-degree: 1%
 
 ---
 
-# [!DNL Real-Time Customer Data Platform] 首頁
+# [!DNL Real-Time Customer Data Platform] 主页
 
-Adobe Real-time Customer Data Platform (Real-Time CDP)首頁是登入Real-Time CDP後顯示的第一個頁面。
+Adobe Real-time Customer Data Platform (Real-Time CDP)主页是登录Real-Time CDP后显示的第一个页面。
 
-Real-Time CDP首頁包含快速入門Widget，可讓您快速存取多項不同功能，以及顯示組織內資料最新資訊的量度區段。
+Real-Time CDP主页包括一个快速入门构件，允许您快速访问多种不同的功能，以及一个量度部分，该部分显示有关您组织内数据的最新信息。
 
-本檔案提供Real-Time CDP首頁和量度控制面板的概觀。
+本文档概述了Real-Time CDP主页和量度功能板。
 
-![平台UI首頁。](assets/platform-home/home.png)
+![Platform UI主页。](assets/platform-home/home.png)
 
-## 快速入門Widget
+## 入门小组件
 
-此 [!UICONTROL 開始使用即時客戶個人檔案] Widget分為四個部分：
+此 [!UICONTROL Real-Time Customer Profile] 构件分为四个部分：
 
-* **將資料內嵌至Platform**：此Widget會將您導向來源目錄。 使用來源目錄來選取來源，並擷取您的資料以Experience Platform。 如需詳細資訊，請閱讀 [來源概觀](../sources/home.md)
-* **模型資料結構**：此Widget會將您導向結構描述概觀。 使用結構描述概觀來瀏覽現有結構描述或建立描述資料結構的建置區塊。 如需詳細資訊，請閱讀 [結構描述概觀](../xdm/home.md).
-* **區段對象**：此Widget會將您導向 [!DNL Segment Builder] 在UI中。 使用 [!DNL Segment Builder] 以與設定檔資料元素互動，並定義區段的規則。 如需詳細資訊，請閱讀 [Segmentation Service概述](../segmentation/home.md).
-* **將資料傳送至目的地**：此Widget會將您導向目的地目錄。 使用目的地目錄來選取目的地，然後您可以連線至目的地並將區段傳送至該目的地。 如需詳細資訊，請閱讀 [目的地概觀](../destinations/home.md)
+* **将数据引入平台**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 有关详细信息，请阅读 [源概述](../sources/home.md)
+* **模型数据结构**：此构件会将您引导至架构概述。 使用架构概述浏览现有架构或创建描述数据结构的构建块。 有关详细信息，请阅读 [架构概述](../xdm/home.md).
+* **区段受众**：此构件会将您定向到 [!DNL Segment Builder] 在UI中。 使用 [!DNL Segment Builder] 用于与配置文件数据元素交互并为区段定义规则。 有关详细信息，请阅读 [分段服务概述](../segmentation/home.md).
+* **将数据发送到目标**：此构件会将您转到目标目录。 使用目标目录选择目标，然后可以连接到该目标并将区段发送到该目标。 有关详细信息，请阅读 [目标概述](../destinations/home.md)
 
-![Platform UI首頁會顯示快速入門Widget](assets/platform-home/getting-started-widget.png)
+![显示入门小组件的Platform UI主页](assets/platform-home/getting-started-widget.png)
 
-## 量度控制面板
+## 量度仪表板
 
-量度控制面板會顯示Experience Platform資料的最新資訊。 儀表板分為兩個區段：
+量度仪表板显示Experience Platform数据的最新信息。 仪表板分为两个部分：
 
 ### 排行榜
 
-排行榜顯示貴組織中目前的結構描述、資料集、設定檔和區段總數，以及最近更新日期。
+排行榜显示贵组织中当前的总架构、数据集、用户档案和区段数及其最近更新日期。
 
-![Platform UI首頁中的排行榜區段。](assets/platform-home/leaderboard.png)
+![Platform UI主页中的“排行榜”部分。](assets/platform-home/leaderboard.png)
 
-* **結構描述總數**：此 **結構描述總數** 計數器顯示系統中的結構描述數目。 建立結構描述時會更新此計數器。 如需詳細資訊，請閱讀 [結構描述概觀](../xdm/home.md).
-* **資料集總數**：此 **資料集總數** 計數器顯示系統中的資料集數量和資料量 [!DNL Platform]. 建立資料集時會更新此計數器。 如需資料集的詳細資訊，請參閱 [資料集總覽](../catalog/datasets/overview.md).
-* **設定檔總數**：此 **設定檔** count顯示擁有設定檔的總人數 [!DNL Real-Time Customer Profile]. 其中不包含設定檔片段。 這是您的可定址對象總數。 此計數使用預設值 [合併原則](profile/merge-policies.md) 在統一設定檔的合併原則設定中設定。 設定檔的數量每24小時更新一次。 如需設定檔的詳細資訊，請閱讀 [即時客戶個人檔案總覽](../profile/home.md).
-* **區段總數**： **區段** 顯示為組織建立的區段總數。 此數字會在建立新區段時更新。 如需區段的詳細資訊，請參閱 [Segmentation Service概述](../segmentation/home.md).
+* **架构总数**：此 **架构总数** 计数器显示系统中的架构数。 此计数器会在创建架构时更新。 有关详细信息，请阅读 [架构概述](../xdm/home.md).
+* **数据集总数**：此 **数据集总数** 计数器显示系统中的数据集数以及中的数据量 [!DNL Platform]. 此计数器会在创建数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
+* **配置文件总数**：此 **配置文件** count显示 [!DNL Real-Time Customer Profile]. 它不包括配置文件片段。 这是您的总可寻址受众。 此计数使用默认值 [合并策略](profile/merge-policies.md) 如统一配置文件中的合并策略配置中所设置。 配置文件数量每24小时更新一次。 有关用户档案的详细信息，请阅读 [Real-time Customer Profile概述](../profile/home.md).
+* **区段总数**： **区段** 显示为组织创建的区段总数。 此数字将在创建新区段时更新。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
 
-### 最近專案
+### 最近项目
 
-最近專案會列出組織中最近的變更。 在以下範例中，最近的變更與資料集、來源、區段和目的地有關。
+“最近项目”列出了组织中最近的更改。 在以下示例中，最近的更改与数据集、源、区段和目标有关。
 
-![Platform UI首頁的「最近使用的專案」區段。](assets/platform-home/recent-items.png)
+![Platform UI主页中的“最近项目”部分。](assets/platform-home/recent-items.png)
 
-* **最近的資料集**：此 **[!UICONTROL 最近的資料集]** 卡片會顯示在組織內建立的五個最新資料集。 建立新資料集時會更新此清單。 選取資料集以檢視該專案的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 以取得資料集清單。 從那裡，您可以選取特定來源以取得詳細資訊。 如需資料集的詳細資訊，請參閱 [資料集總覽](../catalog/datasets/overview.md).
-* **最近的來源**：此 **[!UICONTROL 最近的來源]** 量度卡片會顯示組織中最近建立的五個來源。 此清單會在建立新來源時更新。 選取來源以檢視該專案的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 以取得來源清單。 從那裡，您可以選取特定來源以取得詳細資訊。 如需來源的詳細資訊，請參閱 [來源概觀](../sources/home.md).
-* **最近的區段**：此 **[!UICONTROL 最近的區段]** 量度卡片會顯示組織中最近建立的五個區段。 此清單會在建立新區段時更新。 選取區段以檢視該專案的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 以取得區段清單。 如需區段的詳細資訊，請參閱 [Segmentation Service概述](../segmentation/home.md).
-* **最近的目的地**：此 **[!UICONTROL 最近的目的地]** 量度卡會顯示組織中最近建立的五個目的地。 此清單會在建立新目的地時更新。 選取目的地以檢視該專案的詳細資訊，或選取 **[!UICONTROL 檢視全部]** 以取得目的地清單。 如需詳細資訊，請閱讀 [目的地概觀](../destinations/home.md).
+* **最近数据集**：此 **[!UICONTROL 最近数据集]** 信息卡显示组织中最近创建的五个数据集。 此列表会在创建新数据集时更新。 选择一个数据集以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取数据集列表。 从该位置，您可以选择特定源以了解详细信息。 有关数据集的更多信息，请参见 [数据集概述](../catalog/datasets/overview.md).
+* **最近的源**：此 **[!UICONTROL 最近的源]** 量度卡显示组织中最近创建的五个源。 此列表会在创建新源时更新。 选择源以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 获取源列表。 从该位置，您可以选择特定源以了解详细信息。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
+* **最近的区段**：此 **[!UICONTROL 最近的区段]** 量度卡显示组织中最近创建的五个区段。 此列表会在创建新区段时更新。 选择一个区段以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取区段列表。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **最近的目标**：此 **[!UICONTROL 最近的目标]** 量度卡显示组织中最近创建的五个目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取目标列表。 有关详细信息，请阅读 [目标概述](../destinations/home.md).
 
 ## 资源
 
-最後，資源Widget提供您可參考的其他檔案資源。 其中包括：
+最后，资源小组件为您提供可以参考的其他文档资源。 其中包括：
 
-![Platform UI首頁中的資源區段。](assets/platform-home/resources.png)
+![Platform UI主页中的“资源”部分。](assets/platform-home/resources.png)
 
-* [瞭解結構描述](../xdm/schema/composition.md)
-* [連線來源](../sources/home.md)
-* [如何填入您的Real-Time Customer Profile](../profile/home.md)
-* [正在連線目的地](../destinations/home.md)
-* [管理存取權](../access-control/abac/overview.md)
+* [了解架构](../xdm/schema/composition.md)
+* [连接源](../sources/home.md)
+* [如何填充Real-Time Customer Profile](../profile/home.md)
+* [连接目标](../destinations/home.md)
+* [管理访问权限](../access-control/abac/overview.md)
 
 <!-- ### Successful profile records
 
