@@ -2,9 +2,9 @@
 title: 身份命名空间概述
 description: 身份命名空间是“身份服务”的组件，充当与身份相关的上下文指示器。例如，它们将“name@email.com”的值作为电子邮件地址，将“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 58fefcc0a590341922f0769a416e27cd1f13a617
+source-git-commit: fc886dc0d7abb1df76c12edc423bc788b443a788
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1719'
 ht-degree: 8%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 8%
 | 设备ID | 设备ID可标识硬件设备，如IDFA(iPhone和iPad)、GAID (Android)和RIDA (Roku)，并且可由家庭中的多人共享。 |
 | 电子邮件地址 | 电子邮件地址通常与单个人员相关联，因此可用于跨不同渠道识别该人员。 此类型的身份包括个人身份信息(PII)。 这表明 [!DNL Identity Service] 以敏感地处理值。 |
 | 非人员标识符 | 非人员ID用于存储需要命名空间但未连接到人员群集的标识符。 例如，产品SKU、与产品、组织或商店相关的数据。 |
-| 合作伙伴ID | 合作伙伴ID是数据合作伙伴用来表示人员的标识符。 合作伙伴ID通常以假名表示，以免泄露一个人的真实身份，并且可能是概率性的。 在Real-time Customer Data Platform中，合作伙伴ID主要用于扩展受众激活和数据扩充，而不是用于构建确定性标识图链接。 |
+| 合作伙伴ID [!BADGE 测试版]{type=Informative} | 合作伙伴ID是数据合作伙伴用来表示人员的标识符。 合作伙伴ID通常以假名表示，以免泄露一个人的真实身份，并且可能是概率性的。 在Real-time Customer Data Platform中，合作伙伴ID主要用于扩展受众激活和数据扩充，而不是用于构建确定性标识图链接。 |
 | 电话号码 | 电话号码通常与单个人员相关联，因此可用于跨不同渠道识别该人员。 此类型的标识包括PII。 这表示 [!DNL Identity Service] 以敏感地处理值。 |
 
 ### 标准命名空间 {#standard}

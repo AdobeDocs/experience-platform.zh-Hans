@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Salesforce；Salesforce；字段映射；字段映射；映射；marketo；B2B；b2b
 title: Salesforce映射字段
 description: 下表包含Salesforce源字段与其对应的XDM字段之间的映射。
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
-source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
+source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '462'
 ht-degree: 9%
 
 ---

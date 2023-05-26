@@ -4,19 +4,14 @@ solution: Experience Platform
 title: Marketo Engage源的映射字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '922'
-ht-degree: 7%
+source-wordcount: '889'
+ht-degree: 4%
 
 ---
 
 # [!DNL Marketo Engage] 字段映射 {#marketo-engage-field-mappings}
-
->[!CONTEXTUALHELP]
->id="platform_sources_marketo_mapping"
->title="Marketo 源字段映射"
->abstract="要在 Marketo 和 Platform 之间建立源连接，Marketo 源数据字段必须在被提取到 Platform 之前映射到其相应的目标 XDM 字段。"
 
 下表包含九个字段之间的映射 [!DNL Marketo] 数据集及其相应的体验数据模型(XDM)字段。
 

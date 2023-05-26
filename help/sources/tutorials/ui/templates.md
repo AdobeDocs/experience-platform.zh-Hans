@@ -3,14 +3,19 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 使用UI中的模板创建源数据流
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 91d6832231d75c9dd23e91a5f1152eac61558fc5
+source-git-commit: 41694a96272819652c7176793f94a2de620d1d7a
 workflow-type: tm+mt
-source-wordcount: '1554'
-ht-degree: 9%
+source-wordcount: '1601'
+ht-degree: 8%
 
 ---
 
-# 使用UI中的模板创建源数据流
+# 使用UI中的模板创建源数据流 {#create-a-sources-dataflow-using-templates-in-the-ui}
+
+>[!CONTEXTUALHELP]
+>id="platform_sources_marketo_mapping"
+>title="Platform UI中的源模板"
+>abstract="模板包括自动生成的资源，例如架构、数据集、身份、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时可使用这些资源。 您可以更新自动生成的资源以进行自定义，以符合您的用例。"
 
 >[!IMPORTANT]
 >

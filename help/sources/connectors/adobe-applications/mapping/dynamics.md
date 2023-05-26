@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；Salesforce；Salesforce；字段映射；字段映射；映射；marketo；B2B；b2b
 title: Microsoft Dynamics映射字段
 description: 下表包含Microsoft Dynamics源字段与其对应的XDM字段之间的映射。
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
-source-git-commit: a278f27223c9a5d0b97a0aa6b5d943caf5f6b10e
+source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '524'
 ht-degree: 9%
 
 ---
