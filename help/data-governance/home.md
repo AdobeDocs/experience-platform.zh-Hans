@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据治理概述
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在各个级别的Experience Platform中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略和控制营销活动的数据使用
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
+source-git-commit: d45c813cf660d9bf738d09101536f1dfb41a1505
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1498'
 ht-degree: 1%
 
 ---
@@ -79,7 +79,7 @@ Adobe Experience Platform数据管理允许您管理客户数据，并确保遵�
 
 为了使数据使用标签有效地支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对中的数据执行的营销操作类型的规则 [!DNL Experience Platform].
 
-营销操作的示例可能是希望将数据集导出到第三方服务。 如果制定了声明个人身份信息(PII)无法导出的策略，并且已对数据集应用了“I”标签（身份数据）， [!DNL Policy Service] 阻止任何会将此数据集导出到第三方目标的操作。 如果发生其中一次操作尝试，策略服务将发送一条消息，告知您违反了数据使用策略。
+营销操作的示例可能是希望将数据集导出到第三方服务。 如果制定了声明个人身份信息(PII)无法导出的策略，并已将“I”标签（身份数据）应用于字段级别或数据集， [!DNL Policy Service] 阻止任何会将此数据集导出到第三方目标的操作。 如果发生其中一次操作尝试，策略服务将发送一条消息，告知您违反了数据使用策略。
 
 有两种可用的策略：
 
