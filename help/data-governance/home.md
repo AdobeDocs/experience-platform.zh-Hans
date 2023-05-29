@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据治理概述
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。 它在各个级别的Experience Platform中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略和控制营销活动的数据使用
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: d45c813cf660d9bf738d09101536f1dfb41a1505
+source-git-commit: e6f003a058f50454a6fd4923510976973c6946fb
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1518'
 ht-degree: 1%
 
 ---
@@ -127,8 +127,6 @@ Adobe Experience Platform数据管理允许您管理客户数据，并确保遵�
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
-<!-- A key section of the video is now outdated due to the deprecation of the dataset field level labelling feature.
+以下视频提供了有关如何将数据使用标签应用于Experience Platform中的架构和数据集的指南。
 
-The following video provides an introduction to various Data Governance features in Experience Platform.
-
->[!VIDEO](https://video.tv.adobe.com/v/36653?quality=12&enable10seconds=on&speedcontrol=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)
