@@ -5,7 +5,7 @@ title: 在UI中的Azure HDInsights源连接上创建Apache Spark
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI在Azure HDInsights源连接上创建Apache Spark。
 exl-id: 30d0b740-cec4-486f-9c9b-1579fd04f28b
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 1%

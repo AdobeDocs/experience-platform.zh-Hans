@@ -5,7 +5,7 @@ title: 使用流服务API在Azure HDInsights基本连接上创建Apache Hive
 type: Tutorial
 description: 了解如何使用流服务API将Azure HDInsights上的Apache Hive连接到Adobe Experience Platform。
 exl-id: e1469a29-6f61-47ba-995e-39f06ee4a4a4
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 1%

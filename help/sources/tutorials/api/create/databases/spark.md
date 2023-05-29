@@ -5,7 +5,7 @@ title: 使用流服务API在Azure HDInsights基本连接上创建Apache Spark
 type: Tutorial
 description: 了解如何使用流服务API将Azure HDInsights上的Apache Spark连接到Adobe Experience Platform。
 exl-id: 1f7ca86e-32f4-45f7-92c2-f87c5c0c4ea4
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 1%

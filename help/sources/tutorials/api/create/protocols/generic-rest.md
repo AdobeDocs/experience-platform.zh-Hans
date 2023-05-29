@@ -5,7 +5,7 @@ title: 使用流服务API创建通用REST API基本连接
 type: Tutorial
 description: 了解如何使用流服务API将Generic REST API连接到Adobe Experience Platform。
 exl-id: 6b414868-503e-49d5-8f4a-5b2fc003dab0
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '945'
 ht-degree: 1%

@@ -3,7 +3,7 @@ title: 使用流服务API为Chatlio创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Chatlio。
 badge: 测试版
 exl-id: 867b8096-0841-4462-9888-e60c97c2115e
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '1458'
 ht-degree: 1%

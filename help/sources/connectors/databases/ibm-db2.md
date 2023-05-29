@@ -4,7 +4,7 @@ solution: Experience Platform
 title: IBM DB2 Source Connector概述
 description: 了解如何使用API或用户界面将IBM DB2连接到Adobe Experience Platform。
 exl-id: 939e0151-fc07-4963-8ea2-0432dee713eb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 0%

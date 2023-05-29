@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；Teradata优势
 title: 在UI中创建Teradata优势源连接
 description: 了解如何使用Adobe Experience Platform UI创建TeradataVantage源连接。
 exl-id: 3fdb09fa-128a-477b-9144-d4ef3ed18ea6
-source-git-commit: 322b9aa5b817276eb4b56daf6e410944591c1d51
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 1%

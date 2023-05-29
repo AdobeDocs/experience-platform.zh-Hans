@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: （测试版）使用流服务API为Mixpanel创建源连接和数据流
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Mixpanel。
 exl-id: 804b876d-6fd5-4a28-b33c-4ecab1ba3333
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '2050'
 ht-degree: 1%

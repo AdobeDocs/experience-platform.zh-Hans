@@ -5,7 +5,7 @@ description: 了解如何使用Platform UI将Adobe Experience Platform连接到O
 hide: true
 hidefromtoc: true
 exl-id: 9ec5e1c2-3d9e-4729-be81-89a85d5ea782
-source-git-commit: 784ec5f799c591185620e8376a6980b4930d914a
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 1%

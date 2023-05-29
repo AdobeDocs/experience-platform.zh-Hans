@@ -5,7 +5,7 @@ description: 了解如何使用流服务API将Adobe Experience Platform连接到
 hide: true
 hidefromtoc: true
 exl-id: 76659f5a-c923-488c-88f6-1919bc6a7bb5
-source-git-commit: 784ec5f799c591185620e8376a6980b4930d914a
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '552'
 ht-degree: 1%

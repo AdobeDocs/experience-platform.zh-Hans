@@ -3,7 +3,7 @@ title: 使用流服务API为Pendo创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Pendo。
 badge: 测试版
 exl-id: 12b0295d-4b26-4eb7-a02a-a01d825d2a1e
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '1459'
 ht-degree: 1%

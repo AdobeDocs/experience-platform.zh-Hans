@@ -3,7 +3,7 @@ keywords: Experience Platform；Zendesk；源；连接器；源连接器；源SD
 title: 在UI中创建Zendesk源连接
 description: 了解如何使用Adobe Experience Platform UI创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '794'
 ht-degree: 6%

@@ -3,7 +3,7 @@ title: 使用流服务API为Customer.io创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Customer.io。
 badge: 测试版
 exl-id: 1c84d818-428f-4097-9f6f-ef0cf1a04785
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '1457'
 ht-degree: 1%

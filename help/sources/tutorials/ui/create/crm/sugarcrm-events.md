@@ -2,7 +2,7 @@
 title: 在UI中创建SugarCRM事件源连接
 description: 了解如何使用Adobe Experience Platform UI创建SugarCRM事件源连接。
 exl-id: db346ec0-2c57-4b82-8a39-f15d4cd377d4
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 1%

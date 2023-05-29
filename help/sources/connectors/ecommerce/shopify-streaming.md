@@ -4,7 +4,7 @@ description: 了解如何创建源连接和数据流，以将流数据从Shopify
 badge: 测试版
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: 4c83c08d-c744-4167-9e3b-ed9a995943f4
-source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 2%

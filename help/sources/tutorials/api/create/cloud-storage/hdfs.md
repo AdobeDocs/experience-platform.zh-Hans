@@ -5,7 +5,7 @@ title: 使用流服务API创建Apache HDFS基本连接
 type: Tutorial
 description: 了解如何使用流服务API将ApacheHadoop分布式文件系统连接到Adobe Experience Platform。
 exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '461'
 ht-degree: 1%

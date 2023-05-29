@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Couchbase源连接器概述
 description: 了解如何使用API或用户界面将Couchbase连接到Adobe Experience Platform。
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%

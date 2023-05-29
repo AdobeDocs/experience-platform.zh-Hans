@@ -2,7 +2,7 @@
 title: 使用流服务API创建Google Ads基本连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google Ads。
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: 7c77b0dc658ad45a25f4ead4e14f5826701cf645
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '747'
 ht-degree: 1%

@@ -2,7 +2,7 @@
 title: 在UI中创建SugarCRM帐户和联系人源连接
 description: 了解如何使用Adobe Experience Platform UI创建SugarCRM帐户和联系人源连接。
 exl-id: 45840d7e-4c19-4720-8629-be446347862d
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '779'
 ht-degree: 2%

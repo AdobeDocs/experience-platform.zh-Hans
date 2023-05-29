@@ -4,7 +4,7 @@ solution: Experience Platform
 title: FTP源连接器概述
 description: 了解如何使用API或用户界面将FTP服务器连接到Adobe Experience Platform。
 exl-id: a6186fad-8a7b-4103-80c7-a522ff69fe9e
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
