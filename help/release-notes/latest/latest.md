@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年5月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 43f505c6d3871e6ebc7d644aef6ec3b71f9fc2bc
+source-git-commit: c2b9f01453ecbc3348675e59b75c81280eded5f8
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1565'
 ht-degree: 4%
 
 ---
@@ -121,7 +121,7 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 | --- | --- | --- |
 | 字段组 | （多个） | 多个字段 [优惠项目](https://github.com/adobe/xdm/pull/1720/files) 更新了以从架构中删除双重层次结构。 |
 | 字段组 | [[!UICONTROL XDM单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1721/files) | 此 `partnerProspect` 元数据标记的选项已添加到 [!UICONTROL XDM单个潜在客户配置文件] 类。 |
-| 数据类型 | （多个） | 为添加了多个字段 [!UICONTROL 媒体详细信息] 数据类型。 |
+| 数据类型 | （多个） | 为添加了多个字段 [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/pull/1716/files) 数据类型。 |
 | 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/pull/1716/files) | 添加了新字段以指示是否发生重定向。 |
 | 字段组 | [[!UICONTROL MediaAnalytics交互详细信息]](https://github.com/adobe/xdm/pull/1716/files) | 添加了一个与媒体报告相关的新字段。 |
 
