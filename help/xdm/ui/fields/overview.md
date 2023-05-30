@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
+source-git-commit: 765079f084dce316d321fbac5aee9e387373ba00
 workflow-type: tm+mt
-source-wordcount: '1414'
+source-wordcount: '1505'
 ht-degree: 4%
 
 ---
@@ -86,7 +86,7 @@ ht-degree: 4%
 
 | 字段属性 | 兼容类型 | 描述 |
 | --- | --- | --- |
-| [!UICONTROL 默认值] | [!UICONTROL 字符串]， [!UICONTROL 双精度]， [!UICONTROL 长]， [!UICONTROL 整数]， [!UICONTROL 短]， [!UICONTROL 字节]， [!UICONTROL 布尔型] | 如果在摄取期间未提供其他值，则将分配给此字段的默认值。 此值必须符合字段的选定类型。 |
+| [!UICONTROL 默认值] | [!UICONTROL 字符串]， [!UICONTROL 双精度]， [!UICONTROL 长]， [!UICONTROL 整数]， [!UICONTROL 短]， [!UICONTROL 字节]， [!UICONTROL 布尔型] | 如果在摄取期间未提供其他值，则分配给此字段的默认值。 此值必须符合字段的选定类型。<br><br>默认值在摄取时不会保存在数据集中，因为它们可能会随着时间的推移而更改。 从数据集读取数据时，下游Platform服务和应用程序会推断架构中设置的默认值。 例如，在使用查询服务查询数据时，如果属性的值为NULL，但缺省值设置为 `5` 在架构级别，查询服务应返回 `5` 而不是NULL。 请注意，当前并非所有AEP服务中都有这种行为。 |
 | [!UICONTROL 图案] | [!UICONTROL 字符串] | A [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) 此字段的值必须符合才能在摄取期间被接受。 |
 | [!UICONTROL 格式] | [!UICONTROL 字符串] | 从值必须符合的预定义字符串格式列表中进行选择。 可用的格式包括： <ul><li>[[!UICONTROL 日期时间]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主机名]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL 最小长度] | [!UICONTROL 字符串] | 为使值在摄取期间被接受，字符串必须包含的最小字符数。 |
