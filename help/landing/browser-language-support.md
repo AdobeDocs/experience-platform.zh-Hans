@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience PlatformUI的浏览器和语言支持
 description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 74e6c2a56da8455bbecd301ed7e5ad10c0366dc5
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '256'
 ht-degree: 21%
 
 ---
@@ -38,7 +38,13 @@ Platform UI目前提供以下语言版本：
 * 英语
 * 法语
 * 德语
+* 西班牙语
 * 日语
+* 意大利语
+* 朝鲜语
+* 中文（繁体中文）
+* 繁体中文
+* 巴西语
 
 ### 更改默认语言
 
