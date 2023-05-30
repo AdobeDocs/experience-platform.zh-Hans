@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；流连接；创建流连接；ui指南；教程；创建流连接；流摄取；摄取；
-solution: Experience Platform
 title: 使用UI创建HTTP API流连接
-type: Tutorial
 description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: de721d204cda8e55c72ac5f530b89b2275d94306
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1000'
 ht-degree: 0%
 
 ---
@@ -71,7 +68,7 @@ ht-degree: 0%
 
 此 [!UICONTROL 映射] 此时将显示步骤，其中提供了一个将源数据映射到Platform数据集的界面。
 
-Parquet文件必须与XDM兼容，并且不需要手动配置映射，而CSV文件需要您明确配置映射，但允许您选择要映射的源数据字段。 如果标记为XDM投诉，则JSON文件不需要手动配置。 但是，如果它未标记为XDM兼容，则需要您明确配置映射。
+此 [!DNL HTTP API] 源支持摄取JSON文件。 如果将JSON文件标记为XDM投诉，则无需手动配置。 如果没有，则必须显式配置映射。
 
 选择要引入的集客数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -88,7 +85,6 @@ Parquet文件必须与XDM兼容，并且不需要手动配置映射，而CSV文�
 ![existing-dataset](../../../../images/tutorials/create/http/existing-dataset.png)
 
 ### 映射标准字段
-
 
 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
