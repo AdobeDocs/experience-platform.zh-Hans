@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年5月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fc886dc0d7abb1df76c12edc423bc788b443a788
+source-git-commit: 43f505c6d3871e6ebc7d644aef6ec3b71f9fc2bc
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1559'
 ht-degree: 4%
 
 ---
@@ -33,9 +33,11 @@ Adobe Experience Platform 现有功能的更新包括：
 - [数据治理](#data-governance)
 - [数据引入](#data-ingestion)
 - [目标](#destinations)
+- [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [查询服务](#query-service)
 - [源](#sources)
+
 
 ## 数据收集 {#data-collection}
 
@@ -105,9 +107,27 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版）SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
+- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版） SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
+
+**更新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | （多个） | 多个字段 [优惠项目](https://github.com/adobe/xdm/pull/1720/files) 更新了以从架构中删除双重层次结构。 |
+| 字段组 | [[!UICONTROL XDM单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1721/files) | 此 `partnerProspect` 元数据标记的选项已添加到 [!UICONTROL XDM单个潜在客户配置文件] 类。 |
+| 数据类型 | （多个） | 为添加了多个字段 [!UICONTROL 媒体详细信息] 数据类型。 |
+| 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/pull/1716/files) | 添加了新字段以指示是否发生重定向。 |
+| 字段组 | [[!UICONTROL MediaAnalytics交互详细信息]](https://github.com/adobe/xdm/pull/1716/files) | 添加了一个与媒体报告相关的新字段。 |
+
+{style="table-layout:auto"}
+
+有关Platform中XDM的更多信息，请阅读 [XDM系统概述](../../xdm/home.md).
 
 ## Identity Service {#identity-service}
 
