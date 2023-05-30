@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 在UI中更新源连接数据流
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: cef5c203acf3318445399669336166e6627ebe66
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '782'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,12 @@ ht-degree: 1%
 * [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 更新数据流
+## 更新数据流 {#update-dataflows}
+
+>[!CONTEXTUALHELP]
+>id="platform_sources_dataflows_daysRemaining"
+>title="数据集过期"
+>abstract="此列指示目标数据集在自动过期前剩余的天数。<br>如果目标数据集过期，数据流将失败。 要防止数据流失败，请确保将目标数据集设置为在正确的日期过期。 请参阅文档以了解如何更新过期日期。"
 
 在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 选择 **[!UICONTROL 数据流]** 查看现有数据流的列表。
 

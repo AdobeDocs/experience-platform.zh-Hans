@@ -7,7 +7,7 @@ exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
 source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
 source-wordcount: '1380'
-ht-degree: 17%
+ht-degree: 19%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 17%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
 >title="在 Platform 中治理数据使用"
->abstract="<h2>描述</h2><p>Experience Platform中的数据管理框架允许您根据数据使用限制来标记属性和架构，并设置策略以识别和执行特定营销操作的这些限制。</p>"
+>abstract="<h2>描述</h2><p>通过 Experience Platform 中的数据治理框架，可根据数据使用限制为属性和架构加标签，以及设置标识特定营销活动并为其遵守这些限制的策略。</p>"
 
 本用户指南介绍了在中使用数据使用标签的步骤。 [!DNL Experience Platform] 用户界面。
 

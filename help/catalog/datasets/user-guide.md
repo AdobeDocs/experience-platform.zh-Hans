@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: f0cd059683531993398f0a81d6eda486276853e2
+source-git-commit: 11d6cf09dede8c7c14bbbcd3c109e703a5d053de
 workflow-type: tm+mt
-source-wordcount: '1485'
+source-wordcount: '1504'
 ht-degree: 7%
 
 ---
@@ -33,6 +33,11 @@ ht-degree: 7%
 >title="数据集活动中的负数"
 >abstract="摄取的记录中的负数表示用户已删除选定时间范围内的某些批次。"
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_daysRemaining"
+>title="数据集过期"
+>abstract="此列指示目标数据集在自动过期前剩余的天数。"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 仪表板。 仪表板列出您组织的所有可用数据集。 会显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 
