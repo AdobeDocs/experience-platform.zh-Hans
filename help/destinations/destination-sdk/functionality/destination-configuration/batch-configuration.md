@@ -1,9 +1,9 @@
 ---
 description: 了解如何为使用Destination SDK构建的目标配置文件导出设置。
 title: 批次配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: f2e04d6f96132aa5cee3602190375e0f3eb96c97
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '1073'
 ht-degree: 4%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 4%
          ],
          "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
       },
+   "segmentGroupingEnabled": true
    }
 ```
 
@@ -97,6 +98,7 @@ ht-degree: 4%
 | `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*. 可供用户选择的可用文件名宏列表。 这会确定哪些项目已附加到导出的文件名（区段ID、组织名称、导出日期和时间等）。 设置时 `defaultFilename`中，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论定义宏的顺序如何，Experience PlatformUI将始终按此处显示的顺序显示它们。 <br><br> 如果 `defaultFilename` 为空，则 `allowedFilenameAppendOptions` 列表必须至少包含一个宏。 |
 | `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*. 用户可以取消勾选的预选默认文件名宏。<br><br> 此列表中的宏是中定义的宏的子集 `allowedFilenameAppendOptions`. |
 | `filenameConfig.defaultFilename` | 字符串 | *可选*. 为导出的文件定义缺省文件名宏。 用户无法覆盖这些内容。 <br><br>由定义的任何宏 `allowedFilenameAppendOptions` 将附加在 `defaultFilename` 宏。 <br><br>如果 `defaultFilename` 为空，则必须在中至少定义一个宏 `allowedFilenameAppendOptions`. |
+| `segmentGroupingEnabled` | 布尔值 | 根据受众，定义激活的受众是应导出到单个文件还是多个文件中 [合并策略](../../../../profile/merge-policies/overview.md). 支持的值： <ul><li>`true`：为每个合并策略导出一个文件。</li><li>`false`：每个受众导出一个文件，而不考虑合并策略。 这是默认行为。 完全忽略此参数也可以获得相同的结果。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -120,6 +122,8 @@ ht-degree: 4%
 | `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 两者都定义生成文件的时间，但格式不同。 <br><br><ul><li>`DATETIME` 使用以下格式：YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位数Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 是互斥的，不能同时使用。 | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
 | `CUSTOM_TEXT` | [!UICONTROL 自定文本] | 要包含在文件名中的用户定义的自定义文本。 不能用于 `defaultFilename`. | My_Custom_Text |
 | `TIMESTAMP` | [!UICONTROL 日期和时间] | 生成文件时的10位数时间戳（Unix格式）。 | 1652131584 |
+| `MERGE_POLICY_ID` | [!UICONTROL 合并策略Id] | 的ID [合并策略](../../../../profile/merge-policies/overview.md) 用于生成导出的受众。 在文件中根据合并策略对导出的区段进行分组时，使用此宏。 将此宏与 `segmentGroupingEnabled:true`. | e8591fdb-2873-4b12-b63e-15275b1c1439 |
+| `MERGE_POLICY_NAME` | [!UICONTROL 合并策略名称] | 的名称 [合并策略](../../../../profile/merge-policies/overview.md) 用于生成导出的受众。 在文件中根据合并策略对导出的区段进行分组时，使用此宏。 将此宏与 `segmentGroupingEnabled:true`. | 我的自定义合并策略 |
 
 {style="table-layout:auto"}
 
