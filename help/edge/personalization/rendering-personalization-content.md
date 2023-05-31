@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK呈现个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions；sendEvent；decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: c75a8bdeaba67259b5f4b4ce025d5e128d763040
+source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
 workflow-type: tm+mt
 source-wordcount: '962'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html)， [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans).
 
-此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/configure-personalization-destinations.md).
+此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/activate-edge-personalization-destinations.md).
 
 在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 以及Adobe Journey Optimizer的 [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) SDK可自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
 

@@ -3,33 +3,31 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标为网站上运行的外部个性化、内容管理系统、广告服务器和其他应用程序提供了一种从Adobe Experience Platform检索区段信息的方法。 此目标根据用户个人资料区段会员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 09e81093c2ed2703468693160939b3b6f62bc5b6
+source-git-commit: 1ffcbabe29994fb881ff622394d669c4340c94f1
 workflow-type: tm+mt
-source-wordcount: '1305'
-ht-degree: 6%
+source-wordcount: '879'
+ht-degree: 9%
 
 ---
+
 
 # 自定义个性化连接 {#custom-personalization-connection}
 
 ## 目标更改日志 {#changelog}
 
-通过Beta版的 **[!UICONTROL 自定义个性化]** 目标连接器，您可能会看到两个 **[!UICONTROL 自定义个性化]** 目标目录中的信息卡。
+| 发行月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2023 年 5 月 | 功能和文档更新 | 截至2023年5月， **[!UICONTROL 自定义个性化]** 连接支持 [基于属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes) 并向所有客户正式提供。 |
 
-此 **[!UICONTROL 使用属性进行自定义个性化]** connector目前为测试版，仅向部分客户提供。 除了提供的功能外， **[!UICONTROL 自定义个性化]**，则 **[!UICONTROL 使用属性进行自定义个性化]** 连接器添加一个可选 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，它允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。
+{style="table-layout:auto"}
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 使用属性进行自定义个性化]** 目标要求您使用 [边缘网络服务器API](/help/server-api/overview.md) 用于数据收集。 此外，所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
+>配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 自定义个性化]** 目标要求您使用 [边缘网络服务器API](/help/server-api/overview.md) 在为基于属性的个性化配置目标时。 所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
 >
->如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过两种方式通过服务器API检索属性：
+><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
 >
-> * 添加通过服务器API检索属性的服务器端集成。
-> * 使用自定义Javascript代码更新客户端配置，以通过服务器API检索属性。
->
-> 如果不遵循上述要求，则个性化将仅基于区段成员资格，与提供的体验相同。 **[!UICONTROL 自定义个性化]** 连接器。
-
-![并排视图中两张自定义个性化目标卡的图像。](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
+><br>如果不遵循上述要求，则仅基于区段成员资格进行个性化。
 
 ## 概述 {#overview}
 
@@ -41,35 +39,14 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->在创建自定义个性化连接之前，请阅读有关如何执行以下操作 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
+>在创建自定义个性化连接之前，请阅读有关如何执行以下操作 [将受众数据激活到边缘个性化目标](../../ui/activate-edge-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
 ## 导出类型和频率 {#export-type-frequency}
 
-**配置文件请求**  — 您正在请求在单个配置文件的自定义个性化目标中映射的所有区段。 可以为不同的设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/datastreams/overview.md).
-
-## 用例 {#use-cases}
-
-此 [!DNL Custom Personalization Connection] 使您能够使用自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如，内部CMS），同时利用Experience Platform边缘网络数据收集和分段功能，以提供更深入的客户个性化体验。
-
-下面介绍的用例包括网站个性化和有针对性的网站广告。
-
-要启用这些用例，客户需要一种快速、简化的方式，从Experience Platform检索区段信息，并将该信息发送到他们在Experience PlatformUI中配置为自定义个性化连接的指定系统。
-
-这些系统可以是外部个性化平台、内容管理系统、广告服务器，以及跨客户的Web和移动资产运行的其他应用程序。
-
-### 同一页面个性化 {#same-page}
-
-用户访问您网站的页面。 客户可以使用当前页面访问信息（例如，引荐URL、浏览器语言、嵌入的产品信息）选择下一个操作/决策（例如，个性化），对非Adobe平台使用自定义个性化连接(例如， [!DNL Pega]， [!DNL Optimizely]、等)。
-
-### 下一页面个性化 {#next-page}
-
-用户访问您网站上的页面A。 基于此交互，用户已获得一组区段的资格。 然后，用户单击一个链接，该链接会将用户从页面A转到页面B。用户在上次与页面A进行交互期间符合条件的区段，以及当前网站访问决定的用户档案更新，将用于支持下一个操作/决策（例如，向访客显示哪个广告横幅，或者在A/B测试的情况下，显示哪个页面版本）。
-
-### 下一个会话个性化 {#next-session}
-
-用户访问您网站上的多个页面。 根据这些交互，用户已符合一组区段的条件。 然后，用户终止当前浏览会话。
-
-第二天，用户返回到同一客户网站。 之前与所有访问过的网站页面交互时，他们符合条件的区段，以及当前网站访问决定的用户档案更新，将用于选择下一个操作/决策（例如，向访客显示哪个广告横幅，或者，在A/B测试的情况下，用于显示页面的哪个版本）。
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有区段。 可以为不同的设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/datastreams/overview.md). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## 连接到目标 {#connect}
 
@@ -106,7 +83,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [激活用户档案和区段边缘个性化目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 

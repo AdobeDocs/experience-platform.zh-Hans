@@ -3,10 +3,10 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户交互中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
+source-git-commit: bee1bf0ec9cbf35ea7303921059068c01cb9f54a
 workflow-type: tm+mt
-source-wordcount: '1011'
-ht-degree: 7%
+source-wordcount: '908'
+ht-degree: 8%
 
 ---
 
@@ -14,18 +14,21 @@ ht-degree: 7%
 
 ## 目标更改日志 {#changelog}
 
->[!IMPORTANT]
->
->随着增强型Adobe Target V2目标连接器的测试版发布，您可能会在目标目录中看到两个Adobe Target卡。
->Adobe Target V2目标连接器目前为测试版，仅向部分客户提供。 除了AdobeV1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 至激活工作流，该工作流允许您将配置文件属性映射到Adobe Target，从而实现基于属性的同页和下一页个性化。
+| 发行月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2023 年 4 月 | 功能和文档更新 | 截至2023年4月， **[!UICONTROL Adobe Target]** 连接支持 [基于属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes) 并向所有客户正式提供。 |
 
-![并排视图中两个Adobe Target目标卡的图像。](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
+{style="table-layout:auto"}
 
 ## 概述 {#overview}
 
 Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户交互中提供由AI支持的实时个性化和实验功能。
 
 Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
+
+有关如何在Experience Platform中配置Adobe Target连接的简短概述，请观看以下视频。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 ## 先决条件 {#prerequisites}
 
@@ -37,7 +40,7 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!IMPORTANT]
 >
->创建之前 [!DNL Adobe Target] connection，请阅读操作指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 同页和下一页个性化要求您在配置Adobe Target连接时使用数据流ID。
+>创建之前 [!DNL Adobe Target] connection，请阅读操作指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/activate-edge-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 同页和下一页个性化要求您在配置Adobe Target连接时使用数据流ID。
 
 ### Adobe Target中的先决条件 {#prerequisites-in-adobe-target}
 
@@ -58,12 +61,6 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 | 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
-
-## 用例 {#use-cases}
-
-**个性化主页横幅**
-
-一家家庭租赁和销售公司希望根据Adobe Experience Platform中的客户区段资格条件，使用横幅来个性化其主页。 公司可以选择应该获得个性化体验的受众，并将这些受众发送到Adobe Target作为其Target选件的定位标准。
 
 ## 连接到目标 {#connect}
 
@@ -92,7 +89,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 | 未选择数据流 | 已选择数据流 |
 |---|---|
-| <ul><li>[边缘分段](../../../segmentation/ui/edge-segmentation.md) 不受支持。</li><li>[同一页面和下一页面个性化](../../ui/configure-personalization-destinations.md) 不受支持。</li><li>您只能将区段共享到Adobe Target连接， *默认生产沙盒*.</li><li>要在不使用数据流ID的情况下配置下一会话个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>边缘分段按预期工作。</li><li>[同一页面和下一页面个性化](../../ui/configure-personalization-destinations.md) 受支持。</li><li>其他沙盒支持区段共享。</li></ul> |
+| <ul><li>[边缘分段](../../../segmentation/ui/edge-segmentation.md) 不受支持。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md) 不受支持。</li><li>您只能将区段共享到Adobe Target连接， *默认生产沙盒*.</li><li>要在不使用数据流ID的情况下配置下一会话个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>边缘分段按预期工作。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md) 受支持。</li><li>其他沙盒支持区段共享。</li></ul> |
 
 ### 启用警报 {#enable-alerts}
 
@@ -106,7 +103,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 

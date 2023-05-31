@@ -2,7 +2,7 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，根据Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: 813a564eb02a5366945468ee689b2744e31baaa8
+source-git-commit: 276224303c7a65a53ff859bcbf47f64a6925bf77
 workflow-type: tm+mt
 source-wordcount: '720'
 ht-degree: 3%
@@ -67,7 +67,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众激活到 [!DNL Commerce] 目标。
+读取 [将配置文件和区段激活到配置文件请求目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众激活到 [!DNL Commerce] 目标。
 
 ## 中的后续步骤 [!DNL Adobe Commerce]
 

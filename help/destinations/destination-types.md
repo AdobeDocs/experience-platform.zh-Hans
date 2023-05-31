@@ -3,7 +3,7 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
+source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
 workflow-type: tm+mt
 source-wordcount: '718'
 ht-degree: 0%
@@ -61,7 +61,7 @@ ht-degree: 0%
 
 Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化目标](/help/destinations/catalog/personalization/custom-personalization.md). 通过使用这些目标，您可以为客户启用同页和下一页个性化用例。
 
-详细了解如何 [为同一页面和下一页面个性化配置个性化目标](/help/destinations/ui/configure-personalization-destinations.md).
+详细了解如何 [为同一页面和下一页面个性化配置个性化目标](/help/destinations/ui/activate-edge-personalization-destinations.md).
 
 ## 配置文件导出和区段导出目标 — 视频概述 {#video}
 

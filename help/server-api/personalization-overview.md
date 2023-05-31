@@ -2,7 +2,7 @@
 title: 个性化概述
 description: 了解如何使用Adobe Experience Platform Edge Network Server API从Adobe个性化解决方案中检索个性化内容。
 exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
-source-git-commit: f36892103b0b202550c07a70538c97b1cc673840
+source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 9%
@@ -13,7 +13,7 @@ ht-degree: 9%
 
 使用 [!DNL Server API]，您可以从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=en).
 
-此外， [!DNL Server API] 通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../destinations/ui/configure-personalization-destinations.md).
+此外， [!DNL Server API] 通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../destinations/ui/activate-edge-personalization-destinations.md).
 
 在使用服务器API时，您必须将个性化引擎提供的响应与用于呈现网站上的内容的逻辑集成。 不像 [Web SDK](../edge/home.md)，则 [!DNL Server API] 没有自动应用返回内容的机制 [!DNL Adobe Target] 和 [!DNL Offer Decisioning].
 

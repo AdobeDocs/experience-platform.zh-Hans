@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: Adobe Experience Platform 2022年8月版发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
+source-git-commit: 7f5a1d8e50ff030b2abe04b5155f28b8c8b6fbf9
 workflow-type: tm+mt
 source-wordcount: '2082'
 ht-degree: 6%
@@ -94,7 +94,7 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它，您可以查
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| （测试版）对个性化目标的基于属性的个性化支持 | 随着基于属性的个性化测试版的发布，您将在 [目标目录](../../destinations/catalog/overview.md)： <ul><li>**[!UICONTROL Adobe Target V2]**：此连接器目前为测试版，仅向部分客户提供。 除了Adobe Target V1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 至激活工作流，该工作流允许您将配置文件属性映射到Adobe Target，从而实现基于属性的同页和下一页个性化。</li><li>**[!UICONTROL 使用属性进行自定义个性化]**：此连接器目前为测试版，仅向部分客户提供。 除了提供的功能外， **[!UICONTROL 自定义个性化]**，则 **[!UICONTROL 使用属性进行自定义个性化]** 连接器添加一个可选 [映射步骤](../../destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，它允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。</li></ul> <br> 配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 使用属性进行自定义个性化]** 目标要求您使用 [边缘网络服务器API](../../server-api/overview.md) 用于数据收集。 此外，所有服务器API调用必须在 [已验证的上下文](../../server-api/authentication.md). |
+| （测试版）对个性化目标的基于属性的个性化支持 | 随着基于属性的个性化测试版的发布，您将在 [目标目录](../../destinations/catalog/overview.md)： <ul><li>**[!UICONTROL Adobe Target V2]**：此连接器目前为测试版，仅向部分客户提供。 除了Adobe Target V1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes) 至激活工作流，该工作流允许您将配置文件属性映射到Adobe Target，从而实现基于属性的同页和下一页个性化。</li><li>**[!UICONTROL 使用属性进行自定义个性化]**：此连接器目前为测试版，仅向部分客户提供。 除了提供的功能外， **[!UICONTROL 自定义个性化]**，则 **[!UICONTROL 使用属性进行自定义个性化]** 连接器添加一个可选 [映射步骤](../../destinations/ui/activate-edge-personalization-destinations.md#map-attributes) 激活工作流，它允许您将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。</li></ul> <br> 配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 使用属性进行自定义个性化]** 目标要求您使用 [边缘网络服务器API](../../server-api/overview.md) 用于数据收集。 此外，所有服务器API调用必须在 [已验证的上下文](../../server-api/authentication.md). |
 
 {style="table-layout:auto"}
 

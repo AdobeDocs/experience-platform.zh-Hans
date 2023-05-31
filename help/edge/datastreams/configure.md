@@ -2,7 +2,7 @@
 title: 配置数据流
 description: 了解如何将客户端Web SDK集成与其他Adobe产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 209aa63717e05fabc8742ac591102b8fdb243ee4
+source-git-commit: dc70b6ec79c3d87c940794e1b9fd8029d2b13254
 workflow-type: tm+mt
 source-wordcount: '2115'
 ht-degree: 2%
@@ -123,8 +123,8 @@ ht-degree: 2%
 | [!UICONTROL 事件数据集] | **（必需）** 选择客户事件数据将流式传输到的Platform数据集。 此架构必须使用 [XDM ExperienceEvent类](../../xdm/classes/experienceevent.md). 要添加其他数据集，请选择 **[!UICONTROL 添加事件数据集]**. |
 | [!UICONTROL 配置文件数据集] | 选择客户属性数据将发送到的Platform数据集。 此架构必须使用 [XDM Individual Profile类](../../xdm/classes/individual-profile.md). |
 | [!UICONTROL 优惠决策] | 选中此复选框可为Platform Web SDK实现启用Offer decisioning。 请参阅指南，网址为 [在Platform Web SDK中使用Offer decisioning](../personalization/offer-decisioning/offer-decisioning-overview.md) 以了解更多实施详细信息。<br><br>有关Offer decisioning功能的详细信息，请参阅 [Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html?lang=zh-Hans). |
-| [!UICONTROL 边缘分段] | 选中此复选框可启用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 用于此数据流。 当SDK通过启用了边缘分段的数据流发送数据时，相关用户档案的任何更新区段成员资格都会在响应中发送回。<br><br>此选项可以与 [!UICONTROL 个性化目标] 对象 [下一页个性化用例](../../destinations/ui/configure-personalization-destinations.md). |
-| [!UICONTROL 个性化目标] | 在启用 [!UICONTROL 边缘分段] 复选框，此选项允许数据流连接到个性化目标，例如 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md).<br><br>请参阅目标文档，以了解有关的特定步骤 [配置个性化目标](../../destinations/ui/configure-personalization-destinations.md). |
+| [!UICONTROL 边缘分段] | 选中此复选框可启用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 用于此数据流。 当SDK通过启用了边缘分段的数据流发送数据时，相关用户档案的任何更新区段成员资格都会在响应中发送回。<br><br>此选项可以与 [!UICONTROL 个性化目标] 对象 [下一页个性化用例](../../destinations/ui/activate-edge-personalization-destinations.md). |
+| [!UICONTROL 个性化目标] | 在启用 [!UICONTROL 边缘分段] 复选框，此选项允许数据流连接到个性化目标，例如 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md).<br><br>请参阅目标文档，以了解有关的特定步骤 [配置个性化目标](../../destinations/ui/activate-edge-personalization-destinations.md). |
 | [!UICONTROL Adobe Journey Optimizer] | 选中此复选框可启用 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) 用于此数据流。 <br><br> 启用此选项后，数据流即可从的基于Web和应用程序的入站营销活动中返回个性化内容。 [!DNL Adobe Journey Optimizer]. 此选项需要 [!UICONTROL 边缘分段] 以激活。 如果 [!UICONTROL 边缘分段] 未选中，此选项将灰显。 |
 
 ### Adobe Target设置 {#target}
