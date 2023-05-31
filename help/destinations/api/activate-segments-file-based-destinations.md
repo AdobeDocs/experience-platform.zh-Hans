@@ -4,10 +4,10 @@ title: 使用流服务API将区段激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 5ab72c11a5fd73f10eef6b7bb3e0d3386098748e
 workflow-type: tm+mt
-source-wordcount: '4337'
-ht-degree: 2%
+source-wordcount: '4442'
+ht-degree: 3%
 
 ---
 
@@ -956,7 +956,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     "params": {
       "domain": "<Add domain>",
       "username": "<Add username>",
-      "password": "<Add password>"
+      "password": "<Add password>",
+      "port": "<Add port>"      
     }
   },
   "connectionSpec": {
@@ -965,6 +966,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
   }
 }'
 ```
+
+| 属性 | 描述 |
+| --------- | ----------- |
+| `specName` | 使用 `SFTP with Password`。 |
+| `domain` | SFTP存储位置的IP地址或域名。 |
+| `username` | 用于登录到SFTP存储位置的用户名。 |
+| `password` | 用于登录到SFTP存储位置的密码。 |
+| `port` | SFTP存储位置使用的端口。 |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -991,7 +1002,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     "params": {
       "domain": "<Add domain>",
       "username": "<Add username>",
-      "sshKey": "<Add SSH key>"
+      "sshKey": "<Add SSH key>",
+      "port": "<Add port>"
     }
   },
   "connectionSpec": {
@@ -1000,6 +1012,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
   }
 }'
 ```
+
+| 属性 | 描述 |
+| --------- | ----------- |
+| `specName` | 使用 `SFTP with Password`。 |
+| `domain` | SFTP存储位置的IP地址或域名。 |
+| `username` | 用于登录到SFTP存储位置的用户名。 |
+| `sshKey` | 用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。 |
+| `port` | SFTP存储位置使用的端口。 |
+
+{style="table-layout:auto"}
 
 +++
 

@@ -4,9 +4,9 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到具有附加功能的新云存储目标卡的过程中，激活云存储目标的工作流中所做的更改。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 8ca63586855f2c62231662906646eb8abcfdcc0e
+source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1418'
 ht-degree: 0%
 
 ---
@@ -433,7 +433,6 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
 除了上述更新的流量和连接规范外，创建SFTP基本连接时所需的参数也有变化。
 
 * 以前，SFTP目标的基本连接需要 `host` 参数。 此参数现在已重命名为 `domain`.
-* 对于使用SSH密钥进行身份验证选项，基本连接中的身份验证参数需要 `port` 选项。 此参数现已弃用，不再需要。
 
 在下面的选项卡中查看SFTP的完整旧版和新版基本连接和目标连接示例，并突出显示更改行。 为SFTP目标创建目标连接所需的参数不会更改。
 
@@ -567,7 +566,8 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
       "authorizedDate": "2022-06-02",
       "domain": "ftp-out.demdex.com",
       "username": "DPID12345",
-      "password": "<your-password>"
+      "password": "<your-password>",
+      "port": 22      
     }
   },
   "encryption": {

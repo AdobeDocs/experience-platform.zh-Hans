@@ -2,9 +2,9 @@
 description: 了解在将数据激活到基于文件的目标时如何配置文件格式选项
 title: （测试版）为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: b1e9b781f3b78a22b8b977fe08712d2926254e8c
+source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1226'
 ht-degree: 19%
 
 ---
@@ -111,8 +111,8 @@ ht-degree: 19%
 
 使用此控件可设置空值的字符串表示形式。 此选项确定空值在导出的CSV文件中的表示方式。 可用选项包括：
 
-* **[!UICONTROL null]**
-* **“”**
+* **[!UICONTROL Null (null)]**
+* **双引号(“”)中的空字符串**
 * **[!UICONTROL 空字符串]**
 
 #### 示例
@@ -136,8 +136,8 @@ ht-degree: 19%
 
 使用此选项设置应如何在导出的文件中表示 null 值。此选项确定在导出的CSV文件中如何表示null值。 可用选项包括：
 
-* **[!UICONTROL null]**
-* **&quot;&quot;**
+* **[!UICONTROL Null (null)]**
+* **双引号(“”)中的空字符串**
 * **[!UICONTROL 空字符串]**
 
 #### 示例

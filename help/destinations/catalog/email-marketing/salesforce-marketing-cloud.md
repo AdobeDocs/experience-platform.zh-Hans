@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件目标；salesforce；salesf
 title: SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud是一个数字营销套件，以前称为ExactTarget，通过它可以为访客和客户构建和自定义历程，从而个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
+source-git-commit: ba4090d95a4a476e76d946e36f8370202f26d23e
 workflow-type: tm+mt
-source-wordcount: '655'
-ht-degree: 1%
+source-wordcount: '748'
+ht-degree: 2%
 
 ---
 
@@ -53,15 +53,15 @@ ht-degree: 1%
 While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
 * 对象 **[!UICONTROL 包含密码的SFTP]** 连接，您必须提供：
-   * [!UICONTROL 域]
-   * [!UICONTROL 端口]
-   * [!UICONTROL 用户名]
-   * [!UICONTROL 密码]
+   * **[!UICONTROL 域]**：SFTP帐户的IP地址或域名；
+   * **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
+   * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
+   * **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
 * 对象 **[!UICONTROL 使用SSH密钥的SFTP]** 连接，您必须提供：
-   * [!UICONTROL 域]
-   * [!UICONTROL 端口]
-   * [!UICONTROL 用户名]
-   * [!UICONTROL SSH密钥]
+   * **[!UICONTROL 域]**：SFTP帐户的IP地址或域名；
+   * **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
+   * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
+   * **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
 
 * 或者，您可以附加RSA格式的公钥，以将使用PGP/GPG的加密添加到导出文件，位于 **[!UICONTROL 键]** 部分。 您的公钥必须写为 [!DNL Base64] 编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。
