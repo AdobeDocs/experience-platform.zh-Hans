@@ -3,10 +3,10 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标的最常见问题解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: abb6b598a2ec1f7589cb99204b6ccc2d4b55b5ec
 workflow-type: tm+mt
-source-wordcount: '864'
-ht-degree: 4%
+source-wordcount: '1364'
+ht-degree: 3%
 
 ---
 
@@ -104,3 +104,53 @@ Google要求区段名称是唯一的。 您所看到的数字是 [UNIX时间戳]
 **我可以激活哪种身份 [!DNL LinkedIn]？**
 
 [!DNL LinkedIn Matched Audiences] 支持激活以下标识：经过哈希处理的电子邮件， [!DNL GAID]、和 [!DNL IDFA].
+
+## 通过Adobe Target和自定义个性化目标实现同页和下一页个性化 {#same-next-page-personalization}
+
+**是否需要使用Experience PlatformWeb SDK将受众和属性发送到Adobe Target？**
+
+不， [Web SDK](../edge/home.md) 不需要将受众激活到 [Adobe Target](catalog/personalization/adobe-target-connection.md).
+
+但是，如果 [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en) 代替Web SDK，仅支持下一会话个性化。
+
+对象 [同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md) 用例，您必须使用 [Web SDK](../edge/home.md) 或 [边缘网络服务器API](../server-api/overview.md). 请参阅相关文档 [将受众激活到Edge目标](ui/activate-edge-personalization-destinations.md) 以了解更多实施详细信息。
+
+**我可以从Real-time Customer Data Platform发送到Adobe Target或自定义个性化目标的属性数量是否存在限制？**
+
+可以，在将受众激活到Adobe Target或自定义个性化目标时，同页和下一页个性化用例最多支持每个沙盒30个属性。 请参阅中有关激活护栏的更多信息 [护栏文档](guardrails.md#edge-destinations-activation).
+
+**激活支持哪些类型的属性（例如数组、映射等）？**
+
+目前，仅支持叶级属性进行激活。
+
+<!-- **Is there a limit on the number of audiences that can be activated to Adobe Target and Custom Personalization destinations?**
+
+Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more information on activation guardrails, see the [default guardrails for activation](guardrails.md#edge-destinations-activation). -->
+
+**在Experience Platform中创建受众后，需要多长时间才能将该受众用于Edge分段用例？**
+
+受众定义将传播到 [边缘网络](../edge/home.md) 最多一小时。 但是，如果在这第一个小时内激活某个受众，则可能会错过某些符合受众条件的访客。
+
+**可在何处查看Adobe Target中的已激活属性？**
+
+属性将在Target中使用 [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) 和 [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans) 选件。
+
+**我是否可以创建一个没有数据流的目标，然后在以后再向同一目标添加数据流？**
+
+当前不支持通过目标UI执行此操作。 如果在此情况下您需要帮助，请联系您的Adobe代表。
+
+**如果我删除Adobe Target目标，会发生什么情况？**
+
+当您删除目标时，所有在目标下映射的受众和属性都会从Adobe Target中删除，同时也会从Edge Network中删除。
+
+**集成是否可以使用Edge Network Server API？**
+
+是，Edge Network Server API可与自定义个性化目标配合使用。 由于配置文件属性可能包含敏感数据，为了保护此数据，自定义个性化目标要求您使用Edge Network Server API进行数据收集。 此外，所有API调用都必须在 [已验证的上下文](../server-api/authentication.md).
+
+**我只能有一个边缘活动合并策略。 我是否可以生成使用其他合并策略的受众，并且仍然将这些受众作为流区段发送到Adobe Target？**
+
+不会。要激活到Adobe Target的所有受众都必须使用active-on-edge [合并策略](../profile/merge-policies/ui-guide.md).
+
+**是否强制执行数据使用标签和执行(DULE)及同意策略？**
+
+可以。此 [数据治理和同意策略](../data-governance/home.md) 创建并关联选定的营销操作将控制选定属性的激活。
