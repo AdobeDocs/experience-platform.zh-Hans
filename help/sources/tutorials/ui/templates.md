@@ -3,10 +3,10 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 使用UI中的模板创建源数据流
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 41694a96272819652c7176793f94a2de620d1d7a
+source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
 workflow-type: tm+mt
-source-wordcount: '1601'
-ht-degree: 8%
+source-wordcount: '2258'
+ht-degree: 6%
 
 ---
 
@@ -91,6 +91,83 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >[!ENDTABS]
 
 ### 选择模板
+
+通过您的帐户进行身份验证，您现在可以选择要用于数据流的模板。
+
++++[!DNL Marketo Engage] 模板下表概述了可用于的模板 [!DNL Marketo Engage] 源。
+
+| [!DNL Marketo Engage] 模板 | 描述 |
+| --- | --- |
+| 活动 | “活动”模板可捕获活动（如电子邮件交互、网站交互和销售呼叫）的基于事件的快照。 |
+| 公司 | 公司模板可捕获业务帐户详细信息，如公司公司公司信息、位置和账单信息。 |
+| 指定帐户 | 指定帐户模板可捕获已确定为要跟踪的目标帐户的详细信息。 |
+| 机会 | Opportunities模板可捕获业务机会详细信息，如类型、销售阶段和相关客户。 |
+| 机会联系人角色 | Opportunity Contact Roles模板可捕获与特定机会关联的潜在客户角色的详细信息。 |
+| 人员 | “人员”模板可捕获个人人员的属性，如人口统计详细信息、联系人信息和同意首选项。 |
+| 计划成员资格 | 计划成员资格模板可捕获与商业营销活动关联的联系人的详细信息，包括培养节奏和联系人回复。 |
+| 项目 | 项目模板可捕获商业营销活动详细信息，如状态、渠道、时间表和成本。 |
+| 静态列表成员资格 | 静态列表成员资格模板捕获人员与其静态列表中的成员资格之间的关系。 |
+| 静态列表 | 静态列表模板可捕获特定用例的人员实例化列表。 |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Salesforce] B2B模板下表概述了可用于的B2B模板 [!DNL Salesforce] 源。
+
+| [!DNL Salesforce] B2B模板 | 描述 |
+| --- | --- |
+| 帐户联系人关系 | 帐户联系人关系模板可捕获联系人与一个或多个帐户之间的关系。 |
+| 帐户 | Account模板可捕获业务帐户详细信息，如公司公司信息、位置和账单信息。 |
+| 营销活动成员 | Campaign Members模板捕获单个商机或联系人与特定商机或联系人之间的关系 [!DNL Salesforce] 营销活动。 |
+| 营销活动 | 营销活动模板可捕获业务帐户详细信息，如公司信息、位置和账单信息。 |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 潜在客户 | Leads模板可捕获潜在客户的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 机会 | Opportunities模板可捕获业务机会详细信息，如类型、销售阶段和相关帐户。 |
+| 机会联系人角色 | Opportunity Contact Roles模板可捕获与特定机会关联的潜在客户角色的详细信息。 |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Salesforce] B2C模板下表概述了可用于的B2C模板 [!DNL Salesforce] 源。
+
+| [!DNL Salesforce] B2C模板 | 描述 |
+| --- | --- |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 潜在客户 | Lead模板可捕获潜在客户的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Microsoft Dynamics] B2B模板下表概述了可用于的B2B模板 [!DNL Microsoft Dynamics] 源。
+
+| [!DNL Microsoft Dynamics] B2B模板 | 描述 |
+| --- | --- |
+| 帐户 | Account模板可捕获业务帐户详细信息，如公司公司信息、位置和账单信息。 |
+| 营销活动 | 营销活动模板可捕获业务帐户详细信息，如公司信息、位置和账单信息。 |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 潜在客户 | Leads模板可捕获潜在客户的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 营销列表 | 营销列表模板可捕获为营销活动或其他销售目的创建的一组现有或潜在客户。 |
+| 营销列表成员 | 营销列表成员可捕获营销列表中任何一种客户记录类型的详细信息，例如潜在客户、帐户或联系人。 |
+| 机会 | Opportunities模板可捕获业务机会详细信息，如类型、销售阶段和相关帐户。 |
+| 机会联系人角色 | Opportunity Contact Roles模板可捕获与特定机会关联的潜在客户角色的详细信息。 |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Microsoft Dynamics] B2C模板下表概述了可用于的B2C模板 [!DNL Microsoft Dynamics] 源。
+
+| [!DNL Microsoft Dynamics] B2C模板 | 描述 |
+| --- | --- |
+| 联系人 | Contact模板可捕获联系人的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+| 潜在客户 | Lead模板可捕获潜在客户的属性，如人口统计详细信息、联系信息和相关业务实体。 |
+
+{style="table-layout:auto"}
+
++++
 
 根据您选择的业务类型，将显示模板列表。 选择预览图标 ![预览图标](../../images/tutorials/templates/preview-icon.png) 位于模板名称旁边，用于预览模板中的示例数据。
 
