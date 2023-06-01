@@ -3,9 +3,9 @@ title: (Beta)Experience Cloud受众
 description: 了解如何将区段从Experience Platform共享到各种Experience Platform解决方案。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 017c8bbc19845c0f60040ba2995b5dd2b0299a8b
 workflow-type: tm+mt
-source-wordcount: '1509'
+source-wordcount: '1576'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,14 @@ Note: briefly talk about when to share segments to these destinations using the 
 * 连接到目标时，您可以看到一个选项 [启用数据流警报](#enable-alerts). 尽管在UI中可见，但是 **启用警报选项不受支持** （在测试版中）。
 * **不支持回填**. 首次导出到Audience Manager或其他Experience Cloud解决方案时不包括区段的历史人口。
 * 在测试版中，您可以创建 **到Experience Cloud受众目标的单个目标连接**，跨属于您的Experience Platform组织的所有沙盒。
-* 有一个 **4小时延迟** 从Experience Platform中激活数据的时间到准备好将数据用于Audience Manager和其他Experience Cloud解决方案的时间。
+
+### 激活受众时的延迟 {#audience-activation-latency}
+
+从首次在Experience Platform中激活受众到准备好将其用于Audience Manager以及某些用例的其他Experience Cloud解决方案，有4小时的延迟。
+
+对于所有用例，受众可能需要24小时才能在Audience Manager中完全可用，而Experience Cloud受众中的受众可能需要48小时才能显示在Audience Manager报表中。
+
+设置导出到Experience CloudAudience Manager目标后的几分钟内，即可将元数据（如区段名称）显示在受众中。
 
 ## 支持的身份 {#supported-identities}
 
