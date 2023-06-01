@@ -3,10 +3,10 @@ keywords: Amazon S3；S3目标；s3；amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
+source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
 workflow-type: tm+mt
-source-wordcount: '950'
-ht-degree: 14%
+source-wordcount: '990'
+ht-degree: 13%
 
 ---
 
@@ -90,7 +90,7 @@ ht-degree: 14%
 * **[!UICONTROL 文件夹路径]**：输入将托管导出文件的目标文件夹的路径。
 * **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 此选项仅适用于 **[!UICONTROL Amazon S3 Beta]** 目标。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL Amazon S3 Beta]** 目标。
-
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL Amazon S3 Beta]** 目标。
 
 >[!TIP]
 >

@@ -2,9 +2,9 @@
 title: (Beta) Azure Data Lake Storage Gen2连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活区段和导出数据集。
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 010818b56154067402a7cd66f489dd2080142e53
+source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,8 @@ ht-degree: 0%
 * **[!UICONTROL 文件夹路径]**：输入将托管导出文件的目标文件夹的路径。
 * **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
+* 
+   * **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
 
 ### 启用警报 {#enable-alerts}
 

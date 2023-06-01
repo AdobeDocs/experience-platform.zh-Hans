@@ -2,9 +2,9 @@
 title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活区段和导出数据集。
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 6fbf1b87becebee76f583c6e44b1c42956e561ab
+source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
 workflow-type: tm+mt
-source-wordcount: '1160'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -137,6 +137,8 @@ curl -X GET \
 * **[!UICONTROL 文件夹路径]**：输入将托管导出文件的目标文件夹的路径。
 * **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
+* 
+   * **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
 
 ### 启用警报 {#enable-alerts}
 
