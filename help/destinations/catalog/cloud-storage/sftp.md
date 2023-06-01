@@ -3,9 +3,9 @@ keywords: SFTP；sftp
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
+source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
 workflow-type: tm+mt
-source-wordcount: '909'
+source-wordcount: '908'
 ht-degree: 7%
 
 ---
@@ -127,4 +127,4 @@ ht-degree: 7%
 
 ## IP地址允许列表
 
-请参阅 [云存储目标的IP地址允许列表](ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [SFTP目标的IP地址允许列表](ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。

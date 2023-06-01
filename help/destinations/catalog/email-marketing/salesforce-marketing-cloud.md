@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；salesforce；salesf
 title: SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud是一个数字营销套件，以前称为ExactTarget，通过它可以为访客和客户构建和自定义历程，从而个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: ba4090d95a4a476e76d946e36f8370202f26d23e
+source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '747'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
 
-请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
 
 ## 连接到目标 {#connect}
 

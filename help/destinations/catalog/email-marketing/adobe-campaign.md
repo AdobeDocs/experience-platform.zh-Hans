@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；adobe campaign；�
 title: Adobe Campaign连接
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '884'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
 
-请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
 
 ## 连接到目标 {#connect}
 

@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracleresponsys目�
 title: oracleResponsys连接
 description: Responsys是一款用于跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '642'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
 
-请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
 
 ## 连接到目标 {#connect}
 

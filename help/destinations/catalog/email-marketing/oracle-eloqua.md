@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracle口述；orac
 title: （文件）OracleEloqua连接
 description: oracleEloqua是一个软件即服务(SaaS)平台，由Oracle提供，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和潜在客户拓展。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: e986fd9479ca2258fc9aab752e2d0376c608554b
+source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '659'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
 
-请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
 
 ## 连接到目标 {#connect}
 
