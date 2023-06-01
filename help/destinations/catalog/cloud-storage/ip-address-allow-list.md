@@ -1,17 +1,16 @@
 ---
-keywords: IP地址、IP范围、允许列表允许列表目标、
-title: 云存储目标的IP地址允许列表
+title: IP地址允许列表SFTP目标
 type: Documentation
-description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到SFTP服务器、Amazon S3或Azure Blob存储。
+description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到SFTP服务器。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: c4d8ae6de2e1bbf23a25a66bde5dc88c13a13402
+source-git-commit: 3d870975593313062d796601f0e19a0a3aec7854
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '185'
 ht-degree: 0%
 
 ---
 
-# 允许列表云存储目标的IP地址 {#ip-address-allow-list}
+# 允许列表 SFTP目标的IP地址 {#ip-address-allow-list-sftp}
 
 >[!IMPORTANT]
 >
