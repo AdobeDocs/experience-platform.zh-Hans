@@ -1,11 +1,10 @@
 ---
-keywords: Azure Blob；Blob目标；s3；Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
+source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '952'
 ht-degree: 4%
 
 ---
@@ -95,8 +94,7 @@ ht-degree: 4%
 * **[!UICONTROL 容器]**：输入 [!DNL Azure Blob Storage] 此目标使用的容器。
 * **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
-* 
-   * **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
 
 ### 启用警报 {#enable-alerts}
 

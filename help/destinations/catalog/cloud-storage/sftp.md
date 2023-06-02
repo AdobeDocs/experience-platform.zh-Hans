@@ -1,11 +1,10 @@
 ---
-keywords: SFTP；sftp
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
+source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '906'
 ht-degree: 7%
 
 ---
@@ -106,8 +105,7 @@ ht-degree: 7%
 * **[!UICONTROL 文件夹路径]**：输入要导出文件的SFTP位置中的文件夹路径。
 * **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
-* 
-   * **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
 
 ## 将区段激活到此目标 {#activate}
 
