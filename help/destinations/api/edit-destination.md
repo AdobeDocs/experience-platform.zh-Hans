@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 使用流服务API编辑目标连接
 type: Tutorial
 description: 了解如何使用流服务API编辑目标连接的各种组件。
-source-git-commit: 956ac5d210d54526e886e57b8ea37ab4b3fbab8a
+source-git-commit: 2afe330176c2b7734c38cf47be79960175060824
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1580'
 ht-degree: 2%
 
 ---
@@ -329,11 +329,11 @@ curl -X PATCH \
 
 ## 编辑基本连接组件（身份验证参数和其他组件） {#patch-base-connection}
 
-基本连接的组件因目标而异。 例如，对于 [!DNL Amazon S3] 目标，您可以将访问密钥和密钥更新为 [!DNL Amazon S3] 位置。
+要更新目标的凭据时编辑基本连接。 基本连接的组件因目标而异。 例如，对于 [!DNL Amazon S3] 目标，您可以将访问密钥和密钥更新为 [!DNL Amazon S3] 位置。
 
 PATCH要更新基本连接的组件，请对 `/connections` 端点，同时提供基本连接ID、版本以及要使用的新值。
 
-请记住，在上一步中，当您检查到所需目标的现有数据流时，您获得了基本连接ID。
+请记住，您的基本连接ID位于 [上一步](#look-up-dataflow-details)，检查到参数所需目标的现有数据流时 `baseConnection`.
 
 >[!IMPORTANT]
 >
