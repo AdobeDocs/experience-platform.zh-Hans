@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到配置文件服务
 description: 本文档提供了有关如何使用数据准备将部分行更新发送到配置文件服务的信息。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: d167975c9c7a267f2888153a05c5857748367822
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1177'
 ht-degree: 1%
 
 ---
@@ -37,20 +37,20 @@ ht-degree: 1%
 
 流更新插入于 [!DNL Data Prep] 的工作方式如下：
 
-* 您必须首先为以下项创建和启用数据集 [!DNL Profile] 消耗。 请参阅指南，网址为 [启用数据集 [!DNL Profile]](../catalog/datasets/enable-for-profile.md) 了解更多信息；
-* 如果必须链接新身份，则还必须创建一个其他数据集 **使用相同的架构** 作为您的 [!DNL Profile] 数据集；
+* 您必须首先为以下项创建和启用数据集 [!DNL Profile] 消耗。 请参阅指南，网址为 [启用数据集 [!DNL Profile]](../catalog/datasets/enable-for-profile.md) 了解更多信息。
+* 如果必须链接新身份，则还必须创建一个其他数据集 **使用相同的架构** 作为您的 [!DNL Profile] 数据集。
 * 准备好数据集后，您必须创建一个数据流以将传入请求映射到 [!DNL Profile] 数据集；
 * 接下来，您必须更新传入请求以包含必要的标头。 这些标头定义：
-   * 需要执行的数据操作 [!DNL Profile]： `create`， `merge`、和 `delete`；
+   * 需要执行的数据操作 [!DNL Profile]： `create`， `merge`、和 `delete`.
    * 要执行的可选身份操作 [!DNL Identity Service]： `create`.
 
 ### 配置身份数据集
 
 如果必须关联新身份，则必须在传入有效负载中创建并传递其他数据集。 在创建身份数据集时，必须确保满足以下要求：
 
-* 身份数据集必须将其关联的架构作为 [!DNL Profile] 数据集。 架构不匹配可能导致系统行为不一致；
-* 但是，您必须确保标识数据集与 [!DNL Profile] 数据集。 如果数据集相同，则数据将被覆盖而不是更新；
-* 虽然初始数据集必须启用 [!DNL Profile]，身份数据集 **不应该** 已启用 [!DNL Profile]. 否则，数据也将被覆盖，而不是更新。
+* 身份数据集必须将其关联的架构作为 [!DNL Profile] 数据集。 架构不匹配可能会导致系统行为不一致。
+* 但是，您必须确保标识数据集与 [!DNL Profile] 数据集。 如果数据集相同，则数据将被覆盖而不是更新。
+* 虽然初始数据集必须启用 [!DNL Profile]，身份数据集 **不应启用** 对象 [!DNL Profile]. 否则，数据也将被覆盖，而不是更新。 但是，身份数据集 **应该启用** 对象 [!DNL Identity Service].
 
 #### 与身份数据集关联的架构中的必填字段 {#identity-dataset-required-fileds}
 
@@ -64,9 +64,17 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
   -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-    "tags":{
-        "acp_validationContext": ["disabled"]
-        }
+    "tags": {
+        "acp_validationContext": [
+            "disabled"
+        ],
+        "unifiedProfile": [
+            "enabled:false"
+        ],
+        "unifiedIdentity": [
+            "enabled:true"
+        ]
+    }
 }'
 ```
 
