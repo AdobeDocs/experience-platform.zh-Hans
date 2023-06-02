@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中管理数据使用标签
 description: 本指南介绍了在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
+source-git-commit: 1690a73cf709594b82469e95aba64231cf216d96
 workflow-type: tm+mt
-source-wordcount: '1380'
-ht-degree: 19%
+source-wordcount: '1462'
+ht-degree: 18%
 
 ---
 
@@ -20,7 +20,15 @@ ht-degree: 19%
 
 本用户指南介绍了在中使用数据使用标签的步骤。 [!DNL Experience Platform] 用户界面。
 
+## 管理标签 {#manage-labels}
+
+要将标签应用于数据，您需要 **[!UICONTROL 管理使用情况标签]** 生产沙盒的使用权限。 要创建自定义标签，您还必须对产品配置文件具有管理权限。 每个组织只有一个适用的标签列表，当前不支持删除标签。
+
+请参阅指南，了解如何 [配置权限](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) 或 [访问控制概述](../../access-control/home.md) 有关如何分配权限的更多信息。 如果您无权访问组织的Admin Console，请联系您的组织管理员。
+
 ## 在架构级别管理标签
+
+您可以直接将标签添加到该架构中的一个或多个字段。 在架构级别应用的任何字段都将传播到基于该架构的所有数据集。
 
 要在架构级别管理数据使用标签，您必须选择现有架构或创建新架构。 登录Adobe Experience Platform后，选择 **[!UICONTROL 架构]** 在左侧导航中打开 **[!UICONTROL 架构]** 工作区。 此页面列出了属于您组织的所有已创建方案，以及与每个方案相关的有用详细信息。
 
@@ -98,12 +106,6 @@ The inherited labels beside each field do not have an "x" next to them and appea
 >可以在数据集标签功能被弃用之前应用的标签，通过查找相关数据集并选择标签上的取消图标从数据集中删除。
 >![突出显示可删除标签的数据集工作区的数据治理选项卡。](../images/labels/remove-governance-labels.png)
 >有关说明，请参阅文档 [如何将以前应用的标签从数据集迁移到架构级别](../e2e.md#migrate-labels).
-
-## 在架构级别管理标签
-
-您可以直接将标签添加到该架构中的一个或多个字段。 在架构级别应用的任何字段都将传播到基于该架构的所有数据集。
-
-请参阅上的教程 [管理架构级别标签](../../xdm/tutorials/labels.md) 了解更多信息。
 
 ## 管理自定义标签 {#manage-custom-labels}
 
