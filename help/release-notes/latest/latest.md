@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年5月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 09d8014eea2d31649eed3814ad07172027b2c435
+source-git-commit: bf4c39c311bf206ba9113804e0a2fd5f3610d8dc
 workflow-type: tm+mt
-source-wordcount: '1776'
-ht-degree: 6%
+source-wordcount: '1993'
+ht-degree: 5%
 
 ---
 
@@ -29,6 +29,7 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [仪表板](#dashboards)
 - [数据收集](#data-collection)
 - [数据治理](#data-governance)
 - [数据引入](#data-ingestion)
@@ -38,6 +39,32 @@ Adobe Experience Platform 现有功能的更新包括：
 - [查询服务](#query-service)
 - [源](#sources)
 
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
+
+<!-- 
+The [!UICONTROL License Usage] dashboard and individual license data for customers has been updated to resolve previous discrepancies between the license entitlements recorded in the Sales Orders and those originally reported in the Experience Platform [!UICONTROL License Usage] dashboard. The updates of individual license data will happen in phases between June 2023 and June 11, 2023. Your actual usage values remain accurate.<br><br>Experience Platform provides multiple capabilities to manage the usage volume:<br><ul><li>[Review and apply best practices to manage data and license usage](https://experienceleague.adobe.com/docs/experience-platform/landing/license/data-management-best-practices.html)</li><li>Apply filtering rules and conditions to [selectively include or exclude data from ingestion to the Real-Time Customer Profile](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/adobe-applications/analytics.html#filtering-for-profile) for Analytics data before it is ingested into Profile.</li><li>[Contact Adobe support to apply expiration times for Pseudonymous Profiles.](https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html)</li><li>[Contact Adobe support to enable Experience Event expirations on desired datasets.](https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html)</li><li>Contact your Adobe representative to discuss options to increase your license entitlements.</li></ul>
+ 
+
+<br><ul><li></li></ul><br><br>
+
+Adobe has corrected erroneous entries in your product's associated TermSheets to match their corresponding [Product Descriptions](https://helpx.adobe.com/legal/product-descriptions.html). Discrepancies in base quantities for the **Average Profile Richness** add-on packs will be corrected on **June 9, 2023**. This will provide an accurate representation of your license usage and ensure contractual compliance for your organization. Note that it can take up to 24-36 hours for the licence usage reports to reflect the update.
+
+As a result of this update, you may notice a one-time drop in your license usage for **Average Profile Richness** and **total consumed storage** metrics. If this update brings you close to your licensed limit there are several measures you can take to mitigate your usage.
+
+-[Apply expiration times for Pseudonymous Profiles](https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html)
+-[Contact support in order to enable Experience Event expirations on your required datasets. Adobe support representatives can configure expiration times for all Experience Events that are ingested into a dataset enabled for Real-Time Customer Profile](https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html)
+-Apply filtering rules and conditions to [selectively include or exclude data from ingestion to the Real-Time Customer Profile](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/adobe-applications/analytics.html#filtering-for-profile) for Analytics data before it is ingested into Profile.
+
+Contact your Adobe Support representative to discuss options to reduce your usage or increase your license limits.
+ -->
+
+| 功能 | 描述 |
+| --- | --- |
+| 许可证授权更正 | 此 [!UICONTROL 许可证使用情况] 客户的仪表板和个人许可证数据已更新，以解决销售订单中记录的许可证权利与最初在Experience Platform中报告的许可证权利之间以前存在的差异 [!UICONTROL 许可证使用情况] 仪表板。 单个许可证数据的更新将在2023年6月至2023年6月11日期间分阶段进行。 您的实际使用情况值将保持准确。<br><br>Experience Platform提供了多种功能来管理使用量：<br><ul><li>[查看并应用最佳实践来管理数据和许可证使用情况](https://experienceleague.adobe.com/docs/experience-platform/landing/license/data-management-best-practices.html).</li><li>将筛选规则和条件应用于 [有选择地将数据包含或排除在Real-Time Customer Profile的提取之外](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/adobe-applications/analytics.html#filtering-for-profile) Analytics数据。</li><li>[请联系Adobe支持以应用假名配置文件的过期时间。](https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html)</li><li>[请联系Adobe支持以启用所需数据集上的“体验事件”过期时间。](https://experienceleague.adobe.com/docs/experience-platform/profile/event-expirations.html)</li><li>请联系您的Adobe代表以讨论增加您的许可证权利的选项。</li></ul> |
+
+有关仪表板的更多信息，包括如何授予访问权限和创建自定义小组件，请从阅读 [功能板概述](../../dashboards/home.md).
 
 ## 数据收集 {#data-collection}
 
@@ -104,7 +131,7 @@ Adobe Experience Platform提供了一组丰富的功能，可用于摄取任何�
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版）SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
+- 我们修复了（测试版） SFTP云存储目标中的限制，即用户无法自定义Port参数的值。 现在，在通过设置（测试版） SFTP目标连接时，该值可编辑 [API](/help/destinations/api/activate-segments-file-based-destinations.md) 或 [UI](/help/destinations/catalog/cloud-storage/sftp.md#authentication-information).
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
