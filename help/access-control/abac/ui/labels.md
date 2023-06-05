@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理标签
 description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理标签的信息
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 4069924b4c4000192dff1f89e5cf9a9412bcd95c
 workflow-type: tm+mt
-source-wordcount: '173'
-ht-degree: 10%
+source-wordcount: '190'
+ht-degree: 9%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->您必须具有管理权限才能创建自定义标签。 目前，不支持删除标签。
+>整个组织只有一个标签列表。 要创建自定义标签，您需要 **[!UICONTROL 管理使用情况标签]** 生产沙盒的权限。 当前不支持删除标签。
 
 要创建新标签，请选择 **[!UICONTROL 标签]** 选项卡，然后选择 **[!UICONTROL 创建标签]**.
 
