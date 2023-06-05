@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中管理数据使用标签
 description: 本指南介绍了在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 1690a73cf709594b82469e95aba64231cf216d96
+source-git-commit: 663d1e20a7b8a56b1395047124fdf4b6fc3c214b
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1465'
 ht-degree: 18%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 18%
 
 ## 管理标签 {#manage-labels}
 
-要将标签应用于数据，您需要 **[!UICONTROL 管理使用情况标签]** 生产沙盒的使用权限。 要创建自定义标签，您还必须对产品配置文件具有管理权限。 每个组织只有一个适用的标签列表，当前不支持删除标签。
+要将标签应用于数据，您需要 **[!UICONTROL 管理使用情况标签]** 对名为“prod”的默认生产沙盒的使用权限。 要创建自定义标签，您还必须对产品配置文件具有管理权限。 每个组织只有一个适用的标签列表，当前不支持删除标签。
 
 请参阅指南，了解如何 [配置权限](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) 或 [访问控制概述](../../access-control/home.md) 有关如何分配权限的更多信息。 如果您无权访问组织的Admin Console，请联系您的组织管理员。
 
