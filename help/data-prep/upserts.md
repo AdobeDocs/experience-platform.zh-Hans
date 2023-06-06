@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据准备；数据准备；流；更新插入；流更新插入
-title: 使用数据准备将部分行更新发送到配置文件服务
-description: 本文档提供了有关如何使用数据准备将部分行更新发送到配置文件服务的信息。
+title: 使用数据准备将部分行更新发送到实时客户个人资料
+description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: d167975c9c7a267f2888153a05c5857748367822
+source-git-commit: 15aa27e19f287a39242860b91eedae87aace3d27
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1175'
 ht-degree: 1%
 
 ---
 
-# 将部分行更新发送到 [!DNL Profile Service] 使用 [!DNL Data Prep]
+# 将部分行更新发送到 [!DNL Real-Time Customer Profile] 使用 [!DNL Data Prep]
 
-流更新插入于 [!DNL Data Prep] 允许您将部分行更新发送到 [!DNL Profile Service] 数据，同时通过单个API请求创建和建立新的身份链接。
+流更新插入于 [!DNL Data Prep] 允许您将部分行更新发送到 [!DNL Real-Time Customer Profile] 数据，同时通过单个API请求创建和建立新的身份链接。
 
-通过流式传输更新插入，您可以保留数据的格式，同时将数据转换为 [!DNL Profile Service] 摄取期间的PATCH请求。 根据您提供的输入， [!DNL Data Prep] 允许您发送单个API有效负载并将数据转换为这两者 [!DNL Profile Service] PATCH和 [!DNL Identity Service] 创建请求。
+通过流式传输更新插入，您可以保留数据的格式，同时将数据转换为 [!DNL Real-Time Customer Profile] 摄取期间的PATCH请求。 根据您提供的输入， [!DNL Data Prep] 允许您发送单个API有效负载并将数据转换为这两者 [!DNL Real-Time Customer Profile] PATCH和 [!DNL Identity Service] 创建请求。
 
 本文档提供了有关如何在中流式传输更新的信息 [!DNL Data Prep].
 
@@ -110,19 +110,19 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
 | `imsOrgId` | 与您的组织相对应的ID。 |
 | `datasetId` | 的ID [!DNL Profile] — 启用数据流的目标数据集。 **注释**：此ID与 [!DNL Profile] — 在数据流中找到启用的目标数据集ID。 |
 | `operations` | 此参数概述以下操作 [!DNL Data Prep] 将根据传入的请求进行接收。 |
-| `operations.data` | 定义必须在中执行的操作 [!DNL Profile Service]. |
+| `operations.data` | 定义必须在中执行的操作 [!DNL Real-Time Customer Profile]. |
 | `operations.identity` | 通过以下方式定义对数据允许的操作 [!DNL Identity Service]. |
 | `operations.identityDatasetId` | （可选）只有在必须链接新标识时才需要标识数据集的ID。 |
 
 #### 支持的操作
 
-以下操作受支持 [!DNL Profile Service]：
+以下操作受支持 [!DNL Real-Time Customer Profile]：
 
 | 操作 | 描述 |
 | --- | --- | 
-| `create` | 默认操作。 这将为生成XDM实体创建方法 [!DNL Profile Service]. |
-| `merge` | 这将为生成XDM实体更新方法 [!DNL Profile Service]. |
-| `delete` | 这将为生成XDM实体删除方法 [!DNL Profile Service] 并从以下位置永久删除数据 [!DNL Profile Store]. |
+| `create` | 默认操作。 这将为生成XDM实体创建方法 [!DNL Real-Time Customer Profile]. |
+| `merge` | 这将为生成XDM实体更新方法 [!DNL Real-Time Customer Profile]. |
+| `delete` | 这将为生成XDM实体删除方法 [!DNL Real-Time Customer Profile] 并从以下位置永久删除数据 [!DNL Profile Store]. |
 
 以下操作受支持 [!DNL Identity Service]：
 
@@ -132,7 +132,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
 
 ### 没有标识配置的有效负载
 
-如果不需要关联新标识，则可以忽略 `identity` 和 `identityDatasetId` 操作中的参数。 这样做只会将数据发送到 [!DNL Profile Service] 并跳过 [!DNL Identity Service]. 有关示例，请参阅以下有效负载：
+如果不需要关联新标识，则可以忽略 `identity` 和 `identityDatasetId` 操作中的参数。 这样做只会将数据发送到 [!DNL Real-Time Customer Profile] 并跳过 [!DNL Identity Service]. 有关示例，请参阅以下有效负载：
 
 ```shell
 {
@@ -157,7 +157,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
 
 ### 在XDM架构中指定一个静态字段作为主标识字段
 
-在以下示例中， `state`， `homePhone.number` 和其他属性会以其各自的给定值更新插入到 [!DNL Profile] 具有主要标识 `sampleEmail@gmail.com`. 然后，流生成XDM实体更新消息 [!DNL Data Prep] 组件。 [!DNL Profile Service] 然后确认XDM更新消息以更新插入用户档案记录。
+在以下示例中， `state`， `homePhone.number` 和其他属性会以其各自的给定值更新插入到 [!DNL Profile] 具有主要标识 `sampleEmail@gmail.com`. 然后，流生成XDM实体更新消息 [!DNL Data Prep] 组件。 [!DNL Real-Time Customer Profile] 然后确认XDM更新消息以更新插入用户档案记录。
 
 >[!NOTE]
 >
@@ -206,7 +206,7 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 ### 通过XDM架构中的标识映射字段组，将一个标识字段指定为主标识
 
-在此示例中，标头包含 `operations` 属性和 `identity` 和 `identityDatasetId` 属性。 这样可以将数据与 [!DNL Profile Service] 以及要传递到的身份 [!DNL Identity Service].
+在此示例中，标头包含 `operations` 属性和 `identity` 和 `identityDatasetId` 属性。 这样可以将数据与 [!DNL Real-Time Customer Profile] 以及要传递到的身份 [!DNL Identity Service].
 
 ```shell
 curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec3583275ffce4880ffc482be5a9d810c4b' \
@@ -255,10 +255,10 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 下面概述了使用流式传输更新插入时要考虑的已知限制列表 [!DNL Data Prep]：
 
-* 仅当将部分行更新发送到时，才应使用流更新插入方法 [!DNL Profile Service]. 部分行更新为 **非** 被数据湖使用。
+* 仅当将部分行更新发送到时，才应使用流更新插入方法 [!DNL Real-Time Customer Profile]. 部分行更新为 **非** 被数据湖使用。
 * 流更新插入方法不支持更新、替换和删除身份。 如果不存在新标识，则会创建新标识。 因此， `identity` 必须始终将操作设置为创建。 如果标识已存在，则操作为no-op。
 * 流更新插入方法当前不支持 [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) 和 [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该了解如何在中流式传输上插文 [!DNL Data Prep] 将部分行更新发送到 [!DNL Profile Service] 数据，同时还可以创建标识并将其与单个API请求关联。 有关其他内容的更多信息 [!DNL Data Prep] 功能，请阅读 [[!DNL Data Prep] 概述](./home.md). 要了解如何在中使用映射集 [!DNL Data Prep] API，请参阅 [[!DNL Data Prep] 开发人员指南](./api/overview.md).
+通过阅读本文档，您现在应该了解如何在中流式传输上插文 [!DNL Data Prep] 将部分行更新发送到 [!DNL Real-Time Customer Profile] 数据，同时还可以创建标识并将其与单个API请求关联。 有关其他内容的更多信息 [!DNL Data Prep] 功能，请阅读 [[!DNL Data Prep] 概述](./home.md). 要了解如何在中使用映射集 [!DNL Data Prep] API，请参阅 [[!DNL Data Prep] 开发人员指南](./api/overview.md).
