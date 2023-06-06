@@ -36,7 +36,7 @@ ht-degree: 6%
 
 ![区段生成器字段的属性部分突出显示。](../images/ui/segment-builder/attributes.png)
 
-### 事件
+### 活动
 
 此 **[!UICONTROL 事件]** 选项卡允许您根据发生的事件或操作创建受众，使用 [!DNL XDM ExperienceEvent] 数据元素。 您还可以在以下位置找到事件类型 **[!UICONTROL 事件]** 选项卡，这是常用事件的集合，使您能够更快地创建区段。
 

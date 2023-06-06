@@ -189,7 +189,7 @@ ht-degree: 1%
 
 ![select-mapping](../images/ui/mapping/select-mapping.png)
 
-界面会随着您导入的映射而更新。
+界面会随导入的映射而更新。
 
 >[!NOTE]
 >

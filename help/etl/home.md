@@ -499,7 +499,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 
 在执行开始时，连接器（如源组件中所定义）将从以下位置读取数据 [!DNL Experience Platform] 使用 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/). 转换过程将读取特定时间范围内的数据。 在内部，它将查询批量源数据集。 查询时，它会使用参数化（滚动时序数据，或增量数据）的开始日期，列出这些批次的数据集文件，并开始请求这些数据集文件的数据。
 
-### 转换示例
+### 示例转换
 
 此 [示例ETL转换](./transformations.md) 文档包含许多转换示例，包括身份处理和数据类型映射。 请参考这些转换。
 

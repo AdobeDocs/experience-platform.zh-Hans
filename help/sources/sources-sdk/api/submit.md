@@ -55,7 +55,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->以下所有示例变量都是必须更新的占位符值，以下变量除外 `flowSpecificationId` 和 `targetConnectionSpecId`，为固定值。
+>以下所有示例变量都是必须更新的占位符值，以下除外 `flowSpecificationId` 和 `targetConnectionSpecId`，为固定值。
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |

@@ -24,7 +24,7 @@ ht-degree: 0%
 
 选择 **[!UICONTROL 配置文件]** 下 [!UICONTROL 帐户] 在左侧导航中，查看帐户配置文件的概述。 在 [!UICONTROL 概述] 选项卡中，仪表板在单个入口点中显示一个图形或图表，其中显示了小组件。
 
-![显示小组件的“概述”选项卡](images/b2b-account-profile-overview.png)
+![“概述”选项卡显示小组件](images/b2b-account-profile-overview.png)
 
 请参阅有关以下内容的文档： [[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md) 仪表板以了解详情。
 

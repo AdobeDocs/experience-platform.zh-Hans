@@ -95,7 +95,7 @@ ht-degree: 1%
 
 如果 `oauth2-client_credentials` 密码已分配给环境，其状态为 `succeeded` （已成功交换凭据），新交换将在以下日期自动执行： `refresh_at`.
 
-如果交换成功， `refresh_status` 中的属性 `meta` 对象设置为 `succeeded` while `expires_at`， `refresh_at`、和 `activated_at` 将进行相应更新。
+如果交换成功， `refresh_status` 中的属性 `meta` 对象设置为 `succeeded` 同时 `expires_at`， `refresh_at`、和 `activated_at` 将进行相应更新。
 
 如果交换失败，则再次尝试该操作，上次尝试的时间不超过访问令牌过期两小时。 如果所有尝试都失败， `refresh_status_details` 属性来自 `meta` 对象更新及相关详细信息。
 

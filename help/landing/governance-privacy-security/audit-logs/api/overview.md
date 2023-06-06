@@ -15,7 +15,7 @@ ht-degree: 1%
 
 要查看所有可用的端点和CRUD操作，请访问 [[!DNL Audit Query] API swagger](https://www.adobe.io/experience-platform-apis/references/audit-query/).
 
-## 事件
+## 活动
 
 审核事件提供对Platform中用户操作的见解，包括操作类型、日期和时间、执行操作的用户的电子邮件ID，以及与Adobe Experience Platform各种功能的操作类型相关的其他属性。 要了解如何使用API检索量度，请参阅 [事件端点指南](./events.md).
 

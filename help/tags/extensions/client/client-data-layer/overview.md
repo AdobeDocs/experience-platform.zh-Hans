@@ -37,7 +37,7 @@ This installation will not be supported on our end.<br>
 >
 >更改对象名称时，原始的 `adobeDataLayer` 对象仍在实例化中，然后复制到您选择的新变量名称。
 
-## 事件
+## 活动
 
 通过扩展，您可以侦听Data Layer上的事件。 以下事件可用：
 

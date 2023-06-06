@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->While `integer` 类型是指整数， [`number` 类型](#number) 用于任何数字类型（整数或浮点数）。 请参阅 [有关数字类型的JSON架构文档](https://json-schema.org/understanding-json-schema/reference/numeric.html) 以了解有关每种类型的用例的更多信息。
+>While `integer` 类型是指整数， [`number` 类型](#number) 用于任何数字类型，可以是整数或浮点数。 请参阅 [有关数字类型的JSON架构文档](https://json-schema.org/understanding-json-schema/reference/numeric.html) 以了解有关每种类型的用例的更多信息。
 
 可以选择通过添加以下项来限制整数的范围 `minimum` 和 `maximum` 属性到定义。 架构生成器UI支持的其他几个数字类型只是 `integer` 具有特定的 `minimum` 和 `maximum` 约束，例如 [[!UICONTROL 长]](#long)， [[!UICONTROL 短]](#short)、和 [[!UICONTROL 字节]](#byte).
 

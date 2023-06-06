@@ -111,7 +111,7 @@ curl -X POST \
 
 ## 配置现有数据集 {#configure-an-existing-dataset}
 
-以下步骤涵盖了如何为更新(upsert)功能配置现有的启用用户档案的数据集。
+以下步骤介绍了如何为更新(upsert)功能配置现有的启用用户档案的数据集。
 
 >[!NOTE]
 >

@@ -2,7 +2,7 @@
 description: 了解如何使用目标测试API为您的流目标生成示例配置文件，以用于目标测试。
 title: 根据源架构生成示例配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: 639d40621576bac361c106fa8cd494a7659214be
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 1%

@@ -38,7 +38,7 @@ GET /schedules?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定排序结果所依据的字段。 支持的字段包括 `created` 和 `updated`. 例如， `orderby=created` 将按创建的结果以升序排序。 添加 `-` 创建前(`orderby=-created`)将按创建的对项目进行降序排序。 |
+| `orderby` | 指定排序结果所依据的字段。 支持的字段包括 `created` 和 `updated`. 例如， `orderby=created` 将按创建的结果以升序排序。 添加 `-` 创建前(`orderby=-created`)将按创建的项以降序对项排序。 |
 | `limit` | 指定页面大小限制，以控制页面中包含的结果数。 (*默认值：20*) |
 | `start` | 使用从零开始的编号来偏移响应列表。 例如， `start=2` 将返回从列出的第三个查询开始的列表。 (*默认值： 0*) |
 | `property` | 根据字段筛选结果。 过滤器 **必须** 被HTML逃跑了。 逗号用于组合多组过滤器。 支持的字段包括 `created`， `templateId`、和 `userId`. 支持的运算符列表包括 `>` （大于）， `<` （小于），以及 `==` （等于）。 例如， `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回用户ID为指定的所有计划查询。 |

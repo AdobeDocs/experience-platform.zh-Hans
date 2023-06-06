@@ -199,7 +199,7 @@ ht-degree: 1%
 
 ![添加接触点](./images/user-guide/add_touchpoint.png)
 
-定义完所有必需的接触点后，向上滚动并选择 **下一个** 进入最后一步。
+定义完所有必需的接触点后，向上滚动并选择 **下一个** 以继续执行最后一步。
 
 ![已完成定义](./images/user-guide/define_event_save_and_exit.png)
 

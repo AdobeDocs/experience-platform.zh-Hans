@@ -94,7 +94,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->在连接目标工作流中，您可以为每个导出的区段文件在Amazon S3存储中创建自定义文件夹。 读取 [使用宏在您的存储位置中创建文件夹](/help/destinations/catalog/cloud-storage/overview.md#use-macros) 以获取说明。
+>在连接目标工作流中，您可以为每个导出的区段文件在Amazon S3存储中创建自定义文件夹。 读取 [使用宏在存储位置中创建文件夹](/help/destinations/catalog/cloud-storage/overview.md#use-macros) 以获取说明。
 
 ### 启用警报 {#enable-alerts}
 

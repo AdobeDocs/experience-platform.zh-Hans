@@ -84,7 +84,7 @@ ht-degree: 2%
 
 被引入Experience Platform以供Real-time Customer Profile使用的数据必须符合 [为配置文件启用的体验数据模型(XDM)架构](../../xdm/ui/resources/schemas.md). 要为配置文件启用架构，它必须实施XDM Individual Profile或XDM ExperienceEvent类。
 
-[使用架构注册表API启用架构，以便在Real-Time Customer Profile中使用](../../xdm/tutorials/create-schema-api.md) 或 [架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md).  有关如何为配置文件启用架构的详细说明，请参阅其各自的文档。
+[使用架构注册表API启用架构以在Real-Time Customer Profile中使用](../../xdm/tutorials/create-schema-api.md) 或 [架构编辑器用户界面](../../xdm/tutorials/create-schema-ui.md).  有关如何为配置文件启用架构的详细说明，请参阅其各自的文档。
 
 接下来，创建一个数据类型以重复用于所有十进制相关的字段组。 创建十分位数字段组是每个沙盒的一次性步骤。 它也可用于所有与十分位数相关的架构。
 
@@ -295,7 +295,7 @@ GROUP BY rankings.membershipNumber
 
 ### 运行查询模板
 
-运行查询以填充十分位数数据集。 您还可以将查询另存为模板，并安排其按顺序运行。 当另存为模板时，还可以更新查询以使用引用了 `table_exists` 命令。 有关如何使用 `table_exists`命令位于 [SQL语法指南](../sql/syntax.md#table-exists).
+运行查询以填充十分位数数据集。 您还可以将查询另存为模板，并安排其以节奏运行。 当另存为模板时，还可以更新查询以使用引用了 `table_exists` 命令。 有关如何使用 `table_exists`命令位于 [SQL语法指南](../sql/syntax.md#table-exists).
 
 ## 后续步骤
 

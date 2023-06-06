@@ -67,7 +67,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ## 浏览配置文件 {#browse-profiles}
 
-此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以查看属于用户档案的重要信息，这些信息涉及其偏好、过去的事件、交互和区段
+此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以看到属于用户档案的重要信息，这些信息涉及其偏好、过去的事件、交互和区段
 
 要详细了解Platform UI中提供的配置文件查看功能，请参阅以下文档： [在Adobe Real-time Customer Data Platform中浏览配置文件](../../rtcdp/profile/profile-browse.md).
 

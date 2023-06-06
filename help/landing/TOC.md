@@ -62,7 +62,7 @@ ht-degree: 27%
       * 审核查询API {#audit-api}
          * [概述](./governance-privacy-security/audit-logs/api/overview.md)
          * [快速入门](./governance-privacy-security/audit-logs/api/getting-started.md)
-         * [事件](./governance-privacy-security/audit-logs/api/events.md)
+         * [活动](./governance-privacy-security/audit-logs/api/events.md)
          * [导出](./governance-privacy-security/audit-logs/api/export.md)
    * [数据加密](./governance-privacy-security/encryption.md)
    * [客户管理的密钥](./governance-privacy-security/customer-managed-keys.md)
