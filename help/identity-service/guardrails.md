@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity Service的防护
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化对身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: 60bab17d2ecb2e68bf500aea2d68587a125b35bb
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '520'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
-| 图表中的身份数 | 150 | 该限制在沙盒级别应用。 一旦达到限制，将不会更新身份图。 **注释**：标识图中的最大标识数 **对于单个合并的配置文件** 是50 Real-Time Customer Profile中排除了基于具有50多个标识的标识图的合并配置文件。 有关详细信息，请阅读以下指南： [配置文件数据的护栏](../profile/guardrails.md). |
+| 图表中的身份数 | 150 | 该限制在沙盒级别应用。 一旦标识数达到150个或更多，则不会添加任何新标识，也不会更新标识图。 图形可能显示大于150的标识，这是链接一个或多个具有小于150的标识的图形的结果。 **注释**：标识图中的最大标识数 **对于单个合并的配置文件** 是50 Real-Time Customer Profile中排除了基于具有50多个标识的标识图的合并配置文件。 有关详细信息，请阅读以下指南： [配置文件数据的护栏](../profile/guardrails.md). |
 | XDM记录中的标识数 | 20 | 需要的最小XDM记录数为2。 |
 | 自定义命名空间的数量 | None | 您可以创建的自定义命名空间的数量没有限制。 |
 | 图表数量 | None | 您可以创建的标识图的数量没有限制。 |
