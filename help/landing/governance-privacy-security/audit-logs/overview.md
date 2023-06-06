@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: 7bb81a103c6b2a7d0baec22c927f575764bc3730
 workflow-type: tm+mt
-source-wordcount: '1156'
-ht-degree: 48%
+source-wordcount: '1294'
+ht-degree: 43%
 
 ---
 
@@ -79,13 +79,13 @@ ht-degree: 48%
 
 您可以在中查看各种Experience Platform功能的审核日志 **[!UICONTROL 审核]** Platform UI中的工作区。 工作区会显示记录的日志列表，默认情况下按从最近到最近排序。
 
-![审核日志仪表板](../../images/audit-logs/audits.png)
+![“审核”仪表板在左侧菜单中突出显示“审核”。](../../images/audit-logs/audits.png)
 
 审核日志会保留365天，之后将从系统中删除它们。 因此，只能回溯最长为期 365 天。如果您需要的数据超过365天，则应定期导出日志以满足内部策略要求。
 
 从列表中选择一个事件以在右边栏中查看其详细信息。
 
-![事件详细信息](../../images/audit-logs/select-event.png)
+![审核功能板“活动日志”选项卡，突出显示事件详细信息面板。](../../images/audit-logs/select-event.png)
 
 ### 筛选审核日志
 
@@ -95,31 +95,43 @@ ht-degree: 48%
 
 选择漏斗图标(![过滤器图标](../../images/audit-logs/icon.png))，以显示过滤器控件列表以帮助缩小结果范围。 仅显示最后1000条记录，这与选择的各种过滤器无关。
 
-![筛选器](../../images/audit-logs/filters.png)
+![突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filters.png)
 
 在 UI 中有以下过滤器可用于审核事件：
 
 | 过滤器 | 描述 |
 | --- | --- |
 | [!UICONTROL 类别] | 使用下拉菜单按以下条件筛选显示的结果 [类别](#category). |
-| [!UICONTROL 操作] | 按操作筛选。 当前仅限 [!UICONTROL 创建] 和 [!UICONTROL 删除] 可以筛选操作。 |
+| [!UICONTROL 操作] | 按操作筛选。 每项服务的可用操作可在上面的资源表中查看。 |
 | [!UICONTROL 用户] | 输入完整的用户ID(例如， `johndoe@acme.com`)，以按用户筛选。 |
 | [!UICONTROL 状态] | 按操作是允许（完成）还是由于缺少而拒绝进行筛选 [访问控制](../../../access-control/home.md) 权限。 |
 | [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义筛选结果的日期范围。 可导出90天回顾期的数据（例如，从2021-12-15到2022-03-15）。 这可能因事件类型而异。 |
 
 要移除过滤器，请选择相关过滤器的药丸图标上的“X”，或选择 **[!UICONTROL 全部清除]** 以删除所有筛选器。
 
-![清除筛选器](../../images/audit-logs/clear-filters.png)
+![突出显示具有清除筛选器的审核仪表板。](../../images/audit-logs/clear-filters.png)
+
+返回的审核日志数据包含以下关于满足所选筛选条件的所有查询的信息。
+
+| 列名称 | 描述 |
+|---|---|
+| [!UICONTROL 时间戳] | 在中执行操作的确切日期和时间 `month/day/year hour:minute AM/PM` 格式。 |
+| [!UICONTROL 资源名称] | 的值 [!UICONTROL 资源名称] 字段取决于选作过滤器的类别。 |
+| [!UICONTROL 类别] | 此字段与在筛选器下拉列表中选定的类别匹配。 |
+| [!UICONTROL 操作] | 可用的操作取决于选作过滤器的类别。 |
+| [!UICONTROL 用户] | 此字段提供执行查询的用户ID。 |
+
+![突出显示筛选活动日志的审核仪表板。](../../images/audit-logs/filtered.png)
 
 ### 导出审核日志
 
 要导出审核日志的当前列表，请选择&#x200B;**[!UICONTROL 下载日志]**。
 
-![下载日志](../../images/audit-logs/download.png)
+![带有以下项的审核仪表板： [!UICONTROL 下载日志] 突出显示。](../../images/audit-logs/download.png)
 
 在显示的对话框中，选择您首选的格式(可以 **[!UICONTROL CSV]** 或 **[!UICONTROL JSON]**)，然后选择 **[!UICONTROL 下载]**. 浏览器下载生成的文件，并将其保存到您的计算机。
 
-![选择下载格式](../../images/audit-logs/select-download-format.png)
+![文件格式选择对话框 [!UICONTROL 下载] 突出显示。](../../images/audit-logs/select-download-format.png)
 
 ## 在API中管理审核日志
 
