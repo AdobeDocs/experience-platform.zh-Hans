@@ -7,7 +7,7 @@ exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 source-git-commit: 11d6cf09dede8c7c14bbbcd3c109e703a5d053de
 workflow-type: tm+mt
 source-wordcount: '1504'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -36,8 +36,8 @@ ht-degree: 7%
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_daysRemaining"
->title="数据集过期"
->abstract="此列指示目标数据集在自动过期前剩余的天数。"
+>title="数据集到期"
+>abstract="此列指示目标数据集在自动到期之前剩余的天数。"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 仪表板。 仪表板列出您组织的所有可用数据集。 会显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 

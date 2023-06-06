@@ -8,7 +8,7 @@ exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
 source-git-commit: cef5c203acf3318445399669336166e6627ebe66
 workflow-type: tm+mt
 source-wordcount: '782'
-ht-degree: 1%
+ht-degree: 8%
 
 ---
 
@@ -27,8 +27,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflows_daysRemaining"
->title="数据集过期"
->abstract="此列指示目标数据集在自动过期前剩余的天数。<br>如果目标数据集过期，数据流将失败。 要防止数据流失败，请确保将目标数据集设置为在正确的日期过期。 请参阅文档以了解如何更新过期日期。"
+>title="数据集到期"
+>abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新到期日期。"
 
 在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 选择 **[!UICONTROL 数据流]** 查看现有数据流的列表。
 
