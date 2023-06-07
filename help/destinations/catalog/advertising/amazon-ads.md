@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon Ads目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 9c1f3d5d5fc14941cb40adf02fd3d9acce5cf648
+source-git-commit: 147499e0b736fac7aa27942790661236be68b0a4
 workflow-type: tm+mt
 source-wordcount: '1401'
 ht-degree: 1%
@@ -81,9 +81,11 @@ Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包�
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL Amazon广告商ID]**：选择用于目标的目标Amazon Ads帐户的ID。
+
 >[!NOTE]
 >
 >保存目标配置后，您将无法更改Amazon Ads广告商ID，即使您通过Amazon帐户重新进行身份验证也是如此。 要使用其他Amazon广告商ID，您必须创建新的目标连接。
+
 * **[!UICONTROL 广告商地区]**：选择托管您的广告商的适当区域。 有关每个地区支持的市场的更多信息，请访问 [Amazon Ads文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).
 
 
@@ -136,7 +138,7 @@ Amazon Ads连接支持经过哈希处理的电子邮件地址和经过哈希处�
 
 * [Amazon DSP帮助中心](https://www.amazon.com/ap/signin?openid.pape.max_auth_age=28800&amp;openid.return_to=https%3A%2F%2Fadvertising.amazon.com%2Fdsp%2Fhelp%2Fss%2Fen%2Faudiences&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=amzn_bt_desktop_us&amp;openid.mode=checkid_setup&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0)
 
-### Changelog {#changelog}
+## Changelog {#changelog}
 
 此部分捕获此目标连接器的功能和重要文档更新。
 
@@ -144,7 +146,7 @@ Amazon Ads连接支持经过哈希处理的电子邮件地址和经过哈希处�
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2023 年 5 月 | 功能和文档更新 | <ul><li>在目标连接工作流中添加了对广告商区域选择的支持。</li><li>更新了文档，以反映添加了“广告商区域”选择。 有关选择正确的广告商地区的详细信息，请参阅 [Amazon文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
+| 2023 年 5 月 | 功能和文档更新 | <ul><li>在中增加了对广告商区域选择的支持 [目标连接工作流](#destination-details).</li><li>更新了文档，以反映添加了“广告商区域”选择。 有关选择正确的广告商地区的详细信息，请参阅 [Amazon文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
 | 2023 年 3 月 | 初始版本 | 发布了初始目标版本和文档。 |
 
 {style="table-layout:auto"}
