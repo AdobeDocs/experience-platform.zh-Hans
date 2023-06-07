@@ -2,9 +2,9 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 5af201858e00f5ccdee4d68f04d37bc5f69caf9c
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '987'
 ht-degree: 7%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 7%
 >
 >通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL SFTP] 目标目录中的信息卡。
 >* 如果您已经将文件导出到 **[!UICONTROL SFTP]** 目标：请为新的数据集创建新的数据流 **[!UICONTROL SFTP测试版]** 目标。
->* 如果您尚未创建任何数据流到 **[!UICONTROL SFTP]** 目标，请使用新的 **[!UICONTROL SFTP测试版]** 用于导出文件的信息卡 **[!UICONTROL SFTP]**.
+>* 如果您尚未创建任何数据流到 **[!UICONTROL SFTP]** 目标，使用新的 **[!UICONTROL SFTP测试版]** 用于导出文件的信息卡 **[!UICONTROL SFTP]**.
 
 
 ![并排视图中两个SFTP目标卡的图像。](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
@@ -36,6 +36,11 @@ ht-degree: 7%
 >[!IMPORTANT]
 >
 > 虽然Experience Platform支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为 [!DNL Amazon S3] 和 [!DNL SFTP].
+
+## 通过API或用户界面连接到SFTP {#connect-api-or-ui}
+
+* 要使用Platform用户界面连接到SFTP存储位置，请阅读以下章节 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
+* 要以编程方式连接到SFTP存储位置，请阅读 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -70,12 +75,13 @@ ht-degree: 7%
 >title="私有 SSH 密钥"
 >abstract="私有 SSH 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。"
 
-如果您选择 **[!UICONTROL 基本身份验证]** 键入以连接到SFTP位置：
+如果您选择 **[!UICONTROL 包含密码的SFTP]** 要连接到SFTP位置的身份验证类型：
 
 ![SFTP目标基本身份验证](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
-* **[!UICONTROL 主机]**：SFTP存储位置的地址；
+* **[!UICONTROL 域]**：SFTP存储位置的地址；
 * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
+* **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
 * **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
@@ -117,12 +123,15 @@ ht-degree: 7%
 
 ## （测试版）导出数据集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请参阅 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 导出的数据 {#exported-data}
 
 对象 [!DNL SFTP] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在区段激活教程中。
 
-## IP地址允许列表
+## IP地址允许列表 {#ip-address-allow-list}
 
 请参阅 [SFTP目标的IP地址允许列表](ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。

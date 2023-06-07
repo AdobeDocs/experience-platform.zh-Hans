@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '983'
-ht-degree: 14%
+source-wordcount: '1054'
+ht-degree: 13%
 
 ---
 
@@ -32,6 +32,11 @@ ht-degree: 14%
 ## 概述 {#overview}
 
 创建到 [!DNL Amazon S3] 存储，定期将数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
+
+## 连接到您的 [!DNL Amazon S3] 通过API或用户界面进行存储 {#connect-api-or-ui}
+
+* 连接到您的 [!DNL Amazon S3] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
+* 连接到您的 [!DNL Amazon S3] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -132,7 +137,10 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 ## （测试版）导出数据集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请参阅 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 导出的数据 {#exported-data}
 

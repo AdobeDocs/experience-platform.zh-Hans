@@ -2,10 +2,10 @@
 title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '952'
-ht-degree: 4%
+source-wordcount: '1029'
+ht-degree: 3%
 
 ---
 
@@ -32,6 +32,11 @@ ht-degree: 4%
 ## 概述 {#overview}
 
 [!DNL Azure Blob] (以下简称： [!DNL Blob])是Microsoft的云对象存储解决方案。 本教程提供了用于创建 [!DNL Blob] 目标使用 [!DNL Platform] 用户界面。
+
+## 连接到您的 [!UICONTROL Azure Blob] 通过API或用户界面进行存储 {#connect-api-or-ui}
+
+* 连接到您的 [!UICONTROL Azure Blob] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
+* 连接到您的 [!UICONTROL Azure Blob] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 快速入门
 
@@ -79,7 +84,7 @@ ht-degree: 4%
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL 连接字符串]**：需要连接字符串才能访问Blob存储中的数据。 此 [!DNL Blob] 连接字符串模式开头为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
-   * 有关配置的详细信息 [!DNL Blob] 连接字符串，请参见 [为Azure存储帐户配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) 在Microsoft文档中。
+   * 有关配置的详细信息 [!DNL Blob] 连接字符串，请参见 [为Azure存储帐户配置连接字符串](https://learn.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) 在Microsoft文档中。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
    ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
@@ -112,7 +117,10 @@ ht-degree: 4%
 
 ## （测试版）导出数据集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请参阅 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 导出的数据 {#exported-data}
 

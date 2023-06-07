@@ -2,9 +2,9 @@
 title: (Beta) Azure Data Lake Storage Gen2连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活区段和导出数据集。
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '780'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,11 @@ ht-degree: 0%
 ## 概述 {#overview}
 
 请阅读此页面，了解如何创建到 [[!DNL Azure Data Lake Storage Gen2]](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) ([!DNL ADLS Gen2])数据湖以定期从Experience Platform导出数据文件。
+
+## 连接到您的 [!DNL ADLS Gen2] 通过API或用户界面进行存储 {#connect-api-or-ui}
+
+* 连接到您的 [!DNL ADLS Gen2] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
+* 连接到您的 [!DNL ADLS Gen2] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -87,7 +92,10 @@ ht-degree: 0%
 
 ## （测试版）导出数据集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请参阅 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 验证数据导出是否成功 {#exported-data}
 

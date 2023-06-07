@@ -2,9 +2,9 @@
 title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活区段和导出数据集。
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1265'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,11 @@ ht-degree: 0%
 
 Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL Data Landing Zone] 容器。 所有文件都会在七天后删除。
 
+## 连接到您的 [!UICONTROL 数据登陆区] 通过API或用户界面进行存储 {#connect-api-or-ui}
+
+* 连接到您的 [!UICONTROL 数据登陆区] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
+* 连接到您的 [!UICONTROL 数据登陆区] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
@@ -43,7 +48,7 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 ### 连接您的 [!DNL Data Landing Zone] 容器 [!DNL Azure Storage Explorer]
 
-您可以使用 [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) 管理您的内容 [!DNL Data Landing Zone] 容器。 开始使用 [!DNL Data Landing Zone]，您首先需要检索凭据，然后将其输入 [!DNL Azure Storage Explorer]，并连接 [!DNL Data Landing Zone] 容器 [!DNL Azure Storage Explorer].
+您可以使用 [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) 管理您的内容 [!DNL Data Landing Zone] 容器。 开始使用 [!DNL Data Landing Zone]，您必须首先检索凭据，然后输入它们 [!DNL Azure Storage Explorer]，并连接 [!DNL Data Landing Zone] 容器 [!DNL Azure Storage Explorer].
 
 在 [!DNL Azure Storage Explorer] UI中，选择左侧导航栏中的连接图标。 此 **选择资源** 窗口出现，为您提供连接选项。 选择 **[!DNL Blob container]** 以连接到 [!DNL Data Landing Zone] 存储。
 
@@ -83,7 +88,7 @@ curl -X GET \
 
 **响应**
 
-以下响应将返回登陆区域的凭据信息，包括您当前的 `SASToken` 和 `SASUri`以及 `storageAccountName` 与您的登陆区域容器对应的区域。
+以下响应将返回登陆区域的凭据信息，包括您当前的 `SASToken` 和 `SASUri`，以及 `storageAccountName` 与您的登陆区域容器对应的区域。
 
 ```json
 {
@@ -114,7 +119,7 @@ curl -X GET \
 
 ![dlz-user-container](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
-通过您的 [!DNL Data Landing Zone] 容器已连接到 [!DNL Azure Storage Explorer]，您现在可以开始将文件从Experience Platform导出到 [!DNL Data Landing Zone] 容器。 要导出文件，您需要建立与 [!DNL Data Landing Zone] Experience PlatformUI中的目标，如下节所述。
+通过您的 [!DNL Data Landing Zone] 容器已连接到 [!DNL Azure Storage Explorer]，您现在可以开始将文件从Experience Platform导出到 [!DNL Data Landing Zone] 容器。 要导出文件，必须建立与 [!DNL Data Landing Zone] Experience PlatformUI中的目标，如下节所述。
 
 ## 连接到目标 {#connect}
 
@@ -163,7 +168,10 @@ curl -X GET \
 
 ## （测试版）导出数据集 {#export-datasets}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请参阅 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 验证数据导出是否成功 {#exported-data}
 
