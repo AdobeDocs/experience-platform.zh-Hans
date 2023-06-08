@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API创建数据集
 description: 本文档提供了使用Adobe Experience Platform API创建数据集和使用文件填充数据集的常规步骤。
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: e2f16f532b98e6948ffd7f331e630137b3972f0f
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1303'
 ht-degree: 1%
 
 ---
@@ -45,9 +45,7 @@ ht-degree: 1%
 >
 >有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
-
-* Content-Type： application/json
+包含有效负载(POST、PUT、PATCH)的所有请求都需要一个额外的 `Content-Type: application/json` 标头。 对于JSON+PATCH请求， `Content-Type` 应为 `application/json-patch+json`.
 
 ## 教程
 
@@ -254,7 +252,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和一个响应对象，其中包含新创建的批处理的详细信息，包括其 `id`，系统生成的只读字符串。
+成功的响应返回HTTP状态201（已创建）和一个响应对象。 响应对象由一个数组组成，该数组包含格式为的新创建批次的ID `"@/batches/{BATCH_ID}"`. 批次ID是系统生成的只读字符串，用于在API调用中引用批次。
 
 ```JSON
 {
@@ -355,12 +353,12 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/5d01230fc
 
 ## 监测引入
 
-根据数据的大小，批量摄取的时间长短各不相同。 您可以通过附加 `batch` 包含批次ID的请求参数 `GET /batches` 请求。 API会在数据集中轮询批次从摄取到 `status` 在响应中指示完成（“success”或“failure”）。
+根据数据的大小，批量摄取的时间长短各不相同。 通过将批次ID附加到 `GET /batches` 请求。
 
 **API格式**
 
 ```HTTP
-GET /batches?batch={BATCH_ID}
+GET /batches/{BATCH_ID}
 ```
 
 | 参数 | 描述 |

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 目录服务API指南附录
 description: 本文档包含帮助您在Adobe Experience Platform中使用目录API的其他信息。
 exl-id: fafc8187-a95b-4592-9736-cfd9d32fd135
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 24db94b959d1bad925af1e8e9cbd49f20d9a46dc
 workflow-type: tm+mt
-source-wordcount: '920'
+source-wordcount: '458'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 部分 [!DNL Catalog] 对象可以与其他 [!DNL Catalog] 对象。 任何前缀为 `@` 响应有效负载表示相关对象。 这些字段的值采用URI的形式，可以在单独的GET请求中使用，以检索它们表示的相关对象。
 
-上的文档中返回的示例数据集 [查找特定数据集](look-up-object.md) 包含 `files` 具有以下URI值的字段： `"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`. 的内容 `files` 字段可以通过使用此URI作为新GET请求的路径来查看。
+上的文档中返回的示例数据集 [查找特定数据集](look-up-object.md) 包含 `files` 具有以下URI值的字段： `"@/datasetFiles?datasetId={DATASET_ID}"`. 的内容 `files` 字段可以通过使用此URI作为新GET请求的路径来查看。
 
 **API格式**
 
@@ -37,7 +37,7 @@ GET {OBJECT_URI}
 
 ```shell
 curl -X GET \
-  'https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files' \
+  'https://platform.adobe.io/data/foundation/catalog/dataSets/datasetFiles?datasetId={DATASET_ID}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -88,90 +88,6 @@ curl -X GET \
     }
 }
 ```
-
-## 在一次调用中提出多个请求
-
-的根端点 [!DNL Catalog] API允许在单个调用中提出多个请求。 请求有效负载包含一个对象数组，表示通常为各个请求的对象，然后按顺序执行。
-
-如果这些请求是对的修改或添加 [!DNL Catalog] 任何一项更改都将失败，所有更改都将恢复。
-
-**API格式**
-
-```http
-POST /
-```
-
-**请求**
-
-以下请求创建一个新数据集，然后为该数据集创建相关视图。 此示例演示了如何使用模板语言来访问在先前调用中返回的值，以便在后续调用中使用。
-
-例如，如果要引用从上一个子请求返回的值，可以创建以下格式的引用： `<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>` (其中 `{REQUEST_ID}` 是用户为子请求提供的ID，如下所示)。 您可以使用这些模板引用上一个子请求的响应对象正文中可用的任何属性。
-
->[!NOTE]
->
->当执行的子请求仅返回对对象的引用(这是目录API中大多数POST和PUT请求的默认值)时，此引用将别名为值 `id` 和可以用作  `<<{OBJECT_ID}.id>>`.
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/foundation/catalog \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '[
-    {
-      "id": "firstObjectId",
-      "resource": "/dataSets",
-      "method": "post",
-      "body": {
-        "type": "raw",
-        "name": "First Dataset"
-      }
-    }, 
-    {
-      "id": "secondObjectId",
-      "resource": "/datasetViews",
-      "method": "post",
-      "body": {
-        "status": "enabled",
-        "dataSetId": "<<firstObjectId.id>>"
-      }
-    }
-  ]'
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `id` | 附加到响应对象的用户提供的ID，以便您可以将请求与响应进行匹配。 [!DNL Catalog] 不会存储此值，而只是将其返回响应以供参考。 |
-| `resource` | 相对于根的资源路径 [!DNL Catalog] API。 协议和域不应包含在此值中，它的前缀应为“/”。 <br/><br/> 将PATCH或DELETE用作子请求的 `method`，在资源路径中包含对象ID。 不要与用户提供的混淆 `id`，则资源路径使用的ID [!DNL Catalog] 对象本身(例如， `resource: "/dataSets/1234567890"`)。 |
-| `method` | 与请求中发生的操作相关的方法(GET、PUT、POST、PATCH或DELETE)的名称。 |
-| `body` | 通常作为POST、PUT或PATCH请求中的有效负载传递的JSON文档。 GET或DELETE请求不需要此属性。 |
-
-**响应**
-
-成功的响应会返回一个对象数组，其中包含 `id` 您分配给每个请求的HTTP状态代码以及响应 `body`. 由于三个示例请求都是创建新对象，因此 `body` 每个对象都是一个仅包含新创建对象的ID的数组，这是中大多数成功POST响应的标准 [!DNL Catalog].
-
-```json
-[
-    {
-        "id": "firstObjectId",
-        "code": 200,
-        "body": [
-            "@/dataSets/5be230aef5b02914cd52dbfa"
-        ]
-    },
-    {
-        "id": "secondObjectId",
-        "code": 200,
-        "body": [
-            "@/dataSetViews/5be230aef5b02914cd52dbfb"
-        ]
-    }
-]
-```
-
-检查对多个请求的响应时请务必谨慎，因为您将需要验证每个单独子请求的代码，而不是仅依赖父POST请求的HTTP状态代码。  单个子请求可能会返回404(例如，对无效资源的GET请求)，而整体请求返回200。
 
 ## 其他请求标头
 

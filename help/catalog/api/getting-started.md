@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 目录服务API指南
 description: 目录服务API允许开发人员在Adobe Experience Platform中管理数据集元数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 07451b8ab4bcb7ca43ad0c8a821478b2c9682894
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '595'
 ht-degree: 3%
 
 ---
@@ -63,6 +63,6 @@ ht-degree: 3%
 
 本文档介绍了调用 [!DNL Catalog] API。 您现在可以继续本开发人员指南中提供的示例调用，并按照其说明进行操作。
 
-本指南中的大多数示例都使用 `/dataSets` 端点，但是该原则可以应用于中的其他端点 [!DNL Catalog] (例如 `/batches` 和 `/accounts`)。 请参阅 [目录服务API参考](https://www.adobe.io/experience-platform-apis/references/catalog/) 以获取每个端点可用的所有调用和操作的完整列表。
+本指南中的大多数示例都使用 `/dataSets` 端点，但是该原则可以应用于中的其他端点 [!DNL Catalog] (例如 `/batches`)。 请参阅 [目录服务API参考](https://www.adobe.io/experience-platform-apis/references/catalog/) 以获取每个端点可用的所有调用和操作的完整列表。
 
 用于分步工作流，它演示了如何 [!DNL Catalog] API与数据摄取有关，请参阅关于的教程 [创建数据集](../datasets/create.md).

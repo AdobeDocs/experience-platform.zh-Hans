@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 目录服务概述
 description: 目录服务是Adobe Experience Platform中数据位置和谱系的记录系统。 虽然摄取到Experience Platform中的所有数据都将作为文件和目录存储在Data Lake中，但Catalog会保存这些文件和目录的metadata和描述，以供查找和监控。
 exl-id: ef0c173b-607b-41b8-8676-c54ae9472e23
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 0ebe9eadb1bce6252b43a50af009ce1b0f6e5d6e
 workflow-type: tm+mt
-source-wordcount: '805'
-ht-degree: 5%
+source-wordcount: '694'
+ht-degree: 6%
 
 ---
 
@@ -53,10 +53,7 @@ ht-degree: 5%
 
 | 对象 | API端点 | 定义 |
 |---|---|---|
-| 帐户 | `/accounts` | 创建源连接时，必须提供身份验证凭据。 帐户表示用于创建特定类型连接的身份验证凭据集合。 每个连接都有一组唯一参数，这些参数由持久化设置 [!DNL Catalog] 及有抵押贷款 [!DNL Azure Key Vault]. |
 | 批次 | `/batches` | 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。中的批次对象 [!DNL Catalog] 概述了批处理的摄取量度（例如处理的记录数或磁盘大小），并且可能还包括指向数据集、视图和受批处理操作影响的其他资源的链接。 |
-| Connection | `/connections` | 连接是源连接器的单个实例，对您的组织是唯一的，并使用连接器类型的相应身份验证凭据进行配置。 |
-| 连接器 | `/connectors` | 连接器定义源连接如何从其他Adobe应用程序(例如Adobe Analytics和Adobe Audience Manager)和第三方云存储源(例如 [!DNL Azure Blob]， [!DNL Amazon S3]、FTP服务器和SFTP服务器)以及第三方CRM系统(例如 [!DNL Microsoft Dynamics] 和 [!DNL Salesforce])。 |
 | 数据集 | `/dataSets` | 数据集是用于收集数据的存储和管理结构（通常是表），其中包含架构（列）和字段（行）。 请参阅 [数据集概述](./datasets/overview.md) 了解更多信息。 |
 | 数据集文件 | `/datasetFiles` | 数据集文件表示已保存的数据块 [!DNL Platform]. 作为文本文件的记录，您可以在此处找到文件的大小、包含的记录数以及对摄取文件的批次的引用。 |
 

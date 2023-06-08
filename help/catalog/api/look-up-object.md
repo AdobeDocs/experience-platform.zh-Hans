@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查找目录对象
 description: 如果您知道特定目录对象的唯一标识符，则可以执行GET请求以查看该对象的详细信息。
 exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 2%
@@ -28,16 +28,16 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要检索的特定对象的标识符。 |
 
 **请求**
 
-以下请求按数据集的ID检索数据集，并返回其 `name`， `description`， `state`， `tags`、和 `files` 属性。
+以下请求按数据集的ID检索数据集，并返回其 `name`， `description`， `tags`、和 `files` 属性。
 
 ```shell
 curl -X GET \
-  'https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a?properties=name,description,state,tags,files' \
+  'https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a?properties=name,description,tags,files' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -53,7 +53,6 @@ curl -X GET \
     "5ba9452f7de80400007fc52a": {
         "name": "Sample Dataset",
         "description": "Sample dataset containing important data.",
-        "state": "DRAFT",
         "tags": {
             "adobe/pqs/table": [
                 "sample_dataset"
