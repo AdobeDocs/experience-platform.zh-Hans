@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面协调和监控各种Experience Cloud应用程序中的隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 96434c83b3d8757872439b58b5c450955c0ed652
+source-git-commit: e5a1b57bc81b27d0e61c3c1ecc10156c10dd3f6e
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1473'
 ht-degree: 14%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 14%
 
 每种法规类型的作业将单独进行跟踪。 要在法规类型之间切换，请选择 **[!UICONTROL 法规类型]** 下拉菜单，并从列表中选择所需的法规。
 
-![“法规类型”下拉列表](../images/user-guide/regulation.png)
+![具有“法规类型”下拉列表的“Privacy Service”控制台。](../images/user-guide/regulation.png)
 
 在更改法规类型后，仪表板会更新以显示适用于所选法规的所有操作、筛选器、小部件和作业创建对话框。
 

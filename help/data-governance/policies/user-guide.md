@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中管理数据使用策略
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在Experience Platform用户界面的“策略”工作区中执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
+source-git-commit: ed9ab1f2a4b4466841b3bedef48a6e0a07ec3d10
 workflow-type: tm+mt
-source-wordcount: '1618'
-ht-degree: 19%
+source-wordcount: '1788'
+ht-degree: 17%
 
 ---
 
@@ -59,7 +59,19 @@ ht-degree: 19%
 
 * 如果您不属于Beta版，则会立即转到以下项的工作流： [创建数据治理策略](#create-governance-policy).
 * 如果您是测试版的一部分，则会显示一个对话框，其中提供了一个额外选项，用于 [创建同意策略](#consent-policy).
-   ![](../images/policies/choose-policy-type.png)
+  ![](../images/policies/choose-policy-type.png)
+
+### 同时使用数据治理和同意策略 {#combine-policies}
+
+>[!NOTE]
+>
+>同意策略当前仅适用于已购买AdobeHealthcare Shield或AdobePrivacy &amp; Security Shield的组织。
+
+治理和同意策略可结合使用，以创建强大的规则来管理映射到目标的受众。 同意策略本质上具有包容性，这意味着它们规定了每个营销体验中可以包含哪些用户档案。 相反，治理策略会排除使用特定的已标记属性，以免配置为激活。
+
+通过使用此行为，您可以设置策略和同意规则的组合，使其包含正确的用户档案，但阻止您包含违反已设置组织规则的数据。 示例场景是，您希望排除敏感数据，以便将其包含在内，但仍能够通过社交媒体定位同意的用户进行营销。 以下信息图概述了此方案的必要步骤。
+
+![此信息图表概述了将治理和同意策略结合使用，以创建用于管理受众的强大规则的步骤。](../images/policies/governance-and-consent-policies-infographic.png)
 
 ### 创建数据治理策略 {#create-governance-policy}
 
@@ -92,7 +104,7 @@ ht-degree: 19%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="说明"
->abstract="<ul><li>确保您通过 OneTrust 源连接器或用于同意的标准 XDM 架构将首选项数据引入到您的联合架构中。</li><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">创建策略</a>。</li><li>在<b>如果</b>部分下面，描述将触发策略检查的条件或操作。</li><li>在<b>则</b>部分下面，输入必须存在才能在触发该策略的操作中包括配置文件的同意属性。</li><li>选择<b>保存</b>以创建该策略。要启用该策略，请选择右边栏中的<b>状态</b>切换开关。</li><li>Experience Platform 在您对于目标激活区段时自动执行您启用的同意策略，并提供有关每项策略如何影响您的受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 Experience League 上关于<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">创建同意策略</a>的指南。</li></ul>"
+>abstract="<ul><li>确保您通过 OneTrust 源连接器或用于同意的标准 XDM 架构将首选项数据引入到您的联合架构中。</li><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">创建策略</a>。</li><li>在<b>如果</b>部分下面，描述将触发策略检查的条件或操作。</li><li>在<b>则</b>部分下面，输入必须存在才能在触发该策略的操作中包括配置文件的同意属性。</li><li>选择<b>保存</b>以创建该策略。要启用该策略，请选择右边栏中的<b>状态</b>切换开关。</li><li>Experience Platform 在您对于目标激活区段时自动执行您启用的同意策略，并提供有关每项策略如何影响您的受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 Experience League 上关于<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy">创建同意策略</a>的指南。</li></ul>"
 
 >[!IMPORTANT]
 >
