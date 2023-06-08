@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面协调和监控各种Experience Cloud应用程序中的隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
+source-git-commit: 96434c83b3d8757872439b58b5c450955c0ed652
 workflow-type: tm+mt
-source-wordcount: '1463'
+source-wordcount: '1467'
 ht-degree: 14%
 
 ---
@@ -38,7 +38,9 @@ ht-degree: 14%
 
 | UI标签 | 法规 |
 | --- | --- |
+| [!UICONTROL CPA] | [!DNL Colorado Privacy Act] |
 | [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
+| [!UICONTROL CTDPA] | [!DNL Connecticut Data Privacy Act] |
 | [!UICONTROL GDPR] | 欧盟的 [!DNL General Data Protection Regulation] |
 | [!UICONTROL PDPA_THA] | 泰国的 [!DNL Personal Data Protection Act] |
 | [!UICONTROL LGPD_BRA] | 巴西的 [!DNL Lei Geral de Proteção de Dados] |

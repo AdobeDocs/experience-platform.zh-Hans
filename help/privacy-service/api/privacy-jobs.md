@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 890294f087b4aae58ec9519ab3fcfff0cc4cc12d
 workflow-type: tm+mt
 source-wordcount: '1547'
 ht-degree: 1%
@@ -36,7 +36,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅概述，位于 [支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li><li>`cpa`</li><li>`ctdpa`</li></ul><br>请参阅概述，位于 [支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认为 `1` 最大值为 `100`. 超过最大值会导致API返回400代码错误。 |
 
