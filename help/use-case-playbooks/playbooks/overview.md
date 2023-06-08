@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
-title: 行动手册概述
+title: 用例行动手册概述
 description: 了解如何在Experience Platform中使用用例行动手册功能开始使用各种营销用例
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 63ea852ca9f9a45d1c071fd1033cbd44cbb427c6
+source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '398'
 ht-degree: 2%
 
 ---
@@ -18,8 +18,8 @@ ht-degree: 2%
 您将在本文档指南中找到以下内容：
 
 * **[用例行动手册概述](#overview)**
-* [查看行动手册并生成资源](ui-guide.md#view-playbook-generate-assets)
-* [启用、使用和重用剧本实例 ](ui-guide.md#enable-playbook)
+* [探索正确的剧本](/help/use-case-playbooks/playbooks/discover.md)
+* [创建、共享和重用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [疑难解答和已知限制](troubleshooting.md)
 
 >[!ENDSHADEBOX]
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 ## UI指南
 
-在决定要使用的剧本后，从UI中选择它并开始使用。 阅读上的UI指南 [如何启用和重复使用行动手册](/help/use-case-playbooks/playbooks/ui-guide.md) 有关如何创建实例并充分利用行动手册的完整信息。
+在决定要使用的剧本后，从UI中选择它并开始使用。 阅读上的UI指南 [如何发现正确的剧本](/help/use-case-playbooks/playbooks/discover.md) 对于您和 [如何创建、共享和重复使用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 有关如何创建实例并充分利用行动手册的完整信息。
 
 ## 疑难解答和已知限制
 
