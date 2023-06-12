@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Media Edge API
 description: Media Edge API概述。
 exl-id: null
-source-git-commit: f040ba6d1403da4212fe279e32316bac995905b2
+source-git-commit: 696ddd93d87601f9f6dedfd651ee12573dc4990a
 workflow-type: tm+mt
-source-wordcount: '387'
-ht-degree: 5%
+source-wordcount: '391'
+ht-degree: 4%
 
 ---
 
@@ -25,7 +25,7 @@ Media Edge API构建于Adobe Experience Platform (AEP)之上，用于在的框�
 
 ## 优化媒体跟踪数据流
 
-两者 [媒体收集](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en&amp;media-tracking-data-flows) API和Media Edge API将媒体跟踪数据作为RESTful服务提供。 但使用Media Edge服务具有以下优势：
+两者 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en&amp;media-tracking-data-flows) 和Media Edge API将媒体跟踪数据作为RESTful服务提供。 但使用Media Edge服务具有以下优势：
 
 * 这是将XDM架构融入数据流的最简单方法。
 
@@ -33,14 +33,14 @@ Media Edge API构建于Adobe Experience Platform (AEP)之上，用于在的框�
 
 * 它最有效地跟踪媒体事件。
 
-下表介绍了适用于各种Media Analytics案例的最佳AdobeAPI服务：
+下表显示了适用于各种Media Analytics案例的AdobeAPI服务：
 
-| 用例 | 平台 | API服务 |
-| -------- | ------ | ---------- |
-| CJA | AEP | 媒体边缘 |
-| CDP + CJA | AEP | 媒体边缘 |
-| Analytics + CJA | AEP | 媒体边缘 |
-| 旧版分析 | 不适用 | 媒体收集 |
+| 用例 | API服务 |
+| -------- | ------ |
+| AEP解决方案（CJA、RTDCP、AJO等） | 媒体边缘 |
+| CDP + CJA | 媒体边缘 |
+| Adobe Analytics + AEP解决方案 | 媒体边缘 |
+| 仅限Adobe Analytics（已跟踪） | 媒体收集 |
 
 >[!NOTE]
 >
