@@ -5,10 +5,10 @@ user-guide-title: Edge Network Server API 文档
 breadcrumb-title: Edge Network Server API 文档
 user-guide-description: 通过 Experience Cloud 或 Experience Platform Edge 服务，使用边缘网络服务器 API 收集数据、创建个性化、广告和营销用例。
 feature: Data Collection
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: be073dcc62f0cf5b94f94082348442e2526604a7
 workflow-type: tm+mt
-source-wordcount: '85'
-ht-degree: 50%
+source-wordcount: '108'
+ht-degree: 39%
 
 ---
 
@@ -31,3 +31,8 @@ ht-degree: 50%
 * [位置提示](location-hints.md)
 * [错误处理](error-handling.md)
 * [故障排除](troubleshooting.md)
+* Media Edge API {#media-edge-apis}
+   * [Media Edge API概述](media-edge-api/overview.md)
+   * [Media Edge API快速入门](media-edge-api/getting-started.md)
+   * [Media Edge API故障排除](media-edge-api/troubleshooting.md)
+   * [Media Edge API Open API规范资源](media-edge-api/swagger.md)
