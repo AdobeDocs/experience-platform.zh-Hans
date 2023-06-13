@@ -2,7 +2,7 @@
 description: 了解如何使用目标测试API为您的流目标生成示例配置文件，以用于目标测试。
 title: 根据源架构生成示例配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 639d40621576bac361c106fa8cd494a7659214be
+source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 1%
@@ -26,7 +26,6 @@ ht-degree: 1%
 >* 生成要在以下情况下使用的配置文件： [拟定和测试报文转换模板](create-template.md)  — 通过使用 *目标ID* 作为查询参数。
 >* 生成要在调用时使用的配置文件 [测试目标是否正确配置](streaming-destination-testing-overview.md)  — 通过使用 *目标实例ID* 作为查询参数。
 
-
 您可以根据AdobeXDM源架构（在测试目标时使用）或目标支持的目标架构（在构建模板时使用）生成示例配置文件。 要了解AdobeXDM源架构和目标架构之间的区别，请阅读 [消息格式](../../functionality/destination-server/message-format.md) 文章。
 
 请注意，样本配置文件的使用目的不可互换。 配置文件是根据 *目标ID* 只能用于制作您的报文转换模板和基于 *目标实例ID* 只能用于测试目标端点。
@@ -49,8 +48,7 @@ ht-degree: 1%
 >
 >* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 读取 [连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 和 [将配置文件和区段激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 了解更多信息。
 > * 在建立与目标的连接后，在以下情况下获取您应在对此端点的API调用中使用的目标实例ID： [浏览与目标的连接](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
-   >![用户界面图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
-
+>![用户界面图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 **API格式**
 
@@ -200,7 +198,6 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 >[!TIP]
 >
 >* 您应在此处使用的目标ID是 `instanceId` 对应于使用创建的目标配置 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 了解更多详细信息。
-
 
 **API格式**
 
