@@ -3,9 +3,9 @@ keywords: Experience Platform；media edge；热门主题；日期范围
 solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API快速入门
-source-git-commit: b4687fa7f1a2eb8f206ad41eae0af759b0801b83
+source-git-commit: 4f60b00026a226aa6465b2c21b3c2198962a1e3b
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '979'
 ht-degree: 7%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 7%
 * sessionComplete
 * 状态更新
 
-每个事件都有自己的端点。 所有Media Edge API端点都是POST方法，具有用于事件数据的JSON请求正文。 有关Media Edge API端点、参数和示例的更多信息，请参阅Media Edge Swagger文件。
+每个事件都有自己的端点。 所有Media Edge API端点都是POST方法，具有用于事件数据的JSON请求正文。 有关Media Edge API端点、参数和示例的更多信息，请参阅 [Media Edge Swagger文件](swagger.md).
 
 本指南说明如何在启动会话后跟踪以下事件：
 
@@ -43,7 +43,7 @@ ht-degree: 7%
 
 ## 实施 API
 
-除了在称为的模型和路径方面存在的细微差异之外，媒体边缘API与媒体收集API相同。 媒体收集的实施详细信息对Media Edge API仍然有效，如以下文档中所述：
+除了所调用的模型和路径中的细微差异之外，媒体边缘API还具有与媒体收集API相同的实施。 媒体收集的实施详细信息对Media Edge API仍然有效，如以下文档中所述：
 
 * [在播放器中设置 HTTP 请求类型](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [发送 Ping 事件](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
@@ -61,7 +61,7 @@ ht-degree: 7%
 
 在发出会话开始请求之前，您将需要满足以下条件：
 
-* 此 `datastreamId` 是POST会话启动请求的必需参数。 检索 `datastreamId`，请参见 [配置数据流](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=zh-Hans).
+* 此 `datastreamId`—POST会话启动请求的必需参数。 检索 `datastreamId`，请参见 [配置数据流](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=zh-Hans).
 
 * 请求有效负载的JSON对象，其中包含所需的最小数据（如下面的示例请求中所示）。
 
@@ -98,7 +98,7 @@ curl -i --request POST '{uri}/ee/va/v1/sessionStart?configId={dataStreamId}' \
 }'
 ```
 
-在上面的示例请求中， `eventType` 值包含前缀 `media` 根据 [体验数据模型(XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 用于指定域。
+在上面的示例请求中， `eventType` 值包含前缀 `media.` 根据 [体验数据模型(XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 用于指定域。
 
 此外，数据类型映射 `eventType` 在上例中，如下所示：
 
@@ -165,14 +165,14 @@ x-content-type-options: nosniff
 
 在上面的示例响应中， `sessionId` 显示为 `af8bb22766e458fa0eef98c48ea42c9e351c463318230e851a19946862020333`. 您将在后续事件请求中将此ID用作必需参数。
 
-有关会话开始端点参数和示例的更多信息，请参阅Media Edge Swagger文件。
+有关“会话开始”端点参数和示例的更多信息，请参阅 [Media Edge Swagger](swagger.md) 文件。
 
 有关XDM媒体数据参数的更多信息，请参阅 [媒体详细信息架构](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmplayhead).
 
 
 ## 缓冲开始事件请求
 
-在媒体播放器上开始缓冲时，“缓冲开始”事件将发出信号。 缓冲恢复不是API服务中的事件；而是在缓冲启动后发送播放事件时推断出来。 要发出缓冲开始事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
+在媒体播放器上开始缓冲时，“缓冲开始”事件将发出信号。 缓冲恢复不是API服务中的事件；而是在缓冲启动后发送播放事件时推断的。 要发出缓冲开始事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/bufferStart \`
 
@@ -203,9 +203,10 @@ curl -X 'POST' \
 
 在上述示例请求中，与 `sessionId` 上一次调用中返回的参数用作缓冲开始请求中的必需参数。
 
-有关“缓冲开始”端点参数和示例的更多信息，请参阅Media Edge Swagger文件。
-
 成功的响应指示状态为200，并且不包含任何内容。
+
+有关“缓冲开始”端点参数和示例的更多信息，请参见 [Media Edge Swagger](swagger.md) 文件。
+
 
 ## 播放事件请求
 
@@ -240,7 +241,7 @@ curl -X 'POST' \
 
 成功的响应指示状态为200，并且不包含任何内容。
 
-有关播放端点参数和示例的更多信息，请参阅Media Edge Swagger文件。
+有关“播放”端点参数和示例的更多信息，请参阅 [Media Edge Swagger](swagger.md) 文件。
 
 ## 会话结束事件请求
 
@@ -275,6 +276,8 @@ curl -X 'POST' \
 
 成功的响应指示状态为200，并且不包含任何内容。
 
+有关“会话结束”端点参数和示例的更多信息，请参阅 [Media Edge Swagger](swagger.md) 文件。
+
 ## 响应代码
 
 下表显示了Media Edge API请求可能产生的响应代码：
@@ -282,10 +285,10 @@ curl -X 'POST' \
 | 状态 | 描述 |
 | ---------- | --------- |
 | 200 | 会话已成功创建 |
-| 207 | 连接到Experience Edge Network的服务之一出现问题（请参阅故障排除指南中的更多信息） |
+| 207 | 连接到Experience Edge Network的服务出现问题(请参阅 [疑难解答指南](troubleshooting.md)) |
 | 400级 | 错误请求 |
 | 500级 | 服务器错误 |
 
-有关处理错误和不成功响应代码的更多信息，请参阅Media Edge故障诊断指南。
+有关处理错误和不成功响应代码的详细信息，请参阅 [Media Edge疑难解答指南](troubleshooting.md).
 
 
