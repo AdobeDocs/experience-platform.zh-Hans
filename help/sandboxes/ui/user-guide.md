@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 沙盒UI指南
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙盒相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 70bbfd4e2971367c9b7b88bd4bc7985d9e6fbb1e
 workflow-type: tm+mt
-source-wordcount: '816'
-ht-degree: 8%
+source-wordcount: '953'
+ht-degree: 7%
 
 ---
 
@@ -77,7 +77,30 @@ ht-degree: 8%
 
 >[!WARNING]
 >
->以下异常列表可能会阻止您重置默认的生产沙盒或用户创建的生产沙盒： <ul><li>如果Adobe Analytics也在将沙盒中托管的身份图形用于，则无法重置默认生产沙盒 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能。</li><li>如果Adobe Audience Manager也在将沙盒中托管的身份图形用于，则无法重置默认生产沙盒 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).</li><li>如果默认生产沙盒包含CDA和PBD功能的数据，则无法重置该沙盒。</li><li>用户创建的生产沙盒，用于与Adobe Audience Manager或Audience Core Service进行双向区段共享，可在出现警告消息后重置该沙盒。</li></ul>
+>以下异常列表可能会阻止您重置默认的生产沙盒或用户创建的生产沙盒：
+>* 如果Adobe Analytics也在将沙盒中托管的身份图形用于，则无法重置默认生产沙盒 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能。
+>* 如果Adobe Audience Manager也在将沙盒中托管的身份图形用于，则无法重置默认生产沙盒 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
+>* 如果默认生产沙盒包含CDA和PBD功能的数据，则无法重置该沙盒。
+>* 用户创建的生产沙盒，用于与Adobe Audience Manager或Audience Core Service进行双向区段共享，可在出现警告消息后重置该沙盒。
+>* 在启动沙盒重置之前，您将需要手动删除合成，以确保正确清理关联的受众数据。
+
+### 删除受众合成
+
+受众构成当前未与沙盒重置功能集成，因此需要先手动删除受众，然后再执行沙盒重置。
+
+选择 **[!UICONTROL 受众]** 从左侧导航中，然后选择 **[!UICONTROL 合成]**.
+
+![此 [!UICONTROL 合成] 在中选项卡 [!UICONTROL 受众] 工作区。](../images/ui/audiences.png)
+
+接下来，选择省略号(`...`)，然后选择 **[!UICONTROL 删除]**.
+
+![受众菜单，其中突出显示 [!UICONTROL 删除] 选项。](../images/ui/delete-composition.png)
+
+屏幕上会显示成功删除的确认信息，并返回到 **[!UICONTROL 合成]** 选项卡。
+
+对所有合成内容重复上述步骤。 这将从受众清单中删除所有受众。 删除所有受众后，您可以继续重置沙盒。
+
+### 重置沙盒
 
 重置生产或开发沙盒会删除与该沙盒关联的所有资源（架构、数据集等），同时保留沙盒的名称和关联的权限。 对于有权访问此“清理”沙盒的用户，将继续以相同的名称提供该沙盒。
 
