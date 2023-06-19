@@ -2,9 +2,9 @@
 title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理和与联系人（客户、客户或其他利益相关方）交谈，使用邮件列表和电子邮件营销活动。 使用此连接器可以根据联系人的兴趣和偏好对联系人进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: cdbbd7fa3e8c0a2128823db7279dcb606f3c74db
+source-git-commit: f8ccf9303fbcb010225881942de5e672b4111072
 workflow-type: tm+mt
-source-wordcount: '2371'
+source-wordcount: '2357'
 ht-degree: 0%
 
 ---
@@ -110,9 +110,9 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**.
 
-| [!DNL Mailchimp] 目标 | [!DNL Mailchimp] |
+| 字段 | 描述 |
 | --- | --- |
-| **[!UICONTROL 用户名]** | 您的 [!DNL Salesforce Marketing Cloud] 域前缀。 <br>例如，如果您的域是<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*，<br> 您必须提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 作为用户名值。 |
+| **[!UICONTROL 用户名]** | 您的 [!DNL Mailchimp Interest Categories] 用户名。 |
 | **[!UICONTROL 密码]** | 您的 [!DNL Mailchimp] **API密钥**，您已在 [收集 [!DNL Mailchimp] 凭据](#gather-credentials) 部分。<br> 您的API密钥采用以下形式 `{KEY}-{DC}`，其中 `{KEY}` 部分指 [[!DNL Mailchimp] API密钥](#gather-credentials) 部分和 `{DC}` 部分是指 [[!DNL Mailchimp] 数据中心](#identify-data-center). <br>您可以提供 `{KEY}` 部分或整个表单。<br> 例如，如果您的API密钥为 <br>*`0123456789abcdef0123456789abcde-us14`*，<br> 您可以提供&#x200B;*`0123456789abcdef0123456789abcde`*或&#x200B;*`0123456789abcdef0123456789abcde-us14`*作为值。 |
 
 {style="table-layout:auto"}
