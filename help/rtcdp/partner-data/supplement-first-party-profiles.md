@@ -1,12 +1,12 @@
 ---
-title: (Beta)使用合作伙伴提供的属性补充第一方配置文件
+title: (Beta)使用合作伙伴提供的属性补充第一方用户档案
 description: 了解如何使用来自受信任数据合作伙伴的属性来补充第一方配置文件以改进数据基础、获得对客户群的新洞察以及更好的受众优化。
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 2a072ce9351a84263a50597967b994162de18d81
+source-git-commit: 019ebe0c1cf11a7fb30dced1e10b511bab9b5100
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1082'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Commenting out links for now
 此外，在此步骤中，请思考数据管理模型如何随着您扩展数据管理策略以包含合作伙伴提供的第三方数据而发生变化。 探索以下文档链接中的注意事项：
 
 * (**即将推出**)将第三方数据保留在单独的数据集中，以便轻松删除和撤消集成。
-* (**即将推出**) Use [存留期(TTL)](/help/hygiene/ui/dataset-expiration.md) 购买数据卫生加载项的客户的数据集上。
+* (**即将推出**)使用 [数据集过期](/help/hygiene/ui/dataset-expiration.md) 数据集上的功能，适用于购买了数据卫生加载项的客户。
 * (**即将推出**)创建提取第三方数据的派生数据集时请务必谨慎，因为一旦混合在一起，删除第三方数据的唯一解决方案是删除整个派生数据集。
 
 >[!TIP]
