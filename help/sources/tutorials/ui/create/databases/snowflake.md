@@ -1,17 +1,21 @@
 ---
-keywords: Experience Platform；主页；热门主题；Snowflake
 title: 在UI中创建Snowflake源连接
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Snowflake源连接。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '504'
 ht-degree: 2%
 
 ---
 
 # 创建 [!DNL Snowflake] UI中的源连接
+
+>[!IMPORTANT]
+>
+>此 [!DNL Snowflake] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 本教程提供了用于创建 [!DNL Snowflake] 源连接器，使用Adobe Experience Platform用户界面。
 
@@ -33,9 +37,14 @@ ht-degree: 2%
 | 数据库 | 此 [!DNL Snowflake] 数据库包含要带入Platform的数据。 |
 | 用户名 | 的用户名 [!DNL Snowflake] 帐户。 |
 | 密码 | 的密码 [!DNL Snowflake] 用户帐户。 |
+| 角色 | 在中使用的默认访问控制角色 [!DNL Snowflake] 会话。 该角色应为已分配给指定用户的现有角色。 默认角色为 `PUBLIC`. |
 | 连接字符串 | 用于连接到 [!DNL Snowflake] 实例。 的连接字符串模式 [!DNL Snowflake] 是 `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 
 有关这些值的更多信息，请参阅 [此Snowflake文档](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+
+>[!NOTE]
+>
+>您必须设置 `PREVENT_UNLOAD_TO_INLINE_URL` 标记到 `FALSE` 允许从卸载数据 [!DNL Snowflake] 要Experience Platform的数据库。
 
 ## 连接您的Snowflake帐户
 

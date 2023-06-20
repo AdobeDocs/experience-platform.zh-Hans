@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；流服务；流服务API
 title: 使用流服务API筛选源的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
+source-git-commit: b0e2fc4767fb6fbc90bcdd3350b3add965988f8f
 workflow-type: tm+mt
-source-wordcount: '780'
-ht-degree: 2%
+source-wordcount: '782'
+ht-degree: 3%
 
 ---
 
@@ -17,9 +17,9 @@ ht-degree: 2%
 >目前，仅对以下源提供对筛选行级数据的支持：
 >
 >* [Google BigQuery](../../connectors/databases/bigquery.md)
+>* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
 >* [Salesforce](../../connectors/crm/salesforce.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
-
 
 本教程提供了有关如何使用筛选源的行级数据的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

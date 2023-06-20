@@ -1,22 +1,24 @@
 ---
-keywords: Experience Platform；主页；热门主题；Snowflake；snowflake
-solution: Experience Platform
 title: 使用流服务API创建基于Snowflake的连接
-type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Snowflake。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: 6b9e5da9e552d93ff174d1d65dabb0ffd3128c1a
+source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '589'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Snowflake] 基本连接使用 [!DNL Flow Service] API
 
+>[!IMPORTANT]
+>
+>此 [!DNL Snowflake] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+
 基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
-本教程将指导您完成创建基本连接的步骤。 [!DNL Snowflake] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程将指导您完成创建基本连接的步骤。 [!DNL Snowflake] 使用 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## 快速入门
 
@@ -42,10 +44,15 @@ ht-degree: 1%
 | `database` | 此 [!DNL Snowflake] 数据库包含要带入Platform的数据。 |
 | `username` | 的用户名 [!DNL Snowflake] 帐户。 |
 | `password` | 的密码 [!DNL Snowflake] 用户帐户。 |
+| `role` | 在中使用的默认访问控制角色 [!DNL Snowflake] 会话。 该角色应为已分配给指定用户的现有角色。 默认角色为 `PUBLIC`. |
 | `connectionString` | 用于连接到 [!DNL Snowflake] 实例。 的连接字符串模式 [!DNL Snowflake] 是 `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Snowflake] 是 `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
 有关入门的更多信息，请参阅此 [[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+
+>[!NOTE]
+>
+>您必须设置 `PREVENT_UNLOAD_TO_INLINE_URL` 标记到 `FALSE` 允许从卸载数据 [!DNL Snowflake] 要Experience Platform的数据库。
 
 ## 创建基本连接
 
