@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: f93ee2bc10135fee0c2d77629ee10901010b744b
+source-git-commit: b5a6853c13b151a8754245cd4316a0de75e23e82
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '988'
 ht-degree: 11%
 
 ---
@@ -41,6 +41,7 @@ ht-degree: 11%
    - Analytics {#analytics}
       - [Mixpanel连接器](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
+      - [RainFocus](connectors/analytics/rainfocus.md)
    - 云存储 {#cloud-storage}
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Amazon S3连接器](connectors/cloud-storage/s3.md)
@@ -60,6 +61,7 @@ ht-degree: 11%
       - [OneTrust集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
+      - [SAP Hybris连接器](connectors/crm/sap-hybris.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
       - [SugarCRM连接器](connectors/crm/sugarcrm.md)
       - [Veeva CRM连接器](connectors/crm/veeva.md)
@@ -137,6 +139,7 @@ ht-degree: 11%
          - [OneTrust集成](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
+         - [SAP Hybris](tutorials/api/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
          - [SugarCRM帐户和联系人](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM事件](tutorials/api/create/crm/sugarcrm-events.md)
@@ -237,6 +240,7 @@ ht-degree: 11%
       - Analytics {#analytics}
          - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
+         - [RainFocus](tutorials/ui/create/analytics/rainfocus.md)
       - 云存储 {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
@@ -256,6 +260,7 @@ ht-degree: 11%
          - [OneTrust集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
+         - [SAP Hybris](tutorials/ui/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
          - [SugarCRM帐户和联系人](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM事件](tutorials/ui/create/crm/sugarcrm-events.md)
