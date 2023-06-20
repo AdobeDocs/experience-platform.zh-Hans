@@ -1,20 +1,22 @@
 ---
-keywords: Experience Platform；主页；热门主题；Azure synapseAnalytics；Synapse；synapse；azure synapseAnalytics
-solution: Experience Platform
 title: 在UI中创建Azure synapse分析源连接
-type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Azure synapseAnalytics（以下简称“Synapse”）源连接。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 1f1ce317-eaaf-4ad2-a5fb-236983220bd7
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '449'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Azure Synapse Analytics] UI中的源连接
 
-Adobe Experience Platform中的源连接器提供了按计划摄取外部来源数据的功能。 本教程提供了用于创建 [!DNL Azure Synapse Analytics] (以下简称“ ”[!DNL Synapse]&quot;)源连接器使用 [!DNL Platform] 用户界面。
+>[!IMPORTANT]
+>
+>此 [!DNL Azure Synapse Analytics] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
+
+本教程提供了用于创建 [!DNL Azure Synapse Analytics] (以下简称“ ”[!DNL Synapse]&quot;)源连接器使用 [!DNL Platform] 用户界面。
 
 ## 快速入门
 

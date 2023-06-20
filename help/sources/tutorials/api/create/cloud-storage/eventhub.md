@@ -1,19 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；事件中心；Azure事件中心；事件中心
-solution: Experience Platform
 title: 使用流服务API创建Azure事件中心源连接
-type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '742'
 ht-degree: 1%
 
 ---
 
-
 # 创建 [!DNL Azure Event Hubs] 源连接使用 [!DNL Flow Service] API
+
+>[!IMPORTANT]
+>
+>此 [!DNL Azure Event Hubs] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 本教程将指导您完成连接的步骤 [!DNL Azure Event Hubs] (以下简称“ ”[!DNL Event Hubs]&quot;)Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

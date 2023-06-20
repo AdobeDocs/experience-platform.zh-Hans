@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；Kinesis；kinesis；Amazon Kinesis；amazon kinesis
-solution: Experience Platform
 title: 使用流服务API创建Amazon Kinesis源连接
-type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Amazon Kinesis源。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '736'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Amazon Kinesis] 使用流服务API的源连接
+
+>[!IMPORTANT]
+>
+>此 [!DNL Amazon Kinesis] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 本教程将指导您完成连接的步骤 [!DNL Amazon Kinesis] (以下简称“ ”[!DNL Kinesis]&quot;)Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

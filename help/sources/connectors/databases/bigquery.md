@@ -1,17 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；BigQuery；bigquery；Google BigQuery；google bigquery
-solution: Experience Platform
 title: Google BigQuery源连接器概述
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '395'
 ht-degree: 0%
 
 ---
 
-# [!DNL Google BigQuery]
+# [!DNL Google BigQuery] 源
+
+>[!IMPORTANT]
+>
+>此 [!DNL Google BigQuery] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

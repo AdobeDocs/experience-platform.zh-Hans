@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google Big Query；google big query；GBQ；gbq
-solution: Experience Platform
 title: 在UI中创建Google大型查询源连接
-type: Tutorial
 description: 了解如何使用Google UI创建Adobe Experience Platform Big Query源连接。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '455'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Google Big Query] UI中的源连接
+
+>[!IMPORTANT]
+>
+>此 [!DNL Google BigQuery] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 Adobe Experience Platform中的源连接器提供了按计划摄取外部来源数据的功能。 本教程提供了用于创建 [!DNL Google Big Query] 源连接，使用Platform用户界面。
 

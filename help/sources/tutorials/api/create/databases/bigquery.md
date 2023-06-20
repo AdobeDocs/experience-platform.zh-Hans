@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；bigquery；Google；google；Google BigQuery
-solution: Experience Platform
 title: 使用流服务API创建Google BigQuery基本连接
-type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Google BigQuery。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
-source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '534'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Google BigQuery] 基本连接使用 [!DNL Flow Service] API
+
+>[!IMPORTANT]
+>
+>此 [!DNL Google BigQuery] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
 基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
 
