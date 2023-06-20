@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
+source-git-commit: 6e663e428eebcea92f94111708686d80cf63a988
 workflow-type: tm+mt
-source-wordcount: '1320'
+source-wordcount: '1324'
 ht-degree: 2%
 
 ---
@@ -42,6 +42,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
    - [在UI中创建Adobe Analytics源连接](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Adobe Campaign Managed Cloud Services源概述](connectors/adobe-applications/campaign.md)
    - [在UI中创建Adobe Campaign Managed Cloud Services源连接](./tutorials/ui/create/adobe-applications/campaign.md)
+- [Adobe Commerce源概述](connectors/adobe-applications/commerce.md)
 - [Adobe数据收集源概述](connectors/adobe-applications/data-collection.md)
    - [在UI中创建客户属性源连接](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] 源概述](connectors/adobe-applications/marketo/marketo.md)

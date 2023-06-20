@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: b5a6853c13b151a8754245cd4316a0de75e23e82
+source-git-commit: 68c6d579d43b4137e3107d3ab102300dc8304c90
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '991'
 ht-degree: 11%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 11%
       - [分析源](connectors/adobe-applications/analytics.md)
       - [Audience Manager源](connectors/adobe-applications/audience-manager.md)
       - [Adobe Campaign Managed Cloud Services源](connectors/adobe-applications/campaign.md)
+      - [Adobe Commerce源](connectors/adobe-applications/commerce.md)
       - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
       - [数据收集源](connectors/adobe-applications/data-collection.md)
       - [Workfront源](connectors/adobe-applications/workfront.md)
