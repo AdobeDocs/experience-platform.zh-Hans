@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；media edge；热门主题；日期范围
 solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API故障排除指南
-source-git-commit: f723114eebc9eb6bfa2512b927c5055daf97188b
+source-git-commit: ff4bc64843e3d05277f56ab67b60400fb9e65c4f
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
@@ -22,7 +21,7 @@ ht-degree: 0%
 
 ## 验证会话开始
 
-构建会话开始请求时出现的大多数问题都会导致207多状态响应。
+会话开始请求的大多数问题都会导致207多状态响应。
 有效负载类似于Experience Edge Network Server API的非致命错误。 所有Media Analytics错误都具有以下类型：  `https://ns.adobe.com/aep/errors/va-edge-0XXX-XXX`. 响应中显示的编号对应于错误状态。
 
 以下示例显示了一个会话开始请求的响应正文，该响应正文既缺少必填字段，又包含无效字段。

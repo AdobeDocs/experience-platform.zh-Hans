@@ -1,25 +1,24 @@
 ---
-keywords: Experience Platform；media edge；热门主题；日期范围
 solution: Experience Platform
 title: Media Edge API
-description: Media Edge API概述。
-source-git-commit: 4f60b00026a226aa6465b2c21b3c2198962a1e3b
+description: Media Edge API概述
+source-git-commit: ff4bc64843e3d05277f56ab67b60400fb9e65c4f
 workflow-type: tm+mt
-source-wordcount: '396'
-ht-degree: 4%
+source-wordcount: '393'
+ht-degree: 5%
 
 ---
 
 
 # Media Edge API概述
 
-Media Edge API构建于Adobe Experience Platform (AEP)之上，用于在的框架内提供媒体事件跟踪数据 [XDM架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en#:~:text=Experience%20Data%20Model%20(XDM)%2C,the%20power%20of%20digital%20experiences). 对于Media Analytics客户，这将使以下功能可用：
+Media Edge API构建于Adobe Experience Platform之上，用于在的框架内提供媒体事件跟踪数据 [XDM架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en#:~:text=Experience%20Data%20Model%20(XDM)%2C,the%20power%20of%20digital%20experiences). 对于Media Analytics客户，这将使以下功能可用：
 
-* 替换为 [Customer Journey Analytics(CJA)](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)，客户可以获得关于持续时间、开始和停止的近乎实时、精细的详细信息，以便评估和组合媒体量度。 从Adobe Analytics迁移的客户可在CJA中使用所有报告指标。
+* 替换为 [Adobe Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)，客户可以获得关于持续时间、开始和停止的近乎实时、精细的详细信息，以便评估和组合媒体量度。 从Adobe Analytics迁移的客户可在Adobe Customer Journey Analytics中使用所有报表量度。
 
-* 替换为 [Adobe Real-time Customer Data Platform (RTCDP)](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans)，客户可以使用媒体使用情况数据丰富其实时用户档案。
+* 替换为 [Adobe Real-time Customer Data Platform](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans)，客户可以使用媒体使用情况数据丰富其实时用户档案。
 
-* 替换为 [Adobe Journey Optimizer (AJO)](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=en)，客户可以优化全渠道营销活动，并通过媒体消费信号自动化历程。
+* 替换为 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=en)，客户可以优化全渠道营销活动，并通过媒体消费信号自动化历程。
 
 
 ## 优化媒体跟踪数据流
@@ -35,10 +34,10 @@ Media Edge API构建于Adobe Experience Platform (AEP)之上，用于在的框�
 下表显示了适用于各种Media Analytics案例的AdobeAPI服务：
 
 | 用例 | API服务 |
-| -------- | ------ |
-| AEP解决方案（CJA、RTDCP、AJO等） | 媒体边缘 |
-| CDP + CJA | 媒体边缘 |
-| Adobe Analytics + AEP解决方案 | 媒体边缘 |
+| -------- | ----------- |
+| Adobe Experience Platform解决方案 | 媒体边缘 |
+| Real-time CDP +Customer Journey Analytics | 媒体边缘 |
+| Adobe Analytics + Adobe Experience Platform解决方案 | 媒体边缘 |
 | 仅限Adobe Analytics（已跟踪） | 媒体收集 |
 
 >[!NOTE]
@@ -47,13 +46,13 @@ Media Edge API构建于Adobe Experience Platform (AEP)之上，用于在的框�
 
 下图显示了这两个API服务的数据流：
 
-
 ![Media Analytics数据流](../assets/edge-api-dataflow.png)
 
+## 后续步骤
 
-有关使用Media Edge API的更多信息，请参阅 [入门文档](getting-started.md).
+* 有关使用Media Edge API的更多信息，请参阅 [入门文档](getting-started.md).
 
-有关使用Platform Edge的更多信息，请参阅 [使用Experience Platform边缘安装Media Analytics](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
+* 有关使用Platform Edge的更多信息，请参阅 [使用Experience Platform边缘安装Media Analytics](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
 
 
 

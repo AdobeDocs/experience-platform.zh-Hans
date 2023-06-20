@@ -1,9 +1,8 @@
 ---
-keywords: Experience Platform；media edge；热门主题；日期范围
 solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API允许开发人员为Media Edge Analytics和Customer Journey Analytics收集数据。
-source-git-commit: b4687fa7f1a2eb8f206ad41eae0af759b0801b83
+source-git-commit: 6570149298defe1aeb0c3e35cb71e166aeb7a3f7
 workflow-type: tm+mt
 source-wordcount: '82'
 ht-degree: 0%
@@ -15,6 +14,7 @@ ht-degree: 0%
 
 本文档包含JSON开放API规范(OAS)，或“Swagger”引用。 您可以将此规范复制并粘贴到渲染工具（如editor.swagger.io）中，以查看Media Edge API信息。 此规范包括每个端点的参数、示例和架构。
 
++++ 选择以查看和复制Open API规范
 
 ```
 {
@@ -3908,3 +3908,5 @@ ht-degree: 0%
   }
 }
 ```
+
++++
