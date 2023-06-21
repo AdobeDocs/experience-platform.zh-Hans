@@ -1,21 +1,16 @@
 ---
-keywords: Experience Platform；主页；热门主题；Zendesk；Zendesk
-solution: Experience Platform
 title: Zendesk源连接器概述
 description: 了解如何使用API或用户界面将Zendesk连接到Adobe Experience Platform。
+last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 9f245783-949d-4f40-9cf3-8991b4b6d780
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '367'
 ht-degree: 2%
 
 ---
 
-# (Beta) [!DNL Zendesk]
-
->[!NOTE]
->
->此 [!DNL Zendesk] 源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+# [!DNL Zendesk]
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
@@ -40,7 +35,7 @@ Experience Platform支持从第三方客户成功应用程序中摄取数据。 
 
 ![Zendesk API令牌](../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-请参阅 [[!DNL Zendesk documentation on subdomains]](https://support.zendesk.com/hc/en-us/articles/4409381383578-Where-can-I-find-my-Zendesk-subdomain-) 以获取有关如何检索子域的信息。 有关生成API令牌的信息，请参阅 [[!DNL Zendesk] 有关生成新API令牌的指南](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token).
+请参阅 [[!DNL Zendesk documentation on subdomains]](<https://support.zendesk.com/hc/en-us/articles/4409381383578-Where-can-I-find-my-Zendesk-subdomain->) 以获取有关如何检索子域的信息。 有关生成API令牌的信息，请参阅 [[!DNL Zendesk] 有关生成新API令牌的指南](<https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token>).
 
 以下文档提供了有关如何连接的信息 [!DNL Zendesk] 至使用API或用户界面的Platform：
 

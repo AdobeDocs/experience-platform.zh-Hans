@@ -1,20 +1,15 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: （测试版）使用流服务API为Mixpanel创建源连接和数据流
+title: 使用流服务API为Mixpanel创建源连接和数据流
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Mixpanel。
 exl-id: 804b876d-6fd5-4a28-b33c-4ecab1ba3333
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '2050'
+source-wordcount: '2019'
 ht-degree: 1%
 
 ---
 
-# （测试版）为以下对象创建源连接和数据流： [!DNL Mixpanel] 使用 [!DNL Flow Service] API
-
->[!NOTE]
->
->此 [!DNL Mixpanel] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+# 为创建源连接和数据流 [!DNL Mixpanel] 使用 [!DNL Flow Service] API
 
 以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Mixpanel] 使用将数据发送到Adobe Experience Platform [流服务API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 

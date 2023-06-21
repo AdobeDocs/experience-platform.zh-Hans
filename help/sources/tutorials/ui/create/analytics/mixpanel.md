@@ -1,20 +1,15 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: （测试版）在UI中创建Mixpanel源连接
+title: 在UI中创建Mixpanel源连接
 description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '874'
-ht-degree: 10%
+source-wordcount: '843'
+ht-degree: 11%
 
 ---
 
-# (Beta)创建 [!DNL Mixpanel] UI中的源连接
-
->[!NOTE]
->
->此 [!DNL Mixpanel] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+# 创建 [!DNL Mixpanel] UI中的源连接
 
 本教程提供了用于创建 [!DNL Mixpanel] 源连接，使用Adobe Experience Platform Platform用户界面。
 

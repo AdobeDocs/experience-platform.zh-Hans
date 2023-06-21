@@ -1,23 +1,17 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-solution: Experience Platform
 title: 使用流服务API为Zendesk创建数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Zendesk。
 exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '1996'
+source-wordcount: '1966'
 ht-degree: 1%
 
 ---
 
-# (Beta)为创建数据流 [!DNL Zendesk] 使用 [!DNL Flow Service] API
+# 创建数据流，用于 [!DNL Zendesk] 使用 [!DNL Flow Service] API
 
->[!NOTE]
->
->此 [!DNL Zendesk] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
-
-以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Zendesk] 使用将数据发送到平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Zendesk] 使用将数据发送到平台 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## 快速入门
 

@@ -1,20 +1,15 @@
 ---
-keywords: Experience Platform；Zendesk；源；连接器；源连接器；源SDK；SDK；Zendesk；Zendesk
 title: 在UI中创建Zendesk源连接
 description: 了解如何使用Adobe Experience Platform UI创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '764'
 ht-degree: 6%
 
 ---
 
-# (Beta)创建 [!DNL Zendesk] UI中的源连接
-
->[!NOTE]
->
->此 [!DNL Zendesk] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+# 创建 [!DNL Zendesk] UI中的源连接
 
 本教程提供了用于创建 [!DNL Zendesk] 源连接(使用Adobe Experience Platform用户界面)。
 
