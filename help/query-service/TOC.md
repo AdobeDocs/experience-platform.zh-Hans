@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: a2b4ddae00ecdf33a12119810eca1ed19ace0c2f
+source-git-commit: 9fe547e6270b4ede3151158e3b474f8c3dfd2297
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '278'
 ht-degree: 17%
 
 ---
@@ -60,6 +60,7 @@ ht-degree: 17%
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
    - [查询模板](ui/query-templates.md)
+   - [参数化查询（有限）](ui/parameterized-queries.md)
    - [查询计划](ui/query-schedules.md)
    - [查询日志](ui/query-logs.md)
    - [监视计划查询](ui/monitor-queries.md)
@@ -86,6 +87,7 @@ ht-degree: 17%
    - [使用嵌套数据结构](essential-concepts/nested-data-structures.md)
    - [拼合嵌套数据结构](essential-concepts/flatten-nested-data.md)
    - [匿名块](essential-concepts/anonymous-block.md)
+   - [内联模板](essential-concepts/inline-templates.md)
    - [增量加载](essential-concepts/incremental-load.md)
    - [重复数据删除](essential-concepts/deduplication.md)
    - [数据集示例](essential-concepts/dataset-samples.md)
