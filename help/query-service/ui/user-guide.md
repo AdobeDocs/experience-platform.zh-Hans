@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发查询以进行分析和数据探索，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 90829713e85e930e4fd6a32b0dbd38aeb837b84e
+source-git-commit: ff4b528a0456f46d8c99e5921cfc99b197956ba6
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '1670'
 ht-degree: 0%
 
 ---
@@ -113,11 +113,7 @@ ht-degree: 0%
 
 可以从“查询编辑器”安排已另存为模板的查询。 这允许您以自定义节奏自动运行查询。 您可以根据频率、日期和时间安排查询，还可以根据需要为结果选择输出数据集。 也可以通过UI禁用或删除查询计划。
 
-通过查询编辑器设置计划。 以下是使用查询编辑器时计划查询的限制列表。 它们不适用于 [!DNL Query Service] API：
-
-- 您只能向已创建、保存和运行的查询添加计划。
-- 您 **无法** 将计划添加到参数化查询。
-- 计划的查询 **无法** 包含匿名块。
+在查询编辑器中设置计划。 使用查询编辑器时，您只能向已创建、保存和运行的查询添加计划。 这不适用于 [!DNL Query Service] API：
 
 请参阅查询计划文档，了解如何 [在UI中创建查询计划](./query-schedules.md). 或者，要了解如何使用API添加计划，请阅读 [计划查询端点指南](../api/scheduled-queries.md).
 

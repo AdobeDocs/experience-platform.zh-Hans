@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何通过Adobe Experience Platform UI自动运行计划的查询、删除或禁用查询计划以及利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 75ef9c58aa7c5f1cc628d1f13b6c5f56b362458a
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->以下是使用查询编辑器时计划查询的限制列表。 它们不适用于 [!DNL Query Service] API：<br/>您只能向已创建、保存和运行的查询添加计划。<br/>您 **无法** 将计划添加到参数化查询。<br/>计划的查询 **无法** 包含匿名块。
+>您只能向已创建、保存和运行的查询添加计划。
 
 任何计划的查询都会添加到的列表 [!UICONTROL 计划的查询] 选项卡。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在 [!UICONTROL 计划的查询] 选项卡，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括运行失败时的状态、计划详细信息和错误消息/代码。 请参阅 [监视计划查询文档](./monitor-queries.md) 了解更多信息。
 
@@ -51,13 +51,27 @@ ht-degree: 0%
 >
 > 由于您使用的是现有数据集或创建新数据集，因此您需要 **非** 需要包括 `INSERT INTO` 或 `CREATE TABLE AS SELECT` 作为查询的一部分，因为数据集已设置。 包括 `INSERT INTO` 或 `CREATE TABLE AS SELECT` 作为计划查询的一部分，将导致错误。
 
+如果您无权访问参数化查询，请继续访问 [删除或禁用计划](#delete-schedule) 部分。
+
+### 为计划的参数化查询设置参数 {#set-parameters}
+
+>[!IMPORTANT]
+>
+>参数化查询UI功能当前在以下位置提供： **仅限限量发布** 并非所有客户都可使用。
+
+如果要为参数化查询创建计划查询，现在必须为这些查询运行设置参数值。
+
+![计划创建工作流的“计划详细信息”部分，其中突出显示了“查询参数”部分。](../images/ui/query-schedules/scheduled-query-parameter.png)
+
 确认所有这些详细信息后，选择 **[!UICONTROL 保存]** 创建计划。 您将返回到显示新创建计划的详细信息的计划工作区，包括计划ID、计划本身和计划的输出数据集。 您可以使用计划ID查找有关运行计划查询本身的更多信息。 欲知更多信息，请阅读 [计划查询运行端点指南](../api/runs-scheduled-queries.md).
 
 ![突出显示新创建计划的计划工作区。](../images/ui/query-schedules/schedules-workspace.png)
 
 ## 删除或禁用计划 {#delete-schedule}
 
-您可以从计划工作区中删除或禁用计划。 您必须从以下任一位置选择查询模板 [!UICONTROL 模板] 选项卡或 [!UICONTROL 计划的查询] 选项卡，导航到查询编辑器并选择 **[!UICONTROL 计划]** 以访问时间表工作区。
+您可以从特定查询的计划工作区或以下位置删除或禁用计划 [!UICONTROL 计划的查询] 列出所有计划查询的工作区。
+
+要访问 [!UICONTROL 时间表] 选项卡中，您必须从以下任一位置选择查询模板的名称： [!UICONTROL 模板] 选项卡或 [!UICONTROL 计划的查询] 选项卡。 这将导航到该查询的查询编辑器。 从查询编辑器中，选择 **[!UICONTROL 时间表]** 以访问时间表工作区。
 
 从可用计划行中选择一个计划。 您可以使用切换开关禁用或启用计划查询。
 
@@ -68,3 +82,5 @@ ht-degree: 0%
 选择 **[!UICONTROL 删除计划]** 删除已禁用的计划。
 
 ![突出显示具有“禁用计划”和“删除”计划的计划工作区。](../images/ui/query-schedules/delete-schedule.png)
+
+或者， [!UICONTROL 计划的查询] 选项卡提供每个计划查询的内联操作集合。 可用的内联操作包括 [!UICONTROL 禁用计划] 或 [!UICONTROL 启用计划]， [!UICONTROL 删除计划]、和 [!UICONTROL 订阅] 用于计划查询的警报。 有关如何通过“计划查询”选项卡删除或禁用计划查询的完整说明，请参阅 [monitor scheduled queried指南](./monitor-queries.md#inline-actions).
