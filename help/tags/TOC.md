@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
+source-git-commit: 6e569ca3f83b374f88ca46fd8f2c40bbed203527
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '1001'
 ht-degree: 32%
 
 ---
@@ -235,7 +235,7 @@ ht-degree: 32%
       * [!DNL Pinterest] {#pinterest}
          * [概述](./extensions/server/pinterest/overview.md)
       * [快照转换API](https://exchange.adobe.com/apps/ec/108550)
-      * [Snowflake] {#snowflake}
+      * [!DNL Snowflake] {#snowflake}
          * [概述](./extensions/server/snowflake/overview.md)
       * [!DNL Splunk] {#splunk}
          * [概述](./extensions/server/splunk/overview.md)
