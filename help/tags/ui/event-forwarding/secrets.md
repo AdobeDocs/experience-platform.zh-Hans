@@ -2,10 +2,10 @@
 title: 在事件转发中配置密钥
 description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
+source-git-commit: a863d65c3e6e330254a58aa822383c0847b0e5f5
 workflow-type: tm+mt
-source-wordcount: '1763'
-ht-degree: 4%
+source-wordcount: '2182'
+ht-degree: 3%
 
 ---
 
@@ -13,14 +13,15 @@ ht-degree: 4%
 
 在事件转发中，密钥是表示另一个系统的身份验证凭据的资源，允许安全交换数据。 只能在事件转发属性中创建密钥。
 
-目前有三种受支持的密钥类型：
+当前支持以下密钥类型：
 
 | 密码类型 | 描述 |
 | --- | --- |
-| [!UICONTROL 令牌] | 表示两个系统都已知和理解的身份验证令牌值的单个字符串。 |
+| [!UICONTROL Google OAuth 2] | 包含多个属性以支持 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 身份验证规范，用于 [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) 和 [发布/订阅API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). 系统会要求您提供所需信息，然后按照指定的时间间隔处理这些令牌的续订。 |
 | [!UICONTROL HTTP] | 包含用户名和密码的两个字符串属性。 |
 | [!UICONTROL OAuth 2] | 包含多个属性以支持 [客户端凭据授予类型](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) 对于 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 身份验证规范。 系统会要求您提供所需信息，然后按照指定的时间间隔处理这些令牌的续订。 |
-| [!UICONTROL Google OAuth 2] | 包含多个属性以支持 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 身份验证规范，用于 [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) 和 [发布/订阅API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). 系统会要求您提供所需信息，然后按照指定的时间间隔处理这些令牌的续订。 |
+| [!UICONTROL OAuth 2 JWT] | 包含多个属性以支持的JSON Web令牌(JWT)配置文件 [OAuth 2.0授权](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1) 格兰茨。 系统会要求您提供所需信息，然后按照指定的时间间隔处理这些令牌的续订。 |
+| [!UICONTROL 令牌] | 表示两个系统都已知和理解的身份验证令牌值的单个字符串。 |
 
 {style="table-layout:auto"}
 
@@ -73,6 +74,7 @@ ht-degree: 4%
 * [[!UICONTROL 令牌]](#token)
 * [[!UICONTROL HTTP]](#http)
 * [[!UICONTROL OAuth 2]](#oauth2)
+* [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
 
 ### [!UICONTROL 令牌] {#token}
@@ -116,6 +118,40 @@ ht-degree: 4%
 完成后，选择 **[!UICONTROL 创建密钥]** 保存密码。
 
 ![保存OAuth 2偏移](../../images/ui/event-forwarding/secrets/oauth-secret-4.png)
+
+### [!UICONTROL OAuth 2 JWT] {#oauth2jwt}
+
+要创建OAuth 2 JWT密码，请选择 **[!UICONTROL OAuth 2 JWT]** 从 **[!UICONTROL 类型]** 下拉菜单。
+
+![此 [!UICONTROL 创建密钥] 选项卡，并在中高亮显示OAuth 2 JWT密码 [!UICONTROL 类型] 下拉菜单。](../../images/ui/event-forwarding/secrets/oauth-jwt-secret.png)
+
+>[!NOTE]
+>
+>唯一 [!UICONTROL 算法] 当前支持对JWT进行签名的是RS256。
+
+在下面显示的字段中，提供您的 [!UICONTROL 发行者]， [!UICONTROL 主题]， [!UICONTROL Audience]， [!UICONTROL 自定义声明]， [!UICONTROL TTL]，然后选择 [!UICONTROL 算法] 从下拉菜单中查找。 接下来，输入 [!UICONTROL 私钥Id]，以及您的 [[!UICONTROL 令牌URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 用于您的OAuth集成。 此 [!UICONTROL 令牌URL] 字段不是必填字段。 如果提供了值，则使用访问令牌交换JWT。 秘密将根据 `expires_in` 响应和 [!UICONTROL 刷新偏移] 值。 如果未提供值，则推送到边缘的密钥是JWT。 JWT将根据 [!UICONTROL TTL] 和 [!UICONTROL 刷新偏移] 值。
+
+![此 [!UICONTROL 创建密钥] 选项卡，其中选中的输入字段突出显示。](../../images/ui/event-forwarding/secrets/oauth-jwt-information.png)
+
+下 **[!UICONTROL 凭据选项]**，您可以提供其他凭据选项，例如 `jwt_param` 键值对的形式。 要添加更多键值对，请选择 **[!UICONTROL 添加另一个]**.
+
+![此 [!UICONTROL 创建密钥] 选项卡突出显示 [!UICONTROL 凭据选项] 字段。](../../images/ui/event-forwarding/secrets/oauth-jwt-credential-options.png)
+
+最后，您可以配置 **[!UICONTROL 刷新偏移]** 密码的值。 这表示系统将在令牌过期前执行自动刷新的秒数。 等效时间（以小时和分钟为单位）显示在字段的右侧，并在您键入时自动更新。
+
+![此 [!UICONTROL 创建密钥] 选项卡突出显示 [!UICONTROL 刷新偏移] 字段。](../../images/ui/event-forwarding/secrets/oauth-jwt-refresh-offset.png)
+
+例如，如果将刷新偏移设置为缺省值 `1800` （30分钟）并且访问令牌具有 `expires_in` 值 `3600` （1小时），系统将在1小时内自动刷新密码。
+
+>[!IMPORTANT]
+>
+>OAuth 2 JWT密钥在两次刷新之间至少需要30分钟，并且必须至少在一小时内有效。 此限制为您提供至少30分钟的时间，以便在生成的令牌出现问题时进行干预。
+>
+>例如，如果偏移设置为 `1800` （30分钟）并且访问令牌具有 `expires_in` 之 `2700` （45分钟），由于由此产生的差异不到30分钟，交换将失败。
+
+完成后，选择 **[!UICONTROL 创建密钥]** 保存密码。
+
+![此 [!UICONTROL 创建密钥] 选项卡突出显示 [!UICONTROL 创建密钥]](../../images/ui/event-forwarding/secrets/oauth-jwt-create-secret.png)
 
 ### [!UICONTROL Google OAuth 2] {#google-oauth2}
 
