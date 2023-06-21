@@ -5,7 +5,7 @@ description: Adobe Experience Platform Segmentation Service API中的受众端�
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
 hide: true
 hidefromtoc: true
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: f75c2c7ff07974cd0f2a5a8cc3e990c7f3eaa0a3
 workflow-type: tm+mt
 source-wordcount: '1515'
 ht-degree: 4%
@@ -62,7 +62,7 @@ GET /audiences?{QUERY_PARAMETERS}
 以下请求将检索在组织中创建的最近五个受众。
 
 ```shell
-curl -X GET https: //platform.adobe.io/data/core/ups/audiences?limit=5 \
+curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
  -H 'Authorization:  Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id:  {IMS_ORG}' \
  -H 'x-api-key:  {API_KEY}' \
@@ -684,7 +684,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | -------- | ----------- | 
 | `audienceId` | 受众的ID。 外部受众使用此参数 |
 | `name` | 受众的名称。 |
-| `namespace` |  |
+| `namespace` | |
 | `description` | 受众的描述。 |
 | `type` | 系统生成的字段，显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalAudience`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalAudience` 指不是在Platform中生成的受众。 |
 | `lifecycle` | 受众的状态。 可能的值包括 `draft`， `published`， `inactive`、和 `archived`. `draft` 表示创建受众的时间， `published` 发布受众时， `inactive` 受众不再处于活动状态时，以及 `archived` 是否删除受众。 |

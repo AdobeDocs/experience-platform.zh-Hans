@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: Real-Time Customer Profile用户界面指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档用作在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 98854811e57c621a1c8de9146231f54c96e37a5d
 workflow-type: tm+mt
-source-wordcount: '1951'
+source-wordcount: '2008'
 ht-degree: 0%
 
 ---
@@ -175,6 +175,14 @@ ht-degree: 0%
 有关合并模式的更多信息，请访问 [合并架构UI指南](union-schema.md).
 
 ![“合并架构”选项卡会突出显示。 将显示属于组织的合并架构。](../images/user-guide/union-schema.png)
+
+## 计算属性 {#computed-attributes}
+
+从主 **[!UICONTROL 配置文件]** 菜单中，选择 **[!UICONTROL 计算属性]** 选项卡，以查看属于您的组织的计算属性列表。
+
+有关计算属性的详细信息，请阅读 [计算属性概述](../computed-attributes/overview.md). 有关如何在Platform UI中使用计算属性的更多信息，请阅读 [计算属性UI指南](../computed-attributes/ui.md).
+
+图像
 
 ## 后续步骤
 

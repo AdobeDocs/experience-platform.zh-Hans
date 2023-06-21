@@ -3,9 +3,9 @@ audience: user
 user-guide-title: 实时客户配置文件指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: Profiles
-source-git-commit: 9de3af9402a245779cfaf765c40bb54da57b91e2
+source-git-commit: 52836892736a075981ee06f28fbdf178f4492e09
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '139'
 ht-degree: 27%
 
 ---
@@ -30,6 +30,11 @@ ht-degree: 27%
 * 配置文件UI {#ui}
    * [[!DNL Profile] UI指南](ui/user-guide.md)
    * [[!DNL Profile] 详细信息自定义](ui/profile-customization.md)
+* (Beta)计算属性 {#computed-attributes}
+   * [概述](computed-attributes/overview.md)
+   * [计算属性API指南](computed-attributes/api.md)
+   * [计算属性UI指南](computed-attributes/ui.md)
+   * [常见问题解答](computed-attributes/faq.md)
 * 合并策略 {#merge-policies}
    * [概述](merge-policies/overview.md)
    * [合并策略API](api/merge-policies.md)
