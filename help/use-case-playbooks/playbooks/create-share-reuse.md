@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 创建、共享和重用剧本实例
 description: 了解如何创建、共享和重用剧本实例以完成您的营销用例。
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
+source-git-commit: e61e200b148e4d17041b3711bd63c796a44b05c8
 workflow-type: tm+mt
 source-wordcount: '724'
 ht-degree: 1%
@@ -64,11 +64,11 @@ ht-degree: 1%
 >
 >生成对象后，您可以通过添加数据继续在开发沙盒中测试。 您可以根据需要在开发沙盒中测试资产，并在准备就绪后在生产沙盒中复制资产逻辑（区段定义、历程、架构等）。
 
-### 重用行动手册 {#reuse-playbooks}
+## 重用行动手册 {#reuse-playbooks}
 
 通过创建同一行动手册的多个实例，您可以稍后实施相同的用例，而无需修改之前实施用例的详细信息。
 
-### 与其他团队成员共享行动手册和生成的资产 {#share-playbook}
+## 与其他团队成员共享行动手册和生成的资产 {#share-playbook}
 
 您可以与其他团队成员共享生成的实例和资产。 为此，请复制浏览器中的URL链接并与您的团队共享，以便他们大致了解生成的资源。
 

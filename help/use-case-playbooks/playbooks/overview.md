@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 用例行动手册概述
 description: 了解如何在Experience Platform中使用用例行动手册功能开始使用各种营销用例
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
+source-git-commit: 896ca002b34e79bd464467011875a54acd5c187c
 workflow-type: tm+mt
-source-wordcount: '398'
-ht-degree: 2%
+source-wordcount: '400'
+ht-degree: 3%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 2%
 您将在本文档指南中找到以下内容：
 
 * **[用例行动手册概述](#overview)**
+* [快速入门](/help/use-case-playbooks/playbooks/get-started.md)
 * [探索正确的剧本](/help/use-case-playbooks/playbooks/discover.md)
 * [创建、共享和重用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [疑难解答和已知限制](troubleshooting.md)
