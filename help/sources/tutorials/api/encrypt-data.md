@@ -1,12 +1,12 @@
 ---
 title: 加密数据摄取
-description: Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文件。
+description: 了解如何使用API通过云存储批处理源摄取加密文件。
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: 8531459da97be648d0a63ffc2af77ce41124585d
+source-git-commit: f0e518459eca72d615b380d11cabee6c1593dd9a
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '1017'
 ht-degree: 2%
 
 ---
@@ -40,6 +40,29 @@ Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文
 ### 使用平台API
 
 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+
+### 加密文件支持的文件扩展名
+
+加密文件支持的文件扩展名列表如下：
+
+* .csv
+* .tsv
+* .json
+* .parquet
+* .csv.gpg
+* .tsv.gpg
+* .json.gpg
+* .parquet.gpg
+* .csv.pgp
+* .tsv.pgp
+* .json.pgp
+* .parquet.pgp
+* .gpg
+* .pgp
+
+>[!NOTE]
+>
+>Adobe Experience Platform源中的加密文件摄取支持openPGP，而不支持PGP的任何特定专有版本。
 
 ## 创建加密密钥对 {#create-encryption-key-pair}
 
@@ -112,11 +135,11 @@ curl -X POST \
 >[!NOTE]
 >
 >您必须具备以下条件，才能为加密的数据引入创建数据流：
+>
 >* [公钥ID](#create-encryption-key-pair)
 >* [源连接ID](../api/collect/cloud-storage.md#source)
 >* [目标连接ID](../api/collect/cloud-storage.md#target)
 >* [映射 ID](../api/collect/cloud-storage.md#mapping)
-
 
 POST要创建数据流，请向 `/flows` 的端点 [!DNL Flow Service] API。 要摄取加密数据，您必须添加 `encryption` 部分到 `transformations` 属性并包括 `publicKeyId` 之前步骤创建的。
 
