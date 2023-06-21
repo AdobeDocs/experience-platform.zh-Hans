@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 852e0a87b93e640298c38aef7b3f1c255bf18896
+source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
 workflow-type: tm+mt
-source-wordcount: '996'
-ht-degree: 31%
+source-wordcount: '1002'
+ht-degree: 32%
 
 ---
 
@@ -221,6 +221,8 @@ ht-degree: 31%
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)
       * Google Ads增强型转化 {#google-ads-enhanced-conversions}
          * [概述](./extensions/server/google-ads-enhanced-conversions/overview.md)
+      * Google Cloud Platform {#google-cloud-platform}
+         * [概述](./extensions/server/google-cloud-platform/overview.md)
       * [!DNL Mailchimp] Edge {#mailchimp}
          * [概述](./extensions/server/mailchimp/overview.md)
       * [!DNL Meta Conversions API] {#meta}
@@ -233,6 +235,8 @@ ht-degree: 31%
       * [!DNL Pinterest] {#pinterest}
          * [概述](./extensions/server/pinterest/overview.md)
       * [快照转换API](https://exchange.adobe.com/apps/ec/108550)
+      * [Snowflake] {#snowflake}
+         * [概述](./extensions/server/snowflake/overview.md)
       * [!DNL Splunk] {#splunk}
          * [概述](./extensions/server/splunk/overview.md)
       * [!DNL Twitter] {#twitter}

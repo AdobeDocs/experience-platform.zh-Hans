@@ -2,10 +2,10 @@
 title: 事件转发扩展参考
 description: 查找有关Adobe Experience Platform中的事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 9470be59f8c84cb2b41e09010998de1ff8e5e7d9
+source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
 workflow-type: tm+mt
-source-wordcount: '180'
-ht-degree: 19%
+source-wordcount: '184'
+ht-degree: 21%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 19%
 * [核心](./core/overview.md)
 * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads增强型转化](./google-ads-enhanced-conversions/overview.md)
+* [Google Cloud Platform](./google-cloud-platform/overview.md)
 * [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
 * [[!DNL Meta] 转化API](./meta/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
@@ -43,6 +44,7 @@ ht-degree: 19%
 * [Pega客户决策中心](https://exchange.adobe.com/apps/ec/107597)*
 * [[!DNL Pinterest]](./pinterest/overview.md)
 * [快照转换API](https://exchange.adobe.com/apps/ec/108550)*
+* [Snowflake](./snowflake/overview.md)
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Twitter]](./twitter/overview.md)
 * [[!DNL Zendesk] 事件API](./zendesk/overview.md)
