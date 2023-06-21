@@ -1,13 +1,12 @@
 ---
 title: RainFocus源概述
 description: 了解如何将RainFocus帐户中的事件管理和分析数据引入Experience Platform
+last-substantial-update: 2023-06-21T00:00:00Z
 badge: 测试版
-hide: true
-hidefromtoc: true
-source-git-commit: e9728e1e673a4018d1d776a9d9ddad023ad1393e
+source-git-commit: f3d70e986148d39429f394a60d12686617e3fd3d
 workflow-type: tm+mt
-source-wordcount: '993'
-ht-degree: 5%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

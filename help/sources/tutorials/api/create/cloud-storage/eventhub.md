@@ -3,10 +3,10 @@ title: 使用流服务API创建Azure事件中心源连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: b76bc6ddb0d49bbd089627c8df8b31703d0e50b1
 workflow-type: tm+mt
-source-wordcount: '742'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -104,6 +104,10 @@ curl -X POST \
 
 ## 创建源连接
 
+>[!TIP]
+>
+>An [!DNL Event Hubs] 使用者组只能在给定时间用于单个流。
+
 源连接创建和管理与摄取数据的外部源的连接。 源连接由数据源、数据格式和创建数据流所需的源连接ID等信息组成。 源连接实例特定于租户和组织。
 
 POST要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
@@ -154,7 +158,7 @@ curl -X POST \
 | `params.eventHubName` | 您的名称 [!DNL Event Hubs] 源。 |
 | `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw` 和 `xdm`. |
 | `params.reset` | 此参数定义数据的读取方式。 使用 `latest` 开始读取最新数据，并使用 `earliest` 以开始读取流中的第一个可用数据。 此参数是可选的，默认为 `earliest` 如果未提供。 |
-| `params.consumerGroup` | 要使用的发布或订阅机制 [!DNL Event Hubs]. 此参数是可选的，默认为 `$Default` 如果未提供。 请参阅此 [[!DNL Event Hubs] 事件使用者指南](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) 了解更多信息。 |
+| `params.consumerGroup` | 要使用的发布或订阅机制 [!DNL Event Hubs]. 此参数是可选的，默认为 `$Default` 如果未提供。 请参阅此 [[!DNL Event Hubs] 事件使用者指南](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) 了解更多信息。 **注释**：一个 [!DNL Event Hubs] 使用者组只能在给定时间用于单个流。 |
 
 ## 后续步骤
 
