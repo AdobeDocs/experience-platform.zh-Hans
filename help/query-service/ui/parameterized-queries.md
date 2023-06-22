@@ -1,9 +1,9 @@
 ---
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
-source-git-commit: a0f826a2e5fcdfc2f9e08221f30ba01470c9b3be
+source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
 workflow-type: tm+mt
-source-wordcount: '638'
+source-wordcount: '659'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 
 在继续阅读本指南之前，请阅读 [查询编辑器UI指南](./user-guide.md). 查询编辑器指南提供了有关如何在Experience Platform用户界面中编写、验证和运行客户体验数据查询的详细信息。
 
+>[!NOTE]
 >
->
->在其直接父级以外的内联模板内不支持参数化查询。 参数化查询仅在原始模板或直接子内联模板中使用时才有效。
+>在Adobe Experience Platform UI中，仅在内联模板的父级支持参数化查询。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，并且不能具有动态参数。 请参阅 [内联模板文档](../essential-concepts/inline-templates.md) 了解更多信息。
 
 ## 参数化查询语法 {#syntax}
 

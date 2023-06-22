@@ -1,9 +1,9 @@
 ---
 title: 内联模板
 description: 了解如何使用内联模板在众多查询中重用多个条件。
-source-git-commit: f8ec94b4c93e3b36667bdb179ce12c10d20fa30f
+source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '485'
 ht-degree: 1%
 
 ---
@@ -43,7 +43,7 @@ UI和查询服务API都支持内联模板。 在继续阅读本指南之前，�
 
 >
 >
->在Adobe Experience Platform UI中，仅在父级别支持参数化查询形式的内联模板。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，并且不能具有动态参数。
+>在Adobe Experience Platform UI中，仅在父级别支持参数化查询形式的内联模板。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，并且不能具有动态参数。 请参阅 [参数化查询文档](../ui/parameterized-queries.md) 了解更多信息。
 
 ## 后续步骤
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
 workflow-type: tm+mt
-source-wordcount: '4383'
+source-wordcount: '4309'
 ht-degree: 1%
 
 ---
@@ -277,7 +277,7 @@ SELECT count(1) FROM myTableName
 
 您还应该查看文档以获得有关如何执行的指导 [UI中的计划查询](./ui/user-guide.md#scheduled-queries) 和至 [API](./api/scheduled-queries.md).
 
-以下是使用时的计划查询的注意事项列表 [!DNL Query Editor]. 它们不适用于 [!DNL Query Service] API：<br/>您只能向已创建、保存和运行的查询添加计划。<br/>您 **无法** 将计划添加到参数化查询。<br/>计划的查询 **无法** 包含匿名块。<br/>您只能计划 **一** 使用UI查询模板。 如果要向查询模板添加其他计划，则需要使用API。 如果已使用API添加计划，您将无法使用UI添加其他计划。
+请注意，在使用时 [!DNL Query Editor] 您只能向已创建、保存和运行的查询添加计划。 这不适用于 [!DNL Query Service] API。
 +++
 
 ### “已达到会话限制”错误是什么意思？
