@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 9515527f5a2c250b0a9057aa37769431e3b6fa07
+source-git-commit: 7c44683c8110d78654baba4bc53f2c3c2daf2831
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 4%
@@ -101,7 +101,7 @@ ht-degree: 4%
 
 ![flac-remove-users](../../images/flac-ui/flac-remove-users.png)
 
-## 管理角色的API凭据
+## 管理角色的API凭据 {#manage-api-credentials-for-role}
 
 选择 **[!UICONTROL API凭据]** 选项卡以打开角色API凭据页面，然后选择 **[!UICONTROL 添加API凭据]** 以将API凭据分配给角色。
 

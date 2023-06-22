@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；身份验证；访问
 solution: Experience Platform
 title: 身份验证和访问Experience PlatformAPI
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: fa4786b081b46c8f3c0030282ae3900891fbd652
+source-git-commit: cf8450bd7382169d8e62b62f03dd861ca61c7be3
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '2239'
 ht-degree: 6%
 
 ---
@@ -15,19 +14,23 @@ ht-degree: 6%
 
 # 验证和访问 Experience Platform API
 
-此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。在本教程结束时，您将生成了所有Platform API调用所需的以下凭据：
+此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。在本教程结束时，您将生成或收集了以下凭据，这些凭据是所有Platform API调用中所需的标头：
 
 * `{ACCESS_TOKEN}`
 * `{API_KEY}`
 * `{ORG_ID}`
 
-为了维护应用程序和用户的安全，所有对Adobe I/OAPI的请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 JWT与特定于客户的信息一起使用来生成您的个人访问令牌。
+>[!TIP]
+>
+>除了上述三个凭据之外，许多Platform API还需要有效的 `{SANDBOX_NAME}` 作为标头提供。 请参阅 [沙盒概述](../sandboxes/home.md) 有关沙盒和 [沙盒管理端点](/help/sandboxes/api/sandboxes.md#list) 文档，了解有关列出对您的组织可用的沙盒的信息。
 
-本教程介绍如何收集对Platform API调用进行身份验证所需的凭据，如下面的流程图中所述：
+为了维护应用程序和用户的安全，对Experience PlatformAPI的所有请求都必须使用OAuth等标准进行身份验证和授权。
+
+本教程介绍如何收集对Platform API调用进行身份验证所需的凭据，如下面的流程图中所述。 您可以在初始一次性设置中收集大多数所需的凭据。 但是，必须每24小时刷新一次访问令牌。
 
 ![](./images/api-authentication/authentication-flowchart.png)
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 要成功调用Experience PlatformAPI，您必须具备以下条件：
 
@@ -40,21 +43,21 @@ ht-degree: 6%
 2. 选择 **[!UICONTROL 创建新帐户]**.
 3. 完成注册过程。
 
-## 获得Experience Platform的开发人员和用户访问权限
+## 获得Experience Platform的开发人员和用户访问权限 {#gain-developer-user-access}
 
 在Adobe Developer Console上创建集成之前，您的帐户必须对Adobe Admin Console中的Experience Platform产品配置文件具有开发人员和用户权限。
 
-### 获取开发人员访问权限
+### 获取开发人员访问权限 {#gain-developer-access}
 
 联系 [!DNL Admin Console] 管理员将您作为开发人员添加到Experience Platform产品配置文件中 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 文档，以获取有关如何使用 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/cn/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
 
 一旦您被分配为开发人员，您就可以开始在中创建集成 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
-### 获得用户访问权限
+### 获得用户访问权限 {#gain-user-access}
 
 您的 [!DNL Admin Console] 管理员还必须将您作为用户添加到同一产品配置文件。 请参阅指南，网址为 [管理用户组 [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) 了解更多信息。
 
-## 生成API密钥、组织ID和客户端密钥 {#api-ims-secret}
+## 生成API密钥（客户端ID）和组织ID {#generate-credentials}
 
 >[!NOTE]
 >
@@ -62,7 +65,7 @@ ht-degree: 6%
 
 在您通过获得对Platform的开发人员和用户访问权限后 [!DNL Admin Console]，下一步是生成 `{ORG_ID}` 和 `{API_KEY}` Adobe Developer控制台中的凭据。 这些凭据只需生成一次，可在未来平台API调用中重复使用。
 
-### 将Experience Platform添加到项目
+### 将Experience Platform添加到项目 {#add-platform-to-project}
 
 转到 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照教程中概述的以下步骤进行操作： [创建空项目](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) 在Adobe Developer Console文档中。
 
@@ -72,36 +75,91 @@ ht-degree: 6%
 
 此 **[!UICONTROL 添加API]** 屏幕。 选择Adobe Experience Platform的产品图标，然后选择 **[!UICONTROL EXPERIENCE PLATFORMAPI]** 选择之前 **[!UICONTROL 下一个]**.
 
-![](./images/api-authentication/platform-api.png)
+![选择Experience PlatformAPI。](./images/api-authentication/platform-api.png)
 
-从这里，按照以下教程中概述的步骤进行操作： [使用服务帐户(JWT)将API添加到项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）以完成该过程。
+>[!TIP]
+>
+>选择 **[!UICONTROL 查看文档]** 用于在单独的浏览器窗口中导航以完成操作的选项 [Experience PlatformAPI参考文档](https://developer.adobe.com/experience-platform-apis/).
+
+### 选择OAuth服务器到服务器身份验证类型 {#select-oauth-server-to-server}
+
+接下来，选择身份验证类型以生成访问令牌并访问Experience PlatformAPI。
 
 >[!IMPORTANT]
 >
->在上面链接的流程中的某个步骤中，您的浏览器会自动下载私钥和关联的公共证书。 请注意此私钥存储在计算机上的什么位置，因为在本教程的后面步骤中需要它。
+>选择 **[!UICONTROL OAuth服务器到服务器]** 方法as将是将来支持的唯一方法。 此 **[!UICONTROL 服务帐户(JWT)]** 方法已弃用。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 在部分获取更多信息 [!BADGE 已弃用]{type=negative}[生成JSON Web令牌(JWT)](#jwt).
 
-### 收集凭据
+![选择Experience PlatformAPI。](./images/api-authentication/oauth-authentication-method.png)
+
+### 为您的集成选择产品配置文件 {#select-product-profiles}
+
+接下来，选择应用于集成的产品配置文件。
+通过此处选择的产品配置文件，您的集成服务帐户将获得对精细功能的访问权限。
+
+请注意，要访问Platform中的某些功能，您还需要系统管理员授予您必要的基于属性的访问控制权限。 有关更多信息，请参阅部分 [获取必要的基于属性的访问控制权限](#get-abac-permissions).
+
+>[!TIP]
+>
+如果您希望在此处看到某个产品配置文件，请联系您的系统管理员。 系统管理员可以在“权限”视图中查看和管理API凭据。 有关更多信息，请参阅一节 [将开发人员添加到产品配置文件](#add-developers-to-product-profile).
+
+![为您的集成选择产品配置文件。](./images/api-authentication/select-product-profiles.png)
+
+选择 **[!UICONTROL 保存配置的API]** 等你准备好了再说。
+
+以下视频教程中也提供了上述步骤的演练，以设置与Experience PlatformAPI的集成：
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on)
+
+### 收集凭据 {#gather-credentials}
 
 将API添加到项目后， **[!UICONTROL EXPERIENCE PLATFORMAPI]** 项目页面显示所有Experience PlatformAPI调用所需的以下凭据：
+
+![在Developer Console中添加API后的集成信息。](./images/api-authentication/api-integration-information.png)
 
 * `{API_KEY}` ([!UICONTROL 客户端ID])
 * `{ORG_ID}` ([!UICONTROL 组织 ID])
 
+<!--
+
 ![](././images/api-authentication/api-key-ims-org.png)
 
-除了上述凭据之外，您还需要生成的 **[!UICONTROL 客户端密码]** 为以后的步骤做准备。 选择 **[!UICONTROL 检索客户端密码]** 以显示值，然后复制该值以供将来使用。
+<!--
+
+In addition to the above credentials, you also need the generated **[!UICONTROL Client Secret]** for a future step. Select **[!UICONTROL Retrieve client secret]** to reveal the value, and then copy it for later use.
 
 ![](././images/api-authentication/client-secret.png)
 
-## 生成JSON Web令牌(JWT) {#jwt}
+-->
+
+## 生成访问令牌 {#generate-access-token}
+
+下一步是生成 `{ACCESS_TOKEN}` 用于平台API调用的凭据。 与的值不同 `{API_KEY}` 和 `{ORG_ID}`，必须每24小时生成一个新令牌才能继续使用平台API。 选择 **[!UICONTROL 生成访问令牌]**，如下所示。
+
+![显示如何生成访问令牌](././images/api-authentication/generate-access-token.gif)
+
+>[!TIP]
+>
+您还可以使用Postman环境和集合来生成访问令牌。 有关更多信息，请阅读关于 [使用Postman验证和测试API调用](#use-postman).
+
+## [!BADGE 已弃用]{type=negative}生成JSON Web令牌(JWT) {#jwt}
+
+>[!WARNING]
+>
+已弃用用于生成访问令牌的JWT方法。 所有新的集成都必须使用 [OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server). Adobe还建议您将现有集成迁移到OAuth方法。 请阅读以下重要文档：
+> 
+* [应用程序从JWT到OAuth的迁移指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
+* [使用OAuth的新旧应用程序实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+* [使用OAuth服务器到服务器凭据方法的优势](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
+
++++ 查看已弃用的信息
 
 下一步是根据您的帐户凭据生成JSON Web令牌(JWT)。 此值用于生成 `{ACCESS_TOKEN}` 用于平台API调用的凭据，必须每24小时重新生成一次。
 
 >[!IMPORTANT]
 >
->在本教程中，以下步骤概述了如何在开发人员控制台中生成JWT。 但是，此生成方法只应用于测试和评估目的。
+在本教程中，以下步骤概述了如何在开发人员控制台中生成JWT。 但是，此生成方法只应用于测试和评估目的。
 >
->对于常规使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅 [服务帐户身份验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) 在Adobe Developer上。
+对于常规使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅 [服务帐户身份验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) 在Adobe Developer上。
 
 选择 **[!UICONTROL 服务帐户(JWT)]** 在左侧导航中，然后选择 **[!UICONTROL 生成JWT]**.
 
@@ -115,7 +173,7 @@ ht-degree: 6%
 
 ![](././images/api-authentication/copy-jwt.png)
 
-## 生成访问令牌
+**生成访问令牌**
 
 生成JWT后，您可以在API调用中使用它来生成 `{ACCESS_TOKEN}`. 与的值不同 `{API_KEY}` 和 `{ORG_ID}`，必须每24小时生成一个新令牌才能继续使用平台API。
 
@@ -139,7 +197,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 >[!NOTE]
 >
->您可以使用相同的API密钥、客户端密钥和JWT为每个会话生成新的访问令牌。 这允许您在应用程序中自动生成访问令牌。
+您可以使用相同的API密钥、客户端密钥和JWT为每个会话生成新的访问令牌。 这允许您在应用程序中自动生成访问令牌。
 
 **响应**
 
@@ -157,18 +215,22 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 | `access_token` | 生成的 `{ACCESS_TOKEN}`. 此值，以单词为前缀 `Bearer`，必须作为 `Authentication` 所有平台API调用的标头。 |
 | `expires_in` | 访问令牌过期前剩余的毫秒数。 一旦此值达到0，必须生成新的访问令牌才能继续使用Platform API。 |
 
-## 测试访问凭据
++++
 
-收集完所有三个所需的凭据后，您可以尝试进行以下API调用。 此调用列出了所有标准 [!DNL Experience Data Model] (XDM)类可供您的组织使用。
+## 测试访问凭据 {#test-credentials}
+
+收集完所有三个所需的凭据（访问令牌、API密钥和组织ID）后，您可以尝试进行以下API调用。 此调用列出了所有标准 [!DNL Experience Data Model] (XDM)类可供您的组织使用。 在中导入和执行调用 [Postman](#use-postman).
+
+>[!BEGINSHADEBOX]
 
 **请求**
 
 ```SHELL
 curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/classes \
   -H 'Accept: application/vnd.adobe.xed-id+json' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}'
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}'
 ```
 
 **响应**
@@ -194,19 +256,53 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 }
 ```
 
-## 使用Postman验证和测试API调用
+>[!ENDSHADEBOX]
 
-[Postman](https://www.postman.com/) 是一个常用的工具，它允许开发人员探索和测试RESTful API。 此 [中帖](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置Postman以自动执行JWT身份验证，并使用它来使用Platform API。
+>[!IMPORTANT]
+>
+虽然上述调用足以测试您的访问凭据，但请注意，如果没有正确的基于属性的访问控制权限，您将无法访问或修改多个资源。 有关更多信息，请参阅 [获取必要的基于属性的访问控制权限](#get-abac-permissions) 部分。
 
-## 具有Experience Platform权限的开发人员和API访问控制
+## 获取必要的基于属性的访问控制权限 {#get-abac-permissions}
+
+要访问或修改Experience Platform中的多个资源，您必须具有相应的访问控制权限。 系统管理员可以向您授予 [您需要的权限](/help/access-control/ui/permissions.md). 在部分中获取有关以下内容的更多信息 [管理角色的API凭据](/help/access-control/abac/ui/permissions.md#manage-api-credentials-for-role).
+
+以下视频教程中也提供了有关系统管理员如何授予通过API访问Platform资源所需的权限的详细信息：
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=159)
+
+## 使用Postman验证和测试API调用 {#use-postman}
+
+[Postman](https://www.postman.com/) 是一个常用的工具，它允许开发人员探索和测试RESTful API。 您可以使用Experience PlatformPostman收藏集和环境来加快使用Experience PlatformAPI的速度。 详细了解 [在Experience Platform中使用Postman](/help/landing/postman.md) 以及开始使用收藏集和环境。
+
+以下视频教程中也提供了有关将Postman与Experience Platform集合和环境结合使用的详细信息：
+
+**下载并导入要与Experience PlatformAPI一起使用的Postman环境**
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=106)
+
+**使用Postman收藏集生成访问令牌**
+
+下载 [Identity Management服务Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) 并观看以下视频，了解如何生成访问令牌。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29698/?learn=on)
+
+**下载Experience PlatformAPI Postman收藏集并与API交互**
+
+>[!VIDEO](https://video.tv.adobe.com/v/29704/?learn=on)
+
+<!--
+This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) describes how you can set up Postman to automatically perform JWT authentication and use it to consume Platform APIs.
+-->
+
+## 系统管理员：通过Experience Platform权限授予开发人员和API访问控制 {#grant-developer-and-api-access-control}
 
 >[!NOTE]
 >
->只有系统管理员才能在“权限”中查看和管理API凭据。
+只有系统管理员才能在“权限”中查看和管理API凭据。
 
 在Adobe Developer Console上创建集成之前，您的帐户必须对Adobe Admin Console中的Experience Platform产品配置文件具有开发人员和用户权限。
 
-### 将开发人员添加到产品配置文件
+### 将开发人员添加到产品配置文件 {#add-developers-to-product-profile}
 
 转至[[!DNL Admin Console]](https://adminconsole.adobe.com/)并使用您的 Adobe ID 登录。
 
@@ -260,7 +356,15 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ![包含新添加的API的“API凭据”选项卡](././images/api-authentication/api-credentials-with-added-api.png)
 
-## 后续步骤
+## 其他资源 {#additional-resources}
+
+请参阅下面链接的其他资源，以获取Experience PlatformAPI快速入门的进一步帮助
+
+* [身份验证和访问Experience PlatformAPI](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html?lang=zh-Hans) 视频教程页面
+* [Identity Management服务Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) 用于生成访问令牌
+* [Experience PlatformAPI Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform)
+
+## 后续步骤 {#next-steps}
 
 通过阅读本文档，您已收集并成功测试了Platform API的访问凭据。 现在，您可以遵循在整个过程中提供的示例API调用 [文档](../landing/documentation/overview.md).
 
