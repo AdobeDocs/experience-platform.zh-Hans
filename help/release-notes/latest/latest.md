@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年6月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 77c7fbfba2a1ccc6df31abc2f6b926ed90942c4c
+source-git-commit: a03d0eeab5ca42225705fdeab692020b1641395d
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '1055'
 ht-degree: 5%
 
 ---
@@ -58,17 +58,13 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 {style="table-layout:auto"}
 
-<!-- 
+**新增或更新功能** {#destinations-new-updated-functionality}
 
-**New or updated functionality** {#destinations-new-updated-functionality}
-
-| Functionality | Description |
+| 功能 | 描述 |
 | ----------- | ----------- |
-| Workspace support for [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) destinations. | You can now select the Adobe Target workspace that you want to share audiences to, when configuring a new Adobe Target destination connection. See the [connection parameters](../../destinations/catalog/personalization/adobe-target-connection.md#parameters) section for more information. Additionally, see the tutorial on [configuring workspaces](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) in Adobe Target for more information about workspaces. |
+| 工作区支持 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 目标。 | 现在，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅 [连接参数](../../destinations/catalog/personalization/adobe-target-connection.md#parameters) 部分以了解更多信息。 此外，请参阅关于的教程 [配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) Adobe Target中的，以了解有关工作区的更多信息。 |
 
 {style="table-layout:auto"}
-
--->
 
 <!--
 
