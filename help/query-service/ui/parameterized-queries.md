@@ -1,9 +1,9 @@
 ---
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
-source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
+source-git-commit: d927f1f98c1f3a42907501921fcd2367241fa625
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,10 @@ SELECT
 
 如果删除某个参数，并在该参数运行后再次尝试执行查询，则会在 [!UICONTROL 查询参数] 部分来提醒您。
 
+>[!NOTE]
+>
+>如果查询不采用参数，则仍可以在查询编辑器中输入不必要的参数。 查询编辑器会忽略所有不必要的键值对，并且这些键值对查询的执行或结果没有影响。
+
 ![查询编辑器的值字段为空，查询参数错误突出显示。](../images/ui/parameterized-queries/query-parameter-error.png)
 
 ## 使用查询日志详细信息检查参数值 {#check-parameter-values}
@@ -77,4 +81,4 @@ SELECT
 
 通过阅读本文档，您已了解如何在Adobe Experience Platform UI中参数化查询并在计划的查询运行中使用它们。 本文档还重点说明了如何检查日志中查询执行中使用的参数值。
 
-如果您尚未阅读该指南，建议您阅读 [监视计划查询](./monitor-queries.md) 通过Platform UI更好地了解所有查询作业的状态。
+接下来，建议您阅读 [监视计划查询](./monitor-queries.md) 通过Platform UI更好地了解所有查询作业的状态。
