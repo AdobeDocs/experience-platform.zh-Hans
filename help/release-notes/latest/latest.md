@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年6月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 5ee919390d759cc2a9418f636a46a516560fd5f0
+source-git-commit: a3faca5e0a711f0d4f6bafb22bf3c4770f58db8e
 workflow-type: tm+mt
-source-wordcount: '1606'
-ht-degree: 5%
+source-wordcount: '1538'
+ht-degree: 6%
 
 ---
 
@@ -41,7 +41,6 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 | 扩展 | [!DNL Google Cloud Platform] 事件转发扩展 | 此 [[!DNL Google Cloud Platform]](../../tags/extensions/server/google-cloud-platform/overview.md) 事件转发扩展允许您将事件数据转发到Google以供激活，方法是： [!DNL Google Pub/Sub]. |
 | 扩展 | [!DNL Cloud connector for Google Analytics 4 (ga4)] 扩展 | 此 [[!DNL Cloud connector for Google Analytics 4 (ga4)]](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html) 事件转发扩展允许您通过新的 [!DNL Google Analytics 4 (ga4)] 标准。 |
 | 密码 | OAuth 2 JWT密码 | 此 [OAuth 2 JWT密码](../../tags/ui/event-forwarding/secrets.md) 允许您使用Adobe和 [!DNL Google] 在事件转发中支持服务器 — 服务器交互的服务令牌。 |
-| 标记和事件转发 | 用户归因 | 用户归因可跨以下各项提供关键活动数据： [标记](../../tags/home.md) 和 [事件转发](../../tags/ui/event-forwarding/overview.md) UI。<br><br>数据包括谁在何时做出了哪些更改。 此数据可在以下屏幕中的标记和事件转发UI中看到：<br><ul><li> 属性概述</li><li> 已安装的扩展</li><li>规则比较和审查</li><li>数据元素比较审查</li><li>扩展比较审查</li><li>库资源更改</li><li>上次生成和发布的库</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -63,7 +62,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 工作区支持 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 目标。 | 现在，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅 [连接参数](../../destinations/catalog/personalization/adobe-target-connection.md#parameters) 部分以了解更多信息。 此外，请参阅关于的教程 [配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) Adobe Target中的，以了解有关工作区的更多信息。 |
+| 工作区支持 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 目标。 | 现在，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅 [连接参数](../../destinations/catalog/personalization/adobe-target-connection.md#parameters) 部分以了解更多信息。 此外，请参阅关于的教程 [配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans) Adobe Target中的，以了解有关工作区的更多信息。 |
 
 {style="table-layout:auto"}
 
