@@ -2,9 +2,9 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK激活它们。
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: d76d596818db67c99aca0606b6b6fb1a9aa977aa
+source-git-commit: 621dd1dbf99720604f797b97a5e31e090456cdf3
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
@@ -121,6 +121,7 @@ alloy("sendEvent", {
     /* ... */
   },
   edgeConfigOverrides: {
+    datastreamId: "{DATASTREAM_ID}"
     com_adobe_experience_platform: {
       datasets: {
         event: {
@@ -148,6 +149,10 @@ alloy("sendEvent", {
 });
 ```
 
+| 参数 | 描述 |
+|---|---|
+| `edgeConfigOverrides.datastreamId` | 使用此参数可允许单个请求转到与定义的数据流不同的数据流。 `configure` 命令。 |
+
 ### 通过发送配置覆盖 `configure` 命令 {#send-configure}
 
 以下示例显示了在上可能发生的配置覆盖 `configure` 命令。
@@ -157,7 +162,7 @@ alloy("configure", {
   defaultConsent: "in",
   edgeDomain: "etc",
   edgeBasePath: "ee",
-  edgeConfigId: "etc",
+  datastreamId: "{DATASTREAM_ID}",
   orgId: "org",
   debugEnabled: true,
   edgeConfigOverrides: {
