@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identity Service API指南
 description: Identity Service API允许开发人员在Adobe Experience Platform中使用身份图管理客户的跨设备、跨渠道和近乎实时的身份识别。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: d612af38-4648-4c3e-8cfd-3f306c9370e1
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 9f8ed1cc6460dacef7ca91b500a45c059ed1a295
 workflow-type: tm+mt
 source-wordcount: '764'
 ht-degree: 3%
@@ -19,7 +19,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platfor
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Identity Service]](../home.md)：解决客户个人资料数据碎片化带来的根本挑战。 它通过在客户与您品牌互动的设备和系统之间桥接身份来实现这一点。
+- [[!DNL Identity Service]](../home.md)：解决客户个人资料数据碎片化带来的根本挑战。 它通过在客户与您的品牌互动的设备和系统之间桥接身份来实现这一点。
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的聚合数据实时提供统一的用户配置文件。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
