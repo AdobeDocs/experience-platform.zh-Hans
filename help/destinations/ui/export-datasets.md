@@ -3,9 +3,9 @@ title: （测试版）将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: d0de642eb6118e6597925c12c76917ffa98c3a5a
+source-git-commit: d9b59b8a331511e87171f3b9d1163d452ba469be
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1425'
 ht-degree: 5%
 
 ---
@@ -16,8 +16,7 @@ ht-degree: 5%
 >
 >* 导出数据集的功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
 >* 此测试版功能支持导出第一代数据，如Real-time Customer Data Platform中所定义 [产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用此功能。 有关更多信息，请联系您的Adobe代表。
-
+>* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
 
 本文说明了导出所需的工作流 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到您的首选云存储位置，例如 [!DNL Amazon S3]、 SFTP位置或 [!DNL Google Cloud Storage] 通过使用Experience PlatformUI。
 
@@ -90,7 +89,7 @@ Experience Platform目录中的一些基于文件的目标同时支持区段激�
 >title="数据集的文件导出选项"
 >abstract="选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后添加到数据集的数据。<br>第一个增量文件导出包括数据集中的所有数据，充当回填。后续增量文件仅包含自第一次导出后添加到数据集的数据。"
 
-在 **[!UICONTROL 计划]** 步骤，您可以设置数据集导出的开始日期和导出节奏。
+在 **[!UICONTROL 计划]** 步骤，您可以为数据集导出设置开始日期和导出节奏。
 
 此 **[!UICONTROL 导出增量文件]** 选项。 这会触发导出，其中第一个文件是数据集的完整快照，后续文件是自上次导出以来向数据集添加的增量文件。
 
@@ -135,11 +134,22 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 这些文件在您的存储位置中存在就是成功导出的确认。 要了解导出文件的结构形式，您可以下载一个示例 [.parquet文件](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) 或 [.json文件](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
+#### 压缩的数据集文件 {#compressed-dataset-files}
+
+在 [连接到目标工作流](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options)中，您可以选择要压缩的导出数据集文件，如下所示：
+
+![连接到目标以导出数据集时的文件类型和压缩选择。](/help/destinations/assets/ui/export-datasets/compression-format-datasets.gif)
+
+请注意两种文件类型在压缩后的文件格式差异：
+
+* 导出压缩的JSON文件时，导出的文件格式为 `json.gz`
+* 导出压缩的parquet文件时，导出的文件格式为 `gz.parquet`
+
 ## 从目标删除数据集 {#remove-dataset}
 
 要从现有数据流中删除数据集，请执行以下步骤：
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 选择 **[!UICONTROL 浏览]** 查看现有目标数据流。
+1. 登录到 [EXPERIENCE PLATFORMUI](https://experience.adobe.com/platform/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 选择 **[!UICONTROL 浏览]** 查看现有目标数据流。
 
    ![目标浏览视图，其中显示了一个目标连接，其余连接被模糊处理。](../assets/ui/export-datasets/browse-dataset-connections.png)
 

@@ -4,9 +4,9 @@ title: （测试版）使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到选定的目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4873af44f623082375fe4b2caa82475e2ba5b808
 workflow-type: tm+mt
-source-wordcount: '3347'
+source-wordcount: '3524'
 ht-degree: 4%
 
 ---
@@ -17,8 +17,7 @@ ht-degree: 4%
 >
 >* 导出数据集的功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
 >* 此测试版功能支持导出第一代数据，如Real-time Customer Data Platform中所定义 [产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* 已购买Real-Time CDP Prime或Ultimate软件包的客户可以使用此功能。 有关更多信息，请联系您的Adobe代表。
-
+>* 已购买Real-Time CDP Prime或Ultimate软件包的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
 
 本文说明了使用 [!DNL Flow Service API] 以导出 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到您的首选云存储位置，例如 [!DNL Amazon S3]、 SFTP位置或 [!DNL Google Cloud Storage].
 
@@ -48,7 +47,7 @@ ht-degree: 4%
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：所有成功摄取到Adobe Experience Platform的数据将保留在 [!DNL Data Lake] 作为数据集。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各方面特性的元数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了将数据集导出到Platform中的云存储目标所需的其他信息。
+以下部分提供了要将数据集导出到Platform中的云存储目标必须了解的其他信息。
 
 ### 所需权限 {#permissions}
 
@@ -2315,6 +2314,29 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 >[!ENDSHADEBOX]
 
 您可以找到有关 [数据流运行API返回的各种参数](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns) API参考文档中的。
+
+## 验证是否成功导出数据集 {#verify}
+
+导出数据集时，Experience Platform创建 `.json` 或 `.parquet` 文件存储位置。 预计在下列情况下，将根据您提供的导出计划将新文件存储到您的存储位置 [创建数据流](#create-dataflow).
+
+Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 每次导出时都会创建一个新文件夹，其模式如下：
+
+`folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
+
+默认文件名是随机生成的，并确保导出的文件名是唯一的。
+
+### 示例数据集文件 {#sample-files}
+
+这些文件在您的存储位置中存在就是成功导出的确认。 要了解导出文件的结构形式，您可以下载一个示例 [.parquet文件](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) 或 [.json文件](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+
+#### 压缩的数据集文件 {#compressed-dataset-files}
+
+在步骤至 [创建目标连接](#create-target-connection)中，您可以选择要压缩的导出数据集文件。
+
+请注意两种文件类型在压缩后的文件格式差异：
+
+* 导出压缩的JSON文件时，导出的文件格式为 `json.gz`
+* 导出压缩的parquet文件时，导出的文件格式为 `gz.parquet`
 
 ## API错误处理 {#api-error-handling}
 
