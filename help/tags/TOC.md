@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 6e569ca3f83b374f88ca46fd8f2c40bbed203527
+source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
 workflow-type: tm+mt
-source-wordcount: '1001'
-ht-degree: 32%
+source-wordcount: '1005'
+ht-degree: 31%
 
 ---
 
@@ -279,7 +279,7 @@ ht-degree: 32%
    * [向后兼容标准](./extension-dev/backwards-compatibility.md)
 * Reactor API {#api}
    * [概述](./api/overview.md)
-   * [快速入门](./api/getting-started.md)
+   * [身份验证和访问Reactor API](./api/getting-started.md)
    * 端点 {#endpoints}
       * [公司](./api/endpoints/companies.md)
       * [属性](./api/endpoints/properties.md)
