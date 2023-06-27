@@ -2,10 +2,10 @@
 title: 通过Offer decisioning进行个性化
 description: 了解如何使用服务器API通过Offer decisioning交付和呈现个性化体验。
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 3047a03e7a911c48a6d4e4c07117af45fa78f678
 workflow-type: tm+mt
-source-wordcount: '555'
-ht-degree: 2%
+source-wordcount: '580'
+ht-degree: 4%
 
 ---
 
@@ -16,6 +16,10 @@ ht-degree: 2%
 Edge Network Server API可以提供在中管理的个性化体验 [offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=en) 到Web渠道。
 
 [!DNL Offer Decisioning] 支持使用非可视化界面创建、激活和交付您的活动和个性化体验。
+
+## 先决条件 {#prerequisites}
+
+通过以下方式实现个性化 [!DNL Offer Decisioning] 要求您有权访问 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans) ，然后再配置集成。
 
 ## 配置数据流 {#configure-your-datastream}
 
