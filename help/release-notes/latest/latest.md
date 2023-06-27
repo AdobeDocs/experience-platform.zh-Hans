@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 2023年6月版发行说明。
+description: Adobe Experience Platform 的 2023 年 6 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: a3faca5e0a711f0d4f6bafb22bf3c4770f58db8e
 workflow-type: tm+mt
 source-wordcount: '1538'
-ht-degree: 6%
+ht-degree: 60%
 
 ---
 
@@ -13,56 +13,56 @@ ht-degree: 6%
 
 **发布日期：2023 年 6 月 21 日**
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
-- [对Experience PlatformAPI的身份验证](#authentication-platform-apis)
+- [Experience Platform API 身份验证](#authentication-platform-apis)
 - [数据收集](#data-collection)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
 
-## 对Experience PlatformAPI的身份验证 {#authentication-platform-apis}
+## Experience Platform API 身份验证 {#authentication-platform-apis}
 
-对于Experience PlatformAPI用户，现在简化了获取进行身份验证和调用API端点所需的访问令牌的方法。 用于获取访问令牌的JWT方法已弃用，并替换为更简单的OAuth服务器到服务器身份验证方法。<p>![突出显示用于获取访问令牌的新OAuth身份验证方法。](/help/landing/images/api-authentication/oauth-authentication-method.png "突出显示用于获取访问令牌的新OAuth身份验证方法。"){width="100" zoomable="yes"}</p>
+对于 Experience Platform API 用户，现已简化用于获取所需访问令牌以进行身份验证和调用 API 端点的方法。已丢弃用于获取访问令牌的 JWT 方法，并用更简单的 OAuth 服务器到服务器身份验证方法取代它。<p>![突出显示用于获取访问令牌的新 OAuth 身份验证方法。](/help/landing/images/api-authentication/oauth-authentication-method.png "突出显示用于获取访问令牌的新 OAuth 身份验证方法。"){width="100" zoomable="yes"}</p>
 
-虽然使用JWT身份验证方法的现有API集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 阅读以下内容中的指南： [从服务帐户(JWT)凭据迁移到OAuth服务器到服务器凭据](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/).
+虽然现有使用 JWT 身份验证方法的 API 集成将继续有效直至 2025 年 1 月 1 日，但 Adobe 强烈建议您在该日期之前将现有的集成迁移到新的 OAuth 服务器到服务器方法。阅读有关[从服务帐户 (JWT) 凭据迁移到 OAuth 服务器到服务器凭据](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)的指南。
 
-阅读更新内容 [Experience Platform身份验证教程](/help/landing/api-authentication.md) 了解更多信息。
+有关详细信息，请阅读经过更新的 [Experience Platform 身份验证教程](/help/landing/api-authentication.md)。
 
 ## 数据收集 {#data-collection}
 
-Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中扩充和转换数据，并将其分发到Adobe或非Adobe目标。
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 扩展 | [!DNL Google Cloud Platform] 事件转发扩展 | 此 [[!DNL Google Cloud Platform]](../../tags/extensions/server/google-cloud-platform/overview.md) 事件转发扩展允许您将事件数据转发到Google以供激活，方法是： [!DNL Google Pub/Sub]. |
-| 扩展 | [!DNL Cloud connector for Google Analytics 4 (ga4)] 扩展 | 此 [[!DNL Cloud connector for Google Analytics 4 (ga4)]](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html) 事件转发扩展允许您通过新的 [!DNL Google Analytics 4 (ga4)] 标准。 |
-| 密码 | OAuth 2 JWT密码 | 此 [OAuth 2 JWT密码](../../tags/ui/event-forwarding/secrets.md) 允许您使用Adobe和 [!DNL Google] 在事件转发中支持服务器 — 服务器交互的服务令牌。 |
+| 扩展 | [!DNL Google Cloud Platform] 事件转发扩展 | 通过 [[!DNL Google Cloud Platform]](../../tags/extensions/server/google-cloud-platform/overview.md) 事件转发扩展，可通过 [!DNL Google Pub/Sub] 将事件数据转发到 Google 以供激活。 |
+| 扩展 | [!DNL Cloud connector for Google Analytics 4 (ga4)] 扩展 | 通过 [[!DNL Cloud connector for Google Analytics 4 (ga4)]](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html) 事件转发扩展，可您通过新的 [!DNL Google Analytics 4 (ga4)] 标准跟踪分析。 |
+| 机密 | OAuth 2 JWT 机密 | 通过 [OAuth 2 JWT 机密](../../tags/ui/event-forwarding/secrets.md)，可使用 Adobe 和 [!DNL Google] 服务令牌在事件转发中支持服务器与服务器交互。 |
 
 {style="table-layout:auto"}
 
-要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
+要详细了解数据收集，请阅读[数据收集概述](../../tags/home.md)。
 
 ## 目标 {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新的或更新后的目标** {#new-updated-destinations}
+**新增或更新目标**{#new-updated-destinations}
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[！BADGE Beta]{type=Informational} [!DNL Amazon Ads] 连接](../../destinations/catalog/advertising/amazon-ads.md) | 此 [!DNL Amazon Ads] 与Adobe Experience Platform集成现在支持到以下各项的区域路由： [!DNL Amazon Ads] 市场。 有关更多信息，请参阅 [目标更改日志](../../destinations/catalog/advertising/amazon-ads.md#changelog). |
+| [[!BADGE Beta]{type=Informative} [!DNL Amazon Ads] 连接](../../destinations/catalog/advertising/amazon-ads.md) | [!DNL Amazon Ads]与 Adobe Experience Platform 集成现在支持到各种 [!DNL Amazon Ads] 市场的区域路由。阅读[目标变更日志](../../destinations/catalog/advertising/amazon-ads.md#changelog)，了解更多内容。 |
 
 {style="table-layout:auto"}
 
-**新增或更新功能** {#destinations-new-updated-functionality}
+**新增或更新功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 工作区支持 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 目标。 | 现在，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅 [连接参数](../../destinations/catalog/personalization/adobe-target-connection.md#parameters) 部分以了解更多信息。 此外，请参阅关于的教程 [配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans) Adobe Target中的，以了解有关工作区的更多信息。 |
+| 工作区支持[ Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 目的地。 | 现在，在配置新的 Adobe Target 目标连接时，您可以选择要将受众共享到的 Adobe Target 工作区。请参阅[连接参数](../../destinations/catalog/personalization/adobe-target-connection.md#parameters)部分，了解详细信息。另外，请参阅有关在 Adobe Target 中[配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en)的教程，了解更多有关工作区的信息。 |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 -->
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -84,7 +84,7 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 扩展（潜在客户 — 配置文件） | [[!UICONTROL Adobe统一配置文件服务潜在客户 — 配置文件合并扩展]](https://github.com/adobe/xdm/pull/1735/files) | 添加了Prospect-Profile合并架构的必填字段。 |
+| 扩展 （潜在客户 — 个人资料） | [[!UICONTROL Adobe统一配置文件服务潜在客户 — 配置文件合并扩展]](https://github.com/adobe/xdm/pull/1735/files) | 添加了Prospect-Profile合并架构的必填字段。 |
 | 扩展 | [[!UICONTROL 决策资源]](https://github.com/adobe/xdm/pull/1732/files) | 添加数据类型以表示决策中使用的资产。 [!UICONTROL 决策资源] 提供用于呈现以下内容的资源的引用： `decisionItems`. |
 | 数据类型 | [[!UICONTROL 商务]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL 商务] 存储与购买和销售活动相关的记录。 |
 | 字段组 | [[!UICONTROL 配置文件合作伙伴扩充（示例）]](https://github.com/adobe/xdm/pull/1747/files) | 为配置文件合作伙伴扩充添加了一个示例架构。 |
@@ -117,14 +117,14 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准SQL在Adobe Experience Platform数据湖中查询数据。 您可以加入数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform 数据湖中的数据。您可以加入数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 内联模板 | 查询服务现在支持使用引用SQL中其他模板的模板。 利用查询中的内联模板，减少工作负载并避免错误。 可以重用语句或条件，并引用嵌套模板以提高SQL的灵活性。 可存储为模板的查询大小或可从原始查询引用的模板数量没有限制。 有关详细信息，请阅读 [内联模板指南](../../query-service/essential-concepts/inline-templates.md). |
-| 计划的查询用户界面更新 | 使用，从UI中的某个位置管理所有计划查询 [[!UICONTROL “计划查询”选项卡]](../../query-service/ui/monitor-queries.md#inline-actions). 此 [!UICONTROL 计划的查询] 通过添加内联查询操作和新的查询状态列，UI已得到改进。 最近添加的功能包括启用、禁用和删除计划，或订阅即将运行的查询的警报，直接从 [!UICONTROL 计划的查询] 视图。 <p>![中突出显示的内联操作 [!UICONTROL 计划的查询] 视图。](../../query-service/images/ui/monitor-queries/disable-inline.png "中突出显示的内联操作 [!UICONTROL 计划的查询] 视图。"){width="100" zoomable="yes"}</p> |
+| 内联模板 | 查询服务现在支持使用引用SQL中其他模板的模板。 通过在查询中利用内联模板来减少工作量并避免出现错误。您可以重复使用语句或条件，并引用嵌套模板以提升 SQL 的灵活性。可存储为模板的查询大小或可从原始查询引用的模板数量没有限制。若要了解更多信息，请阅读[内联模板指南](../../query-service/essential-concepts/inline-templates.md)。 |
+| 计划的查询用户界面更新 | 使用，从UI中的某个位置管理所有计划查询 [[!UICONTROL “计划查询”选项卡]](../../query-service/ui/monitor-queries.md#inline-actions). [!UICONTROL 计划查询] UI 得到了改进，其中添加了内联查询操作和新增了查询状态列。最近添加的功能包括启用、禁用和删除计划，或直接从[!UICONTROL 计划查询]视图订阅即将运行的查询的提醒。 <p>[!UICONTROL 计划查询]视图中突出显示的![内联操作。[!UICONTROL 计划查询]视图中突出显示的](../../query-service/images/ui/monitor-queries/disable-inline.png "内联操作。"){width="100" zoomable="yes"}</p> |
 
 {style="table-layout:auto"}
 
@@ -132,21 +132,21 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，并允许您使用Platform服务来构建、标记和增强这些数据。 您可以从多种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe Analytics分类源数据流删除支持 | 您现在可以删除使用Adobe Analytics分类作为其源的源数据流。 下 **[!UICONTROL 源]** > **[!UICONTROL 数据流]**，选择所需的数据流，然后选择删除。 有关详细信息，请阅读以下指南： [为Adobe Analytics分类数据创建源连接](../../sources/tutorials/ui/create/adobe-applications/classifications.md). |
-| 过滤支持 [!DNL Microsoft Dynamics] 使用API | 使用逻辑运算符和比较运算符筛选 [[!DNL Microsoft Dynamics]](../../sources/connectors/crm/ms-dynamics.md) 源。 有关详细信息，请阅读以下指南： [使用API筛选源的数据](../../sources/tutorials/api/filter.md). |
-| [!BADGE 测试版]{type=Informative}[!DNL RainFocus] | 您现在可以使用 [!DNL RainFocus] 源集成，可从以下位置获取事件管理和分析数据： [!DNL RainFocus] 帐户到Experience Platform。 有关详细信息，请阅读 [[!DNL RainFocus] 源概述](../../sources/connectors/analytics/rainfocus.md). |
-| 支持Adobe Commerce | 您现在可以使用Adobe Commerce源集成将Adobe Commerce帐户中的数据引入Experience Platform。 有关详细信息，请阅读 [Adobe Commerce源概述](../../sources/connectors/adobe-applications/commerce.md). |
-| 支持 [!DNL Mixpanel] | 您现在可以使用 [!DNL Mixpanel] 源集成，从您的网站获取analytics数据 [!DNL Mixpanel] Experience Platform使用API或用户界面的帐户。 有关详细信息，请阅读 [[!DNL Mixpanel] 源概述](../../sources/connectors/analytics/mixpanel.md). |
-| 支持 [!DNL Zendesk] | 您现在可以使用 [!DNL Zendesk] 源集成，从您的获取客户成功数据 [!DNL Zendesk] Experience Platform使用API或用户界面的帐户。 有关详细信息，请阅读 [[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md). |
+| Adobe Analytics 分类源数据流删除支持 | 您现在可以删除使用 Adobe Analytics 分类作为源的源数据流。在&#x200B;**[!UICONTROL 来源]**>**[!UICONTROL 数据流]**&#x200B;下，选择所需的数据流，然后选择删除。若要了解更多信息，请阅读有关[为 Adobe Analytics 分类数据创建源连接](../../sources/tutorials/ui/create/adobe-applications/classifications.md)的指南。 |
+| 使用 API 对 [!DNL Microsoft Dynamics] 的过滤支持 | 使用逻辑和比较运算符来过滤 [[!DNL Microsoft Dynamics]](../../sources/connectors/crm/ms-dynamics.md) 源的行级数据。有关更多信息，请阅读[使用 API 过滤源数据](../../sources/tutorials/api/filter.md)的指南。 |
+| [!BADGE Beta]{type=Informative}[!DNL RainFocus] | 您现在可以使用 [!DNL RainFocus] 源集成将 [!DNL RainFocus] 帐户中的事件管理和分析数据添加到 Experience Platform。有关更多信息，请阅读[[!DNL RainFocus] 源概述](../../sources/connectors/analytics/rainfocus.md)。 |
+| Adobe Commerce 的支持 | 您现在可以使用 Adobe Commerce 源集成将 Adobe Commerce 帐户中的数据添加到 Experience Platform。有关更多信息，请阅读[ Adobe Commerce 源概述](../../sources/connectors/adobe-applications/commerce.md)。 |
+| 支持 [!DNL Mixpanel] | 您现在可以使用 [!DNL Mixpanel] 源集成，使用 API 或用户界面将 [!DNL Mixpanel] 帐户中的分析数据添加到 Experience Platform。有关更多信息，请阅读[[!DNL Mixpanel] 源概述](../../sources/connectors/analytics/mixpanel.md)。 |
+| 支持 [!DNL Zendesk] | 您现在可以使用 [!DNL Zendesk] 源集成，使用 API 或用户界面将 [!DNL Zendesk] 帐户中的客户成功数据添加到 Experience Platform。有关更多信息，请阅读[[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md)。 |
 
 {style="table-layout:auto"}
 
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
+若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。
