@@ -94,7 +94,7 @@ ht-degree: 10%
 - **[!UICONTROL 身份已排除]**：根据缺少属性和同意违规从激活中排除的配置文件身份总数。
 - **[!UICONTROL 身份失败]** 由于错误而未激活到目标的配置文件身份总数。
 - **[!UICONTROL 激活率]**：已成功激活或跳过的已接收标识的百分比。 以下公式演示如何计算此值：
-   ![激活率公式](../assets/ui/monitor-destinations/activation-rate-formula.png)
+  ![激活率公式](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL 状态]**：表示数据流所处的状态： [!UICONTROL 已完成] 或 [!UICONTROL 正在处理]. [!UICONTROL 已完成] 表示相应数据流运行的所有身份在一小时内导出。 [!UICONTROL 正在处理] 表示数据流运行尚未完成。
 
 要查看特定数据流运行的详细信息，请从列表中选择运行的开始时间。
@@ -113,7 +113,7 @@ ht-degree: 10%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关区段激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -171,7 +171,6 @@ ht-degree: 10%
 >
 >- 当前Experience Platform中的所有目标都支持目标监视功能 *排除* 此 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标。
 >- 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 估计目标、与排除、失败和激活的标识相关的量度。 较大量的激活数据会导致量度的准确性较高。
-
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
@@ -261,7 +260,6 @@ ht-degree: 10%
 >请注意与区段级别量度相关的当前限制：
 >- 区段级别视图当前仅适用于批处理目标。
 >- 区段级别量度当前仅记录成功的数据流运行。 失败的数据流运行和排除的记录不会记录这些事件。
-
 
 ![数据流面板中的区段](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 

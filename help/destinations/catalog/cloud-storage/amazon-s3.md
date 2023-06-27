@@ -19,7 +19,6 @@ ht-degree: 13%
 >* 如果您已经将文件导出到 **[!UICONTROL Amazon S3]** 目标，请新建数据流到新的 **[!UICONTROL Amazon S3 Beta]** 目标。
 >* 如果您尚未创建任何数据流到 **[!UICONTROL Amazon S3]** 目标，请使用新的 **[!UICONTROL Amazon S3 Beta]** 用于导出文件的信息卡 **[!UICONTROL Amazon S3]**.
 
-
 ![并排视图中两个Amazon S3目标卡的图像。](../../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
 新版中的改进 [!DNL Amazon S3] 目标卡包括：
@@ -71,7 +70,7 @@ ht-degree: 13%
 * **[!DNL Amazon S3]访问密钥** 和 **[!DNL Amazon S3]密钥**： In [!DNL Amazon S3]，生成 `access key - secret access key` 配对以授予Platform对的访问权限 [!DNL Amazon S3] 帐户。 了解详情，请参阅 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -84,7 +83,7 @@ ht-degree: 13%
 >id="platform_destinations_connect_s3_folderpath"
 >title="文件夹路径"
 >abstract="必须仅包含字符 A-Z、a-z、0-9，并且可以包含以下特殊字符：`/!-_.'()"^[]+$%.*"`。要为每个区段文件创建一个文件夹，请将宏 `/%SEGMENT_NAME%`、`/%SEGMENT_ID%` 或 `/%SEGMENT_NAME%/%SEGMENT_ID%` 插入文本字段。宏只能插入到文件夹路径的末尾。查看文档中的宏示例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="使用宏在存储位置创建一个文件夹"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=zh-Hans#use-macros" text="使用宏在存储位置创建一个文件夹"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 

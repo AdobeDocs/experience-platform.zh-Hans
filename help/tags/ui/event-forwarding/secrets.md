@@ -43,7 +43,7 @@ ht-degree: 3%
 >id="platform_eventforwarding_secrets_environments"
 >title="密钥的环境"
 >abstract="要使某个密钥可由事件转发使用，必须将此密钥分配给现有环境。如果您未为事件转发属性创建任何环境，则必须先配置它们，然后再继续。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" text="环境概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=zh-Hans" text="环境概述"
 
 要创建密码，请选择 **[!UICONTROL 事件转发]** 在左侧导航中，打开您要在下添加密码的事件转发属性。 接下来，选择 **[!UICONTROL 密钥]** 在左侧导航中，其后是 **[!UICONTROL 创建新密码]**.
 

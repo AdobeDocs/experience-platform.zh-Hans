@@ -33,7 +33,7 @@ ht-degree: 22%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
 >title="说明"
->abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html">数据卫生</a>，然后选择<b>创建请求</b>。</li><li>如果要删除记录：</li>   <li>选择<b>记录</b>。</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的使用者的身份。选择<b>添加身份</b>以一次提供一个身份，或改为选择<b>选择文件</b>以上传包含多个身份的 JSON 文件。</li>   <li>如果需要，请选择<b>模板</b>以查看该 JSON 文件的预期格式。</li><li>如果要<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html#schedule-dataset-expiration">安排数据集的到期日期</a>，请参阅说明文档。</li></ul>"
+>abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html?lang=zh-Hans">数据卫生</a>，然后选择<b>创建请求</b>。</li><li>如果要删除记录：</li>   <li>选择<b>记录</b>。</li>   <li>选择要从中删除记录的特定数据集，或选择从所有数据集中删除记录的选项。</li>   <li>提供要删除其记录的使用者的身份。选择<b>添加身份</b>以一次提供一个身份，或改为选择<b>选择文件</b>以上传包含多个身份的 JSON 文件。</li>   <li>如果需要，请选择<b>模板</b>以查看该 JSON 文件的预期格式。</li><li>如果要<a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html?lang=zh-Hans#schedule-dataset-expiration">安排数据集的到期日期</a>，请参阅说明文档。</li></ul>"
 
 要创建新请求，请选择 **[!UICONTROL 创建请求]** 从工作区的主页中。
 
@@ -54,6 +54,7 @@ ht-degree: 22%
 ![显示正在选择的数据集的图像](../images/ui/ttl/select-dataset.png)
 
 >[!NOTE]
+>
 仅显示属于当前沙盒的数据集。
 
 ### 提交请求
@@ -67,6 +68,7 @@ ht-degree: 22%
 提交请求后，将创建一个工作单，该工作单将显示在 [!UICONTROL 数据卫生] 工作区。 从此处，您可以监控工作单在处理请求时的状态。
 
 >[!NOTE]
+>
 请参阅概述部分，了解 [时间轴和透明度](../home.md#dataset-expiration-transparency) 以了解执行数据集过期后如何处理这些过期的详细信息。
 
 ## 编辑或取消数据集过期

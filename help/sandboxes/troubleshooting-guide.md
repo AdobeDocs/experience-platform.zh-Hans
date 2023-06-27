@@ -27,7 +27,7 @@ ht-degree: 9%
 >id="platform_sandboxes_sandboxtypes"
 >title="沙盒类型"
 >abstract="沙盒类型指示这是生产沙盒还是开发沙盒。生产沙盒包括实时数据，开发沙盒用于测试和开发。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在 UI 中创建沙盒"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html?lang=zh-Hans#create" text="在 UI 中创建沙盒"
 
 Experience Platform中有两种沙盒类型：
 
