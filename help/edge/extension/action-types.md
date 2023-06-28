@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 19430906e5e97732f88bfe13501c4a75f9338a07
+source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
 workflow-type: tm+mt
-source-wordcount: '820'
-ht-degree: 2%
+source-wordcount: '778'
+ht-degree: 3%
 
 ---
 
@@ -34,10 +34,6 @@ ht-degree: 2%
 收到用户的同意后，必须使用“设置同意”操作类型将此同意告知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。参见 [支持客户同意首选项](../consent/supporting-consent.md). 使用Adobe版本2.0时，仅支持数据元素值。 您将需要创建一个解析为同意对象的数据元素。
 
 在此操作中，还会向您提供一个可选字段，用于包含身份映射，以便在收到同意后可以同步身份。 将同意配置为“Pending”或“Out”时，同步很有用，因为同意调用可能是第一个要触发的调用。
-
-## 重置事件合并ID {#reset-event-merge-id}
-
-如果要重置页面上的事件合并ID，可以执行此操作。 要重置ID，请选择要重置的合并ID，然后根据需要触发操作。
 
 ## 更新变量 {#update-variable}
 

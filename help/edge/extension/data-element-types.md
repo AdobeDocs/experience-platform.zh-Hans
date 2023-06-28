@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 19430906e5e97732f88bfe13501c4a75f9338a07
+source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
 workflow-type: tm+mt
-source-wordcount: '632'
-ht-degree: 8%
+source-wordcount: '585'
+ht-degree: 5%
 
 ---
 
@@ -13,10 +13,6 @@ ht-degree: 8%
 # 数据元素类型
 
 在您设置您的 [操作类型](action-types.md) 在 [Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md)中，您必须配置数据元素类型。 此页介绍可用的数据元素类型。
-
-## 事件合并Id {#event-merge-id}
-
-此数据元素在使用时提供事件合并 ID。此数据元素无需配置。在访客离开页面或 **[!UICONTROL 重置事件合并ID]** 操作类型已使用。
 
 ## 标识映射 {#identity-map}
 
