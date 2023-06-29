@@ -4,9 +4,9 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程向您展示了如何使用Adobe Experience Platform API启用具有“更新插入”功能的数据集，以更新实时客户档案数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
+source-git-commit: 6985ebf8705130636abdc50b5c3f50299a60f2aa
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1069'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->更新插入工作流仅适用于批量摄取。 流式摄取是 **非** 受支持。
+>本教程中描述的工作流仅适用于批量摄取。 有关流式摄取更新插入的信息，请参阅上的指南 [使用数据准备将部分行更新发送到实时客户个人资料](../../data-prep/upserts.md).
 
 ## 快速入门
 
