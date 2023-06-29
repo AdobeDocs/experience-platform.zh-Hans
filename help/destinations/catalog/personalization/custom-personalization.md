@@ -3,7 +3,7 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标为网站上运行的外部个性化、内容管理系统、广告服务器和其他应用程序提供了一种从Adobe Experience Platform检索区段信息的方法。 此目标根据用户个人资料区段会员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 1ffcbabe29994fb881ff622394d669c4340c94f1
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '879'
 ht-degree: 9%
@@ -87,7 +87,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 ## 导出的数据 {#exported-data}
 
-如果您使用 [Adobe Experience Platform中的标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [发送事件完成](../../../edge/extension/event-types.md) 功能和自定义代码操作将具有 `event.destinations` 用于查看导出数据的变量。
+如果您使用 [Adobe Experience Platform中的标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [发送事件完成](../../../tags/extensions/client/web-sdk/event-types.md) 功能和自定义代码操作将具有 `event.destinations` 用于查看导出数据的变量。
 
 以下是的示例值 `event.destinations` 变量：
 

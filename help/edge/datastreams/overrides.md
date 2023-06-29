@@ -2,7 +2,7 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流UI中配置数据流覆盖并通过Web SDK激活它们。
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: 621dd1dbf99720604f797b97a5e31e090456cdf3
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '971'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 数据流配置覆盖是一个两步过程：
 
 1. 首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](configure.md).
-2. 然后，您必须通过Web SDK命令或使用Web SDK将覆盖发送到Edge Network [标记扩展](../extension/web-sdk-extension-configuration.md).
+2. 然后，您必须通过Web SDK命令或使用Web SDK将覆盖发送到Edge Network [标记扩展](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
 本文解释了每种支持的覆盖类型的端到端数据流配置覆盖过程。
 
@@ -91,7 +91,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->作为通过Web SDK命令发送配置覆盖的替代方法，您可以将配置覆盖添加到Web SDK [标记扩展](../extension/web-sdk-extension-configuration.md).
+>作为通过Web SDK命令发送配置覆盖的替代方法，您可以将配置覆盖添加到Web SDK [标记扩展](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
 晚于 [配置数据流覆盖](#configure-overrides) 在数据收集UI中，您现在可以通过Web SDK将覆盖发送到Edge Network。
 

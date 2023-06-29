@@ -2,7 +2,7 @@
 title: 标记扩展参考
 description: 查找Adobe Experience Platform中标记扩展的文档。
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 9d9e02c2a4f628ebe04aaa63942e830f3354729f
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 10%
@@ -39,7 +39,7 @@ ht-degree: 10%
 * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)*
 * [Adobe Experience Cloud ID 服务](./id-service/overview.md)
 * [Adobe Experience Platform演示](./platform-demo/overview.md)
-* [Adobe Experience Platform Web SDK](./sdk/overview.md)
+* [Adobe Experience Platform Web SDK](./web-sdk/overview.md)
 * [Adobe Experience Manager资产分析](./asset-insights/overview.md)
 * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)*
 * [Adobe Medium Analytics for Audio and Video](./media-analytics/overview.md)
@@ -65,7 +65,7 @@ ht-degree: 10%
 * [Cheetah体验](https://exchange.adobe.com/apps/ec/102759)*
 * [Clicktale](https://exchange.adobe.com/apps/ec/100082)*
 * [常用Analytics插件](./plugins/overview.md)
-* [常用Web SDK插件](./web-sdk-plugins/overview.md)
+* [常用Web SDK插件](./web-sdk/web-sdk-plugins.md)
 * [Concat](https://exchange.adobe.com/apps/ec/104690)*
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
 * [由Usercentrics CMP v2进行的Cookie同意管理](https://exchange.adobe.com/apps/ec/*107037)

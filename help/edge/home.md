@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK概述
 description: 了解如何使用Adobe Experience Platform Web SDK将Platform功能集成到您的网站。
 keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；Edge；Visitor.js；AppMeasurement.js；AT.js；DIL.js；Web SDK；SDK；Web SDK；Launch；Launch
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 00801465435133fce29002c8bd0f2256745ba2c2
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '803'
 ht-degree: 1%
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # Adobe Experience Platform Web SDK概述 {#overview}
 
-Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户与 [!DNL Experience Cloud] 通过Adobe Experience Platform Edge Network。 除了JavaScript库之外， [标记扩展](./extension/web-sdk-extension-configuration.md) 以帮助配置Web SDK。
+Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户与 [!DNL Experience Cloud] 通过Adobe Experience Platform Edge Network。 除了JavaScript库之外， [标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) 以帮助配置Web SDK。
 
 有关使用标记设置Web SDK并将数据发送到解决方案的分步指南，请参阅我们的 [使用Web SDK实施Adobe Experience Cloud教程](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=en).
 
@@ -74,7 +74,7 @@ Web SDK替换以下SDK：
 
 ### 从at.js迁移到Web SDK的注意事项 {#considerations}
 
-在迁移使用的页面之前 [!DNL at.js] 对于Web SDK，请确保启用以下Web SDK配置选项。 这可以确保在从页面导航时保留访客资料 [!DNL at.js ] 到使用Web SDK的页面。
+在迁移使用的页面之前 [!DNL at.js] 对于Web SDK，请确保启用以下Web SDK配置选项。 这可以确保在从页面导航时保留访客资料 [!DNL at.js] 到使用Web SDK的页面。
 
 * [&#39;idMigrationEnabled&#39;](fundamentals/configuring-the-sdk.md#id-migration-enabled)
 * [&#39;targetMigrationEnabled&#39;](fundamentals/configuring-the-sdk.md#targetMigrationEnabled)
@@ -85,7 +85,6 @@ Web SDK替换以下SDK：
 >从at.js迁移到Web SDK时，不支持以下Target功能：
 > * [重定向选件](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en)
 > * [CNAME和跨域支持](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/?lang=en)
-
 
 从at.js迁移到Web SDK后，您应删除 `targetMigrationEnabled` 选项。
 

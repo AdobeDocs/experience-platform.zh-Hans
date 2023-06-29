@@ -7,7 +7,7 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 5%
@@ -103,7 +103,7 @@ ht-degree: 5%
 
 ## 数据收集
 
-在中使用此扩展时 [规则](../../../ui/managing-resources/rules.md)，则扩展会随每个事件发送到Mailchimp的多个数据值。 对于典型实施，您可以配置 [Adobe Experience Platform Web SDK扩展](../../client/sdk/overview.md) 以将该数据发送至 [!DNL Platform Edge Network] 以供扩展在event forwarding属性中使用。
+在中使用此扩展时 [规则](../../../ui/managing-resources/rules.md)，则扩展会随每个事件发送到Mailchimp的多个数据值。 对于典型实施，您可以配置 [Adobe Experience Platform Web SDK扩展](../../client/web-sdk/overview.md) 以将该数据发送至 [!DNL Platform Edge Network] 以供扩展在event forwarding属性中使用。
 
 此扩展所需的数据可以作为XDM数据或非XDM数据从Web SDK发送。 请参阅文档以了解有关 [发送XDM数据](../../../../edge/fundamentals/tracking-events.md#sending-non-xdm-data).
 

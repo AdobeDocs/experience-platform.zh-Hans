@@ -3,7 +3,7 @@ title: 在Platform Web SDK中使用Adobe Journey Optimizer
 description: 了解如何使用Adobe Journey Optimizer通过Experience PlatformWeb SDK呈现个性化内容
 keywords: ajo；ajo web；adobe journey optimizer；renderDecisions；表面；决策；建议；范围；架构
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '424'
 ht-degree: 0%
@@ -42,7 +42,7 @@ ht-degree: 0%
    })
    ```
 
-3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在对边缘网络的请求中。 如果需要，可以通过在 `personalization.surfaces` 的选项 `sendEvent` 命令，或者在相应的 **[!UICONTROL 曲面]** [[!UICONTROL 发送事件] 操作](../../extension/action-types.md#send-event) Web SDK扩展的配置。
+3. （可选）在事件中指定其他表面。 默认情况下，Web SDK将自动为当前网页生成Web表面，并将其包含在对边缘网络的请求中。 如果需要，可以通过在 `personalization.surfaces` 的选项 `sendEvent` 命令，或者在相应的 **[!UICONTROL 曲面]** [[!UICONTROL 发送事件] 操作](../../../tags/extensions/client/web-sdk/action-types.md#send-event) Web SDK扩展的配置。
 
    ```javascript
    alloy("sendEvent", {

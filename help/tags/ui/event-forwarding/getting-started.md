@@ -3,7 +3,7 @@ title: 事件转发快速入门
 description: 按照此分步教程开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '873'
 ht-degree: 27%
@@ -18,7 +18,7 @@ ht-degree: 27%
 
 要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个将数据发送到Adobe Experience Platform Edge Network：
 
-* [Adobe Experience Platform Web SDK](../../extensions/client/sdk/overview.md)
+* [Adobe Experience Platform Web SDK](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
 * [服务器到服务器API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html?lang=en)
 
@@ -99,7 +99,7 @@ ht-degree: 27%
 
 在中创建资产 **[!UICONTROL 标记]** 工作区，然后导航到 **[!UICONTROL 扩展]** 并从目录中选择Experience PlatformWeb SDK扩展以对其进行配置和安装。
 
-请参阅 [Web SDK扩展文档](../../extensions/client/sdk/overview.md) 以了解有关配置选项的详细信息。
+请参阅 [Web SDK扩展文档](../../extensions/client/web-sdk/overview.md) 以了解有关配置选项的详细信息。
 
 ## 创建标记规则以将数据发送到Platform Web SDK
 

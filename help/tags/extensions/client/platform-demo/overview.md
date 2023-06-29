@@ -2,7 +2,7 @@
 title: Adobe Experience Platform演示扩展概述
 description: 了解Adobe Experience Platform中的Adobe Experience Platform Demo扩展。
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1069'
 ht-degree: 72%
@@ -17,7 +17,7 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->此扩展已被弃用，取而代之的是 [Adobe Experience Platform Web SDK](../sdk/overview.md).
+>此扩展已被弃用，取而代之的是 [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
 
 此扩展的功能将移植到新扩展上。以下是当前功能的快速比较。
 
@@ -26,11 +26,11 @@ ht-degree: 72%
 | 支持自定义客户 ID | 支持自定义客户 ID |
 | XDM的客户端映射UI | 在 ECID 中构建（无需 visitor.js） |
 | 能够创建流连接 | 选择加入支持 |
-|  | XDM 支持作为数据元素 |
-|  | 第一方域支持 |
-|  | 内置调试工具 |
-|  | 自动收集浏览器上下文 |
-|  | 完全开放源 |
+| | XDM 支持作为数据元素 |
+| | 第一方域支持 |
+| | 内置调试工具 |
+| | 自动收集浏览器上下文 |
+| | 完全开放源 |
 
 
 ## 配置 Adobe Experience Platform 扩展

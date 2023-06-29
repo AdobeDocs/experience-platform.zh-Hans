@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 97ae7002d4bacb224f7cd57cca4a0c1ede11dd26
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1549'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 # 发行说明
 
 本文档介绍了Adobe Experience Platform Web SDK的发行说明。
-有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](extension/web-sdk-ext-release-notes.md).
+有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
 
 ## 版本2.16.0 - 2023年5月17日
 
@@ -150,7 +150,7 @@ ht-degree: 3%
 
 ## 版本2.4.0 - 2021年3月
 
-* 现在，SDK可以是 [安装为npm包](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html?lang=zh-Hans).
+* 现在，SDK可以是 [安装为npm包](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html).
 * 添加了对的支持 `out` 选项条件 [配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)，丢弃所有事件，直到获得用户同意(现有 `pending` 选项将事件排入队列，并在收到同意后发送它们)。
 * 此 [onBeforeEventSend回调](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#onbeforeeventsend) 现在可用于阻止发送事件。
 * 现在使用XDM架构字段组，而不是 `meta.personalization` 发送有关正在呈现或单击的个性化内容的事件时。

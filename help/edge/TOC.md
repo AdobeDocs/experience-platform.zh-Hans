@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 5a64beb2f5826bda585111e9ce7f760b939bf9b9
+source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
 workflow-type: tm+mt
-source-wordcount: '212'
-ht-degree: 33%
+source-wordcount: '190'
+ht-degree: 32%
 
 ---
 
@@ -72,13 +72,6 @@ ht-degree: 33%
       * [概述](consent/iab-tcf/overview.md)
       * [与标记集成](consent/iab-tcf/with-launch.md)
       * [集成而不使用标记](consent/iab-tcf/without-launch.md)
-* Web SDK标记扩展 {#extension}
-   * [Web SDK 扩展](extension/web-sdk-extension-configuration.md)
-   * [事件类型](extension/event-types.md)
-   * [操作类型](extension/action-types.md)
-   * [数据元素类型](extension/data-element-types.md)
-   * [访问ECID](extension/accessing-the-ecid.md)
-   * [Web SDK扩展发行说明](extension/web-sdk-ext-release-notes.md)
 * [发行说明](release-notes.md)
 * [常见问题](web-sdk-faq.md)
 * [资源](resources.md)

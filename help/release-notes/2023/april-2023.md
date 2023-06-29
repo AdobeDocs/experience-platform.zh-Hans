@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2023年4月
 description: Adobe Experience Platform 2023年4月版发行说明。
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '2084'
-ht-degree: 4%
+ht-degree: 13%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 **发布日期：2023 年 4 月 26 日**
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [仪表板](#dashboards)
 - [数据准备](#data-prep)
@@ -33,7 +33,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
 
-**新增或更新功能** {#dashboards-new-updated-features}
+**新增功能或更新后的功能** {#dashboards-new-updated-features}
 
 | 功能 | 描述 |
 | --- | --- |
@@ -60,22 +60,22 @@ Adobe Experience Platform提供了多个功能板，您可以通过该功能板�
 
 ## 数据收集 {#data-collection}
 
-Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中扩充和转换数据，并将其分发到Adobe或非Adobe目标。
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
 | 数据流的IP地址模糊处理 | 您现在可以在中定义部分或完整数据流级别的IP模糊处理选项 [数据流配置Ui](../../edge/datastreams/configure.md). <br><br>数据流级别的IP模糊处理设置优先于Adobe Target和Audience Manager中配置的任何IP模糊处理。 <br><br>发送到Adobe Analytics的数据不受数据流级别的影响 [!UICONTROL IP模糊处理] 设置。 Adobe Analytics当前接收未经模糊处理的IP地址。 要让Analytics接收模糊处理的IP地址，您必须在Adobe Analytics中单独配置IP模糊处理。 此行为将在未来版本中更新。<br><br> 有关IP模糊处理的更多详细信息以及如何配置它的说明，请参阅 [数据流配置文档](../../edge/datastreams/configure.md#advanced-options). |
-| [数据流配置覆盖](../../edge/datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，您可以使用这些选项覆盖特定设置，例如事件数据集、Target属性令牌、ID同步容器和Analytics报表包。 <br><br>覆盖数据流配置是一个两步过程： <ol><li>首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](../../edge/datastreams/configure.md).</li><li>然后，您必须通过Web SDK命令或使用Web SDK将覆盖发送到Edge Network [标记扩展](../../edge/extension/web-sdk-extension-configuration.md).</li></ol> |
-| OAuth JWT密码 | 此 [OAuth JWT密码](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌在事件转发中支持服务器到服务器交互。 |
+| [数据流配置覆盖](../../edge/datastreams/overrides.md) | 您现在可以为数据流定义其他配置选项，您可以使用这些选项覆盖特定设置，例如事件数据集、Target属性令牌、ID同步容器和Analytics报表包。 <br><br>覆盖数据流配置是一个两步过程： <ol><li>首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](../../edge/datastreams/configure.md).</li><li>然后，您必须通过Web SDK命令或使用Web SDK将覆盖发送到Edge Network [标记扩展](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).</li></ol> |
+| OAuth JWT 机密 | 此 [OAuth JWT密码](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌在事件转发中支持服务器到服务器交互。 |
 | [!DNL Pinterest Conversions API] 扩展 | 此 [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) 事件转发扩展允许您利用Adobe Experience Platform Edge Network中捕获的数据并将其发送至 [!DNL Pinterest] 以服务器端事件的形式使用 [!DNL Pinterest Conversions API]. |
 
 {style="table-layout:auto"}
 
 ## 目标 {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
 **新目标** {#new-destinations}
 
@@ -85,7 +85,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 {style="table-layout:auto"}
 
-**新增或更新功能** {#destinations-new-updated-functionality}
+**新增或更新功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -105,7 +105,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 -->
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -170,7 +170,7 @@ Real-time Customer Data Platform ()构建于Experience Platform之上[!DNL Real-
 
 [!DNL Segmentation Service] 通过描述用于区分客户群内可销售人员组的标准，来定义用户档案的特定子集。 区段可以基于记录数据（例如人口统计信息）或表示客户与您的品牌互动的时间系列事件。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
@@ -182,9 +182,9 @@ Real-time Customer Data Platform ()构建于Experience Platform之上[!DNL Real-
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，并允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform 可以从外部源获取数据，并允许您使用 Platform 服务构建、标记和增强该数据。您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 
@@ -197,4 +197,4 @@ Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数
 
 {style="table-layout:auto"}
 
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
+若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。
