@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
+source-git-commit: eef0b50b12b0e3be34ad519f2d106392c23b7d69
 workflow-type: tm+mt
-source-wordcount: '585'
-ht-degree: 5%
+source-wordcount: '568'
+ht-degree: 6%
 
 ---
 
@@ -45,10 +45,6 @@ ht-degree: 5%
 >仅填写您有兴趣收集的信息段。 将数据发送到解决方案时，会忽略未填写的任何内容。
 
 ## Variable {#variable}
-
->[!IMPORTANT]
->
->这目前是测试版功能，可能会有变化。 未来版本可能包含重大更改。
 
 创建XDM对象的另一种方法是使用 **[!UICONTROL 变量]** 数据元素。 而XDM对象数据元素是在被引用时创建的，例如在 `sendEvent` 命令， **[!UICONTROL 变量]** 可以通过以下方式更新数据元素 [!UICONTROL 更新变量] 操作。 要使用数据元素，请选择正确的Adobe Experience Platform沙盒和架构。
 

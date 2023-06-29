@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
+source-git-commit: eef0b50b12b0e3be34ad519f2d106392c23b7d69
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '761'
 ht-degree: 3%
 
 ---
@@ -36,10 +36,6 @@ ht-degree: 3%
 在此操作中，还会向您提供一个可选字段，用于包含身份映射，以便在收到同意后可以同步身份。 将同意配置为“Pending”或“Out”时，同步很有用，因为同意调用可能是第一个要触发的调用。
 
 ## 更新变量 {#update-variable}
-
->[!IMPORTANT]
->
->这目前是测试版功能，可能会有变化。 未来版本可能包含重大更改。
 
 使用此操作可修改作为事件结果的XDM对象。 此操作旨在构建一个对象，以后可以从 **[!UICONTROL 发送事件]** 操作，记录事件XDM对象。
 
