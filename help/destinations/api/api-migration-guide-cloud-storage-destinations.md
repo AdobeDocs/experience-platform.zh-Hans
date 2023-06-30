@@ -4,7 +4,7 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到具有附加功能的新云存储目标卡的过程中，激活云存储目标的工作流中所做的更改。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
+source-git-commit: b651d15260adbcd37fa396fa0b325a9674a92133
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
@@ -16,7 +16,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用本页面上描述的功能。 有关更多信息，请联系您的Adobe代表。
-
 
 ## 迁移上下文 {#migration-context}
 
@@ -783,7 +782,7 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
 
 ## 迁移时间轴和操作项 {#timeline-and-action-items}
 
-将旧数据流迁移到的新目标卡 [!DNL Amazon S3]， [!DNL Azure Blob]，并且当您的组织准备好迁移时，SFTP目标就会立即出现，并且最迟不超过 **2023年6月30日**.
+将旧数据流迁移到的新目标卡 [!DNL Amazon S3]， [!DNL Azure Blob]，并且当您的组织准备好迁移时，SFTP目标就会立即出现，并且最迟不超过 **2023年7月26日**.
 
 随着迁移日期的临近，您将收到Adobe的提醒电子邮件。 为此，请阅读下面的操作项部分，为迁移做好准备。
 
@@ -792,10 +791,10 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
 为迁移做好准备 [!DNL Amazon S3]， [!DNL Azure Blob]，以及SFTP云存储目标到新信息卡，请按照以下建议准备更新脚本和自动API调用。
 
 1. 更新任何现有的脚本或自动API调用 [!DNL Amazon S3]， [!DNL Azure Blob]或SFTP云存储目标。 任何利用旧版连接规范或流规范的自动化API调用或脚本，都需要更新为新连接规范或流规范。
-2. 6月30日之前更新脚本时，请联系您的Adobe客户代表。
+2. 当您的脚本在7月26日之前更新时，请联系您的Adobe客户代表。
 3. 例如， `targetConnectionSpecId` 可用作确定数据流是否已迁移到新目标卡的标志。 您可以使用更新脚本 `if` 查看旧版和更新后的目标连接规范的条件 `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` 并确定您的数据流是否已迁移。 您可以在此页面上的特定部分中查看每个目标的旧连接规范ID和新连接规范ID。
 4. 您的Adobe客户团队将与您联系，以进一步了解何时迁移数据流。
-5. 6月30日之后，所有数据流都将进行迁移。 现在，所有现有数据流都将具有新的流实体（连接规范、流规范、基本连接和目标连接）。 您这边使用旧版流实体的任何脚本或API调用都将停止工作。
+5. 7月26日之后，所有数据流都将进行迁移。 现在，所有现有数据流都将具有新的流实体（连接规范、流规范、基本连接和目标连接）。 您这边使用旧版流实体的任何脚本或API调用都将停止工作。
 
 ## 其他迁移注意事项 {#other-considerations}
 
