@@ -2,7 +2,7 @@
 title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活区段和导出数据集。
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: cf89f40625bedda633ad26cf3e882983600f0d52
+source-git-commit: 5daa92b2f488b4acb825215f4da92af51bcf7c61
 workflow-type: tm+mt
 source-wordcount: '1378'
 ht-degree: 1%
@@ -61,7 +61,7 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 >[!BEGINSHADEBOX]
 
-### 检索您的凭据 [!DNL Data Landing Zone]
+### 检索您的凭据 [!DNL Data Landing Zone] {#retrieve-dlz-credentials}
 
 您必须使用平台API来检索 [!DNL Data Landing Zone] 凭据。 用于检索凭据的API调用描述如下。 有关获取标头所需值的信息，请参阅 [Adobe Experience Platform API快速入门](/help/landing/api-guide.md) 指南。
 
@@ -112,7 +112,7 @@ curl -X GET \
 
 {style="table-layout:auto"}
 
-## 更新 [!DNL Data Landing Zone] 凭据
+### 更新 [!DNL Data Landing Zone] 凭据 {#update-dlz-credentials}
 
 您还可以在需要时刷新凭据。 您可以更新 `SASToken` 向发出POST请求 `/credentials` 的端点 [!DNL Connectors] API。
 
