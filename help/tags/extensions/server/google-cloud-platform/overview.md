@@ -2,9 +2,9 @@
 title: Google Cloud Platform事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展可将Adobe Experience Edge Network事件发送到Google Cloud Platform。
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: d1a34a98efd24a20dc53544eeb0d79490aaf31e7
+source-git-commit: 7e26ebe6d40796174ca48367f826c7c6f1512abf
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 先决条件
 
-要使用此扩展，您必须拥有 [!DNL Google Cloud Platform] 具有现有帐户的帐户 [!DNL Cloud Pub/Sub] 主题。 如果您没有预先存在的数据流，请参阅 [!DNL AWS] 相关文档 [使用创建新数据流 [!DNL AWS] 管理控制台](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-create-a-stream.html).
+要使用此扩展，您必须拥有 [!DNL Google Cloud Platform] 具有现有帐户的帐户 [!DNL Cloud Pub/Sub] 主题。 如果您没有预先存在的主题，请参阅 [[!DNL Google Cloud Platform]](https://cloud.google.com/pubsub/docs/create-topic) 有关创建和管理主题的文档。
 
 ### 创建密码和数据元素
 
