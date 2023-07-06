@@ -3,9 +3,9 @@ title: 事件转发快速入门
 description: 按照此分步教程开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: efe88b582b4539a14f32c6e2c80a8b35cde1626e
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '875'
 ht-degree: 27%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 27%
 
 ## 先决条件
 
-* Adobe Experience Platform Collection Enterprise(有关定价信息，请联系您的Adobe客户团队)
+* Adobe Real-Time CDP Connections、Prime或Ultimate(联系您的Adobe客户团队获取定价信息)
 * Adobe Experience Platform中的事件转发
 * Adobe Experience Platform Web 或 Mobile SDK，配置为将数据发送到 Edge Network
 * 将数据映射到体验数据模型(XDM)（此映射可以使用标记完成）
