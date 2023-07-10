@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: d648a2151060d1013a6bce7a8180378400337829
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1880'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id`<br>**(必需)** | 事件的唯一字符串标识符。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。 在某些情况下， `_id` 可以是 [通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果要从源连接流式传输数据或直接从Parquet文件中摄取，则应通过连接使事件唯一的字段的特定组合来生成此值，如主ID、时间戳、事件类型等。 连接值必须为 `uri-reference` 带格式的字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>区分以下内容非常重要： **此字段不表示与个人相关的身份**&#x200B;而不是数据记录本身。 与人员相关的身份数据应委派到 [标识字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
+| `_id`<br>**(必需)** | 体验事件类 `_id` 字段唯一标识摄取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的情况下，Platform应用程序和服务可能会以不同的方式处理重复事件。  例如，如果配置文件服务中的重复事件具有相同的 `_id` 配置文件存储中已存在。<br><br>在某些情况下， `_id` 可以是 [通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果要从源连接流式传输数据或直接从Parquet文件中摄取，则应通过连接使事件唯一的字段的特定组合来生成此值，如主ID、时间戳、事件类型等。 连接值必须为 `uri-reference` 带格式的字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>区分以下内容非常重要： **此字段不表示与个人相关的身份**&#x200B;而不是数据记录本身。 与人员相关的身份数据应委派到 [标识字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
 | `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，这表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，指明事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开），则可以使用此字段。<br><br>此属性的标准值提供在 [附录部分](#eventType)，包括预期使用案例的描述。 此字段是一个可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType` 限制您只能对应用程序上的每次点击使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关更多信息，请参阅以下部分： [计算字段的最佳实践](#calculated). |
 | `producedBy` | 描述事件的制作者或起源的字符串值。 如果需要，此字段可用于过滤掉某些事件生成器，以实现分段。<br><br>此属性的一些建议值提供在 [附录部分](#producedBy). 此字段是一个可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
