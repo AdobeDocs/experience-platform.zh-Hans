@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中的核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 0955646164269d868be5161a117c6e12dbd9a4cb
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '1654'
-ht-degree: 55%
+source-wordcount: '1644'
+ht-degree: 49%
 
 ---
 
@@ -123,7 +123,7 @@ v2.0.4
 
 v1.9.0
 
-* **新的“触发直接调用”操作** - 核心扩展现在包含一个名为 `Trigger Direct Call` 的新操作类型。当您想要通过其他规则中的操作来触发直接调用规则时，可使用该选项。它将直接映射到 `_satellite.track()` 方法。衷心感谢 [Jan Exner](https://twitter.com/jexner) 为此做出的贡献。
+* **新的“触发直接调用”操作**  — 核心扩展现在包含一个名为的新操作类型 `Trigger Direct Call`.  当您想要通过其他规则中的操作来触发直接调用规则时，可使用该选项。它将直接映射到 `_satellite.track()` 方法。衷心感谢 Jan Exner 为此做出的贡献。
 
 ## 2020 年 12 月 8 日
 
@@ -169,13 +169,13 @@ v1.7.3
 
 v1.7.0
 
-* **在自定义代码数据元素中访问 `event` 变量** - 现在，在规则的上下文中运行时，您可以从自定义代码数据元素中引用事件。该对象将包含有关触发规则的事件的有用信息。衷心感谢 [Stewart Schilling](https://twitter.com/sdi_stewart) 对此所做的贡献。
+* **在自定义代码数据元素中访问 `event` 变量** - 现在，在规则的上下文中运行时，您可以从自定义代码数据元素中引用事件。该对象将包含有关触发规则的事件的有用信息。衷心感谢 Stewart Schilling 对此所做的贡献。
 
 ## 2019 年 10 月 7 日
 
 v1.6.2
 
-* **新的“Constant”数据元素类型** - 核心扩展现在包含一个名为 `Constant` 的新数据元素类型。当您需要存储将在各种条件、操作或自定义代码中引用的常数值时，可以使用该数据元素。衷心感谢 [Jan Exner](https://twitter.com/jexner) 对此所做的贡献。
+* **新的“Constant”数据元素类型** - 核心扩展现在包含一个名为 `Constant` 的新数据元素类型。当您需要存储将在各种条件、操作或自定义代码中引用的常数值时，可以使用该数据元素。衷心感谢 Jan Exner 为此做出的贡献。
 
 ## 2019 年 9 月 11 日
 
@@ -208,7 +208,7 @@ v1.4.2
 
 ## 2018 年 11 月 8 日
 
-* **Persist Cohort 选项** - 在 Sampling 条件中添加了用于持久保留同类群组的选项。这样可以使用户在不同的会话中保留处于样本同类群组之内或之外。例如，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 true，则以后每次为同一访客运行该条件都将返回 true。同样，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 false，则以后每次为同一访客运行该条件都将返回 false。
+* **Persist Cohort 选项** - 在 Sampling 条件中添加了用于持久保留同类群组的选项。这样可以使用户在不同的会话中保留处于样本同类群组之内或之外。例如，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回true，则以后每次为同一访客运行该条件都将返回true。 同样，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回false，则以后每次为同一访客运行该条件都将返回false。
 * **错误修复**  — 修复了在同步加载标记但安装有误（没有调用）的页面上，使用Page Bottom事件和Custom Code操作的规则的问题 `_satellite.pageBottom()`)将清除网站内容。
 * **错误修复**  — 修复了以下问题：如果标记库异步加载并在浏览器DOMContentLoaded事件触发后完成加载，则Enters Viewport将无法正常运行。
 

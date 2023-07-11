@@ -4,9 +4,9 @@ title: Mixpanel跟踪事件API事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展可将Adobe Experience Edge Network事件发送到Mixpanel。
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '950'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 有关特定用例的更多信息 [!DNL Mixpanel]，请参阅以下文档：
 
-* [新到 [!DNL Mixpanel]](https://help.mixpanel.com/hc/en-us/sections/360008533532-New-to-Mixpanel)
+* [新到 [!DNL Mixpanel]](https://docs.mixpanel.com/docs)
 * [什么是 [!DNL Mixpanel]？](https://developer.mixpanel.com/docs)
 * [12次必试 [!DNL Mixpanel] 功能](https://mixpanel.com/blog/12-things-you-probably-didnt-know-you-could-do-with-mixpanel/)
 
@@ -80,10 +80,10 @@ In [!DNL Mixpanel]，标识集群包含 `distinct_id` 连接到单个用户的�
 | --- | --- | --- |
 | [!UICONTROL 项目令牌] | 此字段应当映射到与您的关联的项目令牌 [!DNL Mixpanel] 帐户。 | 是 |
 | [!UICONTROL 事件类型] | 事件名称。 | 是 |
-| [!UICONTROL 事件时间] | 事件时间。 |  |
-| [!UICONTROL Mixpanel非重复ID] | 执行事件的用户的唯一标识符。 |  |
-| [!UICONTROL 插入Id] | 事件的唯一标识符，用于重复数据删除。 |  |
-| [!UICONTROL 事件属性] | 包含事件的自定义属性的JSON对象。 从提供原始JSON或使用一组简化的键值输入中进行选择。 |  |
+| [!UICONTROL 事件时间] | 事件时间。 | |
+| [!UICONTROL Mixpanel非重复ID] | 执行事件的用户的唯一标识符。 | |
+| [!UICONTROL 插入Id] | 事件的唯一标识符，用于重复数据删除。 | |
+| [!UICONTROL 事件属性] | 包含事件的自定义属性的JSON对象。 从提供原始JSON或使用一组简化的键值输入中进行选择。 | |
 
 >[!NOTE]
 >

@@ -3,16 +3,16 @@ keywords: 事件转发扩展；twitter；twitter事件转发扩展
 title: twitter事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以将事件摄取到Twitter中，以满足您的业务需求。
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: c5cc36d9530ff6fbb52a1995844f495b38e938b3
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1143'
 ht-degree: 3%
 
 ---
 
 # [!DNL Twitter] 事件转发扩展
 
-[[!DNL Twitter]](https://www.twitter.com) 是一种在线社交媒体和社交网络服务，用户在该服务上发布长达280个字符的推文并与之交互。 用户可以使用浏览器、移动前端软件或以编程方式通过其与Twitter交互 [API](https://developer.twitter.com/en/docs/twitter-api)
+[[!DNL Twitter]](https://twitter.com/i/flow/login) 是一种在线社交媒体和社交网络服务，用户在该服务上发布长达280个字符的推文并与之交互。 用户可以使用浏览器、移动前端软件或以编程方式通过其与Twitter交互 [API](https://developer.twitter.com/en/docs/twitter-api)
 
 此 [!DNL Twitter] Web转换API [事件转发](../../../ui/event-forwarding/overview.md) 扩展允许您利用Adobe Experience Platform Edge Network中捕获的数据并将其发送至 [!DNL Twitter]. 本文档介绍了扩展的用例，如何安装扩展，以及如何将其功能集成到事件转发中 [规则](../../../ui/managing-resources/rules.md).
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 您必须拥有有效的 [!DNL Twitter] 帐户，以便使用此扩展。 转到 [[!DNL Twitter] 注册页面](https://help.twitter.com/en/using-twitter/create-twitter-account) 以注册并创建帐户（如果尚未注册）。
 
-您必须将帐户设置为 [!DNL Twitter] 开发人员帐户。 要了解如何注册为开发人员，请参阅 [[!DNL Twitter] 开发人员帐户](https://developer.twitter.com/en/support/twitter-api/developer-account).
+您必须将帐户设置为 [!DNL Twitter] 开发人员帐户。 要了解如何注册为开发人员，请参阅 [[!DNL Twitter] 开发人员帐户](https://developer.twitter.com/en/support/twitter-api/developer-account1).
 
 ### API护栏 {#guardrails}
 
@@ -44,7 +44,7 @@ ht-degree: 3%
 
 | 键类型 | 描述 |
 | --- | --- |
-| 使用者密钥 | 应用程序&#x200B;的API密钥，用于访问 [!DNL Twitter] API。 请参阅 [!DNL Twitter] 相关文档 [api密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) 以获取指导。 |  |
+| 使用者密钥 | 应用程序&#x200B;的API密钥，用于访问 [!DNL Twitter] API。 请参阅 [!DNL Twitter] 相关文档 [api密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) 以获取指导。 | |
 | 使用者密码 | API密钥允许您的应用程序访问 [!DNL Twitter] API。 请参阅 [!DNL Twitter] 相关文档 [api密钥和密钥](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) 以获取指导。 |
 | 令牌密码 | 应用程序的不会过期的令牌密码，用于对进行身份验证 [!DNL Twitter] 通过OAuth的API。 请参阅 [!DNL Twitter] 相关文档 [获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens) 以获取指导。 |
 | 访问令牌 | 应用程序的不过期访问令牌，用于对进行身份验证 [!DNL Twitter] 通过OAuth的API。 请参阅 [!DNL Twitter] 相关文档 [获取使用访问令牌](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens) 以获取指导。 |
