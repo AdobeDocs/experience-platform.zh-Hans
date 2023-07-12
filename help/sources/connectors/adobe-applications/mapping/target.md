@@ -1,21 +1,18 @@
 ---
-keywords: Experience Platform；主页；热门主题；目标映射；目标映射
 solution: Experience Platform
 title: 将Adobe Target事件数据映射到XDM
 description: 了解如何将Adobe Target事件字段映射到体验数据模型(XDM)架构，以便在Adobe Experience Platform中使用。
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 81412493b096264ce7a89e3ca2348edb2dcd1798
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '430'
 ht-degree: 0%
 
 ---
 
 # 目标映射字段映射
 
-Adobe Experience Platform允许您通过Target源连接器摄取Adobe Target数据。 使用连接器时，必须将Target字段中的所有数据映射到 [体验数据模型(XDM)](../../../../xdm/home.md) 与XDM ExperienceEvent类关联的字段。
-
-下表概述了体验事件架构(*XDM ExperienceEvent字段*)以及它们应映射到的相应Target字段(*Target请求字段*)。 此外，还针对某些映射提供了其他说明。
+下表概述了Experience Data Model (XDM) Experience Event架构的字段以及它们应映射到的Adobe Target中的相应字段。 此外，还针对某些映射提供了其他说明。
 
 >[!NOTE]
 >
@@ -24,7 +21,7 @@ Adobe Experience Platform允许您通过Target源连接器摄取Adobe Target数�
 | XDM ExperienceEvent字段 | Target请求字段 | 注释 |
 | ------------------------- | -------------------- | ----- |
 | **`id`** | 唯一请求标识符 |
-| **`dataSource`** |  | 已为所有客户端配置为“1”。 |
+| **`dataSource`** | | 已为所有客户端配置为“1”。 |
 | `dataSource._id` | 系统生成的值，无法随请求一起传递。 | 此数据源的唯一ID。 这将由创建数据源的个人或系统提供。 |
 | `dataSource.code` | 系统生成的值，无法随请求一起传递。 | 全@id的快捷方式。 可以使用代码或@id中的至少一个。 有时，此代码称为数据源集成代码。 |
 | `dataSource.tags` | 系统生成的值，无法随请求一起传递。 | 标记用于指示应用程序应如何解释由给定数据源表示的别名。<br><br>示例：<br><ul><li>`isAVID`：表示Analytics访客ID的数据源。</li><li>`isCRSKey`：表示应在CRS中用作键的别名的数据源。</li></ul>标记在创建数据源时设置，但在引用给定数据源时也包含在管道消息中。 |
@@ -76,7 +73,7 @@ Adobe Experience Platform允许您通过Target源连接器摄取Adobe Target数�
 | `placeContext.geo.postalCode` | 根据请求的IP地址解析邮政编码。 |
 | `placeContext.geo.stateProvince` | 已根据请求的IP地址解析的州或省。 |
 | `placeContext.localTime` | `mboxRequest.offsetTime` + `mboxRequest.currentServerTime` |
-| **`commerce`** |  | 仅当请求中存在订单详细信息时设置。 |
+| **`commerce`** | | 仅当请求中存在订单详细信息时设置。 |
 | `commerce.order.priceTotal` | `mboxRequest.orderTotal` |
 | `commerce.order.purchaseOrderNumber` | `mboxRequest.orderId` |
 | `commerce.order.purchaseID` | `mboxRequest.orderId` |
