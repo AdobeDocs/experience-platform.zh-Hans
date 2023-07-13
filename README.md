@@ -1,9 +1,8 @@
 ---
 source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
-workflow-type: tm+mt
-translation-type: tm+mt
+workflow-type: ht
 source-wordcount: '508'
-ht-degree: 79%
+ht-degree: 100%
 
 ---
 # 贡献内容
@@ -14,7 +13,7 @@ ht-degree: 79%
 
 该项目采用了 [Adobe Open Source 行为准则](code-of-conduct.md)或 [.NET Foundation 行为准则](https://dotnetfoundation.org/code-of-conduct)。有关更多信息，请参阅[参与](contributing.md)文章。
 
-## 为Adobe内容做出贡献的方法
+## 为 Adobe 内容做出贡献的方法
 
 请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
 
@@ -36,15 +35,15 @@ ht-degree: 79%
 If you submit a pull request with significant changes to documentation and code examples, you'll see a message in the pull request asking you to submit an online contribution license agreement (CLA). You must complete the online form before we can review your pull request.
 -->
 
-### Adobe员工的重大更改或新文章
+### Adobe 员工做出的主要更改或新文章
 
-如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=zh-cn)。
+如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en)。
 
 <!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
 
-## 联系Experience Platform文档团队
+## 联系 Adobe Experience Platform 文档团队
 
-如上所述，Adobe群体成员可以提交将分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接与Experience Platform文档团队联系。 要查找特定平台区域的主要编写器，请参阅[Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
+如上所述，Adobe 社区的成员可以提交问题，该问题将会分配给相应的作者。如果您是 Adobe 员工，则可以直接提交问题，或直接联系 Experience Platform 文档团队。要查找特定 Platform 领域的主要作者，请参阅 [Adobe Experience Platform 文档百科](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+文档)。
 
 ## 工具和设置
 
@@ -52,7 +51,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 社区参与者可以使用 GitHub UI 进行基本编辑或创建存储库分支，以做出主要更改。
 
-有关详细信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
+有关详细信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans)。
 
 ### Markdown
 
@@ -61,10 +60,9 @@ If you submit a pull request with significant changes to documentation and code 
 * [Markdown 基础知识](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 * [可打印的 Markdown 速查表](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
-### 标签
+### 标记
 
-在公共存储库中，会为拉取请求分配自动标签，以便帮助我们管理拉取请求工作流，以及帮助您了解拉取请求的处理进展：
+在公共存储库中，会为拉取请求分配自动标记，以便帮助我们管理拉取请求工作流，以及帮助您了解拉取请求的处理进展：
 
 * **已发送给作者的更改**：已通知作者拉取请求处于待处理状态。
 * **准备合并**：等待我们的拉取请求审核工作组进行审核。
-
