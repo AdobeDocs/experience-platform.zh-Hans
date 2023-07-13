@@ -1,9 +1,8 @@
 ---
 source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
-workflow-type: tm+mt
-translation-type: tm+mt
+workflow-type: ht
 source-wordcount: '296'
-ht-degree: 95%
+ht-degree: 100%
 
 ---
 # 参与
@@ -20,11 +19,11 @@ ht-degree: 95%
 
 ## 参与者指南文档
 
-请参阅[Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
+请参阅[投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
 
 ## 有疑问吗？
 
-首先，提交问题。该项目的现有提交者致力于围绕项目方向达成共识，并在问题线程中发布解决方案（如果适用）。
+首先，提交问题。该项目的现有提交者致力于围绕项目方向达成共识，并在问题讨论线索中发布解决方案（如果适用）。
 
 ## 参与者许可协议
 
@@ -50,4 +49,4 @@ submitting a pull request!
 
 ## 安全问题
 
-不应在此问题跟踪器上报告安全问题。而是[应该将安全问题提交给我们的安全专家](https://helpx.adobe.com/cn/security/alertus.html)。
+不应在此问题跟踪器上报告安全问题，而是[应该将安全问题提交给我们的安全专家。](https://helpx.adobe.com/cn/security/alertus.html)。
