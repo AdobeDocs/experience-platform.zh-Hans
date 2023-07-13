@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 架构组合基础
 description: 本文档介绍了Experience Data Model (XDM)架构，以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: a3f38a18693e0ef4bc93765c090eafd56dcd15d3
+source-git-commit: 4ff003b8f4e98fa7af7f12271aa990c8e5f49f14
 workflow-type: tm+mt
 source-wordcount: '4140'
 ht-degree: 6%
@@ -285,12 +285,12 @@ While [!DNL Experience Platform] 允许您为特定用例编写架构，它还�
 
 摄取到的所有数据文件 [!DNL Experience Platform] 必须符合XDM架构的结构。 有关如何格式化数据文件以符合XDM层次结构的更多信息（包括示例文件），请参阅以下文档： [示例ETL转换](../../etl/transformations.md). 有关将数据文件摄取到的一般信息 [!DNL Experience Platform]，请参见 [批量摄取概述](../../ingestion/batch-ingestion/overview.md).
 
-## 外部区段的架构
+## 外部受众的架构
 
-如果要将区段从外部系统引入到Platform中，则必须使用以下组件在架构中捕获它们：
+如果要将受众从外部系统引入到Platform中，则必须使用以下组件在架构中捕获这些受众：
 
 * [[!UICONTROL 区段定义] 类](../classes/segment-definition.md)：使用此标准类捕获外部区段定义的键属性。
-* [[!UICONTROL 区段成员资格详细信息] 字段组](../field-groups/profile/segmentation.md)：将此字段组添加到您的 [!UICONTROL XDM个人资料] 模式，以便将客户配置文件与特定区段关联。
+* [[!UICONTROL 区段成员资格详细信息] 字段组](../field-groups/profile/segmentation.md)：将此字段组添加到您的 [!UICONTROL XDM个人资料] 模式，以便将客户配置文件与特定受众关联。
 
 ## 后续步骤
 

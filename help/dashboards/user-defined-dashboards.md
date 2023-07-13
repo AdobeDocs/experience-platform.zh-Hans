@@ -2,7 +2,7 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 8507ecceca47fac3d321b89e4fed018ee9784777
+source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
 workflow-type: tm+mt
 source-wordcount: '1608'
 ht-degree: 3%
@@ -170,7 +170,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 通过阅读本文档，您可以更好地了解如何创建自定义功能板，以及如何为该功能板创建、编辑和更新自定义构件。
 
-发现预配置的可用量度和可视化图表 [用户档案](./guides/profiles.md#standard-widgets)， [区段](./guides/segments.md#standard-widgets)、和 [目标](./guides/destinations.md#standard-widgets) 功能板，请参阅其各自文档中的标准构件列表。
+发现预配置的可用量度和可视化图表 [用户档案](./guides/profiles.md#standard-widgets)， [区段](./guides/audiences.md#standard-widgets)、和 [目标](./guides/destinations.md#standard-widgets) 功能板，请参阅其各自文档中的标准构件列表。
 
 要加深您对Experience Platform中用户定义的功能板的了解，请观看以下视频：
 

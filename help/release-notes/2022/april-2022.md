@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年4月
-description: Adobe Experience Platform 2022年4月版发行说明。
+title: Adobe Experience Platform 发行说明（2022 年 4 月）
+description: Adobe Experience Platform 的 2022 年 4 月发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
 workflow-type: tm+mt
 source-wordcount: '2904'
-ht-degree: 6%
+ht-degree: 17%
 
 ---
 
@@ -13,14 +13,14 @@ ht-degree: 6%
 
 **发布日期：2022 年 4 月 27 日**
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
 - [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
+- [Experience Data Model (XDM)](#xdm)
 - [Real-Time Customer Data Platform B2B 版](#B2B)
 - [源](#sources)
 
@@ -57,7 +57,7 @@ Platform提供了多个仪表板，您可以通过该仪表板查看有关您组
 
 {style="table-layout:auto"}
 
-有关以下内容的更多信息，请参阅文档 [[!DNL Profiles]](../../dashboards/guides/profiles.md)， [[!DNL Destinations]](../../dashboards/guides/destinations.md)、和 [[!DNL Segments]](../../dashboards/guides/segments.md) 功能板。
+有关以下内容的更多信息，请参阅文档 [[!DNL Profiles]](../../dashboards/guides/profiles.md)， [[!DNL Destinations]](../../dashboards/guides/destinations.md)、和 [[!DNL Segments]](../../dashboards/guides/audiences.md) 功能板。
 
 ## 数据流 {#dataflows}
 
@@ -88,9 +88,9 @@ Platform提供了多个仪表板，您可以通过该仪表板查看有关您组
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -114,11 +114,11 @@ Platform提供了多个仪表板，您可以通过该仪表板查看有关您组
 | [!DNL Criteo] | 将数据连接并激活到 [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) 广告平台。 |
 | [!DNL Sendgrid] | 将数据连接并激活到 [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) 用于交易和营销电子邮件的平台。 |
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
-## 体验数据模型(XDM) {#xdm}
+## Experience Data Model (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **新增功能**
 
@@ -128,7 +128,7 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 {style="table-layout:auto"}
 
-**新XDM组件**
+**新的 XDM 组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
@@ -144,7 +144,7 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 | 字段组 | [[!UICONTROL XDM业务帐户人员关系详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户 — 人员关系相关的详细信息。 |
 | 字段组 | [[!UICONTROL 帐户人员详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户 — 人员关系相关的详细信息。 |
 | 数据类型 | [[!UICONTROL 购物车]](https://github.com/adobe/xdm/blob/master/components/datatypes/cart.schema.json) | 捕获有关电子商务购物车的信息。 |
-| 数据类型 | [[!UICONTROL 配送]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 捕获一个或多个产品的送货信息。 |
+| 数据类型 | [[!UICONTROL 运送]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 捕获一个或多个产品的送货信息。 |
 | 数据类型 | [[!UICONTROL 网站搜索]](https://github.com/adobe/xdm/blob/master/components/datatypes/sitesearch.schema.json) | 捕获有关网站搜索活动的信息。 |
 | 扩展(Workfront) | [[!UICONTROL 操作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/opTask.schema.json) | 捕获与操作任务相关的详细信息。 |
 | 扩展(Workfront) | [[!UICONTROL 工作Portfolio属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/portfolio.schema.json) | 捕获与工作组合相关的详细信息。 |
@@ -153,31 +153,31 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 {style="table-layout:auto"}
 
-**更新的XDM组件**
+**更新的 XDM 组件**
 
 | 组件类型 | 名称 | 更新描述 |
 | --- | --- | --- |
 | 全局架构 | [[!UICONTROL 目标]](https://github.com/adobe/xdm/blob/master/schemas/destinations/destination.schema.json) | 的新枚举值 `destinationCategory`. |
 | 描述符 | [[!UICONTROL 友好名称描述符]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/display/alternateDisplayInfo.schema.json) | 添加了对删除建议值的支持(`meta:enum`)，这些参数不需要来自标准字段。 |
 | 字段组 | [[!UICONTROL 用户登录过程]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-user-login-details.schema.json) | `createProfile` 字段已添加。 |
-| 数据类型 | [[!UICONTROL 商务]](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json) | 已添加多个与购物车相关的字段。 |
-| 数据类型 | [[!UICONTROL 产品列表项]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | 为所选选项和折扣金额添加了新字段。 |
+| 数据类型 | [[!UICONTROL Commerce]](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json) | 已添加多个与购物车相关的字段。 |
+| 数据类型 | [[!UICONTROL 产品列表项目]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | 为所选选项和折扣金额添加了新字段。 |
 | 扩展（智能服务） | [[!UICONTROL 智能服务JourneyAI发送时间优化]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/intelligentServices/profile-journeyai-sendtimeoptimization.schema.json) | 针对发送时间分数优化存储格式。 |
-| 扩展(Workfront) | [[!UICONTROL Workfront更改事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 多个字段已替换为 `workfront:customData` 自定义表单字段的字段。 |
+| 扩展(Workfront) | [[!UICONTROL Workfront 变更事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 多个字段已替换为 `workfront:customData` 自定义表单字段的字段。 |
 | 扩展(Workfront) | [[!UICONTROL 工作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/task.schema.json) | 添加了多个字段。 |
 | 扩展(Workfront) | [[!UICONTROL 工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobject.schema.json) | 父对象类型和自定义表单字段的新字段。 |
 
 {style="table-layout:auto"}
 
-有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
 
-AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 借助此功能，营销分析人员可使用商业级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
+AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置设置特定于公司需求的预测，而无需数据科学专业知识。
 
 ### 归因人工智能
 
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
 
 **更新的功能**
 
@@ -202,7 +202,7 @@ Real-time Customer Data Platform中提供的客户人工智能，用于生成自
 
 ## Real-Time Customer Data Platform B2B 版 {#B2B}
 
-Real-Time CDP B2B版构建于Real-time Customer Data Platform (Real-Time CDP)之上，专为以B2B服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其合并到人员和帐户配置文件的单一视图中。 此统一数据允许营销人员准确地定位特定受众，并在所有可用渠道中吸引这些受众。
+Real-Time CDP B2B 版本基于 Real-Time Customer Data Platform (Real-Time CDP) 构建，专为采用业务对业务服务模式运营的营销人员而构建。它将来自多个来源的数据汇集在一起&#x200B;，并将其组合成人员和帐户配置文件的单一视图。这种统一的数据使营销人员能够精确定位特定受众，并通过所有可用渠道吸引这些受众。
 
 **更新的功能**
 
@@ -214,9 +214,9 @@ Real-Time CDP B2B版构建于Real-time Customer Data Platform (Real-Time CDP)之
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 

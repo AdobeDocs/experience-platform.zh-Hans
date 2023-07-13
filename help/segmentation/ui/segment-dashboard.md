@@ -3,7 +3,7 @@ title: 区段功能板
 description: Adobe Experience Platform UI提供了一个功能板，通过它可查看与您的组织创建和维护的区段相关的重要指标。
 type: Documentation
 exl-id: 4a45bc3a-be5e-42b5-abd1-f0fb5795f5f4
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 04c0b19bf4ffbc0719a89f710570cc667ca5e482
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可查看有关区段的重要信息，如在每日快照期间捕获的信息。
 
-有关如何在UI中访问区段仪表板并与之交互的详细说明，以及了解仪表板中显示的可用量度的更多信息，请访问 [区段功能板指南](../../dashboards/guides/segments.md).
+有关如何在UI中访问区段仪表板并与之交互的详细说明，以及了解仪表板中显示的可用量度的更多信息，请访问 [区段功能板指南](../../dashboards/guides/audiences.md).
 
 有关Experience Platform用户界面中所有功能板功能的概述，请先阅读 [功能板概述](../../dashboards/home.md).
 

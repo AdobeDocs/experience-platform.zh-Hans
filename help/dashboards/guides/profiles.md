@@ -4,10 +4,10 @@ title: 配置文件功能板指南
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织的实时客户档案数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a28c1c00fd0b33af3b797ecf2b4d45154dedc823
+source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
-source-wordcount: '3385'
-ht-degree: 10%
+source-wordcount: '3393'
+ht-degree: 8%
 
 ---
 
@@ -49,7 +49,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ![突出显示添加小部件的用户档案仪表板概述。](../images/profiles/profiles-overview-add-widget.png)
 
-从构件库中，您可以浏览选择的标准和自定义区段构件。有关如何添加构件的信息，请参阅构件库文档，了解如何 [添加构件](../customize/widget-library.md#add-widgets).
+从构件库中，您可以浏览选择的标准和自定义受众构件。 有关如何添加构件的信息，请参阅构件库文档，了解如何 [添加构件](../customize/widget-library.md#add-widgets).
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
@@ -67,7 +67,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ## 浏览配置文件 {#browse-profiles}
 
-此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以看到属于用户档案的重要信息，这些信息涉及其偏好、过去的事件、交互和区段
+此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以看到属于用户档案的重要信息，这些信息涉及其偏好、过去的活动、交互和受众。
 
 要详细了解Platform UI中提供的配置文件查看功能，请参阅以下文档： [在Adobe Real-time Customer Data Platform中浏览配置文件](../../rtcdp/profile/profile-browse.md).
 
@@ -256,9 +256,9 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofiles"
 >title="未分段的配置文件"
->abstract="此小部件提供未附加到任何区段的所有配置文件的总数，并表示在整个组织中激活配置文件的机会。"
+>abstract="此构件提供未附加到任何受众的所有配置文件总数，并代表在您的组织内激活配置文件的机会。"
 
-此 [!UICONTROL 未分段的配置文件] 构件提供未附加到任何区段的所有配置文件总数。 生成的数字截至上次快照时准确，表示在整个组织内激活用户档案的机会。 它还表示有机会删除未提供足够ROI的用户档案。
+此 [!UICONTROL 未分段的配置文件] 构件提供未附加到任何受众的所有用户档案的总数。 生成的数字截至上次快照时准确，表示在整个组织内激活用户档案的机会。 它还表示有机会删除未提供足够ROI的用户档案。
 
 ![未分段的配置文件小组件。](../images/profiles/unsegmented-profiles.png)
 
@@ -267,9 +267,9 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="未分段的配置文件趋势"
->abstract="此小部件为给定时间段内未附加到任何区段的配置文件数量提供了一个折线图说明。可以在 30 天、90 天和 12 个月的时间段内查看未附加到任何区段的配置文件的趋势。"
+>abstract="此构件为给定时间段内未附加到任何受众的用户档案数量提供折线图插图。 未附加到受众的用户档案趋势可以在30天、90天和12个月的时段内可视化。"
 
-此 [!UICONTROL 未分段配置文件变化趋势] 构件使用折线图来说明自上次每日快照以来添加的未附加到任何区段的配置文件数。 未附加到任何区段的用户档案的变化趋势可以在30天、90天和12个月期间进行可视化。 从小部件中的下拉菜单中选择时间段。 轮廓计数反映在y轴上，时间反映在x轴上。
+此 [!UICONTROL 未分段配置文件变化趋势] 构件使用折线图来说明自上次每日快照以来添加的未附加到任何受众的配置文件数。 未附加到任何受众的用户档案的变化趋势可以在30天、90天和12个月的时段内可视化。 从小部件中的下拉菜单中选择时间段。 轮廓计数反映在y轴上，时间反映在x轴上。
 
 ![未分段的配置文件会更改趋势构件。](../images/profiles/unsegmented-profiles-change-trend.png)
 
@@ -292,7 +292,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 
 ### [!UICONTROL 受众] {#audiences}
 
-此构件根据应用于配置文件数据的所选合并策略，提供准备好激活的区段总数。
+此构件根据应用于用户档案数据的所选合并策略，提供准备好激活的受众总数。
 
 选择 **[!UICONTROL 受众]** 导航到 [!UICONTROL 区段] 仪表板 [!UICONTROL 浏览] 选项卡。 从该处，您可以查看组织的所有区段定义的列表。
 
@@ -311,9 +311,9 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ### [!UICONTROL 受众重叠报表] {#audience-overlap-report}
 
-此构件可将按合并策略筛选的所有可用区段中的受众重叠数据制成表格化。 为从屏幕顶部的下拉菜单选择的合并策略提供了从最高重叠百分比到最低重叠百分比排名的五个受众列表。 两个分析分部列于 [!UICONTROL 区段A名称] 和 [!UICONTROL 区段B名称] 列。 第三列中提供的重叠百分比精确到小数点后的12位。
+此构件可将按合并策略筛选的所有可用受众中的数据重叠情况制成表格化。 为从屏幕顶部的下拉菜单选择的合并策略提供了从最高重叠百分比到最低重叠百分比排名的五个受众列表。 两个分析的受众列于 [!UICONTROL 受众A名称] 和 [!UICONTROL 受众B名称] 列。 第三列中提供的重叠百分比精确到小数点后的12位。
 
-受众重叠报表可帮助您构建新的、高性能区段。 通过观察高百分比重叠，您可以抑制受众并防止将相同的受众发送到不同的目标。 它们还可以帮助您识别可能有助于更好分段的可隐藏见解。 重叠百分比较低有助于找到要追踪的独特用户档案。
+受众重叠报表可帮助您构建新的、高性能受众。 通过观察高百分比重叠，您可以抑制受众并防止将相同的受众发送到不同的目标。 它们还可以帮助您识别可能有助于更好分段的可隐藏见解。 重叠百分比较低有助于找到要追踪的独特用户档案。
 
 选择 **[!UICONTROL 查看更多]** 以打开包含更多受众重叠数据的全屏对话框。
 
@@ -347,23 +347,23 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ### [!UICONTROL 受众规模] {#audiences-size}
 
-此 [!UICONTROL 受众规模] 构件提供了一张两列表格，列出最多20个区段以及每个区段中包含的受众总数。 此列表按照受众总数从高到低排序。 受众总人数取决于应用的合并策略。
+此 [!UICONTROL 受众规模] 构件提供了一张两列表格，列出最多20个受众的名称以及每个受众中包含的用户档案总数。 该列表根据受众中包含的用户档案总数从高到低排序。 总受众人数取决于应用的合并策略。
 
 ![受众规模构件。](../images/profiles/audiences-size.png)
 
-要查看有关区段的全面信息，请从提供的列表中选择区段名称，以导航至 [!UICONTROL 区段] [!UICONTROL 详细信息] 页面。 此外，通过选择 **[!UICONTROL 查看所有区段]** 从小部件的末尾，您可以导航到 [!UICONTROL 区段] [!UICONTROL 浏览] 选项卡以查找任何现有区段。
+要查看有关受众的完整信息，请从提供的列表中选择受众名称，以导航到 [!UICONTROL 受众] [!UICONTROL 详细信息] 页面。 此外，通过选择 **[!UICONTROL 查看所有受众]** 从小部件的末尾，您可以导航到 [!UICONTROL 受众] [!UICONTROL 浏览] 制表符以查找任何现有受众。
 
-![具有区段名称的受众大小小组件并查看突出显示的所有区段文本。](../images/profiles/audiences-size-view-all-segments.png)
+![带受众名称的受众大小小部件和突出显示的查看所有受众文本。](../images/profiles/audiences-size-view-all-audiences.png)
 
-请参阅文档以了解有关 [[!UICONTROL 区段] [!UICONTROL  浏览] 选项卡](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
+请参阅文档以了解有关 [[!UICONTROL 受众] [!UICONTROL  浏览] 选项卡](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
 
 ### [!UICONTROL 按合并策略列出的受众重叠] {#audience-overlap-by-merge-policy}
 
-此构件使用维恩图显示两个选定区段的重叠。 从页面顶部的概述下拉菜单中选择合并策略，并从小部件的两个下拉菜单中选择要分析的区段。 通过将鼠标悬停在圆或相交上，可以看到相关段定义中包含的轮廓总数。
+此构件使用维恩图显示两个选定受众的重叠。 从页面顶部的概述下拉菜单中选择合并策略，并从小部件的两个下拉菜单中选择要分析的受众。 通过将鼠标悬停在圆或相交上，可以看到相关段定义中包含的轮廓总数。
 
 由于构件显示区段定义的视觉交叉，因此您可以通过研究区段定义之间的相似性来优化分段策略。
 
-![突出显示了合并策略下拉列表和小组件区段下拉列表的Platform UI配置文件仪表板。](../images/profiles/audience-overlap-by-merge-policy.png)
+![突出显示了合并策略下拉列表和小组件受众下拉列表的Platform UI配置文件仪表板。](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
 <!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}

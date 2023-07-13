@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '4309'
 ht-degree: 1%
@@ -231,7 +231,7 @@ AS SELECT '1' as _id,
 
 ### 为什么在配置文件UI中显示的数字与从配置文件导出数据集中计算的数字之间存在差异？
 
-+++回答配置文件仪表板中显示的数字自上次快照以来都是准确的。 配置文件导出表中生成的数字完全取决于导出查询。 因此，查询符合特定区段资格的用户档案数量是造成这种差异的常见原因。
++++回答配置文件仪表板中显示的数字自上次快照以来都是准确的。 配置文件导出表中生成的数字完全取决于导出查询。 因此，查询符合特定受众条件的配置文件数量是造成这种差异的常见原因。
 
 >[!NOTE]
 >

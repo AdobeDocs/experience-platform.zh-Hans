@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Segmentation Service用户界面指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 5950713c33bfb2893f24f35136acf2707ad35f1f
+source-git-commit: 04c0b19bf4ffbc0719a89f710570cc667ca5e482
 workflow-type: tm+mt
 source-wordcount: '3606'
 ht-degree: 2%
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 此 **[!UICONTROL 受众]** 仪表板概述了与贵组织的受众数据相关的关键量度。
 
-要了解更多信息，请访问 [受众仪表板指南](../../dashboards/guides/segments.md).
+要了解更多信息，请访问 [受众仪表板指南](../../dashboards/guides/audiences.md).
 
 ![此时会显示受众仪表板。 它显示了各种构件，包括受众规模、按身份列出的配置文件、身份重叠以及受众规模变化趋势。](../../dashboards/images/segments/dashboard-overview.png)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用策略概述
 description: 数据使用策略是描述允许或限制您对Adobe Experience Platform中的数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: f292e87bb5f944a636521344b28cf02c746c0f6c
+source-git-commit: e5d90b24dad7faa9aa31c3b0670f8efa69cf0334
 workflow-type: tm+mt
 source-wordcount: '1215'
 ht-degree: 2%
@@ -55,7 +55,7 @@ ht-degree: 2%
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
 
-Experience Platform has the ability to share segments with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager segments are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
+Experience Platform has the ability to share audiences with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager audiences are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
 
 For a reference on how specific Data Export Controls map to marketing actions in Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
 -->
@@ -99,5 +99,5 @@ For a reference on how specific Data Export Controls map to marketing actions in
 | 导出到第三方 | 一个将数据导出到与客户没有直接关系的处理者和实体的操作。 许多数据提供商在合同中都有条款，禁止从最初收集数据的地方导出数据。 例如，社交网络合同通常会限制您从他们那里收到的数据的传输。 |
 | 现场广告 | 一个将数据用于现场广告的操作，包括在您组织的网站或应用程序上选择和投放广告，或衡量此类广告的投放和有效性。 |
 | 现场个性化 | 一个将数据用于现场内容个性化的操作。 现场个性化是用于推断用户兴趣的任何数据，并用于根据这些推断选择提供哪些内容或广告。 |
-| 区段匹配 | 一个将数据用于Adobe Experience Platform区段匹配的操作，允许两个或更多Platform用户交换区段数据。 通过启用引用此操作的策略，您可以限制用于区段匹配的数据。 例如，如果启用了核心策略“限制数据共享”，则任何数据都将 [C11标签](../labels/reference.md#c11) 无法用于区段匹配。 |
+| 区段匹配 | 一个将数据用于Adobe Experience Platform区段匹配的操作，允许两个或更多Platform用户交换受众数据。 通过启用引用此操作的策略，您可以限制用于区段匹配的数据。 例如，如果启用了核心策略“限制数据共享”，则任何数据都将 [C11标签](../labels/reference.md#c11) 无法用于区段匹配。 |
 | 单一身份个性化 | 一个操作，它要求将单个标识用于个性化目的，而不是拼接来自多个来源的标识。 |

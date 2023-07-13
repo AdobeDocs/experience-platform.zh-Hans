@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用标签术语表
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
-source-wordcount: '2108'
+source-wordcount: '2109'
 ht-degree: 3%
 
 ---
@@ -134,11 +134,11 @@ DAA：在线行为广告不包括第一方的活动、广告投放或广告报�
 
 #### C10 {#c10}
 
-某些数据治理策略会限制将缝合身份数据用于个性化。 如果区段的合并策略使用“专用图”选项，则会自动将C10标签应用于区段。
+某些数据治理策略会限制将缝合身份数据用于个性化。 如果受众的合并策略使用“专用图”选项，则会自动将C10标签应用于受众。
 
 #### C11 {#c11}
 
-Adobe Experience Platform区段匹配允许您使用隐私和同意首选项来匹配第一方区段，从而促进丰富的分析和下游分析。 C11标签表示不应在 [!DNL Segment Match] 流程。 确定要从区段匹配中排除的数据集和/或字段并相应地添加C11标签后，区段匹配工作流将自动强制使用该标签。
+Adobe Experience Platform区段匹配允许您将Platform生成的受众与隐私和同意偏好设置进行匹配，从而促进丰富的分析和下游分析。 C11标签表示不应在 [!DNL Segment Match] 流程。 确定要从区段匹配中排除的数据集和/或字段并相应地添加C11标签后，区段匹配工作流将自动强制使用该标签。
 
 #### C12 {#c12}
 

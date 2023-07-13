@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务概述
 description: 本文档概述了查询服务在Experience Platform中的作用。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 利用机器学习和人
 
 ### [!DNL Segmentation Service]
 
-Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户划分为具有相似特征的较小组。 随后可以评估这些区段，以更好地分析您的 [!DNL Real-Time Customer Profile] 数据。 [!DNL Query Service] 可用于提供此分析，方法是在中对此区段数据运行查询 [!DNL Data Lake]. 请阅读 [!DNL Segmentation Service] 概述，以了解有关分段以及 [!DNL Profile Query Language] (PQL)指南，以了解有关如何分析区段的更多信息。
+Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户划分为具有相似特征的较小组。 随后可以评估这些受众，以更好地分析您的 [!DNL Real-Time Customer Profile] 数据。 [!DNL Query Service] 可用于提供此分析，方法是在 [!DNL Data Lake]. 请阅读 [!DNL Segmentation Service] 概述，以了解有关分段以及 [!DNL Profile Query Language] (PQL)指南，以了解有关如何分析受众的更多信息。
 
 ## 用例
 
@@ -41,7 +41,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户�
 
 ### Adobe Analytics浏览放弃
 
-此 [以使用Adobe为中心的浏览放弃示例 [!DNL Analytics]](./use-cases/abandoned-browse.md) 数据，用于创建特定可操作的受众。 [!DNL Query Service] 适应复杂的分段逻辑，以计算各种个性化属性以供下游使用，或极大地简化构建区段的方式。
+此 [以使用Adobe为中心的浏览放弃示例 [!DNL Analytics]](./use-cases/abandoned-browse.md) 数据，用于创建特定可操作的受众。 [!DNL Query Service] 为分段提供复杂的逻辑，以便计算各种个性化属性以供下游使用，或者极大地简化构建受众的方式。
 
 ### Looker BI仪表板
 

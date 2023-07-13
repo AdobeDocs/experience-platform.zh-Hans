@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: Adobe Experience Platform 2022年9月版发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 8904d44cc8d289d103ec6d65116b8385ed615c4d
+source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
 workflow-type: tm+mt
 source-wordcount: '2940'
-ht-degree: 5%
+ht-degree: 19%
 
 ---
 
@@ -17,15 +17,15 @@ Adobe Experience Platform中的新增功能：
 
 - [基于属性的访问控制](#abac)
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
 - [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
-- [Identity Service](#identity-service)
+- [Experience Data Model (XDM)](#xdm)
+- [身份服务](#identity-service)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -52,7 +52,7 @@ AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用
 
 ### 归因人工智能
 
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户历程中每个营销接触点的营销影响。
 
 | 功能 | 描述 |
 | --- | --- |
@@ -88,22 +88,22 @@ Experience Platform允许您审核各种服务和功能的用户活动。 审核
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
+Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
 
 | 功能 | 描述 |
 | --- | --- |
 | 使用中标签 | 在Widget库中查看时，使用中标签可以轻松识别仪表板中现有构件是否存在。 这样可以轻松避免重复，不过您仍然可以根据需要多次添加同一构件。 |
 | 用户定义的仪表板 | 通过允许您构建和管理自定义仪表板，用户定义的仪表板有助于加快洞察和自定义可视化图表。 通过用户定义的仪表板，您可以创建、添加和编辑定制的小部件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 了解更多信息。 |
 | 客户数据平台分析数据模型 | 客户数据平台(CDP)分析数据模型功能可公开为各种用户档案、目标和分段构件提供分析功能的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 阅读 [CDP Insights数据模型功能指南](../../dashboards/cdp-insights-data-model.md) 了解更多信息。 |
-| 受众重叠报表构件 | 此构件可用于两者 [!UICONTROL 配置文件] 和 [!UICONTROL 区段] 功能板。 此报表按所选区段的最高或最低重叠百分比排名的有序受众列表。 从 [!UICONTROL 配置文件] 仪表板您可以按合并策略从所有可用区段中过滤和查看受众重叠。 此 [!UICONTROL 区段] 利用功能板，可按特定区段筛选受众重叠。<br>使用此分析构建新的、高性能区段，并避免将相同的受众发送到不同的目标。 报表还有助于识别隐藏的洞察信息以改进分段或找到要追求的独特用户档案。 阅读相应的 [用户档案](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [区段](../../dashboards/guides/segments.md#audience-overlap-report) 构件指南，以了解更多信息。 |
+| 受众重叠报表构件 | 此构件可用于两者 [!UICONTROL 配置文件] 和 [!UICONTROL 区段] 功能板。 此报表按所选区段的最高或最低重叠百分比排名的有序受众列表。 从 [!UICONTROL 配置文件] 仪表板您可以按合并策略从所有可用区段中过滤和查看受众重叠。 此 [!UICONTROL 区段] 利用功能板，可按特定区段筛选受众重叠。<br>使用此分析构建新的、高性能区段，并避免将相同的受众发送到不同的目标。 报表还有助于识别隐藏的洞察信息以改进分段或找到要追求的独特用户档案。 阅读相应的 [用户档案](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [区段](../../dashboards/guides/audiences.md#audience-overlap-report) 构件指南，以了解更多信息。 |
 
 有关的详细信息 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
 ## 数据收集 {#data-collection}
 
-Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中扩充和转换数据，并将其分发到Adobe或非Adobe目标。
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
@@ -120,9 +120,9 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -130,7 +130,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 {style="table-layout:auto"}
 
-**新的或更新后的目标**
+**新增或更新目标**
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -145,11 +145,11 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 | ----------- | ----------- |
 | 目标流服务API文档 | 此 [目标API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/) 更新了内容，以包括关于如何对基于文件的目标执行操作的指导。 稍后将添加流目标的操作。 |
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
-## 体验数据模型(XDM) {#xdm}
+## Experience Data Model (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **新增功能**
 
@@ -157,42 +157,42 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 | --- | --- |
 | UI支持枚举和建议值 | 除了启用数据验证的枚举之外，您现在还可以 [添加或删除建议值](../../xdm/ui/fields/enum.md) 用于标准或自定义字符串字段，以便Platform用户可在创建区段时从中选择一个友好的值列表。 |
 
-**新XDM组件**
+**新的 XDM 组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
 | 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | 与交互导致建议事件触发的特定元素的属性。 |
-| 字段组 | [[!UICONTROL MediaAnalytics交互详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | 随时间跟踪媒体交互。 |
+| 字段组 | [[!UICONTROL MediaAnalytics 交互详情]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | 随时间跟踪媒体交互。 |
 | 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | 跟踪媒体详细信息。 |
 | 字段组 | [[!UICONTROL AdobeCJM ExperienceEvent — 表面]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | 描述Adobe Journey Optimizer中体验事件的表面。 |
 
 {style="table-layout:auto"}
 
-**更新的XDM组件**
+**更新的 XDM 组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
 | 行为 | [[!UICONTROL 时间序列]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | <ul><li>已添加以下项的值： `eventType`：<ul><li>`decisioning.propositionSend`</li><li>`decisioning.propositionDismiss`</li><li>`decisioning.propositionTrigger`</li><li>`media.downloaded`</li><li>`location.entry`</li><li>`location.exit`</li></ul></li><li>已移除以下项的值： `eventType`：<ul><li>`decisioning.propositionDeliver`</li><li>`media.stateStart`</li><li>`media.stateEnd`</li></ul></li></ul> |
-| 字段组 | （多个） | [更新了多个字段描述](https://github.com/adobe/xdm/pull/1628/files) 跨Journey Orchestration组件。 |
-| 字段组 | （多个） | [更新了多个Adobe Workfront组件的标题](https://github.com/adobe/xdm/pull/1634/files) 以保持一致性。 |
+| 字段组 | （多种） | [更新了多个字段描述](https://github.com/adobe/xdm/pull/1628/files) 跨Journey Orchestration组件。 |
+| 字段组 | （多种） | [更新了多个Adobe Workfront组件的标题](https://github.com/adobe/xdm/pull/1634/files) 以保持一致性。 |
 | 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | 已将多个字段的命名空间更新为 `xdm`. |
 | 字段组 | [[!UICONTROL Journey Orchestration步骤事件常用字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | 添加了一个新字段， `isReadSegmentTriggerStartEvent`. |
 | 字段组 | [[!UICONTROL 天气预报]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | 已更改 `xdm:uvIndex` 字段中的任意值，并将 `xdm` 名称空间到缺少的多个字段。 |
 | 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` 和 `xdm:implementationDetails` 已从字段组删除。 |
-| 数据类型 | （多个） | [更新了多个媒体属性名称](https://github.com/adobe/xdm/pull/1626/files) 跨多种数据类型实现一致性。 |
+| 数据类型 | （多种） | [更新了多个媒体属性名称](https://github.com/adobe/xdm/pull/1626/files) 跨多种数据类型实现一致性。 |
 | 数据类型 | [[!UICONTROL 实施详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json) | 添加了颤振的已知名称。 |
 | 数据类型 | [[!UICONTROL 兴趣点详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | 数据类型现在可以接受与目标点关联的元数据键值对列表。 |
 | 数据类型 | [[!UICONTROL 建议操作]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | [!DNL AJO Classification Fields] 已重命名为 [!UICONTROL 建议操作]. |
 | 数据类型 | [[!UICONTROL 建议事件类型]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | [!DNL AJO Classification Fields] 已重命名为 [!UICONTROL 建议操作]. |
-| （多个） | （多个） | 实验性能已经达到 [在所有B2B组件中稳定](https://github.com/adobe/xdm/pull/1617/files). |
-| （多个） | （多个） | Adobe Journey Optimizer实体已 [已稳定](https://github.com/adobe/xdm/pull/1625/files). |
-| （多个） | （多个） | 某些字段的命名空间跨多个实验组件 [已更新以保持一致性](https://github.com/adobe/xdm/pull/1626/files). |
+| （多种） | （多种） | 实验性能已经达到 [在所有B2B组件中稳定](https://github.com/adobe/xdm/pull/1617/files). |
+| （多种） | （多种） | Adobe Journey Optimizer实体已 [已稳定](https://github.com/adobe/xdm/pull/1625/files). |
+| （多种） | （多种） | 某些字段的命名空间跨多个实验组件 [已更新以保持一致性](https://github.com/adobe/xdm/pull/1626/files). |
 
 {style="table-layout:auto"}
 
-有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
-## Identity Service {#identity-service}
+## 身份服务 {#identity-service}
 
 提供相关的数字体验需要全面了解您的客户。 当您的客户数据分散在不同的系统上，导致每个客户似乎都有多个“身份”时，这会使问题变得更加困难。
 
@@ -204,18 +204,18 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | --- | --- |
 | 支持数据集删除 | 现在，Identity Service在通过 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、UI或数据卫生。 阅读以下内容中的指南： [在UI中删除数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 了解更多信息。 |
 
-要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+要了解有关身份服务的更多信息，请阅读[身份服务概述](../../identity-service/home.md).
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以从以下位置连接任何数据集 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
 | 警报订阅API | Adobe Experience Platform查询服务允许您为临时查询和计划查询订阅警报。 警报可以通过电子邮件和/或Platform UI接收。 目前，查询警报只能使用订阅 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
-| 数据集示例 | 查询服务数据集示例使您能够针对大数据执行探索性查询，并显着减少处理时间，而代价是查询准确性。 请参阅 [数据集示例指南](../../query-service/essential-concepts/dataset-samples.md) 了解更多信息。 |
+| 数据集样本 | 查询服务数据集示例使您能够针对大数据执行探索性查询，并显着减少处理时间，而代价是查询准确性。 请参阅 [数据集示例指南](../../query-service/essential-concepts/dataset-samples.md) 了解更多信息。 |
 
 有关的详细信息 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 
@@ -223,9 +223,9 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 
@@ -235,6 +235,6 @@ Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数
 | 支持Adobe Campaign托管Cloud Service | 使用Adobe Campaign托管Cloud Service源将Adobe Campaign v8.4投放和跟踪日志数据引入Experience Platform。 阅读以下内容中的指南： [在UI中创建Adobe Campaign托管Cloud Service源连接](../../sources/tutorials/ui/create/adobe-applications/campaign.md) 了解更多信息。 |
 | API支持批量来源的按需摄取 | 使用按需引入为给定数据流创建临时流运行，使用 [!DNL Flow Service] API。 创建的流运行必须设置为一次性摄取。 有关详细信息，请阅读以下指南： [使用API为按需引入创建流运行](../../sources/tutorials/api/on-demand-ingestion.md) 了解更多信息。 |
 | API支持重试批处理源的失败数据流运行 | 使用 `re-trigger` 操作，以通过API重试失败的数据流。 阅读以下内容中的指南： [使用API重试失败的数据流运行](../../sources/tutorials/api/retry-flows.md) 了解更多信息。 |
-| API支持筛选的行级别数据 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源 | 使用逻辑运算符和比较运算符筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源。 阅读以下内容中的指南： [使用API筛选源的数据](../../sources/tutorials/api/filter.md) 了解更多信息。 |
+| API支持筛选的行级别数据 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源 | 使用逻辑运算符和比较运算符筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 源。 有关更多信息，请阅读[使用 API 过滤源数据](../../sources/tutorials/api/filter.md)的指南。 |
 
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
+若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。

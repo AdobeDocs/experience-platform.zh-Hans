@@ -2,9 +2,9 @@
 title: 跟踪数据信号以生成客户存留期值
 description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1269'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ![从观察、分析到行动的往返数据信息图。](../images/use-cases/infographic-use-case-cycle.png)
 
-此端到端用例演示了如何捕获和修改数据信号以计算客户生命周期值派生的属性。 然后，这些派生属性可以应用于您的Real-Time CDP配置文件数据，并且可以与用户定义的功能板一起使用，以构建用于洞察分析的功能板。 通过Data Distiller，您可以扩展Real-Time CDP分析数据模型，并使用CLV派生的属性和功能板分析来构建新区段并将其激活到所需的目标。 然后，这些区段可用于创建高性能受众，为您的下一个营销活动提供支持。
+此端到端用例演示了如何捕获和修改数据信号以计算客户生命周期值派生的属性。 然后，这些派生属性可以应用于您的Real-Time CDP配置文件数据，并且可以与用户定义的功能板一起使用，以构建用于洞察分析的功能板。 通过Data Distiller，您可以扩展Real-Time CDP分析数据模型，并使用CLV派生的属性和功能板分析来构建新受众，并将其激活到所需的目标。 然后，这些高性能受众可用于支持您的下一个营销活动。
 
 本指南旨在通过测量推动CLV的关键接触点上的数据信号并在您的环境中实施类似用例，帮助您更好地了解您的客户体验。 下图概述了整个过程。
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 本指南要求您实际了解Adobe Experience Platform的以下组件：
 
 * [查询服务](../home.md)：提供用户界面和RESTful API，您可以在其中使用SQL查询分析和扩充数据。
-* [分段服务](../../segmentation/home.md)：用于构建区段并根据实时客户档案数据生成受众。
+* [分段服务](../../segmentation/home.md)：允许您根据实时客户档案数据生成受众。
 
 ## 先决条件
 
@@ -71,23 +71,23 @@ ht-degree: 0%
 
 ![自定义基于十分位数的CLTV小部件的集合。](../images/use-cases/deciles-user-defined-dashboard.png)
 
-## 创建和激活区段以构建高性能受众 {#create-and-activate-segments}
+## 创建和激活高性能受众 {#create-and-activate-audiences}
 
-下一步是构建区段，并根据实时客户档案数据生成受众。 请参阅区段生成器UI指南，了解如何 [在Platform中创建和激活区段](../../segmentation/ui/segment-builder.md). 该指南提供了有关如何完成以下操作的部分：
+下一步是构建区段定义，并根据实时客户档案数据生成受众。 请参阅区段生成器UI指南，了解如何 [在Platform中创建和激活受众](../../segmentation/ui/segment-builder.md). 该指南提供了有关如何完成以下操作的部分：
 
 * 使用属性、事件和现有受众的组合作为构建块来创建区段定义。
-* 使用规则生成器画布和容器可控制区段规则的执行顺序。
+* 使用规则生成器画布和容器可控制分段规则的执行顺序。
 * 查看潜在受众的估计值，允许您根据需要调整区段定义。
 * 为计划分段启用所有区段定义。
 * 为流式分段启用指定的区段定义。
 
-另外，还有一个 [区段生成器视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 了解更多信息。
+另外，还有一个 [区段生成器视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html) 了解更多信息。
 
-## 为电子邮件营销活动激活区段 {#activate-segment-for-campaign}
+## 为电子邮件营销活动激活受众 {#activate-audience-for-campaign}
 
-构建区段后，便可以将其激活到目标。 Platform支持各种电子邮件服务提供商(ESP)，使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。
+构建受众后，便可以将其激活到目标。 Platform支持各种电子邮件服务提供商(ESP)，使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。
 
-查看 [电子邮件营销目标概述](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/overview.html?lang=en#connect-destination) 以获取要将数据导出到的受支持目标的列表(例如 [oracleEloqua](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/oracle-eloqua-api.html?lang=en) 页面)。
+查看 [电子邮件营销目标概述](../../destinations/catalog/email-marketing/overview.md#connect-destination) 以获取要将数据导出到的受支持目标的列表(例如 [oracleEloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) 页面)。
 
 ## 查看从营销活动返回的分析数据 {#post-campaign-data-analysis}
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 
 数据模型更新后，您的自定义仪表板小组件会提供有意义的信号，让您能够测量并可视化客户存留期值。
 
-![一个自定义构件，用于显示根据其区段和电子邮件促销活动打开的电子邮件数量。](../images/use-cases/post-activation-and-email-response-kpis.png)
+![一个自定义构件，用于显示根据其受众和电子邮件促销活动打开的电子邮件数量。](../images/use-cases/post-activation-and-email-response-kpis.png)
 
 为您的自定义分析提供了各种可视化图表选项。
 

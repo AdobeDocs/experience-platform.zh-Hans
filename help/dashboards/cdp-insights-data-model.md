@@ -2,16 +2,16 @@
 title: Real-time Customer Data Platform Insights数据模型
 description: 了解如何将SQL查询与Real-time Customer Data Platform Insights数据模型结合使用，以自定义您自己的Real-Time CDP报表，使其符合您的营销和KPI用例。
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+source-git-commit: e55bbba92b0e3b9c86a9962ffa0131dfb7c15e77
 workflow-type: tm+mt
 source-wordcount: '1109'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform Insights数据模型
 
-Real-time Customer Data Platform分析数据模型功能可公开支持各种用户档案、目标和分段构件的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅query accelerated store reporting insights文档以了解详情 [如何通过Query Service构建报告见解数据模型，以与加速商店数据和用户定义的仪表板一起使用](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
+Real-time Customer Data Platform分析数据模型功能可公开支持各种用户档案、目标和分段构件的分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅查询加速商店报告见解文档以了解详情 [如何通过Query Service构建报告见解数据模型，以与加速商店数据和用户定义的仪表板一起使用](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
 
 ## 先决条件
 
@@ -19,7 +19,7 @@ Real-time Customer Data Platform分析数据模型功能可公开支持各种用
 
 ## Real-Time CDP分析报告和用例
 
-Real-Time CDP报表可让您深入了解配置文件数据及其与区段和目标的关系。 各种星型架构模型被开发来回答各种常见的营销用例，每个数据模型可以支持多个用例。
+Real-Time CDP报表可让您深入了解配置文件数据及其与受众和目标的关系。 各种星型架构模型被开发来回答各种常见的营销用例，每个数据模型可以支持多个用例。
 
 >[!IMPORTANT]
 >
@@ -144,9 +144,9 @@ GROUP BY
 
 +++
 
-### 区段模型 {#segment-model}
+### 受众模型 {#audience-model}
 
-区段模型由以下数据集组成：
+受众模型由以下数据集组成：
 
 - `adwh_dim_date`
 - `adwh_fact_profile_by_segment`
@@ -158,11 +158,11 @@ GROUP BY
 
 下图包含每个数据集中的相关数据字段。
 
-![区段模型的ERD。](./images/cdp-insights/segment-model.png)
+![受众模型的ERD。](./images/cdp-insights/audience-model.png)
 
 #### 受众规模用例
 
-用于的逻辑 [!UICONTROL 受众规模] 构件会返回在生成最新快照时选定区段内合并的配置文件总数。 请参阅 [[!UICONTROL 受众规模] 构件文档](./guides/segments.md#audience-size) 了解更多信息。
+用于的逻辑 [!UICONTROL 受众规模] 构件会返回在生成最新快照时选定受众中合并的配置文件总数。 请参阅 [[!UICONTROL 受众规模] 构件文档](./guides/audiences.md#audience-size) 了解更多信息。
 
 生成 [!UICONTROL 受众规模] 可以在下面的可折叠部分中看到构件。
 
@@ -191,7 +191,7 @@ LIMIT 20;
 
 #### 受众规模变化趋势用例
 
-用于的逻辑 [!UICONTROL 受众规模变化趋势] 构件用线形图说明了最近每日快照之间符合给定区段条件的配置文件总数之间的差异。 请参阅 [[!UICONTROL 受众规模变化趋势] 构件文档](./guides/segments.md#audience-size-change-trend) 了解更多信息。
+用于的逻辑 [!UICONTROL 受众规模变化趋势] 构件以折线图说明了最近每日快照之间符合给定受众条件的配置文件总数的差异。 请参阅 [[!UICONTROL 受众规模变化趋势] 构件文档](./guides/audiences.md#audience-size-change-trend) 了解更多信息。
 
 生成 [!UICONTROL 受众规模变化趋势] 可以在下面的可折叠部分中看到构件。
 
@@ -212,7 +212,7 @@ GROUP BY cast(adwh_dim_segments.create_date AS date), adwh_dim_merge_policies.me
 
 #### 最常用的目标用例
 
-中使用的逻辑 [!UICONTROL 最常用的目标] 构件根据映射到贵组织最常用目标的区段数列出这些目标。 此排名可让您深入了解哪些目标正在被利用，同时还可能会显示那些可能未被充分利用的目标。 请参阅有关以下内容的文档： [[!UICONTROL 最常用的目标] 构件](./guides/destinations.md#most-used-destinations) 了解更多信息。
+中使用的逻辑 [!UICONTROL 最常用的目标] 构件根据映射到贵组织最常用目标的受众数量来列出这些目标。 此排名可让您深入了解哪些目标正在被利用，同时还可能会显示那些可能未被充分利用的目标。 请参阅有关以下内容的文档： [[!UICONTROL 最常用的目标] 构件](./guides/destinations.md#most-used-destinations) 了解更多信息。
 
 生成 [!UICONTROL 最常用的目标] 可以在下面的可折叠部分中看到构件。
 
@@ -237,11 +237,11 @@ FROM
 
 +++
 
-#### 最近激活的区段用例
+#### 最近激活的受众用例
 
-的逻辑 [!UICONTROL 最近激活的区段] 构件提供最近映射到目标的区段的列表。 此列表提供系统中正使用的区段和目标的快照，并且可以帮助纠正任何错误的映射。请参阅 [[!UICONTROL 最近激活的区段] 构件文档](./guides/destinations.md#recently-activated-segments) 了解更多信息。
+的逻辑 [!UICONTROL 最近激活的受众] 构件提供最近映射到目标的受众列表。 此列表提供系统中正在使用的受众和目标的快照，并有助于对任何错误的映射进行故障诊断。 请参阅 [[!UICONTROL 最近激活的受众] 构件文档](./guides/destinations.md#recently-activated-audiences) 了解更多信息。
 
-生成 [!UICONTROL 最近激活的区段] 可以在下面的可折叠部分中看到构件。
+生成 [!UICONTROL 最近激活的受众] 可以在下面的可折叠部分中看到构件。
 
 +++SQL查询
 
@@ -255,9 +255,9 @@ ORDER BY create_time desc, segment LIMIT 5;
 
 +++
 
-### 命名空间 — 区段模型
+### 命名空间 — 受众模型
 
-命名空间区段模型由以下数据集组成：
+命名空间 — 受众模型由以下数据集组成：
 
 - `adwh_dim_date`
 - `adwh_dim_namespaces`
@@ -270,11 +270,11 @@ ORDER BY create_time desc, segment LIMIT 5;
 
 下图包含每个数据集中的相关数据字段。
 
-![命名空间 — 区段模型的ERD。](./images/cdp-insights/namespace-segment-model.png)
+![命名空间 — 受众模型的ERD。](./images/cdp-insights/namespace-audience-model.png)
 
-#### 区段用例的按身份列出的配置文件
+#### 受众用例的按身份列出的配置文件
 
-中使用的逻辑 [!UICONTROL 按身份列出的配置文件] 小组件提供给定区段在配置文件存储区中所有合并配置文件的身份划分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](./guides/segments.md#profiles-by-identity) 了解更多信息。
+中使用的逻辑 [!UICONTROL 按身份列出的配置文件] 小组件提供给定受众的个人资料存储区中所有合并的个人资料的身份划分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](./guides/audiences.md#profiles-by-identity) 了解更多信息。
 
 生成 [!UICONTROL 按身份列出的配置文件] 可以在下面的可折叠部分中看到构件。
 
@@ -359,9 +359,9 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-### 按区段模型重叠命名空间
+### 按受众模型列出的重叠命名空间
 
-区段模型的重叠命名空间由以下数据集组成：
+按受众模型列出的重叠命名空间由以下数据集组成：
 
 - `adwh_dim_date`
 - `adwh_dim_overlap_namespaces`
@@ -374,11 +374,11 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 下图包含每个数据集中的相关数据字段。
 
-![按区段模型列出的重叠命名空间的ERD。](./images/cdp-insights/overlap-namespace-by-segment-model.png)
+![按受众模型列出的重叠命名空间的ERD。](./images/cdp-insights/overlap-namespace-by-audience-model.png)
 
-#### 身份重叠（区段）用例
+#### 身份重叠（受众）用例
 
-中使用的逻辑 [!UICONTROL 区段] 仪表板 [!UICONTROL 身份重叠] 构件说明包含特定区段的两个选定身份的用户档案的重叠。 欲了解更多信息，请参见 [[!UICONTROL 身份重叠] 的小组件部分 [!UICONTROL 分段] 仪表板文档](./guides/segments.md#identity-overlap).
+中使用的逻辑 [!UICONTROL 受众] 仪表板 [!UICONTROL 身份重叠] 构件说明了包含特定受众的两个选定身份的用户档案的重叠。 欲了解更多信息，请参见 [[!UICONTROL 身份重叠] 的小组件部分 [!UICONTROL 受众] 仪表板文档](./guides/audiences.md#identity-overlap).
 
 生成 [!UICONTROL 身份重叠] 可以在下面的可折叠部分中看到构件。
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 890294f087b4aae58ec9519ab3fcfff0cc4cc12d
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '1547'
 ht-degree: 1%
@@ -165,7 +165,7 @@ curl -X POST \
 | `expandIDs` | 一个可选属性，当设置为 `true`，表示在应用程序中处理ID的优化(当前仅受支持 [!DNL Analytics])。 如果忽略，则此值默认为 `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，用于设置处理请求的优先级。 接受的值包括 `normal` 和 `low`. 如果 `priority` 省略，默认行为为 `normal`. |
 | `analyticsDeleteMethod` | 一个可选属性，指定Adobe Analytics应如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`：给定用户ID集合引用的所有数据都将变为匿名。 如果 `analyticsDeleteMethod` 省略，这是默认行为。</li><li>`purge`：完全删除所有数据。</li></ul> |
-| `mergePolicyId` | 向Real-Time Customer Profile发出隐私请求时(`profileService`)，您可以选择提供特定的 [合并策略](../../profile/merge-policies/overview.md) 要用于ID拼合的ID。 通过指定合并策略，隐私请求可以在返回客户数据时包含区段信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不包含分段信息。 |
+| `mergePolicyId` | 向Real-Time Customer Profile发出隐私请求时(`profileService`)，您可以选择提供特定的 [合并策略](../../profile/merge-policies/overview.md) 要用于ID拼合的ID。 通过指定合并策略，隐私请求可以在返回客户数据时包含受众信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不包含分段信息。 |
 | `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>请参阅概述，位于 [支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 
 {style="table-layout:auto"}

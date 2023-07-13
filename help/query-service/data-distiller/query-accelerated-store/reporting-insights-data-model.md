@@ -2,7 +2,7 @@
 title: Query Accelerated Store报告分析指南
 description: 了解如何通过Query Service构建报告见解数据模型，以与加速商店数据和用户定义的仪表板一起使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '1033'
 ht-degree: 0%
@@ -15,7 +15,7 @@ Query accelerated store允许您减少从数据中获得关键见解所需的时
 
 查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型。 然后，您可以与互动或将报表见解嵌入到您选择的报表/可视化图表框架中。 请参阅Real-time Customer Data Platform Insights数据模型文档，了解如何 [自定义您的SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../../dashboards/cdp-insights-data-model.md).
 
-Adobe Experience Platform的Real-Time CDP数据模型提供有关用户档案、区段和目标的洞察，并启用Real-Time CDP洞察功能板。 本文档将指导您完成创建报表分析数据模型的过程，以及如何根据需要扩展Real-Time CDP数据模型。
+Adobe Experience Platform的Real-Time CDP数据模型提供有关用户档案、受众和目标的洞察，并启用Real-Time CDP洞察功能板。 本文档将指导您完成创建报表分析数据模型的过程，以及如何根据需要扩展Real-Time CDP数据模型。
 
 ## 先决条件
 
@@ -37,7 +37,7 @@ Please see the [packaging](../../packages.md), [guardrails](../../guardrails.md#
 
 ![受众分析用户模型的实体关系图(ERD)。](../../images/query-accelerated-store/audience-insight-user-model.png)
 
-在此示例中， `externalaudiencereach` 表/数据集基于ID并跟踪匹配计数的下限和上限。 此 `externalaudiencemapping` 维度表/数据集将外部ID映射到Platform上的目标和区段。
+在此示例中， `externalaudiencereach` 表/数据集基于ID并跟踪匹配计数的下限和上限。 此 `externalaudiencemapping` 维度表/数据集将外部ID映射到Platform上的目标和受众。
 
 ## 使用Data Distiller创建报表见解模型
 
@@ -74,7 +74,7 @@ WITH ( DISTRIBUTION = REPLICATE ) AS
  
 CREATE TABLE IF NOT exists audienceinsight.audiencemodel.externalaudiencemapping
 WITH ( DISTRIBUTION = REPLICATE ) AS
-SELECT cast(null as int) segment_id,
+SELECT cast(null as int) audience_id,
        cast(null as int) destination_id,
        cast(null as int) ext_custom_audience_id
  WHERE false;
@@ -133,7 +133,7 @@ ext_custom_audience_id | approximate_count_upper_bound
 
 ## 使用Real-Time CDP分析数据模型扩展数据模型
 
-您可以使用其他详细信息扩展受众模型，以创建更丰富的维度表。 例如，您可以将区段名称和目标名称映射到外部受众标识符。 要实现此目的，请使用查询服务创建或刷新新数据集，并将其添加到将区段和目标与外部身份结合在一起的受众模型。 下图说明了此数据模型扩展的概念。
+您可以使用其他详细信息扩展受众模型，以创建更丰富的维度表。 例如，您可以将受众名称和目标名称映射到外部受众标识符。 要实现此目的，请使用查询服务创建或刷新新数据集，并将其添加到将受众和目标与外部身份结合在一起的受众模型中。 下图说明了此数据模型扩展的概念。
 
 ![链接Real-Time CDP洞察数据模型和查询加速存储模型的ERD图表。](../../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
 
@@ -145,13 +145,13 @@ ext_custom_audience_id | approximate_count_upper_bound
 CREATE TABLE audienceinsight.audiencemodel.external_seg_dest_map AS
   SELECT ext_custom_audience_id,
          destination_name,
-         segment_name,
+         audience_name,
          destination_status,
          a.destination_id,
-         a.segment_id
+         a.audience_id
   FROM   externalaudiencemapping AS a
-         LEFT OUTER JOIN adwh_dim_segments AS b
-                      ON ( ( a.segment_id ) = ( b.segment_id ) )
+         LEFT OUTER JOIN adwh_dim_audiences AS b
+                      ON ( ( a.audience_id ) = ( b.audience_id ) )
          LEFT OUTER JOIN adwh_dim_destination AS c
                       ON ( ( a.destination_id ) = ( c.destination_id ) );
  
@@ -170,15 +170,15 @@ ALTER TABLE externalaudiencereach  ADD  CONSTRAINT FOREIGN KEY (ext_custom_audie
 
 ## 查询扩展加速商店报告见解数据模型
 
-现在， `audienceinsight` 数据模型已得到增强，可以查询。 以下SQL显示了映射的目标和区段的列表。
+现在， `audienceinsight` 数据模型已得到增强，可以查询。 以下SQL显示了映射的目标和受众列表。
 
 ```sql
 SELECT a.ext_custom_audience_id,
        b.destination_name,
-       b.segment_name,
+       b.audience_name,
        b.destination_status,
        b.destination_id,
-       b.segment_id
+       b.audience_id
 FROM   audiencemodel.externalaudiencereach1 AS a
        LEFT OUTER JOIN audiencemodel.external_seg_dest_map AS b
                     ON ( ( a.ext_custom_audience_id ) = (
@@ -189,7 +189,7 @@ LIMIT  25;
 查询返回查询加速存储上的所有数据集：
 
 ```console
-ext_custom_audience_id | destination_name |       segment_name        | destination_status | destination_id | segment_id 
+ext_custom_audience_id | destination_name |       audience_name        | destination_status | destination_id | audience_id 
 ------------------------+------------------+---------------------------+--------------------+----------------+-------------
  23850808595110554      | FCA_Test2        | United States             | enabled            |     -605911558 | -1357046572
  23850799115800554      | FCA_Test2        | Born in 1980s             | enabled            |     -605911558 | -1224554872
@@ -211,25 +211,25 @@ ext_custom_audience_id | destination_name |       segment_name        | destinat
 
 现在您已经创建了自定义数据模型，接下来可以使用自定义查询和用户定义的仪表板可视化您的数据。
 
-以下SQL提供了按目标中的受众划分的匹配计数，以及按区段划分的受众的每个目标。
+以下SQL提供了按目标中的受众划分的匹配计数，以及按受众划分的每个受众目标。
 
 ```sql
 SELECT b.destination_name,
        a.approximate_count_upper_bound,
-       b.segment_name
+       b.audience_name
 FROM   audiencemodel.externalaudiencereach AS a
        LEFT OUTER JOIN audiencemodel.external_seg_dest_map AS b
                     ON ( ( a.ext_custom_audience_id ) = (
                          b.ext_custom_audience_id ) )
 GROUP  BY b.destination_name,
           a.approximate_count_upper_bound,
-          b.segment_name
+          b.audience_name
 ORDER BY b.destination_name
 LIMIT  5000
 ```
 
 下图提供了一个示例，说明了如何使用您的报表分析数据模型实现可能的自定义可视化图表。
 
-![根据新报表分析数据模型创建的按目标和区段构件划分的匹配计数。](../../images/query-accelerated-store/user-defined-dashboard-widget.png)
+![根据新报表分析数据模型创建的按目标和受众构件划分的匹配计数。](../../images/query-accelerated-store/user-defined-dashboard-widget.png)
 
 您的自定义数据模型可在用户定义的仪表板工作区中的可用数据模型列表中找到。 请参阅 [用户定义的仪表板指南](../../../dashboards/user-defined-dashboards.md) 以获取有关如何使用自定义数据模型的指导。

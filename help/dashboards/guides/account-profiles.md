@@ -2,7 +2,7 @@
 title: 帐户配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 79966442f5333363216da17342092a71335a14f0
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
-此 [!UICONTROL 浏览] 选项卡允许您搜索并查看只读帐户配置文件，这些配置文件是使用来自连接的企业源的帐户ID或通过直接输入源详细信息引入贵组织的。 从这里，您可以看到属于客户档案的重要信息，包括其名称、行业、收入和区段等。
+此 [!UICONTROL 浏览] 选项卡允许您搜索并查看只读帐户配置文件，这些配置文件是使用来自连接的企业源的帐户ID或通过直接输入源详细信息引入贵组织的。 从此处，您可以查看属于帐户配置文件的重要信息，包括其名称、行业、收入和受众等。
 
 选择 [!UICONTROL 配置文件ID] 结果显示在 [!UICONTROL 浏览] 选项卡以打开 [!UICONTROL 详细信息] 帐户配置文件的选项卡。
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Unions API端点
 description: 架构注册API中的/unions端点允许您以编程方式管理体验应用程序中的XDM合并架构。
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 3da2e8f66f08a7bb9533795f7854ad583734911c
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '897'
 ht-degree: 1%
 
 ---
@@ -29,9 +29,9 @@ ht-degree: 1%
 
 此 `timeSeriesEvents` 数组是与合并关联的记录架构相关的时间序列事件列表。 将配置文件数据导出到数据集时，每个记录都包含此数组。 这适用于各种用例，例如机器学习，在这种情况下，模型需要用户档案的整个行为历史记录及其记录属性。
 
-### 区段成员资格分布图
+### 区段成员关系图
 
-此 `segmentMembership` map存储区段评估的结果。 使用成功运行区段作业时 [分段API](https://www.adobe.io/experience-platform-apis/references/segmentation/)，则映射会更新。 `segmentMembership` 还存储提取到Platform中的任何预评估受众区段，从而允许与其他解决方案(如Adobe Audience Manager)集成。 请参阅上的教程 [使用API创建区段](../../segmentation/tutorials/create-a-segment.md) 了解更多信息。
+此 `segmentMembership` map存储评估区段定义的结果。 使用成功运行区段作业时 [分段API](https://www.adobe.io/experience-platform-apis/references/segmentation/)，则映射会更新。 `segmentMembership` 还存储引入Platform的任何预评估受众，从而允许与其他解决方案(如Adobe Audience Manager)集成。 请参阅上的教程 [使用API创建受众](../../segmentation/tutorials/create-a-segment.md) 了解更多信息。
 
 ## 检索并集列表 {#list}
 

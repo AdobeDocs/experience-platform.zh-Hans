@@ -2,18 +2,18 @@
 solution: Experience Platform
 title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
-description: 了解如何使用查询服务来探索和处理原始数据集，以便在Experience Platform中提升用户档案、区段和目标仪表板的性能。
+description: 了解如何使用查询服务来探索和处理原始数据集，以便在Experience Platform中提升用户档案、受众和目标仪表板的性能。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 79966442f5333363216da17342092a71335a14f0
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
 
 # 使用以下方式浏览、验证和处理功能板数据集 [!DNL Query Service]
 
-Adobe Experience Platform通过Experience PlatformUI中提供的功能板，提供有关您组织的配置文件、区段和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理数据湖中用于驱动这些功能板的原始数据集。
+Adobe Experience Platform通过Experience PlatformUI中提供的功能板，提供有关您组织的个人资料、受众和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理数据湖中用于驱动这些功能板的原始数据集。
 
 ## 快速入门 [!DNL Query Service]
 
@@ -23,7 +23,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 ## 访问可用数据集
 
-您可以使用 [!DNL Query Service] 查询用户档案、区段和目标功能板的原始数据集。 要查看可用数据集，请在Experience PlatformUI中，选择 **数据集** 在左侧导航中打开数据集仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
+您可以使用 [!DNL Query Service] 查询个人资料、受众和目标功能板的原始数据集。 要查看可用数据集，请在Experience PlatformUI中，选择 **数据集** 在左侧导航中打开数据集仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
 ![左侧导航中突出显示“数据集”选项卡的数据集浏览仪表板。](./images/query/browse-datasets.png)
 
@@ -64,15 +64,13 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 可以使用Experience Platform中的查询编辑器UI浏览此数据集。 要了解有关使用查询编辑器的更多信息，请参阅 [查询编辑器UI指南](../query-service/ui/user-guide.md).
 
-### 区段元数据数据集
+### 受众元数据数据集
 
-数据湖中有一个可用的区段元数据数据集，其中包含您组织的每个区段的元数据。
+数据湖中有一个可用的受众元数据数据集，其中包含您组织的每个受众的元数据。
 
 此数据集的命名约定是 **段定义 — 快照 — 导出** 后跟一个字母数字值。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
 要了解每个区段定义快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
-
-![区段定义 — 快照 — 导出数据集的预览。](images/query/segment-metadata.png)
 
 ### 目标元数据数据集
 
@@ -92,7 +90,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 CDP分析数据模型功能可公开支持各种用户档案、目标和分段构件的分析的SQL。 您可以自定义这些SQl查询模板，以便为营销和KPI用例创建CDP报告。
 
-CDP报告可让您深入了解用户档案数据及其与区段和目标的关系。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
+CDP报告可让您深入了解个人资料数据及其与受众和目标的关系。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
 
 ## 示例查询
 
@@ -123,13 +121,13 @@ Select
         namespace;
 ```
 
-### 按区段列出的配置文件计数
+### 按受众列出的配置文件数
 
-此受众分析提供数据集中每个区段内合并的用户档案总数。 此数字是将区段合并策略应用于配置文件数据以将配置文件片段合并在一起，从而为区段中的每个人形成一个配置文件的结果。
+此受众分析提供数据集中每个受众中合并的配置文件总数。 此数字是将受众合并策略应用于配置文件数据以将配置文件片段合并在一起，从而形成受众中每个人的单个配置文件的结果。
 
 ```sql
 Select          
-        concat_ws('-', key, source_namespace) segment_id,
+        concat_ws('-', key, source_namespace) audience_id,
         count(1) count_of_profiles
       from
         (
@@ -139,17 +137,17 @@ Select
             from
               (
                   Select
-                    explode(Segmentmembership)
+                    explode(Audiencemembership)
                   from
                     Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f
               )
         )
       group by
-      segment_id
+      audience_id
 ```
 
 ## 后续步骤
 
-通过阅读本指南，您现在可以使用 [!DNL Query Service] 执行多个查询以浏览和处理用于支持您的个人资料、区段和目标功能板的原始数据集。
+通过阅读本指南，您现在可以使用 [!DNL Query Service] 执行多个查询以浏览并处理原始数据集，为您的个人资料、受众和目标功能板提供支持。
 
 要了解有关每个功能板及其量度的更多信息，请从文档导航中的可用功能板列表中选择一个功能板。

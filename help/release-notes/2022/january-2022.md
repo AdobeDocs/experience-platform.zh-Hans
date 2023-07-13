@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年1月
-description: Adobe Experience Platform 2022年1月版发行说明。
+title: Adobe Experience Platform 发行说明（2022 年 1 月）
+description: Adobe Experience Platform 的 2022 年 1 月发行说明。
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
 workflow-type: tm+mt
 source-wordcount: '1342'
-ht-degree: 3%
+ht-degree: 20%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 **发行日期：2022 年 1 月 26 日**
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [警报](#alerts)
 - [[!DNL Dashboards]](#dashboards)
@@ -21,7 +21,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Destinations]](#destinations)
 - [查询服务](#query-service)
 - [沙盒](#sandboxes)
-- [分段服务](#segmentation)
+- [Segmentation Service](#segmentation)
 - [源](#sources)
 
 ## 警报 {#alerts}
@@ -39,11 +39,11 @@ Experience Platform允许您订阅各种Platform活动的基于事件的警报�
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
+Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
 
 | 功能 | 描述 |
 | --- | --- |
-| 智能字幕 | 机器学习算法会自动提供对配置文件和受众数据的分析，并展示在30-90天或12个月期间内的模式和趋势。 字幕包括以下信息 <ul><li>总体形状和统计数据</li><li>趋势和突然变化</li><li>季节性模式</li><li>意外异常</li></ul> 欲知更多信息，请访问 [配置文件仪表板](../../dashboards/guides/profiles.md#profiles-count-trend) 和 [区段功能板](../../dashboards/guides/segments.md#audience-size-trend) 文档。 |
+| 智能题注 | 机器学习算法会自动提供对配置文件和受众数据的分析，并展示在30-90天或12个月期间内的模式和趋势。 字幕包括以下信息 <ul><li>总体形状和统计数据</li><li>趋势和突然变化</li><li>季节性模式</li><li>意外异常</li></ul> 欲知更多信息，请访问 [配置文件仪表板](../../dashboards/guides/profiles.md#profiles-count-trend) 和 [区段功能板](../../dashboards/guides/audiences.md#audience-size-trend) 文档。 |
 | 功能板清单 | 在集中位置访问预配置的配置文件、区段和目标功能板（包括任何已安装的集成，如PowerBI）报表。 欲了解更多信息，请参见 [[!DNL Dashboards] 清单文档](../../dashboards/inventory.md). |
 | PowerBI报表模板 | 使用新的PowerBI图表从配置文件、区段和目标报表数据模型构建、自定义或扩展量度。 自动安装工作流允许您在PowerBI环境中跨组织共享营销见解。 欲了解更多信息，请参见 [PowerBI报表模板文档](../../dashboards/integrations/power-bi.md). |
 
@@ -63,9 +63,9 @@ Adobe Experience Platform提供了多个功能板，您可以通过该功能板�
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -81,7 +81,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过该功能板�
 | [Adobe Target连接](../../destinations/catalog/personalization/adobe-target-connection.md) | Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户交互中提供由AI支持的实时个性化和实验。 Adobe Target是Adobe Experience Platform中的个性化连接。 |
 | [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md) | 此个性化连接提供了一种方法，可将区段信息从Adobe Experience Platform检索到外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序。 |
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## 查询服务 {#query-service}
 
@@ -108,9 +108,9 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 
 有关沙箱的详细信息，请参阅 [沙盒概述](../../sandboxes/home.md).
 
-## 分段服务 {#segmentation}
+## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 通过描述用于区分客户群内可销售人员组的标准，来定义用户档案的特定子集。 区段可以基于记录数据（例如人口统计信息）或表示客户与您的品牌互动的时间系列事件。
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
 
 **新增功能**
 
@@ -118,13 +118,13 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 | --- | --- |
 | 区段匹配 | 区段匹配是一项数据协作服务，允许两个或更多Platform用户基于通用标识符，以安全、有管理且有利于隐私的方式交换数据。 区段匹配使用Platform隐私标准和个人标识符，例如经过哈希处理的电子邮件、经过哈希处理的电话号码和设备标识符（如IDFA和GAID）。 欲了解更多信息，请参见 [区段匹配概述](../../segmentation/ui/segment-match/overview.md). |
 
-有关的详细信息 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
+有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 | 功能 | 描述 |
 | --- | --- |
