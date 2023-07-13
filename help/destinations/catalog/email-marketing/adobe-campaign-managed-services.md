@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: ef49bebb96afb9b25430fcc69f8ba91305ad6697
+source-git-commit: c4ead035202828a09c8c170e0a380fa49d186473
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1548'
 ht-degree: 4%
 
 ---
@@ -33,18 +33,24 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 >* Azure Blob存储数据登陆区(DLZ)上的数据保留：7天，
 >* 激活频率至少为3小时。
 
-
 ## 用例 {#use-cases}
 
 为了帮助您更好地了解您应如何以及何时使用Adobe Campaign管理服务目标，以下是Adobe Experience Platform客户可以通过使用此目标解决的示例用例。
 
-Adobe Experience Platform创建客户个人资料，整合身份图、来自analytics的行为数据、合并离线和在线数据等信息。 通过这种集成，您可以使用Adobe Experience Platform支持的受众来增强Adobe Campaign中已有的分段功能，从而在Campaign中激活这些数据。
+* Adobe Experience Platform创建客户个人资料，整合身份图、来自analytics的行为数据、合并离线和在线数据等信息。 通过这种集成，您可以使用Adobe Experience Platform支持的受众来增强Adobe Campaign中已有的分段功能，从而在Campaign中激活这些数据。
 
-例如，一家运动服装公司希望利用Adobe Experience Platform支持的智能区段，并使用Adobe Campaign激活它们，以便通过Adobe Campaign支持的各种渠道联系其客户群。
+  例如，一家运动服装公司希望利用Adobe Experience Platform支持的智能区段，并使用Adobe Campaign激活它们，以便通过Adobe Campaign支持的各种渠道联系其客户群。 发送消息后，他们希望使用Adobe Campaign的体验数据（如发送、打开和点击）增强Adobe Experience Platform中的客户档案。
 
-发送消息后，他们希望使用Adobe Campaign的体验数据（如发送、打开和点击）增强Adobe Experience Platform中的客户档案。
+  结果是跨渠道营销活动在Adobe Experience Cloud生态系统中更加一致，并且提供了丰富的客户档案，可以快速适应和学习。
 
-结果是跨渠道营销活动在Adobe Experience Cloud生态系统中更加一致，并且提供了丰富的客户档案，可以快速适应和学习。
+
+* 除了Campaign中的区段激活之外，您还可以利用Adobe Campaign Managed Services目标引入其他配置文件属性，这些属性与Adobe Experience Platform上的配置文件相关联，并且已实施同步流程，以便在Adobe Campaign数据库中进行更新。
+
+  例如，假设您在Adobe Experience Platform中捕获了选择启用和选择禁用值。 通过此连接，您可以将这些值引入Adobe Campaign并实施同步过程，以便定期更新它们。
+
+  >[!NOTE]
+  >
+  >配置文件属性同步适用于Adobe Campaign数据库中已存在的配置文件。
 
 [详细了解Adobe Campaign与Adobe Experience Platform的集成](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
 
@@ -92,6 +98,10 @@ Adobe Experience Platform创建客户个人资料，整合身份图、来自anal
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL 选择实例]**：您的 **[!DNL Campaign]** 营销实例。
 * **[!UICONTROL 目标映射]**：选择您在中使用的目标映射 **[!DNL Adobe Campaign]** 以发送投放。 [了解详情](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html)。
+* **[!UICONTROL 选择同步类型]**：
+
+   * **[!UICONTROL 受众同步]**：使用此选项可将Adobe Experience Platform受众发送到Adobe Campaign。
+   * **[!UICONTROL 配置文件同步（仅更新）]**：使用此选项可将Adobe Experience Platform配置文件属性引入Adobe Campaign并设置同步流程，以便定期更新这些属性。
 
 ### 启用警报 {#enable-alerts}
 
@@ -111,7 +121,7 @@ Adobe Experience Platform创建客户个人资料，整合身份图、来自anal
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html) 有关将受众数据激活到此目标的说明。
+读取 [将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans) 有关将受众数据激活到此目标的说明。
 
 ### 映射属性和身份 {#map}
 
@@ -122,6 +132,7 @@ Adobe Experience Platform创建客户个人资料，整合身份图、来自anal
    * 选择 **标识符** （例如：电子邮件字段）作为源标识，用于唯一标识Adobe Experience Platform和Adobe Campaign中的用户档案。
 
    * 选择所有其他 **XDM源配置文件属性** 需要导出到Adobe Campaign的内容。
+
    >[!NOTE]
    >
    >“segmentMembershipStatus”字段是反映segmentMembership状态的必需映射。 此字段默认添加，无法修改或删除。
@@ -133,9 +144,10 @@ Adobe Experience Platform创建客户个人资料，整合身份图、来自anal
    * [必需属性](../../ui/activate-batch-profile-destinations.md#mandatory-attributes) 确保所有配置文件记录都包含选定的属性。 例如：所有导出的用户档案都包含电子邮件地址。 建议将标识字段和用作重复数据删除键的字段均设置为必填。
    * [重复数据删除键](../../ui/activate-batch-profile-destinations.md#mandatory-attributes) 是一个主键，可确定用户希望为其配置文件进行重复数据删除的身份。
 
-      >[!IMPORTANT]
-      >
-      >确保重复数据删除键属性的名称与所选目标映射的列名称匹配。
+     >[!IMPORTANT]
+     >
+     >确保重复数据删除键属性的名称与所选目标映射的列名称匹配。
+
    ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/mapping.png)
 
 1. 执行映射后，您可以查看并完成目标配置以开始将数据发送到 **[!DNL Campaign]**.
@@ -153,9 +165,11 @@ Adobe Experience Platform创建客户个人资料，整合身份图、来自anal
 
 ### 访问导出的数据 {#data}
 
-导航到 **[!UICONTROL 配置文件和目标]** > **[!UICONTROL 列表]** > **[!UICONTROL aep受众]** 菜单访问在激活目标后创建的受众。
+对象 **[!UICONTROL 受众同步]**，您可以通过导航到 **[!UICONTROL 配置文件和目标]** > **[!UICONTROL 列表]** > **[!UICONTROL aep受众]** 菜单。
 
 ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/campaign-audiences.png)
+
+对象 **[!UICONTROL 配置文件同步（仅更新）]**，数据将自动更新到Campaign数据库中，以便存储在目标中激活的区段定向的每个用户档案。
 
 ## 数据使用和管理 {#data-usage-governance}
 
