@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；过滤器函数；过滤器；
 solution: Experience Platform
 title: PQL筛选函数
 description: 筛选器函数用于筛选配置文件查询语言(PQL)数组内的数据。
 exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '203'
 ht-degree: 4%
 
 ---

@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；杂项函数；杂项；
 solution: Experience Platform
 title: PQL杂项函数
 description: 以下函数是配置文件查询语言(PQL)的杂项函数。
 exl-id: a6ed31a2-a649-4dc8-89b1-48c1170b7f16
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '115'
 ht-degree: 3%
 
 ---

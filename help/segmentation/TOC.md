@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
-user-guide-description: 从实时客户配置文件数据构建细分并生成受众。
+user-guide-description: 使用Adobe Experience Platform生成的区段定义或外部源，从实时客户档案数据构建受众。
 feature: Segments
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0a3dbb49948278f4fd12737938ad00f2f7abb681
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 28%
+source-wordcount: '176'
+ht-degree: 23%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 28%
    - [流式客户细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
    - [概述](ui/overview.md)
-   - [Audience Builder](ui/audience-builder.md)
+   - [受众构成](ui/audience-composition.md)
    - [区段仪表板](ui/segment-dashboard.md)
    - [区段生成器](ui/segment-builder.md)
    - [边缘分段](ui/edge-segmentation.md)
@@ -65,5 +65,6 @@ ht-degree: 28%
    - [导入和使用外部受众](tutorials/using-external-audiences.md)
    - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
    - [强制区段遵守数据使用规定](tutorials/governance.md)
-- [API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
+- [常见问题解答](./faq.md)
+- [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

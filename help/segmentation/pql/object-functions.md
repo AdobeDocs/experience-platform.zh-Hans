@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；对象函数；对象；
 solution: Experience Platform
 title: PQL对象函数
 description: 配置文件查询语言(PQL)提供了一些函数，可简化与对象的交互。
 exl-id: e65257d8-5bc8-46c8-8487-33bc7ce4059b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 5%
+source-wordcount: '121'
+ht-degree: 6%
 
 ---
 

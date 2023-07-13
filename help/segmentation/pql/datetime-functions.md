@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；日期和时间函数；日期时间函数；日期时间；日期；时间；
 solution: Experience Platform
 title: PQL日期和时间函数
 description: 日期和时间函数用于对配置文件查询语言(PQL)中的值执行日期和时间操作。
 exl-id: 8cbffcb6-1c25-454f-8f02-eca602318e5e
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '508'
-ht-degree: 3%
+source-wordcount: '485'
+ht-degree: 4%
 
 ---
 

@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段服务；分段；分段服务；用户指南；ui指南；分段ui指南；分段生成器；分段生成器；
 solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 28b9458d29ce69bcbfdff53c0cb6bd7f427e4a2e
+source-git-commit: 6d33c1bd3921a754edfab227fad236caf60ac960
 workflow-type: tm+mt
-source-wordcount: '3258'
-ht-degree: 6%
+source-wordcount: '3308'
+ht-degree: 4%
 
 ---
 
@@ -15,14 +14,14 @@ ht-degree: 6%
 
 [!DNL Segment Builder] 提供了一个丰富的工作区，允许您与 [!DNL Profile] 数据元素。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 
-![将显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
+![此时会显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
 ## 区段定义构建基块 {#building-blocks}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
->abstract="构成区段的三种字段类型是属性、事件和受众。属性允许您使用属于 XDM 个人配置文件类的配置文件属性，事件允许您基于使用 XDM ExperienceEvent 数据元素发生的操作或事件创建受众，受众允许您使用从外部源导入的受众。"
+>abstract="构成区段定义的三种字段类型是属性、事件和受众。 属性允许您使用属于 XDM 个人配置文件类的配置文件属性，事件允许您基于使用 XDM ExperienceEvent 数据元素发生的操作或事件创建受众，受众允许您使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件可用作新定义的组件。
 
@@ -38,7 +37,7 @@ ht-degree: 6%
 
 ### 活动
 
-此 **[!UICONTROL 事件]** 选项卡允许您根据发生的事件或操作创建受众，使用 [!DNL XDM ExperienceEvent] 数据元素。 您还可以在以下位置找到事件类型 **[!UICONTROL 事件]** 选项卡，这是常用事件的集合，使您能够更快地创建区段。
+此 **[!UICONTROL 事件]** 选项卡允许您根据发生的事件或操作创建受众，使用 [!DNL XDM ExperienceEvent] 数据元素。 您还可以在以下位置找到事件类型 **[!UICONTROL 事件]** 选项卡，这是常用事件的集合，用于更快地创建区段定义。
 
 除了能够浏览 [!DNL ExperienceEvent] 元素时，您还可以搜索事件类型。 事件类型使用与相同的编码逻辑 [!DNL ExperienceEvents]，无需您搜索 [!DNL XDM ExperienceEvent] 类查找正确的事件。 例如，使用搜索栏搜索“cart”会返回事件类型[!UICONTROL AddCart]“ ”和“ ”[!UICONTROL RemoveCart]“”，这是构建区段定义时最常用的两个购物车操作。
 
@@ -116,7 +115,7 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->对Adobe Experience Platform的最新更改更新了 `OR` 和 `AND` 事件之间的逻辑运算符。 这些更新不会影响现有区段。 但是，对现有区段和新区段创建所做的所有后续更新都将受这些更改的影响。 请阅读 [时间常量更新](./segment-refactoring.md) 了解更多信息。
+>对Adobe Experience Platform的最新更改更新了 `OR` 和 `AND` 事件之间的逻辑运算符。 这些更新不会影响现有区段定义。 但是，对现有区段定义和新创建区段定义的所有后续更新都将受这些更改的影响。 请阅读 [时间常量更新](./segment-refactoring.md) 了解更多信息。
 
 为属性选择值时，您将看到属性可以成为的枚举值列表。
 
@@ -144,7 +143,7 @@ ht-degree: 6%
 
 ### 添加受众
 
-您可以从以下位置拖放受众 **[!UICONTROL Audience]** 选项卡转到规则生成器画布，以引用新区段定义中的受众成员资格。 这允许您在新区段规则中包含或排除作为属性的受众成员资格。
+您可以从以下位置拖放受众 **[!UICONTROL Audience]** 选项卡转到规则生成器画布，以引用新区段定义中的受众成员资格。 这允许您在新的区段定义规则中包括或排除作为属性的受众成员资格。
 
 对象 [!DNL Platform] 使用创建的受众 [!DNL Segment Builder]，您可以选择将受众转换为该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本而不会影响原始区段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义所做的任何最近更改。
 
@@ -158,11 +157,11 @@ ht-degree: 6%
 
 ### 代码视图
 
-或者，您也可以查看在中创建的规则的基于代码的版本 [!DNL Segment Builder]. 在规则生成器画布中创建规则后，您可以选择 **[!UICONTROL 代码视图]** 以将您的区段视为PQL。
+或者，您也可以查看在中创建的规则的基于代码的版本 [!DNL Segment Builder]. 在规则生成器画布中创建规则后，您可以选择 **[!UICONTROL 代码视图]** 将区段定义视为PQL。
 
-![代码视图按钮高亮显示，这使您可以看到段为PQL。](../images/ui/segment-builder/code-view.png)
+![代码视图按钮高亮显示，这使您可以看到段定义为PQL。](../images/ui/segment-builder/code-view.png)
 
-代码视图提供了一个按钮，允许您复制要用于API调用的区段的值。 要获取区段的最新版本，请确保已保存对区段进行的最新更改。
+代码视图提供了一个按钮，通过该按钮可复制要用于API调用的区段定义的值。 要获取最新版本的区段定义，请确保已保存对区段定义进行的最新更改。
 
 ![复制代码按钮高亮显示，通过该按钮可 ](../images/ui/segment-builder/copy-code.png)
 
@@ -178,7 +177,7 @@ ht-degree: 6%
 
 ![聚合文本会突出显示。 选择此项可让您选择聚合函数。](../images/ui/segment-builder/add-aggregation.png)
 
-聚合现已添加。 您现在可以选择聚合函数、选择要聚合的属性、相等函数以及值。 对于下面的示例，此区段将限定购买值之和大于$100的任何用户档案，即使每次购买少于$100也是如此。
+聚合现已添加。 您现在可以选择聚合函数、选择要聚合的属性、相等函数以及值。 对于下面的示例，此区段定义将限定购买值之和大于$100的任何用户档案，即使每次购买少于$100也是如此。
 
 ![事件规则，用于显示聚合函数。](../images/ui/segment-builder/filled-aggregation.png)
 
@@ -222,6 +221,11 @@ ht-degree: 6%
 
 ## 合并策略
 
+>[!CONTEXTUALHELP]
+>id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
+>title="合并策略"
+>abstract="合并策略允许合并不同的数据集以形成您的配置文件。 平台提供了默认合并策略，或者您可以在配置文件中新建一个默认合并策略。 为此受众选择与您的营销目的相匹配的合并策略。"
+
 [!DNL Experience Platform] 使您能够将来自多个来源的数据汇集在一起，并将这些数据组合在一起，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是指 [!DNL Platform] 使用确定数据的优先顺序以及将合并哪些数据以创建配置文件。
 
 您可以为此受众选择符合您的营销目的的合并策略，也可以使用提供的默认合并策略 [!DNL Platform]. 您可以创建组织特有的多个合并策略，包括创建自己的默认合并策略。 有关为组织创建合并策略的分步说明，请首先阅读 [合并策略概述](../../profile/merge-policies/overview.md).
@@ -230,40 +234,40 @@ ht-degree: 6%
 
 ![合并策略选择器会突出显示。 这样，您就可以选择要为区段定义选择的合并策略。](../images/ui/segment-builder/merge-policy-selector.png)
 
-## 区段属性 {#segment-properties}
+## 区段定义属性 {#segment-properties}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
->title="区段属性"
->abstract="区段属性部分显示生成的区段的大小估计值，并显示合格配置文件的数量与配置文件总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
+>title="区段定义属性"
+>abstract="区段定义属性部分显示生成的区段定义大小的估计值，其中显示符合条件的配置文件数与配置文件总数的对比。 这允许您在构建受众本身之前根据需要调整区段定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
->abstract="您可以刷新区段的估计值，以立即预览符合建议区段的资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
+>abstract="您可以刷新区段定义的估计值，以立即预览有多少配置文件符合建议的区段定义。 受众估计值是通过使用当天的示例数据的示例大小生成的。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
 
-构建区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分显示结果区段大小的估计值，允许您在构建受众本身之前根据需要调整区段定义。
+构建区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分显示生成的区段定义大小的估计值，允许您在构建受众本身之前根据需要调整区段定义。
 
-此 **[!UICONTROL 区段属性]** 此外，还可以在部分中指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在您的组织定义的区段中标识您的区段，因此应具有描述性、简洁且唯一。
+此 **[!UICONTROL 区段属性]** 此外，还可以在部分中指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在组织定义的区段定义中标识您的区段定义，因此应具有描述性、简洁且唯一。
 
 在继续构建区段定义时，您可以通过选择 **[!UICONTROL 查看配置文件]**.
 
-![区段定义属性部分会突出显示。 区段属性包括但不限于区段名称、描述和评估方法。](../images/ui/segment-builder/segment-properties.png)
+![区段定义属性部分会突出显示。 区段定义属性包括但不限于区段定义名称、描述和评估方法。](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
->受众估计值是通过使用当天的示例数据的示例大小生成的。如果您的配置文件存储中的实体少于100万个，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2,000万个以上的实体，使用总实体的5%。 有关产生分类估计之更多资料可参阅 [估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 区段创建教程的内容。
+>受众估计值是通过使用当天的示例数据的示例大小生成的。如果您的配置文件存储中的实体少于100万个，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2,000万个以上的实体，使用总实体的5%。 有关为区段定义生成估算的更多信息，请参阅 [估算生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 区段定义创建教程的内容。
 
-您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段符合哪些评估类型，可以选择浏览图标 ![带放大镜的文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png) 查看可用区段评估方法的列表。
+您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义适用于什么评估类型，可以选择浏览图标 ![带放大镜的文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png) 查看可用区段定义评估方法的列表。
 
 此 [!UICONTROL 评估方法合格性] 弹出窗口即会出现。 此弹出窗口显示可用的评估方法，即批处理、流和边缘。 弹出窗口显示符合条件和不符合条件的评估方法。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 如需了解每种评估方法的要求详情，请阅读 [流分段](./streaming-segmentation.md#query-types) 或 [边缘分割](./edge-segmentation.md#query-types) 概述。
 
-![此时会出现评估方法资格弹出窗口。 这会显示哪些区段评估方法适用于或不适用于该区段。](../images/ui/segment-builder/select-evaluation-method.png)
+![此时会出现评估方法资格弹出窗口。 这会显示哪些评估方法适用于段定义，哪些方法不适用于段定义。](../images/ui/segment-builder/select-evaluation-method.png)
 
 如果选择无效的评估方法，系统将提示您更改区段定义规则或更改评估方法。
 
-![此时会弹出评估方法。 如果选择了不合格区段评估方法，则弹出窗口将说明它不合格的原因。](../images/ui/segment-builder/ineligible-evaluation-method.png)
+![此时会弹出评估方法。 如果选择了不合格评估方法，则弹出窗口将说明它不合格的原因。](../images/ui/segment-builder/ineligible-evaluation-method.png)
 
 有关不同区段定义评估方法的更多信息，请参阅 [分段概述](../home.md#evaluate-segments).
 

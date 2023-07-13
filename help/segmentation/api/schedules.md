@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；计划；计划；API；API；
 solution: Experience Platform
 title: 计划API端点
 description: 计划是一种可用于每天自动运行一次批处理分段作业的工具。
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '2009'
+source-wordcount: '1996'
 ht-degree: 3%
 
 ---

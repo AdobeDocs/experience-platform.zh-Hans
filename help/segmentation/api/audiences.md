@@ -1,22 +1,15 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；受众；受众；API；API；
 title: 受众API端点
-description: Adobe Experience Platform Segmentation Service API中的受众端点允许您以编程方式管理组织的受众。
+description: 使用Adobe Experience Platform Segmentation Service API中的受众端点以编程方式创建、管理和更新贵组织的受众。
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-hide: true
-hidefromtoc: true
-source-git-commit: f75c2c7ff07974cd0f2a5a8cc3e990c7f3eaa0a3
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1515'
-ht-degree: 4%
+source-wordcount: '2124'
+ht-degree: 3%
 
 ---
 
 # 受众端点
-
->[!IMPORTANT]
->
->受众端点当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
 
 受众是指具有相似行为和/或特征的人群。 这些人员集合可以使用Adobe Experience Platform或从外部源生成。 您可以使用 `/audiences` 分段API中的端点，允许您以编程方式检索、创建、更新和删除受众。
 
@@ -47,35 +40,28 @@ GET /audiences?{QUERY_PARAMETERS}
 | `property` | 允许您指定受众的过滤器 **完全匹配** 匹配属性的值。 这以格式编写 `property=` | `property=audienceId==test-audience-id` |
 | `name` | 允许您指定其名称的受众的过滤器 **contain** 提供的值。 此值不区分大小写。 | `name=Sample` |
 | `description` | 允许您指定其描述的受众的过滤器 **contain** 提供的值。 此值不区分大小写。 | `description=Test Description` |
-| `withMetrics` | 一个过滤器，用于返回除受众之外的量度。 | `property=withMetrics==true` |
-
->[!IMPORTANT]
->
->对于受众，量度返回到 `metrics` 属性，并包含有关用户档案计数、创建和更新时间戳的信息。
-
-**无量度**
-
-在以下情况下，会使用以下请求/响应对： `withMetrics` 查询参数不存在。
 
 **请求**
 
-以下请求将检索在组织中创建的最近五个受众。
+以下请求将检索在您的组织中创建的最后两个受众。
+
++++检索受众列表的示例请求。
 
 ```shell
-curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
- -H 'Authorization:  Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id:  {IMS_ORG}' \
- -H 'x-api-key:  {API_KEY}' \
- -H 'x-sandbox-name:  {SANDBOX_NAME}'
+curl -X GET https: //platform.adobe.io/data/core/ups/audiences?limit=2 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**响应** {#no-metrics}
++++
+
+**响应**
 
 成功响应会返回HTTP状态200，其中包含您的组织中创建为JSON的受众列表。
 
->[!NOTE]
->
->以下响应已截断空格，并仅显示返回的第一个受众。
++++一个示例响应，其中包含属于您组织的最近两个创建的受众
 
 ```json
 {
@@ -133,15 +119,56 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
             ],
             "dependencies": [],
             "type": "SegmentDefinition",
+            "originName": "REAL_TIME_CUSTOMER_PROFILE",
             "overridePerformanceWarnings": false,
             "createdBy": "{CREATED_BY_ID}",
-            "lifecycle": "published",
+            "lifecycleState": "published",
             "labels": [
                 "core/C1"
             ],
             "namespace": "AEPSegments"
+        },
+        {
+            "id": "32a83b5d-a118-4bd6-b3cb-3aee2f4c30a1",
+            "audienceId": "test-external-audience-id",
+            "name": "externalSegment1",
+            "namespace": "aam",
+            "imsOrgId": "{ORG_ID}",
+            "sandbox":{
+                "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+                "sandboxName": "prod",
+                "type": "production",
+                "default": true
+            },
+            "isSystem": false,
+            "description": "Last 30 days",
+            "type": "ExternalSegment",
+            "originName": "CUSTOM_UPLOAD",
+            "lifecycleState": "published",
+            "createdBy": "{CREATED_BY_ID}",
+            "datasetId": "6254cf3c97f8e31b639fb14d",
+            "labels":[
+                "core/C1"
+            ],
+            "linkedAudienceRef": {
+                "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+            },
+            "creationTime": 1642745034000000,
+            "updateEpoch": 1649926314,
+            "updateTime": 1649926314000,
+            "createEpoch": 1642745034
         }
-    ]
+    ],
+    "_page":{
+      "totalCount": 111,
+      "pageSize": 2,
+      "next": "1"
+   },
+   "_links":{
+      "next":{
+         "href":"@/audiences?start=1&limit=2&totalCount=111"
+      }
+   }
 }
 ```
 
@@ -156,145 +183,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
 | `description` | 两者 | 受众的描述。 |
 | `expression` | 平台生成 | 受众的个人资料查询语言(PQL)表达式。 有关PQL表达式的更多信息，请参阅 [PQL表达式指南](../pql/overview.md). |
 | `mergePolicyId` | 平台生成 | 与受众关联的合并策略的ID。 有关合并策略的更多信息，请参阅 [合并策略指南](../../profile/api/merge-policies.md). |
-| `evaluationInfo` | 平台生成 | 显示评估受众的方式。 可能的评估方法包括批处理、流式或边缘。 有关评估方法的更多信息，请参阅 [分段概述](../home.md) |
+| `evaluationInfo` | 平台生成 | 显示评估受众的方式。 可能的评估方法包括批处理、同步（流）或连续（边缘）。 有关评估方法的更多信息，请参阅 [分段概述](../home.md) |
 | `dependents` | 两者 | 依赖于当前受众的受众ID数组。 如果您创建的受众是区段的区段，则会使用此字段。 |
 | `dependencies` | 两者 | 受众所依赖的受众ID数组。 如果您创建的受众是区段的区段，则会使用此字段。 |
-| `type` | 两者 | 系统生成的字段，显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalAudience`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalAudience` 指不是在Platform中生成的受众。 |
+| `type` | 两者 | 系统生成的字段，显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 指不是在Platform中生成的受众。 |
+| `originName` | 两者 | 引用受众来源名称的字段。 对于平台生成的受众，此值将为 `REAL_TIME_CUSTOMER_PROFILE`. 对于在Audience Orchestration中生成的受众，此值将为 `AUDIENCE_ORCHESTRATION`. 对于在Adobe Audience Manager中生成的受众，此值将为 `AUDIENCE_MANAGER`. 对于其他外部生成的受众，此值将为 `CUSTOM_UPLOAD`. |
 | `createdBy` | 两者 | 创建受众的用户的ID。 |
 | `labels` | 两者 | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
 | `namespace` | 两者 | 受众所属的命名空间。 可能的值包括 `AAM`， `AAMSegments`， `AAMTraits`、和 `AEPSegments`. |
-| `audienceMeta` | 外部 | 从外部创建的受众外部创建的元数据。 |
+| `linkedAudienceRef` | 两者 | 包含其他受众相关系统标识符的对象。 |
 
-**使用量度**
-
-在以下情况下，会使用以下请求/响应对： `withMetrics` 查询参数存在。
-
-**请求**
-
-以下请求会检索您的组织中创建的带量度的最近五个受众。
-
-```shell
-curl -X GET https://platform.adobe.io/data/core/ups/audiences?propoerty=withMetrics==true&limit=5&sort=totalProfiles:desc \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**响应**
-
-成功响应会返回HTTP状态200，其中包含以JSON格式表示的指定组织的受众列表和量度。
-
->[!NOTE]
->
->以下响应已截断空格，并仅显示返回的第一个受众。
-
-```json
-{
-    "children": [
-        {
-            "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
-            "audienceId": "60ccea95-1435-4180-97a5-58af4aa285ab",
-            "schema": {
-                "name": "_xdm.context.profile"
-            },
-            "ttlInDays": 60,
-            "profileInstanceId": "ups",
-            "imsOrgId": "{ORG_ID}",
-            "sandbox": {
-                "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-                "sandboxName": "prod",
-                "type": "production",
-                "default": true
-            },
-            "isSystem": false,
-            "name": "People who ordered in the last 30 days",
-            "description": "Last 30 days",
-            "expression": {
-                "type": "PQL",
-                "format": "pql/text",
-                "value": "workAddress.country = \"US\""
-            },
-            "mergePolicyId": "ef006bbe-750e-4e81-85f0-0c6902192dcc",
-            "evaluationInfo": {
-                "batch": {
-                    "enabled": false
-                },
-                "continuous": {
-                    "enabled": true
-                },
-                "synchronous": {
-                    "enabled": false
-                }
-            },
-            "dataGovernancePolicy": {
-                "excludeOptOut": true
-            },
-            "creationTime": 1650374572000,
-            "updateEpoch": 1650374573,
-            "updateTime": 1650374573000,
-            "createEpoch": 1650374572,
-            "_etag": "\"33120d7c-0000-0200-0000-625eb7ad0000\"",
-            "dependents": [],
-            "definedOn": [
-                {
-                    "meta: resourceType": "unions",
-                    "meta: containerId": "tenant",
-                    "$ref": "https: //ns.adobe.com/xdm/context/profile__union"
-                }
-            ],
-            "dependencies": [],
-            "metrics": {
-                "type": "export",
-                "jobId": "test-job-id",
-                "id": "32a83b5d-a118-4bd6-b3cb-3aee2f4c30a1",
-                "data": {
-                    "totalProfiles": 11200769,
-                    "totalProfilesByNamespace": {
-                        "crmid": 11400769
-                    },
-                    "totalProfilesByStatus": {
-                        "realized": 11400769
-                    }
-                },
-                "createEpoch": 1653583927,
-                "updateEpoch": 1653583927
-            },
-            "type": "SegmentDefinition",
-            "overridePerformanceWarnings": false,
-            "createdBy": "{CREATED_BY_ID}",
-            "lifecycle": "published",
-            "labels": [
-                "core/C1"
-            ],
-            "namespace": "AEPSegments"
-        }
-   ],
-   "_page": {
-      "totalCount": 111,
-      "pageSize": 5,
-      "next": "1"
-   },
-   "_links": {
-      "next": {
-         "href": "@/audiences?start=1&limit=5&totalCount=111"
-      }
-   }
-}
-```
-
-下面列出了属性 **独占** 到 `withMetrics` 响应。 如果您想了解标准受众属性，请阅读 [上一节](#no-metrics).
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `metrics.imsOrgId` | 对象的组织ID。 |
-| `metrics.sandbox` | 与受众相关的沙盒信息。 |
-| `metrics.jobId` | 正在处理受众的区段作业的ID。 |
-| `metrics.type` | 区段作业类型。 这可以是 `export` 或 `batch_segmentation`. |
-| `metrics.id` | 受众的ID。 |
-| `metrics.data` | 与受众相关的量度。 这包括受众中包含的配置文件总数、基于每个命名空间的配置文件总数以及基于每个状态的配置文件总数等信息。 |
-| `metrics.createEpoch` | 显示受众创建时间的时间戳。 |
-| `metrics.updateEpoch` | 显示受众上次更新时间的时间戳。 |
++++
 
 ## 创建新受众 {#create}
 
@@ -307,6 +206,12 @@ POST /audiences
 ```
 
 **请求**
+
+>[!BEGINTABS]
+
+>[!TAB 平台生成的受众]
+
++++ 用于创建平台生成的受众的示例请求
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/audiences
@@ -330,7 +235,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
         },
         "labels": [
           "core/C1"
-        ]
+        ],
+        "ttlInDays": 60
     }'
 ```
 
@@ -338,12 +244,70 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | -------- | ----------- | 
 | `name` | 受众的名称。 |
 | `description` | 受众的描述。 |
-| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalAudience`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalAudience` 指不是在Platform中生成的受众。 |
+| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 指不是在Platform中生成的受众。 |
 | `expression` | 受众的个人资料查询语言(PQL)表达式。 有关PQL表达式的更多信息，请参阅 [PQL表达式指南](../pql/overview.md). |
 | `schema` | 受众的Experience Data Model (XDM)架构。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
+| `ttlInDays` | 表示受众的数据过期值（以天为单位）。 |
+
++++
+
+>[!TAB 外部生成的受众]
+
++++ 用于创建外部生成受众的示例请求
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+ -d '{
+        "audienceId":"test-external-audience-id",
+        "name":"externalAudience",
+        "namespace":"aam",
+        "description":"Last 30 days",
+        "type":"ExternalSegment",
+        "originName":"CUSTOM_UPLOAD",
+        "lifecycleState":"published",
+        "datasetId":"6254cf3c97f8e31b639fb14d",
+        "labels":[
+            "core/C1"
+        ],
+        "linkedAudienceRef":{
+            "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+        }
+    }'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- | 
+| `audienceId` | 用户为受众提供的ID。 |
+| `name` | 受众的名称。 |
+| `namespace` | 受众的命名空间。 |
+| `description` | 受众的描述。 |
+| `type` | 一个字段，用于显示受众是平台生成的受众还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 指不是在Platform中生成的受众。 |
+| `originName` | 受众来源的名称。 对于外部生成的受众，其默认值为 `CUSTOM_UPLOAD`. 其他支持的值包括 `REAL_TIME_CUSTOMER_PROFILE`， `CUSTOM_UPLOAD`， `AUDIENCE_ORCHESTRATION`、和 `AUDIENCE_MATCH`. |
+| `lifecycleState` | 一个可选字段，可确定您尝试创建的受众的初始状态。 支持的值包括 `draft`， `published`、和 `inactive`. |
+| `datasetId` | 可在其中找到包含受众的数据的数据集的ID。 |
+| `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
+| `audienceMeta` | 属于外部生成的受众的元数据。 |
+| `linkedAudienceRef` | 包含其他受众相关系统标识符的对象。 这可能包括以下内容： <ul><li>`flowId`：此ID用于将受众连接到用于引入受众数据的数据流。 有关所需ID的更多信息，请参阅 [创建数据流指南](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`：此ID用于将受众连接到相关的Audience Orchestration合成。&lt;/li/> <li>`payloadFieldGroupRef`：此ID用于引用描述受众结构的XDM字段组架构。 有关此字段值的更多信息，请参阅 [XDM字段组端点指南](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`：此ID用于引用Adobe Audience Manager中受众的文件夹ID。 有关此API的更多信息，请参阅 [Adobe Audience Manager API指南](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
+
++++
+
+>[!ENDTABS]
 
 **响应**
+
+成功的响应会返回HTTP状态200，其中包含有关新创建的受众的信息。
+
+>[!BEGINTABS]
+
+>[!TAB 平台生成的受众]
+
++++创建平台生成的受众时的示例响应。
 
 ```json
 {
@@ -399,15 +363,58 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
     ],
     "dependencies": [],
     "type": "SegmentDefinition",
+    "originName": "REAL_TIME_CUSTOMER_PROFILE",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
       "core/C1"
     ],
     "namespace": "AEPSegments"
 }
 ```
+
++++
+
+>[!TAB 外部生成的受众]
+
++++创建外部生成的受众时的示例响应。
+
+```json
+{
+   "id": "322f9f62-cd27-11ec-9d64-0242ac120002",
+   "audienceId": "test-external-audience-id",
+   "name": "externalAudience",
+   "namespace": "aam",
+   "imsOrgId": "{ORG_ID}",
+   "sandbox":{
+      "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+      "sandboxName": "prod",
+      "type": "production",
+      "default": true
+   },
+   "isSystem": false,
+   "description": "Last 30 days",
+   "type": "ExternalSegment",
+   "originName": "CUSTOM_UPLOAD",
+   "lifecycleState": "published",
+   "createdBy": "{CREATED_BY_ID}",
+   "datasetId": "6254cf3c97f8e31b639fb14d",
+   "labels": [
+      "core/C1"
+   ],
+   "linkedAudienceRef": {
+      "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+   },
+   "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
+   "creationTime": 1650251290000,
+   "updateEpoch": 1650251290,
+   "updateTime": 1650251290000,
+   "createEpoch": 1650251290
+}
+```
+
++++
 
 ## 查找指定的受众 {#get}
 
@@ -417,15 +424,15 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 
 ```http
 GET /audiences/{AUDIENCE_ID}
-GET /audiences/{AUDIENCE_ID}?property=withmetrics==true
 ```
 
 | 参数 | 描述 |
 | --------- | ----------- | 
-| `{AUDIENCE_ID}` | 您尝试检索的受众ID。 |
-| `property=withmetrics==true` | 一个可选查询参数，如果要使用受众量度检索指定受众，则可以使用该参数。 |
+| `{AUDIENCE_ID}` | 您尝试检索的受众ID。 请注意，这是 `id` 字段，并且是 **非** 此 `audienceId` 字段。 |
 
 **请求**
+
++++用于检索受众的示例请求
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab \
@@ -435,11 +442,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态200，其中包含有关指定受众的信息。 根据受众是使用Adobe Experience Platform还是外部源生成的，响应会有所不同。
 
-**平台生成**
+>[!BEGINTABS]
+
+>[!TAB 平台生成的受众]
+
++++检索平台生成的受众时的示例响应。
 
 ```json
 {
@@ -497,7 +510,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
     "type": "SegmentDefinition",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
         "core/C1"
     ],
@@ -505,13 +518,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
 }
 ```
 
-**外部生成**
++++
+
+>[!TAB 外部生成的受众]
+
++++检索外部生成的受众时的示例响应。
 
 ```json
 {
-    "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
+    "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
     "audienceId": "test-external-audience-id",
-    "name": "externalSegment1",
+    "name": "externalAudience",
     "namespace": "aam",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -520,10 +537,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
         "type": "production",
         "default": true
     },
-    "isSystem":false,
+    "isSystem": false,
     "description": "Last 30 days",
     "type": "ExternalSegment",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "labels": [
@@ -537,6 +554,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
 }
 ```
 
++++
+
+>[!ENDTABS]
+
 ## 更新受众中的字段 {#update-field}
 
 您可以通过向以下对象发出PATCH请求来更新特定受众的字段： `/audiences` 端点并在请求路径中提供要更新的受众的ID。
@@ -549,9 +570,11 @@ PATCH /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | 要更新的受众的ID。 |
+| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是 `id` 字段，并且是 **非** 此 `audienceId` 字段。 |
 
 **请求**
+
++++更新受众中字段的示例请求。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -580,9 +603,13 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
 | `path` | 要更新的字段的路径。 |
 | `value` | 您希望更新字段的值。 |
 
++++
+
 **响应**
 
 成功响应会返回HTTP状态200，其中包含有关新更新的受众的信息。
+
++++更新受众中的字段时的示例响应。
 
 ```json
 {
@@ -639,13 +666,15 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
     "type": "SegmentDefinition",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
       "core/C1"
     ],
     "namespace": "AEPSegments"
 }
 ```
+
++++
 
 ## 更新受众 {#put}
 
@@ -657,7 +686,13 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
 PUT /audiences/{AUDIENCE_ID}
 ```
 
+| 参数 | 描述 |
+| --------- | ----------- |
+| `{AUDIENCE_ID}` | 要更新的受众的ID。 请注意，这是 `id` 字段，并且是 **非** 此 `audienceId` 字段。 |
+
 **请求**
+
++++更新整个受众的示例请求。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -667,14 +702,14 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
-    "audienceId":"test-external-audience-id",
-    "name":"new externalSegment",
-    "namespace":"aam",
-    "description":"Last 30 days",
-    "type":"ExternalSegment",
-    "lifecycle":"published",
-    "datasetId":"6254cf3c97f8e31b639fb14d",
-    "labels":[
+    "audienceId": "test-external-audience-id",
+    "name": "New external audience",
+    "namespace": "aam",
+    "description": "Last 30 days",
+    "type": "ExternalSegment",
+    "lifecycleState": "published",
+    "datasetId": "6254cf3c97f8e31b639fb14d",
+    "labels": [
         "core/C1"
     ]
 }' 
@@ -682,24 +717,28 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `audienceId` | 受众的ID。 外部受众使用此参数 |
+| `audienceId` | 受众的ID。 对于外部生成的受众，此值可以由用户提供。 |
 | `name` | 受众的名称。 |
-| `namespace` | |
+| `namespace` | 受众的命名空间。 |
 | `description` | 受众的描述。 |
-| `type` | 系统生成的字段，显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalAudience`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalAudience` 指不是在Platform中生成的受众。 |
-| `lifecycle` | 受众的状态。 可能的值包括 `draft`， `published`， `inactive`、和 `archived`. `draft` 表示创建受众的时间， `published` 发布受众时， `inactive` 受众不再处于活动状态时，以及 `archived` 是否删除受众。 |
+| `type` | 系统生成的字段，显示受众是平台生成的还是外部生成的受众。 可能的值包括 `SegmentDefinition` 和 `ExternalSegment`. A `SegmentDefinition` 指在Platform中生成的受众，而 `ExternalSegment` 指不是在Platform中生成的受众。 |
+| `lifecycleState` | 受众的状态。 可能的值包括 `draft`， `published`、和 `inactive`. `draft` 表示创建受众的时间， `published` 发布受众的时间，以及 `inactive` 当受众不再处于活动状态时。 |
 | `datasetId` | 可找到受众数据的数据集的ID。 |
 | `labels` | 与受众相关的对象级别数据使用和基于属性的访问控制标签。 |
+
++++
 
 **响应**
 
 成功响应会返回HTTP状态200以及新更新受众的详细信息。 请注意，您的受众详细信息将有所不同，具体取决于它是平台生成的受众还是外部生成的受众。
 
++++更新整个受众时的示例响应。
+
 ```json
 {
     "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
     "audienceId": "test-external-audience-id",
-    "name": "new externalSegment",
+    "name": "New external audience",
     "namespace": "aam",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -710,7 +749,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
     },
     "description": "Last 30 days",
     "type": "ExternalSegment",
-    "lifecycle": "published",
+    "lifecycleState": "published",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
@@ -720,6 +759,8 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
     "createEpoch": 1650251290
 }
 ```
+
++++
 
 ## 删除受众 {#delete}
 
@@ -733,18 +774,305 @@ DELETE /audiences/{AUDIENCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | 要删除的受众ID。 |
+| `{AUDIENCE_ID}` | 要删除的受众ID。 请注意，这是 `id` 字段，并且是 **非** 此 `audienceId` 字段。 |
 
 **请求**
+
++++ 删除受众的示例请求。
 
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab5 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **响应**
 
 成功的响应返回HTTP状态204，但不返回消息。
+
+## 检索多个受众 {#bulk-get}
+
+您可以通过向以下网站发出POST请求来检索多个受众： `/audiences/bulk-get` 端点并提供要检索的受众的ID。
+
+**API格式**
+
+```http
+POST /audiences/bulk-get
+```
+
+**请求**
+
++++ 用于检索多个受众的示例请求。
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-get
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d ' {
+    "ids": [
+        {
+            "id": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd"
+        },
+        {
+            "id": "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075"
+        }
+    ]
+ }
+```
+
++++
+
+**响应**
+
+成功的响应会返回HTTP状态207，其中包含您请求的受众的信息。
+
++++ 检索多个受众时的示例响应。
+
+```json
+{
+   "results":{
+      "72c393ea-caed-441a-9eb6-5f66bb1bd6cd":{
+         "id": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd",
+         "audienceId": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd",
+         "schema": {
+            "name": "_xdm.context.profile"
+         },
+         "ttlInDays": 30,
+         "imsOrgId": "{ORG_ID}",
+         "sandbox": {
+            "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "sandboxName": "prod",
+            "type": "production",
+            "default": true
+         },
+         "name": "Sample audience",
+         "expression": {
+            "type": "pql",
+            "format": "pql/text",
+            "value": "_id = \"abc\""         
+        },
+         "mergePolicyId": "87c94d51-239c-4391-932c-29c2412100e5",
+         "evaluationInfo": {
+            "batch": {
+               "enabled": false
+            },
+            "continuous": {
+               "enabled": true
+            },
+            "synchronous": {
+               "enabled": false
+            }
+         },
+         "ansibleUiEnabled": false,
+         "dataGovernancePolicy": {
+            "excludeOptOut": true
+         },
+         "creationTime": 1623889553000000,
+         "updateEpoch": 1674646369,
+         "updateTime": 1674646369000,
+         "createEpoch": 1623889552,
+         "_etag": "\"61030ec7-0000-0200-0000-63d113610000\"",
+         "dependents": [],
+         "definedOn": [
+            {
+               "meta:resourceType": "unions",
+               "meta:containerId": "tenant",
+               "$ref": "https://ns.adobe.com/xdm/context/profile__union"
+            }
+         ],
+         "dependencies": [],
+         "type": "SegmentDefinition",
+         "state": "enabled",
+         "overridePerformanceWarnings": false,
+         "lastModifiedBy": "{CREATED_ID}",
+         "lifecycleState": "published",
+         "namespace": "AEPSegments",
+         "isSystem": false,
+         "saveSegmentMembership": true,
+         "originName": "REAL_TIME_CUSTOMER_PROFILE"
+      },
+      "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075":{
+         "id": "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+         "name": "label test24764489707692",
+         "namespace": "AO",
+         "imsOrgId": "{ORG_ID}",
+         "sandbox":{
+            "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "sandboxName": "prod",
+            "type": "production",
+            "default": true
+         },
+         "type": "ExternalSegment",
+         "lifecycleState": "published",
+         "sourceId": "source-id",
+         "createdBy": "{USER_ID}",
+         "datasetId": "62bf31a105e9891b63525c92",
+         "_etag": "\"3100da6d-0000-0200-0000-62bf31a10000\"",
+         "creationTime": 1656697249000,
+         "updateEpoch": 1656697249,
+         "updateTime": 1656697249000,
+         "createEpoch": 1656697249,
+         "audienceId": "test-audience-id",
+         "isSystem": false,
+         "saveSegmentMembership": true,
+         "linkedAudienceRef": {
+            "aoWorkflowId": "62bf31858e87e34c8364befa"
+         },
+         "originName": "AUDIENCE_ORCHESTRATION"
+      }
+   }
+}
+```
+
++++
+
+## 更新多个受众 {#bulk-patch}
+
+您可以通过向以下网站发出POST请求，更新多个受众的配置文件和记录计数： `/audiences/bulk-patch-metric` 端点并提供要更新的受众的ID。
+
+**API格式**
+
+```http
+POST /audiences/bulk-patch-metric
+```
+
+**请求**
+
++++ 更新多个受众的示例请求。
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-patch-metric
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d ' {
+    "jobId": "12345",
+    "jobType": "AO",
+    "resources": [
+        {
+            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "namespace": "AAMTraits",
+            "operations": [
+                {
+                    "op": "add",
+                    "path": "/metrics/data",
+                    "value": {
+                        "totalProfiles": 11037
+                    }
+                },
+            ]
+        },
+        {
+            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "namespace": "AAMTraits",
+            "operations": [
+                {
+                    "op": "add",
+                    "path": "/metrics/data",
+                    "value": {
+                        "totalProfiles": 523
+                    }
+                }
+            ]
+        }
+    ]
+    }
+```
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jobId</code></td>
+<td>将运行更新的作业的ID。</td>
+</tr>
+<tr>
+<td><code>jobType</code></td>
+<td>将运行更新的作业类型。 此值可以是 <code>export</code> 或 <code>AO</code>.</td>
+</tr>
+<tr>
+<td><code>audienceId</code></td>
+<td>要更新的受众的ID。 请注意，这是 <code>audienceId</code> 值，以及 <strong>非</strong> 此 <code>id</code> 受众的价值。</td>
+</tr>
+<tr>
+<td><code>namespace</code></td>
+<td>要更新的受众的命名空间。</td>
+</tr>
+<tr>
+<td><code>operations</code></td>
+<td>包含用于更新受众的信息的对象。</td>
+</tr>
+<tr>
+<td><code>operations.op</code></td>
+<td>用于修补程序的操作。 更新多个受众时，此值为 <strong>始终</strong> <code>add</code>.</td>
+</tr>
+<tr>
+<td><code>operations.path</code></td>
+<td>要更新的字段的路径。 目前，仅支持两个路径： <code>/metrics/data</code> 当您更新 <strong>个人资料</strong> 计数和 <code>/recordMetrics/data</code> 当您更新 <strong>记录</strong> 计数。</td>
+</tr>
+<tr>
+<td><code>operations.value</code></td>
+<td>
+要更新的字段的值。 当您更新用户档案计数时，该值将如下所示： 
+<pre>
+{ "totalProfiles"： 123456 }
+</pre>
+当您更新记录计数时，该值将如下所示： 
+<pre>
+{ "recordCount"： 123456 }
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+
++++
+
+**响应**
+
+成功响应会返回HTTP状态207，其中包含有关已更新受众的详细信息。
+
++++ 用于更新多个受众的示例响应。
+
+```json
+{
+   "resources":[
+      {
+         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+
+         "namespace": "AAMTraits",
+         "status":200
+      },
+      {
+         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1vcmlnaW4tdGVzdDE_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+
+         "namespace": "AAMTraits",
+         "status":200
+      }
+   ]
+}
+```
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `status` | 已更新受众的状态。 如果返回的状态为200，则表示受众已成功更新。 如果无法更新受众，则将返回解释受众未更新原因的错误。 |
+
++++
+
+## 后续步骤
+
+在阅读本指南后，您现在可以更好地了解如何使用Adobe Experience Platform API创建、管理和删除受众。 有关使用UI进行受众管理的更多信息，请阅读 [分段UI指南](../ui/overview.md).

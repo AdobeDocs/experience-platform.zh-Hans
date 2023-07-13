@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；区段服务；区段；区段；区段；区段
 solution: Experience Platform
 title: 分段服务概述
 description: 了解Adobe Experience Platform Segmentation Service及其在Platform生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1629'
 ht-degree: 11%
 
 ---
 
 # [!DNL Segmentation Service] 概述
 
-Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界面和RESTful API，可让您生成区段并生成受众。 [!DNL Real-Time Customer Profile] 数据。 这些区段集中配置并维护于 [!DNL Platform]和可供任何Adobe解决方案轻松访问。
+Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界面和RESTful API，允许您通过区段定义或其他来源创建受众。 [!DNL Real-Time Customer Profile] 数据。 这些受众的集中配置和维护日期为 [!DNL Platform]和可供任何Adobe解决方案轻松访问。
 
 本文档提供了以下内容的概述 [!DNL Segmentation Service] 以及它在Adobe Experience Platform中扮演的角色。
 
 ## 快速入门 [!DNL Segmentation Service]
 
-请务必了解本文档中使用的以下关键术语：
+您应了解本文档中使用的以下关键术语：
 
 - **分段**：将大量个人（例如客户、潜在客户、用户或组织）划分为具有相似特征且对营销策略的响应也相似的较小组。
-- **区段定义**：用于描述目标受众的关键特征或行为的规则集。 在概念化后，区段定义中概述的规则将用于确定区段的合格受众成员。
-- **Audience**：符合区段定义标准的生成配置文件集。
+- **Audience**：一组具有相似行为和/或特征的人。 此人员集合可以由Adobe Experience Platform使用区段定义（平台生成的受众）生成，也可以由外部源（外部生成的受众）生成。
+- **区段定义**：Adobe Experience Platform用于描述目标受众关键特征或行为的规则集。
 
 ## 分段的工作方式
 

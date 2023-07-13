@@ -1,17 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；选择退出；分段；分段服务；荣誉选择退出；选择退出；选择退出；同意；共享；收集；
 solution: Experience Platform
 title: 在区段中接受同意
 description: 了解如何在区段操作中执行个人数据收集和共享的客户同意首选项。
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '675'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
 
 # 在区段中遵循同意
+
+>[!NOTE]
+>
+>本指南介绍如何在中遵循同意 **区段定义**.
 
 法律隐私法规，例如 [!DNL California Consumer Privacy Act] (CCPA)为消费者提供选择退出收集其个人数据或与第三方共享数据的权利。 Adobe Experience Platform提供了标准Experience Data Model (XDM)组件，这些组件旨在捕获实时客户配置文件数据中的这些客户同意首选项。
 
@@ -23,7 +26,7 @@ ht-degree: 0%
 
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md)：Platform用于组织客户体验数据的标准化框架。
 * [[!DNL Real-Time Customer Profile]](../profile/home.md)：根据来自多个来源的汇总数据实时提供统一的客户用户档案。
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md)：允许您从以下位置构建受众区段： [!DNL Real-Time Customer Profile] 数据。
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md)：允许您从构建受众 [!DNL Real-Time Customer Profile] 数据。
 
 ## 同意架构字段
 
@@ -35,7 +38,7 @@ ht-degree: 0%
 
 ## 在分段中处理同意
 
-为了确保选择退出的用户档案不包含在区段中，必须在现有区段中添加特殊字段，并在创建任何新区段时包含这些字段。
+为了确保选择退出的用户档案不包含在区段定义中，必须在现有区段定义中添加特殊字段，并在创建任何新区段定义时包含这些字段。
 
 以下步骤演示了如何为两种类型的选择退出标记添加相应的字段：
 
@@ -44,13 +47,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->虽然本指南重点介绍上述两个选择退出标记，但您也可以配置区段以纳入其他同意信号。 此 [同意和偏好设置参考指南](../xdm/field-groups/profile/consents.md) 提供了有关每个选项及其预期用例的更多信息。
+>虽然本指南重点介绍上述两个选择退出标记，但您也可以配置区段定义以纳入其他同意信号。 此 [同意和偏好设置参考指南](../xdm/field-groups/profile/consents.md) 提供了有关每个选项及其预期用例的更多信息。
 
-在UI中构建区段时，在 **[!UICONTROL 属性]**，导航到 **[!UICONTROL XDM个人资料]**，然后选择 **[!UICONTROL 同意和偏好设置]**. 从这里，您可以看到以下各项的选项 **[!UICONTROL 数据收集]** 和 **[!UICONTROL 共享数据]**.
+在UI中构建区段定义时，在 **[!UICONTROL 属性]**，导航到 **[!UICONTROL XDM个人资料]**，然后选择 **[!UICONTROL 同意和偏好设置]**. 从这里，您可以看到以下各项的选项 **[!UICONTROL 数据收集]** 和 **[!UICONTROL 共享数据]**.
 
 ![](./images/opt-outs/consents.png)
 
-首先，选择 **[!UICONTROL 数据收集]** 类别，然后拖动 **[!UICONTROL 选项值]** 放入区段生成器中。 将属性添加到区段时，可以指定 [同意值](../xdm/field-groups/profile/consents.md#choice-values) 必须包含或排除的重复项。
+首先，选择 **[!UICONTROL 数据收集]** 类别，然后拖动 **[!UICONTROL 选项值]** 放入区段生成器中。 将属性添加到区段定义时，可以指定 [同意值](../xdm/field-groups/profile/consents.md#choice-values) 必须包含或排除的重复项。
 
 ![](./images/opt-outs/consent-values.png)
 
@@ -66,11 +69,11 @@ ht-degree: 0%
 
 ![](./images/opt-outs/share.png)
 
-同时使用 **[!UICONTROL 数据收集]** 和 **[!UICONTROL 共享数据]** 添加到区段的同意值，则任何选择退出使用其数据的客户都将从生成的受众中排除。 从这里，您可以在选择之前继续自定义区段定义 **[!UICONTROL 保存]** 完成该过程。
+同时使用 **[!UICONTROL 数据收集]** 和 **[!UICONTROL 共享数据]** 添加到区段定义的同意值，将从生成的受众中排除已选择退出使用其数据的任何客户。 从这里，您可以在选择之前继续自定义区段定义 **[!UICONTROL 保存]** 完成该过程。
 
 ## 后续步骤
 
-通过学习本教程，您现在应该能够更好地了解在Experience Platform中构建区段时如何遵循客户同意和偏好设置。
+通过学习本教程，您现在应该能够更好地了解在Experience Platform中构建区段定义时如何遵循客户同意和偏好设置。
 
 有关在Platform中管理同意的更多信息，请参阅以下文档：
 

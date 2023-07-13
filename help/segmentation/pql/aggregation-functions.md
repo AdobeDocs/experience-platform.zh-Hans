@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；聚合函数；聚合；
 solution: Experience Platform
 title: PQL聚合函数
 description: 聚合函数用于将配置文件查询语言(PQL)数组中的多个值组合在一起，以形成单个摘要值。
 exl-id: 6c0c0f6d-98c5-4b5d-b440-3e5e18c0f34b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '227'
 ht-degree: 6%
 
 ---

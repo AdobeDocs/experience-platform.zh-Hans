@@ -1,19 +1,18 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；区段定义；区段定义；API；API；
 solution: Experience Platform
 title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1209'
 ht-degree: 3%
 
 ---
 
 # 区段定义端点
 
-Adobe Experience Platform允许您根据一组配置文件创建定义一组特定属性或行为的区段。 区段定义是一个对象，它封装了写入的查询 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义区段的规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
+Adobe Experience Platform允许您根据一组配置文件创建区段定义，以定义一组特定属性或行为。 区段定义是一个对象，它封装了写入的查询 [!DNL Profile Query Language] (PQL)。 区段定义应用于用户档案以创建受众。 此对象（区段定义）也称为PQL谓词。 PQL谓词根据与您提供到的任何记录或时间序列数据相关的条件定义区段定义的规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
 
 本指南提供的信息可帮助您更好地了解区段定义，包括用于使用API执行基本操作的示例API调用。
 
@@ -199,15 +198,14 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | **必需。** 用于引用区段的唯一名称。 |
-| `description` | 正在创建的区段定义的描述。 |
-| `evaluationInfo` | 正在创建的区段的类型。 如果要创建批处理客户细分，请设置 `evaluationInfo.batch.enabled` 是真的。 如果要创建流区段，请设置 `evaluationInfo.continuous.enabled` 是真的。 如果要创建边段，请设置 `evaluationInfo.synchronous.enabled` 是真的。 如果留空，区段将创建为 **批次** 区段。 |
-| `schema` | **必需。** 与区段中的实体关联的架构。 由以下任一项组成 `id` 或 `name` 字段。 |
-| `expression` | **必需。** 包含有关区段定义的字段信息的实体。 |
+| `name` | 用于引用区段定义的唯一名称。 |
+| `description` | (可选.) 正在创建的区段定义的描述。 |
+| `evaluationInfo` | (可选.) 正在创建的区段定义的类型。 如果要创建批处理客户细分，请设置 `evaluationInfo.batch.enabled` 是真的。 如果要创建流区段，请设置 `evaluationInfo.continuous.enabled` 是真的。 如果要创建边段，请设置 `evaluationInfo.synchronous.enabled` 是真的。 如果留空，区段定义将创建为 **批次** 区段。 |
+| `schema` | 与区段中的实体关联的架构。 由以下任一项组成 `id` 或 `name` 字段。 |
+| `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
 | `expression.format` | 指示值中表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`：根据发布的PQL语法，区段定义的文本表示形式。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合中指定的类型的表达式 `expression.format`. |
-| `description` | 易于用户识别的定义描述。 |
 
 <!-- >[!NOTE]
 >
@@ -339,7 +337,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 | 属性 | 描述 |
 | -------- | ----------- |
 | `id` | 系统生成的区段定义的只读ID。 |
-| `name` | 用于引用区段的唯一名称。 |
+| `name` | 用于引用区段定义的唯一名称。 |
 | `schema` | 与区段中的实体关联的架构。 由以下任一项组成 `id` 或 `name` 字段。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
@@ -472,7 +470,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 | 属性 | 描述 |
 | -------- | ----------- |
 | `id` | 系统生成的区段定义的只读ID。 |
-| `name` | 用于引用区段的唯一名称。 |
+| `name` | 用于引用区段定义的唯一名称。 |
 | `schema` | 与区段中的实体关联的架构。 由以下任一项组成 `id` 或 `name` 字段。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
@@ -487,7 +485,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 
 >[!NOTE]
 >
-> 您将 **非** 能够删除目标激活中使用的区段。
+> 在目标激活中使用的区段定义 **无法** 将被删除。
 
 **API格式**
 

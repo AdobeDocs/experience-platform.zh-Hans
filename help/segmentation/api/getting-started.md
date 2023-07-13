@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 分段服务API快速入门
 description: 以下文档提供了成功使用分段API所需了解的其他信息。
 exl-id: 41c0e50b-afed-45b8-85d7-a0c84ae090f5
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '355'
 ht-degree: 1%
 
 ---
 
 # 分段服务API快速入门 {#getting-started}
 
-Adobe Experience Platform [!DNL Segmentation Service] 允许您在Adobe Experience Platform中，从以下位置生成区段和受众： [!DNL Real-Time Customer Profile] 数据。
+Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Experience Platform中的区段定义或其他源从以下位置创建受众： [!DNL Real-Time Customer Profile] 数据。
 
 开发人员指南需要实际了解各种 [!DNL Experience Platform] 使用涉及的服务 [!DNL Segmentation Service].
 
-- [[!DNL Segmentation]](../home.md)：允许您从以下位置构建受众区段： [!DNL Real-Time Customer Profile] 数据。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您从构建受众 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被摄取为用户档案和事件，并符合 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。

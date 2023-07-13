@@ -1,45 +1,50 @@
 ---
-keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 导入和使用外部受众
 description: 阅读本教程，了解如何在Adobe Experience Platform中使用外部受众。
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 57586104f1119f5cda926faf286c1663fbb0b240
+hide: true
+hidefromtoc: true
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1664'
+source-wordcount: '1720'
 ht-degree: 0%
 
 ---
 
 # 导入和使用外部受众
 
-Adobe Experience Platform支持导入外部受众的功能，这些受众随后可用作新区段定义的组件。 本文档提供了有关设置Experience Platform以导入和使用外部受众的教程。
+>[!IMPORTANT]
+>
+>此文档包含来自受众文档早期版本的信息，因此已过期。
+
+Adobe Experience Platform支持导入外部受众的功能，该受众随后可用作新受众的组件。 本文档提供了有关设置Experience Platform以导入和使用外部受众的教程。
 
 ## 快速入门
 
-本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
+本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
 
-- [分段服务](../home.md)：用于从实时客户档案数据构建受众区段。
+- [分段服务](../home.md)：用于根据实时客户档案数据构建受众。
 - [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 - [体验数据模型(XDM)](../../xdm/home.md)：Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保您的数据被摄取为用户档案和事件，并符合 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 - [数据集](../../catalog/datasets/overview.md)：用于Experience Platform中数据持久化的存储和管理结构。
 - [流式摄取](../../ingestion/streaming-ingestion/overview.md)：Experience Platform如何实时从客户端和服务器端设备摄取和存储数据。
 
-### 区段数据与区段元数据
+### 受众与区段定义
 
-在开始导入和使用外部受众之前，请务必了解区段数据和区段元数据之间的差异。
+在开始导入和使用外部受众之前，请务必了解受众和区段定义之间的差异。
 
-区段数据是指符合区段资格标准、因此属于受众的用户档案。
+受众是指您尝试过滤的一组用户档案。 使用区段定义时，您可以通过创建区段定义来创建受众，该定义会将您的用户档案过滤到符合区段资格标准的子集。
 
-区段元数据是有关区段本身的信息，包括名称、描述、表达式（如果适用）、创建日期、上次修改日期和ID。 ID可将区段元数据链接到符合区段资格并属于生成受众的个别用户档案。
+区段定义包括名称、描述、表达式（如果适用）、创建日期、上次修改日期和ID等信息。 ID可将区段元数据链接到符合区段资格并属于生成受众的个别用户档案。
 
-| 区段数据 | 区段元数据 |
-| ------------ | ---------------- |
-| 符合区段资格的用户档案 | 有关区段本身的信息 |
+| 受众 | 区段定义 |
+| --------- | ---------------- |
+| 您正在尝试查找的一组配置文件。 使用区段定义时，这意味着它将是符合区段资格的一组用户档案。 | 一组规则，用于对所查找的受众进行分段。 |
 
 ## 为外部受众创建身份命名空间
 
-使用外部受众的第一步是创建身份命名空间。 身份命名空间允许Platform关联区段源自何处。
+使用外部受众的第一步是创建身份命名空间。 身份命名空间允许Platform关联受众源自何处。
 
 要创建身份命名空间，请按照 [身份命名空间指南](../../identity-service/namespaces.md#manage-namespaces). 创建身份命名空间时，请将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
 

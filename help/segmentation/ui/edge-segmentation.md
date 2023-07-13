@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；边缘分段；分段；分段服务；分段服务；ui指南；流式边缘；
 solution: Experience Platform
 title: 边缘分段UI指南
-description: 边缘分段是在边缘上即时评估Platform中的区段的能力，从而启用同一页面和下一页面个性化用例。
+description: 了解如何使用边缘分段即时在边缘上评估Platform中的区段定义，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '932'
 ht-degree: 0%
 
 ---
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->现在，所有Platform用户均可正常使用边缘分段。 如果您在Beta版期间创建了Edge区段，则这些区段将继续正常运行。
+>现在，所有Platform用户均可正常使用边缘分段。 如果您在Beta版期间创建了边缘区段定义，则这些区段定义将继续可用。
 
 边缘分段是一种在Adobe Experience Platform中即时评估区段的能力 [在边缘](../../edge/home.md)，启用同一页面和下一页面个性化用例。
 
@@ -52,19 +51,19 @@ ht-degree: 0%
 | 区段分部 | 包含一个或多个批次或流区段的任何区段定义。 | 居住在美国且属于“现有区段”的人群。 | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
 | 引用映射的查询 | 任何引用属性映射的区段定义。 | 根据外部区段数据添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
 
-区段定义将 **非** 在以下情况下启用边缘分段：
+区段定义将 **非** 在以下场景中启用边缘分段：
 
 - 区段定义包括单个事件和 `inSegment` 事件。
-   - 然而，倘该分部包含在 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用边缘分段。
+   - 然而，倘分类资料中所包含的区段定义 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用边缘分段。
 
 ## 后续步骤
 
-本指南介绍如何在Adobe Experience Platform上使用边缘分段评估区段。 要了解有关使用Experience Platform用户界面的更多信息，请阅读 [分段用户指南](./overview.md). 要了解如何使用Experience PlatformAPI执行类似操作和使用区段，请访问 [edge segmentation API指南](../api/edge-segmentation.md).
+本指南介绍如何在Adobe Experience Platform上使用Edge Segmentation评估区段定义。 要了解有关使用Experience Platform用户界面的更多信息，请阅读 [分段用户指南](./overview.md). 要了解如何使用Experience PlatformAPI执行类似操作和使用区段定义，请访问 [edge segmentation API指南](../api/edge-segmentation.md).
 
 ## 附录
 
 以下部分列出了有关边缘分段的常见问题解答：
 
-### 区段在Edge Network上可用需要多长时间？
+### 在Edge Network上提供区段定义需要多长时间？
 
-在Edge Network上可用区段最多需要一小时。
+在Edge Network上提供区段定义最多需要一小时。

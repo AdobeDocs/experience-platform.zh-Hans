@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；数组函数；数组；
 solution: Experience Platform
 title: 数组、列表和设置PQL函数
 description: 配置文件查询语言(PQL)提供了一些功能，使与数组、列表和字符串的交互更轻松。
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '750'
 ht-degree: 5%
 
 ---
@@ -163,7 +162,7 @@ person.favoriteColors.includes("red")
 person.orders.storeId.distinct().count() > 1
 ```
 
-## 分组方式
+## 分组依据
 
 此 `groupBy` 函数用于根据表达式的值将数组或列表的值分区为组。
 

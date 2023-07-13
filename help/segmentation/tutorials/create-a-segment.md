@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；区段；区段；创建区段；分段；创建区段；分段服务；
 solution: Experience Platform
-title: 使用分段服务API创建区段
+title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '940'
 ht-degree: 1%
 
 ---
 
-# 使用分段服务API创建区段
+# 使用分段服务API创建区段定义
 
 此文档提供了一个教程，介绍如何使用来开发、测试、预览和保存区段定义。 [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
-有关如何使用用户界面构建区段的信息，请参阅 [Segment Builder指南](../ui/overview.md).
+有关如何使用用户界面构建区段定义的信息，请参阅 [Segment Builder指南](../ui/overview.md).
 
 ## 快速入门
 
-本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
+本教程需要对各种 [!DNL Adobe Experience Platform] 创建区段定义时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：用于从实时客户档案数据构建受众区段。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您使用区段定义或其他外部源从实时客户档案数据构建受众。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被摄取为用户档案和事件，并符合 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 
 以下部分提供了成功调用 [!DNL Platform] API。
@@ -54,11 +53,11 @@ ht-degree: 1%
 
 ## 制定区段定义
 
-区段划分的第一步是定义区段，该区段通过称为区段定义的构造来表示。 区段定义是一个对象，它封装了写入的查询 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时序数据相关的条件定义区段的规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
+分段的第一步是定义区段定义。 区段定义是一个对象，它封装了写入的查询 [!DNL Profile Query Language] (PQL)。 此对象也称为PQL谓词。 PQL谓词根据与您提供到的任何记录或时序数据相关的条件定义区段定义的规则 [!DNL Real-Time Customer Profile]. 请参阅 [PQL指南](../pql/overview.md) 有关编写PQL查询的更多信息。
 
-您可以通过向以下对象发出POST请求来创建新的区段定义： `/segment/definitions` 中的端点 [!DNL Segmentation] API。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
+您可以通过向以下对象发出POST请求来创建新的区段定义： `/segment/definitions` 中的端点 [!DNL Segmentation] API。 以下示例概述了如何设置定义请求的格式，包括成功定义区段定义所需的信息。
 
-有关如何定义区段的详细说明，请参阅 [区段定义开发人员指南](../api/segment-definitions.md#create).
+有关如何定义区段定义的详细说明，请参阅 [区段定义开发人员指南](../api/segment-definitions.md#create).
 
 ## 估计和预览受众 {#estimate-and-preview-an-audience}
 
@@ -66,14 +65,14 @@ ht-degree: 1%
 
 通过估计和预览受众，您可以测试和优化PQL谓词，直到它们产生所需的结果，然后可以在更新的区段定义中使用它们。
 
-要预览或获取区段的估计值，需要执行两个步骤：
+预览或获取区段定义的估计值需要两个步骤：
 
 1. [创建预览作业](#create-a-preview-job)
 2. [查看估算或预览](#view-an-estimate-or-preview) 使用预览作业的ID
 
 ### 如何生成估计
 
-数据样本用于评估区段和估计符合条件的用户档案的数量。 每天早上（上午12点至凌晨2点，即UTC时间上午7-9点）将新数据加载到内存中，并使用当天的样本数据估计所有分段查询。 因此，任何新增的字段或收集的其他数据都将反映在第二天的估计数中。
+数据样本用于评估区段定义并估计符合条件的用户档案的数量。 每天早上（上午12点至凌晨2点，即UTC时间上午7-9点）将新数据加载到内存中，并使用当天的样本数据估计所有分段查询。 因此，任何新增的字段或收集的其他数据都将反映在第二天的估计数中。
 
 样本大小取决于配置文件存储区中的实体总数。 下表显示了这些样本量：
 

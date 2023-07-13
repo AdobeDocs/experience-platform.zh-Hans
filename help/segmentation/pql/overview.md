@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；PQL；pql；配置文件查询语言
 solution: Experience Platform
 title: 配置文件查询语言(PQL)概述
 description: 本指南提供了PQL的一般概述，涵盖了格式设置指南并提供了示例PQL表达式。
 exl-id: 4f7ab50e-89a3-42db-b74a-c6f2d86c9bcb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '715'
-ht-degree: 2%
+source-wordcount: '706'
+ht-degree: 3%
 
 ---
 
@@ -67,7 +66,6 @@ PQL支持以下文本类型：
 | 数组 | 由一组其他文字值组成的数据类型。 它使用方括号对值进行分组，并使用逗号在不同值之间分隔。 <br> **注意：** 您不能直接访问数组中项目的属性。 因此，如果您需要访问数组中的属性，则支持的方法是 `select X from array where X.item = ...`. <br> PQL保留单词 `xEvent` 以引用链接到用户档案的体验事件数组。 | `[1, 4, 7]`、`["US", "CA"]` |
 | 相对时间引用 | 可用于形成时间戳和时间间隔引用的保留字。 <ul><li>现在，今天，昨天，明天</li><li>这个，上一个，下一个</li><li>之前、之后、从</li><li>毫秒、秒、分钟、小时、天、周、月、年、十年、世纪/世纪、千年/千年</li></ul> | `X.timestamp occurs before today`、`X.timestamp occurs last month`、`X.timestamp occurs <= 3 days before now` |
 
-
 ## PQL函数
 
 下表概述了支持的不同类型的PQL函数，包括指向更多文档的链接以了解更多信息。
@@ -89,4 +87,4 @@ PQL支持以下文本类型：
 
 ## 后续步骤
 
-现在您已了解如何使用 [!DNL Profile Query Language]中，您可以在创建和修改区段时使用PQL。 有关分段的更多信息，请阅读 [分段概述](../home.md).
+现在您已了解如何使用 [!DNL Profile Query Language]中，您可以在创建和修改区段定义时使用PQL。 有关分段的更多信息，请阅读 [分段概述](../home.md).

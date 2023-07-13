@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；边缘分段；边缘分段；流式边缘；
 solution: Experience Platform
 title: 使用API的边缘分段
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform分段服务API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -17,9 +16,9 @@ ht-degree: 0%
 >
 >以下文档说明了如何使用API执行边缘分段。 有关使用UI执行边缘分段的信息，请阅读 [边缘分段UI指南](../ui/edge-segmentation.md).
 >
->现在，所有Platform用户均可正常使用边缘分段。 如果您在Beta版期间创建了Edge区段，则这些区段将继续正常运行。
+>现在，所有Platform用户均可正常使用边缘分段。 如果您在Beta版期间创建了边缘区段定义，则这些区段定义将继续可用。
 
-边缘分段是在边缘上即时评估Adobe Experience Platform中的区段的能力，从而实现同一页面和下一页面个性化用例。
+边缘分段是在边缘上即时评估Adobe Experience Platform中的区段定义的能力，从而启用同一页面和下一页面个性化用例。
 
 >[!IMPORTANT]
 >
@@ -32,7 +31,7 @@ ht-degree: 0%
 本开发人员指南需要深入了解各种 [!DNL Adobe Experience Platform] 边缘分段涉及的服务。 在开始本教程之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的用户用户档案。
-- [[!DNL Segmentation]](../home.md)：提供从以下来源创建区段和受众的功能： [!DNL Real-Time Customer Profile] 数据。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您从构建受众 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
 要成功调用任何Experience PlatformAPI端点，请阅读以下指南： [Platform API快速入门](../../landing/api-guide.md) 了解所需的标头以及如何读取示例API调用。

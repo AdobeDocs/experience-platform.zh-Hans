@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；逻辑量度；逻辑量度；
 solution: Experience Platform
 title: PQL逻辑量词
 description: 逻辑量词可用于在配置文件查询语言(PQL)中声明数组的条件。
 exl-id: 8b1c9560-02e2-46e0-9646-c64dd4a15df1
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '201'
 ht-degree: 4%
 
 ---

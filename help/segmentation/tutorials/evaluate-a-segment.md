@@ -1,27 +1,26 @@
 ---
-keywords: Experience Platform；主页；热门主题；区段评估；分段服务；分段；分段；评估区段；访问区段结果；评估和访问区段；
 solution: Experience Platform
 title: 评估和访问区段结果
 type: Tutorial
-description: 阅读本教程，了解如何使用Adobe Experience Platform分段服务API评估区段并访问区段结果。
+description: 阅读本教程，了解如何使用Adobe Experience Platform分段服务API评估区段定义并访问分段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1607'
+source-wordcount: '1599'
 ht-degree: 0%
 
 ---
 
-# 评估和访问区段结果
+# 评估和访问区段定义结果
 
-本文档提供了一个教程，用于评估区段和使用 [[!DNL Segmentation API]](../api/getting-started.md).
+本文档提供了一个教程，用于评估区段定义并使用访问这些结果。 [[!DNL Segmentation API]](../api/getting-started.md).
 
 ## 快速入门
 
-本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
+本教程需要对各种 [!DNL Adobe Experience Platform] 创建受众时涉及的服务。 在开始本教程之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据实时提供统一的客户用户档案。
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您从以下位置构建受众区段： [!DNL Real-Time Customer Profile] 数据。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您从构建受众 [!DNL Real-Time Customer Profile] 数据。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：Platform用于组织客户体验数据的标准化框架。 为了更好地利用分段，请确保您的数据被摄取为用户档案和事件，并符合 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
@@ -45,13 +44,13 @@ ht-degree: 0%
 
 - Content-Type： application/json
 
-## 评估区段 {#evaluate-a-segment}
+## 评估区段定义 {#evaluate-a-segment}
 
-在开发、测试和保存区段定义后，您可以通过计划评估或按需评估来评估区段。
+在开发、测试和保存区段定义后，您可以通过计划评估或按需评估来评估区段定义。
 
 [计划评估](#scheduled-evaluation) （也称为“计划分段”）允许您创建用于在特定时间运行导出作业的定期计划，而 [按需评估](#on-demand-evaluation) 涉及创建区段作业以立即构建受众。 下面概述了每种方法的步骤。
 
-如果您尚未完成 [使用分段API创建区段](./create-a-segment.md) 教程或创建区段定义，使用 [区段生成器](../ui/overview.md)，请在继续阅读本教程之前完成此操作。
+如果您尚未完成 [使用分段API创建区段定义](./create-a-segment.md) 教程或创建区段定义，使用 [区段生成器](../ui/overview.md)，请在继续阅读本教程之前完成此操作。
 
 ## 计划评估 {#scheduled-evaluation}
 
@@ -81,11 +80,11 @@ ht-degree: 0%
 
 ## 按需评估
 
-按需评估允许您创建区段作业，以便在需要时生成受众区段。 与计划的评估不同，这仅在请求时发生，并且不是定期的。
+按需评估允许您创建区段作业，以便在需要时生成受众。 与计划的评估不同，这仅在请求时发生，并且不是定期的。
 
 ### 创建区段作业
 
-区段作业是一个异步过程，可根据需要创建受众区段。 它引用区段定义，以及控制区段划分方式的任何合并策略 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及最终的受众规模。 每次要刷新当前符合区段定义条件的受众时，都需要运行区段作业。
+区段作业是一个异步过程，可根据需要创建受众区段。 它引用区段定义，以及控制区段划分方式的任何合并策略 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关区段定义的各种信息，例如处理过程中可能发生的任何错误以及最终的受众规模。 每次要刷新区段定义当前符合条件的受众时，都需要运行区段作业。
 
 您可以通过向以下对象发出POST请求来创建新的区段作业： `/segment/jobs` 中的端点 [!DNL Real-Time Customer Profile] API。
 
@@ -97,9 +96,9 @@ ht-degree: 0%
 
 有关使用此端点的更多详细信息，请参阅 [区段作业端点指南](../api/segment-jobs.md#get)
 
-## 解释区段结果
+## 解释区段作业结果
 
-成功运行区段作业后， `segmentMembership` 区段中包含的每个配置文件都会更新映射。 `segmentMembership` 还会存储任何预先评估的受众区段，这些区段将引入 [!DNL Platform]，允许与其他解决方案集成，例如 [!DNL Adobe Audience Manager].
+成功运行区段作业后， `segmentMembership` 区段定义中包含的每个配置文件都会更新映射。 `segmentMembership` 还会存储任何被摄取到的预评估受众 [!DNL Platform]，允许与其他解决方案集成，例如 [!DNL Adobe Audience Manager].
 
 以下示例显示了 `segmentMembership` 属性的外观与每个个人资料记录相似：
 
@@ -128,14 +127,14 @@ ht-degree: 0%
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `lastQualificationTime` | 进行区段成员资格断言以及用户档案进入或退出区段时的时间戳。 |
-| `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`realized`：实体符合区段的条件。</li><li>`exited`：实体正在退出区段。</li></ul> |
+| `lastQualificationTime` | 进行区段成员资格断言以及用户档案输入或退出区段定义时的时间戳。 |
+| `status` | 作为当前请求一部分的区段定义的参与状态。 必须等于以下已知值之一： <ul><li>`realized`：实体符合区段定义的条件。</li><li>`exited`：实体正在退出区段定义。</li></ul> |
 
 >[!NOTE]
 >
 >中的任何区段成员资格 `exited` 超过30天的状态，基于 `lastQualificationTime`，将被删除。
 
-## 访问区段结果
+## 访问区段作业结果
 
 可以通过以下两种方式之一访问区段作业的结果：可以访问单个用户档案，或将整个受众导出到数据集。
 
@@ -160,7 +159,7 @@ ht-degree: 0%
 
 导出受众时，必须首先创建目标数据集。 请务必正确配置数据集，以确保成功导出。
 
-关键注意事项之一是数据集所基于的架构(`schemaRef.id` （在下面的API示例请求中）。 要导出区段，数据集必须基于 [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享同一类的架构的字段，在本例中是XDM Individual Profile类。 有关合并视图架构的更多信息，请参阅 [Schema Registry开发人员指南的Real-time Customer Profile部分](../../xdm/api/getting-started.md).
+关键注意事项之一是数据集所基于的架构(`schemaRef.id` （在下面的API示例请求中）。 要导出区段定义，数据集必须基于 [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享同一类的架构的字段，在本例中是XDM Individual Profile类。 有关合并视图架构的更多信息，请参阅 [Schema Registry开发人员指南的Real-time Customer Profile部分](../../xdm/api/getting-started.md).
 
 有两种方法可创建必要的数据集：
 
@@ -213,7 +212,7 @@ curl -X POST \
 
 ### 为受众成员生成配置文件 {#generate-profiles}
 
-POST拥有合并持久化数据集后，您可以创建一个导出作业，通过对 `/export/jobs` 中的端点 [!DNL Real-Time Customer Profile] API并提供要导出的区段的数据集ID和区段信息。
+POST拥有合并持久化数据集后，您可以创建一个导出作业，通过对 `/export/jobs` 中的端点 [!DNL Real-Time Customer Profile] API并提供要导出的区段定义的数据集ID和区段定义信息。
 
 有关使用此端点的更多详细信息，请参阅 [导出作业端点指南](../api/export-jobs.md#create)
 
@@ -225,10 +224,10 @@ POST拥有合并持久化数据集后，您可以创建一个导出作业，通�
 
 ## 后续步骤
 
-成功完成导出后，您的数据便可在 [!DNL Data Lake] 在 [!DNL Experience Platform]. 然后，您可以使用 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) 以使用访问数据 `batchId` 与导出关联。 根据区段的大小，数据可能以块为单位，批量可能由多个文件组成。
+成功完成导出后，您的数据便可在 [!DNL Data Lake] 在 [!DNL Experience Platform]. 然后，您可以使用 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) 以使用访问数据 `batchId` 与导出关联。 根据区段定义的大小，数据可能以块为单位，批量可能由多个文件组成。
 
 有关如何使用 [!DNL Data Access] 访问和下载批处理文件的API，请按照 [数据访问教程](../../data-access/tutorials/dataset-data.md).
 
-您还可以使用以下方式访问成功导出的区段数据 [!DNL Adobe Experience Platform Query Service]. 使用UI或RESTful API， [!DNL Query Service] 允许您编写、验证和运行 [!DNL Data Lake].
+您还可以使用以下方式访问成功导出的区段定义数据 [!DNL Adobe Experience Platform Query Service]. 使用UI或RESTful API， [!DNL Query Service] 允许您编写、验证和运行 [!DNL Data Lake].
 
 有关如何查询受众数据的更多信息，请查看以下文档： [[!DNL Query Service]](../../query-service/home.md).

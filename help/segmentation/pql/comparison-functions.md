@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；比较函数；比较；
 solution: Experience Platform
 title: PQL比较函数
 description: 比较函数用于比较不同表达式和值之间的差异，并相应地返回“true”或“false”。
 exl-id: 15f106c7-b88b-4042-b925-703e2a309573
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '326'
-ht-degree: 9%
+source-wordcount: '309'
+ht-degree: 10%
 
 ---
 

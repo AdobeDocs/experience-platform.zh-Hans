@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql；PQL；配置文件查询语言；映射函数；映射；
 solution: Experience Platform
 title: PQL映射函数
 description: 配置文件查询语言(PQL)提供了一些功能，使与地图的交互更轻松。
 exl-id: f23616f2-c0dd-40ce-8cfc-c757542fbd05
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '173'
-ht-degree: 5%
+source-wordcount: '156'
+ht-degree: 6%
 
 ---
 

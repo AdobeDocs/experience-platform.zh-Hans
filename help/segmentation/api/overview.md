@@ -1,28 +1,27 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；API；API；
 title: 分段服务API指南
 description: 分段服务API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '497'
-ht-degree: 3%
+source-wordcount: '560'
+ht-degree: 2%
 
 ---
 
 # 分段服务API指南
 
-[!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建区段并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
+Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Experience Platform中的区段定义或其他源从以下位置创建受众： [!DNL Real-Time Customer Profile] 数据。
 
 此 [!DNL Segmentation Service] API提供了多个端点，允许您以编程方式管理以下位置的分段操作： [!DNL Experience Platform]. 此概述文档提供了其中每个端点的概要介绍，以及指向其关联端点指南的链接以了解详细信息。 在阅读各个端点指南之前，请参阅 [快速入门指南](./getting-started.md) 有关所需标头的重要信息，请阅读示例API调用等。
 
 要查看所有可用的端点和CRUD操作，请参阅 [Segmentation Service API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
-<!-- ## Audiences
+## 受众
 
-Audiences are a collection of people who share similar behaviors and/or characteristics. These can be generated either by using Platform or from external sources. You can use the `/audiences` endpoint to retrieve all audiences, create a new audience, retrieve details of a specific audience, update a specific audience, or delete a specific audience.
+受众是具有相同相似行为和/或特征的人群。 这些资源可以通过使用Platform或从外部源生成。 您可以使用 `/audiences` 端点可检索所有受众、创建新受众、检索特定受众的详细信息、更新特定受众或删除特定受众。
 
-For more information on using this endpoint, please read the [audiences endpoint guide](./audiences.md). -->
+有关使用此端点的更多信息，请阅读 [受众端点指南](./audiences.md).
 
 ## 导出作业
 
@@ -46,13 +45,13 @@ For more information on using this endpoint, please read the [audiences endpoint
 
 ## 区段定义
 
-区段定义定义哪些配置文件将成为哪些受众区段的一部分。 您可以使用 `/segment/definitions` 端点以管理区段定义。
+区段定义定义哪些配置文件将成为哪些受众的一部分。 您可以使用 `/segment/definitions` 端点以管理区段定义。
 
 有关使用此端点的更多信息，请阅读 [区段定义端点指南](./segment-definitions.md).
 
 ## 区段作业
 
-区段作业会处理以前建立的区段定义以生成受众区段。 您可以使用 `/segment/jobs` 端点以管理区段作业。
+区段作业会处理以前建立的区段定义以生成受众。 您可以使用 `/segment/jobs` 端点以管理区段作业。
 
 有关使用此端点的更多信息，请阅读 [区段作业端点指南](./segment-jobs.md).
 

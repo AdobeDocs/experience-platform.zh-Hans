@@ -1,20 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据使用合规性；强制；强制执行数据使用合规性；分段服务；分段；分段；
 solution: Experience Platform
 title: 使用API对受众区段强制执行数据使用合规性
 type: Tutorial
-description: 本教程介绍了使用API对Real-time Customer Profile受众区段实施数据使用合规性的步骤。
+description: 本教程介绍了使用API实施数据使用合规性区段定义的步骤。
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1355'
 ht-degree: 1%
 
 ---
 
-# 使用API强制实施受众区段的数据使用合规性
+# 使用API强制区段定义的数据使用合规性
 
-本教程介绍了为实施数据使用合规性的步骤。 [!DNL Real-Time Customer Profile] 使用API的受众区段。
+本教程介绍了使用API为区段定义强制实施数据使用合规性的步骤。
 
 ## 快速入门
 
@@ -57,7 +56,7 @@ ht-degree: 1%
 
 ## 查找区段定义的合并策略 {#merge-policy}
 
-此工作流从访问已知受众区段开始。 在中启用的区段 [!DNL Real-Time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关将哪些数据集包含在区段中的信息，而这些数据集又包含任何适用的数据使用标签。
+此工作流从访问已知的区段定义开始。 已启用以便在中使用的区段定义 [!DNL Real-Time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段定义中将包含哪些数据集的信息，而这些数据集又包含任何适用的数据使用标签。
 
 使用 [!DNL Segmentation] API中，您可以根据区段的ID查找区段定义，以查找与其关联的合并策略。
 
@@ -367,20 +366,20 @@ curl -X POST \
 
 ## 筛选数据字段
 
-如果您的受众区段未通过评估，您可以通过下面列出的两种方法之一调整区段中包含的数据。
+如果区段定义未通过评估，则可通过下面列出的两种方法之一调整区段定义中包含的数据。
 
 ### 更新区段定义的合并策略
 
 更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 请参阅以下部分： [更新现有合并策略](../../profile/api/merge-policies.md#update) 有关更多信息，请参阅API合并策略教程。
 
-### 导出区段时限制特定数据字段
+### 导出区段定义时限制特定数据字段
 
-使用将区段导出到数据集时 [!DNL Segmentation] API中，您可以使用来筛选导出中包含的数据 `fields` 参数。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
+使用将区段定义导出到数据集时 [!DNL Segmentation] API中，您可以使用来筛选导出中包含的数据 `fields` 参数。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
 
-假定区段具有名为“A”、“B”和“C”的数据字段。 如果您只想导出字段“C”，则 `fields` 参数将仅包含字段“C”。 这样，在导出区段时将排除字段“A”和“B”。
+考虑具有名为“A”、“B”和“C”的数据字段的区段定义。 如果您只想导出字段“C”，则 `fields` 参数将仅包含字段“C”。 这样，在导出区段定义时将排除字段“A”和“B”。
 
-请参阅以下部分： [导出区段](./evaluate-a-segment.md#export) 有关更多信息，请参阅分段教程。
+请参阅以下部分： [导出区段定义](./evaluate-a-segment.md#export) 有关更多信息，请参阅分段教程。
 
 ## 后续步骤
 
-通过学习本教程，您已查找与受众区段关联的数据使用标签，并测试它们是否存在违反特定营销操作的策略。 有关“数据管理”的更多信息，请参阅 [!DNL Experience Platform]，请阅读 [数据管理](../../data-governance/home.md).
+通过阅读本教程，您已查找与区段定义关联的数据使用标签，并测试它们是否存在违反特定营销操作的策略。 有关“数据管理”的更多信息，请参阅 [!DNL Experience Platform]，请阅读 [数据管理](../../data-governance/home.md).
