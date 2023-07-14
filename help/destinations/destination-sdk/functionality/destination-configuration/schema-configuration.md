@@ -1,10 +1,10 @@
 ---
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+source-git-commit: 20dc7b31f75e88badac17faa542e046598632690
 workflow-type: tm+mt
-source-wordcount: '1715'
-ht-degree: 5%
+source-wordcount: '1892'
+ht-degree: 4%
 
 ---
 
@@ -91,7 +91,10 @@ Destination SDK支持多个架构配置：
       "useCustomerSchemaForAttributeMapping":false,
       "profileRequired":true,
       "segmentRequired":true,
-      "identityRequired":true
+      "identityRequired":true,
+      "segmentNamespaceAllowList": ["someNamespace"],
+      "segmentNamespaceDenyList": ["someOtherNamespace"]
+
 }
 ```
 
@@ -102,6 +105,8 @@ Destination SDK支持多个架构配置：
 | `profileRequired` | 布尔值 | 可选 | 使用 `true` 用户应能够将配置文件属性从Experience Platform映射到目标平台上的自定义属性。 |
 | `segmentRequired` | 布尔值 | 必需 | 此参数是Destination SDK的必需参数，应始终设置为 `true`. |
 | `identityRequired` | 布尔值 | 必需 | 设置为 `true` 用户是否应该能够映射 [身份类型](identity-namespace-configuration.md) 从Experience Platform到您在 `profileFields` 数组。 |
+| `segmentNamespaceAllowList` | 数组 | 可选 | 定义用户可以从中将受众映射到目标的特定受众命名空间。 使用此参数可限制Platform用户仅从数组中定义的受众命名空间导出受众。 此参数不能与一起使用 `segmentNamespaceDenyList`.<br> <br> 示例： `"segmentNamespaceAllowList": ["AudienceManager"]` 将允许用户仅映射来自以下项的受众： `AudienceManager` 命名空间指向此目标。 <br> <br> 要允许用户将任何受众导出到您的目标，您可以忽略此参数。 <br> <br> 如果两者都有 `segmentNamespaceAllowList` 和 `segmentNamespaceDenyList` 您的配置中缺少，用户将只能导出源自 [分段服务](../../../../segmentation/home.md). |
+| `segmentNamespaceDenyList` | 数组 | 可选 | 限制从数组中定义的受众命名空间将受众映射到目标的用户。 不能与一起使用 `segmentNamespaceAllowed`. <br> <br> 示例： `"segmentNamespaceDenyList": ["AudienceManager"]` 将阻止用户从 `AudienceManager` 命名空间指向此目标。 <br> <br> 要允许用户将任何受众导出到您的目标，您可以忽略此参数。 <br> <br> 如果两者都有 `segmentNamespaceAllowed` 和 `segmentNamespaceDenyList` 您的配置中缺少，用户将只能导出源自 [分段服务](../../../../segmentation/home.md). <br> <br> 要允许导出所有受众，而不考虑其来源，请设置 `"segmentNamespaceDenyList":[]`. |
 
 {style="table-layout:auto"}
 
