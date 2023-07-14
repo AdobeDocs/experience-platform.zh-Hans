@@ -1,26 +1,25 @@
 ---
 title: (Beta)Experience Cloud受众
-description: 了解如何将区段从Experience Platform共享到各种Experience Platform解决方案。
+description: 了解如何将受众从Experience Platform共享到各种Experience Platform解决方案。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 017c8bbc19845c0f60040ba2995b5dd2b0299a8b
+source-git-commit: 1288652ca3b18b4adb357b2d8884f408725cb0a2
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1631'
 ht-degree: 2%
 
 ---
 
 # (Beta) [!UICONTROL Experience Cloud受众] 连接
 
-利用此目标，可将区段从Experience Platform共享到各种Experience Cloud解决方案，如Audience Manager、Analytics、Advertising Cloud、Adobe Campaign、Target或Marketo。
+利用此目标，可将受众从Experience Platform共享到各种Experience Cloud解决方案，如Audience Manager、Analytics、Advertising Cloud、Adobe Campaign、Target或Marketo。
 
 ![Experience Cloud受众目标，在目标目录中突出显示。](/help/destinations/assets/catalog/adobe/experience-cloud-audiences/experience-cloud-audiences-destination-catalog.png)
 
 >[!IMPORTANT]
 >
->* 此目标将替换 [旧版区段共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam) 从Experience Platform到各种Experience Cloud解决方案。
+>* 此目标将替换 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam) 从Experience Platform到各种Experience Cloud解决方案。
 >* 此目标当前为测试版。 文档和功能可能会发生更改。
-
 
 ## 用例和好处 {#use-cases}
 
@@ -28,21 +27,21 @@ ht-degree: 2%
 
 ### 启用数据管理平台用例 {#dmp-use-cases}
 
-在Audience Manager中，您可以将Experience Platform区段用于Data Management Platform用例，例如：
+在Audience Manager中，您可以将Experience Platform受众用于数据管理平台用例，例如：
 
 * 添加 [第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html?lang=en#third-party-data) 至您的区段；
 * [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html?lang=en);
-* 将区段激活到Experience Platform目标目录中尚不支持的基于Cookie的目标。
+* 将受众激活到Experience Platform目标目录中尚不支持的基于Cookie的目标。
 
-### 导出区段的精细控制 {#segments-control}
+### 对导出受众的精细控制 {#segments-control}
 
-通过Experience Cloud受众目标使用新的自助区段共享集成，以选择要导出到Audience Manager和其他受众的区段。 这允许您确定要与其他Experience Cloud解决方案共享的区段以及要专门保留在Experience Platform中的区段。
+使用新的自助受众共享集成，通过Experience Cloud受众目标选择要导出到Audience Manager及其他受众的受众。 这允许您确定要与其他Experience Cloud解决方案共享的受众以及要专门保留在Experience Platform中的受众。
 
-旧版区段共享集成不允许精细地控制应将哪些区段导出到Audience Manager及其他。
+旧版受众共享集成不允许精细地控制应将哪些受众导出到Audience Manager及其他。
 
-### 与更多Experience Cloud解决方案共享Experience Platform区段 {#share-segments-with-other-solutions}
+### 与其他Experience Cloud解决方案共享Experience Platform受众 {#share-segments-with-other-solutions}
 
-除了与Audience Manager共享区段外，通过Experience Platform受众目标卡，还可与您配置的任何其他Experience Cloud解决方案共享区段，包括：
+除了与Audience Manager共享受众之外，通过Experience Platform受众目标卡，您还可以与您配置的任何其他Experience Cloud解决方案共享受众，包括：
 
 * Adobe Campaign
 * Adobe Target
@@ -52,7 +51,7 @@ ht-degree: 2%
 
 <!--
 
-Note: briefly talk about when to share segments to these destinations using the existing destination cards and when to share using the new Experience Cloud Audiences destination. 
+Note: briefly talk about when to share audiences to these destinations using the existing destination cards and when to share using the new Experience Cloud Audiences destination. 
 
 -->
 
@@ -62,18 +61,17 @@ Note: briefly talk about when to share segments to these destinations using the 
 >
 > * 此目标可供 [Adobe Real-time Customer Data Platform Prime和Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 > * 您需要Audience Manager许可证才能启用 [数据管理平台用例](#dmp-use-cases) 如上所述。
-> * 您 *不需要* 用于与Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Platform解决方案共享Experience Cloud区段的Audience Manager许可证，如中所述 [上节](#share-segments-with-other-solutions).
+> * 您 *不需要* 用于与Adobe Advertising Cloud、Adobe Target、Marketo和其他Experience Platform解决方案共享Experience Cloud受众的Audience Manager许可证，请参见 [上节](#share-segments-with-other-solutions).
 
+### 适用于使用旧版受众共享解决方案的客户
 
-### 适用于使用旧版区段共享解决方案的客户
-
-如果您已通过，将区段从Experience Platform共享到Audience Manager和其他Experience Cloud解决方案， [旧版区段共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)中，您必须联系客户关怀团队或您的Adobe帐户团队以禁用旧版集成。 客户关怀和Adobe帐户团队必须提交Jira票证(请参阅模板票证AAM-52354)才能禁用集成。
+如果您已通过，将受众从Experience Platform共享到Audience Manager和其他Experience Cloud解决方案， [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)中，您必须联系客户关怀团队或您的Adobe帐户团队以禁用旧版集成。 客户关怀和Adobe帐户团队必须提交Jira票证(请参阅模板票证PLAT-160986)才能禁用集成。
 
 为测试版客户解决取消配置工单的周转时间为六个工作日（含）以内。 禁用现有的旧版集成后，您可以继续 [创建连接](#connect) 自助目的地卡。
 
 >[!IMPORTANT]
 >
->从Jira票证解析到通过目标卡建立新连接之间的时间，将停止从Experience Platform导出到其他解决方案的区段。 在Jira票证关闭后，您可以通过目标卡创建连接，从而最大限度地减少停机时间。
+>从Jira票证解析到通过目标卡建立新连接期间，将停止从Experience Platform到您的其他解决方案的受众导出。 在Jira票证关闭后，您可以通过目标卡创建连接，从而最大限度地减少停机时间。
 
 ## 已知限制和标注 {#known-limitations}
 
@@ -81,7 +79,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 
 * [数据流监测](/help/dataflows/ui/monitor-destinations.md) 不受支持。
 * 连接到目标时，您可以看到一个选项 [启用数据流警报](#enable-alerts). 尽管在UI中可见，但是 **启用警报选项不受支持** （在测试版中）。
-* **不支持回填**. 首次导出到Audience Manager或其他Experience Cloud解决方案时不包括区段的历史人口。
+* **不支持回填**. 首次导出到Audience Manager或其他Experience Cloud解决方案时不包括受众的历史群体。
 * 在测试版中，您可以创建 **到Experience Cloud受众目标的单个目标连接**，跨属于您的Experience Platform组织的所有沙盒。
 
 ### 激活受众时的延迟 {#audience-activation-latency}
@@ -90,7 +88,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 
 对于所有用例，受众可能需要24小时才能在Audience Manager中完全可用，而Experience Cloud受众中的受众可能需要48小时才能显示在Audience Manager报表中。
 
-设置导出到Experience CloudAudience Manager目标后的几分钟内，即可将元数据（如区段名称）显示在受众中。
+设置导出到Experience Cloud受众目标后的几分钟内，即可在Audience Manager中使用元数据（例如受众名称）。
 
 ## 支持的身份 {#supported-identities}
 
@@ -105,14 +103,28 @@ Note: briefly talk about when to share segments to these destinations using the 
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出以上部分中列出的标识作为关键字的区段（受众）的所有成员。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出以上部分中列出的标识作为关键字的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -155,33 +167,33 @@ You can enable alerts to receive notifications on the status of the dataflow to 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。 请注意，否 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 是必需的，而不是 [计划步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 可用于此目标。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。 请注意，否 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 是必需的，而不是 [计划步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 可用于此目标。
 
 ## 验证数据导出 {#exported-data}
 
-要验证数据导出是否成功，您可以检查区段是否已成功导出到所需的Experience Cloud解决方案。
+要验证数据导出是否成功，您可以检查受众是否已成功导出到所需的Experience Cloud解决方案。
 
 ### 验证Audience Manager中的数据
 
-您的Experience Platform区段在Audience Manager中显示为 [信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-signals)， [特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-traits)、和 [区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-segments). 您可以在Audience Manager中验证数据是否已按照上述文档链接中的说明显示。
+您的Experience Platform受众在Audience Manager中显示为 [信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-signals)， [特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-traits)、和 [区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-segments). 您可以在Audience Manager中验证数据是否已按照上述文档链接中的说明显示。
 
 ## 数据使用和管理 {#data-usage-governance}
 
 全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).
 
 Experience Platform中的数据治理由两者强制执行 [数据使用标签](/help/data-governance/labels/reference.md) 和营销活动。
-数据使用标签将传输到应用程序，但营销操作不会。 这意味着一旦它们进入Audience Manager，Experience Platform中的区段可以导出到任何可用的目标。 在Audience Manager中，您可以使用 [数据导出控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=en) 阻止将区段导出到特定目标。
+数据使用标签将传输到应用程序，但营销操作不会。 这意味着，一旦受众进入Audience Manager，Experience Platform中的受众就可以导出到任何可用的目标。 在Audience Manager中，您可以使用 [数据导出控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=en) 阻止将受众导出到特定目标。
 
 ### Audience Manager中的权限管理
 
-Audience Manager中的区段和特征受 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=en) (RBAC)。
+Audience Manager中的受众和特征受 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=en) (RBAC)。
 
-从Experience Platform导出的区段会分配给Audience Manager中名为的特定数据源 **[!UICONTROL Experience Platform区段]**.
+从Experience Platform导出的受众将分配给名为的特定Audience Manager源 **[!UICONTROL Experience Platform区段]**.
 
-要仅允许特定用户访问区段，您可以将访问控制应用于属于数据源的区段。 您必须在Audience Manager中为这些区段和从Experience Platform区段创建的特征设置新的访问控制权限。
+要仅允许特定用户访问受众，您可以将访问控制应用于属于数据源的受众。 您必须在Audience Manager中为这些受众和从Experience Platform区段创建的特征设置新的访问控制权限。
