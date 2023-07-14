@@ -2,14 +2,14 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 5174c65970aa8df9bc3f2c8d612c26c72c20e81f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '974'
-ht-degree: 4%
+source-wordcount: '1030'
+ht-degree: 1%
 
 ---
 
-# (Beta) [!DNL Google Ad Manager 360] 连接
+# (Beta)[!DNL Google Ad Manager 360]连接
 
 ## 概述 {#overview}
 
@@ -36,6 +36,20 @@ ht-degree: 4%
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | PPID | [!DNL Publisher provided ID] | 选择要将受众发送到的此目标身份 [!DNL Google Ad Manager 360] |
+
+{style="table-layout:auto"}
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
 
 {style="table-layout:auto"}
 
@@ -85,8 +99,8 @@ ht-degree: 4%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
->title="将分段 ID 附加到分段名称"
->abstract="选择此选项可让 Google Ad Manager 360 中的区段名称包含来自 Experience Platform 的区段 ID，如下所示：`Segment Name (Segment ID)`"
+>title="将受众ID附加到受众名称"
+>abstract="选择此选项可使Google Ad Manager 360中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -98,7 +112,7 @@ ht-degree: 4%
 * **[!UICONTROL 帐户类型]**：选择一个选项，具体取决于 [!DNL Google] 帐户：
    * 使用 `AdX buyer` 对象 [!DNL Google AdX]
    * 使用 `DFP by Google` 对象 [!DNL DoubleClick] 发布者
-* **[!UICONTROL 将区段ID附加到区段名称]**：选择此选项可使Google Ad Manager 360中的区段名称包含Experience Platform中的区段ID，如下所示： `Segment Name (Segment ID)`.
+* **[!UICONTROL 将受众ID附加到受众名称]**：选择此选项可使Google Ad Manager 360中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`.
 
 ### 启用警报 {#enable-alerts}
 
@@ -106,20 +120,20 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 在身份映射步骤中，您可以看到以下预填充的映射：
 
 | 预填充的映射 | 描述 |
 |---------|----------|
 | `ECID` -> `ppid` | 这是唯一一个用户可编辑的预填充映射。 您可以从Platform中选择任何属性或身份命名空间并将其映射到 `ppid`. |
-| `metadata.segment.alias` -> `list_id` | 将Experience Platform区段名称映射到Google平台中的区段ID。 |
+| `metadata.segment.alias` -> `list_id` | 将Experience Platform受众名称映射到Google平台中的受众ID。 |
 | `iif(${segmentMembership.ups.seg_id.status}=="exited", "1","0")` -> `delete` | 告知Google平台何时从区段中删除不合格的用户。 |
 
 以下项需要这些映射 [!DNL Google Ad Manager 360] 和，由Adobe Experience Platform自动为所有 [!DNL Google Ad Manager 360] 连接。

@@ -3,10 +3,10 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在Microsoft展示广告中执行重新定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '616'
-ht-degree: 8%
+source-wordcount: '670'
+ht-degree: 1%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 8%
 
 ## 用例 {#use-cases}
 
-作为营销人员，我希望能够使用由构建的区段 [!DNL Microsoft Advertising IDs] 要通过显示广告定位用户，请执行以下操作 [!DNL Microsoft Advertising] 渠道。
+作为营销人员，我希望能够使用由构建的受众 [!DNL Microsoft Advertising IDs] 要通过显示广告定位用户，请执行以下操作 [!DNL Microsoft Advertising] 渠道。
 
 ## 支持的身份 {#supported-identities}
 
@@ -32,16 +32,30 @@ ht-degree: 8%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
-**[!DNL Segment Export]**  — 您要将区段（受众）的所有成员导出到 [!DNL Microsoft Bing] 目标。
+**[!DNL Audience Export]**  — 您要将受众的所有成员导出到 [!DNL Microsoft Bing] 目标。
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到 [!DNL Microsoft Bing] 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您要将受众的所有成员导出到 [!DNL Microsoft Bing] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -77,22 +91,22 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
 >title="映射 ID"
->abstract="输入要将所选区段映射到的数字 Bing 区段 ID。如果提供的[!UICONTROL 映射 ID] 未与 Bing 目标中的区段 ID 相对应，您将不会在 Bing 帐户中看到预期受众数据。"
+>abstract="输入要将选定区段映射到的Bing受众ID数字。 如果提供的是 [!UICONTROL 映射Id] 未与Bing目标中的受众ID相对应，则不会在Bing帐户中看到预期的受众数据。"
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
-在 [区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动将区段名称 [!UICONTROL 映射Id] 字段。 这可确保区段元数据正确传递到 [!DNL Bing].
+在 [受众计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动映射 [!UICONTROL 映射Id] 字段。 这可确保受众元数据正确传递到 [!DNL Bing].
 
-![显示区段计划屏幕的UI图像，其中包含如何将区段名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
+![显示受众计划屏幕的UI图像，其中包含如何将受众名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
 
 ## 导出的数据 {#exported-data}
 

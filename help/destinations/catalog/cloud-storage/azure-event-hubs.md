@@ -3,10 +3,10 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件
 title: Azure事件中心连接
 description: 创建到 [!DNL Azure Event Hubs] 存储以从Experience Platform流式传输数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '2062'
-ht-degree: 4%
+source-wordcount: '2118'
+ht-degree: 2%
 
 ---
 
@@ -32,7 +32,21 @@ ht-degree: 4%
 
 通过使用流式目标，例如 [!DNL Azure Event Hubs]，您可以轻松地将高价值分段事件和关联的配置文件属性馈送到您选择的系统。
 
-例如，潜在客户下载了一份白皮书，将其归类为“高转化倾向”区段。 通过将潜在客户所属的区段映射到 [!DNL Azure Event Hubs] 目标，您将在以下位置收到此事件： [!DNL Azure Event Hubs]. 在这里，您可以采用DIY（自己动手）方法并在事件之上描述业务逻辑，因为您认为这种方法最适合您的企业IT系统。
+例如，潜在客户下载了一份白皮书，将其归类为“高转化倾向”区段。 通过将潜在客户所属的受众映射到 [!DNL Azure Event Hubs] 目标，您将在以下位置收到此事件： [!DNL Azure Event Hubs]. 在这里，您可以采用DIY（自己动手）方法并在事件之上描述业务逻辑，因为您认为这种方法最适合您的企业IT系统。
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -41,7 +55,7 @@ ht-degree: 4%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -85,12 +99,12 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_eventhubs_includesegmentnames"
 >title="包括区段名称"
->abstract="如果您希望数据导出包括正在导出的区段的名称，请进行切换。在选中此选项后查看数据导出示例的文档。"
+>abstract="如果希望数据导出包含正在导出的受众的名称，请进行切换。 在选中此选项后查看数据导出示例的文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
 >title="包括区段时间戳"
->abstract="如果您希望数据导出包括区段创建时间和更新时间的 Unix 时间戳，以及区段映射到用于激活的目标时的 Unix 时间戳，请进行切换。在选中此选项后查看数据导出示例的文档。"
+>abstract="如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，请进行切换。 在选中此选项后查看数据导出示例的文档。"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -99,8 +113,8 @@ ht-degree: 4%
 * **[!UICONTROL 名称]**：填写与的连接名称 [!DNL Azure Event Hubs].
 * **[!UICONTROL 描述]**：提供连接的描述。  示例：“高级层客户”、“对风筝冲浪感兴趣的客户”。
 * **[!UICONTROL eventHubName]**：为您的流提供名称 [!DNL Azure Event Hubs] 目标。
-* **[!UICONTROL 包括区段名称]**：如果希望数据导出包含要导出的区段名称，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
-* **[!UICONTROL 包括区段时间戳]**：如果希望数据导出包括创建和更新区段时的UNIX时间戳，以及将区段映射到目标以供激活时的UNIX时间戳，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
+* **[!UICONTROL 包括区段名称]**：如果希望数据导出包含要导出的受众的名称，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
+* **[!UICONTROL 包括区段时间戳]**：如果您希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，请进行切换。 有关选中此选项后数据导出的示例，请参阅 [导出的数据](#exported-data) 章节。
 
 ### 启用警报 {#enable-alerts}
 
@@ -108,23 +122,23 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 配置文件导出行为 {#profile-export-behavior}
 
-Experience Platform会优化将配置文件导出到 [!DNL Azure Event Hubs] 目标，用于在区段鉴别或其他重要事件后对配置文件进行相关更新时，仅将数据导出到您的目标。 在以下情况下，会将配置文件导出到您的目标：
+Experience Platform会优化将配置文件导出到 [!DNL Azure Event Hubs] 目标，用于在符合受众资格或其他重要事件后对配置文件进行相关更新时，仅将数据导出到您的目标。 在以下情况下，会将配置文件导出到您的目标：
 
-* 配置文件更新由映射到目标的至少一个区段的区段成员资格更改确定。 例如，配置文件已符合映射到目标的其中一个区段的条件，或已退出映射到目标的其中一个区段。
-* 配置文件更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已经符合映射到目标的其中一个区段资格的配置文件，已在标识映射属性中添加了一个新标识。
+* 配置文件更新取决于映射到目标的至少一个受众的受众成员资格发生更改。 例如，配置文件已符合映射到目标的其中一个受众的条件，或已退出映射到目标的其中一个受众。
+* 配置文件更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已经符合映射到目标的其中一个受众资格的用户档案，已在身份映射属性中添加了一个新身份。
 * 配置文件更新由映射到目标的至少一个属性的更改确定。 例如，会将映射步骤中映射到目标的某个属性添加到配置文件中。
 
-在上述所有情况下，只会将已发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的区段具有一百个成员，并且有五个新用户档案符合该区段的条件，则导出到目标的操作将以增量方式进行，并且只包含五个新用户档案。
+在上述所有情况下，只会将已发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的受众拥有一百个成员，并且有五个新用户档案符合该区段的条件，则导出到目标的操作将以增量方式进行，并且只包含五个新用户档案。
 
 请注意，无论更改发生在何处，都将为配置文件导出所有映射的属性。 因此，在上面的示例中，将导出这五个新配置文件的所有映射属性，即使属性本身未发生更改也是如此。
 
@@ -134,21 +148,21 @@ Experience Platform会优化将配置文件导出到 [!DNL Azure Event Hubs] 目
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和区段会作为目标导出的提示。 这意味着，如果任何映射的区段更改了状态(从 `null` 到 `realized` 或从 `realized` 到 `exiting`)或者更新任何映射的属性，则启动目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标，给定配置文件上任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论它是不是同一个值。 这意味着即使值本身未发生更改，对属性的覆盖也会被视为更改。</li></ul> | <ul><li>此 `segmentMembership` 对象包括激活数据流中映射的区段，在发生资格或区段退出事件后，用户档案的状态已发生更改。 请注意，配置文件符合条件的其他未映射区段也可以作为目标导出的一部分（如果这些区段属于同一个） [合并策略](/help/profile/merge-policies/overview.md) 区段在激活数据流中映射时相同。 </li><li>中的所有标识 `identityMap` 对象也包含在内(Experience Platform当前不支持中的标识映射) [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中仅包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和受众可作为目标导出的线索。 这意味着，如果任何映射的受众更改了状态(从 `null` 到 `realized` 或从 `realized` 到 `exiting`)或者更新任何映射的属性，则启动目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标，给定配置文件上任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性上的任何更新，无论它是不是同一个值。 这意味着即使值本身未发生更改，对属性的覆盖也会被视为更改。</li></ul> | <ul><li>此 `segmentMembership` 对象包括激活数据流中映射的受众，在资格鉴定或受众退出事件后，用户档案的状态已发生更改。 请注意，如果配置文件符合条件的其他未映射受众属于同一受众，则这些受众也可以作为目标导出的一部分 [合并策略](/help/profile/merge-policies/overview.md) 与激活数据流中映射的受众相同。 </li><li>中的所有标识 `identityMap` 对象也包含在内(Experience Platform当前不支持中的标识映射) [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中仅包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
-例如，将此数据流视为 [!DNL Azure Event Hubs] 目标，其中在数据流中选择三个区段，并且四个属性映射到目标。
+例如，将此数据流视为 [!DNL Azure Event Hubs] 目标，其中在数据流中选择了三个受众，并且四个属性被映射到目标。
 
 ![Amazon Kinesis目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-导出到目标的配置文件可由符合或退出其中一个配置文件的配置文件来确定 *三个映射区段*. 但是，在数据导出中，在 `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 如果特定配置文件是其他未映射区段的成员，并且这些区段与触发导出的区段共享相同的合并策略，则可能会显示其他未映射区段。 如果配置文件符合 **使用德洛雷亚汽车的客户** 区段，但同时也是 **观看了《回到未来》** 电影和 **科幻迷们** 区段，则其他这两个区段也将显示在 `segmentMembership` 数据导出对象，即使这些对象未在数据流中映射，只要它们与共享相同的合并策略 **使用德洛雷亚汽车的客户** 区段。
+导出到目标的配置文件可由符合或退出其中一个配置文件的配置文件来确定 *三个映射区段*. 但是，在数据导出中，在 `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，如果特定配置文件是其他未映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他未映射受众。 如果配置文件符合 **使用德洛雷亚汽车的客户** 受众，但同时也是 **观看了《回到未来》** 电影和 **科幻迷们** 区段，则另外这两个受众也将出现在中 `segmentMembership` 数据导出对象，即使这些对象未在数据流中映射，只要它们与共享相同的合并策略 **使用德洛雷亚汽车的客户** 区段。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个都将出现在数据导出中。
 
 ## 历史数据回填 {#historical-data-backfill}
 
-向现有目标添加新区段时，或者创建新目标并将区段映射到该目标时，Experience Platform会将历史区段资格数据导出到该目标。 符合区段资格的用户档案 *早于* 添加到目标的区段会在大约1小时内导出到目标。
+在向现有目标添加新受众时，或者创建新目标并将受众映射到该目标时，Experience Platform会将历史受众资格数据导出到该目标。 符合受众资格的用户档案 *早于* 向目标添加的受众会在大约1小时内导出到目标。
 
 ## 导出的数据 {#exported-data}
 
@@ -259,4 +273,3 @@ Experience Platform会优化将配置文件导出到 [!DNL Azure Event Hubs] 目
 >* [连接到Azure事件中心并使用流服务API激活数据](../../api/streaming-destinations.md)
 >* [AWS Kinesis目标](./amazon-kinesis.md)
 >* [目标类型和类别](../../destination-types.md)
-

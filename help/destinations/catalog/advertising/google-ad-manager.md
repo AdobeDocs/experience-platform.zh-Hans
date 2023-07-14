@@ -3,10 +3,10 @@ keywords: google ad manager；google ad；doubleclick；DoubleClick AdX；Double
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 5174c65970aa8df9bc3f2c8d612c26c72c20e81f
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '938'
-ht-degree: 5%
+source-wordcount: '992'
+ht-degree: 2%
 
 ---
 
@@ -22,8 +22,8 @@ ht-degree: 5%
 
 * 激活的受众以编程方式创建于 [!DNL Google] 平台。
 * [!DNL Platform] 当前不包括用于验证激活是否成功的度量指标。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
-* 将区段映射到 [!DNL Google Ad Manager] 目标，则区段名称会立即显示在 [!DNL Google Ad Manager] 用户界面。
-* 区段人口需要24-48小时才能显示在 [!DNL Google Ad Manager]. 此外，区段必须具有至少50个配置文件的受众规模，才能在中显示 [!DNL Google Ad Manager]. 受众规模小于50个配置文件的区段将不会填充到 [!DNL Google Ad Manager].
+* 将受众映射到 [!DNL Google Ad Manager] 目标，则受众名称会立即显示在 [!DNL Google Ad Manager] 用户界面。
+* 区段人口需要24-48小时才能显示在 [!DNL Google Ad Manager]. 此外，受众必须具有至少50个配置文件才能在中显示 [!DNL Google Ad Manager]. 大小小于50个配置文件的受众将不会填充到 [!DNL Google Ad Manager].
 
 ## 支持的标识 {#supported-identities}
 
@@ -41,14 +41,28 @@ ht-degree: 5%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到Google目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您要将受众的所有成员导出到Google目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -75,8 +89,8 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam_appendSegmentID"
->title="将分段 ID 附加到分段名称"
->abstract="选择此选项可让 Google Ad Manager 中的区段名称包含来自 Experience Platform 的区段 ID，如下所示：`Segment Name (Segment ID)`"
+>title="将受众ID附加到受众名称"
+>abstract="选择此选项可使Google Ad Manager中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`"
 
 While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 
@@ -86,7 +100,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 * **[!UICONTROL 帐户类型]**：根据您在Google中的帐户，选择一个选项：
    * 使用 `DFP by Google` 对象 [!DNL DoubleClick] 发布者
    * 使用 `AdX buyer` 对象 [!DNL Google AdX]
-* **[!UICONTROL 将区段ID附加到区段名称]**：选择此选项可使Google广告管理器中的区段名称包含Experience Platform中的区段ID，如下所示： `Segment Name (Segment ID)`.
+* **[!UICONTROL 将受众ID附加到受众名称]**：选择此选项可使Google Ad Manager中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`.
 
 >[!NOTE]
 >
@@ -98,13 +112,13 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 

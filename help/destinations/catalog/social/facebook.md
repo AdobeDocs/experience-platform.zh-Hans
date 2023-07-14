@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 激活您的Facebook营销活动的配置文件，以便根据哈希电子邮件进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '1856'
+source-wordcount: '1906'
 ht-degree: 6%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 6%
 
 激活您的配置文件 [!DNL Facebook] 基于哈希电子邮件的受众定位、个性化和禁止营销活动。
 
-您可以将此目标用于中的受众定位 [!DNL Facebook’s] 支持的应用程序系列 [!DNL Custom Audiences]，包括 [!DNL Facebook]， [!DNL Instagram]， [!DNL Audience Network]、和 [!DNL Messenger]. [!DNL Facebook Ads Manager] 中的版面级别会显示您要针对其运行营销活动的所选应用程序。
+您可以将此目标用于中的受众定位 [!DNL Facebook's] 支持的应用程序系列 [!DNL Custom Audiences]，包括 [!DNL Facebook]， [!DNL Instagram]， [!DNL Audience Network]、和 [!DNL Messenger]. [!DNL Facebook Ads Manager] 中的版面级别会显示您要针对其运行营销活动的所选应用程序。
 
 ![Adobe Experience Platform UI中的Facebook目标](../../assets/catalog/social/facebook/catalog.png)
 
@@ -26,7 +26,7 @@ ht-degree: 6%
 
 ### 用例#1
 
-一家在线零售商希望通过社交平台与现有客户联系，并根据他们之前的订单向他们展示个性化优惠。 在线零售商可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建区段，并将这些区段发送到 [!DNL Facebook] 社交平台，优化广告支出。
+一家在线零售商希望通过社交平台与现有客户联系，并根据他们之前的订单向他们展示个性化优惠。 在线零售商可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到 [!DNL Facebook] 社交平台，优化广告支出。
 
 ### 用例#2
 
@@ -34,7 +34,7 @@ ht-degree: 6%
 
 要通过社交媒体定位他们，他们可以使用电子邮件地址作为标识符，将客户数据从其CRM载入到Adobe Experience Platform中。
 
-接下来，他们可以使用离线数据（包括关联的成员资格ID和客户层）构建新的受众区段，他们可以通过以下途径定位这些受众区段 [!DNL Facebook] 目标。
+接下来，他们可以使用离线数据（包括关联的会员ID和客户层）构建新的受众，他们可以通过以下途径锁定这些受众 [!DNL Facebook] 目标。
 
 ## 支持的身份 {#supported-identities}
 
@@ -48,30 +48,44 @@ ht-degree: 6%
 | email_lc_sha256 | 使用SHA256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并针对纯文本和经过哈希处理的电子邮件地址分别使用相应的命名空间。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
 | extern_id | 自定义用户ID | 当源身份是自定义命名空间时，选择此目标身份。 |
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及Facebook目标中使用的标识符（姓名、电话号码或其他）。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用Facebook目标中使用的标识符（姓名、电话号码或其他）导出受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## facebook帐户先决条件 {#facebook-account-prerequisites}
 
-在将受众区段发送到之前 [!DNL Facebook]，确保您满足以下要求：
+在将受众发送至 [!DNL Facebook]，确保您满足以下要求：
 
 * 您的 [!DNL Facebook] 用户帐户必须具有 **[!DNL Manage campaigns]** 为您计划使用的广告帐户启用的权限。
 * 此 **Adobe Experience Cloud** 必须将商业帐户作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`。参见 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) 有关详细信息，请参阅Facebook文档。
-   >[!IMPORTANT]
-   >
-   > 配置Adobe Experience Cloud的权限时，您必须启用 **管理营销活动** 许可。 以下各项需要权限： [!DNL Adobe Experience Platform] 集成。
+  >[!IMPORTANT]
+  >
+  > 配置Adobe Experience Cloud的权限时，您必须启用 **管理营销活动** 许可。 以下各项需要权限： [!DNL Adobe Experience Platform] 集成。
 * 阅读并签署 [!DNL Facebook Custom Audiences] 服务条款。 要执行此操作，请转到 `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中 `accountID` 是您的 [!DNL Facebook Ad Account ID].
-   >[!IMPORTANT]
-   >
-   >签名时 [!DNL Facebook Custom Audiences] 服务条款，确保使用您在Facebook API中用于进行身份验证的同一用户帐户。
+  >[!IMPORTANT]
+  >
+  >签名时 [!DNL Facebook Custom Audiences] 服务条款，确保使用您在Facebook API中用于进行身份验证的同一用户帐户。
 
 ## ID匹配要求 {#id-matching-requirements}
 
@@ -125,7 +139,7 @@ ht-degree: 6%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-以下视频还演示了配置 [!DNL Facebook] 目标和激活区段。
+以下视频还演示了配置 [!DNL Facebook] 目标和激活受众。
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
@@ -159,12 +173,12 @@ ht-degree: 6%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="受众来源"
->abstract="选择最初收集区段中的客户数据的方式。当用户被区段定位时，数据将显示在 Facebook 中"
+>abstract="选择最初收集受众中客户数据的方式。 当用户被区段定位时，数据将显示在 Facebook 中"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -185,9 +199,9 @@ ht-degree: 6%
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
-在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 受众来源] 将区段发送到 [!DNL Facebook Custom Audiences].
+在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 受众来源] 将受众发送至 [!DNL Facebook Custom Audiences].
 
 ![facebook受众来源](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
@@ -222,11 +236,11 @@ ht-degree: 6%
 
 ## 导出的数据 {#exported-data}
 
-对象 [!DNL Facebook]，成功激活意味着 [!DNL Facebook] 自定义受众将以编程方式创建于 [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). 由于用户符合或不符合激活的区段的资格，因此将添加和删除受众中的区段成员资格。
+对象 [!DNL Facebook]，成功激活意味着 [!DNL Facebook] 自定义受众将以编程方式创建于 [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). 由于用户符合或不符合激活受众的资格，因此将添加和删除受众成员资格。
 
 >[!TIP]
 >
->Adobe Experience Platform与之间的集成 [!DNL Facebook] 支持历史受众回填。 所有历史区段资格都将发送到 [!DNL Facebook] 将区段激活到目标时。
+>Adobe Experience Platform与之间的集成 [!DNL Facebook] 支持历史受众回填。 所有历史受众资格都将发送到 [!DNL Facebook] 将受众激活到目标时。
 
 ## 故障排除 {#troubleshooting}
 
