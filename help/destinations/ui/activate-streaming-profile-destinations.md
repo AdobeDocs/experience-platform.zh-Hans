@@ -1,17 +1,18 @@
 ---
 keywords: 激活配置文件目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
-title: 将受众数据激活到流配置文件导出目标
+title: 将受众激活到流配置文件导出目标
 type: Tutorial
-description: 了解如何通过向基于用户档案的流目标发送区段来激活您在Adobe Experience Platform中的受众数据。
+description: 了解如何通过将受众发送到基于用户档案的流目标，激活您在Adobe Experience Platform中的受众数据。
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 5bb2981b8187fcd3de46f80ca6c892421b3590f6
+source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '760'
 ht-degree: 5%
 
 ---
 
-# 将受众数据激活到流配置文件导出目标
+
+# 将受众激活到流配置文件导出目标
 
 >[!IMPORTANT]
 > 
@@ -34,35 +35,31 @@ ht-degree: 5%
 
    ![显示目标目录选项卡的图像。](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. 选择 **[!UICONTROL 激活区段]** ，该页面位于要激活区段的目标的对应卡上，如下图所示。
+1. 选择 **[!UICONTROL 激活受众]** ，该页面位于要激活受众的目标对应的信息卡上，如下图所示。
 
-   ![突出显示目标目录选项卡中的激活区段控件的图像。](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+   ![在目标目录选项卡中突出显示“激活受众”控件的图像。](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
 
-1. 选择要用于激活区段的目标连接，然后选择 **[!UICONTROL 下一个]**.
+1. 选择要用于激活受众的目标连接，然后选择 **[!UICONTROL 下一个]**.
 
    ![该图显示了您可以连接的两个目标选项。](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
-1. 移到下一部分以 [选择您的区段](#select-segments).
+1. 移到下一部分以 [选择您的受众](#select-audiences).
 
-## 选择您的区段 {#select-segments}
+## 选择您的受众 {#select-audiences}
 
-使用区段名称左侧的复选框可选择要激活到目标的区段，然后选择 **[!UICONTROL 下一个]**.
+要选择要激活到目标的受众，请选中受众名称左侧的复选框，然后选择 **[!UICONTROL 下一个]**.
 
-![突出显示激活工作流的“选择区段”步骤中的复选框选择的图像。](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
+您可以根据受众的来源，从多种类型的受众中进行选择：
+
+* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 了解更多详细信息。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关以下内容的文档 [导入受众](../../segmentation/ui/overview.md#import-audience).
+* 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
+
+![突出显示激活工作流选择受众步骤中的复选框选择的图像。](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)
 
 ## 选择配置文件属性 {#select-attributes}
 
 在 **[!UICONTROL 映射]** 步骤，选择要发送到目标目标的配置文件属性。
-
->[!NOTE]
->
-> Adobe Experience Platform会使用架构中的四个推荐的常用属性来预填充您的选择： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.status`.
-
-文件导出将以下列方式有所不同，具体取决于是否 `segmentMembership.status` 已选中：
-* 如果 `segmentMembership.status` 字段已选定，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
-* 如果 `segmentMembership.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照和后续增量导出中的成员。
-
-![该图像显示了映射步骤中预填充的建议属性。](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
 1. 在 **[!UICONTROL 选择属性]** 页面，选择 **[!UICONTROL 添加新字段]**.
 
@@ -76,14 +73,13 @@ ht-degree: 5%
 
    ![该图像显示了可选择作为源字段的一系列XDM字段。](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
-
-1. 要添加更多映射，请重复步骤1至3，然后选择 **[!UICONTROL 下一个]**.
+1. 要添加更多字段，请重复步骤1至3，然后选择 **[!UICONTROL 下一个]**.
 
 ## 请查看 {#review}
 
 在 **[!UICONTROL 审核]** 页面时，您可以看到所选内容的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
-![审核步骤中的选择摘要。](/help/destinations/assets/ui/activate-streaming-profile-destinations/review.png)
+![审核步骤中的选择摘要。](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ### 同意政策评估 {#consent-policy-evaluation}
 
@@ -91,21 +87,21 @@ ht-degree: 5%
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
-在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决违规之前，无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 在数据治理文档部分中。
+在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 在数据治理文档部分中。
 
 ![数据策略违规](../assets/common/data-policy-violation.png)
 
-### 过滤区段 {#filter-segments}
+### 筛选受众 {#filter-audiences}
 
-此外，在此步骤中，您可以使用页面上的可用过滤器仅显示其计划或映射已作为此工作流的一部分更新的区段。
+此外，在此步骤中，您可以使用页面上的可用过滤器仅显示其计划或映射已作为此工作流的一部分更新的受众。
 
-![屏幕录制，其中显示审核步骤中的可用区段过滤器。](/help/destinations/assets/ui/activate-streaming-profile-destinations/filter-segments-review-step.gif)
+![屏幕录制，其中显示审核步骤中的可用受众筛选器。](../assets/ui/activate-streaming-profile-destinations/filter-audiences-review-step.gif)
 
 如果您对您的选择感到满意，并且未检测到违反策略的情况，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
-## 验证区段激活 {#verify}
+## 验证受众激活 {#verify}
 
-已导出 [!DNL Experience Platform] 数据以JSON格式登陆到您的目标目标。 例如，以下事件包含符合某个区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的身份是ECID和电子邮件。
+已导出 [!DNL Experience Platform] 数据以JSON格式登陆到您的目标目标。 例如，以下事件包含符合特定受众资格并退出其他受众的个人资料的电子邮件地址属性。 此潜在客户的身份为 `ECID` 和 `email_lc_sha256`.
 
 ```json
 {

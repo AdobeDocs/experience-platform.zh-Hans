@@ -3,10 +3,10 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '805'
-ht-degree: 0%
+ht-degree: 5%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ![目标概述横幅](./assets/overview/destinations-overview-banner.png)
 
-**[!DNL Destinations]** 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+**[!DNL Destinations]** 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>
@@ -30,7 +30,7 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 ## 目标步骤 {#steps}
 
 * 从 [自助服务目录](./catalog/overview.md) Platform中所有可用的目标。
-* 使用目标将配置文件或区段发送到营销自动化平台、数字广告平台等。
+* 使用目标将用户档案或受众发送到营销自动化平台、数字广告平台等。
 * 定期安排数据导出到您的首选目标。
 
 ## 控件 {#controls}
@@ -40,8 +40,8 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 * 浏览可在其中激活数据的目标平台目录；
 * 创建、编辑、激活和禁用流向目录中的目标的数据流；
 * 在存储位置中创建帐户，或将Platform链接到目标平台中的帐户；
-* 选择应将哪些区段激活到目标；
-* 选择哪个 [体验数据模型(XDM)字段](../xdm/home.md) 以将区段激活到电子邮件营销目标时导出。
+* 选择应将哪些受众激活到目标；
+* 选择哪个 [体验数据模型(XDM)字段](../xdm/home.md) 以将受众激活到电子邮件营销目标时导出。
 
 ## 目标类型和类别 {#types-and-categories}
 
@@ -56,8 +56,8 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 | 权限级别 | 描述 |
 | ---- | ----|
 | **[!UICONTROL 管理目标]** | 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). |
-| **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将区段激活到目标并启用 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
-| **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将区段激活到目标并隐藏 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将受众激活到目标并启用 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将受众激活到目标并隐藏 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
 
 {style="table-layout:auto"}
 
@@ -88,15 +88,15 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 有关在创建目标工作流中选择营销操作的更多信息，请参阅以下页面，了解Platform中不同的目标类型：
 
-* [广告目标 — Google广告管理器 ](./catalog/advertising/google-ad-manager.md)
+* [广告目标 — Google广告管理器](./catalog/advertising/google-ad-manager.md)
 * [广告目标 — Google Ads](./catalog/advertising/google-ads-destination.md)
-* [广告目标 — Google显示和视频360 ](./catalog/advertising/google-dv360.md)
+* [广告目标 — Google显示和视频360](./catalog/advertising/google-dv360.md)
 * [云存储目标](./catalog/cloud-storage/overview.md)
 * [电子邮件营销目标](./catalog/email-marketing/overview.md)
 * [社交目标](./catalog/social/overview.md)
 
-有关区段激活工作流中数据策略违规的更多信息，请参阅 **[!UICONTROL 审核]** 步骤：
+有关Audience Activation工作流中数据策略违规的更多信息，请参阅 **[!UICONTROL 审核]** 步骤：
 
-* [将受众数据激活到流式区段导出目标](./ui/activate-segment-streaming-destinations.md#review)
+* [将受众数据激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md#review)
 * [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md#review)
 * [将受众数据激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md#review)

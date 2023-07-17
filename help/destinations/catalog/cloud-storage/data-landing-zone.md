@@ -1,10 +1,10 @@
 ---
 title: 数据登陆区目标
-description: 了解如何连接到数据登陆区以激活区段和导出数据集。
+description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 5daa92b2f488b4acb825215f4da92af51bcf7c61
+source-git-commit: 4b9e7c22282a5531f2f25f3d225249e4eb0e178e
 workflow-type: tm+mt
-source-wordcount: '1378'
+source-wordcount: '1434'
 ht-degree: 1%
 
 ---
@@ -27,8 +27,22 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 ## 连接到您的 [!UICONTROL 数据登陆区] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
-* 连接到您的 [!UICONTROL 数据登陆区] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
-* 连接到您的 [!UICONTROL 数据登陆区] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 连接到您的 [!UICONTROL 数据登陆区] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下面的。
+* 连接到您的 [!UICONTROL 数据登陆区] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -201,13 +215,13 @@ curl -X POST \
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 计划
 

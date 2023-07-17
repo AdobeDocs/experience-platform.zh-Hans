@@ -4,7 +4,7 @@ title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: 1ef6430b6661a2b8b5aef196b75cfaf3f6220aab
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '413'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform用户界面中，您可以删除到目标的现有连接。
 
-删除目标会删除指向该目标的所有现有数据流。 在删除数据流之前，激活到您删除的目标的所有区段都会取消映射。
+删除目标会删除指向该目标的所有现有数据流。 在删除数据流之前，激活到您删除的目标的所有受众都会取消映射。
 
 您可以通过两种方式从删除目标 [!DNL Platform] [!DNL UI]. 您可以：
 
@@ -61,11 +61,11 @@ ht-degree: 0%
 
    * 如果目标具有现有数据流，则会转到 [!UICONTROL 数据流运行] 选项卡。
 
-      ![“数据流运行”选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
+     ![“数据流运行”选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
    * 如果目标没有现有数据流，则会进入一个空页面，您可以在该页面开始激活受众。
 
-      ![目标详细信息](../assets/ui/delete-destinations/destination-details-empty.png)
+     ![目标详细信息](../assets/ui/delete-destinations/destination-details-empty.png)
 
 4. 选择 **[!UICONTROL 删除]** 在右边栏中。
 

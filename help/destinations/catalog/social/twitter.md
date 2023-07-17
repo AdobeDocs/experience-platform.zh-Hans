@@ -2,9 +2,9 @@
 title: twitter自定义受众连接
 description: 在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '860'
 ht-degree: 4%
 
 ---
@@ -33,14 +33,28 @@ ht-degree: 4%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，其中包含Twitter自定义受众目标中使用的标识符。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用Twitter自定义受众目标中使用的标识符导出受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -86,13 +100,13 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 数据使用和管理 {#data-usage-governance}
 
@@ -100,9 +114,9 @@ ht-degree: 4%
 
 ## 其他资源 {#additional-resources}
 
-将受众区段映射到Twitter时，请确保满足以下区段命名要求：
+将受众映射到Twitter时，请确保满足以下受众命名要求：
 
-1. 提供人类可读的区段映射名称。 我们建议使用与Experience Platform区段相同的名称。
-2. 请勿使用特殊字符(+ &amp; ， % ： ； @ / = ？ $)的区段映射名称。 如果您的Experience Platform区段名称包含这些字符，请在将区段映射到Twitter目标之前删除它们。
+1. 提供易于用户识别的受众映射名称。 我们建议使用与Experience Platform区段相同的名称。
+2. 请勿使用特殊字符(+ &amp; ， % ： ； @ / = ？ $)（受众和受众映射名称中）。 如果您的Experience Platform受众名称包含这些字符，请先删除它们，然后再将受众映射到Twitter目标。
 
 有关以下内容的更多信息 [!DNL List Custom Audiences] 在Twitter中，您可以在中找到 [twitter文档](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).

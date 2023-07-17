@@ -1,13 +1,13 @@
 ---
 keywords: 移动设备；移动参与目标；LINE；LINE移动参与目标
 title: LINE连接
-description: LINE目标允许您向Platform区段添加用户档案，并为连接的用户提供个性化体验。
+description: LINE目标允许您向Platform受众添加用户档案，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1180'
-ht-degree: 0%
+source-wordcount: '1178'
+ht-degree: 1%
 
 ---
 
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 [[!DNL LINE]](https://line.me/en/) 是一个连接人员、服务和信息的流行通信平台，并且已从聊天应用程序发展为娱乐、社交和日常活动的中心。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL LINE] 消息传送API](https://developers.line.biz/en/reference/messaging-api/). 您可以将Experience Platform区段中的配置文件激活为中的连接 [!DNL LINE] 满足您的业务需求。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL LINE] 消息传送API](https://developers.line.biz/en/reference/messaging-api/). 您可以将Experience Platform受众中的配置文件激活为中的连接 [!DNL LINE] 满足您的业务需求。
 
 [!DNL LINE] 使用持有者令牌作为身份验证机制与 [!DNL LINE] 消息传送API。 向您的验证的说明 [!DNL LINE] 下面是实例，位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-作为营销人员，您可以定位移动参与目标中的用户，并内置区段 [!DNL Adobe Experience Platform]. 此外，您还可以根据客户的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，一旦在中更新了区段和用户档案 [!DNL Adobe Experience Platform].
+作为营销人员，您可以定位移动参与目标中的用户，并内置受众 [!DNL Adobe Experience Platform]. 此外，您还可以根据客户的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，当受众和用户档案在中更新时 [!DNL Adobe Experience Platform].
 
 ## 先决条件 {#prerequisites}
 
@@ -67,8 +67,8 @@ ht-degree: 0%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码或其他）。 [!DNL LINE] 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码或其他）。 [!DNL LINE] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -107,13 +107,13 @@ ht-degree: 0%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射属性和身份 {#map}
 
@@ -129,13 +129,13 @@ ht-degree: 0%
 
 ## 验证数据导出 {#exported-data}
 
-成功从Experience Platform中导出数据后， [!DNL LINE] 目标在中创建新受众 [!DNL LINE] 使用选定的区段名称。
+成功从Experience Platform中导出数据后， [!DNL LINE] 目标在中创建新受众 [!DNL LINE] 使用选定的受众名称。
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. In [!DNL LINE]，登录到 [管理器控制台](https://manager.line.biz/).
 
-1. 接下来，导航到 **[!UICONTROL 数据控件]** > **[!UICONTROL 受众]** 并检查与中选定区段匹配的名称 **[!UICONTROL 受众名称]** 列。
+1. 接下来，导航到 **[!UICONTROL 数据控件]** > **[!UICONTROL 受众]** ，并检查与中选定受众匹配的名称 **[!UICONTROL 受众名称]** 列。
 
 1. 更新的卷将匹配区段中的计数。
 

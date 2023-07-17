@@ -4,7 +4,7 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为已连接目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1107'
 ht-degree: 0%
@@ -18,10 +18,9 @@ ht-degree: 0%
 >* 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要连接到支持数据集导出的目标，您需要 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-
 ## 概述 {#overview}
 
-在将受众数据发送到目标之前，必须设置与目标平台的连接。 本文介绍如何设置新的目标连接，然后可以使用Adobe Experience Platform用户界面激活区段或导出数据集。
+在将受众数据发送到目标之前，必须设置与目标平台的连接。 本文介绍如何设置新的目标连接，然后可以使用Adobe Experience Platform用户界面激活受众或导出数据集。
 
 ## 在目录中找到所需的目标 {#setup}
 
@@ -29,23 +28,23 @@ ht-degree: 0%
 
    ![Experience PlatformUI屏幕快照，显示目标目录页。](../assets/ui/connect-destinations/catalog.png)
 
-2. 目录中的目标卡可能具有不同的操作控件，具体取决于您是否已与目标建立现有连接，以及目标是否支持激活区段和/或导出数据集。 您可能会看到目标信息卡的以下任意控件：
+2. 目录中的目标信息卡可能具有不同的操作控件，具体取决于您是否已与目标建立现有连接，以及目标是否支持激活受众、导出数据集，或同时支持这两者。 您可能会看到目标信息卡的以下任意控件：
 
-   * **[!UICONTROL 设置]**. 在激活区段或导出数据集之前，需要先设置与此目标的连接。
-   * **[!UICONTROL 激活]**. 已设置与此目标的连接。 此目标支持区段激活和数据集导出。
-   * **[!UICONTROL 激活区段]**. 已设置与此目标的连接。 此目标仅支持区段激活。
+   * **[!UICONTROL 设置]**. 在激活受众或导出数据集之前，需要先设置与此目标的连接。
+   * **[!UICONTROL 激活]**. 已设置与此目标的连接。 此目标支持受众激活和数据集导出。
+   * **[!UICONTROL 激活受众]**. 已设置与此目标的连接。 此目标仅支持受众激活。
 
    有关这些控件之间差异的更多信息，您还可以参阅 [目录](../ui/destinations-workspace.md#catalog) 部分。
 
-   选择 **[!UICONTROL 设置]**， **[!UICONTROL 激活]**，或 **[!UICONTROL 激活区段]**，具体取决于您可用的控件。
+   选择 **[!UICONTROL 设置]**， **[!UICONTROL 激活]**，或 **[!UICONTROL 激活受众]**，具体取决于您可用的控件。
 
    ![Experience PlatformUI的屏幕快照，其中显示了高亮显示设置控件的目标目录页面。](../assets/ui/connect-destinations/set-up.png)
 
-   ![Experience PlatformUI的屏幕截图，其中显示了突出显示了“激活区段”控件的目标目录页。](../assets/ui/connect-destinations/activate-segments.png)
+   ![Experience PlatformUI的屏幕截图，其中显示了突出显示了“激活受众”控件的目标目录页面。](../assets/ui/connect-destinations/activate-segments.png)
 
 3. 如果您已选择 **[!UICONTROL 设置]**，请跳至下一步，即 [身份验证](#authenticate) 到目的地。
 
-   如果您已选择 **[!UICONTROL 激活]**， **[!UICONTROL 激活区段]**，或 **[!UICONTROL 导出数据集]**，您现在可以看到现有目标连接的列表。
+   如果您已选择 **[!UICONTROL 激活]**， **[!UICONTROL 激活受众]**，或 **[!UICONTROL 导出数据集]**，您现在可以看到现有目标连接的列表。
 
    选择 **[!UICONTROL 配置新目标]** 以建立与目标的新连接。
 
@@ -85,11 +84,11 @@ ht-degree: 0%
 
 ![该图像显示了文件类型选择和CSV文件的各种选项。](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### 设置用于区段激活或数据集导出的目标连接 {#segment-activation-or-dataset-exports}
+### 设置目标连接，以便进行受众激活或数据集导出 {#segment-activation-or-dataset-exports}
 
-某些基于文件的目标支持区段激活和数据集导出。 对于这些目标，您可以选择是创建连接以激活区段还是导出数据集。
+某些基于文件的目标支持受众激活以及数据集导出。 对于这些目标，您可以选择是创建连接以激活受众还是导出数据集。
 
-![此图像显示了数据类型选择控件，该控件允许用户在区段激活和数据集导出之间进行选择。](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
+![此图像显示了数据类型选择控件，该控件允许用户在受众激活和数据集导出之间进行选择。](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
 
 ### 启用目标警报 {#enable-alerts}
 
@@ -113,4 +112,4 @@ ht-degree: 0%
 
 通过阅读本文档，您已了解如何使用Experience PlatformUI建立与目标的连接。 提醒一下，可用和所需的连接参数因目标而异。 您还应该参阅 [目标目录](/help/destinations/catalog/overview.md) 以获取有关每个目标类型的所需输入和可用选项的特定信息。
 
-接下来，您可以继续执行 [激活区段](/help/destinations/ui/activation-overview.md) 或 [导出数据集](/help/destinations/ui/export-datasets.md) 去你的目的地。
+接下来，您可以继续执行 [激活受众](/help/destinations/ui/activation-overview.md) 或 [导出数据集](/help/destinations/ui/export-datasets.md) 去你的目的地。

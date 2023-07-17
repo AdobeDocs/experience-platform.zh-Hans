@@ -2,7 +2,7 @@
 description: 此页说明如何使用/testing/destinationInstance API端点测试基于文件的目标是否正确配置，并验证数据流到所配置目标的完整性。
 title: 使用示例配置文件测试基于文件的目标
 exl-id: 75f76aec-245b-4f07-8871-c64a710db9f6
-source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
+source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
 workflow-type: tm+mt
 source-wordcount: '827'
 ht-degree: 2%
@@ -31,7 +31,7 @@ ht-degree: 2%
 * 您已在Experience PlatformUI中为目标创建至少一个激活流程。
 * 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标建立的连接时，从URL获取应在API调用中使用的目标实例ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
+  ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
 * *可选*：如果要使用添加到API调用中的示例配置文件测试目标配置，请使用 [/sample-profiles](file-based-sample-profile-generation-api.md) 端点，以基于您现有的源架构生成示例配置文件。 如果您不提供示例配置文件，则API将生成一个配置文件并在响应中返回它。
 
 ## 测试目标配置，而不将配置文件添加到调用 {#test-without-adding-profiles}
@@ -111,7 +111,7 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `activations` | 返回每个已激活区段的区段ID和流量运行ID。 激活条目（以及关联的生成文件）的数量等于在目标实例上映射的区段数。 <br><br> 示例：如果将两个区段映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的区段将对应于一个导出文件。 |
+| `activations` | 返回每个已激活受众的受众ID和流量运行ID。 激活条目（以及关联的生成文件）的数量等于在目标实例上映射的受众数量。 <br><br> 示例：如果将两个受众映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的受众将对应于一个导出的文件。 |
 | `results` | 返回目标实例ID和可用于调用的流运行ID。 [结果API](file-based-destination-results-api.md)，以进一步测试集成。 |
 | `inputProfiles` | 返回由API自动生成的示例配置文件。 |
 
@@ -232,7 +232,7 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/d
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `activations` | 返回每个已激活区段的区段ID和流量运行ID。 激活条目（以及关联的生成文件）的数量等于在目标实例上映射的区段数。 <br><br> 示例：如果将两个区段映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的区段将对应于一个导出文件。 |
+| `activations` | 返回每个已激活受众的受众ID和流量运行ID。 激活条目（以及关联的生成文件）的数量等于在目标实例上映射的受众数量。 <br><br> 示例：如果将两个受众映射到目标实例，则 `activations` 数组将包含两个条目。 每个激活的受众将对应于一个导出的文件。 |
 | `results` | 返回目标实例ID和可用于调用的流运行ID。 [结果API](file-based-destination-results-api.md)，以进一步测试集成。 |
 | `inputProfiles` | 返回您在API请求中传递的自定义示例配置文件。 |
 

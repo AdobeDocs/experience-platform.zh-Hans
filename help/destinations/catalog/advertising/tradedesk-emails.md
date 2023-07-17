@@ -3,10 +3,10 @@ title: (Beta)交易台 — CRM连接
 description: 将配置文件激活到您的交易台帐户，以便根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1078'
-ht-degree: 0%
+source-wordcount: '1076'
+ht-degree: 4%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 0%
 >
 >[!DNL The Trade Desk - CRM] Platform中的目标当前为测试版。 文档和功能可能会发生更改。
 >
->随着EUID (European Unified ID)的发布，您现在可以看到两个 [!DNL The Trade Desk - CRM] 中的目标 [目标目录](/help/destinations/catalog/overview.md).
->* 如果您从欧盟地区获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
->* 如果您在APAC或NAMER地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
+>随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。
+>* 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。
+>* 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。
 >
 >Experience Platform中的两个目标当前均处于测试阶段。 此文档页面由创建 *[!DNL Trade Desk]* 团队。 如有任何查询或更新请求，请联系 [!DNL Trade Desk] 代表，文档和功能可能会发生更改。
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-在将区段激活到之前 [!DNL The Trade Desk]，您必须联系 [!DNL The Trade Desk] 客户经理签署CRM入门培训合同。 [!DNL The Trade Desk] 将授予权限并共享您的广告商ID以配置您的目标。
+在将受众激活到 [!DNL The Trade Desk]，您必须联系 [!DNL The Trade Desk] 客户经理签署CRM入门培训合同。 [!DNL The Trade Desk] 将授予权限并共享您的广告商ID以配置您的目标。
 
 ## ID匹配要求 {#id-matching-requirements}
 
@@ -73,8 +73,8 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，其中包含交易台目标中使用的标识符（电子邮件或哈希电子邮件）。 |
-| 导出频率 | **[!UICONTROL 每日批次]** | 由于配置文件是根据区段评估在Experience Platform中更新的，因此配置文件（身份）每天都会更新一次，以流向目标平台。 详细了解 [批量导出](/help/destinations/destination-types.md#file-based). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有在交易台目标中使用的标识符（电子邮件或哈希电子邮件）的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 每日批次]** | 由于配置文件是根据受众评估在Experience Platform中更新的，因此配置文件（身份）每天都会更新一次，以流向目标平台。 详细了解 [批量导出](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
@@ -97,25 +97,25 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 连接到目标时，设置数据治理策略是完全可选的。 请查看Experience Platform [数据治理概述](/help/data-governance/policies/overview.md) 了解更多详细信息。
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
-读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到目标的说明。
+读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众激活到目标的说明。
 
-在 **[!UICONTROL 计划]** 页面上，您可以为要导出的每个区段配置计划和文件名。 必须配置计划，但可以选择是否配置文件名。
+在 **[!UICONTROL 计划]** 页面，您可以为要导出的每个受众配置计划和文件名。 必须配置计划，但可以选择是否配置文件名。
 
-![用于计划区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
+![用于计划受众激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
->所有区段均激活至 [!DNL The Trade Desk] CRM目标会自动设置为每日频率和完整文件导出。
+>所有受众已激活到 [!DNL The Trade Desk] CRM目标会自动设置为每日频率和完整文件导出。
 
-![用于计划区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+![用于计划受众激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
 在 **[!UICONTROL 映射]** 页上，您必须从源列中选择属性或身份命名空间并映射到目标列。
 
-![用于映射区段激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
+![用于映射受众激活的平台UI屏幕快照。](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
-下面是激活区段到时正确的标识映射示例 [!DNL The Trade Desk] CRM目标。
+下面是将受众激活到时的正确身份映射示例 [!DNL The Trade Desk] CRM目标。
 
 >[!IMPORTANT]
 >
@@ -133,11 +133,11 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ## 验证数据导出 {#validate}
 
-验证数据是否已正确地从Experience Platform导出并导出到 [!DNL The Trade Desk]，请在Adobe1PD数据拼贴下找到区段 [!DNL The Trade Desk] 数据管理平台(DMP)。 以下是在中找到相应ID的步骤 [!DNL Trade Desk] UI：
+验证数据是否已正确地从Experience Platform导出并导出到 [!DNL The Trade Desk]，请在Adobe1PD数据拼贴下找到受众 [!DNL The Trade Desk] 数据管理平台(DMP)。 以下是在中找到相应ID的步骤 [!DNL Trade Desk] UI：
 
 1. 首先，单击 **[!UICONTROL 数据]** 选项卡，然后查看 **[!UICONTROL 第一方]**.
 2. 向下滚动页面，在下 **[!UICONTROL 导入的数据]**，您将找到 **[!UICONTROL Adobe1PD磁贴]**.
-3. 单击**[!UICONTROL Adobe1PD]**图块，它将列出激活到的所有区段 [!DNL Trade Desk] 广告商的目标。 您还可以使用搜索功能。
+3. 单击**[!UICONTROL Adobe1PD]**图块，它将列出激活到的所有受众 [!DNL Trade Desk] 广告商的目标。 您还可以使用搜索功能。
 4. Experience Platform中的区段ID #将显示为中的区段名称， [!DNL Trade Desk] UI。
 
 ## 数据使用和管理 {#data-usage-governance}

@@ -2,7 +2,7 @@
 description: 本页说明如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点返回的结果与使用流服务API监视数据流时获得的结果相同。
 title: 查看详细的激活结果
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
+source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 2%
@@ -35,12 +35,12 @@ ht-degree: 2%
 * 您已在Experience PlatformUI中为目标创建至少一个激活流程。
 * 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标建立的连接时，从URL获取应在API调用中使用的目标实例ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
+  ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
 * 您以前拥有 [已测试您的目标配置](file-based-destination-testing-api.md)，并收到了有效的API响应，其中包括 `results` 属性。 您将使用此 `results` 值，以进一步测试您的目标。
 
 ## 查看详细的目标测试结果 {#test-activation-results}
 
-一旦您拥有 [已验证您的目标配置](file-based-destination-testing-api.md)，您可以通过向以下网站发出GET请求来查看详细的激活结果： `authoring/testing/destinationInstance/` 端点，并提供要测试的目标的目标实例ID，以及已激活区段的流运行ID。
+一旦您拥有 [已验证您的目标配置](file-based-destination-testing-api.md)，您可以通过向以下网站发出GET请求来查看详细的激活结果： `authoring/testing/destinationInstance/` 端点，并提供要测试的目标的目标实例ID，以及已激活受众的流运行ID。
 
 您可以在中找到需要使用的完整API URL `results` 属性返回于 [目标测试调用的响应](file-based-destination-testing-api.md).
 
@@ -56,7 +56,7 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 
 | 查询字符串参数 | 描述 |
 | -------- | ----------- |
-| `flowRunIds` | 与激活的区段对应的流量运行ID。 您可以在以下位置找到流量运行ID： `results` 属性返回于 [目标测试调用的响应](file-based-destination-testing-api.md). |
+| `flowRunIds` | 流运行与激活的受众相对应的ID。 您可以在以下位置找到流量运行ID： `results` 属性返回于 [目标测试调用的响应](file-based-destination-testing-api.md). |
 
 **请求**
 

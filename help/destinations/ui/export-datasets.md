@@ -3,7 +3,7 @@ title: （测试版）将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: d9b59b8a331511e87171f3b9d1163d452ba469be
+source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 5%
@@ -35,14 +35,14 @@ ht-degree: 5%
 * [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
 * [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
-## 何时激活区段或导出数据集 {#when-to-activate-segments-or-activate-datasets}
+## 何时激活受众或导出数据集 {#when-to-activate-audiences-or-activate-datasets}
 
-Experience Platform目录中的一些基于文件的目标同时支持区段激活和数据集导出。
+Experience Platform目录中的一些基于文件的目标同时支持Audience Activation和数据集导出。
 
-* 当您希望将数据结构化为按受众兴趣或资格分组的用户档案时，请考虑激活区段。
+* 当您希望将数据结构化为按受众兴趣或资格分组的用户档案时，请考虑激活受众。
 * 或者，在要导出未按受众兴趣或资格进行分组或构建的原始数据集时，请考虑数据集导出。 您可以将此数据用于报告、数据科学工作流、满足合规性要求以及许多其他用例。
 
-本文档包含导出数据集所需的所有信息。 如果要将区段激活到云存储或电子邮件营销目标，请阅读 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md).
+本文档包含导出数据集所需的所有信息。 如果要将受众激活到云存储或电子邮件营销目标，请阅读 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 ## 先决条件 {#prerequisites}
 

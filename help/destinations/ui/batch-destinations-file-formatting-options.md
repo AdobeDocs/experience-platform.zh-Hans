@@ -2,7 +2,7 @@
 description: 了解在将数据激活到基于文件的目标时如何配置文件格式选项
 title: （测试版）为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1226'
 ht-degree: 19%
@@ -37,7 +37,7 @@ ht-degree: 19%
 > 
 >新的云存储目标 —  [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [(Beta) Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md)， [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [(Beta)数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md)， [（测试版） Google Cloud Storage](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)， [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md)  — 当前仅支持下面高亮显示的六个CSV选项。
 
-![显示一些可用文件格式选项的图像。](/help/destinations/assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
+![显示一些可用文件格式选项的图像。](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
 ### 分隔符 {#delimiter}
 

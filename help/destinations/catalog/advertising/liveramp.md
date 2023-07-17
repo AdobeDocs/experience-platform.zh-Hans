@@ -4,9 +4,9 @@ description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Cust
 hidefromtoc: true
 hide: true
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: d7625018b7b36d8e9516f7884fc00b726d391103
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '1738'
+source-wordcount: '1736'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,6 @@ ht-degree: 3%
 >
 ><p>此目标连接当前处于Alpha阶段，仅供有限数量的客户使用。 功能和文档可能会发生更改。</p>
 &gt;<p>此目标连接的最终版本可能需要客户迁移。</p>
-
 
 ## 用例 {#use-cases}
 
@@ -45,8 +44,8 @@ LiveRamp SFTP支持激活身份，例如基于PII的标识符、已知标识符�
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码或其他）。 [!DNL LiveRamp SFTP] 目标。 |
-| 导出频率 | **[!UICONTROL 每日批次]** | 由于用户档案是根据区段评估在Experience Platform中更新的，因此用户档案（身份）每天都会在目标平台下游更新一次。 详细了解 [基于文件的批处理目标](/help/destinations/destination-types.md#file-based). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码或其他）。 [!DNL LiveRamp SFTP] 目标。 |
+| 导出频率 | **[!UICONTROL 每日批次]** | 由于用户档案是根据受众评估在Experience Platform中更新的，因此用户档案（身份）每天都会在目标平台下游更新一次。 详细了解 [基于文件的批处理目标](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
@@ -70,7 +69,7 @@ LiveRamp SFTP支持激活身份，例如基于PII的标识符、已知标识符�
 * **[!UICONTROL 密码]**：您的密码 [!DNL LiveRamp SFTP] 存储位置。
 * **[!UICONTROL PGP/GPG加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。 如果提供加密密钥，则还必须提供 **[!UICONTROL 加密子密钥ID]** 在 [目标详细信息](#destination-details) 部分。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/advertising/liveramp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/advertising/liveramp/pgp-key.png)
 
 **具有SSH密钥身份验证的SFTP** {#sftp-ssh}
 
@@ -83,7 +82,7 @@ LiveRamp SFTP支持激活身份，例如基于PII的标识符、已知标识符�
 
 * **[!UICONTROL PGP/GPG加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 如果提供加密密钥，则还必须提供 **[!UICONTROL 加密子密钥ID]** 在 [目标详细信息](#destination-details) 部分。 在下图中查看正确格式化的加密密钥示例。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/advertising/liveramp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/advertising/liveramp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -110,28 +109,28 @@ LiveRamp SFTP支持激活身份，例如基于PII的标识符、已知标识符�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 计划 {#scheduling}
 
-在 [!UICONTROL 计划] 步骤，使用下面显示的设置为每个区段创建一个导出计划。
+在 [!UICONTROL 计划] 步骤，使用下面显示的设置为每个受众创建导出计划。
 
 >[!IMPORTANT]
 >
->激活到此目标的所有区段都必须使用完全相同的计划进行配置，如下所示。
+>激活到此目标的所有受众都必须使用完全相同的计划进行配置，如下所示。
 
 * **[!UICONTROL 文件导出选项]**： [!UICONTROL 导出完整文件]. [增量文件导出](../../ui/activate-batch-profile-destinations.md#export-incremental-files) 当前不支持 [!DNL LiveRamp] 目标。
 * **[!UICONTROL 频率]**： [!UICONTROL 每日]
-* 将导出时间设置为 **[!UICONTROL 区段评估后]**. 计划区段导出和 [按需文件导出](../../ui/export-file-now.md) 当前不支持 [!DNL LiveRamp] 目标。
+* 将导出时间设置为 **[!UICONTROL 区段评估后]**. 计划受众导出和 [按需文件导出](../../ui/export-file-now.md) 当前不支持 [!DNL LiveRamp] 目标。
 * **[!UICONTROL 日期]**：根据需要选择导出开始和结束时间。
 
-![显示区段计划步骤的Platform UI屏幕快照。](../../assets/catalog/advertising/liveramp/liveramp-segment-scheduling.png)
+![显示受众计划步骤的平台UI屏幕截图。](../../assets/catalog/advertising/liveramp/liveramp-segment-scheduling.png)
 
 导出的文件名当前不可用户配置。 所有导出到 [!DNL LiveRamp SFTP] 目标基于以下模板自动命名：
 
@@ -179,28 +178,28 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 
 将文件导出到 [!DNL LiveRamp SFTP] 目标，平台为每个目标生成一个CSV文件 [合并策略Id](../../../profile/merge-policies/overview.md).
 
-例如，我们来考虑以下区段：
+例如，我们考虑以下受众：
 
-* 区段A（合并策略1）
-* 区段B（合并策略2）
-* 区段C（合并策略1）
-* 区段D（合并策略1）
+* 受众A（合并策略1）
+* 受众B（合并策略2）
+* 受众C（合并策略1）
+* 受众D（合并策略1）
 
 Platform会将两个CSV文件导出到 [!DNL LiveRamp SFTP]：
 
-* 一个CSV文件，其中包含区段A、C和D；
-* 一个包含区段B的CSV文件。
+* 一个包含受众A、C和D的CSV文件；
+* 一个包含受众B的CSV文件。
 
-导出的CSV文件包含具有选定属性和相应区段状态的配置文件，该文件位于单独的列中，属性名称和区段ID作为列标题。
+导出的CSV文件在单独的列中包含具有选定属性和相应受众状态的配置文件，属性名称和受众ID作为列标题。
 
-导出文件中包含的配置文件可以与以下区段资格状态之一匹配：
+导出文件中包含的用户档案可以与以下受众资格状态之一匹配：
 
-* `Active`：用户档案当前符合区段的条件。
-* `Expired`：用户档案不再符合区段的条件，而是以前符合条件。
-* `""`（空字符串）：配置文件从未符合该区段的条件。
+* `Active`：用户档案当前符合受众条件。
+* `Expired`：该用户档案不再符合受众条件，而是以前符合条件。
+* `""`（空字符串）：个人资料从未符合受众条件。
 
 
-例如，一个导出的CSV文件包含一个 `email` 属性和3个区段可能如下所示：
+例如，一个导出的CSV文件包含一个 `email` 属性和3个受众可能如下所示：
 
 ```csv
 email,aa2e3d98-974b-4f8b-9507-59f65b6442df,45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -214,9 +213,9 @@ abc101@testemailabc.com,active,active,
 
 因为Platform为每个生成一个CSV文件 [合并策略Id](../../../profile/merge-policies/overview.md)，它还会为每个合并策略ID生成单独的数据流运行。
 
-这意味着 **[!UICONTROL 已激活身份]** 和 **[!UICONTROL 已接收的用户档案]** 中的量度 [数据流运行](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 对于使用同一合并策略的每个区段组，此页面是经过聚合的，而不是针对每个区段显示的。
+这意味着 **[!UICONTROL 已激活身份]** 和 **[!UICONTROL 已接收的用户档案]** 中的量度 [数据流运行](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 对于使用相同合并策略的每个受众组，页面都会进行汇总，而不是针对每个受众显示。
 
-由于为使用相同合并策略的一组区段生成了数据流，因此区段名称不会显示在 [监控仪表板](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations).
+由于为使用相同合并策略的一组受众生成了数据流，因此受众名称不会显示在 [监控仪表板](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations).
 
 ![显示“身份已激活”指标的Experience PlatformUI屏幕。](../../assets/catalog/advertising/liveramp/liveramp-metrics.png)
 

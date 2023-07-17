@@ -2,7 +2,7 @@
 description: 本页说明如何使用Destination SDK中的/sample-profiles API端点基于源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成示例配置文件
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
 source-wordcount: '651'
 ht-degree: 1%
@@ -28,7 +28,7 @@ ht-degree: 1%
 * 您已在Experience PlatformUI中为目标创建至少一个激活流程。 此 `/sample-profiles` 端点根据您在激活流中定义的源架构创建配置文件。 请参阅 [激活教程](../../../ui/activate-batch-profile-destinations.md) 以了解如何创建激活流程。
 * 要成功发出API请求，您需要与要测试的目标实例对应的目标实例ID。 在Platform UI中浏览与目标建立的连接时，从URL获取应在API调用中使用的目标实例ID。
 
-   ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
+  ![显示如何从URL获取目标实例ID的UI图像。](../../assets/testing-api/get-destination-instance-id.png)
 
 ## 生成用于目标测试的样本配置文件 {#generate-sample-profiles}
 
@@ -60,11 +60,11 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 
 **响应**
 
-成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与源XDM架构对应的区段成员资格、身份和配置文件属性。
+成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与源XDM架构对应的受众成员资格、身份和配置文件属性。
 
 >[!NOTE]
 >
-> 响应仅返回目标实例中使用的区段成员资格、身份和配置文件属性。 即使源架构具有其他字段，这些字段也会被忽略。
+> 响应仅返回目标实例中使用的受众成员资格、身份和配置文件属性。 即使源架构具有其他字段，这些字段也会被忽略。
 
 ```json
 [
@@ -105,9 +105,9 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentMembership` | 描述个人区段成员资格的映射对象。 有关的详细信息 `segmentMembership`，读取 [区段成员资格详细信息](../../../../xdm/field-groups/profile/segmentation.md). |
+| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关的详细信息 `segmentMembership`，读取 [受众成员资格详细信息](../../../../xdm/field-groups/profile/segmentation.md). |
 | `lastQualificationTime` | 上次此配置文件符合区段资格的时间戳。 |
-| `status` | 一个字符串字段，指示区段成员资格是否作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：用户档案将作为当前请求的一部分退出区段。</li></ul> |
+| `status` | 一个字符串字段，指示受众成员资格是否已在当前请求中实现。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：作为当前请求的一部分，配置文件将退出受众。</li></ul> |
 | `identityMap` | 描述个人的各种标识值及其关联的命名空间的映射类型字段。 有关的详细信息 `identityMap`，请参见 [模式组合基础](../../../../xdm/schema/composition.md#identityMap). |
 
 {style="table-layout:auto"}

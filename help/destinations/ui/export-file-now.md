@@ -3,9 +3,9 @@ title: （测试版）使用Experience PlatformUI按需将文件导出到批处�
 type: Tutorial
 description: 了解如何使用Experience PlatformUI按需将文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '741'
 ht-degree: 8%
 
 ---
@@ -30,9 +30,9 @@ ht-degree: 8%
 
 本文介绍如何使用Experience PlatformUI将文件按需导出到批处理目标，例如 [云存储](/help/destinations/catalog/cloud-storage/overview.md) 和 [电子邮件营销](/help/destinations/catalog/email-marketing/overview.md) 目标。
 
-此 **[!UICONTROL 立即导出文件]** 使用control可以导出完整文件，而不会中断先前计划区段的当前导出计划。 此导出操作在之前计划的导出之外进行，并且不会更改区段的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
+此 **[!UICONTROL 立即导出文件]** 通过控制，您可以导出完整的文件而不会中断先前计划受众的当前导出计划。 此导出操作在之前计划的导出之外进行，不会更改受众的导出频率。 将立即触发文件导出，并获取 Experience Platform 分段运行的最新结果。
 
-您还可以将Experience PlatformAPI用于此目的。 阅读如何 [通过临时激活API按需将受众区段激活到批量目标](/help/destinations/api/ad-hoc-activation-api.md).
+您还可以将Experience PlatformAPI用于此目的。 阅读如何 [通过临时激活API将受众按需激活到批处理目标](/help/destinations/api/ad-hoc-activation-api.md).
 
 ## 先决条件 {#prerequisites}
 
@@ -48,11 +48,11 @@ ht-degree: 8%
 
    ![突出显示筛选的数据流的图像。](../assets/ui/activate-on-demand/filtered-dataflow.png)
 
-3. 选择 **[!UICONTROL 激活数据]** 选项卡，选择要根据需要导出文件的区段，然后选择 **[!UICONTROL 立即导出文件]** 控件，可触发一次性导出，该导出会将文件交付到批处理目标。
+3. 选择 **[!UICONTROL 激活数据]** 选项卡，选择要根据需要导出文件的受众，然后选择 **[!UICONTROL 立即导出文件]** 控件，可触发一次性导出，该导出会将文件交付到批处理目标。
 
    >[!IMPORTANT]
    >
-   >目前，UI不支持选择多个区段来批量导出文件。 使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md) 为了这个目的。
+   >目前，UI不支持选择多个受众以批量导出文件。 使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md) 为了这个目的。
 
    ![突出显示“立即导出文件”按钮的图像。](../assets/ui/activate-on-demand/activate-segment-on-demand.png)
 
@@ -70,9 +70,9 @@ ht-degree: 8%
 
 在使用时，请牢记以下注意事项 **[!UICONTROL 立即导出文件]** 控制：
 
-* **[!UICONTROL 立即导出文件]** 仅适用于批量激活数据流中的计划与当前日期重叠的区段。 这包括计划没有结束日期（导出频率）的区段 **[!UICONTROL 一次]**)，或尚未超过结束日期时。
-* 将区段添加到现有数据流时，请等待至少15分钟，直到使用 **[!UICONTROL 立即导出文件]** 控制。
-* 如果您更改了区段的合并策略，或者您创建了一个使用新合并策略的区段，请等待24小时，直到使用 **[!UICONTROL 立即导出文件]** 控制。
+* **[!UICONTROL 立即导出文件]** 仅适用于批量激活数据流中的计划与当前日期重叠的受众。 这包括计划没有结束日期（导出频率）的受众 **[!UICONTROL 一次]**)，或尚未超过结束日期时。
+* 将受众添加到现有数据流时，请至少等待15分钟，直到使用 **[!UICONTROL 立即导出文件]** 控制。
+* 如果您更改受众的合并策略，或者如果您创建的受众使用新的合并策略，请等待24小时，直到使用 **[!UICONTROL 立即导出文件]** 控制。
 
 ## UI错误消息 {#ui-error-messages}
 
@@ -80,10 +80,10 @@ ht-degree: 8%
 
 | 错误消息 | 解决方法 |
 |---------|----------|
-| 已在为区段运行 `segment ID` 订购 `dataflow ID` 具有运行id `flow run ID` | 此错误消息表示区段当前正在进行临时激活流程。 等待作业完成，然后再触发激活作业。 |
-| 区段 `<segment name>` 不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择要激活的区段未映射到数据流，或者为区段设置的激活计划已过期或尚未启动。 检查区段是否确实映射到数据流，并验证区段激活计划是否与当前日期重叠。 |
+| 已针对受众运行 `segment ID` 订购 `dataflow ID` 具有运行id `flow run ID` | 此错误消息表示受众当前正在进行临时激活流程。 等待作业完成，然后再触发激活作业。 |
+| 受众 `<segment name>` 不是此数据流的一部分或超出计划范围！ | 此错误消息表示您选择要激活的受众未映射到数据流，或者为受众设置的激活计划已过期或尚未开始。 检查受众是否确实映射到数据流，并验证受众激活计划是否与当前日期重叠。 |
 
 ## 相关信息 {#related-information}
 
-* [使用Experience PlatformAPI按需将受众区段激活到批处理目标](/help/destinations/api/ad-hoc-activation-api.md)
+* [使用Experience PlatformAPI按需将受众激活到批处理目标](/help/destinations/api/ad-hoc-activation-api.md)
 * [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)

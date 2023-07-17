@@ -3,7 +3,7 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '718'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 连接 {#connections}
 
-**[!UICONTROL 配置文件导出]**， **[!UICONTROL 流区段导出]**、和 **[!DNL Edge Personalization]** Adobe Experience Platform中的目标会捕获事件数据，并将其与其他数据源结合以形成 [Real-time Customer Profile](../profile/home.md)，应用分段，并将区段和符合条件的配置文件导出到目标。
+**[!UICONTROL 配置文件导出]**， **[!UICONTROL 流受众导出]**、和 **[!DNL Edge Personalization]** Adobe Experience Platform中的目标会捕获事件数据，并将其与其他数据源结合以形成 [Real-time Customer Profile](../profile/home.md)，应用分段，并将受众和符合条件的配置文件导出到目标。
 
 ## 配置文件导出目标 {#profile-export}
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 使用企业目标Data Connectors近乎实时地将Adobe Real-time Customer Data Platform配置文件交付到内部系统或其他第三方系统，以进行数据同步、分析和进一步扩充配置文件用例。
 
-这些目标将区段和配置文件数据作为Experience Platform数据流接收。
+这些目标将接收受众和配置文件数据作为Experience Platform数据流。
 
 企业目标包括：
 
@@ -53,9 +53,9 @@ ht-degree: 0%
 
 基于文件的目标将接收 `.csv` 包含配置文件和/或属性的文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md) 是一个目标示例，您可以在其中导出包含配置文件导出的文件。
 
-## 流区段导出目标 {#streaming-destinations}
+## 流受众导出目标 {#streaming-destinations}
 
-区段导出目标接收Experience Platform区段数据。 这些目标使用区段ID或用户ID。 广告和社交目标，如 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)， [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)，或 [facebook](catalog/social/facebook.md) 是此类目标的示例。
+受众导出目标接收Experience Platform的受众数据。 这些目标使用受众ID或用户ID。 广告和社交目标，如 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md)， [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)，或 [facebook](catalog/social/facebook.md) 是此类目标的示例。
 
 ## Edge个性化目标 {#edge-personalization-destinations}
 
@@ -63,7 +63,7 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 
 详细了解如何 [为同一页面和下一页面个性化配置个性化目标](/help/destinations/ui/activate-edge-personalization-destinations.md).
 
-## 配置文件导出和区段导出目标 — 视频概述 {#video}
+## 配置文件导出和受众导出目标 — 视频概述 {#video}
 
 以下视频向您介绍这两种类型目标的特性：
 
@@ -91,7 +91,7 @@ Platform利用标记管理的强大功能和灵活性，允许您在UI中配置�
 
 作为营销人员，您可以将连接和扩展结合使用来解决用例问题。
 
-当需要利用完整的集中式客户配置文件或客户区段进行激活时，连接会很有用。 例如，如果要将来自分析系统的行为数据与上传的CRM数据联接，以便用户先符合给定区段的条件，然后再向该用户传递个性化消息，则使用连接。
+当需要利用完整的集中式客户配置文件或客户受众进行激活时，连接会很有用。 例如，如果要将来自分析系统的行为数据与上传的CRM数据联接，以便用户先符合给定受众的资格，然后再向该用户传递个性化消息，则使用连接。
 
 当使用事件数据触发操作或在外部环境中进行分段时，扩展很有用。 例如，如果需要将行为数据转发到外部系统，而无需将其连接到给定用户的文件上的其他数据源。
 

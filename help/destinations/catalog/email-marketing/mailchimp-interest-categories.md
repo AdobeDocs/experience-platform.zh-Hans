@@ -1,25 +1,25 @@
 ---
-title: Mailchimp兴趣类别
-description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理和与联系人（客户、客户或其他利益相关方）交谈，使用邮件列表和电子邮件营销活动。 使用此连接器可以根据联系人的兴趣和偏好对联系人进行排序。
+title: Mailchimp 兴趣类别
+description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理和与联系人（客户、客户或其他利益相关方）交谈，使用邮件列表和电子邮件营销活动。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: f8ccf9303fbcb010225881942de5e672b4111072
+source-git-commit: a293df660a9b959d12bdc170d1cb69f3543a30f1
 workflow-type: tm+mt
-source-wordcount: '2357'
-ht-degree: 0%
+source-wordcount: '2356'
+ht-degree: 2%
 
 ---
 
 # [!DNL Mailchimp Interest Categories] 连接
 
-[[!DNL Mailchimp]](https://mailchimp.com) 是一个流行的营销自动化平台和电子邮件营销服务，企业使用该平台管理和联系信息 *（客户、客户或其他利益关系方）* 使用邮件列表和电子邮件营销活动。 使用此连接器可以根据联系人的兴趣和偏好对联系人进行排序。
+[[!DNL Mailchimp]](https://mailchimp.com) 是一个流行的营销自动化平台和电子邮件营销服务，企业使用该平台管理和联系信息 *（客户、客户或其他利益关系方）* 使用邮件列表和电子邮件营销活动。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 
-[!DNL Mailchimp Interest Categories] 用途 [受众](https://mailchimp.com/help/getting-started-audience/)， [组](https://mailchimp.com/help/getting-started-with-groups/)和兴趣类别 *（也称为组名或组标题）*. 每个 [!DNL Mailchimp] 组是兴趣类别的列表。 当联系人通过您网站上的注册表单订阅一个或多个兴趣类别时，他们与兴趣类别相关联。 在受众中，您还可以将联系人组织到组中，并将其与兴趣类别相关联，然后可以使用这些组来创建区段。 您可以使用这些区段向订阅的联系人广播定向促销活动电子邮件。
+[!DNL Mailchimp Interest Categories] 用途 [受众](https://mailchimp.com/help/getting-started-audience/)， [组](https://mailchimp.com/help/getting-started-with-groups/)和兴趣类别 *（也称为组名或组标题）*. 每个 [!DNL Mailchimp] 组是兴趣类别的列表。 当联系人通过您网站上的注册表单订阅一个或多个兴趣类别时，他们与兴趣类别相关联。 在受众中，您还可以将联系人组织到组中，并将其与兴趣类别相关联，然后可以使用这些组来创建区段。 您可以使用这些受众向订阅的联系人广播定向的活动电子邮件。
 
 <!--
 Compared to [!DNL Mailchimp Tags] which you would use for internal classification, [!DNL Mailchimp Interest Categories] is meant to manage subscriptions to topics of interest that your contacts might be interested in. *Note, Experience Platform also has a connection for [!DNL Mailchimp Tags], you can check it out on the [[!DNL Mailchimp Tags]](/help/destinations/catalog/email-marketing/mailchimp-tags.md) page.*
 -->
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 使用 [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/) 要创建的API [兴趣类别](https://mailchimp.com/developer/marketing/api/interest-categories/) 然后，将来自每个选定平台区段的联系人添加到相应的兴趣类别中。 您可以 **添加新联系人** 或 **更新现有的信息 [!DNL Mailchimp] 联系人**，则 **添加或从所需组中删除它们** 在现有 [!DNL Mailchimp] 受众在新区段中激活后，发送电子邮件给访客。 [!DNL Mailchimp Interest Groups] 使用从Platform中选择的区段名称作为内的兴趣类别 [!DNL Mailchimp].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 使用 [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/) 要创建的API [兴趣类别](https://mailchimp.com/developer/marketing/api/interest-categories/) 然后，将来自每个选定平台受众的联系人添加到相应的兴趣类别中。 您可以 **添加新联系人** 或 **更新现有的信息 [!DNL Mailchimp] 联系人**，则 **添加或从所需组中删除它们** 在现有 [!DNL Mailchimp] 受众在新区段中激活后，发送电子邮件给访客。 [!DNL Mailchimp Interest Groups] 将来自Platform的选定受众名称用作中的兴趣类别 [!DNL Mailchimp].
 
 ## 用例 {#use-cases}
 
@@ -27,7 +27,7 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 ### 向营销活动的联系人发送电子邮件 {#use-case-send-emails}
 
-一家体育用品网站的销售部门希望向一连串自称对足球感兴趣的熟人广播一个基于电子邮件的营销活动。 联系人列表在从网站开发团队收到的数据导出中分批显示，因此需要对其进行跟踪。 该团队标识一个现有的 [!DNL Mailchimp] ，并开始构建Experience Platform区段，每个列表中的联系人将添加到这些区段中。 将这些区段发送至 [!DNL Mailchimp Interest Categories]，如果选定联系人中不存在任何联系人 [!DNL Mailchimp] 使用联系人所属的区段名称将受众添加到组。 如果有任何联系人已存在于 [!DNL Mailchimp] 随后将更新其信息。 一旦将数据发送到 [!DNL Mailchimp Interest Categories]，销售团队可以选择营销活动电子邮件并将其发送到中的足球兴趣组 [!DNL Mailchimp] 受众。
+一家体育用品网站的销售部门希望向一连串自称对足球感兴趣的熟人广播一个基于电子邮件的营销活动。 联系人列表在从网站开发团队收到的数据导出中分批显示，因此需要对其进行跟踪。 该团队标识一个现有的 [!DNL Mailchimp] ，并开始构建Experience Platform受众，每个列表中的联系人都会添加到这些受众中。 将这些受众发送至 [!DNL Mailchimp Interest Categories]，如果选定联系人中不存在任何联系人 [!DNL Mailchimp] 使用联系人所属受众名称将他们添加到群组。 如果有任何联系人已存在于 [!DNL Mailchimp] 随后将更新其信息。 一旦将数据发送到 [!DNL Mailchimp Interest Categories]，销售团队可以选择营销活动电子邮件并将其发送到中的足球兴趣组 [!DNL Mailchimp] 受众。
 
 ## 先决条件 {#prerequisites}
 
@@ -91,8 +91,8 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 对于Platform中的每个选定区段，将 [!DNL Mailchimp Interest Categories] 区段状态通过Platform中的区段状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器将更新向下发送到目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 对于Platform中的每个选定受众，将 [!DNL Mailchimp Interest Categories] 区段状态通过Platform中的受众状态进行更新。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 当基于受众评估在Experience Platform中更新用户档案时，连接器将更新向下发送到目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -147,13 +147,13 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
@@ -195,8 +195,8 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 ![显示“受众”组页面的Mailchimp UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-interest-categories/audience-groups.png)
 
-* 选择组，然后检查所选区段是否被创建为Platform中区段名称的类别，后跟一个自动生成的后缀。
-   * 此目标使用所选区段的名称通过使用 [[!DNL Mailchimp] 添加兴趣类别API](https://mailchimp.com/developer/marketing/api/interest-categories/add-interest-category/). 如果您创建新目标并再次激活相同的区段， [!DNL Mailchimp] 添加后缀以区分现有区段和新区段。
+* 选择组，然后检查所选受众是否被创建为类别，且类别后跟一个自动生成的后缀。
+   * 此目标使用所选区段的名称通过使用 [[!DNL Mailchimp] 添加兴趣类别API](https://mailchimp.com/developer/marketing/api/interest-categories/add-interest-category/). 如果您创建新目标并再次激活相同的受众， [!DNL Mailchimp] 添加后缀以区分现有区段和新区段。
 * 群组中不存在其电子邮件的联系人会添加到新创建的类别中。
 * 对于组中已存在的联系人，属性字段数据将更新，联系人将添加到新创建的类别。
 

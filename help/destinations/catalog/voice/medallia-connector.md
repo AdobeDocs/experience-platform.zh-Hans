@@ -2,9 +2,9 @@
 title: Medallia连接
 description: 激活针对性Medallia调查和反馈收集的用户档案，以更好地了解客户的需求和期望。
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1096'
+source-wordcount: '1095'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ Medallia支持激活下表中描述的标识。 详细了解 [身份](/help/iden
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有新合格成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），这些字段是在 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -89,7 +89,7 @@ Medallia支持激活下表中描述的标识。 详细了解 [身份](/help/iden
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL API网关URL]**：从您的Medallia投放团队获取。 通常采用https://instance-tenant.apis.medallia.com的形式。
-* **[!UICONTROL 导入API名称]**：从您的Medallia投放团队获取。 要在此连接中使用的Medallia Import API（也称为Web馈送）的名称。 您可以将不同的区段激活到不同的导入API以触发不同的调查程序。
+* **[!UICONTROL 导入API名称]**：从您的Medallia投放团队获取。 要在此连接中使用的Medallia Import API（也称为Web馈送）的名称。 您可以将不同的受众激活到不同的导入API以触发不同的调查程序。
 
 ![显示此目标的目标详细信息屏幕的图像。](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
 
@@ -99,13 +99,13 @@ Medallia支持激活下表中描述的标识。 详细了解 [身份](/help/iden
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射属性和身份 {#map}
 

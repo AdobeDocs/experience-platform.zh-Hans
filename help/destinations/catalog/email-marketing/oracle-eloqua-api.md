@@ -1,11 +1,11 @@
 ---
-title: (API)OracleEloqua连接
+title: (API) Oracle Eloqua 连接
 description: (API) EloquaOracle允许您导出帐户数据，并在OracleEloqua中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: 3d54b89ab5f956710ad595a0e8d3567e1e773d0a
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '2125'
+source-wordcount: '2124'
 ht-degree: 3%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 3%
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) 使营销人员能够规划和执行营销活动，同时为其潜在客户提供个性化的客户体验。 借助集成的商机管理和轻松的营销活动创建，它可帮助营销人员在其购买者的历程中在适当的时间吸引适当的受众，并可通过精致的扩展来跨渠道（包括电子邮件、显示搜索、视频和移动设备）吸引受众。 销售团队能够以更快的速度完成更多交易，从而通过实时洞察提高营销投资回报率。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [更新联系人](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) 操作 [!DNL Oracle Eloqua] REST API，允许您 **更新身份** 区段内到 [!DNL Oracle Eloqua].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [更新联系人](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) 操作 [!DNL Oracle Eloqua] REST API，允许您 **更新身份** 在受众中进入 [!DNL Oracle Eloqua].
 
 [!DNL Oracle Eloqua] 用途 [基本身份验证](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) 以与 [!DNL Oracle Eloqua] REST API。 向您的验证的说明 [!DNL Oracle Eloqua] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-在线平台的营销部门希望向策划的潜在客户受众广播基于电子邮件的营销活动。 该平台的营销团队可以通过Adobe Experience Platform更新现有潜在客户信息，从自己的离线数据构建区段，并将这些区段发送到 [!DNL Oracle Eloqua]，然后可以将其用于发送营销活动电子邮件。
+在线平台的营销部门希望向策划的潜在客户受众广播基于电子邮件的营销活动。 该平台的营销团队可以通过Adobe Experience Platform更新现有潜在客户信息，从他们自己的离线数据构建受众，并将这些受众发送至 [!DNL Oracle Eloqua]，然后可以将其用于发送营销活动电子邮件。
 
 ## 先决条件 {#prerequisites}
 
@@ -29,7 +29,7 @@ ht-degree: 3%
 
 将数据激活到之前 [!DNL Oracle Eloqua] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-请参阅Experience Platform文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
+请参阅Experience Platform文档，了解 [受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关受众状态的指南。
 
 ### [!DNL Oracle Eloqua] 先决条件 {#prerequisites-destination}
 
@@ -54,11 +54,10 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->* [!DNL Oracle Eloqua] 自定义联系人字段是使用以下期间选择的区段的名称自动创建的 **[!UICONTROL 选择区段]** 步骤。
-
+>* [!DNL Oracle Eloqua] 自定义联系人字段是使用以下期间选择的受众的名称自动创建的 **[!UICONTROL 选择区段]** 步骤。
 
 * [!DNL Oracle Eloqua] 具有250个自定义联系人字段的最大限制。
-* 在导出新区段之前，请确保Platform区段的数量和以下范围内的现有区段的数量： [!DNL Oracle Eloqua] 不要超过此限制。
+* 在导出新受众之前，请确保平台受众的数量以及内现有受众的数量 [!DNL Oracle Eloqua] 不要超过此限制。
 * 如果超过此限制，您将在Experience Platform中遇到错误。 这是因为 [!DNL Oracle Eloqua] API无法验证请求，并使用 —  *400：存在验证错误*  — 描述问题的错误消息。
 * 如果您已达到以上指定的限制，则需要从目标中删除现有映射，并删除中相应的自定义联系人字段。 [!DNL Oracle Eloqua] 帐户，然后才能导出更多区段。
 
@@ -78,8 +77,8 @@ ht-degree: 3%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 对于Platform中的每个选定区段，将 [!DNL Oracle Eloqua] 区段状态通过Platform中的区段状态进行更新。</li></ul> |
-| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 对于Platform中的每个选定受众，将 [!DNL Oracle Eloqua] 区段状态通过Platform中的受众状态进行更新。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -130,13 +129,13 @@ ht-degree: 3%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
@@ -150,7 +149,7 @@ ht-degree: 3%
    * 重复这些步骤以在XDM配置文件架构和之间添加所需的和任何所需的属性映射。 [!DNL Oracle Eloqua]： |源字段 |目标字段 |必需 | |—|—|—| |`IdentityMap: Eid`|`Identity: EloquaId`|是 | |`xdm: personalEmail.address`|`Attribute: emailAddress`|是 | |`xdm: personName.firstName`|`Attribute: firstName`| | |`xdm: personName.lastName`|`Attribute: lastName`| | |`xdm: workAddress.street1`|`Attribute: address1`| | |`xdm: workAddress.street2`|`Attribute: address2`| | |`xdm: workAddress.street3`|`Attribute: address3`| | |`xdm: workAddress.postalCode`|`Attribute: postalCode`| | |`xdm: workAddress.country`|`Attribute: country`| | |`xdm: workAddress.city`|`Attribute: city`| |
 
    * 下面显示了具有上述映射的示例：
-      ![具有属性映射的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
+     ![具有属性映射的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
 >[!IMPORTANT]
 >
@@ -178,22 +177,22 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->当向发送联系人字段信息时，目标会在每次执行时自动为所选区段名称添加唯一标识符的后缀 [!DNL Oracle Eloqua]. 这可确保与区段名称对应的联系人字段名称不重叠。 请参阅 [验证数据导出](#exported-data) 部分屏幕快照示例 [!DNL Oracle Eloqua] “联系人详细信息”页面，其中包含使用区段名称创建的自定义联系人字段。
+>在将联系人字段信息发送至时，目标会在每次执行时将唯一标识符自动为所选受众名称添加后缀 [!DNL Oracle Eloqua]. 这可确保与受众名称对应的联系人字段名称不会重叠。 请参阅 [验证数据导出](#exported-data) 部分屏幕快照示例 [!DNL Oracle Eloqua] “联系人详细信息”页面，其中包含使用受众名称创建的自定义联系人字段。
 
 ## 验证数据导出 {#exported-data}
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 并导航到目标列表。
-1. 接下来，选择目标并切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择区段名称。
+1. 接下来，选择目标并切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择受众名称。
    ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/destinations-activation-data.png)
 
-1. 监控区段摘要，并确保配置文件计数对应于区段内的计数。
+1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
    ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/oracle-eloqua-api/segment.png)
 
-1. 登录到 [!DNL Oracle Eloqua] 网站，然后导航到 **[!UICONTROL 联系人概述]** 页面以检查是否已添加区段中的配置文件。 要查看区段状态，请向下展开至 **[!UICONTROL 联系人详细信息]** 页面，并检查是否已创建具有选定区段名称作为其前缀的联系人字段。
+1. 登录到 [!DNL Oracle Eloqua] 网站，然后导航到 **[!UICONTROL 联系人概述]** 页面，以检查是否已添加受众中的配置文件。 要查看受众状态，请深入了解 **[!UICONTROL 联系人详细信息]** 页面，并检查是否已创建具有选定受众名称作为其前缀的联系人字段。
 
-![oracleEloqua UI屏幕截图，其中显示“联系人详细信息”页面，该页面带有使用区段名称创建的自定义联系人字段。](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
+![oracleEloqua UI屏幕截图，其中显示“联系人详细信息”页面，该页面带有使用“受众名称”创建的自定义联系人字段。](../../assets/catalog/email-marketing/oracle-eloqua-api/contact.png)
 
 ## 数据使用和管理 {#data-usage-governance}
 

@@ -2,7 +2,7 @@
 description: 本页提供了您需要提交以供审阅使用Destination SDK编写的生产目标的所有信息。
 title: 提交供审查在Destination SDK中创作的已生产目的地
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 8c8026b1180775dddd9517fc88727749678a5613
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
@@ -22,7 +22,6 @@ ht-degree: 0%
 >* 如果Adobe团队要求您在初次提交后对配置进行任何更新，则您必须在进行更新后提交另一个目标发布请求。
 >
 >* 即使您的目标在Experience Platform目录中处于活动状态，但是如果您需要对配置进行任何更新，则必须提交新的目标发布请求，才能将更新反映在配置中。
-
 
 将目标发布到之前 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，您必须向Adobe提供有关目标和所执行测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
@@ -46,7 +45,7 @@ ht-degree: 0%
 提供目标为Experience Platform客户解决的使用案例描述。 您的说明可能与现有合作伙伴的用例类似：
 
 * [pinterest](/help/destinations/catalog/advertising/pinterest.md)：根据您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人创建受众。
-* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases)：DataX API可用于广告商，这些广告商希望在Verizon Media (VMG)中定位以电子邮件地址作为关键字的特定受众组，然后可以使用VMG的近实时API快速创建新区段并推送所需的受众组。
+* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases)：DataX API可用于广告商，这些广告商希望在Verizon Media (VMG)中定位以电子邮件地址作为关键字的特定受众组，然后可以使用VMG的近实时API快速创建新受众并推送所需的受众组。
 
 ## 更新原因 {#reason-for-update}
 

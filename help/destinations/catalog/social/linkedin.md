@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 根据经过哈希处理的电子邮件，为LinkedIn营销活动激活用户档案，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '1035'
+source-wordcount: '1087'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 为了帮助您更好地了解如何以及何时使用 [!DNL LinkedIn Matched Audiences] 目标，以下是Adobe Experience Platform客户可以使用此功能解决的用例。
 
-一家软件公司组织了一次会议，并希望与与会者保持联系，并根据他们的会议出席情况向他们展示个性化的优惠。 公司可以从自己的电子邮件地址或移动设备ID中摄取 [!DNL CRM] Adobe Experience Platform。 然后，他们可以根据自己的离线数据构建区段，并将这些区段发送到 [!DNL LinkedIn] 社交平台，优化广告支出。
+一家软件公司组织了一次会议，并希望与与会者保持联系，并根据他们的会议出席情况向他们展示个性化的优惠。 公司可以从自己的电子邮件地址或移动设备ID中摄取 [!DNL CRM] Adobe Experience Platform。 然后，他们可以使用自己的离线数据构建受众，并将这些受众发送到 [!DNL LinkedIn] 社交平台，优化广告支出。
 
 ## 支持的身份 {#supported-identities}
 
@@ -36,14 +36,28 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL LinkedIn Matched Audiences] 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL LinkedIn Matched Audiences] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -93,7 +107,7 @@ ht-degree: 2%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-以下视频还演示了配置 [!DNL LinkedIn Matched Audiences] 目标和激活区段。
+以下视频还演示了配置 [!DNL LinkedIn Matched Audiences] 目标和激活受众。
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
@@ -127,18 +141,18 @@ ht-degree: 2%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 
-成功激活意味着 [!DNL LinkedIn] 自定义受众将以编程方式创建于 [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). 由于用户符合或不符合激活的区段的资格，因此将添加和删除受众中的区段成员资格。
+成功激活意味着 [!DNL LinkedIn] 自定义受众将以编程方式创建于 [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). 由于用户符合或不符合激活受众的资格，因此将添加和删除受众成员资格。
 
 >[!TIP]
 >
->Adobe Experience Platform与之间的集成 [!DNL LinkedIn Matched Audiences] 支持历史受众回填。 所有历史区段资格都将发送到 [!DNL LinkedIn] 将区段激活到目标时。
+>Adobe Experience Platform与之间的集成 [!DNL LinkedIn Matched Audiences] 支持历史受众回填。 所有历史受众资格都将发送到 [!DNL LinkedIn] 将受众激活到目标时。

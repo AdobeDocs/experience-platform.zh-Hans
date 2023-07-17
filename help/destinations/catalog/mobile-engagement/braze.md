@@ -3,9 +3,9 @@ keywords: 移动设备；炫耀；消息传送；
 title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可在客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '1041'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 请注意以下特定于的详细信息 [!DNL Braze] 目标：
 
-* [!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
+* [!DNL Adobe Experience Platform] 受众将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
 
 >[!NOTE]
 >
@@ -32,7 +32,7 @@ ht-degree: 1%
 
 ## 用例 {#use-cases}
 
-作为营销人员，我希望在内置区段的移动参与目标中定位用户 [!DNL Adobe Experience Platform]. 此外，我还希望根据用户体验中的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，一旦在中更新了区段和用户档案 [!DNL Adobe Experience Platform].
+作为营销人员，我希望在移动参与目标中定位用户，并内置受众 [!DNL Adobe Experience Platform]. 此外，我还希望根据用户体验中的属性，为他们提供个性化体验 [!DNL Adobe Experience Platform] 用户档案，当受众和用户档案在中更新时 [!DNL Adobe Experience Platform].
 
 ## 支持的身份 {#supported-identities}
 
@@ -44,14 +44,26 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
+## 外部受众支持 {#external-audiences-support}
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的外部受众。
+
+| 外部受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在根据字段映射导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份。[!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在根据字段映射导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份。[!DNL Adobe Experience Platform] 受众将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -83,13 +95,13 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 映射注意事项 {#mapping-considerations}
 
@@ -142,8 +154,8 @@ ht-degree: 1%
 
 |  | XDM配置文件架构 | [!DNL Braze] 实例 |
 |---|---|---|
-| 属性 | <ul><li>person.name.firstName</code></li><li>person.name.lastName</code></li><li>mobilePhone.number</code></li></ul> | <ul><li>名字</code></li><li>姓氏</code></li><li>电话号码</code></li></ul> |
-| 标识 | <ul><li>电子邮件</code></li><li>Google Ad ID (GAID)</code></li><li>广告商的Apple ID (IDFA)</code></li></ul> | <ul><li>external_id</code></li></ul> |
+| 属性 | <ul><li><code>person.name.firstName</code></li><li><code>person.name.lastName</code></li><li><code>mobilePhone.number</code></li></ul> | <ul><li><code>名字</code></li><li><code>姓氏</code></li><li><code>电话号码</code></li></ul> |
+| 标识 | <ul><li><code>电子邮件</code></li><li><code>Google Ad ID (GAID)</code></li><li><code>广告商的Apple ID (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |
 
 正确的映射将如下所示：
 
@@ -151,7 +163,7 @@ ht-degree: 1%
 
 ## 导出的数据 {#exported-data}
 
-验证数据是否已成功导出到 [!DNL Braze] 目标，检查您的 [!DNL Braze] 帐户。 [!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
+验证数据是否已成功导出到 [!DNL Braze] 目标，检查您的 [!DNL Braze] 帐户。 [!DNL Adobe Experience Platform] 受众将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
 
 ## 数据使用和管理 {#data-usage-governance}
 

@@ -1,12 +1,12 @@
 ---
 keywords: 个性化；个性化
 title: 个性化目标概述
-description: 个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
+description: 个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: 0dbd050a9057f491537777ab539bfc687f8c89cb
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '153'
-ht-degree: 12%
+source-wordcount: '151'
+ht-degree: 14%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 12%
 
 ## 概述 {#overview}
 
-个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以往活动或作为具有类似习惯的受众区段的一部分向潜在客户提供优惠或广告。
+个性化平台从个人行为收集数据和见解。 这些平台可以帮助营销人员导航匿名数据，根据以前的活动或作为具有类似习惯的受众的一部分向潜在客户提供优惠或广告。
 
 ## 支持的个性化目标 {#supported-destinations}
 
@@ -26,7 +26,7 @@ ht-degree: 12%
 * [Adobe Commerce](adobe-commerce.md)
 * [自定义个性化连接](custom-personalization.md)
 * [Pega客户决策中心连接](pega.md)
-* [Pega配置文件连接](pega-profile.md)
+* [Pega 配置文件连接](pega-profile.md)
 
 **扩展**
 

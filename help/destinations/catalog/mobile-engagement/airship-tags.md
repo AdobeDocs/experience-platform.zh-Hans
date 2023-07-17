@@ -3,9 +3,9 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到Airship，以便在Airship中定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '989'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Airship] 是领先的客户参与平台，帮助您在客户生命周期的每个阶段都向用户传递有意义、个性化的全渠道信息。
 
-此集成将Adobe Experience Platform区段数据传递到 [!DNL Airship] 作为 [标记](https://docs.airship.com/guides/audience/tags/) 用于定位或触发。
+此集成将Adobe Experience Platform受众数据传递到 [!DNL Airship] 作为 [标记](https://docs.airship.com/guides/audience/tags/) 用于定位或触发。
 
 要了解有关 [!DNL Airship]，请参见 [飞艇文档](https://docs.airship.com).
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## 先决条件
 
-将Adobe Experience Platform区段发送到 [!DNL Airship]，您必须：
+将Adobe Experience Platform受众发送至 [!DNL Airship]，您必须：
 
 * 在中创建标记组 [!DNL Airship] 项目。
 * 生成持有者令牌以进行身份验证。
@@ -36,20 +36,32 @@ ht-degree: 0%
 > 
 >创建 [!DNL Airship] 帐户方式 [此注册链接](https://go.airship.eu/accounts/register/plan/starter/) 如果你还没有的话。
 
+## 外部受众支持 {#external-audiences-support}
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的外部受众。
+
+| 外部受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及飞艇标记目标中使用的标识符。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有飞艇标记目标中所用标识符的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## 标记组
 
-Adobe Experience Platform中的区段概念与 [标记](https://docs.airship.com/guides/audience/tags/) 飞行艇，但实施略有差异。 此集成映射用户的 [Experience Platform区段中的成员资格](../../../xdm/field-groups/profile/segmentation.md) 存在或不存在 [!DNL Airship] 标记之前。 例如，在Platform区段中，如果 `xdm:status` 更改 `realized`，则标记将添加到 [!DNL Airship] 此配置文件映射到的渠道或命名用户。 如果 `xdm:status` 更改 `exited`，则标记会被删除。
+Adobe Experience Platform中的受众概念类似于 [标记](https://docs.airship.com/guides/audience/tags/) 飞行艇，但实施略有差异。 此集成映射用户的 [Experience Platform区段中的成员资格](../../../xdm/field-groups/profile/segmentation.md) 存在或不存在 [!DNL Airship] 标记之前。 例如，在Platform受众中， `xdm:status` 更改 `realized`，则标记将添加到 [!DNL Airship] 此配置文件映射到的渠道或命名用户。 如果 `xdm:status` 更改 `exited`，则标记会被删除。
 
 要启用此集成，请创建 *标记组* 在 [!DNL Airship] 已命名 `adobe-segments`.
 
@@ -75,13 +87,13 @@ Adobe Experience Platform中的区段概念与 [标记](https://docs.airship.com
 
 ### 用例#1
 
-零售商或娱乐平台可创建忠诚度客户的用户档案，并将这些区段传递到 [!DNL Airship] 用于移动营销活动上的消息定位。
+零售商或娱乐平台可创建忠诚度客户的用户档案，并将这些受众传递到 [!DNL Airship] 用于移动营销活动上的消息定位。
 
 ### 用例#2
 
-当用户进入或退出Adobe Experience Platform中的特定区段时，实时触发一对一消息。
+当用户归入/退出Adobe Experience Platform中的特定受众时，实时触发一对一消息。
 
-例如，一家零售商在Platform中设置了一个特定于牛仔裤品牌的区段。 现在，只要有人将牛仔裤偏好设置为特定品牌，该零售商就可以立即触发移动消息。
+例如，一家零售商在Platform中设置了一项特定于牛仔裤品牌的受众。 现在，只要有人将牛仔裤偏好设置为特定品牌，该零售商就可以立即触发移动消息。
 
 ## 连接到目标 {#connect}
 
@@ -111,13 +123,13 @@ Adobe Experience Platform中的区段概念与 [标记](https://docs.airship.com
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 映射注意事项 {#mapping-considerations}
 

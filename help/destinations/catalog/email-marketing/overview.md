@@ -4,10 +4,10 @@ title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件促销活动。 了解哪些ESP支持作为Experience Platform目标。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 152786e5e994a88b19ca7af8815b33be5a732852
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '374'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。 Adobe Experience Platform通过允许您激活电子邮件营销目标的区段来与ESP集成。
+电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件营销活动。 Adobe Experience Platform通过允许您激活受众到电子邮件营销目标而与ESP集成。
 
 ## 支持的电子邮件营销目标 {#supported-destinations}
 
@@ -23,7 +23,7 @@ Adobe Experience Platform支持以下电子邮件营销目标：
 
 * [Adobe Campaign](adobe-campaign.md)
 * [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)
-* [Mailchimp兴趣类别](mailchimp-interest-categories.md)
+* [Mailchimp 兴趣类别](mailchimp-interest-categories.md)
 * [(API)OracleEloqua](oracle-eloqua-api.md)
 * [(API) [!DNL Salesforce Marketing Cloud]](salesforce-marketing-cloud-exact-target.md)
 * [（文件）OracleEloqua](oracle-eloqua.md)
@@ -34,7 +34,7 @@ Adobe Experience Platform支持以下电子邮件营销目标：
 
 ## 连接到新的电子邮件营销目标 {#connect-destination}
 
-要将区段发送到营销活动的电子邮件营销目标，Platform必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。
+要将受众发送到营销活动的电子邮件营销目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。
 
 ## 将受众激活到电子邮件营销目标时的最佳实践 {#best-practices}
 
@@ -67,13 +67,13 @@ Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-
 
 {style="table-layout:auto"}
 
-## 将区段激活到电子邮件营销目标 {#activate}
+## 将受众激活到电子邮件营销目标 {#activate}
 
 目录中的某些电子邮件营销目标通过与目标的API集成以流式方式导出用户档案。
 
 其他目标将文件导出到云存储位置。 导出完成后，您需要将数据从云存储位置导入电子邮件营销目标。
 
-请访问以下链接中的 [支持的电子邮件营销目标](#supported-destinations) 部分，了解如何将区段激活到每个电子邮件营销目标。
+请访问以下链接中的 [支持的电子邮件营销目标](#supported-destinations) 部分，了解如何将受众激活到每个电子邮件营销目标。
 
 ## 其他资源 {#additional-resources}
 

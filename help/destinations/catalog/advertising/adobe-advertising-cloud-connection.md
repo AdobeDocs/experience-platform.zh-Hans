@@ -1,11 +1,11 @@
 ---
 title: Adobe Advertising Cloud DSP连接
-description: Adobe Advertising Cloud DSP是Adobe Real-time Customer Data Platform的一个集成目标，允许您与批准广告商和用户共享经过身份验证的第一方区段，以便激活营销活动。
+description: Adobe Advertising Cloud DSP是Adobe Real-time Customer Data Platform的一个集成目标，允许您与批准广告商和用户共享经过身份验证的第一方受众，以便激活campaign。
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '1049'
-ht-degree: 1%
+source-wordcount: '1047'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已批准的广告商和用户共享经过身份验证的第一方区段，以便通过DSP激活促销活动。 要了解有关Real-Time CDP与DSP集成的更多信息，请参阅 [关于从受众源激活经过身份验证的区段](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html).
+Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已批准的广告商和用户共享经过身份验证的第一方受众，以便通过DSP激活Campaign。 要了解有关Real-Time CDP与DSP集成的更多信息，请参阅 [关于从受众源激活经过身份验证的受众](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html).
 
 >[!IMPORTANT]
 >
@@ -25,17 +25,17 @@ Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已�
 
 ### 品牌广告用例
 
-一家在线零售商希望通过展示促销活动重新定位其高价值客户，而无需使用Cookie进行定位。 该零售商共享一个区段，该区段包含其高价值客户从其Adobe Real-time Customer Data Platform (Real-Time CDP)帐户到其DSP帐户的经过哈希处理的电子邮件ID。 然后，DSP将经过哈希处理的电子邮件ID转换为经过身份验证的ID [!DNL RampIDs] 通过DSP和LiveRamp之间的合作伙伴关系。 结果 [!DNL RampIDs] 可用于展示营销活动，以定位受众。
+一家在线零售商希望通过展示促销活动重新定位其高价值客户，而无需使用Cookie进行定位。 该零售商共享受众，其中包含从其Adobe Real-time Customer Data Platform (Real-Time CDP)帐户到其DSP帐户的高价值客户的经过哈希处理的电子邮件ID。 然后，DSP将经过哈希处理的电子邮件ID转换为经过身份验证的ID [!DNL RampIDs] 通过DSP和LiveRamp之间的合作伙伴关系。 结果 [!DNL RampIDs] 可用于展示营销活动，以定位受众。
 
 ### 机构用例
 
-一家拥有DSP账户的媒体机构正代表其客户（酒店业顶级品牌）开展重新定位活动。 该品牌希望以新的促销活动重新定位去年所有的客人。 该品牌托管所有来宾信息 [!DNL Real-Time CDP]. 品牌可以共享一个区段，该区段包含其访客的经过哈希处理的电子邮件ID。 [!DNL Real-Time CDP] 用于通过媒体营销活动重新定位嘉宾的媒体代理的DSP帐户的帐户。
+一家拥有DSP账户的媒体机构正代表其客户（酒店业顶级品牌）开展重新定位活动。 该品牌希望以新的促销活动重新定位去年所有的客人。 该品牌托管所有来宾信息 [!DNL Real-Time CDP]. 品牌可以共享受众，该受众包含其访客的经过哈希处理的电子邮件ID [!DNL Real-Time CDP] 用于通过媒体营销活动重新定位嘉宾的媒体代理的DSP帐户的帐户。
 
 ## 先决条件 {#prerequisites}
 
-* 用于启用区段共享的DSP帐户级别和营销活动级别设置 [!DNL LiveRamp RampID]，可将客户数据转换为 [!DNL RampIDs] 以创建可定位区段。 您的DSP帐户团队将执行此配置。 [!DNL RampID] 通过DSP与合作伙伴关系提供 [!DNL LiveRamp]而且您不需要自己的 [!DNL LiveRamp] 成员资格以使用它。
+* 用于启用受众共享的DSP帐户级别和营销活动级别设置 [!DNL LiveRamp RampID]，可将客户数据转换为 [!DNL RampIDs] 以创建可定位区段。 您的DSP帐户团队将执行此配置。 [!DNL RampID] 通过DSP与合作伙伴关系提供 [!DNL LiveRamp]而且您不需要自己的 [!DNL LiveRamp] 成员资格以使用它。
 * Experience PlatformExperience Cloud的组织ID。 您可以在 [!DNL Real-Time CDP] 用户配置文件页面。
-* A [[!DNL Real-Time CDP] DSP中的源](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) 以接收用于活动激活的区段。 您的DSP帐户团队将使用您的Experience Cloud组织ID创建源。
+* A [[!DNL Real-Time CDP] DSP中的源](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) 接收受众以激活营销活动。 您的DSP帐户团队将使用您的Experience Cloud组织ID创建源。
 * DSP帐户或广告商的源密钥，该密钥是在以下情况下生成的： [[!DNL Real-Time CDP] 源在DSP中创建](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). 您的DSP帐户团队将与您共享此密钥。 在Experience Platform中，您将使用该插件来创建到Advertising Cloud DSP目标的目标连接，如下所示 [说明如下](#authenticate).
 * 由电子邮件或经过哈希处理的电子邮件组成的客户数据。
 
@@ -55,8 +55,8 @@ Adobe Advertising Cloud DSP目标支持激活下表中描述的标识。 详细�
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在使用Advertising Cloud DSP目标中使用的标识符（电子邮件或哈希电子邮件）导出区段（受众）的所有成员。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 当基于区段评估在Experience Platform中更新用户档案时，连接器将更新向下发送到目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用Advertising Cloud DSP目标中使用的标识符（电子邮件或哈希电子邮件）导出受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 当基于受众评估在Experience Platform中更新用户档案时，连接器将更新向下发送到目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -91,23 +91,23 @@ Adobe Advertising Cloud DSP目标支持激活下表中描述的标识。 详细�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 验证数据导出 {#exported-data}
 
-要验证数据区段是否已与Advertising Cloud共享，请检查以下各项：
+要验证数据受众是否与Advertising Cloud共享，请检查以下各项：
 
 * 您的网站中的数据流 [!DNL Real-Time CDP] 目标成功。
 
-* 在DSP中，当您从创建或编辑受众时，该区段可用 [!UICONTROL 受众] > [!UICONTROL 所有受众] 或从 [!UICONTROL 受众定位] 版面设置的部分。 该区段应在 [!UICONTROL Adobe区段] 选项卡 [!UICONTROL Real-Time CDP] 文件夹。
+* 在DSP中，当您从创建或编辑受众时，该受众可用 [!UICONTROL 受众] > [!UICONTROL 所有受众] 或从 [!UICONTROL 受众定位] 版面设置的部分。 受众应显示在中 [!UICONTROL Adobe区段] 选项卡 [!UICONTROL Real-Time CDP] 文件夹。
 
-![DSP受众设置中的Real-Time CDP区段](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
+![DSP受众设置中的Real-Time CDP受众](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
 
 ## 数据使用和管理 {#data-usage-governance}
 

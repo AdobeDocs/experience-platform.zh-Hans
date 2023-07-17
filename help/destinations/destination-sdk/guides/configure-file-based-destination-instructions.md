@@ -2,7 +2,7 @@
 description: 此页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -384,10 +384,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 使用前面步骤中的配置端点设置目标后，您可以使用 [目标测试工具](../testing-api/batch-destinations/file-based-destination-testing-overview.md) 测试Adobe Experience Platform与您的目标之间的集成。
 
-在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
+在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
-* [创建区段文档页面](/help/segmentation/ui/overview.md#create-segment)
-* [创建区段视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [创建受众文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## 步骤6：发布目标 {#publish-destination}
 

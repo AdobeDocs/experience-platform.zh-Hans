@@ -3,10 +3,10 @@ keywords: 广告目标；目标；平台目标
 title: 广告目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 732e6d3d53d983f3390941f4694d2c542d882004
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '258'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 * [pinterest客户列表连接](pinterest.md)
 * [(Beta) Snapchat Ads连接](snap-inc.md)
 * [交易台连接](tradedesk.md)
-* [(Beta)交易台CRM连接](tradedesk-emails.md)
+* [(Beta) Trade Desk CRM 连接](tradedesk-emails.md)
 * [Yahoo/Verizon DataX](datax.md)
 
 ### 扩展
@@ -59,4 +59,4 @@ ht-degree: 1%
 
 ## 连接到新的广告目标 {#connect-destination}
 
-要将区段发送到营销活动的广告目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。
+要将受众发送到营销活动的广告目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。

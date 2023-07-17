@@ -1,7 +1,7 @@
 ---
 description: 了解如何设置聚合策略，以确定应如何对发往您目标的HTTP请求进行分组和批处理。
 title: 聚合策略
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '996'
 ht-degree: 2%
@@ -112,8 +112,8 @@ ht-degree: 2%
 | `configurableAggregation.maxBatchAgeInSecs` | 整数 | 结合使用 `maxNumEventsInBatch`，此参数可确定Experience Platform在将API调用发送到端点之前应等待的时长。 <ul><li>最小值（秒）：1800</li><li>最大值（秒）：3600</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
 | `configurableAggregation.maxNumEventsInBatch` | 整数 | 与一起使用 `maxBatchAgeInSecs`，此参数确定应在API调用中聚合多少个符合条件的用户档案。 <ul><li>最小值：1000</li><li>最大值： 10000</li></ul> 例如，如果为这两个参数使用最大值，则Experience Platform将等待3600秒或直到10000有符合条件的配置文件为止，然后再进行API调用（以先发生者为准）。 |
 | `configurableAggregation.aggregationKey` | - | 允许您根据下述参数聚合映射到目标的导出用户档案。 |
-| `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 将此参数设置为 `true` 如果您希望按区段ID对导出到目标的用户档案进行分组。 |
-| `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 设置此参数和 `includeSegmentId` 到 `true`，如果要按区段ID和区段状态对导出到目标的用户档案进行分组。 |
+| `configurableAggregation.aggregationKey.includeSegmentId` | 布尔值 | 将此参数设置为 `true` 如果您希望按受众ID对导出到目标的用户档案进行分组。 |
+| `configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔值 | 设置此参数和 `includeSegmentId` 到 `true`，适用于要按受众ID和受众状态对导出到目标的用户档案进行分组的情况。 |
 | `configurableAggregation.aggregationKey.includeIdentity` | 布尔值 | 将此参数设置为 `true` 如果您希望按身份命名空间对导出到目标的用户档案进行分组。 |
 | `configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔值 | 将此参数设置为 `true` 如果您希望将导出的用户档案根据单个身份（GAID、IDFA、电话号码、电子邮件等）聚合到组中。 |
 | `configurableAggregation.aggregationKey.groups` | 数组 | 如果要按身份命名空间组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，可以使用上例中显示的配置，将包含IDFA和GAID移动标识符的用户档案合并到一个对目标的调用中，并将电子邮件合并到另一个调用中。 |

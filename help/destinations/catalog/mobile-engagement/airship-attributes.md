@@ -3,9 +3,9 @@ keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
 description: 将Adobe受众数据作为受众属性无缝传递到Airship，以便在Airship中定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-在将受众区段发送到之前 [!DNL Airship]，您必须：
+在将受众发送至 [!DNL Airship]，您必须：
 
 * 在中启用属性 [!DNL Airship] 项目。
 * 生成持有者令牌以进行身份验证。
@@ -35,6 +35,18 @@ ht-degree: 0%
 >
 >创建 [!DNL Airship] 帐户方式 [此注册链接](https://go.airship.eu/accounts/register/plan/starter/) 如果你还没有的话。
 
+## 外部受众支持 {#external-audiences-support}
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的外部受众。
+
+| 外部受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
@@ -42,7 +54,7 @@ ht-degree: 0%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在根据字段映射导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏）和/或身份。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -72,7 +84,7 @@ Adobe Experience Platform配置文件属性类似于 [!DNL Airship] 属性，并
 
 ### 用例#2
 
-利用Adobe Experience Platform中的属性进一步充实 [!DNL Airship] 配置文件并将其与SDK或 [!DNL Airship] 预测数据。 例如，零售商可以创建具有忠诚度状态和位置数据（来自Platform的属性）的区段，并且 [!DNL Airship] 预测会流失数据，以向居住在内华达州拉斯维加斯且具有高流失率的金会员状态用户发送极具针对性的消息。
+利用Adobe Experience Platform中的属性进一步充实 [!DNL Airship] 配置文件并将其与SDK或 [!DNL Airship] 预测数据。 例如，零售商可以创建具有忠诚度状态和位置数据（来自Platform的属性）的受众，并且 [!DNL Airship] 预测会流失数据，以向居住在内华达州拉斯维加斯且具有高流失率的金会员状态用户发送极具针对性的消息。
 
 ## 连接到目标 {#connect}
 
@@ -102,13 +114,13 @@ Adobe Experience Platform配置文件属性类似于 [!DNL Airship] 属性，并
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 映射注意事项 {#mapping-considerations}
 

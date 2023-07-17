@@ -4,7 +4,7 @@ title: 云存储目标的API迁移指南
 description: 了解在迁移到具有附加功能的新云存储目标卡的过程中，激活云存储目标的工作流中所做的更改。
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: b651d15260adbcd37fa396fa0b325a9674a92133
+source-git-commit: 4b9e7c22282a5531f2f25f3d225249e4eb0e178e
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
@@ -67,7 +67,7 @@ TBD if we keep this link but will likely remove it
 [Legacy API tutorial to export data to cloud storage destinations](/help/destinations/api/connect-activate-batch-destinations.md) (outdated, do not use anymore)
 
 -->
-* [用于将区段导出到云存储目标的API教程](/help/destinations/api/activate-segments-file-based-destinations.md)
+* [用于将受众导出到云存储目标的API教程](/help/destinations/api/activate-segments-file-based-destinations.md)
 * [目标流服务API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/)
 
 ## 向后不兼容的更改摘要 {#summary-backwards-incompatible-changes}
@@ -684,7 +684,7 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
 
 ```json{line-numbers="true" start-line="1" highlight="4-40, 45-53"}
 {
-  "segmentSelectors": { // shortened for brevity since nothing changes in the segment selectors
+  "segmentSelectors": { // shortened for brevity since nothing changes in the audience selectors
   },  
   "profileSelectors": {
     "selectors": [
@@ -752,7 +752,7 @@ API用户向后不兼容的更改已更新 `connection spec ID` 和 `flow spec I
 
 ```json {line-numbers="true" start-line="1" highlight="4-12, 18-20"}
 {
-  "segmentSelectors": { // shortened for brevity since nothing changes in the segment selectors
+  "segmentSelectors": { // shortened for brevity since nothing changes in the audience selectors
   },  
   "mandatoryFields": [
     "CORE",

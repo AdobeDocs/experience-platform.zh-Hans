@@ -2,7 +2,7 @@
 description: 了解如何使用目标测试API为您的目标生成测试消息转换模板。
 title: 生成示例消息转换模板
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 1%
@@ -29,7 +29,6 @@ ht-degree: 1%
 >[!TIP]
 >
 >* 您应在此处使用的目标ID是 `instanceId` 对应于使用创建的目标配置 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 了解更多详细信息。
-
 
 **API格式**
 
@@ -83,7 +82,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
         {% endfor %}
         ],
         "remove": [
-        {#- Alternative syntax for filtering segments by status: -#}
+        {#- Alternative syntax for filtering audiences by status: -#}
         {% for segment in removedSegments(input.profile.segmentMembership.ups) %}
             "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
         {% endfor %}
@@ -119,7 +118,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
                 {% endfor %}
                 ],
                 "remove": [
-                {#- Alternative syntax for filtering segments by status: -#}
+                {#- Alternative syntax for filtering audiences by status: -#}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
                 {% endfor %}

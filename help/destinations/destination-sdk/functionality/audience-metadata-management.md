@@ -1,9 +1,9 @@
 ---
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 在定义、测试和提交模板后，Adobe将使用该模板来构建对目标的调用API。
 title: 受众元数据管理
-source-git-commit: e69bd819fb8ef6c2384a2b843542d1ddcea0661f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -23,23 +23,23 @@ ht-degree: 0%
 
 ## 受众元数据管理支持的用例 {#use-cases}
 
-借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Platform用户提供以下几个选项之一，以便他们映射区段并将其激活到您的目标。 您可以通过 [受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md) 部分。
+借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以为Platform用户提供以下几个选项之一，以便他们映射和激活受众到您的目标。 您可以通过 [受众元数据配置](../functionality/destination-configuration/audience-metadata-configuration.md) 部分。
 
 ### 用例1 — 您有一个第三方API，用户无需输入映射ID
 
-如果您拥有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板来配置Destination SDK，以匹配区段创建/更新/删除端点的规范。 Experience Platform能够以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
+如果您具有用于创建/更新/删除受众或受众的API端点，则可以使用受众元数据模板来配置Destination SDK，以匹配受众创建/更新/删除端点的规范。 Experience Platform能够以编程方式创建/更新/删除受众，并将元数据同步回Experience Platform。
 
-在Experience Platform用户界面(UI)中将区段激活到目标时，用户无需在激活工作流中手动填写区段映射ID字段。
+在Experience Platform用户界面(UI)中将受众激活到目标时，用户无需在激活工作流中手动填写受众映射ID字段。
 
-### 用例2 — 用户需要首先在您的目标中创建区段，并需要手动输入映射ID
+### 用例2 — 用户需要首先在您的目标中创建受众，并需要手动输入映射ID
 
-如果需要合作伙伴或用户在您的目标中手动创建区段和其他元数据，则用户必须手动填写激活工作流中的区段映射ID字段，以在您的目标和Experience Platform之间同步区段元数据。
+如果受众和其他元数据需要由合作伙伴或用户在您的目标中手动创建，则用户必须在激活工作流中手动填写受众映射ID字段，以在您的目标和Experience Platform之间同步受众元数据。
 
 ![输入映射Id](../assets/functionality/input-mapping-id.png)
 
-### 用例3 — 您的目标接受Experience Platform区段ID，用户无需手动输入映射ID
+### 用例3 — 您的目标接受Experience Platform的受众ID，用户无需手动输入映射ID
 
-如果目标系统接受Experience Platform区段ID，则可以在受众元数据模板中对其进行配置。 用户在激活区段时无需填充区段映射ID。
+如果目标系统接受Experience Platform的受众ID，则可以在受众元数据模板中配置此模板。 用户在激活区段时无需填充受众映射ID。
 
 ## 通用且可扩展的受众模板 {#generic-and-extensible}
 
@@ -525,13 +525,13 @@ ht-degree: 0%
 
 ## 受众元数据模板中使用的宏
 
-要在Experience Platform与API之间传递区段ID、访问令牌、错误消息等信息，受众模板包含您可以使用的宏。 请阅读下面本页三个配置示例中使用的宏的说明：
+为了在Experience Platform与API之间传递受众ID、访问令牌、错误消息等信息，受众模板包含您可以使用的宏。 请阅读下面本页三个配置示例中使用的宏的说明：
 
 | 宏 | 描述 |
 |--- |--- |
-| `{{segment.alias}}` | 允许您访问Experience Platform中的区段别名。 |
-| `{{segment.name}}` | 允许您访问Experience Platform中的区段名称。 |
-| `{{segment.id}}` | 允许您访问Experience Platform中的区段ID。 |
+| `{{segment.alias}}` | 允许您访问Experience Platform中的受众别名。 |
+| `{{segment.name}}` | 允许您访问Experience Platform中的受众名称。 |
+| `{{segment.id}}` | 允许您访问Experience Platform中的受众ID。 |
 | `{{customerData.accountId}}` | 用于访问在目标配置中设置的帐户ID字段。 |
 | `{{oauth2ServiceAccessToken}}` | 允许您根据OAuth 2配置动态生成访问令牌。 |
 | `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 使用 `{{authData.accessToken}}` 如果Experience Platform应使用未过期的令牌连接到您的目标，否则使用 `{{oauth2ServiceAccessToken}}` 以生成访问令牌。 |

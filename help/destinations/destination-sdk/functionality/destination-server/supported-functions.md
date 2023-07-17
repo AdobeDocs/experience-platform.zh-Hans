@@ -1,7 +1,7 @@
 ---
 description: Experience PlatformDestination SDK使用Pebble模板，允许您将从Experience Platform导出的数据转换为目标所需的格式。
 title: Destination SDK中支持的转换函数
-source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '579'
 ht-degree: 3%
@@ -29,7 +29,7 @@ Experience Platform [!DNL Pebble] 与提供的现成版本相比，实施有一�
 
 要了解此参考页面中的概念和函数，请阅读 [消息格式](message-format.md) 文档优先。 您需要了解 [用户档案的结构](message-format.md#profile-structure) 在Experience Platform中，然后才能使用 [!DNL Pebble] 用于转换和导出数据的模板。
 
-在继续使用下面记录的功能之前，请查看部分中的模板示例 [使用模板语言进行身份、属性和区段成员资格转换](message-format.md#using-templating). 这里的示例开始非常简单，复杂性也增加了。
+在继续使用下面记录的功能之前，请查看部分中的模板示例 [使用模板语言进行身份、属性和受众成员资格转换](message-format.md#using-templating). 这里的示例开始非常简单，复杂性也增加了。
 
 ## 支持 [!DNL Pebble] 函数 {#supported-functions}
 
@@ -46,7 +46,6 @@ Experience Platform [!DNL Pebble] 与提供的现成版本相比，实施有一�
 >
 > * 有关数组元素的示例，请考虑以下对象中的标识： [identitymap](message-format.md#identities) 命名空间，您可以在其中循环访问元素，例如 `identityMap.gaid`， `identityMap.email`，或类似内容。
 > * 有关映射元素的示例，请考虑 [segmentMembership](message-format.md#segment-membership).
-
 
 从 [!DNL Pebble] 过滤器部分，Destination SDK支持所有函数。 下面的示例进一步说明了 `date` 函数可在Destination SDK中使用。
 
@@ -92,7 +91,7 @@ Experience Platform [!DNL Pebble] 与提供的现成版本相比，实施有一�
 
 #### 用例
 
-可使用这些函数获取在配置文件中添加或删除的区段的列表。
+可使用这些函数获取在配置文件中添加或删除的受众列表。
 
 #### 示例
 
@@ -143,7 +142,7 @@ added: <111111><333333>; removed: <222222>
 
 <!--
 
-### Added and removed segments filters {#added-and-removed-segmnts-filters}
+### Added and removed audiences filters {#added-and-removed-segmnts-filters}
 
 #### Use case {#use-case}
 

@@ -2,7 +2,7 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '820'
 ht-degree: 0%
@@ -150,7 +150,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤3：创建消息转换模板 — 使用模板语言指定消息输出格式 {#create-transformation-template}
 
-根据目标支持的负载，必须创建一个模板，将导出数据的格式从AdobeXDM格式转换为目标支持的格式。 请参阅部分中的模板示例 [使用模板语言进行身份、属性和区段成员资格转换](../functionality/destination-server/message-format.md#using-templating) 并使用 [模板创作工具](../testing-api/streaming-destinations/create-template.md) 由Adobe提供。
+根据目标支持的负载，必须创建一个模板，将导出数据的格式从AdobeXDM格式转换为目标支持的格式。 请参阅部分中的模板示例 [使用模板语言进行身份、属性和受众成员资格转换](../functionality/destination-server/message-format.md#using-templating) 并使用 [模板创作工具](../testing-api/streaming-destinations/create-template.md) 由Adobe提供。
 
 创建适合您的消息转换模板后，将其添加到您在步骤1中创建的服务器和模板配置中。
 
@@ -273,10 +273,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 使用前面步骤中的配置端点设置目标后，您可以使用 [目标测试工具](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) 测试Adobe Experience Platform与您的目标之间的集成。
 
-在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
+在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
-* [创建区段文档页面](/help/segmentation/ui/overview.md#create-segment)
-* [创建区段视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [创建受众文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## 步骤7：发布目标 {#publish-destination}
 

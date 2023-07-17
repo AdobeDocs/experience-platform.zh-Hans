@@ -3,10 +3,10 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标的最常见问题解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 784c529691f2f550176080474f5091bfb1b84279
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
-source-wordcount: '1396'
-ht-degree: 3%
+source-wordcount: '1395'
+ht-degree: 4%
 
 ---
 
@@ -22,9 +22,9 @@ ht-degree: 3%
 
 +++答案由于Experience Platform执行分段的方式，这是正常行为。
 
-流式分段会更新一整天流式区段的配置文件计数，而批量分段每24小时更新一次批量区段的配置文件计数。
+流式分段会更新一整天流式受众的个人资料计数，而批量分段每24小时更新一次批量受众的个人资料计数。
 
-当区段导出计划与分段计划不同时，配置文件在UI和导出的之间计数 [!DNL CSV] 文件将有所不同，尤其是在流区段方面。
+当受众导出计划与分段计划不同时，配置文件在UI和导出的之间计数 [!DNL CSV] 文件将有所不同，尤其是在流受众方面。
 
 请参阅 [分段服务文档](../segmentation/home.md) 了解更多详细信息。
 +++
@@ -33,7 +33,7 @@ ht-degree: 3%
 
 ### 在中激活受众之前，我需要做什么 [!DNL Facebook Custom Audiences]？
 
-+++回答：将受众区段发送到 [!DNL Facebook]，确保您满足以下要求：
++++回答 — 在将受众发送到 [!DNL Facebook]，确保您满足以下要求：
 
 * 您的 [!DNL Facebook] 用户帐户必须具有 **[!DNL Manage campaigns]** 为您计划使用的广告帐户启用的权限。
 * 此 **Adobe Experience Cloud** 必须将商业帐户作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`。参见 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) 有关详细信息，请参阅Facebook文档。
@@ -91,9 +91,9 @@ ht-degree: 3%
 
 ## Google 客户匹配 {#google-customer-match}
 
-### 将区段导出到Google Customer Match时，为什么在Google界面的区段名称末尾附加了额外的数字？
+### 将受众导出到Google Customer Match时，为什么在Google界面中的受众名称末尾附加了额外的数字？
 
-+++回答Google要求区段名称是唯一的。 您所看到的数字是 [UNIX时间戳](https://www.unixtimestamp.com/) 如果将同一区段映射到多个Google目标，则会附加这些区段以保持区段名称唯一。
++++回答Google要求受众名称是唯一的。 您所看到的数字是 [UNIX时间戳](https://www.unixtimestamp.com/) 如果将同一受众映射到多个Google目标，则会附加这些受众以保持受众名称唯一。
 +++
 
 ## linkedIn匹配的受众 {#linkedin}
@@ -174,7 +174,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 +++答案是，边缘网络服务器API可与自定义个性化目标配合使用。 由于配置文件属性可能包含敏感数据，为了保护此数据，自定义个性化目标要求您使用Edge Network Server API进行数据收集。 此外，所有API调用都必须在 [已验证的上下文](../server-api/authentication.md).
 +++
 
-### 我只能有一个边缘活动合并策略。 我是否可以生成使用其他合并策略的受众，并且仍然将这些受众作为流区段发送到Adobe Target？
+### 我只能有一个边缘活动合并策略。 我是否可以生成使用其他合并策略的受众，并且仍将这些受众作为流受众发送到Adobe Target？
 
 +++回答“否”。 要激活到Adobe Target的所有受众都必须使用active-on-edge [合并策略](../profile/merge-policies/ui-guide.md).
 +++

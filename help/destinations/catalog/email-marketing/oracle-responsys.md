@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracleresponsys目�
 title: oracleResponsys连接
 description: Responsys是一款用于跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '698'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,21 @@ ht-degree: 1%
 
 [Responsys](https://www.oracle.com/cx/marketing/campaign-management/) 是一款用于跨渠道营销活动的企业电子邮件营销工具，由 [!DNL Oracle] 使电子邮件、移动设备、显示和社交之间的交互个性化。
 
-要将区段数据发送到，请执行以下操作 [!DNL Oracle Responsys]，您必须首先 [连接到目标](#connect-destination) 在Adobe Experience Platform中，然后 [设置数据导入](#import-data-into-responsys) 从存储位置到 [!DNL Oracle Responsys].
+要将受众数据发送到，请执行以下操作 [!DNL Oracle Responsys]，您必须首先 [连接到目标](#connect-destination) 在Adobe Experience Platform中，然后 [设置数据导入](#import-data-into-responsys) 从存储位置到 [!DNL Oracle Responsys].
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -82,21 +96,21 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 目标属性 {#destination-attributes}
 
-将区段激活到此目标时，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关更多信息，请参阅 [将受众激活到电子邮件营销目标的最佳实践](overview.md#best-practices).
+将受众激活到此目标时，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择要导出到目标的唯一标识符和任何其他XDM字段。 有关更多信息，请参阅 [将受众激活到电子邮件营销目标的最佳实践](overview.md#best-practices).
 
 ## 导出的数据 {#exported-data}
 
-对象 [!DNL Oracle Responsys] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [验证区段激活](../../ui/activate-batch-profile-destinations.md#verify) 在区段激活教程中。
+对象 [!DNL Oracle Responsys] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [验证受众激活](../../ui/activate-batch-profile-destinations.md#verify) 在audience activation教程中。
 
 ## 设置数据导入到 [!DNL Oracle Responsys] {#import-data-into-responsys}
 

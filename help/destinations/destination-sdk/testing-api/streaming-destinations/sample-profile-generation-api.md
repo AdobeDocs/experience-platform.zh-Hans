@@ -2,7 +2,7 @@
 description: 了解如何使用目标测试API为您的流目标生成示例配置文件，以用于目标测试。
 title: 根据源架构生成示例配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 1%
@@ -46,7 +46,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 读取 [连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 和 [将配置文件和区段激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 了解更多信息。
+>* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 读取 [连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 和 [将用户档案和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 了解更多信息。
 > * 在建立与目标的连接后，在以下情况下获取您应在对此端点的API调用中使用的目标实例ID： [浏览与目标的连接](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
 >![用户界面图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
@@ -80,11 +80,11 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 **响应**
 
-成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与源XDM架构对应的区段成员资格、身份和配置文件属性。
+成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与源XDM架构对应的受众成员资格、身份和配置文件属性。
 
 >[!TIP]
 >
-> 响应仅返回目标实例中使用的区段成员资格、身份和配置文件属性。 即使源架构具有其他字段，这些字段也会被忽略。
+> 响应仅返回目标实例中使用的受众成员资格、身份和配置文件属性。 即使源架构具有其他字段，这些字段也会被忽略。
 
 ```json
 [
@@ -180,9 +180,9 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentMembership` | 描述个人区段成员资格的映射对象。 有关的详细信息 `segmentMembership`，读取 [区段成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
+| `segmentMembership` | 描述个人受众成员资格的映射对象。 有关的详细信息 `segmentMembership`，读取 [受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | 上次此配置文件符合区段资格的时间戳。 |
-| `xdm:status` | 一个字符串字段，指示区段成员资格是否作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：用户档案将作为当前请求的一部分退出区段。</li></ul> |
+| `xdm:status` | 一个字符串字段，指示受众成员资格是否已在当前请求中实现。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：作为当前请求的一部分，配置文件将退出受众。</li></ul> |
 | `identityMap` | 描述个人的各种标识值及其关联的命名空间的映射类型字段。 有关的详细信息 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
 {style="table-layout:auto"}
@@ -229,7 +229,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 **响应**
 
-成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与目标XDM架构对应的区段成员资格、身份和配置文件属性。
+成功的响应会返回具有指定数量的示例配置文件的HTTP状态200，其中包含与目标XDM架构对应的受众成员资格、身份和配置文件属性。
 
 ```json
 [

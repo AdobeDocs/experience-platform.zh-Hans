@@ -1,10 +1,10 @@
 ---
 title: Pega客户决策中心连接
-description: 使用Adobe Experience Platform中的Pega客户决策中心目标将配置文件属性和区段会员资格数据发送到Pega客户决策中心，以便做出次优决策。
+description: 使用Adobe Experience Platform中的Pega客户决策中心目标将配置文件属性和受众会员资格数据发送到Pega客户决策中心，以便做出次优决策。
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: ae00b113308354e98f4448d2544e2a6e475c384e
+source-git-commit: 9ccfbeb6ef36b10b8ecbfc25797c26980e7d1dcd
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-使用 [!DNL Pega Customer Decision Hub] Adobe Experience Platform中要将配置文件属性和区段成员资格数据发送到的目标 [!DNL Pega Customer Decision Hub] 获得最佳操作决策。
+使用 [!DNL Pega Customer Decision Hub] Adobe Experience Platform中要将配置文件属性和受众会员资格数据发送到的目标 [!DNL Pega Customer Decision Hub] 获得最佳操作决策。
 
-Adobe Experience Platform中的配置文件区段成员资格，加载到时 [!DNL Pega Customer Decision Hub]，可用作自适应模型中的预测器，并帮助提供正确的情境和行为数据，以实现最佳操作决策。
+从Adobe Experience Platform分析受众成员资格（加载到时） [!DNL Pega Customer Decision Hub]，可用作自适应模型中的预测器，并帮助提供正确的情境和行为数据，以实现最佳操作决策。
 
 >[!IMPORTANT]
 >
@@ -31,15 +31,15 @@ Adobe Experience Platform中的配置文件区段成员资格，加载到时 [!D
 
 ### 金融服务
 
-营销人员希望优化为订阅或取消订阅退休金计划或退休计划新闻稿的客户提供的优惠。 金融服务公司可以从自己的CRM中将多个客户ID摄取到Adobe Experience Platform，从自己的离线数据构建区段，并将进入和退出区段的用户档案发送到 [!DNL Pega Customer Decision Hub] 在对外频道中做出次佳动作(NBA)决策。
+营销人员希望优化为订阅或取消订阅退休金计划或退休计划新闻稿的客户提供的优惠。 金融服务公司可以从自己的CRM中获取多个客户ID到Adobe Experience Platform，从自己的离线数据构建受众，并将进入和退出受众的用户档案发送到 [!DNL Pega Customer Decision Hub] 在对外频道中做出次佳动作(NBA)决策。
 
 ## 先决条件 {#prerequisites}
 
 在使用此目标将数据导出到Adobe Experience Platform之前，请确保在以下方面满足先决条件： [!DNL Pega Customer Decision Hub]：
 
-* 配置 [Adobe Experience Platform配置文件和区段成员资格集成组件](https://docs.pega.com/component/customer-decision-hub/adobe-experience-platform-profile-and-segment-membership-integration-component) 在您的 [!DNL Pega Customer Decision Hub] 实例。
+* 配置 [Adobe Experience Platform配置文件和受众成员资格集成组件](https://docs.pega.com/component/customer-decision-hub/adobe-experience-platform-profile-and-segment-membership-integration-component) 在您的 [!DNL Pega Customer Decision Hub] 实例。
 * 配置OAuth 2.0 [使用客户端凭据进行客户端注册](https://docs.pega.com/security/87/creating-and-configuring-oauth-20-client-registration) 授权类型位于 [!DNL Pega Customer Decision Hub] 实例。
-* 配置 [实时运行数据流](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) 中的Adobe区段会员资格数据流 [!DNL Pega Customer Decision Hub] 实例。
+* 配置 [实时运行数据流](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) 的Adobe受众会员资格数据流 [!DNL Pega Customer Decision Hub] 实例。
 
 ## 支持的身份 {#supported-identities}
 
@@ -57,8 +57,8 @@ Adobe Experience Platform中的配置文件区段成员资格，加载到时 [!D
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | 导出区段的所有成员，其标识符为(*客户ID*)、属性（姓氏、名字、位置等） 和区段会员资格数据。 |
-| 导出频率 | **[!UICONTROL 流]** | 流式目标始终基于API连接。 根据区段评估，用户档案在Experience Platform中更新后，连接器会立即将更新发送到下游目标平台。 有关更多信息，请参阅 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | 导出具有标识符(*客户ID*)、属性（姓氏、名字、位置等） 和受众会员资格数据。 |
+| 导出频率 | **[!UICONTROL 流]** | 流式目标始终基于API连接。 根据Experience Platform评估，一旦用户档案在Audience中更新，连接器就会将更新发送到下游目标平台。 有关更多信息，请参阅 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -90,13 +90,13 @@ Adobe Experience Platform中的配置文件区段成员资格，加载到时 [!D
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL 主机名]**：将用户档案导出为JSON数据的Pega客户决策中心主机名。
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 目标属性 {#attributes}
 
@@ -120,14 +120,14 @@ Adobe Experience Platform中的配置文件区段成员资格，加载到时 [!D
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-成功更新用户档案的区段成员资格会在Pega营销区段成员资格数据存储中插入区段标识符、名称和状态。 成员资格数据通过中的客户配置文件设计器与客户关联 [!DNL Pega Customer Decision Hub]，如下所示。
-![UI屏幕的图像，您可以在其中使用Customer Profile Designer将Adobe区段成员资格数据关联到客户](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
+成功更新配置文件的受众成员资格后，可以在Pega营销受众成员资格数据存储中插入受众标识符、名称和状态。 成员资格数据通过中的客户配置文件设计器与客户关联 [!DNL Pega Customer Decision Hub]，如下所示。
+![UI屏幕的图像，您可以在其中使用Customer Profile Designer将Adobe受众会员资格数据关联到客户](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
 
-区段成员资格数据用于Pega下一最佳操作设计器参与策略，以实现下一最佳操作决策，如下所示。
-![UI屏幕的图像，您可以在其中添加区段成员资格字段作为Pega下一个最佳操作设计器的参与策略中的条件](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
+受众会员资格数据用于Pega下一最佳操作设计器参与策略中，以实现下一最佳操作决策，如下所示。
+![UI屏幕的图像，您可以在其中添加受众会员资格字段作为Pega下一个最佳操作设计器的参与策略中的条件](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
 
-客户区段会员资格数据字段作为预测项添加到自适应模型中，如下所示。
-![可在其中使用Prediction Studio将区段成员资格字段添加为自适应模型中的谓词的UI屏幕图像](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
+客户受众会员资格数据字段作为预测项添加到自适应模型中，如下所示。
+![UI屏幕的图像，您可以在其中使用Prediction Studio将受众成员资格字段添加为自适应模型中的预测符](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
 
 ## 其他资源 {#additional-resources}
 

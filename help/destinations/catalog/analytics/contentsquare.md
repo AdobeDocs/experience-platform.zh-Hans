@@ -3,7 +3,7 @@ keywords: contentsquare扩展；contentsquare目标；contentsquare
 title: Contentsquare扩展
 description: Contentsquare扩展是Adobe Experience Platform中的分析目标。 有关扩展功能的更多信息，请参阅Adobe交换上的扩展页面。
 exl-id: bf836a15-b87c-4a4b-a3fc-92d3cf9bc90e
-source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '479'
 ht-degree: 5%
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 ## 概述 {#overview}
 
-可视化页面内行为，了解客户放弃的原因以及如何改进。 将收入归因于每个Analytics区段和Target测试的UX和内容元素。 安装 [!DNL Contentsquare] 标记、设置自定义变量和事件。 只需单击几下，即可开始为UX分析收集数据。
+可视化页面内行为，了解客户放弃的原因以及如何改进。 将收入归因于每个Analytics受众和Target测试的UX和内容元素。 安装 [!DNL Contentsquare] 标记、设置自定义变量和事件。 只需单击几下，即可开始为UX分析收集数据。
 
 [!DNL Contentsquare] 是Adobe Experience Platform中的一个analytics扩展。 有关扩展功能的更多信息，请参阅上的扩展页面 [Adobe交换](https://exchange.adobe.com/experiencecloud.details.100364.html).
 

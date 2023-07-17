@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: 通过Google Customer Match，您可以在Google拥有和运营的资产(如Search、Shopping、Gmail和YouTube)中使用在线和离线数据联系客户并重新与其互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: d6b34f3bd3a432e1cf7d3dcce242934391b65d78
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '1763'
+source-wordcount: '1818'
 ht-degree: 1%
 
 ---
@@ -24,13 +24,13 @@ ht-degree: 1%
 
 ### 用例#1
 
-一家运动服装品牌希望通过下列渠道吸引现有客户 [!DNL Google Search] 和 [!DNL Google Shopping] 根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据构建区段。 然后，他们可以将这些区段发送到 [!DNL Google Customer Match] 要跨以下范围使用 [!DNL Search] 和 [!DNL Shopping]，优化他们的广告支出。
+一家运动服装品牌希望通过下列渠道吸引现有客户 [!DNL Google Search] 和 [!DNL Google Shopping] 根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以将电子邮件地址从自己的CRM摄取到Experience Platform，并从自己的离线数据构建受众。 然后，他们可以将这些受众发送到 [!DNL Google Customer Match] 要跨以下范围使用 [!DNL Search] 和 [!DNL Shopping]，优化他们的广告支出。
 
 ### 用例#2
 
 一家知名科技公司发布了一款新手机。 为了推广这种新款手机，他们希望让拥有旧款手机的客户了解这款手机的新特性和新功能。
 
-为了提升版本，他们使用电子邮件地址作为标识符，将其CRM数据库中的电子邮件地址上传到Experience Platform中。 区段是根据拥有旧款手机型号的客户创建的。 然后，区段将发送到 [!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧款手机型号的客户以及在上启用的类似客户 [!DNL YouTube].
+为了提升版本，他们使用电子邮件地址作为标识符，将其CRM数据库中的电子邮件地址上传到Experience Platform中。 受众是基于拥有旧版手机型号的客户创建的。 然后，受众将发送到 [!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧款手机型号的客户以及在上启用的类似客户 [!DNL YouTube].
 
 ## 数据治理 [!DNL Google Customer Match] 目标 {#data-governance}
 
@@ -50,14 +50,28 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL Google Customer Match] 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL Google Customer Match] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -117,7 +131,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 <!-- ## Configure destination - video walkthrough {#video}
 
-The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate segments. The steps are also laid out sequentially in the next sections.
+The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate audiences. The steps are also laid out sequentially in the next sections.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
@@ -141,22 +155,21 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 >
 > * 此 **[!UICONTROL 与PII结合]** 默认情况下会为以下项选择营销操作 [!DNL Google Customer Match] 目标位置，无法删除。
 
-
 ### 启用警报 {#enable-alerts}
 
 您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
-在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 应用程序ID] 发送时 [!DNL IDFA] 或 [!DNL GAID] 区段至 [!DNL Google Customer Match].
+在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 应用程序ID] 发送时 [!DNL IDFA] 或 [!DNL GAID] 受众到 [!DNL Google Customer Match].
 
 ![Google客户匹配应用程序ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
@@ -191,11 +204,11 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 ![标识映射转换](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
-## 验证区段激活是否成功 {#verify-activation}
+## 验证受众激活是否成功 {#verify-activation}
 
-完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的区段在您的Google帐户中显示为客户列表。 请注意，根据您的区段大小，除非要提供100多个活动用户，否则不会填充某些受众。
+完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的受众在您的Google帐户中显示为客户列表。 请注意，根据您的受众规模，除非有100多个活动用户可提供服务，否则不会填充某些受众。
 
-将区段映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建一个单独的区段。 您的 [!DNL Google Ads] 帐户显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
+将受众映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建单独的受众。 您的 [!DNL Google Ads] 帐户显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
 
 ## 故障排除 {#troubleshooting}
 

@@ -2,11 +2,11 @@
 keywords: 激活目标；激活数据
 title: 激活概述
 type: Tutorial
-description: 了解如何将Adobe Experience Platform中的受众数据激活到各种类型的目标。
+description: 了解如何将Adobe Experience Platform中的受众激活到各种类型的目标。
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '323'
 ht-degree: 1%
 
 ---
@@ -21,13 +21,13 @@ Adobe Experience Platform支持范围广泛的目标。 受众激活工作流因
 
 ## 激活方法 {#activation-methods}
 
-在您之后 [配置目标](connect-destination.md)，您可以通过多种方式激活受众区段：
+在您之后 [配置目标](connect-destination.md)，您可以通过多种方式激活受众：
 
 ### 从目标目录激活受众
 
 有关从目标目录将受众激活到您的目标的详细信息，请参阅以下指南：
 
-* [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+* [将受众数据激活到流式受众导出目标](activate-segment-streaming-destinations.md)
 * [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
 * [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)
 
@@ -39,22 +39,22 @@ Adobe Experience Platform支持范围广泛的目标。 受众激活工作流因
 
    ![“浏览”选项卡](../assets/ui/activation-overview/browse-tab.png)
 
-1. 查找要用于激活区段的目标连接，选择 [!UICONTROL 名称] 列，然后选择 **[!UICONTROL 激活区段]**.
+1. 查找要用于激活区段的目标连接，选择 [!UICONTROL 名称] 列，然后选择 **[!UICONTROL 激活受众]**.
 
-   ![“激活区段”按钮](../assets/ui/activation-overview/activate-segments.png)
+   ![“激活受众”按钮](../assets/ui/activation-overview/activate-segments.png)
 
 1. 根据所选目标，请按照以下文章中所述的步骤操作，从 **[!UICONTROL 选择区段]** 步骤，完成激活工作流：
 
-   * [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+   * [将受众数据激活到流式受众导出目标](activate-segment-streaming-destinations.md)
    * [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
    * [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)
 
-### 从区段详细信息页面激活受众 {#activate-segment-details}
+### 从audiencedails页面激活受众 {#activate-segment-details}
 
-您可以从区段详细信息页面将区段激活到目标。 参见 [区段详细信息](../../segmentation/ui/overview.md#segment-details) 了解更多信息。
+您可以从audiencedetails页面将受众激活到目标。 参见 [区段详细信息](../../segmentation/ui/overview.md#segment-details) 了解更多信息。
 
 根据所选目标，请按照以下文章中描述的步骤完成激活工作流：
 
-* [将受众数据激活到流式区段导出目标](activate-segment-streaming-destinations.md)
+* [将受众数据激活到流式受众导出目标](activate-segment-streaming-destinations.md)
 * [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
 * [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)

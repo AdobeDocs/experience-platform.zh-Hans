@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 了解关于数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1177'
 ht-degree: 1%
@@ -22,7 +22,6 @@ ht-degree: 1%
 >* 大多数客户不会超过这些默认限制。 如果您想了解自定义限制，请联系您的客户关怀代表。
 >* 本文档中概述的限制不断得到改进。 请定期回来查看更新。
 >* 根据各个下游的限制，某些目标的护栏可能会比此页面上记录的护栏更严格。 确保同时检查 [目录](/help/destinations/catalog/overview.md) 要连接和激活数据的目标页面。
-
 
 ## 限制类型 {#limit-types}
 
@@ -42,7 +41,7 @@ ht-degree: 1%
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 到单个目标的最大区段数 | 250 | 柔和 | 建议最多将250个区段映射到数据流中的单个目标。 <br><br> 如果您需要向目标激活超过250个区段，您可以： <ul><li> 取消映射您不想再激活的区段，或者</li><li>创建到所需目标的新数据流，并将区段映射到此新数据流。</li></ul> <br> 请注意，对于某些目标，映射到目标的区段可能限制为250个以下。 这些目标将在页面中各自的部分中进一步说明。 |
+| 单个目标的最大受众数量 | 250 | 柔和 | 建议将最多250个受众映射到数据流中的单个目标。 <br><br> 如果您需要向某个目标激活超过250个受众，则可以： <ul><li> 取消映射您不想再激活的受众，或者</li><li>创建一个到所需目标的新数据流，并将受众映射到此新数据流。</li></ul> <br> 请注意，对于某些目标，映射到目标的受众可能限制为250个以下。 这些目标将在页面中各自的部分中进一步说明。 |
 | 目标的最大数量 | 100 | 柔和 | 建议最多创建100个可连接和激活数据的目标 *每个沙盒*. [Edge个性化目标（自定义个性化）](#edge-destinations-activation) 在100个推荐目标中，最多可以包含10个。 |
 | 映射到目标的最大属性数 | 50 | 柔和 | 如果存在多个目标和目标类型，则可以选择要映射的配置文件属性和身份以供导出。 为获得最佳性能，数据流中应将最多50个属性映射到目标。 |
 | 激活到目标的数据类型 | 配置文件数据，包括身份和身份映射 | 硬 | 目前，只能导出 *配置文件记录属性* 到目标。 目前不支持导出描述事件数据的XDM属性。 |
@@ -67,7 +66,7 @@ ht-degree: 1%
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
 | 激活频率 | 每日一次完全导出或更频繁的增量导出，每3、6、8或12小时一次。 | 硬 | 阅读 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 文档部分，以了解有关批处理导出的频率递增的更多信息。 |
-| 在给定小时内可导出的最大区段数 | 100 | 柔和 | 建议向批处理目标数据流添加最多100个区段。 |
+| 在给定小时可导出的最大受众数 | 100 | 柔和 | 建议向批处理目标数据流添加最多100个受众。 |
 | 要激活的每个文件的最大行数（记录） | 500万 | 硬 | Adobe Experience Platform自动以每个文件500万条记录（行）拆分导出的文件。 每一行表示一个配置文件。 拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`， `filename_2.csv`， `filename_3.csv`. 有关详细信息，请阅读 [计划部分](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) “激活批处理目标”教程的。 |
 
 {style="table-layout:auto"}
@@ -78,8 +77,8 @@ ht-degree: 1%
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 根据临时激活作业激活的区段 | 80 | 硬 | 目前，每个临时激活作业最多可以激活80个区段。 尝试激活每个作业超过80个区段会导致作业失败。 此行为可能会在未来版本中发生更改。 |
-| 每个区段的并发临时激活作业 | 1 | 硬 | 不要为每个区段运行多个并发临时激活作业。 |
+| 根据临时激活作业激活的受众 | 80 | 硬 | 目前，每个临时激活作业最多可以激活80个受众。 尝试激活每个作业超过80个受众将导致作业失败。 此行为可能会在未来版本中发生更改。 |
+| 每个受众的并发临时激活作业 | 1 | 硬 | 不要为每个受众运行多个并发临时激活作业。 |
 
 {style="table-layout:auto"}
 
@@ -91,7 +90,7 @@ ht-degree: 1%
 | --- | --- | --- | --- |
 | 最大数量 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标 | 10 | 柔和 | 您可以将数据流设置为每个沙盒10个自定义个性化目标。 |
 | 每个沙盒映射到个性化目标的最大属性数 | 30 | 硬 | 每个沙盒最多可以在数据流中将30个属性映射到个性化目标。 |
-| 映射到单个的最大区段数 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 目标 | 50 | 柔和 | 在一个到单个Adobe Target目标的激活流中，您最多可以激活50个区段。 |
+| 映射到单个的最大受众数 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 目标 | 50 | 柔和 | 在一个针对单个Adobe Target目标的激活流中，您最多可以激活50个受众。 |
 
 {style="table-layout:auto"}
 

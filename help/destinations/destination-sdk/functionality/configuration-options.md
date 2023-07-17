@@ -1,9 +1,9 @@
 ---
 description: Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。 了解这些组件如何组合使Experience Platform能够连接到目标合作伙伴、发送自定义消息并在数字生态系统中激活用户档案数据。
 title: Destination SDK中的配置选项
-source-git-commit: 65a658208b48a50184e55a6d64cdf7ad6de0f04f
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -45,14 +45,14 @@ Adobe Experience Platform中的目标服务对构建目标功能的多个组件�
 * [架构配置](destination-configuration/schema-configuration.md)：了解如何定义用户可将配置文件属性和身份映射到的目标架构。
 * [身份命名空间配置](destination-configuration/identity-namespace-configuration.md)：了解如何配置目标支持的标识。 此配置会将目标身份填充 [映射步骤](../../ui/activate-segment-streaming-destinations.md#mapping) Experience Platform用户界面的，用户可以在其中将标识和属性从其XDM架构映射到目标中的架构。
 * [目标投放](destination-configuration/destination-delivery.md)：了解如何配置导出数据的确切放置位置以及在数据放置位置使用的身份验证规则。
-* [受众元数据配置](destination-configuration/audience-metadata-configuration.md)：了解区段名称或ID等区段元数据应如何在Experience Platform和目标之间共享。
+* [受众元数据配置](destination-configuration/audience-metadata-configuration.md)：了解受众名称或ID等受众元数据应如何在Experience Platform和目标之间共享。
 * [聚合策略](destination-configuration/aggregation-policy.md)：了解如何设置聚合策略，以确定应如何对发送到目标的HTTP请求进行分组和批处理。
 * [批次配置](destination-configuration/batch-configuration.md)：在Experience Platform用户界面中设置用户连接到目标时可用的各种文件命名和导出计划设置。
 * [历史配置文件资格](destination-configuration/historical-profile-qualifications.md)：了解使用Destination SDK构建的目标所支持的历史配置文件资格。
 
 ## 受众元数据配置 {#audience-metadata-configuration}
 
-利用此组件，可配置如何在目标中以编程方式创建、更新或删除受众/区段。 对于基于文件的目标，它允许您在文件成功传送到目标时设置通知。 您可以通过以下方式配置此功能 [受众模板端点](../metadata-api/create-audience-template.md).
+利用此组件，可配置如何在目标中以编程方式创建、更新或删除受众。 对于基于文件的目标，它允许您在文件成功传送到目标时设置通知。 您可以通过以下方式配置此功能 [受众模板端点](../metadata-api/create-audience-template.md).
 
 ## 后续步骤 {#next-steps}
 

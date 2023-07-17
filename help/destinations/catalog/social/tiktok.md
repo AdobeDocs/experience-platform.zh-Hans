@@ -1,20 +1,20 @@
 ---
-title: TikTok连接
-description: 使用您的数据在TikTok上构建自定义受众，以便通过广告营销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需区段从Adobe Experience Platform推送到TikTok。
+title: TikTok 连接
+description: 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '980'
-ht-degree: 2%
+source-wordcount: '978'
+ht-degree: 5%
 
 ---
 
-# TikTok连接
+# TikTok 连接
 
 ## 概述 {#overview}
 
-使用您的数据在TikTok上构建自定义受众，以便通过广告营销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需区段从Adobe Experience Platform推送到TikTok。 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences?lang=en) 了解更多信息。
+使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences?lang=en) 了解更多信息。
 
 >[!IMPORTANT]
 >
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ### 用例 {#use-case-1}
 
-一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以从自己的CRM中摄取电子邮件地址到Adobe Experience Platform，从自己的离线数据构建区段，并将这些区段发送到TikTok，以便在客户的社交媒体馈送中显示广告。
+一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到TikTok，以在其客户的社交媒体馈送中显示广告。
 
 ## 先决条件 {#prerequisites}
 
@@ -51,8 +51,8 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及TikTok目标中使用的标识符（姓名、电话号码或其他）。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用TikTok目标中使用的标识符（姓名、电话号码或其他）导出受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -88,17 +88,17 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射身份 {#map}
 
-以下是将区段导出到TikTok广告管理器时的正确标识映射示例。
+下面是将受众导出到TikTok广告管理器时正确的标识映射示例。
 
 选择源字段：
 
@@ -112,7 +112,7 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 ## 导出的数据 {#exported-data}
 
-检查您的 [!DNL TikTok Ads Manager] 帐户(在 **Assets >受众**)验证您的Experience Platform区段是否已成功导出。 受众将填充为受众类型： `Partner Audience`.
+检查您的 [!DNL TikTok Ads Manager] 帐户(在 **Assets >受众**)，以验证您的Experience Platform受众是否已成功导出。 受众将填充为受众类型： `Partner Audience`.
 
 ## 数据使用和管理 {#data-usage-governance}
 

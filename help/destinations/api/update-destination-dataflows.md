@@ -3,18 +3,18 @@ keywords: Experience Platform；主页；热门主题；流服务；更新目标
 solution: Experience Platform
 title: 使用流服务API更新目标数据流
 type: Tutorial
-description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除区段和属性。
+description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息或添加和删除受众和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
 workflow-type: tm+mt
 source-wordcount: '2408'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
 # 使用流服务API更新目标数据流
 
-本教程介绍了更新目标数据流的步骤。 了解如何使用启用或禁用数据流、更新其基本信息或者添加和删除区段和属性 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). 有关使用Experience PlatformUI编辑目标数据流的信息，请阅读 [编辑激活流程](/help/destinations/ui/edit-activation.md).
+本教程介绍了更新目标数据流的步骤。 了解如何使用启用或禁用数据流、更新其基本信息或者添加和删除受众和属性 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). 有关使用Experience PlatformUI编辑目标数据流的信息，请阅读 [编辑激活流程](/help/destinations/ui/edit-activation.md).
 
 ## 快速入门 {#get-started}
 
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 本教程还要求您实际了解Adobe Experience Platform的以下组件：
 
-* [目标](../home.md)： [!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+* [目标](../home.md)： [!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 * [沙盒](../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了您需要了解的其他信息，以便使用 [!DNL Flow Service] API。
@@ -447,9 +447,9 @@ curl -X POST \
 }
 ```
 
-## 将区段添加到数据流 {#add-segment}
+## 将受众添加到数据流 {#add-segment}
 
-PATCH要将区段添加到目标数据流，请对 [!DNL Flow Service] API，同时提供您的流ID、版本以及要添加区段。
+PATCH要将受众添加到目标数据流，请对 [!DNL Flow Service] API，同时提供您的流ID、版本以及要添加的受众。
 
 **API格式**
 
@@ -459,7 +459,7 @@ PATCH /flows/{FLOW_ID}
 
 **请求**
 
-以下请求会将新区段添加到现有目标数据流。
+以下请求会将新受众添加到现有目标数据流。
 
 ```shell
 curl -X PATCH \
@@ -494,18 +494,18 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将区段添加到数据流，请使用 `add` 操作。 |
-| `path` | 定义要更新的流部分。 将区段添加到数据流时，请使用示例中指定的路径。 |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将受众添加到数据流，请使用 `add` 操作。 |
+| `path` | 定义要更新的流部分。 将受众添加到数据流时，请使用示例中指定的路径。 |
 | `value` | 您希望使用更新参数的新值。 |
-| `id` | 指定要添加到目标数据流的区段的ID。 |
-| `name` | **(可选)**. 指定要添加到目标数据流的区段名称。 请注意，此字段不是必填字段，您可以成功地将区段添加到目标数据流，而无需提供其名称。 |
-| `filenameTemplate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必需。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必需。 导出的文件包含导出区段的ID。</li><li>`%SEGMENT_NAME%`: **(可选)**. 导出的文件包含导出区段的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`： **（可选）**. 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: **(可选)**. 将此占位符替换为您要在文件名末尾附加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
-| `exportMode` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 必需。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
-| `startDate` | 选择区段应开始将用户档案导出到目标的日期。 |
-| `frequency` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 必需。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
+| `id` | 指定要添加到目标数据流的受众的ID。 |
+| `name` | **(可选)**. 指定要添加到目标数据流的受众名称。 请注意，此字段不是必填字段，您无需提供名称即可成功将受众添加到目标数据流。 |
+| `filenameTemplate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必需。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必需。 导出的文件包含导出的受众的ID。</li><li>`%SEGMENT_NAME%`: **(可选)**. 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`： **（可选）**. 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: **(可选)**. 将此占位符替换为您要在文件名末尾附加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
+| `exportMode` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 必需。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
+| `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
+| `frequency` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 必需。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | 对象 *批处理目标* 仅此而已。 只有在选择 `"DAILY_FULL_EXPORT"` 中的模式 `frequency` 选择器。 <br> 必需。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 使激活作业在每日平台批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。</li><li>选择 `"SCHEDULED"` 使激活作业在固定时间运行。 这可以确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 选择此选项时，您还必须添加 `startTime` 用于指示每日导出应在UTC中的哪个时间发生。</li></ul> |
-| `endDate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 选择时不适用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
-| `startTime` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 必需。 选择应生成包含区段成员的文件并将其导出到目标的时间。 |
+| `endDate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 选择时不适用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置受众成员停止导出到目标的日期。 |
+| `startTime` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 必需。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 **响应**
 
@@ -518,9 +518,9 @@ curl -X PATCH \
 }
 ```
 
-## 从数据流中删除区段 {#remove-segment}
+## 从数据流中删除受众 {#remove-segment}
 
-PATCH要从现有目标数据流中删除区段，请对 [!DNL Flow Service] API，同时提供流ID、版本以及要删除的区段的索引选择器。 索引开始于 `0`. 例如，下面的示例请求从数据流中删除第一和第二区段。
+PATCH要从现有目标数据流中删除受众，请对 [!DNL Flow Service] API，同时提供您的流ID、版本以及要删除的受众的索引选择器。 索引开始于 `0`. 例如，下面的示例请求从数据流中删除第一和第二受众。
 
 **API格式**
 
@@ -530,7 +530,7 @@ PATCH /flows/{FLOW_ID}
 
 **请求**
 
-以下请求从现有目标数据流中删除两个区段。
+以下请求从现有目标数据流中删除两个受众。
 
 ```shell
 curl -X PATCH \
@@ -564,8 +564,8 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要从数据流中删除区段，请使用 `remove` 操作。 |
-| `path` | 根据区段选择器的索引，指定应从目标数据流中删除的现有区段。 GET要检索数据流中的区段顺序，请对 `/flows` 端点并检查 `transformations.segmentSelectors` 属性。 要删除数据流中的第一个区段，请使用 `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要从数据流中删除受众，请使用 `remove` 操作。 |
+| `path` | 根据受众选择器的索引，指定应从目标数据流中删除哪些现有受众。 GET要检索数据流中受众的顺序，请对 `/flows` 端点并检查 `transformations.segmentSelectors` 属性。 要删除数据流中的第一个受众，请使用 `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
 
 
 **响应**
@@ -579,9 +579,9 @@ curl -X PATCH \
 }
 ```
 
-## 更新数据流中区段的组件 {#update-segment}
+## 更新数据流中受众的组件 {#update-segment}
 
-您可以更新现有目标数据流中区段的组件。 例如，可以更改导出频率，也可以编辑文件名模板。 为此，请向以下网站执行PATCH请求： [!DNL Flow Service] API，同时提供您的流ID、版本以及要更新的区段的索引选择器。 索引开始于 `0`. 例如，下面的请求会更新数据流中的第九个区段。
+您可以更新现有目标数据流中受众的组件。 例如，可以更改导出频率，也可以编辑文件名模板。 为此，请向以下网站执行PATCH请求： [!DNL Flow Service] API，同时提供您的流ID、版本以及要更新的受众的索引选择器。 索引开始于 `0`. 例如，下面的请求会更新数据流中的第九个受众。
 
 **API格式**
 
@@ -591,7 +591,7 @@ PATCH /flows/{FLOW_ID}
 
 **请求**
 
-更新现有目标数据流中的区段时，应首先执行GET操作以检索要更新的区段的详细信息。 然后，在有效负载中提供所有区段信息，而不仅仅是要更新的字段。 在以下示例中，自定义文本会添加到文件名模板的末尾，导出计划频率会从6小时更新为12小时。
+更新现有目标数据流中的受众时，您应该首先执行GET操作以检索要更新的受众的详细信息。 然后，在有效负载中提供所有受众信息，而不仅仅是要更新的字段。 在以下示例中，自定义文本会添加到文件名模板的末尾，导出计划频率会从6小时更新为12小时。
 
 ```shell
 curl -X PATCH \
@@ -626,7 +626,7 @@ curl -X PATCH \
 ]'
 ```
 
-有关有效负载中属性的描述，请参阅一节 [将区段添加到数据流](#add-segment).
+有关有效负载中属性的描述，请参阅一节 [将受众添加到数据流](#add-segment).
 
 
 **响应**
@@ -640,13 +640,13 @@ curl -X PATCH \
 }
 ```
 
-有关可在数据流中更新的区段组件的更多示例，请参阅以下示例。
+有关可在数据流中更新的受众组件的更多示例，请参阅以下示例。
 
-## 在区段评估后，将区段的导出模式从计划更新为 {#update-export-mode}
+## 在受众评估后将受众的导出模式从计划更新为 {#update-export-mode}
 
-+++ 单击以查看示例，其中区段导出从每天在指定时间激活更新为每天在Platform批量分段作业完成后激活。
++++ 单击以查看示例，其中受众导出从每天在指定时间激活更新为每天在Platform批量分段作业完成后激活。
 
-每天的16:00 UTC导出该区段。
+每天的16:00 UTC导出受众。
 
 ```json
 {
@@ -669,7 +669,7 @@ curl -X PATCH \
 }
 ```
 
-每日批处理分段作业完成后，每天都会导出区段。
+每日批量分段作业完成后，每天都会导出受众。
 
 ```json
 {
@@ -697,7 +697,7 @@ curl -X PATCH \
 
 +++ 单击以查看一个示例，其中更新了文件名模板以在文件名中包含其他字段
 
-导出的文件包含目标名称和Experience Platform区段ID
+导出的文件包含目标名称和Experience Platform受众ID
 
 ```json
 {
@@ -720,7 +720,7 @@ curl -X PATCH \
 }
 ```
 
-导出的文件包含目标名称、Experience Platform区段ID、Experience Platform生成文件的日期和时间，以及在文件末尾附加的自定义文本。
+导出的文件包含目标名称、Experience Platform受众ID、Experience Platform生成文件的日期和时间，以及在文件末尾附加的自定义文本。
 
 
 ```json
@@ -838,8 +838,8 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要从数据流中删除区段，请使用 `remove` 操作。 |
-| `path` | 根据区段选择器的索引，指定应从目标数据流中删除的现有配置文件属性。 GET要检索数据流中配置文件属性的顺序，请对 `/flows` 端点并检查 `transformations.profileSelectors` 属性。 要删除数据流中的第一个区段，请使用 `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要从数据流中删除受众，请使用 `remove` 操作。 |
+| `path` | 根据受众选择器的索引，指定应从目标数据流中删除的现有配置文件属性。 GET要检索数据流中配置文件属性的顺序，请对 `/flows` 端点并检查 `transformations.profileSelectors` 属性。 要删除数据流中的第一个受众，请使用 `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
 
 
 **响应**
@@ -859,4 +859,4 @@ curl -X PATCH \
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已了解如何更新目标数据流的各种组件，例如，使用添加或删除区段或配置文件属性 [!DNL Flow Service] API。 有关目标的更多信息，请参见 [目标概述](../home.md).
+通过学习本教程，您已了解如何更新目标数据流的各种组件，例如使用添加或删除受众或配置文件属性 [!DNL Flow Service] API。 有关目标的更多信息，请参见 [目标概述](../home.md).

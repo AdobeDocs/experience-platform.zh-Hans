@@ -3,9 +3,9 @@ title: 将受众激活到边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: c96a156c6c9c63d9ae875ee3808168d94ee7aeca
+source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
-source-wordcount: '1738'
+source-wordcount: '1833'
 ht-degree: 2%
 
 ---
@@ -130,6 +130,14 @@ Edge个性化目标使您能够使用Adobe个性化解决方案(如Adobe Target)
 ## 选择您的受众 {#select-audiences}
 
 使用受众名称左侧的复选框选择要激活到目标的受众，然后选择 **[!UICONTROL 下一个]**.
+
+要选择要激活到目标的受众，请选中受众名称左侧的复选框，然后选择 **[!UICONTROL 下一个]**.
+
+您可以根据受众的来源，从多种类型的受众中进行选择：
+
+* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 了解更多详细信息。
+* **[!UICONTROL 自定义上传]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关以下内容的文档 [导入受众](../../segmentation/ui/overview.md#import-audience).
+* 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
 ![选择受众](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
 

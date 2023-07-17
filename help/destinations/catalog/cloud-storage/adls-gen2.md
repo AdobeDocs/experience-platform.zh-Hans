@@ -1,15 +1,15 @@
 ---
 title: (Beta) Azure Data Lake Storage Gen2连接
-description: 了解如何连接到Azure Data Lake Storage Gen2以激活区段和导出数据集。
+description: 了解如何连接到Azure Data Lake Storage Gen2以激活受众和导出数据集。
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '780'
-ht-degree: 0%
+source-wordcount: '836'
+ht-degree: 1%
 
 ---
 
-# (Beta) [!DNL Azure Data Lake Storage Gen2] 连接
+# (Beta)[!DNL Azure Data Lake Storage Gen2]连接
 
 >[!IMPORTANT]
 >
@@ -21,8 +21,22 @@ ht-degree: 0%
 
 ## 连接到您的 [!DNL ADLS Gen2] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
-* 连接到您的 [!DNL ADLS Gen2] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
-* 连接到您的 [!DNL ADLS Gen2] 存储位置以编程方式读取 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 连接到您的 [!DNL ADLS Gen2] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下面的。
+* 连接到您的 [!DNL ADLS Gen2] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -55,7 +69,7 @@ ht-degree: 0%
 * **[!UICONTROL 服务主体密钥]**：应用程序的键。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -74,13 +88,13 @@ ht-degree: 0%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 计划 {#scheduling}
 

@@ -2,7 +2,7 @@
 description: 了解如何在发布目标之前使用目标测试API测试流目标消息转换模板。
 title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ## 为什么需要创建和测试消息转换模板 {#why-create-message-transformation-template}
 
-在Destination SDK中创建目标的第一步之一是考虑在从Adobe Experience Platform导出到目标时，如何转换区段成员资格、身份和配置文件属性的数据格式。 在中查找有关AdobeXDM架构与目标架构之间转换的信息 [消息格式文档](../../functionality/destination-server/message-format.md#using-templating).
+在Destination SDK中创建目标的第一步之一是考虑在从Adobe Experience Platform导出到目标时，如何转换受众成员资格、身份和配置文件属性的数据格式。 在中查找有关AdobeXDM架构与目标架构之间转换的信息 [消息格式文档](../../functionality/destination-server/message-format.md#using-templating).
 
 要使转换成功，必须提供类似于以下示例的转换模板： [创建用于发送区段、身份和配置文件属性的模板](../../functionality/destination-server/message-format.md#segments-identities-attributes).
 
@@ -38,8 +38,8 @@ Adobe提供了一个template工具，允许您创建和测试消息模板，以�
 在创建模板之前，请确保完成以下步骤：
 
 1. [创建目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 根据您为提供的值，将生成的模板有所不同 `maxUsersPerRequest` 参数。
-   * 使用 `maxUsersPerRequest=1` 如果您希望对目标的某个API调用包含单个配置文件，以及其区段资格、身份和配置文件属性。
-   * 使用 `maxUsersPerRequest` （如果想要对目标的API调用包含多个配置文件，以及其区段资格、身份和配置文件属性），则值为1。
+   * 使用 `maxUsersPerRequest=1` 如果您希望对目标的某个API调用包含单个配置文件，以及其受众资格、身份和配置文件属性。
+   * 使用 `maxUsersPerRequest` 其值大于1。
 2. [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md) 并将目标服务器配置的ID添加到中 `destinationDelivery.destinationServerId`.
 3. [获取目标配置的ID](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 您刚刚创建的，因此您可以在模板创建工具中使用它。
 4. 了解 [可以使用哪些函数和过滤器](../../functionality/destination-server/supported-functions.md) 在消息转换模板中。
@@ -100,7 +100,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
         {% endfor %}
         ],
         "remove": [
-        {#- Alternative syntax for filtering segments by status: -#}
+        {#- Alternative syntax for filtering audiences by status: -#}
         {% for segment in removedSegments(input.profile.segmentMembership.ups) %}
             "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
         {% endfor %}
@@ -136,7 +136,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
                 {% endfor %}
                 ],
                 "remove": [
-                {#- Alternative syntax for filtering segments by status: -#}
+                {#- Alternative syntax for filtering audiences by status: -#}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
                 {% endfor %}

@@ -1,22 +1,21 @@
 ---
 solution: Experience Platform
-title: 使用流服务API将区段激活到基于文件的目标
+title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 5ab72c11a5fd73f10eef6b7bb3e0d3386098748e
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '4442'
 ht-degree: 3%
 
 ---
 
-# 使用流服务API将区段激活到基于文件的目标
+# 使用流服务API将受众激活到基于文件的目标
 
 >[!IMPORTANT]
 >
 >* 此测试版功能适用于已购买Real-Time CDP Prime和Ultimate软件包的客户。 有关更多信息，请联系您的Adobe代表。
-
 
 使用增强的文件导出功能（当前为测试版）在导出文件出Experience Platform时访问增强的自定功能：
 
@@ -46,12 +45,12 @@ ht-degree: 3%
 
 ## 快速入门 {#get-started}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建区段并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建受众并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了将数据激活到Platform中基于文件的目标所需的其他信息。
@@ -92,11 +91,11 @@ ht-degree: 3%
 
 有关将在此API教程中遇到的术语的描述，请阅读 [词汇表部分](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) API参考文档的内容。
 
-## 选择要导出区段的目标 {#select-destination}
+## 选择要导出受众的目标 {#select-destination}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step1.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step1.png)
 
-在启动导出用户档案的工作流之前，请确定要将区段导出到的目标的连接规范和流规范ID。 请参考下表。
+在启动导出用户档案的工作流之前，请确定要将受众导出到的目标的连接规范和流量规范ID。 请参考下表。
 
 | 目标 | 连接规范 | 流量规范 |
 ---------|----------|---------|
@@ -319,13 +318,13 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDTABS]
 
-执行以下步骤，设置到云存储目标的区段导出数据流。 对于某些步骤，各个云存储目标之间的请求和响应会有所不同。 在这些情况下，使用页面上的选项卡可检索特定于您要将区段连接和导出到的目标的请求和响应。 请确保使用正确的 `connection spec` 和 `flow spec` （对于您正在配置的目标）。
+请按照以下步骤设置指向云存储目标的受众导出数据流。 对于某些步骤，各个云存储目标之间的请求和响应会有所不同。 在这些情况下，使用页面上的选项卡可检索特定于您希望连接并导出受众的目标的特定请求和响应。 请确保使用正确的 `connection spec` 和 `flow spec` （对于您正在配置的目标）。
 
 ## 创建源连接 {#create-source-connection}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step2.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step2.png)
 
-在决定要将区段导出到哪个目标后，您需要创建一个源连接。 此 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 表示与内部服务器的连接 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store).
+在决定要将受众导出到哪个目标后，您需要创建一个源连接。 此 [源连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 表示与内部服务器的连接 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store).
 
 >[!BEGINSHADEBOX]
 
@@ -373,9 +372,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ## 创建基本连接 {#create-base-connection}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step3.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-A [基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 安全地将凭据存储到您的目标。 根据目标类型，针对该目标进行身份验证所需的凭据可能有所不同。 要查找这些身份验证参数，请先检索 `connection spec` （对于所需的目标，请参阅部分） [选择要导出区段的目标](#select-destination) 然后查看 `authSpec` 响应的。 请参考下面的选项卡 `authSpec` 所有受支持目标的属性。
+A [基本连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 安全地将凭据存储到您的目标。 根据目标类型，针对该目标进行身份验证所需的凭据可能有所不同。 要查找这些身份验证参数，请先检索 `connection spec` （对于所需的目标，请参阅部分） [选择要导出受众的目标](#select-destination) 然后查看 `authSpec` 响应的。 请参考下面的选项卡 `authSpec` 所有受支持目标的属性。
 
 >[!BEGINTABS]
 
@@ -1144,9 +1143,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ## 创建目标连接 {#create-target-connection}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step4.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step4.png)
 
-接下来，您需要创建目标连接。 [Target连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 存储导出区段的导出参数。 导出参数包括导出位置、文件格式、压缩和其他详细信息。 例如，对于CSV文件，您可以选择多个导出选项。 在中获取有关所有受支持的CSV导出选项的更多信息 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+接下来，您需要创建目标连接。 [Target连接](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 存储导出受众的导出参数。 导出参数包括导出位置、文件格式、压缩和其他详细信息。 例如，对于CSV文件，您可以选择多个导出选项。 在中获取有关所有受支持的CSV导出选项的更多信息 [“文件格式配置”页](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 请参阅 `targetSpec` 在目标的 `connection spec` 以了解每种目标类型支持的属性。 请参考下面的选项卡 `targetSpec` 所有受支持目标的属性。
 
@@ -1156,7 +1155,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++[!DNL Amazon S3] - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,56"}
 {
@@ -1214,7 +1213,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1367,7 +1366,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++[!DNL Azure Blob Storage] - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -1413,7 +1412,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1567,7 +1566,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,22,37"}
 {
@@ -1606,7 +1605,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1758,7 +1757,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="9,36"}
 "items": [
@@ -1796,7 +1795,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1948,7 +1947,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++[!DNL Google Cloud Storage] - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -1994,7 +1993,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -2147,7 +2146,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++SFTP - [!DNL Connection spec] 显示目标连接参数
 
-请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于区段导出目标。
+请注意以下内容中带有内联注释的突出显示的行： [!DNL connection spec] 下面的示例，其中提供了有关在何处查找 [!DNL target spec] 连接规范中的参数。 您还可以在以下示例中看到目标参数为 *非* 适用于受众导出目标。
 
 ```json {line-numbers="true" start-line="1" highlight="10,37"}
 {
@@ -2186,7 +2185,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -2891,15 +2890,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-请注意 `target connection ID` 从响应中。 在创建用于导出区段的数据流时，此ID是下一步中必需的。
+请注意 `target connection ID` 从响应中。 在创建用于导出受众的数据流时，此ID将在下一步中是必需的。
 
 成功的响应会返回ID (`id`)和 `etag`. 记下目标连接ID，因为稍后创建数据流时将需要它。
 
 ## 创建数据流 {#create-dataflow}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step5.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step5.png)
 
-目标配置的下一步是创建数据流。 A [数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 将以前创建的实体连接在一起，并提供用于配置区段导出计划的选项。 要创建数据流，请根据所需的云存储目标使用以下有效负载，并替换之前步骤中的流实体ID。 请注意，在此步骤中，您不会将任何与属性或标识映射相关的信息添加到数据流。 下一步就是这样。
+目标配置的下一步是创建数据流。 A [数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) 可将之前创建的实体绑定在一起，并提供用于配置受众导出计划的选项。 要创建数据流，请根据所需的云存储目标使用以下有效负载，并替换之前步骤中的流实体ID。 请注意，在此步骤中，您不会将任何与属性或标识映射相关的信息添加到数据流。 下一步就是这样。
 
 >[!BEGINTABS]
 
@@ -2907,7 +2906,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建区段导出数据流到 [!DNL Amazon S3] 目标 — 请求
++++创建受众导出数据流到 [!DNL Amazon S3] 目标 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2920,8 +2919,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Amazon S3 cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Amazon S3 cloud storage destination",
+    "name": "Activate audiences to an Amazon S3 cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Amazon S3 cloud storage destination",
     "flowSpec": {
         "id": "1a0514a6-33d4-4c7f-aff8-594799c47549", // Amazon S3 flow spec ID
         "version": "1.0"
@@ -2955,7 +2954,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建区段导出数据流到 [!DNL Azure Blob Storage] 目标 — 请求
++++创建受众导出数据流到 [!DNL Azure Blob Storage] 目标 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -2968,8 +2967,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Azure Blob Storage cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Azure Blob Storage cloud storage destination",
+    "name": "Activate audiences to an Azure Blob Storage cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Azure Blob Storage cloud storage destination",
     "flowSpec": {
         "id": "752d422f-b16f-4f0d-b1c6-26e448e3b388", // Azure Blob Storage flow spec ID
         "version": "1.0"
@@ -3015,7 +3014,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建区段导出数据流到 [!DNL Azure Data Lake Gen 2(ADLS Gen2)] 目标 — 请求
++++创建受众导出数据流到 [!DNL Azure Data Lake Gen 2(ADLS Gen2)] 目标 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3028,8 +3027,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
+    "name": "Activate audiences to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
     "flowSpec": {
         "id": "17be2013-2549-41ce-96e7-a70363bec293", // Azure Data Lake Gen 2(ADLS Gen2) flow spec ID
         "version": "1.0"
@@ -3063,7 +3062,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建区段导出数据流到 [!DNL Data Landing Zone] 目标 — 请求
++++创建受众导出数据流到 [!DNL Data Landing Zone] 目标 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3076,8 +3075,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to a Data Landing Zone cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to a Data Landing Zone cloud storage destination",
+    "name": "Activate audiences to a Data Landing Zone cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to a Data Landing Zone cloud storage destination",
     "flowSpec": {
         "id": "cd2fc47e-e838-4f38-a581-8fff2f99b63a", // Data Landing Zone flow spec ID
         "version": "1.0"
@@ -3111,7 +3110,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建区段导出数据流到 [!DNL Google Cloud Storage] 目标 — 请求
++++创建受众导出数据流到 [!DNL Google Cloud Storage] 目标 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3124,8 +3123,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to a Google Cloud Storage cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to a Google Cloud Storage destination",
+    "name": "Activate audiences to a Google Cloud Storage cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to a Google Cloud Storage destination",
     "flowSpec": {
         "id": "585c15c4-6cbf-4126-8f87-e26bff78b657", // Google Cloud Storage flow spec ID
         "version": "1.0"
@@ -3159,7 +3158,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **请求**
 
-+++创建到SFTP目标的区段导出数据流 — 请求
++++创建到SFTP目标的受众导出数据流 — 请求
 
 请注意请求示例中带有内联注释的高亮显示行，这些行提供了额外的信息。 将请求复制粘贴到您选择的终端时，删除请求中的内联注释。
 
@@ -3172,8 +3171,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an SFTP cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an SFTP cloud storage destination",
+    "name": "Activate audiences to an SFTP cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an SFTP cloud storage destination",
     "flowSpec": {
         "id": "fd36aaa4-bf2b-43fb-9387-43785eeeb799", // SFTP flow spec ID
         "version": "1.0"
@@ -3207,14 +3206,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 记下响应中的数据流ID。 此ID在后续步骤中是必需的。
 
-### 将区段添加到导出
+### 将受众添加到导出
 
-在此步骤中，您还可以选择要导出到目标的区段。 有关此步骤以及将区段添加到数据流的请求格式的更多信息，请查看 [更新目标数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) API参考文档的部分内容。
+在此步骤中，您还可以选择要导出到目标的受众。 有关此步骤以及将受众添加到数据流的请求格式的更多信息，请查看 [更新目标数据流](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) API参考文档的部分内容。
 
 
 ## 设置属性和标识映射 {#attribute-and-identity-mapping}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step6.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step6.png)
 
 创建数据流后，您需要为要导出的属性和身份设置映射。 这包含三个步骤，如下所示：
 
@@ -3346,7 +3345,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/ups/config/en
                             "type": "string",
                             "meta:xdmType": "string",
                             "title": "First name",
-                            "description": "The first segment of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the preferred personal or given name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
+                            "description": "The first audience of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the preferred personal or given name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
                         },
                         "fullName": {
                             "type": "string",
@@ -3358,7 +3357,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/ups/config/en
                             "type": "string",
                             "meta:xdmType": "string",
                             "title": "Last name",
-                            "description": "The last segment of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the inherited family name, surname, patronymic, or matronymic name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
+                            "description": "The last audience of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the inherited family name, surname, patronymic, or matronymic name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
                         },
                         "middleName": {
                             "type": "string",
@@ -3783,7 +3782,7 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                         "exited":"Entity is exiting the segment.",
                         "realized":"Entity is entering the segment."
                      },
-                     "description":"Is the segment participation realized as part of the current request.",
+                     "description":"Is the audience participation realized as part of the current request.",
                      "meta:xdmType":"string",
                      "meta:xdmField":"xdm:status"
                   },
@@ -3844,14 +3843,14 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                            "exclusiveMinimum":0
                         }
                      },
-                     "description":"Values that are directly related with the segment realization. This payload exists with the same 'validUntil' as the segment realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
+                     "description":"Values that are directly related with the audience realization. This payload exists with the same 'validUntil' as the audience realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
                      "meta:xdmType":"object",
                      "meta:xdmField":"xdm:payload"
                   },
                   "version":{
                      "type":"string",
                      "title":"Version",
-                     "description":"The version of the segment definition used in this segment assertion. Version can be omitted in audience lists when all memberships versions are the same.",
+                     "description":"The version of the audience definition used in this audience assertion. Version can be omitted in audience lists when all memberships versions are the same.",
                      "meta:xdmType":"string",
                      "meta:xdmField":"xdm:version"
                   },
@@ -3863,7 +3862,7 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                            "type":"string",
                            "title":"Identifier",
                            "format":"uri-reference",
-                           "description":"Identity of the segment in the related namespace.",
+                           "description":"Identity of the audience in the related namespace.",
                            "meta:xdmType":"string",
                            "meta:xdmField":"@id"
                         },
@@ -3895,7 +3894,7 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                            "meta:referencedFrom":"https://ns.adobe.com/xdm/context/namespace"
                         }
                      },
-                     "description":"The identity of the segment or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
+                     "description":"The identity of the audience or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
                      "meta:status":"deprecated",
                      "meta:xdmType":"object",
                      "meta:xdmField":"xdm:segmentID",
@@ -3905,7 +3904,7 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                      "type":"string",
                      "title":"Valid until",
                      "format":"date-time",
-                     "description":"The timestamp for when the segment assertion should no longer be assumed to be valid and should either be ignored or revalidated.",
+                     "description":"The timestamp for when the audienceassertion should no longer be assumed to be valid and should either be ignored or revalidated.",
                      "meta:xdmType":"date-time",
                      "meta:xdmField":"xdm:validUntil"
                   },
@@ -3956,7 +3955,7 @@ Inspect您在执行上述调用时获得的响应。 您需要深入查看响应
                      "type":"string",
                      "title":"Last qualification time",
                      "format":"date-time",
-                     "description":"The timestamp when the assertion of segment membership was made.",
+                     "description":"The timestamp when the assertion of audience membership was made.",
                      "meta:xdmType":"date-time",
                      "meta:xdmField":"xdm:lastQualificationTime"
                   }
@@ -4070,14 +4069,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                             "version": {
                                 "meta:xdmField": "xdm:version",
                                 "meta:xdmType": "string",
-                                "description": "The version of the segment definition used in this segment assertion. Version can be omitted in audience lists when all memberships versions are the same.",
+                                "description": "The version of the audience definition used in this audience assertion. Version can be omitted in audience lists when all memberships versions are the same.",
                                 "type": "string",
                                 "title": "Version"
                             },
                             "validUntil": {
                                 "meta:xdmField": "xdm:validUntil",
                                 "meta:xdmType": "date-time",
-                                "description": "The timestamp for when the segment assertion should no longer be assumed to be valid and should either be ignored or revalidated.",
+                                "description": "The timestamp for when the audienceassertion should no longer be assumed to be valid and should either be ignored or revalidated.",
                                 "format": "date-time",
                                 "type": "string",
                                 "title": "Valid until"
@@ -4094,7 +4093,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     "exited"
                                 ],
                                 "default": "realized",
-                                "description": "Is the segment participation realized as part of the current request.",
+                                "description": "Is the audience participation realized as part of the current request.",
                                 "type": "string",
                                 "title": "Status"
                             },
@@ -4132,7 +4131,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     "_id": {
                                         "meta:xdmField": "@id",
                                         "meta:xdmType": "string",
-                                        "description": "Identity of the segment in the related namespace.",
+                                        "description": "Identity of the audience in the related namespace.",
                                         "format": "uri-reference",
                                         "type": "string",
                                         "title": "Identifier"
@@ -4140,7 +4139,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                 },
                                 "meta:xdmType": "object",
                                 "type": "object",
-                                "description": "The identity of the segment or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
+                                "description": "The identity of the audience or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
                                 "meta:status": "deprecated",
                                 "title": "Segment ID"
                             },
@@ -4245,13 +4244,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     }
                                 },
                                 "type": "object",
-                                "description": "Values that are directly related with the segment realization. This payload exists with the same 'validUntil' as the segment realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
+                                "description": "Values that are directly related with the audience realization. This payload exists with the same 'validUntil' as the audience realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
                                 "title": "Payload"
                             },
                             "lastQualificationTime": {
                                 "meta:xdmField": "xdm:lastQualificationTime",
                                 "meta:xdmType": "date-time",
-                                "description": "The timestamp when the assertion of segment membership was made.",
+                                "description": "The timestamp when the assertion of audience membership was made.",
                                 "format": "date-time",
                                 "type": "string",
                                 "title": "Last qualification time"
@@ -4323,7 +4322,6 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 >* 在下面显示的映射对象中， `destination` 参数不接受点 `"."`. 例如，您需要使用personalEmail_address或segmentMembership_status ，如配置示例中突出显示的内容所示。
 >* 当源属性是标识属性并包含点时，有一种特殊情况。 在这种情况下，属性需要转义 `//`，如下面突出显示的内容。
 >* 另请注意，即使下面的示例配置包含 `Email` 和 `Phone_E.164`，则每个数据流只能导出一个标识属性。
-
 
 ```shell {line-numbers="true" start-line="1" highlight="16-38"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/mappingSets' \
@@ -4449,7 +4447,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## 进行其他数据流更新 {#other-dataflow-updates}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step7.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
 要对数据流进行任何更新，请使用 `PATCH` 操作。例如，您可以更新数据流以选择字段作为必需键或重复数据删除键。
 
@@ -4599,7 +4597,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## 验证数据流（获取数据流运行） {#get-dataflow-runs}
 
-![用于激活突出用户当前步骤的区段的步骤](/help/destinations/assets/api/file-based-segment-export/step8.png)
+![突出显示用户当前步骤的激活受众步骤](/help/destinations/assets/api/file-based-segment-export/step8.png)
 
 要检查数据流的执行，请使用数据流运行API：
 
@@ -4679,7 +4677,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已成功将Platform连接到其中一个首选云存储目标，并将数据流设置到相应的目标以导出区段。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
+通过阅读本教程，您已成功将Platform连接到其中一个首选云存储目标，并将数据流设置到相应的目标以导出受众。 有关更多详细信息，请参阅以下页面，例如如何使用流服务API编辑现有数据流：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)

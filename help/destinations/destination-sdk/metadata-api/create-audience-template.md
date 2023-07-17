@@ -1,9 +1,9 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建受众模板的API调用。
 title: 创建受众模板
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '624'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 >
 >**API端点**： `platform.adobe.io/data/core/activation/authoring/audience-templates`
 
-对于使用Destination SDK创建的某些目标，您需要创建受众元数据配置，以便以编程方式在目标中创建、更新或删除区段元数据。 本页向您说明如何使用 `/authoring/audience-templates` 用于创建配置的API端点。
+对于使用Destination SDK创建的某些目标，您需要创建受众元数据配置，以便以编程方式在目标中创建、更新或删除受众元数据。 本页向您说明如何使用 `/authoring/audience-templates` 用于创建配置的API端点。
 
 有关可通过此端点配置的功能的详细说明，请参阅 [受众元数据管理](../functionality/audience-metadata-management.md).
 
@@ -190,14 +190,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | 属性 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
 | `name` | 字符串 | 目标的受众元数据模板的名称。 此名称将显示在Experience Platform用户界面中任何特定于合作伙伴的错误消息中，其后是分析自的错误消息 `metadataTemplate.create.errorSchemaMap`. |
-| `url` | 字符串 | API的URL和端点，用于创建、更新、删除或验证平台中的受众/区段。 两个行业示例是： `https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments` 和 `https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`. |
-| `httpMethod` | 字符串 | 在您的端点上用于以编程方式创建、更新、删除或验证目标中的区段/受众的方法。 例如： `POST`， `PUT`， `DELETE` |
+| `url` | 字符串 | API的URL和端点，用于在您的平台中创建、更新、删除或验证受众。 两个行业示例是： `https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments` 和 `https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`. |
+| `httpMethod` | 字符串 | 在您的端点上用于以编程方式创建、更新、删除或验证目标中的受众的方法。 例如： `POST`， `PUT`， `DELETE` |
 | `headers.header` | 字符串 | 指定应添加到API调用的任何HTTP标头。 例如：`"Content-Type"` |
 | `headers.value` | 字符串 | 指定应添加到API调用中的HTTP标头的值。 例如：`"application/x-www-form-urlencoded"` |
 | `requestBody` | 字符串 | 指定应发送到API的消息正文的内容。 应添加到 `requestBody` 对象取决于API接受的字段。 有关示例，请参阅 [第一个模板示例](../functionality/audience-metadata-management.md#example-1) （位于受众元数据功能文档中）。 |
 | `responseFields.name` | 字符串 | 指定在调用时API返回的任何响应字段。 有关示例，请参阅 [模板示例](../functionality/audience-metadata-management.md#examples) （位于受众元数据功能文档中）。 |
 | `responseFields.value` | 字符串 | 指定API在调用时返回的任何响应字段的值。 |
-| `responseErrorFields.name` | 字符串 | 指定在调用时API返回的任何响应字段。 有关示例，请参阅 [ 模板示例](../functionality/audience-metadata-management.md#examples) （位于受众元数据功能文档中）。 |
+| `responseErrorFields.name` | 字符串 | 指定在调用时API返回的任何响应字段。 有关示例，请参阅 [模板示例](../functionality/audience-metadata-management.md#examples) （位于受众元数据功能文档中）。 |
 | `responseErrorFields.value` | 字符串 | 解析从目标发出的API调用响应中返回的任何错误消息。 这些错误消息将在Experience Platform用户界面中向用户显示。 |
 | `validations.field` | 字符串 | 指示在对目标进行API调用之前是否应对任何字段运行验证。 例如，您可以使用 `{{validations.accountId}}` 验证用户的帐户ID。 |
 | `validations.regex` | 字符串 | 指示字段应如何构建才能通过验证。 |

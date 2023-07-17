@@ -2,9 +2,9 @@
 title: 文档自助模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为概述部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 1773edff56059cf5bc57ebaaa133216423fcfe10
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1525'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,6 @@ ht-degree: 1%
 >
 >* 按照模板中列出的顺序填写此模板中的所有部分。
 >* 此模板很少根据合作伙伴反馈进行更新。 在开始为目标创作文档之前，请确保已下载 [模板的最新版本](../assets/docs-framework/yourdestination-template.zip).
-
 
 ## 概述 {#overview}
 
@@ -43,7 +42,7 @@ ht-degree: 1%
 
 *对于社交网络平台：*
 
-*一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建区段，并将这些区段发送到YourDestination，以便在客户的社交媒体馈送中显示广告。*
+*一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到YourDestination，以便在客户的社交媒体馈送中显示广告。*
 
 ## 先决条件 {#prerequisites}
 
@@ -81,10 +80,10 @@ ht-degree: 1%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员以及中使用的标识符（姓名、电话号码或其他）。 *您的目标* 目标。 |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码或其他）。 *您的目标* 目标。 |
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | 导出类型 | **[!UICONTROL 数据集导出]** | 您正在导出未按受众兴趣或资格进行分组或构建的原始数据集。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 | 导出频率 | **[!UICONTROL 批次]** | 批量目标将文件导出到下游平台，增量为3、6、8、12或24小时。 详细了解 [基于文件的批处理目标](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
@@ -125,7 +124,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
@@ -133,9 +132,9 @@ ht-degree: 1%
 
 *适当删除 — 如果您要记录新的流目标，请保留以下第一段。 如果您要记录新的基于文件的目标，请保留第二段。 如果您要记录导出数据集的目标，请保留第三段。*
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
-读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 读取 [（测试版）导出数据集](/help/destinations/ui/export-datasets.md) 以获取有关将数据集导出到此目标的详细说明。
 
@@ -148,7 +147,7 @@ ht-degree: 1%
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
-*添加一个段落，介绍如何将数据导出到您的目标。 这将帮助客户确保他们正确地与您的目标集成。 例如，您可以提供一个类似于下面的JSON示例。 或者，您可以提供目标界面的屏幕截图和信息，以显示客户应如何期望区段在目标平台中填充。*
+*添加一个段落，介绍如何将数据导出到您的目标。 这将帮助客户确保他们正确地与您的目标集成。 例如，您可以提供一个类似于下面的JSON示例。 或者，您可以提供目标界面的屏幕截图和信息，以显示客户应如何期望受众在目标平台中填充。*
 
 ```
 {

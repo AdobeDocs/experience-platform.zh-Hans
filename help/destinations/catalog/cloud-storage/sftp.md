@@ -2,10 +2,10 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 5af201858e00f5ccdee4d68f04d37bc5f69caf9c
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '987'
-ht-degree: 7%
+source-wordcount: '1043'
+ht-degree: 6%
 
 ---
 
@@ -18,7 +18,6 @@ ht-degree: 7%
 >通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL SFTP] 目标目录中的信息卡。
 >* 如果您已经将文件导出到 **[!UICONTROL SFTP]** 目标：请为新的数据集创建新的数据流 **[!UICONTROL SFTP测试版]** 目标。
 >* 如果您尚未创建任何数据流到 **[!UICONTROL SFTP]** 目标，使用新的 **[!UICONTROL SFTP测试版]** 用于导出文件的信息卡 **[!UICONTROL SFTP]**.
-
 
 ![并排视图中两个SFTP目标卡的图像。](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
 
@@ -39,8 +38,22 @@ ht-degree: 7%
 
 ## 通过API或用户界面连接到SFTP {#connect-api-or-ui}
 
-* 要使用Platform用户界面连接到SFTP存储位置，请阅读以下章节 [连接到目标](#connect) 和 [将区段激活到此目标](#activate) 下面的。
-* 要以编程方式连接到SFTP存储位置，请阅读 [使用流服务API教程将区段激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 要使用Platform用户界面连接到SFTP存储位置，请阅读以下章节 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下面的。
+* 要以编程方式连接到SFTP存储位置，请阅读 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -85,7 +98,7 @@ ht-degree: 7%
 * **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 
 如果您选择 **[!UICONTROL 使用SSH密钥的SFTP]** 要连接到SFTP位置的身份验证类型：
@@ -98,7 +111,7 @@ ht-degree: 7%
 * **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
-   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 目标详细信息 {#destination-details}
 
@@ -113,13 +126,13 @@ ht-degree: 7%
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
 * **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ## （测试版）导出数据集 {#export-datasets}
 
@@ -130,7 +143,7 @@ ht-degree: 7%
 
 ## 导出的数据 {#exported-data}
 
-对象 [!DNL SFTP] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在区段激活教程中。
+对象 [!DNL SFTP] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在audience activation教程中。
 
 ## IP地址允许列表 {#ip-address-allow-list}
 

@@ -3,10 +3,10 @@ title: Pega配置文件连接器
 description: 使用Adobe Experience Platform中用于Amazon S3的Pega配置文件连接器将完整配置文件数据或（或）增量配置文件数据导出到Amazon S3云存储。 在Pega Customer Decision Hub中，可以在Customer Profile Designer中安排数据作业，以定期从Amazon S3存储中导入用户档案数据。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1080'
-ht-degree: 0%
+source-wordcount: '1079'
+ht-degree: 2%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-使用 [!DNL Pega Profile Connector] 在Adobe Experience Platform中创建到 [!DNL Amazon Web Services] (AWS) S3存储定期将配置文件数据从Adobe Experience Platform导出到CSV文件，并导入您自己的S3存储桶中。 In [!DNL Pega Customer Decision Hub]，您可以安排数据作业以从S3存储中导入此配置文件数据以更新 [!DNL Pega Customer Decision Hub] 个人资料。
+使用 [!DNL Pega Profile Connector] 在Adobe Experience Platform中创建到 [!DNL Amazon Web Services] (AWS) S3存储定期将配置文件数据从Adobe Experience Platform导出到CSV文件，并导入您自己的S3存储桶中。 在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该配置文件数据，以更新[!DNL Pega Customer Decision Hub]配置文件。
 
 此连接器有助于设置配置文件数据的初始导出，还有助于定期将新配置文件同步到 [!DNL Pega Customer Decision Hub].  在客户决策中心拥有最新数据可让您更好地了解客户群，从而做出下一个最佳决策。
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->在连接目标工作流中，您可以为每个导出的区段文件在Amazon S3存储中创建自定义文件夹。 读取 [使用宏在存储位置中创建文件夹](/help/destinations/catalog/cloud-storage/overview.md#use-macros) 以获取说明。
+>在连接目标工作流中，您可以为每个导出的受众文件在Amazon S3存储中创建自定义文件夹。 读取 [使用宏在存储位置中创建文件夹](/help/destinations/catalog/cloud-storage/overview.md#use-macros) 以获取说明。
 
 ### 启用警报 {#enable-alerts}
 
@@ -102,13 +102,13 @@ ht-degree: 0%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射属性和身份 {#map}
 
@@ -116,7 +116,7 @@ ht-degree: 0%
 
 ## 验证数据导出 {#exported-data}
 
-对象 [!DNL Pega Profile Connector] 目标， [!DNL Platform] 创建 `.csv` 文件，该文件位于您提供的Amazon S3存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在区段激活教程中。
+对象 [!DNL Pega Profile Connector] 目标， [!DNL Platform] 创建 `.csv` 文件，该文件位于您提供的Amazon S3存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在audience activation教程中。
 
 从S3成功导入配置文件数据会在 [!DNL Pega Customer] 配置文件数据存储。 可以在中验证导入的客户配置文件数据 [!DNL Pega Customer Profile Designer] ，如下图所示。
 ![可在其中验证Customer Profile Designer中Adobe配置文件数据的UI屏幕的图像](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)

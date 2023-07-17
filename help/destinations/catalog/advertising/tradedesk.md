@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '725'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 ## 用例 {#use-cases}
 
-作为营销人员，我希望能够使用由构建的区段 [!DNL Trade Desk IDs] 或设备ID以创建重定位或面向受众的数字营销活动。
+作为营销人员，我希望能够使用由构建的受众 [!DNL Trade Desk IDs] 或设备ID以创建重定位或面向受众的数字营销活动。
 
 ## 支持的身份 {#supported-identities}
 
@@ -36,14 +36,28 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在将受众的所有成员导出到目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -82,17 +96,17 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
-在 [区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动将区段映射到目标平台中它们对应的ID或友好名称。
+在 [受众计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤，您必须手动将受众映射到目标平台中它们对应的ID或友好名称。
 
-在映射区段时，为了便于使用，我们建议您使用Platform区段名称或它的较短形式。 但是，目标中的区段ID或名称不需要与Platform帐户中的区段ID或名称匹配。 您在映射字段中插入的任何值都将反映在目标中。
+在映射区段时，我们建议您使用Platform受众名称或它的较短形式，以方便使用。 但是，目标中的受众ID或名称不需要与Platform帐户中的受众ID或名称匹配。 您在映射字段中插入的任何值都将反映在目标中。
 
 如果您使用多个设备映射(Cookie ID， [!DNL IDFA]， [!DNL GAID])，确保对所有三个映射使用相同的映射值。 [!DNL The Trade Desk] 会将所有这些请求汇总到单个区段中，并带有设备级别的细分。
 

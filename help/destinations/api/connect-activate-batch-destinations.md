@@ -5,9 +5,9 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用Flow Service API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3399'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 本教程使用 [!DNL Adobe Campaign] 所有示例中的目标，但所有批处理云存储和电子邮件营销目标的步骤都相同。
 
-![概述 — 创建目标和激活区段的步骤](../assets/api/email-marketing/overview.png)
+![概述 — 创建目标和激活受众的步骤](../assets/api/email-marketing/overview.png)
 
 如果您希望使用Platform用户界面连接到目标并激活数据，请参阅 [连接目标](../ui/connect-destination.md) 和 [将受众数据激活到批量配置文件导出目标](../ui/activate-batch-profile-destinations.md) 教程。
 
@@ -35,14 +35,14 @@ ht-degree: 1%
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建区段并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 以下部分提供了将数据激活到Platform中的批处理目标所需的其他信息。
 
 ### 收集所需的凭据 {#gather-required-credentials}
 
-要完成本教程中的步骤，您应该准备好以下凭据，具体取决于要连接和激活区段的目标类型。
+要完成本教程中的步骤，您应该准备好以下凭据，具体取决于要连接和激活受众的目标类型。
 
 * 对象 [!DNL Amazon S3] 连接： `accessId`， `secretKey`
 * 对象 [!DNL Amazon S3] 连接至 [!DNL Adobe Campaign]： `accessId`， `secretKey`
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 ![目标步骤概述步骤1](../assets/api/batch-destination/step1.png)
 
-第一步，您应该决定要将数据激活到的目标。 首先，执行调用以请求可连接和激活区段的可用目标列表。 GET向 `connectionSpecs` 端点返回可用目标列表：
+第一步，您应该决定要将数据激活到的目标。 首先，执行调用以请求可连接和激活受众的可用目标列表。 GET向 `connectionSpecs` 端点返回可用目标列表：
 
 **API格式**
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为后续步骤将要求使用该值。 例如，如果要将区段连接并交付到 [!DNL Adobe Campaign]，在响应中查找以下代码片段：
+成功响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为后续步骤将要求使用该值。 例如，如果要连接并将受众交付到 [!DNL Adobe Campaign]，在响应中查找以下代码片段：
 
 ```json
 {
@@ -886,8 +886,8 @@ curl -X POST \
 -H 'Content-Type: application/json' \
 -d  '{
    
-        "name": "Activate segments to Adobe Campaign",
-        "description": "This operation creates a dataflow which we will later use to activate segments to Adobe Campaign",
+        "name": "activate audiences to Adobe Campaign",
+        "description": "This operation creates a dataflow which we will later use to activate audiences to Adobe Campaign",
         "flowSpec": {
             "id": "{FLOW_SPEC_ID}",
             "version": "1.0"
@@ -921,7 +921,7 @@ curl -X POST \
 | `flowSpec.Id` | 为要连接的批处理目标使用流规范ID。 GET要检索流规范ID，请对 `flowspecs` 端点，如 [流量规范API参考文档](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). 在响应中，查找 `upsTo` 并复制要连接的批处理目标的相应ID。 例如，对于Adobe Campaign，查找 `upsToCampaign` 并复制 `id` 参数。 |
 | `sourceConnectionIds` | 使用在步骤中获得的源连接ID [连接到您的Experience Platform数据](#connect-to-your-experience-platform-data). |
 | `targetConnectionIds` | 使用在步骤中获取的目标连接ID [连接到批处理目标](#connect-to-batch-destination). |
-| `transformations` | 在下一步中，您将使用要激活的区段和用户档案属性填充此部分。 |
+| `transformations` | 在下一步中，您将使用要激活的受众和配置文件属性填充此部分。 |
 
 下表包含常用批处理目标的流规范ID以供您参考：
 
@@ -933,7 +933,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回ID (`id`)和 `etag`. 记下这两个值，以便在下一步激活区段和导出数据文件时使用这些值。
+成功的响应会返回ID (`id`)和 `etag`. 记下这两个值，以便在下一步激活受众和导出数据文件时使用这些值。
 
 ```json
 {
@@ -947,11 +947,11 @@ curl -X POST \
 
 ![目标步骤概述步骤5](../assets/api/batch-destination/step5.png)
 
-创建了所有连接和数据流后，您现在可以将配置文件数据激活到目标平台。 在此步骤中，选择要导出到目标的区段和配置文件属性。
+创建了所有连接和数据流后，您现在可以将配置文件数据激活到目标平台。 在此步骤中，选择要导出到目标的受众和配置文件属性。
 
 您还可以确定导出文件的文件命名格式以及应使用的属性 [重复数据删除键](../ui/activate-batch-profile-destinations.md#mandatory-keys) 或 [必需属性](../ui/activate-batch-profile-destinations.md#mandatory-attributes). 在此步骤中，您还可以确定将数据发送到目标的计划。
 
-要将区段激活到新目标，您必须执行JSONPATCH操作，如下所示。 您可以在一次调用中激活多个区段和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902).
+要将受众激活到新目标，您必须执行JSONPATCH操作，类似于以下示例。 您可以在一次调用中激活多个受众和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902).
 
 **API格式**
 
@@ -976,8 +976,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         "value": {
             "type": "PLATFORM_SEGMENT",
             "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
+                "name": "Name of the audience that you are activating",
+                "description": "Description of the audience that you are activating",
                 "id": "{SEGMENT_ID}",
                 "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
                 "exportMode": "DAILY_FULL_EXPORT",
@@ -995,8 +995,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         "value": {
             "type": "PLATFORM_SEGMENT",
             "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
+                "name": "Name of the audience that you are activating",
+                "description": "Description of the audience that you are activating",
                 "id": "{SEGMENT_ID}",
                 "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
                 "exportMode": "DAILY_FULL_EXPORT",
@@ -1026,26 +1026,26 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | 在URL中，使用您在上一步中创建的数据流的ID。 |
 | `{ETAG}` | 获取 `{ETAG}` 根据上一步的响应， [创建数据流](#create-dataflow). 上一步中的响应格式带有转义引号。 您必须在请求的标头中使用未转义值。 请参阅以下示例： <br> <ul><li>响应示例： `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> 每次成功更新数据流时，etag值都会更新。 |
-| `{SEGMENT_ID}` | 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请参阅 [检索区段定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience PlatformAPI引用中)。 |
+| `{SEGMENT_ID}` | 提供要导出到此目标的受众ID。 要检索要激活的受众的受众ID，请参阅 [检索受众定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience PlatformAPI引用中)。 |
 | `{PROFILE_ATTRIBUTE}` | 例如：`"person.lastName"` |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将区段添加到数据流，请使用 `add` 操作。 |
-| `path` | 定义要更新的流部分。 将区段添加到数据流时，请使用示例中指定的路径。 |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将受众添加到数据流，请使用 `add` 操作。 |
+| `path` | 定义要更新的流部分。 将受众添加到数据流时，请使用示例中指定的路径。 |
 | `value` | 您希望使用更新参数的新值。 |
-| `id` | 指定要添加到目标数据流的区段的ID。 |
-| `name` | *可选*. 指定要添加到目标数据流的区段名称。 请注意，此字段不是必填字段，您可以成功地将区段添加到目标数据流，而无需提供其名称。 |
-| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必需。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必需。 导出的文件包含导出区段的ID。</li><li>`%SEGMENT_NAME%`: 可选. 导出的文件包含导出区段的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: 可选. 将此占位符替换为您要在文件名末尾附加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
+| `id` | 指定要添加到目标数据流的受众的ID。 |
+| `name` | *可选*. 指定要添加到目标数据流的受众名称。 请注意，此字段不是必填字段，您无需提供名称即可成功将受众添加到目标数据流。 |
+| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必需。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必需。 导出的文件包含导出的受众的ID。</li><li>`%SEGMENT_NAME%`: 可选. 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: 可选. 将此占位符替换为您要在文件名末尾附加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
 | `exportMode` | 必需。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
-| `startDate` | 选择区段应开始将用户档案导出到目标的日期。 |
+| `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必需。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | 对象 *批处理目标* 仅此而已。 只有在选择 `"DAILY_FULL_EXPORT"` 中的模式 `frequency` 选择器。 <br> 必需。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 使激活作业在每日平台批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。</li><li>选择 `"SCHEDULED"` 使激活作业在固定时间运行。 这可以确保每天在同一时间导出Experience Platform用户档案数据，但您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 选择此选项时，您还必须添加 `startTime` 用于指示每日导出应在UTC中的哪个时间发生。</li></ul> |
-| `endDate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 选择时不适用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
-| `startTime` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将区段添加到数据流时，才需要此字段。 <br> 必需。 选择应生成包含区段成员的文件并将其导出到目标的时间。 |
+| `endDate` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 选择时不适用 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置受众成员停止导出到目标的日期。 |
+| `startTime` | 对象 *批处理目标* 仅此而已。 只有在批处理文件导出目标(如Amazon S3、SFTP或Azure Blob)中将受众添加到数据流时，才需要此字段。 <br> 必需。 选择应生成包含受众成员的文件并将其导出到目标的时间。 |
 
 {style="table-layout:auto"}
 
 >[!TIP]
 >
-> 参见 [更新数据流中区段的组件](/help/destinations/api/update-destination-dataflows.md#update-segment) 了解如何更新导出区段的各种组件（文件名模板、导出时间等）。
+> 参见 [更新数据流中受众的组件](/help/destinations/api/update-destination-dataflows.md#update-segment) 了解如何更新导出受众的各种组件（文件名模板、导出时间等）。
 
 **响应**
 
@@ -1055,7 +1055,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ![目标步骤概述步骤6](../assets/api/batch-destination/step6.png)
 
-作为本教程的最后一步，您应该验证区段和配置文件属性是否确实已正确映射到数据流。
+作为本教程的最后一步，您应该验证受众和配置文件属性是否确实已正确映射到数据流。
 
 要验证这一点，请执行以下GET请求：
 
@@ -1082,7 +1082,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **响应**
 
-返回的响应应包含在 `transformations` 参数是您在上一步中提交的区段和配置文件属性。 示例 `transformations` 响应中的参数可能如下所示：
+返回的响应应包含在 `transformations` 参数是您在上一步中提交的受众和配置文件属性。 示例 `transformations` 响应中的参数可能如下所示：
 
 ```json
 "transformations":[

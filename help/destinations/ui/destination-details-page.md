@@ -1,9 +1,9 @@
 ---
 keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
-description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的区段以及用于编辑激活以及启用和禁用数据流的控件。
+description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: dcbc0c3ef87be0bc296992819c9b1bc3ba6317e4
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '926'
 ht-degree: 1%
@@ -50,8 +50,8 @@ ht-degree: 1%
 
 | 右边栏项目 | 描述 |
 | --- | --- |
-| [!UICONTROL 激活区段] | 选择此控件可编辑哪些区段映射到目标、更新导出计划或添加和删除映射的属性和身份。 请参阅指南 [激活受众数据以细分流目标](./activate-segment-streaming-destinations.md)， [将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)、和 [将受众数据激活到基于用户档案的流目标](./activate-streaming-profile-destinations.md) 了解更多信息。 |
-| [!UICONTROL 删除] | 允许您删除此数据流并取消映射之前激活的区段（如果存在）。 |
+| [!UICONTROL 激活受众] | 选择此控件可编辑映射到目标的受众、更新导出计划或添加和删除映射的属性和身份。 请参阅指南 [将受众数据激活到受众流目标](./activate-segment-streaming-destinations.md)， [将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)、和 [将受众数据激活到基于用户档案的流目标](./activate-streaming-profile-destinations.md) 了解更多信息。 |
+| [!UICONTROL 删除] | 允许您删除此数据流并取消映射之前激活的受众（如果存在）。 |
 | [!UICONTROL 目标名称] | 可以编辑此字段以更新目标的名称。 |
 | [!UICONTROL 描述] | 可以编辑此字段以更新或向目标添加可选描述。 |
 | [!UICONTROL 目标] | 表示受众发送到的目标平台。 请参阅 [目标目录](../catalog/overview.md) 了解更多信息。 |
@@ -81,7 +81,6 @@ ht-degree: 1%
 >* 当前Experience Platform中的所有目标都支持目标监视功能 *排除* 此 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)， [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目标。
 >* 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 估计目标、与排除、失败和激活的标识相关的量度。 较大量的激活数据会导致量度的准确性较高。
 
-
 ![数据流运行视图](../assets/ui/details-page/dataflow-runs.png)
 
 ### 数据流运行持续时间 {#dataflow-runs-duration}
@@ -98,7 +97,7 @@ ht-degree: 1%
 
 ### 基于文件的目标 {#file-based}
 
-对于要运行到基于文件的目标的数据流， **[!UICONTROL 处理持续时间]** 取决于要导出的数据的大小和系统负载。 另请注意，流向基于文件的目标的数据流按区段划分。
+对于要运行到基于文件的目标的数据流， **[!UICONTROL 处理持续时间]** 取决于要导出的数据的大小和系统负载。 另请注意，数据流运行到基于文件的目标，将按受众细分。
 
 ![数据流运行页面的图像，其中为基于文件的目标突出显示了“处理时间”列。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
@@ -106,11 +105,11 @@ ht-degree: 1%
 
 ## [!UICONTROL 激活数据] {#activation-data}
 
-此 [!UICONTROL 激活数据] 选项卡显示已映射到目标的区段的列表，包括其开始日期和结束日期（如果适用），以及用于数据导出的其他相关信息，如导出类型、时间表和频率。 要查看有关特定区段的详细信息，请从列表中选择其名称。
+此 [!UICONTROL 激活数据] 选项卡显示已映射到目标的受众列表，包括其开始日期和结束日期（如果适用），以及用于数据导出的其他相关信息，如导出类型、时间表和频率。 要查看特定受众的详细信息，请从列表中选择其名称。
 
 >[!TIP]
 >
->要查看和编辑有关映射到目标的属性和身份的详细信息，请选择 **[!UICONTROL 激活区段]** 在 [右边栏](#right-rail).
+>要查看和编辑有关映射到目标的属性和身份的详细信息，请选择 **[!UICONTROL 激活受众]** 在 [右边栏](#right-rail).
 
 ![激活数据视图批次目标](../assets/ui/details-page/activation-data-batch.png)
 
@@ -118,4 +117,4 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->有关探索区段详情页面的详情，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).
+>有关浏览受众详细信息页面的详细信息，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).

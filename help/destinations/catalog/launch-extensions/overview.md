@@ -3,7 +3,7 @@ keywords: 标记扩展；标记扩展；Launch目标；Platform标记扩展；Pl
 title: Adobe Experience Platform中的标记扩展
 description: Adobe Experience Platform通过Adobe提供了新一代标签管理功能。 Platform为您提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: fe71294cb73a25c2c4708b0a6ebe04fc2b97afdf
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 1%
@@ -37,7 +37,7 @@ A [标记扩展](../../../tags/home.md#extensions) 是一个代码包，用于�
 
 Extensions forward raw event data to several types of destinations. Think of extensions as an **Event Forwarding** type of destination. This is a simpler type of integration with destination platforms, which only forwards raw event data. Examples of those are the [Gainsight personalization extension](../personalization/gainsight.md) or the [Confirmit Voice of the Customer extension](../voice/confirmit-digital-feedback.md).
 
-**Profile/Segment Export** destinations in Adobe Experience Platform capture event data, combine it with other data sources, apply segmentation, and export segments and qualified profiles to destinations. Examples of those are the [Amazon S3 cloud storage destination](../cloud-storage/amazon-s3.md) or the [Google Display & Video 360 advertising destination](../advertising/google-dv360.md).
+**Profile/Segment Export** destinations in Adobe Experience Platform capture event data, combine it with other data sources, apply segmentation, and export audiences and qualified profiles to destinations. Examples of those are the [Amazon S3 cloud storage destination](../cloud-storage/amazon-s3.md) or the [Google Display & Video 360 advertising destination](../advertising/google-dv360.md).
 
 ![Tag extensions compared to other destinations](../../assets/common/launch-and-other-destinations.png)
 
@@ -47,7 +47,7 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 现有Experience Cloud客户可以免费使用Platform的标记功能。 通过易于使用的扩展（您可以安装、配置、更新和删除），该系统简化了您网站上的标记部署。 标记在您的网站上留下很小的痕迹，并允许您保持页面快速加载。
 
-虽然无法激活区段来标记扩展，但您可以设置规则以仅在某些情况下转发事件数据。 此功能强大，您只能在特定情况下转发事件数据，而不是每次交互时发送事件数据。 有关详细信息，请阅读 [标记文档](../../../tags/ui/managing-resources/rules.md).
+虽然无法激活受众来标记扩展，但您可以设置规则以仅在某些情况下转发事件数据。 此功能强大，您只能在特定情况下转发事件数据，而不是每次交互时发送事件数据。 有关详细信息，请阅读 [标记文档](../../../tags/ui/managing-resources/rules.md).
 
 ## 扩展的示例用例 {#extensions-use-cases}
 

@@ -3,10 +3,10 @@ keywords: DoubleClick Bid Manager；DoubleClick Bid Manager；DoubleClick；显�
 title: Google显示和视频360连接
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于在显示器、视频和移动设备库存源中执行重定位和面向受众的数字活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 326127996a27df41383ef67da765f7b0818f17f2
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '987'
-ht-degree: 2%
+source-wordcount: '1042'
+ht-degree: 4%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 2%
 请注意以下特定于的详细信息 [!DNL Google Display & Video 360] 目标：
 
 * 激活的受众是在Google平台中以编程方式创建的。
-* 将受众回填激活到 [!DNL Google Display & Video 360] 按计划，目标会在区段首次映射到目标连接后的24-48小时内发生。 此更新是为了响应Google等待24小时直到摄取数据的策略，旨在提高Real-time CDP与之间的匹配率 [!DNL Google Display & Video 360]. 请注意，这是只适用于此目标的后端配置，与UI中任何客户可配置的计划选项无关。
+* 将受众回填激活到 [!DNL Google Display & Video 360] 按计划，目标会在受众首次映射到目标连接后的24-48小时内发生。 此更新是为了响应Google等待24小时直到摄取数据的策略，旨在提高Real-time CDP与之间的匹配率 [!DNL Google Display & Video 360]. 请注意，这是仅适用于该目标的后端配置，并与 UI 中任何客户可配置的计划选项无关。
 
 >[!IMPORTANT]
 >
@@ -41,14 +41,28 @@ ht-degree: 2%
 | MAID | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID唯一标识Amazon Fire电视。 |  |
 
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+
+{style="table-layout:auto"}
+
 ## 导出类型和频率 {#export-type-frequency}
 
 有关目标导出类型和频率的信息，请参阅下表。
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要将区段（受众）的所有成员导出到Google目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您要将受众的所有成员导出到Google目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## 先决条件 {#prerequisites}
 
@@ -94,13 +108,13 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 导出的数据
 

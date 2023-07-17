@@ -4,7 +4,7 @@ title: 删除目标帐户
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除目标帐户的步骤
 exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
-source-git-commit: 2ea56957e122140fbc68c727e36666f8f9a71dd8
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
    ![筛选目标](../assets/ui/delete-accounts/filter-accounts.png)
 
-3. 选择省略号(`...`)。 此时将显示一个弹出面板，其中提供以下选项 **[!UICONTROL 激活区段]**， **[!UICONTROL 编辑详细信息]**、和 **[!UICONTROL 删除]** 帐户。 选择 ![“删除”按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 删除]** 按钮以删除所需的帐户。
+3. 选择省略号(`...`)。 此时将显示一个弹出面板，其中提供以下选项 **[!UICONTROL 激活受众]**， **[!UICONTROL 编辑详细信息]**、和 **[!UICONTROL 删除]** 帐户。 选择 ![“删除”按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 删除]** 按钮以删除所需的帐户。
 
    ![删除目标帐户](../assets/ui/delete-accounts/delete-accounts.png)
 

@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；sendgrid；sendgrid
 title: SendGrid连接
 description: SendGrid目标允许您导出第一方数据，并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1541'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 [发送网格](https://www.sendgrid.com) 是用于交易和营销电子邮件的常用客户通信平台。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts)，允许您导出第一方电子邮件用户档案，并在新的SendGrid区段中激活它们，以满足您的业务需求。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts)，允许您导出第一方电子邮件配置文件，并在新的SendGrid受众中激活它们，以满足您的业务需求。
 
 SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制。
 
@@ -40,8 +40,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 >
 >* 用于从电子邮件配置文件创建邮件列表的SendGrid API要求在每个配置文件中提供唯一的电子邮件地址。 这取决于它是否用作的值 *电子邮件* 或 *备用电子邮件*. 由于SendGrid连接支持电子邮件和备用电子邮件值的映射，因此请确保使用的所有电子邮件地址在的每个配置文件中都应是唯一的 *数据集*. 否则，在将电子邮件配置文件发送到SendGrid时，这将导致错误，并且该电子邮件配置文件将不会出现在数据导出中。
 >
->* 目前，从Experience Platform中的区段中删除用户档案时，没有相应的功能可从SendGrid中删除用户档案。
-
+>* 目前，从Experience Platform的受众中删除用户档案时，没有相应的功能可从SendGrid中删除用户档案。
 
 ## 支持的身份 {#supported-identities}
 
@@ -60,7 +59,7 @@ SendGrid支持激活下表中描述的标识。 详细了解 [身份](/help/iden
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -112,29 +111,27 @@ While [设置](https://experienceleague.adobe.com/docs/experience-platform/desti
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 有关特定于此目标的详细信息，请参阅以下图像。
 
-1. 选择要导出到SendGrid的一个或多个区段。
+1. 选择一个或多个要导出到SendGrid的受众。
    ![](../../assets/catalog/email-marketing/sendgrid/11.jpg)
 
 1. 在 **[!UICONTROL 映射]** 步骤，选择之后 **[!UICONTROL 添加新映射]**，则会显示映射页面，以将源XDM字段映射到SendGrid API目标字段。 以下图像演示了如何在Experience Platform和SendGrid之间映射标识命名空间。 请确保 **[!UICONTROL 源字段]** *电子邮件* 应映射到 **[!UICONTROL 目标字段]** *external_id* 如下所示。
    ![](../../assets/catalog/email-marketing/sendgrid/13.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/14.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/15.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/16.jpg)
 
 1. 同样，映射所需的 [!DNL Adobe Experience Platform] 要导出到SendGrid目标的属性。
    ![](../../assets/catalog/email-marketing/sendgrid/17.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/18.jpg)
 
 1. 完成映射后，选择 **[!UICONTROL 下一个]** 以进入审阅屏幕。
@@ -155,7 +152,7 @@ While [设置](https://experienceleague.adobe.com/docs/experience-platform/desti
 | 标识映射：<br/> 电子邮件 | 身份：<br/> external_id | 字符串 | 联系人的主要电子邮件。 这必须是有效的电子邮件。 | 最大长度：<br/> 254个字符 |
 | xdm：<br/> person.name.firstName | xdm：<br/> 名字 | 字符串 | 联系人的姓名 | 最大长度：<br/> 50个字符 |
 | xdm：<br/> person.name.lastName | xdm：<br/> last_name | 字符串 | 联系人的姓氏 | 最大长度：<br/> 50个字符 |
-| xdm：<br/> homeAddress.postalCode | xdm：<br/> postal_code | 字符串 | 联系人的邮政编码或其他邮政编码。 |  |
+| xdm：<br/> homeAddress.postalCode | xdm：<br/> postal_code | 字符串 | 联系人的邮政编码或其他邮政编码。 | |
 | xdm：<br/> homeAddress.stateProvince | xdm：<br/> state_province_region | 字符串 | 联系人的省/市/自治区或地区。 | 最大长度：<br/> 50个字符 |
 
 ## 验证SendGrid中的数据导出 {#validate}
@@ -168,22 +165,20 @@ While [设置](https://experienceleague.adobe.com/docs/experience-platform/desti
 1. 选择目标并验证状态为 **[!UICONTROL 已启用]**.
    ![](../../assets/catalog/email-marketing/sendgrid/26.jpg)
 
-1. 切换到 **[!DNL Activation data]** 选项卡，然后选择区段名称。
+1. 切换到 **[!DNL Activation data]** 选项卡，然后选择受众名称。
    ![](../../assets/catalog/email-marketing/sendgrid/27.jpg)
 
-1. 监测区段摘要，并检查与数据集内创建的计数对应的用户档案计数。
+1. 监测受众摘要，并检查与数据集内创建的计数对应的用户档案计数。
    ![](../../assets/catalog/email-marketing/sendgrid/28.jpg)
 
 1. 此 [发送网格营销列表>创建列表API](https://docs.sendgrid.com/api-reference/lists/create-list) 用于在SendGrid中创建唯一的联系人列表，方法是联接 *list_name* 属性和数据导出的时间戳。 导航到SendGrid站点，并检查是否创建了符合名称模式的新联系人列表。
    ![](../../assets/catalog/email-marketing/sendgrid/29.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/30.jpg)
 
 1. 选择新创建的联系人列表，并检查是否正在新联系人列表中填充来自您创建的数据集的新电子邮件记录。
 
 1. 此外，还检查几封电子邮件以验证字段映射是否正确。
    ![](../../assets/catalog/email-marketing/sendgrid/31.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/32.jpg)
 
 ## 数据使用和管理 {#data-usage-governance}

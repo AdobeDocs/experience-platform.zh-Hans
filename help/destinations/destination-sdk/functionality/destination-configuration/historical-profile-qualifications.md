@@ -1,7 +1,7 @@
 ---
 description: 了解使用Destination SDK构建的目标所支持的历史配置文件资格。
 title: 历史配置文件资格
-source-git-commit: 65a658208b48a50184e55a6d64cdf7ad6de0f04f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # 历史配置文件资格
 
-默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格。 这意味着当用户首次设置到目标的激活数据流时，第一次导出包含区段中曾经符合该区段条件的所有成员。
+默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格。 这意味着当用户首次设置到目标的激活数据流时，首次导出包含曾经符合该区段资格的受众的所有成员。
 
 此行为由 `"backfillHistoricalProfileData":true` 参数。
 
@@ -33,14 +33,14 @@ ht-degree: 1%
 <!-- 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the segment before the segment is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the segment after the segment is activated. </li></ul> |
+|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when audiences are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the audience before the audience is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the audience after the audience is activated. </li></ul> |
 
 {style="table-layout:auto"} -->
 
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该知道，在首次将区段导出到目标时，Experience Platform会自动导出曾经符合激活区段条件的所有用户档案的历史群体。 此选项无法在Destination SDK或Experience PlatformUI中进行配置。
+阅读本文后，您应该知道，在首次将受众导出到目标时，Experience Platform会自动导出曾经符合激活受众条件的所有用户档案的历史群体。 此选项无法在Destination SDK或Experience PlatformUI中进行配置。
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 

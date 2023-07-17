@@ -5,7 +5,7 @@ title: 使用Adobe Experience Platform中的流服务API连接到流目标并激
 description: 本文档介绍如何使用Adobe Experience Platform API创建流目标
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '2241'
 ht-degree: 1%
@@ -26,9 +26,9 @@ ht-degree: 1%
 
 本教程使用 [!DNL Amazon Kinesis] 所有示例中的目标，但步骤与 [!DNL Azure Event Hubs].
 
-![概述 — 创建流目标和激活区段的步骤](../assets/api/streaming-destination/overview.png)
+![概述 — 创建流目标和激活受众的步骤](../assets/api/streaming-destination/overview.png)
 
-如果您希望使用Platform中的用户界面连接到目标并激活数据，请参阅 [连接目标](../ui/connect-destination.md) 和 [将受众数据激活到流式区段导出目标](../ui/activate-segment-streaming-destinations.md) 教程。
+如果您希望使用Platform中的用户界面连接到目标并激活数据，请参阅 [连接目标](../ui/connect-destination.md) 和 [将受众数据激活到流式受众导出目标](../ui/activate-segment-streaming-destinations.md) 教程。
 
 ## 快速入门
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-要完成本教程中的步骤，您应该准备好以下凭据，具体取决于要连接和激活区段的目标类型。
+要完成本教程中的步骤，您应该准备好以下凭据，具体取决于要连接和激活受众的目标类型。
 
 * 对象 [!DNL Amazon Kinesis] 连接： `accessKeyId`， `secretKey`， `region` 或 `connectionUrl`
 * 对象 [!DNL Azure Event Hubs] 连接： `sasKeyName`， `sasKey`， `namespace`
@@ -79,7 +79,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 
 ![目标步骤概述步骤1](../assets/api/streaming-destination/step1.png)
 
-第一步，您应该决定要将数据激活到的流目标。 首先，执行调用以请求可连接和激活区段的可用目标列表。 GET向 `connectionSpecs` 端点返回可用目标列表：
+第一步，您应该决定要将数据激活到的流目标。 首先，执行调用以请求可连接和激活受众的可用目标列表。 GET向 `connectionSpecs` 端点返回可用目标列表：
 
 **API格式**
 
@@ -101,7 +101,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为后续步骤将要求使用该值。 例如，如果要将区段连接并交付到 [!DNL Amazon Kinesis] 或 [!DNL Azure Event Hubs]，在响应中查找以下代码片段：
+成功响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为后续步骤将要求使用该值。 例如，如果要连接并将受众交付到 [!DNL Amazon Kinesis] 或 [!DNL Azure Event Hubs]，在响应中查找以下代码片段：
 
 ```json
 {
@@ -409,7 +409,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回ID (`id`)和 `etag`. 记下这两个值。 与在激活区段的下一步中操作的方式相同。
+成功的响应会返回ID (`id`)和 `etag`. 记下这两个值。 您将在下一步激活受众时使用这些受众。
 
 ```json
 {
@@ -423,9 +423,9 @@ curl -X POST \
 
 ![目标步骤概述步骤5](../assets/api/streaming-destination/step5.png)
 
-创建了所有连接和数据流后，现在您可以将配置文件数据激活到流平台。 在此步骤中，您可以选择要将哪些区段和配置文件属性发送到目标，并且您可以计划数据并将其发送到目标。
+创建了所有连接和数据流后，现在您可以将配置文件数据激活到流平台。 在此步骤中，您可以选择将哪些受众和配置文件属性发送到目标，并且您可以计划数据并将其发送到目标。
 
-要将区段激活到新目标，您必须执行JSONPATCH操作，如下所示。 您可以在一次调用中激活多个区段和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902).
+要将受众激活到新目标，您必须执行JSONPATCH操作，类似于以下示例。 您可以在一次调用中激活多个受众和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902).
 
 **API格式**
 
@@ -450,8 +450,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
     "value": {
       "type": "PLATFORM_SEGMENT",
       "value": {
-        "name": "Name of the segment that you are activating",
-        "description": "Description of the segment that you are activating",
+        "name": "Name of the audience that you are activating",
+        "description": "Description of the audience that you are activating",
         "id": "{SEGMENT_ID}"
       }
     }
@@ -474,13 +474,13 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | 在URL中，使用您在上一步中创建的数据流的ID。 |
 | `{ETAG}` | 获取 `{ETAG}` 根据上一步的响应， [创建数据流](#create-dataflow). 上一步中的响应格式带有转义引号。 您必须在请求的标头中使用未转义值。 请参阅以下示例： <br> <ul><li>响应示例： `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>要在请求中使用的值： `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> 每次成功更新数据流时，etag值都会更新。 |
-| `{SEGMENT_ID}` | 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请参阅 [检索区段定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience PlatformAPI引用中)。 |
+| `{SEGMENT_ID}` | 提供要导出到此目标的受众ID。 要检索要激活的受众的受众ID，请参阅 [检索受众定义](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) (在Experience PlatformAPI引用中)。 |
 | `{PROFILE_ATTRIBUTE}` | 例如：`"person.lastName"` |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将区段添加到数据流，请使用 `add` 操作。 |
-| `path` | 定义要更新的流部分。 将区段添加到数据流时，请使用示例中指定的路径。 |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. 要将受众添加到数据流，请使用 `add` 操作。 |
+| `path` | 定义要更新的流部分。 将受众添加到数据流时，请使用示例中指定的路径。 |
 | `value` | 您希望使用更新参数的新值。 |
-| `id` | 指定要添加到目标数据流的区段的ID。 |
-| `name` | *可选*. 指定要添加到目标数据流的区段名称。 请注意，此字段不是必填字段，您可以成功地将区段添加到目标数据流，而无需提供其名称。 |
+| `id` | 指定要添加到目标数据流的受众的ID。 |
+| `name` | *可选*. 指定要添加到目标数据流的受众名称。 请注意，此字段不是必填字段，您无需提供名称即可成功将受众添加到目标数据流。 |
 
 **响应**
 
@@ -490,7 +490,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ![目标步骤概述步骤6](../assets/api/streaming-destination/step6.png)
 
-作为本教程的最后一步，您应该验证区段和配置文件属性是否确实已正确映射到数据流。
+作为本教程的最后一步，您应该验证受众和配置文件属性是否确实已正确映射到数据流。
 
 要验证这一点，请执行以下GET请求：
 
@@ -517,7 +517,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **响应**
 
-返回的响应应包含在 `transformations` 参数是您在上一步中提交的区段和配置文件属性。 示例 `transformations` 响应中的参数可能如下所示：
+返回的响应应包含在 `transformations` 参数是您在上一步中提交的受众和配置文件属性。 示例 `transformations` 响应中的参数可能如下所示：
 
 ```json
 "transformations": [
@@ -563,7 +563,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了配置文件属性和步骤中的区段之外， [将数据激活到新目标](#activate-data)，中的导出数据 [!DNL AWS Kinesis] 和 [!DNL Azure Event Hubs] 还将包含有关身份映射的信息。 这表示导出的配置文件的标识(例如 [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动设备ID、Google ID、电子邮件地址等)。 请参阅以下示例。
+> 除了配置文件属性和步骤中的受众之外 [将数据激活到新目标](#activate-data)，中的导出数据 [!DNL AWS Kinesis] 和 [!DNL Azure Event Hubs] 还将包含有关身份映射的信息。 这表示导出的配置文件的标识(例如 [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动设备ID、Google ID、电子邮件地址等)。 请参阅以下示例。
 
 ```json
 {

@@ -1,10 +1,10 @@
 ---
-title: Zendesk连接
+title: Zendesk 连接
 description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 55f1eafa68124b044d20f8f909f6238766076a7a
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1470'
 ht-degree: 1%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 [[!DNL Zendesk]](https://www.zendesk.com) 是一个客户服务解决方案和销售工具。
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL Zendesk] 联系人API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/)，至 **创建和更新身份** 区段内的联系人 [!DNL Zendesk].
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [[!DNL Zendesk] 联系人API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/)，至 **创建和更新身份** 在受众中作为联系人 [!DNL Zendesk].
 
 [!DNL Zendesk] 使用持有者令牌作为身份验证机制与 [!DNL Zendesk] 联系人API。 向您的验证的说明 [!DNL Zendesk] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
 ## 用例 {#use-cases}
 
-多渠道B2C平台的客户服务部门希望为其客户提供无缝的个性化体验。 部门可以根据自己的离线数据构建区段，以创建新用户配置文件或更新不同交互（例如购买、退货等）的现有配置文件信息 并将这些区段从Adobe Experience Platform发送到 [!DNL Zendesk]. 将更新的信息放在 [!DNL Zendesk] 确保客户服务代理能够立即获得客户的最新信息，从而加快响应和解决问题。
+多渠道B2C平台的客户服务部门希望为其客户提供无缝的个性化体验。 部门可以根据自身的离线数据构建受众，以创建新用户配置文件或更新不同交互（例如购买、退货等）的现有配置文件信息 并将这些受众从Adobe Experience Platform发送到 [!DNL Zendesk]. 将更新的信息放在 [!DNL Zendesk] 确保客户服务代理能够立即获得客户的最新信息，从而加快响应和解决问题。
 
 ## 先决条件 {#prerequisites}
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 将数据激活到之前 [!DNL Zendesk] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
 
-请参阅Experience Platform文档，了解 [“区段成员资格详细信息”架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关区段状态的指南。
+请参阅Experience Platform文档，了解 [受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关受众状态的指南。
 
 ### [!DNL Zendesk] 先决条件 {#prerequisites-destination}
 
@@ -59,8 +59,8 @@ ht-degree: 1%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Zendesk] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [区段调度](#schedule-segment-export-example) 步骤。</li></ul> |
-| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 一旦根据区段评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| 导出类型 | **[!UICONTROL 基于配置文件]** | <ul><li>您正在导出区段的所有成员以及所需的架构字段 *（例如：电子邮件地址、电话号码、姓氏）*，根据您的字段映射。</li><li> 中的每个区段状态 [!DNL Zendesk] 将根据 **[!UICONTROL 映射Id]** 在以下时段提供的值： [受众调度](#schedule-segment-export-example) 步骤。</li></ul> |
+| 导出频率 | **[!UICONTROL 流]** | <ul><li>流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -98,13 +98,13 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将区段激活到此目标 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 >
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-读取 [将配置文件和区段激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
@@ -122,7 +122,7 @@ ht-degree: 1%
    * 重复这些步骤以添加以下强制映射，您还可以添加要在XDM配置文件架构和您的配置文件架构之间更新的任何其他属性 [!DNL Zendesk] 实例： |源字段|目标字段|必填| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`|是 | |`IdentityMap: Email`|`Identity: email`|是 | |`xdm: person.name.firstName`|`xdm: first_name`| |
 
    * 下面显示了使用这些映射的示例：
-      ![具有属性映射的平台UI屏幕快照示例。](../../assets/catalog/crm/zendesk/mappings.png)
+     ![具有属性映射的平台UI屏幕快照示例。](../../assets/catalog/crm/zendesk/mappings.png)
 
 >[!IMPORTANT]
 >
@@ -130,31 +130,31 @@ ht-degree: 1%
 
 完成提供目标连接的映射后，选择 **[!UICONTROL 下一个]**.
 
-### 计划区段导出和示例 {#schedule-segment-export-example}
+### 计划受众导出和示例 {#schedule-segment-export-example}
 
-在 [[!UICONTROL 计划区段导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 在激活工作流的步骤中，您必须手动将Platform区段映射到中的自定义字段属性 [!DNL Zendesk].
+在 [[!UICONTROL 计划受众导出]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 在激活工作流的步骤中，您必须手动将Platform受众映射到中的自定义字段属性 [!DNL Zendesk].
 
 为此，请选择每个区段，然后从中输入相应的自定义字段属性 [!DNL Zendesk] 在 **[!UICONTROL 映射Id]** 字段。
 
 下面显示了一个示例：
-![显示计划区段导出的平台UI屏幕截图示例。](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
+![显示计划受众导出的Platform UI屏幕快照示例。](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
 
 ## 验证数据导出 {#exported-data}
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
 1. 选择 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 并导航到目标列表。
-1. 接下来，选择目标并切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择区段名称。
+1. 接下来，选择目标并切换到 **[!UICONTROL 激活数据]** 选项卡，然后选择受众名称。
    ![显示目标激活数据的平台UI屏幕截图示例。](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
 
-1. 监控区段摘要，并确保配置文件计数对应于区段内的计数。
+1. 监控受众摘要，并确保用户档案计数对应于区段中的计数。
    ![显示区段的平台UI屏幕快照示例。](../../assets/catalog/crm/zendesk/segment.png)
 
-1. 登录到 [!DNL Zendesk] 网站，然后导航到 **[!UICONTROL 联系人]** 页面以检查是否已添加区段中的配置文件。 可将此列表配置为显示使用区段创建的其他字段的列 **[!UICONTROL 映射Id]** 和区段状态。
-   ![Zendesk UI屏幕截图显示了“联系人”页面，其中包含使用区段名称创建的其他字段。](../../assets/catalog/crm/zendesk/contacts.png)
+1. 登录到 [!DNL Zendesk] 网站，然后导航到 **[!UICONTROL 联系人]** 页面，以检查是否已添加受众中的配置文件。 可将此列表配置为显示使用受众创建的其他字段的列**[!UICONTROL 映射Id]**和受众状态。
+   ![Zendesk UI屏幕快照，其中显示了“联系人”页面以及使用受众名称创建的其他字段。](../../assets/catalog/crm/zendesk/contacts.png)
 
-1. 或者，您可以向下钻取到个人 **[!UICONTROL 人员]** 页面并检查 **[!UICONTROL 其他字段]** 部分显示区段名称和区段状态。
-   ![显示“人员”页面的Zendesk UI屏幕快照，其“其他字段”部分显示区段名称和区段状态。](../../assets/catalog/crm/zendesk/contact.png)
+1. 或者，您可以向下钻取到个人 **[!UICONTROL 人员]** 页面并检查 **[!UICONTROL 其他字段]** 部分显示受众名称和受众状态。
+   ![显示“人员”页面的Zendesk UI屏幕截图，其“其他字段”部分显示受众名称和受众状态。](../../assets/catalog/crm/zendesk/contact.png)
 
 ## 数据使用和管理 {#data-usage-governance}
 

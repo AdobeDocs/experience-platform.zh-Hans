@@ -3,10 +3,10 @@ keywords: Advertising Cloud；advertising cloud扩展；advertising cloud目标
 title: Adobe Advertising Cloud扩展
 description: Adobe Advertising Cloud扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe交换上的扩展页面。
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '442'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-这是 [!DNL Advertising Cloud] 用于实施的扩展 [!DNL Advertising Cloud] DSP和Search的转化和区段标记（当前不支持DCO）。
+这是 [!DNL Advertising Cloud] 用于实施的扩展 [!DNL Advertising Cloud] DSP和Search的转化和受众标记（当前不支持DCO）。
 
 Adobe Advertising Cloud是Adobe Experience Platform中的一项广告扩展。
 

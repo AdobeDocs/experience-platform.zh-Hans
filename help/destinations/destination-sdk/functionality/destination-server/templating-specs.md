@@ -1,7 +1,7 @@
 ---
 description: 了解如何格式化发送到端点的HTTP请求。 使用/authoring/destination-servers端点在Adobe Experience Platform Destination SDK中配置目标服务器模板规范。
 title: 使用Destination SDK创建的目标的模板规范
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 4%
@@ -46,7 +46,7 @@ Adobe使用的模板语言类似于 [金家](https://jinja.palletsprojects.com/e
 有关转换的更多信息，请访问以下链接：
 
 * [消息格式](message-format.md)
-* [使用模板语言进行身份、属性和区段成员资格转换 ](message-format.md#using-templating)
+* [使用模板语言进行身份、属性和受众成员资格转换](message-format.md#using-templating)
 
 >[!TIP]
 >

@@ -1,15 +1,15 @@
 ---
-title: 目标中的可配置和常用导出设置
+title: 目标中可配置的通用导出设置
 description: 了解目标中的哪些导出设置可在目标级别配置，哪些是固定的，无法编辑。
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '845'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# 目标中的可配置和常用导出设置
+# 目标中可配置的通用导出设置
 
 在考虑导出到Experience Platform目标的行为时，您需要考虑三个单独的级别来决定配置的作用。
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 * [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md)
 * [将受众数据激活到企业目标](/help/destinations/ui/activate-streaming-profile-destinations.md)
-* [将受众数据激活到流式区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)
+* [将受众数据激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)
 * [按需将文件导出到批处理目标](/help/destinations/ui/export-file-now.md)
 * [（测试版）将数据集导出到云存储目标](/help/destinations/ui/export-datasets.md)
 

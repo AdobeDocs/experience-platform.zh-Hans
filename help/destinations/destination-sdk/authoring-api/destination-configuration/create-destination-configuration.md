@@ -1,7 +1,7 @@
 ---
 description: 了解如何构建API调用以通过Adobe Experience Platform Destination SDK创建目标配置。
 title: 创建目标配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 3%
@@ -213,10 +213,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 指示哪些 [标准身份命名空间](/help/identity-service/namespaces.md#standard) （例如，IDFA）客户可以映射到您正在配置的身份。 <br> 当您使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和哈希电子邮件地址或电话号码。 |
 | `destinationDelivery.authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值包括 `CUSTOMER_AUTHENTICATION`， `PLATFORM_AUTHENTICATION`， `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过用户名和密码、持有者令牌或其他身份验证方法登录到您的系统。 例如，如果您还选择了 `authType: OAUTH2` 或 `authType:BEARER` 在 `customerAuthenticationConfigurations`. </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe和您的目标之间有一个全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，您必须使用创建凭据对象 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据无需任何身份验证。 </li></ul> |
 | `destinationDelivery.destinationServerId` | 字符串 | 此 `instanceId` 的 [目标服务器模板](../destination-server/create-destination-server.md) 用于此目标。 |
-| `backfillHistoricalProfileData` | 布尔值 | 控制在将区段激活到目标时是否导出历史配置文件数据。 始终将此项设置为 `true`. |
-| `segmentMappingConfig.mapUserInput` | 布尔值 | 控制用户是否输入目标激活工作流中的区段映射ID。 |
-| `segmentMappingConfig.mapExperiencePlatformSegmentId` | 布尔值 | 控制目标激活工作流中的区段映射ID是否为Experience Platform区段ID。 |
-| `segmentMappingConfig.mapExperiencePlatformSegmentName` | 布尔值 | 控制目标激活工作流中的区段映射ID是否为Experience Platform区段名称。 |
+| `backfillHistoricalProfileData` | 布尔值 | 控制将受众激活到目标时是否导出历史配置文件数据。 始终将此项设置为 `true`. |
+| `segmentMappingConfig.mapUserInput` | 布尔值 | 控制用户是否输入目标激活工作流中的受众映射ID。 |
+| `segmentMappingConfig.mapExperiencePlatformSegmentId` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform的受众ID。 |
+| `segmentMappingConfig.mapExperiencePlatformSegmentName` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform受众名称。 |
 | `segmentMappingConfig.audienceTemplateId` | 布尔值 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于此目标。 |
 | `schemaConfig.profileFields` | 数组 | 当您添加预定义的 `profileFields` 如上面的配置所示，用户可以选择将Experience Platform属性映射到目标端上的预定义属性。 |
 | `schemaConfig.profileRequired` | 布尔值 | 使用 `true` 如果用户应能够将配置文件属性从Experience Platform映射到目标端的自定义属性，如上面的示例配置所示。 |

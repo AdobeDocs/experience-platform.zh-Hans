@@ -3,7 +3,7 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包含五个部分：概述、目录、浏览、帐户和系统视图。 以下各节将对这些要求进行说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 69e1f065cb3b302c4b144f39c84179075379f648
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1217'
 ht-degree: 2%
@@ -41,13 +41,13 @@ ht-degree: 2%
 
 ![目标目录，其中显示了几个广告和云存储目标。](../assets/ui/workspace/catalog.png)
 
-目标卡包含主要和次要控制选项。 主要控制包括 [!UICONTROL 设置]， [!UICONTROL 激活]， [!UICONTROL 激活区段]，或 [!UICONTROL 导出数据集]. 辅助控件允许查看选项。 这些控制如下所述：
+目标卡包含主要和次要控制选项。 主要控制包括 [!UICONTROL 设置]， [!UICONTROL 激活]， [!UICONTROL 激活受众]，或 [!UICONTROL 导出数据集]. 辅助控件允许查看选项。 这些控制如下所述：
 
 | 控制 | 描述 |
 |---------|----------|
 | [!UICONTROL 设置] | 用于创建到目标的连接。 |
-| [!UICONTROL 激活] | 建立与目标之间的连接后，您可以激活区段或将数据集导出到此目标。 |
-| [!UICONTROL 激活区段] | 建立与目标之间的连接后，即可将区段激活到此目标。 |
+| [!UICONTROL 激活] | 建立与目标之间的连接后，您可以激活受众或将数据集导出到此目标。 |
+| [!UICONTROL 激活受众] | 建立与目标的连接后，即可将受众激活到此目标。 |
 | [!UICONTROL 导出数据集] | 建立与目标之间的连接后，可以将数据集导出到此目标。 |
 | [!UICONTROL 查看帐户] | 查看您为目标连接的帐户。 |
 | [!UICONTROL 查看数据流] | 查看目标存在的数据激活流程。 |
@@ -69,10 +69,9 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 选择省略号(`...`)中 [!UICONTROL Platform] 列并使用 ![激活控制](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活区段&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件，用于将区段或数据集导出到该目标。
+> * 选择省略号(`...`)中 [!UICONTROL Platform] 列并使用 ![激活控制](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活受众&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控件，以将受众或数据集导出到该目标。
 > * 选择省略号(`...`)中 [!UICONTROL Platform] 列并使用 ![编辑详细信息控件](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL 编辑详细信息&#x200B;]**控制对象 [更新](update-accounts.md) 现有目标帐户的详细信息。
 > * 选择省略号(`...`)中 [!UICONTROL Platform] 列并使用 ![删除控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**控制对象 [delete](delete-destination-account.md) 现有目标帐户。
-
 
 ![“帐户”选项卡](../assets/ui/workspace/destination-account-options.png)
 
@@ -88,27 +87,26 @@ ht-degree: 2%
 
 ## [!UICONTROL 浏览] {#browse}
 
-此 **[!UICONTROL 浏览]** 选项卡显示已与之建立连接的目标。 具有的目标 **[!UICONTROL 已启用/已禁用]** 打开切换功能，分别将目标设置为活动或非活动。 您还可以通过选择查看数据流动的目标 **[!UICONTROL 区段]** > **[!UICONTROL 浏览]** 并选择要检查的区段。 请参阅下表，了解中为每个目标提供的所有信息 [!UICONTROL 浏览] 选项卡：
+此 **[!UICONTROL 浏览]** 选项卡显示已与之建立连接的目标。 具有的目标 **[!UICONTROL 已启用/已禁用]** 打开切换功能，分别将目标设置为活动或非活动。 您还可以通过选择查看数据流动的目标 **[!UICONTROL 受众]** > **[!UICONTROL 浏览]** 并选择要检查的受众。 请参阅下表，了解中为每个目标提供的所有信息 [!UICONTROL 浏览] 选项卡：
 
 >[!TIP]
 >
-> * 选择省略号(`...`)中 [!UICONTROL 名称] 列并使用 ![激活区段控制](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**控件，用于将区段或数据集导出到该目标。
+> * 选择省略号(`...`)中 [!UICONTROL 名称] 列并使用 ![激活受众控制](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**控件，以将受众或数据集导出到该目标。
 > * 选择省略号(`...`)中 [!UICONTROL 名称] 列并使用 ![删除控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**控制对象 [移除](delete-destinations.md) 到目标的现有连接。
 > * 选择省略号(`...`)中 [!UICONTROL 名称] 列并使用 ![在监控控制中查看](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL 在监控中查看&#x200B;]**用于在中查看此目标的激活信息的控件 [监控仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
 > * 选择省略号(`...`)中 [!UICONTROL 名称] 列并使用 ![订阅警报 ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL 订阅警报&#x200B;]**用于订阅目标数据流警报的控制。 您可以订阅警报，以接收有关流运行的状态、成功或失败的消息。 参见 [订阅上下文目标警报](alerts.md) 以了解有关目标数据流警报的详细信息……
-
 
 ![“浏览”选项卡](../assets/ui/workspace/browse-tab.png)
 
 | 元素 | 描述 |
 |---------|----------|
-| 名称 | 您为此目的地的激活流提供的名称。 同一列包含两个控件： [!UICONTROL 激活 ] 和 [!UICONTROL 删除目标]. |
+| 名称 | 您为此目的地的激活流提供的名称。 同一列包含两个控件： [!UICONTROL 激活] 和 [!UICONTROL 删除目标]. |
 | [!UICONTROL 上次流量运行状态] | 上次数据流运行的状态。 参见 [查看目标详细信息](destination-details-page.md) 以了解有关数据流运行的更多信息。 |
 | [!UICONTROL 上次流量运行日期] | 上次数据流运行的时间和日期。 参见 [查看目标详细信息](destination-details-page.md) 以了解有关数据流运行的更多信息。 |
 | [!UICONTROL 目标] | 为激活流选择的目标平台。 |
 | [!UICONTROL 连接类型] | 表示到存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3、FTP或 [!DNL Azure Blob].</li><li>对于实时广告目标：服务器到服务器。</li><li>对于流目标：可以是 [!DNL Azure Event Hubs] 或 [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL 用户名] | 您为目标流选择的帐户凭据。 |
-| [!UICONTROL 激活数据] | 指示正在激活到此目标的区段数。 选择此控件可了解有关已激活区段的更多信息。 请参阅 [激活数据](/help/destinations/ui/destination-details-page.md#activation-data) 在目标详细信息页面中，以了解有关已激活区段的更多信息。 |
+| [!UICONTROL 激活数据] | 指示正在激活到此目标的受众数量。 选择此控件可了解有关已激活受众的更多信息。 请参阅 [激活数据](/help/destinations/ui/destination-details-page.md#activation-data) ，以了解有关已激活受众的更多信息。 |
 | [!UICONTROL 已创建] | 创建到目标的激活流的日期和UTC时间。 选择向上/向下箭头符号，按最新先或最旧先对激活流进行排序。 |
 | [!UICONTROL 状态] | `Enabled` 或 `Disabled`. 指示是否正在将数据激活到此目标。 |
 
@@ -116,7 +114,7 @@ ht-degree: 2%
 
 ![单击目标行](../assets/ui/workspace/click-destination-row.png)
 
-选择目标名称可查看有关激活到此目标的区段的信息。 单击 **[!UICONTROL 编辑激活]** 修改或添加到要发送到此目标的区段。
+选择目标名称可查看有关激活到此目标的受众的信息。 单击 **[!UICONTROL 编辑激活]** 修改或添加到要发送到此目标的受众。
 
 ## [!UICONTROL 系统视图] {#system-view}
 

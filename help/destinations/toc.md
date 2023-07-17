@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
-source-wordcount: '1172'
-ht-degree: 5%
+source-wordcount: '1167'
+ht-degree: 9%
 
 ---
 
@@ -18,29 +18,29 @@ ht-degree: 5%
 * [目标类型和类别](./destination-types.md)
 * [目标（激活）护栏](./guardrails.md)
 * 目标的工作方式 {#how-destinations-work}
-   * [目标中的可配置和常用导出设置](./how-destinations-work/destinations-configurations.md)
+   * [目标中可配置的通用导出设置](./how-destinations-work/destinations-configurations.md)
    * [不同目标类型的配置文件导出行为](./how-destinations-work/profile-export-behavior.md)
-   * [目标激活工作流中的身份处理](./how-destinations-work/identity-handling.md)
+   * [目标激活工作流程中的身份处理](./how-destinations-work/identity-handling.md)
 * API教程 {#api}
    * [云存储目标的API迁移指南](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
    * [连接到批处理云存储和电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
-   * [（测试版）通过临时激活API将受众区段激活到批量目标](./api/ad-hoc-activation-api.md)
+   * [（测试版）通过临时激活API将受众激活到批量目标](./api/ad-hoc-activation-api.md)
    * [编辑目标](./api/edit-destination.md)
    * [更新目标数据流](./api/update-destination-dataflows.md)
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [（测试版）使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [（测试版）导出数据集](/help/destinations/api/export-datasets.md)
-* UI指南 {#ui}
+* UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
    * 将受众数据激活到目标{#activate}
       * [激活概述](./ui/activation-overview.md)
-      * [将受众数据激活到流式区段导出目标](./ui/activate-segment-streaming-destinations.md)
-      * [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
-      * [将受众数据激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
-      * [将受众数据激活到边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
+      * [将受众激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md)
+      * [将受众激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
+      * [将受众激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
+      * [将受众激活到边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [（测试版）使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）在新的测试版云存储目标中使用最后一次XDM资格鉴定时间](./ui/activate-last-qualification-time.md)
@@ -59,7 +59,7 @@ ht-degree: 5%
       * [（测试版）Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform区段共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * 广告目标{#advertising}
       * [广告目标概述](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud连接](./catalog/advertising/adobe-advertising-cloud-connection.md)
@@ -87,7 +87,7 @@ ht-degree: 5%
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
-      * [(Beta)交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
+      * [(Beta) Trade Desk CRM 连接](./catalog/advertising/tradedesk-emails.md)
       * [twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标 {#analytics}
@@ -126,7 +126,7 @@ ht-degree: 5%
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
       * [Microsoft Dynamics 365连接](./catalog/crm/microsoft-dynamics-365.md)
       * [外联联系](catalog/crm/outreach.md)
-      * [Zendesk连接](catalog/crm/zendesk.md)
+      * [Zendesk 连接](catalog/crm/zendesk.md)
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
@@ -139,8 +139,8 @@ ht-degree: 5%
       * [电子邮件营销目标概述](./catalog/email-marketing/overview.md)
       * [Adobe Campaign连接](./catalog/email-marketing/adobe-campaign.md)
       * [Adobe Campaign Managed Cloud Services连接](./catalog/email-marketing/adobe-campaign-managed-services.md)
-      * [Mailchimp兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
-      * [(API)OracleEloqua连接](./catalog/email-marketing/oracle-eloqua-api.md)
+      * [Mailchimp 兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
+      * [(API) Oracle Eloqua 连接](./catalog/email-marketing/oracle-eloqua-api.md)
       * [（文件）OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [oracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [(API) SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
@@ -169,13 +169,13 @@ ht-degree: 5%
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
       * [Pega客户决策中心连接](./catalog/personalization/pega.md)
-      * [Pega配置文件连接](./catalog/personalization/pega-profile.md)
+      * [Pega 配置文件连接](./catalog/personalization/pega-profile.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
       * [facebook连接](./catalog/social/facebook.md)
       * [linkedIn Matched Audiences连接](./catalog/social/linkedin.md)
-      * [TikTok连接](./catalog/social/tiktok.md)
+      * [TikTok 连接](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
    * 流目标 {#streaming}
       * [HTTP API连接](./catalog/streaming/http-destination.md)
@@ -258,7 +258,7 @@ ht-degree: 5%
       * 流式目标测试API {#streaming-destinations}
          * [流媒体目标测试API概述](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
          * [根据源架构生成示例配置文件](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
-         * [生成示例消息转换模板 ](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
+         * [生成示例消息转换模板](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
          * [验证导出的配置文件结构](./destination-sdk/testing-api/streaming-destinations/render-template-api.md)
          * [使用示例配置文件测试您的流目标](./destination-sdk/testing-api/streaming-destinations/destination-testing-api.md)
          * [创建和测试消息转换模板](./destination-sdk/testing-api/streaming-destinations/create-template.md)

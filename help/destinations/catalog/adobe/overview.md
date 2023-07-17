@@ -3,7 +3,7 @@ keywords: 目标；experience cloud解决方案；target；target目标；ad clo
 title: Adobe目标概述
 description: 通过将Platform中的数据连接到其他Adobe Experience Cloud解决方案来管理您的客户体验，以实现广告定位、个性化、营销自动化等
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: e3039944fff96bbb060fd800d7bbb032084c5010
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '234'
 ht-degree: 12%
@@ -45,8 +45,8 @@ ht-degree: 12%
 * [Marketo Munchkin 扩展](../email/marketo-munchkin.md)
 * [Marketo Web Personalization扩展](../personalization/marketo-web-personalization.md)
 
-## Experience Platform区段共享
+## Experience Platform受众共享
 
-使用Experience Platform区段共享功能将Experience Platform区段共享到其他Adobe目标。 有关更多信息(在Audience Manager文档门户中打开)，请参阅以下页面：
+使用Experience Platform受众共享功能将Experience Platform受众共享到其他Adobe目标。 有关更多信息(在Audience Manager文档门户中打开)，请参阅以下页面：
 
-* [通过核心服务集成，与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target共享Experience Platform区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [通过核心服务集成，Experience Platform与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target的受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
