@@ -1,9 +1,9 @@
 ---
 description: 了解如何通过“/destination-servers”端点为使用Adobe Experience Platform Destination SDK构建的基于文件的目标配置文件格式选项。
 title: 文件格式配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: 5a6359e5731b36763e86eba8c79e60d74fb3b4c8
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1001'
 ht-degree: 4%
 
 ---
@@ -159,7 +159,8 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
             "templatingStrategy":"PEBBLE_V1",
             "value":"{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'emptyValue' %}{{customerData.csvOptions.emptyValue}}{% else %}{% endif %}"
          }
-      }
+      },
+      "maxFileRowCount":5000000
    }
 }
 ```
@@ -190,6 +191,7 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
 | `csvOptions.timestampFormat.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置指示时间戳格式的字符串。 | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` | - | - |
 | `csvOptions.charToEscapeQuoteEscaping.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置一个用于转义引号字符的转义的字符。 | `\` 当转义字符和引号字符不同时。 `\0` 当转义字符和引号字符相同时。 | - | - |
 | `csvOptions.emptyValue.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` | `"emptyValue":""` --> `male,"",John` | `"emptyValue":"empty"` --> `male,empty,John` |
+| `maxFileRowCount` | 可选 | 指示每个导出文件的最大行数，介于1,000,000和10,000,000行之间。 | 5,000,000 |
 
 {style="table-layout:auto"}
 
