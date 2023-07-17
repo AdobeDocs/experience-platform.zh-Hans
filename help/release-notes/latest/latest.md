@@ -5,7 +5,7 @@ exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: a3faca5e0a711f0d4f6bafb22bf3c4770f58db8e
 workflow-type: tm+mt
 source-wordcount: '1538'
-ht-degree: 60%
+ht-degree: 100%
 
 ---
 
@@ -18,7 +18,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [Experience Platform API 身份验证](#authentication-platform-apis)
 - [数据收集](#data-collection)
 - [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
+- [Experience Data Model (XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -76,59 +76,59 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
-## 体验数据模型(XDM) {#xdm}
+## Experience Data Model (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
-**新XDM组件**
+**新的 XDM 组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 扩展 （潜在客户 — 个人资料） | [[!UICONTROL Adobe统一配置文件服务潜在客户 — 配置文件合并扩展]](https://github.com/adobe/xdm/pull/1735/files) | 添加了Prospect-Profile合并架构的必填字段。 |
-| 扩展 | [[!UICONTROL 决策资源]](https://github.com/adobe/xdm/pull/1732/files) | 添加数据类型以表示决策中使用的资产。 [!UICONTROL 决策资源] 提供用于呈现以下内容的资源的引用： `decisionItems`. |
-| 数据类型 | [[!UICONTROL 商务]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL 商务] 存储与购买和销售活动相关的记录。 |
-| 字段组 | [[!UICONTROL 配置文件合作伙伴扩充（示例）]](https://github.com/adobe/xdm/pull/1747/files) | 为配置文件合作伙伴扩充添加了一个示例架构。 |
-| 字段组 | [[!UICONTROL Partner Prospect详细信息（示例）]](https://github.com/adobe/xdm/pull/1747/files) | 为数据供应商目标客户配置文件扩展添加了示例架构。 |
-| 数据类型 | [[!UICONTROL 商业范围]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL 商业范围] 标识发生事件的位置。 例如，在商店视图、商店或网站中，等等。 |
-| 数据类型 | [[!UICONTROL 帐单]](https://github.com/adobe/xdm/pull/1734/files) | 用于一项或多项付款的帐单信息已添加到 [!UICONTROL 商务] 架构。 |
+| 扩展（潜在客户-配置文件） | [[!UICONTROL Adobe 联合配置文件服务潜在客户-配置文件合并扩展]](https://github.com/adobe/xdm/pull/1735/files) | 为潜在客户-配置文件联合架构添加了必填字段。 |
+| 扩展 | [[!UICONTROL 决策资产]](https://github.com/adobe/xdm/pull/1732/files) | 通过添加数据类型来表示决策中使用的资产。[!UICONTROL 决策资产]提供了对用于渲染 `decisionItems` 的资产的参考。 |
+| 数据类型 | [[!UICONTROL Commerce]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL Commerce] 存储与买卖活动相关的记录。 |
+| 字段组 | [[!UICONTROL 配置文件合作伙伴扩充（示例）]](https://github.com/adobe/xdm/pull/1747/files) | 添加了一个用于配置文件合作伙伴扩充的示例架构。 |
+| 字段组 | [[!UICONTROL 合作伙伴前景详情（样本）]](https://github.com/adobe/xdm/pull/1747/files) | 为数据供应商前景配置文件扩展添加了示例架构。 |
+| 数据类型 | [[!UICONTROL 商业范围]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL 商业范围]标识事件发生的位置。例如，在商店视图、商店或网站等中。 |
+| 数据类型 | [[!UICONTROL 帐单]](https://github.com/adobe/xdm/pull/1734/files) | 一笔或多笔付款的计费信息已添加到[!UICONTROL  Commerce ]架构。 |
 
 {style="table-layout:auto"}
 
-**更新的XDM组件**
+**更新的 XDM 组件**
 
 | 组件类型 | 名称 | 更新描述 |
 | --- | --- | --- |
-| 字段组 | [[!UICONTROL MediaAnalytics交互详细信息]](https://github.com/adobe/xdm/pull/1736/files) | 已更改 `bitrateAverageBucket` 从100到“800-899”。 |
-| 数据类型 | [[!UICONTROL Qoe数据详细信息]](https://github.com/adobe/xdm/pull/1736/files) | 已更改 `bitrateAverageBucket` 数据类型转换为字符串。 |
-| 字段组 | [[!UICONTROL 区段成员资格详细信息]](https://github.com/adobe/xdm/pull/1735/files) | 已添加到目标客户配置文件类。 |
-| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1735/files) | 身份映射已添加到 [!UICONTROL 计算属性系统架构]. |
-| 数据类型 | [[!UICONTROL 内容交付网络]](https://github.com/adobe/xdm/pull/1733/files) | 字段已添加至 [!UICONTROL 会话详细信息] 描述使用的内容交付网络。 |
-| 扩展 | [[!UICONTROL Adobe统一配置文件服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1731/files) | 身份映射已添加到 [!UICONTROL Adobe统一配置文件服务帐户合并扩展]. |
-| 数据类型 | [[!UICONTROL 订购]](https://github.com/adobe/xdm/pull/1730/files) | `discountAmount` 已添加至 [!UICONTROL 订购]. 这传达了正常订单价格与特殊价格之间的差异。 它应用于整个订单，而不是单个产品。 |
-| 架构 | [[!UICONTROL AEP保健操作请求]](https://github.com/adobe/xdm/pull/1728/files) | 此 `targetServices` 添加了字段，以提供处理数据卫生操作的服务的名称。 |
-| 数据类型 | [[!UICONTROL 配送]](https://github.com/adobe/xdm/pull/1727/files) | `currencyCode` 已添加到一个或多个产品的配送信息中。 它是用于为产品定价的ISO 4217字母货币代码。 |
-| 数据类型 | [[!UICONTROL 应用程序]](https://github.com/adobe/xdm/pull/1726/files) | 此 `language` 添加了字段，以便为应用程序提供用户的语言、地理或文化偏好。 |
-| 扩展 | [[!UICONTROL AJO实体字段]](https://github.com/adobe/xdm/pull/1746/files) | [!UICONTROL AJO时间戳实体] 已添加，以指示上次修改消息的时间。 |
-| 数据类型 | （多个） | [删除了多个媒体详细信息](https://github.com/adobe/xdm/pull/1739/files) 跨多种数据类型实现一致性。 |
+| 字段组 | [[!UICONTROL MediaAnalytics 交互详情]](https://github.com/adobe/xdm/pull/1736/files) | 将 `bitrateAverageBucket` 从 100 更改为 &quot;800-899&quot;。 |
+| 数据类型 | [[!UICONTROL Qoe 数据详细信息]](https://github.com/adobe/xdm/pull/1736/files) | 将 `bitrateAverageBucket` 数据类型更改为字符串。 |
+| 字段组 | [[!UICONTROL 区段成员关系详细信息]](https://github.com/adobe/xdm/pull/1735/files) | 添加到潜在客户配置文件类。 |
+| 架构 | [[!UICONTROL 计算属性系统架构]](https://github.com/adobe/xdm/pull/1735/files) | 在[!UICONTROL 计算属性系统架构]中添加了身份映射。 |
+| 数据类型 | [[!UICONTROL 内容交付网络]](https://github.com/adobe/xdm/pull/1733/files) | 在[!UICONTROL 会话详细信息]中添加了字段，以描述所使用的内容交付网络。 |
+| 扩展 | [[!UICONTROL Adobe 联合配置文件服务帐户合并扩展]](https://github.com/adobe/xdm/pull/1731/files) | 在 [!UICONTROL Adobe 联合配置文件服务帐户合并扩展]中添加了身份映射。 |
+| 数据类型 | [[!UICONTROL 订单]](https://github.com/adobe/xdm/pull/1730/files) | 在[!UICONTROL 订单]中添加了 `discountAmount`。这传达了常规订购价格和特价之间的差异。它适用于整个订单而不是单个产品。 |
+| 架构 | [[!UICONTROL AEP 卫生操作要求]](https://github.com/adobe/xdm/pull/1728/files) | 添加了 `targetServices` 字段，以提供处理数据卫生操作的服务的名称。 |
+| 数据类型 | [[!UICONTROL 运送]](https://github.com/adobe/xdm/pull/1727/files) | 在一种或多种产品的运送信息中添加了 `currencyCode`。它是 ISO 4217 字母货币代码，用于为产品定价。 |
+| 数据类型 | [[!UICONTROL 应用程序]](https://github.com/adobe/xdm/pull/1726/files) | 添加 `language` 字段是为了向应用程序提供用户的语言、地理位置或文化偏好设置。 |
+| 扩展 | [[!UICONTROL AJO 实体字段]](https://github.com/adobe/xdm/pull/1746/files) | 添加了 [!UICONTROL AJO 时间戳实体]，以指示上次修改消息的时间。 |
+| 数据类型 | （多种） | 在若干数据类型中[删除了若干媒体详细信息](https://github.com/adobe/xdm/pull/1739/files)以保持一致性。 |
 
 {style="table-layout:auto"}
 
-有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md)
+有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform 数据湖中的数据。您可以加入数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform 数据湖中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户配置文件。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 内联模板 | 查询服务现在支持使用引用SQL中其他模板的模板。 通过在查询中利用内联模板来减少工作量并避免出现错误。您可以重复使用语句或条件，并引用嵌套模板以提升 SQL 的灵活性。可存储为模板的查询大小或可从原始查询引用的模板数量没有限制。若要了解更多信息，请阅读[内联模板指南](../../query-service/essential-concepts/inline-templates.md)。 |
-| 计划的查询用户界面更新 | 使用，从UI中的某个位置管理所有计划查询 [[!UICONTROL “计划查询”选项卡]](../../query-service/ui/monitor-queries.md#inline-actions). [!UICONTROL 计划查询] UI 得到了改进，其中添加了内联查询操作和新增了查询状态列。最近添加的功能包括启用、禁用和删除计划，或直接从[!UICONTROL 计划查询]视图订阅即将运行的查询的提醒。 <p>[!UICONTROL 计划查询]视图中突出显示的![内联操作。[!UICONTROL 计划查询]视图中突出显示的](../../query-service/images/ui/monitor-queries/disable-inline.png "内联操作。"){width="100" zoomable="yes"}</p> |
+| 内联模板 | 查询服务现在支持使用引用 SQL 中其他模板的模板。通过在查询中利用内联模板来减少工作量并避免出现错误。您可以重复使用语句或条件，并引用嵌套模板以提升 SQL 的灵活性。可存储为模板的查询大小或可从原始查询引用的模板数量没有限制。若要了解更多信息，请阅读[内联模板指南](../../query-service/essential-concepts/inline-templates.md)。 |
+| 计划查询 UI 更新 | 使用[[!UICONTROL 计划查询选项卡]](../../query-service/ui/monitor-queries.md#inline-actions)从 UI 中的一个位置管理所有计划查询。[!UICONTROL 计划查询] UI 得到了改进，其中添加了内联查询操作和新增了查询状态列。最近添加的功能包括启用、禁用和删除计划，或直接从[!UICONTROL 计划查询]视图订阅即将运行的查询的提醒。 <p>[!UICONTROL 计划查询]视图中突出显示的![内联操作。](../../query-service/images/ui/monitor-queries/disable-inline.png "[!UICONTROL 计划查询]视图中突出显示的内联操作。"){width="100" zoomable="yes"}</p> |
 
 {style="table-layout:auto"}
 
-有关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
 
 ## 源 {#sources}
 

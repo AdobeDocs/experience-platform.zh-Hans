@@ -7,7 +7,7 @@ feature: Privacy
 source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
 workflow-type: tm+mt
 source-wordcount: '93'
-ht-degree: 45%
+ht-degree: 92%
 
 ---
 
@@ -15,24 +15,24 @@ ht-degree: 45%
 # Adobe Experience Platform Privacy Service {#privacy}
 
 * [Privacy Service 概述](./home.md)
-* [管理Privacy Service的权限](./permissions.md)
-* [Privacy Service和Experience Cloud应用程序](./experience-cloud-apps.md)
+* [管理 Privacy Service 权限](./permissions.md)
+* [Privacy Service 和 Experience Cloud 应用程序](./experience-cloud-apps.md)
 * [隐私请求的身份数据](./identity-data.md)
-* [隐私JS库概述](./js-library.md)
-* PRIVACY SERVICEAPI {#api}
+* [隐私 JS 库概述](./js-library.md)
+* Privacy Service API {#api}
    * [概述](./api/overview.md)
    * [身份验证和访问Privacy ServiceAPI](./api/getting-started.md)
-   * [隐私作业](./api/privacy-jobs.md)
+   * [隐私任务](./api/privacy-jobs.md)
    * [同意](./api/consent.md)
    * [附录](./api/appendix.md)
-* PRIVACY SERVICEUI {#ui}
+* Privacy Service UI {#ui}
    * [概述](./ui/overview.md)
-   * [管理隐私作业](./ui/user-guide.md)
-* [订阅隐私事件](./privacy-events.md)
+   * [管理隐私任务](./ui/user-guide.md)
+* [订阅隐私活动](./privacy-events.md)
 * 隐私法规 {#regulations}
    * [概述](./regulations/overview.md)
    * [常见问题解答](./regulations/faq.md)
    * [术语](./regulations/terminology.md)
 * [疑难解答指南](./troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/privacy-service/)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/privacy-service/)
 * [发行说明](./release-notes.md)
