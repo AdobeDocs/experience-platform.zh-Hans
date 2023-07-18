@@ -2,7 +2,7 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 091d5440d7346861b7c882fa0a17bd03d528e438
+source-git-commit: 47cd73e45ac618a8a84aa3c47b91d5e2a107e7f4
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 1%
@@ -51,9 +51,9 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 在Target中创建受众时，以下值可用作自定义参数：
 
-* `xdm.marketing.campaignGroup`
-* `xdm.marketing.campaignName`
-* `xdm.marketing.trackingCode`
+* `marketing.campaignGroup`
+* `marketing.campaignName`
+* `marketing.trackingCode`
 
 ## Target配置文件更新 {#profile-update}
 
