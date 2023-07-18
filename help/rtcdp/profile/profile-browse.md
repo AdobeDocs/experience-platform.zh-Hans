@@ -3,7 +3,7 @@ keywords: 查看配置文件rtcdp；rtcdp配置文件视图；rtcdp配置文件
 title: 在Real-time Customer Data Platform中浏览配置文件
 description: 通过Adobe Real-time Customer Data Platform，您可以使用Adobe Experience Platform用户界面浏览实时客户档案数据。
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '535'
 ht-degree: 0%
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 由于各个用户档案是根据不同来源带入系统的数据进行汇总的，因此每个用户档案都成为一个可操作的带有时间戳的帐户，说明了您的客户与您的品牌每次互动。
 
-在Adobe Experience Platform用户界面中，您可以查看这些只读配置文件，并查看有关每个客户的重要信息，包括他们的偏好设置、过去的事件、交互和个人所属的区段。
+在Adobe Experience Platform用户界面中，您可以查看这些只读配置文件，并查看有关每个客户的重要信息，包括他们的偏好、过去的事件、交互和个人所属的受众。
 
 Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅 [Real-time Customer Profile用户指南](../../profile/ui/user-guide.md).
 
 ## Real-Time CDP B2B版本的配置文件增强功能
 
-除了Adobe Experience Platform支持的配置文件浏览功能外，Real-Time CDP B2B版用户还可以在以下位置访问客户配置文件中的B2B属性和事件： [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，而这些区段显示在客户的 [!UICONTROL 区段成员资格] 选项卡中填充非B2B区段。
+除了Adobe Experience Platform支持的配置文件浏览功能外，Real-Time CDP B2B版用户还可以在以下位置访问客户配置文件中的B2B属性和事件： [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，使这些受众出现在客户的 [!UICONTROL 受众会员资格] 选项卡中的非B2B受众。
 
 Real-Time CDP， B2B版本还允许您浏览 [!UICONTROL 帐户]， [!UICONTROL 机会]、和 [!UICONTROL 源记录] 从与单个客户关联的企业源中。
 

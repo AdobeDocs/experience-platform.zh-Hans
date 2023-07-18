@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: Real-Time Customer Profile API指南
 description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '961'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 计算属性是用于将事件级数据聚合到配置文件级属性的函数。 这些函数是自动计算的，以便可在分段、激活和个性化之间使用。
 
-每个计算属性都包含一个表达式（或“规则”），该表达式评估传入的数据并将结果值存储在配置文件属性中。 这些计算可帮助您轻松回答与生命周期购买价值、购买间隔时间或应用程序打开次数相关的问题，而无需您在每次需要信息时手动执行复杂的计算。 然后，可以在配置文件中查看这些计算属性值，用于创建区段，或通过多种不同的访问模式进行访问。
+每个计算属性都包含一个表达式（或“规则”），该表达式评估传入的数据并将结果值存储在配置文件属性中。 这些计算可帮助您轻松回答与生命周期购买价值、购买间隔时间或应用程序打开次数相关的问题，而无需您在每次需要信息时手动执行复杂的计算。 然后，可以在配置文件中查看这些计算属性值，用于创建受众，或通过多种不同的访问模式进行访问。
 
 可以使用创建、查看、编辑和删除计算属性 `ca/attributes/` 端点。 要了解如何使用计算属性，请参阅 [计算属性概述](../computed-attributes/overview.md). 对于API操作，请访问 [计算属性API端点指南](../computed-attributes/api.md).
 
@@ -42,7 +42,7 @@ Adobe Experience Platform通过在名为“边缘”的具有战略意义的服�
 
 ## 导出作业([!DNL Profile] export) {#profile-export}
 
-[!DNL Real-Time Customer Profile] 可将数据导出到数据集以供进一步处理，例如导出受众区段以供激活，或导出配置文件属性以供报告。 导出受众区段的作业是 [!DNL Adobe Experience Platform Segmentation Service] API，请参阅 [分段导出作业端点指南](../../profile/api/export-jobs.md) 了解更多信息。 有关如何创建和管理配置文件属性的导出作业的分步说明，请访问 [导出作业端点指南](export-jobs.md).
+[!DNL Real-Time Customer Profile] 可将数据导出到数据集以供进一步处理，例如导出受众以供激活或导出配置文件属性以供报告。 受众的导出作业是 [!DNL Adobe Experience Platform Segmentation Service] API，请参阅 [分段导出作业端点指南](../../profile/api/export-jobs.md) 了解更多信息。 有关如何创建和管理配置文件属性的导出作业的分步说明，请访问 [导出作业端点指南](export-jobs.md).
 
 ## 合并策略 {#merge-policies}
 

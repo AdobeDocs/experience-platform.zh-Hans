@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 体验事件过期时间
 description: 本文档提供了有关为Adobe Experience Platform数据集中的单个Experience事件配置过期时间的通用指南。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: bb2d0075b234ec750046e1f28cac07a58a9d7e72
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 0%
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## 对分段的影响
 
-您必须确保区段的回顾窗口在其依赖数据集的过期边界内，才能保持结果的准确性。 例如，如果您应用到期值为30天，并且有一个区段尝试查看最多45天前的数据，则生成的受众可能不准确。
+您必须确保受众的回顾窗口在其依赖数据集的到期边界内，以便保持结果的准确性。 例如，如果您应用到期值为30天，并且有一个受众尝试查看最多45天前的数据，则生成的受众可能不准确。
 
 因此，应尽可能为所有数据集保留相同的体验事件过期值，以避免分段逻辑中不同数据集上的不同过期值的影响。
 

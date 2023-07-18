@@ -4,9 +4,9 @@ title: 合并策略API端点
 type: Documentation
 description: 通过Adobe Experience Platform，您可以将多个源中的数据片段放在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Platform用来确定数据优先顺序的方式以及合并哪些数据以创建统一视图的规则。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '2468'
+source-wordcount: '2467'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 1%
 >
 >当您将新合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认值。
 
-要确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为在边缘上处于活动状态。 为了在边缘上激活区段（标记为边缘区段），该区段必须绑定到在边缘上标记为活动的合并策略。 如果区段为 **非** 绑定到在edge上标记为“活动”的合并策略，则该区段不会在edge上标记为“活动”，而是会标记为流区段。
+要确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为在边缘上处于活动状态。 为了在Edge上激活受众（标记为Edge受众），必须将其绑定到在Edge上标记为“活动”的合并策略。 如果受众为 **非** 与在edge上标记为“活动”的合并策略绑定，受众将不会在edge上标记为“活动”，并且将标记为流式受众。
 
 此外，每个组织只能具有 **一** 在Edge上处于活动状态的合并策略。 如果合并策略在Edge上处于活动状态，则它可用于Edge上的其他系统，例如Edge Profile、Edge Segmentation和Destinations on Edge。
 
@@ -761,6 +761,6 @@ curl -X DELETE \
 
 ## 后续步骤
 
-现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略调整Platform中客户配置文件的视图，以及从创建受众区段 [!DNL Real-Time Customer Profile] 数据。
+现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略调整Platform中客户配置文件的视图，以及从创建受众 [!DNL Real-Time Customer Profile] 数据。
 
-请查看 [Adobe Experience Platform分段服务文档](../../segmentation/home.md) 开始定义和使用区段。
+请查看 [Adobe Experience Platform分段服务文档](../../segmentation/home.md) 开始定义和使用受众。

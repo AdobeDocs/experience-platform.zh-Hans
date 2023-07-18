@@ -4,7 +4,7 @@ title: 实时客户配置文件故障排除指南
 type: Documentation
 description: 本文档提供有关实时客户个人资料的常见问题解答，以及有关使用Adobe Experience Platform处理个人资料数据时常见错误的疑难解答指南。
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 0%
@@ -47,13 +47,13 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 
 如果您知道要访问的配置文件实体的ID，则可以使用 `/entities` （配置文件访问）配置文件API中的端点以查找这些实体。 请参阅以下部分： [实体](./api/entities.md) 有关更多信息，请参阅开发人员指南。
 
-您还可以使用Adobe Experience Platform分段服务API来访问符合区段成员资格的客户的个人配置文件。 请参阅 [分段服务概述](../segmentation/home.md) 了解更多信息。
+您还可以使用Adobe Experience Platform分段服务API来访问符合受众成员资格的客户的个人配置文件。 请参阅 [分段服务概述](../segmentation/home.md) 了解更多信息。
 
 #### 使用UI
 
 在Experience PlatformUI中， **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 配置文件]** 工作区允许您查看配置文件总数并按其标识值搜索各个配置文件。 请参阅 [配置文件用户指南](./ui/user-guide.md) 了解更多信息。
 
-您还可以在 **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 区段]** 工作区。 选择区段后，将显示符合该区段资格的用户档案示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 请参阅 [分段UI概述](../segmentation/ui/overview.md) 了解更多信息。
+您还可以在 **[!UICONTROL 浏览]** 在中选项卡 **[!UICONTROL 受众]** 工作区。 选择受众后，将显示符合该受众条件的配置文件示例。 然后，您可以选择列出的任意配置文件以查看其详细信息。 请参阅 [分段UI概述](../segmentation/ui/overview.md) 了解更多信息。
 
 ## 错误代码
 

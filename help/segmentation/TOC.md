@@ -4,7 +4,7 @@ user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用Adobe Experience Platform生成的区段定义或外部源，从实时客户档案数据构建受众。
 feature: Segments
-source-git-commit: 0a3dbb49948278f4fd12737938ad00f2f7abb681
+source-git-commit: 4dbd20dd3ac596052a3390eb6d3731fac7095c0d
 workflow-type: tm+mt
 source-wordcount: '176'
 ht-degree: 23%
@@ -30,8 +30,8 @@ ht-degree: 23%
    - [流式客户细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
    - [概述](ui/overview.md)
+   - [受众仪表板](ui/audience-dashboard.md)
    - [受众构成](ui/audience-composition.md)
-   - [区段仪表板](ui/segment-dashboard.md)
    - [区段生成器](ui/segment-builder.md)
    - [边缘分段](ui/edge-segmentation.md)
    - [流式客户细分](ui/streaming-segmentation.md)

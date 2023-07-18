@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了直观的控件，用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 13492b90552d16334030792323956ea18ca928dc
+source-git-commit: b7da6f00426f8cd8e219bf6f8c8275ab3f6942ef
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1737'
 ht-degree: 0%
 
 ---
@@ -108,6 +108,64 @@ ht-degree: 0%
 
 ![此时将显示属性列表。](../images/ui/audience-composition/select-attribute-exclude.png)
 
+## [!UICONTROL 扩充] {#enrich-block}
+
+>[!IMPORTANT]
+>
+>此时，扩充属性可以 **仅限** 在下游Adobe Journey Optimizer场景中使用。
+
+此 **[!UICONTROL 扩充]** 块类型允许您使用数据集中的其他属性扩充受众。 您可以在个性化用例中使用这些属性。
+
+添加 **[!UICONTROL 扩充]** 块，选择 **+** 图标，后接 **[!UICONTROL 扩充]**.
+
+![此 [!UICONTROL 扩充] 选项。](../images/ui/audience-composition/add-enrich-block.png)
+
+此 **[!UICONTROL 扩充]** 块已添加。 选择此块后，有关扩充的详细信息将显示在右边栏中。 这包括块的标签和扩充数据集。
+
+要选择用于扩充受众的数据集，请选择 ![过滤器](../images/ui/audience-composition/filter-attribute.png) 图标。
+
+![过滤器按钮突出显示。 选择此项可引导您进入 [!UICONTROL 选择数据集] 弹出窗口。](../images/ui/audience-composition/enrich-select-dataset.png)
+
+此 **[!UICONTROL 选择数据集]** 弹出窗口即会出现。 选择要添加以进行扩充的数据集，然后 **[!UICONTROL 选择]** 以添加数据集进行扩充。
+
+![已选择选定的数据集。](../images/ui/audience-composition/enrich-dataset-selected.png)
+
+>[!IMPORTANT]
+>
+>选定的数据集 **必须** 符合以下条件：
+>
+>- 数据集 **必须** 属于记录类型。
+>   - 数据集 **无法** 属于事件类型、由系统生成或标记为配置文件。
+>- 数据集 **必须** 为1 GB或更小。
+
+此 **[!UICONTROL 扩充条件]** 部分现在显示在右边栏中。 在此部分中，您可以选择 **[!UICONTROL 源连接密钥]** 和 **[!UICONTROL 扩充数据集联接键]**，可让您将扩充数据集与尝试创建的受众链接。
+
+![此 [!UICONTROL 扩充条件] 区域将突出显示。](../images/ui/audience-composition/enrichment-criteria.png)
+
+要选择 **[!UICONTROL 源连接密钥]**，选择 ![过滤器](../images/ui/audience-composition/filter-attribute.png) 图标。
+
+![的过滤器图标 [!UICONTROL 源连接密钥] 高亮显示。](../images/ui/audience-composition/enrich-select-source-join-key.png)
+
+此 **[!UICONTROL 选择配置文件属性]** 弹出窗口即会出现。 选择要用作源连接键的配置文件属性，然后 **[!UICONTROL 选择]** 以选择该属性作为源连接键。
+
+![要用作源连接键的属性会突出显示。](../images/ui/audience-composition/enrich-select-profile-attribute.png)
+
+要选择 **[!UICONTROL 扩充数据集联接键]**，选择 ![过滤器](../images/ui/audience-composition/filter-attribute.png) 图标。
+
+![的过滤器图标 [!UICONTROL 扩充数据集联接键] 高亮显示。](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
+
+此 **[!UICONTROL 扩充属性]** 弹出窗口即会出现。 选择要用作扩充数据集联接键的属性，然后按一下 **[!UICONTROL 选择]** 以选择该属性作为扩充数据集联接键。
+
+![要用作扩充数据集联接键的属性会突出显示。](../images/ui/audience-composition/enrich-select-enrichment-dataset-attribute.png)
+
+现在，您已添加两个连接键， **[!UICONTROL 扩充属性]** 部分。 您现在可以添加要用于增强受众的属性。 要添加这些属性，请选择 **[!UICONTROL 添加属性]**.
+
+![此 [!UICONTROL 添加属性] 按钮高亮显示。](../images/ui/audience-composition/enrich-select-add-attribute.png)
+
+此 **[!UICONTROL 扩充属性]** 弹出窗口即会出现。 您可以从数据集中选择用于扩充受众的属性，然后依次选择 **[!UICONTROL 选择]** 以将属性添加到受众。
+
+![要添加的扩充属性会突出显示。](../images/ui/audience-composition/enrich-add-enrichment-attributes.png)
+
 <!-- ## [!UICONTROL Join] {#join-block}
 
 The **[!UICONTROL Join]** block type allows you to add in external audiences from datasets that have not yet been processed by Adobe Experience Platform.
@@ -161,6 +219,8 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 添加 **[!UICONTROL Split]** 块，选择 **+** 图标，后接 **[!UICONTROL Split]**.
 
 ![已选中“拆分”选项。](../images/ui/audience-composition/add-split-block.png)
+
+在拆分受众时，您可以按百分比拆分或按属性拆分。
 
 ### 按百分比拆分 {#split-percentage}
 

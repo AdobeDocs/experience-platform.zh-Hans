@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 预览示例状态（配置文件预览） API端点
 description: 通过Real-time Customer Profile API的预览示例状态端点，可预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，并生成显示数据集重叠、身份重叠和未拼合配置文件的报告。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '2873'
+source-wordcount: '2868'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform允许您从多个来源摄取客户数据，以便为�
 
 >[!NOTE]
 >
->在Adobe Experience Platform分段服务API中提供了一些估算和预览端点，利用这些端点，可查看有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用区段预览和估计端点的详细步骤，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)，的一部分 [!DNL Segmentation] API开发人员指南。
+>在Adobe Experience Platform分段服务API中提供了一些估算和预览端点，利用这些端点，可查看有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用预览和估计端点的详细步骤，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)，的一部分 [!DNL Segmentation] API开发人员指南。
 
 ## 快速入门
 
@@ -592,5 +592,5 @@ curl -X GET \
 
 ## 后续步骤
 
-现在，您已了解如何在配置文件存储中预览样本数据并对数据运行多个报告，您还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息有助于确保隔离区段中的预期受众。 要了解有关使用分段API处理区段预览和估计的更多信息，请访问 [预览和评估端点指南](../../segmentation/api/previews-and-estimates.md).
+现在，您已了解如何在配置文件存储中预览样本数据并对数据运行多个报告，您还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息有助于确保您隔离预期的受众。 要了解有关使用分段API处理预览和估计的更多信息，请访问 [预览和评估端点指南](../../segmentation/api/previews-and-estimates.md).
 

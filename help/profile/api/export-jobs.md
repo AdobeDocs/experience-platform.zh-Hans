@@ -4,16 +4,16 @@ title: 配置文件导出作业API端点
 type: Documentation
 description: Real-Time Customer Profile允许您通过整合来自多个来源的数据（包括属性数据和行为数据），在Adobe Experience Platform中构建单个客户视图。 然后，可将配置文件数据导出到数据集以供进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1518'
 ht-degree: 2%
 
 ---
 
 # 配置文件导出作业端点
 
-[!DNL Real-Time Customer Profile] 使您能够通过将来自多个来源的数据（包括属性数据和行为数据）整合在一起，为各个客户构建单个视图。 然后，可将配置文件数据导出到数据集以供进一步处理。 例如，以下各项中的受众区段： [!DNL Profile] 可导出数据以供激活，也可导出配置文件属性以供报告。
+[!DNL Real-Time Customer Profile] 使您能够通过将来自多个来源的数据（包括属性数据和行为数据）整合在一起，为各个客户构建单个视图。 然后，可将配置文件数据导出到数据集以供进一步处理。 例如， [!DNL Profile] 可通过创建受众导出数据以供激活，并可导出配置文件属性以供报告。
 
 本文档提供了有关使用创建和管理导出作业的分步说明 [配置文件API](https://www.adobe.com/go/profile-apis-en).
 
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 关键注意事项之一是数据集所基于的架构(`schemaRef.id` （在下面的API示例请求中）。 要导出用户档案数据，数据集必须基于 [!DNL XDM Individual Profile] 合并架构(`https://ns.adobe.com/xdm/context/profile__union`)。 合并架构是系统生成的只读架构，它聚合共享同一类的架构的字段。 在本例中，这就是 [!DNL XDM Individual Profile] 类。 有关合并视图架构的更多信息，请参阅 [模式组合基础知识指南中的合并部分](../../xdm/schema/composition.md#union).
 
-本教程中介绍的步骤概述了如何创建引用 [!DNL XDM Individual Profile] 合并架构使用 [!DNL Catalog] API。 您也可以使用 [!DNL Platform] 用于创建引用合并架构的数据集的用户界面。 有关使用UI的步骤，请参见 [此用于导出区段的UI教程](../../segmentation/tutorials/create-dataset-export-segment.md) 但在这里同样适用。 完成后，您可以返回本教程以继续执行以下步骤 [启动新的导出作业](#initiate).
+本教程中介绍的步骤概述了如何创建引用 [!DNL XDM Individual Profile] 合并架构使用 [!DNL Catalog] API。 您也可以使用 [!DNL Platform] 用于创建引用合并架构的数据集的用户界面。 有关使用UI的步骤，请参见 [此用于导出受众的UI教程](../../segmentation/tutorials/create-dataset-export-segment.md) 但在这里同样适用。 完成后，您可以返回本教程以继续执行以下步骤 [启动新的导出作业](#initiate).
 
 如果您已经有一个兼容的数据集并且知道其ID，则可以直接继续执行步骤 [启动新的导出作业](#initiate).
 
@@ -132,11 +132,11 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `fields` | *（可选）* 限制要包含在导出中的数据字段，使其仅包含在此参数中提供的字段。 省略此值将导致所有字段都包含在导出数据中。 |
-| `mergePolicy` | *（可选）* 指定用于管理导出数据的合并策略。 当有多个区段正在导出时包含此参数。 |
+| `mergePolicy` | *（可选）* 指定用于管理导出数据的合并策略。 当导出多个受众时，包含此参数。 |
 | `mergePolicy.id` | 合并策略的ID。 |
 | `mergePolicy.version` | 要使用的合并策略的特定版本。 省略此值将默认使用最新版本。 |
 | `additionalFields.eventList` | *（可选）* 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`eventList.fields`：控制要导出的字段。</li><li>`eventList.filter`：指定限制从关联对象中包括的结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`eventList.filter.fromIngestTimestamp`：将时间序列事件过滤为在提供的时间戳之后摄取的那些事件。 这不是事件时间本身，而是事件的摄取时间。</li></ul> |
-| `destination` | **（必需）** 导出数据的目标信息：<ul><li>`destination.datasetId`： **（必需）** 要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`： *（可选）* 一个布尔值，如果未提供，则默认为 `false`. 值 `false` 将所有区段ID导出到单个批次ID中。 值 `true` 将一个区段ID导出为一个批次ID。 请注意，将该值设置为 `true` 可能会影响批量导出性能。</li></ul> |
+| `destination` | **（必需）** 导出数据的目标信息：<ul><li>`destination.datasetId`： **（必需）** 要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`： *（可选）* 一个布尔值，如果未提供，则默认为 `false`. 值 `false` 将所有区段定义ID导出到单个批次ID中。 值 `true` 将一个区段定义ID导出为一个批次ID。 请注意，将该值设置为 `true` 可能会影响批量导出性能。</li></ul> |
 | `schema.name` | **（必需）** 与要导出数据的数据集关联的架构的名称。 |
 
 >[!NOTE]
@@ -494,6 +494,6 @@ curl -X POST \
   }
 ```
 
-### 导出区段
+### 导出受众
 
-您还可以使用导出作业端点导出受众区段，而不是 [!DNL Profile] 数据。 请参阅指南，网址为 [分段API中的导出作业](../../segmentation/api/export-jobs.md) 了解更多信息。
+您还可以使用导出作业端点导出受众，而不是 [!DNL Profile] 数据。 请参阅指南，网址为 [分段API中的导出作业](../../segmentation/api/export-jobs.md) 了解更多信息。

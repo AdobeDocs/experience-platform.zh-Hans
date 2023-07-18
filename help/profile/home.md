@@ -3,16 +3,16 @@ keywords: Experience Platform；个人资料；实时客户个人资料；故障
 title: Real-Time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道推动与其受众协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '1991'
-ht-degree: 0%
+source-wordcount: '1990'
+ht-degree: 1%
 
 ---
 
 # [!DNL Real-Time Customer Profile] 概述
 
-通过Adobe Experience Platform，无论客户在何处或何时与您的品牌互动，您都可以为其推动协调、一致且相关的体验。 替换为 [!DNL Real-Time Customer Profile]，您可以通过组合来自多个渠道（包括在线、离线、CRM和第三方）的数据来查看每个客户的整体视图。 [!DNL Profile] 允许您将客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。 此概述将帮助您了解的角色和用法 [!DNL Real-Time Customer Profile] 在 [!DNL Experience Platform].
+Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。替换为 [!DNL Real-Time Customer Profile]，您可以通过组合来自多个渠道（包括在线、离线、CRM和第三方）的数据来查看每个客户的整体视图。 [!DNL Profile] 允许您将客户数据整合到一个统一视图中，并提供每个客户交互的带时间戳的可操作帐户。 此概述将帮助您了解的角色和用法 [!DNL Real-Time Customer Profile] 在 [!DNL Experience Platform].
 
 ## [!DNL Profile] 在Experience Platform中
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ### 个人资料实体组合
 
-Real-time Customer Profile由一个称为 **主要实体**&#x200B;和各种支持实体。 在Experience Platform的上下文中，主要实体通常是 **配置文件实体**，由个人特征、行为和区段成员资格组成。 其他实体允许分段引擎利用用户档案的主要实体以外的数据，并且包括以下内容：
+Real-time Customer Profile由一个称为 **主要实体**&#x200B;和各种支持实体。 在Experience Platform的上下文中，主要实体通常是 **配置文件实体**，由个人特征、行为和受众成员资格组成。 其他实体允许分段引擎利用用户档案的主要实体以外的数据，并且包括以下内容：
 
 - **维度实体**：用于简化跨事件或配置文件记录共享的信息的数据建模过程的实体。 这也称为查找实体或分类实体。
 - **B2B实体**：描述用户档案与企业对企业的客户和机会关系的实体。
@@ -98,13 +98,13 @@ Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看�
 
 Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
 
-## 用户档案和区段
+## 个人资料和受众
 
-Adobe Experience Platform [!DNL Segmentation Service] 生成支持个人客户体验所需的受众。 创建受众区段后，该区段的ID会添加到所有符合条件的用户档案的区段成员资格列表中。 生成区段规则并将其应用于 [!DNL Real-Time Customer Profile] 数据使用RESTful API和区段生成器用户界面。 要了解有关分段的更多信息，请先阅读 [分段服务概述](../segmentation/home.md).
+Adobe Experience Platform [!DNL Segmentation Service] 生成支持个人客户体验所需的受众。 创建受众后，该受众的ID会添加到所有符合条件的用户档案的受众成员资格列表中。 生成区段规则并将其应用于 [!DNL Real-Time Customer Profile] 数据使用RESTful API和区段生成器用户界面。 要了解有关分段的更多信息，请先阅读 [分段服务概述](../segmentation/home.md).
 
 ### 流摄取和流分段
 
-实时输入可通过称为流式摄取的过程实现。 当配置文件和时序数据被摄取时， [!DNL Real-Time Customer Profile] 在将区段与现有数据合并并更新合并视图之前，通过称为流式客户细分的持续过程，自动决定从区段包含或排除该数据。 因此，您可以即时执行计算并做出决策，以便在客户与您的品牌互动时为他们提供经过增强、个性化的体验。 在摄取数据时，还会对其进行验证，以确保数据被正确摄取，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请从阅读 [数据摄取质量概述](../ingestion/quality/overview.md).
+实时输入可通过称为流式摄取的过程实现。 当配置文件和时序数据被摄取时， [!DNL Real-Time Customer Profile] 在将受众数据与现有数据合并并更新合并视图之前，通过称为流式客户细分的持续过程，自动决定包括或排除受众的数据。 因此，您可以即时执行计算并做出决策，以便在客户与您的品牌互动时为他们提供经过增强、个性化的体验。 在摄取数据时，还会对其进行验证，以确保数据被正确摄取，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请从阅读 [数据摄取质量概述](../ingestion/quality/overview.md).
 
 ## 边缘投影
 

@@ -4,9 +4,9 @@ title: Real-Time Customer Profile API快速入门
 type: Documentation
 description: 配置文件API快速入门指南概述了关键概念和您需要了解的基本功能，以便使用实时客户配置文件API端点对配置文件数据执行基本CRUD操作。
 exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 * [[!DNL Real-Time Customer Profile]](../home.md)：根据来自多个来源的汇总数据实时提供统一的客户用户档案。
 * [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：通过跨设备和系统桥接身份，更好地了解客户及其行为。
-* [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md)：用于从实时客户档案数据构建受众区段。
+* [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md)：用于根据实时客户档案数据构建受众。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：Platform用于组织客户体验数据的标准化框架。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 

@@ -3,7 +3,7 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: Real-Time Customer Profile用户界面指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档用作在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 98854811e57c621a1c8de9146231f54c96e37a5d
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '2008'
 ht-degree: 0%
@@ -134,7 +134,7 @@ ht-degree: 0%
 
 ![Details （详细信息）选项卡会突出显示。 将显示配置文件详细信息。](../images/user-guide/profile-detail.png)
 
-您可以通过选择另一个可用选项卡，查看与单个客户配置文件相关的附加信息。 这些选项卡包括属性、事件和区段成员资格选项卡，该选项卡显示配置文件当前符合条件的区段。
+您可以通过选择另一个可用选项卡，查看与单个客户配置文件相关的附加信息。 这些选项卡包括属性、事件和受众成员资格选项卡，该选项卡显示配置文件当前符合条件的受众。
 
 ### “属性”选项卡
 
@@ -152,13 +152,13 @@ ht-degree: 0%
 
 ![Events选项卡高亮显示。 此时会显示配置文件事件。](../images/user-guide/events.png)
 
-### “区段成员资格”选项卡
+### “受众成员资格”选项卡
 
-此 **[!UICONTROL 区段成员资格]** 选项卡显示一个列表，其中包含单个客户配置文件当前所属的区段的名称和描述。 当配置文件符合区段资格或自区段过期时，此列表会自动更新。 用户档案当前符合条件的区段总数将显示在选项卡的右侧。
+此 **[!UICONTROL 受众会员资格]** 选项卡显示一个列表，其中包含单个客户配置文件当前所属受众的名称和描述。 当配置文件符合受众资格或过期时，此列表会自动更新。 用户档案当前符合条件的受众总数将显示在选项卡的右侧。
 
 有关Experience Platform分段的更多信息，请参阅 [AdobeExperience Platform分段服务文档](../../segmentation/home.md).
 
-![区段成员资格选项卡会突出显示。 此时将显示用户档案区段成员资格详细信息。](../images/user-guide/segment-membership.png)
+![受众成员资格选项卡会突出显示。 此时会显示用户档案的受众成员资格详细信息。](../images/user-guide/segment-membership.png)
 
 ## 合并策略
 

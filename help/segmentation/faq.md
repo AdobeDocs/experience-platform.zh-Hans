@@ -1,9 +1,9 @@
 ---
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答。
-source-git-commit: 562af647e21e8f9b9af495849f085e10f258952a
+source-git-commit: 4dbd20dd3ac596052a3390eb6d3731fac7095c0d
 workflow-type: tm+mt
-source-wordcount: '984'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -74,8 +74,9 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 1. 您 **始终** 开始于 [!UICONTROL Audience] 块以选择您的开始活动。 您最多可以拥有 **一** [!UICONTROL Audience] 块。
 2. 您可以选择添加 [!UICONTROL 排除] 以下块： [!UICONTROL Audience] 块。
-3. 您可以选择添加 [!UICONTROL 排名] 或 [!UICONTROL Split] 块。 您可以 **仅限** 每个组合具有这些块之一。
-4. 您 **始终** 结尾是 [!UICONTROL 保存] 阻止以保存受众。
+3. 您可以选择添加 [!UICONTROL 扩充] 以下块： [!UICONTROL 排除] 块。
+4. 您可以选择添加 [!UICONTROL 排名] 或 [!UICONTROL Split] 块。 您可以 **仅限** 每个组合具有这些块之一。
+5. 您 **始终** 结尾是 [!UICONTROL 保存] 阻止以保存受众。
 
 有关使用受众构图的更多详细信息，请阅读 [受众组合UI指南](./ui/audience-composition.md).
 
@@ -91,7 +92,7 @@ Audience Portal和Audience Composition可供所有Real-Time CDP Prime和Ultimate
 
 ## 我是否可以在受众构成工作流中使用所有分段类型？
 
-是，受众构成工作流支持所有分段类型（批量分段、流式分段和边缘分段）。 但是，由于合成当前每天只运行一次，即使包含流评估或边缘评估的受众，结果也将基于执行合成时的受众成员资格。
+是，所有分段类型([批量分段、流式分段和边缘分段](./home.md#evaluate-segments))在受众构成工作流中受支持。 但是，由于合成当前每天只运行一次，即使包含流评估或边缘评估的受众，结果也将基于执行合成时的受众成员资格。
 
 ## 如何确认用户档案在受众中的成员资格？
 
