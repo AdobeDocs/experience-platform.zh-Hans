@@ -4,9 +4,9 @@ title: 激活概述
 type: Tutorial
 description: 了解如何将Adobe Experience Platform中的受众激活到各种类型的目标。
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 771801b52b7df7029e1c6e7496dcfb563463d06e
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '325'
 ht-degree: 1%
 
 ---
@@ -49,9 +49,9 @@ Adobe Experience Platform支持范围广泛的目标。 受众激活工作流因
    * [将受众数据激活到流配置文件导出目标](activate-streaming-profile-destinations.md)
    * [将受众数据激活到批量配置文件导出目标](activate-batch-profile-destinations.md)
 
-### 从audiencedails页面激活受众 {#activate-segment-details}
+### 从受众详细信息页面激活受众 {#activate-audience-details}
 
-您可以从audiencedetails页面将受众激活到目标。 参见 [区段详细信息](../../segmentation/ui/overview.md#segment-details) 了解更多信息。
+您可以从受众详细信息页面将受众激活到目标。 参见 [受众详细信息](../../segmentation/ui/overview.md#audience-details) 了解更多信息。
 
 根据所选目标，请按照以下文章中描述的步骤完成激活工作流：
 
