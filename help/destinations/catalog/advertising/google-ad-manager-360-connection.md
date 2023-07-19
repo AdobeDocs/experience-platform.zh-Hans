@@ -5,7 +5,7 @@ exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1030'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -99,8 +99,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
->title="将受众ID附加到受众名称"
->abstract="选择此选项可使Google Ad Manager 360中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`"
+>title="将受众 ID 附加到受众名称"
+>abstract="选择此选项可让 Google Ad Manager 360 中的受众名称包含来自 Experience Platform 的受众 ID，如下所示：`Audience Name (Audience ID)`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 

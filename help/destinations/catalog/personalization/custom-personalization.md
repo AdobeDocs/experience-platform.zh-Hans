@@ -6,7 +6,7 @@ exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
 source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
 workflow-type: tm+mt
 source-wordcount: '935'
-ht-degree: 6%
+ht-degree: 8%
 
 ---
 
@@ -67,7 +67,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流 ID"
->abstract="此选项确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
+>abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=zh-Hans" text="了解如何配置数据流"
 
 >[!IMPORTANT]

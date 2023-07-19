@@ -6,7 +6,7 @@ exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
 source-git-commit: 04c0b19bf4ffbc0719a89f710570cc667ca5e482
 workflow-type: tm+mt
 source-wordcount: '3606'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -50,17 +50,17 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_churncolumnname"
 >title="流失率"
->abstract="流失率表示与上次运行区段作业相比，受众内发生更改的用户档案的百分比。"
+>abstract="流失率表示与上次运行区段作业时相比，受众内正在更改的配置文件的百分比。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_evaluationmethodcolumnname"
 >title="评估方法"
->abstract="受众的评估方法包括批处理、流式传输和边缘。"
+>abstract="受众的评估方法包括批量评估、流式评估和边缘评估。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_addallsegmentstoschedule"
 >title="将所有受众添加到计划"
->abstract="启用可在每日计划更新中包含使用批次分段评估的所有受众。 禁用可从计划更新中删除所有受众。"
+>abstract="启用以将使用批次处理分段评估的所有受众包括在每日计划更新中。禁用此项可从计划更新中删除所有受众。"
 
 选择 **[!UICONTROL 浏览]** 选项卡，查看贵组织的所有受众的列表。
 

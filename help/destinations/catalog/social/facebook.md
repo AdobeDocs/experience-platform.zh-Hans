@@ -178,7 +178,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="受众来源"
->abstract="选择最初收集受众中客户数据的方式。 当用户被区段定位时，数据将显示在 Facebook 中"
+>abstract="选择最初收集受众中的客户数据的方式。当用户被区段定位时，数据将显示在 Facebook 中"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"

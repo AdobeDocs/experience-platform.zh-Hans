@@ -6,7 +6,7 @@ exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
 source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
 source-wordcount: '992'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -89,8 +89,8 @@ ht-degree: 2%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam_appendSegmentID"
->title="将受众ID附加到受众名称"
->abstract="选择此选项可使Google Ad Manager中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`"
+>title="将受众 ID 附加到受众名称"
+>abstract="选择此选项可让 Google Ad Manager 中的受众名称包含来自 Experience Platform 的受众 ID，如下所示：`Audience Name (Audience ID)`"
 
 While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
 

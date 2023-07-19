@@ -7,7 +7,7 @@ exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
 source-wordcount: '3961'
-ht-degree: 7%
+ht-degree: 10%
 
 ---
 
@@ -87,7 +87,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择 **导出完整文件** 以导出符合受众条件的所有用户档案的完整快照。 选择 **导出增量文件** 以仅导出自上次导出以来符合受众条件的用户档案。 <br> 第一个增量文件导出包括符合受众条件的所有用户档案，充当回填。 未来的增量文件仅包括自第一次增量文件导出以来符合受众条件的配置文件。"
+>abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有配置文件的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的配置文件。<br>第一个增量文件导出包括符合受众资格的所有配置文件，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的配置文件。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
@@ -170,7 +170,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
 >title="配置文件名"
->abstract="对于基于文件的目标，将为每个受众生成一个唯一的文件名。 使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 对于大多数目标，默认文件名由目标名称、受众ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名，以区分不同的促销活动，或者将数据导出时间附加到文件。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
@@ -247,7 +247,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
 >title="关于强制属性"
->abstract="选择所有导出的配置文件应包含的 XDM 架构属性。不会将没有强制密钥的配置文件导出到目标。未选择强制键会导出所有符合条件的配置文件，而不管其属性如何。"
+>abstract="选择所有导出的配置文件应包含的 XDM 架构属性。不会将没有强制密钥的配置文件导出到目标。不选择强制密钥会导出所有合格的配置文件，而不管其属性如何。"
 
 强制属性是用户启用的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -477,7 +477,7 @@ Adobe建议选择身份命名空间，例如 [!DNL CRM ID] 或电子邮件地址
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exclude_enrichment_attributes"
 >title="排除扩充属性"
->abstract="启用此选项可将配置文件从选定的自定义上传受众导出到您的目标，同时排除其所有属性。"
+>abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-enrichment-attributes" text="请参阅文档以了解详情"
 
 >[!IMPORTANT]

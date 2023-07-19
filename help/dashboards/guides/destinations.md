@@ -7,7 +7,7 @@ exl-id: 6a34a796-24a1-450a-af39-60113928873e
 source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
 source-wordcount: '3031'
-ht-degree: 8%
+ht-degree: 20%
 
 ---
 
@@ -67,13 +67,13 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 
 要详细了解每个可用的标准构件，请从以下列表中选择构件的名称：
 
-* [[!UICONTROL 最常用目标]](#most-used-destinations)
+* [[!UICONTROL 最常用的目标]](#most-used-destinations)
 * [[!UICONTROL 最近创建的目标]](#recently-created-destinations)
 * [[!UICONTROL 最近激活的受众]](#recently-activated-audiences)
-* [[!UICONTROL 按目标列出的最近激活的受众]](#recently-activated-audiences-by-destination)
+* [[!UICONTROL 最近激活的受众（按目标）]](#recently-activated-audiences-by-destination)
 * [[!UICONTROL 受众规模趋势]](#audience-size-trend)
-* [[!UICONTROL 按身份显示的未映射受众]](#unmapped-audiences-by-identity)
-* [[!UICONTROL 按身份映射的受众]](#mapped-audiences-by-identity)
+* [[!UICONTROL 未映射的受众（按标识）]](#unmapped-audiences-by-identity)
+* [[!UICONTROL 映射的受众（按标识）]](#mapped-audiences-by-identity)
 * [[!UICONTROL 普通受众]](#common-audiences)
 * [[!UICONTROL 映射的受众]](#mapped-audiences)
 * [[!UICONTROL 映射的受众健康]](#mapped-audience-health)
@@ -83,12 +83,12 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 * [[!UICONTROL 所有目标中的已激活受众]](#activated-audiences-across-all-destinations)
 * [[!UICONTROL 激活的受众]](#activated-audiences)
 
-### [!UICONTROL 最常用目标] {#most-used-destinations}
+### [!UICONTROL 最常用的目标] {#most-used-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mostuseddestinations"
->title="最常用目标"
->abstract="此构件可按映射的受众数量显示贵组织最活跃的目标。 这些数字在上次拍摄快照时是准确的。此排名提供了对当前使用最多的目标的洞察，并突出显示了可能未被充分利用的目标。"
+>title="最常用的目标"
+>abstract="此构件按映射的受众数显示您组织的最活跃的目标。这些数字在上次拍摄快照时是准确的。此排名提供了对当前使用最多的目标的洞察，并突出显示了可能未被充分利用的目标。"
 
 此 **[!UICONTROL 最常用的目标]** 构件按映射受众的数量显示您组织的顶级目标（截至最后一个快照）。 此排名可让您深入了解哪些目标正在被利用，同时还可能会显示那些可能未被充分利用的目标。
 
@@ -122,9 +122,9 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegments"
 >title="最近激活的受众"
->abstract="此构件提供最近映射到目标的受众列表。 此列表提供系统中正在使用的受众和目标的快照，并有助于对任何错误的映射进行故障诊断。"
+>abstract="此构件提供最近映射到目标的受众的列表。此列表提供系统中正使用的受众和目标的快照，并且可以帮助纠正任何错误的映射。"
 
-此 **[!UICONTROL 最近激活的受众]** 构件提供最近映射到目标的受众列表。 此列表提供系统中正在使用的受众和目标的快照，并有助于对任何错误的映射进行故障诊断。
+此 **[!UICONTROL 最近激活的受众]** 构件提供最近映射到目标的受众列表。 此列表提供系统中正使用的受众和目标的快照，并且可以帮助纠正任何错误的映射。
 
 此 [!UICONTROL 已更新] 显示的日期显示上次将受众激活到目标的时间，并且对于上次每日快照而言是正确的。 换言之，如果您将受众激活到目标，则更新的日期将在拍摄下一个快照之后才会更改。
 
@@ -134,12 +134,12 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 
 ![突出显示最近激活的受众小部件的目标仪表板的概述选项卡。](../images/destinations/recently-activated-audiences.png)
 
-### [!UICONTROL 按目标列出的最近激活的受众] {#recently-activated-audiences-by-destination}
+### [!UICONTROL 最近激活的受众（按目标）] {#recently-activated-audiences-by-destination}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegmentsbydestination"
->title="按目标列出的最近激活的受众"
->abstract="此构件根据在概述下拉列表中选择的目标，以降序显示最近激活的前5个受众。"
+>title="最近激活的受众（按目标）"
+>abstract="此构件根据在概述下拉列表中选择的目标，以降序顺序显示最近激活的前五个受众。"
 
 此 **[!UICONTROL 按目标列出的最近激活的受众]** 构件根据在概述下拉列表中选定的目标，以降序显示最近激活的前5个受众。 它类似于 [!UICONTROL 最近激活的受众] 构件，但显示的数据 **仅限** 应用于所选目标。
 
@@ -156,7 +156,7 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_audiencesizetrend"
 >title="受众规模趋势"
->abstract="此构件说明了受众中包含的每天发送到目标帐户的用户档案数。 可使用第一个下拉菜单调整受众趋势的时段。第二个小组件下拉菜单选择要分析的受众。 从概述下拉列表中选择目标。"
+>abstract="此构件说明了每天发送到目标帐户的受众中包含的配置文件数量。可使用第一个下拉菜单调整受众趋势的时段。可使用第二个构件下拉菜单选择要分析的受众。从概述下拉列表中选择目标。"
 
 此 **[!UICONTROL 受众规模趋势]** 构件描述一段时间内映射到目标帐户的受众的个人资料计数之间的关系。 该构件使用折线图来说明受众中包含的每天发送到目标帐户的用户档案数。
 
@@ -170,12 +170,12 @@ Adobe提供了多个标准构件，可用于可视化与目的地相关的各种
 
 ![受众规模趋势小部件的自动字幕对话框。](../images/destinations/audience-size-trend-captions.png)
 
-### [!UICONTROL 按身份显示的未映射受众] {#unmapped-audiences-by-identity}
+### [!UICONTROL 未映射的受众（按标识）] {#unmapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_unmappedsegmentsbyidentity"
->title="按身份显示的未映射受众"
->abstract="此构件列出了前五项 **未映射** 按给定目标和身份的降序身份计数排名的受众。 构件下拉列表中列出的筛选条件 ID 因概述页面顶部选择的目标帐户而异。"
+>title="未映射的受众（按标识）"
+>abstract="此构件列出了前五个&#x200B;**未映射的**&#x200B;受众，它们按给定目标和标识的标识计数以降序顺序排名。构件下拉列表中列出的筛选条件 ID 因概述页面顶部选择的目标帐户而异。"
 
 此 **[!UICONTROL 按身份显示的未映射受众]** 构件列出了前五项 **未映射** 按给定目标和身份的降序身份计数排名的受众。 它突出显示了对根据所选ID映射到所选目标帐户最有帮助的受众。
 
@@ -187,14 +187,14 @@ identities列计算受众中可映射到在构件ID下拉列表中选择ID的源
 
 请参阅的先决条件部分 [所用术语的定义](#prerequisites) 在此描述中。
 
-### [!UICONTROL 按身份映射的受众] {#mapped-audiences-by-identity}
+### [!UICONTROL 映射的受众（按标识）] {#mapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedsegmentsbyidentity"
->title="按身份映射的受众"
->abstract="此构件提供前五个列表 **已映射** 受众。 此列表按照受众中包含的源ID数量从高到低排序。 从构件标题下方的下拉菜单中选择要计算的目标 ID。构件下拉列表中可用的目标 ID 取决于在概述仪表板顶部选择的目标。"
+>title="映射的受众（按标识）"
+>abstract="此构件提供前五个&#x200B;**映射的**&#x200B;受众的列表。此列表根据受众中包含的源 ID 的数量按从高到低的顺序进行排序。从构件标题下方的下拉菜单中选择要计算的目标 ID。构件下拉列表中可用的目标 ID 取决于在概述仪表板顶部选择的目标。"
 
-此构件提供前五个列表 **已映射** 受众。 此列表按照受众中包含的源ID数量从高到低排序。 从构件标题下方的下拉菜单中选择要计算的目标 ID。从小组件中的下拉列表中可用的目标ID将根据在概述功能板顶部选择的目标帐户过滤器而更改。
+此构件提供前五个&#x200B;**映射的**&#x200B;受众的列表。此列表根据受众中包含的源 ID 的数量按从高到低的顺序进行排序。从构件标题下方的下拉菜单中选择要计算的目标 ID。从小组件中的下拉列表中可用的目标ID将根据在概述功能板顶部选择的目标帐户过滤器而更改。
 
 ![按标识划分的映射受众构件。](../images/destinations/mapped-audiences-by-identity.png)
 
@@ -205,9 +205,9 @@ identities列计算受众中可映射到在构件ID下拉列表中选择ID的源
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_commonaudiences"
 >title="普通受众"
->abstract="此构件提供在页面顶部选择的目标帐户中激活的前五个受众的列表，以及在构件下拉列表中选定的目标受众的列表。 受众列表是根据最近激活受众的时间顺序排列的。 顶部会显示最近激活的受众。"
+>abstract="此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个受众的列表。受众列表将根据受众的最近激活时间进行排序。最近激活的受众显示在顶部。"
 
-此 **[!UICONTROL 常见受众]** 小组件提供了在页面顶部选择的目标帐户中激活的前五个受众列表，以及在小组件下拉列表中选定的目标受众列表。 受众列表是根据最近激活受众的时间顺序排列的。 顶部会显示最近激活的受众。
+此 **[!UICONTROL 常见受众]** 小组件提供了在页面顶部选择的目标帐户中激活的前五个受众列表，以及在小组件下拉列表中选定的目标受众列表。 受众列表将根据受众的最近激活时间进行排序。最近激活的受众显示在顶部。
 
 此 [!UICONTROL 受众规模] 列提供每个所列受众的个人资料总数。
 
@@ -226,7 +226,7 @@ identities列计算受众中可映射到在构件ID下拉列表中选择ID的源
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedaudiencehealth"
 >title="映射的受众健康"
->abstract="此构件提供最多20个映射受众的列表，这些受众的总配置文件计数与映射到该目标的30天平均受众规模至少相差一个标准差系数。 它为受众规模与过去 30 天平均值的离散度提供了计算量度。受众规模按从高到低的顺序进行排序。"
+>abstract="此构件提供一个包含最多 20 个映射的受众的列表，这些受众的配置文件总数与映射到该目标的 30 天平均受众规模之间至少有一个标准差。它为受众规模与过去 30 天平均值的离散度提供了计算量度。受众规模按从高到低的顺序进行排序。"
 
 该小组件提供最多20个映射受众的列表，截至上次每日快照时，这些受众的总配置文件计数与映射到该目标的30天平均受众规模至少相差一个标准差系数。
 

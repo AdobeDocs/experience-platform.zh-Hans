@@ -7,7 +7,7 @@ exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
 source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
 source-wordcount: '3393'
-ht-degree: 8%
+ht-degree: 10%
 
 ---
 
@@ -256,7 +256,7 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofiles"
 >title="未分段的配置文件"
->abstract="此构件提供未附加到任何受众的所有配置文件总数，并代表在您的组织内激活配置文件的机会。"
+>abstract="此小部件提供未附加到任何受众的所有配置文件的总数，并表示在整个组织中激活配置文件的机会。"
 
 此 [!UICONTROL 未分段的配置文件] 构件提供未附加到任何受众的所有用户档案的总数。 生成的数字截至上次快照时准确，表示在整个组织内激活用户档案的机会。 它还表示有机会删除未提供足够ROI的用户档案。
 
@@ -267,7 +267,7 @@ Adobe提供了多个标准构件，您可以使用这些构件可视化与配置
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="未分段的配置文件趋势"
->abstract="此构件为给定时间段内未附加到任何受众的用户档案数量提供折线图插图。 未附加到受众的用户档案趋势可以在30天、90天和12个月的时段内可视化。"
+>abstract="此小部件为给定时间段内未附加到任何受众的配置文件数量提供了一个折线图说明。可以在 30 天、90 天和 12 个月的时间段内查看未附加到任何受众的配置文件的趋势。"
 
 此 [!UICONTROL 未分段配置文件变化趋势] 构件使用折线图来说明自上次每日快照以来添加的未附加到任何受众的配置文件数。 未附加到任何受众的用户档案的变化趋势可以在30天、90天和12个月的时段内可视化。 从小部件中的下拉菜单中选择时间段。 轮廓计数反映在y轴上，时间反映在x轴上。
 

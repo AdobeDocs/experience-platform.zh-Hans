@@ -7,7 +7,7 @@ exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
 source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
 source-wordcount: '1029'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 
@@ -103,7 +103,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_enddate"
 >title="结束日期"
->abstract="无法为受众计划添加结束日期。"
+>abstract="无法添加受众计划的结束日期。"
 
 默认情况下， **[!UICONTROL 受众计划]** 页面仅显示您在当前激活流程中选择的新选定受众。
 
