@@ -5,7 +5,7 @@ title: Real-Time Customer Profile中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如许多隐私法规所述。 本文档介绍了与处理Real-time Customer Profile的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 42e59ba1c7b1980d6633ced264673afcf8d80810
+source-git-commit: fb2686eb44bbf7581120f40b241bead0e61baee9
 workflow-type: tm+mt
 source-wordcount: '1612'
 ht-degree: 0%
@@ -189,7 +189,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->隐私删除请求不是即时的，并且可能会因涉及的服务和其他影响因素（例如地理位置）而异。 完成隐私作业的时间范围可能介于15天到45天之间，但无法保证。
+>隐私删除请求不是即时的，并且可能会因涉及的服务和其他影响因素（例如地理位置）而异。 完成隐私作业的时间范围可以是15到45天，但是不能保证。
 
 根据您是否还包含Identity Service (`identity`)和数据湖(`aepDataLake`)作为隐私请求中的产品(`ProfileService`)，则与用户档案相关的不同数据集会在不同的时间从系统中删除：
 
@@ -213,7 +213,8 @@ curl -X POST \
 ### 合并策略限制 {#merge-policy-limitations}
 
 Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼接的合并策略的数据。 如果您使用UI来确认是否正在处理您的隐私请求，请确保您使用的策略具有 **[!DNL None]** 作为 [!UICONTROL ID拼接] 类型。 换言之，您不能在以下情况下使用合并策略： [!UICONTROL ID拼接] 设置为 [!UICONTROL 专用图].
->![合并策略的ID拼接设置为“无”](./images/privacy/no-id-stitch.png)
+>>
+![合并策略的ID拼接设置为“无”](./images/privacy/no-id-stitch.png)
 >
 ## 后续步骤
 
