@@ -4,10 +4,10 @@ solution: Real-time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: 8f885181f8ec06f719e4a82b2cb5f13641f65607
-workflow-type: ht
-source-wordcount: '223'
-ht-degree: 100%
+source-git-commit: 1dea63c4efc4d8effed56c0cf97a35594f92a8d0
+workflow-type: tm+mt
+source-wordcount: '231'
+ht-degree: 96%
 
 ---
 
@@ -67,5 +67,6 @@ ht-degree: 100%
 * 用例 {#use-cases}
    * 合作伙伴数据用例{#partner-data}
       * [补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
+      * [通过潜在客户支持吸引和赢取新客户](/help/rtcdp/partner-data/prospecting.md)
 * [Experience Platform 发行说明](https://www.adobe.com/go/platform-release-notes_cn)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary_cn)

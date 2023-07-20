@@ -4,9 +4,9 @@ description: 了解如何使用可信赖的数据合作伙伴的属性来补充�
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 019ebe0c1cf11a7fb30dced1e10b511bab9b5100
-workflow-type: ht
-source-wordcount: '1082'
+source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
+workflow-type: tm+mt
+source-wordcount: '1083'
 ht-degree: 100%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 100%
 
 使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 
-![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment-use-case-overview.png)
+![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
 
 ## 先决条件和规划 {#prerequisites-and-planning}
 
@@ -36,7 +36,7 @@ ht-degree: 100%
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 
-![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment-use-case-steps.png)
+![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-steps.png)
 
 1. 作为&#x200B;**客户**，您许可&#x200B;**数据合作伙伴**&#x200B;的属性。
 2. 作为&#x200B;**客户**，您可以扩展您的配置文件数据和治理模型，以适应&#x200B;**合作伙伴**&#x200B;提供的属性。
