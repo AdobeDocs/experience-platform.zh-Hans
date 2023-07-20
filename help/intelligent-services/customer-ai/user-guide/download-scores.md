@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；下载分数；客户人工智能；热门主题；导出；导出；客户人工智能下载；客户人工智能分数
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: 在Customer AI中下载分数
 description: 客户人工智能允许您以Parquet文件格式下载分数。
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 2%

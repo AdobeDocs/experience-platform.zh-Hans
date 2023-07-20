@@ -1,10 +1,10 @@
 ---
 product: adobe experience platform
-solution: Real-time Customer Data Platform
+solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: 1dea63c4efc4d8effed56c0cf97a35594f92a8d0
+source-git-commit: 7dfbf7c1d9d12e8e1fb654cf357d31a91611a18e
 workflow-type: tm+mt
 source-wordcount: '231'
 ht-degree: 96%

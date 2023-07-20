@@ -1,15 +1,15 @@
 ---
 keywords: Experience Platform；快速入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；数据要求
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Customer AI中的数据要求
 topic-legacy: Getting started
 description: 进一步了解客户人工智能使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 5f7b602b68f5cbf4b1f4b08603757b0956e36408
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '2484'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -62,7 +62,7 @@ ht-degree: 2%
 
 | 搜索词 | 定义 |
 | --- | --- |
-| [体验数据模型(XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Platform使用XDM系统以特定方式组织数据，从而更易于用于Platform服务。 |
+| [Experience Data Model (XDM)](../../xdm/home.md) | XDM是一个基础框架，它允许由Adobe Experience Platform提供支持的Adobe Experience Cloud在正确的时间通过正确的渠道向正确的人员传递正确的信息。 Platform使用XDM系统以特定方式组织数据，从而更易于用于Platform服务。 |
 | [XDM 架构](../../xdm/schema/composition.md) | Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。在将数据摄取到Platform中之前，必须构建一个架构来描述数据的结构，并为每个字段中可以包含的数据类型提供约束。 架构由一个基本XDM类和零个或多个架构字段组组成。 |
 | [XDM类](../../xdm/schema/field-constraints.md) | 所有XDM架构都描述了可分类为 `Experience Event`. 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 XDM类描述架构必须包含的最小属性数，以便表示特定的数据行为。 |
 | [字段组](../../xdm/schema/composition.md) | 定义架构中一个或多个字段的组件。 字段组强制实施其字段在架构层次结构中的显示方式，因此它们包含的每个架构中都表现出相同的结构。 字段组仅与由它们标识的特定类兼容 `meta:intendedToExtend` 属性。 |

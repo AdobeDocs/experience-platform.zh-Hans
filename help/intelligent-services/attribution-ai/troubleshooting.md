@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；快速入门；归因人工智能；热门主题；归因人工智能输入；归因人工智能输出；归因人工智能故障排除；归因人工智能错误
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Attribution AI
 title: Attribution AI错误疑难解答
 description: 查找Attribution AI中常见错误的答案。
 type: Documentation
 exl-id: c2ff700a-1e36-4ba2-876c-9f8b56344241
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%
