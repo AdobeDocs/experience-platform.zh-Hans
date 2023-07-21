@@ -2,10 +2,10 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f05f8cb47a1f65e8931500d7064fdce48aa53347
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 6%
+source-wordcount: '1041'
+ht-degree: 3%
 
 ---
 
@@ -86,7 +86,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
 >title="私有 SSH 密钥"
->abstract="私有 SSH 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。"
+>abstract="私有SSH密钥必须是RSA格式的Base64编码字符串，且不能受密码保护。"
 
 如果您选择 **[!UICONTROL 包含密码的SFTP]** 要连接到SFTP位置的身份验证类型：
 
@@ -108,7 +108,7 @@ ht-degree: 6%
 * **[!UICONTROL 域]**：填写SFTP帐户的IP地址或域名
 * **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
 * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
+* **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私钥必须是RSA格式的Base64编码字符串，且不能受密码保护。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
 
   ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
