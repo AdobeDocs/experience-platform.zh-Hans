@@ -2,10 +2,10 @@
 title: Experience Platform中数据收集的权限管理
 description: 有关如何管理权限和控制对Adobe Experience Platform中数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: e24cb8ad6b714a60363bcbec26e453f6445af1ac
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1274'
-ht-degree: 5%
+ht-degree: 29%
 
 ---
 
@@ -17,9 +17,9 @@ ht-degree: 5%
 
 ## 快速入门
 
-要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成产品的组织具有管理员权限。 可以授予或撤销权限的最小角色为 **产品配置文件管理员**. 可以管理权限的其他管理员角色包括 **产品管理员** （可以管理产品中的所有配置文件）和 **系统管理员** （无限制）。 请参阅以下文章： [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关更多信息，请参阅Adobe企业管理指南。
+要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成产品的组织具有管理员权限。 可以授予或撤回权限的最低角色是&#x200B;**产品配置文件管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有配置文件）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的文章。
 
-本指南假定您熟悉产品配置文件等基本Admin Console概念，并熟悉它们如何将产品权限授予各个用户和组。 欲了解更多信息，请参见 [Admin Console用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
+本指南假设您熟悉基本的 Admin Console 概念，例如产品配置文件以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
 
 ## 可用权限
 
@@ -36,7 +36,7 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 | 数据建模 | 查看架构 | 授予对架构的只读访问权限。 |
 | Identity Management | 管理身份命名空间 | 授予查看、创建和编辑的能力 [身份命名空间](../identity-service/namespaces.md). |
 | Identity Management | 查看标识命名空间 | 授予对身份命名空间的只读访问权限。 |
-| 数据收集 | 管理数据流 | 授予查看、创建和编辑的能力 [数据流](../edge/datastreams/overview.md). |
+| 数据收集 | 管理数据流 | 授予查看、创建和编辑的能力 [数据流](../datastreams/overview.md). |
 | 数据收集 | 查看数据流 | 授予对数据流的只读访问权限。 |
 
 {style="table-layout:auto"}
@@ -97,40 +97,40 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 #### 选择或创建产品配置文件
 
-下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为 **[!DNL Default Data Collection All Access]**. 您可以根据需要选择编辑默认的产品配置文件，也可以选择 **[!UICONTROL 新建配置文件]** 创建一个。 如果您的组织中有多个需要不同级别访问权限的角色或用户组，则应为每个角色或用户组创建单独的产品配置文件。
+下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为 **[!DNL Default Data Collection All Access]**. 您可以根据需要选择编辑默认的产品配置文件，也可以选择 **[!UICONTROL 新建配置文件]** 创建一个。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
 
 ![显示Admin Console中数据收集的产品配置文件的图像](./images/permissions/new-profile.png)
 
 选择或创建产品配置文件后，您可以使用 **[!UICONTROL 编辑]** 开始图标 [编辑权限](#edit-permissions) ，或选择 **[!UICONTROL 用户]** 制表符开始 [分配用户](#assign-users) 到个人资料。
 
-![显示产品配置文件Admin Console的“权限”选项卡的图像](./images/permissions/edit-permission-categories.png)
+![显示产品配置文件 Admin Console 的权限选项卡的图像](./images/permissions/edit-permission-categories.png)
 
 #### 编辑产品配置文件的权限 {#edit-permissions}
 
-编辑配置文件的权限时，可用权限将列在左列，而配置文件中包含的权限将列在右列。 选择列出的权限可在任一列之间移动它们。
+在编辑配置文件的权限时，可用权限将在左列中列出，而配置文件中包含的权限将在右列中列出。选择列出的权限，以在任一列之间移动它们。
 
 ![此图像显示在已包含列下添加的权限](./images/permissions/added-permissions.png)
 
-权限可划分为不同的类别。 要在类别之间切换，请从左侧导航中选择所需的类别。
+权限会按类别进行组织。要在类别之间切换，请从左侧导航中选择所需的类别。
 
 ![此图像显示了权限下的公司权限部分](./images/permissions/switch-category.png)
 
-选择 **[!UICONTROL 保存]** 配置完权限后。
+配置完权限后，选择&#x200B;**[!UICONTROL 保存]**。
 
-![该图像显示了正在为产品配置文件保存的权限配置](./images/permissions/save-permissions.png)
+![显示为产品配置文件保存的权限配置的图像](./images/permissions/save-permissions.png)
 
-产品配置文件视图会重新显示，并反映添加的权限。
+产品配置文件视图将重新出现，并会反映添加的权限。
 
-![显示产品配置文件已添加权限的图像](./images/permissions/permissions-added.png)
+![显示为产品配置文件添加的权限的图像](./images/permissions/permissions-added.png)
 
 #### 将用户分配给产品配置文件 {#assign-users}
 
-要将用户分配给产品配置文件（并授予他们配置文件配置的权限），请选择 **[!UICONTROL 用户]** 选项卡，然后 **[!UICONTROL 添加用户]**.
+要将用户分配给产品配置文件（并授予其为该配置文件配置的权限），请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加用户]**。
 
-![该图像显示了用户选项卡中Admin Console的产品配置文件](./images/permissions/manage-users.png)
+![显示 Admin Console 中产品配置文件的用户选项卡的图像](./images/permissions/manage-users.png)
 
-有关管理产品配置文件的用户的更多信息，请参阅 [Admin Console文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
+有关为产品配置文件管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)。
 
 ## 后续步骤
 
-本指南介绍了数据收集的可用权限以及如何通过Admin Console管理这些权限。 有关管理其他Adobe Experience Platform功能的权限的更多信息，请参阅 [访问控制文档](../access-control/home.md).
+本指南介绍了数据收集的可用权限以及如何通过Admin Console管理这些权限。 有关为其他 Adobe Experience Platform 功能管理权限的详细信息，请参阅[访问控制文档](../access-control/home.md)。

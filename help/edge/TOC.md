@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 131c33d1049b018ba21898418abefc48e2200f3f
+source-git-commit: cc864e091f5e3f338f025238572158f555c3ede9
 workflow-type: tm+mt
-source-wordcount: '194'
-ht-degree: 31%
+source-wordcount: '169'
+ht-degree: 30%
 
 ---
 
@@ -27,14 +27,6 @@ ht-degree: 31%
    * [配置CSP](fundamentals/configuring-a-csp.md)
    * [与多个属性交互](fundamentals/interacting-with-multiple-properties.md)
    * [用户代理客户端提示](fundamentals/user-agent-client-hints.md)
-* 数据流 {#datastreams}
-   * [概述](./datastreams/overview.md)
-   * [配置数据流](./datastreams/configure.md)
-   * [配置数据流覆盖](./datastreams/overrides.md)
-   * [为数据收集准备数据](./datastreams/data-prep.md)
-   * 数据扩充 {#data-enrichment}
-      * [天气渠道的天气数据](./datastreams/data-enrichment/weather.md)
-      * [天气数据字段映射](./datastreams/data-enrichment/weather-reference.md)
 * 标识 {#identity}
    * [概述](identity/overview.md)
    * [第一方设备Id](identity/first-party-device-ids.md)

@@ -3,7 +3,7 @@ title: 在Platform Web SDK中使用Adobe Target
 description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图表
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 5a048505be139b58dbb3bf85120df5e3cc46881e
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '1318'
 ht-degree: 6%
@@ -52,7 +52,7 @@ ht-degree: 6%
 
 启用 [!DNL Target]，请执行以下操作：
 
-1. 启用 [!DNL Target] 在您的 [数据流](../../datastreams/overview.md) ，并提供相应的客户端代码。
+1. 启用 [!DNL Target] 在您的 [数据流](../../../datastreams/overview.md) ，并提供相应的客户端代码。
 1. 添加 `renderDecisions` 选项添加到您的事件。
 
 然后，您还可以选择添加以下选项：

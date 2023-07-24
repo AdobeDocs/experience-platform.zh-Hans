@@ -3,7 +3,7 @@ title: 将受众激活到边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 2%
@@ -80,7 +80,7 @@ Edge个性化目标使您能够使用Adobe个性化解决方案(如Adobe Target)
 
 ![数据流配置](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
-有关如何设置数据流的更多详细信息，请按照 [Platform Web SDK文档](../../edge/datastreams/configure.md#aep).
+有关如何设置数据流的更多详细信息，请按照 [Platform Web SDK文档](../../datastreams/configure.md#aep).
 
 ### 创建 [!DNL Active-On-Edge] 合并策略 {#create-merge-policy}
 

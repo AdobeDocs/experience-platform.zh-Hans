@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年3月
-description: Adobe Experience Platform 2022年3月版发行说明。
+title: Adobe Experience Platform 发行说明（2022 年 3 月）
+description: Adobe Experience Platform 的 2022 年 3 月发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1176'
-ht-degree: 8%
+ht-degree: 18%
 
 ---
 
@@ -18,7 +18,7 @@ Adobe Experience Platform中的新增功能：
 - [审核日志](#audit-logs)
 - [Real-Time CDP B2B版本中的相关帐户](#related-accounts)
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [警报](#alerts)
 - [[!DNL Dashboards]](#dashboards)
@@ -108,13 +108,13 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它可以查看有
 
 ## 数据收集 {#data-collection}
 
-Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
+ Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅以下部分： [配置数据流](../../edge/datastreams/overview.md#create) 有关更多信息，请参阅数据流UI指南。 |
+| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅以下部分： [配置数据流](../../datastreams/overview.md#create) 有关更多信息，请参阅数据流UI指南。 |
 | [边缘网络服务器 API](../../server-api/overview.md) | Server API允许客户使用新的经过身份验证的端点与Experience Platform边缘网络进行交互，以支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
@@ -135,9 +135,9 @@ Platform提供了一套技术，可让您收集客户端客户体验数据并将
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 通过这些源连接，您可以进行身份验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，并管理整个过程中的数据摄取。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。通过这些源连接，您可以进行身份验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，并管理整个过程中的数据摄取。
 
 **更新的功能**
 

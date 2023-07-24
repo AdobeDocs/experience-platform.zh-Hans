@@ -2,9 +2,9 @@
 title: Adobe Commerce源连接器
 description: 了解如何使用Adobe Commerce源将商业数据引入Experience Platform。
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: 49098cd11249a44ad7780857e85d054ece864046
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '542'
 ht-degree: 1%
 
 ---
@@ -39,6 +39,6 @@ Adobe Experience Platform源支持Adobe Commerce的集成，允许商家将店�
 * 成功安装Connector扩展后，请在Experience Cloud中登录到您的Adobe帐户并 [确认您的组织ID](https://experienceleague.adobe.com/docs/core-services/interface/administration/organizations.html?lang=en#concept_EA8AEE5B02CF46ACBDAD6A8508646255). 此ID与您配置的Experience Cloud公司关联。 其格式为24个字符的数字字母字符串，并包含一个必填项 `@AdobeOrg`.
 * 接下来，使用特定于Commerce的字段组创建或更新您的Experience Data Model (XDM)架构。 有关如何将特定于Commerce的字段组添加到XDM架构的详细步骤，请阅读 [将字段组添加到XDM架构](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html).
 * 配置架构后，您必须根据新架构创建数据集。 然后，此数据集将包含 [!DNL Commerce] 您发送的数据。 有关如何为创建数据集的 [!DNL Commerce] 数据，请阅读指南 [向Experience Platform发送数据](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/experience-cloud/platform.html?lang=en#create-a-dataset).
-* 接下来，创建一个数据流，并选择包含特定于商务的字段组的XDM架构。 有关数据流的详细信息，请参阅 [数据流概述](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/overview.html).
+* 接下来，创建一个数据流，并选择包含特定于商务的字段组的XDM架构。 有关数据流的详细信息，请参阅 [数据流概述](https://experienceleague.adobe.com/docs/experience-platform/datastreams/overview.html?lang=zh-Hans).
 * 然后，您必须将Adobe Commerce实例连接到 [商务服务连接器](https://experienceleague.adobe.com/docs/commerce-merchant-services/user-guides/integration-services/saas.html). 这允许将您的Commerce实例部署为SaaS（软件即服务）。
 * 完成上述所有配置后，您现在可以使用配置Commerce Services Connector和Experience Platform连接器来连接到Experience Platform。 [!DNL Commerce Admin]. 有关此最后步骤的更多信息，请阅读以下指南： [将Commerce数据连接到Experience Platform](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/connect-data.html).

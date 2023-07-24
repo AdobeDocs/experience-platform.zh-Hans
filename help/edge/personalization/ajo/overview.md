@@ -3,10 +3,10 @@ title: 在Platform Web SDK中使用Adobe Journey Optimizer
 description: 了解如何使用Adobe Journey Optimizer通过Experience PlatformWeb SDK呈现个性化内容
 keywords: ajo；ajo web；adobe journey optimizer；renderDecisions；表面；决策；建议；范围；架构
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '424'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 1. 浏览 [先决条件](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#prerequesites) 从 [!DNL Adobe Journey Optimizer] [Web体验指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)，具体来说：
    * 设置 [!DNL Adobe Experience Cloud Visual Editing Helper].
-   * 启用 [!DNL Adobe Journey Optimizer] 在您的 [数据流](../../datastreams/overview.md).
+   * 启用 [!DNL Adobe Journey Optimizer] 在您的 [数据流](../../../datastreams/overview.md).
    * 启用 [!UICONTROL Active-On-Edge合并策略] 选项。
 
 2. 添加 `renderDecisions` 选项添加到您的事件。 设置 `renderDecisions` 到 `true` 用于在网页表面上自动呈现交付的Journey Optimizer内容建议。

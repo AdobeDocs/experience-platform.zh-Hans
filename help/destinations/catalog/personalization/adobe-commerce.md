@@ -2,7 +2,7 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，根据Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '720'
 ht-degree: 3%
@@ -29,7 +29,7 @@ ht-degree: 3%
 
 - [架构](../../../xdm/schema/composition.md). 您创建的架构表示计划从Adobe Commerce中摄取的数据。 [了解详情](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) 有关如何创建包含特定于Commerce的字段组的架构。
 - [数据集](../../../catalog/datasets/user-guide.md#create). 数据集是用于数据收集的存储和管理结构。 从上面创建的架构创建此数据集。
-- [数据流](../../../edge/datastreams/overview.md#create). 允许数据从Adobe Experience Platform流向其他AdobeDX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
+- [数据流](../../../datastreams/overview.md#create). 允许数据从Adobe Experience Platform流向其他AdobeDX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
 完成先决条件后，连接到 [!DNL Commerce] 目标。
 
@@ -53,7 +53,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 - **[!UICONTROL 名称]**：填写此目标的首选名称。
 - **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段是可选的。
 - **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
-- **[!UICONTROL 数据流ID]**：确定哪个数据收集数据流包含响应页面时包含的受众。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../edge/datastreams/overview.md) 了解更多详细信息。
+- **[!UICONTROL 数据流ID]**：确定哪个数据收集数据流包含响应页面时包含的受众。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../datastreams/overview.md) 了解更多详细信息。
 
 ### 启用警报 {#enable-alerts}
 

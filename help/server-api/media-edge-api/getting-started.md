@@ -2,10 +2,10 @@
 solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API快速入门
-source-git-commit: 6570149298defe1aeb0c3e35cb71e166aeb7a3f7
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
-source-wordcount: '960'
-ht-degree: 6%
+source-wordcount: '959'
+ht-degree: 5%
 
 ---
 
@@ -60,7 +60,7 @@ ht-degree: 6%
 
 在发出会话开始请求之前，您将需要满足以下条件：
 
-* 此 `datastreamId`—POST会话启动请求的必需参数。 检索 `datastreamId`，请参见 [配置数据流](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=zh-Hans).
+* 此 `datastreamId`—POST会话启动请求的必需参数。 检索 `datastreamId`，请参见 [配置数据流](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans).
 
 * 请求有效负载的JSON对象，其中包含所需的最小数据（如下面的示例请求中所示）。
 

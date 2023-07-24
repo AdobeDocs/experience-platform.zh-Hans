@@ -3,7 +3,7 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标为网站上运行的外部个性化、内容管理系统、广告服务器和其他应用程序提供了一种从Adobe Experience Platform检索受众信息的方法。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '935'
 ht-degree: 8%
@@ -59,7 +59,7 @@ ht-degree: 8%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为不同的设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/datastreams/overview.md). |
+| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为不同的设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../datastreams/overview.md). |
 | 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## 连接到目标 {#connect}
@@ -83,7 +83,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段是可选的。
 * **[!UICONTROL 集成别名]**：此值作为JSON对象名称发送到Experience PlatformWeb SDK。
-* **[!UICONTROL 数据流ID]**：确定在响应页面时将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../edge/datastreams/overview.md) 了解更多详细信息。
+* **[!UICONTROL 数据流ID]**：确定在响应页面时将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。参见 [配置数据流](../../../datastreams/overview.md) 了解更多详细信息。
 
 ### 启用警报 {#enable-alerts}
 

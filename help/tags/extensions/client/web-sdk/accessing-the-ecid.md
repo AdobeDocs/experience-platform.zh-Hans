@@ -2,7 +2,7 @@
 title: 访问ECID
 description: 了解如何从数据准备或标记访问Experience CloudID
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '228'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 此 [!DNL Experience Cloud Identity (ECID)] 是用户访问您的网站时分配给用户的永久标识符。 在某些情况下，您可能希望访问 [!DNL ECID] （例如，发送给第三方）。 另一个用例是设置 [!DNL ECID] 在自定义XDM字段中，以及标识映射。
 
-您可以通过以下任一方式访问ECID [为数据收集准备数据](../../../../edge/datastreams/data-prep.md) （推荐）或通过标记进行标记。
+您可以通过以下任一方式访问ECID [为数据收集准备数据](../../../../datastreams/data-prep.md) （推荐）或通过标记进行标记。
 
 ## 通过数据准备访问ECID（首选方法） {#accessing-ecid-data-prep}
 

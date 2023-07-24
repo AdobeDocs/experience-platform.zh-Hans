@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 配置数据集以捕获同意和偏好设置数据
 description: 了解如何在Adobe Experience Platform中配置体验数据模型(XDM)架构和数据集以捕获同意和偏好设置数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -26,7 +26,6 @@ ht-degree: 0%
 >* 标准同意字段组
 >* 您的组织创建的自定义同意字段组
 >* 标准化同意字段组和自定义同意字段组提供的其他字段的组合
-
 
 ## 先决条件
 
@@ -160,7 +159,7 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-数据集现已保存并启用，以供使用 [!DNL Profile]. 如果您计划使用Platform Web SDK将同意数据发送到用户档案，则必须选择此数据集作为 [!UICONTROL 配置文件数据集] 设置时 [数据流](../../../../edge/datastreams/overview.md).
+数据集现已保存并启用，以供使用 [!DNL Profile]. 如果您计划使用Platform Web SDK将同意数据发送到用户档案，则必须选择此数据集作为 [!UICONTROL 配置文件数据集] 设置时 [数据流](../../../../datastreams/overview.md).
 
 ## 后续步骤
 

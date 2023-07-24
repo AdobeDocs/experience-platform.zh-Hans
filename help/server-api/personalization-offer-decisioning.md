@@ -2,7 +2,7 @@
 title: 通过Offer decisioning进行个性化
 description: 了解如何使用服务器API通过Offer decisioning交付和呈现个性化体验。
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: 3047a03e7a911c48a6d4e4c07117af45fa78f678
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '580'
 ht-degree: 4%
@@ -19,13 +19,13 @@ Edge Network Server API可以提供在中管理的个性化体验 [offer decisio
 
 ## 先决条件 {#prerequisites}
 
-通过以下方式实现个性化 [!DNL Offer Decisioning] 要求您有权访问 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans) ，然后再配置集成。
+通过以下方式实现个性化 [!DNL Offer Decisioning] 要求您有权访问 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) ，然后再配置集成。
 
 ## 配置数据流 {#configure-your-datastream}
 
 在将Server API与Offer decisioning结合使用之前，必须在数据流配置上启用Adobe Experience Platform个性化，并启用 **[!UICONTROL offer decisioning]** 选项。
 
-请参阅 [有关向数据流添加服务的指南](../edge/datastreams/overview.md#adobe-experience-platform-settings)，以了解有关如何启用Offer decisioning的详细信息。
+请参阅 [有关向数据流添加服务的指南](../datastreams/overview.md#adobe-experience-platform-settings)，以了解有关如何启用Offer decisioning的详细信息。
 
 ![显示“数据流服务配置”屏幕(已选择Offer decisioning)的UI图像](assets/aep-od-datastream.png)
 

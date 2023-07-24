@@ -3,7 +3,7 @@ title: 使用Web SDK和边缘网络服务器API的混合个性化
 description: 本文演示了如何将Web SDK与服务器API结合使用来在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器api；服务器端；混合实施；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '830'
 ht-degree: 3%
@@ -65,7 +65,7 @@ Cookie用于保留用户标识和群集信息。  使用混合实施时，Web应
 
 实施混合个性化时，必须特别注意这一点，以使页面点击量不会在Analytics中计数多次。
 
-当您 [配置数据流](../datastreams/overview.md) 对于Analytics，会自动转发事件，以便捕获页面点击。
+当您 [配置数据流](../../datastreams/overview.md) 对于Analytics，会自动转发事件，以便捕获页面点击。
 
 此实施中的示例使用两个不同的数据流：
 
@@ -162,7 +162,7 @@ curl -X POST "https://edge.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_I
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
-| `dataStreamId` | `String` | 可以。 | 用于将交互传递到Edge Network的数据流的ID。 请参阅 [数据流概述](../datastreams/overview.md) 以了解如何配置数据流。 |
+| `dataStreamId` | `String` | 可以。 | 用于将交互传递到Edge Network的数据流的ID。 请参阅 [数据流概述](../../datastreams/overview.md) 以了解如何配置数据流。 |
 | `requestId` | `String` | 否 | 用于关联内部服务器请求的随机ID。 如果未提供任何内容，Edge Network将生成一个，并在响应中返回它。 |
 
 ### 服务器端响应 {#server-response}

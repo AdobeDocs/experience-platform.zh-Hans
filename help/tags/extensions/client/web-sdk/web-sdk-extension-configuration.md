@@ -2,10 +2,10 @@
 title: 配置Adobe Experience Platform Web SDK扩展
 description: 如何在UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1185'
-ht-degree: 6%
+ht-degree: 9%
 
 ---
 
@@ -52,7 +52,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 当请求发送至Adobe Experience Platform Edge Network时，将使用数据流ID来引用服务器端配置。 您可以更新配置，而无需在网站上更改代码。
 
-请参阅指南，网址为 [数据流](../../../../edge/datastreams/overview.md) 了解更多信息。
+请参阅指南，网址为 [数据流](../../../../datastreams/overview.md) 了解更多信息。
 
 
 ## [!UICONTROL Privacy]
@@ -112,10 +112,10 @@ SDK可以自动为您收集链接点击信息。 默认情况下，此功能处�
 
 数据流配置覆盖是一个两步过程：
 
-1. 首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](../../../../edge/datastreams/configure.md).
-2. 然后，您必须通过Web SDK命令或Web SDK标记扩展将覆盖发送到Edge Network。
+1. 首先，您必须在[数据流配置页面](../../../../datastreams/configure.md)中定义数据流配置覆盖。
+2. 然后，您必须通过 Web SDK 命令或使用 Web SDK 标记扩展将这些覆盖发送到 Edge Network。
 
-查看数据流 [配置覆盖文档](../../../../edge/datastreams/overrides.md) 有关如何覆盖数据流配置的详细说明。
+查看数据流 [配置覆盖文档](../../../../datastreams/overrides.md) 有关如何覆盖数据流配置的详细说明。
 
 作为通过Web SDK命令传递覆盖的替代方法，您可以在下面显示的标记扩展屏幕中配置覆盖。
 

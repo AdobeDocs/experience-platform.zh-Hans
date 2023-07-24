@@ -2,7 +2,7 @@
 title: 身份验证
 description: 了解如何为Adobe Experience Platform Edge Network Server API配置身份验证。
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '637'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 对于每个请求， [!DNL Server API] 验证数据流 [!DNL access type] 设置。 使用此设置，客户可以配置数据流以接受经过身份验证的数据，或同时接受经过身份验证的数据和未经过身份验证的数据。 默认情况下，接受这两种类型的数据。
 
-有关配置数据流访问类型的详细信息，请参阅有关如何配置数据流的文档。 [创建和配置数据流](../edge/datastreams/overview.md#create).
+有关配置数据流访问类型的详细信息，请参阅有关如何配置数据流的文档。 [创建和配置数据流](../datastreams/overview.md#create).
 
 以下是基于数据流的行为摘要 [!DNL Access Type] 配置以及接收请求的端点。
 

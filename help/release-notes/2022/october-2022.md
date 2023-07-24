@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: Adobe Experience Platform 2022年10月版发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 8bbac729324ad5bd701f8609c443092ddb045b96
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1328'
-ht-degree: 2%
+ht-degree: 29%
 
 ---
 
@@ -28,13 +28,13 @@ ht-degree: 2%
 
 ## 数据收集 {#data-collection}
 
-Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中扩充和转换数据，并将其分发到Adobe或非Adobe目标。
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 数据流的敏感数据处理 | 数据流现在利用多种平台技术适当地处理由诸如健康保险可移植性和责任法案(HIPAA)等法规强制执行的敏感数据。 请参阅以下部分： [处理数据流中的敏感数据](../../edge/datastreams/overview.md#sensitive) 了解更多信息。 |
+| 数据流的敏感数据处理 | 数据流现在利用多种平台技术适当地处理由诸如健康保险可移植性和责任法案(HIPAA)等法规强制执行的敏感数据。 请参阅以下部分： [处理数据流中的敏感数据](../../datastreams/overview.md#sensitive) 了解更多信息。 |
 | [!DNL Splunk] 事件转发的扩展 | 您现在可以将数据发送到 [!DNL Splunk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Splunk] 扩展概述](../../tags/extensions/server/splunk/overview.md) 了解更多信息。 |
 | [!DNL Zendesk] 事件转发的扩展 | 您现在可以将数据发送到 [!DNL Zendesk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../../tags/extensions/server/zendesk/overview.md) 了解更多信息。 |
 
@@ -42,9 +42,9 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
@@ -53,7 +53,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 {style="table-layout:auto"}
 
-**新的或更新后的目标** {#new-or-updated-destinations}
+**新增或更新目标**{#new-or-updated-destinations}
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -75,27 +75,27 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 | ----------- | ----------- |
 | [目标护栏](../../destinations/guardrails.md) | 此页面提供有关激活行为的默认使用量和速率限制。 |
 
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
-## 体验数据模型(XDM) {#xdm}
+## Experience Data Model (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户操作中获得有价值的见解，通过区段定义客户受众，并将客户属性用于个性化目的。
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
-**更新的XDM组件**
+**更新的 XDM 组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
 | 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | 已更新 `authorized` 字段到字符串。 `season` 和 `episode` 已从整数更改为字符串。 |
-| 数据类型 | [[!UICONTROL 广告详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` 已重命名为 `friendlyName`、和 `ID` 已重命名为 `name`. |
+| 数据类型 | [[!UICONTROL Advertising 详情信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` 已重命名为 `friendlyName`、和 `ID` 已重命名为 `name`. |
 | 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` 已更名为 `name`。 |
 
 {style="table-layout:auto"}
 
-有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以从以下位置连接任何数据集 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
 
 **更新的功能**
 
@@ -106,14 +106,13 @@ XDM是一个开源规范，为引入Adobe Experience Platform的数据提供通�
 
 {style="table-layout:auto"}
 
-有关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).
-Adobe Experience Platform中的新增功能：
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。Adobe Experience Platform中的新增功能：
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 
@@ -121,4 +120,4 @@ Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数
 | --- | --- | 
 | Adobe Workfront源的Beta版本 | 使用 [Adobe Workfront源](../../sources/connectors/adobe-applications/workfront.md) 将您的Workfront数据带入Experience Platform并执行用例，例如将您的工作记录与第三方数据相结合，对工作记录应用历史和时间序列分析，以及使用标准SQL查询工作数据。 有关详细信息，请阅读以下指南： [在UI中创建Workfront源连接](../../sources/tutorials/ui/create/adobe-applications/workfront.md). |
 
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
+若要了解有关源的更多信息，请阅读[源概述](../../sources/home.md)。

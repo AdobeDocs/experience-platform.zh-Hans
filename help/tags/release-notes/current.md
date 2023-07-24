@@ -2,10 +2,10 @@
 title: 标记和事件转发的发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 626330395c2d6b813d5d2157e92ada77ab4f96b1
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '841'
-ht-degree: 3%
+ht-degree: 15%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 3%
 
 **Quick Stark工作流（测试版）**
 
-从数据收集主屏幕访问“快速入门”下的新快速入门工作流！ 以下工作流现已作为公共测试版提供给客户。
+从数据收集主屏幕访问“开始使用”下新的快速启动工作流程！以下工作流现已作为公共测试版提供给客户。
 * **[元转换API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start)**：事件转发客户只需几个简单的步骤，即可快速收集并转发事件数据、服务器端到元以进行广告转化。
 * **[移动SDK](https://developer.adobe.com/client-sdks/documentation/)**：客户只需几个简单的步骤，即可快速实施Mobile SDK并验证基本移动事件。
 
@@ -40,10 +40,10 @@ ht-degree: 3%
 ## 2023 年 1 月 25 日
 
 * **新主屏幕**：数据收集UI的主页已更新，包含有用的载入信息和简化生产力的链接。 这包括：
-   1. 开始使用的文档和推荐的工作流
+   1. 入门文档和推荐的工作流程
    1. 最近的属性、规则和数据元素
-   1. 常用扩展
-   1. 包含快速安装功能的新扩展更新
+   1. 热门扩展
+   1. 具有快速安装功能的新扩展更新
 * **将数据发送到 [!DNL Google Ads] 使用事件转发**：您现在可以使用 [[!DNL Google Ads Enhanced Conversions] API扩展](../extensions/server/google-ads-enhanced-conversions/overview.md) 用于事件转发，与 [Google Oauth 2密钥](../ui/event-forwarding/secrets.md#google-oauth2)，以安全地向发送服务器端数据 [!DNL Google Ads] 实时。
 
 ## 2022 年 11 月 23 日
@@ -54,7 +54,7 @@ ht-degree: 3%
 
 ## 2022 年 10 月 26 日
 
-* **数据流的敏感数据处理**：数据流现在利用多种平台技术，以适当处理由健康保险便携性和责任法案(HIPAA)等法规强制执行的敏感数据。 请参阅以下部分： [处理数据流中的敏感数据](../../edge/datastreams/overview.md#sensitive) 了解更多信息。
+* **数据流的敏感数据处理**：数据流现在利用多种平台技术，以适当处理由健康保险便携性和责任法案(HIPAA)等法规强制执行的敏感数据。 请参阅以下部分： [处理数据流中的敏感数据](../../datastreams/overview.md#sensitive) 了解更多信息。
 * **[!DNL Splunk]事件转发的扩展**：您现在可以将数据发送到 [!DNL Splunk] 使用 [事件转发](../ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Splunk] 扩展概述](../extensions/server/splunk/overview.md) 了解更多信息。
 * **[!DNL Zendesk]事件转发的扩展**：您现在可以将数据发送到 [!DNL Zendesk] 使用 [事件转发](../ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../extensions/server/zendesk/overview.md) 了解更多信息。
 

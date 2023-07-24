@@ -3,7 +3,7 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户交互中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: c111b712e24dd9e4280abfe882e6d7f5eb8493d1
+source-git-commit: 2005238d2e06ed91fd4b0835be38a4b7b8ecf3b4
 workflow-type: tm+mt
 source-wordcount: '1186'
 ht-degree: 16%
@@ -91,7 +91,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 * **名称**：填写此目标的首选名称。
 * **描述**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段是可选的。
-* **数据流ID**：此值确定将包含受众的数据收集数据流。 下拉菜单仅显示启用了Target和Adobe Experience Platform服务的数据流。 参见 [配置数据流](../../../edge/datastreams/configure.md#aep) 有关如何为Adobe Experience Platform和Adobe Target配置数据流的详细信息。
+* **数据流ID**：此值确定将包含受众的数据收集数据流。 下拉菜单仅显示启用了Target和Adobe Experience Platform服务的数据流。 参见 [配置数据流](../../../datastreams/configure.md#aep) 有关如何为Adobe Experience Platform和Adobe Target配置数据流的详细信息。
    * **[!UICONTROL 无]**：如果需要配置Adobe Target个性化，但无法实施，请选择此选项 [Experience PlatformWeb SDK](../../../edge/home.md). 使用此选项时，从Experience Platform导出到Target的受众仅支持下一会话个性化，并禁用边缘分段。 有关更多信息，请参阅下表。
 
   | Adobe Target实施（不带Web SDK） | Web SDK实施 |

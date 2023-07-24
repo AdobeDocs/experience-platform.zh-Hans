@@ -1,15 +1,15 @@
 ---
-title: 目标激活工作流中的身份处理
+title: 目标激活工作流程中的身份处理
 description: 了解如何在激活工作流中处理身份导出，具体取决于目标类型
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1186'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
-# 目标激活工作流中的身份处理
+# 目标激活工作流程中的身份处理
 
 本页介绍如何将身份导出到不同的目标类型的特性，并教您如何根据目标找到哪些身份可以导出。
 
@@ -82,7 +82,7 @@ ht-degree: 1%
 
 这些目标要求通过 [!UICONTROL Experience CloudID服务] 或通过 [!UICONTROL Experience PlatformWeb SDK].
 
-如果您使用 [!UICONTROL Experience PlatformWeb SDK] 和旧版 [!UICONTROL Experience CloudID服务] 未在页面上实施，则需要确保相关网站的数据流已启用，以允许同步第三方ID，如中所述 [配置数据流文档](/help/edge/datastreams/configure.md#create).
+如果您使用 [!UICONTROL Experience PlatformWeb SDK] 和旧版 [!UICONTROL Experience CloudID服务] 未在页面上实施，则需要确保相关网站的数据流已启用，以允许同步第三方ID，如中所述 [配置数据流文档](/help/datastreams/configure.md#create).
 
 在按照上面链接的文档中的说明配置数据流时，您需要确保 **[!UICONTROL 第三方ID同步]** 已启用slider。 大多数客户会离开 `container_id` 字段为空（默认为0）。 仅当旧版Audience Manager实施使用特定容器ID时，才需要更改此值（但请注意，这将是绝大多数客户）。
 

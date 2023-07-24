@@ -3,10 +3,10 @@ title: mbox3rdPartyId 的实时配置文件同步
 description: 了解如何将mbox3rdPartyId与Adobe Experience Platform Web SDK结合使用。
 keywords: 个性化；target；adobe target；renderDecisions；sendEvent；mbox3rdPartyId；
 exl-id: 677d1054-0769-4ec6-811e-e02d4b247c2a
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '161'
-ht-degree: 9%
+ht-degree: 30%
 
 ---
 
@@ -14,14 +14,14 @@ ht-degree: 9%
 
 Adobe Target中的mbox3rdPartyId是您公司的访客ID，例如您公司的忠诚度计划的会员ID。
 
-当访客登录到某个公司的网站时，该公司通常会创建一个ID，并将其绑定到该访客的帐户、会员卡、会员编号或适用于该公司的其他标识符。 [了解详情](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=en#)
+访客登录到某个公司的网站后，该公司通常会创建一个 ID，并将其绑定到访客的帐户、会员卡、会员编号，以及该公司的其他适用标识符。[了解详情](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=en#)
 
 
 ## 使用方法 `mbox3rdPartyId` 使用Web SDK
 
 ### 步骤1：配置 `Target Third Party ID Namespace`
 
-配置 `Target Third Party ID Namespace` 在您的 [数据流](../../datastreams/overview.md)，使用要用作mbox第三方ID的ID命名空间。
+配置 `Target Third Party ID Namespace` 在您的 [数据流](../../../datastreams/overview.md)，使用要用作mbox第三方ID的ID命名空间。
 [了解有关ID命名空间的更多信息](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)
 
 ![](assets/mbox3rdpartyid.png)

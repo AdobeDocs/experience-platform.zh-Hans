@@ -3,7 +3,7 @@ title: 在Platform Web SDK中使用Offer decisioning
 description: Adobe Experience Platform Web SDK可以交付和渲染Offer decisioning托管的个性化优惠。 您可以使用Offer decisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning；决策；Web SDK；平台Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '863'
 ht-degree: 5%
@@ -32,28 +32,28 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和渲染在Offer decisioni
 
 * **决策范围：** 对于Offer decisioning，决策范围是JSON的Base64编码字符串，其中包含您希望offer decisioning服务用来建议优惠的活动和版面ID。
 
-   *决策范围JSON：*
+  *决策范围JSON：*
 
-   ```json
-   {
-     "activityId":"xcore:offer-activity:11cfb1fa93381aca",
-     "placementId":"xcore:offer-placement:1175009612b0100c"
-   }
-   ```
+  ```json
+  {
+    "activityId":"xcore:offer-activity:11cfb1fa93381aca",
+    "placementId":"xcore:offer-placement:1175009612b0100c"
+  }
+  ```
 
-   *决策范围Base64编码字符串：*
+  *决策范围Base64编码字符串：*
 
-   ```json
-   "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
-   ```
+  ```json
+  "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
+  ```
 
-   >[!TIP]
-   >
-   >您可以从以下位置复制决策范围值 **活动概述** 页面。
+  >[!TIP]
+  >
+  >您可以从以下位置复制决策范围值 **活动概述** 页面。
 
-   ![](assets/decision-scope-copy.png)
+  ![](assets/decision-scope-copy.png)
 
-* **数据流：** 欲知更多信息，请阅读 [数据流](../../datastreams/overview.md) 文档。
+* **数据流：** 欲知更多信息，请阅读 [数据流](../../../datastreams/overview.md) 文档。
 
 * **身份**：有关更多信息，请阅读本文档并概述如何 [Platform Web SDK使用Identity Service](../../identity/overview.md).
 
@@ -61,7 +61,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和渲染在Offer decisioni
 
 要启用Offer decisioning，请执行以下步骤：
 
-1. 已在您的中启用Adobe Experience Platform [数据流](../../datastreams/overview.md) 并选中“Offer decisioning”框
+1. 已在您的中启用Adobe Experience Platform [数据流](../../../datastreams/overview.md) 并选中“Offer decisioning”框
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
@@ -81,6 +81,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和渲染在Offer decisioni
              ]
           })
          ```
+
    * 通过标记安装SDK
 
       1. [创建标记属性](../../../tags/ui/administration/companies-and-properties.md)
@@ -101,10 +102,9 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和渲染在Offer decisioni
 
          * 添加Platform Web SDK发送事件操作并添加相关的 `decisionScopes` 到该操作的配置
 
-            ![send-event-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
+           ![send-event-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
+
       1. [创建和发布库](../../../tags/ui/publishing/libraries.md) 包含您配置的所有相关规则、数据元素和扩展
-
-
 
 ## 示例请求和响应
 

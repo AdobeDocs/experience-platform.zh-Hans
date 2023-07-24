@@ -5,7 +5,7 @@ seo-title: Adobe Analytics for Target (A4T) Logging in the Platform Web SDK
 seo-description: Learn how to control the collection of Adobe Analytics for Target (A4T) data using the Experience Platform Web SDK.
 keywords: a4t；日志记录；analytics；sdk；web sdk；
 exl-id: f1c90ccd-48a9-4668-b2ac-eacd5bec0b91
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '284'
 ht-degree: 2%
@@ -29,7 +29,7 @@ Adobe Experience Platform Web SDK支持两种类型的Analytics Logging for Targ
 | 服务器端Analytics | 通过Edge Network发送的所有Analytics点击在服务器端都通过Target详细信息进行增强，而无需经过点击拼合过程。 |
 | 客户端分析日志记录 | Target数据会在客户端返回，从而允许您使用 [数据插入API](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
 
-日志记录方法取决于您配置的服务器上是否启用了Adobe Analytics [数据流](../../../datastreams/overview.md)：
+日志记录方法取决于您配置的服务器上是否启用了Adobe Analytics [数据流](../../../../datastreams/overview.md)：
 
 ![日志记录方法决策流程](../assets/analytics-logging.png)
 

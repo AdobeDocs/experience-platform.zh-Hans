@@ -2,7 +2,7 @@
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7bb81a103c6b2a7d0baec22c927f575764bc3730
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1294'
 ht-degree: 43%
@@ -46,7 +46,7 @@ ht-degree: 43%
 | 计算属性 | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [客户人工智能实例](../../../intelligent-services/customer-ai/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li></ul> |
 | [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为以下对象启用 [Real-time Customer Profile](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
-| [数据流](../../../edge/datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../edge/datastreams/data-prep.md)</li></ul> |
+| [数据流](../../../datastreams/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>[编辑映射](../../../datastreams/data-prep.md)</li></ul> |
 | [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
@@ -90,6 +90,7 @@ ht-degree: 43%
 ### 筛选审核日志
 
 >[!NOTE]
+>
 由于这是一项新功能，显示的数据仅追溯到2022年3月。 根据所选资源，从2022年1月起，可能会提供以前的数据。
 
 

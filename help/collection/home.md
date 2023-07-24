@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据收集概述
 description: 了解在Adobe Experience Platform中收集客户体验数据涉及的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '516'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -25,12 +25,12 @@ Adobe Experience Platform提供了一套技术，可让您从客户端源收集�
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
 * [标记](../tags/home.md)
-* [数据流](../edge/datastreams/overview.md)
+* [数据流](../datastreams/overview.md)
 * [事件转发](../tags/ui/event-forwarding/overview.md)
 * [Adobe Experience Platform Web SDK](../edge/home.md)
 * [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
 * [Adobe Experience Platform调试器](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
-* [体验数据模型(XDM)](../xdm/home.md)
+* [Experience Data Model (XDM)](../xdm/home.md)
 * [Adobe Experience Platform Identity Service](../identity-service/home.md)
 
 本指南简要介绍数据收集以及它如何通过Platform Edge Network向Adobe Experience Cloud产品和非Adobe应用程序发送数据。
@@ -45,9 +45,9 @@ Platform Web SDK和Platform Mobile SDK分别压缩所有Adobe产品库，并将�
 
 ## Platform Edge Network和数据流 {#edge}
 
-Platform Edge Network是一个全球分布式、快速且可靠的服务器网络，能够接收和处理超大规模的数据。 使用标记，您可以设置 [数据流](../edge/datastreams/overview.md) 适用于Adobe Target、Adobe Audience Manager和Adobe Analytics等产品，通过这些产品，您可以在服务器端激活这些产品，而无需更改客户端代码。
+Platform Edge Network是一个全球分布式、快速且可靠的服务器网络，能够接收和处理超大规模的数据。 使用标记，您可以设置 [数据流](../datastreams/overview.md) 适用于Adobe Target、Adobe Audience Manager和Adobe Analytics等产品，通过这些产品，您可以在服务器端激活这些产品，而无需更改客户端代码。
 
-此外，数据流与多项平台功能集成，有助于确保您发送的任何敏感数据都得到符合组织政策和法规的适当处理。 请参阅以下部分： [处理敏感数据](../edge/datastreams/overview.md#sensitive) 有关更多信息，请参阅数据流文档。
+此外，数据流与多项平台功能集成，有助于确保您发送的任何敏感数据都得到符合组织政策和法规的适当处理。 请参阅以下部分： [处理敏感数据](../datastreams/overview.md#sensitive) 有关更多信息，请参阅数据流文档。
 
 ![数据流和Adobe解决方案](./images/home/adobe-solutions.png)
 

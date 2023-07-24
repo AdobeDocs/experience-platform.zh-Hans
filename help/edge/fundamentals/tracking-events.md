@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent；xdm；eventType；datasetId；sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend；
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: a6948e3744aa754eda22831a7e68b847eb904e76
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 1%
@@ -140,7 +140,7 @@ alloy("sendEvent", {
 
 >[!IMPORTANT]
 >
->此 `datasetId` 选项受支持 `sendEvent` 命令已弃用。 要覆盖数据集ID，请使用 [配置覆盖](../datastreams/overrides.md) 而是。
+>此 `datasetId` 选项受支持 `sendEvent` 命令已弃用。 要覆盖数据集ID，请使用 [配置覆盖](../../datastreams/overrides.md) 而是。
 
 在某些用例中，您可能希望向未在配置UI中配置的数据集发送事件。 为此，您需要设置 `datasetId` 上的选项 `sendEvent` 命令：
 
@@ -254,20 +254,20 @@ alloy("configure", {
 
 * 事件XDM可以在回调期间进行修改。 返回回调后，content.xdm和content.data对象的任何修改字段和值都将随事件一起发送。
 
-   ```javascript
-   onBeforeEventSend: function(content){
-     //sets a query parameter in XDM
-     const queryString = window.location.search;
-     const urlParams = new URLSearchParams(queryString);
-     content.xdm.marketing.trackingCode = urlParams.get('cid')
-   }
-   ```
+  ```javascript
+  onBeforeEventSend: function(content){
+    //sets a query parameter in XDM
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    content.xdm.marketing.trackingCode = urlParams.get('cid')
+  }
+  ```
 
 * 如果回调引发异常，则事件的处理过程将中断，并且不会发送该事件。
 * 如果回调返回布尔值 `false`，事件处理将停止，并且不会出现错误，因此不会发送事件。 此机制允许通过检查事件数据并返回来轻松忽略某些事件 `false` 如果不发送该事件。
 
-   >[!NOTE]
-   >应小心避免在页面上的第一个事件中返回false。 对第一个事件返回false可能会对个性化产生负面影响。
+  >[!NOTE]
+  >应小心避免在页面上的第一个事件中返回false。 对第一个事件返回false可能会对个性化产生负面影响。
 
 ```javascript
    onBeforeEventSend: function(content) {

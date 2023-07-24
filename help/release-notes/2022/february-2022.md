@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年2月
-description: Adobe Experience Platform 2022年2月版发行说明。
+title: Adobe Experience Platform 发行说明（2022 年 2 月）
+description: Adobe Experience Platform 的 2022 年 2 月发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: e2342a8a7d03074ac26fbd129a2e7fd520ccb0c3
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1019'
-ht-degree: 9%
+ht-degree: 27%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 9%
 >
 >此版本已从最初的2月23日推迟到3月7日。
 
-Adobe Experience Platform 现有功能的更新包括：
+Adobe Experience Platform 中现有功能的更新：
 
 - [[!DNL Dashboards]](#dashboards)
 - [[!DNL Data collection]](#data-collection)
@@ -39,23 +39,23 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它，您可以查
 
 ## 数据收集 {#data-collection}
 
-Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
+ Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 将服务添加到数据流时，只有您有权访问的服务将包含在选项列表中。 请参阅指南，网址为 [配置数据流](../../edge/datastreams/overview.md) 了解更多信息。 |
-| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将您的数据映射到服务器端的Experience Data Model (XDM)。 请参阅以下部分： [为数据收集准备数据](../../edge/datastreams/data-prep.md) 有关更多信息，请参阅数据流指南。 |
+| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 将服务添加到数据流时，只有您有权访问的服务将包含在选项列表中。 请参阅指南，网址为 [配置数据流](../../datastreams/overview.md) 了解更多信息。 |
+| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将您的数据映射到服务器端的Experience Data Model (XDM)。 请参阅以下部分： [为数据收集准备数据](../../datastreams/data-prep.md) 有关更多信息，请参阅数据流指南。 |
 | 第一方设备Id | 在使用Platform Web SDK收集客户数据时，您现在可以将自己的设备ID发送到Adobe Experience Platform Edge Network，从而为最近对第三方Cookie生命周期的浏览器限制提供了一种解决方法。 请参阅指南，网址为 [第一方设备标识](../../edge/identity/first-party-device-ids.md) 了解更多信息。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是与目标平台预建的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例激活已知和未知数据。
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新增或更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -77,9 +77,9 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)中摄取数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强这些数据。 您可以从各种来源获取数据，例如 Adobe 应用程序、基于云的存储、第三方软件和 CRM 系统。
 
-Experience Platform提供RESTful API和交互式UI，可让您轻松为各种数据提供程序设置源连接。 这些源连接允许您进行身份验证并连接到外部存储系统和CRM服务，设置引入运行的时间，以及管理数据引入吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **更新的功能**
 

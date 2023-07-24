@@ -2,7 +2,7 @@
 title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 description: 了解如何在Adobe Experience Platform中集成Adobe Experience Platform Web SDK以处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: dc269f952d0970cb5be1b28ab91c6006de975df3
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1349'
 ht-degree: 1%
@@ -24,7 +24,7 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 本指南遵循使用UI中的标记扩展设置SDK的工作流。 如果您不想使用扩展，并且希望直接在您的网站上嵌入SDK的独立版本，请参阅以下文档而不是本指南：
 
-* [配置数据流](../../../edge/datastreams/overview.md)
+* [配置数据流](../../../datastreams/overview.md)
 * [安装SDK](../../../edge/fundamentals/installing-the-sdk.md)
 * [为同意命令配置SDK](../../../edge/consent/supporting-consent.md)
 

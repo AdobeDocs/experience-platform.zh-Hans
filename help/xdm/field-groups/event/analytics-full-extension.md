@@ -2,10 +2,10 @@
 title: Adobe Analytics ExperienceEvent完整扩展架构字段组
 description: 本文档概述了Adobe Analytics ExperienceEvent Full Extension架构字段组。
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '888'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->由于此字段组中重复元素的大小和数量，本指南中显示的许多字段已折叠以节省空间。 要探索此字段组的完整结构，您可以 [在平台UI中查找 ](../../ui/explore.md) 或在中查看完整的架构 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
+>由于此字段组中重复元素的大小和数量，本指南中显示的许多字段已折叠以节省空间。 要探索此字段组的完整结构，您可以 [在平台UI中查找](../../ui/explore.md) 或在中查看完整的架构 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
 ## 字段组结构
 
@@ -103,4 +103,4 @@ Analytics扩展字段组提供了十个最多可捕获100个的对象字段 [自
 
 本文档介绍了Analytics扩展字段组的结构和用例。 有关字段组本身的更多详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
-如果您使用此字段组通过Adobe Experience Platform Web SDK收集Analytics数据，请参阅以下指南： [配置数据流](../../../edge/datastreams/overview.md) 以了解如何将数据映射到服务器端的XDM。
+如果您使用此字段组通过Adobe Experience Platform Web SDK收集Analytics数据，请参阅以下指南： [配置数据流](../../../datastreams/overview.md) 以了解如何将数据映射到服务器端的XDM。

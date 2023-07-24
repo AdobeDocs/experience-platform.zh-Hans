@@ -2,7 +2,7 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 47cd73e45ac618a8a84aa3c47b91d5e2a107e7f4
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 1%
@@ -23,7 +23,7 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 在将Server API与Adobe Target结合使用之前，必须对数据流配置启用Adobe Target个性化。
 
-请参阅 [有关向数据流添加服务的指南](../edge/datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
+请参阅 [有关向数据流添加服务的指南](../datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
 
 配置数据流时，您可以（可选）提供以下值： [!DNL Property Token]， [!DNL Target Environment ID]、和 [!DNL Target Third Party ID Namespace].
 
