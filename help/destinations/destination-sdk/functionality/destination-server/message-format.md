@@ -1,7 +1,7 @@
 ---
 description: 本页介绍了从Adobe Experience Platform导出到目标的数据中的消息格式和用户档案转换。
 title: 消息格式
-source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
+source-git-commit: e500d05858a3242295c6e5aac8284ad301d0cd17
 workflow-type: tm+mt
 source-wordcount: '2237'
 ht-degree: 1%
@@ -15,10 +15,10 @@ ht-degree: 1%
 
 要了解Adobe端的报文格式以及用户档案配置和转换过程，请熟悉以下Experience Platform概念：
 
-* **体验数据模型(XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
+* **Experience Data Model (XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
 * **类**. [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md).
 * **Identitymap**. 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅 `xdm:identityMap` 在 [XDM字段字典](../../../../xdm/schema/field-dictionary.md).
-* **区段成员资格**. 此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的区段。 对于 `status` 字段，请阅读相关文档 [“区段成员资格详细信息”架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
+* **区段成员资格**. 此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的受众。 对于 `status` 字段，请阅读相关文档 [受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 
 >[!IMPORTANT]
 >
@@ -107,7 +107,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 配置文件包含3个部分：
 
 * `segmentMembership` （始终显示在配置文件上）
-   * 此部分包含用户档案中存在的所有区段。 区段可以具有以下两种状态之一： `realized` 或 `exited`.
+   * 此部分包含用户档案中存在的所有受众。 受众可以具有以下两种状态之一： `realized` 或 `exited`.
 * `identityMap` （始终显示在配置文件上）
    * 此部分包含用户档案中存在的所有身份(电子邮件、Google GAID、Apple IDFA等)，以及映射为在激活工作流中导出的用户。
 * 属性（根据目标配置，这些属性可能存在于配置文件中）。 要注意的是，预定义属性和自由格式属性之间也存在一些差异：
@@ -170,15 +170,15 @@ Authorization: Bearer YOUR_REST_API_KEY
 }
 ```
 
-## 使用模板语言进行身份、属性和区段成员资格转换 {#using-templating}
+## 使用模板语言进行身份、属性和受众成员资格转换 {#using-templating}
 
 Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语言，类似于 [金家](https://jinja.palletsprojects.com/en/2.11.x/)，以将字段从Experience PlatformXDM架构转换为目标支持的格式。
 
 此部分提供了如何进行这些转换的几个示例 — 从输入XDM架构，通过模板，以及输出到目标接受的有效负载格式。 以下示例通过提高复杂性提供，如下所示：
 
-1. 简单转换示例。 了解模板化如何与的简单转换一起使用 [配置文件属性](#attributes)， [区段成员资格](#segment-membership)、和 [身份](#identities) 字段。
-2. 将上述字段组合在一起的模板的复杂性增加： [创建发送区段和标识的模板](./message-format.md#segments-and-identities) 和 [创建用于发送区段、身份和配置文件属性的模板](#segments-identities-attributes).
-3. 包含聚合键的模板。 当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，Experience Platform根据区段ID、区段状态或身份命名空间等条件对导出到目标的用户档案进行分组。
+1. 简单转换示例。 了解模板化如何与的简单转换一起使用 [配置文件属性](#attributes)， [受众会员资格](#segment-membership)、和 [身份](#identities) 字段。
+2. 将上述字段组合在一起的模板的复杂性增加： [创建用于发送受众和身份的模板](./message-format.md#segments-and-identities) 和 [创建用于发送区段、身份和配置文件属性的模板](#segments-identities-attributes).
+3. 包含聚合键的模板。 当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，Experience Platform根据受众ID、受众状态或身份命名空间等条件，对导出到目标的用户档案进行分组。
 
 ### 配置文件属性 {#attributes}
 
@@ -263,10 +263,10 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 }
 ```
 
-### 区段会员资格 {#segment-membership}
+### 受众会员资格 {#audience-membership}
 
-此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的区段。
-对于 `status` 字段，请阅读相关文档 [“区段成员资格详细信息”架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
+此 [segmentMembership](../../../../xdm/schema/field-dictionary.md) XDM属性通知用户档案所属的受众。
+对于 `status` 字段，请阅读相关文档 [受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 
 **输入**
 
@@ -335,7 +335,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
                 {% endfor %}
                 ],
                 "remove": [
-                {# Alternative syntax for filtering segments by status: #}
+                {# Alternative syntax for filtering audiences by status: #}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                 "{{ segment.key }}"{% if not loop.last %},{% endif %}
                 {% endfor %}
@@ -490,10 +490,10 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 }
 ```
 
-### 创建发送区段和标识的模板 {#segments-and-identities}
+### 创建用于发送受众和身份的模板 {#segments-and-identities}
 
 本节提供了AdobeXDM架构和合作伙伴目标架构之间常用转换的示例。
-以下示例说明如何转换区段成员资格和身份格式并将它们输出到您的目标。
+以下示例说明如何转换受众成员资格和身份格式并将它们输出到您的目标。
 
 **输入**
 
@@ -595,7 +595,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
                     {% endfor %}
                 ],
                 "remove": [
-                    {# Alternative syntax for filtering segments by status: #}
+                    {# Alternative syntax for filtering audiences by status: #}
                     {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{% if not loop.last %},{% endif %}
                     {% endfor %}
@@ -661,7 +661,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 
 本节提供了AdobeXDM架构和合作伙伴目标架构之间常用转换的示例。
 
-另一个常见用例是导出包含区段成员资格、身份（例如：电子邮件地址、电话号码、广告ID）和配置文件属性的数据。 要以这种方式导出数据，请参阅以下示例：
+另一个常见用例是导出包含受众成员资格、身份（例如：电子邮件地址、电话号码、广告ID）和配置文件属性的数据。 要以这种方式导出数据，请参阅以下示例：
 
 **输入**
 
@@ -788,7 +788,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
                 {% endfor %}
                 ],
                 "remove": [
-                {# Alternative syntax for filtering segments by status: #}
+                {# Alternative syntax for filtering audiences by status: #}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{% if not loop.last %},{% endif %}
                 {% endfor %}
@@ -859,21 +859,21 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 
 ### 在模板中包含Aggregation Key以访问按各种标准分组的导出用户档案 {#template-aggregation-key}
 
-当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，您可以根据区段ID、区段别名、区段成员资格或身份命名空间等条件，对导出到目标的配置文件进行分组。
+当您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 在目标配置中，您可以根据受众ID、受众别名、受众成员资格或身份命名空间等条件，对导出到目标的用户档案进行分组。
 
 在消息转换模板中，您可以访问上述聚合键，如以下部分中的示例所示。 使用聚合密钥构造导出为Experience Platform的HTTP消息，以匹配目标预期的格式和速率限制。
 
-#### 在模板中使用区段ID聚合密钥 {#aggregation-key-segment-id}
+#### 在模板中使用受众ID聚合密钥 {#aggregation-key-segment-id}
 
-如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 如果设置为true，则导出到目标的HTTP消息中的用户档案将按区段ID进行分组。 请参阅以下内容，了解如何在模板中访问区段ID。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 如果设置为true，则导出到目标的HTTP消息中的用户档案将按受众ID分组。 请参阅以下内容，了解如何在模板中访问受众ID。
 
 **输入**
 
 请考虑以下四个配置文件，其中：
 
-* 前两个是具有区段ID的区段的一部分 `788d8874-8007-4253-92b7-ee6b6c20c6f3`
-* 第三个配置文件是具有区段ID的区段的一部分 `8f812592-3f06-416b-bd50-e7831848a31a`
-* 第四个配置文件是上述两个区段的一部分。
+* 前两个是具有受众ID的受众的一部分 `788d8874-8007-4253-92b7-ee6b6c20c6f3`
+* 第三个配置文件是具有受众ID的受众的一部分 `8f812592-3f06-416b-bd50-e7831848a31a`
+* 第四个配置文件是上述两个受众的一部分。
 
 配置文件1：
 
@@ -965,7 +965,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 >
 >对于使用的所有模板，必须转义非法字符，如双引号 `""` 插入之前 [模板](../../functionality/destination-server/templating-specs.md) 在 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 有关逸出双引号的更多信息，请参见 [JSON标准](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-请注意以下方式 `audienceId` 在模板中用于访问区段ID。 此示例假定您使用 `audienceId` 目标分类中的区段成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
+请注意以下方式 `audienceId` 在模板中用于访问受众ID。 此示例假定您使用 `audienceId` 目标分类中的受众成员资格。 您可以改用任何其他字段名称，具体取决于您自己的分类。
 
 ```python
 {
@@ -982,7 +982,7 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 
 **结果**
 
-导出到目标时，用户档案会根据其区段ID拆分为两个组。
+导出到目标时，用户档案会根据其受众ID拆分为两个组。
 
 ```json
 {
@@ -1015,19 +1015,19 @@ Adobe使用 [鹅卵石模板](https://pebbletemplates.io/)，一种模板化语�
 }
 ```
 
-#### 在模板中使用区段别名聚合密钥 {#aggregation-key-segment-alias}
+#### 在模板中使用受众别名聚合密钥 {#aggregation-key-segment-alias}
 
-如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 设置为true时，您还可以访问模板中的区段别名。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 设置为true时，您还可以访问模板中的受众别名。
 
-将以下行添加到模板，以访问按区段别名分组的导出用户档案。
+将以下行添加到模板，以访问按受众别名分组的导出用户档案。
 
 ```python
 customerList={{input.aggregationKey.segmentAlias}}
 ```
 
-#### 在模板中使用区段状态聚合密钥 {#aggregation-key-segment-status}
+#### 在模板中使用受众状态聚合密钥 {#aggregation-key-segment-status}
 
-如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 和 `includeSegmentStatus` 设置为true时，您可以访问模板中的区段状态。 这样，您可以根据是否应从区段添加或删除用户档案，对导出到目标的HTTP消息中的用户档案进行分组。
+如果您使用 [可配置聚合](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) 和设置 `includeSegmentId` 和 `includeSegmentStatus` 设置为true时，您可以访问模板中的受众状态。 这样，您可以根据是否应从区段添加或删除用户档案，对导出到目标的HTTP消息中的用户档案进行分组。
 
 可能的值包括：
 
@@ -1206,10 +1206,10 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 | 函数 | 描述 |
 |---------|----------|
 | `input.profile` | 用户档案，表示为 [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). 遵循本页前面提到的合作伙伴XDM架构。 |
-| `destination.segmentAliases` | 从Adobe Experience Platform命名空间中的区段ID映射到合作伙伴系统中的区段别名。 |
-| `destination.segmentNames` | 从Adobe Experience Platform命名空间中的区段名称映射到合作伙伴系统中的区段名称。 |
-| `addedSegments(listOfSegments)` | 仅返回具有状态的区段 `realized`. |
-| `removedSegments(listOfSegments)` | 仅返回具有状态的区段 `exited`. |
+| `destination.segmentAliases` | 从Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 |
+| `destination.segmentNames` | 从Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 |
+| `addedSegments(listOfSegments)` | 仅返回具有状态的受众 `realized`. |
+| `removedSegments(listOfSegments)` | 仅返回具有状态的受众 `exited`. |
 
 {style="table-layout:auto"}
 
