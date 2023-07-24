@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 68c6d579d43b4137e3107d3ab102300dc8304c90
+source-git-commit: cb8fd7a7e3803c356adbdf0c20cde869c1de602c
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '990'
 ht-degree: 11%
 
 ---
@@ -62,7 +62,6 @@ ht-degree: 11%
       - [OneTrust集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
-      - [SAP Hybris连接器](connectors/crm/sap-hybris.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
       - [SugarCRM连接器](connectors/crm/sugarcrm.md)
       - [Veeva CRM连接器](connectors/crm/veeva.md)
@@ -94,6 +93,7 @@ ht-degree: 11%
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [teradata优势连接器](connectors/databases/teradata-vantage.md)
    - 电子商务 {#ecommerce}
+      - [SAP商务](connectors/ecommerce/sap-commerce.md)
       - [Shopify](connectors/ecommerce/shopify.md)
       - [Shopify流](connectors/ecommerce/shopify-streaming.md)
    - 本地系统 {#local-system}
@@ -140,7 +140,6 @@ ht-degree: 11%
          - [OneTrust集成](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
-         - [SAP Hybris](tutorials/api/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
          - [SugarCRM帐户和联系人](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM事件](tutorials/api/create/crm/sugarcrm-events.md)
@@ -173,6 +172,7 @@ ht-degree: 11%
          - [teradata优势](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - 电子商务 {#ecommerce}
+         - [SAP商务](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
          - [Shopify流](tutorials/api/create/ecommerce/shopify-streaming.md)
       - 营销自动化 {#marketing-automation}
@@ -261,7 +261,6 @@ ht-degree: 11%
          - [OneTrust集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
-         - [SAP Hybris](tutorials/ui/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
          - [SugarCRM帐户和联系人](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM事件](tutorials/ui/create/crm/sugarcrm-events.md)
@@ -293,6 +292,7 @@ ht-degree: 11%
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
       - 电子商务 {#ecommerce}
+         - [SAP商务](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
          - [Shopify流](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - 本地系统 {#local-system}
@@ -370,5 +370,5 @@ ht-degree: 11%
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
-- [API参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
+- [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
