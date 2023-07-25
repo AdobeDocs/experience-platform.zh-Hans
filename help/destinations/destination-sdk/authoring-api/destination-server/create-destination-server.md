@@ -1,9 +1,9 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建目标服务器的API调用。
 title: 创建目标服务器配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: ca4fb2dce097197aa1a97e0716e6294546bfee38
 workflow-type: tm+mt
-source-wordcount: '1623'
+source-wordcount: '1696'
 ht-degree: 9%
 
 ---
@@ -44,7 +44,11 @@ ht-degree: 9%
 POST /authoring/destination-servers
 ```
 
-根据您创建的目标类型，您需要配置一个稍有不同的目标服务器类型。 请参阅以下选项卡中有关Destination SDK支持的每种目标类型的目标服务器示例。
+根据您创建的目标类型，您需要配置一个稍有不同的目标服务器类型。
+
+### 创建静态架构目标服务器 {#static-destination-servers}
+
+请参阅以下选项卡中目标服务器的示例，了解使用的目标 [静态架构](../../functionality/destination-configuration/schema-configuration.md#attributes-schema).
 
 以下负载示例包含每种目标服务器类型支持的所有参数。 您无需在请求中包含所有参数。 可根据您的需求自定义有效负载。
 
@@ -770,6 +774,18 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
+>[!ENDTABS]
+
+### 创建动态架构目标服务器 {#dynamic-schema-servers}
+
+动态架构允许您动态检索支持的目标属性，并根据自己的API生成架构。 在配置架构之前，您需要为动态架构配置目标服务器。
+
+在下面的选项卡中，查看使用的目标的目标服务器示例 [动态架构](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration).
+
+以下有效负载示例包含动态架构服务器所需的所有参数。
+
+>[!BEGINTABS]
+
 >[!TAB 动态架构服务器]
 
 **创建动态架构服务器**
@@ -827,6 +843,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 成功的响应会返回HTTP状态200以及新创建的目标服务器配置的详细信息。
 
 +++
+
 
 >[!ENDTABS]
 

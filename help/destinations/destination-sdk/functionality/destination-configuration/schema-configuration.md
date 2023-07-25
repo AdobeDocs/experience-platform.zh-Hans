@@ -1,9 +1,9 @@
 ---
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
-source-git-commit: 20dc7b31f75e88badac17faa542e046598632690
+source-git-commit: ca4fb2dce097197aa1a97e0716e6294546bfee38
 workflow-type: tm+mt
-source-wordcount: '1892'
+source-wordcount: '1898'
 ht-degree: 4%
 
 ---
@@ -48,7 +48,7 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 Destination SDK支持多个架构配置：
 
 * 静态架构是通过 `profileFields` 中的数组 `schemaConfig` 部分。 在静态架构中，您定义了应显示在Experience PlatformUI中的每个target属性 `profileFields` 数组。 如果需要更新架构，您必须 [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md).
-* 动态架构使用其他目标服务器类型，称为 [动态架构服务器](../../authoring-api/destination-server/create-destination-server.md)，可根据您自己的API动态生成架构。 动态架构不使用 `profileFields` 数组。 如果需要更新架构，则无需 [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md). 相反，动态架构服务器会从API检索更新的架构。
+* 动态架构使用其他目标服务器类型，称为 [动态架构服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers)，以动态检索支持的目标属性并根据您自己的API生成架构。 动态架构不使用 `profileFields` 数组。 如果需要更新架构，则无需 [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md). 相反，动态架构服务器会从API检索更新的架构。
 * 在架构配置中，您可以选择添加所需的（或预定义的）映射。 用户可以在Platform UI中查看这些映射，但在设置与目标的连接时，他们无法修改这些映射。 例如，您可以强制电子邮件地址字段始终发送到目标。
 
 此 `schemaConfig` 部分会根据所需的架构类型使用多个配置参数，如下所示。
@@ -126,7 +126,7 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构相反，�
 
 >[!IMPORTANT]
 >
->在创建动态架构之前，必须 [创建动态模式服务器](../../authoring-api/destination-server/create-destination-server.md).
+>在创建动态架构之前，必须 [创建动态模式服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers).
 
 在动态模式配置中， `profileFields` 数组被替换为 `dynamicSchemaConfig` 部分，如下所示。
 
