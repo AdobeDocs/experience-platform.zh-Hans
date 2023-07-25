@@ -1,7 +1,7 @@
 ---
 description: 了解如何设置API调用的格式，以通过Adobe Experience Platform Destination SDK提交目标发布请求。
 title: 创建目标发布请求
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+source-git-commit: 8ec5d450d2856b9a12457e1b1b0b46baf930253a
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 2%
@@ -69,9 +69,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 {style="table-layout:auto"}
 
++++
+
 +++响应
 
 成功的响应会返回HTTP状态201以及目标发布请求的详细信息。
+
++++
 
 ## API错误处理
 
