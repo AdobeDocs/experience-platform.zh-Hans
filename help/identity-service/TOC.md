@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
-source-git-commit: ed091c95952b731ce1f7567b99a1072a8be2b4a5
+source-git-commit: b5214301f48418a0d00575143caa2937b8beed62
 workflow-type: tm+mt
-source-wordcount: '112'
-ht-degree: 28%
+source-wordcount: '119'
+ht-degree: 30%
 
 ---
 
@@ -17,7 +17,8 @@ ht-degree: 28%
 - [Identity服务概述](home.md)
 - [身份命名空间概述](namespaces.md)
 - [身份数据的护栏](guardrails.md)
-- 身份服务API {#api}
+- [使用删除逻辑保护身份数据](guardrails-beta.md)
+- 标识服务API {#api}
    - [快速入门](api/getting-started.md)
    - [将字段标记为标识](api/label-identities.md)
    - [列出群集身份](api/list-cluster-identites.md)
@@ -34,5 +35,5 @@ ht-degree: 28%
 - [Identity Service中的删除](deletion.md)
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [API参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
+- [API 参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
 - [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
