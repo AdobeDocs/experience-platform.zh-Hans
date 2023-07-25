@@ -4,9 +4,9 @@ description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Cust
 hidefromtoc: true
 hide: true
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
+source-git-commit: 8c9d736c8d2c45909a2915f0f1d845a7ba4d876d
 workflow-type: tm+mt
-source-wordcount: '1736'
+source-wordcount: '1834'
 ht-degree: 3%
 
 ---
@@ -37,6 +37,20 @@ ht-degree: 3%
 LiveRamp SFTP支持激活身份，例如基于PII的标识符、已知标识符和自定义ID，如官方文档中所述 [LiveRamp文档](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers).
 
 在 [映射步骤](#map) 在激活工作流中，必须将目标映射定义为自定义属性。
+
+## 支持的受众 {#supported-audiences}
+
+此部分介绍可以导出到此目标的所有受众。
+
+所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+
+此外，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#importing-an-audience) 从CSV文件Experience Platform。 |
+
+{style="table-layout:auto"}
 
 ## 导出类型和频率 {#export-type-frequency}
 
@@ -190,7 +204,9 @@ Platform会将两个CSV文件导出到 [!DNL LiveRamp SFTP]：
 * 一个包含受众A、C和D的CSV文件；
 * 一个包含受众B的CSV文件。
 
-导出的CSV文件在单独的列中包含具有选定属性和相应受众状态的配置文件，属性名称和受众ID作为列标题。
+导出的CSV文件包含具有选定属性和相应受众状态的配置文件，这些配置文件位于单独的列中，并具有属性名称，以及 `audience_namespace:audience_ID` 对作为列标题，如以下示例所示：
+
+`ATTRIBUTE_NAME, AUDIENCE_NAMESPACE_1:AUDIENCE_ID_1, AUDIENCE_NAMESPACE_2:AUDIENCE_ID_2,..., AUDIENCE_NAMESPACE_X:AUDIENCE_ID_X`
 
 导出文件中包含的用户档案可以与以下受众资格状态之一匹配：
 
@@ -198,11 +214,10 @@ Platform会将两个CSV文件导出到 [!DNL LiveRamp SFTP]：
 * `Expired`：该用户档案不再符合受众条件，而是以前符合条件。
 * `""`（空字符串）：个人资料从未符合受众条件。
 
-
-例如，一个导出的CSV文件包含一个 `email` 属性和3个受众可能如下所示：
+例如，一个导出的CSV文件包含一个 `email` 属性，两个源自Experience Platform的受众 [分段服务](../../../segmentation/home.md)，和一个 [已导入](../../../segmentation/ui/overview.md#importing-an-audience) 外部受众，可能如下所示：
 
 ```csv
-email,aa2e3d98-974b-4f8b-9507-59f65b6442df,45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,7729e537-4e42-418e-be3b-dce5e47aaa1e
+email,ups:aa2e3d98-974b-4f8b-9507-59f65b6442df,ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e
 abc117@testemailabc.com,active,,
 abc111@testemailabc.com,,,active
 abc102@testemailabc.com,,,active
@@ -210,6 +225,8 @@ abc116@testemailabc.com,active,,
 abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
+
+在上例中， `ups:aa2e3d98-974b-4f8b-9507-59f65b6442df` 和 `ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` 部分介绍源自Segmentation Service的受众，而 `CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e` 描述导入到Platform as a的受众 [自定义上传](../../../segmentation/ui/overview.md#importing-an-audience).
 
 因为Platform为每个生成一个CSV文件 [合并策略Id](../../../profile/merge-policies/overview.md)，它还会为每个合并策略ID生成单独的数据流运行。
 
