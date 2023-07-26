@@ -5,7 +5,7 @@ hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
 source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1083'
 ht-degree: 100%
 
@@ -34,7 +34,7 @@ ht-degree: 100%
 >
 >Real-Time CDP 中包含的其他由合作伙伴提供的属性会影响您的&#x200B;*平均配置文件丰富程度*。有关配置文件丰富程度的更多信息，请阅读[ Real-Time Customer Data Platform 产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)。
 
-## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
+## 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
 
 ![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-steps.png)
 
@@ -46,7 +46,7 @@ ht-degree: 100%
 
 ## 如何实现用例：分步说明 {#step-by-step-instructions}
 
-通读以下部分（其中包括指向更多文档的链接），以完成上面高级概述中的每个步骤。
+通读以下部分（其中包括指向更多文档的链接）以完成上方大致概述中的每个步骤。
 
 ### 合作伙伴的许可属性 {#license-attributes-from-partner}
 
@@ -87,7 +87,7 @@ Commenting out links for now
 >如果您选择使用数据供应商提供的基于个人的标识符来补充您的客户配置文件，您可以创建类型为&#x200B;**[[!UICONTROL 合作伙伴 ID]](/help/identity-service/namespaces.md)** 的新身份类型。
 >
 >阅读[身份类型部分](/help/identity-service/namespaces.md)，了解有关合作伙伴 ID 的更多信息。
->阅读 Experience Platform 用户界面中有关[如何定义身份字段](/help/xdm/ui/fields/identity.md)的内容。
+>阅读 Experience Platform 用户界面中有关[如何定义标识字段](/help/xdm/ui/fields/identity.md)的内容。
 
 ### 在除去个人身份信息 (PII) 或哈希 PII 时导出您想要扩充的受众 {#export-audiences}
 
