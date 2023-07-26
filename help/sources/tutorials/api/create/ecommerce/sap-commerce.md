@@ -1,32 +1,30 @@
 ---
 title: 使用流服务API为SAP Commerce创建源连接和数据流
-description: 了解如何创建源连接和数据流，以使用Flow Service API将SAP Commerce数据引入Experience Platform。
-hide: true
-hidefromtoc: true
-badge: Beta 版
-source-git-commit: 99edb8b2bcd4225235038e966a367d91375c961a
+description: 了解如何使用Flow Service API创建源连接和数据流以将SAP Commerce数据引入Experience Platform。
+badge: Beta
+source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
 workflow-type: tm+mt
 source-wordcount: '2358'
 ht-degree: 1%
 
 ---
 
-# 为创建源连接和数据流 [!DNL SAP Commerce] 使用流服务API
+# 为以下对象创建源连接和数据流 [!DNL SAP Commerce] 使用流服务API
 
 >[!NOTE]
 >
->此 [!DNL SAP Commerce] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+>此 [!DNL SAP Commerce] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
-以下教程将指导您完成创建 [!DNL SAP Commerce] 源连接和数据流 [[!DNL SAP] 订阅帐单](https://www.sap.com/products/financial-management/subscription-billing.html) 使用将联系人和客户数据发送到Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建 [!DNL SAP Commerce] 源连接和要引入的数据流 [[!DNL SAP] 订阅帐单](https://www.sap.com/products/financial-management/subscription-billing.html) 使用将联系人和客户数据发送到Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对Experience Platform的以下组件有一定的了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL SAP Commerce] 使用 [!DNL Flow Service] API。
+以下部分提供成功连接时需要了解的其他信息 [!DNL SAP Commerce] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
@@ -37,19 +35,19 @@ ht-degree: 1%
 | `clientId` | 的值 `clientId` 服务密钥。 |
 | `clientSecret` | 的值 `clientSecret` 服务密钥。 |
 | `tokenEndpoint` | 的值 `url` 从服务密钥中，它将类似于 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
-| `region` | 您的数据中心位置。 此区域出现在 `url` 且其值类似于 `eu10` 或 `us10`. 例如，如果 `url` 是 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`，那么您将需要 `eu10`. |
+| `region` | 您的数据中心位置。 此区域出现在 `url` 且其值类似于 `eu10` 或 `us10`. 例如，如果 `url` 是 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`，然后您需要 `eu10`. |
 
-有关这些凭据的更多信息，请参阅 [[!DNL SAP Commerce] 文档](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
+有关这些凭证的更多信息，请参阅 [[!DNL SAP Commerce] 文档](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
-## Connect [!DNL SAP Commerce] 到平台，使用 [!DNL Flow Service] API
+## 连接 [!DNL SAP Commerce] 到平台，使用 [!DNL Flow Service] API
 
-下面概述了进行身份验证所需的步骤 [!DNL SAP Commerce] 源，创建源连接，并创建数据流以将您的帐户和联系人数据带到Experience Platform。
+下面概述了进行身份验证所需的步骤 [!DNL SAP Commerce] 创建源连接，然后创建数据流以将您的帐户和联系人数据引入Experience Platform。
 
 ### 创建基本连接 {#base-connection}
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL SAP Commerce] 作为请求正文一部分的身份验证凭据。
+POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL SAP Commerce] 作为请求正文一部分的身份验证凭据。
 
 **API格式**
 
@@ -59,7 +57,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL SAP Commerce]：
+以下请求为创建基本连接 [!DNL SAP Commerce]：
 
 ```shell
 curl -X POST \
@@ -90,9 +88,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `name` | 基础连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 源的连接规范ID。 在您的源通过注册和批准后，可以检索此ID [!DNL Flow Service] API。 |
+| `connectionSpec.id` | 源的连接规范ID。 在您的源注册并批准后，可通过以下方式检索此ID： [!DNL Flow Service] API。 |
 | `auth.specName` | 用于向Platform验证源的身份验证类型。 |
 | `auth.params.region` | 您的数据中心位置。 此区域出现在 `url` 且其值类似于 `eu10` 或 `us10`. 例如，如果 `url` 是 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com` 您将需要 `eu10`. |
 | `auth.params.clientId` | 的值 `clientId` 服务密钥。 |
@@ -101,7 +99,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
+成功的响应会返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -112,7 +110,7 @@ curl -X POST \
 
 ### 浏览您的源 {#explore}
 
-GET获得基本连接ID后，您现在可以通过向 `/connections` 端点时，将基本连接ID作为查询参数提供。
+获得基本连接ID后，您现在可以通过向以下对象执行GET请求来探索源数据的内容和结构： `/connections` 端点，同时提供您的基本连接ID作为查询参数。
 
 **API格式**
 
@@ -125,11 +123,11 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
-| `objectType=rest` | 您希望浏览的对象类型。 目前，此值始终设置为 `rest`. |
+| `objectType=rest` | 您希望探索的对象类型。 目前，此值始终设置为 `rest`. |
 | `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 对于此源，值将为 `json`. |
-| `fileType=json` | 要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
+| `fileType=json` | 您要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
 | `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
-| `{SOURCE_PARAMS}` | 为要带到Platform的源文件定义参数。 检索接受的格式类型 `{SOURCE_PARAMS}`，则必须在base64中编码整个字符串。 <br> [!DNL SAP Commerce] 支持多个API。 根据您使用的对象类型，传递以下任一项： <ul><li>`customers`</li><li>`contacts`</li></ul> |
+| `{SOURCE_PARAMS}` | 为要带到Platform的源文件定义参数。 检索接受的格式类型 `{SOURCE_PARAMS}`中，您必须以base64为单位编码整个字符串。 <br> [!DNL SAP Commerce] 支持多个API。 根据您要使用的对象类型，传递以下任一项： <ul><li>`customers`</li><li>`contacts`</li></ul> |
 
 此 [!DNL SAP Commerce] 源支持多个API。 根据您利用请求发送的对象类型，如下所示：
 
@@ -143,7 +141,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 
 +++请求
 
-对象 [!DNL SAP Commerce] 客户API的价值 `{SOURCE_PARAMS}` 传递为 `{"object_type":"customers"}`. 在base64中编码时，它等于 `eyJvYmplY3RfdHlwZSI6ImN1c3RvbWVycyJ9` 如下所示。
+对象 [!DNL SAP Commerce] 客户API值 `{SOURCE_PARAMS}` 传递为 `{"object_type":"customers"}`. 在base64中进行编码时，它等于 `eyJvYmplY3RfdHlwZSI6ImN1c3RvbWVycyJ9` 如下所示。
 
 ```shell
 curl -X GET \
@@ -466,7 +464,7 @@ curl -X GET \
 
 +++请求
 
-对象 [!DNL SAP Commerce] Contacts API的值 `{SOURCE_PARAMS}` 传递为 `{"object_type":"contacts"}`. 在base64中编码时，它等于 `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=` 如下所示。
+对象 [!DNL SAP Commerce] Contacts API的值 `{SOURCE_PARAMS}` 传递为 `{"object_type":"contacts"}`. 在base64中进行编码时，它等于 `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=` 如下所示。
 
 ```shell
 curl -X GET \
@@ -557,7 +555,7 @@ curl -X GET \
 
 ### 创建源连接 {#source-connection}
 
-您可以通过对以下对象发出POST请求来创建源连接： `/sourceConnections` 的端点 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向以下对象发出POST请求来创建源连接： `/sourceConnections` 的端点 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -573,7 +571,7 @@ POST /sourceConnections
 
 +++请求
 
-以下请求创建源连接 [!DNL SAP Commerce] 客户数据：
+以下请求为创建源连接 [!DNL SAP Commerce] 客户数据：
 
 ```shell
 curl -X POST \
@@ -602,7 +600,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
 | `baseConnectionId` | 的基本连接ID [!DNL SAP Commerce]. 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
@@ -614,7 +612,7 @@ curl -X POST \
 
 +++响应
 
-成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
+成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -629,7 +627,7 @@ curl -X POST \
 
 +++请求
 
-以下请求创建源连接 [!DNL SAP Commerce] 联系人数据：
+以下请求为创建源连接 [!DNL SAP Commerce] 联系人数据：
 
 ```shell
 curl -X POST \
@@ -658,7 +656,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
 | `baseConnectionId` | 的基本连接ID [!DNL SAP Commerce]. 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
@@ -670,7 +668,7 @@ curl -X POST \
 
 +++响应
 
-成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
+成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -685,7 +683,7 @@ curl -X POST \
 
 ### 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
@@ -701,7 +699,7 @@ curl -X POST \
 
 目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-现在，您拥有目标架构、目标数据集和到数据湖的连接规范ID的唯一标识符。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -747,11 +745,11 @@ curl -X POST \
 | `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
 | `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `6b137bf6-d2a0-48c8-914b-d50f4942eb85`. |
 | `data.format` | 的格式 [!DNL SAP Commerce] 要摄取的数据。 |
-| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
+| `params.dataSetId` | 在上一步中检索到的目标数据集ID。 |
 
 **响应**
 
-成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -762,7 +760,7 @@ curl -X POST \
 
 ### 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
+要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 请求有效负载中定义的数据映射。
 
 **API格式**
 
@@ -776,7 +774,7 @@ POST /conversion/mappingSets
 
 +++请求
 
-以下请求为创建映射 [!DNL SAP Commerce] 客户API数据
+以下请求创建映射 [!DNL SAP Commerce] 客户API数据
 
 ```shell
 curl -X POST \
@@ -889,7 +887,7 @@ curl -X POST \
 
 +++请求
 
-以下请求为创建映射 [!DNL SAP Commerce] 联系人API数据
+以下请求创建映射 [!DNL SAP Commerce] 联系人API数据
 
 ```shell
 curl -X POST \
@@ -1041,7 +1039,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `name` | 您的数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
 | `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
 | `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
 | `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
@@ -1049,11 +1047,11 @@ curl -X POST \
 | `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
 | `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
 | `transformations.name` | 分配给转换的名称。 |
-| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中生成。 |
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
-| `scheduleParams.startTime` | 此属性包含有关数据流的摄取调度的信息。 |
+| `scheduleParams.startTime` | 此属性包含有关数据流的摄取计划的信息。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 |
 
 **响应**
 
@@ -1076,16 +1074,16 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
 
 ### 更新您的帐户
 
-PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
+PATCH通过向 [!DNL Flow Service] API，同时将您的基本连接ID作为查询参数提供。 发出PATCH请求时，必须提供源帐户的唯一帐户 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
 
-### 删除数据流
+### 删除您的数据流
 
-通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，同时提供您要作为查询参数的一部分删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
 
 ### 删除您的帐户
 
-向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).
+向以下网站发出DELETE请求，删除您的帐户： [!DNL Flow Service] API，同时提供要删除帐户的基本连接ID。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).
