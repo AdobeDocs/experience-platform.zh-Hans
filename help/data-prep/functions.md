@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: c9fb9320c7ef1da5aba41b3d01bca44b07ec6c17
+source-git-commit: 61247a5cac0f00a4163007fd693d3a0b0efc23ab
 workflow-type: tm+mt
-source-wordcount: '5221'
+source-wordcount: '4916'
 ht-degree: 3%
 
 ---
@@ -148,9 +148,9 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 无效 | 将属性的值设置为 `null`. 当您不想将字段复制到目标架构时，应使用此字段。 | | nullify() | nullify() | `null` |
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象： **必填** 从中提取键的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;： “Pride and Visimit”， “book2”： “1984”}) | `["book1", "book2"]` |
 | get_values | 解析键/值对并根据给定的键返回字符串的值。 | <ul><li>字符串： **必填** 要分析的字符串。</li><li>键： **必填** 必须为其提取值的键。</li><li>VALUE_DELIMITER： **必填** 分隔字段和值的分隔符。 如果 `null` 或提供了空字符串，则此值为 `:`.</li><li>FIELD_DELIMITER： *可选* 分隔字段和值对的分隔符。 如果 `null` 或提供了空字符串，则此值为 `,`.</li></ul> | get_values(STRING， KEY， VALUE_DELIMITER， FIELD_DELIMITER) | get_values(\&quot;firstName - John ， lastName - Cena ， phone - 555 420 8692\&quot;， \&quot;firstName\&quot;， \&quot;-\&quot;， \&quot;，\&quot;) | John |
-| map_get_values | 获取映射和键输入。 如果输入是单个键，则函数返回与该键关联的值。 如果输入是字符串数组，则函数返回与提供的键对应的所有值。 如果传入的映射具有重复的键，则返回值必须删除重复的键并返回唯一值。 | <ul><li>映射： **必填** 输入映射数据。</li><li>键：  **必填** 键可以是单个字符串或字符串数组。 如果提供了任何其他基元类型（数据/数字），则会将其视为字符串。</li></ul> | get_values(MAP， KEY) | 请参阅 [附录](#map_get_values) 以获取一个代码示例。 | |
-| map_has_keys | 如果提供了一个或多个输入键，则函数返回true。 如果提供字符串数组作为输入，则函数在找到的第一个键上返回true。 | <ul><li>映射：  **必填** 输入映射数据</li><li>键：  **必填** 键可以是单个字符串或字符串数组。 如果提供了任何其他基元类型（数据/数字），则会将其视为字符串。</li></ul> | map_has_keys(MAP， KEY) | 请参阅 [附录](#map_has_keys) 以获取一个代码示例。 | |
-| add_to_map | 接受至少两个输入。 可以提供任意数量的映射作为输入。 数据准备返回具有来自所有输入的所有键值对的单个映射。 如果一个或多个键重复（在同一映射中或跨映射），数据准备会删除重复的键，以便第一个键值对按它们在输入中传递的顺序持续存在。 | 映射： **必填** 输入映射数据。 | add_to_map(MAP 1， MAP 2， MAP 3， ...) | 请参阅 [附录](#add_to_map) 以获取一个代码示例。 | |
+<!-- | map_get_values | Takes a map and a key input. If the input is a single key, then the function returns the value associated with that key. If the input is a string array, then the function returns all values corresponding to the keys provided. If the incoming map has duplicate keys, the return value must de-duplicate the keys and return unique values. | <ul><li>MAP: **Required** The input map data.</li><li>KEY:  **Required** The key can be a single string or a string array. If any other primitive type (data / number) is provided, then it is treated as a string.</li></ul> | get_values(MAP, KEY) | Please see the [appendix](#map_get_values) for a code sample. | |
+| map_has_keys | If one or more input keys are provided, then the function returns true. If a string array is provided as input, then the function returns true on the first key that is found. | <ul><li>MAP:  **Required** The input map data</li><li>KEY:  **Required** The key can be a single string or a string array. If any other primitive type (data / number) is provided, then it is treated as a string.</li></ul> | map_has_keys(MAP, KEY) | Please see the [appendix](#map_has_keys) for a code sample. | |
+| add_to_map | Accepts at least two inputs. Any number of maps can be provided as inputs. Data Prep returns a single map that has all key-value pairs from all the inputs. If one or more keys are repeated (in the same map or across maps), Data Prep de-duplicates the keys so that the first key-value pair persists in the order that they were passed in the input. | MAP: **Required** The input map data. | add_to_map(MAP 1, MAP 2, MAP 3, ...) | Please see the [appendix](#add_to_map) for a code sample. | | -->
 
 {style="table-layout:auto"}
 
@@ -381,12 +381,12 @@ address.line1 -> addr.addrLine1
 | 黑客 | 当在中检测到脚本时，使用此设备值 `useragent` 字符串。 |
 
 {style="table-layout:auto"}
-
-### 代码示例 {#code-samples}
+<!-- 
+### Code samples {#code-samples}
 
 #### map_get_values {#map-get-values}
 
-+++选择以查看示例
++++Select to view example
 
 ```json
  example = "map_get_values(book_details,\"author\") where input is : {\n" +
@@ -404,7 +404,7 @@ address.line1 -> addr.addrLine1
 
 #### map_has_keys {#map_has_keys}
 
-+++选择以查看示例
++++Select to view example
 
 ```json
  example = "map_has_keys(book_details,\"author\")where input is : {\n" +
@@ -422,7 +422,7 @@ address.line1 -> addr.addrLine1
 
 #### add_to_map {#add_to_map}
 
-+++选择以查看示例
++++Select to view example
 
 ```json
 example = "add_to_map(book_details, book_details2) where input is {\n" +
@@ -454,4 +454,4 @@ example = "add_to_map(book_details, book_details2) where input is {\n" +
       returns = "A new map with all elements from map and addends"
 ```
 
-+++
++++ -->
