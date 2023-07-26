@@ -2,10 +2,10 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: f05f8cb47a1f65e8931500d7064fdce48aa53347
+source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
 workflow-type: tm+mt
-source-wordcount: '1041'
-ht-degree: 3%
+source-wordcount: '940'
+ht-degree: 4%
 
 ---
 
@@ -13,17 +13,9 @@ ht-degree: 3%
 
 ## 目标更改日志 {#changelog}
 
->[!IMPORTANT]
->
->随着导出数据集功能的测试版和改进的文件导出功能的推出，您现在可能会看到两个 [!DNL SFTP] 目标目录中的信息卡。
->* 如果您已经将文件导出到 **[!UICONTROL SFTP]** 目标：请为新的创建数据流 **[!UICONTROL SFTP测试版]** 目标。
->* 如果您尚未创建任何流到 **[!UICONTROL SFTP]** 目标，使用新的 **[!UICONTROL SFTP测试版]** 用于导出文件的信息卡 **[!UICONTROL SFTP]**.
+在2023年7月发行的Experience Platform中，SFTP目标提供了新功能，如下所示：
 
-![并排视图中两个SFTP目标卡的图像。](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
-
-新版中的改进 [!DNL SFTP] 目标卡包括：
-
-* [支持数据集导出](/help/destinations/ui/export-datasets.md).
+* [!BADGE Beta]{type=Informative}[支持数据集导出](/help/destinations/ui/export-datasets.md).
 * 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
 * 能够通过设置导出文件中的自定义文件标头 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 * [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
@@ -122,9 +114,9 @@ ht-degree: 3%
 * **[!UICONTROL 名称]**：输入有助于您在Experience Platform用户界面中识别此目标的名称；
 * **[!UICONTROL 描述]**：输入此目标的描述；
 * **[!UICONTROL 文件夹路径]**：输入要导出文件的SFTP位置中的文件夹路径。
-* **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
-* **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL SFTP测试版]** 目标。
+* **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
 
 ## 将受众激活到此目标 {#activate}
 

@@ -1,11 +1,11 @@
 ---
 title: Azure Blob连接
-description: 创建到Azure Blob存储的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
+description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
 workflow-type: tm+mt
-source-wordcount: '1085'
-ht-degree: 3%
+source-wordcount: '973'
+ht-degree: 4%
 
 ---
 
@@ -13,19 +13,11 @@ ht-degree: 3%
 
 ## 目标更改日志 {#changelog}
 
->[!IMPORTANT]
->
->通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL Azure Blob] 目标目录中的信息卡。
->* 如果您已经将文件导出到 **[!UICONTROL Azure Blob]** 目标：请为新的数据集创建新的数据流 **[!UICONTROL Azure Blob测试版]** 目标。
->* 如果您尚未创建任何数据流到 **[!UICONTROL Azure Blob]** 目标，请使用新的 **[!UICONTROL Azure Blob测试版]** 用于导出文件的信息卡 **[!UICONTROL Azure Blob]**.
+在2023年7月的Experience Platform版本中， [!DNL Azure Blob] 目标提供了新功能，如下所示：
 
-![并排视图中两个Azure Blob目标卡的图像。](../../assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
-
-新版中的改进 [!DNL Azure Blob] 目标卡包括：
-
-* [数据集导出支持](/help/destinations/ui/export-datasets.md).
+* [!BADGE Beta]{type=Informative}[支持数据集导出](/help/destinations/ui/export-datasets.md).
 * 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
-* 能够通过以下方式设置导出文件中的自定义文件标头： [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* 能够通过设置导出文件中的自定义文件标头 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 * [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## 概述 {#overview}
@@ -34,27 +26,27 @@ ht-degree: 3%
 
 ## 连接到您的 [!UICONTROL Azure Blob] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
-* 连接到您的 [!UICONTROL Azure Blob] 存储位置使用Platform用户界面，请阅读部分 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下面的。
-* 连接到您的 [!UICONTROL Azure Blob] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 要连接到 [!UICONTROL Azure Blob] 存储位置使用Platform用户界面，请阅读以下章节 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下。
+* 要连接到 [!UICONTROL Azure Blob] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [模式组合基础](../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
    * [架构编辑器教程](../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-如果您已经拥有有效的 [!DNL Blob] 目标，您可以跳过本文档的其余部分，并继续阅读关于的教程 [将受众激活到您的目标](../../ui/activate-batch-profile-destinations.md).
+如果您已经拥有有效的 [!DNL Blob] 目标，您可以跳过本文档的其余部分，并转到上的教程 [将受众激活到您的目标](../../ui/activate-batch-profile-destinations.md).
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可以导出到此目标的所有受众。
+此部分介绍可导出到此目标的所有受众。
 
 所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表中描述的受众。
+此外，此目标还支持激活下表所述的受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
@@ -69,15 +61,15 @@ ht-degree: 3%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 基于配置文件]** | 您正在导出区段的所有成员，以及所需的架构字段（例如：电子邮件地址、电话号码、姓氏），如 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
-| 导出频率 | **[!UICONTROL 批次]** | 批量目标将文件导出到下游平台，增量为3、6、8、12或24小时。 详细了解 [基于文件的批处理目标](/help/destinations/destination-types.md#file-based). |
+| 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 详细了解 [批处理基于文件的目标](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
 ## 支持的文件格式 {#file-formats}
 
-[!DNL Experience Platform] 支持导出到的以下文件格式 [!DNL Azure Blob]：
+[!DNL Experience Platform] 支持以下要导出的文件格式 [!DNL Azure Blob]：
 
-* 逗号分隔值(CSV)：当前，对导出数据文件的支持仅限于逗号分隔值。
+* 逗号分隔值(CSV)：对导出数据文件的支持当前仅限于逗号分隔值。
 
 ## 连接到目标 {#connect}
 
@@ -85,7 +77,7 @@ ht-degree: 3%
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在目标配置工作流中，填写下面两节中列出的字段。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
 ### 向目标进行身份验证 {#authenticate}
 
@@ -96,11 +88,11 @@ ht-degree: 3%
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
-* **[!UICONTROL 连接字符串]**：需要连接字符串才能访问Blob存储中的数据。 此 [!DNL Blob] 连接字符串模式开头为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
-   * 有关配置的详细信息 [!DNL Blob] 连接字符串，请参见 [为Azure存储帐户配置连接字符串](https://learn.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) 在Microsoft文档中。
-* **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 在下图中查看正确格式化的加密密钥示例。
+* **[!UICONTROL 连接字符串]**：访问Blob存储中的数据需要连接字符串。 此 [!DNL Blob] 连接字符串模式以下列内容开头： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
+   * 有关配置的详细信息 [!DNL Blob] 连接字符串，请参见 [为Azure存储帐户配置连接字符串](https://learn.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) 请参阅Microsoft文档。
+* **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
-  ![图像显示UI中格式正确的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![显示UI中格式正确的PGP密钥示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -108,15 +100,15 @@ ht-degree: 3%
 
 * **[!UICONTROL 名称]**：输入可帮助您识别此目标的名称。
 * **[!UICONTROL 描述]**：输入此目标的描述。
-* **[!UICONTROL 文件夹路径]**：输入将托管导出文件的目标文件夹的路径。
-* **[!UICONTROL 容器]**：输入 [!DNL Azure Blob Storage] 此目标使用的容器。
-* **[!UICONTROL 文件类型]**：选择导出文件应使用的格式Experience Platform。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
-* **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 此选项仅适用于 **[!UICONTROL Azure Blob测试版]** 目标。
+* **[!UICONTROL 文件夹路径]**：输入目标文件夹的路径，该文件夹将托管导出的文件。
+* **[!UICONTROL 容器]**：输入 [!DNL Azure Blob Storage] 此目标要使用的容器。
+* **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
@@ -126,13 +118,13 @@ ht-degree: 3%
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
+请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## （测试版）导出数据集 {#export-datasets}
+## (Beta)导出数据集 {#export-datasets}
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 操作方法 [使用Platform用户界面导出数据集](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
 * 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 导出的数据 {#exported-data}

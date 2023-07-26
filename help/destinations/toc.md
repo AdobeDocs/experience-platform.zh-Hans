@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1164'
 ht-degree: 9%
 
 ---
@@ -24,14 +24,14 @@ ht-degree: 9%
 * API教程 {#api}
    * [云存储目标的API迁移指南](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
-   * [连接到批处理云存储和电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
+   * [连接到批量云存储和电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
    * [（测试版）通过临时激活API将受众激活到批量目标](./api/ad-hoc-activation-api.md)
    * [编辑目标](./api/edit-destination.md)
    * [更新目标数据流](./api/update-destination-dataflows.md)
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [（测试版）使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
-   * [（测试版）导出数据集](/help/destinations/api/export-datasets.md)
+   * [(Beta)导出数据集](/help/destinations/api/export-datasets.md)
 * UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -40,10 +40,10 @@ ht-degree: 9%
       * [将受众激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md)
       * [将受众激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
       * [将受众激活到批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
-      * [将受众激活到边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
+      * [激活受众以边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [（测试版）使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
-      * [（测试版）在新的测试版云存储目标中使用最后一次XDM资格鉴定时间](./ui/activate-last-qualification-time.md)
+      * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
@@ -56,7 +56,7 @@ ht-degree: 9%
    * [目标目录概述](./catalog/overview.md)
    * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
-      * [（测试版）Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
+      * [(Beta)Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
@@ -66,7 +66,7 @@ ht-degree: 9%
       * [Adobe Advertising Cloud扩展](./catalog/advertising/adobe-advertising-cloud.md)
       * [(Beta) Amazon Ads连接](./catalog/advertising/amazon-ads.md)
       * [Awin广告商转化标记扩展](./catalog/advertising/awin-conversiontag.md)
-      * [Awin广告商母版标记扩展](./catalog/advertising/awin-mastertag.md)
+      * [Awin广告商主标签扩展](./catalog/advertising/awin-mastertag.md)
       * [Bing Ads通用事件跟踪(UET)扩展](./catalog/advertising/bing-ads.md)
       * [分支扩展](./catalog/advertising/branch.md)
       * [(Beta)标准连接](./catalog/advertising/criteo.md)
@@ -83,7 +83,7 @@ ht-degree: 9%
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [(Alpha) LiveRamp - SFTP连接](./catalog/advertising/liveramp.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
-      * [pinterest Conversion Tracking扩展](./catalog/advertising/pinterest-extension.md)
+      * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
@@ -97,7 +97,7 @@ ht-degree: 9%
       * [Adobe Media Analytics for Audio and Video 扩展](./catalog/analytics/adobe-video-analytics.md)
       * [Clicktale扩展](./catalog/analytics/clicktale.md)
       * [Contentsquare扩展](./catalog/analytics/contentsquare.md)
-      * [分贝扩展](./catalog/analytics/decibel.md)
+      * [Decibel扩展](./catalog/analytics/decibel.md)
       * [Demandbase扩展](./catalog/analytics/demandbase.md)
       * [DialogTech扩展](./catalog/analytics/dialogtech.md)
       * [Google全局站点标记扩展](./catalog/analytics/gtag-analytics.md)
@@ -110,18 +110,18 @@ ht-degree: 9%
       * [量子量度扩展](./catalog/analytics/quantum-metric.md)
       * [SessionCam扩展](./catalog/analytics/sessioncam.md)
       * [TMMData扩展](./catalog/analytics/tmmdata.md)
-      * [Yext Conversion Tracking扩展](./catalog/analytics/yext.md)
+      * [Yext转化跟踪扩展](./catalog/analytics/yext.md)
    * 云存储目标 {#cloud-storage}
       * [云存储目标概述](./catalog/cloud-storage/overview.md)
       * [Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3连接](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob连接](./catalog/cloud-storage/azure-blob.md)
-      * [(Beta) Azure Data Lake Storage Gen2](./catalog/cloud-storage/adls-gen2.md)
+      * [Azure Data Lake Storage Gen2](./catalog/cloud-storage/adls-gen2.md)
       * [Azure事件中心连接](./catalog/cloud-storage/azure-event-hubs.md)
-      * [(Beta)数据登陆区](./catalog/cloud-storage/data-landing-zone.md)
-      * [（测试版） Google Cloud Storage](./catalog/cloud-storage/google-cloud-storage.md)
+      * [数据登陆区](./catalog/cloud-storage/data-landing-zone.md)
+      * [Google云存储](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
-      * [允许列表 SFTP目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
+      * [列入允许列表 SFTP目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 客户关系管理(CRM)目标 {#crm}
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
       * [Microsoft Dynamics 365连接](./catalog/crm/microsoft-dynamics-365.md)
@@ -174,22 +174,22 @@ ht-degree: 9%
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
       * [facebook连接](./catalog/social/facebook.md)
-      * [linkedIn Matched Audiences连接](./catalog/social/linkedin.md)
+      * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
       * [TikTok 连接](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
    * 流目标 {#streaming}
       * [HTTP API连接](./catalog/streaming/http-destination.md)
-      * [允许列表用于流式传输目标的IP地址](./catalog/streaming/ip-address-allow-list.md)
+      * [列入允许列表流目的地的IP地址](./catalog/streaming/ip-address-allow-list.md)
    * 调查目标 {#survey}
       * [调查目标概述](./catalog/survey/overview.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)
       * [InMoment扩展](./catalog/survey/inmoment.md)
       * [Qualtrics网站反馈扩展](./catalog/survey/qualtrics.md)
-      * [QuestionPro Intercept Surveies扩展](./catalog/survey/web-intercept-surveys.md)
+      * [QuestionPro截取调查扩展](./catalog/survey/web-intercept-surveys.md)
    * 客户目标的声音 {#voice}
-      * [客户心声目标概述](./catalog/voice/overview.md)
+      * [客户之声目标概述](./catalog/voice/overview.md)
       * [确认数字反馈扩展](./catalog/voice/confirmit-digital-feedback.md)
-      * [Invoca标记扩展](./catalog/voice/invoca.md)
+      * [调用Tags扩展](./catalog/voice/invoca.md)
       * [Medallia连接](./catalog/voice/medallia-connector.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL收件箱扩展](./catalog/voice/talkurl.md)
@@ -223,13 +223,13 @@ ht-degree: 9%
    * 指南 {#guides}
       * [使用Destination SDK配置流目标](./destination-sdk/guides/configure-destination-instructions.md)
       * [使用Destination SDK配置基于文件的目标](./destination-sdk/guides/configure-file-based-destination-instructions.md)
-      * [提交供审核在Destination SDK中创作的目标](./destination-sdk/guides/submit-destination.md)
+      * [提交在Destination SDK中创作的目标以供审查](./destination-sdk/guides/submit-destination.md)
       * 配置基于文件的目标 {#configure-file-based-destinations}
          * [配置文件格式选项](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
          * [使用预定义的文件格式选项和自定义文件名配置来配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
          * [使用自定义文件名和格式选项配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
-         * [使用自定义文件格式选项和自定义文件名配置配置Azure Blob Storage目标](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
-         * [使用自定义文件格式选项和自定义文件名配置配置Azure Data Lake Storage目标](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
+         * [使用自定义文件格式选项和自定义文件名配置来配置Azure Blob存储目标](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
+         * [使用自定义文件格式选项和自定义文件名配置来配置Azure Data Lake存储目标](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
          * [使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [使用预定义的文件格式选项和自定义文件名配置来配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
    * 目标创作API参考 {#authoring-api}
@@ -256,15 +256,15 @@ ht-degree: 9%
       * [删除凭据配置](./destination-sdk/credentials-api/delete-credential-configuration.md)
    * 目标测试API参考 {#testing-api}
       * 流式目标测试API {#streaming-destinations}
-         * [流媒体目标测试API概述](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
-         * [根据源架构生成示例配置文件](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
+         * [流式目标测试API概述](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
+         * [根据源架构生成样本配置文件](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
          * [生成示例消息转换模板](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
          * [验证导出的配置文件结构](./destination-sdk/testing-api/streaming-destinations/render-template-api.md)
          * [使用示例配置文件测试您的流目标](./destination-sdk/testing-api/streaming-destinations/destination-testing-api.md)
          * [创建和测试消息转换模板](./destination-sdk/testing-api/streaming-destinations/create-template.md)
       * 基于文件的目标测试API {#batch-destinations}
          * [基于文件的目标测试API概述](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)
-         * [根据源架构生成示例配置文件](./destination-sdk/testing-api/batch-destinations/file-based-sample-profile-generation-api.md)
+         * [根据源架构生成样本配置文件](./destination-sdk/testing-api/batch-destinations/file-based-sample-profile-generation-api.md)
          * [使用示例配置文件测试基于文件的目标](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-api.md)
          * [查看详细的激活结果](./destination-sdk/testing-api/batch-destinations/file-based-destination-results-api.md)
          * [验证模板化的客户字段](./destination-sdk/testing-api/batch-destinations/file-based-render-template-api.md)
