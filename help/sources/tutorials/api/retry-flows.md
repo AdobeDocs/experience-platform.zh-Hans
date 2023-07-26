@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；流服务；
 title: 重试失败的数据流运行
-description: 本教程介绍了有关如何使用流服务API重试失败的数据流运行的步骤
+description: 了解如何使用流服务API重试失败的数据流运行。
 exl-id: b9abc737-9a57-47e6-98ab-6d6c44f38d17
-source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
+source-git-commit: d4dba26a151619a555a69287e182ff8398cca7b4
 workflow-type: tm+mt
-source-wordcount: '258'
+source-wordcount: '273'
 ht-degree: 2%
 
 ---
@@ -14,16 +13,16 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->批处理源支持重试失败的数据流运行。 您只能重试失败的数据流运行。
+>对重试失败的数据流运行支持适用于批处理源。 您只能重试失败的数据流运行。
 
-本教程介绍了有关如何使用重试失败的数据流运行的步骤 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程介绍了有关如何使用重试失败的数据流运行的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
@@ -31,7 +30,7 @@ ht-degree: 2%
 
 ## 重试失败的数据流运行
 
-要重试失败的数据流运行，请POST请求 `/runs` 端点，同时提供数据流的运行ID和 `re-trigger` 操作作为查询参数的一部分。
+POST要重试失败的数据流运行，请向 `/runs` 端点，同时提供数据流的运行ID和 `re-trigger` 操作作为查询参数的一部分。
 
 **API格式**
 
@@ -46,7 +45,11 @@ POST /runs/{RUN_ID}/action?op=re-trigger
 
 **请求**
 
-以下请求将重试为运行ID运行的数据流 `4fb0418e-1804-45d6-8d56-dd51f05c0baf`.
+>[!NOTE]
+>
+>您可以使用 `re-trigger` 在成功的数据流运行没有引入记录的情况下，重试成功的数据流运行的操作。
+
+以下请求会重试为运行ID运行的数据流 `4fb0418e-1804-45d6-8d56-dd51f05c0baf`.
 
 ```shell
 curl -X POST \
@@ -60,7 +63,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回新创建的流运行ID及其对应的etag版本。
+成功的响应会返回新创建的流运行ID及其对应的电子标记版本。
 
 ```json
 {
