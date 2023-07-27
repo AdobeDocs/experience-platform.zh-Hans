@@ -4,10 +4,10 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 使用体验数据模型 (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
+source-git-commit: b181a6af8cb3f6ae6db28f0475b8999de2e9d8b5
 workflow-type: tm+mt
-source-wordcount: '518'
-ht-degree: 19%
+source-wordcount: '519'
+ht-degree: 21%
 
 ---
 
@@ -37,10 +37,11 @@ ht-degree: 19%
    * [规划](./classes/plan.md)
    * [策略](./classes/policy.md)
    * [产品](./classes/product.md)
+   * [潜在客户](./classes/prospect.md)
    * [提供商](./classes/provider.md)
    * [区段定义](./classes/segment-definition.md)
    * B2B类 {#b2b}
-      * [XDM商业帐户](./classes/b2b/business-account.md)
+      * [XDM业务帐户](./classes/b2b/business-account.md)
       * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM商业营销活动](./classes/b2b/business-campaign.md)
       * [XDM商业营销活动成员](./classes/b2b/business-campaign-members.md)
@@ -54,10 +55,10 @@ ht-degree: 19%
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
       * [Identitymap](./field-groups/profile/identitymap.md)
-      * [医疗保健会员详细信息](./field-groups/profile/healthcare-member-details.md)
+      * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
-      * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
+      * [区段成员关系详细信息](./field-groups/profile/segmentation.md)
       * [电信订阅](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
@@ -91,7 +92,7 @@ ht-degree: 19%
    * XDM商业营销活动成员 {#b2b-campaign-members}
       * [XDM商业营销活动成员详细信息](./field-groups/b2b-campaign-members/details.md)
    * 药物 {#medication}
-      * [医疗保健](./field-groups/medication/healthcare-medication.md)
+      * [保健药物](./field-groups/medication/healthcare-medication.md)
    * 规划 {#plan}
       * [医疗保健计划详细信息](./field-groups/plan/healthcare-plan-details.md)
    * 产品 {#product}
@@ -104,7 +105,7 @@ ht-degree: 19%
    * [帐户详细信息](./data-types/account-details.md)
    * [广告时间](./data-types/ad-break.md)
    * [应用程序](./data-types/application.md)
-   * [Beacon](./data-types/beacon.md)
+   * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [B2B源](./data-types/b2b-source.md)
    * [Commerce](./data-types/commerce.md)
@@ -124,7 +125,7 @@ ht-degree: 19%
    * [地域](./data-types/geo.md)
    * [地理圈](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
-   * [地理交互详细信息](./data-types/geo-interaction-details.md)
+   * [地理位置交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
    * [标识](./data-types/identity.md)
    * [展示次数](./data-types/impressions.md)
@@ -142,7 +143,7 @@ ht-degree: 19%
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
-   * [产品列表项](./data-types/product-list-item.md)
+   * [产品列表项目](./data-types/product-list-item.md)
    * [搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
    * [电信订阅](./data-types/telecom-subscription.md)
@@ -192,8 +193,8 @@ ht-degree: 19%
    * [在API中创建架构](tutorials/create-schema-api.md)
    * [将特定字段添加到架构(API)](./tutorials/specific-fields-api.md)
    * [定义自定义字段(API)](./tutorials/custom-fields-api.md)
-   * [向字段添加建议值(API)](tutorials/suggested-values.md)
-   * [弃用UI中的XDM字段](tutorials/field-deprecation-ui.md)
+   * [向字段(API)添加建议值](tutorials/suggested-values.md)
+   * [在UI中弃用XDM字段](tutorials/field-deprecation-ui.md)
    * [在API中弃用XDM字段](tutorials/field-deprecation-api.md)
    * [在UI中定义架构关系](tutorials/relationship-ui.md)
    * [在API中定义架构关系](tutorials/relationship-api.md)
@@ -201,5 +202,5 @@ ht-degree: 19%
    * [管理架构的数据使用标签](tutorials/labels.md)
    * [创建临时架构](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
