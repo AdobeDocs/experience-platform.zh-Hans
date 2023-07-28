@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年7月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7cc7d43f6424ff91bd237235b278bf13a0add45d
+source-git-commit: 819c4e8b4ab24d364cf6d26d3ce38d0bc372e603
 workflow-type: tm+mt
-source-wordcount: '1017'
-ht-degree: 25%
+source-wordcount: '1297'
+ht-degree: 26%
 
 ---
 
@@ -15,10 +15,24 @@ ht-degree: 25%
 
 Adobe Experience Platform 中现有功能的更新：
 
+- [目录服务](#catalog-service)
 - [数据收集](#data-collection)
 - [目标](#data-prep)
+- [查询服务](#query-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
+
+## 目录服务 {#catalog-service}
+
+目录服务是Adobe Experience Platform中数据位置和谱系的记录系统。 虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但目录包含这些文件和目录的元数据和描述，以供查找和监控。
+
+| 功能 | 描述 |
+| --- | --- |
+| 数据集库存管理 | 数据集UI现在提供一系列内联操作，以便更好地管理数据集。 高级数据集管理通过创建文件夹和标记并将其分配给允许过滤并提高可发现性的数据集，提高了您的工作效率。 有关以下内容的更多信息，请参阅文档 [内联操作](../../catalog/datasets/user-guide.md#inline-actions)，如何 [搜索和筛选数据集](../../catalog/datasets/user-guide.md#search-and-filter)、和 [将数据集移动到文件夹](../../catalog/datasets/user-guide.md#move-to-folders). |
+
+{style="table-layout:auto"}
+
+有关目录服务的详细信息，请参阅 [目录服务概述](../../catalog/home.md).
 
 ## 数据收集 {#data-collection}
 
@@ -84,6 +98,21 @@ For more information on Data Prep, please read the [Data Prep overview](../../da
 - 我们修复了Microsoft Dynamics 365目标的问题。 现在，目标位置支持通过 [区域选择器](/help/destinations/catalog/crm/microsoft-dynamics-365.md#authenticate)因此，您可以根据贵公司在Microsoft生态系统中配置的区域来路由数据导出。 ![新的区域选择器突出显示。](/help/release-notes/2023/assets/region-parameter-microsoft-dynamics-365.png "新的区域选择器突出显示。"){width="100" zoomable="yes"}
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform 数据湖中的数据。您可以加入数据湖的任何数据集，并作为新数据集获取查询结果，以用于报表、Data Science Workspace，或将数据摄取到实时客户配置文件。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 增强型查询编辑器切换 | 增强的查询编辑器切换提供了更好的可访问性和多主题支持。 增强的编辑器设置允许您启用深色或浅色主题。 有关详细信息，请参阅[文档](../../query-service/ui/user-guide.md#enhanced-editor-toggle)。 |
+| 已计算统计信息的别名 | 现在，您可以提供一个别名，在SQL查询的计算统计信息中描述性地引用结果。 有关COMPUTE STATISTICS命令的此项更新和其他更新的信息，请参阅文档。 有关详细信息，请参阅[文档](../../query-service/essential-concepts/dataset-statistics.md#alias-name)。 |
+
+{style="table-layout:auto"}
+
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
 
 ## Segmentation Service {#segmentation}
 
