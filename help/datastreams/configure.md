@@ -2,9 +2,9 @@
 title: 配置数据流
 description: 了解如何将客户端Web SDK集成与其他Adobe产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: ac0d92938332f04d0b2813172d0d4a75cacdcd1d
+source-git-commit: e3f507e010ea2a32042b53d46795d87e82e3fb72
 workflow-type: tm+mt
-source-wordcount: '2247'
+source-wordcount: '2275'
 ht-degree: 3%
 
 ---
@@ -50,8 +50,8 @@ ht-degree: 3%
 
 | 设置 | 描述 |
 | --- | --- |
-| [!UICONTROL 地理查找] | 根据访客IP地址为所选选项启用地理位置查找。 可用选项： <ul><li>国家/地区</li><li>邮政编码</li><li>省/市/自治区</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择 **[!UICONTROL 城市]**， **[!UICONTROL 纬度]**，或 **[!UICONTROL 经度]** 无论选择其他什么选项，提供最多两个小数点的坐标。 这被视为城市级别的粒度。 <br> <br>不选择任何选项将禁用任何地理位置查找。 地理位置早于 [!UICONTROL IP模糊处理] 且不受以下影响  [!UICONTROL IP模糊处理] 设置。 |
-| [!UICONTROL 网络查找] | 根据访客IP地址启用所选选项的网络查找。 可用选项： <ul><li>运营商</li><li>Domain</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关请求源自的特定网络的更多信息。 |
+| [!UICONTROL 地理查找] | 根据访客IP地址为所选选项启用地理位置查找。 地理位置查找要求您包含 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。 <br> 可用选项： <ul><li>国家/地区</li><li>邮政编码</li><li>省/市/自治区</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择 **[!UICONTROL 城市]**， **[!UICONTROL 纬度]**，或 **[!UICONTROL 经度]** 无论选择其他什么选项，提供最多两个小数点的坐标。 这被视为城市级别的粒度。 <br> <br>不选择任何选项将禁用任何地理位置查找。 地理位置早于 [!UICONTROL IP模糊处理] 且不受以下影响  [!UICONTROL IP模糊处理] 设置。 |
+| [!UICONTROL 网络查找] | 根据访客IP地址启用所选选项的网络查找。 网络查找要求您包含 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。 <br> 可用选项： <ul><li>运营商</li><li>Domain</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关请求源自的特定网络的更多信息。 |
 | [!UICONTROL IP 模糊处理] | 指示要应用于数据流的IP模糊处理的类型。 任何基于客户IP的处理都将受IP模糊设置的影响。 这包括从您的数据流接收数据的所有Experience Cloud服务。 <p>可用选项：</p> <ul><li>**[!UICONTROL 无]**：禁用IP模糊处理。 完整用户IP地址将通过数据流发送。</li><li>**[!UICONTROL 部分]**：对于IPv4地址，模糊处理用户IP地址的最后一个八位字节。 对于IPv6地址，将模糊地址的最后80位。 <p>示例：</p> <ul><li>IPv4： `1.2.3.4` -> `1.2.3.0`</li><li>IPv6： `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL 完整]**：模糊处理整个IP地址。 <p>示例：</p> <ul><li>IPv4： `1.2.3.4` -> `0.0.0.0`</li><li>IPv6： `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `0:0:0:0:0:0:0:0`</li></ul></li></ul> IP模糊处理对其他Adobe产品的影响： <ul><li>**Adobe Target**：数据流级别 [!UICONTROL IP模糊处理] 设置优先于Adobe Target中设置的任何IP模糊处理选项。 例如，如果数据流级别 [!UICONTROL IP模糊处理] 选项设置为 **[!UICONTROL 完整]** 并且Adobe Target IP模糊处理选项设置为 **[!UICONTROL 最后一个八位字节模糊处理]**，Adobe Target将收到一个完全模糊处理的IP。 请参阅Adobe Target文档，网址为 [IP模糊处理](https://developer.adobe.com/target/before-implement/privacy/privacy/) 和 [地理位置](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=en) 以了解更多详细信息。</li><li>**Audience Manager**：数据流级别的IP模糊处理设置优先于Audience Manager中设置的任何IP模糊处理选项，并将其应用于所有IP地址。 由Audience Manager执行的任何地理位置查找都受数据流级别的影响 [!UICONTROL IP模糊处理] 选项。 Audience Manager中基于完全模糊处理的IP的地理位置查找将生成未知区域，并且任何基于生成的地理位置数据的区段都不会实现。 请参阅有关的Audience Manager文档 [IP模糊处理](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=en) 以了解更多详细信息。</li><li>**Adobe Analytics**：如果选择了“无”以外的任何IP模糊处理选项，Adobe Analytics当前将收到部分模糊处理的IP地址。 要让Analytics接收完全模糊处理的IP地址，您必须在Adobe Analytics中单独配置IP模糊处理。 将在后续版本中更新此行为。请参阅Adobe Analytics [文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html) 以了解有关如何在Analytics中启用IP模糊处理的详细信息。</li></ul> |
 | [!UICONTROL 第一方ID Cookie] | 启用后，此设置会告知Edge Network在查找时引用指定的Cookie [第一方设备Id](../edge/identity/first-party-device-ids.md)，而不是在身份映射中查找此值。<br><br>在启用此设置时，必须提供需要存储ID的Cookie的名称。 |
 | [!UICONTROL 第三方ID同步] | ID同步可以分组到容器中，以便允许在不同时间运行不同的ID同步。 启用此设置后，您可以指定为此数据流运行的ID同步容器。 |
