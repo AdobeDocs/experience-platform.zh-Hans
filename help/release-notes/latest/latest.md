@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年7月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 62a0b6327f1707fcc639a309ae7db5bf0e4c828a
+source-git-commit: 7cc7d43f6424ff91bd237235b278bf13a0add45d
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1017'
 ht-degree: 25%
 
 ---
@@ -55,16 +55,9 @@ For more information on Data Prep, please read the [Data Prep overview](../../da
 
 **新增或更新目标**{#new-updated-destinations}
 
-<!--
-
-LiveRamp commented out until it is officially released tomorrow
-
-| [[!DNL LiveRamp - Onboarding]](../../destinations/catalog/advertising/liveramp-onboarding.md) | New | Onboard identities from Adobe Experience Platform into [!DNL LiveRamp Connect] so that you can target users on mobile, open web, social, and [!DNL CTV] platforms, using the [!DNL Ramp ID] identifier. |
-
--->
-
 | 目标 | 新增或已更新 | 描述 |
 | ----------- |----------------|----------- |
+| [[!DNL LiveRamp - Onboarding]](../../destinations/catalog/advertising/liveramp-onboarding.md) | 新建 | 将来自Adobe Experience Platform的身份载入 [!DNL LiveRamp Connect] 这样您就可以在移动设备、开放网络、社交和 [!DNL CTV] 平台，使用 [!DNL Ramp ID] 标识符。 |
 | [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | 新建 | 创建到以下对象的实时出站连接： [!DNL Azure Data Lake Storage Gen2] 将数据文件从Adobe Experience Platform定期导出到您自己的存储位置。 此新目标提供了增强的文件导出功能并支持 [!BADGE 测试版]{type=Informative} |
 | [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | 新建 | [!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，允许您访问安全的基于云的文件存储设施，以将文件导出到Platform之外。 此新目标提供了增强的文件导出功能并支持 [!BADGE 测试版]{type=Informative} |
 | [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | 新建 | 创建到以下对象的实时出站连接： [!DNL Google Cloud Storage] 定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。 此新目标提供了增强的文件导出功能并支持 [!BADGE 测试版]{type=Informative} |
