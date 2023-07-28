@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；收集客户成功；客
 solution: Experience Platform
 title: 使用流服务API为客户成功源创建数据流
 type: Tutorial
-description: 本教程介绍了从客户成功系统中检索数据以及使用源连接器和API将其摄取到Platform中的步骤。
+description: 本教程涵盖以下步骤：从客户成功系统中检索数据，以及使用源连接器和API将数据提取到Platform。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1264'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有一个具有客户成功源的有效基本连接ID。 如果您没有此ID，请查看 [源概述](../../../home.md#customer-success) 以获取可创建基本连接的客户成功源列表。
+>要创建数据流，您必须已经具有包含客户成功源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#customer-success) 有关可创建基本连接的客户成功源列表。
 
 ## 快速入门
 
@@ -26,10 +26,10 @@ ht-degree: 1%
 
 * [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [模式组合基础](../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
-   * [Schema Registry开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
-* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是记录中数据位置和族系的系统 [!DNL Experience Platform].
+   * [架构注册开发人员指南](../../../../xdm/api/getting-started.md)：包含成功执行对架构注册表API的调用所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能的值）。
+* [[!DNL Catalog Service]](../../../../catalog/home.md)：目录是数据位置及其中谱系的记录系统 [!DNL Experience Platform].
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md)：批量摄取API允许您将数据摄取到 [!DNL Experience Platform] 作为批处理文件。
-* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ## 创建源连接 {#source}
 
-您可以通过对以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义一个枚举值。
 
@@ -124,7 +124,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回唯一标识符(`id`)。 此ID在后面的步骤中是创建目标连接所必需的。
+成功的响应将返回唯一标识符(`id`)。 在后续步骤中，创建目标连接时需要此ID。
 
 ```json
 {
@@ -135,7 +135,7 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -149,9 +149,9 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与Data Lake关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示与所摄取数据所登陆的目标之间的连接。 要创建目标连接，您必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-现在，您拥有目标架构、目标数据集和到数据湖的连接规范ID的唯一标识符。 使用 [!DNL Flow Service] API中，您可以指定这些标识符以及将包含入站源数据的数据集，从而创建目标连接。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID的唯一标识符。 使用 [!DNL Flow Service] API之外，您还可以通过指定这些标识符以及将包含入站源数据的数据集来创建目标连接。
 
 **API格式**
 
@@ -190,13 +190,13 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `data.schema.id` | 此 `$id` 目标XDM架构的。 |
-| `data.schema.version` | 架构的版本。 必须设置此值 `application/vnd.adobe.xed-full+json;version=1`，返回架构的最新次要版本。 |
-| `params.dataSetId` | 目标数据集的ID。 |
-| `connectionSpec.id` | 用于连接到Data Lake的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `data.schema.version` | 架构的版本。 必须设置此值 `application/vnd.adobe.xed-full+json;version=1`，返回架构的最新次版本。 |
+| `params.dataSetId` | 上一步中生成的目标数据集的ID。 **注意**：创建目标连接时，必须提供有效的数据集ID。 无效的数据集ID将导致错误。 |
+| `connectionSpec.id` | 用于连接到数据湖的连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **响应**
 
-成功响应将返回新目标连接的唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
+成功的响应将返回新目标连接的唯一标识符(`id`)。 在后续步骤中需要使用此值来创建数据流。
 
 ```json
 {
@@ -207,9 +207,9 @@ curl -X POST \
 
 ## 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。
+要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。
 
-POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建映射集的详细信息。
+POST要创建映射集，请向 `mappingSets` 的端点 [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) 提供目标XDM架构时 `$id` 以及要创建的映射集的详细信息。
 
 **API格式**
 
@@ -267,7 +267,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
+成功响应将返回新创建映射的详细信息，包括其唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -302,13 +302,13 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回负责将数据从源引入平台的数据流规范的详细信息。 响应中包含唯一的流规范 `id` 需要才能创建新数据流。
+成功的响应将返回数据流规范的详细信息，该规范负责将数据从源引入Platform。 响应中包含唯一的流量规范 `id` 需要才能创建新数据流。
 
 >[!NOTE]
 >
->为简短起见，以下JSON响应有效负载已隐藏。 选择“有效负载”可查看响应有效负载。
+>为简单起见，以下JSON响应有效负载已隐藏。 选择“payload”（有效负载）可查看响应有效负载。
 
-+++ 查看有效负载
++++ 查看有效负荷
 
 ```json
 {
@@ -598,16 +598,16 @@ curl -X GET \
 | `flowSpec.id` | 此 [流量规范ID](#specs) 在上一步中检索。 |
 | `sourceConnectionIds` | 此 [源连接ID](#source) 在之前的步骤中检索。 |
 | `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中检索。 |
-| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中检索。 |
-| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据所选列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` 是 `yyyy-MM-dd HH:mm:ss`. |
+| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中检索。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` 是 `yyyy-MM-dd HH:mm:ss`. |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
-| `scheduleParams.startTime` | 数据流的开始时间（以Epoch时间表示）。 |
+| `scheduleParams.startTime` | 以纪元时间表示的数据流开始时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 当频率设置为时，不需要间隔 `once` 和应大于或等于 `15` 其他频率值。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
 
 **响应**
 
-成功的响应会返回ID `id` 新创建的数据流的ID。
+成功的响应将返回ID `id` 新创建的数据流的。
 
 ```json
 {
@@ -618,7 +618,7 @@ curl -X GET \
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅关于的教程 [监测API中的数据流 ](../monitor.md)
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅关于的教程 [在API中监控数据流](../monitor.md)
 
 ## 后续步骤
 
