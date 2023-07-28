@@ -4,9 +4,9 @@ description: 了解如何使用第三方信息创建和使用潜在客户受众�
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: 6a24e2fc29c8e020c7fe4ac1c1c5f9640cefb971
+source-git-commit: fff6279472607bd6e1ace21a3003ef839208d7a4
 workflow-type: tm+mt
-source-wordcount: '360'
+source-wordcount: '399'
 ht-degree: 1%
 
 ---
@@ -64,4 +64,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-<!-- After reading this guide, you now know how to create and manage your prospect audiences in Adobe Experience Platform. To learn how to activate a prospect audience to other downstream services, please read the guide on [activating prospect audiences](../../destinations/ui/activate-prospect-audiences.md). -->
+阅读本指南后，您现在知道如何在Adobe Experience Platform中创建和管理潜在客户受众。 要了解如何将潜在客户受众激活到其他下游服务，请阅读以下内容的指南： [激活潜在客户受众](../../destinations/ui/activate-prospect-audiences.md).

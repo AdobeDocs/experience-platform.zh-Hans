@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
-user-guide-description: 使用Adobe Experience Platform生成的区段定义或外部源，从实时客户档案数据构建受众。
+user-guide-description: 使用 Adob​​e Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
-source-git-commit: 4dbd20dd3ac596052a3390eb6d3731fac7095c0d
+source-git-commit: 5fb8edd9dd664f9a0ed036d1340b5f8fcd4ba0c4
 workflow-type: tm+mt
-source-wordcount: '176'
-ht-degree: 23%
+source-wordcount: '178'
+ht-degree: 34%
 
 ---
 
@@ -31,9 +31,10 @@ ht-degree: 23%
 - 分段UI {#ui}
    - [概述](ui/overview.md)
    - [受众仪表板](ui/audience-dashboard.md)
-   - [受众构成](ui/audience-composition.md)
+   - [受众组合](ui/audience-composition.md)
    - [区段生成器](ui/segment-builder.md)
    - [边缘分段](ui/edge-segmentation.md)
+   - [潜在客户受众](ui/prospect-audience.md)
    - [流式客户细分](ui/streaming-segmentation.md)
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [时间约束重构](ui/segment-refactoring.md)
@@ -46,7 +47,7 @@ ht-degree: 23%
    - [概述](pql/overview.md)
    - [布尔函数](pql/boolean-functions.md)
    - [比较函数](pql/comparison-functions.md)
-   - [数组、列表和设置函数](pql/array-functions.md)
+   - [数组、列表和集合函数](pql/array-functions.md)
    - [映射函数](pql/map-functions.md)
    - [字符串函数](pql/string-functions.md)
    - [目标函数](pql/object-functions.md)
@@ -54,7 +55,7 @@ ht-degree: 23%
    - [聚合函数](pql/aggregation-functions.md)
    - [日期和时间函数](pql/datetime-functions.md)
    - [筛选器函数](pql/filter-functions.md)
-   - [逻辑量词](pql/logical-quantifiers.md)
+   - [逻辑量化符](pql/logical-quantifiers.md)
    - [杂项函数](pql/misc-functions.md)
 - 教程 {#tutorials}
    - [创建区段](tutorials/create-a-segment.md)
