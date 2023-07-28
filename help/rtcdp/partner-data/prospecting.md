@@ -4,8 +4,8 @@ description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持�
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
-workflow-type: ht
+source-git-commit: d0227dd8dc3d79674d954899e2724d2893e16b73
+workflow-type: tm+mt
 source-wordcount: '1953'
 ht-degree: 100%
 
@@ -204,7 +204,7 @@ ht-degree: 100%
 
 ### 激活目标的潜在客户配置文件 {#activate-to-destinations}
 
-通过将潜在客户受众导出到目标来利用它们。目前，仅某些目标（例如 [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) 或 [!BADGE Alpha]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp.md) 目标）支持激活潜在客户配置文件。
+通过将潜在客户受众导出到目标来利用它们。目前，仅某些目标（例如 [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) 或 [!BADGE Alpha]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp-onboarding.md) 目标）支持激活潜在客户配置文件。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 
