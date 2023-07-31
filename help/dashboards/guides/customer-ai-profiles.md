@@ -6,7 +6,7 @@ hidefromtoc: true
 source-git-commit: 162ef470751b9fb252658cff4b43595ddb7fe5d5
 workflow-type: tm+mt
 source-wordcount: '828'
-ht-degree: 2%
+ht-degree: 13%
 
 ---
 
@@ -24,8 +24,8 @@ The links when required:
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_distributionOfScores"
->title="得分分布"
->abstract="此构件按倾向分数以5%的增量显示用户档案总数的分布情况。 配置文件计数的分布由AI模型和所选的合并策略确定。 您可以从小组件标题下的下拉菜单中更改AI模型。"
+>title="分数分布"
+>abstract="该构件通过倾向打分（以 5% 的增量）功能显示配置文件总数的分布。配置文件计数的分布由 AI 模型和所选的合并策略决定。您可以从构件标题下的下拉菜单中更改 AI 模型。"
 
 此 [!UICONTROL 得分的客户人工智能分布] 构件按倾向分数对配置文件总数进行分类。 用户档案计数的分布由AI模型和选定的合并策略确定，然后以5%的增量进行可视化以指示其倾向。 沿Y轴提供用户档案计数，沿X轴提供倾向分数。
 
@@ -53,8 +53,8 @@ The links when required:
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_scoringSummary"
->title="评分摘要"
->abstract="此构件显示已评分用户档案的总数，并将其分类为包含高、中和低倾向的分段。 圆环图说明了高、中和低倾向性总用户档案的比例组成。"
+>title="评分汇总"
+>abstract="该构件会显示经过评分的配置文件的总数，并将其分类为包含高、中、低倾向的存储桶。圆环图说明了高、中、低倾向的总体配置文件的比例构成。"
 
 此构件显示已评分的用户档案总数，并将它们分类为分别包含高、中和低倾向性的绿色、黄色和红色存储桶。 圆环图说明了高、中和低倾向性之间用户档案的比例组成。 用户档案符合75岁以上的高倾向性、25至74岁之间的中倾向性和24岁以下的低倾向性条件。 图例指示颜色代码和倾向性阈值。 当光标悬停在圆环图的相应部分上时，会在对话框中显示高、中和低倾向的配置文件计数。
 
