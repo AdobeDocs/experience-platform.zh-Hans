@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年7月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: dbd287087d04b10f79c8b6ae441371181d806739
 workflow-type: tm+mt
-source-wordcount: '1297'
-ht-degree: 26%
+source-wordcount: '1365'
+ht-degree: 28%
 
 ---
 
@@ -17,6 +17,7 @@ Adobe Experience Platform 中现有功能的更新：
 
 - [目录服务](#catalog-service)
 - [数据收集](#data-collection)
+- [数据准备](#data-prep)
 - [目标](#destinations)
 - [查询服务](#query-service)
 - [Segmentation Service](#segmentation)
@@ -48,20 +49,20 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 {style="table-layout:auto"}
 
 欲知有关数据收集的更多信息，请阅读 [数据集合概述](../../tags/home.md).
-<!-- 
-## Data Prep {#data-prep}
 
-Data Prep allows data engineers to map, transform, and validate data to and from Experience Data Model (XDM).
+## 数据准备 {#data-prep}
 
-**New or updated features**
+通过数据准备，数据工程师可从 Experience Data Model (XDM) 映射数据并将数据映射到它、转换和验证数据。
 
-| Feature | Description |
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
 | --- | --- |
-| New mapper functions | You can now use the following functions when mapping objects in Data Prep: <ul><li>`map_get_values`</li><li>`map_has_keys`</li><li>`add_to_map`</li></ul> For more information on these functions, read the [Data Prep functions guide](../../data-prep/functions.md#hierarchies---objects). |
+| 新的映射器函数 | 现在，在数据准备中映射对象时，可以使用以下函数： <ul><li>`map_get_values`</li><li>`map_has_keys`</li><li>`add_to_map`</li></ul> 有关这些功能的详细信息，请参阅 [数据准备函数指南](../../data-prep/functions.md#hierarchies---objects). |
 
 {style="table-layout:auto"}
 
-For more information on Data Prep, please read the [Data Prep overview](../../data-prep/home.md). -->
+有关数据准备的详细信息，请阅读[数据准备概述](../../data-prep/home.md)。
 
 ## 目标 {#destinations}
 
