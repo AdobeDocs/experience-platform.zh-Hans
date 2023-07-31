@@ -1,14 +1,14 @@
 ---
 solution: Data Collection
 audience: user
-user-guide-title: Adobe Experience Platform数据流帮助
+user-guide-title: Adobe Experience Platform 数据流帮助
 breadcrumb-title: 数据流指南
-user-guide-description: 了解如何在Adobe Experience Platform中配置数据流。
+user-guide-description: 了解如何在 Adobe Experience Platform 中配置数据流。
 feature: Datastreams
 source-git-commit: 57867a7c78ae7f8100ead278cf901fed63780caa
 workflow-type: tm+mt
 source-wordcount: '45'
-ht-degree: 17%
+ht-degree: 53%
 
 ---
 
