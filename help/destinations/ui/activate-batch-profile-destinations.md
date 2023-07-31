@@ -4,15 +4,19 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 1e6cdbaa12c89dc678232245a9544bdfa81aebcf
+source-git-commit: d7264d94a03f0ba19da90559b156ecaace0d8f95
 workflow-type: tm+mt
-source-wordcount: '3759'
+source-wordcount: '3673'
 ht-degree: 11%
 
 ---
 
 
 # 将受众激活到批量配置文件导出目标
+
+>[!IMPORTANT]
+> 
+> 客户尚未普遍使用页面上描述的功能。 本页当前面向Adobe内部团队，用于预先了解即将推出的功能。 在删除此笔记之前，请勿在Adobe外部共享。
 
 >[!IMPORTANT]
 > 
@@ -122,10 +126,6 @@ ht-degree: 11%
 
    ![突出显示批量目标激活流中的已计划选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
-   >[!IMPORTANT]
-   >
-   >由于内部Experience Platform进程的配置方式，第一个增量或完整文件导出可能不包含所有回填数据。 <br> <br> 为了确保完整和增量文件的回填数据导出完整且最新，Adobe建议在次日中午12:00 GMT后设置第一个文件导出时间。 将在未来版本中解决此限制。
-
 1. 使用 **[!UICONTROL 日期]** 选择器来选择应执行导出的日期或时间间隔。 对于每日导出，最佳实践是将开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
    >[!IMPORTANT]
@@ -150,10 +150,6 @@ ht-degree: 11%
    * **[!UICONTROL 每小时]**：计划每3、6、8或12小时执行一次增量文件导出。
 
 1. 使用 **[!UICONTROL 时间]** 选择器以选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
-
-   >[!IMPORTANT]
-   >
-   >由于内部Experience Platform进程的配置方式，第一个增量或完整文件导出可能不包含所有回填数据。 <br> <br> 为了确保完整和增量文件的回填数据导出完整且最新，Adobe建议在次日中午12:00 GMT后设置第一个文件导出时间。 将在未来版本中解决此限制。
 
 1. 使用 **[!UICONTROL 日期]** 选择器来选择应进行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
