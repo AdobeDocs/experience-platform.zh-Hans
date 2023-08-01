@@ -3,9 +3,9 @@ title: LiveRamp — 载入连接
 description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 5da570aaa0c6a8972d1c3d2c5b3bec9e733c1851
 workflow-type: tm+mt
-source-wordcount: '1868'
+source-wordcount: '1830'
 ht-degree: 3%
 
 ---
@@ -36,9 +36,9 @@ ht-degree: 3%
 
 此部分介绍可导出到此目标的所有受众。
 
-所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+此目标支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表所述的受众。
+此外，此目标还支持激活下表所述的其他受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
@@ -129,13 +129,8 @@ ht-degree: 3%
 
 在 [!UICONTROL 正在计划] 步骤，使用下面显示的设置为每个受众创建导出计划。
 
->[!IMPORTANT]
->
->所有激活到此目标的受众都必须使用完全相同的计划进行配置，如下所示。
-
 * **[!UICONTROL 文件导出选项]**： [!UICONTROL 导出完整文件]. [增量文件导出](../../ui/activate-batch-profile-destinations.md#export-incremental-files) 当前不支持 [!DNL LiveRamp] 目标。
 * **[!UICONTROL 频率]**： [!UICONTROL 每日]
-* 将导出时间设置为 **[!UICONTROL 区段评估后]**. 计划的受众导出和 [按需文件导出](../../ui/export-file-now.md) 当前不支持 [!DNL LiveRamp] 目标。
 * **[!UICONTROL 日期]**：根据需要选择导出开始和结束时间。
 
 ![显示受众计划步骤的平台UI屏幕截图。](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
