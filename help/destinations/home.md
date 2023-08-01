@@ -3,10 +3,10 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 54165264364d7d53da2ff822b9ceb32157900b6a
+source-git-commit: ce1aec87b827b6e8626018846bc6f438834fff54
 workflow-type: tm+mt
-source-wordcount: '801'
-ht-degree: 5%
+source-wordcount: '925'
+ht-degree: 4%
 
 ---
 
@@ -39,13 +39,19 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 
 * 浏览可在其中激活数据的目标平台目录；
 * 创建、编辑、激活和禁用流向目录中的目标的数据流；
-* 在存储位置创建一个帐户，或将Platform链接到目标平台中的帐户；
+* 在存储位置中创建帐户或将Platform链接到目标平台中的帐户；
 * 选择应将哪些受众激活到目标；
 * 选择 [体验数据模型(XDM)字段](../xdm/home.md) 以将受众激活到电子邮件营销目标时导出。
 
 ## 目标类型和类别 {#types-and-categories}
 
 借助Experience Platform，您可以将数据激活到各种类型的目标，以满足您的激活用例要求。 目标范围从基于API的集成，到与文件接收系统、配置文件查找目标的集成，等等。 有关所有可用目标的详细信息，请参阅 [目标类型和类别概述](./destination-types.md).
+
+## Adobe构建和合作伙伴构建的目标 {#adobe-and-partner-built-destinations}
+
+Experience Platform目标目录中的某些连接器是由Adobe构建和维护的，而其他连接器是由合作伙伴公司使用构建和维护的 [Destination SDK](/help/destinations/destination-sdk/overview.md). 如果合作伙伴创建并维护了目标，则每个合作伙伴构建的连接器在文档页面顶部的注释会标出。 例如， [Amazon S3连接器](/help/destinations/catalog/cloud-storage/amazon-s3.md) 由Adobe创建，而 [TikTok连接器](/help/destinations/catalog/social/tiktok.md) 由TikTok团队创建和维护。
+
+对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀团队。
 
 ## 目标和访问控制 {#access-controls}
 

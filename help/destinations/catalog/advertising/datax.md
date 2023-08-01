@@ -1,10 +1,10 @@
 ---
 title: Verizon MediaYahoo DataX连接
-description: DataX是一个汇总Verizon Media/Yahoo基础架构，它托管着各种组件，使Verizon Media/Yahoo能够与其外部合作伙伴以安全、自动和可伸缩的方式交换数据。
+description: DataX是一个聚合的Verizon Media/Yahoo基础架构，它托管着各种组件，使Verizon Media/Yahoo能够以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '781'
 ht-degree: 2%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[!DNL DataX] 是聚合 [!DNL Verizon Media/Yahoo] 托管各种组件的基础架构，这些组件能够 [!DNL Verizon Media/Yahoo] 以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
+[!DNL DataX] 是聚合 [!DNL Verizon Media/Yahoo] 托管各种组件的基础架构，这些组件可以 [!DNL Verizon Media/Yahoo] 以安全、自动化和可扩展的方式与外部合作伙伴交换数据。
 
 >[!IMPORTANT]
 >
->此文档页面的创建者 [!DNL Verizon Media/Yahoo]的 [!DNL DataX] 团队。 如有任何查询或更新请求，请直接通过 [dataops@verizonmedia.com](mailto:dataops@verizonmedia.com)
+>此目标连接器和文档页面由创建和维护 [!DNL Verizon Media/Yahoo]的 [!DNL DataX] 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： [dataops@verizonmedia.com](mailto:dataops@verizonmedia.com)
 
 ## 先决条件 {#prerequisites}
 
@@ -27,7 +27,7 @@ ht-degree: 2%
 
 **分类元数据**
 
-分类资源定义基础上的扩展 [!DNL DataX] 元数据结构
+分类资源定义Base上的扩展 [!DNL DataX] 元数据结构
 
 ```
 {
@@ -50,28 +50,28 @@ ht-degree: 2%
 
 详细了解 [分类元数据](https://developer.verizonmedia.com/datax/guide/taxonomy/taxo-metadata/) 在 [!DNL DataX] 开发人员文档。
 
-## 速率限制和护栏 {#rate-limits-guardrails}
+## 费率限制和护栏 {#rate-limits-guardrails}
 
 >[!IMPORTANT]
 >
->将100多个受众激活到 [!DNL Verizon Media/Yahoo DataX]，您可能会收到来自目标的速率限制错误。 将受众激活到此目标时，请尝试在一个激活数据流中激活少于100个受众。 如果需要激活更多区段，请在同一帐户上创建一个新目标。
+>在激活100多个受众时 [!DNL Verizon Media/Yahoo DataX]，您可能会收到来自目标的速率限制错误。 将受众激活到此目标时，请尝试在一个激活数据流中激活少于100个受众。 如果需要激活更多区段，请在同一帐户上创建一个新目标。
 
-[!DNL DataX] 是按照 [DataX文档](https://developer.verizonmedia.com/datax/guide/rate-limits/).
+[!DNL DataX] 是根据 [DataX文档](https://developer.verizonmedia.com/datax/guide/rate-limits/).
 
 
 | 错误代码 | 错误消息 | 描述 |
 |---------|----------|---------|
-| 429请求太多 | 每小时超出速率限制 **（限制：100）** | 每个提供程序一小时内允许的请求数。 |
+| 429请求过多 | 每小时超出速率限制 **（限制：100）** | 每个提供商一小时内允许的请求数。 |
 
 {style="table-layout:auto"}
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Verizon Media] 支持激活下表中描述的标识。 详细了解 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+[!DNL Verizon Media] 支持激活下表中描述的标识。 了解有关 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| email_lc_sha256 | 使用SHA256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 | GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 
@@ -83,14 +83,14 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用Verizon Media目标中使用的标识符（电子邮件、GAID、IDFA）导出受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有Verizon Media目标中所用标识符(Email、GAID、IDFA)的受众的所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## 用例 {#use-cases}
 
-[!DNL DataX] API可用于广告商，这些广告商希望定位特定的受众组，并在以下位置将电子邮件地址作为输入地址： [!DNL Verizon Media] (VMG)可以使用VMG的近实时API快速创建新受众并推送所需的受众组。
+[!DNL DataX] API可用于广告商，这些广告商希望定位以中的电子邮件地址作为关键字的特定受众组 [!DNL Verizon Media] (VMG)可以使用VMG的近乎实时的API快速创建新受众并推送所需的受众组。
 
 ## 连接到目标 {#connect}
 
@@ -104,15 +104,15 @@ ht-degree: 2%
 
 ### 连接参数 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
+同时 [设置](../../ui/connect-destination.md) 此目标必须提供以下信息：
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL MDM ID]**：这是中的唯一标识符 [!DNL Yahoo DataX] 并且它是设置数据导出到此目标的必填字段。 如果您不知道此ID，请联系贵机构的 [!DNL Yahoo DataX] 客户经理。  使用MDM ID，可以限制数据仅用于特定一组独占用户（例如广告商的第一方数据）。
+* **[!UICONTROL MDM ID]**：这是中的唯一标识符 [!DNL Yahoo DataX] 并且它是设置数据导出到此目标的必填字段。 如果您不知道此ID，请联系贵机构的 [!DNL Yahoo DataX] 客户经理。  使用MDM ID时，可以限制数据仅用于特定一组独占用户（例如广告商的第一方数据）。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
@@ -124,10 +124,10 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 读取 [将用户档案和受众激活到目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到目标的说明。
 
-## 数据使用和管理 {#data-usage-governance}
+## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据治理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 强制执行数据管理，请参见 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
 
 ## 其他资源 {#additional-resources}
 
-有关详细信息，请阅读 [!DNL Yahoo/Verizon Media] [相关文档 [!DNL DataX]](https://developer.verizonmedia.com/datax/guide/).
+欲知更多信息，请参阅 [!DNL Yahoo/Verizon Media] [文档 [!DNL DataX]](https://developer.verizonmedia.com/datax/guide/).

@@ -1,11 +1,11 @@
 ---
 title: TikTok 连接
-description: 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。
+description: 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '978'
+source-wordcount: '983'
 ht-degree: 5%
 
 ---
@@ -14,34 +14,34 @@ ht-degree: 5%
 
 ## 概述 {#overview}
 
-使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 使用Adobe与TikTok Ads Manager的实时集成，快速而安全地将所需受众从Adobe Experience Platform推送到TikTok。 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences?lang=en) 了解更多信息。
+使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences?lang=en) 以了解更多信息。
 
 >[!IMPORTANT]
 >
->此文档页面由TikTok团队创建。 如有任何查询或更新请求，请直接通过 [https://ads.tiktok.com/help/](https://ads.tiktok.com/help/).
+>此目标连接器和文档页面由TikTok团队创建和维护。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： [https://ads.tiktok.com/help/](https://ads.tiktok.com/help/).
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应如何以及何时使用TikTok目标，以下是Adobe Experience Platform客户的示例用例。
+为了帮助您更好地了解应当如何以及何时使用TikTok目标，以下是Adobe Experience Platform客户的示例用例。
 
 ### 用例 {#use-case-1}
 
-一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到TikTok，以在其客户的社交媒体馈送中显示广告。
+一家运动服装品牌希望通过其社交媒体帐户吸引现有客户。 服装品牌可以从自己的CRM中摄取电子邮件地址到Adobe Experience Platform，从自己的离线数据构建受众，并将这些受众发送到TikTok以在其客户的社交媒体馈送中显示广告。
 
 ## 先决条件 {#prerequisites}
 
-将数据发送到您的之前 [!DNL TikTok Ads Manager] 帐户，您需要授予Adobe Experience Platform权限才能访问您的广告帐户 `Audience Management`. 可以通过在Experience Platform中输入您的广告商ID并遵循重定向以授予权限来提供此权限。 欲知更多相关说明，请参见 [TikTok API文档](https://ads.tiktok.com/marketing_api/docs?id=1738373141733378).
+在发送数据到 [!DNL TikTok Ads Manager] 帐户，您需要授予Adobe Experience Platform权限才能访问您的广告帐户 `Audience Management`. 可通过在Experience Platform中输入您的广告商ID并遵循重定向以授予权限来提供此权限。 有关更多说明，请参见 [TikTok API文档](https://ads.tiktok.com/marketing_api/docs?id=1738373141733378).
 
 ## 支持的身份 {#supported-identities}
 
-TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
+TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
-| 电话号码 | 使用SHA256算法进行哈希处理的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码，并且它们必须采用E.164格式。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
-| 电子邮件 | 使用SHA256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
+| 电话号码 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码，并且它们必须采用E.164格式。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
+| 电子邮件 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 
 {style="table-layout:auto"}
 
@@ -51,8 +51,8 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在使用TikTok目标中使用的标识符（姓名、电话号码或其他）导出受众的所有成员。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出具有TikTok目标中所用标识符（姓名、电话号码或其他）的受众所有成员。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -62,7 +62,7 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
 ### 向目标进行身份验证 {#authenticate}
 
@@ -74,7 +74,7 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![目标连接详细信息](/help/destinations/assets/catalog/social/tiktok/tiktok-configure-destination-details.png "Platform UI的图像，显示要填充的目标连接详细信息")
+![目标连接详细信息](/help/destinations/assets/catalog/social/tiktok/tiktok-configure-destination-details.png "Platform UI的图像，显示要填写的目标连接详细信息")
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
@@ -84,7 +84,7 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
@@ -98,7 +98,7 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 ### 映射身份 {#map}
 
-下面是将受众导出到TikTok广告管理器时正确的标识映射示例。
+下面是将受众导出到TikTok广告管理器时正确标识映射的示例。
 
 选择源字段：
 
@@ -114,10 +114,10 @@ TikTok支持激活下表中描述的标识。 详细了解 [身份](/help/identi
 
 检查您的 [!DNL TikTok Ads Manager] 帐户(在 **Assets >受众**)，以验证您的Experience Platform受众是否已成功导出。 受众将填充为受众类型： `Partner Audience`.
 
-## 数据使用和管理 {#data-usage-governance}
+## 数据使用和治理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关以下方面的详细信息： [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据治理概述](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
 
 ## 其他资源 {#additional-resources}
 
-请参阅 [TikTok帮助中心页面](https://ads.tiktok.com/help/article/audiences?lang=en) 以获取其他信息。
+请参阅 [TikTok帮助中心页面](https://ads.tiktok.com/help/article/audiences?lang=en) 以了解其他信息。

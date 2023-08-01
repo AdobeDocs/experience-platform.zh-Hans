@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+source-git-commit: ce1aec87b827b6e8626018846bc6f438834fff54
 workflow-type: tm+mt
-source-wordcount: '1324'
-ht-degree: 2%
+source-wordcount: '1449'
+ht-degree: 1%
 
 ---
 
@@ -25,6 +25,12 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## Adobe构建和合作伙伴构建的源 {#adobe-and-partner-built-sources}
+
+Experience Platform源目录中的某些连接器是由Adobe构建和维护的，而其他连接器是由合作伙伴公司使用构建和维护的 [源SDK](/help/sources/sources-sdk/overview.md). 如果合作伙伴创建并维护了源，则每个合作伙伴构建的连接器在文档页面顶部的注释会标出。 例如， [Amazon S3连接器](/help/sources/connectors/cloud-storage/s3.md) 由Adobe创建，而 [RainFocus连接器](/help/sources/connectors/analytics/rainfocus.md) 由RainFocus团队创建和维护。
+
+对于合作伙伴创作并维护的连接器，这意味着连接器问题可能需要由合作伙伴团队解决（文档页面注释中提供的联系方法）。 有关Adobe创作和维护的连接器出现的问题，请联系您的Adobe代表或客户关怀团队。
 
 ## 源类型
 

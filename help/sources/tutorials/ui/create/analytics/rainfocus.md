@@ -1,11 +1,11 @@
 ---
 title: 使用UI将RainFocus帐户连接到Experience Platform
 description: 了解如何使用UI将RainFocus帐户连接到Experience Platform。
-badge: 测试版
-source-git-commit: 81f157216546d65c00090059c13c85e8ae5878f1
+badge: Beta
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1007'
+ht-degree: 1%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此 [!DNL RainFocus] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+>此 [!DNL RainFocus] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 本教程提供了有关如何连接 [!DNL RainFocus] 帐户并将事件管理和分析数据流式传输到Adobe Experience Platform。
 
 >[!IMPORTANT]
 >
->此文档页面由创建 [!DNL RainFocus] 团队。 如有任何查询或更新请求，请直接通过客户关怀联系<span>@rainfocus.com或访问 [[!DNL RainFocus] 帮助中心](https://help.rainfocus.com/hc/en-us)
+>此源连接器和文档页面由 [!DNL RainFocus] 团队。 如有任何查询或更新请求，请直接通过客户关怀部门联系<span>@rainfocus.com或访问 [[!DNL RainFocus] 帮助中心](https://help.rainfocus.com/hc/en-us)
 
 ## 快速入门
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 ### 先决条件
 
-在连接之前 [!DNL RainFocus] Experience Platform时，必须首先完成以下先决任务：
+在连接之前， [!DNL RainFocus] Experience Platform时，您必须先完成以下先决任务：
 
 * [收集所需的凭据](../../../../connectors/analytics/rainfocus.md#gather-required-credentials)
 * [创建XDM架构并定义标识字段](../../../../connectors/analytics/rainfocus.md#create-an-xdm-schema-and-define-the-identity-field)
@@ -42,28 +42,28 @@ ht-degree: 0%
 
 ## 将您的RainFocus帐户连接到Experience Platform
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问“源”工作区。 此 *[!UICONTROL 目录]* 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问“源”工作区。 此 *[!UICONTROL 目录]* 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 *[!UICONTROL 分析]* 类别，选择 **[!UICONTROL RainFocus体验]**，然后选择 **[!UICONTROL 添加数据]**.
 
-![已选择RainFocus源的Experience PlatformUI上的源目录。](/help/sources/images/tutorials/create/rainfocus/rainfocus_sources-rf.png)
+![选择了RainFocus源的Experience PlatformUI上的源目录。](/help/sources/images/tutorials/create/rainfocus/rainfocus_sources-rf.png)
 
 ## 选择数据
 
-此时会显示选择数据步骤，为您提供了一个界面来选择要Experience Platform的数据。
+此时会显示选择数据步骤，提供一个界面供您选择要Experience Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
-* 界面的右侧部分允许您预览来自JSON文件的最多100行数据。
+* 界面的右侧部分允许您预览JSON文件中最多100行数据。
 
-选择 **[!UICONTROL 上传文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到拖放文件面板中。
+选择 **[!UICONTROL 上载文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到拖放文件面板。
 
 上传从下载的JSON有效负载示例 **RainFocus**.
 
 ![源工作流中的选择数据步骤。](/help/sources/images/tutorials/create/rainfocus/rainfocus_source-json-upload.png)
 
-上传文件后，预览界面会更新以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用搜索字段实用程序从架构中访问特定项目。
+上传文件后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用搜索字段实用程序从架构中访问特定项目。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -71,7 +71,7 @@ ht-degree: 0%
 
 ## 数据流详细信息
 
-此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，并提供为数据流提供名称和描述的机会。 在此步骤中，您还可以配置配置文件提取、错误诊断、部分提取和警报的设置。
+此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，以及提供数据流名称和描述的机会。 在此步骤中，您还可以配置配置文件摄取、错误诊断、部分摄取和警报的设置。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -79,9 +79,9 @@ ht-degree: 0%
 
 ## 映射 {#mapping}
 
-此时将显示映射步骤，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此时会显示映射步骤，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
-Experience Platform根据您选择的Target架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+Experience Platform根据您选择的Target架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 成功映射源数据后，选择 **[!UICONTROL 下一个]**.
 
@@ -89,12 +89,12 @@ Experience Platform根据您选择的Target架构或数据集，为自动映射�
 
 ## 请查看
 
-此 **审核** 步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
+此 **审核** 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
 * **连接**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **分配数据集和映射字段**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
+* **分配数据集和映射字段**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
 
-查看数据流后，选择 **完成** 并留出一些时间来创建数据流。
+查看数据流后，选择 **完成** 留出一段时间来创建数据流。
 
 ![源工作流的审核步骤。](/help/sources/images/tutorials/create/rainfocus/rainfocus_source-compelete.png)
 
@@ -106,21 +106,21 @@ Experience Platform根据您选择的Target架构或数据集，为自动映射�
 
 ![源工作区中的“数据流活动”页面，其中突出显示了流端点URL。](/help/sources/images/tutorials/create/rainfocus/rainfocus_source-dataflow-api.png)
 
-## 在RainFocus中激活您的集成配置文件
+## 在RainFocus中激活集成配置文件
 
 数据流完成并检索到流端点URL后，您现在可以激活 [!DNL Integration Profile] 在 [!DNL RainFocus].
 
 * 登录 [[!DNL RainFocus] 平台](https://app.rainfocus.com). 在主导航中，选择 **[!DNL Libraries]** 和 **[!DNL Integration Profiles]**
-* 打开 [!DNL Integration Profile] 之前创建的 [先决条件](../../../../connectors/analytics/rainfocus.md#create-an-integration-profile-in-rainfocus).
+* 打开 [!DNL Integration Profile] 您之前创建的，作为 [先决条件](../../../../connectors/analytics/rainfocus.md#create-an-integration-profile-in-rainfocus).
 * 粘贴 **数据流ID** 和 **流端点** 从Experience Platform中的数据流复制并选择 **保存**
 
 ## 后续步骤
 
-通过学习本教程，您已建立与的连接 [!DNL RainFocus] 源，允许您流式传输事件管理和Analytics数据以Experience Platform。
+通过学习本教程，您已为建立了连接 [!DNL RainFocus] 源，允许您流式传输事件管理和Experience Platform数据。
 
 ## 其他资源
 
-以下文档提供有关以下内容的细微差别的额外指导 [!DNL RainFocus] 源。
+以下文档提供了有关 [!DNL RainFocus] 源。
 
 * [RainFocus帮助中心](https://help.rainfocus.com/hc/en-us)
 * [在Adobe Developer门户中创建Adobe服务帐户(JWT)](https://developer.adobe.com/developer-console/docs/guides/authentication/ServiceAccountIntegration/)
