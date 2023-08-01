@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 1314b2742af5cd281acb5f9db81eec0ccf885f77
+source-git-commit: 378b51b13547af994bd258a42d1068118d099eb4
 workflow-type: tm+mt
-source-wordcount: '3607'
+source-wordcount: '3610'
 ht-degree: 3%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 3%
 | [!UICONTROL 标记] | 属于受众的用户定义标记。 有关这些标记的详细信息，请参阅 [标记部分](#tags). |
 | [!UICONTROL 细分] | 受众的个人资料状态细分。 此用户档案状态划分的更详细描述可以在下面找到。 |
 | [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Published`、和 `Archived`. |
-| [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括 `On Demand`， `Scheduled`、和 `Continuous`. |
+| [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括 `On Demand` （批次）， `Scheduled` （流），以及 `Continuous` (Edge)。 |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
 | [!UICONTROL 描述] | 受众的描述。 |
 | [!UICONTROL 创建者] | 创建受众的人员姓名。 |
@@ -101,7 +101,7 @@ ht-degree: 3%
 | 操作 | 来源 | 描述 |
 | ------ | ------- | ----------- |
 | Edit | Segmentation Service | 允许您打开区段生成器以编辑受众。 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md). |
-| 打开合成 | 受众构成 | 允许您打开受众合成以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
+| 打开合成 | 受众组合 | 允许您打开受众合成以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
 | 激活到目标 | Segmentation Service | 允许您将受众激活到目标。 有关将受众激活到目标的更多详细信息，请参阅 [激活概述](../../destinations/ui/activation-overview.md). |
 | 与合作伙伴共享 | 受众构成、自定义上传、分段服务 | 可让您与其他Platform用户共享受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
 | 管理标记 | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
@@ -224,7 +224,7 @@ ht-degree: 3%
 
 >[!BEGINTABS]
 
->[!TAB 受众构成]
+>[!TAB 受众组合]
 
 ![此时将显示受众详细信息页面，其中包含 [!UICONTROL 打开合成] 按钮突出显示。](../images/ui/overview/audience-details-open-composition.png)
 
