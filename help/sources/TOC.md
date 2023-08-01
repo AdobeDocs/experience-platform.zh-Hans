@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: cb8fd7a7e3803c356adbdf0c20cde869c1de602c
+source-git-commit: 732693b34bf4425cd3a44fba5647d337588abfa0
 workflow-type: tm+mt
-source-wordcount: '990'
+source-wordcount: '987'
 ht-degree: 11%
 
 ---
@@ -24,7 +24,6 @@ ht-degree: 11%
       - [Adobe Commerce源](connectors/adobe-applications/commerce.md)
       - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
       - [数据收集源](connectors/adobe-applications/data-collection.md)
-      - [Workfront源](connectors/adobe-applications/workfront.md)
       - 字段映射 {#mapping}
          - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
@@ -186,7 +185,7 @@ ht-degree: 11%
          - [SalesforceMarketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
-         - [方形](tutorials/api/create/payments/square.md)
+         - [正方形](tutorials/api/create/payments/square.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
          - [通用REST API](tutorials/api/create/protocols/generic-rest.md)
@@ -200,7 +199,7 @@ ht-degree: 11%
       - [浏览数据库数据](tutorials/api/explore/database-nosql.md)
       - [探索电子商务数据](tutorials/api/explore/ecommerce.md)
       - [探索营销自动化数据](tutorials/api/explore/marketing-automation.md)
-      - [探索支付数据](tutorials/api/explore/payments.md)
+      - [浏览支付数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
       - [浏览数据表](tutorials/api/explore/tabular.md)
    - 收集数据 {#collect}
@@ -215,7 +214,7 @@ ht-degree: 11%
       - [收集协议数据](tutorials/api/collect/protocols.md)
       - [收集流数据](tutorials/api/collect/streaming.md)
    - [按需引入](tutorials/api/on-demand-ingestion.md)
-   - [在源级别筛选数据](tutorials/api/filter.md)
+   - [在源级别过滤数据](tutorials/api/filter.md)
    - [监测数据流](tutorials/api/monitor.md)
    - [更新帐户](tutorials/api/update.md)
    - [更新数据流](tutorials/api/update-dataflows.md)
@@ -234,7 +233,6 @@ ht-degree: 11%
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
          - [Marketo自定义活动](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-         - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
       - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
@@ -302,13 +300,13 @@ ht-degree: 11%
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
          - [Mailchimp营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
-         - [Mailchimp成员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
+         - [Mailchimp会员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [oracleEloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
          - [oracleResponsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [SalesforceMarketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
-         - [方形](tutorials/ui/create/payments/square.md)
+         - [正方形](tutorials/ui/create/payments/square.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
       - 流 {#streaming}
@@ -326,7 +324,7 @@ ht-degree: 11%
       - [营销自动化连接数据流](tutorials/ui/dataflow/marketing-automation.md)
       - [支付连接数据流](tutorials/ui/dataflow/payments.md)
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
-   - [使用UI中的模板创建源数据流](tutorials/ui/templates.md)
+   - [在UI中使用模板创建源数据流](tutorials/ui/templates.md)
    - [监测批量数据流](tutorials/ui/monitor.md)
    - [监测流数据流](tutorials/ui/monitor-streaming.md)
    - [更新帐户](tutorials/ui/update.md)
@@ -335,22 +333,22 @@ ht-degree: 11%
    - [删除数据流](tutorials/ui/delete.md)
    - [订阅源提醒](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
-- 自助式源(Batch SDK) {#sdk}
+- 自助式源（批处理SDK） {#sdk}
    - [概述](sources-sdk/overview.md)
    - 配置连接规范 {#config}
       - [配置选项](sources-sdk/config/config.md)
       - [配置身份验证规范](sources-sdk/config/authspec.md)
       - [配置源规范](sources-sdk/config/sourcespec.md)
       - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - 自助式源(Batch SDK) API指南 {#self-serve-api}
-      - [自助式源(Batch SDK) API概述](sources-sdk/api/api-overview.md)
+   - 自助源（批处理SDK） API指南 {#self-serve-api}
+      - [自助式源（批处理SDK） API概述](sources-sdk/api/api-overview.md)
       - [快速入门](sources-sdk/api/getting-started.md)
       - [创建连接规范](sources-sdk/api/create.md)
       - [更新连接规范](sources-sdk/api/update-connection-specs.md)
-      - [更新流程规范](sources-sdk/api/update-flow-specs.md)
+      - [更新流规范](sources-sdk/api/update-flow-specs.md)
       - [提交您的源](sources-sdk/api/submit.md)
    - 文档指南 {#documentation}
-      - [在Adobe Experience Platform中记录源](sources-sdk/documentation/doc-overview.md)
+      - [在Adobe Experience Platform中记录您的源](sources-sdk/documentation/doc-overview.md)
       - [使用GitHub Web界面创建源文档页面](sources-sdk/documentation/github.md)
       - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
       - [文档自助服务API模板](sources-sdk/documentation/template.md)
@@ -367,7 +365,7 @@ ht-degree: 11%
 - 错误消息 {#errors}
    - [源中的错误消息](./errors/sources-errors.md)
    - [流服务中的错误消息](./errors/flow-service-errors.md)
-- [流运行通知](notifications.md)
+- [流量运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
