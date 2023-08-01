@@ -4,9 +4,9 @@ title: 配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c558ee6cc1c7ae36f87aaff5d40be57cfb21b2e4
+source-git-commit: 29c93c178a1f6247b61c663e87dbb0e5b95d318e
 workflow-type: tm+mt
-source-wordcount: '3393'
+source-wordcount: '3520'
 ht-degree: 10%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 10%
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功能板可查看有关您的报表包的重要信息。 [!DNL Real-Time Customer Profile] 数据，在每日快照期间捕获。 本指南概述如何在UI中访问和使用用户档案仪表板，并提供有关仪表板中显示的量度的信息。
 
-有关Experience Platform用户界面中所有配置文件功能的概述，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md) 有关Experience Platform用户界面中的配置文件功能的概述。
 
 ## 个人资料仪表板数据
 
@@ -39,9 +39,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ### 修改用户档案仪表板
 
-通过选择 **[!UICONTROL 修改仪表板]**. 这使您可以在仪表板中移动、添加和删除构件，以及访问 **[!UICONTROL 构件库]** 浏览可用的构件，并为您的组织创建自定义构件。
+通过选择 **[!UICONTROL 修改仪表板]**. 您可以从仪表板移动、添加、调整小组件大小和移除小组件，以及访问 **[!UICONTROL 构件库]** 浏览可用的构件，并为您的组织创建自定义构件。
 
-请参阅 [修改仪表板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档，以了解更多信息。
+要了解更多信息，请参阅 [修改仪表板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档。
 
 ### 添加构件 {#add-widget}
 
@@ -69,7 +69,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以看到属于用户档案的重要信息，其中包含有关其偏好、过去事件、交互和受众的信息。
 
-要详细了解Platform UI中提供的配置文件查看功能，请参阅上的文档 [在Adobe Real-time Customer Data Platform中浏览配置文件](../../rtcdp/profile/profile-browse.md).
+要详细了解Platform UI中提供的配置文件查看功能，请参阅关于的文档 [在Adobe Real-time Customer Data Platform中浏览配置文件](../../rtcdp/profile/profile-browse.md).
 
 ## 合并策略 {#merge-policies}
 
@@ -77,7 +77,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 有关合并策略的更多信息，包括如何为组织创建、编辑和声明默认合并策略，请参阅 [合并策略概述](../../profile/merge-policies/overview.md).
 
-仪表板将自动选择要使用的合并策略。 可以使用合并策略名称旁边的下拉菜单更改应用的合并策略。
+仪表板会自动选择要使用的合并策略。 可以使用合并策略名称旁边的下拉菜单更改应用的合并策略。
 
 >[!NOTE]
 >
@@ -91,7 +91,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 合并模式由多个共享同一类并已启用用户档案的模式组成。 它们允许您在单个视图中查看共享同一类的每个架构中包含的每个字段的合并。
 
-请参阅合并架构UI指南，了解更多关于 [在Platform UI中查看合并架构](../../profile/ui/union-schema.md#view-union-schemas).
+要了解有关 [在Platform UI中查看合并架构](../../profile/ui/union-schema.md#view-union-schemas)，请参阅合并架构UI指南。
 
 ## 小工具和量度
 
@@ -101,9 +101,23 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ![配置式仪表板概述选项卡中突出显示最近的快照时间戳。](../images/profiles/snapshot-timestamp.png)
 
+## 默认构件 {#default-widgets}
+
+为Adobe Experience Platform的所有新实例提供了默认构件加载，该构件会突出显示数据中最新的可用见解。 从一开始就在区段视图中预配置了以下构件。 有关构件用途和功能的完整详细信息见下文。
+
+* [[!UICONTROL 配置文件计数]](#profile-count)
+* [[!UICONTROL 配置文件计数变化]](#profile-count-change)
+* [[!UICONTROL 配置文件计数变化趋势]](#profiles-count-change-trend)
+* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 标识重叠]](#identity-overlap)
+
+>[!NOTE]
+>
+>截至2023年7月26日， [!UICONTROL 配置文件]， [!UICONTROL 受众]、和 [!UICONTROL 目标] 对于所有在过去六个月中未修改其视图的用户，概述功能板已重置为新的默认构件加载。 请参阅 [目标](./destinations.md#default-widgets) 和 [受众](./audiences.md#default-widgets) “默认构件”部分，了解有关哪些构件包含在默认构件加载中的详细信息。 您可以像以前一样继续自定义仪表板小组件。
+
 ## 标准构件 {#standard-widgets}
 
-Adobe提供了多个标准构件，可用于可视化与配置文件数据相关的各种指标。 您还可以使用创建要与贵组织共享的自定义构件 [!UICONTROL 构件库]. 要了解有关创建自定义构件的更多信息，请先阅读 [构件库概述](../customize/widget-library.md).
+Adobe提供了多个标准构件，可用于可视化与配置文件数据相关的各种指标。 您还可以使用创建要与贵组织共享的自定义构件 [!UICONTROL 构件库]. 要了解有关创建自定义构件的更多信息，请从阅读 [构件库概述](../customize/widget-library.md).
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
@@ -138,7 +152,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!NOTE]
 >
->此 [!UICONTROL 配置文件计数] 构件显示的数字可能与上显示的配置文件计数不同。 [!UICONTROL 浏览] 选项卡 [!UICONTROL 配置文件] 部分，原因有多种。 最常见的原因是 [!UICONTROL 浏览] 选项卡根据贵组织的默认合并策略引用合并配置文件总数，而 [!UICONTROL 配置文件计数] 构件会根据您选择在仪表板中查看的合并策略，引用合并的配置文件总数。
+>此 [!UICONTROL 配置文件计数] 构件显示的数字可能与上显示的配置文件计数不同。 [!UICONTROL 浏览] 选项卡 [!UICONTROL 配置文件] 部分，原因有多种。 造成这种差异的最常见原因是 [!UICONTROL 浏览] 选项卡根据贵组织的默认合并策略引用合并配置文件总数，而 [!UICONTROL 配置文件计数] 构件会根据您选择在仪表板中查看的合并策略，引用合并的配置文件总数。
 >
 >另一个常见原因是拍摄仪表板快照的时间和为运行示例作业的时间之间的差异 [!UICONTROL 浏览] 选项卡。 您会看到 [!UICONTROL 配置文件计数] 构件上次更新是通过查看构件上的时间戳进行的。 要详细了解如何在上触发示例作业，请执行以下操作 [!UICONTROL 浏览] 选项卡，请参见 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
 
@@ -161,7 +175,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!NOTE]
 >
->此 [!UICONTROL 配置文件计数更改] 构件反映添加的用户档案数 **之后** 初始配置文件摄取和配置文件存储设置。 换言之，如果贵组织设置了个人资料存储区并在第1天接收了4,000,000个，则在24小时内该仪表板将可用，但是 [!UICONTROL 配置文件计数更改] 构件将设置为0。 这样做是为了避免与用户档案初次摄取到系统中相关的尖峰。 在接下来的30天中，您的组织会向配置文件存储中另外摄取1,000,000个配置文件。 拍摄下一个快照后， [!UICONTROL 配置文件计数更改] 该构件将显示添加的总共1,000,000个配置文件，而 [!UICONTROL 配置文件计数] 该小组件将显示总共5,000,000个配置文件。
+>此 [!UICONTROL 配置文件计数更改] 构件反映添加的用户档案数 **之后** 初始配置文件摄取和配置文件存储设置。 换言之，如果贵组织设置了个人资料存储区并在第1天接收了4,000,000个，则在24小时内该仪表板将可用，但是 [!UICONTROL 配置文件计数更改] 构件将设置为0。 此计数方法旨在避免与将用户档案初始摄取到系统中相关的峰值。 在接下来的30天中，您的组织会向配置文件存储中另外摄取1,000,000个配置文件。 拍摄下一个快照后， [!UICONTROL 配置文件计数更改] 该构件将显示添加的总共1,000,000个配置文件，而 [!UICONTROL 配置文件计数] 该小组件将显示总共5,000,000个配置文件。
 
 ![突出显示具有配置文件计数更改小组件的Platform UI配置文件仪表板。](../images/profiles/profile-count-change.png)
 
@@ -174,9 +188,9 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 此 **[!UICONTROL 配置文件计数变化趋势]** 构件显示过去30天、90天或12个月每日添加到配置文件存储区的合并配置文件总数。 此数字在每天拍摄快照时都会更新，因此，如果您要将配置文件摄取到Platform，则在拍摄下一个快照之前不会反映配置文件数。 添加的配置文件计数是选定的合并策略应用于您的配置文件数据的结果，这样可以将配置文件片段合并在一起，形成每个人的单个配置文件。
 
-请参阅 [之前关于合并策略的章节](#merge-policies) 了解更多信息。
+要了解更多信息，请参阅 [之前关于合并策略的章节](#merge-policies).
 
-此 **[!UICONTROL 配置文件计数变化趋势]** 构件在构件的右上角显示“字幕”按钮。 选择 **[!UICONTROL 字幕]** 以打开自动字幕对话框。
+此 **[!UICONTROL 配置文件计数变化趋势]** 构件在构件的右上角显示“字幕”按钮。 要打开自动字幕对话框，请选择 **[!UICONTROL 字幕]**.
 
 ![配置文件概述选项卡显示了突出显示标题按钮的配置文件计数更改趋势构件。](../images/profiles/profiles-count-change-trend-captions.png)
 
@@ -188,7 +202,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 <!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
 
-此构件根据选定的源标识和合并策略筛选用户档案计数，然后使用折线图说明多个期间数字的更改。 从页面顶部的概述下拉菜单中选择合并策略，从小组件下拉菜单中选择源标识和时间段。 可以在30天、90天和12个月的时段内可视化趋势。
+此构件根据选定的源身份筛选用户档案计数并合并策略，然后使用线形图说明各个期间数量的变化。 从页面顶部的概述下拉菜单中选择合并策略，从小组件下拉菜单中选择源标识和时间段。 可以在30天、90天和12个月的时段内可视化趋势。
 
 此构件通过展示按所需身份过滤的用户档案的增长模式，帮助您管理目标激活需求。
 
@@ -203,17 +217,17 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 此 **[!UICONTROL 按身份列出的配置文件]** 构件显示配置文件存储中所有合并配置文件的身份细分。 按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
-请参阅 [之前关于合并策略的章节](#merge-policies) 了解更多信息。
+要了解更多信息，请参阅 [之前关于合并策略的章节](#merge-policies).
 
 ![突出显示了“按身份列出的配置文件”小组件的“配置文件概述”仪表板。](../images/profiles/profiles-by-identity.png)
 
-选择 **[!UICONTROL 字幕]** 以打开自动字幕对话框。
+要打开自动字幕对话框，请选择 **[!UICONTROL 字幕]**.
 
 ![“按身份描述配置文件”对话框。](../images/profiles/profiles-by-identity-captions.png)
 
 机器学习模型通过分析数据的总体分布和关键维度自动生成数据见解。
 
-要了解有关身份的详细信息，请访问 [Adobe Experience Platform Identity服务文档](../../identity-service/home.md).
+要了解有关身份的详细信息，请参阅 [Adobe Experience Platform Identity服务文档](../../identity-service/home.md).
 
 ### [!UICONTROL 标识重叠] {#identity-overlap}
 
@@ -224,11 +238,11 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 此 **[!UICONTROL 身份重叠]** 构件使用维恩图或设置图来显示配置文件存储中包含两个选定身份的配置文件的重叠。
 
-使用构件下拉菜单选择要比较的标识。 圆圈显示包含每个身份的配置文件的相对总数。 包含两个身份的配置文件的数量由圆之间的重叠大小表示。 如果客户在多个渠道上与您的品牌互动，则多个身份将与该个人客户关联，因此，您的组织可能会有多个包含多个身份片段的配置文件。
+使用构件下拉菜单选择要比较的标识。 圆圈显示包含每个身份的配置文件的相对总数。 包含两个身份的配置文件的数量由圆之间的重叠大小表示。 如果客户在多个渠道上与您的品牌互动，则多个身份会与该个人客户相关联。 在此情况下，您的组织可能具有多个包含来自多个标识的片段的配置文件。
 
-有关用户档案片段的更多信息，请参阅 [配置文件片段与合并的配置文件](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) 在实时客户资料概述中。
+有关用户档案片段的更多信息，请参阅 [配置文件片段与合并的配置文件](../../profile/home.md#profile-fragments-vs-merged-profiles) 在实时客户资料概述中。
 
-要了解有关身份的详细信息，请访问 [Adobe Experience Platform Identity服务文档](../../identity-service/home.md).
+要了解有关身份的详细信息，请参阅 [Adobe Experience Platform Identity服务文档](../../identity-service/home.md).
 
 ![突出显示具有身份重叠小部件的配置文件仪表板概述。](../images/profiles/identity-overlap.png)
 
@@ -247,7 +261,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 此构件使用条形图说明仅使用单个唯一标识符标识的用户档案总数。 该构件最多支持五种最常见的身份。
 
-将鼠标悬停在各个栏上可查看一个对话框，其中详细说明了身份的配置文件的总数。
+要查看详细描述身份的配置文件的总数的对话框，请使用光标将鼠标悬停在各个栏上。
 
 ![按身份小组件显示的单一身份配置文件。](../images/profiles/single-identity-profiles-by-identity.png)
 
@@ -294,7 +308,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 
 此构件根据应用于用户档案数据的所选合并策略，提供准备好激活的受众总数。
 
-选择 **[!UICONTROL 受众]** 导航到 [!UICONTROL 区段] 仪表板 [!UICONTROL 浏览] 选项卡。 在该视图中，您可以看到组织的所有区段定义的列表。
+选择 **[!UICONTROL 受众]** 导航到 [!UICONTROL 受众] 仪表板 [!UICONTROL 浏览] 选项卡。 从该位置，您可以查看组织的所有区段定义的列表。
 
 ![受众构件。](../images/profiles/audiences.png)
 
@@ -303,7 +317,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 <!-- * [[!UICONTROL Audiences change trend]](#audiences-change-trend) -->
 <!-- ### [!UICONTROL Audiences change trend] {#audiences-change-trend}
 
-This line graph widget visualizes the change in the total number of audiences each day, trending over time. The change in the number of audiences is dependent on the selected merge policy being applied to your profile data. The period of analysis is selected from the widget dropdown menu. The bar chart can be visualized over 30 days, 90 days, and 12-month periods.  
+This line graph widget visualizes the change in the total number of audiences each day, trending over time. The change in the number of audiences is dependent on the selected merge policy being applied to your profile data. The period of analysis is selected from the widget dropdown menu. The bar chart can be visualized over 30 days, 90 days, and 12-month periods.
 
 The visualization allows you to monitor the overall health of audiences within Adobe Experience Platform by understanding trends in the growth or decline of the total number of audiences. -->
 
@@ -319,19 +333,19 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ![受众重叠报表构件，其中视图突出显示。](../images/profiles/profiles-audience-overlap-report.png)
 
-此 [!UICONTROL 受众重叠报表] 出现对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 选择设置图标(![设置图标。](../images/profiles/settings-icon.png))，以从表中删除或添加列。
+此 [!UICONTROL 受众重叠报表] 出现对话框。 此对话框最多可包含50行受众重叠分析，这些分析划分为6列。 要从表格中删除或添加列，请选择设置图标(![设置图标。](../images/profiles/settings-icon.png))。
 
 ![受众重叠报表对话框。](../images/profiles/profiles-audience-overlap-report-dialog.png)
 
 >[!NOTE]
 >
->选择 **[!UICONTROL 重叠]** 列标题，用于将结果的排名在最高到最低或最低到最高之间更改。
+>要将结果的排名从最高更改为最低，或从最低更改为最高，请选择 **[!UICONTROL 重叠]** 列标题。
 
 要以PDF格式下载整个报表，请选择选项菜单(**`...`**)后跟 **[!UICONTROL 下载]**.
 
 ![受众重叠报表对话框，突出显示省略号和下载选项。](../images/profiles/profiles-audience-overlap-report-dialog-download.png)
 
-从报表中选择一行以打开重叠分析的维恩图。 将鼠标悬停在维恩图的一部分上可查看对话框中的配置文件计数。
+要打开重叠分析的维恩图，请从报表中选择一行。 要在对话框中查看用户档案计数，请将鼠标悬停在维恩图的某个部分上。
 
 ![受众重叠报表对话框，其中显示了维恩图和突出显示的行。](../images/profiles/profiles-audience-overlap-report-dialog-venn.png)
 
@@ -436,4 +450,4 @@ The three levels of completeness are:
 
 ## 后续步骤
 
-现在，通过阅读本文档，您应该能够找到用户档案仪表板，并了解可用构件中显示的量度。 要了解有关使用的更多信息，请执行以下操作 [!DNL Profile] 数据，请参阅Experience PlatformUI中的 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+通过阅读本文档，您现在应该能够找到用户档案仪表板，并了解可用构件中显示的量度。 要了解有关使用的更多信息，请执行以下操作 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
