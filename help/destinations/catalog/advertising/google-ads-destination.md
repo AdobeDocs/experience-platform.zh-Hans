@@ -1,11 +1,11 @@
 ---
 keywords: Google ads；google ads；google adwords；Google AdWords；Google Adwords
 title: Google Ads连接
-description: Google Ads(以前称为Google AdWords)是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，进行每次点击付费广告。
+description: Google Ads以前称为Google AdWords，是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按每次点击付费进行广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '995'
 ht-degree: 2%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[!DNL Google Ads]，以前称为 [!DNL Google AdWords]，是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示 [!DNL YouTube] 视频和应用程序内移动设备显示。
+[!DNL Google Ads]，以前称为 [!DNL Google AdWords]，是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示 [!DNL YouTube] 视频和应用程序内移动显示。
 
 ## 目标详情 {#specifics}
 
 请注意以下特定于的详细信息 [!DNL Google Ads] 目标：
 
 * 激活的受众以编程方式创建于 [!DNL Google] 平台。
-* [!DNL Platform] 当前不包括用于验证激活是否成功的度量指标。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
+* [!DNL Platform] 当前不包括用于验证激活是否成功的测量指标。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望使用创建您的第一个目标 [!DNL Google Ads] 且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步会转移到平台。
+>如果您希望使用创建您的第一个目标 [!DNL Google Ads] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将会结转到Platform。
 
 ## 支持的身份 {#supported-identities}
 
@@ -33,27 +33,27 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | [!DNL Google Advertising ID] | 当源身份是GAID命名空间时，选择此目标身份。 |
-| IDFA | [!DNL Apple ID for Advertisers] | 当源身份是IDFA命名空间时，选择此目标身份。 |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的数字设备ID，Audience Manager将其关联到与其交互的每个设备。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
+| GAID | [!DNL Google Advertising ID] | 当源身份是GAID命名空间时，请选择此目标身份。 |
+| IDFA | [!DNL Apple ID for Advertisers] | 当源身份是IDFA命名空间时，请选择此目标身份。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 使用此ID定位加利福尼亚州以外的用户。 |
 | RIDA | 适用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
-| MAID | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
+| 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID唯一标识Amazon Fire电视。 |  |
 
 {style="table-layout:auto"}
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可以导出到此目标的所有受众。
+此部分介绍可导出到此目标的所有受众。
 
-所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表中描述的受众。
+*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
-| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ ht-degree: 2%
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
 | 导出类型 | **[!UICONTROL 受众导出]** | 您要将受众的所有成员导出到Google目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -74,19 +74,19 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
-> [!DNL Google] 已弃用新的 [!DNL Google Ads] Cookie与第三方供应商的集成。 要执行下一节中的允许列表步骤，您必须与集成 [!DNL Google Ads]. 因此，推荐的方法使用 [!DNL Google Ads] 正在设置 [!DNL Google Customer Match] 集成。 有关创建的详细信息 [!DNL Google Customer Match] 集成，请阅读有关创建 [[!DNL Google Customer Match]](./google-customer-match.md) 连接。
+> [!DNL Google] 已弃用新的 [!DNL Google Ads] Cookie与第三方供应商集成。 要执行下一节中的允许列表步骤，您必须与集成 [!DNL Google Ads]. 因此，推荐使用 [!DNL Google Ads] 正在设置 [!DNL Google Customer Match] 集成。 有关创建 [!DNL Google Customer Match] 集成，请阅读有关创建 [[!DNL Google Customer Match]](./google-customer-match.md) 连接。
 
 ### 允许列表 {#allow-listing}
 
 >[!NOTE]
 >
->必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Ads] Platform的目标。 请确保以下描述的“允许列表”流程已由完成 [!DNL Google] 创建目标之前。
->此规则的例外情况是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表过程，您可以继续后续步骤。
+>必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Ads] Platform的目标。 请确保以下说明的允许列表流程已由完成 [!DNL Google] 创建目标之前。
+>此规则的例外情况是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
-创建之前 [!DNL Google Ads] Platform中的目标，您必须联系 [!DNL Google] 将Adobe添加到允许的数据提供程序列表，并将您的帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
+创建 [!DNL Google Ads] Platform中的目标，您必须联系 [!DNL Google] 用于将Adobe添加到允许的数据提供程序列表，以及用于将您的帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
 
-* **帐户ID**：Adobe的帐户ID与Google 帐户ID：87933855。
-* **客户ID**：Adobe的客户帐户ID与Google。 客户ID：89690775。
+* **帐户ID**：Adobe在Google中的帐户ID。 帐户ID：87933855。
+* **客户ID**：AdobeGoogle的客户帐户ID。 客户ID：89690775。
 * 您的帐户类型： **AdWords**
 * **Google AdWords ID**：这是您的ID，包含 [!DNL Google]. ID格式通常为123-456-7890。
 
@@ -100,7 +100,7 @@ ht-degree: 2%
 
 ### 连接参数 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
+同时 [设置](../../ui/connect-destination.md) 此目标必须提供以下信息：
 
 * **[!UICONTROL 名称]**：填写此目标的首选名称。
 * **[!UICONTROL 描述]**：可选。 例如，您可以提及要将此目标用于哪个营销活动。
@@ -109,7 +109,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
@@ -119,7 +119,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
+请参阅 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 ## 导出的数据
 
@@ -133,8 +133,8 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 `{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
 
-当客户帐户不符合 [先决条件](#prerequisites) 或者，当客户尝试配置目标但不存在目标时 [!DNL Google Ads] 帐户。
+当客户帐户不符合 [先决条件](#prerequisites) 或客户尝试在没有现有的情况下配置目标时 [!DNL Google Ads] 帐户。
 
-[!DNL Google] 已弃用新的 [!DNL Google Ads] Cookie与第三方供应商的集成。 要执行 [允许列表](#allow-listing) 步骤，您必须具有现有的集成 [!DNL Google Ads].
+[!DNL Google] 已弃用新的 [!DNL Google Ads] Cookie与第三方供应商集成。 要执行 [允许列表](#allow-listing) 步骤，您必须现有与的集成 [!DNL Google Ads].
 
 使用的推荐方法 [!DNL Google Ads] 正在设置 [[!DNL Google Customer Match]](google-customer-match.md) 集成。

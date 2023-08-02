@@ -1,11 +1,11 @@
 ---
 keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
-description: 通过Google Customer Match，您可以在Google拥有和运营的资产(如Search、Shopping、Gmail和YouTube)中使用在线和离线数据联系客户并重新与其互动。
+description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '1818'
+source-wordcount: '1819'
 ht-degree: 1%
 
 ---
@@ -24,43 +24,43 @@ ht-degree: 1%
 
 ### 用例#1
 
-一家运动服装品牌希望通过下列渠道吸引现有客户 [!DNL Google Search] 和 [!DNL Google Shopping] 根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以将电子邮件地址从自己的CRM摄取到Experience Platform，并从自己的离线数据构建受众。 然后，他们可以将这些受众发送到 [!DNL Google Customer Match] 要跨以下范围使用 [!DNL Search] 和 [!DNL Shopping]，优化他们的广告支出。
+一家运动服装品牌希望通过下列渠道触及现有客户 [!DNL Google Search] 和 [!DNL Google Shopping] 根据优惠和项目的过去购买和浏览历史记录对其进行个性化设置。 服装品牌可以从自己的CRM中摄取电子邮件地址以进行Experience Platform，并从自己的离线数据中构建受众。 然后，他们可以将这些受众发送到 [!DNL Google Customer Match] 要跨以下位置使用 [!DNL Search] 和 [!DNL Shopping]，优化他们的广告支出。
 
 ### 用例#2
 
-一家知名科技公司发布了一款新手机。 为了推广这种新款手机，他们希望让拥有旧款手机的客户了解这款手机的新特性和新功能。
+一家知名科技公司发布了一款新手机。 为了推广这种新手机型号，他们正寻求让拥有旧款手机的客户了解手机的新特性和功能。
 
-为了提升版本，他们使用电子邮件地址作为标识符，将其CRM数据库中的电子邮件地址上传到Experience Platform中。 受众是基于拥有旧版手机型号的客户创建的。 然后，受众将发送到 [!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧款手机型号的客户以及在上启用的类似客户 [!DNL YouTube].
+为了提升版本，客户需要使用电子邮件地址作为标识符，将电子邮件地址从CRM数据库上传到Experience Platform中。 受众是基于拥有旧版手机模型的客户创建的。 然后，受众被发送到 [!DNL Google Customer Match]，以便公司能够定位现有客户、拥有旧款手机的客户以及上网的类似客户 [!DNL YouTube].
 
-## 数据治理 [!DNL Google Customer Match] 目标 {#data-governance}
+## 的数据治理 [!DNL Google Customer Match] 目标 {#data-governance}
 
 Experience Platform中的一些目标对于发送到目标平台或从目标平台接收的数据具有某些规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供数据治理工具，帮助您管理其中一些数据使用义务。 [了解详情](../../../data-governance/labels/overview.md) 关于数据治理工具和策略。
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Google Customer Match] 支持激活下表中描述的标识。 详细了解 [身份](/help/identity-service/namespaces.md).
+[!DNL Google Customer Match] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 当源身份是GAID命名空间时，选择此目标身份。 |
-| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择此目标身份。 |
-| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并分别使用适用于纯文本和经过哈希处理的电话号码的命名空间。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
-| email_lc_sha256 | 使用SHA256算法对电子邮件地址进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并针对纯文本和经过哈希处理的电子邮件地址分别使用相应的命名空间。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。 |
-| user_id | 自定义用户ID | 当源身份是自定义命名空间时，选择此目标身份。 |
+| GAID | Google广告ID | 当源身份是GAID命名空间时，请选择此目标身份。 |
+| IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，请选择此目标身份。 |
+| phone_sha256_e.164 | E164格式的电话号码，使用SHA256算法进行哈希处理 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 请按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分并使用相应的命名空间分别用于纯文本和经过哈希处理的电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
+| email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 请按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分，并分别将相应的命名空间用于纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
+| user_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
 {style="table-layout:auto"}
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可以导出到此目标的所有受众。
+此部分介绍可导出到此目标的所有受众。
 
-所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表中描述的受众。
+*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
-| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -70,59 +70,59 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 受众导出]** | 您正在导出受众的所有成员以及中使用的标识符（姓名、电话号码等）。 [!DNL Google Customer Match] 目标。 |
-| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 详细了解 [流式目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出类型 | **[!UICONTROL 受众导出]** | 您正使用 [!DNL Google Customer Match] 目标。 |
+| 导出频率 | **[!UICONTROL 流]** | 流目标为基于API的“始终运行”连接。 一旦根据受众评估在Experience Platform中更新了用户档案，连接器就会将更新发送到下游目标平台。 详细了解 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## [!DNL Google Customer Match] 帐户先决条件 {#google-account-prerequisites}
 
-在设置之前 [!DNL Google Customer Match] 目标Experience Platform，请确保已阅读并遵守Google关于使用的策略 [!DNL Customer Match]，在中概述 [Google支持文档](https://support.google.com/google-ads/answer/6299717).
+在设置之前 [!DNL Google Customer Match] 目标位于Experience Platform中，请确保您已阅读并遵守Google关于使用的政策 [!DNL Customer Match]，在中概述 [Google支持文档](https://support.google.com/google-ads/answer/6299717).
 
-接下来，确保您的 [!DNL Google] 帐户配置为 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 了解详细信息。
+接下来，确保您的 [!DNL Google] 帐户配置用于 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 以了解详细信息。
 
 ### 允许列表 {#allowlist}
 
-创建之前 [!DNL Google Customer Match] 目标位置在Experience Platform中，请确保您的 [!DNL Google Ads] 帐户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+创建 [!DNL Google Customer Match] 目标位置在Experience Platform中，请确保您的 [!DNL Google Ads] 帐户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
 Google会自动允许具有合规帐户的客户列出。
 
 ## ID匹配要求 {#id-matching-requirements}
 
-[!DNL Google] 要求不发送明确的个人身份信息(PII)。 因此，受众激活到 [!DNL Google Customer Match] 可以被关掉 *哈希* 标识符，例如电子邮件地址或电话号码。
+[!DNL Google] 要求不发送明确的个人身份信息(PII)。 因此，受众激活到 [!DNL Google Customer Match] 可以中断连接 *哈希* 标识符，例如电子邮件地址或电话号码。
 
 根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。
 
-### 电话号码哈希处理要求 {#phone-number-hashing-requirements}
+### 电话号码散列要求 {#phone-number-hashing-requirements}
 
-激活中的电话号码的方法有两种 [!DNL Google Customer Match]：
+激活中的电话号码有两种方法 [!DNL Google Customer Match]：
 
-* **正在摄取原始电话号码**：您可以将原始电话号码摄取到 [!DNL E.164] 格式化为 [!DNL Platform]，并且会在激活时自动对它们进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到 `Phone_E.164` 命名空间。
-* **正在摄取经过哈希处理的电话号码**：您可以先对电话号码进行预哈希处理，然后再将其引入 [!DNL Platform]. 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到 `PHONE_SHA256_E.164` 命名空间。
+* **摄取原始电话号码**：您可以摄取中的原始电话号码 [!DNL E.164] 格式化为 [!DNL Platform]，并且会在激活时自动对其进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到 `Phone_E.164` 命名空间。
+* **摄取经过哈希处理的电话号码**：您可以在将其引入之前预散列电话号码 [!DNL Platform]. 如果选择此选项，请确保始终将经过哈希处理的电话号码摄取到 `PHONE_SHA256_E.164` 命名空间。
 
 >[!NOTE]
 >
->接收的电话号码 `Phone` 命名空间不能在中激活 [!DNL Google Customer Match].
+>电话号码已引入 `Phone` 命名空间不能在中激活 [!DNL Google Customer Match].
 
 ### 电子邮件哈希处理要求 {#hashing-requirements}
 
-您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并具有 [!DNL Platform] 激活时进行哈希处理。
+您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或者在Experience Platform中使用清晰的电子邮件地址，并且您可以 [!DNL Platform] 激活时对其进行哈希处理。
 
-有关Google的哈希处理要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
+有关Google的哈希要求和其他激活限制的详细信息，请参阅Google文档中的以下部分：
 
 * [[!DNL Customer Match] 电子邮件地址、地址或用户ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] 注意事项](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
 * [[!DNL Customer Match] 带有电话号码](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
-* [[!DNL Customer Match] 使用移动设备ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
+* [[!DNL Customer Match] 包含移动设备ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
-要了解如何在Experience Platform中摄取电子邮件地址，请参阅 [批量摄取概述](../../../ingestion/batch-ingestion/overview.md) 和 [流式摄取概述](../../../ingestion/streaming-ingestion/overview.md).
+要了解如何在Experience Platform中引入电子邮件地址，请参阅 [批量摄取概述](../../../ingestion/batch-ingestion/overview.md) 和 [流式摄取概述](../../../ingestion/streaming-ingestion/overview.md).
 
-如果您选择自己对电子邮件地址进行哈希处理，请确保符合Google的要求，如上面的链接中所述。
+如果选择自己对电子邮件地址进行哈希处理，请确保符合Google的要求，如上面的链接中所述。
 
 ### 使用自定义命名空间 {#custom-namespaces}
 
-在使用 `User_ID` 命名空间要将数据发送到Google，请确保使用同步自己的标识符 [!DNL gTag]. 请参阅 [Google官方文档](https://support.google.com/google-ads/answer/9199250) 以了解详细信息。
+在使用 `User_ID` 命名空间要将数据发送到Google，请确保使用同步您自己的标识符 [!DNL gTag]. 请参阅 [Google官方文档](https://support.google.com/google-ads/answer/9199250) 以了解详细信息。
 
 <!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
 
@@ -145,19 +145,19 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 ### 连接参数 {#parameters}
 
-While [设置](../../ui/connect-destination.md) 必须提供以下信息，才能使用此目标：
+同时 [设置](../../ui/connect-destination.md) 此目标必须提供以下信息：
 
 * **[!UICONTROL 名称]**：提供此目标连接的名称
 * **[!UICONTROL 描述]**：提供此目标连接的描述
-* **[!UICONTROL 帐户ID]**：您的 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en). ID的格式为xxx-xxx-xxxx。 如果您使用 [!DNL Google Ads Manager Account (My Client Center)]，请不要使用您的经理帐户ID。 使用 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en) 而是。
+* **[!UICONTROL 帐户ID]**：您的 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en). ID的格式为xxx-xxx-xxxx。 如果您使用 [!DNL Google Ads Manager Account (My Client Center)]，请不要使用您的Manager帐户ID。 使用 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en) 而是。
 
 >[!IMPORTANT]
 >
-> * 此 **[!UICONTROL 与PII结合]** 默认情况下会为以下项选择营销操作 [!DNL Google Customer Match] 目标位置，无法删除。
+> * 此 **[!UICONTROL 与PII结合]** 默认情况下会为以下内容选择营销操作 [!DNL Google Customer Match] 目标和无法删除。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关流向目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅以下指南中的 [使用UI订阅目标警报](../../ui/alerts.md).
+您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅目标警报](../../ui/alerts.md).
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
@@ -167,7 +167,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-参见 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
+请参阅 [将受众数据激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
 
 在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 应用程序ID] 发送时 [!DNL IDFA] 或 [!DNL GAID] 受众到 [!DNL Google Customer Match].
 
@@ -181,34 +181,34 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 选择源字段：
 
-* 选择 `Email` 命名空间作为源身份（如果您使用的电子邮件地址未经过哈希处理）。
-* 选择 `Email_LC_SHA256` 命名空间作为源身份（如果您在数据摄取时已将客户电子邮件地址哈希到） [!DNL Platform]，根据 [!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements).
-* 选择 `PHONE_E.164` 命名空间作为源标识（如果您的数据由非哈希电话号码组成）。 [!DNL Platform] 将按井号键处理电话号码 [!DNL Google Customer Match] 要求。
-* 选择 `Phone_SHA256_E.164` 命名空间作为源身份(如果您在数据摄取时已将电话号码散列到 [!DNL Platform]，根据 [!DNL Facebook] [电话号码哈希处理要求](#phone-number-hashing-requirements).
-* 选择 `IDFA` 命名空间作为源标识(如果您的数据包含 [!DNL Apple] 设备ID。
-* 选择 `GAID` 命名空间作为源标识(如果您的数据包含 [!DNL Android] 设备ID。
-* 选择 `Custom` 命名空间作为源标识（如果您的数据包含其他类型的标识符）。
+* 选择 `Email` namespace作为源标识（如果您使用的电子邮件地址未经过哈希处理）。
+* 选择 `Email_LC_SHA256` 作为源标识的命名空间（如果您在数据摄取时对客户电子邮件地址进行哈希处理） [!DNL Platform]，根据的 [!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements).
+* 选择 `PHONE_E.164` namespace作为源标识（如果您的数据由非散列电话号码组成）。 [!DNL Platform] 将散列电话号码以符合 [!DNL Google Customer Match] 要求。
+* 选择 `Phone_SHA256_E.164` 作为源标识的命名空间(如果您在数据摄取时将数据散列到 [!DNL Platform]，根据的 [!DNL Facebook] [电话号码散列要求](#phone-number-hashing-requirements).
+* 选择 `IDFA` 作为源标识的命名空间（如果您的数据包含） [!DNL Apple] 设备ID。
+* 选择 `GAID` 作为源标识的命名空间（如果您的数据包含） [!DNL Android] 设备ID。
+* 选择 `Custom` 作为源标识的命名空间（如果您的数据包含其他类型的标识符）。
 
 选择目标字段：
 
-* 选择 `Email_LC_SHA256` 当源命名空间满足以下条件时，命名空间作为目标身份 `Email` 或 `Email_LC_SHA256`.
-* 选择 `Phone_SHA256_E.164` 当源命名空间满足以下条件时，命名空间作为目标身份 `PHONE_E.164` 或 `Phone_SHA256_E.164`.
-* 选择 `IDFA` 或 `GAID` 当源命名空间为 `IDFA` 或 `GAID`.
+* 选择 `Email_LC_SHA256` 当源命名空间满足以下任一条件时，将命名空间作为目标身份 `Email` 或 `Email_LC_SHA256`.
+* 选择 `Phone_SHA256_E.164` 当源命名空间满足以下任一条件时，将命名空间作为目标身份 `PHONE_E.164` 或 `Phone_SHA256_E.164`.
+* 选择 `IDFA` 或 `GAID` 当源命名空间满足以下条件时，命名空间作为目标身份 `IDFA` 或 `GAID`.
 * 选择 `User_ID` 当源命名空间是自定义命名空间时，将命名空间作为目标身份。
 
 ![标识映射](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
 来自未经过哈希处理的命名空间的数据自动进行哈希处理 [!DNL Platform] 激活时。
 
-属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 激活时自动散列数据。
+属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。
 
 ![标识映射转换](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## 验证受众激活是否成功 {#verify-activation}
 
-完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的受众在您的Google帐户中显示为客户列表。 请注意，根据您的受众规模，除非有100多个活动用户可提供服务，否则不会填充某些受众。
+完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的受众在您的Google帐户中显示为客户列表。 请注意，根据您的受众规模，除非有100多个活动用户可提供，否则不会填充某些受众。
 
-将受众映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建单独的受众。 您的 [!DNL Google Ads] 帐户显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
+将受众映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建单独的受众。 您的 [!DNL Google Ads] account显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
 
 ## 故障排除 {#troubleshooting}
 
@@ -218,7 +218,7 @@ While [设置](../../ui/connect-destination.md) 必须提供以下信息，才�
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-当客户帐户不符合 [先决条件](#google-account-prerequisites). 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置为 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 了解详细信息。
+当客户帐户不符合 [先决条件](#google-account-prerequisites). 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置用于 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 以了解详细信息。
 
 ## 其他资源 {#additional-resources}
 

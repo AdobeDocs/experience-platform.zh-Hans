@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '974'
 ht-degree: 4%
 
 ---
@@ -44,13 +44,13 @@ ht-degree: 4%
 
 此部分介绍可导出到此目标的所有受众。
 
-所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表所述的受众。
+*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
-| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

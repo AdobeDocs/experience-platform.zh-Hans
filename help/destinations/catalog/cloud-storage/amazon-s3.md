@@ -2,9 +2,9 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 5d318d8fa4207ece26a8b0a291d81907af029aed
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '976'
 ht-degree: 14%
 
 ---
@@ -29,13 +29,13 @@ ht-degree: 14%
 
 此部分介绍可导出到此目标的所有受众。
 
-所有目标都支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
+此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
 
-此外，此目标还支持激活下表所述的受众。
+*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
 
 | 受众类型 | 描述 |
 ---------|----------|
-| 自定义上传 | 从CSV文件引入到Experience Platform中的受众。 |
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

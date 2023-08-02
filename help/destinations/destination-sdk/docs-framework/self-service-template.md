@@ -2,9 +2,9 @@
 title: 文档自助模板//将替换为您的目标名称
 description: 使用此模板在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为概述部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '1530'
+source-wordcount: '1645'
 ht-degree: 1%
 
 ---
@@ -69,6 +69,24 @@ ht-degree: 1%
 | phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
+
+{style="table-layout:auto"}
+
+## 支持的受众 {#supported-audiences}
+
+*在此部分添加有关目标支持的受众的信息。 我们已在表中预填了一些标准值。 删除不应用于目标的值和任何未预填充的值。*
+
+此部分介绍可导出到此目标的所有受众。
+
+此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
+
+*如果您的目标不支持激活任何外部受众，请删除以下短语以及表。*
+
+*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
+
+| 受众类型 | 描述 |
+---------|----------|
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
