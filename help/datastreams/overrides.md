@@ -2,10 +2,10 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流 UI 中配置数据流覆盖并通过 Web SDK 激活它们。
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: 32f36d96e3aa6beb72121adcc74f2da0bd2c9473
+source-git-commit: b0b53d9fcf410812eee3abdbbb6960d328fee99f
 workflow-type: tm+mt
-source-wordcount: '997'
-ht-degree: 97%
+source-wordcount: '1231'
+ht-degree: 79%
 
 ---
 
@@ -25,6 +25,26 @@ ht-degree: 97%
 >[!IMPORTANT]
 >
 >数据流覆盖仅支持 [Web SDK](../edge/home.md) 集成。 [移动SDK](https://developer.adobe.com/client-sdks/documentation/) 和 [服务器API](../server-api/overview.md) 集成当前不支持数据流覆盖。
+><br><br>
+>当您需要将不同的数据发送到不同的数据流时，应使用数据流覆盖。 您不应将数据流覆盖用于个性化用例或同意数据。
+
+## 用例 {#use-cases}
+
+为了帮助您更好地了解如何使用数据流覆盖以及何时使用数据流覆盖，以下是Adobe Experience Platform客户可以使用此功能解决的一些用例。
+
+**多区域数据收集**
+
+一家公司针对其运营所在的国家/地区拥有不同的网站或子域。 他们有 [已配置](configure.md) 使用对应的Analytics特定报表包、特定于国家/地区的Adobe Target资产令牌、特定于国家/地区的架构、数据集、Journey Optimizer配置等来分隔数据流。 该公司还拥有一组全球性的配置，其中汇总了所有特定于国家/地区的数据。
+
+通过使用数据流覆盖，公司可以将数据流动态切换到不同的数据流，而不是将数据发送到一个数据流的默认行为。
+
+一个常见用例可以是将数据发送到特定于国家/地区的数据流，也可以将数据发送到客户执行重要操作（如下订单或更新其用户配置文件）的全球数据流。
+
+**区分不同业务部门的用户档案和标识**
+
+具有多个业务部门的公司希望使用多个Experience Platform沙盒来存储特定于每个业务部门的数据。
+
+公司可以使用数据流覆盖来确保每个业务部门都有自己的数据流来通过接收数据，而不是将数据发送到默认的数据流。
 
 ## 在数据流 UI 中配置数据流覆盖 {#configure-overrides}
 
