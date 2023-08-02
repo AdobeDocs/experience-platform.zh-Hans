@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 2023年7月版发行说明。
+description: Adobe Experience Platform 的 2023 年 7 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: dbd287087d04b10f79c8b6ae441371181d806739
+source-git-commit: d639b0830b88307b249e7da232b3f48b142ad37b
 workflow-type: tm+mt
-source-wordcount: '1365'
-ht-degree: 28%
+source-wordcount: '1804'
+ht-degree: 58%
 
 ---
 
@@ -22,6 +22,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [查询服务](#query-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
+- [Experience Data Model (XDM)](#xdm)
 
 ## 目录服务 {#catalog-service}
 
@@ -43,12 +44,12 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 标记和事件转发 | 数据收集审核日志 | 您现在可以看到何时执行了某个操作，以及谁在标记和事件转发中执行了此操作。 这有助于产品故障排除、正确治理和内部审计活动。 此审核数据通过上下文中的滑出菜单显示，这些菜单还包括快速操作和资源状态更新。 可在标记和事件转发 UI 中的以下屏幕上看到这些数据：<br><ul><li>[属性概述](../../tags/ui/event-forwarding/overview.md#properties)</li><li>[规则](../../tags/ui/event-forwarding/overview.md#rules)</li><li>[数据元素](../../tags/ui/event-forwarding/overview.md#data-elements)</li><li>[扩展](../../tags/ui/event-forwarding/overview.md#extensions)</li><li>[库审核](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li><li>[库上次构建和发布](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li></ul> |
-| 数据流 | [地理查找](../../datastreams/configure.md#advanced-options) | 您现在可以为数据流配置地理位置和网络查找以包含以下信息： <ul><li>国家/地区</li><li>邮政编码</li><li>省/市/自治区</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li><li>运营商</li><li>Domain</li><li>ISP</li></ul> 您有责任确保已获得适用法律和法规规定的收集、处理和传输个人数据（包括精确的地理位置信息）所需的所有必要权限、同意、许可和授权。 <br> 您的IP地址模糊处理选择不会影响将从IP地址派生并发送到配置的Adobe解决方案的地理位置信息级别。 必须单独限制或禁用地理位置查找。 <br> 请参阅 [数据流文档](../../datastreams/configure.md#advanced-options) 以了解更多详细信息。 |
+| 标记和事件转发 | 数据收集审核日志 | 现在，您可以跨标记和事件转发查看操作的执行时间和执行者。这有助于产品故障排除、适当治理和内部审核活动。此审核数据通过上下文滑出菜单显示，其中还包括快速操作和资源状态更新。可在标记和事件转发 UI 中的以下屏幕上看到这些数据：<br><ul><li>[属性概述](../../tags/ui/event-forwarding/overview.md#properties)</li><li>[规则](../../tags/ui/event-forwarding/overview.md#rules)</li><li>[数据元素](../../tags/ui/event-forwarding/overview.md#data-elements)</li><li>[扩展](../../tags/ui/event-forwarding/overview.md#extensions)</li><li>[库审查](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li><li>[库上次构建和发布](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li></ul> |
+| 数据流 | [Geo 查找](../../datastreams/configure.md#advanced-options) | 您现在可以为数据流配置地理位置和网络查找以包含以下信息： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li><li>运营商</li><li>域</li><li>ISP</li></ul> 您有责任确保已获得适用法律和法规要求的所有必要的权限、同意、许可和授权，以收集、处理和传输个人数据，包括精确的地理位置信息。<br>您的 IP 地址模糊处理选择不会影响将从 IP 地址派生并发送到您配置的 Adobe 解决方案的地理位置信息的级别。必须单独限制或禁用地理位置查找。<br> 请参阅 [数据流文档](../../datastreams/configure.md#advanced-options) 以了解更多详细信息。 |
 
 {style="table-layout:auto"}
 
-欲知有关数据收集的更多信息，请阅读 [数据集合概述](../../tags/home.md).
+有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -58,7 +59,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的映射器函数 | 现在，在数据准备中映射对象时，可以使用以下函数： <ul><li>`map_get_values`</li><li>`map_has_keys`</li><li>`add_to_map`</li></ul> 有关这些功能的详细信息，请参阅 [数据准备函数指南](../../data-prep/functions.md#hierarchies---objects). |
+| 新的映射器函数 | 现在，您可以在数据准备中映射对象时使用以下函数： <ul><li>`map_get_values`</li><li>`map_has_keys`</li><li>`add_to_map`</li></ul> 有关这些函数的更多信息，请参阅[数据准备函数指南](../../data-prep/functions.md#hierarchies---objects)。 |
 
 {style="table-layout:auto"}
 
@@ -117,16 +118,16 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 ## Segmentation Service {#segmentation}
 
-[!DNL Segmentation Service] 允许您对存储在以下位置的数据分段： [!DNL Experience Platform] 将个人（如客户、潜在客户、用户或组织）关联到受众中的活动。 您可以通过区段定义创建受众，或从以下来源创建受众： [!DNL Real-Time Customer Profile] 数据。 这些受众可在以下位置集中配置和维护： [!DNL Platform]和可供任何Adobe解决方案轻松访问。
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| Audience 门户 | Audience Portal提供了新的浏览体验，可用于在Adobe Experience Platform中访问、创建和管理受众。 在Audience Portal中，您可以查看平台生成和外部生成的受众；通过筛选、文件夹和标记提高工作效率；创建平台生成的受众；以及通过CSV文件导入外部生成的受众。 欲知受众门户的更多信息，请阅读 [分段服务UI指南](../../segmentation/ui/overview.md). |
-| 受众组合 | 受众构成提供了一个易于使用的工作区，通过用来表示不同操作的块来构建和编辑受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](../../segmentation/ui/audience-composition.md). |
+| Audience Portal | Audience Portal 为在 Adobe Experience Platform 中访问、创建和管理受众提供了全新的浏览体验。在 Audience Portal 中，您可以查看 Platform 生成的受众和外部生成的受众；通过筛选、文件夹和标记提高您的工作效率；创建 Platform 生成的受众；并通过 CSV 文件导入外部生成的受众。有关 Audience Portal 的更多信息，请参阅 [Segmentation Service UI 指南](../../segmentation/ui/overview.md)。 |
+| 受众组合 | 受众组合提供了一个易于使用的工作区，以通过用于表示不同操作的块来构建和编辑受众。有关受众组合的更多信息，请参阅[受众组合 UI 指南](../../segmentation/ui/audience-composition.md)。 |
 
-有关的详细信息 [!DNL Segmentation Service]，请阅读 [分段概述](../../segmentation/home.md).
+有关 [!DNL Segmentation Service] 的更多信息，请参阅[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
@@ -136,10 +137,49 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative}[!DNL SAP Commerce] | 您现在可以使用 [[!DNL SAP Commerce] 源](../../sources/connectors/ecommerce/sap-commerce.md) 将订阅账单数据从贵机构的 [!DNL SAP Commerce] 帐户到Experience Platform。 |
-| 支持 [!DNL Phoenix] | 您现在可以使用 [[!DNL Phoenix] 源](../../sources/connectors/databases/phoenix.md) 以从您的 [!DNL Phoenix] Experience Platform数据库。 |
-| 身份验证更新 [!DNL Salesforce] 和 [!DNL Salesforce Service Cloud] | 您现在可以指定的API版本 [[!DNL Salesforce]](../../sources/connectors/crm/salesforce.md) 和 [[!DNL Salesforce Service Cloud]](../../sources/connectors/customer-success/salesforce-service-cloud.md) 使用Experience PlatformUI或验证新帐户时的来源 [!DNL Flow Service] API。 |
+| [!BADGE Beta]{type=Informative}[!DNL SAP Commerce] | 您现在可以使用[[!DNL SAP Commerce] 源](../../sources/connectors/ecommerce/sap-commerce.md)将订阅账单数据从 [!DNL SAP Commerce] 帐户引入 Experience Platform。 |
+| 支持 [!DNL Phoenix] | 您现在可以使用[[!DNL Phoenix] 源](../../sources/connectors/databases/phoenix.md)将数据从 [!DNL Phoenix] 数据库引入 Experience Platform。 |
+| 对 [!DNL Salesforce] 和 [!DNL Salesforce Service Cloud] 的验证更新 | 在使用 Experience Platform UI 或 [!DNL Flow Service] API 验证新帐户时，您现在可以指定 API 版本的 [[!DNL Salesforce]](../../sources/connectors/crm/salesforce.md) 和 [[!DNL Salesforce Service Cloud]](../../sources/connectors/customer-success/salesforce-service-cloud.md) 源。 |
 
 {style="table-layout:auto"}
 
-欲知关于来源的更多信息，请阅读 [源概述](../../sources/home.md).
+有关源的更多信息，请参阅[源概述](../../sources/home.md)。
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+
+**新的 XDM 组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 类 | [[!UICONTROL XDM 单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1758/files) | 使用此类引入来自数据供应商最顶层的客户获取用例的潜在客户配置文件。 |
+| 字段组 | [[!UICONTROL 扩充事件区段详细信息]](https://github.com/adobe/xdm/pull/1754/files) | 在事件收集时配置文件符合条件的受众列表。 |
+
+{style="table-layout:auto"}
+
+**更新的 XDM 组件**
+
+| 组件类型 | 名称 | 更新描述 |
+| --- | --- | --- |
+| 字段组 | [[!UICONTROL MediaAnalytics 交互详情]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 已由实验更新为 `stable`. |
+| 字段组 | [[!UICONTROL 媒体交互详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `stable` 到 `deprecated`. |
+| 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL Qoe 数据详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL 播放器状态数据信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental`到 `stable`. |
+| 数据类型 | [[!UICONTROL 媒体事件信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `stable` 到 `deprecated`. |
+| 数据类型 | [[!UICONTROL 自定义元数据详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL 章节详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL Advertising Pod详细信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 数据类型 | [[!UICONTROL Advertising 详情信息]](https://github.com/adobe/xdm/pull/1756/files) | 此 `meta:status` 更新自 `experimental` 到 `stable`. |
+| 扩展(客户历程管理) | [[!UICONTROL 域]](https://github.com/adobe/xdm/pull/1756/files) | `Domain` 字段已添加至 [!UICONTROL AdobeCJM ExperienceEvent — 消息配置文件详细信息] 记录收件人电子邮件地址的域。 |
+| 扩展(客户历程管理) | [[!UICONTROL 渠道的变量名称]](https://github.com/adobe/xdm/pull/1753/files) | 此字段已添加到 [!UICONTROL AJO实体字段] 表示渠道变体名称。 |
+| 扩展(Adobe Analytics) | [[!UICONTROL 上下文值]](https://github.com/adobe/xdm/pull/1761/files) | `Context value` 已添加至 [!UICONTROL `Adobe Analytics ExperienceEvent Full Extension`]. |
+
+{style="table-layout:auto"}
+
+有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
+
