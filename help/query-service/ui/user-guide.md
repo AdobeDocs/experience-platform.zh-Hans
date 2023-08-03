@@ -7,7 +7,7 @@ exl-id: d7732244-0372-467d-84e2-5308f42c5d51
 source-git-commit: e30942aec6c66aeed8375d6221b454725f5a958d
 workflow-type: tm+mt
 source-wordcount: '1901'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -45,10 +45,10 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_enhancedEditorToggle"
->title="增强编辑器切换"
->abstract="在查询编辑器的旧版本和增强版本之间进行切换。 尽管增强型版本提供了更好的可访问性和多主题支持，但默认情况下会启用旧版本。 要了解有关这些更改的更多信息，请参阅文档。"
+>title="增强了编辑器切换"
+>abstract="可在查询编辑器的旧版本与增强版本之间切换。尽管增强版本更好地支持辅助功能和多主题，但默认情况下仍启用旧版本。要详细了解这些更改，请参阅文档。"
 
-通过UI切换，您可以在查询编辑器的旧版本和增强版本之间切换。 尽管增强型版本提供了更好的可访问性和多主题支持，但默认情况下会启用旧版本。 启用增强版本以访问查询编辑器设置。
+通过UI切换，您可以在查询编辑器的旧版本和增强版本之间切换。 尽管增强版本更好地支持辅助功能和多主题，但默认情况下仍启用旧版本。启用增强版本以访问查询编辑器设置。
 
 ![突出显示具有增强型查询编辑器切换的查询编辑器。](../images/ui/query-editor/enhanced-query-editor-toggle.png)
 
