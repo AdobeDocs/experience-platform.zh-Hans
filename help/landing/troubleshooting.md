@@ -7,7 +7,7 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 short-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 035fee1c3be69ff56b515251afcffaf1dff00f0d
+source-git-commit: 096b844246d194a822e4ba1811aef05e494c92be
 workflow-type: tm+mt
 source-wordcount: '1905'
 ht-degree: 4%
@@ -90,7 +90,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 |--- | --- | ---|
 | 400 | 错误请求 | 请求构造不正确、缺少关键信息和/或包含不正确的语法。 |
 | 401 | 身份验证失败 | 请求未通过身份验证检查。 您的访问令牌可能缺失或无效。 请参阅 [OAuth令牌错误](#oauth-token-is-missing) 部分，以了解更多详细信息。 |
-| 403 | 禁止 | <p>已找到该资源，但您没有查看该资源的正确凭据。</p><p> 此错误的一个可能原因是您可能没有所需的 [访问控制权限](/help/access-control/home.md) 以访问或编辑资源。 阅读如何 [获取必要的基于属性的访问控制权限](/help/landing/api-authentication.md#get-abac-permissions) 以使用Platform API。 </p> |
+| 403 | 禁止 | 已找到该资源，但您没有查看该资源的正确凭据。 <br> 此错误的一个可能原因是您可能没有所需的 [访问控制权限](/help/access-control/home.md) 以访问或编辑资源。 阅读如何 [获取必要的基于属性的访问控制权限](/help/landing/api-authentication.md#get-abac-permissions) 以使用Platform API。 </p> |
 | 404 | 未找到 | 在服务器上找不到请求的资源。 该资源可能已被删除，或者所请求的路径输入不正确。 |
 | 500 | 内部服务器错误 | 这是服务器端错误。 如果您同时发起多个调用，则可能会达到API限制，需要筛选结果。 (请参阅 [!DNL Catalog Service] 上的API开发人员指南子指南 [过滤数据](../catalog/api/filter-data.md) 以了解详情。) 在重试您的请求之前，请等待片刻，如果问题仍然存在，请联系您的管理员。 |
 
