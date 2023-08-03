@@ -1,39 +1,39 @@
 ---
 title: 为数据收集准备数据
-description: 了解在为Adobe Experience Platform Web和移动SDK配置数据流时，如何将数据映射到Experience Data Model (XDM)事件架构。
+description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
 source-git-commit: 4c9abcefb279c6e8a90744b692d86746a4896d0a
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '914'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # 为数据收集准备数据
 
-数据准备是一项Adobe Experience Platform服务，允许您映射、转换和验证来往数据 [体验数据模型(XDM)](../xdm/home.md). 配置启用平台时 [数据流](./overview.md)，则可在将源数据发送到Platform Edge Network时，使用数据准备功能将其映射到XDM。
+数据准备是一项 Adobe Experience Platform 服务，可让您从 [Experience Data Model (XDM)](../xdm/home.md)映射数据并将数据映射到它、转换和验证数据。如果配置支持 Platform 的[数据流](./overview.md)，可以在将源数据发送到 Platform Edge Network 时，使用数据准备函数将源数据映射到 XDM。
 
 >[!NOTE]
 >
->有关所有数据准备功能的全面指南，包括计算字段的转换函数，请参阅以下文档：
+>有关所有数据准备函数（包括计算字段的转换函数）的综合指南，请参阅以下文档：
 >
 >* [数据准备概述](../data-prep/home.md)
 >* [数据准备映射函数](../data-prep/functions.md)
 >* [使用数据准备处理数据格式](../data-prep/data-handling.md)
 
-本指南介绍如何在UI中映射数据。 要遵循这些步骤，请开始创建数据流的过程，直到（并包括） [基本配置步骤](./overview.md#create).
+本指南介绍如何在 UI 中映射数据。要执行这些步骤，请开始创建数据流的过程，直至（并包括）[基本配置步骤](./overview.md#create)。
 
-有关为数据收集准备数据过程的快速演示，请参阅以下视频：
+有关“为数据收集准备数据”过程的快速演示，请观看以下视频：
 
 >[!VIDEO](https://video.tv.adobe.com/v/342120?quality=12&enable10seconds=on&speedcontrol=on)
 
 ## [!UICONTROL 选择数据] {#select-data}
 
-选择 **[!UICONTROL 保存并添加映射]** 完成数据流的基本配置后，以及 **[!UICONTROL 选择数据]** 步骤。 从此处，您必须提供一个示例JSON对象，该对象表示您计划发送到Platform的数据结构。
+完成数据流的基本配置后，选择&#x200B;**[!UICONTROL 保存并添加映射]**，**[!UICONTROL 选择数据]**&#x200B;步骤随即出现。从该位置，您必须提供一个示例 JSON 对象，该对象表示您计划发送到 Platform 的数据的结构。
 
-要直接从数据层捕获属性，JSON对象必须具有一个根属性 `data`. 的子属性 `data` 然后，应以映射到要捕获的数据层属性的方式构建对象。 选择以下部分可查看正确格式化JSON对象的示例 `data` 根。
+要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。随后，`data` 对象的子属性将通过某种方式构造，以映射到要捕获的数据层属性。选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
 
-+++示例JSON文件，使用 `data` 根
++++示例 JSON 文件，具有 `data` 根
 
 ```json
 {
@@ -96,9 +96,9 @@ ht-degree: 2%
 
 +++
 
-要从XDM对象数据元素中捕获属性，相同的规则适用于JSON对象，但根属性必须键入为 `xdm` 而是。 选择以下部分可查看正确格式化JSON对象的示例 `xdm` 根。
+要从 XDM 对象数据元素捕获属性，相同的规则将适用于 JSON 对象，但根属性必须键入为 `xdm`。选择以下部分可查看具有 `xdm` 根的格式正确的 JSON 对象示例。
 
-+++示例JSON文件，使用 `xdm` 根
++++示例 JSON 文件，具有 `xdm` 根
 
 ```json
 {
@@ -129,77 +129,77 @@ ht-degree: 2%
 
 +++
 
-您可以选择将对象作为文件上载的选项，也可以将原始对象粘贴到提供的文本框中。 如果JSON有效，则右侧面板中将显示预览架构。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+您可以选择用于将对象作为文件上传的选项，或将原始对象粘贴到提供的文本框中。如果 JSON 有效，预览架构将显示在右侧面板中。选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![预期传入数据的JSON示例](assets/data-prep/select-data.png)
+![预期的传入数据的 JSON 示例](assets/data-prep/select-data.png)
 
 ## [!UICONTROL 映射]
 
-此 **[!UICONTROL 映射]** 步骤，以便将源数据中的字段映射到Platform中目标事件架构的字段。 在此，您可以通过两种方式配置映射：
+**[!UICONTROL 映射]**&#x200B;步骤随即出现，可让您将源数据中的字段映射到 Platform 中目标事件架构的字段。从该位置，您可以通过两种方式配置映射：
 
-* [创建新映射规则](#create-mapping) 通过手动过程获取此数据流。
-* [导入映射规则](#import-mapping) 来自现有数据流。
+* 通过手动过程为此数据流[创建新的映射规则](#create-mapping)。
+* 从现有数据流[导入映射规则](#import-mapping)。
 
-### 创建新映射 {#create-mapping}
+### 创建新的映射 {#create-mapping}
 
-要开始配置，请选择 **[!UICONTROL 添加新映射]** 以创建新的映射行。
+要开始使用，请选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;以创建新的映射行。
 
 ![添加新映射](assets/data-prep/add-new-mapping.png)
 
-选择源图标(![“源”图标](assets/data-prep/source-icon.png))，然后在显示的对话框中，选择要映射到所提供画布的源字段。 选择字段后，使用 **[!UICONTROL 选择]** 按钮以继续。
+选择源图标（![源图标](assets/data-prep/source-icon.png)），在出现的对话框中，选择要在提供的画布中映射的源字段。选择字段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;按钮以继续。
 
 ![选择要在源架构中映射的字段](assets/data-prep/source-mapping.png)
 
-接下来，选择架构图标(![“架构”图标](assets/data-prep/schema-icon.png))以打开目标事件架构的类似对话框。 在使用进行确认之前，选择要将数据映射到其中的字段 **[!UICONTROL 选择]**.
+接下来，选择架构图标（![架构图标](assets/data-prep/schema-icon.png)），打开类似的目标事件架构对话框。在确认之前，使用&#x200B;**[!UICONTROL 选择]**&#x200B;来选择要将数据映射到的字段。
 
-![选择要映射到目标架构中的字段](assets/data-prep/target-mapping.png)
+![选择要在目标架构中映射的字段](assets/data-prep/target-mapping.png)
 
-此时会重新显示映射页面，并显示已完成的字段映射。 此 **[!UICONTROL 映射进度]** 部分更新以反映已成功映射的字段总数。
+映射页面将重新出现，并显示已完成的字段映射。**[!UICONTROL 映射进度]**&#x200B;部分将更新以反映已成功映射的字段总数。
 
-![字段已成功映射，并反映了进度](assets/data-prep/field-mapped.png)
+![已成功映射字段并反映进度](assets/data-prep/field-mapped.png)
 
 >[!TIP]
 >
->如果要将对象数组（在源字段中）映射到不同对象数组（在目标字段中），请添加 `[*]` 源字段路径和目标字段路径中的数组名称之后，如下所示。
+>如果要将一个对象数组（在源字段中）映射到不同对象的数组（在目标字段中），请在源字段路径和目标字段路径中的数组名称后添加 `[*]`，如下所示。
 >
 >![数组对象映射](assets/data-prep/array-object-mapping.png)
 
 ### 导入现有映射规则 {#import-mapping}
 
-如果您之前已创建数据流，则可以将它配置的映射规则重新用于新数据流。
+如果您之前已创建一个数据流，则可以将其配置的映射规则重新用于新数据流。
 
 >[!WARNING]
 >
->从其他数据流导入映射规则将覆盖导入之前可能已添加的任何字段映射。
+>从另一个数据流导入映射规则将覆盖导入前可能已添加的任何字段映射。
 
-要开始，请选择 **[!UICONTROL 导入映射]**.
+要开始，请选择&#x200B;**[!UICONTROL 导入映射]**。
 
-![图像显示 [!UICONTROL 导入映射] 正在选择按钮](assets/data-prep/import-mapping-button.png)
+![显示[!UICONTROL 导入映射]按钮已选定的图像](assets/data-prep/import-mapping-button.png)
 
-在显示的对话框中，选择要导入其映射规则的数据流。 选择数据流后，选择 **[!UICONTROL 预览]**.
+在出现的对话框中，选择要导入其映射规则的数据流。选择该数据流后，选择&#x200B;**[!UICONTROL 预览]**。
 
-![显示正在选择的现有数据流的图像](assets/data-prep/select-mapping-rules.png)
+![显示将选择的现有数据流的图像](assets/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
->数据流只能导入同一个 [沙盒](../sandboxes/home.md). 换言之，您不能将数据流从一个沙盒导入另一个沙盒。
+>数据流只能在同一个[沙盒](../sandboxes/home.md)中导入。换句话说，您无法将数据流从一个沙盒导入到另一个沙盒。
 
-下一个屏幕显示选定数据流的已保存映射规则的预览。 确保显示的映射符合预期，然后选择 **[!UICONTROL 导入]** 以确认映射并将其添加到新数据流。
+下一个屏幕显示所选数据流的已保存映射规则的预览。确保显示的映射为预期映射，然后选择&#x200B;**[!UICONTROL 导入]**&#x200B;以确认映射并将其添加到新数据流。
 
 ![显示要导入的映射规则的图像](assets/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >
->如果导入的映射规则中的任何源字段未包含在您输入的示例JSON数据中， [先前提供](#select-data)，这些字段映射将不会包含在导入中。
+>如果导入的映射规则中的任何源字段未包含在[之前提供的](#select-data)示例 JSON 数据中，这些字段映射将不会包含在导入中。
 
 ### 完成映射
 
-继续按照上述步骤将其余字段映射到目标架构。 虽然您不必映射所有可用的源字段，但必须映射目标架构中设置为必需的任何字段才能完成此步骤。 此 **[!UICONTROL 必填字段]** counter指示当前配置中尚未映射的必填字段的数量。
+继续执行上述步骤，将其余字段映射到目标架构。尽管您无需映射所有可用的源字段，但必须映射目标架构中设置为必填的任何字段以完成此步骤。**[!UICONTROL 必填字段]**&#x200B;计数器指示当前配置中尚未映射的必填字段的数量。
 
-一旦必填字段数达到零且对映射满意，请选择 **[!UICONTROL 保存]** 以完成更改。
+在必填字段计数达到零且您对映射感到满意后，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成您的更改。
 
 ![映射完成](assets/data-prep/mapping-complete.png)
 
 ## 后续步骤
 
-本指南介绍了在UI中设置数据流时如何将数据映射到XDM。 如果您正在学习常规数据流教程，现在可以返回到上的步骤 [查看数据流详细信息](./overview.md).
+本指南介绍如何在 UI 中设置数据流时将数据映射到 XDM。如果您正在按照一般数据流教程执行操作，现在可以返回到[查看数据流详细信息](./overview.md)步骤。
