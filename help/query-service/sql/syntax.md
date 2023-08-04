@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
 workflow-type: tm+mt
-source-wordcount: '3860'
+source-wordcount: '3863'
 ht-degree: 2%
 
 ---
@@ -597,9 +597,9 @@ ANALYZE TABLE <original_table_name>
 
 #### 计算数据湖上的统计信息 {#compute-statistics-data-lake}
 
-您现在可以在以下位置计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集与 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集的列统计信息。
+您现在可以在以下位置计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集与 `COMPUTE STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集的列统计信息。
 
-`COMPUTE STATISTICS` 扩展 `ANALYZE TABLE` 命令。 但是， `COMPUTE STATISTICS`， `FILTERCONTEXT`， `FOR COLUMNS`、和 `SHOW STATISTICS` 加速存储表不支持命令。 的这些扩展 `ANALYZE TABLE` 当前仅支持ADLS表使用命令。
+`COMPUTE STATISTICS` 扩展 `ANALYZE TABLE` 命令。 但是， `COMPUTE STATISTICS`， `FILTERCONTEXT`、和 `FOR COLUMNS` 加速存储表不支持命令。 的这些扩展 `ANALYZE TABLE` 当前仅支持ADLS表使用命令。
 
 **示例**
 
@@ -611,7 +611,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 
 >[!NOTE]
 >
->此 `Statistics ID` 生成的统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制:<ul><li>数组或映射数据类型不支持生成统计信息</li><li>不保留计算的统计信息</li></ul><br><br>选项:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，该标记设置为true。 因此，当对不支持的数据类型请求统计信息时，它不会出错但会静默地失败。<br>要在请求有关不受支持数据类型的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`.
+>此 `Statistics ID` 生成的统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制:<ul><li>数组或映射数据类型不支持生成统计信息</li><li>计算的统计信息为 **非** 跨会话保留。</li></ul><br><br>选项:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，该标记设置为true。 因此，当请求有关不支持的数据类型的统计信息时，它不会出错但会静默跳过具有不支持的数据类型的字段。<br>要在请求有关不受支持数据类型的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`.
 
 控制台输出如下所示。
 
@@ -629,7 +629,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 SELECT * FROM adc_geometric_stats_1;
 ```
 
-使用 `SHOW STATISTICS` 命令来显示会话中生成的所有临时统计信息表的元数据。 此命令可帮助您优化统计分析的范围。
+使用 `SHOW STATISTICS` 命令以显示会话中生成的所有临时统计信息的元数据。 此命令可帮助您优化统计分析的范围。
 
 ```sql
 SHOW STATISTICS;

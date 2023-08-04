@@ -1,16 +1,16 @@
 ---
 title: 数据集统计信息计算
 description: 本文档介绍如何使用SQL命令计算Azure Data Lake Storage (ADLS)数据集的列级统计信息。
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
 workflow-type: tm+mt
-source-wordcount: '1086'
+source-wordcount: '1085'
 ht-degree: 0%
 
 ---
 
 # 数据集统计信息计算
 
-您现在可以计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集与 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 用于计算数据集统计信息的SQL命令是 `ANALYZE TABLE` 命令。 有关以下内容的完整详细信息： `ANALYZE TABLE` 命令位于 [SQL参考文档](../sql/syntax.md#analyze-table).
+您现在可以计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集与 `COMPUTE STATISTICS` sql命令。 用于计算数据集统计信息的SQL命令是 `ANALYZE TABLE` 命令。 有关以下内容的完整详细信息： `ANALYZE TABLE` 命令位于 [SQL参考文档](../sql/syntax.md#analyze-table).
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此 `COMPUTE STATISTICS`， `FILTERCONTEXT`， `FOR COLUMNS`、和 `SHOW STATISTICS` 加速存储表不支持命令。 的这些扩展 `ANALYZE TABLE` 当前仅支持ADLS表使用命令。 欲了解更多信息，请参见 [“分析表”部分](../sql/syntax.md#analyze-table) SQL语法指南中的。
+>此 `COMPUTE STATISTICS`， `FILTERCONTEXT`、和 `FOR COLUMNS` 加速存储表不支持命令。 的这些扩展 `ANALYZE TABLE` 当前仅支持ADLS表使用命令。 欲了解更多信息，请参见 [“分析表”部分](../sql/syntax.md#analyze-table) SQL语法指南中的。
 
 本指南可帮助您构建查询，以便计算ADLS数据集的列统计信息。 使用这些命令，可以使用SQL查询通过PSQL客户端查看会话中生成的统计信息。
 
