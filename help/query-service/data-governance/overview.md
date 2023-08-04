@@ -2,9 +2,9 @@
 title: 查询服务中的数据治理
 description: 此概述涵盖Experience Platform查询服务中的数据治理的主要元素。
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: c3ce6548e18078e604ecd5db276eb162935f6181
 workflow-type: tm+mt
-source-wordcount: '2843'
+source-wordcount: '3132'
 ht-degree: 1%
 
 ---
@@ -23,11 +23,11 @@ Adobe Experience Platform将来自多个企业系统的数据整合在一起，�
 1. 审核
 1. 数据使用
 1. 隐私
-<!-- 1. Data hygiene -->
+1. 数据卫生
 
 本文档将分析治理的各个方面，并演示在使用查询服务时如何促进数据合规性。 请参阅 [治理、隐私和安全性概述](../../landing/governance-privacy-security/overview.md) 有关Experience Platform如何允许您管理客户数据和确保法规遵从性的更全面的信息。
 
-## 安全性
+## 安全性 {#security}
 
 数据安全是保护数据免遭未经授权的访问并确保在其整个生命周期内安全访问的过程。 Experience Platform通过应用角色和权限来维护安全访问，例如基于角色的访问控制和基于属性的访问控制。 凭据、SSL和数据加密也用于确保跨平台的数据保护。
 
@@ -35,8 +35,7 @@ Adobe Experience Platform将来自多个企业系统的数据整合在一起，�
 
 * [访问控制](#access-control)：访问通过角色和权限（包括数据集和列级别的权限）进行控制。
 * 通过以下方式保护数据 [连通性](#connectivity)：通过与过期凭据或不过期凭据建立有限连接，通过Platform和外部客户端保护数据的安全。
-* 通过以下方式保护数据 [加密和系统级别密钥](#encryption)：通过加密在数据静止时确保数据安全。
-<!-- * Securing data through [encryption and customer-managed keys (CMK)](#encryption-and-customer-managed-keys): Access controlled through encryption when data is at rest. -->
+* 通过以下方式保护数据 [加密和客户管理的密钥(CMK)](#encryption-and-customer-managed-keys)：数据静止时通过加密控制访问。
 
 ### 访问控制 {#access-control}
 
@@ -132,17 +131,14 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 请参阅指南，了解可用的 [第三方客户端连接到查询服务的SSL选项](../clients/ssl-modes.md) ，以了解更多信息，包括如何使用 `verify-full` ssl参数值。
 
-### 加密 {#encryption}
-
-<!-- Commented out lines to be included when customer-managed keys is released. Link out to the new document. -->
-
-<!-- ### Encryption and customer-managed keys (CMK) {#encryption-and-customer-managed-keys} -->
+### 加密和客户管理的密钥(CMK) {#encryption-and-customer-managed-keys}
 
 加密是使用算法过程将数据转换为编码和不可读的文本，以确保在没有解密密钥的情况下信息受到保护且不可访问。
 
 查询服务数据合规性确保数据始终加密。 传输中的数据始终符合HTTPS标准，静态数据在Azure Data Lake存储中使用系统级密钥进行加密。 请参阅相关文档 [如何在Adobe Experience Platform中加密数据](../../landing/governance-privacy-security/encryption.md) 以了解更多信息。 有关如何在Azure Data Lake Storage中加密静态数据的详细信息，请参阅 [Azure官方文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-<!-- Data-in-transit is always HTTPS compliant and similarly when the data is at rest in the data lake, the encryption is done with Customer Management Key (CMK), which is already supported by Data Lake Management. The currently supported version is TLS1.2. -->
+传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅 [客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys.md) 了解如何为Adobe Experience Platform中存储的数据设置自己的加密密钥。
+
 
 ## 审核 {#audit}
 
@@ -206,14 +202,14 @@ Platform中的数据治理框架提供了一种统一的方式，可跨所有Ado
 
 架构数据字段可以通过Platform UI设置为标识字段，并且查询服务还允许您 [使用SQL命令&#39;ALTER TABLE&#39;标记主身份](../sql/syntax.md#alter-table). 使用设置标识 `ALTER TABLE` 当使用SQL而不是通过Platform UI直接从架构创建数据集时，命令特别有用。 有关如何执行操作的说明，请参阅文档 [在UI中定义标识字段](../../xdm/ui/fields/identity.md) 使用标准架构时。
 
-<!-- COMMENTING OUT DATA HYGEINE SECTION TEMPORARILY UNTIL IT IS GA. currently it is in Beta only.
+## 数据卫生 {#data-hygiene}
 
-## Data hygiene 
+“数据卫生”是指修复或删除数据的过程，这些数据可能过时、不准确、格式不正确、重复或不完整。 这些流程可确保数据集在所有系统中都准确且一致。 在数据历程的每个步骤中，甚至从初始数据存储位置开始，确保充分的数据卫生非常重要。 在Experience Platform查询服务中，这是数据湖或加速存储。
 
-"Data hygiene" refers to the process of repairing or removing data that may be outdated, inaccurate, incorrectly formatted, duplicated, or incomplete. It is important to ensure adequate data hygiene along every step of the data's journey and even from the initial data storage location. 
+您可以向派生数据集分配身份，以允许按照Platform的集中数据卫生服务管理其数据。
 
-It is necessary to assign an identity to a derived dataset to allow their management by the [!DNL Data Hygiene] service. Conversely, when you create aggregated data on an accelerated data store, the aggregated data cannot be used to derive the original data. As a result of this data aggregation, the need to raise data hygiene requests is eliminated. == THIS APPEARS TO BE A PRIVACY USE CASE NAD NOT DATA HYGEINE ++  this is confusing.
+相反，在加速存储上创建聚合数据集时，聚合数据不能用于派生原始数据。 作为这种数据聚合的结果，无需提出数据卫生请求。
 
-An exception to this scenario is the case of deletion. If a data hygiene deletion is requested on a dataset and before the deletion is completed, another derived dataset query is executed, then the derived dataset will capture information from the original dataset. In this case, you must be mindful that if a request to delete a dataset has been sent, you must not execute any new derived dataset queries using the same dataset source. 
+此方案的例外是删除。 如果请求在数据集上删除数据卫生，并且在删除完成之前，执行另一个派生的数据集查询，则派生的数据集将从原始数据集捕获信息。 在这种情况下，您必须注意，如果已发送删除数据集的请求，则不得使用相同数据集源执行任何新派生的数据集查询。
 
-See the [data hygiene overview](../../hygiene/home.md) for more information on data hygiene in Adobe Experience Platform. -->
+请参阅 [数据卫生概述](../../hygiene/home.md) 有关Adobe Experience Platform中的数据卫生的更多信息。
