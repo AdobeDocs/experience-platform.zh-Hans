@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
+source-git-commit: f729c54e490afb954bb627d150e499c98d51a53d
 workflow-type: tm+mt
-source-wordcount: '3863'
+source-wordcount: '3923'
 ht-degree: 2%
 
 ---
@@ -892,23 +892,44 @@ COPY query
 
 此 `ALTER TABLE` 命令允许您添加或删除主键或外键约束，以及向表中添加列。
 
-
 #### 添加或删除约束
 
-以下SQL查询显示了向表添加或删除约束的示例。
+以下SQL查询显示了向表添加或删除约束的示例。 可以将主键和外键约束添加到具有逗号分隔值的多个列中。 您可以通过传递两个或多个列名称值来创建组合键，如下面的示例所示。
+
+**定义主键或复合键**
 
 ```sql
 ALTER TABLE table_name ADD CONSTRAINT PRIMARY KEY ( column_name ) NAMESPACE namespace
 
+ALTER TABLE table_name ADD CONSTRAINT PRIMARY KEY ( column_name1, column_name2 ) NAMESPACE namespace
+```
+
+**根据一个或多个键定义表之间的关系**
+
+```sql
 ALTER TABLE table_name ADD CONSTRAINT FOREIGN KEY ( column_name ) REFERENCES referenced_table_name ( primary_column_name )
 
+ALTER TABLE table_name ADD CONSTRAINT FOREIGN KEY ( column_name1, column_name2 ) REFERENCES referenced_table_name ( primary_column_name1, primary_column_name2 )
+```
+
+**定义标识列**
+
+```sql
 ALTER TABLE table_name ADD CONSTRAINT PRIMARY IDENTITY ( column_name ) NAMESPACE namespace
 
 ALTER TABLE table_name ADD CONSTRAINT IDENTITY ( column_name ) NAMESPACE namespace
+```
 
+**删除约束/关系/身份**
+
+```sql
 ALTER TABLE table_name DROP CONSTRAINT PRIMARY KEY ( column_name )
 
+ALTER TABLE table_name DROP CONSTRAINT PRIMARY KEY ( column_name1, column_name2 )
+
 ALTER TABLE table_name DROP CONSTRAINT FOREIGN KEY ( column_name )
+
+ALTER TABLE table_name DROP CONSTRAINT FOREIGN KEY ( column_name1, column_name2 )
 
 ALTER TABLE table_name DROP CONSTRAINT PRIMARY IDENTITY ( column_name )
 
