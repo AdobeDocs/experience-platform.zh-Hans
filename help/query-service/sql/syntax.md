@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；sql语法；sql；ctas；CTAS；创建表作为选择
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；SQL语法；SQL；CTAS；CTAS；创建表作为选择
 solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
+source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
 workflow-type: tm+mt
-source-wordcount: '3761'
+source-wordcount: '3860'
 ht-degree: 2%
 
 ---
 
 # 查询服务中的SQL语法
 
-Adobe Experience Platform查询服务能够将标准ANSI SQL用于 `SELECT` 语句和其他有限命令。 本文档介绍了支持的SQL语法 [!DNL Query Service].
+Adobe Experience Platform查询服务提供了将标准ANSI SQL用于 `SELECT` 语句和其他有限命令。 本文档介绍了支持的SQL语法。 [!DNL Query Service].
 
 ## 选择查询 {#select-queries}
 
-以下语法定义 `SELECT` 支持查询 [!DNL Query Service]：
+以下语法定义 `SELECT` 查询支持方 [!DNL Query Service]：
 
 ```sql
 [ WITH with_query [, ...] ]
@@ -85,11 +85,11 @@ GROUPING SETS ( grouping_element [, ...] )
  with_query_name [ ( column_name [, ...] ) ] AS ( select | values )
 ```
 
-以下小节提供了可在查询中使用的附加条款的详细信息，前提是它们遵循上述格式。
+以下小节提供了可在查询中使用的附加子句的详细信息，前提是它们遵循上述格式。
 
 ### SNAPSHOT子句
 
-此子句可用于基于快照ID增量读取表中的数据。 快照ID是由Long类型数字表示的检查点标记，每次将数据写入快照时，都会将该标记应用于数据湖表。 此 `SNAPSHOT` 子句将其自身附加到它旁边使用的表关系上。
+此子句可用于基于快照ID增量读取表中的数据。 快照ID是由Long-type数字表示的检查点标记，每次将数据写入到快照ID时，该数字都会应用于数据湖表。 此 `SNAPSHOT` 子句将其自身附加到它旁边使用的表关系上。
 
 ```sql
     [ SNAPSHOT { SINCE start_snapshot_id | AS OF end_snapshot_id | BETWEEN start_snapshot_id AND end_snapshot_id } ]
@@ -113,18 +113,17 @@ SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C
 SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
 ```
 
-请注意 `SNAPSHOT` 子句与表或表别名一起使用，但不用在子查询或视图的顶部。 A `SNAPSHOT` 子句适用于任何位置 `SELECT` 可对表应用查询。
+请注意 `SNAPSHOT` 子句与表或表别名配合使用，但不在子查询或视图的顶部。 A `SNAPSHOT` 子句将在任何位置a `SELECT` 可对表应用查询。
 
-此外，您还可以使用 `HEAD` 和 `TAIL` 作为快照子句的特殊偏移值。 使用 `HEAD` 是指第一个快照之前的偏移，而 `TAIL` 是指上一个快照之后的偏移。
+此外，您可以使用 `HEAD` 和 `TAIL` 作为快照子句的特殊偏移值。 使用 `HEAD` 是指第一个快照之前的偏移，而 `TAIL` 是指上一个快照之后的偏移。
 
 >[!NOTE]
 >
->如果在两个快照ID之间进行查询并且启动快照已过期，则可能会出现以下两种情况，具体取决于可选的回退行为标记(`resolve_fallback_snapshot_on_failure`)设置：
+>如果在两个快照ID之间进行查询，并且启动快照已过期，则可能会出现以下两种情况，具体取决于可选的回退行为标志(`resolve_fallback_snapshot_on_failure`)设置：
 >
->- 如果设置了可选的回退行为标志，查询服务将选择最早可用的快照，将其设置为开始快照，并返回最早可用快照与指定的结束快照之间的数据。 此数据为 **包含** 最早的可用快照的。
+>- 如果设置了可选的回退行为标志，查询服务将选择最早可用的快照，将其设置为启动快照，并返回最早可用快照与指定结束快照之间的数据。 此数据为 **包含** 最早的可用快照的日志。
 >
 >- 如果未设置可选的回退行为标记，则将返回错误。
-
 
 ### WHERE子句
 
@@ -185,7 +184,7 @@ CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='fal
 | ----- | ----- |
 | `schema` | XDM架构的标题。 仅当您希望为CTAS查询创建的新数据集使用现有XDM架构时，才使用此子句。 |
 | `rowvalidation` | （可选）指定用户是否希望对新创建的数据集摄取的每个新批次进行行级验证。 默认值为 `true`。 |
-| `label` | 当您使用CTAS查询创建数据集时，请将此标签与的值一起使用 `profile` 将您的数据集标记为已为配置文件启用。 这意味着您的数据集会在创建时自动标记为用户档案。 有关使用的更多信息，请参阅派生的属性扩展文档 `label`. |
+| `label` | 使用CTAS查询创建数据集时，请使用此标签和值 `profile` 将您的数据集标记为已为配置文件启用。 这意味着您的数据集会在创建时自动标记为用户档案。 有关使用的更多信息，请参阅派生的属性扩展文档 `label`. |
 | `select_query` | A `SELECT` 语句。 的语法 `SELECT` 查询位于 [选择查询部分](#select-queries). |
 
 **示例**
@@ -200,7 +199,7 @@ CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
 
 >[!NOTE]
 >
->此 `SELECT` 语句必须具有聚合函数的别名，例如 `COUNT`， `SUM`， `MIN`，等等。 此外， `SELECT` 语句可以带有或不带有括号()。 您可以提供 `SNAPSHOT` 子句将增量增量数据读入目标表。
+>此 `SELECT` 语句必须具有集合函数的别名，例如 `COUNT`， `SUM`， `MIN`，等等。 此外， `SELECT` 语句可以带有或不带有括号()提供。 您可以提供 `SNAPSHOT` 子句将增量增量增量读入目标表。
 
 ## 插入到
 
@@ -219,7 +218,7 @@ INSERT INTO table_name select_query
 
 >[!NOTE]
 >
->以下是一个精心设计的示例，仅用于指导目的。
+>以下是一个精心设计的示例，仅供参考。
 
 ```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
@@ -229,7 +228,7 @@ INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 
 >[!INFO]
 > 
-> 此 `SELECT` 语句 **不得** 括在圆括号()中。 此外， `SELECT` 语句必须符合 `INSERT INTO` 语句。 您可以提供 `SNAPSHOT` 子句将增量增量数据读入目标表。
+> 此 `SELECT` 语句 **不得** 括在圆括号()中。 此外， `SELECT` 语句必须符合 `INSERT INTO` 语句。 您可以提供 `SNAPSHOT` 子句将增量增量增量读入目标表。
 
 在根级别未找到实际XDM架构中的大多数字段，并且SQL不允许使用点表示法。 要使用嵌套字段获得逼真的结果，您必须映射 `INSERT INTO` 路径。
 
@@ -249,9 +248,9 @@ FROM [dataset]
 INSERT INTO Customers SELECT struct(SupplierName as Supplier, City as SupplierCity, Country as SupplierCountry) _Adobe FROM OnlineCustomers;
 ```
 
-## 放置表
+## 删除表
 
-此 `DROP TABLE` 命令删除现有表，如果它不是外部表，则从文件系统中删除与该表关联的目录。 如果该表不存在，则会发生异常。
+此 `DROP TABLE` 命令删除现有的表，如果它不是外部表，则从文件系统删除与该表关联的目录。 如果该表不存在，则会发生异常。
 
 ```sql
 DROP TABLE [IF EXISTS] [db_name.]table_name
@@ -259,7 +258,7 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则当表执行了以下操作时，不会引发异常 **非** 存在。 |
+| `IF EXISTS` | 如果指定此项，则不会引发异常（如果表确实如此） **非** 存在。 |
 
 ## 创建数据库
 
@@ -291,7 +290,7 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则当架构执行了以下操作时，不会引发异常 **非** 存在。 |
+| `IF EXISTS` | 如果指定此项，则当架构指定时，不会引发异常 **非** 存在。 |
 | `RESTRICT` | 模式的默认值。 如果指定此项，则只有在指定项时，才会删除架构 **不会** 包含任意表。 |
 | `CASCADE` | 如果指定此项，则将删除架构以及架构中存在的所有表。 |
 
@@ -326,7 +325,7 @@ DROP VIEW [IF EXISTS] view_name
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则当视图执行了以下操作时，不会引发异常： **非** 存在。 |
+| `IF EXISTS` | 如果指定此项，则当视图指定此项时，不会引发异常 **非** 存在。 |
 | `view_name` | 要删除的视图的名称。 |
 
 **示例**
@@ -338,7 +337,7 @@ DROP VIEW IF EXISTS v1
 
 ## 匿名块
 
-匿名块由两部分组成：可执行部分和异常处理部分。 在匿名块中，可执行部分是必需的。 但是，“异常处理”部分是可选的。
+匿名块由两部分组成：可执行部分和异常处理部分。 在匿名块中，可执行部分是必需的。 但是，“例外处理”部分是可选的。
 
 以下示例说明如何创建包含一个或多个要一起执行的语句的块：
 
@@ -375,9 +374,9 @@ $$END;
 
 ### 自动转换为JSON {#auto-to-json}
 
-查询服务支持可选会话级别设置，以便从JSON字符串形式的交互式SELECT查询返回顶级复杂字段。 此 `auto_to_json` 设置允许将复杂字段中的数据作为JSON返回，然后使用标准库解析为JSON对象。
+查询服务支持可选会话级别设置，以便从JSON字符串形式的交互式SELECT查询返回顶级复杂字段。 此 `auto_to_json` 通过设置，可以将复杂字段中的数据作为JSON返回，然后使用标准库解析为JSON对象。
 
-设置功能标志 `auto_to_json` 更改为true，然后再执行包含复杂字段的SELECT查询。
+设置功能标志 `auto_to_json` 设置为true，然后再执行包含复杂字段的SELECT查询。
 
 ```sql
 set auto_to_json=true; 
@@ -385,7 +384,7 @@ set auto_to_json=true;
 
 #### 在设置之前 `auto_to_json` 标志
 
-下表提供了在 `auto_to_json` 设置。 在这两种情景中，使用了同一个SELECT查询（如下所示），该查询用于定向具有复杂字段的表。
+下表提供了一个示例查询结果，它位于 `auto_to_json` 设置。 这两种方案都使用同一个SELECT查询（如下所示），该查询用于定向具有复杂字段的表。
 
 ```sql
 SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
@@ -401,9 +400,9 @@ SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
 (2 rows)  
 ```
 
-#### 在设置 `auto_to_json` 标志
+#### 设置 `auto_to_json` 标志
 
-下表显示了 `auto_to_json` 设置对生成的数据集有。 两种方案都使用了相同的SELECT查询。
+下表显示了结果中的差异， `auto_to_json` 设置对生成的数据集有。 这两种方案都使用了相同的SELECT查询。
 
 ```console
                 _id                |   receivedTimestamp   |       timestamp       |                                                                                                                   _experience                                                                                                                   |           application            |             commerce             |    dataSource    |                                                                  device                                                                   |                                                   endUserIDs                                                   |                                                                                                                                                                                           environment                                                                                                                                                                                            |                             identityMap                              |                                                                                            placeContext                                                                                            |      userActivityRegion      |                                                                                     web                                                                                      | _adcstageforpqs
@@ -415,7 +414,7 @@ SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
 
 ### 解决故障时的回退快照 {#resolve-fallback-snapshot-on-failure}
 
-此 `resolve_fallback_snapshot_on_failure` 选项用于解决快照ID过期的问题。 快照元数据在两天后过期，过期的快照可能会使脚本的逻辑失效。 使用匿名块时可能会出现问题。
+此 `resolve_fallback_snapshot_on_failure` 选项用于解决快照ID过期的问题。 快照元数据在两天后过期，过期的快照可能会使脚本的逻辑失效。 当使用匿名块时，可能会出现问题。
 
 设置 `resolve_fallback_snapshot_on_failure` 选项为true时，会使用以前的快照ID覆盖快照。
 
@@ -423,7 +422,7 @@ SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
 SET resolve_fallback_snapshot_on_failure=true;
 ```
 
-以下代码行将覆盖 `@from_snapshot_id` 具有可用的最早版本 `snapshot_id` 来自元数据。
+以下代码行将覆盖 `@from_snapshot_id` 包含最早可用的 `snapshot_id` 来自元数据。
 
 ```sql
 $$ BEGIN
@@ -454,9 +453,9 @@ $$;
 
 ## 数据资产组织
 
-随着数据资产的增长，在Adobe Experience Platform数据湖中对它们进行逻辑组织非常重要。 查询服务扩展了SQL构造，使您能够在沙盒中将数据资产进行逻辑分组。 这种组织方法允许在架构之间共享数据资产，而无需在物理上移动它们。
+随着数据资产的增长，在Adobe Experience Platform数据湖中对它们进行逻辑组织非常重要。 查询服务扩展了SQL构造，使您能够按逻辑对沙盒中的数据资产进行分组。 这种组织方法允许在架构之间共享数据资产，而无需在物理上移动它们。
 
-您支持使用标准SQL语法来逻辑组织数据的以下SQL结构。
+您可以使用标准SQL语法支持以下SQL结构，以便从逻辑上组织数据。
 
 ```SQL
 CREATE DATABASE dg1;
@@ -501,17 +500,17 @@ WHEN other THEN SELECT 'ERROR';
 END $$; 
 ```
 
-## 内联 {#inline}
+## 内嵌 {#inline}
 
-此 `inline` 函数将结构数组的元素分隔并生成值到表中。 它只能放置在 `SELECT` 列表或 `LATERAL VIEW`.
+此 `inline` 函数将结构数组的元素分隔并生成表中的值。 它只能放置在 `SELECT` 列表或 `LATERAL VIEW`.
 
-此 `inline` 函数 **无法** 放在有其他生成器函数的选择列表中。
+此 `inline` 函数 **无法** 位于有其他生成器函数的选择列表中。
 
-默认情况下，生成的列名为“col1”、“col2”，依此类推。 如果表达式为 `NULL` 则不生成行。
+默认情况下，生成的列将命名为“col1”、“col2”等。 如果表达式为 `NULL` 则不生成行。
 
 >[!TIP]
 >
->列名可使用进行重命名 `RENAME` 命令。
+>可使用重命名列名 `RENAME` 命令。
 
 **示例**
 
@@ -541,17 +540,17 @@ select inline(productListItems) from source_dataset limit 10;
 | SKU | _experience（体验） | 数量 | priceTotal |
 |---------------------|-----------------------------------|----------|--------------|
 | product-id-1 | (“(”(“(A，pass，B，NULL)”)“)”) | 5 | 10.5 |
-| product-id-5 | (“(”(“（A，通过， B，NULL）”)”)”) |  |  |
-| product-id-2 | (“(”(“(AF， C， D，NULL)”)”)”) | 6 | 40 |
+| product-id-5 | (“(”(“（A，通过， B，NULL）”)”)“) |          |              |
+| product-id-2 | (“(”(“(AF， C， D，NULL)”)“)”) | 6 | 40 |
 | product-id-4 | (“(”(“(BM，pass， NA，NULL)”)”)”) | 3 | 12 |
 
 ## [!DNL Spark] SQL命令
 
-下面的子部分介绍了查询服务支持的Spark SQL命令。
+下面的子部分介绍了Query Service支持的Spark SQL命令。
 
-### SET
+### 设置
 
-此 `SET` command设置一个属性，并返回现有属性的值或列出所有现有属性。 如果为现有属性键提供了值，则会覆盖旧值。
+此 `SET` command设置一个属性，并返回现有属性的值或列出所有现有属性。 如果为现有的属性键提供了值，则会覆盖旧值。
 
 ```sql
 SET property_key = property_value
@@ -570,11 +569,11 @@ SET property_key = property_value
 
 ### 分析表 {#analyze-table}
 
-此 `ANALYZE TABLE` 命令对命名表执行分布分析和统计计算。 使用 `ANALYZE TABLE` 根据数据集是否存储在 [加速存储](#compute-statistics-accelerated-store) 或 [数据湖](#compute-statistics-data-lake). 有关其用法的更多信息，请参阅各自部分。
+此 `ANALYZE TABLE` 命令对命名表执行分布分析和统计计算。 使用 `ANALYZE TABLE` 根据数据集是否存储在 [加速存储](#compute-statistics-accelerated-store) 或 [数据湖](#compute-statistics-data-lake). 有关其使用的更多信息，请参阅各自的部分。
 
 #### 加速存储的计算统计信息 {#compute-statistics-accelerated-store}
 
-此 `ANALYZE TABLE` 命令计算加速存储上表的统计信息。 统计是在加速存储上给定表的已执行CTAS或ITAS查询上计算的。
+此 `ANALYZE TABLE` 命令计算加速存储上表的统计信息。 统计信息是在加速存储上给定表的已执行CTAS或ITAS查询中计算的。
 
 **示例**
 
@@ -582,7 +581,7 @@ SET property_key = property_value
 ANALYZE TABLE <original_table_name>
 ```
 
-以下是使用之后可用的统计计算列表 `ANALYZE TABLE` 命令：-
+以下是使用 `ANALYZE TABLE` 命令：-
 
 | 计算值 | 描述 |
 |---|---|
@@ -598,9 +597,9 @@ ANALYZE TABLE <original_table_name>
 
 #### 计算数据湖上的统计信息 {#compute-statistics-data-lake}
 
-您现在可以计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集具有 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集上的列统计信息。
+您现在可以在以下位置计算列级统计信息 [!DNL Azure Data Lake Storage] (ADLS)数据集与 `COMPUTE STATISTICS` 和 `SHOW STATISTICS` sql命令。 计算整个数据集、数据集子集、所有列或列子集的列统计信息。
 
-`COMPUTE STATISTICS` 扩展 `ANALYZE TABLE` 命令。 但是， `COMPUTE STATISTICS`， `FILTERCONTEXT`， `FOR COLUMNS`、和 `SHOW STATISTICS` data warehouse表不支持命令。 的这些扩展 `ANALYZE TABLE` 命令当前仅支持ADLS表。
+`COMPUTE STATISTICS` 扩展 `ANALYZE TABLE` 命令。 但是， `COMPUTE STATISTICS`， `FILTERCONTEXT`， `FOR COLUMNS`、和 `SHOW STATISTICS` 加速存储表不支持命令。 的这些扩展 `ANALYZE TABLE` 当前仅支持ADLS表使用命令。
 
 **示例**
 
@@ -608,39 +607,54 @@ ANALYZE TABLE <original_table_name>
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS  FOR COLUMNS (commerce, id, timestamp);
 ```
 
+此 `FILTER CONTEXT` 命令根据提供的过滤条件计算数据集子集的统计信息。 此 `FOR COLUMNS` 命令将目标定位到特定的列以供分析。
+
 >[!NOTE]
 >
->`FILTER CONTEXT` 根据提供的筛选条件计算数据集子集的统计信息，并且 `FOR COLUMNS` 定位特定的列以供分析。
+>此 `Statistics ID` 生成的统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制:<ul><li>数组或映射数据类型不支持生成统计信息</li><li>不保留计算的统计信息</li></ul><br><br>选项:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，该标记设置为true。 因此，当对不支持的数据类型请求统计信息时，它不会出错但会静默地失败。<br>要在请求有关不受支持数据类型的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`.
 
 控制台输出如下所示。
 
 ```console
-  Statistics ID 
-------------------
- ULKQiqgUlGbTJWhO
+|     Statistics ID      | 
+| ---------------------- |
+| adc_geometric_stats_1  |
 (1 row)
 ```
 
-然后，可以使用返回的统计数据ID查找计算出的统计数据，其中 `SHOW STATISTICS` 命令。
+然后，您可以通过引用 `Statistics ID`. 下面的示例语句允许您在与 `Statistics ID` 或别名。 要了解有关此功能的更多信息，请参阅 [别名文档](../essential-concepts/dataset-statistics.md#alias-name).
 
 ```sql
-SHOW STATISTICS FOR <statistics_ID>
+-- This statement gets the statistics generated for `alias adc_geometric_stats_1`.
+SELECT * FROM adc_geometric_stats_1;
 ```
 
->[!NOTE]
->
->`COMPUTE STATISTICS` 不支持数组或映射数据类型。 您可以设置 `skip_stats_for_complex_datatypes` 如果输入数据流具有带数组和映射数据类型的列，则标记为通知或出错。 默认情况下，该标记设置为true。 要启用通知或错误，请使用以下命令： `SET skip_stats_for_complex_datatypes = false`.
+使用 `SHOW STATISTICS` 命令来显示会话中生成的所有临时统计信息表的元数据。 此命令可帮助您优化统计分析的范围。
 
-请参阅 [数据集统计文档](../essential-concepts/dataset-statistics.md) 了解更多信息。
+```sql
+SHOW STATISTICS;
+```
+
+下面显示了SHOW STATISTICS的输出示例。
+
+```console
+      statsId         |   tableName   | columnSet |         filterContext       |      timestamp
+----------------------+---------------+-----------+-----------------------------+--------------------
+adc_geometric_stats_1 | adc_geometric |   (age)   |                             | 25/06/2023 09:22:26
+demo_table_stats_1    |  demo_table   |    (*)    |       ((age > 25))          | 25/06/2023 12:50:26
+age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
+```
+
+请参阅 [数据集统计文档](../essential-concepts/dataset-statistics.md) 以了解更多信息。
 
 #### 表示例 {#tablesample}
 
-Adobe Experience Platform查询服务在其近似的查询处理功能中提供示例数据集。
-当不需要对数据集进行聚合操作的确切答案时，最好使用数据集示例。 此功能允许您通过发出近似查询以返回近似答案，对大型数据集执行更有效的探索查询。
+Adobe Experience Platform查询服务提供了示例数据集，作为其近似查询处理功能的一部分。
+当不需要对数据集进行聚合操作的确切答案时，最好使用数据集示例。 此功能允许您通过发出近似查询以返回近似答案，对大型数据集进行更有效的探索查询。
 
-使用来自现有样本的均匀随机样本创建样本数据集 [!DNL Azure Data Lake Storage] (ADLS)数据集，仅使用来自原始数据集记录的一个百分比。 数据集示例功能对 `ANALYZE TABLE` 命令和 `TABLESAMPLE` 和 `SAMPLERATE` sql命令。
+使用来自现有样本的均匀随机样本创建样本数据集 [!DNL Azure Data Lake Storage] (ADLS)数据集，仅使用来自原始数据的记录百分比。 数据集示例功能对 `ANALYZE TABLE` 命令和 `TABLESAMPLE` 和 `SAMPLERATE` sql命令。
 
-在以下示例中，第一行演示了如何计算表格的5%样本。 第二行演示了如何从表中数据的过滤视图中计算5%的样本。
+在以下示例中，第一行演示如何计算表格的5%样本。 第二行演示如何从表中数据的过滤视图中计算5%的样本。
 
 **示例**
 
@@ -649,11 +663,11 @@ ANALYZE TABLE tableName TABLESAMPLE SAMPLERATE 5;
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-01-01')) TABLESAMPLE SAMPLERATE 5:
 ```
 
-请参阅 [数据集示例文档](../essential-concepts/dataset-samples.md) 了解更多信息。
+请参阅 [数据集示例文档](../essential-concepts/dataset-samples.md) 以了解更多信息。
 
 ### 开始
 
-此 `BEGIN` 命令，或者 `BEGIN WORK` 或 `BEGIN TRANSACTION` 命令，启动事务块。 在begin命令之后输入的任何语句将在单个事务中执行，直到给出明确的COMMIT或ROLLBACK命令。 此命令与 `START TRANSACTION`.
+此 `BEGIN` 命令，或者 `BEGIN WORK` 或 `BEGIN TRANSACTION` 命令，启动事务块。 在给出显式的COMMIT或ROLLBACK命令之前，在开始命令之后输入的任何语句都将在单个事务中执行。 此命令与 `START TRANSACTION`.
 
 ```sql
 BEGIN
@@ -663,7 +677,7 @@ BEGIN TRANSACTION
 
 ### 关闭
 
-此 `CLOSE` command可释放与打开游标相关联的资源。 游标关闭后，不允许对其执行任何后续操作。 当不再需要游标时，应将其关闭。
+此 `CLOSE` 命令释放与打开的光标相关联的资源。 游标关闭后，不允许对其执行任何后续操作。 当不再需要游标时，应将其关闭。
 
 ```sql
 CLOSE name
@@ -674,7 +688,7 @@ CLOSE ALL
 
 ### 取消分配
 
-此 `DEALLOCATE` 命令允许您取消分配以前准备的SQL语句。 如果未显式取消分配预准备语句，则会在会话结束时取消分配该语句。 有关预准备语句的更多信息，请参见 [PREPARE命令](#prepare) 部分。
+此 `DEALLOCATE` 命令允许您取消分配以前准备的SQL语句。 如果未显式取消分配预准备语句，则会在会话结束时取消分配预准备语句。 有关预准备语句的更多信息，请参见 [PREPARE命令](#prepare) 部分。
 
 ```sql
 DEALLOCATE name
@@ -685,7 +699,7 @@ DEALLOCATE ALL
 
 ### 声明
 
-此 `DECLARE` 命令允许用户创建游标，该游标可用于从较大的查询中检索少量行。 创建游标后，将使用从游标中获取行 `FETCH`.
+此 `DECLARE` 命令允许用户创建游标，该游标可用于从较大的查询中检索少量行。 创建游标后，会使用从其中获取行 `FETCH`.
 
 ```sql
 DECLARE name CURSOR FOR query
@@ -698,7 +712,7 @@ DECLARE name CURSOR FOR query
 
 ### 执行
 
-此 `EXECUTE` 命令用于执行以前准备的语句。 由于准备的语句仅存在于会话期间，因此必须由创建该准备语句的 `PREPARE` 语句在当前会话中较早执行。 有关使用预准备语句的更多信息，请参阅 [`PREPARE` 命令](#prepare) 部分。
+此 `EXECUTE` 命令用于执行以前准备的语句。 由于准备的语句只在会话期间存在，因此必须由创建该准备语句的 `PREPARE` 语句在当前会话中较早执行。 有关使用预准备语句的更多信息，请参见 [`PREPARE` 命令](#prepare) 部分。
 
 如果 `PREPARE` 创建语句的语句指定了某些参数，必须将一组兼容的参数传递给 `EXECUTE` 语句。 如果未传入这些参数，则会引发错误。
 
@@ -708,12 +722,12 @@ EXECUTE name [ ( parameter ) ]
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `name` | 要执行的准备语句的名称。 |
-| `parameter` | 准备语句的参数实际值。 这必须是生成一个与此参数的数据类型兼容的值的表达式，该值在创建预准备语句时确定。  如果预准备语句有多个参数，则用逗号分隔。 |
+| `name` | 要执行的预准备语句的名称。 |
+| `parameter` | 准备语句的参数实际值。 这必须是生成与此参数的数据类型兼容的值的表达式，该值在创建预准备语句时确定。  如果预准备语句有多个参数，则用逗号分隔。 |
 
 ### 说明
 
-此 `EXPLAIN` 命令显示提供的语句的执行计划。 执行计划显示如何扫描语句引用的表。  如果引用了多个表，它将显示使用哪些连接算法来汇集每个输入表中的所需行。
+此 `EXPLAIN` 命令显示提供的语句的执行计划。 执行计划显示了如何扫描语句引用的表。  如果引用了多个表，它将显示使用哪些连接算法来组合每个输入表中的所需行。
 
 ```sql
 EXPLAIN statement
@@ -727,16 +741,16 @@ EXPLAIN FORMAT { TEXT | JSON } statement
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `FORMAT` | 使用 `FORMAT` 命令指定输出格式。 可用选项包括 `TEXT` 或 `JSON`. 非文本输出包含的信息与文本输出格式相同，但程序更容易解析。 此参数默认为 `TEXT`. |
-| `statement` | 任意 `SELECT`， `INSERT`， `UPDATE`， `DELETE`， `VALUES`， `EXECUTE`， `DECLARE`， `CREATE TABLE AS`，或 `CREATE MATERIALIZED VIEW AS` 语句，您希望查看其执行计划。 |
+| `FORMAT` | 使用 `FORMAT` 命令指定输出格式。 可用的选项包括 `TEXT` 或 `JSON`. 非文本输出包含的信息与文本输出格式相同，但程序更容易解析。 此参数默认为 `TEXT`. |
+| `statement` | 任何 `SELECT`， `INSERT`， `UPDATE`， `DELETE`， `VALUES`， `EXECUTE`， `DECLARE`， `CREATE TABLE AS`，或 `CREATE MATERIALIZED VIEW AS` 语句，您希望查看其执行计划。 |
 
 >[!IMPORTANT]
 >
->任何输出 `SELECT` 使用运行时，可能返回的语句会被丢弃 `EXPLAIN` 关键字。 该声明的其他副作用照常发生。
+>任何输出 `SELECT` 使用运行时，语句可能会返回 `EXPLAIN` 关键字。 这一声明的其他副作用照常发生。
 
 **示例**
 
-以下示例显示了对具有单个的表的简单查询的计划 `integer` 列和10000行：
+以下示例显示了对具有单个表的简单查询的计划 `integer` 列和10000行：
 
 ```sql
 EXPLAIN SELECT * FROM foo;
@@ -751,7 +765,7 @@ EXPLAIN SELECT * FROM foo;
 
 ### FETCH
 
-此 `FETCH` command使用以前创建的游标检索行。
+此 `FETCH` 命令使用以前创建的游标检索行。
 
 ```sql
 FETCH num_of_rows [ IN | FROM ] cursor_name
@@ -777,7 +791,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 | 参数 | 描述 |
 | ------ | ------ |
 | `name` | 预准备语句的名称。 |
-| `data_type` | 预准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果需要添加多个数据类型，可以将其添加到以逗号分隔的列表中。 |
+| `data_type` | 预准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果需要添加多个数据类型，可以将其添加到逗号分隔列表中。 |
 
 ### 回滚
 
@@ -790,7 +804,7 @@ ROLLBACK WORK
 
 ### 选择范围
 
-此 `SELECT INTO` 命令创建一个新表，并使用查询计算的数据填充该表。 数据不会返回到客户端，因为它与普通数据一样 `SELECT` 命令。 新表的列具有与的输出列关联的名称和数据类型 `SELECT` 命令。
+此 `SELECT INTO` 命令创建一个新表，并使用查询计算的数据填充该表。 数据不会返回到客户端，因为它与常规数据一样 `SELECT` 命令。 新表的列具有与的输出列关联的名称和数据类型 `SELECT` 命令。
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -810,7 +824,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ] [...] ]
 ```
 
-有关标准SELECT查询参数的更多信息，请参阅 [选择查询节](#select-queries). 此部分将仅列出特定于的参数 `SELECT INTO` 命令。
+有关标准SELECT查询参数的更多信息，请参见 [选择查询节](#select-queries). 此部分将仅列出特定于的参数 `SELECT INTO` 命令。
 
 | 参数 | 描述 |
 | ------ | ------ |
@@ -820,7 +834,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 **示例**
 
-以下查询创建一个新表 `films_recent` 仅由表中的最近条目组成 `films`：
+下面的查询创建一个新表 `films_recent` 仅由表中的最近条目组成 `films`：
 
 ```sql
 SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
@@ -828,7 +842,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 ### 显示
 
-此 `SHOW` 命令显示运行时参数的当前设置。 这些变量可以使用以下代码进行设置 `SET` 语句，通过编辑 `postgresql.conf` 配置文件，通过 `PGOPTIONS` 环境变量（在使用libpq或基于libpq的应用程序时），或在启动Postgres服务器时通过命令行标志。
+此 `SHOW` 命令显示运行时参数的当前设置。 这些变量可以使用进行设置 `SET` 语句，通过编辑 `postgresql.conf` 配置文件，通过 `PGOPTIONS` 环境变量（在使用libpq或基于libpq的应用程序时），或在启动Postgres服务器时通过命令行标志。
 
 ```sql
 SHOW name
@@ -837,7 +851,7 @@ SHOW ALL
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `name` | 您希望了解其相关信息的运行时参数的名称。 运行时参数的可能值包括以下值：<br>`SERVER_VERSION`：此参数显示服务器的版本号。<br>`SERVER_ENCODING`：此参数显示服务器端字符集编码。<br>`LC_COLLATE`：此参数显示数据库的归类（文本排序）区域设置。<br>`LC_CTYPE`：此参数显示数据库的字符分类区域设置。<br>`IS_SUPERUSER`：此参数显示当前角色是否具有超级用户权限。 |
+| `name` | 您希望了解其信息的运行时参数的名称。 运行时参数的可能值包括以下值：<br>`SERVER_VERSION`：此参数显示服务器的版本号。<br>`SERVER_ENCODING`：此参数显示服务器端字符集编码。<br>`LC_COLLATE`：此参数显示数据库的归类（文本排序）区域设置。<br>`LC_CTYPE`：此参数显示数据库的字符分类区域设置。<br>`IS_SUPERUSER`：此参数显示当前角色是否具有超级用户权限。 |
 | `ALL` | 显示所有配置参数的值及其说明。 |
 
 **示例**
@@ -857,7 +871,7 @@ SHOW DateStyle;
 
 ### 复制
 
-此 `COPY` 命令复制任何 `SELECT` 查询到指定的位置。 用户必须有权访问此位置，此命令才能成功。
+此 `COPY` 命令复制任何 `SELECT` 查询到指定的位置。 用户必须具有此位置的访问权限，此命令才能成功。
 
 ```sql
 COPY query
@@ -911,11 +925,11 @@ ALTER TABLE table_name DROP CONSTRAINT IDENTITY ( column_name )
 
 >[!NOTE]
 >
->表架构应是唯一的，并且不在多个表之间共享。 此外，对于主键、主标识和标识约束，命名空间是必需的。
+>表架构应该是唯一的，并且不在多个表之间共享。 此外，对于主键、主标识和标识约束，命名空间是必需的。
 
-#### 添加或删除主要标识和次要标识
+#### 添加或删除主标识和辅助标识
 
-此 `ALTER TABLE` 命令允许您直接通过SQL添加或删除主标识表和辅助标识表列的约束条件。
+此 `ALTER TABLE` 命令允许直接通过SQL添加或删除主标识表和辅助标识表列的约束。
 
 以下示例通过添加约束来添加主标识和辅助标识。
 
@@ -935,7 +949,7 @@ ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
 
 #### 添加列
 
-以下SQL查询显示向表添加列的示例。
+以下SQL查询显示了向表添加列的示例。
 
 ```sql
 ALTER TABLE table_name ADD COLUMN column_name data_type
@@ -945,24 +959,24 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 ##### 支持的数据类型
 
-下表列出了向表中添加列时接受的数据类型，使用的是 [!DNL Postgres SQL]、 XDM和 [!DNL Accelerated Database Recovery] (ADR)。
+下表列出了在使用向表中添加列时接受的数据类型 [!DNL Postgres SQL]、 XDM和 [!DNL Accelerated Database Recovery] (ADR)。
 
 | — | PSQL客户端 | XDM | ADR | 描述 |
 |---|---|---|---|---|
-| 1 | `bigint` | `int8` | `bigint` | 用于存储大整数的数字数据类型，范围从 — 9,223,372,036,854,775,807到9,223,372,036,854,775,807，以8字节为单位。 |
-| 2 | `integer` | `int4` | `integer` | 用于存储 — 2,147,483,648到2,147,483,647范围内（4字节）的整数的数字数据类型。 |
-| 3 | `smallint` | `int2` | `smallint` | 用于存储–32,768到215-1 32,767 （以2字节为单位）的整数的数字数据类型。 |
+| 1 | `bigint` | `int8` | `bigint` | 一种数值数据类型，用于存储从 — 9,223,372,036,854,775,807到9,223,372,036,854,775,807之间的大整数，以8字节为单位。 |
+| 2 | `integer` | `int4` | `integer` | 用于存储 — 2,147,483,648到2,147,483,647 （以4字节为单位）的整数的数字数据类型。 |
+| 3 | `smallint` | `int2` | `smallint` | 用于存储–32,768到215-1 32,767之间的整数（以2字节为单位）的数字数据类型。 |
 | 4 | `tinyint` | `int1` | `tinyint` | 用于存储0到255之间的整数（以1字节为单位）的数字数据类型。 |
-| 5 | `varchar(len)` | `string` | `varchar(len)` | 可变大小的字符数据类型。 `varchar` 最适合在列数据条目大小差别很大时使用。 |
+| 5 | `varchar(len)` | `string` | `varchar(len)` | 可变大小的字符数据类型。 `varchar` 当列数据条目的大小差别很大时，最好使用它。 |
 | 6 | `double` | `float8` | `double precision` | `FLOAT8` 和 `FLOAT` 是的有效同义词 `DOUBLE PRECISION`. `double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
 | 7 | `double precision` | `float8` | `double precision` | `FLOAT8` 是的有效同义词 `double precision`.`double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
 | 8 | `date` | `date` | `date` | 此 `date` 数据类型是4字节存储的日历日期值，没有任何时间戳信息。 有效日期的范围为01-01-0001到12-31-9999。 |
-| 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的时间瞬间。 `datetime` 包括year、month、day、hour、second和fraction的限定符。 A `datetime` 声明可以包括这些时间单位中在顺序中连接任何子集，或者甚至包括单个时间单位。 |
+| 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的时间瞬间。 `datetime` 包括：年、月、日、小时、秒和分数。 A `datetime` 声明可以包括这些时间单位中在序列中连接任何子集，或者甚至包括单个时间单位。 |
 | 10 | `char(len)` | `string` | `char(len)` | 此 `char(len)` 关键字用于指示项目是固定长度的字符。 |
 
 #### 添加架构
 
-以下SQL查询显示向数据库/模式添加表的示例。
+以下SQL查询显示了向数据库/模式添加表的示例。
 
 ```sql
 ALTER TABLE table_name ADD SCHEMA database_name.schema_name
@@ -975,7 +989,7 @@ ALTER TABLE table_name ADD SCHEMA database_name.schema_name
 
 #### 删除架构
 
-以下SQL查询显示从数据库/模式中删除表的示例。
+以下SQL查询显示了从数据库/模式中删除表的示例。
 
 ```sql
 ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
@@ -1045,7 +1059,7 @@ SHOW DATAGROUPS
 
 ### 显示表的数据组
 
-此 `SHOW DATAGROUPS FOR` &#39;table_name&#39;命令返回一个表，其中包含作为子参数的全部相关数据库。 对于每个数据库，该表包括方案、组类型、子类型、子名称和子ID。
+此 `SHOW DATAGROUPS FOR` “table_name”命令返回包含该参数作为其子项的所有关联数据库的表。 对于每个数据库，该表包括方案、组类型、子类型、子名称和子ID。
 
 ```sql
 SHOW DATAGROUPS FOR 'table_name'
