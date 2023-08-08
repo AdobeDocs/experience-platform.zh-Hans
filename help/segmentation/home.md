@@ -6,7 +6,7 @@ exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
 source-git-commit: 44c92e2163e2b6c0c140c64bba41dfbcc15d5d7f
 workflow-type: tm+mt
 source-wordcount: '1633'
-ht-degree: 9%
+ht-degree: 12%
 
 ---
 
@@ -57,7 +57,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界�
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation"
 >title="评估方法"
->abstract="Platform当前支持三种评估受众的方法：流式分段、批量分段和边缘分段。"
+>abstract="Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
@@ -65,7 +65,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界�
 >abstract="流式分段是一个持续的数据选择过程，会更新区段以响应用户活动。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html?lang=zh-Hans" text="通过流式分段近乎实时地评估事件"
 
-Platform当前支持三种评估受众的方法：流式分段、批量分段和边缘分段。
+Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。
 
 ### 流式客户细分 {#streaming}
 
@@ -78,7 +78,7 @@ Platform当前支持三种评估受众的方法：流式分段、批量分段和
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_batch"
 >title="批量评估"
->abstract="作为持续数据选择过程的替代方案，批量分段通过区段定义一次性移动所有配置文件数据以产生相应的受众。创建受众后，将保存并存储该受众，以便您可以将其导出以供使用。"
+>abstract="作为持续数据选择过程的替代方案，批量分段通过区段定义一次性移动所有配置文件数据以产生相应的受众。创建后，受众将会保存，以便您能够将其导出以供使用。"
 
 作为持续数据选择过程的替代方案，批量分段通过区段定义一次性移动所有配置文件数据以产生相应的受众。创建受众后，将保存并存储生成的受众，以便将其导出以供使用。
 
