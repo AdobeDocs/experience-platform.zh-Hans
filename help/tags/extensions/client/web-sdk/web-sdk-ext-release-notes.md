@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 1de2776fbdfc7b32a1660a01ca6df21eb0cb9104
+source-git-commit: ba75669eeaef9fc023e7c33265ec1e5dbada9534
 workflow-type: tm+mt
-source-wordcount: '1736'
+source-wordcount: '1757'
 ht-degree: 37%
 
 ---
@@ -13,6 +13,12 @@ ht-degree: 37%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.20.3 - 2023年8月8日
+
+**修复和改进功能**
+
+* 修复了数据元素无法保存在ID同步容器ID覆盖字段中的问题。
 
 ## 版本2.20.1 - 2023年8月3日
 
