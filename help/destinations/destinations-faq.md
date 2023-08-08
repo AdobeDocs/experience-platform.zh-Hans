@@ -3,10 +3,10 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 810bcd011fd6e172c79f4482e047aa6e715c3918
+source-git-commit: 75b9cc3e2c9a18ec8c08c9c3ca774accae31eb7e
 workflow-type: tm+mt
-source-wordcount: '1531'
-ht-degree: 4%
+source-wordcount: '1638'
+ht-degree: 3%
 
 ---
 
@@ -143,6 +143,7 @@ ht-degree: 4%
 
 +++回答
 [!DNL LinkedIn Matched Audiences] 支持激活以下标识：哈希电子邮件， [!DNL GAID]、和 [!DNL IDFA].
+
 +++
 
 ## 通过Adobe Target和自定义个性化目标实现同一页面和下一页面个性化 {#same-next-page-personalization}
@@ -204,3 +205,20 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 +++回答是。 此 [数据治理和同意策略](../data-governance/home.md) 创建并与所选营销操作相关联将控制所选属性的激活。
 +++
+
+### 是 [!DNL Adobe Target] 和 [!DNL Custom Personalization] 目标 [!DNL HIPAA]是否兼容？
+
++++回答
+[!DNL Adobe Target] 不是 [!DNL HIPPA] — 兼容 [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/solutions/industries/healthcare.html). 客户应就以下事项咨询自己的法律团队： [!DNL HIPPA] — 在以下方式使用边缘个性化之前为自定义优化渠道做好准备： [!DNL Adobe Target] 或 [!DNL Custom Personalization] 目标。
+
+对于需要大规模应用同意策略管理的用例，客户必须购买 [!DNL Adobe Privacy & Security Shield]. [!DNL Adobe Privacy & Security Shield] 功能作为高级功能套件销售，不得单独购买。
+
+此服务包括客户管理的密钥和提升的阈值，以管理客户数据生命周期。
+
+此 [!DNL Adobe Target] 和 [!DNL Custom Personalization] 目标与集成 [Experience Platform数据使用情况标签](../data-governance/labels/overview.md) 和 [同意策略实施服务](../data-governance/enforcement/overview.md). 这些功能适用于所有客户。
+
+
+
+
++++
+
