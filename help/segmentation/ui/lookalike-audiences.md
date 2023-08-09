@@ -1,0 +1,177 @@
+---
+solution: Experience Platform
+title: 相似受众
+description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
+badgeLimitedAvailability: label="有限可用性" type=Caution
+hide: true
+hidefromtoc: true
+source-git-commit: d0b839dfc35ff9f8b4db34c61d2cdd820bfd448b
+workflow-type: tm+mt
+source-wordcount: '1937'
+ht-degree: 0%
+
+---
+
+
+# 相似受众指南
+
+>[!IMPORTANT]
+>
+>请注意，提供相似见解和相似受众 **有限可用性**.
+
+在Adobe Experience Platform中，相似受众可针对每位受众提供智能见解，并利用基于机器学习的见解来通过营销活动识别和定位高价值客户。
+
+通过相似受众，您可以创建扩展的受众以定位与高性能受众类似的客户或以前转换的受众类似的客户。
+
+## 术语 {#terminology}
+
+在开始使用相似受众之前，请确保了解以下概念：
+
+- **基本受众**：基本受众是您希望查找更多相关见解的受众。 相似人群拓展模型就是这样的受众 **基于** 打开。
+- **相似人群拓展模型**：相似人群拓展模型是一种机器学习模型，无需任何客户输入即可针对每个符合条件的基本受众进行培训。 每个相似模型创建影响因素和相似图。 相似模型可以 **非** 得分。
+- **相似受众**：相似受众是指将具有选定相似度阈值的相似模型应用于基本受众时创建的受众。 您可以使用相同的相似人群拓展模型创建多个相似受众。 相似受众才是获得得分的对象。
+- **可寻址受众总大小**：可寻址受众总人数是过去30天内的用户档案总数减去过去30天内的基本受众人口。 例如，如果某个客户在过去30天内拥有1000万个配置文件，并且基础受众在过去30天内拥有100万个配置文件，则总可寻址受众规模为900万个配置文件。
+
+## 相似模型详细信息 {#details}
+
+在Adobe Experience Platform中，相似模型会使用三种不同类型的数据点：
+
+- 过去30天的受众会员资格
+- 过去30天内被实时客户档案摄取的体验事件
+- 过去30天内已摄取到Real-Time Customer Profile中的配置文件属性
+
+所有这些数据点都被转换为键值对，然后输入相似模型。 将仅保留具有大量匹配用户档案百分比的键值对。
+
+相似人群拓展模型频繁地运行，为基本受众创建和重新创建影响因素和相似图。 相似受众的评分也经常运行。
+
+## 权利 {#entitlements}
+
+以下权限适用于相似受众的使用：
+
+- Real-Time CDP Prime客户有权 **5** 生产沙盒中的活动相似受众
+- Real-Time CDP Ultimate客户有权 **20** 生产沙盒中的活动相似受众
+- 开发沙盒仅限于 **5** 所有Real-Time CDP客户的相似受众
+
+提供了附加组件包，这些附加组件包可将生产沙盒的权利每包增加20个相似受众。
+
+要确认您是否可以访问相似受众，请联系您的Adobe代表。
+
+## 查看相似见解 {#view}
+
+受众详细信息页面中内置相似见解。 要查看受众的相似见解，请选择 **[!UICONTROL 受众]** 在左侧导航栏中，随后是 **[!UICONTROL 浏览]**，以及要查看其见解的受众。
+
+![受众按钮会突出显示，以及用于相似人群拓展建模的基本受众也会突出显示。](../images/ui/lookalike-audiences/browse.png)
+
+此时会显示受众详细信息页面。 选择 **[!UICONTROL 相似见解]** 选项卡，以查看受众的相似见解。 此 **[!UICONTROL 相似见解]** 页面。 此页面有三个主要元素 — 相似性和可访问图、相似受众和影响因素。
+
+![相似分析选项卡突出显示，显示基本受众的相似分析。](../images/ui/lookalike-audiences/look-alike-insights.png)
+
+### 相似性和范围 {#similarity-and-reach}
+
+<!-- >[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_similarityAndReach"
+>title="Similarity and reach"
+>abstract="" -->
+
+相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度分数的用户档案组成的相似受众的预期访问范围。 相似性得分表示 **距离** 基础受众配置文件与相似人群拓展分析配置文件之间的相似度。
+
+![突出显示相似性和可达图。](../images/ui/lookalike-audiences/similarity-and-reach.png)
+
+在此图表上，x轴测量用户档案与选定受众成员之间的相似度百分比。 相似性得分从0%到100%不等，较高的相似性得分表示在影响因素值方面，用户档案与所选受众的成员更接近。
+
+Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件预期计数。 预期的用户档案计数介于0到可寻址受众总大小或2,500万个用户档案之间，以较低者为准。 此轴的测量位置为 **对数刻度** 以提高图形的可读性。
+
+请注意，该图表为 **累积** 从右到左。 这意味着，在图形的任何位置，y轴的值都是具有相似性的用户档案的数量 **以上** 相似度阈值。 例如，如果x轴为60%，y轴为1,000万，这意味着有1,000万个用户档案与基础受众的相似性达到或超过60%。
+
+您可以将鼠标悬停在图表中的特定点上以显示相似性百分比以及当前高亮显示的点的预期配置文件计数。
+
+### 相似受众 {#list}
+
+相似受众部分显示之前为选定基础受众创建的所有相似受众的列表。
+
+![相似受众部分会突出显示。](../images/ui/lookalike-audiences/select-laa.png)
+
+### 影响因素 {#influential-factors}
+
+<!-- >[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_influentialFactors"
+>title="Influential factors"
+>abstract="Influential factors are attributes, events and audience memberships that are important in explaining similarity of a profile to members of the base audience. Data usage labels and policies can be used to exclude certain data from being considered as influential factors in look-alike models."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="Exclude data" -->
+
+影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
+
+对于数值型影响因素，键值对可能会放入存储桶中，具体取决于键所包含的不同值的数量。 例如，如果您拥有 `income`，则很可能有许多唯一值。 因此，键值对将放置到存储桶中，如下所示 `income=[0 -> 30000]`， `income=[30000 -> 50000]`、和 `income=[50000 -> 100000]`.
+
+定期重新计算这些存储段以确保数据保持最新。
+
+![重点讨论了影响因子部分。](../images/ui/lookalike-audiences/influential-factors.png)
+
+>[!NOTE]
+>
+>各影响因素按重要性大小排序，相互独立。
+
+| 字段 | 描述 |
+| ----- | ----------- |
+| 类型 | 影响因素所派生的数据类型。 这可以是配置文件属性、体验事件或受众成员资格。 |
+| 键 | 数据字段的名称。 对于受众成员资格类型的键，此值表示 **命名空间** 受众的数据来源。 可能的值包括 `ups` (Segmentation Service) `AO` (Audience Orchestration)。 对于其他类型的键，此值表示XDM字段路径。 例如，如果公司Luma具有一个称为收入的自定义字段，则键将为 `_luma.income` |
+| 值 | 该值会因它所代表的影响因素而异。 对于用户档案属性或体验事件，此字段表示数据字段的值或值范围，它指示与基本受众成员的相似度。 值范围会以形式写入 `[A -> B]`，其中 `A` 表示较低范围，而 `B` 表示较高的范围。 对于受众成员资格，此字段是受众的名称。 |
+| 重要性 | 影响因素的相对重要性水平。 这可以是高、中或低。 |
+
+## 创建相似受众 {#create}
+
+>[!IMPORTANT]
+>
+>您 **无法** 使用相似受众作为其他相似受众的基本受众。 就是说，你 **无法** 创建链接的“相似受众”。
+
+要创建相似受众，您需要选择要为其提供相似受众基础的受众。 要访问可用受众列表，请选择 **[!UICONTROL 受众]** 在左侧导航栏中，随后是 **[!UICONTROL 浏览]**. 此时将显示受众列表。 在此页面上，您可以选择要用作基础受众的受众。
+
+![受众按钮会突出显示，以及用于相似人群拓展建模的基本受众也会突出显示。](../images/ui/lookalike-audiences/browse.png)
+
+在受众详细信息页面上，选择 **[!UICONTROL 创建相似受众]** 以开始创建相似受众的过程。
+
+![此 [!UICONTROL 创建相似受众] 按钮会突出显示。](../images/ui/lookalike-audiences/create-look-alike-audience.png)
+
+此 **[!UICONTROL 创建相似受众]** 弹出窗口出现。 在此页面上，您可以为相似受众设置相似性百分比。
+
+![此 [!UICONTROL 创建相似受众] 此时会显示弹出框。](../images/ui/lookalike-audiences/create-audience.png)
+
+您可以通过三种不同的方式设置此相似性百分比：
+
+- 移动滑块以设置相似性百分比
+- 在滑块旁边的数字输入框中输入相似性百分比
+- 将鼠标悬停在图形上并选择所需的位置以设置相似性百分比
+
+您还可以更新有关相似受众的详细信息，包括其名称和描述。 默认情况下，将根据基础受众的名称以及之前指定的相似性百分比生成相似受众的名称。
+
+![基本信息在 [!UICONTROL 创建相似受众] 弹出窗口。](../images/ui/lookalike-audiences/basic-info.png)
+
+选择 **[!UICONTROL 创建]** 以完成创建相似受众。
+
+![“创建”按钮在中高亮显示。 [!UICONTROL 创建相似受众] 弹出窗口。](../images/ui/lookalike-audiences/create-audience.png)
+
+可以在以下位置访问新创建的相似受众： **[!UICONTROL 相似受众]** 部分，也可在受众门户中用于其他下游用途。 请注意，对相似受众进行评分需要一点时间。 在得分之前，用户档案计数将显示为0。
+
+## 查看相似受众详细信息 {#view-details}
+
+要查看相似受众的详细信息，请在 **[!UICONTROL 相似受众]** 基本受众的部分。
+
+![相似受众部分会突出显示。](../images/ui/lookalike-audiences/select-laa.png)
+
+此时会显示受众详细信息页面。 欲知本页详情，请阅读 [Segmentation Service UI指南的受众详细信息部分](./overview.md#audience-details).
+
+![此时会显示相似受众的详细信息。](../images/ui/lookalike-audiences/laa-details.png)
+
+## 从相似人群拓展建模中排除数据字段 {#exclude}
+
+相似受众可以配置为通过应用相关数据使用标签和策略来排除针对“数据科学”营销操作限制的数据字段。 在培训相似受众模型以及从已训练的模型生成相似受众时，标记为限制用于数据科学的数据将从考虑中删除。 
+
+标准“C9”标签可用于标记不应用于数据科学的数据，并且可以通过启用标准“限制数据科学”策略来强制实施这些数据。 您还可以创建其他策略来限制使用其他标签的数据，包括敏感标签，以阻止用于数据科学。 有关管理数据使用策略的更多信息，请参阅 [数据使用策略UI指南](../../data-governance/policies/user-guide.md). 有关管理数据使用标签的更多信息，请阅读 [数据使用标签UI指南](../../data-governance/labels/user-guide.md).
+
+默认情况下，相似受众的建模过程将排除 **任意** 字段、数据集或受众，它们基于贵组织启用的隐私政策。 如果基本受众没有合同标签，则建模过程将排除 **任意** 字段、数据集或受众，它们基于贵组织启用的隐私政策。
+
+请注意 **您** 负责确保对数据（包括敏感数据）进行适当标记，并确保已定义数据使用策略并使之能够遵守您运营所依据的法律和法规义务。 您还应该了解，如果数据字段或区段成员资格为 **非** 与通常与敏感或受保护数据类型相关的数据字段直接相关，可能是潜在偏差的来源。 **您** 负责分析数据以识别、标记数据并将适当的数据使用策略应用于数据，包括可能代表敏感或受保护数据类型且应排除在建模之外的任何数据字段。
+
+## 后续步骤
+
+阅读本指南后，您已了解如何查看相似见解，并根据这些见解创建相似受众。 有关Adobe Experience Platform UI中受众的更多信息，请阅读 [分段服务UI指南](./overview.md).
