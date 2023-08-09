@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 根据哈希电子邮件激活Facebook营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 37e8d36d89bf984673345743b371c31b4bb1f94d
 workflow-type: tm+mt
-source-wordcount: '1907'
+source-wordcount: '1926'
 ht-degree: 6%
 
 ---
@@ -77,6 +77,7 @@ ht-degree: 6%
 
 在将受众发送至 [!DNL Facebook]，确保您满足以下要求：
 
+* 您的 [!DNL Facebook] 用户帐户必须具有对 [!DNL Facebook Business Account] 拥有您将使用的广告帐户。
 * 您的 [!DNL Facebook] 用户帐户必须具有 **[!DNL Manage campaigns]** 为您计划使用的Ad帐户启用的权限。
 * 此 **Adobe Experience Cloud** 必须将商业帐户作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`。请参阅 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) 有关详细信息，请参阅Facebook文档。
   >[!IMPORTANT]

@@ -3,9 +3,9 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人入胜且相互关联的体验，以便智能地重新吸引不常访问的客户。
 hide: true
 hidefromtoc: true
-source-git-commit: 4f0902b874d5e8179c009ad3b603e008b9a22bb4
+source-git-commit: 290c914216c1af070e065a38f726e2028c2cea8c
 workflow-type: tm+mt
-source-wordcount: '3496'
+source-wordcount: '3482'
 ht-degree: 12%
 
 ---
@@ -110,9 +110,7 @@ ht-degree: 12%
 
 有关创建架构的更多信息，请参阅 [创建架构教程。](/help/xdm/tutorials/create-schema-ui.md)
 
-有4个架构设计用于重新参与历程。
-
-每个架构都需要设置特定的字段，以及一些强烈建议的字段。
+有4个架构设计用于重新参与历程。 每个架构都需要设置特定的字段，以及一些强烈建议的字段。
 
 #### 客户属性架构的字段组要求
 
@@ -315,8 +313,6 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 AdobeWeb连接器架构是 [!UICONTROL XDM ExperienceEvent] 架构，包含以下字段组：
 
-Adobe Analytics数据馈送的体验事件架构所需的字段组包括：
-
 +++Adobe Analytics ExperienceEvent模板（字段组）
 
 | 字段 | 要求 | 描述 |
@@ -382,8 +378,6 @@ Adobe Analytics数据馈送的体验事件架构所需的字段组包括：
 +++
 
 ![突出显示字段组列表的AdobeWeb连接器架构。](../intelligent-re-engagement/images/adobe-web-connector.png)
-
->[!ENDTABS]
 
 ### 从架构创建数据集
 
