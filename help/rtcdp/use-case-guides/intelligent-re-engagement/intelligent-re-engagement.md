@@ -3,9 +3,9 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人入胜且相互关联的体验，以便智能地重新吸引不常访问的客户。
 hide: true
 hidefromtoc: true
-source-git-commit: 7ff623626b557cbf67ad6164157d1a5ef4820cb1
+source-git-commit: 8b38114e600986979728e1c4e36245ff0aa3be65
 workflow-type: tm+mt
-source-wordcount: '3259'
+source-wordcount: '3258'
 ht-degree: 8%
 
 ---
@@ -401,7 +401,7 @@ To create a dataset from a schema, complete the steps below:
 ![A recording of the steps to create a dataset from a schema.](../intelligent-re-engagement/images/dataset-from-schema.gif)
 -->
 
->注意
+>[!NOTE]
 >
 >与创建架构的步骤类似，您需要启用要包含在实时客户档案中的数据集。 有关启用数据集以在Real-time Customer Profile中使用的更多信息，请参阅 [创建架构教程。](/help/xdm/tutorials/create-schema-ui.md#profile).
 
