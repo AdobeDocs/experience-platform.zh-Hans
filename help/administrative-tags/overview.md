@@ -1,20 +1,16 @@
 ---
 keywords: Experience Platform；首页；热门话题；统一标记；标记；
-title: 统一标记概述 (beta)
+title: 统一标记概述
 description: 本文档提供有关 Adobe Experience Platform 中的统一标记的信息
 exl-id: a19e37c3-697a-4000-9cb8-d67478b47dc6
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
-source-wordcount: '607'
-ht-degree: 100%
+source-git-commit: 6977438d57dc8e1390812e58bf039ebc60cb830d
+workflow-type: tm+mt
+source-wordcount: '578'
+ht-degree: 98%
 
 ---
 
-# 统一标记概述 (Beta)
-
->[!IMPORTANT]
->
->统一标记为 Beta 版。如果您想给予反馈，请选择标记管理页面顶部的按钮。
+# 统一标记概述
 
 标记是 Adobe Experience Platform 提供的一项功能，该功能使管理员能够管理元数据分类法，以便对业务对象进行分类，从而更轻松地对其进行查找和分类。标记是可以被视为关键字的元数据，它们可以附加到区段、数据集、历程或其他对象上，以便在搜索时能够找到该对象和相关对象。标记分为两种类型：已分类标记和未分类标记。
 
