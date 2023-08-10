@@ -1,9 +1,9 @@
 ---
-description: 了解如何为使用Destination SDK构建的目标配置受支持的目标身份。
+description: 了解如何为使用Destination SDK构建的目标配置支持的目标身份。
 title: 身份命名空间配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '841'
 ht-degree: 4%
 
 ---
@@ -11,11 +11,11 @@ ht-degree: 4%
 
 # 身份命名空间配置
 
-Experience Platform使用身份命名空间来描述特定身份的类型。 例如，一个名为的身份命名空间 `Email` 标识如下值 `name@email.com` 作为电子邮件地址。
+Experience Platform使用身份命名空间来描述特定身份的类型。 例如，名为的身份命名空间 `Email` 标识如下值 `name@email.com` 作为电子邮件地址。
 
 通过Destination SDK创建目标时，除了 [配置合作伙伴架构](schema-configuration.md) 用户可以将配置文件属性和身份映射到，您还可以定义目标平台支持的身份命名空间。
 
-执行此操作时，除了目标配置文件属性外，用户还可以选择目标身份。
+在执行此操作时，用户除了可以选择目标配置文件属性之外，还可以选择目标身份。
 
 要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/namespaces.md).
 
@@ -25,18 +25,18 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 * 允许用户映射 [标准身份命名空间](../../../../identity-service/namespaces.md#standard) 到您自己的身份命名空间。
 * 允许用户映射 [自定义身份命名空间](../../../../identity-service/namespaces.md#manage-namespaces) 到您自己的身份命名空间。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
 您可以通过以下方式配置支持的身份命名空间： `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持的身份命名空间配置选项，并展示了客户将在Platform UI中看到的内容。
+本文介绍了可用于目标的所有受支持的身份命名空间配置选项，并显示客户将在Platform UI中看到的内容。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -49,7 +49,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 ## 支持的参数 {#supported-parameters}
 
-在定义目标支持的目标身份时，您可以使用下表中描述的参数配置其行为。
+在定义目标支持的目标身份时，您可以使用下表所述的参数配置其行为。
 
 | 参数 | 类型 | 必填/可选 | 描述 |
 |---------|----------|---|------|
@@ -79,12 +79,12 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
    }
 ```
 
-您必须指示哪个 [!DNL Platform] 身份客户能够导出到您的目标。 一些示例包括 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID ([!DNL IDFA]， [!DNL GAID])。 这些值为 [!DNL Platform] 客户可以映射到目标中的身份命名空间的身份命名空间。
+您必须指明哪个 [!DNL Platform] 客户能够导出到目标的身份。 一些示例包括 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID ([!DNL IDFA]， [!DNL GAID])。 这些值为 [!DNL Platform] 客户可以映射到目标中的身份命名空间的身份命名空间。
 
-身份命名空间不需要1到1之间的对应 [!DNL Platform] 以及你的目的地。
-例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL IDFA] 命名空间进行映射，或者他们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL Customer ID] 命名空间中包含的区段。
+身份命名空间不需要在 [!DNL Platform] 还有你的目的地。
+例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL IDFA] 命名空间中的其他位置，或者他们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL Customer ID] 命名空间中指定目标的URL。
 
-有关标识的更多信息，请参阅 [身份命名空间概述](../../../../identity-service/namespaces.md).
+有关身份的详细信息，请参阅 [身份命名空间概述](../../../../identity-service/namespaces.md).
 
 ## 映射注意事项
 
@@ -92,9 +92,9 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 ## 配置可选源字段散列
 
-Experience Platform客户可以选择以哈希格式或纯文本格式将数据摄取到Platform中。 如果您的目标平台接受经过哈希处理的和未经过哈希处理的数据，则可以让客户选择在将源字段值导出到目标时，平台是否应该对这些值进行哈希处理。
+Experience Platform客户可以选择以哈希格式或纯文本格式将数据摄取到Platform中。 如果您的目标平台接受经过哈希处理的数据和未经过哈希处理的数据，则可以让客户选择在将源字段值导出到目标时，Platform是否应对其进行哈希处理。
 
-以下配置启用可选 [应用转换](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 选项，位于Platform UI中的“映射”步骤中。
+下面的配置启用可选的 [应用转换](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 选项，位于Platform UI的“映射”步骤中。
 
 ```json {line-numbers="true" highlight="5"}
 "identityNamespaces":{
@@ -114,11 +114,11 @@ Experience Platform客户可以选择以哈希格式或纯文本格式将数据�
 
 使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。
 
-将未经过哈希处理的源属性映射到目标预期进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 选项使Adobe Experience Platform在激活时自动对源属性进行哈希处理。
+将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
-## 配置强制源字段哈希处理
+## 配置强制源字段散列
 
-如果您的目标仅接受哈希数据，则可以配置导出的属性，以使其由Platform自动进行哈希处理。 以下配置会自动检查 **应用转换** 选项，当 `Email` 和 `Phone` 标识已映射。
+如果您的目标仅接受哈希数据，则可以配置导出的属性，使其由Platform自动进行哈希处理。 以下配置会自动检查 **应用转换** 选项，当 `Email` 和 `Phone` 标识已映射。
 
 ```json {line-numbers="true" highlight="8,11"}
 "identityNamespaces":{

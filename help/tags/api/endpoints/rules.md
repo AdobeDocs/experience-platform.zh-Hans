@@ -2,9 +2,9 @@
 title: 规则端点
 description: 了解如何在Reactor API中调用/rules端点。
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '896'
 ht-degree: 5%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->本文档介绍了如何管理Reactor API中的规则。 有关如何与UI中的规则进行交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
+>本文档介绍如何管理Reactor API中的规则。 有关如何与UI中的规则进行交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
-规则只属于一个 [属性](./properties.md). 资产可以有许多规则。
+一个规则恰好属于一个 [属性](./properties.md). 资产可以有许多规则。
 
 ## 快速入门
 
@@ -41,7 +41,7 @@ GET /properties/{PROPERTY_ID}/rules
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -156,7 +156,7 @@ GET /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 此 `id` 要查找的规则的。 |
+| `RULE_ID` | 此 `id` 您想要查找的规则的。 |
 
 {style="table-layout:auto"}
 
@@ -174,7 +174,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回规则的详细信息。
+成功的响应将返回规则的详细信息。
 
 ```json
 {
@@ -258,7 +258,7 @@ POST /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 属性中定义规则的URL。 |
+| `PROPERTY_ID` | 此 `id` ，您将在其中定义规则。 |
 
 {style="table-layout:auto"}
 
@@ -292,7 +292,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建规则的详细信息。
+成功的响应将返回新创建规则的详细信息。
 
 ```json
 {
@@ -366,7 +366,7 @@ curl -X POST \
 
 ## 向规则添加事件、条件和操作 {#components}
 
-一旦您 [已创建规则](#create)，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅以下部分： [创建规则组件](./rule-components.md#create) 在 `/rule_components` 端点指南，以了解如何在Reactor API中执行此操作。
+一旦 [已创建规则](#create)，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅以下部分： [创建规则组件](./rule-components.md#create) 在 `/rule_components` 端点指南，用于了解如何在Reactor API中执行此操作。
 
 ## 更新规则 {#update}
 
@@ -380,13 +380,13 @@ PATCH /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 此 `id` 要更新的规则的ID。 |
+| `RULE_ID` | 此 `id` 要更新的规则的。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将更新 `name` 现有规则的URL。
+以下请求将更新 `name` 现有规则的。
 
 ```shell
 curl -X PATCH \
@@ -409,14 +409,14 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其规则表示要为规则更新的属性。 可以为规则更新以下属性： <ul><li>`name`</li><li>`enabled`</li></ul> |
-| `id` | 此 `id` 要更新的规则的。 这应该与 `{RULE_ID}` 请求路径中提供的值。 |
+| `id` | 此 `id` 要更新的规则的。 这应该匹配 `{RULE_ID}` 请求路径中提供的值。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `rules`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回已更新规则的详细信息。
+成功的响应将返回已更新规则的详细信息。
 
 ```json
 {
@@ -520,7 +520,7 @@ curl -X DELETE \
 
 ## 管理规则的注释 {#notes}
 
-规则是“重要的”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理规则和其他兼容资源的注释的更多信息。
+规则是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理规则和其他兼容资源的注释的更多信息。
 
 ## 检索规则的相关资源 {#related}
 
@@ -530,7 +530,7 @@ curl -X DELETE \
 
 ### 列出规则的相关库 {#libraries}
 
-您可以通过附加来列出使用特定规则的库 `/libraries` 到查找请求的路径。
+您可以通过附加来列出利用特定规则的库 `/libraries` 到查找请求的路径。
 
 **API格式**
 
@@ -558,7 +558,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定规则的库的列表。
+成功的响应将返回使用指定规则的库的列表。
 
 ```json
 {
@@ -662,7 +662,7 @@ GET  /rules/{RULE_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 此 `id` 要列出其修订版的规则的。 |
+| `{RULE_ID}` | 此 `id` 要列出其修订版本的规则的。 |
 
 {style="table-layout:auto"}
 
@@ -680,7 +680,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回使用指定规则的修订列表。
+成功的响应将返回使用指定规则的修订列表。
 
 ```json
 {
@@ -830,7 +830,7 @@ curl -X GET \
 
 ### 查找规则的相关来源 {#origin}
 
-您可以通过附加来查找规则的原始（早期版本） `/origin` 到查找请求的路径。
+您可以通过附加来查找规则的来源（以前的版本） `/origin` 到查找请求的路径。
 
 **API格式**
 
@@ -858,7 +858,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定规则扩展的详细信息。
+成功的响应将返回指定规则扩展的详细信息。
 
 ```json
 {
@@ -960,7 +960,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定规则属性的详细信息。
+成功的响应将返回指定规则属性的详细信息。
 
 ```json
 {

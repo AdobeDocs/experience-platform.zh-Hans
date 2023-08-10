@@ -2,9 +2,9 @@
 title: 主机端点
 description: 了解如何在Reactor API中调用/hosts端点。
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
-source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '796'
 ht-degree: 3%
 
 ---
@@ -13,15 +13,15 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->本文档介绍了如何在Reactor API中管理主机。 有关标记主机的更多常规信息，请参阅 [主机概述](../../ui/publishing/hosts/hosts-overview.md) 在发布文档中。
+>本文档介绍如何在Reactor API中管理主机。 有关标记主机的更多常规信息，请参阅 [主机概述](../../ui/publishing/hosts/hosts-overview.md) 在发布文档中。
 
-在Reactor API中，主机定义了一个目标，其中 [生成](./builds.md) 可以投放。
+在Reactor API中，主机定义了一个目的地，其中 [生成](./builds.md) 可以交付。
 
-当Adobe Experience Platform中的标记用户请求生成内部版本时，系统会检查库以确定是哪个 [环境](./environments.md) 库应构建到。 每个环境都与一个主机有关系，指示将内部版本交付到何处。
+当Adobe Experience Platform中的标记用户请求生成内部版本时，系统会检查库以确定哪个 [环境](./environments.md) 库应该构建到。 每个环境都与主机有关系，指示将内部版本交付到何处。
 
-一个主机只属于一个 [属性](./properties.md)，而资产可以具有多个主机。 在发布之前，资产必须至少有一个主机。
+一台主机只属于一台 [属性](./properties.md)，而资产可以具有多个主机。 在发布之前，资产必须至少有一台主机。
 
-一个主机可以由资产中的多个环境使用。 资产上通常只有一台主机，并且该资产上的所有环境都使用同一台主机。
+一个主机可由一个资产中的多个环境使用。 资产上通常有一台主机，而该资产上的所有环境都使用同一台主机。
 
 ## 快速入门
 
@@ -45,7 +45,7 @@ GET /properties/{PROPERTY_ID}/hosts
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -111,7 +111,7 @@ curl -X GET \
 
 ## 查找主机 {#lookup}
 
-您可以通过在GET请求的路径中提供其ID来查找主机。
+您可以通过在GET请求的路径中提供主机的ID来查找主机。
 
 **API格式**
 
@@ -121,7 +121,7 @@ GET /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 此 `id` 要查找的主机的ID。 |
+| `HOST_ID` | 此 `id` 要查找的主机的URL。 |
 
 {style="table-layout:auto"}
 
@@ -188,13 +188,13 @@ POST /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) 要在其中定义主机的主机。 |
+| `PROPERTY_ID` | 此 `id` 的 [属性](./properties.md) ，则会在其中定义主机。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新主机。 该调用还会通过以下方式将主机与现有分机关联： `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 了解更多信息。
+以下请求为指定的属性创建新主机。 调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
@@ -228,7 +228,7 @@ curl -X POST \
 | `attributes.path` | 要附加到 `server` URL。 |
 | `attributes.port` | 一个整数，表示要使用的特定服务器端口。 |
 | `attributes.server` | 服务器的主机URL。 |
-| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接(symlink)来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 包括此属性并将其设置为时 `true`，主机将使用复制操作直接更新构建资产，而不是使用符号链接。 |
+| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接(symlink)来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 包括此属性并将其设置为时 `true`，主机会使用复制操作直接更新生成资产，而不是使用符号链接。 |
 | `attributes.username` | 身份验证的可选用户名。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
@@ -318,15 +318,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 一个对象，其属性表示主机要更新的属性。 可以为主机更新以下属性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
-| `id` | 此 `id` 要更新的主机的ID。 这应该与 `{HOST_ID}` 请求路径中提供的值。 |
+| `attributes` | 一个对象，其属性表示要为主机更新的属性。 可以为主机更新以下属性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
+| `id` | 此 `id` 要更新的主机的ID。 这应该匹配 `{HOST_ID}` 请求路径中提供的值。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应将返回更新主机的详细信息。
+成功的响应将返回已更新主机的详细信息。
 
 ```json
 {
@@ -366,7 +366,7 @@ curl -X PATCH \
 
 ## 删除主机
 
-您可以在DELETE请求的路径中包含主机ID来删除主机。
+您可以在DELETE请求的路径中包含主机ID来删除该主机。
 
 **API格式**
 
@@ -412,7 +412,7 @@ GET /hosts/{HOST_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{HOST_ID}` | 此 `id` 要查找其属性的主机的。 |
+| `{HOST_ID}` | 此 `id` 要查找其属性的主机的ID。 |
 
 {style="table-layout:auto"}
 

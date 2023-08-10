@@ -1,11 +1,11 @@
 ---
 title: 在UI中创建Chatlio源连接
 description: 了解如何使用Adobe Experience Platform UI创建Chatlio源连接。
-badge: 测试版
+badge: Beta
 exl-id: 55c10bcb-0332-45ff-970b-272d375b591d
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1167'
 ht-degree: 1%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->此 [!DNL Chatlio] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+>此 [!DNL Chatlio] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
-本教程提供了用于创建 [!DNL Chatlio] 源连接(使用Adobe Experience Platform用户界面)。
+本教程提供了用于创建 [!DNL Chatlio] 源连接，使用Adobe Experience Platform用户界面。
 
 ## 快速入门 {#getting-started}
 
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ### 用于定义源架构的JSON示例 [!DNL Chatlio] {#prerequisites-json-schema}
 
-创建之前 [!DNL Chatlio] 源连接，则需要提供源架构。 您可以使用下面的JSON。
+创建之前 [!DNL Chatlio] 源连接，您需要提供源架构。 您可以使用下面的JSON。
 
 ```
 {
@@ -50,9 +50,9 @@ ht-degree: 1%
 
 ### 为创建平台架构 [!DNL Chatlio] {#create-platform-schema}
 
-您还必须确保创建用于源的Platform架构。 阅读有关的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建架构的全面步骤。
+您还必须确保创建用于源的Platform架构。 阅读有关的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建模式的完整步骤。
 
-![显示Chatlio示例架构的平台UI](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/schema.png)
+![平台UI显示了Chatlio的示例架构](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/schema.png)
 
 ## 连接您的 [!DNL Chatlio] 帐户 {#connect-account}
 
@@ -66,16 +66,16 @@ ht-degree: 1%
 
 ## 选择数据 {#select-data}
 
-此 **[!UICONTROL 选择数据]** 步骤，为您提供了一个界面来选择要带到Platform的数据。
+此 **[!UICONTROL 选择数据]** 此时会显示步骤，提供一个界面供您选择要带到Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
-* 界面的右侧部分允许您预览来自JSON文件的最多100行数据。
+* 界面的右侧部分允许您预览JSON文件中最多100行数据。
 
-选择 **[!UICONTROL 上传文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到 [!UICONTROL 拖放文件] 面板。
+选择 **[!UICONTROL 上载文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到 [!UICONTROL 拖放文件] 面板。
 
 ![源工作流的添加数据步骤。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/add-data.png)
 
-上传文件后，预览界面会更新以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
+上传文件后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您也可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -83,7 +83,7 @@ ht-degree: 1%
 
 ## 数据流详细信息 {#dataflow-detail}
 
-此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，并提供为数据流提供名称和描述的机会。 在此步骤中，您还可以配置配置文件提取、错误诊断、部分提取和警报的设置。
+此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，以及提供数据流名称和描述的机会。 在此步骤中，您还可以配置配置文件摄取、错误诊断、部分摄取和警报的设置。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -91,9 +91,9 @@ ht-degree: 1%
 
 ## 映射 {#mapping}
 
-此 [!UICONTROL 映射] 步骤随即显示，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 映射] 此时会显示步骤，为您提供用于将源架构中的源字段映射到目标架构中相应的目标XDM字段的界面。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 下面列出的映射是强制性的，应在继续执行 [!UICONTROL 审核] 暂存。
 
@@ -107,12 +107,12 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 请查看 {#review}
 
-此 **[!UICONTROL 审核]** 步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
+此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
 * **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
+* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
 
-查看数据流后，选择 **[!UICONTROL 完成]** 并留出一些时间来创建数据流。
+查看数据流后，选择 **[!UICONTROL 完成]** 留出一段时间来创建数据流。
 
 ![源工作流的审核步骤。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/review.png)
 
@@ -120,7 +120,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 创建流数据流后，您现在可以检索流端点URL。 此端点将用于订阅您的webhook，允许您的流源与Experience Platform通信。
 
-要构建用于在上配置webhook的URL [!DNL Chatlio] 必须检索以下内容：
+用于构造用于在上配置webhook的URL [!DNL Chatlio] 您必须检索以下内容：
 
 * **[!UICONTROL 数据流ID]**
 * **[!UICONTROL 流端点]**
@@ -133,25 +133,25 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 在中设置webhook [!DNL Chatlio] {#set-up-webhook}
 
-创建webhook URL后，您现在可以使用以下代码设置webhook [!DNL Chatlio] 用户界面。
+创建webhook URL后，您现在可以使用 [!DNL Chatlio] 用户界面。
 
 登录 [[!DNL Chatlio]](https://chatlio.com/) 帐户和关注 [安装和安装指南](https://chatlio.com/docs/setup/) 创建构件。
 
-创建构件后，导航到构件的设置页面以将您的webhook URL添加到该构件。
+创建构件后，导航到构件的设置页面以将webhook URL添加到该构件。
 
 ![Chatlio上的webhook设置页面。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/widget-settings.png)
 
-接下来，选择 **[!DNL Behavior]** 制表符并将webhook URL添加到 *[!DNL Webhook when a new conversation starts]* 字段以及要订阅的任何其他webhook事件字段。
+接下来，选择 **[!DNL Behavior]** 制表符并将webhook URL添加到 *[!DNL Webhook when a new conversation starts]* 和任何其他要订阅的webhook事件字段。
 
-![显示webhook端点字段的聊天UI。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/webhook.png)
+![显示webhook端点字段的Chatlio UI。](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/webhook.png)
 
 >[!TIP]
 >
->您可以为您的订阅各种不同的事件 [!DNL Chatlio] webhook。 欲知不同事件的详情，请参阅 [[!DNL Chatlio] 事件文档](https://chatlio.com/docs/webhooks/).
+>您可以为您的订阅各种不同的事件 [!DNL Chatlio] webhook。 有关不同事件的详情，请参阅 [[!DNL Chatlio] 事件文档](https://chatlio.com/docs/webhooks/).
 
 ## 后续步骤 {#next-steps}
 
-按照本教程，您已成功配置了一个流数据流，将 [!DNL Chatlio] Experience Platform数据。 要监视正在摄取的数据，请参阅上的指南 [使用Platform UI监控流数据流](../../monitor-streaming.md).
+通过学习本教程，您已成功配置了一个流数据流，将 [!DNL Chatlio] 要Experience Platform的数据。 要监视正在摄取的数据，请参阅上的指南 [使用Platform UI监控流数据流](../../monitor-streaming.md).
 
 ## 其他资源 {#additional-resources}
 
@@ -161,12 +161,12 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 验证是否已正确设置源和 [!DNL Chatlio] 正在摄取消息，请执行以下步骤：
 
-* 您可以检查 [!DNL Chatlio] **[!UICONTROL 报告]** > **[!UICONTROL 聊天历史记录]** 用于标识所捕获的事件的页面 [!DNL Chatlio].
+* 您可以检查 [!DNL Chatlio] **[!UICONTROL 报表]** > **[!UICONTROL 聊天历史记录]** 页面识别捕获的事件 [!DNL Chatlio].
 
 ![显示聊天历史记录的Chatlio UI屏幕快照](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/chatlio-chat-history.png)
 
-* 在Platform UI中，选择 **[!UICONTROL 查看数据流]** 在 [!DNL Chatlio] 源目录中的卡菜单。 接下来，选择 **[!UICONTROL 预览数据集]** 验证为您在中配置的Webhook摄取的数据 [!DNL Chatlio].
+* 在Platform UI中，选择 **[!UICONTROL 查看数据流]** 在 [!DNL Chatlio] 源目录上的卡菜单。 接下来，选择 **[!UICONTROL 预览数据集]** 验证为您在中配置的Webhook摄取的数据 [!DNL Chatlio].
 
 ![显示已摄取事件的平台UI屏幕截图](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/platform-dataset.png)
 
-有关以下内容的其他信息 [!DNL Chatlio]，请访问 [[!DNL Chatlio] 文档](https://chatlio.com/docs/) 和 [常见问题解答](https://chatlio.com/pricing/#FAQ).
+有关其他信息 [!DNL Chatlio]，请访问 [[!DNL Chatlio] 文档](https://chatlio.com/docs/) 和 [常见问题解答](https://chatlio.com/pricing/#FAQ).

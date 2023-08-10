@@ -2,16 +2,16 @@
 title: 属性端点
 description: 了解如何在Reactor API中调用/properties端点。
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
-source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1103'
 ht-degree: 6%
 
 ---
 
 # 属性端点
 
-资产是一个容器构造，它包含Reactor API中可用的大多数其他资源。 您可以使用以下工具以编程方式管理资产： `/properties` 端点。
+资产是一个容器构造，它包含Reactor API中可用的大多数其他资源。 您可以使用以编程方式管理资产 `/properties` 端点。
 
 在资源层次结构中，属性是以下项的所有者：
 
@@ -27,7 +27,7 @@ ht-degree: 6%
 
 资产只属于一个 [公司](./companies.md). 公司可以有许多资产。
 
-有关资产及其在Tag Management中的角色的更多常规信息，请参阅的概述 [公司和资产](../../ui/administration/companies-and-properties.md).
+有关属性及其在Tag Management中的角色的更多常规信息，请参阅 [公司和资产](../../ui/administration/companies-and-properties.md).
 
 ## 快速入门
 
@@ -35,7 +35,7 @@ ht-degree: 6%
 
 ## 检索属性列表 {#list}
 
-您可以通过在GET请求的路径中包含公司的ID来检索属于公司的资产的列表。
+您可以通过在GET请求的路径中包含公司ID来检索属于公司的资产列表。
 
 **API格式**
 
@@ -45,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 此 `id` 拥有要列出的资产的公司的名称。 |
+| `COMPANY_ID` | 此 `id` 要列出的资产所属公司的名称。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -67,7 +67,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定公司的属性列表。
+成功的响应将返回指定公司的属性列表。
 
 ```json
 {
@@ -392,13 +392,13 @@ POST /company/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 此 `id` 要在其下定义资产的公司的名称。 |
+| `COMPANY_ID` | 此 `id` 要在其下定义属性的公司的名称。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求为指定的属性创建新属性。 该调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 了解更多信息。
+以下请求为指定的属性创建新属性。 调用还会通过 `relationships` 属性。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
@@ -429,19 +429,19 @@ curl -X POST \
 | --- | --- |
 | `attributes.name` | **（必需）** 易于用户识别的属性名称。 |
 | `attributes.platform` | **（必需）** 资产的平台。 可以是 `web` 对于Web资产，或者 `mobile` 或 `edge` 用于移动资产。 |
-| `attributes.domains` | **（对于Web属性是必需的）** 属性的URL域数组。 |
+| `attributes.domains` | **（Web属性需要）** 属性的URL域数组。 |
 | `attributes.development` | 指示这是否为开发属性的布尔值。 |
 | `attributes.privacy` | 一个字符串，可用于引用属性中与隐私相关的注意事项。 |
 | `attributes.rule_component_sequencing_enabled` | 一个布尔值，表示是否应为此属性启用规则组件排序。 |
-| `attributes.ssl_enabled` | 一个布尔值，用于指示是否应为此属性启用安全套接字层(SSL)。 |
-| `attributes.undefined_vars_return_empty` | 一个布尔值，用于指示是否应对此属性将未定义的变量返回为empty。 |
+| `attributes.ssl_enabled` | 一个布尔值，表示是否应为此属性启用安全套接字层(SSL)。 |
+| `attributes.undefined_vars_return_empty` | 一个布尔值，用于指示是否应将这个属性的未定义变量返回为空。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `properties`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回新创建属性的详细信息。
+成功的响应会返回新创建属性的详细信息。
 
 ```json
 {
@@ -552,7 +552,7 @@ PATCH /properties/{PROPERTY_ID}
 
 **请求**
 
-以下请求将更新 `name` 和 `domains` （对于现有资产）。
+以下请求将更新 `name` 和 `domains` 对于现有属性。
 
 ```shell
 curl -X PATCH \
@@ -578,14 +578,14 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要为该属性更新的属性。 可以为属性更新以下属性： <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | 此 `id` 要更新的属性的属性。 这应该与 `{PROPERTY_ID}` 请求路径中提供的值。 |
+| `id` | 此 `id` 要更新的属性的属性。 这应该匹配 `{PROPERTY_ID}` 请求路径中提供的值。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `properties`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回已更新属性的详细信息。
+成功的响应将返回已更新属性的详细信息。
 
 ```json
 {
@@ -710,7 +710,7 @@ curl -X DELETE \
 
 ## 管理资产的注释 {#notes}
 
-属性是“重要的”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理资产注释和其他兼容资源的详细信息。
+属性是“重要”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理资产和其他兼容资源的注释的更多信息。
 
 ## 检索资产的相关资源 {#related}
 
@@ -720,7 +720,7 @@ curl -X DELETE \
 
 ### 列出属性的相关回调 {#callbacks}
 
-您可以列出 [回调](./callbacks.md) 通过在资产中附加以下内容注册的 `/callbacks` 到查找请求的路径。
+您可以列出 [回调](./callbacks.md) 在资产上注册的 `/callbacks` 到查找请求的路径。
 
 **API格式**
 
@@ -748,7 +748,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回由指定属性拥有的回调列表。
+成功的响应将返回指定属性拥有的回调列表。
 
 ```json
 {
@@ -795,7 +795,7 @@ curl -X GET \
 
 ### 列出属性的相关数据元素 {#data-elements}
 
-您可以列出 [数据元素](./data-elements.md) 通过附加资产拥有的资产 `/data_elements` 到查找请求的路径。
+您可以列出 [数据元素](./data-elements.md) 通过追加资产拥有的资产 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -936,7 +936,7 @@ curl -X GET \
 
 ### 列出资产的相关环境 {#environments}
 
-您可以列出 [环境](./environments.md) 通过附加资产拥有的资产 `/environments` 到查找请求的路径。
+您可以列出 [环境](./environments.md) 通过追加资产拥有的资产 `/environments` 到查找请求的路径。
 
 **API格式**
 
@@ -964,7 +964,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定属性所拥有的环境的列表。
+成功的响应将返回指定属性所拥有的环境的列表。
 
 ```json
 {
@@ -1056,7 +1056,7 @@ curl -X GET \
 
 ### 列出属性的相关扩展 {#extensions}
 
-您可以列出 [扩展](./extensions.md) 通过附加资产拥有的资产 `/extensions` 到查找请求的路径。
+您可以列出 [扩展](./extensions.md) 通过追加资产拥有的资产 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -1406,7 +1406,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定资产的公司的详细信息。
+成功的响应将返回指定资产的公司的详细信息。
 
 ```json
 {

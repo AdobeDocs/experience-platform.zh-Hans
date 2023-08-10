@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
 title: 为自助源配置身份验证规范(Batch SDK)
-description: 本文档概述了要使用自助源(Batch SDK)需要准备的配置。
+description: 本文档概述了为使用自助源(Batch SDK)而需要准备的配置。
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '518'
 ht-degree: 1%
 
 ---
 
 # 为自助源配置身份验证规范(Batch SDK)
 
-身份验证规范定义Adobe Experience Platform用户连接到源的方式。
+身份验证规范定义Adobe Experience Platform用户可以如何连接到您的源。
 
-此 `authSpec` 数组包含有关将源连接到Platform所需的身份验证参数的信息。 任何给定源都可以支持多种不同类型的身份验证。
+此 `authSpec` 阵列包含有关将源连接到Platform所需的身份验证参数的信息。 任何给定的源都可以支持多种不同类型的身份验证。
 
 ## 身份验证规范
 
-自助式源（批处理SDK）支持OAuth 2刷新代码和基本身份验证。 有关使用OAuth 2刷新代码和基本身份验证的指导，请参阅下表
+自助源（批处理SDK）支持OAuth 2刷新代码和基本身份验证。 有关使用OAuth 2刷新代码和基本身份验证的指导，请参阅下表
 
 ### OAuth 2刷新代码
 
@@ -120,8 +120,8 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
 | `authSpec.spec.properties.description` | 显示凭据的简短说明。 |
 | `authSpec.spec.properties.type` | 定义凭据的数据类型。 | `string` |
-| `authSpec.spec.properties.clientId` | 与您的应用程序关联的客户端ID。 客户端ID与您的客户端密钥结合使用，以检索您的访问令牌。 |
-| `authSpec.spec.properties.clientSecret` | 与您的应用程序关联的客户端密码。 客户端密钥将与您的客户端ID结合使用，以检索您的访问令牌。 |
+| `authSpec.spec.properties.clientId` | 与您的应用程序关联的客户端ID。 客户端ID将与您的客户端密钥结合使用，以检索您的访问令牌。 |
+| `authSpec.spec.properties.clientSecret` | 与您的应用程序关联的客户端密钥。 客户端密钥将与您的客户端ID结合使用，以检索您的访问令牌。 |
 | `authSpec.spec.properties.accessToken` | 访问令牌可授权您对应用程序的安全访问。 |
 | `authSpec.spec.properties.refreshToken` | 刷新令牌用于在访问令牌过期时生成新的访问令牌。 |
 | `authSpec.spec.properties.expirationDate` | 定义访问令牌的过期日期。 |
@@ -175,7 +175,7 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
 | `authSpec.spec.properties.username` | 与您的应用程序关联的帐户用户名。 |
 | `authSpec.spec.properties.password` | 与应用程序关联的帐户密码。 |
-| `authSpec.spec.required` | 将所需的字段指定为在Platform中输入的必需值。 | `username` |
+| `authSpec.spec.required` | 指定所需的字段作为在Platform中输入的必需值。 | `username` |
 
 {style="table-layout:auto"}
 
@@ -237,4 +237,4 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 ## 后续步骤
 
-填充了身份验证规范后，您可以继续为要集成到Platform的源配置源规范。 查看文档 [配置源规范](./sourcespec.md) 了解更多信息。
+填充身份验证规范后，您可以继续配置要集成到Platform的源的源规范。 查看文档 [配置源规范](./sourcespec.md) 以了解更多信息。

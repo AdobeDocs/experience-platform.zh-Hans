@@ -1,32 +1,32 @@
 ---
 description: 了解如何格式化发送到端点的HTTP请求。 使用/authoring/destination-servers端点在Adobe Experience Platform Destination SDK中配置目标服务器模板规范。
-title: 使用Destination SDK创建的目标的模板规范
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+title: 使用Destination SDK创建的目标模板规范
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '523'
 ht-degree: 4%
 
 ---
 
 
-# 使用Destination SDK创建的目标的模板规范
+# 使用Destination SDK创建的目标模板规范
 
-使用目标服务器配置的模板规范部分配置如何设置发送到目标的HTTP请求的格式。
+使用目标服务器配置的模板规范部分配置如何格式化发送到目标的HTTP请求。
 
 在模板规范中，您可以定义如何在XDM架构和平台支持的格式之间转换配置文件属性字段。
 
 模板规范是实时（流）目标的目标服务器配置的一部分。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-server-template-configuration).
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-server-template-configuration).
 
-您可以通过以下方式为目标配置模板规范 `/authoring/destination-servers` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
+您可以通过以下方式配置目标的模板规范 `/authoring/destination-servers` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
 * [创建目标服务器配置](../../authoring-api/destination-server/create-destination-server.md)
 * [更新目标服务器配置](../../authoring-api/destination-server/update-destination-server.md)
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -39,7 +39,7 @@ ht-degree: 4%
 
 ## 配置模板规范 {#configure-template-spec}
 
-Adobe使用的模板语言类似于 [金家](https://jinja.palletsprojects.com/en/2.11.x/) 将XDM架构中的字段转换为目标支持的格式。
+Adobe使用类似于的模板语言 [金贾](https://jinja.palletsprojects.com/en/2.11.x/) 将XDM架构中的字段转换为目标支持的格式。
 
 ![突出显示的模板配置](../../assets/functionality/destination-server/template-configuration.png)
 
@@ -50,7 +50,7 @@ Adobe使用的模板语言类似于 [金家](https://jinja.palletsprojects.com/e
 
 >[!TIP]
 >
->Adobe优惠 [开发人员工具](../../testing-api/streaming-destinations/create-template.md) 以帮助您创建和测试消息转换模板。
+>Adobe选件 [开发人员工具](../../testing-api/streaming-destinations/create-template.md) 以帮助您创建和测试消息转换模板。
 
 请参阅下面的HTTP请求模板示例，以及每个参数的说明。
 
@@ -71,7 +71,7 @@ Adobe使用的模板语言类似于 [金家](https://jinja.palletsprojects.com/e
 |---|---|---|
 | `httpMethod` | 字符串 | *必需。* Adobe将在对服务器的调用中使用的方法。 支持的方法： `GET`， `PUT`， `POST`， `DELETE`， `PATCH`. |
 | `templatingStrategy` | 字符串 | *必需。*&#x200B;使用 `PEBBLE_V1`。 |
-| `value` | 字符串 | *必需。* 此字符串是模板的字符转义版本，用于将Platform发送的HTTP请求设置为目标所需的格式。 <br> 有关如何编写模板的信息，请阅读以下部分： [使用模板](message-format.md#using-templating). <br> 有关字符转义的更多信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). <br> 有关简单转换的示例，请参阅 [配置文件属性](message-format.md#attributes) 转换。 |
+| `value` | 字符串 | *必需。* 此字符串是模板的字符转义版本，用于将Platform发送的HTTP请求格式化为目标所需的格式。 <br> 有关如何编写模板的信息，请阅读以下部分： [使用模板](message-format.md#using-templating). <br> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). <br> 有关简单转换的示例，请参阅 [配置文件属性](message-format.md#attributes) 转换。 |
 | `contentType` | 字符串 | *必需。* 您的服务器接受的内容类型。 根据转换模板生成的输出类型，这可以是任何受支持的输出 [HTTP应用程序内容类型](https://www.iana.org/assignments/media-types/media-types.xhtml#application). 在大多数情况下，此值应设置为 `application/json`. |
 
 {style="table-layout:auto"}

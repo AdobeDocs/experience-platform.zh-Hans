@@ -2,34 +2,34 @@
 title: 规则组件端点
 description: 了解如何在Reactor API中调用/rule_components端点。
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '1155'
 ht-degree: 3%
 
 ---
 
 # 规则组件端点
 
-在数据收集标记中， [规则](./rules.md) 控制已部署中资源的行为 [库](./libraries.md). **规则组件** 是构成规则的各个部分。 如果规则是方法，则规则组件是构成要素之一。 此 `/rule_components` reactor API中的端点允许您以编程方式管理规则组件。
+在数据收集标记中， [规则](./rules.md) 控制已部署中资源的行为 [库](./libraries.md). **规则组件** 是构成规则的各个部分。 如果规则是处方，则规则组件是构成要素之一。 此 `/rule_components` reactor API中的端点允许您以编程方式管理规则组件。
 
 >[!NOTE]
 >
->本文档介绍了如何在Reactor API中管理规则组件。 有关如何与UI中的规则和规则组件交互的详细信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
+>本文档介绍如何在Reactor API中管理规则组件。 有关如何与UI中的规则和规则组件交互的详细信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
 规则组件具有三种基本类型：
 
 | 规则组件类型 | 描述 |
 | --- | --- |
-| 活动 | 事件是规则的触发器。 规则在客户端设备上运行时发生事件时启动。 ”[!UICONTROL 库加载]“， ”[!UICONTROL 页面顶部]“”和“”[!UICONTROL 单击]”是事件示例。 |
-| 条件 | 条件是在执行任何操作之前评估是否满足某些标准。 一旦发生事件，就会评估条件。 仅当满足所有条件时，才会执行规则的操作。 |
-| 操作 | 您希望规则实际执行的操作包括：发送Adobe Analytics信标、检索自定义访客ID或触发特定的mbox。 |
+| 活动 | 事件是规则的触发器。 规则在客户端设备上运行时发生事件时启动。 &quot;[!UICONTROL 库加载]“， ”[!UICONTROL 页面顶部]“”和“”[!UICONTROL 单击]”是事件示例。 |
+| 条件 | 条件是在执行任何操作之前是否满足特定条件的评估。 一旦发生事件，将评估条件。 仅当满足所有条件时，才会执行规则的操作。 |
+| 操作 | 您希望规则实际执行的操作包括：发送Adobe Analytics信标、检索自定义访客ID或触发特定mbox。 |
 
 {style="table-layout:auto"}
 
-规则组件只属于一个规则。 一个规则可以（且应该）具有多个规则组件。
+规则组件只属于一个规则。 一个规则可以（也应该）具有多个规则组件。
 
-规则组件仅由一个组件提供 [扩展](./extensions.md). 扩展可以提供多种规则组件类型。
+规则组件仅由一个提供 [扩展](./extensions.md). 扩展可以提供多种规则组件类型。
 
 ## 快速入门
 
@@ -53,7 +53,7 @@ GET /rules/{RULE_ID}/rule_components
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的规则组件：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性筛选列出的规则组件：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -310,13 +310,13 @@ POST /properties/{PROPERTY_ID}/rule_components
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 此 `id` ，该属性用于定义下的规则组件。 |
+| `PROPERTY_ID` | 此 `id` ，您将在其中定义规则组件。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求将创建一个新的规则组件。 在有效负载中， `relationships` 属性将组件与特定规则和现有扩展关联。 请参阅指南，网址为 [关系](../guides/relationships.md) 了解更多信息。
+以下请求将创建一个新的规则组件。 在有效负载中， `relationships` 属性将组件与特定规则和现有扩展关联。 请参阅指南，网址为 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
@@ -359,21 +359,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.delegate_descriptor_id` | **（必需）** 可定义的规则组件类型由提供 [扩展包](./extension-packages.md). 创建新规则组件时，必须提供委托描述符ID以指示此规则组件所基于的扩展包、组件的类型（事件、条件或操作）以及扩展定义的特定组件的名称（例如核心扩展中的“Click”事件）。<br><br>请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 了解更多信息。 |
+| `attributes.delegate_descriptor_id` | **（必需）** 您可以定义的规则组件类型由提供 [扩展包](./extension-packages.md). 创建新规则组件时，必须提供委托描述符ID以指示此规则组件所基于的扩展包、组件的类型（事件、条件或操作）以及扩展定义的特定组件的名称（例如核心扩展中的“Click”事件）。<br><br>请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
 | `attributes.name` | **（必需）** 易于用户识别的规则组件名称。 |
-| `attributes.delay_next` | 指示是否延迟后续操作的布尔值。 |
+| `attributes.delay_next` | 一个布尔值，指示是否延迟以后的操作。 |
 | `attributes.order` | 一个整数，指示按类型加载组件的顺序。 |
-| `attributes.rule_order` | 一个整数，指示关联规则要触发的优先级。 |
+| `attributes.rule_order` | 一个整数，指示关联规则触发的优先级。 |
 | `attributes.settings` | 以字符串表示的设置JSON对象。 |
 | `attributes.timeout` | 一个整数，指示按顺序执行的操作的超时。 |
-| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`：定义此规则组件的扩展。 这必须是扩展包由 `delegate_descriptor_id`.</li><li>`rules`：此组件在下定义的规则。</li></ol>有关关系的更多常规信息，请参阅 [关系指南](../guides/relationships.md). |
+| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`：定义此规则组件的扩展。 这必须是扩展包由指示的相同扩展 `delegate_descriptor_id`.</li><li>`rules`：此组件将定义的规则。</li></ol>有关关系的更多常规信息，请参阅 [关系指南](../guides/relationships.md). |
 | `type` | 正在创建的资源的类型。 对于此端点，值必须为 `rule_components`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功的响应将返回新创建的规则组件的详细信息。
+成功的响应会返回新创建的规则组件的详细信息。
 
 ```json
 {
@@ -513,14 +513,14 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其规则组件表示要为规则组件更新的属性。 可以为规则组件更新以下属性： <ul><li>`delay_next`</li><li>`delegate_descriptor_id`</li><li>`name`</li><li>`order`</li><li>`rule_order`</li><li>`settings`</li><li>`timeout`</li></ul> |
-| `id` | 此 `id` 要更新的规则组件的。 这应该与 `{RULE_COMPONENT_ID}` 请求路径中提供的值。 |
+| `id` | 此 `id` 要更新的规则组件的。 这应该匹配 `{RULE_COMPONENT_ID}` 请求路径中提供的值。 |
 | `type` | 正在更新的资源类型。 对于此端点，值必须为 `rule_components`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回已更新规则组件的详细信息。
+成功的响应将返回已更新规则组件的详细信息。
 
 ```json
 {
@@ -642,11 +642,11 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回HTTP状态204（无内容），且没有响应正文，这表示规则组件已被删除。
+成功的响应返回HTTP状态204（无内容），没有响应正文，这表示规则组件已被删除。
 
 ## 管理规则组件的注释 {#notes}
 
-规则组件是“重要的”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理规则组件和其他兼容资源的注释的更多信息。
+规则组件是“重要的”资源，这意味着您可以在每个资源中创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理规则组件和其他兼容资源的注释的更多信息。
 
 ## 检索规则组件的相关资源 {#related}
 
@@ -788,7 +788,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回指定规则组件的扩展的详细信息。
+成功的响应将返回指定规则组件扩展的详细信息。
 
 ```json
 {
@@ -890,7 +890,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | 此 `id` 要查找其原点的规则组件的。 |
+| `{RULE_COMPONENT_ID}` | 此 `id` 要查找其来源的规则组件。 |
 
 {style="table-layout:auto"}
 
@@ -908,7 +908,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定规则组件原点的详细信息。
+成功的响应将返回指定规则组件原点的详细信息。
 
 ```json
 {

@@ -1,12 +1,12 @@
 ---
 title: 使用自我识别调查构建Experience Platform个人资料
 description: 了解如何使用自我识别调查UI，根据您的工作职能和相关目标接收相关内容。
-badge: 测试版
+badge: Beta
 exl-id: 80b3f55f-1eab-4a99-be75-49bd091f9739
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '561'
-ht-degree: 1%
+source-wordcount: '560'
+ht-degree: 4%
 
 ---
 
@@ -16,11 +16,11 @@ ht-degree: 1%
 >
 >自我识别调查处于测试阶段。 其功能和文档可能会发生更改。
 
-自我识别调查是在Adobe Experience Platform UI主页中提供的简短调查问卷。 您可以填写调查表以提供有关工作职能和一般目标的信息。 然后，可使用此信息更好地协调产品内指南，并最终提供与目标更相关的内容。
+自我认同调查是 Adobe Experience Platform UI 主页中提供的简短调查问卷。您可以填写调查表以提供有关您的工作职能和一般目标的信息。 然后，可使用此信息更好地调整产品内指南，最终提供与您的目标更相关的内容。
 
-本文档介绍了如何在Platform UI中使用自我识别调查来接收基于您的目标和任务的相关内容，以及如何使用UI重新配置个人配置文件属性。
+本文档介绍了如何在Platform UI中使用自我识别调查来根据您的目标和任务接收相关内容，以及如何使用UI重新配置个人配置文件属性。
 
-要了解有关Adobe Experience Platform的更多信息，请阅读 [Experience Platform概述](home.md).
+要进一步了解Adobe Experience Platform，请阅读 [Experience Platform概述](home.md).
 
 ## Platform UI中的自我识别调查
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 要开始调查，请选择 **[!UICONTROL 开始]**.
 
-![Platform UI主页，其中显示Toast消息，提示您开始自我识别调查。](./images/survey/survey-prompt.png)
+![Platform UI主页，其中显示toast消息，提示您开始自我识别调查。](./images/survey/survey-prompt.png)
 
 对于第一个调查问题，请选择最能描述您工作的函数。
 
@@ -59,7 +59,7 @@ ht-degree: 1%
 * 为我的组织的数据结构建模
 * 查询、筛选和优化数据以生成见解
 * 配置同意和数据策略
-* 数据治理和隐私合规性
+* 数据治理和隐私合规
 * 制定营销策略
 * 创建、管理和细分受众
 * 设置仪表板以分析业务影响
@@ -67,7 +67,7 @@ ht-degree: 1%
 
 完成后，选择 **[!UICONTROL 提交]**.
 
-![自我标识调查，显示您可以从中进行选择的目标列表。](./images/survey/select-objectives.png)
+![自我识别调查，显示您可以从中进行选择的目标列表。](./images/survey/select-objectives.png)
 
 完成自我识别调查后，选择 **[!UICONTROL 完成]**.
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 ## 更新您的调查回复
 
-使用Experience Cloud首选项菜单更新工作功能和对象。 要访问首选项菜单，请在顶部导航上选择您的配置文件图标，然后选择 **[!UICONTROL 首选项]**.
+使用Experience Cloud首选项菜单更新您的工作函数和对象。 要访问首选项菜单，请在顶部导航上选择您的配置文件图标，然后选择 **[!UICONTROL 偏好设置]**.
 
 ![Platform UI主页，其中包含选定的配置文件图标和首选项按钮。](./images/survey/preferences.png)
 
@@ -87,10 +87,10 @@ ht-degree: 1%
 
 ![Platform UI配置文件首选项页面的“常规”部分](./images/survey/update.png)
 
-此时会显示自我识别调查，允许您重新配置响应并更新用户档案。
+此时会显示自我识别调查，允许您重新配置响应并更新配置文件。
 
 ![Platform UI配置文件首选项页面显示自我识别调查，以允许用户更新其个人配置文件。](./images/survey/new-survey.png)
 
 ## 后续步骤
 
-通过阅读本文档，您现在已提交并更新了有关工作职能和目标的信息，以便在使用Platform UI时接收更相关的内容。 有关Platform UI的更多信息，请阅读 [Experience Platform概述](home.md).
+通过阅读本文档，您现在已提交并更新了有关工作职能和目标的信息，以便在使用Platform UI时接收更相关的内容。 有关Platform UI的更多信息，请参阅 [Experience Platform概述](home.md).

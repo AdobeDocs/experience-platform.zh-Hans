@@ -4,9 +4,9 @@ description: 了解如何使用API通过云存储批处理源摄取加密文件�
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: d05202fc1e64bbb06c886aedbe59e07c45f80686
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1342'
 ht-degree: 2%
 
 ---

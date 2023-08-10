@@ -1,21 +1,21 @@
 ---
-description: 本页提供了您需要提交以供审阅使用Destination SDK编写的生产目标的所有信息。
-title: 提交供审查在Destination SDK中创作的已生产目的地
+description: 本页提供了您需要提交以供审阅使用Destination SDK创作的生产化目标的所有信息。
+title: 提交供审查在Destination SDK中创作的产品化目的地
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
 
-# 提交供审查在Destination SDK中创作的已生产目的地
+# 提交供审查在Destination SDK中创作的产品化目的地
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->* 此处记录的流程仅适用于提交生产（公共）目标的合作伙伴。 如果您正在创建一个专用目标供您自己使用，则无需制作这些材料并将其与Adobe共享。
+>* 此处记录的流程仅适用于提交生产（公共）目标的合作伙伴。 如果您正在创建供自己使用的专用目标，则无需制作这些材料并将其与Adobe共享。
 >
 >* Adobe审查目标发布请求的标准响应时间为五个工作日。
 >
@@ -23,44 +23,44 @@ ht-degree: 0%
 >
 >* 即使您的目标在Experience Platform目录中处于活动状态，但是如果您需要对配置进行任何更新，则必须提交新的目标发布请求，才能将更新反映在配置中。
 
-将目标发布到之前 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，您必须向Adobe提供有关目标和所执行测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
+在将目标发布到之前 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，您必须向Adobe提供有关目标和所执行测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
 本页列出了提交或更新使用Adobe Experience Platform Destination SDK编写的目标时需要提供的所有信息。 要在Adobe Experience Platform中成功提交目标，请发送电子邮件至 <aepdestsdk@adobe.com> 其中包括：
 
-* 目标解决的使用案例描述。 只有在提交新的目标配置时，才需要执行此操作。
-* 目标提交原因的描述。 只有在更新现有目标配置时，才需要执行此操作。
-* 使用测试目标API端点对您的目标执行HTTP调用后的测试结果。 请与Adobe共享对您的目标端点进行的API调用以及从目标端点收到的API响应。
+* 目标解决的使用案例描述。 只有在提交新的目标配置时才需要此操作。
+* 目标提交原因的描述。 只有在更新现有目标配置时才需要此项。
+* 使用测试目标API端点对目标执行HTTP调用后的测试结果。 请与Adobe共享对您的目标端点进行的API调用以及从目标端点接收的API响应。
 * 基于文件的目标的其他要求：
    * 使用测试API将请求和响应示例共享到 [使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md).
-   * 附加一个由目标生成并导出到存储位置的样例文件。
+   * 附加由目标生成并导出到存储位置的样例文件。
    * 提交某种形式的证明，证明您已成功将导出的文件从存储位置摄取到系统中。
-* 证明您已使用以下工具提交针对您的目标发布请求： [目标发布API](../publishing-api/create-publishing-request.md).
+* 证明您已使用提交针对您的目标发布请求的目标 [目标发布API](../publishing-api/create-publishing-request.md).
 * 文档PR（拉取请求），按照 [自助式文档流程](../docs-framework/documentation-instructions.md).
-* 在Experience Platform目标目录中作为目标卡的徽标显示的图像文件。
+* 在Experience Platform目标目录中显示为您的目标卡徽标的图像文件。
 
 您可以在以下部分中找到有关每个项目的详细信息：
 
 ## 用例描述 {#use-case-description}
 
-提供目标为Experience Platform客户解决的使用案例描述。 您的说明可能与现有合作伙伴的用例类似：
+描述您的目标为Experience Platform客户解决的用例。 您的描述可能与现有合作伙伴的用例类似：
 
-* [pinterest](/help/destinations/catalog/advertising/pinterest.md)：根据您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人创建受众。
-* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases)：DataX API可用于广告商，这些广告商希望在Verizon Media (VMG)中定位以电子邮件地址作为关键字的特定受众组，然后可以使用VMG的近实时API快速创建新受众并推送所需的受众组。
+* [pinterest](/help/destinations/catalog/advertising/pinterest.md)：根据您的客户列表、访问过您网站的人或已在Pinterest上与您的内容交互的人创建受众。
+* [Yahoo数据X](/help/destinations/catalog/advertising/datax.md#use-cases)：DataX API可用于广告商，这些广告商希望将Verizon Media (VMG)中的电子邮件地址作为目标特定受众组，它们可以使用VMG的近乎实时API快速创建新受众并推送所需的受众组。
 
 ## 更新原因 {#reason-for-update}
 
 >[!NOTE]
 >
->只有在更新现有配置时，才需要此部分。
+>仅当更新现有配置时，才需要此部分。
 
-简要介绍您的提交解决现有目标的问题。 例如，当您从Beta版过渡到正式发布版时，您提交的内容可能会更新目标的名称、描述和徽标。 或者，您的提交可能会修复在目标配置中发现的一个错误。
+简要介绍您的提交解决现有目标的问题。 例如，在您从测试版过渡到正式发布时，您提交的内容可能会更新目标的名称、描述和徽标。 或者，您的提交可能会修复在目标配置中发现的一个错误。
 
 ## 使用测试目标API后的测试结果 {#testing-api-response}
 
-使用后提供测试结果 [测试目标API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) 端点，以对您的目标执行HTTP调用。 这包括：
+使用后提供测试结果 [测试目标API](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) 端点执行HTTP调用到您的目标。 这包括：
 
 * 使用测试API向目标端点发出完整API请求（标头和正文）。
-* 从目标端点收到的API响应。
+* 从目标端点接收的API响应。
 
 例如，您的请求和响应可能类似于以下示例：
 
@@ -231,19 +231,19 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ### 测试API响应 {#testing-api-response-file-based}
 
-使用测试API将请求和响应示例包含到中 [使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md).
+使用测试API将请求和响应示例包含到 [使用示例配置文件测试基于文件的目标](../testing-api/batch-destinations/file-based-destination-testing-api.md).
 
 ### 附加导出的文件 {#attach-exported-file}
 
-在您的 [提交电子邮件](#download-sample-email)，附加由您设置的目标导出到存储位置的CSV文件。
+在您的 [提交电子邮件](#download-sample-email)，请附加一个您设置的目标已导出到您的存储位置的CSV文件。
 
-### 成功摄取的证明 {#proof-of-successful-ingestion}
+### 摄取成功的证明 {#proof-of-successful-ingestion}
 
-最后，您必须提供某种形式的证明，证明将数据导出到您提供的存储位置后，数据已成功引入到系统中。 请提供以下任意项目：
+最后，您必须提供某种形式的证明，以证明将数据导出到您提供的存储位置后，数据已成功引入到系统中。 请提供以下任意项目：
 
 * 屏幕截图或简短的屏幕截图视频，您可以在其中手动从存储位置获取文件并将其摄取到系统中。
 * 屏幕截图或简短的屏幕截图视频，其中系统的UI用于确认Experience Platform生成的文件名已成功摄取到系统中。
-* 系统中的日志行，这些Adobe可以与文件名或从Experience Platform生成的数据相关联。
+* Adobe中的日志行可以与文件名或从Experience Platform生成的数据相关联。
 
 ## 证明您已提交目标发布请求 {#destination-publishing-request-proof}
 
@@ -257,7 +257,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 目标徽标 {#logo}
 
-目标目录包含每个目标卡的徽标。 在您的提交电子邮件中，包含带有目标徽标的图像。
+目标目录包含每个目标卡的徽标。 在提交电子邮件中，加入带有目标徽标的图像。
 
 图像要求包括：
 * **格式**: `SVG`
@@ -265,4 +265,4 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 下载示例电子邮件 {#download-sample-email}
 
-[下载](../assets/guides/sample-email-submit-destination.rtf) 包含您需要提供以供Adobe的所有信息的示例电子邮件。
+[下载](../assets/guides/sample-email-submit-destination.rtf) 包含您需要提供给Adobe的所有信息的示例电子邮件。

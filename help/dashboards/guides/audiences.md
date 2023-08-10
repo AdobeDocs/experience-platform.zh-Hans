@@ -4,9 +4,9 @@ title: 受众功能板指南
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织已创建受众的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2231'
 ht-degree: 7%
 
 ---
@@ -156,7 +156,7 @@ Adobe提供了多个标准构件，可用于可视化与受众相关的各种指
 
 ### [!UICONTROL 受众重叠] {#audience-overlap}
 
-此构件使用维恩图可视化符合两个受众条件的人员数量。 从小组件下拉菜单中选择用于比较的受众。 通过将鼠标悬停在维恩图的圆或相交部分上，可以看到相关区段定义中包含的配置文件总数。
+此构件使用维恩图可视化符合两个受众条件的人员数量。 从小组件下拉菜单中选择用于比较的受众。 通过将鼠标悬停在维恩图的圆或相交部分上，可以看到相关段定义中包含的配置文件总数。
 
 利用此小组件，可通过可视化区段定义结果中的相似之处，优化分段策略。
 

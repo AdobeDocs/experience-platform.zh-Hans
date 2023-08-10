@@ -4,9 +4,9 @@ title: 配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 29c93c178a1f6247b61c663e87dbb0e5b95d318e
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '3520'
+source-wordcount: '3519'
 ht-degree: 10%
 
 ---

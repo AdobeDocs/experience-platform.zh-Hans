@@ -2,18 +2,18 @@
 title: 扩展端点
 description: 了解如何在Reactor API中调用/extensions端点。
 exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '940'
 ht-degree: 4%
 
 ---
 
 # 扩展端点
 
-在Reactor API中，扩展表示已安装的 [扩展包](./extension-packages.md). 扩展使扩展包定义的功能对可用 [属性](./properties.md). 在创建时，将使用这些功能 [扩展](./data-elements.md) 和 [规则组件](./rule-components.md).
+在Reactor API中，扩展表示已安装的 [扩展包](./extension-packages.md). 扩展使扩展包定义的功能对可用 [属性](./properties.md). 创建时使用这些功能 [扩展](./data-elements.md) 和 [规则组件](./rule-components.md).
 
-扩展只属于一个资产。 一个资产可以具有多个扩展，但给定的扩展包最多只能有一个已安装的实例。
+扩展只属于一个资产。 资产可以具有多个扩展，但给定的扩展包最多只能有一个已安装的实例。
 
 ## 快速入门
 
@@ -37,7 +37,7 @@ GET properties/{PROPERTY_ID}/extensions
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -160,7 +160,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除扩展时，会在系统中将其标记为已删除，但实际上并不会将其删除。 因此，可以检索已删除的扩展。 删除的扩展可以通过存在 `deleted_at` 中的属性 `meta` 返回扩展数据的ID。
+>删除扩展时，会在系统中将其标记为已删除，但实际上并不会将其删除。 因此，可以检索已删除的扩展。 可以通过存在以下项来标识已删除的扩展： `deleted_at` 中的属性 `meta` 返回扩展数据的ID。
 
 **API格式**
 
@@ -170,7 +170,7 @@ GET /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 此 `id` 要查找的扩展的ID。 |
+| `EXTENSION_ID` | 此 `id` 要查找的扩展的开头。 |
 
 {style="table-layout:auto"}
 
@@ -326,8 +326,8 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `relationships.extension_package` | **（必需）** 引用正在安装的扩展包的ID的对象。 |
-| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 了解更多信息。 |
-| `attributes.enabled` | 布尔值，指示是否启用该扩展。 |
+| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 请参阅指南，网址为 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
+| `attributes.enabled` | 布尔值，指示扩展是否已启用。 |
 | `attributes.settings` | 以字符串表示的设置JSON对象。 |
 
 {style="table-layout:auto"}
@@ -468,13 +468,13 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 要修订的属性。 对于扩展，您可以修改其 `delegate_descriptor_id`， `enabled`、和 `settings` 属性。 |
-| `meta.action` | 必须包含值 `revise` 进行修订时。 |
+| `meta.action` | 必须包含在值中 `revise` 进行修订时。 |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回修订后的扩展的详细信息，其中包含 `meta.latest_revision_number` 属性增加了1。
+成功响应将返回修订后的扩展的详细信息，以及 `meta.latest_revision_number` 属性增加了1。
 
 ```json
 {
@@ -592,11 +592,11 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回HTTP状态204（无内容），且没有响应正文，这表示扩展已被删除。
+成功的响应返回HTTP状态204（无内容），并且没有响应正文，这表示扩展已被删除。
 
 ## 管理扩展的注释 {#notes}
 
-扩展是“重要的”资源，这意味着您可以为每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理扩展和其他兼容资源的注释的更多信息。
+扩展是“重要”资源，这意味着您可以针对每个资源创建和检索基于文本的注释。 请参阅 [注释端点指南](./notes.md) 有关如何管理扩展和其他兼容资源的注释的更多信息。
 
 ## 检索扩展的相关资源 {#related}
 
@@ -606,7 +606,7 @@ curl -X DELETE \
 
 ### 列出扩展的相关库 {#libraries}
 
-您可以通过附加来列出使用扩展的库 `/libraries` 到查找请求的路径。
+您可以通过附加来列出利用扩展的库 `/libraries` 到查找请求的路径。
 
 **API格式**
 
@@ -726,9 +726,9 @@ curl -X GET \
 }
 ```
 
-### 列出扩展的相关修订 {#revisions}
+### 列出扩展的相关修订版本 {#revisions}
 
-您可以通过附加来列出扩展的先前修订 `/revisions` 到查找请求的路径。
+您可以通过附加以下内容来列出扩展的先前修订版本 `/revisions` 到查找请求的路径。
 
 **API格式**
 
@@ -952,7 +952,7 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 此 `id` 要查找其扩展的扩展。 |
+| `{EXTENSION_ID}` | 此 `id` 要查找的扩展的扩展名。 |
 
 {style="table-layout:auto"}
 
@@ -1205,7 +1205,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回指定扩展源的详细信息。
+成功的响应将返回指定扩展源的详细信息。
 
 ```json
 {
@@ -1297,7 +1297,7 @@ curl -X GET \
 
 ### 查找扩展的相关属性 {#property}
 
-您可以通过附加来查找拥有扩展的资产 `/property` 到GET请求的路径。
+您可以通过附加以下内容来查找拥有扩展的资产 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -1325,7 +1325,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回拥有指定扩展的属性的详细信息。
+成功的响应将返回拥有指定扩展的属性的详细信息。
 
 ```json
 {

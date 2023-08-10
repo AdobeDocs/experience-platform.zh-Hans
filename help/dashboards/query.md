@@ -2,28 +2,28 @@
 solution: Experience Platform
 title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
-description: 了解如何使用查询服务来探索和处理原始数据集，以便在Experience Platform中提升用户档案、受众和目标仪表板的性能。
+description: 了解如何使用查询服务在Experience Platform中探索和处理为配置文件、受众和目标仪表板提供支持的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 79966442f5333363216da17342092a71335a14f0
+source-git-commit: c431973100cc65d99d9466553fe6624ac2653d4b
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '946'
 ht-degree: 0%
 
 ---
 
 # 使用以下方式浏览、验证和处理功能板数据集 [!DNL Query Service]
 
-Adobe Experience Platform通过Experience PlatformUI中提供的功能板，提供有关您组织的个人资料、受众和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理数据湖中用于驱动这些功能板的原始数据集。
+Adobe Experience Platform通过Experience PlatformUI中提供的功能板，可提供有关贵组织配置文件、受众和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理原始数据集，以便为数据湖中的这些功能板供电。
 
 ## 快速入门 [!DNL Query Service]
 
-Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标准SQL在Data Lake中查询数据，从他们的数据中获取见解。 [!DNL Query Service] 提供了一个用户界面和API，可用于连接数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、机器学习或将其摄取到Real-time Customer Profile中。
+Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标准SQL在Data Lake中查询数据，从其数据中获得见解。 [!DNL Query Service] 提供了一个用户界面和API，可用于连接数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、机器学习或将其摄取到Real-time Customer Profile中。
 
 要了解有关 [!DNL Query Service] 及其在Experience Platform中的角色，请首先阅读 [[!DNL Query Service] 概述](../query-service/home.md).
 
 ## 访问可用数据集
 
-您可以使用 [!DNL Query Service] 查询个人资料、受众和目标功能板的原始数据集。 要查看可用数据集，请在Experience PlatformUI中，选择 **数据集** 在左侧导航中打开数据集仪表板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
+您可以使用 [!DNL Query Service] 查询个人资料、受众和目标功能板的原始数据集。 要查看可用数据集，请在Experience PlatformUI中，选择 **数据集** 在左侧导航中打开数据集功能板。 仪表板列出您组织的所有可用数据集。 将显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近一次摄取运行的状态。
 
 ![左侧导航中突出显示“数据集”选项卡的数据集浏览仪表板。](./images/query/browse-datasets.png)
 
@@ -31,21 +31,21 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 >[!IMPORTANT]
 >
->默认情况下，系统生成的数据集是隐藏的。 默认情况下， [!UICONTROL 浏览] 选项卡仅显示您已将数据摄取到的数据集。
+>默认情况下，系统生成的数据集处于隐藏状态。 默认情况下， [!UICONTROL 浏览] 选项卡仅显示您已将数据摄取到的数据集。
 
 要查看系统生成的数据集，请选择过滤器图标(![过滤器图标。](./images/query/filter.png))。
 
-![突出显示过滤器图标的数据集浏览选项卡。](./images/query/filter-datasets.png)
+![数据集浏览选项卡，过滤器图标突出显示。](./images/query/filter-datasets.png)
 
-此时会显示一个侧栏，其中包含两个切换， [!UICONTROL 包含在配置文件中] 和 [!UICONTROL 显示系统数据集]. 选择切换 [!UICONTROL 显示系统数据集] 在数据集的可浏览列表中包含系统生成的数据集。
+此时会显示一个侧栏，其中包含两个切换， [!UICONTROL 包含在配置文件中] 和 [!UICONTROL 显示系统数据集]. 选择切换 [!UICONTROL 显示系统数据集] 将系统生成的数据集包含在可浏览的数据集列表中。
 
 ![突出显示显示系统数据集切换开关的数据集浏览选项卡。](./images/query/show-system-datasets.png)
 
 ### 配置文件属性数据集
 
-配置文件仪表板分析绑定到您的组织定义的合并策略。 对于每个活动的合并策略，数据湖中都有一个可用的配置文件属性数据集。
+配置文件仪表板分析绑定到您的组织定义的合并策略。 对于每个活动合并策略，数据湖中都有一个可用的配置文件属性数据集。
 
-这些数据集的命名规则是 **Profile-Snapshot-Export** 后跟系统生成的随机字母数字值。 例如：`Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`。
+这些数据集的命名规则为 **配置文件 — 快照 — 导出** 后跟系统生成的随机字母数值。 例如：`Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`。
 
 要了解每个配置文件快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
@@ -68,29 +68,25 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 数据湖中有一个可用的受众元数据数据集，其中包含您组织的每个受众的元数据。
 
-此数据集的命名约定是 **段定义 — 快照 — 导出** 后跟一个字母数字值。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
+此数据集的命名规则为 **段定义 — 快照 — 导出** 后跟一个字母数字值。 例如：`Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
 要了解每个区段定义快照导出数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
 ### 目标元数据数据集
 
-贵组织所有已激活目标的元数据作为原始数据集在数据湖中提供。
+您组织的所有激活目标的元数据将作为数据湖中的原始数据集提供。
 
-此数据集的命名约定是 **DIM_Destination**.
+此数据集的命名规则为 **DIM_Destination**.
 
-要了解DIM目标数据集的完整架构，您可以预览和浏览数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
+要了解DIM目标数据集的完整架构，您可以预览和浏览该数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
 ![DIM_Destination数据集的预览。](images/query/destinations-metadata.png)
 
-## （测试版）客户数据平台(CDP)分析报表
+## 客户数据平台(CDP)分析报表
 
->[!IMPORTANT]
->
->CDP分析数据模型功能处于测试阶段。 其功能和文档可能会发生更改。
+CDP分析数据模型功能会公开支持各种个人资料、目标和分段构件的分析的SQL。 您可以自定义这些SQl查询模板，以便为营销和KPI用例创建CDP报告。
 
-CDP分析数据模型功能可公开支持各种用户档案、目标和分段构件的分析的SQL。 您可以自定义这些SQl查询模板，以便为营销和KPI用例创建CDP报告。
-
-CDP报告可让您深入了解个人资料数据及其与受众和目标的关系。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
+CDP报告可提供有关您的配置文件数据及其与受众和目标的关系的见解。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档。 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
 
 ## 示例查询
 
@@ -98,11 +94,11 @@ CDP报告可让您深入了解个人资料数据及其与受众和目标的关�
 
 ### 按身份列出的配置文件计数
 
-此配置文件分析提供数据集中所有合并配置文件中的身份划分。
+此配置文件分析提供数据集中所有合并配置文件中的身份细分。
 
 >[!NOTE]
 >
->按身份划分的配置文件总数（即为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
+>按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
 **查询**
 
@@ -121,9 +117,9 @@ Select
         namespace;
 ```
 
-### 按受众列出的配置文件数
+### 按受众列出的配置文件计数
 
-此受众分析提供数据集中每个受众中合并的配置文件总数。 此数字是将受众合并策略应用于配置文件数据以将配置文件片段合并在一起，从而形成受众中每个人的单个配置文件的结果。
+此受众分析提供数据集中每个受众中合并的用户档案总数。 此数字是将受众合并策略应用于配置文件数据以将配置文件片段合并在一起，从而形成受众中每个人的单个配置文件的结果。
 
 ```sql
 Select          
@@ -148,6 +144,6 @@ Select
 
 ## 后续步骤
 
-通过阅读本指南，您现在可以使用 [!DNL Query Service] 执行多个查询以浏览并处理原始数据集，为您的个人资料、受众和目标功能板提供支持。
+通过阅读本指南，您现在可以使用 [!DNL Query Service] 执行多个查询以浏览和处理用于提升您的配置文件、受众和目标功能板的原始数据集。
 
 要了解有关每个功能板及其量度的更多信息，请从文档导航中的可用功能板列表中选择一个功能板。

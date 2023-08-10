@@ -2,18 +2,18 @@
 title: 密钥端点
 description: 了解如何在Reactor API中调用/secrets端点。
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
-source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1247'
+source-wordcount: '1246'
 ht-degree: 4%
 
 ---
 
 # 密钥端点
 
-密码是仅存在于事件转发属性(具有 `platform` 属性设置为 `edge`)。 它们允许事件转发向另一个系统验证以进行安全的数据交换。
+机密是仅存在于事件转发属性（具有的属性）中的资源 `platform` 属性设置为 `edge`)。 它们允许事件转发向另一个系统验证以进行安全的数据交换。
 
-本指南向您说明如何调用 `/secrets` reactor API中的端点。 有关不同密钥类型及其使用方式的详细说明，请参阅以下高级概述： [密钥](../guides/secrets.md) 然后再参阅本指南。
+本指南向您说明如何调用 `/secrets` reactor API中的端点。 有关不同密钥类型及其使用方法的详细说明，请参阅 [密钥](../guides/secrets.md) 然后再参阅本指南。
 
 ## 快速入门
 
@@ -145,7 +145,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回属于环境的密钥列表。
+成功的响应将返回属于环境的密钥列表。
 
 ```json
 {
@@ -211,9 +211,9 @@ curl -X GET \
 }
 ```
 
-## 查找密码 {#lookup}
+## 查找密钥 {#lookup}
 
-通过在GET请求的路径中包含某个密码的ID，可以查找该密码。
+通过在GET请求的路径中包含某个密码的ID，您可以查找该密码。
 
 **API格式**
 
@@ -241,7 +241,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回密码的详细信息。
+成功的响应将返回密码的详细信息。
 
 ```json
 {
@@ -302,7 +302,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->创建新密钥时，API会返回包含该资源信息的即时响应。 同时，触发一个秘密交换任务，以测试凭据交换是否正常运行。 异步处理此任务，并将密码的状态属性更新为 `succeeded` 或 `failed` 取决于结果。
+>创建新密钥时，API会返回包含该资源信息的即时响应。 同时，触发秘密交换任务，以测试凭证交换是否正常工作。 此任务以异步方式处理，并将密码的状态属性更新为 `succeeded` 或 `failed` 取决于结果。
 
 **API格式**
 
@@ -312,7 +312,7 @@ POST /properties/{PROPERTY_ID}/secrets
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要在其下定义密码的属性ID。 |
+| `{PROPERTY_ID}` | 要在其下定义密码的属性的ID。 |
 
 {style="table-layout:auto"}
 
@@ -352,16 +352,16 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 密钥的唯一描述性名称。 |
-| `type_of` | 密钥表示的身份验证凭据的类型。 具有三个接受的值：<ul><li>`token`：令牌字符串。</li><li>`simple-http`：用户名和密码。</li><li>`oauth2`：符合OAuth标准的凭据。</li></ul> |
-| `credentials` | 包含密码的凭据值的对象。 根据 `type_of` 属性，必须提供不同的属性。 请参阅以下部分： [凭据](../guides/secrets.md#credentials) 有关每种类型要求的详细信息，请参阅密钥指南。 |
-| `relationships.environment` | 每个密钥必须在首次创建时与环境相关联。 此 `data` 此属性中的对象必须包含 `id` 将密码分配给的环境，以及 `type` 值 `environments`. |
+| `type_of` | 密码表示的身份验证凭据的类型。 具有三个接受的值：<ul><li>`token`：令牌字符串。</li><li>`simple-http`：用户名和密码。</li><li>`oauth2`：符合OAuth标准的凭据。</li></ul> |
+| `credentials` | 包含密码的凭据值的对象。 根据 `type_of` 属性，必须提供不同的属性。 请参阅以下部分 [凭据](../guides/secrets.md#credentials) 有关每种类型的要求的详细信息，请参阅密钥指南。 |
+| `relationships.environment` | 每个密钥必须在首次创建时与环境相关联。 此 `data` 此属性中的对象必须包含 `id` 要分配到的环境的密钥，以及 `type` 值 `environments`. |
 | `type` | 正在创建的资源的类型。 对于此调用，值必须为 `secrets`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回密码的详细信息。 请注意，根据密码的类型，下面的一些属性 `credentials` 可能隐藏。
+成功的响应将返回密码的详细信息。 请注意，根据密码的类型，某些属性位于 `credentials` 可能被隐藏。
 
 ```json
 {
@@ -421,9 +421,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->只能对密码执行此操作 `type_of` 值 `oauth2`.
+>此操作只能对具有的密码执行 `type_of` 值 `oauth2`.
 
-您可以测试 `oauth2` 通过在PATCH请求的路径中包含其ID来加密。 测试操作执行交换并将授权服务响应包括在 `test_exchange` 密码的属性 `meta` 对象。 此操作不会更新密码本身。
+您可以测试 `oauth2` 通过在PATCH请求的路径中包含其ID来保密。 测试操作执行交换并将授权服务响应包括在 `test_exchange` 秘密的属性 `meta` 对象。 此操作不会更新密码本身。
 
 **API格式**
 
@@ -463,8 +463,8 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 必须包含 `type_of` 具有值的属性 `oauth2`. |
-| `meta` | 必须包含 `action` 具有值的属性 `test`. |
+| `attributes` | 必须包含 `type_of` 值为的属性 `oauth2`. |
+| `meta` | 必须包含 `action` 值为的属性 `test`. |
 | `id` | 您正在测试的密码的ID。 这必须与请求路径中提供的ID匹配。 |
 | `type` | 正在操作的资源的类型。 必须设置为 `secrets`. |
 
@@ -472,7 +472,7 @@ curl -X PATCH \
 
 **响应**
 
-成功响应将返回密码的详细信息，授权服务的响应包含在 `meta.test_exchange`.
+成功的响应会返回密钥的详细信息，授权服务的响应包含在 `meta.test_exchange`.
 
 ```json
 { 
@@ -540,7 +540,7 @@ curl -X PATCH \
 
 ## 重试密码 {#retry}
 
-重试密钥是手动触发密钥交换的操作。 您可以在PATCH请求的路径中包含密码的ID来重试该密码。
+重试密钥是手动触发密钥交换的操作。 通过在PATCH请求的路径中包含密码的ID，可以重试该密码。
 
 **API格式**
 
@@ -581,15 +581,15 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 必须包含 `type_of` 与正在更新的密码的属性匹配的属性(`token`， `simple-http`，或 `oauth2`)。 |
-| `meta` | 必须包含 `action` 具有值的属性 `retry`. |
-| `id` | 您正在重试的密码的ID。 这必须与请求路径中提供的ID匹配。 |
+| `meta` | 必须包含 `action` 值为的属性 `retry`. |
+| `id` | 您正在重试的机密的ID。 这必须与请求路径中提供的ID匹配。 |
 | `type` | 正在操作的资源的类型。 必须设置为 `secrets`. |
 
 {style="table-layout:auto"}
 
 **响应**
 
-成功响应将返回密码的详细信息，其状态将重置为 `pending`. 交换完成后，密码的状态将更新为 `succeeded` 或 `failed` 取决于结果。
+成功的响应将返回密码的详细信息，其状态将重置为 `pending`. 交换完成后，密码的状态将更新为 `succeeded` 或 `failed` 取决于结果。
 
 ```json
 {
@@ -646,7 +646,7 @@ curl -X PATCH \
 
 ## 重新授权 `oauth2-google` 密码 {#reauthorize}
 
-每个 `oauth2-google` 密码包含 `meta.authorization_url_expires_at` 指示授权URL何时到期的属性。 在此时间之后，必须重新授权密钥，才能续订身份验证过程。
+每个 `oauth2-google` 密码包含 `meta.authorization_url_expires_at` 指示授权URL何时到期的属性。 在此时间之后，必须重新授权密钥，才能更新身份验证过程。
 
 要重新授权 `oauth2-google` 秘诀，对相关秘诀提出PATCH请求。
 
@@ -658,7 +658,7 @@ PATCH /secrets/{SECRET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SECRET_ID}` | 此 `id` 要重新授权的密码。 |
+| `{SECRET_ID}` | 此 `id` 要重新授权的秘密。 |
 
 **请求**
 
@@ -688,7 +688,7 @@ curl -X PATCH \
 
 **响应**
 
-成功响应将返回已更新密钥的详细信息。 您必须从此处复制并粘贴 `meta.authorization_url` ，以完成授权过程。
+成功的响应将返回已更新密钥的详细信息。 您必须从此处复制并粘贴 `meta.authorization_url` 导入浏览器以完成授权过程。
 
 ```json
 {
@@ -753,13 +753,13 @@ curl -X PATCH \
 
 ## 删除密码 {#delete}
 
-通过在DELETE请求的路径中包含密码的ID，可以删除该密码。 这是一个硬删除，会立即生效，并且不需要重新发布库。
+通过在DELETE请求的路径中包含密码的ID，可以删除密码。 这是硬删除，会立即生效，无需重新发布库。
 
 此操作会从与其相关的环境中删除密码，并删除基础资源。
 
 >[!WARNING]
 >
->如果您有任何引用已删除机密的已部署规则，这些规则将立即停止运行。 任何引用此密码的数据元素之后都必须更新或删除。
+>如果您有任何已部署的规则引用了已删除的密钥，则这些规则将立即停止运行。 以后必须更新或删除引用此密码的任何数据元素。
 
 **API格式**
 
@@ -825,7 +825,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回属于密码的注释列表。
+成功的响应将返回属于密码的注释列表。
 
 ```json
 {
@@ -870,13 +870,13 @@ curl -X GET \
 
 ## 检索密码的相关资源 {#related}
 
-以下调用演示了如何检索密码的相关资源。 时间 [查一个秘密](#lookup)，这些关系列在 `relationships` 属性。
+以下调用演示了如何检索密码的相关资源。 时间 [查找密钥](#lookup)，这些关系列在 `relationships` 属性。
 
 请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 查找密码的相关环境 {#environment}
 
-通过附加，您可以查找使用密码的环境 `/environment` 到GET请求的路径。
+您可以通过附加密码来查找使用密码的环境 `/environment` 到GET请求的路径。
 
 **API格式**
 
@@ -985,7 +985,7 @@ curl -X GET \
 
 ### 查找密码的相关属性 {#property}
 
-您可以通过附加来查找拥有密码的属性 `/property` 到GET请求的路径。
+您可以通过附加来查找拥有机密的属性 `/property` 到GET请求的路径。
 
 **API格式**
 
