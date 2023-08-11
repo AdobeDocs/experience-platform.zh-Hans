@@ -5,9 +5,9 @@ description: 了解如何使用相似受众在Adobe Experience Platform中定位
 badgeLimitedAvailability: label="有限可用性" type=Caution
 hide: true
 hidefromtoc: true
-source-git-commit: d0b839dfc35ff9f8b4db34c61d2cdd820bfd448b
+source-git-commit: c4a888768015542e37290cb3c919cb60fca4e548
 workflow-type: tm+mt
-source-wordcount: '1937'
+source-wordcount: '2123'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 所有这些数据点都被转换为键值对，然后输入相似模型。 将仅保留具有大量匹配用户档案百分比的键值对。
 
-相似人群拓展模型频繁地运行，为基本受众创建和重新创建影响因素和相似图。 相似受众的评分也经常运行。
+此时，每24小时运行一次相似人群拓展模型，为基本受众创建和重新创建影响因素和相似人群拓展图。 相似受众的评分也经常运行。
 
 ## 权利 {#entitlements}
 
@@ -52,11 +52,26 @@ ht-degree: 0%
 - Real-Time CDP Ultimate客户有权 **20** 生产沙盒中的活动相似受众
 - 开发沙盒仅限于 **5** 所有Real-Time CDP客户的相似受众
 
-提供了附加组件包，这些附加组件包可将生产沙盒的权利每包增加20个相似受众。
+附加组件包将在以后的日期提供，它们会将生产沙盒的权利增加到每个包20个相似受众。
 
 要确认您是否可以访问相似受众，请联系您的Adobe代表。
 
 ## 查看相似见解 {#view}
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_notEligible"
+>title="不适用"
+>abstract="此受众当前没有资格获得相似见解，因为它可能少于培训所需的最低配置文件数，或者尚未触发配置文件导出。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_processing"
+>title="处理时间"
+>abstract="当前正在处理此受众。 模型可能需要24小时才能完成处理。 请稍后再次查看。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_error"
+>title="错误"
+>abstract="处理此模型时出错。 请删除并重新构建此模型，或稍后重试。"
 
 受众详细信息页面中内置相似见解。 要查看受众的相似见解，请选择 **[!UICONTROL 受众]** 在左侧导航栏中，随后是 **[!UICONTROL 浏览]**，以及要查看其见解的受众。
 
@@ -68,10 +83,10 @@ ht-degree: 0%
 
 ### 相似性和范围 {#similarity-and-reach}
 
-<!-- >[!CONTEXTUALHELP]
+>[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_similarityAndReach"
->title="Similarity and reach"
->abstract="" -->
+>title="相似性和范围"
+>abstract="相似性和可达图绘制由超过给定相似度分数的配置文件组成的相似受众的预期可达图。 您可以将鼠标悬停在图表中的特定点上以显示相似性百分比以及当前高亮显示的点的预期配置文件计数。"
 
 相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度分数的用户档案组成的相似受众的预期访问范围。 相似性得分表示 **距离** 基础受众配置文件与相似人群拓展分析配置文件之间的相似度。
 
@@ -93,11 +108,11 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 ### 影响因素 {#influential-factors}
 
-<!-- >[!CONTEXTUALHELP]
+>[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_influentialFactors"
->title="Influential factors"
->abstract="Influential factors are attributes, events and audience memberships that are important in explaining similarity of a profile to members of the base audience. Data usage labels and policies can be used to exclude certain data from being considered as influential factors in look-alike models."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="Exclude data" -->
+>title="影响因素"
+>abstract="影响因素是属性、事件和受众成员资格，它们在解释用户档案与基本受众成员的相似性时非常重要。 数据使用标签和策略可用于排除某些数据，以免在相似人群拓展模型中将其视为影响因素。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="排除数据"
 
 影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
 
