@@ -5,7 +5,7 @@ exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
 source-git-commit: e3f507e010ea2a32042b53d46795d87e82e3fb72
 workflow-type: tm+mt
 source-wordcount: '2275'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -46,12 +46,12 @@ ht-degree: 98%
 >
 > 您有责任确保已获得适用法律和法规要求的所有必要的权限、同意、许可和授权，以收集、处理和传输个人数据，包括精确的地理位置信息。
 > 
-> 您的 IP 地址模糊处理选择不会影响将从 IP 地址派生并发送到您配置的 Adobe 解决方案的地理位置信息的级别。必须单独限制或禁用地理位置查找。
+> 您选择的 IP 地址模糊处理方式不影响将从 IP 地址派生并发送到您配置的 Adobe 解决方案的地理位置信息的级别。必须单独限制或禁用地理位置查找。
 
 | 设置 | 描述 |
 | --- | --- |
-| [!UICONTROL Geo 查找] | 根据访客 IP 地址启用所选选项的地理位置查找。地理位置查找要求您包含 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。 <br>可用选项： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>不选择任何选项将禁用任何地理位置查找。地理定位在 [!UICONTROL IP 模糊处理]之前进行，并且不受 [!UICONTROL IP 模糊处理]设置的影响。 |
-| [!UICONTROL 网络查找] | 根据访客 IP 地址启用所选选项的网络查找。网络查找要求您包含 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。 <br>可用选项： <ul><li>运营商</li><li>域</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关发出请求的特定网络的更多信息。 |
+| [!UICONTROL 地理位置查找] | 根据访客 IP 地址启用所选选项的地理位置查找。地理位置查找要求在您的 Web SDK 配置中包括 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。<br>可用的选项： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>不选择任何选项将禁用任何地理位置查找。地理定位在 [!UICONTROL IP 模糊处理]之前进行，并且不受 [!UICONTROL IP 模糊处理]设置的影响。 |
+| [!UICONTROL 网络查找] | 根据访客 IP 地址启用所选选项的网络查找。网络查找要求在您的 Web SDK 配置中包括 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。<br>可用的选项： <ul><li>运营商</li><li>域</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关发出请求的特定网络的更多信息。 |
 | [!UICONTROL IP 模糊处理] | 指示要应用于数据流的 IP 模糊处理的类型。任何基于客户 IP 的处理都将受 IP 模糊处理设置的影响。这包括从数据流接收数据的所有 Experience Cloud 服务。 <p>可用选项：</p> <ul><li>**[!UICONTROL 无]**：禁用 IP 模糊处理。完整的用户 IP 地址将通过数据流发送。</li><li>**[!UICONTROL 部分]**：对于 IPv4 地址，对用户 IP 地址的最后一个八位字节进行模糊处理。对于 IPv6 地址，对地址的最后 80 位进行模糊处理。 <p>示例：</p> <ul><li>IPv4：`1.2.3.4` -> `1.2.3.0`</li><li>IPv6：`2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL 完全]**：对整个 IP 地址进行模糊处理。 <p>示例：</p> <ul><li>IPv4：`1.2.3.4` -> `0.0.0.0`</li><li>IPv6：`2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `0:0:0:0:0:0:0:0`</li></ul></li></ul> IP 模糊处理对其他 Adobe 产品的影响： <ul><li>**Adobe Target**：数据流级别 [!UICONTROL IP 模糊处理]设置优先于在 Adobe Target 中设置的任何 IP 模糊处理选项。例如，如果数据流级别 [!UICONTROL IP 模糊处理]选项设置为&#x200B;**[!UICONTROL 完全]**，并且 Adobe Target IP 模糊处理选项设置为&#x200B;**[!UICONTROL 最后一个八位模糊处理]**，则 Adobe Target 将收到完全模糊处理的 IP。请参阅介绍 [IP 模糊处理](https://developer.adobe.com/target/before-implement/privacy/privacy/)和[地理定位](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=zh-Hans)的 Adobe Target 文档以了解更多详细信息。</li><li>**Audience Manager**：数据流级别 IP 模糊处理设置优先于 Audience Manager 中设置的任何 IP 模糊处理选项，并且它应用于所有 IP 地址。Audience Manager 完成的任何地理位置查找都将受数据流级别的 [!UICONTROL IP 模糊处理]选项的影响。Audience Manager 中基于完全模糊处理的 IP 的地理位置查找将生成未知区域，并且基于生成的地理位置数据的任何区段将无法实现。请参阅介绍 [IP 模糊处理](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=zh-Hans)的 Audience Manager 文档以了解更多详细信息。</li><li>**Adobe Analytics**：如果选择了任何 IP 模糊处理选项（选项“无”除外），Adobe Analytics 目前将接收部分模糊处理的 IP 地址。要让 Analytics 接收完全模糊处理的 IP 地址，您必须在 Adobe Analytics 中单独配置 IP 模糊处理。将在后续版本中更新此行为。请参阅 Adobe Analytics[文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html)以了解有关如何在 Analytics 中启用 IP 模糊处理的详细信息。</li></ul> |
 | [!UICONTROL 第一方 ID Cookie] | 启用后，此设置将告知 Edge Network 在查找[第一方设备 ID](../edge/identity/first-party-device-ids.md) 时引用指定的 Cookie，而不是在“标识映射”中查找该值。<br><br>启用此设置时，您必须提供应存储 ID 的 Cookie 的名称。 |
 | [!UICONTROL 第三方 ID 同步] | ID 同步可分组到容器中，以允许不同的 ID 同步在不同时间运行。启用后，此设置可让您指定为该数据流运行哪个 ID 同步容器。 |

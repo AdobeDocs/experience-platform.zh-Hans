@@ -7,7 +7,7 @@ user-guide-description: 将企业多个来源的已知数据和匿名数据相�
 source-git-commit: 7a977f92a81dd27c99ebe8bdf7be1a7d0425ad2a
 workflow-type: tm+mt
 source-wordcount: '250'
-ht-degree: 91%
+ht-degree: 96%
 
 ---
 
@@ -69,7 +69,7 @@ ht-degree: 91%
       * [智能地重新吸引客户](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
    * 合作伙伴数据用例{#partner-data}
       * [通过支持潜在客户发掘而吸引和获得新客户](/help/rtcdp/partner-data/prospecting.md)
-      * [使用合作伙伴提供的属性补充第一方用户档案](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
-      * [使用合作伙伴辅助的访客识别功能来个性化现场体验](/help/rtcdp/partner-data/onsite-personalization.md)
+      * [用合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
+      * [使用合作伙伴辅助的访客识别使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md)
 * [Experience Platform 发行说明](https://www.adobe.com/go/platform-release-notes_cn)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary_cn)
