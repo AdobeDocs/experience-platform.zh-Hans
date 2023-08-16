@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 004f6183f597132629481e3792b5523317b7fb2f
+source-git-commit: cf10eb11773320d10ece53f192beacc8da83e980
 workflow-type: tm+mt
 source-wordcount: '1726'
 ht-degree: 19%
@@ -12,17 +12,17 @@ ht-degree: 19%
 
 # 基于属性的访问控制端到端指南
 
-基于属性的访问控制是Adobe Experience Platform的一项功能，它使多品牌和注重隐私的客户能够更灵活地管理用户访问。 可以使用基于对象的属性和角色的策略来授予/拒绝对单个对象（如架构字段和区段）的访问。 通过此功能，您可以授予或撤销组织中特定Platform用户对各个对象的访问权限。
+基于属性的访问控制是Adobe Experience Platform的一项功能，它使多品牌和注重隐私的客户能够更灵活地管理用户访问。 可以使用基于对象的属性和角色的策略来授予/拒绝对单个对象（如方案字段和区段）的访问。 通过此功能，您可以授予或撤销组织中特定Platform用户访问单个对象的权限。
 
-此功能允许您使用定义组织或数据使用范围的标签对架构字段、区段等进行分类。 您可以将这些相同的标签应用到Adobe Journey Optimizer中的历程、选件和其他对象。 同时，管理员可以定义围绕Experience Data Model (XDM)架构字段的访问策略，并更好地管理哪些用户或组（内部、外部或第三方用户）可以访问这些字段。
+此功能允许您使用定义组织或数据使用范围的标签对架构字段、区段等进行分类。 您可以将这些相同的标签应用于Adobe Journey Optimizer中的历程、选件和其他对象。 同时，管理员可以定义有关Experience Data Model (XDM)架构字段的访问策略，并更好地管理哪些用户或组（内部、外部或第三方用户）可以访问这些字段。
 
 >[!NOTE]
 >
->本文档重点介绍访问控制策略的用例。 如果您尝试设置策略来管理 **使用** ，而不是哪些Platform用户有权访问它，请参见 [数据治理](../../data-governance/e2e.md) 而是。
+>本文档重点介绍访问控制策略的用例。 如果您试图设置策略以管理 **使用** ，而不是哪些Platform用户可以访问，请参阅的端到端指南 [数据管理](../../data-governance/e2e.md) 而是。
 
 ## 快速入门
 
-本教程需要深入了解以下平台组件：
+本教程需要您实际了解以下平台组件：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [模式组合基础](../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
@@ -31,9 +31,9 @@ ht-degree: 19%
 
 ### 用例概述
 
-您将经历一个基于属性的访问控制工作流示例，在此工作流中，您将创建和分配角色、标签和策略以配置用户是否可以访问组织中的特定资源。 本指南使用限制访问敏感数据的示例来演示工作流程。 此用例概述如下：
+您将执行一个基于属性的访问控制工作流示例，其中您将创建和分配角色、标签和策略，以配置用户是否可以访问组织中的特定资源。 本指南以限制访问敏感数据为例演示了工作流程。 此用例概述如下：
 
-您是一家医疗保健提供商，希望配置对组织中资源的访问权限。
+您是医疗保健提供商，希望配置对组织中资源的访问权限。
 
 * 您的内部营销团队应该能够访问 **[!UICONTROL PHI/管控的健康数据]** 数据。
 * 您的外部机构应该无法访问 **[!UICONTROL PHI/管控的健康数据]** 数据。
@@ -43,23 +43,23 @@ ht-degree: 19%
 您将会：
 
 * [为用户设置角色标签](#label-roles)：以营销组与外部代理合作的医疗保健提供商（ACME业务组）为例。
-* [为资源添加标签（架构字段和区段）](#label-resources)：分配 **[!UICONTROL PHI/管控的健康数据]** 架构资源和区段的标签。
+* [为资源添加标签（架构字段和区段）](#label-resources)：分配 **[!UICONTROL PHI/管控的健康数据]** 标签到架构资源和区段。
 * 
-   * [激活将它们链接在一起的策略： ](#policy)：启用默认策略，通过将资源上的标签连接到角色中的标签来阻止对架构字段和区段的访问。 随后，具有匹配标签的用户将获得对所有沙盒中的架构字段和区段的访问权限。
+   * [激活将它们链接在一起的策略：](#policy)：启用默认策略，通过将资源上的标签连接到角色中的标签来阻止对架构字段和区段的访问。 随后，具有匹配标签的用户将获得对架构字段的访问权限，并可在所有沙盒中进行分段。
 
 ## 权限
 
-[!UICONTROL 权限] 是Experience Cloud区域，管理员可以在该区域中定义用户角色和策略来管理产品应用程序内功能和对象的权限。
+[!UICONTROL 权限] 是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
 
-到 [!UICONTROL 权限]，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限还允许您管理与特定角色关联的标签、沙盒和用户。]
+到 [!UICONTROL 权限]中，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限还允许您管理与特定角色关联的标签、沙盒和用户。]
 
 如果您没有管理员权限，请与系统管理员联系以获得访问权限。
 
-拥有管理员权限后，转到 [Adobe Experience Cloud](https://experience.adobe.com/) 并使用您的Adobe凭据登录。 登录后， **[!UICONTROL 概述]** 此时将显示您拥有管理员权限的组织对应的页面。 此页面显示贵组织订阅的产品以及用于将用户和管理员添加到该组织的其他控件。 选择 **[!UICONTROL 权限]** 以打开用于您的平台集成的工作区。
+拥有管理员权限后，转到 [Adobe Experience Cloud](https://experience.adobe.com/) 并使用您的Adobe凭据登录。 登录后， **[!UICONTROL 概述]** 此时将显示您拥有管理员权限的组织所对应的页面。 此页面显示贵组织订阅的产品，以及用于将用户和管理员添加到该组织的其他控件。 选择 **[!UICONTROL 权限]** 以打开用于您的平台集成的工作区。
 
 ![该图像显示了在Adobe Experience Cloud中选择的权限产品](../images/flac-ui/flac-select-product.png)
 
-此时将显示Platform UI的权限工作区，该工作区将在 **[!UICONTROL 角色]** 页面。
+此时将显示Platform UI的权限工作区，并在以下位置打开： **[!UICONTROL 角色]** 页面。
 
 ## 将标签应用于角色 {#label-roles}
 
@@ -92,17 +92,17 @@ ht-degree: 19%
 >title="角色概述"
 >abstract="角色概述对话框显示允许给定角色访问的资源和沙盒。"
 
-角色是对与Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有一组给定的权限，您可以将组织成员分配给一个或多个角色，具体取决于他们需要的访问范围。
+角色是对与Platform实例交互的用户类型进行分类的方法，是访问控制策略的构建块。 角色具有给定的权限集，组织的成员可以根据所需的访问范围分配给一个或多个角色。
 
 要开始配置，请选择 **[!UICONTROL ACME业务组]** 从 **[!UICONTROL 角色]** 页面。
 
-![显示在角色中选择的ACME业务角色的图像](../images/abac-end-to-end-user-guide/abac-select-role.png)
+![显示将在角色中选择的ACME业务角色的图像](../images/abac-end-to-end-user-guide/abac-select-role.png)
 
 接下来，选择 **[!UICONTROL 标签]** 然后选择 **[!UICONTROL 添加标签]**.
 
-![该图像显示在“标签”选项卡上选择的“添加标签”](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
+![该图像显示了在“标签”选项卡上选择的“添加标签”](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
 
-此时将显示组织中所有标签的列表。 选择 **[!UICONTROL RHD]** 添加标签 **[!UICONTROL PHI/受管控的健康数据]**. 等待片刻，让标签旁边出现一个蓝色复选标记，然后选择 **[!UICONTROL 保存]**.
+此时将显示组织中所有标签的列表。 选择 **[!UICONTROL RHD]** 添加标签 **[!UICONTROL PHI/管控的健康数据]**. 等待片刻，让标签旁边出现一个蓝色复选标记，然后选择 **[!UICONTROL 保存]**.
 
 ![显示正在选择和保存的RHD标签的图像](../images/abac-end-to-end-user-guide/abac-select-role-label.png)
 
@@ -112,29 +112,29 @@ ht-degree: 19%
 
 ## 将标签应用于架构字段 {#label-resources}
 
-现在，您已使用配置用户角色 [!UICONTROL RHD] 标签，下一步是将相同的标签添加到要为该角色控制的资源。
+现在，您已使用 [!UICONTROL RHD] 标签，下一步是将相同的标签添加到要为该角色控制的资源。
 
 选择 **[!UICONTROL 架构]** 从左侧导航中，然后选择 **[!UICONTROL ACME医疗保健]** 从显示的架构列表中。
 
-![显示从“架构”选项卡中选择的ACME医疗保健架构的图像](../images/abac-end-to-end-user-guide/abac-select-schema.png)
+![显示从架构选项卡中选择的ACME Healthcare架构的图像](../images/abac-end-to-end-user-guide/abac-select-schema.png)
 
 接下来，选择 **[!UICONTROL 标签]** 查看显示与架构关联字段的列表。 在此处，您可以一次性将标签分配给一个或多个字段。 选择 **[!UICONTROL 血糖]** 和 **[!UICONTROL 胰岛素水平]** 字段，然后选择 **[!UICONTROL 应用访问和数据治理标签]**.
 
-![显示正在选择血糖和胰岛素水平的图像，并应用正在选择的访问和数据治理标签](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
+![显示正在选择血糖和胰岛素水平并应用正在选择的访问和数据治理标签的图像](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
 
-此 **[!UICONTROL 编辑标签]** 对话框，允许您选择要应用于架构字段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
+此 **[!UICONTROL 编辑标签]** 对话框出现，允许您选择要应用于架构字段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
 
 ![显示正在选择和保存的RHD标签的图像](../images/abac-end-to-end-user-guide/abac-select-schema-labels.png)
 
 >[!NOTE]
 >
->当标签添加到字段时，该标签将应用于该字段的父资源（类或字段组）。 如果父类或字段组被其他架构使用，则这些架构将继承相同的标签。
+>将标签添加到字段时，该标签将应用于该字段的父资源（类或字段组）。 如果父类或字段组被其他架构使用，则这些架构将继承相同的标签。
 
 ## 将标签应用于区段
 
-完成为架构字段设置标签后，您现在可以开始为区段设置标签。
+完成为架构字段设置标签之后，您现在可以开始为区段设置标签。
 
-选择 **[!UICONTROL 区段]** 从左侧导航栏中。 此时将显示组织中可用的区段列表。 在本例中，将标记以下两个区段，因为它们包含敏感的运行状况数据：
+选择 **[!UICONTROL 区段]** 从左侧导航栏中。 此时将显示组织中可用的区段列表。 在本例中，将标记以下两个区段，因为它们包含敏感的健康数据：
 
 * 血糖>100
 * 胰岛素&lt;50
@@ -147,9 +147,9 @@ ht-degree: 19%
 
 ![显示已选择管理访问权限的图像](../images/abac-end-to-end-user-guide/abac-segment-fields-manage-access.png)
 
-此 **[!UICONTROL 编辑标签]** 对话框，允许您选择要应用于区段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
+此 **[!UICONTROL 编辑标签]** 此时会显示对话框，允许您选择要应用于区段的标签。 对于此用例，选择 **[!UICONTROL PHI/管控的健康数据]** 标签，然后选择 **[!UICONTROL 保存]**.
 
-![显示选定的RHD标签和保存的图像](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
+![显示所选RHD标签并保存所选内容的图像](../images/abac-end-to-end-user-guide/abac-select-segment-labels.png)
 
 重复上述步骤，使用 **[!UICONTROL 胰岛素&lt;50]**.
 
@@ -165,11 +165,11 @@ ht-degree: 19%
 
 ![用于激活策略的下拉列表](../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-此时将显示激活策略对话框，提示您确认激活。 选择 **[!UICONTROL 确认]**.
+此时会出现激活策略对话框，提示您确认激活。 选择 **[!UICONTROL 确认]**.
 
 ![“激活策略”对话框](../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
 
-收到策略激活确认函，您将返回到 [!UICONTROL 策略] 页面。
+收到策略激活确认消息，您将返回到 [!UICONTROL 策略] 页面。
 
 ![激活策略确认](../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
@@ -190,7 +190,7 @@ ht-degree: 19%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Configure permissible and impermissible actions for a policy"
->abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."</br>
+>abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Edit a policy"
 
 >[!CONTEXTUALHELP]
