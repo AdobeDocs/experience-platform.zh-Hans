@@ -8,7 +8,7 @@ hidefromtoc: true
 source-git-commit: c4a888768015542e37290cb3c919cb60fca4e548
 workflow-type: tm+mt
 source-wordcount: '2123'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -60,18 +60,18 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_notEligible"
->title="不适用"
->abstract="此受众当前没有资格获得相似见解，因为它可能少于培训所需的最低配置文件数，或者尚未触发配置文件导出。"
+>title="不合格"
+>abstract="该受众目前没有资格获得相似的见解，因为其配置文件数量可能低于培训所需的最低数量，或者配置文件导出尚未触发。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_processing"
 >title="处理时间"
->abstract="当前正在处理此受众。 模型可能需要24小时才能完成处理。 请稍后再次查看。"
+>abstract="目前正在处理该受众。该模型可能需要长达 24 小时才能完成处理。请稍后重试。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_error"
 >title="错误"
->abstract="处理此模型时出错。 请删除并重新构建此模型，或稍后重试。"
+>abstract="处理此模型时出错。请删除并重新构建此模型或稍后重试。"
 
 受众详细信息页面中内置相似见解。 要查看受众的相似见解，请选择 **[!UICONTROL 受众]** 在左侧导航栏中，随后是 **[!UICONTROL 浏览]**，以及要查看其见解的受众。
 
@@ -81,12 +81,12 @@ ht-degree: 0%
 
 ![相似分析选项卡突出显示，显示基本受众的相似分析。](../images/ui/lookalike-audiences/look-alike-insights.png)
 
-### 相似性和范围 {#similarity-and-reach}
+### 相似性和覆盖率 {#similarity-and-reach}
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_similarityAndReach"
->title="相似性和范围"
->abstract="相似性和可达图绘制由超过给定相似度分数的配置文件组成的相似受众的预期可达图。 您可以将鼠标悬停在图表中的特定点上以显示相似性百分比以及当前高亮显示的点的预期配置文件计数。"
+>title="相似性和覆盖率"
+>abstract="相似性和覆盖范围图形绘制了由给定相似性分数以上的配置文件组成的相似受众的预期覆盖范围。您可以将鼠标悬停在图形中的特定点上，以显示当前突出显示的点的相似性百分比和预期配置文件计数。"
 
 相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度分数的用户档案组成的相似受众的预期访问范围。 相似性得分表示 **距离** 基础受众配置文件与相似人群拓展分析配置文件之间的相似度。
 
@@ -98,7 +98,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 请注意，该图表为 **累积** 从右到左。 这意味着，在图形的任何位置，y轴的值都是具有相似性的用户档案的数量 **以上** 相似度阈值。 例如，如果x轴为60%，y轴为1,000万，这意味着有1,000万个用户档案与基础受众的相似性达到或超过60%。
 
-您可以将鼠标悬停在图表中的特定点上以显示相似性百分比以及当前高亮显示的点的预期配置文件计数。
+您可以将鼠标悬停在图形中的特定点上，以显示当前突出显示的点的相似性百分比和预期配置文件计数。
 
 ### 相似受众 {#list}
 
@@ -111,7 +111,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="影响因素"
->abstract="影响因素是属性、事件和受众成员资格，它们在解释用户档案与基本受众成员的相似性时非常重要。 数据使用标签和策略可用于排除某些数据，以免在相似人群拓展模型中将其视为影响因素。"
+>abstract="影响因素包括属性、事件和受众成员资格，这些因素对于解释配置文件与基础受众成员的相似性非常重要。数据使用标签和策略可用于排除某些数据，使其不被视为相似模型中的影响因素。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="排除数据"
 
 影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
