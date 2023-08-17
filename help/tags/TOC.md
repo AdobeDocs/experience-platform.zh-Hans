@@ -5,7 +5,7 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
+source-git-commit: 1ca080f6dd62c49c1f1672ec36ce446af591b6b6
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 31%
@@ -19,7 +19,7 @@ ht-degree: 31%
 * 快速入门{#get-started}
    * [快速入门指南](./quick-start/quick-start.md)
    * [实施指南](./quick-start/implementation-guides.md)
-* UI指南 {#ui}
+* UI 指南 {#ui}
    * [概述](./ui/managing-resources/overview.md)
    * 扩展 {#extensions}
       * [概述](./ui/managing-resources/extensions/overview.md)
@@ -45,7 +45,7 @@ ht-degree: 31%
    * [库](./ui/publishing/libraries.md)
    * [自托管库](./ui/publishing/hosts/self-hosting-libraries.md)
    * [重新发布库](./ui/publishing/republish.md)
-   * [Premium CDN支持（测试版）](./ui/publishing/premium-cdn.md)
+   * [Experience Platform标记（中国）](./ui/publishing/premium-cdn.md)
 * 客户端信息 {#client-side}
    * [概述](./ui/client-side/overview.md)
    * [异步部署](./ui/client-side/asynchronous-deployment.md)
@@ -67,7 +67,7 @@ ht-degree: 31%
    * 标记扩展（客户端） {#client}
       * [概述](./extensions/client/overview.md)
       * [可访问的网站速度量度](https://exchange.adobe.com/apps/ec/103053)
-      * [Activity Map定制器](https://exchange.adobe.com/apps/ec/101531)
+      * [Activity Map自定义程序](https://exchange.adobe.com/apps/ec/101531)
       * [操作页面刷新](https://exchange.adobe.com/apps/ec/102848)
       * [Adform网站跟踪](https://exchange.adobe.com/apps/ec/103195)
       * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)
@@ -110,7 +110,7 @@ ht-degree: 31%
          * [概述](./extensions/client/asset-insights/overview.md)
          * [发行说明](./extensions/client/asset-insights/release-notes.md)
       * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)
-      * Adobe Medium Analytics for Audio and Video {#media-analytics}
+      * 用于音频和视频的Adobe Medium Analytics {#media-analytics}
          * [概述](./extensions/client/media-analytics/overview.md)
          * [发行说明](./extensions/client/media-analytics/release-notes.md)
       * Adobe Medium分析(3.x SDK) {#media-analytics-3x}
@@ -128,7 +128,7 @@ ht-degree: 31%
       * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)
       * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
       * [AEM资产分析](https://exchange.adobe.com/apps/ec/103406)
-      * [Airbrake JS通告程序](https://exchange.adobe.com/apps/ec/103342)
+      * [空气制动器JS通告程序](https://exchange.adobe.com/apps/ec/103342)
       * [振幅](https://exchange.adobe.com/apps/ec/108010)
       * [阿波罗QAX](https://exchange.adobe.com/apps/ec/105068)
       * [Awin广告商主标签](https://exchange.adobe.com/apps/ec/103176)
@@ -152,7 +152,7 @@ ht-degree: 31%
       * 核心 {#core}
          * [概述](./extensions/client/core/overview.md)
          * [发行说明](./extensions/client/core/release-notes.md)
-      * [自定义调试记录器](https://exchange.adobe.com/apps/ec/104698)
+      * [Custom Debug Logger](https://exchange.adobe.com/apps/ec/104698)
       * [客户认可](https://exchange.adobe.com/apps/ec/100688)
       * [数据元素助手(DEA)](https://exchange.adobe.com/apps/ec/101413)
       * [数据层管理器](https://exchange.adobe.com/apps/ec/101462)
@@ -177,13 +177,13 @@ ht-degree: 31%
       * [!DNL Marketo Munchkin] {#marketo}
          * [概述](./extensions/client/marketo/overview.md)
          * [发行说明](./extensions/client/marketo/release-notes.md)
-      * [主控属性管理器](https://exchange.adobe.com/apps/ec/102992)
+      * [主属性管理器](https://exchange.adobe.com/apps/ec/102992)
       * [!DNL Meta Pixel] {#meta}
          * [概述](./extensions/client/meta/overview.md)
       * [Monita](https://exchange.adobe.com/apps/ec/106544)
       * [Nielsen Digital SDK](https://exchange.adobe.com/apps/ec/101361)
-      * [OneTrust Consent Management for Cookie](https://exchange.adobe.com/apps/ec/100340)
-      * [辣椒酱](https://exchange.adobe.com/apps/ec/103587)
+      * [用于Cookie的OneTrust同意管理](https://exchange.adobe.com/apps/ec/100340)
+      * [胡椒酱](https://exchange.adobe.com/apps/ec/103587)
       * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)
       * [pinterest转化跟踪](https://exchange.adobe.com/apps/ec/100523)
       * [像素加载器](https://exchange.adobe.com/apps/ec/100152)
@@ -194,10 +194,10 @@ ht-degree: 31%
       * [SDI调查](https://exchange.adobe.com/apps/ec/102991)
       * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)
       * [SessionCam](https://exchange.adobe.com/apps/ec/100517)
-      * [SPA视图更改事件](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html)
+      * [SPA查看更改事件](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
       * [按循环水平线划分的标记](https://exchange.adobe.com/apps/ec/106092)
-      * [茶叶收集](https://exchange.adobe.com/apps/ec/104217)
+      * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
       * [TrustArc Cookie同意管理器](https://exchange.adobe.com/apps/ec/107037)
@@ -212,14 +212,14 @@ ht-degree: 31%
          * [发行说明](./extensions/client/youtube/release-notes.md)
    * 事件转发扩展（服务器端） {#server}
       * [概述](./extensions/server/overview.md)
-      * Adobe Experience Platform Cloud连接器 {#cloud-connector}
+      * Adobe Experience Platform云连接器 {#cloud-connector}
          * [概述](./extensions/server/cloud-connector/overview.md)
          * [发行说明](./extensions/server/cloud-connector/release-notes.md)
       * [!DNL AWS] {#aws}
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * [Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * [适用于Google Analytics4的Cloud Connector](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
@@ -315,7 +315,7 @@ ht-degree: 31%
       * [搜索资源](./api/guides/search.md)
       * [密钥](./api/guides/secrets.md)
 * [常见问题解答](./faq.md)
-* [术语更新](./term-updates.md)
+* [术语 更新](./term-updates.md)
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
 * 发行说明 {#release-notes}
    * [最新](./release-notes/current.md)
