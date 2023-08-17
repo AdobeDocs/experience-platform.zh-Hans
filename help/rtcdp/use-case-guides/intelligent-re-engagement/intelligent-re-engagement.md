@@ -3,18 +3,28 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人入胜且相互关联的体验，以便智能地重新吸引不常访问的客户。
 hide: true
 hidefromtoc: true
-source-git-commit: 8b38114e600986979728e1c4e36245ff0aa3be65
+source-git-commit: 43e365e20a2fd91a0e822eb6f66bb7db6fc218f5
 workflow-type: tm+mt
-source-wordcount: '3258'
+source-wordcount: '2934'
 ht-degree: 8%
 
 ---
 
 # 智能地重新吸引您的客户以返回
 
-智能重新参与允许您设置量身定制的跨渠道点滴活动，以说服客户执行特定操作。 推介活动旨在以有限的时间运行，包括发送显示意图电子邮件、短信的客户，以及提供付费广告。 客户采取相应措施后，推介活动将立即结束。
+重新吸引放弃某个转换的客户以智能和负责任的方式完成该转换。 通过体验而不是提醒来吸引流失的客户，以提高转化率并促进客户存留期价值的增长。
+
+采用实时考虑因素，考虑所有消费者素质和行为，并根据在线和离线事件提供快速的重新认证。
 
 ![逐步智能重新参与高级视觉概述。](../intelligent-re-engagement/images/step-by-step.png)
+
+## 用例概述
+
+您将在处理重新参与历程示例时构建架构、数据集和受众。 您还将了解在中设置示例历程所需的功能 [!DNL Adobe Journey Optimizer] 以及在目标中创建付费媒体广告所需的受众。 本指南使用在下面概述的用例历程中重新吸引客户的示例：
+
+* **重新参与历程**  — 定位已放弃在网站和移动设备应用程序上浏览产品的客户。
+* **已放弃的购物车历程**  — 定位已将产品放入购物车但尚未在网站和移动设备应用程序上购买的客户。
+* **订单确认历程**  — 重点关注通过网站和移动应用程序进行的产品购买。
 
 ## 先决条件和规划 {#prerequisites-and-planning}
 
@@ -33,50 +43,44 @@ ht-degree: 8%
 
 ### 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
 
-目前已经开发了三种不同的重新接触历程。
+以下是三个重新参与示例历程的高级概述。
 
 >[!BEGINTABS]
 
 >[!TAB 重新参与历程]
 
-重新参与历程定位网站和应用程序上放弃的产品浏览。 当已查看但未购买产品或未将产品添加到购物车时，会触发此历程。 如果过去24小时内没有列表添加，则会在三天后触发品牌互动。
+重新参与历程定位网站和移动应用程序上放弃的产品浏览。 当已查看但未购买产品或未将产品添加到购物车时，会触发此历程。 如果过去24小时内没有列表添加，则会在三天后触发品牌互动。<p>![客户智能重新参与历程高级别可视化概述。](../intelligent-re-engagement/images/re-engagement-journey.png "客户智能重新参与历程高级别可视化概述。"){width="1920" zoomable="yes"}</p>
 
-![客户智能重新参与历程高级别可视化概述。](../intelligent-re-engagement/images/re-engagement-journey.png)
-
-1. 数据通过边缘网络（首选方法）聚合到Web SDK、Mobile SDK或边缘网络API摄取中。
-2. 作为 **客户**，您将创建标记为以下项的数据集： [!UICONTROL 个人资料].
-3. 作为 **客户**，您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
-4. 作为 **客户**，则可以从用户档案列表构建重点受众以检查 **用户** 在过去三天中实现了品牌互动。
-5. 作为 **客户**，您将在Adobe Journey Optimizer中创建重新参与历程。
+1. 您可以创建标记为的架构和数据集 [!UICONTROL 个人资料].
+2. 数据通过Web SDK、Mobile Edge SDK或API聚合到Experience Platform中。 也可以使用Analytics Data Connector，但可能会导致历程延迟。
+3. 您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
+4. 您可以从配置文件列表中构建重点受众，以检查 **客户** 在过去三天里订了婚约。
+5. 您在中创建重新参与历程 [!DNL Adobe Journey Optimizer].
 6. 如果需要，请使用 **数据合作伙伴** 用于将受众激活到所需的付费媒体目标。
-7. Adobe Journey Optimizer会检查同意情况并发送所配置的各种操作。
+7. [!DNL Adobe Journey Optimizer] 检查同意并发送配置的各种操作。
 
 >[!TAB 已放弃的购物车历程]
 
-放弃的购物车历程面向已放入购物车但尚未在网站和应用程序上购买的产品。 此外，付费媒体营销活动也将使用此方法启动和停止。
+放弃的购物车历程面向已放入购物车但尚未在网站和移动设备应用程序上购买的产品。 此外，使用此方法启动和停止付费媒体营销活动。<p>![客户放弃的购物车历程高级视觉概述。](../intelligent-re-engagement/images/abandoned-cart-journey.png "客户放弃的购物车历程高级视觉概述。"){width="1920" zoomable="yes"}</p>
 
-![客户放弃的购物车历程高级视觉概述。](../intelligent-re-engagement/images/abandoned-cart-journey.png)
-
-1. 数据通过边缘网络（首选方法）聚合到Web SDK、Mobile SDK或边缘网络API摄取中。
-2. 作为 **客户**，您将创建标记为以下项的数据集： [!UICONTROL 个人资料].
-3. 作为 **客户**，您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
-4. 作为 **客户**，则可以从用户档案列表构建重点受众以检查 **用户** 已将商品放入购物车，但尚未完成购买。 此 **[!UICONTROL 添加到购物车]** 事件将启动等待30分钟的计时器，然后检查是否购买。 如果未购买任何产品，则 **用户** 已添加到 **[!UICONTROL 放弃购物车]** 受众。
-5. 作为 **客户**，则将在Adobe Journey Optimizer中创建放弃的购物车旅程
+1. 您可以创建标记为的架构和数据集 [!UICONTROL 个人资料].
+2. 数据通过Web SDK、Mobile Edge SDK或API聚合到Experience Platform中。 也可以使用Analytics Data Connector，但可能会导致历程延迟。
+3. 您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
+4. 您可以从配置文件列表中构建重点受众，以检查 **客户** 已将商品放入购物车，但尚未完成购买。 此 **[!UICONTROL 添加到购物车]** 事件将启动等待30分钟的计时器，然后检查是否购买。 如果未购买任何产品，则 **客户** 已添加到 **[!UICONTROL 放弃购物车]** 受众。
+5. 您在Adobe Journey Optimizer中创建放弃的购物车旅程
 6. 如果需要，请使用 **数据合作伙伴** 用于将受众激活到所需的付费媒体目标。
-7. Adobe Journey Optimizer会检查同意情况并发送所配置的各种操作。
+7. [!DNL Adobe Journey Optimizer] 检查同意并发送配置的各种操作。
 
 >[!TAB 订单确认历程]
 
-订单确认历程侧重于通过网站和移动设备应用程序进行的产品购买。
+订单确认历程侧重于通过网站和移动设备应用程序进行的产品购买。<p>![客户订单确认历程高级可视化概述。](../intelligent-re-engagement/images/order-confirmation-journey.png "客户订单确认历程高级可视化概述。"){width="1920" zoomable="yes"}</p>
 
-![客户订单确认历程高级可视化概述。](../intelligent-re-engagement/images/order-confirmation-journey.png)
-
-1. 数据通过边缘网络（首选方法）聚合到Web SDK、Mobile SDK或边缘网络API摄取中。
-2. 作为 **客户**，您将创建标记为以下项的数据集： [!UICONTROL 个人资料].
-3. 作为 **客户**，您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
-4. 作为 **客户**，则可以从用户档案列表构建重点受众以检查 **用户** 已经购买了。
-5. 作为 **客户**，则将在Adobe Journey Optimizer中创建确认历程。
-6. Adobe Journey Optimizer使用首选渠道发送订单确认消息。
+1. 您可以创建标记为的架构和数据集 [!UICONTROL 个人资料].
+2. 数据通过Web SDK、Mobile Edge SDK或API聚合到Experience Platform中。 也可以使用Analytics Data Connector，但可能会导致历程延迟。
+3. 您可以将配置文件加载到Real-Time CDP中，并构建治理策略以确保负责任地使用。
+4. 您可以从配置文件列表中构建重点受众，以检查 **客户** 已经购买了。
+5. 可在Adobe Journey Optimizer中创建确认历程。
+6. [!DNL Adobe Journey Optimizer] 使用首选渠道发送订单确认消息。
 
 >[!ENDTABS]
 
@@ -92,19 +96,6 @@ ht-degree: 8%
 
 体验数据模型(XDM)资源在中管理 [!UICONTROL 架构] Adobe Experience Platform中的工作区。 您可以查看和浏览由Adobe提供的核心资源，并为您的组织创建自定义资源和架构。
 
-<!--
-To create a schema, complete the steps below:
-
-1. Navigate to **[!UICONTROL Data Management]** > **[!UICONTROL Schemas]** and select **[!UICONTROL Create schema]**.
-2. Select **[!UICONTROL XDM Individual Profile]/[!UICONTROL XDM ExperienceEvent]**.
-3. Navigate to **[!UICONTROL Field groups]** and select **[!UICONTROL Add]**.
-4. Use the search box to find and select the field group, then select **[!UICONTROL Add field groups]**.
-5. Give your schema a name and optionally a description.
-6. Select **[!UICONTROL Save]**.
-
-![A recording of the steps to create a schema.](../intelligent-re-engagement/images/create-a-schema.gif) 
--->
-
 有关创建架构的更多信息，请参阅 [创建架构教程。](/help/xdm/tutorials/create-schema-ui.md)
 
 有四种架构设计用于重新参与历程。 每个架构都需要设置特定的字段，以及一些强烈建议的字段。
@@ -119,8 +110,8 @@ To create a schema, complete the steps below:
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| mobilePhone.number | 必需 | 用于短信的人员的手机号码。 |
-| personalEmail.address | 必需 | 人员的电子邮件地址。 |
+| `mobilePhone.number` | 必需 | 用于短信的人员的手机号码。 |
+| `personalEmail.address` | 必需 | 人员的电子邮件地址。 |
 
 +++
 
@@ -130,8 +121,8 @@ To create a schema, complete the steps below:
 
 | 字段 | 要求 |
 | --- | --- |
-| person.name.firstName | 建议 |
-| person.name.lastName | 建议 |
+| `person.name.firstName` | 建议 |
+| `person.name.lastName` | 建议 |
 
 +++
 
@@ -147,12 +138,12 @@ To create a schema, complete the steps below:
 
 | 字段 | 要求 |
 | --- | --- |
-| consents.marketing.email.val | 必需 |
-| consents.marketing.preferred | 必需 |
-| consents.marketing.push.val | 必需 |
-| consents.marketing.sms.val | 必需 |
-| consents.personalize.content.val | 必需 |
-| consents.share.val | 必需 |
+| `consents.marketing.email.val` | 必需 |
+| `consents.marketing.preferred` | 必需 |
+| `consents.marketing.push.val` | 必需 |
+| `consents.marketing.sms.val` | 必需 |
+| `consents.personalize.content.val` | 必需 |
+| `consents.share.val` | 必需 |
 
 +++
 
@@ -162,10 +153,6 @@ To create a schema, complete the steps below:
 
 +++
 
-<!--
-![Customer attributes schema highlighting the list of field groups.](../intelligent-re-engagement/images/customer-attributes.png) 
--->
-
 #### 客户数字交易模式
 
 客户数字交易模式由 [!UICONTROL XDM ExperienceEvent] 类，包括以下字段组：
@@ -174,8 +161,8 @@ To create a schema, complete the steps below:
 
 | 字段 | 要求 |
 | --- | --- |
-| device.model | 建议 |
-| environment.browserDetails.userAgent | 建议 |
+| `device.model` | 建议 |
+| `environment.browserDetails.userAgent` | 建议 |
 
 +++
 
@@ -185,13 +172,13 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| web.webInteraction.linkClicks.id | 建议 | 与交互对应的Web链接或URL的ID。 |
-| web.webInteraction.linkClicks.value | 建议 | 与交互相对应的Web链接或URL的点击次数。 |
-| web.webInteraction.name | 建议 | 网页的名称。 |
-| web.webInteraction.URL | 建议 | 网页的URL。 |
-| web.webPageDetails.name | 建议 | 发生Web交互的网页的名称。 |
-| web.webPageDetails.URL | 建议 | 发生Web交互的网页的URL。 |
-| web.webReferrer.URL | 建议 | 描述Web交互的反向链接，即在记录当前Web交互之前，访客所使用的URL。 |
+| `web.webInteraction.linkClicks.id` | 建议 | 与交互对应的Web链接或URL的ID。 |
+| `web.webInteraction.linkClicks.value` | 建议 | 与交互相对应的Web链接或URL的点击次数。 |
+| `web.webInteraction.name` | 建议 | 网页的名称。 |
+| `web.webInteraction.URL` | 建议 | 网页的URL。 |
+| `web.webPageDetails.name` | 建议 | 发生Web交互的网页的名称。 |
+| `web.webPageDetails.URL` | 建议 | 发生Web交互的网页的URL。 |
+| `web.webReferrer.URL` | 建议 | 描述Web交互的反向链接，即在记录当前Web交互之前，访客所使用的URL。 |
 
 +++
 
@@ -199,35 +186,35 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 |
 | --- | --- |
-| commerce.cart.cartID | 建议 |
-| commerce.cart.cartSource | 建议 |
-| commerce.cartAbandons.id | 建议 |
-| commerce.cartAbandons.value | 建议 |
-| commerce.order.orderType | 建议 |
-| commerce.order.payments.paymentAmount | 建议 |
-| commerce.order.payments.paymentType | 建议 |
-| commerce.order.payments.transactionID | 建议 |
-| commerce.order.priceTotal | 建议 |
-| commerce.order.purchaseID | 建议 |
-| commerce.productListAdds.id | 建议 |
-| commerce.productListAdds.value | 建议 |
-| commerce.productListOpens.id | 建议 |
-| commerce.productListOpens.value | 建议 |
-| commerce.productListRemoval.id | 建议 |
-| commerce.productListRemoval.value | 建议 |
-| commerce.productListViews.id | 建议 |
-| commerce.productListViews.value | 建议 |
-| commerce.productViews.id | 建议 |
-| commerce.productViews.value | 建议 |
-| commerce.purchases.id | 建议 |
-| commerce.purchases.value | 建议 |
-| marketing.campaignGroup | 建议 |
-| marketing.campaignName | 建议 |
-| marketing.trackingCode | 建议 |
-| productListItems.name | 建议 |
-| productListItems.priceTotal | 建议 |
-| productListItems.product | 建议 |
-| productListItems.quantity | 建议 |
+| `commerce.cart.cartID` | 建议 |
+| `commerce.cart.cartSource` | 建议 |
+| `commerce.cartAbandons.id` | 建议 |
+| `commerce.cartAbandons.value` | 建议 |
+| `commerce.order.orderType` | 建议 |
+| `commerce.order.payments.paymentAmount` | 建议 |
+| `commerce.order.payments.paymentType` | 建议 |
+| `commerce.order.payments.transactionID` | 建议 |
+| `commerce.order.priceTotal` | 建议 |
+| `commerce.order.purchaseID` | 建议 |
+| `commerce.productListAdds.id` | 建议 |
+| `commerce.productListAdds.value` | 建议 |
+| `commerce.productListOpens.id` | 建议 |
+| `commerce.productListOpens.value` | 建议 |
+| `commerce.productListRemoval.id` | 建议 |
+| `commerce.productListRemoval.value` | 建议 |
+| `commerce.productListViews.id` | 建议 |
+| `commerce.productListViews.value` | 建议 |
+| `commerce.productViews.id` | 建议 |
+| `commerce.productViews.value` | 建议 |
+| `commerce.purchases.id` | 建议 |
+| `commerce.purchases.value` | 建议 |
+| `marketing.campaignGroup` | 建议 |
+| `marketing.campaignName` | 建议 |
+| `marketing.trackingCode` | 建议 |
+| `productListItems.name` | 建议 |
+| `productListItems.priceTotal` | 建议 |
+| `productListItems.product` | 建议 |
+| `productListItems.quantity` | 建议 |
 
 +++
 
@@ -235,12 +222,12 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| endUserIDs._experience.emailid.authenticatedState | 必需 | 最终用户电子邮件地址ID已验证状态。 |
-| endUserIDs._experience.emailid.id | 必需 | 最终用户电子邮件地址ID。 |
-| endUserIDs._experience.emailid.namespace.code | 必需 | 最终用户电子邮件地址ID命名空间代码。 |
-| endUserIDs._experience.mcid.authenticatedState | 必需 | Adobe Marketing Cloud ID (MCID)身份验证状态。 MCID现在称为Experience CloudID (ECID)。 |
-| endUserIDs._experience.mcid.id | 必需 | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
-| endUserIDs._experience.mcid.namespace.code | 必需 | Adobe Marketing Cloud ID (MCID)命名空间代码。 |
+| `endUserIDs._experience.emailid.authenticatedState` | 必需 | 最终用户电子邮件地址ID已验证状态。 |
+| `endUserIDs._experience.emailid.id` | 必需 | 最终用户电子邮件地址ID。 |
+| `endUserIDs._experience.emailid.namespace.code` | 必需 | 最终用户电子邮件地址ID命名空间代码。 |
+| `endUserIDs._experience.mcid.authenticatedState` | 必需 | Adobe Marketing Cloud ID (MCID)身份验证状态。 MCID现在称为Experience CloudID (ECID)。 |
+| `endUserIDs._experience.mcid.id` | 必需 | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
+| `endUserIDs._experience.mcid.namespace.code` | 必需 | Adobe Marketing Cloud ID (MCID)命名空间代码。 |
 
 +++
 
@@ -248,8 +235,8 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 |
 | --- | --- |
-| 事件类型 | 必需 |
-| timestamp | 必需 |
+| `eventType` | 必需 |
+| `timestamp` | 必需 |
 
 +++
 
@@ -258,10 +245,6 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 外部源系统审核属性是一种标准的体验数据模型(XDM)数据类型，可捕获有关外部源系统的审核详细信息。
 
 +++
-
-<!--
-![Customer digital transactions schema highlighting the list of field groups.](../intelligent-re-engagement/images/customer-digital-transactions.png) 
--->
 
 #### 客户离线交易架构
 
@@ -271,16 +254,16 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| commerce.cart.cartID | 必需 | 购物车的ID。 |
-| commerce.order.orderType | 必需 | 描述产品订单类型的对象。 |
-| commerce.order.payments.paymentAmount | 必需 | 描述产品订单付款金额的对象。 |
-| commerce.order.payments.paymentType | 必需 | 描述产品订单付款类型的对象。 |
-| commerce.order.payments.transactionID | 必需 | 对象产品订单交易记录ID。 |
-| commerce.order.purchaseID | 必需 | 对象产品订单采购ID。 |
-| productListItems.name | 必需 | 表示客户选择的产品的物料名称列表。 |
-| productListItems.priceTotal | 必需 | 表示客户选择的产品的项目列表总价。 |
-| productListItems.product | 必需 | 选定的产品。 |
-| productListItems.quantity | 必需 | 表示客户选择的产品的物料列表的数量。 |
+| `commerce.cart.cartID` | 必需 | 购物车的ID。 |
+| `commerce.order.orderType` | 必需 | 描述产品订单类型的对象。 |
+| `commerce.order.payments.paymentAmount` | 必需 | 描述产品订单付款金额的对象。 |
+| `commerce.order.payments.paymentType` | 必需 | 描述产品订单付款类型的对象。 |
+| `commerce.order.payments.transactionID` | 必需 | 对象产品订单交易记录ID。 |
+| `commerce.order.purchaseID` | 必需 | 对象产品订单采购ID。 |
+| `productListItems.name` | 必需 | 表示客户选择的产品的物料名称列表。 |
+| `productListItems.priceTotal` | 必需 | 表示客户选择的产品的项目列表总价。 |
+| `productListItems.product` | 必需 | 选定的产品。 |
+| `productListItems.quantity` | 必需 | 表示客户选择的产品的物料列表的数量。 |
 
 +++
 
@@ -288,8 +271,8 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| mobilePhone.number | 必需 | 用于短信的人员的手机号码。 |
-| personalEmail.address | 必需 | 人员的电子邮件地址。 |
+| `mobilePhone.number` | 必需 | 用于短信的人员的手机号码。 |
+| `personalEmail.address` | 必需 | 人员的电子邮件地址。 |
 
 +++
 
@@ -297,8 +280,8 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 
 | 字段 | 要求 |
 | --- | --- |
-| 事件类型 | 必需 |
-| timestamp | 必需 |
+| `eventType` | 必需 |
+| `timestamp` | 必需 |
 
 +++
 
@@ -307,10 +290,6 @@ Web详细信息是XDM ExperienceEvent类的标准架构字段组，用于描述�
 外部源系统审核属性是一种标准的体验数据模型(XDM)数据类型，可捕获有关外部源系统的审核详细信息。
 
 +++
-
-<!--
-![Customer offline transactions schema highlighting the list of field groups.](../intelligent-re-engagement/images/customer-offline-transactions.png) 
--->
 
 #### Web连接器架构Adobe
 
@@ -320,48 +299,48 @@ AdobeWeb连接器架构由 [!UICONTROL XDM ExperienceEvent] 类，包括以下�
 
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
-| web.webInteraction.linkClicks.id | 建议 | 与交互对应的Web链接或URL的ID。 |
-| web.webInteraction.linkClicks.value | 建议 | 与交互相对应的Web链接或URL的点击次数。 |
-| web.webInteraction.name | 建议 | 网页的名称。 |
-| web.webInteraction.URL | 建议 | 网页的URL。 |
-| web.webPageDetails.name | 建议 | 发生Web交互的网页的名称。 |
-| web.webPageDetails.URL | 建议 | 发生Web交互的网页的URL。 |
-| web.webReferrer.URL | 建议 | 描述Web交互的反向链接，即在记录当前Web交互之前，访客所使用的URL。 |
-| commerce.cart.cartID | 建议 | |
-| commerce.cart.cartSource | 建议 | |
-| commerce.cartAbandons.id | 建议 | |
-| commerce.cartAbandons.value | 建议 | |
-| commerce.order.orderType | 建议 | |
-| commerce.order.payments.paymentAmount | 建议 | |
-| commerce.order.payments.paymentType | 建议 | |
-| commerce.order.payments.transactionID | 建议 | |
-| commerce.order.priceTotal | 建议 | |
-| commerce.order.purchaseID | 建议 | |
-| commerce.productListAdds.id | 建议 | |
-| commerce.productListAdds.value | 建议 | |
-| commerce.productListOpens.id | 建议 | |
-| commerce.productListOpens.value | 建议 | |
-| commerce.productListRemoval.id | 建议 | |
-| commerce.productListRemoval.value | 建议 | |
-| commerce.productListViews.id | 建议 | |
-| commerce.productListViews.value | 建议 | |
-| commerce.productViews.id | 建议 | |
-| commerce.productViews.value | 建议 | |
-| commerce.purchases.id | 建议 | |
-| commerce.purchases.value | 建议 | |
-| marketing.campaignGroup | 建议 | |
-| marketing.campaignName | 建议 | |
-| marketing.trackingCode | 建议 | |
-| productListItems.name | 建议 | |
-| productListItems.priceTotal | 建议 | |
-| productListItems.product | 建议 | |
-| productListItems.quantity | 建议 | |
-| endUserIDs._experience.emailid.authenticatedState | 必需 | 最终用户电子邮件地址ID已验证状态。 |
-| endUserIDs._experience.emailid.id | 必需 | 最终用户电子邮件地址ID。 |
-| endUserIDs._experience.emailid.namespace.code | 必需 | 最终用户电子邮件地址ID命名空间代码。 |
-| endUserIDs._experience.mcid.authenticatedState | 必需 | Adobe Marketing Cloud ID (MCID)身份验证状态。 MCID现在称为Experience CloudID (ECID)。 |
-| endUserIDs._experience.mcid.id | 必需 | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
-| endUserIDs._experience.mcid.namespace.code | 必需 | Adobe Marketing Cloud ID (MCID)命名空间代码。 |
+| `web.webInteraction.linkClicks.id` | 建议 | 与交互对应的Web链接或URL的ID。 |
+| `web.webInteraction.linkClicks.value` | 建议 | 与交互相对应的Web链接或URL的点击次数。 |
+| `web.webInteraction.name` | 建议 | 网页的名称。 |
+| `web.webInteraction.URL` | 建议 | 网页的URL。 |
+| `web.webPageDetails.name` | 建议 | 发生Web交互的网页的名称。 |
+| `web.webPageDetails.URL` | 建议 | 发生Web交互的网页的URL。 |
+| `web.webReferrer.URL` | 建议 | 描述Web交互的反向链接，即在记录当前Web交互之前，访客所使用的URL。 |
+| `commerce.cart.cartID` | 建议 | |
+| `commerce.cart.cartSource` | 建议 | |
+| `commerce.cartAbandons.id` | 建议 | |
+| `commerce.cartAbandons.value` | 建议 | |
+| `commerce.order.orderType` | 建议 | |
+| `commerce.order.payments.paymentAmount` | 建议 | |
+| `commerce.order.payments.paymentType` | 建议 | |
+| `commerce.order.payments.transactionID` | 建议 | |
+| `commerce.order.priceTotal` | 建议 | |
+| `commerce.order.purchaseID` | 建议 | |
+| `commerce.productListAdds.id` | 建议 | |
+| `commerce.productListAdds.value` | 建议 | |
+| `commerce.productListOpens.id` | 建议 | |
+| `commerce.productListOpens.value` | 建议 | |
+| `commerce.productListRemoval.id` | 建议 | |
+| `commerce.productListRemoval.value` | 建议 | |
+| `commerce.productListViews.id` | 建议 | |
+| `commerce.productListViews.value` | 建议 | |
+| `commerce.productViews.id` | 建议 | |
+| `commerce.productViews.value` | 建议 | |
+| `commerce.purchases.id` | 建议 | |
+| `commerce.purchases.value` | 建议 | |
+| `marketing.campaignGroup` | 建议 | |
+| `marketing.campaignName` | 建议 | |
+| `marketing.trackingCode` | 建议 | |
+| `productListItems.name` | 建议 | |
+| `productListItems.priceTotal` | 建议 | |
+| `productListItems.product` | 建议 | |
+| `productListItems.quantity` | 建议 | |
+| `endUserIDs._experience.emailid.authenticatedState` | 必需 | 最终用户电子邮件地址ID已验证状态。 |
+| `endUserIDs._experience.emailid.id` | 必需 | 最终用户电子邮件地址ID。 |
+| `endUserIDs._experience.emailid.namespace.code` | 必需 | 最终用户电子邮件地址ID命名空间代码。 |
+| `endUserIDs._experience.mcid.authenticatedState` | 必需 | Adobe Marketing Cloud ID (MCID)身份验证状态。 MCID现在称为Experience CloudID (ECID)。 |
+| `endUserIDs._experience.mcid.id` | 必需 | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
+| `endUserIDs._experience.mcid.namespace.code` | 必需 | Adobe Marketing Cloud ID (MCID)命名空间代码。 |
 
 +++
 
@@ -369,8 +348,8 @@ AdobeWeb连接器架构由 [!UICONTROL XDM ExperienceEvent] 类，包括以下�
 
 | 字段 | 要求 |
 | --- | --- |
-| 事件类型 | 必需 |
-| timestamp | 必需 |
+| `eventType` | 必需 |
+| `timestamp` | 必需 |
 
 +++
 
@@ -380,34 +359,15 @@ AdobeWeb连接器架构由 [!UICONTROL XDM ExperienceEvent] 类，包括以下�
 
 +++
 
-<!--
-![Adobe web connector schema highlighting the list of field groups.](../intelligent-re-engagement/images/adobe-web-connector.png) 
--->
-
 ### 从架构创建数据集
 
-数据集是一组数据的存储和管理结构，通常是具有字段（行）和架构（列）的表。 智能重新参与历程的每个架构都将有一个数据集。
+数据集是一组数据的存储和管理结构，通常是具有字段（行）和架构（列）的表。 智能重新参与历程的每个架构都有一个数据集。
 
 有关如何从架构创建数据集的更多信息，请参阅 [数据集UI指南](/help/catalog/datasets/user-guide.md).
-<!-- 
-To create a dataset from a schema, complete the steps below:
-
-1. Navigate to **[!UICONTROL Data Management]** > **[!UICONTROL Datasets]** and select **[!UICONTROL Create dataset]**.
-2. Select **[!UICONTROL Create dataset from schema]**.
-3. Select the relevant re-engagement schema you created.
-4. Give your dataset a name and optionally a description.
-5. Select **[!UICONTROL Finish]**.
-
-![A recording of the steps to create a dataset from a schema.](../intelligent-re-engagement/images/dataset-from-schema.gif)
--->
 
 >[!NOTE]
 >
 >与创建架构的步骤类似，您需要启用要包含在实时客户档案中的数据集。 有关启用数据集以在Real-time Customer Profile中使用的更多信息，请参阅 [创建架构教程。](/help/xdm/tutorials/create-schema-ui.md#profile).
-
-<!-- 
-![Enable dataset for profile.](../intelligent-re-engagement/images/enable-dataset-for-profile.png)
--->
 
 ### 隐私、同意和数据治理
 
@@ -419,17 +379,17 @@ To create a dataset from a schema, complete the steps below:
 
 在创建重新接触路径时，必须考虑并使用以下同意政策：
 
-* 如果consents.marketing.email.val = &quot;Y&quot; ，则可以发送电子邮件
-* 如果consents.marketing.sms.val = &quot;Y&quot; ，则可以使用短信
-* 如果consents.marketing.push.val = &quot;Y&quot; ，则可以推送
-* 如果consents.share.val = &quot;Y&quot; ，则可以通告
+* 如果 `consents.marketing.email.val = "Y"` 然后可以发送电子邮件
+* 如果 `consents.marketing.sms.val = "Y"` 然后可以发送短信
+* 如果 `consents.marketing.push.val = "Y"` 然后可以推送
+* 如果 `consents.share.val = "Y"` 然后可以广告
 * 需要由客户实施定义
 
 #### DULE标签和实施
 
 个人电子邮件地址用作直接可识别数据，用于识别或联系特定个人而不是设备。
 
-* personalEmail.address = I1
+* `personalEmail.address = I1`
 
 #### 营销策略
 
@@ -442,19 +402,6 @@ To create a dataset from a schema, complete the steps below:
 * 限制将直接可识别的数据与匿名数据相结合
 
 ### 创建受众
-
-<!--
-To create an audience, complete the steps below:
-
-1. Navigate to **[!UICONTROL Customer]** > **[!UICONTROL Audiences]** and select **[!UICONTROL Create audience]**.
-2. Select **[!UICONTROL Build rule]** and select **[!UICONTROL Create]**.
-3. Navigate to **[!UICONTROL Field]** and select **[!UICONTROL Events]** tab.
-4. Navigate or use the search box to find the event type, then drag this to the builder. Finally add event rules by dragging event types.
-5. Give your schema a name and optionally a description.
-6. Select **[!UICONTROL Save]**.
-
-![A recording of the steps to create an audience.](../intelligent-re-engagement/images/create-an-audience.gif)
--->
 
 #### 品牌重新参与历程的受众创建
 
@@ -470,22 +417,35 @@ To create an audience, complete the steps below:
 
 以下事件用于重新参与历程，其中用户在线查看了产品，并且在未来24小时内未添加到购物车，随后的3天内没有品牌参与。
 
-包括至少具有1个EventType = ProductViews事件的受众，然后具有至少1个事件，其中（EventType不等于commerce.productListAdds）并且在过去24小时内发生，然后3天后没有在其中发生（EventType = application.launch或web.webpagedetails.pageViews或commerce.purchases）并且在过去2天内发生的任何事件。
+设置此受众时需要以下字段和条件：
 
-<!--
-![A screenshot of the re-engagement audience showing the set of rules.](../intelligent-re-engagement/images/re-engagement-audience.png) 
--->
+* `EventType: commerce.productViews`
+   * `Timestamp: <= 24 hours before now`
+* `EventType is not: commerce.productListAdds`
+   * `Timestamp: <= 24 hours before now, GAP(>= 3 days)`
+* `EventType: application.launch or web.webpagedetails.pageViews or commerce.purchases`
+   * `Timestamp: <= 2 days before now`
+
+重新参与历程的描述符显示为：
+
+`Include audience who have at least 1 EventType = ProductViews event THEN have at least 1 Any event where (EventType does not equal commerce.productListAdds) and occurs in last 24 hour(s) then after 3 days do not have any Any event where (EventType = application.launch or web.webpagedetails.pageViews or commerce.purchases) and occurs in last 2 day(s).`
 
 >[!TAB 已放弃的购物车历程]
 
-以下事件适用于将产品添加到购物车，但在过去24小时内未完成购买或清除购物车的用户档案。
+以下事件用于放弃的购物车历程，在该历程中，用户将产品添加到购物车，但在过去24小时内未完成购买或清除购物车。
 
-Include EventType = commerce.productListAdds介于30分钟和1440分钟之间。
-排除EventType = commerce.purchases此时提前30分钟，或者EventType = commerce.productListRemovals和购物车ID等于产品列表Adds1购物车ID（包含事件）。
+设置此受众时需要以下字段和条件：
 
-<!--
-![A screenshot of the re-engagement audience showing the set of rules.](../intelligent-re-engagement/images/abandoned-cart-audience.png) 
--->
+* `EventType: commerce.productListAdds`
+   * `Timestamp: >= 30 minutes before now and <= 1440 minutes before now`
+* `EventType: commerce.purchases`
+   * `Timestamp: <= 30 minutes before now`
+* `EventType: commerce.productListRemovals`
+   * `Timestamp: <= 30 minutes before now`
+
+放弃的购物车历程的描述符显示为：
+
+`Include EventType = commerce.productListAdds between 30 min and 1440 minutes before now. exclude EventType = commerce.purchases 30 minutes before now OR EventType = commerce.productListRemovals AND Cart ID equals Product List Adds1 Cart ID (the inclusion event).`
 
 >[!ENDTABS]
 
@@ -495,108 +455,104 @@ Include EventType = commerce.productListAdds介于30分钟和1440分钟之间。
 >
 >Adobe Journey Optimizer不包含本页顶部的图中显示的所有内容。 所有付费媒体广告均创建于 [!UICONTROL 目标].
 
-Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化的体验。 客户历程是客户与品牌互动的整个过程。 每个用例可以有各种不同的历程，每个历程都需要特定信息。 下面列出了每个历程分支所需的精确数据。
+Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化的体验。 客户历程是客户与品牌互动的整个过程。 每个用例历程都需要特定信息。 下面列出了每个历程分支所需的精确数据。
 
 >[!BEGINTABS]
 
 >[!TAB 重新参与历程]
-
-<!--
-![Customer re-engagemnt journey in Adobe Journey Optimizer overview](../intelligent-re-engagement/images/re-engagement-ajo.png) 
--->
 
 +++活动
 
 * 产品查看次数
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * 事件类型= commerce.productViews
+      * `EventType = commerce.productViews`
       * 字段:
-         * Commerce.productViews.id
-         * Commerce.productViews.value
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
+         * `Commerce.productViews.id`
+         * `Commerce.productViews.value`
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
 
 * 添加到购物车
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * 事件类型= commerce.productListAdds
+      * `EventType = commerce.productListAdds`
       * 字段:
-         * Commerce.productListAdds.id
-         * Commerce.productListAdds.value
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * commerce.cart.cartID
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
+         * `Commerce.productListAdds.id`
+         * `Commerce.productListAdds.value`
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `commerce.cart.cartID`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
 
 * 品牌互动
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * application.launch、commerce.purchases、web.webpagedetails.pageViews中的EventType
+      * `EventType in application.launch, commerce.purchases, web.webpagedetails.pageViews`
       * 字段:
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * web.webpagedetails.URL
-         * web.webpagedetails.isHomePage
-         * web.webpagedetails.name
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
-         * Commerce.purchases.id
-         * Commerce.purchases.value
-         * shipping.address.city
-         * shipping.address.countryCode
-         * shipping.address.postalCode
-         * shipping.address.state
-         * shipping.address.street1
-         * shipping.address.street2
-         * shipping.shipDate
-         * shipping.trackingNumber
-         * shipping.trackingURL
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `web.webpagedetails.URL`
+         * `web.webpagedetails.isHomePage`
+         * `web.webpagedetails.name`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
+         * `Commerce.purchases.id`
+         * `Commerce.purchases.value`
+         * `shipping.address.city`
+         * `shipping.address.countryCode`
+         * `shipping.address.postalCode`
+         * `shipping.address.state`
+         * `shipping.address.street1`
+         * `shipping.address.street2`
+         * `shipping.shipDate`
+         * `shipping.trackingNumber`
+         * `shipping.trackingURL`
 
 +++
 
@@ -608,21 +564,21 @@ Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化
 * 条件
    * 检查自上次查看产品以来是否至少有一个在线或离线购买事件。
       * 架构：客户数字交易
-      * eventType = commerce.purchases
-      * timestamp >上次查看产品的时间戳
+      * `eventType = commerce.purchases`
+      * `timestamp > timestamp of product last viewed`
 
    * 检查自上次查看产品以来是否至少有一次离线购买：
       * 架构：客户离线交易v.1
-      * eventType = commerce.purchases
-      * timestamp >上次查看产品的时间戳
+      * `eventType = commerce.purchases`
+      * `timestamp > timestamp of product last viewed`
 
    * 条件 — 选择Target渠道
       * 电子邮件
-         * consents.marketing.email.val = y
+         * `consents.marketing.email.val = y`
       * 推送
-         * consents.marketing.push.val=y
+         * `consents.marketing.push.val=y`
       * 短信
-         * consents.marketing.sms.val = y
+         * `consents.marketing.sms.val = y`
 
    * 渠道个性化
       * 基于产品视图的个性化渠道内容。
@@ -631,130 +587,126 @@ Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化
 
 >[!TAB 已放弃的购物车历程]
 
-<!--
-![Customer abandoned cart journey in Adobe Journey Optimizer overview](../intelligent-re-engagement/images/abandoned-cart-ajo.png) 
--->
-
 +++活动
 
 * 添加到购物车
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * 事件类型= commerce.productListAdds
+      * `EventType = commerce.productListAdds`
       * 字段:
-         * Commerce.productListAdds.id
-         * Commerce.productListAdds.value
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * commerce.cart.cartID
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
+         * `Commerce.productListAdds.id`
+         * `Commerce.productListAdds.value`
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `commerce.cart.cartID`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
 
 * 在线购买
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * 事件类型= commerce.purchases
+      * `EventType = commerce.purchases`
       * 字段:
-         * Commerce.purchases.id
-         * Commerce.purchases.value
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
+         * `Commerce.purchases.id`
+         * `Commerce.purchases.value`
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
 
 * 品牌互动
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * application.launch、commerce.purchases、web.webpagedetails.pageViews中的EventType
+      * `EventType in application.launch, commerce.purchases, web.webpagedetails.pageViews`
       * 字段:
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * web.webpagedetails.URL
-         * web.webpagedetails.isHomePage
-         * web.webpagedetails.name
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
-         * Commerce.purchases.id
-         * Commerce.purchases.value
-         * shipping.address.city
-         * shipping.address.countryCode
-         * shipping.address.postalCode
-         * shipping.address.state
-         * shipping.address.street1
-         * shipping.address.street2
-         * shipping.shipDate
-         * shipping.trackingNumber
-         * shipping.trackingURL
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `web.webpagedetails.URL`
+         * `web.webpagedetails.isHomePage`
+         * `web.webpagedetails.name`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
+         * `Commerce.purchases.id`
+         * `Commerce.purchases.value`
+         * `shipping.address.city`
+         * `shipping.address.countryCode`
+         * `shipping.address.postalCode`
+         * `shipping.address.state`
+         * `shipping.address.street1`
+         * `shipping.address.street2`
+         * `shipping.shipDate`
+         * `shipping.trackingNumber`
+         * `shipping.trackingURL`
 
 +++
 
 +++密钥历程逻辑
 
 * 历程条目逻辑
-   * AddToCart事件
+   * `AddToCart` 活动
 
 * AuthenticatedState处于已验证状态
 
 * 条件：自上次放弃购物车以来的离线购买：
    * 架构：客户离线交易v.1
-   * eventType = commerce.purchases
-   * 上次放弃购物车的时间戳>时间戳
+   * `eventType = commerce.purchases`
+   * `timestamp > timestamp of cart was last abandoned`
 
 * 条件：自上次放弃购物车以来已清除的购物车：
    * 架构：客户数字交易v.1
-   * eventType = commerce.cartCleared
-   * cartID（购物车的ID）
-   * 上次放弃购物车的时间戳>时间戳
+   * `eventType = commerce.cartCleared`
+   * `cartID` （购物车的ID）
+   * `timestamp > timestamp of cart was last abandoned`
 
 * 选择目标渠道（选择一个或多个渠道以扩大覆盖范围）
    * 电子邮件
-      * consents.marketing.email.val = y
+      * `consents.marketing.email.val = y`
    * 推送
-      * consents.marketing.push.val = y
+      * `consents.marketing.push.val = y`
    * 短信
-      * consents.marketing.sms.val = y
+      * `consents.marketing.sms.val = y`
    * 渠道个性化
       * 显示购物车详细信息，并且可以采用表格格式显示多个产品。
 
@@ -762,37 +714,33 @@ Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化
 
 >[!TAB 订单确认历程]
 
-<!--
-![Customer order confirmation journey in Adobe Journey Optimizer overview](../intelligent-re-engagement/images/order-confirmation-ajo.png) 
--->
-
 +++活动
 
 * 在线购买
    * 架构：客户数字交易
    * 字段:
-      * 事件类型
+      * `EventType`
    * 条件:
-      * 事件类型= commerce.purchases
+      * `EventType = commerce.purchases`
       * 字段:
-         * Commerce.purchases.id
-         * Commerce.purchases.value
-         * 事件类型
-         * identityMap.authenticatedState
-         * identityMap.id
-         * identityMap.primary
-         * productListItems.SKU
-         * productListItems.currencyCode
-         * productListItems.name
-         * productListItems.priceTotal
-         * productListItems.product
-         * productListItems.productImageUrl
-         * productListItems.quantity
-         * timestamp
-         * endUserIDs._experience.emailid.authenticatedState
-         * endUserIDs._experience.emailid.id
-         * endUserIDs._experience.emailid.namespace.code
-         * _id
+         * `Commerce.purchases.id`
+         * `Commerce.purchases.value`
+         * `eventType`
+         * `identityMap.authenticatedState`
+         * `identityMap.id`
+         * `identityMap.primary`
+         * `productListItems.SKU`
+         * `productListItems.currencyCode`
+         * `productListItems.name`
+         * `productListItems.priceTotal`
+         * `productListItems.product`
+         * `productListItems.productImageUrl`
+         * `productListItems.quantity`
+         * `timestamp`
+         * `endUserIDs._experience.emailid.authenticatedState`
+         * `endUserIDs._experience.emailid.id`
+         * `endUserIDs._experience.emailid.namespace.code`
+         * `_id`
 
 +++
 
@@ -819,7 +767,7 @@ Adobe Journey Optimizer可帮助您为客户提供互联、情境式和个性化
 
 ### 在目标中设置付费媒体广告
 
-目标框架用于付费媒体广告。 检查同意后，它将发送到配置的各种目标。 例如，直邮、电子邮件等。
+目标框架用于付费媒体广告。 检查同意后，它会发送到配置的各种目标。 例如直邮、电子邮件、推送和短信。
 
 #### 目标所需的数据
 
