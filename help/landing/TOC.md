@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何实时地为客户营造个性化体验。
-source-git-commit: bc781aadb620ad4b383d441d36e39626b0875901
+source-git-commit: 65abbb4dde5b83f597a3a5bfd96ce7c081c88275
 workflow-type: tm+mt
-source-wordcount: '258'
-ht-degree: 27%
+source-wordcount: '260'
+ht-degree: 30%
 
 ---
 
@@ -17,10 +17,10 @@ ht-degree: 27%
 * [平台概述（视频）](video/platform-overview.md)
 * [Platform教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
 * [由Platform提供支持的客户体验（视频）](video/customer-experience.md)
-* [Platform支持的客户体验的幕后（视频）](video/customer-experience-bts.md)
+* [由Platform提供支持的客户体验的幕后（视频）](video/customer-experience-bts.md)
 * 快速入门{#getting-started}
    * [端到端示例工作流](end-to-end-tutorial.md)
-   * [主要功能（视频）](video/key-capabilities.md)
+   * [关键功能（视频）](video/key-capabilities.md)
    * [主要用例（视频）](video/platform-use-cases.md)
    * [平台架构（视频）](video/platform-architecture.md)
    * [角色和项目阶段（视频）](video/roles-project-phases.md)
@@ -30,13 +30,14 @@ ht-degree: 27%
    * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
    * [自我识别调查](self-identification.md)
+   * [AI助手](ai-assistant.md)
 * EXPERIENCE PLATFORMAPI {#platform-apis}
    * [Platform API快速入门](api-guide.md)
    * [验证和访问 Platform API](api-authentication.md)
    * [API基础知识](api-fundamentals.md)
    * [将Postman与平台API结合使用](postman.md)
    * [API参考文档](https://www.adobe.com/go/platform-api-reference-en)
-* 平台文档 {#documentation}
+* Platform文档 {#documentation}
    * [概述](documentation/overview.md)
    * [语言支持](documentation/language-support.md)
 * 基于Platform构建的应用程序服务 {#ecosystem}
@@ -66,7 +67,7 @@ ht-degree: 27%
          * [导出](./governance-privacy-security/audit-logs/api/export.md)
    * [数据加密](./governance-privacy-security/encryption.md)
    * [客户管理的密钥](./governance-privacy-security/customer-managed-keys.md)
-* 许可证使用和护栏 {#license}
+* 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
    * [许可证使用情况仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
 * [疑难解答指南](troubleshooting.md)
