@@ -1,14 +1,19 @@
 ---
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
-source-git-commit: d8845e080489af12e98badc892bb60cb9749bd47
+source-git-commit: 4fc94fc39fa09756a440b5e532330cd310dd96d2
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
 
-# 参数化查询（限量发布）
+# 参数化查询（限量发布） {#parameterized-queries}
+
+>[!CONTEXTUALHELP]
+>id="platform_queryService_queryEditor_parameterizedQueries"
+>title="参数化查询"
+>abstract="使用参数化查询在执行时添加参数值。 这使您能够处理动态数据并重复使用不同用例的查询。 使用 `'$'` 在文本编辑器的查询中输入查询参数。 接下来，在编辑器下方的Query parameters部分中添加键的值。"
 
 >[!IMPORTANT]
 >
