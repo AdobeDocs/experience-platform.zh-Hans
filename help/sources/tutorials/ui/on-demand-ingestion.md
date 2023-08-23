@@ -1,9 +1,7 @@
 ---
 title: 在UI中按需引入源数据流
 description: 了解如何使用Experience Platform用户界面按需为源连接创建数据流。
-hide: true
-hidefromtoc: true
-source-git-commit: 812aa0bb0ec9199ef575ac972038115afc2fa647
+source-git-commit: ce1e6c08d1e53346c11f9746cea524689f402031
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
