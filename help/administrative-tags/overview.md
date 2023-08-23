@@ -4,9 +4,9 @@ title: 统一标记概述
 description: 本文档提供有关 Adobe Experience Platform 中的统一标记的信息
 exl-id: a19e37c3-697a-4000-9cb8-d67478b47dc6
 source-git-commit: 6977438d57dc8e1390812e58bf039ebc60cb830d
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '578'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
