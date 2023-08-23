@@ -1,20 +1,15 @@
 ---
 title: 在UI中创建Pendo源连接
 description: 了解如何使用Adobe Experience Platform UI创建Pendo源连接。
-badge: Beta
 exl-id: defdec30-42af-43c8-b2eb-7ce98f7871e3
-source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '1211'
+source-wordcount: '1194'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Pendo] 源连接数据流和UI中
-
->[!NOTE]
->
->此 [!DNL Pendo] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 本教程提供了用于创建 [!DNL Pendo] 源连接和数据流(使用Adobe Experience Platform用户界面)。
 
