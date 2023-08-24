@@ -4,7 +4,7 @@ title: 许可证使用情况仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: 6ff198d1b4b567667eb3c74a2c6393ee3dc9ee7d
 workflow-type: tm+mt
 source-wordcount: '935'
 ht-degree: 2%
@@ -41,7 +41,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 换句话说，选择 [!UICONTROL 生产] 或 [!UICONTROL 开发] 分别提供所有生产沙盒或开发沙盒的使用情况报表。
 
-![突出显示沙盒选择器的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-sandbox.png)
+![突出显示沙盒选择器的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-sandbox-old.png)
 
 >[!WARNING]
 >
@@ -55,11 +55,11 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 选择沙盒后，您可以使用日期范围下拉列表选择要显示在仪表板中的时间段。 提供了多个选项，包括最近30天的默认值。
 
-![突出显示日期范围下拉列表的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-date-range.png)
+![突出显示日期范围下拉列表的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-date-range-old.png)
 
 您还可以选择 **[!UICONTROL 自定义日期]** 以选择显示的时间段。
 
-![突出显示了自定义日期范围选项的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-custom-date.png)
+![突出显示了自定义日期范围选项的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-custom-date-old.png)
 
 ## 小组件
 
@@ -67,7 +67,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 每个小组件显示一个线形图，将贵组织的实际数量与贵组织许可的总可用数量进行比较，并提供总使用量的百分比。
 
-![突出显示了“许可证使用情况”功能板“概述”选项卡，其中显示了示例许可证使用情况量度构件的线形图。](../images/license-usage/widgets.png)
+![突出显示了“许可证使用情况”功能板“概述”选项卡，其中显示了示例许可证使用情况量度构件的线形图。](../images/license-usage/widgets-old.png)
 
 ## 可用量度
 
