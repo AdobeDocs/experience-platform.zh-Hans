@@ -1,16 +1,18 @@
 ---
 title: 使用合作伙伴辅助的访客识别使现场体验个性化
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
-hide: true
-hidefromtoc: true
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 9d7e8ef99a42e804896f5c9befcf98bb1c010606
 workflow-type: tm+mt
-source-wordcount: '2492'
+source-wordcount: '2530'
 ht-degree: 99%
 
 ---
 
 # 使用合作伙伴辅助的访客识别使现场体验个性化
+
+>[!AVAILABILITY]
+>
+>此 功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 
@@ -48,7 +50,7 @@ ht-degree: 99%
    * [边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)
    * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)（或您选择的个性化平台。本用例教程重点介绍 Adobe Target 作为个性化引擎）
 
-## 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
+## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 
 ![一张信息图，其中描述如何使用合作伙伴提供的属性为访客营造个性化的体验。](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-steps.png)
 
@@ -61,7 +63,7 @@ ht-degree: 99%
 
 ## 如何实现用例：分步说明 {#step-by-step-instructions}
 
-通读以下部分（其中包括指向更多文档的链接）以完成上方大致概述中的每个步骤。
+通读以下部分（其中包括指向更多文档的链接）以完成上方高级概述中的每个步骤。
 
 ### 数据管理 - 创建标识命名空间、架构和数据集以管理数据属性 {#data-management}
 
@@ -191,7 +193,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 要设置第二个数据元素，请将新变量命名为 `pageVisit`，将&#x200B;**[!UICONTROL 扩展]**&#x200B;设置为 **[!UICONTROL Adobe Experience Platform]**，并选择 **[!UICONTROL XDM 对象]**&#x200B;作为数据类型。
 
-![突出显示用于正确配置pageVisit数据元素的选择。](/help/rtcdp/assets/partner-data/onsite-personalization/page-visit-data-element.png)
+![突出显示正确配置 pageVisit 数据元素需要作出的选择。](/help/rtcdp/assets/partner-data/onsite-personalization/page-visit-data-element.png)
 
 从“架构”中选择与预计从数据合作伙伴获得的值对应的第三方属性。然后，选中标题为&#x200B;**[!UICONTROL 提供整个对象]**&#x200B;的单选按钮。选择看起来像数据库的图标，然后选择您早先创建的 `partnerData` 数据元素。
 
@@ -265,4 +267,4 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 * [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* （**即将推出**）[!BADGE Beta]{type=Informative}**扩大激活**&#x200B;使用合作伙伴 ID 发布不接受 PII 或哈希 PII 的生态系统。
+* [扩展了对潜在客户配置文件和潜在客户受众的激活](/help/destinations/ui/activate-prospect-audiences.md) 以选择目标。
