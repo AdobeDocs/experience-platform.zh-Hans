@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年8月版发行说明。
-source-git-commit: c7cd33c5d3d18095fc525b7a8b36a06cad681200
+source-git-commit: a699f66fd48f463cc69ea0f214f487cce360615e
 workflow-type: tm+mt
 source-wordcount: '1592'
-ht-degree: 35%
+ht-degree: 36%
 
 ---
 
@@ -62,11 +62,15 @@ Adobe Experience Platform 中现有功能的更新：
 
 Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
 
-**新增或更新功能**
-&#x200B;AEM |功能 |描述 | | — | — | |同意分析和跟踪用例 |了解如何通过为Real-Time CDP数据的各种营销用例构建同意仪表板 [同意分析和跟踪文档](../../dashboards/insights-use-cases/consent-analysis.md). 它详细介绍如何根据您的业务需求创建具有适当属性的受众，然后通过在Adobe Experience Platform UI中使用预配置的构件来使用洞察。 它还提供了有关如何使用用户定义的功能板构建您自己的自定义小组件的说明。 本文档涵盖同意趋势和同意重叠用例。 |
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 同意分析和跟踪用例 | 了解如何通过为Real-Time CDP数据的各种营销用例构建同意仪表板 [同意分析和跟踪文档](../../dashboards/insights-use-cases/consent-analysis.md). 它详细介绍如何根据您的业务需求创建具有适当属性的受众，然后通过在Adobe Experience Platform UI中使用预配置的构件来使用洞察。 它还提供了有关如何使用用户定义的功能板构建您自己的自定义小组件的说明。 本文档涵盖同意趋势和同意重叠用例。 |
 
 {style="table-layout:auto"}
-有&#x200B;关功能板的更多信息，包括如何授予访问权限和创建自定义小组件，请从阅读 [功能板概述](../../dashboards/home.md).
+
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
