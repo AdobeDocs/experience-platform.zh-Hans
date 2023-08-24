@@ -1,13 +1,10 @@
 ---
-title: (Beta) 使用合作伙伴提供的属性补充第一方配置文件
+title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
-hide: true
-hidefromtoc: true
-badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
-workflow-type: ht
-source-wordcount: '1083'
-ht-degree: 100%
+source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+workflow-type: tm+mt
+source-wordcount: '1091'
+ht-degree: 96%
 
 ---
 
@@ -15,7 +12,7 @@ ht-degree: 100%
 
 >[!AVAILABILITY]
 >
->* 此 Beta 功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>* 此 功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 
@@ -32,7 +29,7 @@ ht-degree: 100%
 
 >[!WARNING]
 >
->Real-Time CDP 中包含的其他由合作伙伴提供的属性会影响您的&#x200B;*平均配置文件丰富程度*。有关配置文件丰富程度的更多信息，请阅读[ Real-Time Customer Data Platform 产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)。
+>Real-Time CDP 中包含的其他由合作伙伴提供的属性会影响您的&#x200B;*平均配置文件丰富度*。有关配置文件丰富度的更多信息，请阅读[ Real-Time Customer Data Platform 产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)。
 
 ## 如何实现该用例：大致概述 {#achieve-the-use-case-high-level}
 
@@ -121,5 +118,6 @@ Commenting out links for now
 
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
-* （**即将推出**）[!BADGE Beta]{type=Informative}**利用合作伙伴辅助的认可**&#x200B;在访问期间提供个性化现场体验，以及在访问后异地重新定位，而无需用户进行身份验证或之前使用过您的品牌。
-* （**即将推出**）[!BADGE Beta]{type=Informative}**扩大激活**&#x200B;使用合作伙伴 ID 发布不接受 PII 或哈希 PII 的生态系统。
+* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
+* [利用合作伙伴的帮助认可，使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
+* [扩展了对潜在客户配置文件和潜在客户受众的激活](/help/destinations/ui/activate-prospect-audiences.md) 以选择目标。

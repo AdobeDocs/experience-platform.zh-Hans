@@ -1,13 +1,11 @@
 ---
 title: 将目标受众激活到目标
 type: Tutorial
-hide: true
-hidefromtoc: true
 description: 了解如何将潜在客户受众激活到目标
-source-git-commit: e04d7a3cd75f4e61329a2de8ca5ddcc4d9518a57
+source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
 workflow-type: tm+mt
-source-wordcount: '522'
-ht-degree: 0%
+source-wordcount: '619'
+ht-degree: 12%
 
 ---
 
@@ -82,3 +80,11 @@ ht-degree: 0%
 Note that we will need to add links to other destination types here as more destinations become supported 
 
 -->
+
+## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
+
+探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
+
+* [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
+* 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
+* [利用合作伙伴的帮助认可，使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
