@@ -5,7 +5,7 @@ description: Adobe Experience Platform提供了一个功能板，通过该功能
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: c1ad20def39ef58253e8486ca4dcfcce2501510b
+source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
 workflow-type: tm+mt
 source-wordcount: '1495'
 ht-degree: 1%
@@ -68,7 +68,7 @@ ht-degree: 1%
 
 所有可用量度均显示在 [!UICONTROL 摘要] 选项卡。 可用的量度取决于许可的产品。 此视图提供 **跨所有生产或开发沙盒的所有量度的综合视图**. 为生产沙盒和开发沙盒提供相同级别的分析。
 
-![显示产品所有可用量度的平台产品的摘要视图。]()
+![显示产品所有可用量度的平台产品的摘要视图。](../images/license-usage/summary-tab.png)
 
 在摘要选项卡上，该表包括 [!UICONTROL 量度] 列。 这些易于用户识别的描述指示用于该类型沙盒的所有量度。
 
@@ -78,7 +78,7 @@ ht-degree: 1%
 
 沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 换句话说，选择 [!UICONTROL 生产] 或 [!UICONTROL 开发] 分别提供所有生产沙盒或开发沙盒的使用情况报表。
 
-![突出显示了生产沙盒和开发沙盒的Platform产品的摘要视图。](../images/license-usage/summary-tab.png)
+![突出显示了生产沙盒和开发沙盒的Platform产品的摘要视图。](../images/license-usage/summary-tab-sandboxes.png)
 
 >[!WARNING]
 >

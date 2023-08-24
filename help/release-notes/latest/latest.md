@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年8月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8a313587a339ea775adc5422519841b1e679be7a
+source-git-commit: b7812acf7c250621d40b152b391142050ac70e18
 workflow-type: tm+mt
-source-wordcount: '1592'
-ht-degree: 36%
+source-wordcount: '1649'
+ht-degree: 37%
 
 ---
 
@@ -123,6 +123,17 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
 | 类 | [[!UICONTROL XDM 单个潜在客户配置文件]](https://github.com/adobe/xdm/pull/1758/files) | 使用此类引入从数据供应商的漏斗顶部客户获取用例获得的潜在客户配置文件。 |
+
+{style="table-layout:auto"}
+
+**更新的 XDM 组件**
+
+| 组件类型 | 名称 | 更新描述 |
+| --- | --- | --- |
+| 扩展名([!UICONTROL Adobe Analytics ExperienceEvent完整扩展]) | [[!UICONTROL 上下文数据]](https://github.com/adobe/xdm/pull/1761/files) | [!UICONTROL 上下文数据] 映射对象已添加到 [!UICONTROL Adobe Analytics ExperienceEvent完整扩展] 为Adobe Analytics提供上下文数据。 |
+| 字段组 | 多种 | 多个字段已添加到 [[!UICONTROL 扩充事件区段详细信息]](https://github.com/adobe/xdm/pull/1760/files). |
+
+{style="table-layout:auto"}
 
 欲知更多信息，请阅读 [XDM系统概述](../../xdm/home.md).
 

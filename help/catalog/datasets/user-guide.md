@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 141037fd844c78e98785ea2246026ac120961dd5
+source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
 workflow-type: tm+mt
 source-wordcount: '2745'
 ht-degree: 4%
@@ -207,7 +207,7 @@ ht-degree: 4%
 
 通过在架构级别应用数据使用标签，您可以根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅 [数据管理概述](../../data-governance/home.md) 要了解有关标签的更多信息，或参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) 有关如何将标签应用于架构以便传播到数据集的说明。
 
-### 移至文件夹 {#move-to-folders}
+## 移至文件夹 {#move-to-folders}
 
 您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后选 **[!UICONTROL 移至文件夹]** 下拉菜单中。
 
@@ -217,7 +217,7 @@ ht-degree: 4%
 
 ![此 [!UICONTROL 移动] 数据集对话框 [!UICONTROL 移动] 突出显示。](../images/datasets/user-guide/move-dialog.png)
 
->
+>[!TIP]
 >
 >您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标(![创建文件夹图标。](../images/datasets/user-guide/create-folder-icon.png))。
 >
