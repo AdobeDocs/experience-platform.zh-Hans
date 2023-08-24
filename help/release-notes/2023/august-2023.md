@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年8月版发行说明。
-source-git-commit: b7812acf7c250621d40b152b391142050ac70e18
+source-git-commit: 5c1566bac20f7fb83a0ce48c4fe7a22e15dbeb37
 workflow-type: tm+mt
-source-wordcount: '1649'
+source-wordcount: '1650'
 ht-degree: 37%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform 中现有功能的更新：
 | 功能 | 描述 |
 | --- | --- |
 | 智能重新参与用例指南 | 此 [智能重新参与](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) 用例指南提供了有关如何重新吸引已放弃转化的客户的详细信息，这些客户随后将以智能、负责的方式完成转化。 本指南使用以下示例历程重新吸引客户： <ul><li>重新参与历程 — 定位已放弃产品浏览的客户。</li><li>放弃的购物车历程 — 定位已将产品放入购物车但尚未完成购买的客户。</li><li>订单确认历程 — 重点关注产品购买</li></ul> 请使用底部的详细反馈选项链接 [智能重新参与用例指南](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) 以提供反馈。 |
-| 目标客户配置文件 | 在Real-Time CDP中利用合作伙伴提供的潜在客户配置文件和合作伙伴ID执行漏斗上层营销，以接触新客户并丰富您的第一方数据： <ul><li>客户获取和可寻址性：利用所选数据合作伙伴提供的无Cookie标识符和经过哈希处理的PII，吸引全新客户并减少第三方Cookie依赖性。</li><li>在单个系统中实现完全的漏斗营销：在单个系统中为潜在客户和已知客户提供自助式分段、受众策划和本机激活。</li><li>信任基础：通过专利数据使用、标签、访问控制等方式，负责任地管理合作伙伴数据和配置文件，并将其推向市场。 有关更多信息，请阅读以下用例指南：现在提供了潜在客户用例指南。 阅读潜在客户用例指南，了解如何通过潜在客户用例吸引和赢取新客户：<ul><li>[潜在客户](../../rtcdp/partner-data/prospecting.md)</li><li>[现场个性化](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[补充第一方配置文件](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
+| 合作伙伴数据支持 | 在Real-Time CDP中利用合作伙伴提供的潜在客户配置文件和合作伙伴ID执行漏斗上层营销，以接触新客户并丰富您的第一方数据： <ul><li>客户获取和可寻址性：利用所选数据合作伙伴提供的无Cookie标识符和经过哈希处理的PII，吸引全新客户并减少第三方Cookie依赖性。</li><li>在单个系统中实现完全的漏斗营销：在单个系统中为潜在客户和已知客户提供自助式分段、受众策划和本机激活。</li><li>信任基础：通过专利数据使用、标签、访问控制等方式，负责任地管理合作伙伴数据和配置文件，并将其推向市场。 有关更多信息，请阅读以下用例指南：现在提供了潜在客户用例指南。 阅读潜在客户用例指南，了解如何通过潜在客户用例吸引和赢取新客户：<ul><li>[潜在客户](../../rtcdp/partner-data/prospecting.md)</li><li>[现场个性化](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[补充第一方配置文件](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
 
 {style="table-layout:auto"}
 
