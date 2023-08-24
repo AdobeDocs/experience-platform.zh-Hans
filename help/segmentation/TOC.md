@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adob​​e Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
-source-git-commit: d0b839dfc35ff9f8b4db34c61d2cdd820bfd448b
+source-git-commit: a44b1a1f6028e54ca23149249697dea9407bf60a
 workflow-type: tm+mt
 source-wordcount: '180'
-ht-degree: 34%
+ht-degree: 36%
 
 ---
 
