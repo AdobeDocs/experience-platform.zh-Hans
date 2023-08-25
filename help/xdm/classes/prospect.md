@@ -1,21 +1,14 @@
 ---
 title: XDM单个潜在客户配置文件类
 description: 本文档概述了Experience Data Model (XDM)中的XDM个人潜在客户配置文件类。
-badgeBeta: label="Beta" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: 83f01c58e21bc42a53e2e7a08bd7a60ef90b41e6
+source-git-commit: 437bd602462330a96f356b83d7afe922b5315d9f
 workflow-type: tm+mt
-source-wordcount: '374'
-ht-degree: 5%
+source-wordcount: '348'
+ht-degree: 3%
 
 ---
 
 # [!UICONTROL XDM单个潜在客户配置文件] 类
-
->[!IMPORTANT]
->
->此 [!UICONTROL XDM单个潜在客户配置文件] 类为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
 
 在Experience Data Model (XDM)中， [!UICONTROL XDM单个潜在客户配置文件] class捕获典型从数据合作伙伴处获得的目标客户配置文件，用于漏斗顶级的客户获取用例。
 

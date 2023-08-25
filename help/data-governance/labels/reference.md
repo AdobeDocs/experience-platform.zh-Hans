@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用标签术语表
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: d1d817646fdc943428ca13f3dd8b52725bce4921
+source-git-commit: 538c5e2c7ff3c684edf6db12087fdf0a58e40199
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2185'
 ht-degree: 3%
 
 ---
@@ -64,11 +64,7 @@ ht-degree: 3%
 | **PSPD** | 允许的敏感个人数据(PSPD)是指Adobe在合同上允许上传的“敏感”数据、“数据的特殊类别”数据，或适用法律使用的类似术语。 这具体不包括受保护的健康信息(PHI)和其他管控的健康数据。 |
 | **RHD** | 是指受保护的健康信息(PHI)或Adobe按照合同规定允许您上传的病人相关信息的数据。 |
 
-## (Beta)合作伙伴生态系统标签 {#partner}
-
->[!IMPORTANT]
->
->第三方数据标签为测试版。 并非所有用户都可使用它，文档可能会发生更改。
+## 合作伙伴生态系统标签 {#partner}
 
 合作伙伴生态系统标签用于对从组织外部来源获取的数据进行分类。
 
