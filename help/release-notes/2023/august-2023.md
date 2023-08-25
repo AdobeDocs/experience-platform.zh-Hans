@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年8月版发行说明。
-source-git-commit: 5c1566bac20f7fb83a0ce48c4fe7a22e15dbeb37
+source-git-commit: bf4c4186ed9196e547620a91826f86aa09d683fd
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 37%
@@ -107,7 +107,6 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 | 功能 | 描述 |
 | --- | --- |
 | 支持过滤次要身份 | 您现在可以使用数据准备过滤来自Adobe Analytics的身份，例如AAID和AACUSTOMID。 如果过滤掉，这些身份不会引入Real-Time Customer Profile。 未过滤的数据将继续引入数据湖。 |
-| 支持新的 `correlationID` Adobe Analytics的字段 | 此 `_experience.decisioning.propositions.scopeDetails.correlationID` 字段现已在Adobe Analytics源连接器架构中可用。 此字段用于支持A4T分类，并将从2023年9月开始填充。 |
 
 {style="table-layout:auto"}
 
@@ -172,6 +171,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | --- | --- |
 | 正式发布 [!DNL SugarCRM] | [!DNL SugarCRM] 现已提供源。 使用 [!DNL SugarCRM Accounts & Contacts] 和 [!DNL SugarCRM Events] 源将您的 [!DNL SugarCRM] 账户中的数据带到 Experience Platform。有关详细信息，请参阅 [[!DNL SugarCRM]  概述](../../sources/connectors/crm/sugarcrm.md)。 |
 | 在UI中支持按需引入源数据流 | 您现在可以在UI中根据需要为现有源数据流创建流运行。 有关详细信息，请阅读上的指南 [使用UI为来源创建按需流运行](../../sources/tutorials/ui/on-demand-ingestion.md). |
+| 支持新的 `correlationID` Adobe Analytics的字段 | 此 `_experience.decisioning.propositions.scopeDetails.correlationID` 字段现已在Adobe Analytics源连接器架构中可用。 此字段用于支持A4T分类，并将从2023年9月开始填充。 |
 
 {style="table-layout:auto"}
 
