@@ -2,10 +2,10 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中的Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 80c46748d809fe0b0367cf779f41d7851e8e62db
 workflow-type: tm+mt
-source-wordcount: '1333'
-ht-degree: 84%
+source-wordcount: '1394'
+ht-degree: 82%
 
 ---
 
@@ -15,7 +15,20 @@ ht-degree: 84%
 
 >[!NOTE]
 >
->Analytics标记扩展(如果经常更新，以响应对 [AppMeasurement JavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下文所述特定版本的详细信息。
+>Analytics标记扩展(如果经常更新，以响应对 [AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) 有关下文所述特定版本的详细信息。
+
+## 2023 年 7 月 19 日
+
+**Adobe Analytics 扩展 1.9.2**
+
+**功能**:
+
+* 已升级到AppMeasurementv2.24.0。
+* 添加了可选配置(`decodeLinkParameters` 默认 `false`)来对包含双字节编码字符的链接URL进行解码。
+
+**错误修复**:
+* 为具有错误高熵的浏览器添加了其他错误处理 [用户代理客户端提示](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html?lang=zh-Hans) API的。
+* 已更改 [POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST) 要使用的内容类型标头 `x-www-form-urlencoded` 默认情况下。
 
 ## 2022 年 9 月 23 日
 
@@ -23,8 +36,8 @@ ht-degree: 84%
 
 **功能**:
 
-* 已升级到AppMeasurement v2.23.0。
-* 扩展现在可以收集高熵 [用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 最新版本的AppMeasurement所支持的版本。
+* 已升级到AppMeasurementv2.23.0。
+* 该扩展现在可以收集高熵 [用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 最新版本的AppMeasurement支持。
 
 ## 2022 年 2 月 28 日
 
@@ -49,15 +62,15 @@ ht-degree: 84%
 **错误修复**:
 
 * 已将AppMeasurement升级到v2.22.2。
-* 已删除已弃用的buildInfo.environment
+* 删除已弃用的buildInfo.environment
 
-## 2021年8月24日
+## 2021 年 8 月 24 日
 
 **Adobe Analytics 扩展 1.8.6**
 
 **错误修复**:
 
-* 已升级 [AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans).
+* 已升级 [AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * 更新了回退linkName以镜像Activity Map逻辑而不是使用innerHTML。
 
 ## 2020 年 8 月 6 日
@@ -70,7 +83,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
+* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)。
 * 少量 UI 发生了更改，为此，如今将以可折叠项的形式折叠显示其他设置，而并非显示在复选框中。
 
 ## 2020 年 6 月 2 日
@@ -98,7 +111,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
+* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 
 ## 2020 年 3 月 2 日
 
@@ -110,7 +123,7 @@ ht-degree: 84%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
+* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 * 将 Audience Manager 模块中的 DIL 库更新为 9.4
 * 增加了扩展中输入字段的长度
 * 扩展和操作配置中的 eVar 和 prop 现在显示 Analytics 中的友好名称
@@ -172,7 +185,7 @@ ht-degree: 84%
 * 更新了 Adobe Analytics 扩展，以支持用于 Audience Manager 的 DIL 9.2
 
 * 更新了扩展以支持 [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
-* 移除了以下复选框（因为它不再受支持）：“Do not attach the destination publishing IFRAME to the DOM or fire destinations”
+* 移除了以下复选框（因为该复选框不再受支持）：“Do not attach the destination publishing IFRAME to the DOM or fire destinations”
 
 ## 2019 年 6 月 4 日
 
