@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年8月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4211a19bfd511c495d9efac898467230678aeb96
+source-git-commit: 5181d39e92fbf957f154c3b1dcf4f9af90cfeae9
 workflow-type: tm+mt
-source-wordcount: '1664'
-ht-degree: 36%
+source-wordcount: '1749'
+ht-degree: 38%
 
 ---
 
@@ -21,6 +21,7 @@ Adobe Experience Platform 中现有功能的更新：
 - [数据收集](#data-collection)
 - [数据引入](#data-ingestion)
 - [数据准备](#data-prep)
+- [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [身份服务](#identity-service)
 - [Segmentation Service](#segmentation)
@@ -112,6 +113,17 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 {style="table-layout:auto"}
 
 欲知更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+
+**新增或更新的功能**{#destinations-new-updated-functionality}
+
+- 您现在可以 [激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md) 到基于文件的目标。
+- 常规 [激活护栏](../../destinations/guardrails.md#general-activation-guardrails) 每个沙盒最多100个目标已更新为 _硬限制_.
+
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## Experience Data Model (XDM) {#xdm}
 
