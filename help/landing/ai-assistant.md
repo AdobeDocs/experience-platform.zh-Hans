@@ -4,9 +4,9 @@ description: 了解如何使用AI Assistant导航和了解Experience Platform和
 badge: Alpha
 hide: true
 hidefromtoc: true
-source-git-commit: ca606e4e29f4ba1df281f47a86b4e3cfa850ae35
+source-git-commit: e84f5aff6885535b58874a4fe02db2944e1d9b7f
 workflow-type: tm+mt
-source-wordcount: '2627'
+source-wordcount: '2629'
 ht-degree: 0%
 
 ---
@@ -342,4 +342,4 @@ AI助手可能会对其功能产生不准确的印象。 它可能会错误地�
 | --- | --- | --- |
 | 我最大的细分市场是什么？ | 我最大的细分市场是什么？ 使用数据。 | 明确告知AI助手，您希望答案基于数据。 |
 | 我最大的细分市场是什么？ | 列出我最大的区段。 | 在某些情况下，“什么……”问题可能会被误认为基于文档的问题。 使用诸如“list”之类的命令更能说明您在上下文中对数据提出疑问。 |
-| 我有多少个数据集？ | 计算我的数据集。 | 尽管最初的问题会分段，但它不适用于数据集。 |
+| 我有多少个数据集？ | 计算我的数据集。 | 最初的问题适用于区段，但可能不适用于数据集。 |
