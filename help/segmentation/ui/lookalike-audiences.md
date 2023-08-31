@@ -6,7 +6,7 @@ badgeLimitedAvailability: label="有限可用性" type=Caution
 source-git-commit: a44b1a1f6028e54ca23149249697dea9407bf60a
 workflow-type: tm+mt
 source-wordcount: '2123'
-ht-degree: 9%
+ht-degree: 11%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 9%
 
 在Adobe Experience Platform中，相似受众可针对每位受众提供智能见解，并利用基于机器学习的见解来通过营销活动识别和定位高价值客户。
 
-通过相似受众，您可以创建扩展的受众以定位与高性能受众类似的客户或以前转换的受众类似的客户。
+通过相似受众，您可以创建扩展受众，以与高绩效受众类似的目标客户或与之前转化的受众类似的目标客户为目标。
 
 ## 术语 {#terminology}
 
@@ -84,7 +84,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_similarityAndReach"
 >title="相似性和覆盖率"
->abstract="相似性和可达图绘制由超过给定相似度分数的用户档案组成的相似受众的预期可达图。 您可以将鼠标悬停在图形中的特定点上，以显示当前突出显示的点的相似性百分比和预期配置文件计数。"
+>abstract="相似性和覆盖范围图形绘制了由给定相似性分数以上的配置文件组成的相似受众的预期覆盖范围。您可以将鼠标悬停在图形中的特定点上，以显示当前突出显示的点的相似性百分比和预期配置文件计数。"
 
 相似性和访问范围部分显示一个图形，其中绘制由超过给定相似度得分的用户档案组成的相似受众的预期访问范围。 相似性得分表示 **距离** 基础受众配置文件与相似人群拓展分析配置文件之间的相似度。
 

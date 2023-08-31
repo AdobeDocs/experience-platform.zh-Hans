@@ -4,7 +4,7 @@ description: 了解如何在Adobe Experience Platform UI中使用参数化查询
 source-git-commit: 4fc94fc39fa09756a440b5e532330cd310dd96d2
 workflow-type: tm+mt
 source-wordcount: '755'
-ht-degree: 0%
+ht-degree: 10%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_parameterizedQueries"
 >title="参数化查询"
->abstract="使用参数化查询在执行时添加参数值。 这使您能够处理动态数据并重复使用不同用例的查询。 使用 `'$'` 在文本编辑器的查询中输入查询参数。 接下来，在编辑器下方的Query parameters部分中添加键的值。"
+>abstract="使用参数化查询在执行时添加参数值。这允许您处理动态数据并针对不同的用例重用查询。在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，在编辑器下方的查询参数部分添加键值。"
 
 >[!IMPORTANT]
 >
@@ -50,7 +50,7 @@ SELECT
 
 要在UI中创建参数化查询，请导航到查询编辑器。 请参阅以下部分 [访问查询编辑器](./user-guide.md#accessing-query-editor) 以获取更多说明。
 
-使用 `'$'` 在文本编辑器的查询中输入查询参数。 接下来，将缺少的键值添加到 [!UICONTROL 查询参数] 部分。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))显示在Query Parameters部分的任何空值旁边 [!UICONTROL 值] 输入字段。
+在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，将缺少的键值添加到 [!UICONTROL 查询参数] 部分。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))显示在Query Parameters部分的任何空值旁边 [!UICONTROL 值] 输入字段。
 
 ![带有参数化查询的查询编辑器和高亮显示的查询参数部分。](../images/ui/parameterized-queries/parameterized-query.png)
 
