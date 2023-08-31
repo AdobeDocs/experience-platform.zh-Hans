@@ -1,15 +1,15 @@
 ---
 description: 了解在将数据激活到基于文件的目标时，如何配置文件格式选项
-title: （测试版）为基于文件的目标配置文件格式选项
+title: 为基于文件的目标配置文件格式选项
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
+source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
 workflow-type: tm+mt
-source-wordcount: '1190'
+source-wordcount: '1188'
 ht-degree: 19%
 
 ---
 
-# （测试版）为基于文件的目标配置文件格式选项
+# 为基于文件的目标配置文件格式选项
 
 >[!IMPORTANT]
 > 
