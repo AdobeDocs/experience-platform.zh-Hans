@@ -4,7 +4,7 @@ description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持�
 source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
 workflow-type: tm+mt
 source-wordcount: '1941'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -54,7 +54,7 @@ ht-degree: 97%
 * [数据使用情况标签](/help/data-governance/labels/overview.md)
 * [数据集](/help/catalog/datasets/overview.md)
 * [源](/help/sources/home.md)
-* [目标客户配置文件](/help/profile/ui/prospect-profile.md)
+* [潜在客户配置文件](/help/profile/ui/prospect-profile.md)
 * [潜在客户受众](/help/segmentation/ui/prospect-audience.md)
 * [目标](/help/destinations/home.md)
 
@@ -181,7 +181,7 @@ ht-degree: 97%
 
 ![潜在客户配置文件的检查方式的视图。](/help/rtcdp/assets/partner-data/prospecting/inspect-prospect-profile.gif)
 
-详细了解 [目标客户配置文件](/help/profile/ui/prospect-profile.md).
+阅读有关[潜在客户配置文件](/help/profile/ui/prospect-profile.md)的更多信息。
 
 ### 创建潜在客户受众 {#create-prospect-audiences}
 
@@ -197,7 +197,7 @@ ht-degree: 97%
 * 仅批量配置文件评估。
 * 不支持根据时间序列事件构建受众。
 
-详细了解 [潜在客户受众](/help/segmentation/ui/prospect-audience.md).
+阅读有关[潜在客户受众](/help/segmentation/ui/prospect-audience.md)的更多信息。
 
 ### 激活目标的潜在客户配置文件 {#activate-to-destinations}
 
@@ -208,5 +208,5 @@ ht-degree: 97%
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
 * [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
-* [利用合作伙伴的帮助认可，使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
-* [扩展了对潜在客户配置文件和潜在客户受众的激活](/help/destinations/ui/activate-prospect-audiences.md) 以选择目标。
+* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。
