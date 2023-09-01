@@ -1,15 +1,20 @@
 ---
 title: 在UI中创建Chatlio源连接
 description: 了解如何使用Adobe Experience Platform UI创建Chatlio源连接。
+badge: Beta
 exl-id: 55c10bcb-0332-45ff-970b-272d375b591d
-source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '1149'
+source-wordcount: '1167'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Chatlio] UI中的源连接
+
+>[!NOTE]
+>
+>此 [!DNL Chatlio] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 本教程提供了用于创建 [!DNL Chatlio] 源连接，使用Adobe Experience Platform用户界面。
 

@@ -1,15 +1,20 @@
 ---
 title: 使用流服务API为Chatlio创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Chatlio。
+badge: Beta
 exl-id: 867b8096-0841-4462-9888-e60c97c2115e
-source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '1440'
+source-wordcount: '1458'
 ht-degree: 1%
 
 ---
 
 # 为以下对象创建源连接和数据流 [!DNL Chatlio] 使用流服务API
+
+>[!NOTE]
+>
+>此 [!DNL Chatlio] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 以下教程将指导您完成创建源连接以及要引入的数据流的步骤 [[!DNL Chatlio]](https://chatlio.com/) 使用将事件数据发送到Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

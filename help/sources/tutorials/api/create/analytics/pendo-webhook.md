@@ -1,15 +1,20 @@
 ---
 title: 使用流服务API为Pendo创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Pendo。
+badge: Beta
 exl-id: 12b0295d-4b26-4eb7-a02a-a01d825d2a1e
-source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1459'
 ht-degree: 1%
 
 ---
 
 # 为以下对象创建源连接和数据流 [!DNL Pendo] 使用流服务API
+
+>[!NOTE]
+>
+>此 [!DNL Pendo] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 以下教程将指导您完成创建源连接和要引入的数据流的步骤 [[!DNL Pendo]](https://Pendo.com/) 使用将事件数据发送到Adobe Experience Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

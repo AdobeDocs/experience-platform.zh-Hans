@@ -1,16 +1,20 @@
 ---
 title: 聊天源概述
 description: 了解如何使用API或用户界面利用Webhook将Chatlio连接到Adobe Experience Platform
-last-substantial-update: 2023-08-23T00:00:00Z
+badge: Beta
 exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
-source-git-commit: ce1e6c08d1e53346c11f9746cea524689f402031
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '364'
 ht-degree: 0%
 
 ---
 
 # [!DNL Chatlio]
+
+>[!NOTE]
+>
+>此 [!DNL Chatlio] 源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
