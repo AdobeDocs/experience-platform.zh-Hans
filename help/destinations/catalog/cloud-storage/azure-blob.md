@@ -2,10 +2,10 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 950370683f648771d91689e84c3d782824fb01f4
 workflow-type: tm+mt
-source-wordcount: '974'
-ht-degree: 4%
+source-wordcount: '1015'
+ht-degree: 7%
 
 ---
 
@@ -15,10 +15,10 @@ ht-degree: 4%
 
 在2023年7月的Experience Platform版本中， [!DNL Azure Blob] 目标提供了新功能，如下所示：
 
-* [!BADGE Beta]{type=Informative}[支持数据集导出](/help/destinations/ui/export-datasets.md).
-* 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
-* 能够通过设置导出文件中的自定义文件标头 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
-* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+* [!BADGE Beta]{type=Informative}[支持导出数据集](/help/destinations/ui/export-datasets.md)。
+* 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
+* 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
+* [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
 
 ## 概述 {#overview}
 
@@ -42,15 +42,12 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -104,7 +101,12 @@ ht-degree: 4%
 * **[!UICONTROL 容器]**：输入 [!DNL Azure Blob Storage] 此目标要使用的容器。
 * **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为 `manifest-<<destinationId>>-<<dataflowRunId>>.json`. 查看 [示例清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). 清单文件包含以下字段：
+   * `flowRunId`：和 [数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 生成了导出的文件。
+   * `scheduledTime`：导出文件时的时间（UTC时间）。
+   * `exportResults.sinkPath`：存储位置中存储导出文件的路径。
+   * `exportResults.name`：导出文件的名称。
+   * `size`：导出文件的大小（以字节为单位）。
 
 ### 启用警报 {#enable-alerts}
 

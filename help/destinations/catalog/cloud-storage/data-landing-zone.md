@@ -3,10 +3,10 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 950370683f648771d91689e84c3d782824fb01f4
 workflow-type: tm+mt
-source-wordcount: '1405'
-ht-degree: 1%
+source-wordcount: '1446'
+ht-degree: 2%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-[!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，允许您访问安全的基于云的文件存储设施，以将文件导出到Platform之外。 您有权访问一个 [!DNL Data Landing Zone] 容器，并且所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序服务的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
+[!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。您有权访问一个 [!DNL Data Landing Zone] 容器，并且所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序服务的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
 
 [!DNL Data Landing Zone] 支持基于SAS的身份验证，其数据受标准保护 [!DNL Azure Blob] 存放安全机制处于静止状态并在传输中。 基于SAS的身份验证允许您安全地访问 [!DNL Data Landing Zone] 通过公共Internet连接的容器。 您无需更改网络即可访问 [!DNL Data Landing Zone] 容器，这意味着您无需为网络配置任何允许列表或跨区域设置。
 
@@ -32,15 +32,12 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -207,7 +204,12 @@ curl -X POST \
 * **[!UICONTROL 文件夹路径]**：输入目标文件夹的路径，该文件夹将托管导出的文件。
 * **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为 `manifest-<<destinationId>>-<<dataflowRunId>>.json`. 查看 [示例清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). 清单文件包含以下字段：
+   * `flowRunId`：和 [数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 生成了导出的文件。
+   * `scheduledTime`：导出文件时的时间（UTC时间）。
+   * `exportResults.sinkPath`：存储位置中存储导出文件的路径。
+   * `exportResults.name`：导出文件的名称。
+   * `size`：导出文件的大小（以字节为单位）。
 
 ### 启用警报 {#enable-alerts}
 

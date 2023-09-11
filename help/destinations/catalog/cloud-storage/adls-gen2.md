@@ -3,10 +3,10 @@ title: Azure Data Lake Storage Gen2连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 950370683f648771d91689e84c3d782824fb01f4
 workflow-type: tm+mt
-source-wordcount: '806'
-ht-degree: 0%
+source-wordcount: '847'
+ht-degree: 1%
 
 ---
 
@@ -23,15 +23,12 @@ ht-degree: 0%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -77,7 +74,12 @@ ht-degree: 0%
 * **[!UICONTROL 文件夹路径]**：输入目标文件夹的路径，该文件夹将托管导出的文件。
 * **[!UICONTROL 文件类型]**：选择导出的文件应使用的格式Experience Platform。 选择 [!UICONTROL CSV] 选项，您还可以 [配置文件格式选项](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。
-* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。
+* **[!UICONTROL 包含清单文件]**：如果您希望导出包含清单JSON文件，并且该文件包含有关导出位置、导出大小等的信息，请打开此选项。 清单的命名格式为 `manifest-<<destinationId>>-<<dataflowRunId>>.json`. 查看 [示例清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). 清单文件包含以下字段：
+   * `flowRunId`：和 [数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 生成了导出的文件。
+   * `scheduledTime`：导出文件时的时间（UTC时间）。
+   * `exportResults.sinkPath`：存储位置中存储导出文件的路径。
+   * `exportResults.name`：导出文件的名称。
+   * `size`：导出文件的大小（以字节为单位）。
 
 ### 启用警报 {#enable-alerts}
 
