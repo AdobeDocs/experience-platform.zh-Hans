@@ -1,23 +1,22 @@
 ---
-keywords: IP地址、IP范围、允许列表允许列表 允许列表目标、、流目标
-title: 允许列表用于流式传输目标的IP地址
+keywords: IP地址、IP范围、允许列表目标、允许列表 列入允许列表、流目标
+title: 列入允许列表流目的地的IP地址
 type: Documentation
-description: 此页面提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
+description: 此页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 4d71e246c8ce92cbdae4d248568cf32ab44ac82a
+source-git-commit: ca3c9ed87f2365cc1d9e4ef5e4a6145266a11bba
 workflow-type: tm+mt
-source-wordcount: '268'
+source-wordcount: '271'
 ht-degree: 0%
 
 ---
 
-# 允许列表用于流式传输目标的IP地址 {#ip-address-allowlist}
+# 列入允许列表流目的地的IP地址 {#ip-address-allowlist}
 
 >[!IMPORTANT]
 >
-> * Adobe建议您将此页加入书签，每三个月重新访问一次，以检查最新的IP地址。 Adobe不提供新IP范围的通知。
-> * 此处记录的IP列表 *不会* 应用于您使用构建的任何目标 [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
-
+> * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
+> * 此处记录的IP列表 *不会* 适用于您使用构建的任何目标 [[!DNL Destination SDK]](/help/destinations/destination-sdk/overview.md).
 
 ## 概述 {#overview}
 
@@ -27,13 +26,13 @@ ht-degree: 0%
 * [[!DNL Amazon Kinesis]](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
 * [[!DNL Azure Event Hubs]](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 
-从Experience Platform到这些目标的出站流量始终通过本页中列出的IP地址传输。
+从Experience Platform到这些目标的出站流量始终通过此页列出的IP地址。
 
-允许列表此页面提供了可添加到IP范围的IP范围，以便安全地将数据从Experience Platform导出到HTTP端点。 [!DNL Amazon Kinesis]，或 [!DNL Azure Event Hubs] 实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
+列入允许列表此页面提供了可添加到Experience Platform的IP范围，以便安全地将数据从HTTP端点导出到HTTP端点， [!DNL Amazon Kinesis]，或 [!DNL Azure Event Hubs] 实例。 如果您的HTTP端点位于企业防火墙之后，或者您的公司安全和合规性标准要求将IP范围列表列入允许列表，则此功能特别有用。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 
-Adobe允许列表建议您在使用此页面上提到的目标之前，将以下IP范围添加到。 允许列表使用这些流目标时，如果未能将特定于地区的IP范围添加到IP范围，则可能会导致错误或性能不佳。
+Adobe建议您在使用此页面上提到的目标之前，将以下IP范围添加到允许列表。 使用这些流目标时，如果未能将特定于地区的IP范围添加到允许列表，可能会导致错误或性能下降。
 
 ## VA7：美国和美洲客户 {#us-americas}
 
@@ -57,6 +56,7 @@ Adobe允许列表建议您在使用此页面上提到的目标之前，将以下
 `52.254.106.240/28`
 `52.254.107.0/28`
 `52.254.107.144/28`
+`20.22.83.112`
 
 ## NLD2：EMEA客户 {#emea}
 
@@ -84,7 +84,7 @@ Adobe允许列表建议您在使用此页面上提到的目标之前，将以下
 `51.105.144.81`
 `51.124.70.4`
 
-## 澳大利亚五国：亚太客户 {#apac}
+## AUS5：APAC客户 {#apac}
 
 `20.43.104.80/28`
 `20.43.104.16/28`
@@ -109,3 +109,33 @@ Adobe允许列表建议您在使用此页面上提到的目标之前，将以下
 `20.40.191.96/28`
 `20.43.104.32/28`
 `20.43.104.64/28`
+`20.53.206.128`
+`20.227.35.177`
+
+## CAN2：加拿大客户 {#can}
+
+`20.104.46.128/28`
+`20.104.46.160/28`
+`20.104.46.64/28`
+`20.104.46.80/28`
+`20.116.145.94`
+`20.116.147.168`
+`20.200.70.192/28`
+`20.200.70.208/28`
+`20.200.70.224/28`
+`20.200.70.240/28`
+`20.200.71.0/28`
+`20.200.71.112/28`
+`20.200.71.128/28`
+`20.200.71.144/28`
+`20.200.71.16/28`
+`20.200.71.160/28`
+`20.200.71.176/28`
+`20.200.71.32/28`
+`20.200.71.48/28`
+`20.200.71.64/28`
+`20.200.71.80/28`
+`20.200.71.96/28`
+`20.200.93.180`
+`20.200.94.116`
+`20.200.94.83`

@@ -3,10 +3,10 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '993'
-ht-degree: 0%
+source-wordcount: '984'
+ht-degree: 1%
 
 ---
 
@@ -38,13 +38,12 @@ ht-degree: 0%
 
 ## 支持的受众 {#supported-audiences}
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
+此部分介绍可将哪种类型的受众导出到此目标。
 
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 外部受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -61,7 +60,7 @@ ht-degree: 0%
 
 ## 标记组
 
-Adobe Experience Platform中的受众概念类似于 [标记](https://docs.airship.com/guides/audience/tags/) 在飞行任务中，实施方面略有不同。 此集成映射用户 [Experience Platform区段中的成员资格](../../../xdm/field-groups/profile/segmentation.md) 存在或不存在 [!DNL Airship] 标记之前。 例如，在Platform受众中， `xdm:status` 更改为 `realized`，则标记将添加到 [!DNL Airship] 此配置文件映射到的渠道或命名用户。 如果 `xdm:status` 更改为 `exited`，则标记会被删除。
+AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airship.com/guides/audience/tags/) 在飞行任务中，实施方面略有不同。 此集成映射用户 [Experience Platform区段中的成员资格](../../../xdm/field-groups/profile/segmentation.md) 存在或不存在 [!DNL Airship] 标记之前。 例如，在Platform受众中， `xdm:status` 更改为 `realized`，则标记将添加到 [!DNL Airship] 此配置文件映射到的渠道或命名用户。 如果 `xdm:status` 更改为 `exited`，则标记会被删除。
 
 要启用此集成，请创建 *标记组* 在 [!DNL Airship] 已命名 `adobe-segments`.
 

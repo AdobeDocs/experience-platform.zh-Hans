@@ -3,9 +3,9 @@ title: LiveRamp — 载入连接
 description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 7ea411c9543230f254f2a0565c04f277fed2b17b
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1814'
+source-wordcount: '1793'
 ht-degree: 3%
 
 ---
@@ -34,15 +34,12 @@ ht-degree: 3%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md).
-
-此外，此目标还支持激活下表所述的其他受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#importing-an-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

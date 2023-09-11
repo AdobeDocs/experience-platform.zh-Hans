@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；UI；UI；XDM；XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；架构编辑器；架构编辑器；架构；架构；架构；创建；关系；引用；引用；
+keywords: Experience Platform；主页；热门主题；UI；UI；XDM；XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；架构编辑器；架构编辑器；架构；架构；架构；架构；创建；关系；关系；引用；引用；
 solution: Experience Platform
 title: 使用架构编辑器定义两个架构之间的关系
 description: 本文档提供了一个教程，介绍如何使用Experience Platform用户界面中的架构编辑器定义两个架构之间的关系。
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 8b5c1776804bbacad5c3d72dd48c1716380cca79
 workflow-type: tm+mt
-source-wordcount: '1109'
+source-wordcount: '1161'
 ht-degree: 9%
 
 ---
@@ -29,45 +29,49 @@ ht-degree: 9%
 >title="参考标识命名空间"
 >abstract="参考架构的主要标识字段的命名空间（类型）。参考架构必须有一个建立的主要标识字段才能参与关系。有关架构关系的更多信息，请参阅文档。"
 
-能够了解客户之间的关系以及客户在不同渠道中与您的品牌的互动是Adobe Experience Platform的重要组成部分。 在的结构中定义这些关系 [!DNL Experience Data Model] (XDM)架构允许您对客户数据获得复杂的见解。
+了解客户之间的关系以及客户在不同渠道中与您的品牌之间的互动是Adobe Experience Platform的重要组成部分。 在的结构中定义这些关系 [!DNL Experience Data Model] (XDM)架构允许您对客户数据获得复杂的见解。
 
-虽然可以通过使用合并架构和来推断架构关系 [!DNL Real-Time Customer Profile]，这仅适用于共享相同类的架构。 要在属于不同类的两个架构之间建立关系，必须在源架构中添加一个专用关系字段，该字段引用其他相关架构的标识。
-
-本文档提供了一个教程，介绍如何使用中的架构编辑器定义两个架构之间的关系。 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅以下教程： [使用架构注册表API定义关系](relationship-api.md).
+而架构关系可通过使用合并架构和来推断 [!DNL Real-Time Customer Profile]，这仅适用于共享相同类的架构。 要在属于不同类的两个架构之间建立关系，必须在源架构中添加一个专用关系字段，该字段引用其他相关架构的标识。
 
 >[!NOTE]
 >
->有关如何在Adobe Real-time Customer Data Platform B2B版本中创建多对一关系的步骤，请参阅以下指南中的 [创建B2B关系](./relationship-b2b.md).
+>如果源架构和目标架构都属于同一类，则专用关系字段应 **非** 使用。 在这种情况下，请使用合并架构UI查看关系。 有关如何执行此操作的说明，请参见 [查看关系](../../profile/ui/union-schema.md#view-relationships) 合并架构UI指南的部分。
+
+本文档提供了一个教程，介绍如何使用中的架构编辑器定义两个架构之间的关系。 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅关于的教程 [使用架构注册表API定义关系](relationship-api.md).
+
+>[!NOTE]
+>
+>有关如何在Adobe Real-time Customer Data Platform B2B版本中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
 
 ## 快速入门
 
-本教程需要您实际了解 [!DNL XDM System] 和中的架构编辑器 [!DNL Experience Platform] UI。 在开始本教程之前，请查看以下文档：
+本教程需要对以下内容有一定的了解 [!DNL XDM System] 和中的架构编辑器 [!DNL Experience Platform] UI。 在开始本教程之前，请查看以下文档：
 
 * [Experience Platform中的XDM系统](../home.md)：XDM及其在中的实施概述 [!DNL Experience Platform].
-* [模式组合基础](../schema/composition.md)：XDM架构的构建块简介。
+* [模式组合基础](../schema/composition.md)：对XDM架构构建块的介绍。
 * [使用创建架构 [!DNL Schema Editor]](create-schema-ui.md)：涵盖使用的基础知识的教程 [!DNL Schema Editor].
 
 ## 定义源和引用架构
 
-您应已创建将在关系中定义的两个架构。 出于演示目的，本教程会在组织的忠诚度计划(在“[!DNL Loyalty Members]”架构)和他们最喜爱的酒店(在“[!DNL Hotels]”架构)。
+您应已创建将在关系中定义的两个架构。 出于演示目的，本教程将在组织的忠诚度计划(在“[!DNL Loyalty Members]”架构)和他们最喜爱的酒店(在“[!DNL Hotels]”架构)。
 
 >[!IMPORTANT]
 >
->为了建立关系，两个架构都必须定义主身份并启用 [!DNL Real-Time Customer Profile]. 请参阅以下部分： [启用架构以在配置文件中使用](./create-schema-ui.md#profile) 模式创建教程中，如果您需要有关如何相应地配置模式的指导。
+>为了建立关系，两个架构都必须定义主身份并启用 [!DNL Real-Time Customer Profile]. 请参阅以下部分 [启用架构以在配置文件中使用](./create-schema-ui.md#profile) 模式创建教程中，如果您需要有关如何相应地配置模式的指导。
 
-架构关系由 **源架构** 指向内的另一个字段 **引用模式**. 在接下来的步骤中， ”[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]”将用作参考模式。
+架构关系由 **源架构** 指向内的另一个字段 **引用架构**. 在接下来的步骤中， ”[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]”将用作参考模式。
 
 以下各节介绍在定义关系之前本教程中使用的每个架构的结构。
 
 ### [!DNL Loyalty Members] 架构
 
-源架构»[!DNL Loyalty Members]”基于 [!DNL XDM Individual Profile] 类，包含描述忠诚度计划成员的字段。 其中一个领域， `personalEmail.addess`，用作下的架构的主要标识 [!UICONTROL 电子邮件] 命名空间。 如下所见 **[!UICONTROL 架构属性]**，此架构已支持用于 [!DNL Real-Time Customer Profile].
+源架构&#39;&#39;[!DNL Loyalty Members]”基于 [!DNL XDM Individual Profile] 类，包含描述忠诚度计划成员的字段。 其中一个领域， `personalEmail.addess`，用作下的架构的主要标识 [!UICONTROL 电子邮件] 命名空间。 如下所见 **[!UICONTROL 架构属性]**，此架构已支持在 [!DNL Real-Time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
 ### [!DNL Hotels] 架构
 
-引用架构»[!DNL Hotels]“基于自定义”[!DNL Hotels]“ ”类，并包含描述酒店的字段。 为了参与关系，引用架构还必须定义并启用主标识 [!UICONTROL 个人资料]. 在这个案例中， `_tenantId.hotelId`充当架构的主要标识，使用自定义&quot;[!DNL Hotel ID]”身份命名空间。
+参考架构»[!DNL Hotels]”基于自定义“[!DNL Hotels]“ class，并包含描述酒店的字段。 为了参与关系，引用架构还必须定义并启用主标识 [!UICONTROL 个人资料]. 在本例中， `_tenantId.hotelId`用作架构的主要标识，使用自定义&quot;[!DNL Hotel ID]&quot;身份命名空间。
 
 ![为配置文件启用](../images/tutorials/relationship/hotels.png)
 
@@ -79,15 +83,15 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->仅当源架构没有专用字符串类型字段用作引用架构主要标识的指针时，才需要执行此步骤。 如果此字段已在源架构中定义，请跳至的下一步 [定义关系字段](#relationship-field).
+>仅当源架构没有专用字符串类型字段用作引用架构的主要标识的指针时，才需要执行此步骤。 如果此字段已在源架构中定义，请跳至的下一步 [定义关系字段](#relationship-field).
 
-为了定义两个架构之间的关系，源架构必须有一个专用字段来指示引用架构的主要身份。 您可以通过创建新架构字段组或扩展现有架构字段组，将此字段添加到源架构中。
+为了定义两个架构之间的关系，源架构必须具有专用字段，以指示引用架构的主要身份。 您可以通过创建新架构字段组或扩展现有架构字段组，将此字段添加到源架构中。
 
-对于 [!DNL Loyalty Members] 架构，新 `preferredHotel` 将添加字段以指示忠诚度会员访问公司的首选酒店。 首先，选择加号图标(**+**)。
+在 [!DNL Loyalty Members] 架构，新 `preferredHotel` 将添加字段以指示忠诚度成员首选的公司访问酒店。 首先，选择加号图标(**+**)。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-画布中将显示一个新的字段占位符。 下 **[!UICONTROL 字段属性]**，为字段提供字段名称和显示名称，并将其类型设置为&quot;[!UICONTROL 字符串]“。 下 **[!UICONTROL 分配给]**，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在本例中，是新的“[!DNL Preferred Hotel]已创建“ ”字段组。
+画布中将显示一个新的字段占位符。 下 **[!UICONTROL 字段属性]**，提供字段名称和字段的显示名称，并将其类型设置为&quot;[!UICONTROL 字符串]“。 下 **[!UICONTROL 分配给]**，选择要扩展的现有字段组，或键入唯一名称以创建新字段组。 在本例中，是一个新的&quot;[!DNL Preferred Hotel]已创建“ ”字段组。
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
@@ -95,7 +99,7 @@ ht-degree: 9%
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-已更新 `preferredHotel` 字段显示在画布中，位于 `_tenantId` 对象，因为它是自定义字段。 选择 **[!UICONTROL 保存]** 以完成对架构的更改。
+更新的 `preferredHotel` 字段显示在画布中，位于 `_tenantId` 对象，因为它是自定义字段。 选择 **[!UICONTROL 保存]** 以完成对架构的更改。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
@@ -111,7 +115,7 @@ ht-degree: 9%
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-选择以下项的下拉列表 **[!UICONTROL 引用架构]** 并为关系选择引用架构(&quot;[!DNL Hotels]在本例中)。 下 **[!UICONTROL 引用身份命名空间]**，选择引用架构的标识字段的命名空间(在本例中， ”[!DNL Hotel ID]“)。 选择 **[!UICONTROL 应用]** 完成后。
+选择对应的下拉菜单 **[!UICONTROL 引用架构]** 并为关系选择引用架构(“[!DNL Hotels]在本例中)。 下 **[!UICONTROL 引用身份命名空间]**，选择引用架构的标识字段的命名空间(在本例中， ”[!DNL Hotel ID]“)。 选择 **[!UICONTROL 应用]** 完成后。
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 
@@ -121,4 +125,4 @@ ht-degree: 9%
 
 ## 后续步骤
 
-通过阅读本教程，您已使用成功创建了两个架构之间的一对一关系。 [!DNL Schema Editor]. 有关如何使用API定义关系的步骤，请参阅 [使用架构注册表API定义关系](relationship-api.md).
+通过学习本教程，您已使用成功地创建了两个架构之间的一对一关系。 [!DNL Schema Editor]. 有关如何使用API定义关系的步骤，请参阅关于的教程 [使用架构注册表API定义关系](relationship-api.md).

@@ -1,11 +1,11 @@
 ---
 title: 将at.js与Experience PlatformWeb SDK进行比较
-description: 了解at.js功能与Experience PlatformWeb SDK的异同
-keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图表
+description: 了解at.js功能与Experience PlatformWeb SDK的比较
+keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 5065d76ad8008988c843c88e33a25731fb5284d0
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '2286'
+source-wordcount: '2281'
 ht-degree: 6%
 
 ---
@@ -20,13 +20,13 @@ ht-degree: 6%
 
 ### 安装at.js
 
-我们允许我们的客户直接从Adobe Experience Cloud的“实现”选项卡下载库。 使用客户拥有的如下设置自定义at.js库： clientCode、imsOrgId等。
+我们允许我们的客户直接从Adobe Experience Cloud的“实现”选项卡下载库。 使用客户拥有的如下设置自定义at.js库： clientCode、imsOrgId等
 
 ### 安装Web SDK
 
-CDN上提供了预建版本。 您可以直接在页面上的CDN上引用库，也可以将其下载并托管在您自己的基础架构上。 它以缩小和未缩小的格式提供。 未缩小的版本有助于进行调试。
+预建版本在CDN上可用。 您可以在页面上直接在CDN上引用库，也可以将其下载并托管在您自己的基础架构上。 它以缩小和未缩小的格式提供。 未缩小的版本有助于进行调试。
 
-URL结构： https://cdn1.adoberesources.net/alloy/[版本]非缩小版本的/alloy.min.js或alloy.js。
+URL结构： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.js（非缩小版本）。
 
 例如：
 
@@ -39,7 +39,7 @@ URL结构： https://cdn1.adoberesources.net/alloy/[版本]非缩小版本的/al
 
 ### 配置at.js
 
-在每个at.js文件末尾，您会找到我们实例化和传递设置对象的部分。 它是可自定义的，在下载时，我们使用当前客户设置填充该部分。
+在每个at.js文件的末尾，您会找到我们实例化并传递设置对象的部分。 它可自定义，在下载时，我们使用当前客户设置填充该部分。
 
 ```javascript
 window.adobe.target.init(window, document, {
@@ -95,7 +95,7 @@ alloy("configure", {
 });
 ```
 
-可在配置期间设置许多选项。 所有选项均可在下面找到，并按类别分组。
+配置期间可以设置许多选项。 所有选项都可以在下面找到，按类别分组。
 
 [了解详情](../../fundamentals/configuring-the-sdk.md)
 
@@ -104,11 +104,11 @@ alloy("configure", {
 
 ### 使用at.js
 
-使用at.js 2.x，如果您启用设置 `pageLoadEnabled`，库将通过以下方式触发对Target Edge的调用 `execute -> pageLoad`. 如果所有设置都设置为默认值，则无需自定义编码。一旦at.js添加到页面并由浏览器加载，将执行Target Edge调用。
+使用at.js 2.x，如果启用设置 `pageLoadEnabled`，库将通过以下方式触发对Target Edge的调用 `execute -> pageLoad`. 如果所有设置都设置为默认值，则无需自定义编码。将at.js添加到页面并由浏览器加载后，将执行Target Edge调用。
 
 ### 使用Web SDK
 
-在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) SDK可自动检索和渲染。
+在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) SDK可以自动检索和渲染。
 
 要请求并自动呈现Target选件，请使用 `sendEvent` 命令并设置 `renderDecisions` 选项至 `true`. 这样做会强制SDK自动呈现任何符合自动呈现条件的个性化内容。
 
@@ -130,7 +130,7 @@ alloy("sendEvent", {
 });
 ```
 
-Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知，以下示例展示通知请求有效负载的外观：
+Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知，以下示例显示通知请求有效负载的外观：
 
 ```json
 {
@@ -214,7 +214,7 @@ Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知�
 
 ### 使用at.js
 
-有两种方法可以触发对Target Edge的调用，以便获取用于页面加载的选件。
+我们可以通过两种方式触发对Target Edge的调用，以便获取页面加载的选件。
 
 示例 1:
 
@@ -244,9 +244,9 @@ adobe.target.getOffers({
 
 ### 使用Web SDK
 
-执行 `sendEvent` 命令，其特殊作用域位于 `decisionScopes`： `__view__`. 我们使用此范围作为信号，从Target中获取所有页面加载活动并预取所有视图。 Web SDK还将尝试评估所有基于VEC视图的活动。 Web SDK当前不支持禁用视图预取。
+执行 `sendEvent` 命令，其特殊作用域位于 `decisionScopes`： `__view__`. 我们使用此范围作为信号，从Target中提取所有页面加载活动并预取所有视图。 Web SDK还将尝试评估所有基于VEC视图的活动。 Web SDK当前不支持禁用视图预取。
 
-要访问任何个性化内容，您可以提供回调函数，在SDK收到来自服务器的成功响应后将调用该函数。 您的回调提供了一个结果对象，该对象可能包含包含包含任何返回的个性化内容的主张属性。
+要访问任何个性化内容，您可以提供回调函数，SDK收到来自服务器的成功响应后将调用该函数。 您的回调提供了一个结果对象，该对象可能包含包含包含任何返回的个性化内容的建议属性。
 
 示例：
 
@@ -330,7 +330,7 @@ adobe.target.getOffers({
 
 ### 使用Web SDK
 
-您可以使用获取基于表单编辑器的活动 `sendEvent` 命令，并将mbox名称传递给 `decisionScopes` 选项。 此 `sendEvent` 命令将返回一个使用包含所请求活动/建议的对象解析的promise：这就是 `propositions` 数组如下所示：
+您可以使用获取基于表单的编辑器活动 `sendEvent` 命令并将mbox名称传递给 `decisionScopes` 选项。 此 `sendEvent` 命令将返回一个promise，该承诺由一个包含所请求的活动/建议的对象解析：这就是 `propositions` 数组如下所示：
 
 ```javascript
 [
@@ -462,7 +462,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-进一步了解 `applyOffers` 命令 [专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en).
+了解关于 `applyOffers` 命令 [专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en).
 
 
 ### 使用Web SDK
@@ -477,7 +477,7 @@ alloy("applyPropositions", {
 });
 ```
 
-进一步了解 `applyPropositions` 命令 [专用文档](../../personalization/rendering-personalization-content.md#applypropositions).
+了解关于 `applyPropositions` 命令 [专用文档](../../personalization/rendering-personalization-content.md#applypropositions).
 
 ## 如何跟踪事件
 
@@ -518,12 +518,12 @@ adobe.target.sendNotifications({
 
 ### 使用Web SDK
 
-您可以通过调用 `sendEvent` 命令，填充 `_experience.decisioning.propositions` XDM字段组，并设置 `eventType` 更改为2个值之一：
+您可以通过调用 `sendEvent` 命令，填充 `_experience.decisioning.propositions` XDM字段组，并设置 `eventType` 转换为2个值之一：
 
 * `decisioning.propositionDisplay`：表示Target活动的渲染。
-* `decisioning.propositionInteract`：表示用户与活动的交互，例如鼠标单击。
+* `decisioning.propositionInteract`：表示用户与活动的交互，如鼠标单击。
 
-此 `_experience.decisioning.propositions` XDM字段组是一个对象数组。 每个对象的属性派生自 `result.propositions` 返回到 `sendEvent` 命令： `{ id, scope, scopeDetails }`
+此 `_experience.decisioning.propositions` XDM字段组是一个对象数组。 每个对象的属性派生自 `result.propositions` 将在 `sendEvent` 命令： `{ id, scope, scopeDetails }`
 
 **示例1 — 跟踪a `decisioning.propositionDisplay` 呈现活动后的事件**
 
@@ -584,7 +584,7 @@ alloy("sendEvent", {
 });
 ```
 
-**示例2 — 跟踪a `decisioning.propositionInteract` 发生点击量度后的事件**
+**示例2 — 跟踪a `decisioning.propositionInteract` 点击量度发生后的事件**
 
 ```javascript
 alloy("sendEvent", {
@@ -650,7 +650,7 @@ adobe.target.triggerView("homeView")
 
 ### 使用Web SDK
 
-要触发或指示单页应用程序视图更改，请设置 `web.webPageDetails.viewName` 下的属性 `xdm` 的选项 `sendEvent` 命令。 如果有选件，Web SDK将检查视图缓存。 `viewName` 指定于 `sendEvent` 它将执行这些操作并发送显示通知事件。
+要触发或指示单页应用程序视图更改，请设置 `web.webPageDetails.viewName` 下的属性 `xdm` 的选项 `sendEvent` 命令。 如果有选件，Web SDK将检查视图缓存。 `viewName` 指定于 `sendEvent` 它将执行这些命令并发送显示通知事件。
 
 **示例**
 
@@ -671,7 +671,7 @@ alloy("sendEvent", {
 
 ## 如何利用响应令牌
 
-从Adobe Target返回的个性化内容包括 [响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，其中包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 可在Adobe Target用户界面中配置响应令牌。
+从Adobe Target返回的个性化内容包括 [响应令牌](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)，其中包含有关活动、选件、体验、用户配置文件、地理信息等的详细信息。 这些详细信息可与第三方工具共享或用于调试。 响应令牌可在Adobe Target用户界面中配置。
 
 ### 使用at.js
 
@@ -694,7 +694,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >确保您使用的是Platform Web SDK版本2.6.0或更高版本。
 
-响应令牌作为 `propositions` 在结果中公开的 `sendEvent` 命令。 每个建议都包含一系列建议 `items`，则每个项目将具有 `meta` 使用响应令牌填充的对象（如果在Target管理员UI中启用了它们）。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
+响应令牌作为 `propositions` 在结果中公开的 `sendEvent` 命令。 每个建议都包含一系列 `items`，则每个项目将具有 `meta` 使用响应令牌填充的对象（如果在Target管理员UI中启用了它们）。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
 
 **示例**
 
@@ -737,14 +737,14 @@ alloy("sendEvent", {
 
 ### 使用at.js
 
-使用at.js，您可以通过设置 `bodyHidingEnabled: true` 因此，at.js会在获取和应用DOM更改之前负责预隐藏个性化容器。
+使用at.js，您可以通过设置来管理闪烁 `bodyHidingEnabled: true` 因此，at.js会负责在获取和应用DOM更改之前预先隐藏个性化容器。
 通过覆盖at.js，可以预先隐藏包含个性化内容的页面部分 `bodyHiddenStyle`.
 默认情况下 `bodyHiddenStyle` 隐藏整个HTML `body`.
 可以使用覆盖这两个设置 `window.targetGlobalSettings`. `window.targetGlobalSettings` 应放置在加载at.js之前。
 
 ### 使用Web SDK
 
-使用Web SDK，客户可以在configure命令中设置其预隐藏样式，如下面的示例所示：
+通过使用Web SDK，客户可以在configure命令中设置其预隐藏样式，如以下示例所示：
 
 ```javascript
 alloy("configure", {
@@ -773,7 +773,7 @@ alloy("configure", {
 
 ### 使用at.js
 
-使用at.js支持以下2种类型的A4T日志记录：
+使用at.js支持以下2种A4T日志记录类型：
 
 * Analytics客户端日志记录
 * Analytics服务器端日志记录
@@ -782,7 +782,7 @@ alloy("configure", {
 
 **示例1：使用Target全局设置**
 
-可以通过设置启用Analytics客户端日志记录 `analyticsLogging: client_side` ，或通过覆盖 `window.targetglobalSettings` 对象。
+可以通过设置启用Analytics客户端日志记录 `analyticsLogging: client_side` (在at.js设置中，或通过覆盖 `window.targetglobalSettings` 对象。
 设置此选项后，返回的有效负载格式如下所示：
 
 ```json
@@ -850,11 +850,11 @@ adobe.target.getOffers({
 }
 ```
 
-Analytics有效负载(`tnta` token)应包含在Analytics点击中，使用 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
+Analytics有效负载(`tnta` 令牌)应包含在使用以下对象的Analytics点击中： [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
 
 #### Analytics服务器端日志记录
 
-可以通过设置启用Analytics服务器端日志记录 `analyticsLogging: server_side` ，或通过覆盖 `window.targetglobalSettings` 对象。
+可以通过设置启用Analytics服务器端日志记录 `analyticsLogging: server_side` (在at.js设置中，或通过覆盖 `window.targetglobalSettings` 对象。
 然后，数据将按如下方式流动：
 
 ![](assets/a4t-server-side-atjs.png)
@@ -870,11 +870,11 @@ Web SDK还支持：
 
 #### Analytics客户端日志记录
 
-如果针对该DataStream配置禁用了Adobe Analytics，则会启用Analytics客户端日志记录。
+如果对该DataStream配置禁用Adobe Analytics，则会启用Analytics客户端日志记录。
 
 ![](assets/analytics-disabled-datastream-config.png)
 
-客户有权访问Analytics令牌(`tnta`)，需要与Analytics共享 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)
+客户有权访问Analytics令牌(`tnta`)需要与Analytics共享 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)
 通过链接 `sendEvent` 命令并遍历生成的建议数组。
 
 **示例**
@@ -908,19 +908,19 @@ alloy("sendEvent", {
 });
 ```
 
-下图显示了启用Analytics客户端时数据如何流动：
+下图显示了启用Analytics客户端时的数据流方式：
 
 ![](assets/analytics-client-side-logging.png)
 
 #### Analytics服务器端日志记录
 
-为数据流配置启用Analytics时，将启用Analytics服务器端日志记录。
+为该DataStream配置启用Analytics时，将启用Analytics服务器端日志记录。
 
 ![](assets/analytics-enabled-datastream-config.png)
 
 启用服务器端Analytics日志记录后，需要与Analytics共享A4T有效负载，以便Analytics报表显示正确的展示次数并在Experience Edge级别共享转化，这样客户就无需执行任何附加处理。
 
-下面显示了启用服务器端Analytics日志记录时数据如何流入我们的系统：
+下面是启用服务器端Analytics日志记录时数据如何流入我们的系统：
 
 ![](assets/analytics-server-side-logging.png)
 
@@ -930,7 +930,7 @@ alloy("sendEvent", {
 
 您可以使用 `window.targetGlobalSettings` 覆盖 at.js 库中的设置，而不是在 Target Standard/Premium UI 中或通过使用 REST API 来配置设置。
 
-应在加载at.js之前或在管理>实施>编辑at.js设置>代码设置>库标头中定义覆盖。
+应在加载at.js之前或在“管理”>“实施”>“编辑at.js设置”>“代码设置”>“库标题”中定义覆盖。
 
 示例：
 
@@ -987,7 +987,7 @@ adobe.target.getOffers({
 
 ### 使用Web SDK
 
-要更新Target配置文件，请使用 `sendEvent` 命令并设置 `data.__adobe.target` 属性，为键名加上前缀 `profile`.
+要更新Target配置文件，请使用 `sendEvent` 命令并设置 `data.__adobe.target` 属性，为键名添加前缀 `profile`.
 
 **示例**
 
@@ -1047,7 +1047,7 @@ adobe.target.getOffers({
 
 ### 使用Web SDK
 
-要发送推荐数据，请使用 `sendEvent` 命令并设置 `data.__adobe.target` 属性，为键名加上前缀 `entity`.
+要发送推荐数据，请使用 `sendEvent` 命令并设置 `data.__adobe.target` 属性，为键名添加前缀 `entity`.
 
 **示例**
 
@@ -1101,9 +1101,9 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-或者有办法设置 `mbox3rdPartyId` 在 `targetPageParams` 或 `targetPageParamsAll`.
-在中设置时 `targetPageParams`，它将在请求中发送 `target-global-mbox` 也称为 `pag-lLoad`.
-建议应使用以下方式设置 `targetPageParamsAll` 因为它将在每个目标请求中发送。
+或者有办法设置 `mbox3rdPartyId` 位于 `targetPageParams` 或 `targetPageParamsAll`.
+在中设置时 `targetPageParams`，它将在的请求中发送 `target-global-mbox` 也称为 `pag-lLoad`.
+将使用设置推荐 `targetPageParamsAll` 因为它将在每个target请求中发送。
 使用的优势 `targetPageParamsAll` 就是您可以定义 `mbox3rdPartyId` ，这将确保所有target请求都拥有权限 `mbox3rdPartyId`.
 
 ```javascript
@@ -1127,10 +1127,10 @@ window.targetPageParams = function() {
 ### 使用Web SDK
 
 Web SDK支持目标第三方ID。 但是，还需要执行几个步骤。 在深入研究解决方案之前，我们应该先谈谈 `identityMap`.
-Identity Map允许客户发送多个身份。 所有身份都处于命名空间中。 每个命名空间可以具有一个或多个标识。 特定标识可以标记为主标识。
+标识映射允许客户发送多个标识。 所有身份都处于命名空间中。 每个命名空间可以具有一个或多个标识。 可以将特定标识标记为主要标识。
 有了这些知识，我们可以了解设置Web sdk以使用Target第三方ID的必要步骤。
 
-1. 在数据流配置视图中设置将包含Target第三方ID的命名空间：
+1. 设置将在数据流配置视图中包含目标第三方ID的命名空间：
 
 ![](assets/mbox-3-party-id-setup.png)
 
@@ -1211,7 +1211,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-注意：强烈建议确保 `mbox` 在 `mboxes` 数组有自己的索引。 通常，第一个mbox具有 `index=0`，下一页 `index=1`等。
+注意：强烈建议确保 `mbox` 在 `mboxes` 数组有自己的索引。 通常，第一个mbox具有 `index=0`，下一个 `index=1`，等等。
 
 ### 使用Web SDK
 
@@ -1223,18 +1223,18 @@ Web SDK当前不支持此功能。
 
 At.js会公开以下调试功能：
 
-* Mbox禁用 — 禁用Target提取和渲染功能，以检查页面是否在不进行Target交互的情况下损坏
+* Mbox禁用 — 禁用Target的提取和渲染功能，以检查页面是否在不进行Target交互的情况下损坏
 * Mbox调试 — at.js记录每个操作
-* Target跟踪 — 通过“靶心”中生成的mbox跟踪令牌，下提供了包含参与决策过程的详细信息的跟踪对象 `window.___target_trace` 对象
+* 目标跟踪 — 通过靶心中生成的mbox跟踪令牌，可以使用下方的包含参与决策过程的详细信息的跟踪对象 `window.___target_trace` 对象
 
-注意：所有这些调试功能都可以通过 [Adobe Experience Platform调试器](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
+注意：所有这些调试功能在中都提供了增强功能 [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
 
 ### 使用Web SDK
 
 在使用Web SDK时，您拥有多种调试功能：
 
-* 使用 [格里丰](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+* 使用 [Assurance](../../../assurance/home.md)
 * [已启用Web SDK调试](../../../edge/fundamentals/debugging.md)
 * 使用 [Web SDK监控挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
-* 使用 [Adobe Experience Platform调试器](../../../debugger/home.md)
+* 使用 [Adobe Experience Platform Debugger](../../../debugger/home.md)
 * 目标跟踪

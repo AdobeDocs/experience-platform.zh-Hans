@@ -3,9 +3,9 @@ keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
 description: 将Adobe受众数据作为受众属性无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1021'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -37,13 +37,12 @@ ht-degree: 0%
 
 ## 支持的受众 {#supported-audiences}
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
+此部分介绍可将哪种类型的受众导出到此目标。
 
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 外部受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

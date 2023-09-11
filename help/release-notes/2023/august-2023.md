@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 2023年8月版发行说明。
-source-git-commit: 5181d39e92fbf957f154c3b1dcf4f9af90cfeae9
+description: Adobe Experience Platform 的 2023 年 8 月发行说明。
+source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
 workflow-type: tm+mt
-source-wordcount: '1749'
-ht-degree: 38%
+source-wordcount: '1750'
+ht-degree: 93%
 
 ---
 
@@ -36,28 +36,28 @@ Adobe Experience Platform 中现有功能的更新：
 
 | 功能 | 描述 |
 | --- | --- |
-| 智能重新参与用例指南 | 此 [智能重新参与](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) 用例指南提供了有关如何重新吸引已放弃转化的客户的详细信息，这些客户随后将以智能、负责的方式完成转化。 本指南使用以下示例历程重新吸引客户： <ul><li>重新参与历程 — 定位已放弃产品浏览的客户。</li><li>放弃的购物车历程 — 定位已将产品放入购物车但尚未完成购买的客户。</li><li>订单确认历程 — 重点关注产品购买</li></ul> 请使用底部的详细反馈选项链接 [智能重新参与用例指南](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) 以提供反馈。 |
-| 合作伙伴数据支持 | 在Real-Time CDP中利用合作伙伴提供的潜在客户配置文件和合作伙伴ID执行漏斗上层营销，以接触新客户并丰富您的第一方数据： <ul><li>客户获取和可寻址性：利用所选数据合作伙伴提供的无Cookie标识符和经过哈希处理的PII，吸引全新客户并减少第三方Cookie依赖性。</li><li>在单个系统中实现完全的漏斗营销：在单个系统中为潜在客户和已知客户提供自助式分段、受众策划和本机激活。</li><li>信任基础：通过专利数据使用、标签、访问控制等方式，负责任地管理合作伙伴数据和配置文件，并将其推向市场。 有关更多信息，请阅读以下用例指南：现在提供了潜在客户用例指南。 阅读潜在客户用例指南，了解如何通过潜在客户用例吸引和赢取新客户：<ul><li>[潜在客户](../../rtcdp/partner-data/prospecting.md)</li><li>[现场个性化](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[补充第一方配置文件](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
+| 智能重新参与用例指南 | [智能重新参与用例指南](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)详细介绍了如何以智能和负责任的方式重新吸引在完成转化之前放弃转化的客户的详细信息。本指南使用以下示例历程来重新吸引客户： <ul><li>重新参与历程 - 针对已放弃浏览产品的客户。</li><li>已放弃的购物车历程 - 针对已将产品放入购物车但尚未完成购买的客户。</li><li>订购确认历程 - 聚焦产品订购</li></ul> 请使用[智能重新参与用例指南](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)底部的详细反馈选项链接提供反馈。 |
+| 合作伙伴数据支持 | 在 Real-Time CDP 中执行漏斗上层营销，利用合作伙伴提供的潜在客户配置文件和合作伙伴 ID 来吸引新客户，并丰富您的第一方数据： <ul><li>客户获取和可寻址性：利用所选数据合作伙伴的无 cookie 标识符和散列 PII 来吸引新客户，并减少对第三方 cookie 的依赖。</li><li>单一系统中的完整漏斗营销：在单一系统中对潜在客户和已知客户进行自助分段、受众管理和本地激活。</li><li>信任基础：通过获得专利的数据使用、标签、访问控制等管理合作伙伴数据和配置文件，以负责任的方式营销。请阅读以下用例指南以获取更多信息：现在可以获得潜在客户用例指南。请阅读潜在客户用例指南，以了解如何利用潜在客户用例吸引和获得新客户：<ul><li>[潜在用户](../../rtcdp/partner-data/prospecting.md)</li><li>[现场个性化](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[补充第一方配置文件](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[激活潜在客户受众](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [Real-Time CDP概述](../../rtcdp/overview.md).
+有关更多信息，请参阅[ Real-Time CDP 概述](../../rtcdp/overview.md)。
 
 ## 基于属性的访问控制 {#abac}
 
-基于属性的访问控制是Adobe Experience Platform的一项功能，它使注重隐私的品牌在管理用户访问方面拥有更大的灵活性。 可以将各个对象（如方案字段和区段）分配给用户角色。 通过此功能，您可以授予或撤销组织中特定Platform用户访问单个对象的权限。
+基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
 
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义用户角色，这些用户角色只能访问特定字段以及与这些字段对应的数据。
+通过基于属性的访问控制，您组织的管理员可以控制用户对所有 Platform 工作流程和资源中的敏感个人数据 (SPD)、个人身份信息 (PII) 和其他自定义类型数据的访问。管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 权限策略沙盒配置 | 新 [权限策略沙盒配置](../../access-control/abac/ui/policies.md) 功能允许您根据需求和要求，对所有或所选数量的沙盒实施基于属性的访问控制策略。 |
+| 权限策略沙盒配置 | 新的[权限策略沙盒配置](../../access-control/abac/ui/policies.md)功能允许您根据您的需要和要求，对所有或选定数量的沙盒实施基于属性的访问控制策略。 |
 
 {style="table-layout:auto"}
 
-有关基于属性的访问控制的详细信息，请参见 [基于属性的访问控制概述](../../access-control/abac/overview.md). 有关基于属性的访问控制工作流的全面指南，请参阅 [基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md).
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
 ## 仪表板 {#dashboards}
 
@@ -67,7 +67,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 同意分析和跟踪用例 | 了解如何通过为Real-Time CDP数据的各种营销用例构建同意仪表板 [同意分析和跟踪文档](../../dashboards/insights-use-cases/consent-analysis.md). 它详细介绍如何根据您的业务需求创建具有适当属性的受众，然后通过在Adobe Experience Platform UI中使用预配置的构件来使用洞察。 它还提供了有关如何使用用户定义的功能板构建您自己的自定义小组件的说明。 本文档涵盖同意趋势和同意重叠用例。 |
+| 同意分析和跟踪用例 | 了解如何通过为Real-Time CDP数据的各种营销用例构建同意仪表板 [同意分析和跟踪文档](../../dashboards/insights-use-cases/consent-analysis.md). 它详细介绍了如何创建具有适合您业务需求的属性的受众，然后通过使用 Adob&#x200B;&#x200B;e Experience Platform UI 中的预配置构件来使用这些见解。它还提供了有关如何使用用户定义的仪表板功能构建您自己的自定义构件的说明。本文档涵盖同意趋势和同意重叠用例。 |
 
 {style="table-layout:auto"}
 
@@ -81,11 +81,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 标记和事件转发 | [Experience Platform标记（中国）](/help/tags/ui/publishing/premium-cdn.md) | 新的Experience Platform标记（中国）功能提高了网站的可靠性和延迟，从而缩短在中国网站上部署标记的客户响应时间。 现在，客户在中国实施网站时，可以利用标记库中的JavaScript代码。 此功能也已添加到统一配置协议(UPP)，允许产品在购买后自动部署。 |
+| 标记和事件转发 | [Experience Platform 标记（中国）](/help/tags/ui/publishing/premium-cdn.md) | 新的 Experience Platform 标记（中国）功能提高了网站可靠性和延迟，从而为在中国网站上部署标记的客户提供更快的响应时间。现在，客户在中国实施网站时可以使用标记库中的 JavaScript 代码。此功能也已添加到“统一配置协议” (UPP) 中，并允许在购买后自动进行产品部署。 |
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [数据集合概述](../../tags/home.md).
+有关更多信息，请参阅[数据收藏集概述](../../tags/home.md)。
 
 ## 数据引入 {#data-ingestion}
 
@@ -95,9 +95,9 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 
 | 功能 | 描述 |
 | --- | --- |
-| 数据摄取工作流的更改 | 现在，包含的值大于指定数据类型（例如，以integer数据类型传递的长数据）的数据行将被拒绝，并且将会报告错误消息。 以前，这些行在没有警告的情况下被拒绝。 |
+| 数据摄取工作流程的更改 | 现在，包含大于指定数据类型的值的数据行（例如，作为整数数据类型传递的长数据）将会被拒绝，并会报告错误消息。以前，这些行会在没有警告的情况下遭到拒绝。 |
 
-欲知更多信息，请阅读 [数据摄取概述](../../ingestion/home.md).
+有关更多信息，请参阅[数据摄取概述](../../ingestion/home.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -107,11 +107,11 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持过滤次要身份 | 您现在可以使用数据准备过滤来自Adobe Analytics的身份，例如AAID和AACUSTOMID。 如果过滤掉，这些身份不会引入Real-Time Customer Profile。 未过滤的数据将继续引入数据湖。 |
+| 支持过滤辅助标识 | 您现在可以使用“数据准备”功能来过滤来自 Adob&#x200B;&#x200B;e Analytics 的标识，例如 AAID 和 AACUSTOMID。如果被过滤掉，则这些标识将不会被纳入实时客户配置文件中。未经过滤的数据仍会被摄入到数据湖中。 |
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [数据准备概述](../../data-prep/home.md).
+有关更多信息，请参阅[数据准备概述](../../data-prep/home.md)。
 
 ## 目标 {#destinations}
 
@@ -119,7 +119,7 @@ Adobe Experience Platform 提供了一组丰富的功能，以摄取任何类型
 
 **新增或更新的功能**{#destinations-new-updated-functionality}
 
-- 您现在可以 [激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md) 到基于文件的目标。
+- 您现在可以 [激活目标客户受众](../../destinations/ui/activate-prospect-audiences.md) 到云存储目标。
 - 常规 [激活护栏](../../destinations/guardrails.md#general-activation-guardrails) 每个沙盒最多100个目标已更新为 _硬限制_.
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
@@ -145,7 +145,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [XDM系统概述](../../xdm/home.md).
+若要了解更多信息，请阅读[XDM 系统概述](../../xdm/home.md)。
 
 ## 身份服务 {#identity-service}
 
@@ -155,9 +155,9 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 功能 | 描述 |
 | --- | --- |
-| 更改了身份图限制 | 到9月底，身份图将更改为每个图50个身份，并将摄取最新身份。 因此，将根据摄取时间戳和身份类型删除最早的身份，并首先删除Cookie身份类型。 现在，身份图具有每个图150个身份的限制，一旦达到此限制，图形将不再更新。 如果您的生产沙盒包含： <ul><li>将人员标识符（如CRM ID）配置为Cookie/设备标识类型的自定义命名空间。</li><li>将cookie/设备标识符配置为跨设备标识类型的自定义命名空间。</li></ul> Adobe工程部门将手动处理这些请求。 欲知更多信息，请参阅 [Identity Service数据的护栏](../../identity-service/guardrails.md). |
+| 标识图形限制的更改 | 到 9 月底，标识图形将会更改为每个图形 50 个标识，并且会摄取最新的标识。因此，届时将会根据摄取时间戳和标识类型删除最旧的标识，其中会首先删除 cookie 标识类型。如今，标识图形的每个图型均有 150 个标识的限制，一旦达到此限制，图形就不会再更新。如果您的生产沙盒包含以下内容，请联系您的客户代表请求更改标识类型： <ul><li>自定义命名空间，其中人员标识符（例如 CRM ID）会被配置为 cookie/设备标识类型。</li><li>自定义命名空间，其中 cookie/设备标识符会被配置为跨设备标识类型。</li></ul> Adobe 工程人员会手动处理这些请求。若要了解更多信息，请阅读[标识服务数据的护栏](../../identity-service/guardrails.md)。 |
 
-欲知更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+有关更多信息，请参阅[标识服务概述](../../identity-service/home.md)。
 
 ## Segmentation Service {#segmentation}
 
@@ -167,11 +167,11 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 功能 | 描述 |
 | --- | --- |
-| 相似受众（限量发布） | 相似受众可针对每位受众提供智能见解，利用机器学习型见解通过营销活动识别和定位高价值客户。 通过相似受众，您可以创建扩展的受众以定位与高性能受众类似的客户或以前转换的受众类似的客户。 有关相似受众的更多信息，请阅读 [相似受众概述](../../segmentation/ui/lookalike-audiences.md). |
+| 相似的受众（可用性有限） | 相似受众可以提供有关每个受众的智能见解，并利用基于机器学习的见解来识别和定位营销活动的高价值客户。通过相似受众，您可以创建扩展受众，以与高绩效受众类似的目标客户或与之前转化的受众类似的目标客户为目标。有关相似受众的更多信息，请阅读[相似受众概述](../../segmentation/ui/lookalike-audiences.md)。 |
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [分段概述](../../segmentation/home.md).
+有关更多信息，请参阅[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
@@ -181,10 +181,10 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 描述 |
 | --- | --- |
-| 正式发布 [!DNL SugarCRM] | [!DNL SugarCRM] 现已提供源。 使用 [!DNL SugarCRM Accounts & Contacts] 和 [!DNL SugarCRM Events] 源将您的 [!DNL SugarCRM] 账户中的数据带到 Experience Platform。有关详细信息，请参阅 [[!DNL SugarCRM]  概述](../../sources/connectors/crm/sugarcrm.md)。 |
-| 在UI中支持按需引入源数据流 | 您现在可以在UI中根据需要为现有源数据流创建流运行。 有关详细信息，请阅读上的指南 [使用UI为来源创建按需流运行](../../sources/tutorials/ui/on-demand-ingestion.md). |
-| 支持新的 `correlationID` Adobe Analytics的字段 | 此 `_experience.decisioning.propositions.scopeDetails.correlationID` 字段现已在Adobe Analytics源连接器架构中可用。 此字段用于支持A4T分类，并将从2023年9月开始填充。 |
+| [!DNL SugarCRM] 全面可用 | [!DNL SugarCRM] 源当前可用。使用 [!DNL SugarCRM Accounts & Contacts] 和 [!DNL SugarCRM Events] 源将您的 [!DNL SugarCRM] 账户中的数据带到 Experience Platform。有关详细信息，请参阅 [[!DNL SugarCRM]  概述](../../sources/connectors/crm/sugarcrm.md)。 |
+| 支持 UI 中的源数据流按需摄取 | 现在，您可以在 UI 中按需为现有源数据流创建流运行。若要了解更多信息，请阅读有关[使用 UI 为源创建按需流运行](../../sources/tutorials/ui/on-demand-ingestion.md)的指南。 |
+| 支持 Adobe Analytics 的新 `correlationID` 字段 | `_experience.decisioning.propositions.scopeDetails.correlationID` 字段现在在 Adob&#x200B;&#x200B;e Analytics 源连接器架构中可用。该字段用于支持 A4T 分类，并将会于 2023 年 9 月开始填充。 |
 
 {style="table-layout:auto"}
 
-欲知更多信息，请阅读 [源概述](../../sources/home.md).
+有关更多信息，请参阅[源概述](../../sources/home.md)。

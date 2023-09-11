@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
+source-git-commit: 333f98a74e69f50ae356231733924d1c6793ddf1
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1170'
 ht-degree: 9%
 
 ---
@@ -83,6 +83,7 @@ ht-degree: 9%
       * [Google gtag扩展](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
+      * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
       * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)

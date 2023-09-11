@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；sale
 title: SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud是一个数字营销套件，以前称为ExactTarget，通过它，可为访客和客户构建和自定义历程以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '783'
 ht-degree: 2%
 
 ---
@@ -20,15 +20,12 @@ ht-degree: 2%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -115,4 +112,4 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ## 设置数据导入到 [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-连接后 [!DNL Platform] 敬您的 [!DNL SFTP] 存储中，您必须设置从存储位置导入到的数据导入 [!DNL Salesforce Marketing Cloud]. 要了解如何完成此操作，请参阅 [将订阅者从文件导入Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) 在 [!DNL Salesforce Help Center].
+连接后 [!DNL Platform] 敬您的 [!DNL SFTP] 存储时，您必须设置从存储位置导入到的数据导入 [!DNL Salesforce Marketing Cloud]. 要了解如何完成此操作，请参阅 [将订阅者从文件导入Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) 在 [!DNL Salesforce Help Center].

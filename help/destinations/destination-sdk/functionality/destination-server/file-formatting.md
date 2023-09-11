@@ -1,9 +1,9 @@
 ---
 description: 了解如何通过“/destination-servers”端点为使用Adobe Experience Platform Destination SDK构建的基于文件的目标配置文件格式选项。
 title: 文件格式配置
-source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
+source-git-commit: 511e02f92b7016a7f07dd3808b39594da9438d15
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1004'
 ht-degree: 4%
 
 ---
@@ -178,7 +178,7 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
 | `templatingStrategy` | 必需 | 对于您配置的每个文件格式选项，需要添加参数 `templatingStrategy`，它可以有两个值： <br><ul><li>`NONE`：如果您不打算允许用户在不同的配置值之间进行选择，请使用此值。 请参阅 [此配置](#file-configuration-templating-none) 例如，其中固定了文件格式选项的示例。</li><li>`PEBBLE_V1`：如果您希望允许用户在不同的配置值之间进行选择，请使用此值。 在这种情况下，您还必须在以下位置设置相应的客户数据字段： `/destination` 端点配置，用于在UI中向用户显示各种选项。 请参阅 [此配置](#file-configuration-templating-pebble) 例如，用户可以在不同的文件格式选项值之间进行选择。</li></ul> | - | - | - |
 | `compression.value` | 可选 | 将数据保存到文件时使用的压缩编解码器。 支持的值： `none`， `bzip2`， `gzip`， `lz4`、和 `snappy`. | `none` | - | - |
 | `fileType.value` | 可选 | 指定输出文件格式。 支持的值： `csv`， `parquet`、和 `json`. | `csv` | - | - |
-| `csvOptions.quote.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置用于转义带引号值的单个字符，其中分隔符可以是值的一部分。 | `null` | - | - |
+| `csvOptions.quote.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置用于转义带引号值的单个字符，其中分隔符可以是值的一部分。 | `null` | 默认值示例： `quote.value: "u0000"` —> `male,NULJohn,LastNameNUL` | 自定义示例： `quote.value: "\""` —> `male,"John,LastName"` |
 | `csvOptions.quoteAll.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 指示是否应始终用引号括住所有值。 默认设置为仅转义包含引号字符的值。 | `false` | `quoteAll`：`false` —> `male,John,"TestLastName"` | `quoteAll`:`true` -->`"male","John","TestLastName"` |
 | `csvOptions.delimiter.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 为每个字段和值设置分隔符。 此分隔符可以是一个或多个字符。 | `,` | `delimiter`:`,` --> `comma-separated values"` | `delimiter`:`\t` --> `tab-separated values` |
 | `csvOptions.escape.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置一个用于在已被引号引起的值中将引号转义的字符。 | `\` | `"escape"`:`"\\"` --> `male,John,"Test,\"LastName5"` | `"escape"`:`"'"` --> `male,John,"Test,'''"LastName5"` |

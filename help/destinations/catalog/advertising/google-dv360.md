@@ -3,10 +3,10 @@ keywords: DoubleClick竞价管理器；DoubleClick竞价管理器；DoubleClick�
 title: Google显示和视频360连接
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于在显示器、视频和移动设备库存源中执行重定位和面向受众的数字活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 4%
+source-wordcount: '1022'
+ht-degree: 5%
 
 ---
 
@@ -43,15 +43,12 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

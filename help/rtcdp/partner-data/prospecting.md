@@ -1,10 +1,10 @@
 ---
 title: 通过潜在客户发掘用例吸引和获得新客户
 description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持实现的潜在客户发掘用例吸引和获得新客户。
-source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+source-git-commit: 5352b461be3684ac4fe1703c916b9ec59bd14af1
 workflow-type: tm+mt
-source-wordcount: '1941'
-ht-degree: 100%
+source-wordcount: '1935'
+ht-degree: 99%
 
 ---
 
@@ -108,7 +108,7 @@ ht-degree: 100%
 
 #### 将第三方数据治理标签添加到架构中的所有字段
 
-考虑将第三方数据治理标签添加到构成架构的所有字段。这对于确保负责任地使用第三方数据并最大限度地降低数据泄露风险非常重要。查找有关第三方数据治理标签的更多信息（添加指向 Jordan 编写的文档的链接）
+考虑将第三方数据治理标签添加到构成架构的所有字段。这对于确保负责任地使用第三方数据并最大限度地降低数据泄露风险非常重要。查找有关 [第三方数据管理标签](../../data-governance/labels/reference.md#partner-ecosystem-labels).
 
 为此，请执行以下步骤：
 

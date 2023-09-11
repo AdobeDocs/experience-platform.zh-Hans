@@ -2,15 +2,15 @@
 title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
-source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
 workflow-type: tm+mt
-source-wordcount: '619'
-ht-degree: 12%
+source-wordcount: '620'
+ht-degree: 16%
 
 ---
 
 
-# 激活目标客户受众
+# 激活潜在客户受众
 
 >[!AVAILABILITY]
 >
@@ -20,7 +20,7 @@ ht-degree: 12%
 
 ## 支持的目标 {#supported-destinations}
 
-转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 使用 **[!UICONTROL 数据类型]** 筛选并选择 **[!UICONTROL 潜在客户]** 查看支持激活潜在客户受众的目标。 目前，导出潜在客户受众仅适用于 [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) 目标。
+转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 使用 **[!UICONTROL 数据类型]** 筛选并选择 **[!UICONTROL 潜在客户]** 查看支持激活潜在客户受众的目标。 目前，导出潜在客户受众仅适用于云存储目标。
 
 ![支持数据集导出的目标](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 
@@ -87,4 +87,4 @@ Note that we will need to add links to other destination types here as more dest
 
 * [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [利用合作伙伴的帮助认可，使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
+* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。

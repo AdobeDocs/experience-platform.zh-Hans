@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: cc864e091f5e3f338f025238572158f555c3ede9
+source-git-commit: 95d7b16efb638c37d8db3f56b0f3fbf6aa9d15df
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '170'
 ht-degree: 30%
 
 ---
@@ -34,9 +34,9 @@ ht-degree: 30%
 * 数据收集 {#data-collection}
    * [自动收集的信息](data-collection/automatic-information.md)
    * [跟踪链接](data-collection/track-links.md)
-   * [收集商业和产品数据](data-collection/collect-commerce-data.md)
+   * [收集商业、产品和订单数据](data-collection/collect-commerce-data.md)
    * Adobe Analytics {#adobe-analytics}
-      * [在Platform Web SDK中使用Adobe Analytics](data-collection/adobe-analytics/analytics-overview.md)
+      * [将Adobe Analytics与平台Web SDK结合使用](data-collection/adobe-analytics/analytics-overview.md)
       * [映射Analytics变量](data-collection/adobe-analytics/manually-mapping-variables.md)
       * [自动映射的变量](data-collection/adobe-analytics/automatically-mapped-vars.md)
       * [将数据发送到Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
@@ -54,7 +54,7 @@ ht-degree: 30%
          * [概述](personalization/adobe-target/analytics-logging/overview.md)
          * [客户端 记录](personalization/adobe-target/analytics-logging/client-side.md)
          * [服务器端日志记录](personalization/adobe-target/analytics-logging/server-side.md)
-   * 优惠决策 {#offer-decisioning}
+   * Offer Decisioning {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [概述](personalization/ajo/overview.md)

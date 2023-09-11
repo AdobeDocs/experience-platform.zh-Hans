@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 1ca080f6dd62c49c1f1672ec36ce446af591b6b6
+source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
 workflow-type: tm+mt
-source-wordcount: '1027'
+source-wordcount: '1034'
 ht-degree: 31%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 31%
    * [库](./ui/publishing/libraries.md)
    * [自托管库](./ui/publishing/hosts/self-hosting-libraries.md)
    * [重新发布库](./ui/publishing/republish.md)
-   * [Experience Platform标记（中国）](./ui/publishing/premium-cdn.md)
+   * [Experience Platform 标记（中国）](./ui/publishing/premium-cdn.md)
 * 客户端信息 {#client-side}
    * [概述](./ui/client-side/overview.md)
    * [异步部署](./ui/client-side/asynchronous-deployment.md)
@@ -246,6 +246,7 @@ ht-degree: 31%
          * [概述](./extensions/server/splunk/overview.md)
       * [!DNL Twitter] {#twitter}
          * [概述](./extensions/server/twitter/overview.md)
+      * [[!DNL Tiktok] Web事件API](https://exchange.adobe.com/apps/ec/109834)
       * [!DNL Zendesk] 事件API {#zendesk}
          * [概述](./extensions/server/zendesk/overview.md)
 * 扩展开发 {#extension-dev}

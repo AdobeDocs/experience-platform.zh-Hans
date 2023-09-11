@@ -3,10 +3,10 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '935'
-ht-degree: 8%
+source-wordcount: '915'
+ht-degree: 9%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 8%
 
 ## 先决条件 {#prerequisites}
 
-此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform移动SDK](https://aep-sdks.gitbook.io/docs/). 您必须使用这些SDK之一才能使用此目标。
+此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/). 您必须使用这些SDK之一才能使用此目标。
 
 >[!IMPORTANT]
 >
@@ -43,15 +43,12 @@ ht-degree: 8%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

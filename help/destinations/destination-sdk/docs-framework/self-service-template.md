@@ -2,9 +2,9 @@
 title: 文档自助模板//将替换为您的目标名称
 description: 使用此模板在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为概述部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1604'
 ht-degree: 1%
 
 ---
@@ -74,19 +74,14 @@ ht-degree: 1%
 
 ## 支持的受众 {#supported-audiences}
 
-*在此部分添加有关目标支持的受众的信息。 我们已在表中预填了一些标准值。 删除不应用于目标的值和任何未预填充的值。*
+*在此部分添加有关目标支持的受众的信息。 我们已在表中预填了一些标准值。 使用 `✓` 和 `X` 用于标记此目标是否支持您的受众类型的字符。*
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*如果您的目标不支持激活任何外部受众，请删除以下短语以及表。*
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | X | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

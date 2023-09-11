@@ -2,9 +2,9 @@
 title: 配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: e3f507e010ea2a32042b53d46795d87e82e3fb72
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2276'
 ht-degree: 100%
 
 ---
@@ -57,7 +57,7 @@ ht-degree: 100%
 | [!UICONTROL 第三方 ID 同步] | ID 同步可分组到容器中，以允许不同的 ID 同步在不同时间运行。启用后，此设置可让您指定为该数据流运行哪个 ID 同步容器。 |
 | [!UICONTROL 第三方 ID 同步容器 ID] | 要用于第三方 ID 同步的容器的数字 ID。 |
 | [!UICONTROL 容器 ID 覆盖] | 在此部分中，您可以定义其他第三方 ID 同步容器 ID，它们可用于覆盖默认 ID。 |
-| [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用 Web SDK 或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/) 与[服务器 API](../server-api/overview.md)，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用服务器 API 并希望防止 Edge Network 处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
+| [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用 Web SDK 或 [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) 与[服务器 API](../server-api/overview.md)，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用服务器 API 并希望防止 Edge Network 处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
 
 从该位置，如果您要为 Experience Platform 配置数据流，请按照[为数据收集准备数据](./data-prep.md)教程操作，在返回本指南之前将您的数据映射到 Platform 事件架构。否则，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;并继续下一部分。
 

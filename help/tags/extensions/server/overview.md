@@ -1,11 +1,11 @@
 ---
 title: 事件转发扩展参考
-description: 查找有关Adobe Experience Platform中的事件转发扩展的文档。
+description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
+source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
 workflow-type: tm+mt
-source-wordcount: '184'
-ht-degree: 21%
+source-wordcount: '191'
+ht-degree: 20%
 
 ---
 
@@ -26,12 +26,12 @@ ht-degree: 21%
 
 >[!NOTE]
 >
->任何扩展名称后跟一个星号(*)的链接，指向该扩展在Adobe交换上的列表，其中包含安装和使用说明。 所有其他链接都指向该扩展在Adobe Experience League上的文档。
+>任何扩展名称后跟星号(*)的链接均指向AdobeExchange上的扩展列表，其中包含安装和使用说明。 所有其他链接均指向该扩展在Adobe Experience League上的文档。
 
-* [Adobe Experience Platform Cloud连接器](./cloud-connector/overview.md)
+* [Adobe Experience Platform云连接器](./cloud-connector/overview.md)
 * [[!DNL AWS]](./aws/overview.md)
 * [[!DNL Braze]](./braze/overview.md)
-* [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)*
+* [Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)*
 * [适用于Google Analytics4的Cloud Connector](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)*
 * [核心](./core/overview.md)
 * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)*
@@ -47,4 +47,5 @@ ht-degree: 21%
 * [Snowflake](./snowflake/overview.md)
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Twitter]](./twitter/overview.md)
+* [[!DNL Tiktok] Web事件API](https://exchange.adobe.com/apps/ec/109834)*
 * [[!DNL Zendesk] 事件API](./zendesk/overview.md)

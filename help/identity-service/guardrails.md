@@ -3,10 +3,10 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 2f226ae1356733b89b10e73ef1a371c42da05295
+source-git-commit: 87138cbf041e40bfc6b42edffb16f5b8a8f5b365
 workflow-type: tm+mt
-source-wordcount: '999'
-ht-degree: 1%
+source-wordcount: '1112'
+ht-degree: 3%
 
 ---
 
@@ -66,11 +66,12 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->以下删除逻辑是Identity Service即将执行的行为。 如果您的生产沙盒包含：
+>以下删除逻辑是Identity Service即将执行的行为。 如果您的生产沙盒包含以下内容，请联系您的客户代表请求更改标识类型：
 >
 > * 将人员标识符（如CRM ID）配置为Cookie/设备标识类型的自定义命名空间。
 > * 将Cookie/设备标识符配置为跨设备标识类型的自定义命名空间。
-
+>
+>此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-time CDP B2C版本，这可能会导致符合受众资格的用户档案数量增加最小，因为以前分段和激活时会忽略这些用户档案。
 
 更新完整的身份图后，Identity Service会先删除图中最旧的身份，然后再添加最新的身份。 这是为了保持身份数据的准确性和相关性。 此删除过程遵循两个主要规则：
 
@@ -108,3 +109,8 @@ ht-degree: 1%
 * 在极少数情况下，两个身份具有相同的时间戳和身份类型，Identity Service会根据这些ID进行排序 [XID](./api/list-native-id.md) 并执行删除。
 
 >[!ENDSHADEBOX]
+
+删除仅发生在Identity Service中的数据，而不发生在Real-time Customer Profile中。
+
+* 因此，如果只使用一个ECID，这种行为可能会创建更多配置文件，因为ECID不再是身份图的一部分。
+* 为了让您保持在可寻址受众权利文件数字范围内，建议启用 [假名配置文件数据过期](../profile/pseudonymous-profiles.md) 以删除旧配置文件。

@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 中的沙盒帮助
 breadcrumb-title: Sandoxes 指南
 user-guide-description: 将平台实例分区为虚拟环境，以便进行开发、测试和应用程序部署。
 feature: Sandboxes
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: 5675aa0980465b0b1aab18c2ed5869dd5cd64819
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 50%
+source-wordcount: '62'
+ht-degree: 54%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 50%
 * 沙盒UI {#ui}
    * [沙盒UI概述](ui/overview.md)
    * [沙盒用户指南](ui/user-guide.md)
+   * [沙盒工具](ui/sandbox-tooling.md)
 * 沙盒API {#api}
    * [概述](api/overview.md)
    * [快速入门](api/getting-started.md)
@@ -26,5 +27,5 @@ ht-degree: 50%
    * [沙盒类型](api/types.md)
    * [附录](api/appendix.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/sandbox)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/sandbox)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

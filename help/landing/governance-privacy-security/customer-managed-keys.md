@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的客户管理的密钥
 description: 了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 2564c0cc817362536f1a8291e1c733d9efbf5a78
 workflow-type: tm+mt
-source-wordcount: '1773'
+source-wordcount: '1855'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 1%
 本文档介绍了在Platform中启用客户管理的密钥(CMK)功能的过程。
 
 ## 先决条件
+
+要访问CMK API，您必须分配 [!UICONTROL 管理客户管理的密钥] 与该API凭据关联的新角色或现有角色的权限和在生产沙盒中的访问权限。 如果您希望仅向API凭据提供CMK访问权限，建议您使用前面提到的必要权限创建新的CMK管理员角色。
+
+有关在Experience Platform中分配角色和权限的详细信息，请参阅 [配置权限文档](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
 
 为了启用CMK，您的 [!DNL Azure] 必须使用以下设置配置密钥保管库：
 

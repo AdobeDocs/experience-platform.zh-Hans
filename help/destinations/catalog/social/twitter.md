@@ -2,9 +2,9 @@
 title: twitter自定义受众连接
 description: 在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '840'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-在Twitter中定位现有的关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
+在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动。
 
 ## 先决条件 {#prerequisites}
 
@@ -35,15 +35,12 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可导出到此目标的所有受众。
+此部分介绍可将哪种类型的受众导出到此目标。
 
-此目标支持激活通过Experience Platform生成的所有受众 [分段服务](../../../segmentation/home.md).
-
-*此外*&#x200B;中，此目标还支持激活下表中描述的受众。
-
-| 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 受众来源 | 受支持 | 描述 |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
+| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -64,7 +61,7 @@ ht-degree: 4%
 
 ### 用例#1
 
-在Twitter中定位现有的关注者和客户，并通过激活您在Adobe Experience Platform中构建的受众来创建相关的再营销活动，作为 [!DNL List Custom Audiences] 在Twitter中。
+在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动，作为 [!DNL List Custom Audiences] twitter中。
 
 ## 连接到目标 {#connect}
 
@@ -79,7 +76,7 @@ ht-degree: 4%
 1. 查找 [!DNL Twitter Custom Audiences] 目标目录中的目标并选择 **[!UICONTROL 设置]**.
 2. 选择 **[!UICONTROL 连接到目标]**.
    ![对LinkedIn进行身份验证](/help/destinations/assets/catalog/social/twitter/authenticate-twitter-destination.png)
-3. 输入您的Twitter凭据并选择 **登录**.
+3. 输入Twitter凭据并选择 **登录**.
 
 ### 填写目标详细信息 {#destination-details}
 
@@ -119,4 +116,4 @@ ht-degree: 4%
 1. 提供易于用户识别的受众映射名称。 我们建议使用与Experience Platform区段相同的名称。
 2. 请勿使用特殊字符(+ &amp; ， % ： ； @ / = ？ $)。 如果您的Experience Platform受众名称包含这些字符，请先删除这些字符，然后再将受众映射到Twitter目标。
 
-有关以下内容的更多信息 [!DNL List Custom Audiences] twitter中的URL路径，可以在 [twitter文档](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).
+有关以下内容的更多信息 [!DNL List Custom Audiences] 中的Twitter可在以下位置找到： [twitter文档](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).
