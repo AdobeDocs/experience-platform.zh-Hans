@@ -1,9 +1,9 @@
 ---
 description: 了解如何通过“/destination-servers”端点为使用Adobe Experience Platform Destination SDK构建的基于文件的目标配置文件格式选项。
 title: 文件格式配置
-source-git-commit: 511e02f92b7016a7f07dd3808b39594da9438d15
+source-git-commit: 4f4ffc7fc6a895e529193431aba77d6f3dcafb6f
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '1093'
 ht-degree: 4%
 
 ---
@@ -119,7 +119,11 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
                 "value": ""
             }
         },
-        "maxFileRowCount":5000000
+        "maxFileRowCount":5000000,
+        "includeFileManifest": {
+            "templatingStrategy":"PEBBLE_V1",
+            "value":"{{ customerData.includeFileManifest }}"
+      }
     }
 ```
 
@@ -160,7 +164,11 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
             "value":"{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'emptyValue' %}{{customerData.csvOptions.emptyValue}}{% else %}{% endif %}"
          }
       },
-      "maxFileRowCount":5000000
+      "maxFileRowCount":5000000,
+      "includeFileManifest": {
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{ customerData.includeFileManifest }}"
+      }
    }
 }
 ```
@@ -192,6 +200,7 @@ Destination SDK支持一组灵活的功能，您可以根据集成需求配置�
 | `csvOptions.charToEscapeQuoteEscaping.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置用于转义引号字符的单个字符。 | `\` 当转义字符和引号字符不同时。 `\0` 当转义字符和引号字符相同时。 | - | - |
 | `csvOptions.emptyValue.value` | 可选 | *仅用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` | `"emptyValue":""` --> `male,"",John` | `"emptyValue":"empty"` --> `male,empty,John` |
 | `maxFileRowCount` | 可选 | 指示每个导出文件的最大行数，介于1,000,000和10,000,000行之间。 | 5,000,000 |
+| `includeFileManifest` | 可选 | 支持在导出文件的同时导出文件清单。 清单JSON文件包含有关导出位置、导出大小等的信息。 清单的命名格式为 `manifest-<<destinationId>>-<<dataflowRunId>>.json`. | 查看 [示例清单文件](/help/destinations/assets/common/manifest-d0420d72-756c-4159-9e7f-7d3e2f8b501e-0ac8f3c0-29bd-40aa-82c1-f1b7e0657b19.json). 清单文件包含以下字段： <ul><li>`flowRunId`：和 [数据流运行](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) 生成了导出的文件。</li><li>`scheduledTime`：导出文件时的时间（UTC时间）。 </li><li>`exportResults.sinkPath`：存储位置中存储导出文件的路径。 </li><li>`exportResults.name`：导出文件的名称。</li><li>`size`：导出文件的大小（以字节为单位）。</li></ul> |
 
 {style="table-layout:auto"}
 
