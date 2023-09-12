@@ -1,11 +1,11 @@
 ---
 keywords: 广告；必应；
 title: Microsoft Bing连接
-description: 通过Microsoft Bing连接目标，您可以在Microsoft展示广告中执行重定位和面向受众的数字营销活动。
+description: 通过Microsoft Bing连接目标，您可以在整个Microsoft广告网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: 093ddd1651e15bebf73d007fb05042fbcf02c675
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '690'
 ht-degree: 8%
 
 ---
@@ -14,13 +14,15 @@ ht-degree: 8%
 
 ## 概述 {#overview}
 
-此 [!DNL Microsoft Bing] 目标可帮助您将配置文件数据发送到 [!DNL Microsoft Display Advertising].
+使用 [!DNL Microsoft Bing] 将配置文件数据发送到整个报表的目标 [!DNL Microsoft Advertising Network]，包括 [!DNL Display Advertising]， [!DNL Search]、和 [!DNL Native].
+
+此 [!DNL Microsoft Bing] 目标创建 *[!DNL Custom Audiences]* 在Microsoft中。 这些功能在 [!DNL Microsoft Search Network] 和 [!DNL Audience Network] ([!DNL Native] /[!DNL Display] /[!DNL Programmatic])中列出的任何其他参数 [Microsoft Advertising文档](https://help.ads.microsoft.com/#apex/ads/en/56892/1-500).
 
 要将配置文件数据发送到 [!DNL Microsoft Bing]，您必须先连接到目标。
 
 ## 用例 {#use-cases}
 
-作为营销人员，我希望能够使用由构建的受众 [!DNL Microsoft Advertising IDs] 要通过展示广告定位用户，请执行以下操作 [!DNL Microsoft Advertising] 渠道。
+作为营销人员，我希望能够使用由构建的受众 [!DNL Microsoft Advertising IDs] 要通过显示或搜索广告定位用户，请执行以下操作 [!DNL Microsoft Advertising] 渠道。
 
 ## 支持的身份 {#supported-identities}
 
@@ -74,7 +76,7 @@ ht-degree: 8%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
-### 连接参数 {#parameters}
+### 填写目标详细信息 {#parameters}
 
 同时 [设置](../../ui/connect-destination.md) 此目标必须提供以下信息：
 
