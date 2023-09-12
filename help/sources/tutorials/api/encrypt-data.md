@@ -4,9 +4,9 @@ description: 了解如何使用API通过云存储批处理源摄取加密文件�
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: cd8844121fef79205d57fa979ca8630fc1b1ece4
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1473'
 ht-degree: 2%
 
 ---
@@ -333,6 +333,40 @@ curl -X POST \
 }
 ```
 
+
+>[!BEGINSHADEBOX]
+
+**定期摄取的限制**
+
+加密的数据摄取不支持在源中摄取循环或多级别文件夹。 所有加密文件必须包含在单个文件夹中。 不支持在单个源路径中包含多个文件夹的通配符。
+
+以下是受支持的文件夹结构的示例，其中源路径为 `/ACME-customers/*.csv.gpg`.
+
+在此方案中，粗体格式的文件将被摄取到Experience Platform中。
+
+* ACME客户
+   * **文件1.csv.gpg**
+   * File2.json.gpg
+   * **文件3.csv.gpg**
+   * File4.json
+   * **文件5.csv.gpg**
+
+以下是不受支持的文件夹结构的示例，其中源路径为 `/ACME-customers/*`.
+
+在此方案中，流运行将失败，并返回一则错误消息，指示无法从源复制数据。
+
+* ACME客户
+   * File1.csv.gpg
+   * File2.json.gpg
+   * Subfolder1
+      * File3.csv.gpg
+      * File4.json.gpg
+      * File5.csv.gpg
+* ACME忠诚度
+   * File6.csv.gpg
+
+>[!ENDSHADEBOX]
+
 ## 后续步骤
 
-在本教程之后，您已为云存储数据创建了一个加密密钥对，并创建了数据流以使用摄取您的加密数据。 [!DNL Flow Service API]. 有关数据流完整性、错误和量度的状态更新，请阅读以下指南： [使用监控数据流 [!DNL Flow Service] API](./monitor.md).
+通过阅读本教程，您已为云存储数据创建了一个加密密钥对，并创建了数据流以使用摄取您的加密数据。 [!DNL Flow Service API]. 有关数据流完整性、错误和量度的状态更新，请阅读以下指南： [使用监控数据流 [!DNL Flow Service] API](./monitor.md).
