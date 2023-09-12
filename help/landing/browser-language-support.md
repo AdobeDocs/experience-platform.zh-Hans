@@ -3,10 +3,10 @@ solution: Experience Platform
 title: Experience PlatformUI的浏览器和语言支持
 description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可改善客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 20cb7afe6338f1ca79e86558f1f0cbec54790212
+source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
 workflow-type: tm+mt
-source-wordcount: '236'
-ht-degree: 24%
+source-wordcount: '247'
+ht-degree: 23%
 
 ---
 
@@ -51,9 +51,11 @@ Platform UI目前提供以下语言版本：
 
 如要更改您的语言：
 
-1. 选择页脚中的当前语言 [!DNL Experience Platform] 用户界面。
-2. 在您的配置文件设置中，选择 **[!UICONTROL 更改区域]**.
-3. 选择您的地区。
+1. 登录到您的Experience Platform帐户。
+1. 按 `Ctrl + i` 打开帐户信息菜单。
+1. 转到 **[!UICONTROL 首选语言]**.
+1. 选择您的第一语言首选项和第二语言首选项。
+1. 选择 **[!UICONTROL 保存]** 然后关闭窗户。
 
 >[!NOTE]
 >
