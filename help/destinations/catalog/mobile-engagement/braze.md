@@ -3,9 +3,9 @@ keywords: 移动设备；炫耀；消息传送；
 title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: e2317201ae4810734714cea6c5d172ea6a542f5b
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1096'
 ht-degree: 1%
 
 ---
@@ -163,6 +163,14 @@ ht-degree: 1%
 ## 导出的数据 {#exported-data}
 
 验证数据是否已成功导出到 [!DNL Braze] 目标，检查您的 [!DNL Braze] 帐户。 [!DNL Adobe Experience Platform] 受众将导出到 [!DNL Braze] 在 `AdobeExperiencePlatformSegments` 属性。
+
+## 故障排除 {#troubleshooting}
+
+**将受众激活到此目标时，我收到超时错误。 我该怎么办？**
+
+有时，激活此目标的受众可能会导致超时错误。 此错误并不表示存在激活问题。
+
+如果收到超时错误，请检查目标平台中的受众大小。 如果受众规模正确，则集成可按预期运行。
 
 ## 数据使用和治理 {#data-usage-governance}
 
