@@ -4,19 +4,15 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: d7264d94a03f0ba19da90559b156ecaace0d8f95
+source-git-commit: 823f781e59fe7f5f15620a2b99f9c0c1e7144666
 workflow-type: tm+mt
-source-wordcount: '3673'
+source-wordcount: '3633'
 ht-degree: 11%
 
 ---
 
 
 # 将受众激活到批量配置文件导出目标
-
->[!IMPORTANT]
-> 
-> 客户尚未普遍使用页面上描述的功能。 本页当前面向Adobe内部团队，用于预先了解即将推出的功能。 在删除此笔记之前，请勿在Adobe外部共享。
 
 >[!IMPORTANT]
 > 
