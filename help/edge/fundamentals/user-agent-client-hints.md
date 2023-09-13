@@ -1,12 +1,12 @@
 ---
 title: 用户代理客户端提示
-description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问User-Agent字符串中提供的许多相同信息，但采用更保护隐私的方式。
+description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问用户代理字符串中提供的许多相同信息，但保护隐私的方式更加严格。
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 29679e85943f16bcb02064cc60a249a3de61e022
+source-git-commit: d856630d4c14387ad4d77a915585fe05803878fb
 workflow-type: tm+mt
-source-wordcount: '1155'
-ht-degree: 7%
+source-wordcount: '1200'
+ht-degree: 6%
 
 ---
 
@@ -14,13 +14,13 @@ ht-degree: 7%
 
 ## 概述 {#overview}
 
-每次Web浏览器向Web服务器发出请求时，请求的标头都包含有关浏览器和运行浏览器的环境的信息。 所有这些数据都会聚合为一个字符串，称为 [!DNL User-Agent] 字符串。
+每次Web浏览器向Web服务器发出请求时，请求的标题都包含有关浏览器和浏览器运行环境的信息。 所有这些数据都会聚合为一个字符串，称为用户代理字符串。
 
-以下是一个示例， [!DNL User-Agent] 字符串看起来像是在上运行的Chrome浏览器发出的请求中 [!DNL Mac OS] 设备。
+下面是一个用户代理字符串在请求中的外观示例，该请求来自在上运行的Chrome浏览器 [!DNL Mac OS] 设备。
 
 >[!NOTE]
 >
->多年来，中包含的浏览器和设备信息量 [!DNL User-Agent] 字符串已多次增长和修改。 以下示例显示了一组最常见的选项 [!DNL User-Agent] 信息。
+>多年来，用户代理字符串中包含的浏览器和设备信息量增长并多次修改。 以下示例显示了一组最常见的用户代理信息。
 
 ```shell
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36`
@@ -39,32 +39,32 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 
 ## 用例 {#use-cases}
 
-[!DNL User-Agent] 长期以来，字符串一直被用来为营销和开发团队提供有关浏览器、操作系统和设备如何显示网站内容以及用户如何与网站交互的重要见解。
+长期以来，用户代理字符串一直被用来为营销和开发团队提供有关浏览器、操作系统和设备如何显示网站内容以及用户如何与网站交互的重要见解。
 
-[!DNL User-Agent] 出于其他各种目的，字符串还用于阻止垃圾邮件并过滤抓取网站的机器人。
+出于其他各种目的，用户代理字符串还用于阻止垃圾邮件并过滤抓取站点的机器人。
 
-## [!DNL User-Agent] Adobe Experience Cloud中的字符串 {#user-agent-in-adobe}
+## Adobe Experience Cloud中的用户代理字符串 {#user-agent-in-adobe}
 
-Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方式显示。
+Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
-* Adobe Analytics利用 [!DNL User-Agent] 字符串，用于增强和派生与用于访问网站的操作系统、浏览器和设备相关的其他信息。
-* Adobe Audience Manager和Adobe Target根据 [!DNL User-Agent] 字符串。
+* Adobe Analytics利用用户代理字符串来补充和获取与用于访问网站的操作系统、浏览器和设备相关的其他信息。
+* Adobe Audience Manager和Adobe Target根据用户代理字符串提供的信息，使最终用户有资格参加分段和个性化活动。
 
-## 用户代理客户端提示简介 {#ua-ch}
+## 引入用户代理客户端提示 {#ua-ch}
 
-近年来，网站所有者和营销供应商使用 [!DNL User-Agent] 字符串以及请求标头中包含的其他信息以创建数字指纹。 这些指纹可以用作在用户不知情的情况下识别用户的手段。
+近年来，网站所有者和营销供应商使用用户代理字符串以及请求标头中包含的其他信息来创建数字指纹。 这些指纹可以用作在用户不知情的情况下识别用户的手段。
 
-尽管这其中的重要目的 [!DNL User-Agent] 字符串为站点所有者服务，浏览器开发人员已决定更改方法 [!DNL User-Agent] 字符串发挥作用，以限制最终用户的潜在隐私问题。
+尽管用户代理字符串对网站所有者具有重要用途，但浏览器开发人员已决定更改用户代理字符串的操作方式，以限制最终用户的潜在隐私问题。
 
 他们开发的解决方案称为 [用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示仍然允许网站收集必要的浏览器、操作系统和设备信息，同时还可以增强对隐蔽跟踪方法（如指纹）的防范。
 
-客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但采用更保护隐私的方式。
+客户端提示允许网站所有者访问用户代理字符串中提供的许多相同信息，但保护隐私的方式更加严格。
 
-当现代浏览器将用户发送到Web服务器时，整个 [!DNL User-Agent] 无论是否需要，都会在每次请求时发送字符串。 另一方面，客户端提示会强制执行一种模型，其中服务器必须向浏览器询问它想要了解的有关客户端的其他信息。 在收到此请求后，浏览器可以应用其自己的策略或用户配置来确定返回的数据。 而不是公开整个 [!DNL User-Agent] 默认情况下，所有请求的访问都以明确且可审核的方式进行管理。
+当现代浏览器将用户发送到Web服务器时，无论是否需要，都会在每次请求时发送整个用户代理字符串。 另一方面，客户端提示会强制实施一种模型，其中服务器必须向浏览器询问它想要了解的有关客户端的其他信息。 在收到此请求后，浏览器可以应用自己的策略或用户配置来确定返回的数据。 与默认情况下对所有请求公开整个用户代理字符串不同，现在可以明确且可审核的方式管理访问。
 
 ## 浏览器支持 {#browser-support}
 
-[用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) 引入于 [!DNL Google Chrome ]版本89。
+[用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) 引入了 [!DNL Google Chrome]版本89。
 
 其他基于Chromium的浏览器支持客户端提示API，例如：
 
@@ -84,7 +84,7 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方
 
 ### 低熵客户端提示 {#low-entropy}
 
-低熵客户端提示包括不能用于指纹识别用户的基本信息。 信息，例如浏览器品牌、平台以及请求是否来自移动设备。
+低熵客户端提示包括无法用于指纹识别的用户的基本信息。 信息，例如浏览器品牌、平台以及请求是否来自移动设备。
 
 默认情况下，Web SDK中会启用低熵客户端提示，并在每个请求中传递。
 
@@ -96,9 +96,9 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方
 
 ### 高熵客户端提示 {#high-entropy}
 
-高熵客户端提示是有关客户端设备的更详细信息，例如平台版本、架构、模型、位（64位或32位平台）或完整操作系统版本。 这些信息可能用于指纹。
+高熵客户端提示是有关客户端设备的更详细信息，例如平台版本、架构、模型、位（64位或32位平台）或完整操作系统版本。 这些信息可能被用于指纹。
 
-| HTTP 标头 | JavaScript | 默认情况下包含在用户代理中 | 默认情况下包含在客户端提示中 |
+| HTTP 标头 | JavaScript | 默认包含在用户代理中 | 默认情况下包含在客户端提示中 |
 |---|---|---|---|
 | `Sec-CH-UA-Platform-Version` | `platformVersion` | 是 | 否 |
 | `Sec-CH-UA-Arc` | `architecture` | 是 | 否 |
@@ -112,17 +112,17 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方
 
 某些Adobe Experience Cloud解决方案在生成报告时依赖高熵客户端提示中包含的信息。
 
-如果您没有在环境中启用高熵客户端提示，则下面描述的Adobe Analytics和Audience Manager报表和特征将无法工作。
+如果您没有在环境中启用高熵客户端提示，则下面描述的Adobe Analytics和Audience Manager报表和特征将不起作用。
 
-### Adobe Analytics报表依赖高熵客户端提示 {#analytics}
+### Adobe Analytics报告依赖于高熵客户端提示 {#analytics}
 
-此 [操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans) 维度包括作为高熵客户端提示存储的操作系统版本。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
+此 [操作系统](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html?lang=zh-Hans) 维度包括操作系统版本，该版本存储为高熵客户端提示。 如果未启用高熵客户端提示，则对于从Chromium浏览器收集的点击，操作系统版本可能不准确。
 
 ### 依赖高熵客户端提示的Audience Manager特征 {#aam}
 
-[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能，可最大限度地减少通过 `User-Agent` 标头。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 将不再收到基于以下特征的可靠信息： [平台级别键](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
+[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能最大限度地减少通过收集的信息 `User-Agent` 标题。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 将不再收到基于以下特征的 [平台级别键](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
 
-使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 以继续接收可靠特征数据。
+使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=zh-Hans) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 以继续接收可靠的特征数据。
 
 ## 启用高熵客户端提示 {#enabling-high-entropy-client-hints}
 
@@ -134,7 +134,7 @@ Adobe Experience Cloud解决方案利用 [!DNL User-Agent] 字符串以各种方
 
 ## 示例 {#example}
 
-浏览器向Web服务器发出的第一个请求的标头中包含的客户端提示将包含浏览器品牌、浏览器的主要版本以及客户端是否为移动设备的指示器。 每段数据都将有自己的标头值，而不是分组到单个中 [!DNL User-Agent] 字符串，如下所示：
+浏览器向Web服务器发出的第一个请求的标头中包含的客户端提示将包含浏览器品牌、浏览器的主要版本以及客户端是否为移动设备的指示器。 每段数据都有自己的标题值，而不是分组到单个用户代理字符串中，如下所示：
 
 ```shell
 Sec-CH-UA: "Chromium";v="101", "Google Chrome";v="101", " Not;A Brand";v="99"
@@ -150,9 +150,9 @@ Sec-CH-UA-Platform: "macOS
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36
 ```
 
-尽管信息类似，但对服务器的第一个请求包含客户端提示。 这些仅包括 [!DNL User-Agent] 字符串。 请求中缺少的是操作系统体系结构、完整操作系统版本、版面引擎名称、版面引擎版本和完整浏览器版本。
+尽管信息类似，但对服务器的第一个请求包含客户端提示。 这些仅包括用户代理字符串中可用内容的子集。 请求中缺少的是操作系统体系结构、完整操作系统版本、版面引擎名称、版面引擎版本和完整浏览器版本。
 
-然而，在接获要求时， [!DNL Client Hints API] 允许Web服务器询问有关设备的其他详细信息。 当请求这些值时，根据浏览器策略或用户设置，浏览器响应可能包含该信息。
+然而，在随后的请求中， [!DNL Client Hints API] 允许Web服务器询问有关设备的其他详细信息。 在请求这些值时，根据浏览器策略或用户设置，浏览器响应可能包含该信息。
 
 以下是由返回的JSON对象示例 [!DNL Client Hints API] 当请求高熵值时：
 
