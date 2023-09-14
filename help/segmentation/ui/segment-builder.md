@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
+source-git-commit: f3bad477156db8f8cf79582c7a6cc2562e983b63
 workflow-type: tm+mt
-source-wordcount: '3338'
+source-wordcount: '3354'
 ht-degree: 7%
 
 ---
@@ -98,6 +98,10 @@ ht-degree: 7%
 | 多个报告包 | 泛型变量中未包含任何友好名称描述符。 <br><br>**示例：** EVAR2 | <ul><li>任何具有多个描述符的字段均以通用形式显示。 这意味着UI中不会显示友好名称。</li><li>查询可以使用包含eVar的任何数据集中的数据，这可能会导致混合或不正确的结果。</li></ul> | 查询使用来自多个数据集的正确组合结果。 |
 
 ### 受众
+
+>[!NOTE]
+>
+>对于在Platform中创建的受众，仅限具有 **相同** 将显示合并策略。
 
 此 **[!UICONTROL 受众]** 选项卡列出了从外部源(如Adobe Audience Manager)导入的所有受众，以及在其中创建的受众 [!DNL Experience Platform].
 
