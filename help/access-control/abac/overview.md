@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 36e38824963139414f2803ef4127706d1e521d1a
 workflow-type: tm+mt
-source-wordcount: '1825'
-ht-degree: 17%
+source-wordcount: '1847'
+ht-degree: 18%
 
 ---
 
@@ -20,7 +20,11 @@ ht-degree: 17%
 >
 >切勿将基于属性的访问控制与Experience Platform的数据治理功能混为一谈，后者允许您使用标签和策略来控制数据在Platform中的使用方式，而不是让组织中的哪些用户有权访问数据。 请参阅 [数据治理概述](../../data-governance/home.md) 以了解更多信息。
 
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源的敏感个人数据(SPD)、个人身份信息(PII)和自定义类型数据的访问。 管理员可以定义用户角色，这些用户角色只能访问特定字段以及与这些字段对应的数据。
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源的敏感个人数据(SPD)、个人身份信息(PII)和自定义类型数据的访问。 管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+
+以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
+
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
 
 ## 基于属性的访问控制术语
 

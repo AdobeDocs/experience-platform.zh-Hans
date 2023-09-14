@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: cf10eb11773320d10ece53f192beacc8da83e980
+source-git-commit: 36e38824963139414f2803ef4127706d1e521d1a
 workflow-type: tm+mt
-source-wordcount: '1726'
-ht-degree: 19%
+source-wordcount: '1748'
+ht-degree: 21%
 
 ---
 
 # 基于属性的访问控制端到端指南
 
-基于属性的访问控制是Adobe Experience Platform的一项功能，它使多品牌和注重隐私的客户能够更灵活地管理用户访问。 可以使用基于对象的属性和角色的策略来授予/拒绝对单个对象（如方案字段和区段）的访问。 通过此功能，您可以授予或撤销组织中特定Platform用户访问单个对象的权限。
+基于属性的访问控制是Adobe Experience Platform的一项功能，它使多品牌和注重隐私的客户能够更灵活地管理用户访问。 可以使用基于对象的属性和角色的策略来授予/拒绝对单个对象（如方案字段和区段）的访问。 此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
 
 此功能允许您使用定义组织或数据使用范围的标签对架构字段、区段等进行分类。 您可以将这些相同的标签应用于Adobe Journey Optimizer中的历程、选件和其他对象。 同时，管理员可以定义有关Experience Data Model (XDM)架构字段的访问策略，并更好地管理哪些用户或组（内部、外部或第三方用户）可以访问这些字段。
 
@@ -254,4 +254,8 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 
 您已完成将标签应用于角色、架构字段和区段。 分配给这些角色的外部机构无法查看这些标签及其在架构、数据集和配置文件视图中的值。 在使用区段生成器时，也不允许在区段定义中使用这些字段。
 
-有关基于属性的访问控制的详细信息，请参见 [基于属性的访问控制概述](./overview.md).
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](./overview.md)。
+
+以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
+
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
