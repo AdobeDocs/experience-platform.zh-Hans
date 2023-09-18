@@ -2,11 +2,11 @@
 keywords: 激活受众流目标；激活受众流目标；激活数据
 title: 将受众数据激活到流目标
 type: Tutorial
-description: 了解如何通过将您在Adobe Experience Platform中拥有的受众映射到流目标来激活这些受众。
+description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1065'
 ht-degree: 7%
 
 ---
@@ -16,26 +16,27 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 > 
-> * 要激活受众并启用 [映射步骤](#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
-> * 要激活受众，请不通过 [映射步骤](#mapping) 的工作流，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 激活受众并启用 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 要激活受众，请不通过 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+>* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 > 
 > 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 ## 概述 {#overview}
 
-本文说明了在Adobe Experience Platform流目标中激活受众所需的工作流。
+本文介绍了在Adobe Experience Platform流目标中激活受众所需的工作流。
 
 ## 先决条件 {#prerequisites}
 
-要将受众激活到目标，您必须已成功 [已连接到目标](./connect-destination.md). 如果您尚未这样做，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
+要将受众激活到目标，您必须已成功完成 [已连接到目标](./connect-destination.md). 如果您尚未这样做，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
 
 ## 选择您的目标 {#select-destination}
 
-1. 转到 **[!UICONTROL 连接>目标]**，并选择 **[!UICONTROL 目录]** 选项卡。
+1. 转到 **[!UICONTROL “连接”>“目标”]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 
    ![“目标目录”选项卡](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. 选择 **[!UICONTROL 激活受众]** ，该页面位于要激活受众的目标对应的信息卡上，如下图所示。
+1. 选择 **[!UICONTROL 激活受众]** ，，如下图所示。
 
    ![激活按钮](../assets/ui/activate-segment-streaming-destinations/activate-audiences-button.png)
 
@@ -43,16 +44,16 @@ ht-degree: 7%
 
    ![选择目标](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
-1. 移到下一部分以 [选择您的受众](#select-audiences).
+1. 移到下一节至 [选择您的受众](#select-audiences).
 
 ## 选择您的受众 {#select-audiences}
 
 要选择要激活到目标的受众，请选中受众名称左侧的复选框，然后选择 **[!UICONTROL 下一个]**.
 
-您可以根据受众的来源，从多种类型的受众中进行选择：
+您可以从多种类型的受众中进行选择，具体取决于其来源：
 
-* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 了解更多详细信息。
-* **[!UICONTROL 自定义上传]**：受众在Experience Platform之外生成，并以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅有关以下内容的文档 [导入受众](../../segmentation/ui/overview.md#import-audience).
+* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 以了解更多详细信息。
+* **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
 ![选择受众](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
@@ -69,7 +70,7 @@ ht-degree: 7%
 
    ![添加新映射](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
-1. 选择右侧的箭头 **[!UICONTROL 源字段]** 登入。
+1. 选择右侧的箭头 **[!UICONTROL 源字段]** 进入。
 
    ![选择源字段](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
 
@@ -77,7 +78,7 @@ ht-degree: 7%
 
    ![选择源字段页](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
 
-1. 选择右侧的按钮 **[!UICONTROL 目标字段]** 登入。
+1. 选择右侧的按钮 **[!UICONTROL 目标字段]** 进入。
 
    ![选择目标字段](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
 
@@ -94,7 +95,7 @@ ht-degree: 7%
 >title="应用转换"
 >abstract="使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。"
 
-将未经过哈希处理的源属性映射到目标预期进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 选项使Adobe Experience Platform在激活时自动对源属性进行哈希处理。
+将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
 ![标识映射](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
@@ -105,13 +106,13 @@ ht-degree: 7%
 >title="结束日期"
 >abstract="无法添加受众计划的结束日期。"
 
-默认情况下， **[!UICONTROL 受众计划]** 页面仅显示您在当前激活流程中选择的新选定受众。
+默认情况下， **[!UICONTROL 受众计划]** 页面仅显示您在当前激活流中选择的新选定受众。
 
-要查看激活到目标的所有受众，请使用筛选选项并禁用 **[!UICONTROL 仅显示新受众]** 筛选条件。
+要查看激活到目标的所有受众，请使用筛选选项并禁用 **[!UICONTROL 仅显示新受众]** 筛选。
 
 ![所有受众](../assets/ui/activate-segment-streaming-destinations/all-audiences.png)
 
-1. 在 **[!UICONTROL 受众计划]** 页面中，选择每个受众，然后使用 **[!UICONTROL 开始日期]** 和 **[!UICONTROL 结束日期]** 选择器，用于配置将数据发送到目标的时间间隔。
+1. 在 **[!UICONTROL 受众计划]** 页面上，选择每个受众，然后使用 **[!UICONTROL 开始日期]** 和 **[!UICONTROL 结束日期]** 选择器，用于配置向目标发送数据的时间间隔。
 
    ![受众计划](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
 
@@ -119,11 +120,11 @@ ht-degree: 7%
 
      ![映射 ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
-   * 某些目标要求您手动映射 [!DNL Platform] 受众与其在目标目标中的对应受众。 为此，请选择每个受众，然后在中输入目标平台中对应的受众ID **[!UICONTROL 映射Id]** 字段。 如果您的目标不包括此字段，请跳过此步骤。
+   * 某些目标要求您手动映射 [!DNL Platform] 受众与其在目标中的对应受众。 为此，请选择每个受众，然后在中输入目标平台中相应的受众ID **[!UICONTROL 映射Id]** 字段。 如果您的目标不包含此字段，请跳过此步骤。
 
      ![映射 ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
-   * 某些目标要求您输入 **[!UICONTROL 应用程序ID]** 激活时 [!DNL IDFA] 或 [!DNL GAID] 受众。 如果您的目标不包括此字段，请跳过此步骤。
+   * 某些目标要求您输入 **[!UICONTROL 应用程序ID]** 激活时 [!DNL IDFA] 或 [!DNL GAID] 受众。 如果您的目标不包含此字段，请跳过此步骤。
 
      ![应用程序 ID](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
 
@@ -131,31 +132,31 @@ ht-degree: 7%
 
 ## 请查看 {#review}
 
-在 **[!UICONTROL 审核]** 页面时，您可以看到所选内容的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
+在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-segment-streaming-destinations/review.png)
 
 ### 同意政策评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
-在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 在数据治理文档部分中。
+在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 数据管理文档一节中。
 
 ![数据策略违规](../assets/common/data-policy-violation.png)
 
 ### 筛选受众 {#filter-audiences}
 
-此外，在此步骤中，您可以使用页面上的可用过滤器仅显示其计划或映射已作为此工作流的一部分更新的受众。 您还可以切换要查看的表列。
+此外，在此步骤中，您可以使用页面上的可用过滤器仅显示其计划或映射作为此工作流的一部分而更新的受众。 您还可以切换要查看的表列。
 
-![屏幕录制，其中显示审核步骤中的可用受众筛选器。](../assets/ui/activate-segment-streaming-destinations/filter-audiences-review-step.gif)
+![显示审核步骤中可用的受众过滤器的屏幕录制。](../assets/ui/activate-segment-streaming-destinations/filter-audiences-review-step.gif)
 
-如果您对您的选择感到满意，并且未检测到违反策略的情况，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
+如果您对您的选择感到满意，并且未检测到任何违反策略的情况，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
 ## 验证受众激活 {#verify}
 
-查看 [目标监视文档](../../dataflows/ui/monitor-destinations.md) ，以了解有关如何监控流向目标的数据流的详细信息。
+查看 [目标监视文档](../../dataflows/ui/monitor-destinations.md) ，了解有关如何监控流向您目标的数据流的详细信息。
 
 <!-- 
 For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL Facebook] custom audience would be created programmatically in [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Audience membership in the audience would be added and removed as users are qualified or disqualified for the activated audiences.

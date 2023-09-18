@@ -1,11 +1,10 @@
 ---
-keywords: 目标；adobe experience platform；平台；目标概述；激活数据；激活；
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: ce1aec87b827b6e8626018846bc6f438834fff54
+source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '956'
 ht-degree: 4%
 
 ---
@@ -39,7 +38,7 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 
 * 浏览可在其中激活数据的目标平台目录；
 * 创建、编辑、激活和禁用流向目录中的目标的数据流；
-* 在存储位置中创建帐户或将Platform链接到目标平台中的帐户；
+* 在存储位置创建一个帐户，或将Platform链接到目标平台中的帐户；
 * 选择应将哪些受众激活到目标；
 * 选择 [体验数据模型(XDM)字段](../xdm/home.md) 以将受众激活到电子邮件营销目标时导出。
 
@@ -64,6 +63,7 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 | **[!UICONTROL 管理目标]** | 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). |
 | **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将受众激活到目标并启用 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
 | **[!UICONTROL 管理目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** | 要将受众激活到目标并隐藏 [映射步骤](ui/activate-batch-profile-destinations.md#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 查看身份图]** | 要导出 *身份* 对于目标，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
