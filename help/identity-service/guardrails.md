@@ -3,10 +3,10 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 87138cbf041e40bfc6b42edffb16f5b8a8f5b365
+source-git-commit: a9b5ab28d00941b7531729653eb630a61b5446fc
 workflow-type: tm+mt
-source-wordcount: '1112'
-ht-degree: 3%
+source-wordcount: '1182'
+ht-degree: 1%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
 | （当前行为）图形中的身份数 | 150 | 该限制在沙盒级别应用。 一旦身份数达到150个或更多，就不会添加新的身份，也不会更新身份图。 图形可能会显示大于150的标识，这是链接一个或多个具有小于150的标识的图形的结果。 **注意**：身份图中的最大身份数 **对于单个合并的配置文件** 是50 Real-Time Customer Profile中排除基于身份图且身份超过50的合并用户档案。 有关详细信息，请阅读上的指南 [配置文件数据的护栏](../profile/guardrails.md). |
-| （即将发生的行为）图表中的身份数 [!BADGE 测试版]{type=Informative} | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 阅读 [附录](#appendix) 有关Identity服务如何在达到限制后删除身份的详细信息。 |
+| （即将发生的行为）图表中的身份数 [!BADGE 测试版]{type=Informative} | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
 | XDM记录中的标识数 | 20 | 所需的XDM记录的最小数量为2。 |
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
 | 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
@@ -50,32 +50,11 @@ ht-degree: 3%
 
 从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此身份通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
 
-## 后续步骤
-
-有关以下内容的更多信息，请参阅以下文档 [!DNL Identity Service]：
-
-* [[!DNL Identity Service] 概述](home.md)
-* [身份图查看器](ui/identity-graph-viewer.md)
-
-
-## 附录 {#appendix}
-
-以下部分包含有关Identity Service护栏的其他信息。
-
-### [!BADGE 测试版]{type=Informational}了解在容量身份图形更新时的删除逻辑 {#deletion-logic}
-
->[!IMPORTANT]
->
->以下删除逻辑是Identity Service即将执行的行为。 如果您的生产沙盒包含以下内容，请联系您的客户代表请求更改标识类型：
->
-> * 将人员标识符（如CRM ID）配置为Cookie/设备标识类型的自定义命名空间。
-> * 将Cookie/设备标识符配置为跨设备标识类型的自定义命名空间。
->
->此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-time CDP B2C版本，这可能会导致符合受众资格的用户档案数量增加最小，因为以前分段和激活时会忽略这些用户档案。
+## [!BADGE 测试版]{type=Informational}了解在容量身份图形更新时的删除逻辑 {#deletion-logic}
 
 更新完整的身份图后，Identity Service会先删除图中最旧的身份，然后再添加最新的身份。 这是为了保持身份数据的准确性和相关性。 此删除过程遵循两个主要规则：
 
-#### 删除规则#1根据命名空间的身份类型确定优先顺序
+### 删除规则#1根据命名空间的身份类型确定优先顺序
 
 删除优先级如下：
 
@@ -83,7 +62,7 @@ ht-degree: 3%
 2. 设备ID
 3. 跨设备ID、电子邮件和电话
 
-#### 删除规则#2基于存储在身份上的时间戳
+### 删除规则#2基于存储在身份上的时间戳
 
 图形中链接的每个标识都有其自己的相应时间戳。 更新完整图形时，Identity Service会删除具有最旧时间戳的标识。
 
@@ -110,7 +89,36 @@ ht-degree: 3%
 
 >[!ENDSHADEBOX]
 
+### 对实施的影响
+
+以下部分概述了删除逻辑对Identity Service、Real-Time Customer Profile和WebSDK的影响。
+
+#### 身份服务：自定义命名空间身份类型更改
+
+Adobe如果您的生产沙盒包含：
+
+* 将人员标识符（如CRM ID）配置为Cookie/设备标识类型的自定义命名空间。
+* 将Cookie/设备标识符配置为跨设备标识类型的自定义命名空间。
+
+此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-Time CDP B2C版本，这可能会导致符合受众资格的用户档案数量最小化，因为以前分段和激活时会忽略这些用户档案。
+
+#### 实时客户个人资料：假名个人资料设置
+
 删除仅发生在Identity Service中的数据，而不发生在Real-time Customer Profile中。
 
 * 因此，如果只使用一个ECID，这种行为可能会创建更多配置文件，因为ECID不再是身份图的一部分。
 * 为了让您保持在可寻址受众权利文件数字范围内，建议启用 [假名配置文件数据过期](../profile/pseudonymous-profiles.md) 以删除旧配置文件。
+
+#### Real-Time Customer Profile和WebSDK：主身份删除
+
+如果您希望保留针对CRM ID的已验证事件，那么建议您将主ID从ECID更改为CRM ID。 有关如何实施此更改的步骤，请阅读以下文档：
+
+* [为Experience Platform标签配置身份映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
+* [Experience PlatformWeb SDK中的身份数据](../edge/identity/overview.md#using-identitymap)
+
+## 后续步骤
+
+有关以下内容的更多信息，请参阅以下文档 [!DNL Identity Service]：
+
+* [[!DNL Identity Service] 概述](home.md)
+* [身份图查看器](ui/identity-graph-viewer.md)
