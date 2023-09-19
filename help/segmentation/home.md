@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务概述
 description: 了解Adobe Experience Platform分段服务及其在Platform生态系统中发挥的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 44c92e2163e2b6c0c140c64bba41dfbcc15d5d7f
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1635'
 ht-degree: 12%
 
 ---
@@ -32,7 +32,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界�
 
 ## 创建受众
 
-在Adobe Experience Platform上可以通过两种不同的方式创建受众：直接构成受众，或通过Platform派生的区段定义。
+在 Adob&#x200B;&#x200B;e Experience Platform 上可以通过两种不同的方式创建受众 - 直接组成受众或通过平台派生的区段定义进行创建。
 
 ### 受众组合
 
@@ -89,10 +89,10 @@ Platform 目前支持三种受众评估方法：流式分段、批量分段和�
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
 >title="边缘评估"
->abstract="边缘分段能够在 Experience Edge 上即时评估 Platform 中的区段，从而实现同一页和下一页个性化用例。"
+>abstract="边缘分段是在Platform中在边缘网络上即时评估区段的能力，从而实现同一页面和下一页面个性化用例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html?lang=zh-Hans" text="边缘分段 UI 指南"
 
-边缘分段是一种在Platform中即时评估区段的能力 [在Experience Edge上](../edge/home.md)，启用同一页面和下一页面个性化用例。
+边缘分段是一种在Platform中即时评估区段的能力 [在Edge Network](../edge/home.md)，启用同一页面和下一页面个性化用例。
 
 要了解有关边缘分段的更多信息，请阅读 [API文档](./api/edge-segmentation.md) 或 [UI文档](./ui/edge-segmentation.md).
 

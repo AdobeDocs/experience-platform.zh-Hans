@@ -1,14 +1,13 @@
 ---
 title: Adobe Experience Platform Web软件开发工具包(SDK)概述
 description: 了解如何使用Adobe Experience Platform Web SDK将Platform功能集成到您的网站。
-keywords: Adobe Experience Platform Web SDK；Platform Web SDK；Web SDK；Edge；Visitor.js；AppMeasurement.js；AT.js；DIL.js；Web SDK；SDK；Web SDK；Launch；Launch
-exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 52dbde052322a00fc33cd9f9c86ab7f92671f36a
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '776'
 ht-degree: 2%
 
 ---
+
 
 # Adobe Experience Platform Web SDK概述 {#overview}
 
@@ -17,17 +16,15 @@ Adobe Experience Platform Web软件开发工具包(SDK)是一个客户端JavaScr
 * 使用进行手动实施 `alloy.js`. 本用户指南提供了关于此实施方法的文档。
 * 此 [Web SDK标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). 请参阅 [使用Web SDK实施Adobe Experience Cloud教程](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 以了解更多信息。
 
-## AdobeExperience Edge
+## Experience Platform边缘网络
 
-Adobe Experience Platform Web SDK是组成AdobeExperience Edge的收藏集的一部分。 AdobeExperience Edge包含以下技术：
+Experience PlatformWeb SDK是组成Adobe Experience Platform Edge Network的一系列工具的一部分。 Edge Network包含以下组件：
 
-* **[Adobe Experience Platform Web SDK](#overview)：** JavaScript SDK和标记扩展可显着简化Adobe技术的部署。
-* **[Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/)：** v5 Mobile SDK的扩展，允许客户使用新的部署方法
-* **[Adobe Experience Platform边缘网络](../server-api/overview.md)：** 全球分布式服务器网络，支持新的部署方法 [!DNL Adobe] 产品
+* **[Experience PlatformWeb SDK](#overview)：** JavaScript SDK和标记扩展可显着简化Adobe技术的部署。
+* **[Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/)：** v5 Mobile SDK的扩展，允许客户使用新的部署方法
+* **[Experience Platform边缘网络服务器API](../server-api/overview.md)：** 可用于各种数据收集、个性化、广告和营销用例的API。 服务器API可用于服务器、IoT设备、机顶盒和其他各种设备。
 
-AdobeExperience Edge是一个框架，它可以在所有可寻址渠道中进行低延迟数据收集、可插拔计算和快速数据激活。
-
-[!DNL Adobe Experience Edge] 为每个渠道（JavaScript、移动设备、服务器端）提供单个整合SDK，将数据发送到公共Adobe域(`adobedc.net`)，接收返回的单个有效负载以进行数据和体验交付。
+Edge Network是一个框架，用于在所有可寻址通道中进行低延迟数据收集、可插拔计算和快速数据激活。 它为每个渠道（JavaScript、移动设备、服务器端）提供单个整合SDK，将数据发送到公共Adobe域(`adobedc.net`)，接收返回的单个有效负载以进行数据和体验交付。
 
 在服务器端，统一的边缘网关和通用平台服务框架有助于将新功能轻松部署到此实时计算环境中。 此架构：
 

@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform Edge Network Server API如何识别
 seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
 keywords: 边缘网络；网关；API；访客；标识
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 5%
@@ -13,9 +13,9 @@ ht-degree: 5%
 
 # 访客识别
 
-Edge Network Server API支持 [通过第一方ID进行访客识别([!DNL FPID])](visitor-identification-fpid.md).
+边缘网络服务器API支持 [通过第一方ID进行访客识别([!DNL FPID])](visitor-identification-fpid.md).
 
-所有用户身份应提供于 `identityMap` 字段组。 此字段组包含在AEP Web SDK中 `ExperienceEvent` mixin。
+所有用户标识都应在 `identityMap` 字段组。 此字段组包含在AEP Web SDK中 `ExperienceEvent` mixin。
 
 ```json
 {
@@ -42,15 +42,15 @@ Edge Network Server API支持 [通过第一方ID进行访客识别([!DNL FPID])]
 
 | ID命名空间 | 管理者 | 描述 |
 | --- | --- | --- |
-| `FPID` | Customer | `FPID` 将自动编码为 `ECID` Edge Network的集成，因此需要 `ECID` 也一样有效。  <br><br> 要获得一致的设备标识，这些ID必须保留在设备上，并在每个请求中提供。 对于Web交互，这涉及将它们存储为浏览器Cookie。 |
-| `IDFA`/`GAID` | Experience Platform | 可以跨应用程序识别用户，因此这些ID不会编码为 `ECID` 通过Edge Network。 |
+| `FPID` | Customer | `FPID` 将自动编码为 `ECID` 由Edge Network提供，因此需要 `ECID` 也一样有效。  <br><br> 为了实现一致的设备标识，这些ID必须保留在设备上，并在每次请求时提供。 对于Web交互，这涉及将它们存储为浏览器Cookie。 |
+| `IDFA`/`GAID` | Experience Platform | 可以跨应用程序识别用户，因此这些ID不会编码为 `ECID` 由Edge Network提供。 |
 
 <!--
 | `ECID` | Adobe | `ECID` is required when leveraging and integrating with Adobe Analytics and Adobe Audience Manager. <br><br> For consistent device identification, these IDs must be persisted on the device and supplied on each request. For web interactions, this involves storing them as browser cookies. |
 -->
 
 <!--
-## Experience Edge Identity Protocol {#experience-edge-identity-protocol}
+## Edge Network Identity Protocol {#experience-edge-identity-protocol}
 
 Device identities like `ECID` must be persisted on the client device and supplied on each request in the session and across sessions. Having stable device identities across multiple sessions improves the accuracy levels in your reports and allows delivering a consistent experience to the visitors.
 
@@ -157,6 +157,6 @@ The caller must explicitly activate this functionality via the `meta.state.cooki
 
 >[!NOTE]
 >
->The `meta.state.domain` is an optional value which a caller could supply, specifying the exact domain on which the cookies should be stored. When this is missing, Experience Edge can automatically infer the top-level domain from the request. Automatic client state management via browser cookies **should never be used** in a `server` interaction.
+>The `meta.state.domain` is an optional value which a caller could supply, specifying the exact domain on which the cookies should be stored. When this is missing, the Edge Network can automatically infer the top-level domain from the request. Automatic client state management via browser cookies **should never be used** in a `server` interaction.
 
 -->

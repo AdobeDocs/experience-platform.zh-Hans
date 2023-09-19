@@ -2,17 +2,17 @@
 solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API快速入门
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '959'
-ht-degree: 5%
+source-wordcount: '958'
+ht-degree: 6%
 
 ---
 
 
 # Media Edge API快速入门
 
-本指南提供了与Media Edge API服务成功进行初始交互的说明。 这包括启动媒体会话，然后跟踪发送到Adobe Experience Platform解决方案(如Customer Journey Analytics(CJA))的事件。 使用会话开始端点启动Media Edge API服务。 会话启动后，可以跟踪以下一个或多个事件：
+本指南提供了与Media Edge API服务成功进行初始交互的说明。 这包括启动媒体会话，然后跟踪发送到Adobe Experience Platform解决方案(如Customer Journey Analytics (CJA))的事件。 Media Edge API服务使用会话开始端点启动。 会话启动后，可以跟踪以下一个或多个事件：
 
 * `play`
 * `ping`
@@ -42,7 +42,7 @@ ht-degree: 5%
 
 ## 实施 API {#implement-api}
 
-除了所调用的模型和路径中的细微差异之外，Media Edge API还具有与 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en). 媒体收集的实施详细信息对Media Edge API仍然有效，如以下文档中所述：
+除了在模型和所调用的路径上存在的细微差异之外，Media Edge API还具有与 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en). 媒体收集的实施详细信息对Media Edge API仍然有效，如以下文档中所述：
 
 * [在播放器中设置 HTTP 请求类型](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [发送 Ping 事件](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
@@ -51,14 +51,14 @@ ht-degree: 5%
 
 ## Authorization {#authorization}
 
-目前，Media Edge API的请求中不需要授权标头。
+目前，Media Edge API不需要在其请求中使用授权标头。
 
 
 ## 启动会话 {#start-session}
 
 要在服务器上启动媒体会话，请使用会话开始端点。 成功的响应包括 `sessionId`，这是后续事件请求的必需参数。
 
-在发出会话开始请求之前，您将需要满足以下条件：
+发出会话开始请求之前，您将需要满足以下条件：
 
 * 此 `datastreamId`—POST会话启动请求的必需参数。 检索 `datastreamId`，请参见 [配置数据流](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans).
 
@@ -97,7 +97,7 @@ curl -i --request POST '{uri}/ee/va/v1/sessionStart?configId={dataStreamId}' \
 }'
 ```
 
-在上面的示例请求中， `eventType` 值包含前缀 `media.` 根据 [体验数据模型(XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 用于指定域。
+在上述示例请求中， `eventType` 值包含前缀 `media.` 根据 [体验数据模型(XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) 用于指定域。
 
 此外，数据类型映射 `eventType` 在上例中，如下所示：
 
@@ -164,20 +164,20 @@ x-content-type-options: nosniff
 
 在上面的示例响应中， `sessionId` 显示为 `af8bb22766e458fa0eef98c48ea42c9e351c463318230e851a19946862020333`. 您将在后续事件请求中将此ID用作必需参数。
 
-有关“会话开始”端点参数和示例的更多信息，请参阅 [Media Edge Swagger](swagger.md) 文件。
+有关“会话开始”端点参数和示例的详细信息，请参见 [Media Edge Swagger](swagger.md) 文件。
 
 有关XDM媒体数据参数的更多信息，请参阅 [媒体详细信息架构](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmplayhead).
 
 
 ## 缓冲开始事件请求 {#buffer-start}
 
-在媒体播放器上开始缓冲时，“缓冲开始”事件将发出信号。 缓冲恢复不是API服务中的事件；而是在缓冲启动后发送播放事件时推断的。 要发出缓冲开始事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
+“缓冲开始”事件在媒体播放器上缓冲开始时发出信号。 缓冲恢复不是API服务中的事件；而是在缓冲开始后发送播放事件时推断的。 要发出缓冲开始事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/bufferStart \`
 
 ### 示例请求
 
-以下示例显示了一个Buffer Start cURL请求：
+以下示例显示了Buffer Start cURL请求：
 
 ```
 curl -X 'POST' \
@@ -200,7 +200,7 @@ curl -X 'POST' \
 }'
 ```
 
-在上述示例请求中，与 `sessionId` 上一次调用中返回的参数用作缓冲开始请求中的必需参数。
+在上述示例请求中，与 `sessionId` 上一次调用中返回的参数将用作缓冲开始请求中的必需参数。
 
 成功的响应指示状态为200，并且不包含任何内容。
 
@@ -209,7 +209,7 @@ curl -X 'POST' \
 
 ## 播放事件请求 {#play-event}
 
-当媒体播放器将其状态从其他状态（例如“正在缓冲”、“已暂停”或“错误”）更改为“正在播放”时，将发送“播放”事件。 要提出“播放”事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
+当媒体播放器将其状态从其他状态（例如“正在缓冲”、“已暂停”或“错误”）更改为“正在播放”时，将发送播放事件。 要发出播放事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/play \`
 
@@ -240,11 +240,11 @@ curl -X 'POST' \
 
 成功的响应指示状态为200，并且不包含任何内容。
 
-有关“播放”端点参数和示例的更多信息，请参阅 [Media Edge Swagger](swagger.md) 文件。
+有关“播放”端点参数和示例的更多信息，请参见 [Media Edge Swagger](swagger.md) 文件。
 
 ## 会话结束事件请求 {#session-complete}
 
-当到达主内容的结尾时，将发送“会话结束”事件。 要提出“会话结束”事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
+当到达主内容的结尾时，将发送“会话结束”事件。 要发出会话结束事件请求，请使用 `sessionId` 在对以下端点的调用的有效负载中：
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/sessionComplete \`
 
@@ -284,7 +284,7 @@ curl -X 'POST' \
 | 状态 | 描述 |
 | ---------- | --------- |
 | 200 | 会话已成功创建 |
-| 207 | 连接到Experience Edge Network的服务出现问题(请参阅 [疑难解答指南](troubleshooting.md)) |
+| 207 | 连接到Edge Network的某个服务出现问题(请参阅 [疑难解答指南](troubleshooting.md)) |
 | 400级 | 错误请求 |
 | 500级 | 服务器错误 |
 
