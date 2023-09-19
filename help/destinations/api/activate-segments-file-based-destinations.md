@@ -4,21 +4,21 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
+source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
 workflow-type: tm+mt
-source-wordcount: '4415'
+source-wordcount: '4401'
 ht-degree: 3%
 
 ---
 
 # 使用流服务API将受众激活到基于文件的目标
 
-使用增强的文件导出功能（当前为测试版）在导出文件出Experience Platform时访问增强的自定义功能：
+使用增强的文件导出功能，可在导出文件时访问增强的自定义功能Experience Platform：
 
-* 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
-* 能够通过设置导出文件中的自定义文件标头 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
+* 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
 * 能够选择 [文件类型](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) 导出文件的属性。
-* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+* [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
 
 以下列出的六个云存储卡支持此功能：
 
@@ -35,9 +35,13 @@ ht-degree: 3%
 >
 >您还可以使用Experience Platform用户界面将用户档案导出到云存储目标。 阅读 [激活基于文件的目标教程](/help/destinations/ui/activate-batch-profile-destinations.md) 以了解更多信息。
 
-## API用户迁移 {#api-migration}
+<!--
 
-如果您已在使用流服务API将配置文件导出到Amazon S3、Azure Blob或SFTP云存储目标，请阅读 [API迁移指南](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md) 以了解必要的迁移步骤，以便Adobe将用户从旧版目标迁移到新目标。
+## API users migration {#api-migration}
+
+If you were already using the Flow Service API to export profiles to the Amazon S3, Azure Blob, or SFTP cloud storage destinations, read the [API migration guide](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md) for necessary migration steps as Adobe transitions users from the legacy destinations to the new destinations. 
+
+-->
 
 ## 快速入门 {#get-started}
 
@@ -54,6 +58,8 @@ ht-degree: 3%
 ### 所需权限 {#permissions}
 
 要导出用户档案，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 查看目标]**、和 **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+
+要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 ### 正在读取示例API调用 {#reading-sample-api-calls}
 
@@ -2356,7 +2362,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Amazon S3 Beta Target Connection",
+    "name": "Amazon S3 Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -2389,7 +2395,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Amazon S3 Beta Target Connection",
+   "name":"Amazon S3 Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2448,7 +2454,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Azure Blob Storage Beta Target Connection",
+    "name": "Azure Blob Storage Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -2481,7 +2487,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Azure Blob Storage Beta Target Connection",
+   "name":"Azure Blob Storage Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2663,7 +2669,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Data Landing Zone Beta Target Connection",
+   "name":"Data Landing Zone Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2755,7 +2761,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Google Cloud Storage Beta Target Connection",
+   "name":"Google Cloud Storage Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",

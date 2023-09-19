@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 333f98a74e69f50ae356231733924d1c6793ddf1
+source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1159'
 ht-degree: 9%
 
 ---
@@ -22,15 +22,14 @@ ht-degree: 9%
    * [不同目标类型的配置文件导出行为](./how-destinations-work/profile-export-behavior.md)
    * [目标激活工作流程中的身份处理](./how-destinations-work/identity-handling.md)
 * API教程 {#api}
-   * [云存储目标的API迁移指南](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md)
+   * [使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
-   * [连接到批量云存储和电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
+   * [连接到基于文件的电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
    * [（测试版）通过临时激活API将受众激活到批量目标](./api/ad-hoc-activation-api.md)
    * [编辑目标](./api/edit-destination.md)
    * [更新目标数据流](./api/update-destination-dataflows.md)
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
-   * [（测试版）使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [(Beta)导出数据集](/help/destinations/api/export-datasets.md)
 * UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
