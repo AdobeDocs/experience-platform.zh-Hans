@@ -3,9 +3,9 @@ title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器将之前载入LiveRamp的受众激活到其他广告目标。
 hide: true
 hidefromtoc: true
-source-git-commit: c04c7ff4f1ab45d944f4ab516d7842df536fae40
+source-git-commit: 324f662dcc9718df6c81c47874c6b30235a74601
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1469'
 ht-degree: 40%
 
 ---
@@ -140,7 +140,9 @@ ht-degree: 40%
 >id="platform_destinations_liveramp_distribution_agreement"
 >title="广告商数据目标条款协议"
 >abstract="键入 `I AGREE` 以确认认可并同意迪士尼广告商数据条款。"
->additional-url="https://www.disneyadvertising.com/ADVERTISER-DATA-DESTINATION-TERMS/" text="阅读协议"
+
+<!-- 
+>additional-url="https://www.disneyadvertising.com/ADVERTISER-DATA-DESTINATION-TERMS/" text="Read the agreement" -->
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_disney_client"
