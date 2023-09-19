@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: d83a5558d706e7bf059edb912f6fd43d4b66cc54
+source-git-commit: ded4df4062197fb69b54b71ab19fa1684ce17a58
 workflow-type: tm+mt
-source-wordcount: '1678'
+source-wordcount: '1703'
 ht-degree: 3%
 
 ---
@@ -83,6 +83,8 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Alerts] | [!UICONTROL 解决警报] | 有权读取、编辑和删除警报。 |
 | [!DNL Alerts] | [!UICONTROL 查看警报] | 警报的只读访问权限。 |
 | [!DNL Alerts] | [!UICONTROL 管理警报] | 有权读取、创建、编辑和删除警报历史记录。 |
+| [!DNL Computed Attributes] | [!UICONTROL 查看计算属性] | 对计算属性选项卡、库存和详细信息的只读访问权限。 |
+| [!DNL Computed Attributes] | [!UICONTROL 管理计算属性] | 有权读取、创建、删除草稿和停用计算属性。 |
 | [!DNL Data Hygiene] | [!UICONTROL 查看数据卫生] | 数据卫生的只读访问。 |
 | [!DNL Data Hygiene] | [!UICONTROL 管理数据卫生] | 有权读取、创建、编辑和删除数据保健。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 有权读取、创建、编辑和删除架构和相关资源。 |
