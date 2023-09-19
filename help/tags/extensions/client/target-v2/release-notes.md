@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中的Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: ffbb68c9c84b834984e1adb2640d8806ce9f9962
+source-git-commit: 4b87141e94681d9a9f51d4d9b2f2276ca065d6ce
 workflow-type: tm+mt
-source-wordcount: '650'
-ht-degree: 24%
+source-wordcount: '691'
+ht-degree: 22%
 
 ---
 
@@ -14,6 +14,12 @@ ht-degree: 24%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## v0.19.3（2023年9月18日）
+
+- 更新了以支持at.js v2.10.3。
+- 修复了在未呈现选件时错误地触发at-content-rendering-succeeded自定义事件的问题。 现在会触发正确的事件at-content-rendering-no-offers 。
+- 为at-content-rendering-failed自定义事件的错误对象添加了eventToken和responseTokens。
 
 ## v0.19.2（2023年2月14日）
 
@@ -39,12 +45,12 @@ ht-degree: 24%
 
 - 更新以支持 `at.js` v2.8.1
 - 固定 `pageLoad` 未映射到 `target-global-mbox` 在ODD混合执行模式下
-- 修复了的分析详细信息中存在的一个问题 `mbox` 请求
-- 升级了开发依赖项以修复安全漏洞
+- 修复了“ ”的分析详细信息问题 `mbox` 请求
+- 升级了开发依赖关系以修复安全漏洞
 
 ## v0.17.0（2022年1月7日）
 
-- 更新以支持 `at.js` v2.8.0，现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。要选择退出此功能，请设置 `telemetryEnabled` 到 `false` 在 `targetGlobalSettings`.
+- 更新以支持 `at.js` v2.8.0，它现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。要选择退出此功能，请设置 `telemetryEnabled` 到 `false` 在 `targetGlobalSettings`.
 
 ## v0.16.0（2021年10月28日）
 
@@ -52,21 +58,21 @@ ht-degree: 24%
 
 ## v0.15.1（2021年7月20日）
 
-- 修复了的问题 `stringify` 函数名称冲突，这会导致为生成错误的UUID值 `sessionId`， `requestId`，等等。
+- 修复了的问题 `stringify` 函数名称冲突，这会导致为生成的错误UUID值 `sessionId`， `requestId`，等等。
 
 ## v0.15.0（2021年7月16日）
 
 - 每当发生以下情况时，向Cookie添加安全属性 `at.js` 设置secureOnly设置为true
 - 现在可以在使用时使用响应令牌 `triggerView()`
-- 修复了与相关的错误 `CONTENT_RENDERING_NO_OFFERS` 事件。 现在，每当没有从Target返回内容时，就会正确触发它
+- 修复了一个与相关的错误 `CONTENT_RENDERING_NO_OFFERS` 事件。 现在，每当没有从Target返回内容时，就会正确触发该事件
 - 使用预回迁请求时，正确返回了A4T点击量度详细信息
 - UUID生成功能不再使用 `Math.random()`，但依赖于 `window.crypto`
-- `sessionId` 每次网络调用时都会正确延长Cookie到期时间
-- SPA视图缓存初始化现在可以正确处理并遵循 `viewsEnable` 设置
+- `sessionId` 在每次网络调用时都会正确延长Cookie到期日
+- SPA视图缓存初始化现在可以被正确处理并遵守 `viewsEnable` 设置
 
 ## v0.14.2（2021年6月2日）
 
-- 修复了最终捆绑包中包含两个包的错误 `at.js` 版本，一个包含“设备上决策”版本，另一个不包含。
+- 修复了最终捆绑包中包含两个捆绑包的错误 `at.js` 版本，一个包含“设备上决策”，另一个不包含。
 
 ## v0.14.1（2021年5月19日）
 
@@ -74,14 +80,14 @@ ht-degree: 24%
 
 ## v0.14（2021年5月14日）
 
-- 添加了新操作Load Target，使用 [设备上决策](./overview.md#load-target-with-on-device-decisioning)，加载 `at.js` 2.5具有设备上决策功能
+- 添加了新操作Load Target，用于 [设备上决策](./overview.md#load-target-with-on-device-decisioning)，加载 `at.js` 2.5具有设备上决策功能
 - 已更新 `at.js` 到2.5
 
 
 ## v0.13.7（2021年3月25日）
 
-- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 应仅包含在 `pageLoad` 请求。
-- 修复了标记扩展中的文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
+- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 只能包含在 `pageLoad` 请求。
+- 修复了标记扩展中文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
 - 已更新 `at.js` 到2.4.1。
 
 ## v0.13.6（2021年1月25日）
@@ -89,7 +95,7 @@ ht-degree: 24%
 - 添加了对统一配置文件/平台 ID 交付 API customerId 的支持
 - 修复了无效样式标记注入的问题
 - 已将at.s更新至2.4.0
-- 解决了未定义的参数可能导致错误投放请求的问题
+- 解决了未定义参数可能导致投放请求错误的问题
 
 ## v0.13.4（2020年11月25日）
 
@@ -104,8 +110,8 @@ ht-degree: 24%
 
 ## v0.13.2（2020年6月15日）
 
-- 修复了使用CNAME和边缘覆盖时的问题，其中 `at.js` 1.x可能无法正确创建服务器域，从而导致Target请求失败
-- 修复了以下问题：在使用Target v2标记扩展和Adobe Analytics标记扩展时，Target会延迟Analytics sendBeacon调用
+- 修复了使用CNAME和边缘覆盖时的问题，其中 `at.js` 1.x可能无法正确地创建服务器域，从而导致Target请求失败
+- 修复了以下问题：使用Target v2标记扩展和Adobe Analytics标记扩展时，Target会延迟Analytics sendBeacon调用
 - 改进了 `deviceIdLifetime` 设置，使其可通过 `targetGlobalSettings` 覆盖
 
 ## v0.13.0（2020年3月25日）
@@ -118,7 +124,7 @@ ht-degree: 24%
 
 - 已更新 `at.js` 到v2.2。
 - 改进了Experience CloudID库(ECID) v4.4与之间集成的性能 `at.js` 2.2.
-- 以前，ECID库会进行两次阻止调用，而之前 `at.js` 无法获取体验。 现已减少为一次调用，显著提高了性能。
+- 以前，ECID库会进行两次阻止调用，而现在 `at.js` 无法获取体验。 现已减少为一次调用，显著提高了性能。
 
 >[!NOTE]
 >请将您的ECID标记扩展升级到v4.4.1以实现此性能提升。
