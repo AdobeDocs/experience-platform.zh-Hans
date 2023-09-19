@@ -1,9 +1,9 @@
 ---
 title: 计算属性常见问题解答
 description: 了解有关使用计算属性的常见问题解答。
-source-git-commit: fb5d3088b9fb330153bf64125df2f739eee80518
+source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # 常见问题解答
 
 在Adobe Experience Platform中，“计算属性”是将事件级数据聚合到配置文件级属性的函数。 这些函数是自动计算的，以便在分段、激活和个性化中使用它们。 以下是有关计算属性的常见问题解答列表。
+
+## 如何获取对计算属性的访问权限？
+
+要访问计算属性，您需要具有相应的权限(**查看计算属性** 和 **管理计算属性**)。 有关所需权限的更多信息，请阅读 [访问控制文档](../../access-control/home.md). 要了解如何应用这些权限，请参阅 [managing permissions指南](../../access-control/ui/permissions.md).
 
 ## 哪些数据集有助于计算属性计算？
 
@@ -76,10 +80,6 @@ ht-degree: 0%
 ## 数据使用标签如何应用于计算属性？
 
 计算属性自动从用于定义计算属性的源字段和数据集中获取数据使用标签。 这可确保正确使用您的行为数据。
-
-## 如何获取访问计算属性？
-
-要访问计算属性，您需要具有相应的权限。 有关所需权限的更多信息，请阅读 [访问控制文档](../../access-control/home.md).
 
 ## 如何将计算属性与Adobe Journey Optimizer结合使用？
 

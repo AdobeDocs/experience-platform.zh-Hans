@@ -1,15 +1,19 @@
 ---
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
-source-git-commit: 7ed473750b673eefd84b8d727043ad6ea35c3a8e
+source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1485'
 ht-degree: 1%
 
 ---
 
 
 # 计算属性UI指南
+
+>[!NOTE]
+>
+>要访问计算属性，您需要具有相应的权限(**查看计算属性** 和 **管理计算属性**)。 有关所需权限的更多信息，请阅读 [访问控制文档](../../access-control/home.md). 要了解如何应用这些权限，请参阅 [managing permissions指南](../../access-control/ui/permissions.md).
 
 在Adobe Experience Platform中，“计算属性”是将事件级数据聚合到配置文件级属性的函数。 这些函数是自动计算的，以便在分段、激活和个性化中使用它们。
 
