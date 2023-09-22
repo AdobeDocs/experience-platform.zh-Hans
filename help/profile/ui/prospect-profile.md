@@ -2,9 +2,7 @@
 title: 目标客户配置文件
 description: 了解如何使用第三方信息创建和使用潜在客户配置文件来收集有关未知客户的信息。
 type: Documentation
-hide: true
-hidefromtoc: true
-source-git-commit: 6553643789549aec449ceb4f821ea663a0bfcef3
+source-git-commit: 1973fbe858fc0a266936faf6060e467c108fedf6
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 7%
@@ -12,7 +10,7 @@ ht-degree: 7%
 ---
 
 
-# 目标客户配置文件
+# 潜在客户配置文件
 
 Adobe Experience Platform 使您能够为客户提供协调、一致且相关的体验，无论他们何时何地与您的品牌互动均是如此。
 
