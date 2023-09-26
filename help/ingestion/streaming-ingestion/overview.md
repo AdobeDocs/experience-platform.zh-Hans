@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 008537dffff4cc428de9070964446f4e7ebf039f
+source-git-commit: 5adcdf3108fbbaee9e81dc737ae67b563e4dbf1d
 workflow-type: tm+mt
 source-wordcount: '348'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -39,7 +39,7 @@ Adobe Experience Platform允许您通过生成 [!DNL Real-Time Customer Profile]
 
 | 目标 | 预期延迟 |
 | --------- | ---------------- |
-| 实时客户配置文件 | &lt; 1分钟 |
+| 实时客户配置文件 | &lt; 15 分钟 |
 | 数据湖 | &lt; 60 分钟 |
 
 ## 流摄取的每秒请求(RPS)指南
