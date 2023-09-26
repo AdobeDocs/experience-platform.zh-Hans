@@ -5,14 +5,19 @@ description: Adobe Experience Platform提供了一个功能板，通过该功能
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
+source-git-commit: 6a69ecebe67a156d67a324581e5b96699b96d2e6
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1553'
 ht-degree: 1%
 
 ---
 
 # 许可证使用情况功能板（限量发布） {#license-usage-dashboard-limited-release}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseUsage"
+>title="许可证使用情况仪表板"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述可显示您的产品的主要指标，包括您对每个主要指标的使用情况，以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
 
 >[!IMPORTANT]
 >
