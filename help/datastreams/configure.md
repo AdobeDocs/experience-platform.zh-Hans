@@ -2,10 +2,10 @@
 title: 配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: 705b1645eb8ca69169350c57cd28d3a1061f4928
 workflow-type: tm+mt
-source-wordcount: '2276'
-ht-degree: 100%
+source-wordcount: '2629'
+ht-degree: 86%
 
 ---
 
@@ -38,9 +38,42 @@ ht-degree: 100%
 
 ![数据流的基本配置](assets/configure/configure.png)
 
-选择&#x200B;**[!UICONTROL 高级选项]**&#x200B;以显示用于配置数据流的其他控件。
+### 配置地理位置和网络查找 {#geolocation-network-lookup}
 
-![高级配置选项](assets/configure/advanced-options.png){#advanced-options}
+地理位置和网络查找设置可帮助您定义要收集的地理和网络级别数据的粒度级别。
+
+展开 **[!UICONTROL 地理位置和网络查找]** 部分来配置下述设置。
+
+![平台UI屏幕截图，其中显示了数据流配置屏幕，并突出显示地理位置和网络查找设置。](assets/configure/geolookup.png)
+
+| 设置 | 描述 |
+| --- | --- |
+| [!UICONTROL 地理位置查找] | 根据访客 IP 地址启用所选选项的地理位置查找。地理位置查找要求在您的 Web SDK 配置中包括 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。<br>可用的选项： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>不选择任何选项将禁用任何地理位置查找。地理定位在 [!UICONTROL IP 模糊处理]之前进行，并且不受 [!UICONTROL IP 模糊处理]设置的影响。 |
+| [!UICONTROL 网络查找] | 根据访客 IP 地址启用所选选项的网络查找。网络查找要求在您的 Web SDK 配置中包括 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。<br>可用的选项： <ul><li>运营商</li><li>域</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关发出请求的特定网络的更多信息。 |
+
+### 配置设备查找 {#geolocation-device-lookup}
+
+此 **[!UICONTROL 设备查找]** 通过设置，您可以选择要收集的特定于设备的信息的粒度级别。
+
+展开 **[!UICONTROL 设备查找]** 部分来配置下述设置。
+
+![平台UI屏幕截图，其中显示了数据流配置屏幕，并突出显示设备查找设置。](assets/configure/device-lookup.png)
+
+>[!IMPORTANT]
+>
+>下表所述的设置是互斥的。 您不能同时选择用户代理信息和设备查找数据。
+
+| 设置 | 描述 |
+| --- | --- |
+| **[!UICONTROL 保留用户代理和客户端提示标头]** | 选择此选项可仅收集用户代理字符串中存储的信息。 这是默认设置。 |
+| **[!UICONTROL 使用设备查找收集以下信息]** | 如果要收集以下一个或多个特定于设备的信息，请选择此选项： <ul><li>**[!UICONTROL 设备]** 信息：<ul><li>设备制造商</li><li>设备型号</li><li>营销名称</li></ul></li><li>**[!UICONTROL 硬件]** 信息： <ul><li>Device type</li><li>显示高度</li><li>显示宽度</li><li>显示颜色深度</li></ul></li><li>**[!UICONTROL 浏览器]** 信息： <ul><li>浏览器供应商</li><li>浏览器名称</li><li>浏览器版本</li></ul></li><li>**[!UICONTROL 操作系统]** 信息： <ul><li>操作系统供应商</li><li>操作系统名称</li><li>操作系统版本</li></ul></li></ul> <br>  无法收集设备查找信息以及用户代理和客户端提示。 选择收集设备信息将禁用用户代理和客户端提示的收集，反之亦然。 所有设备查找信息都存储在 `xdm:device` 字段组。 |
+| **[!UICONTROL 不收集任何设备信息]** | 如果不想收集任何类型的查找信息，请选择此选项。 不会收集任何设备、硬件、浏览器或操作系统信息，包括用户代理或客户端提示标头。 |
+
+### 配置高级选项 {#@advanced-options}
+
+选择 **[!UICONTROL 高级选项]** 显示用于配置数据流的附加控件，如IP模糊处理、第一方ID Cookie等。
+
+![高级配置选项](assets/configure/advanced-settings.png)
 
 >[!IMPORTANT]
 >
@@ -50,14 +83,13 @@ ht-degree: 100%
 
 | 设置 | 描述 |
 | --- | --- |
-| [!UICONTROL 地理位置查找] | 根据访客 IP 地址启用所选选项的地理位置查找。地理位置查找要求在您的 Web SDK 配置中包括 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。<br>可用的选项： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>不选择任何选项将禁用任何地理位置查找。地理定位在 [!UICONTROL IP 模糊处理]之前进行，并且不受 [!UICONTROL IP 模糊处理]设置的影响。 |
-| [!UICONTROL 网络查找] | 根据访客 IP 地址启用所选选项的网络查找。网络查找要求在您的 Web SDK 配置中包括 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。<br>可用的选项： <ul><li>运营商</li><li>域</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关发出请求的特定网络的更多信息。 |
 | [!UICONTROL IP 模糊处理] | 指示要应用于数据流的 IP 模糊处理的类型。任何基于客户 IP 的处理都将受 IP 模糊处理设置的影响。这包括从数据流接收数据的所有 Experience Cloud 服务。 <p>可用选项：</p> <ul><li>**[!UICONTROL 无]**：禁用 IP 模糊处理。完整的用户 IP 地址将通过数据流发送。</li><li>**[!UICONTROL 部分]**：对于 IPv4 地址，对用户 IP 地址的最后一个八位字节进行模糊处理。对于 IPv6 地址，对地址的最后 80 位进行模糊处理。 <p>示例：</p> <ul><li>IPv4：`1.2.3.4` -> `1.2.3.0`</li><li>IPv6：`2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL 完全]**：对整个 IP 地址进行模糊处理。 <p>示例：</p> <ul><li>IPv4：`1.2.3.4` -> `0.0.0.0`</li><li>IPv6：`2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `0:0:0:0:0:0:0:0`</li></ul></li></ul> IP 模糊处理对其他 Adobe 产品的影响： <ul><li>**Adobe Target**：数据流级别 [!UICONTROL IP 模糊处理]设置优先于在 Adobe Target 中设置的任何 IP 模糊处理选项。例如，如果数据流级别 [!UICONTROL IP 模糊处理]选项设置为&#x200B;**[!UICONTROL 完全]**，并且 Adobe Target IP 模糊处理选项设置为&#x200B;**[!UICONTROL 最后一个八位模糊处理]**，则 Adobe Target 将收到完全模糊处理的 IP。请参阅介绍 [IP 模糊处理](https://developer.adobe.com/target/before-implement/privacy/privacy/)和[地理定位](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=zh-Hans)的 Adobe Target 文档以了解更多详细信息。</li><li>**Audience Manager**：数据流级别 IP 模糊处理设置优先于 Audience Manager 中设置的任何 IP 模糊处理选项，并且它应用于所有 IP 地址。Audience Manager 完成的任何地理位置查找都将受数据流级别的 [!UICONTROL IP 模糊处理]选项的影响。Audience Manager 中基于完全模糊处理的 IP 的地理位置查找将生成未知区域，并且基于生成的地理位置数据的任何区段将无法实现。请参阅介绍 [IP 模糊处理](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=zh-Hans)的 Audience Manager 文档以了解更多详细信息。</li><li>**Adobe Analytics**：如果选择了任何 IP 模糊处理选项（选项“无”除外），Adobe Analytics 目前将接收部分模糊处理的 IP 地址。要让 Analytics 接收完全模糊处理的 IP 地址，您必须在 Adobe Analytics 中单独配置 IP 模糊处理。将在后续版本中更新此行为。请参阅 Adobe Analytics[文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html)以了解有关如何在 Analytics 中启用 IP 模糊处理的详细信息。</li></ul> |
 | [!UICONTROL 第一方 ID Cookie] | 启用后，此设置将告知 Edge Network 在查找[第一方设备 ID](../edge/identity/first-party-device-ids.md) 时引用指定的 Cookie，而不是在“标识映射”中查找该值。<br><br>启用此设置时，您必须提供应存储 ID 的 Cookie 的名称。 |
 | [!UICONTROL 第三方 ID 同步] | ID 同步可分组到容器中，以允许不同的 ID 同步在不同时间运行。启用后，此设置可让您指定为该数据流运行哪个 ID 同步容器。 |
 | [!UICONTROL 第三方 ID 同步容器 ID] | 要用于第三方 ID 同步的容器的数字 ID。 |
 | [!UICONTROL 容器 ID 覆盖] | 在此部分中，您可以定义其他第三方 ID 同步容器 ID，它们可用于覆盖默认 ID。 |
 | [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用 Web SDK 或 [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) 与[服务器 API](../server-api/overview.md)，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用服务器 API 并希望防止 Edge Network 处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
+| [!UICONTROL Media Analytics] | 选择此选项以启用通过Media SDK或Media Edge API为Edge Network集成处理Experience Platform流数据。 从了解Media Analytics [文档](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=zh-Hans). |
 
 从该位置，如果您要为 Experience Platform 配置数据流，请按照[为数据收集准备数据](./data-prep.md)教程操作，在返回本指南之前将您的数据映射到 Platform 事件架构。否则，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;并继续下一部分。
 
