@@ -1,9 +1,9 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK创建目标服务器的API调用。
 title: 创建目标服务器配置
-source-git-commit: 03ec0e919304c9d46ef88d606eed9e12d1824856
+source-git-commit: cadffd60093eef9fb2dcf4562b1fd7611e61da94
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '2039'
 ht-degree: 9%
 
 ---
@@ -844,6 +844,103 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++
 
+
+>[!ENDTABS]
+
+
+### 创建动态下拉目标服务器 {#dynamic-dropdown-servers}
+
+使用 [动态下拉菜单](../../functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) 以根据您自己的API动态检索和填充下拉客户数据字段。 例如，您可以检索要用于目标连接的现有用户帐户列表。
+
+您需要先为动态下拉列表配置目标服务器，然后才能配置动态下拉列表客户数据字段。
+
+请参阅以下选项卡中的目标服务器示例，该示例用于从API动态检索要在下拉选择器中显示的值。
+
+以下有效负载示例包含动态架构服务器所需的所有参数。
+
+>[!BEGINTABS]
+
+>[!TAB 动态下拉服务器]
+
+**创建动态下拉服务器**
+
+您需要创建一个动态下拉服务器，类似于当您配置从您自己的API端点检索下拉客户数据字段值的目标时，下面显示的服务器。
+
++++请求
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-servers \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '
+{
+   "name":"Server for dynamic dropdown",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"https://api.moviestar.com/data/{{customerData.users}}/items"
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"GET",
+      "headers":[
+         {
+            "header":"Authorization",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"My Bearer Token"
+            }
+         },
+         {
+            "header":"x-integration",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"{{customerData.integrationId}}"
+            }
+         },
+         {
+            "header":"Accept",
+            "value":{
+               "templatingStrategy":"NONE",
+               "value":"application/json"
+            }
+         }
+      ]
+   },
+   "responseFields":[
+      {
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{% set list = [] %} {% for record in response.body %} {% set list = list|merge([{'name' : record.name, 'value' : record.id }]) %} {% endfor %}{{ {'list': list} | toJson | raw }}",
+         "name":"list"
+      }
+   ]
+}
+```
+
+| 参数 | 类型 | 描述 |
+| -------- | ----------- | ----------- |
+| `name` | 字符串 | *必需.* 表示动态下拉服务器的友好名称，仅对Adobe可见。 |
+| `destinationServerType` | 字符串 | *必需.* 设置为 `URL_BASED` 用于动态下拉服务器。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>使用 `PEBBLE_V1` 如果Adobe需要在 `value` 字段。 如果您拥有如下端点，请使用此选项： `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> 使用 `NONE` 如果不需要在Adobe端进行转换，例如，如果您有如下端点： `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | *必需.* 填写Experience Platform应连接到的API端点地址并检索下拉值。 |
+| `httpTemplate.httpMethod` | 字符串 | *必需.* Adobe将在对服务器的调用中使用的方法。 对于动态下拉服务器，使用 `GET`. |
+| `httpTemplate.headers` | 对象 | *选项a.l* 包括连接到动态下拉服务器所需的任何标头。 |
+| `responseFields.templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `responseFields.value` | 字符串 | *必需.* 此字符串是一个字符转义转换模板，它将从API收到的响应转换为将在Platform UI中显示的值。 <br> <ul><li> 有关如何编写模板的信息，请阅读 [使用模板部分](../../functionality/destination-server/message-format.md#using-templating). </li><li> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). |
+
+{style="table-layout:auto"}
+
++++
+
++++响应
+
+成功的响应会返回HTTP状态200以及新创建的目标服务器配置的详细信息。
+
++++
 
 >[!ENDTABS]
 
