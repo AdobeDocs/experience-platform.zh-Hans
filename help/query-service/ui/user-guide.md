@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: e30942aec6c66aeed8375d6221b454725f5a958d
+source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
 workflow-type: tm+mt
-source-wordcount: '1901'
+source-wordcount: '2288'
 ht-degree: 3%
 
 ---
@@ -17,13 +17,23 @@ ht-degree: 3%
 
 有关概念和功能的更多信息 [!DNL Query Service]，请参见 [查询服务概述](../home.md). 要了解有关如何导航查询服务用户界面的更多信息，请访问 [!DNL Platform]，请参见 [查询服务UI概述](./overview.md).
 
+>[!NOTE]
+>
+>旧版的查询编辑器不提供某些查询服务功能。 除非另有说明，否则本文档中使用的屏幕截图都是使用查询编辑器的增强版本拍摄的。 请参阅 [增强型查询编辑器](#enhanced-editor-toggle) 以了解更多详细信息。
+
 ## 快速入门 {#getting-started}
 
 [!DNL Query Editor] 通过连接到 [!DNL Query Service]和查询仅在此连接处于活动状态时运行。
 
+## 访问 [!DNL Query Editor] {#accessing-query-editor}
+
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开 [!DNL Query Service] 工作区。 接下来，要开始编写查询，请选择 **[!UICONTROL 创建查询]** 在屏幕的右上角。 此链接可从 [!DNL Query Service] 工作区。
+
+![突出显示了“创建查询”的查询工作区概述选项卡。](../images/ui/query-editor/create-query.png)
+
 ### 正在连接到 [!DNL Query Service] {#connecting-to-query-service}
 
-[!DNL Query Editor] 需要几秒钟才能初始化并连接到 [!DNL Query Service] 打开时。 控制台将告诉您连接时间，如下所示。 如果在编辑器连接之前尝试运行查询，则会延迟执行，直到连接完成。
+查询编辑器需要几秒钟才能初始化，并在打开时连接到查询服务。 控制台将告诉您连接时间，如下所示。 如果在编辑器连接之前尝试运行查询，则会延迟执行，直到连接完成。
 
 ![初次连接时查询编辑器的控制台输出。](../images/ui/query-editor/connect.png)
 
@@ -31,17 +41,13 @@ ht-degree: 3%
 
 查询执行自 [!DNL Query Editor] 以交互方式运行，这意味着如果您关闭浏览器或离开浏览器，查询将被取消。 对于通过查询输出生成数据集的查询，也是如此。
 
+查询编辑器的增强版允许您在查询编辑器中编写多个查询并按顺序执行所有查询。 请参阅以下部分 [执行多个顺序查询](#execute-multiple-sequential-queries) 以了解更多信息。
+
 ## 查询创作，使用 [!DNL Query Editor] {#query-authoring}
 
 使用 [!DNL Query Editor]，您可以编写、执行和保存客户体验数据查询。 执行或保存的所有查询 [!DNL Query Editor] 可供您组织中的所有用户使用，他们有权访问 [!DNL Query Service].
 
-### 访问 [!DNL Query Editor] {#accessing-query-editor}
-
-在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开 [!DNL Query Service] 工作区。 接下来，要开始编写查询，请选择 **[!UICONTROL 创建查询]** 在屏幕的右上角。 此链接可从 [!DNL Query Service] 工作区。
-
-![突出显示了“创建查询”的查询工作区概述选项卡。](../images/ui/query-editor/create-query.png)
-
-### 增强型查询编辑器切换 {#enhanced-editor-toggle}
+## 增强的查询编辑器切换开关 {#enhanced-editor-toggle}
 
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_enhancedEditorToggle"
@@ -62,7 +68,30 @@ ht-degree: 3%
 
 ![突出显示带有设置图标和启用深色主题下拉菜单选项的查询编辑器。](../images/ui/query-editor/query-editor-settings.png)
 
-### 编写查询 {#writing-queries}
+### 执行多个顺序查询 {#execute-multiple-sequential-queries}
+
+查询编辑器的增强版允许您在查询编辑器中编写多个查询并按顺序执行所有查询。
+
+按顺序执行多个查询，每个查询都会生成日志条目。 但是，查询编辑器控制台中只显示第一个查询的结果。 如果需要排除问题或确认已执行的查询，请查看查询日志。 请参阅 [查询日志文档](./query-logs.md) 以了解更多信息。
+
+>[!NOTE]
+> 
+>如果在查询编辑器中的第一个查询之后执行CTAS查询，则仍会创建一个表，但查询编辑器控制台上没有输出。
+
+### 执行选定的查询 {#execute-selected-query}
+
+如果您已经编写了多个查询，但只需要执行一个查询，则可以突出显示所选的查询并选择
+[!UICONTROL 运行选定的查询] 图标。 默认情况下，此图标处于禁用状态，除非您在编辑器中选择查询。
+
+![具有的查询编辑器 [!UICONTROL 运行选定的查询] 图标高亮显示。](../images/ui/query-editor/run-selected-query.png)
+
+### 结果计数 {#result-count}
+
+查询编辑器的行输出最多为50,000个。 但是，在查询编辑器控制台中一次只显示50行。 要更改控制台中显示的行数，请选择 **[!UICONTROL 结果计数]** 下拉列表，并从50、100、150、300和500值中进行选择。
+
+![突出显示结果计数下拉列表的查询编辑器。](../images/ui/query-editor/result-count.png)
+
+## 编写查询 {#writing-queries}
 
 [!UICONTROL 查询编辑器] 组织以尽可能方便编写查询。 下面的屏幕截图显示了编辑器在UI中的显示方式，其中包含SQL输入字段和 **播放** 突出显示。
 
@@ -70,7 +99,7 @@ ht-degree: 3%
 
 为了最大限度地缩短开发时间，建议您使用对返回行的限制来开发查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询是否生成预期输出后，删除限制并使用运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。
 
-### 在中编写工具 [!DNL Query Editor] {#writing-tools}
+## 在中编写工具 [!DNL Query Editor] {#writing-tools}
 
 - **自动语法突出显示：** 使读取和组织SQL更容易。
 
@@ -83,6 +112,18 @@ ht-degree: 3%
 - **表和字段自动完成：** 开始键入要使用的表名 `SELECT` ，然后使用箭头键导航到要查找的表，并按 **输入**. 选择表后，自动完成将识别该表中的字段。
 
 ![查询编辑器输入显示下拉表名称建议。](../images/ui/query-editor/tables-auto.png)
+
+### 设置文本格式 {#format-text}
+
+此 [!UICONTROL 设置文本格式] 功能通过添加标准化的语法样式使查询更易读取。 选择 **[!UICONTROL 设置文本格式]** 标准化查询编辑器中的所有文本。
+
+![使用的查询编辑器 [!UICONTROL 设置文本格式] 和突出显示的SQL语句。](../images/ui/query-editor/format-text.png)
+
+### 复制SQL {#copy-sql}
+
+选择复制图标以将SQL从查询编辑器复制到剪贴板。 此复制功能可用于查询模板和查询编辑器中新创建的查询。
+
+![查询工作区中有一个示例查询模板，该模板中高亮显示了复制图标。](../images/ui/query-editor/copy-sql.png)
 
 ### 自动完成UI配置切换 {#auto-complete}
 
