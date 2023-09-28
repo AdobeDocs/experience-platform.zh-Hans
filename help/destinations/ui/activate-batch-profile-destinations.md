@@ -4,9 +4,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 47ca76c5a4129882917e96a32721b4103bb6afa3
+source-git-commit: a81daa2a929505a934910892a4ad9c73e603ed9b
 workflow-type: tm+mt
-source-wordcount: '3669'
+source-wordcount: '3710'
 ht-degree: 11%
 
 ---
@@ -397,6 +397,10 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 >* 这些字段配置为目标目标的投影属性。
 >
 > 例如，如果字段 `person.name.firstName` 具有与目标的营销操作冲突的特定数据使用标签，则会在审核步骤中向您显示数据使用策略违规。 有关更多信息，请参阅 [Adobe Experience Platform中的数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations).
+
+### [!BADGE 测试版]{type=Informative}通过计算字段导出数组 {#export-arrays-calculated-fields}
+
+部分测试版客户可以将阵列对象从Experience Platform导出到云存储目标。 详细了解 [导出数组和计算字段](/help/destinations/ui/export-arrays-calculated-fields.md) 并联系Adobe代表以获取该功能的访问权限。
 
 ### 已知限制 {#known-limitations}
 
