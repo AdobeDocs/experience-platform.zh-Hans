@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Adobe Experience Platform 发行说明
 breadcrumb-title: Platform 发行说明
 user-guide-description: 查找 Adobe Experience Platform 的每月发行说明。
-source-git-commit: 49a04ffa059a73678cec10d2475a83e137ecb603
-workflow-type: ht
-source-wordcount: '78'
+source-git-commit: 10b4123f82ad8c27e775532802ecec0f356f7fdd
+workflow-type: tm+mt
+source-wordcount: '79'
 ht-degree: 100%
 
 ---
@@ -15,6 +15,7 @@ ht-degree: 100%
 
 * [当前 Platform 发行说明](latest/latest.md)
 * 2023 {#2023}
+   * [2023 年 9 月](2023/september-2023.md)
    * [2023 年 8 月](2023/august-2023.md)
    * [2023 年 7 月](2023/july-2023.md)
    * [2023 年 6 月](2023/june-2023.md)
