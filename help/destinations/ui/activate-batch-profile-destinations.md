@@ -4,9 +4,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 99ab9ed562d1959dc2bc801d563cb61d89bbde75
+source-git-commit: 47ca76c5a4129882917e96a32721b4103bb6afa3
 workflow-type: tm+mt
-source-wordcount: '3707'
+source-wordcount: '3669'
 ht-degree: 11%
 
 ---
@@ -27,11 +27,6 @@ ht-degree: 11%
 本文介绍了在Adobe Experience Platform基于批量配置文件的目标（如云存储和电子邮件营销目标）中激活受众所需的工作流。
 
 ## 先决条件 {#prerequisites}
-
->[!CONTEXTUALHELP]
->id="platform_destinations_export_arrays_flat_files"
->title="(Beta)导出阵列支持"
->abstract="（测试版）将原始值的阵列从Experience Platform导出到所需的云存储目标。 此文本将更新详细信息。 <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/license-usage-limited.html?lang=en#available-metrics">了解详情</a>。 "
 
 要将受众激活到目标，您必须已成功完成 [已连接到目标](./connect-destination.md). 如果您尚未这样做，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
 
