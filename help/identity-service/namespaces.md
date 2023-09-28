@@ -1,45 +1,59 @@
 ---
 title: 身份命名空间概述
-description: 身份命名空间是“身份服务”的组件，充当与身份相关的上下文指示器。例如，它们将“name@email.com”的值作为电子邮件地址，将“443522”的值作为数字CRM ID。
+description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: ac53678ca9ef51cb638590138a16a3506c6a1fc0
+source-git-commit: 36a42a7c3722828776495359762289d0028b6ddc
 workflow-type: tm+mt
-source-wordcount: '1764'
-ht-degree: 10%
+source-wordcount: '1699'
+ht-degree: 6%
 
 ---
 
 # 身份命名空间概述
 
-标识命名空间是 [[!DNL Identity Service]](./home.md)   的组件，充当与标识相关的上下文指示器。例如，它们区分“name”值<span>@email.com”作为电子邮件地址，或者“443522”作为数字CRM ID。
+请阅读以下文档，了解有关在Adobe Experience Platform Identity Service中可以使用身份命名空间执行的操作的更多信息。
 
 ## 快速入门
 
-使用身份命名空间需要了解所涉及的多个 Adobe Experience Platform 服务。开始使用命名空间之前，请参阅以下服务的文档：
+身份命名空间需要了解各种Adobe Experience Platform服务。 开始使用命名空间之前，请参阅以下服务的文档：
 
-- [[!DNL Real-Time Customer Profile]](../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的客户个人资料。
-- [[!DNL Identity Service]](./home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
-- [[!DNL Privacy Service]](../privacy-service/home.md)：身份命名空间用于隐私法规(如《通用数据保护条例》(GDPR)的合规请求中。 每个隐私请求都是相对于命名空间发出的，以确定哪些消费者的数据应该受到影响。
+* [[!DNL Real-Time Customer Profile]](../profile/home.md)：根据来自多个来源的汇总数据，实时提供统一的客户个人资料。
+* [[!DNL Identity Service]](./home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
+* [[!DNL Privacy Service]](../privacy-service/home.md)：身份命名空间用于隐私法规(如《通用数据保护条例》(GDPR)的合规请求中。 每个隐私请求都是相对于命名空间发出的，以确定哪些消费者的数据应该受到影响。
 
 ## 了解身份命名空间
 
-完全限定的身份包括ID值和命名空间。 跨配置文件片段匹配记录数据时，例如 [!DNL Real-Time Customer Profile] 合并配置文件数据，身份值和命名空间必须匹配。
+完全限定的标识包括两个组件： **标识值** 和 **身份命名空间**. 例如，如果标识的值为 `scott@acme.com`，则命名空间会将此值识别为电子邮件地址，以提供相关上下文。 同样，命名空间可以区分 `555-123-456` 作为电话号码，并且 `3126ABC` 作为CRM ID。 基本上， **命名空间为给定身份提供上下文**. 跨配置文件片段匹配记录数据时，例如 [!DNL Real-Time Customer Profile] 合并配置文件数据，身份值和命名空间必须匹配。
 
-例如，两个配置文件片段可能包含不同的主ID，但它们共享的“电子邮件”命名空间值相同，因此 [!DNL Platform] 能够看到这些片段实际上是同一个人，并为该个人在身份图表中将数据汇集在一起。
+例如，两个配置文件片段可能包含不同的主ID，但它们的“电子邮件”命名空间共享相同的值，因此Experience Platform能够看到这些片段实际上是同一个人，并在该人的身份图表中将数据汇总在一起。
 
 ![](images/identity-service-stitching.png)
 
-### 身份类型 {#identity-types}
+### 命名空间的组件
+
+命名空间包含以下组件：
+
+* **显示名称**：给定命名空间的用户友好名称。
+* **身份符号**：Identity服务内部用来表示命名空间的代码。
+* **身份类型**：给定命名空间的分类。
+* **描述**：（可选）您可以提供的有关给定命名空间的任何补充信息。
+
+### 身份类型 {#identity-type}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_create_namespace"
 >title="指定标识类型"
->abstract="标识类型控制数据是否存储到标识图形中。非人员标识符不会被存储，所有其他标识类型都会被存储。"
+>abstract="标识类型控制数据是否存储到标识图形中。不会为以下身份类型生成身份图：非人员标识符和合作伙伴ID。"
 >text="Learn more in documentation"
 
-数据可以通过几种不同的标识类型进行标识。 身份类型是在创建身份命名空间时指定的，它控制是否将数据保留到身份图以及任何有关应如何处理该数据的特殊说明。 除外的所有身份类型 **非人员标识符** 遵循将命名空间及其相应ID值拼接到身份图集群的相同行为。 使用时，数据不会拼合 **非人员标识符**.
+身份命名空间的一个元素是 **身份类型**. 身份类型确定：
 
-以下标识类型在中可用 [!DNL Platform]：
+* 是否将生成身份图：
+   * 不会为以下身份类型生成身份图：非人员标识符和合作伙伴ID。
+   * 为所有其他身份类型生成身份图。
+* 达到系统限制时，将从身份图中删除哪些身份。 欲知更多信息，请参阅 [身份数据的护栏](guardrails.md).
+
+Experience Platform中提供了以下标识类型：
 
 | 身份类型 | 描述 |
 | --- | --- |
@@ -88,43 +102,33 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 
 要在UI中查看身份命名空间，请选择 **[!UICONTROL 身份]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]**.
 
-![浏览器](./images/browse.png)
+此时会出现组织中的命名空间目录，其中显示有关其名称、身份符号、上次更新日期、相应身份类型和说明的信息。
 
-身份命名空间列表显示在页面的主界面中，显示有关其名称、身份符号、上次更新日期以及它们是标准命名空间还是自定义命名空间的信息。 右边栏包含有关以下项的信息 [!UICONTROL 身份图强度].
+![组织中的自定义身份命名空间的目录。](./images/namespace/browse.png)
 
-![身份](./images/identities.png)
-
-Platform还提供了用于集成目的的命名空间。 默认情况下，这些命名空间是隐藏的，因为它们用于连接其他系统，而不是用于拼接身份。 要查看集成命名空间，请选择 **[!UICONTROL 查看集成身份]**.
-
-![view-integration-identities](./images/view-integration-identities.png)
-
-从列表中选择一个身份命名空间，以查看有关特定命名空间的信息。 选择身份命名空间将更新右边栏上的显示，以显示与您选择的身份命名空间相关的元数据，包括摄取的身份数以及失败和跳过的记录数。
-
-![select-namespace](./images/select-namespace.png)
-
-## 管理自定义命名空间 {#manage-namespaces}
+## 创建自定义命名空间 {#create-namespaces}
 
 根据您的组织数据和用例，您可能需要自定义命名空间。 可以使用创建自定义命名空间 [[!DNL Identity Service]](./api/create-custom-namespace.md) API或通过UI。
 
-要使用UI创建自定义命名空间，请导航到 **[!UICONTROL 身份]** 工作区，选择 **[!UICONTROL 浏览]**，然后选择 **[!UICONTROL 创建身份命名空间]**.
+要创建自定义命名空间，请选择 **[!UICONTROL 创建身份命名空间]**.
 
-![select-create](./images/select-create.png)
+![身份工作区中的“创建身份命名空间”按钮。](./images/namespace/create-identity-namespace.png)
 
-此 **[!UICONTROL 创建身份命名空间]** 对话框。 提供唯一 **[!UICONTROL 显示名称]** 和 **[!UICONTROL 身份符号]** 然后选择要创建的身份类型。 您还可以添加可选描述以添加有关命名空间的更多信息。 除外的所有身份类型 **非人员标识符** 遵循相同的拼接行为。 如果您选择 **非人员标识符** 作为创建命名空间时的身份类型，不会进行拼合。 有关每种标识类型的具体信息，请参阅上表 [身份类型](#identity-types).
+此 [!UICONTROL 创建身份命名空间] 窗口。 首先，必须为要创建的自定义命名空间提供显示名称和标识符号。 您还可以选择提供描述，以便在您创建的自定义命名空间上添加更多上下文。
 
-完成后，选择 **[!UICONTROL 创建]**.
+![一个弹出窗口，可在其中输入有关自定义身份命名空间的信息。](./images/namespace/name-and-symbol.png)
+
+接下来，选择要分配给自定义命名空间的身份类型。 完成后，选择 **[!UICONTROL 创建]**.
+
+![一系列身份类型，您可以从中进行选择并分配给自定义身份命名空间。](./images/namespace/select-identity-type.png)
 
 >[!IMPORTANT]
 >
->您定义的命名空间是组织专有的，需要唯一的身份符号才能成功创建。
-
-![create-identity-namespace](./images/create-identity-namespace.png)
-
-与标准命名空间类似，您可以从中选择自定义命名空间 **[!UICONTROL 浏览]** 选项卡以查看其详细信息。 但是，使用自定义命名空间，您还可以从详细信息区域编辑其显示名称和描述。
-
->[!NOTE]
+>* 您定义的命名空间是组织专有的，需要唯一的身份符号才能成功创建。
 >
->创建命名空间后，便无法删除该命名空间，也无法更改其标识符号和类型。
+>* 创建命名空间后，便无法删除该命名空间，也无法更改其标识符号和类型。
+>
+>* 不支持重复的命名空间。 创建新命名空间时，不能使用现有的显示名称和身份符号。
 
 ## 身份数据中的命名空间
 
