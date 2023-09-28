@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: a9b5ab28d00941b7531729653eb630a61b5446fc
+source-git-commit: b78d1d00a42df8a703a4dd15959cf15b058e0b7a
 workflow-type: tm+mt
-source-wordcount: '1182'
+source-wordcount: '1073'
 ht-degree: 1%
 
 ---
@@ -31,8 +31,7 @@ ht-degree: 1%
 
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
-| （当前行为）图形中的身份数 | 150 | 该限制在沙盒级别应用。 一旦身份数达到150个或更多，就不会添加新的身份，也不会更新身份图。 图形可能会显示大于150的标识，这是链接一个或多个具有小于150的标识的图形的结果。 **注意**：身份图中的最大身份数 **对于单个合并的配置文件** 是50 Real-Time Customer Profile中排除基于身份图且身份超过50的合并用户档案。 有关详细信息，请阅读上的指南 [配置文件数据的护栏](../profile/guardrails.md). |
-| （即将发生的行为）图表中的身份数 [!BADGE 测试版]{type=Informative} | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
+| 图形中的身份数 | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
 | XDM记录中的标识数 | 20 | 所需的XDM记录的最小数量为2。 |
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
 | 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
@@ -50,7 +49,7 @@ ht-degree: 1%
 
 从2023年3月31日开始，Identity Service将阻止为新客户摄取Adobe Analytics ID (AAID)。 此身份通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和是多余的，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的Adobe客户团队。
 
-## [!BADGE 测试版]{type=Informational}了解在容量身份图形更新时的删除逻辑 {#deletion-logic}
+## 了解在容量中的身份图更新时的删除逻辑 {#deletion-logic}
 
 更新完整的身份图后，Identity Service会先删除图中最旧的身份，然后再添加最新的身份。 这是为了保持身份数据的准确性和相关性。 此删除过程遵循两个主要规则：
 
