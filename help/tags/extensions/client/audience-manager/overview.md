@@ -15,7 +15,7 @@ ht-degree: 71%
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-通过Audience Manager标记扩展，您可以将Audience Manager使用的DIL代码与Adobe Experience Platform中的资产相集成。
+使用Audience Manager标记扩展，您可以将Audience Manager使用的DIL代码与Adobe Experience Platform中的资产相集成。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -25,7 +25,7 @@ ht-degree: 71%
 
 ## 配置 Adobe Audience Manager 扩展
 
-如果尚未安装Adobe Audience Manager扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Audience Manager扩展，请打开您的资产，然后选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择 **[!UICONTROL 安装]**.
 
 要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
@@ -69,7 +69,7 @@ ht-degree: 71%
 
 将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html)中找到有关这些属性的更多信息。
 
-选择 **[!UICONTROL 保存]** 完成扩展配置后。
+选择 **[!UICONTROL 保存]** 配置完该扩展后，发送电子邮件给用户。
 
 ## Adobe Audience Manager 扩展操作类型
 

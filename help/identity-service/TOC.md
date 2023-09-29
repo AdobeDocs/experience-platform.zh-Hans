@@ -18,7 +18,7 @@ ht-degree: 32%
 - [身份命名空间概述](namespaces.md)
 - [身份数据的护栏](guardrails.md)
 - 标识服务API {#api}
-   - [快速入门](api/getting-started.md)
+   - [开始使用](api/getting-started.md)
    - [将字段标记为标识](api/label-identities.md)
    - [列出群集身份](api/list-cluster-identites.md)
    - [列出标识的群集历史记录](api/list-cluster-history.md)

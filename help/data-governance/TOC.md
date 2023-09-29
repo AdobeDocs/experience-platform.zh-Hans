@@ -7,7 +7,7 @@ feature: Data Governance
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '97'
-ht-degree: 40%
+ht-degree: 48%
 
 ---
 
@@ -32,9 +32,9 @@ ht-degree: 40%
 * 策略服务API {#api}
    * [概述](api/overview.md)
    * [快速入门](api/getting-started.md)
-   * [标签](api/labels.md)
+   * [标记](api/labels.md)
    * [支持](api/policies.md)
    * [营销活动](api/marketing-actions.md)
    * [评估](api/evaluation.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/policy-service/)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/policy-service/)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

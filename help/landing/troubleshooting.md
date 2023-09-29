@@ -187,7 +187,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 }
 ```
 
-当POST、PUT或PATCH请求无效或丢失时，显示此错误消息 `Content-Type` 标题。 确保请求中包含标头，并且其值为 `application/json`.
+当POST、PUT或PATCH请求无效或丢失时，显示此错误消息 `Content-Type` 标题。 确保请求中包含标头，且其值为 `application/json`.
 
 ### 缺少用户区域 {#user-region-is-missing}
 

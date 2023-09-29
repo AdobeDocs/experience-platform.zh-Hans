@@ -8,7 +8,7 @@ solution: Experience Platform
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '236'
-ht-degree: 17%
+ht-degree: 19%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 17%
 * JupyterLab笔记本 {#jupyterlab}
    * [概述](jupyterlab/overview.md)
    * [数据访问](jupyterlab/access-notebook-data.md)
-   * [分析数据](jupyterlab/analyze-your-data.md)
+   * [分析您的数据](jupyterlab/analyze-your-data.md)
    * [查询服务](jupyterlab/query-service.md)
    * [探索性数据分析(EDA)](jupyterlab/eda-notebook.md)
    * [使用方法生成器创建模型](jupyterlab/create-a-model.md)
-   * [使用Git在JupyterLab中协作](jupyterlab/using-git-for-collaboration.md)
+   * [使用Git在JupyterLab中进行协作](jupyterlab/using-git-for-collaboration.md)
 * Sensei机器学习API {#api}
    * [快速入门](api/getting-started.md)
    * [引擎](api/engines.md)
@@ -38,7 +38,7 @@ ht-degree: 17%
 * 预建配方 {#pre-built-recipes}
    * [产品推荐方法](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
-   * [零售方法](pre-built-recipes/retail-sales.md)
+   * [零售指导方针](pre-built-recipes/retail-sales.md)
 * 模型创作 {#authoring}
    * [模型创作SDK](authoring/sdk.md)
    * [创建功能管道](authoring/feature-pipeline.md)
@@ -51,17 +51,17 @@ ht-degree: 17%
    * [创建零售架构和数据集](models-recipes/create-retails-sales-dataset.md)
    * [预览架构和数据集](models-recipes/preview-schema-data.md)
    * [将源文件打包到方法中](models-recipes/package-source-files-recipe.md)
-   * [导入包装的配方(UI)](models-recipes/import-packaged-recipe-ui.md)
-   * [导入包装的配方(API)](models-recipes/import-packaged-recipe-api.md)
+   * [导入打包的方法(UI)](models-recipes/import-packaged-recipe-ui.md)
+   * [导入打包的方法(API)](models-recipes/import-packaged-recipe-api.md)
    * [训练和评估模型(UI)](models-recipes/train-evaluate-model-ui.md)
    * [训练和评估模型(API)](models-recipes/train-evaluate-model-api.md)
    * [为模型计分(UI)](models-recipes/score-model-ui.md)
-   * [为模型(API)评分](models-recipes/score-model-api.md)
+   * [为模型(API)计分](models-recipes/score-model-api.md)
    * [优化模型](models-recipes/optimize-model.md)
    * [利用机器学习见解丰富实时客户档案](models-recipes/enrich-profile.md)
    * [将模型发布为服务(UI)](models-recipes/publish-model-service-ui.md)
    * [将模型发布为服务(API)](models-recipes/publish-model-service-api.md)
-   * [安排服务的自动训练和评分(UI)](models-recipes/schedule-models-ui.md)
+   * [安排服务的自动培训和评分(UI)](models-recipes/schedule-models-ui.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
+* [API 参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

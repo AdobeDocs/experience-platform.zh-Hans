@@ -12,7 +12,7 @@ ht-degree: 48%
 ---
 
 
-# Adobe Experience Platform调试器 {#debugger}
+# Adobe Experience Platform Debugger {#debugger}
 
 * [Platform Debugger概述](./home.md)
 * [安装扩展](./install-debugger.md)

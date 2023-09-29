@@ -6,7 +6,7 @@ feature: Data Prep
 source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
 workflow-type: tm+mt
 source-wordcount: '50'
-ht-degree: 46%
+ht-degree: 56%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 46%
 # 数据准备 {#data-prep}
 
 - [数据准备概述](home.md)
-- [数据准备函数](functions.md)
+- [数据准备功能](functions.md)
 - 映射服务API {#api}
    - [概述](./api/overview.md)
    - [快速入门](./api/getting-started.md)

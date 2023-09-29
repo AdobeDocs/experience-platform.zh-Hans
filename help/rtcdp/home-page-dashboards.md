@@ -1,5 +1,5 @@
 ---
-keywords: 量度概述； rtcdp量度概述
+keywords: 指标概述； rtcdp指标概述
 title: Real-time Customer Data Platform主页和功能板
 description: Adobe Experience Platform 的仪表板、主页和首次用户体验
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
@@ -14,52 +14,52 @@ ht-degree: 1%
 
 Adobe Real-time Customer Data Platform (Real-Time CDP)主页是登录Real-Time CDP后显示的第一个页面。
 
-Real-Time CDP主页包括一个快速入门构件，允许您快速访问多种不同的功能，以及一个量度部分，该部分显示有关您组织内数据的最新信息。
+Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多项不同功能，以及一个量度部分，其中显示与组织中数据相关的最新信息。
 
 本文档概述了Real-Time CDP主页和量度功能板。
 
 ![Platform UI主页。](assets/platform-home/home.png)
 
-## 入门小组件
+## 快速入门小组件
 
-此 [!UICONTROL Real-Time Customer Profile] 构件分为四个部分：
+此 [!UICONTROL Real-Time Customer Profile快速入门] 构件分为四个部分：
 
-* **将数据引入平台**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 有关详细信息，请阅读 [源概述](../sources/home.md)
-* **模型数据结构**：此构件会将您引导至架构概述。 使用架构概述浏览现有架构或创建描述数据结构的构建块。 有关详细信息，请阅读 [架构概述](../xdm/home.md).
-* **区段受众**：此构件会将您定向到 [!DNL Segment Builder] 在UI中。 使用 [!DNL Segment Builder] 用于与配置文件数据元素交互并为区段定义规则。 有关详细信息，请阅读 [分段服务概述](../segmentation/home.md).
-* **将数据发送到目标**：此构件会将您转到目标目录。 使用目标目录选择目标，然后可以连接到该目标并将区段发送到该目标。 有关详细信息，请阅读 [目标概述](../destinations/home.md)
+* **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 欲知更多信息，请参阅 [源概述](../sources/home.md)
+* **模型数据结构**：此构件将引导您查看架构概述。 使用架构概述浏览现有架构或创建描述数据结构的构建块。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
+* **细分受众**：此构件会将您定向到 [!DNL Segment Builder] 在UI中。 使用 [!DNL Segment Builder] 用于与用户档案数据元素交互并为区段定义规则。 欲知更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将区段发送到该目标。 欲知更多信息，请参阅 [目标概述](../destinations/home.md)
 
 ![显示入门小组件的Platform UI主页](assets/platform-home/getting-started-widget.png)
 
 ## 量度仪表板
 
-量度仪表板显示Experience Platform数据的最新信息。 仪表板分为两个部分：
+量度仪表板可显示有关Experience Platform数据的最新信息。 仪表板分为两个部分：
 
 ### 排行榜
 
-排行榜显示贵组织中当前的总架构、数据集、用户档案和区段数及其最近更新日期。
+排行榜显示贵组织中当前的架构、数据集、用户档案和区段总数及其最近更新日期。
 
 ![Platform UI主页中的“排行榜”部分。](assets/platform-home/leaderboard.png)
 
-* **架构总数**：此 **架构总数** 计数器显示系统中的架构数。 此计数器会在创建架构时更新。 有关详细信息，请阅读 [架构概述](../xdm/home.md).
-* **数据集总数**：此 **数据集总数** 计数器显示系统中的数据集数以及中的数据量 [!DNL Platform]. 此计数器会在创建数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
-* **配置文件总数**：此 **配置文件** count显示 [!DNL Real-Time Customer Profile]. 它不包括配置文件片段。 这是您的总可寻址受众。 此计数使用默认值 [合并策略](profile/merge-policies.md) 如统一配置文件中的合并策略配置中所设置。 配置文件数量每24小时更新一次。 有关用户档案的详细信息，请阅读 [Real-time Customer Profile概述](../profile/home.md).
-* **区段总数**： **区段** 显示为组织创建的区段总数。 此数字将在创建新区段时更新。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **架构总数**：和 **架构总数** 计数器显示系统中的架构数。 此计数器会在创建架构时更新。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
+* **数据集总数**：和 **数据集总数** 计数器显示系统中的数据集数以及中的数据量 [!DNL Platform]. 此计数器会在创建数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
+* **配置文件总数**：和 **配置文件** count显示 [!DNL Real-Time Customer Profile]. 它不包括配置文件片段。 这是您的总可寻址受众。 此计数使用默认值 [合并策略](profile/merge-policies.md) 在统一配置文件的合并策略配置中设置。 每24小时更新一次配置文件数。 有关用户档案的详细信息，请阅读 [Real-time Customer Profile概述](../profile/home.md).
+* **区段总数**： **区段** 显示为组织创建的区段总数。 此数字将在创建新区段时更新。 有关区段的详细信息，请参阅 [分段服务概述](../segmentation/home.md).
 
 ### 最近项目
 
-“最近项目”列出了组织中最近的更改。 在以下示例中，最近的更改与数据集、源、区段和目标有关。
+“最近项目”列出组织中最近的更改。 在以下示例中，最近的更改与数据集、源、区段和目标有关。
 
 ![Platform UI主页中的“最近项目”部分。](assets/platform-home/recent-items.png)
 
-* **最近数据集**：此 **[!UICONTROL 最近数据集]** 信息卡显示组织中最近创建的五个数据集。 此列表会在创建新数据集时更新。 选择一个数据集以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取数据集列表。 从该位置，您可以选择特定源以了解详细信息。 有关数据集的更多信息，请参见 [数据集概述](../catalog/datasets/overview.md).
-* **最近的源**：此 **[!UICONTROL 最近的源]** 量度卡显示组织中最近创建的五个源。 此列表会在创建新源时更新。 选择源以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 获取源列表。 从该位置，您可以选择特定源以了解详细信息。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
-* **最近的区段**：此 **[!UICONTROL 最近的区段]** 量度卡显示组织中最近创建的五个区段。 此列表会在创建新区段时更新。 选择一个区段以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取区段列表。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
-* **最近的目标**：此 **[!UICONTROL 最近的目标]** 量度卡显示组织中最近创建的五个目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取目标列表。 有关详细信息，请阅读 [目标概述](../destinations/home.md).
+* **最近数据集**：和 **[!UICONTROL 最近数据集]** 信息卡显示了在组织内创建的五个最新数据集。 此列表会在创建新数据集时更新。 选择一个数据集以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取数据集列表。 从该位置，您可以选择特定源以了解详细信息。 有关数据集的更多信息，请参见 [数据集概述](../catalog/datasets/overview.md).
+* **最近的源**：和 **[!UICONTROL 最近的源]** 量度卡显示组织中最近创建的五个源。 此列表会在创建新源时更新。 选择源以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 获取源列表。 从该位置，您可以选择特定源以了解详细信息。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
+* **最近的区段**：和 **[!UICONTROL 最近的区段]** 量度卡显示组织中最近创建的五个区段。 此列表会在创建新区段时更新。 选择区段以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取区段的列表。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **最近的目标**：和 **[!UICONTROL 最近的目标]** 量度卡显示组织内创建的五个最新目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取目标列表。 欲知更多信息，请参阅 [目标概述](../destinations/home.md).
 
 ## 资源
 
-最后，资源小组件为您提供可以参考的其他文档资源。 其中包括：
+最后，资源小组件提供了您可以参考的其他文档资源。 其中包括：
 
 ![Platform UI主页中的“资源”部分。](assets/platform-home/resources.png)
 

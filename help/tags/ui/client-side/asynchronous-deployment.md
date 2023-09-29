@@ -20,7 +20,7 @@ ht-degree: 61%
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-我们的产品所需的JavaScript库的性能和无阻塞部署对Adobe Experience Cloud用户来说越来越重要。 工具如 [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) 建议用户更改他们在网站上部署Adobe库的方式。 本文介绍了如何以异步方式使用AdobeJavaScript库。
+我们的产品需要提高JavaScript库的性能和对其进行无阻塞部署，这对于Adobe Experience Cloud用户而言越来越重要。 工具如 [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) 建议用户更改他们在网站上部署Adobe库的方式。 本文介绍了如何以异步方式使用AdobeJavaScript库。
 
 ## 同步与异步
 
@@ -36,7 +36,7 @@ ht-degree: 61%
 
 如果解析器在渲染可见内容之前遇到 `<script>` 标记，则内容显示会出现延迟。在向用户显示内容时，如果所加载的 JavaScript 文件并非绝对必需，则不必要求访客等待内容显示。库越大，延迟时间越长。因此，[!DNL Google PageSpeed] 或 [!DNL Lighthouse] 等网站性能基准工具通常会标记同步加载的脚本。
 
-如果要管理大量标记，则标记管理库可能会快速增大。
+如果要管理大量标记，Tag Management库可能会快速增大。
 
 ### 异步部署
 
@@ -52,13 +52,13 @@ ht-degree: 61%
 
 如上所述，在同步部署中，浏览器在加载和执行Adobe Experience Platform标记库时会暂停解析和渲染页面。 相反，在异步部署中，浏览器在加载库时会继续解析和渲染页面。必须考虑标记库可能完成加载的时间相对于页面解析和渲染的可变性。
 
-首先，由于标记库可能会在解析并执行页面底部之前或之后完成加载，因此您不应再调用 `_satellite.pageBottom()` 来自页面代码(`_satellite` 在加载库之后才可用)。 详情请参阅 [异步加载标记嵌入代码](#loading-the-tags-embed-code-asynchronously).
+首先，由于标记库可能会在解析并执行页面底部之前或之后完成加载，因此您不应再调用 `_satellite.pageBottom()` 来自页面代码(`_satellite` 在加载库之后才可用)。 有关说明，请参见 [异步加载标记嵌入代码](#loading-the-tags-embed-code-asynchronously).
 
-其次，标记库可以在之前或之后完成加载 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 发生了浏览器事件（DOM就绪）。
+其次，标记库可在 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 发生浏览器事件(DOM Ready)。
 
-由于这两点，值得说明的是 [库已加载](../../extensions/client/core/overview.md#library-loaded-page-top)， [Page Bottom](../../extensions/client/core/overview.md#page-bottom)， [DOM就绪](../../extensions/client/core/overview.md#page-bottom)、和 [已加载窗口](../../extensions/client/core/overview.md#window-loaded) 异步加载标记库时，核心扩展函数中的事件类型。
+因为这两点，值得说明的是 [库已加载](../../extensions/client/core/overview.md#library-loaded-page-top)， [Page Bottom](../../extensions/client/core/overview.md#page-bottom)， [DOM就绪](../../extensions/client/core/overview.md#page-bottom)、和 [已加载窗口](../../extensions/client/core/overview.md#window-loaded) 异步加载标记库时，核心扩展函数中的事件类型。
 
-如果您的标记属性包含以下四个规则：
+如果标记属性包含以下四个规则：
 
 * 规则 A：使用 Library Loaded 事件类型
 * 规则 B：使用 Page Bottom 事件类型
@@ -73,7 +73,7 @@ ht-degree: 61%
 
 1. 立即执行规则 A。
 1. 如果 `DOMContentLoaded` 浏览器事件 (DOM Ready) 已经发生，则会立即执行规则 B 和规则 C。否则，规则 B 和规则 C 稍后在发生 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 浏览器事件时执行。
-1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标记库，则标记库会 *始终* 完成加载之前 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 发生浏览器事件。
+1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标记库，则标记库会 *始终* 完成加载后 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 发生浏览器事件。
 
 将这些原则应用于您自己的网站时，请考虑以下事项：
 
@@ -84,7 +84,7 @@ ht-degree: 61%
 
 ## 异步加载标记嵌入代码
 
-在配置时，标记会提供一个切换开关，用于在创建嵌入代码时打开异步加载 [环境](../publishing/environments.md). 您还可以自行配置异步加载：
+在配置时，标记会提供一个用于打开异步加载的切换开关，以便在创建嵌入代码时开启 [环境](../publishing/environments.md). 您还可以自行配置异步加载：
 
 1. 向 `<script>` 标记中添加 async 属性以异步加载脚本。
 
@@ -106,4 +106,4 @@ ht-degree: 61%
    <script type="text/javascript">_satellite.pageBottom();</script>
    ```
 
-   此代码可告知Platform浏览器解析器已到达页面底部。 标记可能在此之前尚未加载和执行，因此调用 `_satellite.pageBottom()` 会导致错误，并且Page Bottom事件类型可能无法按预期运行。
+   此代码可告知Platform浏览器解析器已到达页面底部。 在这个时间点之前，可能尚未加载和执行标记，因此调用 `_satellite.pageBottom()` 会导致错误，并且Page Bottom事件类型可能无法按预期运行。

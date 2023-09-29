@@ -22,15 +22,15 @@ PRIVACY SERVICEUI [!DNL Privacy Service] 允许您协调各种Adobe Experience C
 
 >[!NOTE]
 >
->有关使用Privacy ServiceAPI以编程方式管理法规遵从性请求的信息，请参见 [Privacy ServiceAPI指南](../api/overview.md).
+>有关使用Privacy ServiceAPI以编程方式管理合规性请求的信息，请参阅 [Privacy ServiceAPI指南](../api/overview.md).
 
 ## 登录到 [!DNL Privacy Service] UI
 
 >[!IMPORTANT]
 >
->您必须具有Adobe ID才能对进行身份验证 [!DNL Privacy Service] UI。 此外，您必须在组织内拥有系统管理员权限。
+>您必须具有Adobe ID才能对 [!DNL Privacy Service] UI。 此外，您必须在组织内拥有系统管理员权限。
 
-要访问UI，请登录 [Adobe Experience Cloud](https://experience.adobe.com/) 并选择 **[!UICONTROL 隐私UI]** 在“快速访问”菜单下。
+要访问用户界面，请登录 [Adobe Experience Cloud](https://experience.adobe.com/) 并选择 **[!UICONTROL 隐私UI]** 在“快速访问”菜单下。
 
 ![](../images/ui-overview/quick-access.png)
 

@@ -14,12 +14,12 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->帐户配置文件仅适用于Adobe Real-time Customer Data Platform B2B Edition客户。 要了解有关Real-Time CDP、B2B版（包括可用特性和功能）的更多信息，请从阅读 [Real-Time CDP， B2B版本概述](../b2b-overview.md).
+>帐户配置文件仅适用于Adobe Real-time Customer Data Platform B2B Edition客户。 要了解有关Real-Time CDP、B2B版本的更多信息（包括可用特性和功能），请从阅读 [Real-Time CDP， B2B版本概述](../b2b-overview.md).
 
-通过帐户配置文件，可统一来自多个来源的帐户信息。 这种统一的帐户视图将来自您的多个营销渠道以及贵组织当前用于存储客户帐户数据的各种系统的数据整合在一起。 要详细了解如何在B2B工作流中创建帐户配置文件，请参阅 [端到端教程](../b2b-tutorial.md).
+使用帐户配置文件，您可以统一来自多个来源的帐户信息。 这个统一的帐户视图将来自您的多个营销渠道以及贵组织当前用于存储客户帐户数据的各种系统的数据整合在一起。 要详细了解如何在B2B工作流中创建帐户配置文件，请参阅 [端到端教程](../b2b-tutorial.md).
 
-通过将不同来源的帐户数据拼合在一起，您可以开始查看每个客户帐户及其相关机会和联系人的完整信息。 这使您的组织能够将B2B营销活动提升到一个新的水平。 要了解有关Real-Time CDP B2B版本的强大功能的更多信息，请阅读 [Real-Time CDP， B2B版本示例用例](../b2b-use-case.md).
+通过将不同来源的帐户数据拼合在一起，您可以开始查看每个客户帐户及其相关机会和联系人的完整信息。 这使您的组织能够将B2B营销活动提升到一个新的水平。 要了解有关Real-Time CDP B2B版本的强大功能的更多信息，请参阅 [Real-Time CDP B2B版本示例用例](../b2b-use-case.md).
 
-## 帐户配置文件查看器
+## 帐户个人资料查看器
 
-借助Real-Time CDP B2B版，您可以使用Experience Platform用户界面查看帐户配置文件，并使用连接的企业源中的帐户ID或直接输入源详细信息来搜索特定帐户。 有关如何在Platform UI中查看帐户配置文件的更多信息，请参阅 [帐户配置文件UI指南](account-profile-ui-guide.md).
+使用Real-Time CDP B2B版，您可以使用Experience Platform用户界面查看帐户配置文件，并使用连接的企业源中的帐户ID或直接输入源详细信息来搜索特定帐户。 有关如何在Platform UI中查看帐户配置文件的更多信息，请参阅 [帐户配置文件UI指南](account-profile-ui-guide.md).

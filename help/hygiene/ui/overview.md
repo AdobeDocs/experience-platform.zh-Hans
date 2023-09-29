@@ -21,15 +21,15 @@ ht-degree: 37%
 >title="最新的数据卫生工单"
 >abstract="此构件显示五个最近创建或更新的数据卫生工单，具体取决于您在右上角选择的选项。有关数据卫生流程的更多信息，请在左侧导航中选择&#x200B;**数据卫生**。"
 
-此 **[!UICONTROL 数据卫生]** Adobe Experience Platform UI中的工作区允许您创建和监控各种数据卫生任务，包括删除记录和计划数据集过期。
+此 **[!UICONTROL 数据保健]** Adobe Experience Platform UI中的工作区允许您创建和监控各种数据卫生任务，包括删除记录和计划数据集过期。
 
 本指南介绍如何在Platform UI中管理数据卫生任务。 有关如何使用API调用执行这些任务的信息，请参阅 [数据卫生API指南](../api/overview.md).
 
-要访问工作区，请选择 **[!UICONTROL 数据卫生]** 左侧导航栏中。
+要访问工作区，请选择 **[!UICONTROL 数据保健]** 在左侧导航中。
 
-![图像显示 [!UICONTROL 数据卫生] Platform UI中的工作区](../images/ui/overview/home.png)
+![图像显示 [!UICONTROL 数据保健] Platform UI中的工作区](../images/ui/overview/home.png)
 
-在此处，您可以浏览现有工作单并配置新的数据卫生操作。 请参阅本指南的以下部分以了解更多信息：
+从此处，您可以浏览现有工作单并配置新的数据卫生操作。 请参阅本指南的以下部分以了解更多信息：
 
 * [浏览现有工作单](./browse.md)
 * [创建数据集过期请求](./dataset-expiration.md)

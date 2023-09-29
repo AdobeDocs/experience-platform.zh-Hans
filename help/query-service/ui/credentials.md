@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询；查询编辑器；查询编辑器；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询；查询编辑器；查询编辑器；查询编辑器；
 solution: Experience Platform
 title: 查询服务凭据指南
-description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询以及访问由您组织内的用户保存的查询。
+description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
 source-git-commit: aed521bf50c301148c10b98021f1a3df0ed45278
 workflow-type: tm+mt
@@ -24,25 +24,25 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 您可以使用过期凭据快速设置与外部客户端的连接。
 
-![突出显示“即将过期的凭据”部分的“查询仪表板凭据”选项卡。](../images/ui/credentials/expiring-credentials.png)
+![突出显示“过期凭据”部分的查询仪表板凭据选项卡。](../images/ui/credentials/expiring-credentials.png)
 
-此 **[!UICONTROL 过期凭据]** 一节提供了以下信息：
+此 **[!UICONTROL 过期凭据]** 部分提供了以下信息：
 
 - **[!UICONTROL 主机]**：要将客户端连接到的主机名称。 这会合并您的组织名称，如Platform UI顶部功能区中所示。
 - **[!UICONTROL 端口]**：要连接的主机端口号。
 - **[!UICONTROL 数据库]**：要连接客户端的数据库名称。
 - **[!UICONTROL 用户名]**：用于连接到查询服务的用户名。
-- **[!UICONTROL 密码]**：用于连接到查询服务的密码。 为了安全起见，UI中的密码进行了哈希处理。 选择复制图标(![复制图标。](../images/ui/credentials/copy-icon.png))以将完整的未哈希凭据复制到剪贴板。
-- **[!UICONTROL PSQL命令]**：自动插入所有相关信息的命令，以便在命令行上使用PSQL连接到Query Service。
-- **[!UICONTROL 过期]**：过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中进行更改。
+- **[!UICONTROL 密码]**：用于连接到查询服务的密码。 为了安全起见，UI中的密码已进行哈希处理。 选择复制图标(![复制图标。](../images/ui/credentials/copy-icon.png))以将完整的未散列凭据复制到剪贴板。
+- **[!UICONTROL PSQL命令]**：自动插入所有相关信息以供您在命令行中使用PSQL连接到Query Service的命令。
+- **[!UICONTROL 过期]**：过期凭据的过期日期和时间。 令牌的默认有效期为24小时，但可以在Admin Console的高级设置中更改。
 
 >[!TIP]
 >
 >要更改与查询服务的过期凭据连接的会话生命周期，请导航到 [Admin Console](https://adminconsole.adobe.com/) 并选择以下屏幕选项： **设置** > **隐私和安全性** > **身份验证设置** > **高级设置** > **最长会话时长**.
 >
->![“Admin Console设置”选项卡，其中高亮显示了“隐私和安全性”、“身份验证设置”和“最长会话时长”。](../images/ui/credentials/max-session-life.png)
+>![“Admin Console设置”选项卡，其中突出显示“隐私和安全性”、“身份验证设置”和“最长会话寿命”。](../images/ui/credentials/max-session-life.png)
 >
->请参阅Adobe帮助文档，以了解有关 [高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) 管理控制台提供的。
+>有关以下内容的更多信息，请参阅Adobe帮助 [高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) 管理控制台提供的。
 
 ## 未过期的凭据 {#non-expiring-credentials}
 
@@ -50,15 +50,15 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 >[!NOTE]
 >
->未过期的凭据具有以下限制：<br><ul><li>用户必须使用由以下内容组成的用户名和密码登录 `{technicalAccountId}:{credential}`. 欲知更多信息，请参见 [生成凭据](#generate-credentials) 部分。</li><li>创建过期凭据后，将创建一个具有一组基本权限的新角色，允许用户查看架构和数据集。 “管理查询”权限也分配给此角色，以便与查询服务一起使用。</li><li>当列出查询对象时，第三方客户端可能会执行与预期不同的操作。 例如，某些第三方客户端，如 [!DNL DB Visualizer] 不会在左侧面板中显示视图名称。 但是，如果在SELECT查询中调用视图名称，则视图名称可访问。 同样， [!DNL PowerUI] 可能不会列出通过SQL创建的要选择用于创建功能板的临时视图。</li></ul>
+>未过期的凭据具有以下限制：<br><ul><li>用户必须使用由以下组成的用户名和密码登录 `{technicalAccountId}:{credential}`. 欲知更多信息，请参见 [生成凭据](#generate-credentials) 部分。</li><li>创建过期凭据后，将创建具有一组基本权限的新角色，该角色允许用户查看架构和数据集。 “管理查询”权限也已分配给此角色，以与查询服务一起使用。</li><li>当列出查询对象时，第三方客户端可能会执行与预期不同的操作。 例如，某些第三方客户，如 [!DNL DB Visualizer] 不会在左侧面板中显示视图名称。 但是，如果在SELECT查询中调用视图名称，则视图名称可访问。 同样地， [!DNL PowerUI] 可能不会列出通过SQL创建的要选择用于创建功能板的临时视图。</li></ul>
 
 ### 先决条件
 
 在生成不会过期的凭据之前，必须在Adobe Admin Console中完成以下步骤：
 
-1. 登录 [Adobe Admin Console](https://adminconsole.adobe.com/) 并从顶部导航栏中选择相关组织。
+1. 登录 [Adobe Admin Console](https://adminconsole.adobe.com/) 并从顶部导航栏中选择相关的组织。
 2. [选择产品配置文件。](../../access-control/ui/browse.md)
-3. [配置两者 **沙盒** 和 **管理查询服务集成** 权限](../../access-control/ui/permissions.md) 产品配置文件的。
+3. [配置两者 **沙盒** 和 **管理查询服务集成** 权限](../../access-control/ui/permissions.md) 用于产品配置文件。
 4. [将新用户添加到产品配置文件](../../access-control/ui/users.md) 因此授予了他们配置的权限。
 5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) 允许为任何活动的产品配置文件创建帐户。
 6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) 以创建集成。
@@ -69,48 +69,48 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 ### 生成凭据 {#generate-credentials}
 
-要创建一组不会过期的凭据，请返回平台UI并选择 **[!UICONTROL 查询]** 从左侧导航访问 [!UICONTROL 查询] 工作区。 接下来，选择 **[!UICONTROL 凭据]** 选项卡，后接 **[!UICONTROL 生成凭据]**.
+要创建一组不会过期的凭据，请返回到Platform UI并选择 **[!UICONTROL 查询]** 从左侧导航访问 [!UICONTROL 查询] 工作区。 接下来，选择 **[!UICONTROL 凭据]** 选项卡，后接 **[!UICONTROL 生成凭据]**.
 
 ![突出显示“凭据”选项卡和“生成凭据”的“查询”仪表板。](../images/ui/credentials/generate-credentials.png)
 
-此时将显示一个对话框，允许您生成凭据。 要创建不会过期的凭据，必须提供以下详细信息：
+将出现一个对话框，允许您生成凭据。 要创建不会过期的凭据，必须提供以下详细信息：
 
 - **[!UICONTROL 名称]**：您生成的凭据的名称。
 - **[!UICONTROL 描述]**：（可选）对您生成的凭据的描述。
-- **[!UICONTROL 分配给]**：凭据将分配到的用户。 此值应为创建凭据的用户的电子邮件地址。
+- **[!UICONTROL 分派给]**：凭据将分配给的用户。 此值应为创建凭据的用户的电子邮件地址。
 - **[!UICONTROL 密码]** （可选）凭据的可选密码。 如果未设置密码，Adobe将自动为您生成密码。
 
-提供所有必需详细信息后，选择 **[!UICONTROL 生成凭据]** 以生成您的凭据。
+提供所有必需的详细信息后，选择 **[!UICONTROL 生成凭据]** 以生成您的凭据。
 
-![此时将突出显示“生成凭据”对话框。](../images/ui/credentials/create-account.png)
+![将突出显示生成凭据对话框。](../images/ui/credentials/create-account.png)
 
 >[!IMPORTANT]
 >
->时间 **[!UICONTROL 生成凭据]** ，则会将配置JSON文件下载到您的本地计算机。 因为Adobe会 **非** 记录生成的凭据，您必须安全地存储下载的文件并保留凭据的记录。
+>时间 **[!UICONTROL 生成凭据]** ，则会将配置JSON文件下载到本地计算机。 因为Adobe会 **非** 记录生成的凭据，您必须安全地存储下载的文件并保留凭据的记录。
 >
->此外，如果凭据未使用90天，则将清除凭据。
+>此外，如果凭据未使用90天，则凭据将被注销。
 
-配置JSON文件包含技术帐户名称、技术帐户ID和凭据等信息。 它采用以下格式提供。
+配置JSON文件包含技术帐户名称、技术帐户ID和凭据等信息。 提供时采用以下格式。
 
 ```json
 {"technicalAccountName":"9F0A21EE-B8F3-4165-9871-846D3C8BC49E@TECHACCT.ADOBE.COM","credential":"3d184fa9e0b94f33a7781905c05203ee","technicalAccountId":"4F2611B8613AA3670A495E55"}
 ```
 
-保存生成的凭据后，选择 **[!UICONTROL 关闭]**. 您现在可以看到所有不会过期的凭据的列表。
+保存生成的凭据后，选择 **[!UICONTROL 关闭]**. 您现在可以看到所有未过期的凭据的列表。
 
-![突出显示“未过期的凭据”部分的“查询仪表板凭据”选项卡。](../images/ui/credentials/list-credentials.png)
+![突出显示未过期的凭据部分的查询仪表板凭据选项卡。](../images/ui/credentials/list-credentials.png)
 
-您可以编辑或删除不会过期的凭据。 要编辑未过期的凭据，请选择铅笔图标(![铅笔图标。](../images/ui/credentials/edit-icon.png))。要删除未过期的凭据，请选择删除图标(![垃圾桶图标。](../images/ui/credentials/delete-icon.png))。
+您可以编辑或删除未过期的凭据。 要编辑不会过期的凭据，请选择铅笔图标(![铅笔图标。](../images/ui/credentials/edit-icon.png))。要删除未过期的凭据，请选择删除图标(![垃圾桶图标。](../images/ui/credentials/delete-icon.png))。
 
 编辑未过期的凭据时，将显示一个模式窗口。 您可以提供以下详细信息以进行更新：
 
 - **[!UICONTROL 名称]**：您生成的凭据的名称。
 - **[!UICONTROL 描述]**：（可选）对您生成的凭据的描述。
-- **[!UICONTROL 分配给]**：凭据将分配到的用户。 此值应为创建凭据的用户的电子邮件地址。
+- **[!UICONTROL 分派给]**：凭据将分配给的用户。 此值应为创建凭据的用户的电子邮件地址。
 
 ![更新帐户对话框。](../images/ui/credentials/update-credentials.png)
 
-提供所有必需详细信息后，选择 **[!UICONTROL 更新帐户]** 以完成凭据的更新。
+提供所有必需的详细信息后，选择 **[!UICONTROL 更新帐户]** 以完成凭据的更新。
 
 ## 使用凭据连接到外部客户端 {#use-credential-to-connect}
 
@@ -118,7 +118,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 该图像指示在UI中找到的每个参数的位置，但不会过期的凭据的密码除外。 虽然过期凭据由其JSON配置文件提供，但您可以在以下位置查看过期凭据： **凭据** 选项卡。
 
-![突出显示“即将过期的凭据”部分的查询工作区凭据选项卡。](../images/ui/credentials/expiring-credentials.png)
+![查询工作区凭据选项卡，其中高亮显示过期凭据部分。](../images/ui/credentials/expiring-credentials.png)
 
 下表概述了连接到外部客户端通常所需的参数。
 
@@ -129,14 +129,14 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 | 参数 | 描述 | 示例 |
 |---|---|---|
-| **服务器/主机** | 要连接的服务器/主机的名称。 <ul><li>此值用于即将过期的凭据和非即将过期的凭据，并采用 `server.adobe.io`. 该值位于 **[!UICONTROL 主机]** 在 [!UICONTROL 过期凭据] 部分。</ul></li> | `acme.platform.adobe.io` |
-| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值同时用于过期凭据和不过期凭据，并位于 **[!UICONTROL 端口]** 在 [!UICONTROL 过期凭据] 部分。</ul></li> | `80` |
-| **数据库** | 要连接的数据库。 <ul><li>此值用于过期凭据和未过期凭据，并位于 **[!UICONTROL 数据库]** 在 [!UICONTROL 过期凭据] 部分。 </ul></li> | `prod:all` |
-| **用户名** | 连接到外部客户端的用户名。 <ul><li>此值同时用于过期凭据和非过期凭据。 它以前采用字母数字字符串的形式 `@AdobeOrg`. 此值位于 **[!UICONTROL 用户名]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
-| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的是即将过期的凭据，这可以在以下位置找到 **[!UICONTROL 密码]** 在 [!UICONTROL 过期凭据] 部分。</li><li>如果您使用的是不会过期的凭据，此值是来自technicalAccountID的拼接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>即将过期的凭据密码超过一千个字符的字母数字字符串。 不提供示例。</li><li>不会过期的凭据密码如下：<br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
+| **服务器/主机** | 要连接的服务器/主机的名称。 <ul><li>此值用于过期凭据和非过期凭据，其形式为 `server.adobe.io`. 该值位于下 **[!UICONTROL 主机]** 在 [!UICONTROL 过期凭据] 部分。</ul></li> | `acme.platform.adobe.io` |
+| **端口** | 要连接的服务器/主机的端口。 <ul><li>此值同时用于过期凭据和不过期凭据，可在以下位置找到 **[!UICONTROL 端口]** 在 [!UICONTROL 过期凭据] 部分。</ul></li> | `80` |
+| **数据库** | 要连接的数据库。 <ul><li>此值用于过期凭据和不过期凭据，并位于 **[!UICONTROL 数据库]** 在 [!UICONTROL 过期凭据] 部分。 </ul></li> | `prod:all` |
+| **用户名** | 连接到外部客户端的用户名。 <ul><li>此值用于过期凭据和非过期凭据。 它以前采用字母数字字符串的形式 `@AdobeOrg`. 此值位于 **[!UICONTROL 用户名]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
+| **密码** | 连接到外部客户端的用户的密码。 <ul><li>如果您使用的是过期凭据，则可在 **[!UICONTROL 密码]** 内部 [!UICONTROL 过期凭据] 部分。</li><li>如果您使用的是未过期的凭据，此值是来自technicalAccountID的拼接参数和从配置JSON文件获取的凭据。 密码值采用以下形式： `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>即将过期的凭据密码包含超过一千个字符的字母数字字符串。 没有给出任何示例。</li><li>未过期的凭据密码如下：<br>`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 后续步骤
 
-现在，您已了解过期凭据和不过期凭据的工作方式，可以使用这些凭据连接到外部客户端。 有关外部客户端的详细信息，请阅读 [connect clients to Query Service指南](../clients/overview.md).
+现在，您已了解过期凭据和不过期凭据的工作方式，可以使用这些凭据连接到外部客户端。 有关外部客户端的详细信息，请阅读 [连接客户端至查询服务指南](../clients/overview.md).

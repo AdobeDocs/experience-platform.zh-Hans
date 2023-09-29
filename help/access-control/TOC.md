@@ -7,7 +7,7 @@ feature: Access Control
 source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
 source-wordcount: '124'
-ht-degree: 48%
+ht-degree: 51%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 48%
    * [端到端指南](abac/end-to-end-guide.md)
    * 权限 {#permissions-ui}
       * [浏览](abac/ui/browse.md)
-      * [标签](abac/ui/labels.md)
+      * [标记](abac/ui/labels.md)
       * [权限](abac/ui/permissions.md)
       * [支持](abac/ui/policies.md)
       * [角色](abac/ui/roles.md)
@@ -32,7 +32,7 @@ ht-degree: 48%
       * [角色](abac/api/roles.md)
       * [支持](abac/api/policies.md)
       * [产品](abac/api/products.md)
-* 访问控制用户界面 {#ui}
+* 访问控制UI {#ui}
    * [概述](ui/overview.md)
    * [选择产品配置文件](ui/browse.md)
    * [管理产品配置文件的权限](ui/permissions.md)
@@ -44,5 +44,5 @@ ht-degree: 48%
    * [权限和资源类型的列表名称](api/permissions-and-resource-types.md)
    * [查看有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

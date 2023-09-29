@@ -7,7 +7,7 @@ feature: Queries
 source-git-commit: a74ec87c27d3db3bcd8d0a5075a593535e3c4de1
 workflow-type: tm+mt
 source-wordcount: '280'
-ht-degree: 19%
+ht-degree: 20%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 19%
 - 用例 {#use-cases}
    - [已放弃的浏览](use-cases/abandoned-browse.md)
    - [归因分析](use-cases/attribution-analysis.md)
-   - [机器人过滤](use-cases/bot-filtering.md)
+   - [机器人筛选](use-cases/bot-filtering.md)
    - [创建事件的趋势报表](use-cases/trended-report-of-events.md)
    - [同意分析](use-cases/consent-analysis.md)
    - [客户存留期值](use-cases/customer-lifetime-value.md)

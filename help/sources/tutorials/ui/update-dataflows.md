@@ -18,10 +18,10 @@ ht-degree: 8%
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ## 更新数据流 {#update-dataflows}
 
@@ -34,19 +34,19 @@ ht-degree: 8%
 
 ![目录](../../images/tutorials/update-dataflows/catalog.png)
 
-此 [!UICONTROL 数据流] 页面包含所有现有数据流的列表，包括有关其相应的目标数据集、源和帐户名称的信息。
+此 [!UICONTROL 数据流] 页面包含所有现有数据流的列表，其中包括有关其相应目标数据集、源和帐户名称的信息。
 
-要对列表进行排序，请选择过滤器图标 ![过滤器](../../images/tutorials/update/filter.png) 以使用“排序”面板。
+要对列表进行排序，请选择过滤器图标 ![筛选](../../images/tutorials/update/filter.png) 以使用“排序”面板。
 
 ![filter-dataflows](../../images/tutorials/update-dataflows/filter-dataflows.png)
 
-排序面板提供了所有可用源的列表。 您可以从列表中选择多个源，以访问属于不同源的数据流的过滤选择。
+排序面板提供所有可用源的列表。 您可以从列表中选择多个源，以访问属于不同源的数据流的过滤选择。
 
 选择要使用的源以查看其现有数据流的列表。 标识要更新的数据流后，选择省略号(`...`)。
 
 ![edit-source](../../images/tutorials/update-dataflows/edit-source.png)
 
-此时会显示一个下拉菜单，其中提供了用于更新所选数据流的选项。 在此处，您可以选择更新数据流的映射集和摄取计划。 您还可以选择以下选项：在监视功能板中检查数据流、订阅警报，以及禁用或删除数据流。
+此时会显示一个下拉菜单，为您提供用于更新所选数据流的选项。 在此处，您可以选择更新数据流的映射集和摄取计划。 您还可以选择相应选项以在监视功能板中检查数据流、订阅警报以及禁用或删除数据流。
 
 要更新数据流的信息，请选择 **[!UICONTROL 更新数据流]**.
 
@@ -54,17 +54,17 @@ ht-degree: 8%
 
 ### 添加数据
 
-此 [!UICONTROL 添加数据] 步骤。 选择适当的数据格式以查看所选数据的内容，然后选择 **[!UICONTROL 下一个]** 以继续。
+此 [!UICONTROL 添加数据] 此时将显示步骤。 选择适当的数据格式以查看所选数据的内容，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![add-data](../../images/tutorials/update-dataflows/add-data.png)
 
 ### 数据流详细信息
 
-在 [!UICONTROL 数据流详细信息] 页面，您可以为数据流提供更新的名称和描述，并重新配置数据流的错误阈值。 在此步骤中，您还可以配置或修改警报订阅的设置。
+在 [!UICONTROL 数据流详细信息] 页面上，您可以为数据流提供更新的名称和描述，并重新配置数据流的错误阈值。 在此步骤中，您还可以配置或修改警报订阅的设置。
 
 提供更新的值后，选择 **[!UICONTROL 下一个]**.
 
-![数据流 — 详细信息](../../images/tutorials/update-dataflows/dataflow-detail.png)
+![数据流详细信息](../../images/tutorials/update-dataflows/dataflow-detail.png)
 
 ### 映射
 
@@ -76,17 +76,17 @@ ht-degree: 8%
 
 映射界面显示数据流的现有映射集，而不是新的推荐映射集。 映射更新仅适用于计划在未来运行的数据流。 计划进行一次性摄取的数据流无法更新其映射集。
 
-在此处，您可以使用映射界面修改应用于数据流的映射集。 有关如何使用映射界面的完整步骤，请参见 [数据准备UI指南](../../../data-prep/ui/mapping.md) 了解更多信息。
+在此处，您可以使用映射界面修改应用于数据流的映射集。 有关如何使用映射界面的完整步骤，请参见 [数据准备UI指南](../../../data-prep/ui/mapping.md) 以了解更多信息。
 
 ![映射](../../images/tutorials/update-dataflows/mapping.png)
 
 ### 计划
 
-此 [!UICONTROL 计划] 此时将显示步骤，允许您更新数据流的摄取计划并自动使用更新的映射摄取选定的源数据。
+此 [!UICONTROL 正在计划] 此时会显示步骤，允许您更新数据流的摄取计划并自动使用更新的映射摄取选定的源数据。
 
 >[!NOTE]
 >
->您无法重新计划计划一次性摄取的数据流。
+>无法重新计划一次性摄取的数据流。
 
 ![new-schedule](../../images/tutorials/update-dataflows/new-schedule.png)
 
@@ -102,14 +102,14 @@ ht-degree: 8%
 
 ### 请查看
 
-此 **[!UICONTROL 审核]** 步骤，允许您在更新数据流之前对其进行查看。
+此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在更新数据流之前对其进行查看。
 
-查看数据流后，选择 **[!UICONTROL 完成]** 留出一些时间，以便使用新映射集创建数据流。
+查看数据流后，选择 **[!UICONTROL 完成]** 留出一些时间，以便创建新的映射集的数据流。
 
 ![审核](../../images/tutorials/update-dataflows/review.png)
 
 ## 后续步骤
 
-按照本教程中的说明，您已成功使用了 [!UICONTROL 源] 工作区，以更新数据流的摄取计划和映射集。
+通过学习本教程，您已成功使用了 [!UICONTROL 源] 工作区，以更新数据流的摄取计划和映射集。
 
-有关如何使用以编程方式执行这些操作的步骤 [!DNL Flow Service] API，请参考以下教程： [使用流服务API更新数据流](../../tutorials/api/update-dataflows.md).
+有关如何使用以编程方式执行这些操作的步骤 [!DNL Flow Service] API，请参考上的教程 [使用流服务API更新数据流](../../tutorials/api/update-dataflows.md).

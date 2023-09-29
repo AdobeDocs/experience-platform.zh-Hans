@@ -12,7 +12,7 @@ ht-degree: 26%
 ---
 
 
-# Adobe Experience Platform数据引入 {#ingestion}
+# Adobe Experience Platform数据摄取 {#ingestion}
 
 - [数据引入概述](home.md)
 - 流式摄取 {#streaming}
@@ -47,5 +47,5 @@ ht-degree: 26%
 - [数据摄取的护栏](guardrails.md)
 - [源连接器](source-connectors.md)
 - [批量摄取API参考](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
-- [流摄取API参考](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
+- [流式引入API参考](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
 - [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

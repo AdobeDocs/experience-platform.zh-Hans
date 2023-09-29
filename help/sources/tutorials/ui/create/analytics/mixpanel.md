@@ -28,18 +28,18 @@ ht-degree: 11%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| 用户名 | 与您的帐户对应的服务帐户用户名 [!DNL Mixpanel] 帐户。 请参阅 [[!DNL Mixpanel] 服务帐户文档](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 了解更多信息。 | `Test8.6d4ee7.mp-service-account` |
+| 用户名 | 与您的对应的服务帐户用户名 [!DNL Mixpanel] 帐户。 请参阅 [[!DNL Mixpanel] 服务帐户文档](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 以了解更多信息。 | `Test8.6d4ee7.mp-service-account` |
 | 密码 | 与您的帐户对应的服务帐户密码 [!DNL Mixpanel] 帐户。 | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
-| 项目ID | 您的 [!DNL Mixpanel] 项目ID。 创建源连接时需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 关于创建和管理项目的指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 了解更多信息。 | `2384945` |
-| 时区 | 与您的对应的时区 [!DNL Mixpanel] 项目。 创建源连接需要时区。 请参阅 [Mixpanel项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 了解更多信息。 | `Pacific Standard Time` |
+| 项目ID | 您的 [!DNL Mixpanel] 项目ID。 创建源连接需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 创建和管理项目指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 以了解更多信息。 | `2384945` |
+| 时区 | 与您的对应的时区 [!DNL Mixpanel] 项目。 创建源连接需要时区。 请参阅 [Mixpanel项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 以了解更多信息。 | `Pacific Standard Time` |
 
-有关验证的详细信息 [!DNL Mixpanel] 源，请参见 [[!DNL Mixpanel] 源概述](../../../../connectors/analytics/mixpanel.md).
+有关验证您的身份的详细信息 [!DNL Mixpanel] 源，请参见 [[!DNL Mixpanel] 源概述](../../../../connectors/analytics/mixpanel.md).
 
 ## 连接您的 [!DNL Mixpanel] 帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 *分析* 类别，选择 [!DNL Mixpanel]，然后选择 **[!UICONTROL 添加数据]**.
 
@@ -55,9 +55,9 @@ ht-degree: 11%
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
 
-![新](../../../../images/tutorials/create/mixpanel-export-events/new.png)
+![新建](../../../../images/tutorials/create/mixpanel-export-events/new.png)
 
 ## 选择项目ID和时区 {#project-id-and-timezone}
 
@@ -69,25 +69,25 @@ ht-degree: 11%
 
 在您的源经过身份验证后，提供您的项目ID和时区，然后选择 **[!UICONTROL 选择]**.
 
-您在摄取之前指定的时区 [!DNL Mixpanel] 到Platform的数据必须与 [!DNL Mixpanel] 配置文件时区设置。 对数据时区所做的任何更改将仅适用于新事件，而旧事件将保留在您之前指定的时区内。 [!DNL Mixpanel] 可适应夏令时，并将相应地调整您的摄取时间戳。 有关时区如何影响数据的更多信息，请参见 [!DNL Mixpanel] 指南 [管理项目时区](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
+摄取之前您指定的时区 [!DNL Mixpanel] 到Platform的数据必须与您的 [!DNL Mixpanel] 配置文件时区设置。 对数据时区所做的任何更改将仅适用于新事件，旧事件将保留在您之前指定的时区中。 [!DNL Mixpanel] 采用夏令时，并将相应地调整您的摄取时间戳。 欲了解时区如何影响数据的更多信息，请参见 [!DNL Mixpanel] 指南 [管理项目时区](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
 
-片刻后，正确的界面将更新为预览面板，让您能够在创建数据流之前检查架构。 完成后，选择 **[!UICONTROL 下一个]**.
+片刻后，正确的界面将更新为预览面板，允许您在创建数据流之前检查架构。 完成后，选择 **[!UICONTROL 下一个]**.
 
 ![配置](../../../../images/tutorials/create/mixpanel-export-events/authentication-configuration.png)
 
 ## 后续步骤
 
-按照本教程，您已建立与的连接 [!DNL Mixpanel] 帐户。 您现在可以继续下一教程和 [配置数据流以将分析数据引入Platform](../../dataflow/analytics.md).
+通过学习本教程，您已建立与的连接 [!DNL Mixpanel] 帐户。 您现在可以继续下一教程和 [配置数据流以将分析数据引入Platform](../../dataflow/analytics.md).
 
 ## 其他资源 {#additional-resources}
 
-以下部分提供了在使用时可以参考的其他资源 [!DNL Mixpanel] 源。
+以下各节提供了在使用时，您可以参考的其他资源 [!DNL Mixpanel] 源。
 
 ### 验证 {#validation}
 
-下面概述了验证是否成功连接 [!DNL Mixpanel] 来源和 [!DNL Mixpanel] 正在将事件摄取到Platform。
+下面概述了验证是否成功连接 [!DNL Mixpanel] 来源和 [!DNL Mixpanel] 事件正在被摄取到Platform。
 
-在Platform UI中，选择 **[!UICONTROL 数据集]** 以访问 [!UICONTROL 数据集] 工作区。 此 [!UICONTROL 数据集活动] 屏幕显示执行的详细信息。
+在Platform UI中，选择 **[!UICONTROL 数据集]** 从左侧导航栏访问 [!UICONTROL 数据集] 工作区。 此 [!UICONTROL 数据集活动] 屏幕显示执行的详细信息。
 
 ![数据集活动](../../../../images/tutorials/create/mixpanel-export-events/dataset-activity.png)
 
@@ -99,7 +99,7 @@ ht-degree: 11%
 
 ![预览数据集](../../../../images/tutorials/create/mixpanel-export-events/preview-dataset.png)
 
-您可以根据 [!DNL Mixpanel] > [!DNL Events] 页面。 请参阅 [[!DNL Mixpanel] 事件文档](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-) 了解更多信息。
+您可以根据 [!DNL Mixpanel] > [!DNL Events] 页面。 请参阅 [[!DNL Mixpanel] 事件文档](https://help.mixpanel.com/hc/en-us/articles/4402837164948-Events-formerly-Live-View-) 以了解更多信息。
 
 ![mixpanel-events](../../../../images/tutorials/create/mixpanel-export-events/mixpanel-events.png)
 
@@ -109,7 +109,7 @@ ht-degree: 11%
 
 >[!TIP]
 >
->参见 [“事件导出API”>“下载”](https://developer.mixpanel.com/reference/raw-event-export) 以了解有关API的更多信息。
+>请参阅 [事件导出API >下载](https://developer.mixpanel.com/reference/raw-event-export) 以了解有关API的更多信息。
 
 
 | 来源 | 类型 |
@@ -128,4 +128,4 @@ ht-degree: 11%
 
 ### 限制 {#limits}
 
-* 您每小时最多有100个并发查询和60个查询，如所示 [导出API速率限制](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).
+* 您每小时最多有100个并发查询和60个查询，如 [导出API速率限制](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints).

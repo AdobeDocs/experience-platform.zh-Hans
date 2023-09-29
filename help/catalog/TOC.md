@@ -6,7 +6,7 @@ feature: Catalog
 source-git-commit: f456b28016af6d2978933deac68f45c2f8d37f80
 workflow-type: tm+mt
 source-wordcount: '111'
-ht-degree: 22%
+ht-degree: 31%
 
 ---
 
@@ -31,8 +31,8 @@ ht-degree: 22%
    * [数据集概述](datasets/overview.md)
    * [数据集用户指南](datasets/user-guide.md)
    * [使用API创建和填充数据集](datasets/create.md)
-   * [为配置文件和标识启用数据集](datasets/enable-for-profile.md)
+   * [为配置文件和身份启用数据集](datasets/enable-for-profile.md)
    * [为配置文件更新启用数据集(upsert)](datasets/enable-upsert.md)
 * [数据湖中的隐私请求处理](privacy.md)
-* [API参考](https://www.adobe.io/experience-platform-apis/references/catalog/)
+* [API 参考](https://www.adobe.io/experience-platform-apis/references/catalog/)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

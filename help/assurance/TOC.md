@@ -5,7 +5,7 @@ breadcrumb-title: Assurance 指南
 user-guide-description: Adobe Experience Platform Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
 feature: Assurance
 source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '65'
 ht-degree: 100%
 
