@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据使用标签术语表
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 538c5e2c7ff3c684edf6db12087fdf0a58e40199
+source-git-commit: c55ad6c592be95b01cf7fe0b39635b478bc98be6
 workflow-type: tm+mt
-source-wordcount: '2185'
-ht-degree: 3%
+source-wordcount: '2250'
+ht-degree: 2%
 
 ---
 
@@ -73,6 +73,8 @@ ht-degree: 3%
 | 标签 | 定义 |
 | --- | --- |
 | **第三方** | 第三方数据是由第三方数据供应商提供给您的数据。 第三方数据供应商是与贵组织签订协议的实体，该协议授权您结合Platform访问、使用、显示和传输第三方数据。 |
+| **第三方扩充** | 第三方组织收集的数据与数据主体无直接关系。 标签应用于用于扩充第一方用户档案的第三方数据。 |
+| **第三方勘探** | 第三方组织收集的数据与数据主体无直接关系。 该标签应应用于漏斗顶部用于发现净新客户的第三方数据。 |
 
 ## 附录
 

@@ -5,10 +5,10 @@ title: 使用UI创建和编辑数据类型
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
+source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
 workflow-type: tm+mt
-source-wordcount: '1218'
-ht-degree: 0%
+source-wordcount: '1354'
+ht-degree: 5%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_datatype_filter"
 >title="标准或自定义数据类型过滤器"
->abstract="可用数据类型的列表会根据它们的创建方式进行预筛选。 选择单选按钮以在“标准”和“自定义”选项之间进行选择。 “标准”选项显示由Adobe创建的实体，“自定义”选项显示组织内创建的实体。 请参阅文档以了解有关创建和编辑数据类型的更多信息。"
+>abstract="根据如何创建可用的数据类型预先过滤可用的数据类型的列表。选中单选按钮可在“标准”与“自定义”选项之间选择。“标准”选项显示由 Adobe 创建的实体，而“自定义”选项显示在您的组织内创建的实体。请参阅文档以详细了解创建和编辑数据类型。"
 
 在Experience Data Model (XDM)中，数据类型是包含多个子字段的可重用字段。 虽然与架构字段组类似，因为它们允许一致地使用多字段结构，但数据类型更灵活，因为它们可以包含在架构结构中的任意位置，而字段组只能在根级别添加。
 
@@ -33,20 +33,21 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 ## 打开 [!DNL Schema Editor] （对于数据类型） {#data-type}
 
-在Platform UI中，选择 **[!UICONTROL 架构]** 在左侧导航中打开 [!UICONTROL 架构] 工作区，然后选择 **[!UICONTROL 数据类型]** 选项卡。 此时将显示可用数据类型的列表，包括由Adobe定义的类型以及您的组织创建的数据类型。
+在Platform UI中，选择 **[!UICONTROL 架构]** 在左侧导航中打开 [!UICONTROL 架构] 工作区，然后选择 **[!UICONTROL 数据类型]** 选项卡。 此时将显示可用数据类型的列表。 系统会根据数据类型的创建方式自动筛选数据类型列表。 默认设置显示由Adobe定义的数据类型。 您还可以筛选列表以显示您的组织创建的那些列表。
 
-![](../../images/ui/resources/data-types/data-types-tab.png)
+![此 [!UICONTROL 架构] 工作区，使用 [!UICONTROL 架构] 左侧导航栏和 [!UICONTROL 数据类型] 突出显示。](../../images/ui/resources/data-types/data-types-tab.png)
 
-在此，您有两个选项：
+在此处，您可以选择以下选项：
 
 - [创建新数据类型](#create)
+- [筛选数据类型](#filter)
 - [选择要编辑的现有数据类型](#edit)
 
 ### 创建新数据类型 {#create}
 
 从 **[!UICONTROL 数据类型]** 选项卡，选择 **[!UICONTROL 创建数据类型]**.
 
-![](../../images/ui/resources/data-types/create.png)
+![此 [!UICONTROL 架构] 工作区 [!UICONTROL 数据类型] 制表符 [!UICONTROL 创建数据类型] 突出显示。](../../images/ui/resources/data-types/create.png)
 
 此 [!DNL Schema Editor] 显示，在画布中显示新数据类型的当前结构。 在编辑器的右侧，您可以为数据类型提供显示名称和可选描述。 请确保为数据类型提供唯一且简洁的名称，以将其添加到架构时采用的方式进行识别。
 
@@ -56,17 +57,25 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 从此处，您可以跳转到 [下一节](#add-fields) 开始向新数据类型添加字段。
 
+### 筛选数据类型 {#filter}
+
+根据如何创建可用的数据类型预先过滤可用的数据类型的列表。选择单选按钮以选择 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 选项。 此 [!UICONTROL 标准] 选项显示由Adobe创建的实体以及 [!UICONTROL 自定义] 选项显示组织内创建的实体。
+
+![此 [!UICONTROL 数据类型] 选项卡 [!UICONTROL 架构] 工作区，使用 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 突出显示。](../../images/ui/resources/data-types/standard-and-custom-data-types.png)
+
 ### 编辑现有数据类型 {#edit}
 
 >[!NOTE]
 >
 >在启用了实时客户档案的架构中使用现有数据类型后，此后只能对该数据类型进行非破坏性更改。 请参阅 [模式演化规则](../../schema/composition.md#evolution) 以了解更多信息。
 
-只能编辑由您的组织定义的自定义数据类型。 要缩小显示的列表范围，请选择过滤器图标(![过滤器图标](../../images/ui/resources/data-types/filter.png))，显示用于过滤的控件 [!UICONTROL 所有者]. 选择 **[!UICONTROL 客户]** 以仅显示贵组织拥有的自定义数据类型。
+只能编辑由您的组织定义的自定义数据类型。 选择 **[!UICONTROL 自定义]** 以仅显示贵组织拥有的自定义数据类型。
 
-从列表中选择要编辑的数据类型以打开右边栏，显示数据类型的详细信息。 在右边栏中选择数据类型的名称，以在 [!DNL Schema Editor].
+从列表中选择要编辑的数据类型以打开右边栏，显示数据类型的详细信息。 您还可以从详细信息面板下载样例文件、复制JSON结构或将数据类型添加到包中。
 
-![](../../images/ui/resources/data-types/edit.png)
+在右边栏中选择数据类型的名称，以在 [!DNL Schema Editor].
+
+![此 [!UICONTROL 数据类型] 选项卡 [!UICONTROL 架构] 工作区，具有数据类型， [!UICONTROL 自定义] 和数据类型 [!UICONTROL 名称] 突出显示。](../../images/ui/resources/data-types/edit.png)
 
 ## 向数据类型添加字段 {#add-fields}
 

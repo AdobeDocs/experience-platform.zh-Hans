@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构字段组
 description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
+source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
 workflow-type: tm+mt
-source-wordcount: '901'
-ht-degree: 1%
+source-wordcount: '985'
+ht-degree: 8%
 
 ---
 
@@ -15,8 +15,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_fieldgroup_filter"
->title="标准或自定义字段组筛选器"
->abstract="可用字段组的列表会根据它们的创建方式进行预筛选。 选择单选按钮以在“标准”和“自定义”选项之间进行选择。 “标准”选项显示由Adobe创建的实体，“自定义”选项显示组织内创建的实体。 请参阅文档以了解有关创建和编辑字段组的更多信息。"
+>title="标准或自定义字段组过滤器"
+>abstract="根据如何创建可用的字段预先过滤可用的字段的列表。选中单选按钮可在“标准”与“自定义”选项之间选择。“标准”选项显示由 Adobe 创建的实体，而“自定义”选项显示在您的组织内创建的实体。请参阅文档以详细了解创建和编辑字段组。"
 
 在Experience Data Model (XDM)中，架构字段组是可重复使用的组件，这些组件定义一个或多个实施某些功能（如个人详细信息、酒店偏好设置或地址）的字段。 字段组旨在作为实现兼容类的架构的一部分包含。
 
@@ -45,6 +45,12 @@ Adobe Experience Platform提供了许多标准字段组，涵盖广泛的营销�
 此 [!DNL Schema Editor] 此时会重新显示，左侧边栏中列出了新的字段组。 由于这是一个全新的字段组，它当前不向架构提供任何字段，因此画布保持不变。 您现在可以开始 [向字段组添加字段](#add-fields).
 
 ![](../../images/ui/resources/field-groups/field-group-added.png)
+
+## 筛选字段组 {#filter}
+
+根据如何创建可用的字段预先过滤可用的字段的列表。默认设置显示由Adobe定义的字段组。 但是，您还可以筛选列表以显示由您的组织创建的列表。 选择单选按钮以选择 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 选项。 此 [!UICONTROL 标准] 选项显示由Adobe创建的实体以及 [!UICONTROL 自定义] 选项显示组织内创建的实体。
+
+![此 [!UICONTROL 字段组] 选项卡 [!UICONTROL 架构] 工作区，使用 [!UICONTROL 标准] 和 [!UICONTROL 自定义] 突出显示。](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
 
 ## 编辑现有字段组 {#edit}
 
