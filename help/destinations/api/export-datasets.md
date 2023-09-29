@@ -4,9 +4,9 @@ title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 28e07c464eb05ba7c20b132d430fccac15d8806e
+source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
 workflow-type: tm+mt
-source-wordcount: '3526'
+source-wordcount: '3550'
 ht-degree: 4%
 
 ---
@@ -55,7 +55,7 @@ ht-degree: 4%
 
 ### 所需权限 {#permissions}
 
-要导出数据集，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要导出数据集，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 查看数据集]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要确保您具有导出数据集的必要权限并且目标支持导出数据集，请浏览目标目录。 如果目标具有 **[!UICONTROL 激活]** 或 **[!UICONTROL 导出数据集]** 则您具有相应的权限。
 
@@ -1149,6 +1149,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ![显示导出数据集工作流中步骤4的图表](../assets/api/export-datasets/export-datasets-api-workflow-create-target-connection.png)
 
 接下来，您需要创建一个目标连接，用于存储数据集的导出参数。 导出参数包括位置、文件格式、压缩和其他详细信息。 请参阅 `targetSpec` 目标的连接规范中提供的属性，用于了解每个目标类型支持的属性。 请参考下面的选项卡 `targetSpec` 所有受支持目标的属性。
+
+>[!WARNING]
+>
+>仅在压缩模式下支持导出到JSON文件。 导出到 [!DNL Parquet] 文件在压缩和未压缩模式下受支持。
 
 >[!BEGINTABS]
 

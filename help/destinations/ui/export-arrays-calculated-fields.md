@@ -1,11 +1,11 @@
 ---
-title: （Beta版）使用计算字段导出平面文件中的阵列
+title: （Beta版）使用计算字段导出平面架构文件中的阵列
 type: Tutorial
-description: 了解如何将阵列和计算字段从Real-Time CDP导出到基于配置文件的批处理目标。
+description: 了解如何使用计算字段将平面架构文件中的阵列从Real-Time CDP导出到云存储目标。
 badge: "Beta 版"
-source-git-commit: 79924b9a7d5114c94a004f99fb194102845b2127
+source-git-commit: 77fd0ace252bae66478f73a1dc4b7d4a3ccb867d
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1207'
 ht-degree: 2%
 
 ---
@@ -17,15 +17,8 @@ ht-degree: 2%
 >id="platform_destinations_export_arrays_flat_files"
 >title="(Beta)导出阵列支持"
 >abstract="将int、字符串或布尔值的简单数组从Experience Platform导出到所需的云存储目标。 存在一些限制。 查看文档以了解大量示例和支持的函数。"
-
-<!--
-
-additional links for contextualhelp:
-
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="Examples"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="Known limitations"
-
--->
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
 
 >[!AVAILABILITY]
 >
