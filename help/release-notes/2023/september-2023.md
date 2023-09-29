@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
-source-git-commit: 1bfd5e05642e0ac8f80af5502878eaee0b33c704
+source-git-commit: 05136ca1a44fa0ecbf2fd9941d047c3a0899f2d1
 workflow-type: tm+mt
-source-wordcount: '907'
-ht-degree: 32%
+source-wordcount: '1232'
+ht-degree: 30%
 
 ---
 
@@ -20,6 +20,7 @@ Adobe Experience Platform中的新增功能：
 
 - [警报](#alerts)
 - [数据收集](#data-collection)
+- [目标](#destinations)
 - [身份服务](#identity-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
@@ -56,6 +57,45 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 {style="table-layout:auto"}
 
 要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+
+**新增或更新目标**{#new-updated-destinations}
+
+| 目标 | 新增还是更新 | 描述 |
+| ----------- |----------------|----------- |
+| [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | 新增 | [[!DNL HubSpot]](https://www.hubspot.com) 是一个CRM平台，它提供了连接营销、销售、内容管理和客户服务所需的所有软件、集成和资源。 它允许您在一个CRM平台上连接数据、团队和客户。 |
+| [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | 更新 | 添加了对的支持 [!DNL Dynamics 365] 未在的默认解决方案中创建的自定义字段的自定义字段前缀 [!DNL Dynamics 365]. 新的输入字段， **[!UICONTROL 自定义前缀]**，已添加在 [填写目标详细信息](#destination-details) 步骤。 |
+
+{style="table-layout:auto"}
+
+<!-- 
+
+
+Add these to release notes as they go out
+
+| [[!DNL Qualtrics]] | New | Use the aggregation of multiple sources of operational data in Adobe Experience Platform as an input in Qualtrics Experience ID to better understand your customers and enable targeted outreach to close the gap when it comes to understanding intent, emotion and experience drivers. | 
+| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | New | Activate audiences previously onboarded to [!DNL LiveRamp] to premium publishers across mobile, web, display, and connected TV mediums. <br> After onboarding audiences to your [!DNL LiveRamp] account through the [LiveRamp - Onboarding](liveramp-onboarding.md) connection, use the new [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) connection to activate the audiences to downstream destinations.  |
+| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Updated | The Experience Cloud Audiences destination is now generally available. Use this destination to activate audiences from Real-Time CDP to Audience Manager and Adobe Analytics. You need an Audience Manager license to send audiences to Adobe Analytics. |
+
+-->
+
+**新增或更新的功能**{#destinations-new-updated-functionality}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| Real-Time CDP中的数据导出 | 此 [数据集导出](../../destinations/ui/export-datasets.md) 功能现已正式发布。 请参阅 [您可以根据Experience Platform应用程序导出哪些数据集](../../destinations/ui/export-datasets.md#datasets-to-export) 您购买了，并查看 [导出数据集的护栏](/help/destinations/guardrails.md#dataset-exports). |
+| （测试版）支持导出数组类型对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关中功能的更多信息，请参阅 [文档](../../destinations/ui/export-arrays-calculated-fields.md). |
+| Destination SDK中的动态下拉列表选择器 | 通过Destination SDK创建目标时，您现在可以使用 [动态下拉列表选择器](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) 使用从API检索的值填充下拉选择器的字段。 |
+
+**修复和增强** {#destinations-fixes-and-enhancements}
+
+- 利用 [监控透明度](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) 现在适用于企业目标([HTTP API](../../destinations/catalog/streaming/http-destination.md)， [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) 和 [Azure事件中心](../../destinations/catalog/cloud-storage/azure-event-hubs.md))，以监控中的激活指标和状态 [数据流详细信息视图](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page)，并通过错误代码和故障诊断消息了解其他信息。
+- 当您更新映射到受众的名称时 [Google广告管理器](../../destinations/catalog/advertising/google-ad-manager.md)， [Google显示和视频360](../../destinations/catalog/advertising/google-dv360.md)以及使用的其他目标 [受众更新模板](../../destinations/destination-sdk/metadata-api/update-audience-template.md)，这些名称更改现在会反映在目标的下游。
+
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## 身份服务 {#identity-service}
 
