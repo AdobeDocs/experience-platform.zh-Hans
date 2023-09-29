@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何实时地为客户营造个性化体验。
-source-git-commit: 65abbb4dde5b83f597a3a5bfd96ce7c081c88275
+source-git-commit: 73f10455233be9cc3f9f15a0fe5f0398ed987be9
 workflow-type: tm+mt
-source-wordcount: '260'
-ht-degree: 30%
+source-wordcount: '281'
+ht-degree: 27%
 
 ---
 
@@ -66,7 +66,11 @@ ht-degree: 30%
          * [活动](./governance-privacy-security/audit-logs/api/events.md)
          * [导出](./governance-privacy-security/audit-logs/api/export.md)
    * [数据加密](./governance-privacy-security/encryption.md)
-   * [客户管理的密钥](./governance-privacy-security/customer-managed-keys.md)
+   * 客户管理的密钥 {#customer-managed-keys}
+      * [客户管理的密钥](./governance-privacy-security/customer-managed-keys/overview.md)
+      * [配置Azure密钥库](./governance-privacy-security/customer-managed-keys/azure-key-vault-config.md)
+      * [使用API设置CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
+      * [使用用户界面设置CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
 * 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
    * [许可证使用情况仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)

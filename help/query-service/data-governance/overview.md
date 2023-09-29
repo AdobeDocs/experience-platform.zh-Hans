@@ -2,7 +2,7 @@
 title: 查询服务中的数据治理
 description: 此概述涵盖Experience Platform查询服务中的数据治理的主要元素。
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c3ce6548e18078e604ecd5db276eb162935f6181
+source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
 workflow-type: tm+mt
 source-wordcount: '3132'
 ht-degree: 1%
@@ -137,7 +137,7 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 查询服务数据合规性确保数据始终加密。 传输中的数据始终符合HTTPS标准，静态数据在Azure Data Lake存储中使用系统级密钥进行加密。 请参阅相关文档 [如何在Adobe Experience Platform中加密数据](../../landing/governance-privacy-security/encryption.md) 以了解更多信息。 有关如何在Azure Data Lake Storage中加密静态数据的详细信息，请参阅 [Azure官方文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅 [客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys.md) 了解如何为Adobe Experience Platform中存储的数据设置自己的加密密钥。
+传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅 [客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys/overview.md) 了解如何为Adobe Experience Platform中存储的数据设置自己的加密密钥。
 
 
 ## 审核 {#audit}

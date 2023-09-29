@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: Adobe Experience Platform 2022年10月版发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: e1deeadb98240f885e9dc95ecbc58ae48049a190
+source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
 workflow-type: tm+mt
 source-wordcount: '1159'
-ht-degree: 26%
+ht-degree: 34%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 26%
 
 存储在Adobe Experience Platform上的所有数据都使用系统级别密钥静态加密。 如果您使用的是基于Platform构建的应用程序，则现在可以选择改用您自己的加密密钥，从而使您能够更好地控制数据安全。
 
-有关更多详细信息，请参阅 [客户管理的密钥](../../landing/governance-privacy-security/customer-managed-keys.md) 以了解有关该功能的详细信息。
+有关更多详细信息，请参阅 [客户管理的密钥](../../landing/governance-privacy-security/customer-managed-keys/overview.md) 以了解有关该功能的详细信息。
 
 ## 数据收集 {#data-collection}
 
@@ -48,7 +48,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 功能 | 描述 |
 | --- | --- |
 | (Beta)数据集导出 | 此 [数据集导出测试版功能](/help/destinations/ui/export-datasets.md) 用于导出第一代数据(如 [Real-time Customer Data Platform产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html))，通过Adobe Experience Platform中的目标用户界面连接到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform中获取到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
-| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform之外的文件时，您可以受益于增强的自定义功能： <br><ul><li>其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).</li><li>能够通过设置导出文件中的自定义文件标头 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表列出的六个新的测试版云存储卡支持此功能。 |
+| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform之外的文件时，您可以受益于增强的自定义功能： <br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> <br> 下表列出的六个新的测试版云存储卡支持此功能。 |
 
 {style="table-layout:auto"}
 
@@ -59,9 +59,9 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line是一个连接人员、服务和信息的流行通信平台，已从聊天应用程序发展为娱乐、社交和日常活动的中心。 |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365是一个基于云的业务应用程序平台，它将企业资源规划(ERP)、客户关系管理(CRM)与工作效率应用程序和AI工具相结合，以实现端到端更平稳、更可控的运营、更好的增长潜力和更低的成本。 |
 | [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | 此 [!DNL (Beta) Adobe Commerce] 目标连接器允许您选择一个或多个Real-Time CDP区段来激活您的 [!DNL Adobe Commerce] 帐户，为购物者提供动态的个性化体验。 范围 [!DNL Adobe Commerce]之后，您可以选择这些Real-Time CDP区段来对购物车中的独特优惠进行个性化，例如“购买2 get 1免费”。 您还可以显示主页横幅，并通过促销优惠修改产品定价，所有这些都可根据Adobe Real-Time CDP区段进行自定义。 |
-| [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | 创建到以下对象的实时出站连接： [!DNL Azure Data Lake Storage Gen2] 将数据文件从Adobe Experience Platform定期导出到您自己的存储位置。 这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
-| [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，允许您访问安全的基于云的文件存储设施，以将文件导出到Platform之外。 这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
-| [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | 创建到以下对象的实时出站连接： [!DNL Google Cloud Storage] 定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。 这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | 创建通往 [!DNL Azure Data Lake Storage Gen2] 的实时出站连接以定期将数据文件从 Adobe Experience Platform 导出到您自己的存储位置。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
+| [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | 创建通往 [!DNL Google Cloud Storage] 的实时出站连接以定期将数据文件从 Adobe Experience Platform 导出到您自己的存储桶中。这个新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 | [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) | Beta版参与者现在可以看到两项 [!DNL Amazon S3] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 | [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | Beta版参与者现在可以看到两项 [!DNL Azure Blob] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
 | [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | Beta版参与者现在可以看到两项 [!DNL SFTP] 在目标目录中并排显示目标卡片。 新的测试版目标提供了增强的文件导出功能并支持数据集导出。 |
