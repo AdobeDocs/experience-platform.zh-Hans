@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c57845ab2bd9ce16fb34b6babfa90a393b101409
+source-git-commit: b20e5e52b9d7568f4e20b94064819d0bebe4c236
 workflow-type: tm+mt
-source-wordcount: '1308'
-ht-degree: 28%
+source-wordcount: '2149'
+ht-degree: 26%
 
 ---
 
@@ -20,9 +20,14 @@ Adobe Experience Platform中的新增功能：
  Experience Platform 中现有功能的更新：
 
 - [警报](#alerts)
+- [仪表板](#dashboards)
 - [数据收集](#data-collection)
+- [数据管理](#data-governance)
+- [数据卫生](#hygiene)
 - [目标](#destinations)
+- [Experience Data Model (XDM)](#xdm)
 - [身份服务](#identity-service)
+- [查询服务](#query-service)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
@@ -44,6 +49,18 @@ Experience Platform允许您订阅各种Platform活动的基于事件的警报�
 
 要了解有关警报的更多信息，请阅读 [[!DNL Observability Insights] 概述](../../observability/home.md).
 
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供多个 [!DNL dashboards] 通过它可以查看有关您组织的数据的重要信息，如在每日快照期间捕获的数据。
+
+| 功能 | 描述 |
+| --- | --- |
+| [许可证使用情况仪表板改进](../../dashboards/guides/license-usage.md) | 通过改进的有关您组织许可证使用的报告和关键量度可视化图表，维护对您的许可证协议的控制。 这些改进针对您购买的所有Experience Platform产品提供了许可证使用量度的高度粒度。 |
+
+{style="table-layout:auto"}
+
+要了解有关许可证使用情况仪表板的更多信息，请参阅 [许可证使用情况仪表板概述](../../dashboards/guides/destinations.md).
+
 ## 数据收集 {#data-collection}
 
 Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
@@ -58,6 +75,35 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 {style="table-layout:auto"}
 
 要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
+
+## 数据治理 {#data-governance}
+
+Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在 Experience Platform 的各个层面中发挥着关键作用，包括编目、数据谱系、数据使用标记、数据访问策略和营销操作数据访问控制。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 适用于第三方数据的新合作伙伴生态系统标签 | 提供了用于第三方扩充和发现潜在客户的新数据使用标签。 请参阅 [关于合作伙伴生态系统标签的文档](../../data-governance/labels/reference.md#partner) 以了解更多信息。 |
+
+{style="table-layout:auto"}
+
+要详细了解数据治理，请阅读[数据治理概述](../../data-governance/home.md)。
+
+## 数据卫生 {#hygiene}
+
+Experience Platform提供了一套数据卫生功能，允许您通过以编程方式删除消费者记录和数据集来管理存储的数据。 使用 [!UICONTROL 数据生命周期] 在UI中的工作区或通过调用数据卫生API，您可以有效地管理数据存储。 使用这些功能可确保按预期使用信息，在不正确的数据需要修复时更新信息，并在组织策略认为必要时删除信息。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!BADGE Beta]{type=Informative} | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
+| 数据集过期时间 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 请参阅 [数据集过期文档](../../hygiene/ui/dataset-expiration.md) 以了解更多信息。 |
+
+{style="table-layout:auto"}
+
+有关Platform数据卫生功能的详细信息，请参阅 [数据卫生概述](../../hygiene/home.md).
 
 ## 目标 {#destinations}
 
@@ -98,6 +144,23 @@ Add these to release notes as they go out
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
+## Experience Data Model (XDM) {#xdm}
+
+XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 已将快速操作添加到架构编辑器 | 新的快速操作已添加到架构编辑器的画布中。 您现在可以直接从编辑器中复制JSON结构或删除架构。<br>![架构编辑器中的快速操作。](../2023/assets/schema-editor-copy-json.png "突出显示包含更多和复制到JSON的架构编辑器。"){width="100" zoomable="yes"} |
+| 按自定义或标准创建者筛选XDM资源 | 可用架构、字段组、数据类型和类的列表现在会根据其创建方法进行预筛选。 这允许您根据资源是自定义构建还是由Adobe创建来筛选资源。<br>![架构工作区中的标准筛选器和自定义筛选器。](../2023/assets/standard-and-custom-classes.png "突出显示具有标准和自定义筛选器的架构工作区。"){width="100" zoomable="yes"} <br> 请参阅 [创建和编辑资源文档](../../xdm/ui/resources/classes.md#filter.md) 以了解更多信息。 |
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 更新了架构创建工作流 | 已实施新的模式创建工作流以简化该流程。 <br> ![新的架构创建UI。](../2023/assets/schema-class-options.png "新的架构详细信息选择器突出显示。"){width="100" zoomable="yes"} <br> 请参阅 [模式创建文档](../../xdm/ui/resources/schemas.md#create) 以了解更多信息。 |
+
 ## 身份服务 {#identity-service}
 
 Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
@@ -112,6 +175,21 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 {style="table-layout:auto"}
 
 要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集： [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 日志筛选UI更新 | 改进的查询日志过滤改进了用户生成的用于监控、管理和故障排除的日志的可见性。 您可以根据各种设置筛选查询日志列表。 <br> ![查询日志筛选器设置。](../2023/assets/log-filter-settings.png "新的查询日志筛选器会突出显示。"){width="100" zoomable="yes"}  <br> 请参阅 [查询日志文档](../../query-service/ui/query-logs.md#filter-logs) 以了解更多信息。 |
+| 多个查询编辑器UI更新 | 现在，您可以在查询编辑器中执行多个顺序查询，或者编写多个查询并按顺序执行所有查询。 要增加查询执行的灵活性，您可以突出显示所选查询，并选择该特定查询独立于其他查询运行。 请参阅 [查询编辑器UI指南](../../query-service/ui/user-guide.md#execute-multiple-sequential-queries) 以了解更多信息。 |
+
+{style="table-layout:auto"}
+
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
 
 ## Segmentation Service {#segmentation}
 
