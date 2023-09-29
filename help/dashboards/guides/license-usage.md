@@ -3,80 +3,144 @@ keywords: Experience Platform；用户界面；UI；自定义；许可证使用�
 title: 许可证使用情况仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
-exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 6ff198d1b4b567667eb3c74a2c6393ee3dc9ee7d
+source-git-commit: 5b3ec9aca773cf4a1ba0d4c7e432949769b942c1
 workflow-type: tm+mt
-source-wordcount: '935'
-ht-degree: 2%
+source-wordcount: '1987'
+ht-degree: 1%
 
 ---
 
 # 许可证使用情况仪表板 {#license-usage-dashboard}
 
-Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪表板可以查看有关您组织的许可证使用情况的重要信息，在每日快照期间捕获了这些信息。 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseUsage"
+>title="许可证使用情况仪表板"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您对每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
 
-有关Platform UI的概述，请访问 [Experience Platform用户界面指南](../../landing/ui-guide.md).
+您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
-## 许可证使用情况仪表板数据
+许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买产品的使用情况量度、所有生产或开发沙盒中量度的综合使用情况，以及特定沙盒的使用情况量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：实时客户数据配置文件、Adobe Journey Optimizer和Customer Journey Analytics。
 
-许可证使用情况仪表板显示贵组织用于Experience Platform的许可证相关数据的快照。 仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板没有实时更新。
+本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
+
+有关Platform UI的概述，请参阅 [Experience Platform用户界面指南](../../landing/ui-guide.md).
+
+## [!UICONTROL 许可证使用情况] 仪表板数据
+
+此 [!UICONTROL 许可证使用情况] 功能板显示您已购买的所有Experience Platform产品的列表。 从该列表中，您可以找到您组织的许可证相关数据的快照，以便Experience Platform在任何关联的沙盒中。
+
+此仪表板中的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，并且仪表板没有实时更新。
 
 >[!NOTE]
 >
 >自拍摄快照以来对数据所做的任何更改或更新都不会反映在功能板中，直到拍摄下一个快照为止。
 
-## 浏览许可证使用情况仪表板
+## 浏览许可证使用情况仪表板 {#explore}
 
-要导航到Platform UI中的许可证使用情况仪表板，请选择 **[!UICONTROL 许可证使用情况]** 在左边栏中。 这将打开 **[!UICONTROL 概述]** 选项卡显示仪表板。
+要导航到Platform UI中的许可证使用情况仪表板，请选择 **[!UICONTROL 许可证使用情况]** 在左边栏中。 此 [!UICONTROL 概述] 选项卡打开，显示可用产品的列表。
 
 >[!NOTE]
 >
->默认情况下，许可证使用情况仪表板未启用。 必须向用户授予“查看许可证使用情况仪表板”权限才能查看仪表板。 有关授予查看许可证使用仪表板的访问权限的步骤，请参阅 [仪表板权限指南](../permissions.md).
+>默认情况下，许可证使用情况仪表板未启用。 必须向用户授予“查看许可证使用情况仪表板”权限，用户才能查看仪表板。 有关授予查看许可证使用仪表板的访问权限的步骤，请参阅 [仪表板权限指南](../permissions.md).
 
-![许可证使用情况仪表板概述选项卡。](../images/license-usage/dashboard-overview.png)
+![许可证使用情况仪表板概述选项卡，左侧导航侧边栏中突出显示了许可证使用情况。](../images/license-usage/dashboard-overview.png)
 
-### 选择沙盒
+## [!UICONTROL Overview 选项卡] {#overview-tab}
 
-要选择要在仪表板中查看的沙盒，请选择 [!UICONTROL 生产] 或 [!UICONTROL 开发]. 沙盒名称旁边的单选按钮表示选定的沙盒。
+此仪表板以表格式显示您的所有许可Adobe Experience Platform产品，包括加载项。 该表提供了有关所有可用配置文件中许可证使用情况的关键信息。
+
+| 列名称 | 描述 |
+|---|---|
+| **[!UICONTROL 产品]** | 由您的组织许可的Adobe解决方案。 |
+| **[!UICONTROL 主要指标]** | 用于在内跟踪该产品的主要量度。 |
+| **[!UICONTROL 许可证金额]** | 产品许可协议中约定的主要量度最大量的约定值。 |
+| **[!UICONTROL 用法]** | 您使用的主要量度的数量。 此值提供该量度在所有沙盒（生产沙盒或开发沙盒）中的总使用情况。 |
+| **[!UICONTROL 用法 %]** | 根据您的许可证数量使用的主要量度的百分比。 |
+
+>[!NOTE]
+>
+>增加至 [!UICONTROL 许可证金额] 因此，可以将加载项添加到 [!UICONTROL 许可证金额] 基础产品，例如实时客户数据配置文件、Adobe Journey Optimizer和Customer Journey Analytics。 通过基础产品跟踪该许可数量（加载项后）的使用情况。 例如，如果您购买一包5个沙盒，则数量5将添加到基础产品的数量。在这种情况下，加载项会显示 [!UICONTROL 许可证金额] 其中，且该加载项的使用是“空白的”，因为使用情况是通过基本产品进行跟踪的。
+
+该表指示了每个产品的主要量度，因为每个产品都可以跟踪大量量度。
+
+## [!UICONTROL 摘要] 选项卡 {#summary-tab}
+
+要查看有关您的产品许可证使用情况的更多量度和详细分析，请从列表中选择产品名称。 此 [!UICONTROL 摘要] 此时会出现该产品的视图。 所有可用量度均显示在 [!UICONTROL 摘要] 选项卡。 可用的量度取决于许可的产品。 此视图提供 **跨所有生产或开发沙盒的所有量度的综合视图**. 为生产沙盒和开发沙盒提供相同级别的分析。
+
+![显示产品所有可用量度的平台产品的摘要视图。](../images/license-usage/summary-tab.png)
+
+在摘要选项卡上，该表包括 [!UICONTROL 量度] 列。 这些易于用户识别的描述指示用于该类型沙盒的所有量度。
+
+### 选择沙盒 {#select-sandbox}
+
+要更改生产和开发沙盒类型之间的视图，请选择 [!UICONTROL 生产沙盒] 或 [!UICONTROL 开发沙盒]. 沙盒名称旁边的单选按钮表示所选的沙盒类型。
 
 沙盒的使用情况报告对于同一类型的所有沙盒是累计的。 换句话说，选择 [!UICONTROL 生产] 或 [!UICONTROL 开发] 分别提供所有生产沙盒或开发沙盒的使用情况报表。
 
-![突出显示沙盒选择器的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-sandbox-old.png)
+![突出显示了生产沙盒和开发沙盒的Platform产品的摘要视图。](../images/license-usage/summary-tab-sandboxes.png)
 
 >[!WARNING]
 >
->必须在沙盒级别指定查看许可证使用情况仪表板的权限。 这意味着必须将查看仪表板的权限添加到每个单独的沙盒中。 此限制将在未来版本中解决。 同时，提供以下解决方法：
+>必须在沙盒级别指定查看许可证使用情况仪表板的权限。 向每个沙盒添加权限，以便在功能板中查看它们。 此限制将在未来版本中解决。 同时，提供以下解决方法：
 >
 >1. 在Adobe Admin Console中创建产品配置文件。
 >2. 在沙盒类别中的权限下，添加您希望在许可证使用情况仪表板中查看的所有沙盒。
 >3. 在“用户仪表板权限”类别下，添加“查看许可证使用情况仪表板”权限。
 
-### 选择日期范围
+## 此 [!UICONTROL 详细信息] 选项卡 {#details-tab}
 
-选择沙盒后，您可以使用日期范围下拉列表选择要显示在仪表板中的时间段。 提供了多个选项，包括最近30天的默认值。
+查看 **来自特定沙盒的特定使用量度**，导航到 [!UICONTROL 详细信息] 选项卡。 此 [!UICONTROL 详细信息] 选项卡显示“生产”或“开发”沙盒中的所有可用沙盒。
 
-![突出显示日期范围下拉列表的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-date-range-old.png)
+![许可证使用情况仪表板的详细信息选项卡。](../images/license-usage/details-tab.png)
+
+从该视图中，您可以选择 ![检查图标。](../images/license-usage/inspect-icon.png) 在沙盒名称旁边，可查看该量度的可视化图表。 此时将打开一个对话框，其中包含该量度的可视化图表。
+
+### 可视化图表 {#visualizations}
+
+每个可视化小组件包括以下方面：
+
+- 跟踪量度随时间变化的折线图
+- 折线图的键
+- 沙盒名称
+- 用于调整折线图时段的下拉菜单
+
+线形图将贵组织的使用量数字与贵组织许可的总可用量进行比较，并提供总使用量的百分比。
+
+![量度可视化。](../images/license-usage/visualization.png)
+
+可以从下拉菜单中调整分析的回顾时间段。 过去30天的默认值
+
+要选择日期范围，您可以使用日期范围下拉菜单选择要显示在仪表板中的时间段。 提供了多个选项，包括最近30天的默认值。
+
+![可视化对话框，其中突出显示了日期范围下拉列表。](../images/license-usage/date-range.png)
 
 您还可以选择 **[!UICONTROL 自定义日期]** 以选择显示的时间段。
 
-![突出显示了自定义日期范围选项的许可证使用情况仪表板概述选项卡。](../images/license-usage/select-custom-date-old.png)
-
-## 小组件
-
-许可证使用情况仪表板由小组件组成，这些小组件显示只读量度，提供有关您组织的许可证使用情况的重要信息。 可见的量度取决于贵组织的特定许可(请参阅 [可用量度](#available-metrics) 部分（以了解详细信息）。
-
-每个小组件显示一个线形图，将贵组织的实际数量与贵组织许可的总可用数量进行比较，并提供总使用量的百分比。
-
-![突出显示了“许可证使用情况”功能板“概述”选项卡，其中显示了示例许可证使用情况量度构件的线形图。](../images/license-usage/widgets-old.png)
+![突出显示了自定义日期范围选项的许可证使用情况仪表板概述选项卡。](../images/license-usage/custom-date-range.png)
 
 ## 可用量度
 
-许可证使用情况仪表板报告四个关键量度，后续版本中将添加更多量度。 可用的量度包括：
+许可证使用情况仪表板报告适用于组织中多个产品的多个唯一量度。 可用的量度包括：
 
-* [!UICONTROL 可寻址受众]
-* [!UICONTROL 平均配置文件丰富度]
-* [!UICONTROL 每个分段扫描的数据比率]
-* [!UICONTROL 已使用的存储总数]
+| 量度 | 描述 |
+|---|---|
+| [!UICONTROL 数据导出] | 可在一年内（直接或间接）导出到任何非Adobe解决方案的数据集总大小。 |
+| [!UICONTROL AMM模型数] | 机器学习模型(内置Adobe Mix Modeler)的计数，用于根据您的投资测量和/或预测指定的结果。 |
+| [!UICONTROL 数据湖存储] | Adobe Experience Platform中分析数据存储所使用的数量。 |
+| [!UICONTROL 计算属性] | 汇总的配置文件行为数据的总数。 汇总的个人资料行为数据基于转换为个人资料属性的体验事件，并可包含在人员个人资料或商业人员个人资料中。 |
+| [!UICONTROL 相似受众] | 通过模拟现有消费者受众以标识与现有消费者受众类似的人员配置文件而生成的受众计数。 |
+| [!UICONTROL 可寻址受众] | 您的业务受众权利和消费者受众权利的总和。 消费者受众定义为销售订单上标识为“消费者受众”的人员配置文件数。 业务受众定义为销售订单上标识为“业务受众”的业务人员个人资料数。 |
+| [!UICONTROL 沙盒数] | 访问Adobe Experience Platform隔离数据和操作的任何Adobe按需服务的实例中的逻辑分隔计数。 |
+| [!UICONTROL 平均配置文件丰富度] | Hub Profile Service中存储的所有生产数据在任何时间点之和，除以授权业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度] 是一项共享功能。 |
+| [!UICONTROL 流式分段包数] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
+| [!UICONTROL 消费者受众] | 销售订单上标识为“消费者受众”的人员配置文件数。 |
+| [!UICONTROL CJA可用行] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
+| [!UICONTROL 包的配置文件丰富度] | 每个其他配置文件丰富度包的授权平均配置文件丰富度将增加25 KB。 |
+| [!UICONTROL Adhoc Query Service用户包] | 一个附加功能，用于将您的授权并发查询服务用户权利增加5个额外的并发查询服务用户，每个包另加1个并发运行即席查询。 可以许可多个其他Ad Hoc Query用户包。 |
+| [!UICONTROL 可参与受众] | 此量度是指可参与用户档案的受众。 可启用的用户档案是代表个人的信息记录，并在用户档案服务中显示。 这些记录是您在过去12个月内尝试使用Journey Optimizer的创作、决策、交付、实验或编排功能接触的用户档案。 |
+| [!UICONTROL 查询服务计算小时数] | 测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
+
+<!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品描述文档：
 
@@ -95,6 +159,6 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过该仪
 
 ## 后续步骤
 
-阅读本文档后，您可以找到许可证使用情况仪表板并选择要查看的沙盒。 您还可以根据贵组织已购买的许可协议，查找有关贵组织可用量度的更多信息。
+阅读本文档后，您可以找到许可证使用情况仪表板，并查看每个已购产品、所有生产或开发沙盒以及特定沙盒的使用量度。 您可以根据贵组织购买的许可协议，查找有关贵组织可用量度的更多信息。
 
 要了解有关Experience PlatformUI中可用的其他功能的更多信息，请参阅 [Platform UI指南](../../landing/ui-guide.md).
