@@ -1,10 +1,10 @@
 ---
 title: 通过潜在客户发掘用例吸引和获得新客户
 description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持实现的潜在客户发掘用例吸引和获得新客户。
-source-git-commit: 5352b461be3684ac4fe1703c916b9ec59bd14af1
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '1935'
-ht-degree: 99%
+source-wordcount: '1953'
+ht-degree: 98%
 
 ---
 
@@ -40,6 +40,12 @@ ht-degree: 99%
 4. 作为&#x200B;**客户**，您可以从潜在客户配置文件列表中构建重点受众。
 5. 作为&#x200B;**客户**，您将潜在客户受众激活到接受潜在客户列表中可用的标识的目标。
 6. 如果需要，请与&#x200B;**数据合作伙伴**&#x200B;合作，最终将受众激活到所需的付费媒体目标。
+
+## 视频演练 {#video-walkthrough}
+
+观看下面的视频教程，逐步了解如何联系和吸引潜在受众：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3423071/?learn=on)
 
 ## 如何实现用例：分步说明 {#step-by-step-instructions}
 

@@ -1,10 +1,10 @@
 ---
 title: 使用合作伙伴辅助的访客识别使现场体验个性化
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
-source-git-commit: 9d7e8ef99a42e804896f5c9befcf98bb1c010606
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '2530'
-ht-degree: 100%
+source-wordcount: '2548'
+ht-degree: 99%
 
 ---
 
@@ -49,6 +49,12 @@ ht-degree: 100%
    * [边缘分段](/help/segmentation/ui/edge-segmentation.md)
    * [边缘个性化目标](/help/destinations/destination-types.md#edge-personalization-destinations)
    * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)（或您选择的个性化平台。本用例教程重点介绍 Adobe Target 作为个性化引擎）
+
+## 视频演练 {#video-walkthrough}
+
+查看下面的视频教程，逐步了解如何为未知访客提供个性化的现场体验：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3423076/?learn=on)
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 

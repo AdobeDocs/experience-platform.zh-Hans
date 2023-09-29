@@ -3,9 +3,9 @@ title: （Beta版）使用计算字段导出平面架构文件中的阵列
 type: Tutorial
 description: 了解如何使用计算字段将平面架构文件中的阵列从Real-Time CDP导出到云存储目标。
 badge: "Beta 版"
-source-git-commit: 77fd0ace252bae66478f73a1dc4b7d4a3ccb867d
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1278'
 ht-degree: 2%
 
 ---
@@ -124,6 +124,19 @@ Experience Platform中的其他字段类型包括数组字段。 详细了解 [�
 John,Doe,"Marketing_Sales_Finance"
 ```
 
+### `iif` 用于导出数组的函数 {#iif-function-export-arrays}
+
+使用 `iif` 函数以导出特定条件下的数组元素。 例如，继续使用 `organzations` 从上面数组对象，可以编写一个简单的条件函数，如 `iif(organizations[0].equals("Marketing"), "isMarketing", "isNotMarketing")`.
+
+![映射第一个和最后一个函数的屏幕截图](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-iif-function.png)
+
+在这种情况下，您的输出文件将如下所示。 在这种情况下，数组的第一个元素是营销，因此人员是营销部门的成员。
+
+```
+`First_Name,Last_Name, Personal_Email, Is_Member_Of_Marketing_Dept
+John,Doe, johndoe@acme.org, "isMarketing"
+```
+
 ### `coalesce` 用于导出数组的函数 {#coalesce-function-export-arrays}
 
 使用 `coalesce` 函数，用于访问数组的第一个非空元素并将其导出到字符串中。
@@ -188,14 +201,6 @@ johndoe@acme.org,"1538097126"
 `Personal_Email,First_Purchase, Last_Purchase
 johndoe@acme.org,"1538097126","1664327526"
 ```
-
-<!--
-
-### `iif` function to export arrays {#iif-function-export-arrays}
-
-Here are some examples of how you could use the `iif` function to access and export arrays and other fields: (STILL TO DO)
-
--->
 
 ### `md5` 和 `sha256` 哈希函数 {#hashing-functions}
 
