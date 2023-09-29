@@ -1,29 +1,33 @@
 ---
 solution: Experience Platform
-title: （测试版）使用流服务API导出数据集
+title: 使用流服务API导出数据集
 description: 了解如何使用流服务API将数据集导出到所选目标。
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 28e07c464eb05ba7c20b132d430fccac15d8806e
 workflow-type: tm+mt
-source-wordcount: '3520'
+source-wordcount: '3526'
 ht-degree: 4%
 
 ---
 
-# (Beta)使用导出数据集 [!DNL Flow Service API]
+# 使用导出数据集 [!DNL Flow Service API]
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->* 导出数据集的功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
->* 此测试版功能支持导出第一代数据，如Real-time Customer Data Platform中的定义 [产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* 已购买Real-Time CDP Prime或Ultimate包的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>* 已购买Real-Time CDP Prime和Ultimate软件包、Adobe Journey Optimizer或Customer Journey Analytics的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
 
 本文说明了使用 [!DNL Flow Service API] 以导出 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到您的首选云存储位置，例如 [!DNL Amazon S3]、 SFTP位置或 [!DNL Google Cloud Storage].
 
 >[!TIP]
 >
 >您还可以使用Experience Platform用户界面导出数据集。 阅读 [导出数据集用户界面教程](/help/destinations/ui/export-datasets.md) 以了解更多信息。
+
+## 可用于导出的数据集 {#datasets-to-export}
+
+您可以导出的数据集取决于Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项(例如：Data Distiller)。
+
+请参阅 [UI教程页面上的表](/help/destinations/ui/export-datasets.md#datasets-to-export) 以了解可以导出哪些数据集。
 
 ## 支持的目标 {#supported-destinations}
 
@@ -1609,7 +1613,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Amazon S3 Beta Target Connection",
+    "name": "Amazon S3 Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_TARGET_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -1663,7 +1667,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Azure Blob Storage Beta Target Connection",
+    "name": "Azure Blob Storage Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_TARGET_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",

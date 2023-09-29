@@ -1,26 +1,65 @@
 ---
-title: （测试版）将数据集导出到云存储目标
+title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 85bc1f0af608a7b5510bd0b958122e9db10ee27a
 workflow-type: tm+mt
-source-wordcount: '1421'
+source-wordcount: '1754'
 ht-degree: 5%
 
 ---
 
-# （测试版）将数据集导出到云存储目标
+# 将数据集导出到云存储目标
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->* 导出数据集的功能当前为测试版，并非对所有用户都可用。 文档和功能可能会发生变化。
->* 此测试版功能支持导出第一代数据，如Real-time Customer Data Platform中的定义 [产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用此功能。 有关更多信息，请与您的Adobe代表联系。
+>* 已购买Real-Time CDP Prime或Ultimate包、Adobe Journey Optimizer或Customer Journey Analytics的客户可使用此功能。 有关更多信息，请与您的Adobe代表联系。
 
 本文介绍了导出所需的工作流 [数据集](/help/catalog/datasets/overview.md) 从Adobe Experience Platform到您的首选云存储位置，例如 [!DNL Amazon S3]、 SFTP位置或 [!DNL Google Cloud Storage] 通过使用Experience PlatformUI。
 
 您还可以使用Experience PlatformAPI导出数据集。 阅读 [导出数据集API教程](/help/destinations/api/export-datasets.md) 以了解更多信息。
+
+## 可用于导出的数据集 {#datasets-to-export}
+
+根据Experience Platform应用程序(Real-Time CDP、Adobe Journey Optimizer)、层（Prime或Ultimate）以及您购买的任何加载项(例如：Data Distiller)，您可以导出的数据集会有所不同。
+
+根据您购买的应用程序、产品层和任何加载项，从下表了解可以导出哪些数据集类型：
+
+<table>
+<thead>
+  <tr>
+    <th>应用程序/加载项</th>
+    <th>层</th>
+    <th>可用于导出的数据集</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="2">Real-Time CDP</td>
+    <td>Prime</td>
+    <td>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</td>
+  </tr>
+  <tr>
+    <td>Ultimate</td>
+    <td><ul><li>通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。</li><li> 系统生成的数据集，例如 <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=en#profile-attribute-datasets">配置文件快照数据集</a>.</li></td>
+  </tr>
+  <tr>
+    <td rowspan="2">Adobe Journey Optimizer</td>
+    <td>Prime</td>
+    <td>请参阅 <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans"> Adobe Journey Optimizer</a> 文档。 （更新了所支持数据集的AJO表或部分的深层链接）</td>
+  </tr>
+  <tr>
+    <td>Ultimate</td>
+    <td>请参阅 <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=zh-Hans"> Adobe Journey Optimizer</a> 文档。 （更新了所支持数据集的AJO表或部分的深层链接）</td>
+  </tr>
+  <tr>
+    <td>数据Distiller</td>
+    <td>Data Distiller（加载项）</td>
+    <td>通过查询服务创建的派生数据集。</td>
+  </tr>
+</tbody>
+</table>
 
 ## 支持的目标 {#supported-destinations}
 
@@ -40,9 +79,9 @@ ht-degree: 5%
 Experience Platform目录中的一些基于文件的目标同时支持Audience Activation和数据集导出。
 
 * 当您希望将数据结构化为按受众兴趣或资格分组的用户档案时，请考虑激活受众。
-* 或者，在要导出未按受众兴趣或资格进行分组或构建的原始数据集时，请考虑数据集导出。 您可以将此数据用于报表、数据科学工作流、满足合规性要求以及许多其他用例。
+* 或者，在要导出未按受众兴趣或资格进行分组或构建的原始数据集时，请考虑数据集导出。 您可以将此数据用于报表、数据科学工作流和许多其他用例。 例如，作为管理员、数据工程师或分析师，您可以从Experience Platform中导出数据以与数据仓库同步、在BI分析工具、外部云ML工具中使用，或存储在您的系统中以满足长期存储需求。
 
-本文档包含导出数据集所需的所有信息。 如果要将受众激活到云存储或电子邮件营销目标，请阅读 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md).
+本文档包含导出数据集所需的所有信息。 如果要激活 *受众* 要访问云存储或电子邮件营销目标，请阅读 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 ## 先决条件 {#prerequisites}
 
@@ -50,7 +89,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ### 所需权限 {#permissions}
 
-要导出数据集，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要导出数据集，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 查看数据集]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要确保您具有导出数据集的必要权限并且目标支持导出数据集，请浏览目标目录。 如果目标具有 **[!UICONTROL 激活]** 或 **[!UICONTROL 导出数据集]** 则您具有相应的权限。
 
@@ -106,7 +145,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 2. 使用 **[!UICONTROL 时间]** 选择器以选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
 
-3. 使用 **[!UICONTROL 日期]** 选择器来选择应进行导出的时间间隔。 请注意，在该功能的测试版中，无法设置导出的结束日期。 有关详细信息，请查看 [已知限制](#known-limitations) 部分。
+3. 使用 **[!UICONTROL 日期]** 选择器来选择应进行导出的时间间隔。 请注意，您当前无法设置导出的结束日期。 有关详细信息，请查看 [已知限制](#known-limitations) 部分。
 
 4. 选择 **[!UICONTROL 下一个]** 保存计划并转到 **[!UICONTROL 审核]** 步骤。
 
@@ -169,12 +208,23 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
    ![显示“确认从数据流中删除数据集”选项的对话框。](../assets/ui/export-datasets/remove-dataset-confirm.png)
 
+
+## 数据集导出授权 {#licensing-entitlement}
+
+请参阅产品描述文档，了解您每年有权为每个Experience Platform应用程序导出多少数据。 例如，您可以查看Real-Time CDP产品描述 [此处](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+
+请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，用户档案导出权利将是两个权利中较大的一个权利。 您的批量权利的计算方法是：获取许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
+
+另一方面，如果您购买诸如Data Distiller之类的加载项，则您有权获得的数据导出限制表示产品层和加载项的总和。
+
+您可以在许可控制面板中查看和跟踪配置文件导出是否符合合同限制。
+
 ## 已知限制 {#known-limitations}
 
-对于数据集导出的Beta版，请记住以下限制：
+对于数据集导出的常规可用性版本，请牢记以下限制：
 
-* 当前只有一个权限(**[!UICONTROL 管理和激活数据集目标]**)，其中包括管理和激活数据集目标的权限。 这些控件将在将来拆分为更细粒度的权限。 查看 [所需权限](#permissions) 部分，以获取导出数据集所需的权限的完整列表。
 * 目前，您只能导出增量文件，并且无法为数据集导出选择结束日期。
 * 当前无法自定义导出的文件名。
+* 通过API创建的数据集当前不可导出。
 * 目前，UI不会阻止您删除正在导出到目标的数据集。 请勿删除任何正在导出到目标的数据集。 [移除数据集](#remove-dataset) 从目标数据流中删除。
 * 数据集导出的监控量度当前与用户档案导出的数字混杂在一起，因此它们不反映真正的导出数字。

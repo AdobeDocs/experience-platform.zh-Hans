@@ -4,7 +4,7 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务在Experience Platform中探索和处理为配置文件、受众和目标仪表板提供支持的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: c431973100cc65d99d9466553fe6624ac2653d4b
+source-git-commit: e808af41b0df7603ce6f44464d1e6e883d3f6208
 workflow-type: tm+mt
 source-wordcount: '946'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 ![左侧导航中突出显示“数据集”选项卡的数据集浏览仪表板。](./images/query/browse-datasets.png)
 
-### 系统生成的数据集
+### 系统生成的数据集 {#system-generated-datasets}
 
 >[!IMPORTANT]
 >
@@ -41,7 +41,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 ![突出显示显示系统数据集切换开关的数据集浏览选项卡。](./images/query/show-system-datasets.png)
 
-### 配置文件属性数据集
+### 配置文件属性数据集 {#profile-attribute-datasets}
 
 配置文件仪表板分析绑定到您的组织定义的合并策略。 对于每个活动合并策略，数据湖中都有一个可用的配置文件属性数据集。
 

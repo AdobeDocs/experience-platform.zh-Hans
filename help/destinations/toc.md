@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 6725e28238c7be76613c7455fadce078b17aa71b
+source-git-commit: a34d2823383b2954ebd824a7197b1b64dc80e219
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1165'
 ht-degree: 9%
 
 ---
@@ -30,11 +30,11 @@ ht-degree: 9%
    * [更新目标数据流](./api/update-destination-dataflows.md)
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
-   * [(Beta)导出数据集](/help/destinations/api/export-datasets.md)
+   * [导出数据集](/help/destinations/api/export-datasets.md)
 * UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
-   * 将受众数据激活到目标{#activate}
+   * 将数据激活到目标{#activate}
       * [激活概述](./ui/activation-overview.md)
       * [将受众激活到流式受众导出目标](./ui/activate-segment-streaming-destinations.md)
       * [将受众激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
@@ -42,7 +42,7 @@ ht-degree: 9%
       * [激活受众以边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
-      * [（测试版）使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
+      * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
       * [将阵列字段导出到云存储目标](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
