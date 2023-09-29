@@ -1,10 +1,10 @@
 ---
 title: 在UI中按需引入源数据流
 description: 了解如何使用Experience Platform用户界面按需为源连接创建数据流。
-source-git-commit: ce1e6c08d1e53346c11f9746cea524689f402031
+source-git-commit: cea12160656ba0724789db03e62213022bacd645
 workflow-type: tm+mt
-source-wordcount: '503'
-ht-degree: 0%
+source-wordcount: '499'
+ht-degree: 1%
 
 ---
 
@@ -44,9 +44,9 @@ ht-degree: 0%
 
 | 计划配置 | 描述 |
 | --- | --- |
-| [!UICONTROL 摄取开始时间] | 按需数据流将启动时的计划开始时间（UTC时间）。 |
-| [!UICONTROL 日期范围开始时间] | 从中提取数据的开始日期和时间。 |
-| [!UICONTROL 日期范围结束时间] | 从中提取数据的结束日期和时间。 |
+| [!UICONTROL 摄取开始时间] | 按需流运行的计划开始时间。 |
+| [!UICONTROL 日期范围开始时间] | 从中检索数据的最早日期和时间。 |
+| [!UICONTROL 日期范围结束时间] | 检索数据的日期和时间。 |
 
 选择 **[!UICONTROL 计划]** 并留出一些时间触发您的按需数据流。
 
