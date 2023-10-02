@@ -2,9 +2,9 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1017'
 ht-degree: 10%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 10%
 
 在2023年7月发行的Experience Platform中，SFTP目标提供了新功能，如下所示：
 
-* [!BADGE Beta]{type=Informative}[支持导出数据集](/help/destinations/ui/export-datasets.md)。
+* [支持导出数据集](/help/destinations/ui/export-datasets.md)。
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
 * [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。

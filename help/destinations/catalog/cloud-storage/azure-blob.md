@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
 workflow-type: tm+mt
-source-wordcount: '1051'
+source-wordcount: '1050'
 ht-degree: 7%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 7%
 
 在2023年7月的Experience Platform版本中， [!DNL Azure Blob] 目标提供了新功能，如下所示：
 
-* [!BADGE Beta]{type=Informative}[支持导出数据集](/help/destinations/ui/export-datasets.md)。
+* [支持导出数据集](/help/destinations/ui/export-datasets.md)。
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
 * [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
