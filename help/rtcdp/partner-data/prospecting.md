@@ -1,10 +1,11 @@
 ---
 title: 通过潜在客户发掘用例吸引和获得新客户
 description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持实现的潜在客户发掘用例吸引和获得新客户。
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
+source-git-commit: da7a53c1e4accdacfa55e4022c1b499f70aab8fa
 workflow-type: tm+mt
-source-wordcount: '1953'
-ht-degree: 98%
+source-wordcount: '1960'
+ht-degree: 97%
 
 ---
 
@@ -207,7 +208,11 @@ ht-degree: 98%
 
 ### 激活目标的潜在客户配置文件 {#activate-to-destinations}
 
-通过将潜在客户受众导出到目标来利用它们。目前，仅某些目标（例如 [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) 或 [!BADGE Alpha]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp-onboarding.md) 目标）支持激活潜在客户配置文件。
+通过将潜在客户受众导出到目标来利用它们。目前，只有某些云存储目标支持激活潜在客户配置文件。
+
+![支持潜在客户受众的目标。](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
+
+[了解更多](/help/destinations/ui/activate-prospect-audiences.md) 关于将潜在客户激活到云存储目标。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 

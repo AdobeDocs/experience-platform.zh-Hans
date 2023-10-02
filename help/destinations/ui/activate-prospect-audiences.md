@@ -2,13 +2,13 @@
 title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
-source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
+exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
+source-git-commit: fdb9d7b168d6323fddaab1ac7abc44d3a390afea
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 16%
 
 ---
-
 
 # 激活潜在客户受众
 
@@ -22,7 +22,7 @@ ht-degree: 16%
 
 转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 使用 **[!UICONTROL 数据类型]** 筛选并选择 **[!UICONTROL 潜在客户]** 查看支持激活潜在客户受众的目标。 目前，导出潜在客户受众仅适用于云存储目标。
 
-![支持数据集导出的目标](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
+![支持潜在客户受众的目标。](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 
 ## 先决条件 {#prerequisites}
 
