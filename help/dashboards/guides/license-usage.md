@@ -3,10 +3,11 @@ keywords: Experience Platform；用户界面；UI；自定义；许可证使用�
 title: 许可证使用情况仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
-source-git-commit: 5b3ec9aca773cf4a1ba0d4c7e432949769b942c1
+exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
+source-git-commit: e9c4068419b36da6ffaec67f0d1c39fe87c2bc4c
 workflow-type: tm+mt
 source-wordcount: '1987'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -19,7 +20,7 @@ ht-degree: 1%
 
 您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
-许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买产品的使用情况量度、所有生产或开发沙盒中量度的综合使用情况，以及特定沙盒的使用情况量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：实时客户数据配置文件、Adobe Journey Optimizer和Customer Journey Analytics。
+许可证使用情况报表可提供比许可证使用情况量度更高级别的粒度。 仪表板提供每个购买产品的使用情况量度、所有生产或开发沙盒中量度的综合使用情况，以及特定沙盒的使用情况量度。 可以使用使用情况量度跟踪以下Experience Platform应用程序：Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
 本指南概述如何在UI中访问和使用许可证使用情况仪表板，并提供有关仪表板中显示的可视化的更多信息。
 
@@ -59,7 +60,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->增加至 [!UICONTROL 许可证金额] 因此，可以将加载项添加到 [!UICONTROL 许可证金额] 基础产品，例如实时客户数据配置文件、Adobe Journey Optimizer和Customer Journey Analytics。 通过基础产品跟踪该许可数量（加载项后）的使用情况。 例如，如果您购买一包5个沙盒，则数量5将添加到基础产品的数量。在这种情况下，加载项会显示 [!UICONTROL 许可证金额] 其中，且该加载项的使用是“空白的”，因为使用情况是通过基本产品进行跟踪的。
+>增加至 [!UICONTROL 许可证金额] 因此，可以将加载项添加到 [!UICONTROL 许可证金额] 基础产品，例如Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。 通过基础产品跟踪该许可数量（加载项后）的使用情况。 例如，如果您购买一包5个沙盒，则数量5将添加到基础产品的数量。在这种情况下，加载项会显示 [!UICONTROL 许可证金额] 其中，且该加载项的使用是“空白的”，因为使用情况是通过基本产品进行跟踪的。
 
 该表指示了每个产品的主要量度，因为每个产品都可以跟踪大量量度。
 
