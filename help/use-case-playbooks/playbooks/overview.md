@@ -2,14 +2,14 @@
 solution: Experience Platform
 title: 用例战术手册概述
 description: 了解如何使用 Experience Platform 中的用例战术手册功能来使用各种营销用例
-badgeBeta: label="Beta" type="Informative"
-source-git-commit: 896ca002b34e79bd464467011875a54acd5c187c
-workflow-type: ht
-source-wordcount: '400'
-ht-degree: 100%
+badgeBeta: label="Beta 版" type="Informative"
+exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+workflow-type: tm+mt
+source-wordcount: '401'
+ht-degree: 88%
 
 ---
-
 
 # (Beta) 用例战术手册概述
 
@@ -41,11 +41,11 @@ ht-degree: 100%
 
 如果您选择 Adobe Journey Optimizer 战术手册，您可以在产品中构建客户历程，并向客户发送相关消息。
 
-创建一个战术手册的实例，以生成特定的资产，如根据您的用例定制的、在 Experience Platform 中可重复使用的架构、区段或历程。这些对象的目的是帮助您了解实现特定用例所需的所有资源。它们不包含任何数据，并且是在开发沙盒上创建的。在使用这些资产并在 Real-time CDP 或 Journey Optimizer 中与您的团队共享之前，请先开始使用这些资产或对其进行编辑。
+创建一个战术手册的实例，以生成特定的资产，如根据您的用例定制的、在 Experience Platform 中可重复使用的架构、区段或历程。这些对象的目的是帮助您了解实现特定用例所需的所有资源。它们不包含任何数据，并且是在开发沙盒上创建的。使用这些资源并与您在Real-Time CDP或Journey Optimizer中的团队共享它们之前，请开始使用这些资源或对其进行编辑。
 
 ## 可用性
 
-一些[!UICONTROL 用例战术手册]是针对 Real-time CDP 用例量身定制，而其他的则最适合使用 Journey Optimizer 的客户。浏览目录以查找最适合您的产品和用例的战术手册。
+部分 [!UICONTROL 用例行动手册] 专为Real-Time CDP用例量身打造，而其他用例最适合使用Journey Optimizer的客户。 浏览目录以查找最适合您的产品和用例的战术手册。
 
 ## UI 指南 
 

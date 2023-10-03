@@ -1,10 +1,11 @@
 ---
 title: 使用合作伙伴辅助的访客识别使现场体验个性化
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '2548'
-ht-degree: 99%
+ht-degree: 98%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 99%
 
 >[!AVAILABILITY]
 >
->此 功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 

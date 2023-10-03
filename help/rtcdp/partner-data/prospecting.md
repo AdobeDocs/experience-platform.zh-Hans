@@ -2,10 +2,10 @@
 title: 通过潜在客户发掘用例吸引和获得新客户
 description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持实现的潜在客户发掘用例吸引和获得新客户。
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: da7a53c1e4accdacfa55e4022c1b499f70aab8fa
+source-git-commit: ec6375a025833027fda01c412124321132aefd65
 workflow-type: tm+mt
 source-wordcount: '1960'
-ht-degree: 97%
+ht-degree: 96%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 97%
 
 >[!AVAILABILITY]
 >
->* 此 功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>* 此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 使用 Real-Time CDP 中的第三方数据支持，通过数据合作伙伴提供的潜在客户配置文件拓展您的配置文件基础，并与潜在客户交流以获取或接触新客户。
 

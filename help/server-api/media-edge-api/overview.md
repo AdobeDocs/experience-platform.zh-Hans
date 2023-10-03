@@ -2,13 +2,13 @@
 solution: Experience Platform
 title: Media Edge API
 description: Media Edge API概述
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 5%
 
 ---
-
 
 # Media Edge API概述
 
@@ -36,7 +36,7 @@ Media Edge API基于Adobe Experience Platform构建，可在的框架内提供�
 | 用例 | API服务 |
 | -------- | ----------- |
 | Adobe Experience Platform解决方案 | 媒体边缘 |
-| Real-time CDP +Customer Journey Analytics | 媒体边缘 |
+| Real-Time CDP +Customer Journey Analytics | 媒体边缘 |
 | Adobe Analytics + Adobe Experience Platform解决方案 | 媒体边缘 |
 | 仅限Adobe Analytics（已跟踪） | 媒体收集 |
 
@@ -53,7 +53,3 @@ Media Edge API基于Adobe Experience Platform构建，可在的框架内提供�
 * 有关使用Media Edge API的更多信息，请参阅 [快速入门文档](getting-started.md).
 
 * 有关使用Platform Edge的更多信息，请参阅 [使用Experience PlatformEdge安装Media Analytics](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
-
-
-
-

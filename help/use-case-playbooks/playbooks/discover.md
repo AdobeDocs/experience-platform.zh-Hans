@@ -2,14 +2,14 @@
 solution: Experience Platform
 title: 发现合适的战术手册
 description: 了解如何为您的用例找到合适的战术手册并启用战术手册。
-badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
-workflow-type: ht
-source-wordcount: '740'
-ht-degree: 100%
+badgeBeta: label="Beta 版" type="Informative"
+exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+workflow-type: tm+mt
+source-wordcount: '741'
+ht-degree: 96%
 
 ---
-
 
 # (Beta) 发现合适的战术手册
 
@@ -23,7 +23,7 @@ ht-degree: 100%
 
 使用页面上提供的搜索窗口和过滤器来查找适合您的用例的战术手册。
 
-例如，您可以根据您想要瞄准的营销漏斗阶段（转化、参与或保留）来筛选可使用的战术手册。您还可以按您所在的行业或您有权访问的产品权限（Adobe Journey Optimizer 或 Real-time CDP）过滤显示的战术手册。
+例如，您可以根据您想要瞄准的营销漏斗阶段（转化、参与或保留）来筛选可使用的战术手册。您还可以按您所在的行业或您有权访问的产品权利(Adobe Journey Optimizer或Real-Time CDP)筛选显示的行动手册。
 
 ![按营销漏斗、行业或产品过滤策略战术手册](/help/use-case-playbooks/assets/playbooks/ui-guide/filter-by-funnel-industry-product.gif)
 

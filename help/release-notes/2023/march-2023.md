@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 3 月）
 description: Adobe Experience Platform 的 2023 年 3 月发行说明。
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
-workflow-type: ht
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+workflow-type: tm+mt
 source-wordcount: '2206'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -86,7 +86,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新增或更新功能**{#destinations-new-updated-functionality}
+**新增或更新的功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -96,7 +96,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 **修复和增强功能** {#destinations-fixes-and-enhancements}
 
-我们正在针对 Real-time CDP 基于文件的目标中的 PGP/GPG 加密功能发布错误修复程序。通过此更改，当前使用加密功能的现有基于文件的目标将会生成一个扩展名与以前不同的文件名。
+我们正在为Real-Time CDP发布针对基于文件的目标中的PGP/GPG加密的错误修复。 通过此更改，当前使用加密功能的现有基于文件的目标将会生成一个扩展名与以前不同的文件名。
 
 - 当前使用加密时的扩展名：`filename.csv`
 - 未来使用加密时的扩展名：`filename.csv.gpg`

@@ -1,13 +1,13 @@
 ---
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
-source-git-commit: 9a72d85bfb592012b36826135e24d28983f92e40
+exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '1935'
 ht-degree: 1%
 
 ---
-
 
 # 常见问题解答
 
@@ -140,7 +140,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 我是否可以将受众从受众组合发送到所有下游目标和渠道？
 
-此时此刻，不能。 目前，您可以在Adobe Journey Optimizer促销活动和Real-time CDP目标中使用受众构成中的受众。 未来版本中将支持Adobe Journey Optimizer历程。
+此时此刻，不能。 目前，您可以在Adobe Journey Optimizer促销活动和Real-Time CDP目标中使用受众构成中的受众。 未来版本中将支持Adobe Journey Optimizer历程。
 
 ### 对于作文的数量是否有任何保障？
 

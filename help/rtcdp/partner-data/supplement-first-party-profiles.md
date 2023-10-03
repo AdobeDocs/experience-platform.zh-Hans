@@ -1,10 +1,11 @@
 ---
 title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '1110'
-ht-degree: 98%
+ht-degree: 93%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 98%
 
 >[!AVAILABILITY]
 >
->* 此功能可供已获得 Real-Time CDP（应用程序服务）、Adobe Experience Platform 激活、Real-time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate 许可的客户使用。阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
+>* 此功能适用于已获得许可的Real-Time CDP（应用程序服务）、Adobe Experience Platform Activation、Real-Time CDP、Real-Time CDP Prime、Real-Time CDP Ultimate的客户。 阅读[产品说明](https://helpx.adobe.com/legal/product-descriptions.html)中关于这些软件包的详细信息，并联系您的 Adobe 代表了解更多信息。
 
 使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 
@@ -24,7 +25,7 @@ ht-degree: 98%
 
 * 考虑要从 Real-Time CDP 中导出受众列表的位置，以便与数据供应商共享该信息。该位置需要支持文件导出。
 * 数据供应商希望您提供哪些标识符，以便分层附加属性？
-* 包含合作伙伴提供的属性的文件会如何被引入 Real-time CDP 中？例如，可以通过云存储源连接器引入文件，例如 [Amazon S3](/help/sources/connectors/cloud-storage/s3.md) 或 [SFTP](/help/sources/connectors/cloud-storage/sftp.md)。
+* 如何将包含合作伙伴提供的属性的文件引入回Real-Time CDP？ 例如，可以通过云存储源连接器引入文件，例如 [Amazon S3](/help/sources/connectors/cloud-storage/s3.md) 或 [SFTP](/help/sources/connectors/cloud-storage/sftp.md)。
 * 您希望合作伙伴提供的属性返回 Real-Time CDP 并进行刷新的节奏是什么？
 
 >[!WARNING]
@@ -94,7 +95,7 @@ Commenting out links for now
 
 ### 在除去个人身份信息 (PII) 或哈希 PII 时导出您想要扩充的受众 {#export-audiences}
 
-导出您希望合作伙伴进行扩充的受众。使用 Real-time CDP 提供的云存储目标，例如 Amazon S3 或 SFTP。阅读以下文档页面以完成此步骤：
+导出您希望合作伙伴进行扩充的受众。使用Real-Time CDP提供的云存储目标，如Amazon S3或SFTP。 阅读以下文档页面以完成此步骤：
 
 * [Amazon S3 目标](/help/destinations/catalog/cloud-storage/amazon-s3.md)文档页面
 * [SFTP 目标](/help/destinations/catalog/cloud-storage/sftp.md)文档页面

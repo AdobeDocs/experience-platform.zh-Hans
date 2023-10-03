@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明（2023 年 4 月）
 description: Adobe Experience Platform 的 2023 年 4 月发行说明。
-exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
-workflow-type: ht
+exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+workflow-type: tm+mt
 source-wordcount: '2084'
-ht-degree: 100%
+ht-degree: 98%
 
 ---
 
@@ -85,13 +85,13 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新增或更新功能**{#destinations-new-updated-functionality}
+**新增或更新的功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
 | [!DNL Custom Personalization] 和 [!DNL Adobe Commerce] 目标的数据流监控 | <p> 您现在可以看到 [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md)、[自定义个性化](../../destinations/catalog/personalization/custom-personalization.md)和[带属性自定义个性化](../../destinations/catalog/personalization/custom-personalization.md)连接的激活指标。 </p> <p>![Adobe Commerce 图像](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce 指标"){width="100" zoomable="yes"}</p>  请参阅[在“目标”工作区中监视数据流](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace)以了解详情。 |
 | [!DNL Google Ad Manager] 和 [!DNL Google Ad Manager 360] 目标新增&#x200B;**[!UICONTROL 将区段 ID 附加到区段名称]**&#x200B;字段 | <p>您现在可以让 [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) 和 [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) 中的区段名称包含来自 Experience Platform 的区段 ID，例如：`Segment Name (Segment ID)`。</p><p>![附加区段 ID 图像](/help/destinations/assets/common/append-segment-id-to-segment-name.png "新增的“将区段 ID 附加到区段名称”字段"){width="100" zoomable="yes"}</p> |
-| 安排受众回填 | <p>对于 [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) 目标，安排在区段首次映射到目标连接 24 至 48 小时后激活对目标的受众回填。此更新是为了回应 Google 有关在摄取数据前等待 24 小时的政策，并将提高 Real-time CDP 和 [!DNL Google Display & Video 360] 之间的匹配率。</p> <p>请注意，这是仅适用于该目标的后端配置，并与 UI 中任何客户可配置的计划选项无关。</p> |
+| 安排受众回填 | <p>对于 [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) 目标，安排在区段首次映射到目标连接 24 至 48 小时后激活对目标的受众回填。此更新是为了响应Google的策略，该策略将等待24小时来摄取数据，并且将提高Real-Time CDP与之间的匹配率 [!DNL Google Display & Video 360].</p> <p>请注意，这是仅适用于该目标的后端配置，并与 UI 中任何客户可配置的计划选项无关。</p> |
 
 {style="table-layout:auto"}
 

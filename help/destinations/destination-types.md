@@ -3,7 +3,7 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: d0a9ac77346bea585691feee958e8d3b27f3f746
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，我们会区分不同的目标类型，即连接、数据集导出和扩展。 有多种类型的连接目标，允许您将数据导出到基于API的目标。
 
-最后，还可以区分目标目录中所有组织提供的公共目标与Real-time CDP Ultimate客户为满足其特定导出用例而创建的专用目标。
+最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标。
 
 ![目标图类型。](./assets/destination-types/types-of-destinations-no-highlight.png)
 
