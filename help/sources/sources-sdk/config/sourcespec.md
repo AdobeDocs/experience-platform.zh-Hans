@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: 为自助式源配置源规范(Batch SDK)
 description: 本文档概述了为使用自助源(Batch SDK)而需要准备的配置。
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 1fdce7c798d8aff49ab4953298ad7aa8dddb16bd
 workflow-type: tm+mt
-source-wordcount: '1846'
-ht-degree: 0%
+source-wordcount: '2078'
+ht-degree: 1%
 
 ---
 
@@ -381,7 +381,53 @@ ht-degree: 0%
 
 以下是自助源（批处理SDK）支持的其他分页类型示例：
 
-#### `CONTINUATION_TOKEN`
+>[!BEGINTABS]
+
+>[!TAB 偏移]
+
+此分页类型允许您通过指定从何处开始结果数组的索引以及返回结果数的限制来解析结果。 例如：
+
+```json
+"paginationParams": {
+        "type": "OFFSET",
+        "limitName": "limit",
+        "limitValue": "4",
+        "offSetName": "offset",
+        "endConditionName": "$.hasMore",
+        "endConditionValue": "Const:false"
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `type` | 用于返回数据的分页类型。 |
+| `limitName` | 限制的名称，API可通过该名称指定页面中要提取的记录数。 |
+| `limitValue` | 页面中要获取的记录数。 |
+| `offSetName` | 偏移属性名称。 如果将分页类型设置为，则必须执行此操作 `offset`. |
+| `endConditionName` | 用户定义的值，指示将在下一个HTTP请求中结束分页循环的条件。 必须提供要放置结束条件的属性名称。 |
+| `endConditionValue` | 要放置结束条件的属性值。 |
+
+>[!TAB 指针]
+
+此分页类型允许您使用 `pointer` 变量来指向需要随请求一起发送的特定项目。 指针类型分页要求有效负载中的路径指向下一页。 例如：
+
+```json
+{
+ "type": "POINTER",
+ "limitName": "limit",
+ "limitValue": 1,
+ "pointerPath": "paging.next"
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `type` | 用于返回数据的分页类型。 |
+| `limitName` | 限制的名称，API可通过该名称指定页面中要提取的记录数。 |
+| `limitValue` | 页面中要获取的记录数。 |
+| `pointerPath` | 指针属性名称。 这需要指向指向下一页的属性的json路径。 |
+
+>[!TAB 继续令牌]
 
 连续令牌类型的分页会返回一个字符串令牌，表示存在更多无法返回的项目，因为单个响应中可以返回的项目数已达到预设的最大值。
 
@@ -432,7 +478,7 @@ ht-degree: 0%
 }
 ```
 
-#### `PAGE`
+>[!TAB 页面]
 
 此 `PAGE` 分页类型允许您按从零开始的页数遍历返回数据。 使用时 `PAGE` 类型分页，您必须提供单个页面中给定的记录数。
 
@@ -461,7 +507,7 @@ ht-degree: 0%
 {style="table-layout:auto"}
 
 
-#### `NONE`
+>[!TAB None]
 
 此 `NONE` 分页类型可用于不支持任何可用分页类型的源。 使用分页类型的源 `NONE` 只需在发出GET请求时返回所有可检索记录。
 
@@ -470,6 +516,8 @@ ht-degree: 0%
   "type": "NONE"
 }
 ```
+
+>[!ENDTABS]
 
 ### 自助式源的高级计划（批处理SDK）
 
