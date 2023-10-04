@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Privacy Service和Experience Cloud应用程序
 description: 本文档提供了有关如何为隐私相关操作配置各种Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: ed3089a86d6ef25f23e4d69eee7da800d7242545
+source-git-commit: b0b49badd46601571be59afba84fad874ca1b368
 workflow-type: tm+mt
-source-wordcount: '926'
-ht-degree: 12%
+source-wordcount: '927'
+ht-degree: 13%
 
 ---
 
@@ -38,7 +38,7 @@ Adobe Experience Platform [!DNL Privacy Service] 构建用于支持多个Adobe E
 | Adobe Campaign Standard | ✓ | ✓ | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=zh-Hans)</li><li>[选择退出文档](../segmentation/consents.md)</li></ul> |
 | Adobe客户属性(CRS) | ✓ | 不适用 | 从系统中删除数据主体的属性。 | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[访问/删除CCPA文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | 当Experience Platform收到来自Privacy Service的删除请求时，平台会向Privacy Service发送确认，确认请求已收到，并且受影响的数据已标记为删除。 隐私作业完成后，记录将从数据湖或配置文件存储中删除。 在作业完成之前，数据会被软删除，因此任何平台服务都无法访问。 | <ul><li>[访问/删除数据湖文档](../catalog/privacy.md)</li><li>[访问/删除Identity Service文档](../identity-service/privacy.md)</li><li>[访问/删除实时客户个人资料的文档](../profile/privacy.md)</li><li>[!DNL Experience Platform] 荣誉 [受众区段的选择退出请求](../segmentation/consents.md).</li></ul> |
-| Adobe Primetime身份验证 | ✓ | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
+| Adobe Pass 身份验证 | ✓ | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Pass无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 | Adobe Target | ✓ | 不适用 | 与数据主体ID关联的所有数据都会从其访客配置文件中删除。 无法识别个人或无其他关联的聚合或匿名数据（例如内容数据）不适用于删除请求。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 | Marketo Engage | ✓ | 不适用 | 从系统中删除数据主体的存储数据。 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 
