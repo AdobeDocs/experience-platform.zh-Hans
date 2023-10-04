@@ -2,10 +2,10 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 36a42a7c3722828776495359762289d0028b6ddc
+source-git-commit: 3e4f79620d1f1b08684223214980ecbfdfa10a38
 workflow-type: tm+mt
 source-wordcount: '1699'
-ht-degree: 6%
+ht-degree: 8%
 
 ---
 
@@ -90,7 +90,7 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包含一个加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如：`(+)(country code)(area code)(phone number)`。 |
 | 电话(SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
 | 电话(SHA256_E.164) | 一个命名空间，表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码。 |
-| TNTID | 表示Adobe Target的命名空间。 请参阅以下文档： [Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en) 了解更多信息。 |
+| TNTID | 表示Adobe Target的命名空间。 请参阅以下文档： [Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en) 以了解更多信息。 |
 | Windows AID | 表示Windows广告ID的命名空间。 请参阅以下文档： [Windows广告ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041) 以了解更多信息。 |
 
 ### 查看身份命名空间 {#view-identity-namespaces}
