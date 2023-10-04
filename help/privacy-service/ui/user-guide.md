@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: e5a1b57bc81b27d0e61c3c1ecc10156c10dd3f6e
+source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
 workflow-type: tm+mt
-source-wordcount: '1473'
+source-wordcount: '1475'
 ht-degree: 14%
 
 ---
@@ -38,17 +38,18 @@ ht-degree: 14%
 
 | UI标签 | 法规 |
 | --- | --- |
+| [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
 | [!UICONTROL CPA] | [!DNL Colorado Privacy Act] |
 | [!UICONTROL CCPA] | [!DNL California Consumer Privacy Act] |
+| [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
 | [!UICONTROL CTDPA] | [!DNL Connecticut Data Privacy Act] |
 | [!UICONTROL GDPR] | 欧盟的 [!DNL General Data Protection Regulation] |
-| [!UICONTROL PDPA_THA] | 泰国的 [!DNL Personal Data Protection Act] |
+| [!UICONTROL HIPAA_AUS] | [!DNL Health Insurance Portability and Accountability Act] |
 | [!UICONTROL LGPD_BRA] | 巴西的 [!DNL Lei Geral de Proteção de Dados] |
 | [!UICONTROL NZPA_NZL] | 新西兰 [!DNL Privacy Act] |
+| [!UICONTROL PDPA_THA] | 泰国的 [!DNL Personal Data Protection Act] |
+| [!UICONTROL UCPA] | [!DNL Utah Consumer Privacy Act] |
 | [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
-| [!UICONTROL CPRA_USA] | [!DNL California Consumer Privacy Rights Act (CPRA)] |
-| [!UICONTROL APA_AUS] | [!DNL Australia Privacy Act (Privacy Act)] |
-| [!UICONTROL HIPAA_AUS] | [!DNL Health Insurance Portability and Accountability Act] |
 
 {style="table-layout:auto"}
 

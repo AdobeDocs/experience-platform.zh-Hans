@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
+source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
 workflow-type: tm+mt
-source-wordcount: '7929'
+source-wordcount: '7979'
 ht-degree: 0%
 
 ---
@@ -538,6 +538,8 @@ ht-degree: 0%
 **令牌**：令牌是一种双重身份验证安全类型，可用于授权对计算机服务的使用 [!DNL Query Service].
 
 ## U
+
+**UCPA**：和 [[!DNL Utah Consumer Privacy Act]](https://le.utah.gov/~2022/bills/static/SB0227.html) 创建消费者了解企业收集哪些个人数据、企业如何使用其个人数据以及企业是否出售其个人数据的权利。 消费者可以要求企业删除或停止出售其个人数据。
 
 **合并架构**：合并架构是共享相同类并已启用的架构的合并 [!DNL Real-Time Customer Profile]. 一个组织可以存在多个联合架构，但每个类只能有一个联合架构。
 
