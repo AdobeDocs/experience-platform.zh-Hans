@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
+source-git-commit: 640d3ca0d3c227306436f2e653ef66fdc8ebd31c
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1457'
 ht-degree: 5%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 5%
 
 在Adobe Experience Platform中，模式的类定义模式将包含的数据（记录或时间序列）的行为方面。 除此之外，类还描述了基于该类的所有架构所需包含的最少数量的公共属性，并提供了一种合并多个兼容数据集的方法。
 
-Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 [!DNL XDM Individual Profile] 和 [!DNL XDM ExperienceEvent]. 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。
+Adobe提供了多个标准（“核心”）Experience Data Model (XDM)类，包括XDM Individual Profile和XDM ExperienceEvent。 除了这些核心类之外，您还可以创建自己的自定义类，以描述组织更具体的用例。
 
 本文档概述了如何在Experience PlatformUI中创建、编辑和管理自定义类。
 
@@ -28,7 +28,7 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 
 
 本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [模式组合基础](../../schema/composition.md) 以了解类如何对XDM架构做出贡献。
 
-虽然本指南并非必需，但建议您也按照以下内容阅读本教程： [在UI中组合架构](../../tutorials/create-schema-ui.md) 熟悉 [!DNL Schema Editor].
+虽然本指南并非必需，但建议您也按照以下内容阅读本教程： [在UI中组合架构](../../tutorials/create-schema-ui.md) 以熟悉架构编辑器的各种功能。
 
 ## 快速入门
 
@@ -42,29 +42,25 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 
 
 >[!TIP]
 >
->您可以使用工作区的搜索功能来帮助更轻松地查找架构。 请参阅指南，网址为 [探索XDM资源](../explore.md) 以了解更多信息。
+>使用搜索功能根据类名筛选或查找类。 请参阅指南，网址为 [探索XDM资源](../explore.md) 以了解更多信息。
 
 ## 创建新类 {#create}
 
-在Platform UI中创建类的方法有两种。 从的任意选项卡 **[!UICONTROL 架构]** 工作区，选择 **[!UICONTROL 创建架构]**，或从 [!UICONTROL 类] 选项卡选择 **[!UICONTROL 创建类]**.
+在Platform UI中创建类的方法有两种。 从的任意选项卡 [!UICONTROL 架构] 工作区，选择 **[!UICONTROL 创建架构]**，或从 [!UICONTROL 类] 选项卡选择 **[!UICONTROL 创建类]**.
 
 ![此 [!UICONTROL 类] 选项卡 [!UICONTROL 架构] 工作区，使用 [!UICONTROL 创建架构] 和 [!UICONTROL 创建类] 突出显示](../../images/ui/resources/classes/create-class-methods.png)
 
-如果您选择 **[!UICONTROL 创建类]**， [!UICONTROL 创建类] 出现对话框。 输入 [!UICONTROL 名称] 和 [!UICONTROL 描述] 使用单选按钮选择类的预期行为。 类可以是记录序列或时间序列。 选择 **[!UICONTROL 创建]** 确认您的选择。
+如果您选择 **[!UICONTROL 创建类]**， [!UICONTROL 创建类] 出现对话框。 输入 [!UICONTROL 显示名称] 和 [!UICONTROL 描述] 使用单选按钮选择类的预期行为。 类可以是类型、记录系列或时间系列。 选择 **[!UICONTROL 创建]** 以确认您的选择并返回至 [!UICONTROL 类] 选项卡。
 
 ![此 [!UICONTROL 创建类] 对话框 [!UICONTROL 创建] 突出显示。](../../images/ui/resources/classes/create-class-dialog.png)
 
-此 [!DNL Schema Editor] 显示，在画布中显示基于您刚刚创建的自定义类的新架构。 由于尚未向类添加字段，因此架构仅包含 `_id` 字段，表示系统生成的唯一标识符，自动应用于 [!DNL Schema Registry].
+您创建的类可用，并列在 [!UICONTROL 类] 视图。
 
-![](../../images/ui/resources/classes/schema.png)
-
->[!IMPORTANT]
->
->在构建实现由您的组织定义的类的架构时，请记住，架构字段组只能与兼容类一起使用。 由于您定义的类是新类，因此， **[!UICONTROL 添加字段组]** 对话框。 相反，您将需要 [创建新字段组](./field-groups.md#create) 用于该类。 下次编写实现新类的架构时，将列出您定义的字段组以供使用。
+![此 [!UICONTROL 类] 选项卡 [!UICONTROL 架构] 突出显示最近创建的类的工作区。](../../images/ui/resources/classes/new-class-listing.png)
 
 ### 创建或编辑类 {#create-or-edit}
 
-如果您选择 **[!UICONTROL 创建架构]**， [!UICONTROL 创建架构] 此时会出现工作流。 在 [!UICONTROL 架构详细信息] 部分，选择 **[!UICONTROL 其他]**. 此时将显示可用类的列表。 在此处，您可以浏览和筛选新类所基于的现有类。
+或者，如果您选择 **[!UICONTROL 创建架构]**， [!UICONTROL 创建架构] 此时会出现工作流。 在 [!UICONTROL 架构详细信息] 部分，选择 **[!UICONTROL 其他]**. 此时将显示可用类的列表。 在此处，您可以浏览和筛选新类所基于的现有类。
 
 >[!NOTE]
 >
@@ -86,21 +82,25 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 
 
 ![此 [!UICONTROL 创建架构] 具有从可用类表中选择的类的工作流 [!UICONTROL 下一个] 突出显示。](../../images/ui/resources/classes/select-class.png)
 
-此 [!UICONTROL 名称和描述] 部分。 在此部分中，提供用于标识您的架构的名称和描述。&#x200B;AEM架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
+此 [!UICONTROL 名称和审核] 此时将显示工作流的部分。 在此部分中，提供用于标识您的架构的名称和描述。&#x200B;AEM架构的基本结构（由类提供）显示在画布中，供您查看和验证选定的类和架构结构。
 
 在中为类输入一个简短的、描述性的、唯一的和用户友好的名称 [!UICONTROL 架构显示名称] 文本字段。 接下来，输入适当的描述以标识架构定义的数据的行为。 查看了架构结构并对设置感到满意后，选择 **[!UICONTROL 完成]** 以创建您的架构。
 
 ![此 [!UICONTROL 名称和审核] 的部分 [!UICONTROL 创建架构] 使用的工作流 [!UICONTROL 架构显示名称]， [!UICONTROL 描述]、和 [!UICONTROL 完成] 突出显示。](../../images/ui/resources/classes/name-and-review-class.png)
 
-此 [!DNL Schema Editor] 此时将显示，并在画布中显示架构的结构。 您现在可以开始 [向类中添加字段](#add-fields).
+此时将显示架构编辑器，其中架构的结构显示在画布中。 您现在可以开始 [向类中添加字段](#add-fields).
 
-![](../../images/ui/resources/classes/edit.png)
+![具有画布中显示的架构结构的架构编辑器。](../../images/ui/resources/classes/edit.png)
 
 ## 向类添加字段 {#add-fields}
 
 一旦您有一个采用自定义类的架构，该架构会在 [!UICONTROL 架构编辑器]中，您可以开始向类添加字段。 要添加新字段，请选择 **加(+)** 图标（在架构名称旁）。
 
-![](../../images/ui/resources/classes/add-field.png)
+>[!IMPORTANT]
+>
+>在构建实现由您的组织定义的类的架构时，请记住，架构字段组只能与兼容类一起使用。 由于您定义的类是新类，因此， **[!UICONTROL 添加字段组]** 对话框。 相反，您将需要 [创建新字段组](./field-groups.md#create) 用于该类。 下次编写实现新类的架构时，将列出您定义的字段组以供使用。
+
+![突出显示添加按钮的架构编辑器。](../../images/ui/resources/classes/add-field.png)
 
 >[!IMPORTANT]
 >
@@ -108,22 +108,21 @@ Adobe提供了多个标准（“核心”）体验数据模型(XDM)类，包括 
 
 An **[!UICONTROL 无标题的字段]** 占位符显示在画布中，右边栏更新以显示用于配置字段属性的控件。 下 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**.
 
-![](../../images/ui/resources/classes/assign-to-class.png)
-
-![](../../images/ui/resources/classes/assign-to-class.png)
+![架构编辑器画布中的无标题字段，其中的“分配给类”字段属性已选中并突出显示。](../../images/ui/resources/classes/assign-to-class.png)
 
 请参阅指南，网址为 [在UI中定义字段](../fields/overview.md#define) 有关如何配置字段并将其添加到类的特定步骤。 继续向类添加所需数量的字段。 完成后，选择 **[!UICONTROL 保存]** 以保存架构和类。
 
-![](../../images/ui/resources/classes/save.png)
+![架构编辑器的画布上新创建的架构，带有 [!UICONTROL 保存] 突出显示。](../../images/ui/resources/classes/save.png)
 
 如果您之前已创建采用此类的架构，则新添加的字段将自动出现在这些架构中。
 
 ## 更改架构的类 {#schema}
 
-在保存架构之前，您可以在初始创建过程中随时更改架构的类。 请参阅指南，网址为 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
+在保存架构之前，您可以在初始创建过程中随时更改架构的类。 但是，应谨慎执行此操作，因为字段组仅与某些类兼容。 更改类会重置画布和您已添加的任何字段。
+请参阅指南，网址为 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
 
 ## 后续步骤
 
 本文档介绍了如何使用Platform UI创建和编辑类。 欲知关于 [!UICONTROL 架构] 工作区，请参见 [[!UICONTROL 架构] 工作区概述](../overview.md).
 
-要了解如何使用 [!DNL Schema Registry] API，请参见 [类端点指南](../../api/classes.md).
+要了解如何使用架构注册表API管理类，请参阅 [类端点指南](../../api/classes.md).
