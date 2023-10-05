@@ -5,7 +5,7 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 28d9a53371beea37b5c61b3bc4b111816f6e63e0
+source-git-commit: bf3099afadd6c8807060a6796cb6f37471478b44
 workflow-type: tm+mt
 source-wordcount: '4619'
 ht-degree: 0%
@@ -345,7 +345,7 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 
 选择 **[!UICONTROL 启用]** 确认您的选择。 您可以选择 **[!UICONTROL 个人资料]** 如果需要，可再次切换以禁用架构，但在保存架构后，将 [!DNL Profile] 已启用，无法再禁用它。
 
-## 更多操作
+## 更多操作 {#more}
 
 在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构，或者删除架构（如果尚未为实时客户配置文件启用）或者具有关联的数据集。 选择 [!UICONTROL 更多] ，以显示包含快速操作的下拉菜单。
 

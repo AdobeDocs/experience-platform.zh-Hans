@@ -3,9 +3,10 @@ title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 hide: true
 hidefromtoc: true
-source-git-commit: ccb2236fa169c26ef2f75d26776eee9f0122e92a
+exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
+source-git-commit: 3bd1424c9a01733acf38f52879606596c7aeca50
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1533'
 ht-degree: 8%
 
 ---
@@ -134,13 +135,13 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 ![加号图标和添加身份图标突出显示的请求创建工作流。](../images/ui/record-delete/more-identities.png)
 
-## 提交请求(#submit)
+## 提交请求 {#submit}
 
 完成向请求添加标识后，在 **[!UICONTROL 请求设置]**，在选择之前提供请求的名称和可选描述 **[!UICONTROL 提交]**.
 
 >[!IMPORTANT]
 > 
->对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。
+>对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>通过UI发出单个记录删除请求允许您同时提交10,000个ID。 此 [用于删除记录的API方法](https://experienceleague.adobe.com/docs/experience-platform/hygiene/api/workorder.html?lang=en#create) 允许一次提交100,000个ID。
 
 ![请求设置的 [!UICONTROL 名称] 和 [!UICONTROL 描述] 字段 [!UICONTROL 提交] 突出显示。](../images/ui/record-delete/submit.png)
 

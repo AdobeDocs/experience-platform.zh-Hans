@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 943d1360e80caef58d09b8502507a3ad72edda03
+source-git-commit: 5e57df3fbc22baa1c7abbb02a003ad8663aad040
 workflow-type: tm+mt
-source-wordcount: '3571'
+source-wordcount: '3670'
 ht-degree: 1%
 
 ---
@@ -45,11 +45,9 @@ ht-degree: 1%
 
 ![此 [!UICONTROL 名称和审核] 的部分 [!UICONTROL 创建架构] 使用的工作流 [!UICONTROL 架构显示名称]， [!UICONTROL 描述]、和 [!UICONTROL 完成] 突出显示。](../../images/ui/resources/schemas/name-and-review.png)
 
-此 [!UICONTROL 架构] [!UICONTROL 浏览] 选项卡。 您最近创建的架构现在可以在 [!DNL Schema Editor] 和会显示在可用架构列表中。
+此 [!UICONTROL 架构] [!UICONTROL 浏览] 选项卡。 您最近创建的架构现已列在架构库中，并可在以下位置进行编辑： [!DNL Schema Editor].
 
-![架构编辑器显示您最近创建的架构。](../../images/ui/resources/schemas/schema-details.png)
-
-您现在可以通过以下方式开始构建架构的结构 [添加架构字段组](#add-field-groups) 在 [!DNL Schema Editor].
+![“架构”工作区的“浏览”选项卡显示最近创建的架构。](../../images/ui/resources/schemas/example-schema.png)
 
 ## 编辑现有架构 {#edit}
 
@@ -66,6 +64,14 @@ ht-degree: 1%
 >您可以使用工作区的搜索和筛选功能来帮助更轻松地查找架构。 请参阅指南，网址为 [探索XDM资源](../explore.md) 以了解更多信息。
 
 选择架构后， [!DNL Schema Editor] 随画布中显示的架构结构一起显示。 您现在可以 [添加字段组](#add-field-groups) 到架构(或 [添加单个字段](#add-individual-fields) 来自这些组)， [编辑字段显示名称](#display-names)，或 [编辑现有自定义字段组](./field-groups.md#edit) 如果架构使用任何。
+
+## 更多操作 {#more}
+
+在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构，或者删除架构（如果尚未为实时客户配置文件启用）或者具有关联的数据集。 选择 [!UICONTROL 更多] ，以显示包含快速操作的下拉菜单。
+
+复制JSON结构功能允许您查看在仍在构建架构和数据管道时样本有效负载的外观。 对于模式中存在复杂的对象映射结构（如标识映射）的情况，此变量特别有用。
+
+![架构编辑器中，突出显示了“更多”按钮，并显示了下拉选项。](../../images/tutorials/create-schema/more-actions.png)
 
 ## 显示名称切换 {#display-name-toggle}
 
