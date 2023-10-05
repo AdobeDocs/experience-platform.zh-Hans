@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 角色API端点
 description: 基于属性的访问控制API中的/roles端点允许您以编程方式管理Adobe Experience Platform中的角色。
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: 4b48fa5e9a1e9933cd33bf45b73ff6b0d831f06f
 workflow-type: tm+mt
-source-wordcount: '1606'
-ht-degree: 5%
+source-wordcount: '1666'
+ht-degree: 4%
 
 ---
 
@@ -17,17 +17,17 @@ ht-degree: 5%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问配置是通过通用责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
+角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
 
 此 `/roles` 基于属性的访问控制API中的端点允许您以编程方式管理组织中的角色。
 
 ## 快速入门
 
-本指南中使用的API端点是基于属性的访问控制API的一部分。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索角色列表 {#list}
 
-您可以通过向以下人员提出GET请求来列出属于贵组织的所有现有角色： `/roles` 端点。
+您可以向您的组织提出职责请求，列出属于贵组织的所有现有GET。 `/roles` 端点。
 
 **API格式**
 
@@ -37,7 +37,7 @@ GET /roles/
 
 **请求**
 
-以下请求可检索属于贵组织的角色列表。
+以下请求检索属于您组织的角色列表。
 
 ```shell
 curl -X GET \
@@ -107,7 +107,7 @@ curl -X GET \
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的Platform资源之间关联的属性。 |
+| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 查找角色 {#lookup}
@@ -138,7 +138,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回查询的角色ID的详细信息，包括其角色类型、权限集和主题属性的信息。
+成功的响应将返回查询的角色ID的详细信息，包括其角色类型、权限集和主题属性的信息。
 
 ```json
 {
@@ -174,12 +174,12 @@ curl -X GET \
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的Platform资源之间关联的属性。 |
+| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID查找主题
 
-您还可以通过向以下网站发出GET请求来检索主题： `/roles` 提供{ROLE_ID}时的端点。
+您还可以通过向以下网站发出GET请求来检索主题： `/roles` 端点，同时提供 {ROLE_ID}.
 
 **API格式**
 
@@ -205,7 +205,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回与查询的角色ID关联的主题，包括对应的主题ID和主题类型。
+成功响应将返回与查询的角色ID关联的主题，包括相应的主题ID和主题类型。
 
 ```json
 {
@@ -250,12 +250,12 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `roleId` | 与查询的主题关联的角色ID。 |
-| `subjectType` | 查询的对象的类型。 |
+| `subjectType` | 查询对象的类型。 |
 | `subjectId` | 与查询的主题相对应的ID。 |
 
 ## 创建角色 {#create}
 
-POST要创建新角色，请向 `/roles` 端点，同时为您的角色的名称、描述和角色类型提供值。
+POST要创建新角色，请向 `/roles` 端点，同时为角色的名称、描述和角色类型提供值。
 
 **API格式**
 
@@ -286,7 +286,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回新创建的角色，以及相应的角色ID和角色类型、权限集和主题属性的信息。
+成功的响应将返回您新创建的角色，以及相应的角色ID，以及有关角色类型、权限集和主题属性的信息。
 
 ```json
 {
@@ -322,12 +322,12 @@ curl -X POST \
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的Platform资源之间关联的属性。 |
+| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 更新角色 {#patch}
 
-您可以通过向以下对象发出PATCH请求来更新角色的属性 `/roles` 端点，同时为要应用的操作提供相应的角色ID和值。
+您可以通过向以下对象发出PATCH请求来更新角色的属性 `/roles` 端点，并为要应用的操作提供相应的角色ID和值。
 
 **API格式**
 
@@ -362,11 +362,11 @@ curl -X PATCH \
 | --- | --- |
 | `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. |
 | `path` | 要更新的参数的路径。 |
-| `value` | 您希望使用更新参数的新值。 |
+| `value` | 要用于更新参数的新值。 |
 
 **响应**
 
-成功响应将返回更新的角色，包括您选择更新的属性的新值。
+成功的响应将返回更新的角色，包括您选择更新的属性的新值。
 
 ```json
 {
@@ -402,12 +402,12 @@ curl -X PATCH \
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的Platform资源之间关联的属性。 |
+| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID更新角色 {#put}
 
-您可以通过向以下用户发出PUT请求来更新角色： `/roles` 端点，并指定与要更新的角色对应的角色ID。
+您可以通过向以下对象发出PUT请求来更新角色 `/roles` 端点，并指定与要更新的角色对应的角色ID。
 
 **API格式**
 
@@ -435,12 +435,12 @@ curl -X PUT \
 | 参数 | 描述 |
 | --- | --- |
 | `name` | 角色的更新名称。 |
-| `description` | 更新后的角色描述。 |
+| `description` | 角色的更新描述。 |
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 
 **响应**
 
-成功会返回您更新的角色，包括其名称、描述和角色类型的新值。
+成功，将返回您更新的角色，包括其名称、描述和角色类型的新值。
 
 ```json
 {
@@ -476,7 +476,7 @@ curl -X PUT \
 | `roleType` | 角色的指定类型。 角色类型的可能值包括： `user-defined` 和 `system-defined`. |
 | `permissionSets` | 权限集表示管理员可以应用于角色的一组权限。 管理员可以为角色分配权限集，而不是分配单个权限。 这允许您从包含一组权限的预定义角色创建自定义角色。 |
 | `sandboxes` | 此属性显示组织中为特定角色配置的沙箱。 |
-| `subjectAttributes` | 表示主体与其有权访问的Platform资源之间关联的属性。 |
+| `subjectAttributes` | 表示主体与其有权访问的平台资源之间的关联的属性。 |
 | `subjectAttributes.labels` | 显示应用于查询角色的数据使用标签。 |
 
 ## 按角色ID更新主题
@@ -491,72 +491,40 @@ PATCH /roles/{ROLE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| {ROLE_ID} | 与要更新的主题关联的角色ID。 |
+| {ROLE_ID} | 与要更新的主体关联的角色ID。 |
 
 **请求**
 
 以下请求更新与关联的主题 `{ROLE_ID}`.
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/access-control/administration/roles/{ROLE_ID} \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
-  -d'{
-    "operations": [
-      {
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/access-control/administration/roles/<ROLE_ID>/subjects' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
         "op": "add",
-        "path": "/subjects",
-        "value": "New subjects"
-      }
-    ]
-  }'
+        "path": "/user",
+        "value": "{USER ID}"
+    }
+]' 
 ```
 
 | 操作 | 描述 |
 | --- | --- |
 | `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. |
 | `path` | 要更新的参数的路径。 |
-| `value` | 您希望使用更新参数的新值。 |
+| `value` | 要用于更新参数的新值。 |
 
 **响应**
 
-成功响应将返回与查询的角色ID关联的更新主题。
-
-```json
-{
-  "subjects": [
-    {
-      "subjectId": "string",
-      "subjectType": "user"
-    }
-  ],
-  "_page": {
-    "limit": 0,
-    "count": 0
-  },
-  "_links": {
-    "next": {
-      "href": "string",
-      "templated": true
-    },
-    "page": {
-      "href": "string",
-      "templated": true
-    }
-  }
-}
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `subjectId` | 主题的ID。 |
-| `subjectType` | 主题的类型。 |
+成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
 ## 删除角色 {#delete}
 
-DELETE要删除角色，请向 `/roles` 指定要删除的角色的ID时的端点。
+要删除某个角色，请向以下DELETE： `/roles` 指定要删除的角色的ID时的端点。
 
 **API格式**
 
@@ -570,7 +538,7 @@ DELETE /roles/{ROLE_ID}
 
 **请求**
 
-以下请求删除ID为 `{ROLE_ID}`.
+以下请求会删除ID为 `{ROLE_ID}`.
 
 ```shell
 curl -X DELETE \
@@ -584,4 +552,35 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和一个空白正文。
 
-您可以通过尝试对角色发出查找(GET)请求来确认删除。 您将收到HTTP状态404 （未找到），因为该角色已从管理中删除。
+您可以通过尝试对角色进行查找(GET)请求来确认删除。 您将收到HTTP状态404 （未找到），因为角色已从管理中删除。
+
+## 添加API凭据 {#apicredential}
+
+要添加API凭据，请向发出PATCH请求 `/roles` 端点，同时提供主体的角色ID。
+
+**API格式**
+
+```shell
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/access-control/administration/roles/<ROLE_ID>/subjects' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "op": "add",
+        "path": "/api-integration",
+        "value": "{TECHNICAL ACCOUNT ID}"
+    }
+]'   
+```
+
+| 操作 | 描述 |
+| --- | --- |
+| `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. |
+| `path` | 要添加参数的路径。 |
+| `value` | 要添加参数的值。 |
+
+**响应**
+
+成功的响应返回HTTP状态204（无内容）和一个空白正文。
