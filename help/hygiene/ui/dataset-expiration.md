@@ -1,15 +1,15 @@
 ---
-title: 管理数据集过期时间
+title: 自动化数据集过期时间
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 7931c8fe4a1ca5d255a80e7e6b0deb976d53c3de
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '819'
+source-wordcount: '828'
 ht-degree: 20%
 
 ---
 
-# 管理数据集过期时间 {#dataset-expiration}
+# 自动化数据集过期时间 {#dataset-expiration}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
@@ -22,7 +22,7 @@ ht-degree: 20%
 >
 >如果数据集设置为过期，则必须手动更改任何可能正在将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
 
-本文档介绍如何在Platform UI中计划和管理数据集过期时间。
+本文档介绍如何在Platform UI中计划和自动执行数据集过期操作。
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ ht-degree: 20%
 
 >[!IMPORTANT]
 >
-您最多可以有20个同时计划的数据集过期时间。 这意味着您可以随时计划删除20个数据集。 对于这些过期时间或过期年份没有限制。 例如，如果您计划了20个数据集过期时间，并且有一个数据集将于明天删除，则在删除该数据集之前，您无法再设置任何过期时间。
+Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics用户有20个挂起的计划数据集到期工作单。 Healthcare Shield和Privacy and Security Shield用户有50个挂起的计划数据集到期工作单。 这意味着您可以随时计划删除20或50个数据集。<br>例如，如果您计划了20个数据集过期时间，并且有一个数据集将于明天删除，则在删除该数据集之前，您无法再设置任何过期时间。
 
 ![此 [!UICONTROL 数据生命周期] 工作区，使用 [!UICONTROL 创建请求] 突出显示。](../images/ui/ttl/create-request-button.png)
 

@@ -2,30 +2,26 @@
 title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1402'
 ht-degree: 2%
 
 ---
 
 # 数据集到期端点
 
->[!IMPORTANT]
->
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护**.
+此 `/ttl` 数据卫生API中的端点允许您安排Adobe Experience Platform中数据集的过期日期。
 
-此 `/ttl` 数据卫生API中的端点允许您计划Adobe Experience Platform中数据集的过期日期。
-
-数据集过期只是定时延迟的删除操作。 数据集在过渡期间不受保护，因此在达到过期时间之前，可以通过其他方式将其删除。
+数据集到期只是定时延迟的删除操作。 数据集在过渡期间不受保护，因此在达到过期时间之前，可以通过其他方式将其删除。
 
 >[!NOTE]
 >
->尽管到期被指定为特定的即时时间，但在实际删除开始之前，到期后最多可能有24小时的延迟。 开始删除后，可能需要长达7天时间，才会从Platform系统中删除数据集的所有跟踪。
+>尽管过期时间指定为特定的即时时间，但在实际删除开始之前，过期后最多可能有24小时的延迟。 开始删除后，可能需要长达7天时间，才会从Platform系统中删除数据集的所有跟踪。
 
-在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集到期后，您可以通过设置新到期来重新打开它。
+在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集到期后，可以通过设置新到期来重新打开数据集。
 
-开始删除数据集后，其过期作业将标记为 `executing`，并且不得进一步更改。 数据集本身最多可以恢复7天，但只能通过Adobe服务请求启动的手动过程恢复。 在请求执行时，数据湖、Identity Service和Real-time Customer Profile开始单独的进程，以从各自的服务中删除数据集的内容。 从所有三个服务中删除数据后，到期将标记为 `executed`.
+开始删除数据集后，其到期作业将标记为 `executing`，并且不能进一步更改。 数据集本身最多可以恢复7天，但只能通过Adobe服务请求启动的手动流程进行恢复。 在请求执行时，数据湖、Identity Service和Real-time Customer Profile开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，到期时间将标记为 `executed`.
 
 >[!WARNING]
 >
@@ -33,7 +29,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的端点属于数据卫生API。 在继续之前，请查看 [概述](./overview.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的端点属于数据卫生API。 在继续之前，请查看 [概述](./overview.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 列出数据集过期时间 {#list}
 
@@ -47,7 +43,7 @@ GET /ttl?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETERS}` | 可选查询参数列表，多个参数由以下字符分隔 `&` 个字符。 常见参数包括 `size` 和 `page` 用于分页。 有关支持的查询参数的完整列表，请参阅 [附录部分](#query-params). |
+| `{QUERY_PARAMETERS}` | 可选查询参数的列表，多个参数由分隔 `&` 个字符。 常见参数包括 `size` 和 `page` 进行分页。 有关支持的查询参数的完整列表，请参阅 [附录部分](#query-params). |
 
 {style="table-layout:auto"}
 
@@ -64,7 +60,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将列出生成的数据集过期时间。 以下示例的空格已被截断。
+成功的响应将列出生成的数据集过期日期。 以下示例的空间已被截断。
 
 ```json
 {
@@ -103,8 +99,8 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `totalRecords` | 与列表调用的参数匹配的数据集过期次数。 |
-| `ttlDetails` | 包含返回的数据集过期时间的详细信息。 有关数据集到期属性的更多详细信息，请参阅响应部分以发出 [查找调用](#lookup). |
+| `totalRecords` | 与列表调用的参数匹配的数据集过期计数。 |
+| `ttlDetails` | 包含返回的数据集过期的详细信息。 有关数据集到期属性的更多详细信息，请参阅响应部分，以发出 [查找调用](#lookup). |
 
 {style="table-layout:auto"}
 
@@ -173,7 +169,7 @@ curl -X GET \
 
 使用时 [目录API](../../catalog/api/getting-started.md) 要查找数据集详细信息，如果数据集具有有效到期日期，则它将在下面列出 `tags.adobe/hygiene/ttl`.
 
-以下JSON表示对目录中数据集详细信息的响应被截断，其过期值为 `32503680000000`. 标记的值将过期时间编码为自Unix纪元开始以来的整数毫秒数。
+以下JSON表示从目录中对数据集详细信息的截断响应，过期值为 `32503680000000`. 标记的值将过期时间编码为自Unix纪元开始以来的整数毫秒数。
 
 ```json
 {
@@ -203,11 +199,11 @@ PUT /ttl/{DATASET_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 要为其安排过期时间的数据集的ID。 |
+| `{DATASET_ID}` | 要为其计划到期的数据集的ID。 |
 
 **请求**
 
-以下请求计划一个数据集 `5b020a27e7040801dedbf46e` ，以在2022年底（格林尼治标准时间）删除。 如果未找到数据集的现有过期时间，则会创建新的过期时间。 如果数据集已有待处理过期，则会使用新的更新该过期 `expiry` 值。
+以下请求计划了一个数据集 `5b020a27e7040801dedbf46e` ，以在2022年底（格林尼治标准时间）删除。 如果未找到数据集的现有过期时间，则会创建新的过期时间。 如果数据集已有待处理过期，则会使用新的更新该过期 `expiry` 值。
 
 ```shell
 curl -X PUT \
@@ -234,7 +230,7 @@ curl -X PUT \
 
 **响应**
 
-成功响应将返回数据集到期的详细信息，如果更新了预先存在的到期，则返回HTTP状态200 （正常），如果不存在预先存在的到期，则返回201 （创建）。
+成功的响应会返回数据集到期的详细信息，如果更新了预先存在的到期，则返回HTTP状态200 （正常），如果不存在预先存在的到期，则返回201 （创建）。
 
 ```json
 {
@@ -268,7 +264,7 @@ curl -X PUT \
 
 >[!NOTE]
 >
->仅限状态为“ ”的数据集过期时间 `pending` 可以取消。 尝试取消已执行或已取消的到期返回HTTP 404错误。
+>仅具有状态的数据集过期时间 `pending` 可以取消。 尝试取消已执行或已取消的到期返回HTTP 404错误。
 
 **API格式**
 
@@ -301,7 +297,7 @@ curl -X DELETE \
 
 ## 检索数据集的到期状态历史记录
 
-您可以使用查询参数查找特定数据集的到期状态历史记录 `include=history` 在查找请求中。 结果包括关于数据集到期的创建、已应用的任何更新及其取消或执行（如果适用）的信息。
+您可以使用查询参数查找特定数据集的到期状态历史记录 `include=history` 在查找请求中。 结果包括关于创建数据集过期、已应用的任何更新及其取消或执行（如果适用）的信息。
 
 **API格式**
 
@@ -328,7 +324,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回数据集到期的详细信息，其中 `history` 数组，提供详细信息 `status`， `expiry`， `updatedAt`、和 `updatedBy` 其每个记录的更新的属性。
+成功的响应将返回数据集到期的详细信息，带有 `history` 数组，提供详细信息 `status`， `expiry`， `updatedAt`、和 `updatedBy` 其每个记录的更新的属性。
 
 ```json
 {
@@ -370,12 +366,12 @@ curl -X GET \
 | --- | --- |
 | `workorderId` | 数据集过期的ID。 |
 | `datasetId` | 此到期应用于的数据集的ID。 |
-| `datasetName` | 此过期时间适用的数据集的显示名称。 |
+| `datasetName` | 此过期应用于的数据集的显示名称。 |
 | `sandboxName` | 目标数据集所在的沙盒的名称。 |
 | `displayName` | 到期请求的显示名称。 |
 | `description` | 到期请求的描述。 |
 | `imsOrg` | 您组织的ID。 |
-| `history` | 以对象数组形式列出到期更新的历史记录，每个对象包含 `status`， `expiry`， `updatedAt`、和 `updatedBy` 更新时到期的属性。 |
+| `history` | 以对象数组形式列出到期的更新历史记录，每个对象包含 `status`， `expiry`， `updatedAt`、和 `updatedBy` 更新时到期的属性。 |
 
 {style="table-layout:auto"}
 
@@ -387,19 +383,19 @@ curl -X GET \
 
 | 参数 | 描述 | 示例 |
 | --- | --- | --- |
-| `size` | 介于1和100之间的整数，表示要返回的最大过期次数。 默认为25。 | `size=50` |
-| `page` | 一个整数，指示要返回的过期页。 | `page=3` |
-| `orgId` | 匹配组织ID与参数的组织ID匹配的数据集过期日期。 此值默认为 `x-gw-ims-org-id` 标头，并且将被忽略，除非请求提供服务令牌。 | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
-| `status` | 以逗号分隔的状态列表。 如果包含，则响应将匹配数据集过期时间，而数据集过期时间的当前状态属于列出的状态之一。 | `status=pending,cancelled` |
-| `author` | 匹配过期时间 `created_by` 是搜索字符串的匹配项。 如果搜索字符串的开头为 `LIKE` 或 `NOT LIKE`，则余数将被视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配 `created_by` 字段。 | `author=LIKE %john%` |
-| `sandboxName` | 匹配沙盒名称与参数完全匹配的数据集过期时间。 在请求的 `x-sandbox-name` 标头。 使用 `sandboxName=*` 以包含来自所有沙盒的数据集过期时间。 | `sandboxName=dev1` |
+| `size` | 介于1和100之间的整数，它表示要返回的最大过期次数。 默认为25。 | `size=50` |
+| `page` | 一个整数，它指示要返回的过期页。 | `page=3` |
+| `orgId` | 匹配其组织ID与参数的组织ID匹配的数据集过期日期。 此值默认为 `x-gw-ims-org-id` 标头，除非请求提供服务令牌，否则忽略和。 | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
+| `status` | 以逗号分隔的状态列表。 包含后，响应将与当前状态位于所列数据集中的数据集过期日期相匹配。 | `status=pending,cancelled` |
+| `author` | 匹配过期时间 `created_by` 是搜索字符串的匹配。 如果搜索字符串的开头为 `LIKE` 或 `NOT LIKE`，则将其余部分视为SQL搜索模式。 否则，整个搜索字符串将被视为必须完全匹配 `created_by` 字段。 | `author=LIKE %john%` |
+| `sandboxName` | 匹配沙盒名称与参数完全匹配的数据集过期时间。 默认为请求中的沙盒名称 `x-sandbox-name` 标题。 使用 `sandboxName=*` 以包含来自所有沙盒的数据集过期时间。 | `sandboxName=dev1` |
 | `datasetId` | 匹配应用于特定数据集的过期时间。 | `datasetId=62b3925ff20f8e1b990a7434` |
-| `createdDate` | 匹配在指定时间开始的24小时窗口内创建的过期时间。<br><br>请注意，没有时间的日期(例如 `2021-12-07`)表示当天开始的日期时间。 因此， `createdDate=2021-12-07` 指在2021年12月7日创建的从 `00:00:00` 到 `23:59:59.999999999` (UTC)。 | `createdDate=2021-12-07` |
+| `createdDate` | 匹配在指定时间开始的24小时窗口中创建的过期时间。<br><br>请注意，没有时间的日期(如 `2021-12-07`)表示当天开始的日期时间。 因此， `createdDate=2021-12-07` 指任何在2021年12月7日创建的到期日期，从 `00:00:00` 到 `23:59:59.999999999` (UTC)。 | `createdDate=2021-12-07` |
 | `createdFromDate` | 匹配在指定时间或之后创建的过期时间。 | `createdFromDate=2021-12-07T00:00:00Z` |
-| `createdToDate` | 匹配在指定时间或之前创建的过期时间。 | `createdToDate=2021-12-07T23:59:59.999999999Z` |
-| `updatedDate` / `updatedToDate` / `updatedFromDate` | 点赞 `createdDate` / `createdFromDate` / `createdToDate`，但匹配数据集到期的更新时间，而不是创建时间。<br><br>每次编辑时都会考虑更新过期，包括创建、取消或执行过期的时间。 | `updatedDate=2022-01-01` |
+| `createdToDate` | 匹配在指定时间或之前创建的过期日期。 | `createdToDate=2021-12-07T23:59:59.999999999Z` |
+| `updatedDate` / `updatedToDate` / `updatedFromDate` | 点赞 `createdDate` / `createdFromDate` / `createdToDate`，但与数据集到期的更新时间（而不是创建时间）匹配。<br><br>每次编辑时都会考虑更新过期，包括创建、取消或执行过期的时间。 | `updatedDate=2022-01-01` |
 | `cancelledDate` / `cancelledToDate` / `cancelledFromDate` | 匹配在指定间隔内任何时间取消的过期日期。 即使稍后重新打开了过期时间（通过为同一数据集设置新过期时间），这也适用。 | `updatedDate=2022-01-01` |
 | `completedDate` / `completedToDate` / `completedFromDate` | 匹配在指定间隔内完成的过期时间。 | `completedToDate=2021-11-11-06:00` |
-| `expiryDate` / `expiryToDate` / `expiryFromDate` | 匹配在指定间隔内即将执行或已执行的过期时间。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
+| `expiryDate` / `expiryToDate` / `expiryFromDate` | 匹配在指定间隔内即将执行或已执行的过期日期。 | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 
 {style="table-layout:auto"}
