@@ -2,7 +2,7 @@
 title: 高级数据生命周期管理概述
 description: 高级数据生命周期管理允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 1%
@@ -49,7 +49,7 @@ Adobe Experience Platform提供了一套强大的工具来管理大型复杂的�
 | 配置文件计数已更新 | 30 小时 | 根据要删除的数据集的内容，如果某些用户档案的所有组件属性都与该数据集关联，则可能会从系统中删除该用户档案。 数据集被删除30小时后，在总体用户档案计数中产生的任何更改都会反映在 [仪表板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |
 | 已更新受众 | 48 小时 | 更新所有受影响的配置文件后，所有相关的 [受众](../segmentation/home.md) 将更新以反映其新大小。 根据删除的数据集以及您进行分段的属性，每个受众的大小可能会因删除而增加或减少。 |
 | 已更新历程和目标 | 50 小时 | [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html)， [营销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)、和 [目标](../destinations/home.md) 会根据相关区段中的更改进行更新。 |
-| 硬删除完成 | 14 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 此 [数据生命周期作业的状态](./ui/browse.md#view-details) 随后将更新已删除的数据集以反映这一点。 |
+| 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖中硬删除。 此 [数据生命周期作业的状态](./ui/browse.md#view-details) 随后将更新已删除的数据集以反映这一点。 |
 
 {style="table-layout:auto"}
 

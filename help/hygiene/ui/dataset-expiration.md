@@ -2,7 +2,7 @@
 title: 自动化数据集过期时间
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 20%
@@ -26,7 +26,7 @@ ht-degree: 20%
 
 >[!NOTE]
 >
->数据集到期当前不会从Adobe Experience Platform Edge Network删除数据。 但是，数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的14天服务许可协议与14天期限重合，在这14天期限内，数据在被丢弃之前会存在于边缘网络内。
+>数据集到期当前不会从Adobe Experience Platform Edge Network删除数据。 但是，数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的15天服务许可协议与14天期限重叠，在这14天期限中，数据在被丢弃之前存在于边缘网络内。
 
 ## 计划数据集过期 {#schedule-dataset-expiration}
 
