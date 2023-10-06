@@ -1,13 +1,13 @@
 ---
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
-source-git-commit: b97694dcf0d7fd600c6aada9600364e99ffe0902
+exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2716'
-ht-degree: 23%
+ht-degree: 38%
 
 ---
-
 
 # [!DNL LiveRamp - Distribution] 连接
 
@@ -110,13 +110,13 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_4cinsights_profile_id"
 >title="4C 品牌配置文件 ID"
->abstract="输入与您的 4C 品牌配置文件关联的数字 ID。如果您没有此ID，请联系您的4C客户服务代表。"
+>abstract="输入与您的 4C 品牌配置文件关联的数字 ID。如果您没有此 ID，请联系您的 4C 客户服务代表。"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![显示4C分析目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_4C_DestSpecific.png)
 
-* **[!UICONTROL 4C品牌配置文件ID]**：输入与您的4C品牌配置文件关联的数字ID。 如果您没有此ID，请联系您的4C客户服务代表。
+* **[!UICONTROL 4C品牌配置文件ID]**：输入与您的4C品牌配置文件关联的数字ID。 如果您没有此 ID，请联系您的 4C 客户服务代表。
 
 ### [!DNL Acast] {#acast}
 
@@ -136,7 +136,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_ampersand_company_name"
 >title="您的公司名称"
->abstract="您希望向目标合作伙伴显示的公司名称。 请勿使用空格或特殊字符。"
+>abstract="您希望向目标合作伙伴显示的公司名称。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -175,7 +175,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_agreement"
 >title="广告商数据目标条款协议"
->abstract="键入 `I AGREE` 确认对迪士尼广告商数据条款的承认和同意。"
+>abstract="键入 `I AGREE` 以确认收到并同意迪士尼广告商数据条款。"
 
 <!-- >additional-url="<https://www.disneyadvertising.com/ADVERTISER-DATA-DESTINATION-TERMS/>" text="Read the agreement" -->
 
@@ -187,7 +187,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_disney_email"
 >title="您的电子邮件地址"
->abstract="输入与个人关联的电子邮件地址。该电子邮件地址用作广告商数据条款协议的签名。如果需要，此电子邮件地址还可用于联系您。"
+>abstract="输入与个人关联的电子邮件地址。该电子邮件地址用作广告商数据条款协议的签名。如果需要，还将使用此电子邮件地址与您联系。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -201,7 +201,7 @@ ht-degree: 23%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_iheartmedia_client"
->title="客户端名称"
+>title="客户名称"
 >abstract="您希望向目标合作伙伴显示的广告商帐户名称。使用您的公司名称。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
@@ -215,7 +215,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_index_advertiseraccountname"
 >title="帐户名称"
->abstract="您的Index Exchange客户端帐户名称。 请勿使用空格或特殊字符。"
+>abstract="您的 Index Exchange 客户帐户名称。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -228,7 +228,7 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_magnitectv_client"
 >title="客户"
->abstract="您希望向目标合作伙伴显示的客户端名称。 使用您的公司名称。请勿使用空格或特殊字符。"
+>abstract="您希望向目标合作伙伴显示的客户名称。使用您的公司名称。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
 
@@ -240,19 +240,19 @@ ht-degree: 23%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_magnitedv+_partnerid"
->title="合作伙伴ID"
->abstract="与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定应使用的值，请联系您的Rubicon项目客户代表。"
+>title="合作伙伴 ID"
+>abstract="与拥有区段/数据的发布者关联的 Rubicon Project 合作伙伴 ID。如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_magnitedv+_seatid"
->title="座席ID"
->abstract="Magnite客户经理提供的Magnite DV+座位ID"
+>title="座位 ID"
+>abstract="由您的 Magnite 客户经理提供的 Magnite DV+ 座位 ID"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![显示Magnite DV+目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_MagniteDV_DestSpecific.png)
 
-* **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定应使用的值，请联系您的Rubicon项目客户代表。
+* **[!UICONTROL 合作伙伴ID]**：与拥有区段/数据的发布者关联的Rubicon项目合作伙伴ID。 如果不确定您应使用的值，请联系您的 Rubicon Project 客户代表。
 * **[!UICONTROL 座席ID]**：您的Magnite客户经理提供的菱形DV+座位ID
 
 ### [!DNL Nexxen (formerly known as [!DNL Amobee])] {#nexxen}
@@ -260,44 +260,44 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_ratetype"
 >title="费率类型"
->abstract="费率类型表示数据使用应计费的方式。 0.00美元的所有费率应为固定费用。 如果您不确定要使用的费率类型，请咨询您的Nexen代表。"
+>abstract="费率类型表示数据用量的计费方式。所有 0.00 美元的费率应为固定费率。如果您不确定要使用哪种费率类型，请与您的 Nexxen 代表进行确认。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_marketid"
->title="市场Id"
->abstract="输入应在其中创建Nexen数据合同的数字市场ID。 如果您在Nexen平台的所有市场中都进行“AlwaysOn”联合，请输入–1。"
+>title="市场 ID"
+>abstract="输入应在其中创建 Nexxen 数据合同的数字市场 ID。如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_advertiserid"
->title="广告商ID"
->abstract="如果您将数据发送到Nexen平台中的单个广告商，请输入数字Amobe广告商ID。 如果要让某个市场中的所有广告商都可以使用这些数据，或者这些区段是“AlwaysOn”，请输入–1。"
+>title="广告商 ID"
+>abstract="如果要在 Nexxen 平台中将数据发送到单个广告商，请输入数字 Amobee 广告商 ID。如果要将数据提供给市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入 -1。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_nexxen_contactemail"
 >title="联系电子邮件"
->abstract="输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可能是电子邮件别名。 对于多个收件人，请使用逗号(`email1@domain.com`，`email2@domain.com`，等等。)"
+>abstract="输入 Nexxen 应该用于发送数据合同详细信息的电子邮件地址。这很可能是您自己的电子邮件地址，但也可以是电子邮件别名。对于多个收件人，请用逗号分隔（`email1@domain.com`,`email2@domain.com`, 等）。"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![显示Nexen目标的客户数据字段的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Nexxen_DestSpecific.png)
 
-* **[!UICONTROL 费率类型]**：费率类型表示数据使用应计费的方式。 0.00美元的所有费率应为固定费用。 如果您不确定要使用的费率类型，请咨询您的Nexen代表。
-* **[!UICONTROL 市场Id]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在Nexen平台的所有市场中都进行“AlwaysOn”联合，请输入–1。
+* **[!UICONTROL 费率类型]**：费率类型表示数据使用应计费的方式。 所有 0.00 美元的费率应为固定费率。如果您不确定要使用哪种费率类型，请与您的 Nexxen 代表进行确认。
+* **[!UICONTROL 市场Id]**：输入应在其中创建Nexen数据合同的数字市场ID。 如果您在 Nexxen 平台中跨每个市场进行“AlwaysOn”联合，请输入 -1。
 * **[!UICONTROL 广告商ID]**：如果您向Nexen平台中的单个广告商发送数据，请输入数字Nexen广告商ID。 如果要使数据可用于市场中的所有广告商，或者如果这些区段为“AlwaysOn”，请输入–1。
-* **[!UICONTROL 联系人电子邮件]**：输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可能是电子邮件别名。 对于多个收件人，请使用逗号( `email1@domain.com`， `email2@domain.com`)。
+* **[!UICONTROL 联系人电子邮件]**：输入Nexen用于发送数据合同详细信息的电子邮件地址。 这很可能是您自己的电子邮件地址，但也可以是电子邮件别名。对于多个收件人，请使用逗号( `email1@domain.com`， `email2@domain.com`)。
 
 ### [!DNL One Fox] {#fox}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_fox_client"
 >title="客户"
->abstract="您希望向合作伙伴显示的公司/分发帐户的名称。 如果不确定要使用什么名称，请与您的合作伙伴客户代表联系。 请勿使用空格或特殊字符。"
+>abstract="您希望向合作伙伴显示的公司/分发帐户的名称。如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![平台UI图像，其中显示了One Fox目标的客户数据字段。](../../assets/catalog/advertising/liveramp-distribution/LR_Fox_DestSpecific.png)
 
-* **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用什么名称，请与您的合作伙伴客户代表联系。 请勿使用空格或特殊字符。
+* **[!UICONTROL 客户端]**：您希望向合作伙伴显示的公司/分发帐户的名称。 默认使用您的公司名称。 如果不确定要使用哪个名称，请联系您的合作伙伴客户代表。请勿使用空格或特殊字符。
 
 ### [!DNL Pandora] {#pandora}
 
@@ -373,14 +373,14 @@ ht-degree: 23%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_taboola_seg_type"
 >title="区段类型"
->abstract="区段类型。 当前仅支持第一方区段。"
+>abstract="区段类型。目前仅支持第一方区段。"
 
 要配置目标的详细信息，请填写以下字段。
 
 ![显示Taboola目标所支持标识符的Platform UI图像。](../../assets/catalog/advertising/liveramp-distribution/LR_Taboola_DestSpecific.png)
 
 * **[!UICONTROL 客户经理电子邮件地址]**：您的Taboola客户经理的电子邮件地址。
-* **[!UICONTROL 区段类型]**：区段类型。 当前仅支持第一方区段。
+* **[!UICONTROL 区段类型]**：区段类型。 目前仅支持第一方区段。
 
 ### [!DNL TargetSpot] {#targetspot}
 
@@ -399,8 +399,8 @@ ht-degree: 23%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_teads_teadsid"
->title="团队编号"
->abstract="您的团队ID"
+>title="Teads ID"
+>abstract="您的 Teads ID"
 
 要配置目标的详细信息，请填写以下字段。
 

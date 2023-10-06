@@ -16,7 +16,7 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
 >title="许可证使用情况仪表板"
->abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您对每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
+>abstract="通过许可证使用情况仪表板，可了解已购买的 Adobe Experience Platform 产品。仪表板概述显示产品的主要量度，包括每个主要量度的使用情况以及合同规定的许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
 
 您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
