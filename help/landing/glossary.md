@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '7979'
 ht-degree: 0%
@@ -380,6 +380,10 @@ ht-degree: 0%
 **Parquet文件**： Parquet文件是一种具有复杂嵌套数据结构的列存储文件格式。 添加数据以填充架构数据集需要Parquet文件。
 
 **PDPA**：和 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 引入该法是为了保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。
+
+<!-- Not yet released
+**PDPD**: The [[!DNL Personal Data Protection Decree] (PDPD) 
+-->
 
 **个性化优惠**：个性化优惠是基于资格规则和约束的可自定义营销消息。
 

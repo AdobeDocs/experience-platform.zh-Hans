@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私法规术语
 description: 本文档提供了与Adobe Experience Cloud支持的隐私法规相关的主要术语的定义。
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '1796'
 ht-degree: 2%
@@ -108,6 +108,10 @@ ht-degree: 2%
 ## P
 
 **PDPA**：和 [!DNL Personal Data Protection Act] 引入了PDPA保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。
+
+<!-- Not yet released:
+**PDPD**: The [!DNL Personal Data Protection Decree] of Vietnam (PDPD) ...  
+-->
 
 **个人数据**：任何与自然人或“数据主体”相关的信息，可用于直接或间接识别人员。
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '1475'
 ht-degree: 14%
@@ -52,6 +52,10 @@ ht-degree: 14%
 | [!UICONTROL VCDPA_USA] | [!DNL Virginia Consumer Data Protection Act] |
 
 {style="table-layout:auto"}
+
+<!--Not released yet:
+| [!UICONTROL PDPA_VNM] | Vietnam's [!DNL Personal Data Protection Decree] |
+ -->
 
 >[!NOTE]
 >

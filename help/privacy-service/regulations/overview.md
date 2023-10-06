@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私法规概述
 description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '951'
 ht-degree: 0%
@@ -33,6 +33,10 @@ ht-degree: 0%
 | VCDPA （弗吉尼亚州） | 此 [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) 为弗吉尼亚州居民（“消费者”）提供新的数据隐私权，包括访问、删除和更正个人数据的权利。 消费者还有权选择退出个人数据销售、选择退出基于个人数据的分析和处理个人广告。 |
 
 {style="table-layout:auto"}
+
+<!-- Not yet released:
+ | PDPD (Vietnam) | The [[!DNL Personal Data Protection Decree (PDPD)]]() .... | 
+ -->
 
 ## 后续步骤
 
