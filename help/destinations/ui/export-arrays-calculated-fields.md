@@ -7,7 +7,7 @@ exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
 workflow-type: tm+mt
 source-wordcount: '1479'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
 >title="(Beta) 导出数组支持"
->abstract="使用 **添加计算字段** 用于将int、字符串或布尔值的简单数组从Experience Platform导出到所需的云存储目标的控件。 其中适用一些限制。查看文档以了解大量示例和支持的函数。"
+>abstract="使用&#x200B;**添加计算字段**&#x200B;控件，将整型、字符串或布尔值的简单数组从 Experience Platform 导出到所需的云存储目标。其中适用一些限制。查看文档以了解大量示例和支持的函数。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
 
