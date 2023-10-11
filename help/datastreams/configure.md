@@ -2,10 +2,10 @@
 title: 配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 1233d9dcfefa71685e457815cb5b9d7a768b7d6e
+source-git-commit: db75771d09caef00db58073333909f730a303975
 workflow-type: tm+mt
-source-wordcount: '2681'
-ht-degree: 82%
+source-wordcount: '2777'
+ht-degree: 75%
 
 ---
 
@@ -48,12 +48,18 @@ ht-degree: 82%
 
 | 设置 | 描述 |
 | --- | --- |
-| [!UICONTROL 地理位置查找] | 根据访客 IP 地址启用所选选项的地理位置查找。地理位置查找要求在您的 Web SDK 配置中包括 [`placeContext`](../edge/data-collection/automatic-information.md#place-context) 字段组。<br>可用的选项： <ul><li>国家/地区</li><li>邮政编码</li><li>州/省</li><li>DMA</li><li>城市</li><li>纬度 </li><li>经度</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>不选择任何选项将禁用任何地理位置查找。地理定位在 [!UICONTROL IP 模糊处理]之前进行，并且不受 [!UICONTROL IP 模糊处理]设置的影响。 |
-| [!UICONTROL 网络查找] | 根据访客 IP 地址启用所选选项的网络查找。网络查找要求在您的 Web SDK 配置中包括 [`Environment`](../edge/data-collection/automatic-information.md#environment) 字段组。<br>可用的选项： <ul><li>运营商</li><li>域</li><li>ISP</li></ul>使用这些选项可向其他服务提供有关发出请求的特定网络的更多信息。 |
+| [!UICONTROL 地理位置查找] | 根据访客的IP地址为所选选项启用地理位置查找。 可用选项包括： <ul><li>**国家/地区**：填充 `xdm.placeContext.geo.countryCode`</li><li>**邮政编码**：填充 `xdm.placeContext.geo.postalCode`</li><li>**省/市/自治区**：填充 `xdm.placeContext.geo.stateProvince`</li><li>**DMA**：填充 `xdm.placeContext.geo.dmaID`</li><li>**城市**：填充 `xdm.placeContext.geo.city`</li><li>**纬度**：填充 `xdm.placeContext.geo._schema.latitude`</li><li>**经度**：填充 `xdm.placeContext.geo._schema.longitude`</li></ul>选择&#x200B;**[!UICONTROL 城市]**、**[!UICONTROL 纬度]**&#x200B;或&#x200B;**[!UICONTROL 经度]**&#x200B;将提供最多两位小数的坐标，而不管选择的其他选项如何。这被视为城市级别粒度。<br> <br>未选择任何选项将禁用地理位置查找。 地理位置发生在之前 [!UICONTROL IP模糊处理]，这表示它不受影响 [!UICONTROL IP模糊处理] 设置。 |
+| [!UICONTROL 网络查找] | 根据访客的IP地址启用所选选项的网络查找。 可用选项包括： <ul><li>**运营商**：填充 `xdm.environment.carrier`</li><li>**域**：填充 `xdm.environment.domain`</li><li>**ISP**：填充 `xdm.environment.ISP`</li></ul> |
+
+如果启用以上任何字段进行数据收集，请确保正确设置 [`context`](../edge/data-collection/automatic-information.md) 数组属性，条件 [配置Web SDK](../edge/fundamentals/configuring-the-sdk.md).
+
+地理位置查找字段使用 `context` 数组字符串 `"placeContext"`，而网络查找字段使用 `context` 数组字符串 `"environment"`.
+
+此外，请确保架构中存在每个所需的XDM字段。 如果不能，您可以添加Adobe提供的变量 `Environment Details` 字段组添加到您的架构。
 
 ### 配置设备查找 {#geolocation-device-lookup}
 
-此 **[!UICONTROL 设备查找]** 通过设置，您可以选择要收集的特定于设备的信息的粒度级别。
+此 **[!UICONTROL 设备查找]** 设置允许您选择要收集的特定于设备的信息。
 
 展开 **[!UICONTROL 设备查找]** 部分来配置下述设置。
 
@@ -65,9 +71,15 @@ ht-degree: 82%
 
 | 设置 | 描述 |
 | --- | --- |
-| **[!UICONTROL 保留用户代理和客户端提示标头]** | 选择此选项可仅收集用户代理字符串中存储的信息。 这是默认设置。 |
-| **[!UICONTROL 使用设备查找收集以下信息]** | 如果要收集以下一个或多个特定于设备的信息，请选择此选项： <ul><li>**[!UICONTROL 设备]** 信息：<ul><li>设备制造商</li><li>设备型号</li><li>营销名称</li></ul></li><li>**[!UICONTROL 硬件]** 信息： <ul><li>Device type</li><li>显示高度</li><li>显示宽度</li><li>显示颜色深度</li></ul></li><li>**[!UICONTROL 浏览器]** 信息： <ul><li>浏览器供应商</li><li>浏览器名称</li><li>浏览器版本</li></ul></li><li>**[!UICONTROL 操作系统]** 信息： <ul><li>操作系统供应商</li><li>操作系统名称</li><li>操作系统版本</li></ul></li></ul> <br>  无法收集设备查找信息以及用户代理和客户端提示。 选择收集设备信息将禁用用户代理和客户端提示的收集，反之亦然。 所有设备查找信息都存储在 `xdm:device` 字段组。 |
-| **[!UICONTROL 不收集任何设备信息]** | 如果不想收集任何类型的查找信息，请选择此选项。 不会收集任何设备、硬件、浏览器或操作系统信息，包括用户代理或客户端提示标头。 |
+| **[!UICONTROL 保留用户代理和客户端提示标头]** | 选择此选项可仅收集用户代理字符串中存储的信息。 默认情况下，此设置处于选中状态。 填充 `xdm.environment.browserDetails.userAgent` |
+| **[!UICONTROL 使用设备查找收集以下信息]** | 如果要收集以下一个或多个特定于设备的信息，请选择此选项： <ul><li>**[!UICONTROL 设备]** 信息：<ul><li>**设备制造商**：填充 `xdm.device.manufacturer`</li><li>**设备型号**：填充 `xdm.device.modelNumber`</li><li>**营销名称**：填充 `xdm.device.model`</li></ul></li><li>**[!UICONTROL 硬件]** 信息： <ul><li>**硬件类型**：填充 `xdm.device.type`</li><li>**显示高度**：填充 `xdm.device.screenHeight`</li><li>**显示宽度**：填充 `xdm.device.screenWidth`</li><li>**显示颜色深度**：填充 `xdm.device.colorDepth`</li></ul></li><li>**[!UICONTROL 浏览器]** 信息： <ul><li>**浏览器供应商**：填充 `xdm.environment.browserDetails.vendor`</li><li>**浏览器名称**：填充 `xdm.environment.browserDetails.name`</li><li>**浏览器版本**：填充 `xdm.environment.browserDetails.version`</li></ul></li><li>**[!UICONTROL 操作系统]** 信息： <ul><li>**操作系统供应商**：填充 `xdm.environment.operatingSystemVendor`</li><li>**操作系统名称**：填充 `xdm.environment.operatingSystem`</li><li>**操作系统版本**：填充 `xdm.environment.operatingSystemVersion`</li></ul></li></ul>无法收集设备查找信息以及用户代理和客户端提示。 选择收集设备信息会禁用用户代理和客户端提示的收集，反之亦然。 |
+| **[!UICONTROL 不收集任何设备信息]** | 如果不想收集任何设备查找信息，请选择此选项。 未收集任何设备、硬件、浏览器、操作系统、用户代理或客户端提示数据。 |
+
+如果启用以上任何字段进行数据收集，请确保正确设置 [`context`](../edge/data-collection/automatic-information.md) 数组属性，条件 [配置Web SDK](../edge/fundamentals/configuring-the-sdk.md).
+
+设备和硬件信息使用 `context` 数组字符串 `"device"`，而浏览器和操作系统信息则使用 `context` 数组字符串 `"environment"`.
+
+此外，请确保架构中存在每个所需的XDM字段。 如果不能，您可以添加Adobe提供的变量 `Environment Details` 字段组添加到您的架构。
 
 ### 配置高级选项 {#@advanced-options}
 
