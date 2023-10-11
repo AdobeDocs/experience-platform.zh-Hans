@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: 8e21bcc7b9d7fe3f4d26f80f953d454f090b0928
 workflow-type: tm+mt
-source-wordcount: '1547'
+source-wordcount: '1546'
 ht-degree: 1%
 
 ---
@@ -164,7 +164,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `companyContexts` **（必需）** | 包含您组织的身份验证信息的数组。 列出的每个标识符都包含以下属性： <ul><li>`namespace`：标识符的命名空间。</li><li>`value`：标识符的值。</li></ul>它是 **必填** 其中一个标识符使用 `imsOrgId` 作为 `namespace`，及其 `value` 包含贵组织的唯一ID。 <br/><br/>其他标识符可以是产品特定的公司限定符(例如， `Campaign`)，用于标识与属于您组织的Adobe应用程序的集成。 潜在值包括帐户名称、客户端代码、租户ID或其他应用程序标识符。 |
-| `users` **（必需）** | 一个数组，其中包含您要访问或删除其信息的至少一个用户的集合。 单个请求中最多可提供1000个用户ID。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最好为此值选择一个唯一的、易于识别的字符串，以便稍后可以轻松引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 根据您要执行的操作，此阵列必须包括 `access`， `delete`，或同时使用两者。</li><li>`userIDs`：用户的身份集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含 `namespace`， a `value`和命名空间限定符(`type`)。 请参阅 [附录](appendix.md) 以了解有关这些必需属性的更多详细信息。</li></ul> 有关更多详细信息，请参阅 `users` 和 `userIDs`，请参见 [疑难解答指南](../troubleshooting-guide.md#user-ids). |
+| `users` **（必需）** | 一个数组，其中包含您要访问或删除其信息的至少一个用户的集合。 单个请求最多可提供1000个用户。 每个用户对象包含以下信息： <ul><li>`key`：用于限定响应数据中各个作业ID的用户的标识符。 最好为此值选择一个唯一的、易于识别的字符串，以便稍后可以轻松引用或查找。</li><li>`action`：一个数组，列出了要对用户数据执行的所需操作。 根据您要执行的操作，此阵列必须包括 `access`， `delete`，或同时使用两者。</li><li>`userIDs`：用户的身份集合。 单个用户可以拥有的身份数限制为9个。 每个标识都包含 `namespace`， a `value`和命名空间限定符(`type`)。 请参阅 [附录](appendix.md) 以了解有关这些必需属性的更多详细信息。</li></ul> 有关更多详细信息，请参阅 `users` 和 `userIDs`，请参见 [疑难解答指南](../troubleshooting-guide.md#user-ids). |
 | `include` **（必需）** | 要包含在处理中的一系列Adobe产品。 如果此值缺失或为空，则将拒绝请求。 仅包括您的组织与之集成的产品。 请参阅以下部分 [接受的产品值](appendix.md) ，以了解更多信息。 |
 | `expandIDs` | 可选属性，设置为时 `true`，表示对应用程序中处理ID的优化(当前仅受支持 [!DNL Analytics])。 如果忽略，此值将默认为 `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，用于设置处理请求的优先级。 接受的值包括 `normal` 和 `low`. 如果 `priority` 将被忽略，默认行为为 `normal`. |

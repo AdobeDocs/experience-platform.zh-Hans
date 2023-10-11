@@ -2,20 +2,20 @@
 title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-hide: true
-hidefromtoc: true
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 8e21bcc7b9d7fe3f4d26f80f953d454f090b0928
 workflow-type: tm+mt
-source-wordcount: '997'
+source-wordcount: '1034'
 ht-degree: 3%
 
 ---
 
-# 工单端点
+# [!BADGE 测试版]{type=Informational}工作单终结点 {#work-order-endpoint}
 
 此 `/workorder` 数据卫生API中的端点允许您在Adobe Experience Platform中以编程方式管理记录删除请求。
 
 >[!IMPORTANT]
+> 
+>记录删除功能当前为测试版，仅在 **限量发行**. 并非所有客户都可使用。 记录删除请求仅适用于受限版本中的组织。
 >
 >记录删除旨在用于数据清理、匿名数据删除或数据最小化。 他们是 **非** 用于数据主体权利请求（符合），与通用数据保护条例(GDPR)等隐私法规相关。 对于所有合规性用例，使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而是。
 
