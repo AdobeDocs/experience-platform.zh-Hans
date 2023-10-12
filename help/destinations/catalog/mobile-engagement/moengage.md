@@ -2,7 +2,7 @@
 title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
-source-git-commit: 3d5a3ce18e7f1c0e06246faf8ec4403871e1a1a9
+source-git-commit: 6a80089f404057b5c98764b5e0166b9afaf1a7e4
 workflow-type: tm+mt
 source-wordcount: '1002'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此目标连接器和文档页面由 *Moengage* 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： *`[amc-support@amazon.com](https://help.moengage.com/hc/en-us)`.*
+>此目标连接器和文档页面由 *Moengage* 团队。 如有任何查询或更新请求，请直接通过以下电子邮件联系他们： *`https://help.moengage.com/hc/en-us`.*
 
 ## 用例 {#use-cases}
 
