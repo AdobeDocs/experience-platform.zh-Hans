@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 7eaf3383bb8dde0d5918eefba1ee69caddea0c0b
+source-git-commit: 695a5c9b39def899c6b1f9cb169508ae0299686c
 workflow-type: tm+mt
-source-wordcount: '3781'
+source-wordcount: '3822'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 3%
 - [[!DNL Segmentation Service]](../home.md)： [!DNL Segmentation Service] 允许您对存储在以下位置的数据分段： [!DNL Experience Platform] 将个人（如客户、潜在客户、用户或组织）关联到较小的组中。
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：通过桥接被摄取到的不同数据源中的身份来创建客户用户档案 [!DNL Platform].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 
 您还应该了解本文档中使用的两个关键术语并了解它们之间的差异：
 
@@ -92,7 +92,7 @@ ht-degree: 3%
 
 切换 **[!UICONTROL 计划所有受众]** 将启用计划分段。 有关计划分段的更多信息，请参阅 [本用户指南的计划分段部分](#scheduled-segmentation).
 
-选择 **[!UICONTROL 导入受众]** 将允许您导入外部生成的受众。 要了解导入受众的更多信息，请阅读以下部分： [用户指南中的导入受众](#import-audience).
+选择 **[!UICONTROL 导入受众]** 将允许您导入外部生成的受众。 要了解有关导入受众的更多信息，请阅读以下部分： [用户指南中的导入受众](#import-audience).
 
 选择 **[!UICONTROL 创建受众]** 将允许您创建受众。 要了解有关创建受众的更多信息，请阅读以下部分： [在用户指南中创建受众](#create-audience).
 
@@ -350,6 +350,10 @@ ht-degree: 3%
 ![此 [!UICONTROL 审核] 此时将显示页面，其中显示新导入的外部生成受众的详细信息。](../images/ui/overview/import-audience-review-details.png)
 
 确认详细信息正确后，选择 **[!UICONTROL 完成]** 将外部生成的受众导入Adobe Experience Platform。
+
+>[!IMPORTANT]
+>
+>如果外部生成的受众包含敏感信息和/或医疗保健相关信息，则您可以 **必须** 在将数据激活到任何目标之前，请应用必需的数据使用标签。 有关应用数据使用标签的更多信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md).
 
 ## 计划分段 {#scheduled-segmentation}
 
