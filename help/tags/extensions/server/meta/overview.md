@@ -2,9 +2,9 @@
 title: 元转换API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: d55398f328f3f85ce6b32a2553e7a93df3584f02
 workflow-type: tm+mt
-source-wordcount: '2370'
+source-wordcount: '2624'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 选择或创建所需的属性后，选择 **[!UICONTROL 扩展]** 在左侧导航中，然后选择 **[!UICONTROL 目录]** 选项卡。 搜索 [!UICONTROL 元转化API] 信息卡，然后选择 **[!UICONTROL 安装]**.
 
-![此 [!UICONTROL 安装] 按钮已选定的 [!UICONTROL 元转化API] 数据收集UI中的扩展。](../../../images/extensions/server/meta/install.png)
+![此 [!UICONTROL 安装] 为选择的选项 [!UICONTROL 元转化API] 数据收集UI中的扩展。](../../../images/extensions/server/meta/install.png)
 
 在显示的配置视图中，您必须提供 [!DNL Pixel] 您之前复制的ID用于将扩展关联到您的帐户。 您可以将ID直接粘贴到输入中，也可以改用数据元素。
 
@@ -46,6 +46,30 @@ ht-degree: 0%
 ![此 [!DNL Pixel] 在扩展配置视图中作为数据元素提供的ID。](../../../images/extensions/server/meta/configure.png)
 
 扩展已安装，您现在可以在事件转发规则中使用该扩展的功能。
+
+## 与元业务扩展(MBE)集成 {#mbe}
+
+与元业务扩展(MBE)增强功能的集成允许您快速向元业务帐户进行身份验证。 然后，这会自动填充 [!UICONTROL 像素Id] 和元转化API [!UICONTROL 访问令牌]，更轻松地安装和配置元转化API。
+
+安装时，会出现在MBE中进行身份验证的对话框提示 [!UICONTROL 元转化API] 扩展。
+
+![此 [!UICONTROL 元转化API扩展] 安装页面突出显示 [!UICONTROL 连接到元].](../../../images/extensions/server/meta/mbe-extension-install.png)
+
+在事件转发的快速启动工作流UI中，还会显示在MBE中进行身份验证的对话框提示。
+
+![快速入门工作流UI高亮显示 [!UICONTROL 连接到元].](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
+
+## 与事件质量匹配分数(EMQ)集成 {#emq}
+
+与事件质量匹配分数(EMQ)集成允许您通过显示EMQ分数来轻松查看实施的有效性。 此集成最大限度地减少了上下文切换，并帮助您提高元转换API实施的成功。 这些事件得分显示在 [!UICONTROL 元转化API扩展] 配置屏幕。
+
+![此 [!UICONTROL 元转化API扩展] 配置页面突出显示 [!UICONTROL 查看EMQ得分].](../../../images/extensions/server/meta/emq-score.png)
+
+## 与LiveRamp(Alpha)集成 {#alpha}
+
+与LiveRamp的集成向Meta Conversions API规则配置中添加了新字段，使客户能够更轻松地与LiveRamp Conversions API集成。 此集成使您无需直接与合作伙伴或Meta共享PII。 由于LiveRamp具有强大的标识图，因此包含 [!UICONTROL 合作伙伴ID (alpha)] 可以通过提高用户匹配率来提高集成质量。
+
+![Meta even转发 [!UICONTROL 规则] 配置页面突出显示 [!UICONTROL 合作伙伴名称(alpha)] 和 [!UICONTROL 合作伙伴ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
 
 ## 配置事件转发规则 {#rule}
 
