@@ -2,9 +2,9 @@
 title: 数据管理许可证权利最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 5f21d988d7947e64378dc6f35993f2a465ad1df6
 workflow-type: tm+mt
-source-wordcount: '2202'
+source-wordcount: '2287'
 ht-degree: 2%
 
 ---
@@ -94,6 +94,12 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 * [摄取筛选器](#ingestion-filters)
 * [配置文件存储](#profile-service)
 
+### 身份服务和可寻址受众 {#identity-service}
+
+身份图不计入可寻址受众权利总数，因为可寻址受众是指客户配置文件总数。
+
+但是，由于拆分身份，身份图限制可能会影响可寻址受众。 例如，如果从图表中删除了最早的ECID，则ECID将继续作为假名配置文件存在于实时客户配置文件中。 您可以设置 [假名配置文件数据过期](../../profile/pseudonymous-profiles.md) 以规避这种行为。 若要了解更多信息，请阅读[标识服务数据的护栏](../../identity-service/guardrails.md)。
+
 ### 摄取筛选器 {#ingestion-filters}
 
 通过摄取过滤器，您可以仅引入用例所需的数据，并过滤掉所有不需要的事件。
@@ -104,7 +110,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 | Adobe Analytics数据准备 | 您可以使用 [!DNL Data Prep] 功能过滤掉用例不需要的数据，创建分析源连接时的功能。 到 [!DNL Data Prep]，您可以定义哪些属性/列需要发布到配置文件。 您还可以提供条件语句，以告知Platform数据是应发布到用户档案，还是应仅发布到 [!DNL data lake]. 请参阅指南，网址为 [创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
 | 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样，会将添加到您的 [!DNL Addressable Audience] 和 [!DNL Profile Richness] 权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 请参阅指南，网址为 [为配置文件启用和禁用数据集](../../catalog/datasets/enable-for-profile.md) 以了解更多信息。 |
 | Web SDK和移动SDK数据排除 | Web和Mobile SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 请参阅指南，网址为 [配置SDK基础](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) 以了解更多信息。 |
-| 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 请参阅相关文档 [事件和条件](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)) 以了解更多信息。 |
+| 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 请参阅相关文档 [事件和条件](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)以了解更多信息。 |
 | 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读上的指南 [使用过滤源的行级数据 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |
 
 {style="table-layout:auto"}

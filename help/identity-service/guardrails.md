@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: b78d1d00a42df8a703a4dd15959cf15b058e0b7a
+source-git-commit: 30e927ec78a953aae8ac90829ec8b3b0475c5db4
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1074'
 ht-degree: 1%
 
 ---
@@ -101,7 +101,7 @@ Adobe如果您的生产沙盒包含：
 
 此功能可用后，超过50个标识限制的图形将减少到50个标识。 对于Real-Time CDP B2C版本，这可能会导致符合受众资格的用户档案数量最小化，因为以前分段和激活时会忽略这些用户档案。
 
-#### 实时客户个人资料：假名个人资料设置
+#### 实时客户个人资料：对可寻址受众的影响
 
 删除仅发生在Identity Service中的数据，而不发生在Real-time Customer Profile中。
 
