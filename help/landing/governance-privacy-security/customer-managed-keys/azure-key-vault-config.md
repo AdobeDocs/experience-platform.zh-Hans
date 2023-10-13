@@ -1,9 +1,10 @@
 ---
 title: 配置Azure密钥库
 description: 了解如何使用Azure创建新的企业帐户，或使用现有企业帐户并创建密钥保管库。
-source-git-commit: a0df05cde19e97d4abdad7abd19eafea8efe1096
+exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
+source-git-commit: 4ec87482c5a38404217ecd910b6a27ee2d0e00eb
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -41,6 +42,12 @@ ht-degree: 0%
 一旦你到了 **[!DNL Review + create]** 步骤，您可以在验证过程中查看密钥库的详细信息。 验证通过后，选择 **[!DNL Create]** 以完成该过程。
 
 ![Microsoft Azure Key电子仓库“查看和创建”页面中突出显示了创建内容。](../../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
+
+## 配置访问权限 {#configure-access}
+
+接下来，为您的密钥库启用基于Azure角色的访问控制。 选择 **[!DNL Access configuration]** 在 [!DNL Settings] 部分，然后选择 **[!DNL Azure role-based access control]** 以启用设置。 此步骤至关重要，因为以后必须将CMK应用程序与Azure角色关联。 分配角色在中都有记录 [API](./api-set-up.md#assign-to-role) 和 [UI](./ui-set-up.md#assign-to-role) 工作流。
+
+![此 [!DNL Microsoft Azure] 仪表板 [!DNL Access configuration] 和 [!DNL Azure role-based access control] 突出显示。](../../images/governance-privacy-security/customer-managed-keys/access-configuration.png)
 
 ## 配置联网选项 {#configure-network-options}
 
