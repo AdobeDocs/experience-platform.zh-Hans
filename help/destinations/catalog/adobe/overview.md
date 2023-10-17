@@ -3,9 +3,9 @@ keywords: 目标；experience cloud解决方案；target；target目标；ad clo
 title: Adobe目标概述
 description: 通过将Platform中的数据连接到其他Adobe Experience Cloud解决方案来管理您的客户体验，以实现广告定位、个性化、营销自动化等
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 461545b7d06a4c54fb4037cf1eb2ba44dd6ee7b9
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '231'
 ht-degree: 12%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 12%
 
 ## 概述 {#overview}
 
-将Adobe Experience Platform中的数据与其他Adobe Experience Cloud解决方案连接起来以进行广告定位、个性化、营销自动化等，从而管理您的客户体验。
+通过将Adobe Experience Platform中的数据连接到其他Adobe Experience Cloud解决方案来管理您的客户体验，以实现广告定位、个性化、营销自动化等。
 
 ## 支持的Adobe目标 {#supported-destinations}
 
@@ -27,7 +27,7 @@ ht-degree: 12%
 * [Adobe Advertising Cloud DSP连接](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
 * [Adobe Campaign连接](../email-marketing/adobe-campaign.md)
 * [Adobe Target连接](/help/destinations/catalog/personalization/adobe-target-connection.md)
-* [（测试版）Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
+* [(Beta)Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
 * [Marketo Engage连接](/help/destinations/catalog/adobe/marketo-engage.md)
 * [Marketo Measure Ultimate连接](/help/destinations/catalog/adobe/marketo-measure-ultimate.md)
 
@@ -35,7 +35,6 @@ ht-degree: 12%
 
 * [Adobe Advertising Cloud扩展](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics 扩展](../analytics/adobe-analytics.md)
-* [AdobeLivefyre扩展](../social/adobe-livefyre.md)
 * [Adobe Media Analytics for Audio and Video 扩展](../analytics/adobe-video-analytics.md)
 * [Adobe Target 扩展](../personalization/adobe-target.md)
 * [Adobe Target v2 扩展](../personalization/adobe-target-v2.md)
