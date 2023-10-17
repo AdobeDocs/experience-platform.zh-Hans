@@ -3,7 +3,7 @@ title: Identity Service和实时客户资料
 description: 了解Identity Service与Real-Time Customer Profile之间的关系
 hide: true
 hidefromtoc: true
-source-git-commit: 03228eef47100096e98666966c4e5065eb7f478a
+source-git-commit: 026f0dee203dd9d7f23d3343025665313692efbe
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->本页假定合并策略正在使用身份图。 有关实时客户配置文件中合并策略的更多信息，请阅读上的文档 [合并策略和身份拼接].
+>本页假定合并策略正在使用身份图。 有关实时客户配置文件中合并策略的更多信息，请阅读上的文档 [合并策略和身份拼接](../../profile/merge-policies/overview.md#identity-stitching).
 
 虽然您可以将Identity Service和Real-time Customer Profile结合使用，但Adobe Experience Platform的两个功能本身并不相同。
 
