@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: bf3099afadd6c8807060a6796cb6f37471478b44
+source-git-commit: ff49189d6f3331db5b7853be36afe0bb6176916f
 workflow-type: tm+mt
-source-wordcount: '4619'
+source-wordcount: '4632'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 
 本教程需要对架构创建所涉及的Adobe Experience Platform各个方面有一定的了解。 在开始本教程之前，请查看文档以了解以下概念：
 
-* [[!DNL Experience Data Model (XDM)]](../home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
+* [[!DNL Experience Data Model (XDM)]](../home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。
    * [模式组合基础](../schema/composition.md)：XDM架构及其构建块的概述，包括类、架构字段组、数据类型和单个字段。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
@@ -201,7 +201,7 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 * **[!UICONTROL 类型]：** 字段的数据类型。 这包括基本标量类型和 [!DNL Schema Registry]. 示例： [!UICONTROL 字符串]， [!UICONTROL 整数]， [!UICONTROL 布尔型]， [!UICONTROL 人员]， [!UICONTROL 地址]， [!UICONTROL 电话号码]，等等。
 * **[!UICONTROL 描述]：** 字段的可选描述应最多包含200个字符。
 
-的第一个字段 `loyaltyTier` 对象将是一个名为的字符串 `id`，表示忠诚度会员当前层的ID。 由于该公司根据不同的因素为每个客户设置了不同的忠诚度级别阈值，因此每个忠诚度会员的层ID都是唯一的。 将新字段的类型设置为&quot;[!UICONTROL 字符串]“，以及 **[!UICONTROL 字段属性]** 部分会填充多个应用约束的选项，包括默认值、格式和最大长度。
+的第一个字段 `loyaltyTier` 对象将是一个名为的字符串 `id`，表示忠诚度会员当前层的ID。 由于该公司根据不同的因素为每个客户设置了不同的忠诚度级别阈值，因此每个忠诚度会员的层ID都是唯一的。 将新字段的类型设置为&quot;[!UICONTROL 字符串]“，以及 **[!UICONTROL 字段属性]** 部分会填充多个应用约束的选项，包括默认值、格式和最大长度。 请参阅相关文档 [数据验证字段的最佳实践](../schema/best-practices.md#data-validation-fields) 了解更多信息。
 
 ![架构编辑器，其中新ID字段的字段属性值突出显示。](../images/tutorials/create-schema/string-constraints.png)
 
