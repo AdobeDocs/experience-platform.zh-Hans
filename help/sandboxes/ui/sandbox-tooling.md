@@ -1,13 +1,13 @@
 ---
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
-source-git-commit: 900cb35f6cb758f145904666c709c60dc760eff2
+exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
+source-git-commit: 0aaba1d1ae47908ea92e402b284438accb4b4731
 workflow-type: tm+mt
-source-wordcount: '1619'
-ht-degree: 9%
+source-wordcount: '1821'
+ht-degree: 7%
 
 ---
-
 
 # [!BADGE 测试版] 沙盒工具
 
@@ -21,38 +21,55 @@ ht-degree: 9%
 
 提高沙盒之间的配置准确性，并通过沙盒工具功能在沙盒之间无缝导出和导入沙盒配置。 使用沙盒工具缩短实现实施过程的价值时间，并在沙盒之间移动成功的配置。
 
-您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 一个包可以包含单个对象、多个对象或整个沙盒。 包中包含的任何对象必须来自同一沙盒。
+您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 软件包可以包含单个对象或多个对象。 <!--or an entire sandbox.-->包中包含的任何对象必须来自同一沙盒。
 
 ## 沙盒工具支持的对象 {#supported-objects}
 
-下表列出了当前支持沙盒工具处理的对象：
+沙盒工具功能使您能够导出 [!DNL Adobe Real-Time Customer Data Platform] 和 [!DNL Adobe Journey Optimizer] 对象放入包中。
 
-| 平台 | 对象 |
-| --- | --- |
-| [!DNL Adobe Journey Optimizer] | 历程 |
-| 客户数据平台 | 源 |
-| 客户数据平台 | 区段 |
-| 客户数据平台 | 标识 |
-| 客户数据平台 | 支持 |
-| 客户数据平台 | 架构 |
-| 客户数据平台 | 数据集 |
+### Real-time Customer Data Platform对象 {#real-time-cdp-objects}
 
-已导入以下对象，但处于草稿或已禁用状态：
+下表列出了 [!DNL Adobe Real-Time Customer Data Platform] 当前支持沙盒工具处理的对象：
+
+| 平台 | 对象 | 详细信息 |
+| --- | --- | --- |
+| 客户数据平台 | 源 | 出于安全原因，源帐户凭据未复制到目标沙盒中，需要手动更新。 默认情况下，源数据流将以草稿状态复制。 |
+| 客户数据平台 | 受众 | 仅 **[!UICONTROL 客户受众]** type **[!UICONTROL 分段服务]** 受支持。 用于同意和管理的现有标签将复制到同一导入作业中。 |
+| 客户数据平台 | 标识 | 在Adobe沙盒中创建时，系统将自动删除重复的目标标准身份命名空间。 仅当在合并架构中启用受众规则中的所有属性时，才能复制受众。 必须先为统一配置文件移动和启用必要的架构。 |
+| 客户数据平台 | 架构 | 用于同意和管理的现有标签将复制到同一导入作业中。 架构统一配置文件状态将从源沙盒中按原样复制。 如果为源沙盒中的统一配置文件启用了架构，则所有属性都将移至合并架构。 架构关系边缘用例未包含在包中。 |
+| 客户数据平台 | 数据集 | 在复制数据集时，默认情况下将禁用统一配置文件设置。 |
+
+以下对象已导入，但处于草稿或已禁用状态：
 
 | 功能 | 对象 | 状态 |
 | --- | --- | --- |
 | 导入状态 | 源数据流 | 草稿 |
 | 导入状态 | 历程 | 草稿 |
-| 统一个人资料 | 架构 | 已禁用 |
-| 统一个人资料 | 数据集 | 已禁用 |
-| 支持 | 同意政策 | 已禁用 |
+| 统一个人资料 | 数据集 | 已禁用统一配置文件 |
 | 支持 | 数据治理策略 | 已禁用 |
 
-以下列出的边缘情况未包含在包中：
+### Adobe Journey Optimizer对象 {#abobe-journey-optimizer-objects}
 
-* 架构关系
+下表列出了 [!DNL Adobe Journey Optimizer] 当前支持沙盒工具处理的对象和限制：
+
+| 平台 | 对象 | 详细信息 |
+| --- | --- | --- |
+| [!DNL Adobe Journey Optimizer] | 受众 | 受众可以复制为历程对象的依赖对象。 您可以选择创建新受众，也可以重复使用目标沙盒中的现有受众。 |
+| [!DNL Adobe Journey Optimizer] | 架构 | 历程中使用的架构可以作为依赖对象复制。 您可以选择创建新架构或重用目标沙盒中的现有架构。 |
+| [!DNL Adobe Journey Optimizer] | 消息 | 历程中使用的消息可以作为依赖对象复制。 不检查消息中用于个性化的历程字段中使用的渠道操作活动的完整性。 不会复制内容块。 |
+| [!DNL Adobe Journey Optimizer] | 历程 — 画布详细信息 | 画布上的历程表示形式包括历程中的对象，如复制的条件、操作、事件、读取受众等。 跳转活动将从副本中排除。 |
+| [!DNL Adobe Journey Optimizer] | 活动 | 旅程中使用的事件和事件详细信息已复制。 它始终会在目标沙盒中创建新版本。 |
+| [!DNL Adobe Journey Optimizer] | 操作 | 旅程中使用的操作和操作详细信息已复制。 它始终会在目标沙盒中创建新版本。 |
+
+曲面（例如预设）不会被复制。 系统根据消息类型和表面名称，自动选择目标沙盒上最接近的匹配项。 如果在目标沙盒上未找到表面，则表面复制将失败，导致消息复制失败，因为消息需要表面才可供设置。 在这种情况下，需要为消息的正确渠道至少创建一个表面，以便副本正常工作。
+
+导出历程时，不支持将自定义身份类型作为依赖对象。
 
 ## 将对象导出到资源包中 {#export-objects}
+
+>[!NOTE]
+>
+>所有导出操作都记录在审核日志中。
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_exit_package"
@@ -120,6 +137,10 @@ ht-degree: 9%
 
 ## 将资源包导入目标沙盒 {#import-package-to-target-sandbox}
 
+>[!NOTE]
+>
+>所有导入操作都记录在审核日志中。
+
 要将包导入目标沙盒，请导航到沙盒 **[!UICONTROL 浏览]** 选项卡，然后选择沙盒名称旁边的加号(+)选项。
 
 ![沙箱 **[!UICONTROL 浏览]** 选项卡中突出显示了导入包选择。](../images/ui/sandbox-tooling/browse-sandboxes.png)
@@ -148,41 +169,47 @@ ht-degree: 9%
 
 ![此 [!UICONTROL 程序包对象和依赖项] 页面显示包中包含的资产列表，突出显示 [!UICONTROL 完成].](../images/ui/sandbox-tooling/finish-object-dependencies.png)
 
-## 导出和导入整个沙盒
-
-### 导出整个沙盒 {#export-entire-sandbox}
-
-要导出整个沙盒，请导航到 [!UICONTROL 沙盒] **[!UICONTROL 包]** 选项卡并选择 **[!UICONTROL 创建包]**.
-
-![此 [!UICONTROL 沙盒] **[!UICONTROL 包]** 选项卡突出显示 [!UICONTROL 创建包].](../images/ui/sandbox-tooling/create-sandbox-package.png)
-
-选择 **[!UICONTROL 整个沙盒]** 中的包类型 [!UICONTROL 创建包] 对话框。 提供 [!UICONTROL 包名称] ，然后选择 **[!UICONTROL 沙盒]** 从下拉菜单中查找。 最后，选择 **[!UICONTROL 创建]** 以确认您的输入。
-
-![此 [!UICONTROL 创建包] 显示已完成字段和突出显示的对话框 [!UICONTROL 创建].](../images/ui/sandbox-tooling/create-package-dialog.png)
-
-已成功创建包，请选择 **[!UICONTROL Publish]** 以发布包。
-
-![突出显示新发布的包的沙盒包列表。](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
-
-您将返回 **[!UICONTROL 包]** 选项卡 [!UICONTROL 沙盒] 环境，您可以在其中查看新发布的包。
-
-### 导入整个沙盒包 {#import-entire-sandbox-package}
-
-要将资源包导入目标沙盒，请导航到 [!UICONTROL 沙盒] **[!UICONTROL 浏览]** 选项卡，然后选择沙盒名称旁边的加号(+)选项。
-
-![沙箱 **[!UICONTROL 浏览]** 选项卡中突出显示了导入包选择。](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
-
-使用下拉菜单，使用选择完整的沙盒 **[!UICONTROL 包名称]** 下拉菜单。 添加可选 **[!UICONTROL 作业名称]**，以用于未来监控，然后选择 **[!UICONTROL 下一个]**.
-
-![导入详细信息页面显示 [!UICONTROL 包名称] 下拉菜单选择](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+<!--
+## Export and import an entire sandbox 
 
 >[!NOTE]
 >
->导入整个沙盒时，所有对象都将从包中创建新对象。 对象未列在 [!UICONTROL 程序包对象和依赖项] 页面，因为数量可以成倍增加。 此时将显示内联消息，为不受支持的对象类型提供建议。
+>All export and import actions are recorded in the audit logs.
 
-您被带到 [!UICONTROL 程序包对象和依赖项] 页面，您可以在此页面中查看已导入和已排除对象的对象数和从属关系数。 从此处选择 **[!UICONTROL 导入]** 以完成资源包导入。
+### Export an entire sandbox {#export-entire-sandbox}
 
-![此 [!UICONTROL 程序包对象和依赖项] 页面显示不受支持的对象类型的内联消息，突出显示 [!UICONTROL 导入].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+To export an entire sandbox, navigate to the [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tab and select **[!UICONTROL Create package]**.
+
+![The [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tab highlighting [!UICONTROL Create package].](../images/ui/sandbox-tooling/create-sandbox-package.png)
+
+Select **[!UICONTROL Entire sandbox]** for the Type of package in the [!UICONTROL Create package] dialog. Provide a [!UICONTROL Package name] for your package and select the **[!UICONTROL Sandbox]** from the dropdown. Finally, select **[!UICONTROL Create]** to confirm your entries.
+
+![The [!UICONTROL Create package] dialog showing completed fields and highlighting [!UICONTROL Create].](../images/ui/sandbox-tooling/create-package-dialog.png)
+
+The package is created successfully, select **[!UICONTROL Publish]** to publish the package.
+
+![List of sandbox packages highlighting the new published package.](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
+
+You are returned to the **[!UICONTROL Packages]** tab in the [!UICONTROL Sandboxes] environment, where you can see the new published package.
+
+### Import the entire sandbox package {#import-entire-sandbox-package}
+
+To import the package into a target sandbox, navigate to the [!UICONTROL Sandboxes] **[!UICONTROL Browse]** tab and select the plus (+) option beside the sandbox name.
+
+![The sandboxes **[!UICONTROL Browse]** tab highlighting the import package selection.](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
+
+Using the dropdown menu, select the full sandbox using the **[!UICONTROL Package name]** dropdown. Add an optional **[!UICONTROL Job name]**, which will be used for future monitoring, then select **[!UICONTROL Next]**.
+
+![The import details page showing the [!UICONTROL Package name] dropdown selection](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+
+>[!NOTE]
+>
+>All objects are created as new from the package when importing an entire sandbox. The objects are not listed in the [!UICONTROL Package object and dependencies] page, as there can be multiples. An inline message is displayed, advising of object types that are not supported.
+
+You are taken to the [!UICONTROL Package object and dependencies] page where you can see the number of objects and dependencies that are imported and excluded objects. From here, select **[!UICONTROL Import]** to complete the package import.
+
+ ![The [!UICONTROL Package object and dependencies] page shows the inline message of object types not supported, highlighting [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+-->
 
 ## 监视导入作业并查看导入对象详细信息
 
