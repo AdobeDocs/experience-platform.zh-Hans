@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: a74ec87c27d3db3bcd8d0a5075a593535e3c4de1
+source-git-commit: 6c3c5e3a87773f9f58a5d61bd4bef19f4cdc2e96
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 20%
+source-wordcount: '311'
+ht-degree: 18%
 
 ---
 
@@ -29,6 +29,13 @@ ht-degree: 20%
       - [概述](data-distiller/derived-attributes/overview.md)
       - [无缝SQL流](data-distiller/derived-attributes/seamless-sql-flow.md)
       - [创建基于十分位数的派生属性](data-distiller/derived-attributes/decile-based-derived-attributes.md)
+   - AI/ML功能管道 {#ml-feature-pipelines}
+      - [AI/ML功能管道](data-distiller/ml-feature-pipelines/overview.md)
+      - [连接到Jupyter Notebooks](data-distiller/ml-feature-pipelines/establish-connection.md)
+      - [探索性数据分析](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
+      - [ML的工程师功能](data-distiller/ml-feature-pipelines/feature-engineering.md)
+      - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
+      - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - 用例 {#use-cases}
    - [已放弃的浏览](use-cases/abandoned-browse.md)
    - [归因分析](use-cases/attribution-analysis.md)
@@ -56,7 +63,7 @@ ht-degree: 20%
    - [Power BI](clients/power-bi.md)
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
-   - [表格](clients/tableau.md)
+   - [Tableau](clients/tableau.md)
 - 查询服务UI {#ui}
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
