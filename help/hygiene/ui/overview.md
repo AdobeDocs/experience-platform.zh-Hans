@@ -5,7 +5,7 @@ exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
 source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
 source-wordcount: '225'
-ht-degree: 0%
+ht-degree: 35%
 
 ---
 
@@ -14,12 +14,12 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_consumer"
 >title="数据生命周期请求状态"
->abstract="此构件显示已创建、失败和已完成的数据生命周期记录删除作业的总数。 有关数据生命周期过程的详细信息，请选择 **数据生命周期** 在左侧导航中。"
+>abstract="此构件显示已创建、失败和完成的数据生命周期记录删除作业的总数。有关数据生命周期流程的更多信息，请在左侧导航中选择&#x200B;**数据生命周期**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_recents"
->title="最近的数据生命周期工作单"
->abstract="此小部件根据您在右上角选择的选项，显示最近创建或更新的五个数据生命周期工作单。 有关数据生命周期过程的详细信息，请选择 **数据生命周期** 在左侧导航中。"
+>title="最近的数据生命周期工单"
+>abstract="此构件显示五个最近创建或更新的数据生命周期工单，具体取决于您在右上角选择的选项。有关数据生命周期流程的更多信息，请在左侧导航中选择&#x200B;**数据生命周期**。"
 
 此 **[!UICONTROL 数据生命周期]** Adobe Experience Platform UI中的工作区允许您创建和监控各种数据生命周期管理任务，包括删除记录和计划数据集过期时间。
 

@@ -5,7 +5,7 @@ exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
 source-wordcount: '1533'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -67,12 +67,12 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="主要标识"
->abstract="主要标识是一个用于将记录与 Experience Platform 中的消费者配置文件相关联的属性。数据集的主要标识字段由数据集所基于的架构定义。在此列中，您必须为记录的主要标识提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解更多信息，请参阅数据生命周期UI指南。"
+>abstract="主要标识是一个用于将记录与 Experience Platform 中的消费者配置文件相关联的属性。数据集的主要标识字段由数据集所基于的架构定义。在此列中，您必须为记录的主要标识提供类型（或命名空间），例如 `email`（对于电子邮件地址）和 `ecid`（对于 Experience Cloud ID）。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="标识值"
->abstract="在此列中，您必须提供记录的主要标识的值，该值必须与左列中提供的标识类型相对应。如果主要标识类型是 `email`，则值应是记录的电子邮件地址。要了解更多信息，请参阅数据生命周期UI指南。"
+>abstract="在此列中，您必须提供记录的主要标识的值，该值必须与左列中提供的标识类型相对应。如果主要标识类型是 `email`，则值应是记录的电子邮件地址。要了解详情，请参阅《数据生命周期 UI 指南》。"
 
 删除记录时，必须提供身份信息，以便系统能够确定要删除的记录。 对于Platform中的任何数据集，记录都将会根据 **主要身份** 由数据集的架构定义的字段。
 
