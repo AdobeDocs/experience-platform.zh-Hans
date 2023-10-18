@@ -3,17 +3,21 @@ title: 配置身份设置的示例方案
 description: 了解配置身份设置的示例场景。
 hide: true
 hidefromtoc: true
-source-git-commit: bde6c96bf72bb948c149bf5dc8d35591f2586887
+badge: Alpha
+source-git-commit: 03e4cd440f8627ad837a31e1c017d0b824cafb04
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '433'
 ht-degree: 1%
 
 ---
 
 # 配置身份图链接规则的示例场景
 
-本文档概述了配置身份图形链接规则时可以考虑的示例场景。
+>[!IMPORTANT]
+>
+>标识图链接规则当前处于Alpha状态。 该功能和文档可能会发生更改。
 
+本文档概述了配置身份图形链接规则时可以考虑的示例场景。
 
 ## 共享设备
 
