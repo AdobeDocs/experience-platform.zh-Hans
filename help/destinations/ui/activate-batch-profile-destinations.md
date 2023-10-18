@@ -4,9 +4,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a81daa2a929505a934910892a4ad9c73e603ed9b
+source-git-commit: a854960b11cb3e56046dc9541f76c62a7e3f2f10
 workflow-type: tm+mt
-source-wordcount: '3710'
+source-wordcount: '3720'
 ht-degree: 11%
 
 ---
@@ -415,6 +415,8 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 文件导出将以下列方式有所不同，具体取决于是否 `segmentMembership.status` 已选中：
 * 如果 `segmentMembership.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
 * 如果 `segmentMembership.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照及其后的增量导出中的成员。
+
+详细了解 [基于文件的目标的配置文件导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations).
 
 #### 当前无法选择要导出的身份命名空间
 
