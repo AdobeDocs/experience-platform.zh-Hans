@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: 高级数据生命周期管理帮助
-breadcrumb-title: Advanced Data Lifecycle Management指南
-user-guide-description: 在 Experience Platform 中删除个人记录并安排数据集过期时间，以进行数据清理、匿名数据移除和数据最小化。
+breadcrumb-title: 高级数据生命周期管理指南
+user-guide-description: 在 Experience Platform 中删除个人记录并安排数据集到期，以供清理数据、去除匿名数据和最大程度缩减数据。
 feature: Data Hygiene
 source-git-commit: 35f598d3a03b459e2bbed58a006c7d020aba7dac
 workflow-type: tm+mt
 source-wordcount: '65'
-ht-degree: 32%
+ht-degree: 47%
 
 ---
 
