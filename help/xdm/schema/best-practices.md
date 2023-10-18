@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 4e87471dcfc99ff70a0d91245821e7f974973b49
+source-git-commit: f9c3e20bdfbf4aa1b206b9efe770e9950fcd62d6
 workflow-type: tm+mt
 source-wordcount: '3044'
 ht-degree: 1%
@@ -231,7 +231,7 @@ Adobe应用程序字段组通过使用 `identityMap` 字段，这是一个系统
 
 ## 数据验证字段 {#data-validation-fields}
 
-为了防止将不必要的数据摄取到Platform中，建议在创建架构时定义字段级验证标准。 要对特定字段设置约束，请从架构编辑器中选择该字段以打开 [!UICONTROL 字段属性] 侧栏。 请参阅相关文档 [特定类型的字段属性](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/overview.html?lang=en#type-specific-properties) 以获取可用字段的精确描述。
+为防止将错误数据摄取到Platform，建议您在创建架构时定义字段级验证标准。 要对特定字段设置约束，请从架构编辑器中选择该字段以打开 [!UICONTROL 字段属性] 侧栏。 请参阅相关文档 [特定类型的字段属性](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/overview.html?lang=en#type-specific-properties) 以获取可用字段的精确描述。
 
 ![架构编辑器，其约束字段在 [!UICONTROL 字段属性] 侧栏。](../images/best-practices/data-validation-fields.png)
 
