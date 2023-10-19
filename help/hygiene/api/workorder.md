@@ -2,9 +2,9 @@
 title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 8e21bcc7b9d7fe3f4d26f80f953d454f090b0928
+source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1181'
 ht-degree: 3%
 
 ---
@@ -26,6 +26,10 @@ ht-degree: 3%
 ## 创建记录删除请求 {#create}
 
 您可以通过对POST发出请求，从单个数据集或所有数据集中删除一个或多个标识。 `/workorder` 端点。
+
+>[!IMPORTANT]
+> 
+>对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>单个 [通过UI记录删除请求](../ui/record-delete.md) 允许您同时提交10,000个ID。 用于删除记录的API方法允许同时提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
 
 **API格式**
 

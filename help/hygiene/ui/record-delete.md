@@ -2,9 +2,9 @@
 title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1564'
 ht-degree: 8%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 8%
 
 >[!IMPORTANT]
 > 
->作为提高效率和降低数据集操作成本的持续更改的一部分，已迁移到增量格式的组织可以从Identity Service、实时客户档案和数据湖中删除数据。 此类型的用户称为增量迁移。 已增量迁移的组织中的用户可以选择删除单个或所有数据集的记录。 来自尚未进行增量迁移的组织中的用户不能选择从单个或所有数据集中删除记录，如下图所示。 在这种情况下，请继续 [提供身份](#provide-identities) 部分。
+>作为提高效率和降低数据集操作成本的持续更改的一部分，已迁移到增量格式的组织可以从Identity Service、实时客户档案和数据湖中删除数据。 此类型的用户称为增量迁移。 已增量迁移的组织中的用户可以选择删除单个或所有数据集的记录。 来自尚未进行增量迁移的组织中的用户不能选择从单个或所有数据集中删除记录，如下图所示。 在这种情况下，请继续执行 [提供身份](#provide-identities) 部分。
 
 ![使用创建请求的工作流 [!UICONTROL 删除记录] 选项已选中并突出显示。](../images/ui/record-delete/delete-record.png)
 
@@ -139,7 +139,7 @@ JSON文件必须格式化为一组对象，每个对象表示一个标识。
 
 >[!IMPORTANT]
 > 
->对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>通过UI发出单个记录删除请求允许您同时提交10,000个ID。 此 [用于删除记录的API方法](https://experienceleague.adobe.com/docs/experience-platform/hygiene/api/workorder.html?lang=en#create) 允许一次提交100,000个ID。
+>对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>通过UI发出单个记录删除请求允许您同时提交10,000个ID。 此 [用于删除记录的API方法](../api/workorder.md#create) 允许一次提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
 
 ![请求设置的 [!UICONTROL 名称] 和 [!UICONTROL 描述] 字段 [!UICONTROL 提交] 突出显示。](../images/ui/record-delete/submit.png)
 
