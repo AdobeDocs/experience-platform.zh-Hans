@@ -2,10 +2,10 @@
 title: 使用合作伙伴辅助的访客识别使现场体验个性化
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: de8aeb553066405424711e75480204f6136b52ff
 workflow-type: tm+mt
-source-wordcount: '2548'
-ht-degree: 98%
+source-wordcount: '2580'
+ht-degree: 96%
 
 ---
 
@@ -248,9 +248,13 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 您现在已准备好创建个性化并为其激活受众。
 
-#### 设置边缘分段
+#### 创建受众并设置边缘分段
 
-设置[边缘分段](/help/segmentation/ui/edge-segmentation.md)，于是在您的访客访问您的 Web 资产时，将实时评估访客的受众成员资格。
+在Platform UI中，导航到 **[!UICONTROL 客户]** > **[!UICONTROL 受众]** 并创建受众以捕获您的网站访客。
+
+![有关如何导航到受众的视图。](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
+
+您必须使用设置受众 [边缘分割](/help/segmentation/ui/edge-segmentation.md) 因此，会在访客访问您的Web资产时实时评估访客的受众成员资格。
 
 确保还要为边缘受众设置一个[活动边缘合并策略](/help/destinations/ui/activate-edge-personalization-destinations.md#create-merge-policy)。
 
