@@ -4,14 +4,34 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 70abe974aa7f94ea172d7ab90aacaf765b88de0e
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '526'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform Debugger发行说明
+
+## 1.5.0版 — 2023年10月19日
+
+### 新增功能
+
+* 在标记摘要和日志中显示指向属性、环境和规则的链接。
+
+### 修复和改进功能
+
+* 修复了标记摘要数据未发送的问题。
+* 修复了保障会话会发出CORS错误的问题
+* 修复了导致无法显示Target跟踪的问题。
+* 修复了“发送反馈”按钮。
+* 修复了Web SDK摘要(版本≥2.18.0)中缺少“数据流ID”的问题。
+* 修复了边缘日志不可搜索的问题。
+* 添加了关于某些帐户类型的其他配置文件的说明。
+
+## 版本1.4.1 - 2022年11月1日
+
+* 提高了包含许多Adobe Experience Platform保证事件的页面的性能。
 
 ## 版本1.4.0 - 2022年10月3日
 
