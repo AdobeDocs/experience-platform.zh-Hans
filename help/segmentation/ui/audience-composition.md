@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
+source-git-commit: 820ba6c9cedcb85db7ff9bc199a67e56ee628c93
 workflow-type: tm+mt
-source-wordcount: '1767'
+source-wordcount: '1780'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,10 @@ ht-degree: 0%
 将受众添加到“受众”块。 选择 **[!UICONTROL 添加受众]**.
 
 ![添加受众按钮会突出显示。](../images/ui/audience-composition/add-audience.png)
+
+>[!IMPORTANT]
+>
+>请注意 **仅限** 将显示使用默认合并策略定义的受众。
 
 此时将显示受众列表。 选择要包含的受众，然后 **[!UICONTROL 添加]** 以将其附加到受众块。
 
