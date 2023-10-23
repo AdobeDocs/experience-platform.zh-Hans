@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: f9c3e20bdfbf4aa1b206b9efe770e9950fcd62d6
+source-git-commit: 113e74b3a4783a11bc88dc2d16134b68638604e5
 workflow-type: tm+mt
-source-wordcount: '308'
-ht-degree: 19%
+source-wordcount: '311'
+ht-degree: 18%
 
 ---
 
@@ -108,5 +108,6 @@ ht-degree: 19%
    - [元数据命令](sql/metadata.md)
    - [准备的语句](sql/prepared-statements.md)
 - [常见问题解答](troubleshooting-guide.md)
+- [IP地址允许列表](ip-address-allowlist.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
