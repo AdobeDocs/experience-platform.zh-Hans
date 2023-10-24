@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage连接器
 description: 本文档提供了Marketo Engage源连接器的概述，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: f0a3486fc7df7b08a11ec7bfb041841bc2c1c9a3
+source-git-commit: 50b97ebb8496636a0fccd64d57d7829b1342f87c
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '678'
 ht-degree: 5%
 
 ---
@@ -70,8 +70,12 @@ XDM是一个公开记录的规范，它提供了通用结构和定义，允许�
 
 | 目标 | 预期延迟 |
 | ----------- | ---------------- |
-| [!DNL Real-Time Customer Profile] | &lt; 1分钟 |
+| [!DNL Real-Time Customer Profile] | &lt; 10 分钟 |
 | 数据湖 | &lt; 60 分钟 |
+
+>[!NOTE]
+>
+>以上延迟数字代表了95%置信水平的预期。 实际延迟时间将有所不同，在极少数情况下可能会超出这些数字50%。
 
 ## 后续步骤和其他资源
 
