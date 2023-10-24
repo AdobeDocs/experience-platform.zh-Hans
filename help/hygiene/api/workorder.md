@@ -2,10 +2,10 @@
 title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
+source-git-commit: 15f3f7c9e0efb2fe5e9a1acd39b1cf23790355cb
 workflow-type: tm+mt
-source-wordcount: '1181'
-ht-degree: 3%
+source-wordcount: '1281'
+ht-degree: 2%
 
 ---
 
@@ -36,6 +36,10 @@ ht-degree: 3%
 ```http
 POST /workorder
 ```
+
+>[!NOTE]
+>
+>数据生命周期请求只能根据主身份或身份映射修改数据集。 请求必须指定主标识或提供标识映射。
 
 **请求**
 
@@ -80,7 +84,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `action` | 要执行的操作。 该值必须设置为 `delete_identity` 用于记录删除。 |
-| `datasetId` | 如果您要从单个数据集中删除，此值必须是相关数据集的ID。 如果要从所有数据集中删除，则将该值设置为 `ALL`.<br><br>如果要指定单个数据集，则该数据集的关联体验数据模型(XDM)架构必须定义主标识。 |
+| `datasetId` | 如果您要从单个数据集中删除，此值必须是相关数据集的ID。 如果要从所有数据集中删除，则将该值设置为 `ALL`.<br><br>如果要指定单个数据集，则该数据集的关联体验数据模型(XDM)架构必须定义主标识。 如果数据集没有主标识，则必须具有标识映射，才能被数据生命周期请求修改。<br>如果存在标识映射，则将显示为名为的顶级字段 `identityMap`.<br>请注意，数据集行的标识映射中可能具有多个标识，但只能将一个标识标记为主标识。 `"primary": true` 必须包含以强制 `id` 以匹配主要身份。 |
 | `displayName` | 记录删除请求的显示名称。 |
 | `description` | 记录删除请求的描述。 |
 | `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的身份。 每个身份都由 [身份命名空间](../../identity-service/namespaces.md) 和一个值：<ul><li>`namespace`：包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`：身份值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主身份相同的身份命名空间。<br><br>如果 `datasetId` 设置为 `ALL`， `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，如所报告，您的请求仍会限制您的组织可用的命名空间 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
