@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: c171d333569a6006d3399ede07d55ce233c166fa
+source-git-commit: 57d3e136902201f9ba9bd2f427ebe0f876900671
 workflow-type: tm+mt
-source-wordcount: '1182'
+source-wordcount: '1185'
 ht-degree: 9%
 
 ---
@@ -186,6 +186,7 @@ ht-degree: 9%
       * [列入允许列表流目的地的IP地址](./catalog/streaming/ip-address-allow-list.md)
    * 调查目标 {#survey}
       * [调查目标概述](./catalog/survey/overview.md)
+      * [Qualtrics自动化目标](./catalog/survey/qualtrics-automations.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)
       * [InMoment扩展](./catalog/survey/inmoment.md)
       * [Qualtrics网站反馈扩展](./catalog/survey/qualtrics.md)
