@@ -1,11 +1,11 @@
 ---
-title: 配置机器人检测
-description: 了解如何为数据流配置机器人检测。
+title: 为数据流配置机器人检测
+description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 hide: true
 hidefromtoc: true
-source-git-commit: 8445d530ca1241d86775ffa7fc49f49cb5a03b72
+source-git-commit: 07b3ff85c1092614a60495e73575907df36d4158
 workflow-type: tm+mt
-source-wordcount: '1353'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
