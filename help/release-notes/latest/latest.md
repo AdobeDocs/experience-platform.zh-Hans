@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年10月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4ab89ef7cabc9d808fd9dab24b6dbe3fe23e53f3
+source-git-commit: ac7597a2e63559f3af91d559dd77f7778c9f27bb
 workflow-type: tm+mt
-source-wordcount: '577'
-ht-degree: 35%
+source-wordcount: '766'
+ht-degree: 36%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 35%
  Experience Platform 中现有功能的更新：
 
 - [数据收集](#data-collection)
+- [目标](#destinations)
 - [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
@@ -31,6 +32,31 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 扩展 | [!DNL Meta] 转化API增强功能 | 有三项增强功能 [元转化API](/help/tags/extensions/server/meta/overview.md) 扩展名： <ul><li>与集成 [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)：通过允许您共享用于转化API与Adobe集成的像素ID和访问令牌，创建无缝登录体验。</li><li>与集成 [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)：用于向更有可能完成所需操作的人投放广告，并将操作链接回投放的广告。</li><li>与集成 [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
 
 有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
+
+**新增或更新目标**{#new-updated-destinations}
+
+| 目标 | 新增还是更新 | 描述 |
+| ----------- |----------------|----------- |
+| [[!DNL MoEngage]](/help/destinations/catalog/mobile-engagement/moengage.md) | 新增 | 使用Moengage目标实时将Adobe数据（用户属性、区段和事件）连接并映射到MoEngage。 然后，客户可以根据这些数据采取行动，提供个性化、有针对性的体验。 |
+| [[!DNL Qualtrics Automations]](/help/destinations/catalog/survey/qualtrics-automations.md) | 新增 | 在Adobe Experience Platform中将多个运营数据源的聚合用作Qualtrics Experience ID中的一项输入，以便更好地了解您的客户并实现有针对性的外联，从而在了解意图、情绪和体验驱动因素方面缩小差距。 |
+
+{style="table-layout:auto"}
+
+**新增或更新的功能**{#destinations-new-updated-functionality}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 计算字段中支持哈希函数 | 除了的特定功能外 [导出数组](../../destinations/ui/export-arrays-calculated-fields.md) 或数组中的元素时，您现在可以使用 [哈希函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) 以散列导出文件中的属性。 支持的哈希函数包括： `sha`， `sha256`， `sha512`， `hash`， `md5`， `crc32`. |
+
+{style="table-layout:auto"}
+
+**修复和增强** {#destinations-fixes-and-enhancements}
+
+有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
 ## 沙盒 {#sandboxes}
 
