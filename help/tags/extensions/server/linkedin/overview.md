@@ -2,7 +2,7 @@
 title: Linkedin转化API事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以衡量Linkedin营销活动的效果。
 last-substantial-update: 2023-10-25T00:00:00Z
-source-git-commit: ca65f010cda5d37c40fd57075a26e365c76bdc0b
+source-git-commit: e1ed18aa79abae70974df1845c211a00390ecca4
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 1%
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ### 创建密钥和数据元素
 
-新建 `LinkedIn` [事件转发密码](../../../ui/event-forwarding/secrets.md) 并为它提供一个唯一的名称，以表示进行身份验证的成员。 这将用于验证与您的帐户的连接，同时保持值的安全。
+新建 [!DNL LinkedIn] [事件转发密码](../../../ui/event-forwarding/secrets.md) 并为它提供一个唯一的名称，以表示进行身份验证的成员。 这将用于验证与您的帐户的连接，同时保持值的安全。
 
 下一步， [创建数据元素](../../../ui/managing-resources/data-elements.md#create-a-data-element) 使用 [!UICONTROL 核心] 扩展和 [!UICONTROL 密码] 要引用 `LinkedIn` 你刚刚创建的密码。
 
