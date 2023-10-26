@@ -3,9 +3,9 @@ title: 在UI中创建Google PubSub源连接
 description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: b157b9147d8ea8100bcaedca272b303a3c04e71a
+source-git-commit: 563ad16304894cab1ee1ead06f63a5b3f65c4ec2
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1099'
 ht-degree: 1%
 
 ---
@@ -31,12 +31,24 @@ ht-degree: 1%
 
 为了连接 [!DNL PubSub] 对于Platform，必须为以下凭据提供有效值：
 
+>[!BEGINTABS]
+
+>[!TAB 基于项目的身份验证]
+
 | 凭据 | 描述 |
-| ---------- | ----------- |
+| --- | --- |
 | 项目 ID | 验证时需要项目ID [!DNL PubSub]. |
+| 凭据 | 身份验证所需的凭据 [!DNL PubSub]. 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
+
+>[!TAB 主题和基于订阅的身份验证]
+
+| 凭据 | 描述 |
+| --- | --- |
 | 凭据 | 身份验证所需的凭据 [!DNL PubSub]. 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
 | 主题名称 | 您的名称 [!DNL PubSub] 订阅。 在 [!DNL PubSub]，订阅允许您通过订阅消息已发布到的主题来接收消息。 **注意**：单个 [!DNL PubSub] 订阅只能用于一个数据流。 要创建多个数据流，您必须有多个订阅。 |
 | 订阅名称 | 您的名称 [!DNL PubSub] 订阅。 在 [!DNL PubSub]，订阅允许您通过订阅消息已发布到的主题来接收消息。 |
+
+>[!ENDTABS]
 
 有关这些值的更多信息，请参阅以下内容 [PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication) 文档。 如果您使用基于服务帐户的身份验证，请参阅以下内容 [PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account) 以了解有关如何生成凭据的步骤。
 
@@ -68,7 +80,8 @@ ht-degree: 1%
 
 >[!TIP]
 >
->在创建具有受限访问权限的帐户时，您必须至少提供一个主题名称或订阅名称。 如果缺少这两个值，身份验证将失败。
+>* 在创建具有受限访问权限的帐户时，您必须至少提供一个主题名称或订阅名称。 如果缺少这两个值，身份验证将失败。
+>* 创建后，便无法更改的身份验证类型 [!DNL Google PubSub] 基本连接。 要更改身份验证类型，必须创建新的基本连接。
 
 如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后为新页面提供名称和可选描述 [!DNL PubSub] 帐户。
 
