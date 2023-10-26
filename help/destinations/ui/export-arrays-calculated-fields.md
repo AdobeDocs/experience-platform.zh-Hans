@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何使用计算字段将平面架构文件中的阵列从Real-Time CDP导出到云存储目标。
 badge: Beta 版
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
+source-git-commit: b6bdfef8b9ac5ef03ea726d668477b8629b70b6c
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1497'
 ht-degree: 5%
 
 ---
@@ -216,8 +216,21 @@ johndoe@acme.org,"1538097126"
 johndoe@acme.org,"1538097126","1664327526"
 ```
 
-### `md5` 和 `sha256` 哈希函数 {#hashing-functions}
+### 哈希函数 {#hashing-functions}
 
-除了从数组导出数组或元素的特定函数之外，您还可以使用散列函数来散列属性。 例如，如果您在属性中有任何个人身份信息，则可以在导出这些字段时对其进行哈希处理。
+除了从数组导出数组或元素的特定函数之外，您还可以使用散列函数对导出文件中的属性进行散列。 例如，如果您在属性中有任何个人身份信息，则可以在导出这些字段时对其进行哈希处理。
 
-您可以直接散列字符串值，例如 `md5(personalEmail.address)`. 如果需要，您还可以散列数组字段的单个元素，如下所示： `md5(purchaseTime[0])`
+您可以直接散列字符串值，例如 `md5(personalEmail.address)`. 如果需要，您还可以散列数组字段的单个元素，假定数组中的元素是字符串，如下所示： `md5(purchaseTime[0])`
+
+支持的哈希函数包括：
+
+| 函数 | 示例表达式 |
+|---------|----------|
+| `sha1` | `sha1(organizations[0])` |
+| `sha256` | `sha256(organizations[0])` |
+| `sha512` | `sha512(organizations[0])` |
+| `hash` | `hash("crc32", organizations[0], "UTF-8")` |
+| `md5` | `md5(organizations[0], "UTF-8")` |
+| `crc32` | `crc32(organizations[0])` |
+
+{style="table-layout:auto"}
