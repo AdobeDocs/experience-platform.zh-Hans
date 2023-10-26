@@ -1,16 +1,16 @@
 ---
-title: 配置数据流
+title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: db75771d09caef00db58073333909f730a303975
+source-git-commit: d7a0299c5fe3729620e74602ac99459093cc2e28
 workflow-type: tm+mt
-source-wordcount: '2777'
+source-wordcount: '2779'
 ht-degree: 75%
 
 ---
 
 
-# 配置数据流
+# 创建和配置数据流
 
 本文档介绍了在 UI 中配置[数据流](./overview.md)的步骤。
 
