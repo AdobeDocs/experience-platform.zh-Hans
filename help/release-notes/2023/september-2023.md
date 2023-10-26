@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: 94651b8035677eb65f6ca9e93001b4149f8bdbd4
+source-git-commit: 76ac65730512e589e518095f9496bb309365b0c9
 workflow-type: tm+mt
-source-wordcount: '2293'
+source-wordcount: '2283'
 ht-degree: 28%
 
 ---
@@ -222,8 +222,6 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 | ------- | ----------- |
 | 可自定义的列 | 您现在可以使用可缩放的列来自定义受众门户的布局。 有关此功能的详细信息，请阅读 [分段UI指南](../../segmentation/ui/overview.md#customize). |
 | 更新频率细分 | 您现在可以查看组织中受众更新频率的细分。 有关此功能的详细信息，请阅读 [分段UI指南](../../segmentation/ui/overview.md#browse). |
-
-要了解有关来源的更多信息，请阅读 [源概述](../../sources/home.md).
 
 要了解有关分段服务的更多信息，请阅读 [分段服务概述](../../segmentation/home.md).
 

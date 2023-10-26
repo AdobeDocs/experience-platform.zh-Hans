@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年10月版发行说明。
-source-git-commit: d024596c7d85139721ef370f9e081911a217d9ba
+source-git-commit: 4ab89ef7cabc9d808fd9dab24b6dbe3fe23e53f3
 workflow-type: tm+mt
-source-wordcount: '178'
-ht-degree: 43%
+source-wordcount: '577'
+ht-degree: 35%
 
 ---
 
@@ -14,7 +14,46 @@ ht-degree: 43%
 
  Experience Platform 中现有功能的更新：
 
+- [数据收集](#data-collection)
+- [沙盒](#sandboxes)
+- [Segmentation Service](#segmentation)
 - [源](#sources)
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+
+**新增功能或更新后的功能**
+
+| 类型 | 功能 | 描述 |
+| --- | --- | --- |
+| 扩展 | [!DNL Meta] 转化API增强功能 | 有三项增强功能 [元转化API](/help/tags/extensions/server/meta/overview.md) 扩展名： <ul><li>与集成 [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)：通过允许您共享用于转化API与Adobe集成的像素ID和访问令牌，创建无缝登录体验。</li><li>与集成 [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)：用于向更有可能完成所需操作的人投放广告，并将操作链接回投放的广告。</li><li>与集成 [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
+
+有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
+
+## 沙盒 {#sandboxes}
+
+Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。 为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 沙盒工具 | 利用沙盒工具功能，可跨沙盒提高配置准确性并在沙盒之间无缝导出和导入沙盒配置。 您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 欲了解更多信息，请参见 [沙盒工具UI指南](../../sandboxes/ui/sandbox-tooling.md). |
+
+有关沙箱的详细信息，请参阅 [沙盒概述](../../sandboxes/home.md).
+
+## Segmentation Service {#segmentation}
+
+[!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 帐户受众（限定GA） | 在Real-time Customer Data Platform B2B版本中，您现在可以使用帐户分段，从基于人员的受众到基于帐户的受众，全面简化营销分段体验。 有关此功能的详细信息，请阅读 [帐户受众概述](../../segmentation/ui/account-audiences.md). |
+
+要了解有关分段服务的更多信息，请阅读 [分段服务概述](../../segmentation/home.md).
 
 ## 源 {#sources}
 
