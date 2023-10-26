@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年10月版发行说明。
-source-git-commit: ac7597a2e63559f3af91d559dd77f7778c9f27bb
+source-git-commit: 9009f56956f0719fb80d423a14b81a6dc7115d77
 workflow-type: tm+mt
-source-wordcount: '766'
-ht-degree: 36%
+source-wordcount: '808'
+ht-degree: 34%
 
 ---
 
@@ -29,6 +29,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
 | 扩展 | [!DNL Meta] 转化API增强功能 | 有三项增强功能 [元转化API](/help/tags/extensions/server/meta/overview.md) 扩展名： <ul><li>与集成 [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe)：通过允许您共享用于转化API与Adobe集成的像素ID和访问令牌，创建无缝登录体验。</li><li>与集成 [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq)：用于向更有可能完成所需操作的人投放广告，并将操作链接回投放的广告。</li><li>与集成 [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha)：允许您在CIP字段中传递LiveRamp的RampID，而无需直接与合作伙伴或Meta共享PII。 </li></ul> |
+| 扩展 | [!DNL LinkedIn] 转化API | 此 [[!DNL LinkedIn] 转化API](../../tags/extensions/server/linkedin/overview.md) 通过扩展，您可以将Experience Platform事件数据转发到LinkedIn，从而评估LinkedIn营销活动的有效性。 |
+| 机密 | [!DNL LinkedIn] OAuth 2密码 | 此 [[!DNL LinkedIn] OAuth 2密码](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) 允许您将服务器与服务器的交互发送到 [!DNL LinkedIn] 在事件转发中。 |
 
 有关数据收集的更多信息，请参阅[数据收集概述](../../tags/home.md)。
 
