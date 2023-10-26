@@ -2,9 +2,9 @@
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
+source-git-commit: f63d171354e15a23c29c1e579ce816750dea3c97
 workflow-type: tm+mt
-source-wordcount: '191'
+source-wordcount: '193'
 ht-degree: 20%
 
 ---
@@ -37,6 +37,7 @@ ht-degree: 20%
 * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads增强型转化](./google-ads-enhanced-conversions/overview.md)
 * [Google Cloud Platform](./google-cloud-platform/overview.md)
+* [[!DNL LinkedIn] 转换API](./linkedin/overview.md)
 * [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
 * [[!DNL Meta] 转化API](./meta/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)

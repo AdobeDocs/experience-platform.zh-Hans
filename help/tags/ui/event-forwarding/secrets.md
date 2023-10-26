@@ -2,10 +2,10 @@
 title: 在事件转发中配置密钥
 description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: a863d65c3e6e330254a58aa822383c0847b0e5f5
+source-git-commit: 592acdd45b1db5da95430b4e707cd9a2c18c1645
 workflow-type: tm+mt
-source-wordcount: '2182'
-ht-degree: 4%
+source-wordcount: '2458'
+ht-degree: 3%
 
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL Google OAuth 2] | 包含多个属性以支持 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 身份验证规范，用于 [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) 和 [发布/订阅API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL HTTP] | 包含用户名和密码的两个字符串属性。 |
+| [!UICONTROL [!DNL LinkedIn] OAuth 2] | 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL OAuth 2] | 包含多个属性以支持 [客户端凭据授权类型](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) 对于 [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) 身份验证规范。 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL OAuth 2 JWT] | 包含多个属性以支持的JSON Web令牌(JWT)配置文件 [OAuth 2.0授权](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1) 格兰茨。 系统会要求您提供所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 | [!UICONTROL 令牌] | 表示两个系统都已知和理解的身份验证令牌值的单个字符串。 |
@@ -76,6 +77,7 @@ ht-degree: 4%
 * [[!UICONTROL OAuth 2]](#oauth2)
 * [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
+* [[！UICONTROL [!DNL LinkedIn] Oauth 2]](#linkedin-oauth2)
 
 ### [!UICONTROL 令牌] {#token}
 
@@ -175,6 +177,38 @@ ht-degree: 4%
 >如果您的组织为Google Cloud应用程序设置了重新身份验证策略，则创建的密钥在身份验证过期后不会成功刷新（根据策略配置，在1到24小时之间）。
 >
 >要解决此问题，请登录到Google Admin Console，然后导航至 **[!DNL App access control]** 页面，以便将事件转发应用程序(Adobe Real-Time CDP事件转发)标记为 [!DNL Trusted]. 请参阅Google文档，了解有关 [为Google云服务设置会话长度](https://support.google.com/a/answer/9368756) 以了解更多信息。
+
+### [!UICONTROL [!DNL LinkedIn] OAuth 2] {#linkedin-oauth2}
+
+创建 [!DNL LinkedIn] OAuth 2密码，选择 **[!UICONTROL [!DNL LinkedIn]OAuth 2]** 从 **[!UICONTROL 类型]** 下拉菜单。 接下来，选择 **[!UICONTROL 创建密钥]**.
+
+![此 [!UICONTROL 创建密钥] 制表符 [!UICONTROL 类型] 字段突出显示。](../../images/ui/event-forwarding/secrets/linkedin-oauth.png)
+
+此时会出现一个弹出窗口，通知您需要通过手动授权密钥 [!DNL LinkedIn]. 选择 **[!UICONTROL 创建并授权密钥[!DNL LinkedIn]]** 以继续。
+
+![[!DNL LinkedIn] 授权弹出框突出显示 [!UICONTROL 创建并授权密钥 [!DNL LinkedIn]].](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
+
+此时会出现一个对话框，提示您输入 [!DNL LinkedIn] 凭据。 按照提示操作，授予数据事件转发访问权限。
+
+授权过程完成后，您将返回 **[!UICONTROL 密钥]** 选项卡，您可以在此处查看新创建的密钥。 您可以在此处查看密钥的状态和到期日期。
+
+![此 [!UICONTROL 密码] 选项卡，突出显示新创建的密码。](../../images/ui/event-forwarding/secrets/linkedin-new-secret.png)
+
+#### 重新授权 [!UICONTROL [!DNL LinkedIn] OAuth 2] 密码
+
+>重要
+>
+>您需要使用您的 [!DNL LinkedIn] 凭证每365天一次。 如果您没有在适当的时候重新授权，您的密钥将不会刷新，并且 [!DNL LinkedIn] 转换请求将失败。
+
+三个月前，该机密需要重新授权，当您导航资产的任意页面时，将会开始显示弹出窗口。 选择 **[!UICONTROL 单击此处转到您的密钥]**.
+
+![此 [!UICONTROL 属性概述] 选项卡，突出显示密码重新授权弹出窗口。](../../images/ui/event-forwarding/secrets/linkedin-reauthorization-popup.png)
+
+您将被重定向到 [!UICONTROL 密钥] 选项卡。 将过滤此页面上列出的密钥，以仅显示需要重新授权的密钥。 选择 **[!UICONTROL 需要身份验证]** 因为这个秘密你需要重新授权。
+
+![此 [!UICONTROL 密码] 选项卡突出显示 [!UICONTROL 需要身份验证]对于 [!DNL LinkedIn] 秘密。](../../images/ui/event-forwarding/secrets/linkedin-reauthorization.png)
+
+将出现一个对话框，提示您输入 [!DNL LinkedIn] 凭据。 按照提示重新授权您的密钥。
 
 ## 编辑密码
 
