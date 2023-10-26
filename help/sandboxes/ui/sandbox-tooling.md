@@ -2,18 +2,14 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 1fd523b827a591fdc04ba64a558bc178f242a450
+source-git-commit: 58fcf3cbff242f65969193fd2e3d6eea0e6539aa
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1820'
 ht-degree: 7%
 
 ---
 
-# [!BADGE 测试版] 沙盒工具
-
->[!IMPORTANT]
->
->此 **沙盒工具** 以下描述的功能仅适用于部分Beta测试版客户。
+# 沙盒工具
 
 >[!NOTE]
 >

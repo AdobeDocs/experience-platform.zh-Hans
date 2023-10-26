@@ -8,7 +8,7 @@ exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '3227'
-ht-degree: 10%
+ht-degree: 11%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 10%
 
 ## 快速入门 {#getting-started}
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 - [数据流](../home.md)：数据流表示跨Platform移动数据的数据作业。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的定期计划作业。
@@ -41,7 +41,7 @@ ht-degree: 10%
 | ------ | ----------- |
 | 已启用 | 此 `Enabled` 状态表示数据流处于活动状态并根据提供的计划导出数据。 |
 | 已禁用 | 此 `Disabled` 状态表示数据流处于非活动状态，并且未导出任何数据。 |
-| 处理时间 | 此 `Processing` 状态表示数据流尚未处于活动状态。 创建新数据流后，经常会立即出现此状态。 |
+| 正在处理 | 此 `Processing` 状态表示数据流尚未处于活动状态。 创建新数据流后，经常会立即出现此状态。 |
 | 错误 | 此 `Error` 状态表示数据流的激活过程已中断。 |
 
 ### 流式处理目标的数据流运行 {#dataflow-runs-for-streaming-destinations}

@@ -3,13 +3,13 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 badgeLimitedAvailability: label="有限可用性" type=Caution
-source-git-commit: a44b1a1f6028e54ca23149249697dea9407bf60a
+exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2123'
 ht-degree: 11%
 
 ---
-
 
 # 相似受众指南
 
@@ -39,7 +39,7 @@ ht-degree: 11%
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_processing"
->title="处理时间"
+>title="正在处理"
 >abstract="目前正在处理该受众。该模型可能需要长达 24 小时才能完成处理。请稍后重试。"
 
 >[!CONTEXTUALHELP]

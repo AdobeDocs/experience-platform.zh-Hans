@@ -20,7 +20,7 @@ ht-degree: 4%
 本用户指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [数据集](overview.md)：中用于数据持久化的存储和管理结构 [!DNL Experience Platform].
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
    * [模式组合基础](../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
    * [架构编辑器](../../xdm/tutorials/create-schema-ui.md)：了解如何使用构建您自己的自定义XDM架构 [!DNL Schema Editor] 内部 [!DNL Platform] 用户界面。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。

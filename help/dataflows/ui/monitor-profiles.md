@@ -7,7 +7,7 @@ exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1074'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 9%
 
 ## 快速入门 {#getting-started}
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 - [数据流](../home.md)：数据流表示跨Platform移动数据的数据作业。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
    - [数据流运行](../../sources/notifications.md)：数据流运行是基于所选数据流的频率配置的定期计划作业。

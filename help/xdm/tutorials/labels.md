@@ -5,7 +5,7 @@ exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
 source-git-commit: c35c270afca57cb96228cea29fd5a39ec6615332
 workflow-type: tm+mt
 source-wordcount: '795'
-ht-degree: 5%
+ht-degree: 8%
 
 ---
 
@@ -27,9 +27,9 @@ ht-degree: 5%
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Experience Data Model (XDM) System]](../home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
    * [架构编辑器](../ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：提供用于对Platform操作强制实施数据使用限制的基础架构，其中使用策略定义可以（或不能）对标记数据执行哪些营销操作。
 

@@ -1,13 +1,13 @@
 ---
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
-source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
+exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1485'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
-
 
 # 计算属性UI指南
 
@@ -24,7 +24,7 @@ ht-degree: 8%
 本UI指南需要了解各种 [!DNL Experience Platform] 与管理有关的服务 [!DNL Real-Time Customer Profiles]. 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
 
 ## 查看计算属性 {#view}
 
