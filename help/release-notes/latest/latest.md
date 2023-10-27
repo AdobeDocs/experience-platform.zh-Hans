@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年10月版发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a307f21ad9c72fd413c90cff1c92af8535d9b17b
+source-git-commit: fc0cb582d74f5ab52410991f65aa14ba05df3f97
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '954'
 ht-degree: 34%
 
 ---
@@ -15,11 +15,26 @@ ht-degree: 34%
 
  Experience Platform 中现有功能的更新：
 
+- [仪表板](#dashboards)
 - [数据收集](#data-collection)
 - [目标](#destinations)
 - [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
+
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 目标使用情况量度 | 新的计数指标已添加到许可证使用情况仪表板。 此 **[!UICONTROL Audience Activation大小]** 和 **[!UICONTROL 数据导出大小]** 量度提供了一种便捷的方式来跟踪您已从Platform导出多少与您的许可证使用权利相关的数据。 请参阅 [可用量度](../../dashboards/guides/license-usage.md#available-metrics) 这些指标和其他许可证使用量度说明的文档。 |
+
+{style="table-layout:auto"}
+
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
@@ -52,7 +67,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 计算字段中支持哈希函数 | 除了的特定功能外 [导出数组](../../destinations/ui/export-arrays-calculated-fields.md) 或数组中的元素时，您现在可以使用 [哈希函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) 以散列导出文件中的属性。 支持的哈希函数包括： `sha`， `sha256`， `sha512`， `hash`， `md5`， `crc32`. |
+| （Beta版）支持计算字段中的哈希函数 | 除了的特定功能外 [导出数组](../../destinations/ui/export-arrays-calculated-fields.md) 或数组中的元素时，您现在可以使用 [哈希函数](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) 以散列导出文件中的属性。 支持的哈希函数包括： `sha`， `sha256`， `sha512`， `hash`， `md5`， `crc32`. |
+| （有限GA）将帐户受众激活到某些目标 | Real-Time CDP B2B客户现在可以激活 [帐户受众](../../segmentation/ui/account-audiences.md) 到特定目标。 有关此功能的详细信息，请阅读 [激活帐户受众教程](/help/destinations/ui/activate-account-audiences.md). |
 
 {style="table-layout:auto"}
 

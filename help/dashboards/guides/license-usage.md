@@ -4,9 +4,9 @@ title: 许可证使用情况仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: e9c4068419b36da6ffaec67f0d1c39fe87c2bc4c
+source-git-commit: fc0cb582d74f5ab52410991f65aa14ba05df3f97
 workflow-type: tm+mt
-source-wordcount: '1987'
+source-wordcount: '2027'
 ht-degree: 4%
 
 ---
@@ -119,27 +119,29 @@ ht-degree: 4%
 
 ![突出显示了自定义日期范围选项的许可证使用情况仪表板概述选项卡。](../images/license-usage/custom-date-range.png)
 
-## 可用量度
+## 可用量度 {#available-metrics}
 
 许可证使用情况仪表板报告适用于组织中多个产品的多个唯一量度。 可用的量度包括：
 
 | 量度 | 描述 |
 |---|---|
-| [!UICONTROL 数据导出] | 可在一年内（直接或间接）导出到任何非Adobe解决方案的数据集总大小。 |
-| [!UICONTROL AMM模型数] | 机器学习模型(内置Adobe Mix Modeler)的计数，用于根据您的投资测量和/或预测指定的结果。 |
-| [!UICONTROL 数据湖存储] | Adobe Experience Platform中分析数据存储所使用的数量。 |
-| [!UICONTROL 计算属性] | 汇总的配置文件行为数据的总数。 汇总的个人资料行为数据基于转换为个人资料属性的体验事件，并可包含在人员个人资料或商业人员个人资料中。 |
-| [!UICONTROL 相似受众] | 通过模拟现有消费者受众以标识与现有消费者受众类似的人员配置文件而生成的受众计数。 |
+| [!UICONTROL Audience Activation大小] | 一年中激活到任何基于文件的目标的配置文件总数。 注意：这不包括通过流式目标发送的用户档案。 |
 | [!UICONTROL 可寻址受众] | 您的业务受众权利和消费者受众权利的总和。 消费者受众定义为销售订单上标识为“消费者受众”的人员配置文件数。 业务受众定义为销售订单上标识为“业务受众”的业务人员个人资料数。 |
-| [!UICONTROL 沙盒数] | 访问Adobe Experience Platform隔离数据和操作的任何Adobe按需服务的实例中的逻辑分隔计数。 |
-| [!UICONTROL 平均配置文件丰富度] | Hub Profile Service中存储的所有生产数据在任何时间点之和，除以授权业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度] 是一项共享功能。 |
-| [!UICONTROL 流式分段包数] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
-| [!UICONTROL 消费者受众] | 销售订单上标识为“消费者受众”的人员配置文件数。 |
-| [!UICONTROL CJA可用行] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
-| [!UICONTROL 包的配置文件丰富度] | 每个其他配置文件丰富度包的授权平均配置文件丰富度将增加25 KB。 |
 | [!UICONTROL Adhoc Query Service用户包] | 一个附加功能，用于将您的授权并发查询服务用户权利增加5个额外的并发查询服务用户，每个包另加1个并发运行即席查询。 可以许可多个其他Ad Hoc Query用户包。 |
+| [!UICONTROL 平均配置文件丰富度] | Hub Profile Service中存储的所有生产数据在任何时间点之和，除以授权业务人员配置文件数量的五倍。 [!UICONTROL 平均配置文件丰富度] 是一项共享功能。 |
+| [!UICONTROL CJA可用行] | 可用于在Customer Journey Analytics中分析的每日平均数据行数。 |
+| [!UICONTROL 计算属性] | 汇总的配置文件行为数据的总数。 汇总的个人资料行为数据基于转换为个人资料属性的体验事件，并可包含在人员个人资料或商业人员个人资料中。 |
+| [!UICONTROL 消费者受众] | 销售订单上标识为“消费者受众”的人员配置文件数。 |
+| [!UICONTROL 数据导出大小] | 一年中通过数据集激活发送的数据量。 |
+| [!UICONTROL 数据导出] | 可在一年内（直接或间接）导出到任何非Adobe解决方案的数据集总大小。 |
+| [!UICONTROL 数据湖存储] | Adobe Experience Platform中分析数据存储所使用的数量。 |
 | [!UICONTROL 可参与受众] | 此量度是指可参与用户档案的受众。 可启用的用户档案是代表个人的信息记录，并在用户档案服务中显示。 这些记录是您在过去12个月内尝试使用Journey Optimizer的创作、决策、交付、实验或编排功能接触的用户档案。 |
+| [!UICONTROL 相似受众] | 通过模拟现有消费者受众以标识与现有消费者受众类似的人员配置文件而生成的受众计数。 |
+| [!UICONTROL AMM模型数] | 机器学习模型(内置Adobe Mix Modeler)的计数，用于根据您的投资测量和/或预测指定的结果。 |
+| [!UICONTROL 沙盒数] | 访问Adobe Experience Platform隔离数据和操作的任何Adobe按需服务的实例中的逻辑分隔计数。 |
+| [!UICONTROL 包的配置文件丰富度] | 每个其他配置文件丰富度包的授权平均配置文件丰富度将增加25 KB。 |
 | [!UICONTROL 查询服务计算小时数] | 测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
+| [!UICONTROL 流式分段包数] | 当新数据通过流流进入分段服务时，包将更新人员配置文件的区段成员资格。 评估区段成员资格时，将基于当前人员配置文件属性和当前事件的值，而不考虑历史行为。 流式分段是一项共享功能。 |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
