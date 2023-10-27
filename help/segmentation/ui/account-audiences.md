@@ -2,20 +2,20 @@
 title: 帐户受众
 description: 了解如何创建和使用帐户受众，以便在下游目标中定位帐户配置文件。
 badgeLimitedAvailability: label="有限可用性" type="Caution"
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html"
-source-git-commit: ecc60ec2e7bf2ea02bd721eac1b101b0dc412ba0
+badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+source-git-commit: 77ba3bd55c2f2ac217612880b83b731919aa14af
 workflow-type: tm+mt
-source-wordcount: '585'
-ht-degree: 1%
+source-wordcount: '603'
+ht-degree: 0%
 
 ---
 
 
 # 帐户受众
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->请注意，帐户受众仅在 [Real-time Customer Data Platform的B2B版本](../../rtcdp/b2b-overview.md). 此外，帐户受众功能当前正在 **有限可用性**.
+>帐户受众仅在 [Real-time Customer Data Platform的B2B版本](../../rtcdp/b2b-overview.md). 此外，帐户受众功能当前正在 **有限可用性**. 请联系Adobe客户关怀或您的Adobe代表，请求访问此功能。
 
 通过帐户分段，Adobe Experience Platform可让您从基于人员的受众到基于帐户的受众，全面轻松地体验营销分段。
 
@@ -69,7 +69,7 @@ ht-degree: 1%
 
 ![此 [!UICONTROL 激活到目标] 所选受众的快速操作菜单中会高亮显示按钮。](../images/ui/account-audiences/activate.png)
 
-此 [!UICONTROL 激活目标] 页面。 有关激活过程的更多信息（包括字段映射的详细信息），请阅读 [激活概述](../../destinations/ui/activation-overview.md).
+此 [!UICONTROL 激活目标] 页面。 有关激活过程的更多信息（包括支持的目标和有关字段映射的详细信息），请阅读 [激活帐户受众](/help/destinations/ui/activate-account-audiences.md) 教程。
 
 ## 后续步骤 {#next-steps}
 

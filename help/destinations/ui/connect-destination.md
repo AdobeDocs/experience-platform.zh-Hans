@@ -4,9 +4,9 @@ title: 创建新的目标连接
 type: Tutorial
 description: 了解如何在Adobe Experience Platform中连接到目标、启用警报以及为连接的目标设置营销操作。
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
+source-git-commit: 28abc492dc3b2b89c3e79a0531b8d206af1e0590
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
@@ -84,9 +84,9 @@ ht-degree: 0%
 
 ![此图像显示了文件类型选择和CSV文件的各种选项。](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### 为受众激活、潜在客户激活或数据集导出设置目标连接 {#segment-activation-or-dataset-exports}
+### 设置目标连接，用于受众激活、帐户激活、潜在客户激活或数据集导出 {#segment-activation-or-dataset-exports}
 
-某些基于文件的目标支持向已知客户或潜在客户进行受众激活，并支持数据集导出。 对于这些目标，您可以选择是否创建连接，以便能够 [激活受众](/help/destinations/ui/activate-batch-profile-destinations.md)， [潜在客户](/help/destinations/ui/activate-prospect-audiences.md)，或 [导出数据集](/help/destinations/ui/export-datasets.md).
+某些基于文件的目标支持向已知客户、帐户客户或潜在客户激活受众，并支持数据集导出。 对于这些目标，您可以选择是否创建连接，以便能够 [激活受众](/help/destinations/ui/activate-batch-profile-destinations.md)， [帐户](/help/destinations/ui/activate-account-audiences.md)， [潜在客户](/help/destinations/ui/activate-prospect-audiences.md)，或 [导出数据集](/help/destinations/ui/export-datasets.md).
 
 >[!WARNING]
 >
