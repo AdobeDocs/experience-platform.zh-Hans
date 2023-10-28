@@ -1,22 +1,22 @@
 ---
 title: AI/ML功能管道
 description: 了解如何使用Data Distiller通过源自Adobe Experience Platform数据的功能丰富您的机器学习管道。 将原始数据转换为功能并投放功能数据，以训练或评分支持您的营销用例的模型。
-source-git-commit: f8bba17df9673973cb2792658282c8db972d30d6
+source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '453'
 ht-degree: 1%
 
 ---
 
 # AI/ML功能管道
 
-<!-- This guide illustrates a new workflow to enrich your preferred machine learning (ML) data pipelines with curated data from Adobe Experience Platform. The use case demonstrates how to transform raw data into features, and deliver the feature data to train or score a model that supports your marketing use cases. Use the provided Python notebooks in your machine learning environments to leverage Data Distiller capabilities and explore, curate, and access customer data from Adobe Experience Platform to enrich and enhance your AI/ML models.
+<!-- This guide illustrates a new workflow to enrich your preferred machine learning (ML) data pipelines with curated data from Adobe Experience Platform. The use case demonstrates how to transform raw data into features, and deliver the feature data to train or score a model that supports your marketing use cases. Use the provided [!DNL Python] notebooks in your machine learning environments to leverage Data Distiller capabilities and explore, curate, and access customer data from Adobe Experience Platform to enrich and enhance your AI/ML models.
 
 This document provides an overview of the AI/ML feature pipelines use case and details the steps required to get started with the cloud machine learning environment (CMLE) notebooks. -->
 
 <!--  -->
 
-Data Distiller使数据科学家和工程师能够利用Adobe Experience Platform中收集和整理的高价值客户体验数据，丰富其机器学习管道。 通过任何环境中的Python笔记本，您可以以交互方式浏览Experience Platform中的客户数据，从数据中定义和计算功能，并将计算功能读取到机器学习环境中以进行建模。
+Data Distiller使数据科学家和工程师能够利用Adobe Experience Platform中收集和整理的高价值客户体验数据，丰富其机器学习管道。 从 [!DNL Python] notebook在任何环境中，您都可以交互地浏览Experience Platform中的客户数据，定义并计算数据中的功能，并将计算出的功能读入机器学习环境中以进行建模。
 
 >[!IMPORTANT]
 >
@@ -32,7 +32,7 @@ Data Distiller使数据科学家和工程师能够利用Adobe Experience Platfor
 
 此工作流要求您对Adobe Experience Platform的各个方面有一定的了解。 在开始本教程之前，请查看文档以了解以下概念：
 
-- 操作方法 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md)
+- 操作方法 [身份验证和访问Experience PlatformAPI](../../../landing/api-authentication.md).
 - 沙盒： [基于属性的访问控制权限](../../../access-control/abac/overview.md) 以及如何创建和管理角色，并为这些角色分配所需的资源权限。
 - 数据管理：如何 [将数据使用标签应用于数据集和字段，对每个数据集和字段进行分类](../../../data-governance/labels/overview.md) 管理策略和访问控制策略。
 
@@ -40,16 +40,16 @@ Data Distiller使数据科学家和工程师能够利用Adobe Experience Platfor
 
 通过阅读本文档，您已了解使用首选机器学习工具构建支持营销用例的自定义模型背后的重要概念。
 
-本系列指南中包含的文档描述了创建功能管道的基本步骤，这些管道从Experience Platform到馈送机器学习环境中的自定义模型。 您现在可以在Data Distiller与Jupyter笔记本之间建立连接。
+本系列指南中包含的文档描述了创建功能管道的基本步骤，这些管道从Experience Platform到馈送机器学习环境中的自定义模型。 现在，您可以在数据Distiller与您的 [!DNL Jupyter Notebook].
 
-- [从Python笔记本连接到Data Distiller](./establish-connection.md)
+- [从连接到数据Distiller [!DNL Python] 笔记本](./establish-connection.md)
 - [浏览和分析数据集](./exploratory-analysis.md)
 - [机器学习的工程师功能](./feature-engineering.md)
 - [导出功能数据集](./export-data.md)
 
 ## 其他资源
 
-- [aepp](https://github.com/adobe/aepp)：由Adobe管理的开源Python库，用于从Python代码向Data Distiller和其他Experience Platform服务发出请求。
+- [aepp](https://github.com/adobe/aepp)：Adobe管理的开放源代码 [!DNL Python] 库，用于从请求Data Distiller和其他Experience Platform服务 [!DNL Python] 代码。
 
 <!-- Old content below -->
 

@@ -1,9 +1,9 @@
 ---
 title: 机器学习的工程师功能
 description: 了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 使用Data Distiller可大规模计算ML功能，并与您的机器学习环境共享这些功能。
-source-git-commit: 12926f36514d289449cf0d141b5828df3fac37c2
+source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1161'
 ht-degree: 13%
 
 ---
@@ -67,7 +67,7 @@ df_labels.head()
 
 ### 聚合事件以定义ML的功能 {#define-features}
 
-以下查询将数据集中的事件聚合为有意义的数字功能，可用于训练倾向模型：
+通过适当的查询，您可以将数据集中的事件收集到有意义的数字特征中，这些特征可用于训练倾向模型。 下面显示了示例事件：
 
 - **电子邮件数量** 已发送用于营销目的并由用户接收的数量。
 - 这些电子邮件中属于 **已打开**.
@@ -83,6 +83,8 @@ df_labels.head()
 - 与两个建议交互的分钟数。
 - 两个被驳回的建议之间的分钟数。
 - 已选择两个链接之间的分钟数。
+
+以下查询汇总这些事件：
 
 +++选择以查看示例查询
 
