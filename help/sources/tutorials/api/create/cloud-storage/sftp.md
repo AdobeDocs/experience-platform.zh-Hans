@@ -2,7 +2,7 @@
 title: 使用流服务API创建SFTP基本连接
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: a826bda356a7205f3d4c0e0836881530dbaaf54e
+source-git-commit: f6d1cc811378f2f37968bf0a42b428249e52efd8
 workflow-type: tm+mt
 source-wordcount: '938'
 ht-degree: 2%
@@ -52,7 +52,7 @@ ht-degree: 2%
 
 >[!TIP]
 >
->创建后，便无法更改的身份验证类型 [!DNL Dynamics] 基本连接。 要更改身份验证类型，必须创建新的基本连接。
+>创建后，便无法更改的身份验证类型 [!DNL SFTP] 基本连接。 要更改身份验证类型，必须创建新的基本连接。
 
 基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
