@@ -2,7 +2,8 @@
 keywords: IP地址， IP范围，允许列表，允许列表
 title: 列入允许列表查询服务的IP地址
 description: 此页提供了可添加到允许列表的IP范围。
-source-git-commit: 89d04a98e983b5dc9f353a831cdbe21c7c7aaf36
+exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '175'
 ht-degree: 2%

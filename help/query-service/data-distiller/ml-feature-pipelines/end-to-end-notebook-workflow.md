@@ -3,7 +3,8 @@ title: AI/ML数据管道扩充端到端工作流
 description: 使用基于云的机器学习环境Notebooks创建训练和评分倾向模型，以预测Adobe Experience Platform数据的订阅转化。
 hide: true
 hidefromtoc: true
-source-git-commit: 12926f36514d289449cf0d141b5828df3fac37c2
+exl-id: 2853e7c7-cab8-4e1b-b73f-622c937fbbaf
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 0%

@@ -1,7 +1,8 @@
 ---
 title: 从Jupyter笔记本连接到Data Distiller
 description: 了解如何从Jupyter Notebook连接到Data Distiller。
-source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
+exl-id: e6238b00-aaeb-40c0-a90f-9aebb1a1c421
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '693'
 ht-degree: 1%

@@ -4,7 +4,8 @@ description: 了解配置身份设置的示例场景。
 hide: true
 hidefromtoc: true
 badge: Alpha
-source-git-commit: 03e4cd440f8627ad837a31e1c017d0b824cafb04
+exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 1%

@@ -4,7 +4,8 @@ description: 了解Identity Service如何链接不同的身份以创建客户的
 hide: true
 hidefromtoc: true
 badge: Alpha
-source-git-commit: 03e4cd440f8627ad837a31e1c017d0b824cafb04
+exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '791'
 ht-degree: 3%

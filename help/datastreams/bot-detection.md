@@ -3,13 +3,13 @@ title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 hide: true
 hidefromtoc: true
-source-git-commit: 07b3ff85c1092614a60495e73575907df36d4158
+exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1361'
 ht-degree: 0%
 
 ---
-
 
 # 为数据流配置机器人检测
 
@@ -176,4 +176,3 @@ ht-degree: 0%
 请求来自两个IP地址中的任意一个， `referer` 标题开头为 `www.adobe.com`，和 `sec-ch-ua-mobile` 标头标识来自桌面浏览器的请求。
 
 ![基于多条件的机器人检测规则图像。](assets/bot-detection/bot-detection-multiple.png)
-

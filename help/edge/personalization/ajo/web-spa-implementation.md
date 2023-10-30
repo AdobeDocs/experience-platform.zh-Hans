@@ -1,13 +1,13 @@
 ---
 title: 单页应用程序实施
 description: 了解如何在Adobe Journey Optimizer中实施SPA视图
-source-git-commit: c91a3ef135937ec5c5f87741699ef216df5ac85a
+exl-id: 1883251b-2d59-46d3-ac74-b8657edd0325
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '859'
 ht-degree: 1%
 
 ---
-
 
 # 实施单页应用程序(SPA) {#web-spa-implementation}
 

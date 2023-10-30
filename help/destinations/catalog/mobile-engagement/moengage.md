@@ -2,13 +2,13 @@
 title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
-source-git-commit: 6a80089f404057b5c98764b5e0166b9afaf1a7e4
+exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1002'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Moengage] 连接
 
@@ -150,4 +150,3 @@ ht-degree: 0%
 ## 数据使用和治理 {#data-usage-governance}
 
 全部 [!DNL Adobe Experience Platform] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
-

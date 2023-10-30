@@ -1,7 +1,8 @@
 ---
 title: 沙盒工具API快速入门
 description: 使用沙盒工具API检查项目并在沙盒之间导出和导入沙盒配置的快照。 参阅本指南，了解如何使用 API 执行关键操作。
-source-git-commit: bad6ad17a5f41e50b27ce44a6d52a79e2066c82f
+exl-id: 0b34d153-a603-4397-a375-9cc846efe23a
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 14%
