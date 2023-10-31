@@ -2,7 +2,7 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 93b1c26e85ddd0fa232b26712f88faa824f19f30
 workflow-type: tm+mt
 source-wordcount: '1017'
 ht-degree: 10%
@@ -26,7 +26,7 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 >
-> 虽然Experience Platform支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为 [!DNL Amazon S3] 和 [!DNL SFTP].
+> 虽然Experience Platform支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为 [!DNL Amazon S3] 和 [!DNL Azure Blob].
 
 ## 通过API或用户界面连接到SFTP {#connect-api-or-ui}
 
