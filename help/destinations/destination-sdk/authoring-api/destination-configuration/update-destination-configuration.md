@@ -1,21 +1,21 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK更新现有目标配置的API调用。
 title: 更新目标配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: d7f18689-9806-4f73-a63a-fa112569819c
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '369'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # 更新目标配置
 
-本页举例说明了可用于更新现有目标配置的API请求和有效负载，使用 `/authoring/destinations` API端点。
+本页举例说明了可用于更新现有目标配置的API请求和有效负荷，使用 `/authoring/destinations` API端点。
 
 >[!TIP]
 >
->只有在您使用之后，才能看到对生产/公共目标执行的任何更新操作。 [发布API](../../publishing-api/create-publishing-request.md) 并提交更新以供Adobe审查。
+>只有在您使用 [发布API](../../publishing-api/create-publishing-request.md) 并提交更新以供Adobe审查。
 
 有关目标配置的功能的详细说明，请阅读以下文章：
 
@@ -34,11 +34,11 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 更新目标配置 {#update}
 
@@ -48,7 +48,7 @@ ht-degree: 1%
 >
 >API端点： `platform.adobe.io/data/core/activation/authoring/destinations`
 
-获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参阅以下文章： [检索目标配置](retrieve-destination-configuration.md).
+获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参阅关于以下内容的文章： [检索目标配置](retrieve-destination-configuration.md).
 
 **API格式**
 
@@ -201,13 +201,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 +++响应
 
-成功响应会返回HTTP状态200以及已更新目标配置的详细信息。
+成功的响应会返回HTTP状态200以及已更新目标配置的详细信息。
 
 +++
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
 
 ## 后续步骤
 

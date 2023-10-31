@@ -1,13 +1,13 @@
 ---
 title: 配置 Web SDK 标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
-source-git-commit: ec0aa64c466a8228d49a776d27040253b5a1b196
+exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1458'
 ht-degree: 10%
 
 ---
-
 
 # 配置Web SDK标记扩展
 

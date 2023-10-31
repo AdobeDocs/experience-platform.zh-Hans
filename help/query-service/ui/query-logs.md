@@ -81,7 +81,7 @@ A [每个日志表列的说明](./overview.md#log) 可以在查询服务概述�
 | [!UICONTROL 开始日期] | 要筛选在特定时间段内创建的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 开始日期] 部分。 |
 | [!UICONTROL 完成日期] | 要筛选在特定时间段内完成的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 完成日期] 部分。 |
 | [!UICONTROL 状态] | 要根据以下条件筛选日志 [!UICONTROL 状态] 在查询中，选择相应的单选按钮。 可用的选项包括 [!UICONTROL 已提交]， [!UICONTROL 进行中]， [!UICONTROL 成功]、和 [!UICONTROL 失败]. 您一次只能基于一个状态条件筛选日志。 |
-| [!UICONTROL 客户端] | 要根据使用的查询客户端筛选日志，请在自由文本字段中输入以下接受值之一： `API`， `Adobe Query Service UI`，或 `QsAccel`. |
+| [!UICONTROL 客户] | 要根据使用的查询客户端筛选日志，请在自由文本字段中输入以下接受值之一： `API`， `Adobe Query Service UI`，或 `QsAccel`. |
 | [!UICONTROL 我的查询] | 使用 [!UICONTROL 我的查询] 切换以筛选由您执行的查询的日志。 |
 | [!UICONTROL 查询日志Id] | 要根据查询的唯一日志ID进行筛选，请在自由文本字段中输入日志ID。 此信息可在 [!UICONTROL 日志详细信息]. |
 

@@ -1,16 +1,16 @@
 ---
 title: 在UI中创建Shopify流连接和数据流
 description: 了解如何使用Platform用户界面创建Shopify流源连接和数据流
-badge: 测试版
-exl-id: 3368ecf6-0c61-49ce-bc9c-29ee50b3f037
-source-git-commit: feb05d5bddc4135c5fe14d3ec5d8fad62c5e2236
+badge: Beta 版
+exl-id: d53f4ab5-8bdc-4647-83d5-ee898abda0f2
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 1%
 
 ---
 
-# 为创建源连接和数据流 [!DNL Shopify Streaming] 使用UI的数据
+# 为以下对象创建源连接和数据流 [!DNL Shopify Streaming] 使用UI的数据
 
 本教程提供了用于创建 [!DNL Shopify Streaming] 源连接和数据流。
 
@@ -25,13 +25,13 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->本教程要求您完成先决条件设置 [!DNL Shopify Streaming] 帐户。 有关设置帐户的步骤，请阅读 [[!DNL Shopify Streaming] 概述](../../../../connectors/ecommerce/shopify-streaming.md).
+>本教程要求您完成以下项目的先决条件设置： [!DNL Shopify Streaming] 帐户。 有关设置帐户的步骤，请阅读 [[!DNL Shopify Streaming] 概述](../../../../connectors/ecommerce/shopify-streaming.md).
 
 ## 连接您的 [!DNL Shopify Streaming] 帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 **电子商务** 类别，选择 [!DNL Shopify Streaming]，然后选择 **[!UICONTROL 添加数据]**.
 
@@ -39,16 +39,16 @@ ht-degree: 1%
 
 ## 选择数据
 
-此 **[!UICONTROL 选择数据]** 步骤随即显示，为您提供了一个界面来选择要带到Platform的数据。
+此 **[!UICONTROL 选择数据]** 此时会显示步骤，提供一个界面供您选择将带到Platform的数据。
 
 * 界面的左侧是一个浏览器，允许您查看帐户内的可用数据流；
-* 界面的右侧部分允许您预览来自JSON文件的最多100行数据。
+* 界面的右侧部分允许您预览JSON文件中最多100行数据。
 
-选择 **[!UICONTROL 上传文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到 [!UICONTROL 拖放文件] 面板。
+选择 **[!UICONTROL 上载文件]** 以从本地系统上传JSON文件。 或者，您也可以将要上传的JSON文件拖放到 [!UICONTROL 拖放文件] 面板。
 
 ![源工作流的添加数据步骤。](../../../../images/tutorials/create/shopify-streaming/select-data.png)
 
-上传文件后，预览界面会更新以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您还可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
+上传文件后，预览界面会更新，以显示您上传的架构预览。 预览界面允许您检查文件的内容和结构。 您也可以使用 [!UICONTROL 搜索字段] 用于从架构中访问特定项目的实用程序。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 ## 数据流详细信息
 
-此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，并提供为数据流提供名称和描述的机会。 在此步骤中，您还可以配置配置文件提取、错误诊断、部分提取和警报的设置。
+此 **数据流详细信息** 此时会显示步骤，为您提供使用现有数据集或为数据流建立新数据集的选项，以及提供数据流名称和描述的机会。 在此步骤中，您还可以配置配置文件摄取、错误诊断、部分摄取和警报的设置。
 
 完成后，选择 **[!UICONTROL 下一个]**.
 
@@ -64,9 +64,9 @@ ht-degree: 1%
 
 ## 映射
 
-此 [!UICONTROL 映射] 步骤随即显示，为您提供了一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
+此 [!UICONTROL 映射] 此时会显示步骤，为您提供用于将源架构中的源字段映射到目标架构中相应的目标XDM字段的界面。
 
-Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
+Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
 
 成功映射源数据后，选择 **[!UICONTROL 下一个]**.
 
@@ -74,12 +74,12 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 请查看
 
-此 **[!UICONTROL 审核]** 步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
+此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
-* **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及源文件中的列数。
-* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括该数据集所遵循的架构。
+* **[!UICONTROL 连接]**：显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL 分配数据集和映射字段]**：显示要将源数据摄取到哪个数据集，包括数据集所遵循的架构。
 
-查看数据流后，选择 **[!UICONTROL 完成]** 并留出一些时间来创建数据流。
+查看数据流后，选择 **[!UICONTROL 完成]** 留出一段时间来创建数据流。
 
 ![源工作流的审核步骤。](../../../../images/tutorials/create/shopify-streaming/review.png)
 
@@ -93,4 +93,4 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ## 后续步骤
 
-通过学习本教程，您已建立了与的源连接和数据流 [!DNL Shopify Streaming] 帐户。 有关如何连接 [!DNL Shopify Streaming] 帐户使用API，请阅读以下教程： [创建要流处理的源连接和数据流 [!DNL Shopify] 使用流服务API的数据](../../../api/create/ecommerce/shopify-streaming.md).
+通过学习本教程，您已建立了与的源连接和数据流 [!DNL Shopify Streaming] 帐户。 有关如何连接 [!DNL Shopify Streaming] 帐户使用API，请阅读以下教程： [创建要流式处理的源连接和数据流 [!DNL Shopify] 使用流量服务API的数据](../../../api/create/ecommerce/shopify-streaming.md).

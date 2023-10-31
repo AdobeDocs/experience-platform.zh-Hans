@@ -5,9 +5,9 @@ description: 了解如何将帐户受众激活到目标
 badgeLimitedAvailability: label="有限可用性" type="Caution"
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: bf4a34a0fbf59571eaea3ccbc619f9fe17d5c218
+source-git-commit: 0a572c5fe612b8e0cc866b4e2287ea53a4022b1a
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -90,11 +90,11 @@ ht-degree: 0%
 | 源字段 | 目标字段 |
 |---------|----------|
 | `accountName` | `companyName` |
-| `accountKey.sourceKey` | `primaryId` (在 **[!UICONTROL 选择身份命名空间]** view) |
+| `accountKey.sourceKey` | `primaryId` (在 **[!UICONTROL 选择身份命名空间]** 视图，当选择 **[!UICONTROL 目标字段]**)。 <br> ![选择工作流中突出显示的身份命名空间以将帐户受众激活到目标。](/help/destinations/assets/ui/activate-account-audiences/identity-namespace-highlighted.png "选择工作流中突出显示的身份命名空间以将帐户受众激活到目标。"){width="100" zoomable="yes"} |
 
 ### 数据治理实施 {#data-governance-enforcement}
 
-[同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 当前不支持将帐户受众激活到目标。 在激活工作流的审核步骤中，您可以看到的控件显示为灰色 **[!UICONTROL 查看适用的同意政策]**.
+在人员或个人资料级别强制同意 *客户和潜在客户受众*. 因此，  [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 当前不支持将帐户受众激活到目标。 在激活工作流的审核步骤中，您可以看到的控件显示为灰色 **[!UICONTROL 查看适用的同意政策]**.
 
 ![激活帐户受众工作流的审核步骤，同意实施控制呈灰显状态。](/help/destinations/assets/ui/activate-account-audiences/consent-checks-greyed-out.png)
 

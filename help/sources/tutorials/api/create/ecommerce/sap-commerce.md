@@ -1,11 +1,12 @@
 ---
 title: 使用流服务API为SAP Commerce创建源连接和数据流
 description: 了解如何使用Flow Service API创建源连接和数据流以将SAP Commerce数据引入Experience Platform。
-badge: Beta
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+badge: Beta 版
+exl-id: 580731b9-0c04-4f83-a475-c1890ac5b7cd
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2358'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -19,7 +20,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您对 Experience Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。

@@ -1,13 +1,13 @@
 ---
-description: 了解如何为使用Destination SDK构建的目标配置目标投放设置，以指示导出数据前往的位置，以及在数据登陆的位置使用什么身份验证规则。
+description: 了解如何为使用Destination SDK构建的目标配置目标投放设置，以指示导出数据的去向以及在数据登陆位置使用的身份验证规则。
 title: 目标投放
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '563'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # 目标投放
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 <!-- When configuring a destination, you must specify an authentication rule and one or more `destinationServerId` parameters, corresponding to the destination servers that define where the data will be delivered to. In most cases, the authentication rule that you should use is `CUSTOMER_AUTHENTICATION`.  -->
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅以下目标配置概述页面：
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅以下目标配置概述页面：
 
 * [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
@@ -27,11 +27,11 @@ ht-degree: 1%
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于目标的所有受支持目标交付选项。
+本文介绍了可用于目标的所有受支持目标传送选项。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -44,14 +44,14 @@ ht-degree: 1%
 
 ## 支持的参数 {#supported-parameters}
 
-在配置目标投放设置时，您可以使用下表中描述的参数定义导出数据的发送位置。
+配置目标投放设置时，您可以使用下表所述的参数定义导出数据的发送位置。
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 应连接到您的目标。 支持的值：<ul><li>`CUSTOMER_AUTHENTICATION`：如果Platform客户通过上述任何身份验证方法登录到您的系统，请使用此选项 [此处](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`：如果Adobe与您的目标和以下对象之间存在全局身份验证系统，请使用此选项 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，您必须使用创建凭据对象 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>`NONE`：如果向目标平台发送数据无需身份验证，请使用此选项。 </li></ul> |
-| `destinationServerId` | 字符串 | 此 `instanceId` 的 [目标服务器](../../authoring-api/destination-server/create-destination-server.md) 要将数据导出到的目标位置。 |
-| `deliveryMatchers.type` | 字符串 | <ul><li>为基于文件的目标配置目标投放时，请始终将此项设置为 `SOURCE`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分不是必需的。</li></ul> |
-| `deliveryMatchers.value` | 字符串 | <ul><li>为基于文件的目标配置目标投放时，请始终将此项设置为 `batch`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分不是必需的。</li></ul> |
+| `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 应该连接到您的目标。 支持的值：<ul><li>`CUSTOMER_AUTHENTICATION`：如果Platform客户通过所描述的任何身份验证方法登录到您的系统，请使用此选项 [此处](customer-authentication.md).</li><li>`PLATFORM_AUTHENTICATION`：如果Adobe与您的目标以及系统之间存在全局身份验证系统，请使用此选项 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用创建凭据对象 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>`NONE`：如果向目标平台发送数据无需身份验证，请使用此选项。 </li></ul> |
+| `destinationServerId` | 字符串 | 此 `instanceId` 的 [目标服务器](../../authoring-api/destination-server/create-destination-server.md) 将数据导出到的目标位置。 |
+| `deliveryMatchers.type` | 字符串 | <ul><li>为基于文件的目标配置目标投放时，请始终将此选项设置为 `SOURCE`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分不是必需的。</li></ul> |
+| `deliveryMatchers.value` | 字符串 | <ul><li>为基于文件的目标配置目标投放时，请始终将此选项设置为 `batch`.</li><li>为流目标配置目标投放时， `deliveryMatchers` 部分不是必需的。</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -103,7 +103,7 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该更好地了解如何为流目标和基于文件的目标配置导出数据的目标位置。
+阅读本文后，您应该更好地了解如何针对流目标和基于文件的目标配置目标应导出数据的位置。
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 

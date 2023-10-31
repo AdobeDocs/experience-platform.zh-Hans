@@ -1,8 +1,9 @@
 ---
 title: 在UI中创建SAP Commerce源连接
 description: 了解如何使用Adobe Experience Platform用户界面创建SAP Commerce源连接。
-badge: Beta
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+badge: Beta 版
+exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1010'
 ht-degree: 1%
@@ -249,4 +250,3 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 ![源工作流的映射步骤。](../../../../images/tutorials/create/ecommerce/sap-commerce/mapping-contacts.png)
 
 >[!ENDTABS]
-

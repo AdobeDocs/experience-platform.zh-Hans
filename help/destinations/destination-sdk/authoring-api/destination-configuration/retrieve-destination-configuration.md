@@ -1,13 +1,13 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索目标配置的API调用。
 title: 检索目标配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: aaf4cfa0-3e90-4fcc-b506-b84ff62b3027
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 2%
 
 ---
-
 
 # 检索目标配置
 
@@ -15,11 +15,11 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 检索目标配置 {#retrieve}
 
@@ -44,7 +44,7 @@ GET /authoring/destinations
 GET /authoring/destinations/{INSTANCE_ID}
 ```
 
-以下两个请求检索IMS组织的所有目标配置或特定目标配置，具体取决于您是否传递 `INSTANCE_ID` 请求中的参数。
+以下两个请求检索IMS组织的所有目标配置，或特定的目标配置，具体取决于您是否传递 `INSTANCE_ID` 请求中的参数。
 
 选择下面的每个选项卡以查看相应的有效负载。
 
@@ -66,7 +66,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功的响应会返回HTTP状态200，其中包含您有权访问的目标配置列表，该列表基于 [!DNL IMS Org ID] 以及你使用的沙盒名称。 一个 `instanceId` 对应于一个目标配置。
+成功的响应会返回HTTP状态200，其中包含您有权访问的目标配置列表，该列表基于 [!DNL IMS Org ID] 和您使用的沙盒名称之间的关联。 一 `instanceId` 对应于一个目标配置。
 
 ```json
 {
@@ -306,7 +306,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
 
 ## 后续步骤
 

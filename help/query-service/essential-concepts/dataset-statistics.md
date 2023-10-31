@@ -1,7 +1,8 @@
 ---
 title: 数据集统计信息计算
 description: 本文档介绍如何使用SQL命令计算Azure Data Lake Storage (ADLS)数据集的列级统计信息。
-source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
+exl-id: 66f11cd4-b115-40b8-ba8a-c4bb3606bbbf
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 0%

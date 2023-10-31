@@ -1,13 +1,13 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有目标配置的API调用。
 title: 删除目标配置
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+exl-id: c7309ab7-1b8d-46d4-8017-fd4aa5918cdd
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '278'
 ht-degree: 2%
 
 ---
-
 
 # 删除目标配置
 
@@ -15,21 +15,21 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标配置API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 删除目标配置 {#delete}
 
-您可以删除 [现有](create-destination-configuration.md) 目标服务器配置，方法是 `DELETE` 请求 `/authoring/destinations` 端点 `{INSTANCE_ID}`要删除的目标配置的ID。
+您可以删除 [现有](create-destination-configuration.md) 目标服务器配置，方法是 `DELETE` 请求 `/authoring/destinations` 端点，带有 `{INSTANCE_ID}`要删除的目标配置的属性。
 
 >[!TIP]
 >
 >**API端点**： `platform.adobe.io/data/core/activation/authoring/destinations`
 
-获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参阅以下文章： [检索目标配置](retrieve-destination-configuration.md).
+获取现有目标配置及其相应的配置 `{INSTANCE_ID}`，请参阅关于以下内容的文章： [检索目标配置](retrieve-destination-configuration.md).
 
 **API格式**
 
@@ -39,7 +39,7 @@ DELETE /authoring/destinations/{INSTANCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{INSTANCE_ID}` | 此 `ID` 要删除的目标配置的ID。 |
+| `{INSTANCE_ID}` | 此 `ID` 要删除的目标配置的属性。 |
 
 +++请求
 
@@ -58,7 +58,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinat
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
 
 ## 后续步骤
 
@@ -69,4 +69,3 @@ Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 
 * [创建目标配置](create-destination-configuration.md)
 * [检索目标配置](retrieve-destination-configuration.md)
 * [更新目标配置](update-destination-configuration.md)
-

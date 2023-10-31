@@ -1,23 +1,23 @@
 ---
-description: 了解使用Destination SDK构建的目标所支持的历史配置文件资格。
+description: 了解使用Destination SDK构建的目标支持的历史配置文件资格。
 title: 历史配置文件资格
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '214'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # 历史配置文件资格
 
-默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格。 这意味着当用户首次设置到目标的激活数据流时，首次导出包含曾经符合该区段资格的受众的所有成员。
+默认情况下，通过Destination SDK创建的所有目标都支持历史配置文件资格。 这意味着当用户首次设置到目标的激活数据流时，第一次导出包含曾经符合该区段资格的受众所有成员。
 
-此行为由 `"backfillHistoricalProfileData":true` 参数。
+此行为由 `"backfillHistoricalProfileData":true` 目标配置中的参数。
 
 >[!IMPORTANT]
 >
->对于通过Destination SDK创建的所有目标，将启用历史配置文件资格，并且 `backfillHistoricalProfileData` 参数不能由用户配置。
+>对于通过Destination SDK创建的所有目标，都会启用历史配置文件资格， `backfillHistoricalProfileData` 参数不能由用户配置。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您应该知道，在首次将受众导出到目标时，Experience Platform会自动导出曾经符合激活受众条件的所有用户档案的历史群体。 此选项无法在Destination SDK或Experience PlatformUI中进行配置。
+阅读本文后，您应该知道，在首次将受众导出到目标时，Experience Platform会自动导出符合激活受众条件的所有用户档案的历史群体。 此选项无法在Destination SDK或Experience PlatformUI中进行配置。
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 

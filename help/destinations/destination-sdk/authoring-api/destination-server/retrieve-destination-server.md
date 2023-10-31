@@ -1,13 +1,13 @@
 ---
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK检索目标服务器配置的API调用。
 title: 检索目标服务器配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 1b375343-e793-4c91-856f-af66fe71822e
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 2%
 
 ---
-
 
 # 检索目标服务器配置
 
@@ -16,21 +16,21 @@ ht-degree: 2%
 有关目标服务器使用的功能的详细说明，请阅读以下文章：
 
 * [使用Destination SDK创建的目标的服务器规范](../../../destination-sdk/functionality/destination-server/server-specs.md)
-* [使用Destination SDK创建的目标的模板规范](../../../destination-sdk/functionality/destination-server/templating-specs.md)
+* [使用Destination SDK创建的目标模板规范](../../../destination-sdk/functionality/destination-server/templating-specs.md)
 * [消息格式](../../../destination-sdk/functionality/destination-server/message-format.md)
 * [文件格式配置](../../../destination-sdk/functionality/destination-server/file-formatting.md)
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
 ## 检索目标服务器配置 {#retrieve}
 
-您可以通过以下方式检索现有的目标服务器配置： `GET` 请求 `/authoring/destination-servers` 端点。
+您可以通过创建一个 `GET` 请求 `/authoring/destination-servers` 端点。
 
 >[!TIP]
 >
@@ -38,7 +38,7 @@ ht-degree: 2%
 
 **API格式**
 
-使用以下API格式检索您帐户的所有目标服务器配置。
+使用以下API格式为您的帐户检索所有目标服务器配置。
 
 ```http
 GET /authoring/destination-servers
@@ -58,7 +58,7 @@ GET /authoring/destination-servers/{INSTANCE_ID}
 
 >[!TAB 检索所有目标服务器配置]
 
-以下请求将根据以下内容，检索您有权访问的目标服务器配置列表 [!DNL IMS Org ID] 和沙盒配置。
+以下请求将基于以下内容检索您有权访问的目标服务器配置列表 [!DNL IMS Org ID] 和沙盒配置。
 
 +++请求
 
@@ -74,7 +74,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功的响应会根据 [!DNL IMS Org ID] 以及你使用的沙盒名称。 一个 `instanceId` 对应于一个目标服务器。 下面的示例响应包括两个目标服务器配置。
+成功的响应会返回HTTP状态200，其中包含您有权访问的目标服务器配置列表，该列表基于 [!DNL IMS Org ID] 和您使用的沙盒名称之间的关联。 一 `instanceId` 对应于一个目标服务器。 以下示例响应包括两个目标服务器配置。
 
 ```json
 {
@@ -173,7 +173,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++响应
 
-成功响应会返回HTTP状态200，并且目标服务器的配置与 `{INSTANCE_ID}` 你提供的。
+成功的响应会返回HTTP状态200，并且目标服务器的配置与 `{INSTANCE_ID}` 你提供的。
 
 ```json
 {
@@ -221,7 +221,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## API错误处理 {#error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
 
 ## 后续步骤 {#next-steps}
 

@@ -4,7 +4,8 @@ description: 了解如何创建源连接和数据流，以将流数据从Snowfla
 badgeBeta: label="Beta 版" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: 054175bd3f3aaab73c8cca249eaf1a9cdbc8deab
+exl-id: ed937689-e844-487e-85fb-e3536c851fe5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '710'
 ht-degree: 1%
@@ -82,4 +83,3 @@ Experience Platform支持从流式传输数据 [!DNL Snowflake] 数据库。
 以下教程提供了有关如何连接 [!DNL Snowflake] 要使用APIExperience Platform的流源：
 
 * [从流式传输数据 [!DNL Snowflake] 要使用流服务APIExperience Platform的数据库](../../tutorials/api/create/databases/snowflake-streaming.md)
-

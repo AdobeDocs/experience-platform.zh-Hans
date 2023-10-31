@@ -1,13 +1,13 @@
 ---
-description: 了解如何为目标设置身份验证机制，并深入了解用户在UI中会看到什么内容（取决于您选择的身份验证方法）。
+description: 了解如何为目标设置身份验证机制，并深入了解根据您选择的身份验证方法用户将在UI中看到的内容。
 title: 客户身份验证配置
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1094'
 ht-degree: 0%
 
 ---
-
 
 # 客户身份验证配置
 
@@ -15,7 +15,7 @@ Experience Platform为合作伙伴和客户提供的身份验证协议提供了�
 
 本页说明如何使用首选身份验证方法设置目标。 根据您在创建目标时使用的身份验证配置，客户在Experience PlatformUI中连接到目标时将看到不同类型的身份验证页面。
 
-要了解此组件在何处适合使用Destination SDK创建的集成，请参阅 [配置选项](../configuration-options.md) 文档或参阅以下目标配置概述页面：
+要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅以下目标配置概述页面：
 
 * [使用Destination SDK配置流目标](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
@@ -25,8 +25,8 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 时间 [创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md) 通过Destination SDK， `customerAuthenticationConfigurations` 部分定义客户在中看到的内容 [身份验证屏幕](../../../ui/connect-destination.md#authenticate). 根据目标身份验证类型，客户必须提供各种身份验证详细信息，例如：
 
 * 对于目标，使用 [基本身份验证](#basic)，用户必须直接在Experience PlatformUI身份验证页面中提供用户名和密码。
-* 对于目标，使用 [承载者认证](#bearer)，用户必须提供持有者令牌。
-* 对于目标，使用 [OAuth2身份验证](#oauth2)，用户将被重定向到您目标的登录页面，以便他们能够使用其凭据登录。
+* 对于目标，使用 [承载认证](#bearer)，用户必须提供持有者令牌。
+* 对于目标，使用 [OAuth2身份验证](#oauth2)，则用户将被重定向到您目标的登录页面，以便他们能够使用其凭据进行登录。
 * 对象 [Amazon S3](#s3) 目标，用户必须提供其 [!DNL Amazon S3] 访问密钥和密钥。
 * 对象 [Azure Blob](#blob) 目标，用户必须提供其 [!DNL Azure Blob] 连接字符串。
 
@@ -35,15 +35,15 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 * [创建目标配置](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [更新目标配置](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-本文介绍了可用于您的目标的所有受支持的客户身份验证配置，并根据您为目标设置的身份验证方法，显示了客户将在Experience PlatformUI中看到的内容。
+本文介绍了可用于您的目标的所有受支持的客户身份验证配置，并显示客户将基于您为目标设置的身份验证方法在Experience PlatformUI中看到的内容。
 
 >[!IMPORTANT]
 >
->客户身份验证配置不需要您配置任何参数。 在以下情况下，您可以将此页面中显示的代码片段复制并粘贴到API调用中： [创建](../../authoring-api/destination-configuration/create-destination-configuration.md) 或 [正在更新](../../authoring-api/destination-configuration/update-destination-configuration.md) 目标配置，您的用户将在Platform UI中看到相应的身份验证屏幕。
+>客户身份验证配置不需要配置任何参数。 在以下情况下，您可以在API调用中复制并粘贴此页面中显示的代码片段 [创建](../../authoring-api/destination-configuration/create-destination-configuration.md) 或 [正在更新](../../authoring-api/destination-configuration/update-destination-configuration.md) 目标配置，您的用户将在Platform UI中看到相应的身份验证屏幕。
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免区分大小写错误，请完全按照文档中所示使用参数名称和值。
+>Destination SDK支持的所有参数名称和值包括 **区分大小写**. 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 支持的集成类型 {#supported-integration-types}
 
@@ -56,7 +56,7 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 ## 身份验证规则配置 {#authentication-rule}
 
-使用本页中所述的任何客户身份验证配置时，始终设置 `authenticationRule` 中的参数 [目标投放](destination-delivery.md) 到 `"CUSTOMER_AUTHENTICATION"`，如下所示。
+使用本页中介绍的任何客户身份验证配置时，请始终设置 `authenticationRule` 中的参数 [目标投放](destination-delivery.md) 到 `"CUSTOMER_AUTHENTICATION"`，如下所示。
 
 ```json {line-numbers="true" highlight="4"
 {
@@ -71,13 +71,13 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 ## 基本身份验证 {#basic}
 
-Experience Platform中的实时（流）集成支持基本身份验证。
+对于Experience Platform中的实时（流）集成，支持基本身份验证。
 
 配置基本身份验证类型时，用户需要输入用户名和密码以连接到您的目标。
 
 ![使用基本身份验证呈现UI](../../assets/functionality/destination-configuration/basic-authentication-ui.png)
 
-要为目标设置基本身份验证，请配置 `customerAuthenticationConfigurations` 部分，通过 `/destinations` 端点，如下所示：
+要为您的目标设置基本身份验证，请配置 `customerAuthenticationConfigurations` 的部分，通过 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -87,13 +87,13 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 ]
 ```
 
-## 承载者身份验证 {#bearer}
+## 持有者身份验证 {#bearer}
 
-配置持有者身份验证类型时，用户需要输入他们从目标获得的持有者令牌。
+配置持有者身份验证类型时，用户需要输入他们从您的目标获得的持有者令牌。
 
-![带有持有者身份验证的UI渲染](../../assets/functionality/destination-configuration/bearer-authentication-ui.png)
+![使用持有者身份验证的UI渲染](../../assets/functionality/destination-configuration/bearer-authentication-ui.png)
 
-要为目标设置持有者类型身份验证，请配置 `customerAuthenticationConfigurations` 部分，通过 `/destinations` 端点，如下所示：
+要为目标设置持有者类型身份验证，请配置 `customerAuthenticationConfigurations` 的部分，通过 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -105,11 +105,11 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 ## OAuth 2身份验证 {#oauth2}
 
-用户选择 **[!UICONTROL 连接到目标]** 以触发指向您目标的OAuth 2身份验证流程，如以下针对Twitter自定义受众目标的示例所示。 有关为目标端点配置OAuth 2身份验证的详细信息，请阅读专用 [Destination SDKOAuth 2身份验证页面](oauth2-authentication.md).
+用户选择 **[!UICONTROL 连接到目标]** 以触发指向您目标的OAuth 2身份验证流程，如Twitter自定义受众目标的以下示例所示。 有关为目标端点配置OAuth 2身份验证的详细信息，请阅读专用 [Destination SDKOAuth 2身份验证页面](oauth2-authentication.md).
 
 ![使用OAuth 2身份验证呈现UI](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 
-设置 [!DNL OAuth2] 验证您的目标，配置 `customerAuthenticationConfigurations` 部分，通过 `/destinations` 端点，如下所示：
+设置 [!DNL OAuth2] 身份验证，配置 `customerAuthenticationConfigurations` 的部分，通过 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -127,7 +127,7 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 ![使用S3身份验证呈现UI](../../assets/functionality/destination-configuration/s3-authentication-ui.png)
 
-设置 [!DNL Amazon S3] 验证您的目标，配置 `customerAuthenticationConfigurations` 部分，通过 `/destinations` 端点，如下所示：
+设置 [!DNL Amazon S3] 身份验证，配置 `customerAuthenticationConfigurations` 的部分，通过 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -145,7 +145,7 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 ![使用Blob身份验证呈现UI](../../assets/functionality/destination-configuration/blob-authentication-ui.png)
 
-设置 [!DNL Azure Blob] 验证您的目标，配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
+设置 [!DNL Azure Blob] 身份验证，配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -161,7 +161,7 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 当您配置 [!DNL Azure Data Lake Storage] 身份验证类型，要求用户输入Azure服务主体凭据及其租户信息。
 
-![UI渲染方式 [!DNL Azure Data Lake Storage] 身份验证](../../assets/functionality/destination-configuration/adls-authentication-ui.png)
+![UI呈现方式 [!DNL Azure Data Lake Storage] 身份验证](../../assets/functionality/destination-configuration/adls-authentication-ui.png)
 
 设置 [!DNL Azure Data Lake Storage] (ADLS)身份验证，配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
 
@@ -175,13 +175,13 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 ## 具有密码身份验证的SFTP
 
-[!DNL SFTP] Experience Platform中基于文件的目标支持使用密码进行身份验证。
+[!DNL SFTP] 对于Experience Platform中基于文件的目标，支持使用密码进行身份验证。
 
 在配置具有密码身份验证类型的SFTP时，用户需要输入SFTP用户名和密码，以及SFTP域和端口（默认端口为22）。
 
 ![通过带有密码身份验证的SFTP呈现UI](../../assets/functionality/destination-configuration/sftp-password-authentication-ui.png)
 
-要为您的目标设置带密码的SFTP身份验证，请配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
+要为您的目标设置带有密码的SFTP身份验证，请配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -197,7 +197,7 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 在配置具有SSH密钥身份验证类型的SFTP时，用户需要输入SFTP用户名和SSH密钥，以及SFTP域和端口（默认端口为22）。
 
-![通过SSH密钥身份验证的SFTP呈现UI](../../assets/functionality/destination-configuration/sftp-key-authentication-ui.png)
+![使用SSH密钥身份验证的SFTP呈现UI](../../assets/functionality/destination-configuration/sftp-key-authentication-ui.png)
 
 要为您的目标设置使用SSH密钥的SFTP身份验证，请配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
 
@@ -217,7 +217,7 @@ Experience Platform中的实时（流）集成支持基本身份验证。
 
 ![使用Google Cloud Storage身份验证呈现UI](../../assets/functionality/destination-configuration/google-cloud-storage-ui.png)
 
-设置 [!DNL Google Cloud Storage] 验证您的目标，配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
+设置 [!DNL Google Cloud Storage] 身份验证，配置 `customerAuthenticationConfigurations` 中的参数 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[

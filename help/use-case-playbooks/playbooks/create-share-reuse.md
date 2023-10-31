@@ -2,14 +2,14 @@
 solution: Experience Platform
 title: 创建、共享和重用战术手册实例
 description: 了解如何创建、共享和重用战术手册实例来完成您的营销用例。
-badgeBeta: label="Beta" type="Informative"
-source-git-commit: e61e200b148e4d17041b3711bd63c796a44b05c8
-workflow-type: ht
-source-wordcount: '724'
+badgeBeta: label="Beta 版" type="Informative"
+exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+workflow-type: tm+mt
+source-wordcount: '725'
 ht-degree: 100%
 
 ---
-
 
 # (Beta) 创建、共享和重用战术手册实例
 
@@ -44,7 +44,7 @@ ht-degree: 100%
 您需要知道，所生成的资产根据您启用的用例而有所不同：
 
 * 不同类型的战术手册会生成不同的资产。这些资产是专门为通过战术手册实现的用例创建的。例如，战术手册会生成架构、区段、历程和消息。另一个战术手册会生成一个架构、一个区段和一个要激活数据的目标。
-* 不同战术手册之间的资产本身有所不同。例如，对于&#x200B;**[!UICONTROL 向客人发送生日消息]**&#x200B;战术手册，创建的受众具有规则 `birthday=today AND year=any`。
+* 不同战术手册之间的资产本身有所不同。例如，对于&#x200B;**[!UICONTROL 向宾客发送生日消息]**&#x200B;战术手册，创建的受众具有规则 `birthday=today AND year=any`。
 
 为了举例说明，对于&#x200B;**[!UICONTROL 已放弃购物车：商品]**&#x200B;战术手册中，您可以看到创建了一个特定的历程，其中包括为此用例创建的消息。
 

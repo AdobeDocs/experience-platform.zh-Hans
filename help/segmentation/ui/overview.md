@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 695a5c9b39def899c6b1f9cb169508ae0299686c
+source-git-commit: 692cdd3d8b30c3e5187a556e4f9ec80d675cb443
 workflow-type: tm+mt
-source-wordcount: '3822'
+source-wordcount: '3910'
 ht-degree: 3%
 
 ---
@@ -72,17 +72,17 @@ ht-degree: 3%
 
 | 操作 | 来源 | 描述 |
 | ------ | ------- | ----------- |
-| Edit | Segmentation Service | 允许您打开区段生成器以编辑受众。 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md). |
-| 打开合成 | 受众组合 | 允许您打开受众合成以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
-| 激活到目标 | Segmentation Service | 允许您将受众激活到目标。 有关将受众激活到目标的更多详细信息，请参阅 [激活概述](../../destinations/ui/activation-overview.md). |
-| 与合作伙伴共享 | 受众构成、自定义上传、分段服务 | 可让您与其他Platform用户共享受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
-| 管理标记 | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| 移至文件夹 | 受众构成、自定义上传、分段服务 | 允许您管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| 复制 | 受众构成、自定义上传、分段服务 | 复制所选受众。 |
-| 应用访问标签 | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
-| 存档 | 自定义上传 | 存档所选受众。 |
-| Delete | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
-| 添加到包 | 受众构成、自定义上传、分段服务 | 允许您在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
+| [!UICONTROL 编辑] | Segmentation Service | 允许您打开区段生成器以编辑受众。 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md). |
+| [!UICONTROL 打开合成] | 受众组合 | 允许您打开受众合成以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
+| [!UICONTROL 激活到目标] | Segmentation Service | 允许您将受众激活到目标。 有关将受众激活到目标的更多详细信息，请参阅 [激活概述](../../destinations/ui/activation-overview.md). |
+| [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 可让您与其他Platform用户共享受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
+| [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
+| [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 允许您管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
+| [!UICONTROL 复制] | 受众构成、自定义上传、分段服务 | 复制所选受众。 |
+| [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
+| [!UICONTROL 存档] | 自定义上传 | 存档所选受众。 |
+| [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
+| [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 允许您在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
 
 >[!NOTE]
 >
@@ -339,6 +339,8 @@ ht-degree: 3%
 
 此 **[!UICONTROL 受众详细信息]** 页面。 您可以添加有关受众的信息，包括其名称、描述、主要身份和身份命名空间值。
 
+导入外部生成的受众时，必须选择其中一列作为主标识字段并指定命名空间值。 请注意，将考虑其余所有字段 **有效负载属性**. 这些属性会被考虑在内 **非持久**，因为它们将仅与此受众关联以进行个性化，并且 **非** 已连接到配置文件。
+
 ![此 [!UICONTROL 受众详细信息] 页面。](../images/ui/overview/import-audience-audience-details.png)
 
 填写受众详细信息后，选择 **[!UICONTROL 下一个]**.
@@ -353,7 +355,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->如果外部生成的受众包含敏感信息和/或医疗保健相关信息，则您可以 **必须** 在将数据激活到任何目标之前，请应用必需的数据使用标签。 有关应用数据使用标签的更多信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md).
+>默认情况下，外部生成的受众的数据过期时间为30天。 如果以任何方式更新或修改受众，则会重置数据过期时间。
+>
+>此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息， **必须** 在将数据激活到任何目标之前，请应用必需的数据使用标签。 有关应用数据使用标签的更多信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md).
 
 ## 计划分段 {#scheduled-segmentation}
 

@@ -1,13 +1,13 @@
 ---
 description: 了解如何格式化发送到端点的HTTP请求。 使用/authoring/destination-servers端点在Adobe Experience Platform Destination SDK中配置目标服务器模板规范。
 title: 使用Destination SDK创建的目标模板规范
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+exl-id: 066781c8-0af0-4958-b62f-194c6ba13f3a
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '523'
 ht-degree: 4%
 
 ---
-
 
 # 使用Destination SDK创建的目标模板规范
 
@@ -69,10 +69,10 @@ Adobe使用类似于的模板语言 [金贾](https://jinja.palletsprojects.com/e
 
 | 参数 | 类型 | 描述 |
 |---|---|---|
-| `httpMethod` | 字符串 | *必需。* Adobe将在对服务器的调用中使用的方法。 支持的方法： `GET`， `PUT`， `POST`， `DELETE`， `PATCH`. |
-| `templatingStrategy` | 字符串 | *必需。*&#x200B;使用 `PEBBLE_V1`。 |
-| `value` | 字符串 | *必需。* 此字符串是模板的字符转义版本，用于将Platform发送的HTTP请求格式化为目标所需的格式。 <br> 有关如何编写模板的信息，请阅读以下部分： [使用模板](message-format.md#using-templating). <br> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). <br> 有关简单转换的示例，请参阅 [配置文件属性](message-format.md#attributes) 转换。 |
-| `contentType` | 字符串 | *必需。* 您的服务器接受的内容类型。 根据转换模板生成的输出类型，这可以是任何受支持的输出 [HTTP应用程序内容类型](https://www.iana.org/assignments/media-types/media-types.xhtml#application). 在大多数情况下，此值应设置为 `application/json`. |
+| `httpMethod` | 字符串 | *必需.* Adobe将在对服务器的调用中使用的方法。 支持的方法： `GET`， `PUT`， `POST`， `DELETE`， `PATCH`. |
+| `templatingStrategy` | 字符串 | *必需.*&#x200B;使用 `PEBBLE_V1`。 |
+| `value` | 字符串 | *必需.* 此字符串是模板的字符转义版本，用于将Platform发送的HTTP请求格式化为目标所需的格式。 <br> 有关如何编写模板的信息，请阅读以下部分： [使用模板](message-format.md#using-templating). <br> 有关字符转义的详细信息，请参阅 [RFC JSON标准，第七节](https://tools.ietf.org/html/rfc8259#section-7). <br> 有关简单转换的示例，请参阅 [配置文件属性](message-format.md#attributes) 转换。 |
+| `contentType` | 字符串 | *必需.* 您的服务器接受的内容类型。 根据转换模板生成的输出类型，这可以是任何受支持的输出 [HTTP应用程序内容类型](https://www.iana.org/assignments/media-types/media-types.xhtml#application). 在大多数情况下，此值应设置为 `application/json`. |
 
 {style="table-layout:auto"}
 

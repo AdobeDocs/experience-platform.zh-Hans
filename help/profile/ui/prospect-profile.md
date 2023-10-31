@@ -2,13 +2,13 @@
 title: 目标客户配置文件
 description: 了解如何使用第三方信息创建和使用潜在客户配置文件来收集有关未知客户的信息。
 type: Documentation
-source-git-commit: 1973fbe858fc0a266936faf6060e467c108fedf6
+exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 7%
 
 ---
-
 
 # 潜在客户配置文件
 

@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 358daa9511f647749a8198893b712d00a5cfbc5d
 workflow-type: tm+mt
-source-wordcount: '2298'
+source-wordcount: '2481'
 ht-degree: 6%
 
 ---
@@ -264,33 +264,53 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![审核](../../../../images/tutorials/create/analytics/review.png)
 
-### 监测数据流
+## 监测数据流 {#monitor-your-dataflow}
 
-创建数据流后，您可以监控通过它摄取的数据。 从 [!UICONTROL 目录] 屏幕，选择 **[!UICONTROL 数据流]** 查看与您的Analytics帐户关联的已建立流的列表。
+数据流完成后，选择 **[!UICONTROL 数据流]** ，以监控数据的活动和状态。
 
-![select-dataflows](../../../../images/tutorials/create/analytics/select-dataflows.png)
+![已选择数据流选项卡的源目录。](../../../../images/tutorials/create/analytics/select-dataflows.png)
 
-此 **数据流** 屏幕。 在此页面上是一对数据集流，包括有关其名称、源数据、创建时间和状态的信息。
+此时将显示您组织中现有Analytics数据流的列表。 在此处，选择一个目标数据集以查看其相应的摄取活动。
 
-连接器实例化两个数据集流。 一个流表示回填数据，另一个流表示实时数据。 未针对用户档案配置回填数据，但会发送到数据湖，以用于分析和数据科学用例。
+![您的组织中现有Adobe Analytics数据流的列表。](../../../../images/tutorials/create/analytics/select-target-dataset.png)
 
-有关回填、实时数据及其各自延迟的更多信息，请参阅 [Analytics Data Connector概述](../../../../connectors/adobe-applications/analytics.md).
+此 [!UICONTROL 数据集活动] 页面提供了有关从Analytics发送到Experience Platform的数据进度的信息。 界面会显示一些量度，例如引入的记录数、引入的批次数量以及失败的批次数量。
 
-从列表中选择要查看的数据集流。
+源实例化两个数据集流。 一个流表示回填数据，另一个流表示实时数据。 回填数据未配置为摄取到Real-time Customer Profile，而是发送到数据湖，以用于分析和数据科学用例。
 
-![select-target-dataset](../../../../images/tutorials/create/analytics/select-target-dataset.png)
+有关回填、实时数据及其各自延迟的更多信息，请阅读 [Analytics源概述](../../../../connectors/adobe-applications/analytics.md).
 
-此 **[!UICONTROL 数据集活动]** 页面。 此页以图形形式显示消息的使用速率。 选择 **[!UICONTROL 数据治理]** 以访问标签设置字段。
+![给定Adobe Analytics数据目标数据集的数据集活动页面。](../../../../images/tutorials/create/analytics/dataset-activity.png)
 
-![数据集活动](../../../../images/tutorials/create/analytics/dataset-activity.png)
++++使用旧版监控界面查看各个批次
 
-您可以从以下位置查看数据集流的继承标签 [!UICONTROL 数据治理] 屏幕。 有关如何为来自Analytics的数据设置标签的更多信息，请访问 [数据使用标签指南](../../../../../data-governance/labels/user-guide.md).
+数据集活动页面不显示单个批次的列表。 要查看各个批次的列表，请在数据集活动界面中选择一个图表。
 
-![data-gov](../../../../images/tutorials/create/analytics/data-gov.png)
+![已选定图表的数据集活动页面。](../../../../images/tutorials/create/analytics/select-chart.png)
 
-要删除数据流，请转到 [!UICONTROL 数据流] 页面，然后选择省略号(`...`)，然后选择 [!UICONTROL 删除].
+此时您将转到监视仪表板。 接下来，选择 **[!UICONTROL 仅摄取失败：是]** 以清除过滤器并查看各个批次的列表。
 
-![delete](../../../../images/tutorials/create/analytics/delete.png)
+![已选择失败过滤器的监视仪表板。](../../../../images/tutorials/create/analytics/clear-filter.png)
+
+该界面更新为单个批次的列表，包括有关其各自量度的信息。
+
+![批处理数据的旧版监视页面。](../../../../images/tutorials/create/analytics/batch-end-to-end.png)
+
+| 量度 | 描述 |
+| --- | --- |
+| 批次 ID | 给定批次的ID。 此值在内部生成。 |
+| 数据集名称 | 用于Analytics数据的给定数据集名称。 |
+| 来源 | 所摄取数据的来源。 |
+| 更新 | 最近的流运行迭代的日期。 |
+| 数据集中的记录 | 数据集中的记录总数。 **注意**：此参数偶尔会显示状态 `in-progress`. 此状态表示记录摄取过程尚未完成。 |
+| 新配置文件片段 | 已摄取的新配置文件片段的总数。 |
+| 现有配置文件片段 | 现有配置文件片段的总数。 |
+| 拼接的身份记录 | 摄取后拼合在一起的身份记录的总数。 |
+| 配置文件中的记录 | 引入到Real-time Customer Profile的记录总数。 |
+
+{style="table-layout:auto"}
+
++++
 
 ## 后续步骤和其他资源
 

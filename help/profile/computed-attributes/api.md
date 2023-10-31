@@ -1,13 +1,13 @@
 ---
 title: 计算属性API端点
 description: 了解如何使用实时客户个人资料API创建、查看、更新和删除计算属性。
-source-git-commit: e1c7d097f7ab39d05674c3dad620bea29f08092b
+exl-id: f217891c-574d-4a64-9d04-afc436cf16a9
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 2%
 
 ---
-
 
 # 计算属性API端点
 
@@ -27,7 +27,7 @@ ht-degree: 2%
 
 此外，请查看以下服务的文档：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
    - [架构注册表快速入门指南](../../xdm/api/getting-started.md#know-your-tenant_id)：有关您的的信息 `{TENANT_ID}`提供了本指南的响应中显示的内容。
 
 ## 检索计算属性列表 {#list}

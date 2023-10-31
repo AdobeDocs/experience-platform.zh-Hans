@@ -2,7 +2,8 @@
 title: Zendesk 连接
 description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1506'
 ht-degree: 1%

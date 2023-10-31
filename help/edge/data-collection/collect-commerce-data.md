@@ -1,13 +1,13 @@
 ---
 title: 使用Adobe Experience Platform Web SDK收集商务、产品和订单信息
 description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
-source-git-commit: cb47f70fe75eb0dfe26fb3c3557658cf6cff5a17
+exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1109'
 ht-degree: 2%
 
 ---
-
 
 # 收集商业、产品和订单信息
 

@@ -1,41 +1,41 @@
 ---
-title: 使用流服务API为购物数据创建流源连接和数据流
+title: 使用流服务API为Shopify数据创建流源连接和数据流
 description: 了解如何使用流服务API为Shopify数据创建流源连接和数据流。
-badge: 测试版
-exl-id: d44414a1-48fb-41e2-8cec-23cad867ba7d
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+badge: Beta 版
+exl-id: 74660e27-49c0-415f-bd85-15f9d853daee
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1472'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-# 为创建流源连接和数据流 [!DNL Shopify] 使用流服务API的数据
+# 为创建流源连接和数据流 [!DNL Shopify] 使用流量服务API的数据
 
 >[!NOTE]
 >
->此 [!DNL Shopify] 流源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+>此 [!DNL Shopify] 流源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 以下教程提供了有关如何创建流源连接和数据流以从中流式传输数据的步骤 [[!DNL Shopify]](https://www.shopify.com/) 到Adobe Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门 {#getting-started}
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您对 Experience Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-## 流 [!DNL Shopify] 使用流服务API将数据发送到平台
+## 流 [!DNL Shopify] 使用流服务API将数据发送到Platform
 
-下面概述了创建源连接和数据流以流化 [!DNL Shopify] 数据到Platform。
+下面概述了创建源连接和数据流所需的步骤 [!DNL Shopify] 数据到Platform。
 
 ### 创建源连接 {#source-connection}
 
-通过向POST请求创建源连接 [!DNL Flow Service] API，同时提供源的连接规范ID、名称和描述等详细信息以及数据的格式。
+通过向发出POST请求来创建源连接 [!DNL Flow Service] API，同时提供源的连接规范ID、名称和描述等详细信息以及数据的格式。
 
 **API格式**
 
@@ -45,7 +45,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求创建源连接 *YOURSOURCE*：
+以下请求为创建源连接 *YOURSOURCE*：
 
 ```shell
 curl -X POST \
@@ -71,14 +71,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
 | `data.format` | 的格式 [!DNL Shopify] 要摄取的数据。 目前，唯一支持的数据格式为 `json`. |
 
 **响应**
 
-成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
+成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -89,7 +89,7 @@ curl -X POST \
 
 ### 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -105,7 +105,7 @@ curl -X POST \
 
 目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-现在，您拥有唯一标识符、目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
+您现在拥有唯一标识符、目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -153,12 +153,12 @@ curl -X POST \
 | `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
 | `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 | `data.format` | 的格式 [!DNL Shopify] 要带到Platform的数据。 |
-| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
+| `params.dataSetId` | 在上一步中检索到的目标数据集ID。 |
 
 
 **响应**
 
-成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -169,7 +169,7 @@ curl -X POST \
 
 ### 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
+要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 请求有效负载中定义的数据映射。
 
 **API格式**
 
@@ -213,7 +213,7 @@ curl -X POST \
 | `xdmSchema` | 的ID [目标XDM架构](#target-schema) 在之前的步骤中生成。 |
 | `mappings.destinationXdmPath` | 源属性将映射到的目标XDM路径。 |
 | `mappings.sourceAttribute` | 需要映射到目标XDM路径的源属性。 |
-| `mappings.identity` | 一个布尔值，指定是否将映射集标记为 [!DNL Identity Service]. |
+| `mappings.identity` | 一个布尔值，指定映射集是否将被标记 [!DNL Identity Service]. |
 
 **响应**
 
@@ -282,7 +282,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `name` | 您的数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
 | `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
 | `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `e77fde5a-22a8-11ed-861d-0242ac120002`. |
 | `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
@@ -290,7 +290,7 @@ curl -X POST \
 | `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
 | `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
 | `transformations.name` | 分配给转换的名称。 |
-| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中生成。 |
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
 
 **响应**
@@ -329,7 +329,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回有关您的数据流的信息，包括您的端点URL，这些信息标记为 `inletUrl`.
+成功的响应会返回有关数据流的信息，包括标记为的端点URL `inletUrl`.
 
 ```json
 {
@@ -659,16 +659,16 @@ curl -X GET \
 
 ### 更新您的数据流
 
-通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 的端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 的端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update-dataflows.html)
 
 ### 更新您的帐户
 
-PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+PATCH通过向 [!DNL Flow Service] API，同时将您的基本连接ID作为查询参数提供。 发出PATCH请求时，必须提供源帐户的唯一帐户 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
-### 删除数据流
+### 删除您的数据流
 
-通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，同时提供您要作为查询参数的一部分删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete-dataflows.html).
 
 ### 删除您的帐户
 
-向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+向以下网站发出DELETE请求，删除您的帐户： [!DNL Flow Service] API，同时提供要删除帐户的基本连接ID。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

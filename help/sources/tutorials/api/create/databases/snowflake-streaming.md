@@ -3,10 +3,11 @@ title: 将您的Snowflake流帐户连接到Adobe Experience Platform
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Snowflake流。
 badgeBeta: label="Beta 版" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-source-git-commit: f2c392704e0404aaff2ad569e388241c06fba902
+exl-id: 3fc225a4-746c-4a91-aa77-bbeb091ec364
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '867'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -21,7 +22,7 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
 * [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。

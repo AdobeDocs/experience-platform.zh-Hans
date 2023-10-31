@@ -1,7 +1,8 @@
 ---
 title: 自动收集的信息
 description: Adobe Experience Platform Web SDK自动收集的数据概述。
-source-git-commit: 89b981104e3cbe597d1556484f4365866bf2a11d
+exl-id: 901df786-df36-4986-9c74-a32d29c11b71
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 2%

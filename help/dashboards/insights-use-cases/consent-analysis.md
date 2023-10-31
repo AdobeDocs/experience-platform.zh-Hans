@@ -1,7 +1,8 @@
 ---
 title: 同意分析和跟踪
 description: 了解如何构建同意分析仪表板，以跟踪用户同意随时间变化的趋势。
-source-git-commit: 4c45492157f0fe1a82187faf73439d6206cb0dc9
+exl-id: 34accae5-8b4f-4281-8333-187a91db8199
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1921'
 ht-degree: 0%

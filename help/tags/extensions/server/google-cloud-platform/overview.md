@@ -2,7 +2,8 @@
 title: Google Cloud Platform事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展将边缘网络事件发送到Google Cloud Platform。
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+exl-id: c5da1889-f917-42aa-b3a4-9557c31d6ee8
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 1%

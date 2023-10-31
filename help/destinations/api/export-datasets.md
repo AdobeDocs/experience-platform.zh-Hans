@@ -7,7 +7,7 @@ exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
 source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
 workflow-type: tm+mt
 source-wordcount: '3550'
-ht-degree: 4%
+ht-degree: 6%
 
 ---
 
@@ -46,7 +46,7 @@ ht-degree: 4%
 
 ![概述 — 创建目标和导出数据集的步骤](../assets/api/export-datasets/export-datasets-api-workflow-get-started.png)
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md)：所有成功摄取到Adobe Experience Platform的数据将保留在 [!DNL Data Lake] 作为数据集。 数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。数据集还包含描述其存储的数据的各方面特性的元数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
@@ -59,13 +59,13 @@ ht-degree: 4%
 
 要确保您具有导出数据集的必要权限并且目标支持导出数据集，请浏览目标目录。 如果目标具有 **[!UICONTROL 激活]** 或 **[!UICONTROL 导出数据集]** 则您具有相应的权限。
 
-### 正在读取示例API调用 {#reading-sample-api-calls}
+### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些资源包括路径、必需的标头和格式正确的请求负载。 还提供了在API响应中返回的示例JSON。 有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-为了调用 [!DNL Platform] API，您必须先完成 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有标头中的每个标头提供值 [!DNL Experience Platform] API调用，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`

@@ -1,13 +1,13 @@
 ---
 description: 了解如何通过“/destination-servers”端点为使用Adobe Experience Platform Destination SDK构建的基于文件的目标配置文件格式选项。
 title: 文件格式配置
-source-git-commit: 4f4ffc7fc6a895e529193431aba77d6f3dcafb6f
+exl-id: 98fec559-9073-4517-a10e-34c2caf292d5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1093'
 ht-degree: 4%
 
 ---
-
 
 # 文件格式配置
 

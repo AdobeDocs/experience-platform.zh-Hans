@@ -2,8 +2,9 @@
 title: SAP Commerce源概述
 description: 了解如何使用API或用户界面将SAP Commerce连接到Adobe Experience Platform。
 last-substantial-update: 2023-07-26T00:00:00Z
-badge: Beta
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+badge: Beta 版
+exl-id: d2ddfec3-a421-48a7-b765-86ce9162f26f
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 2%
@@ -38,7 +39,7 @@ ht-degree: 2%
 * [!DNL SAP] 服务密钥。 此 [!DNL SAP] 服务密钥允许您访问 [!DNL SAP Subscription Billing] 通过Experience Platform的API。 [!DNL SAP Commerce] 要求您满足以下条件：
    * 客户端ID
    * 客户端密码
-   * URL. URL模式如下所示： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. 此值稍后将用于获取以下项的值： `region` 和 `tokenEndpoint` 当您 [创建基本连接](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection) 使用API或在使用 [连接您的 [!DNL SAP Commerce] 帐户](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account) 通过Platform UI。
+   * URL. URL模式如下所示： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. 此值稍后将用于获取 `region` 和 `tokenEndpoint` 当您 [创建基本连接](../../tutorials/api/create/ecommerce/sap-commerce.md#base-connection) 使用API或在使用 [连接您的 [!DNL SAP Commerce] 帐户](../../tutorials/ui/create/ecommerce/sap-commerce.md#connect-account) 通过Platform UI。
 
 +++选择以查看服务键的示例
 
