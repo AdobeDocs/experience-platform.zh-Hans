@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的客户管理的密钥
 description: 了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: a81c3f220203d65ef810a92896edcfc489a0327a
+source-git-commit: 930c786db51063c55f731dc90f2ee66e98624555
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '763'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 2%
 >Adobe Experience Platform Data Lake和Profile Store中的数据是使用CMK加密的。 这些存储区被视为您的主数据存储。
 
 本文档提供了在Platform中启用客户管理的密钥(CMK)功能的过程的高级概述，以及完成这些步骤所需的先决条件信息。
+
+>[!NOTE]
+>
+>对于Customer Journey Analytics客户，请按照 [Customer Journey Analytics文档](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=en).
 
 ## 先决条件
 
