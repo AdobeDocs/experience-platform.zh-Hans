@@ -1,12 +1,12 @@
 ---
 title: 使用流服务API为Pendo创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Pendo。
-badge: Beta
+badge: Beta 版
 exl-id: 12b0295d-4b26-4eb7-a02a-a01d825d2a1e
-source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1459'
-ht-degree: 1%
+source-wordcount: '1455'
+ht-degree: 2%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ## 快速入门 {#getting-started}
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您对 Experience Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
@@ -89,13 +89,13 @@ curl -X POST \
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### 创建目标数据集 {#target-dataset}
 
 可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### 创建目标连接 {#target-connection}
 

@@ -1,11 +1,11 @@
 ---
 title: 事件转发快速入门
-description: 按照此分步教程开始在Adobe Experience Platform中使用事件转发。
+description: 按照此分步教程进行操作，以开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: efe88b582b4539a14f32c6e2c80a8b35cde1626e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '873'
 ht-degree: 27%
 
 ---
@@ -20,19 +20,19 @@ ht-degree: 27%
 
 * [Adobe Experience Platform Web SDK](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
-* [服务器到服务器API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html?lang=en)
+* [服务器到服务器API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html)
 
 >[!NOTE]
->Platform Web SDK和Platform Mobile SDK不需要通过Adobe Experience Platform中的标记进行部署。 但是，建议使用标记来部署这些SDK。
+>Platform Web SDK和Platform Mobile SDK不需要通过Adobe Experience Platform中的标记进行部署。 但是，推荐使用标记来部署这些SDK。
 
-将数据发送到 Edge Network 后，可打开 Adobe 解决方案以在相应的位置发送数据。要将数据发送到非Adobe解决方案，请在事件转发中设置。
+将数据发送到 Edge Network 后，可打开 Adobe 解决方案以在相应的位置发送数据。要将数据发送至非Adobe解决方案，请在事件转发中设置。
 
 ## 先决条件
 
 * Adobe Real-Time CDP Connections、Prime或Ultimate(联系您的Adobe客户团队获取定价信息)
 * Adobe Experience Platform中的事件转发
 * Adobe Experience Platform Web 或 Mobile SDK，配置为将数据发送到 Edge Network
-* 将数据映射到体验数据模型(XDM)（此映射可以使用标记完成）
+* 将数据映射到Experience Data Model (XDM)（此映射可以使用标记完成）
 
 ## 创建 XDM 架构
 
@@ -50,11 +50,11 @@ ht-degree: 27%
 
 1. 保存架构并记下您提供的名称。
 
-有关架构的更多信息，请参阅 [Experience Data Model (XDM) 系统帮助](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans)。
+有关架构的更多信息，请参阅 [Experience Data Model (XDM) 系统帮助](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)。
 
 ## 创建事件转发属性
 
-在 **[!UICONTROL 标记]** 工作区，创建类型的属性 **[!UICONTROL Edge]**.
+在 **[!UICONTROL 标记]** 工作区，创建以下类型的属性： **[!UICONTROL Edge]**.
 
 1. 选择&#x200B;**[!UICONTROL 新属性]**。
 
@@ -64,13 +64,13 @@ ht-degree: 27%
 
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-创建资产后，转到 **[!UICONTROL 环境]** 选项卡，并记下环境ID。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，您可以从以下位置复制环境ID： **[!UICONTROL 环境]** 创建数据流时按Tab键并粘贴它。 您也可以从下拉菜单中选择环境。
+创建资产后，转到 **[!UICONTROL 环境]** 选项卡，并记下环境ID。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，您可以从以下位置复制环境ID： **[!UICONTROL 环境]** 制表符并在创建数据流时粘贴它。 您也可以从下拉菜单中选择环境。
 
 ## 创建数据流
 
-要在Adobe Experience Platform中创建数据流，请使用创建事件转发属性时生成的环境ID。
+要在Adobe Experience Platform中创建数据流，请使用在创建事件转发属性时生成的环境ID。
 
-1. 选择 **[!UICONTROL 数据流]** 左侧导航栏中。
+1. 选择 **[!UICONTROL 数据流]** 在左侧导航中。
 
 1. 对配置进行命名并提供描述（可选）。
 该描述有助于在包含多个配置的列表中识别配置。
@@ -85,13 +85,13 @@ ht-degree: 27%
 
 1. 选择 Development、Production 或 Staging 环境。
 
-   或者，要向Adobe组织外的事件转发环境发送数据，请选择 **[!UICONTROL 切换到高级模式]** 并粘贴一个ID。 此ID是在创建事件转发属性时提供的。
+   或者，若要将数据发送到Adobe组织外的事件转发环境，请选择 **[!UICONTROL 切换到高级模式]** 并粘贴一个ID。 此ID是您在创建事件转发属性时提供的ID。
 
 1. 打开必要的工具并根据需要进行配置。
 
    * Adobe Analytics 需要一个报表包 ID。
 
-   * Adobe Experience Platform中的事件转发需要资产ID和环境ID。 这是事件转发属性的发布路径。
+   * Adobe Experience Platform中的事件转发需要一个资产ID和环境ID。 这是事件转发属性的发布路径。
 
 配置后，记下新资产的环境 ID。
 
@@ -103,7 +103,7 @@ ht-degree: 27%
 
 ## 创建标记规则以将数据发送到Platform Web SDK
 
-完成上述操作后，构建数据定义、规则等，它们使用事件转发和标记，但只需从页面发出一个请求。
+完成上述操作后，即可构建数据定义、规则等，它们使用事件转发和标记，但只需要从页面中发出单个请求。
 
 使用Platform Web SDK扩展和“发送事件”操作类型创建页面加载规则：
 
@@ -123,7 +123,7 @@ ht-degree: 27%
 
 ## 概要
 
-设置完以下内容后，您现在可以创建事件转发规则，以将数据转发到非Adobe目标。
+设置完各项内容后，您现在可以创建事件转发规则，以将数据转发到非Adobe目标。
 
 * Experience Data Model架构（请注意您为其指定的名称。）
 * 事件转发属性（跟踪属性ID和环境ID。）

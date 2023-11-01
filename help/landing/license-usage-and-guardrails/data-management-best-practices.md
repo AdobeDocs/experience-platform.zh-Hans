@@ -2,9 +2,9 @@
 title: 数据管理许可证权利最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 5f21d988d7947e64378dc6f35993f2a465ad1df6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2287'
+source-wordcount: '2283'
 ht-degree: 2%
 
 ---
@@ -109,7 +109,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 | Adobe Audience Manager源筛选 | 创建Adobe Audience Manager源连接时，您可以选取并选择要引入的区段和特征 [!DNL data lake] 和实时客户档案，而不是摄取Audience Manager数据的完整内容。 请参阅指南，网址为 [创建Audience Manager源连接](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) 以了解更多信息。 |
 | Adobe Analytics数据准备 | 您可以使用 [!DNL Data Prep] 功能过滤掉用例不需要的数据，创建分析源连接时的功能。 到 [!DNL Data Prep]，您可以定义哪些属性/列需要发布到配置文件。 您还可以提供条件语句，以告知Platform数据是应发布到用户档案，还是应仅发布到 [!DNL data lake]. 请参阅指南，网址为 [创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
 | 支持为配置文件启用/禁用数据集 | 要将数据摄取到Real-time Customer Profile，您必须启用要在配置文件存储中使用的数据集。 这样，会将添加到您的 [!DNL Addressable Audience] 和 [!DNL Profile Richness] 权利。 一旦客户个人资料用例不再需要某个数据集，您可以禁用该数据集与个人资料的集成，以确保您的数据仍然符合许可证要求。 请参阅指南，网址为 [为配置文件启用和禁用数据集](../../catalog/datasets/enable-for-profile.md) 以了解更多信息。 |
-| Web SDK和移动SDK数据排除 | Web和Mobile SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 请参阅指南，网址为 [配置SDK基础](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) 以了解更多信息。 |
+| Web SDK和移动SDK数据排除 | Web和Mobile SDK收集的数据有两种类型：自动收集的数据和开发人员明确收集的数据。 为了更好地管理许可证合规性，您可以通过上下文设置在SDK的配置中禁用自动数据收集。 您的开发人员也可以删除或设置自定义数据。 请参阅指南，网址为 [配置SDK基础](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#fundamentals) 以了解更多信息。 |
 | 服务器端转发数据排除 | 如果您使用服务器端转发将数据发送到Platform，则可以通过以下方法排除发送的数据：在规则操作中删除映射以在所有事件中排除该数据，或者向规则添加条件，以便数据仅针对特定事件触发。 请参阅相关文档 [事件和条件](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)以了解更多信息。 |
 | 在源级别过滤数据 | 在创建连接并将数据摄取到Experience Platform之前，可以使用逻辑和比较运算符过滤源中的行级数据。 有关详细信息，请阅读上的指南 [使用过滤源的行级数据 [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |
 
@@ -167,7 +167,7 @@ Adobe Experience Platform UI提供了一个功能板，通过该功能板，您�
 | [体验事件过期时间](../../profile/event-expirations.md) | 为引入到启用配置文件的数据集中的所有事件应用过期时间。 请联系您的Adobe客户团队或客户关怀团队以启用此功能。 |
 | [Adobe Analytics数据准备过滤器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用 [!DNL Kafka] 用于从摄取中排除不必要数据的过滤器 |
 | [Adobe Audience Manager源连接器过滤器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接筛选器以从摄取中排除不必要的数据 |
-| [Alloy SDK数据过滤器](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | 应用Alloy筛选器以从摄取中排除不必要的数据 |
+| [Alloy SDK数据过滤器](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#fundamentals) | 应用Alloy筛选器以从摄取中排除不必要的数据 |
 | [事件转发数据过滤器](../../tags/ui/event-forwarding/overview.md) | 应用服务器端 [!DNL Kafka] 用于从摄取中排除不必要的数据的过滤器。  请参阅相关文档 [标记规则](../../tags/ui/managing-resources/rules.md) 以了解其他信息。 |
 | [许可证使用情况仪表板UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | 查看贵组织的许可证相关数据的快照以供Experience Platform |
 | [数据集重叠报表API](../../profile/tutorials/dataset-overlap-report.md) | 输出对可寻址受众贡献最大的数据集 |

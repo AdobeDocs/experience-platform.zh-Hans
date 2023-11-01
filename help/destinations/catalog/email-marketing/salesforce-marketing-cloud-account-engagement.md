@@ -3,9 +3,9 @@ title: SalesforceMarketing Cloud帐户参与度
 description: 了解如何使用SalesforceMarketing Cloud帐户参与（以前称为Pardot）目标导出您的帐户数据，并在SalesforceMarketing Cloud帐户参与中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1620'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 1%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-将数据激活到之前 [!DNL Marketing Cloud Account Engagement] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
+将数据激活到之前 [!DNL Marketing Cloud Account Engagement] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 创建于 [!DNL Experience Platform].
 
 ### 中的先决条件 [!DNL Marketing Cloud Account Engagement] {#prerequisites-destination}
 

@@ -2,10 +2,10 @@
 title: Adobe Experience Platform中的客户管理的密钥
 description: 了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: 930c786db51063c55f731dc90f2ee66e98624555
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '763'
-ht-degree: 2%
+source-wordcount: '761'
+ht-degree: 3%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->对于Customer Journey Analytics客户，请按照 [Customer Journey Analytics文档](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=en).
+>对于Customer Journey Analytics客户，请按照 [Customer Journey Analytics文档](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=zh-Hans).
 
 ## 先决条件
 

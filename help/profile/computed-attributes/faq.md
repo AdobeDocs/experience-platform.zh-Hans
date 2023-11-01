@@ -2,9 +2,9 @@
 title: 计算属性常见问题解答
 description: 了解有关使用计算属性的常见问题解答。
 exl-id: a4d3c06a-d135-453b-9637-4f98e62737a7
-source-git-commit: 48c728c183d6ad28cd291543a79902b16a247a5a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
@@ -99,4 +99,4 @@ ht-degree: 0%
 
 ## 如何将计算属性与Adobe Journey Optimizer结合使用？
 
-要在历程中使用计算属性，您需要添加 `SystemComputedAttributes` 字段组到Experience Platform数据源。 有关配置Experience Platform数据源的详细信息，请参阅 [Adobe Experience Platform数据源指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html?lang=en).
+要在历程中使用计算属性，您需要添加 `SystemComputedAttributes` 字段组到Experience Platform数据源。 有关配置Experience Platform数据源的详细信息，请参阅 [Adobe Experience Platform数据源指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html).

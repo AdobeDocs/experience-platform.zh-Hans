@@ -3,9 +3,9 @@ keywords: 广告；标准；
 title: 标准连接
 description: Criteo支持可信且有影响力的广告，为开放互联网上的每位消费者带来更丰富的体验。 凭借世界上最大的商业数据集和同类最佳的人工智能，Criteo可确保购物历程中的每个接触点都经过个性化，以在适当的时间通过适当的广告吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '1042'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ Criteo支持可信且有影响力的广告，为开放互联网上的每位消�
 
 ## 支持的身份 {#supported-identities}
 
-标准支持激活下表中描述的标识。 了解有关 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+标准支持激活下表中描述的标识。 了解有关 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | 目标身份 | 描述 | 注意事项 |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ Criteo支持可信且有影响力的广告，为开放互联网上的每位消�
 | --- | --- | --- |
 | 名称 | 一个名称，可帮助您将来识别此目标。 您在此处选择的名称将为 [!DNL Audience] Criteo Management Center中的名称，无法在稍后阶段进行修改。 | 是 |
 | 描述 | 可帮助您以后识别此目标的描述。 | 否 |
-| 广告商ID | 您组织的标准广告商ID。 请联系您的标准客户经理以获取此信息。 | 是 |
+| 广告商 ID | 您组织的标准广告商ID。 请联系您的标准客户经理以获取此信息。 | 是 |
 | 标准 [!DNL GUM caller ID] | [!DNL GUM Caller ID] 您的组织的其他成员。 请联系您的标准客户团队获取相应的 [!DNL GUM Caller ID] 或获取有关此内容的更多信息 [!DNL GUM] 同步（如果需要）。 | 是，无论何时 [!DNL GUM ID] 作为标识符提供 |
 
 ### 启用警报 {#enable-alerts}

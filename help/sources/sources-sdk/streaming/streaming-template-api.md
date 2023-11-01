@@ -4,9 +4,9 @@ description: 了解如何使用流服务API将流数据从源引入Adobe Experie
 hide: true
 hidefromtoc: true
 exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1700'
 ht-degree: 1%
 
 ---
@@ -114,13 +114,13 @@ curl -X POST \
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+有关如何创建目标XDM架构的详细步骤，请参阅关于的教程 [使用API创建架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### 创建目标数据集 {#target-dataset}
 
 可以通过向执行POST请求来创建目标数据集 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+有关如何创建目标数据集的详细步骤，请参阅关于的教程 [使用API创建数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### 创建目标连接 {#target-connection}
 

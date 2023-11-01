@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；发�
 title: SendGrid连接
 description: SendGrid目标允许您导出第一方数据，并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1577'
+source-wordcount: '1571'
 ht-degree: 2%
 
 ---
@@ -34,7 +34,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 
 ![](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-在将数据激活到SendGrid目标之前，您必须拥有 [架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform]. 另请参阅 [限制](#limits) 部分，进一步了解本页内容。
+在将数据激活到SendGrid目标之前，您必须拥有 [架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 创建于 [!DNL Experience Platform]. 另请参阅 [限制](#limits) 部分，进一步了解本页内容。
 
 >[!IMPORTANT]
 >
@@ -98,7 +98,7 @@ SendGrid支持激活下表中描述的标识。 了解有关 [身份](/help/iden
 
 ### 填写目标详细信息 {#destination-details}
 
-同时 [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 此目标必须提供以下信息：
+同时 [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) 此目标必须提供以下信息：
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的可选描述。

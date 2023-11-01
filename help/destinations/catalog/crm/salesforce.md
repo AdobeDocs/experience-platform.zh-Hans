@@ -3,9 +3,9 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '3121'
+source-wordcount: '3117'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-在将数据激活到Salesforce CRM目标之前，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
+在将数据激活到Salesforce CRM目标之前，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 创建于 [!DNL Experience Platform].
 
 ### 中的先决条件 [!DNL Salesforce CRM] {#prerequisites-destination}
 

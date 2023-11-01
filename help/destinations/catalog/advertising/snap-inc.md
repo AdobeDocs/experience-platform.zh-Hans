@@ -2,9 +2,9 @@
 title: Snap Inc连接
 description: 了解如何连接到Snapchat Ads平台并从Experience Platform导出受众。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1030'
+source-wordcount: '1028'
 ht-degree: 1%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 1%
 
 ![受众](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-请注意，当Adobe受众首次激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅 [分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=en#evaluate-segments).
+请注意，当Adobe受众首次激活到Snap Inc时，您最初会将其视为空受众。 这是因为Adobe Experience Platform在评估受众之前，不会将成员数据导出到Snap Inc。 有关如何在Experience Platform中评估受众的更多信息，请参阅 [分段服务概述](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html#evaluate-segments).
 
 ## 数据使用和治理 {#data-usage-governance}
 

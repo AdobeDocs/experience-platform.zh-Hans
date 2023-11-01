@@ -3,10 +3,10 @@ keywords: google广告管理器；google广告；doubleclick；DoubleClick AdX�
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '972'
-ht-degree: 5%
+source-wordcount: '970'
+ht-degree: 4%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 5%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] | 当源身份是GAID命名空间时，请选择此目标身份。 |
 | IDFA | [!DNL Apple ID for Advertisers] | 当源身份是IDFA命名空间时，请选择此目标身份。 |
-| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=zh-Hans) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
+| AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 使用此ID定位加利福尼亚州以外的用户。 |
 | RIDA | 适用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |

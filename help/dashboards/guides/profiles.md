@@ -4,9 +4,9 @@ title: 配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: cd57ca50537d928025a5164b6a7d0ead490162ba
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '4331'
+source-wordcount: '4329'
 ht-degree: 10%
 
 ---
@@ -213,7 +213,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 >
 >此 [!UICONTROL 配置文件计数] 构件显示的数字可能与上显示的配置文件计数不同。 [!UICONTROL 浏览] 选项卡 [!UICONTROL 配置文件] 部分，原因有多种。 造成这种差异的最常见原因是 [!UICONTROL 浏览] 选项卡根据贵组织的默认合并策略引用合并配置文件总数，而 [!UICONTROL 配置文件计数] 构件会根据您选择在仪表板中查看的合并策略，引用合并的配置文件总数。
 >
->另一个常见原因是拍摄仪表板快照的时间和为运行示例作业的时间之间的差异 [!UICONTROL 浏览] 选项卡。 您会看到 [!UICONTROL 配置文件计数] 构件上次更新是通过查看构件上的时间戳进行的。 要详细了解如何在上触发示例作业，请执行以下操作 [!UICONTROL 浏览] 选项卡，请参见 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
+>另一个常见原因是拍摄仪表板快照的时间和为运行示例作业的时间之间的差异 [!UICONTROL 浏览] 选项卡。 您会看到 [!UICONTROL 配置文件计数] 构件上次更新是通过查看构件上的时间戳进行的。 要详细了解如何在上触发示例作业，请执行以下操作 [!UICONTROL 浏览] 选项卡，请参见 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count).
 
 ![突出显示具有配置文件计数小部件的Experience Platform配置文件仪表板。](../images/profiles/profile-count.png)
 

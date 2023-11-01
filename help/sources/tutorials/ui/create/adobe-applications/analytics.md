@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 358daa9511f647749a8198893b712d00a5cfbc5d
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2481'
+source-wordcount: '2477'
 ht-degree: 6%
 
 ---
@@ -26,9 +26,9 @@ ht-degree: 6%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**：标准属性是Adobe预定义的任何属性。 它们对于所有客户具有相同的含义，并且在 [!DNL Analytics] 源数据和 [!DNL Analytics] 架构字段组。
-* **自定义属性**：自定义属性是中自定义变量层次结构中的任何属性 [!DNL Analytics]. 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 请参阅以下内容 [[!DNL Analytics] 有关转化变量的文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 以了解有关eVar的更多信息。
+* **自定义属性**：自定义属性是中自定义变量层次结构中的任何属性 [!DNL Analytics]. 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 请参阅以下内容 [[!DNL Analytics] 有关转化变量的文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html) 以了解有关eVar的更多信息。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
-* **友好名称**：友好名称是中由人工提供的自定义变量标签 [!DNL Analytics] 实现。 请参阅以下内容 [[!DNL Analytics] 有关转化变量的文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 以了解有关友好名称的详细信息。
+* **友好名称**：友好名称是中由人工提供的自定义变量标签 [!DNL Analytics] 实现。 请参阅以下内容 [[!DNL Analytics] 有关转化变量的文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html) 以了解有关友好名称的详细信息。
 
 ## 创建与Adobe Analytics的源连接
 

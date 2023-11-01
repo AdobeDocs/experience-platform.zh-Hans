@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明（2023 年 1 月）
 description: Adobe Experience Platform 的 2023 年 1 月发行说明。
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
-workflow-type: ht
-source-wordcount: '2414'
-ht-degree: 100%
+source-git-commit: e300e57df998836a8c388511b446e90499185705
+workflow-type: tm+mt
+source-wordcount: '2408'
+ht-degree: 99%
 
 ---
 
@@ -96,7 +96,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | [Pega 配置文件连接](../../destinations/catalog/personalization/pega-profile.md) | 使用 Adobe Experience Platform 中的 [!DNL Pega Profile Connector] 创建与 [!DNL Amazon] S3 存储的实时出站连接，定期将配置文件数据从 Adobe Experience Platform 导出为CSV文件，并将其导出到您自己的 S3 存储桶中。在 [!DNL Pega Customer Decision Hub] 中，您可以安排数据作业从 S3 存储中导入该配置文件数据，以更新[!DNL Pega Customer Decision Hub]配置文件。 |
 | [(Beta) Trade Desk CRM EU 连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 随着 EUID (European Unified ID) 的发布，现在您在[目标目录](/help/destinations/catalog/overview.md)中会看到两个 [!DNL The Trade Desk - CRM] 目标。 <ul><li> 如果您在欧盟获取数据，请使用 **[!DNL The Trade Desk - CRM (EU)]** 目标。</li><li> 如果您在 APAC 或 NAMER 地区获取数据，请使用 **[!DNL The Trade Desk - CRM (NAMER & APAC)]** 目标。 </li></ul> |
 
-**新增或更新功能**{#destinations-new-updated-functionality}
+**新增或更新的功能**{#destinations-new-updated-functionality}
 
 | 功能 | 描述 |
 | ----------- | ----------- |
@@ -113,11 +113,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
     </tr>
     <tr>
         <td>更新了到基于文件的目标的导出行为 (PLAT-123316)</td>
-        <td>我们修复了将数据文件导出到批处理目标时<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mandatory-attributes">强制属性</a>的行为中的一个问题。<br>经过验证，以前输出文件中的每条记录都包含以下两者： <ol><li><code>mandatoryField</code> 列的非空值和</li><li>至少其中一个其他非必填字段具有非空值。</li></ol> 第二个条件已被删除。因此，您可能会在导出的数据文件中看到更多输出行，如下例所示：<br><b>推出 2023 年 1 月发布版本之前的示例行为</b><br>必填字段：<code>emailAddress</code><br><b>输入要激活的数据</b><br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br><b>激活输出</b><br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr></tbody></table> <br><b>推出 2023 年 1 月发布版本后的示例行为</b><br><b>激活输出</b><br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
+        <td>我们修复了将数据文件导出到批处理目标时<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#mandatory-attributes">强制属性</a>的行为中的一个问题。<br>经过验证，以前输出文件中的每条记录都包含以下两者： <ol><li><code>mandatoryField</code> 列的非空值和</li><li>至少其中一个其他非必填字段具有非空值。</li></ol> 第二个条件已被删除。因此，您可能会在导出的数据文件中看到更多输出行，如下例所示：<br><b>推出 2023 年 1 月发布版本之前的示例行为</b><br>必填字段：<code>emailAddress</code><br><b>输入要激活的数据</b><br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br><b>激活输出</b><br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr></tbody></table> <br><b>推出 2023 年 1 月发布版本后的示例行为</b><br><b>激活输出</b><br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
     </tr>
     <tr>
         <td>所需映射和重复映射的 UI 和 API 验证 (PLAT-123316)</td>
-        <td>当激活目的地工作流中的<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">映射字段</a>时，UI 和 API 中的验证现在强制如下：<ul><li><b>所需映射</b>：如果目标开发人员使用所需映射（例如，<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> 目标）设置了目标，则用户在向目标激活数据时需要添加这些所需映射。 </li><li><b>重复的映射</b>：在激活工作流的映射步骤中，您可以在源字段中添加重复值，但不能在目标字段中添加重复值。请参阅下表，了解允许和禁止的映射组合的示例。 <br><table><thead><tr><th>允许/禁止</th><th>源字段</th><th>目标字段</th></tr></thead><tbody><tr><td>允许</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>emailalias2</li></ul></td></tr><tr><td>禁止</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
+        <td>当激活目的地工作流中的<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#mapping">映射字段</a>时，UI 和 API 中的验证现在强制如下：<ul><li><b>所需映射</b>：如果目标开发人员使用所需映射（例如，<a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html">Google Ad Manager 360</a> 目标）设置了目标，则用户在向目标激活数据时需要添加这些所需映射。 </li><li><b>重复的映射</b>：在激活工作流的映射步骤中，您可以在源字段中添加重复值，但不能在目标字段中添加重复值。请参阅下表，了解允许和禁止的映射组合的示例。 <br><table><thead><tr><th>允许/禁止</th><th>源字段</th><th>目标字段</th></tr></thead><tbody><tr><td>允许</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>emailalias2</li></ul></td></tr><tr><td>禁止</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
     </tr>    
 </table>
 

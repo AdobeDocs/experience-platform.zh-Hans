@@ -3,10 +3,10 @@ title: Experience Cloud 受众
 description: 了解如何将Real-time Customer Data Platform中的受众共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 7cd8c257f723e2e60058610bf845ee1fe8785de7
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1699'
-ht-degree: 2%
+source-wordcount: '1683'
+ht-degree: 1%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此目标将替换 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam) 从Real-time Customer Data Platform到各种Experience Cloud解决方案。
+>此目标将替换 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam) 从Real-time Customer Data Platform到各种Experience Cloud解决方案。
 > 
 >如果您已通过，将受众从Real-Time CDP共享到Audience Manager和其他Experience Cloud解决方案 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)中，您必须联系客户关怀团队以禁用旧版集成，才能使用此目标。
 
@@ -37,8 +37,8 @@ ht-degree: 2%
 
 在Audience Manager中，您可以将Real-Time CDP受众用于数据管理平台用例，例如：
 
-* 正在添加 [第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html?lang=en#third-party-data) 到您的区段；
-* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html?lang=en);
+* 正在添加 [第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html#third-party-data) 到您的区段；
+* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html);
 * 将受众激活到基于Cookie的目标，而Real-Time CDP目标目录尚不支持这些目标。
 
 ### 对导出受众的精细控制 {#segments-control}
@@ -168,7 +168,7 @@ Note: briefly talk about when to share audiences to these destinations using the
 
 ### 验证Audience Manager中的数据
 
-您的Real-Time CDP受众在Audience Manager中显示为 [信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-signals)， [特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-traits)、和 [区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-as-aam-segments). 您可以在Audience Manager中验证数据是否已按照上述文档链接中的说明显示。
+您的Real-Time CDP受众在Audience Manager中显示为 [信号](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-signals)， [特征](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-traits)、和 [区段](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-segments). 您可以在Audience Manager中验证数据是否已按照上述文档链接中的说明显示。
 
 从Real-Time CDP发送Audience Manager后15分钟，区段名称即开始填充。
 
@@ -181,13 +181,13 @@ Note: briefly talk about when to share audiences to these destinations using the
 全部 [!DNL Real-Time CDP] 目标在处理您的数据时符合数据使用策略。 有关如何执行操作的详细信息 [!DNL Adobe Experience Platform] 实施数据管理，请阅读 [数据管理概述](/help/data-governance/home.md).
 
 Real-Time CDP中的数据治理由以下两项强制实施 [数据使用标签](/help/data-governance/labels/reference.md) 和营销活动。
-数据使用标签将传输到应用程序，但营销操作不会。 这意味着，一旦受众进入Audience Manager，Real-Time CDP的受众就可以导出到任何可用的目标。 在Audience Manager中，您可以使用 [数据导出控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=en) 以阻止将受众导出到特定目标。
+数据使用标签将传输到应用程序，但营销操作不会。 这意味着，一旦受众进入Audience Manager，Real-Time CDP的受众就可以导出到任何可用的目标。 在Audience Manager中，您可以使用 [数据导出控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html) 以阻止将受众导出到特定目标。
 
 标有 [!DNL HIPAA] 营销活动将不会从Real-Time CDP发送到Audience Manager。
 
 ### Audience Manager中的权限管理
 
-Audience Manager中的受众和特征须遵循 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html?lang=en) (RBAC)。
+Audience Manager中的受众和特征须遵循 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html) (RBAC)。
 
 从Real-Time CDP导出的受众将分配给Audience Manager中名为的特定数据源 **[!UICONTROL Experience Platform区段]**.
 

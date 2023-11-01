@@ -1,8 +1,8 @@
 ---
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
-workflow-type: ht
-source-wordcount: '508'
-ht-degree: 100%
+source-git-commit: e300e57df998836a8c388511b446e90499185705
+workflow-type: tm+mt
+source-wordcount: '504'
+ht-degree: 98%
 
 ---
 # 贡献内容
@@ -15,7 +15,7 @@ ht-degree: 100%
 
 ## 为 Adobe 内容做出贡献的方法
 
-请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
+请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans)。
 
 您的参与方式取决于您的身份以及您想提供的更改类型：
 
@@ -23,7 +23,7 @@ ht-degree: 100%
 
 要提交请求，请单击文章中的&#x200B;**记录问题**&#x200B;链接，这会在 GitHub 中打开一个问题。指定标题和说明，然后单击&#x200B;**提交新问题**。
 
-要请求进行细微的更新，请单击文章中的&#x200B;**编辑此页面**&#x200B;链接，这会在 GitHub 中打开来源文章。使用 GitHub UI 进行更新。有关更多信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
+要请求进行细微的更新，请单击文章中的&#x200B;**编辑此页面**&#x200B;链接，这会在 GitHub 中打开来源文章。使用 GitHub UI 进行更新。有关更多信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans)。
 
 您对本存储库中文档和代码示例提交的细微更正或说明均受 Adobe 使用条款的约束。
 
@@ -37,7 +37,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 ### Adobe 员工做出的主要更改或新文章
 
-如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en)。
+如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html)。
 
 <!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
 

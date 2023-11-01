@@ -2,9 +2,9 @@
 title: 目标中可配置的通用导出设置
 description: 了解目标中的哪些导出设置可在目标级别配置，哪些是固定的，无法编辑。
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '843'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## 各种目标类型通用的导出设置 {#common-settings-across-destination-types}
 
-对于属于某个目标类型的目标，目标导出行为是一致的 *触发目标导出的内容* 和 *目标导出中包含的内容*. 目标导出由目标服务从收到的通知触发 [上游实时客户档案服务](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=en#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
+对于属于某个目标类型的目标，目标导出行为是一致的 *触发目标导出的内容* 和 *目标导出中包含的内容*. 目标导出由目标服务从收到的通知触发 [上游实时客户档案服务](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
 
 目标导出中包含的内容因目标类型而异。 详细了解 [每种目标类型的常见导出行为模式](/help/destinations/how-destinations-work/profile-export-behavior.md). 目标开发人员或Real-Time CDP用户无法编辑这些设置。
 

@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform；数据治理；客户人工智能；热门主题
+keywords: Experience Platform；数据管理；客户人工智能；热门主题
 solution: Experience Platform
 feature: Customer AI
 title: 客户人工智能中的数据治理
-description: Adobe Experience Platform提供了多种服务和工具，使您能够放心地控制收集的体验数据，以遵守您的业务做法、法律义务和开发过程。
+description: Adobe Experience Platform提供了多种服务和工具，可让您自信地控制收集的体验数据，以符合您的业务实践、法律义务和开发过程。
 exl-id: de0836a4-7bc2-4f9c-95a9-c01dd9e2b03f
-source-git-commit: 0fcdb358882fba7f7923e5d6fc1a947699276e18
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '302'
-ht-degree: 9%
+source-wordcount: '300'
+ht-degree: 11%
 
 ---
 
-# 客户人工智能和数据治理
+# 客户人工智能和数据管理
 
-客户人工智能中的任何数据治理相关设置都是从Adobe Experience Platform继承来的。
+客户人工智能中的任何数据管理相关设置都是从Adobe Experience Platform继承来的。
 
 ## 数据治理 {#governance}
 
@@ -22,11 +22,11 @@ ht-degree: 9%
 
 在Platform使用的数据集上创建的数据使用标签和策略可以在客户人工智能配置工作流中显示。 这些标签会阻止或警告使用已标记字段的用户。
 
-此集成使您能够更高效地管理法规遵从性。 组织中的数据管理员可以设置策略以限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 阅读相关文档 [标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html) 了解更多信息。
+此集成允许您更有效地管理合规性。 组织中的数据管理员可以设置策略以限制使用。 因此，您可以使用符合数据管理员定义的策略的数据。 请阅读相关文档 [标签和策略](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/data-governance.html) 了解更多信息。
 
 ## 同意政策 {#consent-policy}
 
-Customer AI遵循您的同意首选项。 一旦您 [设置并启用您的同意策略](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy)，客户人工智能将遵守从您那里收集的同意数据。 在模型的后续运行中，仅使用同意的数据对模型进行评分。 新分数将取代旧分数，并可用于分段。 此功能目前仅适用于HealthCare Shield客户和Privacy and Security shield客户。
+Customer AI遵循您的同意首选项。 一旦 [设置和启用您的同意策略](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy)，客户人工智能将尊重从您那里收集的同意数据。 在模型的后续运行中，仅使用同意的数据对模型进行评分。 新分数将替换旧分数，并可用于分段。 此功能目前仅适用于HealthCare Shield客户和Privacy and Security shield客户。
 
 您可以在此处了解有关此功能的更多信息：
 

@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；Adobe Campaign Managed C
 title: Adobe Campaign Managed Cloud Services
 description: 了解如何使用用户界面将Campaign托管Cloud Service连接到Platform
 exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
-source-git-commit: 39a503b14c731aeed279bbbfa8c814c2ec26ed92
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '757'
-ht-degree: 1%
+source-wordcount: '753'
+ht-degree: 2%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Adobe Campaign Managed Cloud Services提供了用于设计跨渠道客户体验的Managed Services平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 访问 [Adobe Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=en) 以了解更多信息。
+Adobe Campaign Managed Cloud Services提供了用于设计跨渠道客户体验的Managed Services平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 访问 [Adobe Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html) 以了解更多信息。
 
 Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日志和跟踪日志数据引入Adobe Experience Platform。
 
@@ -30,7 +30,7 @@ Adobe Campaign Managed Cloud Services源允许您将Adobe Campaign v8投放日�
 
 >[!IMPORTANT]
 >
->您必须有权访问Adobe Campaign v8客户端控制台，才能在Campaign中查看日志数据。 访问 [Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=en) 有关如何下载和安装客户端控制台的信息。
+>您必须有权访问Adobe Campaign v8客户端控制台，才能在Campaign中查看日志数据。 访问 [Campaign v8文档](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html) 有关如何下载和安装客户端控制台的信息。
 
 通过客户端控制台登录到Campaign v8实例。 在 [!DNL Explorer] 选项卡，选择 [!DNL Administration] 然后选择 [!DNL Configuration]. 接下来，选择 [!DNL Data schemas] 然后应用 `broadLog` 筛选名称或标签。 在显示的列表中，选择名为的收件人投放日志源架构 `broadLogRcp`.
 

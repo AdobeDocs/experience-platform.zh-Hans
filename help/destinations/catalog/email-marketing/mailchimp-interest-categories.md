@@ -3,9 +3,9 @@ title: Mailchimp 兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2392'
+source-wordcount: '2388'
 ht-degree: 2%
 
 ---
@@ -36,7 +36,7 @@ Compared to [!DNL Mailchimp Tags] which you would use for internal classificatio
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-将数据激活到之前 [!DNL Mailchimp Interest Categories] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
+将数据激活到之前 [!DNL Mailchimp Interest Categories] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 创建于 [!DNL Experience Platform].
 
 ### 的先决条件 [!DNL Mailchimp Interest Categories] 目标 {#prerequisites-destination}
 

@@ -2,9 +2,9 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -13,26 +13,26 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化体验，这要借助 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en).
+Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化体验，具体可借助于 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html).
 
 >[!IMPORTANT]
 >
->通过创建的个性化体验 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) 服务器API不完全支持。 服务器API可以 **retrieve** 由VEC创建的活动，但服务器API无法 **渲染** VEC创建的活动。 如果要渲染由VEC创建的活动，请实施 [混合个性化](../edge/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network服务器API。
+>通过创建的个性化体验 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 服务器API不完全支持。 服务器API可以 **retrieve** 由VEC创建的活动，但服务器API无法 **渲染** VEC创建的活动。 如果要呈现由VEC创建的活动，请实施 [混合个性化](../edge/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network服务器API。
 
 ## 配置数据流 {#configure-your-datastream}
 
-在将Server API与Adobe Target结合使用之前，必须对数据流配置启用Adobe Target个性化。
+在将服务器API与Adobe Target结合使用之前，您必须先对数据流配置启用Adobe Target个性化。
 
-请参阅 [有关向数据流添加服务的指南](../datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
+请参阅 [有关将服务添加到数据流的指南](../datastreams/overview.md#adobe-target-settings)，以了解有关如何启用Adobe Target的详细信息。
 
-配置数据流时，您可以（可选）提供以下值： [!DNL Property Token]， [!DNL Target Environment ID]、和 [!DNL Target Third Party ID Namespace].
+配置数据流时，您可以（可选）提供以下值 [!DNL Property Token]， [!DNL Target Environment ID]、和 [!DNL Target Third Party ID Namespace].
 
-![显示“数据流服务配置”屏幕(已选择Adobe Target)的用户界面图像](assets/target-datastream.png)
+![显示数据流服务配置屏幕且已选择Adobe Target的UI图像](assets/target-datastream.png)
 
 
 ## 自定义参数 {#custom-parameters}
 
-中的大多数字段 [!DNL XDM] 每个请求的一部分被序列化为点表示法，然后作为自定义或发送到Target [!DNL mbox] 参数。
+中的大多数字段 [!DNL XDM] 每个请求的一部分将被序列化为点表示法，然后作为自定义或发送到Target [!DNL mbox] 参数。
 
 
 ### 示例 {#custom-parameters-example}
@@ -74,13 +74,13 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 请求的查询部分确定Target返回的内容。 在 `personalization` 对象， `schemas` 确定Target返回的内容类型。
 
-如果不确定将检索哪类选件，则应将所有四个架构都包含在对边缘网络的个性化查询中：
+如果不确定将检索哪一类选件，则应将所有四个架构都包含在对Edge Network的个性化查询中：
 
 * **基于HTML的优惠：**
 https://ns.adobe.com/personalization/html-content-item
 * **基于JSON的选件：**
 https://ns.adobe.com/personalization/json-content-item
-* **Target重定向优惠**
+* **Target重定向选件**
 https://ns.adobe.com/personalization/redirect-item
 * **定位DOM操作选件**
 https://ns.adobe.com/personalization/dom-action
@@ -91,7 +91,7 @@ Adobe Target [!DNL mbox] 名称应包含在 `decisionScopes` 数组，以返回�
 
 #### 示例 {#decision-scopes-example}
 
-在以下示例中，将请求所有四种选件类型以及一个名为的Target活动 `serverapimbox`.
+在下面的示例中，将请求所有四种选件类型以及一个名为的Target活动 `serverapimbox`.
 
 ```json
 "query":{
@@ -271,15 +271,15 @@ Edge Network将返回类似于下面的响应。
 }
 ```
 
-如果访客根据发送到Adobe Target的数据符合个性化活动的资格，则相关活动内容将位于 `handle` 对象，其中类型为 `personalization:decisions`.
+如果访客根据发送到Adobe Target的数据符合个性化活动资格，则相关活动内容将位于 `handle` 对象，其中类型为 `personalization:decisions`.
 
-其他内容有时将返回到 `handle` 也是。 其他内容类型与Target个性化无关。 如果访客符合多个活动的条件，则每个活动将是一个单独的 `personalization` 数组中的对象。
+其他内容有时将返回到 `handle` 也一样。 其他内容类型与Target个性化无关。 如果访客符合多个活动的条件，则每个活动都将是一个单独的 `personalization` 数组中的对象。
 
-下表说明了响应中该部分的关键要素。
+下表解释了该部分响应的关键元素。
 
 | 属性 | 描述 | 示例 |
 |---|---|---|
-| `scope` | 导致建议优惠的Target mbox名称。 | `"scope": "serverapimbox"` |
+| `scope` | 生成建议优惠的Target mbox名称。 | `"scope": "serverapimbox"` |
 | `items[].schema` | 与建议选件关联的内容的架构。 这将与您在创建个性化活动时选择的活动类型相关。 | `"schema": "https://ns.adobe.com/personalization/json-content-item",` |
 | `items[].meta.activity.id` | 优惠活动的唯一ID。 通常为6位数。 | `"activity.id": "140281"` |
 | `items[].meta.activity.name` | 用户指定的选件活动的名称。 这是在活动创建步骤中提供的。 | `"activity.name": "Server API Form"` |

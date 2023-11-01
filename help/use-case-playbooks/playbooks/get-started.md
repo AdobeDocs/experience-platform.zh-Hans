@@ -4,9 +4,9 @@ title: 快速入门
 description: 了解如何开始使用用例战术手册功能。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '316'
+source-wordcount: '314'
 ht-degree: 100%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 100%
 
 ### Adobe Journey Optimizer 用户的沙盒配置 {#sandbox-configuration-journey-optimizer}
 
-如果您的组织具有 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) 的许可，您需要在沙盒中配置渠道预设，这会定义您的消息所需要的技术参数。[了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
+如果您的组织具有 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) 的许可，您需要在沙盒中配置渠道预设，这会定义您的消息所需要的技术参数。[了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
 
 ## 授予您的团队所需的访问权限 {#grant-access-permissions}
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 客户属性源连接器概述
 description: 了解如何使用API或用户界面将客户属性连接到Adobe Experience Platform
 exl-id: 63765ecd-ddb5-4992-a3de-d53f054bfb28
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '405'
 ht-degree: 10%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 10%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html?lang=en) Experience Cloud允许您上传从客户关系管理(CRM)数据库中捕获的企业数据。 您可以将数据上传到 Experience Cloud 中的客户属性数据源，然后在 Adobe Analytics 和 Adobe Target 中使用这些数据。
+[[!DNL Customer Attributes]](https://experienceleague.adobe.com/docs/core-services/interface/services/customer-attributes/attributes.html?lang=zh-Hans) Experience Cloud允许您上传从客户关系管理(CRM)数据库中捕获的企业数据。 您可以将数据上传到 Experience Cloud 中的客户属性数据源，然后在 Adobe Analytics 和 Adobe Target 中使用这些数据。
 
 Experience Platform提供对摄取的支持 [!DNL Customer Attributes] 将数据个人资料导入Adobe Experience Platform。
 
@@ -31,7 +31,7 @@ Experience Platform提供对摄取的支持 [!DNL Customer Attributes] 将数据
 
 对象 [!DNL Customer Attributes] 要绑定到其他的数据 [!DNL Profile] 数据集、其数据和身份必须能够与Experience CloudID匹配。
 
-您可以建立 `CORE` namespace，方法为使用设置访客的Experience CloudID [Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en)， [移动SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)，或 [Experience CloudID服务API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=en).
+您可以建立 `CORE` namespace，方法为使用设置访客的Experience CloudID [Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html)， [移动SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)，或 [Experience CloudID服务API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=zh-Hans).
 
 此 [!DNL Customer Attributes] 文件不会进一步填充任何其他身份关系。 例如，如果 [!DNL Customer Attributes] 源数据集包含 **电子邮件** 和 **忠诚度ID** 字段中，则这些字段必须标记为架构中的标识字段，才能被处理到 [!DNL Identity Service].
 

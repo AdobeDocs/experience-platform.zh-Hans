@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1758'
+source-wordcount: '1756'
 ht-degree: 37%
 
 ---
@@ -192,7 +192,7 @@ ht-degree: 37%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
-* 已添加 [&quot;document unloading&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api) 用于发送事件操作UI的复选框。
+* 已添加 [&quot;document unloading&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#using-the-sendbeacon-api) 用于发送事件操作UI的复选框。
 * 添加了 `out` 选项条件 [配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) 在收到同意之前丢弃所有事件(现有 `pending` 选项对事件进行排队，并在收到同意后发送它们)。
 * 向默认同意字段添加了工具提示。
 * 添加了对的支持 [Adobe的Consent 2.0标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).

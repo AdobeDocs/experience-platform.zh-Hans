@@ -2,10 +2,10 @@
 title: 通过Offer decisioning进行个性化
 description: 了解如何使用服务器API通过Offer decisioning交付和呈现个性化体验。
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '580'
-ht-degree: 4%
+source-wordcount: '572'
+ht-degree: 5%
 
 ---
 
@@ -13,35 +13,35 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-Edge Network Server API可以提供在中管理的个性化体验 [offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=en) 到Web渠道。
+Edge Network服务器API可以提供在中管理的个性化体验 [offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans) 到Web渠道。
 
 [!DNL Offer Decisioning] 支持使用非可视化界面创建、激活和交付您的活动和个性化体验。
 
 ## 先决条件 {#prerequisites}
 
-通过以下方式实现个性化 [!DNL Offer Decisioning] 要求您有权访问 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) ，然后再配置集成。
+通过以下方式实现个性化 [!DNL Offer Decisioning] 要求您有权访问 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) 然后再配置集成。
 
 ## 配置数据流 {#configure-your-datastream}
 
-在将Server API与Offer decisioning结合使用之前，必须在数据流配置上启用Adobe Experience Platform个性化，并启用 **[!UICONTROL offer decisioning]** 选项。
+在您可以将Server API与Offer decisioning结合使用之前，必须在数据流配置上启用Adobe Experience Platform个性化，并启用 **[!UICONTROL offer decisioning]** 选项。
 
-请参阅 [有关向数据流添加服务的指南](../datastreams/overview.md#adobe-experience-platform-settings)，以了解有关如何启用Offer decisioning的详细信息。
+请参阅 [有关将服务添加到数据流的指南](../datastreams/overview.md#adobe-experience-platform-settings)，以了解有关如何启用Offer decisioning的详细信息。
 
-![显示“数据流服务配置”屏幕(已选择Offer decisioning)的UI图像](assets/aep-od-datastream.png)
+![显示数据流服务配置屏幕的UI图像，其中选择了Offer decisioning](assets/aep-od-datastream.png)
 
 ## 受众创建 {#audience-creation}
 
-[!DNL Offer Decisioning] 依靠Adobe Experience Platform分段服务来创建受众。 您可以找到相关文档 [!DNL Segmentation Service] [此处](../segmentation/home.md).
+[!DNL Offer Decisioning] 依靠Adobe Experience Platform分段服务来创建受众。 您可以查找的文档 [!DNL Segmentation Service] [此处](../segmentation/home.md).
 
 ## 定义决策范围 {#creating-decision-scopes}
 
 此 [!DNL Offer Decision Engine] 使用Adobe Experience Platform数据和 [实时客户档案](../profile/home.md)，以及 [!DNL Offer Library]，以便在适当的时间将优惠提供给适当的客户和渠道。
 
-要了解有关 [!DNL Offer Decisioning Engine]，请参阅专用的 [文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans).
+要了解有关 [!DNL Offer Decisioning Engine]，请参阅 [文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans).
 
-晚于 [配置数据流](#configure-your-datastream)中，您必须定义要在个性化营销活动中使用的决策范围。
+之后 [配置数据流](#configure-your-datastream)，您必须定义要在个性化营销活动中使用的决策范围。
 
-[决策范围](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html?lang=en#add-decision-scopes) 是经过Base64编码的JSON字符串，其中包含您所需的活动和版面ID。 [!DNL Offer Decisioning Service] 以在建议优惠时使用。
+[决策范围](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html#add-decision-scopes) 是经过Base64编码的JSON字符串，其中包含您希望 [!DNL Offer Decisioning Service] 以在建议优惠时使用。
 
 **决策范围JSON**
 
@@ -58,7 +58,7 @@ Edge Network Server API可以提供在中管理的个性化体验 [offer decisio
 "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
 ```
 
-创建优惠和收藏集后，您需要定义 [决策范围](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html?lang=en#add-decision-scopes).
+创建优惠和收藏集后，您需要定义 [决策范围](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html#add-decision-scopes).
 
 复制Base64编码的决策范围。 您将在以下位置使用它 `query` 服务器API请求的对象。
 
@@ -88,7 +88,7 @@ POST /ee/v2/interact
 
 >[!NOTE]
 >
->此 `xdm` 和 `data` 对象是可选的，只有当您创建的区段满足条件时，才需要Offer decisioning这些对象，条件是在这些对象的任何一个中使用字段。
+>此 `xdm` 和 `data` 对象是可选的，并且只有在创建的区段具有使用其中任一对象中的字段的条件时，才需要Offer decisioning这些对象。
 
 ```shell
 curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}' \
@@ -244,17 +244,17 @@ Edge Network将返回类似于下面的响应。
 }
 ```
 
-如果访客根据发送给的数据符合个性化活动的条件 [!DNL Offer Decisioning]，相关活动内容将位于 `handle` 对象，其中类型为 `personalization:decisions`.
+如果访客符合根据发送到的数据进行个性化活动的条件 [!DNL Offer Decisioning]，相关活动内容将会位于 `handle` 对象，其中类型为 `personalization:decisions`.
 
 其他内容将返回到 `handle` 个对象。 其他内容类型与 [!DNL Offer Decisioning] 个性化。 如果访客符合多个活动的条件，则这些活动将包含在数组中。
 
-下表说明了响应中该部分的关键要素。
+下表解释了该部分响应的关键元素。
 
 | 属性 | 描述 | 示例 |
 |---|---|---|
 | `scope` | 与返回的建议优惠关联的决策范围。 | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
 | `activity.id` | 优惠活动的唯一ID。 | `"id": "xcore:offer-activity:11cfb1fa93381aca"` |
-| `placement.id` | 优惠投放的唯一ID。 | `"id": "xcore:offer-placement:1175009612b0100c"` |
+| `placement.id` | 优惠投放位置的唯一ID。 | `"id": "xcore:offer-placement:1175009612b0100c"` |
 | `items.id` | 建议优惠的唯一ID。 | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
 | `schema` | 与建议选件关联的内容的架构。 | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-html"` |
 | `data.id` | 建议优惠的唯一ID。 | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
@@ -262,4 +262,4 @@ Edge Network将返回类似于下面的响应。
 | `language` | 与建议选件中的内容关联的一系列语言。 | `"language": [ "en-US" ]` |
 | `content` | 以字符串格式与建议选件关联的内容。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
 | `deliveryUrl` | 以URL格式显示的与建议选件关联的图像内容。 | `"deliveryURL": "https://image.jpeg"` |
-| `characteristics` | 包含与建议选件关联的特性的JSON对象。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+| `characteristics` | 包含与建议选件关联的特征的JSON对象。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |

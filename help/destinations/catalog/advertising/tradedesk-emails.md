@@ -3,9 +3,9 @@ title: (Beta)交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1148'
 ht-degree: 4%
 
 ---
@@ -86,7 +86,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 同时 [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 此目标必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 同时 [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) 此目标必须提供以下信息：
 
 * **[!UICONTROL 帐户类型]**：请选择 **[!UICONTROL 现有帐户]** 选项。
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。

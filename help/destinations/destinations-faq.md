@@ -3,9 +3,9 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: b41335ba5fd6dca422b0c19517bc32b320f1e733
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1634'
 ht-degree: 3%
 
 ---
@@ -178,7 +178,7 @@ See the table below for a feature comparison between the Experience Cloud Audien
 
 +++回答否， [Web SDK](../edge/home.md) 无需将受众激活到 [Adobe Target](catalog/personalization/adobe-target-connection.md).
 
-但是，如果 [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en) 代替Web SDK，仅支持下一会话个性化。
+但是，如果 [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) 代替Web SDK，仅支持下一会话个性化。
 
 对象 [同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md) 用例，您必须使用 [Web SDK](../edge/home.md) 或 [边缘网络服务器API](../server-api/overview.md). 请参阅相关文档 [将受众激活到Edge目标](ui/activate-edge-personalization-destinations.md) 以了解更多实施详细信息。
 +++
@@ -204,7 +204,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### 在Adobe Target中，我可以在哪里查看激活的属性？
 
-+++应答属性将在Target中的 [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) 和 [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans) 选件。
++++应答属性将在Target中的 [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) 和 [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html) 选件。
 +++
 
 ### 我是否可以创建没有数据流的目标，然后在以后将数据流添加到同一目标？

@@ -2,10 +2,10 @@
 title: 标记和事件转发的发行说明
 description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '841'
-ht-degree: 15%
+source-wordcount: '835'
+ht-degree: 12%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 15%
 
 >[!IMPORTANT]
 >
->往后看，此页面上将不再提供标记和事件转发发行说明。 请参阅最新的 [Adobe Experience Platform发行说明](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html?lang=en#data-collection) 了解详细的标记和事件转发更新。
+>往后看，此页面上将不再提供标记和事件转发发行说明。 请参阅最新的 [Adobe Experience Platform发行说明](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html#data-collection) 了解详细的标记和事件转发更新。
 
 ## 2023 年 4 月 26 日
 
-* **OAuth JWT密码**：和 [OAuth JWT密码](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) 允许客户使用Adobe和Google服务令牌在事件转发中支持服务器到服务器交互。
+* **OAuth JWT密码**：和 [OAuth JWT密码](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) 允许客户使用Adobe和Google服务令牌在事件转发中支持服务器到服务器交互。
 
 已发布以下新扩展：
 
@@ -28,7 +28,7 @@ ht-degree: 15%
 **Quick Stark工作流（测试版）**
 
 从数据收集主屏幕访问“开始使用”下新的快速启动工作流程！以下工作流现已作为公共测试版提供给客户。
-* **[元转化API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start)**：事件转发客户只需几个简单的步骤，即可快速收集并转发事件数据、服务器端到元以进行广告转化。
+* **[元转化API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start)**：事件转发客户只需几个简单的步骤，即可快速收集并转发事件数据、服务器端到元以进行广告转化。
 * **[移动SDK](https://developer.adobe.com/client-sdks/documentation/)**：客户只需几个简单的步骤，即可快速实施Mobile SDK并验证基本移动事件。
 
 已发布新扩展：

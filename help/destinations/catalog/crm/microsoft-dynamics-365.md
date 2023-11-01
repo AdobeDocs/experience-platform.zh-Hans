@@ -4,10 +4,10 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2158'
-ht-degree: 0%
+source-wordcount: '2154'
+ht-degree: 1%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ### Experience Platform先决条件 {#prerequisites-in-experience-platform}
 
-将数据激活到之前 [!DNL Dynamics 365] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [受众](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=en) 创建于 [!DNL Experience Platform].
+将数据激活到之前 [!DNL Dynamics 365] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [受众](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) 创建于 [!DNL Experience Platform].
 
 请参阅Adobe的文档，了解 [受众成员资格详细信息架构字段组](/help/xdm/field-groups/profile/segmentation.md) 如果您需要有关受众状态的指南。
 

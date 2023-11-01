@@ -2,16 +2,16 @@
 title: 将数据导出到外部ML环境
 description: 了解如何将使用Data Distiller创建的准备好的训练数据集共享到ML环境可读取的云存储位置，以便对模型进行训练和评分。
 exl-id: 75022acf-fafd-41d6-8dfa-ff3fd4c4fa7e
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '546'
 ht-degree: 3%
 
 ---
 
 # 将数据导出到外部ML环境
 
-本文档演示如何将使用Data Distiller创建的准备好的训练数据集共享到ML环境可读取的云存储位置，以便训练和评分模型。 此示例将训练数据集导出到 [数据登陆区(DLZ)](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html?lang=en). 您可以根据需要更改存储目标，以便与机器学习环境配合使用。
+本文档演示如何将使用Data Distiller创建的准备好的训练数据集共享到ML环境可读取的云存储位置，以便训练和评分模型。 此示例将训练数据集导出到 [数据登陆区(DLZ)](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html). 您可以根据需要更改存储目标，以便与机器学习环境配合使用。
 
 此 [目标的流服务](https://developer.adobe.com/experience-platform-apis/references/destinations/) 用于通过将计算功能的数据集登陆到适当的云存储位置来完成功能管道。
 

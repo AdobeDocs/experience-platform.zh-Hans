@@ -3,10 +3,10 @@ title: 用户代理客户端提示
 description: 了解用户代理客户端提示在Web SDK中的工作方式。 客户端提示允许网站所有者访问用户代理字符串中提供的许多相同信息，但保护隐私的方式更加严格。
 keywords: 用户代理；客户端提示；字符串；用户代理字符串；低熵；高熵
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: d856630d4c14387ad4d77a915585fe05803878fb
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1200'
-ht-degree: 6%
+source-wordcount: '1192'
+ht-degree: 7%
 
 ---
 
@@ -120,9 +120,9 @@ Adobe Experience Cloud解决方案以各种方式利用用户代理字符串。
 
 ### 依赖高熵客户端提示的Audience Manager特征 {#aam}
 
-[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能最大限度地减少通过收集的信息 `User-Agent` 标题。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) 将不再收到基于以下特征的 [平台级别键](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=zh-Hans).
+[!DNL Google] 已更新 [!DNL Chrome] 浏览器功能最大限度地减少通过收集的信息 `User-Agent` 标题。 因此，Audience Manager客户使用 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans) 将不再收到基于以下特征的 [平台级别键](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html).
 
-使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=zh-Hans) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 以继续接收可靠的特征数据。
+使用平台级别关键值进行定位的Audience Manager客户必须切换到 [Experience PlatformWeb SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=zh-Hans) 而不是 [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans)，并启用 [高熵客户端提示](#enabling-high-entropy-client-hints) 以继续接收可靠的特征数据。
 
 ## 启用高熵客户端提示 {#enabling-high-entropy-client-hints}
 

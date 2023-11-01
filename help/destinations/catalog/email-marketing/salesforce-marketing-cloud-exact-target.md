@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；sale
 title: (API) SalesforceMarketing Cloud连接
 description: 通过SalesforceMarketing Cloud（以前称为ExactTarget）目标，您可以导出帐户数据，并在SalesforceMarketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: b778b7b8c79176d0962a9c757d83a749acd147b6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '3079'
+source-wordcount: '3075'
 ht-degree: 1%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 ### Experience Platform中的先决条件 {#prerequisites-in-experience-platform}
 
-将数据激活到之前 [!DNL (API) Salesforce Marketing Cloud] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) 创建于 [!DNL Experience Platform].
+将数据激活到之前 [!DNL (API) Salesforce Marketing Cloud] 目标，您必须拥有 [架构](/help/xdm/schema/composition.md)， a [数据集](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)、和 [区段](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) 创建于 [!DNL Experience Platform].
 
 ### 中的先决条件 [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
 

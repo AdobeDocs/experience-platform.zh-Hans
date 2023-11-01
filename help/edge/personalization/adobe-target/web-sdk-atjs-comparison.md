@@ -3,9 +3,9 @@ title: 将at.js与Experience PlatformWeb SDK进行比较
 description: 了解at.js功能与Experience PlatformWeb SDK的比较
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2281'
+source-wordcount: '2257'
 ht-degree: 6%
 
 ---
@@ -75,7 +75,7 @@ window.adobe.target.init(window, document, {
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 
 ### 配置Web SDK
@@ -240,7 +240,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 ### 使用Web SDK
 
@@ -325,7 +325,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/cmp-atjs-functions.html)
 
 
 ### 使用Web SDK
@@ -462,7 +462,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-了解关于 `applyOffers` 命令 [专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en).
+了解关于 `applyOffers` 命令 [专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html).
 
 
 ### 使用Web SDK
@@ -514,7 +514,7 @@ adobe.target.sendNotifications({
 });
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html)
 
 ### 使用Web SDK
 
@@ -645,7 +645,7 @@ alloy("sendEvent", {
 adobe.target.triggerView("homeView")
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-triggerview-atjs-2.html)
 
 
 ### 使用Web SDK
@@ -685,7 +685,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 }); 
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 
 ### 使用Web SDK
@@ -694,7 +694,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >确保您使用的是Platform Web SDK版本2.6.0或更高版本。
 
-响应令牌作为 `propositions` 在结果中公开的 `sendEvent` 命令。 每个建议都包含一系列 `items`，则每个项目将具有 `meta` 使用响应令牌填充的对象（如果在Target管理员UI中启用了它们）。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
+响应令牌作为 `propositions` 在结果中公开的 `sendEvent` 命令。 每个建议都包含一系列 `items`，则每个项目将具有 `meta` 使用响应令牌填充的对象（如果在Target管理员UI中启用了它们）。 [了解详情](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
 
 **示例**
 
@@ -859,7 +859,7 @@ Analytics有效负载(`tnta` 令牌)应包含在使用以下对象的Analytics�
 
 ![](assets/a4t-server-side-atjs.png)
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
 
 ### 使用Web SDK
 
@@ -942,7 +942,7 @@ window.targetGlobalSettings = {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
 
 ### 使用Web SDK
 
@@ -1042,7 +1042,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html)
 
 
 ### 使用Web SDK
@@ -1122,7 +1122,7 @@ window.targetPageParams = function() {
 };
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html?lang=en)
+[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html)
 
 ### 使用Web SDK
 

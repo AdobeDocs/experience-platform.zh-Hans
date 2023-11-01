@@ -3,10 +3,10 @@ title: TikTok 连接
 description: 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1046'
-ht-degree: 4%
+source-wordcount: '1040'
+ht-degree: 5%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences?lang=en) 以了解更多信息。
+使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences) 以了解更多信息。
 
 >[!IMPORTANT]
 >
@@ -30,7 +30,7 @@ ht-degree: 4%
 
 ## 先决条件 {#prerequisites}
 
-您需要拥有 [!DNL Admin] 或 [!DNL Operator] 访问要将受众发送到的TikTok广告管理器帐户。 有关更多说明，请参阅 [TikTok帮助中心](https://ads.tiktok.com/help/article/add-users-tiktok-business-center?lang=en).
+您需要拥有 [!DNL Admin] 或 [!DNL Operator] 访问要将受众发送到的TikTok广告管理器帐户。 有关更多说明，请参阅 [TikTok帮助中心](https://ads.tiktok.com/help/article/add-users-tiktok-business-center).
 
 在将数据发送到您的TikTok广告管理器帐户之前，您需要向Adobe Experience Platform授予访问您的广告帐户的权限 `Audience Management`. 此权限可由以下人员提供 [输入您的广告管理器ID](#authenticate) 在Experience PlatformUI中并在被重定向到您的TikTok广告管理器帐户后授予权限。
 
@@ -123,4 +123,4 @@ TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identi
 
 ## 其他资源 {#additional-resources}
 
-请参阅 [TikTok帮助中心页面](https://ads.tiktok.com/help/article/audiences?lang=en) 以了解其他信息。
+请参阅 [TikTok帮助中心页面](https://ads.tiktok.com/help/article/audiences) 以了解其他信息。

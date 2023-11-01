@@ -2,9 +2,9 @@
 title: pinterest客户列表连接
 description: 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '727'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-此 [!DNL Pinterest Customer List] 目标支持激活下表中描述的标识。 了解有关 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+此 [!DNL Pinterest Customer List] 目标支持激活下表中描述的标识。 了解有关 [身份](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 在 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 在目标激活工作流中，将所需的身份映射到目标字段 *pinterest_audience*. 标识是在数据摄取到Pinterest时识别和解析的。
 
@@ -34,7 +34,7 @@ ht-degree: 2%
 |---|---|---|
 | GAID | [!DNL Google Advertising ID] | 映射 *GAID* 源身份命名空间到目标身份字段 *pinterest_audience*. 标识是在数据摄取到Pinterest时识别和解析的。 |
 | IDFA | [!DNL Apple ID for Advertisers] | 映射 *IDFA* 源身份命名空间到目标身份字段 *pinterest_audience*. 标识是在数据摄取到Pinterest时识别和解析的。 |
-| 电子邮件 | 电子邮件地址（纯文本或使用SHA256算法进行哈希处理） | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 <br> 映射 *电子邮件* 或 *Email_LC_SHA256* 源身份命名空间到目标身份字段 *pinterest_audience*. |
+| EMAIL | 电子邮件地址（纯文本或使用SHA256算法进行哈希处理） | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 <br> 映射 *电子邮件* 或 *Email_LC_SHA256* 源身份命名空间到目标身份字段 *pinterest_audience*. |
 
 {style="table-layout:auto"}
 

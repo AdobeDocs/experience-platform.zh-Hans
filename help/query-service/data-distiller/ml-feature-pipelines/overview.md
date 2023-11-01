@@ -2,7 +2,7 @@
 title: AI/ML功能管道
 description: 了解如何使用Data Distiller通过源自Adobe Experience Platform数据的功能丰富您的机器学习管道。 将原始数据转换为功能并投放功能数据，以训练或评分支持您的营销用例的模型。
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 1%
@@ -106,7 +106,7 @@ Is this the correct doc to link to about creating an Oauth2 API credential?:
 
 An API credential will not be able to access Platform APIs without explicit permissions granted by your organization's Adobe System Admin for specific Platform services and data. A System Admin can [assign the API credential to a role](../../../landing/api-authentication.md#assign-api-to-a-role) and manage permissions for role in the [!UICONTROL Permissions] UI in Platform. 
 
-You will need to provide your system admin with the name and technical account email of your API credential. System admins can refer to the documentation to find information about how to [manage API credentials for a role](https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/permissions.html?lang=en#manage-api-credentials-for-role) and [grant the required permissions to access Platform resources](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#get-abac-permissions).
+You will need to provide your system admin with the name and technical account email of your API credential. System admins can refer to the documentation to find information about how to [manage API credentials for a role](https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/permissions.html#manage-api-credentials-for-role) and [grant the required permissions to access Platform resources](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#get-abac-permissions).
 
 The minimum permissions required to execute these notebooks include:
 

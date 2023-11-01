@@ -1,16 +1,16 @@
 ---
-description: 了解如何使用目标测试API为您的流目标生成示例配置文件，以用于目标测试。
-title: 根据源架构生成示例配置文件
+description: 了解如何使用目标测试API为流式目标生成样本配置文件，以用于目标测试。
+title: 根据源架构生成样本配置文件
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1010'
 ht-degree: 1%
 
 ---
 
 
-# 根据源架构生成示例配置文件 {#sample-profile-api-operations}
+# 根据源架构生成样本配置文件 {#sample-profile-api-operations}
 
 >[!IMPORTANT]
 >
@@ -22,32 +22,32 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->使用此API端点为两个不同的用例生成示例配置文件。 您可以：
->* 生成要在以下情况下使用的配置文件： [拟定和测试报文转换模板](create-template.md)  — 通过使用 *目标ID* 作为查询参数。
->* 生成要在调用时使用的配置文件 [测试目标是否正确配置](streaming-destination-testing-overview.md)  — 通过使用 *目标实例ID* 作为查询参数。
+>使用此API端点为两个不同的用例生成样本配置文件。 您可以：
+>* 生成要在以下情况下使用的配置文件： [构建和测试报文转换模板](create-template.md)  — 通过使用 *目标ID* 作为查询参数。
+>* 生成要在调用时使用的配置文件 [测试目标配置是否正确](streaming-destination-testing-overview.md)  — 通过使用 *目标实例Id* 作为查询参数。
 
-您可以根据AdobeXDM源架构（在测试目标时使用）或目标支持的目标架构（在构建模板时使用）生成示例配置文件。 要了解AdobeXDM源架构和目标架构之间的区别，请阅读 [消息格式](../../functionality/destination-server/message-format.md) 文章。
+您可以根据AdobeXDM源架构（在测试目标时使用）或目标支持的目标架构（在构建模板时使用）生成示例配置文件。 要了解AdobeXDM源架构与目标架构之间的区别，请阅读 [消息格式](../../functionality/destination-server/message-format.md) 文章。
 
-请注意，样本配置文件的使用目的不可互换。 配置文件是根据 *目标ID* 只能用于制作您的报文转换模板和基于 *目标实例ID* 只能用于测试目标端点。
+请注意，示例配置文件的使用目的不可互换。 配置文件生成基于 *目标ID* 只能用于制作您的消息转换模板和基于 *目标实例Id* 只能用于测试目标端点。
 
-## 示例配置文件生成API操作快速入门 {#get-started}
+## 范例配置文件生成API操作快速入门 {#get-started}
 
-在继续之前，请查看 [快速入门指南](../../getting-started.md) 要成功调用API需要了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
+在继续之前，请查看 [快速入门指南](../../getting-started.md) 获取成功调用API所需了解的重要信息，包括如何获取所需的目标创作权限和所需的标头。
 
-## 根据测试目标时使用的源架构生成示例配置文件 {#generate-sample-profiles-source-schema}
+## 根据测试目标时使用的源架构生成样本配置文件 {#generate-sample-profiles-source-schema}
 
 >[!IMPORTANT]
 >
 >在以下情况下，将此处生成的示例配置文件添加到HTTP调用： [测试您的目标](streaming-destination-testing-overview.md).
 
-您可以通过对以下网站发出GET请求，根据源架构生成示例配置文件： `authoring/sample-profiles/` 端点，并提供您基于要测试的目标配置创建的目标实例的ID。
+您可以通过对以下网站发出GET请求，根据源架构生成样本配置文件： `authoring/sample-profiles/` 端点，并提供您根据要测试的目标配置创建的目标实例的ID。
 
 要获取目标实例的ID，您必须先在Experience PlatformUI中创建与目标的连接，然后再尝试测试目标。 阅读 [激活目标教程](../../../ui/activation-overview.md) 有关如何获取要用于此API的目标实例ID的信息，请参阅下面的提示。
 
 >[!IMPORTANT]
 >
->* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 读取 [连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 和 [将用户档案和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 了解更多信息。
-> * 在建立与目标的连接后，在以下情况下获取您应在对此端点的API调用中使用的目标实例ID： [浏览与目标的连接](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
+>* 要使用此API，您必须在Experience PlatformUI中拥有到目标的现有连接。 读取 [连接到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) 和 [将用户档案和受众激活到目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) 以了解更多信息。
+> * 建立与目标的连接后，在以下情况下获取您应在对此端点的API调用中使用的目标实例ID： [浏览与目标的连接](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
 >![用户界面图像如何获取目标实例ID](../../assets/testing-api/get-destination-instance-id.png)
 
 **API格式**
@@ -58,15 +58,15 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 
 | 查询参数 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_INSTANCE_ID}` | 目标实例的ID，您将基于此ID生成示例配置文件。 |
-| `{COUNT}` | *可选*. 正在生成的样本配置文件数。 参数可以取的值介于 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件默认数量由 `maxUsersPerRequest` 中的值 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+| `{DESTINATION_INSTANCE_ID}` | 要基于其生成样本配置文件的目标实例的ID。 |
+| `{COUNT}` | *可选*. 您正在生成的样本配置文件数。 参数可以接受以下值： `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件默认数量由 `maxUsersPerRequest` 中的值 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
 {style="table-layout:auto"}
 
 
 **请求**
 
-以下请求生成示例配置文件，配置者为 `{DESTINATION_INSTANCE_ID}` 和 `{COUNT}` 查询参数。
+以下请求生成样本配置文件，配置者为 `{DESTINATION_INSTANCE_ID}` 和 `{COUNT}` 查询参数。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -181,23 +181,23 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 | 属性 | 描述 |
 | -------- | ----------- |
 | `segmentMembership` | 描述个人受众成员资格的映射对象。 有关的详细信息 `segmentMembership`，读取 [受众成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
-| `lastQualificationTime` | 上次此配置文件符合区段资格的时间戳。 |
-| `xdm:status` | 一个字符串字段，指示受众成员资格是否已在当前请求中实现。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：作为当前请求的一部分，配置文件将退出受众。</li></ul> |
-| `identityMap` | 描述个人的各种标识值及其关联的命名空间的映射类型字段。 有关的详细信息 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
+| `lastQualificationTime` | 此配置文件上次符合区段资格的时间戳。 |
+| `xdm:status` | 一个字符串字段，指明在当前请求中是否实现了受众成员资格。 接受以下值： <ul><li>`realized`：用户档案是区段的一部分。</li><li>`exited`：配置文件将作为当前请求的一部分退出受众。</li></ul> |
+| `identityMap` | 描述个人各种身份值及其关联命名空间的映射类型字段。 有关的详细信息 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#identityMap). |
 
 {style="table-layout:auto"}
 
-## 根据在构建消息转换模板时使用的目标架构生成示例用户档案 {#generate-sample-profiles-target-schema}
+## 根据构建消息转换模板时使用的目标架构生成样本用户档案 {#generate-sample-profiles-target-schema}
 
 >[!IMPORTANT]
 >
 >在中使用构建模板时在此处生成的示例用户档案 [渲染模板步骤](render-template-api.md#multiple-profiles-with-body).
 
-您可以根据向GET请求的目标架构生成示例配置文件 `authoring/sample-profiles/` 端点，并提供目标配置的目标ID，您将基于此ID创建模板。
+GET您可以根据向 `authoring/sample-profiles/` 端点，并提供要基于其创建模板的目标配置的目标ID。
 
 >[!TIP]
 >
->* 您应在此处使用的目标ID是 `instanceId` 对应于使用创建的目标配置 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 了解更多详细信息。
+>* 您应在此处使用的目标ID是 `instanceId` 对应于使用创建的目标配置 `/destinations` 端点。 请参阅 [检索目标配置](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) 以了解更多详细信息。
 
 **API格式**
 
@@ -208,14 +208,14 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 
 | 查询参数 | 描述 |
 | -------- | ----------- |
-| `{DESTINATION_ID}` | 目标配置的ID，您将基于此ID生成示例配置文件。 |
-| `{COUNT}` | *可选*. 正在生成的样本配置文件数。 参数可以取的值介于 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件默认数量由 `maxUsersPerRequest` 中的值 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+| `{DESTINATION_ID}` | 要基于其生成样本配置文件的目标配置的ID。 |
+| `{COUNT}` | *可选*. 您正在生成的样本配置文件数。 参数可以接受以下值： `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件默认数量由 `maxUsersPerRequest` 中的值 [目标服务器配置](../../authoring-api/destination-server/create-destination-server.md). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-以下请求生成示例配置文件，配置者为 `{DESTINATION_ID}` 和 `{COUNT}` 查询参数。
+以下请求生成样本配置文件，配置者为 `{DESTINATION_ID}` 和 `{COUNT}` 查询参数。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -373,8 +373,8 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 ## API错误处理 {#api-error-handling}
 
-Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中的。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../../../landing/troubleshooting.md#request-header-errors) ，位于平台疑难解答指南中。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道如何生成示例配置文件以供在以下情况下使用： [测试消息转换模板](create-template.md) 或 [测试目标配置是否正确](streaming-destination-testing-overview.md).
+阅读本文档后，您现在知道如何生成要在以下情况下使用的示例配置文件 [测试消息转换模板](create-template.md) 或 [测试目标配置是否正确](streaming-destination-testing-overview.md).

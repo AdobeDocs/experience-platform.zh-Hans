@@ -2,9 +2,9 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中的Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 80c46748d809fe0b0367cf779f41d7851e8e62db
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1392'
 ht-degree: 82%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 82%
 
 >[!NOTE]
 >
->Analytics标记扩展(如果经常更新，以响应对 [AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) 有关下文所述特定版本的详细信息。
+>Analytics标记扩展(如果经常更新，以响应对 [AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下文所述特定版本的详细信息。
 
 ## 2023 年 7 月 19 日
 
@@ -70,7 +70,7 @@ ht-degree: 82%
 
 **错误修复**:
 
-* 已升级 [AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* 已升级 [AppMeasurement到v2.22.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans).
 * 更新了回退linkName以镜像Activity Map逻辑而不是使用innerHTML。
 
 ## 2020 年 8 月 6 日
@@ -83,7 +83,7 @@ ht-degree: 82%
 
 **功能**:
 
-* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)。
+* [AppMeasurement 已更新至 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)。
 * 少量 UI 发生了更改，为此，如今将以可折叠项的形式折叠显示其他设置，而并非显示在复选框中。
 
 ## 2020 年 6 月 2 日
@@ -111,7 +111,7 @@ ht-degree: 82%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [将 AppMeasurement 更新为 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
 
 ## 2020 年 3 月 2 日
 
@@ -123,7 +123,7 @@ ht-degree: 82%
 
 **功能**:
 
-* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* [将 AppMeasurement 更新为 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans)
 * 将 Audience Manager 模块中的 DIL 库更新为 9.4
 * 增加了扩展中输入字段的长度
 * 扩展和操作配置中的 eVar 和 prop 现在显示 Analytics 中的友好名称
@@ -193,7 +193,7 @@ ht-degree: 82%
 
 **功能**:
 
-* 已将 Adobe Analytics 扩展更新至 [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=en#version-2.14.0)，该版本修复了一个已知的 clearVars 问题。
+* 已将 Adobe Analytics 扩展更新至 [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0)，该版本修复了一个已知的 clearVars 问题。
 * 添加了指向扩展的 Exchange 链接。通过选择相应的下拉菜单并选取“extension info”，可访问 Exchange 列表
 
 **错误修复**:

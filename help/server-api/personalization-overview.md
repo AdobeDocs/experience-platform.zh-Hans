@@ -2,20 +2,20 @@
 title: 个性化概述
 description: 了解如何使用Adobe Experience Platform Edge Network Server API从Adobe个性化解决方案中检索个性化内容。
 exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 9%
+source-wordcount: '739'
+ht-degree: 10%
 
 ---
 
 # 个性化概述
 
-使用 [!DNL Server API]，您可以从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=en).
+使用 [!DNL Server API]中，您可以从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans).
 
 此外， [!DNL Server API] 通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../destinations/ui/activate-edge-personalization-destinations.md).
 
-在使用服务器API时，您必须将个性化引擎提供的响应与用于呈现网站上的内容的逻辑集成。 不像 [Web SDK](../edge/home.md)，则 [!DNL Server API] 没有自动应用返回内容的机制 [!DNL Adobe Target] 和 [!DNL Offer Decisioning].
+使用服务器API时，必须将个性化引擎提供的响应与用于呈现网站内容的逻辑集成。 不像 [Web SDK](../edge/home.md)， [!DNL Server API] 没有自动应用返回内容的机制 [!DNL Adobe Target] 和 [!DNL Offer Decisioning].
 
 ## 术语 {#terminology}
 
@@ -24,13 +24,13 @@ ht-degree: 9%
 * **优惠**：优惠是营销消息，其中可能包含与其关联的规则，用于指定有资格查看优惠的人员。
 * **决策**：决策（以前称为优惠活动）会通知优惠选择。
 * **架构**：决策的架构通知返回的优惠类型。
-* **范围**：决定的范围。
+* **范围**：决策的范围。
    * 在Adobe Target中，这是 [!DNL mbox]. 此 [!DNL global mbox] 是 `__view__` 范围
-   * 对象 [!DNL Offer Decisioning]，这些是JSON的Base64编码字符串，其中包含您希望offer decisioning服务用来建议选件的活动和版面ID。
+   * 对象 [!DNL Offer Decisioning]，这些是JSON的Base64编码字符串，其中包含希望offer decisioning服务用来建议选件的活动和版面ID。
 
 ## 此 `query` 对象 {#query-object}
 
-检索个性化内容需要请求示例的显式请求查询对象。 查询对象具有以下格式：
+检索个性化内容需要请求示例的显式请求查询对象。 查询对象的格式如下：
 
 ```json
 {
@@ -60,7 +60,7 @@ ht-degree: 9%
 
 ## 句柄对象 {#handle}
 
-从个性化解决方案中检索到的个性化内容显示在中 `personalization:decisions` 句柄，其有效负载具有以下格式：
+从个性化解决方案中检索到的个性化内容在中呈现 `personalization:decisions` 句柄，其有效负载具有以下格式：
 
 ```json
 {
@@ -117,8 +117,8 @@ ht-degree: 9%
 | `payload.scope` | 字符串 | 导致建议优惠的决策范围。 |
 | `payload.scopeDetails.decisionProvider` | 字符串 | 设置为 `TGT` 使用Adobe Target时。 |
 | `payload.scopeDetails.activity.id` | 字符串 | 优惠活动的唯一ID。 |
-| `payload.scopeDetails.experience.id` | 字符串 | 优惠投放的唯一ID。 |
-| `items[].id` | 字符串 | 优惠投放的唯一ID。 |
+| `payload.scopeDetails.experience.id` | 字符串 | 优惠投放位置的唯一ID。 |
+| `items[].id` | 字符串 | 优惠投放位置的唯一ID。 |
 | `items[].data.id` | 字符串 | 建议优惠的ID。 |
 | `items[].data.schema` | 字符串 | 与建议选件关联的内容的架构。 |
 | `items[].data.format` | 字符串 | 与建议选件关联的内容的格式。 |
@@ -127,7 +127,7 @@ ht-degree: 9%
 | `items[].data.selector` | 字符串 | HTML选择器，用于为DOM操作选件标识目标DOM元素。 |
 | `items[].data.prehidingSelector` | 字符串 | HTML选择器，用于标识在处理DOM操作选件时要隐藏的DOM元素。 |
 | `items[].data.deliveryUrl` | 字符串 | 以URL格式显示的与建议选件关联的图像内容。 |
-| `items[].data.characteristics` | 字符串 | 与JSON对象格式中提议的选件关联的特性。 |
+| `items[].data.characteristics` | 字符串 | 与JSON对象格式中提议的选件关联的特征。 |
 
 ## 示例API调用 {#sample-call}
 
@@ -248,9 +248,9 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 
 ## 通知 {#notifications}
 
-在已访问预获取的内容或视图或已将预获取的内容或视图呈现给最终用户时，应触发通知。 为了能够在正确的范围内触发通知，请确保跟踪相应的 `id` 每个作用域。
+在面向最终用户访问或呈现预取的内容或视图时，应触发通知。 为了能够在正确的范围内触发通知，请确保跟踪相应的 `id` 每个作用域。
 
-带有右侧的通知 `id` 要正确反映报表，需要触发相应的范围。
+具有右侧的通知 `id` 要正确反映报表，需要触发相应的范围。
 
 **API格式**
 
@@ -310,16 +310,16 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | 是 | 数据收集端点使用的数据流的ID。 |
-| `requestId` | `String` | 否 | 外部外部请求跟踪ID。 如果未提供任何内容，Edge Network将为您生成一个，并将其返回至响应正文/标头。 |
-| `silent` | `Boolean` | 否 | 可选布尔参数，指示Edge Network是否应返回 `204 No Content` 响应时有效负载为空。 使用相应的HTTP状态代码和有效负载报告严重错误。 |
+| `requestId` | `String` | 否 | 外部请求跟踪ID。 如果未提供任何内容，Edge Network将为您生成一个，并将其返回至响应正文/标头。 |
+| `silent` | `Boolean` | 否 | 可选布尔参数，指示Edge Network是否应返回 `204 No Content` 有效负载为空的响应。 使用相应的HTTP状态代码和有效负载报告严重错误。 |
 
 ### 响应 {#notifications-response}
 
-成功响应将返回以下状态之一，并且 `requestID` 请求中没有提供该请求的话。
+成功响应将返回以下状态之一，并且 `requestID` 请求中没有提供该请求的情况。
 
 * `202 Accepted` 成功处理请求时；
-* `204 No Content` 成功处理请求后，以及 `silent` 参数已设置为 `true`；
-* `400 Bad Request` 请求格式不正确（例如，未找到强制的主标识）时。
+* `204 No Content` 成功处理请求时，并且 `silent` 参数已设置为 `true`；
+* `400 Bad Request` 当请求格式不正确时（例如，未找到强制的主标识）。
 
 ```json
 {

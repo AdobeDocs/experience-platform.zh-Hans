@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2181'
-ht-degree: 10%
+source-wordcount: '2179'
+ht-degree: 11%
 
 ---
 
@@ -112,7 +112,7 @@ Adobe Experience Platform中的新增功能：
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| 布拉泽 | Braze是一个全面的客户参与平台，可为客户与所喜爱的品牌之间提供相关且令人难忘的体验。 |
+| 布拉泽 | Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。 |
 | Microsoft兵 | Microsoft Bing目标可帮助您在Microsoft展示广告中执行重定位和面向受众的数字营销活动。 |
 | 交易台 | Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。 |
 
@@ -129,7 +129,7 @@ Adobe Experience Platform中的新增功能：
 
 ## Intelligent Services {#intelligent-services}
 
-智能服务可让营销分析师和从业人员在客户体验用例中利用人工智能和机器学习的功能。 借助此功能，营销分析人员可以使用业务级配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
+智能服务可让营销分析师和从业人员在客户体验用例中利用人工智能和机器学习的功能。 借助此功能，营销分析人员可使用商业级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
 
 **主要功能**
 

@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1589'
-ht-degree: 3%
+source-wordcount: '1587'
+ht-degree: 4%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 3%
 
 **修复和改进功能**
 
-* Web SDK现在对Audience ManagerCookie目标值进行编码，类似于 [Data Integration Library(DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en).
+* Web SDK现在对Audience ManagerCookie目标值进行编码，类似于 [Data Integration Library(DIL)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=zh-Hans).
 
 ## 版本2.16.0 - 2023年4月25日
 
