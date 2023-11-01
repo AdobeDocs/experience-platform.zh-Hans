@@ -2,7 +2,7 @@
 title: 根据LiveRamp标识符将受众激活到策划的目标
 type: Tutorial
 description: 了解如何使用LiveRamp RampID将受众从Adobe Experience Platform激活到连接的电视和音频目标以及其他集成。
-source-git-commit: adc7e66fa17484ccb9527650f197acc29ef4d0f1
+source-git-commit: 25cda72508860b57bfa9ad0a729d0329d0f6bd1f
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 您可以通过两个步骤的过程并使用，将受众激活到连接的电视和音频目标。 [LiveRamp — 入门](../catalog/advertising/liveramp-onboarding.md) 和 [LiveRamp — 分发](../catalog/advertising/liveramp-distribution.md) 目标，如下图所示。
 
-![此图显示了通过LiveRamp将受众从Real-Time CDP激活到策划目标的工作流。](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png)
+![此图显示了通过LiveRamp将受众从Real-Time CDP激活到策划目标的工作流。](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
 
 首先，将受众从Real-Time CDP导出到 [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) 目标，作为CSV文件。
 
