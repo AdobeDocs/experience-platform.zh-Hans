@@ -2,7 +2,7 @@
 title: AI/ML功能管道
 description: 了解如何使用Data Distiller通过源自Adobe Experience Platform数据的功能丰富您的机器学习管道。 将原始数据转换为功能并投放功能数据，以训练或评分支持您的营销用例的模型。
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 1%
@@ -100,13 +100,13 @@ Is this the correct doc to link to about creating an Oauth2 API credential?:
 ../../../destinations/destination-sdk/functionality/destination-configuration/oauth2-authentication.md
  -->
 
-<!-- See [Authenticate and access Experience Platform APIs](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) detailed instructions instructions on creating an API credential. -->
+<!-- See [Authenticate and access Experience Platform APIs](../../../landing/api-authentication.md) detailed instructions instructions on creating an API credential. -->
 
 <!-- ### Step 2: Get the necessary attribute-based access control permissions for your credential {#get-permissions}
 
 An API credential will not be able to access Platform APIs without explicit permissions granted by your organization's Adobe System Admin for specific Platform services and data. A System Admin can [assign the API credential to a role](../../../landing/api-authentication.md#assign-api-to-a-role) and manage permissions for role in the [!UICONTROL Permissions] UI in Platform. 
 
-You will need to provide your system admin with the name and technical account email of your API credential. System admins can refer to the documentation to find information about how to [manage API credentials for a role](https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/permissions.html#manage-api-credentials-for-role) and [grant the required permissions to access Platform resources](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#get-abac-permissions).
+You will need to provide your system admin with the name and technical account email of your API credential. System admins can refer to the documentation to find information about how to [manage API credentials for a role](../../../access-control/abac/ui/permissions.md#manage-api-credentials-for-role) and [grant the required permissions to access Platform resources](../../../landing/api-authentication.md#get-abac-permissions).
 
 The minimum permissions required to execute these notebooks include:
 

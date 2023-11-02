@@ -1,21 +1,21 @@
 ---
 title: 对Ad Hoc架构的基于属性的访问控制支持
-description: 用于限制访问通过Adobe Experience Platform查询服务生成的临时架构中的数据字段的指南。
+description: 该指南用于限制对通过Adobe Experience Platform查询服务生成的临时架构中的数据字段的访问。
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: 91f318596bf268aa93e8b2df9c13774aab76d13a
+source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1013'
 ht-degree: 2%
 
 ---
 
 # 对临时架构的基于属性的访问控制支持
 
-引入Adobe Experience Platform的任何数据均由Experience Data Model (XDM)架构封装，并且可能受到贵组织或法律法规定义的使用限制的约束。
+带入Adobe Experience Platform的任何数据将由Experience Data Model (XDM)架构封装，并且可能会受到贵组织或法律法规定义的使用限制的约束。
 
-通过在未指定架构时通过查询服务执行CTAS查询，自动生成临时架构。 通常需要限制使用临时架构的某些字段或数据集来控制对敏感个人数据和个人身份信息的访问。 Adobe Experience Platform通过允许您使用基于属性的访问控制功能通过Platform UI标记架构字段，从而简化此访问控制。
+通过在未指定架构时通过查询服务执行CTAS查询，自动生成临时架构。 通常，有必要限制使用临时架构的某些字段或数据集来控制对敏感个人数据和个人身份信息的访问。 Adobe Experience Platform通过允许您使用基于属性的访问控制功能通过Platform UI为架构字段添加标签，从而简化此访问控制。
 
-可以随时应用标签，从而灵活地选择管理数据的方式。 不过，最佳实践是在数据被摄取到Platform后立即标记数据，或者当数据在Platform中可用时立即标记数据。
+您可以随时应用标签，灵活地选择管理数据的方式。 不过，最佳实践是在数据被摄取到Platform后立即对其进行标记，或者是在数据可用于Platform后立即进行标记。
 
 基于模式的标签是基于属性的访问控制的重要组成部分，可以更好地管理授予用户或用户组的访问权限。 Adobe Experience Platform允许您通过创建和应用标签来限制对临时架构的任何字段的访问。
 
@@ -23,18 +23,18 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [Experience Data Model (XDM)系统](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans)：Experience Platform用于组织客户体验数据的标准化框架。
-   * [[!DNL Schema Editor]](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/overview.html?lang=zh-Hans)：了解如何在Platform UI中创建和管理架构和其他资源。
+* [Experience Data Model (XDM)系统](../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+   * [[!DNL Schema Editor]](../../xdm/ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
 * [[!DNL Data Governance]](../../data-governance/home.md)：了解如何操作 [!DNL Data Governance] 允许您管理客户数据并确保遵守适用于数据使用的法规、限制和策略。
-* [基于属性的访问控制](../../access-control/abac/overview.md)：基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够基于属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到临时或常规架构字段的标签。 管理员定义包含用于管理用户访问权限的属性的访问策略。
+* [基于属性的访问控制](../../access-control/abac/overview.md)：基于属性的访问控制是Adobe Experience Platform的一项功能，它允许管理员根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到临时或常规架构字段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 
 ## 创建临时架构
 
 执行查询并生成结果后，将自动生成临时架构并将其添加到架构清单。
 
-要添加数据标签，请导航到 [!UICONTROL 架构] 通过选择 [!UICONTROL 架构] Platform UI的左边栏中。 此时将显示架构清单。
+要添加数据标签，请导航至 [!UICONTROL 架构] 通过选择 [!UICONTROL 架构] Platform UI的左边栏中。 将显示架构清单。
 
 >[!NOTE]
 >
@@ -42,21 +42,21 @@ ht-degree: 2%
 
 ## 在Platform UI的架构清单中发现临时架构 {#discover-ad-hoc-schemas}
 
-要在Platform UI中启用临时架构显示，请选择过滤器图标(![过滤器图标。](../images/data-governance/filter.png))，然后选择**[!UICONTROL 显示临时架构] 左边栏中显示的内容。
+要在Platform UI中启用临时架构显示，请选择过滤器图标(![过滤器图标。](../images/data-governance/filter.png))，然后选择**[!UICONTROL 显示临时架构] 在显示的左边栏中。
 
-![启用了“显示临时架构”切换的“架构”功能板筛选器选项左边栏。](../images/data-governance/adhoc-schema-toggle.png)
+![启用了“显示临时架构”切换的架构功能板筛选器选项左边栏。](../images/data-governance/adhoc-schema-toggle.png)
 
-从可用列表中选择最近创建的临时架构的名称。 此时将显示临时架构结构的可视化图表。
+从可用列表中选择最近创建的临时方案的名称。 此时将显示临时架构结构的可视化图表。
 
-![示例临时架构结构图。](../images/data-governance/adhoc-schema-structure-diagram.png)
+![临时模式结构图示例。](../images/data-governance/adhoc-schema-structure-diagram.png)
 
 ## 编辑治理标签
 
-要编辑临时架构的数据标签，请选择 [!UICONTROL 标签] 选项卡。 标签工作区允许您应用、创建和编辑临时架构字段的标签，并通过UI控制访问权限。 此处显示了临时架构中的所有字段。
+要编辑临时架构的数据标签，请选择 [!UICONTROL 标签] 选项卡。 标签工作区允许您将标签应用、创建和编辑到临时架构字段，并通过UI控制访问权限。 此处显示了临时架构中的所有字段。
 
 ## 编辑架构或字段的标签
 
-要编辑整个架构的标签，请选择铅笔图标(![铅笔图标。](../images/data-governance/edit-icon.png))到架构名称一侧 [!UICONTROL 标签] 选项卡。
+要编辑整个架构的标签，请选择铅笔图标(![铅笔图标。](../images/data-governance/edit-icon.png))添加到架构名称一侧 [!UICONTROL 标签] 选项卡。
 
 ![在模式工作区中，标签视图以铅笔图标突出显示。](../images/data-governance/edit-entire-schema-labels.png)
 
@@ -66,11 +66,11 @@ ht-degree: 2%
 
 ## “编辑标签”弹出框
 
-此 [!UICONTROL 编辑标签] 弹出窗口即会出现。 从该视图中，您可以通过UI创建或编辑现有治理标签。
+此 [!UICONTROL 编辑标签] 弹出窗口出现。 从该视图中，您可以通过UI创建或编辑现有治理标签。
 
 ![“编辑标签”弹出框。](../images/data-governance/edit-labels-popover.png)
 
-请参阅文档以了解如何执行以下操作 [创建或编辑所选架构或字段的标签](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/labels.html#edit-the-labels-for-the-schema-or-field).
+请参阅文档以了解如何 [创建或编辑所选架构或字段的标签](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field).
 
 >[!NOTE]
 >
@@ -78,20 +78,20 @@ ht-degree: 2%
 
 还可以使用权限工作区创建标签。 请参阅 [有关在权限工作区中创建标签的指南](../../access-control/abac/ui/labels.md) 以获取说明。
 
-应用了基于属性的相应级别的访问控制后，当用户尝试访问不可访问的数据时，以下系统行为适用于通过查询服务执行的任何查询：
+应用基于属性的访问控制的适当级别后，当用户尝试访问不可访问的数据时，以下系统行为适用于通过查询服务执行的任何查询：
 
-1. 如果用户被拒绝访问架构中的某个字段，则用户将无法对受限字段进行读取或写入。 这适用于以下常见方案：
+1. 如果用户被拒绝访问架构中的某个字段，则用户将无法读取或写入受限字段。 这适用于以下常见方案：
 
    * 当用户尝试执行仅具有受限列的查询时，系统将引发该列不存在的错误。
    * 当用户尝试执行具有多个列（包括受限列）的查询时，系统将仅返回所有非受限列的输出。
 
-1. 如果用户请求访问计算字段，则要求用户有权访问构成中使用的所有字段，否则系统将拒绝访问计算字段。
+1. 如果用户请求访问计算字段，则要求用户具有对构成中使用的所有字段的访问权限，否则系统将拒绝对计算字段的访问。
 
-如果在ad hoc模式上设置了身份或主要身份，则系统会自动执行任何关联的数据卫生请求，并清理与身份列关联的数据集中的数据。
+如果在ad hoc模式上设置了身份或主身份，则系统自动接受任何关联的数据卫生请求，并清理与身份列关联的数据集中的数据。
 
 ## 后续步骤
 
-阅读本文档后，您对如何将数据使用标签添加到通过查询服务CTAS查询创建的临时架构有了更好的了解。 如果您尚未这样做，则以下文档有助于提高您对查询服务中的数据治理的理解：
+阅读本文档后，您对如何将数据使用标签添加到通过查询服务CTAS查询创建的临时架构有了更好的了解。 如果您尚未这样做，以下文档有助于您更好地了解查询服务中的数据治理：
 
 * [临时架构身份](./ad-hoc-schema-identities.md)
-* [数据治理](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans)
+* [数据管理](../../data-governance/home.md)
