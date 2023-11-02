@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 36e38824963139414f2803ef4127706d1e521d1a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1748'
-ht-degree: 21%
+source-wordcount: '1740'
+ht-degree: 19%
 
 ---
 
@@ -67,25 +67,25 @@ ht-degree: 21%
 >id="platform_permissions_labels_about"
 >title="标签是什么？"
 >abstract="通过标签，可根据适用于数据的使用策略将数据集和字段分类。Platform 提供若干由 Adobe 定义的“核心”数据使用标签，这些标签涵盖适用于数据治理的多种常见限制。例如，通过 RHD（受监管的健康数据）等敏感的“S”标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#understanding-data-usage-labels" text="数据使用标签概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about_create"
 >title="创建新标签"
 >abstract="可自行创建自定义标签以适合组织需求。自定义标签可用于将数据治理和访问控制配置应用于您的数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#manage-labels" text="管理自定义标签"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="管理自定义标签"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
 >abstract="角色是将与您的 Platform 实例交互的用户的类型分类的方法，还是访问控制策略的构建块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
 >abstract="可创建新角色以更好地将访问您的 Platform 实例的用户分类。例如，可为内部营销团队创建一个角色，并将 RHD 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans#create-a-new-role" text="创建新角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html#create-a-new-role" text="创建新角色"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_details"
@@ -179,19 +179,19 @@ ht-degree: 21%
 >id="platform_permissions_policies_about"
 >title="What are policies?"
 >abstract="Policies are statements that bring attributes together to establish permissible and impermissible actions. Every organization comes with a default policy that you must activate to define rules for resources like segments and schema fields. Default policies can neither be edited nor deleted. However, default policies can be activated or deactivated."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en" text="Manage policies"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html" text="Manage policies"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about_create"
 >title="Create a policy"
 >abstract="Create a policy to define the actions that your users can and cannot take against your segments and schema fields."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#create-a-new-policy" text="Create a policy"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html#create-a-new-policy" text="Create a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Configure permissible and impermissible actions for a policy"
 >abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Edit a policy"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html#edit-a-policy" text="Edit a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_resource"

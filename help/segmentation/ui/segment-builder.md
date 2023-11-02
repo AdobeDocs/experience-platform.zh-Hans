@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: f3bad477156db8f8cf79582c7a6cc2562e983b63
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '3354'
+source-wordcount: '3352'
 ht-degree: 7%
 
 ---
@@ -253,7 +253,7 @@ ht-degree: 7%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 构建区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分估算了生成的区段定义的大小，这使您可以在构建受众本身之前根据需要调整区段定义。
 

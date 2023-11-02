@@ -4,10 +4,10 @@ title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 badgeLimitedAvailability: label="有限可用性" type=Caution
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2123'
-ht-degree: 11%
+source-wordcount: '2121'
+ht-degree: 10%
 
 ---
 
@@ -110,7 +110,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 >id="platform_audiences_lookAlike_influentialFactors"
 >title="影响因素"
 >abstract="影响因素包括属性、事件和受众成员资格，这些因素对于解释配置文件与基础受众成员的相似性非常重要。数据使用标签和策略可用于排除某些数据，使其不被视为相似模型中的影响因素。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=zh-Hans#exclude" text="排除数据"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html#exclude" text="排除数据"
 
 影响因素部分显示影响所选基础受众相似人群拓展模型的前100个因素。 这些影响因素包括用户档案属性、体验事件和受众成员资格，它们在解释基础受众的相似之处时最为重要。 通过了解主要影响因素，您可以更好地为此受众以及从中创建的任何相似受众将营销内容个性化。 请注意，不会显示影响相似人群拓展模型的所有影响因素。
 
