@@ -4,14 +4,22 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 70abe974aa7f94ea172d7ab90aacaf765b88de0e
+source-git-commit: 5b3bfc38a1b159d57c7be6733b9c2515ba72c3c6
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '564'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform Debugger发行说明
+
+## 版本1.5.1 - 2023年11月2日
+
+### 修复和改进功能
+
+* 修复了Analytics事件将被忽略或重复的问题。
+* 修复了超出最大状态存储大小的问题。
+* 修复了边缘日志搜索无法过滤事件的问题。
 
 ## 1.5.0版 — 2023年10月19日
 
