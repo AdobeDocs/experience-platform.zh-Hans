@@ -6,7 +6,7 @@ exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1148'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -97,7 +97,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 连接到目标时，设置数据管理策略是完全可选的。 请查看Experience Platform [数据治理概述](/help/data-governance/policies/overview.md) 以了解更多详细信息。
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

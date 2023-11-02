@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 58fcf3cbff242f65969193fd2e3d6eea0e6539aa
+source-git-commit: 4cb570fbdb76e53dd0a8c4ee78c31d2a886e5dc1
 workflow-type: tm+mt
-source-wordcount: '1820'
-ht-degree: 7%
+source-wordcount: '1849'
+ht-degree: 8%
 
 ---
 
@@ -60,7 +60,7 @@ ht-degree: 7%
 
 导出历程时，不支持将自定义身份类型作为依赖对象。
 
-## 将对象导出到资源包中 {#export-objects}
+## 将对象导入包 {#export-objects}
 
 >[!NOTE]
 >
@@ -237,6 +237,12 @@ You are taken to the [!UICONTROL Package object and dependencies] page where you
 >[!NOTE]
 >
 >导入完成后，您将在Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
+
+## 视频教程
+
+以下视频旨在支持您了解沙盒工具，并概述如何创建新包、发布包和导入包。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3424763/?learn=on)
 
 ## 后续步骤
 

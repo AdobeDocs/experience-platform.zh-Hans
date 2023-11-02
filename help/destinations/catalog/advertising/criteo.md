@@ -6,7 +6,7 @@ exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1042'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -107,7 +107,7 @@ Criteo支持可信且有影响力的广告，为开放互联网上的每位消�
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate-segments}
+## 激活此目标的受众 {#activate-segments}
 
 >[!IMPORTANT]
 > 

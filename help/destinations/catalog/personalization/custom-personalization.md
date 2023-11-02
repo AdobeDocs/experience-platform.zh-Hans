@@ -6,7 +6,7 @@ exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '913'
-ht-degree: 8%
+ht-degree: 10%
 
 ---
 
@@ -88,7 +88,7 @@ ht-degree: 8%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

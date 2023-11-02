@@ -7,7 +7,7 @@ exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
 source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
 source-wordcount: '4313'
-ht-degree: 10%
+ht-degree: 11%
 
 ---
 
@@ -119,10 +119,10 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。客户人工智能通过分析现有的消费者体验事件数据来预测 **流失或转化倾向分数**. 这些高精度的客户倾向模型允许进行更精确的分段和定位。 此 [得分分布](#customer-ai-distribution-of-scores) 和 [评分摘要](#customer-ai-scoring-summary) 分析会在您的受众中展示该划分。 它们会突出显示哪些用户档案具有高度/低度/中度的倾向性，以及它们在用户档案计数中的分布方式。
 
-* [[!UICONTROL 客户人工智能评分摘要]](#customer-ai-scoring-summary)
-* [[!UICONTROL 得分的客户人工智能分布]](#customer-ai-distribution-of-scores)
+* [[!UICONTROL 客户人工智能评分汇总]](#customer-ai-scoring-summary)
+* [[!UICONTROL 客户人工智能分数分布]](#customer-ai-distribution-of-scores)
 
-### [!UICONTROL 得分的客户人工智能分布] {#customer-ai-distribution-of-scores}
+### [!UICONTROL 客户人工智能分数分布] {#customer-ai-distribution-of-scores}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_distributionOfScores"
@@ -151,7 +151,7 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 
 有关客户人工智能的更多信息，请访问 [探索见解UI指南](../../intelligent-services/customer-ai/user-guide/discover-insights.md).
 
-### [!UICONTROL 客户人工智能评分摘要] {#customer-ai-scoring-summary}
+### [!UICONTROL 客户人工智能评分汇总] {#customer-ai-scoring-summary}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_scoringSummary"
@@ -190,7 +190,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 * [[!UICONTROL 单一标识配置文件]](#single-identity-profiles)
 * [[!UICONTROL 按身份列出的单一身份配置文件]](#single-identity-profiles-by-identity)
 * [[!UICONTROL 未分段的配置文件]](#unsegmented-profiles)
-* [[!UICONTROL 未分段配置文件变化趋势]](#unsegmented-profiles-change-trend)
+* [[!UICONTROL 未分段的配置文件变化趋势]](#unsegmented-profiles-change-trend)
 * [[!UICONTROL 按标识列出的未分段的配置文件]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL 受众]](#audiences)
 * [[!UICONTROL 映射到目标状态的受众]](#audiences-mapped-to-destination-status)
@@ -271,7 +271,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesbyidentity"
->title="各个标识的配置文件"
+>title="按标识列出的配置文件"
 >abstract="此小部件按标识显示您的配置文件存储中所有合并配置文件的明细。"
 
 此 **[!UICONTROL 按身份列出的配置文件]** 构件显示配置文件存储中所有合并配置文件的身份细分。 按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
@@ -335,7 +335,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![未分段的配置文件小部件。](../images/profiles/unsegmented-profiles.png)
 
-### [!UICONTROL 未分段配置文件变化趋势] {#unsegmented-profiles-change-trend}
+### [!UICONTROL 未分段的配置文件变化趋势] {#unsegmented-profiles-change-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"

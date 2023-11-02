@@ -113,7 +113,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ![connect-partner.png](./images/connect-partner.png)
 
-### 创建信息源 {#create-feed}
+### 创建馈送 {#create-feed}
 
 >[!CONTEXTUALHELP]
 >id="platform_segment_match_marketing"

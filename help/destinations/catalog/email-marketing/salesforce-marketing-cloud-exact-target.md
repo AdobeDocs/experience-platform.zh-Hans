@@ -164,7 +164,7 @@ A [!DNL Salesforce Marketing Cloud] 订购 [[!DNL Marketing Cloud Engagement]](h
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**，搜索 [!DNL (API) Salesforce Marketing Cloud]. 或者，您可以将其定位到 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce Marketing Cloud] 凭据](#gather-credentials) 部分获取任何指导。
 
@@ -192,7 +192,7 @@ A [!DNL Salesforce Marketing Cloud] 订购 [[!DNL Marketing Cloud Engagement]](h
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

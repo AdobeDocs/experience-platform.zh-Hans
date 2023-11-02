@@ -6,7 +6,7 @@ exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1620'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -101,7 +101,7 @@ A [!DNL Marketing Cloud Account Engagement] 订购 [Marketing Cloud客户参与]
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**，搜索 [!DNL Salesforce Marketing Cloud Account Engagement]. 或者，您可以将其定位到 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要验证目标，请选择 **[!UICONTROL 连接到目标]**. 您将导航到 [!DNL Salesforce] 登录页面。 输入您的 [!DNL Marketing Cloud Account Engagement] 帐户凭据并选择 [!DNL Log In].
 
@@ -133,7 +133,7 @@ A [!DNL Marketing Cloud Account Engagement] 订购 [Marketing Cloud客户参与]
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

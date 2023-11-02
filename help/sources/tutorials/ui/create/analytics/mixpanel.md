@@ -5,7 +5,7 @@ exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '841'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -59,7 +59,7 @@ ht-degree: 9%
 
 ![新建](../../../../images/tutorials/create/mixpanel-export-events/new.png)
 
-## 选择项目ID和时区 {#project-id-and-timezone}
+## 选择项目 ID 和时区 {#project-id-and-timezone}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"

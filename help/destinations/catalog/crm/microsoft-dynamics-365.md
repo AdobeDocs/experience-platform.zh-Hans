@@ -117,7 +117,7 @@ ht-degree: 1%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Dynamics 365]. 或者，您可以将其定位到 **[!UICONTROL CRM]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要验证目标，请选择 **[!UICONTROL 连接到目标]**.
 ![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/authenticate-destination.png)
@@ -146,7 +146,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

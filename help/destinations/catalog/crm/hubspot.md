@@ -6,7 +6,7 @@ exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1600'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -105,7 +105,7 @@ ht-degree: 1%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL HubSpot]. 或者，您可以将其定位到 **[!UICONTROL CRM]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 填写下面的必填字段。 请参阅 [收集 [!DNL HubSpot] 专用应用程序访问令牌](#gather-credentials) 部分获取任何指导。
 * **[!UICONTROL 持有者令牌]**：您的访问令牌 [!DNL HubSpot] 专用应用程序。
@@ -129,7 +129,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 >

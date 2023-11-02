@@ -5,7 +5,7 @@ exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '874'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -71,7 +71,7 @@ ht-degree: 4%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 1. 查找 [!DNL Twitter Custom Audiences] 目标目录中的目标并选择 **[!UICONTROL 设置]**.
 2. 选择 **[!UICONTROL 连接到目标]**.
@@ -97,7 +97,7 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

@@ -6,7 +6,7 @@ exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '2156'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -92,7 +92,7 @@ ht-degree: 3%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL (API) Oracle Eloqua]. 或者，您可以将其定位到 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_companyname_username"
@@ -129,7 +129,7 @@ ht-degree: 3%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

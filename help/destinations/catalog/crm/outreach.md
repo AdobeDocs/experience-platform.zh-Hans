@@ -6,7 +6,7 @@ exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1742'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Outreach]. 或者，您可以在CRM类别下找到它。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要验证目标，请选择 **[!UICONTROL 连接到目标]**.
 
@@ -131,7 +131,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

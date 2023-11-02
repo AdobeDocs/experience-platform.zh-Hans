@@ -6,7 +6,7 @@ exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '3117'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -150,7 +150,7 @@ ht-degree: 0%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL Salesforce CRM]. 或者，您可以将其定位到 **[!UICONTROL CRM]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce CRM] 凭据](#gather-credentials) 部分获取任何指导。
 |凭据 |描述 | | — | — | | **[!UICONTROL 用户名]** |您的 [!DNL Salesforce] 帐户用户名。 | | **[!UICONTROL 密码]** |由 [!DNL Salesforce] 帐户密码已附加到您的 [!DNL Salesforce] 安全令牌。<br>连接的值采用以下形式 `{PASSWORD}{TOKEN}`.<br> 注意，请勿使用任何大括号或空格。<br>例如，如果您的 [!DNL Salesforce] 密码为 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全令牌为 `TOKEN12345....0000`，则您将在 **[!UICONTROL 密码]** 字段为 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自定义域]** |您的 [!DNL Salesforce] 域前缀。 <br>例如，如果您的域是 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 作为值。 | | **[!UICONTROL 客户端ID]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Key`. | | **[!UICONTROL 客户端密码]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Secret`. |
@@ -176,7 +176,7 @@ ht-degree: 0%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

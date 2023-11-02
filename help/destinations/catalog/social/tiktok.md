@@ -6,7 +6,7 @@ exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1040'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
@@ -66,7 +66,7 @@ TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identi
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，您将被重定向以登录 [!DNL TikTok Ads Manager] 帐户并授权Adobe代表您管理受众。
 
@@ -90,7 +90,7 @@ TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identi
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

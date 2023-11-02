@@ -38,7 +38,7 @@ ht-degree: 8%
 * **身份类型**：给定命名空间的分类。
 * **描述**：（可选）您可以提供的有关给定命名空间的任何补充信息。
 
-### 身份类型 {#identity-type}
+### 标识类型 {#identity-type}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_create_namespace"
@@ -55,7 +55,7 @@ ht-degree: 8%
 
 Experience Platform中提供了以下标识类型：
 
-| 身份类型 | 描述 |
+| 标识类型 | 描述 |
 | --- | --- |
 | Cookie ID | Cookie ID识别Web浏览器。 这些身份对于扩展至关重要，并构成身份图的大多数。 然而，它们自然会快速衰变，并随着时间而失去价值。 |
 | 跨设备ID | 跨设备ID识别个人，通常将其他ID绑定在一起。 例如，登录ID、CRM ID和忠诚度ID。 这表明 [!DNL Identity Service] 以敏感地处理值。 |
@@ -93,7 +93,7 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | TNTID | 表示Adobe Target的命名空间。 请参阅以下文档： [Target](https://experienceleague.adobe.com/docs/target/using/target-home.html) 以了解更多信息。 |
 | Windows AID | 表示Windows广告ID的命名空间。 请参阅以下文档： [Windows广告ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041) 以了解更多信息。 |
 
-### 查看身份命名空间 {#view-identity-namespaces}
+### 查看标识命名空间 {#view-identity-namespaces}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_view_integration_identities"

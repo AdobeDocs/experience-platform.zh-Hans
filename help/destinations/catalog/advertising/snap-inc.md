@@ -5,7 +5,7 @@ exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1028'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -76,7 +76,7 @@ ht-degree: 1%
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请执行以下步骤：
 
@@ -110,7 +110,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

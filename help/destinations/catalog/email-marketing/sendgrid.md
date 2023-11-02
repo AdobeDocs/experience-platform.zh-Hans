@@ -6,7 +6,7 @@ exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '1571'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -79,7 +79,7 @@ SendGrid支持激活下表中描述的标识。 了解有关 [身份](/help/iden
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 1. 在 [!DNL Adobe Experience Platform] 控制台，导航到 **目标**.
 
@@ -111,7 +111,7 @@ SendGrid支持激活下表中描述的标识。 了解有关 [身份](/help/iden
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

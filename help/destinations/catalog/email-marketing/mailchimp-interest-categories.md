@@ -6,7 +6,7 @@ exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '2388'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -107,7 +107,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]**，搜索 [!DNL Mailchimp Interest Categories]. 或者，您也可以在 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**.
 
@@ -148,7 +148,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
