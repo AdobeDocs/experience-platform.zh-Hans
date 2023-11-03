@@ -1,15 +1,15 @@
 ---
-title: 通过潜在客户发掘用例吸引和获得新客户
-description: 了解如何通过由 Real-Time CDP 中的合作伙伴数据支持实现的潜在客户发掘用例吸引和获得新客户。
+title: 在不依赖第三方Cookie的情况下吸引和赢取新客户
+description: 了解如何通过潜在用例吸引和赢取新客户，而无需依赖第三方Cookie。
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: ec6375a025833027fda01c412124321132aefd65
+source-git-commit: 645295958ea6f94a9f9da13517b0fa1d02010b52
 workflow-type: tm+mt
-source-wordcount: '1960'
-ht-degree: 96%
+source-wordcount: '2077'
+ht-degree: 86%
 
 ---
 
-# 通过潜在客户发掘用例吸引和获得新客户
+# 在不依赖第三方Cookie的情况下吸引和赢取新客户
 
 >[!AVAILABILITY]
 >
@@ -19,9 +19,17 @@ ht-degree: 96%
 
 ![潜在客户发掘用例大致视觉概述。](/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-overview.png)
 
+## 为什么考虑此用例 {#why-this-use-case}
+
+各品牌同时面临着严峻的挑战：如何在不依赖第三方Cookie、预算有限、对透明度和广告支出回报要求较高的情况下，负责任地执行漏斗顶级的客户获取用例。
+
+Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的数据管理平台(DMP)用例转换为无Cookie的替代方案，并且可将自助式分段、受众管理和激活的全部复杂性和功能整合到单个系统中。 Adobe始终关注通过专利数据治理和同意框架负责任地使用数据，这一点丝毫没有影响。
+
+例如，在需要运行营销活动以吸引潜在客户成为用户或已知客户时，请按照此用例中描述的步骤进行操作。
+
 ## 先决条件和规划 {#prerequisites-and-planning}
 
-当您考虑使用 Real-Time CDP 中的合作伙伴数据支持接触和获取新客户时，请在规划过程中考虑以下先决条件：
+当您考虑联系和获得新客户时，请考虑在计划流程中的以下先决条件：
 
 * 您希望将合作伙伴提供的配置文件摄取到 Real-Time CDP 中并进行刷新的节奏是什么？
 * 您的下游目标需要什么标识？
@@ -219,5 +227,5 @@ ht-degree: 96%
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
 * [用受信任的数据合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)，以改善您的数据基础、了解客户群的新情况并获得更好的受众优化。
-* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
 * [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。

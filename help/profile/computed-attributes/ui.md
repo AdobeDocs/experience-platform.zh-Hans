@@ -2,10 +2,10 @@
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: cf01c18c8ea710492c8a2c8542c8a4580d5f0dcf
 workflow-type: tm+mt
-source-wordcount: '1485'
-ht-degree: 9%
+source-wordcount: '1567'
+ht-degree: 8%
 
 ---
 
@@ -147,6 +147,12 @@ ht-degree: 9%
 ![此 [!UICONTROL 编辑计算属性] 页面。](./images/ui/edit.png)
 
 ## 使用计算属性 {#usage}
+
+>[!IMPORTANT]
+>
+>如果将计算属性与 **最近** 函数中，您可以 **必须** include **两者** 计算属性对象中的值和时间戳值。
+>
+>例如，如果您创建的区段定义正在查找“具有有效电子邮件地址的所有用户档案”，其中电子邮件地址字段由具有最新函数的计算属性填充，则 **必须** 包含电子邮件地址的值 **和** 电子邮件地址的时间戳已存在。
 
 创建计算属性后，可以使用 **已发布** 计算的其他下游服务中的属性。 由于计算属性是在您的配置文件合并架构上创建的配置文件属性字段，因此您可以查找实时客户配置文件的计算属性值，在受众中使用它们，将其激活到目标，或在Adobe Journey Optimizer的历程中使用它们进行个性化。
 

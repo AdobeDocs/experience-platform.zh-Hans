@@ -2,7 +2,7 @@
 title: 计算属性API端点
 description: 了解如何使用实时客户个人资料API创建、查看、更新和删除计算属性。
 exl-id: f217891c-574d-4a64-9d04-afc436cf16a9
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 94c94b8a3757aca1a04ff4ffc3c62e84602805cc
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 2%
@@ -50,7 +50,7 @@ GET /attributes?{QUERY_PARAMETERS}
 | `limit` | 指定作为响应的一部分返回的最大项数的参数。 此参数的最小值为1，最大值为40。 如果不包含此参数，则默认情况下将返回20项。 | `limit=20` |
 | `offset` | 一个参数，指定在返回项目之前跳过的项目数。 | `offset=5` |
 | `sortBy` | 一个参数，指定返回项的排序顺序。 可用选项包括 `name`， `status`， `updateEpoch`、和 `createEpoch`. 您还可以选择是否通过不包括或包括来按升序或降序排序 `-` 在排序选项前。 默认情况下，这些项将按以下方式排序 `updateEpoch` 按降序排列。 | `sortBy=name` |
-| `property` | 一个参数，可让您筛选各种计算属性字段。 支持的属性包括 `name`， `createEpoch`， `mergeFunction.value`， `updateEpoch`、和 `status`. 支持的操作取决于列出的属性。 <ul><li>`name`： `EQUAL` (=)， `NOT_EQUAL` (！=)， `CONTAINS` (=contains())， `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=包含()), `NOT_CONTAINS` (!=包含())</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=)， `CONTAINS` (=contains())， `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
+| `property` | 一个参数，可让您筛选各种计算属性字段。 支持的属性包括 `name`， `createEpoch`， `mergeFunction.value`， `updateEpoch`、和 `status`. 支持的操作取决于列出的属性。 <ul><li>`name`： `EQUAL` (=)， `NOT_EQUAL` (！=)， `CONTAINS` (=contains())， `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=)， `CONTAINS` (=contains())， `NOT_CONTAINS` (=!contains())</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=)， `CONTAINS` (=contains())， `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
 
 **请求**
 

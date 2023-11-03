@@ -2,10 +2,10 @@
 title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: 645295958ea6f94a9f9da13517b0fa1d02010b52
 workflow-type: tm+mt
-source-wordcount: '1110'
-ht-degree: 93%
+source-wordcount: '1263'
+ht-degree: 80%
 
 ---
 
@@ -18,6 +18,16 @@ ht-degree: 93%
 使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 
 ![利用合作伙伴提供的属性扩充配置文件用例高级视觉概述。](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
+
+## 为什么考虑此用例 {#why-this-use-case}
+
+大多数品牌（甚至那些拥有第一方数据的品牌）都可从简化数据以及更细致地了解客户、其行为、模式和偏好中受益。
+
+Adobe Real-time Customer Data Platform可帮助品牌商通过来自一个或多个可信合作伙伴的宝贵见解、标识符和属性负责任地补充其第一方数据。
+
+Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身份合作伙伴的无缝互操作性，从而在客户生命周期的各个阶段促进个性化、深思熟虑的互动。 这些功能由受信任的数据治理框架提供支持，允许对使用合作伙伴数据的位置和方式进行细微控制。 例如，您可能希望使用合作伙伴提供的分析进行分段，而不是进行个性化。
+
+例如，当您需要使用人口统计和意图信号扩充客户记录时，请按照此用例中描述的步骤操作。
 
 ## 先决条件和规划 {#prerequisites-and-planning}
 
@@ -126,5 +136,5 @@ Commenting out links for now
 探索通过 Real-Time CDP 中的合作伙伴数据支持实现的更多用例：
 
 * 使用 Real-Time CDP 中的第三方数据支持，[通过数据合作伙伴提供的潜在客户配置文件扩充您的配置文件基础并与其交流以获取或接触新客户](/help/rtcdp/partner-data/prospecting.md)。
-* [](/help/rtcdp/partner-data/onsite-personalization.md)利用合作伙伴辅助的认可在访问期间提供个性化现场体验，而无需用户进行身份验证或之前使用过您的品牌。
+* [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md) 在访问期间，用户不会进行身份验证或者没有品牌历史。
 * [扩大了潜在客户配置文件和潜在客户受众的激活范围](/help/destinations/ui/activate-prospect-audiences.md)，以选择目标。

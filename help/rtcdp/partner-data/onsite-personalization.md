@@ -1,15 +1,15 @@
 ---
-title: 使用合作伙伴辅助的访客识别使现场体验个性化
+title: 使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: de8aeb553066405424711e75480204f6136b52ff
+source-git-commit: 77eb2492259cc813db2d6c514d123fa2ad698f67
 workflow-type: tm+mt
-source-wordcount: '2580'
-ht-degree: 96%
+source-wordcount: '2696'
+ht-degree: 92%
 
 ---
 
-# 使用合作伙伴辅助的访客识别使现场体验个性化
+# 使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验
 
 >[!AVAILABILITY]
 >
@@ -17,7 +17,15 @@ ht-degree: 96%
 
 了解如何使用合作伙伴辅助的识别为您的 Web 资产访客营造个性化的体验。使用本教程了解为了向经过身份验证和未经身份验证的访客展现个性化体验，Experience Platform 和其他 Experience Cloud 解决方案中各个元素的实施顺序。
 
-![一张信息图，其中描述如何使用合作伙伴提供的属性为访客营造个性化的体验。](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-steps.png)
+![一张信息图，其中描述如何使用合作伙伴提供的属性为访客营造个性化的体验。](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-overview.png)
+
+## 为什么考虑此用例 {#why-this-use-case}
+
+随着消费者与品牌以各种方式互动，数字体验碎片化变得非常真实，并变得越来越难以解决。 用于具有凝聚力的体验、有针对性的推荐和量身定制的交互的最佳客户参与策略都受用户识别的约束。
+
+在这种情况下，合作伙伴辅助的实时识别可以产生有意义的改变。 通过Adobe，身份合作伙伴可以加入我们复杂的客户端数据收集和市场领先的体验优化产品，从第一次访问开始有效地提高体验交付标准，而无需先前历史记录或身份验证。
+
+这对于身份验证率较低的垂直行业（如包装消费品、在线零售等）特别有用。
 
 ## 行业示例 {#industry-example}
 

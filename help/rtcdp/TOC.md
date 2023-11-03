@@ -4,10 +4,10 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: 5c556d6a846c8ec97bf3aa8b6a6a6d2a64a33be5
 workflow-type: tm+mt
-source-wordcount: '250'
-ht-degree: 98%
+source-wordcount: '254'
+ht-degree: 92%
 
 ---
 
@@ -67,9 +67,10 @@ ht-degree: 98%
 * 用例 {#use-cases}
    * 智能重新参与用例{#intelligent-re-engagement}
       * [以智能的方式重新吸引您的客户](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
-   * 合作伙伴数据用例{#partner-data}
-      * [通过支持潜在客户发掘而吸引和获得新客户](/help/rtcdp/partner-data/prospecting.md)
+   * 客户获取 {#customer-acquisition}
+      * [在不依赖第三方Cookie的情况下吸引和赢取新客户](/help/rtcdp/partner-data/prospecting.md)
+      * [使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验](/help/rtcdp/partner-data/onsite-personalization.md)
+   * 配置文件扩充 {#profile-enrichment}
       * [用合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
-      * [使用合作伙伴辅助的访客识别使现场体验个性化](/help/rtcdp/partner-data/onsite-personalization.md)
 * [Experience Platform 发行说明](https://www.adobe.com/go/platform-release-notes_cn)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary_cn)
