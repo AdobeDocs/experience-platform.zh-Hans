@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中的Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 63839b8918d42bae91df9bac919c546c81be6363
+source-git-commit: f235d210682feba7617b720e514361c2862512f9
 workflow-type: tm+mt
-source-wordcount: '729'
-ht-degree: 21%
+source-wordcount: '749'
+ht-degree: 20%
 
 ---
 
@@ -14,6 +14,11 @@ ht-degree: 21%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## v0.20.1（2023年11月3日）
+
+- 更新了以支持at.js 2.11.2。
+- 修复了在自定义事件上发送的响应令牌中导致不一致的问题。
 
 ## v0.20.0（2023年10月9日）
 
