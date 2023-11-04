@@ -6,7 +6,7 @@ exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
 source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
 source-wordcount: '984'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -102,7 +102,7 @@ AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airshi
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
@@ -122,7 +122,7 @@ AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airshi
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

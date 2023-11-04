@@ -50,7 +50,7 @@ ht-degree: 0%
 
    ![Experience PlatformUI的屏幕截图，其中显示了可用目标的列表，并突出显示了“配置新目标”控件。](../assets/ui/connect-destinations/configure-new-destination.png)
 
-## 向目标进行身份验证 {#authenticate}
+## 验证目标 {#authenticate}
 
 连接到目标的第一步是向目标平台进行身份验证。
 

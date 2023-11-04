@@ -6,7 +6,7 @@ exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
 source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
 workflow-type: tm+mt
 source-wordcount: '714'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -93,7 +93,7 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

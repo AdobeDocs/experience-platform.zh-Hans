@@ -7,7 +7,7 @@ feature: Destinations
 source-git-commit: 48acb9ec2ee093c4b22176785a693b1c1ea742bd
 workflow-type: tm+mt
 source-wordcount: '1201'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -47,7 +47,7 @@ ht-degree: 9%
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
-      * [（Beta版）使用计算字段导出平面架构文件中的阵列](/help/destinations/ui/export-arrays-calculated-fields.md)
+      * [(Beta) 使用计算字段导出平面模式文件中的数组](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)

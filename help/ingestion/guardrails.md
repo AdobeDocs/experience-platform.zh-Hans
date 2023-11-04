@@ -3,9 +3,9 @@ keywords: Experience Platform；故障诊断；护栏；指南；
 title: 数据引入的护栏
 description: 本文档提供了有关Adobe Experience Platform中数据摄取防护的指南
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 008537dffff4cc428de9070964446f4e7ebf039f
+source-git-commit: 0e609ce278af0c93503f05778887ad1bd881524a
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '567'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,10 @@ ht-degree: 1%
 
 ## 后续步骤
 
-有关Experience Platform中数据和处理护栏的更多信息，请参阅以下文档：
+请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 
-* [Real-time Customer Profile数据的护栏](../profile/guardrails.md)
-* [Identity Service数据的护栏](../identity-service/guardrails.md)
+* [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
+* [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2P — 主要和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

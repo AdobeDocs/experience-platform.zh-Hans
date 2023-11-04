@@ -5,11 +5,11 @@ exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
 source-wordcount: '841'
-ht-degree: 26%
+ht-degree: 28%
 
 ---
 
-# 浏览数据生命周期工作单 {#browse-work-orders}
+# 浏览数据生命周期工单 {#browse-work-orders}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
@@ -60,7 +60,7 @@ ht-degree: 26%
 
 {style="table-layout:auto"}
 
-## 查看工作单的详细信息 {#view-details}
+## 查看工单的详细信息 {#view-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"

@@ -7,7 +7,7 @@ exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
 source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
 workflow-type: tm+mt
 source-wordcount: '1065'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -136,7 +136,7 @@ ht-degree: 7%
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-segment-streaming-destinations/review.png)
 
-### 同意政策评估 {#consent-policy-evaluation}
+### 同意策略评估 {#consent-policy-evaluation}
 
 如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 

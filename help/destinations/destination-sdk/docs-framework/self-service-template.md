@@ -5,7 +5,7 @@ exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
 workflow-type: tm+mt
 source-wordcount: '1640'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -109,7 +109,7 @@ ht-degree: 1%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 *添加在对目标进行身份验证时客户必须填写的字段。 这些字段特定于目标，并且取决于您在Destination SDK中的配置。 目标字段可能与下面列出的字段不同。 另请加入与下面显示的示例屏幕快照类似的屏幕快照。*
 
@@ -137,7 +137,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

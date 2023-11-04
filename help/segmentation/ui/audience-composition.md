@@ -66,7 +66,7 @@ ht-degree: 0%
 
 | 合并类型 | 描述 |
 | ---------- | ----------- |
-| [!UICONTROL Union] | 受众将合并为一个受众。 此操作等同于OR操作。 |
+| [!UICONTROL 并集] | 受众将合并为一个受众。 此操作等同于OR操作。 |
 | [!UICONTROL 交集] | 受众将仅与中共享的受众合并 **所有** 正在添加它们。 此操作等同于AND操作。 |
 | [!UICONTROL 排除重叠] | 受众将仅与中共享的受众合并 **一个，但不是全部** 正在添加它们。 这相当于XOR操作。 |
 
@@ -220,7 +220,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![添加配置文件限制切换开关会突出显示，用于限制返回的受众数量。](../images/ui/audience-composition/add-profile-limit.png)
 
-## [!UICONTROL Split] {#split-block}
+## [!UICONTROL 拆分] {#split-block}
 
 此 **[!UICONTROL Split]** 块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
 

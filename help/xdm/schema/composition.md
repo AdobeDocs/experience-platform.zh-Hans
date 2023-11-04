@@ -271,7 +271,7 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 
 ![](../images/schema-composition/composition.png)
 
-### Union {#union}
+### 并集 {#union}
 
 同时 [!DNL Experience Platform] 允许您为特定用例编写架构，它还允许您查看特定类类型的架构的“并集”。 上图显示了两个基于XDM ExperienceEvent类的架构和两个基于 [!DNL XDM Individual Profile] 类。 如下所示的并集聚合了共享相同类([!DNL XDM ExperienceEvent] 和 [!DNL XDM Individual Profile]、分别)。
 

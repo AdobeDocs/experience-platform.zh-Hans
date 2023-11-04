@@ -5,7 +5,7 @@ exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
 source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
 source-wordcount: '1136'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -72,7 +72,7 @@ Medallia支持激活下表中描述的标识。 了解有关 [身份](/help/iden
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
@@ -99,7 +99,7 @@ Medallia支持激活下表中描述的标识。 了解有关 [身份](/help/iden
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

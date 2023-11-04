@@ -73,7 +73,7 @@ Platform 目前支持三种受众评估方法：流式分段、批量分段和�
 
 要了解有关流式客户细分的更多信息，请阅读 [流式分段文档](./api/streaming-segmentation.md).
 
-### 批量分段 {#batch}
+### 批次分段 {#batch}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_batch"

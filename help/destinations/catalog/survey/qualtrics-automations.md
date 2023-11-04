@@ -7,7 +7,7 @@ exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1149'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 作为身份验证的一部分，您需要提供 **用户名** 和 **密码**. 用户名是您的Qualtrics用户名，密码是您的Qualtrics帐户的API令牌。 要检索API令牌，请按照 **先决条件** 部分。
 
@@ -107,7 +107,7 @@ ht-degree: 1%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
@@ -140,7 +140,7 @@ ht-degree: 1%
 
 有关示例，请参见下面的屏幕截图。
 
-![身份命名空间](/help/destinations/assets/catalog/survey/qualtrics/identity-namespace.png)
+![标识命名空间](/help/destinations/assets/catalog/survey/qualtrics/identity-namespace.png)
 
 ## 导出的数据/验证数据导出 {#exported-data}
 

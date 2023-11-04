@@ -81,7 +81,7 @@ ht-degree: 11%
 
 ![突出显示创建计划按钮的图像](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
-### 导出完整文件 {#export-full-files}
+### 导出全部文件 {#export-full-files}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
@@ -238,7 +238,7 @@ ht-degree: 11%
 
 1. 要添加更多要导出的字段，请重复上述步骤。
 
-### 必需属性 {#mandatory-attributes}
+### 强制属性 {#mandatory-attributes}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
@@ -253,7 +253,7 @@ ht-degree: 11%
 
 建议其中一个属性为 [唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity) 从你的架构中。 有关强制属性的更多信息，请参阅 [电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity) 文档。
 
-### 重复数据删除键 {#deduplication-keys}
+### 内部重复数据删除键 {#deduplication-keys}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
@@ -432,9 +432,9 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 >[!IMPORTANT]
 > 
->目录中的所有云存储目标都可以查看改进的内容 [[!UICONTROL 映射] 步骤](#mapping) 取代 **[!UICONTROL 选择属性]** 此部分介绍了的步骤。
+目录中的所有云存储目标都可以查看改进的内容 [[!UICONTROL 映射] 步骤](#mapping) 取代 **[!UICONTROL 选择属性]** 此部分介绍了的步骤。
 >
->此 **[!UICONTROL 选择属性]** 仍会为Adobe Campaign、OracleResponsys、OracleEloqua和SalesforceMarketing Cloud电子邮件营销目标显示步骤。
+此 **[!UICONTROL 选择属性]** 仍会为Adobe Campaign、OracleResponsys、OracleEloqua和SalesforceMarketing Cloud电子邮件营销目标显示步骤。
 
 对于基于配置文件的目标，必须选择要发送到目标目标的配置文件属性。
 
@@ -454,15 +454,15 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 >[!NOTE]
 >
-> Adobe Experience Platform会使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.status`.
+Adobe Experience Platform会使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.status`.
 
 ![该图像显示了受众激活工作流映射步骤中预填充的推荐属性。](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
->由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.status` 到您的文件导出。 相反，您必须手动粘贴值 `xdm: segmentMembership.status` “架构”字段中，如下所示。
+由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.status` 到您的文件导出。 相反，您必须手动粘贴值 `xdm: segmentMembership.status` “架构”字段中，如下所示。
 >
->![屏幕录制，其中显示了激活工作流映射步骤中的受众成员资格解决方法。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+![屏幕录制，其中显示了激活工作流映射步骤中的受众成员资格解决方法。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 文件导出在以下方面有所不同，具体取决于是否 `segmentMembership.status` 已选中：
 * 如果 `segmentMembership.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
@@ -470,15 +470,15 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 ## 选择扩充属性 {#select-enrichment-attributes}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_activate_exclude_enrichment_attributes"
->title="排除扩充属性"
->abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#select-enrichment-attributes" text="请参阅文档以了解详情"
+[!CONTEXTUALHELP]
+id="platform_destinations_activate_exclude_enrichment_attributes"
+title="排除扩充属性"
+abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
+additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#select-enrichment-attributes" text="请参阅文档以了解详情"
 
 >[!IMPORTANT]
 >
->此步骤仅在您选择的情况下显示 **[!UICONTROL 自定义上传]** 受众时段 [受众选择](#select-audiences) 步骤。
+此步骤仅在您选择的情况下显示 **[!UICONTROL 自定义上传]** 受众时段 [受众选择](#select-audiences) 步骤。
 
 扩充属性对应于Experience Platform中摄取的自定义上传受众，如 **[!UICONTROL 自定义上传]**. 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
 
@@ -507,12 +507,12 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-batch-profile-destinations/review.png)
 
-### 同意政策评估 {#consent-policy-evaluation}
+### 同意策略评估 {#consent-policy-evaluation}
 
->[!CONTEXTUALHELP]
->id="platform_governance_policies_viewApplicableConsentPolicies"
->title="查看适用的同意策略"
->abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
+[!CONTEXTUALHELP]
+id="platform_governance_policies_viewApplicableConsentPolicies"
+title="查看适用的同意策略"
+abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
 如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 

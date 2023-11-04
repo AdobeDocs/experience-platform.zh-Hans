@@ -21,7 +21,7 @@ ht-degree: 6%
 
 下表概述了由提供的几种常用的预定义身份类型 [!DNL Experience Platform]，以及与其关联的 `namespace` 值：
 
-| 身份类型 | `namespace` | `namespaceId` |
+| 标识类型 | `namespace` | `namespaceId` |
 | --- | --- | --- |
 | 电子邮件 | `Email` | `6` |
 | Phone | `Phone` | `7` |

@@ -8,11 +8,11 @@ exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
 source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
 workflow-type: tm+mt
 source-wordcount: '1354'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
-# 使用UI创建和编辑数据类型 {#ui-create-and-edit}
+# 使用 UI 创建和编辑数据类型 {#ui-create-and-edit}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_datatype_filter"

@@ -49,7 +49,7 @@ Postman是API开发的协作平台，允许您使用预设变量设置环境、�
 
 要了解有关Postman的更多信息（包括如何设置环境、可用收藏集列表以及如何导入收藏集），请访问 [Platform Postman文档](postman.md).
 
-## 正在读取示例API调用 {#sample-api}
+## 正在读取示例 API 调用 {#sample-api}
 
 请求格式因所使用的平台API而异。 了解如何构建API调用结构的最佳方法是，按照与所使用的特定Platform服务的文档提供的示例进行操作。
 

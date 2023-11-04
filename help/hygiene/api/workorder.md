@@ -4,7 +4,7 @@ description: 数据卫生API中的/workorder端点允许您以编程方式管理
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
 source-git-commit: 15f3f7c9e0efb2fe5e9a1acd39b1cf23790355cb
 workflow-type: tm+mt
-source-wordcount: '1281'
+source-wordcount: '1283'
 ht-degree: 2%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->记录删除功能当前为测试版，仅在 **限量发行**. 并非所有客户都可使用。 记录删除请求仅适用于受限版本中的组织。
+记录删除功能当前为测试版，仅在 **限量发行**. 并非所有客户都可使用。 记录删除请求仅适用于受限版本中的组织。
 >
->记录删除旨在用于数据清理、匿名数据删除或数据最小化。 他们是 **非** 用于数据主体权利请求（符合），与通用数据保护条例(GDPR)等隐私法规相关。 对于所有合规性用例，使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而是。
+记录删除旨在用于数据清理、匿名数据删除或数据最小化。 他们是 **非** 用于数据主体权利请求（符合），与通用数据保护条例(GDPR)等隐私法规相关。 对于所有合规性用例，使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 而是。
 
 ## 快速入门
 
@@ -29,7 +29,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>单个 [通过UI记录删除请求](../ui/record-delete.md) 允许您同时提交10,000个ID。 用于删除记录的API方法允许同时提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
+对于每月可以提交的唯一身份记录删除总数，存在不同的限制。 这些限制基于您的许可协议。 如果组织购买了Adobe Real-time Customer Data Platform和Adobe Journey Optimizer的所有版本，则每月最多可以提交100,000个身份记录删除。 已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板** 每月最多可提交600,000个身份记录删除。<br>单个 [通过UI记录删除请求](../ui/record-delete.md) 允许您同时提交10,000个ID。 用于删除记录的API方法允许同时提交100,000个ID。<br>最佳实践是，根据您的ID限制，为每个请求提交尽可能多的ID。 当您打算删除大量ID时，应避免提交小量ID，或每个记录删除请求只提交一个ID。
 
 **API格式**
 
@@ -39,7 +39,7 @@ POST /workorder
 
 >[!NOTE]
 >
->数据生命周期请求只能根据主身份或身份映射修改数据集。 请求必须指定主标识或提供标识映射。
+数据生命周期请求只能根据主身份或身份映射修改数据集。 请求必须指定主标识或提供标识映射。
 
 **请求**
 
@@ -89,7 +89,7 @@ curl -X POST \
 | `description` | 记录删除请求的描述。 |
 | `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的身份。 每个身份都由 [身份命名空间](../../identity-service/namespaces.md) 和一个值：<ul><li>`namespace`：包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`：身份值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主身份相同的身份命名空间。<br><br>如果 `datasetId` 设置为 `ALL`， `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，如所报告，您的请求仍会限制您的组织可用的命名空间 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
-{style="table-layout:auto"}
+{style="表格布局：自动"}
 
 **响应**
 

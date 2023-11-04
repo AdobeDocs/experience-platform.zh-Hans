@@ -5,7 +5,7 @@ exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
 source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
 workflow-type: tm+mt
 source-wordcount: '1050'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -76,7 +76,7 @@ ht-degree: 7%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_blob_rsa"
@@ -114,7 +114,7 @@ ht-degree: 7%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

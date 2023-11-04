@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK呈现个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions；sendEvent；decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: 5f205792a03c3c7dd9074827ce4a989fae2e45d9
 workflow-type: tm+mt
 source-wordcount: '962'
 ht-degree: 2%
@@ -16,11 +16,11 @@ Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/activate-edge-personalization-destinations.md).
 
-在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 以及Adobe Journey Optimizer的 [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) SDK可自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
+在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 以及Adobe Journey Optimizer的 [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) SDK可以自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
 
-## 自动渲染内容
+## 自动呈现内容 {#automatic}
 
-将事件发送到服务器时，您可以设置 `renderDecisions` 选项至 `true`. 这样做会强制SDK自动呈现任何符合自动呈现条件的个性化内容。
+将事件发送到服务器时，可以设置 `renderDecisions` 选项至 `true`. 这样做会强制SDK自动呈现任何符合自动呈现条件的个性化内容。
 
 ```javascript
 alloy("sendEvent", {
@@ -38,11 +38,11 @@ alloy("sendEvent", {
 });
 ```
 
-渲染个性化内容是异步执行的，因此您不应假定一段特定内容将何时完成渲染。
+渲染个性化内容是异步的，因此您不应假设一段特定内容何时已完成渲染。
 
-## 手动渲染内容
+## 手动呈现内容 {#manual}
 
-要访问任何个性化内容，您可以提供回调函数，在SDK收到来自服务器的成功响应后将调用该函数。 为您的回调提供了 `result` 对象，其中可能包含 `propositions` 包含任何返回的个性化内容的属性。 下面是一个示例，说明在发送事件时如何提供回调函数。
+要访问任何个性化内容，您可以提供回调函数，SDK收到来自服务器的成功响应后将调用该函数。 为您的回调提供了 `result` 对象，其中可能包含 `propositions` 包含任何返回的个性化内容的属性。 下面是一个示例，说明在发送事件时如何提供回调函数。
 
 ```javascript
 alloy("sendEvent", {
@@ -54,7 +54,7 @@ alloy("sendEvent", {
   });
 ```
 
-在此示例中， `result.propositions`如果存在，则是一个数组，其中包含与事件相关的个性化建议。 默认情况下，它仅包含适合自动渲染的建议。
+在此示例中， `result.propositions`如果存在，则是一个数组，其中包含与事件相关的个性化建议。 默认情况下，它仅包含适于自动渲染的建议。
 
 此 `propositions` 数组可能与以下示例类似：
 
@@ -103,9 +103,9 @@ alloy("sendEvent", {
 ]
 ```
 
-在本例中， `renderDecisions` 选项未设置为 `true` 当 `sendEvent` 已执行命令，因此SDK未尝试自动渲染任何内容。 但是，SDK仍自动检索符合自动渲染条件的内容，并在您希望手动渲染时，为您提供此内容。 请注意，每个建议对象都有其 `renderAttempted` 属性设置为 `false`.
+在本例中， `renderDecisions` 选项未设置为 `true` 当 `sendEvent` 已执行命令，因此SDK不会尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，如果您愿意，可以将其提供给您手动渲染。 请注意，每个建议对象都有其 `renderAttempted` 属性设置为 `false`.
 
-如果您选择将 `renderDecisions` 选项至 `true` 在发送事件时，SDK会尝试渲染任何符合自动渲染条件的建议（如之前所述）。 因此，每个建议对象将具有其 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
+如果您选择将 `renderDecisions` 选项至 `true` 在发送事件时，SDK会尝试呈现任何符合自动呈现条件的建议（如之前所述）。 因此，每个建议对象将具有 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
 
 到目前为止，我们仅讨论了符合自动呈现条件的个性化内容(即，在Adobe Target的可视化体验编辑器或Adobe Journey Optimizer的Web Campaign UI中创建的任何内容)。 检索任何个性化内容 _非_ 符合自动渲染的条件，您需要通过填充 `decisionScopes` 选项。 范围是一个字符串，它标识您要从服务器检索的特定建议。
 
@@ -122,7 +122,7 @@ alloy("sendEvent", {
   });
 ```
 
-在此示例中，如果在服务器上找到与 `salutation` 或 `discount` 范围，它们将返回并包含在 `result.propositions` 数组。 请注意，符合自动呈现条件的主张将继续包含在 `propositions` 阵列，无论如何配置 `renderDecisions` 或 `decisionScopes` 选项。 此 `propositions` 在此例中，数组类似于以下示例：
+在本例中，如果在服务器上找到与 `salutation` 或 `discount` 范围，它们将返回并包含在 `result.propositions` 数组。 请注意，符合自动呈现条件的主张将继续包含在 `propositions` 阵列，无论您如何配置 `renderDecisions` 或 `decisionScopes` 选项。 此 `propositions` 在此例中，数组类似于以下示例：
 
 ```json
 [
@@ -220,15 +220,15 @@ alloy("sendEvent", {
 ]
 ```
 
-此时，您可以按照自己认为合适的方式呈现建议内容。 在此示例中，建议与 `discount` scope是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假设您的页面上有元素，其ID为 `daily-special` 并希望从呈现内容 `discount` 中的建议 `daily-special` 元素，请执行以下操作：
+此时，您可以根据需要呈现建议内容。 在此示例中，建议与 `discount` scope是使用Adobe Target的基于表单的HTML编辑器构建的体验建议。 假设您的页面上有元素，其ID为 `daily-special` 并希望呈现以下源的内容： `discount` 中的建议 `daily-special` 元素，请执行以下操作：
 
 1. 从提取建议 `result` 对象。
-1. 循环查看每个建议，寻找具有以下范围的建议： `discount`.
-1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找内容为HTML的项目。 (检查总比假设要好。
+1. 循环查看每个建议，寻找具有以下范围的建议 `discount`.
+1. 如果您找到一个建议，请循环遍历建议中的每个项目，查找包含HTML内容的项目。 （检查总比假设要好。 ）
 1. 如果找到一个包含HTML内容的项目，请找到 `daily-special` 元素，并将其HTML替换为个性化内容。
 1. 呈现内容后，发送 `display` 事件。
 
-您的代码如下所示：
+您的代码将如下所示：
 
 ```javascript
 alloy("sendEvent", {
@@ -291,27 +291,27 @@ alloy("sendEvent", {
 
 >[!TIP]
 >
->如果您使用Adobe Target，则作用域与服务器上的mbox相对应，只不过这些作用域是同时请求的，而不是分别请求。 始终返回全局mbox。
+>如果您使用Adobe Target，则作用域将与服务器上的mbox相对应，只不过这些作用域是同时请求的，而不是分别请求的。 始终返回全局mbox。
 
 ### 管理闪烁
 
-SDK为以下人员提供各种工具： [管理闪烁](../personalization/manage-flicker.md) 在个性化过程中。
+SDK为以下人员提供工具 [管理闪烁](../personalization/manage-flicker.md) 在个性化过程中。
 
 ## 在单页应用程序中渲染建议而不增加量度 {#applypropositions}
 
-此 `applyPropositions` 命令允许您从呈现或执行建议数组 [!DNL Target] 单页应用程序，而不增加 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报告的准确性。
+此 `applyPropositions` 命令允许您从呈现或执行建议数组 [!DNL Target] 单页应用程序，而不增加 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报告准确性。
 
 >[!IMPORTANT]
 >
->如果建议用于 `__view__` 范围（或Web表面）在页面加载时渲染，其 `renderAttempted` 标记将设置为 `true`. 此 `applyPropositions` 命令不会重新渲染 `__view__` 具有以下特征的范围（或Web表面）建议 `renderAttempted: true` 标志。
+>如果建议用于 `__view__` 范围（或Web表面）在页面加载时渲染，其 `renderAttempted` 标志将设置为 `true`. 此 `applyPropositions` 命令将不会重新呈现 `__view__` 具有以下特征的范围（或Web表面）建议 `renderAttempted: true` 标志。
 
 ### 用例1：重新呈现单页应用程序视图建议
 
-以下示例中描述的用例重新渲染之前获取和渲染的购物车视图建议，而不发送显示通知。
+下面示例中描述的用例重新呈现之前获取和渲染的购物车视图建议，而不发送显示通知。
 
 在以下示例中， `sendEvent` 命令在视图更改时触发，并将生成的对象保存为常量。
 
-接下来，当视图或组件更新时， `applyPropositions` 使用上一个命令中的建议调用命令 `sendEvent` 命令，以重新渲染视图建议。
+接下来，当视图或组件更新时， `applyPropositions` 调用命令，其中包含来自上一页的建议 `sendEvent` 命令，以重新渲染视图建议。
 
 ```js
 var cartPropositions = alloy("sendEvent", {
@@ -338,7 +338,7 @@ alloy("applyPropositions", {
 
 ### 用例2：没有选择器的渲染建议
 
-此用例适用于通过编写的活动选件 [!DNL Target Form-based Experience Composer].
+此用例适用于使用创作的活动选件 [!DNL Target Form-based Experience Composer].
 
 您必须在以下位置提供选择器、操作和范围： `applyPropositions` 呼叫。
 

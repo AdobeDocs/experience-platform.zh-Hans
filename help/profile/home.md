@@ -51,7 +51,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 Experience Platform提供了一系列护栏，帮助您避免创建 [体验数据模型(XDM)架构](../xdm/home.md) 哪些实时客户档案不支持。 这包括会导致性能下降的软限制，以及会导致错误和系统中断的硬限制。 欲知更多信息（包括一系列准则和示例用例），请阅读 [侧面护栏](guardrails.md) 文档。
 
-### 配置文件仪表板 {#profile-dashboard}
+### 个人资料仪表板 {#profile-dashboard}
 
 Experience PlatformUI提供了一个仪表板，通过该仪表板可以查看有关实时客户配置文件数据的重要信息，在每日快照期间捕获了这些数据。 了解如何访问和使用 [!DNL Profile] UI中的仪表板，以及有关该仪表板中显示的量度的详细信息，请参阅 [配置文件功能板UI指南](ui/profile-dashboard.md).
 

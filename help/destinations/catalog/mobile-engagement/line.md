@@ -7,7 +7,7 @@ exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
 source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
 source-wordcount: '1214'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -82,7 +82,7 @@ ht-degree: 0%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL LINE]. 或者，您可以将其定位到 **[!UICONTROL 移动参与]** 类别。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要验证目标，请选择 **[!UICONTROL 连接到目标]**.
 ![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
@@ -107,7 +107,7 @@ ht-degree: 0%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

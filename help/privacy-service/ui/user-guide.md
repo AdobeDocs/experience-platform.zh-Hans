@@ -7,11 +7,11 @@ exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '1475'
-ht-degree: 14%
+ht-degree: 15%
 
 ---
 
-# 在Privacy ServiceUI中管理隐私作业 {#user-guide}
+# 在 Privacy Service UI 中管理隐私作业 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_description"
@@ -116,7 +116,7 @@ ht-degree: 14%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="说明"
->abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html?lang=zh-Hans#logging-in-from-experience-platform">请求</a>以打开 Privacy Ul，然后选择<b>创建请求</b>。</li><li>从这里可使用请求生成器或上传数据主体的 JSON 文件。</li><li>如果使用请求生成器，则选择作业类型（访问和/或删除），然后选择您提供的身份类型（电子邮件、ECID 或 AAID）或输入自定义身份命名空间。输入适合客户的身份值，并在完成后选择<b>创建</b>。</li><li>如果上传 JSON 文件，则选择“创建请求”旁边的箭头。从选项列表中，选择<b>上传 JSON</b> 并上传您的文件。如果您没有要上传的 JSON 文件，则选择<b>下载 Adobe-GDPR-Request.json</b> 以下载可填写的模板。上传 JSON，并在完成后选择<b>创建</b>。</li><li>有关此功能的更多帮助，请参阅 Experience League 上的 <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=zh-Hans">Privacy Service 用户指南</a>。</li></ul>"
+>abstract="<ul><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html?lang=zh-Hans#logging-in-from-experience-platform">请求</a>以打开 Privacy Ul，然后选择<b>创建请求</b>。</li><li>从这里可使用请求生成器或上传数据主体的 JSON 文件。</li><li>如果使用请求生成器，则选择作业类型（访问和/或删除），然后选择您提供的身份类型（电子邮件、ECID 或 AAID）或输入自定义标识命名空间。输入适合客户的身份值，并在完成后选择<b>创建</b>。</li><li>如果上传 JSON 文件，则选择“创建请求”旁边的箭头。从选项列表中，选择<b>上传 JSON</b> 并上传您的文件。如果您没有要上传的 JSON 文件，则选择<b>下载 Adobe-GDPR-Request.json</b> 以下载可填写的模板。上传 JSON，并在完成后选择<b>创建</b>。</li><li>有关此功能的更多帮助，请参阅 Experience League 上的 <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=zh-Hans">Privacy Service 用户指南</a>。</li></ul>"
 
 >[!NOTE]
 >

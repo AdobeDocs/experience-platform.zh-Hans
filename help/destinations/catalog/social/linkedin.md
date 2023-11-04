@@ -6,7 +6,7 @@ exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
 source-wordcount: '1103'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -112,7 +112,7 @@ ht-degree: 2%
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅 [目标配置教程](../../ui/connect-destination.md).
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 1. 查找 [!DNL LinkedIn Matched Audiences] 目标目录中的目标并选择 **[!UICONTROL 设置]**.
 2. 选择 **[!UICONTROL 连接到目标]**.
@@ -138,7 +138,7 @@ ht-degree: 2%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

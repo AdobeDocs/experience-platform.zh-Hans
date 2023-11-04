@@ -16,7 +16,7 @@ ht-degree: 1%
 要了解Adobe端的报文格式以及用户档案配置和转换流程，请熟悉以下Experience Platform概念：
 
 * **Experience Data Model (XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
-* **类**. [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md).
+* **类**. [在 UI 中创建和编辑类](../../../../xdm/ui/resources/classes.md).
 * **Identitymap**. 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅 `xdm:identityMap` 在 [XDM字段字典](../../../../xdm/schema/field-dictionary.md).
 * **区段成员资格**. 此 [区段成员资格](../../../../xdm/schema/field-dictionary.md) XDM属性会通知用户档案所属的受众。 对于 `status` 字段，请阅读相关的文档 [受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 

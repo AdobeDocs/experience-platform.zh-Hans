@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: aed521bf50c301148c10b98021f1a3df0ed45278
+source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1517'
 ht-degree: 3%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 3%
 # 凭据指南
 
 Adobe Experience Platform查询服务允许您与外部客户端连接。 您可以使用过期凭据或不过期凭据连接到这些外部客户端。
+
+>[!NOTE]
+>
+>凭据面板并非自动对所有用户可用。 请联系您的Adobe客户团队以申请 [!UICONTROL 凭据] 选项卡，以便在需要时包含在查询服务工作区中。 如有请求，此更改将在整个组织中实施，并由Adobe的工程团队执行。 它不是由用户控制的设置。
 
 ## 过期凭据 {#expiring-credentials}
 

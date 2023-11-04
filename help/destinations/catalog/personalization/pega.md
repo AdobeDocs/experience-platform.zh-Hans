@@ -5,7 +5,7 @@ exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
 source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
 source-wordcount: '1047'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 #### OAuth 2客户端凭据身份验证 {#oauth-2-client-credentials-authentication}
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL 主机名]**：将配置文件导出为JSON数据的Pega客户决策中心主机名。
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

@@ -7,7 +7,7 @@ exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
 workflow-type: tm+mt
 source-wordcount: '657'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -17,14 +17,14 @@ ht-degree: 3%
 
 本用户指南提供了有关如何在Adobe Experience Platform用户界面中监视数据的步骤。 本指南要求您拥有Adobe ID并有权访问Adobe Experience Platform。
 
-## 监控流端到端数据摄取 {#monitor-streaming-end-to-end-data-ingestion}
+## 监控流式处理端到端数据摄取 {#monitor-streaming-end-to-end-data-ingestion}
 
 >[!CONTEXTUALHELP]
 >id="platform_ingestion_streaming_ingestionrate"
 >title="摄取率"
 >abstract="每秒成功处理的事件的数目。"
 >text="Learn more in the documentation"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="在 UI 中监测源的数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="在 UI 中监控源的数据流"
 
 >[!TIP]
 >

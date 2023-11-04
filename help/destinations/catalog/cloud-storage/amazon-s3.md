@@ -5,7 +5,7 @@ exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
 source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
 workflow-type: tm+mt
 source-wordcount: '1052'
-ht-degree: 16%
+ht-degree: 17%
 
 ---
 
@@ -57,7 +57,7 @@ ht-degree: 16%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_rsa"
@@ -130,7 +130,7 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 -->
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

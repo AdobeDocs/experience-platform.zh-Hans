@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
 workflow-type: tm+mt
-source-wordcount: '1587'
+source-wordcount: '1660'
 ht-degree: 4%
 
 ---
@@ -15,6 +15,20 @@ ht-degree: 4%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## 版本2.19.0 - 2023年11月1日
+
+**新增功能**
+
+* 添加了对从Adobe Journey Optimizer呈现应用程序内消息的支持。
+* 添加了对页面顶部和底部事件的支持。
+* 向sendEvent命令添加了“defaultPersonalizationEnabled”选项以控制请求页面范围的范围和默认表面。
+
+**修复和改进功能**
+
+* 在呈现多种类型的个性化时，组合的个性化会显示多个事件。
+* 修复了单页面应用程序视图名称区分大小写的问题。
+* 修复了影子DOM个性化优惠选择器的问题。
 
 ## 2.18.0版 — 2023年7月31日
 

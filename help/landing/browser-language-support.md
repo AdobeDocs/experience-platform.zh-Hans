@@ -6,7 +6,7 @@ exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
 source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
 workflow-type: tm+mt
 source-wordcount: '247'
-ht-degree: 23%
+ht-degree: 25%
 
 ---
 
@@ -42,7 +42,7 @@ Platform UI目前提供以下语言版本：
 * 意大利语
 * 朝鲜语
 * 中文（简体）
-* 繁体中文
+* 中文（繁体）
 * 巴西葡萄牙语
 
 ### 更改默认语言

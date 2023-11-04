@@ -6,7 +6,7 @@ exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1002'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 

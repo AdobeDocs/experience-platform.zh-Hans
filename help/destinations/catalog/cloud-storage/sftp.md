@@ -5,7 +5,7 @@ exl-id: 27abfc38-ec19-4321-b743-169370d585a0
 source-git-commit: 93b1c26e85ddd0fa232b26712f88faa824f19f30
 workflow-type: tm+mt
 source-wordcount: '1017'
-ht-degree: 10%
+ht-degree: 11%
 
 ---
 
@@ -120,7 +120,7 @@ ht-degree: 10%
    * `exportResults.name`：导出文件的名称。
    * `size`：导出文件的大小（以字节为单位）。
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

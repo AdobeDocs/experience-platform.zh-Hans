@@ -4,10 +4,10 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: 5c556d6a846c8ec97bf3aa8b6a6a6d2a64a33be5
+source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
 workflow-type: tm+mt
-source-wordcount: '254'
-ht-degree: 92%
+source-wordcount: '318'
+ht-degree: 76%
 
 ---
 
@@ -37,6 +37,14 @@ ht-degree: 92%
 * 目标 {#destinations}
    * [目标概述](destinations/overview.md)
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)
+* 护栏 {#guardrails}
+   * [Real-Time CDP护栏概述](/help/rtcdp/guardrails/overview.md){target="_blank"}
+   * [数据摄取的护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [的护栏 [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
+   * [护栏 [!DNL Real-Time Customer Profile] 数据和分段](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
+   * [护栏 [!DNL Identity Service] 数据](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
+   * [护栏 [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
+   * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 标识 {#identity}
    * [标识和标识命名空间](profile/identities-overview.md)
 * 合并策略{#merge-policies}

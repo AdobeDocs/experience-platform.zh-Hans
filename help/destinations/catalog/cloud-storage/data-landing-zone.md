@@ -6,7 +6,7 @@ exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
 source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
 workflow-type: tm+mt
 source-wordcount: '1481'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -191,7 +191,7 @@ curl -X POST \
 
 要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 确保已将 [!DNL Data Landing Zone] 容器至 [!DNL Azure Storage Explorer] 如 [先决条件](#prerequisites) 部分。 因为 [!DNL Data Landing Zone] 是Adobe配置的存储，您无需在Experience PlatformUI中执行任何进一步的步骤即可向目标进行身份验证。
 
@@ -217,7 +217,7 @@ curl -X POST \
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

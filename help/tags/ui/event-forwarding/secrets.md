@@ -38,7 +38,7 @@ ht-degree: 3%
 
 您还应该实际了解标记和事件转发的发布流程，包括如何向库添加资源并在您的网站上安装内部版本以进行测试。 请参阅 [发布概述](../publishing/overview.md) 以了解更多详细信息。
 
-## 创建密码 {#create}
+## 创建密钥 {#create}
 
 >[!CONTEXTUALHELP]
 >id="platform_eventforwarding_secrets_environments"

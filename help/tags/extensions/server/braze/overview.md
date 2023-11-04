@@ -62,7 +62,7 @@ ht-degree: 4%
 | [!DNL Braze] 实例 | 与关联的REST端点 [!DNL Braze] 帐户。 请参阅 [!DNL Braze] 文档 [实例](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) 作为指导。 | `https://rest.iad-03.braze.com` |
 | API 密钥 | 此 [!DNL Braze] 与关联的API密钥 [!DNL Braze] 帐户。 <br/>请参阅 [!DNL Braze] 相关文档 [REST API密钥](https://www.braze.com/docs/api/basics/#rest-api-key) 作为指导。 | `YOUR-BRAZE-REST-API-KEY` |
 
-### 创建密码
+### 创建密钥
 
 新建 [事件转发密码](../../../ui/event-forwarding/secrets.md) 并将值设置为 [[!DNL Braze] API密钥](#configuration-details). 这将用于验证与您的帐户的连接，同时保持值的安全。
 

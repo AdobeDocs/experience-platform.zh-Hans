@@ -6,7 +6,7 @@ exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
 source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
 workflow-type: tm+mt
 source-wordcount: '1048'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -93,7 +93,7 @@ Adobe Experience Platform配置文件属性与 [!DNL Airship] 属性，并且可
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
@@ -113,7 +113,7 @@ Adobe Experience Platform配置文件属性与 [!DNL Airship] 属性，并且可
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

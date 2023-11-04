@@ -7,11 +7,11 @@ exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
 source-git-commit: c55ad6c592be95b01cf7fe0b39635b478bc98be6
 workflow-type: tm+mt
 source-wordcount: '2250'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
-# 数据使用标签术语表 {#data-usage-labels-glossary}
+# 数据使用标签词汇表 {#data-usage-labels-glossary}
 
 >[!CONTEXTUALHELP]
 >id="platform_policies_labeltype"

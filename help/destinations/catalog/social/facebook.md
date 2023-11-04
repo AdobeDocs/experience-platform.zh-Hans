@@ -6,7 +6,7 @@ exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
 source-wordcount: '1941'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 
@@ -145,7 +145,7 @@ ht-degree: 6%
 >
 >Experience Platform用户界面经常更新，自从录制此视频以来，该界面可能已发生更改。 有关最新信息，请参阅 [目标配置教程](../../ui/connect-destination.md).
 
-### 向目标进行身份验证 {#authenticate}
+### 验证目标 {#authenticate}
 
 1. 在目标目录中找到Facebook目标并选择 **[!UICONTROL 设置]**.
 2. 选择 **[!UICONTROL 连接到目标]**.
@@ -171,7 +171,7 @@ ht-degree: 6%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"

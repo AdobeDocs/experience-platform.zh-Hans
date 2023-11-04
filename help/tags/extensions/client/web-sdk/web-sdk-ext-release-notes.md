@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
 workflow-type: tm+mt
-source-wordcount: '1756'
-ht-degree: 37%
+source-wordcount: '1806'
+ht-degree: 36%
 
 ---
 
@@ -13,6 +13,20 @@ ht-degree: 37%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.21.0 - 2023年11月1日
+
+**新增功能**
+
+* 已添加 `Request default personalization` 用于发送事件操作的选项。
+* 在“发送事件”操作中添加了对页面事件顶部和底部的支持。
+* 已添加 `Apply propositions` 操作。
+* 已添加 `Evaluate rulesets` 操作和 `Subscribe ruleset items` 应用程序内消息的事件。
+* 已添加 `Decision context` 以发送事件操作。
+
+**修复和改进功能**
+
+* 包含Adobe Experience Platform Web SDK版本2.19.0。
 
 ## 版本2.20.3 - 2023年8月8日
 

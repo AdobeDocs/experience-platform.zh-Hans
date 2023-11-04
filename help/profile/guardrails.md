@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: d409c3f61824e77bfc26af577999d90d391f8a1b
+source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
 workflow-type: tm+mt
-source-wordcount: '1965'
+source-wordcount: '2153'
 ht-degree: 4%
 
 ---
@@ -35,9 +35,12 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 此文档有两种类型的默认限制：
 
-* **软限制：** 可以超出软限制，但软限制提供了系统性能的推荐准则。
+| 护栏类型 | 描述 |
+|----------|---------|
+| **性能护栏（软限制）** | 性能护栏是与用例范围相关的使用限制。 当超出性能护栏时，您可能会遇到性能下降和延迟问题。 Adobe不对此类性能下降负责。 始终超过性能护栏的客户可以选择许可额外的容量，以避免性能下降。 |
+| **系统强制的护栏（硬限制）** | Real-Time CDP UI或API强制实施系统强制的护栏。 这些限制不得超过，因为UI和API将阻止您这样做或您会返回错误。 |
 
-* **硬限制：** 硬限制提供绝对最大值。
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -53,14 +56,14 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| XDM个人资料类数据集 | 20 | 柔光 | 建议最多使用20个利用XDM个人资料类的数据集。 |
-| XDM ExperienceEvent类数据集 | 20 | 柔光 | 建议最多使用20个利用XDM ExperienceEvent类的数据集。 |
-| 为配置文件启用的Adobe Analytics报表包数据集 | 1 | 柔光 | 应为配置文件启用最多一(1)个Analytics报表包数据集。 尝试为配置文件启用多个Analytics报表包数据集可能会对数据质量产生意想不到的后果。 有关更多信息，请参阅以下部分： [Adobe Analytics数据集](#aa-datasets) 在附录中。 |
-| 多实体关系 | 5 | 柔光 | 建议在主要实体和维度实体之间最多定义5个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
-| 多实体关系中使用的ID字段的JSON深度 | 4 | 柔光 | 对于在多实体关系中使用的ID字段，建议的最大JSON深度为4。 这意味着在高度嵌套的架构中，超过4级嵌套的字段不应用作关系中的ID字段。 |
-| 配置文件片段中的数组基数 | &lt;=500 | 柔光 | 配置文件片段（与时间无关的数据）中的最佳数组基数&lt;=500。 |
-| ExperienceEvent中的数组基数 | &lt;=10 | 柔光 | ExperienceEvent（时间序列数据）中的最佳数组基数&lt;=10。 |
-| 个人配置文件身份图的身份计数 | 50 | 硬 | **单个配置文件的身份图中的最大身份数为50。** 任何标识超过50的用户档案都将从分段、导出和查找中排除。 |
+| XDM个人资料类数据集 | 20 | 性能护栏 | 建议最多使用20个利用XDM个人资料类的数据集。 |
+| XDM ExperienceEvent类数据集 | 20 | 性能护栏 | 建议最多使用20个利用XDM ExperienceEvent类的数据集。 |
+| 为配置文件启用的Adobe Analytics报表包数据集 | 1 | 性能护栏 | 应为配置文件启用最多一(1)个Analytics报表包数据集。 尝试为配置文件启用多个Analytics报表包数据集可能会对数据质量产生意想不到的后果。 有关更多信息，请参阅以下部分： [Adobe Analytics数据集](#aa-datasets) 在附录中。 |
+| 多实体关系 | 5 | 性能护栏 | 建议在主要实体和维度实体之间最多定义5个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
+| 多实体关系中使用的ID字段的JSON深度 | 4 | 性能护栏 | 对于在多实体关系中使用的ID字段，建议的最大JSON深度为4。 这意味着在高度嵌套的架构中，超过4级嵌套的字段不应用作关系中的ID字段。 |
+| 配置文件片段中的数组基数 | &lt;=500 | 性能护栏 | 配置文件片段（与时间无关的数据）中的最佳数组基数&lt;=500。 |
+| ExperienceEvent中的数组基数 | &lt;=10 | 性能护栏 | ExperienceEvent（时间序列数据）中的最佳数组基数&lt;=10。 |
+| 个人配置文件身份图的身份计数 | 50 | 系统强制的护栏 | **单个配置文件的身份图中的最大身份数为50。** 任何标识超过50的用户档案都将从分段、导出和查找中排除。 |
 
 {style="table-layout:auto"}
 
@@ -68,9 +71,9 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 不允许对以下对象使用时间序列数据：[!DNL XDM Individual Profile] 实体 | 0 | 硬 | **时序数据不允许用于非[!DNL XDM Individual Profile] 配置文件服务中的实体。** 如果时间序列数据集与非[!DNL XDM Individual Profile] ID，不应为以下项启用数据集 [!DNL Profile]. |
-| 无嵌套关系 | 0 | 柔光 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 不建议将创建关系的功能用于任何不属于的架构 [!DNL Profile] 合并架构。 |
-| 主ID字段的JSON深度 | 4 | 柔光 | 主ID字段建议的最大JSON深度为4。 这意味着，在高度嵌套的架构中，如果某个字段嵌套的深度超过4级，则不应选择该字段作为主ID。 第4个嵌套级别的字段可用作主ID。 |
+| 不允许对以下对象使用时间序列数据：[!DNL XDM Individual Profile] 实体 | 0 | 系统强制的护栏 | **时序数据不允许用于非[!DNL XDM Individual Profile] 配置文件服务中的实体。** 如果时间序列数据集与非[!DNL XDM Individual Profile] ID，不应为以下项启用数据集 [!DNL Profile]. |
+| 无嵌套关系 | 0 | 性能护栏 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 不建议将创建关系的功能用于任何不属于的架构 [!DNL Profile] 合并架构。 |
+| 主ID字段的JSON深度 | 4 | 性能护栏 | 主ID字段建议的最大JSON深度为4。 这意味着，在高度嵌套的架构中，如果某个字段嵌套的深度超过4级，则不应选择该字段作为主ID。 第4个嵌套级别的字段可用作主ID。 |
 
 {style="table-layout:auto"}
 
@@ -86,12 +89,12 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 最大ExperienceEvent大小 | 10KB | 硬 | **事件的最大大小为10KB。** 将继续引入，但任何大于10 KB的事件将被丢弃。 |
-| 最大配置文件记录大小 | 100KB | 硬 | **配置文件记录的最大大小为100KB。** 将继续引入，但大于100 KB的配置文件记录将被丢弃。 |
-| 最大配置文件片段大小 | 50MB | 硬 | **单个配置文件片段的最大大小为50MB。** 对于任何报表，分段、导出和查找操作都可能会失败 [配置文件片段](#profile-fragments) 大于50MB。 |
-| 最大配置文件存储大小 | 50MB | 柔光 | **存储配置文件的最大大小为50MB。** 正在添加 [配置文件片段](#profile-fragments) 到大于50MB的配置文件中将影响系统性能。 例如，配置文件可以包含一个50MB的片段，也可以包含多个数据集的多个片段，组合总大小为50MB。 尝试存储单个片段大于50MB的配置文件，或多个片段的组合大小超过50MB的配置文件将影响系统性能。 |
-| 每天摄取的配置文件或ExperienceEvent批次数 | 90 | 柔光 | **每天摄取的Profile或ExperienceEvent批次的最大数量为90。** 这意味着每天摄取的Profile和ExperienceEvent批次总数不能超过90。 摄取其他批次将影响系统性能。 |
-| 每个配置文件记录的ExperienceEvents数 | 5000 | 柔光 | **每个配置文件记录的ExperienceEvents最大数量为5000。** 超过5000个ExperienceEvents的用户档案将 **非** 应考虑进行分段。 |
+| 最大ExperienceEvent大小 | 10KB | 系统强制的护栏 | **事件的最大大小为10KB。** 将继续引入，但任何大于10 KB的事件将被丢弃。 |
+| 最大配置文件记录大小 | 100KB | 系统强制的护栏 | **配置文件记录的最大大小为100KB。** 将继续引入，但大于100 KB的配置文件记录将被丢弃。 |
+| 最大配置文件片段大小 | 50MB | 系统强制的护栏 | **单个配置文件片段的最大大小为50MB。** 对于任何报表，分段、导出和查找操作都可能会失败 [配置文件片段](#profile-fragments) 大于50MB。 |
+| 最大配置文件存储大小 | 50MB | 性能护栏 | **存储配置文件的最大大小为50MB。** 正在添加 [配置文件片段](#profile-fragments) 到大于50MB的配置文件中将影响系统性能。 例如，配置文件可以包含一个50MB的片段，也可以包含多个数据集的多个片段，组合总大小为50MB。 尝试存储单个片段大于50MB的配置文件，或多个片段的组合大小超过50MB的配置文件将影响系统性能。 |
+| 每天摄取的配置文件或ExperienceEvent批次数 | 90 | 性能护栏 | **每天摄取的Profile或ExperienceEvent批次的最大数量为90。** 这意味着每天摄取的Profile和ExperienceEvent批次总数不能超过90。 摄取其他批次将影响系统性能。 |
+| 每个配置文件记录的ExperienceEvents数 | 5000 | 性能护栏 | **每个配置文件记录的ExperienceEvents最大数量为5000。** 超过5000个ExperienceEvents的用户档案将 **非** 应考虑进行分段。 |
 
 {style="table-layout:auto"}
 
@@ -99,9 +102,9 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 所有维实体的总大小 | 5 GB | 柔光 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
-| 每个维度实体架构的数据集 | 5 | 柔光 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
-| 每日摄取的Dimension实体批次 | 每个实体4个 | 柔光 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
+| 所有维实体的总大小 | 5 GB | 性能护栏 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
+| 每个维度实体架构的数据集 | 5 | 性能护栏 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
+| 每日摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
 
 {style="table-layout:auto"}
 
@@ -111,10 +114,10 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 每个沙盒的受众 | 4000 | 柔光 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 尝试创建其他受众可能会影响系统性能。 |
-| 每个沙盒的Edge受众 | 150 | 柔光 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 |
-| 每个沙盒的流受众 | 500 | 柔光 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 |
-| 每个沙盒的批量受众 | 4000 | 柔光 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
+| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 尝试创建其他受众可能会影响系统性能。 |
+| 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 |
+| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 |
+| 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
 
 {style="table-layout:auto"}
 
@@ -155,3 +158,13 @@ Dimension实体提供查找数据，这有助于并简化多实体区段定义�
 ### Platform中的Adobe Analytics报表包数据集 {#aa-datasets}
 
 只需解决所有数据冲突，即可为配置文件启用多个报表包。 您可以使用数据准备功能解决eVar、列表和Prop之间的数据冲突。 要了解有关如何使用数据准备功能的更多信息，请参阅 [Adobe Analytics连接器用户界面指南](../sources/tutorials/ui/create/adobe-applications/analytics.md).
+
+## 后续步骤
+
+请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
+
+* [Real-Time CDP护栏](/help/rtcdp/guardrails/overview.md)
+* [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2P — 主要和最终包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2B - Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

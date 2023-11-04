@@ -7,7 +7,7 @@ feature: Queries
 source-git-commit: 113e74b3a4783a11bc88dc2d16134b68638604e5
 workflow-type: tm+mt
 source-wordcount: '311'
-ht-degree: 18%
+ht-degree: 20%
 
 ---
 
@@ -65,7 +65,7 @@ ht-degree: 18%
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
 - 查询服务UI {#ui}
-   - [UI概述](ui/overview.md)
+   - [UI 概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
    - [查询模板](ui/query-templates.md)
    - [参数化查询（受限）](ui/parameterized-queries.md)

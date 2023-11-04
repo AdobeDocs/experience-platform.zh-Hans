@@ -6,7 +6,7 @@ exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
 source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
 workflow-type: tm+mt
 source-wordcount: '956'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -85,7 +85,7 @@ Adobe Campaign支持以下连接类型：
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 
