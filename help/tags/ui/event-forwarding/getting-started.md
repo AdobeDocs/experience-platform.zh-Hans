@@ -3,9 +3,9 @@ title: 事件转发快速入门
 description: 按照此分步教程进行操作，以开始在Adobe Experience Platform中使用事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 45d881a810782f734ed030fbf29e802fa535400a
+source-git-commit: 05170986263b6eed2d19a65e34f70dc28eb8ba2f
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '870'
 ht-degree: 26%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 26%
 
 * [Adobe Experience Platform Web SDK](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
-* [服务器到服务器API](/help/server-api/overview.md)
+* [边缘网络服务器 API](/help/server-api/overview.md)
 
 >[!NOTE]
 >Platform Web SDK和Platform Mobile SDK不需要通过Adobe Experience Platform中的标记进行部署。 但是，推荐使用标记来部署这些SDK。
