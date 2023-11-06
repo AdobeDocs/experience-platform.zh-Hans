@@ -6,7 +6,7 @@ exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
 source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '950'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 7%
 * [可观测性](../../observability/home.md)： [!DNL Observability Insights] 允许您通过使用统计指标和事件通知来监控Platform活动。
    * [警报](../../observability/alerts/overview.md)：当您的Platform操作达到特定条件集时（例如系统违反阈值时可能会出现问题），Platform可以向您组织中订阅了警报消息的任何用户发送警报消息。
 
-## 在UI中订阅警报 {#subscribe-destination-alerts}
+## 在 UI 中订阅提醒 {#subscribe-destination-alerts}
 
 >[!CONTEXTUALHELP]
 >id="platform_destination_alerts_subscribe"

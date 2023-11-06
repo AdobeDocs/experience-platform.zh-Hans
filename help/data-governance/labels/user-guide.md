@@ -7,11 +7,11 @@ exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
 source-git-commit: 663d1e20a7b8a56b1395047124fdf4b6fc3c214b
 workflow-type: tm+mt
 source-wordcount: '1465'
-ht-degree: 18%
+ht-degree: 19%
 
 ---
 
-# 在UI中管理数据使用标签 {#user-guide}
+# 在 UI 中管理数据使用标签 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
@@ -48,7 +48,7 @@ ht-degree: 18%
 
 此时将显示一个对话框，允许您在架构级别和字段级别应用和管理数据使用标签。 有关以下内容的完整说明，请参阅XDM教程 [如何添加或编辑XDM架构的数据使用标签](../../xdm/tutorials/labels.md#select-schema-field).
 
-### 将数据使用标签添加到特定数据集 {#add-labels-to-dataset}
+### 向特定数据集添加数据使用标签 {#add-labels-to-dataset}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"

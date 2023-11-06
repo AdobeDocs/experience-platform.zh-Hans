@@ -7,7 +7,7 @@ exl-id: de5e07bc-2c44-416e-99db-7607059117cb
 source-git-commit: cd57ca50537d928025a5164b6a7d0ead490162ba
 workflow-type: tm+mt
 source-wordcount: '3053'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
@@ -91,10 +91,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 
 Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。客户人工智能通过分析现有的消费者体验事件数据来预测 **流失或转化倾向分数**. 这些高精度的客户倾向模型允许进行更精确的分段和定位。 此 [得分分布](#customer-ai-distribution-of-scores) 和 [评分摘要](#customer-ai-scoring-summary) 分析会在您的受众中展示该划分。 它们会突出显示哪些用户档案具有高度/低度/中度的倾向性，以及它们在用户档案计数中的分布方式。
 
-* [[!UICONTROL 客户人工智能评分摘要]](#customer-ai-scoring-summary)
-* [[!UICONTROL 得分的客户人工智能分布]](#customer-ai-distribution-of-scores)
+* [[!UICONTROL 客户人工智能评分汇总]](#customer-ai-scoring-summary)
+* [[!UICONTROL 客户人工智能分数分布]](#customer-ai-distribution-of-scores)
 
-### [!UICONTROL 得分的客户人工智能分布] {#customer-ai-distribution-of-scores}
+### [!UICONTROL 客户人工智能分数分布] {#customer-ai-distribution-of-scores}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_distributionOfScores"
@@ -123,7 +123,7 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 
 有关客户人工智能的更多信息，请访问 [探索见解UI指南](../../intelligent-services/customer-ai/user-guide/discover-insights.md).
 
-### [!UICONTROL 客户人工智能评分摘要] {#customer-ai-scoring-summary}
+### [!UICONTROL 客户人工智能评分汇总] {#customer-ai-scoring-summary}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_scoringSummary"

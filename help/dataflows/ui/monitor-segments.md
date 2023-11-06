@@ -7,7 +7,7 @@ exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '1919'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 4%
    - [导出作业](../../segmentation/api/export-jobs.md)：导出作业是一种异步进程，用于将受众区段成员保留到数据集。
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-## 监控区段功能板 {#monitoring-segments-dashboard}
+## 监控区段仪表板 {#monitoring-segments-dashboard}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segments"

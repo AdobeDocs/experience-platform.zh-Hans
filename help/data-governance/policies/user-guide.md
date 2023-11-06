@@ -7,11 +7,11 @@ exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
 source-git-commit: ed9ab1f2a4b4466841b3bedef48a6e0a07ec3d10
 workflow-type: tm+mt
 source-wordcount: '1788'
-ht-degree: 17%
+ht-degree: 18%
 
 ---
 
-# 在UI中管理数据使用策略 {#user-guide}
+# 在 UI 中管理数据使用策略 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"

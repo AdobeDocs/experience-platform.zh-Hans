@@ -5,7 +5,7 @@ exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
 source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1294'
-ht-degree: 43%
+ht-degree: 44%
 
 ---
 
@@ -51,7 +51,7 @@ ht-degree: 43%
 | [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>配置文件移除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [身份图](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
-| [身份命名空间](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>创建</li><li>更新</li></ul> |
+| [标识命名空间](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>创建</li><li>更新</li></ul> |
 | [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [查询](../../../query-service/ui/overview.md) | <ul><li>Execute</li></ul> |
@@ -70,7 +70,7 @@ ht-degree: 43%
 
 要查看和导出审核日志，您必须具有 **[!UICONTROL 查看用户活动日志]** 已授予访问控制权限(可在 [!UICONTROL 数据管理] 类别)。 要了解如何管理Platform功能的各项权限，请参阅 [访问控制文档](../../../access-control/home.md).
 
-## 在UI中管理审核日志 {#managing-audit-logs-in-the-ui}
+## 在 UI 中管理审核日志 {#managing-audit-logs-in-the-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_instructions"

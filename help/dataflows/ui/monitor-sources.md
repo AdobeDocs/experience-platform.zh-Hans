@@ -12,7 +12,7 @@ ht-degree: 8%
 
 ---
 
-# 在 UI 中监测源的数据流
+# 在 UI 中监控源的数据流
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ ht-degree: 8%
 * [Real-time Customer Profile](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 * [沙盒](../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 汇总的监控视图 {#aggregated-monitoring-view}
+## 汇总监控视图 {#aggregated-monitoring-view}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"

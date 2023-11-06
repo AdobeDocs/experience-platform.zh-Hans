@@ -7,7 +7,7 @@ exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '855'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 9%
 
 沙盒是单个Experience Platform实例中的虚拟分区。 每个沙盒都维护其自身的Platform资源库（包括架构、数据集、配置文件等）。 在沙盒内执行的所有内容和操作仅受该沙盒限制，不会影响任何其他沙盒。 有关更多信息，请参阅[沙盒概述](home.md)。
 
-## 提供了哪些类型的沙盒，以及它们之间有何差异？ {#sandbox-types}
+## 提供了哪些类型的沙盒，它们之间有何差异？ {#sandbox-types}
 
 >[!CONTEXTUALHELP]
 >id="platform_sandboxes_sandboxtypes"

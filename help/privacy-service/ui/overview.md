@@ -7,11 +7,11 @@ exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '206'
-ht-degree: 19%
+ht-degree: 20%
 
 ---
 
-# [!DNL Privacy Service] UI概述 {#privacy-ui-guide}
+# [!DNL Privacy Service] UI 概述 {#privacy-ui-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacy_privacyconsole_requests"

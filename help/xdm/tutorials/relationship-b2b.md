@@ -5,11 +5,11 @@ exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
 source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '1391'
-ht-degree: 14%
+ht-degree: 16%
 
 ---
 
-# 在Real-time Customer Data Platform B2B版本中定义两个架构之间的多对一关系 {#relationship-b2b}
+# 在 Real-Time Customer Data Platform B2B 版本中定义两个架构之间的多对一关系 {#relationship-b2b}
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
@@ -46,7 +46,7 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 
 架构关系由 **源架构** 引用a的主标识字段 **引用架构**. 在接下来的步骤中， ”[!DNL Opportunities]”用作源架构，而“[!DNL Accounts]”用作引用架构。
 
-### 了解B2B关系中的身份
+### 了解 B2B 关系中的标识
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_identity_namespace"

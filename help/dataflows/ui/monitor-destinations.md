@@ -107,7 +107,7 @@ ht-degree: 11%
 
 ![流目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
-### 为批处理目标运行数据流 {#dataflow-runs-for-batch-destinations}
+### 批处理目标的数据流运行 {#dataflow-runs-for-batch-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
@@ -165,7 +165,7 @@ ht-degree: 11%
 
 ![批处理目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
-## 监视目标仪表板 {#monitoring-destinations-dashboard}
+## 监控目标仪表板 {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >

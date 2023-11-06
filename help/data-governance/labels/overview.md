@@ -7,7 +7,7 @@ exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
 source-git-commit: 5d34781e06c0fa8bfd2e52f73e336d92d16192f6
 workflow-type: tm+mt
 source-wordcount: '802'
-ht-degree: 14%
+ht-degree: 15%
 
 ---
 
@@ -46,7 +46,7 @@ Adobe Experience Platform允许您将数据使用标签应用于数据集和字�
 
 有关特定数据导出控件如何映射到中的数据使用标签的参考 [!DNL Platform]，请参阅 [Audience Manager文档](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
 
-## 管理中的数据使用标签 [!DNL Experience Platform] {#manage-labels}
+## 管理 [!DNL Experience Platform] 中的数据使用标签 {#manage-labels}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_instructions"

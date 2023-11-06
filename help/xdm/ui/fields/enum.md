@@ -11,7 +11,7 @@ ht-degree: 8%
 
 ---
 
-# 在UI中定义枚举和建议值 {#enums-and-suggested-values}
+# 在 UI 中定义枚举和建议值 {#enums-and-suggested-values}
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_enum_suggestedvalue"

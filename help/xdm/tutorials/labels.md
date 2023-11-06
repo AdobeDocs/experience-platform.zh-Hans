@@ -5,7 +5,7 @@ exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
 source-git-commit: c35c270afca57cb96228cea29fd5a39ec6615332
 workflow-type: tm+mt
 source-wordcount: '795'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 8%
    * [架构编辑器](../ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：提供用于对Platform操作强制实施数据使用限制的基础架构，其中使用策略定义可以（或不能）对标记数据执行哪些营销操作。
 
-## 选择要向其添加标签的架构或字段 {#select-schema-field}
+## 选择要将标签添加到的架构或字段 {#select-schema-field}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_editgovernancelabels"

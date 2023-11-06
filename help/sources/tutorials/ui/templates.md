@@ -1,21 +1,21 @@
 ---
 description: 了解如何在Adobe Experience Platform UI中使用模板来加速B2B数据的数据摄取过程。
-title: 在UI中使用模板创建源数据流
-badge1: "Beta"
+title: 在 UI 中使用模板创建源数据流
+badge1: "Beta 版"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
 workflow-type: tm+mt
-source-wordcount: '2258'
-ht-degree: 10%
+source-wordcount: '2259'
+ht-degree: 11%
 
 ---
 
-# 在UI中使用模板创建源数据流 {#create-a-sources-dataflow-using-templates-in-the-ui}
+# 在 UI 中使用模板创建源数据流 {#create-a-sources-dataflow-using-templates-in-the-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
 >title="Platform UI 中各种来源的模板"
->abstract="模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份、映射规则、身份命名空间和数据流。可更新自动生成的资源，以使自定义适合您的用例。"
+>abstract="模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份、映射规则、标识命名空间和数据流。可更新自动生成的资源，以使自定义适合您的用例。"
 
 >[!IMPORTANT]
 >
@@ -27,7 +27,7 @@ ht-degree: 10%
 >
 >文档和功能可能会发生更改。
 
-Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份、映射规则、身份命名空间和数据流。
+Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份、映射规则、标识命名空间和数据流。
 
 使用模板，您可以：
 
@@ -45,7 +45,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 * [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
 * [沙盒](../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-## 在Platform UI中使用模板 {#use-templates-in-the-platform-ui}
+## 在 Platform UI 中使用模板 {#use-templates-in-the-platform-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_accounttype"
@@ -203,7 +203,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 ![已启用回填的Dynamics和Salesforce模板的计划界面。](../../images/tutorials/templates/backfill.png)
 
-### 审查资源 {#review-assets}
+### 查看资源 {#review-assets}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_templates_review"
