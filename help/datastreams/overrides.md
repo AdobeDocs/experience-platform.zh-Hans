@@ -2,10 +2,10 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流 UI 中配置数据流覆盖并通过 Web SDK 激活它们。
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 5effb8a514100c28ef138ba1fc443cf29a64319a
+source-git-commit: 252bda1395a2a31cd7e2e2789e5c2508fbd3fd5e
 workflow-type: tm+mt
-source-wordcount: '1464'
-ht-degree: 78%
+source-wordcount: '1466'
+ht-degree: 77%
 
 ---
 
@@ -153,9 +153,6 @@ alloy("sendEvent", {
       datasets: {
         event: {
           datasetId: "SampleEventDatasetIdOverride"
-        },
-        profile: {
-          datasetId: "www"
         }
       }
     },
@@ -180,7 +177,7 @@ alloy("sendEvent", {
 |---|---|
 | `edgeConfigOverrides.datastreamId` | 使用此参数可允许单个请求转到与 `configure`命令定义的数据流不同的数据流。 |
 
-### 通过 `configure` 命令发送配置覆盖 {#send-configure}
+### 通过Web SDK发送配置覆盖 `configure` 命令 {#send-configure}
 
 以下示例显示 `configure` 命令中的配置覆盖的情况。
 
@@ -195,11 +192,8 @@ alloy("configure", {
   edgeConfigOverrides: {
     "com_adobe_experience_platform": {
       "datasets": {
-        "event": { 
+        "event": {
           datasetId: "SampleProfileDatasetIdOverride"
-        },
-        "profile": { 
-          datasetId: "www"
         }
       }
     },
@@ -296,10 +290,7 @@ let configOverrides: [String: Any] = [
     "datasets": [
       "event": [
         "datasetId": "SampleEventDatasetIdOverride"
-      ],
-      "profile": [
-        "datasetId": "SampleProfileDatasetIdOverride"
-      ],
+      ]
     ]
   ],
   "com_adobe_analytics": [
@@ -308,7 +299,7 @@ let configOverrides: [String: Any] = [
           "MySecondOverrideReportSuite",
           "MyThirdOverrideReportSuite"
       ]
-  ],  
+  ],
   "com_adobe_identity": [
     "idSyncContainerId": "1234567"
   ],
@@ -341,10 +332,7 @@ val configOverrides = mapOf(
         to mapOf(
             "event"
             to mapOf("datasetId"
-                to "SampleEventDatasetIdOverride"),
-            "profile"
-            to mapOf("datasetId"
-                to "SampleProfileDatasetIdOverride")
+                to "SampleEventDatasetIdOverride")
         )
     ),
     "com_adobe_analytics"
@@ -392,9 +380,6 @@ Edge.sendEvent(experienceEvent) {
         "datasets": {
           "event": {
             "datasetId": "SampleProfileDatasetIdOverride"
-          },
-          "profile": {
-            "datasetId": "www"
           }
         }
       },
