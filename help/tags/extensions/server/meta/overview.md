@@ -2,9 +2,9 @@
 title: 元转换API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: d55398f328f3f85ce6b32a2553e7a93df3584f02
+source-git-commit: b11aff782a44237e6e4ae87254163713883e3ded
 workflow-type: tm+mt
-source-wordcount: '2624'
+source-wordcount: '2595'
 ht-degree: 0%
 
 ---
@@ -67,9 +67,9 @@ ht-degree: 0%
 
 ## 与LiveRamp(Alpha)集成 {#alpha}
 
-与LiveRamp的集成向Meta Conversions API规则配置中添加了新字段，使客户能够更轻松地与LiveRamp Conversions API集成。 此集成使您无需直接与合作伙伴或Meta共享PII。 由于LiveRamp具有强大的标识图，因此包含 [!UICONTROL 合作伙伴ID (alpha)] 可以通过提高用户匹配率来提高集成质量。
+[!DNL LiveRamp] 客户具有 [!DNL LiveRamp]其网站上部署的经过身份验证的流量解决方案(ATS)可能会选择将RampID作为客户信息参数共享。 请与您的 [!DNL Meta] 客户团队，加入此功能的Alpha计划。
 
-![Meta even转发 [!UICONTROL 规则] 配置页面突出显示 [!UICONTROL 合作伙伴名称(alpha)] 和 [!UICONTROL 合作伙伴ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
+![元事件转发 [!UICONTROL 规则] 配置页面突出显示 [!UICONTROL 合作伙伴名称(alpha)] 和 [!UICONTROL 合作伙伴ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
 
 ## 配置事件转发规则 {#rule}
 
