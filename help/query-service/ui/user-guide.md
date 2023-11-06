@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
+source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
 workflow-type: tm+mt
-source-wordcount: '2288'
+source-wordcount: '2304'
 ht-degree: 3%
 
 ---
@@ -46,6 +46,10 @@ ht-degree: 3%
 ## 查询创作，使用 [!DNL Query Editor] {#query-authoring}
 
 使用 [!DNL Query Editor]，您可以编写、执行和保存客户体验数据查询。 执行或保存的所有查询 [!DNL Query Editor] 可供您组织中的所有用户使用，他们有权访问 [!DNL Query Service].
+
+>[!IMPORTANT]
+>
+>旧版编辑器将于2024年4月1日停用，并将不再可用。
 
 ## 增强的查询编辑器切换开关 {#enhanced-editor-toggle}
 

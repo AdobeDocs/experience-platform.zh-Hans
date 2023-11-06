@@ -2,23 +2,19 @@
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '734'
 ht-degree: 10%
 
 ---
 
-# 参数化查询（限量发布） {#parameterized-queries}
+# 参数化查询 {#parameterized-queries}
 
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_parameterizedQueries"
 >title="参数化查询"
 >abstract="使用参数化查询在执行时添加参数值。这允许您处理动态数据并针对不同的用例重用查询。在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，在编辑器下方的查询参数部分添加键值。"
-
->[!IMPORTANT]
->
->参数化查询UI功能在 **仅限限量发布** 并非所有客户均适用。
 
 查询服务支持在查询编辑器中使用参数化查询。 通过参数化查询，您现在可以对参数使用占位符，并在执行时添加参数值。 使用占位符，您可以使用动态数据，其中您不知道在执行语句之前值是什么。 您还可以提前准备查询，并将它们重复用于类似目的。 重用查询可节省大量工作，因为您可以避免为每个用例创建不同的SQL查询。
 
