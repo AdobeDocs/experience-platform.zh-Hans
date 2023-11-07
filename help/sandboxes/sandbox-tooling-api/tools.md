@@ -5,13 +5,13 @@ exl-id: 529cb7d6-6b3f-459c-be03-35fc28b891cf
 source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '152'
-ht-degree: 2%
+ht-degree: 19%
 
 ---
 
 # 工具端点
 
-沙盒工具允许您选择不同的工件并将它们导出到资源包中。 软件包可以包含单个对象或多个对象。 包中包含的任何对象必须来自同一沙盒。
+沙盒工具允许您选择不同的工件并将它们导出到资源包中。 包可以包含单个对象或多个对象。包中包含的任何对象必须来自同一沙盒。
 
 此 `/tools` 沙盒工具API中的端点允许您列出和检索作业JSON数据。
 

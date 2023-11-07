@@ -5,7 +5,7 @@ exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
 source-git-commit: 4cb570fbdb76e53dd0a8c4ee78c31d2a886e5dc1
 workflow-type: tm+mt
 source-wordcount: '1849'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 8%
 
 提高沙盒之间的配置准确性，并通过沙盒工具功能在沙盒之间无缝导出和导入沙盒配置。 使用沙盒工具缩短实现实施过程的价值时间，并在沙盒之间移动成功的配置。
 
-您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 软件包可以包含单个对象或多个对象。 <!--or an entire sandbox.-->包中包含的任何对象必须来自同一沙盒。
+您可以使用沙盒工具功能选择不同的对象并将它们导出到包中。 包可以包含单个对象或多个对象。<!--or an entire sandbox.-->包中包含的任何对象必须来自同一沙盒。
 
 ## 沙盒工具支持的对象 {#supported-objects}
 
