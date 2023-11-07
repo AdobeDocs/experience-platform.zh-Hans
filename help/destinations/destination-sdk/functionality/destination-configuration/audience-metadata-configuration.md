@@ -2,7 +2,7 @@
 description: 了解如何为使用Destination SDK构建的目标配置受众元数据设置。
 title: 受众元数据配置
 exl-id: ae71df4f-b753-4084-835f-03559b4986cb
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 3%
@@ -68,7 +68,7 @@ Destination SDK提供了一些工具，可用于以编程方式创建、更新�
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
 * [客户身份验证配置](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authentication.md)
+* [OAuth2身份验证](oauth2-authorization.md)
 * [客户数据字段](customer-data-fields.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)

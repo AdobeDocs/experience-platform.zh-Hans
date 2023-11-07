@@ -2,7 +2,7 @@
 description: Adobe Experience Platform中的目标服务对构建目标功能的多个组件使用配置端点。 了解这些组件如何组合使Experience Platform能够连接到目标合作伙伴、发送自定义消息并在数字生态系统中激活配置文件数据。
 title: Destination SDK中的配置选项
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Adobe Experience Platform中的目标服务对构建目标功能的多个组件�
 有关每个目标配置组件的详细信息，请参阅下面的文档。 您可以通过以下方式配置下述功能 [目标端点](../authoring-api/destination-configuration/create-destination-configuration.md).
 
 * [客户身份验证配置](destination-configuration/customer-authentication.md)：选择Experience Platform连接到目标时应使用的身份验证机制。 此配置将生成 [配置新目标](../../ui/connect-destination.md) 页面，在此页面中，用户将Experience Platform连接到Experience Platform与您的目标关联的帐户。
-* [OAuth2身份验证](destination-configuration/oauth2-authentication.md)：了解所有 [!DNL OAuth2] Destination SDK支持的身份验证流程，并获取设置说明 [!DNL OAuth2] 目标身份验证……
+* [OAuth2身份验证](destination-configuration/oauth2-authorization.md)：了解所有 [!DNL OAuth2] Destination SDK支持的身份验证流程，并获取设置说明 [!DNL OAuth2] 目标身份验证……
 * [客户数据字段](destination-configuration/customer-data-fields.md)：了解如何在Experience PlatformUI中创建输入字段，这些字段允许用户指定与如何连接数据并将其导出到目标相关的各种信息。
 * [UI属性](destination-configuration/ui-attributes.md)：了解如何为使用Destination SDK构建的目标配置UI属性，如文档链接、目标卡类别以及目标连接类型和频率。
 * [架构配置](destination-configuration/schema-configuration.md)：了解如何定义目标的目标架构，以便用户将配置文件属性和身份映射到此架构。

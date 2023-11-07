@@ -2,7 +2,7 @@
 description: 了解如何在Experience PlatformUI中创建输入字段，这些字段允许您的用户指定与如何连接数据并将其导出到目标相关的各种信息。
 title: 客户数据字段
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1580'
 ht-degree: 4%
@@ -568,7 +568,7 @@ ht-degree: 4%
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
 * [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authentication.md)
+* [OAuth2身份验证](oauth2-authorization.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)
 * [身份命名空间配置](identity-namespace-configuration.md)

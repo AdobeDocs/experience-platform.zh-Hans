@@ -4,7 +4,7 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 48acb9ec2ee093c4b22176785a693b1c1ea742bd
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1201'
 ht-degree: 10%
@@ -214,7 +214,7 @@ ht-degree: 10%
          * [文件格式配置](./destination-sdk/functionality/destination-server/file-formatting.md)
       * 目标配置组件 {#destination-configuration}
          * [客户身份验证配置](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
-         * [OAuth2身份验证](./destination-sdk/functionality/destination-configuration/oauth2-authentication.md)
+         * [OAuth2授权](./destination-sdk/functionality/destination-configuration/oauth2-authorization.md)
          * [客户数据字段](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
          * [UI属性](./destination-sdk/functionality/destination-configuration/ui-attributes.md)
          * [合作伙伴架构配置](./destination-sdk/functionality/destination-configuration/schema-configuration.md)

@@ -2,7 +2,7 @@
 description: 了解如何为目标设置身份验证机制，并深入了解根据您选择的身份验证方法用户将在UI中看到的内容。
 title: 客户身份验证配置
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1094'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 ## OAuth 2身份验证 {#oauth2}
 
-用户选择 **[!UICONTROL 连接到目标]** 以触发指向您目标的OAuth 2身份验证流程，如Twitter自定义受众目标的以下示例所示。 有关为目标端点配置OAuth 2身份验证的详细信息，请阅读专用 [Destination SDKOAuth 2身份验证页面](oauth2-authentication.md).
+用户选择 **[!UICONTROL 连接到目标]** 以触发指向您目标的OAuth 2身份验证流程，如Twitter自定义受众目标的以下示例所示。 有关为目标端点配置OAuth 2身份验证的详细信息，请阅读专用 [Destination SDKOAuth 2身份验证页面](oauth2-authorization.md).
 
 ![使用OAuth 2身份验证呈现UI](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 
@@ -233,7 +233,7 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
-* [OAuth2身份验证](oauth2-authentication.md)
+* [OAuth2身份验证](oauth2-authorization.md)
 * [客户数据字段](customer-data-fields.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)
