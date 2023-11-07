@@ -2,7 +2,7 @@
 description: 了解使用Destination SDK构建的目标支持的历史配置文件资格。
 title: 历史配置文件资格
 exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 2%
@@ -45,7 +45,7 @@ ht-degree: 2%
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
 * [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authorization.md)
+* [OAuth2授权](oauth2-authorization.md)
 * [客户数据字段](customer-data-fields.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)

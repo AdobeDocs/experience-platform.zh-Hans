@@ -2,7 +2,7 @@
 description: 了解如何为目标设置身份验证机制，并深入了解根据您选择的身份验证方法用户将在UI中看到的内容。
 title: 客户身份验证配置
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '1094'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 * 对于目标，使用 [基本身份验证](#basic)，用户必须直接在Experience PlatformUI身份验证页面中提供用户名和密码。
 * 对于目标，使用 [承载认证](#bearer)，用户必须提供持有者令牌。
-* 对于目标，使用 [OAuth2身份验证](#oauth2)，则用户将被重定向到您目标的登录页面，以便他们能够使用其凭据进行登录。
+* 对于目标，使用 [OAuth2授权](#oauth2)，则用户将被重定向到您目标的登录页面，以便他们能够使用其凭据进行登录。
 * 对象 [Amazon S3](#s3) 目标，用户必须提供其 [!DNL Amazon S3] 访问密钥和密钥。
 * 对象 [Azure Blob](#blob) 目标，用户必须提供其 [!DNL Azure Blob] 连接字符串。
 
@@ -233,7 +233,7 @@ Experience Platform在客户将数据从Platform导出到您的目标之前，�
 
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
-* [OAuth2身份验证](oauth2-authorization.md)
+* [OAuth2授权](oauth2-authorization.md)
 * [客户数据字段](customer-data-fields.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)

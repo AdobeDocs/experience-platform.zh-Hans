@@ -2,7 +2,7 @@
 description: 了解如何为使用Destination SDK构建的目标配置合作伙伴架构。
 title: 合作伙伴架构配置
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '1897'
 ht-degree: 4%
@@ -246,7 +246,7 @@ Destination SDK支持创建动态合作伙伴架构。 与静态架构不同，�
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
 * [客户身份验证](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authorization.md)
+* [OAuth2授权](oauth2-authorization.md)
 * [UI属性](ui-attributes.md)
 * [客户数据字段](customer-data-fields.md)
 * [身份命名空间配置](identity-namespace-configuration.md)

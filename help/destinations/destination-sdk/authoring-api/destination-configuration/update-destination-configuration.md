@@ -2,7 +2,7 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK更新现有目标配置的API调用。
 title: 更新目标配置
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 2%
@@ -20,7 +20,7 @@ ht-degree: 2%
 有关目标配置的功能的详细说明，请阅读以下文章：
 
 * [客户身份验证配置](../../functionality/destination-configuration/customer-authentication.md)
-* [OAuth2身份验证](../../functionality/destination-configuration/oauth2-authorization.md)
+* [OAuth2授权](../../functionality/destination-configuration/oauth2-authorization.md)
 * [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md)
 * [UI属性](../../functionality/destination-configuration/ui-attributes.md)
 * [架构配置](../../functionality/destination-configuration/schema-configuration.md)

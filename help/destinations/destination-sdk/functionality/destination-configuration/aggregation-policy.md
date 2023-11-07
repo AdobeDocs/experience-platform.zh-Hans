@@ -2,7 +2,7 @@
 description: 了解如何设置聚合策略，以确定应如何对发往您目标的HTTP请求进行分组和批处理。
 title: 聚合策略
 exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 2%
@@ -127,7 +127,7 @@ ht-degree: 2%
 要了解有关其他目标组件的更多信息，请参阅以下文章：
 
 * [客户身份验证配置](customer-authentication.md)
-* [OAuth2身份验证](oauth2-authorization.md)
+* [OAuth2授权](oauth2-authorization.md)
 * [客户数据字段](customer-data-fields.md)
 * [UI属性](ui-attributes.md)
 * [架构配置](schema-configuration.md)
