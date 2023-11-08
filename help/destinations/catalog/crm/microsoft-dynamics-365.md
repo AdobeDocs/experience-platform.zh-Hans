@@ -4,10 +4,10 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 29cf080f83adf0e7f8b3549104229e9f54c5b8d9
 workflow-type: tm+mt
-source-wordcount: '2154'
-ht-degree: 1%
+source-wordcount: '2183'
+ht-degree: 2%
 
 ---
 
@@ -86,7 +86,7 @@ ht-degree: 1%
 
 | 目标身份 | 示例 | 描述 | 注意事项 |
 |---|---|---|---|
-| `contactId` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | 联系人的唯一标识符。 | **必需**. 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) 以了解更多详细信息。 |
+| `contactid` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | 联系人的唯一标识符。 | **必需**. 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) 以了解更多详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -162,23 +162,24 @@ ht-degree: 1%
 1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新映射行。
    ![用于添加新映射的平台UI屏幕快照示例。](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
 
-1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 类别并选择 `contactId`.
+1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 类别并选择 `contactid`.
    ![源映射的平台UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
 
 1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择要将源字段映射到的目标字段类型。
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可从列表中将源字段映射到身份命名空间。
-     ![平台UI屏幕截图显示了contactId的Target映射。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
+     ![显示联系信息的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
-   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例|必需| |—|—|—| |`contactId`|`contactId`|是 |
+   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例|必需| |—|—|—| |`contactid`|`contactid`|是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在中定义的自定义属性 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) 以获取支持的属性的完整列表。
-     ![显示LastName的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-lastname.png)
+     ![显示电子邮件的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
      >
-     >如果您有一个日期或时间戳源字段被映射到 [!DNL Dynamics 365] [日期或时间戳](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) 目标字段，请确保映射的值不为空。 如果传递的值为空，您将遇到 *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* 错误消息和数据将不更新。 这是 [!DNL Dynamics 365] 限制。
+     > * 目标字段名称应位于 `lowercase`.
+     > * 此外，如果您有一个日期或时间戳源字段，该字段已映射到 [!DNL Dynamics 365] [日期或时间戳](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) 目标字段，请确保映射的值不为空。 如果导出的字段值为空，您将遇到 *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* 错误消息和数据将不更新。 这是 [!DNL Dynamics 365] 限制。
 
-   * 例如，根据要更新的值，在XDM配置文件架构和之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例| |—|—| |`person.name.firstName`|`FirstName`| |`person.name.lastName`|`LastName`| |`personalEmail.address`|`Email`|
+   * 例如，根据要更新的值，在XDM配置文件架构和之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例| |—|—| |`person.name.firstName`|`firstname`| |`person.name.lastName`|`lastname`| |`personalEmail.address`|`emailaddress1`|
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的平台UI屏幕截图示例。](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
@@ -243,6 +244,7 @@ ht-degree: 1%
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
+| 2023 年 10 月 | 文档更新 | 更新了指南，以指明所有目标属性名称都应小写，即 [映射注意事项和示例](#mapping-considerations-example) 步骤。 |
 | 2023 年 8 月 | 功能和文档更新 | 添加了对的支持 [!DNL Dynamics 365] 未在的默认解决方案中创建的自定义字段的自定义字段前缀 [!DNL Dynamics 365]. 新的输入字段， **[!UICONTROL 自定义前缀]**，已添加在 [填写目标详细信息](#destination-details) 步骤。 (PLATIR-31602)。 |
 | 2022年11月 | 初始版本 | 初始目标版本和文档发布。 |
 
