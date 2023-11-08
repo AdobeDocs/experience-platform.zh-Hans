@@ -2,7 +2,7 @@
 title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: d47ddc474fcaf19eaff8ddcd67139dec5c417720
+source-git-commit: df82431f87f725a12cbc5b8f88fff6d4cc065450
 workflow-type: tm+mt
 source-wordcount: '3594'
 ht-degree: 54%
@@ -150,6 +150,8 @@ ht-degree: 54%
 
 +++XDM ExperienceEvent（类）
 
+此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
+
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
 | `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
@@ -157,8 +159,6 @@ ht-degree: 54%
 | `eventType` | 必需 | 指示事件类别类型的字符串。 |
 
 +++
-
-此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
 +++最终用户 ID 详细信息（字段组）
 
@@ -189,6 +189,8 @@ ht-degree: 54%
 
 +++XDM ExperienceEvent（类）
 
+此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
+
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
 | `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
@@ -196,8 +198,6 @@ ht-degree: 54%
 | `eventType` | 必需 | 指示事件类别类型的字符串。 |
 
 +++
-
-此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
 +++商务详细信息（字段组）
 
@@ -247,6 +247,8 @@ ht-degree: 54%
 
 +++XDM ExperienceEvent（类）
 
+此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
+
 | 字段 | 要求 | 描述 |
 | --- | --- | --- |
 | `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
@@ -254,8 +256,6 @@ ht-degree: 54%
 | `eventType` | 必需 | 指示事件类别类型的字符串。 |
 
 +++
-
-此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
 +++Adobe Analytics ExperienceEvent 模板（字段组）
 
