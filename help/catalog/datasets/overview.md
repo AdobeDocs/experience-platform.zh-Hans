@@ -3,11 +3,12 @@ keywords: Experience Platform；主页；热门主题；数据位置；数据位
 solution: Experience Platform
 title: 数据集概述
 description: 本文档高度概括 Experience Platform 中的数据集。
+user-guide-description: 通过本指南获取Experience Platform数据集的高级概述。 在此处了解如何创建这些变量、对数据强制实施限制以及将数据摄取到数据集中。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '843'
-ht-degree: 8%
+source-wordcount: '870'
+ht-degree: 7%
 
 ---
 

@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform 中的沙盒帮助
 breadcrumb-title: Sandoxes 指南
-user-guide-description: 将平台实例分区为虚拟环境，以便进行开发、测试和应用程序部署。
+user-guide-description: 了解沙盒如何工作并将Platform实例分区到虚拟环境中以进行开发、测试和应用程序部署。
 feature: Sandboxes
-source-git-commit: b5ba5afaa06d27230a211efff25f7f0222fcc23a
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '71'
-ht-degree: 59%
+source-wordcount: '77'
+ht-degree: 37%
 
 ---
 

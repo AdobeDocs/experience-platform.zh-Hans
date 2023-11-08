@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Catalog and Datasets 指南
-user-guide-description: 浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
+user-guide-description: 浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集，并了解有关目录服务系统的更多信息。
 feature: Catalog
-source-git-commit: f456b28016af6d2978933deac68f45c2f8d37f80
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 31%
+source-wordcount: '119'
+ht-degree: 18%
 
 ---
 
