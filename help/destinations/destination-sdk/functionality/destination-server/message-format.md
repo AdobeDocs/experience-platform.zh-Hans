@@ -2,9 +2,9 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: b42ef11681bb50141c7f3dc76d8c79d71e55e73c
 workflow-type: tm+mt
-source-wordcount: '2237'
+source-wordcount: '2502'
 ht-degree: 1%
 
 ---
@@ -1203,13 +1203,18 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 
 下表提供了上述示例中函数的说明。
 
-| 函数 | 描述 |
-|---------|----------|
+| 函数 | 描述 | 示例 |
+|---------|----------|----------|
 | `input.profile` | 用户档案，表示为 [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). 遵循此页面上进一步提到的合作伙伴XDM架构。 |
-| `destination.segmentAliases` | 从Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 |
-| `destination.segmentNames` | 将Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 |
-| `addedSegments(listOfSegments)` | 仅返回具有状态的受众 `realized`. |
-| `removedSegments(listOfSegments)` | 仅返回具有状态的受众 `exited`. |
+| `hasSegments` | 此函数采用命名空间受众ID的映射作为参数。 函数返回 `true` 如果地图中至少有一个受众（无论其状态如何），并且 `false` 否则。 您可以使用此函数确定是否对受众映射进行迭代。 | `hasSegments(input.profile.segmentMembership)` |
+| `destination.namespaceSegmentAliases` | 将特定Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
+| `destination.namespaceSegmentNames` | 将特定Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
+| `destination.namespaceSegmentTimestamps` | 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`：返回带有ID的区段所处的时间 `seg-id-1`，来自 `ups` 命名空间，创建时采用UNIX时间戳格式。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`：返回具有ID的受众所处的时间 `seg-id-1`，来自 `ups` 命名空间已更新，采用UNIX时间戳格式。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`：返回具有ID的受众所处的时间 `seg-id-1`，来自 `ups` 命名空间中，已以UNIX时间戳格式激活到目标。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上更新受众激活的时间。</li></ul> |
+| `addedSegments(mapOfNamespacedSegmentIds)` | 仅返回具有状态的受众 `realized`，跨所有命名空间。 | `addedSegments(input.profile.segmentMembership)` |
+| `removedSegments(mapOfNamespacedSegmentIds)` | 仅返回具有状态的受众 `exited`，跨所有命名空间。 | `removedSegments(input.profile.segmentMembership)` |
+| `destination.segmentAliases` | **已弃用. 替换为`destination.namespaceSegmentAliases`** <br><br> 从Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **已弃用. 替换为`destination.namespaceSegmentNames`** <br><br>  将Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentTimestamps` | **已弃用. 替换为`destination.namespaceSegmentTimestamps`** <br><br> 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`：返回具有ID的受众所处的时间 `seg-id-1` 创建时间，格式为UNIX时间戳。</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 更新了，采用UNIX时间戳格式。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 已以UNIX时间戳格式激活到目标。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上更新受众激活的时间。</li></ul> |
 
 {style="table-layout:auto"}
 
