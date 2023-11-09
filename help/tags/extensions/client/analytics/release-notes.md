@@ -2,10 +2,10 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中的Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: a49e0fe6c99f2874a9ca8403c4b69428826a6365
 workflow-type: tm+mt
-source-wordcount: '1392'
-ht-degree: 82%
+source-wordcount: '1416'
+ht-degree: 81%
 
 ---
 
@@ -17,13 +17,22 @@ ht-degree: 82%
 >
 >Analytics标记扩展(如果经常更新，以响应对 [AppMeasurementJavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下文所述特定版本的详细信息。
 
+## 2023 年 9 月 15 日
+
+**Adobe Analytics 扩展 1.9.3**
+
+**功能**:
+
+* 已升级到 [AppMeasurement到v2.25.0](https://github.com/adobe/appmeasurement/releases/tag/v2.25.0).
+
+
 ## 2023 年 7 月 19 日
 
 **Adobe Analytics 扩展 1.9.2**
 
 **功能**:
 
-* 已升级到AppMeasurementv2.24.0。
+* 已升级到 [AppMeasurementv2.24.0](https://github.com/adobe/appmeasurement/releases/tag/v2.24.0).
 * 添加了可选配置(`decodeLinkParameters` 默认 `false`)来对包含双字节编码字符的链接URL进行解码。
 
 **错误修复**:
