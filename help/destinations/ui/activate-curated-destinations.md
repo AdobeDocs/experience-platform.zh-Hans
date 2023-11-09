@@ -2,9 +2,9 @@
 title: 根据LiveRamp标识符将受众激活到策划的目标
 type: Tutorial
 description: 了解如何使用LiveRamp RampID将受众从Adobe Experience Platform激活到连接的电视和音频目标以及其他集成。
-source-git-commit: 25cda72508860b57bfa9ad0a729d0329d0f6bd1f
+source-git-commit: 1eb422572d95426fa8b342dc6aa79fb6125e18a1
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,12 @@ ht-degree: 0%
 >[!TIP]
 >
 >通过此流程，您可以将受众激活到目标，例如 [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku)， [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)Real-Time CDP 、等，无需登录到 [!DNL LiveRamp] 帐户激活。
+
+### 视频教程 {#video}
+
+观看以下视频，了解此页面中描述的工作流的端到端说明。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### 步骤1：通过，将受众从Experience Platform发送到LiveRamp [!DNL LiveRamp - Onboarding] 目标 {#onboarding}
 
