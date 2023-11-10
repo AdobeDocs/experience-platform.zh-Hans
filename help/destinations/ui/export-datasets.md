@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7c68b6a3b08eb47fa8c3906468dc87f3715fbe99
 workflow-type: tm+mt
-source-wordcount: '1722'
+source-wordcount: '1751'
 ht-degree: 4%
 
 ---
@@ -60,6 +60,12 @@ ht-degree: 4%
   </tr>
 </tbody>
 </table>
+
+## 视频教程 {#video-tutorial}
+
+观看以下视频，了解此页面上描述的工作流的端到端说明、使用导出数据集功能的好处以及一些建议的用例。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## 支持的目标 {#supported-destinations}
 
