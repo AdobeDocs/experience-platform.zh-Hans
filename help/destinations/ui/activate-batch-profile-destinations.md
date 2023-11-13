@@ -4,9 +4,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a854960b11cb3e56046dc9541f76c62a7e3f2f10
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '3720'
+source-wordcount: '3781'
 ht-degree: 11%
 
 ---
@@ -29,6 +29,18 @@ ht-degree: 11%
 ## 先决条件 {#prerequisites}
 
 要将受众激活到目标，您必须已成功完成 [已连接到目标](./connect-destination.md). 如果您尚未这样做，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
+
+### 支持的导出文件格式 {#supported-file-formats-export}
+
+导出受众时支持以下文件格式：
+
+* CSV
+* JSON
+* Parquet
+
+请注意，导出CSV文件可让您在构建导出文件的结构方面拥有更大的灵活性。 详细了解 [CSV文件的文件格式配置](/help/destinations/ui/batch-destinations-file-formatting-options.md#file-configuration).
+
+选择所需的文件格式以便在下列情况下导出 [创建与基于文件的目标的连接](/help/destinations/ui/connect-destination.md).
 
 ## 选择您的目标 {#select-destination}
 
@@ -532,7 +544,7 @@ abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Pr
 
 ## 验证受众激活 {#verify}
 
-对于电子邮件营销目标和云存储目标，Adobe Experience Platform将创建 `.csv` 文件存储位置。 预计会根据您在工作流中设置的时间表，在您的存储位置中创建一个新文件。 默认文件格式如下所示，但您可以 [编辑文件名的组件](#file-names)：
+将受众导出到云存储目标时，Adobe Experience Platform会创建 `.csv`， `.json`，或 `.parquet` 文件存储位置。 预计会根据您在工作流中设置的时间表，在您的存储位置中创建一个新文件。 默认文件格式如下所示，但您可以 [编辑文件名的组件](#file-names)：
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 例如，如果您选择了每日导出频率，则您连续三天收到的文件可能会如下所示：

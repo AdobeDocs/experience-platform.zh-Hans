@@ -2,9 +2,9 @@
 title: 目标中可配置的通用导出设置
 description: 了解目标中的哪些导出设置可在目标级别配置，哪些是固定的，无法编辑。
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '842'
 ht-degree: 1%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 1%
 * [将受众数据激活到企业目标](/help/destinations/ui/activate-streaming-profile-destinations.md)
 * [将受众数据激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md)
 * [按需将文件导出到批处理目标](/help/destinations/ui/export-file-now.md)
-* [（测试版）将数据集导出到云存储目标](/help/destinations/ui/export-datasets.md)
+* [将数据集导出到云存储目标](/help/destinations/ui/export-datasets.md)
 
 ## 后续步骤 {#next-steps}
 

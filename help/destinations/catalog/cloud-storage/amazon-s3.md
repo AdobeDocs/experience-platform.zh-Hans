@@ -2,9 +2,9 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1051'
 ht-degree: 17%
 
 ---
@@ -139,7 +139,7 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## (Beta)导出数据集 {#export-datasets}
+## 导出数据集 {#export-datasets}
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 

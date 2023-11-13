@@ -3,9 +3,9 @@ title: Azure Data Lake Storage Gen2连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '882'
 ht-degree: 2%
 
 ---
@@ -104,7 +104,7 @@ ht-degree: 2%
 
 在 **[!UICONTROL 映射]** 步骤，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 在激活批次目标UI教程中。
 
-## (Beta)导出数据集 {#export-datasets}
+## 导出数据集 {#export-datasets}
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 

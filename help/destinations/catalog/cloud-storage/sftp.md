@@ -2,9 +2,9 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 93b1c26e85ddd0fa232b26712f88faa824f19f30
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1016'
 ht-degree: 11%
 
 ---
@@ -129,7 +129,7 @@ ht-degree: 11%
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## (Beta)导出数据集 {#export-datasets}
+## 导出数据集 {#export-datasets}
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 

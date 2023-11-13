@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1049'
 ht-degree: 8%
 
 ---
@@ -123,7 +123,7 @@ ht-degree: 8%
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## (Beta)导出数据集 {#export-datasets}
+## 导出数据集 {#export-datasets}
 
 此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 

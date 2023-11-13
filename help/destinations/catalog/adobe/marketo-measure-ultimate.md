@@ -3,9 +3,9 @@ title: Marketo Measure Ultimate目标
 description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '651'
 ht-degree: 2%
 
 ---
@@ -74,7 +74,7 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-阅读 [(Beta)导出数据集](/help/destinations/ui/export-datasets.md) 有关将数据集导出到此目标的详细说明，请参阅教程。
+阅读 [导出数据集](/help/destinations/ui/export-datasets.md) 有关将数据集导出到此目标的详细说明，请参阅教程。
 
 ## 验证数据导出 {#exported-data}
 
