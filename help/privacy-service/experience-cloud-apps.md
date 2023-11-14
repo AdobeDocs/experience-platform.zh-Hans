@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service和Experience Cloud应用程序
 description: 本文档提供了有关如何为隐私相关操作配置各种Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b73b6f1005dc8a9e647f706a1e98259131b17478
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '912'
 ht-degree: 13%
 
 ---
@@ -54,7 +54,6 @@ Adobe Experience Platform [!DNL Privacy Service] 构建用于支持多个Adobe E
 | [Adobe Experience Manager](https://experienceleague.adobe.com/docs/experience-manager-64/managing/data-protection/data-protection-and-privacy.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre发出GDPR访问和删除请求的步骤。 |
 | [Magento](https://devdocs.magento.com/compliance/industry-compliance.html) | 确保您的Magento Commerce安装符合特定隐私法规的要求。 |
-| [Marketo](https://www.marketo.com/company/trust/gdpr/) | 了解隐私法规如何应用于Marketo。 |
 | [Adobe Experience Platform 中的标记](../tags/ui/client-side/consent.md) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
 | [Workfront](https://www.workfront.com/privacy-notice) | 了解Workfront如何收集个人数据，以及数据主体如何通过表单提交隐私请求。 |
 
