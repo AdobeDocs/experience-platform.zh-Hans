@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 09961b8e-f736-4fcc-ac53-88b55cca7d55
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 20b8433cee719329bce562069c328adb906697a0
 workflow-type: tm+mt
-source-wordcount: '705'
+source-wordcount: '708'
 ht-degree: 1%
 
 ---
@@ -74,5 +74,6 @@ Identity Service仅摄取指定为标识的字段。 Identity Service不存储�
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
 * [身份链接逻辑](./identity-linking-logic.md)

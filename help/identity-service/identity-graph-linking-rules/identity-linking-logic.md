@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 20b8433cee719329bce562069c328adb906697a0
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '794'
 ht-degree: 3%
 
 ---
@@ -150,5 +150,6 @@ Identity Service识别您的图形中已存在CRM ID：60013ABC，因此仅链�
 有关身份图链接规则的更多信息，请阅读以下文档：
 
 * [身份图链接规则概述](./overview.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
 * [Identity Service和实时客户资料](identity-and-profile.md)

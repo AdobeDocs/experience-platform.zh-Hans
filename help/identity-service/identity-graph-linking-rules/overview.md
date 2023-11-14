@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 20b8433cee719329bce562069c328adb906697a0
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 0%
 ## 目录
 
 * [概述](./overview.md)
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [示例场景](./example-scenarios.md)
 * [Identity Service和实时客户资料](identity-and-profile.md)
 * [身份链接逻辑](./identity-linking-logic.md)
@@ -39,13 +40,12 @@ ht-degree: 0%
 
 通过身份图链接规则，您可以：
 
-* 配置限制以防止将两个不同的人员标识符合并到一个身份图中，从而使单个身份图只能表示一个人员。
-   * 随后您配置的限制将由身份优化算法强制执行。
-* 配置优先级以将经过身份验证的个人执行的在线事件与给定用户相关联。
+* 通过配置唯一的命名空间（限制），为每个用户创建单个身份图/合并的配置文件，这将阻止两个不同的人员标识符合并到一个身份图中。
+* 通过配置优先级，将经过身份验证的在线事件与人员关联
 
 ### 限制
 
-您可以使用命名空间限制来定义基于给定命名空间的图形中可以存在的最大身份数。 例如，您可以将图表设置为最多只有一个具有CRM ID命名空间的身份，从而防止在同一图表内合并两个截然不同的人员标识符。
+唯一命名空间是表示个人的标识符，例如CRM ID、登录ID和经过哈希处理的电子邮件。 如果命名空间被指定为唯一，则图形只能有一个具有该命名空间的标识(`limit=1`)。 这将防止在同一图形中合并两个不同的人员标识符。
 
 * 如果未配置限制，这可能会导致不需要的图形合并，例如图形中具有CRM ID命名空间的两个身份。
 * 如果未配置限制，则只要图形位于护栏内（50个身份/图形），该图形就可以添加所需数量的命名空间。
@@ -60,6 +60,8 @@ ht-degree: 0%
 * 如果满足以下条件，则ECID将与上次经过身份验证的用户关联：
    * 如果CRM ID由ECID（共享设备）合并。
    * 如果限制仅配置为一个CRM ID。
+
+欲知更多信息，请阅读以下文档： [身份优化算法](./identity-optimization-algorithm.md).
 
 ### 优先级
 
@@ -106,6 +108,7 @@ ht-degree: 0%
 
 有关身份图链接规则的更多信息，请阅读以下文档：
 
+* [身份优化算法](./identity-optimization-algorithm.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
 * [Identity Service和实时客户资料](identity-and-profile.md)
 * [身份链接逻辑](./identity-linking-logic.md)
