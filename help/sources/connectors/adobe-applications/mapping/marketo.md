@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；主页；热门主题；Marketo Engage；marketo engage；Marketo；映射
 solution: Experience Platform
-title: Marketo Engage源的映射字段
+title: 映射Marketo Engage源的字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
@@ -17,11 +17,11 @@ ht-degree: 4%
 
 >[!TIP]
 >
->全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted`. 您的现有数据流将自动包括 `isDeleted`，但仅会为新摄取的数据摄取标记。 如果要将标记应用于所有历史数据，则必须停止现有数据流并使用新映射重新创建它们。 请注意，如果您删除 `isDeleted`，则您将无法再访问该功能。 自动填充映射后，必须保留映射，这一点至关重要。
+>全部 [!DNL Marketo] 除以下项之外的数据集 `Activities` 现在支持 `isDeleted`. 您的现有数据流将自动包括 `isDeleted`，但将仅为新摄取的数据摄取标记。 如果要将标记应用于所有历史数据，则必须停止现有数据流并使用新映射重新创建它们。 请注意，如果您删除 `isDeleted`，则您将无法再访问该功能。 在自动填充映射后，请务必保留该映射。
 
 ## 活动 {#activities}
 
-此 [!DNL Marketo] 源现在支持其他标准活动。 要使用标准活动，您必须使用 [模式自动生成实用程序](../marketo/marketo-namespaces.md) 因为如果您新建 `activities` 在不更新架构的情况下使用数据流，映射模板将失败，因为架构中不存在新的目标字段。 如果选择不更新架构，您仍然可以创建新数据流并消除任何错误。 但是，任何新字段或更新后的字段都不会引入Platform。
+此 [!DNL Marketo] 源现在支持其他标准活动。 要使用标准活动，您必须使用 [模式自动生成实用程序](../marketo/marketo-namespaces.md) 因为如果您创建 `activities` 在不更新架构的数据流中，映射模板将失败，因为新的目标字段将不存在于架构中。 如果选择不更新架构，您仍然可以创建新数据流并消除任何错误。 但是，任何新字段或更新字段都不会引入Platform。
 
 请参阅相关文档 [XDM体验事件类](../../../../xdm/classes/experienceevent.md) 有关XDM类和XDM字段组的更多信息。
 
@@ -132,7 +132,7 @@ ht-degree: 4%
 
 ## 项目 {#programs}
 
-阅读 [XDM商业营销活动概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [“商业营销活动详细信息”架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
+阅读 [XDM商业营销活动概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [“商业营销活动详细信息”架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -163,7 +163,7 @@ ht-degree: 4%
 
 ## 计划成员资格 {#program-memberships}
 
-阅读 [XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign-members/details.md) 指南。
+阅读 [XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign-members/details.md) 指南。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -228,12 +228,12 @@ ht-degree: 4%
 
 ## 静态列表 {#static-lists}
 
-阅读 [XDM商业营销列表概述](../../../../xdm/classes/b2b/business-marketing-list.md) 以了解有关XDM类的详细信息。
+阅读 [XDM业务营销列表概述](../../../../xdm/classes/b2b/business-marketing-list.md) 以了解有关XDM类的详细信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `marketingListKey.sourceType` |
-| `"${MUNCHKIN_ID}"` | `marketingListKey.sourceInstanceID` | `"${MUNCHKIN_ID}"` 将被替换为Explore API的一部分。 |
+| `"${MUNCHKIN_ID}"` | `marketingListKey.sourceInstanceID` | `"${MUNCHKIN_ID}"` 将作为Explore API的一部分替换。 |
 | `id` | `marketingListKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `marketingListKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `name` | `marketingListName` |
@@ -246,7 +246,7 @@ ht-degree: 4%
 
 ## 静态列表成员资格 {#static-list-memberships}
 
-阅读 [XDM业务营销列表成员概述](../../../../xdm/classes/b2b/business-marketing-list-members.md) 有关XDM类的详细信息。
+阅读 [XDM业务营销列表成员概述](../../../../xdm/classes/b2b/business-marketing-list-members.md) 以了解有关XDM类的详细信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -339,7 +339,7 @@ ht-degree: 4%
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityPersonKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `opportunityPersonKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被替换为Explore API的一部分。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将作为Explore API的一部分替换。 |
 | `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | 此 `extSourceSystemAudit.externalKey` 是辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `iif(mktoCdpOpptyId != null && mktoCdpOpptyId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpOpptyId, "sourceKey", concat(mktoCdpOpptyId,"@${MUNCHKIN_ID}.Marketo")), null)` | `opportunityKey` | 关系 |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | 关系 |
@@ -353,7 +353,7 @@ ht-degree: 4%
 
 ## 人员 {#persons}
 
-阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
+阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -361,7 +361,7 @@ ht-degree: 4%
 | `"${MUNCHKIN_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `b2b.personKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
-| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | 如果已取消订阅，则 `true` (例如，值= `1`)，然后设置 `consents.marketing.email.val` 作为(`n`)。 如果已取消订阅，则 `false` (例如，值= `0`)，然后设置 `consents.marketing.email.val` 作为 `null`. |
+| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | 如果取消订阅的是 `true` (例如，值= `1`)，然后设置 `consents.marketing.email.val` 作为(`n`)。 如果取消订阅的是 `false` (例如，值= `0`)，然后设置 `consents.marketing.email.val` 作为 `null`. |
 | `iif(unsubscribedReason != null && unsubscribedReason != "", substr(unsubscribedReason, 0, 100), null)` | `consents.marketing.email.reason` |
 | `iif(contactCompany != null && contactCompany != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(contactCompany, ".mkto_org"), "sourceKey", concat(contactCompany, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `b2b.accountKey` |
 | `marketingSuspended` | `b2b.isMarketingSuspended` |
@@ -402,17 +402,17 @@ ht-degree: 4%
 | `iif(id != null && id != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", id, "sourceKey", concat(id,"@${MUNCHKIN_ID}.Marketo")), null)` | `personComponents.sourcePersonKey` |
 | `email` | `personComponents.workEmail.address` |
 | `email` | `workEmail.address` |
-| `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | 这是一个计算字段。 |
+| `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | 这是计算字段。 |
 | `marketoIsDeleted` | `isDeleted` |
-| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | 这是一个计算字段。 |
-| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | 这是一个计算字段。 |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | 这是计算字段。 |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | 这是计算字段。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->此 `to_object('ECID',arrays_to_objects('id',explode(ecids)))` 源字段是一个计算字段，必须使用 [!UICONTROL 添加计算字段] 选项。 请参阅上的教程 [添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 了解更多信息。
+>此 `to_object('ECID',arrays_to_objects('id',explode(ecids)))` 源字段是一个计算字段，必须使用添加 [!UICONTROL 添加计算字段] 选项。 请参阅上的教程 [添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 以了解更多信息。
 
 ## 后续步骤
 
-通过阅读本文档，您已获得对以下各项之间映射关系的洞察： [!DNL Marketo] 数据集及其对应的XDM字段。 请参阅上的教程 [创建 [!DNL Marketo] 源连接](../../../tutorials/ui/create/adobe-applications/marketo.md) 完成您的 [!DNL Marketo] 数据流。
+通过阅读本文档，您已洞察到 [!DNL Marketo] 数据集及其对应的XDM字段。 请参阅上的教程 [创建 [!DNL Marketo] 源连接](../../../tutorials/ui/create/adobe-applications/marketo.md) 完成您的 [!DNL Marketo] 数据流。

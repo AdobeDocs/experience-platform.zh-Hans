@@ -20,15 +20,15 @@ ht-degree: 0%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-Experience Platform支持从第三方同意和偏好管理平台摄取数据。 对同意和偏好设置提供商的支持包括 [!DNL OneTrust Integration].
+Experience Platform支持从第三方同意和偏好设置管理平台中摄取数据。 对同意和偏好设置提供商的支持包括 [!DNL OneTrust Integration].
 
-以下文档提供了有关如何连接的信息 [!DNL OneTrust Integration] 至使用API或用户界面的Platform：
+以下文档提供了有关如何连接的信息 [!DNL OneTrust Integration] 使用API或用户界面连接到Platform：
 
-## Connect [!DNL OneTrust Integration] 到使用API的平台
+## 连接 [!DNL OneTrust Integration] 到使用API的平台
 
 - [创建 [!DNL OneTrust Integration] 使用流服务API的源连接和数据流](../../tutorials/api/create/consent-and-preferences/onetrust.md)
 
-## Connect [!DNL OneTrust Integration] 使用UI到Platform
+## 连接 [!DNL OneTrust Integration] 到Platform，使用UI
 
 - [创建 [!DNL OneTrust Integration] UI中的源连接](../../tutorials/ui/create/consent-and-preferences/onetrust.md)
 - [在UI中为同意和偏好设置源连接创建数据流](../../tutorials/ui/dataflow/consent-and-preferences.md)

@@ -1,7 +1,7 @@
 ---
 title: 聊天源概述
 description: 了解如何使用API或用户界面利用Webhook将Chatlio连接到Adobe Experience Platform
-badge: Beta
+badge: Beta 版
 exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
 source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt

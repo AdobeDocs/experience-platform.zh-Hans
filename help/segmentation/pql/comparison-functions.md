@@ -12,7 +12,7 @@ ht-degree: 10%
 
 # 比较函数
 
-比较函数用于比较不同表达式和值之间的差异，返回 `true` 或 `false` 相应地。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+比较函数用于比较不同表达式和值，返回 `true` 或 `false` 相应地。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## 等于
 
@@ -34,7 +34,7 @@ homeAddress.countryISO = "CA"
 
 ## 不等于
 
-此 `!=` （不等于）函数检查一个值或表达式是否为 **非** 等于另一个值或表达式。
+此 `!=` （不等于）函数检查一个值或表达式是 **非** 等于另一个值或表达式。
 
 **格式**
 
@@ -62,7 +62,7 @@ homeAddress.countryISO != "CA"
 
 **示例**
 
-以下PQL查询定义生日不在一月或二月的人员。
+以下PQL查询定义出生日期在1月或2月以下的人员。
 
 ```sql
 person.birthMonth > 2
@@ -80,7 +80,7 @@ person.birthMonth > 2
 
 **示例**
 
-以下PQL查询定义生日不在一月或二月的人员。
+以下PQL查询定义出生日期在1月或2月以下的人员。
 
 ```sql
 person.birthMonth >= 3
@@ -124,4 +124,4 @@ person.birthMonth <= 2
 
 ## 后续步骤
 
-现在，您已了解比较函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解比较函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

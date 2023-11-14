@@ -11,11 +11,11 @@ ht-degree: 2%
 
 # 分段服务API指南
 
-Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Experience Platform中的区段定义或其他源从以下位置创建受众： [!DNL Real-Time Customer Profile] 数据。
+Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Experience Platform中的区段定义或其他来源从以下位置创建受众： [!DNL Real-Time Customer Profile] 数据。
 
-此 [!DNL Segmentation Service] API提供了多个端点，允许您以编程方式管理以下位置的分段操作： [!DNL Experience Platform]. 此概述文档提供了其中每个端点的概要介绍，以及指向其关联端点指南的链接以了解详细信息。 在阅读各个端点指南之前，请参阅 [快速入门指南](./getting-started.md) 有关所需标头的重要信息，请阅读示例API调用等。
+此 [!DNL Segmentation Service] API提供了多个端点，允许您以编程方式管理以下位置的分段操作： [!DNL Experience Platform]. 此概述文档提供了其中每个端点的概要介绍，并提供了指向其关联端点指南的链接以了解详细信息。 在阅读各个端点指南之前，请参阅 [快速入门指南](./getting-started.md) 有关所需标头的重要信息，请阅读示例API调用等。
 
-要查看所有可用的端点和CRUD操作，请参阅 [Segmentation Service API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
+要查看所有可用的端点和CRUD操作，请参阅 [分段服务API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
 ## 受众
 
@@ -31,9 +31,9 @@ Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Exper
 
 ## 预览和估计
 
-预览会提供符合区段定义的用户档案分页列表，以便您将结果与预期结果进行比较。 您可以使用 `/preview` 端点，用于创建新的预览作业或查找特定预览作业的结果。
+预览可提供符合区段定义的用户档案分页列表，以便您将结果与预期结果进行比较。 您可以使用 `/preview` 端点，用于创建新的预览作业或查找特定预览作业的结果。
 
-估算可提供区段定义的统计信息，例如预计受众规模、置信区间和误差标准偏差。 您可以使用 `/estimate` 端点，以查看区段定义的估计值。
+估算可提供区段定义的统计信息，例如预计受众规模、置信区间和误差标准偏差。 您可以使用 `/estimate` 端点以查看区段定义的估计值。
 
 有关使用这些端点的详细信息，请阅读 [预览和估计端点指南](./previews-and-estimates.md).
 
@@ -61,4 +61,4 @@ Adobe Experience Platform [!DNL Segmentation Service] 允许您通过Adobe Exper
 
 ## 后续步骤
 
-要开始使用 [!DNL Segmentation Service] API，请查看不同的端点指南，以了解有关如何调用服务的各种端点的详细步骤。 要了解有关使用区段的更多信息，请使用 [!DNL Platform] UI，请参阅 [分段用户指南](../ui/overview.md).
+要开始使用 [!DNL Segmentation Service] API中，查看不同的端点指南，以了解有关如何调用服务的各种端点的详细步骤。 要了解有关使用区段的更多信息，请参阅 [!DNL Platform] UI，请参阅 [分段用户指南](../ui/overview.md).

@@ -1,6 +1,6 @@
 ---
-title: Microsoft Dynamics映射字段
-description: 下表包含Microsoft Dynamics源字段与其对应的XDM字段之间的映射。
+title: Microsoft动态映射字段
+description: 下表包含Microsoft Dynamics源字段及其对应的XDM字段之间的映射。
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
@@ -43,7 +43,7 @@ ht-degree: 9%
 | `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey", concat(parentcustomerid,"@${CRM_ORG_ID}.Dynamics")), null)` | `personComponents.sourceAccountKey` |
 | `iif(parentcustomerid != null && parentcustomerid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", parentcustomerid, "sourceKey",  concat(parentcustomerid, "@${CRM_ORG_ID}.Dynamics")), null)` | `b2b.accountKey` |
 | `createdon` | `extSourceSystemAudit.createdDate` |
-| `emailaddress1` | `workEmail.address` | 辅助标识符。 |
+| `emailaddress1` | `workEmail.address` | 次要标识符。 |
 | `emailaddress2` | `personalEmail.address` |
 | `emailaddress1` | `personComponents.workEmail.address` |
 | `firstname` | `person.name.firstName` |
@@ -171,8 +171,8 @@ ht-degree: 9%
 | `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |
 | `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
 | `connectionrole1.name` | `personRole` |
-| `record1objecttypecode` | *自定义字段组必须定义为目标架构。* 有关步骤，请参阅附录部分 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 了解更多信息。 | 以获取可能存在的值列表和标签 `record1objecttypecode` 源字段，请参阅此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
-| `record2objecttypecode` | *自定义字段组必须定义为目标架构。* 有关步骤，请参阅附录部分 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 了解更多信息。 | 以获取可能存在的值列表和标签 `record2objecttypecode` 源字段，请参阅此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
+| `record1objecttypecode` | *自定义字段组必须定义为目标架构。* 请参阅附录部分，了解相关步骤 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 以了解更多信息。 | 以获取可能的和值列表以及标签 `record1objecttypecode` 源字段，请参见此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
+| `record2objecttypecode` | *自定义字段组必须定义为目标架构。* 请参阅附录部分，了解相关步骤 [如何将选取列表类型源字段映射到目标XDM架构](#picklist-type-fields) 以了解更多信息。 | 以获取可能的和值列表以及标签 `record2objecttypecode` 源字段，请参见此 [[!DNL Microsoft Dynamics] 连接实体引用文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
 
 {style="table-layout:auto"}
 
@@ -236,9 +236,9 @@ ht-degree: 9%
 
 ### 选择列表类型字段 {#picklist-type-fields}
 
-您可以使用 [计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 要映射选取列表类型源字段，请执行以下操作 [!DNL Microsoft Dynamics] 到目标XDM字段。
+您可以使用 [计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 要映射选取列表类型源字段，请执行以下操作： [!DNL Microsoft Dynamics] 到目标XDM字段。
 
-例如， `genderCode` 字段包含两个选项：
+例如， `genderCode` 字段包括两个选项：
 
 | 值 | 标签 |
 | --- | --- |
@@ -253,7 +253,7 @@ ht-degree: 9%
 | --- | --- |
 | `decode(genderCode, "1", "male", "2", "female", "default")` | `person.gender` |
 
-在此方案中，值对应于键（如果在选项中找到键），或者 `default`，如果 `default` 存在，但未找到密钥。 该值对应于 `null` 如果选项为 `null` 或者没有 `default` 并且未找到密钥。
+在此方案中，值对应于键，前提是在选项中找到键，或者 `default`， if `default` 存在，但未找到密钥。 该值对应于 `null` 如果选项为 `null` 或者没有 `default` 并且找不到密钥。
 
 #### 使用计算字段
 
@@ -265,4 +265,4 @@ ht-degree: 9%
 >
 >上述操作的嵌套小版本将类似于： `iif(condition, iif(cond1, tv1, fv1), iif(cond2, tv2, fv2))`.
 
-欲了解更多信息，请参见 [中关于逻辑运算符的文档 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)
+欲知更多信息，请参见 [关于中逻辑运算符的文档 [!DNL Data Prep]](../../../../data-prep/functions.md##logical-operators)

@@ -28,12 +28,12 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要检索的特定对象的标识符。 |
 
 **请求**
 
-以下请求按数据集的ID检索数据集，并返回其 `name`， `description`， `tags`、和 `files` 属性。
+以下请求按数据集ID检索数据集，并返回其 `name`， `description`， `tags`、和 `files` 属性。
 
 ```shell
 curl -X GET \
@@ -46,7 +46,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回指定的数据集，但只包含所请求的 `properties` 在身体里。
+成功的响应会返回指定的数据集，但仅返回请求的数据集 `properties` 在身体里。
 
 ```json
 {
@@ -65,4 +65,4 @@ curl -X GET \
 
 >[!NOTE]
 >
->其值带有前缀的属性 `@` 表示相互关联的对象。 请参阅附录中关于 [查看相关对象](appendix.md#view-interrelated-objects) 有关如何查看这些对象的详细信息的步骤。
+>其值带有前缀的属性 `@` 表示相互关联的对象。 请参见附录中的 [查看相关对象](appendix.md#view-interrelated-objects) 有关如何查看这些对象的详细信息的步骤。

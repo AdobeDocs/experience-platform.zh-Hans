@@ -5,8 +5,8 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 2728ce08-05c9-4dca-af1d-d2d1b266c5d9
 source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
 workflow-type: tm+mt
-source-wordcount: '508'
-ht-degree: 1%
+source-wordcount: '509'
+ht-degree: 4%
 
 ---
 
@@ -16,18 +16,18 @@ ht-degree: 1%
 >
 >此 [!DNL Amazon Redshift] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
+基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
 本教程将指导您完成创建基本连接的步骤。 [!DNL Amazon Redshift] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL Amazon Redshift] 使用 [!DNL Flow Service] API。
+以下部分提供成功连接时需要了解的其他信息 [!DNL Amazon Redshift] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 | `username` | 与您的关联的用户名 [!DNL Amazon Redshift] 帐户。 |
 | `password` | 与您的关联的密码 [!DNL Amazon Redshift] 帐户。 |
 | `database` | 此 [!DNL Amazon Redshift] 正在访问的数据库。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL Amazon Redshift] 是 `3416976c-a9ca-4bba-901a-1f08f66978ff`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Amazon Redshift] 是 `3416976c-a9ca-4bba-901a-1f08f66978ff`. |
 
 有关入门的更多信息，请参阅此 [[!DNL Amazon Redshift] 文档](https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html).
 
@@ -52,11 +52,11 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->的默认编码标准 [!DNL Redshift] 是Unicode。 无法更改。
+>的默认编码标准 [!DNL Redshift] 是Unicode。 无法更改此设置。
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Amazon Redshift] 作为请求参数一部分的身份验证凭据。
+POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL Amazon Redshift] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -66,7 +66,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL Amazon Redshift]：
+以下请求为创建基本连接 [!DNL Amazon Redshift]：
 
 ```shell
 curl -X POST \
@@ -99,15 +99,15 @@ curl -X POST \
 | 属性 | 描述 |
 | ------------- | --------------- |
 | `auth.params.server` | 您的 [!DNL Amazon Redshift] 服务器。 |
-| `auth.params.port` | TCP端口， [!DNL Amazon Redshift] 服务器使用来侦听客户端连接。 |
-| `auth.params.database` | 与您的 [!DNL Amazon Redshift] 帐户。 |
+| `auth.params.port` | TCP端口 [!DNL Amazon Redshift] 服务器使用来侦听客户端连接。 |
+| `auth.params.database` | 与您的关联的数据库 [!DNL Amazon Redshift] 帐户。 |
 | `auth.params.password` | 与您的关联的密码 [!DNL Amazon Redshift] 帐户。 |
 | `auth.params.username` | 与您的关联的用户名 [!DNL Amazon Redshift] 帐户。 |
 | `connectionSpec.id` | 此 [!DNL Amazon Redshift] 连接规范ID： `3416976c-a9ca-4bba-901a-1f08f66978ff` |
 
 **响应**
 
-成功响应将返回新创建的连接，包括其唯一标识符(`id`)。 在下一个教程中，需要此ID来浏览您的数据。
+成功响应将返回新创建的连接，包括其唯一标识符(`id`)。 在下个教程中，需要此ID才能浏览您的数据。
 
 ```json
 {
@@ -118,7 +118,7 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程，您已创建了一个 [!DNL Amazon Redshift] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
+在本教程之后，您已创建一个 [!DNL Amazon Redshift] 基本连接使用 [!DNL Flow Service] API。 您可以在下列教程中使用此基本连接ID：
 
 * [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
-* [使用创建数据流以将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)
+* [创建数据流以使用将数据库数据引入Platform [!DNL Flow Service] API](../../collect/database-nosql.md)

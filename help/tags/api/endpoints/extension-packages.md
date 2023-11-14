@@ -13,13 +13,13 @@ ht-degree: 3%
 
 >[!WARNING]
 >
->实施 `/extension_packages` 端点在添加、删除和重新加工特征时处于动态变化状态。
+>实施 `/extension_packages` 端点在添加、删除和重新加工特征时处于非活动状态。
 
 扩展包表示 [扩展](./extensions.md) 由扩展开发人员创作。 扩展包定义了可用于标记用户的其他功能。 这些功能通常以下列形式提供 [规则组件](./rule-components.md) （事件、条件和操作）和 [数据元素](./data-elements.md)，还可以包括主模块和共享模块。
 
-扩展包显示在数据收集UI和Adobe Experience Platform UI中的扩展目录中，以供用户安装。 将扩展包添加到属性是通过创建带有扩展包链接的扩展来完成的。
+扩展包显示在数据收集UI和Adobe Experience Platform UI的扩展目录中，以供用户安装。 将扩展包添加到属性是通过创建带有扩展包链接的扩展来实现的。
 
-扩展包属于 [公司](./companies.md) 创建它的开发人员的姓名。
+扩展包属于 [公司](./companies.md) 创建它的开发人员。
 
 ## 快速入门
 
@@ -35,7 +35,7 @@ ht-degree: 3%
 | --- | --- |
 | `pending` | 创建扩展包时，其 `status` 设置为 `pending`. 这表示系统已收到扩展包的信息并将开始处理。 状态为的扩展包 `pending` 不可用。 |
 | `succeeded` | 扩展包的状态将更新为 `succeeded` 如果它成功完成处理。 |
-| `failed` | 扩展包的状态将更新为 `failed` 如果它未成功完成处理，则为。 扩展包，其状态为 `failed` 可能会更新，直到处理成功。 状态为的扩展包 `failed` 不可用。 |
+| `failed` | 扩展包的状态将更新为 `failed` 如果处理失败，则完成处理。 扩展包状态为 `failed` 可能会更新，直到处理成功。 状态为的扩展包 `failed` 不可用。 |
 
 ### 可用性
 
@@ -43,17 +43,17 @@ ht-degree: 3%
 
 | 可用性 | 描述 |
 | --- | --- |
-| `development` | 中的扩展包 `development` 仅对拥有它的公司可见，并且可在公司内部使用。 此外，它只能用于为扩展开发配置的资产。 |
+| `development` | 中的扩展包 `development` 仅对拥有它的公司可见，并且在其内部可用。 此外，它只能用于为扩展开发配置的资产。 |
 | `private` | A `private` 扩展包仅对拥有它的公司可见，并且只能安装在公司拥有的资产上。 |
 | `public` | A `public` 扩展包对所有公司和资产均可见和可用。 |
 
 >[!NOTE]
 >
->创建扩展包时， `availability` 设置为 `development`. 完成测试后，您可以将扩展包转换为 `private` 或 `public`.
+>创建扩展包时， `availability` 设置为 `development`. 测试完成后，您可以将扩展包转换为 `private` 或 `public`.
 
 ## 检索扩展包列表 {#list}
 
-您可以通过向以下用户发出GET请求来检索扩展包列表： `/extension_packages`.
+您可以通过向以下对象发出GET请求来检索扩展包列表 `/extension_packages`.
 
 **API格式**
 
@@ -63,7 +63,7 @@ GET /extension_packages
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的扩展包：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [筛选响应](../guides/filtering.md) 了解更多信息。
+>使用查询参数，可以根据以下属性过滤列出的扩展包：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅指南，网址为 [过滤响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -79,7 +79,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回扩展包的列表。
+成功的响应将返回扩展包列表。
 
 ```json
 {
@@ -265,7 +265,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回扩展包的详细信息，包括其委托资源，例如 `actions`， `conditions`， `data_elements`，等等。 下面的示例响应因空间而被截断。
+成功的响应将返回扩展包的详细信息，包括其委托资源，例如 `actions`， `conditions`， `data_elements`，等等。 下面的示例响应因空间而被截断。
 
 ```json
 {
@@ -472,7 +472,7 @@ curl -X GET \
 
 ## 创建扩展包 {#create}
 
-扩展包是使用Node.js基架工具创建的，并保存在本地计算机上，然后再提交到Reactor API。 有关配置扩展包的更多信息，请参阅以下指南中的内容 [扩展开发入门](../../extension-dev/getting-started.md).
+扩展包是使用Node.js基架工具创建的，并在提交到Reactor API之前保存在本地计算机上。 有关配置扩展包的更多信息，请参阅以下内容的相关指南： [扩展开发快速入门](../../extension-dev/getting-started.md).
 
 创建扩展包文件后，您可以通过POST请求将其提交到Reactor API。
 
@@ -484,7 +484,7 @@ POST /extension_packages
 
 **请求**
 
-以下请求将创建新的扩展包。 要上传的包文件的本地路径引用为表单数据(`package`)，因此此端点需要 `Content-Type` 页眉 `multipart/form-data`.
+以下请求创建新的扩展包。 要上传的包文件的本地路径将作为表单数据引用(`package`)，因此此端点需要 `Content-Type` 页眉 `multipart/form-data`.
 
 ```shell
 curl -X POST \
@@ -715,7 +715,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要更新的扩展包的ID。 |
+| `EXTENSION_PACKAGE_ID` | 此 `id` 要更新的扩展包的。 |
 
 {style="table-layout:auto"}
 
@@ -735,7 +735,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应将返回更新的扩展包的详细信息。
+成功的响应将返回更新后的扩展包的详细信息。
 
 ```json
 {
@@ -942,7 +942,7 @@ curl -X PATCH \
 
 ## 私密发布扩展包 {#private-release}
 
-完成扩展包的测试后，您可以单独发布该包。 这使它可供贵公司内的任何资产使用。
+完成扩展包的测试后，您可以私密发布该包。 这使其可用于公司内的任何资产。
 
 私密发布后，您可以通过填写 [公开发布申请表](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest).
 
@@ -954,13 +954,13 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要私下发布的扩展包中的。 |
+| `EXTENSION_PACKAGE_ID` | 此 `id` 要私密发布的扩展包的ID。 |
 
 {style="table-layout:auto"}
 
 **请求**
 
-通过提供 `action` 具有值 `release_private` 在 `meta` 请求数据的。
+通过提供 `action` 值为 `release_private` 在 `meta` 请求数据的。
 
 ```shell
 curl -X PATCH \
@@ -1205,7 +1205,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 **请求**
 
-通过提供 `action` 具有值 `release_private` 在 `meta` 请求数据的。
+通过提供 `action` 值为 `release_private` 在 `meta` 请求数据的。
 
 ```shell
 curl -X PATCH \
@@ -1292,7 +1292,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/versions
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | 此 `id` 要列出其版本的扩展包中。 |
+| `EXTENSION_PACKAGE_ID` | 此 `id` 要列出其版本的扩展包的。 |
 
 {style="table-layout:auto"}
 
@@ -1310,4 +1310,4 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回扩展包早期版本的数组。 省略了示例响应（空格）。
+成功的响应将返回扩展包早期版本的数组。 省略了空格示例响应。

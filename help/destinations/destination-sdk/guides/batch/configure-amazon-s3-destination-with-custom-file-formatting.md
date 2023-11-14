@@ -15,13 +15,13 @@ ht-degree: 0%
 
 本页介绍如何使用Destination SDK通过自定义配置Amazon S3目标 [文件格式选项](configure-file-formatting-options.md) 和自定义 [文件名配置](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
-此页显示可用于Amazon S3目标的所有配置选项。 您可以根据需要编辑以下步骤中显示的配置或删除配置的某些部分。
+此页面显示Amazon S3目标可用的所有配置选项。 您可以根据需要编辑以下步骤中显示的配置或删除配置的某些部分。
 
 有关下面使用的参数的详细说明，请参阅 [目标SDK中的配置选项](../../functionality/configuration-options.md).
 
 ## 先决条件 {#prerequisites}
 
-在继续执行以下步骤之前，请阅读 [Destination SDK快速入门](../../getting-started.md) 页面，以了解有关获取使用Adobe I/OAPI所需的身份验证Destination SDK凭据和其他先决条件的信息。
+在继续执行以下步骤之前，请阅读 [Destination SDK快速入门](../../getting-started.md) 页面，以了解有关获取使用Destination SDKAPI所需的Adobe I/O身份验证凭据和其他先决条件的信息。
 
 ## 步骤1：创建服务器和文件配置 {#create-server-file-configuration}
 
@@ -121,7 +121,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-成功响应将返回新的目标服务器配置，包括唯一标识符(`instanceId`)。 将此值存储为下一步中所需的值。
+成功的响应将返回新的目标服务器配置，包括唯一标识符(`instanceId`)。 将此值存储为下一步中所需的值。
 
 ## 步骤2：创建目标配置 {#create-destination-configuration}
 
@@ -407,28 +407,28 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 }'
 ```
 
-成功响应将返回新的目标配置，包括唯一标识符(`instanceId`)。 如果需要进一步提出HTTP请求来更新目标配置，请根据需要存储此值。
+成功的响应将返回新的目标配置，包括唯一标识符(`instanceId`)。 如果需要进一步提出HTTP请求以更新目标配置，请根据需要存储此值。
 
 ## 步骤3：验证Experience PlatformUI {#verify-ui}
 
-根据上述配置，Experience Platform目录现在将显示一张新的专用目标卡供您使用。
+基于以上配置，Experience Platform目录现在将显示新的专用目标卡以供您使用。
 
-![屏幕录制，其中显示具有选定目标卡的目标目录页面。](../../assets/guides/batch/destination-card.gif)
+![屏幕录制，显示具有选定目标卡的目标目录页面。](../../assets/guides/batch/destination-card.gif)
 
 在下面的图像和录制中，请注意中的选项 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 匹配您在目标配置中选择的选项。
 
-填写有关目标的详细信息时，请注意这些字段是如何出现在配置中设置的自定义数据字段的。
+在填写有关目标的详细信息时，请注意显示的字段是您在配置中设置的自定义数据字段。
 
 >[!TIP]
 >
->您向目标配置添加自定义数据字段的顺序未反映在UI中。 自定义数据字段始终按照以下屏幕录制中显示的顺序显示。
+>将自定义数据字段添加到目标配置的顺序未反映在UI中。 自定义数据字段始终按照以下屏幕录制中显示的顺序显示。
 
 ![填写目标详细信息](../../assets/guides/batch/file-configuration-options.gif)
 
 在计划导出间隔时，请注意显示的字段是您在 `batchConfig` 配置。
 ![导出计划选项](../../assets/guides/batch/file-export-scheduling.png)
 
-查看文件名配置选项时，请注意出现的字段如何表示 `filenameConfig` 您在配置中设置的选项。
+查看文件名配置选项时，请注意显示的字段如何表示 `filenameConfig` 您在配置中设置的选项。
 ![文件名配置选项](../../assets/guides/batch/file-naming-options.gif)
 
 如果要调整上述任何字段，请重复 [步骤1](#create-server-file-configuration) 和 [二](#create-destination-configuration) 以根据需要修改配置。
@@ -439,7 +439,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 >
 >如果您正在创建供自己使用的专用目标，并且不想将其发布到目标目录以供其他客户使用，则不需要执行此步骤。
 
-配置目标后，使用 [目标发布API](../../publishing-api/create-publishing-request.md) 以将您的配置提交到Adobe以供审查。
+配置目标后，使用 [目标发布API](../../publishing-api/create-publishing-request.md) 将您的配置提交给Adobe进行审核。
 
 ## 步骤5：（可选）记录您的目标 {#document-destination}
 
@@ -451,4 +451,4 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 ## 后续步骤 {#next-steps}
 
-阅读本文后，您现在知道如何创作自定义 [!DNL Amazon S3] 目标(使用Destination SDK)。 接下来，您的团队可以使用 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 将数据导出到目标。
+通过阅读本文，您现在知道如何创作自定义 [!DNL Amazon S3] 目标(使用Destination SDK)。 接下来，您的团队可以使用 [基于文件的目标的激活工作流](../../../ui/activate-batch-profile-destinations.md) 将数据导出到目标。

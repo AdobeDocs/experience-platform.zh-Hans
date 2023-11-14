@@ -14,20 +14,20 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> 此 [!DNL Teradata Vantage] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+> 此 [!DNL Teradata Vantage] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 本教程提供了用于创建 [!DNL Teradata Vantage] 源连接器，使用Adobe Experience Platform用户界面。
 
 ## 快速入门
 
-本教程需要深入了解Platform的以下组件：
+本教程需要您对Platform的以下组件有一定的了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ### 收集所需的凭据
 
-要访问您的 [!DNL Teradata Vantage] 帐户，则必须提供以下身份验证值：
+要访问 [!DNL Teradata Vantage] 帐户，您必须提供以下身份验证值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ## 连接您的 [!DNL Teradata Vantage] 帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示多种来源，您可以使用这些来源创建帐户。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
@@ -55,10 +55,10 @@ ht-degree: 1%
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Teradata Vantage] 凭据。 完成后，选择 **[!UICONTROL Connect]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Teradata Vantage] 凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
 ![](../../../../images/tutorials/create/teradata/new.png)
 
 ## 后续步骤
 
-通过学习本教程，您已建立与TeradataVantage帐户的连接。 您现在可以继续下一教程和 [配置数据流以将数据引入平台](../../dataflow/databases.md).
+通过学习本教程，您已与TeradataVantage帐户建立了连接。 您现在可以继续下一教程和 [配置数据流以将数据引入Platform](../../dataflow/databases.md).

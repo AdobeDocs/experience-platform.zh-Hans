@@ -1,6 +1,6 @@
 ---
 title: Experience Platform中数据收集的权限管理
-description: 有关如何管理权限和控制对Adobe Experience Platform中数据收集功能的访问权限的高级概述。
+description: 有关如何在Adobe Experience Platform中管理权限和控制对数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
 source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ ht-degree: 29%
 
 ## 快速入门
 
-要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成产品的组织具有管理员权限。 可以授予或撤回权限的最低角色是&#x200B;**产品配置文件管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有配置文件）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的文章。
+要为数据收集配置访问控制，您必须对与Adobe Experience Platform数据收集集成了产品的组织具有管理员权限。 可以授予或撤回权限的最低角色是&#x200B;**产品配置文件管理员**。其他可以管理权限的管理员角色是&#x200B;**产品管理员**（可以管理产品内的所有配置文件）和&#x200B;**系统管理员**（无限制）。有关更多信息，请参阅 Adobe Enterprise 管理指南中关于[管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html)的文章。
 
 本指南假设您熟悉基本的 Admin Console 概念，例如产品配置文件以及它们如何向单个用户和用户组授予产品权限。有关详细信息，请参阅 [Admin Console 用户指南](https://helpx.adobe.com/enterprise/using/admin-console.html)。
 
@@ -31,8 +31,8 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| 沙盒 | (不适用) | 根据 [沙盒](../sandboxes/home.md) 创建的任何其他组，您可以通过Admin Console中的此权限类别来控制对每组的访问权限。 |
-| 数据建模 | 管理架构 | 授予查看、创建和编辑的能力 [Experience Data Model (XDM)架构](../xdm/home.md). |
+| 沙盒 | (不适用) | 根据 [沙盒](../sandboxes/home.md) 如果您在组织下创建这些权限，则可以通过Admin Console中的此权限类别来控制对每一项的访问。 |
+| 数据建模 | 管理架构 | 授予查看、创建和编辑的能力 [体验数据模型(XDM)架构](../xdm/home.md). |
 | 数据建模 | 查看架构 | 授予对架构的只读访问权限。 |
 | Identity Management | 管理身份命名空间 | 授予查看、创建和编辑的能力 [身份命名空间](../identity-service/namespaces.md). |
 | Identity Management | 查看标识命名空间 | 授予对身份命名空间的只读访问权限。 |
@@ -43,15 +43,15 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 
 ### Adobe Experience Platform数据收集权限
 
-Adobe Experience Platform数据收集下的权限控制对标记和事件转发功能（包括属性、扩展和环境）的访问。 有关如何配置Adobe Experience Platform数据收集权限的步骤，请参阅 [以下部分](#manage).
+Adobe Experience Platform数据收集下的权限可控制对标记和事件转发功能（包括属性、扩展和环境）的访问权限。 有关如何配置Adobe Experience Platform数据收集权限的步骤，请参阅 [以下部分](#manage).
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| 平台 | Web | 授予对的访问权限 [Web属性](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
+| 平台 | Web | 授予对的访问权限 [Web资产](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
 | 平台 | 移动设备 | 授予对的访问权限 [移动资产](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
 | 平台 | Edge | 授予对的访问权限 [事件转发边缘属性](../tags/ui/event-forwarding/getting-started.md) 与其他资产权利结合使用时。 |
-| 属性 | (不适用) | 根据已在您的组织下创建的资产，您可以通过Admin Console中的此权限类别控制对其中每个资产的访问。<br><br>用户分配的资产权限仅适用于他们通过此权限类别被授予访问权限的资产。 |
-| 资产权限 | 批准 | 允许将库内部版本审批为 [发布流](../tags/ui/publishing/publishing-flow.md). |
+| 属性 | (不适用) | 根据已在您的组织下创建的属性，您可以在Admin Console中通过此类权限类别控制对每个属性的访问权限。<br><br>用户分配的资产权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
+| 资产权限 | 批准 | 允许将库生成批准为的一部分 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 开发 | 允许将库内部版本开发为 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 编辑属性 | 允许编辑用户有权访问的属性的基本配置。 |
 | 资产权限 | 管理环境 | 授予管理 [环境](../tags/ui/publishing/environments.md) 对于用户有权访问的属性。 |
@@ -64,7 +64,7 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 >[!NOTE]
 >
->有关这些权限如何影响标记中功能的更多信息，包括常见场景的管理策略，请参阅关于以下主题的标记文档： [用户权限](../tags/ui/administration/user-permissions.md).
+>有关这些权限如何影响标记中功能的更多信息，包括常见场景的管理策略，请参阅关于以下内容的标记文档： [用户权限](../tags/ui/administration/user-permissions.md).
 
 ## 管理权限 {#manage}
 
@@ -87,7 +87,7 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 >[!NOTE]
 >
->根据您的组织有权访问的产品SKU，您可能没有每个平台权限都可用。
+>根据您的组织有权访问的产品SKU，您可能没有每个平台权限都可以使用。
 
 ### 在Adobe Experience Platform数据收集下管理权限 {#manage-collection}
 
@@ -97,11 +97,11 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 #### 选择或创建产品配置文件
 
-下一个屏幕显示贵组织下数据收集的可用产品配置文件列表，默认配置文件为 **[!DNL Default Data Collection All Access]**. 您可以根据需要选择编辑默认的产品配置文件，也可以选择 **[!UICONTROL 新建配置文件]** 创建一个。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
+下一个屏幕显示贵组织内数据收集的可用产品配置文件列表，默认配置文件为 **[!DNL Default Data Collection All Access]**. 您可以根据需要选择编辑默认的产品配置文件，也可以选择 **[!UICONTROL 新建配置文件]** 创建一个。 如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
 
-![显示Admin Console中数据收集的产品配置文件的图像](./images/permissions/new-profile.png)
+![该图像显示了Admin Console中数据收集的产品配置文件](./images/permissions/new-profile.png)
 
-选择或创建产品配置文件后，您可以使用 **[!UICONTROL 编辑]** 开始图标 [编辑权限](#edit-permissions) ，或选择 **[!UICONTROL 用户]** 制表符开始 [分配用户](#assign-users) 到个人资料。
+选择或创建产品配置文件后，您可以使用 **[!UICONTROL 编辑]** 开始图标 [编辑权限](#edit-permissions) 或选择配置文件的 **[!UICONTROL 用户]** 制表符开始 [分配用户](#assign-users) 到个人资料。
 
 ![显示产品配置文件 Admin Console 的权限选项卡的图像](./images/permissions/edit-permission-categories.png)
 
@@ -109,7 +109,7 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 在编辑配置文件的权限时，可用权限将在左列中列出，而配置文件中包含的权限将在右列中列出。选择列出的权限，以在任一列之间移动它们。
 
-![此图像显示在已包含列下添加的权限](./images/permissions/added-permissions.png)
+![此图像显示了在“已包含”列下添加的权限](./images/permissions/added-permissions.png)
 
 权限会按类别进行组织。要在类别之间切换，请从左侧导航中选择所需的类别。
 
@@ -133,4 +133,4 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 ## 后续步骤
 
-本指南介绍了数据收集的可用权限以及如何通过Admin Console管理这些权限。 有关为其他 Adobe Experience Platform 功能管理权限的详细信息，请参阅[访问控制文档](../access-control/home.md)。
+本指南介绍了数据收集可用的权限以及如何通过Admin Console管理这些权限。 有关为其他 Adobe Experience Platform 功能管理权限的详细信息，请参阅[访问控制文档](../access-control/home.md)。

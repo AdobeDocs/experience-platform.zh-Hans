@@ -15,9 +15,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL 区段成员资格详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供单个映射字段，用于捕获有关区段成员资格的信息，包括个人属于哪些区段、上次资格取得时间和成员资格有效期结束时间。
+[!UICONTROL 区段成员资格详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供单个映射字段，用于捕获有关区段成员资格的信息，包括个人属于哪些区段、上次资格取得时间和成员资格有效期截止日期。
 
 >[!WARNING]
 >
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-以下是示例 `segmentMembership` 系统为特定配置文件填充的映射。 区段成员资格按命名空间排序，如对象的根级别键值所示。 反过来，每个命名空间下的各个键代表配置文件所属的区段的ID。 每个区段对象都包含多个子字段，这些子字段提供有关成员资格的更多详细信息：
+以下是示例 `segmentMembership` 系统为特定配置文件填充的映射。 区段成员资格按命名空间排序，如对象的根级别键值所示。 反过来，每个命名空间下的各个键表示配置文件所属区段的ID。 每个区段对象都包含多个子字段，这些子字段提供有关成员资格的更多详细信息：
 
 ```json
 {
@@ -73,16 +73,16 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `xdm:version` | 此配置文件符合条件的区段的版本。 |
-| `xdm:lastQualificationTime` | 上次此配置文件符合区段资格的时间戳。 |
-| `xdm:validUntil` | 区段成员资格何时不再被视为有效的时间戳。 对于外部受众，如果未设置此字段，则区段成员资格将仅保留30天，从 `lastQualificationTime`. |
-| `xdm:status` | 一个字符串字段，指示区段成员资格是否作为当前请求的一部分实现。 接受以下值： <ul><li>`realized`：用户档案符合区段的条件。</li><li>`exited`：用户档案将作为当前请求的一部分退出区段。</li></ul> |
-| `xdm:payload` | 某些区段成员资格包括一个有效负荷，该有效负荷描述与成员资格直接相关的其他值。 每个成员资格只能提供一个给定类型的有效负载。 `xdm:payloadType` 指示有效负载的类型(`boolean`， `number`， `propensity`，或 `string`)，而其同级属性则为有效负载类型提供值。 |
+| `xdm:lastQualificationTime` | 此配置文件上次符合区段资格的时间戳。 |
+| `xdm:validUntil` | 不再假定区段成员资格有效的时间戳。 对于外部受众，如果未设置此字段，则区段成员资格将仅保留30天，从 `lastQualificationTime`. |
+| `xdm:status` | 一个字符串字段，指示区段成员资格是否已在当前请求中实现。 接受以下值： <ul><li>`realized`：用户档案符合区段的条件。</li><li>`exited`：用户档案将作为当前请求的一部分退出区段。</li></ul> |
+| `xdm:payload` | 某些区段成员资格包括一个有效负荷，该有效负荷描述与成员资格直接相关的其他值。 每个成员资格只能提供一个给定类型的有效负荷。 `xdm:payloadType` 指示有效负载的类型(`boolean`， `number`， `propensity`，或 `string`)，而其同级属性则为有效负载类型提供值。 |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->中的任何区段成员资格 `exited` 超过30天的状态，基于 `lastQualificationTime`，将被删除。
+>位于以下位置的任何区段成员资格： `exited` 超过30天的状态，根据 `lastQualificationTime`，将被删除。
 
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 

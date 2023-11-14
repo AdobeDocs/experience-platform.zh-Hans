@@ -1,8 +1,8 @@
 ---
-keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据
+keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤器数据；过滤器数据
 solution: Experience Platform
 title: 列出目录对象
-description: 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳做法是包含限制响应大小的过滤器。
+description: 您可以通过单个API调用检索特定类型的所有可用对象列表，最佳做法是包含限制响应大小的过滤器。
 exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
 source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # 列出目录对象
 
-您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳做法是包含限制响应大小的过滤器。
+您可以通过单个API调用检索特定类型的所有可用对象列表，最佳做法是包含限制响应大小的过滤器。
 
 **API格式**
 
@@ -24,12 +24,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要列出的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数由&amp;符号(`&`)。 请参阅指南，网址为 [筛选目录数据](filter-data.md) 了解更多信息。 |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要列出的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | 用于筛选响应中返回结果的查询参数。 多个参数用&amp;符号(`&`)。 请参阅指南，网址为 [筛选目录数据](filter-data.md) 以了解更多信息。 |
 
 **请求**
 
-下面的示例请求检索数据集列表，其中 `limit` 筛选条件将响应减少到五个结果，以及 `properties` 用于限制为每个数据集显示的属性的过滤器。
+下面的示例请求检索数据集列表，使用 `limit` 筛选条件将响应减少到五个结果，以及 `properties` 该过滤器限制为每个数据集显示的属性。
 
 ```shell
 curl -X GET \
@@ -42,11 +42,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个列表，其中 [!DNL Catalog] 键值对形式的对象，按请求中提供的查询参数进行筛选。 对于每个键值对，键值表示以下项的唯一标识符： [!DNL Catalog] 有问题的对象，该对象随后可用于对的其他调用 [查看该特定对象](look-up-object.md) 了解更多详细信息。
+成功的响应返回列表 [!DNL Catalog] 键值对形式的对象，按请求中提供的查询参数进行筛选。 对于每个键值对，键表示 [!DNL Catalog] 有问题的对象，随后可以在对的调用中使用 [查看该特定对象](look-up-object.md) 以了解更多详细信息。
 
 >[!NOTE]
 >
->如果返回的对象不包含由指示的一个或多个请求属性 `properties` 查询时，响应仅返回它包含的要求属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下面的。
+>如果返回的对象不包含请求的一个或多个属性，这些属性由 `properties` 查询时，响应仅返回所请求的属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下。
 
 ```json
 {

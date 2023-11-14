@@ -6,7 +6,7 @@ exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
 source-git-commit: 23504dd0909488e2ee63bf356fba4c7f0f7320dc
 workflow-type: tm+mt
 source-wordcount: '1956'
-ht-degree: 1%
+ht-degree: 7%
 
 ---
 
@@ -32,17 +32,17 @@ ht-degree: 1%
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的用户配置文件。
 - [[!DNL Segmentation]](../home.md)：提供使用区段定义和其他外部源从创建受众的功能 [!DNL Real-Time Customer Profile] 数据。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。
 
 以下部分提供成功调用时需要了解的其他信息 [!DNL Platform] API。
 
-### 正在读取示例API调用
+### 正在读取示例 API 调用
 
-本开发人员指南提供了示例API调用，以演示如何格式化您的请求。 这些资源包括路径、必需的标头和格式正确的请求负载。 还提供了在API响应中返回的示例JSON。 有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+本开发人员指南提供了示例API调用，以演示如何格式化您的请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
 
-### 收集所需标题的值
+### 收集所需标头的值
 
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有标头中的每个标头提供值 [!DNL Experience Platform] API调用，如下所示：
+为调用 [!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -56,7 +56,7 @@ ht-degree: 1%
 >
 >有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
+包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
 - Content-Type： application/json
 

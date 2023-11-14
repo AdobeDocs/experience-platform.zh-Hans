@@ -7,7 +7,7 @@ exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
 source-wordcount: '442'
-ht-degree: 0%
+ht-degree: 16%
 
 ---
 
@@ -20,13 +20,13 @@ ht-degree: 0%
 使用开发人员指南需要对各种 [!DNL Experience Platform] 使用数据管理功能涉及的服务。 开始使用之前 [!DNL Policy Service API]，请查看以下服务的文档：
 
 * [数据管理](../home.md)：用于执行操作的框架 [!DNL Experience Platform] 强制实施数据使用合规性。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 * [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-## 正在读取示例API调用
+## 正在读取示例 API 调用
 
-此 [!DNL Policy Service] API文档提供了示例API调用，以演示如何格式化请求。 这些资源包括路径、必需的标头和格式正确的请求负载。 还提供了在API响应中返回的示例JSON。 有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+此 [!DNL Policy Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
 
 ## 必需的标头
 
@@ -44,7 +44,7 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信息 [!DNL Platform]，请参见 [沙盒概述文档](../../sandboxes/home.md).
 
-包含有效负载(POST、PUT、PATCH)的所有请求都需要额外的标头：
+包含负载 (POST、PUT、PATCH) 的所有请求都需要额外的标头：
 
 * `Content-Type: application/json`
 

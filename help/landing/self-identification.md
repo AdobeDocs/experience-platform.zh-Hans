@@ -1,7 +1,7 @@
 ---
 title: 使用自我识别调查构建Experience Platform个人资料
 description: 了解如何使用自我识别调查UI，根据您的工作职能和相关目标接收相关内容。
-badge: Beta
+badge: Beta 版
 exl-id: 80b3f55f-1eab-4a99-be75-49bd091f9739
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt

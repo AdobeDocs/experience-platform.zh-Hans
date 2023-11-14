@@ -12,11 +12,11 @@ ht-degree: 6%
 
 # 聚合函数
 
-聚合函数用于将多个值分组到一起 [!DNL Profile Query Language] (PQL)阵列形成单个摘要值。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+聚合函数用于将多个值分组到一起， [!DNL Profile Query Language] (PQL)数组以形成单个摘要值。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## 计数
 
-此 `count` 函数返回给定数组中的元素数。
+此 `count` 函数返回给定数组中元素的数量。
 
 **格式**
 
@@ -106,4 +106,4 @@ orders.max(order.price)
 
 ## 后续步骤
 
-现在，您已了解聚合函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解聚合函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

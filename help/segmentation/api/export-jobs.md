@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->本指南介绍了中导出作业的使用情况。 [!DNL Segmentation API]. 有关如何管理导出作业的信息 [!DNL Real-Time Customer Profile] 有关数据，请参阅以下指南： [配置文件API中的导出作业](../../profile/api/export-jobs.md)
+>本指南介绍 [!DNL Segmentation API]. 有关如何管理导出作业的信息 [!DNL Real-Time Customer Profile] 有关数据，请参阅以下指南： [配置文件API中的导出作业](../../profile/api/export-jobs.md)
 
 ## 快速入门
 
@@ -24,11 +24,11 @@ ht-degree: 2%
 
 ## 检索导出作业列表 {#retrieve-list}
 
-您可以通过对以下对象发出GET请求，检索组织所有导出作业的列表： `/export/jobs` 端点。
+您可以通过向以下网站发出GET请求，检索贵组织所有导出作业的列表： `/export/jobs` 端点。
 
 **API格式**
 
-此 `/export/jobs` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有导出作业。 可以包含多个参数，以&amp;符号(`&`)。
+此 `/export/jobs` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 在不使用参数的情况下调用此端点将检索您的组织可用的所有导出作业。 可以包含多个参数，以&amp;分隔(`&`)。
 
 ```http
 GET /export/jobs
@@ -40,7 +40,7 @@ GET /export/jobs?status={STATUS}
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{LIMIT}` | 指定返回的导出作业数。 |
-| `{OFFSET}` | 指定结果页面的偏移。 |
+| `{OFFSET}` | 指定结果页面的偏移量。 |
 | `{STATUS}` | 根据状态筛选结果。 支持的值为“NEW”、“SUCCEEDED”和“FAILED”。 |
 
 **请求**
@@ -197,13 +197,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `destination` | 导出数据的目标信息：<ul><li>`datasetId`：导出数据的数据集的ID。</li><li>`segmentPerBatch`：一个布尔值，显示是否合并区段ID。 值为“false”表示所有区段ID都将导出到单个批次ID中。 值为“true”表示将一个区段ID导出到一个批次ID中。 **注意：** 将该值设置为true可能会影响批量导出性能。</li></ul> |
-| `fields` | 导出字段的列表，以逗号分隔。 |
+| `fields` | 导出的字段列表，以逗号分隔。 |
 | `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`：用户档案将导出到的区段ID。</li><li>`segmentNs`：给定的Segment命名空间 `segmentID`.</li><li>`status`：一个字符串数组，它提供 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于区段的所有用户档案。 可能的值包括： `realized` 和 `exited`. 值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`：用户档案将导出到的区段ID。</li><li>`segmentNs`：给定的Segment命名空间 `segmentID`.</li><li>`status`：一个字符串数组，为提供状态过滤器 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`. 值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `mergePolicy` | 合并导出数据的策略信息。 |
-| `metrics.totalTime` | 表示导出作业运行总时间的字段。 |
+| `metrics.totalTime` | 指示导出作业运行总时间的字段。 |
 | `metrics.profileExportTime` | 指示导出用户档案所用时间的字段。 |
-| `page` | 有关所请求导出作业的分页的信息。 |
+| `page` | 有关所请求的导出作业的分页的信息。 |
 | `link.next` | 指向导出作业下一页的链接。 |
 
 ## 创建新的导出作业 {#create}
@@ -218,7 +218,7 @@ POST /export/jobs
 
 **请求**
 
-以下请求将创建新的导出作业，该作业由有效负载中提供的参数配置。
+以下请求创建新的导出作业，该作业由有效负载中提供的参数配置。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
@@ -275,23 +275,23 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `fields` | 导出字段的列表，以逗号分隔。 如果留空，将导出所有字段。 |
-| `mergePolicy` | 指定用于管理导出数据的合并策略。 当有多个区段正在导出时包含此参数。 如果未提供，导出将采用与给定区段相同的合并策略。 |
+| `fields` | 导出的字段列表，以逗号分隔。 如果留空，将导出所有字段。 |
+| `mergePolicy` | 指定用于管理导出数据的合并策略。 有多个区段要导出时包含此参数。 如果未提供，导出将采用与给定区段相同的合并策略。 |
 | `filter` | 一个对象，它根据下面列出的子属性，按ID、限定时间或摄取时间指定要包含在导出作业中的区段。 如果留空，将导出所有数据。 |
-| `filter.segments` | 指定要导出的区段。 忽略此值将导致导出所有用户档案中的所有数据。 接受区段对象的数组，每个对象包含以下字段：<ul><li>`segmentId`： **(在使用时，此为必填项 `segments`)** 要导出的用户档案的区段ID。</li><li>`segmentNs` *（可选）* 给定的Segment命名空间 `segmentID`.</li><li>`status` *（可选）* 一个字符串数组，它提供 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 指定要导出的区段。 忽略此值将导致导出所有用户档案中的所有数据。 接受区段对象的数组，每个对象包含以下字段：<ul><li>`segmentId`： **(使用时需要使用 `segments`)** 要导出的用户档案的区段ID。</li><li>`segmentNs` *（可选）* 给定的Segment命名空间 `segmentID`.</li><li>`status` *（可选）* 一个字符串数组，它为 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `filter.segmentQualificationTime` | 根据区段鉴别时间进行筛选。 可以提供开始时间和/或结束时间。 |
-| `filter.segmentQualificationTime.startTime` | 给定状态的区段ID的区段资格开始时间。 如果未提供，则区段ID鉴别的开始时间上将不存在过滤器。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
-| `filter.segmentQualificationTime.endTime` | 给定状态的区段ID的区段资格结束时间。 如果未提供，则区段ID鉴别的结束时间将不存在过滤器。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
-| `filter.fromIngestTimestamp ` | 将导出的配置文件限制为仅包括在此时间戳之后更新的配置文件。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 <ul><li>`fromIngestTimestamp` 对象 **用户档案**，如果提供：包括合并的更新时间戳大于给定时间戳的所有合并用户档案。 支持 `greater_than` 操作数。</li><li>`fromIngestTimestamp` 对象 **事件**：将导出在此时间戳之后摄取的所有事件，这些事件对应于生成的配置文件结果。 这不是事件时间本身，而是事件的摄取时间。</li> |
-| `filter.emptyProfiles` | 一个布尔值，指示是否筛选空配置文件。 配置文件可以包含配置文件记录、ExperienceEvent记录，或同时包含这两者。 没有配置文件记录且只有ExperienceEvent记录的配置文件称为“emptyProfiles”。 要导出配置文件存储中的所有配置文件，包括“emptyProfiles”，请将 `emptyProfiles` 到 `true`. 如果 `emptyProfiles` 设置为 `false`，则只会导出商店中具有用户档案记录的用户档案。 默认情况下，如果 `emptyProfiles` 属性不包括在内，只会导出包含配置文件记录的配置文件。 |
-| `additionalFields.eventList` | 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`fields`：控制要导出的字段。</li><li>`filter`：指定限制从关联对象中包括的结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`filter.fromIngestTimestamp`：将时间序列事件过滤为在提供的时间戳之后摄取的那些事件。 这不是事件时间本身，而是事件的摄取时间。</li><li>`filter.toIngestTimestamp`：将时间戳过滤为在提供的时间戳之前摄取的时间戳。 这不是事件时间本身，而是事件的摄取时间。</li></ul> |
+| `filter.segmentQualificationTime.startTime` | 给定状态的区段ID的区段资格开始时间。 如果未提供，则区段ID鉴别的开始时间将不存在过滤器。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
+| `filter.segmentQualificationTime.endTime` | 给定状态的区段ID的区段资格结束时间。 如果未提供，则区段ID鉴别的结束时间将没有过滤器。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 |
+| `filter.fromIngestTimestamp ` | 限制导出的配置文件仅包括在此时间戳之后更新的配置文件。 时间戳必须提供于 [RFC 3339](https://tools.ietf.org/html/rfc3339) 格式。 <ul><li>`fromIngestTimestamp` 对象 **用户档案**，如果提供：包括合并的更新时间戳大于给定时间戳的所有合并用户档案。 支持 `greater_than` 操作数。</li><li>`fromIngestTimestamp` 对象 **事件**：根据生成的配置文件结果，导出在此时间戳之后摄取的所有事件。 这不是事件时间本身，而是事件的摄取时间。</li> |
+| `filter.emptyProfiles` | 一个布尔值，指示是否筛选空配置文件。 配置文件可以包含配置文件记录、ExperienceEvent记录，或同时包含两者。 没有配置文件记录且只有ExperienceEvent记录的配置文件称为“emptyProfiles”。 要导出配置文件存储中的所有配置文件，包括“emptyProfiles”，请将 `emptyProfiles` 到 `true`. 如果 `emptyProfiles` 设置为 `false`，则只会导出存储中具有配置文件记录的配置文件。 默认情况下，如果 `emptyProfiles` 属性不包括在内，只会导出包含配置文件记录的配置文件。 |
+| `additionalFields.eventList` | 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`fields`：控制要导出的字段。</li><li>`filter`：指定限制从关联对象中所包括结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`filter.fromIngestTimestamp`：将时间序列事件过滤到在提供的时间戳之后摄取的那些事件。 这不是事件时间本身，而是事件的摄取时间。</li><li>`filter.toIngestTimestamp`：将时间戳过滤为提供的时间戳之前摄取的那些时间戳。 这不是事件时间本身，而是事件的摄取时间。</li></ul> |
 | `destination` | **（必需）** 有关导出数据的信息：<ul><li>`datasetId`： **（必需）** 要导出数据的数据集的ID。</li><li>`segmentPerBatch`： *（可选）* 一个布尔值，如果未提供，则默认为“false”。 如果值为“false”，则会将所有区段ID导出到单个批次ID中。 值为“true”会将一个区段ID导出到一个批次ID中。 请注意，将该值设置为“true”可能会影响批量导出性能。</li></ul> |
 | `schema.name` | **（必需）** 与要导出数据的数据集关联的架构的名称。 |
-| `evaluationInfo.segmentation` | *（可选）* 一个布尔值，如果未提供，则默认为 `false`. 值 `true` 指示需要对导出作业进行分段。 |
+| `evaluationInfo.segmentation` | *（可选）* 一个布尔值，如果未提供，则默认为 `false`. 值 `true` 表示需要对导出作业进行分段。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200以及新创建的导出作业的详细信息。
+成功的响应返回HTTP状态200以及新创建的导出作业的详细信息。
 
 ```json
 {
@@ -356,7 +356,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | -------- | ----------- |
 | `id` | 系统生成的只读值，用于标识刚创建的导出作业。 |
 
-或者，如果 `destination.segmentPerBatch` 已设置为 `true`，则 `destination` 上面对象将具有 `batches` 数组，如下所示：
+或者，如果 `destination.segmentPerBatch` 已设置为 `true`， `destination` 上面对象将具有 `batches` 数组，如下所示：
 
 ```json
     "destination": {
@@ -466,18 +466,18 @@ curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/11037 \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `destination` | 导出数据的目标信息：<ul><li>`datasetId`：导出数据的数据集的ID。</li><li>`segmentPerBatch`：一个布尔值，显示是否合并区段ID。 值 `false` 表示所有区段ID都归入单个批次ID中。 值 `true` 表示将一个区段ID导出到一个批次ID中。</li></ul> |
-| `fields` | 导出字段的列表，以逗号分隔。 |
+| `destination` | 导出数据的目标信息：<ul><li>`datasetId`：导出数据的数据集的ID。</li><li>`segmentPerBatch`：一个布尔值，显示是否合并区段ID。 值 `false` 是指所有区段ID都归入一个批次ID中。 值 `true` 表示将一个区段ID导出到一个批次ID中。</li></ul> |
+| `fields` | 导出的字段列表，以逗号分隔。 |
 | `schema.name` | 与要导出数据的数据集关联的架构的名称。 |
-| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`：要导出的用户档案的区段ID。</li><li>`segmentNs`：给定的Segment命名空间 `segmentID`.</li><li>`status`：一个字符串数组，它提供 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
+| `filter.segments` | 导出的区段。 包括以下字段：<ul><li>`segmentId`：要导出的用户档案的区段ID。</li><li>`segmentNs`：给定的Segment命名空间 `segmentID`.</li><li>`status`：一个字符串数组，为提供状态过滤器 `segmentID`. 默认情况下， `status` 将具有值 `["realized"]` 表示当前时间属于该区段的所有用户档案。 可能的值包括： `realized` 和 `exited`.  值 `realized` 表示用户档案符合该区段的条件。 值 `exiting` 表示用户档案正在退出区段。</li></ul> |
 | `mergePolicy` | 合并导出数据的策略信息。 |
-| `metrics.totalTime` | 表示导出作业运行总时间的字段。 |
+| `metrics.totalTime` | 指示导出作业运行总时间的字段。 |
 | `metrics.profileExportTime` | 指示导出用户档案所用时间的字段。 |
 | `totalExportedProfileCounter` | 跨所有批次导出的配置文件总数。 |
 
 ## 取消或删除特定导出作业 {#delete}
 
-您可以通过对以下对象发出DELETE请求，以请求删除指定的导出作业： `/export/jobs` 端点并在请求路径中提供要删除的导出作业的ID。
+您可以通过对以下对象发出DELETE请求，来请求删除指定的导出作业： `/export/jobs` 端点并在请求路径中提供要删除的导出作业的ID。
 
 **API格式**
 
@@ -501,7 +501,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/export/jobs/{EXPORT_JOB_I
 
 **响应**
 
-成功的响应会返回HTTP状态204，并显示以下消息：
+成功的响应返回HTTP状态204，并显示以下消息：
 
 ```json
 {

@@ -1,7 +1,7 @@
 ---
 title: Pendo源概述
 description: 了解如何使用API或用户界面利用Webhook将Pendo连接到Adobe Experience Platform
-badge: Beta
+badge: Beta 版
 exl-id: 376f18ef-1eea-4c42-8041-6fadb5906e9b
 source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt

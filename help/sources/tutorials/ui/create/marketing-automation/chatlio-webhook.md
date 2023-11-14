@@ -1,7 +1,7 @@
 ---
 title: 在UI中创建Chatlio源连接
 description: 了解如何使用Adobe Experience Platform UI创建Chatlio源连接。
-badge: Beta
+badge: Beta 版
 exl-id: 55c10bcb-0332-45ff-970b-272d375b591d
 source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt

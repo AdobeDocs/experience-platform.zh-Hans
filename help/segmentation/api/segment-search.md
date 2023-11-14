@@ -1,6 +1,6 @@
 ---
 title: 区段搜索API端点
-description: 在Adobe Experience Platform Segmentation Service API中，区段搜索用于搜索各种数据源中包含的字段并近乎实时地返回它们。 本指南提供的信息可帮助您更好地了解区段搜索，包括用于使用API执行基本操作的示例API调用。
+description: 在Adobe Experience Platform分段服务API中，分段搜索用于搜索各种数据源中包含的字段并近乎实时地返回它们。 本指南提供的信息可帮助您更好地了解区段搜索，包括用于使用API执行基本操作的示例API调用。
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
@@ -19,13 +19,13 @@ ht-degree: 2%
 
 本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
-除了快速入门部分中概述的必需标头之外，对区段搜索端点的所有请求还需要以下附加标头：
+除了快速入门部分中概述的必需标头外，对区段搜索端点的所有请求都需要以下附加标头：
 
 - x-ups-search-version： &quot;1.0&quot;
 
 ### 跨多个命名空间搜索
 
-此搜索端点可用于跨各种命名空间搜索，并返回搜索计数结果的列表。 可以使用多个参数，以&amp;分隔。
+此搜索端点可用于跨各种命名空间进行搜索，并返回搜索计数结果的列表。 可以使用多个参数，以&amp;分隔。
 
 **API格式**
 
@@ -37,7 +37,7 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 | 参数 | 描述 |
 | ---------- | ----------- | 
 | `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 表示与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
-| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 表示符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被返回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的URL。 |
+| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 表示符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被退回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的。 |
 
 **请求**
 
@@ -84,7 +84,7 @@ curl -X GET \
 
 ### 搜索单个实体
 
-此搜索端点可用于检索指定命名空间内所有全文检索索引对象的列表。 可以使用多个参数，以&amp;分隔。
+此搜索端点可用于检索指定命名空间内所有全文检索对象的列表。 可以使用多个参数，以&amp;分隔。
 
 **API格式**
 
@@ -98,7 +98,7 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 | ---------- | ----------- | 
 | `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 包含与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
 | `namespace={NAMESPACE}` | **（必需）** 位置 {NAMESPACE} 包含要在其中搜索的命名空间。 |
-| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 包含符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被返回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的URL。 |
+| `s={SEARCH_TERM}` | *（可选）* 位置 {SEARCH_TERM} 包含符合Microsoft实施的查询 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 如果未指定搜索词，则与关联的所有记录 `schema.name` 将被退回。 欲知更详细的解释，请参见 [附录](#appendix) 本文档的。 |
 | `entityId={ENTITY_ID}` | *（可选）* 将搜索限制在指定的文件夹内，使用 {ENTITY_ID}. |
 | `limit={LIMIT}` | *（可选）* 位置 {LIMIT} 表示要返回的搜索结果数。 默认值为 50。 |
 | `page={PAGE}` | *（可选）* 位置 {PAGE} 表示用于分页所搜索查询结果的页码。 请注意，页码开始于 **0**. |
@@ -119,7 +119,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回HTTP状态200，且结果与搜索查询匹配。
+成功的响应返回HTTP状态200，返回的结果与搜索查询匹配。
 
 ```json
 {
@@ -169,7 +169,7 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 | ---------- | ----------- | 
 | `schema.name={SCHEMA}` | **（必需）** 位置 {SCHEMA} 包含与搜索对象关联的架构类值。 当前，仅限 `_xdm.context.segmentdefinition` 受支持。 |
 | `namespace={NAMESPACE}` | **（必需）** 位置 {NAMESPACE} 包含要在其中搜索的命名空间。 |
-| `entityId={ENTITY_ID}` | **（必需）** 要获取有关结构信息的搜索对象的ID，使用 {ENTITY_ID}. |
+| `entityId={ENTITY_ID}` | **（必需）** 要获取有关结构信息的搜索对象的ID，指定了 {ENTITY_ID}. |
 
 **请求**
 
@@ -222,9 +222,9 @@ curl -X GET \
 
 ## 附录 {#appendix}
 
-以下部分提供有关搜索词如何工作的更多信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 例如，搜索名为AAM的区段定义或 [!DNL Platform]，您可以使用以下搜索查询： `s=segmentName:AAM%20OR%20Platform`.
+以下部分提供有关搜索词工作方式的其他信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 例如，搜索名为AAM的区段定义或 [!DNL Platform]，您可以使用以下搜索查询： `s=segmentName:AAM%20OR%20Platform`.
 
->  对于最佳实践，搜索表达式应进行HTML编码，如上面的示例。
+>  对于最佳实践，搜索表达式应进行HTML编码，如上面的示例所示。
 
 ### 搜索字段 {#search-fields}
 
@@ -243,20 +243,20 @@ curl -X GET \
 
 下表列出了使用区段搜索API时搜索查询的工作方式的详细信息。
 
->  为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML可对搜索表达式进行编码。
+>  为了更加清晰明了，以下示例以非HTML编码格式显示。 为获得最佳实践，HTML对搜索表达式进行编码。
 
 | 示例搜索表达式 | 描述 |
 | ------------------------- | ----------- |
 | foo | 搜索任意单词。 如果在任何可搜索字段中找到“foo”一词，则将返回结果。 |
-| foo AND bar | 布尔搜索。 这将返回以下情况的结果： **两者** “foo”和“bar”这两个词可以在任何可搜索的字段中找到。 |
-| foo OR栏 | 布尔搜索。 这将返回以下情况的结果： **任一** “foo”一词或“bar”一词可在任何可搜索字段中找到。 |
+| foo AND bar | 布尔搜索。 如果符合以下条件，这将返回结果 **两者** “foo”和“bar”这两个词可以在任何可搜索的字段中找到。 |
+| foo OR栏 | 布尔搜索。 如果符合以下条件，这将返回结果 **或者** “foo”一词或“bar”一词可在任何可搜索字段中找到。 |
 | foo NOT栏 | 布尔搜索。 如果找到单词“foo”，但在任何可搜索字段中都找不到单词“bar”，则将返回结果。 |
-| 名称：foo AND栏 | 布尔搜索。 这将返回以下情况的结果： **两者** 单词“foo”和“bar”可在“name”字段中找到。 |
-| 运行* | 通配符搜索。 使用星号(*)可匹配0个或更多字符，这意味着如果任何可搜索字段的内容包含以“run”开头的单词，则将返回结果。 例如，如果出现“runs”、“running”、“runner”或“runt”这些词，则将返回结果。 |
-| 小卡？ | 通配符搜索。 使用问号(？) 只匹配一个字符，这意味着如果任何可搜索字段的内容以“cam”和附加字母开头，则会返回结果。 例如，如果出现“camp”或“cams”单词，这将返回结果，但是如果出现“camera”或“campfire”单词，将不会返回结果。 |
-| “蓝伞” | 短语搜索。 如果任何可搜索字段的内容包含完整的短语“蓝色雨伞”，则将返回结果。 |
-| 蓝色\~ | 模糊搜索。 或者，也可以在波状符号(~)后面放置一个介于0-2之间的数字以指定编辑距离。 例如，“blue\~1”将返回“blue”、“blues”或“glue”。 模糊搜索可以 **仅限** 适用于词语，而不是短语。 但是，您可以在短语中每个单词的末尾附加颚化符。 因此，例如，“夏令营”与“夏令营”将匹配。 |
-| “机场旅馆”\~5 | 近接搜索。 此类搜索用于查找文档中彼此相邻的术语。 例如，短语 `"hotel airport"~5` 会在文档中找到“hotel”和“airport”这两个词，并且这两个词之间不超过5个字符。 |
-| `/a[0-9]+b$/` | 正则表达式搜索。 此类搜索根据正斜杠“/”之间的内容查找匹配项，如RegExp类中所述。 例如，要查找包含“motel”或“hotel”的文档，请指定 `/[mh]otel/`. 正则表达式搜索仅针对单个单词进行匹配。 |
+| 名称：foo AND栏 | 布尔搜索。 如果符合以下条件，这将返回结果 **两者** “foo”和“bar”这两个词可在“name”字段中找到。 |
+| 运行* | 通配符搜索。 使用星号(*)可匹配0个或更多字符，这意味着如果任何可搜索字段的内容包含以“run”开头的单词，则会返回结果。 例如，如果出现“runs”、“running”、“runner”或“runt”这些词，则将返回结果。 |
+| 小卡？ | 通配符搜索。 使用问号(？) 只匹配一个字符，这意味着如果任何可搜索字段的内容以“cam”和附加字母开头，则会返回结果。 例如，如果出现“camp”或“cams”单词，这将返回结果，但出现“camera”或“campfire”单词时将不会返回结果。 |
+| “蓝雨伞” | 短语搜索。 如果任何可搜索字段的内容包含完整的短语“蓝色雨伞”，则将返回结果。 |
+| 蓝色\~ | 模糊搜索。 或者，也可以在波状符号(~)后面放置一个介于0-2之间的数字以指定编辑距离。 例如，“blue\~1”将返回“blue”、“blues”或“glue”。 模糊搜索可以 **仅限** 适用于词语，而不是短语。 但是，您可以在短语中每个单词的末尾附加颚化符。 因此，例如，“夏令营”与“夏令营”相匹配。 |
+| “酒店机场”\~5 | 近接搜索。 此类搜索用于查找文档中彼此接近的术语。 例如，短语 `"hotel airport"~5` 会在文档中找到“hotel”和“airport”这两个词语，且这两个词语会相差5个词。 |
+| `/a[0-9]+b$/` | 正则表达式搜索。 此类搜索根据正斜杠“/”之间的内容找到匹配项，如RegExp类中所述。 例如，要查找包含“motel”或“hotel”的文档，请指定 `/[mh]otel/`. 正则表达式搜索仅针对单个单词进行匹配。 |
 
-有关查询语法的更多详细文档，请阅读 [Lucene查询语法文档](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax).
+有关查询语法的更多详细文档，请参阅 [Lucene查询语法文档](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax).

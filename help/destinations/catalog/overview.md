@@ -38,4 +38,4 @@ ht-degree: 0%
 - [[!UICONTROL Social] [!UICONTROL 目标] 概述](social/overview.md)
 - [[!UICONTROL 流] [!UICONTROL 目标] （链接到HTTP目标）](streaming/http-destination.md)
 - [[!UICONTROL 调查] [!UICONTROL 目标] 概述](survey/overview.md)
-- [[!UICONTROL 客户心声] [!UICONTROL 目标] 概述](voice/overview.md)
+- [[!UICONTROL 客户的声音] [!UICONTROL 目标] 概述](voice/overview.md)

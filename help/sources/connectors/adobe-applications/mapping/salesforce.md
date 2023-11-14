@@ -1,6 +1,6 @@
 ---
 title: Salesforce映射字段
-description: 下表包含Salesforce源字段与其对应的XDM字段之间的映射。
+description: 下表包含Salesforce源字段及其对应的XDM字段之间的映射。
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
 source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 ## 联系人 {#contact}
 
-阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
+阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ ht-degree: 9%
 
 ## 潜在客户 {#lead}
 
-阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
+阅读 [XDM个人资料概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -249,7 +249,7 @@ ht-degree: 9%
 
 ## Campaign {#campaign}
 
-阅读 [XDM商业营销活动类概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM商业营销活动详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
+阅读 [XDM商业营销活动类概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM商业营销活动详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -280,7 +280,7 @@ ht-degree: 9%
 
 ## 营销活动成员 {#campaign-member}
 
-阅读 [XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的详细信息。 有关XDM字段组的详细信息，请阅读 [XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 文档。
+阅读 [XDM商业营销活动成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [XDM商业营销活动成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 文档。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -331,4 +331,4 @@ ht-degree: 9%
 
 ## 后续步骤
 
-通过阅读本文档，您已获得对以下两者之间映射关系的洞察 [!DNL Salesforce] 源字段及其对应的XDM字段。 请参阅相关文档 [创建 [!DNL Salesforce] 源连接](../../../connectors/crm/salesforce.md) 了解更多信息。
+通过阅读本文档，您已获得对以下项目之间的映射关系的洞察 [!DNL Salesforce] 源字段及其对应的XDM字段。 请参阅相关文档 [创建 [!DNL Salesforce] 源连接](../../../connectors/crm/salesforce.md) 以了解更多信息。

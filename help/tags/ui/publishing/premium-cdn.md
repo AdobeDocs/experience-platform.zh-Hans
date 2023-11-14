@@ -1,15 +1,15 @@
 ---
-title: Experience Platform标记（中国）
+title: Experience Platform 标记（中国）
 description: 了解用于标记的Experience Platform标记（中国）功能，以及如何将其用于在多个地理区域交付您的内容。
 exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
 source-git-commit: 9c39fd5d0353cc171230818d79ac213ce200dc1e
 workflow-type: tm+mt
 source-wordcount: '534'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# Experience Platform标记（中国）
+# Experience Platform 标记（中国）
 
 当您使用 [Adobe管理的主机](./hosts/managed-by-adobe-host.md) 为了在您的网站上交付Adobe Experience Platform标记资产，这些资产在全球各地的各种内容交付网络(CDN)中分发，从而提供最快的下载速度。 但是，某些区域要求将所有网站资产复制并托管到该区域的服务器上。
 

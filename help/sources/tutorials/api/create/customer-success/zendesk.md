@@ -5,43 +5,43 @@ exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
 source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
 source-wordcount: '1966'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
 # 创建数据流，用于 [!DNL Zendesk] 使用 [!DNL Flow Service] API
 
-以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Zendesk] 使用将数据发送到平台 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Zendesk] 使用将数据发送到Platform [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## 快速入门
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您对 Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL Zendesk] 使用 [!DNL Flow Service] API。
+以下部分提供成功连接时需要了解的其他信息 [!DNL Zendesk] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-要访问您的 [!DNL Zendesk] 帐户，则必须提供以下凭据的值：
+要访问 [!DNL Zendesk] 帐户，则必须提供以下凭据的值：
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
 | `subdomain` | 与您的帐户关联的唯一域。 | `https://yoursubdomain.zendesk.com` |
 | `accessToken` | Zendesk API令牌。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
-有关验证的详细信息 [!DNL Zendesk] 源，请参见 [[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md).
+有关验证您的身份的详细信息 [!DNL Zendesk] 源，请参见 [[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md).
 
-## Connect [!DNL Zendesk] 到平台，使用 [!DNL Flow Service] API
+## 连接 [!DNL Zendesk] 到平台，使用 [!DNL Flow Service] API
 
-以下教程将指导您完成创建 [!DNL Zendesk] 源连接并创建数据流以引入 [!DNL Zendesk] 使用将数据发送到平台 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建 [!DNL Zendesk] 源连接并创建数据流以引入 [!DNL Zendesk] 使用将数据发送到Platform [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ### 创建基本连接 {#base-connection}
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Zendesk] 作为请求正文一部分的身份验证凭据。
+POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL Zendesk] 作为请求正文一部分的身份验证凭据。
 
 **API格式**
 
@@ -51,7 +51,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL Zendesk]：
+以下请求为创建基本连接 [!DNL Zendesk]：
 
 ```shell
 curl -X POST \
@@ -80,9 +80,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 基本连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找基本连接上的信息。 |
+| `name` | 基础连接的名称。 确保基本连接的名称是描述性的，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 源的连接规范ID。 在您的源通过注册和批准后，可以检索此ID [!DNL Flow Service] API。 |
+| `connectionSpec.id` | 源的连接规范ID。 在您的源注册并批准后，可通过以下方式检索此ID： [!DNL Flow Service] API。 |
 | `auth.specName` | 用于向Platform验证源的身份验证类型。 |
 | `auth.params.` | 包含对源进行身份验证所需的凭据。 |
 | `auth.params.subdomain` | 与您的帐户关联的唯一域。 子域的格式为 `https://yoursubdomain.zendesk.com`. |
@@ -90,7 +90,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
+成功的响应会返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中浏览源的文件结构和内容时，需要此ID。
 
 ```json
 {
@@ -101,8 +101,8 @@ curl -X POST \
 
 ### 浏览您的源 {#explore}
 
-使用上一步中生成的基本连接ID，您可以通过执行GET请求来浏览文件和目录。
-使用以下调用查找要引入的文件的路径 [!DNL Platform]：
+使用在上一步中生成的基本连接ID，可以通过执行GET请求来浏览文件和目录。
+使用以下调用查找要导入的文件的路径 [!DNL Platform]：
 
 **API格式**
 
@@ -116,11 +116,11 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=rest&object={OBJECT}&fi
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
-| `objectType=rest` | 您希望浏览的对象类型。 目前，此值始终设置为 `rest`. |
+| `objectType=rest` | 您希望探索的对象类型。 目前，此值始终设置为 `rest`. |
 | `{OBJECT}` | 只有在查看特定目录时才需要此参数。 其值表示您希望浏览的目录的路径。 |
-| `fileType=json` | 要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
+| `fileType=json` | 您要带到Platform的文件类型。 目前， `json` 是唯一支持的文件类型。 |
 | `{PREVIEW}` | 一个布尔值，定义连接的内容是否支持预览。 |
-| `{SOURCE_PARAMS}` | 为要带到Platform的源文件定义参数。 检索接受的格式类型 `{SOURCE_PARAMS}`，您必须编码整个 `parameter` base64中的字符串。 在以下示例中， `"{}"` 在base64中编码等于 `e30`. |
+| `{SOURCE_PARAMS}` | 为要带到Platform的源文件定义参数。 检索接受的格式类型 `{SOURCE_PARAMS}`，则必须对整个 `parameter` base64中的字符串。 在以下示例中， `"{}"` 以base64编码等于 `e30`. |
 
 
 **请求**
@@ -136,7 +136,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回查询文件的结构。 在以下示例中， ``data[]`` 有效负荷仅显示单个记录，但可能有多个记录。
+成功的响应将返回查询文件的结构。 在下面的示例中，位于 ``data[]`` 有效负荷只显示单个记录，但可能有多个记录。
 
 ```json
 {
@@ -313,7 +313,7 @@ curl -X GET \
 
 ### 创建源连接 {#source-connection}
 
-您可以通过对以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
+您可以通过向以下对象发出POST请求来创建源连接： [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径以及连接规范ID组成。
 
 **API格式**
 
@@ -323,7 +323,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求创建源连接 [!DNL Zendesk]：
+以下请求为创建源连接 [!DNL Zendesk]：
 
 ```shell
 curl -X POST \
@@ -350,7 +350,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 源连接的名称。 确保源连接的名称是描述性的，因为您可以使用此名称查找源连接的信息。 |
+| `name` | 源连接的名称。 请确保源连接的名称是描述性的，因为您可以使用此名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
 | `baseConnectionId` | 的基本连接ID [!DNL Zendesk]. 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
@@ -358,7 +358,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回唯一标识符(`id`)。 此ID在后续步骤中是创建数据流所必需的。
+成功的响应将返回唯一标识符(`id`)。 此ID是稍后步骤创建数据流所必需的。
 
 ```json
 {
@@ -369,7 +369,7 @@ curl -X POST \
 
 ## 创建目标XDM架构 {#target-schema}
 
-为了在Platform中使用源数据，必须创建一个目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
+为了在Platform中使用源数据，必须创建目标架构，以根据您的需求构建源数据。 然后，使用目标架构创建包含源数据的Platform数据集。
 
 可以通过向以下对象执行POST请求来创建目标XDM架构 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -385,7 +385,7 @@ curl -X POST \
 
 目标连接表示与要存储所摄取数据的目标的连接。 要创建目标连接，您必须提供对应于数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-现在，您拥有目标架构、目标数据集和到数据湖的连接规范ID的唯一标识符。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
+现在，您拥有目标架构、目标数据集以及到数据湖的连接规范ID。 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含入站源数据的数据集的API。
 
 **API格式**
 
@@ -427,12 +427,12 @@ curl -X POST \
 | `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
 | `connectionSpec.id` | 对应于数据湖的连接规范ID。 此固定ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 | `data.format` | 的格式 [!DNL Zendesk] 要带到Platform的数据。 |
-| `params.dataSetId` | 在上一步中检索的目标数据集ID。 |
+| `params.dataSetId` | 在上一步中检索到的目标数据集ID。 |
 
 
 **响应**
 
-成功响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
+成功的响应将返回新目标连接的唯一标识符(`id`)。 此ID在后续步骤中是必需的。
 
 ```json
 {
@@ -443,7 +443,7 @@ curl -X POST \
 
 ### 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 在请求有效负载中定义数据映射。
+要将源数据摄取到目标数据集中，必须首先将其映射到目标数据集所遵循的目标架构。 这可以通过向以下对象执行POST请求来实现 [[!DNL Data Prep] API](https://www.adobe.io/experience-platform-apis/references/data-prep/) 请求有效负载中定义的数据映射。
 
 **API格式**
 
@@ -650,7 +650,7 @@ curl -X POST \
 | `xdmSchema` | 的ID [目标XDM架构](#target-schema) 在之前的步骤中生成。 |
 | `mappings.destinationXdmPath` | 源属性将映射到的目标XDM路径。 |
 | `mappings.sourceAttribute` | 需要映射到目标XDM路径的源属性。 |
-| `mappings.identity` | 一个布尔值，指定是否将映射集标记为 [!DNL Identity Service]. |
+| `mappings.identity` | 一个布尔值，指定映射集是否将被标记 [!DNL Identity Service]. |
 
 **响应**
 
@@ -727,7 +727,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
+| `name` | 您的数据流的名称。 确保数据流的名称是描述性的，因为您可以使用此名称查找数据流上的信息。 |
 | `description` | 可包含的可选值，用于提供有关数据流的更多信息。 |
 | `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID为： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
 | `flowSpec.version` | 流规范ID的相应版本。 此值默认为 `1.0`. |
@@ -735,11 +735,11 @@ curl -X POST \
 | `targetConnectionIds` | 此 [目标连接Id](#target-connection) 在之前的步骤中生成。 |
 | `transformations` | 此属性包含需要应用于数据的各种转换。 将不符合XDM的数据引入到Platform时需要此属性。 |
 | `transformations.name` | 分配给转换的名称。 |
-| `transformations.params.mappingId` | 此 [映射Id](#mapping) 在之前的步骤中生成。 |
+| `transformations.params.mappingId` | 此 [映射ID](#mapping) 在之前的步骤中生成。 |
 | `transformations.params.mappingVersion` | 映射ID的相应版本。 此值默认为 `0`. |
-| `scheduleParams.startTime` | 此属性包含有关数据流的摄取调度的信息。 |
+| `scheduleParams.startTime` | 此属性包含有关数据流的摄取计划的信息。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
-| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔值应为非零整数。 当频率设置为时，不需要间隔 `once` 和应大于或等于 `15` 其他频率值。 |
+| `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
 
 **响应**
 
@@ -762,16 +762,16 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
+通过向发出PATCH请求，更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 `/flows` 端点 [!DNL Flow Service] API，同时提供数据流的ID。 发出PATCH请求时，必须提供数据流的唯一值 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源数据流](../../update-dataflows.md).
 
 ### 更新您的帐户
 
-PATCH通过向 [!DNL Flow Service] API，同时将基本连接ID作为查询参数提供。 在提出PATCH请求时，您必须提供源帐户的唯一 `etag` 在 `If-Match` 标头。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
+PATCH通过向 [!DNL Flow Service] API，同时将您的基本连接ID作为查询参数提供。 发出PATCH请求时，必须提供源帐户的唯一帐户 `etag` 在 `If-Match` 标题。 有关完整的API示例，请阅读以下指南： [使用API更新源帐户](../../update.md).
 
-### 删除数据流
+### 删除您的数据流
 
-通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，以便在查询参数中提供要删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
+通过向以下对象执行DELETE请求来删除您的数据流： [!DNL Flow Service] API，同时提供您要作为查询参数的一部分删除的数据流的ID。 有关完整的API示例，请阅读以下指南： [使用API删除数据流](../../delete-dataflows.md).
 
 ### 删除您的帐户
 
-向以下人员发出DELETE请求以删除您的帐户： [!DNL Flow Service] 提供要删除的帐户的基本连接ID时的API。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).
+向以下网站发出DELETE请求，删除您的帐户： [!DNL Flow Service] API，同时提供要删除帐户的基本连接ID。 有关完整的API示例，请阅读以下指南： [使用API删除源帐户](../../delete.md).

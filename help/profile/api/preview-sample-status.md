@@ -1,7 +1,7 @@
 ---
-keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；预览；示例
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API；预览；示例
 title: 预览示例状态（配置文件预览） API端点
-description: 通过Real-time Customer Profile API的预览示例状态端点，可预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，并生成显示数据集重叠、身份重叠和未拼合配置文件的报告。
+description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
 source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
@@ -12,44 +12,44 @@ ht-degree: 1%
 
 # 预览示例状态端点（配置文件预览）
 
-Adobe Experience Platform允许您从多个来源摄取客户数据，以便为每位客户构建强大、统一的配置文件。 当数据被摄取到Platform中时，将运行一个示例作业来更新用户档案计数和其他与实时客户档案数据相关的量度。
+Adobe Experience Platform允许您从多个来源摄取客户数据，以便为每位客户构建强大、统一的配置文件。 当数据被摄取到Platform中时，将运行示例作业以更新用户档案计数和其他实时客户档案数据相关量度。
 
-可以使用查看此示例作业的结果 `/previewsamplestatus` 端点，实时客户个人资料API的一部分。 此端点还可用于按数据集和身份命名空间列出配置文件分发，以及生成多个报告，以了解贵组织的配置文件存储区的组成。 本指南将介绍使用查看这些指标所需的步骤。 `/previewsamplestatus` API端点。
+可以使用查看此示例作业的结果 `/previewsamplestatus` 端点，实时客户资料API的一部分。 此端点还可用于同时按数据集和身份命名空间列出配置文件分发，以及生成多个报告，以了解贵组织的配置文件存储的组成。 本指南将介绍使用 `/previewsamplestatus` API端点。
 
 >[!NOTE]
 >
->在Adobe Experience Platform分段服务API中提供了一些估算和预览端点，利用这些端点，可查看有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用预览和估计端点的详细步骤，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)，的一部分 [!DNL Segmentation] API开发人员指南。
+>在Adobe Experience Platform分段服务API中提供了一些估计和预览端点，通过这些端点可查看有关区段定义的摘要级别信息，从而帮助您隔离预期的受众。 要查找使用预览和估计端点的详细步骤，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)，的一部分 [!DNL Segmentation] API开发人员指南。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 配置文件片段与合并的配置文件
 
-本指南同时引用了“配置文件片段”和“合并的配置文件”。 在继续操作之前，请务必了解这些术语之间的差异。
+本指南参考了“配置文件片段”和“合并的配置文件”。 在继续操作之前，请务必了解这些术语之间的差异。
 
-每个客户配置文件都由多个配置文件片段组成，这些片段已合并以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织可能具有多个与该单个客户相关的配置文件片段，这些片段出现在多个数据集中。
+每个单独的客户配置文件都由多个配置文件片段组成，这些片段已合并以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌互动，则您的组织可能具有多个与出现在多个数据集中的单个客户相关的配置文件片段。
 
-在将配置文件片段摄取到Platform时，将它们（根据合并策略）合并在一起，以便为该客户创建单个配置文件。 因此，配置文件片段的总数可能始终大于合并的配置文件总数，因为每个配置文件都由多个片段组成。
+将配置文件片段摄取到Platform后，它们会合并在一起（根据合并策略），以便为该客户创建单个配置文件。 因此，配置文件片段的总数可能始终大于合并的配置文件总数，因为每个配置文件都由多个片段组成。
 
 要了解有关用户档案及其在Experience Platform中的角色的更多信息，请从阅读 [Real-time Customer Profile概述](../home.md).
 
 ## 如何触发示例作业
 
-随着为Real-time Customer Profile启用的数据被摄取 [!DNL Platform]，它存储在配置文件数据存储中。 当将记录摄取到配置文件存储区增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
+随着为实时客户资料启用的数据被摄取 [!DNL Platform]，它存储在配置文件数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
 
-* 对象 **流数据工作流**，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果有，则会自动触发示例作业以更新计数。
+* 对象 **流数据工作流**，每小时进行一次检查，以确定是否达到5%的增加或减少阈值。 如果有，则会自动触发示例作业以更新计数。
 * 对象 **批量摄取**，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
 
-按命名空间量度列出的配置文件计数和配置文件也可在中找到 [!UICONTROL 配置文件] Experience PlatformUI的部分。 有关如何使用UI访问配置文件数据的信息，请访问 [[!DNL Profile] UI指南](../ui/user-guide.md).
+此外，中还提供了“配置文件计数”和“按命名空间量度列出的配置文件” [!UICONTROL 配置文件] Experience PlatformUI的部分。 有关如何使用UI访问配置文件数据的信息，请访问 [[!DNL Profile] UI指南](../ui/user-guide.md).
 
 ## 查看上一个示例状态 {#view-last-sample-status}
 
-GET您可以向 `/previewsamplestatus` 端点，用于查看为您的组织运行的最后一个成功示例作业的详细信息。 这包括示例中的配置文件总数，以及配置文件计数量度，或您的组织在Experience Platform内拥有的配置文件总数。
+您可以向以下对象执行GET请求 `/previewsamplestatus` 端点，用于查看为您的组织运行的最后一个成功示例作业的详细信息。 这包括示例中的配置文件总数，以及配置文件计数量度，或您的组织在Experience Platform内拥有的配置文件总数。
 
-配置文件计数是在将多个配置文件片段合并在一起，以便为每个单独的客户形成一个配置文件后生成的。 换句话说，当配置文件片段合并在一起时，它们会返回“1”配置文件计数，因为它们都与同一个人相关。
+配置文件计数是在将多个配置文件片段合并在一起，为每个单独的客户形成一个配置文件后生成的。 换言之，当配置文件片段合并在一起时，它们会返回“1”配置文件计数，因为它们都与同一个人相关。
 
-配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 在摄取用户档案数据时，示例作业会定期刷新，以便提供平台内最新的用户档案总数。
+配置文件计数还包括具有属性（记录数据）的用户档案，以及仅包含时间序列（事件）数据(如Adobe Analytics配置文件)的用户档案。 在摄取用户档案数据时，示例作业会定期刷新，以提供Platform内最新的用户档案总数。
 
 **API格式**
 
@@ -74,7 +74,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->在此示例响应中， `numRowsToRead` 和 `totalRows` 彼此相等。 根据贵组织在Experience Platform中的用户档案数，情况可能会如此。 但是，通常这两个数字是不同的，因为 `numRowsToRead` 是较小的数字，因为它表示样本为配置文件总数的子集(`totalRows`)。
+>在此示例响应中， `numRowsToRead` 和 `totalRows` 彼此相等。 根据贵组织Experience Platform中的配置文件数，情况可能会如此。 但是，通常这两个数字是不同的， `numRowsToRead` 是较小的数字，因为它表示示例为配置文件总数的子集(`totalRows`)。
 
 ```json
 {
@@ -99,21 +99,21 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `numRowsToRead` | 示例中合并的配置文件总数。 |
-| `sampleJobRunning` | 返回布尔值 `true` 当示例作业正在进行时。 使批处理文件实际添加到配置文件存储区时发生的延迟透明化。 |
+| `sampleJobRunning` | 返回的boolean值 `true` 当示例作业正在进行时。 将批处理文件实际添加到配置文件存储区后，可以透明地反映将文件上传到的批处理文件所产生的延迟。 |
 | `cosmosDocCount` | Cosmos中的文档总数。 |
-| `totalFragmentCount` | 配置文件存储区中的配置文件片段总数。 |
-| `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
-| `streamingDriven` | *此字段已弃用，对响应没有任何意义。* |
+| `totalFragmentCount` | 配置文件存储中的配置文件片段总数。 |
+| `lastSuccessfulBatchTimestamp` | 上次成功的批次摄取时间戳。 |
+| `streamingDriven` | *此字段已弃用，并且对于响应没有任何意义。* |
 | `totalRows` | Experience Platform中合并的配置文件总数，也称为“配置文件计数”。 |
 | `lastBatchId` | 上次批次摄取ID。 |
 | `status` | 上一个示例的状态。 |
-| `samplingRatio` | 已采样的合并配置文件的比率(`numRowsToRead`)到合并的配置文件总数(`totalRows`)，以小数格式表示的百分比。 |
+| `samplingRatio` | 合并配置文件采样的比率(`numRowsToRead`)到合并的配置文件总数(`totalRows`)，以小数格式表示的百分比。 |
 | `mergeStrategy` | 示例中使用的合并策略。 |
-| `lastSampledTimestamp` | 上一个成功的示例时间戳。 |
+| `lastSampledTimestamp` | 上次成功的示例时间戳。 |
 
 ## 按数据集列出配置文件分发
 
-GET要按数据集查看用户档案分布，您可以对 `/previewsamplestatus/report/dataset` 端点。
+GET要按数据集查看用户档案的分布，您可以对 `/previewsamplestatus/report/dataset` 端点。
 
 **API格式**
 
@@ -124,7 +124,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最新的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报告，则返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -145,7 +145,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->如果日期存在多个报表，则仅返回最新的报表。 如果提供的日期不存在数据集报告，则会返回HTTP状态404 （未找到）。
+>如果该日期存在多个报表，则仅返回最新的报表。 如果提供的日期不存在数据集报告，则会返回HTTP状态404 （未找到）。
 
 ```json
 {
@@ -193,22 +193,22 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `sampleCount` | 具有此数据集ID的采样合并配置文件总数。 |
-| `samplePercentage` | 此 `sampleCount` 占抽样合并配置文件总数的百分比( `numRowsToRead` 中返回的值 [上一个示例状态](#view-last-sample-status))，以十进制格式表示。 |
+| `sampleCount` | 具有此数据集ID的采样合并用户档案总数。 |
+| `samplePercentage` | 此 `sampleCount` 占采样的合并配置文件总数的百分比( `numRowsToRead` 中返回的值 [上一个示例状态](#view-last-sample-status))，以小数格式表示。 |
 | `fullIDsCount` | 具有此数据集ID的合并用户档案总数。 |
-| `fullIDsPercentage` | 此 `fullIDsCount` 占合并的配置文件总数的百分比( `totalRows` 中返回的值 [上一个示例状态](#view-last-sample-status))，以十进制格式表示。 |
+| `fullIDsPercentage` | 此 `fullIDsCount` 占合并配置文件总数的百分比( `totalRows` 中返回的值 [上一个示例状态](#view-last-sample-status))，以小数格式表示。 |
 | `name` | 数据集的名称，在数据集创建期间提供。 |
 | `description` | 数据集的描述，在数据集创建期间提供。 |
 | `value` | 数据集的ID。 |
 | `streamingIngestionEnabled` | 是否已为数据集启用流式摄取。 |
 | `createdUser` | 创建数据集的用户的用户ID。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告是针对提供的日期。 如果否 `date` 参数时，返回最新的报告。 |
+| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告对应于提供的日期。 如果否 `date` 如果提供了参数，则会返回最新报告。 |
 
 ## 按身份命名空间列出配置文件分发
 
-GET您可以向 `/previewsamplestatus/report/namespace` 端点，用于查看按身份命名空间对配置文件存储中的所有合并配置文件进行的划分。 这包括Adobe提供的标准身份以及由贵组织定义的自定义身份。
+您可以向以下对象执行GET请求 `/previewsamplestatus/report/namespace` 端点可查看按身份命名空间对配置文件存储中的所有合并配置文件进行的细分。 这包括Adobe提供的标准身份以及由贵组织定义的自定义身份。
 
-身份命名空间是Adobe Experience Platform Identity Service的重要组成部分，充当与客户数据相关的上下文指示器。 要了解更多信息，请从阅读 [身份命名空间概述](../../identity-service/namespaces.md).
+身份命名空间是Adobe Experience Platform Identity Service的重要组成部分，充当与客户数据相关的上下文指示器。 要了解更多信息，请先阅读 [身份命名空间概述](../../identity-service/namespaces.md).
 
 >[!NOTE]
 >
@@ -223,11 +223,11 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报告，则返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求未指定 `date` 参数，因此将返回最新的报告。
+以下请求未指定 `date` 参数，因此将返回最新报表。
 
 ```shell
 curl -X GET \
@@ -293,17 +293,17 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 命名空间中采样的合并配置文件总数。 |
-| `samplePercentage` | 此 `sampleCount` 占抽样合并配置文件的百分比( `numRowsToRead` 中返回的值 [上一个示例状态](#view-last-sample-status))，以十进制格式表示。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告是针对提供的日期。 如果否 `date` 参数时，返回最新的报告。 |
+| `samplePercentage` | 此 `sampleCount` 作为抽样合并配置文件的百分比( `numRowsToRead` 中返回的值 [上一个示例状态](#view-last-sample-status))，以小数格式表示。 |
+| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告对应于提供的日期。 如果否 `date` 如果提供了参数，则会返回最新报告。 |
 | `fullIDsFragmentCount` | 命名空间中的配置文件片段总数。 |
 | `fullIDsCount` | 命名空间中合并的配置文件总数。 |
-| `fullIDsPercentage` | 此 `fullIDsCount` 占合并配置文件总数的百分比( `totalRows` 中返回的值 [上一个示例状态](#view-last-sample-status))，以十进制格式表示。 |
-| `code` | 此 `code` 用于命名空间。 当使用命名空间时，可以找到它 [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md) 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
-| `value` | 此 `id` 命名空间的值。 当使用命名空间时，可以找到它 [身份服务API](../../identity-service/api/list-namespaces.md). |
+| `fullIDsPercentage` | 此 `fullIDsCount` 占合并配置文件总数的百分比( `totalRows` 中返回的值 [上一个示例状态](#view-last-sample-status))，以小数格式表示。 |
+| `code` | 此 `code` 用于命名空间。 使用命名空间时，可以找到此项 [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md) 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
+| `value` | 此 `id` 命名空间的值。 使用命名空间时，可以找到此项 [标识服务API](../../identity-service/api/list-namespaces.md). |
 
 ## 生成数据集重叠报告
 
-数据集重叠报表通过公开对可寻址受众贡献最大的数据集（合并的用户档案），提供了对组织配置文件存储构成的可见性。 除了提供数据洞察，此报表还可以帮助您采取措施优化许可证使用，如设置特定数据集的过期时间。
+数据集重叠报表通过公开对可寻址受众贡献最大的数据集（合并的用户档案），提供了对组织用户档案存储构成的可见性。 除了提供数据见解外，此报表还可以帮助您采取措施优化许可证使用，如设置特定数据集的过期时间。
 
 GET您可以通过对 `/previewsamplestatus/report/dataset/overlap` 端点。
 
@@ -318,7 +318,7 @@ GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最新的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -350,11 +350,11 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `data` | 此 `data` 对象包含以逗号分隔的数据集列表及其各自的配置文件计数。 |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告是针对提供的日期。 如果否 `date` 参数时，返回最新的报告。 |
+| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告对应于提供的日期。 如果否 `date` 如果提供了参数，则会返回最新报告。 |
 
 ### 解释数据集重叠报表
 
-报表的结果可以从响应中的数据集和配置文件计数中解释。 考虑以下示例报告 `data` 对象：
+报表的结果可以从响应中的数据集和配置文件计数进行解释。 考虑以下示例报告 `data` 对象：
 
 ```json
   "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
@@ -366,14 +366,14 @@ curl -X GET \
 
 * 共有123个配置文件，包含来自以下数据集的数据： `5d92921872831c163452edc8`， `5da7292579975918a851db57`， `5eb2cdc6fa3f9a18a7592a98`.
 * 共有454,412个用户档案包含来自以下两个数据集的数据： `5d92921872831c163452edc8` 和 `5eb2cdc6fa3f9a18a7592a98`.
-* 有107个配置文件仅由数据集中的数据组成 `5eeda0032af7bb19162172a7`.
+* 有107个用户档案仅包含数据集中的数据 `5eeda0032af7bb19162172a7`.
 * 该组织共有454,642个用户档案。
 
 ## 生成身份命名空间重叠报告 {#identity-overlap-report}
 
-身份命名空间重叠报表通过公开对可寻址受众贡献最大的身份命名空间（合并的配置文件），提供了对贵组织配置文件存储区构成的可见性。 这包括Adobe提供的标准身份命名空间以及贵组织定义的自定义身份命名空间。
+身份命名空间重叠报表通过公开对可寻址受众贡献最大的身份命名空间（合并的用户档案），提供了对组织配置文件存储构成的可见性。 这包括Adobe提供的标准身份命名空间以及贵组织定义的自定义身份命名空间。
 
-您可以通过向以下对象执行GET请求来生成身份命名空间重叠报表： `/previewsamplestatus/report/namespace/overlap` 端点。
+您可以通过向以下对象执行GET请求来生成身份命名空间重叠报表 `/previewsamplestatus/report/namespace/overlap` 端点。
 
 **API格式**
 
@@ -384,7 +384,7 @@ GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最新的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行了多个报告，则会返回该日期的最新报告。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报告。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -444,12 +444,12 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `data` | 此 `data` 对象包含以逗号分隔的列表，这些列表具有身份命名空间代码及其各自配置文件计数的唯一组合。 |
-| 命名空间代码 | 此 `code` 是每个身份命名空间名称的简短形式。 每个项目的映射 `code` 到其 `name` 可使用找到 [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md). 此 `code` 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
-| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告是针对提供的日期。 如果否 `date` 参数时，返回最新的报告。 |
+| 命名空间代码 | 此 `code` 是每个身份命名空间名称的缩写。 每个项目的映射 `code` 到其 `name` 可使用以下网址找到： [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md). 此 `code` 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
+| `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告对应于提供的日期。 如果否 `date` 如果提供了参数，则会返回最新报告。 |
 
-### 解释身份命名空间重叠报告
+### 解释身份命名空间重叠报表
 
-可以从响应中的身份和配置文件计数解释报表的结果。 每行的数值可告知您有多少个配置文件由标准和自定义身份命名空间的精确组合组成。
+报表的结果可以从响应中的身份和配置文件计数中解释。 每行的数值可告知您有多少个配置文件由标准和自定义身份命名空间的精确组合组成。
 
 考虑以下摘录自 `data` 对象：
 
@@ -467,7 +467,7 @@ curl -X GET \
 
 ## 生成未拼合的用户档案报告
 
-您可以通过未拼合的用户档案报表进一步了解组织用户档案存储区的构成。 “未拼合”配置文件是仅包含一个配置文件片段的配置文件。 “未知”配置文件是与假名身份命名空间关联的配置文件，例如 `ECID` 和 `AAID`. 未知配置文件处于非活动状态，这意味着它们在指定的时间段内未添加新事件。 未拼合的用户档案报表提供了7、30、60、90和120天的用户档案细目。
+您可以通过未拼合的用户档案报表进一步了解组织用户档案存储区的构成。 “未拼合”配置文件是仅包含一个配置文件片段的配置文件。 “未知”配置文件是与匿名身份命名空间关联的配置文件，例如 `ECID` 和 `AAID`. 未知配置文件处于不活动状态，这意味着它们在指定的时间段内未添加新事件。 未拼合的用户档案报表提供了7、30、60、90和120天的用户档案细目。
 
 您可以通过对执行GET请求来生成未拼接的用户档案报表 `/previewsamplestatus/report/unstitchedProfiles` 端点。
 
@@ -491,11 +491,11 @@ curl -X GET \
 
 **响应**
 
-成功的请求会返回HTTP状态200 （正常）和未拼合的用户档案报表。
+成功的请求会返回HTTP状态200 （正常）以及“未拼合的用户档案”报表。
 
 >[!NOTE]
 >
->出于本指南的目的，报告已被截断为仅包含 `"120days"` 和&quot;`7days`“时段。 完整的未拼合用户档案报表提供了7、30、60、90和120天的用户档案细目。
+>出于本指南的目的，报告已被截断为仅包含 `"120days"` 和&#39;&#39;`7days`“时间段。 完整的未拼合用户档案报表提供了7、30、60、90和120天的用户档案细目。
 
 ```json
 {
@@ -548,17 +548,17 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `data` | 此 `data` 对象包含为未拼合的用户档案报告返回的信息。 |
-| `totalNumberOfProfiles` | 配置文件存储区中的独特配置文件总数。 这相当于可寻址受众计数。 它包括已知和未拼接的用户档案。 |
+| `totalNumberOfProfiles` | 配置文件存储中的独特配置文件总数。 这相当于可寻址受众计数。 它包括已知和未拼接的用户档案。 |
 | `totalNumberOfEvents` | 配置文件存储区中的ExperienceEvents总数。 |
-| `unstitchedProfiles` | 一个对象，其中包含按时间段划分的未拼接用户档案。 未拼合的用户档案报表提供了7、30、60、90和120天时间段的用户档案细目。 |
-| `countOfProfiles` | 时间段内未拼接配置文件的计数或命名空间未拼接配置文件的计数。 |
+| `unstitchedProfiles` | 一个对象，其中包含按时间段划分的未拼接用户档案。 未拼合的用户档案报表提供了7、30、60、90和120天时间段的配置文件细目。 |
+| `countOfProfiles` | 时间段内未拼接用户档案的计数或命名空间未拼接用户档案的计数。 |
 | `eventsAssociated` | 时间范围的ExperienceEvents数或命名空间的事件数。 |
-| `nsDistribution` | 一个对象，其中包含各个身份命名空间，每个命名空间均分配有未拼接的用户档案和事件。 注意：将合计合计 `countOfProfiles` 中每个身份命名空间 `nsDistribution` 对象等于 `countOfProfiles` 时间段。 同样的情况也适用于 `eventsAssociated` 每个命名空间和总计 `eventsAssociated` 每个时段。 |
+| `nsDistribution` | 一个对象，其中包含各个身份命名空间，每个命名空间均分配有未拼接的用户档案和事件。 注意：将总计 `countOfProfiles` 对于中的每个身份命名空间 `nsDistribution` 对象等于 `countOfProfiles` 在时间周期内。 同样的情况也适用于 `eventsAssociated` 每个命名空间和总计 `eventsAssociated` 每个时段。 |
 | `reportTimestamp` | 报表的时间戳。 |
 
 ### 解释未拼合的用户档案报告
 
-该报告的结果可以让您深入了解您的组织在其配置文件存储区中有多少个未拼合的和不活动的配置文件。
+该报表的结果可以让您深入了解您的组织在其配置文件存储区中有多少个未拼合和不活动的配置文件。
 
 考虑以下摘录自 `data` 对象：
 
@@ -585,12 +585,12 @@ curl -X GET \
 
 此报表提供以下信息：
 
-* 有1,782个配置文件仅包含一个配置文件片段，并且过去7天中没有新事件。
+* 有1,782个配置文件仅包含一个配置文件片段，并且过去7天没有新事件。
 * 有29,151个ExperienceEvents与1,782个未拼接的用户档案关联。
 * 有1,734个未拼接的用户档案，其中包含来自ECID身份命名空间的单个用户档案片段。
-* 有28,591个事件与1,734个未拼接配置文件关联，这些配置文件包含来自ECID身份命名空间的单个配置文件片段。
+* 有28,591个事件与1,734个未拼接配置文件关联，其中包含来自ECID身份命名空间的单个配置文件片段。
 
 ## 后续步骤
 
-现在，您已了解如何在配置文件存储中预览样本数据并对数据运行多个报告，您还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息有助于确保您隔离预期的受众。 要了解有关使用分段API处理预览和估计的更多信息，请访问 [预览和评估端点指南](../../segmentation/api/previews-and-estimates.md).
+现在，您已了解如何在配置文件存储中预览样本数据并对数据运行多个报告，您还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息可帮助您确保隔离预期的受众。 要了解有关使用分段API进行预览和估算的更多信息，请访问 [预览和估计端点指南](../../segmentation/api/previews-and-estimates.md).
 

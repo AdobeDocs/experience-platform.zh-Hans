@@ -1,7 +1,7 @@
 ---
 keywords: 广告目标；目标；平台目标
 title: 广告目标概述
-description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
+description: 将Adobe Experience Platform连接到第三方广告平台(例如，DSP、广告网络、SSP)，并在这些平台上共享假名受众。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
 source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 将Adobe Experience Platform连接到广告平台，例如需求端平台(DSP)、供应端平台(SSP)和广告网络，以在这些平台上共享已知和假名受众。
 
-连接到广告目标时，受众将作为ID发送到目标平台，并在其中映射到目标平台已知的ID。
+连接到广告目标时，受众将作为ID发送到目标平台，并在该ID被映射到目标平台已知的ID。
 
 ## 支持的广告目标 {#supported-destinations}
 
@@ -54,9 +54,9 @@ ht-degree: 3%
 * [Google Ads扩展](google-ads-extension.md)
 * [Google gtag扩展](gtag-advertising.md)
 * [linkedIn Insight Tag扩展](linkedin.md)
-* [pinterest Conversion Tracking扩展](pinterest-extension.md)
+* [pinterest转化跟踪扩展](pinterest-extension.md)
 * [twitter通用网站标记扩展](twitter-uwt.md)
 
 ## 连接到新的广告目标 {#connect-destination}
 
-要将受众发送到营销活动的广告目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。
+要将受众发送到营销活动的广告目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 以了解有关设置新目标的详细信息。

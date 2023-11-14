@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
-title: 预览和估计API端点
-description: 在开发区段定义时，您可以使用Adobe Experience Platform中的估算和预览工具查看摘要级别信息，以帮助确保隔离预期受众。
+title: 预览和估算API端点
+description: 在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，从而帮助您隔离预期的受众。
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # 预览和估计端点
 
-在开发区段定义时，您可以使用Adobe Experience Platform中的估算和预览工具查看摘要级别信息，以帮助确保隔离您预期的受众。
+在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，从而帮助确保隔离您预期的受众。
 
 * **预览** 提供符合区段定义的用户档案的分页列表，以便您可以将结果与预期结果进行比较。
 
@@ -26,16 +26,16 @@ ht-degree: 2%
 
 本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关成功调用API所需了解的重要信息，包括所需的标头以及如何读取示例API调用。
 
-## 如何生成估计
+## 如何生成估算
 
-当将记录摄取到配置文件存储区增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 数据采样的触发方式取决于摄取方法：
+当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 数据采样的触发方式取决于摄取方法：
 
 * **批量摄取：** 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新计数。
-* **流式摄取：** 对于流数据工作流，会每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果超过100次，则会自动触发作业以更新计数。
+* **流式摄取：** 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果超过100次，则会自动触发作业以更新计数。
 
-扫描的样本大小取决于配置文件存储区中的实体总数。 下表显示了这些样本量：
+扫描的样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本量：
 
-| 配置文件存储中的实体 | 样本大小 |
+| 配置文件存储中的实体 | 样本量 |
 | ------------------------- | ----------- |
 | 少于100万 | 完整数据集 |
 | 100万到2000万 | 100万 |
@@ -43,15 +43,15 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->估计值通常需要10到15秒来运行，从粗略估计值开始，并随着读取更多记录而优化。
+>估计值通常需要10到15秒来运行，从粗略估计开始，并随着读取更多记录而优化。
 
 ## 新建预览 {#create-preview}
 
-您可以通过向以下对象发出POST请求来创建新的预览： `/preview` 端点。
+您可以向以下对象发出POST请求，以创建新的预览 `/preview` 端点。
 
 >[!NOTE]
 >
->创建预览作业时，会自动创建评估作业。 这两个作业将共享同一ID。
+>创建预览作业时，将自动创建评估作业。 这两个作业将共享相同的ID。
 
 **API格式**
 
@@ -82,7 +82,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `predicateExpression` | 作为数据查询依据的PQL表达式。 |
 | `predicateType` | 下查询表达式的谓词类型 `predicateExpression`. 目前，此属性唯一接受的值是 `pql/text`. |
 | `predicateModel` | 的名称 [!DNL Experience Data Model] 配置文件数据所基于的(XDM)架构类。 |
-| `graphType` | 要从中获取集群的图形类型。 支持的值包括 `none` （不执行身份拼接）和 `pdg` （根据您的私有身份图执行身份拼合）。 |
+| `graphType` | 您希望从中获取集群的图形类型。 支持的值为 `none` （不执行身份拼接）和 `pdg` （根据个人身份图执行身份拼接）。 |
 
 **响应**
 
@@ -101,7 +101,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `state` | 预览作业的当前状态。 最初创建时，它将处于“NEW”状态。 随后，它将处于“正在运行”状态，直到处理完成，此时它将变为“RESULT_READY”或“FAILED”。 |
-| `previewId` | 预览作业的ID，在查看估计或预览时用于查找，如下节所述。 |
+| `previewId` | 预览作业的ID，用于在查看估计或预览时查找，如下节所述。 |
 
 ## 检索特定预览的结果 {#get-preview}
 
@@ -182,7 +182,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 ## 检索特定估算作业的结果 {#get-estimate}
 
-创建预览作业后，您可以使用其 `previewId` 在GET请求的路径中 `/estimate` 端点，以查看有关区段定义的统计信息，包括预计受众大小、置信区间和误差标准偏差。
+创建预览作业后，您可以使用其 `previewId` 在GET请求的路径中 `/estimate` 端点以查看有关区段定义的统计信息，包括预计受众大小、置信区间和误差标准偏差。
 
 **API格式**
 
@@ -192,11 +192,11 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 只有在创建了预览作业且两个作业共享同一ID值以进行查找时，才会触发估算作业。 具体来说，这是 `previewId` 创建预览作业时返回的值。 |
+| `{PREVIEW_ID}` | 仅在创建预览作业且两个作业共享同一ID值以进行查找时，才会触发估计作业。 具体来说，这是 `previewId` 创建预览作业时返回的值。 |
 
 **请求**
 
-以下请求检索特定估算作业的结果。
+以下请求检索特定估计作业的结果。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
@@ -208,7 +208,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 **响应**
 
-成功的响应返回HTTP状态200以及估算作业的详细信息。
+成功的响应返回HTTP状态200以及估计作业的详细信息。
 
 ```json
 {
@@ -242,10 +242,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | 一个对象数组，显示区段中按身份命名空间划分的配置文件数。 按命名空间列出的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。 |
+| `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间列出的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。 |
 | `state` | 预览作业的当前状态。 状态将为“正在运行”，直到处理完成，此时状态将变为“RESULT_READY”或“FAILED”。 |
-| `_links.preview` | 当 `state` 为“RESULT_READY”，此字段提供一个URL以查看估计值。 |
+| `_links.preview` | 当 `state` 为“RESULT_READY”，此字段提供一个URL以查看估算。 |
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与您的实时客户个人资料数据相关的量度，如特定命名空间内的个人资料片段总数和合并的个人资料总数，或个人资料数据存储的总数，请访问 [配置文件预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md).
+阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与您的实时客户个人资料数据相关的量度，如特定命名空间内的个人资料片段和合并个人资料的总数或个人资料数据存储的总数，请访问 [配置文件预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md).

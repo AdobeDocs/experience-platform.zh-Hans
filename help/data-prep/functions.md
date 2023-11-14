@@ -118,7 +118,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | 检索当前时间。 | | now() | now() | `2021-10-26T10:10:24Z` |
-| timestamp | 检索当前Unix时间。 | | timestamp() | timestamp() | 1571850624571 |
+| 时间戳 | 检索当前Unix时间。 | | 时间戳() | 时间戳() | 1571850624571 |
 | 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必填** 要格式化的输入日期，作为ZonedDateTime对象。</li><li>格式： **必填** 您希望将日期更改为的格式。</li></ul> | format（日期，格式） | format(2019-10-23T11:24:00+00:00， &quot;yyyy-MM-dd HH:mm:ss&quot;) | `2019-10-23 11:24:35` |
 | dformat | 根据指定的格式将时间戳转换为日期字符串。 | <ul><li>时间戳： **必填** 要设置格式的时间戳。 这是以毫秒为单位编写的。</li><li>格式： **必填** 您希望时间戳变为的格式。</li></ul> | dformat(TIMESTAMP， FORMAT) | dformat(1571829875000， &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX”) | `2019-10-23T11:24:35.000Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必填** 表示日期的字符串。</li><li>格式： **必填** 表示源日期格式的字符串。**注意：** 这可以 **非** 表示要将日期字符串转换成的格式。 </li><li>DEFAULT_DATE： **必填** 如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;， now()) | `2019-10-23T11:24:00Z` |
@@ -260,7 +260,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
 | ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0 (iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46 （KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
 | ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_version&#x200B;(USER_AGENT) | ua_os_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
-| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
+| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_name_version&#x200B;(USER_AGENT) | ua_os_name_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
 | ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
 | ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
 | ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
@@ -357,7 +357,7 @@ address.line1 -> addr.addrLine1
 
 | 设备 | 描述 |
 | --- | --- |
-| 台式机 | 台式机或笔记本电脑类型的设备。 |
+| 桌面 | 台式机或笔记本电脑类型的设备。 |
 | 匿名 | 匿名设备。 在某些情况下，它们是 `useragents` 已用匿名化软件更改过的URL。 |
 | 未知 | 未知设备。 这些通常是 `useragents` 不包含有关设备的任何信息。 |
 | 移动设备 | 尚未识别的移动设备。 此移动设备可以是电子阅读器、平板电脑、手机、手表等。 |

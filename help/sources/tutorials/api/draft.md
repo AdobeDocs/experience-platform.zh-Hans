@@ -5,24 +5,24 @@ exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
 source-git-commit: ebd650355a5a4c2a949739384bfd5c8df9577075
 workflow-type: tm+mt
 source-wordcount: '1192'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
 # 创建您的草稿 [!DNL Flow Service] 使用API的实体
 
-您可以使用 `mode=draft` 中的查询参数 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) 设置 [!DNL Flow Service] 实体（例如基本连接、源连接、目标连接和数据流）变为草稿状态。
+您可以使用 `mode=draft` 中的查询参数 [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>) 设置 [!DNL Flow Service] 将基础连接、源连接、目标连接和数据流等实体转换为草稿状态。
 
-草稿可稍后使用新信息更新，并在准备就绪后使用 `op=publish` 查询参数。
+草稿稍后可以使用新信息进行更新，并在准备就绪后使用 `op=publish` 查询参数。
 
-本教程提供了有关如何设置 [!DNL Flow Service] 实体变为草稿状态，并允许您暂停和保存工作流以供稍后完成。
+本教程提供了有关如何设置 [!DNL Flow Service] 实体变为草稿状态，并允许您暂停和保存工作流以供日后完成。
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
 * [源](../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
-* [沙盒](../../../sandboxes/home.md)：Experience Platform提供可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
@@ -569,7 +569,7 @@ curl -X GET \
 
 ## 创建草稿基本连接 {#create-a-draft-base-connection}
 
-要创建草稿基本连接，请向发出POST请求 `/connections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
+POST要创建草稿基本连接，请向 `/connections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
 
 **API格式**
 
@@ -579,7 +579,7 @@ POST /connections?mode=draft
 
 | 参数 | 描述 |
 | --- | --- |
-| `mode` | 用户提供的查询参数，用于决定基本连接的状态。 要将基本连接设置为草稿，请设置 `mode` 到 `draft`. |
+| `mode` | 用户提供的查询参数，用于决定基本连接的状态。 要将基础连接设置为草稿，请设置 `mode` 到 `draft`. |
 
 **请求**
 
@@ -613,7 +613,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回草稿基本连接的基本连接ID和相应的etag。 您可以稍后使用此ID来更新和发布基本连接。
+成功的响应将返回草稿基本连接的基本连接ID和相应的电子标记。 您可以稍后使用此ID来更新和发布基本连接。
 
 ```json
 {
@@ -624,7 +624,7 @@ curl -X POST \
 
 ## 发布草稿基本连接 {#publish-your-draft-base-connection}
 
-准备好发布草稿后，请向发出POST请求 `/connections` 端点，并提供要发布的草稿基本连接的ID，以及用于发布的操作操作。
+POST准备好发布草稿后，向 `/connections` 端点，并提供要发布的草稿基本连接的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -634,11 +634,11 @@ POST /connections/{BASE_CONNECTION_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 一个操作操作，用于更新查询的基本连接的状态。 要发布草稿基本连接，请设置 `op` 到 `publish`. |
+| `op` | 更新查询的基础连接的状态的操作操作。 要发布草稿基本连接，请设置 `op` 到 `publish`. |
 
 **请求**
 
-以下请求发布草稿基本连接 [!DNL Azure File Storage] 之前步骤创建的。
+以下请求发布草稿基本连接 [!DNL Azure File Storage] 之前步骤中创建的标记。
 
 ```shell
 curl -X POST \
@@ -652,7 +652,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回已发布基本连接的ID和相应的etag。
+成功的响应将返回已发布基本连接的ID和相应的电子标记。
 
 ```json
 {
@@ -663,7 +663,7 @@ curl -X POST \
 
 ## 创建草稿源连接 {#create-a-draft-source-connection}
 
-要创建草稿源连接，请向发出POST请求 `/sourceConnections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
+POST要创建草稿源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API和提供 `mode=draft` 作为查询参数。
 
 **API格式**
 
@@ -673,7 +673,7 @@ POST /sourceConnections?mode=draft
 
 | 参数 | 描述 |
 | --- | --- |
-| `mode` | 用户提供的查询参数，用于决定源连接的状态。 要将源连接设置为草稿，请设置 `mode` 到 `draft`. |
+| `mode` | 用户提供的查询参数，它决定源连接的状态。 要将源连接设置为草稿，请设置 `mode` 到 `draft`. |
 
 **请求**
 
@@ -705,7 +705,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回草稿源连接的源连接ID和相应的etag。 您可以稍后使用此ID来更新和发布源连接。
+成功的响应将返回草稿源连接的源连接ID和相应的电子标记。 您可以稍后使用此ID来更新和发布源连接。
 
 ```json
 {
@@ -720,7 +720,7 @@ curl -X POST \
 >
 >如果与源连接关联的基本连接仍处于草稿状态，则无法发布源连接。 请确保先发布基本连接，然后再发布源连接。
 
-准备好发布草稿后，请向发出POST请求 `/sourceConnections` 端点，并提供要发布的草稿源连接的ID，以及用于发布的操作操作。
+POST准备好发布草稿后，向 `/sourceConnections` 端点，并提供要发布的草稿源连接的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -730,11 +730,11 @@ POST /sourceConnections/{SOURCE_CONNECTION_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 一个操作操作，用于更新查询的源连接的状态。 要发布草稿源连接，请设置 `op` 到 `publish`. |
+| `op` | 更新查询源连接的状态的操作操作。 要发布草稿源连接，请设置 `op` 到 `publish`. |
 
 **请求**
 
-以下请求发布以下对象的草稿源连接： [!DNL Azure File Storage] 之前步骤创建的。
+以下请求发布草稿源连接 [!DNL Azure File Storage] 之前步骤中创建的标记。
 
 ```shell
 curl -X POST \
@@ -748,7 +748,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回已发布源连接的ID和相应的etag。
+成功的响应将返回已发布源连接的ID和相应的电子标记。
 
 ```json
 {
@@ -802,7 +802,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回目标连接ID和草稿目标连接的相应etag。 您可以稍后使用此ID来更新和发布目标连接。
+成功的响应将返回目标连接ID以及草稿目标连接的相应电子标记。 您可以稍后使用此ID来更新和发布目标连接。
 
 ```json
 {
@@ -817,7 +817,7 @@ curl -X POST \
 >
 >如果关联的基本连接仍处于草稿状态，则无法发布目标连接。 请确保先发布基本连接，然后再发布目标连接。
 
-准备好发布草稿后，请向发出POST请求 `/targetConnections` 端点并提供要发布的草稿目标连接的ID，以及用于发布的操作操作。
+POST准备好发布草稿后，向 `/targetConnections` 端点并提供要发布的草稿目标连接的ID，以及用于发布的操作操作。
 
 **API格式**
 
@@ -827,11 +827,11 @@ POST /targetConnections/{TARGET_CONNECTION_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 一个操作操作，用于更新查询的目标连接的状态。 要发布草稿目标连接，请设置 `op` 到 `publish`. |
+| `op` | 更新查询的目标连接的状态的操作操作。 要发布草稿目标连接，请设置 `op` 到 `publish`. |
 
 **请求**
 
-以下请求发布的目标连接草稿 [!DNL Azure File Storage] 之前步骤创建的。
+以下请求发布的目标连接草稿 [!DNL Azure File Storage] 之前步骤中创建的标记。
 
 ```shell
 curl -X POST \
@@ -845,7 +845,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回已发布目标连接的ID和相应的etag。
+成功的响应将返回已发布目标连接的ID和相应的电子标记。
 
 ```json
 {
@@ -870,7 +870,7 @@ POST /flows?mode=draft
 
 **请求**
 
-以下请求将创建一个草稿数据流。
+以下请求将创建草稿数据流。
 
 ```shell
   'https://platform.adobe.io/data/foundation/flowservice/flows?mode=draft' \
@@ -910,9 +910,9 @@ POST /flows?mode=draft
 
 >[!NOTE]
 >
->如果与数据流关联的源连接和目标连接仍处于草稿状态，则无法发布数据流。 请确保先发布源连接和目标连接，然后再发布数据流。
+>如果数据流的关联源连接和目标连接仍处于草稿状态，则无法发布数据流。 请确保先发布源连接和目标连接，然后再发布数据流。
 
-准备好发布草稿后，请向发出POST请求 `/flows` 端点，同时提供要发布的草稿数据流的ID以及用于发布的操作操作。
+POST准备好发布草稿后，向 `/flows` 端点，同时提供要发布的草稿数据流的ID以及用于发布的操作操作。
 
 **API格式**
 
@@ -922,11 +922,11 @@ POST /flows/{FLOW_ID}/action?op=publish
 
 | 参数 | 描述 |
 | --- | --- |
-| `op` | 一个操作操作，用于更新查询的数据流的状态。 要发布草稿数据流，请设置 `op` 到 `publish`. |
+| `op` | 更新查询数据流状态的操作操作。 要发布草稿数据流，请设置 `op` 到 `publish`. |
 
 **请求**
 
-以下请求将发布草稿数据流。
+以下请求将发布您的草稿数据流。
 
 ```shell
 curl -X POST \
@@ -940,7 +940,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回ID和相应的 `etag` 您的数据流。
+成功的响应会返回ID和相应的ID `etag` 您的数据流。
 
 ```json
 {
@@ -951,4 +951,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过学习本教程，您已了解如何创建 [!DNL Flow Service] 发行该等草稿。 欲知关于来源的更多信息，请阅读 [源概述](../../home.md).
+通过学习本教程，您已了解如何创建 [!DNL Flow Service] 并发布这些草稿。 有关源的更多信息，请参阅[源概述](../../home.md)。

@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: PQL布尔函数
-description: 布尔函数用于对配置文件查询语言(PQL)中的不同元素执行布尔逻辑。
+description: 布尔函数用于对Profile Query Language (PQL)中的不同元素执行布尔逻辑。
 exl-id: 68a4a8cc-88ad-41b1-b9fc-c2b4ab7d0122
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
@@ -12,7 +12,7 @@ ht-degree: 6%
 
 # 布尔函数
 
-布尔函数用于对中的不同元素执行布尔逻辑 [!DNL Profile Query Language] (PQL)。  有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+布尔函数用于对中的不同元素执行布尔逻辑 [!DNL Profile Query Language] (PQL)。  有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## 和
 
@@ -26,7 +26,7 @@ ht-degree: 6%
 
 **示例**
 
-以下PQL查询将返回所有其原籍国为加拿大且出生年份为1985年的人员。
+以下PQL查询将返回所有原籍国为加拿大且出生年份为1985的人。
 
 ```sql
 homeAddress.countryISO = "CA" and person.birthYear = 1985
@@ -63,7 +63,7 @@ not ({QUERY})
 
 **示例**
 
-以下PQL查询将返回所有没有其母国为加拿大的人。
+以下PQL查询将返回所有没有以加拿大为母国的人员。
 
 ```sql
 not (homeAddress.countryISO = "CA")
@@ -71,7 +71,7 @@ not (homeAddress.countryISO = "CA")
 
 ## 如果
 
-此 `if` 函数用于解析表达式，具体取决于指定的条件是否为true。
+此 `if` 函数用于根据指定的条件是否为true来解析表达式。
 
 **格式**
 
@@ -82,12 +82,12 @@ if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{TEST_EXPRESSION}` | 正在测试的布尔表达式。 |
-| `{TRUE_EXPRESSION}` | 在以下情况下将使用其值的表达式： `{TEST_EXPRESSION}` 为true。 |
+| `{TRUE_EXPRESSION}` | 在以下情况下将使用其值的表达式： `{TEST_EXPRESSION}` 是真的。 |
 | `{FALSE_EXPRESSION}` | 在以下情况下将使用其值的表达式： `{TEST_EXPRESSION}` 为假。 |
 
 **示例**
 
-以下PQL查询会将值设置为 `1` 如果母国是加拿大和 `2` 如果祖国不是加拿大。
+以下PQL查询会将值设置为 `1` 如果母国是加拿大并且 `2` 如果母国不是加拿大。
 
 ```sql
 if (homeAddress.countryISO = "CA", 1, 2)
@@ -95,4 +95,4 @@ if (homeAddress.countryISO = "CA", 1, 2)
 
 ## 后续步骤
 
-现在，您已了解布尔函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解布尔函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

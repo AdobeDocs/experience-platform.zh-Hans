@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK；SDK
-title: 在用户界面中创建Pinterest Ads源连接
+title: 在UI中创建Pinterest Ads源连接
 description: 了解如何使用Pinterest UI创建Adobe Experience Platform Ads源连接。
-badge: 测试版
+badge: Beta 版
 hide: true
 hidefromtoc: true
 exl-id: ca7b99c8-f1d9-4120-85d5-720f5b9ad41a
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->此 [!DNL Pinterest Ads] 源为测试版。 阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源的更多信息。
+>此 [!DNL Pinterest Ads] 源为测试版。 阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 本教程提供了用于创建 [!DNL Pinterest Ads] 源连接器，使用Adobe Experience Platform用户界面。
 
@@ -40,9 +40,9 @@ ht-degree: 2%
 
 有关这些连接属性的详细信息，请阅读 [[!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#prerequisites).
 
-### 创建平台架构 {#create-platform-schema}
+### 创建Platform架构 {#create-platform-schema}
 
-您还必须确保首先创建一个平台架构以用于您的 [!DNL Pinterst Ads] 源。 阅读有关的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建架构的全面步骤。
+您还必须确保首先创建一个平台架构以用于您的 [!DNL Pinterst Ads] 源。 阅读有关的教程 [创建平台架构](../../../../../xdm/schema/composition.md) 以了解有关如何创建模式的完整步骤。
 
 ![pinterest广告的平台架构示例](../../../../images/tutorials/create/advertising/pinterest-ads/schema.png)
 
@@ -50,9 +50,9 @@ ht-degree: 2%
 
 ## 连接您的 [!DNL Pinterest Ads] 帐户 {#connect-account}
 
-在Platform UI中，选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示了您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了您可以用来创建帐户的各种来源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 *广告* 类别，选择 **[!UICONTROL pinterest Ads]**，然后选择 **[!UICONTROL 添加数据]**.
 
@@ -68,7 +68,7 @@ ht-degree: 2%
 
 ### 新帐户 {#new-account}
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
 
 ![源工作流的新帐户步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/new.png)
 
@@ -76,25 +76,25 @@ ht-degree: 2%
 
 ## 选择数据 {#select-data}
 
-此 **[!UICONTROL 选择数据]** 此时会显示步骤，为您提供了一个界面来输入信息，这些信息将传递到API以将您想要的数据带到Platform。
+此 **[!UICONTROL 选择数据]** 此时会显示步骤，提供一个界面以供您输入将传递到API的信息，以便将您需要的数据传送到Platform。
 
 | 字段 | 描述 |
 | --- | --- |
-| [!UICONTROL ad_account_id] | 您的 [!DNL Pinterest Ads] 广告帐户ID。 请参阅 [[!DNL Pinterest] 有关在广告管理器中查找ID的指南](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 如果你需要指引的话。 |
-| [!UICONTROL 对象类型] | 选择其中一项 **营销活动**， **广告组** 或 **广告** 这取决于哪些 [!DNL Pinterest] 要从其中获取信息的Analytics API。 |
-| [!UICONTROL object_ids] | 所选对象的ID。 导航到 [!DNL Pinterest] 第页对象 **pinterest商业中心** > **广告帐户摘要** > **营销活动** / **广告组** / **广告** 并复制其每个名称下方提到的所需ID。 |
+| [!UICONTROL ad_account_id] | 您的 [!DNL Pinterest Ads] 广告帐户ID。 请参阅 [[!DNL Pinterest] 有关在广告管理器中查找ID的指南](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager) 如果你需要任何指导。 |
+| [!UICONTROL 对象类型] | 选择其中一项 **营销活动**， **广告组** 或 **广告** 根据 [!DNL Pinterest] 要从其中获取信息的Analytics API。 |
+| [!UICONTROL object_ids] | 所选对象的ID。 导航至 [!DNL Pinterest] 第页对象 **pinterest业务中心** > **广告帐户摘要** > **营销活动** / **广告组** / **广告** 并复制每个名称下方提到的所需ID。 |
 
 >[!TIP]
 >
 >您可以提供多个 `object_ids` 通过传递逗号分隔的值。 您可以在单个请求中传递的最大ID数为100。 如果传递的值不正确，Platform将显示以下消息： `The request could not be processed. Error from flow provider: Unknown error while processing request.`
 
-提供值后，选择 **[!UICONTROL 选择]**. 如果提供的值有效，则将填充界面的右侧部分（预览数据）。
+提供值后，选择 **[!UICONTROL 选择]**. 如果提供的值有效，将填充界面的右侧部分，即预览数据。
 
 ![源工作流的选择数据步骤。](../../../../images/tutorials/create/advertising/pinterest-ads/select-data.png)
 
 ## 后续步骤 {#next-steps}
 
-按照本教程，您已建立与的连接 [!DNL Pinterest Ads] 帐户。 您现在可以继续下一教程和 [配置数据流以将广告数据引入平台](../../dataflow/advertising.md).
+通过学习本教程，您已建立与的连接 [!DNL Pinterest Ads] 帐户。 您现在可以继续下一教程和 [配置数据流以将广告数据引入Platform](../../dataflow/advertising.md).
 
 ## 其他资源 {#additional-resources}
 
@@ -102,14 +102,14 @@ ht-degree: 2%
 
 ## 计划 {#scheduling}
 
-安排您的 [!DNL Pinterest Ads] 要摄取的数据流，您必须选择以下频率和间隔配置之一：
+安排您的 [!DNL Pinterest Ads] 数据流进行摄取，必须选择以下频率和间隔配置之一：
 
 | 频度 | 间隔 |
 | --- | --- |
 | `Day` | 1 |
 | `Hour` | 24 |
 
-欲知关于计划 [!DNL Pinterest Ads] 数据流，请阅读 [护栏部分 [!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#guardrails).
+欲知关于您的计划 [!DNL Pinterest Ads] 数据流，阅读 [护栏部分 [!DNL Pinterest Ads] 概述](../../../../connectors/advertising/pinterest-ads.md#guardrails).
 
 为您的计划提供值后，选择 **[!UICONTROL 下一个]**.
 
@@ -119,7 +119,7 @@ ht-degree: 2%
 
 验证是否已正确设置源和 [!DNL Pinterest Ads] 正在摄取数据，请执行以下步骤：
 
-在Platform UI中，选择 **[!UICONTROL 查看数据流]** 在 [!DNL Pinterest Ads] 目录页面上的信息卡菜单。 然后，您可以选择 [!UICONTROL 预览数据集] 以验证所摄取的数据。
+在Platform UI中，选择 **[!UICONTROL 查看数据流]** 在 [!DNL Pinterest Ads] 目录页面上的信息卡菜单。 然后，您可以选择 [!UICONTROL 预览数据集] 以验证已摄取的数据。
 
 ![pinterest广告预览数据集的平台UI屏幕截图。](../../../../images/tutorials/create/advertising/pinterest-ads/preview-dataset.png)
 
@@ -129,7 +129,7 @@ ht-degree: 2%
 
 >[!TAB 营销活动]
 
-![“Pinterest促销活动”页面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-campaigns.png)
+![“Pinterest营销活动”页面。](../../../../images/tutorials/create/advertising/pinterest-ads/pinterest-campaigns.png)
 
 >[!TAB 广告组]
 
@@ -146,7 +146,7 @@ ht-degree: 2%
 
 支持的字段 [!DNL Pinterest] 促销活动、广告组和广告API如下所示：
 
-+++ 查看有效负载
++++ 查看有效负荷
 
 ```json
 {

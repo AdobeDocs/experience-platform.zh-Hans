@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；目录；API；更新对象
 solution: Experience Platform
 title: 更新目录对象
-description: 您可以通过在PATCH请求的路径中包含目录对象的ID来更新目录对象的一部分。 本文档介绍了使用字段和使用JSON修补程序表示法来对目录对象执行PATCH操作。
+description: 您可以通过在PATCH请求的路径中包含目录对象的ID来更新目录对象的一部分。 本文档介绍如何使用字段和使用JSON修补程序表示法来对目录对象执行PATCH操作。
 exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
 source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
@@ -13,14 +13,14 @@ ht-degree: 3%
 
 # 更新目录对象
 
-您可以更新的一部分 [!DNL Catalog] 对象，方法是在PATCH请求的路径中包含其ID。 本文档介绍了对目录对象执行PATCH操作的两种方法：
+您可以更新部分 [!DNL Catalog] 对象，方法是在PATCH请求的路径中包含其ID。 本文档介绍了对目录对象执行PATCH操作的两种方法：
 
 * 使用字段
-* 使用JSON补丁表示法
+* 使用JSON修补程序表示法
 
 >[!NOTE]
 >
->对对象的PATCH操作无法修改其可展开字段，这些字段表示相互关联的对象。 必须直接对相关对象进行修改。
+>对对象的PATCH操作无法修改其可扩展字段，这些字段表示相互关联的对象。 必须直接对相关对象进行修改。
 
 ## 使用字段更新
 
@@ -34,12 +34,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
 
-以下请求将更新 `name` 和 `description` 数据集的字段到有效负载中提供的值。 可以从有效负载中排除不更新的对象字段。
+以下请求将更新 `name` 和 `description` 数据集的字段到有效负荷中提供的值。 可以从有效负载中排除不更新的对象字段。
 
 ```shell
 curl -X PATCH \
@@ -57,7 +57,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回一个数组，其中包含已更新数据集的ID。 此ID应与PATCH请求中发送的ID匹配。 现在，为此数据集执行GET请求时，只会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
+成功的响应会返回一个数组，其中包含已更新数据集的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在，为此数据集执行GET请求会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
 
 ```json
 [
@@ -83,12 +83,12 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要更新的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
 
-以下请求将更新 `name` 和 `description` 数据集的字段到每个JSON修补程序对象中提供的值。 使用JSON修补程序时，还必须将Content-Type标头设置为 `application/json-patch+json`.
+以下请求将更新 `name` 和 `description` 数据集的字段与在每个JSON修补程序对象中提供的值相对应。 使用JSON修补程序时，还必须将Content-Type标头设置为 `application/json-patch+json`.
 
 ```shell
 curl -X PATCH \
@@ -106,7 +106,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回一个包含已更新对象ID的数组。 此ID应与PATCH请求中发送的ID匹配。 现在对此对象执行GET请求时，只会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
+成功的响应会返回一个数组，其中包含已更新对象的ID。 此ID应该与PATCH请求中发送的ID匹配。 现在对此对象执行GET请求时，只会显示 `name` 和 `description` 已更新，而所有其他值保持不变。
 
 ```json
 [

@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # 区段作业端点
 
-区段作业是一个异步过程，可根据需要创建受众区段。 它引用了 [区段定义](./segment-definitions.md)，以及任何 [合并策略](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及最终的受众规模。
+区段作业是一个异步过程，可按需创建受众区段。 它引用了 [区段定义](./segment-definitions.md)以及任何 [合并策略](../../profile/api/merge-policies.md) 控制方式 [!DNL Real-Time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理期间可能发生的任何错误以及最终的受众规模。
 
 本指南提供的信息可帮助您更好地了解区段作业，包括用于使用API执行基本操作的示例API调用。
 
@@ -22,11 +22,11 @@ ht-degree: 2%
 
 ## 检索区段作业列表 {#retrieve-list}
 
-您可以通过对以下项发出GET请求，检索贵组织所有区段作业的列表： `/segment/jobs` 端点。
+您可以通过向以下网站发出GET请求，检索贵组织所有区段作业的列表： `/segment/jobs` 端点。
 
 **API格式**
 
-此 `/segment/jobs` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有导出作业。 可以包含多个参数，以&amp;符号(`&`)。
+此 `/segment/jobs` 端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数以帮助减少昂贵的开销。 在不使用参数的情况下调用此端点将检索您的组织可用的所有导出作业。 可以包含多个参数，以&amp;分隔(`&`)。
 
 ```http
 GET /segment/jobs
@@ -41,7 +41,7 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `limit` | 指定每页返回的区段作业数。 | `limit=20` |
 | `status` | 根据状态筛选结果。 支持的值为NEW、QUEUED、PROCESSING、SUCCEEDED、FAILED、CANCELING、CANCELED | `status=NEW` |
 | `sort` | 区段作业返回的订单。 采用以下格式编写 `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
-| `property` | 筛选区段作业，并获取给定筛选器的精确匹配项。 可采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]`  — 在对象键上筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]`  — 在数组中筛选</li></ul> | `property=segments~segmentId==workInUS` |
+| `property` | 过滤区段作业，并获取给定过滤器的精确匹配项。 可采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]`  — 在对象键上筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]`  — 在数组中过滤</li></ul> | `property=segments~segmentId==workInUS` |
 
 **请求**
 
@@ -55,15 +55,15 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **响应**
 
-成功响应会返回HTTP状态200，并将指定组织的区段作业列表作为JSON。 但是，响应将有所不同，具体取决于区段作业中的区段定义数量。
+成功的响应返回HTTP状态200，并将指定组织的区段作业列表作为JSON。 但是，响应将有所不同，具体取决于区段作业中的区段定义数量。
 
-**区段作业中的区段定义少于或等于1500个**
+**区段作业中的1500个以下区段定义**
 
 如果区段作业中运行的区段定义少于1500个，则所有区段定义的完整列表将显示在 `children.segments` 属性。
 
 >[!NOTE]
 >
->以下响应已因空间而被截断，将仅显示第一个返回的作业。
+>以下响应已截断空格，将仅显示返回的第一个作业。
 
 ```json
 {
@@ -171,7 +171,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 >[!NOTE]
 >
->以下响应已因空间而被截断，将仅显示第一个返回的作业。
+>以下响应已截断空格，将仅显示返回的第一个作业。
 
 ```json
 {
@@ -266,13 +266,13 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 | `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
 | `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
 | `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关以PQL写入的区段定义表达式的信息。 |
+| `segments.segment.expression` | 一个对象，其中包含有关区段定义的表达式的信息（用PQL编写）。 |
 | `metrics` | 包含有关区段作业的诊断信息的对象。 |
 | `metrics.totalTime` | 一个对象，其中包含有关分段作业开始和结束的时间以及所用总时间的信息。 |
 | `metrics.profileSegmentationTime` | 一个对象，其中包含有关分段评估开始和结束的时间以及所用总时间的信息。 |
 | `metrics.segmentProfileCounter` | 每个区段符合条件的配置文件数。 |
-| `metrics.segmentedProfileByNamespaceCounter` | 每个区段定义中符合每个身份命名空间资格的配置文件数。 |
-| `metrics.segmentProfileByStatusCounter` | 每个状态的配置文件计数。 支持以下三种状态： <ul><li>“已实现” — 符合区段定义资格的用户档案数。</li><li>“退出” — 区段定义中不再存在的配置文件数。</li></ul> |
+| `metrics.segmentedProfileByNamespaceCounter` | 每个区段定义中每个身份命名空间限定的配置文件数。 |
+| `metrics.segmentProfileByStatusCounter` | 每个状态的配置文件数。 支持以下三种状态： <ul><li>“已实现” — 符合区段定义资格的用户档案数。</li><li>“已退出” — 区段定义中不再存在的配置文件数。</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | 基于每个合并策略的合并配置文件总数。 |
 
 ## 创建新的区段作业 {#create}
@@ -287,7 +287,7 @@ POST /segment/jobs
 
 创建新区段作业时，请求和响应将因区段作业中的区段定义数量而异。
 
-**区段作业中的区段定义少于或等于1500个**
+**区段作业中的1500个以下区段定义**
 
 **请求**
 
@@ -311,7 +311,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含有关新创建的区段作业的信息。
+成功的响应返回HTTP状态200，其中包含有关新创建的区段作业的信息。
 
 ```json
 {
@@ -408,7 +408,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `status` | 区段作业的当前状态。 由于区段作业是新创建的，因此状态将始终为“NEW”。 |
 | `segments` | 一个对象，其中包含有关运行此区段作业的区段定义的信息。 |
 | `segments.segment.id` | 您提供的区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关以PQL写入的区段定义表达式的信息。 |
+| `segments.segment.expression` | 一个对象，其中包含有关区段定义的表达式的信息（用PQL编写）。 |
 
 **超过1500个区段定义**
 
@@ -416,7 +416,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 >[!NOTE]
 >
->虽然您可以创建具有超过1500个区段定义的区段作业，但可以 **强烈不推荐**.
+>虽然您可以创建具有超过1500个区段定义的区段作业，但这 **强烈不推荐**.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -440,11 +440,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `schema.name` | 区段定义的架构名称。 |
-| `segments.segmentId` | 运行具有超过1500个区段的区段作业时，您需要通过 `*` 作为区段ID，表示您要运行包含所有区段的分段作业。 |
+| `segments.segmentId` | 运行具有超过1500个区段的区段作业时，您需要传递 `*` 作为区段ID，表示您要运行包含所有区段的分段作业。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200以及新创建的区段作业的详细信息。
+成功的响应返回HTTP状态200以及新创建的区段作业的详细信息。
 
 ```json
 {
@@ -527,11 +527,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `id` | 系统为新创建的区段作业生成的只读标识符。 |
 | `status` | 区段作业的当前状态。 由于区段作业是新创建的，因此状态将始终为 `NEW`. |
 | `segments` | 一个对象，其中包含有关运行此区段作业的区段定义的信息。 |
-| `segments.segment.id` | 此 `*` 表示此区段作业正在为组织内的所有区段定义运行。 |
+| `segments.segment.id` | 此 `*` 表示此区段作业正在对组织内的所有区段定义运行。 |
 
 ## 检索特定区段作业 {#get}
 
-您可以通过对以下项发出GET请求，检索有关特定区段作业的详细信息： `/segment/jobs` 端点并提供要在请求路径中检索的区段作业的ID。
+您可以通过向以下网站发出GET请求来检索有关特定区段作业的详细信息： `/segment/jobs` 端点，并提供要在请求路径中检索的区段作业的ID。
 
 **API格式**
 
@@ -557,7 +557,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 成功的响应返回HTTP状态200，其中包含有关指定区段作业的详细信息。  但是，响应将因区段作业中的区段定义数量而异。
 
-**区段作业中的区段定义少于或等于1500个**
+**区段作业中的1500个以下区段定义**
 
 如果区段作业中运行的区段定义少于1500个，则所有区段定义的完整列表将显示在 `children.segments` 属性。
 
@@ -707,12 +707,12 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 | `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
 | `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
 | `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关以PQL写入的区段定义表达式的信息。 |
+| `segments.segment.expression` | 一个对象，其中包含有关区段定义的表达式的信息（用PQL编写）。 |
 | `metrics` | 包含有关区段作业的诊断信息的对象。 |
 
 ## 批量检索区段作业 {#bulk-get}
 
-您可以通过向以下对象发出POST请求来检索有关多个区段作业的详细信息： `/segment/jobs/bulk-get` 端点并提供  `id` 区段作业在请求正文中的值。
+您可以通过向以下对象发出POST请求来检索有关多个区段作业的详细信息： `/segment/jobs/bulk-get` 端点并提供  `id` 请求主体中区段作业的值。
 
 **API格式**
 
@@ -743,7 +743,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 **响应**
 
-成功的响应会返回包含所请求区段作业的HTTP状态207。 但是， `children.segments` 属性因区段作业是否针对1500个以上的区段定义运行而异。
+成功的响应会返回包含所请求区段作业的HTTP状态207。 但是， `children.segments` 如果区段作业运行的区段定义超过1500个，则属性会有所不同。
 
 >[!NOTE]
 >
@@ -801,15 +801,15 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 | `status` | 区段作业的当前状态。 状态的潜在值包括“NEW”、“PROCESSING”、“CANCELING”、“CANCELLED”、“FAILED”和“SUCCEEDED”。 |
 | `segments` | 一个对象，其中包含有关区段作业中返回的区段定义的信息。 |
 | `segments.segment.id` | 区段定义的ID。 |
-| `segments.segment.expression` | 一个对象，其中包含有关以PQL写入的区段定义表达式的信息。 |
+| `segments.segment.expression` | 一个对象，其中包含有关区段定义的表达式的信息（用PQL编写）。 |
 
 ## 取消或删除特定区段作业 {#delete}
 
-您可以通过向以下对象发出DELETE请求来删除特定区段作业： `/segment/jobs` 端点并在请求路径中提供要删除的区段作业的ID。
+您可以通过向以下对象发出DELETE请求来删除特定区段作业： `/segment/jobs` 端点，并在请求路径中提供要删除的区段作业的ID。
 
 >[!NOTE]
 >
->对删除请求的API响应是立即的。 但是，实际删除区段作业是异步执行的。 换句话说，对区段作业提出删除请求的时间与应用该请求的时间之间存在时间差。
+>API会立即响应删除请求。 但是，实际删除区段作业是异步执行的。 换句话说，对区段作业发出删除请求的时间与应用该请求的时间之间存在时间差。
 
 **API格式**
 

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；目录；多个对象查找；API
 solution: Experience Platform
 title: 查找多个目录对象
-description: 如果要查看多个特定对象，而不是为每个对象发出一个请求，则Catalog为请求同一类型的多个对象提供了一个简单的快捷方式。 您可以使用单个GET请求，通过包含以逗号分隔的ID列表来返回多个特定对象。
+description: 如果要查看多个特定对象，而不是为每个对象发出一个请求，则Catalog提供了简单的快捷方式，用于请求同一类型的多个对象。 您可以使用单个GET请求，通过包含以逗号分隔的ID列表来返回多个特定对象。
 exl-id: b2329b32-6139-4557-aff3-a584e03b09f3
 source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->即使请求特定 [!DNL Catalog] 对象，最佳做法仍然是 `properties` 查询参数以仅返回所需的属性。
+>即使请求特定 [!DNL Catalog] 对象，最佳做法仍是 `properties` 查询参数以仅返回所需的属性。
 
 **API格式**
 
@@ -28,12 +28,12 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要检索的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{ID}` | 要检索的特定对象之一的标识符。 |
 
 **请求**
 
-以下请求包括以逗号分隔的数据集ID列表以及要为每个数据集返回的以逗号分隔的属性列表。
+以下请求包含以逗号分隔的数据集ID列表以及要为每个数据集返回的以逗号分隔的属性列表。
 
 ```shell
 curl -X GET \
@@ -50,7 +50,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->如果返回的对象不包含由指示的一个或多个请求属性， `properties` 查询时，响应仅返回它包含的要求属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下面的。
+>如果返回的对象不包含由指定的一个或多个请求属性， `properties` 查询时，响应仅返回所请求的属性，如中所示 ***`Sample Dataset 3`*** 和 ***`Sample Dataset 4`*** 下。
 
 ```json
 {

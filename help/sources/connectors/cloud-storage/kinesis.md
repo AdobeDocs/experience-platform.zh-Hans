@@ -1,12 +1,12 @@
 ---
-title: Amazon Kinesis Source Connector概述
+title: Amazon Kinesis源连接器概述
 description: 了解如何使用API或用户界面将Amazon Kinesis连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '498'
-ht-degree: 0%
+source-wordcount: '499'
+ht-degree: 1%
 
 ---
 
@@ -16,13 +16,13 @@ ht-degree: 0%
 >
 >此 [!DNL Amazon Kinesis] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google Cloud Platform]、和 [!DNL Azure]. 您可以将来自这些系统的数据导入 [!DNL Platform].
+Adobe Experience Platform为云提供商(如AWS)提供本机连接， [!DNL Google Cloud Platform]、和 [!DNL Azure]. 您可以将来自这些系统的数据导入 [!DNL Platform].
 
-云存储源可以将您自己的数据引入 [!DNL Platform] 无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您从以下位置引入数据 [!DNL Amazon Kinesis] 实时。
+云存储源可以将您自己的数据导入 [!DNL Platform] 无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您从以下位置引入数据 [!DNL Amazon Kinesis] 实时。
 
 >[!NOTE]
 >
->的缩放因子 [!DNL Kinesis] 如果需要摄取大量数据，则必须增加。 目前，您可以从以下位置获得的最大数据量： [!DNL Kinesis] account to Platform是每秒4000条记录。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
+>的缩放因子 [!DNL Kinesis] 如果您需要摄取大量数据，则必须增加。 目前，您可以从 [!DNL Kinesis] account到Platform的记录数是每秒4000条。 要扩展并摄取更大数量的数据，请联系您的Adobe代表。
 
 ## 先决条件
 
@@ -65,10 +65,10 @@ A [!DNL Kinesis] 流需要以下权限才能创建源连接：
 | -------- | ----------- |
 | `kinesis:GetShardIterator` | 遍历记录所需的操作。 |
 | `kinesis:GetRecords` | 从特定偏移或分片ID获取记录所需的操作。 |
-| `kinesis:DescribeStream` | 一个操作，可返回有关流的信息，包括生成分片ID所需的分片映射。 |
+| `kinesis:DescribeStream` | 一个操作，用于返回有关流的信息，包括生成分片ID所需的分片映射。 |
 | `kinesis:ListStreams` | 列出可从UI中选择的可用流时需要执行的操作。 |
 
-有关控制访问的详细信息 [!DNL Kinesis] 数据流，请参阅以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
+有关控制对的访问权限的更多信息 [!DNL Kinesis] 数据流，请参阅以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ### 配置迭代器类型
 
@@ -82,11 +82,11 @@ A [!DNL Kinesis] 流需要以下权限才能创建源连接：
 | `TRIM_HORIZON` | 从最早的数据记录开始读取数据。 |
 | `LATEST` | 从最近的数据记录开始读取数据。 |
 
-A [!DNL Kinesis] UI源当前仅支持 `TRIM_HORIZON`，而API支持这两者 `TRIM_HORIZON` 和 `LATEST` 作为获取数据的模式。 Platform使用的默认迭代器值 [!DNL Kinesis] 源是 `TRIM_HORIZON`.
+A [!DNL Kinesis] UI源当前仅支持 `TRIM_HORIZON`，而API同时支持这两者 `TRIM_HORIZON` 和 `LATEST` 作为获取数据的模式。 Platform使用的默认迭代器值 [!DNL Kinesis] 源是 `TRIM_HORIZON`.
 
 有关迭代器类型的详细信息，请参阅以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax).
 
-## Connect [!DNL Amazon Kinesis] 到 [!DNL Platform]
+## 连接 [!DNL Amazon Kinesis] 到 [!DNL Platform]
 
 以下文档提供了有关如何连接的信息 [!DNL Amazon Kinesis] 到 [!DNL Platform] 使用API或用户界面：
 

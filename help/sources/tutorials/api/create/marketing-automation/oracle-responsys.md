@@ -8,7 +8,7 @@ exl-id: 76659f5a-c923-488c-88f6-1919bc6a7bb5
 source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '552'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -18,31 +18,31 @@ ht-degree: 1%
 >
 >此 [!DNL Oracle Responsys] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
+基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
 本教程将指导您完成创建基本连接的步骤。 [!DNL Oracle Responsys] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-## 快速入门
+## 开始使用
 
-本指南需要深入了解Platform的以下组件：
+本指南要求您对 Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)：Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)：Platform提供对单个进行分区的虚拟沙箱 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [沙盒](../../../../../sandboxes/home.md)：Platform提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功连接时需要了解的其他信息 [!DNL Oracle Responsys] 使用 [!DNL Flow Service] API。
+以下部分提供成功连接到时需要了解的其他信息 [!DNL Oracle Responsys] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-为了 [!DNL Flow Service] 以连接 [!DNL Oracle Responsys]中，必须提供以下连接属性的值：
+为了 [!DNL Flow Service] 以连接 [!DNL Oracle Responsys]中，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 |
 | --- | --- |
-| `endpoint` | 您的REST身份验证端点URL [!DNL Oracle Responsys] 实例。 |
+| `endpoint` | 的REST身份验证端点URL [!DNL Oracle Responsys] 实例。 |
 | `clientId` | 您的客户端ID [!DNL Oracle Responsys] 实例。 |
 | `clientSecret` | 您的客户端密钥 [!DNL Oracle Responsys] 实例。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID的值 [!DNL Oracle Responsys] 源固定为： `ff4274f2-c9a9-11eb-b8bc-0242ac130003`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID的值 [!DNL Oracle Responsys] 源固定为： `ff4274f2-c9a9-11eb-b8bc-0242ac130003`. |
 
-有关以下项的身份验证凭据的详细信息： [!DNL Oracle Responsys]，请参见 [[!DNL Oracle Responsys] 身份验证指南](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm).
+有关验证凭据的详细信息 [!DNL Oracle Responsys]，请参见 [[!DNL Oracle Responsys] 身份验证指南](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop/API/GetStarted/authentication.htm).
 
 ### 使用平台API
 
@@ -50,9 +50,9 @@ ht-degree: 1%
 
 ## 创建基本连接
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL Oracle Responsys] 作为请求参数一部分的身份验证凭据。
+POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL Oracle Responsys] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -62,7 +62,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL Oracle Responsys]：
+以下请求为创建基本连接 [!DNL Oracle Responsys]：
 
 ```shell
 curl -X POST \
@@ -92,17 +92,17 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `name` | 您的名称 [!DNL Oracle Responsys] 基本连接。 建议您提供描述性名称，因为可以使用此值查找基础连接。 |
+| `name` | 您的名称 [!DNL Oracle Responsys] 基本连接。 建议您提供一个描述性名称，因为您可以使用此值查找基础连接。 |
 | `description` | （可选）可包含的属性，用于提供有关基本连接的补充信息。 |
 | `auth.specName` | 用于连接的身份验证类型。 |
-| `auth.params.endpoint` | 您的REST身份验证端点URL [!DNL Oracle Responsys] 服务器。 |
+| `auth.params.endpoint` | 的REST身份验证端点URL [!DNL Oracle Responsys] 服务器。 |
 | `auth.params.clientId` | 您的客户端ID [!DNL Oracle Responsys] 实例。 |
 | `auth.params.clientSecret` | 您的客户端密钥 [!DNL Oracle Responsys] 实例。 |
 | `connectionSpec.id` | 的连接规范ID的值 [!DNL Oracle Responsys] 源固定为： `ff4274f2-c9a9-11eb-b8bc-0242ac130003`. |
 
 **响应**
 
-成功响应将返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步中创建源连接时需要此ID。
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此ID。
 
 ```json
 {
@@ -113,7 +113,7 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程，您已创建了一个 [!DNL Oracle Responsys] 基本连接使用 [!DNL Flow Service] API。 您可以在以下教程中使用此基本连接ID：
+在本教程之后，您已创建一个 [!DNL Oracle Responsys] 基本连接使用 [!DNL Flow Service] API。 您可以在下列教程中使用此基本连接ID：
 
 * [使用浏览数据表的结构和内容 [!DNL Flow Service] API](../../explore/tabular.md)
 * [使用创建数据流以将营销自动化数据引入Platform [!DNL Flow Service] API](../../collect/marketing-automation.md)

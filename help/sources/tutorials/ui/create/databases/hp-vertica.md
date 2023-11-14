@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；HP Vertica
 solution: Experience Platform
 title: 在UI中创建HP Vertica源连接
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform UI创建HP Vertica源连接。
+description: 了解如何使用Adobe Experience Platform用户界面创建HP Vertica源连接。
 exl-id: d7315ad4-9250-4e66-be33-016efabb512e
 source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
@@ -22,7 +22,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
    * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
@@ -33,7 +33,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ### 收集所需的凭据
 
-以下部分提供了成功连接到HP所需的其他信息 [!DNL Vertica] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接到HP需要了解的其他信息 [!DNL Vertica] 使用 [!DNL Flow Service] API。
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -43,11 +43,11 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ## 连接您的HP [!DNL Vertica] 帐户
 
-收集所需的凭据后，您可以按照以下步骤链接您的HP [!DNL Vertica] 目标帐户 [!DNL Platform].
+收集所需的凭据后，您可以按照以下步骤链接您的HP [!DNL Vertica] 帐户至 [!DNL Platform].
 
-登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 以访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示您可以为其创建帐户的各种源。
+登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 **[!UICONTROL 数据库]** 类别，选择 **[!UICONTROL HP Vertica]**. 如果这是您第一次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，选择 **[!UICONTROL 添加数据]** 创建新的HP [!DNL Vertica] 连接器。
 
@@ -57,16 +57,16 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入表单上，提供名称、可选说明和您的HP [!DNL Vertica] 凭据。 完成后，选择 **[!UICONTROL Connect]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选说明和您的HP [!DNL Vertica] 凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
 ![connect](../../../../images/tutorials/create/hp-vertica/new.png)
 
 ### 现有帐户
 
-要连接现有帐户，请选择HP [!DNL Vertica] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要连接现有帐户，请选择HP [!DNL Vertica] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 继续操作。
 
 ![现有](../../../../images/tutorials/create/hp-vertica/existing.png)
 
 ## 后续步骤
 
-通过完成本教程，您已建立与HP的连接 [!DNL Vertica] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md).
+通过完成本教程，您已与HP建立了连接 [!DNL Vertica] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入 [!DNL Platform]](../../dataflow/databases.md).

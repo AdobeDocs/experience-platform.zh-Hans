@@ -6,7 +6,7 @@ description: 此文档分步说明了如何获取 Adobe Experience Platform 开�
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
 source-git-commit: f598c6dabe9296044055d8e961cf5177a655f5fa
 workflow-type: tm+mt
-source-wordcount: '2205'
+source-wordcount: '2204'
 ht-degree: 7%
 
 ---
@@ -220,7 +220,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 | 属性 | 描述 |
 | --- | --- |
-| `token_type` | 返回的令牌的类型。 对于访问令牌，此值始终为 `bearer`. |
+| `token_type` | 类型 of 正在返回令牌。 对于访问令牌，此值始终为 `bearer`. |
 | `access_token` | 生成的 `{ACCESS_TOKEN}`. 此值，以单词为前缀 `Bearer`，必须作为 `Authentication` 所有平台API调用的标头。 |
 | `expires_in` | 访问令牌过期前剩余的毫秒数。 一旦此值达到0，必须生成新的访问令牌才能继续使用平台API。 |
 

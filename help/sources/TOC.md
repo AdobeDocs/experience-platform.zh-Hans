@@ -7,7 +7,7 @@ feature: Sources
 source-git-commit: 7f9a0965419a85894bd2cab4e78dd336874a5933
 workflow-type: tm+mt
 source-wordcount: '989'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -324,7 +324,7 @@ ht-degree: 12%
       - [营销自动化连接数据流](tutorials/ui/dataflow/marketing-automation.md)
       - [支付连接数据流](tutorials/ui/dataflow/payments.md)
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
-   - [在UI中使用模板创建源数据流](tutorials/ui/templates.md)
+   - [在 UI 中使用模板创建源数据流](tutorials/ui/templates.md)
    - [按需引入](tutorials/ui/on-demand-ingestion.md)
    - [监测批量数据流](tutorials/ui/monitor.md)
    - [监测流数据流](tutorials/ui/monitor-streaming.md)

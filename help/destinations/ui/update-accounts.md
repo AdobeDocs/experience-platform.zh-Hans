@@ -15,21 +15,21 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-此 **[!UICONTROL 帐户]** 选项卡显示有关您与各种目标建立的连接的详细信息。 请参阅 [帐户概述](../ui/destinations-workspace.md#accounts) 以获取有关每个目标帐户的所有信息。
+此 **[!UICONTROL 帐户]** 选项卡显示有关您与各种目标建立的连接的详细信息。 请参阅 [帐户概述](../ui/destinations-workspace.md#accounts) 获取有关每个目标帐户的所有信息。
 
 本教程介绍了使用Experience PlatformUI更新目标帐户详细信息的步骤。
 
-您可以更新目标帐户详细信息，以刷新和重新验证您当前使用的目标的当前帐户或过期帐户的凭据。 通常，OAuth和持有者令牌的生命周期有限，具体取决于目标平台。 当这些令牌过期时，您可以在下面进一步描述的工作流中刷新它们。 此工作流会指导您完成OAuth工作流或重新插入令牌。 同样，如果密码或用户访问在下游平台中发生更改，您可以刷新凭据。
+您可以更新目标帐户详细信息，以刷新和重新验证您当前使用的目标的当前帐户或已过期帐户的凭据。 通常，OAuth和持有者令牌的生命周期有限，具体取决于目标平台。 当这些令牌过期时，您可以在下面进一步描述的工作流中刷新它们。 此工作流指导您完成OAuth工作流或重新插入令牌。 同样，如果密码或用户访问权限在下游平台中发生更改，您可以刷新凭据。
 
-对于批处理目标，您可以更新访问密钥或密钥（如果其中的任何密钥已更改）。 此外，如果您希望以后加密文件，可以插入RSA公钥，导出的文件以后将加密。
+对于批处理目标，您可以更新访问密钥或密钥（如果有任何更改的话）。 此外，如果您希望以后加密文件，可以插入RSA公钥，并且导出的文件以后将加密。
 
 ![“帐户”选项卡](../assets/ui/update-accounts/destination-accounts.png)
 
 ## 更新帐户 {#update}
 
-按照以下步骤将连接详细信息更新到现有目标。
+请按照以下步骤将连接详细信息更新到现有目标。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 选择 **[!UICONTROL 帐户]** 查看现有帐户。
+1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 选择 **[!UICONTROL 帐户]** 查看现有帐户。
 
    ![“帐户”选项卡](../assets/ui/update-accounts/accounts-tab.png)
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
    ![筛选目标帐户](../assets/ui/update-accounts/filter-accounts.png)
 
-3. 选择省略号(`...`)。 此时将显示一个弹出面板，其中提供以下选项 **[!UICONTROL 激活受众]**， **[!UICONTROL 编辑详细信息]**、和 **[!UICONTROL 删除]** 帐户。 选择 ![“编辑详细信息”按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 编辑详细信息]** 按钮以编辑帐户信息。
+3. 选择省略号(`...`)。 此时会出现一个弹出面板，其中提供以下选项 **[!UICONTROL 激活受众]**， **[!UICONTROL 编辑详细信息]**、和 **[!UICONTROL 删除]** 帐户。 选择 ![“编辑详细信息”按钮](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL 编辑详细信息]** 按钮以编辑帐户信息。
 
    ![编辑帐户](../assets/ui/update-accounts/accounts-edit.png)
 
@@ -63,6 +63,6 @@ ht-degree: 0%
 
 ## 后续步骤
 
-按照本教程中的说明，您已成功使用了 **[!UICONTROL 目标]** 工作区以更新现有帐户。
+通过学习本教程，您已成功使用了 **[!UICONTROL 目标]** 工作区以更新现有帐户。
 
 有关目标的更多信息，请参阅 [目标概述](../catalog/overview.md).

@@ -5,7 +5,7 @@ exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
 source-git-commit: efffd6ce1ed541ce20ee6500e42165465f2fa6a0
 workflow-type: tm+mt
 source-wordcount: '549'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南要求您对Experience Platform的以下组件有一定的了解：
+本指南要求您对 Experience Platform 的以下组件有一定了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。

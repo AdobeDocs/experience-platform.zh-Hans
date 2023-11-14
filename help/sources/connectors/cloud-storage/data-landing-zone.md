@@ -17,20 +17,20 @@ ht-degree: 0%
 >
 >此页面特定于 [!DNL Data Landing Zone] *源* Experience Platform中的连接器。 有关连接到 [!DNL Data Landing Zone] *目标* 连接器，请参阅 [[!DNL Data Landing Zone] 目标文档页面](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
-[!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，允许您访问安全的基于云的文件存储设施，将文件引入平台。 您有权访问一个 [!DNL Data Landing Zone] 容器数，所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序服务的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Adobe Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
+[!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，允许您访问安全的基于云的文件存储设施，以将文件导入Platform。 您有权访问一个 [!DNL Data Landing Zone] 容器，并且所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序服务的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Adobe Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
 
-[!DNL Data Landing Zone] 支持基于SAS的身份验证，其数据受标准保护 [!DNL Azure Blob] 存放安全机制处于闲置状态和在途中。 基于SAS的身份验证允许您安全地访问 [!DNL Data Landing Zone] 通过公共Internet连接实现的容器。 您无需更改网络即可访问 [!DNL Data Landing Zone] 容器，这意味着您无需为网络配置任何允许列表或跨区域设置。 Platform对上传到的所有文件实施严格的七天过期时间 [!DNL Data Landing Zone] 容器。 所有文件都会在七天后删除。
+[!DNL Data Landing Zone] 支持基于SAS的身份验证，其数据受标准保护 [!DNL Azure Blob] 存放安全机制处于静止状态并在传输中。 基于SAS的身份验证允许您安全地访问 [!DNL Data Landing Zone] 通过公共Internet连接的容器。 您无需更改网络即可访问 [!DNL Data Landing Zone] 容器，这意味着您无需为网络配置任何允许列表或跨区域设置。 Platform对上传到的所有文件实施严格的七天过期时间 [!DNL Data Landing Zone] 容器。 所有文件都会在七天后删除。
 
 ## 文件和目录的命名约束
 
 以下是命名云存储文件或目录时必须考虑的约束列表。
 
 - 目录和文件组件名称不能超过255个字符。
-- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将被自动删除。
-- 以下保留URL字符必须正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
+- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将自动删除。
+- 必须对以下保留的URL字符进行正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
 - 不允许使用以下字符： `" \ / : | < > * ?`.
-- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，还有一些ASCII或Unicode字符，如控制字符(如 `0x00` 到 `0x1F`， `\u0081`，等等)，也是不允许的。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)，以及两个点字符(...)。
+- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，还有一些ASCII或Unicode字符，如控制字符(如 `0x00` 到 `0x1F`， `\u0081`，等等)。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 
 ## 管理数据登陆区域的内容{#manage-the-contents-of-your-data-landing-zone}
 
@@ -54,24 +54,24 @@ ht-degree: 0%
 
 ![enter-connection-info](../../images/tutorials/create/dlz/enter-connection-info.png)
 
-此 **摘要** 窗口，为您提供设置的概述，包括有关您的设置的信息 [!DNL Blob] 端点和权限。 准备就绪后，选择 **Connect**.
+此 **摘要** 窗口，为您提供设置的概述，包括有关您的设置的信息 [!DNL Blob] 端点和权限。 准备就绪后，选择 **连接**.
 
 ![摘要](../../images/tutorials/create/dlz/summary.png)
 
-成功的连接更新了您的 [!DNL Azure Storage Explorer] 包含您的UI [!DNL Data Landing Zone] 容器。
+连接成功更新您的 [!DNL Azure Storage Explorer] 包含您的UI [!DNL Data Landing Zone] 容器。
 
 ![dlz-user-container](../../images/tutorials/create/dlz/dlz-user-container.png)
 
-通过您的 [!DNL Data Landing Zone] 容器已连接到 [!DNL Azure Storage Explorer]，您现在可以开始将文件上传到 [!DNL Data Landing Zone] 容器。 要上传，请选择 **上传** 然后选择 **上传文件**.
+与您的 [!DNL Data Landing Zone] 容器已连接到 [!DNL Azure Storage Explorer]，您现在可以开始将文件上传到 [!DNL Data Landing Zone] 容器。 要上载，请选择 **上传** 然后选择 **上载文件**.
 
 ![上传](../../images/tutorials/create/dlz/upload.png)
 
-选择要上传的文件后，您必须识别 [!DNL Blob] 键入要上载为的目标目录和所需的目标目录。 完成后，选择 **上传**.
+选择要上传的文件后，您必须识别 [!DNL Blob] 键入要将其上传为以及所需的目标目录。 完成后，选择 **上传**.
 
 | [!DNL Blob] 类型 | 描述 |
 | --- | --- |
 | 块 [!DNL Blob] | 块 [!DNL Blobs] 已针对以高效方式上传大量数据进行了优化。 块 [!DNL Blobs] 是的默认选项 [!DNL Data Landing Zone]. |
-| 附加 [!DNL Blob] | 附加 [!DNL Blobs] 已针对将数据附加到文件末尾进行了优化。 |
+| 附加 [!DNL Blob] | 附加 [!DNL Blobs] 已针对在文件末尾附加数据进行了优化。 |
 
 ![upload-file](../../images/tutorials/create/dlz/upload-files.png)
 
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 您还可以使用设备的命令行界面并将上传文件访问到 [!DNL Data Landing Zone].
 
-### 使用Bash上传文件
+### 使用Bash上载文件
 
 以下示例使用Bash和cURL将文件上传到 [!DNL Data Landing Zone] 使用 [!DNL Azure Blob Storage] REST API：
 
@@ -111,7 +111,7 @@ curl -v -X PUT \
 
 >[!TIP]
 >
->虽然下面的示例使用完整的SAS URI连接到 [!DNL Azure Blob] 容器，则可以使用其他方法和操作进行身份验证。 查看此 [[!DNL Microsoft] Python v12 SDK上的文档](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python) 了解更多信息。
+>虽然下面的示例使用完整的SAS URI连接到 [!DNL Azure Blob] 容器，则可以使用其他方法和操作进行身份验证。 查看此 [[!DNL Microsoft] Python v12 SDK文档](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python) 以了解更多信息。
 
 ```py
 import os
@@ -134,13 +134,13 @@ except Exception as ex:
     print("Exception: " + ex.strerror)
 ```
 
-### 上传文件，使用 [!DNL AzCopy]
+### 使用以下方式上传文件 [!DNL AzCopy]
 
-以下示例使用 [!DNL Microsoft's] [!DNL AzCopy] 将文件上传到的实用程序 [!DNL Data Landing Zone]：
+以下示例使用 [!DNL Microsoft's] [!DNL AzCopy] 用于将文件上传到的实用程序 [!DNL Data Landing Zone]：
 
 >[!TIP]
 >
->虽然下面的示例使用的是 `copy` 命令，则可以使用其他命令和选项将文件上传到 [!DNL Data Landing Zone]，使用 [!DNL AzCopy]. 查看此 [[!DNL Microsoft AzCopy] 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json) 了解更多信息。
+>虽然以下示例正在使用 `copy` 命令，则可以使用其他命令和选项将文件上传到 [!DNL Data Landing Zone]，使用 [!DNL AzCopy]. 查看此 [[!DNL Microsoft AzCopy] 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json) 以了解更多信息。
 
 ```bat
 set sasUri=<FULL SAS URI, PROPERLY ESCAPED>
@@ -149,9 +149,9 @@ set srcFilePath=<PATH TO LOCAL FILE(S); WORKS WITH WILDCARD PATTERNS>
 azcopy copy "%srcFilePath%" "%sasUri%" --overwrite=true --recursive=true
 ```
 
-## Connect [!DNL Data Landing Zone] 到 [!DNL Platform]
+## 连接 [!DNL Data Landing Zone] 到 [!DNL Platform]
 
-以下文档提供了有关如何从获取数据的信息 [!DNL Data Landing Zone] 使用API或用户界面发送到Adobe Experience Platform的容器。
+以下文档提供了有关如何从获取数据的信息 [!DNL Data Landing Zone] 通过API或用户界面发送到Adobe Experience Platform的容器。
 
 ### 使用API
 
@@ -160,10 +160,10 @@ azcopy copy "%srcFilePath%" "%sasUri%" --overwrite=true --recursive=true
 
 ### 使用UI
 
-- [Connect [!DNL Data Landing Zone] 使用UI到Platform](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
+- [连接 [!DNL Data Landing Zone] 到Platform，使用UI](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
 - [在UI中为云存储连接创建数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
 
 >[!IMPORTANT]
 >
->当前不支持使用连接到Experience Platform的专用链接 [!DNL Data Landing Zone]. 仅支持以下访问方法 [此处](#manage-the-contents-of-your-data-landing-zone).
+>使用连接到Experience Platform时，当前不支持专用链接 [!DNL Data Landing Zone]. 唯一支持访问的方法是列出的方法 [此处](#manage-the-contents-of-your-data-landing-zone).
 

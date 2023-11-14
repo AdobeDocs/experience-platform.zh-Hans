@@ -1,7 +1,7 @@
 ---
 title: 在UI中创建Customer.io源连接和数据流
 description: 了解如何使用Adobe Experience Platform UI创建Customer.io源连接。
-badge: Beta
+badge: Beta 版
 exl-id: 7655a34c-808a-46e3-94e3-022a433755a4
 source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt

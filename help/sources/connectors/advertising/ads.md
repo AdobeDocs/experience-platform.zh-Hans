@@ -22,11 +22,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
 
-## Connect [!DNL Google Ads] 目标平台
+## 连接 [!DNL Google Ads] 目标平台
 
-以下文档提供了有关如何连接的信息 [!DNL Google Ads] 至使用API或用户界面的Platform：
+以下文档提供了有关如何连接的信息 [!DNL Google Ads] 使用API或用户界面连接到Platform：
 
 ### 使用API
 
@@ -36,5 +36,5 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### 使用UI
 
-* [在用户界面中创建Google Ads源连接](../../tutorials/ui/create/advertising/ads.md)
+* [在UI中创建Google Ads源连接](../../tutorials/ui/create/advertising/ads.md)
 * [在UI中为广告源连接创建数据流](../../tutorials/ui/dataflow/advertising.md)

@@ -6,7 +6,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
 source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '505'
 ht-degree: 2%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 2%
 
 ## 快速入门
 
-本教程需要深入了解Platform的以下组件：
+本教程需要您对Platform的以下组件有一定的了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 收集所需的凭据
 
@@ -32,9 +32,9 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| 帐户 | 与您的关联的完整帐户名称 [!DNL Snowflake] 帐户。 完全合格的 [!DNL Snowflake] 帐户名称包括您的帐户名称、区域和云平台。 例如：`cj12345.east-us-2.azure`。有关帐户名称的更多信息，请参阅此 [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
-| 仓库 | 此 [!DNL Snowflake] warehouse管理应用程序的查询执行过程。 每个 [!DNL Snowflake] 仓库相互独立，在将数据传送到Platform时必须单独访问。 |
-| 数据库 | 此 [!DNL Snowflake] 数据库包含要带入Platform的数据。 |
+| 帐户 | 与您的帐户关联的完整帐户名称 [!DNL Snowflake] 帐户。 完全合格的 [!DNL Snowflake] 帐户名称包括您的帐户名称、地区和云平台。 例如：`cj12345.east-us-2.azure`。有关帐户名称的更多信息，请参阅此 [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
+| 仓库 | 此 [!DNL Snowflake] warehouse管理应用程序的查询执行过程。 每个 [!DNL Snowflake] 数据仓库相互独立，在将数据传送到Platform时必须单独进行访问。 |
+| 数据库 | 此 [!DNL Snowflake] 数据库包含您要带入Platform的数据。 |
 | 用户名 | 的用户名 [!DNL Snowflake] 帐户。 |
 | 密码 | 的密码 [!DNL Snowflake] 用户帐户。 |
 | 角色 | 在中使用的默认访问控制角色 [!DNL Snowflake] 会话。 该角色应为已分配给指定用户的现有角色。 默认角色为 `PUBLIC`. |
@@ -44,11 +44,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->您必须设置 `PREVENT_UNLOAD_TO_INLINE_URL` 标记到 `FALSE` 允许从卸载数据 [!DNL Snowflake] 要Experience Platform的数据库。
+>您必须设置 `PREVENT_UNLOAD_TO_INLINE_URL` 标记到 `FALSE` 允许从卸载数据 [!DNL Snowflake] Experience Platform数据库。
 
 ## 连接您的Snowflake帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示多种来源，您可以使用这些来源创建帐户。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
@@ -60,16 +60,16 @@ ht-degree: 2%
 
 ### 现有帐户
 
-要连接现有帐户，请选择要连接的Snowflake帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要连接现有帐户，请选择要连接的Snowflake，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![](../../../../images/tutorials/create/snowflake/existing.png)
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入表单上，提供名称、可选描述和您的Snowflake凭据。 完成后，选择 **[!UICONTROL Connect]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述和您的Snowflake凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
 ![](../../../../images/tutorials/create/snowflake/new.png)
 
 ## 后续步骤
 
-通过学习本教程，您已建立与Snowflake帐户的连接。 您现在可以继续下一教程和 [配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md).
+通过学习本教程，您已与Snowflake帐户建立了连接。 您现在可以继续下一教程和 [配置数据流以将数据引入 [!DNL Platform]](../../dataflow/databases.md).

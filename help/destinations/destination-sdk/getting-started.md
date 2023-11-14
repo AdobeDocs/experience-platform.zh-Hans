@@ -1,11 +1,11 @@
 ---
-description: 本页介绍如何进行身份验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
+description: 本页介绍如何验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: Destination SDK快速入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
 source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
 workflow-type: tm+mt
 source-wordcount: '627'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -13,21 +13,21 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-本页介绍如何进行身份验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
+本页介绍如何验证并开始使用Adobe Experience Platform Destination SDK。 其中包括有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 
 ## 术语 {#terminology}
 
-本指南使用平台特定的概念，例如组织和沙盒。 请参阅 [Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) 此等词汇及其他词汇的定义。
+本指南使用平台特定的概念，例如组织和沙盒。 请参阅 [Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) 以了解这些术语和其他术语的定义。
 
 ## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
-Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对Destination SDK端点进行API调用，必须在API调用中提供某些标头。 与AdobeExchange团队合作，为您设置对的身份验证 [Adobe Developer控制台](https://developer.adobe.com/console).
+Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对Destination SDK端点进行API调用，必须在API调用中提供某些标头。 与Adobe交换团队合作，为您设置对的身份验证 [Adobe Developer控制台](https://developer.adobe.com/console).
 
-要成功调用Destination SDKAPI端点，请按照 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 从“ ”开始教程[生成API密钥、组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)”步骤。 Adobe交换团队将为您处理上述步骤。 完成身份验证教程将为Destination SDKAPI调用中的每个所需标头提供值，如下所示：
+要成功调用Destination SDKAPI端点，请按照 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=zh-Hans). 从”开始教程[生成API密钥、组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)”步骤。 Adobe交换团队将为您处理上述步骤。 完成身份验证教程将提供Destination SDKAPI调用中每个所需标头的值，如下所示：
 
 * `x-api-key: {API_KEY}`，也称为客户端ID
 * `x-gw-ims-org-id: {ORG_ID}`，也称为组织ID
-* `Authorization: Bearer {ACCESS_TOKEN}`的问题。访问令牌的过期时间为24小时（以毫秒为单位），因此您必须刷新它。 要刷新访问令牌，请重复身份验证教程中概述的步骤。
+* `Authorization: Bearer {ACCESS_TOKEN}`的问题。访问令牌的过期时间为24小时（以毫秒为单位），因此您必须刷新它。 要刷新访问令牌，请重复身份验证教程中所述的步骤。
 
 <!--
 
@@ -48,11 +48,11 @@ You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-i
 
 ## 目标所有权和沙盒 {#destination-ownership}
 
-Experience Platform中的所有资源都与特定的虚拟沙盒隔离。 请求Destination SDK需要标头，用于指定在其中执行操作的沙盒的名称：
+Experience Platform中的所有资源都被隔离到特定的虚拟沙盒中。 请求Destination SDK需要标头，其中指定执行操作的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-AdobeExchange团队为您提供沙盒名称，您需要将其用于对Destination SDKAPI端点的调用。
+Adobe交换团队为您提供沙盒名称，您需要将其用于对Destination SDKAPI端点的调用。
 
 ## 基于角色的访问控制(RBAC) {#rbac}
 
@@ -64,16 +64,16 @@ AdobeExchange团队为您提供沙盒名称，您需要将其用于对Destinatio
 
 * [管理产品配置文件的权限](/help/access-control/ui/permissions.md)
 * [Experience Platform的可用权限](/help/access-control/home.md#permissions)
-* [Adobe Admin Console文档](https://helpx.adobe.com/cn/enterprise/using/admin-console.html)
+* [Adobe Admin Console文档](https://helpx.adobe.com/enterprise/using/admin-console.html)
 
 ## 其他注意事项 {#additional-considerations}
 
-* 对于生产/公共目标，无论您是创建或编辑目标配置，您对目标配置所做的任何更改都需要Adobe审查和批准。 只有在完成审阅后，您的更改才会反映在您的目标中。 这不适用于仅供您使用的专用目标。
-* 只有属于同一组织并且有权访问沙盒的用户才能编辑目标配置。
+* 对于产品化/公共目标，您对目标配置所做的任何更改，无论您是创建或编辑目标配置，都需要Adobe审核和批准。 只有在完成审阅后，您的更改才会反映在您的目标中。 这不适用于仅供您使用的专用目标。
+* 只有属于同一组织且具有沙盒访问权限的用户才能编辑目标配置。
 
 ## 后续步骤 {#next-steps}
 
-按照本文中的步骤，您获得了Adobe I/O的身份验证凭据、沙盒名称和目标创作访问控制权限。 接下来，您可以使用Destination SDK设置目标。
+按照本文中的步骤，您获得了用于Adobe I/O的身份验证凭据、沙盒名称和目标创作访问控制权限。 接下来，您可以使用Destination SDK设置目标。
 
 * 根据您的目标类型，阅读以下配置指南：
 

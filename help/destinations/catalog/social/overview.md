@@ -27,4 +27,4 @@ Adobe Experience Platform当前支持以下社交目标：
 
 ## 连接到新的社交目标 {#connect-destination}
 
-要将受众发送到营销活动的社交目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 有关设置新目标的详细信息。
+要将受众发送到营销活动的社交目标，平台必须首先连接到目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 以了解有关设置新目标的详细信息。

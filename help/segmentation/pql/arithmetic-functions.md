@@ -12,11 +12,11 @@ ht-degree: 6%
 
 # 算术函数
 
-算术函数用于对中的值进行基本计算 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+算术函数用于对中的值进行基本计算 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## Add
 
-此 `+` （加法）函数用于求两个参数表达式的总和。
+此 `+` （加）函数用于求两个参数表达式之和。
 
 **格式**
 
@@ -26,7 +26,7 @@ ht-degree: 6%
 
 **示例**
 
-以下PQL查询对两个不同产品的价格求和。
+以下PQL查询汇总了两个不同产品的价格。
 
 ```sql
 product1.price + product2.price
@@ -50,7 +50,7 @@ product1.price + product2.price
 product.inventory * product.price
 ```
 
-## 减法
+## 减
 
 此 `-` （减法）函数用于找出两个参数表达式的差异。
 
@@ -88,7 +88,7 @@ totalProduct.price / totalProduct.sold
 
 ## 余数
 
-此 `%` (modulo/remain)函数用于求两个参数表达式相除后的余数。
+此 `%` (modulo/remainer)函数用于在将两个参数表达式相除后找到余数。
 
 **格式**
 
@@ -98,7 +98,7 @@ totalProduct.price / totalProduct.sold
 
 **示例**
 
-以下PQL查询检查人员的年龄是否可被5岁整除。
+以下PQL查询检查人员的年龄是否可被5整除。
 
 ```sql
 person.age % 5 = 0
@@ -106,4 +106,4 @@ person.age % 5 = 0
 
 ## 后续步骤
 
-现在，您已了解算术函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解算术函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

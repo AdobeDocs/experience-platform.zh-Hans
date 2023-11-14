@@ -37,15 +37,15 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到 [!DNL Couchbase] 实例。 的连接字符串模式 [!DNL Couchbase] 是 `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. 有关获取连接字符串的详细信息，请参阅有关以下内容的文档： [[!DNL Couchbase] 连接](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
+| `connectionString` | 用于连接到 [!DNL Couchbase] 实例。 的连接字符串模式 [!DNL Couchbase] 是 `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. 有关获取连接字符串的更多信息，请参阅关于的文档 [[!DNL Couchbase] 连接](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
 
 ## 连接您的 [!DNL Couchbase] 帐户
 
-收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Couchbase] 目标帐户 [!DNL Platform].
+收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Couchbase] 帐户至 [!DNL Platform].
 
-登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 以访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示您可以为其创建帐户的各种源。
+登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 **[!UICONTROL 数据库]** 类别，选择 **[!UICONTROL Couchbase]**. 如果这是您第一次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，选择 **[!UICONTROL 添加数据]** 以新建 [!DNL Couchbase] 连接器。
 
@@ -55,16 +55,16 @@ ht-degree: 1%
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Couchbase] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Couchbase] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
 
 ![connect](../../../../images/tutorials/create/couchbase/new.png)
 
 ### 现有帐户
 
-要连接现有帐户，请选择 [!DNL Couchbase] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要连接现有帐户，请选择 [!DNL Couchbase] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 继续操作。
 
 ![现有](../../../../images/tutorials/create/couchbase/existing.png)
 
 ## 后续步骤
 
-按照本教程，您已建立与的连接 [!DNL Couchbase] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md).
+通过学习本教程，您已建立与的连接 [!DNL Couchbase] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入 [!DNL Platform]](../../dataflow/databases.md).

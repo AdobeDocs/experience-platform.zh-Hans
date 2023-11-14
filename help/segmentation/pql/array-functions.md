@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 数组、列表和设置PQL函数
-description: 配置文件查询语言(PQL)提供了一些功能，使与数组、列表和字符串的交互更轻松。
+description: 配置文件查询语言(PQL)提供了一些函数，使与数组、列表和字符串的交互更轻松。
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
@@ -10,11 +10,11 @@ ht-degree: 5%
 
 ---
 
-# 数组、列表和设置函数
+# 数组、列表和集合函数
 
-[!DNL Profile Query Language] (PQL)提供了一些功能，使与数组、列表和字符串的交互更轻松。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+[!DNL Profile Query Language] (PQL)提供了使与数组、列表和字符串的交互更轻松的功能。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
-## In
+## 在
 
 此 `in` 函数用于确定一个项是否是一个数组或列表的成员。
 
@@ -34,7 +34,7 @@ person.birthMonth in [3, 6, 9]
 
 ## 不在
 
-此 `notIn` 函数用于确定一个项是否不是数组或列表的成员。
+此 `notIn` 函数用于确定一个项是否不是一个数组或列表的成员。
 
 >[!NOTE]
 >
@@ -48,7 +48,7 @@ person.birthMonth in [3, 6, 9]
 
 **示例**
 
-以下PQL查询定义生日不在3月、6月或9月的人员。
+以下PQL查询定义生日不是3月、6月或9月的人。
 
 ```sql
 person.birthMonth notIn [3, 6, 9]
@@ -66,7 +66,7 @@ person.birthMonth notIn [3, 6, 9]
 
 **示例**
 
-以下PQL查询定义其最喜爱颜色至少包括红色、蓝色或绿色之一的人员。
+以下PQL查询定义其最喜爱的颜色至少包括红色、蓝色或绿色之一的人员。
 
 ```sql
 person.favoriteColors.intersects(["red", "blue", "green"])
@@ -74,7 +74,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 ## 交集
 
-此 `intersection` 函数用于确定两个数组或列表的常用成员。
+此 `intersection` 函数用于确定两个数组或列表的公用成员。
 
 **格式**
 
@@ -84,7 +84,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 **示例**
 
-以下PQL查询定义人员1和人员2是否都具有最喜爱的红色、蓝色和绿色。
+以下PQL查询定义人员1和人员2是否均具有最喜爱的红色、蓝色和绿色颜色。
 
 ```sql
 person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "green"]
@@ -120,7 +120,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 **示例**
 
-以下PQL查询定义至少吃过一次寿司和比萨的人。
+以下PQL查询定义了至少吃过一次寿司和比萨的人。
 
 ```sql
 person.eatenFoods.supersetOf(["sushi", "pizza"])
@@ -138,7 +138,7 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 **示例**
 
-以下PQL查询定义其最喜爱颜色包括红色的人员。
+以下PQL查询定义其最喜爱的颜色包括红色的人员。
 
 ```sql
 person.favoriteColors.includes("red")
@@ -164,7 +164,7 @@ person.orders.storeId.distinct().count() > 1
 
 ## 分组依据
 
-此 `groupBy` 函数用于根据表达式的值将数组或列表的值分区为组。
+此 `groupBy` 函数用于根据表达式的值将数组或列表的值划分到组中。
 
 **格式**
 
@@ -179,7 +179,7 @@ person.orders.storeId.distinct().count() > 1
 
 **示例**
 
-以下PQL查询将存储订单的所有订单分组。
+以下PQL查询将存储所下订单的所有订单分组。
 
 ```sql
 orders.groupBy(storeId)
@@ -198,7 +198,7 @@ orders.groupBy(storeId)
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{ARRAY}` | 要过滤的数组或列表。 |
-| `{EXPRESSION}` | 筛选依据的表达式。 |
+| `{EXPRESSION}` | 作为筛选依据的表达式。 |
 
 **示例**
 
@@ -226,7 +226,7 @@ array.map(expression)
 numbers.map(square)
 ```
 
-## 第一个 `n` 在数组中 {#first-n}
+## 第一 `n` 在数组中 {#first-n}
 
 此 `topN` 函数用于返回第一个 `N` 数组中的项（当根据给定的数值表达式按升序排序时）。
 
@@ -239,8 +239,8 @@ numbers.map(square)
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{ARRAY}` | 要排序的数组或列表。 |
-| `{VALUE}` | 用于对数组或列表进行排序的属性。 |
-| `{AMOUNT}` | 要返回的项数。 |
+| `{VALUE}` | 要对数组或列表进行排序的属性。 |
+| `{AMOUNT}` | 要返回的项目数。 |
 
 **示例**
 
@@ -250,9 +250,9 @@ numbers.map(square)
 orders.topN(price, 5)
 ```
 
-## 最后 `n` 在数组中
+## 最后一个 `n` 在数组中
 
-此 `bottomN` 函数用于返回最后一个 `N` 数组中的项（当根据给定的数值表达式按升序排序时）。
+此 `bottomN` 函数用于返回最后 `N` 数组中的项（当根据给定的数值表达式按升序排序时）。
 
 **格式**
 
@@ -263,12 +263,12 @@ orders.topN(price, 5)
 | 参数 | 描述 |
 | --------- | ----------- | 
 | `{ARRAY}` | 要排序的数组或列表。 |
-| `{VALUE}` | 用于对数组或列表进行排序的属性。 |
-| `{AMOUNT}` | 要返回的项数。 |
+| `{VALUE}` | 要对数组或列表进行排序的属性。 |
+| `{AMOUNT}` | 要返回的项目数。 |
 
 **示例**
 
-以下PQL查询返回价格最低的前五张订单。
+以下PQL查询返回价格最低的前五个订单。
 
 ```sql
 orders.bottomN(price, 5)
@@ -294,4 +294,4 @@ orders.topN(price, 5).head()
 
 ## 后续步骤
 
-现在，您已了解数组、列表和设置函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解数组、列表和设置函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

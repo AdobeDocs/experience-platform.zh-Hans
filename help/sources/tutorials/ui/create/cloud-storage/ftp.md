@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform；主页；热门主题；FTP；ftp
+keywords: Experience Platform；主页；热门主题；FTP；FTP
 solution: Experience Platform
 title: 在UI中创建FTP源连接
 type: Tutorial
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
@@ -43,11 +43,11 @@ ht-degree: 1%
 
 ## 连接到FTP服务器
 
-收集完所需的凭据后，您可以按照以下步骤创建新的FTP帐户以连接到Platform。
+收集所需的凭据后，您可以按照以下步骤创建新的FTP帐户以连接到Platform。
 
-登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 以访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示各种来源，您可以从中创建集客帐户。
+登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了各种来源，您可以使用这些来源创建集客帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL FTP]**. 如果这是您第一次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，选择 **[!UICONTROL 添加数据]** 创建新的FTP连接。
 
@@ -57,9 +57,9 @@ ht-degree: 1%
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在显示的输入表单上，提供名称、可选描述和您的凭据。 完成后，选择 **[!UICONTROL Connect]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入窗体上，提供名称、可选说明和您的凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
-![新](../../../../images/tutorials/create/ftp/new.png)
+![新建](../../../../images/tutorials/create/ftp/new.png)
 
 ### 现有帐户
 
@@ -69,4 +69,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-按照本教程，您已建立与FTP帐户的连接。 您现在可以继续下一教程和 [配置数据流以将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md).
+通过学习本教程，您已建立与FTP帐户的连接。 您现在可以继续下一教程和 [配置数据流以将数据从云存储引入Platform](../../dataflow/batch/cloud-storage.md).

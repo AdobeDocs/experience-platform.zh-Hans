@@ -1,7 +1,7 @@
 ---
 title: 在UI中创建Pendo源连接
 description: 了解如何使用Adobe Experience Platform UI创建Pendo源连接。
-badge: Beta
+badge: Beta 版
 exl-id: defdec30-42af-43c8-b2eb-7ce98f7871e3
 source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt

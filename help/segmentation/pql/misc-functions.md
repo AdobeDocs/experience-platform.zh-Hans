@@ -12,7 +12,7 @@ ht-degree: 3%
 
 # 杂项函数
 
-以下函数是miscellaneous函数 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+以下函数是其他函数 [!DNL Profile Query Language] (PQL)。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## Let
 
@@ -26,7 +26,7 @@ let {VARIABLE} = {EXPRESSION}
 
 **示例**
 
-以下PQL查询获取该交易以美元表示的所有产品合计总和，其中总和大于$100且小于$1000。
+以下PQL查询获取该交易记录的总和大于$100且小于$1000的所有产品总和（以USD为单位）。
 
 ```sql
 let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.order.currencyCode = "USD") in (S > 100 and S < 1000)
@@ -34,4 +34,4 @@ let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.ord
 
 ## 后续步骤
 
-现在，您已了解其他函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解其他函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

@@ -2,7 +2,7 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
 title: 合并策略API端点
 type: Documentation
-description: 通过Adobe Experience Platform，您可以将多个源中的数据片段放在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Platform用来确定数据优先顺序的方式以及合并哪些数据以创建统一视图的规则。
+description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
 source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
@@ -13,29 +13,29 @@ ht-degree: 1%
 
 # 合并策略端点
 
-通过Adobe Experience Platform，您可以将多个源中的数据片段放在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是指 [!DNL Platform] 使用确定数据的优先级以及将合并哪些数据以创建统一视图。
+Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是指 [!DNL Platform] 使用确定数据的优先级以及将合并哪些数据以创建统一视图。
 
-例如，如果客户跨多个渠道与您的品牌互动，则您的组织将有多个与该单个客户相关的配置文件片段出现在多个数据集中。 将这些片段摄取到Platform后，会将其合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），合并策略会确定个人资料中要包含哪些信息。
+例如，如果客户跨多个渠道与您的品牌互动，则您的组织将在多个数据集中显示多个与该单个客户相关的配置文件片段。 将这些片段摄取到Platform后，会合并在一起，以便为该客户创建一个配置文件。 当来自多个源的数据发生冲突时（例如，一个片段将客户列为“单身”，而另一个片段将客户列为“已婚”），合并策略会确定要将哪些信息包含在个人的配置文件中。
 
 使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略以及为组织设置默认合并策略。 本指南提供了使用API处理合并策略的步骤。
 
-要使用UI使用合并策略，请参阅 [合并策略UI指南](../merge-policies/ui-guide.md). 要了解有关合并策略的一般信息及其在Experience Platform中的角色的更多信息，请从阅读 [合并策略概述](../merge-policies/overview.md).
+要使用UI处理合并策略，请参阅 [合并策略UI指南](../merge-policies/ui-guide.md). 要了解有关合并策略的一般信息及其在Experience Platform中的角色，请从阅读 [合并策略概述](../merge-policies/overview.md).
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
-合并策略是贵组织专用的，允许您创建不同的策略以按所需的特定方式合并架构。 任何API访问 [!DNL Profile] 数据需要合并策略，但如果没有明确提供合并策略，则将使用默认策略。 [!DNL Platform] 为组织提供默认合并策略，或者您可以为特定Experience Data Model (XDM)架构类创建合并策略并将其标记为组织的默认值。
+合并策略是贵组织专有的，允许您创建不同的策略以按照所需的特定方式合并架构。 任何API访问 [!DNL Profile] 数据需要合并策略，但如果没有明确提供合并策略，则将使用默认策略。 [!DNL Platform] 为组织提供默认合并策略，或者您可以为特定Experience Data Model (XDM)架构类创建合并策略，并将其标记为组织的默认值。
 
-虽然每个组织可能每个架构类具有多个合并策略，但每个类只能有一个默认合并策略。 在提供了架构类的名称并且需要但未提供合并策略的情况下，将使用任何设置为默认值的合并策略。
+虽然每个组织可能具有每个架构类的多个合并策略，但每个类只能有一个默认合并策略。 如果提供了架构类的名称，并且需要但未提供合并策略，则将使用任何设置为默认值的合并策略。
 
 >[!NOTE]
 >
 >当您将新合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认值。
 
-要确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为在边缘上处于活动状态。 为了在Edge上激活受众（标记为Edge受众），必须将其绑定到在Edge上标记为“活动”的合并策略。 如果受众为 **非** 与在edge上标记为“活动”的合并策略绑定，受众将不会在edge上标记为“活动”，并且将标记为流式受众。
+要确保所有配置文件使用者在边缘上使用相同的视图，可以将合并策略标记为在边缘上处于活动状态。 为了在Edge上激活受众（标记为Edge受众），必须将其绑定到在Edge上标记为“活动”的合并策略。 如果受众为 **非** 与在edge上标记为“活动”的合并策略绑定，该受众在edge上不会标记为“活动”，而是会标记为流式受众。
 
 此外，每个组织只能具有 **一** 在Edge上处于活动状态的合并策略。 如果合并策略在Edge上处于活动状态，则它可用于Edge上的其他系统，例如Edge Profile、Edge Segmentation和Destinations on Edge。
 
@@ -68,14 +68,14 @@ ht-degree: 1%
 
 | 属性 | 描述 |
 |---|---|
-| `id` | 系统生成的唯一标识符，在创建时分配 |
-| `name` | 可在列表视图中标识合并策略的友好名称。 |
+| `id` | 创建时分配的系统生成的唯一标识符 |
+| `name` | 在列表视图中用于标识合并策略的友好名称。 |
 | `imsOrgId` | 此合并策略所属的组织ID |
 | `schema.name` | 的一部分 [`schema`](#schema) 对象， `name` 字段包含与合并策略相关的XDM架构类。 有关架构和类的更多信息，请阅读 [XDM文档](../../xdm/home.md). |
-| `version` | [!DNL Platform] 维护的合并策略版本。 每当更新合并策略时，此只读值都会递增。 |
+| `version` | [!DNL Platform] 合并策略的维护版本。 每当更新合并策略时，此只读值都会递增。 |
 | `identityGraph` | [身份图](#identity-graph) 指示将从其中获取相关身份的身份图的对象。 将合并为所有相关身份找到的配置文件片段。 |
 | `attributeMerge` | [属性合并](#attribute-merge) 对象指明在数据冲突的情况下，合并策略优先处理配置文件属性的方式。 |
-| `isActiveOnEdge` | 指示此合并策略是否可以在Edge上使用的布尔值。 默认情况下，此值为 `false`. |
+| `isActiveOnEdge` | 布尔值，指示是否可在Edge上使用此合并策略。 默认情况下，此值为 `false`. |
 | `default` | 布尔值，指示此合并策略是否为指定架构的默认值。 |
 | `updateEpoch` | 上次更新合并策略的日期。 |
 
@@ -114,10 +114,10 @@ ht-degree: 1%
     }
 ```
 
-位置 `{IDENTITY_GRAPH_TYPE}` 是以下项之一：
+位置 `{IDENTITY_GRAPH_TYPE}` 是以下任一项：
 
-* **&quot;none&quot;：** 不执行身份拼接。
-* **&quot;pdg&quot;：** 根据您的专用身份图执行身份拼合。
+* **“无”：** 不执行身份拼接。
+* **&quot;pdg&quot;：** 根据您的专用身份图执行身份拼接。
 
 **示例`identityGraph`**
 
@@ -129,7 +129,7 @@ ht-degree: 1%
 
 ### 属性合并 {#attribute-merge}
 
-配置文件片段是指某个特定用户存在的身份列表中只有一个身份的配置文件信息。 当使用的身份图形类型导致多个身份时，可能会出现配置文件属性冲突，必须指定优先级。 使用 `attributeMerge`中，您可以指定在键值（记录数据）类型数据集之间发生合并冲突时优先处理的配置文件属性。
+配置文件片段是特定用户存在的身份列表中只有一个身份的个人资料信息。 当使用的身份图形类型导致多个身份时，可能会出现配置文件属性冲突，必须指定优先级。 使用 `attributeMerge`，您可以指定在键值（记录数据）类型数据集之间发生合并冲突时要优先处理的配置文件属性。
 
 **attributeMerge对象**
 
@@ -139,11 +139,11 @@ ht-degree: 1%
     }
 ```
 
-位置 `{ATTRIBUTE_MERGE_TYPE}` 是以下项之一：
+位置 `{ATTRIBUTE_MERGE_TYPE}` 是以下任一项：
 
-* **`timestampOrdered`**：（默认）为上次更新的用户档案指定优先级。 使用此合并类型， `data` 属性不是必需的。
-* **`dataSetPrecedence`**：根据片段来自的数据集为其赋予优先级。 当某个数据集中呈现的信息优于或受信任于另一个数据集中的数据时，可以使用此功能。 使用此合并类型时， `order` 属性是必需的，因为它按优先级列出了数据集。
-   * **`order`**：当使用“dataSetPrecedence”时， `order` 数组必须随数据集列表一起提供。 任何未包含在此列表中的数据集都不会被合并。 换言之，数据集必须明确列出才能合并到配置文件中。 此 `order` array按优先级列出了数据集的ID。
+* **`timestampOrdered`**：（默认）优先考虑上次更新的配置文件。 使用此合并类型， `data` 属性不是必需的。
+* **`dataSetPrecedence`**：根据用户档案片段来自的数据集为其赋予优先级。 当某个数据集中呈现的信息优于或受信任于另一个数据集中的数据时，可以使用此功能。 使用此合并类型时， `order` 属性是必需的，因为它按优先级列出了数据集。
+   * **`order`**：当使用“dataSetPrecedence”时， `order` 必须为数组提供数据集列表。 任何未包含在此列表中的数据集都不会被合并。 换言之，数据集必须明确列出以合并到配置文件中。 此 `order` array按优先级列出了数据集的ID。
 
 #### 示例 `attributeMerge` 对象使用 `dataSetPrecedence` type
 
@@ -169,7 +169,7 @@ ht-degree: 1%
 
 ### 架构 {#schema}
 
-架构对象指定为其创建此合并策略的Experience Data Model (XDM)架构类。
+架构对象指定为其创建此合并策略的体验数据模型(XDM)架构类。
 
 **`schema`对象**
 
@@ -179,7 +179,7 @@ ht-degree: 1%
     }
 ```
 
-其中， `name` 是与合并策略关联的架构所基于的XDM类的名称。
+其中 `name` 是XDM类的名称，与合并策略关联的架构以该类为基础。
 
 **示例`schema`**
 
@@ -193,11 +193,11 @@ ht-degree: 1%
 
 ## 访问合并策略 {#access-merge-policies}
 
-使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求，以按其ID查看特定合并策略，或访问组织中按特定条件筛选的所有合并策略。 您还可以使用 `/config/mergePolicies/bulk-get` 端点以按其ID检索多个合并策略。 以下各节概述了执行每个调用的步骤。
+使用 [!DNL Real-Time Customer Profile] API、 `/config/mergePolicies` 端点允许您执行查找请求，以按其ID查看特定合并策略，或访问组织中按特定条件筛选的所有合并策略。 您也可以使用 `/config/mergePolicies/bulk-get` 端点按其ID检索多个合并策略。 以下各节概述了执行上述每种调用的步骤。
 
-### 按ID访问单合并策略
+### 按ID访问单一合并策略
 
-GET您可以通过对策略的ID来访问单合并策略，方法是向 `/config/mergePolicies` 端点并包括 `mergePolicyId` 在请求路径中。
+您可以通过向以下网站发出合并请求，从而通过ID访问单GET策略： `/config/mergePolicies` 端点并包括 `mergePolicyId` 在请求路径中。
 
 **API格式**
 
@@ -222,7 +222,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回合并策略的详细信息。
+成功的响应将返回合并策略的详细信息。
 
 ```json
 {
@@ -244,11 +244,11 @@ curl -X GET \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的每个单独元素的详细信息。
+请参阅 [合并策略的组件](#components-of-merge-policies) 部分，了解有关构成合并策略的每个单独元素的详细信息。
 
 ### 按其ID检索多个合并策略
 
-您可以通过向以下对象发出POST请求来检索多个合并策略： `/config/mergePolicies/bulk-get` 端点，并包括要在请求正文中检索的合并策略的ID。
+您可以通过向以下对象发出POST请求来检索多个合并策略： `/config/mergePolicies/bulk-get` 端点，并包含在请求正文中检索的合并策略的ID。
 
 **API格式**
 
@@ -282,7 +282,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回HTTP状态207（多状态）以及POST请求中提供了其ID的合并策略的详细信息。
+成功的响应返回HTTP状态207（多状态）以及POST请求中提供了ID的合并策略的详细信息。
 
 ```json
 { 
@@ -343,11 +343,11 @@ curl -X POST \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的每个单独元素的详细信息。
+请参阅 [合并策略的组件](#components-of-merge-policies) 部分，了解有关构成合并策略的每个单独元素的详细信息。
 
 ### 按条件列出多个合并策略
 
-您可以通过向以下网站发出GET请求，列出公司内的多个合并策略 `/config/mergePolicies` 端点，并使用可选的查询参数筛选、排序和分页响应。 可以包含多个参数，以&amp;分隔。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有合并策略。
+您可以通过向以下机构发出GET请求，列出机构内的多个合并策略： `/config/mergePolicies` 使用可选的查询参数过滤、排序和分页响应。 可以包含多个参数，以&amp;分隔。 在不使用参数的情况下对此端点进行调用将检索对您的组织可用的所有合并策略。
 
 **API格式**
 
@@ -357,17 +357,17 @@ GET /config/mergePolicies?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 |---|---|
-| `default` | 一个布尔值，用于根据合并策略是否为架构类的默认值来筛选结果。 |
-| `limit` | 指定页面大小限制，以控制页面中包含的结果数。 默认值：20 |
-| `orderBy` | 指定排序结果所依据的字段，如下所示 `orderBy=name` 或 `orderBy=+name` 按名称升序排序，或 `orderBy=-name`，以按降序排序。 省略此值会导致默认排序 `name` 按升序排列。 |
+| `default` | 一个布尔值，它根据合并策略是否为架构类的默认策略来筛选结果。 |
+| `limit` | 指定页大小限制，以控制页中包含的结果数。 默认值：20 |
+| `orderBy` | 指定排序结果所依据的字段，如 `orderBy=name` 或 `orderBy=+name` 按名称升序排序，或 `orderBy=-name`，以按降序排序。 省略此值会导致默认排序 `name` 按升序排列。 |
 | `isActiveOnEdge` | 一个布尔值，用于根据合并策略在Edge上是否处于活动状态来筛选结果。 |
 | `schema.name` | 要检索其可用合并策略的架构的名称。 |
-| `identityGraph.type` | 按身份图类型筛选结果。 可能的值包括“none”和“pdg”（专用图）。 |
+| `identityGraph.type` | 按身份图类型过滤结果。 可能的值包括“none”和“pdg”（专用图）。 |
 | `attributeMerge.type` | 按使用的属性合并类型筛选结果。 可能的值包括“timestampOrdered”和“dataSetPrecedence”。 |
-| `start` | 页面偏移 — 指定要检索的数据的起始ID。 默认值： 0 |
+| `start` | 页面偏移 — 为要检索的数据指定起始ID。 默认值： 0 |
 | `version` | 如果要使用特定版本的合并策略，请指定此项。 默认情况下，将使用最新版本。 |
 
-有关以下内容的更多信息： `schema.name`， `identityGraph.type`、和 `attributeMerge.type`，请参阅 [合并策略的组件](#components-of-merge-policies) 章节。
+有关以下内容的更多信息 `schema.name`， `identityGraph.type`、和 `attributeMerge.type`，请参阅 [合并策略的组件](#components-of-merge-policies) 部分已在本指南前面提供。
 
 
 **请求**
@@ -385,7 +385,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回一个分页的合并策略列表，该列表符合由请求中发送的查询参数指定的标准。
+成功的响应会返回一个分页的合并策略列表，该列表符合在请求中发送的查询参数所指定的标准。
 
 ```json
 {
@@ -461,7 +461,7 @@ curl -X GET \
 
 ## 创建合并策略
 
-您可以向以下对象发出POST请求，以便为贵组织创建新的合并策略： `/config/mergePolicies` 端点。
+您可以向以下对象发出POST请求，从而为贵组织创建新的合并策略： `/config/mergePolicies` 端点。
 
 **API格式**
 
@@ -470,7 +470,7 @@ POST /config/mergePolicies
 ```
 
 **请求**
-以下请求将创建新的合并策略，该策略由有效负载中提供的属性值配置：
+以下请求创建新的合并策略，该策略由有效负载中提供的属性值配置：
 
 ```shell
 curl -X POST \
@@ -502,18 +502,18 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | 便于识别的名称，通过该名称，可以在列表视图中标识合并策略。 |
-| `identityGraph.type` | 从中获取要合并的相关标识的标识图类型。 可能的值：“none”或“pdg”（专用图）。 |
-| `attributeMerge` | 在数据冲突的情况下对配置文件属性值优先化的方式。 |
+| `name` | 便于识别的名称，通过该名称可以在列表视图中标识合并策略。 |
+| `identityGraph.type` | 从中获取要合并的相关身份的身份图类型。 可能的值：“none”或“pdg”（专用图）。 |
+| `attributeMerge` | 在数据冲突的情况下优先处理配置文件属性值的方式。 |
 | `schema` | 与合并策略关联的XDM架构类。 |
-| `isActiveOnEdge` | 指定此合并策略是否在Edge上处于活动状态。 |
-| `default` | 指定此合并策略是否为架构的默认值。 |
+| `isActiveOnEdge` | 指定此合并策略在Edge上是否处于活动状态。 |
+| `default` | 指定此合并策略是否为架构的默认策略。 |
 
 请参阅 [合并策略的组件](#components-of-merge-policies) 部分以了解更多信息。
 
 **响应**
 
-成功响应将返回新创建的合并策略的详细信息。
+成功的响应将返回新创建的合并策略的详细信息。
 
 ```json
 {
@@ -546,7 +546,7 @@ curl -X POST \
 }
 ```
 
-请参阅 [合并策略的组件](#components-of-merge-policies) 部分，以了解有关构成合并策略的每个单独元素的详细信息。
+请参阅 [合并策略的组件](#components-of-merge-policies) 部分，了解有关构成合并策略的每个单独元素的详细信息。
 
 ## 更新合并策略 {#update}
 
@@ -554,7 +554,7 @@ curl -X POST \
 
 ### 编辑单个合并策略字段
 
-您可以通过向以下对象发出PATCH请求来编辑合并策略的各个字段： `/config/mergePolicies/{mergePolicyId}` 端点：
+PATCH您可以通过对策略的 `/config/mergePolicies/{mergePolicyId}` 端点：
 
 **API格式**
 
@@ -568,7 +568,7 @@ PATCH /config/mergePolicies/{mergePolicyId}
 
 **请求**
 
-以下请求通过更改指定合并策略的值来更新其值 `default` 属性至 `true`：
+以下请求通过更改指定合并策略的值来更新该策略 `default` 属性至 `true`：
 
 ```shell
 curl -X PATCH \
@@ -596,7 +596,7 @@ curl -X PATCH \
 
 **响应**
 
-成功响应将返回新更新的合并策略的详细信息。
+成功的响应将返回新更新的合并策略的详细信息。
 
 ```json
 {
@@ -645,7 +645,7 @@ PUT /config/mergePolicies/{mergePolicyId}
 
 **请求**
 
-以下请求将覆盖指定的合并策略，并将其属性值替换为有效负载中提供的属性值。 由于此请求完全替换了现有的合并策略，因此您需要提供最初定义合并策略时所需的所有相同字段。 但是，这次您需要为要更改的字段提供更新的值。
+以下请求将覆盖指定的合并策略，并将其属性值替换为有效负载中提供的属性值。 由于此请求完全替换了现有的合并策略，因此您需要提供最初定义合并策略时所需的所有相同字段。 但是，这次您要为要更改的字段提供更新的值。
 
 ```shell
 curl -X PUT \
@@ -680,18 +680,18 @@ curl -X PUT \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | 便于识别的名称，通过该名称，可以在列表视图中标识合并策略。 |
+| `name` | 便于识别的名称，通过该名称可以在列表视图中标识合并策略。 |
 | `identityGraph` | 从中获取要合并的相关身份的身份图。 |
-| `attributeMerge` | 在数据冲突的情况下对配置文件属性值优先化的方式。 |
+| `attributeMerge` | 在数据冲突的情况下优先处理配置文件属性值的方式。 |
 | `schema` | 与合并策略关联的XDM架构类。 |
-| `isActiveOnEdge` | 指定此合并策略是否在Edge上处于活动状态。 |
-| `default` | 指定此合并策略是否为架构的默认值。 |
+| `isActiveOnEdge` | 指定此合并策略在Edge上是否处于活动状态。 |
+| `default` | 指定此合并策略是否为架构的默认策略。 |
 
 请参阅 [合并策略的组件](#components-of-merge-policies) 部分以了解更多信息。
 
 **响应**
 
-成功响应将返回已更新合并策略的详细信息。
+成功的响应将返回已更新合并策略的详细信息。
 
 ```json
 {
@@ -726,11 +726,11 @@ curl -X PUT \
 
 ## 删除合并策略
 
-可以通过向发出合并策略请求来删除DELETE `/config/mergePolicies` 端点并在请求路径中包含要删除的合并策略的ID。
+可以通过向以下对象发出DELETE请求来删除合并策略 `/config/mergePolicies` 端点并在请求路径中包含要删除的合并策略的ID。
 
 >[!NOTE]
 >
->如果合并策略具有 `isActiveOnEdge` 设置为true，则合并策略 **无法** 将被删除。 使用 [PATCH](#edit-individual-merge-policy-fields) 或 [PUT](#overwrite-a-merge-policy) 端点以更新合并策略，然后再删除它。
+>如果合并策略具有 `isActiveOnEdge` 设置为true，则合并策略 **无法** 将被删除。 使用 [PATCH](#edit-individual-merge-policy-fields) 或 [PUT](#overwrite-a-merge-policy) 端点以在删除合并策略之前对其进行更新。
 
 **API格式**
 
@@ -757,10 +757,10 @@ curl -X DELETE \
 
 **响应**
 
-成功的删除请求会返回HTTP状态200 （正常）和空响应正文。 要确认删除成功，您可以执行GET请求，以按合并策略的ID查看合并策略。 如果删除了合并策略，您将收到HTTP状态404 （未找到）错误。
+成功的删除请求返回HTTP状态200 （正常）和空响应正文。 要确认删除成功，您可以执行GET请求，以按合并策略的ID查看该策略。 如果删除了合并策略，您将收到HTTP状态404（未找到）错误。
 
 ## 后续步骤
 
-现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略调整Platform中客户配置文件的视图，以及从创建受众 [!DNL Real-Time Customer Profile] 数据。
+现在您已经知道如何为组织创建和配置合并策略，可以使用这些策略调整Platform中客户配置文件的视图，并从创建受众 [!DNL Real-Time Customer Profile] 数据。
 
-请查看 [Adobe Experience Platform分段服务文档](../../segmentation/home.md) 开始定义和使用受众。
+请参阅 [Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md) 开始定义和使用受众。

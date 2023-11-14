@@ -14,21 +14,21 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->目前，仅对以下源提供对筛选行级数据的支持：
+>目前，仅对以下源支持筛选行级数据：
 >
 >* [Google BigQuery](../../connectors/databases/bigquery.md)
 >* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
 >* [Salesforce](../../connectors/crm/salesforce.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
 
-本教程提供了有关如何使用筛选源的行级数据的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+本教程提供了有关如何使用为源筛选行级数据的步骤。 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
-* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用平台API
 
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 在使用API筛选源的行级数据之前，必须首先检索源的连接规范详细信息，以确定特定源支持的运算符和语言。
 
-GET要检索给定源的连接规范，请向 `/connectionSpecs` 的端点 [!DNL Flow Service] API，同时将源的属性名称作为查询参数的一部分提供。
+GET要检索给定源的连接规范，请向 `/connectionSpecs` 的端点 [!DNL Flow Service] API，同时提供源的属性名称作为查询参数的一部分。
 
 **API格式**
 
@@ -52,11 +52,11 @@ GET /connectionSpecs/{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMS}` | 筛选结果所依据的可选查询参数。 您可以检索 [!DNL Google BigQuery] 连接规范，通过应用 `name` 属性和指定 `"google-big-query"` 进行搜索。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以检索 [!DNL Google BigQuery] 连接规范，应用 `name` 属性和指定 `"google-big-query"` 在搜索中。 |
 
 **请求**
 
-以下请求检索连接规范 [!DNL Google BigQuery].
+以下请求检索的连接规范 [!DNL Google BigQuery].
 
 ```shell
 curl -X GET \
@@ -69,7 +69,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回的连接规范 [!DNL Google BigQuery]，包括其支持的查询语言和逻辑运算符的信息。
+成功的响应将返回的连接规范 [!DNL Google BigQuery]，包括其支持的查询语言和逻辑运算符的信息。
 
 >[!NOTE]
 >
@@ -102,9 +102,9 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.filterAtSource.enabled` | 确定查询的源是否支持筛选行级数据。 |
+| `attributes.filterAtSource.enabled` | 确定查询的源是否支持对行级数据进行筛选。 |
 | `attributes.filterAtSource.queryLanguage` | 确定查询源支持的查询语言。 |
-| `attributes.filterAtSource.logicalOperators` | 确定可用于筛选源行级数据的逻辑运算符。 |
+| `attributes.filterAtSource.logicalOperators` | 确定可用于为源筛选行级数据的逻辑运算符。 |
 | `attributes.filterAtSource.comparisonOperators` | 确定可用于筛选源行级数据的比较运算符。 有关比较运算符的更多信息，请参阅下表。 |
 | `attributes.filterAtSource.columnNameEscapeChar` | 确定用于转义列的字符。 |
 | `attributes.filterAtSource.valueEscapeChar` | 确定在编写SQL查询时如何包围值。 |
@@ -117,9 +117,9 @@ curl -X GET \
 | --- | --- |
 | `==` | 按属性是否等于提供的值筛选。 |
 | `!=` | 按属性是否不等于提供的值筛选。 |
-| `<` | 按属性是否小于提供的值筛选。 |
+| `<` | 根据属性是否小于提供的值来进行筛选。 |
 | `>` | 按属性是否大于提供的值筛选。 |
-| `<=` | 按属性是否小于或等于提供的值来筛选。 |
+| `<=` | 根据属性是否小于或等于提供的值来进行筛选。 |
 | `>=` | 按属性是否大于或等于提供的值筛选。 |
 | `like` | 在中使用的筛选器 `WHERE` 用于搜索指定模式的子句。 |
 | `in` | 按属性是否在指定范围内进行筛选。 |
@@ -128,9 +128,9 @@ curl -X GET \
 
 ### 指定摄取的筛选条件
 
-在确定了源支持的逻辑运算符和查询语言后，可以使用配置文件查询语言(PQL)指定要应用于源数据的筛选条件。
+在确定了源支持的逻辑运算符和查询语言后，可以使用配置文件查询语言(PQL)指定要应用于源数据的过滤条件。
 
-在下面的示例中，条件仅应用于选择与作为参数列出的节点类型所提供的值相等的数据。
+在下面的示例中，条件仅应用于与作为参数列出的节点类型所提供的值相等的数据。
 
 ```json
 {
@@ -155,7 +155,7 @@ curl -X GET \
 
 ### 预览数据
 
-您可以通过向以下网站发出GET请求来预览数据： `/explore` 的端点 [!DNL Flow Service] API同时提供 `filters` 作为查询参数的一部分，并在中指定PQL输入条件 [!DNL Base64].
+您可以通过向以下网站发出GET请求来预览数据： `/explore` 的端点 [!DNL Flow Service] API，同时提供 `filters` 作为查询参数的一部分并在中指定PQL输入条件 [!DNL Base64].
 
 **API格式**
 
@@ -166,8 +166,8 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 | 参数 | 描述 |
 | --- | --- |
 | `{BASE_CONNECTION_ID}` | 源的基本连接ID。 |
-| `{TABLE_PATH}` | 要检查的表的路径属性。 |
-| `{FILTERS}` | 您编码的PQL筛选条件 [!DNL Base64]. |
+| `{TABLE_PATH}` | 要检查的表的path属性。 |
+| `{FILTERS}` | 您编码的PQL过滤条件 [!DNL Base64]. |
 
 **请求**
 
@@ -330,7 +330,7 @@ curl -X GET \
 
 ### 为过滤的数据创建源连接
 
-要创建源连接并摄取过滤的数据，请向发出POST请求 `/sourceConnections` 将筛选条件作为正文参数的一部分提供时的端点。
+要创建源连接并摄取过滤的数据，请向发出POST请求 `/sourceConnections` 端点，同时将筛选条件作为正文参数的一部分提供。
 
 **API格式**
 
@@ -387,7 +387,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回唯一标识符(`id`)。
+成功的响应将返回唯一标识符(`id`)。
 
 ```json
 {
@@ -402,7 +402,7 @@ curl -X POST \
 
 ### 奇异条件
 
-您可以省略初始值 `fnApply` 适用于只需要一个条件的方案。
+您可以省略初始的 `fnApply` 适用于只需要一个条件的方案。
 
 ```json
 {
@@ -427,7 +427,7 @@ curl -X POST \
 
 ### 使用 `in` 运算符
 
-有关运算符的示例，请参阅下面的示例有效负载 `in`.
+有关运算符的示例，请参阅下面的有效负载示例 `in`.
 
 ```json
 {
@@ -461,7 +461,7 @@ curl -X POST \
 
 ### 使用 `isNull` 运算符
 
-有关运算符的示例，请参阅下面的示例有效负载 `isNull`.
+有关运算符的示例，请参阅下面的有效负载示例 `isNull`.
 
 ```json
 {
@@ -482,7 +482,7 @@ curl -X POST \
 
 ### 使用 `NOT` 运算符
 
-有关运算符的示例，请参阅下面的示例有效负载 `NOT`.
+有关运算符的示例，请参阅下面的有效负载示例 `NOT`.
 
 ```json
 {
@@ -507,9 +507,9 @@ curl -X POST \
 }
 ```
 
-### 嵌套条件示例
+### 嵌套条件的示例
 
-有关复杂嵌套条件的示例，请参阅下面的示例有效负载。
+有关复杂嵌套条件的示例，请参阅下面的有效负荷示例。
 
 ```json
 {

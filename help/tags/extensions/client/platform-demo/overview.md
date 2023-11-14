@@ -17,7 +17,7 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->此扩展已被弃用，取而代之的是 [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
+>此扩展已弃用，取而代之的是 [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
 
 此扩展的功能将移植到新扩展上。以下是当前功能的快速比较。
 
@@ -37,7 +37,7 @@ ht-degree: 72%
 
 此部分提供有关配置 Adobe Experience Platform 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择 **[!UICONTROL 安装]**.
+如果尚未安装Adobe Experience Platform扩展，请打开您的资产，然后选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Experience Platform扩展上，然后选择 **[!UICONTROL 安装]**.
 
 要配置该扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
@@ -81,7 +81,7 @@ ht-degree: 72%
 
 源值字段可接受值或数据元素。您可以通过选择位于源值字段旁边的数据元素按钮来添加数据元素。
 
-目标架构字段包含数据集架构中定义的XDM字段的路径。 对于在更深层架构层次结构中定义的字段，您可以使用圆点作为路径各部分之间的分隔符(例如 （例如 timeSeriesEvents.eventType）。
+目标架构字段包含数据集架构中定义的XDM字段的路径。 对于在更深层架构层次结构中定义的字段，您可以在路径各部分之间使用点(例如， （例如 timeSeriesEvents.eventType）。
 
 ### 架构字段选择器
 
@@ -120,12 +120,12 @@ ht-degree: 72%
 
 如果标识映射部分中有多个标识，则只能将一个标识标记为主标识。
 
-如果您的架构具有 `xdm:identityMap` 字段并同时另一个字段标记为主标识字段，则标识映射部分内的主列将不可见。
+如果您的架构具有 `xdm:identityMap` 字段并同时另一个字段标记为主标识字段时，标识映射部分内的主列将不可见。
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section-not-primary.png)
 
 ### 必填字段
 
-某些架构将具有顶级必填字段。 最常见的顶级必填字段为 `timestamp` 和 `_id`。如果未定义这两个字段，信标将无法正常运行。您可以在架构映射部分中定义它们。
+某些架构将具有顶级必填字段。 最常见的顶级必填字段为 `timestamp` 和 `_id`。如果未定义这两个字段，信标将无法正常运行。您可以在架构映射部分中定义这两个字段。
 
 如果您的架构映射部分中未包含 `timestamp` 或 `_id`，但数据集架构需要使用这两个字段，则 Adobe Experience Platform 扩展将发送包含自动生成值的信标，以便信标可以正常运行。仅当未在架构映射部分中定义这两个字段时，才会将自动生成的值添加到信标数据中。

@@ -1,6 +1,6 @@
 ---
 title: 与Adobe Analytics交互
-description: 了解如何使用Edge Network Server API与Adobe Analytics交互。
+description: 了解如何使用Edge Network服务器API与Adobe Analytics交互。
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
 source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Adobe Analytics数据收集的工作方式是将XDM数据转换为Adobe Analytics可以理解的格式。 多个XDM字段包括 [自动映射](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) 到Analytics变量。
+Adobe Analytics数据收集通过将XDM数据转换为Adobe Analytics可以理解的格式来工作。 多个XDM字段包括 [自动映射](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) 到Analytics变量。
 
 您还可以 [手动映射XDM值](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) 到旧版Analytics变量。
 
@@ -33,7 +33,7 @@ POST /ee/v2/interact?dataStreamId={DATASTREAM_ID}
 
 下面的示例包含来自以下项的多个自动映射值： `_experience.analytics` 字段组。 它还包含基于JSON的数据层。 虽然这些数据层无法自动映射，但可以使用 [为数据收集准备数据](../datastreams/data-prep.md) 将这些值映射到包含上述字段组的架构。
 
-用户映射到这些字段的所有值将自动映射到相应的Analytics值，就像它们包含在API请求中一样。
+用户映射到这些字段的所有值都将自动映射到相应的Analytics值，就像它们包含在API请求中一样。
 
 ```shell
 curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}" \

@@ -27,7 +27,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要替换的对象。 有效对象包括： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要替换的对象。 有效对象为： <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -56,7 +56,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回一个包含被覆盖对象ID的数组。 此ID应与PUT请求中发送的ID匹配。 现在，对此对象执行GET请求时，会显示其详细信息已被替换为上一个PUT请求的有效负载中提供的详细信息。
+成功的响应会返回一个包含被覆盖对象ID的数组。 此ID应该与PUT请求中发送的ID匹配。 现在，为此对象执行GET请求时，会显示其详细信息已替换为上一个PUT请求的有效负载中提供的详细信息。
 
 ```json
 [

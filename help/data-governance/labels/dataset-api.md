@@ -7,7 +7,7 @@ exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
 source-git-commit: 9f3fa696ed60ce85fa93515e39716d89ec80f1ec
 workflow-type: tm+mt
 source-wordcount: '1151'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -19,17 +19,17 @@ ht-degree: 1%
 >
 >Applying labels at the dataset level is only supported for data governance use cases. If you are trying to create access policies for the data, you must [apply labels to the schema](../../xdm/tutorials/labels.md) that the dataset is based on. See the overview on [attribute-based access control](../../access-control/abac/overview.md) for more information. -->
 
-本文档介绍了如何使用管理数据集和字段的标签 [!DNL Dataset Service API]. 有关如何使用API调用管理数据使用标签本身的步骤，请参阅 [标签端点指南](../api/labels.md) 对于 [!DNL Policy Service API].
+本文档介绍如何使用管理数据集和字段的标签 [!DNL Dataset Service API]. 有关如何使用API调用管理数据使用标签本身的步骤，请参阅 [标签端点指南](../api/labels.md) 对于 [!DNL Policy Service API].
 
 ## 快速入门
 
-在阅读本指南之前，请按照 [入门部分](../../catalog/api/getting-started.md) 目录开发人员指南中的，用于收集调用所需的凭据 [!DNL Platform] API。
+在阅读本指南之前，请按照 [快速入门部分](../../catalog/api/getting-started.md) ，以收集进行调用所需的凭据 [!DNL Platform] API。
 
 要调用本文档中概述的端点，您必须具有 `id` 特定数据集的值。 如果您没有此值，请参阅上的指南 [列出目录对象](../../catalog/api/list-objects.md) 以查找现有数据集的ID。
 
 ## 查找数据集的标签 {#look-up}
 
-您可以通过对以下项发出GET请求，查找已应用于现有数据集的数据使用标签： [!DNL Dataset Service] API。
+您可以通过对GET请求，查找已应用于现有数据集的数据使用标签 [!DNL Dataset Service] API。
 
 **API格式**
 
@@ -54,7 +54,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回已应用于数据集的数据使用标签。
+成功的响应将返回已应用于数据集的数据使用标签。
 
 ```json
 {
@@ -82,7 +82,7 @@ curl -X GET \
 
 ## 将标签应用于数据集 {#apply}
 
-通过在POST或PUT请求的有效负荷中提供一组标签，您可以为整个数据集应用这些标签。 [!DNL Dataset Service] API。 两个调用的请求正文相同。 不能向单独的数据集字段添加标签。
+通过在POST或PUT请求的有效负荷中提供一组标签，您可以为整个数据集应用这些标签。 [!DNL Dataset Service] API。 两个调用的请求正文相同。 您无法将标签添加到单独的数据集字段。
 
 **API格式**
 
@@ -93,7 +93,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 唯一 `id` 您正在为其创建标签的数据集的值。 |
+| `{DATASET_ID}` | 唯一 `id` 要为其创建标签的数据集的值。 |
 
 **请求**
 
@@ -103,9 +103,9 @@ PUT /datasets/{DATASET_ID}/labels
 
 >[!NOTE]
 >
->如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，这需要一个 `If-Match` 标头。 将标签添加到数据集后，最近的 `etag` 以后更新或删除标签时需要值。
+>如果相关数据集当前存在标签，则只能通过PUT请求添加新标签，这需要一个 `If-Match` 标题。 将标签添加到数据集后，最近的 `etag` 稍后需要使用此值来更新或删除标签。
 
-要检索最新版本的dataset-label实体，请将 [GET请求](#look-up) 到 `/datasets/{DATASET_ID}/labels` 端点。 当前值在响应中返回，位于 `etag` 标头。 更新现有数据集标签时，最佳实践是首先执行数据集的查找请求，以获取其最新数据 `etag` 值之前，该值的使用范围 `If-Match` 后续PUT请求的标头。
+要检索最新版本的dataset-label实体，请生成 [GET请求](#look-up) 到 `/datasets/{DATASET_ID}/labels` 端点。 当前值在响应中返回到 `etag` 标题。 更新现有数据集标签时，最佳做法是首先执行数据集的查找请求，以获取其最新数据 `etag` 值之前，在中使用该 `If-Match` 后续PUT请求的标题。
 
 ```shell
 curl -X POST \
@@ -130,12 +130,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityId` | 这会标识要更新的特定数据集实体。 |
+| `entityId` | 这将标识要更新的特定数据集实体。 |
 | `entityId.namespace` | 用于避免ID冲突。 此 `namespace` 是 `AEP`. |
-| `entityId.id` | 正在更新的资源的ID。 此名称是指 `datasetId`. |
-| `entityId.type` | 正在更新的资源的类型。 这将始终是 `dataset`. |
+| `entityId.id` | 要更新的资源的ID。 此名称是指 `datasetId`. |
+| `entityId.type` | 正在更新的资源的类型。 这将永远是 `dataset`. |
 | `labels` | 要添加到整个数据集的数据使用标签列表。 |
-| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的位置。 数据集可以从架构和/或数据集继承标签。 |
+| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的内容。 数据集可以从架构和/或数据集继承标签。 |
 
 **响应**
 
@@ -143,7 +143,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->此 `optionalLabels` 属性已弃用，无法用于POST请求。 无法再将数据标签添加到数据集字段。 如果出现以下情况，POST操作将引发错误： `optionalLabel` 值存在。 但是，您可以使用PUT请求和 `optionalLabels` 属性。 有关更多信息，请参阅以下部分： [从数据集中删除标签](#remove).
+>此 `optionalLabels` 已弃用资产以用于POST请求。 无法再将数据标签添加到数据集字段。 POST如果 `optionalLabel` 值存在。 但是，您可以使用PUT请求和从各个字段删除标签 `optionalLabels` 属性。 有关详细信息，请参阅 [从数据集中删除标签](#remove).
 
 ```json
 {
@@ -175,13 +175,13 @@ PUT /datasets/{DATASET_ID}/labels
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATASET_ID}` | 唯一 `id` 您正在为其创建标签的数据集的值。 |
+| `{DATASET_ID}` | 唯一 `id` 要为其创建标签的数据集的值。 |
 
 **请求**
 
-应用PUT操作的以下数据集的properties/person/properties/address字段上具有C1 optionalLabel，而/properties/person/properties/name/properties/fullName字段上具有C1、C2 optionalLabels。 在put操作之后，第一字段将没有标签（C1标签被移除），而第二字段将只有C1标签（C2标签被移除）
+应用PUT操作的以下数据集的properties/person/properties/address字段上具有C1 optionalLabel，而/properties/person/properties/name/properties/fullName字段上具有C1， C2 optionalLabels。 在put操作之后，第一字段将没有标签（C1标签被删除），而第二字段将只有C1标签（C2标签被删除）
 
-在以下示例场景中，PUT请求用于移除添加到各个字段的标签。 在提出请求之前， `fullName` 字段具有 `C1` 和 `C2` 应用的标签，以及 `address` 字段已具有 `C1` 标签已应用。 PUT请求会覆盖现有标签 `C1, C2` 标签来自 `fullName` 带有的字段 `C1` 标签使用 `optionalLabels.labels` 参数。 该请求也会覆盖 `C1` 标签来自 `address` 字段标签集为空。
+在下面的示例场景中，PUT请求用于移除添加到单个字段的标签。 在提出请求之前， `fullName` 字段具有 `C1` 和 `C2` 已应用标签，并且 `address` 字段已具有 `C1` 已应用标签。 PUT请求覆盖现有标签 `C1, C2` 标签来自 `fullName` 带有以下内容的字段 `C1` 标签使用 `optionalLabels.labels` 参数。 该请求还将覆盖 `C1` 标签来自 `address` 字段标签集为空的字段。
 
 ```shell
 curl -X PUT \
@@ -227,10 +227,10 @@ curl -X PUT \
 
 | 参数 | 描述 |
 | --- | --- |
-| `entityId` | 这会标识要更新的特定数据集实体。 此 `entityId` 必须包括以下三个值：<br/><br/>`namespace`：用于避免ID冲突。 此 `namespace` 是 `AEP`.<br/>`id`：要更新的资源的ID。 此名称是指 `datasetId`.<br/>`type`：正在更新的资源的类型。 这将始终是 `dataset`. |
+| `entityId` | 这将标识要更新的特定数据集实体。 此 `entityId` 必须包括以下三个值：<br/><br/>`namespace`：用于避免ID冲突。 此 `namespace` 是 `AEP`.<br/>`id`：要更新的资源的ID。 此名称是指 `datasetId`.<br/>`type`：正在更新的资源的类型。 这将永远是 `dataset`. |
 | `labels` | 要添加到整个数据集的数据使用标签列表。 |
-| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的位置。 数据集可以从架构和/或数据集继承标签。 |
-| `optionalLabels` | 此参数用于移除先前应用于数据集字段的标签。 数据集内要从中删除标签的任何单独字段的列表。 此数组中的每一项都必须具有以下属性： <br/><br/>`option`：包含 [!DNL Experience Data Model] (XDM)字段的属性。 需要以下三个属性：<ul><li>id</code>：URI $id</code> 与字段关联的架构的值。</li><li>内容类型</code>：架构的内容类型和版本号。 这应该采用有效的形式之一 <a href="../../xdm/api/getting-started.md#accept">接受标头</a> XDM查找请求。</li><li>schema路径</code>：数据集架构中字段的路径。</li></ul>`labels`：此值必须包含应用的现有字段标签的子集，或者为空以删除所有现有字段标签。 PUT或POST方法现在在以下情况下返回错误： `optionalLabels` 字段具有任何新标签或修改的标签。 |
+| `parents` | 此 `parents` 数组包含列表 `entityId`此数据集将从中继承标签的内容。 数据集可以从架构和/或数据集继承标签。 |
+| `optionalLabels` | 此参数用于移除先前应用于数据集字段的标签。 数据集中要从中删除标签的任何单独字段的列表。 此数组中的每一项都必须具有以下属性： <br/><br/>`option`：包含 [!DNL Experience Data Model] (XDM)字段的属性。 需要以下三个属性：<ul><li><code>id</code>：URI <code>$id</code> 与字段关联的架构的值。</li><li><code>contentType</code>：架构的内容类型和版本号。 这应该采用有效形式之一 <a href="../../xdm/api/getting-started.md#accept">接受标头</a> ，以获取XDM查找请求。</li><li><code>架构路径</code>：数据集架构中字段的路径。</li></ul>`labels`：此值必须包含应用的现有字段标签的子集，或为空以删除所有现有字段标签。 PUT或POST方法现在会返回错误，如果 `optionalLabels` 字段具有任何新标签或修改的标签。 |
 
 **响应**
 

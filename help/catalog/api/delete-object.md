@@ -13,11 +13,11 @@ ht-degree: 1%
 
 # 删除API中的对象
 
-您可以删除 [!DNL Catalog] 通过在DELETE请求的路径中提供其ID来访问对象。
+您可以删除 [!DNL Catalog] 对象，方法是在DELETE请求的路径中提供其ID。
 
 >[!WARNING]
 >
->删除对象时请格外小心，因为此操作无法撤消，并且可能会在中其他位置产生重大更改 [!DNL Experience Platform].
+>删除对象时请格外小心，因为此操作无法撤消，并且可能会在中的其他位置产生重大更改 [!DNL Experience Platform].
 
 **API格式**
 
@@ -31,7 +31,7 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要删除的对象。 有效对象包括： <ul><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 类型 [!DNL Catalog] 要删除的对象。 有效对象为： <ul><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -49,7 +49,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回HTTP状态200 （正常）以及包含已删除数据集ID的数组。 此ID应与DELETE请求中发送的ID匹配。 对已删除的对象执行GET请求会返回HTTP状态404 （未找到），从而确认已成功删除数据集。
+成功的响应会返回HTTP状态200 （正常）以及包含已删除数据集ID的数组。 此ID应该与DELETE请求中发送的ID匹配。 对已删除的对象执行GET请求会返回HTTP状态404 （未找到），从而确认已成功删除数据集。
 
 ```json
 [

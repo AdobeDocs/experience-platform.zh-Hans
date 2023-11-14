@@ -1,5 +1,5 @@
 ---
-keywords: 删除目标、如何删除目标、删除目标
+keywords: 删除目标，如何删除目标，删除目标
 title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
@@ -26,13 +26,13 @@ ht-degree: 0%
 
 ## 从“浏览”选项卡中删除目标{#delete-browse-tab}
 
-按照以下步骤从删除目标 [!UICONTROL 浏览] 选项卡。
+请按照以下步骤从 [!UICONTROL 浏览] 选项卡。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
+1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的筛选选择。
+2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
@@ -47,11 +47,11 @@ ht-degree: 0%
 
 按照以下步骤从目标详细信息页面中删除目标。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中的。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
+1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 要查看现有目标，请选择 **[!UICONTROL 浏览]** 从顶部标题中。
 
    ![浏览目标](../assets/ui/delete-destinations/browse-destinations.png)
 
-2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的筛选选择。
+2. 选择过滤器图标 ![筛选图标](../assets/ui/delete-destinations/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
@@ -61,9 +61,9 @@ ht-degree: 0%
 
    * 如果目标具有现有数据流，则会转到 [!UICONTROL 数据流运行] 选项卡。
 
-     ![“数据流运行”选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
+     ![数据流运行选项卡](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
-   * 如果目标没有现有数据流，则会进入一个空页面，您可以在该页面开始激活受众。
+   * 如果目标没有现有数据流，您将进入一个空页面，您可以在该页面开始激活受众。
 
      ![目标详细信息](../assets/ui/delete-destinations/destination-details-empty.png)
 
@@ -71,10 +71,10 @@ ht-degree: 0%
 
    ![删除目标](../assets/ui/delete-destinations/delete-destinations-button.png)
 
-5. 选择 **[!UICONTROL 删除]** ，以删除目标。
+5. 选择 **[!UICONTROL 删除]** 在确认对话框中，删除目标。
 
    ![删除目标确认](..//assets/ui/delete-destinations/delete-destinations-delete.png)
 
    >[!NOTE]
    >
-   >根据服务器负载，可能需要几分钟才能完成 [!DNL Platform] 以删除目标。
+   >根据服务器负载，可能需要几分钟才能完成以下操作 [!DNL Platform] 以删除目标。

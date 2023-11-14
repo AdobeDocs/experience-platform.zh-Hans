@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '456'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ### 收集所需的凭据
 
-要访问您的 [!DNL Google BigQuery] 帐户，您必须提供以下OAuth 2.0身份验证值：
+要访问 [!DNL Google BigQuery] 帐户，您必须提供以下OAuth 2.0身份验证值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
@@ -44,7 +44,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ## 连接您的Google BigQuery帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示多种来源，您可以使用这些来源创建帐户。
 
 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
 
@@ -62,10 +62,10 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部来源�
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Google BigQuery] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Google BigQuery] 凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
 
 ![](../../../../images/tutorials/create/google-big-query/new.png)
 
 ## 后续步骤
 
-按照本教程，您已建立与的连接 [!DNL Google BigQuery] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入平台](../../dataflow/databases.md).
+通过学习本教程，您已建立与的连接 [!DNL Google BigQuery] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入Platform](../../dataflow/databases.md).

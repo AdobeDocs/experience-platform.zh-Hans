@@ -12,7 +12,7 @@ ht-degree: 6%
 
 # 目标函数
 
-[!DNL Profile Query Language] (PQL)提供了一些函数，使与对象的交互更简单。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+[!DNL Profile Query Language] (PQL)提供了一些函数，使与对象的交互更简单。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## Is null
 
@@ -52,4 +52,4 @@ person.homeAddress.isNotNull()
 
 ## 后续步骤
 
-现在，您已了解对象函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在，您已了解对象函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

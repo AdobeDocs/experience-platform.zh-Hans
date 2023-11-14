@@ -5,18 +5,18 @@ exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
 source-git-commit: de721d204cda8e55c72ac5f530b89b2275d94306
 workflow-type: tm+mt
 source-wordcount: '1000'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
-# 创建 [!DNL HTTP API] 使用UI的流连接
+# 创建 [!DNL HTTP API] 使用UI流式连接
 
-本教程提供了使用创建流源连接的步骤。 [!UICONTROL 源] 工作区。
+本教程提供了使用创建流源连接的步骤 [!UICONTROL 源] 工作区。
 
 ## 快速入门
 
-本教程需要深入了解Adobe Experience Platform的以下组件：
+本教程需要对以下Adobe Experience Platform组件有一定的了解：
 
 - [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
    - [模式组合基础](../../../../../xdm/schema/composition.md)：了解XDM架构的基本构建基块，包括架构构成中的关键原则和最佳实践。
@@ -25,9 +25,9 @@ ht-degree: 0%
 
 ## 创建流连接
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示您可以用来创建帐户的各种源。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 **[!UICONTROL 流]** 类别，选择 **[!UICONTROL HTTP API]** 然后选择 **[!UICONTROL 添加数据]**.
 
@@ -37,13 +37,13 @@ ht-degree: 0%
 
 ### 现有帐户
 
-要使用现有帐户，请选择要通过创建新数据流的HTTP API帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
+要使用现有帐户，请选择要用于创建新数据流的HTTP API帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![existing-account](../../../../images/tutorials/create/http/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在显示的输入表单上，提供帐户名称和可选描述。 您还可以选择提供以下配置属性：
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供帐户名称和可选描述。 您还可以选择提供以下配置属性：
 
 - **[!UICONTROL 身份验证]：** 此属性确定流连接是否需要身份验证。 身份验证确保从可信来源收集数据。 如果您处理的是个人身份信息(PII)，则应该启用此属性。 默认情况下，此属性处于关闭状态。
 - **[!UICONTROL 与XDM兼容]：** 此属性表示此流连接是否将发送与XDM架构兼容的事件。 默认情况下，此属性处于关闭状态。
@@ -54,39 +54,39 @@ ht-degree: 0%
 
 ## 选择数据
 
-创建HTTP API连接后， **[!UICONTROL 选择数据]** 步骤，为您提供上传和预览数据的界面。
+创建HTTP API连接后， **[!UICONTROL 选择数据]** 此时会显示步骤，为您提供上传和预览数据的界面。
 
-选择 **[!UICONTROL 上传文件]** 以上传您的数据。 或者，您也可以将数据拖放到 [!UICONTROL 拖放文件] 部分。
+选择 **[!UICONTROL 上载文件]** 以上传您的数据。 或者，您可以将数据拖放到 [!UICONTROL 拖放文件] 部分。
 
 ![add-data](../../../../images/tutorials/create/http/add-data.png)
 
-上传数据后，您可以使用界面的右侧预览文件层次结构。 选择 **[!UICONTROL 下一个]** 以继续。
+上传数据后，您可以使用界面的右侧预览文件层次结构。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 ![preview-sample-data](../../../../images/tutorials/create/http/preview-sample-data.png)
 
 ## 将数据字段映射到XDM架构
 
-此 [!UICONTROL 映射] 此时将显示步骤，其中提供了一个将源数据映射到Platform数据集的界面。
+此 [!UICONTROL 映射] 此时会显示步骤，其中提供了一个将源数据映射到Platform数据集的界面。
 
-此 [!DNL HTTP API] 源支持摄取JSON文件。 如果将JSON文件标记为XDM投诉，则无需手动配置。 如果没有，则必须显式配置映射。
+此 [!DNL HTTP API] 源支持JSON文件的摄取。 如果将JSON文件标记为XDM投诉，则无需手动配置。 如果没有，则必须显式配置映射。
 
 选择要引入的集客数据的数据集。 您可以使用现有数据集或创建新数据集。
 
 ### 创建新数据集
 
-要创建新数据集，请选择 **[!UICONTROL 新建数据集]**. 在显示的表单上，提供名称、可选描述以及数据集的目标架构。 如果您选择 [!DNL Profile]-enabled架构，您可以选择数据集是否还应 [!DNL Profile]-enabled.
+要创建新数据集，请选择 **[!UICONTROL 新数据集]**. 在显示的表单上，提供名称、可选描述以及数据集的目标架构。 如果您选择 [!DNL Profile]-enabled架构，您可以选择数据集是否还应 [!DNL Profile]-enabled。
 
 ![new-dataset](../../../../images/tutorials/create/http/new-dataset.png)
 
 ### 使用现有数据集
 
-要使用现有数据集，请选择 **[!UICONTROL 现有数据集]**. 在显示的表单上，选择要使用的数据集。 选择数据集后，您可以选择数据集是否应为 [!DNL Profile]-enabled.
+要使用现有数据集，请选择 **[!UICONTROL 现有数据集]**. 在显示的表单上，选择要使用的数据集。 选择数据集后，您可以选择数据集是否应 [!DNL Profile]-enabled。
 
 ![existing-dataset](../../../../images/tutorials/create/http/existing-dataset.png)
 
 ### 映射标准字段
 
-根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的综合步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
+根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射器界面和计算字段的全面步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 要添加新源字段，请选择 **[!UICONTROL 添加新映射]**.
 
@@ -96,11 +96,11 @@ ht-degree: 0%
 
 ![select-source-field](../../../../images/tutorials/create/http/select-source-field.png)
 
-此 [!UICONTROL 选择属性] 面板允许您浏览文件层次结构并选择要映射到目标XDM字段的特定源字段。 选择要映射的源字段后，选择 **[!UICONTROL 选择]** 以继续。
+此 [!UICONTROL 选择属性] 使用此面板，可浏览文件层次结构并选择要映射到目标XDM字段的特定源字段。 选择要映射的源字段后，选择 **[!UICONTROL 选择]** 以继续。
 
 ![select-attribute](../../../../images/tutorials/create/http/select-attributes.png)
 
-选择源字段后，您现在可以标识要映射到的适当目标XDM字段。 选择目标字段部分下的架构图标。
+选择源字段后，您现在可以标识要映射到的相应目标XDM字段。 选择目标字段部分下的架构图标。
 
 ![select-target-field](../../../../images/tutorials/create/http/select-target-field.png)
 
@@ -114,11 +114,11 @@ ht-degree: 0%
 
 ## 数据流详细信息
 
-此 **[!UICONTROL 数据流详细信息]** 步骤。 在此页面上，您可以通过提供名称和可选描述来提供已创建数据流的详细信息。
+此 **[!UICONTROL 数据流详细信息]** 此时将显示步骤。 在此页上，可以通过提供名称和可选描述来提供已创建数据流的详细信息。
 
 为数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
 
-![数据流 — 详细信息](../../../../images/tutorials/create/http/dataflow-detail.png)
+![数据流详细信息](../../../../images/tutorials/create/http/dataflow-detail.png)
 
 ## 请查看
 
@@ -139,6 +139,6 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过遵循本教程，您已创建一个流HTTP连接，从而能够使用流端点访问各种内容 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读 [创建流连接教程](../../../api/create/streaming/http.md).
+通过遵循本教程，您已创建一个流HTTP连接，使您能够使用流端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请参阅 [创建流连接教程](../../../api/create/streaming/http.md).
 
 要了解如何将数据流式传输到Platform，请阅读以下任一教程： [流式时间序列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md) 或上的教程 [流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md).

@@ -8,7 +8,7 @@ exl-id: a7bef346-b357-49bc-ac54-ac8b42adac50
 source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '476'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -18,29 +18,29 @@ ht-degree: 1%
 >
 >FTP连接器处于测试阶段。 功能和文档可能会发生更改。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用Beta标记的连接器的更多信息。
 
-基本连接表示源和Adobe Experience Platform之间经过身份验证的连接。
+基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
 本教程将指导您完成创建基本连接的步骤。 [!DNL FTP] （文件传输协议）使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
+本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下方式构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 以下部分提供成功连接到 [!DNL FTP] 服务器使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-为了 [!DNL Flow Service] 以连接到 [!DNL FTP]中，必须提供以下连接属性的值：
+为了 [!DNL Flow Service] 以连接到 [!DNL FTP]中，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `host` | 与您的关联的名称或IP地址 [!DNL FTP] 服务器。 |
-| `username` | 您具有访问权限的用户名 [!DNL FTP] 服务器。 |
+| `username` | 对您的具有访问权限的用户名 [!DNL FTP] 服务器。 |
 | `password` | 您的密码 [!DNL FTP] 服务器。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的身份验证规范。 的连接规范ID [!DNL FTP] 为： `fb2e94c9-c031-467d-8103-6bd6e0a432f2`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL FTP] 为： `fb2e94c9-c031-467d-8103-6bd6e0a432f2`. |
 
 ### 使用平台API
 
@@ -48,9 +48,9 @@ ht-degree: 1%
 
 ## 创建基本连接
 
-基本连接会保留源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+基本连接会保留您的源和平台之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-POST要创建基本连接ID，请向 `/connections` 端点同时提供 [!DNL FTP] 作为请求参数一部分的身份验证凭据。
+POST要创建基本连接ID，请向 `/connections` 端点，同时提供 [!DNL FTP] 作为请求参数一部分的身份验证凭据。
 
 **API格式**
 
@@ -60,7 +60,7 @@ POST /connections
 
 **请求**
 
-以下请求创建基本连接 [!DNL FTP]：
+以下请求为创建基本连接 [!DNL FTP]：
 
 ```shell
 curl -X POST \
@@ -97,7 +97,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回唯一标识符(`id`)。 在下一个教程中，需要此ID才能探究您的FTP服务器。
+成功的响应将返回唯一标识符(`id`)。 请在下一教程中探究您的FTP服务器时需要使用此ID。
 
 ```json
 {
@@ -108,4 +108,4 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程，您已使用创建了一个FTP连接。 [!DNL Flow Service] API中，并且已获得连接的唯一ID值。 您可以使用此连接ID来 [使用流服务API浏览云存储](../../explore/cloud-storage.md).
+在本教程之后，您已使用创建了一个FTP连接 [!DNL Flow Service] API中，并获取了连接的唯一ID值。 您可以使用此连接ID来 [使用流服务API浏览云存储](../../explore/cloud-storage.md).

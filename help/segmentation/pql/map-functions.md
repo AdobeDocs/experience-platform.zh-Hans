@@ -12,7 +12,7 @@ ht-degree: 6%
 
 # 映射函数
 
-[!DNL Profile Query Language] (PQL)提供了一些功能，使与映射的交互更轻松。 有关其他PQL函数的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md).
+[!DNL Profile Query Language] (PQL)提供了使与映射的交互更轻松的功能。 有关其他PQL函数的更多信息，请参见 [[!DNL Profile Query Language] 概述](./overview.md).
 
 ## Get
 
@@ -70,4 +70,4 @@ identityMap.values()
 
 ## 后续步骤
 
-现在您已了解映射函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [配置文件查询语言概述](./overview.md).
+现在您已了解映射函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请参阅 [配置文件查询语言概述](./overview.md).

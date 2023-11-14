@@ -1,6 +1,6 @@
 ---
 title: 标记扩展参考
-description: 查找Adobe Experience Platform中标记扩展的文档。
+description: 在Adobe Experience Platform中查找有关标记扩展的文档。
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
 source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
@@ -15,14 +15,14 @@ ht-degree: 10%
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-以下是客户端标记扩展的文档列表。 有关可用服务器端扩展的列表，请参阅 [事件转发扩展参考](../server/overview.md) 而是。
+以下是客户端标记扩展的文档列表。 有关可用服务器端扩展的列表，请参见 [事件转发扩展参考](../server/overview.md) 而是。
 
 >[!NOTE]
 >
->任何扩展名称后跟一个星号(*)的链接，指向该扩展在Adobe交换上的列表，其中包含安装和使用说明。 所有其他链接都指向该扩展在Adobe Experience League上的文档。
+>任何扩展名称后跟星号(*)的链接均指向AdobeExchange上的扩展列表，其中包含安装和使用说明。 所有其他链接均指向该扩展在Adobe Experience League上的文档。
 
 * [可访问的网站速度量度](https://exchange.adobe.com/apps/ec/103053)*
-* [Activity Map定制器](https://exchange.adobe.com/apps/ec/101531)*
+* [Activity Map自定义程序](https://exchange.adobe.com/apps/ec/101531)*
 * [操作页面刷新](https://exchange.adobe.com/apps/ec/102848)*
 * [Adform网站跟踪](https://exchange.adobe.com/apps/ec/103195)*
 * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
@@ -42,7 +42,7 @@ ht-degree: 10%
 * [Adobe Experience Platform Web SDK](./web-sdk/overview.md)
 * [Adobe Experience Manager资产分析](./asset-insights/overview.md)
 * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)*
-* [Adobe Medium Analytics for Audio and Video](./media-analytics/overview.md)
+* [用于音频和视频的Adobe Medium Analytics](./media-analytics/overview.md)
 * [Adobe Medium分析(3.x SDK)](./media-analytics-3x/overview.md)
 * [Adobe隐私](./privacy/overview.md)
 * [Adobe报表包选择器](https://exchange.adobe.com/apps/ec/100640)*
@@ -51,7 +51,7 @@ ht-degree: 10%
 * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)*
 * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)*
 * [AEM资产分析](https://exchange.adobe.com/apps/ec/103406)*
-* [Airbrake JS通告程序](https://exchange.adobe.com/apps/ec/103342)*
+* [空气制动器JS通告程序](https://exchange.adobe.com/apps/ec/103342)*
 * [振幅](https://exchange.adobe.com/apps/ec/108010)*
 * [阿波罗QAX](https://exchange.adobe.com/apps/ec/105068)*
 * [Awin广告商主标签](https://exchange.adobe.com/apps/ec/103176)*
@@ -70,7 +70,7 @@ ht-degree: 10%
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
 * [由Usercentrics CMP v2进行的Cookie同意管理](https://exchange.adobe.com/apps/ec/*107037)
 * [核心](./core/overview.md)
-* [自定义调试记录器](https://exchange.adobe.com/apps/ec/104698)*
+* [Custom Debug Logger](https://exchange.adobe.com/apps/ec/104698)*
 * [客户认可](https://exchange.adobe.com/apps/ec/100688)*
 * [数据元素助手(DEA)](https://exchange.adobe.com/apps/ec/101413)*
 * [数据层管理器](https://exchange.adobe.com/apps/ec/101462)*
@@ -91,11 +91,11 @@ ht-degree: 10%
 * [KickFire](https://exchange.adobe.com/apps/ec/101621)*
 * [映射表](https://exchange.adobe.com/apps/ec/103136)*
 * [[!DNL Marketo Munchkin]](./marketo/overview.md)
-* [主控属性管理器](https://exchange.adobe.com/apps/ec/102992)*
+* [主属性管理器](https://exchange.adobe.com/apps/ec/102992)*
 * [Monita](https://exchange.adobe.com/apps/ec/106544)*
 * [Nielsen Digital SDK](https://exchange.adobe.com/apps/ec/101361)*
-* [OneTrust Consent Management for Cookie](https://exchange.adobe.com/apps/ec/100340)*
-* [辣椒酱](https://exchange.adobe.com/apps/ec/103587)*
+* [用于Cookie的OneTrust同意管理](https://exchange.adobe.com/apps/ec/100340)*
+* [胡椒酱](https://exchange.adobe.com/apps/ec/103587)*
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [pinterest转化跟踪](https://exchange.adobe.com/apps/ec/100523)*
 * [像素加载器](https://exchange.adobe.com/apps/ec/100152)*
@@ -106,10 +106,10 @@ ht-degree: 10%
 * [SDI调查](https://exchange.adobe.com/apps/ec/102991)*
 * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)*
 * [SessionCam](https://exchange.adobe.com/apps/ec/100517)*
-* [SPA视图更改事件](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html)
+* [SPA查看更改事件](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html)
 * [存储扳手](https://exchange.adobe.com/apps/ec/102990)*
 * [按循环水平线划分的标记](https://exchange.adobe.com/apps/ec/106092)*
-* [茶叶收集](https://exchange.adobe.com/apps/ec/104217)*
+* [Tealium收集](https://exchange.adobe.com/apps/ec/104217)*
 * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)*
 * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)*
 * [TrustArc Cookie同意管理器](https://exchange.adobe.com/apps/ec/107037)*

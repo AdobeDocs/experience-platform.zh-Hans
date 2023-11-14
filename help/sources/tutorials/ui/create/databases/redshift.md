@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
 source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '492'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 >
 >此 [!DNL Amazon Redshift] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-本教程提供了有关如何连接 [!DNL Amazon Redshift] (以下简称“ ”[!DNL Redshift]&quot;)帐户添加到Adobe Experience Platform。
+本教程提供了有关如何连接 [!DNL Amazon Redshift] (以下简称“[!DNL Redshift]&quot;)帐户登录到Adobe Experience Platform。
 
 ## 快速入门
 
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 ### 收集所需的凭据
 
-要访问您的 [!DNL Redshift] account onExperience Platform，您必须提供以下值：
+要访问 [!DNL Redshift] account on account(Experience Platform帐户)，您必须提供以下值：
 
 | **凭据** | **描述** |
 | -------------- | --------------- |
@@ -49,11 +49,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->的默认编码标准 [!DNL Redshift] 是Unicode。 无法更改。
+>的默认编码标准 [!DNL Redshift] 是Unicode。 无法更改此设置。
 
-登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 以访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示您可以为其创建帐户的各种源。
+登录 [Adobe Experience Platform](https://platform.adobe.com) 然后选择 **[!UICONTROL 源]** 从左侧导航栏访问 **[!UICONTROL 源]** 工作区。 此 **[!UICONTROL 目录]** 屏幕显示了多种来源，您可以使用这些来源创建帐户。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找要使用的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
 在 **[!UICONTROL 数据库]** 类别，选择 **[!UICONTROL Amazon Redshift]**. 如果这是您第一次使用此连接器，请选择 **[!UICONTROL 配置]**. 否则，选择 **[!UICONTROL 添加数据]** 以新建 [!DNL Redshift] 连接器。
 
@@ -63,7 +63,7 @@ ht-degree: 2%
 
 ### 新帐户
 
-如果您使用的是新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Redshift] 凭据。 完成后，选择 **[!UICONTROL Connect]** 然后留出一些时间来建立新连接。
+如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Redshift] 凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
 ![](../../../../images/tutorials/create/redshift/new.png)
 
@@ -75,4 +75,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-按照本教程，您已建立与的连接 [!DNL Redshift] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据导入Experience Platform](../../dataflow/databases.md).
+通过学习本教程，您已建立与的连接 [!DNL Redshift] 帐户。 您现在可以继续下一教程和 [配置数据流以将数据引入Experience Platform](../../dataflow/databases.md).

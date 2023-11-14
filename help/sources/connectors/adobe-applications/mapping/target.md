@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 目标映射字段映射
 
-下表概述了Experience Data Model (XDM) Experience Event架构的字段以及它们应映射到的Adobe Target中的相应字段。 此外，还针对某些映射提供了其他说明。
+下表概述了Experience Data Model (XDM) Experience Event架构的字段，以及它们应映射到的Adobe Target中的相应字段。 此外，还针对某些映射提供了其他说明。
 
 >[!NOTE]
 >
@@ -21,12 +21,12 @@ ht-degree: 0%
 | XDM ExperienceEvent字段 | Target请求字段 | 注释 |
 | ------------------------- | -------------------- | ----- |
 | **`id`** | 唯一请求标识符 |
-| **`dataSource`** | | 已为所有客户端配置为“1”。 |
-| `dataSource._id` | 系统生成的值，无法随请求一起传递。 | 此数据源的唯一ID。 这将由创建数据源的个人或系统提供。 |
-| `dataSource.code` | 系统生成的值，无法随请求一起传递。 | 全@id的快捷方式。 可以使用代码或@id中的至少一个。 有时，此代码称为数据源集成代码。 |
-| `dataSource.tags` | 系统生成的值，无法随请求一起传递。 | 标记用于指示应用程序应如何解释由给定数据源表示的别名。<br><br>示例：<br><ul><li>`isAVID`：表示Analytics访客ID的数据源。</li><li>`isCRSKey`：表示应在CRS中用作键的别名的数据源。</li></ul>标记在创建数据源时设置，但在引用给定数据源时也包含在管道消息中。 |
+| **`dataSource`** | | 已配置所有客户端为“1”。 |
+| `dataSource._id` | 系统生成的值，无法随请求一起传入。 | 此数据源的唯一ID。 这将由创建数据源的个人或系统提供。 |
+| `dataSource.code` | 系统生成的值，无法随请求一起传入。 | 完整@id的快捷方式。 至少可以使用代码或@id中的一个。 有时，此代码称为数据源集成代码。 |
+| `dataSource.tags` | 系统生成的值，无法随请求一起传入。 | 标记用于指示应用程序应如何解释由给定数据源表示的别名。<br><br>示例：<br><ul><li>`isAVID`：表示Analytics访客ID的数据源。</li><li>`isCRSKey`：表示应在CRS中用作键的别名的数据源。</li></ul>标记在创建数据源时设置，但在引用给定数据源时也包含在管道消息中。 |
 | **`timestamp`** | 事件时间戳 |
-| **`channel`** | `context.channel` | 仅适用于视图投放。 选项为“Web”和“mobile”，默认选项为“Web”。 |
+| **`channel`** | `context.channel` | 仅适用于视图交付。 选项为“Web”和“mobile”，默认选项为“Web”。 |
 | **`endUserIds`** |
 | `endUserIds.experience.tntId` | `tntId/mboxPC` |
 | `endUserIds.experience.mcId` | `marketingCloudVisitorId` | Experience CloudID (ECID)也称为MCID，它将继续用在命名空间中。 |
@@ -52,7 +52,7 @@ ht-degree: 0%
 | `experience.target.pageDetails.pageId` | `mboxRequest.pageId` |
 | `experience.target.pageDetails.pageScore` | `mboxRequest.mboxPageValue` |
 | `experience.target.activities` | 访客符合条件的活动列表（数组） |
-| `experience.target.activities[i].activityID` | 访客符合条件的任何给定活动的ID |
+| `experience.target.activities[i].activityID` | 访客符合资格的任何给定活动的ID |
 | `experience.target.activities[i].version` | 访客符合条件的任何给定活动的版本 |
 | `experience.target.activities[i].activityEvents` | 包含用户通过此事件点击的活动事件的详细信息。 |
 | **`device`** |
@@ -68,9 +68,9 @@ ht-degree: 0%
 | **`placeContext`** |
 | `placeContext.geo.id` | 随机UUID（必需） |
 | `placeContext.geo.city` | 根据请求的IP地址解析的城市名称。 |
-| `placeContext.geo.countryCode` | 根据请求的IP地址解析的国家代码。 |
+| `placeContext.geo.countryCode` | 已根据请求的IP地址解析国家/地区代码。 |
 | `placeContext.geo.dmaId` | 已根据请求的IP地址解析指定的市场区号。 |
-| `placeContext.geo.postalCode` | 根据请求的IP地址解析邮政编码。 |
+| `placeContext.geo.postalCode` | 根据请求的IP地址解析的邮政编码。 |
 | `placeContext.geo.stateProvince` | 已根据请求的IP地址解析的州或省。 |
 | `placeContext.localTime` | `mboxRequest.offsetTime` + `mboxRequest.currentServerTime` |
 | **`commerce`** | | 仅当请求中存在订单详细信息时设置。 |
