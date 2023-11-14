@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
+source-git-commit: 8cec606849489ef1e8845254117d184d5dc3c70a
 workflow-type: tm+mt
-source-wordcount: '1660'
+source-wordcount: '1678'
 ht-degree: 4%
 
 ---
@@ -15,6 +15,12 @@ ht-degree: 4%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## 版本2.19.1 - 2023年11月10日
+
+**修复和改进功能**
+
+* 修复了从返回建议数组的问题 `sendEvent` 呼叫始终为空。
 
 ## 版本2.19.0 - 2023年11月1日
 
