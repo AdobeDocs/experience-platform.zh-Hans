@@ -2,20 +2,14 @@
 title: 管理 Privacy Service 权限
 description: 了解如何使用 Adobe Admin Console 管理 Adobe Experience Platform Privacy Service 的用户权限。
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
-source-git-commit: 1e164166f58540cbaaa4ad789b10cdfc40fa8a70
-workflow-type: ht
-source-wordcount: '1634'
-ht-degree: 100%
+source-git-commit: 20a737cf36bf08415a15db78599f36659207ace1
+workflow-type: tm+mt
+source-wordcount: '1504'
+ht-degree: 95%
 
 ---
 
 # 管理 Privacy Service 权限
-
->[!IMPORTANT]
->
->Adobe Experience Platform Privacy Service 的权限已得到改进，以提高其粒度级别。这些更改使组织管理员能够授予用户更多访问权限，包含所需的角色和权限级别。技术帐户用户必须更新其 Privacy Service 权限，因为即将进行的更新对其来说是一个突破性的更改。此权限更改将于&#x200B;**2023 年 4 月 13 日**&#x200B;实施。有关解决此问题的指导说明，请参阅[迁移旧 API 凭据](#migrate-tech-accounts)的文档。
->
->技术帐户可供企业客户使用，并会通过 Adobe Developers Console 创建。技术帐户持有者的 Adobe ID 结尾为 `@techacct.adobe.com`。如果您不确定自己是否具有技术帐户，请联系您的组织管理员。
 
 对 [Adobe Experience Platform Privacy Service](./home.md) 的访问权限在 Adobe Admin Console 中通过基于角色的细化权限进行控制。通过创建可为用户组分配权限的产品配置文件，您可以决定谁有权访问 Privacy Service [UI](./ui/overview.md) 和 [API](./api/overview.md) 中的哪些功能。
 
@@ -53,17 +47,17 @@ ht-degree: 100%
 
 要管理 Privacy Service 权限，请登录到 [Admin Console](https://adminconsole.adobe.com/)，并从顶部导航中选择&#x200B;**[!UICONTROL 产品]**。从此处选择 **[!UICONTROL Adobe Experience Platform Privacy Service]**。
 
-![显示 Admin Console 中的 Privacy Service 产品卡的图像](./images/permissions/privacy-service-card.png)
+![突出显示Privacy Service产品卡的Admin Console。](./images/permissions/privacy-service-card.png)
 
 ### 选择或创建产品配置文件
 
 下一个屏幕显示您组织下的 Privacy Service 的可用产品配置文件列表。如果不存在产品配置文件，请选择&#x200B;**[!UICONTROL 新的配置文件]**&#x200B;来创建一个。如果您的组织中有多个角色或用户组需要不同级别的访问权限，则应为每个角色或用户组创建单独的产品配置文件。
 
-![显示 Admin Console 中的 Privacy Service 产品配置文件的图像](./images/permissions/select-or-create-profile.png)
+![突出显示Privacy Service产品配置文件的Admin Console。](./images/permissions/select-or-create-profile.png)
 
 选择某个产品配置文件后，可使用&#x200B;**[!UICONTROL 权限]**&#x200B;选项卡开始为该配置文件[编辑权限](#edit-permissions)，或选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡以开始[将用户分配](#assign-users)给该配置文件。
 
-![显示产品配置文件 Admin Console 的权限选项卡的图像](./images/permissions/users-permissions-tabs.png)
+![产品配置文件Admin Console的“权限”选项卡。](./images/permissions/users-permissions-tabs.png)
 
 ### 编辑配置文件的权限 {#edit-permissions}
 
@@ -71,25 +65,25 @@ ht-degree: 100%
 
 在编辑配置文件的权限时，可用权限将在左列中列出，而配置文件中包含的权限将在右列中列出。选择列出的权限，以在任一列之间移动它们。
 
-![显示可用和所包含的权限列的图像](./images/permissions/edit-permissions.png)
+![可用和包含的权限列。](./images/permissions/edit-permissions.png)
 
 权限会按类别进行组织。要在类别之间切换，请从左侧导航中选择所需的类别。
 
-![显示权限中[!UICONTROL 选择退出销售]部分](./images/permissions/switch-category.png)的图像
+![此 [!UICONTROL 选择退出销售] 部分。](./images/permissions/switch-category.png)
 
 配置完权限后，选择&#x200B;**[!UICONTROL 保存]**。
 
-![显示为产品配置文件保存的权限配置的图像](./images/permissions/save-permissions.png)
+![突出显示了具有保存的产品配置文件的权限配置。](./images/permissions/save-permissions.png)
 
 产品配置文件视图将重新出现，并会反映添加的权限。
 
-![显示为产品配置文件添加的权限的图像](./images/permissions/permissions-added.png)
+![为产品配置文件添加了权限。](./images/permissions/permissions-added.png)
 
 ### 将用户分配给配置文件 {#assign-users}
 
 要将用户分配给产品配置文件（并授予其为该配置文件配置的权限），请选择&#x200B;**[!UICONTROL 用户]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL 添加用户]**。
 
-![显示 Admin Console 中产品配置文件的用户选项卡的图像](./images/permissions/manage-users.png)
+![Admin Console中产品配置文件的用户选项卡。](./images/permissions/manage-users.png)
 
 有关为产品配置文件管理用户的详细信息，请参阅 [Admin Console 文档](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html)。
 
