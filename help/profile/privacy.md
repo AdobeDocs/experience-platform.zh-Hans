@@ -5,9 +5,9 @@ title: 实时客户配置文件中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理实时客户个人资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: f0179bacc55134241bed8de240ee632d0f38e4b6
+source-git-commit: 6d9f8eceeb8fbe550b4e1e7e0964f2fff0cd3c70
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1739'
 ht-degree: 0%
 
 ---
@@ -46,13 +46,14 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 ## 提交请求 {#submit}
 
-以下部分概述了如何针对以下对象发出隐私请求： [!DNL Real-Time Customer Profile] 使用 [!DNL Privacy Service] API或UI。 在阅读这些部分之前，强烈建议您查阅 [PRIVACY SERVICEAPI](../privacy-service/api/getting-started.md) 或 [PRIVACY SERVICEUI](../privacy-service/ui/overview.md) 有关如何提交隐私作业的完整步骤的文档，包括如何在请求负载中正确格式化提交的用户身份数据。
+以下部分概述了如何针对以下对象发出隐私请求： [!DNL Real-Time Customer Profile] 使用 [!DNL Privacy Service] API或UI。 在阅读这些部分之前，您应该回顾或了解 [PRIVACY SERVICEAPI](../privacy-service/api/getting-started.md) 或 [PRIVACY SERVICEUI](../privacy-service/ui/overview.md) 文档。 本文档提供了有关如何提交隐私作业的完整步骤，包括如何在请求负载中正确格式化提交的用户身份数据。
 
 >[!IMPORTANT]
 >
 >Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼接的合并策略的数据。 请参阅以下部分 [合并策略限制](#merge-policy-limitations) 以了解更多信息。
 >
->请注意，隐私请求可能需要多长时间才能完成 **无法** 有保证。 如果更改 [!DNL Profile] 数据当请求仍在处理时，也不能保证这些记录是否也得到了处理。
+>请注意，隐私请求在法规要求内异步处理，完成所需时间可能会有所不同。 如果更改 [!DNL Profile] 数据当请求仍在处理时，并不保证这些传入记录也将在该请求中处理。 只有请求隐私作业时保存在数据湖或配置文件存储中的配置文件才会被删除。 如果您在删除作业期间摄取与删除请求的主题相关的配置文件数据，则无法保证所有配置文件片段都会被删除。
+>您有责任在删除请求时了解Platform或Profile Service中的任何传入数据，因为该数据将插入到您的记录存储中。 您必须谨慎接收已被删除或正在删除的数据。
 
 ### 使用 API
 
