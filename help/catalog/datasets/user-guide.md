@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
+source-git-commit: 859b8432986e7426b8fdcfedf1242c3269eae5f1
 workflow-type: tm+mt
-source-wordcount: '2745'
+source-wordcount: '2769'
 ht-degree: 4%
 
 ---
@@ -264,6 +264,10 @@ ht-degree: 4%
 ![此时将显示选定批次的详细信息。 这包括摄取的记录数、失败的记录数、批次状态、文件大小、摄取的开始和结束时间、数据集和批次ID、组织ID、数据集名称和访问信息。](../images/datasets/user-guide/batch-overview.png)
 
 如果要删除批次，请选择 **[!UICONTROL 删除批次]** 在仪表板的右上角附近。 删除批次也会从最初将批次摄取到的数据集中删除其记录。
+
+>[!NOTE]
+>
+>如果已为配置文件启用并处理了摄取的数据，则删除批次不会从配置文件存储区中删除该数据。
 
 ![数据集详细信息页面上会突出显示删除批次按钮。](../images/datasets/user-guide/delete-batch.png)
 
