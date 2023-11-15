@@ -1,6 +1,6 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform 数据管理帮助
+user-guide-title: Adobe Experience Platform 数据治理帮助
 breadcrumb-title: Data Governance 指南
 user-guide-description: 通过使用标签、营销操作和治理策略，施加数据使用限制。
 feature: Data Governance
