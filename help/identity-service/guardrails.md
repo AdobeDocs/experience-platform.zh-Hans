@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
+source-git-commit: 614fc9af8c774a1f79d0ab52527e32b2381487fa
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1233'
 ht-degree: 1%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 1%
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
 | 图形中的身份数 | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
+| 单个批次摄取的标识链接数 | 50 | 单个批次可能包含异常身份，这些身份会导致不需要的图形合并。 为防止出现这种情况，Identity Service将不会摄取已链接到50个或更多标识的标识。 |
 | XDM记录中的标识数 | 20 | 所需的XDM记录的最小数量为2。 |
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
 | 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
@@ -42,7 +43,7 @@ ht-degree: 1%
 
 | 命名空间 | 验证规则 | 违反规则时的系统行为 |
 | --- | --- | --- |
-| ECID | <ul><li>ECID的标识值必须刚好38个字符。</li><li>ECID的标识值必须仅由数字组成。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过记录。</li></ul> |
+| ECID | <ul><li>ECID的标识值必须刚好38个字符。</li><li>ECID的标识值必须仅由数字组成。</li><li>标识值不能为“null”、“anonymous”、“invalid”或为空字符串（例如：“ ”、“”、“ ”）。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过记录。</li><li>将阻止该身份进行摄取。</li></ul> |
 | 非ECID | 标识值不能超过1024个字符。 | 如果标识值超过1024个字符，则会跳过该记录。 |
 
 ### 身份命名空间摄取
@@ -114,6 +115,8 @@ Adobe如果您的生产沙盒包含：
 
 * [为Experience Platform标签配置身份映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
 * [Experience PlatformWeb SDK中的身份数据](../edge/identity/overview.md#using-identitymap)
+
+
 
 ## 后续步骤
 
