@@ -2,7 +2,7 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，针对Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: ddc4e877b3ae2f8b235faec1c29e71d389195e02
 workflow-type: tm+mt
 source-wordcount: '720'
 ht-degree: 4%
@@ -27,7 +27,7 @@ ht-degree: 4%
 
 在Experience Platform中，创建以下内容：
 
-- [架构](../../../xdm/schema/composition.md). 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解详情](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) 有关如何创建包含特定于Commerce的字段组的架构。
+- [架构](../../../xdm/schema/composition.md). 您创建的架构表示您计划从Adobe Commerce中摄取的数据。 [了解详情](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html) 有关如何创建包含特定于Commerce的字段组的架构。
 - [数据集](../../../catalog/datasets/user-guide.md#create). 数据集是用于数据收集的存储和管理结构。 您可以使用上面创建的架构创建此数据集。
 - [数据流](../../../datastreams/overview.md#create). 允许数据从Adobe Experience Platform流向其他AdobeDX产品的ID。 此ID必须关联到您的特定Adobe Commerce实例中的特定网站。 创建此数据流时，请指定您在上面创建的XDM架构。
 
