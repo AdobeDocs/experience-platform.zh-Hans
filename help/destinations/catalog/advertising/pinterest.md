@@ -2,14 +2,19 @@
 title: pinterest客户列表连接
 description: 从您的客户列表、访问过您的网站的人或已在Pinterest上与您的内容交互的人中创建受众。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 5cef3bbc7f2246a91ecca807825d830f240c8d45
 workflow-type: tm+mt
-source-wordcount: '727'
+source-wordcount: '844'
 ht-degree: 3%
 
 ---
 
 # [!DNL Pinterest Customer List] 连接
+
+>[!IMPORTANT]
+>
+>* 从2023年11月16日开始，您可以在目标目录中并排看到两张Pinterest信息卡。 这是由于升级到Pinterest广告商API，该API用于将数据导出到Pinterest。 现有的Pinterest目标连接器已重命名为 **[!UICONTROL （弃用）Pinterest]** 还有张新卡 **[!UICONTROL （新）Pinterest]** 现在可供您使用。
+>* 使用 **[!UICONTROL （新）Pinterest]** 将目录中的任意营销活动连接到Pinterest。 如果您有任何到以下项的活动数据流： **[!UICONTROL （弃用）Pinterest]** 目标，请阅读 [升级文档](/help/destinations/catalog/advertising/pinterest-upgrade.md) 了解您的措施项以确保不会中断您的营销活动。
 
 ## 概述 {#overview}
 
@@ -71,7 +76,7 @@ ht-degree: 3%
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL 广告商ID]**：您的Pinterest广告商ID。
+* **[!UICONTROL 广告帐户ID]**：您的Pinterest广告商ID。
 
 ### 启用警报 {#enable-alerts}
 
@@ -95,3 +100,15 @@ ht-degree: 3%
 ## 其他资源 {#additional-resources}
 
 请参阅 [pinterest帮助中心页面](https://help.pinterest.com/en/business/article/audience-targeting) 以了解其他信息。
+
++++ 查看更改日志
+
+
+| 发行月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2023 年 11 月 | 功能和文档更新 | Real-Time CDP中的Pinterest目标现在使用v5广告商API。 |
+
+{style="table-layout:auto"}
+
+
++++
