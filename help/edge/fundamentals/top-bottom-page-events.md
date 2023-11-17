@@ -1,7 +1,7 @@
 ---
 title: 使用页面顶部和底部事件
 description: 本文介绍了如何在Web SDK中使用页面顶部和底部事件。
-source-git-commit: 5322156774388a19788529aee554424b2fb5d91b
+source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 2%
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 ## 页面顶部事件示例 {#top-of-page}
 
-以下代码示例展示了页面顶部事件配置，该配置请求个性化，但不会为自动呈现的建议发送显示通知。 显示通知将作为页面底部事件的一部分发送。
+以下代码示例展示了请求个性化但不请求的页面顶部事件配置 [发送显示事件](../personalization/display-events.md#send-sendEvent-calls) 自动渲染的建议。 此 [显示事件](../personalization/display-events.md#send-sendEvent-calls) 将作为页面底部事件的一部分发送。
 
 >[!BEGINTABS]
 
@@ -52,7 +52,7 @@ alloy("sendEvent", {
 |---|---|---|
 | `type` | 必需 | 将此参数设置为 `decisioning.propositionFetch`. 此特殊事件类型告知Adobe Analytics删除此事件。 使用Customer Journey Analytics时，您还可以设置过滤器以删除这些事件。 |
 | `renderDecisions` | 必需 | 将此参数设置为 `true`. 此参数可告知Web SDK呈现边缘网络返回的决策。 |
-| `personalization.sendDisplayEvent` | 必需 | 将此参数设置为 `false`. 这将停止发送显示通知。 |
+| `personalization.sendDisplayEvent` | 必需 | 将此参数设置为 `false`. 这将停止发送显示事件。 |
 
 >[!ENDTABS]
 
@@ -62,7 +62,7 @@ alloy("sendEvent", {
 
 >[!TAB 自动渲染的建议]
 
-以下代码示例展示了页面事件配置的底部，该配置发送建议显示通知，这些建议在页面上自动呈现，但在中已禁止显示通知 [页面顶部](#top-of-page) 事件。
+以下代码示例展示了页面底部事件配置，该配置为已在页面上自动呈现但在中禁止显示事件的建议发送显示事件。 [页面顶部](#top-of-page) 事件。
 
 >[!NOTE]
 >
@@ -79,12 +79,12 @@ alloy("sendEvent", {
 
 | 参数 | 必填/可选 | 描述 |
 |---|---|---|
-| `personalization.includeRenderedPropositions` | 必需 | 将此参数设置为 `true`. 这将启用显示通知的发送，该通知在页面事件顶部被禁止。 |
+| `personalization.includeRenderedPropositions` | 必需 | 将此参数设置为 `true`. 这将允许发送在页面事件顶部禁止显示的显示事件。 |
 | `xdm` | 可选 | 使用此部分可包含页面底部事件所需的所有数据。 |
 
 >[!TAB 手动渲染的建议]
 
-以下代码示例展示了页面底部事件配置，该配置为在页面上手动呈现的建议（即，对于自定义决策范围或表面）发送显示通知。
+以下代码示例展示了页面底部事件配置，该配置为在页面上手动呈现的建议（即，对于自定义决策范围或表面）发送显示事件。
 
 >[!NOTE]
 >
@@ -116,7 +116,7 @@ alloy("sendEvent", {
 
 | 参数 | 必填/可选 | 描述 |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 您必须包含建议 `ID`， `scope`、和 `scopeDetails`. 请参阅有关如何执行操作的文档 [手动渲染个性化](../personalization/rendering-personalization-content.md#manually) 有关如何记录手动呈现内容的显示通知的更多信息。 手动呈现的个性化内容必须包含在页面点击的底部。 |
+| `xdm._experience.decisioning.propositions` | 必需 | 此部分定义手动呈现的建议。 您必须包含建议 `ID`， `scope`、和 `scopeDetails`. 请参阅有关如何执行操作的文档 [手动渲染个性化](../personalization/rendering-personalization-content.md#manually) 有关如何记录手动渲染内容的显示事件的更多信息。 手动呈现的个性化内容必须包含在页面点击的底部。 |
 | `xdm._experience.decisioning.propositionEventType` | 必需 | 将此参数设置为 `display: 1`. |
 | `xdm` | 可选 | 使用此部分可包含页面底部事件所需的所有数据。 |
 
@@ -149,7 +149,7 @@ alloy("sendEvent", {
     }
 });
 
-// Bottom of page, send display notifications for the items that were rendered.
+// Bottom of page, send display events for the items that were rendered.
 // Note: You need to include the viewName in both top and bottom of page so that the
 // correct view is rendered at the top of the page, and the correct view is recorded
 // at the bottom of the page.
@@ -198,7 +198,7 @@ alloy("applyPropositions", {
     viewName: "cart"
 });
 
-// bottom of page, send display notifications for the items that were rendered.
+// bottom of page, send display events for the items that were rendered.
 // Note: You need to include the viewName in both top and bottom of page so that the
 // correct view is rendered at the top of the page, and the correct view is recorded
 // at the bottom of the page.
