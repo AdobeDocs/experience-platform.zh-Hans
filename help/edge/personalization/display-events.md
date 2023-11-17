@@ -1,9 +1,9 @@
 ---
 title: 在Web SDK中管理显示事件
-description: 本文介绍了什么是显示事件以及它们在Web SDK中的工作方式。
-source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
+description: 本文介绍了什么是显示事件以及如何在Web SDK中使用它们。
+source-git-commit: da506cd5de69047e326790d0fae56f76c728e7a5
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
