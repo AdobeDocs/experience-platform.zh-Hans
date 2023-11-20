@@ -1,18 +1,18 @@
 ---
-title: 实时客户个人资料数据的默认护栏
+title: 实时客户个人资料数据和分段的默认护栏
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
+description: 了解用于用户档案数据和分段的性能和系统强制执行的护栏，以确保最佳地使用Real-Time CDP功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
+source-git-commit: 554763cc444da0d1459b22f3f37d22b528b290e1
 workflow-type: tm+mt
-source-wordcount: '2153'
-ht-degree: 4%
+source-wordcount: '2202'
+ht-degree: 2%
 
 ---
 
-# 默认护栏 [!DNL Real-Time Customer Profile] 数据
+# 默认护栏 [!DNL Real-Time Customer Profile] 数据和分段
 
 Adobe Experience Platform允许您以实时客户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种新的配置文件方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
 
@@ -108,16 +108,17 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 {style="table-layout:auto"}
 
-## 分段护栏
+## 分段护栏 {#segmentation-guardrails}
 
 此部分中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 尝试创建其他受众可能会影响系统性能。 |
-| 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 |
-| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 |
+| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 尝试创建其他受众可能会影响系统性能。 详细了解 [创建受众](/help/segmentation/ui/segment-builder.md) 通过区段生成器。 |
+| 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
+| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
+| 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 您不能在一个沙盒中创建超过50个帐户受众。 在一个沙盒中达到50个受众之后， **[!UICONTROL 创建受众]** 在尝试创建新帐户受众时，将禁用控件。 详细了解 [帐户受众](/help/segmentation/ui/account-audiences.md). |
 
 {style="table-layout:auto"}
 
