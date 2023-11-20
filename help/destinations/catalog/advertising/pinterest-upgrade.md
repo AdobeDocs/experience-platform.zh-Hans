@@ -3,14 +3,18 @@ title: pinterest目标迁移到新API。 需要客户操作。
 description: pinterest将弃用Real-Time CDP中Pinterest目标当前使用的v4广告商API。 了解您的操作项目，以便无缝过渡到新API而不会中断您的Pinterest营销活动。
 hide: true
 hidefromtoc: true
-source-git-commit: dbbdb62c996466499b70990decba58ecaf1be901
+source-git-commit: 57097b785da3b516b5ce6670c0a376bd1d0fe479
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '748'
 ht-degree: 0%
 
 ---
 
 # pinterest目标升级到新API。 要求在2023年12月15日之前采取客户行动
+
+>[!IMPORTANT]
+>
+>pinterest如果您的组织设置了数据流，以在2023年11月16日之前(该日期为 **[!UICONTROL （新）Pinterest]** 使用最新Pinterest API的目标已添加到目标目录中。
 
 ## 发生了什么情况？
 
@@ -26,7 +30,7 @@ Adobe将发布一个新的Pinterest目标卡，该卡利用Pinterest API v5，�
 
 ## 我是否需要执行任何操作来保持激活的受众正常运行？
 
-是，在Adobe完成升级并发布新的Pinterest目标后，您需要在Real-Time CDP中使用Pinterest广告商帐户重新验证Pinterest。 请参阅下面的详细说明。
+是，2023年11月16日之后，您需要在Real-Time CDP中使用Pinterest广告商帐户对新的Pinterest目标进行身份验证。 请参阅下面的详细说明。
 
 ### 重新向Pinterest进行身份验证 {#reauthenticate}
 
