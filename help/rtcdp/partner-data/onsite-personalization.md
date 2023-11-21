@@ -1,8 +1,9 @@
 ---
 title: 使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
+feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 77eb2492259cc813db2d6c514d123fa2ad698f67
+source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
 workflow-type: tm+mt
 source-wordcount: '2696'
 ht-degree: 92%

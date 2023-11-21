@@ -2,10 +2,12 @@
 keywords: rtcdp b2b；b2b；帐户；帐户配置文件；帐户配置文件rtcdp；实时客户数据平台；
 title: Real-Time CDP B2B版本中的帐户配置文件
 description: 了解如何通过 Adobe Real-Time Customer Data Platform B2B 版本，可使用帐户配置文件从多个来源统一帐户信息。
+badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '288'
 ht-degree: 7%
 
 ---

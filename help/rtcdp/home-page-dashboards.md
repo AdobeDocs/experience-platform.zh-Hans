@@ -2,8 +2,9 @@
 keywords: 指标概述； rtcdp指标概述
 title: Real-time Customer Data Platform主页和功能板
 description: Adobe Experience Platform 的仪表板、主页和首次用户体验
+feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: 8ea657e379248616d3140bc0a7b0c25a918bc857
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '802'
 ht-degree: 1%

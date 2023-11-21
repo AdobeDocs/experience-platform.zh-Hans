@@ -2,8 +2,9 @@
 keywords: RTCDP；CDP；Real-time Customer Data Platform；实时客户数据平台；real time cdp；cdp；rtcdp
 title: Real-time Customer Data Platform快速入门
 description: 在设置您实施的 Adobe Real-Time Customer Data Platform 时请使用此样板场景作为示例。
+feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '2333'
 ht-degree: 2%

@@ -1,8 +1,9 @@
 ---
 title: 在不依赖第三方Cookie的情况下吸引和赢取新客户
 description: 了解如何不依赖第三方 Cookie，而是通过潜在客户发掘用例吸引和获得新客户。
+feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: 645295958ea6f94a9f9da13517b0fa1d02010b52
+source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
 workflow-type: tm+mt
 source-wordcount: '2077'
 ht-degree: 87%

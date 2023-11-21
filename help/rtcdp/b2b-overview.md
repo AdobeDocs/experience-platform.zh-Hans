@@ -2,10 +2,12 @@
 keywords: RTCDP；CDP；B2B版本；Real-time Customer Data Platform；实时客户数据平台；实时cdp；b2b；cdp；客户人工智能
 title: Real-Time CDP B2B版本概述
 description: Real-Time Customer Data Platform B2B 版本帐户概述
+feature: Get Started, B2B
+badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1093'
 ht-degree: 4%
 
 ---
