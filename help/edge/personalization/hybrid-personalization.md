@@ -3,10 +3,10 @@ title: 使用Web SDK和边缘网络服务器API的混合个性化
 description: 本文演示了如何将Web SDK与服务器API结合使用，在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器API；服务器端；混合实现；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 33e69f34934b505e2ee434bc957f278486a97642
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 3%
+source-wordcount: '846'
+ht-degree: 2%
 
 ---
 
@@ -70,7 +70,7 @@ Cookie用于保留用户标识和群集信息。  使用混合实施时，Web应
 此实施中的示例使用两个不同的数据流：
 
 * 为Analytics配置的数据流。 此数据流用于Web SDK交互。
-* 第二个不具有Analytics配置的数据流。 此数据流用于服务器API请求。
+* 第二个不具有Analytics配置的数据流。 此数据流用于服务器API请求。 您必须使用与Analytics配置的数据流相同的目标配置来配置此数据流。
 
 这样一来，服务器端请求就不会注册任何Analytics事件，而客户端请求会注册。 这将导致Analytics请求被准确计数。
 
