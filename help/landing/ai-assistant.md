@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: e204e1cc70f0c87632f7d259194d34276f6fab72
+source-git-commit: afc61a5809b1dfb59b87731d835cf8a1668f79df
 workflow-type: tm+mt
-source-wordcount: '2571'
+source-wordcount: '2183'
 ht-degree: 0%
 
 ---
@@ -121,6 +121,22 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
+#### 多圈
+
++++选择以查看多圈示例
+
+您可以使用“助理”的多轮功能在体验期间进行更自然的对话。 助理能够回答后续问题，因为上下文可以从以前的交互中推断出来。
+
+在下面的示例中，要求助理列出组织中现有的区段，作为之前有关区段总数的查询的跟进。
+
+![](./images/ai-assistant/multi-turn-one.png)
+
+接下来，助理将收到另一个跟进请求。 此时，助理将通过列出按其各自大小排序的现有区段来进行响应。
+
+![](./images/ai-assistant/multi-turn-two.png)
+
++++
+
 #### 使用自动完成
 
 +++选择以查看自动完成的示例
@@ -174,9 +190,9 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 | 问题类型 | 描述 | 示例 |
 | --- | --- | --- | 
-| 数据族系 | 跨其他Experience Platform对象跟踪一个或多个对象的使用情况 | <ul><li>使用哪些数据集 {SCHEMA_NAME} 纲要？</li><li>使用相同架构摄取了多少数据集？</li><li>激活的区段中使用了哪些数据集？</li><li>列出具有激活区段中所用属性的架构。</li><li>显示激活的目标区段 {DESTINATION_ACCOUNT_NAME} 和超过1000个配置文件。</li><li>显示激活的区段中使用的属性，这些区段在2023年1月之后已修改。</li><li>列出与激活的区段相关且在过去1年中创建的架构。</li></ul> |
-| 分发和聚合 | 有关Experience Platform对象使用情况的基于摘要的问题 | <ul><li>已激活区段的百分比是多少？</li><li>区段中使用了多少字段？</li><li>哪些区段激活到的目标数量最多？</li><li>列出重复的区段。</li><li>向我显示激活到的区段 {DESTINATION_ACCOUNT_NAME} 并按配置文件大小对其进行排名。</li><li>尚未激活但具有100个以上配置文件的区段的百分比是多少。 给我看看他们的名字。</li><li>根据激活区段中的出现情况，列出其中使用的前5个属性。</li></ul> |
-| 对象查找 | 检索或访问Experience Platform对象或其属性。 | <ul><li>哪些数据集没有与其关联的任何架构</li><li>列出用于的属性 {SEGMENT_NAME}？</li><li>给我已启用配置文件但自创建后未修改的架构列表。</li><li>上周修改了哪些区段？</li><li>列出具有相同区段定义的区段及其创建日期。</li><li>哪些数据集启用了配置文件，并且还包括从每个数据集创建了多少区段。</li><li>显示区段定义和修改日期 {SEGMENT_NAME}.</li></ul> |
+| 数据族系 | 跨其他Experience Platform对象跟踪一个或多个对象的使用情况 | <ul><li>使用哪些数据集 {SCHEMA_NAME} 纲要？</li><li>使用相同架构摄取了多少数据集？</li><li>激活的区段中使用了哪些数据集？</li><li>列出具有激活区段中所用属性的架构。</li><li>显示激活的目标区段 {DESTINATION_ACCOUNT_NAME} 和超过1000个配置文件。</li><li>显示激活的区段中使用的属性，这些区段在2023年1月之后已修改。</li><li>通过什么摄取的数据集 {SOURCE_NAME}？</li><li>哪些数据流关联 {DATAFLOW_NAME}</li><li>列出与激活的区段相关且在过去1年中创建的架构。</li></ul> |
+| 分发和聚合 | 有关Experience Platform对象使用情况的基于摘要的问题 | <ul><li>已激活区段的百分比是多少？</li><li>区段中使用了多少字段？</li><li>哪些区段激活到的目标数量最多？</li><li>列出重复的区段。</li><li>向我显示激活到的区段 {DESTINATION_ACCOUNT_NAME} 并按配置文件大小对其进行排名。</li><li>尚未激活但具有100个以上配置文件的区段的百分比是多少。 给我看看他们的名字。</li><li>列出将数据摄取到我的数据集中的3个源连接器。</li><li>根据激活区段中的出现情况，列出其中使用的前5个属性。</li></ul> |
+| 对象查找 | 检索或访问Experience Platform对象或其属性。 | <ul><li>哪些数据集没有与其关联的任何架构</li><li>列出用于的属性 {SEGMENT_NAME}？</li><li>给我已启用配置文件但自创建后未修改的架构列表。</li><li>上周修改了哪些区段？</li><li>列出具有相同区段定义的区段及其创建日期。</li><li>哪些数据集启用了配置文件，并且还包括从每个数据集创建了多少区段。</li><li>哪些源帐户与数据集XYZ关联？</li><li>显示区段定义和修改日期 {SEGMENT_NAME}.</li></ul> |
 
 +++
 
@@ -237,56 +253,56 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 ### 警告和限制
 
 以下部分概述了使用助手时要考虑的当前注意事项和限制。
+<!-- 
+#### Conversational experience
 
-#### 对话体验
-
-在查询助理时，必须考虑有关对话体验的几个细微差别。
+You must consider several nuances regarding the conversational experience when querying the Assistant.
 
 >[!NOTE]
 >
->这些限制是暂时性的，并在整个Alpha过程中不断改进。
+>These limitations are temporary and are being improved upon throughout the course of the alpha.
 
 >[!BEGINTABS]
 
->[!TAB 无法从以前的讨论推断上下文]
+>[!TAB Unable to infer context from prior discussion]
 
-助理目前不能将以前的讨论作为给定问题的背景来引用。 有关示例，请参阅下表：
+The Assistant currently cannot reference prior discussions as context for a given question. See the table below for examples:
 
-| 模棱两可的问题 | 清除问题 | 注意 |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| <ul><li>第一个问题：“什么是区段？”</li><li>跟进问题：“它们是否存在不同类型？”</li></ul> | <ul><li>第一个问题：“什么是区段？”</li><li>跟进问题：“是否有不同类型的 **区段**？”</li></ul> | 助理无法推断“他们”的含义。 |
-| <ul><li>第一个问题：“什么是区段？”</li><li>跟进问题：“你能再说一遍吗？”</li></ul> | <ul><li>第一个问题：“什么是区段？”</li><li>跟进问题：“解释什么是深入区段”</li></ul> | 助理无法智能地根据“更多”引用文档。 |
-| <ul><li>第一个问题：“什么是区段？”</li><li>回答问题：“可以给我举个例子吗？”</li></ul> | <ul><li>第一个问题：“什么是区段？”</li><li>后续问题：“能否提供区段的示例？”</li></ul> | 助手无法推断您想要的示例。 |
-| <ul><li>第一个问题：“什么是批处理客户细分？”</li><li>跟进问题：“它与流式客户细分有何异同？”</li></ul> | <ul><li>第一个问题：“什么是批处理客户细分？”</li><li>后续问题：“能否将流式客户细分与批处理客户细分进行比较？”</li></ul> | 助手无法推断出“it”引用的内容，因此无法比较流区段。 |
-| <ul><li>第一个问题：“我有多少个区段？”</li><li>后续问题：“有多少客户使用Facebook作为目标？”</li></ul> | <ul><li>第一个问题：“我有多少个区段？”</li><li>后续问题：“我有多少区段正在使用Facebook作为目标？”</li></ul> | 助理无法推断“他们”指的是什么。 |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of them?"</li></ul>| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of **segments**?"</li></ul> | The Assistant cannot infer what "them" means. |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you elaborate more?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Explain what a segment is in depth"</li></ul> | The Assistant cannot intelligently reference documentation based on "more". |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of one?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of a segment?"</li></ul> | The Assistant cannot infer what you want an example of.|
+| <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "How does it compare to a streaming segment?"</li></ul> | <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "Can you compare a streaming segment to a batch segment?"</li></ul> | The Assistant cannot infer what "it" is referring to and thus cannot compare the streaming segment. |
+| <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of them use Facebook as a destination?"</li></ul> | <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of the segments that I have are using Facebook as a destination?"</li></ul> | The Assistant is cannot infer what "them" is referring to. |
 
 {style="table-layout:auto"}
 
->[!TAB 无法从页面推断上下文]
+>[!TAB Unable to infer context from a page]
 
-在向助手询问您所在的Experience PlatformUI页面的特定元素时，您必须明确定义问题中的特定元素。
+When asking the Assistant about a particular element of the Experience Platform UI page that you are on, you must clearly define the specific element within your question. 
 
-| 模棱两可的问题 | 清除问题 | 注意 |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| “这有什么用？” | “有什么用？ {PAGE_NAME} 是吗？ | 助理无法推断“this”指的是什么。 您必须提供要查询的特定页面元素。 |
-| “为什么它不省钱？” | “为什么我无法保存一个名为的新沙盒 {NAME}？” | 助理无法推断出“it”所指的是什么，也无法知道您与实体之间存在问题。 |
+| "What does this do?" | "What does {PAGE_NAME} do? | The Assistant cannot infer what "this" is referring to. You must provide the specific page element that you are querying about. |
+| "Why won't it save?" | "Why can't I save a new sandbox called {NAME}?" | The Assistant cannot infer what "it" is referring to and cannot know that you are having issues with an entity. |
 
 {style="table-layout:auto"}
 
-此外，助理只能回答有关错误消息的问题，因为错误记录在Experience League中。
+Furthermore, the Assistant can only answer questions regarding error messages, given that the error is documented in Experience League.
 
->[!TAB 二义性]
+>[!TAB Ambiguity]
 
-您必须清楚地表达您的问题，并在产品、应用程序或域中确定问题范围，因为助理目前无法消除歧义。
+You must phrase your questions clearly and scope them within a product, application, or domain, as the Assistant currently cannot disambiguate questions.
 
-| 模棱两可的问题 | 清除问题 | 注意 |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| “如何创建过滤器？ | 如何以配置文件查询语言创建过滤器？ | 由于各种Experience Platform功能都支持筛选，因此您必须指定筛选所针对的功能。 |
-| “我该如何开始？ | 如何开始使用目标？ | 您必须明确说明您的目标和用例，因为过于宽泛的概念可能会导致通用或不必要的具体答案。 |
+| "How do I create a filter? | How do I create a filter in Profile Query Language? | You must specify the feature that which you are filtering for because a variety of Experience Platform features support filtering. |
+| "How do I get started? | How do I get started using destinations? | You must provide clarity on your goals and use case because overly broad concepts may result in generic or unnecessarily specific answers. |
 
 {style="table-layout:auto"}
 
->[!ENDTABS]
+>[!ENDTABS] -->
 
 #### 限时闲聊
 
