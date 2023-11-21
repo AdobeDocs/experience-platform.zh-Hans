@@ -3,14 +3,14 @@ keywords: 分析；客户人工智能；客户人工智能分析；AAI查询服�
 title: 客户人工智能中的客户管理的密钥。
 description: 了解如何为客户人工智能设置客户管理的密钥。
 exl-id: 12746c5c-094a-4d49-8d3a-7641fe0ec02a
-source-git-commit: a81c3f220203d65ef810a92896edcfc489a0327a
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '173'
-ht-degree: 21%
+source-wordcount: '176'
+ht-degree: 19%
 
 ---
 
-# 客户托管密钥
+# 客户人工智能中的客户管理的密钥
 
 客户人工智能提供了以下选项 [Health Shield](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) 和Privacy &amp; Security Shield客户将利用Azure客户管理的密钥(CMK)应用于您的客户人工智能数据。 设置过程与相同 [Adobe Experience Platform CMK设置](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) 您可以按照其中概述的步骤进行操作。
 

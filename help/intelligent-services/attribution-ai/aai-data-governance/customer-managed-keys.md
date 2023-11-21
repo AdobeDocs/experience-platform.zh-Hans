@@ -3,14 +3,14 @@ keywords: 分析；归因人工智能；归因人工智能分析；AAI查询服�
 title: 客户托管密钥
 description: 了解如何设置客户管理的密钥以进行Attribution AI。
 exl-id: c00bf1a0-cc4c-4a34-83f1-d93829576866
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '168'
-ht-degree: 24%
+source-wordcount: '171'
+ht-degree: 22%
 
 ---
 
-# 客户托管密钥
+# Attribution AI中的客户管理的密钥
 
 Attribution AI提供以下选项 [Health Shield](https://www.adobe.com/cn/trust/compliance/hipaa-ready.html) 和Privacy &amp; Security Shield客户，以使用要应用于Attribution AI数据的Azure客户管理的密钥(CMK)。 设置过程与相同 [Adobe Experience Platform CMK设置](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) 您可以按照其中概述的步骤进行操作。
 

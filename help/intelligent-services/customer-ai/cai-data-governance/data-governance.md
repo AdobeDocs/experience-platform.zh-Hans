@@ -5,14 +5,14 @@ feature: Customer AI
 title: 客户人工智能中的数据治理
 description: Adobe Experience Platform提供了多种服务和工具，可让您自信地控制收集的体验数据，以符合您的业务实践、法律义务和开发过程。
 exl-id: de0836a4-7bc2-4f9c-95a9-c01dd9e2b03f
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '303'
 ht-degree: 11%
 
 ---
 
-# 客户人工智能和数据管理
+# 客户人工智能和客户人工智能中的数据治理
 
 客户人工智能中的任何数据管理相关设置都是从Adobe Experience Platform继承来的。
 
