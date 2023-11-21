@@ -5,7 +5,7 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: afc61a5809b1dfb59b87731d835cf8a1668f79df
+source-git-commit: a0395c4d3514693d3200571496eff47768da52ba
 workflow-type: tm+mt
 source-wordcount: '2183'
 ht-degree: 0%
@@ -77,7 +77,7 @@ A dedicated pop-up interface for Assistant appears at the center of your screen.
 
 From here, you can input your question in the text box and query Assistant for concepts regarding data or audiences. You can also ask questions about your data objects to better understand how you can use them for your respective use case.  -->
 
-### 示例用例：使用助理加快模式创建过程
+### 示例用例：使用助理加快模式创建过程 {#example-use-case}
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 ![助理在返回答案后提供的选项。](./images/ai-assistant/options.png)
 
-#### 跟进问题
+### 跟进问题 {#follow-up-question}
 
 +++选择以查看后续问题的示例
 
@@ -109,7 +109,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-#### 数据使用问题
+### 数据使用问题 {#data-usage-question}
 
 +++选择以查看数据使用问题的示例
 
@@ -121,7 +121,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-#### 多圈
+### 多圈 {#multi-turn}
 
 +++选择以查看多圈示例
 
@@ -137,7 +137,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-#### 使用自动完成
+### 使用自动完成 {#use-auto-complete}
 
 +++选择以查看自动完成的示例
 
@@ -153,7 +153,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-## 范围
+## 范围 {#scope}
 
 助理可以回答有关Real-Time CDP和Experience Platform概念的问题，以及特定于您用户帐户的数据使用问题。 助理还可以根据您所在的UI页面推断上下文。 它可以识别：
 
@@ -163,13 +163,13 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 * 您在屏幕上查看的资源（包括类型和ID）。
 * 鉴于您正在处理特定Experience Platform或Real-Time CDP工作流，因此助理可以推断您的意图。
 
-### 文档
+### 文档 {#documentation}
 
 目前，文档索引涵盖Adobe Experience Platform(Real-Time CDP和Audiences)。 索引会定期更新。
 
 文档检索模型是根据Experience Platform(Real-Time CDP和Audiences)进行培训的。 Adobe Experience Platform范围之外的问题，例如，关于Adobe Target和Creative Cloud套件等其他Adobe产品的问题，无法回答。
 
-### 数据使用
+### 数据使用 {#data-usage}
 
 您还可以向Assistant询问有关以下域中的数据使用情况的问题：
 
@@ -184,7 +184,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 您需要登录沙盒以查询与对象（如架构、数据集、属性、目标和区段）相关的特定数据。
 
-### 示例数据使用问题
+### 示例数据使用问题 {#example-data-usage-questions}
 
 +++选择以查看示例数据使用问题列表
 
@@ -196,11 +196,11 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-## 验证响应
+## 验证响应 {#verify-the-response}
 
 可以使用多种不同的方式验证助理返回响应。
 
-### 文档引用
+### 文档引用 {#citations}
 
 每次响应时，“助理”都会为您提供引文，您可以参考这些引文进行验证或获取更多信息。
 
@@ -208,7 +208,7 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 ![指向“助手”中显示的源的链接。](./images/ai-assistant/show-sources.png)
 
-## 提供反馈
+## 提供反馈 {#feedback}
 
 >[!BEGINSHADEBOX]
 
@@ -246,11 +246,11 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 +++
 
-## 其他信息
+## 其他信息 {#additional-information}
 
 请参阅本节以了解有关Experience Platform助理的其他信息。
 
-### 警告和限制
+### 警告和限制 {#caveats-and-limitations}
 
 以下部分概述了使用助手时要考虑的当前注意事项和限制。
 <!-- 
@@ -318,7 +318,7 @@ You must phrase your questions clearly and scope them within a product, applicat
 | “你知道吗 **x** 语言？” | 助理目前仅支持英语，但可能会回答“是”，因为底层模型能够支持它。 |
 | “你能……” | “助理”可能会回答“是”，即使它不能。 |
 
-### 提示
+### 提示 {#tips}
 
 以下部分概述了使用助理时要考虑的一些提示和解决方法。
 
