@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 2b3c4a7aed804a1059708a698f3ba5edfb007926
 workflow-type: tm+mt
-source-wordcount: '1740'
+source-wordcount: '1739'
 ht-degree: 21%
 
 ---
 
 # 基于属性的访问控制端到端指南
 
-基于属性的访问控制是Adobe Experience Platform的一项功能，它使多品牌和注重隐私的客户能够更灵活地管理用户访问。 可以使用基于对象的属性和角色的策略来授予/拒绝对单个对象（如方案字段和区段）的访问。 此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
+在Adobe Experience Platform上使用基于属性的访问控制，以便为您自己和其他关注隐私的多品牌客户提供更大的灵活性来管理用户访问权限。 可以通过基于对象的属性和角色的策略来授予对单个对象（如方案字段和区段）的访问权限。 此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
 
 此功能允许您使用定义组织或数据使用范围的标签对架构字段、区段等进行分类。 您可以将这些相同的标签应用于Adobe Journey Optimizer中的历程、选件和其他对象。 同时，管理员可以定义有关Experience Data Model (XDM)架构字段的访问策略，并更好地管理哪些用户或组（内部、外部或第三方用户）可以访问这些字段。
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: ded4df4062197fb69b54b71ab19fa1684ce17a58
+source-git-commit: 866e84e5f7fe5df7444c83756a893964dcd3ed3d
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1702'
 ht-degree: 3%
 
 ---
@@ -85,8 +85,8 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Alerts] | [!UICONTROL 管理警报] | 有权读取、创建、编辑和删除警报历史记录。 |
 | [!DNL Computed Attributes] | [!UICONTROL 查看计算属性] | 对计算属性选项卡、库存和详细信息的只读访问权限。 |
 | [!DNL Computed Attributes] | [!UICONTROL 管理计算属性] | 有权读取、创建、删除草稿和停用计算属性。 |
-| [!DNL Data Hygiene] | [!UICONTROL 查看数据卫生] | 数据卫生的只读访问。 |
-| [!DNL Data Hygiene] | [!UICONTROL 管理数据卫生] | 有权读取、创建、编辑和删除数据保健。 |
+| [!DNL Data Lifecycle] | [!UICONTROL 查看数据生命周期] | 数据生命周期的只读访问。 |
+| [!DNL Data Lifecycle] | [!UICONTROL 管理数据生命周期] | 有权读取、创建、编辑和删除数据生命周期。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 有权读取、创建、编辑和删除架构和相关资源。 |
 | [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对架构和相关资源的只读访问权限。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理关系] | 有权读取、创建、编辑和删除架构关系。 |
@@ -123,7 +123,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流。 |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 读取、创建、编辑和发布的权限 [!DNL Segment Match] 动态消息。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中读取、创建、编辑和删除数据的权限 [!DNL Data Science Workspace]. |
-| 数据治理 | [!UICONTROL 应用数据使用标签] | 有权读取、创建和删除使用标签。 |
+| 数据治理 | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
 | 数据治理 | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
 | 数据治理 | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
 | 数据治理 | [!UICONTROL 查看用户活动日志] | 查看录制的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) Platform活动的一部分。 |
