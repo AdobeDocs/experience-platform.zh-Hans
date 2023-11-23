@@ -2,13 +2,13 @@
 title: 根据LiveRamp标识符将受众激活到策划的目标
 type: Tutorial
 description: 了解如何使用LiveRamp RampID将受众从Adobe Experience Platform激活到连接的电视和音频目标以及其他集成。
-source-git-commit: 1eb422572d95426fa8b342dc6aa79fb6125e18a1
+exl-id: 37e5bab9-588f-40b3-b65b-68f1a4b868f1
+source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
 
 ---
-
 
 # 根据LiveRamp标识符将受众激活到策划的目标
 

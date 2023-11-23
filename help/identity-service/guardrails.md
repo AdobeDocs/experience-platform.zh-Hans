@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 614fc9af8c774a1f79d0ab52527e32b2381487fa
+source-git-commit: 614f48e53e981e479645da9cc48c946f3af0db26
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1509'
 ht-degree: 1%
 
 ---
@@ -72,23 +72,6 @@ ht-degree: 1%
 >
 >如果指定要删除的标识链接到图形中的多个其他标识，则连接该标识的链接也将被删除。
 
->[!BEGINSHADEBOX]
-
-**删除逻辑的可视表示形式**
-
-![为容纳最新标识而删除的最旧标识的示例](./images/graph-limits-v3.png)
-
-*图表说明：*
-
-* `t` = 时间戳.
-* 时间戳的值对应于给定身份的回访间隔。 例如， `t1` 表示第一个链接的身份（最早的）和 `t51` 表示最新的链接身份。
-
-在此示例中，在可以使用新标识更新左侧的图形之前，Identity Service会先删除具有最早时间戳的现有标识。 但是，由于最早的标识是设备ID，因此Identity Service会跳过该标识，直到到达删除优先级列表中具有更高类型的命名空间（在本例中为） `ecid-3`. 一旦删除了具有更高删除优先级类型的最旧身份，该图形就会更新为新链接， `ecid-51`.
-
-* 在极少数情况下，两个身份具有相同的时间戳和身份类型，Identity Service会根据这些ID进行排序 [XID](./api/list-native-id.md) 并执行删除。
-
->[!ENDSHADEBOX]
-
 ### 对实施的影响
 
 以下部分概述了删除逻辑对Identity Service、Real-Time Customer Profile和WebSDK的影响。
@@ -116,7 +99,83 @@ Adobe如果您的生产沙盒包含：
 * [为Experience Platform标签配置身份映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
 * [Experience PlatformWeb SDK中的身份数据](../edge/identity/overview.md#using-identitymap)
 
+### 示例场景
 
+#### 示例一：典型的大型图表
+
+*图表说明：*
+
+* `t` = 时间戳.
+* 时间戳的值对应于给定身份的回访间隔。 例如， `t1` 表示第一个链接的身份（最早的）和 `t51` 表示最新的链接身份。
+
+在此示例中，在可以使用新标识更新左侧的图形之前，Identity Service会先删除具有最早时间戳的现有标识。 但是，由于最早的标识是设备ID，因此Identity Service会跳过该标识，直到到达删除优先级列表中具有更高类型的命名空间（在本例中为） `ecid-3`. 一旦删除了具有更高删除优先级类型的最旧身份，该图形就会更新为新链接， `ecid-51`.
+
+* 在极少数情况下，两个身份具有相同的时间戳和身份类型，Identity Service会根据这些ID进行排序 [XID](./api/list-native-id.md) 并执行删除。
+
+![为容纳最新标识而删除的最旧标识的示例](./images/graph-limits-v3.png)
+
+#### 示例二：“graph split”
+
+>[!BEGINTABS]
+
+>[!TAB 传入事件]
+
+*图表说明：*
+
+* 下图假设在 `timestamp=50`，标识图中有50个标识。
+* `(...)` 表示已在图形中链接的其他标识。
+
+在此示例中，ECID：32110被摄取并链接到位于的大型图表 `timestamp=51`，从而超过了50个身份的限制。
+
+![](./images/guardrails/before-split.png)
+
+>[!TAB 删除过程]
+
+因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，将删除ECID：35577。
+
+![](./images/guardrails/during-split.png)
+
+>[!TAB 图形输出]
+
+删除ECID：35577后，链接CRM ID：60013和CRM ID：25212以及现在已删除的ECID：35577的边缘也会被删除。 此删除过程会导致将图形拆分为两个较小的图形。
+
+![](./images/guardrails/after-split.png)
+
+>[!ENDTABS]
+
+#### 示例三：“轴辐式”
+
+>[!BEGINTABS]
+
+>[!TAB 传入事件]
+
+*图表说明：*
+
+* 下图假设在 `timestamp=50`，标识图中有50个标识。
+* `(...)` 表示已在图形中链接的其他标识。
+
+借助删除逻辑，某些“中心”身份也可以被删除。 这些中心身份是指链接到多个单独身份（这些身份在其他情况下将被取消链接）的节点。
+
+在下面的示例中，ECID：21011被摄取并链接到上的图形 `timestamp=51`，从而超过了50个身份的限制。
+
+![](./images/guardrails/hub-and-spoke-start.png)
+
+>[!TAB 删除过程]
+
+因此，Identity Service会删除最早的标识，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
+
+* CRM ID：60013和现已删除的ECID：35577之间的链接，这会导致图形拆分情况。
+* IDFA：32110、IDFA：02383以及表示的其余身份 `(...)`. 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
+
+![](./images/guardrails/hub-and-spoke-process.png)
+
+>[!TAB 图形输出]
+
+最后，删除过程生成两个较小的图。
+
+![](./images/guardrails/hub-and-spoke-result.png)
+
+>[!ENDTABS]
 
 ## 后续步骤
 
