@@ -2,9 +2,9 @@
 title: Platform Web SDK中的第一方设备ID
 description: 了解如何为Adobe Experience Platform Web SDK配置第一方设备ID (FPID)。
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ffcd428f84a4dcbbc95560cb4da5fd1c6d858a28
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1779'
 ht-degree: 2%
 
 ---
@@ -210,6 +210,10 @@ Platform Edge Network仅接受符合 [UUIDv4格式](https://datatracker.ietf.org
 为了帮助说明此过程，请考虑一个涉及以前访问过您网站的客户的情形，以及FPID迁移对Adobe解决方案中识别该客户的方式有何影响。
 
 ![显示客户ID值在迁移到FPID后如何在两次访问之间更新的图表](../assets/identity/tracking/visits.png)
+
+>[!IMPORTANT]
+>
+>此 `ECID` Cookie的优先级始终高于 `FPID`.
 
 | 访问 | 描述 |
 | --- | --- |
