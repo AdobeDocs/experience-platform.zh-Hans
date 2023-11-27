@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 配置数据集以捕获同意和偏好设置数据
 description: 了解如何在Adobe Experience Platform中配置体验数据模型(XDM)架构和数据集以捕获同意和偏好设置数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 3f559601b50293723f601960dbd56fddf0285148
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 1%
@@ -96,8 +96,8 @@ ht-degree: 1%
 
 要使用Adobe标准收集同意数据，您必须具有启用配置文件的架构，该架构包含以下两个字段组：
 
-* [!UICONTROL 同意和偏好设置详细信息]
-* [!UICONTROL Identitymap] （如果使用Platform Web或Mobile SDK发送同意信号，则此为必填字段）
+* [[!UICONTROL 同意和偏好设置详细信息]](../../../../xdm/field-groups/profile/consents.md)
+* [[!UICONTROL Identitymap]](../../../../xdm/field-groups/profile/identitymap.md) （如果使用Platform Web或Mobile SDK发送同意信号，则此为必填字段）
 
 在Platform UI中，选择 **[!UICONTROL 架构]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]** 选项卡以显示现有架构的列表。 从此处，选择 [!DNL Profile]启用要向其添加同意字段的架构。 此部分中的屏幕截图使用中内置的“忠诚会员”架构 [架构创建教程](../../../../xdm/tutorials/create-schema-ui.md) 举个例子。
 

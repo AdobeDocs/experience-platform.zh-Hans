@@ -4,9 +4,9 @@ title: 在Real-time Customer Data Platform中浏览配置文件
 description: Adobe Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户配置文件数据。
 feature: Get Started, Profiles
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: ea785ffa1dfa0f7c684fe536796a4b7409882159
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '557'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,8 @@ Real-Time CDP， B2B版本还允许您浏览 [!UICONTROL 帐户]， [!UICONTROL 
 配置文件详细信息包括对 [!UICONTROL 帐户]， [!UICONTROL 机会]、和 [!UICONTROL 源记录] 客户档案中提供的标准信息之外，该信息还增强了B2B事件和属性。
 
 ![](images/b2b-profile-detail.png)
+
+要详细了解Platform UI中提供的用户档案详细信息，请参阅 [用户档案仪表板文档的详细信息部分](../../dashboards/guides/profiles.md#browse-profiles).
 
 ### “帐户”选项卡
 

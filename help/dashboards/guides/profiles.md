@@ -4,10 +4,10 @@ title: 配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: 57f4b365f510935f75f3ef92d71d66fe255269b4
 workflow-type: tm+mt
-source-wordcount: '4313'
-ht-degree: 11%
+source-wordcount: '4900'
+ht-degree: 10%
 
 ---
 
@@ -69,7 +69,81 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 此 [!UICONTROL 浏览] 选项卡允许您搜索和查看摄取到组织中的只读配置文件。 从此处，您可以看到属于用户档案的重要信息，其中包含有关其偏好、过去事件、交互和受众的信息。
 
-要详细了解Platform UI中提供的配置文件查看功能，请参阅关于的文档 [在Adobe Real-time Customer Data Platform中浏览配置文件](../../rtcdp/profile/profile-browse.md).
+## 配置文件详情 {#profile-details}
+
+打开 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 工作区，选择 [!UICONTROL 配置文件ID] 从名单上。
+
+![突出显示了配置文件ID的“配置文件浏览”选项卡。](../images/profiles/profile-id.png)
+
+此 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 工作区会显示几个预配置的构件，这些构件传达特定于特定用户档案的信息。 此信息使您能够一眼就了解用户档案的关键属性。 您还可以自定义 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 通过创建您自己的小组件来工作区。 请参阅以下部分 [如何添加构件](#add-widgets) 以了解更多详细信息。
+
+![此 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 工作区与 [!UICONTROL 详细信息] 制表符突出显示。](../images/profiles/profile-details-workspace.png)
+
+### 配置文件详细信息小组件 {#widgets}
+
+预配置的配置文件详细信息小组件如下所示：
+
+#### 客户配置文件 {#customer-profile}
+
+此 [!UICONTROL 客户配置文件] 小组件显示与配置文件关联的用户的名字和姓氏，以及他们的 [!UICONTROL 配置文件ID]. 用户档案ID是与身份类型关联的自动生成的标识符，表示用户档案。 要了解有关身份和身份命名空间的更多信息，请参阅 [身份概述](../../rtcdp/profile/identities-overview.md).
+
+![客户配置文件构件。](../images/profiles/customer-profile.png)
+
+#### 基本属性 {#basic-attributes}
+
+此 [!UICONTROL 基本属性] 小组件显示用于定义单个配置文件的最常用属性。
+
+![基本属性小组件。](../images/profiles/basic-attributes.png)
+
+#### 链接的身份 {#linked-identities}
+
+此 [!UICONTROL 链接的身份] 构件显示与配置文件关联的任何其他身份。
+
+要更深入地查看配置文件的身份详细信息，请导航到 [!UICONTROL 身份] 工作区，选择 **[!UICONTROL 查看身份图]**.
+
+![关联的身份构件。](../images/profiles/linked-identities.png)
+
+#### 渠道首选项 {#channel-preferences}
+
+此 [!UICONTROL 渠道首选项] 小组件显示用户同意接收其通信的通信渠道。 复选标记表示用户已同意从其接收通信的每个频道。
+
+<!-- image needs a blue tick added below -->
+
+![渠道首选项构件。](../images/profiles/channel-preferences.png)
+
+客户同意和联系人偏好设置是复杂的主题。 要了解如何在Experience Platform中收集、处理和过滤同意和上下文首选项，建议您阅读以下文档：
+
+* 要了解所需的架构字段组，请执行以下操作 [根据Adobe标准收集同意数据](../../landing/governance-privacy-security/consent/adobe/overview.md)，请参阅有关这些启用配置文件的架构字段组的文档。
+   * [[!UICONTROL 同意和偏好设置详细信息]](../../xdm/field-groups/profile/consents.md)
+   * [[!UICONTROL Identitymap]](../../xdm/field-groups/profile/identitymap.md) （如果使用Platform Web或Mobile SDK发送同意信号，则此为必填字段）
+* 要了解如何使用Adobe标准处理客户同意和偏好设置数据，请参阅 [Experience Platform中的同意处理](../../landing/governance-privacy-security/consent/adobe/overview.md).
+* 组合的数据治理和同意策略可用于根据用户档案的同意偏好和您建立的组织规则筛选用户档案以进行分段。 要了解如何创建和使用这些组合策略，请参阅上的用户指南 [管理数据使用策略](../../data-governance/policies/user-guide.md#combine-policies).
+
+### 添加构件 {#add-widgets}
+
+将自定义构件添加到您的 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 工作区，选择 **[!UICONTROL 自定义配置文件详细信息]**.
+
+![配置文件详细信息工作区 [!UICONTROL 自定义配置文件详细信息] 突出显示。](../images/profiles/customize-profile-details.png)
+
+您现在可以通过调整小部件的大小或重新定位来编辑工作区。 选择 **[!UICONTROL 添加构件]** 创建具有自定义属性的构件。
+
+![配置文件 [!UICONTROL 详细信息] 工作区，使用 [!UICONTROL 添加构件] 突出显示。](../images/profiles/add-widget.png)
+
+将显示构件创建者。 在中输入小组件的描述性名称 [!UICONTROL 卡片标题] 文本字段并选择 **[!UICONTROL 添加属性]**.
+
+![带有以下内容的构件创建器画布 [!UICONTROL 卡片标题] 字段和 [!UICONTROL 添加属性] 突出显示。](../images/profiles/widget-creator.png)
+
+此时将显示一个对话框，其中包含用户档案合并架构的可视化图表。 使用搜索字段或滚动以查找要用小组件报告的属性。 选中要包含的任何属性的复选框。 选择 **[!UICONTROL 选择]** 以继续创建工作流。
+
+>[!TIP]
+>
+>顶级复选框的选择包括任何子元素。
+
+![包含忠诚度属性复选框和的合并架构图 [!UICONTROL 选择] 突出显示。](../images/profiles/union-schema-attributes.png)
+
+画布上将显示已完成小部件的预览。 在您对所选属性感到满意后，选择 **[!UICONTROL 保存]** 以确认您的选择并返回至 [!UICONTROL 配置文件] [!UICONTROL 详细信息] 工作区。 新创建的构件现在可在工作区中看到。
+
+![带有“保存”的构件创建器画布突出显示，并显示构件预览。](../images/profiles/widget-preview.png)
 
 ## 合并策略 {#merge-policies}
 
