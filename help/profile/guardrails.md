@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解用于用户档案数据和分段的性能和系统强制执行的护栏，以确保最佳地使用Real-Time CDP功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 554763cc444da0d1459b22f3f37d22b528b290e1
+source-git-commit: 1bc770ad078f2db3199f799403d96a676b73f4de
 workflow-type: tm+mt
-source-wordcount: '2202'
+source-wordcount: '2228'
 ht-degree: 2%
 
 ---
@@ -119,6 +119,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
 | 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 您不能在一个沙盒中创建超过50个帐户受众。 在一个沙盒中达到50个受众之后， **[!UICONTROL 创建受众]** 在尝试创建新帐户受众时，将禁用控件。 详细了解 [帐户受众](/help/segmentation/ui/account-audiences.md). |
+| 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中不能有超过10个已发布的合成。 详细了解 [UI指南中的受众构成](/help/segmentation/ui/audience-composition.md). |
 
 {style="table-layout:auto"}
 
