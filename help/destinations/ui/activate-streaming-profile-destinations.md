@@ -1,13 +1,13 @@
 ---
-keywords: 激活配置文件目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
 title: 将受众激活到流配置文件导出目标
 type: Tutorial
 description: 了解如何通过将受众发送到基于个人资料的流目标来激活您在Adobe Experience Platform中的受众数据。
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
 workflow-type: tm+mt
-source-wordcount: '760'
-ht-degree: 5%
+source-wordcount: '761'
+ht-degree: 0%
 
 ---
 
@@ -23,7 +23,13 @@ ht-degree: 5%
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform基于流配置文件的目标(如Amazon Kinesis)中激活受众数据所需的工作流。
+本文介绍了在Adobe Experience Platform中将受众数据激活到基于个人资料的流目标(也称为 [企业目标](/help/destinations/destination-types.md#streaming-profile-export))。
+
+本文适用于以下三个目标：
+
+* [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
+* [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [HTTP API目标](/help/destinations/catalog/streaming/http-destination.md).
 
 ## 先决条件 {#prerequisites}
 
@@ -83,7 +89,15 @@ ht-degree: 5%
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+[同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 当前不支持在导出到三个企业目标(Amazon Kinesis、Azure事件中心和HTTP API)时这样做。
+
+这意味着用户档案未同意成为目标 *包括* ，以访问这三个目标。
+
+<!--
+
+If your organization purchased **Adobe Healthcare Shield** or **Adobe Privacy & Security Shield**, select **[!UICONTROL View applicable consent policies]** to see which consent policies are applied and how many profiles are included in the activation as a result of them. Read about [consent policy evaluation](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) for more information.
+
+-->
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
