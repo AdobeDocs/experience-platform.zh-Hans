@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7c83a946ca30f1bf016cc42245d7d52f2c034f18
+source-git-commit: a0616410da5cef51fdac928ecfb02f0b05a4cdb1
 workflow-type: tm+mt
-source-wordcount: '1437'
+source-wordcount: '1498'
 ht-degree: 1%
 
 ---
@@ -59,91 +59,91 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 Experience Platform支持从第三方广告系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [Google Ads](connectors/advertising/ads.md)
+- [Google Ads](connectors/advertising/ads.md) [!BADGE 批次]{type=Neutral}
 
 ### Analytics {#analytics}
 
 Experience Platform支持从第三方Analytics平台引入数据。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md)
-- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md)
-- [[!DNL RainFocus]](connectors/analytics/rainfocus.md)
+- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) [!BADGE 流]{type=Caution}
+- [[!DNL RainFocus]](connectors/analytics/rainfocus.md) [!BADGE 流]{type=Caution}
 
 ### 云存储 {#cloud-storage}
 
 云存储源可以将您自己的数据导入Platform，而无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md)
-- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md)
-- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md)
-- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md)
-- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md)
-- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md)
-- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md)
-- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md)
-- [[!DNL FTP]](connectors/cloud-storage/ftp.md)
-- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md)
-- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md)
-- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md)
-- [[!DNL SFTP]](connectors/cloud-storage/sftp.md)
+- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE 流]{type=Caution}
+- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE 流]{type=Caution}
+- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL FTP]](connectors/cloud-storage/ftp.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) [!BADGE 流]{type=Caution}
+- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL SFTP]](connectors/cloud-storage/sftp.md) [!BADGE 批次]{type=Neutral}
 
 ### 同意和偏好设置 {#consent}
 
 Experience Platform支持从第三方同意和偏好设置管理平台中摄取数据。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
+- [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) [!BADGE 批次]{type=Neutral}
 
 ### 客户关系管理(CRM) {#customer-relationship-management}
 
 CRM系统提供的数据可帮助建立客户关系，进而创建忠诚度并促进客户维系。 Experience Platform支持从提取CRM数据 [!DNL Microsoft Dynamics 365] 和 [!DNL Salesforce]. 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md)
-- [[!DNL Salesforce]](connectors/crm/salesforce.md)
-- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md)
-- [[!DNL Veeva CRM]](connectors/crm/veeva.md)
-- [[!DNL Zoho CRM]](connectors/crm/zoho.md)
+- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Veeva CRM]](connectors/crm/veeva.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Zoho CRM]](connectors/crm/zoho.md) [!BADGE 批次]{type=Neutral}
 
 ### 客户成功 {#customer-success}
 
 Experience Platform支持从第三方客户成功应用程序中摄取数据。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md)
-- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md)
-- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md)
-- [[!DNL Zendesk]](connectors/customer-success/zendesk.md)
+- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Zendesk]](connectors/customer-success/zendesk.md) [!BADGE 批次]{type=Neutral}
 
 ### 数据库 {#database}
 
 Experience Platform支持从第三方数据库引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Amazon Redshift]](connectors/databases/redshift.md)
-- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md)
-- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md)
-- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md)
-- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md)
-- [[!DNL Azure Table Storage]](connectors/databases/ats.md)
-- [[!DNL Couchbase]](connectors/databases/couchbase.md)
-- [[!DNL Google BigQuery]](connectors/databases/bigquery.md)
-- [[!DNL GreenPlum]](connectors/databases/greenplum.md)
-- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md)
-- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md)
-- [[!DNL MariaDB]](connectors/databases/mariadb.md)
-- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md)
-- [[!DNL MySQL]](connectors/databases/mysql.md)
-- [[!DNL Oracle]](connectors/databases/oracle.md)
-- [[!DNL Phoenix]](connectors/databases/phoenix.md)
-- [[!DNL PostgreSQL]](connectors/databases/postgres.md)
-- [[!DNL Snowflake (Streaming)]](connectors/databases//snowflake-streaming.md)
-- [[!DNL Snowflake]](connectors/databases/snowflake.md)
-- [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md)
+- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL MariaDB]](connectors/databases/mariadb.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL MySQL]](connectors/databases/mysql.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Phoenix]](connectors/databases/phoenix.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE 流]{type=Caution}
+- [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE 批次]{type=Neutral}
 
 ### 电子商务 {#ecommerce}
 
 Experience Platform支持从第三方电子商务系统中引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md)
-- [[!DNL Shopify]](connectors/ecommerce/shopify.md)
-- [[!DNL Shopify (Streaming)]](connectors/ecommerce/shopify-streaming.md)
+- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Shopify]](connectors/ecommerce/shopify.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Shopify]](connectors/ecommerce/shopify-streaming.md) [!BADGE 流]{type=Caution}
 
 ### 本地系统 {#local-system}
 
@@ -155,12 +155,12 @@ Experience Platform支持从本地系统中摄取数据。 有关特定源连接
 
 Experience Platform为从第三方营销自动化系统中引入数据提供支持。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md)
-- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md)
-- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md)
-- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
-- [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md)
-- [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
+- [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE 流]{type=Caution}
+- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) [!BADGE 流]{type=Caution}
+- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE 批次]{type=Neutral}
 <!-- 
 - [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
 -->
@@ -169,21 +169,21 @@ Experience Platform为从第三方营销自动化系统中引入数据提供支�
 
 Experience Platform支持从第三方支付系统中提取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL PayPal]](connectors/payments/paypal.md)
-- [[!DNL Square]](connectors/payments/square.md)
+- [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Square]](connectors/payments/square.md) [!BADGE 批次]{type=Neutral}
 
 ### 流 {#streaming}
 
 Experience Platform支持从流源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL HTTP API]](connectors/streaming/http.md)
+- [[!DNL HTTP API]](connectors/streaming/http.md) [!BADGE 流]{type=Caution}
 
 ### 协议 {#protocols}
 
 Experience Platform支持从第三方协议系统中引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Generic OData]](connectors/protocols/odata.md)
-- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md)
+- [[!DNL Generic OData]](connectors/protocols/odata.md) [!BADGE 批次]{type=Neutral}
+- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) [!BADGE 批次]{type=Neutral}
 
 ## 数据摄取中源的访问控制
 
