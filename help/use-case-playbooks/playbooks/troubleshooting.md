@@ -4,12 +4,13 @@ title: 解决战术手册问题
 description: 了解战术手册的常见问题以及如何解决这些问题
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: 2604ce26-bcf9-46e1-bc10-30252a113159
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 5226a3f9a6da22c2c199f8efffd71360af034dcc
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 100%
 
 ---
+
 
 # (Beta) 故障排除和已知限制
 
