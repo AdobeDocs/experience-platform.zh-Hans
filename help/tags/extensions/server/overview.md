@@ -2,9 +2,9 @@
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: f63d171354e15a23c29c1e579ce816750dea3c97
+source-git-commit: af3353000e5545e6d2dc729d6f0bb91a00683b04
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '189'
 ht-degree: 20%
 
 ---
@@ -48,5 +48,5 @@ ht-degree: 20%
 * [Snowflake](./snowflake/overview.md)
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Twitter]](./twitter/overview.md)
-* [[!DNL Tiktok] Web事件API](https://exchange.adobe.com/apps/ec/109834)*
+* [[!DNL Tiktok] Web事件API](./tiktok/overview.md)
 * [[!DNL Zendesk] 事件API](./zendesk/overview.md)

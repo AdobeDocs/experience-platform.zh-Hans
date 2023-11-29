@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: f63d171354e15a23c29c1e579ce816750dea3c97
+source-git-commit: 7b957aeff6f60665841013619d70ee962fc4c449
 workflow-type: tm+mt
-source-wordcount: '1033'
-ht-degree: 31%
+source-wordcount: '1030'
+ht-degree: 32%
 
 ---
 
@@ -248,7 +248,8 @@ ht-degree: 31%
          * [概述](./extensions/server/splunk/overview.md)
       * [!DNL Twitter] {#twitter}
          * [概述](./extensions/server/twitter/overview.md)
-      * [[!DNL Tiktok] Web事件API](https://exchange.adobe.com/apps/ec/109834)
+      * [!DNL Tiktok] Web事件API {#tiktok}
+         * [概述](./extensions/server/tiktok/overview.md)
       * [!DNL Zendesk] 事件API {#zendesk}
          * [概述](./extensions/server/zendesk/overview.md)
 * 扩展开发 {#extension-dev}
