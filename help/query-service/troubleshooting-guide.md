@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '4309'
 ht-degree: 1%
@@ -105,7 +105,7 @@ SELECT * FROM customers LIMIT 0;
 
 ![平面化数据的XDM架构和表格视图。 嵌套数据集的列名称在UI中突出显示。](./images/troubleshooting/column-name.png)
 
-有关以下内容的完整指导，请参阅文档： [如何使用嵌套数据结构](./essential-concepts/nested-data-structures.md) 使用查询编辑器或第三方客户端。
+有关以下内容的完整指导，请参阅文档： [如何使用嵌套数据结构](./key-concepts/nested-data-structures.md) 使用查询编辑器或第三方客户端。
 +++
 
 ### 如何加快对包含数组的数据集的查询速度？
@@ -142,7 +142,7 @@ SELECT * FROM customers LIMIT 0;
 
 +++回答匿名块功能允许您链接一个或多个按顺序执行的SQL语句。 它们还允许使用例外处理选项。
 
-请参阅 [匿名块文档](./essential-concepts/anonymous-block.md) 以了解更多详细信息。
+请参阅 [匿名块文档](./key-concepts/anonymous-block.md) 以了解更多详细信息。
 +++
 
 ### 如何在查询服务中实施自定义归因？
@@ -226,7 +226,7 @@ AS SELECT '1' as _id,
 
 ### 如何快速处理每天进入系统的新数据？
 
-+++回答 [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) 子句可用于基于快照ID增量读取表中的数据。 这非常适用于与 [增量加载](./essential-concepts/incremental-load.md) 设计模式，仅处理自上次加载执行以来创建或修改的数据集中的信息。 因此，它提高了处理效率，并且可用于流式和批量数据处理。
++++回答 [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) 子句可用于基于快照ID增量读取表中的数据。 这非常适用于与 [增量加载](./key-concepts/incremental-load.md) 设计模式，仅处理自上次加载执行以来创建或修改的数据集中的信息。 因此，它提高了处理效率，并且可用于流式和批量数据处理。
 +++
 
 ### 为什么在配置文件UI中显示的数字与通过配置文件导出数据集计算的数字之间存在差异？

@@ -2,7 +2,7 @@
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '734'
 ht-degree: 10%
@@ -24,7 +24,7 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->在Adobe Experience Platform UI中，仅在内联模板的父级支持参数化查询。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，不能具有动态参数。 请参阅 [内联模板文档](../essential-concepts/inline-templates.md) 了解更多信息。
+>在Adobe Experience Platform UI中，仅在内联模板的父级支持参数化查询。 这意味着参数化查询仅在原始模板中使用时才有效。 子模板必须是静态模板，不能具有动态参数。 请参阅 [内联模板文档](../key-concepts/inline-templates.md) 了解更多信息。
 
 ## 参数化查询语法 {#syntax}
 

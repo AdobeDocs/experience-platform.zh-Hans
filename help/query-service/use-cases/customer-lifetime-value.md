@@ -2,7 +2,7 @@
 title: 跟踪数据信号以生成客户存留期值
 description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '1269'
 ht-degree: 0%
@@ -91,7 +91,7 @@ ht-degree: 0%
 
 ## 查看从营销活动返回的分析数据 {#post-campaign-data-analysis}
 
-现在，源中的数据可以 [增量处理](../essential-concepts/incremental-load.md) 作为对加速数据存储中数据模型的计划刷新的一部分。 客户的任何响应事件都可以在发生时或批量摄取到Adobe Experience Platform中。 您的数据模型可能会刷新一次，或每天刷新多次，具体取决于您的设置或源连接器。 请参阅 [批量摄取API概述](../../ingestion/batch-ingestion/api-overview.md) 或 [流式摄取概述](../../ingestion/streaming-ingestion/overview.md) 以了解更多信息。
+现在，源中的数据可以 [增量处理](../key-concepts/incremental-load.md) 作为对加速数据存储中数据模型的计划刷新的一部分。 客户的任何响应事件都可以在发生时或批量摄取到Adobe Experience Platform中。 您的数据模型可能会刷新一次，或每天刷新多次，具体取决于您的设置或源连接器。 请参阅 [批量摄取API概述](../../ingestion/batch-ingestion/api-overview.md) 或 [流式摄取概述](../../ingestion/streaming-ingestion/overview.md) 以了解更多信息。
 
 数据模型更新后，您的自定义仪表板小组件会提供有意义的信号，以便您衡量和可视化客户存留期值。
 

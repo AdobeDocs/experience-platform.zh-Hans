@@ -2,7 +2,7 @@
 title: 探索性数据分析
 description: 了解如何使用Data Distiller浏览和分析Python笔记本中的数据。
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
-source-git-commit: f9c49dbcc1820cf70c85368114c2a1ab30b87807
+source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
 workflow-type: tm+mt
 source-wordcount: '808'
 ht-degree: 15%
@@ -42,7 +42,7 @@ df
 
 ## 创建大型数据集的采样版本 {#create-dataset-sample}
 
-如果要查询的数据集非常大，或者如果不需要探索查询的准确结果，请使用 [取样功能](../../essential-concepts/dataset-samples.md) 可用于Data Distiller查询。 此过程分为两步：
+如果要查询的数据集非常大，或者如果不需要探索查询的准确结果，请使用 [取样功能](../../key-concepts/dataset-samples.md) 可用于Data Distiller查询。 此过程分为两步：
 
 - 首先， **分析** 用于创建具有指定采样率的采样版本的数据集
 - 接下来，查询数据集的采样版本。 根据应用于采样数据集的函数，您可能希望将输出扩展到整个数据集的数字

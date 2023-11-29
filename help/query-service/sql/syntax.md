@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 95d1aec09477480532d4df1bdc7488d3f5a39394
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '4134'
 ht-degree: 2%
@@ -765,7 +765,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 (1 row)
 ```
 
-然后，您可以通过引用 `Statistics ID`. 下面的示例语句允许您在与 `Statistics ID` 或别名。 要了解有关此功能的更多信息，请参阅 [别名文档](../essential-concepts/dataset-statistics.md#alias-name).
+然后，您可以通过引用 `Statistics ID`. 下面的示例语句允许您在与 `Statistics ID` 或别名。 要了解有关此功能的更多信息，请参阅 [别名文档](../key-concepts/dataset-statistics.md#alias-name).
 
 ```sql
 -- This statement gets the statistics generated for `alias adc_geometric_stats_1`.
@@ -788,7 +788,7 @@ demo_table_stats_1    |  demo_table   |    (*)    |       ((age > 25))          
 age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
 ```
 
-请参阅 [数据集统计文档](../essential-concepts/dataset-statistics.md) 以了解更多信息。
+请参阅 [数据集统计文档](../key-concepts/dataset-statistics.md) 以了解更多信息。
 
 #### 表示例 {#tablesample}
 
@@ -806,7 +806,7 @@ ANALYZE TABLE tableName TABLESAMPLE SAMPLERATE 5;
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-01-01')) TABLESAMPLE SAMPLERATE 5:
 ```
 
-请参阅 [数据集示例文档](../essential-concepts/dataset-samples.md) 以了解更多信息。
+请参阅 [数据集示例文档](../key-concepts/dataset-samples.md) 以了解更多信息。
 
 ### 开始
 

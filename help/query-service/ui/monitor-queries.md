@@ -2,7 +2,7 @@
 title: 监视计划的查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: fa871529a4136263399bad3200ee3888049d06a5
+source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
 workflow-type: tm+mt
 source-wordcount: '1818'
 ht-degree: 1%
@@ -161,7 +161,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 >
 >使用DROP命令的匿名块的运行详细信息将 **非** 将作为单独的子查询报告。 CTAS查询、ITAS查询和用作匿名块子查询的COPY语句有单独的运行详细信息可用。 当前不支持DROP命令的运行详细信息。
 
-匿名块通过使用 `$$` 查询前的前缀。 要了解有关查询服务中匿名块的更多信息，请参见 [匿名块文档](../essential-concepts/anonymous-block.md).
+匿名块通过使用 `$$` 查询前的前缀。 要了解有关查询服务中匿名块的更多信息，请参见 [匿名块文档](../key-concepts/anonymous-block.md).
 
 匿名块子查询的运行状态左侧有选项卡。 选择一个选项卡以显示运行详细信息。
 

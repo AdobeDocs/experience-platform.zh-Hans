@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '310'
-ht-degree: 20%
+ht-degree: 21%
 
 ---
 
@@ -52,6 +52,15 @@ ht-degree: 20%
    - [从Analytics数据返回和使用促销变量](use-cases/merchandising-variables.md)
    - [查看访客的汇总报表](use-cases/roll-up-report-of-a-visitor.md)
    - [网站和移动分析洞察](use-cases/analytics-insights.md)
+- 重要概念 {#key-concepts}
+   - [使用嵌套数据结构](key-concepts/nested-data-structures.md)
+   - [拼合嵌套数据结构](key-concepts/flatten-nested-data.md)
+   - [匿名块](key-concepts/anonymous-block.md)
+   - [内联模板](key-concepts/inline-templates.md)
+   - [增量加载](key-concepts/incremental-load.md)
+   - [重复数据删除](key-concepts/deduplication.md)
+   - [数据集样本](key-concepts/dataset-samples.md)
+   - [数据集统计信息计算](key-concepts/dataset-statistics.md)
 - 将客户端连接到查询服务 {#clients}
    - [客户端连接概述](clients/overview.md)
    - [SSL模式](./clients/ssl-modes.md)
@@ -91,15 +100,6 @@ ht-degree: 20%
 - 最佳实践 {#best-practices}
    - [查询执行](best-practices/writing-queries.md)
    - [数据资产组织](./best-practices/organize-data-assets.md)
-- 基本概念 {#essential-concepts}
-   - [使用嵌套数据结构](essential-concepts/nested-data-structures.md)
-   - [拼合嵌套数据结构](essential-concepts/flatten-nested-data.md)
-   - [匿名块](essential-concepts/anonymous-block.md)
-   - [内联模板](essential-concepts/inline-templates.md)
-   - [增量加载](essential-concepts/incremental-load.md)
-   - [重复数据删除](essential-concepts/deduplication.md)
-   - [数据集样本](essential-concepts/dataset-samples.md)
-   - [数据集统计信息计算](essential-concepts/dataset-statistics.md)
 - SQL引用 {#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
