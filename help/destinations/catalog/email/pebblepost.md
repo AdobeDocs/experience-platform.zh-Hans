@@ -3,9 +3,9 @@ keywords: PebblePost；pebblepost；PebblePost程序化直邮；pebblepost程序
 title: PebblePost扩展
 description: PebblePost扩展是Adobe Experience Platform中的电子邮件目标。 有关扩展功能的更多信息，请参阅Adobe交换上的扩展页面。
 exl-id: 2d0308db-9d75-4cd1-97de-70ce3837369d
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: baa0ea072c80e141974bb595dfff149aa5de6270
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '453'
 ht-degree: 4%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL PebblePost's Programmatic Direct Mail®] 解决方案可帮助数字营销人员将在线兴趣和意图与可转化的线下、有形媒体联系起来。 营销人员现在可以利用他们在Adobe中创建的自定义数据受众，通过相关、持久的、家庭媒体印象来定位消费者。 根据响应路径活动和现场转化实时分析性能。
+[!DNL PebblePost's Programmatic Direct Mail] 解决方案可帮助数字营销人员将在线兴趣和意图与可转化的线下、有形媒体联系起来。 营销人员现在可以利用他们在Adobe中创建的自定义数据受众，通过相关、持久的、家庭媒体印象来定位消费者。 根据响应路径活动和现场转化实时分析性能。
 
-[!DNL PebblePost] 是Adobe Experience Platform中的电子邮件扩展。 有关PebblePost的更多信息，请阅读 [集成博客帖子](https://blog.adobe.com/en/publish/2017/11/16/pebblepost-builds-integration-launch-adobe.html#gs.7lejiq).
+[!DNL PebblePost] 是Adobe Experience Platform中的电子邮件扩展。
 
 此目标是标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅 [标记扩展概述](../launch-extensions/overview.md).
 
