@@ -4,7 +4,7 @@ title: Real-time Customer Data Platform中的隐私
 description: Adobe Real-time Customer Data Platform允许您简化使数据操作符合隐私法规的过程。
 feature: Get Started, Privacy
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2a0ebe1e92ea21ff45051096d5a6969839c2f947
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ## IAB TCF 2.0支持
 
-[!DNL Real-Time CDP] 构建于Adobe Experience Platform之上，它是已注册的 [供应商列表](https://iabeurope.eu/vendor-list-tcf-v2-0/) 对于 [!DNL Transparency & Consent Framework (TCF)]，如 [!DNL Interactive Advertising Bureau (IAB)]. 为符合TCF 2.0要求，Platform允许您收集详细的客户同意数据，并将其集成到存储的客户配置文件中。 然后，可根据特定用户档案的用例将这些同意数据纳入导出受众区段中是否包含这些用户档案。
+[!DNL Real-Time CDP] 构建于Adobe Experience Platform之上，它是已注册的 [供应商列表](https://iabeurope.eu/vendor-list-tcf/) 对于 [!DNL Transparency & Consent Framework (TCF)]，如 [!DNL Interactive Advertising Bureau (IAB)]. 为符合TCF 2.0要求，Platform允许您收集详细的客户同意数据，并将其集成到存储的客户配置文件中。 然后，可根据特定用户档案的用例将这些同意数据纳入导出受众区段中是否包含这些用户档案。
 
 有关更多详细信息，请参阅 [Experience Platform中的IAB TCF 2.0支持](../../landing/governance-privacy-security/consent/iab/overview.md) 以了解更多信息。
 

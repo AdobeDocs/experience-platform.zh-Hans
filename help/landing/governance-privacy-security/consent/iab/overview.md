@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience Platform中的IAB TCF 2.0支持
 description: 了解如何配置数据操作和架构，以在将Adobe Experience Platform中的区段激活到目标时传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 2a0ebe1e92ea21ff45051096d5a6969839c2f947
 workflow-type: tm+mt
 source-wordcount: '2558'
 ht-degree: 1%
@@ -19,7 +19,7 @@ ht-degree: 1%
 >
 >有关TCF 2.0的更多信息，请访问 [IAB欧洲网站](https://iabeurope.eu/tcf-2-0/)，包括支持材料和技术规范。
 
-Adobe Experience Platform是 [IAB TCF 2.0供应商列表](https://iabeurope.eu/vendor-list-tcf-v2-0/)，在ID下 **565**. 为符合TCF 2.0要求，Platform允许您收集客户同意数据并将其集成到存储的客户配置文件中。 然后，可以根据用户档案的用例将此同意数据纳入导出受众区段中是否包含用户档案。
+Adobe Experience Platform是 [IAB TCF 2.0供应商列表](https://iabeurope.eu/vendor-list-tcf/)，在ID下 **565**. 为符合TCF 2.0要求，Platform允许您收集客户同意数据并将其集成到存储的客户配置文件中。 然后，可以根据用户档案的用例将此同意数据纳入导出受众区段中是否包含用户档案。
 
 >[!IMPORTANT]
 >

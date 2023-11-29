@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 8f60d53c1adaf29ce2dce7c3af84f8b39998f7d0
 workflow-type: tm+mt
-source-wordcount: '4309'
+source-wordcount: '4384'
 ht-degree: 1%
 
 ---
@@ -535,6 +535,16 @@ WHERE T2.ID IS NULL
 ### 查询服务是否支持“INSERT OVERWRITE INTO”命令？
 
 +++答案否，查询服务不支持“INSERT OVERWRITE INTO”命令。
++++
+
+### 许可证使用情况仪表板上的使用情况数据多久更新一次数据Distiller计算小时数？
+
++++应答数据Distiller计算机的许可证使用情况仪表板每天更新四次，每六小时更新一次。
++++
+
+### 我是否可以在没有Data Distiller访问权限的情况下使用CREATE VIEW命令？
+
++++回答是，您可以使用 `CREATE VIEW` 命令而没有访问Data Distiller。 此命令提供数据的逻辑视图，但不会将其写回数据湖。
 +++
 
 ## 导出数据 {#exporting-data}
