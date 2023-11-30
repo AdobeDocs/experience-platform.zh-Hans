@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c432bcb3c625b569ec5abbe4a77d683b7509e709
 workflow-type: tm+mt
-source-wordcount: '1174'
+source-wordcount: '1225'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 1%
 流更新插入于 [!DNL Data Prep] 允许您将部分行更新发送到 [!DNL Real-Time Customer Profile] 数据，同时通过单个API请求创建和建立新的身份链接。
 
 通过流式传输更新插入，您可以保留数据的格式，同时将数据转换为 [!DNL Real-Time Customer Profile] 摄取期间的PATCH请求。 根据您提供的输入， [!DNL Data Prep] 允许您发送单个API有效负载并将数据转换为两者 [!DNL Real-Time Customer Profile] PATCH和 [!DNL Identity Service] 创建请求。
+
+>[!WARNING]
+>
+>已弃用通过DCS入口摄取用于配置文件更新的体验数据模型(XDM)实体更新消息(包含JSONPATCH操作)。 作为替代方法，您可以 [将原始数据摄取到DCS入口](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection) 并指定必要的数据映射，以将您的数据转换为符合XDM标准的消息以进行配置文件更新。
 
 本文档提供了有关如何在中流式传输更新插件的信息 [!DNL Data Prep].
 
