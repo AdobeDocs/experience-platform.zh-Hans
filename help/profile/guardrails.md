@@ -3,12 +3,12 @@ title: 实时客户个人资料数据和分段的默认护栏
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: 了解用于用户档案数据和分段的性能和系统强制执行的护栏，以确保最佳地使用Real-Time CDP功能。
+description: 了解配置文件数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
 source-git-commit: 56ed0d777d9a7d489cde2e40340fee4ca0ad8c03
 workflow-type: tm+mt
 source-wordcount: '2230'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
