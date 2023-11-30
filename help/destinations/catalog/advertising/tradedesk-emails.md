@@ -3,9 +3,9 @@ title: (Beta)交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3680341c5ca4012ae33df32aa901467d1048b702
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1130'
 ht-degree: 5%
 
 ---
@@ -49,7 +49,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | 电子邮件 | 电子邮件地址（明文） | 输入 `email` 作为目标身份（当源身份是电子邮件命名空间或属性时）。 |
-| Email_LC_SHA256 | 电子邮件地址需要使用SHA256和小写进行哈希处理。 请务必遵循任意 [电子邮件标准化](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) 需要规则。 您以后将无法更改此设置。 | 输入 `hashed_email` 作为目标身份，前提是您的源身份是Email_LC_SHA256命名空间或属性。 |
+| Email_LC_SHA256 | 电子邮件地址需要使用SHA256和小写进行哈希处理。 您以后将无法更改此设置。 | 输入 `hashed_email` 作为目标身份，前提是您的源身份是Email_LC_SHA256命名空间或属性。 |
 
 {style="table-layout:auto"}
 
