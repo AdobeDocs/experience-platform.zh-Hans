@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 8f60d53c1adaf29ce2dce7c3af84f8b39998f7d0
+source-git-commit: 006b693c71cd45408bccb7c051f367f140260370
 workflow-type: tm+mt
-source-wordcount: '4384'
+source-wordcount: '4450'
 ht-degree: 1%
 
 ---
@@ -545,6 +545,11 @@ WHERE T2.ID IS NULL
 ### 我是否可以在没有Data Distiller访问权限的情况下使用CREATE VIEW命令？
 
 +++回答是，您可以使用 `CREATE VIEW` 命令而没有访问Data Distiller。 此命令提供数据的逻辑视图，但不会将其写回数据湖。
++++
+
+### 能否在DbVisualizer中使用匿名块？
+
++++回答是。 但是，某些第三方客户端（如DbVisualizer）在SQL块之前和之后可能需要单独的标识符来指示脚本的一部分应作为单个语句处理。 欲知更多详情，请参阅 [匿名块文档](./key-concepts/anonymous-block.md) 或 [DbVisualizer官方文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsinganSQLDialect).
 +++
 
 ## 导出数据 {#exporting-data}

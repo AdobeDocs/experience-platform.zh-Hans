@@ -2,9 +2,9 @@
 title: 查询服务中的匿名块
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效地执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: b7de5d3b2ceba27f5e86d48078be484dcb6f7c4b
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -60,8 +60,28 @@ END
 $$;
 ```
 
+## 与第三方客户端的匿名阻止 {#third-party-clients}
+
+某些第三方客户端在SQL块之前和之后可能需要单独的标识符，以指示脚本的一部分应作为单个语句处理。 如果您在第三方客户端上使用查询服务时收到错误消息，您应该参阅第三方客户端关于使用SQL块的文档。
+
+例如， **DbVisualizer** 要求分隔符必须是行上的唯一文本。 在DbVisualizer中，“开始标识符”的默认值为 `--/` 对于End Identifier ，它是 `/`. 下面显示了DbVisualizer中的匿名块示例：
+
+```SQL
+--/
+$$ BEGIN
+    CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
+    ....
+    CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....;
+    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+END
+$$;
+/
+```
+
+特别是对于DbVisualizer，UI中还有一个&#39;&#39;选项[!DNL Execute the complete buffer as one SQL statement]“。 请参阅 [DbVisualizer文档](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsingExecuteBuffer) 以了解更多信息。
+
 ## 后续步骤
 
-通过阅读本文档，您现在对匿名块及其结构方式有了清楚的了解。 [有关查询执行的详细信息](../best-practices/writing-queries.md)，请阅读查询服务中的查询执行指南。
+通过阅读本文档，您现在对匿名块及其结构方式有了清楚的了解。 请阅读 [查询执行指南](../best-practices/writing-queries.md) 以了解有关编写查询的详细信息。
 
-您还应阅读 [如何将匿名块用于增量负载设计模式](./incremental-load.md) 以提高查询效率。
+您还应阅读 [如何将匿名块与增量负载设计模式一起使用](./incremental-load.md) 以提高查询效率。
