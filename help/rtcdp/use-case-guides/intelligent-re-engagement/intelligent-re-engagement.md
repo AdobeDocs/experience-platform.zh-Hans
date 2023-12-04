@@ -3,10 +3,10 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: ea0f53339d8549152a54267d537b04326f9164df
 workflow-type: tm+mt
-source-wordcount: '3594'
-ht-degree: 54%
+source-wordcount: '3772'
+ht-degree: 49%
 
 ---
 
@@ -19,6 +19,8 @@ ht-degree: 54%
 以明智和负责任的方式重新吸引放弃转化的客户。 通过体验吸引失效的客户，以提高转化率并增加客户存留期值。
 
 采用实时考虑内容，考虑消费者的所有品质和行为，并根据线上和线下事件快速提供重新资格认证。
+
+以下是Real-Time CDP和Journey Optimizer各个组件的高级架构视图。 此图显示了数据如何流经两个Experience Platform应用程序，从数据收集到通过历程或营销活动激活到目标的点，以实现本页面上描述的使用案例。
 
 ![智能重新参与高级视觉概览。](../intelligent-re-engagement/images/step-by-step.png)
 
@@ -59,7 +61,7 @@ ht-degree: 54%
 
 1. 您可以创建架构和数据集，然后启用 [!UICONTROL 个人资料].
 2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
-3. 您摄取其他启用配置文件的数据，可通过身份图将其链接到经过身份验证的Web和/或移动应用程序访客。
+3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您从配置文件列表中构建重点受众，以检查&#x200B;**客户**&#x200B;是否在过去三天内参与了活动。
 5. 您在中创建放弃的产品浏览历程 [!DNL Adobe Journey Optimizer].
 6. 如果需要，请与&#x200B;**数据合作伙伴**&#x200B;合作，以将受众激活到所需的付费媒体目标。
@@ -71,7 +73,7 @@ ht-degree: 54%
 
 1. 您可以创建架构和数据集，为启用 [!UICONTROL 个人资料].
 2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
-3. 您摄取其他启用配置文件的数据，可通过身份图将其链接到经过身份验证的Web和/或移动应用程序访客。
+3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您从配置文件列表中建立重点受众，以检查&#x200B;**客户**&#x200B;是否已将商品放入购物车，但尚未完成购买。**[!UICONTROL 添加到购物车]**&#x200B;事件会启动一个等待 30 分钟的计时器，然后检查购买情况。如果没有购买，那么该&#x200B;**客户**&#x200B;会被添加到&#x200B;**[!UICONTROL 放弃的购物车]**&#x200B;受众中。
 5. 您在 [!DNL Adobe Journey Optimizer] 中创建一个放弃的购物车之历程。
 6. 如果需要，请与&#x200B;**数据合作伙伴**&#x200B;合作，以将受众激活到所需的付费媒体目标。
@@ -83,7 +85,7 @@ ht-degree: 54%
 
 1. 您可以创建架构和数据集，然后启用 [!UICONTROL 个人资料].
 2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
-3. 您摄取其他启用配置文件的数据，可通过身份图将其链接到经过身份验证的Web和/或移动应用程序访客。
+3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您在 [!DNL Adobe Journey Optimizer] 中创建一个确认历程。
 5. [!DNL Adobe Journey Optimizer] 会使用首选渠道发送订购确认消息。
 
@@ -109,10 +111,10 @@ ht-degree: 54%
 
 [个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人配置文件类的标准架构字段组，它描述了个人的联系信息。
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `mobilePhone.number` | 必需 | 此人的手机号码，该号码会用于短信。 |
-| `personalEmail.address` | 必需 | 此人的电子邮件地址。 |
+| 字段 | 描述 |
+| --- | --- |
+| `mobilePhone.number` | 此人的手机号码，该号码会用于短信。 |
+| `personalEmail.address` | 此人的电子邮件地址。 |
 
 +++
 
@@ -139,13 +141,13 @@ ht-degree: 54%
 
 +++配置文件测试详细信息（字段组）
 
-该字段组用于最佳实践。
+此字段组允许您使用测试用户档案在发布历程之前测试历程。 有关创建测试用户档案的详细信息，请参阅 [创建测试用户档案教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html) 和 [测试历程教程](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html).
 
 +++
 
 #### 客户数字交易架构
 
-此架构用于构建和引用构成您的网站和/或关联数字平台上发生的客户活动的事件数据。此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的受众功能。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的受众功能。
 
 客户数字交易模式由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 
@@ -153,11 +155,11 @@ ht-degree: 54%
 
 此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
-| `timestamp` | 必需 | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
-| `eventType` | 必需 | 指示事件类别类型的字符串。 |
+| 字段 | 描述 |
+| --- | --- |
+| `_id` | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
+| `timestamp` | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
+| `eventType` | 指示事件类别类型的字符串。 |
 
 +++
 
@@ -165,14 +167,14 @@ ht-degree: 54%
 
 此 [最终用户ID详细信息](/help/xdm/field-groups/event/enduserids.md) 字段组用于在多个Adobe应用程序中描述个人的身份信息。
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `endUserIDs._experience.emailid.authenticatedState` | 必需 | 最终用户电子邮件地址 ID 已验证状态。 |
-| `endUserIDs._experience.emailid.id` | 必需 | 最终用户电子邮件地址 ID。 |
-| `endUserIDs._experience.emailid.namespace.code` | 必需 | 最终用户电子邮件地址 ID 命名空间代码。 |
-| `endUserIDs._experience.mcid.authenticatedState` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID) 已验证状态。MCID 现在称为 Experience Cloud ID (ECID)。 |
-| `endUserIDs._experience.mcid.id` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID). MCID 现在称为 Experience Cloud ID (ECID)。 |
-| `endUserIDs._experience.mcid.namespace.code` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID) 命名空间代码。 |
+| 字段 | 描述 |
+| --- | --- |
+| `endUserIDs._experience.emailid.authenticatedState` | 最终用户电子邮件地址 ID 已验证状态。 |
+| `endUserIDs._experience.emailid.id` | 最终用户电子邮件地址 ID。 |
+| `endUserIDs._experience.emailid.namespace.code` | 最终用户电子邮件地址 ID 命名空间代码。 |
+| `endUserIDs._experience.mcid.authenticatedState` | [!DNL Adobe] Marketing Cloud ID (MCID) 已验证状态。MCID 现在称为 Experience Cloud ID (ECID)。 |
+| `endUserIDs._experience.mcid.id` | [!DNL Adobe] Marketing Cloud ID (MCID). MCID 现在称为 Experience Cloud ID (ECID)。 |
+| `endUserIDs._experience.mcid.namespace.code` | [!DNL Adobe] Marketing Cloud ID (MCID) 命名空间代码。 |
 
 +++
 
@@ -192,11 +194,11 @@ ht-degree: 54%
 
 此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
-| `timestamp` | 必需 | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
-| `eventType` | 必需 | 指示事件类别类型的字符串。 |
+| 字段 | 描述 |
+| --- | --- |
+| `_id` | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
+| `timestamp` | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
+| `eventType` | 指示事件类别类型的字符串。 |
 
 +++
 
@@ -204,18 +206,18 @@ ht-degree: 54%
 
 此 [商业详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `commerce.cart.cartID` | 必需 | 购物车的 ID。 |
-| `commerce.order.orderType` | 必需 | 描述产品订购类型的对象。 |
-| `commerce.order.payments.paymentAmount` | 必需 | 描述产品订购付款金额的对象。 |
-| `commerce.order.payments.paymentType` | 必需 | 描述产品订购付款类型的对象。 |
-| `commerce.order.payments.transactionID` | 必需 | 对象产品订单交易 ID。 |
-| `commerce.order.purchaseID` | 必需 | 对象产品订单购买 ID。 |
-| `productListItems.name` | 必需 | 代表客户选择的产品的项目名称列表。 |
-| `productListItems.priceTotal` | 必需 | 代表客户选择的产品的项目列表的总价。 |
-| `productListItems.product` | 必需 | 所选择的产品。 |
-| `productListItems.quantity` | 必需 | 代表客户选择的产品的项目列表的数量。 |
+| 字段 | 描述 |
+| --- | --- |
+| `commerce.cart.cartID` | 购物车的 ID。 |
+| `commerce.order.orderType` | 描述产品订购类型的对象。 |
+| `commerce.order.payments.paymentAmount` | 描述产品订购付款金额的对象。 |
+| `commerce.order.payments.paymentType` | 描述产品订购付款类型的对象。 |
+| `commerce.order.payments.transactionID` | 对象产品订单交易 ID。 |
+| `commerce.order.purchaseID` | 对象产品订单购买 ID。 |
+| `productListItems.name` | 代表客户选择的产品的项目名称列表。 |
+| `productListItems.priceTotal` | 代表客户选择的产品的项目列表的总价。 |
+| `productListItems.product` | 所选择的产品。 |
+| `productListItems.quantity` | 代表客户选择的产品的项目列表的数量。 |
 
 +++
 
@@ -223,10 +225,10 @@ ht-degree: 54%
 
 [个人联系方式](/help/xdm/field-groups/profile/personal-contact-details.md)是 XDM 个人配置文件类的标准架构字段组，它描述了个人的联系信息。
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `mobilePhone.number` | 必需 | 此人的手机号码，该号码会用于短信。 |
-| `personalEmail.address` | 必需 | 此人的电子邮件地址。 |
+| 字段 | 描述 |
+| --- | --- |
+| `mobilePhone.number` | 此人的手机号码，该号码会用于短信。 |
+| `personalEmail.address` | 此人的电子邮件地址。 |
 
 +++
 
@@ -242,7 +244,7 @@ ht-degree: 54%
 >
 >如果您使用的是 [[!DNL Adobe Analytics Source Connector]](/help/sources/connectors/adobe-applications/analytics.md)，则这是一个可选的实施。
 
-此架构用于构建和引用构成您的网站和/或关联数字平台上发生的客户活动的事件数据。此架构与客户数字交易架构类似，不同之处在于它适用于以下情况： [Web SDK](/help/edge/home.md) 不是数据收集的选项；因此，当您使用 [!DNL Adobe Analytics Source Connector] 将您的在线数据发送到 [!DNL Adobe Experience Platform] 作为主数据流或辅助数据流。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此架构与客户数字交易架构类似，不同之处在于它适用于以下情况： [Web SDK](/help/edge/home.md) 不是数据收集的选项；因此，当您使用 [!DNL Adobe Analytics Source Connector] 将您的在线数据发送到 [!DNL Adobe Experience Platform] 作为主数据流或辅助数据流。
 
 此 [!DNL Adobe] Web连接器架构由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 
@@ -250,11 +252,11 @@ ht-degree: 54%
 
 此 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类包括以下字段组：
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `_id` | 必需 | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
-| `timestamp` | 必需 | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
-| `eventType` | 必需 | 指示事件类别类型的字符串。 |
+| 字段 | 描述 |
+| --- | --- |
+| `_id` | 唯一标识被摄取到的各个事件 [!DNL Adobe Experience Platform]. |
+| `timestamp` | 事件发生时间的ISO 8601时间戳，按照RFC 3339第5.6节进行格式设置。此时间戳必须发生在过去。 |
+| `eventType` | 指示事件类别类型的字符串。 |
 
 +++
 
@@ -262,14 +264,14 @@ ht-degree: 54%
 
 此 [Adobe Analytics ExperienceEvent](/help/xdm/field-groups/event/analytics-full-extension.md) 字段组捕获Adobe Analytics收集的常见量度。
 
-| 字段 | 要求 | 描述 |
-| --- | --- | --- |
-| `endUserIDs._experience.emailid.authenticatedState` | 必需 | 最终用户电子邮件地址 ID 已验证状态。 |
-| `endUserIDs._experience.emailid.id` | 必需 | 最终用户电子邮件地址 ID。 |
-| `endUserIDs._experience.emailid.namespace.code` | 必需 | 最终用户电子邮件地址 ID 命名空间代码。 |
-| `endUserIDs._experience.mcid.authenticatedState` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID) 已验证状态。MCID 现在称为 Experience Cloud ID (ECID)。 |
-| `endUserIDs._experience.mcid.id` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID). MCID 现在称为 Experience Cloud ID (ECID)。 |
-| `endUserIDs._experience.mcid.namespace.code` | 必需 | [!DNL Adobe] Marketing Cloud ID (MCID) 命名空间代码。 |
+| 字段 | 描述 |
+| --- | --- |
+| `endUserIDs._experience.emailid.authenticatedState` | 最终用户电子邮件地址 ID 已验证状态。 |
+| `endUserIDs._experience.emailid.id` | 最终用户电子邮件地址 ID。 |
+| `endUserIDs._experience.emailid.namespace.code` | 最终用户电子邮件地址 ID 命名空间代码。 |
+| `endUserIDs._experience.mcid.authenticatedState` | [!DNL Adobe] Marketing Cloud ID (MCID) 已验证状态。MCID 现在称为 Experience Cloud ID (ECID)。 |
+| `endUserIDs._experience.mcid.id` | [!DNL Adobe] Marketing Cloud ID (MCID). MCID 现在称为 Experience Cloud ID (ECID)。 |
+| `endUserIDs._experience.mcid.namespace.code` | [!DNL Adobe] Marketing Cloud ID (MCID) 命名空间代码。 |
 
 +++
 
@@ -344,8 +346,9 @@ ht-degree: 54%
 设置此受众时需要以下字段和条件：
 
 * `eventType: commerce.productViews`
-* 和 `THEN` （顺序事件）排除 `eventType: commerce.procuctListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
+* 和 `THEN` （顺序事件）排除 `eventType: commerce.productListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
    * `Timestamp: > 3 days after productView`
+* `Timestamp: > 4 days`
 
 +++
 
@@ -356,8 +359,10 @@ ht-degree: 54%
 设置此受众时需要以下字段和条件：
 
 * `eventType: commerce.productViews`
-* 和 `THEN` （顺序事件）包括 `eventType: commerce.procuctListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
+* 和 `THEN` （顺序事件）包括 `eventType: commerce.productListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
    * `Timestamp: > 3 days after productView`
+* `Timestamp: > 4 days`
++++
 
 +++参与流在过去一天
 
@@ -365,7 +370,7 @@ ht-degree: 54%
 
 设置此受众时需要以下字段和条件：
 
-* `eventType: commerce.procuctListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `eventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
    * `Timestamp: in last 1 day` （流）
 
 +++
@@ -376,7 +381,7 @@ ht-degree: 54%
 
 设置此受众时需要以下字段和条件：
 
-* `EventType: commerce.procuctListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `EventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
    * `Timestamp: in last 3 days` （批次）
 
 +++
@@ -422,6 +427,8 @@ ht-degree: 54%
 
 +++活动
 
+事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+
 * 事件 1：产品查看次数
    * 架构：客户数字交易
    * 字段：
@@ -429,14 +436,7 @@ ht-degree: 54%
    * 条件：
       * `eventType = commerce.productViews`
       * 字段：
-         * `commerce.productViews.id`
-         * `commerce.productViews.value`
          * `eventType`
-         * `identityMap.authenticatedState`
-         * `identityMap.id`
-         * `identityMap.primary`
-         * `productListItems.SKU`
-         * `productListItems.currencyCode`
          * `productListItems.name`
          * `productListItems.priceTotal`
          * `productListItems.product`
@@ -515,7 +515,9 @@ ht-degree: 54%
 
 +++
 
-+++关键历程逻辑
++++历程画布键逻辑
+
+历程画布关键逻辑要求您识别特定事件并配置要在事件发生后执行的操作。
 
 * 历程进入逻辑
    * 产品查看事件
@@ -549,6 +551,8 @@ ht-degree: 54%
 弃用的购物车方案面向已放入购物车但尚未在网站和移动设备应用程序上购买的产品。<p>![客户放弃的购物车场景高级别视觉概览。](../intelligent-re-engagement/images/abandoned-cart-journey.png "客户放弃的购物车场景高级别视觉概览。"){width="1920" zoomable="yes"}</p>
 
 +++活动
+
+事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * 事件 2：加入购物车
    * 架构：客户数字交易
@@ -643,7 +647,9 @@ ht-degree: 54%
 
 +++
 
-+++关键历程逻辑
++++历程画布键逻辑
+
+历程画布关键逻辑要求您识别特定事件并配置要在事件发生后执行的操作。
 
 * 历程进入逻辑
    * `AddToCart` 活动
@@ -679,6 +685,8 @@ ht-degree: 54%
 
 +++活动
 
+事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+
 * 事件 4：在线购买
    * 架构：客户数字交易
    * 字段：
@@ -707,7 +715,9 @@ ht-degree: 54%
 
 +++
 
-+++关键历程逻辑
++++历程画布键逻辑
+
+历程画布关键逻辑要求您识别特定事件并配置要在事件发生后执行的操作。
 
 * 历程进入逻辑
    * 订购事件
@@ -740,10 +750,16 @@ ht-degree: 54%
 * `ECID`
 * `mobilePhone.number`
 
-放弃购物车受众将评估为流式受众，因此目标框架可以将其用于此用例。
+您可以激活弃用的产品浏览，并将购物车受众放弃到付费媒体广告。
 
 * 流/已触发
    * [广告](/help/destinations/catalog/advertising/overview.md)/[付费媒体和社交](/help/destinations/catalog/social/overview.md)
    * [移动设备](/help/destinations/catalog/mobile-engagement/overview.md)
    * [流式处理目标](/help/destinations/catalog/streaming/http-destination.md)
    * [使用Destination SDK创建的自定义目标。](/help/destinations/destination-sdk/overview.md)的问题。如果您是Real-Time CDP Ultimate客户，则还可以创建专用 [使用Destination SDK的自定义目标](/help/destinations/destination-sdk/overview.md#productized-and-custom-integrations)
+
+## 后续步骤 {#next-steps}
+
+通过以明智和负责任的方式重新吸引放弃转化的客户，您有望提高转化率并增加客户存留期的价值。
+
+接下来，您可以探索Real-Time CDP支持的其他用例，例如 [向未经身份验证的用户显示个性化内容](/help/rtcdp/partner-data/onsite-personalization.md) （在您的Web资产中）。
