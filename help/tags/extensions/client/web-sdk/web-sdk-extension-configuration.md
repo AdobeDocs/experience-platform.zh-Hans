@@ -2,10 +2,10 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ac3362fa5e8a314f85f3bb659047f77fb56c1a7c
 workflow-type: tm+mt
-source-wordcount: '1456'
-ht-degree: 10%
+source-wordcount: '1546'
+ht-degree: 6%
 
 ---
 
@@ -39,7 +39,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ![该图像显示了标记UI中Web SDK标记扩展的常规设置](assets/web-sdk-ext-general.png)
 
-* **[!UICONTROL 名称]**：Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。 实例名称默认为 `alloy`. 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
+* **[!UICONTROL 名称]**：Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。 实例名称默认为 `alloy`. 但是，您可以将实例名称更改为任何有效的JavaScript对象名称。
 * **[!UICONTROL IMS组织ID]**：您希望在Adobe时向其发送数据的组织的ID。 大多数情况下，使用自动填充的默认值。 当页面上有多个实例时，使用您要向其发送数据的第二个组织的值填充此字段。
 * **[!UICONTROL 边缘域]**：扩展发送和接收数据的域。 Adobe建议对此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
@@ -85,13 +85,25 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ## 配置个性化设置 {#personalization}
 
-利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。
-
-可在预隐藏样式编辑器中指定要隐藏的元素。 然后，您可以复制提供给您的默认预隐藏代码片段，并将其粘贴到 `<head>` 您网站的 [!DNL HTML] 代码。
+利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。 这可确保访客仅看到个性化页面。
 
 ![该图像显示了标记UI中Web SDK标记扩展的个性化设置](assets/web-sdk-ext-personalization.png)
 
 * **[!UICONTROL 将Target从at.js迁移到Web SDK]**：使用此选项可启用 [!DNL Web SDK] 读写旧版 `mbox` 和 `mboxEdgeCluster` at.js使用的Cookie `1.x` 或 `2.x` 库。 这有助于您在从使用Web SDK的页面移动到使用at.js的页面时保留访客配置文件 `1.x` 或 `2.x` 库或反之。
+
+### 预隐藏样式 {#prehiding-style}
+
+使用预隐藏样式编辑器，可定义自定义CSS规则以隐藏页面的特定部分。 在加载页面时，Web SDK使用此样式来隐藏需要个性化的部分，检索个性化，然后取消隐藏个性化的页面部分。 这样，您的访客将看到已个性化的页面，而不看到个性化检索过程。
+
+### 预隐藏代码片段 {#prehiding-snippet}
+
+异步加载Web SDK库时，预隐藏代码片段很有用。 在这种情况下，为了避免闪烁，我们建议在加载Web SDK库之前隐藏内容。
+
+要使用预隐藏代码片段，请将其复制并粘贴到 `<head>` 元素。
+
+>[!IMPORTANT]
+>
+>在使用预隐藏代码片段时，Adobe建议使用相同的 [!DNL CSS] 规则作为 [预隐藏样式](#prehiding-style).
 
 ## 配置数据收集设置 {#data-collection}
 
@@ -110,7 +122,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 数据流配置覆盖是一个两步过程：
 
 1. 首先，您必须在[数据流配置页面](../../../../datastreams/configure.md)中定义数据流配置覆盖。
-2. 然后，您必须通过 Web SDK 命令或使用 Web SDK 标记扩展将这些覆盖发送到 Edge Network。
+2. 然后，您必须通过Web SDK命令或Web SDK标记扩展将覆盖发送到Edge Network。
 
 查看数据流 [配置覆盖文档](../../../../datastreams/overrides.md) 以获取有关如何覆盖数据流配置的详细说明。
 
