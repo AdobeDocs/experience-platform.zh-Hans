@@ -3,9 +3,9 @@ title: Azure事件中心源连接器概述
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 087100b23f95cef527a507fb11440467feb78c9e
+source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform为云提供商(如AWS)提供本机连接， [!DNL Goog
 
 ## 使用虚拟网络连接到 [!DNL Event Hubs] 目标平台
 
-您可以设置要连接的虚拟网络 [!DNL Event Hubs] 到Platform ，同时启用防火墙措施。 要设置虚拟网络，请转到此 [[!DNL Event Hubs] 网络规则集文档](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set#code-try-0) 并执行以下步骤：
+您可以设置要连接的虚拟网络 [!DNL Event Hubs] 到Platform ，同时启用防火墙措施。 要设置虚拟网络，请转到此 [[!DNL Event Hubs] 网络规则集文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) 并执行以下步骤：
 
 * 选择 **试试看** 从REST API面板；
 * 验证您的 [!DNL Azure] 在同一浏览器中使用您的凭据的帐户；
@@ -117,7 +117,7 @@ Adobe Experience Platform为云提供商(如AWS)提供本机连接， [!DNL Goog
 }
 ```
 
-请参阅以下内容 [[!DNL Event Hubs] 文档](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set) 以了解有关网络规则集的详细信息。
+请参阅以下内容 [[!DNL Event Hubs] 文档](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) 以了解有关网络规则集的详细信息。
 
 ## 连接 [!DNL Event Hubs] 目标平台
 

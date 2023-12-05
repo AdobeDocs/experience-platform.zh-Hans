@@ -2,9 +2,9 @@
 title: 在UI中创建Google Ads源连接
 description: 了解如何使用Google UI创建Adobe Experience Platform Ads源连接。
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '666'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | 客户端客户ID | 客户端客户ID是与您要使用Google Ads API管理的Google Ads客户端帐户对应的帐号。 此ID遵循的模板 `123-456-7890`. |
-| 登录客户Id | 登录客户ID是与您的Google广告管理器帐户对应的帐号，用于从特定的运营客户获取报表数据。 有关登录客户ID的更多信息，请阅读 [Google Ads API文档](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
+| 登录客户Id | 登录客户ID是与您的Google广告管理器帐户对应的帐号，用于从特定的运营客户获取报表数据。 有关登录客户ID的更多信息，请阅读 [Google Ads API文档](https://developers.google.com/search-ads/reporting/concepts/login-customer-id). |
 | 开发人员令牌 | 通过开发人员令牌，您可以访问Google Ads API。 您可以使用相同的开发人员令牌针对所有Google Ads帐户发出请求。 通过以下方式检索您的开发人员令牌 [登录到您的经理帐户](https://ads.google.com/home/tools/manager-accounts/) 然后导航到API中心页面。 |
 | 刷新令牌 | 刷新令牌是的一部分 [!DNL OAuth2] 身份验证。 此令牌允许您在访问令牌过期后重新生成访问令牌。 |
 | 客户端ID | 客户端ID与客户端密钥一起使用，作为的一部分 [!DNL OAuth2] 身份验证。 通过同时使用客户端ID和客户端密钥，您的应用程序可以在Google中标识您的应用程序，从而代表您的帐户运行。 |
