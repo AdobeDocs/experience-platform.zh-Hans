@@ -2,10 +2,10 @@
 title: Adobe Medium Analytics for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe Medium Analytics for Audio and Video标记扩展。
 exl-id: 426cfd08-aead-4b35-824c-45494bca2fc8
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '987'
-ht-degree: 82%
+source-wordcount: '949'
+ht-degree: 80%
 
 ---
 
@@ -33,7 +33,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)�
 
 ## 安装和配置 MA 扩展
 
-* **安装 —** 要安装MA扩展，请打开您的扩展资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将光标悬停在 **[!UICONTROL Adobe Medium Analytics for Audio and Video]** 扩展并选择 **[!UICONTROL 安装]**.
+* **安装 —** 要安装MA扩展，请打开您的扩展资产，选择 **[!UICONTROL Extensions > Catalog]**，将鼠标悬停在 **[!UICONTROL 用于音频和视频的Adobe Medium Analytics]** 扩展，然后选择 **[!UICONTROL 安装]**.
 
 * **配置 —** 要配置MA扩展，请打开 [!UICONTROL 扩展] 选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**：
 
@@ -121,18 +121,19 @@ MA 扩展会将 `get-instance` 和 `media-heartbeat` 共享模块公开给其他
 
    * 公开这些函数的有效委托对象。
 
-      | 方法 |  描述   |
-      | :--- | :--- |
-      | `getQoSObject()` | 返回包含当前 QoS 信息的 `MediaObject` 实例。在播放会话期间，此方法将被调用多次。播放器实施必须始终返回最新的可用 QoS 数据。 |
-      | `getCurrentPlaybackTime()` | 返回播放头的当前位置。对于 VOD 跟踪，该值以秒为单位，从媒体项目的开头起计算。对于 LIVE/LIVE 跟踪，该值以秒为单位，从计划的开头起计算。 |
+     | 方法 |  描述   |
+     | :--- | :--- |
+     | `getQoSObject()` | 返回包含当前 QoS 信息的 `MediaObject` 实例。在播放会话期间，此方法将被调用多次。播放器实施必须始终返回最新的可用 QoS 数据。 |
+     | `getCurrentPlaybackTime()` | 返回播放头的当前位置。对于 VOD 跟踪，该值以秒为单位，从媒体项目的开头起计算。对于 LIVE/LIVE 跟踪，该值以秒为单位，从计划的开头起计算。 |
 
    * 公开这些属性的可选配置对象：
 
-      | 属性 | 描述 | 必需 |
-      | :--- | :--- | :--- |
-      | Online Video Provider | 用于分发内容的在线视频平台的名称。 | 否。如果存在，则覆盖扩展配置期间定义的值。 |
-      | Player Name | 正在使用的媒体播放器的名称（例如“AVPlayer”、“HTML5 播放器”、“我的自定义视频播放器”） | 否。如果存在，则覆盖扩展配置期间定义的值。 |
-      | Channel | 渠道名称属性 | 否。如果存在，则覆盖扩展配置期间定义的值。 |
+     | 属性 | 描述 | 必需 |
+     | :--- | :--- | :--- |
+     | Online Video Provider | 用于分发内容的在线视频平台的名称。 | 否。如果存在，则覆盖扩展配置期间定义的值。 |
+     | Player Name | 正在使用的媒体播放器的名称（例如“AVPlayer”、“HTML5 播放器”、“我的自定义视频播放器”） | 否。如果存在，则覆盖扩展配置期间定义的值。 |
+     | Channel | 渠道名称属性 | 否。如果存在，则覆盖扩展配置期间定义的值。 |
+
    **返回值：**&#x200B;使用 `MediaHeartbeat` 实例解析或使用错误消息拒绝的承诺。
 
 1. **访问 MediaHeartbeat 常量：**`media-heartbeat` 共享模快
@@ -173,11 +174,11 @@ MA 扩展会将 `get-instance` 和 `media-heartbeat` 共享模块公开给其他
    ...
    ```
 
-1. 使用媒体心率实例，按照[媒体 SDK JS 文档](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-javascript/set-up-js-2.html)和 [JS API 文档](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html)中的说明，实施媒体跟踪。
+1. 使用媒体心率实例，按照[媒体 SDK JS 文档](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html)和 [JS API 文档](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html)中的说明，实施媒体跟踪。
 
 >[!NOTE]
 >
->**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到 [ Platform ](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。
+>**测试：** 对于此版本，要测试您的扩展，必须将其上传到 [平台](../../../extension-dev/submit/upload-and-test.md)，您可以从中访问所有依赖的扩展。
 
 
 <!--

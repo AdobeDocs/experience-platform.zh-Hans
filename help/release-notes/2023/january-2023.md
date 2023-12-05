@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2023 年 1 月）
 description: Adobe Experience Platform 的 2023 年 1 月发行说明。
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '2408'
+source-wordcount: '2224'
 ht-degree: 99%
 
 ---
@@ -139,7 +139,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | --- | --- | --- |
 | 类 | [[!UICONTROL 转化]](https://github.com/adobe/xdm/blob/master/components/classes/conversion.schema.json) | 用于跟踪货币兑换等兑换数据的类。 |
 | 字段组 | [[!UICONTROL 货币兑换率详情]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/conversion/currency-conversion-details.schema.json) | [!UICONTROL 转化]类的字段组，捕获与货币转化相关的其他详细信息。 |
-| 字段组 | [[!UICONTROL 带有元数据的同意策略评估结果图]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.jsonn) | 捕获多个同意策略评估结果的详细信息，包括有关同意策略入口和存在的元数据信息。 |
+| 字段组 | [[!UICONTROL 带有元数据的同意策略评估结果图]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.json) | 捕获多个同意策略评估结果的详细信息，包括有关同意策略入口和存在的元数据信息。 |
 
 **更新的 XDM 组件**
 
@@ -149,7 +149,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 数据类型 | [[!UICONTROL 决策提案详情]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-detail.schema.json) | 添加了一个捕获选择策略细节的 `selectionStrategy` 字段。 |
 | 字段组 | [[!UICONTROL 体验事件 - 命题互动]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/experienceevent-proposition-interaction.schema.json) | 该字段组现在与[!UICONTROL 历程步骤事件]类兼容。 |
 | 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | 该`ID`字段已重命名为 `name`。 |
-| 数据类型 | [[!UICONTROL 媒体信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | 已将模式中的更改还原为视频区段属性。 |
+| 数据类型 | [[!UICONTROL 媒体信息]](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/media.schema.json) | 已将模式中的更改还原为视频区段属性。 |
 | 数据类型 | [[!UICONTROL Qoe 数据详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | 删除了 `droppedFrameCount` 字段。 |
 | 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | 将 `isAuthorized` 字段重命名为 `authorized`，并将其 `type` 更新为以前为布尔值的字符串。 |
 | 数据类型 | [[!UICONTROL 运送]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 添加了几个新字段：`shipDate`、`trackingNumber` 和 `trackingURL`。 |

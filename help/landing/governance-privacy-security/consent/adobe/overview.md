@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform中的同意处理
 description: 了解如何使用Adobe2.0标准在Adobe Experience Platform中处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 如果您的移动应用程序需要客户同意首选项，则可以集成Experience PlatformMobile SDK以检索和更新同意设置，并在调用同意API时将它们发送到Platform。
 
-请参阅Mobile SDK文档，了解 [配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/) 和 [使用同意API](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/). 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅部分 [隐私和GDPR](https://developer.adobe.com/client-sdks/documentation/resources/privacy-and-gdpr/).
+请参阅Mobile SDK文档，了解 [配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/) 和 [使用同意API](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/). 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅部分 [隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/).
 
 ### 直接摄取符合XDM标准的同意数据 {#batch}
 
