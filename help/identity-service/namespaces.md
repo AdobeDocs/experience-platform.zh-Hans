@@ -2,10 +2,10 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 98482bfdd54b70cde73c3512f8237c7862e41281
 workflow-type: tm+mt
-source-wordcount: '1691'
-ht-degree: 8%
+source-wordcount: '1787'
+ht-degree: 7%
 
 ---
 
@@ -23,11 +23,24 @@ ht-degree: 8%
 
 ## 了解身份命名空间
 
+![使用Identity服务的数据工作流的插图。](images/identity-service-stitching.png)
+
 完全限定的标识包括两个组件： **标识值** 和 **身份命名空间**. 例如，如果标识的值为 `scott@acme.com`，则命名空间会将此值识别为电子邮件地址，以提供相关上下文。 同样，命名空间可以区分 `555-123-456` 作为电话号码，并且 `3126ABC` 作为CRM ID。 基本上， **命名空间为给定身份提供上下文**. 跨配置文件片段匹配记录数据时，例如 [!DNL Real-Time Customer Profile] 合并配置文件数据，身份值和命名空间必须匹配。
 
 例如，两个配置文件片段可能包含不同的主ID，但它们的“电子邮件”命名空间共享相同的值，因此Experience Platform能够看到这些片段实际上是同一个人，并在该人的身份图表中将数据汇总在一起。
 
-![](images/identity-service-stitching.png)
+>[!BEGINSHADEBOX]
+
+**身份命名空间解释**
+
+要更好地理解命名空间的概念，另一种方法是考虑现实世界的例子，例如城市及其相应的状态。 例如，缅因州的波特兰和俄勒冈州的波特兰是美国两个不同的地方。 虽然这两个城市同名，但国家作为一个命名空间运行，并提供区分这两个城市的必要环境。
+
+将相同的逻辑应用于Identity Service：
+
+* 概览，标识值： `1-234-567-8900` 看起来象个电话号码。 但是，从系统的角度来看，此值可以配置为CRM ID。 如果没有相应的命名空间，Identity Service无法将必要的上下文应用于此身份值。
+* 另一个示例是标识值： `john@gmail.com`. 虽然可以轻松将此标识值假定为电子邮件，但完全可以将其配置为自定义命名空间CRM ID。 使用命名空间，您可以区分 `Email:john@gmail.com` 从 `CRM ID:john@gmail.com`.
+
+>[!ENDSHADEBOX]
 
 ### 命名空间的组件
 
@@ -79,14 +92,14 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | Adobe Analytics（旧版ID） | 表示Adobe Analytics的命名空间。 请参阅以下文档： [Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces) 以了解更多信息。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 请参阅以下文档： [基于兴趣的广告](https://support.apple.com/en-us/HT202074) 以了解更多信息。 |
 | Apple推送通知服务 | 表示使用Apple推送通知服务收集的标识的命名空间。 请参阅以下文档： [Apple推送通知服务](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) 以了解更多信息。 |
-| CORE | 表示Adobe Audience Manager的命名空间。 此命名空间还可以通过其旧版名称“Adobe AudienceManager”进行引用。 请参阅以下文档： [AUDIENCE MANAGERID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html#aam-ids) 以了解更多信息。 |
+| 核心 | 表示Adobe Audience Manager的命名空间。 此命名空间还可以通过其旧版名称“Adobe AudienceManager”进行引用。 请参阅以下文档： [AUDIENCE MANAGERID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html#aam-ids) 以了解更多信息。 |
 | ECID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](./ecid.md) 以了解更多信息。 |
 | 电子邮件 | 表示电子邮件地址的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 请参阅以下文档： [SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) 以了解更多信息。 |
 | Firebase云消息 | 一个命名空间，它表示使用Google Firebase Cloud Messaging为推送通知收集的身份。 请参阅以下文档： [Google Firebase云消息](https://firebase.google.com/docs/cloud-messaging) 以了解更多信息。 |
 | Google Ad ID (GAID) | 表示Google广告ID的命名空间。 请参阅以下文档： [Google广告ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) 以了解更多信息。 |
 | Google点击ID | 表示Google点击ID的命名空间。 请参阅以下文档： [Google Ads中的点击跟踪](https://developers.google.com/adwords/api/docs/guides/click-tracking) 以了解更多信息。 |
-| Phone | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
+| 电话 | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包含一个加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如：`(+)(country code)(area code)(phone number)`。 |
 | 电话(SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
 | 电话(SHA256_E.164) | 一个命名空间，表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码。 |
