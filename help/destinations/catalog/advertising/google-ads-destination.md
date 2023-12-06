@@ -1,12 +1,11 @@
 ---
-keywords: Google ads；google ads；google adwords；Google AdWords；Google Adwords
 title: Google Ads连接
 description: Google Ads以前称为Google AdWords，是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按每次点击付费进行广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 1ec9559e762b44dd8d7639aba0a54af7ce221666
 workflow-type: tm+mt
-source-wordcount: '972'
-ht-degree: 3%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +28,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Google Ad Manager] 支持激活下表中描述的标识。
+[!DNL Google Ads] 支持激活下表中描述的标识。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
