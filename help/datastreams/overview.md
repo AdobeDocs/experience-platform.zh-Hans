@@ -1,19 +1,17 @@
 ---
 title: 数据流概述
-description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
-keywords: 配置;数据流;datastreamId;edge;数据流 id;环境设置;edgeConfigId;标识;启用 id 同步;ID 同步容器 ID;沙盒;流入口;事件数据集;目标;客户端代码;属性令牌;目标环境 ID;Cookie 目标;url 目标;分析设置 Blockreport 套件 id;为数据收集准备数据;数据准备;映射器;XDM 映射器;边缘映射器;
-exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
-workflow-type: ht
-source-wordcount: '780'
-ht-degree: 100%
+description: 了解数据流如何帮助您将客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+workflow-type: tm+mt
+source-wordcount: '728'
+ht-degree: 77%
 
 ---
 
 
 # 数据流概述
 
-数据流表示实施 Adobe Experience Platform Web 和 Mobile SDK 时的服务器端配置。SDK 中的[配置命令](../edge/fundamentals/configuring-the-sdk.md)控制必须在客户端上处理的事情（例如 `edgeDomain`），而数据流处理 SDK 的所有其他配置。当请求发送到 Adobe Experience Platform Edge Network 时，`edgeConfigId` 用于引用数据流。这可让您更新服务器端配置，而无需在网站上进行代码更改。
+数据流表示实施 Adobe Experience Platform Web 和 Mobile SDK 时的服务器端配置。而 [配置](../edge/fundamentals/configuring-the-sdk.md) SDK中的命令可控制必须在客户端上处理的内容(例如 `edgeDomain`)，数据流处理SDK的所有其他配置。 当请求发送到 Adobe Experience Platform Edge Network 时，`edgeConfigId` 用于引用数据流。这可让您更新服务器端配置，而无需在网站上进行代码更改。
 
 您可以通过在 Adobe Experience Platform UI 或数据收集 UI 的左侧导航中选择&#x200B;**[!UICONTROL 数据流]**&#x200B;来创建和管理数据流。
 
@@ -25,7 +23,7 @@ ht-degree: 100%
 
 >[!IMPORTANT]
 >
->本文档的内容不是法律建议，也不会代替法律建议。请咨询您公司的法律部门，获取有关处理敏感数据的建议。
+>本文档的内容不是法律建议，也不会代替法律建议。请咨询您公司的法律部门，以获取有关处理敏感数据的建议。
 
 企业数据管理政策和监管要求正在对敏感客户数据的收集、处理和使用方式施加越来越多的限制。这包括对受保护的健康数据 (PHI) 的收集、处理和使用，将受“健康保险流通与责任法案”(HIPAA) 等法规的约束。
 
@@ -41,7 +39,7 @@ ht-degree: 100%
 
 ### 数据管理 {#governance}
 
-数据流利用 Experience Platform 的内置数据管理功能来防止敏感数据被发送到不符合 HIPAA 的服务。通过标记数据流架构中包含敏感数据的特定字段，可以精细地控制哪些数据字段可用于特定目的。
+数据流使用Experience Platform内置的数据治理功能，防止将敏感数据发送到不符合HIPAA要求的服务。 通过标记数据流架构中包含敏感数据的特定字段，可以精细地控制哪些数据字段可用于特定目的。
 
 以下视频简要概述了如何在 UI 中为数据流配置和实施数据使用限制：
 
@@ -53,13 +51,13 @@ ht-degree: 100%
 >
 >有关如何在 Experience Platform UI 或数据收集 UI 中的[!UICONTROL 架构]选项卡中应用数据使用标签的详细信息，请参阅[架构标记教程](../xdm/tutorials/labels.md)。
 
-在创建新的数据流时，如果所选架构包含敏感数据使用标签，则只能将数据流配置为将该数据发送到符合 HIPAA 标准的目标。目前，数据流支持的唯一符合 HIPAA 标准的目标是 Adobe Experience Platform。将为包含敏感数据使用标签的数据流禁用其他目标服务，包括 Adobe Target、Adobe Analytics、Adobe Audience Manager、事件转发和边缘目标。
+在创建数据流时，如果所选架构包含敏感数据使用标签，则只能配置数据流以将该数据发送到支持HIPAA的目标。 目前，数据流支持的唯一符合 HIPAA 标准的目标是 Adobe Experience Platform。将为包含敏感数据使用标签的数据流禁用其他目标服务，包括 Adobe Target、Adobe Analytics、Adobe Audience Manager、事件转发和边缘目标。
 
-如果某个架构正在具有不符合 HIPAA 标准的服务的现有数据流中使用，则尝试向该架构添加敏感数据使用标签会导致出现政策违反消息，并且操作将会被阻止。该消息指定哪个数据流触发了违规，并建议从数据流中删除任何不符合 HIPAA 标准的服务以解决问题。
+如果某个架构正在具有不符合 HIPAA 标准的服务的现有数据流中使用，则尝试向该架构添加敏感数据使用标签会导致出现政策违反消息，并且操作将会被阻止。该消息指定哪个数据流触发了冲突，并建议从数据流中删除任何非HIPAA就绪的服务以解决该问题。
 
 ### 审核日志
 
-在 Experience Platform 中，可以审核日志形式监控数据流活动。审核日志提供了有关&#x200B;**谁**&#x200B;执行了&#x200B;**哪项**&#x200B;操作和执行&#x200B;**时间**&#x200B;的信息和其他上下文数据，可让您解决与数据流相关的问题，从而帮助您的企业遵守公司数据管理政策和监管要求。
+在 Experience Platform 中，可以审核日志形式监控数据流活动。审核日志指示 **谁** 已执行 **什么** 操作，以及 **时间**，以及其他上下文数据，可帮助您排除与数据流相关的问题，以帮助您的企业遵守公司数据管理政策和法规要求。
 
 当用户创建、更新或删除数据流时，将创建审核日志以记录操作。当用户通过[为数据收集准备数据](./data-prep.md)过程创建、更新或删除映射时，会发生相同的情况。无论更新的是数据流还是映射，生成的审核日志都会归类于[!UICONTROL 数据流]资源类型。
 

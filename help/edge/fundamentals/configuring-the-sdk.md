@@ -1,17 +1,15 @@
 ---
 title: 配置Adobe Experience Platform Web SDK
 description: 了解如何配置Adobe Experience Platform Web SDK。
-seo-description: Learn how to configure the Experience Platform Web SDK
-keywords: 配置；配置；SDK；edge；Web SDK；配置；edgeConfigId；上下文；Web；设备；环境；placeContext；debugEnabled；edgeDomain；orgId；clickCollectionEnabled；onBeforeEventSend；defaultConsent；Web SDK设置；prehidingStyle；不透明度；cookieDestinationsEnabled；urlDestinationsEnabled；idMigrationEnabled；therCookiesEnabled；
-exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: a192a746fa227b658fcdb8caa07ea6fb4ac1a944
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1128'
-ht-degree: 9%
+source-wordcount: '1088'
+ht-degree: 8%
 
 ---
 
-# 配置平台Web SDK
+
+# 配置Web SDK
 
 SDK的配置已完成 `configure` 命令。
 
@@ -26,7 +24,7 @@ alloy("configure", {
 });
 ```
 
-可在配置期间设置许多选项。 所有选项均可在下面找到，并按类别分组。
+配置期间可以设置许多选项。 所有选项都可以在下面找到，按类别分组。
 
 ## 常规选项
 
@@ -56,9 +54,9 @@ alloy("configure", {
 
 >[!IMPORTANT]
 >
->所有上下文属性，以下情况除外： `highEntropyUserAgentHints`，默认情况下处于启用状态。 如果您在Web SDK配置中手动指定了上下文属性，则必须启用所有上下文属性以继续收集所需信息。
+>所有上下文属性，除 `highEntropyUserAgentHints`，默认情况下处于启用状态。 如果您在Web SDK配置中手动指定了上下文属性，则必须启用所有上下文属性以继续收集所需信息。
 
-启用 [高熵客户端提示](user-agent-client-hints.md#enabling-high-entropy-client-hints) 在Web SDK部署中，您必须包含其他 `highEntropyUserAgentHints` 上下文选项，以及您现有的配置。
+要启用 [高熵客户端提示](user-agent-client-hints.md#enabling-high-entropy-client-hints) 在Web SDK部署中，您必须包含其他 `highEntropyUserAgentHints` 上下文选项，以及您的现有配置。
 
 例如，要从Web属性检索高熵客户端提示，您的配置将如下所示：
 
@@ -83,13 +81,13 @@ alloy("configure", {
 
 ### `edgeDomain` {#edge-domain}
 
-使用您的第一方域填充此字段。 欲知更多详情，请参见 [文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans).
+使用您的第一方域填充此字段。 欲知更多详情，请参见 [文档](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=zh-Hans).
 
-该域类似于 `data.{customerdomain.com}` ，以访问www网站。{customerdomain.com}。
+该域类似于 `data.{customerdomain.com}` 在www上创建一个网站。{customerdomain.com}。
 
 ### `edgeBasePath` {#edge-base-path}
 
-用于与Adobe服务通信及交互的edgeDomain之后的路径。  通常，只有在不使用默认生产环境时，此更改才会更改。
+用于与Adobe服务通信和交互的edgeDomain之后的路径。  通常，只有在不使用默认生产环境时，此更改才会更改。
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
@@ -117,7 +115,7 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-指示是否自动收集与链接点击关联的数据。 参见 [自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking) 了解更多信息。 如果链接包含下载属性或以文件扩展名结尾，则还将其标记为下载链接。 可使用正则表达式配置下载链接限定符。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
+指示是否自动收集与链接点击关联的数据。 请参阅 [自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking) 以了解更多信息。 如果链接包含下载属性或以文件扩展名结尾，则也会将其标记为下载链接。 可使用正则表达式配置下载链接限定符。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
@@ -127,7 +125,7 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-配置在发送之前为每个事件调用的回调。 具有字段的对象 `xdm` 被发送到回调。 要更改发送的内容，请修改 `xdm` 对象。 在回调内部， `xdm` 对象已具有在event命令中传递的数据，以及自动收集的信息。 有关此回调时间及示例的更多信息，请参阅 [全局修改事件](tracking-events.md#modifying-events-globally).
+配置在发送之前为每个事件调用的回调。 包含字段的对象 `xdm` 被发送到回调。 要更改发送的内容，请修改 `xdm` 对象。 在回调内部， `xdm` 对象已具有在event命令中传递的数据，以及自动收集的信息。 有关此回调时间及示例的更多信息，请参阅 [全局修改事件](tracking-events.md#modifying-events-globally).
 
 ### `onBeforeLinkClickSend` {#onBeforeLinkClickSend}
 
@@ -137,15 +135,15 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-配置在发送之前为每个链接点击跟踪事件调用的回调。 callback发送一个对象，其中 `xdm`， `clickedElement`、和 `data` 字段。
+配置在发送之前为每个链接点击跟踪事件调用的回调。 回调发送一个对象，该对象具有 `xdm`， `clickedElement`、和 `data` 字段。
 
-使用DOM元素结构过滤链接跟踪时，您可以使用 `clickElement` 命令。 `clickedElement` 是被单击并已封装父节点树的DOM元素节点。
+使用DOM元素结构过滤链接跟踪时，您可以使用 `clickElement` 命令。 `clickedElement` 是已单击并已封装父节点树的DOM元素节点。
 
 要更改发送的数据，请修改 `xdm` 和/或 `data` 对象。 在回调内部， `xdm` 对象已具有在event命令中传递的数据，以及自动收集的信息。
 
-* 除以外的任何值 `false` 将允许处理事件并发送回调。
-* 如果回调返回 `false` 值，事件处理将停止，并且不会出现错误，并且不会发送事件。 此机制允许通过检查事件数据并返回来过滤掉某些事件 `false` 如果不发送该事件。
-* 如果回调引发异常，则停止处理该事件，并且不发送该事件。
+* 除以外的任何值 `false` 允许处理事件并发送回调。
+* 如果回调返回 `false` 值，事件处理将停止，并且不会出现错误，并且不会发送事件。 此机制允许通过检查事件数据并返回来过滤某些事件 `false` 如果不应发送该事件。
+* 如果回调引发异常，则停止处理事件，并且不发送事件。
 
 
 ## 隐私选项
@@ -158,11 +156,11 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，使用此设置。 其他有效值为 `"pending"` 和 `"out"`. 此默认值不会保留在用户配置文件中。 用户配置文件仅在以下情况下更新 `setConsent` 称为。
-* `"in"`：如果设置此设置或未提供值，则无需用户同意即可继续工作。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，使用此设置。 其他有效值为 `"pending"` 和 `"out"`. 此默认值不会保留在用户配置文件中。 仅当出现以下情况时，才会更新用户配置文件 `setConsent` 称为。
+* `"in"`：如果设置此设置或未提供值，则无需用户同意首选项即可继续工作。
 * `"pending"`：设置此设置后，工作将排入队列，直到用户提供同意首选项。
-* `"out"`：设置此设置后，将放弃工作，直到用户提供同意首选项。
-提供用户的首选项后，工作会根据用户的首选项进行或中止。 参见 [支持同意](../consent/supporting-consent.md) 了解更多信息。
+* `"out"`：设置此设置后，将放弃工作，直到用户提供同意首选项为止。
+提供用户的首选项后，工作会根据用户的首选项进行或中止。 请参阅 [支持同意](../consent/supporting-consent.md) 以了解更多信息。
 
 ## 个性化选项 {#personalization}
 
@@ -176,7 +174,7 @@ alloy("configure", {
 
 用于创建在从服务器加载个性化内容时隐藏网页内容区域的CSS样式定义。 如果未提供此选项，则SDK在加载个性化内容时不会尝试隐藏任何内容区域，这可能会导致“闪烁”。
 
-例如，如果网页上的某个元素的ID为 `container`，在从服务器加载个性化内容时，要隐藏其默认内容，请使用以下预隐藏样式：
+例如，如果网页上的某个元素的ID为 `container`，在从服务器加载个性化内容时想要隐藏其默认内容，请使用以下预隐藏样式：
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -186,7 +184,7 @@ alloy("configure", {
 
 从迁移单个页面时应使用此选项 [!DNL at.js] 到Web SDK。
 
-使用此选项可使Web SDK能够读取和写入旧版 `mbox` 和 `mboxEdgeCluster` 使用的Cookie [!DNL at.js]. 这有助于您在从使用Web SDK的页面移动到使用 [!DNL at.js] 库或反之。
+使用此选项可使Web SDK能够读写旧版 `mbox` 和 `mboxEdgeCluster` 使用的Cookie [!DNL at.js]. 这有助于您在从使用Web SDK的页面移动到使用 [!DNL at.js] 库或反之。
 
 | 类型 | 必需 | 默认值 |
 | -------- | ------------ | ----------------- |
@@ -224,9 +222,9 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-如果为true，则SDK会读取和设置旧的AMCV Cookie。 当网站的某些部分可能仍使用Visitor.js时，此选项有助于过渡到Adobe Experience Platform Web SDK的使用。
+如果为true，则SDK会读取并设置旧的AMCV Cookie。 当网站的某些部分可能仍使用Visitor.js时，此选项可帮助转换为使用Adobe Experience Platform Web SDK。
 
-如果页面上定义了访客API，则SDK会查询访客API以获取ECID。 通过此选项，您可以使用Adobe Experience Platform Web SDK对页面进行双重标记，并且仍然具有相同的ECID。
+如果页面上定义了访客API，则SDK会查询访客API以获取ECID。 通过此选项，您可以使用Adobe Experience Platform Web SDK对页面进行双重标记，同时仍然具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 
@@ -236,4 +234,4 @@ alloy("configure", {
 
 {style="table-layout:auto"}
 
-启用设置Adobe第三方Cookie。 SDK可以在第三方上下文中保留访客ID，以便跨网站使用相同的访客ID。 如果您有多个网站或要与合作伙伴共享数据，请使用此选项；但是，出于隐私原因，有时并不需要使用此选项。
+启用Adobe第三方Cookie的设置。 SDK可以在第三方上下文中保留访客ID，以便能够在各个网站中使用相同的访客ID。 如果您有多个网站或者希望与合作伙伴共享数据，请使用此选项；但是，出于隐私原因，有时并不需要此选项。

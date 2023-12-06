@@ -1,11 +1,10 @@
 ---
 title: 配置数据流覆盖
 description: 了解如何在数据流 UI 中配置数据流覆盖并通过 Web SDK 激活它们。
-exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 252bda1395a2a31cd7e2e2789e5c2508fbd3fd5e
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1466'
-ht-degree: 77%
+source-wordcount: '1450'
+ht-degree: 60%
 
 ---
 
@@ -13,23 +12,23 @@ ht-degree: 77%
 
 数据流覆盖允许您为数据流定义其他配置，这些配置通过 Web SDK 传递到 Edge Network。
 
-这可以帮助您触发与默认数据流行为不同的数据流行为，而无需创建新的数据流或修改现有设置。
+这有助于触发与默认数据流行为不同的数据流行为，而无需创建数据流或修改现有设置。
 
-数据流配置覆盖是一个两步过程：
+数据流配置覆盖分为两步：
 
-1. 首先，您必须在[数据流配置页面](configure.md)中定义数据流配置覆盖。
+1. 首先，您必须在以下位置定义数据流配置覆盖 [数据流配置页面](configure.md).
 2. 然后，您必须通过以下方式之一将覆盖发送到Edge Network：
    * 通过 `sendEvent` 或 `configure` [Web SDK](#send-overrides-web-sdk) 命令。
    * 通过Web SDK [标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
-   * 通过Mobile SDK [sendEvent API](#send-overrides-mobile-sdk) 呼叫。
+   * 通过Mobile SDK [sendEvent](#send-overrides-mobile-sdk) 命令。
 
 本文介绍每种受支持的覆盖的端到端数据流配置覆盖过程。
 
 >[!IMPORTANT]
 >
->数据流覆盖仅支持 [Web SDK](../edge/home.md) 和 [移动SDK](https://developer.adobe.com/client-sdks/documentation/) 集成。 [服务器API](../server-api/overview.md) 集成当前不支持数据流覆盖。
+>数据流覆盖仅支持 [Web SDK](../edge/home.md) 和 [移动SDK](https://developer.adobe.com/client-sdks/home/) 集成。 [服务器API](../server-api/overview.md) 集成当前不支持数据流覆盖。
 ><br>
->在需要将不同的数据发送到不同的数据流时应使用数据流覆盖。不应将数据流覆盖用于个性化用例或同意数据。
+>在需要将不同的数据发送到不同的数据流时应使用数据流覆盖。请勿对个性化用例或同意数据使用数据流覆盖。
 
 ## 用例 {#use-cases}
 
@@ -41,11 +40,11 @@ ht-degree: 77%
 
 通过使用数据流覆盖，该公司可动态地将数据的流动切换到不同的数据流，取代将数据发送到一个数据流的默认行为。
 
-一个常见的用例可以是将数据发送到国家/地区特有的数据流，也将数据发送到客户从中执行重要操作（如下订单或更新其用户配置文件）的全球数据流。
+一个常见的使用案例可能是将数据发送到特定于国家/地区的数据流，也发送到客户在其中执行重要操作（如下订单或更新其用户配置文件）的全球数据流。
 
 **为不同的业务部门区分配置文件和标识**
 
-一家有多个业务部门的公司要使用多个 Experience Platform 沙盒存储每个业务部门特有的数据。
+具有多个业务部门的公司希望使用多个Experience Platform沙盒来存储特定于每个业务部门的数据。
 
 该公司可使用数据流覆盖确保每个业务部门都有自己的数据流以通过它接收数据，而非将数据发送到默认数据流。
 
@@ -62,7 +61,7 @@ ht-degree: 77%
 
 要为 Adobe Target 数据流配置数据流覆盖，您必须首先创建 Adobe Target 数据流。按照说明进行操作，使用 [Adobe Target](configure.md#target) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑您已添加的 [Adobe Target](configure.md#target) 服务，并使用&#x200B;**[!UICONTROL 属性令牌覆盖]**&#x200B;部分添加所需的数据流覆盖，如下图所示。每行添加一个属性令牌。
+创建数据流后，编辑 [Adobe Target](configure.md#target) 您已添加并使用 **[!UICONTROL 资产令牌覆盖]** 部分来添加所需的数据流覆盖，如下图所示。 每行添加一个属性令牌。
 
 ![数据流 UI 屏幕快照，显示了 Adobe Target 服务设置，并突出显示了属性令牌覆盖。](assets/overrides/override-target.png)
 
@@ -74,7 +73,7 @@ ht-degree: 77%
 
 要为 Adobe Analytics 数据流配置数据流覆盖，您必须首先创建 [Adobe Analytics](configure.md#analytics) 数据流。按照说明进行操作，使用 [Adobe Analytics](configure.md#analytics) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑您已添加的 [Adobe Analytics](configure.md#target) 服务，并使用&#x200B;**[!UICONTROL 报告包覆盖]**&#x200B;部分添加所需的数据流覆盖，如下图所示。
+创建数据流后，编辑 [Adobe Analytics](configure.md#target) 您已添加并使用 **[!UICONTROL 报表包覆盖]** 部分来添加所需的数据流覆盖，如下图所示。
 
 选择&#x200B;**[!UICONTROL 显示批处理模式]**&#x200B;可启用报告包覆盖的批量编辑。您可以复制并粘贴报告包覆盖列表，每行输入一个报告包。
 
@@ -88,7 +87,7 @@ ht-degree: 77%
 
 要为 Experience Platform 事件数据集配置数据流覆盖，您必须首先创建 [Adobe Experience Platform](configure.md#aep) 数据流。按照说明进行操作，使用 [Adobe Experience Platform](configure.md#aep) 服务[配置数据流](configure.md)。
 
-创建数据流后，编辑已添加的 [Adobe Experience Platform](configure.md#aep) 服务并选择&#x200B;**[!UICONTROL 添加事件数据集]**&#x200B;选项以添加一个或多个覆盖事件数据集，如下图所示。
+创建数据流后，编辑 [Adobe Experience Platform](configure.md#aep) 已添加的服务并选择 **[!UICONTROL 添加事件数据集]** 用于添加一个或多个覆盖事件数据集的选项，如下图所示。
 
 ![数据流 UI 屏幕快照，显示了 Adobe Experience Platform 服务设置，并突出显示了事件数据集覆盖。](assets/overrides/override-aep.png)
 
@@ -124,9 +123,9 @@ ht-degree: 77%
 
 如果您使用的是Web SDK，请通过 `edgeConfigOverrides` 命令是激活数据流配置覆盖的第二步，也是最后一步。
 
-数据流配置覆盖通过 `edgeConfigOverrides` Web SDK 命令发送到 Edge Network。该命令创建数据流覆盖，对于每个请求，这些覆盖通过下一条命令或 `configure` 命令传递给 [!DNL Edge Network]。
+数据流配置覆盖通过 `edgeConfigOverrides` Web SDK 命令发送到 Edge Network。此命令创建数据流覆盖，并将其传递给 [!DNL Edge Network] 在下一个命令中。 如果您使用 `configure` 命令，则会为每个请求传递覆盖。
 
-`edgeConfigOverrides` 命令创建数据流覆盖，对于每个请求，这些覆盖通过下一条命令或 `configure` 命令传递给 [!DNL Edge Network]。
+此 `edgeConfigOverrides` 命令创建数据流覆盖，这些覆盖将传递给 [!DNL Edge Network] 在下一个命令中。
 
 当使用 `configure` 命令发送配置覆盖时，它包含在以下 Web SDK 命令中。
 
@@ -246,7 +245,7 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
 }
 ```
 
->[!TAB Android (Kotlin)]
+>[!TAB Android™ (Kotlin)]
 
 此示例显示数据流ID覆盖在Mobile SDK中会是什么样子 [!DNL Android] 集成。
 

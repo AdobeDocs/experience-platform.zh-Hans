@@ -1,27 +1,27 @@
 ---
 title: Adobe Experience Platform Web软件开发工具包(SDK)概述
 description: 了解如何使用Adobe Experience Platform Web SDK将Platform功能集成到您的网站。
-exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 2%
+source-wordcount: '750'
+ht-degree: 1%
 
 ---
 
-# Adobe Experience Platform Web SDK概述 {#overview}
+
+# Adobe Experience Platform Web SDK {#overview}
 
 Adobe Experience Platform Web软件开发工具包(SDK)是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe Experience Platform Edge Network与其服务进行交互。 Adobe提供了两种实施Web SDK的方法：
 
-* 使用进行手动实施 `alloy.js`. 本用户指南提供了关于此实施方法的文档。
+* 使用进行手动实施 `alloy.js` JavaScript库 本用户指南提供了关于此实施方法的文档。
 * 此 [Web SDK标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). 请参阅 [使用Web SDK实施Adobe Experience Cloud教程](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 以了解更多信息。
 
-## Experience Platform边缘网络
+## Experience Platform边缘网络 {#edge-network}
 
 Experience PlatformWeb SDK是组成Adobe Experience Platform Edge Network的一系列工具的一部分。 Edge Network包含以下组件：
 
 * **[Experience PlatformWeb SDK](#overview)：** JavaScript SDK和标记扩展可显着简化Adobe技术的部署。
-* **[Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/)：** v5 Mobile SDK的扩展，允许客户使用新的部署方法
+* **[Experience Platform移动SDK](https://developer.adobe.com/client-sdks/home/)：** v5 Mobile SDK的扩展，允许客户使用新的部署方法
 * **[Experience Platform边缘网络服务器API](../server-api/overview.md)：** 可用于各种数据收集、个性化、广告和营销用例的API。 服务器API可用于服务器、IoT设备、机顶盒和其他各种设备。
 
 Edge Network是一个框架，用于在所有可寻址通道中进行低延迟数据收集、可插拔计算和快速数据激活。 它为每个渠道（JavaScript、移动设备、服务器端）提供单个整合SDK，将数据发送到公共Adobe域(`adobedc.net`)，接收返回的单个有效负载以进行数据和体验交付。

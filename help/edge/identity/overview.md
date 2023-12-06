@@ -1,24 +1,23 @@
 ---
-title: Platform Web SDK中的身份数据
+title: Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
-keywords: 身份；第一方身份；身份服务；第三方身份；ID迁移；访客ID；第三方身份；thirdPartyCookiesEnabled；idMigrationEnabled；getIdentity；同步身份；syncIdentity；sendEvent；identityMap；primary；ecid；身份命名空间；命名空间ID；authenticationState；hashEnabled；
-exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1414'
-ht-degree: 1%
+source-wordcount: '1339'
+ht-degree: 0%
 
 ---
 
-# Platform Web SDK中的身份数据
 
-Adobe Experience Platform Web SDK可利用 [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) 以跟踪访客行为。 通过使用ECID，您可以确保每个设备都有一个唯一标识符，该标识符可以跨多个会话持续存在，从而将特定设备在Web会话期间和之间发生的所有点击绑定在一起。
+# Web SDK中的身份数据
+
+Adobe Experience Platform Web SDK使用 [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) 以跟踪访客行为。 通过使用ECID，您可以确保每个设备都有一个唯一标识符，该标识符可以跨多个会话持续存在，从而将特定设备在Web会话期间和之间发生的所有点击绑定在一起。
 
 本文档概述了如何使用Platform Web SDK管理ECID。
 
 ## 使用SDK跟踪ECID
 
-Platform Web SDK通过使用Cookie来分配和跟踪ECID，以及使用多种可用方法来配置这些Cookie的生成方式。
+Platform Web SDK通过使用Cookie分配和跟踪ECID，以及使用多种可用方法来配置这些Cookie的生成方式。
 
 当新用户访问您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备识别Cookie。 对于首次访问的访客，在来自Adobe Experience Platform Edge Network的第一次响应中会生成并返回ECID。 对于回访访客，将从以下位置检索ECID： `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie并添加到Edge Network的有效负载中。
 
@@ -35,9 +34,9 @@ Platform Web SDK通过使用Cookie来分配和跟踪ECID，以及使用多种可
 
 第三方数据收集涉及将数据直接发送到Edge Network域 `adobedc.net`.
 
-近年来，Web浏览器在处理第三方设置的Cookie时越来越严格。 默认情况下，某些浏览器会阻止第三方Cookie。 如果您使用第三方Cookie来识别网站访客，则这些Cookie的生命周期几乎总是比使用第一方Cookie时可用的生命周期更短。 在某些情况下，第三方Cookie最快会在七天后过期。
+近年来，Web浏览器在处理第三方设置的Cookie时越来越严格。 默认情况下，某些浏览器会阻止第三方Cookie。 如果您使用第三方Cookie来识别网站访客，则这些Cookie的生命周期几乎总是比使用第一方Cookie时可用的生命周期更短。 有时，第三方Cookie在短短7天后过期。
 
-此外，当使用第三方数据收集时，某些广告拦截器会完全将流量限制在Adobe数据收集端点。
+此外，当使用第三方数据收集时，一些广告拦截器会完全将流量限制在Adobe数据收集端点。
 
 ### 第一方数据收集 {#first-party}
 
@@ -49,9 +48,9 @@ Platform Web SDK通过使用Cookie来分配和跟踪ECID，以及使用多种可
 
 无论您是选择第一方还是第三方数据收集，Cookie可以保留的时间长短都会直接影响Adobe Analytics和Customer Journey Analytics中的访客计数。 此外，在网站上使用Adobe Target或Offer decisioning时，最终用户可能会遇到不一致的个性化体验。
 
-例如，假定您创建了一个个性化体验，如果用户在过去七天内查看了任何项目三次，则该体验会将任何项目提升到主页。
+例如，假定您创建了一个个性化体验，如果用户在过去七天内查看了任何项目三次，则会将任何项目提升到主页。
 
-如果最终用户一周访问三次，然后七天未返回网站，则该用户可能在返回网站时被视为新用户，因为其Cookie可能已被浏览器策略删除（具体取决于他们在访问网站时所使用的浏览器）。 如果发生这种情况，您的Analytics工具会将访客视为新用户，即使他们在七天多一点前访问过该网站。 此外，任何为用户个性化体验的工作都将重新开始。
+如果最终用户一周访问三次，然后七天未返回网站，则该用户可能在返回网站时被视为新用户，因为其Cookie可能已被浏览器策略删除（具体取决于他们在访问网站时所使用的浏览器）。 如果发生这种情况，您的Analytics工具会将该访客视为新用户，即使他们仅在7天多一点前访问过该网站。 此外，任何为用户个性化体验的努力都会再次开始。
 
 ### 第一方设备Id
 
@@ -127,11 +126,11 @@ alloy("sendEvent", {
 
 * 当域的某些页面使用访客API，而其他页面使用此SDK时。 为了支持这种情况，SDK会读取现有AMCV Cookie并使用现有ECID写入新的Cookie。 此外，SDK还会写入AMCV Cookie，以便如果首先在通过SDK进行检测的页面上获取ECID，则通过访客API进行检测的后续页面将具有相同的ECID。
 * 在同时具有访客API的页面上设置Adobe Experience Platform Web SDK时。 为了支持这种情况，如果未设置AMCV Cookie，SDK将在页面上查找访客API并调用它以获取ECID。
-* 当整个网站都在使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以便保留返回的访客信息将会很有用。 在使用部署SDK后 `idMigrationEnabled` 为了迁移大部分访客Cookie，可以关闭该设置。
+* 当整个网站都在使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以便保留返回的访客信息会很有用。 在使用部署SDK后 `idMigrationEnabled` 为了迁移大部分访客Cookie，可以关闭该设置。
 
 ### 更新迁移特征
 
-将XDM格式的数据发送到Audience Manager时，在迁移时需要将此数据转换为信号。 需要更新您的特征以反映XDM提供的新密钥。 通过使用，可简化该过程 [BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) 该Audience Manager已创建。
+将XDM格式的数据发送到Audience Manager时，迁移时必须将此数据转换为信号。 必须更新您的特征以反映XDM提供的新密钥。 通过使用，可简化该过程 [BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) 该Audience Manager已创建。
 
 ## 在事件转发中使用
 

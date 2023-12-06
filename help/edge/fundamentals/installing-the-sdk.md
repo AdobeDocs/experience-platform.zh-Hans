@@ -1,18 +1,17 @@
 ---
 title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
-keywords: web sdk安装；安装web sdk；internet explorer；promise；npm包
-exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '924'
-ht-degree: 2%
+source-wordcount: '864'
+ht-degree: 0%
 
 ---
 
-# 安装SDK {#installing-the-sdk}
 
-有三种受支持的方法可使用Adobe Experience Platform Web SDK：
+# 安装Web SDK {#installing-the-sdk}
+
+有三种受支持的方法可以安装Adobe Experience Platform Web SDK：
 
 1. 使用Adobe Experience Platform Web SDK的首选方式是通过数据收集UI或Experience PlatformUI。
 1. Adobe Experience Platform Web SDK也可在内容交付网络(CDN)上提供，以供您使用。
@@ -29,7 +28,6 @@ ht-degree: 2%
 URL结构： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy.js（非缩小版本）。
 
 例如：
-
 
 * 缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
 * 未缩小： [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
@@ -77,7 +75,7 @@ URL结构： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy
 
 1. 在中打开您的网站 [!DNL Internet Explorer].
 1. 打开浏览器的调试控制台。
-1. 类型 `window.Promise` 进入控制台，然后按Enter。
+1. 类型 `window.Promise` 进入控制台并按Enter。
 
 如果不是 `undefined` 显示，您可能已经填充了 `window.Promise`. 确定是否 `window.Promise` ，方法是在完成上述安装说明后加载您的网站。 如果SDK抛出错误，提及了某个承诺的内容，则您可能没有进行复填 `window.Promise`.
 
@@ -97,7 +95,7 @@ URL结构： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy
 
 如一节所述 [添加代码](#adding-the-code)，您复制并粘贴到网站HTML中的基础代码将加载外部文件。 外部文件包含SDK的核心功能。 在此文件加载时尝试执行的任何命令都会排入队列，然后在文件加载后进行处理。 异步加载文件是性能最佳的安装方法。
 
-但在特定情况下，您可能希望同步加载文件\（稍后将记录有关这些情况的更多详细信息\）。 此操作会阻止浏览器解析和渲染HTML文档的其余部分，直到加载和执行外部文件为止。 通常建议不要在向用户显示主要内容之前再延迟一次，但根据具体情况而定，这样做可能会有意义。
+但是，在某些情况下，您可能希望同步加载文件。 此操作会阻止浏览器解析和渲染HTML文档的其余部分，直到加载和执行外部文件为止。 通常建议不要在向用户显示主要内容之前再延迟一次，但根据具体情况而定，这样做可能会有意义。
 
 要以同步方式而不是异步方式加载文件，请删除 `async` 属性来自第二个 `script` 标记如下所示：
 

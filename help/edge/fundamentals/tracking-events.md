@@ -1,14 +1,13 @@
 ---
 title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
-keywords: sendEvent；xdm；eventType；datasetId；sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend；
-exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1192'
-ht-degree: 1%
+source-wordcount: '1163'
+ht-degree: 0%
 
 ---
+
 
 # 跟踪事件
 
@@ -72,14 +71,14 @@ dataLayer.commerce = null;
 
 >[!NOTE]
 >
->在XDM字段中，每个事件中可发送的数据大小限制为32 KB。
+>在XDM字段中，每个事件中可发送的数据大小限制为32KB。
 
 
 ## 发送非XDM数据
 
 不匹配XDM架构的数据应使用 `data` 的选项 `sendEvent` 命令。 Web SDK 2.5.0及更高版本支持此功能。
 
-如果您需要更新Adobe Target配置文件或发送Target Recommendations属性，这将很有用。 [详细了解这些Target功能。](../personalization/adobe-target/target-overview.md#single-profile-update)
+如果您必须更新Adobe Target配置文件或发送Target Recommendations属性，这将很有用。 [详细了解这些Target功能。](../personalization/adobe-target/target-overview.md#single-profile-update)
 
 将来，您能够将完整数据层发送到 `data` 选项并将其映射到XDM服务器端。
 
@@ -105,7 +104,7 @@ alloy("sendEvent", {
 
 在XDM ExperienceEvent架构中，有一个可选 `eventType` 字段。 保存记录的主要事件类型。 设置事件类型可以帮助您区分要发送的不同事件。 XDM提供了几种预定义事件类型，您可以使用这些类型，也可以始终为用例创建自己的自定义事件类型。 请参阅的XDM文档 [所有预定义事件类型的列表](../../xdm/classes/experienceevent.md#eventType).
 
-如果使用标记扩展，这些事件类型将显示在下拉列表中，或者您始终可以传入而不使用标记。 它们可作为以下部分传入 `xdm` 选项。
+如果使用标记扩展，这些事件类型将显示在下拉列表中，或者您可以始终不使用标记传递它们。 它们可作为以下部分传入 `xdm` 选项。
 
 
 ```javascript
@@ -142,7 +141,7 @@ alloy("sendEvent", {
 >
 >此 `datasetId` 选项受 `sendEvent` 命令已弃用。 要覆盖数据集ID，请使用 [配置覆盖](../../datastreams/overrides.md) 而是。
 
-在某些用例中，您可能希望向未在配置UI中配置的数据集发送事件。 为此，您需要设置 `datasetId` 上的选项 `sendEvent` 命令：
+在某些用例中，您可能希望向未在配置UI中配置的数据集发送事件。 为此，您必须设置 `datasetId` 上的选项 `sendEvent` 命令：
 
 
 
@@ -162,8 +161,9 @@ alloy("sendEvent", {
 
 ## 使用sendBeacon API
 
-在网页用户导航离开之前发送事件数据可能比较棘手。 如果请求所用时间过长，浏览器可能会取消该请求。 某些浏览器已实施一个名为的Web标准API `sendBeacon` 以便在此期间更轻松地收集数据。 使用时 `sendBeacon`，浏览器会在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不会阻止页面导航。 告诉Adobe Experience Platform [!DNL Web SDK] 使用 `sendBeacon`，添加选项 `"documentUnloading": true` 到事件命令。  示例如下：
+在网页用户导航离开之前发送事件数据可能比较棘手。 如果请求所用时间过长，浏览器可能会取消该请求。 某些浏览器已实施一个名为的Web标准API `sendBeacon` 以便在此期间更轻松地收集数据。 使用时 `sendBeacon`，浏览器会在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不会阻止页面导航。 告诉Adobe Experience Platform [!DNL Web SDK] 使用 `sendBeacon`，添加选项 `"documentUnloading": true` 到事件命令。
 
+**示例**
 
 ```javascript
 alloy("sendEvent", {
@@ -181,7 +181,7 @@ alloy("sendEvent", {
 });
 ```
 
-浏览器对可以发送的数据量施加了限制 `sendBeacon` 一次性。 在许多浏览器中，限制为64K。 如果由于有效负载过大，浏览器拒绝该事件，则Adobe Experience Platform [!DNL Web SDK] 回退到使用其正常传输方法（例如， fetch）。
+浏览器对可以发送的数据量施加了限制 `sendBeacon` 一次性。 在许多浏览器中，限制为64 KB。 如果由于有效负载过大，浏览器拒绝该事件，则Adobe Experience Platform [!DNL Web SDK] 回退到使用其正常传输方法（例如， fetch）。
 
 ## 处理来自事件的响应
 
@@ -214,19 +214,19 @@ alloy("sendEvent", {
 
 此 `sendEvent` 命令返回一个已用解析的promise `result` 对象。 此 `result` 对象包含以下属性：
 
-**建议**：访客符合条件的个性化选件。 [进一步了解建议。](../personalization/rendering-personalization-content.md#manually-rendering-content)
-
-**决策**：此属性已弃用。 请改用 `propositions`。
-
-**目标**：Adobe Experience Platform中的区段，可与外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序共享。 [了解有关目标的更多信息。](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/custom-personalization.html)
+| 属性 | 描述 |
+|---------|----------|
+| `propositions` | 访客符合条件的个性化选件。 [进一步了解建议。](../personalization/rendering-personalization-content.md#manually-rendering-content) |
+| `decisions` | 此属性已弃用。 请改用 `propositions`。 |
+| `destinations` | Adobe Experience Platform中的受众，可与外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序共享。 [了解有关目标的更多信息。](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/custom-personalization.html) |
 
 >[!WARNING]
 >
->`destinations` 当前为测试版。 文档和功能可能会发生更改。
+>此 `destinations` 属性为测试版。 文档和功能可能会发生更改。
 
 ## 全局修改事件 {#modifying-events-globally}
 
-如果要全局添加、删除或修改事件中的字段，则可以配置 `onBeforeEventSend` 回调。  每次发送事件时都会调用此回调。  此回调是在事件对象中传递的，具有 `xdm` 字段。  修改 `content.xdm` 以更改随事件发送的数据。
+如果要全局添加、删除或修改事件中的字段，则可以配置 `onBeforeEventSend` 回调。 每次发送事件时都会调用此回调。 此回调是在事件对象中传递的，具有 `xdm` 字段。 要更改随事件发送的数据，请修改 `content.xdm`.
 
 
 ```javascript
@@ -246,8 +246,8 @@ alloy("configure", {
 
 `xdm` 字段按以下顺序设置：
 
-1. 作为选项传递到事件命令的值 `alloy("sendEvent", { xdm: ... });`
-2. 自动收集的值。  (请参阅 [自动信息](../data-collection/automatic-information.md).)
+1. 作为选项传递到事件命令的值 `alloy("sendEvent", { xdm: ... });`.
+2. 自动收集的值。 请参阅 [自动信息](../data-collection/automatic-information.md).
 3. 中所做的更改 `onBeforeEventSend` 回调。
 
 关于以下内容的一些注释 `onBeforeEventSend` 回调：
@@ -297,4 +297,4 @@ alloy("configure", {
 
 ## 潜在的可操作错误
 
-发送事件时，如果发送的数据太大（对于完整请求超过32KB），则可能会引发错误。 在这种情况下，您需要减少发送的数据量。
+发送事件时，如果发送的数据太大（对于完整请求超过32 KB），则可能会引发错误。 在这种情况下，您必须减少发送的数据量。

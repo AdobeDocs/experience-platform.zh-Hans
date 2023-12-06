@@ -1,36 +1,36 @@
 ---
-title: 使用来自 DNL The Weather Channel 的天气数据
-description: 使用来自 DNL The Weather Channel 的天气数据改进通过数据流收集的数据。
-exl-id: 548dfca7-2548-46ac-9c7e-8190d64dd0a4
-source-git-commit: 4c9abcefb279c6e8a90744b692d86746a4896d0a
-workflow-type: ht
-source-wordcount: '672'
-ht-degree: 100%
+title: 使用来自DNL天气渠道的天气数据增强数据收集
+description: 使用来自DNL天气频道的天气数据，增强您通过数据流收集的数据。
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+workflow-type: tm+mt
+source-wordcount: '674'
+ht-degree: 68%
 
 ---
 
-# 使用来自 [!DNL The Weather Channel] 的天气数据
 
-Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，将美国天气的其他上下文引入通过数据流收集的数据中。您可以将此数据用于 Experience Platform 中的分析、定位和区段创建操作。
+# 使用来自的天气数据增强数据收集 [!DNL The Weather Channel]
 
-可从 [!DNL The Weather Channel] 获取 3 种类型的数据：
+Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，将美国天气的其他上下文引入通过数据流收集的数据中。您可以将这些数据用于Experience Platform中的分析、定位和受众创建。
 
-* **[!UICONTROL 当前天气]**：用户的当前天气条件（基于其位置）。这包括当前温度、降水量、云量等。
-* **[!UICONTROL 预测天气]**：预测包括用户位置的 1、2、3、5、7、10 天的预测。
+以下三种类型的数据可供使用： [!DNL The Weather Channel]：
+
+* **[!UICONTROL 当前天气]**：用户的当前天气条件（基于其位置）。这包括当前的温度、降水、云覆盖率等。
+* **[!UICONTROL 预测天气]**：该预测包括用户位置的1、2、3、5、7和10天预测。
 * **[!UICONTROL 触发因素]**：触发因素是映射到不同的语义天气条件的特定组合。有三种不同类型的天气触发因素：
 
    * **[!UICONTROL 天气触发因素]**：语义上有意义的条件，例如寒冷天气或雨天。在不同的气候条件下，它们的定义会有所不同。
-   * **[!UICONTROL 产品触发因素]**：促使购买不同类型的产品的条件。例如：寒冷天气预测可能意味着购买雨衣的可能性更大。
+   * **[!UICONTROL 产品触发因素]**：促使购买不同类型的产品的条件。例如：寒冷天气预报可能意味着购买雨衣的可能性更大。
    * **[!UICONTROL 恶劣天气触发因素]**：恶劣天气警告，例如冬季风暴或飓风警报。
 
 ## 先决条件 {#prerequisites}
 
 在使用天气数据之前，请确保满足以下先决条件：
 
-* 您必须从 [!DNL The Weather Channel] 获得将使用的天气数据的许可。之后，将在您的帐户上启用该数据。
-* 只能通过数据流获得天气数据。要使用天气数据，您必须通过 [!DNL Web SDK]、[!DNL Mobile Edge Extension] 或[服务器 API](../../server-api/overview.md) 利用该数据。
+* 您必须授权您将使用的天气数据 [!DNL The Weather Channel]. 之后，将在您的帐户上启用该数据。
+* 只能通过数据流获得天气数据。要使用天气数据，您必须使用 [!DNL Web SDK]， [!DNL Mobile Edge Extension] 或 [服务器API](../../server-api/overview.md) 以包含此数据。
 * 您的数据流必须已启用[[!UICONTROL 地理位置]](../configure.md#advanced-options)。
-* 将[天气字段组](#schema-configuration)添加到您将使用的架构。
+* 添加 [天气字段组](#schema-configuration) 到您所使用的架构。
 
 ## 设置 {#provisioning}
 
@@ -50,7 +50,7 @@ Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，
 
 ## 访问天气数据 {#access-weather-data}
 
-在您的数据获得许可且可用后，可以通过 Adobe 服务以多种方式访问它。
+您的数据获得许可并可用后，您便可以在整个Adobe服务中以各种方式访问它。
 
 ### Adobe Analytics {#analytics}
 
@@ -62,15 +62,15 @@ Adobe 已与 [!DNL [The Weather Company]](https://www.ibm.com/weather) 合作，
 
 ### Adobe Customer Journey Analytics {#cja}
 
-在 [!DNL Adobe Customer Journey Analytics] 中，数据流中指定的数据集包含天气数据。只要将天气属性[添加到架构](#prerequisites-prerequisites)，它们就能在 [!DNL Customer Journey Analytics] 中[添加到数据视图](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html)。
+在 [!DNL Adobe Customer Journey Analytics] 中，数据流中指定的数据集包含天气数据。只要天气属性为 [已添加到您的架构](#prerequisites-prerequisites)，它们可用于 [添加到数据视图](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-dataviews/create-dataview.html) 在 [!DNL Customer Journey Analytics].
 
 ### Real-Time Customer Data Platform {#rtcdp}
 
-天气数据可在 [Real-Time Customer Data Platform](../../rtcdp/overview.md) 中用于区段。天气数据将附加到事件。
+天气数据可在 [Real-time Customer Data Platform](../../rtcdp/overview.md)，以便在受众中使用。 天气数据将附加到事件。
 
 ![显示天气事件的区段生成器](../assets/data-enrichment/weather/schema-builder.png)
 
-由于天气条件经常发生变化，Adobe 建议您对区段设置时间限制，如上面的示例所示。在最后一两天度过寒冷的一天比 6 个月前的寒冷一天产生的影响更大。
+由于天气条件经常变化，因此Adobe建议您在受众上设置时间限制，如上面的示例所示。 在最后一两天度过寒冷的一天比 6 个月前的寒冷一天产生的影响更大。
 
 请参阅[天气参考](weather-reference.md)以了解可用字段。
 

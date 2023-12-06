@@ -1,11 +1,10 @@
 ---
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
-exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 4c9abcefb279c6e8a90744b692d86746a4896d0a
-workflow-type: ht
-source-wordcount: '914'
-ht-degree: 100%
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+workflow-type: tm+mt
+source-wordcount: '906'
+ht-degree: 85%
 
 ---
 
@@ -31,7 +30,7 @@ ht-degree: 100%
 
 完成数据流的基本配置后，选择&#x200B;**[!UICONTROL 保存并添加映射]**，**[!UICONTROL 选择数据]**&#x200B;步骤随即出现。从该位置，您必须提供一个示例 JSON 对象，该对象表示您计划发送到 Platform 的数据的结构。
 
-要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。随后，`data` 对象的子属性将通过某种方式构造，以映射到要捕获的数据层属性。选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
+要直接从数据层捕获属性，该 JSON 对象必须具有单个根属性 `data`。的子属性 `data` 然后，应通过映射到要捕获的数据层属性的方式构建对象。 选择以下部分可查看具有 `data` 根的格式正确的 JSON 对象示例。
 
 +++示例 JSON 文件，具有 `data` 根
 
@@ -137,12 +136,12 @@ ht-degree: 100%
 
 **[!UICONTROL 映射]**&#x200B;步骤随即出现，可让您将源数据中的字段映射到 Platform 中目标事件架构的字段。从该位置，您可以通过两种方式配置映射：
 
-* 通过手动过程为此数据流[创建新的映射规则](#create-mapping)。
+* [创建映射规则](#create-mapping) 通过手动过程获取此数据流。
 * 从现有数据流[导入映射规则](#import-mapping)。
 
-### 创建新的映射 {#create-mapping}
+### 创建映射规则 {#create-mapping}
 
-要开始使用，请选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;以创建新的映射行。
+要创建映射规则，请选择 **[!UICONTROL 添加新映射]**.
 
 ![添加新映射](assets/data-prep/add-new-mapping.png)
 
@@ -166,11 +165,11 @@ ht-degree: 100%
 
 ### 导入现有映射规则 {#import-mapping}
 
-如果您之前已创建一个数据流，则可以将其配置的映射规则重新用于新数据流。
+如果以前创建过数据流，则可以为新数据流重复使用其配置的映射规则。
 
 >[!WARNING]
 >
->从另一个数据流导入映射规则将覆盖导入前可能已添加的任何字段映射。
+>从其他数据流导入映射规则会覆盖导入之前可能已添加的任何字段映射。
 
 要开始，请选择&#x200B;**[!UICONTROL 导入映射]**。
 
@@ -194,9 +193,9 @@ ht-degree: 100%
 
 ### 完成映射
 
-继续执行上述步骤，将其余字段映射到目标架构。尽管您无需映射所有可用的源字段，但必须映射目标架构中设置为必填的任何字段以完成此步骤。**[!UICONTROL 必填字段]**&#x200B;计数器指示当前配置中尚未映射的必填字段的数量。
+继续执行上述步骤，将其余字段映射到目标架构。虽然您不必映射所有可用的源字段，但必须映射目标架构中设置为必需的任何字段才能完成此步骤。 **[!UICONTROL 必填字段]**&#x200B;计数器指示当前配置中尚未映射的必填字段的数量。
 
-在必填字段计数达到零且您对映射感到满意后，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;以完成您的更改。
+必填字段计数达到零并对映射感到满意后，选择 **[!UICONTROL 保存]** 以完成更改。
 
 ![映射完成](assets/data-prep/mapping-complete.png)
 

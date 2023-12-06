@@ -3,10 +3,10 @@ solution: Experience Platform
 title: Media Edge API
 description: Media Edge API概述
 exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 034498e662ed55112f22751d44cf3ecf75d38d61
 workflow-type: tm+mt
-source-wordcount: '381'
-ht-degree: 8%
+source-wordcount: '331'
+ht-degree: 3%
 
 ---
 
@@ -23,7 +23,7 @@ Media Edge API基于Adobe Experience Platform构建，可在的框架内提供�
 
 ## 优化媒体跟踪数据流
 
-两者 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html&amp;media-tracking-data-flows) 和Media Edge API将媒体跟踪数据作为RESTful服务提供。 但使用Media Edge服务具有以下优势：
+两者 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html#media-tracking-data-flows) 和Media Edge API将媒体跟踪数据作为RESTful服务提供。 但使用Media Edge服务具有以下优势：
 
 * 这是将XDM架构合并到数据流中最简单的方法。
 
