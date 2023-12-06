@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 7c68b6a3b08eb47fa8c3906468dc87f3715fbe99
+source-git-commit: 9a149b86f34f5c7cae6a1bf2ae797a256e212f30
 workflow-type: tm+mt
-source-wordcount: '1751'
+source-wordcount: '1735'
 ht-degree: 4%
 
 ---
@@ -136,11 +136,11 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 在 **[!UICONTROL 正在计划]** 步骤，您可以为数据集导出设置开始日期和导出节奏。
 
-此 **[!UICONTROL 导出增量文件]** 选项。 这会触发导出，其中第一个文件是数据集的完整快照，后续文件是自上次导出以来向数据集添加的增量内容。
+此 **[!UICONTROL 导出增量文件]** 选项。 这会触发导出一个或多个表示数据集的完整快照的文件。 后续文件是自上次导出以来向数据集添加的增量文件。
 
 >[!IMPORTANT]
 >
->第一个导出的增量文件包含数据集中的所有现有数据，充当回填。
+>第一个增量文件导出包含数据集中的所有现有数据，充当回填。 导出可以包含一个或多个文件。
 
 ![显示计划步骤的数据集导出工作流。](/help/destinations/assets/ui/export-datasets/export-incremental-datasets.png)
 
@@ -159,7 +159,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 > 
 >对于数据集导出，文件名具有无法修改的预设默认格式。 请参阅部分 [验证是否成功导出数据集](#verify) 有关导出的文件的详细信息和示例。
 
-## 请查看 {#review}
+## 审核 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始将数据集导出到目标。
 
@@ -167,7 +167,7 @@ Experience Platform目录中的一些基于文件的目标同时支持Audience A
 
 ## 验证是否成功导出数据集 {#verify}
 
-导出数据集时，Experience Platform会创建 `.json` 或 `.parquet` 文件存储位置。 根据您提供的导出计划，期望将新文件存储到您的存储位置。
+导出数据集时，Experience Platform创建一个或多个数据集 `.json` 或 `.parquet` 文件位于您提供的存储位置。 希望根据您提供的导出计划将新文件存储在您的存储位置。
 
 Experience Platform会在您指定的存储位置创建一个文件夹结构，存放导出的数据集文件。 每次导出时都会创建一个新文件夹，其模式如下所示：
 
