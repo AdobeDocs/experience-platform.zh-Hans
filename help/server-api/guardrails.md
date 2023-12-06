@@ -1,14 +1,14 @@
 ---
 title: Edge Network服务器API的性能护栏
 description: 了解如何在最佳性能护栏中使用服务器API。
-keywords: 数据收集；收集；Edge Network；API；SLA；SLT；服务级别
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 0e609ce278af0c93503f05778887ad1bd881524a
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '508'
 ht-degree: 2%
 
 ---
+
 
 # Edge Network服务器API的性能护栏
 
@@ -40,7 +40,7 @@ Adobe对超出使用限制导致的性能下降不承担任何责任。 始终�
 | 根据数据流配置的上游 | 平均请求大小 | 请求单位 |
 | --- | --- | --- |
 | 1(Adobe平台) | 8 KB（1个片段） | 1 |
-| 2 (Adobe平台，Adobe Target) | 8 KB（1个片段） | 2 |
+| 2(Adobe平台、Adobe Target) | 8 KB（1个片段） | 2 |
 | 2(Adobe平台、Adobe Target) | 16 KB（2个片段） | 4 |
 | 2(Adobe平台、Adobe Target) | 64 KB（8个片段） | 16 |
 

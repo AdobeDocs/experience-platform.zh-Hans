@@ -3,12 +3,13 @@ solution: Experience Platform
 title: Media Edge API快速入门
 description: Media Edge API快速入门
 exl-id: 76022dea-408b-4d8e-abd4-1a6de81beceb
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '946'
-ht-degree: 5%
+source-wordcount: '806'
+ht-degree: 2%
 
 ---
+
 
 # Media Edge API快速入门
 
@@ -40,12 +41,12 @@ ht-degree: 5%
 * [播放](#play-event-request)
 * [会话结束](#session-complete-event-request)
 
-## 实施 API {#implement-api}
+## 实施API {#implement-api}
 
 除了在模型和所调用的路径上存在的细微差异之外，Media Edge API还具有与 [媒体收集API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html). 媒体收集的实施详细信息对Media Edge API仍然有效，如以下文档中所述：
 
-* [在播放器中设置 HTTP 请求类型](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
-* [发送 Ping 事件](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
+* [在播放器中设置HTTP请求类型](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
+* [发送Ping事件](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
 * [超时情况](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-timeout.html)
 * [控制事件的顺序](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html)
 

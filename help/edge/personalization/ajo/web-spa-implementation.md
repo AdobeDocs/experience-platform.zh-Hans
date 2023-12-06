@@ -2,9 +2,9 @@
 title: 单页应用程序实施
 description: 了解如何在Adobe Journey Optimizer中实施SPA视图
 exl-id: 1883251b-2d59-46d3-ac74-b8657edd0325
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '866'
 ht-degree: 1%
 
 ---
@@ -92,7 +92,7 @@ Journey Optimizer Web编辑器利用了一个名为的概念 _查看次数_.
 
 营销团队想要在整个主页上运行A/B测试。
 
-![](assets/web-spa-home.png)
+![单页应用程序示例页面。](assets/web-spa-home.png)
 
 在整个主页网站上运行A/B测试， `sendEvent()` 必须通过XDM调用 `viewName` 设置为 `home`：
 
@@ -137,7 +137,7 @@ history.listen(onViewChange);
 
 营销团队想要在用户单击查看所有Men产品后将价格标签颜色更改为红色，以对第二行产品进行个性化。
 
-![](assets/web-spa-men-products.png)
+![包含个性化产品的单页应用程序示例页面。](assets/web-spa-men-products.png)
 
 ```js
 function onViewChange(viewName) {

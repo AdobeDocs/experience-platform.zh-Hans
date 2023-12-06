@@ -2,10 +2,10 @@
 title: 身份验证
 description: 了解如何为Adobe Experience Platform Edge Network服务器API配置身份验证。
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 2%
+source-wordcount: '633'
+ht-degree: 1%
 
 ---
 
@@ -41,12 +41,12 @@ ht-degree: 2%
 要调用Platform API，您必须先完成 [身份验证教程](../landing/api-authentication.md). 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{ORG_ID}`
+* x-api-key： `{API_KEY}`
+* x-gw-ims-org-id： `{ORG_ID}`
 
 Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -54,7 +54,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* Content-Type: `application/json`
+* 内容类型： `application/json`
 
 ## 配置数据集写入权限 {#dataset-write-permissions}
 

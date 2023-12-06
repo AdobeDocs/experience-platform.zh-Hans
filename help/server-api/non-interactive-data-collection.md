@@ -1,13 +1,14 @@
 ---
 title: 非交互式数据收集
-description: 了解Adobe Experience Platform Edge Network Server API如何执行非交互式数据收集。
+description: 了解Adobe Experience Platform Edge Network服务器API如何执行非交互式数据收集。
 exl-id: 1a704e8f-8900-4f56-a843-9550007088fe
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
 source-wordcount: '217'
 ht-degree: 4%
 
 ---
+
 
 # 非交互式数据收集
 
@@ -93,14 +94,13 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | `requestId` | `String` | 否 | 提供外部请求跟踪ID。 如果未提供任何内容，Edge Network将为您生成一个，并将其返回至响应正文/标头。 |
 | `silent` | `Boolean` | 否 | 可选布尔参数，指示Edge Network是否应返回 `204 No Content` 是否具有空有效负载的响应。 使用相应的HTTP状态代码和有效负载报告严重错误。 |
 
-
 ### 响应 {#response}
 
-成功响应将返回以下状态之一，并且 `requestID` 请求中没有提供该请求的话。
+成功响应将返回以下状态之一，并且 `requestID` 请求中没有提供该请求的情况。
 
 * `202 Accepted` 成功处理请求时；
-* `204 No Content` 成功处理请求后，以及 `silent` 参数已设置为 `true`；
-* `400 Bad Request` 请求格式不正确（例如，未找到强制的主标识）时。
+* `204 No Content` 成功处理请求时，并且 `silent` 参数已设置为 `true`；
+* `400 Bad Request` 当请求格式不正确时（例如，未找到强制的主标识）。
 
 ```json
 {

@@ -3,10 +3,10 @@ title: 将at.js与Experience PlatformWeb SDK进行比较
 description: 了解at.js功能与Experience PlatformWeb SDK的比较
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '2257'
-ht-degree: 6%
+source-wordcount: '2167'
+ht-degree: 5%
 
 ---
 
@@ -216,7 +216,7 @@ Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知�
 
 我们可以通过两种方式触发对Target Edge的调用，以便获取页面加载的选件。
 
-示例 1:
+示例1：
 
 ```javascript
 adobe.target.getOffer({
@@ -226,7 +226,7 @@ adobe.target.getOffer({
 });
 ```
 
-示例 2:
+示例2：
 
 ```javascript
 adobe.target.getOffers({
@@ -297,7 +297,7 @@ alloy("sendEvent", {
 
 您可以使用获取基于表单的编辑器活动 `getOffer` 函数：
 
-示例 1:
+示例1：
 
 ```javascript
 adobe.target.getOffer({
@@ -307,7 +307,7 @@ adobe.target.getOffer({
 });
 ```
 
-示例 2:
+示例2：
 
 ```javascript
 adobe.target.getOffers({
@@ -857,7 +857,7 @@ Analytics有效负载(`tnta` 令牌)应包含在使用以下对象的Analytics�
 可以通过设置启用Analytics服务器端日志记录 `analyticsLogging: server_side` (在at.js设置中，或通过覆盖 `window.targetglobalSettings` 对象。
 然后，数据将按如下方式流动：
 
-![](assets/a4t-server-side-atjs.png)
+![显示Analytics服务器端日志记录工作流的图表](assets/a4t-server-side-atjs.png)
 
 [了解详情](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
 
@@ -872,7 +872,7 @@ Web SDK还支持：
 
 如果对该DataStream配置禁用Adobe Analytics，则会启用Analytics客户端日志记录。
 
-![](assets/analytics-disabled-datastream-config.png)
+![显示Analytics客户端日志记录工作流的图表](assets/analytics-disabled-datastream-config.png)
 
 客户有权访问Analytics令牌(`tnta`)需要与Analytics共享 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)
 通过链接 `sendEvent` 命令并遍历生成的建议数组。
@@ -910,19 +910,19 @@ alloy("sendEvent", {
 
 下图显示了启用Analytics客户端时的数据流方式：
 
-![](assets/analytics-client-side-logging.png)
+![Analytics客户端日志记录中的数据流程图](assets/analytics-client-side-logging.png)
 
 #### Analytics服务器端日志记录
 
 为该DataStream配置启用Analytics时，将启用Analytics服务器端日志记录。
 
-![](assets/analytics-enabled-datastream-config.png)
+![显示Analytics设置的数据流UI。](assets/analytics-enabled-datastream-config.png)
 
 启用服务器端Analytics日志记录后，需要与Analytics共享A4T有效负载，以便Analytics报表显示正确的展示次数并在边缘网络级别共享转化，这样客户就无需执行任何附加处理。
 
 下面是启用服务器端Analytics日志记录时数据如何流入我们的系统：
 
-![](assets/analytics-server-side-logging.png)
+![显示服务器端Analytics日志记录中数据流的图表](assets/analytics-server-side-logging.png)
 
 ## 如何设置Target全局设置
 
@@ -1130,9 +1130,9 @@ Web SDK支持目标第三方ID。 但是，还需要执行几个步骤。 在深
 标识映射允许客户发送多个标识。 所有身份都处于命名空间中。 每个命名空间可以具有一个或多个标识。 可以将特定标识标记为主要标识。
 有了这些知识，我们可以了解设置Web sdk以使用Target第三方ID的必要步骤。
 
-1. 设置将在数据流配置视图中包含目标第三方ID的命名空间：
+1. 在数据流配置页面中设置将包含Target第三方ID的命名空间：
 
-![](assets/mbox-3-party-id-setup.png)
+![显示Target第三方ID命名空间字段的数据流UI](assets/mbox-3-party-id-setup.png)
 
 1. 在每个sendEvent命令中发送该身份命名空间，如下所示：
 
@@ -1181,7 +1181,7 @@ window.targetPageParams = function() {
 ### 使用Web SDK
 
 使用Web SDK，客户在设置Adobe Target命名空间下的数据流配置时，可以在更高级别设置属性：
-![](assets/at-property-setup.png)
+![显示Adobe Target设置的数据流UI。](assets/at-property-setup.png)
 这意味着该特定数据流配置的每个Target调用都将包含该资产令牌。
 
 ## 如何预取mbox

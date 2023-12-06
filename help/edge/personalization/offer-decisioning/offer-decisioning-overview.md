@@ -3,10 +3,10 @@ title: 在Platform Web SDK中使用Offer Decisioning
 description: Adobe Experience Platform Web SDK可以投放和呈现Offer Decisioning托管的个性化优惠。 您可以使用Offer decisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning；决策；Web SDK；Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '863'
-ht-degree: 5%
+source-wordcount: '849'
+ht-degree: 3%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 5%
 >
 >可在Adobe Experience Platform Web SDK中使用Offer decisioning提前访问选定的用户。 此功能并非对所有组织都可用。
 
-Adobe Experience Platform [!DNL Web SDK] 可以投放和呈现在Offer decisioning中管理的个性化优惠。 您可以使用 Offer Decisioning 用户界面 (UI) 或 API 创建优惠和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK] 可以投放和呈现在Offer decisioning中管理的个性化优惠。 您可以使用Offer decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
 ## 先决条件
 
@@ -51,7 +51,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和呈现在Offer decisioni
   >
   >您可以从以下位置复制决策范围值： **活动概述** 页面。
 
-  ![](assets/decision-scope-copy.png)
+  ![决策复制设置。](assets/decision-scope-copy.png)
 
 * **数据流：** 欲知更多信息，请阅读 [数据流](../../../datastreams/overview.md) 文档。
 
