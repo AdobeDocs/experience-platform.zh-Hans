@@ -3,9 +3,9 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在整个Microsoft广告网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 093ddd1651e15bebf73d007fb05042fbcf02c675
+source-git-commit: a7dbb5e274058a059ae1231281fd9efd509b029f
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '684'
 ht-degree: 10%
 
 ---
@@ -26,9 +26,9 @@ ht-degree: 10%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Microsoft Bing] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Microsoft Bing] 支持根据下表所示的标识激活受众。 了解有关 [身份](/help/identity-service/namespaces.md).
 
-| 目标身份 | 描述 |
+| 标识 | 描述 |
 |---|---|
 | 女佣 | Microsoft广告ID |
 

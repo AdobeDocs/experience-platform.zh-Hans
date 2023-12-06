@@ -3,10 +3,10 @@ keywords: DoubleClick竞价管理器；DoubleClick竞价管理器；DoubleClick�
 title: Google显示和视频360连接
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于在显示器、视频和移动设备库存源中执行重定位和面向受众的数字活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: a7dbb5e274058a059ae1231281fd9efd509b029f
 workflow-type: tm+mt
-source-wordcount: '1020'
-ht-degree: 5%
+source-wordcount: '1000'
+ht-degree: 4%
 
 ---
 
@@ -29,12 +29,12 @@ ht-degree: 5%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Google Display & Video 360] 支持激活下表中描述的标识。
+[!DNL Google Display & Video 360] 支持根据下表所示的标识激活受众。 了解有关 [身份](/help/identity-service/namespaces.md).
 
-| 目标身份 | 描述 | 注意事项 |
+| 标识 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | [!DNL Google Advertising ID] | 当源身份是GAID命名空间时，请选择此目标身份。 |
-| IDFA | [!DNL Apple ID for Advertisers] | 当源身份是IDFA命名空间时，请选择此目标身份。 |
+| GAID | [!DNL Google Advertising ID] |  |
+| IDFA | [!DNL Apple ID for Advertisers] |  |
 | AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 使用此ID定位加利福尼亚州以外的用户。 |
 | RIDA | 适用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
