@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: cd97165d4e4d8ed984c4705f614c8d77eb750ed6
 workflow-type: tm+mt
-source-wordcount: '310'
-ht-degree: 21%
+source-wordcount: '309'
+ht-degree: 19%
 
 ---
 
@@ -48,8 +48,9 @@ ht-degree: 21%
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)
    - [倾向分数](use-cases/propensity-score.md)
-   - [SQLAlchemy](use-cases/sqlalchemy.md)
+   - [Lambda函数示例：检索类似记录](use-cases/retrieve-similar-records.md)
    - [从Analytics数据返回和使用促销变量](use-cases/merchandising-variables.md)
+   - [SQLAlchemy](use-cases/sqlalchemy.md)
    - [查看访客的汇总报表](use-cases/roll-up-report-of-a-visitor.md)
    - [网站和移动分析洞察](use-cases/analytics-insights.md)
 - 重要概念 {#key-concepts}
@@ -72,9 +73,9 @@ ht-degree: 21%
    - [Power BI](clients/power-bi.md)
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
-   - [Tableau](clients/tableau.md)
+   - [表格](clients/tableau.md)
 - 查询服务UI {#ui}
-   - [UI 概述](ui/overview.md)
+   - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
    - [查询模板](ui/query-templates.md)
    - [参数化查询](ui/parameterized-queries.md)
@@ -92,12 +93,12 @@ ht-degree: 21%
    - [查询模板](api/query-templates.md)
    - [加速查询](api/accelerated-queries.md)
    - [警报订阅](api/alert-subscriptions.md)
-- 数据治理 {#data-governance}
+- 数据管理 {#data-governance}
    - [概述](data-governance/overview.md)
    - [审核日志指南](data-governance/audit-log-guide.md)
    - [临时架构数据集中的身份](data-governance/ad-hoc-schema-identities.md)
    - [对临时架构的基于属性的访问控制支持](./data-governance/ad-hoc-schema-labels.md)
-- 最佳实践 {#best-practices}
+- 最佳做法 {#best-practices}
    - [查询执行](best-practices/writing-queries.md)
    - [数据资产组织](./best-practices/organize-data-assets.md)
 - SQL引用 {#sql}
