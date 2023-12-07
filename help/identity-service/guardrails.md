@@ -3,10 +3,10 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 614f48e53e981e479645da9cc48c946f3af0db26
+source-git-commit: d33be97fcb935a53a8776d2a1993ad9d2b50e913
 workflow-type: tm+mt
-source-wordcount: '1509'
-ht-degree: 1%
+source-wordcount: '1507'
+ht-degree: 0%
 
 ---
 
@@ -37,14 +37,18 @@ ht-degree: 1%
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
 | 命名空间显示名称或身份符号的字符数 | None | 命名空间显示名称或身份符号的字符数没有限制。 |
 
+{style="table-layout:auto"}
+
 ### 身份值验证
 
 下表概述了必须遵循的现有规则，以确保成功验证标识值。
 
 | 命名空间 | 验证规则 | 违反规则时的系统行为 |
 | --- | --- | --- |
-| ECID | <ul><li>ECID的标识值必须刚好38个字符。</li><li>ECID的标识值必须仅由数字组成。</li><li>标识值不能为“null”、“anonymous”、“invalid”或为空字符串（例如：“ ”、“”、“ ”）。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过记录。</li><li>将阻止该身份进行摄取。</li></ul> |
-| 非ECID | 标识值不能超过1024个字符。 | 如果标识值超过1024个字符，则会跳过该记录。 |
+| ECID | <ul><li>ECID的标识值必须刚好38个字符。</li><li>ECID的标识值必须仅由数字组成。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过记录。</li></ul> |
+| 非ECID | <ul><li>标识值不能超过1024个字符。</li><li>标识值不能为“null”、“anonymous”、“invalid”或为空字符串（例如：“ ”、“”、“ ”）。</li></ul> | <ul><li>如果标识值超过1024个字符，则会跳过该记录。</li><li>将阻止该身份进行摄取。</li></ul> |
+
+{style="table-layout:auto"}
 
 ### 身份命名空间摄取
 
@@ -105,7 +109,7 @@ Adobe如果您的生产沙盒包含：
 
 *图表说明：*
 
-* `t` = 时间戳.
+* `t` =时间戳。
 * 时间戳的值对应于给定身份的回访间隔。 例如， `t1` 表示第一个链接的身份（最早的）和 `t51` 表示最新的链接身份。
 
 在此示例中，在可以使用新标识更新左侧的图形之前，Identity Service会先删除具有最早时间戳的现有标识。 但是，由于最早的标识是设备ID，因此Identity Service会跳过该标识，直到到达删除优先级列表中具有更高类型的命名空间（在本例中为） `ecid-3`. 一旦删除了具有更高删除优先级类型的最旧身份，该图形就会更新为新链接， `ecid-51`.
