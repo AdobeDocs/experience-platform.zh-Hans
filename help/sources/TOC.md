@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 7f9a0965419a85894bd2cab4e78dd336874a5933
+source-git-commit: 4c8e80c5ec61aebd84064ac2a667188b8b5ddb8c
 workflow-type: tm+mt
-source-wordcount: '989'
-ht-degree: 13%
+source-wordcount: '993'
+ht-degree: 11%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 13%
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
          - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B命名空间和架构](connectors/adobe-applications/marketo/marketo-namespaces.md)
-   - Advertising {#advertising}
+   - 广告 {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
       - [pinterest Ads](connectors/advertising/pinterest-ads.md)
    - Analytics {#analytics}
@@ -91,6 +91,8 @@ ht-degree: 13%
       - [Snowflake流连接器](connectors/databases/snowflake-streaming.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [teradata优势连接器](connectors/databases/teradata-vantage.md)
+   - 数据合作伙伴 {#data-partner}
+      - [Merkury企业标识解析](connectors/data-partners/merkury.md)
    - 电子商务 {#ecommerce}
       - [SAP商务](connectors/ecommerce/sap-commerce.md)
       - [Shopify](connectors/ecommerce/shopify.md)
@@ -115,7 +117,7 @@ ht-degree: 13%
       - [HTTP API连接器](connectors/streaming/http.md)
 - API教程 {#api-tutorials}
    - 创建基本连接 {#create}
-      - Advertising {#advertising}
+      - 广告 {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
          - [pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
@@ -233,7 +235,7 @@ ht-degree: 13%
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
          - [Marketo自定义活动](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-      - Advertising {#advertising}
+      - 广告 {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
@@ -289,6 +291,8 @@ ht-degree: 13%
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
+      - 数据合作伙伴 {#data-partner}
+         - [Merkury企业标识解析](tutorials/ui/create/data-partners/merkury.md)
       - 电子商务 {#ecommerce}
          - [SAP商务](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
