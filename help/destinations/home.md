@@ -2,16 +2,16 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: d3c7b416317034c8d57663e0c05c9dc4dbe6d2d4
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '1001'
 ht-degree: 4%
 
 ---
 
 # [!DNL Destinations] 概述 {#overview}
 
-![目标概述横幅](./assets/overview/destinations-overview-banner.png)
+![目标概述横幅。](./assets/overview/destinations-overview-banner.png)
 
 **[!DNL Destinations]** 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
@@ -29,7 +29,7 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 ## 目标步骤 {#steps}
 
 * 从 [自助服务目录](./catalog/overview.md) Platform中所有可用的目标。
-* 使用目标将用户档案或受众发送到营销自动化平台、数字广告平台等。
+* 使用目标将受众或数据集发送到营销自动化平台、数字广告平台等。
 * 定期安排数据导出到您的首选目标。
 
 ## 控件 {#controls}
@@ -39,8 +39,9 @@ Platform的核心功能之一是摄取您的第一方数据，并根据您的业
 * 浏览可在其中激活数据的目标平台目录；
 * 创建、编辑、激活和禁用流向目录中的目标的数据流；
 * 在存储位置创建一个帐户，或将Platform链接到目标平台中的帐户；
-* 选择应将哪些受众激活到目标；
-* 选择 [体验数据模型(XDM)字段](../xdm/home.md) 以将受众激活到电子邮件营销目标时导出。
+* 选择应将哪些受众或数据集激活到目标；
+* 选择 [体验数据模型(XDM)字段](../xdm/home.md) 在将受众激活到某些目标（如电子邮件营销目标、CRM平台、云存储位置等）时导出。
+* 将不同类型的用户档案和受众激活到目标 — 人员、帐户和潜在客户。
 
 ## 目标类型和类别 {#types-and-categories}
 
@@ -54,7 +55,7 @@ Experience Platform目标目录中的某些连接器是由Adobe构建和维护�
 
 ## 目标和访问控制 {#access-controls}
 
-Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请参阅 [Adobe Experience Platform中的访问控制](../access-control/home.md) 并向下滚动到页面底部。
+Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关个人权限的信息，请转到 [Adobe Experience Platform中的访问控制](../access-control/home.md) 并向下滚动到页面底部的表格。
 
 下表概述了对目标执行某些操作所需的权限和权限组合：
 
@@ -81,7 +82,9 @@ Adobe Experience Platform中基于属性的访问控制允许管理员根据属�
 
 在建立与目标连接并完成激活工作流后，您可以监控向接收系统导出的数据。 阅读 [关于在UI中监控到目标的数据流的指南](/help/dataflows/ui/monitor-destinations.md) 以了解更多信息。
 
-您还可以验证数据是否已成功到达您的目标。 目录中的大多数目标文档页面都具有 *验证数据导出部分*，以指示您如何在目标平台中检查数据是否已成功从Experience Platform引入。
+![目标监视页面示例。](./assets/overview/monitoring-page-example.png)
+
+您还可以验证数据是否已成功到达您的目标。 目录中的大多数目标文档页面都具有 *验证数据导出部分*，以指示您如何在目标平台中检查数据是否已成功从Experience Platform引入。 查看此部分的示例， [Amazon Ads目标](/help/destinations/catalog/advertising/amazon-ads.md#exported-data).
 
 ## 将数据激活到目标的数据治理限制 {#data-governance}
 

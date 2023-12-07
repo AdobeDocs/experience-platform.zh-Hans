@@ -3,10 +3,10 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1202'
-ht-degree: 16%
+source-wordcount: '1109'
+ht-degree: 15%
 
 ---
 
@@ -27,6 +27,8 @@ Adobe Target是一款应用程序，可在网站、移动应用程序等的所�
 
 Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
+## 视频概述 {#video-overview}
+
 有关如何在Experience Platform中配置Adobe Target连接的简短概述，请观看以下视频。
 
 >[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
@@ -41,7 +43,7 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!IMPORTANT]
 >
->创建之前 [!DNL Adobe Target] connection，请阅读操作指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/activate-edge-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 同页和下一页个性化要求在配置Adobe Target连接时使用数据流ID。
+>创建之前 [!DNL Adobe Target] connection，请阅读操作指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/activate-edge-personalization-destinations.md). 本指南将指导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 要实现同页和下一页个性化用例，在配置Adobe Target连接时必须使用数据流ID。
 
 ### Adobe Target中的先决条件 {#prerequisites-in-adobe-target}
 
@@ -54,7 +56,7 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -133,7 +135,7 @@ Adobe Experience Platform会自动连接到贵公司的Adobe Target实例。 无
 
 ## 导出的数据 {#exported-data}
 
-Adobe Target从Adobe Experience Platform Edge Network中读取配置文件数据，因此不会导出任何数据。
+Adobe Target *阅读* 来自Adobe Experience Platform Edge Network的配置文件数据，因此不会导出任何数据。
 
 ## 数据使用和治理 {#data-usage-governance}
 

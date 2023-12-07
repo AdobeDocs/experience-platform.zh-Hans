@@ -1,13 +1,12 @@
 ---
-keywords: 激活受众流目标；激活受众流目标；激活数据
 title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1065'
-ht-degree: 8%
+source-wordcount: '1121'
+ht-degree: 7%
 
 ---
 
@@ -34,15 +33,15 @@ ht-degree: 8%
 
 1. 转到 **[!UICONTROL “连接”>“目标”]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 
-   ![“目标目录”选项卡](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
+   ![显示各种流目标的“目标目录”选项卡。](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
 1. 选择 **[!UICONTROL 激活受众]** ，，如下图所示。
 
-   ![激活按钮](../assets/ui/activate-segment-streaming-destinations/activate-audiences-button.png)
+   ![激活目标目录中突出显示的控件。](../assets/ui/activate-segment-streaming-destinations/activate-audiences-button.png)
 
 1. 选择要用于激活受众的目标连接，然后选择 **[!UICONTROL 下一个]**.
 
-   ![选择目标](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
+   ![在选择目标步骤中高亮显示的目标连接。](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
 1. 移到下一节至 [选择您的受众](#select-audiences).
 
@@ -56,7 +55,7 @@ ht-degree: 8%
 * **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
-![选择受众](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
+![在选择受众步骤中突出显示的多个受众。](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
 
 ## 映射属性和身份 {#mapping}
 
@@ -68,23 +67,23 @@ ht-degree: 8%
 
 1. 在 **[!UICONTROL 映射]** 页面，选择 **[!UICONTROL 添加新映射]**.
 
-   ![添加新映射](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
+   ![添加突出显示的新映射控件。](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
 1. 选择右侧的箭头 **[!UICONTROL 源字段]** 进入。
 
-   ![选择源字段](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
+   ![选择高亮显示的源字段控件。](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
 
 1. 在 **[!UICONTROL 选择源字段]** 页面，使用 **[!UICONTROL 选择属性]** 或 **[!UICONTROL 选择身份命名空间]** 用于在这两种可用源字段之间切换的选项。 从可用的 [!DNL XDM] 配置文件属性和身份命名空间，选择要映射到目标的配置文件属性和身份命名空间，然后选择 **[!UICONTROL 选择]**.
 
-   ![选择源字段页](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
+   ![显示多个可用源字段的“选择源字段”页。](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
 
 1. 选择右侧的按钮 **[!UICONTROL 目标字段]** 进入。
 
-   ![选择目标字段](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
+   ![选择突出显示的目标字段。](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
 
 1. 在 **[!UICONTROL 选择目标字段]** 页中，选择要将源字段映射到的目标身份命名空间，然后选择 **[!UICONTROL 选择]**.
 
-   ![选择目标字段页](../assets/ui/activate-segment-streaming-destinations/target-field-page.png)
+   ![选择目标字段页面，其中显示了目标字段映射的可用选项。](../assets/ui/activate-segment-streaming-destinations/target-field-page.png)
 
 1. 要添加更多映射，请重复步骤1至5。
 
@@ -97,7 +96,7 @@ ht-degree: 8%
 
 将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
-![标识映射](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
+![应用在“身份映射”步骤中突出显示的转换控件。](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## 计划受众导出 {#scheduling}
 
@@ -114,23 +113,23 @@ ht-degree: 8%
 
 1. 在 **[!UICONTROL 受众计划]** 页面上，选择每个受众，然后使用 **[!UICONTROL 开始日期]** 和 **[!UICONTROL 结束日期]** 选择器，用于配置向目标发送数据的时间间隔。
 
-   ![受众计划](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
+   ![受众计划过滤器突出显示。](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
 
    * 某些目标要求您选择 **[!UICONTROL 受众来源]** 对于每个受众，使用日历选择器下的下拉菜单。 如果您的目标不包含此选择器，请跳过此步骤。
 
-     ![映射 ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
+     ![突出显示了映射ID下拉列表。](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
    * 某些目标要求您手动映射 [!DNL Platform] 受众与其在目标中的对应受众。 为此，请选择每个受众，然后在中输入目标平台中相应的受众ID **[!UICONTROL 映射Id]** 字段。 如果您的目标不包含此字段，请跳过此步骤。
 
-     ![映射 ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
+     ![突出显示的“受众来源”下拉列表。](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
    * 某些目标要求您输入 **[!UICONTROL 应用程序ID]** 激活时 [!DNL IDFA] 或 [!DNL GAID] 受众。 如果您的目标不包含此字段，请跳过此步骤。
 
-     ![应用程序 ID](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
+     ![应用程序ID下拉列表突出显示。](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
 
 1. 选择 **[!UICONTROL 下一个]** 以转到 [!UICONTROL 审核] 页面。
 
-## 请查看 {#review}
+## 审核 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
@@ -144,7 +143,7 @@ ht-degree: 8%
 
 在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 数据管理文档一节中。
 
-![数据策略违规](../assets/common/data-policy-violation.png)
+![激活工作流中显示的数据策略违规示例。](../assets/common/data-policy-violation.png)
 
 ### 筛选受众 {#filter-audiences}
 

@@ -2,9 +2,9 @@
 title: twitter自定义受众连接
 description: 在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '874'
+source-wordcount: '859'
 ht-degree: 5%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 5%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|

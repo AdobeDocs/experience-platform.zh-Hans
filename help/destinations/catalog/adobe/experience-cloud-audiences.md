@@ -3,10 +3,10 @@ title: Experience Cloud 受众
 description: 了解如何将Real-time Customer Data Platform中的受众共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 23c4bce542bba76ea4badba43a7ce3e6f7fe9e49
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1780'
-ht-degree: 3%
+source-wordcount: '1675'
+ht-degree: 2%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 3%
 在Audience Manager中，您可以将Real-Time CDP受众用于数据管理平台用例，例如：
 
 * 正在添加 [第三方数据](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-types-collected.html#third-party-data) 到您的区段；
-* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html);
+* [算法建模](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/algorithmic-models/look-alike-modeling/understanding-models.html)；
 * 将受众激活到基于Cookie的目标，而Real-Time CDP目标目录尚不支持这些目标。
 
 ### 对导出受众的精细控制 {#segments-control}

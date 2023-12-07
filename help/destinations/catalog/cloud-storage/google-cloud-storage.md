@@ -3,10 +3,10 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1107'
-ht-degree: 3%
+source-wordcount: '1102'
+ht-degree: 2%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-创建通往 [!DNL Google Cloud Storage] 的实时出站连接以定期将数据文件从 Adobe Experience Platform 导出到您自己的存储桶中。
+创建到以下对象的实时出站连接： [!DNL Google Cloud Storage] 定期将数据文件从Adobe Experience Platform导出到您自己的存储桶中。
 
 ## 连接到您的 [!DNL Google Cloud Storage] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -111,7 +111,7 @@ ht-degree: 3%
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-### 计划
+### 正在计划
 
 在 **[!UICONTROL 正在计划]** 步骤，您可以 [设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 您的 [!DNL Google Cloud Storage] 目标位置，您还可以 [配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
 

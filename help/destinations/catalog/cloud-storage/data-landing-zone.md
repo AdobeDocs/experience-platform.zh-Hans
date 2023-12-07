@@ -3,9 +3,9 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1481'
+source-wordcount: '1509'
 ht-degree: 3%
 
 ---
@@ -32,7 +32,7 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -62,11 +62,11 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 在 [!DNL Azure Storage Explorer] UI中，选择左侧导航栏中的连接图标。 此 **选择资源** 窗口出现，为您提供连接选项。 选择 **[!DNL Blob container]** 以连接到 [!DNL Data Landing Zone] 存储。
 
-![选择资源](/help/sources/images/tutorials/create/dlz/select-resource.png)
+![选择Azure UI中突出显示的资源。](/help/sources/images/tutorials/create/dlz/select-resource.png)
 
 接下来，选择 **共享访问签名URL (SAS)** 作为连接方法，然后选择 **下一个**.
 
-![select-connection-method](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
+![选择Azure UI中高亮显示的连接方法。](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
 
 选择连接方法后，必须提供 **显示名称** 和 **[!DNL Blob]容器SAS URL** 与您的 [!DNL Data Landing Zone] 容器。
 
@@ -171,15 +171,15 @@ curl -X POST \
 
 提供您的显示名称(`containerName`)和 [!DNL Data Landing Zone] SAS URL，如上所述API调用中所返回，然后选择 **下一个**.
 
-![enter-connection-info](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
+![输入在Azure UI中突出显示的连接信息。](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
 
 此 **摘要** 窗口，为您提供设置的概述，包括有关您的设置的信息 [!DNL Blob] 端点和权限。 准备就绪后，选择 **连接**.
 
-![摘要](/help/sources/images/tutorials/create/dlz/summary.png)
+![Azure UI中显示的设置摘要。](/help/sources/images/tutorials/create/dlz/summary.png)
 
 连接成功更新您的 [!DNL Azure Storage Explorer] 包含您的UI [!DNL Data Landing Zone] 容器。
 
-![dlz-user-container](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
+![Azure UI中高亮显示的DLZ用户容器摘要。](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
 与您的 [!DNL Data Landing Zone] 容器已连接到 [!DNL Azure Storage Explorer]，您现在可以开始将文件从Experience Platform导出到 [!DNL Data Landing Zone] 容器。 要导出文件，必须建立到 [!DNL Data Landing Zone] Experience PlatformUI中的目标，如下节所述。
 
@@ -226,7 +226,7 @@ curl -X POST \
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-### 计划
+### 正在计划
 
 在 **[!UICONTROL 正在计划]** 步骤，您可以 [设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 您的 [!DNL Data Landing Zone] 目标位置，您还可以 [配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
 

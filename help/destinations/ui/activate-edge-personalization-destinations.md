@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1922'
 ht-degree: 2%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 与Edge目标相结合，使客户能够实时大规模创建和定位受众。 此功能可帮助您配置同页和下一页个性化用例。
+Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 与 [边缘目标](/help/destinations/destination-types.md#edge-personalization-destinations) 使客户能够实时大规模创建和定位受众。 此功能可帮助您配置同页和下一页个性化用例。
 
 以下示例属于边缘目标： [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 连接。
 
 >[!NOTE]
 >
->时间 [配置Adobe Target连接](../catalog/personalization/adobe-target-connection.md) 若不使用数据流ID，则不支持本文中所述的用例。 在没有数据流的情况下，仅支持下一会话个性化用例。
+>时间 [配置Adobe Target连接](../catalog/personalization/adobe-target-connection.md) *不含* 使用数据流ID时，不支持本文中所述的用例。 在没有数据流的情况下，仅支持下一会话个性化用例。
 
 >[!IMPORTANT]
 > 
@@ -31,7 +31,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 > 
 > 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
-本文介绍了在Adobe Experience Platform Edge目标中激活受众所需的工作流。 当与一起使用时 [边缘分割](../../segmentation/ui/edge-segmentation.md) 和可选的 [配置文件属性映射](#mapping)，则这些目标会在您的Web和移动资产上启用同一页面和下一页面个性化用例。
+本文介绍了将受众激活到Adobe Experience Platform Edge目标所需的工作流。 当与一起使用时 [边缘分割](../../segmentation/ui/edge-segmentation.md) 和可选的 [配置文件属性映射](#mapping)，则这些目标会在您的Web和移动资产上启用同一页面和下一页面个性化用例。
 
 有关如何为Edge个性化配置Adobe Target连接的简短概述，请观看以下视频。
 
@@ -47,7 +47,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 ## 用例 {#use-cases}
 
-边缘个性化目标让您能够使用Adobe个性化解决方案，如Adobe Target或您自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如内部CMS），以通过提供更深入的客户个性化体验 [自定义个性化](../catalog/personalization/custom-personalization.md) 目标。 所有这些功能都可以同时利用Experience Platform边缘网络数据收集和分段功能。
+使用Adobe个性化解决方案，如Adobe Target或您自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如内部CMS），以通过提供更深入的客户个性化体验 [自定义个性化](../catalog/personalization/custom-personalization.md) 目标。 所有这些功能都可以同时利用Experience Platform边缘网络数据收集和分段功能。
 
 下面介绍的使用案例包括网站个性化和有针对性的网站广告。
 
@@ -55,11 +55,11 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 ### 同一页面个性化 {#same-page}
 
-用户访问您网站的页面。 客户可以使用当前页面访问信息（例如，引荐URL、浏览器语言、嵌入的产品信息）选择下一个操作/决策（例如，个性化），使用 [自定义个性化](../catalog/personalization/custom-personalization.md) 非Adobe平台的连接(例如， [!DNL Pega]， [!DNL Optimizely]、等)。
+用户访问您网站的页面。 您可以使用当前的页面访问信息（例如引荐URL、浏览器语言、嵌入的产品信息）来选择下一个操作或决策（例如个性化），方法是使用 [自定义个性化](../catalog/personalization/custom-personalization.md) 非Adobe平台的连接(例如， [!DNL Pega]， [!DNL Optimizely] 或其他人。)。
 
 ### 下一页面个性化 {#next-page}
 
-用户访问您网站上的页面A。 基于此交互，用户已符合一组受众的资格。 然后，用户单击一个链接，该链接会将用户从页面A转至页面B。用户在上一次与页面A进行交互期间符合条件的受众，以及由当前网站访问决定的用户档案更新，将用于支持下一个操作/决策（例如，向访客显示哪个广告横幅，或者，在A/B测试的情况下，显示页面的哪个版本）。
+用户访问您网站上的页面A。 基于此交互，用户已符合一组受众的资格。 然后，用户单击一个链接，该链接会将用户从页面A转至页面B。用户在上一次与页面A进行交互期间符合条件的受众，以及由当前网站访问决定的用户档案更新，将用于支持下一个操作或决策（例如，向访客显示哪个广告横幅，或者，在A/B测试的情况下，显示页面的哪个版本）。
 
 ### 下一个会话个性化 {#next-session}
 
@@ -79,7 +79,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 配置数据流时，在 **[!UICONTROL Adobe Experience Platform]** 确保两者 **[!UICONTROL 边缘分段]** 和 **[!UICONTROL 个性化目标]** 已选中。
 
-![数据流配置](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
+![突出显示边缘分段和个性化目标的数据流配置！](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
 有关如何设置数据流的更多详细信息，请按照 [Platform Web SDK文档](../../datastreams/configure.md#aep).
 
@@ -97,7 +97,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 创建 [!DNL Active-On-Edge] 合并策略，则必须在Platform中创建新受众。
 
-请遵循 [受众生成器](../../segmentation/ui/segment-builder.md) 指南，以创建新受众，并确保 [分配](../../segmentation/ui/segment-builder.md#merge-policies) 该 [!DNL Active-On-Edge] 您在步骤3中创建的合并策略。
+请遵循 [受众生成器](../../segmentation/ui/segment-builder.md) 指南，以创建新受众，并确保 [分配](../../segmentation/ui/segment-builder.md#merge-policies) 该 [!DNL Active-On-Edge] 您在上一步中创建的合并策略。
 
 ### 创建目标连接 {#connect-destination}
 
@@ -105,7 +105,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 请遵循 [目标连接创建教程](../ui/connect-destination.md) 以获取有关如何创建新目标连接的详细说明。
 
-根据所配置的目标，请参阅以下文章以了解特定于目标的先决条件和相关信息：
+根据您配置的目标，请参阅以下文章以了解特定于目标的先决条件和相关信息：
 
 * [Adobe Target连接](../catalog/personalization/adobe-target-connection.md#parameters)
 * [自定义个性化连接](../catalog/personalization/custom-personalization.md##parameters)
@@ -116,15 +116,15 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 1. 转到 **[!UICONTROL “连接”>“目标”]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 
-   ![“目标目录”选项卡](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
+   ![Experience PlatformUI中高亮显示的“目标目录”选项卡。](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
 1. 选择 **[!UICONTROL 激活受众]** ，位于要激活受众的个性化目标对应的卡上，如下图所示。
 
-   ![激活按钮](../assets/ui/activate-edge-personalization-destinations/activate-audiences-button.png)
+   ![激活目录中目标卡上突出显示的受众控制。](../assets/ui/activate-edge-personalization-destinations/activate-audiences-button.png)
 
 1. 选择要用于激活受众的目标连接，然后选择 **[!UICONTROL 下一个]**.
 
-   ![选择目标](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
+   ![在激活工作流中选择目标步骤。](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
 
 1. 移到下一节至 [选择您的受众](#select-audiences).
 
@@ -140,7 +140,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 * **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
-![选择受众](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
+![选择突出显示多个受众的激活工作流中的受众步骤。](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
 
 ## 映射属性 {#mapping}
 
@@ -156,13 +156,13 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 添加属性是可选的，您仍然可以继续下一步并启用同一页面和下一页面个性化，而无需选择属性。 如果您未在此步骤中添加任何属性，则仍会根据用户档案的受众成员资格和身份映射资格进行个性化。
 
-![显示具有选定属性的映射步骤的图像](../assets/ui/activate-edge-personalization-destinations/mapping-step.png)
+![显示具有选定属性的映射步骤的图像。](../assets/ui/activate-edge-personalization-destinations/mapping-step.png)
 
 ### 选择源属性 {#select-source-attributes}
 
 要添加源属性，请选择 **[!UICONTROL 添加新字段]** 控制 **[!UICONTROL 源字段]** 列并搜索或导航到所需的XDM属性字段，如下所示。
 
-![显示如何在映射步骤中选择目标属性的屏幕录制](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
+![显示如何在映射步骤中选择目标属性的屏幕录制。](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
 
 ### 选择目标属性 {#select-target-attributes}
 
@@ -180,15 +180,15 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 要查看激活到目标的所有受众，请使用筛选选项并禁用 **[!UICONTROL 仅显示新受众]** 筛选。
 
-![所有受众](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
+![突出显示了所有受众过滤器。](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
 
 在 **[!UICONTROL 受众计划]** 页面上，选择每个受众，然后使用 **[!UICONTROL 开始日期]** 和 **[!UICONTROL 结束日期]** 选择器，用于配置向目标发送数据的时间间隔。
 
-![受众计划](../assets/ui/activate-edge-personalization-destinations/audience-schedule.png)
+![激活工作流中突出显示开始日期和结束日期的受众计划步骤。](../assets/ui/activate-edge-personalization-destinations/audience-schedule.png)
 
 选择 **[!UICONTROL 下一个]** 以转到 [!UICONTROL 审核] 页面。
 
-## 请查看 {#review}
+## 审核 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
@@ -202,7 +202,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 数据管理文档一节中。
 
-![数据策略违规](../assets/common/data-policy-violation.png)
+![数据策略违规示例。](../assets/common/data-policy-violation.png)
 
 ### 筛选受众 {#filter-audiences}
 

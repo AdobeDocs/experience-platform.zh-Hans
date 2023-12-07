@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9a149b86f34f5c7cae6a1bf2ae797a256e212f30
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '1735'
+source-wordcount: '1739'
 ht-degree: 4%
 
 ---
@@ -71,7 +71,7 @@ ht-degree: 4%
 
 目前，您可以将数据集导出到屏幕快照中突出显示的云存储目标，如下所列。
 
-![支持数据集导出的目标](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
+![显示哪些目标支持数据集导出的目标目录页面。](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
 
 * [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
 * [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
@@ -221,7 +221,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
 请注意，不同应用程序的数据导出权限不是累加的。 例如，这意味着如果您购买Real-Time CDP Ultimate和Adobe Journey Optimizer Ultimate，则根据产品描述，用户档案导出权利将是两个权利中较大的一个权利。 您的批量权利的计算方法是：获取许可配置文件的总数，然后乘以Real-Time CDP Prime的500 KB或Real-Time CDP Ultimate的700 KB，从而确定您有权获得的数据量。
 
-另一方面，如果您购买诸如Data Distiller之类的加载项，则您有权获得的数据导出限制表示产品层和加载项的总和。
+另一方面，如果您购买了Data Distiller等加载项，则您有权获得的数据导出限制表示产品层和加载项的总和。
 
 您可以在许可控制面板中查看和跟踪配置文件导出是否符合合同限制。
 

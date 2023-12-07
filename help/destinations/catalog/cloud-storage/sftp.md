@@ -2,10 +2,10 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1016'
-ht-degree: 11%
+source-wordcount: '1022'
+ht-degree: 8%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 11%
 * [支持导出数据集](/help/destinations/ui/export-datasets.md)。
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
-* [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## 概述 {#overview}
 
@@ -35,7 +35,7 @@ ht-degree: 11%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -55,7 +55,7 @@ ht-degree: 11%
 
 {style="table-layout:auto"}
 
-![基于配置文件的SFTP导出类型](../../assets/catalog/cloud-storage/sftp/catalog.png)
+![目标目录中突出显示的基于配置文件的SFTP导出类型。](../../assets/catalog/cloud-storage/sftp/catalog.png)
 
 ## 连接到目标 {#connect}
 
@@ -79,7 +79,7 @@ ht-degree: 11%
 
 如果您选择 **[!UICONTROL 包含密码的SFTP]** 用于连接到SFTP位置的身份验证类型：
 
-![SFTP目标基本身份验证](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![SFTP目标使用密码进行基本身份验证。](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
 * **[!UICONTROL 域]**：SFTP存储位置的地址；
 * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
@@ -87,26 +87,26 @@ ht-degree: 11%
 * **[!UICONTROL 密码]**：用于登录到SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
-  ![显示UI中格式正确的PGP密钥示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![该图像显示了UI中格式正确的PGP密钥的示例。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 
 如果您选择 **[!UICONTROL 包含SSH密钥的SFTP]** 用于连接到SFTP位置的身份验证类型：
 
-![SFTP目标SSH密钥身份验证](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
+![SFTP目标SSH密钥身份验证。](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
 
 * **[!UICONTROL 域]**：填写SFTP帐户的IP地址或域名
 * **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
 * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 RSA 格式的 Base64 编码的字符串，并且不得受密码保护。
+* **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私钥必须是RSA格式的Base64编码字符串，且不得受密码保护。
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
-  ![显示UI中格式正确的PGP密钥示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![该图像显示了UI中格式正确的PGP密钥的示例。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 目标详细信息 {#destination-details}
 
 在建立与SFTP位置的身份验证连接后，提供目标的以下信息：
 
-![SFTP目标的可用目标详细信息](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
+![SFTP目标的目标详细信息字段。](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
 * **[!UICONTROL 名称]**：输入有助于您在Experience Platform用户界面中识别此目标的名称；
 * **[!UICONTROL 描述]**：输入此目标的描述；
@@ -142,4 +142,4 @@ ht-degree: 11%
 
 ## IP地址允许列表 {#ip-address-allow-list}
 
-请参阅 [SFTP目标的IP地址允许列表](ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [列入允许列表 SFTP目标的IP地址](ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。

@@ -1,11 +1,10 @@
 ---
-keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；salesforce；api salesforce marketing cloud目标
 title: (API) SalesforceMarketing Cloud连接
 description: 通过SalesforceMarketing Cloud（以前称为ExactTarget）目标，您可以导出帐户数据，并在SalesforceMarketing Cloud中激活该数据，以满足您的业务需求。
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '3075'
+source-wordcount: '2895'
 ht-degree: 1%
 
 ---
@@ -22,7 +21,7 @@ ht-degree: 1%
 
 比较对象 [!DNL Salesforce Marketing Cloud Account Engagement] 更加面向 **B2B** 营销， [!DNL (API) Salesforce Marketing Cloud] 目标非常适合 **B2C** 事务性决策周期较短的用例。 您可以合并表示目标受众行为的较大数据集，以通过优先排序和划分联系人（尤其是来自外部数据集）来调整和改进营销活动 [!DNL Salesforce]. *请注意，Experience Platform还连接了 [[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*
 
-此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 利用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，允许您 **添加联系人并更新联系人数据** 满足贵机构的业务需求，并在新版本中激活它们 [!DNL Salesforce Marketing Cloud] 区段。
+此 [!DNL Adobe Experience Platform] [目标](/help/destinations/home.md) 使用 [!DNL Salesforce Marketing Cloud] [更新联系人](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API，允许您 **添加联系人并更新联系人数据** 满足贵机构的业务需求，并在新版本中激活它们 [!DNL Salesforce Marketing Cloud] 区段。
 
 [!DNL Salesforce Marketing Cloud] 使用带有客户端凭据的OAuth 2作为身份验证机制以与 [!DNL Salesforce Marketing Cloud] API。 向您的验证的说明 [!DNL Salesforce Marketing Cloud] 实例位于 [向目标进行身份验证](#authenticate) 部分。
 
@@ -134,7 +133,7 @@ A [!DNL Salesforce Marketing Cloud] 订购 [[!DNL Marketing Cloud Engagement]](h
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -170,7 +169,7 @@ A [!DNL Salesforce Marketing Cloud] 订购 [[!DNL Marketing Cloud Engagement]](h
 
 | [!DNL (API) Salesforce Marketing Cloud] 目标 | [!DNL Salesforce Marketing Cloud] |
 | --- | --- |
-| **[!UICONTROL Subdomain]** | 您的 [!DNL Salesforce Marketing Cloud] 域前缀。 <br>例如，如果您的域是 <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br> 您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 作为值。 |
+| **[!UICONTROL 子域]** | 您的 [!DNL Salesforce Marketing Cloud] 域前缀。 <br>例如，如果您的域是 <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*， <br> 您需要提供 `mcq4jrssqdlyc4lph19nnqgzzs84` 作为值。 |
 | **[!UICONTROL 客户端ID]** | 您的 [!DNL Salesforce Marketing Cloud] `Client ID`. |
 | **[!UICONTROL 客户端密码]** | 您的 [!DNL Salesforce Marketing Cloud] `Client Secret`. |
 

@@ -3,10 +3,10 @@ keywords: 移动设备；炫耀；消息传送；
 title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1132'
-ht-degree: 3%
+source-wordcount: '1122'
+ht-degree: 2%
 
 ---
 
@@ -46,7 +46,7 @@ ht-degree: 3%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -154,7 +154,7 @@ ht-degree: 3%
 
 |  | XDM配置文件架构 | [!DNL Braze] 实例 |
 |---|---|---|
-| 属性 | <ul><li><code>person.name.firstName</code></li><li><code>person.name.lastName</code></li><li><code>mobilePhone.number</code></li></ul> | <ul><li><code>名字</code></li><li><code>姓氏</code></li><li><code>电话号码</code></li></ul> |
+| 属性 | <ul><li><code>person.name.firstname</code></li><li><code>person.name.lastName</code></li><li><code>mobilePhone.number</code></li></ul> | <ul><li><code>名字</code></li><li><code>姓氏</code></li><li><code>电话号码</code></li></ul> |
 | 标识 | <ul><li><code>电子邮件</code></li><li><code>Google Ad ID (GAID)</code></li><li><code>广告商的Apple ID (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |
 
 正确的映射将如下所示：

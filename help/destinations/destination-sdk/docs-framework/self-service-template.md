@@ -2,7 +2,7 @@
 title: 文档自助模板//将替换为您的目标名称
 description: 使用此模板在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为概述部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
 source-wordcount: '1640'
 ht-degree: 2%
@@ -76,7 +76,7 @@ ht-degree: 2%
 
 *在此部分添加有关目标支持的受众的信息。 我们已在表中预填了一些标准值。 使用 `✓` 和 `X` 用于标记此目标是否支持您的受众类型的字符。*
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|

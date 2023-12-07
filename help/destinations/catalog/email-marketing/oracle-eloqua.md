@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: （文件）OracleEloqua连接
 description: oracleEloqua是一个软件即服务(SaaS)平台，由Oracle提供，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和潜在客户拓展。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '731'
-ht-degree: 3%
+source-wordcount: '717'
+ht-degree: 2%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 3%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|

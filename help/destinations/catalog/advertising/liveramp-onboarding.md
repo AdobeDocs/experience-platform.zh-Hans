@@ -3,10 +3,10 @@ title: LiveRamp — 载入连接
 description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 9122159b3facf7952e6072d0b9e6f8d8d7d7c99c
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1793'
-ht-degree: 4%
+source-wordcount: '1756'
+ht-degree: 3%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -121,7 +121,7 @@ ht-degree: 4%
 
 读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-### 计划 {#scheduling}
+### 正在计划 {#scheduling}
 
 在 [!UICONTROL 正在计划] 步骤，使用下面显示的设置为每个受众创建导出计划。
 

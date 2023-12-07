@@ -4,9 +4,9 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行任何其他您可能需要的操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '2483'
+source-wordcount: '2480'
 ht-degree: 8%
 
 ---
@@ -31,7 +31,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -65,7 +65,7 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 ## IP地址允许列表 {#ip-address-allowlist}
 
-为了满足客户的安全性和合规性要求，Experience Platform提供了您可以允许列表以用于HTTP API目标的静态IP列表。 请参阅 [流目标的IP地址允许列表](/help/destinations/catalog/streaming/ip-address-allow-list.md) 要允许列表的IP的完整列表。
+为了满足客户的安全性和合规性要求，Experience Platform提供了您可以允许列表以用于HTTP API目标的静态IP列表。 请参阅 [列入允许列表流目的地的IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 要允许列表的IP的完整列表。
 
 ## 支持的身份验证类型 {#supported-authentication-types}
 
@@ -73,7 +73,7 @@ HTTP API目标支持对HTTP端点使用多种身份验证类型：
 
 * 没有身份验证的HTTP端点；
 * 持有者令牌认证；
-* [OAuth 2.0客户端凭据](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 使用body表单进行身份验证，使用 [!DNL client ID]， [!DNL client secret] 和 [!DNL grant type] （在HTTP请求正文中，如以下示例所示）。
+* [OAuth 2.0客户端凭据](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 使用body表单进行身份验证，使用 [!DNL client ID]， [!DNL client secret]、和 [!DNL grant type] （在HTTP请求正文中，如以下示例所示）。
 
 ```shell
 curl --location --request POST '<YOUR_API_ENDPOINT>' \
@@ -113,7 +113,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 如果您选择 **[!UICONTROL 持有者令牌]** 要连接到HTTP端点的身份验证类型，请输入以下字段并选择 **[!UICONTROL 连接到目标]**：
 
-![UI屏幕的图像，您可以在其中使用持有者令牌身份验证连接到HTTP API目标](../../assets/catalog/http/http-api-authentication-bearer.png)
+![UI屏幕的图像，您可以在其中使用持有者令牌身份验证连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-bearer.png)
 
 * **[!UICONTROL 持有者令牌]**：插入持有者令牌以对HTTP位置进行身份验证。
 
@@ -121,7 +121,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 如果您选择 **[!UICONTROL 无]** 要连接到HTTP端点的身份验证类型：
 
-![UI屏幕的图像，您可以在此处使用身份验证连接到HTTP API目标](../../assets/catalog/http/http-api-authentication-none.png)
+![UI屏幕的图像，您可以在此处使用身份验证连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-none.png)
 
 当选择此身份验证打开时，您只需选择 **[!UICONTROL 连接到目标]** 并且已建立与端点的连接。
 
@@ -129,7 +129,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 如果您选择 **[!UICONTROL OAuth 2密码]** 要连接到HTTP端点的身份验证类型，请输入以下字段并选择 **[!UICONTROL 连接到目标]**：
 
-![UI屏幕的图像，在该屏幕中，您可以使用带有密码身份验证的OAuth 2连接到HTTP API目标](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
+![UI屏幕的图像，在该屏幕中，您可以使用带有密码身份验证的OAuth 2连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
 
 * **[!UICONTROL 访问令牌URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
 * **[!UICONTROL 客户端ID]**：和 [!DNL client ID] 系统分配给Adobe Experience Platform的区段。
@@ -141,7 +141,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 如果您选择 **[!UICONTROL OAuth 2客户端凭据]** 要连接到HTTP端点的身份验证类型，请输入以下字段并选择 **[!UICONTROL 连接到目标]**：
 
-![用户界面屏幕的图像，在该屏幕中，您可以使用带有客户端凭据身份验证的OAuth 2连接到HTTP API目标](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
+![用户界面屏幕的图像，在该屏幕中，您可以使用带有客户端凭据身份验证的OAuth 2连接到HTTP API目标。](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
 
 * **[!UICONTROL 访问令牌URL]**：您颁发访问令牌以及（可选）刷新令牌的URL。
 * **[!UICONTROL 客户端ID]**：和 [!DNL client ID] 系统分配给Adobe Experience Platform的区段。
@@ -179,7 +179,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![显示HTTP目标详细信息的已完成字段的UI屏幕的图像](../../assets/catalog/http/http-api-destination-details.png)
+![显示HTTP目标详细信息的已完成字段的UI屏幕的图像。](../../assets/catalog/http/http-api-destination-details.png)
 
 * **[!UICONTROL 名称]**：输入一个名称，您将在将来通过名称识别此目标。
 * **[!UICONTROL 描述]**：输入可帮助您将来识别此目标的描述。
@@ -232,7 +232,7 @@ Experience Platform可优化将配置文件导出到HTTP API目标的行为，�
 
 例如，考虑将此数据流映射到HTTP目标，其中在数据流中选择了三个受众，并且四个属性映射到目标。
 
-![http API目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+![HTTP API目标数据流示例。](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
 导出到目标的配置文件可由符合或退出其中一个配置文件来确定 *三个映射区段*. 但是，在数据导出中，将 `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 如果特定配置文件是其他未映射受众的成员，并且这些受众与触发导出的受众共享相同的合并策略，则可能会显示其他未映射受众。 如果配置文件符合 **拥有DeLorean Cars的客户** 区段，但同时也是 **观看了《回到未来》** 电影和 **科幻迷们** 然后，其他这两个受众也将出现在中 `segmentMembership` 数据导出的对象，即使这些对象未在数据流中映射，只要它们与共享相同的合并策略 **拥有DeLorean Cars的客户** 区段。
 

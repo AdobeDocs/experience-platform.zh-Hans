@@ -1,12 +1,11 @@
 ---
-keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；salesforce；salesforce目标
 title: SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud是一个数字营销套件，以前称为ExactTarget，通过它，可为访客和客户构建和自定义历程以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '819'
-ht-degree: 4%
+source-wordcount: '795'
+ht-degree: 2%
 
 ---
 
@@ -16,11 +15,11 @@ ht-degree: 4%
 
 [[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一个数字营销套件，以前称为ExactTarget，可让您为访客和客户构建和自定义历程，以个性化其体验。
 
-要将受众数据发送到，请执行以下操作 [!DNL Salesforce Marketing Cloud]，您必须首先 [连接目标](#connect-destination) 在Platform中，然后 [设置数据导入](#import-data-into-salesforce) 从存储位置移至 [!DNL Salesforce Marketing Cloud].
+要将受众数据发送到，请执行以下操作 [!DNL Salesforce Marketing Cloud]，您必须首先 [连接到目标](#connect-destination) 在Platform中，然后 [设置数据导入](#import-data-into-salesforce) 从存储位置移至 [!DNL Salesforce Marketing Cloud].
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -42,9 +41,9 @@ ht-degree: 4%
 
 ## IP地址允许列表 {#allow-list}
 
-在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
+在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [列入允许列表 SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
 
 ## 连接到目标 {#connect}
 
@@ -72,7 +71,7 @@ ht-degree: 4%
    * **[!UICONTROL 域]**：SFTP帐户的IP地址或域名；
    * **[!UICONTROL 端口]**：您的SFTP存储位置使用的端口；
    * **[!UICONTROL 用户名]**：用于登录到SFTP存储位置的用户名；
-   * **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。
+   * **[!UICONTROL SSH密钥]**：用于登录到SFTP存储位置的私有SSH密钥。 私钥必须采用Base64编码的字符串格式，且不得受密码保护。
 
 * 或者，您可以附加RSA格式的公钥，将带有PGP/GPG的加密添加到导出文件中的 **[!UICONTROL 键]** 部分。 您的公钥必须编写为 [!DNL Base64] 编码字符串。
 * **[!UICONTROL 名称]**：为您的目标选择相关的名称。

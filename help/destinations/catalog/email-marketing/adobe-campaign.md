@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件目标；adobe campaign；ca
 title: Adobe Campaign连接
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和交付营销活动。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '956'
-ht-degree: 3%
+source-wordcount: '906'
+ht-degree: 2%
 
 ---
 
@@ -20,7 +20,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -42,9 +42,9 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ## IP地址允许列表 {#allow-list}
 
-在使用SFTP存储设置电子邮件营销目标时，Adobe建议向允许列表添加特定IP范围。
+在使用SFTP存储设置电子邮件营销目标时，Adobe建议将某些IP范围添加到SFTP允许列表。
 
-请参阅 [SFTP目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) (如果需要将AdobeIP添加到允许列表)。
+请参阅 [列入允许列表 SFTP目标的IP地址](../cloud-storage/ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
 
 ## 连接到目标 {#connect}
 
@@ -101,7 +101,7 @@ Adobe Campaign支持以下连接类型：
 
 ## 导出的数据 {#exported-data}
 
-对象 [!DNL Adobe Campaign] 目标， [!DNL Platform] 创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [验证受众激活](../../ui/activate-batch-profile-destinations.md#verify) 在audience activation教程中。
+对象 [!DNL Adobe Campaign] 目标， [!DNL Platform] 创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [验证受众激活](../../ui/activate-batch-profile-destinations.md#verify) 部分。
 
 ## 设置数据导入Adobe Campaign {#import-data-into-campaign}
 

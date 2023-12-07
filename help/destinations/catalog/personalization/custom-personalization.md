@@ -3,10 +3,10 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '913'
-ht-degree: 10%
+source-wordcount: '907'
+ht-degree: 9%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 自定义个性化]** 目标要求您使用 [边缘网络服务器API](/help/server-api/overview.md) 在为基于属性的个性化配置目标时。 所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
+>配置文件属性可能包含敏感数据。 要保护此数据，您必须使用 [边缘网络服务器API](/help/server-api/overview.md) 配置 **[!UICONTROL 自定义个性化]** 基于属性的个性化的目标。 所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
 >
 ><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
 >
@@ -31,7 +31,7 @@ ht-degree: 10%
 
 ## 概述 {#overview}
 
-此目标提供了一种方法，可将受众信息从Adobe Experience Platform检索到外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序。
+设置此目标以允许客户网站上运行的外部个性化平台、内容管理系统、广告服务器和其他应用程序从Adobe Experience Platform检索受众信息。
 
 ## 先决条件 {#prerequisites}
 
@@ -43,7 +43,7 @@ ht-degree: 10%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|

@@ -2,14 +2,14 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1046'
-ht-degree: 6%
+source-wordcount: '1027'
+ht-degree: 5%
 
 ---
 
-# (Beta)[!DNL Google Ad Manager 360]连接
+# (Beta) [!DNL Google Ad Manager 360] 连接
 
 ## 概述 {#overview}
 
@@ -41,7 +41,7 @@ ht-degree: 6%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|

@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1051'
-ht-degree: 17%
+source-wordcount: '1052'
+ht-degree: 16%
 
 ---
 
@@ -18,16 +18,16 @@ ht-degree: 17%
 * [支持导出数据集](/help/destinations/ui/export-datasets.md)。
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
-* [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## 连接到您的 [!DNL Amazon S3] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
 * 要连接到 [!DNL Amazon S3] 存储位置使用Platform用户界面，请阅读以下章节 [连接到目标](#connect) 和 [将受众激活到此目标](#activate) 下。
-* 要连接到 [!DNL Amazon S3] 存储位置以编程方式读取 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
+* 要连接到 [!DNL Amazon S3] 以编程方式存储位置，请阅读有关如何使用 [使用流服务API教程将受众激活到基于文件的目标](../../api/activate-segments-file-based-destinations.md).
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -47,7 +47,7 @@ ht-degree: 17%
 
 {style="table-layout:auto"}
 
-![Amazon S3基于配置文件的导出类型](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
+![UU中突出显示的基于配置文件的Amazon S3导出类型。](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
 
 ## 连接到目标 {#connect}
 
@@ -69,7 +69,7 @@ ht-degree: 17%
 * **[!DNL Amazon S3]访问密钥** 和 **[!DNL Amazon S3]密钥**：在 [!DNL Amazon S3]，生成 `access key - secret access key` 对，以授予对的Platform访问权限 [!DNL Amazon S3] 帐户。 在中了解详情 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
-  ![显示UI中格式正确的PGP密钥示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![该图像显示了UI中格式正确的PGP密钥的示例。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 

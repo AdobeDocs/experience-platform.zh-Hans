@@ -1,12 +1,11 @@
 ---
-keywords: DoubleClick竞价管理器；DoubleClick竞价管理器；DoubleClick；显示和视频360；显示360；视频360；视频360；显示360；显示和视频
 title: Google显示和视频360连接
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于在显示器、视频和移动设备库存源中执行重定位和面向受众的数字活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: a7dbb5e274058a059ae1231281fd9efd509b029f
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '1000'
-ht-degree: 4%
+source-wordcount: '974'
+ht-degree: 2%
 
 ---
 
@@ -14,18 +13,18 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL Display & Video 360]，以前称为 [!DNL DoubleClick Bid Manager]，是一个工具，用于在显示、视频和移动设备清单源中执行重定位和面向受众的数字营销活动。
+[!DNL Display & Video 360]，以前称为 [!DNL DoubleClick Bid Manager]，是用于跨显示、视频和移动设备清单源执行重定位和面向受众的数字营销活动的工具。
 
 ## 目标详情 {#specifics}
 
 请注意以下特定于的详细信息 [!DNL Google Display & Video 360] 目标：
 
 * 激活的受众是在Google平台中以编程方式创建的。
-* 将受众回填激活到 [!DNL Google Display & Video 360] 按计划，目标会在受众首次映射到目标连接后的24-48小时内发生。 此更新是为了响应Google的策略，该策略等待24小时来摄取数据，旨在提高Real-Time CDP与之间的匹配率。 [!DNL Google Display & Video 360]. 请注意，这是仅适用于该目标的后端配置，并与 UI 中任何客户可配置的计划选项无关。
+* 将受众回填激活到 [!DNL Google Display & Video 360] 按计划，目标会在受众首次映射到目标连接后的24-48小时内发生。 此更新是为了响应Google的策略，该策略等待24小时来摄取数据，旨在提高Real-Time CDP与之间的匹配率。 [!DNL Google Display & Video 360]. 这是仅适用于此目标的后端配置，与UI中任何客户可配置的计划选项无关。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Adobe Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将会结转到Platform。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Adobe Audience Manager或其他应用程序)的Experience CloudID服务中，联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将会结转到Platform。
 
 ## 支持的身份 {#supported-identities}
 
@@ -43,7 +42,7 @@ ht-degree: 4%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -67,10 +66,10 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Display & Video 360] Platform的目标。 请确保以下说明的允许列表流程已由完成 [!DNL Google] 创建目标之前。
+>必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Display & Video 360] Platform的目标。 确保下述允许列表流程已由完成 [!DNL Google] 创建目标之前。
 >此规则的例外情况是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
-创建 [!DNL Google Display & Video 360] 目标在Platform中，您必须联系Google以请求将Adobe放入允许的数据提供商列表，并将您的帐户添加到允许列表中。 请联系Google并提供以下信息：
+创建 [!DNL Google Display & Video 360] 目标在Platform中，您必须联系Google以请求将Adobe列入允许列表放入允许的数据提供商列表，并将您的帐户添加到中。 请联系Google并提供以下信息：
 
 * **帐户ID**：Adobe在Google中的帐户ID。 帐户ID：87933855。
 * **客户ID**：AdobeGoogle的客户帐户ID。 客户ID：89690775。
@@ -97,7 +96,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->设置时 [!DNL Google Display & Video 360] 目标，请与您的 [!DNL Google Account Manager] 或Adobe代表以了解您的客户类型。
+>设置时 [!DNL Google Display & Video 360] 目标，与您的 [!DNL Google Account Manager] 或Adobe代表以了解您的客户类型。
 
 ### 启用警报 {#enable-alerts}
 

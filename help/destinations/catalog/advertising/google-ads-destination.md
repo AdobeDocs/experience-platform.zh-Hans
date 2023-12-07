@@ -2,10 +2,10 @@
 title: Google Ads连接
 description: Google Ads以前称为Google AdWords，是一种在线广告服务，它允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按每次点击付费进行广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 1ec9559e762b44dd8d7639aba0a54af7ce221666
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '946'
+ht-degree: 2%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果您希望使用创建您的第一个目标 [!DNL Google Ads] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将会结转到Platform。
+>如果您希望使用创建您的第一个目标 [!DNL Google Ads] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Audience Manager或其他应用程序)的Experience CloudID服务中，联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将会结转到Platform。
 
 ## 支持的身份 {#supported-identities}
 
@@ -44,7 +44,7 @@ ht-degree: 0%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -76,10 +76,10 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Ads] Platform的目标。 请确保以下说明的允许列表流程已由完成 [!DNL Google] 创建目标之前。
+>必须先将添加到允许列表，然后才能设置您的第一个 [!DNL Google Ads] Platform的目标。 确保下述允许列表流程已由完成 [!DNL Google] 创建目标之前。
 >此规则的例外情况是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建了到此Google目标的连接，则无需再次完成允许列表流程，您可以继续后续步骤。
 
-创建 [!DNL Google Ads] Platform中的目标，您必须联系 [!DNL Google] 用于将Adobe添加到允许的数据提供程序列表，以及用于将您的帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
+创建 [!DNL Google Ads] Platform中的目标，您必须联系 [!DNL Google] 用于将Adobe列入允许列表添加到允许的数据提供程序列表，以及用于将您的帐户添加到。 联系人 [!DNL Google] 并提供以下信息：
 
 * **帐户ID**：Adobe在Google中的帐户ID。 帐户ID：87933855。
 * **客户ID**：AdobeGoogle的客户帐户ID。 客户ID：89690775。

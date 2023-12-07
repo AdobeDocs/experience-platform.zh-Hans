@@ -3,9 +3,9 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '3117'
+source-wordcount: '2818'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) 是一个流行的客户关系管理(CRM)平台，它支持以下内容：
+[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) 是一个流行的客户关系管理(CRM)平台，它支持下面描述的用户档案类型：
 
 * [潜在客户](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm)  — 潜在客户是可能对您销售的产品或服务感兴趣（也可能不感兴趣）的个人或公司的名称。
 * [联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm)  — 联系人是您的代表之一已建立关系并已被鉴定为潜在客户的个人。
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 ## 用例 {#use-cases}
 
-作为营销人员，您可以根据用户的Adobe Experience Platform配置文件中的属性，为其提供个性化体验。 您可以从离线数据构建受众，并将这些受众发送到Salesforce CRM，以便在Adobe Experience Platform中更新受众和配置文件后立即显示在用户的馈送中。
+作为营销人员，您可以根据用户的Adobe Experience Platform配置文件中的属性，为其提供个性化体验。 您可以从离线数据构建受众并将这些受众发送到Salesforce CRM，以在Adobe Experience Platform中更新受众和配置文件后立即更新CRM成员资格。
 
 ## 先决条件 {#prerequisites}
 

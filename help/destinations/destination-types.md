@@ -3,9 +3,9 @@ keywords: 目标；目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中目标的各种类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## 目标类型 {#destination-types}
 
-在Adobe Experience Platform中，我们会区分不同的目标类型，即连接、数据集导出和扩展。 有多种类型的连接目标，允许您将数据导出到基于API的目标。
+在Adobe Experience Platform中，我们会区分不同的目标类型，即连接、数据集导出和扩展。 有多种类型的连接目标，可让您将数据导出到基于API的目标、社交目标、CRM平台等。
 
 最后，还可以区分目标目录中所有组织内可用的公共目标与Real-Time CDP Ultimate客户为满足其特定导出用例而可以创建的专用目标。
 
@@ -68,6 +68,21 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 以下视频介绍这两种类型目标的特性：
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
+
+## 导出的受众的类型 {#exported-audiences-types}
+
+您可以将三种类型的受众从Experience Platform导出到不同的目标：
+
+* 人员受众
+* 帐户受众
+* 潜在客户受众
+
+了解关于 [各种受众类型](/help/segmentation/ui/account-audiences.md#terminology).
+
+目标卡上的符号显示了您可以导出到每个目标的受众类型。
+
+![带有符号的目标卡片示例显示了可以导出的受众类型。](/help/destinations/assets/destination-types/types-of-audiences.png)
+
 
 ## 数据集导出目标 {#dataset-export-destinations}
 

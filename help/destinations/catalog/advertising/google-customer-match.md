@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1788'
 ht-degree: 1%
 
 ---
@@ -52,7 +52,7 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -80,9 +80,9 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 ### 允许列表 {#allowlist}
 
-创建 [!DNL Google Customer Match] 目标位置在Experience Platform中，请确保您的 [!DNL Google Ads] 帐户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+创建 [!DNL Google Customer Match] 目标位置在Experience Platform中，确保您的 [!DNL Google Ads] 帐户符合 [[!DNL Google Customer Match] 策略](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
-Google会自动允许具有合规帐户的客户列出。
+拥有合规账户的客户由Google自动列入允许列表。
 
 ## ID匹配要求 {#id-matching-requirements}
 
@@ -132,6 +132,12 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
+## 视频概述 {#video-overview}
+
+观看以下视频，了解如何获取优势以及如何将数据激活到Google Customer Match。
+
+>[!VIDEO](https://video.tv.adobe.com/v/38180/)
+
 ## 连接到目标 {#connect}
 
 >[!IMPORTANT]
@@ -169,9 +175,9 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 应用程序ID] 发送时 [!DNL IDFA] 或 [!DNL GAID] 受众到 [!DNL Google Customer Match].
 
-![Google客户匹配应用程序ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
+![在激活工作流的区段计划步骤中，突出显示了“Google客户匹配应用程序ID”字段。](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-有关如何查找 [!DNL App ID]，请参阅 [Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
+有关如何查找 [!DNL App ID]，请参阅 [Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid) 也可以咨询您的Google代表。
 
 ### 映射示例：激活中的受众数据 [!DNL Google Customer Match] {#example-gcm}
 
@@ -194,17 +200,17 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 * 选择 `IDFA` 或 `GAID` 当源命名空间满足以下条件时，命名空间作为目标身份 `IDFA` 或 `GAID`.
 * 选择 `User_ID` 当源命名空间是自定义命名空间时，将命名空间作为目标身份。
 
-![标识映射](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
+![源字段和目标字段之间的标识映射，如激活工作流的“映射”步骤中所示。](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
 来自未经过哈希处理的命名空间的数据自动进行哈希处理 [!DNL Platform] 激活时。
 
 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。
 
-![标识映射转换](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
+![应用激活工作流映射步骤中突出显示的转换控件。](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## 验证受众激活是否成功 {#verify-activation}
 
-完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的受众在您的Google帐户中显示为客户列表。 请注意，根据您的受众规模，除非有100多个活动用户可提供，否则不会填充某些受众。
+完成激活流程后，切换到 **[!UICONTROL Google Ads]** 帐户。 激活的受众在您的Google帐户中显示为客户列表。 根据您的受众规模，除非有100多个活动用户可提供，否则不会填充某些受众。
 
 将受众映射到两者时 [!DNL IDFA] 和 [!DNL GAID] 移动设备ID、 [!DNL Google Customer Match] 为每个ID映射创建单独的受众。 您的 [!DNL Google Ads] account显示两个不同的区段，一个用于 [!DNL IDFA]，一个用于 [!DNL GAID] 映射。
 
@@ -217,8 +223,3 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
 当客户帐户不符合 [先决条件](#google-account-prerequisites). 要解决此问题，请联系Google并确保您的帐户已列入允许列表并配置用于 [!DNL Standard] 或更高权限级别。 请参阅 [Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) 以了解详细信息。
-
-## 其他资源 {#additional-resources}
-
-* [集成 [!DNL Google Customer Match]  — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
-
