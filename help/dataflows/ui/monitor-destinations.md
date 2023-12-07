@@ -1,20 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；监控帐户；监控数据流；数据流；目标
 description: 目标允许您从Adobe Experience Platform向无数外部合作伙伴激活数据。 本教程提供了有关如何使用Experience Platform用户界面监视目标的数据流的说明。
 solution: Experience Platform
 title: 在UI中监视目标的数据流
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '3227'
-ht-degree: 11%
+source-wordcount: '3290'
+ht-degree: 10%
 
 ---
 
 # 在UI中监视目标的数据流
 
-目标允许您从Adobe Experience Platform向无数外部合作伙伴激活数据。 Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
+使用Experience Platform目录中的各种目标，将您的数据从Platform激活到无数外部合作伙伴。 Platform通过提供数据流透明度，使跟踪流向目标的数据流的流程更加简单。
 
 监视仪表板为您提供数据流历程的可视化表示形式，包括数据激活到的目标。 本教程提供了有关如何直接在目标工作区中监视数据流或者使用“监视”仪表板通过Experience Platform用户界面监视目标的数据流的说明。
 
@@ -31,7 +30,7 @@ ht-degree: 11%
 
 在 **[!UICONTROL 目标]** 在Platform UI中，导航到 **[!UICONTROL 浏览]** 选项卡，然后选择要查看的目标名称。
 
-![选择目标视图](../assets/ui/monitor-destinations/select-destination.png)
+![选择突出显示目标连接的目标视图](../assets/ui/monitor-destinations/select-destination.png)
 
 此时将显示现有数据流的列表。 在此页面上是一个可查看的数据流列表，其中包括有关其目标、用户名、数据流数量和状态的信息。
 
@@ -49,7 +48,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关区段激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。要了解更多信息，请参阅量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
@@ -73,7 +72,7 @@ ht-degree: 11%
 
 对于流目标， [!UICONTROL 数据流运行] 选项卡每小时更新数据流运行中的量度数据。 标记的最突出的统计数据是身份信息。
 
-身份表示配置文件的不同方面。 例如，如果配置文件同时包含电话号码和电子邮件地址，则该配置文件将具有两个身份。
+身份表示配置文件的不同方面。 例如，如果配置文件同时包含电话号码和电子邮件地址，则该配置文件将有两个身份。
 
 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
@@ -81,11 +80,11 @@ ht-degree: 11%
 - **[!UICONTROL 排除的身份]**：基于缺少属性和同意违规而跳过了激活的配置文件身份总数。
 - **[!UICONTROL 身份失败]**：由于错误未激活到目标的配置文件身份总数。
 
-![数据流运行流目标的详细信息](../assets/ui/monitor-destinations/dataflow-runs-stream.png)
+![数据流运行流目标的详细信息。](../assets/ui/monitor-destinations/dataflow-runs-stream.png)
 
 每次数据流运行都会显示以下详细信息：
 
-- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以小时量度的形式，根据数据流运行的开始捕获量度。 对于流数据流运行，如果数据流运行在例如10:30PM开始，则量度在UI中将开始时间显示为晚上10:00。
+- **[!UICONTROL 数据流运行开始]**：数据流运行开始的时间。 对于流式数据流运行，Experience Platform会以小时量度的形式，根据数据流运行的开始捕获量度。 对于流数据流运行，如果数据流运行开始（例如，晚上10:30），指标会在UI中将开始时间显示为晚上10:00。
 - **[!UICONTROL 处理时间]**：数据流运行处理所用的时间。
    - 对象 **[!UICONTROL 已完成]** 在运行时，处理时间量度始终显示一个小时。
    - 对于仍在以下状态的数据流运行： **[!UICONTROL 正在处理]** 状态，捕获所有量度的窗口将保持打开状态超过一小时，以便处理与数据流运行对应的所有量度。 例如，上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，在处理窗口关闭且数据流运行状态更新为 **已完成**，显示的处理时间将更改为1小时。
@@ -94,25 +93,25 @@ ht-degree: 11%
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意违规从激活中排除的配置文件身份总数。
 - **[!UICONTROL 身份失败]** 由于错误而未激活到目标的配置文件身份总数。
 - **[!UICONTROL 激活率]**：已成功激活或跳过的接收标识的百分比。 以下公式演示如何计算此值：
-  ![激活率公式](../assets/ui/monitor-destinations/activation-rate-formula.png)
+  ![激活率公式。](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL 状态]**：表示数据流所处的状态： [!UICONTROL 已完成] 或 [!UICONTROL 正在处理]. [!UICONTROL 已完成] 意味着相应数据流运行的所有身份已在一小时期间导出。 [!UICONTROL 正在处理] 表示数据流运行尚未完成。
 
 要查看特定数据流运行的详细信息，请从列表中选择该运行的开始时间。
 
 数据流运行的详细信息页面包含其他信息，例如收到的配置文件数、激活的标识数、失败的标识数和排除的标识数。
 
-![流目标的数据流详细信息](../assets/ui/monitor-destinations/dataflow-details-stream.png)
+![流目标的数据流详细信息。](../assets/ui/monitor-destinations/dataflow-details-stream.png)
 
 详细信息页面还会显示失败的身份和排除的身份的列表。 显示失败和排除的标识的信息，包括错误代码、标识计数和描述。 默认情况下，列表会显示失败的标识。 要显示跳过的身份，请选择 **[!UICONTROL 排除的身份]** 切换。
 
-![流目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-stream.png)
+![流目标的数据流记录，其中突出显示了错误消息。](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
 ### 批处理目标的数据流运行 {#dataflow-runs-for-batch-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关区段激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。要了解更多信息，请参阅量度定义指南。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
@@ -135,7 +134,7 @@ ht-degree: 11%
 - **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的区段中删除的标识。
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意冲突，从选定目标的激活中排除的个人配置文件身份计数。
 
-![批处理目标的数据流运行视图](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
+![数据流针对批处理目标运行视图。](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
 
 每次数据流运行都会显示以下详细信息：
 
@@ -159,11 +158,11 @@ ht-degree: 11%
 - **[!UICONTROL 文件总数]**：数据流中导出的文件总数。
 - **[!UICONTROL 上次更新时间]**：上次更新数据流运行的时间。
 
-![批处理目标的数据流运行详细信息](../assets/ui/monitor-destinations/dataflow-batch.png)
+![批处理目标的数据流运行详细信息。](../assets/ui/monitor-destinations/dataflow-batch.png)
 
 详细信息页面还会显示失败的身份和排除的身份的列表。 显示失败和排除的标识的信息，包括错误代码和描述。 默认情况下，列表会显示失败的标识。 要显示排除的身份，请选择 **[!UICONTROL 排除的身份]** 切换。
 
-![批处理目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-batch.png)
+![批处理目标的数据流记录，其中突出显示了错误消息。](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
 ## 监控目标仪表板 {#monitoring-destinations-dashboard}
 
@@ -183,7 +182,7 @@ ht-degree: 11%
 
 仪表板的中心是 [!UICONTROL 激活] 面板，其中包含量度和图形，其中显示有关导出到流式目标的数据的激活率数据，以及有关失败的批处理数据流运行到批处理目标的数据。
 
-![流式和批量激活图](../assets/ui/monitor-destinations/dashboard-graph.png)
+![监控视图中高亮显示的流激活图和批量激活图。](../assets/ui/monitor-destinations/dashboard-graph.png)
 
 
 默认情况下，显示的数据包含过去24小时的激活信息。 选择 **[!UICONTROL 最近24小时]** 以调整所显示记录的时间范围。 可用选项包括 **[!UICONTROL 最近24小时]**， **[!UICONTROL 最近7天]**、和 **[!UICONTROL 最近30天]**. 或者，您可以在出现的日历弹出窗口中选择日期。 选择日期后，选择 **[!UICONTROL 应用]** 以调整显示的信息的时间范围。
@@ -192,14 +191,14 @@ ht-degree: 11%
 >
 >以下屏幕截图显示了过去30天（而不是过去24小时）的激活率和批量数据流运行。 您可以通过选择 **[!UICONTROL 最近30天]**.
 
-![更改激活目标的回顾日期范围](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
+![更改为激活的目标突出显示的回顾日期范围控件](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
 使用箭头图标(![箭头图标](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png))以展开或取消屏幕顶部的卡片，这些卡片根据目标类型（流或批处理）显示有关激活详细信息的概览信息：
 
 - **[!UICONTROL 流激活率]**：表示已成功激活或跳过的已接收身份的百分比。 用于计算此百分比的公式在上面的页面中进行了进一步说明，请参见 [流目标的数据流运行](#dataflow-runs-for-streaming-destinations) 部分。
 - **[!UICONTROL 批处理失败的数据流运行]**：表示在所选时间间隔内失败的数据流运行的次数。
 
-![在页面顶部显示或取消卡片](../assets/ui/monitor-destinations/monitoring-destinations-toggle-arrow.gif)
+![在页面顶部显示或取消卡片。](../assets/ui/monitor-destinations/monitoring-destinations-toggle-arrow.gif)
 
 此 **[!UICONTROL 激活]** 默认情况下，会显示该图表，您可以禁用它以展开以下目标列表。 选择 **[!UICONTROL 量度和图形]** 切换可禁用图形。
 
@@ -207,15 +206,15 @@ ht-degree: 11%
 
 | 量度 | 目标类型 |
 ---------|----------|
-| **[!UICONTROL 收到的配置文件]** | 流式处理和批处理 |
-| **[!UICONTROL 已激活的标识]** | 流式处理和批处理 |
-| **[!UICONTROL 失败的标识]** | 流 |
-| **[!UICONTROL 排除的标识]** | 流式处理和批处理 |
+| **[!UICONTROL 已接收配置文件]** | 流式处理和批处理 |
+| **[!UICONTROL 已激活身份]** | 流式处理和批处理 |
+| **[!UICONTROL 身份失败]** | 流 |
+| **[!UICONTROL 排除的身份]** | 流式处理和批处理 |
 | **[!UICONTROL 激活率]** | 流 |
 | **[!UICONTROL 失败的数据流总数]** | 批次 |
 | **[!UICONTROL 上次更新时间]** | 流式处理和批处理 |
 
-![功能板所有激活的目标](../assets/ui/monitor-destinations/dashboard-destinations.png)
+![突出显示所有已激活目标的监视仪表板。](../assets/ui/monitor-destinations/dashboard-destinations.png)
 
 您还可以过滤目标列表，以仅显示所选的目标类别。 选择 **[!UICONTROL 我的目标]** 下拉列表，然后选择 [目标类别](/help/destinations/destination-types.md#categories) 要过滤到的对象。
 
@@ -223,13 +222,13 @@ ht-degree: 11%
 
 此外，您可以在搜索栏中输入一个目标以隔离到单个目标。 如果要查看目标的数据流，可以选择过滤器 ![筛选](../assets/ui/monitor-destinations/filter-add.png) 旁边会显示其活动数据流的列表。
 
-![使用搜索栏筛选目标](../assets/ui/monitor-destinations/filtered-destinations.png)
+![使用监视视图中突出显示的搜索栏筛选目标。](../assets/ui/monitor-destinations/filtered-destinations.png)
 
 如果要查看所有目标中的所有现有数据流，请选择 **[!UICONTROL 数据流]**.
 
 此时将显示数据流列表，按上次数据流运行排序。 您可以通过定位要监视的目标、选择过滤器来查看特定数据流的其他详细信息 ![筛选](../assets/ui/monitor-destinations/filter-add.png) 旁边，然后选取过滤器 ![筛选](../assets/ui/monitor-destinations/filter-add.png) 在数据流旁边，您需要了解更多信息。
 
-![监测仪表板中高亮显示的所有数据流](../assets/ui/monitor-destinations/dashboard-dataflows.png)
+![所有数据流在监视仪表板中高亮显示。](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
 选择数据流进行进一步检查后，数据流详细信息页面会包含一个切换开关，通过该开关可查看数据流中按数据流运行或区段划分的激活数据。
 
@@ -243,11 +242,11 @@ ht-degree: 11%
 >
 >对于流到批处理目标的数据流，每个区段都有一个基于区段激活计划频率生成的相应数据流运行。 例如，如果为同一目标数据流中的五个区段设置每日计划激活，则每天将生成五个单独的数据流运行。
 
-![“流量运行”面板](../assets/ui/monitor-destinations/dashboard-flow-runs-view.png)
+![突出显示具有多个运行的数据流运行面板。](../assets/ui/monitor-destinations/dashboard-flow-runs-view.png)
 
 使用 **[!UICONTROL 仅显示故障]** 切换可仅显示数据流的失败运行。
 
-![数据流运行 — 仅显示故障切换](../assets/ui/monitor-destinations/dataflow-runs-show-failures-only.gif)
+![数据流运行视图，其中仅显示失败切换突出显示](../assets/ui/monitor-destinations/dataflow-runs-show-failures-only.gif)
 
 ### 区段级别视图 {#segment-level-view}
 
@@ -261,7 +260,7 @@ ht-degree: 11%
 >- 区段级别视图当前仅适用于批处理目标。
 >- 区段级别量度当前仅记录成功的数据流运行。 失败的数据流运行和排除的记录不会记录这些事件。
 
-![数据流面板中的区段](../assets/ui/monitor-destinations/dashboard-segments-view.png)
+![数据流面板中突出显示的区段。](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
 在区段级别视图中，度量是在选定的时间范围内跨多个数据流运行汇总的。 如果有多个数据流运行，则可以从区段级别向下钻取以查看每个数据流运行的细分（按选定区段筛选）。
 使用过滤器按钮 ![筛选](../assets/ui/monitor-destinations/filter-add.png) 要深入查看数据流中每个区段的数据流运行视图，请执行以下操作：
@@ -276,11 +275,11 @@ ht-degree: 11%
 - **[!UICONTROL 数据流使用跳过的身份运行]**：对于选定的区段，此选项列出所有数据流运行，其中某些身份未完全激活并跳过某些配置文件。 要检查为何跳过某个数据流运行中的身份，请参见 [数据流运行详细信息页面](#dataflow-run-details-page) 用于该数据流运行。
 - **[!UICONTROL 数据流使用激活的标识运行]**：对于选定的区段，此选项会列出具有已成功激活的标识的所有数据流运行。
 
-![筛选区段的数据流运行](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
+![显示如何筛选区段数据流运行的单选按钮。](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
 
 要查看有关特定数据流运行的更多详细信息，请选择过滤器 ![筛选](../assets/ui/monitor-destinations/filter-add.png) 位于数据流运行开始时间旁边，以查看数据流运行详细信息页面。
 
-![数据流在监视仪表板中运行过滤器](../assets/ui/monitor-destinations/dataflow-runs-filter.png)
+![数据流在监控仪表板中运行过滤器，以深入了解特定数据流运行的更多信息。](../assets/ui/monitor-destinations/dataflow-runs-filter.png)
 
 ### 数据流运行详细信息页面 {#dataflow-run-details-page}
 
@@ -294,12 +293,12 @@ ht-degree: 11%
 
 数据流运行错误视图显示失败的身份和排除的身份的列表。 显示失败和排除的标识的信息，包括错误代码、标识计数和描述。 默认情况下，列表会显示失败的标识。 要显示跳过的身份，请选择 **[!UICONTROL 排除的身份]** 切换。
 
-![排除的身份切换](../assets/ui/monitor-destinations/identities-excluded.png)
+![监视视图中高亮显示的排除身份切换](../assets/ui/monitor-destinations/identities-excluded.png)
 
 时间 **[!UICONTROL 区段]** 之后，您将看到在选定数据流运行中激活的区段的列表。 此屏幕包括有关激活的身份、排除的身份以及上次数据流运行的状态和时间的区段级别信息。
 
-![数据流运行 — 区段视图](../assets/ui/monitor-destinations/dataflow-run-segments-view.png)
+![数据流运行详细信息屏幕中的区段视图。](../assets/ui/monitor-destinations/dataflow-run-segments-view.png)
 
 ## 后续步骤 {#next-steps}
 
-通过遵循本指南，您现在了解如何监控批量目标和流式目标的数据流，包括所有相关信息，如处理时间、激活率和状态。 要了解有关Platform中数据流的更多信息，请阅读 [数据流概述](../home.md). 要了解有关目标的更多信息，请阅读 [目标概述](../../destinations/home.md).
+通过遵循本指南，您现在了解如何监控批量目标和流式目标的数据流，包括所有相关信息，如处理时间、激活率和状态。 要了解有关Platform中数据流的更多信息，请参阅 [数据流概述](../home.md). 要了解有关目标的更多信息，请阅读 [目标概述](../../destinations/home.md).

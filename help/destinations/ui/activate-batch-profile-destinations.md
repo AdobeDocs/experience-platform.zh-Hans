@@ -1,12 +1,11 @@
 ---
-keywords: 激活配置文件目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
 title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 28578a7e852cbefd3c644259a4bffaed29501a9e
+source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
 workflow-type: tm+mt
-source-wordcount: '3781'
+source-wordcount: '3765'
 ht-degree: 11%
 
 ---
@@ -24,7 +23,7 @@ ht-degree: 11%
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform基于批量配置文件的目标（如云存储和电子邮件营销目标）中激活受众所需的工作流。
+本文介绍了在Adobe Experience Platform中激活受众以批量处理基于文件的目标（如云存储和电子邮件营销目标）所需的工作流。
 
 ## 先决条件 {#prerequisites}
 
@@ -46,15 +45,15 @@ ht-degree: 11%
 
 1. 转到 **[!UICONTROL “连接”>“目标”]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 
-   ![突出显示如何访问目标目录选项卡的图像](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
+   ![突出显示如何转到目标目录选项卡的图像。](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
 1. 选择 **[!UICONTROL 激活受众]** ，，如下图所示。
 
-   ![突出显示激活受众按钮的图像](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
+   ![激活目录页面中高亮显示的受众控件。](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
 
 1. 选择要用于激活受众的目标连接，然后选择 **[!UICONTROL 下一个]**.
 
-   ![突出显示如何选择一个或多个目标以将受众激活到的图像](../assets/ui/activate-batch-profile-destinations/select-destination.png)
+   ![高亮显示的复选框可选择一个或多个要将受众激活到的目标。](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
 1. 移到下一节至 [选择您的受众](#select-audiences).
 
@@ -68,7 +67,7 @@ ht-degree: 11%
 * **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
-![突出显示如何选择要激活的一个或多个受众的图像](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
+![选择要激活的一个或多个受众时显示的复选框。](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
 
 >[!TIP]
 >
@@ -81,7 +80,7 @@ ht-degree: 11%
 >title="计划"
 >abstract="使用铅笔图标设置文件导出类型（完整文件或增量文件）和导出频率。"
 
-[!DNL Adobe Experience Platform] 以以下形式导出电子邮件营销和云存储目标的数据 [!DNL CSV] 文件。 在 **[!UICONTROL 正在计划]** 页面上，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
+[!DNL Adobe Experience Platform] 将电子邮件营销和云存储目标的数据导出为 [不同的文件类型](#supported-file-formats-export). 在 **[!UICONTROL 正在计划]** 页面上，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
 
 >[!IMPORTANT]
 >
@@ -89,9 +88,9 @@ ht-degree: 11%
 >
 >拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`， `filename_2.csv`， `filename_3.csv`.
 
-选择 **[!UICONTROL 创建计划]** 与要发送到目标的受众对应的按钮。
+选择 **[!UICONTROL 创建计划]** 与要发送到目标的受众对应的控件。
 
-![突出显示创建计划按钮的图像](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
+![创建在“计划”步骤中突出显示的计划控制。](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### 导出全部文件 {#export-full-files}
 
@@ -113,14 +112,14 @@ ht-degree: 11%
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出一个文件，其中包含选定受众的所有配置文件资格的完整快照。
 
-![已选中导出完整文件切换开关的UI图像。](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
+![已选中“导出完整文件”切换开关。](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
 1. 使用 **[!UICONTROL 频率]** 选择器以选择导出频率：
 
    * **[!UICONTROL 一次]**：计划一次按需完整文件导出。
    * **[!UICONTROL 每日]**：计划每天在指定时间导出一次完整文件。
 
-1. 使用 **[!UICONTROL 时间]** 切换是否选择应在受众评估后立即导出，还是按计划在指定时间导出。 选择 **[!UICONTROL 已计划]** 选项，则可以使用选择器选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
+2. 使用 **[!UICONTROL 时间]** 切换是否选择应在受众评估后立即导出，还是按计划在指定时间导出。 选择 **[!UICONTROL 已计划]** 选项，则可以使用选择器选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
 
    >[!NOTE]
    >
@@ -135,13 +134,13 @@ ht-degree: 11%
 
    ![突出显示批量目标激活流中的已计划选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
-1. 使用 **[!UICONTROL 日期]** 选择器来选择应执行导出的日期或时间间隔。 对于每日导出，最佳实践是将开始和结束日期设置为与下游平台中的促销活动持续时间一致。
+3. 使用 **[!UICONTROL 日期]** 选择器来选择应执行导出的日期或时间间隔。 对于每日导出，最佳实践是将开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
    >[!IMPORTANT]
    >
    > 选择导出间隔时，该间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
-1. 选择 **[!UICONTROL 创建]** 以保存计划。
+4. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 ### 导出增量文件 {#export-incremental-files}
 
@@ -151,22 +150,22 @@ ht-degree: 11%
 >
 >第一个导出的增量文件包含符合受众条件的所有用户档案，这些文件可用作回填。
 
-![已选中导出增量文件切换开关的UI图像。](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
+![“导出增量文件”切换为选定状态。](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
 1. 使用 **[!UICONTROL 频率]** 选择器以选择导出频率：
 
    * **[!UICONTROL 每日]**：安排增量文件每天在指定的时间导出一次。
    * **[!UICONTROL 每小时]**：计划每3、6、8或12小时执行一次增量文件导出。
 
-1. 使用 **[!UICONTROL 时间]** 选择器以选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
+2. 使用 **[!UICONTROL 时间]** 选择器以选择一天中的时间，在 [!DNL UTC] 格式，应何时进行导出。
 
-1. 使用 **[!UICONTROL 日期]** 选择器来选择应进行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
+3. 使用 **[!UICONTROL 日期]** 选择器来选择应进行导出的时间间隔。 最佳实践是将您的开始和结束日期设置为与下游平台中的促销活动持续时间一致。
 
    >[!IMPORTANT]
    >
    >间隔的最后一天不包含在导出中。 例如，如果选择1月4日至11日之间的时间间隔，则最后一次文件导出将在1月10日进行。
 
-1. 选择 **[!UICONTROL 创建]** 以保存计划。
+4. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 ### 配置文件名 {#file-names}
 
@@ -215,7 +214,7 @@ ht-degree: 11%
 
 在此步骤中，必须选择要添加到导出到目标目标的文件中的配置文件属性。 要选择要导出的配置文件属性和标识，请执行以下操作：
 
-1. 在 **[!UICONTROL 映射]** 页面，选择 **[!UICONTROL 添加新字段]**.
+1. 在 **[!UICONTROL 映射]** 页面，选择 **[!UICONTROL 添加新映射]**.
 
    ![添加在映射工作流中高亮显示的新字段控件。](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
@@ -434,7 +433,7 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 当前不支持选择导出身份命名空间（如下图所示）。 选择要导出的任何身份命名空间将导致中出现错误 **[!UICONTROL 审核]** 步骤。
 
-![显示身份导出的映射不受支持](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+![显示身份导出的映射不受支持。](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
 
 作为临时解决方法，如果您需要在测试版期间将身份命名空间添加到导出的文件，您可以：
 * 对于要在导出中包含身份命名空间的数据流，请使用旧版云存储目标
@@ -513,11 +512,11 @@ additional-url="https://experienceleague.adobe.com/docs/experience-platform/dest
 
 选择 **[!UICONTROL 下一个]** 以移至 [审核](#review) 步骤。
 
-## 请查看 {#review}
+## 审核 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
-![审核步骤中的选择摘要。](../assets/ui/activate-batch-profile-destinations/review.png)
+![审核步骤中显示的选择摘要。](../assets/ui/activate-batch-profile-destinations/review.png)
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
@@ -532,7 +531,7 @@ abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Pr
 
 在 **[!UICONTROL 审核]** 步骤，Experience Platform还会检查是否存在任何数据使用策略违规。 下面显示了一个违反策略的示例。 在解决该违规之前，您无法完成受众激活工作流。 有关如何解决策略违规的信息，请参阅 [数据使用策略违规](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) 数据管理文档一节中。
 
-![数据策略违规](../assets/common/data-policy-violation.png)
+![激活工作流中显示的数据策略违规示例。](../assets/common/data-policy-violation.png)
 
 ### 筛选受众 {#filter-audiences}
 

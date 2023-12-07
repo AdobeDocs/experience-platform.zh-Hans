@@ -7,11 +7,11 @@ exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '2087'
-ht-degree: 5%
+ht-degree: 4%
 
 ---
 
-# XDM 系统概述
+# XDM系统概述
 
 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [!DNL Experience Data Model] (XDM)由Adobe驱动，致力于标准化客户体验数据并定义用于客户体验管理的架构。
 
@@ -23,7 +23,7 @@ XDM是一个基础框架，它允许Adobe Experience Cloud由Experience Platform
 
 ## XDM架构
 
-Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
+Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
 在将数据引入Platform之前，必须组合模式以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基类以及零个或多个架构字段组组成。
 

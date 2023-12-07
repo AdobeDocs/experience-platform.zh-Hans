@@ -3,10 +3,10 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 根据哈希电子邮件激活Facebook营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1941'
-ht-degree: 7%
+source-wordcount: '1949'
+ht-degree: 6%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 您可以将此目标用于中的受众定位 [!DNL Facebook's] 支持的应用程序系列 [!DNL Custom Audiences]，包括 [!DNL Facebook]， [!DNL Instagram]， [!DNL Audience Network]、和 [!DNL Messenger]. [!DNL Facebook Ads Manager] 中的版面级别会显示您要针对其运行营销活动的所选应用程序。
 
-![Adobe Experience Platform UI中的Facebook目标](../../assets/catalog/social/facebook/catalog.png)
+![Adobe Experience Platform UI中的Facebook目标。](../../assets/catalog/social/facebook/catalog.png)
 
 ## 用例
 
@@ -50,7 +50,7 @@ ht-degree: 7%
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍可将哪种类型的受众导出到此目标。
+此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 受支持 | 描述 |
 ---------|----------|----------|
@@ -74,7 +74,7 @@ ht-degree: 7%
 
 在将受众发送至 [!DNL Facebook]，确保您满足以下要求：
 
-* 您的 [!DNL Facebook] 用户帐户必须具有对 [!DNL Facebook Business Account] 拥有您将使用的广告帐户。
+* 您的 [!DNL Facebook] 用户帐户必须具有对 [!DNL Facebook Business Account] 拥有您使用的广告帐户。
 * 您的 [!DNL Facebook] 用户帐户必须具有 **[!DNL Manage campaigns]** 为您计划使用的Ad帐户启用的权限。
 * 此 **Adobe Experience Cloud** 必须将商业帐户作为广告合作伙伴添加到您的 [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`。请参阅 [将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897) 有关详细信息，请参阅Facebook文档。
   >[!IMPORTANT]
@@ -123,7 +123,7 @@ ht-degree: 7%
 > 属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。
 > 此 **[!UICONTROL 应用转换]** 选项仅在选择属性作为源字段时显示。 当您选择命名空间时，它不会显示。
 
-![标识映射转换](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
+![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
 ## 使用自定义命名空间 {#custom-namespaces}
 
@@ -149,7 +149,7 @@ ht-degree: 7%
 
 1. 在目标目录中找到Facebook目标并选择 **[!UICONTROL 设置]**.
 2. 选择 **[!UICONTROL 连接到目标]**.
-   ![对Facebook进行身份验证](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
+   ![对激活工作流中显示的Facebook步骤进行身份验证。](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
 3. 输入您的Facebook凭据并选择 **登录**.
 
 ### 填写目标详细信息 {#destination-details}
@@ -176,7 +176,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="受众来源"
->abstract="选择最初收集受众中的客户数据的方式。当用户被区段定位时，数据将显示在 Facebook 中"
+>abstract="选择最初收集受众中的客户数据的方式。当用户被区段定位时，数据会显示在Facebook中"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -202,7 +202,7 @@ ht-degree: 7%
 
 在 **[!UICONTROL 区段计划]** 步骤，您必须提供 [!UICONTROL 受众来源] 将受众发送至 [!DNL Facebook Custom Audiences].
 
-![受众的Facebook来源](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![facebook激活步骤中显示的“受众来源”下拉列表。](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ### 映射示例：激活中的受众数据 [!DNL Facebook Custom Audience] {#example-facebook}
 
@@ -231,7 +231,7 @@ ht-degree: 7%
 > 
 >属性源数据不会自动进行哈希处理。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。
 
-![标识映射](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
+![应用映射步骤中突出显示的转换控件。](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## 导出的数据 {#exported-data}
 
@@ -251,4 +251,4 @@ ht-degree: 7%
 
 当客户使用新创建的帐户，并且 [!DNL Facebook] 权限尚未激活。
 
-如果您收到 `400 Bad Request` 执行中的步骤后的错误消息 [facebook帐户先决条件](#facebook-account-prerequisites)，请留出几天时间 [!DNL Facebook] 权限将生效。
+如果您收到 `400 Bad Request` 执行中的步骤后的错误消息 [facebook帐户先决条件](#facebook-account-prerequisites)，留出几天时间 [!DNL Facebook] 权限将生效。
