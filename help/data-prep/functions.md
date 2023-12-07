@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: dbd287087d04b10f79c8b6ae441371181d806739
+source-git-commit: ff61ec7bc1e67191a46f7d9bb9af642e9d601c3a
 workflow-type: tm+mt
-source-wordcount: '5221'
-ht-degree: 3%
+source-wordcount: '5080'
+ht-degree: 2%
 
 ---
 
@@ -52,7 +52,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | substr | 返回给定长度的子字符串。 | <ul><li>输入： **必填** 输入字符串。</li><li>START_INDEX： **必填** 子字符串开始处的输入字符串的索引。</li><li>长度： **必填** 子字符串的长度。</li></ul> | substr(INPUT， START_INDEX， LENGTH) | substr（“这是一个子字符串测试”，7、8） | &quot;一个子集&quot; |
 | lower /<br>lcase | 将字符串转换为小写。 | <ul><li>输入： **必填** 将转换为小写的字符串。</li></ul> | lower(INPUT) | lower(“HeLlO”)<br>lcase(“HeLlO”) | &quot;hello&quot; |
 | upper /<br>Ucase | 将字符串转换为大写。 | <ul><li>输入： **必填** 将转换为大写的字符串。</li></ul> | upper(INPUT) | upper(“HeLlO”)<br>Ucase(“HeLlO”) | “HELLO” |
-| split | 在分隔符上拆分输入字符串。 以下分隔符 **需要** 逃跑的 `\`： `\`. 如果您包含多个分隔符，则字符串将被拆分 **任意** 字符串中存在的分隔符。 | <ul><li>输入： **必填** 将要拆分的输入字符串。</li><li>分隔符： **必填** 用于拆分输入的字符串。</li></ul> | split（输入，分隔符） | split(“Hello world”，“ ”) | `["Hello", "world"]` |
+| split | 在分隔符上拆分输入字符串。 以下分隔符 **需要** 逃跑的 `\`： `\`. 如果您包含多个分隔符，则字符串将被拆分 **任意** 字符串中存在的分隔符。 **注意：** 此函数仅返回字符串中的非null索引，而不管是否存在分隔符。 如果结果数组中需要所有索引（包括null），请改用“explode”函数。 | <ul><li>输入： **必填** 将要拆分的输入字符串。</li><li>分隔符： **必填** 用于拆分输入的字符串。</li></ul> | split（输入，分隔符） | split(“Hello world”，“ ”) | `["Hello", "world"]` |
 | 加入 | 使用分隔符连接对象列表。 | <ul><li>分隔符： **必填** 用于连接对象的字符串。</li><li>对象： **必填** 将要连接的字符串数组。</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", to_array(true, "Hello", "world"))` | “Hello world” |
 | lpad | 将字符串的左侧与另一个给定的字符串填充。 | <ul><li>输入： **必填** 要填充的字符串。 此字符串可以为null。</li><li>计数： **必填** 要填充的字符串的大小。</li><li>内边距： **必填** 用于填充输入的字符串。 如果为null或为空，则将被视为单个空格。</li></ul> | lpad（输入、计数、填充） | lpad(“bat”， 8， “yz”) | &quot;yzybat&quot; |
 | rpad | 将字符串的右侧与另一个给定的字符串相贴合。 | <ul><li>输入： **必填** 要填充的字符串。 此字符串可以为null。</li><li>计数： **必填** 要填充的字符串的大小。</li><li>内边距： **必填** 用于填充输入的字符串。 如果为null或为空，则将被视为单个空格。</li></ul> | rpad（输入、计数、填充） | rpad(“bat”， 8， “yz”) | “batyzyzy” |
@@ -118,7 +118,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | 检索当前时间。 | | now() | now() | `2021-10-26T10:10:24Z` |
-| 时间戳 | 检索当前Unix时间。 | | 时间戳() | 时间戳() | 1571850624571 |
+| 时间戳 | 检索当前Unix时间。 | | timestamp() | timestamp() | 1571850624571 |
 | 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必填** 要格式化的输入日期，作为ZonedDateTime对象。</li><li>格式： **必填** 您希望将日期更改为的格式。</li></ul> | format（日期，格式） | format(2019-10-23T11:24:00+00:00， &quot;yyyy-MM-dd HH:mm:ss&quot;) | `2019-10-23 11:24:35` |
 | dformat | 根据指定的格式将时间戳转换为日期字符串。 | <ul><li>时间戳： **必填** 要设置格式的时间戳。 这是以毫秒为单位编写的。</li><li>格式： **必填** 您希望时间戳变为的格式。</li></ul> | dformat(TIMESTAMP， FORMAT) | dformat(1571829875000， &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX”) | `2019-10-23T11:24:35.000Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必填** 表示日期的字符串。</li><li>格式： **必填** 表示源日期格式的字符串。**注意：** 这可以 **非** 表示要将日期字符串转换成的格式。 </li><li>DEFAULT_DATE： **必填** 如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;， now()) | `2019-10-23T11:24:00Z` |
@@ -166,13 +166,13 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 合并 | 返回给定数组中的第一个非空对象。 | <ul><li>输入： **必填** 要查找的第一个非null对象的数组。</li></ul> | coalesce（输入） | coalesce(null， null， null， first， null， second) | &quot;first&quot; |
 | 第一 | 检索给定数组的第一个元素。 | <ul><li>输入： **必填** 要查找的第一个元素的数组。</li></ul> | 第一（输入） | first(“1”、“2”、“3”) | &quot;1&quot; |
-| 最后一个 | 检索给定数组的最后一个元素。 | <ul><li>输入： **必填** 要查找的最后一个元素的数组。</li></ul> | last(INPUT) | last(“1”、“2”、“3”) | &quot;3&quot; |
+| 最后一个 | 检索给定数组的最后一个元素。 | <ul><li>输入： **必填** 要查找的最后一个元素的数组。</li></ul> | last(INPUT) | last(“1”、“2”、“3”) | “3” |
 | add_to_array | 将元素添加到数组的末尾。 | <ul><li>数组： **必填** 要将元素添加到的数组。</li><li>VALUES：要附加到数组的元素。</li></ul> | add_to_array&#x200B;(ARRAY， VALUES) | add_to_array&#x200B;([&#39;a&#39;， &#39;b&#39;]， &#39;c&#39;， &#39;d&#39;) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;] |
 | join_array | 将数组彼此组合在一起。 | <ul><li>数组： **必填** 要将元素添加到的数组。</li><li>值：要附加到父数组的数组。</li></ul> | join_arrays&#x200B;(ARRAY， VALUES) | join_arrays&#x200B;([&#39;a&#39;， &#39;b&#39;]， [&#39;c&#39;]， [&#39;d&#39;， &#39;e&#39;]) | [&#39;a&#39;、&#39;b&#39;、&#39;c&#39;、&#39;d&#39;、&#39;e&#39;] |
 | to_array | 采用输入列表并将其转换为数组。 | <ul><li>INCLUDE_NULLS： **必填** 一个布尔值，指示是否在响应数组中包含null。</li><li>值： **必填** 要转换为数组的元素。</li></ul> | to_array&#x200B;(INCLUDE_NULLS， VALUES) | to_array(false， 1， null， 2， 3) | `[1, 2, 3]` |
 | 大小_of | 返回输入的大小。 | <ul><li>输入： **必填** 您正在尝试查找大小的对象。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
-| upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组的末尾。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 用于在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
-| upsert_array_replace | 此函数用于替换数组中的元素。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 在配置文件中替换该数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
+| upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组的末尾。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 用于在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123， 456] |
+| upsert_array_replace | 此函数用于替换数组中的元素。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 在配置文件中替换该数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123， 456] |
 
 {style="table-layout:auto"}
 
@@ -264,7 +264,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
 | ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
 | ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
-| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Phone |
+| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 电话 |
 
 {style="table-layout:auto"}
 
@@ -327,13 +327,13 @@ address.line1 -> addr.addrLine1
 | # | %23 |
 | $ | %24 |
 | % | %25 |
-| &amp; | %26 |
-| &#39; | %27 |
+| 和 | %26 |
+| ’ | %27 |
 | ( | %28 |
 | ） | %29 |
 | * | %2A |
 | + | %2B |
-| , | %2C |
+| ， | %2C |
 | / | %2F |
 | ： | %3A |
 | ; | %3B |
@@ -362,7 +362,7 @@ address.line1 -> addr.addrLine1
 | 未知 | 未知设备。 这些通常是 `useragents` 不包含有关设备的任何信息。 |
 | 移动设备 | 尚未识别的移动设备。 此移动设备可以是电子阅读器、平板电脑、手机、手表等。 |
 | 平板电脑 | 大屏幕（通常大于7英寸）的移动设备。 |
-| Phone | 小屏幕的移动设备（通常小于7英寸）。 |
+| 电话 | 小屏幕的移动设备（通常小于7英寸）。 |
 | 观看 | 带有小屏幕（通常小于2英寸）的移动设备。 这些设备通常用作手机/平板电脑类型的设备的附加屏幕。 |
 | 增强现实 | 具有AR功能的移动设备。 |
 | 虚拟现实 | 一种具有VR功能的移动设备。 |
@@ -377,7 +377,7 @@ address.line1 -> addr.addrLine1
 | 机器人 | 访问网站的机器人。 |
 | 机器人移动设备 | 访问网站但表示希望被视为移动设备访客的机器人。 |
 | 机器人模拟器 | 访问网站的机器人，假装自己就像机器人一样 [!DNL Google]但事实并非如此。 **注意**：在大多数情况下，机器人模仿者实际上是机器人。 |
-| Cloud | 基于云的应用程序。 它们既不是机器人，也不是黑客，而是需要连接的应用程序。 这包括 [!DNL Mastodon] 服务器。 |
+| 云 | 基于云的应用程序。 它们既不是机器人，也不是黑客，而是需要连接的应用程序。 这包括 [!DNL Mastodon] 服务器。 |
 | 黑客 | 当在中检测到脚本时，使用此设备值 `useragent` 字符串。 |
 
 {style="table-layout:auto"}
