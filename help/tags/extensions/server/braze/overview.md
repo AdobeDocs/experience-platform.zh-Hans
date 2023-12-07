@@ -4,10 +4,10 @@ title: Braze事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展将边缘网络事件发送到Braze。
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 297f48f8-2c3b-41c2-8820-35f4558c67b3
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '1861'
-ht-degree: 4%
+source-wordcount: '1692'
+ht-degree: 2%
 
 ---
 
@@ -51,7 +51,7 @@ ht-degree: 4%
 
 ### 可记帐数据点
 
-将其他自定义属性发送至 [!DNL Braze] 可能会增加 [!DNL Braze] 数据点消耗。 请咨询您的 [!DNL Braze] 帐户管理器。 请参阅 [!DNL Braze] 文档 [可记帐数据点](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/#billable-data-points) 以了解更多信息。
+将其他自定义属性发送至 [!DNL Braze] 可能会增加 [!DNL Braze] 数据点消耗。 请咨询您的 [!DNL Braze] 帐户管理器。 请参阅 [!DNL Braze] 文档 [可记帐数据点](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/?tab=billable) 以了解更多信息。
 
 ### 收集所需的配置详细信息 {#configuration-details}
 
@@ -60,7 +60,7 @@ ht-degree: 4%
 | 键类型 | 描述 | 示例 |
 | --- | --- | --- |
 | [!DNL Braze] 实例 | 与关联的REST端点 [!DNL Braze] 帐户。 请参阅 [!DNL Braze] 文档 [实例](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) 作为指导。 | `https://rest.iad-03.braze.com` |
-| API 密钥 | 此 [!DNL Braze] 与关联的API密钥 [!DNL Braze] 帐户。 <br/>请参阅 [!DNL Braze] 相关文档 [REST API密钥](https://www.braze.com/docs/api/basics/#rest-api-key) 作为指导。 | `YOUR-BRAZE-REST-API-KEY` |
+| API密钥 | 此 [!DNL Braze] 与关联的API密钥 [!DNL Braze] 帐户。 <br/>请参阅 [!DNL Braze] 相关文档 [REST API密钥](https://www.braze.com/docs/api/basics/#rest-api-key) 作为指导。 | `YOUR-BRAZE-REST-API-KEY` |
 
 ### 创建密钥
 
@@ -107,7 +107,7 @@ ht-degree: 4%
 
 | 输入 | 描述 | 必需 |
 | --- | --- | --- |
-| [!UICONTROL 活动名称 &#x200B;] | 事件的名称。 | 是 |
+| [!UICONTROL 事件名&#x200B;称] | 事件的名称。 | 是 |
 | [!UICONTROL 事件时间] | ISO 8601或中的字符串形式的日期时间 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
 | [!UICONTROL 应用程序标识符] | 应用程序标识符或 <strong>app_id</strong> 是将活动与应用程序组中的特定应用程序关联的参数。 它可指定您正在与应用程序组中的哪个应用程序进行交互。 了解关于 [API标识符类型](https://www.braze.com/docs/api/identifier_types/). | |
 | [!UICONTROL 事件属&#x200B;性] | 包含事件的自定义属性的JSON对象。 |  |
@@ -126,7 +126,7 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL 名字] | |
 | [!UICONTROL 姓氏] | |
-| [!UICONTROL Phone] | |
+| [!UICONTROL 电话] | |
 | [!UICONTROL 电子邮件] | |
 | [!UICONTROL 性别] | 以下字符串之一：“M”、“F”、“O”（其他）、“N”（不适用）、“P”（不愿意说）。 |
 | [!UICONTROL 城市] | |
@@ -163,11 +163,11 @@ ht-degree: 4%
 
 | 输入 | 描述 | 必需 |
 | --- | --- | --- |
-| [!UICONTROL 产品 ID &#x200B;] | 购买的标识符。 （例如，产品名称或产品类别） | 是 |
+| [!UICONTROL 产品&#x200B;ID] | 购买的标识符。 （例如，产品名称或产品类别） | 是 |
 | [!UICONTROL 购买时间] | ISO 8601或中的字符串形式的日期时间 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 是 |
-| [!UICONTROL 货币 &#x200B;] | 货币作为字符串 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 字母货币代码格式。 | 是 |
-| [!UICONTROL 价格 &#x200B;] | 价格. | 是 |
-| [!UICONTROL 数量 &#x200B;] | 如果未提供，则默认值为1。 最大值必须小于100。 | |
+| [!UICONTROL 货币&#x200B;] | 货币作为字符串 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 字母货币代码格式。 | 是 |
+| [!UICONTROL 价&#x200B;格] | 价格。 | 是 |
+| [!UICONTROL 数&#x200B;量] | 如果未提供，则默认值为1。 最大值必须小于100。 | |
 | [!UICONTROL 应用程序标识符] | 应用程序标识符或 <strong>app_id</strong> 是将活动与应用程序组中的特定应用程序关联的参数。 它可指定您正在与应用程序组中的哪个应用程序进行交互。 了解关于 [API标识符类型](https://www.braze.com/docs/api/identifier_types/). | |
 | [!UICONTROL 购买属&#x200B;性] | 包含购买的自定义属性的JSON对象。 |  |
 
@@ -185,7 +185,7 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL 名字] | |
 | [!UICONTROL 姓氏] | |
-| [!UICONTROL Phone] | |
+| [!UICONTROL 电话] | |
 | [!UICONTROL 电子邮件] | |
 | [!UICONTROL 性别] | 以下字符串之一：“M”、“F”、“O”（其他）、“N”（不适用）、“P”（不愿意说）。 |
 | [!UICONTROL 城市] | |

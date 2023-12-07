@@ -3,9 +3,9 @@ title: 在Adobe Experience Platform Web SDK中进行调试
 description: 了解如何在Experience PlatformWeb SDK中切换调试功能。
 keywords: 调试web sdk；调试；配置；配置命令；调试命令；edgeConfigId；setDebug；debugEnabled；调试；
 exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 * `configure` 命令
 * `setDebug` 命令
 * 查询字符串参数
-* 在Adobe Experience Platform Debugger中切换启用调试。 Adobe Experience Platform是一款功能强大的工具，可检查您的网页，并帮助您调试Experience Cloud产品的实施问题。 Adobe Experience Platform Debugger同时可用为 [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) 和 [Firefox](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/) 扩展。 可以从AEP Web SDK部分的配置选项卡启用调试。
+* 在Adobe Experience Platform Debugger中切换启用调试。 Adobe Experience Platform是一款功能强大的工具，可检查您的网页，并帮助您调试Experience Cloud产品的实施问题。 Adobe Experience Platform Debugger作为 [铬黄](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) 扩展。 可以从AEP Web SDK部分的配置选项卡启用调试。
 
 ![显示配置屏幕的Experience Platform调试器UI图像。](../assets/enable-debugging.png)
 

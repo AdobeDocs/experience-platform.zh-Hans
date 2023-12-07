@@ -2,7 +2,7 @@
 title: Zendesk事件转发扩展
 description: 适用于Adobe Experience Platform的Zendesk事件转发扩展。
 exl-id: 22e94699-5b84-4a73-b007-557221d3e223
-source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
 source-wordcount: '1170'
 ht-degree: 4%
@@ -11,7 +11,7 @@ ht-degree: 4%
 
 # [!DNL Zendesk] Events API扩展概述
 
-[Zendesk](https://www.zendesk.com) 是一个客户服务解决方案和销售工具。 Zendesk [事件转发](../../../ui/event-forwarding/overview.md) 扩展可利用 [[!DNL Zendesk Events API]](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/) 将事件从Adobe Experience Platform Edge Network发送到Zendesk以进行进一步处理。 您可以使用该扩展收集客户配置文件交互，以用于下游分析和操作。
+[Zendesk](https://www.zendesk.com) 是一个客户服务解决方案和销售工具。 Zendesk [事件转发](../../../ui/event-forwarding/overview.md) 扩展可利用 [[!DNL Zendesk Events API]](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) 将事件从Adobe Experience Platform Edge Network发送到Zendesk以进行进一步处理。 您可以使用该扩展收集客户配置文件交互，以用于下游分析和操作。
 
 本文档介绍如何在UI中安装和配置扩展。
 
@@ -66,7 +66,7 @@ ht-degree: 4%
 
 ### `event` 键
 
-`event` 是一个JSON对象，它表示用户触发的事件。 请参阅Zendesk文档中的 [事件剖析](https://developer.zendesk.com/documentation/custom-data/events/anatomy-of-an-event/) 以了解由捕获的属性的详细信息， `event` 对象。
+`event` 是一个JSON对象，它表示用户触发的事件。 请参阅Zendesk文档中的 [事件剖析](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/) 以了解由捕获的属性的详细信息， `event` 对象。
 
 以下键值可在中引用 `event` 对象映射到数据元素：
 
@@ -82,7 +82,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->请参阅 [[!DNL Zendesk Events API] 文档](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/) 以获取有关事件属性的其他指导。
+>请参阅 [[!DNL Zendesk Events API] 文档](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) 以获取有关事件属性的其他指导。
 
 ### `profile` 键
 
@@ -147,10 +147,10 @@ ht-degree: 4%
 
 本文档介绍了如何在UI中安装和配置Zendesk事件转发扩展。 有关在Zendesk中收集事件数据的更多信息，请参阅官方文档：
 
-* [事件快速入门](https://developer.zendesk.com/documentation/custom-data/events/getting-started-with-events/)
+* [事件快速入门](https://developer.zendesk.com/documentation/ticketing/events/getting-started-with-events/)
 * [Zendesk Events API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/)
-* [关于事件API](https://developer.zendesk.com/documentation/custom-data/events/about-the-events-api/)
-* [事件剖析](https://developer.zendesk.com/documentation/custom-data/events/anatomy-of-an-event/)
+* [关于事件API](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/)
+* [事件剖析](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/)
 * [Zendesk配置文件API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/#profile-object)
 * [关于配置文件API](https://developer.zendesk.com/documentation/ticketing/profiles/about-the-profiles-api/)
 * [侧写剖析](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)

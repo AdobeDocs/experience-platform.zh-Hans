@@ -1,11 +1,11 @@
 ---
 title: 使用Adobe Experience Platform Debugger测试嵌入代码
-description: 了解如何使用Platform Debugger在本地测试您网站上Adobe Experience Platform的不同嵌入代码。
+description: 了解如何使用Platform Debugger在本地测试您网站上Adobe Experience Platform的各种嵌入代码。
 exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '507'
-ht-degree: 62%
+source-wordcount: '488'
+ht-degree: 56%
 
 ---
 
@@ -15,16 +15,15 @@ ht-degree: 62%
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-当您更改Adobe Experience Platform中的标记库内部版本时，应先测试这些更改，然后再将该内部版本部署到生产环境。 如果您没有专门的网站暂存或开发环境，则可以使用 Adobe Experience Platform Debugger 在本地测试网站中的不同嵌入代码。
+当您更改Adobe Experience Platform中的标记库内部版本时，应先测试这些更改，然后再将内部版本部署到生产环境。 如果您没有专门的网站暂存或开发环境，则可以使用 Adobe Experience Platform Debugger 在本地测试网站中的不同嵌入代码。
 
 ## 先决条件
 
 本教程需要对标记环境和嵌入代码的使用有一定的了解。 有关更多信息，请参阅[环境概述](./environments.md)。
 
-此外，本教程还要求您已安装 Platform Debugger 浏览器扩展。仅提供适用于 Chrome 和 Firefox 浏览器的 Platform Debugger。请先使用以下链接之一安装相应的扩展，然后再开始学习本教程：
+此外，本教程还要求您已安装 Platform Debugger 浏览器扩展。Platform Debugger可用于Chrome浏览器。 请在开始本教程之前，使用以下链接安装扩展：
 
 * [适用于 Chrome 的 Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
-* [适用于 Firefox 的 Platform Debugger](https://addons.mozilla.org/zh-CN/firefox/addon/adobe-experience-platform-dbg/)
 
 ## 在您的网站上打开 Platform Debugger
 
@@ -38,11 +37,11 @@ ht-degree: 62%
 
 ## 替换嵌入代码
 
-Platform Debugger连接到您的网站后，选择 **[!UICONTROL Launch]** 左侧导航栏中。 在这里，您可以看到您的网站上当前正运行的库版本相关信息，包括运行环境和相关扩展。从此处选择 **[!UICONTROL 配置]** 以显示用于管理嵌入代码的控件。
+Platform Debugger连接到您的网站后，选择 **[!UICONTROL Launch]** 在左侧导航中。 在这里，您可以看到您的网站上当前正运行的库版本相关信息，包括运行环境和相关扩展。从此处选择 **[!UICONTROL 配置]** 显示用于管理嵌入代码的控件。
 
 ![](./images/embed-code-testing/launch-tab.png)
 
-下 [!UICONTROL 页面嵌入代码]，则会显示您的网站当前使用的嵌入代码。 选择 **[!UICONTROL 操作]** （位于嵌入代码的右侧），然后选择 **[!UICONTROL Replace]**.
+下 [!UICONTROL 页面嵌入代码]，则会显示您的网站当前使用的嵌入代码。 选择 **[!UICONTROL 操作]** （位于嵌入代码的右侧），然后选择 **[!UICONTROL 替换]**.
 
 ![](./images/embed-code-testing/replace.png)
 
@@ -52,7 +51,7 @@ Platform Debugger连接到您的网站后，选择 **[!UICONTROL Launch]** 左�
 
 ![](./images/embed-code-testing/paste-code.png)
 
-此 **[!UICONTROL 配置]** 此时，选项卡将重新显示，其中显示活动嵌入代码已替换为您提供的代码。 现在，您可以使用 Web 浏览器查看您正在测试的嵌入代码是否按预期工作。
+此 **[!UICONTROL 配置]** 此时，选项卡将会重新出现，其中显示活动嵌入代码已替换为您提供的代码。 现在，您可以使用 Web 浏览器查看您正在测试的嵌入代码是否按预期工作。
 
 ![](./images/embed-code-testing/code-replaced.png)
 
