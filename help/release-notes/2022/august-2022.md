@@ -2,16 +2,16 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: Adobe Experience Platform 的 2022 年 8 月发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 7f5a1d8e50ff030b2abe04b5155f28b8c8b6fbf9
+source-git-commit: 3069bdb3592ac1cd3fd7fe4f7f9234d5be56547d
 workflow-type: tm+mt
-source-wordcount: '2082'
-ht-degree: 28%
+source-wordcount: '1999'
+ht-degree: 27%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2022 年 8 月 24 日**
+**发行日期： 2022年8月24日**
 
 Adobe Experience Platform 中现有功能的更新：
 
@@ -116,7 +116,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 类 | [[!UICONTROL AJO实体类]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | 基于记录的类，用于为Adobe Journey Optimizer创建查找架构。 |
+| 类 | [[!UICONTROL AJO实体类]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity-class.schema.json) | 基于记录的类，用于为Adobe Journey Optimizer创建查找架构。 |
 | 字段组 | [[!UICONTROL Workfront工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | 一个包装字段组，它引用Adobe Workfront的所有较低级别的特定于对象的字段组。 |
 
 {style="table-layout:auto"}
@@ -133,7 +133,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 数据类型 | [[!UICONTROL Qoe 数据详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | 新资产 `framesPerSecond` 已添加。 |
 | 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | `sdkVersion` 已更名为 `appVersion`。`meta:enum` 和 `description` 字段也已更新。 |
 | 数据类型和字段组 | （多种） | 多个媒体数据类型和字段组都有新字段和更新的描述。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1582/files) 以了解详细信息。 |
-| (全部) | （多种） | 包含 `enum` 字段现在也包含相应的 `meta:enum` 表示每个约束的显示值的字段。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1601/files) 以了解详细信息。 |
+| （全部） | （多种） | 包含 `enum` 字段现在也包含相应的 `meta:enum` 表示每个约束的显示值的字段。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1601/files) 以了解详细信息。 |
 
 {style="table-layout:auto"}
 

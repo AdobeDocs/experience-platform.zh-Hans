@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: a3ba26fd6ee7b473d74cc3cf3d142e0f3ff069bb
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 30%
+source-wordcount: '276'
+ht-degree: 24%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 30%
    * [AI助手](ai-assistant.md)
 * EXPERIENCE PLATFORMAPI {#platform-apis}
    * [Platform API快速入门](api-guide.md)
-   * [验证和访问 Platform API](api-authentication.md)
+   * [验证和访问平台API](api-authentication.md)
    * [API基础知识](api-fundamentals.md)
    * [将Postman与平台API结合使用](postman.md)
    * [API参考文档](https://www.adobe.com/go/platform-api-reference-en)
@@ -74,6 +74,8 @@ ht-degree: 30%
 * 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
    * [许可证使用情况仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
+   * [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
+   * [Real-Time CDP护栏](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)

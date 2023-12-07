@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；激活；故障排除；护栏；指南；限制
-title: 激活数据的默认护栏
+title: 数据激活的默认护栏
 solution: Experience Platform
 product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: c425d1016bed80113b879a683114861d839b79eb
 workflow-type: tm+mt
 source-wordcount: '1662'
 ht-degree: 1%
 
 ---
 
-# 激活数据的护栏
+# 数据激活的护栏
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，系统假定您已正确设置 [已连接到目标](/help/destinations/ui/connect-destination.md).
 
