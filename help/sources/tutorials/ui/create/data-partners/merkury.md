@@ -2,9 +2,7 @@
 title: 在UI中创建Merkury企业身份解析源连接和数据流
 description: 了解如何使用Adobe Experience Platform UI创建Merkury企业身份解析源连接。
 badge: Beta 版
-hide: true
-hidefromtoc: true
-source-git-commit: cc87bff5ea19e2ffc9958bd645b4736d05773e3c
+source-git-commit: 12f73ac2578b6c5b024cc4ebdd75cd945c7b55c9
 workflow-type: tm+mt
 source-wordcount: '2015'
 ht-degree: 0%

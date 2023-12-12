@@ -2,9 +2,7 @@
 title: Merkury Enterprise身份解析源概述
 description: 了解如何使用用户界面将Merkury Enterprise Identity Resolution连接到Adobe Experience Platform。
 badge: Beta 版
-hide: true
-hidefromtoc: true
-source-git-commit: bf6a3422d9af6eaa4f3f4a8a573dc587b3cfdbd5
+source-git-commit: 12f73ac2578b6c5b024cc4ebdd75cd945c7b55c9
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 0%

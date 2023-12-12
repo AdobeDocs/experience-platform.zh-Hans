@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 4c61cd575fe3fb1583900315030dd59579dd5206
+source-git-commit: 12f73ac2578b6c5b024cc4ebdd75cd945c7b55c9
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1524'
 ht-degree: 1%
 
 ---
@@ -136,6 +136,12 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 - [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE 流]{type=Positive}
 - [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE 批次]{type=Informative}
+
+### 数据合作伙伴 {#data-partner}
+
+Experience Platform支持从第三方数据库引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+
+- [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE 批次]{type=Informative}
 
 ### 电子商务 {#ecommerce}
 
