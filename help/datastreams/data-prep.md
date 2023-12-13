@@ -1,13 +1,13 @@
 ---
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
-source-git-commit: 935881ee8c8aedb672bbd6233ea22aa7b26b28a6
+exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
+source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
 workflow-type: tm+mt
-source-wordcount: '1201'
-ht-degree: 64%
+source-wordcount: '1192'
+ht-degree: 59%
 
 ---
-
 
 # 为数据收集准备数据
 
@@ -154,7 +154,7 @@ ht-degree: 64%
 
 您可以选择用于将对象作为文件上传的选项，或将原始对象粘贴到提供的文本框中。如果 JSON 有效，预览架构将显示在右侧面板中。选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
-![预期的传入数据的 JSON 示例](assets/data-prep/select-data.png)
+![预期传入数据的JSON示例。](assets/data-prep/select-data.png)
 
 >[!NOTE]
 >
@@ -171,25 +171,25 @@ ht-degree: 64%
 
 要创建映射规则，请选择 **[!UICONTROL 添加新映射]**.
 
-![添加新映射](assets/data-prep/add-new-mapping.png)
+![添加新映射。](assets/data-prep/add-new-mapping.png)
 
 选择源图标（![源图标](assets/data-prep/source-icon.png)），在出现的对话框中，选择要在提供的画布中映射的源字段。选择字段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;按钮以继续。
 
-![选择要在源架构中映射的字段](assets/data-prep/source-mapping.png)
+![选择要在源架构中映射的字段。](assets/data-prep/source-mapping.png)
 
 接下来，选择架构图标（![架构图标](assets/data-prep/schema-icon.png)），打开类似的目标事件架构对话框。在确认之前，使用&#x200B;**[!UICONTROL 选择]**&#x200B;来选择要将数据映射到的字段。
 
-![选择要在目标架构中映射的字段](assets/data-prep/target-mapping.png)
+![选择要映射到目标架构中的字段。](assets/data-prep/target-mapping.png)
 
 映射页面将重新出现，并显示已完成的字段映射。**[!UICONTROL 映射进度]**&#x200B;部分将更新以反映已成功映射的字段总数。
 
-![已成功映射字段并反映进度](assets/data-prep/field-mapped.png)
+![字段已成功映射，并反映了进度。](assets/data-prep/field-mapped.png)
 
 >[!TIP]
 >
 >如果要将一个对象数组（在源字段中）映射到不同对象的数组（在目标字段中），请在源字段路径和目标字段路径中的数组名称后添加 `[*]`，如下所示。
 >
->![数组对象映射](assets/data-prep/array-object-mapping.png)
+>![数组对象映射。](assets/data-prep/array-object-mapping.png)
 
 ### 导入现有映射规则 {#import-mapping}
 
@@ -201,11 +201,11 @@ ht-degree: 64%
 
 要开始，请选择&#x200B;**[!UICONTROL 导入映射]**。
 
-![显示[!UICONTROL 导入映射]按钮已选定的图像](assets/data-prep/import-mapping-button.png)
+![正在选择导入映射按钮。](assets/data-prep/import-mapping-button.png)
 
 在出现的对话框中，选择要导入其映射规则的数据流。选择该数据流后，选择&#x200B;**[!UICONTROL 预览]**。
 
-![显示将选择的现有数据流的图像](assets/data-prep/select-mapping-rules.png)
+![选择现有数据流。](assets/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -213,7 +213,7 @@ ht-degree: 64%
 
 下一个屏幕显示所选数据流的已保存映射规则的预览。确保显示的映射为预期映射，然后选择&#x200B;**[!UICONTROL 导入]**&#x200B;以确认映射并将其添加到新数据流。
 
-![显示要导入的映射规则的图像](assets/data-prep/import-mapping-rules.png)
+![要导入的映射规则。](assets/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >

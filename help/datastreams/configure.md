@@ -2,10 +2,10 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
 workflow-type: tm+mt
-source-wordcount: '2725'
-ht-degree: 58%
+source-wordcount: '2707'
+ht-degree: 55%
 
 ---
 
@@ -44,7 +44,7 @@ ht-degree: 58%
 
 展开 **[!UICONTROL 地理位置和网络查找]** 部分来配置下述设置。
 
-![平台UI屏幕截图，其中显示了数据流配置屏幕，并突出显示地理位置和网络查找设置。](assets/configure/geolookup.png)
+![数据流配置屏幕，其中突出显示地理位置和网络查找设置。](assets/configure/geolookup.png)
 
 | 设置 | 描述 |
 | --- | --- |
@@ -63,7 +63,7 @@ ht-degree: 58%
 
 展开 **[!UICONTROL 设备查找]** 部分来配置下述设置。
 
-![平台UI屏幕截图，其中显示了数据流配置屏幕，并突出显示设备查找设置。](assets/configure/device-lookup.png)
+![数据流配置屏幕，其中突出显示设备查找设置。](assets/configure/device-lookup.png)
 
 >[!IMPORTANT]
 >
@@ -109,7 +109,7 @@ ht-degree: 58%
 
 在配置新的数据流或选择要查看的现有数据流后，将显示该数据流的详细信息页面。在该页面中，可以找到有关数据流的更多信息，包括其 ID。
 
-![创建的数据流的详细信息页面](assets/configure/view-details.png)
+![数据流详细信息页面。](assets/configure/view-details.png)
 
 从数据流详细信息屏幕中，可以[添加服务](#add-services)以启用您有权访问的 Adobe Experience Cloud 产品中的功能。您还可以编辑数据流的[基本配置](#create)、更新其[映射规则](./data-prep.md)、[复制数据流](#copy)或将其完全删除。
 
@@ -117,11 +117,11 @@ ht-degree: 58%
 
 在数据流的详细信息页面上，选择&#x200B;**[!UICONTROL 添加服务]**&#x200B;以开始为该数据流添加可用服务。
 
-![选择“添加服务”以继续](assets/configure/add-service.png)
+![选择“添加服务”以继续。](assets/configure/add-service.png)
 
 在下一个屏幕上，使用下拉菜单选择要为此数据流配置的服务。此列表中仅显示您有权访问的服务。
 
-![从列表中选择服务](assets/configure/service-selection.png)
+![从列表中选择服务。](assets/configure/service-selection.png)
 
 选择所需的服务，填写显示的配置选项，然后选择&#x200B;**[!UICONTROL 保存]**&#x200B;以将服务添加到数据流。所有添加的服务都会显示在数据流的详细信息视图中。
 
@@ -137,7 +137,7 @@ ht-degree: 58%
 
 此服务控制数据是否以及如何发送到 Adobe Analytics。可以在有关[将数据发送到 Analytics](../edge/data-collection/adobe-analytics/analytics-overview.md) 的指南中找到其他详细信息。
 
-![Adobe Analytics 设置块](assets/configure/analytics-config.png)
+![Adobe Analytics数据流设置。](assets/configure/analytics-config.png)
 
 | 设置 | 描述 |
 | --- | --- |
@@ -148,7 +148,7 @@ ht-degree: 58%
 
 此服务控制数据是否以及如何发送到 Adobe Audience Manager。只需启用此部分即可将数据发送到 Audience Manager。其他设置是可选的，但建议使用。
 
-![Adobe Audience Manager 设置块](assets/configure/audience-manager-config.png)
+![Adobe受众管理数据流设置。](assets/configure/audience-manager-config.png)
 
 | 设置 | 描述 |
 | --- | --- |
@@ -167,7 +167,7 @@ ht-degree: 58%
 
 此服务控制数据是否以及如何发送到 Adobe Experience Platform。
 
-![Adobe Experience Platform 设置块](assets/configure/platform-config.png)
+![Adobe Experience Platform数据流设置。](assets/configure/platform-config.png)
 
 | 设置 | 描述 |
 |---| --- |
@@ -182,7 +182,7 @@ ht-degree: 58%
 
 此服务控制数据是否以及如何发送到 Adobe Target。
 
-![Adobe Target 设置块](assets/configure/target-config.png)
+![Adobe Target数据流设置。](assets/configure/target-config.png)
 
 | 设置 | 描述 |
 | --- | --- |
@@ -195,7 +195,7 @@ ht-degree: 58%
 
 此服务控制数据是否以及如何发送到[事件转发](../tags/ui/event-forwarding/overview.md)。
 
-![配置 UI 的“事件转发”部分](assets/configure/event-forwarding-config.png)
+![数据流配置屏幕的事件转发部分。](assets/configure/event-forwarding-config.png)
 
 | 设置 | 描述 |
 | --- | --- |
@@ -216,15 +216,15 @@ ht-degree: 58%
 
 从[!UICONTROL 数据流]工作区的主页中，为相关数据流选择省略号 (**....**)，然后选择&#x200B;**[!UICONTROL 复制]**。
 
-![显示将从数据流列表视图中选择的[!UICONTROL 复制]选项的图像](assets/configure/copy-datastream-list.png)
+![显示从数据流列表视图中选择的复制选项的图像。](assets/configure/copy-datastream-list.png)
 
 或者，您可以从给定数据流的详细信息视图中选择&#x200B;**[!UICONTROL 复制数据流]**。
 
-![显示将从数据流详细信息视图中选择的[!UICONTROL 复制]选项的图像](assets/configure/copy-datastream-details.png)
+![从数据流详细信息视图中选择的复制选项。](assets/configure/copy-datastream-details.png)
 
 将出现一个确认对话框，提示您为要创建的新数据流提供唯一名称，以及有关将复制的配置选项的详细信息。准备就绪后，选择&#x200B;**[!UICONTROL 复制]**。
 
-![用于复制数据流的确认对话框的图像](assets/configure/copy-datastream-confirm.png)
+![用于复制数据流的确认对话框。](assets/configure/copy-datastream-confirm.png)
 
 [!UICONTROL 数据流]工作区的主页将重新出现，并列出了新数据流。
 
