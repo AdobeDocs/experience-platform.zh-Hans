@@ -3,10 +3,10 @@ keywords: Experience Platform；查询服务；查询服务
 title: Adobe Experience Platform查询服务的示例用例
 description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的通用性和好处。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 79966442f5333363216da17342092a71335a14f0
+source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
 workflow-type: tm+mt
-source-wordcount: '707'
-ht-degree: 2%
+source-wordcount: '695'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 2%
 * 基于现有数据架构构建查询的方法。
 * 确保满足您需求的数据质量，以及减少任何不足的方法。
 * 安排查询以设定的频率运行，以用于分段中的下游和个性化的目标的过程。
-* 营销人员可通过的强大功能，将派生属性包含到其受众中。 [!DNL Query Service].
+* 营销人员可以轻松地将派生数据集包含在其受众中，其功能包括 [!DNL Query Service].
 
 ## 目标 {#objectives}
 

@@ -4,7 +4,7 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: cd97165d4e4d8ed984c4705f614c8d77eb750ed6
+source-git-commit: f319f05d600dfd2bc4840ff56aefb8098dbfb7aa
 workflow-type: tm+mt
 source-wordcount: '309'
 ht-degree: 19%
@@ -22,13 +22,13 @@ ht-degree: 19%
 - 数据Distiller {#data-distiller}
    - [概述](data-distiller/overview.md)
    - [许可证使用](data-distiller/license-usage.md)
+   - 派生数据集 {#derived-datasets}
+      - [概述](data-distiller/derived-datasets/overview.md)
+      - [无缝SQL流](data-distiller/derived-datasets/seamless-sql-flow.md)
+      - [创建基于十分位数的派生数据集](data-distiller/derived-datasets/decile-based-derived-attributes.md)
    - 查询加速存储 {#query-accelerated-store}
       - [发送加速查询](data-distiller/query-accelerated-store/send-accelerated-queries.md)
       - [报表见解数据模型指南](data-distiller/query-accelerated-store/reporting-insights-data-model.md)
-   - 派生属性 {#derived-attributes}
-      - [概述](data-distiller/derived-attributes/overview.md)
-      - [无缝SQL流](data-distiller/derived-attributes/seamless-sql-flow.md)
-      - [创建基于十分位数的派生属性](data-distiller/derived-attributes/decile-based-derived-attributes.md)
    - AI/ML功能管道 {#ml-feature-pipelines}
       - [概述](data-distiller/ml-feature-pipelines/overview.md)
       - [连接到Jupyter Notebooks](data-distiller/ml-feature-pipelines/establish-connection.md)
@@ -43,7 +43,7 @@ ht-degree: 19%
    - [创建事件的趋势报表](use-cases/trended-report-of-events.md)
    - [同意分析](use-cases/consent-analysis.md)
    - [客户存留期值](use-cases/customer-lifetime-value.md)
-   - [基于十分位数的派生属性](use-cases/deciles-use-case.md)
+   - [基于Decile的派生数据集](use-cases/deciles-use-case.md)
    - [模糊匹配](use-cases/fuzzy-match.md)
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)

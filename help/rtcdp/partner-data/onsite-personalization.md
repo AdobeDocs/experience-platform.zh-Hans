@@ -1,16 +1,16 @@
 ---
-title: 使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验
+title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
 workflow-type: tm+mt
-source-wordcount: '2696'
-ht-degree: 92%
+source-wordcount: '2673'
+ht-degree: 90%
 
 ---
 
-# 使用合作伙伴辅助的访客识别功能为未知访客提供个性化现场体验
+# 使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验
 
 >[!AVAILABILITY]
 >
@@ -39,7 +39,7 @@ ht-degree: 92%
 在规划使用合作伙伴提供的属性为经过身份验证和未经身份验证的访客营造个性化的体验时，请在规划过程中考虑以下先决条件：
 
 * 您合作伙伴的识别技术期待哪些输入，以使其可叠加其他属性？
-* 将根据按概率派生的属性与根据确定证实的属性相比，您在多大程度上有信心在不同渠道中并为不同的用例营造个性化？
+* 与确定性确认属性相比，您在多大程度上愿意根据概率派生的数据集在不同的渠道和不同用例中提供个性化？
 * 预先经过身份验证但被识别的访客在身份验证后的体验应发生什么变化？
 
 ### 您将使用的 UI 功能、Platform 组件和 Experience Cloud 产品 {#ui-functionality-and-elements}
