@@ -3,10 +3,10 @@ keywords: 分析；客户人工智能；客户人工智能分析；AAI查询服�
 title: 客户人工智能中的客户管理的密钥。
 description: 了解如何为客户人工智能设置客户管理的密钥。
 exl-id: 12746c5c-094a-4d49-8d3a-7641fe0ec02a
-source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
+source-git-commit: 1a7babf104b2146bad4a336b9e0abd5a32c88999
 workflow-type: tm+mt
-source-wordcount: '176'
-ht-degree: 19%
+source-wordcount: '163'
+ht-degree: 13%
 
 ---
 
@@ -18,6 +18,6 @@ ht-degree: 19%
 
 >[!NOTE]
 >
->[!DNL Customer Managed Keys] 目前仅适用于已购买 [[!DNL Healthcare Shield or Privacy & Security Shield]](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/vertical-blueprints/healthcare-vertical.html?lang=zh-Hans%3Flang%3Den) 附加产品。
+>[!DNL Customer Managed Keys] 目前仅适用于已购买 [!DNL Healthcare Shield or Privacy & Security Shield] 附加产品。
 
 无论是否应用了 CMK，Platform 使用的所有数据在传输和静止时都经过加密，以确保您的数据安全。有关Adobe Experience Platform加密的信息，请阅读以下文档： [数据加密](../../../landing/governance-privacy-security/encryption.md).
