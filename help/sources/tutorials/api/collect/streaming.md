@@ -5,9 +5,9 @@ title: 使用流服务API为原始数据创建流数据流
 type: Tutorial
 description: 本教程涵盖了检索流数据以及使用源连接器和API将它们引入Platform的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 9034cd965dff59d6c304b9a7c38d3860311614fe
+source-git-commit: 39b5a2b76c28033b9e98dcefc4cdcaa9964f4d2e
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1169'
 ht-degree: 2%
 
 ---
@@ -486,13 +486,15 @@ curl -X POST \
 
 查看以下有效负载示例，了解可发送以供摄取的原始或XDM兼容JSON的示例。
 
->[!TIP]
+>[!NOTE]
 >
->以下示例适用于所有三项：
->
->- [[!DNL Amazon Kinesis]](../create/cloud-storage/kinesis.md)
->- [[!DNL Azure Event Hubs]](../create/cloud-storage/eventhub.md)
->- [[!DNL Google PubSub]](../create/cloud-storage/google-pubsub.md)
+>在创建数据流和摄取任何流数据之间必须添加至少约5分钟的延迟。 这样一来，在摄取任何数据之前，都可以完全启用数据流。
+
+以下示例适用于所有：
+
+- [[!DNL Amazon Kinesis]](../create/cloud-storage/kinesis.md)
+- [[!DNL Azure Event Hubs]](../create/cloud-storage/eventhub.md)
+- [[!DNL Google PubSub]](../create/cloud-storage/google-pubsub.md)
 
 >[!BEGINTABS]
 
