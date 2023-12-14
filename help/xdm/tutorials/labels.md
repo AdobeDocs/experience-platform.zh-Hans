@@ -2,10 +2,10 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中将数据使用标签添加到Experience Data Model (XDM)架构字段。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: c35c270afca57cb96228cea29fd5a39ec6615332
+source-git-commit: 6fe11b909369797e96d8fa52542ebd5761a27b03
 workflow-type: tm+mt
-source-wordcount: '795'
-ht-degree: 9%
+source-wordcount: '806'
+ht-degree: 8%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 9%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
    * [架构编辑器](../ui/overview.md)：了解如何在Platform UI中创建和管理架构和其他资源。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md)：提供用于对Platform操作强制实施数据使用限制的基础架构，其中使用策略定义可以（或不能）对标记数据执行哪些营销操作。
 
@@ -43,6 +43,10 @@ ht-degree: 9%
 要开始添加标签，您必须首先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新架构](../ui/resources/schemas.md#create) 以在架构编辑器中查看其结构。
 
 要编辑单个字段的标签，您可以在画布中选择该字段，然后选择 **[!UICONTROL 管理访问权限]** 在右边栏中。
+
+>[!IMPORTANT]
+>
+>最多可以将300个标签应用于任何架构。
 
 ![从架构编辑器画布中选择字段](../images/tutorials/labels/manage-access.png)
 

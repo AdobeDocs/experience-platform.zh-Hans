@@ -5,9 +5,9 @@ title: 使用UI创建和编辑数据类型
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
+source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
 workflow-type: tm+mt
-source-wordcount: '1354'
+source-wordcount: '1384'
 ht-degree: 6%
 
 ---
@@ -22,6 +22,10 @@ ht-degree: 6%
 在Experience Data Model (XDM)中，数据类型是包含多个子字段的可重用字段。 虽然与架构字段组类似，因为它们允许一致地使用多字段结构，但数据类型更灵活，因为它们可以包含在架构结构中的任意位置，而字段组只能在根级别添加。
 
 Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各种常见的体验管理用例。 但是，您还可以定义自己的自定义数据类型，以满足独特的业务需求。
+
+>[!NOTE]
+>
+>如果字段被定义为特定数据类型，则无法在另一个架构中创建具有不同数据类型的相同字段。 此限制适用于您组织的租户。
 
 本教程介绍了在Platform用户界面中创建和编辑自定义数据类型的步骤。
 
