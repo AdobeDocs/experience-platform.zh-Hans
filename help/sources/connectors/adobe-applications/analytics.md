@@ -2,14 +2,14 @@
 title: 报告包数据的Adobe Analytics Source Connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 251b00e0f0e063859f8d0a0e188fa805c7bf3f87
 workflow-type: tm+mt
-source-wordcount: '1159'
-ht-degree: 6%
+source-wordcount: '1110'
+ht-degree: 2%
 
 ---
 
-# 报告包数据的 Adobe Analytics Source Connector
+# 报告包数据的Adobe Analytics source connector
 
 Adobe Experience Platform允许您通过Analytics Source Connector摄取Adobe Analytics数据。 此 [!DNL Analytics] 源连接器流式传输由收集的数据 [!DNL Analytics] 实时转换到Platform，转换SCD格式 [!DNL Analytics] 数据到 [!DNL Experience Data Model] 供平台使用的(XDM)字段。
 
@@ -21,7 +21,7 @@ Adobe Experience Platform允许您通过Analytics Source Connector摄取Adobe An
 
 ![一个图形，用于说明来自各种Adobe应用程序(包括Adobe Analytics)的数据之旅。](./images/analytics-data-experience-platform.png)
 
-从高层次上说， [!DNL Analytics] 从世界各地的各种数字渠道和多个数据中心收集数据。 收集数据后，将应用访客识别、分段和转换架构(VISTA)规则和处理规则来塑造传入的数据。 原始数据经过这种轻量级处理后，即可由以下人员使用 [!DNL Real-Time Customer Profile]. 在上述流程平行进行的过程中，相同的处理过的数据会被微批次并摄取到Platform数据集中，以供以下人员使用 [!DNL Data Science Workspace]， [!DNL Query Service]和其他数据发现应用程序。
+从高层次上说， [!DNL Analytics] 从世界各地的各种数字渠道和多个数据中心收集数据。 收集数据后，将应用访客识别、分段和转换架构(VISTA)规则和处理规则来塑造传入的数据。 原始数据经过这种轻量级处理后，即可由以下人员使用 [!DNL Real-Time Customer Profile]. 在上述流程平行进行的过程中，相同的处理过的数据会被微批次并摄取到Platform数据集中，以供以下人员使用 [!DNL Query Service]和其他数据发现应用程序。
 
 请参阅 [处理规则概述](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=zh-Hans) 以了解有关处理规则的更多信息。
 
@@ -49,10 +49,10 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 
 | Analytics 数据 | 预期延迟 |
 | -------------- | ---------------- |
-| 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** 已启用) | &lt; 2 分钟 |
+| 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** 已启用) | &lt; 2分钟 |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **是** 已启用) | 长达30分钟 |
-| 数据湖的新数据 | &lt; 90 分钟 |
-| 少于100亿个事件的回填 | &lt; 4 周 |
+| 数据湖的新数据 | &lt; 90分钟 |
+| 少于100亿个事件的回填 | &lt; 4周 |
 
 生产沙盒的Analytics回填默认为13个月。 对于非生产沙盒中的Analytics数据，回填将设置为三个月。 上表中提到的100亿个事件的限制严格与预期延迟有关。
 
@@ -91,7 +91,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 * `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
 
-在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，AAID可能基于ECID，原因在于 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，会将 AAID 标记为事件的主标识。绝不会将 AACUSTOMID 标记为事件的主要 ID。但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID将基于AACUSTOMID。
+在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，AAID可能基于ECID，原因在于 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，AAID将标记为事件的主标识。 绝不会将 AACUSTOMID 标记为事件的主要 ID。但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID将基于AACUSTOMID。
 
 >[!NOTE]
 >
