@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: e5e9eb262df1591f91b3b23359162236f898db8c
+source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
 workflow-type: tm+mt
-source-wordcount: '1204'
-ht-degree: 10%
+source-wordcount: '1188'
+ht-degree: 5%
 
 ---
 
@@ -18,9 +18,9 @@ ht-degree: 10%
 * [目标类型和类别](./destination-types.md)
 * [目标（激活）护栏](./guardrails.md)
 * 目标的工作方式 {#how-destinations-work}
-   * [目标中可配置的通用导出设置](./how-destinations-work/destinations-configurations.md)
+   * [目标中的可配置和常用导出设置](./how-destinations-work/destinations-configurations.md)
    * [不同目标类型的配置文件导出行为](./how-destinations-work/profile-export-behavior.md)
-   * [目标激活工作流程中的身份处理](./how-destinations-work/identity-handling.md)
+   * [目标激活工作流中的身份处理](./how-destinations-work/identity-handling.md)
 * API教程 {#api}
    * [使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
@@ -32,7 +32,7 @@ ht-degree: 10%
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
    * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
-* UI 指南 {#ui}
+* UI指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
    * 将数据激活到目标{#activate}
@@ -91,16 +91,17 @@ ht-degree: 10%
       * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
       * [pinterest连接升级](./catalog/advertising/pinterest-upgrade.md)
+      * [PubMatic Connect连接](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
-      * [(Beta) Trade Desk CRM 连接](./catalog/advertising/tradedesk-emails.md)
+      * [(Beta)交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
       * [twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标 {#analytics}
       * [Analytics目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪扩展](./catalog/analytics/adform.md)
       * [Adobe Analytics 扩展](./catalog/analytics/adobe-analytics.md)
-      * [Adobe Media Analytics for Audio and Video 扩展](./catalog/analytics/adobe-video-analytics.md)
+      * [Adobe Medium Analytics for Audio and Video扩展](./catalog/analytics/adobe-video-analytics.md)
       * [Clicktale扩展](./catalog/analytics/clicktale.md)
       * [Contentsquare扩展](./catalog/analytics/contentsquare.md)
       * [Decibel扩展](./catalog/analytics/decibel.md)
@@ -133,7 +134,7 @@ ht-degree: 10%
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
       * [Microsoft Dynamics 365连接](./catalog/crm/microsoft-dynamics-365.md)
       * [外联联系](catalog/crm/outreach.md)
-      * [Zendesk 连接](catalog/crm/zendesk.md)
+      * [Zendesk连接](catalog/crm/zendesk.md)
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
@@ -146,8 +147,8 @@ ht-degree: 10%
       * [电子邮件营销目标概述](./catalog/email-marketing/overview.md)
       * [Adobe Campaign连接](./catalog/email-marketing/adobe-campaign.md)
       * [Adobe Campaign Managed Cloud Services连接](./catalog/email-marketing/adobe-campaign-managed-services.md)
-      * [Mailchimp 兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
-      * [(API) Oracle Eloqua 连接](./catalog/email-marketing/oracle-eloqua-api.md)
+      * [Mailchimp兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
+      * [(API)OracleEloqua连接](./catalog/email-marketing/oracle-eloqua-api.md)
       * [（文件）OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [oracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [(API) SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
@@ -168,7 +169,7 @@ ht-degree: 10%
       * [Adobe Commerce连接](./catalog/personalization/adobe-commerce.md)
       * [Adobe Target连接](./catalog/personalization/adobe-target-connection.md)
       * [Adobe Target 扩展](./catalog/personalization/adobe-target.md)
-      * [Adobe Target v2 扩展](./catalog/personalization/adobe-target-v2.md)
+      * [Adobe Target v2扩展](./catalog/personalization/adobe-target-v2.md)
       * [Beemray扩展](./catalog/personalization/beemray.md)
       * [自定义个性化连接](./catalog/personalization/custom-personalization.md)
       * [D&amp;B Visitor Intelligence扩展](./catalog/personalization/dnb.md)
@@ -177,12 +178,12 @@ ht-degree: 10%
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
       * [Pega客户决策中心连接](./catalog/personalization/pega.md)
-      * [Pega 配置文件连接](./catalog/personalization/pega-profile.md)
+      * [Pega配置文件连接](./catalog/personalization/pega-profile.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [facebook连接](./catalog/social/facebook.md)
       * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
-      * [TikTok 连接](./catalog/social/tiktok.md)
+      * [TikTok连接](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
    * 流目标 {#streaming}
       * [HTTP API连接](./catalog/streaming/http-destination.md)
@@ -201,7 +202,7 @@ ht-degree: 10%
       * [Medallia连接](./catalog/voice/medallia-connector.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL收件箱扩展](./catalog/voice/talkurl.md)
-* 目标 SDK {#destination-sdk}
+* Destination SDK {#destination-sdk}
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
    * [Destination SDK快速入门](./destination-sdk/getting-started.md)
