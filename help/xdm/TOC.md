@@ -4,17 +4,17 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: 4f819dcbdf67dc0305b397c54de2b1149cff398d
 workflow-type: tm+mt
-source-wordcount: '532'
-ht-degree: 23%
+source-wordcount: '561'
+ht-degree: 15%
 
 ---
 
 
 # Experience Data Model (XDM)系统 {#xdm}
 
-* [XDM 系统概述](home.md)
+* [XDM系统概述](home.md)
 * 架构 {#schema}
    * [模式组合基础](schema/composition.md)
    * [数据建模的最佳实践](schema/best-practices.md)
@@ -30,11 +30,11 @@ ht-degree: 23%
       * [旅游和酒店业](./schema/industries/travel-hospitality.md)
    * [XDM字段字典](schema/field-dictionary.md)
 * 类 {#classes}
-   * [XDM 个人资料](./classes/individual-profile.md)
+   * [XDM个人资料](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [药物](./classes/medication.md)
    * [付款人](./classes/payer.md)
-   * [规划](./classes/plan.md)
+   * [计划](./classes/plan.md)
    * [策略](./classes/policy.md)
    * [产品](./classes/product.md)
    * [潜在客户](./classes/prospect.md)
@@ -50,7 +50,7 @@ ht-degree: 23%
       * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
       * [XDM商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 字段组 {#field-groups}
-   * XDM 个人资料 {#profile}
+   * XDM个人资料 {#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
@@ -58,7 +58,7 @@ ht-degree: 23%
       * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
-      * [区段成员关系详细信息](./field-groups/profile/segmentation.md)
+      * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [电信订阅](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
@@ -80,6 +80,7 @@ ht-degree: 23%
       * [航班预订](./field-groups/event/flight-reservation.md)
       * [IAB TCF 2.0同意](./field-groups/event/iab.md)
       * [住宿预订](./field-groups/event/lodging-reservation.md)
+      * [MediaAnalytics交互详细信息](./field-groups/event/mediaanalytics-interaction.md)
       * [报价请求详细信息](./field-groups/event/quote-request-details.md)
       * [预订详细信息](./field-groups/event/reservation-details.md)
       * [Sitetool详细信息](./field-groups/event/sitetool-details.md)
@@ -104,17 +105,22 @@ ht-degree: 23%
 * 数据类型 {#data-types}
    * [帐户详细信息](./data-types/account-details.md)
    * [广告时间](./data-types/ad-break.md)
+   * [广告详细信息](./data-types/advertising-details-information.md)
+   * [广告面板详细信息](./data-types/advertising-pod-details-information.md)
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [B2B源](./data-types/b2b-source.md)
+   * [章节详细信息](./data-types/chapter-details-information.md)
    * [Commerce](./data-types/commerce.md)
    * [同意字符串](./data-types/consent-string.md)
    * [同意和偏好设置](./data-types/consents.md)
    * [货币](./data-types/currency.md)
+   * [自定义元数据详细信息](./data-types/custom-metadata-details-information.md)
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
+   * [错误详细信息](./data-types/error-details-information.md)
    * [体验渠道](./data-types/experience-channel.md)
    * [外部源系统审计属性](./data-types/external-source-system-audit-attributes.md)
    * [财务帐户](./data-types/financial-account.md)
@@ -134,17 +140,22 @@ ht-degree: 23%
    * [键值对](./data-types/key-value-pair.md)
    * [营销](./data-types/marketing.md)
    * [衡量](./data-types/measure.md)
+   * [介质详细信息](./data-types/media-details-information.md)
+   * [媒体事件信息](./data-types/media-event-information.md)
    * [订购](./data-types/order.md)
    * [付款项目](./data-types/payment-item.md)
    * [人员](./data-types/person.md)
    * [人员姓名](./data-types/person-name.md)
    * [电话号码](./data-types/phone-number.md)
    * [地标上下文](./data-types/place-context.md)
+   * [播放器状态信息](./data-types/player-state-data-information.md)
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
-   * [产品列表项目](./data-types/product-list-item.md)
+   * [产品列表项](./data-types/product-list-item.md)
+   * [QoE数据详细信息](./data-types/qoe-data-details-information.md)
    * [搜索](./data-types/search.md)
+   * [会话详细信息](./data-types/session-details-information.md)
    * [订阅](./data-types/subscription.md)
    * [电信订阅](./data-types/telecom-subscription.md)
    * [交易](./data-types/transaction.md)
@@ -153,7 +164,7 @@ ht-degree: 23%
    * [网页详细信息](./data-types/webpage-details.md)
 * [!UICONTROL 架构] UI {#ui}
    * [概述](./ui/overview.md)
-   * [浏览 XDM 资源](./ui/explore.md)
+   * [浏览XDM资源](./ui/explore.md)
    * 创建和编辑资源 {#resources}
       * [架构](./ui/resources/schemas.md)
       * [类](./ui/resources/classes.md)
