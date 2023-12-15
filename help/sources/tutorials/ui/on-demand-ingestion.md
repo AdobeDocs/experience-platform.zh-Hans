@@ -2,10 +2,10 @@
 title: 在UI中按需引入源数据流
 description: 了解如何使用Experience Platform用户界面按需为源连接创建数据流。
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 38da1c1d5e563ea3f66cc25a69ad726f709784d0
 workflow-type: tm+mt
-source-wordcount: '499'
-ht-degree: 1%
+source-wordcount: '522'
+ht-degree: 0%
 
 ---
 
@@ -24,6 +24,10 @@ ht-degree: 1%
 >[!ENDSHADEBOX]
 
 ## 快速入门
+
+>[!NOTE]
+>
+>要创建流运行，您必须首先具有计划为一次性摄取的数据流的流ID。
 
 本文档要求您对Experience Platform的以下组件有一定的了解：
 
