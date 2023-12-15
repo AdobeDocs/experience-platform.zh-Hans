@@ -2,7 +2,7 @@
 title: 跟踪数据信号以生成客户存留期值
 description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 ## 扩展分析数据模型和计划更新 {#extend-data-model-and-set-refresh-schedule}
 
-接下来，您必须构建自定义数据模型或扩展现有Adobe Real-Time CDP数据模型以与CLV报表分析交互。 请参阅文档以了解如何 [通过查询服务构建报表见解数据模型，用于加速商店数据和用户定义的仪表板](../data-distiller/query-accelerated-store/reporting-insights-data-model.md#build-a-reporting-insights-data-model). 本教程涵盖以下步骤：
+接下来，您必须构建自定义数据模型或扩展现有Adobe Real-Time CDP数据模型以与CLV报表分析交互。 请参阅文档以了解如何 [通过查询服务构建报表见解数据模型，用于加速商店数据和用户定义的仪表板](../data-distiller/customizable-insights/reporting-insights-data-model.md#build-a-reporting-insights-data-model). 本教程涵盖以下步骤：
 
 * 使用Data Distiller创建用于报表分析的模型。
 * 创建表、关系和填充数据。

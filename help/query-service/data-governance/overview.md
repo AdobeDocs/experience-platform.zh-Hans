@@ -2,9 +2,9 @@
 title: 查询服务中的数据治理
 description: 此概述涵盖Experience Platform查询服务中的数据治理的主要元素。
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
-source-wordcount: '3132'
+source-wordcount: '3129'
 ht-degree: 1%
 
 ---
@@ -93,7 +93,7 @@ Adobe Experience Platform中的访问控制允许您使用 [Adobe Admin Console]
 
 #### 对加速的数据集创建基于字段的访问限制 {#create-field-based-access-restrictions-on-accelerated-datasets}
 
-使用 [基于属性的访问控制功能](../../access-control/abac/overview.md) 您可以在中定义事实和维度数据集的组织或数据使用范围 [加速存储](../data-distiller/query-accelerated-store/send-accelerated-queries.md). 这允许管理员管理对特定区段的访问，并更好地管理授予用户或用户组的访问权限。
+使用 [基于属性的访问控制功能](../../access-control/abac/overview.md) 您可以在中定义事实和维度数据集的组织或数据使用范围 [加速存储](../data-distiller/customizable-insights/send-accelerated-queries.md). 这允许管理员管理对特定区段的访问，并更好地管理授予用户或用户组的访问权限。
 
 要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询创建加速数据集，并基于现有XDM架构或临时架构构建这些数据集。 然后，管理员可以 [添加和编辑架构的数据使用标签](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) 或 [临时架构](./ad-hoc-schema-labels.md#edit-governance-labels). 您可以从应用、创建和编辑架构的标签 [!UICONTROL 标签] 中的工作区 [!UICONTROL 架构] UI。
 

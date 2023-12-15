@@ -2,16 +2,16 @@
 title: Real-time Customer Data Platform分析数据模型
 description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: e55bbba92b0e3b9c86a9962ffa0131dfb7c15e77
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '1109'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform分析数据模型
 
-Real-time Customer Data Platform分析数据模型功能可公开支持各种个人资料、目标和分段构件分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅query accelerated store报告见解文档以了解 [如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
+Real-time Customer Data Platform分析数据模型功能可公开支持各种个人资料、目标和分段构件分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 请参阅query accelerated store报告见解文档以了解 [如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用](../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
 
 ## 先决条件
 
@@ -239,7 +239,7 @@ FROM
 
 #### 最近激活的受众用例
 
-的逻辑 [!UICONTROL 最近激活的受众] 构件提供最近映射到目标的受众列表。 此列表提供系统中正使用的受众和目标的快照，并且可以帮助纠正任何错误的映射。请参阅 [[!UICONTROL 最近激活的受众] 构件文档](./guides/destinations.md#recently-activated-audiences) 以了解更多信息。
+的逻辑 [!UICONTROL 最近激活的受众] 构件提供最近映射到目标的受众列表。 此列表提供系统中正在积极使用的受众和目标快照，并帮助对任何错误的映射进行故障诊断。 请参阅 [[!UICONTROL 最近激活的受众] 构件文档](./guides/destinations.md#recently-activated-audiences) 以了解更多信息。
 
 生成 [!UICONTROL 最近激活的受众] 可以在下面的可折叠部分中看到构件。
 

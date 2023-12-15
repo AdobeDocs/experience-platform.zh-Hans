@@ -2,16 +2,16 @@
 title: Adobe Experience Platform发行说明2022年10月
 description: Adobe Experience Platform 2022年10月版发行说明。
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
-source-wordcount: '1159'
-ht-degree: 34%
+source-wordcount: '1135'
+ht-degree: 29%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2022 年 10 月 26 日**
+**发行日期： 2022年10月26日**
 
 - [客户管理的密钥](#cmk)
 - [数据收集](#data-collection)
@@ -48,7 +48,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 功能 | 描述 |
 | --- | --- |
 | (Beta)数据集导出 | 此 [数据集导出测试版功能](/help/destinations/ui/export-datasets.md) 用于导出第一代数据(如 [Real-time Customer Data Platform产品描述](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html))，通过Adobe Experience Platform中的目标用户界面连接到您自己的外部客户系统。 这让您能够借助无代码/低代码工作流将数据从Experience Platform中获取到六个云存储目标（如下表中所列），以用于分析和合规性用例。 |
-| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform之外的文件时，您可以受益于增强的自定义功能： <br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。</li></ul> <br> 下表列出的六个新的测试版云存储卡支持此功能。 |
+| (Beta)增强的文件导出功能 | 现在，在导出Experience Platform之外的文件时，您可以受益于增强的自定义功能： <br><ul><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表列出的六个新的测试版云存储卡支持此功能。 |
 
 {style="table-layout:auto"}
 
@@ -68,7 +68,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新增或更新文档**
+**新文档或更新文档**
 
 | 文档 | 描述 |
 | ----------- | ----------- |
@@ -86,7 +86,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | --- | --- | --- |
 | 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | 已更新 `authorized` 字段到字符串的布尔类型。 `season` 和 `episode` 已从整数更改为字符串。 |
 | 数据类型 | [[!UICONTROL Advertising 详情信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` 已重命名为 `friendlyName`、和 `ID` 已重命名为 `name`. |
-| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` 已更名为 `name`。 |
+| 数据类型 | [[!UICONTROL 错误详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` 已重命名为 `name`. |
 
 {style="table-layout:auto"}
 
@@ -101,9 +101,10 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 功能 | 描述 |
 | --- | --- |
 | 通过Platform UI监控查询 | 查询服务 [!UICONTROL 计划的查询] 选项卡改进了通过UI查看所有查询作业状态的可见性。 您现在可以从以下位置找到有关查询运行状态的重要信息，包括失败时的错误消息和代码： [!UICONTROL 计划的查询] 选项卡。 您还可以通过UI根据这些查询的状态订阅警报。 请参阅 [监控查询文档](../../query-service/ui/monitor-queries.md) 以了解有关此功能的更多信息。 |
-| 查询加速报表见解数据模型 | 作为Data Distiller SKU的一部分，查询加速存储允许您减少从数据获得关键见解所需的时间和处理能力。 借助查询加速存储，您可以构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型，以改进您的报表见解及其可视化效果。 请参阅 [查询accelerated store报告分析文档](../../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
+| 查询加速报表见解数据模型 | 作为Data Distiller SKU的一部分，查询加速存储允许您减少从数据获得关键见解所需的时间和处理能力。 借助查询加速存储，您可以构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型，以改进您的报表见解及其可视化效果。 请参阅 [查询accelerated store报告分析文档](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md) 以了解有关此功能的更多信息。 |
 
 {style="table-layout:auto"}
 
-有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。Adobe Experience Platform中的新增功能：
+有关查询服务的详细信息，请参阅 [查询服务概述](../../query-service/home.md).
+Adobe Experience Platform中的新增功能：
 
