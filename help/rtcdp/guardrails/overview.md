@@ -3,10 +3,10 @@ title: Real-Time CDP护栏
 description: 了解Real-Time CDP各种服务和领域的数据保障。
 feature: Guardrails, Data Management, Data Ingestion, Data Export
 exl-id: 377499b4-5707-4d50-94e3-02f88ad5bf2c
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: af37aca17f4b365b52215b8c886e733f00c4a4e8
 workflow-type: tm+mt
-source-wordcount: '391'
-ht-degree: 3%
+source-wordcount: '369'
+ht-degree: 1%
 
 ---
 
@@ -22,10 +22,12 @@ ht-degree: 3%
 * [护栏 [!DNL Identity Service] 数据](/help/identity-service/guardrails.md)
 * [护栏 [!DNL Query Service]](/help/query-service/guardrails.md)
 * [通过目标激活数据的护栏](/help/destinations/guardrails.md)
+* [Real-Time CDP B2B的护栏](/help/rtcdp/b2b-guardrails.md)
 
 >[!TIP]
 >
->此外，请参阅 [此页面](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) 有关其他Experience Platform应用程序（例如）的护栏的信息 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans) 和 [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)、和 [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+>此外，访问 [数字体验Blueprint](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) 以了解更多信息，例如 [端到端延迟图](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) 用于各种Experience Platform服务。
+
 
 ## 护栏类型 {#guardrail-types}
 
@@ -46,6 +48,13 @@ ht-degree: 3%
 * [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform （B2P版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform （B2B版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+
+## 用于其他Experience Platform应用的护栏  {#guardrails-other-aep-apps}
+
+对于其他Experience Platform应用也存在类似的护栏。 有关详细信息，请访问下面的链接：
+
+* [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html?lang=en)
+* [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
 
 ## 后续步骤
 
