@@ -1,10 +1,10 @@
 ---
 title: 帐户详细信息数据类型
-description: 本文档概述帐户详细信息Experience Data Model (XDM)数据类型。
+description: 了解帐户详细信息Experience Data Model (XDM)数据类型。
 exl-id: 17254393-263e-4000-9bd2-815a9e842533
-source-git-commit: 55f86fdd4fd36d21dcbd575d6da83df18abb631d
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '409'
 ht-degree: 5%
 
 ---

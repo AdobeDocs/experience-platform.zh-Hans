@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；预订；预订详细信息；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；保留；保留详细信息；
 title: 预订详细信息架构字段组
-description: 本文档概述了“预订详细信息”架构字段组。
+description: 了解预订详细信息架构字段组。
 exl-id: 06f9ee37-9879-4db2-af68-9336366f7521
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '334'
-ht-degree: 4%
+source-wordcount: '310'
+ht-degree: 5%
 
 ---
 
@@ -33,8 +33,8 @@ ht-degree: 4%
 | `modificationDate` | 日期时间 | 上次修改预订的时间。 |
 | `numberOfAdults` | 整数 | 与预订关联的成人数量。 |
 | `numberOfChildren` | 整数 | 与预订关联的子项数。 |
-| `purpose` | 字符串 | 预订的目的，通常为商业或个人目的。 |
-| `startDate` | 日期时间 | 预订的开始搭乘、离境或登记日期。 |
+| `purpose` | 字符串 | 预订的目的，通常是商业目的或个人目的。 |
+| `startDate` | 日期时间 | 预订的开始接送、出站或登记日期。 |
 | `triptype` | 字符串 | 指示预订是单程旅行、往返还是多城市旅行。 |
 
 {style="table-layout:auto"}

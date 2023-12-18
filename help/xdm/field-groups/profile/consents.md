@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: 同意和偏好设置架构字段组
-description: 本文档提供了同意和偏好设置架构字段组的概述。
+description: 了解同意和偏好设置架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '933'
 ht-degree: 0%
 
 ---

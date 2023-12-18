@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；预订；就餐；
 title: 餐饮预订架构字段组
-description: 本文档概述了“餐饮预订”模式字段组。
+description: 了解“餐饮预订”架构字段组。
 exl-id: 672b7a77-c433-4502-a1ad-a17c811b253e
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '435'
 ht-degree: 5%
 
 ---
@@ -18,17 +18,17 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->本文档介绍 `diningReservations` 数组。 有关 `reservations` 物件，请参阅 [[!UICONTROL 预订详细信息] 字段组引用](./reservation-details.md).
+>本文档介绍 `diningReservations` 数组。 有关 `reservations` 对象，请参阅 [[!UICONTROL 预订详细信息] 字段组引用](./reservation-details.md).
 
 ![餐饮预订结构](../../images/field-groups/dining-reservation/structure.png)
 
 ## `diningReservations`
 
-`diningReservations` 是一个对象数组，表示餐饮预订列表。 例如，如果预订事件涉及在一天中的不同时间在多个不同餐厅进行预订，则这些预订可列为 `diningReservations` 就为了一个事件。
+`diningReservations` 是一个对象数组，表示餐饮预订列表。 例如，如果预订事件涉及在一天中的不同时间在多个不同的餐厅进行预订，则这些预订可作为 `diningReservations` 就为了一个事件。
 
 下面提供的每个对象的结构 `diningReservations` 具体内容如下。
 
-![diningReservations结构](../../images/field-groups/dining-reservation/diningReservations.png)
+![dingReservations结构](../../images/field-groups/dining-reservation/diningReservations.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -36,9 +36,9 @@ ht-degree: 5%
 | `cancellation` | 整数 | 此值在取消预订后捕获。 |
 | `confirmationNumber` | 字符串 | 预订确认号或标识符。 |
 | `created` | 整数 | 此值在创建预订后捕获。 |
-| `cuisine` | 整数 | 餐厅菜肴的类型。 |
+| `cuisine` | 整数 | 餐厅的菜肴类型。 |
 | `currencyCode` | 字符串 | 用于进行购买的ISO 4217货币代码。 |
-| `deliveryPartners` | 字符串 | 餐厅提供外卖合作伙伴。 |
+| `deliveryPartners` | 字符串 | 餐厅可提供外卖合作伙伴。 |
 | `diningOptions` | 字符串 | 餐厅提供外送和用餐选择。 |
 | `groupReservation` | 布尔值 | 指示是否为团体进行预订。 |
 | `length` | 整数 | 预订的总天数。 |
@@ -50,11 +50,11 @@ ht-degree: 5%
 | `numberOfRooms` | 整数 | 与预订关联的房间数。 |
 | `partySize` | 整数 | 就餐人数。 |
 | `priceCategory` | 字符串 | 正在进行预订的价格类别。 |
-| `purpose` | 字符串 | 预订的目的，通常为商业或个人目的。 |
+| `purpose` | 字符串 | 预订的目的，通常是商业目的或个人目的。 |
 | `reservationTime` | 日期时间 | 预订餐饮的时间。 |
 | `restaurantID` | 字符串 | 餐厅或就餐位置的标识符。 |
 | `reservationStatus` | 字符串 | 预订的状态。 |
-| `specialOccasion` | 布尔值 | 指示是否针对特殊场合进行预订。 |
+| `specialOccasion` | 布尔值 | 指示预订是否为特殊场合所做。 |
 | `status` | 整数 | 餐饮预订的状态。 |
 
 {style="table-layout:auto"}

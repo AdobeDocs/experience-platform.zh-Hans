@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；POI；POI详细信息；目标点；目标点详细信息；数据类型；数据类型；
 solution: Experience Platform
 title: 兴趣点详细信息数据类型
-description: 本文档概述了兴趣点详细信息XDM数据类型。
+description: 了解兴趣点详细信息XDM数据类型。
 exl-id: cab5463b-97a0-400d-a00c-0cd8bf9301a5
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 3%
+source-wordcount: '180'
+ht-degree: 5%
 
 ---
 
@@ -19,8 +19,8 @@ ht-degree: 3%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `beaconInteractionDetails` | [[!UICONTROL Beacon]](./beacon.md) | 描述适用于POI交互的信标详细信息。 |
-| `geoInteractionDetails` | [[!UICONTROL 地理交互详细信息]](./geo-interaction-details.md) | 描述适用于POI交互的地理详细信息。 |
+| `beaconInteractionDetails` | [[!UICONTROL 信标]](./beacon.md) | 描述适用于POI交互的信标详细信息。 |
+| `geoInteractionDetails` | [[!UICONTROL 地理位置交互详细信息]](./geo-interaction-details.md) | 描述适用于POI交互的地理详细信息。 |
 | `category` | 字符串 | 由POI定义管理员分配的用于组织POI的一般类别。 |
 | `distanceToPOICenter` | 双精度 | 与POI中心的估计距离（以米为单位）。 |
 | `locatingType` | 字符串 | 用于确定位置的机制。 接受的值包括： <ul><li>`beacon`</li><li>`gps`</li><li>`ip`</li><li>`ip+wifi`</li><li>`wifi-triangulation`</li></ul> |

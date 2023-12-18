@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；Web交互；数据类型；数据类型；
 solution: Experience Platform
 title: Web交互数据类型
-description: 本文档概述了Web交互Experience Data Model (XDM)数据类型。
+description: 了解Web交互Experience Data Model (XDM)数据类型。
 exl-id: 772d96c5-9fa3-4fed-8b38-16b8e7101743
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '187'
-ht-degree: 2%
+source-wordcount: '164'
+ht-degree: 4%
 
 ---
 
 # [!UICONTROL Web交互] 数据类型
 
-[!UICONTROL Web交互] 是一个标准的体验数据模型(XDM)数据类型，用于描述有关在初始页面加载完成后在网页上发生的交互的信息。 它用于在富Web应用程序(如单页Web应用程序(SPA))中记录不会触发新页面加载的交互。
+[!UICONTROL Web交互] 是一个标准的体验数据模型(XDM)数据类型，用于描述初始页面加载完成后在网页上发生的交互信息。 它用于记录富Web应用程序(例如单页Web应用程序(SPA))中不会触发新页面加载的交互。
 
 <img src="../images/data-types/web-interaction.PNG" width="500" /><br />
 

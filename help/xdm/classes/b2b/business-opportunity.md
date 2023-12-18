@@ -1,10 +1,10 @@
 ---
-title: XDM商业机会类别
-description: 本文档概述了Experience Data Model (XDM)中的XDM Business Opportunity类。
+title: XDM业务机会类别
+description: 了解Experience Data Model (XDM)中的XDM商业机会类。
 exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '309'
 ht-degree: 3%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此类供有权访问的组织使用 [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必须有权访问Real-Time CDP B2B版本，此类才能参与 [Real-time Customer Profile](../../../profile/home.md).
+>此类由具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必须有权访问Real-Time CDP B2B版本，此类才能参与 [Real-time Customer Profile](../../../profile/home.md).
 
 [!UICONTROL XDM商业机会] 是一个标准体验数据模型(XDM)类，可捕获业务机会的最低要求属性。
 
-![XDM Business Opportunity类的结构（显示在UI中）](../../images/classes/b2b/business-opportunity.png)
+![显示在UI中的XDM业务机会类的结构](../../images/classes/b2b/business-opportunity.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ ht-degree: 3%
 | `opportunityKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 机会实体的复合标识符。 |
 | `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与 `opportunityID`. |
 | `accountID` | 字符串 | 与此机会关联的帐户的唯一ID。 |
-| `isDeleted` | 布尔值 | 指示是否已在Marketo Engage中删除此营销列表实体。<br><br>使用时 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户档案中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` 到 `true`，则可在查询数据湖时，使用字段过滤出已从源中删除的记录。 |
+| `isDeleted` | 布尔值 | 指示此营销列表实体是否已在Marketo Engage中删除。<br><br>使用时 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户档案中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` 到 `true`中，您可以使用字段在查询数据湖时筛选出已从源中删除的记录。 |
 | `opportunityDescription` | 字符串 | 机会的描述。 |
 | `opportunityID` | 字符串 | 机会实体的唯一ID。 |
 | `opportunityName` | 字符串 | 机会的名称。 |

@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地域；地理形状；数据类型；数据类型；
 solution: Experience Platform
 title: 地理形状数据类型
-description: 本文档概述了地理形状XDM数据类型。
+description: 了解地理形状XDM数据类型。
 exl-id: 50b9d783-a555-45eb-b154-7dc71389e224
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '250'
-ht-degree: 2%
+source-wordcount: '238'
+ht-degree: 3%
 
 ---
 

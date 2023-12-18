@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；网页详细信息；数据类型；数据类型；网页
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；网页详细信息；数据类型；数据类型；数据类型；网页
 solution: Experience Platform
 title: Web信息数据类型
-description: 本文档概述了Web信息体验数据模型(XDM)数据类型。
+description: 了解Web信息Experience Data Model (XDM)数据类型。
 exl-id: bfb00835-5908-4baf-af2a-6d845710e340
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '187'
-ht-degree: 1%
+source-wordcount: '166'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 1%
 | --- | --- | --- |
 | `webInteraction` | [[!UICONTROL Web交互]](./web-interaction.md) | 描述与交互相对应的Web链接或URL的详细信息。 |
 | `webPageDetails` | [[!UICONTROL 网页详细信息]](./webpage-details.md) | 描述有关发生Web交互的网页的详细信息。 |
-| `webReferrer` | [!UICONTROL 对象] | 描述Web交互的反向链接，即在记录当前Web交互之前访客所在的URL。 包含以下子属性： <ul><li>`URL`：反向链接URL。</li><li>`type`：反向链接类型。</li></ul> |
+| `webReferrer` | [!UICONTROL 对象] | 描述Web交互的反向链接，即在记录当前Web交互之前，访客所使用的URL。 包含以下子属性： <ul><li>`URL`：反向链接URL。</li><li>`type`：反向链接类型。</li></ul> |
 
 {style="table-layout:auto"}
 

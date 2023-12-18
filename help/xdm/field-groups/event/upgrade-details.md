@@ -1,11 +1,11 @@
 ---
 title: 升级详细信息架构字段组
-description: 本文档概述了“升级详细信息”架构字段组。
+description: 了解升级详细信息架构字段组。
 exl-id: cd3f4cd9-ee0e-4bdf-a630-dd2c3c3cc8c7
-source-git-commit: afdac5ce2ed967b4688d456a586c946bc2cf4179
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 1%
+source-wordcount: '126'
+ht-degree: 3%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `upgradeImpressions` | 数组 [展示次数](../../data-types/impressions.md) | 一个阵列，列出客户的录制展示（数字视图或升级选件的参与）。 |
+| `upgradeImpressions` | 数组 [展示次数](../../data-types/impressions.md) | 一个数组，列出了客户录制的展示（数字视图或与升级选件的互动）。 |
 | `upgradeTransaction` | [交易](../../data-types/transaction.md) | 描述升级的货币交易记录。 |
 
 {style="table-layout:auto"}

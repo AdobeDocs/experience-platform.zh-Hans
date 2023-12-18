@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；架构；身份映射；身份映射；架构设计；映射；映射；合并架构；合并
 title: IdentityMap架构字段组
-description: 本文档概述了XDM Individual Profile类。
+description: 了解XDM Individual Profile类。
 exl-id: c9928e85-ef1e-4739-ba1d-80505a9e60c3
-source-git-commit: 43b3b79a4d24fd92c7afbf9ca9c83b0cbf80e2c2
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '139'
 ht-degree: 0%
 
 ---

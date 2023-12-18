@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；设备；数据类型；数据类型；
 solution: Experience Platform
 title: 设备数据类型
-description: 本文档提供了设备XDM数据类型的概述。
+description: 了解设备XDM数据类型。
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '326'
-ht-degree: 4%
+source-wordcount: '305'
+ht-degree: 5%
 
 ---
 
 # [!UICONTROL 设备] 数据类型
 
-[!UICONTROL 设备] 是描述已识别设备的标准XDM数据类型。 设备是可以跨会话跟踪的应用程序或浏览器实例，通常通过Cookie进行跟踪。
+[!UICONTROL 设备] 是描述已识别设备的标准XDM数据类型。 设备是通常可通过Cookie跨会话跟踪的应用程序或浏览器实例。
 
 <img src="../images/data-types/device.png" width="450" /><br />
 
@@ -21,7 +21,7 @@ ht-degree: 4%
 | --- | --- | --- |
 | `colorDepth` | 整数 | 显示器能够表示的颜色数量。 |
 | `manufacturer` | 字符串 | 负责设备设计和创建的组织的名称。 |
-| `model` | 字符串 | 设备的型号名称。 这是设备的通用、易于用户识别的营销名称。 例如，“iPhone 6S”是一种特殊的手机型号。 |
+| `model` | 字符串 | 设备的型号名称。 这是设备的通用名称、易于用户识别的名称或营销名称。 例如，“iPhone 6S”是一种特殊的手机型号。 |
 | `modelNumber` | 字符串 | 制造商为此设备指定的唯一型号编号。 型号不是版本，而是标识特定型号配置的唯一标识符。 |
 | `screenHeight` | 整数 | 设备在默认方向上的活动显示的垂直像素数。 |
 | `screenOrientation` | 字符串 | 当前屏幕方向。 接受的值包括 `portrait` 和 `landscape`. |
@@ -43,7 +43,7 @@ ht-degree: 4%
 
 ## typeIDService的接受值 {#typeIDService}
 
-下表概述了接受的值 `typeIDService` 及其相关含义：
+下表概述了接受的值 `typeIDService` 以及它们的相关含义：
 
 | 值 | 描述 |
 | --- | --- |

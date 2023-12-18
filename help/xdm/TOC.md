@@ -4,9 +4,9 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
-source-git-commit: 4f819dcbdf67dc0305b397c54de2b1149cff398d
+source-git-commit: f0d437743b33818c27de94eb522227bb950e60cb
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '589'
 ht-degree: 15%
 
 ---
@@ -58,16 +58,20 @@ ht-degree: 15%
       * [医疗保健成员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
+      * [配置文件合作伙伴扩充（示例）](./field-groups/profile/profile-partner-enrichment.md)
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [电信订阅](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
+   * XDM单个潜在客户配置文件 {#prospect-profile}
+      * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
       * [广告详细信息](./field-groups/event/advertising-details.md)
       * [应用程序详细信息](./field-groups/event/application-details.md)
       * [余额转帐](./field-groups/event/balance-transfers.md)
+      * [机器人检测](./field-groups/event/bot-detection-information.md)
       * [营销活动详细信息](./field-groups/event/campaign-marketing-details.md)
       * [信息卡操作](./field-groups/event/card-actions.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
@@ -105,14 +109,18 @@ ht-degree: 15%
 * 数据类型 {#data-types}
    * [帐户详细信息](./data-types/account-details.md)
    * [广告时间](./data-types/ad-break.md)
+   * [地址](./data-types/address.md)
    * [广告详细信息](./data-types/advertising-details-information.md)
    * [广告面板详细信息](./data-types/advertising-pod-details-information.md)
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [B2B源](./data-types/b2b-source.md)
+   * [购物车](./data-types/cart.md)
+   * [类别数据](./data-types/category-data.md)
    * [章节详细信息](./data-types/chapter-details-information.md)
    * [Commerce](./data-types/commerce.md)
+   * [商业范围](./data-types/commerce-scope.md)
    * [同意字符串](./data-types/consent-string.md)
    * [同意和偏好设置](./data-types/consents.md)
    * [货币](./data-types/currency.md)
@@ -153,9 +161,14 @@ ht-degree: 15%
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
    * [产品列表项](./data-types/product-list-item.md)
+   * [退款项目](./data-types/refund-item.md)
+   * [申请列表](./data-types/requisition-list.md)
+   * [返回](./data-types/return.md)
+   * [返回项目](./data-types/return-item.md)
    * [QoE数据详细信息](./data-types/qoe-data-details-information.md)
    * [搜索](./data-types/search.md)
    * [会话详细信息](./data-types/session-details-information.md)
+   * [配送](./data-types/shipping.md)
    * [订阅](./data-types/subscription.md)
    * [电信订阅](./data-types/telecom-subscription.md)
    * [交易](./data-types/transaction.md)

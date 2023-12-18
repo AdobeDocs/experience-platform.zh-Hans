@@ -1,17 +1,17 @@
 ---
 title: 存款详细信息架构字段组
-description: 本文档概述了“存款详细信息”架构字段组。
+description: 了解“存款详细信息”架构字段组。
 exl-id: a40d17b3-cb76-4b63-9328-735fc7c55672
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '109'
-ht-degree: 2%
+source-wordcount: '94'
+ht-degree: 5%
 
 ---
 
 # [!UICONTROL 存款明细] 架构字段组
 
-[!UICONTROL 存款明细] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供一个 `personalFinances.deposits` 架构的字段，用于捕获有关银行存款的详细信息。
+[!UICONTROL 存款明细] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供单个 `personalFinances.deposits` 架构的字段，用于捕获有关银行存款的详细信息。
 
 ![](../../images/field-groups/deposit-details.png)
 

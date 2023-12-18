@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；预订；住宿；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构设计；字段组；字段组；预订；住宿；
 title: 住宿预订架构字段组
-description: 本文档概述了“住宿预订模式”字段组。
+description: 了解住宿预订模式字段组。
 exl-id: f0eafc83-21f1-483d-9397-1133e3777699
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '679'
+source-wordcount: '655'
 ht-degree: 5%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->本文档介绍 `lodgingReservations` 数组。 有关 `reservations` 物件，请参阅 [[!UICONTROL 预订详细信息] 字段组引用](./reservation-details.md).
+>本文档介绍 `lodgingReservations` 数组。 有关 `reservations` 对象，请参阅 [[!UICONTROL 预订详细信息] 字段组引用](./reservation-details.md).
 
 ![住宿预订结构](../../images/field-groups/lodging-reservation/structure.png)
 
 ## `lodgingReservations`
 
-`lodgingReservations` 是一个对象数组，表示住宿预订列表。 例如，如果预订事件涉及在旅行路线上的多个不同酒店的预订，则这些预订可以列为下的单独对象 `lodgingReservations` 就为了一个事件。
+`lodgingReservations` 是一个对象数组，表示住宿预订列表。 例如，如果预订事件涉及旅行路线上的多个不同酒店的预订，则这些预订可作为 `lodgingReservations` 就为了一个事件。
 
 下面提供的每个对象的结构 `lodgingReservations` 具体内容如下。
 
@@ -33,7 +33,7 @@ ht-degree: 5%
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `averageDailyPrice` | [[!UICONTROL 货币]](../../data-types/currency.md) | 酒店房间的平均每日价格。 |
-| `lodgingCheckIn` | 对象 | 描述住宿登记详细信息的对象。 包括以下值：<ul><li>`digitalKey`：（整数）指示访客何时在签入时选择使用数字密钥。</li><li>`earlyCheckInRequested`：（整数）指示访客何时请求比正常签入时间更早签入。</li><li>`lateCheckInRequested`：（整数）指示访客请求签入的时间晚于正常签入时间（以小时为单位）。</li><li>`noRoomCheckIn`：（整数）当访客完成签入且此时没有可用房间时，将捕获此值。</li><li>`oneRoomCheckIn`：（整数）此时只有一个可用房间时，当访客完成签入时捕获此值。</li><li>`roomKeys`：（整数）入住时提供的标准房间钥匙数。</li><li>`userSelectedRoom`：（布尔值）指示访客是否在登记入住时选择了他们的房间。</li></ul> |
+| `lodgingCheckIn` | 对象 | 描述住宿登记详细信息的对象。 包括以下值：<ul><li>`digitalKey`：（整数）指示访客在签入时何时选择使用数字密钥。</li><li>`earlyCheckInRequested`：（整数）指示访客何时请求比正常签入时间更早签入。</li><li>`lateCheckInRequested`：（整数）指示访客请求签入的时间晚于正常签入时间（以小时为单位）。</li><li>`noRoomCheckIn`：（整数）当访客完成签入且此时没有可用房间时，将捕获此值。</li><li>`oneRoomCheckIn`：（整数）当来宾完成签入时且当时只有一个房间可用时，将捕获此值。</li><li>`roomKeys`：（整数）登记入住时提供的标准房间钥匙数量。</li><li>`userSelectedRoom`：（布尔值）指示访客是否在登记入住时选择了他们的房间。</li></ul> |
 | `rackrate` | [[!UICONTROL 货币]](../../data-types/currency.md) | 未经事先预订安排的当天预订费用。 |
 | `ID` | 字符串 | 预订编号或标识符。 |
 | `agentID` | 字符串 | 与酒店预订关联的代理ID。 |
@@ -58,9 +58,9 @@ ht-degree: 5%
 | `numberOfRooms` | 整数 | 与预订关联的房间数。 |
 | `propertyID` | 字符串 | 预订的酒店或度假村的标识符。 |
 | `propertyName` | 字符串 | 预订的酒店或度假村的名称。 |
-| `purpose` | 字符串 | 预订的目的，通常为商业或个人目的。 |
+| `purpose` | 字符串 | 预订的目的，通常是商业目的或个人目的。 |
 | `ratePlan` | 字符串 | 房间出售的价格。 |
-| `refundable` | 布尔值 | 指示文件室是否可退款。 |
+| `refundable` | 布尔值 | 指示房间是否可退款。 |
 | `reservationStatus` | 字符串 | 预订的状态。 |
 | `roomAccessibilityType` | 字符串 | 房间的无障碍类型，例如移动性、听力或其他。 |
 | `roomCapacity` | 整数 | 酒店房间容纳的人数。 |

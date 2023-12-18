@@ -1,11 +1,11 @@
 ---
 title: 产品目录架构字段组
-description: 本文档概述了“产品目录”架构字段组。
+description: 了解产品目录架构字段组。
 exl-id: 91971a0c-a93a-4032-a2f2-0a99e4940bac
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '84'
-ht-degree: 4%
+source-wordcount: '70'
+ht-degree: 8%
 
 ---
 

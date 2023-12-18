@@ -1,11 +1,11 @@
 ---
 title: Adobe Analytics ExperienceEvent完整扩展架构字段组
-description: 本文档概述了Adobe Analytics ExperienceEvent完整扩展架构字段组。
+description: 了解Adobe Analytics ExperienceEvent完整扩展架构字段组。
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '888'
-ht-degree: 9%
+source-wordcount: '811'
+ht-degree: 5%
 
 ---
 

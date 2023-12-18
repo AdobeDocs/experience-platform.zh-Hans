@@ -1,11 +1,11 @@
 ---
 title: XDM商业营销活动类
-description: 本文档概述了Experience Data Model (XDM)中的XDM Business Campaign类。
+description: 了解Experience Data Model (XDM)中的XDM商业营销活动类。
 exl-id: 4e3228a1-74be-43af-b355-45d84afb1611
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '237'
-ht-degree: 2%
+source-wordcount: '228'
+ht-degree: 3%
 
 ---
 
@@ -13,11 +13,11 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此类供有权访问的组织使用 [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必须有权访问Real-Time CDP B2B版本，此类才能参与 [Real-time Customer Profile](../../../profile/home.md).
+>此类由具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版本](../../../rtcdp/b2b-overview.md). 您必须有权访问Real-Time CDP B2B版本，此类才能参与 [Real-time Customer Profile](../../../profile/home.md).
 
 [!UICONTROL XDM商业营销活动] 是一个标准体验数据模型(XDM)类，可捕获商业营销活动的最低要求属性。
 
-![XDM商业营销活动类的结构，如UI中所示](../../images/classes/b2b/business-campaign.png)
+![显示在UI中的XDM商业营销活动类的结构](../../images/classes/b2b/business-campaign.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |

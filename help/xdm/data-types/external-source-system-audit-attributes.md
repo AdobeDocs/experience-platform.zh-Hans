@@ -1,11 +1,11 @@
 ---
 title: 外部源系统审计属性数据类型
-description: 本文档概述外部源系统审核属性Experience Data Model (XDM)数据类型。
+description: 了解外部源系统审核属性Experience Data Model (XDM)数据类型。
 exl-id: ebdd8707-9675-4232-a5b7-4e4a481d706a
-source-git-commit: a7e6ebfe09566e6e027b13efc95dda97ff8f0315
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '192'
-ht-degree: 15%
+source-wordcount: '168'
+ht-degree: 17%
 
 ---
 

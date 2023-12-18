@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；POI；交互；兴趣点；兴趣点；数据类型；数据类型；
 solution: Experience Platform
 title: 兴趣点交互数据类型
-description: 本文档概述兴趣点交互XDM数据类型。
+description: 了解兴趣点交互XDM数据类型。
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '185'
-ht-degree: 2%
+source-wordcount: '162'
+ht-degree: 3%
 
 ---
 

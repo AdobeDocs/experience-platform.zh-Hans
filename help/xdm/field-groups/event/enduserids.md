@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；enduserids；最终用户；ID；
 solution: Experience Platform
 title: 最终用户ID详细信息架构字段组
-description: 本文档概述了“最终用户ID详细信息”架构字段组。
+description: 了解最终用户ID详细信息架构字段组。
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '223'
-ht-degree: 4%
+source-wordcount: '200'
+ht-degree: 14%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL 最终用户ID详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述跨多个Adobe应用程序的个人身份信息。 字段组提供根级别 `endUserIDs` 对象，其本身包含只读 `_experience` 字段，其值会在摄取数据时自动更新。
+[!UICONTROL 最终用户ID详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于跨多个Adobe应用程序描述个人的身份信息。 字段组提供根级别 `endUserIDs` 对象，其本身包含只读 `_experience` 其值会在摄取数据时自动更新的字段。
 
 <img src="../../images/field-groups/enduserids.png" width="700" /><br />
 
@@ -28,8 +28,8 @@ ht-degree: 4%
 | `aaid` | [标识](../../data-types/identity.md) | Adobe Analytics Cloud的最终用户ID。 |
 | `acid` | [标识](../../data-types/identity.md) | Adobe Campaign的最终用户ID。 |
 | `adcloud` | [标识](../../data-types/identity.md) | Adobe Advertising Cloud的最终用户ID。 |
-| `emailid` | [标识](../../data-types/identity.md) | 电子邮件地址ID |
-| `mcid` | [标识](../../data-types/identity.md) | Adobe Marketing Cloud ID (MCID)。 MCID现在称为Experience CloudID (ECID)。 |
+| `emailid` | [标识](../../data-types/identity.md) | 电子邮件地址ID。 |
+| `mcid` | [标识](../../data-types/identity.md) | Adobe Marketing Cloud ID (MCID)。MCID 现在称为 Experience Cloud ID (ECID)。 |
 | `phonenumberid` | [标识](../../data-types/identity.md) | 电话号码ID |
 | `tntid` | [标识](../../data-types/identity.md) | Adobe Target的最终用户ID。 |
 

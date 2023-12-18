@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；身份；数据类型；数据类型；
 solution: Experience Platform
 title: 身份数据类型
-description: 本文档概述了Identity XDM数据类型。
+description: 了解Identity XDM数据类型。
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '283'
+source-wordcount: '262'
 ht-degree: 4%
 
 ---

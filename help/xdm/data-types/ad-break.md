@@ -1,17 +1,17 @@
 ---
 title: 广告时间数据类型
-description: 本文档概述了广告时间体验数据模型(XDM)数据类型。
+description: 了解广告时间体验数据模型(XDM)数据类型。
 exl-id: dfe0c386-8459-440d-95b5-b2139fac0fc3
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '125'
-ht-degree: 4%
+source-wordcount: '102'
+ht-degree: 6%
 
 ---
 
 # [!UICONTROL 广告时间] 数据类型
 
-[!UICONTROL 广告时间] 是一个标准的体验数据模型(XDM)数据类型，它描述如何将定时广告插入定时媒体中。
+[!UICONTROL 广告时间] 是一种标准的体验数据模型(XDM)数据类型，描述如何将定时广告插入定时媒体中。
 
 ![数据类型结构](../images/data-types/ad-break.png)
 

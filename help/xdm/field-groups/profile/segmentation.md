@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: 区段成员资格详细信息架构字段组
-description: 本文档概述了“区段成员资格详细信息”架构字段组。
+description: 了解“区段成员资格详细信息”架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '398'
 ht-degree: 1%
 
 ---

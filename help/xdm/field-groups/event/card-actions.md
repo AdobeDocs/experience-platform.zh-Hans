@@ -1,17 +1,17 @@
 ---
 title: 信息卡操作架构字段组
-description: 本文档概述了“卡片操作”架构字段组。
+description: 了解卡片操作架构字段组。
 exl-id: 49851544-9118-4b73-b1d1-4cf49b3f1dee
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '190'
-ht-degree: 6%
+source-wordcount: '176'
+ht-degree: 8%
 
 ---
 
 # [!UICONTROL 信息卡操作] 架构字段组
 
-[!UICONTROL 信息卡操作] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供一个 `personalFinances.cardActions` 架构的字段，用于捕获有关信息卡操作的详细信息，例如信息卡类型、激活状态和锁定状态。
+[!UICONTROL 信息卡操作] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 字段组提供单个 `personalFinances.cardActions` 架构的字段，用于捕获有关信息卡操作的详细信息，例如信息卡类型、激活状态和锁定状态。
 
 ![](../../images/field-groups/card-actions.png)
 
@@ -22,7 +22,7 @@ ht-degree: 6%
 | `cardCancelled` | 整数 | 在取消信息卡后进行跟踪。 |
 | `cardControlsLocked` | 整数 | 在锁定信息卡的控制后进行跟踪。 |
 | `cardControlsUnlocked` | 整数 | 在解锁信息卡的控制后进行跟踪。 |
-| `cardID` | 字符串 | 正在激活的卡的标识符。 该值可能与卡号不同。 |
+| `cardID` | 字符串 | 正在激活的卡的标识符。 此值可能与卡号不同。 |
 | `cardLocked` | 整数 | 在锁定信息卡后进行跟踪。 |
 | `cardOrderNew` | 整数 | 在请求信息卡后进行跟踪。 |
 | `cardOrderType` | 字符串 | 与卡订单事件关联的卡订单类型。 |

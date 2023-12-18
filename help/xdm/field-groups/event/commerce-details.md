@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；
 solution: Experience Platform
 title: 商务详细信息架构字段组
-description: 本文档概述了“商务详细信息”架构字段组。
+description: 了解商务详细信息架构字段组。
 exl-id: 36aba186-fadb-4abb-a94f-7e151ff3f744
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '181'
-ht-degree: 1%
+source-wordcount: '158'
+ht-degree: 3%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 了解更多信息。
+>多个架构字段组的名称已更改。 查看文档 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL 商业详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
+[!UICONTROL 商业详细信息] 是的标准架构字段组 [[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)，用于描述商业数据，如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
 
 ![](../../images/field-groups/commerce-details.png)
 

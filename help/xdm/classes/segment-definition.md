@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: 区段定义类
-description: 本文档概述体验数据模型(XDM)中的区段定义类。
+description: 了解Experience Data Model (XDM)中的“区段定义”类。
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
-source-git-commit: 55f86fdd4fd36d21dcbd575d6da83df18abb631d
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---

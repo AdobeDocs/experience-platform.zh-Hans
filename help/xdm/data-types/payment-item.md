@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；付款项；数据类型；数据类型；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；支付项目；数据类型；数据类型；
 solution: Experience Platform
 title: 付款项目数据类型
-description: 本文档概述了付款项目体验数据模型(XDM)数据类型。
+description: 了解支付项体验数据模型(XDM)数据类型。
 exl-id: d25a358b-73c1-468b-a9c5-808385689932
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '161'
-ht-degree: 5%
+source-wordcount: '139'
+ht-degree: 7%
 
 ---
 
 # [!UICONTROL 付款项目] 数据类型
 
-[!UICONTROL 付款项目] 是一个标准体验数据模型(XDM)数据类型，它描述了与订单关联的付款，定义了付款类型、金额和相关联的货币。
+[!UICONTROL 付款项目] 是一个标准的体验数据模型(XDM)数据类型，它描述了与订单关联的付款，从而定义了付款类型、金额和相关联的货币。
 
 <img src="../images/data-types/payment-item.PNG" width="400" /><br />
 

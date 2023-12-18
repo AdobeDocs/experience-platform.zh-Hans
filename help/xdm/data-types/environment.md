@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；环境；数据类型；数据类型；
 solution: Experience Platform
 title: 环境数据类型
-description: 本文档提供了环境XDM数据类型的概述。
+description: 了解环境XDM数据类型。
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '465'
-ht-degree: 4%
+source-wordcount: '440'
+ht-degree: 5%
 
 ---
 
 # [!UICONTROL 环境] 数据类型
 
-[!UICONTROL 环境] 是一种标准XDM数据类型，用于描述观察到的事件的周围环境，尤其详细说明网络和软件版本等临时信息。
+[!UICONTROL 环境] 是一种标准XDM数据类型，用于描述观察到的事件的周围环境，尤其会详细说明网络和软件版本等临时信息。
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ ht-degree: 4%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `_dc` | 对象 | 包含单个字段的对象， `language`，表示用于表示用户对于数据表示的语言、地理或文化偏好的环境语言。 语言是在中定义的语言代码中指定的 [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
+| `_dc` | 对象 | 包含单个字段的对象， `language`，表示用于表示用户对数据表示的语言、地理或文化偏好设置的环境语言。 语言是在中定义的语言代码中指定的 [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
 | `browserDetails` | [浏览器详细信息](./browser-details.md) | 描述特定于浏览器的环境详细信息，如浏览器名称、版本、JavaScript版本、用户代理字符串和接受语言。 |
 | `ISP` | 字符串 | 用户的Internet服务提供商的名称。 |
 | `carrier` | 字符串 | 向用户销售和交付通信服务的移动网络运营商或MNO（也称为无线服务提供商、无线运营商、蜂窝公司或移动网络运营商）的名称。 |
@@ -52,7 +52,7 @@ ht-degree: 4%
 
 ## 类型的接受值 {#type}
 
-下表概述了接受的值 `type` 及其相关含义：
+下表概述了接受的值 `type` 以及它们的相关含义：
 
 | 值 | 描述 |
 | --- | --- |

@@ -1,11 +1,11 @@
 ---
 title: 提供程序类
-description: 本文档概述了Experience Data Model (XDM)中的Provider类。
+description: 了解Experience Data Model (XDM)中的Provider类。
 exl-id: acb9b8a3-f911-49c5-9d2a-3a0d6aeebef9
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '150'
-ht-degree: 2%
+source-wordcount: '146'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 2%
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `providerName` | [[!UICONTROL 人员姓名]](../data-types/person-name.md) | 提供程序的名称。 |
-| `_id` | [!UICONTROL 字符串] | 系统为记录生成的唯一字符串标识符。 此字段用于跟踪单个记录的唯一性，防止数据重复，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此不会在数据引入期间向其提供显式值。 但是，如果您愿意，仍然可以选择提供自己的唯一ID值。 |
+| `_id` | [!UICONTROL 字符串] | 系统为记录生成的唯一字符串标识符。 此字段用于跟踪单个记录的唯一性，防止数据重复，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此在数据摄取期间不会向其提供显式值。 但是，如果您愿意，仍然可以选择提供自己的唯一ID值。 |
 | `providerId` | [!UICONTROL 字符串] | 提供商的唯一标识符。 |
 
 {style="table-layout:auto"}

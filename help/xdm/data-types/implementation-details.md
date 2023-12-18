@@ -1,11 +1,11 @@
 ---
 title: 实施详细信息数据类型
-description: 本文档概述了实施详细信息Experience Data Model (XDM)数据类型。
+description: 了解实施详细信息Experience Data Model (XDM)数据类型。
 exl-id: d3d16bae-196b-489d-8590-fd22150eedf1
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 4%
+source-wordcount: '101'
+ht-degree: 6%
 
 ---
 

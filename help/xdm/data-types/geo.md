@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；架构；架构；XDM；字段；架构；架构；地域；数据类型；数据类型；
 solution: Experience Platform
 title: 地理数据类型
-description: 本文档提供了地域XDM数据类型的概述。
+description: 了解地域XDM数据类型。
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '199'
-ht-degree: 4%
+source-wordcount: '174'
+ht-degree: 6%
 
 ---
 
@@ -22,10 +22,10 @@ ht-degree: 4%
 | `_schema` | [[!UICONTROL 地理坐标]](./geo-coordinates.md) | 描述位置的地理坐标。 |
 | `_id` | 字符串 | 系统生成的唯一坐标ID。 |
 | `city` | 字符串 | 城市的名称。 |
-| `countryCode` | 字符串 | 两个字符 <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> 国家/地区的代码。 |
+| `countryCode` | 字符串 | 两个字符 <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> 国家的代码。 |
 | `dmaID` | 整数 | Nielsen媒体研究指定的市场区域。 |
 | `msaID` | 整数 | 美国发生观测的大都市统计区。 |
-| `postalCode` | 字符串 | 位置的邮政编码。 并非所有国家/地区都提供邮政编码。 在一些国家/地区，这仅包含邮政编码的一部分。 |
+| `postalCode` | 字符串 | 位置的邮政编码。 并非所有国家/地区都提供邮政编码。 在一些国家/地区，这将仅包含邮政编码的一部分。 |
 | `stateProvince` | 字符串 | 观察的省/市/自治区部分。 格式遵循 [ISO 3166-2（国家/地区和细分）](https://www.unece.org/cefact/locode/subdivisions.html) 标准。 |
 
 {style="table-layout:auto"}
