@@ -2,9 +2,9 @@
 title: 元转换API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: b11aff782a44237e6e4ae87254163713883e3ded
+source-git-commit: e7d63ff86cdc1718129d0a8e4861b6a8c4631f75
 workflow-type: tm+mt
-source-wordcount: '2595'
+source-wordcount: '2565'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,12 @@ ht-degree: 0%
 >* 已购买Real-Time CDP Prime和Ultimate包的客户可以使用快速入门功能。 请联系您的Adobe代表以获取更多信息。
 >* 此功能适用于全新实施，当前不支持在现有标记和事件转发属性上自动安装扩展和配置。
 
+>[!NOTE]
+>
+>任何现有客户端都可以使用快速入门工作流创建可用于以下项目的参考实施：
+>* 使用它作为全新实施的开始。
+>* 将其用作参考实施，您可以检查该实施，以了解其配置方式，然后将其复制到当前生产实施中。
+
 快速入门功能可帮助您通过元转化API和元像素扩展轻松高效地完成设置。 此工具可自动执行在Adobe标签和事件转发中执行的多个步骤，从而显着缩短设置时间。
 
 此功能会在新自动生成的标记上自动安装和配置元转化API和元像素扩展，并使用必要的规则和数据元素来配置事件转发属性。 此外，它还会自动安装和配置Experience PlatformWeb SDK和数据流。 最后，快速启动功能会自动将库发布到开发环境中的指定URL中，从而支持通过事件转发和Experience Platform边缘网络实时进行客户端数据收集和服务器端事件转发。
@@ -152,7 +158,7 @@ ht-degree: 0%
 
 ![在站点对话框中添加代码](../../../images/extensions/server/meta/add-code-on-your-site.png)
 
-此 [!UICONTROL 验证结果] 对话框显示元扩展实施结果。 选择&#x200B;**[!UICONTROL 下一步]**。您还可以通过选择 **[!UICONTROL Assurance]** 链接。
+此 [!UICONTROL 验证结果] 对话框显示元扩展实施结果。 选择 **[!UICONTROL 下一个]**. 您还可以通过选择 **[!UICONTROL Assurance]** 链接。
 
 ![显示实施结果的测试结果对话框](../../../images/extensions/server/meta/test-results.png)
 
