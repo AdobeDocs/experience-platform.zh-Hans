@@ -2,10 +2,10 @@
 description: 本页介绍了Destination SDK支持的各种OAuth 2授权流程，并提供了有关为目标设置OAuth 2授权的说明。
 title: OAuth 2授权
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 7ba9971b44410e609c64f4dcf956a1976207353e
 workflow-type: tm+mt
-source-wordcount: '2154'
-ht-degree: 4%
+source-wordcount: '2181'
+ht-degree: 3%
 
 ---
 
@@ -33,11 +33,16 @@ Destination SDK支持对目标的多种授权方法。 其中一种是使用 [OA
 
 ### 系统中的先决条件 {#prerequisites}
 
-第一步，您必须在系统中为Adobe Experience Platform创建应用程序，或在系统中注册Experience Platform。 目标是生成客户端ID和客户端密钥，这是验证Experience Platform到您的目标时所必需的。 在您的系统中，作为此配置的一部分，您需要Adobe Experience Platform OAuth 2重定向/回调URL，可从以下列表中获取该URL。
+第一步，您必须在系统中为Adobe Experience Platform创建应用程序，或在系统中注册Experience Platform。 目标是生成客户端ID和客户端密钥，这是验证Experience Platform到您的目标时所必需的。
+
+在您的系统中，作为此配置的一部分，您需要Adobe Experience Platform OAuth 2重定向/回调URL，可从以下列表中获取该URL。
 
 * `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-aus5.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-can2.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-gbr9.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback`
 
 >[!IMPORTANT]
 >
@@ -115,7 +120,7 @@ Experience Platform支持下表中的三个OAuth 2授权类型。 如果您设�
 | `grant` | 字符串 | 使用“OAUTH2_AUTHORIZATION_CODE”。 |
 | `accessTokenUrl` | 字符串 | 您这边的URL，用于发出访问令牌并（可选）刷新令牌。 |
 | `authorizationUrl` | 字符串 | 授权服务器的URL，您可以在其中将用户重定向到您的应用程序。 |
-| `refreshTokenUrl` | 字符串 | *可选.* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
+| `refreshTokenUrl` | 字符串 | *可选。* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
 | `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
@@ -200,7 +205,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 | `authType` | 字符串 | 使用“OAUTH2”。 |
 | `grant` | 字符串 | 使用“OAUTH2_CLIENT_CREDENTIALS”。 |
 | `accessTokenUrl` | 字符串 | 授权服务器的URL，它会颁发一个访问令牌和一个可选的刷新令牌。 |
-| `refreshTokenUrl` | 字符串 | *可选.* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
+| `refreshTokenUrl` | 字符串 | *可选。* 您这边的URL，会发出刷新令牌问题。 通常， `refreshTokenUrl` 与 `accessTokenUrl`. |
 | `clientId` | 字符串 | 系统分配给Adobe Experience Platform的客户端ID。 |
 | `clientSecret` | 字符串 | 系统分配给Adobe Experience Platform的客户端密码。 |
 | `scope` | 字符串列表 | *可选*. 设置访问令牌允许Experience Platform对您的资源执行的范围。 示例：“read， write”。 |
@@ -362,7 +367,7 @@ Adobe使用以下标准输入来简化目标配置，并能够覆盖值：
 | `authenticationDataFields.isRequired` | 布尔值 | 指定授权流中是否需要自定义数据字段。 |
 | `authenticationDataFields.format` | 字符串 | 当您选择时 `"format":"password"`，Adobe会加密授权数据字段的值。 使用时 `"fieldType": "CUSTOMER"`时，这也会在用户键入字段时隐藏UI中的输入。 |
 | `authenticationDataFields.fieldType` | 字符串 | 指示当合作伙伴（您）在Experience Platform中设置您的目标时，输入是来自合作伙伴还是用户。 |
-| `authenticationDataFields.value` | 字符串. 布尔值. 整数 | 自定义数据字段的值。 值与从中选择的类型匹配 `authenticationDataFields.type`. |
+| `authenticationDataFields.value` | 字符串。 布尔型。 整数 | 自定义数据字段的值。 值与从中选择的类型匹配 `authenticationDataFields.type`. |
 | `authenticationDataFields.authenticationResponsePath` | 字符串 | 指示您正在引用API响应路径中的哪个字段。 |
 
 {style="table-layout:auto"}
