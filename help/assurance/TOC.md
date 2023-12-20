@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Assurance
 breadcrumb-title: Assurance 指南
 user-guide-description: Adobe Experience Platform Assurance 可帮助您检查、证明、模拟和验证您在移动应用程序中收集数据或提供体验的方式。
 feature: Assurance
-source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+source-git-commit: f707554ea89731fbd3f013d6065fde27ba7fa811
 workflow-type: tm+mt
-source-wordcount: '65'
-ht-degree: 100%
+source-wordcount: '69'
+ht-degree: 94%
 
 ---
 
@@ -25,6 +25,7 @@ ht-degree: 100%
    - [推送调试视图](./views/push-debug-view.md)
    - [验证总结](./views/validation-summary.md)
    - [Adobe Analytics](./views/adobe-analytics.md)
+   - [Analytics Events 2.0（测试版）](./views/adobe-analytics-edge.md)
    - [Adobe Analytics Streaming Media](./views/adobe-analytics-streaming-media.md)
 - 教程 {#tutorials}
    - [实施 Assurance](./tutorials/implement-assurance.md)
