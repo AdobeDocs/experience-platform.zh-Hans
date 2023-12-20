@@ -4,10 +4,10 @@ title: 许可证使用情况仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: fc0cb582d74f5ab52410991f65aa14ba05df3f97
+source-git-commit: e80577cb190e77624a2dc32f8343fc4b82a24a03
 workflow-type: tm+mt
-source-wordcount: '2027'
-ht-degree: 4%
+source-wordcount: '2108'
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,14 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
 >title="许可证使用情况仪表板"
->abstract="通过许可证使用情况仪表板，可了解已购买的 Adobe Experience Platform 产品。仪表板概述显示产品的主要量度，包括每个主要量度的使用情况以及合同规定的许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙盒中每个产品的量度细分。"
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseUsage_prediction"
+>title="许可证使用情况仪表板"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙盒中每个产品的量度细分。<br>使用预测每月月底更新，并预测未来六个月的使用情况。 要减少使用，请为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="数据集过期时间"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据过期"
 
 您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
@@ -46,7 +53,7 @@ ht-degree: 4%
 
 ![许可证使用情况仪表板概述选项卡，左侧导航侧边栏中突出显示了许可证使用情况。](../images/license-usage/dashboard-overview.png)
 
-## [!UICONTROL Overview 选项卡] {#overview-tab}
+## [!UICONTROL 概述] 选项卡 {#overview-tab}
 
 此仪表板以表格式显示您的所有许可Adobe Experience Platform产品，包括加载项。 该表提供了有关所有可用配置文件中许可证使用情况的关键信息。
 
@@ -56,7 +63,7 @@ ht-degree: 4%
 | **[!UICONTROL 主要指标]** | 用于在内跟踪该产品的主要量度。 |
 | **[!UICONTROL 许可证金额]** | 产品许可协议中约定的主要量度最大量的约定值。 |
 | **[!UICONTROL 用法]** | 您使用的主要量度的数量。 此值提供该量度在所有沙盒（生产沙盒或开发沙盒）中的总使用情况。 |
-| **[!UICONTROL 用法 %]** | 根据您的许可证数量使用的主要量度的百分比。 |
+| **[!UICONTROL 使用率%]** | 根据您的许可证数量使用的主要量度的百分比。 |
 
 >[!NOTE]
 >
