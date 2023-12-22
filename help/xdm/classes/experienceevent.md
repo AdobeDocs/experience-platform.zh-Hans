@@ -4,22 +4,22 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
 workflow-type: tm+mt
-source-wordcount: '2659'
+source-wordcount: '2656'
 ht-degree: 1%
 
 ---
 
 # [!DNL XDM ExperienceEvent] 类
 
-[!DNL XDM ExperienceEvent] 是一个标准Experience Data Model (XDM)类，它允许您在发生特定事件或达到一组特定条件时，创建系统的带时间戳的快照。
+[!DNL XDM ExperienceEvent] 是一个标准的体验数据模型(XDM)类。 此类用于在发生特定事件或达到特定条件集时创建带时间戳的系统快照。
 
 体验事件是所发生事件的事实记录，包括时间点和所涉及人员的身份。 事件可以是显式的（直接可观察的人类行为）或隐式的（在没有直接人类行为的情况下引发），并且无需聚合或解释即可记录。 有关此类在平台生态系统中使用的更多高级信息，请参阅 [XDM概述](../home.md#data-behaviors).
 
-此 [!DNL XDM ExperienceEvent] 类本身为架构提供了多个与时间序列相关的字段。 其中两个字段(`_id` 和 `timestamp`)为 **必填** 对于所有基于类的架构，而其余架构是可选的。 在摄取数据时，会自动填充某些字段的值。
+此 [!DNL XDM ExperienceEvent] 类本身为架构提供了多个与时间序列相关的字段。 其中两个字段(`_id` 和 `timestamp`)为 **必填** 对于所有基于此类的架构，而其余架构是可选的。 在摄取数据时，会自动填充某些字段的值。
 
-![Platform UI中显示的XDM ExperienceEvent的结构](../images/classes/experienceevent/structure.png)
+![Platform UI中显示的XDM ExperienceEvent的结构。](../images/classes/experienceevent/structure.png)
 
 | 属性 | 描述 |
 | --- | --- |
@@ -27,7 +27,7 @@ ht-degree: 1%
 | `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，这表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值提供在 [附录部分](#eventType)，包括目标用例的描述。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType` 限制您只能对应用程序上的每次点击使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关更多信息，请参阅以下部分： [计算字段的最佳实践](#calculated). |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>此属性的某些建议值请参见 [附录部分](#producedBy). 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
-| `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 为了正确使用此字段 [Real-time Customer Profile](../../profile/home.md)中，请勿尝试在数据操作中手动更新字段内容。<br /><br />请参阅中有关身份映射的部分 [模式组合基础](../schema/composition.md#identityMap) 以了解有关其用例的更多信息。 |
+| `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 要正确使用此字段，请执行以下操作 [Real-time Customer Profile](../../profile/home.md)中，请勿尝试在数据操作中手动更新字段内容。<br /><br />请参阅中有关身份映射的部分 [模式组合基础](../schema/composition.md#identityMap) 以了解有关其用例的更多信息。 |
 | `timestamp`<br>**（必需）** | 事件发生时间的ISO 8601时间戳，格式如下 [RFC 3339第5.6节](https://datatracker.ietf.org/doc/html/rfc3339). 此时间戳必须发生在过去。 请参阅以下部分： [时间戳](#timestamps) 以获取有关使用此字段的最佳实践。 |
 
 {style="table-layout:auto"}
@@ -50,7 +50,7 @@ ht-degree: 1%
 
 体验应用程序中的某些交互可能会导致技术上共享同一事件时间戳的多个相关事件，因此可以表示为单个事件记录。 例如，如果客户查看了您网站上的产品，这可能会导致事件记录具有两种可能性 `eventType` 值：“产品查看”事件(`commerce.productViews`)或普通“页面查看”事件(`web.webpagedetails.pageViews`)。 在这些情况下，您可以在单次点击中捕获多个事件时，使用计算字段捕获最重要的属性。
 
-[Adobe Experience Platform数据准备](../../data-prep/home.md) 允许您映射、转换和验证XDM中的数据。 使用可用的 [映射函数](../../data-prep/functions.md) 该服务提供了一些逻辑运算符，当数据被摄取到Experience Platform中时，您可以调用这些逻辑运算符来排列数据优先级，转换和/或合并来自多事件记录的数据。 在上面的示例中，您可以指定 `eventType` 作为计算字段，每当“产品查看”与“页面查看”都发生时，都会优先显示该字段。
+使用 [Adobe Experience Platform数据准备](../../data-prep/home.md) 来映射、转换和验证XDM中的数据。 使用可用的 [映射函数](../../data-prep/functions.md) 该服务提供了一些逻辑运算符，当数据被摄取到Experience Platform中时，您可以调用这些逻辑运算符来排列数据优先级，转换和/或合并来自多事件记录的数据。 在上面的示例中，您可以指定 `eventType` 作为计算字段，每当“产品查看”与“页面查看”都发生时，都会优先显示该字段。
 
 如果您是通过UI手动将数据摄取到Platform，请参阅上的指南 [计算字段](../../data-prep/ui/mapping.md#calculated-fields) 有关如何创建计算字段的特定步骤。
 
@@ -140,7 +140,7 @@ Adobe提供了多个标准字段组用于 [!DNL XDM ExperienceEvent] 类。 以�
 | `leadOperation.changeEngagementCampaignCadence` | 此事件会跟踪在营销活动中商机与的参与频率何时发生更改。 |
 | `leadOperation.convertLead` | 此事件跟踪商机何时转化。 |
 | `leadOperation.interestingMoment` | 此事件跟踪何时为人员录制了有趣的时刻。 |
-| `leadOperation.mergeLeads` | 此事件会跟踪来自引用了同一实体的多个潜在客户的信息何时合并。 |
+| `leadOperation.mergeLeads` | 此事件会跟踪来自引用同一实体的多个潜在客户的信息何时合并。 |
 | `leadOperation.newLead` | 此事件会跟踪销售线索的创建时间。 |
 | `leadOperation.scoreChanged` | 此事件跟踪商机的得分属性值何时更改。 |
 | `leadOperation.statusInCampaignProgressionChanged` | 此事件跟踪营销活动中的商机状态何时已更改。 |

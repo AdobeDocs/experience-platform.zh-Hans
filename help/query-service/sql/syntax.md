@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；SQL语法；SQL；CTAS；CTAS；创建表作为选择
 solution: Experience Platform
 title: 查询服务中的SQL语法
-description: 本文档显示了Adobe Experience Platform查询服务支持的SQL语法。
+description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: 42f4d8d7a03173aec703cf9bc7cccafb21df0b69
 workflow-type: tm+mt
-source-wordcount: '4134'
+source-wordcount: '4111'
 ht-degree: 2%
 
 ---
 
 # 查询服务中的SQL语法
 
-Adobe Experience Platform查询服务提供了将标准ANSI SQL用于 `SELECT` 语句和其他有限命令。 本文档介绍了支持的SQL语法。 [!DNL Query Service].
+可以将标准ANSI SQL用于 `SELECT` Adobe Experience Platform语句和其他有限的命令。 本文档介绍了支持的SQL语法。 [!DNL Query Service].
 
 ## 选择查询 {#select-queries}
 
@@ -35,7 +35,11 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ OFFSET start ]
 ```
 
-位置 `from_item` 可以是以下选项之一：
+下面的选项卡部分提供了FROM、GROUP和WITH关键字的可用选项。
+
+>[!BEGINTABS]
+
+>[!TAB `from_item`]
 
 ```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -53,7 +57,7 @@ with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
 ```
 
-和 `grouping_element` 可以是以下选项之一：
+>[!TAB `grouping_element`]
 
 ```sql
 ( )
@@ -79,11 +83,13 @@ CUBE ( { expression | ( expression [, ...] ) } [, ...] )
 GROUPING SETS ( grouping_element [, ...] )
 ```
 
-和 `with_query` 为：
+>[!TAB `with_query`]
 
 ```sql
  with_query_name [ ( column_name [, ...] ) ] AS ( select | values )
 ```
+
+>[!ENDTABS]
 
 以下小节提供了可在查询中使用的附加子句的详细信息，前提是它们遵循上述格式。
 
@@ -113,17 +119,17 @@ SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C
 SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
 ```
 
-请注意 `SNAPSHOT` 子句与表或表别名配合使用，但不在子查询或视图的顶部。 A `SNAPSHOT` 子句将在任何位置a `SELECT` 可对表应用查询。
+A `SNAPSHOT` 子句与表或表别名配合使用，但不在子查询或视图的顶部。 A `SNAPSHOT` 子句适用于任何位置 `SELECT` 可对表应用查询。
 
 此外，您可以使用 `HEAD` 和 `TAIL` 作为快照子句的特殊偏移值。 使用 `HEAD` 是指第一个快照之前的偏移，而 `TAIL` 是指上一个快照之后的偏移。
 
 >[!NOTE]
 >
->如果在两个快照ID之间进行查询，并且启动快照已过期，则可能会出现以下两种情况，具体取决于可选的回退行为标志(`resolve_fallback_snapshot_on_failure`)设置：
+>如果在两个快照ID之间进行查询，如果启动快照已过期且可选的回退行为标志(`resolve_fallback_snapshot_on_failure`)设置：
 >
->- 如果设置了可选的回退行为标志，查询服务将选择最早可用的快照，将其设置为启动快照，并返回最早可用快照与指定结束快照之间的数据。 此数据为 **包含** 最早的可用快照的日志。
+>- 如果设置了可选的回退行为标志，查询服务会选择最早可用的快照，将其设置为开始快照，并返回最早可用快照与指定结束快照之间的数据。 此数据为 **包含** 最早的可用快照的日志。
 >
->- 如果未设置可选的回退行为标记，则将返回错误。
+>- 如果未设置可选的回退行为标记，则会返回错误。
 
 ### WHERE子句
 
@@ -228,7 +234,7 @@ INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 
 >[!INFO]
 > 
-> 此 `SELECT` 语句 **不得** 括在圆括号()中。 此外， `SELECT` 语句必须符合 `INSERT INTO` 语句。 您可以提供 `SNAPSHOT` 子句将增量增量增量读入目标表。
+>Do **非** 随附 `SELECT` 括号()中的语句。 此外，结果的结构描述还可以 `SELECT` 语句必须符合 `INSERT INTO` 语句。 您可以提供 `SNAPSHOT` 子句将增量增量增量读入目标表。
 
 在根级别未找到实际XDM架构中的大多数字段，并且SQL不允许使用点表示法。 要使用嵌套字段获得逼真的结果，您必须映射 `INSERT INTO` 路径。
 
@@ -290,9 +296,9 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则当架构指定时，不会引发异常 **非** 存在。 |
-| `RESTRICT` | 模式的默认值。 如果指定此项，则只有在指定项时，才会删除架构 **不会** 包含任意表。 |
-| `CASCADE` | 如果指定此项，则将删除架构以及架构中存在的所有表。 |
+| `IF EXISTS` | 如果指定此参数且架构指定 **非** 存在，不会引发异常。 |
+| `RESTRICT` | 模式的默认值。 如果指定，则只有在指定时，架构才会丢弃 **非** 包含任意表。 |
+| `CASCADE` | 如果指定，将删除该架构以及该架构中存在的所有表。 |
 
 ## 创建视图
 
@@ -609,7 +615,7 @@ ALTER TABLE t1 ADD PRIMARY KEY (c1) NOT ENFORCED;
 ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 ```
 
-请参阅指南，网址为 [数据资产的逻辑组织](../best-practices/organize-data-assets.md) 有关查询服务最佳实践的更多详细说明。
+请参阅 [数据资产的逻辑组织](../best-practices/organize-data-assets.md) 指南，以了解有关查询服务最佳实践的更详细说明。
 
 ## 表存在
 
@@ -680,7 +686,7 @@ select inline(productListItems) from source_dataset limit 10;
 
 值取自 `source_dataset` 用于填充目标表。
 
-| SKU | _experience（体验） | 数量 | priceTotal |
+| SKU | 体验(_E) | 数量 | priceTotal |
 |---------------------|-----------------------------------|----------|--------------|
 | product-id-1 | (“(”(“(A，pass，B，NULL)”)“)”) | 5 | 10.5 |
 | product-id-5 | (“(”(“（A，通过， B，NULL）”)”)“) |          |              |
@@ -689,7 +695,7 @@ select inline(productListItems) from source_dataset limit 10;
 
 ## [!DNL Spark] SQL命令
 
-下面的子部分介绍了Query Service支持的Spark SQL命令。
+以下子部分介绍了查询服务支持的Spark SQL命令。
 
 ### 设置
 
@@ -754,7 +760,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 
 >[!NOTE]
 >
->此 `Statistics ID` 生成的统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制:<ul><li>数组或映射数据类型不支持生成统计信息</li><li>计算的统计信息为 **非** 跨会话保留。</li></ul><br><br>选项:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，该标记设置为true。 因此，当请求有关不支持的数据类型的统计信息时，它不会出错但会静默跳过具有不支持的数据类型的字段。<br>要在请求有关不受支持数据类型的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`.
+>此 `Statistics ID` 生成的统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制：<ul><li>数组或映射数据类型不支持生成统计信息</li><li>计算的统计信息为 **非** 跨会话保留。</li></ul><br><br>选项：<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，该标记设置为true。 因此，当请求有关不支持的数据类型的统计信息时，它不会出错但会静默跳过具有不支持的数据类型的字段。<br>要在请求有关不受支持数据类型的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`.
 
 控制台输出如下所示。
 
@@ -765,7 +771,7 @@ ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:
 (1 row)
 ```
 
-然后，您可以通过引用 `Statistics ID`. 下面的示例语句允许您在与 `Statistics ID` 或别名。 要了解有关此功能的更多信息，请参阅 [别名文档](../key-concepts/dataset-statistics.md#alias-name).
+然后，您可以通过引用 `Statistics ID`. 使用 `Statistics ID` 或下面示例语句中显示的别名，以查看完整输出。 要了解有关此功能的更多信息，请参阅 [别名文档](../key-concepts/dataset-statistics.md#alias-name).
 
 ```sql
 -- This statement gets the statistics generated for `alias adc_geometric_stats_1`.
@@ -793,11 +799,12 @@ age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) 
 #### 表示例 {#tablesample}
 
 Adobe Experience Platform查询服务提供了示例数据集，作为其近似查询处理功能的一部分。
-当不需要对数据集进行聚合操作的确切答案时，最好使用数据集示例。 此功能允许您通过发出近似查询以返回近似答案，对大型数据集进行更有效的探索查询。
+
+当不需要对数据集进行聚合操作的确切答案时，最好使用数据集示例。 要通过发出近似查询以返回近似答案对大型数据集进行更有效的探索性查询，请使用 `TABLESAMPLE` 功能。
 
 使用来自现有样本的均匀随机样本创建样本数据集 [!DNL Azure Data Lake Storage] (ADLS)数据集，仅使用来自原始数据的记录百分比。 数据集示例功能对 `ANALYZE TABLE` 命令和 `TABLESAMPLE` 和 `SAMPLERATE` sql命令。
 
-在以下示例中，第一行演示如何计算表格的5%样本。 第二行演示如何从表中数据的过滤视图中计算5%的样本。
+在下面的示例中，第一行演示如何计算表格的5%样本。 第二行演示如何从表中数据的过滤视图中计算5%的样本。
 
 **示例**
 
@@ -827,18 +834,18 @@ CLOSE name
 CLOSE ALL
 ```
 
-如果 `CLOSE name` 已使用， `name` 表示需要关闭的打开游标的名称。 如果 `CLOSE ALL` 将关闭所有打开的游标。
+如果 `CLOSE name` 已使用， `name` 表示必须关闭的打开游标的名称。 如果 `CLOSE ALL` 使用，将关闭所有打开的游标。
 
 ### 取消分配
 
-此 `DEALLOCATE` 命令允许您取消分配以前准备的SQL语句。 如果未显式取消分配预准备语句，则会在会话结束时取消分配预准备语句。 有关预准备语句的更多信息，请参见 [PREPARE命令](#prepare) 部分。
+要取消分配以前准备的SQL语句，请使用 `DEALLOCATE` 命令。 如果未显式取消分配预准备语句，则该语句将在会话结束时取消分配。 有关预准备语句的更多信息，请参见 [PREPARE命令](#prepare) 部分。
 
 ```sql
 DEALLOCATE name
 DEALLOCATE ALL
 ```
 
-如果 `DEALLOCATE name` 已使用， `name` 表示需要取消分配的准备语句的名称。 如果 `DEALLOCATE ALL` ，则所有已准备的语句都将取消分配。
+如果 `DEALLOCATE name` 已使用， `name` 表示必须取消分配的准备语句的名称。 如果 `DEALLOCATE ALL` 会使用，所有已准备的报表会被取消分配。
 
 ### 声明
 
@@ -855,7 +862,7 @@ DECLARE name CURSOR FOR query
 
 ### 执行
 
-此 `EXECUTE` 命令用于执行以前准备的语句。 由于准备的语句只在会话期间存在，因此必须由创建该准备语句的 `PREPARE` 语句在当前会话中较早执行。 有关使用预准备语句的更多信息，请参见 [`PREPARE` 命令](#prepare) 部分。
+此 `EXECUTE` 命令用于执行以前准备的语句。 由于准备的语句仅存在于会话期间，因此准备的语句必须由 `PREPARE` 语句在当前会话中较早执行。 有关使用预准备语句的更多信息，请参见 [`PREPARE` 命令](#prepare) 部分。
 
 如果 `PREPARE` 创建语句的语句指定了某些参数，必须将一组兼容的参数传递给 `EXECUTE` 语句。 如果未传入这些参数，则会引发错误。
 
@@ -866,17 +873,17 @@ EXECUTE name [ ( parameter ) ]
 | 参数 | 描述 |
 | ------ | ------ |
 | `name` | 要执行的预准备语句的名称。 |
-| `parameter` | 准备语句的参数实际值。 这必须是生成与此参数的数据类型兼容的值的表达式，该值在创建预准备语句时确定。  如果预准备语句有多个参数，则用逗号分隔。 |
+| `parameter` | 准备语句的参数实际值。 这必须是生成与此参数的数据类型兼容的值的表达式，该值在创建预准备语句时确定。 如果预准备语句有多个参数，则用逗号分隔。 |
 
 ### 说明
 
-此 `EXPLAIN` 命令显示提供的语句的执行计划。 执行计划显示了如何扫描语句引用的表。  如果引用了多个表，它将显示使用哪些连接算法来组合每个输入表中的所需行。
+此 `EXPLAIN` 命令显示提供的语句的执行计划。 执行计划显示了如何扫描语句引用的表。 如果引用了多个表，它会显示使用哪些联接算法将每个输入表中的所需行组合在一起。
 
 ```sql
 EXPLAIN statement
 ```
 
-使用 `FORMAT` 带有的关键字 `EXPLAIN` 命令来定义响应的格式。
+要定义响应的格式，请使用 `FORMAT` 带有的关键字 `EXPLAIN` 命令。
 
 ```sql
 EXPLAIN FORMAT { TEXT | JSON } statement
@@ -923,7 +930,7 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 
 此 `PREPARE` 命令用于创建预准备语句。 预准备语句是服务器端对象，可用于对类似的SQL语句进行模板化。
 
-预准备语句可以接受参数，这些参数是在执行语句时替换到该语句中的值。 使用预准备语句时，参数由位置引用，使用$1、$2等。
+预准备语句可以接受参数，这些参数是在执行语句时替换到该语句中的值。 在使用预准备语句时，参数由位置引用，使用$1、$2等。
 
 或者，您可以指定参数数据类型的列表。 如果未列出参数的数据类型，则可以从上下文推断该类型。
 
@@ -934,7 +941,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 | 参数 | 描述 |
 | ------ | ------ |
 | `name` | 预准备语句的名称。 |
-| `data_type` | 预准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果需要添加多个数据类型，可以将其添加到逗号分隔列表中。 |
+| `data_type` | 预准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果必须添加多个数据类型，则可以将其添加到以逗号分隔的列表中。 |
 
 ### 回滚
 
@@ -967,12 +974,12 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ] [...] ]
 ```
 
-有关标准SELECT查询参数的更多信息，请参见 [选择查询节](#select-queries). 此部分将仅列出特定于的参数 `SELECT INTO` 命令。
+有关标准SELECT查询参数的更多信息，请参见 [选择查询节](#select-queries). 此部分仅列出以下对象独有的参数： `SELECT INTO` 命令。
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `TEMPORARY` 或 `TEMP` | 可选参数。 如果指定，则创建的表将是一个临时表。 |
-| `UNLOGGED` | 可选参数。 如果指定，则创建为的表将是一个未记录的表。 有关未记录表的详细信息，请参见 [[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/sql-createtable.html). |
+| `TEMPORARY` 或 `TEMP` | 可选参数。 如果指定了参数，则创建的表为临时表。 |
+| `UNLOGGED` | 可选参数。 如果指定了参数，则创建的表是未记录的表。 有关未记录表的详细信息，请参见 [[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/sql-createtable.html). |
 | `new_table` | 要创建的表的名称。 |
 
 **示例**
@@ -1029,15 +1036,15 @@ COPY query
 
 >[!NOTE]
 >
->完整的输出路径将为 `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
+>完整的输出路径为 `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
 
 ### 更改表 {#alter-table}
 
-此 `ALTER TABLE` 命令允许您添加或删除主键或外键约束，以及向表中添加列。
+此 `ALTER TABLE` 命令用于添加或删除主键或外键约束，并向表中添加列。
 
 #### 添加或删除约束
 
-以下SQL查询显示了向表添加或删除约束的示例。 可以将主键和外键约束添加到具有逗号分隔值的多个列中。 您可以通过传递两个或多个列名称值来创建组合键，如下面的示例所示。
+以下SQL查询显示了向表添加或删除约束的示例。 可使用逗号分隔值将主键和外键约束添加到多个列中。 您可以通过传递两个或多个列名称值来创建组合键，如下面的示例所示。
 
 **定义主键或复合键**
 
@@ -1086,14 +1093,13 @@ ALTER TABLE table_name DROP CONSTRAINT IDENTITY ( column_name )
 | `referenced_table_name` | 外键引用的表的名称。 |
 | `primary_column_name` | 外键引用的列的名称。 |
 
-
 >[!NOTE]
 >
 >表架构应该是唯一的，并且不在多个表之间共享。 此外，对于主键、主标识和标识约束，命名空间是必需的。
 
 #### 添加或删除主标识和辅助标识
 
-此 `ALTER TABLE` 命令允许直接通过SQL添加或删除主标识表和辅助标识表列的约束。
+要添加或删除主标识表列和辅助标识表列的约束条件，请使用 `ALTER TABLE` 命令。
 
 以下示例通过添加约束来添加主标识和辅助标识。
 
@@ -1109,7 +1115,7 @@ ALTER TABLE t1 DROP CONSTRAINT PRIMARY IDENTITY (c1) ;
 ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
 ```
 
-查看文档 [在临时数据集中设置身份](../data-governance/ad-hoc-schema-identities.md) 以了解更多详细信息。
+欲知更多详情，请参见 [在临时数据集中设置身份](../data-governance/ad-hoc-schema-identities.md).
 
 #### 添加列
 
@@ -1135,7 +1141,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 | 6 | `double` | `float8` | `double precision` | `FLOAT8` 和 `FLOAT` 是的有效同义词 `DOUBLE PRECISION`. `double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
 | 7 | `double precision` | `float8` | `double precision` | `FLOAT8` 是的有效同义词 `double precision`.`double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
 | 8 | `date` | `date` | `date` | 此 `date` 数据类型是4字节存储的日历日期值，没有任何时间戳信息。 有效日期的范围为01-01-0001到12-31-9999。 |
-| 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的时间瞬间。 `datetime` 包括：年、月、日、小时、秒和分数。 A `datetime` 声明可以包括这些时间单位中在序列中连接任何子集，或者甚至包括单个时间单位。 |
+| 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的时间瞬间。 `datetime` 包括限定符：年、月、日、小时、秒和分数。 A `datetime` 声明可以包括这些时间单位中在序列中连接任何子集，或者甚至包括单个时间单位。 |
 | 10 | `char(len)` | `string` | `char(len)` | 此 `char(len)` 关键字用于指示项目是固定长度的字符。 |
 
 #### 添加架构
@@ -1205,7 +1211,7 @@ SHOW FOREIGN KEYS
 
 ### 显示数据组
 
-此 `SHOW DATAGROUPS` 命令返回所有关联数据库的表。 对于每个数据库，该表包括方案、组类型、子类型、子名称和子ID。
+此 `SHOW DATAGROUPS` 命令返回所有关联数据库的表。 对于每个数据库，该表都包括方案、组类型、子类型、子名称和子ID。
 
 ```sql
 SHOW DATAGROUPS
@@ -1223,7 +1229,7 @@ SHOW DATAGROUPS
 
 ### 显示表的数据组
 
-此 `SHOW DATAGROUPS FOR` “table_name”命令返回包含该参数作为其子项的所有关联数据库的表。 对于每个数据库，该表包括方案、组类型、子类型、子名称和子ID。
+此 `SHOW DATAGROUPS FOR 'table_name'` 命令返回包含参数作为其子项的所有关联数据库的表。 对于每个数据库，该表都包括方案、组类型、子类型、子名称和子ID。
 
 ```sql
 SHOW DATAGROUPS FOR 'table_name'

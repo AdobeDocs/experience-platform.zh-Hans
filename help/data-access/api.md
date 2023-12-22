@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Data Access API指南
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform，该接口侧重于在Experience Platform内摄取的数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: d8694c094ae4a7284e4a3ed0ae5bc3dc198e501a
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 4%
@@ -13,26 +13,26 @@ ht-degree: 4%
 
 # Data Access API指南
 
-数据访问API通过向用户提供一个RESTful界面来支持Adobe Experience Platform，该界面侧重于在中摄取的数据集的可发现性和可访问性 [!DNL Experience Platform].
+数据访问API通过为用户提供侧重于在中摄取的数据集的可发现性和可访问性的RESTful界面来支持Adobe Experience Platform [!DNL Experience Platform].
 
-![Experience Platform上的数据访问](images/Data_Access_Experience_Platform.png)
+![数据访问如何促进在Experience Platform内摄取的数据集的可发现性和可访问性的示意图。](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
-可以找到Swagger API参考文档 [此处](https://www.adobe.io/experience-platform-apis/references/data-access/).
+可以找到Swagger API参考文档 [此处](https://developer.adobe.com/experience-platform-apis/references/data-access/).
 
-## 术语
+## 术语 {#terminology}
 
-本文档中一些常用术语的描述。
+该表提供了本文档中常用的一些术语的说明。
 
 | 搜索词 | 描述 |
 | ----- | ------------ |
 | 数据集 | 包含架构和字段的数据集合。 |
 | 批次 | 一段时间内收集的一组数据，并作为一个单元一起处理。 |
 
-## 检索批次中的文件列表
+## 检索批次中的文件列表 {#retrieve-list-of-files-in-a-batch}
 
-通过使用批处理标识符(batchID)，数据访问API可以检索属于该特定批次的文件列表。
+要检索属于特定批次的文件列表，请将批次标识符(batchID)与数据访问API一起使用。
 
 **API格式**
 
@@ -93,18 +93,18 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-此 `"data"` 数组包含指定批处理中所有文件的列表。 返回的每个文件都有自己的唯一ID (`{FILE_ID}`)包含在 `"dataSetFileId"` 字段。 然后，可使用此唯一ID访问或下载文件。
+此 `"data"` 数组包含指定批次中所有文件的列表。 每个返回的文件都有自己的唯一ID (`{FILE_ID}`)包含在 `"dataSetFileId"` 字段。 您可以使用此唯一ID来访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
 | `data.dataSetFileId` | 指定批次中每个文件的文件ID。 |
 | `data._links.self.href` | 用于访问文件的url。 |
 
-## 访问和下载批次中的文件
+## 访问和下载批量文件
 
-使用文件标识符(`{FILE_ID}`)，数据访问API可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）和下载链接。
+要访问文件的特定详细信息，请使用文件标识符(`{FILE_ID}`)，包括其名称、大小（以字节为单位）和要下载的链接。
 
-响应将包含一个数据数组。 根据ID指向的文件是单个文件还是目录，返回的数据数组可能包含单个条目或属于该目录的文件列表。 每个文件元素都将包含文件的详细信息。
+响应包含数据数组。 根据ID指向的文件是单个文件还是目录，返回的数据阵列可能包含单个条目或属于该目录的文件列表。 每个文件元素都包含文件的详细信息。
 
 **API格式**
 
@@ -150,8 +150,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称（例如profiles.csv）。 |
-| `data.length` | 文件大小（以字节为单位）。 |
+| `data.name` | 文件的名称(例如， `profiles.csv`)。 |
+| `data.length` | 文件的大小（以字节为单位）。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
 **目录响应**
@@ -197,12 +197,12 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data.name` | 文件的名称（例如profiles.csv）。 |
+| `data.name` | 文件的名称(例如， `profiles.csv`)。 |
 | `data._links.self.href` | 用于下载文件的URL。 |
 
-## 访问文件的内容
+## 访问文件的内容 {#access-file-contents}
 
-此 [!DNL Data Access] API还可用于访问文件的内容。 然后，可以使用此项将内容下载到外部源。
+您也可以使用 [!DNL Data Access] 用于访问文件内容的API。 然后，您可以将内容下载到外部源。
 
 **API格式**
 
@@ -227,7 +227,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 数据集内文件的ID。 |
-| `{FILE_NAME}` | 文件的全名（例如profiles.csv）。 |
+| `{FILE_NAME}` | 文件的全名(例如， `profiles.csv`)。 |
 
 **响应**
 
@@ -237,6 +237,6 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 有关其他示例，请参阅 [数据访问教程](tutorials/dataset-data.md).
 
-## 订阅数据摄取事件
+## 订阅数据摄取事件 {#subscribe-to-data-ingestion-events}
 
-[!DNL Platform] 使特定的高价值事件可通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 请参阅上的教程 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 了解更多信息。
+您可以通过，订阅特定的高价值事件 [Adobe Developer控制台](https://developer.adobe.com/console/). 例如，您可以订阅数据摄取事件，以接收潜在延迟和失败的通知。 请参阅上的教程 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 以了解更多信息。

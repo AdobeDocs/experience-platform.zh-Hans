@@ -4,26 +4,26 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: cdb98f7512d290ed23867f2c081cf4ce432d18ca
 workflow-type: tm+mt
-source-wordcount: '3033'
+source-wordcount: '3096'
 ht-degree: 1%
 
 ---
 
 # 数据建模的最佳实践
 
-[!DNL Experience Data Model] (XDM)是通过提供在下游Adobe Experience Platform服务中使用的通用结构和定义来标准化客户体验数据的核心框架。 通过遵守XDM标准，所有客户体验数据均可纳入到通用表示法中，从而允许您从客户操作中获得有价值的见解、定义客户受众以及表达客户属性以进行个性化。
+[!DNL Experience Data Model] (XDM)是通过提供在下游Adobe Experience Platform服务中使用的通用结构和定义来标准化客户体验数据的核心框架。 通过遵守XDM标准，所有客户体验数据都可以合并到一个通用表示中，并用于从客户操作中获得有价值的见解、定义客户受众以及表达客户属性以进行个性化。
 
-由于XDM极其通用并且可通过设计进行自定义，因此，在设计架构时遵循数据建模的最佳实践至关重要。 本文档介绍了在将客户体验数据映射到XDM时必须做出的关键决策和考虑事项。
+由于XDM极其通用并且可通过设计进行自定义，因此，在设计架构时遵循数据建模的最佳实践至关重要。 本文档介绍了在将客户体验数据映射到XDM时必须做出的关键决策和注意事项。
 
 ## 快速入门
 
-阅读本指南前，请查阅 [XDM系统概述](../home.md) 详细介绍XDM及其在Experience Platform中的角色。
+阅读本指南之前，请查阅 [XDM系统概述](../home.md) 详细介绍XDM及其在Experience Platform中的角色。
 
-此外，本指南专门侧重于与架构设计相关的主要注意事项。 因此，强烈建议您参阅 [模式组合基础](./composition.md) 有关本指南中提到的各个架构元素的详细说明。
+由于本指南仅侧重于架构设计方面的关键注意事项，因此强烈建议您阅读 [模式组合基础](./composition.md) 有关本指南中提到的各个架构元素的详细说明。
 
-## 最佳实践摘要
+## 最佳实践摘要 {#summary}
 
 设计用于Experience Platform的数据模型的推荐方法可概括如下：
 
@@ -35,15 +35,15 @@ ht-degree: 1%
 
 与确定实施业务用例所需的适用数据源相关的步骤因组织而异。 虽然本文档中的其余部分侧重于确定数据源后组织和构建ERD的后几个步骤，但图表各组件的解释可能会指导您决定应该将数据源迁移到哪个 [!DNL Platform].
 
-## 创建高级ERD
+## 创建高级ERD {#create-an-erd}
 
 确定您要引入的数据源后 [!DNL Platform]，创建一个高级ERD以帮助指导将数据映射到XDM架构的过程。
 
 以下示例为希望将数据引入其中的公司提供了一个简化的ERD [!DNL Platform]. 该图表突出显示应分类为XDM类的基本实体，包括客户帐户、酒店、地址和几个常见的电子商务事件。
 
-![](../images/best-practices/erd.png)
+![一个实体关系图，它突出显示应排序为XDM类以供数据摄取的基本实体。](../images/best-practices/erd.png)
 
-## 按配置文件、查找和事件类别对实体进行排序
+## 按配置文件、查找和事件类别对实体进行排序 {#sort-entities}
 
 创建ERD以标识要导入的基本实体后 [!DNL Platform]，这些实体必须按配置文件、查找和事件类别排序：
 
@@ -55,11 +55,11 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-### 实体排序的注意事项
+### 实体排序的注意事项 {#considerations}
 
 以下各节提供了有关如何将实体分类为上述类别的进一步指导。
 
-#### 可变和不可变数据
+#### 可变和不可变数据 {#mutable-and-immutable-data}
 
 实体类别之间的主要排序方式是捕获的数据是否可变。
 
@@ -69,7 +69,7 @@ ht-degree: 1%
 
 总而言之，配置文件和查找实体包含可变属性，并代表它们捕获的主题的最新信息，而事件在特定时间是系统的不可变记录。
 
-#### 客户属性
+#### 客户属性 {#customer-attributes}
 
 如果实体包含与单个客户相关的任何属性，则它很可能为用户档案实体。 客户属性的示例包括：
 
@@ -77,11 +77,11 @@ ht-degree: 1%
 * 位置信息，如地址和GPS信息。
 * 联系信息，如电话号码和电子邮件地址。
 
-#### 随时间跟踪数据
+#### 随时间跟踪数据 {#track-data}
 
 如果要分析实体中的某些属性如何随时间变化，则很可能是事件实体。 例如，将产品项目添加到购物车可以在中作为添加到购物车事件进行跟踪 [!DNL Platform]：
 
-| 客户 ID | 类型 | 产品 ID | 数量 | 时间戳 |
+| 客户 ID | 类型 | 产品ID | 数量 | 时间戳 |
 | --- | --- | --- | --- | --- |
 | 1234567 | Add | 275098 | 2 | 10月1日，上午10点32分 |
 | 1234567 | 删除 | 275098 | 1 | 10月1日，上午10点33分 |
@@ -90,7 +90,7 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-#### 分段用例
+#### 分段用例 {#segmentation-use-cases}
 
 在对实体进行分类时，请务必考虑您可能希望构建的受众以解决特定业务用例。
 
@@ -99,25 +99,25 @@ ht-degree: 1%
 * “金级”和“白金级”表示适用于单个客户的忠诚度状态。 由于分段逻辑仅与客户当前的忠诚度状态有关，因此该数据可以建模为用户档案模式的一部分。 如果您希望跟踪忠诚度状态随时间的变化，还可以为忠诚度状态更改创建其他事件架构。
 * 购买是在特定时间发生的事件，分段逻辑涉及指定时间窗口中的购买事件。 因此，此数据应建模为事件架构。
 
-#### 激活用例
+#### 激活用例 {#activation-use-cases}
 
-除了有关分段用例的注意事项之外，您还应查看这些受众的激活用例，以确定其他相关的属性。
+除了有关分段用例的注意事项外，您还应查看这些受众的激活用例，以确定其他相关的属性。
 
 例如，一家公司已基于以下规则构建受众： `country = US`. 然后，在将该受众激活到某些下游目标时，公司想要根据主页状态筛选所有导出的用户档案。 因此，a `state` 属性还应在适用的配置文件实体中捕获。
 
-#### 聚合值
+#### 聚合值 {#aggregated-values}
 
 根据用例和数据粒度，您应当决定是否需要在包含到用户档案或事件实体中之前预先聚合某些值。
 
-例如，公司希望根据购物车购买次数构建受众。 您可以选择以最低的粒度合并此数据，方法是将每个带有时间戳的购买事件包含为自己的实体。 但是，这有时可能会使记录的事件数呈指数增长。 要减少摄取的事件数，您可以选择创建聚合值 `numberOfPurchases` 一个星期或一个月的时间。 其他聚合函数(如MIN和MAX)也可以应用于这些情况。
+例如，公司希望根据购物车购买次数构建受众。 您可以选择以最低的粒度合并此数据，方法是将每个带有时间戳的购买事件包含为自己的实体。 但是，这有时可能会使记录的事件数呈指数增长。 要减少摄取的事件数，您可以选择创建聚合值 `numberOfPurchases` 跨越一周或一个月很长的周期。 其他聚合函数(如MIN和MAX)也可以应用于这些情况。
 
 >[!CAUTION]
 >
 >Experience Platform当前不执行自动值聚合，尽管计划在将来的版本中执行此操作。 如果选择使用聚合值，则必须先在外部执行计算，然后再将数据发送至 [!DNL Platform].
 
-#### 基数
+#### 基数 {#cardinality}
 
-在ERD中建立的基数还可以提供有关如何对实体进行分类的一些线索。 如果两个实体之间存在一对多关系，则表示“多个”的实体可能会是事件实体。 但是，在某些情况下，“许多”是一组查找实体，这些实体在配置文件实体中作为数组提供。
+在ERD中建立的基数还可以提供有关如何对实体进行分类的一些线索。 如果两个实体之间存在一对多关系，则表示“多个”的实体很可能是一个事件实体。 但是，在某些情况下，“许多”是一组查找实体，这些实体在配置文件实体中作为数组提供。
 
 >[!NOTE]
 >
@@ -128,7 +128,7 @@ ht-degree: 1%
 | 关系 | 基数 | 实体类别 |
 | --- | --- | --- |
 | 客户和购物车结账 | 一对多 | 单个客户可能会有多个购物车结账，这些事件可以随时间进行跟踪。 因此，客户将成为用户档案实体，而购物车结账将成为事件实体。 |
-| 客户和忠诚度帐户 | 一对一 | 单个客户只能有一个忠诚度帐户，反之亦然。 由于关系是一对一的，因此客户和忠诚度帐户都表示用户档案实体。 |
+| 客户和忠诚度帐户 | 一对一 | 单个客户只能有一个忠诚度帐户，一个忠诚度帐户只能属于一个客户。 由于关系是一对一的，因此客户和忠诚度帐户都表示用户档案实体。 |
 | 客户和订阅 | 一对多 | 单个客户可能具有多个订阅。 由于公司仅关注客户的当前订阅，因此客户是用户档案实体，而订阅是查找实体。 |
 
 {style="table-layout:auto"}
@@ -148,23 +148,23 @@ ht-degree: 1%
 
 第一种方法是将一系列订阅作为属性包含在适用于客户的配置文件实体中。 此数组中的对象将包含 `category`， `status`， `planName`， `startDate`、和 `endDate`.
 
-<img src="../images/best-practices/profile-schema.png" width="800"><br>
+![架构编辑器中的Customers架构，其中突出显示了类和结构](../images/best-practices/profile-schema.png)
 
 **优点**
 
 * 分段适用于预期用例。
-* 架构将仅保留客户的最新订阅记录。
+* 架构仅保留客户的最新订阅记录。
 
 **缺点**
 
 * 每次对数组中的任何字段发生更改时，必须重述整个数组。
-* 如果不同的数据源或业务单位将数据馈送到阵列，那么要在所有通道上保持最新的更新阵列同步将变得非常困难。
+* 如果不同的数据源或业务单位将数据馈送到阵列，则要在所有通道上保持最新更新的阵列同步将变得非常困难。
 
 #### 方法2：使用事件实体 {#event-approach}
 
 第二种方法是使用事件架构来表示订阅。 此方法需要摄取与第一种方法相同的订阅字段，以及订阅ID、客户ID和订阅事件发生时间的时间戳。
 
-<img src="../images/best-practices/event-schema.png" width="800"><br>
+![突出显示了XDM体验事件类和订阅结构的订阅事件架构的图表。](../images/best-practices/event-schema.png)
 
 **优点**
 
@@ -176,11 +176,11 @@ ht-degree: 1%
 * 对于原始预期用例（确定客户最近订阅的状态），分段会变得更加复杂。 受众现在需要其他逻辑来标记客户的上一个订阅事件，以检查其状态。
 * 事件自动过期并从配置文件存储区中清除的风险更高。 请参阅指南，网址为 [体验事件过期时间](../../profile/event-expirations.md) 以了解更多信息。
 
-## 根据已分类的实体创建架构
+## 根据已分类的实体创建架构 {#schemas-for-categorized-entities}
 
 将实体分类为配置文件、查找和事件类别后，即可开始将数据模型转换为XDM架构。 出于演示目的，前面显示的示例数据模型已在下图中被分类为相应的类别：
 
-<img src="../images/best-practices/erd-sorted.png" width="800"><br>
+![配置文件、查找和事件实体中包含的架构的图表](../images/best-practices/erd-sorted.png)
 
 实体已在其下排序的类别应该确定您确定其架构所基于的XDM类。 再次重申：
 
@@ -196,19 +196,19 @@ ht-degree: 1%
 
 以下部分提供了有关根据ERD构建架构的一般指导。
 
-### 采用迭代建模方法
+### 采用迭代建模方法 {#iterative-modeling}
 
 此 [模式演化规则](./composition.md#evolution) 规定实施架构后，只能对架构进行非破坏性更改。 换言之，一旦您将字段添加到架构并且已根据该字段摄取数据，则无法再移除该字段。 因此，在首次创建架构时，务必要采用迭代建模方法，从随着时间推移逐渐增加复杂性的简化实施开始。
 
 如果您不确定某个特定字段是否必须包含在架构中，最佳实践是将其排除在外。 如果之后确定该字段是必需的，则始终可以将该字段添加到架构的下一个迭代中。
 
-### 标识字段
+### 标识字段 {#identity-fields}
 
-在Experience Platform中，标记为身份的XDM字段用于拼合来自多个数据源的各个客户的信息。 尽管架构可以有多个标记为标识的字段，但必须定义一个主标识，架构才能在中使用 [!DNL Real-Time Customer Profile]. 请参阅以下部分 [标识字段](./composition.md#identity) 在架构组合的基础知识中，了解有关这些字段用例的更多详细信息。
+在Experience Platform中，标记为身份的XDM字段用于拼合来自多个数据源的各个客户的信息。 尽管架构可以有多个标记为身份的字段，但必须定义一个主身份，架构才能在中使用 [!DNL Real-Time Customer Profile]. 请参阅以下部分 [标识字段](./composition.md#identity) 在架构组合的基础知识中，了解有关这些字段用例的更多详细信息。
 
 在设计架构时，关系数据库表中的任何主键都可能是主标识的候选。 适用标识字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和 [ECID](../../identity-service/ecid.md).
 
-### Adobe的应用程序架构字段组
+### Adobe的应用程序架构字段组 {#adobe-application-schema-field-groups}
 
 Experience Platform提供了多个现成的XDM架构字段组，用于捕获与以下Adobe应用程序相关的数据：
 
@@ -217,17 +217,17 @@ Experience Platform提供了多个现成的XDM架构字段组，用于捕获与�
 * Adobe Campaign
 * Adobe Target
 
-例如， [[!UICONTROL Adobe Analytics ExperienceEvent模板] 字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) 允许您映射 [!DNL Analytics]特定于XDM架构的字段。 根据您使用的Adobe应用程序，应在架构中使用这些Adobe提供的字段组。
+例如，您可以使用 [[!UICONTROL Adobe Analytics ExperienceEvent模板] 字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) 要映射 [!DNL Analytics]特定于XDM架构的字段。 根据您使用的Adobe应用程序，应在架构中使用这些Adobe提供的字段组。
 
-<img src="../images/best-practices/analytics-field-group.png" width="700"><br>
+![的架构图 [!UICONTROL Adobe Analytics ExperienceEvent模板].](../images/best-practices/analytics-field-group.png)
 
 Adobe应用程序字段组通过使用 `identityMap` 字段，这是一个系统生成的只读对象，可映射单个客户的标准标识值。
 
-对于Adobe Analytics，ECID是默认的主标识。 如果客户未提供ECID值，则主标识将默认为AAID。
+对于Adobe Analytics，ECID是默认的主标识。 如果客户未提供ECID值，则主要标识将默认为AAID。
 
 >[!IMPORTANT]
 >
->使用Adobe应用程序字段组时，不应将任何其他字段标记为主标识。 如果有其他属性需要标记为身份，则需要将这些字段指定为辅助身份。
+>使用Adobe应用程序字段组时，不应将任何其他字段标记为主标识。 如果有其他属性需要标记为标识，则必须将这些字段指定为辅助标识。
 
 ## 数据验证字段 {#data-validation-fields}
 
