@@ -2,9 +2,9 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
+source-git-commit: 47f02f6d1d4017dfe0fccddcd137487e064b3039
 workflow-type: tm+mt
-source-wordcount: '1119'
+source-wordcount: '930'
 ht-degree: 2%
 
 ---
@@ -23,18 +23,6 @@ ht-degree: 2%
 - **基于平台的应用程序** (Adobe Real-time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer)：从一开始就提供对查询服务的访问权限，以便执行基于平台的应用程序的每个变体和层级。
 - **[!DNL Data Distiller]** (可与Adobe Real-Time CDP、Customer Journey Analytics和Adobe Journey Optimizer一起购买的附加组件包)：提供执行批量查询的查询服务访问权限 [!DNL Data Distiller].
 
-## 术语 {#terminology}
-
-以下部分提供了与查询服务打包相关的关键术语的定义：
-
-- **数据湖存储**：数据湖主要具有以下用途：
-   - 充当将数据载入Experience Platform的暂存区；
-   - 充当所有Experience Platform数据的长期数据存储；
-   - 启用数据分析和数据科学等用例。
-- **数据导出**：和 [数据集](https://experienceleague.adobe.com/docs/experience-platform/catalog/datasets/overview.html?lang=zh-Hans) 根据您的应用程序、产品层和购买的任何加载项，您可以导出类型。 派生数据集可以通过查询服务数据Distiller加载项创建，并且可以 [从Adobe Experience Platform导出](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activation-overview.html) 到各种目标，包括 [云存储目标](/help/destinations/ui/export-datasets.md).
-- **加速查询**：加速查询会返回基于汇总数据的结果，从而减少结果的等待时间，并提供更具交互性的信息交换。 对加速存储进行的无状态查询只能作为Data Distiller加载项的一部分提供。
-- **计算小时数**：计算小时数是一种量度，用于使用查询服务API通过批处理查询跟踪数据的扫描和写入。 它以每年小时数计算，并在所有沙盒中进行测量。 提供给贵组织的计算小时数在交易范围界定流程中定义。
-
 ## 权利 {#entitlements}
 
 下表概述了基于其打包方式的关键查询服务权限：
@@ -47,8 +35,8 @@ ht-degree: 2%
 | 最长执行时间 | 10 分钟 | 24 小时 |
 | 许可证量度 | **查询用户并发**： <ul><li>1个并发用户(Real-Time CDP、Adobe Journey Optimizer)&#x200B;</li><li>5个并发用户(Customer Journey Analytics)&#x200B;</li></ul> **查询并发**： <ul><li>1个并发运行查询(所有应用程序&#x200B;)</li></ul> **其他Ad Hoc Query用户包加载项** 可购买以增加客户的授权临时查询授权。 <ul><li>每包5个以上并发用户</li><li>每包+1个额外的并发运行查询</li></ul> | **计算小时数**： <ul><li>变量（根据客户的应用程序权利设定范围）</li></ul> **计算小时数** 是测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
 | 加快查询和报告使用 | 否 | 是 — 通过并发加速查询，您可以从加速存储中读取数据，并在功能板中显示。 还提供了用于在加速存储中存储报告模型和数据集的专用权限。 |
-| 数据湖存储容量 | 是 — 您的总存储权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的存储权利，以便在七天数据到期日期之后保留数据Distiller用例的原始数据集和派生数据集。<br>您的数据湖存储容量以TB为单位，具体取决于您购买的计算小时数。 |
-| 允许数据导出 | 是 — 您的总导出权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的导出授权，以允许导出使用数据Distiller创建的派生数据集。<br>您每年允许的数据导出以TB为单位，具体取决于您购买的计算小时数。 |
+| 数据湖存储容量 | 您的总存储权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的存储权利，以便在七天数据到期日期之后保留数据Distiller用例的原始数据集和派生数据集。<br>您的数据湖存储容量以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
+| 允许数据导出 | 您的总导出权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的导出授权，以允许导出使用数据Distiller创建的派生数据集。<br>您每年允许的数据导出以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
 | 查询执行界面 | <ul><li>查询服务UI</li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li></ul> | <ul><li>查询服务UI </li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li><li>REST API</li></ul> |
 | 通过返回的查询结果 | 客户端用户界面 | 存储在数据湖中的派生数据集 |
 | 结果限制 | <ul><li>查询服务UI - 100行</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。</li><li>第三方客户端（行数没有上限）</li><li>[!DNL PostgresSQL] 客户端（行数没有上限）</li><li>REST API（行数没有上限）</li></ul> |
