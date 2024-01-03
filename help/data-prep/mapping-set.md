@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 映射集概述
 description: 了解如何将映射集与Adobe Experience Platform数据准备结合使用。
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 660948b7a43ed3c18feb74cccf8f9c607470759c
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -17,10 +17,10 @@ ht-degree: 0%
 
 ## 快速入门
 
-此概述需要深入了解Adobe Experience Platform的以下组件：
+此概述需要您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [数据准备](./home.md)：数据准备允许数据工程师映射、转换和验证数据到/传出体验数据模型(XDM)。
-- [数据流](../dataflows/home.md)：数据流是跨平台移动数据的数据作业的表示形式。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以及 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
+- [数据准备](./home.md)：数据准备允许数据工程师映射、转换和验证进出体验数据模型(XDM)的数据。
+- [数据流](../dataflows/home.md)：数据流表示跨Platform移动数据的数据作业。 数据流在不同的服务之间配置，有助于将数据从源连接器移动到目标数据集，以 [!DNL Identity] 和 [!DNL Profile]、和 [!DNL Destinations].
 - [[!DNL Adobe Experience Platform Data Ingestion]](../ingestion/home.md)：将数据发送到的方法 [!DNL Experience Platform].
 - [[!DNL Experience Data Model (XDM) System]](../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 映射集由ID、名称、输入架构、输出架构和关联映射列表组成。
 
-以下JSON是一个典型映射集示例：
+以下JSON是典型映射集的示例：
 
 ```json
 {
@@ -72,10 +72,10 @@ ht-degree: 0%
 | `name` | 映射集的名称。 |
 | `inputSchema` | 传入数据的XDM架构。 |
 | `outputSchema` | 输入数据将转换为符合的XDM架构。 |
-| `mappings` | 从源架构到目标架构的字段到字段映射的数组。 |
-| `sourceType` | 对于列出的每个映射，其 `sourceType` attribute表示要映射的源类型。 可以是 `ATTRIBUTE`， `STATIC`，或 `EXPRESSION`： <ul><li> `ATTRIBUTE` 用于源路径中找到的任何值。 </li><li>`STATIC` 用于插入到目标路径中的值。 此值将保持不变，不受源架构的影响。</li><li> `EXPRESSION` 用于表达式，该表达式将在运行时解析。 可用表达式的列表可在以下位置找到： [映射函数指南](./functions.md).</li> </ul> |
-| `source` | 对于列出的每个映射， `source` attribute表示要映射的字段。 有关如何配置源的详细信息，请参阅 [源部分](#sources). |
-| `destination` | 对于列出的每个映射， `destination` attribute表示字段或字段的路径，其中值提取自 `source` 字段将被放置。 有关如何配置目标的更多信息，请参阅 [目标部分](#destination). |
+| `mappings` | 从源架构到目标架构的字段到字段映射数组。 |
+| `sourceType` | 对于列出的每个映射，其 `sourceType` attribute指示要映射的源类型。 可以是以下之一 `ATTRIBUTE`， `STATIC`，或 `EXPRESSION`： <ul><li> `ATTRIBUTE` 用于源路径中找到的任何值。 </li><li>`STATIC` 用于插入目标路径中的值。 该值保持不变，不受源架构的影响。</li><li> `EXPRESSION` 用于表达式，该表达式将在运行时解析。 可用表达式的列表可在 [映射函数指南](./functions.md).</li> </ul> |
+| `source` | 对于每个列出的映射， `source` attribute表示要映射的字段。 有关如何配置源的详细信息，请参见 [源概述](../sources/home.md). |
+| `destination` | 对于每个列出的映射， `destination` attribute表示字段或字段的路径，其中值是从 `source` 将放置字段。 有关如何配置目标的更多信息，请参阅 [目标概述](../destinations/home.md). |
 | `mappings.name` | (*可选*)映射的名称。 |
 | `mappings.description` | (*可选*)映射的说明。 |
 
@@ -151,7 +151,7 @@ John Smith, js@example.com
 
 ### 数组中的字段
 
-映射数组中的字段时，可以使用索引检索特定值。 要执行此操作，请使用 `ATTRIBUTE` 源类型和要映射的值的索引。 此映射的示例如下所示：
+在数组中映射字段时，可以使用索引检索特定值。 要执行此操作，请使用 `ATTRIBUTE` 源类型和要映射的值的索引。 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -298,7 +298,7 @@ John Smith, js@example.com
 
 ### 常量值
 
-如果要映射常量或静态值，请使用 `STATIC` 源类型。  使用时 `STATIC` 源类型， `source` 表示要分配给的硬编码值 `destination`. 此映射的示例如下所示：
+如果要映射常量或静态值，请使用 `STATIC` 源类型。  使用时 `STATIC` 源类型， `source` 表示要分配到的硬编码值 `destination`. 此映射的示例如下所示：
 
 **示例JSON文件**
 
@@ -367,7 +367,7 @@ John Smith, js@example.com
 
 ### 根级别的字段
 
-当您要映射 `source` 值到转换后数据的根级别，请遵循以下示例：
+当您想要映射 `source` 值到转换后数据的根级别，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -400,7 +400,7 @@ John Smith, js@example.com
 
 ### 嵌套字段
 
-当您要映射 `source` 值到转换后的数据中的嵌套字段，请遵循以下示例：
+当您想要映射 `source` 值转换为转换后的数据中的嵌套字段，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -433,7 +433,7 @@ John Smith, js@example.com
 
 ### 特定数组索引处的字段
 
-当您要映射 `source` 值到数组中特定索引的值，请遵循以下示例：
+当您想要映射 `source` 值到转换后的数据阵列中的特定索引时，请遵循以下示例：
 
 **示例JSON文件**
 
@@ -466,7 +466,7 @@ John Smith, js@example.com
 
 ### 迭代阵列运算
 
-如果要反复循环遍历数组并将值映射到目标，可以使用通配符索引(`[*]`)。 下面显示了这方面的示例：
+如果要循环遍历数组并将值映射到目标，可以使用通配符索引(`[*]`)。 下面显示了这方面的示例：
 
 ```json
 {
@@ -516,4 +516,4 @@ John Smith, js@example.com
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该了解如何构建映射集，包括如何在映射集中配置各个映射。 有关其他数据准备功能的更多信息，请阅读 [数据准备概述](./home.md). 要了解如何在数据准备API中使用映射集，请阅读 [数据准备开发人员指南](./api/overview.md).
+通过阅读本文档，您现在应该了解如何构建映射集，包括如何在映射集中配置各个映射。 有关其他数据准备功能的详细信息，请阅读 [数据准备概述](./home.md). 要了解如何在数据准备API中使用映射集，请参阅 [数据准备开发人员指南](./api/overview.md).

@@ -2,9 +2,9 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 98482bfdd54b70cde73c3512f8237c7862e41281
+source-git-commit: 44e4e83d80302f64854f6c8f9531da913a2f0942
 workflow-type: tm+mt
-source-wordcount: '1787'
+source-wordcount: '1779'
 ht-degree: 7%
 
 ---
@@ -22,8 +22,6 @@ ht-degree: 7%
 * [[!DNL Privacy Service]](../privacy-service/home.md)：身份命名空间用于隐私法规(如《通用数据保护条例》(GDPR)的合规请求中。 每个隐私请求都是相对于命名空间发出的，以确定哪些消费者的数据应该受到影响。
 
 ## 了解身份命名空间
-
-![使用Identity服务的数据工作流的插图。](images/identity-service-stitching.png)
 
 完全限定的标识包括两个组件： **标识值** 和 **身份命名空间**. 例如，如果标识的值为 `scott@acme.com`，则命名空间会将此值识别为电子邮件地址，以提供相关上下文。 同样，命名空间可以区分 `555-123-456` 作为电话号码，并且 `3126ABC` 作为CRM ID。 基本上， **命名空间为给定身份提供上下文**. 跨配置文件片段匹配记录数据时，例如 [!DNL Real-Time Customer Profile] 合并配置文件数据，身份值和命名空间必须匹配。
 
