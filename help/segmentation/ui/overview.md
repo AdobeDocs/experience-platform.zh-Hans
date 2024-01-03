@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 692cdd3d8b30c3e5187a556e4f9ec80d675cb443
+source-git-commit: 7ee39a39aecdfc0516f63e6a9c9a06c6c4b22996
 workflow-type: tm+mt
-source-wordcount: '3910'
+source-wordcount: '3933'
 ht-degree: 3%
 
 ---
@@ -21,13 +21,13 @@ ht-degree: 3%
 - [[!DNL Segmentation Service]](../home.md)： [!DNL Segmentation Service] 允许您对存储在以下位置的数据分段： [!DNL Experience Platform] 将个人（如客户、潜在客户、用户或组织）关联到较小的组中。
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：通过桥接被摄取到的不同数据源中的身份来创建客户用户档案 [!DNL Platform].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 
 您还应该了解本文档中使用的两个关键术语并了解它们之间的差异：
 
 - **受众**：一组具有相似行为和/或特征的人。 此人员集合可以由Adobe Experience Platform使用区段定义或受众合成（平台生成的受众）生成，也可以由外部源(例如自定义上传（外部生成的受众）)生成。
 - **区段定义**：Adobe Experience Platform用于描述目标受众关键特征或行为的规则。
-- **划分**：将配置文件划分为受众的行为。
+- **区段**：将用户档案划分为受众的操作。
 
 ## 概述
 
@@ -72,17 +72,17 @@ ht-degree: 3%
 
 | 操作 | 来源 | 描述 |
 | ------ | ------- | ----------- |
-| [!UICONTROL 编辑] | Segmentation Service | 允许您打开区段生成器以编辑受众。 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md). |
-| [!UICONTROL 打开合成] | 受众组合 | 允许您打开受众合成以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
-| [!UICONTROL 激活到目标] | Segmentation Service | 允许您将受众激活到目标。 有关将受众激活到目标的更多详细信息，请参阅 [激活概述](../../destinations/ui/activation-overview.md). |
-| [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 可让您与其他Platform用户共享受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
-| [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 允许您管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| [!UICONTROL 复制] | 受众构成、自定义上传、分段服务 | 复制所选受众。 |
-| [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 允许您管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
+| [!UICONTROL 编辑] | Segmentation Service | 打开区段生成器以编辑受众。 请注意，如果您的受众是通过API创建的，则您将 **非** 能够使用区段生成器编辑它。 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md). |
+| [!UICONTROL 打开合成] | 受众组合 | 打开受众组合以查看受众。 有关受众构图的更多信息，请参阅 [受众合成UI指南](./audience-composition.md). |
+| [!UICONTROL 激活到目标] | Segmentation Service | 激活目标受众。 有关将受众激活到目标的更多详细信息，请参阅 [激活概述](../../destinations/ui/activation-overview.md). |
+| [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 与其他Platform用户共享您的受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
+| [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
+| [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
+| [!UICONTROL Copy] | 受众构成、自定义上传、分段服务 | 复制所选受众。 |
+| [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL 存档] | 自定义上传 | 存档所选受众。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
-| [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 允许您在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
+| [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
 
 >[!NOTE]
 >
@@ -142,7 +142,7 @@ ht-degree: 3%
 
 为了提高工作效率，您可以搜索现有受众、将用户定义的标记添加到受众、将受众放入文件夹并筛选显示的受众。
 
-**搜索**{#search}
+**Search** {#search}
 
 您最多可以使用9种不同的语言搜索现有受众 [!DNL Unified Search].
 
@@ -191,7 +191,7 @@ ht-degree: 3%
 
 ![将显示属于特定文件夹的受众。](../images/ui/overview/browse-folders.png)
 
-**过滤器** {#filter}
+**筛选** {#filter}
 
 您还可以根据各种设置筛选受众。
 
@@ -237,7 +237,7 @@ ht-degree: 3%
 
 >[!BEGINTABS]
 
->[!TAB 受众组合]
+>[!TAB 受众构成]
 
 ![此时将显示受众详细信息页面，其中包含 [!UICONTROL 打开合成] 按钮突出显示。](../images/ui/overview/audience-details-open-composition.png)
 
@@ -307,7 +307,7 @@ ht-degree: 3%
 
 ![显示您可以创建的两种受众类型的弹出窗口。](../images/ui/overview/create-audience-type.png)
 
-**受众组合** {#audience-composition}
+**受众构成** {#audience-composition}
 
 选择 **[!UICONTROL 组合受众]** 使您转到“受众合成”。 此工作区为构建和编辑受众提供了直观的控件，例如用于表示不同操作的拖放图块。 要了解有关创建受众的更多信息，请阅读 [受众构成指南](./audience-composition.md).
 
@@ -399,7 +399,7 @@ ht-degree: 3%
 | [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Published`、和 `Archived`. |
 | [!UICONTROL 已创建] | 创建受众的时间和日期。 |
 | [!UICONTROL 创建者] | 创建受众的人员姓名。 |
-| [!UICONTROL 更新] | 上次更新受众的时间和日期。 |
+| [!UICONTROL 已更新] | 上次更新受众的时间和日期。 |
 | [!UICONTROL 更新者] | 上次更新受众的人员姓名。 |
 
 要查看受众的构成方式，请在左侧导航栏中选择受众的名称， [!UICONTROL 受众] 选项卡。

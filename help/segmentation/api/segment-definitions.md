@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: d47ec6fca05191f532b5a2e94f1943c4337258ed
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1228'
 ht-degree: 3%
 
 ---
@@ -153,6 +153,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
 
 您可以通过向以下对象发出POST请求来创建新的区段定义： `/segment/definitions` 端点。
 
+>[!IMPORTANT]
+>
+>通过API创建的区段定义 **无法** 可使用区段生成器编辑。
+
 **API格式**
 
 ```http
@@ -199,8 +203,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `name` | 用于引用区段定义的唯一名称。 |
-| `description` | (可选.) 正在创建的区段定义的描述。 |
-| `evaluationInfo` | (可选.) 正在创建的区段定义的类型。 如果要创建批处理客户细分，请设置 `evaluationInfo.batch.enabled` 是真的。 如果要创建流区段，请设置 `evaluationInfo.continuous.enabled` 是真的。 如果要创建边段，请设置 `evaluationInfo.synchronous.enabled` 是真的。 如果留空，区段定义将创建为 **批次** 区段。 |
+| `description` | （可选。） 正在创建的区段定义的描述。 |
+| `evaluationInfo` | （可选。） 正在创建的区段定义的类型。 如果要创建批处理客户细分，请设置 `evaluationInfo.batch.enabled` 是真的。 如果要创建流区段，请设置 `evaluationInfo.continuous.enabled` 是真的。 如果要创建边段，请设置 `evaluationInfo.synchronous.enabled` 是真的。 如果留空，区段定义将创建为 **批次** 区段。 |
 | `schema` | 与区段中的实体关联的架构。 包含 `id` 或 `name` 字段。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
