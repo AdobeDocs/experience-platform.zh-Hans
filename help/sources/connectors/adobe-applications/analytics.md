@@ -2,7 +2,7 @@
 title: 报告包数据的Adobe Analytics Source Connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 251b00e0f0e063859f8d0a0e188fa805c7bf3f87
+source-git-commit: 5ec22fcf0f4c48efc28a3abd343bb00a19756281
 workflow-type: tm+mt
 source-wordcount: '1110'
 ht-degree: 2%
@@ -51,7 +51,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 | -------------- | ---------------- |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** 已启用) | &lt; 2分钟 |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **是** 已启用) | 长达30分钟 |
-| 数据湖的新数据 | &lt; 90分钟 |
+| 数据湖的新数据 | &lt; 2.25小时 |
 | 少于100亿个事件的回填 | &lt; 4周 |
 
 生产沙盒的Analytics回填默认为13个月。 对于非生产沙盒中的Analytics数据，回填将设置为三个月。 上表中提到的100亿个事件的限制严格与预期延迟有关。
