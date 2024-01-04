@@ -194,7 +194,7 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 >[!CONTEXTUALHELP]
 >id="platform_schemas_fieldgroup_requiredFieldgroup"
 >title="必填字段组"
->abstract="您使用的源需要此字段组。 因此，您无法将其从架构中删除。"
+>abstract="您正在使用的源需要此字段组。因此，您无法从架构中删除它。"
 
 字段组是可重复使用的组件，它定义一个或多个用于实现特定功能（如个人详细信息、酒店首选项或地址）的字段。 字段组旨在作为实现兼容类的架构的一部分包含。
 
