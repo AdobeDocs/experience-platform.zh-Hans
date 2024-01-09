@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 7c44683c8110d78654baba4bc53f2c3c2daf2831
+source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
 workflow-type: tm+mt
-source-wordcount: '966'
-ht-degree: 5%
+source-wordcount: '986'
+ht-degree: 3%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
-通过 权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。权限还允许您管理与特定角色关联的标签、沙盒和用户。
+通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙盒和用户。
 
 紧跟在 [创建新角色](#create-a-new-role)，您将返回 **[!UICONTROL 角色]** 选项卡。 如果您正在编辑现有角色的权限，请从中选择该角色 **[!UICONTROL 角色]** 选项卡。 或者，使用筛选器选项筛选结果以查找角色。
 
@@ -100,6 +100,10 @@ ht-degree: 5%
 要从角色中删除用户，请选择 **X** 图标（位于用户名旁）。
 
 ![flac-remove-users](../../images/flac-ui/flac-remove-users.png)
+
+以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
+
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## 管理角色的API凭据 {#manage-api-credentials-for-role}
 

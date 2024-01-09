@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制创建角色
 description: 本文档提供了有关通过Adobe Experience Cloud中的权限界面管理角色的信息
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: d8f72bb5ae56daf5a41c763f821ca6306514bc48
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '531'
 ht-degree: 7%
 
 ---
 
 # 管理角色
 
-角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问配置是通过通用责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
+角色定义了管理员、专家或最终用户对组织中资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。
 
 ## 创建新角色
 
@@ -42,11 +42,15 @@ ht-degree: 7%
 
 ![flac-save-resources](../../images/flac-ui/flac-save-resources.png)
 
-新角色创建成功，您将被重定向到 **[!UICONTROL 角色]** 页面，您将看到新创建的角色显示在列表中。
+新角色创建成功，您将被重定向至 **[!UICONTROL 角色]** 页面，您将在其中看到新创建的角色显示在列表中。
 
 ![flac-role-saved](../../images/flac-ui/flac-role-saved.png)
 
-请参阅以下章节： [管理角色的权限](#manage-permissions-for-a-role) 有关创建角色权限后如何管理角色权限的更多详细信息。
+请参阅以下部分 [管理角色的权限](#manage-permissions-for-a-role) 有关如何在创建角色权限后管理角色权限的更多详细信息。
+
+以下视频旨在支持您了解如何创建新角色以及如何管理该角色的用户。
+
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## 复制角色
 
@@ -78,11 +82,11 @@ ht-degree: 7%
 
 ![flac-role-delete](../../images/flac-ui/flac-role-delete.png)
 
-此 **[!UICONTROL 删除用户角色]** 对话框，提示您确认删除。
+此 **[!UICONTROL 删除用户角色]** 对话框出现，提示您确认删除。
 
 ![flac-confirm-role-delete](../../images/flac-ui/flac-confirm-role-delete.png)
 
-您将会返回到 **[!UICONTROL 角色]** 选项卡。
+您将被返回到 **[!UICONTROL 角色]** 选项卡。
 
 ## 后续步骤
 
