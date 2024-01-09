@@ -1,13 +1,13 @@
 ---
 title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
+source-git-commit: a8b1aa87ecd85c530188e520db2f17136a63ae44
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
-
 
 # 安装Web SDK {#installing-the-sdk}
 
@@ -68,6 +68,10 @@ URL结构： https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或alloy
 此基础代码除了创建全局函数外，还会加载外部文件中包含的附加代码\(`alloy.js`\)托管在服务器上。 默认情况下，将异步加载此代码，以使您的网页尽可能提高性能。 这是推荐的实施。
 
 ### 支持Explorer {#support-internet-explore}
+
+>[!IMPORTANT]
+>
+>2024年4月底，Adobe Experience Platform Web SDK将停止对所有版本的Internet Explorer提供支持。
 
 此SDK使用promise ，这是一种用于通信异步任务完成情况的方法。 此 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 除以下内容外，所有目标浏览器均本机支持SDK使用的实施 [!DNL Internet Explorer]. 要在上使用SDK，请执行以下操作 [!DNL Internet Explorer]，您必须拥有 `window.Promise` [多填充](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
