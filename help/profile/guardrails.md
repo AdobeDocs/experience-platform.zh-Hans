@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: 了解配置文件数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: c7537959b1cc53998acafbccaa2f39686afd9f15
+source-git-commit: 17aa9029dc83454133847352c21aa9ac68f23be8
 workflow-type: tm+mt
-source-wordcount: '2282'
+source-wordcount: '2430'
 ht-degree: 2%
 
 ---
@@ -114,13 +114,27 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 尝试创建其他受众可能会影响系统性能。 详细了解 [创建受众](/help/segmentation/ui/segment-builder.md) 通过区段生成器。 |
+| 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 详细了解 [创建受众](/help/segmentation/ui/segment-builder.md) 通过区段生成器。 |
 | 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
-| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 尝试创建其他流受众可能会影响系统性能。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
+| 所有沙盒的边缘吞吐量 | 1500 RPS | 性能护栏 | 边缘分段支持每秒钟多达1500个进入Adobe Experience Platform Edge Network的入站事件。 集客事件进入Adobe Experience Platform Edge Network后，边缘分段最多可能需要350毫秒来处理该事件。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
+| 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
+| 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒最多1500个入站事件。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
 | 每个沙盒的帐户受众 | 50 | 系统强制的护栏 | 在一个沙盒中最多可创建50个帐户受众。 在一个沙盒中达到50个受众之后， **[!UICONTROL 创建受众]** 在尝试创建新帐户受众时，将禁用控件。 详细了解 [帐户受众](/help/segmentation/ui/account-audiences.md). |
 | 每个沙盒已发布的合成 | 10 | 性能护栏 | 一个沙盒中最多可以有10个已发布的合成。 详细了解 [UI指南中的受众构成](/help/segmentation/ui/audience-composition.md). |
 | 最大受众规模 | 30% | 性能护栏 | 建议的最大受众成员数为系统中配置文件总数的30%。 将超过30%的用户档案创建为成员或多个大型受众是可行的，但将影响系统性能。 |
+
+{style="table-layout:auto"}
+
+## 预期可用性
+
+以下部分概述了 **预期** 下游服务(如Real-Time CDP目标)中的受众和合并策略的可用性：
+
+| 沙盒类型 | 时间 |
+| ------------ | ---- |
+| 现有沙盒 | 1 小时 |
+| 新沙盒 | 2 小时 |
+| 新重置沙盒 | 2 小时 |
 
 {style="table-layout:auto"}
 
