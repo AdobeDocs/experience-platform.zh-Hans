@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 820ba6c9cedcb85db7ff9bc199a67e56ee628c93
+source-git-commit: 5262b5e894cc6bfa2db79afcda8bfda4b496f7d5
 workflow-type: tm+mt
-source-wordcount: '1780'
+source-wordcount: '1789'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您愿意 **非** 为您的构图提供一个标题，默认情况下，它具有“构图”的标题，后跟创建日期和时间。
+>如果您愿意 **非** 为您的构图提供一个标题，默认情况下，它具有“构图”的标题，后跟创建日期和时间。 此外，每个组合 **必须** 拥有自己的唯一名称。
 
 更新合成详细信息后，选择 **[!UICONTROL 保存]** 以确认这些更新。 受众构成画布重新出现。
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 | 合并类型 | 描述 |
 | ---------- | ----------- |
-| [!UICONTROL 并集] | 受众将合并为一个受众。 此操作等同于OR操作。 |
+| [!UICONTROL Union] | 受众将合并为一个受众。 此操作等同于OR操作。 |
 | [!UICONTROL 交集] | 受众将仅与中共享的受众合并 **所有** 正在添加它们。 此操作等同于AND操作。 |
 | [!UICONTROL 排除重叠] | 受众将仅与中共享的受众合并 **一个，但不是全部** 正在添加它们。 这相当于XOR操作。 |
 
@@ -220,7 +220,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ![添加配置文件限制切换开关会突出显示，用于限制返回的受众数量。](../images/ui/audience-composition/add-profile-limit.png)
 
-## [!UICONTROL 拆分] {#split-block}
+## [!UICONTROL Split] {#split-block}
 
 此 **[!UICONTROL Split]** 块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
 
