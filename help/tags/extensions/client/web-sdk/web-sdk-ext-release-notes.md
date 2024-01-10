@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 8cec606849489ef1e8845254117d184d5dc3c70a
+source-git-commit: fb2cf23f4762eec4bcab1126bdfb1aaa4144e777
 workflow-type: tm+mt
-source-wordcount: '1833'
-ht-degree: 36%
+source-wordcount: '1990'
+ht-degree: 32%
 
 ---
 
@@ -13,6 +13,15 @@ ht-degree: 36%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.21.4 - 2024年1月10日
+
+**修复和改进功能**
+
+* 修复了在未设置所有3个环境的情况下保存配置覆盖将会导致扩展UI崩溃的问题。
+* 修复了在编辑更新变量操作时，根清除现有值复选框未填充的问题。
+
+包含Adobe Experience Platform Web SDK的版本2.19.2。
 
 ## 版本2.21.3 - 2023年11月10日
 
@@ -237,7 +246,7 @@ ht-degree: 36%
 
 ## 版本2.1.1 - 2020年8月26日
 
-* 修复了 XDM 对象视图上的 Adobe Experience Platform 沙箱显示不正确的问题。在使用该扩展版本时，如果列表中未显示预期的沙箱，则用户应与其 Adobe Experience Platform 管理员确认，以确保设置正确的访问权限。
+* 修复了 XDM 对象视图上的 Adobe Experience Platform 沙盒显示不正确的问题。在使用该扩展版本时，如果列表中未显示预期的沙盒，则用户应与其 Adobe Experience Platform 管理员确认，以确保设置正确的访问权限。
 
 ## 版本2.1.0 - 2020年8月5日
 

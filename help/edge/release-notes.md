@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 8cec606849489ef1e8845254117d184d5dc3c70a
+source-git-commit: e46ac94a2328b045d7270b2498d6cb7ef5f0464b
 workflow-type: tm+mt
-source-wordcount: '1678'
-ht-degree: 4%
+source-wordcount: '1740'
+ht-degree: 2%
 
 ---
 
@@ -15,6 +15,14 @@ ht-degree: 4%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## 版本2.19.2 - 2024年1月10日
+
+**修复和改进功能**
+
+* 修复了标识错误正在掩蔽其他错误，并将标识错误更改为警告的问题。
+* 修复了当renderDecisions设置为false的页面调用顶部时，页面底部绝不会发送的问题。
+* 修复了在存在多个adobe_mc查询字符串参数时Web SDK无法读取跨域标识的问题。
 
 ## 版本2.19.1 - 2023年11月10日
 
