@@ -2,9 +2,9 @@
 description: 此页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 45ba0db386f065206f89ed30bfe7b0c1b44f6173
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 开始方式 [创建服务器和文件配置](../authoring-api/destination-server/create-destination-server.md) 使用 `/destinations-server` 端点。
 
-下面显示的是的示例配置 [!DNL Amazon S3] 目标。 要配置其他类型的基于文件的目标，请参阅相应的 [服务器配置](../functionality/destination-server/server-specs.md).
+下面显示的是的示例配置 [!DNL Amazon S3] 目标。 有关配置中使用的字段以及配置其他类型的基于文件的目标的更多详细信息，请参阅相应的字段 [服务器配置](../functionality/destination-server/server-specs.md).
 
 **API格式**
 
@@ -40,7 +40,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
     "name": "S3 destination",
     "destinationServerType": "FILE_BASED_S3",
     "fileBasedS3Destination": {
-        "bucketName": {
+        "bucket": {
             "templatingStrategy": "PEBBLE_V1",
             "value": "{{customerData.bucketName}}"
         },
@@ -116,7 +116,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 下面显示了使用创建的目标配置示例。 `/destinations` API端点。
 
-要在步骤1中将服务器和文件配置连接到此目标配置，请将服务器和模板配置的实例ID添加为 `destinationServerId` 此处。
+要将服务器和文件配置从步骤1连接到此目标配置，请添加 `instance ID` 的服务器和文件配置为 `destinationServerId` 此处。
 
 **API格式**
 
@@ -124,7 +124,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 POST platform.adobe.io/data/core/activation/authoring/destinations
 ```
 
-```json {line-numbers="true" highlight="84"}
+```json {line-numbers="true" highlight="83"}
 {
     "name": "Amazon S3 destination",
     "description": "Amazon S3 destination is a fictional destination, used for this example.",
@@ -189,7 +189,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
         }
     ],
     "uiAttributes": {
-        "documentationLink": "https://www.adobe.io/apis/experienceplatform.html",
+        "documentationLink": "https://www.adobe.com/go/destinations-YOURDESTINATION-en",
         "category": "S3",
         "connectionType": "S3",
         "flowRunsSupported": true,
@@ -232,7 +232,22 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
             "ONCE"
         ],
         "defaultFrequency": "DAILY",
-        "defaultStartTime": "00:00"
+        "defaultStartTime": "00:00",
+       "filenameConfig":{
+         "allowedFilenameAppendOptions":[
+            "SEGMENT_NAME",
+            "DESTINATION_INSTANCE_ID",
+            "DESTINATION_INSTANCE_NAME",
+            "ORGANIZATION_NAME",
+            "SANDBOX_NAME",
+            "DATETIME",
+            "CUSTOM_TEXT"
+         ],
+         "defaultFilenameAppendOptions":[
+            "DATETIME"
+         ],
+         "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
+      }
     },
     "backfillHistoricalProfileData": true
 }
@@ -244,7 +259,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 如果使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，如下所示 `audienceTemplateId`.
 
-```json {line-numbers="true" highlight="91"}
+```json {line-numbers="true" highlight="90"}
 {
     "name": "Amazon S3 destination",
     "description": "Amazon S3 destination is a fictional destination, used for this example.",
@@ -309,7 +324,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
         }
     ],
     "uiAttributes": {
-        "documentationLink": "https://www.adobe.io/apis/experienceplatform.html",
+        "documentationLink": "http://www.adobe.com/go/destinations-YOURDESTINATION-en",
         "category": "S3",
         "connectionType": "S3",
         "flowRunsSupported": true,
@@ -358,7 +373,22 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
             "ONCE"
         ],
         "defaultFrequency": "DAILY",
-        "defaultStartTime": "00:00"
+        "defaultStartTime": "00:00",
+       "filenameConfig":{
+         "allowedFilenameAppendOptions":[
+            "SEGMENT_NAME",
+            "DESTINATION_INSTANCE_ID",
+            "DESTINATION_INSTANCE_NAME",
+            "ORGANIZATION_NAME",
+            "SANDBOX_NAME",
+            "DATETIME",
+            "CUSTOM_TEXT"
+         ],
+         "defaultFilenameAppendOptions":[
+            "DATETIME"
+         ],
+         "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
+      }
     },
     "backfillHistoricalProfileData": true
 }
@@ -367,6 +397,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 ## 步骤4：设置身份验证 {#set-up-authentication}
 
 取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上面的目标配置中，您可以使用来设置目标的身份验证 `/destination` 或 `/credentials` 端点。
+
+>[!NOTE]
+>
+>`CUSTOMER_AUTHENTICATION` 是两种身份验证规则中比较常见的一个，如果您要求用户在设置连接和导出数据之前向您的目标提供某种形式的身份验证，则需使用它。
 
 * 如果您选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，请参阅以下部分，了解Destination SDK支持的基于文件的目标身份验证类型：
 
@@ -384,10 +418,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 使用前面步骤中的配置端点设置目标后，您可以使用 [目标测试工具](../testing-api/batch-destinations/file-based-destination-testing-overview.md) 测试Adobe Experience Platform与您的目标之间的集成。
 
-在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
+在测试目标的过程中，您必须使用Experience PlatformUI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
-* [创建受众文档页面](/help/segmentation/ui/overview.md#create-segment)
-* [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
+* [创建受众 — 文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建受众 — 视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## 步骤6：发布目标 {#publish-destination}
 

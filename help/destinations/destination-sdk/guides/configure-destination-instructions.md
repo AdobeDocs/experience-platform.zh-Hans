@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 52be44ece950ee57a66a13ab7962907b2b7c0fb1
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '865'
 ht-degree: 0%
 
 ---
@@ -264,6 +264,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 ## 步骤5：设置身份验证 {#set-up-authentication}
 
 取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上面的目标配置中，您可以使用来设置目标的身份验证 `/destination` 或 `/credentials` 端点。
+
+>[!NOTE]
+>
+>`CUSTOMER_AUTHENTICATION` 是两种身份验证规则中比较常见的一个，如果您要求用户在设置连接和导出数据之前向您的目标提供某种形式的身份验证，则需使用它。
 
 如果您选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，并且目标支持OAuth 2身份验证方法，请阅读 [OAuth 2身份验证](../functionality/destination-configuration/oauth2-authorization.md).
 
