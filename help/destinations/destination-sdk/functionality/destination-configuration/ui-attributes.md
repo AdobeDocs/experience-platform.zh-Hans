@@ -2,16 +2,16 @@
 description: 了解如何为使用Destination SDK构建的目标配置UI属性，如文档链接、目标卡类别以及目标连接类型和频率。
 title: UI属性
 exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 995e464ca43e0738c16dd4e0ec928d27e5a8b029
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '800'
 ht-degree: 0%
 
 ---
 
 # UI属性
 
-UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显示的可视化元素，例如目标平台徽标、指向文档页面的链接、目标描述及其类别和类型。
+UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显示的可视化元素，例如徽标、指向文档页面的链接、目标描述及其类别和类型。
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅以下目标配置概述页面：
 
@@ -21,10 +21,10 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 时间 [创建目标](../../authoring-api/destination-configuration/create-destination-configuration.md) 通过Destination SDK， `uiAttributes` 部分定义目标卡的以下可视属性：
 
 * 您的目标文档页面的URL，位于 [目标目录](../../../catalog/overview.md).
-* 您托管要在目标目录信息卡中显示的图标的URL。
 * 您的目标将显示在Platform UI中的类别。
 * 目标的数据导出频率。
 * 目标连接类型，如Amazon S3、Azure Blob等。
+* 您托管要在目标目录信息卡中显示的图标的URL。
 
 您可以通过以下方式配置UI属性 `/authoring/destinations` 端点。 有关详细的API调用示例，请参阅以下API参考页面，您可以在其中配置此页面中显示的组件。
 
@@ -82,14 +82,6 @@ UI属性定义Adobe应在Adobe Experience Platform用户界面中为目标卡显
 
 ![显示目标类别位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-category.png)
 
-<!-- ### `iconUrl` {#icon-url}
-
-`iconUrl` is a string parameter that refers to the URL where you hosted the icon to be displayed in the destinations catalog card. For private custom integrations, this is not required. For productized configurations, you need to share an icon with the Adobe team when you [submit the destination for review](../../guides/submit-destination.md#logo).
-
-Users can see the icon on your destination card, as shown in the image below.
-
-![UI image showing the icon location.](../../assets/functionality/destination-configuration/ui-attributes-icon.png) -->
-
 ### `connectionType` {#connection-type}
 
 `connectionType` 是一个字符串参数，它根据目标来引用连接的类型。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul>
@@ -113,6 +105,14 @@ Users can see the icon on your destination card, as shown in the image below.
 为此，您可以使用 `isBeta: "true"` 目标配置的UI属性部分中的参数，用于正确标记目标卡。
 
 ![显示标记为Beta版的目标卡片的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-isbeta.png)
+
+### `icon` {#icon}
+
+您可以向目标添加徽标图标，如下图所示。
+
+![显示图标位置的UI图像。](../../assets/functionality/destination-configuration/ui-attributes-icon.png)
+
+Adobe要在目标卡中添加徽标，您需要在 [提交目标以供审查](../../guides/submit-destination.md#logo).
 
 ## 后续步骤 {#next-steps}
 
