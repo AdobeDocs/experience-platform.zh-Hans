@@ -3,10 +3,10 @@ keywords: IP地址， IP范围，允许列表，允许列表
 title: 列入允许列表查询服务的IP地址
 description: 此页提供了可添加到允许列表的IP范围。
 exl-id: f6745e0f-d387-45f2-9f72-054e721016ff
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 3a00f98b7463f7fb35aa53f703d67193f18400cf
 workflow-type: tm+mt
-source-wordcount: '175'
-ht-degree: 2%
+source-wordcount: '180'
+ht-degree: 0%
 
 ---
 
@@ -27,16 +27,21 @@ Adobe建议您将以下IP范围添加到允许列表，具体取决于您所在�
 
 ## VA7：美国和美洲客户 {#us-americas}
 
-* 52.138.119.167
+* 20.14.241.153
 
 ## NLD2：EMEA客户 {#emea}
 
-* 51.124.70.4
+* 20.101.233.128
 
 ## AUS5：APAC客户 {#apac}
 
-* 20.193.36.37
+* 20.248.220.69
 
 ## CAN2：加拿大客户 {#can2}
 
-* 20.104.5.248
+* 4.172.1.139
+
+## GBR9：英国客户 {#gbr9}
+
+* 20.108.200.9
+

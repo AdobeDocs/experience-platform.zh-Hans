@@ -1,7 +1,8 @@
 ---
 title: Lambda函数示例 — 检索类似记录
 description: 了解如何基于相似性量度和相似性阈值，从一个或多个数据集识别和检索相似或相关记录。 此工作流可突出显示不同数据集之间的有意义的关系或重叠。
-source-git-commit: 55af6c8de72e9b60eb9423dda568681e7c84245f
+exl-id: 4810326a-a613-4e6a-9593-123a14927214
+source-git-commit: 20624b916bcb3c17e39a402d9d9df87d0585d4b8
 workflow-type: tm+mt
 source-wordcount: '4011'
 ht-degree: 3%
