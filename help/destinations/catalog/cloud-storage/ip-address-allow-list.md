@@ -3,9 +3,9 @@ title: IP地址允许列表SFTP目标
 type: Documentation
 description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到SFTP服务器。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 3d870975593313062d796601f0e19a0a3aec7854
+source-git-commit: 52186e03ba2a9d8b105d01ebfcd9be7666bfb6ff
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '189'
 ht-degree: 0%
 
 ---
@@ -33,9 +33,17 @@ Adobe列入允许列表建议您在使用Cloud Storage目标连接之前，将�
 
 * `52.252.71.64/29`
 
+## 加拿大客户
+
+* `20.220.135.16/29`
+
 ## EMEA客户
 
 * `51.137.8.208/29`
+
+## 英国客户
+
+* `20.26.133.96/29`
 
 ## APAC客户
 
