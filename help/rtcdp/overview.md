@@ -4,35 +4,68 @@ title: Real-time Customer Data Platform概述
 description: Adobe Real-time Customer Data Platform概述
 feature: Get Started
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: ab87434b753c1231f01cde85637081eb08fce356
 workflow-type: tm+mt
-source-wordcount: '422'
-ht-degree: 2%
+source-wordcount: '668'
+ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform概述
 
+## 什么是Real-Time CDP {#what-is-rtcdp}
+
 Adobe Real-time Customer Data Platform (Real-Time CDP)构建于Adobe Experience Platform之上，可帮助企业汇总来自多个企业的已知和匿名数据，以创建可用于实时跨所有渠道和设备提供个性化客户体验的客户档案。
+
+![各种Experience Platform应用程序的概述，重点介绍了Real-Time CDP。](/help/rtcdp/assets/platform-apps-overview.png)
 
 Real-Time CDP包括用于数据治理、身份管理、高级分段和数据科学的工具，以便您可以构建用户档案和定义受众，以及在能够强制执行严格的数据治理策略的同时获得丰富的见解。
 
-Real-time Customer Data Platform可连接到由众多合作伙伴组成的大型生态系统，更不用说与Adobe Experience Cloud的本机集成了，因此您可以无缝激活这些受众，并通过所有渠道提供卓越的客户体验，从现场或应用程序内个性化到电子邮件、付费媒体、呼叫中心、互联设备等。
+Real-Time CDP可连接到由众多合作伙伴组成的大型生态系统，更不用说与Adobe Experience Cloud的本机集成了，因此您可以无缝激活这些受众，并通过所有渠道提供卓越的客户体验，从现场或应用程序内个性化到电子邮件、付费媒体、呼叫中心、互联设备等。
 
-借助Real-time Customer Data Platform，您可以：
+## 使用Real-Time CDP可以做什么 {#what-you-can-do-with-rtcdp}
+
+借助Real-Time CDP，您可以：
 
 * 通过组合整个企业中的数据，实现客户的单一视图。
 * 通过已知和匿名标识符的可信治理和隐私控制负责任地管理用户档案。
 * 使用由Adobe Sensei提供支持并为营销人员构建的AI和机器学习生成可操作的见解并扩展受众。
-* 在所有渠道和目标上实时提供个性化体验。
+* 在所有渠道和目标中实时提供个性化体验。
 
-## Real-Time Customer Data Platform B2B 版
+## Real-time Customer Data Platform版本（企业对消费者、企业对企业、企业对个人） {#rtcdp-editions}
 
-此外，还提供了其他版本的Real-Time CDP，以满足企业对企业的需求。 Real-Time CDP B2B版本旨在为营销人员扩展Real-Time CDP的功能。 它在Adobe Experience Platform生态系统中启用了各种功能，以便更好地适应企业到企业服务模式的运行。
+购买Real-Time CDP时，贵公司可以选择三种版本，如下表所示。 所有三个版本均在标准Prime和Ultimate级别提供。 请参阅以下部分，了解更多信息以帮助您确定哪三个版本最适合您的公司。
 
-Real-Time CDP B2B版本允许营销人员为人员和帐户创建全面的用户档案。 具体来说，您可以从统一帐户配置文件的集中存储中扩充、分段和导出所有跨源数据。 使用可在集中化过程的每个步骤获得的数据治理工具，可以管理这些数据。
+| Real-Time CDP B2C | Real-Time CDP B2B | Real-Time CDP企业到个人(B2P) |
+|---------|----------|---------|
+| ✓ Prime | ✓ Prime | ✓ Prime |
+| ✓ Ultimate | ✓ Ultimate | ✓ Ultimate |
+
+{style="table-layout:auto"}
+
+获取有关以下所有版本的Prime和Ultimate层中所包含功能的完整信息：
+
+* [Real-time Customer Data Platform （B2C版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2B版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform （B2P版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+
+### Adobe Real-time Customer Data Platform — 企业对消费者(B2C)版
+
+Real-Time CDP Business-to-Consumer (B2C)是为B2C营销人员专门构建的，用于统一、管理和激活所有 *使用者数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧。
+
+### Adobe Real-time Customer Data Platform - Business-to-Business (B2B)版本
+
+Real-Time CDP Business-to-Business (B2B)是为B2B营销人员专门构建的，用于统一、管理和激活所有 *商机和帐户数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧
+
+Real-Time CDP B2B版本允许营销人员为人员和帐户创建完整的配置文件。 具体来说，您可以从统一帐户配置文件的集中存储中扩充、分段和导出所有跨源数据。 使用可在集中化过程的每个步骤获得的数据治理工具，可以管理这些数据。
 
 请参阅 [Real-Time CDP B2B版本概述](./b2b-overview.md) 以了解更全面的信息。
+
+### Adobe Real-time Customer Data Platform — 企业对个人(B2P)版本
+
+使用Real-Time CDP的企业对个人(B2P)版本，您可以统一、管理和激活您的 *B2C和B2B客户数据* 使用单个CDP跨所有业务线定位同一人，提供无缝体验和完全的数据让您高枕无忧。
+
+通过此版本，您可获得完整的客户数据平台，用于 *B2C和B2B* 企业，跨所有业务线为同一人个性化体验。
 
 ## 其他信息
 
@@ -43,6 +76,6 @@ Real-Time CDP B2B版本允许营销人员为人员和帐户创建全面的用户
 * [如何开始使用Real-Time CDP](get-started.md)
 * [如何摄取数据](sources/sources-overview.md)
 * [如何访问用户档案](profile/profile-overview.md)
-* [如何生成区段](segmentation/segmentation-overview.md)
-* [如何将区段激活到目标](destinations/overview.md)
+* [如何构建受众](segmentation/segmentation-overview.md)
+* [如何将受众激活到目标](destinations/overview.md)
 * [如何定义和执行数据治理策略](privacy/data-governance-overview.md)
