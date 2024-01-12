@@ -2,10 +2,10 @@
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c38e25a939319fa3b3301af36482c8efe6c3dd5f
 workflow-type: tm+mt
-source-wordcount: '2477'
-ht-degree: 6%
+source-wordcount: '2695'
+ht-degree: 4%
 
 ---
 
@@ -109,7 +109,7 @@ ht-degree: 6%
 
 要预览 [!DNL Analytics] ExperienceEvent模板架构字段组，选择 **[!UICONTROL 视图]** 在 [!UICONTROL 应用的标准映射] 面板。
 
-![view](../../../../images/tutorials/create/analytics/view.png)
+![视图](../../../../images/tutorials/create/analytics/view.png)
 
 此 [!UICONTROL Adobe Analytics ExperienceEvent模板架构字段组] 页面为您提供了一个用于检查架构结构的界面。 完成后，选择 **[!UICONTROL 关闭]**.
 
@@ -177,11 +177,30 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 完成映射后， [!DNL Analytics] 报表包数据之后，您可以应用过滤规则和条件来有选择地将数据包含或排除到实时客户档案的摄取中。 仅支持筛选 [!DNL Analytics] 仅在输入之前过滤数据和数据 [!DNL Profile.] 所有数据都会摄取到数据湖中。
 
+>[!BEGINSHADEBOX]
+
+**有关为实时客户个人资料准备和筛选Analytics数据的更多信息**
+
+* 您可以将筛选功能用于流向个人资料的数据，但不能用于流向数据湖的数据。
+* 可以对实时数据使用筛选，但无法筛选回填数据。
+   * 此 [!DNL Analytics] 源不会将数据回填到配置文件中。
+* 如果您在数据的初始设置期间使用数据准备配置， [!DNL Analytics] 流量，这些更改也将应用于自动13个月的回填。
+   * 但是，不适用于筛选，因为筛选仅保留用于实时数据。
+* 数据准备会同时应用于流摄取路径和批量摄取路径。 如果您修改了现有的数据准备配置，则这些更改会应用到流摄取和批量摄取路径中的新传入数据。
+   * 但是，任何数据准备配置均不适用于已引入Experience Platform的数据，无论它是流数据还是批量数据。
+* Analytics中的标准属性始终会自动映射。 因此，不能将转换应用于标准属性。
+   * 但是，您可以筛选掉标准属性，只要Identity Service或配置文件中不需要这些属性。
+* 无法使用列级筛选来筛选必填字段和标识字段。
+* 虽然您可以过滤掉次要身份，特别是AAID和AACustomID，但无法过滤ECID。
+* 发生转换错误时，相应的列将导致NULL。
+
+>[!ENDSHADEBOX]
+
 #### 行级筛选
 
 >[!IMPORTANT]
 >
->使用行级筛选来应用条件并指示要&#x200B;**为配置文件提取包含**&#x200B;的数据。使用列级筛选来选择要&#x200B;**为配置文件提取排除**&#x200B;的数据列。
+>使用行级筛选来应用条件并指示要&#x200B;**为配置文件提取包含**&#x200B;的数据。使用列级过滤功能选择所需的数据列 **排除配置文件摄取**.
 
 您可以筛选以下项的数据 [!DNL Profile] 在行级别和列级别引入。 行级筛选允许您定义字符串包含、等于、开始或结束于等条件。 您还可以使用行级筛选来连接条件，方法是 `AND` 以及 `OR`，并使用否定条件 `NOT`.
 
@@ -201,14 +220,14 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 可配置条件列表包括：
 
-* [!UICONTROL 等于]
+* [!UICONTROL equals]
 * [!UICONTROL 不等于]
 * [!UICONTROL 开头为]
 * [!UICONTROL 结束于]
-* [!UICONTROL 结尾不为]
+* [!UICONTROL 结尾不是]
 * [!UICONTROL 包含]
 * [!UICONTROL 不包含]
-* [!UICONTROL 存在]
+* [!UICONTROL exists]
 * [!UICONTROL 不存在]
 
 ![条件](../../../../images/tutorials/create/analytics/conditions.png)
@@ -255,7 +274,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![数据流详细信息](../../../../images/tutorials/create/analytics/dataflow-detail.png)
 
-### 请查看
+### 审核
 
 此 [!UICONTROL 审核] 此时会显示步骤，允许您在创建新的Analytics数据流之前对其进行查看。 连接的详细信息按类别分组，包括：
 
@@ -298,7 +317,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 | 量度 | 描述 |
 | --- | --- |
-| 批次 ID | 给定批次的ID。 此值在内部生成。 |
+| 批次ID | 给定批次的ID。 此值在内部生成。 |
 | 数据集名称 | 用于Analytics数据的给定数据集名称。 |
 | 来源 | 所摄取数据的来源。 |
 | 更新 | 最近的流运行迭代的日期。 |
