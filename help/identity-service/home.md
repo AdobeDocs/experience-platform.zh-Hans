@@ -4,153 +4,116 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 876613610f8e3b369bc3fd41d235c214b791fd4d
 workflow-type: tm+mt
-source-wordcount: '1839'
-ht-degree: 10%
+source-wordcount: '1452'
+ht-degree: 2%
 
 ---
 
-# [!DNL Identity Service] 概述
+# Adobe Experience Platform Identity Service
 
-提供相关的数字体验要求完全了解您的客户。 当您的客户数据分散在不同的系统中，导致每个客户似乎拥有多个“身份”时，就会更加困难。
+为了提供相关的数字体验，您需要对构成客户群的真实实体进行全面而准确的呈现。
 
-Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+如今，组织和企业面临着大量不同的数据集：您的个人客户由各种不同的标识符表示。 您的客户可以链接到不同的Web浏览器(Safari、Google Chrome)、硬件设备（电话、笔记本电脑）和其他人员标识符（CRM ID、电子邮件帐户）。 这会造成客户的视图脱节。
 
-替换为 [!DNL Identity Service]，您可以：
+您可以使用Adobe Experience Platform Identity Service及其功能解决这些挑战，以便：
 
-- 确保您的客户通过每次互动获得一致、个性化的相关体验。
-- 将来自不同来源的多个不同身份拼接在一起，并创建客户的全面视图。
-- 利用身份图来映射不同的身份命名空间，从而为您提供客户如何跨不同渠道与您的品牌交互的可视表示形式。
+* 生成 **身份图** 可将不同的身份链接在一起，从而为您提供客户如何跨不同渠道与您的品牌互动的可视化表示形式。
+* 提供用于验证和调试的工具。
+* 为实时客户档案创建图形，然后将该图形用于通过合并属性和行为来创建客户的综合视图。
 
-## 快速入门
+本文档概述了Identity Service，以及在Experience Platform上下文中如何使用其功能。
 
-在深入了解 [!DNL Identity Service]，下面是关键术语的简短摘要：
+## 术语 {#terminology}
+
+在详细了解Identity Service之前，请阅读下表以概览关键术语：
 
 | 搜索词 | 定义 |
 | --- | --- |
-| 标识 | 身份是指实体（通常是个人）的独特数据。登录ID、ECID或忠诚度ID等身份也称为“已知身份”。 |
-| ECID | Experience CloudID (ECID)是跨Experience Platform和Adobe Experience Cloud应用程序使用的共享身份命名空间。 ECID为客户身份奠定了基础，用作设备的主ID以及身份图的基本节点。 请参阅 [ECID概述](./ecid.md) 以了解更多信息。 |
-| 标识命名空间 | 标识命名空间用于区分标识的上下文或类型。例如，标识将“name<span>@email.com”识别为电子邮件地址，将“443522”识别为数字 CRM ID。身份命名空间用于查找单个身份并提供身份值的上下文。 这允许您确定 [!DNL Profile] 包含不同主ID，但共享相同值的片段 `email` 身份命名空间，实际上是同一个人。 请参阅 [身份命名空间概述](./namespaces.md) 以了解更多信息。 |
-| 身份图 | 身份图是不同身份之间关系的映射，允许您可视化并更好地了解哪些客户身份是如何拼合在一起的，以及如何拼合的。 请参阅上的教程 [使用身份图查看器](./ui/identity-graph-viewer.md) 以了解更多信息。 |
-| 个人身份信息(PII) | PII是可以直接识别客户的信息，如电子邮件地址或电话号码。 PII值通常用于匹配。 客户跨不同系统的多个身份。 |
-| 未知或匿名身份 | 未知或匿名身份指示器可隔离设备，而无需识别使用该设备的实际人员。 未知和匿名身份包括访客的IP地址和Cookie ID等信息。 尽管未知和匿名身份可以提供行为数据，但在客户提供其PII之前，它们有限。 |
+| 标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成： **身份命名空间** 和 **标识值**. |
+| 标识命名空间 | 身份命名空间是给定身份的上下文。 例如，命名空间 `Email` 可能对应于 **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./namespaces.md) |
+| 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，电子邮件 **朱利安<span>@acme.com** 可以归类为 `Email` 命名空间。 |
+| 标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
+| 链接 | 链接或链接是一种确定两个不同的身份表示同一实体的方法。 例如，“”之间的链接`Email` =朱利安<span>@acme.com”和“`Phone` = 555-555-1234”表示两个身份代表同一实体。 这表明，已与您的品牌交互的客户同时使用了julien的电子邮件地址<span>@acme.com和电话号码555-555-1234相同。 |
+| 身份服务 | Identity Service是Experience Platform中的一项服务，用于链接（或取消链接）身份以维护身份图。 |
+| 身份图 | 身份图是表示单个客户的身份集合。 有关详细信息，请阅读上的指南 [使用身份图查看器](./ui/identity-graph-viewer.md). |
+| 实时客户配置文件 | 实时客户资料是Adobe Experience Platform中的一项服务，该服务： <ul><li>合并配置文件片段以基于身份图创建配置文件。</li><li>对配置文件进行分段，以便随后将这些配置文件发送到目标进行激活。</li></ul> |
+| 配置文件 | 用户档案是主题、组织或个人的表示形式。 用户档案由两个元素组成： <ul><li>属性：属性提供姓名、年龄或性别等信息。</li><li>行为：行为提供有关给定用户档案活动的信息。 例如，配置文件行为可以判断给定配置文件是“搜索凉鞋”还是“订购T恤”。</li></ul> |
 
-## 什么是 [!DNL Identity Service]？
+{style="table-layout:auto"}
 
-每一天，客户都会与您的业务互动，并与您的品牌建立持续增长的关系。 典型客户可能活跃在您组织数据基础架构内的任意数量的系统中，例如电子商务、忠诚度和帮助台系统。 同一客户还可以在任意数量的设备上匿名参与。 [!DNL Identity Service] 允许您拼合客户的完整情况，汇总可能跨不同系统孤立的相关数据。
-
-以消费者与品牌关系的日常例子为例：
-
-- Mary在您的电子商务网站上有一个帐户，她过去曾在该帐户上完成过几笔订单。 她通常用自己的笔记本电脑购物，每次都登录这里。 但是，在访问期间，她使用平板电脑购买凉鞋，但没有下订单，也没有登录。
-- 此时，Mary的活动显示为两个单独的用户档案：
-   - 她的电子商务登录信息
-   - 她的平板电脑设备，可能通过设备ID识别
-- Mary稍后将恢复她的平板电脑会话，并在订阅您的新闻通讯时提供她的电子邮件地址。 在这样做时，流式摄取会添加新的身份作为她配置文件中的记录数据。 因此， [!DNL Identity Service] 现在将Mary的平板电脑设备活动与她的电子商务帐户历史记录关联起来。
-- 下一次在她的平板电脑上单击时，您的目标内容可以反映玛丽的完整个人资料和历史记录，而不仅仅是未知购物者使用的平板电脑。
+## 什么是Identity Service？
 
 ![Platform上的身份拼接](./images/identity-service-stitching.png)
 
-基本上， [!DNL Identity Service] 使您可以拼合客户的完整信息，汇总可能分散在不同系统上的相关数据。 身份关系 [!DNL Identity Service] 定义和维护由Real-time Customer Profile用来全面了解客户及其与您品牌的互动。 欲了解更多信息，请参见 [Real-time Customer Profile概述](../profile/home.md).
+在“企业对客户”(B2C)上下文中，客户与您的业务进行交互，并与您的品牌建立关系。 典型客户可能在您组织的数据基础架构内的任意数量的系统中处于活动状态。 任何给定客户都可能在您的电子商务、忠诚度和技术支持系统中处于活动状态。 同一客户还可以在任意数量的不同设备上匿名或通过身份验证方式进行互动。
 
-### 用例
+考虑以下客户历程：
 
-示例 [!DNL Identity Service] 实施包括：
+* Julien已在您的电子商务网站上创建了一个帐户，并且以前订购过一些商品。 Julien通常使用自己的笔记本电脑购物，并在每次使用时登录到自己的帐户。
+* 但是，在访问您的网站期间，她使用平板电脑搜索凉鞋。 在此会话中，由于她使用的是其他设备，因此她既不登录，也不下订单。
+* 此时，Julien的活动将以两个单独的用户档案表示：
+   * 她的第一个配置文件是她的电子商务登录ID。 当她在电子商务网站上使用用户名和密码组合来验证其会话时，将使用此配置文件。 此配置文件由跨设备标识符标识。
+   * 她的第二个个人资料是她的平板电脑设备。 此配置文件是在她使用平板电脑匿名浏览您的电子商务网站后创建的，无需登录到她的帐户。 此配置文件由Cookie标识符标识。
+* 稍后，Julien恢复她的平板电脑会话。 不过，这次她登录了自己的帐户。 因此，Identity Service现在会将Julien的平板电脑设备活动与她的电子商务登录ID相关联。
+* 接下来，您的目标内容可能会反映Julien的完整个人资料、购买历史记录和匿名浏览活动。
 
-- 电信公司可以依赖“电话号码”值，电话号码是指离线和在线数据集中的同一目标个人。
-- 由于匿名访客比例较高，零售公司可能会在离线数据集中使用“电子邮件地址”，在在线数据集中使用ECID。
-- 银行可能偏好离线数据集中的“帐号”，如分行交易。 它们可能依赖在线数据集中的“登录ID”，因为大多数访客在访问期间都将进行身份验证。
-- 您的客户也可能具有唯一的专有ID，例如GUID或其他通用唯一标识符。
+>[!IMPORTANT]
+>
+>您可以使用Identity Service来关联身份，并将分散在不同系统中的客户的完整情况拼合在一起。
 
-## 标识命名空间 {#identity-namespace}
+## Identity Service有何用途？
 
->[!CONTEXTUALHELP]
->id="platform_identity_namespace"
->title="身份命名空间"
->abstract="标识命名空间用于区分标识的上下文或类型。例如，标识将“name<span>@email.com”识别为电子邮件地址，将“443522”识别为数字 CRM ID。"
->text="Learn more in documentation"
+Identity Service为实现其任务提供了以下操作：
 
->[!CONTEXTUALHELP]
->id="platform_identity_value"
->title="标识值"
->abstract="标识值是代表唯一个人、组织或资产的标识符。该值表示的标识的上下文或类型由相应的标识命名空间定义。当跨配置文件片段匹配记录数据时，命名空间和标识值必须匹配。"
->text="Learn more in documentation"
+可以使用Identity Service实现以下操作：
 
-如果您问某人“您的ID是什么？” 如果没有进一步的情况，他们很难提供有用的答案。 按照相同的逻辑，表示标识值（无论是系统生成的ID还是电子邮件地址）的字符串值只有在提供用于提供字符串值上下文的限定符（身份命名空间）时才会完整。
+* 创建自定义命名空间以满足您组织的需求。
+* 创建、更新和查看身份图。
+* 删除基于数据集的身份。
+* 删除身份以确保法规遵从性。
 
-您的客户可能通过线上和线下渠道的组合与您的品牌互动，这带来了如何将这些分散的互动整合为单个客户身份的难题。
+>[!BEGINSHADEBOX]
 
-要了解跨多个设备和渠道的客户，首先要在每个渠道中识别他们。 Platform通过使用身份命名空间来实现这一点。 身份命名空间是电子邮件或电话等标识符，用于为客户身份提供其他上下文。 身份命名空间用于查找或链接单个身份，并为身份值提供上下文。 请参阅 [身份命名空间概述](./namespaces.md) 以了解更多信息。
+## Identity Service如何链接身份
+
+当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
+
+典型的登录事件 **发送两个身份** Experience Platform：
+
+* 代表经过身份验证的用户的人员标识符（如CRM ID）。
+* 表示Web浏览器的浏览器标识符（如ECID）。
+
+请仔细研究下面的示例：
+
+* 您使用笔记本电脑登录电子商务网站，并使用用户名和密码组合登录。 此事件使您符合经过身份验证的用户的资格，因此Identity Service可识别您的CRM ID。
+* 您使用浏览器访问电子商务网站的情况也会被Identity Service识别为事件。 此事件通过ECID在Identity Service中表示。
+* 在幕后， Identity Service将按照以下方式处理这两个事件： `CRM_ID:ABC, ECID:123`.
+   * CRM ID： ABC是代表您作为经过身份验证的用户的命名空间和值。
+   * ECID： 123是命名空间和值，表示您在笔记本电脑上使用Web浏览器的情况。
+* 接下来，如果您使用相同的凭据登录同一电子商务网站，但使用的是手机上的Web浏览器，而不是笔记本电脑上的Web浏览器，则将在Identity Service中注册一个新的ECID。
+* 在幕后， Identity Service将此新事件处理为 `{CRM_ID:ABC, ECID:456}`，其中CRM_ID：ABC表示经过身份验证的客户ID，ECID：456表示移动设备上的Web浏览器。
+
+考虑到上述情况，Identity Service建立了 `CRM_ID:ABC, ECID:123`以及 `{CRM_ID:ABC, ECID:456}`. 这将生成一个标识图，您“拥有”三个标识：一个用于人员标识符(CRM ID)，两个用于Cookie标识符(ECID)。
+
+>[!ENDSHADEBOX]
 
 ## 身份图
 
-身份图是不同身份命名空间之间关系的映射，允许您可视化并更好地了解哪些客户身份以及如何拼合在一起。 请参阅上的教程 [使用身份图查看器](./ui/identity-graph-viewer.md) 以了解更多信息。
+身份图是不同身份命名空间之间关系的映射，允许您可视化并更好地了解哪些客户身份以及如何拼合在一起。 阅读有关的教程 [使用身份图查看器](./ui/identity-graph-viewer.md) 以了解更多信息。
 
 以下视频旨在支持您了解身份和身份图。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
-## 将身份数据提供给 [!DNL Identity Service]
+## 了解Identity Service在Experience Platform基础设施中的作用
 
-本节介绍在使用提供给Adobe Experience Platform的数据之前，如何处理这些数据。 [!DNL Identity Service] 为每个客户构建身份图。
+Identity Service在Experience Platform中扮演着至关重要的角色。 其中一些关键集成包括：
 
-### 决定标识字段
-
-根据您的企业数据收集策略，标记为身份的数据字段将确定您的身份映射中包含哪些数据。 要实现Adobe Experience Platform的最大优势和最全面的客户身份，您应该上传在线和离线数据。
-
-- 在线数据是描述在线状态和行为的数据，如用户名和电子邮件地址。
-
-- 离线数据是指与在线状态不直接相关的数据，例如CRM系统的ID。 此类数据使您的身份更加稳健，并支持不同系统中的数据聚合。
-
-### 创建其他身份命名空间
-
-虽然Experience Platform提供了各种标准命名空间，但您可能需要创建其他命名空间来对您的身份正确分类。 有关更多信息，请参阅以下部分： [查看和创建组织的命名空间](./namespaces.md) 在身份命名空间概述中。
-
->[!NOTE]
->
->标识命名空间是标识的限定符。 因此，创建命名空间后，便无法删除该命名空间。
-
-### 将身份数据包含在中 [!DNL Experience Data Model] (XDM)
-
-作为标准化的框架， [!DNL Platform] 组织客户数据， [!DNL Experience Data Model] (XDM)允许跨Experience Platform和与之交互的其他服务共享和理解数据 [!DNL Platform]. 欲知更多信息，请参见 [XDM系统概述](../xdm/home.md).
-
-记录架构和时序架构均提供了包含身份数据的方法。 在摄取数据时，如果发现来自不同命名空间的数据片段共享共同的身份数据，则身份图将在这些片段之间创建新的关系。
-
-### 将XDM字段标记为标识
-
-任何类型的字段 `string` 在实施记录或时间序列的架构中，XDM类可标记为标识字段。 因此，摄取到该字段中的所有数据都将被视为身份数据。
-
->[!NOTE]
->
->数组字段和映射类型字段不受支持，并且无法标记为标识字段。
-
-如果标识字段共享公共PII数据，则还允许关联标识。
-例如，通过将电话号码字段标记为标识字段， [!DNL Identity Service] 自动绘制与其他使用相同电话号码的个人的关系图。
-
->[!NOTE]
->
->在标记字段时，会提供生成的身份命名空间。
-
-### 配置数据集 [!DNL Identity Service]
-
-在流式摄取过程中， [!DNL Identity Service]自动从记录和时间序列数据中提取身份数据。 但是，在摄取数据之前，必须启用 [!DNL Identity Service]. 请参阅上的教程  [使用API为Real-time Customer Profile和Identity服务配置数据集](../profile/tutorials/dataset-configuration.md) 以了解更多信息。
-
-### 将数据摄取到 [!DNL Identity Service]
-
-[!DNL Identity Service] 使用通过以下任一方式发送到Experience Platform的XDM兼容数据 [批量摄取](../ingestion/batch-ingestion/overview.md) 或 [流式摄取](../ingestion/streaming-ingestion/overview.md).
-
-以下视频旨在支持您了解Identity Service。 此视频介绍如何将数据字段标记为身份，以及在引入身份数据后，如何验证该数据是否已写入Adobe Experience Platform Identity Service专用图。
-
->[!WARNING]
->
->此 [!DNL Platform] 以下视频中显示的UI已过期。 请参阅文档以了解最新的UI屏幕截图和功能。
-
->[!VIDEO](https://video.tv.adobe.com/v/28167?quality=12&learn=on)
-
-## 数据管理
-
-Adobe Experience Platform在构建时考虑到了隐私问题，并且包含一个数据治理框架以保护您的客户PII数据。 默认情况下，“电子邮件”或“电话”命名空间下的身份数据会被加密，但为了确保敏感数据在保留之前会被加密，可以在数据被摄取或到达时对其应用数据使用标签 [!DNL Platform]. 欲知更多信息，请阅读 [数据管理概述](../data-governance/home.md).
-
-## 后续步骤
-
-现在您已了解 [!DNL Identity Service] 以及它在Experience Platform中的角色，您可以开始学习如何使用您的身份图 [[!DNL Identity Service API]](./api/getting-started.md).
+* [Real-time Customer Profile](../profile/home.md)：在合并给定用户档案的属性和事件之前，Real-time Customer Profile可以引用身份图。
+* [架构](../xdm/home.md)：在给定的架构中，标记为身份的架构字段允许构建身份图。
+* [数据集](../catalog/datasets/overview.md)：当启用了数据集以摄取到Real-time Customer Profile中时，如果数据集至少有两个标记为身份的字段，则会从数据集生成身份图。
+* [目标](../destinations/home.md)：目标可以根据身份命名空间将配置文件信息发送到其他系统，如经过哈希处理的电子邮件。
+* [区段匹配](../segmentation/ui/segment-match/overview.md)：区段匹配可匹配两个不同沙盒中的两个配置文件，这两个沙盒具有相同的身份命名空间和身份值。
+* [Privacy Service](../privacy-service/home.md)：如果删除请求包含 `identity`，则可以使用Privacy Service中的隐私请求处理功能从身份服务中删除指定的命名空间和身份值组合。
