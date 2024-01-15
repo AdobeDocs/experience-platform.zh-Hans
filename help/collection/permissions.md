@@ -2,10 +2,10 @@
 title: Experience Platform中数据收集的权限管理
 description: 有关如何在Adobe Experience Platform中管理权限和控制对数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: dd0856075867b5fc226068fa856942edcbe4a7a6
 workflow-type: tm+mt
-source-wordcount: '1274'
-ht-degree: 29%
+source-wordcount: '1285'
+ht-degree: 28%
 
 ---
 
@@ -31,7 +31,7 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| 沙盒 | (不适用) | 根据 [沙盒](../sandboxes/home.md) 如果您在组织下创建这些权限，则可以通过Admin Console中的此权限类别来控制对每一项的访问。 |
+| 沙盒 | （不适用） | 根据 [沙盒](../sandboxes/home.md) 如果您在组织下创建这些权限，则可以通过Admin Console中的此权限类别来控制对每一项的访问。 |
 | 数据建模 | 管理架构 | 授予查看、创建和编辑的能力 [体验数据模型(XDM)架构](../xdm/home.md). |
 | 数据建模 | 查看架构 | 授予对架构的只读访问权限。 |
 | Identity Management | 管理身份命名空间 | 授予查看、创建和编辑的能力 [身份命名空间](../identity-service/namespaces.md). |
@@ -50,7 +50,7 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 | 平台 | Web | 授予对的访问权限 [Web资产](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
 | 平台 | 移动设备 | 授予对的访问权限 [移动资产](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
 | 平台 | Edge | 授予对的访问权限 [事件转发边缘属性](../tags/ui/event-forwarding/getting-started.md) 与其他资产权利结合使用时。 |
-| 属性 | (不适用) | 根据已在您的组织下创建的属性，您可以在Admin Console中通过此类权限类别控制对每个属性的访问权限。<br><br>用户分配的资产权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
+| 属性 | （不适用） | 根据已在您的组织下创建的属性，您可以在Admin Console中通过此类权限类别控制对每个属性的访问权限。<br><br>用户分配的资产权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
 | 资产权限 | 批准 | 允许将库生成批准为的一部分 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 开发 | 允许将库内部版本开发为 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 编辑属性 | 允许编辑用户有权访问的属性的基本配置。 |
@@ -58,7 +58,8 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 | 资产权限 | 管理扩展 | 授予管理 [扩展](../tags/ui/managing-resources/extensions/overview.md) 对于用户有权访问的属性。 |
 | 资产权限 | 发布 | 允许将库内部版本发布为 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 公司权限 | 开发扩展 | 允许创建和修改组织拥有的扩展包，包括私有版本和公共发布请求。 |
-| 公司权限 | 管理扩展 | 此权限仅适用于您拥有Adobe Journey Optimizer或其他解决方案的许可证，且该许可证授予对移动应用程序内消息和推送消息的访问权限。 这允许您管理Adobe Experience Cloud知道的应用程序，以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。 |
+| 公司权限 | 管理应用程序配置 | 此权限仅适用于您拥有Adobe Journey Optimizer或其他解决方案的许可证，且该许可证授予对移动应用程序内消息和推送消息的访问权限。 这允许您管理Adobe Experience Cloud知道的应用程序，以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。 |
+| 公司权限 | 管理资产 | 允许您创建和管理标记（Web属性）、事件转发（Edge属性）和移动属性。 |
 
 {style="table-layout:auto"}
 
