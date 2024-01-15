@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 4cb570fbdb76e53dd0a8c4ee78c31d2a886e5dc1
+source-git-commit: 1f7b7f0486d0bb2774f16a766c4a5af6bbb8848a
 workflow-type: tm+mt
-source-wordcount: '1849'
-ht-degree: 9%
+source-wordcount: '1859'
+ht-degree: 5%
 
 ---
 
@@ -67,19 +67,14 @@ ht-degree: 9%
 >所有导出操作都记录在审核日志中。
 
 >[!CONTEXTUALHELP]
->id="platform_sandbox_tooling_exit_package"
->title="保存并退出包"
->abstract="要退出包并保存，用户只需使用后退选项即可。"
-
->[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_remove_object"
 >title="移除对象"
->abstract="用户必须选择行，然后使用删除选项（选择后可用）来移除该行。"
+>abstract="要从包中删除对象，请选择要删除的行，然后使用删除选项，该选项在选择时可用。 请注意，您无法从已发布的包中删除对象。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_package_expiry"
 >title="包有效期设置"
->abstract="该日期设为从今天起 90 天。该日期会持续更改，直到包发布为止。如果用户明天访问处于草稿状态的包，则日期会移动 +1 天（除非用户设置）。"
+>abstract="程序包设置为在处于草稿状态的一段不活动时间后过期。 默认日期设置为从今天算起的90天。 该日期会持续更改，直到包发布为止。如果您在明天访问处于草稿状态的包，则日期将移动到+1天，除非您手动进行此设置。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_package_status"
