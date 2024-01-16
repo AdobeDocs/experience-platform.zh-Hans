@@ -2,10 +2,10 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及可在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 309f3cce82c5d6c7f10c08b05da6d9c6c44631b6
 workflow-type: tm+mt
 source-wordcount: '1290'
-ht-degree: 42%
+ht-degree: 40%
 
 ---
 
@@ -51,9 +51,9 @@ var product = _satellite.getVar('product');
 
 >[!NOTE]
 >
->您可以使用百分比(`%`)语法，用于为标记实施中的许多表单字段引用变量，从而无需调用 `_satellite.getVar()`. 例如，使用 `%product%` 将访问产品数据元素或自定义变量的值。
+>您可以使用百分比(`%`)语法来引用标记实施中许多表单字段的变量，从而无需调用 `_satellite.getVar()`. 例如，使用 `%product%` 将访问产品数据元素或自定义变量的值。
 
-当事件触发规则时，您可以传递规则的相应项 `event` 对象到 `_satellite.getVar()` 如下所示：
+当事件触发规则时，您可以传递规则的相应项 `event` 对象移入 `_satellite.getVar()` 如下所示：
 
 ```javascript
 // event refers to the calling rule's event
@@ -61,6 +61,10 @@ var rule = _satellite.getVar('return event rule', event);
 ```
 
 ## `setVar`
+
+>[!NOTE]
+>
+>此 `setVar` 代码与Tags中指定的数据元素完全不同。
 
 **代码**
 
@@ -96,7 +100,7 @@ _satellite.getVisitorId() => Object
 var visitorIdInstance = _satellite.getVisitorId();
 ```
 
-如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)。
+如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html)。
 
 ## `logger`
 
@@ -124,7 +128,7 @@ _satellite.logger.error(message: string)
 _satellite.logger.error('No product ID found.');
 ```
 
-此 `logger` 对象允许将消息记录到浏览器控制台。 仅当用户启用了标记调试时（通过调用），才会显示消息 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
+此 `logger` 对象允许将消息记录到浏览器控制台。 仅当用户启用了标记调试（通过调用），才会显示消息 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
 
 ### 记录弃用警告
 
@@ -138,7 +142,7 @@ _satellite.logger.deprecation(message: string)
 _satellite.logger.deprecation('This method is no longer supported, please use [new example] instead.');
 ```
 
-这会将警告记录到浏览器控制台。 显示用户是否启用了标记调试的消息。
+这会将警告记录到浏览器控制台。 消息显示用户是否启用了标记调试。
 
 ## `cookie` {#cookie}
 
@@ -160,7 +164,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 **示例**
 
-以下函数调用写入了一个在一周后过期的Cookie。
+以下函数调用会写入一个在一周后过期的Cookie。
 
 ```javascript
 _satellite.cookie.set('product', 'Circuit Pro', { expires: 7 });
@@ -276,9 +280,9 @@ _satellite.notify(message: string[, level: number])
 _satellite.notify('Hello world!');
 ```
 
-`notify` 将消息记录到浏览器控制台。 仅当用户启用了标记调试时（通过调用），才会显示消息 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
+`notify` 将消息记录到浏览器控制台。 仅当用户启用了标记调试（通过调用），才会显示消息 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
 
-可以传递可选的日志记录级别，这将影响所记录消息的样式和筛选。 支持的级别包括：
+可以传递可选的日志记录级别，这将影响所记录的消息的样式和筛选。 支持的级别包括：
 
 3 - 信息性消息。
 
@@ -380,9 +384,9 @@ _satellite._monitors
 >
 >不应从生产代码访问此函数。 此函数仅用于调试目的，并将根据需要随时间发生更改。
 
-**样例**
+**示例**
 
-在运行标记库的网页上，向HTML中添加一个代码片段。 通常，代码会插入 `<head>` 元素之前 `<script>` 用于加载标记库的元素。 这允许监视器捕获标记库中发生的最早系统事件。 例如：
+在运行标记库的网页上，向HTML中添加一个代码片段。 通常，代码会插入到 `<head>` 元素之前 `<script>` 用于加载标记库的元素。 这允许监视器捕获标记库中发生的最早系统事件。 例如：
 
 ```html
 <!DOCTYPE html>
@@ -446,7 +450,7 @@ _satellite._monitors
 
 ### 测试监视器
 
-上面的示例在监视器中指定了所有三种方法。当这些方法被调用时，监视器会记录相关信息。要对此进行测试，请在标记库中设置两个规则：
+上面的示例在监视器中指定了所有三种方法。当这些方法被调用时，监视器会记录相关信息。要测试此监视器，请在标记库中设置两个规则：
 
 1. 具有一个点击事件和一个浏览器条件（仅当浏览器为 [!DNL Chrome] 时才传递）的规则。
 1. 具有一个点击事件和一个浏览器条件（仅当浏览器为 [!DNL Firefox] 时才传递）的规则。
