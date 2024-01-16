@@ -2,10 +2,10 @@
 title: 数据元素
 description: 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: 9d897602c0c83d06910b8b14a87351a9c25ab5f1
+source-git-commit: 0956a28a8ff6eacb3a55f7c333293ed5b6c81cce
 workflow-type: tm+mt
-source-wordcount: '1622'
-ht-degree: 71%
+source-wordcount: '1614'
+ht-degree: 70%
 
 ---
 
@@ -91,9 +91,11 @@ ht-degree: 71%
 
 ## 数据元素类型 {#types-of-data-elements}
 
-数据元素类型由扩展决定。对于可创建的类型，没有任何限制。
+>[!NOTE]
+>
+>数据元素类型由扩展决定。对于可创建的类型，没有任何限制。
 
-以下部分介绍核心扩展中可用的数据元素类型。其他扩展则使用其他数据元素类型。
+以下各节介绍 **核心扩展**. 其他扩展则使用其他数据元素类型。
 
 ### Cookie
 
