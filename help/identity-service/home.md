@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 4d7470a15a7cc9c9a3bcc56f5f783a967021242f
+source-git-commit: 484b1c2d37291afd02fe58723121325c837061aa
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1524'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 2%
 | --- | --- |
 | 标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成： **身份命名空间** 和 **标识值**. |
 | 标识命名空间 | 身份命名空间是给定身份的上下文。 例如，命名空间 `Email` 可能对应于 **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./namespaces.md) |
-| 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，电子邮件 **朱利安<span>@acme.com** 可以归类为 `Email` 命名空间。 |
+| 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，标识值（字符串） **朱利安<span>@acme.com** 可以归类为 `Email` 命名空间。 |
 | 标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
 | 链接 | 链接或链接是一种确定两个不同的身份表示同一实体的方法。 例如，“”之间的链接`Email` =朱利安<span>@acme.com”和“`Phone` = 555-555-1234”表示两个身份代表同一实体。 这表明，已与您的品牌交互的客户同时使用了julien的电子邮件地址<span>@acme.com和电话号码555-555-1234相同。 |
 | 身份服务 | Identity Service是Experience Platform中的一项服务，用于链接（或取消链接）身份以维护身份图。 |
@@ -91,7 +91,7 @@ Identity Service为实现其任务提供了以下操作：
 * 接下来，如果您使用相同的凭据登录同一电子商务网站，但使用的是手机上的Web浏览器，而不是笔记本电脑上的Web浏览器，则将在Identity Service中注册一个新的ECID。
 * 在幕后， Identity Service将此新事件处理为 `{CRM_ID:ABC, ECID:456}`，其中CRM_ID：ABC表示经过身份验证的客户ID，ECID：456表示移动设备上的Web浏览器。
 
-考虑到上述情况，Identity Service建立了 `CRM_ID:ABC, ECID:123`以及 `{CRM_ID:ABC, ECID:456}`. 这将生成一个标识图，您“拥有”三个标识：一个用于人员标识符(CRM ID)，两个用于Cookie标识符(ECID)。
+考虑到上述情况，Identity Service建立了 `{CRM_ID:ABC, ECID:123}`以及 `{CRM_ID:ABC, ECID:456}`. 这将生成一个标识图，您“拥有”三个标识：一个用于人员标识符(CRM ID)，两个用于Cookie标识符(ECID)。
 
 ## 身份图
 
