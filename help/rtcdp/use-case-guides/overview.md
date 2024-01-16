@@ -2,7 +2,7 @@
 title: Real-Time CDP中的示例用例
 description: 查看跨服务用例示例，以充分利用您的Real-Time CDP实施。
 feature: Use Cases
-source-git-commit: 697f785e939b9817f80a31dfd0070f9dadd48baf
+source-git-commit: f342020a0e821172a7ceca95265a9d71f64f5347
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 6%
@@ -23,7 +23,7 @@ ht-degree: 6%
 
 Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您创建潜在客户受众，使用合作伙伴的属性丰富已知受众等等。
 
-支持的用例可以分组为客户获取和用户档案扩充用例。 有关广泛的实施信息，请访问下面的文档链接。
+示例用例可以分组到客户获取和用户档案扩充用例中。 有关广泛的实施信息，请访问下面的文档链接。
 
 ### 客户获取 {#customer-acquisition}
 
