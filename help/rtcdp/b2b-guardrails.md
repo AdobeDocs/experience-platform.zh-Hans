@@ -6,9 +6,9 @@ description: Adobe Experience Platform 使用与传统关系数据模型不同�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 7c455b546b6a98936d60e6cd481cae8610c8be17
 workflow-type: tm+mt
-source-wordcount: '1662'
+source-wordcount: '1675'
 ht-degree: 2%
 
 ---
@@ -66,6 +66,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 | 无嵌套旧版关系 | 0 | 柔光 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 不建议将创建关系的功能用于任何不属于的架构 [!DNL Profile] 合并架构。 |
 | 只有B2B对象可以参与多对一关系 | 0 | 硬 | 系统仅支持B2B对象之间的多对一关系。 有关多对一关系的详细信息，请参阅关于的教程 [定义B2B架构关系](../xdm/tutorials/relationship-b2b.md). |
 | B2B对象之间嵌套关系的最大深度 | 3 | 硬 | B2B对象之间嵌套关系的最大深度为3。 这意味着，在高度嵌套的架构中，嵌套超过3级的B2B对象之间不应存在关系。 |
+| 每个维度实体有一个架构 | 1 | 硬 | 每个维度实体必须有一个架构。 尝试使用从多个架构创建的维度实体可能会影响分段结果。 不同的维度实体应具有单独的架构。 |
 
 ## 数据大小限制
 
@@ -93,7 +94,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 | 护栏 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 所有维实体的总大小 | 5 GB | 柔光 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
+| 所有维实体的总大小 | 5GB | 柔光 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
 | 每个维度实体架构的数据集 | 5 | 柔光 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
 | 每日摄取的Dimension实体批次 | 每个实体4个 | 柔光 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
 
