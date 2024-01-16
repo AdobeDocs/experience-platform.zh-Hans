@@ -2,9 +2,9 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: ac3362fa5e8a314f85f3bb659047f77fb56c1a7c
+source-git-commit: dea75b92847320284e1dc1b939f3ae11a12077a8
 workflow-type: tm+mt
-source-wordcount: '1546'
+source-wordcount: '1580'
 ht-degree: 6%
 
 ---
@@ -83,6 +83,10 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 * **[!UICONTROL 从VisitorAPI迁移ECID]**：默认启用此选项。 启用此功能后，SDK可以 `AMCV` 和 `s_ecid` Cookie并设置 `AMCV` 使用的Cookie [!DNL Visitor.js]. 在迁移到Web SDK时，此功能很重要，因为某些页面可能仍在使用 [!DNL Visitor.js]. 此选项允许SDK继续使用相同的 [!DNL ECID] 这样就不会将用户标识为两个单独的用户。
 * **[!UICONTROL 使用第三方Cookie]**：启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用此选项，则当浏览器不支持第三方Cookie或用户已配置为不允许第三方Cookie时，SDK仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK仅将标识符存储在第一方域中。
 
+  >[!IMPORTANT]
+  >>第三方Cookie与 [第一方设备Id](../../../../edge/identity/first-party-device-ids.md) Web SDK中的功能。
+您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
+  >
 ## 配置个性化设置 {#personalization}
 
 利用此部分，可配置在加载个性化内容时如何隐藏页面的某些部分。 这可确保访客仅看到个性化页面。
@@ -103,7 +107,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 >[!IMPORTANT]
 >
->在使用预隐藏代码片段时，Adobe建议使用相同的 [!DNL CSS] 规则作为 [预隐藏样式](#prehiding-style).
+在使用预隐藏代码片段时，Adobe建议使用相同的 [!DNL CSS] 规则作为 [预隐藏样式](#prehiding-style).
 
 ## 配置数据收集设置 {#data-collection}
 
@@ -130,7 +134,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 >[!IMPORTANT]
 >
-> 必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
+必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
 
 ![该图像在Web SDK标记扩展页面中显示数据流配置覆盖。](assets/datastream-overrides.png)
 
