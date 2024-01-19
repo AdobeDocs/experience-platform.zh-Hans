@@ -6,9 +6,9 @@ description: Adobe Experience Platform 使用与传统关系数据模型不同�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 7c455b546b6a98936d60e6cd481cae8610c8be17
+source-git-commit: f6cfe2de5f2f485cbd42c83b539fb458b505d260
 workflow-type: tm+mt
-source-wordcount: '1675'
+source-wordcount: '1794'
 ht-degree: 2%
 
 ---
@@ -31,9 +31,10 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 此文档有两种类型的默认限制：
 
-* **软限制：** 可以超出软限制，但软限制提供了系统性能的推荐准则。
-
-* **硬限制：** 硬限制提供绝对最大值。
+| 护栏类型 | 描述 |
+| -------------- | ----------- |
+| **性能护栏（软限制）** | 性能护栏是与用例范围相关的使用限制。 当超出性能护栏时，您可能会遇到性能下降和延迟问题。 Adobe不对此类性能下降负责。 始终超过性能护栏的客户可以选择许可额外的容量，以避免性能下降。 |
+| **系统强制的护栏（硬限制）** | Real-Time CDP UI或API强制实施系统强制的护栏。 这些限制不得超过，因为UI和API将阻止您这样做或您会返回错误。 |
 
 >[!INFO]
 >
@@ -50,10 +51,11 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 >本节中概述的数据模型限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP Adobe Experience Platform B2B版本的默认限制的完整列表，请将这些限制与 [Real-time Customer Profile数据文档的护栏](../profile/guardrails.md).
 
 | 护栏 | 限制 | 限制类型 | 描述 |
-| --- | --- | --- | --- |
-| Real-Time CDP B2B版本标准XDM类数据集 | 60 | 柔光 | 建议最大使用Real-Time CDP B2B版本提供的标准Experience Data Model (XDM)类的数据集60个。 有关B2B用例的标准XDM类的完整列表，请参阅 [Real-Time CDP B2B版本文档中的架构](schemas/b2b.md). <br/><br/>*注意：由于Experience Platform的非标准化混合数据模型的性质，大多数客户不会超过此限制。 有关如何为数据建模的问题，或者如果您想了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
-| 旧版多实体关系 | 20 | 柔光 | 建议在主要实体和维度实体之间最多定义20个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
-| 每个XDM类的多对一关系 | 2 | 柔光 | 建议每个XDM类最多定义2个多对一关系。 在删除或禁用现有关系之前，不应建立其他关系。 有关如何创建两个架构之间关系的步骤，请参阅关于的教程 [定义B2B架构关系](../xdm/tutorials/relationship-b2b.md). |
+| --------- | ----- | ---------- | ----------- |
+| Real-Time CDP B2B版本标准XDM类数据集 | 60 | 性能护栏 | 建议最大使用Real-Time CDP B2B版本提供的标准Experience Data Model (XDM)类的数据集60个。 有关B2B用例的标准XDM类的完整列表，请参阅 [Real-Time CDP B2B版本文档中的架构](schemas/b2b.md). <br/><br/>*注意：由于Experience Platform的非标准化混合数据模型的性质，大多数客户不会超过此限制。 有关如何为数据建模的问题，或者如果您想了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
+| 身份图中个人帐户的身份计数 | 50 | 性能护栏 | 单个帐户在身份图中的最大身份数为50。 任何标识超过50的用户档案都将从分段、导出和查找中排除。 |
+| 旧版多实体关系 | 20 | 性能护栏 | 建议在主要实体和维度实体之间最多定义20个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
+| 每个XDM类的多对一关系 | 2 | 性能护栏 | 建议每个XDM类最多定义2个多对一关系。 在删除或禁用现有关系之前，不应建立其他关系。 有关如何创建两个架构之间关系的步骤，请参阅关于的教程 [定义B2B架构关系](../xdm/tutorials/relationship-b2b.md). |
 
 ### Dimension实体护栏
 
@@ -62,11 +64,11 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 >本节中概述的数据模型限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP Adobe Experience Platform B2B版本的默认限制的完整列表，请将这些限制与 [Real-time Customer Profile数据文档的护栏](../profile/guardrails.md).
 
 | 护栏 | 限制 | 限制类型 | 描述 |
-| --- | --- | --- | --- |
-| 无嵌套旧版关系 | 0 | 柔光 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 不建议将创建关系的功能用于任何不属于的架构 [!DNL Profile] 合并架构。 |
-| 只有B2B对象可以参与多对一关系 | 0 | 硬 | 系统仅支持B2B对象之间的多对一关系。 有关多对一关系的详细信息，请参阅关于的教程 [定义B2B架构关系](../xdm/tutorials/relationship-b2b.md). |
-| B2B对象之间嵌套关系的最大深度 | 3 | 硬 | B2B对象之间嵌套关系的最大深度为3。 这意味着，在高度嵌套的架构中，嵌套超过3级的B2B对象之间不应存在关系。 |
-| 每个维度实体有一个架构 | 1 | 硬 | 每个维度实体必须有一个架构。 尝试使用从多个架构创建的维度实体可能会影响分段结果。 不同的维度实体应具有单独的架构。 |
+| --------- | ----- | ---------- | ----------- |
+| 无嵌套旧版关系 | 0 | 性能护栏 | 您不应在两个非[!DNL XDM Individual Profile] 模式。 创建关系是 **非** 建议用于任何未包含在 [!DNL Profile] 合并架构。 |
+| 只有B2B对象可以参与多对一关系 | 0 | 系统强制的护栏 | 系统仅支持B2B对象之间的多对一关系。 有关多对一关系的详细信息，请参阅关于的教程 [定义B2B架构关系](../xdm/tutorials/relationship-b2b.md). |
+| B2B对象之间嵌套关系的最大深度 | 3 | 系统强制的护栏 | B2B对象之间嵌套关系的最大深度为3。 这意味着，在高度嵌套的架构中，嵌套超过3级的B2B对象之间不应存在关系。 |
+| 每个维度实体有一个架构 | 1 | 系统强制的护栏 | 每个维度实体必须有一个架构。 尝试使用从多个架构创建的维度实体可能会影响分段结果。 不同的维度实体应具有单独的架构。 |
 
 ## 数据大小限制
 
@@ -83,8 +85,8 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 >本节中概述的数据大小限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP Adobe Experience Platform B2B版本的默认限制的完整列表，请将这些限制与 [Real-time Customer Profile数据文档的护栏](../profile/guardrails.md).
 
 | 护栏 | 限制 | 限制类型 | 描述 |
-| --- | --- | --- | --- |
-| 每天按XDM类摄取的批次 | 45 | 柔光 | 每个XDM类每天摄取的批次总数不应超过45。 摄取额外的批次可能会妨碍最佳性能。 |
+| --------- | ----- | ---------- | ----------- |
+| 每天按XDM类摄取的批次 | 45 | 性能护栏 | 每个XDM类每天摄取的批次总数不应超过45。 摄取额外的批次可能会妨碍最佳性能。 |
 
 ### Dimension实体护栏
 
@@ -93,10 +95,10 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 >本节中概述的数据大小限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP Adobe Experience Platform B2B版本的默认限制的完整列表，请将这些限制与 [Real-time Customer Profile数据文档的护栏](../profile/guardrails.md).
 
 | 护栏 | 限制 | 限制类型 | 描述 |
-| --- | --- | --- | --- |
-| 所有维实体的总大小 | 5GB | 柔光 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
-| 每个维度实体架构的数据集 | 5 | 柔光 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
-| 每日摄取的Dimension实体批次 | 每个实体4个 | 柔光 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
+| --------- | ----- | ---------- | ----------- |
+| 所有维实体的总大小 | 5GB | 性能护栏 | 建议所有维度实体的总大小为5GB。 摄取大尺寸实体可能会影响系统性能。 例如，不建议尝试将10GB的产品目录加载为维度实体。 |
+| 每个维度实体架构的数据集 | 5 | 性能护栏 | 建议最多5个与每个维度实体架构关联的数据集。 例如，如果您为“产品”创建架构，并添加五个参与数据集，则不应创建与产品架构绑定的第六个数据集。 |
+| 每日摄取的Dimension实体批次 | 每个实体4个 | 性能护栏 | 建议每天摄取的维度实体批次的最大数量为每个实体4个。 例如，您每天最多可以摄取4次产品目录的更新。 为同一实体摄取其他维度实体批次可能会影响系统性能。 |
 
 ## 分段护栏
 
@@ -107,8 +109,8 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 >本节中概述的分段限制表示由Real-time Customer Data Platform B2B版本启用的更改。 要获取Real-Time CDP Adobe Experience Platform B2B版本的默认限制的完整列表，请将这些限制与 [Real-time Customer Profile数据文档的护栏](../profile/guardrails.md).
 
 | 护栏 | 限制 | 限制类型 | 描述 |
-| --- | --- | --- | --- |
-| 每个B2B沙盒的区段 | 400 | 柔光 | 只要每个B2B沙盒中的区段少于400个，组织就可以总共拥有超过400个区段。 尝试创建其他区段可能会影响系统性能。 |
+| --------- | ----- | ---------- | ----------- |
+| 每个B2B沙盒的区段定义 | 400 | 性能护栏 | 只要每个B2B沙盒中的区段定义少于400个，组织就可以总计超过400个区段定义。 尝试创建其他区段定义可能会影响系统性能。 |
 
 ## 后续步骤
 
