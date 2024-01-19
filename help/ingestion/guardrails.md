@@ -3,9 +3,9 @@ keywords: Experience Platform；故障诊断；护栏；指南；
 title: 数据引入的护栏
 description: 本文档提供了有关Adobe Experience Platform中数据摄取防护的指南
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 4debc301b930643565b25218f4822a67e88063bb
+source-git-commit: d0ee51340e1175e2820fea69269a8cb6e9d85c1c
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '571'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 | 摄取类型 | 准则 | 注释 |
 | --- | --- | --- |
-| 流源 | <ul><li>最大记录大小为1 MB，建议的大小为10 KB。</li><li>在创建新的源连接时，流源支持每秒钟有4000到5000个请求。 **注意**：流式处理数据完全到数据湖最多可能需要30分钟。</li><li>您可以每秒处理4000到5000个到数据湖的请求。 **注意**：流式处理数据完全到数据湖最多可能需要30分钟。</li></ul> | 流源，如 [!DNL Kafka]， [!DNL Azure Event Hubs]、和 [!DNL Amazon Kinesis] 请勿使用 [!DNL Data Collection Core Service] (DCCS)路由，可以具有不同的吞吐量限制。 请参阅 [源概述](../sources/home.md) 对于可用于数据摄取的源目录。 |
+| 流源 | <ul><li>最大记录大小为1 MB，建议的大小为10 KB。</li><li>在摄取到数据湖时，流媒体源支持每秒钟在4000到5000个请求之间。 除了现有的源连接外，这还适用于新创建的源连接。 **注意**：流式处理数据完全到数据湖最多可能需要30分钟。</li><li>当将数据摄取到用户档案或流式分段时，流式源支持每秒最多1500个请求。</li></ul> | 流源，如 [!DNL Kafka]， [!DNL Azure Event Hubs]、和 [!DNL Amazon Kinesis] 请勿使用 [!DNL Data Collection Core Service] (DCCS)路由，可以具有不同的吞吐量限制。 请参阅 [源概述](../sources/home.md) 对于可用于数据摄取的源目录。 |
 
 ## 后续步骤
 
