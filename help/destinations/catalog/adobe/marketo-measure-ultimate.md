@@ -3,9 +3,9 @@ title: Marketo Measure Ultimate目标
 description: 了解如何将数据连接和激活到Marketo Measure Ultimate目标。
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '643'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应当如何以及何时使用Marketo Measure目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。 此集成:
+为了帮助您更好地了解应当如何以及何时使用Marketo Measure目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。 此集成：
 
 * 满足大型企业复杂的数据和性能报告要求。
 * 在多个CRM和营销自动化系统中启用B2B归因报表。
@@ -49,7 +49,7 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写以下部分中列出的字段。
 
@@ -72,7 +72,7 @@ Marketo Measure（前身为Bizible）让营销人员能够洞悉哪些营销工�
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要激活数据，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 阅读 [导出数据集](/help/destinations/ui/export-datasets.md) 有关将数据集导出到此目标的详细说明，请参阅教程。
 

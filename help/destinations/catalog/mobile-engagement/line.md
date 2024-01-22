@@ -4,9 +4,9 @@ title: LINE连接
 description: 利用LINE目标，可向平台受众添加用户档案，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '1214'
+source-wordcount: '1190'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| `[!DNL Channel access token (long-lived)]` | 您的 [!DNL LINE Channel access token (long-lived)]。 | `aaa2112XSMWqLXR7..........nyilFU=` |
+| `[!DNL Channel access token (long-lived)]` | 您的 [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
 请参阅 [[!DNL LINE] 文档](https://developers.line.biz/en/docs/messaging-api/getting-started/) 有关创建渠道或向现有渠道添加渠道的指导 [!DNL LINE] 帐户通过 [!DNL LINE] 开发人员控制台。
 
@@ -76,7 +76,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -111,7 +111,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
@@ -120,7 +120,7 @@ ht-degree: 2%
 
 要正确地将受众数据从Adobe Experience Platform发送到 [!DNL LINE] 目标，您需要执行字段映射步骤。 映射包括在您的Platform帐户中的Experience Data Model (XDM)架构字段与其在目标目标中的相应等效字段之间创建链接。 要将XDM字段正确映射到 [!DNL LINE] 目标字段，请执行以下步骤：
 
-根据您的源身份，必须映射以下目标身份命名空间： |目标身份 |源字段 |目标字段 | | — | — | — | |广告商ID(IFA) | `IDFA` 或 `GAID` | `LineId` | | LINE用户ID | `UserID` | `LineId` |
+根据您的源身份，必须映射以下目标身份命名空间： | 目标身份 | 源字段 | 目标字段 | | — | — | — | | 广告商ID(IFA) | `IDFA` 或 `GAID` | `LineId` | | 行用户ID | `UserID` | `LineId` |
 
 如果您的目标身份为 *行用户ID* 您将需要以下各项：
 ![Platform UI屏幕截图示例，显示将LINE用户ID用于目标身份时的Target映射。](../../assets/catalog/mobile-engagement/line/mappings-userid.png)

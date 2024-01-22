@@ -5,10 +5,10 @@ title: 使用Adobe Experience Platform中的流服务API连接到流目标并激
 description: 本文档介绍如何使用Adobe Experience Platform API创建流目标
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2241'
-ht-degree: 3%
+source-wordcount: '2206'
+ht-degree: 2%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
 >
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+>要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
 >
 >阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
@@ -56,12 +56,12 @@ ht-degree: 3%
 要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{ORG_ID}`
+* x-api-key： `{API_KEY}`
+* x-gw-ims-org-id： `{ORG_ID}`
 
 Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -69,7 +69,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* Content-Type: `application/json`
+* 内容类型： `application/json`
 
 ### Swagger文档 {#swagger-docs}
 

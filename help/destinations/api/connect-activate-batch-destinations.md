@@ -5,10 +5,10 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '3446'
-ht-degree: 4%
+source-wordcount: '3411'
+ht-degree: 2%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 > 
->* 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
+>* 要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
 >
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
 >
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 >
@@ -40,7 +40,7 @@ ht-degree: 4%
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
@@ -61,19 +61,19 @@ ht-degree: 4%
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
-为调用 [!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{ORG_ID}`
+* x-api-key： `{API_KEY}`
+* x-gw-ims-org-id： `{ORG_ID}`
 
 中的资源 [!DNL Experience Platform] 可以隔离到特定的虚拟沙箱。 在请求中 [!DNL Platform] API中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -81,7 +81,7 @@ ht-degree: 4%
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* Content-Type: `application/json`
+* 内容类型： `application/json`
 
 ### API参考文档 {#api-reference-documentation}
 
@@ -1036,8 +1036,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `value` | 要用于更新参数的新值。 |
 | `id` | 指定要添加到目标数据流的受众的ID。 |
 | `name` | *可选*. 指定要添加到目标数据流的受众的名称。 请注意，此字段不是必填字段，您无需提供名称即可将受众成功添加到目标数据流。 |
-| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项: <br> <ul><li>`%DESTINATION_NAME%`：必填项。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填项。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`: 可选. 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`: 可选. 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
-| `exportMode` | 必填。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
+| `filenameTemplate` | 此字段确定导出到目标的文件的文件名格式。 <br> 可以使用以下选项： <br> <ul><li>`%DESTINATION_NAME%`：必填项。 导出的文件包含目标名称。</li><li>`%SEGMENT_ID%`：必填项。 导出的文件包含导出受众的ID。</li><li>`%SEGMENT_NAME%`：可选。 导出的文件包含导出的受众的名称。</li><li>`DATETIME(YYYYMMdd_HHmmss)` 或 `%TIMESTAMP%`：可选。 为文件选择这两个选项之一，以包括通过Experience Platform生成文件的时间。</li><li>`custom-text`：可选。 将此占位符替换为要在文件名末尾追加的任何自定义文本。</li></ul> <br> 有关配置文件名的详细信息，请参阅 [配置文件名](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) 部分（在批量目标激活教程中）。 |
+| `exportMode` | 必填。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`. 有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 在batch destinations activation教程中。 |
 | `startDate` | 选择受众应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必填。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`， `"EVERY_3_HOURS"`， `"EVERY_6_HOURS"`， `"EVERY_8_HOURS"`， `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | 对象 *批处理目标* 仅限。 只有在选择 `"DAILY_FULL_EXPORT"` 中的模式 `frequency` 选择器。 <br> 必填。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 使激活作业在每日Platform批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的配置文件导出到您的目标。</li><li>选择 `"SCHEDULED"` 使激活作业在固定时间运行。 这可确保每天在同一时间导出Experience Platform配置文件数据，但您导出的配置文件可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。 选择此选项时，您还必须添加 `startTime` 指示每日导出应在UTC时段的哪个时间发生。</li></ul> |

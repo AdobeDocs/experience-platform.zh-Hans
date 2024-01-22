@@ -3,9 +3,9 @@ keywords: CRM；CRM；CRM目标；外联；外联CRM目标
 title: 外联联系
 description: 外联目标允许您导出帐户数据，并在外联中激活它以满足您的业务需求。
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1678'
 ht-degree: 2%
 
 ---
@@ -135,7 +135,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
@@ -154,7 +154,7 @@ ht-degree: 2%
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可从列表中将源字段映射到身份命名空间。
      ![平台UI屏幕截图，其中显示了使用ExpancationId的Target映射。](../../assets/catalog/crm/outreach/target-mapping.png)
 
-   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Outreach] 实例： |XDM配置文件架构|[!DNL Outreach] 实例|必需| |—|—|—| |`Oid`|`OutreachId`|是 |
+   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Outreach] 实例： |XDM配置文件架构|[!DNL Outreach] 实例| 必填| |—|—|—| |`Oid`|`OutreachId`| 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在中定义的自定义属性 [!UICONTROL 属性名称] 字段。 请参阅 [[!DNL Outreach] 潜在客户文档](https://api.outreach.io/api/v2/docs#prospect) 以获取支持的属性的完整列表。
      ![显示使用LastName的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/outreach/target-mapping-lastname.png)

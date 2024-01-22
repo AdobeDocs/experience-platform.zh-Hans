@@ -1,12 +1,12 @@
 ---
-title: Mailchimp 兴趣类别
+title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2388'
-ht-degree: 3%
+source-wordcount: '2299'
+ht-degree: 2%
 
 ---
 
@@ -101,7 +101,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 >[!IMPORTANT]
 >
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -152,7 +152,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
@@ -167,7 +167,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 1. 在 **[!UICONTROL 选择源字段]** 窗口中，选择 **[!UICONTROL 选择属性]** 类别并选择XDM属性或选择 **[!UICONTROL 选择身份命名空间]** 并选择身份。
 1. 在 **[!UICONTROL 选择目标字段]** 窗口中，选择 **[!UICONTROL 选择身份命名空间]** 并选择身份或选择 **[!UICONTROL 选择属性]** 类别并从填充自 [!DNL Mailchimp] API。 *已添加到所选内容的任何自定义属性 [!DNL Mailchimp] 受众也可以选择作为目标字段。*
 
-   XDM配置文件架构与之间的可用映射 [!DNL Mailchimp Interest Categories] 如下所示： |源字段 |目标字段 |注释 | | — | — | — | |`IdentityMap: Email`|`Identity: email`|必需：是 | |`xdm: person.name.firstName`|`Attribute: FNAME`| | |`xdm: person.name.lastName`|`Attribute: LNAME`| | |`xdm: person.birthDayAndMonth`|`Attribute: BIRTHDAY`| |
+   XDM配置文件架构与之间的可用映射 [!DNL Mailchimp Interest Categories] 如下所示： | 源字段 | 目标字段 | 注释 | | — | — | — | |`IdentityMap: Email`|`Identity: email`| 必需：是 | |`xdm: person.name.firstName`|`Attribute: FNAME`| | |`xdm: person.name.lastName`|`Attribute: LNAME`| | |`xdm: person.birthDayAndMonth`|`Attribute: BIRTHDAY`| |
 
    此外， `ADDRESS` 是一个特殊的目标字段，称为 `merge field` 在您的 [!DNL Mailchimp] 受众。 此 [[!DNL Mailchimp] 文档](https://mailchimp.com/developer/marketing/docs/merge-fields/) 将所需的键定义为 `addr1`， `city`， `state`、和 `zip`和可选键 `addr2` 和 `country`. 这些字段的值必须为字符串。 如果任何 `ADDRESS` 字段映射存在，目标传递 `ADDRESS` 对象 [!DNL Mailchimp] API更新。 任何 `ADDRESS` 未映射的字段其值默认为 `NULL` 除默认国家/地区之外 `US`.
 

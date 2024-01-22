@@ -2,10 +2,10 @@
 title: Adobe Commerce目标连接器
 description: 了解Adobe Commerce和Real-Time CDP商家如何通过提供高度相关的网站内容和促销活动，针对Real-Time CDP中构建和管理的客户受众进行自定义，从而个性化购物体验。
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: ddc4e877b3ae2f8b235faec1c29e71d389195e02
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '720'
-ht-degree: 4%
+source-wordcount: '696'
+ht-degree: 3%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 4%
 要使用此目标连接，请确保您有权访问：
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 通过访问开发人员控制台，您可以查看所需的服务帐户和凭据信息 [完成配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) Adobe Commerce扩展的URL名称。
+- [Adobe Developer控制台](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 通过访问开发人员控制台，您可以查看所需的服务帐户和凭据信息 [完成配置](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) Adobe Commerce扩展的URL名称。
 - [Adobe Commerce Cloud版本2.4.4或更高版本](https://business.adobe.com/products/magento/magento-commerce.html)
 
 在Experience Platform中，创建以下内容：
@@ -37,7 +37,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到 [!DNL Adobe Commerce] 目标：
 
@@ -65,7 +65,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 读取 [激活配置文件和受众以配置文件请求目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众激活到 [!DNL Commerce] 目标。
 

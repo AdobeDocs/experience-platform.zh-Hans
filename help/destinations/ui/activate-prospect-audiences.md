@@ -3,14 +3,14 @@ title: 将目标受众激活到目标
 type: Tutorial
 description: 了解如何将潜在客户受众激活到目标
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: fdb9d7b168d6323fddaab1ac7abc44d3a390afea
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '619'
 ht-degree: 16%
 
 ---
 
-# 激活潜在客户受众
+# 激活目标客户受众
 
 >[!AVAILABILITY]
 >
@@ -31,7 +31,7 @@ ht-degree: 16%
 
 ### 所需权限 {#permissions}
 
-要激活潜在客户受众，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要激活潜在客户受众，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要确保您具有激活潜在客户受众的必要权限，请浏览目标目录。 如果目标具有 **[!UICONTROL 激活]** 则您具有相应的权限。
 

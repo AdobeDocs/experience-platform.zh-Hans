@@ -4,10 +4,10 @@ title: Microsoft Dynamics 365连接
 description: Microsoft Dynamics 365目标允许您导出帐户数据，并在Microsoft Dynamics 365中激活该数据，以满足您的业务需求。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: 29cf080f83adf0e7f8b3549104229e9f54c5b8d9
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2183'
-ht-degree: 2%
+source-wordcount: '2019'
+ht-degree: 1%
 
 ---
 
@@ -111,7 +111,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -150,7 +150,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
@@ -169,7 +169,7 @@ ht-degree: 2%
    * **[!UICONTROL 选择身份命名空间]**：选择此选项可从列表中将源字段映射到身份命名空间。
      ![显示联系信息的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
-   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例|必需| |—|—|—| |`contactid`|`contactid`|是 |
+   * 在XDM配置文件架构与您的配置文件架构之间添加以下映射 [!DNL Dynamics 365] 实例： |XDM配置文件架构|[!DNL Dynamics 365] 实例| 必填| |—|—|—| |`contactid`|`contactid`| 是 |
 
    * **[!UICONTROL 选择自定义属性]**：选择此选项可将源字段映射到您在中定义的自定义属性 **[!UICONTROL 属性名称]** 字段。 请参阅 [[!DNL Dynamics 365] 文档](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) 以获取支持的属性的完整列表。
      ![显示电子邮件的Target映射的平台UI屏幕截图。](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)

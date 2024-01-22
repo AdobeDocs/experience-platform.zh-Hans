@@ -3,9 +3,9 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 386ffd5991c2c14a5a96aa2bf7a07da90fa4bf0c
+source-git-commit: 397a88caaf7762dfa9b64aaa472910c6a34e7778
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1142'
 ht-degree: 15%
 
 ---
@@ -87,7 +87,7 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
@@ -130,7 +130,7 @@ Adobe Experience Platform会自动连接到贵公司的Adobe Target实例。 无
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 读取 [激活受众以边缘个性化目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众激活到此目标的说明。
 

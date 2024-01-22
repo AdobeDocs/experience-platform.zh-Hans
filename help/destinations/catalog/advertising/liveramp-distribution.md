@@ -2,9 +2,9 @@
 title: LiveRamp — 分发连接
 description: 了解如何使用LiveRamp - Distribution连接器编排和激活之前载入LiveRamp的受众以及下游广告目标。
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2716'
+source-wordcount: '2722'
 ht-degree: 38%
 
 ---
@@ -65,7 +65,7 @@ ht-degree: 38%
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -195,7 +195,7 @@ ht-degree: 38%
 
 * **[!UICONTROL 广告商数据目标条款协议]**：键入 `I AGREE` 确认对迪士尼广告商数据条款的承认和同意。
 * **[!UICONTROL 客户端名称]**：输入您希望向目标合作伙伴显示的公司名称。
-* **[!UICONTROL 电子邮件地址]**：输入与个人关联的电子邮件地址。 该电子邮件地址用作广告商数据条款协议的签名。
+* **[!UICONTROL 电子邮件地址]**：输入与个人关联的电子邮件地址。 此电子邮件地址用作广告商数据条款协议的签名。
 
 ### [!DNL iHeartMedia] {#iheartmedia}
 
@@ -431,7 +431,7 @@ ht-degree: 38%
 
 >[!IMPORTANT]
 > 
->要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 此 [!DNL LiveRamp - Distribution] connection激活已通过LiveRamp帐户载入的受众 [LiveRamp — 入门](liveramp-onboarding.md) 连接。
 

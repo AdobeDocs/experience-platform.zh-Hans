@@ -3,7 +3,7 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
 source-wordcount: '1121'
 ht-degree: 7%
@@ -15,8 +15,8 @@ ht-degree: 7%
 
 >[!IMPORTANT]
 > 
-> * 激活受众并启用 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
-> * 要激活受众，请不通过 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 激活受众并启用 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+> * 要激活受众，请不通过 [映射步骤](#mapping) 的工作流中，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 > 
 > 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。

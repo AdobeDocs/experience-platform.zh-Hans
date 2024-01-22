@@ -4,10 +4,10 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '4401'
-ht-degree: 6%
+source-wordcount: '4335'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 6%
 * 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names)。
 * 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
 * 能够选择 [文件类型](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) 导出文件的属性。
-* [可自定义导出的 CSV 数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md)。
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 以下列出的六个云存储卡支持此功能：
 
@@ -49,7 +49,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md)： [!DNL Adobe Experience Platform Segmentation Service] 允许您在中构建受众并生成受众 [!DNL Adobe Experience Platform] 来自您的 [!DNL Real-Time Customer Profile] 数据。
 * [[!DNL Sandboxes]](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
@@ -57,25 +57,25 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 ### 所需权限 {#permissions}
 
-要导出用户档案，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 查看目标]**、和 **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要导出用户档案，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 ### 正在读取示例 API 调用 {#reading-sample-api-calls}
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集必需标题和可选标题的值 {#gather-values-headers}
 
 为了调用 [!DNL Platform] API，您必须先完成 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{ORG_ID}`
+* x-api-key： `{API_KEY}`
+* x-gw-ims-org-id： `{ORG_ID}`
 
 中的资源 [!DNL Experience Platform] 可以隔离到特定的虚拟沙箱。 在请求中 [!DNL Platform] API中，您可以指定将在其中执行操作的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -83,7 +83,7 @@ If you were already using the Flow Service API to export profiles to the Amazon 
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* Content-Type: `application/json`
+* 内容类型： `application/json`
 
 ### API参考文档 {#api-reference-documentation}
 
@@ -148,7 +148,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 **请求**
 
@@ -427,7 +427,7 @@ A [基本连接](https://developer.adobe.com/experience-platform-apis/references
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 +++[!DNL Azure Blob Storage] - [!DNL Connection spec] 显示 [!DNL auth spec]
 
@@ -738,7 +738,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 **请求**
 
@@ -1019,7 +1019,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `specName` | 使用 `SFTP with Password`。 |
 | `domain` | SFTP存储位置的IP地址或域名。 |
 | `username` | 用于登录到SFTP存储位置的用户名。 |
-| `sshKey` | 用于登录到SFTP存储位置的私有SSH密钥。 私有 密钥的格式必须为 Base64 编码的字符串，并且不得受密码保护。 |
+| `sshKey` | 用于登录到SFTP存储位置的私有SSH密钥。 私钥必须采用Base64编码的字符串格式，且不得受密码保护。 |
 | `port` | SFTP存储位置使用的端口。 |
 
 {style="table-layout:auto"}
@@ -1364,7 +1364,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 +++[!DNL Azure Blob Storage] - [!DNL Connection spec] 显示目标连接参数
 
@@ -2433,7 +2433,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 **请求**
 
@@ -2952,7 +2952,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
->[!TAB Azure Blob 存储]
+>[!TAB Azure Blob存储]
 
 **请求**
 

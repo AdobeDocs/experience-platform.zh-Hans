@@ -3,9 +3,9 @@ keywords: crm；CRM；CRM目标；salesforce crm；salesforce crm目标
 title: Salesforce CRM连接
 description: Salesforce CRM目标允许您导出帐户数据，并在Salesforce CRM中激活该数据，以满足您的业务需求。
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2818'
+source-wordcount: '2821'
 ht-degree: 1%
 
 ---
@@ -144,7 +144,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -153,7 +153,7 @@ ht-degree: 1%
 ### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写以下必填字段并选择 **[!UICONTROL 连接到目标]**. 请参阅 [收集 [!DNL Salesforce CRM] 凭据](#gather-credentials) 部分获取任何指导。
-|凭据 |描述 | | — | — | | **[!UICONTROL 用户名]** |您的 [!DNL Salesforce] 帐户用户名。 | | **[!UICONTROL 密码]** |由 [!DNL Salesforce] 帐户密码已附加到您的 [!DNL Salesforce] 安全令牌。<br>连接的值采用以下形式 `{PASSWORD}{TOKEN}`.<br> 注意，请勿使用任何大括号或空格。<br>例如，如果您的 [!DNL Salesforce] 密码为 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全令牌为 `TOKEN12345....0000`，则您将在 **[!UICONTROL 密码]** 字段为 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自定义域]** |您的 [!DNL Salesforce] 域前缀。 <br>例如，如果您的域是 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 作为值。 | | **[!UICONTROL 客户端ID]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Key`. | | **[!UICONTROL 客户端密码]** |您的 [!DNL Salesforce] 连接的应用程序 `Consumer Secret`. |
+| 凭据 | 描述 | | — | — | | **[!UICONTROL 用户名]** | 您的 [!DNL Salesforce] 帐户用户名。 | | **[!UICONTROL 密码]** | 由以下各项组成的连接字符串： [!DNL Salesforce] 帐户密码已附加到您的 [!DNL Salesforce] 安全令牌。<br>连接的值采用以下形式 `{PASSWORD}{TOKEN}`.<br> 注意，请勿使用任何大括号或空格。<br>例如，如果您的 [!DNL Salesforce] 密码为 `MyPa$$w0rd123` 和 [!DNL Salesforce] 安全令牌为 `TOKEN12345....0000`，则您将在 **[!UICONTROL 密码]** 字段为 `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL 自定义域]** | 您的 [!DNL Salesforce] 域前缀。 <br>例如，如果您的域是 *`d5i000000isb4eak-dev-ed`.my.salesforce.com*，您需要提供 `d5i000000isb4eak-dev-ed` 作为值。 | | **[!UICONTROL 客户端ID]** | 您的 [!DNL Salesforce] 连接的应用程序 `Consumer Key`. | | **[!UICONTROL 客户端密码]** | 您的 [!DNL Salesforce] 连接的应用程序 `Consumer Secret`. |
 
 ![显示如何进行身份验证的平台UI屏幕截图。](../../assets/catalog/crm/salesforce/authenticate-destination.png)
 
@@ -180,7 +180,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
@@ -205,8 +205,8 @@ ht-degree: 1%
 
    * 如果您使用的是 *联系人* 在区段中，请参阅Salesforce中的对象引用，以了解 [联系人](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) 以定义要更新的字段的映射。
    * 您可以通过搜索单词来标识必填字段 *必填*，如上述链接中的字段描述中所述。
-   * 根据要导出或更新字段，在XDM配置文件架构和之间添加映射 [!DNL (API) Salesforce CRM]： |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 联系人的姓氏，最多80个字符。 |\
-     |`xdm: person.name.firstName`|`Attribute: FirstName`|联系人的名字，最多40个字符。 | |`xdm: personalEmail.address`|`Attribute: Email`|联系人的电子邮件地址。 |
+   * 根据要导出或更新字段，在XDM配置文件架构和之间添加映射 [!DNL (API) Salesforce CRM]： |源字段|目标字段| 注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 联系人的姓氏，最多80个字符。 |\
+     |`xdm: person.name.firstName`|`Attribute: FirstName`| 联系人的名字最多可包含40个字符。 | |`xdm: personalEmail.address`|`Attribute: Email`| 联系人的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的平台UI屏幕截图示例。](../../assets/catalog/crm/salesforce/mappings-contacts.png)
@@ -215,8 +215,8 @@ ht-degree: 1%
 
    * 如果您使用的是 *潜在客户* 在区段中，请参阅Salesforce中的对象引用，以了解 [商机](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) 以定义要更新的字段的映射。
    * 您可以通过搜索单词来标识必填字段 *必填*，如上述链接中的字段描述中所述。
-   * 根据要导出或更新字段，在XDM配置文件架构和之间添加映射 [!DNL (API) Salesforce CRM]： |源字段|目标字段|注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 潜在客户的姓氏最多为80个字符。 |\
-     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. 潜在客户的公司。 | |`xdm: personalEmail.address`|`Attribute: Email`|商机的电子邮件地址。 |
+   * 根据要导出或更新字段，在XDM配置文件架构和之间添加映射 [!DNL (API) Salesforce CRM]： |源字段|目标字段| 注释 | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. 潜在客户的姓氏最多为80个字符。 |\
+     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. 潜在客户的公司。 | |`xdm: personalEmail.address`|`Attribute: Email`| 商机的电子邮件地址。 |
 
    * 下面显示了使用这些映射的示例：
      ![显示Target映射的平台UI屏幕截图示例。](../../assets/catalog/crm/salesforce/mappings-leads.png)

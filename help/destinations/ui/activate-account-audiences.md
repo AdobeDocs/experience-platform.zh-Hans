@@ -5,9 +5,9 @@ description: 了解如何将帐户受众激活到目标
 badgeLimitedAvailability: label="有限可用性" type="Caution"
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 0a572c5fe612b8e0cc866b4e2287ea53a4022b1a
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '827'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ### 所需权限 {#permissions}
 
-要激活帐户受众，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+要激活帐户受众，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 激活目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要确保您具有激活帐户受众的必要权限，请浏览目标目录。 如果目标具有 **[!UICONTROL 激活]** 则您具有相应的权限。
 

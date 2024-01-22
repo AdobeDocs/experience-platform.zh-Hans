@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 866e84e5f7fe5df7444c83756a893964dcd3ed3d
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
-source-wordcount: '1702'
-ht-degree: 3%
+source-wordcount: '1706'
+ht-degree: 1%
 
 ---
 
@@ -107,16 +107,16 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Profile Management] | [!UICONTROL 查看B2B配置文件] | 对B2B实体配置文件（如Account、Opportunity等）、所有B2B AI/ML服务的设置和配置以及B2B仪表板小部件的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 管理B2B配置文件] | 有权读取、创建、编辑和删除B2B实体配置文件（如Account 、 Opportunity等）。 对所有B2B AI/ML服务和B2B仪表板小组件的设置和配置的只读访问权限。 |
 | [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
-| [!DNL Identity Management] | [!UICONTROL 查看标识命名空间] | 对身份命名空间的只读访问。 |
+| [!DNL Identity Management] | [!UICONTROL 查看身份命名空间] | 对身份命名空间的只读访问。 |
 | [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙盒] | 访问读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙盒具有只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
-| [!DNL Destinations] | [!UICONTROL 管理目标] | 有权读取、创建和删除目标激活流和目标帐户。 |
-| [!DNL Destinations] | [!UICONTROL 查看目标] | 对中的可用目标的只读访问权限 **[!UICONTROL 目录]** 选项卡和中的经过身份验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限需要 [!UICONTROL 查看目标] 或 [!UICONTROL 管理目标] 将授予将数据激活到目标的用户。 |
-| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流程中添加和删除区段，但无法添加或删除映射的属性或身份。此权限需要 [!UICONTROL 激活目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 |
+| [!DNL Destinations] | [!UICONTROL 查看目标] | 只读访问权限，可查看中的可用目标 **[!UICONTROL 目录]** 选项卡和中的经过身份验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Destinations] | [!UICONTROL 管理目标] | 读取、创建和删除目标连接和目标帐户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
 | [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用创作目标 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对中的可用源的只读访问权限 **[!UICONTROL 目录]** 选项卡和经过验证的源 **[!UICONTROL 浏览]** 选项卡。 |

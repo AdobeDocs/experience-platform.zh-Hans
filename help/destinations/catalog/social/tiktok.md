@@ -1,20 +1,20 @@
 ---
-title: TikTok 连接
-description: 使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok
+title: TikTok连接
+description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '1040'
-ht-degree: 6%
+source-wordcount: '1027'
+ht-degree: 3%
 
 ---
 
-# TikTok 连接
+# TikTok连接
 
 ## 概述 {#overview}
 
-使用您的数据在 TikTok 上构建自定义受众，以便针对您的广告营销活动进行定位。这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences) 以了解更多信息。
+使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok 访问 [TikTok的业务帮助中心](https://ads.tiktok.com/help/article/audiences) 以了解更多信息。
 
 >[!IMPORTANT]
 >
@@ -62,7 +62,7 @@ TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identi
 
 >[!IMPORTANT]
 > 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两个部分中列出的字段。
 
@@ -94,7 +94,7 @@ TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identi
 
 >[!IMPORTANT]
 > 
->* 要激活数据，您需要 **[!UICONTROL 管理目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
+>* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 >* 要导出 *身份*，您需要 **[!UICONTROL 查看身份图]** [访问控制权限](/help/access-control/home.md#permissions). <br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
 读取 [将用户档案和受众激活到流式受众导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众激活到此目标的说明。
