@@ -4,9 +4,9 @@ title: Real-time Customer Data Platform中的身份
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，帮助您更好地了解客户及其行为。
 feature: Get Started, Identities
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 1d2c67a2015f57238bdbb0e14c676601e092ef5f
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '422'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 ## 身份图
 
-身份图是不同身份命名空间之间关系的映射，为您提供客户如何跨不同渠道与您的品牌互动的可视表示形式。 所有客户标识图都由共同管理和更新 [!DNL Identity Service] 近乎实时地，响应客户活动。
+身份图是不同身份之间关系的映射，它为您提供了客户如何跨不同渠道与您的品牌互动的可视表示形式。 所有客户身份图由Identity Service集体管理和更新，以响应客户活动。
 
-[!DNL Identity Service] 管理仅对您的组织可见并且基于您的数据构建的身份图，称为专用图。 [!DNL Identity Service] 当摄取的数据记录包含多个身份时，可扩充您的专用图，在找到的身份之间添加关系。
+[!DNL Identity Service] 管理仅对您的组织可见且基于您的数据构建的身份图。 [!DNL Identity Service] 当摄取的数据记录包含多个身份时，可以补充您的图表，在找到的身份之间添加关系。
 
 ## 后续步骤
 
