@@ -5,7 +5,7 @@ exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
 source-git-commit: 1f7b7f0486d0bb2774f16a766c4a5af6bbb8848a
 workflow-type: tm+mt
 source-wordcount: '1859'
-ht-degree: 5%
+ht-degree: 9%
 
 ---
 
@@ -68,13 +68,13 @@ ht-degree: 5%
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_remove_object"
->title="移除对象"
->abstract="要从包中删除对象，请选择要删除的行，然后使用删除选项，该选项在选择时可用。 请注意，您无法从已发布的包中删除对象。"
+>title="删除对象"
+>abstract="要从包中删除某个对象，请选择要删除的行，然后使用在选择后出现的删除选项。注意，无法从已发布的包中删除对象。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_package_expiry"
->title="包有效期设置"
->abstract="程序包设置为在处于草稿状态的一段不活动时间后过期。 默认日期设置为从今天算起的90天。 该日期会持续更改，直到包发布为止。如果您在明天访问处于草稿状态的包，则日期将移动到+1天，除非您手动进行此设置。"
+>title="包过期设置"
+>abstract="包被设置为在草稿状态下不活跃一段时间后过期。默认日期被设置为今天起 90 天后。此日期不断变化，直到发布包为止。如果您明天访问处于草稿状态下的包，则除非您手动设置此项，否则该日期前移 1 天。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_package_status"

@@ -5,7 +5,7 @@ exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
 source-git-commit: 876613610f8e3b369bc3fd41d235c214b791fd4d
 workflow-type: tm+mt
 source-wordcount: '1869'
-ht-degree: 9%
+ht-degree: 12%
 
 ---
 
@@ -21,18 +21,18 @@ ht-degree: 9%
 * [[!DNL Identity Service]](./home.md)：通过跨设备和系统桥接身份，更好地了解个人客户及其行为。
 * [[!DNL Privacy Service]](../privacy-service/home.md)：身份命名空间用于隐私法规(如《通用数据保护条例》(GDPR)的合规请求中。 每个隐私请求都是相对于命名空间发出的，以确定哪些消费者的数据应该受到影响。
 
-## 了解身份命名空间 {#understanding-identity-namespaces}
+## 了解标识命名空间 {#understanding-identity-namespaces}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_namespace"
 >title="身份命名空间"
->abstract="身份命名空间是给定身份的上下文。 例如，命名空间 `Email` 可能对应于 **name<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`."
+>abstract="标识命名空间是给定标识的上下文。例如，`Email` 的命名空间可能类似于 **name<span>@acme.com**。同样，`Phone` 的命名空间可能类似于 `555-555-1234`。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_value"
 >title="标识值"
->abstract="标识值是代表唯一个人、组织或资产的标识符。该值表示的标识的上下文或类型由相应的标识命名空间定义。跨配置文件片段匹配记录数据时，命名空间和身份值必须匹配。 跨配置文件片段匹配记录数据时，命名空间和身份值必须匹配。"
+>abstract="标识值是代表唯一个人、组织或资产的标识符。该值表示的标识的上下文或类型由相应的标识命名空间定义。在配置文件片段间匹配记录数据时，命名空间和标识的值必须相同。在配置文件片段间匹配记录数据时，命名空间和标识的值必须相同。"
 >text="Learn more in documentation"
 
 完全限定的标识包括两个组件： **标识值** 和 **身份命名空间**. 例如，如果标识的值为 `scott@acme.com`，则命名空间会将此值识别为电子邮件地址，以提供相关上下文。 同样，命名空间可以区分 `555-123-456` 作为电话号码，并且 `3126ABC` 作为CRM ID。 基本上， **命名空间为给定身份提供上下文**. 跨配置文件片段匹配记录数据时，例如 [!DNL Real-Time Customer Profile] 合并配置文件数据，身份值和命名空间必须匹配。
