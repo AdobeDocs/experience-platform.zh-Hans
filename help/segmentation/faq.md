@@ -2,10 +2,10 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 696dad52af4f927969fac38f78341f4e3c8c6607
+source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
 workflow-type: tm+mt
-source-wordcount: '2714'
-ht-degree: 0%
+source-wordcount: '2739'
+ht-degree: 1%
 
 ---
 
@@ -108,6 +108,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 | 发布日期 | 中的受众 **已发布** 状态是已准备好用于所有下游服务的受众。 | 是 | 是 | 是 | 可以导入或更新。 | 使用批量、流式或边缘分段进行评估。 | 是 |
 | 不活动 | 中的受众 **不活动** state是当前未使用的受众。 它仍存在于Platform中，但会 **非** 在标记为草稿或发布之前可用。 | 否，但可以显示。 | 否 | 否 | 不再更新。 | Platform不再评估或更新。 | 是 |
 | 已删除 | 中的受众 **已删除** state是一个已删除的受众。 实际删除数据最多可能需要几分钟才能执行。 | 否 | 否 | 否 | 已删除基础数据。 | 删除完成后，不会进行数据评估或执行。 | 否 |
+| 活动 | 此状态一直为 **已弃用** 并替换为 **已发布** 状态。 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 |
 
 ### Audience Portal和Audience Composition将如何与Real-Time CDP合作伙伴数据的发布进行交互？
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 5262b5e894cc6bfa2db79afcda8bfda4b496f7d5
+source-git-commit: e8f838c3cf8988f6028901df76ed040e7f08cb98
 workflow-type: tm+mt
-source-wordcount: '1789'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,10 @@ ht-degree: 0%
 此时将显示配置文件属性列表。 选择要排除的属性类型，然后 **[!UICONTROL 选择]** 以将其添加到排除块。
 
 ![此时将显示属性列表。](../images/ui/audience-composition/select-attribute-exclude.png)
+
+>[!IMPORTANT]
+>
+>按属性排除时，您只能指定 **一** 要排除的值。 使用任何类型的分隔符（如逗号或分号）都只会导致排除该确切值。 例如，将值设置为 `red, blue` 将导致排除该术语 `red, blue` 从属性中，但将 **非** 导致排除以下任一术语 `red` 或 `blue`.
 
 ## [!UICONTROL 扩充] {#enrich-block}
 

@@ -2,10 +2,10 @@
 title: 计算属性UI指南
 description: 了解如何使用Adobe Experience Platform UI创建、查看和更新计算属性。
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: cf01c18c8ea710492c8a2c8542c8a4580d5f0dcf
+source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
 workflow-type: tm+mt
-source-wordcount: '1567'
-ht-degree: 8%
+source-wordcount: '1576'
+ht-degree: 6%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 8%
 本UI指南需要了解各种 [!DNL Experience Platform] 与管理有关的服务 [!DNL Real-Time Customer Profiles]. 在阅读本指南或使用UI之前，请查看以下服务的文档：
 
 - [[!DNL Real-Time Customer Profile]](../home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
 
 ## 查看计算属性 {#view}
 
@@ -112,7 +112,7 @@ ht-degree: 8%
 
 ![此 [!UICONTROL 快速刷新] 复选框会突出显示。](./images/ui/enable-fast-refresh.png)
 
-快速刷新功能可以帮助您的属性保持最新。启用此选项可以让您每天刷新计算的属性，即使是更长的回顾期也是如此，以便您对用户活动做出快速反应。
+快速刷新功能可以帮助您的属性保持最新。启用此选项可让您每天刷新计算属性，甚至回顾时间更长，从而能够快速响应用户活动。
 
 有关快速刷新的详细信息，请阅读 [快速刷新部分](./overview.md#fast-refresh) ，位于计算属性概述中。
 
@@ -155,6 +155,10 @@ ht-degree: 8%
 >例如，如果您创建的区段定义正在查找“具有有效电子邮件地址的所有用户档案”，其中电子邮件地址字段由具有最新函数的计算属性填充，则 **必须** 包含电子邮件地址的值 **和** 电子邮件地址的时间戳已存在。
 
 创建计算属性后，可以使用 **已发布** 计算的其他下游服务中的属性。 由于计算属性是在您的配置文件合并架构上创建的配置文件属性字段，因此您可以查找实时客户配置文件的计算属性值，在受众中使用它们，将其激活到目标，或在Adobe Journey Optimizer的历程中使用它们进行个性化。
+
+>[!NOTE]
+>
+>计算属性 **无法** 在受众中使用 **合成**.
 
 ![此时将显示“区段生成器”，其中显示作为区段定义构成一部分的计算属性。](./images/ui/use-ca.png)
 
