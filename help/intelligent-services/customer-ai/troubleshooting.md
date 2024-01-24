@@ -6,10 +6,10 @@ title: Customer AI错误疑难解答
 description: 查找客户人工智能中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: d88f9691f7a2affc7737e1adab75fc441e3f7e4f
 workflow-type: tm+mt
-source-wordcount: '529'
-ht-degree: 0%
+source-wordcount: '1709'
+ht-degree: 1%
 
 ---
 
@@ -56,3 +56,21 @@ ht-degree: 0%
 如果限制资格群体无效或不可能，请更改您的预测窗口。
 
 - 尝试将预测时段更改为7天，然后查看错误是否继续出现。 如果错误不再发生，则表示您定义预测窗口的数据可能不足。
+
+### 错误
+
+| 错误代码 | 标题 | 消息模板 | 消息示例 |
+| ---------- | ----- | ---------------- | --------------- |
+| 400 | 目标不足 | 用户太少({{actual_num_samples}} in total) meeting the prediction goal definition from {{outcome_window_start}} to {{outcome_window_end}}. We require at least {{min_num_samples}} 具有合格事件以构建模型的用户。 <br><br>建议的解决方案： <br><br>1. 检查数据可用性 <br>2. 缩短预测目标时间范围 <br>3. 修改预测目标定义以包含更多用户（错误代码：VALIDATION-400 NOT_ENOUGH_OBJECTIVE） | 满足预测目标定义从2020-04-01到2021-04-01的用户太少（总共200个）。 我们要求至少500名具有合格活动的用户构建模型。 <br><br>建议的解决方案： <br>1. 检查数据可用性 <br>2. 缩短预测目标时间范围 <br>3. 修改预测目标定义以包含更多用户。 （错误代码：VALIDATION-400 NOT_ENOUGH_OBJECTIVE） |
+| 401 | 人口不足 | 合格用户太少({{actual_num_samples}} in total) from {{eligibility_window_start}} to {{eligibility_window_end}}. We require at least {{min_num_samples}} 符合条件的用户可构建模型。 <br><br>建议的解决方案： <br>1. 检查数据可用性 <br>2. 如果提供了合格群体定义，请缩短合格筛选时间范围3。 如果未提供符合条件的群体定义，请尝试添加一个（错误代码：VALIDATION-401 NOT_ENOUGH_POPULATION） | 从2020-04-01到2021-04-01，符合条件的用户（共200个）太少。 我们至少需要500个符合条件的用户才能构建模型。<br><br>建议的解决方案：<br>1. 检查数据可用性<br>2. 如果提供了符合条件的群体定义，请缩短符合条件筛选的时间范围。<br>3. 如果未提供符合条件的群体定义，请尝试添加一个。 （错误代码：VALIDATION-401 NOT_ENOUGH_POPULATION） |
+| 402 | 模型错误 | 我们无法使用当前输入数据集和配置生成质量模型。 <br><br>建议包括： <br>1. 修改您的配置以添加符合条件的群体定义。 <br>2. 使用其他数据源提高模型质量 <br>3. 添加自定义事件以在模型中包含更多数据（错误代码：VALIDATION-402 BAD_MODEL） | 我们无法使用当前输入数据集和配置生成质量模型。 <br><br>建议包括： <br>1. 请考虑修改您的配置以添加符合条件的群体定义。 <br>2. 请考虑使用其他数据源来提高模型质量。 （错误代码：VALIDATION-402 BAD_MODEL） |
+| 403 | 不符合条件的分数 | 得分分布与预期偏差太大。 <br><br>建议包括： <br>1. 请确保模型已使用最近的数据进行训练，否则请考虑重新训练您的模型。 <br>2. 请确保评分任务中没有数据问题（例如缺少数据/数据延迟）。 （错误代码：VALIDATION-403 INELIGIBLE_SCORES） | 得分分布与预期偏差太大。 <br><br>建议包括： <br>1. 请确保模型已使用最近的数据进行训练，否则请考虑重新训练您的模型。 <br>2. 请确保评分任务中没有数据问题（例如缺少数据/数据延迟）。 （错误代码：VALIDATION-403 INELIGIBLE_SCORES） |
+| 405 | 无评分数据 | 没有可用于评分的用户行为或配置文件数据 {{eligibility_window_start}} to {{eligibility_window_end}}请检查数据以确保定期更新。 （错误代码：VALIDATION-405 NO_SCORING_DATA） | 从2020-04-01到2021-04-01，没有可用于评分的用户行为或个人资料数据。 请检查数据以确保定期更新。 （错误代码：VALIDATION-405 NO_SCORING_DATA） |
+| 407 | 历史事件数据不足 | 没有足够的数据来构建模型。 从2020-04-01到2021-04-01，数据只有90天。 <br><br>我们需要120天的最新数据。 有关详细信息，请查看数据要求文档。 <br><br>建议的解决方案： <br>1. 检查数据可用性 <br>2. 缩短预测目标时间范围 <br>3. 如果提供了符合条件的群体定义，请缩短资格筛选时间范围 <br>4. 如果未提供符合条件的群体定义，请尝试添加一个（错误代码：VALIDATION-407 NOT_ENOUGH_HISTORICAL_EVENT_DATA） | 没有足够的数据来构建模型。 从2020-04-01到2021-04-01，数据只有90天。<br><br>我们需要120天的最新数据。 有关详细信息，请查看数据要求文档。<br><br>建议的解决方案：<br>1. 检查数据可用性。<br>2. 缩短预测目标时间范围。<br>3. 如果提供了符合条件的群体定义，请缩短符合条件筛选的时间范围。<br>4. 如果未提供符合条件的群体定义，请尝试添加一个。 （错误代码：VALIDATION-407 NOT_ENOUGH_HISTORICAL_EVENT_DATA） |
+| 408 | 没有符合条件的最近数据 | 中没有符合条件的用户的用户行为数据。 {{data_days}} days prior to {{etl_window_end}}. 请检查数据集以确保定期更新它。 （错误代码：VALIDATION-408 NO_RECENT_DATA_FOR_ELIGIBLE_POPULATION） | 2021-04-01之前60天内没有符合条件的用户的用户行为数据。 请检查数据集以确保定期更新它。 （错误代码：VALIDATION-408 NO_RECENT_DATA_FOR_ELIGIBLE_POPULATION） |
+| 409 | 无目标 | 没有用户符合来自的预测目标定义 {{outcome_window_start}} to {{outcome_window_end}}. We require at least {{min_num_samples}} 具有合格事件以构建模型的用户。 <br><br>建议的解决方案： <br>1. 检查数据可用性 <br>2. 修改预测目标定义（错误代码：VALIDATION-409 NO_OBJECTIVE） | 没有用户符合预测目标定义2020-04-01到2021-04-01。 我们要求至少500名具有合格活动的用户构建模型。 <br><br>建议的解决方案：<br>1. 检查数据可用性。<br>2. 修改预测目标定义。 （错误代码：VALIDATION-409 NO_OBJECTIVE） |
+| 410 | 无群体 | 没有符合条件的用户 {{eligibility_window_start}} to {{eligibility_window_end}}. We require at least {{min_num_samples}} 符合条件的用户可构建模型。 <br><br>建议的解决方案： <br>1. 检查数据可用性 <br>2. 如果提供了符合条件的群体定义，请修改条件或增加资格筛选时间范围（错误代码：VALIDATION-410 NO_POPULATION） | 2020-04-01到2021-04-01期间没有符合条件的用户。 我们至少需要500个符合条件的用户才能构建模型。 <br><br>建议的解决方案：<br>1. 检查数据可用性。 <br> 2. 如果提供了符合条件的群体定义，请修改条件或增加资格筛选时间范围。 （错误代码：VALIDATION-410 NO_POPULATION） |
+| 411 | ETL后无输入数据 | 没有可供模型使用的用户行为或配置文件数据 {{etl_start_date}} and {{etl_end_date}}. 请确保数据集具有足够的数据。 （错误代码：VALIDATION-411 NO_INPUT_DATA_AFTER_ETL） | 没有可供模型在2020-04-01和2021-04-01之间使用的用户行为或配置文件数据。 请确保数据集具有足够的数据。 （错误代码：VALIDATION-411 NO_INPUT_DATA_AFTER_ETL） |
+| 412 | ETL后无事件 | 没有可供模型使用的用户行为数据介于 {{etl_start_date}} and {{etl_end_date}}. 请确保数据集具有足够的数据。 | 没有可供模型在2020-04-01和2021-04-01之间使用的用户行为数据。 请确保数据集具有足够的数据。 （错误代码：VALIDATION-412 NO_EVENT_DATA_AFTER_ETL） |
+| 413 | 目标中的单一值 | CustomerAI要求数据集具有符合和未符合预测目标定义条件的事件。 输入数据集仅包含介于以下时间之间的限定事件： {{etl_window_start}} and {{etl_window_end}}. <br><br>建议的解决方案： <br>1. 修改预测目标定义 <br>2. 验证数据的完整性或使用包含非限定事件示例的其他预测目标（错误代码：VALIDATION-413 SINGLE_VALUE_IN_OBJECTIVE） | CustomerAI要求数据集具有符合和未符合预测目标定义条件的事件。 输入数据集仅包含2020-04-01和2021-04-01之间的符合条件的事件。<br><br>建议的解决方案：<br>1. 修改预测目标定义。<br>2. 验证数据的完整性或使用包含非限定事件示例的其他预测目标。 （错误代码：VALIDATION-413 SINGLE_VALUE_IN_OBJECTIVE） |
+| 414 | 无影响因素 | 影响因素模型生成了意外输出。 我们建议使用修改后的配置创建新应用程序。 （错误代码：VALIDATION-414 NO_INFLUSHING_FACTORS） | 影响因素模型生成了意外输出。 我们建议使用修改后的配置创建新应用程序。 （错误代码：VALIDATION-414 NO_INFLUSHING_FACTORS） |
