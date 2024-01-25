@@ -3,7 +3,7 @@ title: SalesforceMarketing Cloud帐户参与度
 description: 了解如何使用SalesforceMarketing Cloud帐户参与（以前称为Pardot）目标导出您的帐户数据，并在SalesforceMarketing Cloud帐户参与中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1532'
 ht-degree: 2%
@@ -72,7 +72,7 @@ A [!DNL Marketing Cloud Account Engagement] 订购 [Marketing Cloud客户参与]
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Marketing Cloud Account Engagement] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Marketing Cloud Account Engagement] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

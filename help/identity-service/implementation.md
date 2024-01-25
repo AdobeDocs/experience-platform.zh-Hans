@@ -1,9 +1,9 @@
 ---
 title: Identity Service实施指南
 description: 了解提供给Adobe Experience Platform的数据在Identity Service用于构建身份图之前如何进行处理。
-source-git-commit: bdda234c44b63999d7582857975afa64fdb93605
+source-git-commit: f1273c1deac32559e214d1d99d10f6ca25fe4264
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 创建其他身份命名空间
 
-虽然Experience Platform提供了各种标准命名空间，但您可能需要创建其他命名空间来对您的身份正确分类。 有关详细信息，请阅读上的指南 [为您的组织创建自定义命名空间](./namespaces.md).
+虽然Experience Platform提供了各种标准命名空间，但您可能需要创建其他命名空间来对您的身份正确分类。 有关详细信息，请阅读上的指南 [为您的组织创建自定义命名空间](./features/namespaces.md).
 
 >[!NOTE]
 >
@@ -45,6 +45,8 @@ ht-degree: 0%
 >
 >* 数组字段和映射类型字段不受支持，并且无法标记为标识字段。
 >* 在标记字段时，会提供生成的身份命名空间。
+
+有关详细信息，请阅读指南 [在UI中定义身份字段](../xdm/ui/fields/identity.md).
 
 ## 为Identity服务配置数据集
 

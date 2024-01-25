@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 客户属性源连接器概述
 description: 了解如何使用API或用户界面将客户属性连接到Adobe Experience Platform
 exl-id: 63765ecd-ddb5-4992-a3de-d53f054bfb28
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '405'
-ht-degree: 10%
+source-wordcount: '381'
+ht-degree: 7%
 
 ---
 
@@ -25,7 +25,7 @@ Experience Platform提供对摄取的支持 [!DNL Customer Attributes] 将数据
 
 ## 标识
 
-数据集的主要标识包含在源数据的CSV文件的第一列中。 此 [!DNL Customer Attributes] 源假定身份始终映射到 [`CORE` 命名空间](../../../identity-service/namespaces.md)，系统生成的命名空间，受支持 [[!DNL Identity Service]](../../../identity-service/home.md).
+数据集的主要标识包含在源数据的CSV文件的第一列中。 此 [!DNL Customer Attributes] 源假定身份始终映射到 [`CORE` 命名空间](../../../identity-service/features/namespaces.md)，系统生成的命名空间，受支持 [[!DNL Identity Service]](../../../identity-service/home.md).
 
 使用时，无法为身份选择现有命名空间 [!DNL Customer Attributes] 源因为 [!DNL Customer Attributes] 假定架构的主要身份始终位于身份映射中。 [!DNL Customer Attributes] 然后，以自动方式创建源ID到身份映射UUID的映射。
 

@@ -3,7 +3,7 @@ keywords: 移动设备；炫耀；消息传送；
 title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1125'
 ht-degree: 2%
@@ -40,7 +40,7 @@ ht-degree: 2%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| external_id | 自定义 [!DNL Braze] 支持映射任何标识的标识符。 | 您可以发送任何 [身份](../../../identity-service/namespaces.md) 到 [!DNL Braze] 目标，只要将其映射到 [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
+| external_id | 自定义 [!DNL Braze] 支持映射任何标识的标识符。 | 您可以发送任何 [身份](../../../identity-service/features/namespaces.md) 到 [!DNL Braze] 目标，只要将其映射到 [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
 
 {style="table-layout:auto"}
 

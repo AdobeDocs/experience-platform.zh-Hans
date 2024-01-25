@@ -2,9 +2,9 @@
 title: 在UI中为自定义Marketo Engage数据创建活动源连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将自定义活动数据引入Adobe Experience Platform的步骤。
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1480'
+source-wordcount: '1470'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [体验数据模型(XDM)](../../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
    * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md)：了解如何在UI中创建和编辑架构。
-* [身份命名空间](../../../../../identity-service/namespaces.md)：身份命名空间是的组件 [!DNL Identity Service] 作为与身份相关的上下文指示器。 完全限定的身份包括ID值和命名空间。
+* [身份命名空间](../../../../../identity-service/features/namespaces.md)：身份命名空间是的组件 [!DNL Identity Service] 作为与身份相关的上下文指示器。 完全限定的身份包括ID值和命名空间。
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
 
@@ -73,7 +73,7 @@ ht-degree: 0%
 
 接下来，向架构中添加新字段。 此新字段必须设置为 `type: object` 和将包含自定义活动的各个字段。
 
-要添加新字段，请选择加号(`+`)。 此项的条目 *[!UICONTROL 无标题的字段 |类型]* 显示。 接下来，使用配置字段的属性 *[!UICONTROL 字段属性]* 面板。 将字段名称设置为您的自定义活动的API名称，并将显示名称设置为您的自定义活动的显示名称。 然后，将类型设置为 `object` 并将字段组分配给您在上一步中创建的自定义活动字段组。 完成后，选择 **[!UICONTROL 应用]**.
+要添加新字段，请选择加号(`+`)。 此项的条目 *[!UICONTROL 无标题的字段 | 类型]* 显示。 接下来，使用配置字段的属性 *[!UICONTROL 字段属性]* 面板。 将字段名称设置为您的自定义活动的API名称，并将显示名称设置为您的自定义活动的显示名称。 然后，将类型设置为 `object` 并将字段组分配给您在上一步中创建的自定义活动字段组。 完成后，选择 **[!UICONTROL 应用]**.
 
 ![带加号(`+`)选定符号，以便添加新字段。](../../../../images/tutorials/create/marketo-custom-activities/add-new-object.png)
 
@@ -135,7 +135,7 @@ ht-degree: 0%
 
 ![源数据和目标数据的所有映射。](../../../../images/tutorials/create/marketo-custom-activities/all-mappings.png)
 
-### 请查看
+### 审核
 
 此 *[!UICONTROL 审核]* 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 

@@ -2,7 +2,7 @@
 title: XDM单个潜在客户配置文件类
 description: 了解Experience Data Model (XDM)中的XDM Individual Prospect Profile类。
 exl-id: 10fd9d16-4123-4ad4-971f-b715231ee6a9
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '356'
 ht-degree: 3%
@@ -23,7 +23,7 @@ ht-degree: 3%
 | `_id` | [!UICONTROL 字符串] | 系统为记录生成的唯一字符串标识符。 此字段用于跟踪单个记录的唯一性，防止数据重复，并在下游服务中查找该记录。<br><br>由于此字段是系统生成的，因此它在数据摄取期间不会提供显式值。 但是，您可以根据需要选择提供自己的唯一ID值。 |
 | `createdByBatchID` | [!UICONTROL 字符串] | 导致创建记录的摄取批次的ID。 |
 | `modifiedByBatchID` | [!UICONTROL 字符串] | 导致更新记录的上次摄取批次的ID。 |
-| `partnerID` | [!UICONTROL 字符串] | 通常，用于标识单个潜在客户的唯一假名标识符。 请参阅相关文档 [身份类型](../../identity-service/namespaces.md#identity-type) 详细了解Partner ID以及Adobe Experience Platform中可用的其他身份类型。 |
+| `partnerID` | [!UICONTROL 字符串] | 通常，用于标识单个潜在客户的唯一假名标识符。 请参阅相关文档 [身份类型](../../identity-service/features/namespaces.md#identity-type) 详细了解Partner ID以及Adobe Experience Platform中可用的其他身份类型。 |
 | `repositoryCreatedBy` | [!UICONTROL 字符串] | 创建记录的用户的ID。 |
 | `repositoryLastModifiedBy` | [!UICONTROL 字符串] | 上次修改记录的用户的ID。 创建记录时， `modifiedByUser` 值设置为 `createdByUser` 值。 |
 

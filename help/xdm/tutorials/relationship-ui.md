@@ -5,9 +5,9 @@ title: 使用架构编辑器定义两个架构之间的关系
 description: 本文档提供了一个教程，介绍如何使用Experience Platform用户界面中的架构编辑器定义两个架构之间的关系。
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 8b5c1776804bbacad5c3d72dd48c1716380cca79
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1161'
+source-wordcount: '1158'
 ht-degree: 10%
 
 ---
@@ -77,7 +77,7 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->要了解如何创建自定义身份命名空间，请参阅 [Identity Service文档](../../identity-service/namespaces.md#manage-namespaces).
+>要了解如何创建自定义身份命名空间，请参阅 [Identity Service文档](../../identity-service/features/namespaces.md#manage-namespaces).
 
 ## 创建关系字段组
 

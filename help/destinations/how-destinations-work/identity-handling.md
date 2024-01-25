@@ -1,15 +1,15 @@
 ---
-title: 目标激活工作流程中的身份处理
+title: 目标激活工作流中的身份处理
 description: 了解如何在激活工作流中处理身份导出，具体取决于目标类型
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1180'
-ht-degree: 3%
+source-wordcount: '1163'
+ht-degree: 1%
 
 ---
 
-# 目标激活工作流程中的身份处理
+# 目标激活工作流中的身份处理
 
 本页介绍如何将身份导出到不同的目标类型的特性，并教您如何根据目标找到可以导出的身份。
 
@@ -23,7 +23,7 @@ ht-degree: 3%
 
 对象 [基于文件的目标](/help/destinations/destination-types.md#file-based) (例如 [!DNL Amazon S3]、 SFTP、大多数电子邮件营销目标，如 [!DNL Adobe Campaign]， [!DNL Oracle Eloqua]， [!DNL Salesforce Marketing Cloud])，则其中大多数目标的身份设置是开放的，这意味着您无需在 [选择属性](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes) 批量激活工作流的步骤。
 
-如果您选择向文件导出添加标识，请注意，只能从 [身份命名空间](/help/identity-service/ui/identity-graph-viewer.md#access-identity-graph-viewer) 可以在导出中选择。 选择要导出的标识时，会自动将其选为 [必需属性](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) 和 [重复数据删除键](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
+如果您选择向文件导出添加标识，请注意，只能从 [身份命名空间](/help/identity-service/features/identity-graph-viewer.md#access-identity-graph-viewer) 可以在导出中选择。 选择要导出的标识时，会自动将其选为 [必需属性](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) 和 [重复数据删除键](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
 
 ![选定为强制属性和重复数据删除键的标识。](/help/destinations/assets/how-destinations-work/selected-identity.png)
 

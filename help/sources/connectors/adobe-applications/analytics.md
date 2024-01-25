@@ -2,7 +2,7 @@
 title: 报告包数据的Adobe Analytics Source Connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 5ec22fcf0f4c48efc28a3abd343bb00a19756281
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '1110'
 ht-degree: 2%
@@ -74,7 +74,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 | 标识字段 | 描述 |
 | --- | --- |
 | AAID | AAID是Adobe Analytics中的主要设备标识符，并且必定存在于通过 [!DNL Analytics] 源。 AAID有时称为 *旧版Analytics ID* 或作为 `s_vi` Cookie ID。 尽管如此，AAID还是会创建，即使 `s_vi` Cookie不存在。 AAID由 `post_visid_high` 和 `post_visid_low` 中的列 [[!DNL Analytics] 数据馈送](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 在任何给定事件中，AAID字段都包含单个标识，它可能是 [操作顺序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **注意**：在整个报表包中，AAID可能包含各种事件的类型组合。 |
-| ECID | ECID(Experience CloudAdobe Analytics ID)是一个单独的设备标识符字段，当设备标识符字段包含设备时， [!DNL Analytics] 是使用Experience CloudIdentity服务实现的。 ECID有时也称为MCID(Marketing CloudID)。 如果事件中存在ECID，则AAID可能基于ECID，具体取决于Analytics [宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) 已配置。 ECID由 `mcvisid` Analytics数据馈送中的。 有关ECID的更多信息，请参见 [ECID概述](../../../identity-service/ecid.md). 有关ECID如何与配合使用的信息 [!DNL Analytics]，请参阅上的文档 [Analytics和Experience CloudID请求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html). |
+| ECID | ECID(Experience CloudAdobe Analytics ID)是一个单独的设备标识符字段，当设备标识符字段包含设备时， [!DNL Analytics] 是使用Experience CloudIdentity服务实现的。 ECID有时也称为MCID(Marketing CloudID)。 如果事件中存在ECID，则AAID可能基于ECID，具体取决于Analytics [宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) 已配置。 ECID由 `mcvisid` Analytics数据馈送中的。 有关ECID的更多信息，请参见 [ECID概述](../../../identity-service/features/ecid.md). 有关ECID如何与配合使用的信息 [!DNL Analytics]，请参阅上的文档 [Analytics和Experience CloudID请求](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html). |
 | AACUSTOMID | AACUSTOMID是一个单独的标识符字段，将在Adobe Analytics中根据对 `s.VisitorID` 中的变量 [!DNL Analytics] 实现。 AACUSTOMID由 `cust_visid` 中的列 [[!DNL Analytics] 数据馈送](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). 如果AACUSTOMID存在，则AAID将基于AACUSTOMID，因为AACUSTOMID优于由定义的所有其他标识符。 [操作顺序 [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
 
 ### 如何 [!DNL Analytics] 源处理身份

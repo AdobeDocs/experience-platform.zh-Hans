@@ -2,7 +2,7 @@
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '1550'
 ht-degree: 1%
@@ -56,12 +56,12 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 
 ## 支持的身份 {#supported-identities}
 
-*Adobe Campaign Managed Cloud Services* 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+*Adobe Campaign Managed Cloud Services* 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | external_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 我们建议使用此标识，并将其映射到您的Campaign实例中表示客户的ID(loyalty_ID、account_ID、customer_ID...) |
-| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/ecid.md) 以了解更多信息。 |
+| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 | phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
 | GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |

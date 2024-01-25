@@ -2,10 +2,10 @@
 title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 15f3f7c9e0efb2fe5e9a1acd39b1cf23790355cb
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1283'
-ht-degree: 2%
+source-wordcount: '1281'
+ht-degree: 1%
 
 ---
 
@@ -87,7 +87,7 @@ curl -X POST \
 | `datasetId` | 如果您要从单个数据集中删除，此值必须是相关数据集的ID。 如果要从所有数据集中删除，则将该值设置为 `ALL`.<br><br>如果要指定单个数据集，则该数据集的关联体验数据模型(XDM)架构必须定义主标识。 如果数据集没有主标识，则必须具有标识映射，才能被数据生命周期请求修改。<br>如果存在标识映射，则将显示为名为的顶级字段 `identityMap`.<br>请注意，数据集行的标识映射中可能具有多个标识，但只能将一个标识标记为主标识。 `"primary": true` 必须包含以强制 `id` 以匹配主要身份。 |
 | `displayName` | 记录删除请求的显示名称。 |
 | `description` | 记录删除请求的描述。 |
-| `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的身份。 每个身份都由 [身份命名空间](../../identity-service/namespaces.md) 和一个值：<ul><li>`namespace`：包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`：身份值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主身份相同的身份命名空间。<br><br>如果 `datasetId` 设置为 `ALL`， `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，如所报告，您的请求仍会限制您的组织可用的命名空间 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
+| `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的身份。 每个身份都由 [身份命名空间](../../identity-service/features/namespaces.md) 和一个值：<ul><li>`namespace`：包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`：身份值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主身份相同的身份命名空间。<br><br>如果 `datasetId` 设置为 `ALL`， `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，如所报告，您的请求仍会限制您的组织可用的命名空间 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style="表格布局：自动"}
 
@@ -114,7 +114,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `workorderId` | 删除订单的ID。 这可用于稍后查找删除的状态。 |
-| `orgId` | 您的组织 ID。 |
+| `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
 | `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |
@@ -192,7 +192,7 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `workorderId` | 删除订单的ID。 这可用于稍后查找删除的状态。 |
-| `orgId` | 您的组织 ID。 |
+| `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
 | `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |
@@ -280,7 +280,7 @@ curl -X PUT \
 | 属性 | 描述 |
 | --- | --- |
 | `workorderId` | 删除订单的ID。 这可用于稍后查找删除的状态。 |
-| `orgId` | 您的组织 ID。 |
+| `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的捆绑包的ID，用于调试目的。 多个删除订单捆绑在一起，由下游服务处理。 |
 | `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |

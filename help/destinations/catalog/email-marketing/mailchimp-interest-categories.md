@@ -3,7 +3,7 @@ title: Mailchimp兴趣类别
 description: Mailchimp（也称为Intuit Mailchimp）是一种流行的营销自动化平台和电子邮件营销服务，企业使用它来管理联系人（客户、客户或其他利益相关方），并使用邮件列表和电子邮件营销活动与其交谈。 使用此连接器可以根据联系人的兴趣和偏好对他们进行排序。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '2299'
 ht-degree: 2%
@@ -78,7 +78,7 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Mailchimp] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Mailchimp] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

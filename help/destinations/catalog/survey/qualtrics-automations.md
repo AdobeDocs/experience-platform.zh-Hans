@@ -4,7 +4,7 @@ title: Qualtrics自动化
 description: 同步体验和运营客户数据以大规模解锁个性化。 在Qualtrics Experience Id中，使用对Adobe Experience Platform中多个运营数据来源的聚合作为输入，以更好地了解您的客户，并实现有针对性的外联，在了解意图、情绪和体验驱动因素方面缩小差距。
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 2%
@@ -57,7 +57,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-*Qualtrics自动化* 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+*Qualtrics自动化* 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

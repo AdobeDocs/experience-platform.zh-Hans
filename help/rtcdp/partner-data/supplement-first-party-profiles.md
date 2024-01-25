@@ -3,9 +3,9 @@ title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1256'
 ht-degree: 80%
 
 ---
@@ -56,7 +56,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 1. 作为&#x200B;**客户**，您许可&#x200B;**数据合作伙伴**&#x200B;的属性。
 2. 作为&#x200B;**客户**，您可以扩展您的配置文件数据和治理模型，以适应&#x200B;**合作伙伴**&#x200B;提供的属性。
 3. 作为&#x200B;**客户**，您加入希望通过数据合作伙伴扩充的受众。一般来说，这些受众去除了输入标识符，例如电子邮件、姓名、地址或其他个人身份信息 (PII) 元素。
-4. **合作伙伴**&#x200B;为他们能够匹配的配置文件附加许可属性。可以选择将[合作伙伴 ID ](/help/identity-service/namespaces.md)包含在合作伙伴范围的 ID 命名空间中。
+4. **合作伙伴**&#x200B;为他们能够匹配的配置文件附加许可属性。可以选择将[合作伙伴 ID ](/help/identity-service/features/namespaces.md)包含在合作伙伴范围的 ID 命名空间中。
 5. 作为&#x200B;**客户**，您可以在 Real-Time CDP 中将数据合作伙伴的属性加载到客户配置文件中。
 
 ## 如何实现用例：分步说明 {#step-by-step-instructions}
@@ -99,9 +99,9 @@ Commenting out links for now
 
 >[!TIP]
 >
->如果您选择使用数据供应商提供的基于个人的标识符来补充您的客户配置文件，您可以创建类型为&#x200B;**[[!UICONTROL 合作伙伴 ID]](/help/identity-service/namespaces.md)** 的新身份类型。
+>如果您选择使用数据供应商提供的基于个人的标识符来补充您的客户配置文件，您可以创建类型为&#x200B;**[[!UICONTROL 合作伙伴 ID]](/help/identity-service/features/namespaces.md)** 的新身份类型。
 >
->阅读[身份类型部分](/help/identity-service/namespaces.md)，了解有关合作伙伴 ID 的更多信息。
+>阅读[身份类型部分](/help/identity-service/features/namespaces.md)，了解有关合作伙伴 ID 的更多信息。
 >阅读 Experience Platform 用户界面中有关[如何定义标识字段](/help/xdm/ui/fields/identity.md)的内容。
 
 ### 在除去个人身份信息 (PII) 或哈希 PII 时导出您想要扩充的受众 {#export-audiences}
@@ -130,7 +130,7 @@ Commenting out links for now
 
 在探索本页中描述的用例时，请注意以下限制：
 
-* 如果您选择使用合作伙伴 ID，请注意在构建您的[身份图](/help/identity-service/ui/identity-graph-viewer.md)时不会使用这些 ID。
+* 如果您选择使用合作伙伴 ID，请注意在构建您的[身份图](/help/identity-service/features/identity-graph-viewer.md)时不会使用这些 ID。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 

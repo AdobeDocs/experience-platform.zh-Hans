@@ -3,7 +3,7 @@ title: Pega配置文件连接器
 description: 使用Adobe Experience Platform中Amazon S3的Pega配置文件连接器将完整的或增量的（或同时使用两者）配置文件数据导出到Amazon S3云存储。 在Pega Customer Decision Hub中，可以在Customer Profile Designer中安排数据作业，以定期从Amazon S3存储导入配置文件数据。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1115'
 ht-degree: 3%
@@ -45,7 +45,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pega Customer Decision Hub] 支持激活下表中描述的自定义用户ID。 有关更多详细信息，请参阅 [身份](/help/identity-service/namespaces.md).
+[!DNL Pega Customer Decision Hub] 支持激活下表中描述的自定义用户ID。 有关更多详细信息，请参阅 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 |
 |---|---|

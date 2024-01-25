@@ -3,7 +3,7 @@ title: HubSpot连接
 description: HubSpot目标允许您管理HubSpot帐户中的联系人记录。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1543'
 ht-degree: 2%
@@ -64,7 +64,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL HubSpot] 支持更新下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL HubSpot] 支持更新下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 示例 | 描述 | 注意事项 |
 |---|---|---|---|

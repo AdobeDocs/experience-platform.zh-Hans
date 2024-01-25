@@ -4,16 +4,16 @@ feature: Attribution AI
 title: Attribution AIUI指南
 description: 本文档可用作在Intelligent Services用户界面中与Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2442'
-ht-degree: 1%
+source-wordcount: '2450'
+ht-degree: 0%
 
 ---
 
 # Attribution AI用户界面指南
 
-作为Intelligent Services的一部分，Attribution AI是一种多渠道的算法归因服务，它计算客户交互对指定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户历程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+作为Intelligent Services的一部分，Attribution AI是一种多渠道的算法归因服务，它计算客户交互对指定结果的影响和增量影响。 借助Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
 本文档可用作在Intelligent Services用户界面中与Attribution AI交互的指南。
 
@@ -103,7 +103,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> 如果某个数据集不存在有效的身份类型（命名空间），则必须使用设置主身份并将其分配给身份命名空间 [架构编辑器](../../xdm/schema/composition.md#identity). 要了解有关命名空间和身份的详细信息，请访问 [Identity服务命名空间](../../identity-service/namespaces.md) 文档。
+> 如果某个数据集不存在有效的身份类型（命名空间），则必须使用设置主身份并将其分配给身份命名空间 [架构编辑器](../../xdm/schema/composition.md#identity). 要了解有关命名空间和身份的详细信息，请访问 [Identity服务命名空间](../../identity-service/features/namespaces.md) 文档。
 
 ## 映射媒体渠道和营销活动字段 {#aai-mapping}
 

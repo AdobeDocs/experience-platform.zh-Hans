@@ -4,7 +4,7 @@ title: LINE连接
 description: 利用LINE目标，可向平台受众添加用户档案，并为连接的用户提供个性化体验。
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1190'
 ht-degree: 2%
@@ -54,7 +54,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL LINE] 支持更新和导出下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL LINE] 支持更新和导出下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 |
 |---|---|

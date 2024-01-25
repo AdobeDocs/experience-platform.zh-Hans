@@ -2,7 +2,7 @@
 title: Medallia连接
 description: 激活目标Medallia调查和反馈收集的用户档案，以更好地了解客户的需求和期望。
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 2%
@@ -44,7 +44,7 @@ B2B品牌希望评估和简化其入职计划。 他们希望向刚刚完成入�
 
 ## 支持的身份 {#supported-identities}
 
-Medallia支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+Medallia支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

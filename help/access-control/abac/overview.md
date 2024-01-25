@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 44ffcc09edcfe35bdd456b509fac6f096ef8e022
+source-git-commit: 0d111241658b4014d1ca2e6013d21a4782d81be9
 workflow-type: tm+mt
 source-wordcount: '1840'
 ht-degree: 14%
@@ -103,7 +103,7 @@ ht-degree: 14%
 
 Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 
-作为基于属性的访问控制的一部分， `view-identity-graph` 权限允许您确定贵组织中的哪些用户可以通过用户界面或API访问身份图。 有关详细信息，请参阅以下内容中的指南： [使用身份图查看器](../../identity-service/ui/identity-graph-viewer.md).
+作为基于属性的访问控制的一部分， `view-identity-graph` 权限允许您确定贵组织中的哪些用户可以通过用户界面或API访问身份图。 有关详细信息，请参阅以下内容中的指南： [使用身份图查看器](../../identity-service/features/identity-graph-viewer.md).
 
 有关的详细信息 [!DNL Identity Service]，请参阅 [[!DNL Identity Service] 概述](../../identity-service/home.md).
 

@@ -5,7 +5,7 @@ title: 浏览UI中的架构资源
 description: 了解如何在Experience Platform用户界面中探索现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: f08aa017b7f971a54197b95023e9331832ecb7f1
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '993'
 ht-degree: 0%
@@ -86,7 +86,7 @@ ht-degree: 0%
 
 检查包含身份字段的架构时，这些字段在左边栏中列在提供给架构的类或字段组下。 选择左边栏中的身份字段名称以显示画布中的字段，无论其嵌套深度如何。
 
-标识字段在画布中用指纹图标(![指纹图标图像](../images/ui/explore/identity-symbol.png))。 如果选择身份字段的名称，则可以查看附加信息，例如 [身份命名空间](../../identity-service/namespaces.md) 以及字段是否是架构的主要标识。
+标识字段在画布中用指纹图标(![指纹图标图像](../images/ui/explore/identity-symbol.png))。 如果选择身份字段的名称，则可以查看附加信息，例如 [身份命名空间](../../identity-service/features/namespaces.md) 以及字段是否是架构的主要标识。
 
 ![](../images/ui/explore/identity-field.png)
 

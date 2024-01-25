@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 6%
@@ -20,7 +20,7 @@ ht-degree: 6%
 标识字段是在Platform中构建客户标识图的关键组件，它最终影响Real-time Customer Profile如何将不同的数据片段合并在一起，从而获得客户的完整视图。 在定义架构中的身份字段之前，请参阅以下文档以了解与身份字段相关的关键服务和概念：
 
 * [Adobe Experience Platform Identity服务](../../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集符合的XDM架构定义的身份字段将数据集链接在一起。
-   * [身份命名空间](../../../identity-service/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，是每个身份字段的必需组件。
+   * [身份命名空间](../../../identity-service/features/namespaces.md)：身份命名空间定义可以与单个人员相关的不同类型的身份信息，是每个身份字段的必需组件。
 * [Real-time Customer Profile](../../../profile/home.md)：利用客户身份图根据来自多个来源的汇总数据提供近乎实时更新的统一客户配置文件。
 
 ## 定义标识字段 {#define-a-identity-field}
@@ -56,6 +56,6 @@ ht-degree: 6%
 
 ## 后续步骤
 
-本指南介绍了如何在UI中定义标识字段。 使用此架构摄取数据时，您的客户身份图将进行更新以反映架构的身份字段。 请参阅 [身份图查看器](../../../identity-service/ui/identity-graph-viewer.md) 了解如何在UI中探索贵组织的专用图。
+本指南介绍了如何在UI中定义标识字段。 使用此架构摄取数据时，您的客户身份图将进行更新以反映架构的身份字段。 请参阅 [身份图查看器](../../../identity-service/features/identity-graph-viewer.md) 了解如何在UI中探索贵组织的专用图。
 
 有关更多详细信息，请参阅 [在UI中定义字段](./overview.md#special) 了解如何在中定义其他XDM字段类型 [!DNL Schema Editor].

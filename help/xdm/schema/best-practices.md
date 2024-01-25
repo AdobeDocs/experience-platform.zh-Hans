@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: cdb98f7512d290ed23867f2c081cf4ce432d18ca
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '3096'
 ht-degree: 1%
@@ -206,7 +206,7 @@ ht-degree: 1%
 
 在Experience Platform中，标记为身份的XDM字段用于拼合来自多个数据源的各个客户的信息。 尽管架构可以有多个标记为身份的字段，但必须定义一个主身份，架构才能在中使用 [!DNL Real-Time Customer Profile]. 请参阅以下部分 [标识字段](./composition.md#identity) 在架构组合的基础知识中，了解有关这些字段用例的更多详细信息。
 
-在设计架构时，关系数据库表中的任何主键都可能是主标识的候选。 适用标识字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和 [ECID](../../identity-service/ecid.md).
+在设计架构时，关系数据库表中的任何主键都可能是主标识的候选。 适用标识字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和 [ECID](../../identity-service/features/ecid.md).
 
 ### Adobe的应用程序架构字段组 {#adobe-application-schema-field-groups}
 

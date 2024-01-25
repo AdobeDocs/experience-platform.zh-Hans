@@ -3,7 +3,7 @@ title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个�
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '2673'
 ht-degree: 90%
@@ -51,7 +51,7 @@ ht-degree: 90%
    * [标记](/help/tags/home.md)
    * [数据流](/help/datastreams/overview.md)
 * Real-Time CDP 中的数据管理
-   * [标识](/help/identity-service/namespaces.md)
+   * [标识](/help/identity-service/features/namespaces.md)
    * [架构](/help/xdm/home.md)
    * [数据使用情况标签](/help/data-governance/labels/overview.md)
    * [数据集](/help/catalog/datasets/overview.md)
@@ -279,7 +279,7 @@ UI 的&#x200B;**[!UICONTROL 数据收集]**&#x200B;部分看起来类似于下�
 
 在探索本页中描述的用例时，请注意以下限制：
 
-* 如果您使用合作伙伴 ID，请注意在构建您的[身份图](/help/identity-service/ui/identity-graph-viewer.md)时不会使用这些 ID。
+* 如果您使用合作伙伴 ID，请注意在构建您的[身份图](/help/identity-service/features/identity-graph-viewer.md)时不会使用这些 ID。
 
 ## 由合作伙伴数据支持实现的其他用例 {#other-use-cases}
 

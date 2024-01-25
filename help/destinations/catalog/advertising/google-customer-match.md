@@ -3,7 +3,7 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1791'
 ht-degree: 1%
@@ -38,7 +38,7 @@ Experience Platform中的一些目标对于发送到目标平台或从目标平�
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Google Customer Match] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Google Customer Match] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

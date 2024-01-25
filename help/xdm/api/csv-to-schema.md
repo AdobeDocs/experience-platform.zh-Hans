@@ -2,9 +2,9 @@
 title: CSV模板到架构转换API端点
 description: 架构注册表API中的/rpc/csv2schema端点允许您使用CSV模板自动创建Experience Data Model (XDM)架构。
 exl-id: cf08774a-db94-4ea1-a22e-bb06385f8d0e
-source-git-commit: b4c186c8c40d1372fb5011f49979523e1201fb0b
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '849'
 ht-degree: 5%
 
 ---
@@ -15,33 +15,33 @@ ht-degree: 5%
 
 ## 快速入门
 
-此 `/rpc/csv2schema` 端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Adobe Experience Platform API所需的所需标头的重要信息。
+此 `/rpc/csv2schema` 端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Adobe Experience Platform API所需的所需标头的重要信息。
 
-此 `/rpc/csv2schema` 终结点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与中的其他端点不同 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`，并且不要使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
+此 `/rpc/csv2schema` 端点是 [!DNL Schema Registry]. 与 [!DNL Schema Registry] API，RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`，并且不要使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
 
 ## CSV文件要求
 
-要使用此端点，您必须首先创建包含相应列标题和相应值的CSV文件。 某些列是必需的，而其余列是可选的。 下表描述了这些列及其在模式构建中的作用。
+要使用此端点，您必须首先创建一个CSV文件，该文件具有相应的列标题和相应的值。 某些列是必需的，而其余列是可选的。 下表描述了这些列及其在模式构建中的作用。
 
-| CSV标头位置 | CSV标头名称 | 必填/可选 | 描述 |
+| CSV标头位置 | CSV标头名称 | 必需/可选 | 描述 |
 | --- | --- | --- | --- |
 | 1 | `isIgnored` | 可选 | 包含时设置为 `true`，表示字段未准备好上传API，应当忽略。 |
 | 2 | `isCustom` | 必需 | 指示字段是否为自定义字段。 |
 | 3 | `fieldGroupId` | 可选 | 自定义字段应关联的字段组的ID。 |
-| 4 | `fieldGroupName` | （请参阅描述） | 要与此字段关联的字段组的名称。<br><br>对于不扩展现有标准字段的自定义字段，它是可选项。 如果留空，系统将自动分配名称。<br><br>扩展标准字段组的标准字段或自定义字段必需，用于查询 `fieldGroupId`. |
+| 4 | `fieldGroupName` | （请参阅描述） | 要与此字段关联的字段组的名称。<br><br>对于不扩展现有标准字段的自定义字段，它是可选项。 如果留空，系统将自动指定名称。<br><br>扩展标准字段组的标准字段或自定义字段是必需的，用于查询 `fieldGroupId`. |
 | 5 | `fieldPath` | 必需 | 字段的完整XED点表示法路径。 包括标准字段组中的所有字段（如下所述）： `fieldGroupName`)，将值设置为 `ALL`. |
 | 6 | `displayName` | 可选 | 字段的标题或友好显示名称。 也可以是标题的别名（如果存在）。 |
 | 7 | `fieldDescription` | 可选 | 字段的描述。 也可以是说明的别名（如果存在）。 |
-| 8 | `dataType` | （请参阅描述） | 指示 [基本数据类型](../schema/field-constraints.md#basic-types) 对于字段。 对于所有自定义字段，此为必填字段。<br><br>如果 `dataType` 设置为 `object`，可以 `properties` 或 `$ref` 还需要为同一行定义，但不能同时为这两行定义。 |
+| 8 | `dataType` | （请参阅描述） | 指示 [基本数据类型](../schema/field-constraints.md#basic-types) 用于字段。 所有自定义字段均需要填写此字段。<br><br>如果 `dataType` 设置为 `object`，也可以 `properties` 或 `$ref` 还需要为同一行定义，但不能同时为这两行定义。 |
 | 9 | `isRequired` | 可选 | 指示字段是否为数据摄取所必需。 |
 | 10 | `isArray` | 可选 | 指示字段是否为所指示的数组 `dataType`. |
 | 11 | `isIdentity` | 可选 | 指示字段是否为标识字段。 |
-| 12 | `identityNamespace` | 在以下情况下需要 `isIdentity` 为true | 此 [身份命名空间](../../identity-service/namespaces.md) 用于标识字段。 |
+| 12 | `identityNamespace` | 在以下情况下需要 `isIdentity` 为true | 此 [身份命名空间](../../identity-service/features/namespaces.md) 用于标识字段。 |
 | 13 | `isPrimaryIdentity` | 可选 | 指示字段是否为架构的主要标识。 |
 | 14 | `minimum` | 可选 | （仅适用于数字字段）字段的最小值。 |
 | 15 | `maximum` | 可选 | （仅适用于数字字段）字段的最大值。 |
 | 16 | `enum` | 可选 | 字段的枚举值列表，以数组形式表示(例如， `[value1,value2,value3]`)。 |
-| 17 | `stringPattern` | 可选 | （仅适用于字符串字段）一种正则表达式模式，字符串值必须匹配该模式，才能在数据引入期间通过验证。 |
+| 17 | `stringPattern` | 可选 | （仅适用于字符串字段）一种正则表达式模式，字符串值必须匹配该模式才能在数据引入期间通过验证。 |
 | 18 | `format` | 可选 | （仅适用于字符串字段）字符串字段的格式。 |
 | 19 | `minLength` | 可选 | （仅适用于字符串字段）字符串字段的最小长度。 |
 | 20 | `maxLength` | 可选 | （仅适用于字符串字段）字符串字段的最大长度。 |
@@ -65,7 +65,7 @@ POST /rpc/csv2schema
 
 **请求**
 
-请求有效负载必须使用表单数据作为其格式。 下面显示了必需的表单字段。
+请求有效负载必须使用表单数据作为其格式。 必填表单字段如下所示。
 
 ```shell
 curl -X POST \
@@ -360,6 +360,6 @@ curl -X POST \
 
 ## 导入架构有效负载
 
-从CSV文件生成导出有效负载后，您可以将该有效负载发送到 `/rpc/import` 生成架构的端点。
+从CSV文件生成导出有效负载后，您可以将该有效负载发送到 `/rpc/import` 端点，以生成架构。
 
 请参阅 [导入端点指南](./import.md) 有关如何从导出有效负载生成架构的详细信息。

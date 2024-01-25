@@ -2,9 +2,9 @@
 title: 配置文件导出行为
 description: 了解在Experience Platform目标中支持的各种集成模式之间，配置文件导出行为如何变化。
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: e6545dfaf5c43ac854986cfdc4f5cb153a07405b
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '2924'
+source-wordcount: '2931'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 | 决定目标导出的因素 | 目标导出中包含的内容 |
 |---------|----------|
-| <ul><li>映射的属性和受众会作为目标导出的提示。 这意味着，如果任何映射的受众更改状态(从 `null` 到 `realized` 或从 `realized` 到 `exiting`)或者更新任何映射的属性，则将会启动目标导出。</li><li>标识映射中的更改被定义为添加/删除的标识 [身份图](/help/identity-service/ui/identity-graph-viewer.md) ，用于映射为导出的身份命名空间。</li><li>对于映射到目标的属性，属性的更改被定义为属性上的任何更新。</li></ul> | <ul><li>映射到目标且已更改的受众将包含在 `segmentMembership` 对象。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的受众也可能包含在调用中。 在任何情况下，仅导出映射的受众。</li><li>命名空间中映射到目标的所有身份 `identityMap` 对象也包含在内。</li><li>目标导出中只包含映射的属性。</li></ul> |
+| <ul><li>映射的属性和受众会作为目标导出的提示。 这意味着，如果任何映射的受众更改状态(从 `null` 到 `realized` 或从 `realized` 到 `exiting`)或者更新任何映射的属性，则将会启动目标导出。</li><li>标识映射中的更改被定义为添加/删除的标识 [身份图](/help/identity-service/features/identity-graph-viewer.md) ，用于映射为导出的身份命名空间。</li><li>对于映射到目标的属性，属性的更改被定义为属性上的任何更新。</li></ul> | <ul><li>映射到目标且已更改的受众将包含在 `segmentMembership` 对象。 在某些情况下，它们可能会使用多个调用导出。 此外，在某些情况下，某些未更改的受众也可能包含在调用中。 在任何情况下，仅导出映射的受众。</li><li>命名空间中映射到目标的所有身份 `identityMap` 对象也包含在内。</li><li>目标导出中只包含映射的属性。</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -147,7 +147,7 @@ Experience Platform会优化将配置文件导出到您的流目标的行为，�
 
 并非配置文件的所有更新都允许在增量文件导出中包含配置文件。 例如，如果在配置文件中添加或删除了属性，则导出中不包含该配置文件。 仅限符合以下条件的配置文件： `segmentMembership` 属性已更改将包含在导出的文件中。 换言之，仅当配置文件成为受众的一部分或从受众中删除时，它才会包含在增量文件导出中。
 
-同样，如果将新身份（新电子邮件地址、电话号码、ECID等）添加到中的用户档案 [身份图](/help/identity-service/ui/identity-graph-viewer.md)，这并不意味着需要将该配置文件包含在新的增量文件导出中。
+同样，如果将新身份（新电子邮件地址、电话号码、ECID等）添加到中的用户档案 [身份图](/help/identity-service/features/identity-graph-viewer.md)，这并不意味着需要将该配置文件包含在新的增量文件导出中。
 
 如果将新受众添加到目标映射，这不会影响其他区段的资格和导出。 每个受众单独配置导出计划，并且每个区段单独导出文件，即使已将受众添加到同一目标数据流也是如此。
 

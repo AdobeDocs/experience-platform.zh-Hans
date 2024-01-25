@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon广告目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1344'
 ht-degree: 2%
@@ -38,7 +38,7 @@ Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包�
 
 ## 支持的身份 {#supported-identities}
 
-此 *Amazon Ads* connection支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md). 有关Amazon Ads支持的标识的更多详细信息，请访问 [Amazon DSP支持中心](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
+此 *Amazon Ads* connection支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service//features/namespaces.md). 有关Amazon Ads支持的标识的更多详细信息，请访问 [Amazon DSP支持中心](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

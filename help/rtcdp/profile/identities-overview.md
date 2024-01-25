@@ -4,7 +4,7 @@ title: Real-time Customer Data Platform中的身份
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，帮助您更好地了解客户及其行为。
 feature: Get Started, Identities
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: 1d2c67a2015f57238bdbb0e14c676601e092ef5f
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '422'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 
 ## 身份命名空间
 
-身份命名空间是的组件 [!DNL Identity Service] 并用作指示器，为客户身份提供额外的上下文。 例如，“电子邮件”就是常用ID命名空间的例子，通过跨多个网站使用相同的电子邮件地址，您可以将多个不同的身份（每个身份具有唯一的客户ID）拼接在一起，因为实际上属于同一个客户。 [!DNL Experience Platform] 允许您使用ID命名空间在用户界面中搜索各个配置文件。 有关查看用户档案的详细信息，请参阅 [配置文件浏览概述](profile-browse.md). 要了解有关身份命名空间的更多信息，请参阅 [身份命名空间概述](../../identity-service/namespaces.md).
+身份命名空间是的组件 [!DNL Identity Service] 并用作指示器，为客户身份提供额外的上下文。 例如，“电子邮件”就是常用ID命名空间的例子，通过跨多个网站使用相同的电子邮件地址，您可以将多个不同的身份（每个身份具有唯一的客户ID）拼接在一起，因为实际上属于同一个客户。 [!DNL Experience Platform] 允许您使用ID命名空间在用户界面中搜索各个配置文件。 有关查看用户档案的详细信息，请参阅 [配置文件浏览概述](profile-browse.md). 要了解有关身份命名空间的更多信息，请参阅 [身份命名空间概述](../../identity-service/features/namespaces.md).
 
 ## 身份图
 

@@ -3,9 +3,9 @@ title: 在不依赖第三方Cookie的情况下吸引和赢取新客户
 description: 了解如何不依赖第三方 Cookie，而是通过潜在客户发掘用例吸引和获得新客户。
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2074'
 ht-degree: 87%
 
 ---
@@ -65,7 +65,7 @@ Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的
 
 在完成实现用例的步骤后，您将使用以下 Real-Time CDP 功能和 UI 元素（按使用顺序列出）。确保您拥有所有这些区域所需的基于属性的访问控制权限，或让系统管理员授予您这些必要的权限。
 
-* [标识](/help/identity-service/namespaces.md)
+* [标识](/help/identity-service/features/namespaces.md)
 * [架构](/help/xdm/home.md)
 * [数据使用情况标签](/help/data-governance/labels/overview.md)
 * [数据集](/help/catalog/datasets/overview.md)
@@ -95,7 +95,7 @@ Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的
 
 ![创建新的合作伙伴 ID 标识命名空间。](/help/rtcdp/assets/partner-data/prospecting/create-partner-identity-namespace.png)
 
-* 阅读[标识类型部分](/help/identity-service/namespaces.md)，了解有关合作伙伴 ID 命名空间的更多信息。
+* 阅读[标识类型部分](/help/identity-service/features/namespaces.md)，了解有关合作伙伴 ID 命名空间的更多信息。
 * 阅读 Experience Platform 用户界面中有关[如何定义标识字段](/help/xdm/ui/fields/identity.md)的内容。
 
 #### 使用 **[!UICONTROL XDM 单个潜在客户配置文件]**&#x200B;类创建新架构

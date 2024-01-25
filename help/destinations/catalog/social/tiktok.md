@@ -3,7 +3,7 @@ title: TikTok连接
 description: 使用您的数据在TikTok上构建自定义受众，以便通过广告促销活动进行定位。 这些受众可能是访问您的网站或与您的内容进行交互的人。 通过与Adobe Experience Platform Ads Manager的实时集成，快速而安全地将所需受众从Adobe推送到TikTok。TikTok
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 3%
@@ -36,7 +36,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+TikTok支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

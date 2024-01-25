@@ -5,10 +5,10 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 5545bf35-3f23-4206-9658-e1c33e668c98
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
 workflow-type: tm+mt
 source-wordcount: '1319'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -134,5 +134,5 @@ ECID存储未经身份验证的（匿名）事件，而CRM ID存储经过身份�
 
 * [身份图链接规则概述](./overview.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
-* [身份链接逻辑](./identity-linking-logic.md)
-* [Identity Service和实时客户资料](identity-and-profile.md)
+* [身份链接逻辑](../features/identity-linking-logic.md)
+* [Identity Service和实时客户资料](../identity-and-profile.md)

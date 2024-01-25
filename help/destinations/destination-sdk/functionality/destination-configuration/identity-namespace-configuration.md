@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置支持的目标身份。
 title: 身份命名空间配置
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '842'
 ht-degree: 4%
 
 ---
@@ -17,13 +17,13 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 在执行此操作时，用户除了可以选择目标配置文件属性之外，还可以选择目标身份。
 
-要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/namespaces.md).
+要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/features/namespaces.md).
 
 在为目标配置身份命名空间时，可以优化目标支持的目标身份映射，例如：
 
 * 允许用户将XDM属性映射到身份命名空间。
-* 允许用户映射 [标准身份命名空间](../../../../identity-service/namespaces.md#standard) 到您自己的身份命名空间。
-* 允许用户映射 [自定义身份命名空间](../../../../identity-service/namespaces.md#manage-namespaces) 到您自己的身份命名空间。
+* 允许用户映射 [标准身份命名空间](../../../../identity-service/features/namespaces.md#standard) 到您自己的身份命名空间。
+* 允许用户映射 [自定义身份命名空间](../../../../identity-service/features/namespaces.md#manage-namespaces) 到您自己的身份命名空间。
 
 要了解此组件在何处适合使用Destination SDK创建的集成，请参阅中的图表 [配置选项](../configuration-options.md) 文档或参阅指南，了解如何 [使用Destination SDK配置基于文件的目标](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
@@ -55,7 +55,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 |---------|----------|---|------|
 | `acceptsAttributes` | 布尔值 | 可选 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
 | `acceptsCustomNamespaces` | 布尔值 | 可选 | 指示客户是否可以将自定义身份命名空间映射到您配置的身份命名空间。 |
-| `acceptedGlobalNamespaces` | - | 可选 | 指示哪些 [标准身份命名空间](../../../../identity-service/namespaces.md#standard) (例如， [!UICONTROL IDFA])客户可以映射到您正在配置的身份。 |
+| `acceptedGlobalNamespaces` | - | 可选 | 指示哪些 [标准身份命名空间](../../../../identity-service/features/namespaces.md#standard) (例如， [!UICONTROL IDFA])客户可以映射到您正在配置的身份。 |
 | `transformation` | 字符串 | 可选 | 显示 [[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 如果源字段是XDM属性或自定义身份命名空间，请选中Platform UI中的复选框。 使用此选项可让用户在导出时散列源属性。 要启用此选项，请将值设置为 `sha256(lower($))`. |
 | `requiredTransformation` | 字符串 | 可选 | 当客户选择此源身份命名空间时， [[!UICONTROL 应用转换]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) 复选框会自动应用于映射，而客户无法禁用它。 要启用此选项，请将值设置为 `sha256(lower($))`. |
 
@@ -84,7 +84,7 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 身份命名空间不需要在 [!DNL Platform] 还有你的目的地。
 例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL IDFA] 命名空间中的其他位置，或者他们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间更改为 [!DNL Customer ID] 命名空间中指定目标的URL。
 
-有关身份的详细信息，请参阅 [身份命名空间概述](../../../../identity-service/namespaces.md).
+有关身份的详细信息，请参阅 [身份命名空间概述](../../../../identity-service/features/namespaces.md).
 
 ## 映射注意事项
 

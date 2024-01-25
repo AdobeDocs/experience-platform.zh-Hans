@@ -2,7 +2,7 @@
 title: PubMatic Connect
 description: PubMatic通过提供面向未来的程序化数字营销供应链，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
 last-substantial-update: 2023-12-14T00:00:00Z
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '923'
 ht-degree: 3%
@@ -36,7 +36,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL PubMatic Connect] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL PubMatic Connect] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 | --------------- | ------ | --- |

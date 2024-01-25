@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 07771956c22a3fee92bd76ae061b07e1e0f98b49
+source-git-commit: f21b5519440f7ffd272361954c9e32ccca2ec2bc
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ ht-degree: 0%
 * [概述](./overview.md)
 * [身份优化算法](./identity-optimization-algorithm.md)
 * [示例场景](./example-scenarios.md)
-* [Identity Service和实时客户资料](identity-and-profile.md)
-* [身份链接逻辑](./identity-linking-logic.md)
 
 通过Adobe Experience Platform Identity Service和实时客户个人资料，可以轻松假设您的数据已被完全摄取，并且所有合并的个人资料都通过人员标识符（如CRM ID）表示单个个人。 但是，在某些情况下，某些数据可能会尝试将多个不同的配置文件合并到单个配置文件中（“配置文件折叠”）。 要防止这些不需要的合并，您可以使用通过身份图链接规则提供的配置，并允许对用户进行准确的个性化。
 
@@ -114,5 +112,3 @@ ht-degree: 0%
 
 * [身份优化算法](./identity-optimization-algorithm.md)
 * [配置身份图链接规则的示例场景](./example-scenarios.md)
-* [Identity Service和实时客户资料](identity-and-profile.md)
-* [身份链接逻辑](./identity-linking-logic.md)

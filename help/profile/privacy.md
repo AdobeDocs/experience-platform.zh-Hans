@@ -5,9 +5,9 @@ title: 实时客户配置文件中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理实时客户个人资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 6d9f8eceeb8fbe550b4e1e7e0964f2fff0cd3c70
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1739'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -36,13 +36,13 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 * [[!DNL Identity Service]](../identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的根本挑战。
 * [[!DNL Real-Time Customer Profile]](home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
-## 了解身份命名空间 {#namespaces}
+## 了解标识命名空间 {#namespaces}
 
 Adobe Experience Platform [!DNL Identity Service] 跨系统和设备桥接客户身份数据。 [!DNL Identity Service] 用途 **身份命名空间** 为标识值提供上下文，方法是将其与原始系统相关联。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
 
 Identity Service维护全局定义（标准）和用户定义（自定义）身份命名空间的存储。 标准命名空间适用于所有组织（例如，“Email”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
-有关中身份命名空间的更多信息 [!DNL Experience Platform]，请参见 [身份命名空间概述](../identity-service/namespaces.md).
+有关中身份命名空间的更多信息 [!DNL Experience Platform]，请参见 [身份命名空间概述](../identity-service/features/namespaces.md).
 
 ## 提交请求 {#submit}
 
@@ -203,7 +203,7 @@ curl -X POST \
 | `ProfileService` 仅限 | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与用户档案关联的数据也保留在数据湖中。 |
 | `ProfileService` 和 `identity` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。 与用户档案关联的数据将保留在数据湖中。 |
 | `ProfileService` 和 `aepDataLake` | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
-| `ProfileService`, `identity`, 和 `aepDataLake` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
+| `ProfileService`、`identity` 和 `aepDataLake` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
 
 请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
 

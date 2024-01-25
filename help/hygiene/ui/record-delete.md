@@ -2,9 +2,9 @@
 title: 删除记录
 description: 了解如何在Adobe Experience Platform UI中删除记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1557'
 ht-degree: 4%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 4%
 有关Platform中标识的更多信息，请参阅以下文档：
 
 * [Adobe Experience Platform Identity服务](../../identity-service/home.md)：跨设备和系统桥接身份，根据数据集符合的XDM架构定义的身份字段将数据集链接在一起。
-* [身份命名空间](../../identity-service/namespaces.md)：身份命名空间定义不同的类型 of 可与单个人员相关的身份信息，是每个身份字段的必需组件。
+* [身份命名空间](../../identity-service/features/namespaces.md)：身份命名空间定义不同的类型 of 可与单个人员相关的身份信息，是每个身份字段的必需组件。
 * [Real-time Customer Profile](../../profile/home.md)：使用身份图根据来自多个来源的聚合数据提供统一的使用者配置文件，并近乎实时更新。
 * [体验数据模型(XDM)](../../xdm/home.md)：通过使用架构提供Platform数据的标准定义和结构。 所有Platform数据集都符合特定的XDM架构，该架构定义哪些字段是身份。
 * [身份字段](../../xdm/ui/fields/identity.md)：了解如何在XDM架构中定义标识字段。

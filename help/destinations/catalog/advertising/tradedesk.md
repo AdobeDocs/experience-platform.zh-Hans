@@ -3,7 +3,7 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: Trade Desk是一个自助服务平台，供广告购买者跨显示器、视频和移动库存源执行重定位和面向受众的数字活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 3%
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL The Trade Desk] 支持根据下表所示的标识激活受众。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL The Trade Desk] 支持根据下表所示的标识激活受众。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 标识 | 描述 |
 |---|---|

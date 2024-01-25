@@ -2,22 +2,22 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: 76ac65730512e589e518095f9496bb309365b0c9
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2283'
-ht-degree: 28%
+source-wordcount: '2257'
+ht-degree: 26%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2023 年 9 月 28 日**
+**发行日期： 2023年9月28日**
 
 Adobe Experience Platform中的新增功能：
 
 - [计算属性](#computed-attributes)
 
- Experience Platform 中现有功能的更新：
+对Experience Platform中现有功能的更新：
 
 - [警报](#alerts)
 - [仪表板](#dashboards)
@@ -99,7 +99,7 @@ Experience Platform提供了一套数据卫生功能，允许您通过以编程�
 | 功能 | 描述 |
 | --- | --- |
 | [!BADGE Beta]{type=Informative} | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
-| 数据集过期时间 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 请参阅 [数据集过期文档](../../hygiene/ui/dataset-expiration.md) 以了解更多信息。 |
+| 数据集到期 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 请参阅 [数据集过期文档](../../hygiene/ui/dataset-expiration.md) 以了解更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -174,8 +174,8 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 组件类型 | 名称 | 更新描述 |
 | --- | --- | --- |
-| 扩展 | [!UICONTROL AJO 实体字段] | 此 [[!UICONTROL 多变体的标志]](https://github.com/adobe/xdm/pull/1774/files) 已添加至 [!UICONTROL AJO实体字段] 以确定变体是否为多变体。 |
-| 数据类型 | [!UICONTROL 产品列表项目] | [[!UICONTROL 返回项目]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包含“退货授权信息”。 |
+| 扩展 | [!UICONTROL AJO实体字段] | 此 [[!UICONTROL 多变体的标志]](https://github.com/adobe/xdm/pull/1774/files) 已添加至 [!UICONTROL AJO实体字段] 以确定变体是否为多变体。 |
+| 数据类型 | [!UICONTROL 产品列表项] | [[!UICONTROL 返回项目]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包含“退货授权信息”。 |
 | 数据类型 | 订购 | [[!UICONTROL 返回信息]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包括发放的RMA（退货授权）。 |
 
 {style="table-layout:auto"}
@@ -190,7 +190,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 功能 | 描述 |
 | --- | --- |
-| Identity Service UI增强功能 | 使用Experience PlatformUI中改进的自定义命名空间创建工具，更好地管理自定义命名空间及其相应的身份类型。 增强的Identity Service UI为您提供： <ul><li>上下文体验：视觉提示、清晰度，以及身份命名空间和身份类型的上下文。</li><li>准确性：更好地处理错误，不再有重复的标识名称。</li><li>可发现性：可在产品内对话框中访问文档。</li></ul> 有关详细信息，请阅读上的指南 [创建自定义命名空间](../../identity-service/namespaces.md#create-namespaces). |
+| Identity Service UI增强功能 | 使用Experience PlatformUI中改进的自定义命名空间创建工具，更好地管理自定义命名空间及其相应的身份类型。 增强的Identity Service UI为您提供： <ul><li>上下文体验：视觉提示、清晰度，以及身份命名空间和身份类型的上下文。</li><li>准确性：更好地处理错误，不再有重复的标识名称。</li><li>可发现性：可在产品内对话框中访问文档。</li></ul> 有关详细信息，请阅读上的指南 [创建自定义命名空间](../../identity-service/features/namespaces.md#create-namespaces). |
 | 标识图形限制的更改 | 标识图限制已从150个标识更改为50个标识。 将新身份摄取到完整图形中时，将删除基于摄取时间戳和身份类型的最旧身份。 Cookie标识类型按优先顺序删除。 Adobe如果您的生产沙盒包含： <ul><li>自定义命名空间，其中人员标识符（例如 CRM ID）会被配置为 cookie/设备标识类型。</li><li>自定义命名空间，其中 cookie/设备标识符会被配置为跨设备标识类型。</li></ul> Adobe 工程人员会手动处理这些请求。欲知更多信息，请参阅 [Identity Service数据的护栏](../../identity-service/guardrails.md) 和指南 [数据管理许可证权利最佳实践](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
 
 {style="table-layout:auto"}

@@ -5,9 +5,9 @@ feature: Customer AI
 title: 配置客户人工智能实例
 description: AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 973a9cae711780448e5c708622a71ba928695beb
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2824'
+source-wordcount: '2827'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ AI/ML服务将Customer AI作为易于使用的Adobe Sensei服务提供，可以�
 
 >[!NOTE]
 >
-> 如果某个数据集不存在有效的身份类型（命名空间），则必须使用设置主身份并将其分配给身份命名空间 [架构编辑器](../../../xdm/schema/composition.md#identity). 要了解有关命名空间和身份的详细信息，请访问 [Identity服务命名空间](../../../identity-service/namespaces.md) 文档。
+> 如果某个数据集不存在有效的身份类型（命名空间），则必须使用设置主身份并将其分配给身份命名空间 [架构编辑器](../../../xdm/schema/composition.md#identity). 要了解有关命名空间和身份的详细信息，请访问 [Identity服务命名空间](../../../identity-service/features/namespaces.md) 文档。
 
 ## 定义目标 {#define-a-goal}
 

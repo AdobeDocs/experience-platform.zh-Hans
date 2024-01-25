@@ -1,17 +1,17 @@
 ---
 title: Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: 03060cdb-becc-430a-b527-60c055c2a906
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '1339'
 ht-degree: 0%
 
 ---
 
-
 # Web SDK中的身份数据
 
-Adobe Experience Platform Web SDK使用 [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) 以跟踪访客行为。 通过使用ECID，您可以确保每个设备都有一个唯一标识符，该标识符可以跨多个会话持续存在，从而将特定设备在Web会话期间和之间发生的所有点击绑定在一起。
+Adobe Experience Platform Web SDK使用 [Adobe Experience Cloud ID (ECID)](../../identity-service/features/ecid.md) 以跟踪访客行为。 通过使用ECID，您可以确保每个设备都有一个唯一标识符，该标识符可以跨多个会话持续存在，从而将特定设备在Web会话期间和之间发生的所有点击绑定在一起。
 
 本文档概述了如何使用Platform Web SDK管理ECID。
 
@@ -104,7 +104,7 @@ alloy("sendEvent", {
 >Adobe建议发送代表个人的命名空间，例如 `CRMID`，作为主标识。
 
 
-内的每个属性 `identityMap` 表示属于某个特定的身份 [身份命名空间](../../identity-service/namespaces.md). 属性名称应该是身份命名空间符号，您可以在Adobe Experience Platform用户界面的&quot;[!UICONTROL 身份]“。 属性值应为与该身份命名空间相关的身份数组。
+内的每个属性 `identityMap` 表示属于某个特定的身份 [身份命名空间](../../identity-service/features/namespaces.md). 属性名称应该是身份命名空间符号，您可以在Adobe Experience Platform用户界面的&quot;[!UICONTROL 身份]“。 属性值应为与该身份命名空间相关的身份数组。
 
 >[!IMPORTANT]
 >

@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 预览示例状态（配置文件预览） API端点
 description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2868'
+source-wordcount: '2906'
 ht-degree: 1%
 
 ---
@@ -208,7 +208,7 @@ curl -X GET \
 
 您可以向以下对象执行GET请求 `/previewsamplestatus/report/namespace` 端点可查看按身份命名空间对配置文件存储中的所有合并配置文件进行的细分。 这包括Adobe提供的标准身份以及由贵组织定义的自定义身份。
 
-身份命名空间是Adobe Experience Platform Identity Service的重要组成部分，充当与客户数据相关的上下文指示器。 要了解更多信息，请先阅读 [身份命名空间概述](../../identity-service/namespaces.md).
+身份命名空间是Adobe Experience Platform Identity Service的重要组成部分，充当与客户数据相关的上下文指示器。 要了解更多信息，请先阅读 [身份命名空间概述](../../identity-service/features/namespaces.md).
 
 >[!NOTE]
 >
@@ -298,7 +298,7 @@ curl -X GET \
 | `fullIDsFragmentCount` | 命名空间中的配置文件片段总数。 |
 | `fullIDsCount` | 命名空间中合并的配置文件总数。 |
 | `fullIDsPercentage` | 此 `fullIDsCount` 占合并配置文件总数的百分比( `totalRows` 中返回的值 [上一个示例状态](#view-last-sample-status))，以小数格式表示。 |
-| `code` | 此 `code` 用于命名空间。 使用命名空间时，可以找到此项 [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md) 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
+| `code` | 此 `code` 用于命名空间。 使用命名空间时，可以找到此项 [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md) 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/features/namespaces.md). |
 | `value` | 此 `id` 命名空间的值。 使用命名空间时，可以找到此项 [标识服务API](../../identity-service/api/list-namespaces.md). |
 
 ## 生成数据集重叠报告
@@ -444,7 +444,7 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `data` | 此 `data` 对象包含以逗号分隔的列表，这些列表具有身份命名空间代码及其各自配置文件计数的唯一组合。 |
-| 命名空间代码 | 此 `code` 是每个身份命名空间名称的缩写。 每个项目的映射 `code` 到其 `name` 可使用以下网址找到： [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md). 此 `code` 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/namespaces.md). |
+| 命名空间代码 | 此 `code` 是每个身份命名空间名称的缩写。 每个项目的映射 `code` 到其 `name` 可使用以下网址找到： [Adobe Experience Platform Identity服务API](../../identity-service/api/list-namespaces.md). 此 `code` 也称为 [!UICONTROL 身份符号] 在Experience PlatformUI中。 要了解更多信息，请访问 [身份命名空间概述](../../identity-service/features/namespaces.md). |
 | `reportTimestamp` | 报表的时间戳。 如果 `date` 参数是在请求期间提供的，返回的报告对应于提供的日期。 如果否 `date` 如果提供了参数，则会返回最新报告。 |
 
 ### 解释身份命名空间重叠报表

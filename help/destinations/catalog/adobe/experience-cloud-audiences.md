@@ -3,7 +3,7 @@ title: Experience Cloud 受众
 description: 了解如何将Real-time Customer Data Platform中的受众共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '1678'
 ht-degree: 2%
@@ -106,11 +106,11 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-导出到的配置文件 [!UICONTROL Experience Cloud受众] 目标将映射到下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+导出到的配置文件 [!UICONTROL Experience Cloud受众] 目标将映射到下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/ecid.md) 以了解更多信息。 |
+| ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
 | GAID | Google广告ID | 可以将摄取到Real-Time CDP中以主要标识Google Advertising ID (GAID)的用户档案导出到此目标。 |
 | IDFA | 广告商的Apple ID | 提取到Real-Time CDP的以广告商Apple ID (IDFA)为主要标识的用户档案可导出到此目标。 |
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | 摄取到Real-Time CDP并具有经过哈希处理的电子邮件地址的主要标识的用户档案，可导出到此目标。 |

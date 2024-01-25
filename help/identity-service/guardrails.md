@@ -3,7 +3,7 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: d33be97fcb935a53a8776d2a1993ad9d2b50e913
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '1507'
 ht-degree: 0%
@@ -186,7 +186,7 @@ Adobe如果您的生产沙盒包含：
 有关以下内容的更多信息，请参阅以下文档 [!DNL Identity Service]：
 
 * [[!DNL Identity Service] 概述](home.md)
-* [身份图查看器](ui/identity-graph-viewer.md)
+* [身份图查看器](features/identity-graph-viewer.md)
 
 请参阅Real-Time CDP产品描述文档中的以下文档，了解有关其他Experience Platform服务护栏、端到端延迟信息和许可信息的更多信息：
 

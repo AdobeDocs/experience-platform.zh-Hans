@@ -2,7 +2,7 @@
 title: Snap Inc连接
 description: 了解如何连接到Snapchat Ads平台并从Experience Platform导出受众。
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 2%
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-此 *Snap Inc* 目标支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+此 *Snap Inc* 目标支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 所有发送到以下地址的标识符： *Snap Inc* 目标必须采用SHA-256格式进行哈希处理。 要在将纯文本标识符发送到目标之前对其进行哈希处理，请检查 **[!UICONTROL 应用转换]** 选项。
 

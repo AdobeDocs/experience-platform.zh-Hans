@@ -2,10 +2,10 @@
 title: 在Real-time Customer Data Platform B2B版本中定义两个架构之间的关系
 description: 了解如何在Adobe Real-time Customer Data Platform B2B版本中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1391'
-ht-degree: 16%
+source-wordcount: '1363'
+ht-degree: 15%
 
 ---
 
@@ -61,7 +61,7 @@ Adobe Real-time Customer Data Platform B2B版本提供了多个Experience Data M
 
 >[!NOTE]
 >
->时间 [将XDM字段设置为标识](../ui/fields/identity.md)，您必须提供标识命名空间来定义下的标识。 这可以是Adobe提供的标准命名空间，也可以是您的组织定义的自定义命名空间。 实际上，命名空间只是一个上下文字符串，可以设置为任何您喜欢的值，前提是它对您的组织分类身份类型很有意义。 有关更多详细信息，请参阅 [身份命名空间](../../identity-service/namespaces.md) 以了解更多信息。
+>时间 [将XDM字段设置为标识](../ui/fields/identity.md)，您必须提供标识命名空间来定义下的标识。 这可以是Adobe提供的标准命名空间，也可以是您的组织定义的自定义命名空间。 实际上，命名空间只是一个上下文字符串，可以设置为任何您喜欢的值，前提是它对您的组织分类身份类型很有意义。 有关更多详细信息，请参阅 [身份命名空间](../../identity-service/features/namespaces.md) 以了解更多信息。
 
 出于参考目的，以下几节介绍了在定义关系之前本教程中使用的每个架构的结构。 请注意在架构结构中定义主身份的位置以及它们使用的自定义命名空间。
 

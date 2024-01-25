@@ -3,7 +3,7 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin；
 title: Linkedin匹配的受众连接
 description: 基于哈希电子邮件激活LinkedIn营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 4%
@@ -26,7 +26,7 @@ ht-degree: 4%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL LinkedIn Matched Audiences] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL LinkedIn Matched Audiences] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

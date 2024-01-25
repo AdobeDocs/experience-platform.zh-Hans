@@ -2,7 +2,7 @@
 title: Pega客户决策中心连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心目标将配置文件属性和受众成员资格数据发送到Pega客户决策中心，以便做出次优决策。
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 2%
@@ -43,7 +43,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Pega Customer Decision Hub] 支持激活下表中描述的自定义用户ID。 有关更多详细信息，请参阅 [身份](/help/identity-service/namespaces.md).
+[!DNL Pega Customer Decision Hub] 支持激活下表中描述的自定义用户ID。 有关更多详细信息，请参阅 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 |
 |---|---|

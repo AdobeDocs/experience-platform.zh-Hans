@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook；instagra
 title: facebook连接
 description: 根据哈希电子邮件激活Facebook营销活动的配置文件，以实现受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1952'
 ht-degree: 7%
@@ -38,7 +38,7 @@ ht-degree: 7%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Facebook Custom Audiences] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Facebook Custom Audiences] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

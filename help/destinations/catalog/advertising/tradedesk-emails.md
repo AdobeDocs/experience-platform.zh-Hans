@@ -3,7 +3,7 @@ title: (Beta)交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1122'
 ht-degree: 5%
@@ -38,11 +38,11 @@ ht-degree: 5%
 
 ## ID匹配要求 {#id-matching-requirements}
 
-根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。 请阅读 [身份命名空间概述](/help/identity-service/namespaces.md) 以了解更多信息。
+根据您摄取到Adobe Experience Platform中的ID类型，您必须遵守其相应的要求。 请阅读 [身份命名空间概述](/help/identity-service/features/namespaces.md) 以了解更多信息。
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL The Trade Desk] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL The Trade Desk] 支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照ID匹配要求部分中的说明进行操作，并分别将适当的命名空间用于纯文本和经过哈希处理的电子邮件地址。
 

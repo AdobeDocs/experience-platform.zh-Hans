@@ -2,10 +2,10 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: b42ef11681bb50141c7f3dc76d8c79d71e55e73c
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2502'
-ht-degree: 1%
+source-wordcount: '2489'
+ht-degree: 0%
 
 ---
 
@@ -15,8 +15,8 @@ ht-degree: 1%
 
 要了解Adobe端的报文格式以及用户档案配置和转换流程，请熟悉以下Experience Platform概念：
 
-* **Experience Data Model (XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
-* **类**. [在 UI 中创建和编辑类](../../../../xdm/ui/resources/classes.md).
+* **体验数据模型(XDM)**. [XDM概述](../../../../xdm/home.md) 和  [如何在Adobe Experience Platform中创建XDM架构](../../../../xdm/tutorials/create-schema-ui.md).
+* **类**. [在UI中创建和编辑类](../../../../xdm/ui/resources/classes.md).
 * **Identitymap**. 标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅 `xdm:identityMap` 在 [XDM字段字典](../../../../xdm/schema/field-dictionary.md).
 * **区段成员资格**. 此 [区段成员资格](../../../../xdm/schema/field-dictionary.md) XDM属性会通知用户档案所属的受众。 对于 `status` 字段，请阅读相关的文档 [受众成员资格详细信息架构字段组](../../../../xdm/field-groups/profile/segmentation.md).
 
@@ -380,7 +380,7 @@ Adobe用途 [卵石模板](https://pebbletemplates.io/)，一种类似于的模�
 
 ### 标识 {#identities}
 
-有关Experience Platform中标识的信息，请参见 [身份命名空间概述](../../../../identity-service/namespaces.md).
+有关Experience Platform中标识的信息，请参见 [身份命名空间概述](../../../../identity-service/features/namespaces.md).
 
 **输入**
 
@@ -1212,9 +1212,9 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 | `destination.namespaceSegmentTimestamps` | 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`：返回带有ID的区段所处的时间 `seg-id-1`，来自 `ups` 命名空间，创建时采用UNIX时间戳格式。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`：返回具有ID的受众所处的时间 `seg-id-1`，来自 `ups` 命名空间已更新，采用UNIX时间戳格式。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`：返回具有ID的受众所处的时间 `seg-id-1`，来自 `ups` 命名空间中，已以UNIX时间戳格式激活到目标。</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上更新受众激活的时间。</li></ul> |
 | `addedSegments(mapOfNamespacedSegmentIds)` | 仅返回具有状态的受众 `realized`，跨所有命名空间。 | `addedSegments(input.profile.segmentMembership)` |
 | `removedSegments(mapOfNamespacedSegmentIds)` | 仅返回具有状态的受众 `exited`，跨所有命名空间。 | `removedSegments(input.profile.segmentMembership)` |
-| `destination.segmentAliases` | **已弃用. 替换为`destination.namespaceSegmentAliases`** <br><br> 从Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
-| `destination.segmentNames` | **已弃用. 替换为`destination.namespaceSegmentNames`** <br><br>  将Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.segmentNames["seg-name-1"]` |
-| `destination.segmentTimestamps` | **已弃用. 替换为`destination.namespaceSegmentTimestamps`** <br><br> 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`：返回具有ID的受众所处的时间 `seg-id-1` 创建时间，格式为UNIX时间戳。</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 更新了，采用UNIX时间戳格式。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 已以UNIX时间戳格式激活到目标。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上更新受众激活的时间。</li></ul> |
+| `destination.segmentAliases` | **已弃用。 替换为`destination.namespaceSegmentAliases`** <br><br> 从Adobe Experience Platform命名空间中的受众ID映射到合作伙伴系统中的受众别名。 | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **已弃用。 替换为`destination.namespaceSegmentNames`** <br><br>  将Adobe Experience Platform命名空间中的受众名称映射到合作伙伴系统中的受众名称。 | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentTimestamps` | **已弃用。 替换为`destination.namespaceSegmentTimestamps`** <br><br> 以UNIX时间戳格式返回创建、更新或激活受众的时间。 | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`：返回具有ID的受众所处的时间 `seg-id-1` 创建时间，格式为UNIX时间戳。</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 更新了，采用UNIX时间戳格式。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`：返回具有ID的受众所处的时间 `seg-id-1` 已以UNIX时间戳格式激活到目标。</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`：以UNIX时间戳格式返回目标上更新受众激活的时间。</li></ul> |
 
 {style="table-layout:auto"}
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 484b1c2d37291afd02fe58723121325c837061aa
+source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1554'
 ht-degree: 2%
 
 ---
@@ -32,12 +32,12 @@ ht-degree: 2%
 | 搜索词 | 定义 |
 | --- | --- |
 | 标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成： **身份命名空间** 和 **标识值**. |
-| 标识命名空间 | 身份命名空间是给定身份的上下文。 例如，命名空间 `Email` 可能对应于 **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./namespaces.md) |
+| 标识命名空间 | 标识命名空间是给定标识的上下文。例如，命名空间 `Email` 可能对应于 **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./features/namespaces.md) |
 | 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，标识值（字符串） **朱利安<span>@acme.com** 可以归类为 `Email` 命名空间。 |
 | 标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
 | 链接 | 链接或链接是一种确定两个不同的身份表示同一实体的方法。 例如，“”之间的链接`Email` =朱利安<span>@acme.com”和“`Phone` = 555-555-1234”表示两个身份代表同一实体。 这表明，已与您的品牌交互的客户同时使用了julien的电子邮件地址<span>@acme.com和电话号码555-555-1234相同。 |
 | 身份服务 | Identity Service是Experience Platform中的一项服务，用于链接（或取消链接）身份以维护身份图。 |
-| 身份图 | 身份图是表示单个客户的身份集合。 有关详细信息，请阅读上的指南 [使用身份图查看器](./ui/identity-graph-viewer.md). |
+| 身份图 | 身份图是表示单个客户的身份集合。 有关详细信息，请阅读上的指南 [使用身份图查看器](./features/identity-graph-viewer.md). |
 | 实时客户配置文件 | 实时客户资料是Adobe Experience Platform中的一项服务，该服务： <ul><li>合并配置文件片段以基于身份图创建配置文件。</li><li>对配置文件进行分段，以便随后将这些配置文件发送到目标进行激活。</li></ul> |
 | 配置文件 | 用户档案是主题、组织或个人的表示形式。 用户档案由四个元素组成： <ul><li>属性：属性提供姓名、年龄或性别等信息。</li><li>行为：行为提供有关给定用户档案活动的信息。 例如，配置文件行为可以判断给定配置文件是“搜索凉鞋”还是“订购T恤”。</li><li>身份：对于合并的个人资料，这将提供与人员关联的所有身份的信息。 身份可分为三类：人员（CRMID、电子邮件、电话）、设备(IDFA、GAID)和Cookie(ECID、AAID)。</li><li>受众成员资格：配置文件所属的组（忠诚用户、住在加利福尼亚的用户等）</li></ul> |
 
@@ -93,9 +93,11 @@ Identity Service为实现其任务提供了以下操作：
 
 考虑到上述情况，Identity Service建立了 `{CRM_ID:ABC, ECID:123}`以及 `{CRM_ID:ABC, ECID:456}`. 这将生成一个标识图，您“拥有”三个标识：一个用于人员标识符(CRM ID)，两个用于Cookie标识符(ECID)。
 
+有关详细信息，请阅读上的指南 [Identity Service如何链接身份](./features/identity-linking-logic.md).
+
 ## 身份图
 
-身份图是不同身份命名空间之间关系的映射，允许您可视化并更好地了解哪些客户身份以及如何拼合在一起。 阅读有关的教程 [使用身份图查看器](./ui/identity-graph-viewer.md) 以了解更多信息。
+身份图是不同身份命名空间之间关系的映射，允许您可视化并更好地了解哪些客户身份以及如何拼合在一起。 阅读有关的教程 [使用身份图查看器](./features/identity-graph-viewer.md) 以了解更多信息。
 
 以下视频旨在支持您了解身份和身份图。
 
@@ -108,7 +110,7 @@ Identity Service在Experience Platform中扮演着至关重要的角色。 其�
 * [架构](../xdm/home.md)：在给定的架构中，标记为身份的架构字段允许构建身份图。
 * [数据集](../catalog/datasets/overview.md)：当启用了数据集以摄取到Real-time Customer Profile中时，如果数据集至少有两个标记为身份的字段，则会从数据集生成身份图。
 * [Web SDK](../edge/home.md)：Web SDK将体验事件发送到Adobe Experience Platform，当事件中存在两个或多个身份时，Identity Service会生成一个图形。
-* [Real-time Customer Profile](../profile/home.md)：在合并给定用户档案的属性和事件之前，Real-time Customer Profile可以引用身份图。
+* [Real-time Customer Profile](../profile/home.md)：在合并给定用户档案的属性和事件之前，Real-time Customer Profile可以引用身份图。 有关详细信息，请阅读上的指南 [了解Identity Service与Real-Time Customer Profile之间的关系](./identity-and-profile.md).
 * [目标](../destinations/home.md)：目标可以根据身份命名空间将配置文件信息发送到其他系统，如经过哈希处理的电子邮件。
 * [区段匹配](../segmentation/ui/segment-match/overview.md)：区段匹配可匹配两个不同沙盒中的两个配置文件，这两个沙盒具有相同的身份命名空间和身份值。
 * [Privacy Service](../privacy-service/home.md)：如果删除请求包含 `identity`，则可以使用Privacy Service中的隐私请求处理功能从身份服务中删除指定的命名空间和身份值组合。

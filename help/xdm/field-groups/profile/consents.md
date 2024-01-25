@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 同意和偏好设置架构字段组
 description: 了解同意和偏好设置架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '933'
 ht-degree: 0%
@@ -106,7 +106,7 @@ ht-degree: 0%
 >* 如果客户在渠道级别选择退出，则任何等效的同意或偏好设置在 `idSpecific` 将被忽略。
 >* 如果未设置渠道级别的同意或偏好设置，或者客户已选择加入，则等效的同意或偏好设置位于 `idSpecific` 荣誉。
 
-中的各个键 `idSpecific` 对象表示Adobe Experience Platform Identity服务识别的特定身份命名空间。 虽然您可以定义自己的自定义命名空间来对不同的标识符进行分类，但建议您使用Identity Service提供的标准命名空间之一来减少实时客户档案的存储大小。 有关身份命名空间的更多信息，请参见 [身份命名空间概述](../../../identity-service/namespaces.md) 在Identity Service文档中。
+中的各个键 `idSpecific` 对象表示Adobe Experience Platform Identity服务识别的特定身份命名空间。 虽然您可以定义自己的自定义命名空间来对不同的标识符进行分类，但建议您使用Identity Service提供的标准命名空间之一来减少实时客户档案的存储大小。 有关身份命名空间的更多信息，请参见 [身份命名空间概述](../../../identity-service/features/namespaces.md) 在Identity Service文档中。
 
 每个命名空间对象的键表示客户为其设置了首选项的唯一标识值。 每个标识值都可以包含一组完整的同意和偏好设置，其格式与相同 `consents`.
 

@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解如何通过审核日志查看谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1294'
-ht-degree: 44%
+source-wordcount: '1291'
+ht-degree: 42%
 
 ---
 
@@ -50,8 +50,8 @@ ht-degree: 44%
 | [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集移除</li><li>配置文件激活</li><li>配置文件移除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
-| [身份图](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
-| [标识命名空间](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>创建</li><li>更新</li></ul> |
+| [身份图](../../../identity-service/features/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
+| [身份命名空间](../../../identity-service/features/namespaces.md) | <ul><li>创建</li><li>更新</li></ul> |
 | [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
 | [查询](../../../query-service/ui/overview.md) | <ul><li>Execute</li></ul> |
@@ -136,7 +136,7 @@ ht-degree: 44%
 
 ## 在API中管理审核日志
 
-您在 UI 中可以执行的所有操作也可以使用 API 调用来完成。有关详细信息，请参阅 [ API 参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/)。
+您在 UI 中可以执行的所有操作也可以使用 API 调用来完成。请参阅 [API参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/) 以了解更多信息。
 
 ## 管理Adobe Admin Console的审核日志
 

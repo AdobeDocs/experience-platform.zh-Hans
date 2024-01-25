@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；发�
 title: SendGrid连接
 description: SendGrid目标允许您导出第一方数据，并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1510'
 ht-degree: 2%
@@ -44,7 +44,7 @@ SendGrid使用API持有者令牌作为与SendGrid API通信的身份验证机制
 
 ## 支持的身份 {#supported-identities}
 
-SendGrid支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+SendGrid支持激活下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|

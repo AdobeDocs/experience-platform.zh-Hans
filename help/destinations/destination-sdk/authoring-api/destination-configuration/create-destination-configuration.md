@@ -2,9 +2,9 @@
 description: 了解如何构建API调用以通过Adobe Experience Platform Destination SDK创建目标配置。
 title: 创建目标配置
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1205'
+source-wordcount: '1194'
 ht-degree: 3%
 
 ---
@@ -193,7 +193,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 |---------|----------|------|
 | `name` | 字符串 | 指示Experience Platform目录中目标的标题。 |
 | `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4到5句。 ![显示目标描述的Platform UI图像。](../../assets/authoring-api/destination-configuration/destination-description.png "目标描述"){width="100" zoomable="yes"} |
-| `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`、`PUBLISHED` 和 `DELETED`。使用 `TEST` 当您首次配置目标时。 |
+| `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`， `PUBLISHED`、和 `DELETED`. 使用 `TEST` 当您首次配置目标时。 |
 | `customerAuthenticationConfigurations.authType` | 字符串 | 指示用于向目标服务器验证Experience Platform客户的配置。 请参阅 [客户身份验证配置](../../functionality/destination-configuration/customer-authentication.md) 以了解有关支持的身份验证类型的详细信息。 |
 | `customerDataFields.name` | 字符串 | 为您即将介绍的自定义字段提供一个名称。 <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 ![显示客户数据字段的Platform UI图像。](../../assets/authoring-api/destination-configuration/customer-data-fields.png "客户数据字段"){width="100" zoomable="yes"} |
 | `customerDataFields.type` | 字符串 | 指示您即将引入的自定义字段的类型。 接受的值包括 `string`， `object`， `integer`. <br/><br/> 请参阅 [客户数据字段](../../functionality/destination-configuration/customer-data-fields.md) 以了解有关这些设置的详细信息。 |
@@ -208,9 +208,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `uiAttributes.connectionType` | 字符串 | 连接的类型，具体取决于目标。 支持的值： <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
 | `uiAttributes.frequency` | 字符串 | 是指目标支持的数据导出类型。 设置为 `Streaming` 对于基于API的集成，或者 `Batch` 将文件导出到目标时。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔值 | 指示客户是否可以将标准配置文件属性映射到您配置的身份。 |
-| `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔值 | 指示客户是否可以映射属于的身份 [自定义命名空间](/help/identity-service/namespaces.md#manage-namespaces) 到您正在配置的身份。 |
+| `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔值 | 指示客户是否可以映射属于的身份 [自定义命名空间](/help/identity-service/features/namespaces.md#manage-namespaces) 到您正在配置的身份。 |
 | `identityNamespaces.externalId.transformation` | 字符串 | _未在示例配置中显示_. 例如，用于 [!DNL Platform] 客户将纯电子邮件地址作为属性，并且您的平台仅接受经过哈希处理的电子邮件。 在这里，您可以提供需要应用的转换（例如，将电子邮件转换为小写，然后进行哈希处理）。 |
-| `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 指示哪些 [标准身份命名空间](/help/identity-service/namespaces.md#standard) （例如，IDFA）客户可以映射到您正在配置的身份。 <br> 当您使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和散列电子邮件地址或电话号码。 |
+| `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 指示哪些 [标准身份命名空间](/help/identity-service/features/namespaces.md#standard) （例如，IDFA）客户可以映射到您正在配置的身份。 <br> 当您使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和散列电子邮件地址或电话号码。 |
 | `destinationDelivery.authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值包括 `CUSTOMER_AUTHENTICATION`， `PLATFORM_AUTHENTICATION`， `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过用户名和密码、持有者令牌或其他身份验证方法登录您的系统。 例如，如果您还选择了 `authType: OAUTH2` 或 `authType:BEARER` 在 `customerAuthenticationConfigurations`. </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与您的目的地之间有一个全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用创建凭据对象 [凭据API](../../credentials-api/create-credential-configuration.md) 配置。 </li><li>使用 `NONE` 如果不需要身份验证即可将数据发送到您的目标平台。 </li></ul> |
 | `destinationDelivery.destinationServerId` | 字符串 | 此 `instanceId` 的 [目标服务器模板](../destination-server/create-destination-server.md) 用于此目标。 |
 | `backfillHistoricalProfileData` | 布尔值 | 控制将受众激活到目标时是否导出历史配置文件数据。 始终将此项设置为 `true`. |

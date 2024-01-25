@@ -3,7 +3,7 @@ title: Zendesk连接
 description: Zendesk目标允许您导出帐户数据，并在Zendesk中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1469'
 ht-degree: 2%
@@ -48,7 +48,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Zendesk] 支持更新下表中描述的标识。 了解有关 [身份](/help/identity-service/namespaces.md).
+[!DNL Zendesk] 支持更新下表中描述的标识。 了解有关 [身份](/help/identity-service/features/namespaces.md).
 
 | 目标身份 | 示例 | 描述 | 必需 |
 |---|---|---|---|

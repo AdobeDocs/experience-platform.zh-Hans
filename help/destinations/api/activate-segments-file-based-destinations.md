@@ -4,7 +4,7 @@ title: 使用流服务API将受众激活到基于文件的目标
 description: 了解如何使用流服务API将包含合格配置文件的文件导出到云存储目标。
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '4335'
 ht-degree: 4%
@@ -3424,7 +3424,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ 查看要在输入架构中使用的可用身份
 
-响应将返回在创建输入架构时可以使用的标识。 请注意，此响应会返回两者 [标准](/help/identity-service/namespaces.md#standard) 和 [自定义](/help/identity-service/namespaces.md#manage-namespaces) 您在Experience Platform中设置的身份命名空间。
+响应将返回在创建输入架构时可以使用的标识。 请注意，此响应会返回两者 [标准](/help/identity-service/features/namespaces.md#standard) 和 [自定义](/help/identity-service/features/namespaces.md#manage-namespaces) 您在Experience Platform中设置的身份命名空间。
 
 ```json
 [

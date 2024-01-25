@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '926'
+source-wordcount: '925'
 ht-degree: 1%
 
 ---
@@ -59,8 +59,8 @@ ht-degree: 1%
 | [!UICONTROL 营销活动] | 指示出于数据管理目的而应用于此目标的营销操作（用例）。 |
 | [!UICONTROL 类别] | 指示目标类型。 请参阅 [目标目录](../catalog/overview.md) 以了解更多信息。 |
 | [!UICONTROL 连接类型] | 指示将受众发送到目标所使用的表单。 可能的值包括 [!UICONTROL Cookie] 和 [!UICONTROL 基于配置文件]. |
-| [!UICONTROL 频度] | 指示受众发送到目标的频率。 可能的值包括 [!UICONTROL 流] 和 [!UICONTROL 批次]. |
-| [!UICONTROL 标识] | 表示目标接受的身份命名空间，例如 `GAID`， `IDFA`，或 `email`. 有关接受的身份命名空间的更多信息，请参见 [身份命名空间概述](../../identity-service/namespaces.md). |
+| [!UICONTROL 频率] | 指示受众发送到目标的频率。 可能的值包括 [!UICONTROL 流] 和 [!UICONTROL 批次]. |
+| [!UICONTROL 标识] | 表示目标接受的身份命名空间，例如 `GAID`， `IDFA`，或 `email`. 有关接受的身份命名空间的更多信息，请参见 [身份命名空间概述](../../identity-service/features/namespaces.md). |
 | [!UICONTROL 创建者] | 指示创建此目标的用户。 |
 | [!UICONTROL 已创建] | 指示创建此目标时的UTC日期时间。 |
 
