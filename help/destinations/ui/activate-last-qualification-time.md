@@ -1,17 +1,16 @@
 ---
-title: 在新的Beta版云存储目标中使用最后一次XDM资格鉴定时间
-description: 了解如何在新的Beta版云存储目标中使用上次资格授予时间XDM属性
-hidefromtoc: y
-hide: y
+title: 在新的Beta版云存储目标中使用最后限定时间XDM属性
+description: 了解如何在新的测试版云存储目标中使用上次资格授予时间XDM属性
+badgeBeta: label="Beta 版" type="Informative"
 exl-id: d077ea10-5ff2-4acc-8ee6-78ea6cd752d1
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 7130ac46a7768ea6e71bf73eb970bf2890323d0f
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 0%
+source-wordcount: '290'
+ht-degree: 1%
 
 ---
 
-# 在新的Beta版云存储目标中使用最后一次XDM资格鉴定时间 {#last-qualification-time}
+# 在新的Beta版云存储目标中使用最后限定时间XDM属性 {#last-qualification-time}
 
 >[!IMPORTANT]
 > 
@@ -19,17 +18,22 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-使用上次资格取得时间(`lastQualificationTime`) XDM属性，您必须在 [Beta计划](/help/release-notes/2022/october-2022.md#destinations) 使用改进的文件导出功能将数据导出到六个导出功能之一 [测试版云存储目标](/help/release-notes/2022/october-2022.md#destinations) ([[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md)， [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md)， [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)， [SFTP](/help/destinations/catalog/cloud-storage/sftp.md))。 如果您在目录中能够看到云存储目标的新Beta卡，则会注册该卡，如下所示 [!DNL Amazon S3].
+使用上次资格取得时间(`lastQualificationTime`)，您必须将数据导出到下面列出的六个云存储目标之一：
 
-![显示新Amazon S3 Beta卡的图像](/help/destinations/assets/ui/activate-destinations/new-amazon-s3-beta-card.png)
+* [[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)
+* [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)
+* [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md)
+* [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md)
+* [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)
+* [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)
 
 ## 如何使用最后限定时间XDM属性 {#how-to-use}
 
-如果您使用的是六个新的Cloud Storage Beta连接器之一，则可以使用 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 激活工作流的组成部分，以便在导出文件中创建一个列，其最新时间戳为配置文件符合区段资格的时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
+如果您使用上面列出的六个云存储连接器之一，则可以在中使用上次资格取得时间XDM属性 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) ，以在导出的文件中创建一个列，该列的最新时间戳为配置文件符合区段资格的时间。 这可以帮助您处理某些测量或分析用例，并让您更好地了解何时激活某些受众。
 
-请注意，要添加 `lastQualificationTime` 对于文件导出，当前需要手动插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 放入源字段中，如下所示。 您还可以将目标字段编辑为 `lastQualificationTime` 或任何其他要为此列命名的值。 请注意，由于这是测试版功能，因此， `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 价值未来可能会改变。
+请注意，要添加 `lastQualificationTime` 在文件导出中，当前需要手动插入值 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 放入源字段，如下所示。 您还可以将目标字段编辑为 `lastQualificationTime` 或任何其他要命名此列的值。 请注意，由于这是测试版功能，因此其语法 `xdm: segmentMembership.ups.seg_id.lastQualificationTime` 值可能会在未来发生更改。
 
-![屏幕录制，其中显示XDM属性粘贴到映射步骤中的最后限定时间](/help/destinations/ui/last-qualification-time.gif)
+![显示上次将XDM属性粘贴到映射步骤中的资格时间的屏幕录制](/help/destinations/ui/last-qualification-time.gif)
 
 ## 更多信息 {#more-information}
 
