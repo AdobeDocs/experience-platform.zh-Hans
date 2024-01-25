@@ -1,22 +1,15 @@
 ---
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
-hide: true
-hidefromtoc: true
-badge: Alpha
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: f21b5519440f7ffd272361954c9e32ccca2ec2bc
+source-git-commit: 45170c78b9d15c7cc9d71f2d0dab606ea988a783
 workflow-type: tm+mt
-source-wordcount: '789'
-ht-degree: 1%
+source-wordcount: '772'
+ht-degree: 0%
 
 ---
 
 # 标识服务链接逻辑
-
->[!IMPORTANT]
->
->标识图链接规则当前处于Alpha状态。 该功能和文档可能会发生更改。
 
 当标识命名空间与标识值匹配时，将在两个标识之间建立链接。
 
