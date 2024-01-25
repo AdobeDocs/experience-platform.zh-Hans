@@ -2,9 +2,9 @@
 title: 标识服务链接逻辑
 description: 了解Identity Service如何链接不同的身份以创建客户的全面视图。
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 45170c78b9d15c7cc9d71f2d0dab606ea988a783
+source-git-commit: 2b6700b2c19b591cf4e60006e64ebd63b87bdb2a
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '980'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,17 @@ ht-degree: 0%
 
 * **配置文件记录**：这些身份通常来自CRM系统。
 * **体验事件**：这些标识通常来自WebSDK实施或Adobe Analytics源。
+
+## 建立链接的语义含义
+
+标识表示真实世界的实体。 如果两个身份之间建立了链接，则意味着这两个身份相互关联。 以下是说明此概念的一些示例：
+
+| 操作 | 已建立的链接 | 含义 |
+| --- | --- | --- |
+| 最终用户使用计算机登录。 | CRM ID和ECID链接在一起。 | 人员(CRM ID)拥有带浏览器(ECID)的设备。 |
+| 最终用户使用iPhone匿名浏览。 | IDFA与ECID关联。 | Apple硬件设备(IDFA)(如iPhone)与浏览器(ECID)相关联。 |
+| 最终用户使用Google Chrome，然后使用Firefox登录。 | CRM ID与两个不同的ECID关联。 | 人员(CRM ID)与2个Web浏览器关联(**注意**：每个浏览器都有自己的ECID)。 |
+| 数据工程师摄取CRM记录，该记录包括两个标记为身份的字段：CRM ID和电子邮件。 | CRM ID和电子邮件已链接。 | 人员(CRM ID)已关联到该电子邮件地址。 |
 
 ## 了解Identity Service关联逻辑
 
@@ -85,10 +96,13 @@ Identity Service识别您的图形中已存在CRM ID：60013ABC，因此仅链�
 | `t=3` | ECID：44675 | 查看主页 |
 | `t=4` | ECID：44675，CRM ID： 31260XYZ | 查看购买历史记录 |
 
+每个事件的主要标识将根据 [如何配置数据元素类型](../../tags/extensions/client/web-sdk/data-element-types.md).
+
 >[!NOTE]
 >
->* `*`  — 表示标记为身份的字段，其中ECID标记为主。
->* 默认情况下，人员标识符（在本例中为CRM ID）被指定为主要身份。 如果人员标识符不存在，则Cookie标识符（在本例中为ECID）将成为主标识。
+>* 如果您选择CRM ID作为主标识，则经过身份验证的事件（具有包含CRM ID和ECID的标识映射的事件）将具有CRM ID的主标识。 对于未经身份验证的事件（具有仅包含ECID的标识映射的事件），将具有ECID的主标识。 Adobe建议使用此选项。
+>
+>* 如果选择ECID作为主标识，则无论身份验证状态如何，ECID都将成为主标识。
 
 在此示例中：
 
