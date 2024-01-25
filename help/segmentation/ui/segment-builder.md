@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b028bf86bb8596c6fc97829d6d27eec498c4ef11
 workflow-type: tm+mt
-source-wordcount: '3352'
-ht-degree: 8%
+source-wordcount: '3426'
+ht-degree: 7%
 
 ---
 
@@ -77,7 +77,7 @@ ht-degree: 8%
 | eVar2 | 页面名称 | 成员忠诚度ID |
 | eVar3 | URL | 页面名称 |
 | eVar4 | 搜索词 | 产品名称 |
-| event1 | 单击次数 | Page Views |
+| event1 | 点击次数 | Page Views |
 | event2 | Page Views | 购物车加货 |
 | event3 | 购物车加货 | 结账 |
 | event4 | 购买 | 购买 |
@@ -265,7 +265,11 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->受众估计值是通过使用当天的示例数据的示例大小生成的。如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2000万个以上的实体，使用总实体的5%。 有关为区段定义生成估算的更多信息，请参阅 [估计值生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 创建区段定义教程的内容。
+>通过使用当天样本数据的样本量生成受众估计。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2000万个以上的实体，使用总实体的5%。
+>
+>此外，此估计基于上次运行配置文件示例作业的时间。 这意味着，如果您使用相对日期函数，例如“今天”或“本周”，则估计值将基于最后一个配置文件示例作业运行时间进行计算。 例如，如果今天是1月24日，而最后一个配置文件示例作业在1月22日运行，则“Yesterday”相对日期函数将基于1月21日，而不是1月23日。
+>
+>有关为区段定义生成估算的更多信息，请参阅 [估计值生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 创建区段定义教程的内容。
 
 您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义适用的评估类型，可以选择浏览图标 ![带放大镜的文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png) 查看可用区段定义评估方法的列表。
 
