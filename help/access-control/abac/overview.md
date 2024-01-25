@@ -3,14 +3,19 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 0d111241658b4014d1ca2e6013d21a4782d81be9
+source-git-commit: 91631c056fc9d7ceab9eeecdba5733b64f6e869b
 workflow-type: tm+mt
-source-wordcount: '1840'
+source-wordcount: '1844'
 ht-degree: 14%
 
 ---
 
-# 基于属性的访问控制概述
+# 基于属性的访问控制概述 {#attribute-based-access-control-overview}
+
+>[!CONTEXTUALHELP]
+>id="platform_accesscontrol_abac_labelusageaccesspolicy"
+>title="标签使用访问策略"
+>abstract=""
 
 基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，例如添加到架构字段或区段的标签。 管理员定义包括管理用户访问权限的属性的访问策略。
 

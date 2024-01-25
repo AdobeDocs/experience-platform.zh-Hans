@@ -2,10 +2,10 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中将数据使用标签添加到Experience Data Model (XDM)架构字段。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 27842e7e07b6fc5884587fb75cc89bcfb4320938
+source-git-commit: 37395e5762c8d54e6fca5c3502bdbf56f5b5472c
 workflow-type: tm+mt
-source-wordcount: '913'
-ht-degree: 7%
+source-wordcount: '806'
+ht-degree: 8%
 
 ---
 
@@ -39,12 +39,6 @@ ht-degree: 7%
 >id="platform_schemas_editgovernancelabels"
 >title="编辑治理标签"
 >abstract="将标签应用于架构字段可指示适用于该特定字段中包含的数据的使用策略。"
-
->[!CONTEXTUALHELP]
->id="platform_schemas_labelusageacknowledgement"
->title="标签使用"
->abstract="在编辑此对象的标签之前，请注意以下下游影响：<br>治理策略：使用标签可管理数据是否可以激活到下游目标。 不正确的标签使用可能会阻止下游访问数据。<br>同意策略：在区段中包含用户档案时，使用标签可强制实施客户同意和偏好设置。 不正确的标签使用可能会阻止下游访问数据。<br>访问策略：基于属性的访问控制使用标签来确定哪些用户角色可以访问特定资源。 意外的标签使用可能会阻止组织中某些人使用他们之前有权访问的资产。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/overview.html?lang=zh-Hans" text="基于属性的访问控制概述"
 
 要开始添加标签，您必须首先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新架构](../ui/resources/schemas.md#create) 以在架构编辑器中查看其结构。
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 79214671acdb0d48182423ad658be2a8b1cbc0c2
+source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
 workflow-type: tm+mt
-source-wordcount: '2382'
+source-wordcount: '2313'
 ht-degree: 3%
 
 ---
@@ -26,13 +26,6 @@ ht-degree: 3%
 [!DNL Query Editor] 通过连接到 [!DNL Query Service]和查询仅在此连接处于活动状态时运行。
 
 ## 访问 [!DNL Query Editor] {#accessing-query-editor}
-
->[!CONTEXTUALHELP]
->id="platform_queryservice_create_datagovernance"
->title="数据治理义务"
->abstract="请记住，遵守贵组织的数据治理政策和满足法规要求是您的唯一责任。 Experience Platform提供了数据治理工具，供您管理数据使用义务。 在查询或处理数据之前应用适当的数据使用标签。 请参阅文档，了解有关数据治理工具和最佳实践的信息。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans" text="数据治理概述"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans" text="数据管理标签概述"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开 [!DNL Query Service] 工作区。 接下来，要开始编写查询，请选择 **[!UICONTROL 创建查询]** 在屏幕的右上角。 此链接可从 [!DNL Query Service] 工作区。
 
