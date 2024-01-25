@@ -2,10 +2,10 @@
 title: 使用流服务API为SugarCRM帐户和联系人创建源连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SugarCRM帐户和联系人。
 exl-id: 2b422b39-5b86-4313-a214-725044d9812c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 0edc7a6a68ee4dc5ea24f16a8bc12aba85af0dff
 workflow-type: tm+mt
-source-wordcount: '2160'
-ht-degree: 2%
+source-wordcount: '2104'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南要求您对 Experience Platform 的以下组件有一定了解：
+本指南要求您对Experience Platform的以下组件有一定的了解：
 
 * [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的虚拟沙箱，以帮助开发和改进数字体验应用程序。
@@ -350,6 +350,8 @@ curl -X GET \
 ```
 
 >[!TAB 联系人]
+
+成功的响应会返回如下结构。
 
 ```json
 {
