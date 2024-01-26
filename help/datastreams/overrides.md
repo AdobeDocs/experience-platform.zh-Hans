@@ -1,10 +1,11 @@
 ---
 title: 配置数据流覆盖
 description: 了解如何在数据流 UI 中配置数据流覆盖并通过 Web SDK 激活它们。
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
+source-git-commit: 11feeae0409822f0b1ccba2df263f0be466d54e3
 workflow-type: tm+mt
-source-wordcount: '1450'
-ht-degree: 60%
+source-wordcount: '1303'
+ht-degree: 67%
 
 ---
 
@@ -218,154 +219,7 @@ alloy("configure", {
 
 之后 [配置数据流覆盖](#configure-overrides) 在数据收集UI中，您现在可以通过Mobile SDK将覆盖发送到Edge Network。
 
-如果您使用的是Mobile SDK，请通过 `sendEvent` API是激活数据流配置覆盖的第二步，也是最后一步。
-
-有关Experience PlatformMobile SDK的更多信息，请参阅 [移动SDK文档](https://developer.adobe.com/client-sdks/edge/edge-network/).
-
-### 通过移动SDK覆盖数据流ID {#id-override-mobile}
-
-以下示例显示了数据流ID覆盖在Mobile SDK集成中可能显示的内容。 选择下面的选项卡以查看 [!DNL iOS] 和 [!DNL Android] 示例。
-
->[!BEGINTABS]
-
->[!TAB iOS (Swift)]
-
-此示例显示数据流ID覆盖在Mobile SDK中会是什么样子 [!DNL iOS] 集成。
-
-```swift
-// Create Experience event from dictionary
-var xdmData: [String: Any] = [
-  "eventType": "SampleXDMEvent",
-  "sample": "data",
-]
-let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamIdOverride: "SampleDatastreamId")
-
-Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
-  // Handle the Edge Network response
-}
-```
-
->[!TAB Android™ (Kotlin)]
-
-此示例显示数据流ID覆盖在Mobile SDK中会是什么样子 [!DNL Android] 集成。
-
-```kotlin
-// Create experience event from Map
-val xdmData = mutableMapOf < String, Any > ()
-xdmData["eventType"] = "SampleXDMEvent"
-xdmData["sample"] = "data"
-
-val experienceEvent = ExperienceEvent.Builder()
-    .setXdmSchema(xdmData)
-    .setDatastreamIdOverride("SampleDatastreamId")
-    .build()
-
-Edge.sendEvent(experienceEvent) {
-    // Handle the Edge Network response
-}
-```
-
->[!ENDTABS]
-
-### 通过Mobile SDK覆盖数据流配置 {#config-override-mobile}
-
-以下示例显示了数据流配置覆盖在Mobile SDK集成上可能显示的内容。 选择下面的选项卡以查看 [!DNL iOS] 和 [!DNL Android] 示例。
-
->[!BEGINTABS]
-
->[!TAB iOS (Swift)]
-
-此示例显示数据流配置覆盖在Mobile SDK中看起来是什么样子 [!DNL iOS] 集成。
-
-```swift
-// Create Experience event from dictionary
-var xdmData: [String: Any] = [
-  "eventType": "SampleXDMEvent",
-  "sample": "data",
-]
-
-let configOverrides: [String: Any] = [
-  "com_adobe_experience_platform": [
-    "datasets": [
-      "event": [
-        "datasetId": "SampleEventDatasetIdOverride"
-      ]
-    ]
-  ],
-  "com_adobe_analytics": [
-  "reportSuites": [
-        "MyFirstOverrideReportSuite",
-          "MySecondOverrideReportSuite",
-          "MyThirdOverrideReportSuite"
-      ]
-  ],
-  "com_adobe_identity": [
-    "idSyncContainerId": "1234567"
-  ],
-  "com_adobe_target": [
-    "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
- ],
-]
-
-let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamConfigOverride: configOverrides)
-
-Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
-  // Handle the Edge Network response
-}
-```
-
->[!TAB Android (Kotlin)]
-
-此示例显示数据流配置覆盖在Mobile SDK中看起来是什么样子 [!DNL Android] 集成。
-
-```kotlin
-// Create experience event from Map
-val xdmData = mutableMapOf < String, Any > ()
-xdmData["eventType"] = "SampleXDMEvent"
-xdmData["sample"] = "data"
-
-val configOverrides = mapOf(
-    "com_adobe_experience_platform"
-    to mapOf(
-        "datasets"
-        to mapOf(
-            "event"
-            to mapOf("datasetId"
-                to "SampleEventDatasetIdOverride")
-        )
-    ),
-    "com_adobe_analytics"
-    to mapOf(
-        "reportSuites"
-        to listOf(
-            "MyFirstOverrideReportSuite",
-            "MySecondOverrideReportSuite",
-            "MyThirdOverrideReportSuite"
-        )
-    ),
-    "com_adobe_identity"
-    to mapOf(
-        "idSyncContainerId"
-        to "1234567"
-    ),
-    "com_adobe_target"
-    to mapOf(
-        "propertyToken"
-        to "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    )
-)
-
-val experienceEvent = ExperienceEvent.Builder()
-    .setXdmSchema(xdmData)
-    .setDatastreamConfigOverride(configOverrides)
-    .build()
-
-Edge.sendEvent(experienceEvent) {
-    // Handle the Edge Network response
-}
-```
-
->[!ENDTABS]
+要了解如何将覆盖发送到Edge Network，请参阅 [有关使用sendEvent发送覆盖的指南](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) 或 [使用规则发送覆盖的指南](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
 
 ## 负载示例 {#payload-example}
 
