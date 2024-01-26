@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Analytics源连接器的映射字段
 description: 使用Adobe Analytics Source Connector将Analytics字段映射到XDM字段。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: bb07d45df3ca585b2ca4af07cc991ac0b1e4df12
+source-git-commit: 6cbd902c6a1159d062fb38bf124a09bb18ad1ba8
 workflow-type: tm+mt
-source-wordcount: '2367'
+source-wordcount: '2388'
 ht-degree: 14%
 
 ---
@@ -38,7 +38,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_keywords` | `search.keywords` | 字符串 | 在“关键字”维度中使用的变量。 |
 | `m_os` | `_experience.analytics.environment.`<br/>`operatingSystemID` | 整数 | 表示访客的操作系统的数值ID。 这是基于user_agent列的。 |
 | `m_page_url` | `web.webPageDetails.URL` | 字符串 | 页面点击的URL。 |
-| `m_pagename_no_url` | `web.webPageDetails.name` | 字符串 | 用于填充页面维度的变量。 |
+| `m_pagename` | `web.webPageDetails.pageViews.value` | 字符串 | 具有页面名称的点击上等于1。 这类似于Adobe Analytics页面查看次数量度。 |
 | `m_referrer` | `web.webReferrer.URL` | 字符串 | 上一页的页面URL。 |
 | `m_search_page_num` | `search.pageDepth` | 整数 | 供所有搜索页面排名维度使用。 指示用户在点击进入您的网站之前您的网站出现在搜索结果的哪一页。 |
 | `m_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | 字符串 | 状态变量。 |
@@ -152,7 +152,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `m_page_event_var1` | `web.webInteraction.URL` | 字符串 | 仅在链接跟踪图像请求中使用的变量。 此变量包含下载链接、退出链接或单击的自定义链接的URL。 |
 | `m_page_event_var2` | `web.webInteraction.name` | 字符串 | 仅在链接跟踪图像请求中使用的变量。 这会列出链接的自定义名称（如果已指定）。 |
 | `m_page_type` | `web.webPageDetails.isErrorPage` | 布尔 | 用于填充页面未找到维度的变量。 此变量应为空或包含“ErrorPage”。 |
-| `m_pagename_no_url` | `web.webPageDetails.pageViews.value` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
+| `m_pagename_no_url` | `web.webPageDetails.name` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
 | `m_paid_search` | `search.isPaid` | 布尔 | 如果点击与付费搜索检测相匹配，则设置此标记。 |
 | `m_product_list` | `productListItems[].items` | 数组 | 产品列表，通过products变量传入。 | {SKU （字符串）、数量（整数）、价格总计（数字）} |
 | `m_ref_type` | `web.webReferrer.type` | 字符串 | 表示点击的反向链接类型的数字 ID。<br/>`1`：网站内部<br/>`2`：其他网站<br/>`3`：搜索引擎<br/>`4`：硬盘<br/>`5`：用户端<br/>`6`：已输入/添加书签（无反向链接）<br/>`7`：电子邮件<br/>`8`：无JavaScript<br/>`9`：社交网络 |
@@ -203,7 +203,7 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `post_first_hit_pagename` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.name` | 字符串 | 在原始登入页面维度中使用的变量。 访客的登录页面的页面名称。 |
 | `post_keywords` | `search.keywords` | 字符串 | 为点击收集的关键字。 |
 | `post_page_url` | `web.webPageDetails.URL` | 字符串 | 页面点击的URL。 |
-| `post_pagename_no_url` | `web.webPageDetails.name` | 字符串 | 用于填充页面维度的变量。 |
+| `post_pagename` | `web.webPageDetails.pageViews.value` | 字符串 | 具有页面名称的点击上等于1。 这类似于Adobe Analytics页面查看次数量度。 |
 | `post_purchaseid` | `commerce.order.purchaseID` | 字符串 | 用于唯一标识购买的变量。 |
 | `post_referrer` | `web.webReferrer.URL` | 字符串 | 上一页的URL。 |
 | `post_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | 字符串 | 状态变量。 |
@@ -233,11 +233,11 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | `post_latitude` | `placeContext.geo._schema.latitude` | 数字 | <!-- MISSING --> |
 | `post_longitude` | `placeContext.geo._schema.longitude` | 数字 | <!-- MISSING --> |
 | `post_page_event` | `web.webInteraction.type` | 字符串 | 在图像请求中发送的点击类型（标准点击、下载链接、退出链接或单击的自定义链接）。 |
-| `post_page_event` | `web.webInteraction.linkClicks.value` | 数字 | 在图像请求中发送的点击类型（标准点击、下载链接、退出链接或单击的自定义链接）。 |
+| `post_page_event` | `web.webInteraction.linkClicks.value` | 数字 | 如果点击是链接点击，则等于1。 这类似于Adobe Analytics中的“页面事件”量度。 |
 | `post_page_event_var1` | `web.webInteraction.URL` | 字符串 | 此变量仅在链接跟踪图像请求中使用。 它是已单击下载链接、退出链接或自定义链接的URL。 |
 | `post_page_event_var2` | `web.webInteraction.name` | 字符串 | 此变量仅在链接跟踪图像请求中使用。 它是链接的自定义名称。 |
 | `post_page_type` | `web.webPageDetails.isErrorPage` | 布尔 | 用于填充未找到页面维度。 此变量应为空或包含“ErrorPage” |
-| `post_pagename_no_url` | `web.webPageDetails.pageViews.value` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
+| `post_pagename_no_url` | `web.webPageDetails.name` | 数字 | 页面的名称（如果已设置）。 如果未指定页面，此值将留空。 |
 | `post_product_list` | `productListItems[].items` | 数组 | 产品列表，通过products变量传入。 | {SKU （字符串）、数量（整数）、价格总计（数字）} |
 | `post_search_engine` | `search.searchEngine` | 字符串 | 表示将访客引荐至您的网站的搜索引擎的数值ID。 |
 | `mvvar1_instances` | `.list.items[]` | 对象 | 变量值列表。 包含分隔的自定义值列表，具体取决于实施。 |
