@@ -4,10 +4,10 @@ title: 创建、共享和重用战术手册实例
 description: 了解如何创建、共享和重用战术手册实例来完成您的营销用例。
 badgeBeta: label="Beta 版" type="Informative"
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
 workflow-type: tm+mt
-source-wordcount: '725'
-ht-degree: 100%
+source-wordcount: '745'
+ht-degree: 97%
 
 ---
 
@@ -20,6 +20,11 @@ ht-degree: 100%
 要使用战术手册，请导航至&#x200B;**[!UICONTROL 用例战术手册] > [!UICONTROL 战术手册]**。浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
 
 ## 创建一个战术手册实例。 {#create-playbook-instance}
+
+>[!CONTEXTUALHELP]
+>id="platform_playbooks_create"
+>title="创建实例"
+>abstract="生成要在历程或激活场景中使用的资源（如历程、受众、架构或目标）列表。"
 
 在创建战术手册实例之前，请探索可用的战术手册以[发现适合您的战术手册](/help/use-case-playbooks/playbooks/discover.md)。当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
 
