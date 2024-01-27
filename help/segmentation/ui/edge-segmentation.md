@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 边缘分段UI指南
 description: 了解如何使用边缘分段在边缘即时评估Platform中的区段定义，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 9f586b336f5cc232ac9b04a74846b7cfc2b46a71
+source-git-commit: d3c0e5ed596661f11191bbcd8d51c888bbd4c1d2
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '958'
 ht-degree: 0%
 
 ---
@@ -40,9 +40,9 @@ ht-degree: 0%
 | 单个配置文件 | 任何引用单个纯配置文件属性的区段定义 | 住在美国的人。 | `homeAddress.countryCode = "US"` |
 | 引用用户档案的单个事件 | 任何引用一个或多个用户档案属性和单个传入事件的区段定义，无时间限制。 | 在美国居住的人访问了该主页。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView")])` |
 | 否定了具有配置文件属性的单个事件 | 任何引用带反义的单个传入事件和一个或多个用户档案属性的区段定义 | 居住在美国并且拥有 **非** 访问了主页。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView")]))` |
-| 时间范围内的单个事件 | 任何引用一段时间内单个传入事件的区段定义。 | 过去24小时内访问过主页的人。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 8 days before now)])` |
-| 在相对时间范围小于24小时内的配置文件属性为单个事件 | 任何涉及单个传入事件（具有一个或多个用户档案属性）且发生在小于24小时的相对时间范围内的区段定义。 | 居住在美国的人在过去24小时内访问了该主页。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 8 days before now)])` |
-| 在一个时间范围内否定了具有配置文件属性的单个事件 | 任何引用一段时间内一个或多个用户档案属性和否定单个传入事件的区段定义。 | 居住在美国并且拥有 **非** 在过去24小时内访问了主页。 | `homeAddress.countryCode = "US" and not(chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 8 days before now)]))` |
+| 时间范围内的单个事件 | 任何引用一段时间内单个传入事件的区段定义。 | 过去24小时内访问过主页的人。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)])` |
+| 在相对时间范围小于24小时内的配置文件属性为单个事件 | 任何涉及单个传入事件（具有一个或多个用户档案属性）且发生在小于24小时的相对时间范围内的区段定义。 | 居住在美国的人在过去24小时内访问了该主页。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)])` |
+| 在一个时间范围内否定了具有配置文件属性的单个事件 | 任何引用一段时间内一个或多个用户档案属性和否定单个传入事件的区段定义。 | 居住在美国并且拥有 **非** 在过去24小时内访问了主页。 | `homeAddress.countryCode = "US" and not(chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]))` |
 | 24小时时间范围内的频率事件 | 任何涉及在24小时的时间范围内发生特定次数的事件的区段定义。 | 访问过主页的人 **至少** 过去24小时内5次。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
 | 在24小时时间范围内具有配置文件属性的频率事件 | 任何区段定义，它是指一个或多个用户档案属性以及在24小时的时间范围内发生特定次数的事件。 | 访问主页的美国人 **至少** 过去24小时内5次。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
 | 在24小时时间范围内具有配置文件的否定频率事件 | 任何引用一个或多个用户档案属性的区段定义，以及在24小时的时间范围内发生特定次数的否定事件。 | 未访问过主页的人 **更多** 超过五次。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] ))` |
