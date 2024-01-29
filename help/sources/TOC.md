@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 4d9c04909cba29b0c6685c357dbb84af9fa14b47
+source-git-commit: 8a9cf0547720927018d728d7cecbf377a1282f6f
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1008'
 ht-degree: 11%
 
 ---
@@ -303,6 +303,7 @@ ht-degree: 11%
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 营销自动化 {#marketing-automation}
+         - [布拉泽](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
