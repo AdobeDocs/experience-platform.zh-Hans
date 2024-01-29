@@ -2,7 +2,7 @@
 title: 通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform
 description: 了解如何通过UI将您的SalesforceMarketing Cloud帐户连接到Experience Platform。
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 635ab266fac9d3dc232307d7cb49f83904197782
+source-git-commit: 5bb95c2823ce7baa09cbc84c2f1ccf70a0796549
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 1%
@@ -34,7 +34,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| Host | 应用程序的主机服务器。 这通常是您的子域。 **注意：** 输入时 `host` 值，您需要指定 `{subdomain}.rest.marketingcloudapis.com`. 例如，如果您的主机URL为 `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`，则只需输入 `acme-ab12c3d4e5fg6hijk7lmnop8qrstauth.marketingcloudapis.com/` 作为主机值。 |
+| Host | 应用程序的主机服务器。 这通常是您的子域。 **注意：** 输入时 `host` 值，您需要指定 `{subdomain}.rest.marketingcloudapis.com`. 例如，如果您的主机URL为 `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/`，则只需输入 `acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/` 作为主机值。 |
 | 客户端ID | 与您的关联的客户端ID [!DNL Salesforce Marketing Cloud] 应用程序。 |
 | 客户端密码 | 与您的关联的客户端密钥 [!DNL Salesforce Marketing Cloud] 应用程序。 |
 
