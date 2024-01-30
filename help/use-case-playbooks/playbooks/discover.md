@@ -2,20 +2,15 @@
 solution: Experience Platform
 title: 发现合适的战术手册
 description: 了解如何为您的用例找到合适的战术手册并启用战术手册。
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
+source-git-commit: 0decef848fe90e5c60352aeb42aabdd678eeb8f8
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '752'
 ht-degree: 91%
 
 ---
 
-# (Beta) 发现合适的战术手册
-
->[!AVAILABILITY]
->
->此功能当前正在接受测试，无法为所有用户提供。文档和功能可能会发生变化。
+# 发现合适的战术手册
 
 要使用战术手册，请导航至&#x200B;**[!UICONTROL 用例战术手册] > [!UICONTROL 战术手册]**。浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
 
@@ -48,7 +43,6 @@ ht-degree: 91%
 思维导图首先定义用户历程中会接触到的人，并在每一步描述 Adobe 是否发出了某些内容（例如新消息或提醒），或者目标角色是否执行了触发下一条消息或事件的操作。
 
 ![突出显示了战术手册思维导图。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
-
 
 ### 概要 {#summary}
 

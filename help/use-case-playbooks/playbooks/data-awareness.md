@@ -2,18 +2,19 @@
 solution: Experience Platform
 title: 用例行动手册中的数据意识概述
 description: 了解如何通过将最终启发型沙盒中生成的资源复制到其他沙盒来加快实现价值。
-badgeBeta: label="Beta 版" type="Informative"
-source-git-commit: cbf5f2aaf9bb8113ad5eadac888e9b4f85b199b8
+exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
+source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '921'
 ht-degree: 0%
 
 ---
 
-
 # 用例行动手册中的数据意识概述
 
-用例行动手册是营销模板，旨在为常见营销用例生成受众、架构或历程等资产。 在Adobe Experience Platform中，这些模板引用了多个标准字段和字段组。 但是，在某些情况下，您可能已经设置了自己的架构、字段和字段组。 这可能会使用例模板生成的某些资产（例如历程）与您的数据不兼容。 要了解如何使用数据感知功能更好地使生成的资源与现有资源对应和补充，请阅读本教程。
+用例行动手册是营销模板，旨在为常见营销用例生成受众、架构或历程等资产。 您可以在启发性的沙盒中测试行动手册创建的资产，并在准备就绪后，将资产导入其他开发沙盒，以便进一步使用在这些沙盒中可用的数据进行测试。 对测试感到满意后，您可以将资产从开发沙盒移至生产沙盒。
+
+但是，在某些情况下，您可能已经在其他开发沙盒中设置自己的架构、字段和字段组。 这可能会使用例模板生成的某些资产（例如历程）与您的数据不兼容。 要了解如何使用数据感知功能更好地使生成的资源与现有资源对应和补充，请阅读本教程。
 
 ## 先决条件 {#prerequisites}
 
@@ -22,6 +23,10 @@ ht-degree: 0%
 创建实例会在启发型沙盒中生成一组资源，例如历程、区段、架构和消息。 请阅读并了解如何将这些资源复制到其他沙盒中。
 
 ### 创建和发布资源包 {#create-publish-package}
+
+>[!NOTE]
+>
+> 您只能将包导入其他开发沙盒中。 完成所有必要的更改或更新后，您可以将资源或包从这些开发沙盒导入到生产环境中。 您无法直接从用例行动手册沙盒导入到生产环境。
 
 1. 要将启发性的沙盒中的对象导入另一个沙盒，请浏览到用例剧本的所需实例，然后选择 **[!UICONTROL 发布到其他沙盒]** 将对象导出为文件包。
 
@@ -48,10 +53,6 @@ ht-degree: 0%
 5. 选择 **+** 控制并启动工作流以将用例剧本生成的资产导入 **[!UICONTROL Target沙盒]**. 选择目标沙盒，然后使用下拉菜单确认您要导入的包名称。 在继续下一步之前，请添加作业详细信息，例如作业名称和作业描述。
 
    ![启动导入工作流，选择目标，确认包，添加作业详细信息。](/help/use-case-playbooks/assets/playbooks/data-awareness/import-package-import-settings.png)
-
-   >[!NOTE]
-   >
-   > 您只能将包导入其他开发沙盒中。 对于此类导入，将禁用生产沙盒。
 
 6. 在 **[!UICONTROL 查看依赖关系]** 步骤，您可以将架构映射并将其他资产从启发型沙盒复制到目标沙盒中。 此 **[!UICONTROL 完成]** 在映射每个架构之前，按钮处于禁用状态。
 
@@ -96,3 +97,7 @@ ht-degree: 0%
 ## 后续步骤
 
 阅读本指南后，您现在可以更好地了解如何利用用例行动手册以及 [沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details) 创建引用架构的可执行历程。 了解关于常见问题的更多信息 [Real-Time CDP用例](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md).
+
+### 有关此主题的更多帮助
+
+[沙盒工具](/help/sandboxes/ui/sandbox-tooling.md)
