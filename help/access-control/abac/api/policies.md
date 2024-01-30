@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制策略API端点
 description: 基于属性的访问控制API中的/policies端点允许您以编程方式管理Adobe Experience Platform中的策略。
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: 01574f37593c707f092a8b4aa03d3d67e8c20780
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1433'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-访问控制策略是汇集属性以建立允许和不允许操作的声明。 这些策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 此 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
+访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 这些策略可以是本地策略或全局策略，也可以覆盖其他策略。 此 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
 
 >[!IMPORTANT]
 >
@@ -25,7 +25,7 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南中使用的API端点是基于属性的访问控制API的一部分。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索策略列表 {#list}
 
@@ -139,18 +139,18 @@ curl -X GET \
 | `modifiedBy` | 上次更新策略的用户的ID。 |
 | `modifiedAt` | 上次更新策略的时间。 此 `modifiedAt` 属性以unix epoch时间戳显示。 |
 | `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的进一步信息的属性。 |
+| `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
 | `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这个案例中， `subjectCondition` 是应用于主题属性的类似查询的条件。 |
-| `rules` | 定义策略的一组规则。 规则定义了为主体成功对资源执行操作而授权的属性组合。 |
-| `rules.effect` | 考虑以下值后产生的影响： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在本例中， `subjectCondition` 适用于主题属性的类似查询的条件。 |
+| `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
+| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这些标签有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询到的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 ## 按ID查找策略详细信息 {#lookup}
 
-GET向 `/policies` 在请求路径中提供策略ID以检索有关该单个策略的信息时的端点。
+GET向 `/policies` 在请求路径中提供策略ID以检索有关该单个策略的信息时，使用这种方法来获取端点。
 
 **API格式**
 
@@ -180,35 +180,49 @@ curl -X GET \
 
 ```json
 {
-    "id": "13138ef6-c007-495d-837f-0a248867e219",
-    "imsOrgId": "{IMS_ORG}",
-    "createdBy": "{CREATED_BY}",
-    "createdAt": 1652859368555,
-    "modifiedBy": "{MODIFIED_BY}",
-    "modifiedAt": 1652890780206,
-    "name": "Documentation-Copy",
-    "description": "xyz",
-    "status": "active",
-    "subjectCondition": null,
-    "rules": [
+  "policies": [
+    {
+      "id": "7019068e-a3a0-48ce-b56b-008109470592",
+      "imsOrgId": "5555467B5D8013E50A494220@AdobeOrg",
+      "createdBy": "example@AdobeID",
+      "createdAt": 1652892767559,
+      "modifiedBy": "example@AdobeID",
+      "modifiedAt": 1652895736367,
+      "name": "schema-field",
+      "description": "schema-field",
+      "status": "inactive",
+      "subjectCondition": null,
+      "rules": [
         {
-            "effect": "Permit",
-            "resource": "orgs/{IMS_ORG}/sandboxes/ro-sand/schemas/*/schema-fields/*",
-            "condition": "{\"!\":[{\"or\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"and\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}]}]}",
-            "actions": [
-                "com.adobe.action.read"
-            ]
+          "effect": "Deny",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/xql/schemas/*/schema-fields/*",
+          "condition": "{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}",
+          "actions": [
+            "com.adobe.action.read",
+            "com.adobe.action.write",
+            "com.adobe.action.view"
+          ]
         },
         {
-            "effect": "Deny",
-            "resource": "orgs/{IMS_ORG}/sandboxes/*/segments/*",
-            "condition": "{\"!\":[{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"custom/\",{\"var\":\"resource.labels\"}]}]}]}",
-            "actions": [
-                "com.adobe.action.read"
-            ]
+          "effect": "Permit",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/*/schemas/*/schema-fields/*",
+          "condition": "{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}",
+          "actions": [
+            "com.adobe.action.delete"
+          ]
+        },
+        {
+          "effect": "Deny",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/delete-sandbox-adfengine-test-8/segments/*",
+          "condition": "{\"!\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"custom/\",{\"var\":\"resource.labels\"}]}]}",
+          "actions": [
+            "com.adobe.action.write"
+          ]
         }
-    ],
-    "_etag": "\"0300d43c-0000-0200-0000-62851c9c0000\""
+      ],
+      "etag": "\"0300593f-0000-0200-0000-62852ff80000\""
+    }
+  ]
 }
 ```
 
@@ -221,14 +235,14 @@ curl -X GET \
 | `modifiedBy` | 上次更新策略的用户的ID。 |
 | `modifiedAt` | 上次更新策略的时间。 此 `modifiedAt` 属性以unix epoch时间戳显示。 |
 | `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的进一步信息的属性。 |
+| `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
 | `status` | 策略的当前状态。 此属性定义策略当前是否为 `active` 或 `inactive`. |
-| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在这个案例中， `subjectCondition` 是应用于主题属性的类似查询的条件。 |
-| `rules` | 定义策略的一组规则。 规则定义了为主体成功对资源执行操作而授权的属性组合。 |
-| `rules.effect` | 考虑以下值后产生的影响： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `subjectCondition` | 应用于主体的条件。 主体是具有特定属性的用户，请求访问资源以执行操作。 在本例中， `subjectCondition` 适用于主题属性的类似查询的条件。 |
+| `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
+| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这些标签有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询到的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 
 ## 创建策略 {#create}
@@ -261,7 +275,7 @@ curl -X POST \
           "resource": "/orgs/{IMS_ORG}/sandboxes/*",
           "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
           "actions": [
-            "read"
+            "com.adobe.action.read"
           ]
         }
       ]
@@ -271,17 +285,17 @@ curl -X POST \
 | 参数 | 描述 |
 | --- | --- |
 | `name` | 策略的名称。 |
-| `description` | （可选）可添加以提供有关特定策略的进一步信息的属性。 |
+| `description` | （可选）可以添加以提供有关特定策略的进一步信息的属性。 |
 | `imsOrgId` | 包含策略的组织。 |
-| `rules` | 定义策略的一组规则。 规则定义了为主体成功对资源执行操作而授权的属性组合。 |
-| `rules.effect` | 考虑以下值后产生的影响： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
+| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这些标签有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询到的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 **响应**
 
-成功的请求会返回新创建的策略，包括其唯一策略ID和关联的规则。
+成功的请求会返回新创建的策略，包括其唯一策略ID和相关规则。
 
 ```json
 {
@@ -301,7 +315,7 @@ curl -X POST \
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],
@@ -313,16 +327,16 @@ curl -X POST \
 | --- | --- |
 | `id` | 与策略相对应的ID。 此标识符是自动生成的，可用于查找、更新和删除策略。 |
 | `name` | 策略的名称。 |
-| `rules` | 定义策略的一组规则。 规则定义了为主体成功对资源执行操作而授权的属性组合。 |
-| `rules.effect` | 考虑以下值后产生的影响： `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
+| `rules` | 定义策略的一组规则。 规则定义了哪些属性组合已获授权，以便主体能够成功对资源执行操作。 |
+| `rules.effect` | 考虑以下值后产生的影响 `action`， `condition` 和 `resource`. 可能的值包括： `permit`， `deny`，或 `indeterminate`. |
 | `rules.resource` | 主体可以或无法访问的资源或对象。  资源可以是文件、应用程序、服务器甚至API。 |
-| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这些标签有助于确定针对该架构的操作是允许还是不允许的。 |
-| `rules.action` | 允许主体对查询到的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
+| `rules.condition` | 应用于资源的条件。 例如，如果资源是架构，则架构可以应用某些标签，这有助于确定针对该架构的操作是允许还是不允许的。 |
+| `rules.action` | 允许主体对查询的资源执行的操作。 可能的值包括： `read`， `create`， `edit`、和 `delete`. |
 
 
 ## 按策略ID更新策略 {#put}
 
-PUT要更新单个策略的规则，请向 `/policies` 端点，同时在请求路径中提供要更新的策略的ID。
+PUT要更新单个策略的规则，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
 
 **API格式**
 
@@ -352,7 +366,7 @@ curl -X PUT \
         "resource": "/orgs/{IMS_ORG}/sandboxes/*",
         "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
         "actions": [
-          "read"
+          "com.adobe.action.read"
         ]
       }
     ]
@@ -361,7 +375,7 @@ curl -X PUT \
 
 **响应**
 
-成功响应将返回更新的策略。
+成功的响应将返回更新的策略。
 
 ```json
 {
@@ -381,7 +395,7 @@ curl -X PUT \
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],
@@ -391,7 +405,7 @@ curl -X PUT \
 
 ## 更新策略属性 {#patch}
 
-要更新单个策略的属性，请向以下地址发出PATCH请求： `/policies` 端点，同时在请求路径中提供要更新的策略的ID。
+PATCH要更新单个策略的属性，请向 `/policies` 端点，同时提供要在请求路径中更新的策略的ID。
 
 **API格式**
 
@@ -405,7 +419,7 @@ PATCH /policies/{POLICY_ID}
 
 **请求**
 
-以下请求替换 `/description` 在策略ID中 `c3863937-5d40-448d-a7be-416e538f955e`.
+以下请求替换了 `/description` 在策略ID中 `c3863937-5d40-448d-a7be-416e538f955e`.
 
 ```shell
 curl -X PATCH \
@@ -428,11 +442,11 @@ curl -X PATCH \
 | --- | --- |
 | `op` | 用于定义更新角色所需的操作的操作调用。 操作包括： `add`， `replace`、和 `remove`. |
 | `path` | 要更新的参数的路径。 |
-| `value` | 您希望使用更新参数的新值。 |
+| `value` | 要用于更新参数的新值。 |
 
 **响应**
 
-成功的响应会返回查询的策略ID，并带有更新的描述。
+成功的响应会返回查询的策略ID，并包含更新的描述。
 
 ```json
 {
@@ -452,7 +466,7 @@ curl -X PATCH \
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],
@@ -462,7 +476,7 @@ curl -X PATCH \
 
 ## 删除策略 {#delete}
 
-DELETE要删除策略，请向 `/policies` 端点，同时提供要删除的策略的ID。
+DELETE要删除策略，请向 `/policies` 端点提供了要删除的策略的ID。
 
 **API格式**
 

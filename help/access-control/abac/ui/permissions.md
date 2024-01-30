@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面为角色配置权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
+source-git-commit: c1c7a851315214e2362085d3283d144066d4dd8a
 workflow-type: tm+mt
-source-wordcount: '986'
-ht-degree: 3%
+source-wordcount: '984'
+ht-degree: 2%
 
 ---
 
@@ -155,9 +155,9 @@ ht-degree: 3%
 
 您将被返回到 **[!UICONTROL 用户组]** 选项卡。
 
-## 通过产品配置文件将用户添加到 Experience Platform
+## 通过角色将用户添加到Experience Platform
 
-要将用户添加到产品配置文件，请登录Admin Console并选择 **[!UICONTROL 添加用户]**
+要将用户添加到角色，请登录到该Admin Console并选择 **[!UICONTROL 添加用户]**
 
 ![product-profile-add-users](../../images/flac-ui/product-profile-add-users.png)
 
