@@ -2,9 +2,9 @@
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，可以通过UI帮助进行疑难解答。 本文档概述了如何使用及导航UI的“查询服务日志”部分。
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
+source-git-commit: 445738f78f44ab8eb1632dbda82c4dd69dbebefd
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '931'
 ht-degree: 0%
 
 ---
@@ -41,9 +41,13 @@ A [每个日志表列的说明](./overview.md#log) 可以在查询服务概述�
 
 ![在查询日志工作区中选择了行，并突出显示右侧边栏中的日志数据。](../images/ui/query-log/log-details.png)
 
-在“日志详细信息”面板中，您可以选择新的输出数据集，并查看或复制运行中使用的完整SQL查询。
+在日志详细信息面板中，您可以执行各种操作。 您可以以CTAS身份运行查询，这会创建新的输出数据集，查看或复制运行中使用的完整SQL查询，或删除该查询。
 
-![查询日志工作区中选择了一行，输出数据集和SQL查询突出显示。](../images/ui/query-log/edit-output-dataset.png)
+>[!NOTE]
+>
+>选项 [!UICONTROL 作为CTA运行] 仅适用于SELECT查询。
+
+![查询记录工作区中选定了一行，运行为CTAS，删除查询和突出显示的复制SQL图标。](../images/ui/query-log/edit-output-dataset.png)
 
 >[!IMPORTANT]
 >
@@ -81,7 +85,7 @@ A [每个日志表列的说明](./overview.md#log) 可以在查询服务概述�
 | [!UICONTROL 开始日期] | 要筛选在特定时间段内创建的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 开始日期] 部分。 |
 | [!UICONTROL 完成日期] | 要筛选在特定时间段内完成的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 完成日期] 部分。 |
 | [!UICONTROL 状态] | 要根据以下条件筛选日志 [!UICONTROL 状态] 在查询中，选择相应的单选按钮。 可用的选项包括 [!UICONTROL 已提交]， [!UICONTROL 进行中]， [!UICONTROL 成功]、和 [!UICONTROL 失败]. 您一次只能基于一个状态条件筛选日志。 |
-| [!UICONTROL 客户] | 要根据使用的查询客户端筛选日志，请在自由文本字段中输入以下接受值之一： `API`， `Adobe Query Service UI`，或 `QsAccel`. |
+| [!UICONTROL 客户端] | 要根据使用的查询客户端筛选日志，请在自由文本字段中输入以下接受值之一： `API`， `Adobe Query Service UI`，或 `QsAccel`. |
 | [!UICONTROL 我的查询] | 使用 [!UICONTROL 我的查询] 切换以筛选由您执行的查询的日志。 |
 | [!UICONTROL 查询日志Id] | 要根据查询的唯一日志ID进行筛选，请在自由文本字段中输入日志ID。 此信息可在 [!UICONTROL 日志详细信息]. |
 

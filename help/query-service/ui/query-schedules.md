@@ -2,9 +2,9 @@
 title: 查询时间表
 description: 了解如何自动运行计划的查询、删除或禁用查询计划，以及通过Adobe Experience Platform UI利用可用的计划选项。
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 75ef9c58aa7c5f1cc628d1f13b6c5f56b362458a
+source-git-commit: 7d2027bf315ae6e354c906e4aabf6371a92e4148
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '1084'
 ht-degree: 0%
 
 ---
@@ -19,19 +19,31 @@ ht-degree: 0%
 
 任何计划查询都会添加到的列表 [!UICONTROL 计划的查询] 选项卡。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在 [!UICONTROL 计划的查询] 选项卡，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括运行失败时的状态、计划详细信息和错误消息/代码。 请参阅 [监视计划查询文档](./monitor-queries.md) 以了解更多信息。
 
+此工作流涵盖查询服务UI中的计划过程。 要了解如何使用API添加计划，请参阅 [计划查询端点指南](../api/scheduled-queries.md).
+
 ## 创建查询计划 {#create-schedule}
 
-要向查询添加计划，请从以下任一位置选择查询模板 [!UICONTROL 模板] 选项卡或 [!UICONTROL 计划的查询] 选项卡，导航到查询编辑器。
+要计划查询，请从以下任一位置选择查询模板 [!UICONTROL 模板] 选项卡或 [!UICONTROL 模板] 列 [!UICONTROL 计划的查询] 选项卡。 选择模板名称可将您导航到查询编辑器。
 
-要了解如何使用API添加计划，请参阅 [计划查询端点指南](../api/scheduled-queries.md).
+如果从“查询编辑器”访问已保存的查询，则可以为查询创建计划，或从详细信息面板查看查询计划。
 
-当从查询编辑器访问保存的查询时， [!UICONTROL 时间表] 选项卡显示在查询名称下方。 选择 **[!UICONTROL 时间表]**.
+>[!TIP]
+>
+>选择 **[!UICONTROL 查看计划]** 导航到计划工作区，并快速查看任何计划的查询运行。
+
+![具有的查询编辑器 [!UICONTROL 查看计划] 和 [!UICONTROL 添加计划] 突出显示。](../images/ui/query-schedules/view-add-schedule.png)
+
+选择 **[!UICONTROL 添加计划]** 导航到 [“调度详细资料”页](#schedule-details).
+
+或者，选择 **[!UICONTROL 时间表]** 选项卡。
 
 ![突出显示了“计划”选项卡的查询编辑器。](../images/ui/query-schedules/schedules-tab.png)
 
 此时将显示计划工作区。 选择 **[!UICONTROL 添加计划]** 创建计划。
 
 ![查询编辑器计划工作区中突出显示了添加计划。](../images/ui/query-schedules/add-schedule.png)
+
+### 编辑计划详细信息 {#schedule-details}
 
 此时将显示“调度详细资料”页。 在此页面上，您可以选择计划查询的频率、开始和结束日期、计划查询在一周中的哪一天运行，以及要将查询导出到哪个数据集。
 
@@ -45,7 +57,7 @@ ht-degree: 0%
 - **[!UICONTROL 每月]**：选定的查询将在每个月的选定日期、时间和日期时段运行。 请注意，所选时间位于 **UTC**&#x200B;而不是您当地的时区。
 - **[!UICONTROL 每年]**：选定的查询每年将在您选择的天、月、时间和日期时段运行。 请注意，所选时间位于 **UTC**&#x200B;而不是您当地的时区。
 
-对于输出数据集，您可以选择使用现有数据集或创建新数据集。
+对于输出数据集，您可以选择使用追加到现有数据集或创建并追加到新数据集中。 第二个选项意味着，如果您是第一次执行查询并创建数据集，则任何后续执行都会继续将数据插入该数据集。
 
 >[!IMPORTANT]
 >
@@ -66,6 +78,18 @@ ht-degree: 0%
 确认所有这些详细信息后，选择 **[!UICONTROL 保存]** 创建计划。 您将返回到显示新创建计划的详细信息的计划工作区，包括计划ID、计划本身和计划的输出数据集。 您可以使用计划ID查找有关运行计划查询本身的更多信息。 要了解更多信息，请阅读 [计划查询运行端点指南](../api/runs-scheduled-queries.md).
 
 ![突出显示新创建计划的计划工作区。](../images/ui/query-schedules/schedules-workspace.png)
+
+## 查看计划的查询运行 {#scheduled-query-runs}
+
+要查看查询模板的计划运行列表，请导航至 [!UICONTROL 计划的查询] 选项卡，并从可用的列表中选择模板名称。
+
+![突出显示命名模板的“计划查询”选项卡。](../images/ui/query-schedules/view-scheduled-runs.png)
+
+将显示该计划查询的查询运行列表。
+
+![计划查询工作区的详细信息部分，其中包含为计划查询突出显示的查询运行列表。](../images/ui/query-schedules/list-of-scheduled-runs.png)
+
+请参阅 [monitor scheduled queried指南](./monitor-queries.md#inline-actions) 有关如何通过UI监控所有查询作业状态的完整信息。
 
 ## 删除或禁用计划 {#delete-schedule}
 

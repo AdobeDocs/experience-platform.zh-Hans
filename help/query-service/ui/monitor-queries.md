@@ -2,10 +2,10 @@
 title: 监视计划的查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
+source-git-commit: 7e0259f8807e96118dbcd1085d8b3b3186fc8317
 workflow-type: tm+mt
 source-wordcount: '1818'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -174,9 +174,3 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 选择 **[!UICONTROL 查询]** 以返回计划详细信息屏幕，或者 **[!UICONTROL 计划的查询]** 以返回 [!UICONTROL 计划的查询] 选项卡。
 
 ![运行详细信息屏幕中突出显示了查询。](../images/ui/monitor-queries/return-navigation.png)
-
-<!-- Details required to complete this section below:
-### Run details for queries with parameterized queries {#parameterized-queries}
-
-Queries that use parameterized values to make up the SQL statement are ... 
--->

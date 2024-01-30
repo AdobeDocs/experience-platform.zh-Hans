@@ -2,10 +2,10 @@
 title: 参数化查询
 description: 了解如何在Adobe Experience Platform UI中使用参数化查询。
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: 9cf8dabfdf3f20f4032a79ba191bd2dc8123a369
 workflow-type: tm+mt
-source-wordcount: '734'
-ht-degree: 10%
+source-wordcount: '690'
+ht-degree: 11%
 
 ---
 
@@ -47,21 +47,17 @@ SELECT
 
 要在UI中创建参数化查询，请导航到查询编辑器。 请参阅以下部分 [访问查询编辑器](./user-guide.md#accessing-query-editor) 以获取更多说明。
 
-在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，将缺少的键值添加到 [!UICONTROL 查询参数] 部分。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))显示在Query Parameters部分的任何空值旁边 [!UICONTROL 值] 输入字段。
+在文本编辑器中使用 `'$'` 序言将查询参数输入到查询中。接下来，选择 **[!UICONTROL 查询参数]** 选项卡 [!UICONTROL 控制台] 添加键的缺失值。 如果您忽略向任何所需键添加值，则无法执行查询。 警报图标(![警报图标。](../images/ui/parameterized-queries/alert-icon.png))显示在Query Parameters部分的任何空值旁边 [!UICONTROL 值] 输入字段。
+
+>[!NOTE]
+>
+>如果查询不采用参数，则仍可在查询编辑器中输入不必要的参数。 查询编辑器会忽略所有不必要的键值对，并且这些键值对查询的执行或结果没有影响。
 
 ![带有参数化查询的查询编辑器和高亮显示的查询参数部分。](../images/ui/parameterized-queries/parameterized-query.png)
 
 >[!TIP]
 >
 >更改选项卡自 [!UICONTROL 查询参数] 到 [!UICONTROL 控制台] 查看查询的控制台输出。
-
-如果删除参数并在查询运行后再次尝试执行查询，则会在 [!UICONTROL 查询参数] 部分来提醒您。
-
->[!NOTE]
->
->如果查询不采用参数，则仍可在查询编辑器中输入不必要的参数。 查询编辑器会忽略所有不必要的键值对，并且这些键值对查询的执行或结果没有影响。
-
-![查询编辑器的值字段为空，查询参数错误突出显示。](../images/ui/parameterized-queries/query-parameter-error.png)
 
 ## 使用查询日志详细信息检查参数值 {#check-parameter-values}
 

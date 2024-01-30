@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
+source-git-commit: 202bd42596608d27f99baea9e0a4a6ec92cf469f
 workflow-type: tm+mt
-source-wordcount: '2313'
-ht-degree: 3%
+source-wordcount: '2550'
+ht-degree: 2%
 
 ---
 
@@ -85,13 +85,13 @@ ht-degree: 3%
 ### 执行选定的查询 {#execute-selected-query}
 
 如果您已经编写了多个查询，但只需要执行一个查询，则可以突出显示所选的查询并选择
-[!UICONTROL 运行选定的查询] 图标。 默认情况下，此图标处于禁用状态，除非您在编辑器中选择查询。
+[!UICONTROL 运行选定的查询] 图标。 默认情况下，此图标处于禁用状态，直到您在编辑器中选择查询语法。
 
 ![具有的查询编辑器 [!UICONTROL 运行选定的查询] 图标高亮显示。](../images/ui/query-editor/run-selected-query.png)
 
 ### 结果计数 {#result-count}
 
-查询编辑器的行输出最多为50,000个。 但是，在查询编辑器控制台中一次只显示50行。 要更改控制台中显示的行数，请选择 **[!UICONTROL 结果计数]** 下拉列表，并从50、100、150、300和500值中进行选择。
+查询编辑器的行输出最多为50,000个。 您可以选择在查询编辑器控制台中一次显示的行数。 要更改控制台中显示的行数，请选择 **[!UICONTROL 结果计数]** 下拉菜单并从50、100、150、300和500选项中进行选择。
 
 ![突出显示结果计数下拉列表的查询编辑器。](../images/ui/query-editor/result-count.png)
 
@@ -101,7 +101,7 @@ ht-degree: 3%
 
 ![高亮显示SQL输入字段和“播放”的查询编辑器。](../images/ui/query-editor/editor.png)
 
-为了最大限度地缩短开发时间，建议您使用对返回行的限制来开发查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询是否生成预期输出后，删除限制并使用运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。
+为了最大限度地缩短开发时间，建议您开发对返回行数具有限制的查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询是否生成预期输出后，删除限制并使用运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。
 
 ## 在中编写工具 [!DNL Query Editor] {#writing-tools}
 
@@ -123,6 +123,12 @@ ht-degree: 3%
 
 ![使用的查询编辑器 [!UICONTROL 设置文本格式] 和突出显示的SQL语句。](../images/ui/query-editor/format-text.png)
 
+<!-- ### Undo text {#undo-text}
+
+If you format your SQL in the Query Editor, you can undo the formatting applied by the [!UICONTROL Format text] feature. To return your SQL back to its original form, select **[!UICONTROL Undo text]**.
+
+![The Query Editor with [!UICONTROL Undo text] and the SQL statements highlighted.](../images/ui/query-editor/undo-text.png) -->
+
 ### 复制SQL {#copy-sql}
 
 选择复制图标以将SQL从查询编辑器复制到剪贴板。 此复制功能可用于查询模板和查询编辑器中新创建的查询。
@@ -134,6 +140,10 @@ ht-degree: 3%
 此 [!DNL Query Editor] 在编写查询时，自动为查询建议可能的SQL关键字以及表或列详细信息。 默认情况下，自动完成功能处于启用状态，通过选择 [!UICONTROL 语法自动完成] 切换到“查询编辑器”的右上方。
 
 自动完成配置设置针对每个用户，并在该用户的连续登录中被记住。
+
+>[!NOTE]
+>
+>语法自动完成切换开关仅适用于旧版本的查询编辑器。
 
 ![突出显示具有语法自动完成切换的查询编辑器。](../images/ui/query-editor/auto-complete-toggle.png)
 
@@ -159,21 +169,47 @@ ht-degree: 3%
 
 [!DNL Query Editor] 在编写查询时自动验证该查询，提供通用SQL验证和特定执行验证。 如果查询下方出现红色下划线（如下图所示），则表示查询中存在错误。
 
+<!-- ... Image below needs updating couldn't replicate the effect -->
+
 ![查询编辑器输入以红色下划线显示SQL以指示错误。](../images/ui/query-editor/syntax-error-highlight.png)
 
 检测到错误时，您可以通过将鼠标悬停在SQL代码上来查看特定错误消息。
+
+<!-- ... Image below needs updating couldn't replicate the effect -->
 
 ![带有错误消息的对话框。](../images/ui/query-editor/linting-error.png)
 
 ### 查询详细信息 {#query-details}
 
-要在查询编辑器中查看查询，请从中选择任何已保存的模板 [!UICONTROL 模板] 选项卡。 查询详细信息面板提供了更多信息和工具来管理所选查询。
+要在查询编辑器中查看查询，请从中选择任何已保存的模板 [!UICONTROL 模板] 选项卡。 查询详细信息面板提供了更多信息和工具来管理所选查询。 它还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。
+
+>[!NOTE]
+>
+>此 [!UICONTROL 查看计划]， [!UICONTROL 添加计划] 和 [!UICONTROL 删除查询] 仅当将查询另存为模板后，选项才可用。 此 [!UICONTROL 添加计划] 选项会将您直接从查询编辑器转到计划生成器。 此 [!UICONTROL 查看计划] 选项会将您直接转至该查询的计划库存。 请参阅查询计划文档，了解如何 [在UI中创建查询计划](./query-schedules.md#create-schedule).
 
 ![高亮显示查询详细信息面板的查询编辑器。](../images/ui/query-editor/query-details.png)
 
-此面板允许您直接从UI生成输出数据集，删除或命名显示的查询，并向查询添加计划。
+在详细信息面板中，您可以直接从UI生成输出数据集，删除或命名显示的查询，查看查询运行计划，并将查询添加到计划中。
 
-此面板还会显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。 要生成数据集，请选择 **[!UICONTROL 输出数据集]**. 此 **[!UICONTROL 输出数据集]** 出现对话框。 输入名称和说明，然后选择 **[!UICONTROL 运行查询]**. 新数据集显示在中 **[!UICONTROL 数据集]** 选项卡 [!DNL Query Service] 上的用户界面 [!DNL Platform].
+要生成输出数据集，请选择 **[!UICONTROL 作为CTA运行]**. 此 **[!UICONTROL 输入输出数据集详细信息]** 出现对话框。 输入名称和说明，然后选择 **[!UICONTROL 作为CTA运行]**. 新数据集显示在中 **[!UICONTROL 数据集]** 浏览选项卡。 请参阅 [查看数据集文档](../../catalog/datasets/user-guide.md#view-datasets) 了解有关贵组织可用数据集的更多信息。
+
+>[!NOTE]
+>
+>此 [!UICONTROL 作为CTA运行] 选项仅在查询具有 **非** 已计划。
+
+![此 [!UICONTROL 输入输出数据集详细信息] 对话框。](../images/ui/query-editor/output-dataset-details.png)
+
+在您执行 **[!UICONTROL 作为CTA运行]** 操作，此时会弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询日志工作区提供了一种便捷的方式。 请参阅 [查询日志文档](./query-logs.md) 以了解有关查询日志的详细信息。
+
+### 保存查询 {#saving-queries}
+
+此 [!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理它。 要保存查询，请选择 **[!UICONTROL 保存]** 在的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用为查询提供一个名称 **[!UICONTROL 查询详细信息]** 面板。
+
+>[!NOTE]
+>
+>使用查询编辑器在中命名和保存的查询在查询仪表板中可用作模板 [!UICONTROL 模板] 选项卡。 请参阅 [模板文档](./query-templates.md) 以了解更多信息。
+
+在查询编辑器中保存查询时，将会弹出一条确认消息，通知您操作成功。 此弹出消息包含一个链接，为导航到查询计划工作区提供了一种便捷的方法。 请参阅 [计划查询文档](./query-schedules.md) 以了解如何以自定义节奏运行查询。
 
 ### 计划的查询 {#scheduled-queries}
 
@@ -185,13 +221,6 @@ ht-degree: 3%
 
 任何计划查询都会添加到的列表 [!UICONTROL 计划的查询] 选项卡。 在该工作区中，您可以通过UI监控所有已计划查询作业的状态。 在 [!UICONTROL 计划的查询] 选项卡，您可以找到有关查询运行的重要信息并订阅警报。 可用信息包括状态、计划详细信息和运行失败时的错误消息/代码。 请参阅 [监视计划查询文档](./monitor-queries.md) 以了解更多信息。
 
-### 保存查询 {#saving-queries}
-
-此 [!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理它。 要保存查询，请选择 **[!UICONTROL 保存]** 在的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用为查询提供一个名称 **[!UICONTROL 查询详细信息]** 面板。
-
->[!NOTE]
->
->使用查询编辑器在中命名和保存的查询在查询仪表板中可用作模板 [!UICONTROL 模板] 选项卡。 请参阅 [模板文档](./query-templates.md) 以了解更多信息。
 
 ### 如何查找以前的查询 {#previous-queries}
 
@@ -219,7 +248,7 @@ ht-degree: 3%
 
 ### 查询结果 {#query-results}
 
-查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，最多显示100行。 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从中的查询结果生成数据集的说明 [!DNL Query Editor].
+查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，根据您选择的结果显示50到500行结果 [结果计数](#result-count). 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从中的查询结果生成数据集的说明 [!DNL Query Editor].
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
