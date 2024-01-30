@@ -4,10 +4,10 @@ title: 目标仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织的活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '3171'
-ht-degree: 20%
+source-wordcount: '3244'
+ht-degree: 19%
 
 ---
 
@@ -51,6 +51,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 从构件库中，您可以浏览选择的标准和自定义受众构件。 有关如何添加构件的信息，请参阅构件库文档，了解如何 [添加构件](../customize/widget-library.md#add-widgets).
 
+### 查看SQL {#view-sql}
+
+您可以通过在功能板上的切换来查看生成可视化分析的SQL [!UICONTROL 概述] 工作区。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 要了解有关此功能的更多信息，请参阅 [查看SQL UI指南](../view-sql.md).
+
 ## 默认构件 {#default-widgets}
 
 为Adobe Experience Platform的所有新实例提供了默认构件加载，该构件会突出显示数据中最新的可用见解。 从一开始就在区段视图中预配置了以下构件。 有关构件用途和功能的完整详细信息见下文。
@@ -87,7 +91,7 @@ Adobe提供了多个标准构件，可用于可视化与目标相关的各种指
 * [[!UICONTROL 受众规模趋势]](#audience-size-trend)
 * [[!UICONTROL 未映射的受众（按标识）]](#unmapped-audiences-by-identity)
 * [[!UICONTROL 映射的受众（按标识）]](#mapped-audiences-by-identity)
-* [[!UICONTROL 普通受众]](#common-audiences)
+* [[!UICONTROL 常见受众]](#common-audiences)
 * [[!UICONTROL 映射的受众]](#mapped-audiences)
 * [[!UICONTROL 映射的受众健康]](#mapped-audience-health)
 * [[!UICONTROL 目标计数]](#destinations-count)

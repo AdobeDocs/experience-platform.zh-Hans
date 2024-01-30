@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 仪表板帮助
 breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
-source-git-commit: ea9cfa38ae861fd5003bea55b17a473aaf2979d5
+source-git-commit: 643e70bb2e55c2fad89fdf784298f7ac6f98397e
 workflow-type: tm+mt
 source-wordcount: '85'
-ht-degree: 36%
+ht-degree: 32%
 
 ---
 
@@ -38,4 +38,5 @@ ht-degree: 36%
    * [Power BI](integrations/power-bi.md)
 * [查询功能板数据集](query.md)
 * [Real-time Customer Data Platform分析数据模型](cdp-insights-data-model.md)
+* [查看分析SQL](view-sql.md)
 * [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)

@@ -4,10 +4,10 @@ title: 配置文件仪表板指南
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 57f4b365f510935f75f3ef92d71d66fe255269b4
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '4900'
-ht-degree: 10%
+source-wordcount: '4996'
+ht-degree: 9%
 
 ---
 
@@ -27,7 +27,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 >
 >自拍摄快照以来对数据所做的任何更改或更新都不会反映在功能板中，直到拍摄下一个快照为止。
 
-## 浏览配置文件仪表板
+## 浏览配置文件仪表板 {#explore-dashboard}
 
 要导航到Platform UI中的用户档案仪表板，请选择 **[!UICONTROL 配置文件]** 然后，在左边栏中选择 **[!UICONTROL 概述]** 选项卡以显示仪表板。
 
@@ -37,7 +37,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ![Experience Platform配置文件功能板，突出显示配置文件和概述。](../images/profiles/dashboard-overview.png)
 
-### 修改用户档案仪表板
+### 修改用户档案仪表板 {#modify-dashboard}
 
 通过选择 **[!UICONTROL 修改仪表板]**. 您可以从仪表板移动、添加、调整小组件大小和移除小组件，以及访问 **[!UICONTROL 构件库]** 浏览可用的构件，并为您的组织创建自定义构件。
 
@@ -50,6 +50,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 ![突出显示带有添加构件的用户档案仪表板概述。](../images/profiles/profiles-overview-add-widget.png)
 
 从构件库中，您可以浏览选择的标准和自定义受众构件。 有关如何添加构件的信息，请参阅构件库文档，了解如何 [添加构件](../customize/widget-library.md#add-widgets).
+
+### 查看SQL {#view-sql}
+
+您可以通过在功能板上的切换来查看生成可视化分析的SQL [!UICONTROL 概述] 工作区。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 要了解有关此功能的更多信息，请参阅 [查看SQL UI指南](../view-sql.md).
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
@@ -386,7 +390,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 >title="单一标识配置文件"
 >abstract="此小部件提供您组织的只有一种类型的 ID 类型创建其标识的配置文件的计数。此 ID 类型可以是电子邮件或 ECID。"
 
-此 [!UICONTROL 单一身份配置文件] 小组件提供贵组织只有一种类型的ID类型来创建其身份的配置文件的计数。 此 ID 类型可以是电子邮件或 ECID。配置文件计数是根据最新快照中包含的数据生成的。
+此 [!UICONTROL 单一身份配置文件] 小组件提供贵组织只有一种类型的ID类型来创建其身份的配置文件的计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
 
 ![单一身份配置文件小组件。](../images/profiles/single-identity-profiles.png)
 

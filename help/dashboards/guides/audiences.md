@@ -4,9 +4,9 @@ title: 受众功能板指南
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织已创建受众的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: cd57ca50537d928025a5164b6a7d0ead490162ba
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '3053'
+source-wordcount: '3133'
 ht-degree: 9%
 
 ---
@@ -50,6 +50,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过它可
 ![此 [!UICONTROL 受众] 功能板概述 [!UICONTROL 添加构件] 突出显示。](../images/audiences/audiences-overview-add-widget.png)
 
 从构件库中，您可以浏览选择的标准和自定义受众构件。 有关如何添加构件的信息，请参阅构件库文档，了解如何 [添加构件](../customize/widget-library.md#add-widgets).
+
+### 查看SQL {#view-sql}
+
+您可以通过在功能板上的切换来查看生成可视化分析的SQL [!UICONTROL 概述] 工作区。 您可以从现有见解的SQL中获得灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 要了解有关此功能的更多信息，请参阅 [查看SQL UI指南](../view-sql.md).
 
 ## 选择受众 {#select-audience}
 
