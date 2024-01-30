@@ -1,10 +1,9 @@
 ---
 title: oracleNetSuite源概述
 description: 了解如何使用API或用户界面将OracleNetSuite连接到Adobe Experience Platform。
-hide: true
-hidefromtoc: true
+last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta 版
-source-git-commit: 053cf0af327b39830f025686e0f8f67c27f1c45c
+source-git-commit: 632cff3ee4ca82d391e9a1df0cb38d903e8a5428
 workflow-type: tm+mt
 source-wordcount: '748'
 ht-degree: 1%
