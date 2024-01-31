@@ -3,10 +3,10 @@ title: 未经身份验证的访客的异地重定向
 description: 了解如何使用潜在客户ID重新定位未经身份验证的用户，以创建可用于创建未经身份验证的用户受众的计算属性。
 feature: Use Cases, Customer Acquisition
 exl-id: cffa3873-d713-445a-a3e1-1edf1aa8eebb
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: 0ef76fd950ef2e82e390cb39e2cd984004a140f2
 workflow-type: tm+mt
-source-wordcount: '1449'
-ht-degree: 2%
+source-wordcount: '1462'
+ht-degree: 1%
 
 ---
 
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 对于此用例，您可以创建一个计算属性，如果存在合作伙伴ID，该属性将获取过去24小时内合作伙伴ID的最新值。
 
-使用搜索栏，您可以找到“合作伙伴ID”事件并将其添加到计算属性画布。
+使用搜索栏，您可以查找并添加“合作伙伴ID”事件， [您在现场个性化使用案例期间创建](#get-data-in) 到计算属性画布。
 
 ![此 [!UICONTROL 活动] 选项卡和搜索栏会突出显示。](../assets/offsite-retargeting/ca-add-partner-id.png)
 
@@ -109,7 +109,7 @@ ht-degree: 2%
 
 添加事件后，您需要添加属性。 由于您使用的是未经身份验证的访客，因此您可以添加刚刚创建的计算属性。 通过这个新创建的计算属性，您可以将合作伙伴ID链接到受众。
 
-要添加计算属性，请在 **[!UICONTROL 属性]**，选择 **[!UICONTROL XDM个人资料]**，后接 **[!UICONTROL 标记(_A)]**， **[!UICONTROL SystemComputedAttribute]**、和 **[!UICONTROL 合作伙伴ID]**. 现在，添加 **[!UICONTROL 值]** 属性部分的已计算属性的属性。
+要添加计算属性，请在 **[!UICONTROL 属性]**，选择 **[!UICONTROL XDM个人资料]**，后接 **[您组织的租户ID](../../xdm/api/getting-started.md#know-your-tenant-id).**， **[!UICONTROL SystemComputedAttribute]**、和 **[!UICONTROL 合作伙伴ID]**. 现在，添加 **[!UICONTROL 值]** 属性部分的已计算属性的属性。
 
 ![将显示用于访问计算属性的文件夹路径。](../assets/offsite-retargeting/access-computed-attribute.png)
 
