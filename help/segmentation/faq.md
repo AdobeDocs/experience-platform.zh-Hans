@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
+source-git-commit: dbc14c639ef02b8504cc9895c6aacb6e205549b2
 workflow-type: tm+mt
-source-wordcount: '2739'
+source-wordcount: '2746'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 要上传外部生成的受众，我需要具有哪些权限？
 
-要上传外部生成的受众，您需要同时具有“管理受众/区段”和“管理数据集”权限。 上传外部生成的受众不需要基于角色的特定控件。
+要上传外部生成的受众，您需要具有“查看受众/区段”、“管理受众/区段”、“查看数据集”、“管理数据集”、“查看源”和“管理源”权限。 上传外部生成的受众不需要基于角色的特定控件。
 
 ### 上传外部生成的受众时会发生什么情况？
 
