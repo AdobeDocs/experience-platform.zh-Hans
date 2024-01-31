@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: ff61ec7bc1e67191a46f7d9bb9af642e9d601c3a
+source-git-commit: f250d8e6e5368a785dcb154dbe0b611baed73a4c
 workflow-type: tm+mt
-source-wordcount: '5080'
+source-wordcount: '5459'
 ht-degree: 2%
 
 ---
@@ -151,6 +151,9 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | map_get_values | 获取映射和键输入。 如果输入是单个键，则函数返回与该键关联的值。 如果输入是字符串数组，则函数返回与提供的键对应的所有值。 如果传入的映射具有重复的键，则返回值必须删除重复的键并返回唯一值。 | <ul><li>映射： **必填** 输入映射数据。</li><li>键：  **必填** 键可以是单个字符串或字符串数组。 如果提供了任何其他基元类型（数据/数字），则会将其视为字符串。</li></ul> | get_values(MAP， KEY) | 请参阅 [附录](#map_get_values) 以获取一个代码示例。 | |
 | map_has_keys | 如果提供了一个或多个输入键，则函数返回true。 如果提供字符串数组作为输入，则函数在找到的第一个键上返回true。 | <ul><li>映射：  **必填** 输入映射数据</li><li>键：  **必填** 键可以是单个字符串或字符串数组。 如果提供了任何其他基元类型（数据/数字），则会将其视为字符串。</li></ul> | map_has_keys(MAP， KEY) | 请参阅 [附录](#map_has_keys) 以获取一个代码示例。 | |
 | add_to_map | 接受至少两个输入。 可以提供任意数量的映射作为输入。 数据准备返回具有来自所有输入的所有键值对的单个映射。 如果一个或多个键重复（在同一映射中或跨映射），数据准备会删除重复的键，以便第一个键值对按它们在输入中传递的顺序持续存在。 | 映射： **必填** 输入映射数据。 | add_to_map(MAP 1， MAP 2， MAP 3， ...) | 请参阅 [附录](#add_to_map) 以获取一个代码示例。 | |
+| object_to_map（语法1） | 使用此函数可创建Map数据类型。 | <ul><li>键： **必填** 键必须为字符串。 如果提供了任何其他基元值（如整数或日期），则它们会自动转换为字符串并被视为字符串。</li><li>ANY_TYPE： **必填** 是指除映射之外的任何受支持的XDM数据类型。</li></ul> | object_to_map(KEY， ANY_TYPE， KEY， ANY_TYPE， ... ) | 请参阅 [附录](#object_to_map) 以获取一个代码示例。 | |
+| object_to_map（语法2） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必填** 您可以提供一个传入对象或对象数组，并指向对象内的属性作为键。</li></ul> | object_to_map(OBJECT) | 请参阅 [附录](#object_to_map) 以获取一个代码示例。 |
+| object_to_map（语法3） | 使用此函数可创建Map数据类型。 | <ul><li>对象： **必填** 您可以提供一个传入对象或对象数组，并指向对象内的属性作为键。</li></ul> | object_to_map(OBJECT_ARRAY， ATTRIBUTE_IN_OBJECT_TO_BE_USED_AS_A_KEY) | 请参阅 [附录](#object_to_map) 以获取一个代码示例。 |
 
 {style="table-layout:auto"}
 
@@ -173,6 +176,20 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 大小_of | 返回输入的大小。 | <ul><li>输入： **必填** 您正在尝试查找大小的对象。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到配置文件中数组的末尾。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 用于在配置文件中附加数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123， 456] |
 | upsert_array_replace | 此函数用于替换数组中的元素。 此函数为 **仅限** 适用于更新期间。 如果在插入的上下文中使用，则此函数按原样返回输入。 | <ul><li>数组： **必填** 在配置文件中替换该数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123， 456] |
+
+{style="table-layout:auto"}
+
+### 层次结构 — 映射 {#map}
+
+>[!NOTE]
+>
+>请向左/向右滚动以查看表格的全部内容。
+
+| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+| array_to_map | 此函数将对象数组和键作为输入，并返回键字段的映射，其中值为键，数组元素为值。 | <ul><li>输入： **必填** 要查找的第一个非空对象的对象数组。</li><li>键：  **必填** 键必须是对象数组中的字段名称，并且对象必须是值。</li></ul> | array_to_map(对象[] 输入，键) | 阅读 [附录](#object_to_map) 以获取一个代码示例。 |
+| object_to_map | 此函数将对象作为参数并返回键值对的映射。 | <ul><li>输入： **必填** 要查找的第一个非空对象的对象数组。</li></ul> | object_to_map(OBJECT_INPUT) | &quot;object_to_map(address)，输入为&quot; + &quot;address： {line1 ： \&quot;345 park ave\&quot;，line2： \&quot;bldg 2\&quot;，City ： \&quot;san jose\&quot;，State ： \&quot;CA\&quot;，type： \&quot;office\&quot;}&quot; | 返回具有给定字段名称和值对的映射，如果输入为null，则返回null。 例如：`"{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"` |
+| to_map | 此函数接受键值对列表并返回键值对的映射。 | | to_map(OBJECT_INPUT) | &quot;to_map(\&quot;firstName\&quot;， \&quot;John\&quot;， \&quot;lastName\&quot;， \&quot;Doe\&quot;)&quot; | 返回具有给定字段名称和值对的映射，如果输入为null，则返回null。 例如：`"{\"firstName\" : \"John\", \"lastName\": \"Doe\"}"` |
 
 {style="table-layout:auto"}
 
@@ -455,3 +472,150 @@ example = "add_to_map(book_details, book_details2) where input is {\n" +
 ```
 
 +++
+
+#### object_to_map {#object_to_map}
+
+**语法1**
+
++++选择以查看示例
+
+```json
+example = "object_to_map(\"firstName\", \"John\", \"lastName\", \"Doe\")",
+result = "{\"firstName\" : \"John\", \"lastName\": \"Doe\"}"
+```
+
++++
+
+**语法2**
+
++++选择以查看示例
+
+```json
+example = "object_to_map(address) where input is " +
+  "address: {line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}",
+result = "{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"
+```
+
++++
+
+**语法3**
+
++++选择以查看示例
+
+```json
+example = "object_to_map(addresses,type)" +
+        "\n" +
+        "[\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City\": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"home\"\n" +
+        "    },\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"work\"\n" +
+        "    },\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"office\"\n" +
+        "    }\n" +
+        "]" ,
+result = "{\n" +
+        "    \"home\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City\": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"home\"\n" +
+        "    },\n" +
+        "    \"work\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"work\"\n" +
+        "    },\n" +
+        "    \"office\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"office\"\n" +
+        "    }\n" +
+        "}" 
+```
+
++++
+
+#### array_to_map {#array_to_map}
+
++++选择以查看示例
+
+```json
+example = "array_to_map(addresses, \"type\") where addresses is\n" +
+  "\n" +
+  "[\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City\": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"home\"\n" +
+  "    },\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"work\"\n" +
+  "    },\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"office\"\n" +
+  "    }\n" +
+  "]" ,
+result = "{\n" +
+  "    \"home\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City\": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"home\"\n" +
+  "    },\n" +
+  "    \"work\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"work\"\n" +
+  "    },\n" +
+  "    \"office\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"office\"\n" +
+  "    }\n" +
+  "}",
+returns = "Returns a map with given field name and value pairs or null if input is null"
+```
+
++++
+
