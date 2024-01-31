@@ -2,7 +2,7 @@
 title: Real-Time CDP中的示例用例
 description: 查看跨服务用例示例，以充分利用您的Real-Time CDP实施。
 feature: Use Cases
-source-git-commit: f342020a0e821172a7ceca95265a9d71f64f5347
+source-git-commit: a58476e0a52cce763a114b2b4f4314fdb2e3f4c9
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 6%
@@ -76,11 +76,11 @@ Adobe Real-Time CDP提供了对合作伙伴标识符的广泛支持，允许您�
 <table style="margin-top: 0 !important">
 <tr>
   <td>
-    <a href="../partner-data/prospecting.md">
+    <a href="../partner-data/supplement-first-party-profiles.md">
       <img alt="用合作伙伴提供的属性补充第一方配置文件" src="/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-overview.png" />
     </a>
     <div>
-      <a href="../partner-data/prospecting.md">
+      <a href="../partner-data/supplement-first-party-profiles.md">
     <strong>使用合作伙伴提供的属性补充第一方用户档案</strong>
     </a>
     </div>
