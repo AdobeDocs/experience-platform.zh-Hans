@@ -4,8 +4,8 @@ description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6ee30e00bceb392b775d15ca2cad95b746698dc4
 workflow-type: tm+mt
-source-wordcount: '974'
-ht-degree: 40%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
