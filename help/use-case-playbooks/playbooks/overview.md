@@ -2,15 +2,16 @@
 solution: Experience Platform
 title: 用例战术手册概述
 description: 了解如何使用 Experience Platform 中的用例战术手册功能来使用各种营销用例
+role: Developer, User, Admin, Leader
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: c79bffdc38d269385689da64ee8e78ea60e6af92
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
 source-wordcount: '528'
-ht-degree: 32%
+ht-degree: 31%
 
 ---
 
-# 用例战术手册概述
+# 用例行动手册概述
 
 >[!BEGINSHADEBOX]
 

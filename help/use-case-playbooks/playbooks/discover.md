@@ -2,11 +2,12 @@
 solution: Experience Platform
 title: 发现合适的战术手册
 description: 了解如何为您的用例找到合适的战术手册并启用战术手册。
+role: User
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: 0decef848fe90e5c60352aeb42aabdd678eeb8f8
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
 source-wordcount: '752'
-ht-degree: 91%
+ht-degree: 96%
 
 ---
 
@@ -49,7 +50,7 @@ ht-degree: 91%
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_assets"
 >title="资产"
->abstract="这些是剧本生成的资源。 创建行动手册的实例后，您可以在启发性的沙盒中查看资源，并根据需要将它们提升到其他沙盒。"
+>abstract="这些是由本战术手册生成的资源。创建战术手册实例后，您可以查看激发灵感的沙盒中的资源，并根据需要将它们推广到其他沙盒中。"
 
 检查摘要部分，以了解从战术手册创建实例后会生成哪些资产。为每个战术手册生成的资产都是根据该战术手册支持的用例定制的。在下面获取有关摘要部分中所有项目的详细信息。
 

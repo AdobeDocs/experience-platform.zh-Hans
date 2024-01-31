@@ -4,8 +4,7 @@ user-guide-title: Adobe Experience Platform 用例战术手册
 breadcrumb-title: Adobe Experience Platform 用例战术手册
 user-guide-description: 使用 Adobe Experience Platform 中的战术手册生成资产，并开始使用各种营销用例。
 feature: Playbooks
-hide: true
-source-git-commit: 3db5a24f970d6778ec737857ab5d06beaabfc18a
+source-git-commit: 93b28a2cf89cac811d17bb990fc78fa87ee86969
 workflow-type: tm+mt
 source-wordcount: '66'
 ht-degree: 81%

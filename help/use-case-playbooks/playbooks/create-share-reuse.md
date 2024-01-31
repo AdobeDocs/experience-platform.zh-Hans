@@ -2,11 +2,12 @@
 solution: Experience Platform
 title: 创建、共享和重用战术手册实例
 description: 了解如何创建、共享和重用战术手册实例来完成您的营销用例。
+role: User, Developer
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
-source-git-commit: bf6bcbe3314e87cd3162afe23068cfff12aa78a8
+source-git-commit: c4be3864c680a569166d53f18ec0ee28a52c9ea7
 workflow-type: tm+mt
-source-wordcount: '740'
-ht-degree: 86%
+source-wordcount: '787'
+ht-degree: 83%
 
 ---
 
@@ -19,7 +20,7 @@ ht-degree: 86%
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_create"
 >title="创建实例"
->abstract="生成要在历程或激活场景中使用的资源（如历程、受众、架构或目标）列表。"
+>abstract="生成历程、受众、模式或目标等资源的列表，以在历程或激活场景中使用。"
 
 在创建战术手册实例之前，请探索可用的战术手册以[发现适合您的战术手册](/help/use-case-playbooks/playbooks/discover.md)。当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
 
@@ -73,6 +74,12 @@ ht-degree: 86%
 您可以与其他团队成员共享生成的实例和资产。若要这样做，请在浏览器中复制 URL 链接并与您的团队共享，以便他们了解生成的资产。
 
 ![在用例战术手册视图中突出显示的 URL。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-url.png)
+
+## 端到端剧本过程的视频演练
+
+观看本视频，了解如何端到端地发现、创建、发布用例剧本的实例并对其进行故障排除，以及如何将该剧本生成的资产复制到组织中设置的其他沙盒中。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3427058/?learn=on)
 
 ## 后续步骤 {#next-steps}
 

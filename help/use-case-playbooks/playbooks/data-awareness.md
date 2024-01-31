@@ -2,15 +2,16 @@
 solution: Experience Platform
 title: 用例行动手册中的数据意识概述
 description: 了解如何通过将最终启发型沙盒中生成的资源复制到其他沙盒来加快实现价值。
+role: Developer
 exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '912'
 ht-degree: 0%
 
 ---
 
-# 用例行动手册中的数据意识概述
+# 将行动手册生成的资源发布到其他沙盒 {#publish-to-other-sandboxes}
 
 用例行动手册是营销模板，旨在为常见营销用例生成受众、架构或历程等资产。 您可以在启发性的沙盒中测试行动手册创建的资产，并在准备就绪后，将资产导入其他开发沙盒，以便进一步使用在这些沙盒中可用的数据进行测试。 对测试感到满意后，您可以将资产从开发沙盒移至生产沙盒。
 
@@ -97,7 +98,3 @@ ht-degree: 0%
 ## 后续步骤
 
 阅读本指南后，您现在可以更好地了解如何利用用例行动手册以及 [沙盒工具](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details) 创建引用架构的可执行历程。 了解关于常见问题的更多信息 [Real-Time CDP用例](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md).
-
-### 有关此主题的更多帮助
-
-[沙盒工具](/help/sandboxes/ui/sandbox-tooling.md)

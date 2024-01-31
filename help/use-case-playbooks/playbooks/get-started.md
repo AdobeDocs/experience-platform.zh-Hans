@@ -2,10 +2,11 @@
 solution: Experience Platform
 title: 快速入门
 description: 了解如何开始使用用例战术手册功能。
+role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '928'
+source-wordcount: '927'
 ht-degree: 14%
 
 ---
@@ -65,7 +66,7 @@ ht-degree: 14%
 
 **目标的权限**
 
-要创建和管理目标，请使用目标权限； **[!UICONTROL 管理]**， **[!UICONTROL 目标]**， **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 管理和激活数据集目标]**、UICONTROL目标创作*。
+要创建和管理目标，请使用目标权限； **[!UICONTROL 管理]**， **[!UICONTROL 目标]**， **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 激活没有映射的区段]**， **[!UICONTROL 管理和激活数据集目标]**， **[!UICONTROL 目标创作]**.
 
 **历程的权限**
 

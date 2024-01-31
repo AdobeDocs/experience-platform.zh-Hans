@@ -2,10 +2,11 @@
 solution: Experience Platform
 title: 行动手册的已知限制和疑难解答
 description: 详细了解行动手册的已知问题和常见问题以及如何对其进行故障诊断
+role: User, Developer, Admin
 exl-id: 2604ce26-bcf9-46e1-bc10-30252a113159
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '395'
 ht-degree: 2%
 
 ---
@@ -13,7 +14,11 @@ ht-degree: 2%
 
 # 故障排除和已知限制 {#troubleshooting-known-limitations}
 
+了解在使用用例行动手册时如何排查错误，并了解正式发布版本的已知限制。
+
 ## 故障排除 {#troubleshooting}
+
+查看有关使用用例行动手册时常见错误的故障排除建议
 
 ### 未配置Adobe Journey Optimizer表面
 
@@ -35,7 +40,7 @@ ht-degree: 2%
 
 * 使用时 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md) 要将架构从启发型沙盒提升到开发沙盒，您可能会看到一些与以下类似的错误：
 
-![schema-errors](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png)
+![架构映射工作流中显示的错误。](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png){width="1000" zoomable="yes"}
 
 这是因为从架构生成的某些字段在要复制到其中的开发沙盒的架构中不存在。 查查那些栏位是什么。 然后，返回开发沙盒，您可以在其中执行以下操作：
 
