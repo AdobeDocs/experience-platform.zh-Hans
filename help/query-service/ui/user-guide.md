@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 202bd42596608d27f99baea9e0a4a6ec92cf469f
+source-git-commit: 29a33dd5823ac425cc567e948a5def948aedb44e
 workflow-type: tm+mt
-source-wordcount: '2550'
+source-wordcount: '2576'
 ht-degree: 2%
 
 ---
@@ -120,6 +120,10 @@ ht-degree: 2%
 ### 设置文本格式 {#format-text}
 
 此 [!UICONTROL 设置文本格式] 功能通过添加标准化的语法样式使查询更易读取。 选择 **[!UICONTROL 设置文本格式]** 标准化查询编辑器中的所有文本。
+
+>[!NOTE]
+>
+>此 [!UICONTROL 设置文本格式] 功能不适用于匿名块。 要了解如何按顺序链接一个或多个SQL语句，请参见 [匿名块文档](../key-concepts/anonymous-block.md).
 
 ![使用的查询编辑器 [!UICONTROL 设置文本格式] 和突出显示的SQL语句。](../images/ui/query-editor/format-text.png)
 
