@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 仪表板帮助
 breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
-source-git-commit: 643e70bb2e55c2fad89fdf784298f7ac6f98397e
+source-git-commit: 45b11ddbd3c938a042cc625aba9fabbd2064f980
 workflow-type: tm+mt
-source-wordcount: '85'
-ht-degree: 32%
+source-wordcount: '90'
+ht-degree: 34%
 
 ---
 
@@ -25,6 +25,10 @@ ht-degree: 32%
    * [受众](guides/audiences.md)
    * [目标](guides/destinations.md)
    * [许可证使用](guides/license-usage.md)
+* 可用分析 {#insights}
+   * [配置文件](insights/profiles.md)
+   * [受众](insights/audiences.md)
+   * [目标](insights/destinations.md)
 * 自定义仪表板 {#customize}
    * [自定义概述](customize/overview.md)
    * [修改仪表板](customize/modify.md)
