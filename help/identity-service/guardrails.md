@@ -3,9 +3,9 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 1576405e6f1d674a75446f887c2912c4480d0e28
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 | 护栏 | 限制 | 注释 |
 | --- | --- | --- |
-| 图形中的身份数 | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为最新身份腾出空间。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
+| 图形中的身份数 | 50 | 更新具有50个链接身份的图形时，Identity Service将应用“先进先出”机制并删除最早的身份，为此图形的最新身份腾出空间(**注意**：实时客户资料不受影响)。 删除基于身份类型和时间戳。 该限制在沙盒级别应用。 有关详细信息，请阅读以下部分： [了解删除逻辑](#deletion-logic). |
 | 单个批次摄取的标识链接数 | 50 | 单个批次可能包含异常身份，这些身份会导致不需要的图形合并。 为防止出现这种情况，Identity Service将不会摄取已链接到50个或更多标识的标识。 |
 | XDM记录中的标识数 | 20 | 所需的XDM记录的最小数量为2。 |
 | 自定义命名空间的数量 | None | 可创建的自定义命名空间数量没有限制。 |
@@ -135,7 +135,7 @@ Adobe如果您的生产沙盒包含：
 
 >[!TAB 删除过程]
 
-因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，将删除ECID：35577。
+因此，Identity Service会根据时间戳和身份类型删除最早的身份。 在这种情况下，只会从身份图中删除ECID：35577。
 
 ![](./images/guardrails/during-split.png)
 
@@ -166,7 +166,7 @@ Adobe如果您的生产沙盒包含：
 
 >[!TAB 删除过程]
 
-因此，Identity Service会删除最早的标识，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
+因此，Identity Service仅会从身份图中删除最早的身份，在本例中为ECID：35577。 删除ECID：35577也会导致删除以下内容：
 
 * CRM ID：60013和现已删除的ECID：35577之间的链接，这会导致图形拆分情况。
 * IDFA：32110、IDFA：02383以及表示的其余身份 `(...)`. 这些标识会被删除，因为单个标识未链接到任何其他标识，因此无法在图形中表示它们。
