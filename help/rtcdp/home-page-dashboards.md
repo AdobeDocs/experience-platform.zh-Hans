@@ -4,10 +4,10 @@ title: Real-time Customer Data Platform主页和功能板
 description: Adobe Experience Platform 的仪表板、主页和首次用户体验
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: f7f49e4158f3aa95c3e96d3687642392e237aabc
+source-git-commit: d052f307d91890f89d6cb3f18525fe395c116f95
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 2%
+source-wordcount: '915'
+ht-degree: 6%
 
 ---
 
@@ -25,10 +25,10 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 
 此 [!UICONTROL Real-Time Customer Profile快速入门] 构件分为四个部分：
 
-* **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 欲知更多信息，请参阅 [源概述](../sources/home.md)
-* **模型数据结构**：此构件将引导您查看架构概述。 使用架构概述浏览现有架构或创建描述数据结构的构建块。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
-* **细分受众**：此构件会将您定向到 [!DNL Segment Builder] 在UI中。 使用 [!DNL Segment Builder] 用于与用户档案数据元素交互并为区段定义规则。 欲知更多信息，请参阅 [分段服务概述](../segmentation/home.md).
-* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将区段发送到该目标。 欲知更多信息，请参阅 [目标概述](../destinations/home.md)
+* **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 选择 **[配置源]** 导航到源目录。 欲知更多信息，请参阅 [源概述](../sources/home.md).
+* **模型数据结构**：此构件将引导您查看架构概述。 使用架构概述浏览现有架构或创建描述数据结构的Blueprint。 选择 **[!UICONTROL 创建架构]** 导航到架构创建界面。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
+* **构建受众**：此构件会将您定向到UI中的区段生成器。 使用区段生成器可与配置文件数据元素交互并定义区段定义的标准。 选择 **[!UICONTROL 创建受众]** 导航到区段生成器。 欲知更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将区段发送到该目标。 选择 **[!UICONTROL 设置目标]** 导航到目标目录。 欲知更多信息，请参阅 [目标概述](../destinations/home.md).
 
 ![显示入门小组件的Platform UI主页](assets/platform-home/getting-started-widget.png)
 
@@ -37,7 +37,7 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 >[!CONTEXTUALHELP]
 >id="platform_home_metrics_totalProfiles"
 >title="配置文件总数"
->abstract="贵组织在Experience Platform内拥有的配置文件总数。 此计数基于贵组织的合并策略，不包括配置文件片段。 每24小时更新一次配置文件数。"
+>abstract="您的组织在 Experience Platform 中拥有的配置文件的总数。此计数基于您组织的合并策略，并且不包括配置文件片段数。配置文件数每 24 小时更新一次。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="请参阅文档以了解详情"
 
 量度仪表板可显示有关Experience Platform数据的最新信息。 仪表板分为两个部分：
@@ -49,9 +49,9 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 ![Platform UI主页中的“排行榜”部分。](assets/platform-home/leaderboard.png)
 
 * **架构总数**：和 **架构总数** 计数器显示系统中的架构数。 此计数器会在创建架构时更新。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
-* **数据集总数**：和 **数据集总数** 计数器显示系统中的数据集数以及中的数据量 [!DNL Platform]. 此计数器会在创建数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
-* **配置文件总数**：和 **配置文件** count显示贵组织在Experience Platform内拥有的配置文件总数。 它不包括配置文件片段。 这是您的总可寻址受众。 此计数使用默认值 [合并策略](profile/merge-policies.md) 在实时客户档案的合并策略配置中设置。 每24小时更新一次配置文件数。 有关用户档案的详细信息，请阅读 [Real-time Customer Profile概述](../profile/home.md).
-* **区段总数**： **区段** 显示为组织创建的区段总数。 此数字将在创建新区段时更新。 有关区段的详细信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **数据集总数**：和 **数据集总数** 计数器显示系统中的数据集数以及Experience Platform中的数据量。 此计数器会在创建数据集时更新。 有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
+* **配置文件总数**：和 **配置文件** count显示贵组织在Experience Platform内拥有的配置文件总数。 它不包括配置文件片段。 这是您的总可寻址受众。 此计数使用默认值 [合并策略](profile/merge-policies.md) 在实时客户档案的合并策略配置中设置。 每24小时更新一次配置文件数。 选择 **[!UICONTROL 配置文件]** 导航到配置文件概述页面，并查看所有配置文件量度。 有关用户档案的详细信息，请阅读 [Real-time Customer Profile概述](../profile/home.md).
+* **受众总数**：和 **受众总数** 计数器显示为您的组织创建的受众总数。 此数字将在创建新受众时更新。 有关受众的详细信息，请参阅 [分段服务概述](../segmentation/home.md).
 
 ### 最近项目
 
