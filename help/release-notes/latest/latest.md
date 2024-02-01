@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6ee30e00bceb392b775d15ca2cad95b746698dc4
+source-git-commit: a4d6c72cc2c3f5f547a3c66e509d520d3fed29ea
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '974'
+ht-degree: 40%
 
 ---
 
@@ -46,7 +46,7 @@ Adobe Experience Platform中的新增功能：
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的映射器函数 | <ul><li>`object_to_map`：使用 `object_to_map` 函数来创建映射数据类型。 此函数支持多种不同的语法。 有关详细信息，请阅读上的指南 [层次结构的函数 — 对象](../../data-prep/functions.md#objects). </li><li>`to_map`：使用 `to_map` 函数创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#objects). </li><li>`array_to_map`：使用 `array_to_map` 函数来创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#objects). |
+| 新的映射器函数 | <ul><li>`object_to_map`：使用 `object_to_map` 函数来创建映射数据类型。 此函数支持多种不同的语法。 有关详细信息，请阅读上的指南 [层次结构的函数 — 对象](../../data-prep/functions.md#objects). </li><li>`to_map`：使用 `to_map` 函数创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#map). </li><li>`array_to_map`：使用 `array_to_map` 函数来创建具有给定字段名和值对的映射。 有关详细信息，请阅读上的指南 [层次函数 — 映射](../../data-prep/functions.md#map). |
 
 {style="table-layout:auto"}
 
