@@ -20,7 +20,7 @@ ht-degree: 83%
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_create"
 >title="创建实例"
->abstract="生成历程、受众、模式或目标等资源的列表，以在历程或激活场景中使用。"
+>abstract="生成要在历程或激活场景中使用的历程、受众、架构或目标等资源的列表。"
 
 在创建战术手册实例之前，请探索可用的战术手册以[发现适合您的战术手册](/help/use-case-playbooks/playbooks/discover.md)。当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。
 

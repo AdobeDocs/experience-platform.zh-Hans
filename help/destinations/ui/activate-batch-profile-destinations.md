@@ -485,7 +485,7 @@ Adobe Experience Platform会使用架构中的四个推荐的常用属性预填�
 id="platform_destinations_activate_exclude_enrichment_attributes"
 title="排除扩充属性"
 abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
-additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#select-enrichment-attributes" text="请参阅文档以了解详情"
+additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#select-enrichment-attributes" text="请在文档中了解详情"
 
 >[!IMPORTANT]
 >

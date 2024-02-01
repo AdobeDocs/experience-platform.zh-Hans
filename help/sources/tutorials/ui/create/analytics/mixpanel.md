@@ -4,8 +4,8 @@ description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连�
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '841'
-ht-degree: 11%
+source-wordcount: '797'
+ht-degree: 10%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 11%
 | --- | --- | --- |
 | 用户名 | 与您的对应的服务帐户用户名 [!DNL Mixpanel] 帐户。 请参阅 [[!DNL Mixpanel] 服务帐户文档](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 以了解更多信息。 | `Test8.6d4ee7.mp-service-account` |
 | 密码 | 与您的帐户对应的服务帐户密码 [!DNL Mixpanel] 帐户。 | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
-| 项目ID | 您的 [!DNL Mixpanel] 项目ID。 创建源连接需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 创建和管理项目指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 以了解更多信息。 | `2384945` |
+| 项目编号 | 您的 [!DNL Mixpanel] 项目ID。 创建源连接需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 创建和管理项目指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 以了解更多信息。 | `2384945` |
 | 时区 | 与您的对应的时区 [!DNL Mixpanel] 项目。 创建源连接需要时区。 请参阅 [Mixpanel项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 以了解更多信息。 | `Pacific Standard Time` |
 
 有关验证您的身份的详细信息 [!DNL Mixpanel] 源，请参见 [[!DNL Mixpanel] 源概述](../../../../connectors/analytics/mixpanel.md).
@@ -65,7 +65,7 @@ ht-degree: 11%
 >id="platform_sources_mixpanel_timezone"
 >title="为 Mixpanel 提取设置时区"
 >abstract="时区必须与您的 Mixpanel 配置文件时区设置相同，因为 Platform 使用指定的项目时区来从 Mixpanel 提取相关数据。在将事件记录到 Mixpanel 数据存储之前，Mixpanel 将调整其时区以与您的项目时区协调。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="请参阅文档以了解详情"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="请在文档中了解详情"
 
 在您的源经过身份验证后，提供您的项目ID和时区，然后选择 **[!UICONTROL 选择]**.
 

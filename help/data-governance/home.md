@@ -7,7 +7,7 @@ exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
 source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
 workflow-type: tm+mt
 source-wordcount: '1623'
-ht-degree: 4%
+ht-degree: 8%
 
 ---
 
@@ -15,10 +15,10 @@ ht-degree: 4%
 
 >[!CONTEXTUALHELP]
 >id="platform_datagovernance_framework"
->title="数据治理义务"
->abstract="请记住，遵守贵组织的数据治理政策和满足法规要求是您的唯一责任。 Experience Platform提供了数据治理工具，供您管理数据使用义务。 在查询或处理数据之前应用适当的数据使用标签。 请参阅文档，了解有关数据治理工具和最佳实践的信息。"
+>title="数据治理责任"
+>abstract="请牢记，您自行负责遵守您组织的数据治理策略和满足监管要求。Experience Platform 提供数据治理工具，以供您管理您的数据责任。请应用适当的数据使用标签，然后再查询或处理数据。请参阅文档以了解数据治理工具和最佳实践。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans" text="数据治理概述"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans" text="数据管理标签概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans" text="数据治理标签概述"
 
 Adobe Experience Platform的核心功能之一是将来自多个企业系统的数据整合在一起，以便更好地让营销人员识别、理解客户并与他们互动。 贵组织或法律法规可能会对此数据设置使用限制。因此，请务必确保贵机构的数据操作在 [!DNL Platform] 符合数据使用策略。
 
