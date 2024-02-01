@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 1 月）
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
-source-git-commit: fc7183cbc1ca3e27999d0ddd64c83ee19ccb1200
+source-git-commit: 7691e2dd434e13f3cff715fcba9431d985b2be60
 workflow-type: tm+mt
-source-wordcount: '1038'
-ht-degree: 38%
+source-wordcount: '1478'
+ht-degree: 39%
 
 ---
 
@@ -18,9 +18,11 @@ Adobe Experience Platform中的新增功能：
 
 对Experience Platform中现有功能的更新：
 
-- [仪表板](#dashboards)
+- [基于属性的访问控制](#abac)
 - [数据准备](#data-prep)
+- [仪表板](#dashboards)
 - [目标](#destinations)
+- [身份服务](#identity-service)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [实时客户配置文件](#profile)
 - [源](#sources)
@@ -36,6 +38,22 @@ Adobe Experience Platform中的新增功能：
 - 获取关于所有的信息 [所需权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) 使用行动手册和行动手册生成的资源。
 - 了解 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md) 这允许您将生成的资源复制到其他沙盒环境
 - Get [疑难解答提示](/help/use-case-playbooks/playbooks/troubleshooting.md) 如果您在使用用例行动手册时遇到错误或困难。
+
+## 基于属性的访问控制 {#abac}
+
+基于属性的访问控制是 Adob&#x200B;&#x200B;e Experience Platform 的一项功能，它为注重隐私的品牌在管理用户访问权限方面提供了更大的灵活性。可以将架构字段和区段等单个对象分配给用户角色。此功能允许您授予或撤销组织中特定 Platform 用户对各个对象的访问权限。
+
+通过基于属性的访问控制，您组织的管理员可以控制用户对所有 Platform 工作流程和资源中的敏感个人数据 (SPD)、个人身份信息 (PII) 和其他自定义类型数据的访问。管理员可以定义只能访问特定字段以及与这些字段对应的数据的用户角色。
+
+**新文档或更新文档**
+
+| 文档更新 | 描述 |
+| --- | --- |
+| 为基于属性的访问控制记录了新的API端点 | 此 [访问控制API参考文档](https://developer.adobe.com/experience-platform-apis/references/access-control/) 现在包括基于属性的访问控制API角色、策略和产品端点。 这些端点可用于检索指定沙盒中给定资源上用户的相关角色、策略和产品。 |
+
+{style="table-layout:auto"}
+
+有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
 ## 数据准备 {#data-prep}
 
@@ -87,6 +105,20 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
+## 身份服务 {#identity-service}
+
+Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使您能够全面了解您的客户及其行为，助您实时提供有影响力的个人数字体验。
+
+**新文档或更新文档**
+
+| 文档更新 | 描述 |
+| --- | --- |
+| 文档重组 | Identity Service文档进行了重组，以改进Identity Service中概念的呈现和清晰性：<ul><li>访问 [“Identity服务概览”页](../../identity-service/home.md) 有关扩展的术语指南、详细说明典型客户历程的用例示例、Identity Service如何将身份链接在一起的细分以及Identity Service在Experience Platform生态系统中所发挥作用的摘要。</li><li>阅读指南： [了解Identity Service与Real-Time Customer Profile之间的关系](../../identity-service/identity-and-profile.md) 详细总结这两个服务如何协作以及它们的目的、流程、投入和产出之间的差异。</li><li>请参阅 [Identity Service链接逻辑指南](../../identity-service/features/identity-linking-logic.md) ，以了解在给定的不同场景和时间戳中，身份图的行为说明和可视化图表。</li></ul> |
+
+{style="table-layout:auto"}
+
+要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+
 ## Real-Time Customer Data Platform {#rtcdp}
 
 建立在 Experience Platform 上的 Real-Time Customer Data Platform ([!DNL Real-Time CDP]) 可以帮助公司汇集已知和未知数据，通过整个客户历程中通过智能决策激活客户配置文件。[!DNL Real-Time CDP] 结合多个企业数据源来实时创建客户配置文件。然后，根据这些配置文件构建的区段可以发送到下游目标，以便跨所有渠道和设备提供一对一的个性化客户体验。
@@ -96,6 +128,17 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 | 功能 | 描述 |
 | --- | --- |
 | 的更新 [Real-Time CDP主页](https://experience.adobe.com) | <ul><li>**配置文件小组件**：您现在可以使用配置文件小组件导航到配置文件概述页面，并查看贵组织的配置文件量度。</li><li>**配置文件量度卡片**：主页仪表板中的配置文件量度卡现在显示组织中的配置文件总数，具体取决于您各自的合并策略。</li><li>**架构小组件**：您现在可以使用架构构件导航到UI中的架构创建工作流。</li></ul> |
+
+{style="table-layout:auto"}
+
+**新文档或更新文档**
+
+| 文档更新 | 描述 |
+| --- | --- |
+| 新的Real-Time CDP文档主页 | 访问 [新的Real-Time CDP文档主页](/help/rtcdp/home.md) 以获取有关如何开始使用产品、护栏、示例用例等的概览信息。 |
+| 示例Real-Time CDP用例概述 | 访问 [新的示例用例概述页面](/help/rtcdp/use-case-guides/overview.md) 用于收集您的组织可以使用Real-Time CDP实现的示例用例。 |
+
+{style="table-layout:auto"}
 
 要进一步了解Real-Time CDP，请阅读 [Real-Time CDP概述](../../rtcdp/overview.md).
 
