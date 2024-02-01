@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 1 月）
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
-source-git-commit: a4d6c72cc2c3f5f547a3c66e509d520d3fed29ea
+source-git-commit: fc7183cbc1ca3e27999d0ddd64c83ee19ccb1200
 workflow-type: tm+mt
-source-wordcount: '976'
-ht-degree: 40%
+source-wordcount: '1038'
+ht-degree: 38%
 
 ---
 
@@ -74,6 +74,14 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 | 目标 | 描述 |
 | ----------- | ----------- |
 | [公共连接](../../destinations/catalog/advertising/pubmatic.md) | 使用此目标可将受众数据发送到 [!DNL PubMatic Connect] 平台。 |
+
+{style="table-layout:auto"}
+
+**新增或更新的功能**{#destinations-new-updated-functionality}
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 新建 **假定的角色** Amazon S3目标的身份验证类型 | 如果您不想与Experience Platform共享帐户密钥和密钥，请在将Experience Platform连接到Amazon S3存储桶时使用新的假定角色身份验证类型。 有关新的身份验证方法的更多信息，请参阅 [身份验证部分](/help/destinations/catalog/cloud-storage/amazon-s3.md#assumed-role-authentication) Amazon S3文档的URL名称。 |
 
 {style="table-layout:auto"}
 

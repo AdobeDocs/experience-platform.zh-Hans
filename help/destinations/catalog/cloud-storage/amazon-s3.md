@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c126e6179309ccfbedfbfe2609cfcfd1ea45f870
 workflow-type: tm+mt
-source-wordcount: '1055'
-ht-degree: 16%
+source-wordcount: '1354'
+ht-degree: 13%
 
 ---
 
@@ -13,12 +13,17 @@ ht-degree: 16%
 
 ## 目标更改日志 {#changelog}
 
-在2023年7月的Experience Platform版本中， [!DNL Amazon S3] 目标提供了新功能，如下所示：
++++ 查看更改日志
 
-* [支持导出数据集](/help/destinations/ui/export-datasets.md)。
-* 额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。
-* 可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。
-* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+
+| 发行月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2024 年 1 月 | 功能和文档更新 | Amazon S3目标连接器现在支持新的假定角色身份验证类型。 欲知更多信息，请参阅 [身份验证部分](#assumed-role-authentication). |
+| 2023 年 7 月 | 功能和文档更新 | 在2023年7月的Experience Platform版本中， [!DNL Amazon S3] 目标提供了新功能，如下所示： <br><ul><li>[支持数据集导出](/help/destinations/ui/export-datasets.md)</li><li>额外的[文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling)。</li><li>可通过[改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping)在您导出的文件中设置自定义文件头。</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> |
+
+{style="table-layout:auto"}
+
++++
 
 ## 连接到您的 [!DNL Amazon S3] 通过API或用户界面进行存储 {#connect-api-or-ui}
 
@@ -64,12 +69,37 @@ ht-degree: 16%
 >title="RSA 公钥"
 >abstract="（可选）您可以附加 RSA 格式的公钥以对导出的文件进行加密。在下面的文档链接中查看格式正确的密钥的示例。"
 
-要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**. Amazon S3目标支持两种身份验证方法：
+
+* 访问密钥和密钥身份验证
+* 承担角色身份验证
+
+#### 访问密钥和密钥身份验证
+
+当您想要输入Amazon S3访问密钥和密钥，以允许Experience Platform将数据导出到Amazon S3资产时，请使用此身份验证方法。
+
+![选择访问密钥和密钥身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/access-key-secret-key-authentication.png)
 
 * **[!DNL Amazon S3]访问密钥** 和 **[!DNL Amazon S3]密钥**：在 [!DNL Amazon S3]，生成 `access key - secret access key` 对，以授予对的Platform访问权限 [!DNL Amazon S3] 帐户。 在中了解详情 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
   ![该图像显示了UI中格式正确的PGP密钥的示例。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+
+#### 承担的角色 {#assumed-role-authentication}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_assumed_role"
+>title="承担角色身份验证"
+>abstract="如果您不想与Adobe共享帐户密钥和密钥，请使用此身份验证类型。 相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。 粘贴您在AWS中为Adobe用户创建的角色的ARN。 模式类似于 `arn:aws:iam::800873819705:role/destinations-role-customer` "
+
+![选择承担的角色身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
+
+如果您不想与Adobe共享帐户密钥和密钥，请使用此身份验证类型。 相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。
+
+为此，您需要在AWS控制台中创建假定用户，以便Adobe [权限必需权限](#required-s3-permission) 以写入您的Amazon S3存储段。 创建 **[!UICONTROL 受信任的实体]** 在AWS中使用Adobe帐户 **[!UICONTROL 670664943635]**. 欲了解更多信息，请参见 [有关创建角色的AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+
+* **[!DNL Role]**：粘贴您在AWS中为Adobe用户创建的角色的ARN。 模式类似于 `arn:aws:iam::800873819705:role/destinations-role-customer`.
+* **[!UICONTROL 加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
 
 ### 填写目标详细信息 {#destination-details}
 
