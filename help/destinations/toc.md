@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
+source-git-commit: 1d8ba11b1043fa68bf3c0205e8cecc2de8910234
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1190'
 ht-degree: 5%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 5%
       * [数据登陆区](./catalog/cloud-storage/data-landing-zone.md)
       * [Google云存储](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
-      * [列入允许列表 SFTP目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
+      * [列入允许列表基于文件的云存储目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 客户关系管理(CRM)目标 {#crm}
       * [Hubspot连接](./catalog/crm/hubspot.md)
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)

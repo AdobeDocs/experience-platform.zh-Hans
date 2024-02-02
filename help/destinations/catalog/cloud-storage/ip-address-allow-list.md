@@ -1,50 +1,62 @@
 ---
-title: IP地址允许列表SFTP目标
+title: 基于文件的云存储目标的IP地址允许列表
 type: Documentation
-description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到SFTP服务器。
+description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到云存储目标。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-source-git-commit: 52186e03ba2a9d8b105d01ebfcd9be7666bfb6ff
+source-git-commit: 1d8ba11b1043fa68bf3c0205e8cecc2de8910234
 workflow-type: tm+mt
-source-wordcount: '189'
-ht-degree: 0%
+source-wordcount: '249'
+ht-degree: 1%
 
 ---
 
-# 列入允许列表 SFTP目标的IP地址 {#ip-address-allow-list-sftp}
+# 列入允许列表基于文件的云存储目标的IP地址 {#ip-address-allow-list-cloud-storage}
 
 >[!IMPORTANT]
 >
 > * Adobe建议您将此页面加入书签，每三个月重新访问一次，以检查最新IP地址。 Adobe不提供新IP范围的通知。
 > * 虽然Adobe支持将数据导出到SFTP服务器，但建议用于导出数据的云存储位置为 [!DNL Amazon S3] 和 [!DNL Azure Blob].
 
+## 适用性 {#applicability}
+
+此页面上的IP范围信息适用于目标目录中的以下基于文件的云存储连接器：
+
+* [[!UICONTROL Amazon S3]](./amazon-s3.md)
+* [[!UICONTROL Google云存储]](google-cloud-storage.md)
+* [SFTP](./sftp.md)
+
+>[!IMPORTANT]
+>
+>本页记录的IP范围包括 *非* 对于以下基于文件的云存储目标支持： [!UICONTROL Azure Blob]， [!UICONTROL Azure Data Lake Storage Gen2] 和 [!UICONTROL 数据登陆区].
+
 ## 概述 {#overview}
 
-列入允许列表本页提供了可添加到Experience Platform的IP范围，以便安全地将数据从IP范围导出到您的IP范围。 [SFTP服务器](./sftp.md).
+列入允许列表本页提供了可添加到Experience Platform的IP范围，以便安全地将数据从云存储导出到多个云存储目标。
 
 您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
 
 Adobe列入允许列表建议您在使用Cloud Storage目标连接之前，将以下IP范围添加到。 在使用Cloud Storage目标连接时，如果未能将特定于区域的IP范围添加到允许列表，可能会导致错误或性能下降。
 
-## 所有客户均需要
+## 所有客户均需要 {#all-customers}
 
 * `52.247.108.70`
 
-## 美国客户
+## 美国客户 {#us-customers}
 
 * `52.252.71.64/29`
 
-## 加拿大客户
+## 加拿大客户 {#canada-customers}
 
 * `20.220.135.16/29`
 
-## EMEA客户
+## EMEA客户 {#emea-customers}
 
 * `51.137.8.208/29`
 
-## 英国客户
+## 英国客户 {#uk-customers}
 
 * `20.26.133.96/29`
 
-## APAC客户
+## APAC客户 {#apac-customers}
 
 * `20.53.201.168/29`
