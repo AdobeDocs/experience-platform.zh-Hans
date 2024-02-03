@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7691e2dd434e13f3cff715fcba9431d985b2be60
+source-git-commit: 7b694ad1b064279fcc0dd09bd1e8761e734e7556
 workflow-type: tm+mt
-source-wordcount: '1476'
-ht-degree: 39%
+source-wordcount: '1551'
+ht-degree: 37%
 
 ---
 
@@ -78,7 +78,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 
 | 功能 | 描述 |
 | --- | --- |
-| 查看SQL | 您现在可以查看配置文件、受众、目标和自定义分析背后的SQL，然后通过查询编辑器按需执行查询。 从SQL中获取40多种现有见解作为灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 有关详细信息，请阅读上的指南 [查看分析SQL](../../dashboards/view-sql.md). |
+| 查看SQL | 您现在可以使用“查看SQL”切换来查看“用户档案”、“受众”、“目标”和自定义分析后面的SQL，然后通过查询编辑器按需执行查询。 访问支持Real-time Customer Data Platform分析的SQL可帮助您了解数据模型分析背后的逻辑。 这种透明度使您的AdobeReal-time CDP数据更易于访问、理解并影响决策。<br>从SQL中获取40多种现有见解作为灵感，以创建新查询，这些查询可根据您的业务需求从Platform数据获取独特的见解。 SQL也可用于您的 [配置文件](../../dashboards/insights/profiles.md)， [受众](../../dashboards/insights/audiences.md)、和 [目标](../../dashboards/insights/destinations.md) Experience League文档中的见解。 这些文件突出显示可使用标准见解解答的业务用例。 有关详细信息，请阅读上的指南 [查看分析SQL](../../dashboards/view-sql.md). |
 
 {style="table-layout:auto"}
 
