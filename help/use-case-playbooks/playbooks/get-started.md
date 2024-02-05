@@ -4,9 +4,9 @@ title: 快速入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 785e32b27372cef9d23761f648bcbaa431448ce7
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '943'
 ht-degree: 14%
 
 ---
@@ -29,6 +29,11 @@ ht-degree: 14%
 ## 创建开发沙盒 {#create-development-sandbox}
 
 用例行动手册使用特殊类型的开发沙盒。 要开始使用并访问[[!UICONTROL 使用用例战术手册]](/help/use-case-playbooks/playbooks/overview.md)功能性，[创建一个新的开发沙盒](/help/sandboxes/ui/user-guide.md#create)（确保您没有选择生产沙盒），其名称（而不是标题）后缀中包含 `-ucp` 或者 `-UCP`，如下所示。
+
+>[!IMPORTANT]
+>
+>创建新的开发沙盒时，请确保名称包含 `-ucp` 或 `-UCP` 在后缀中。
+
 
 ![为用例战术手册创建开发沙盒](/help/use-case-playbooks/assets/playbooks/get-started/create-sandbox-ucp.png)
 
