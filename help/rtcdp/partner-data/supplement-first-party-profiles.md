@@ -3,7 +3,7 @@ title: 使用合作伙伴提供的属性补充第一方配置文件
 description: 了解如何使用可信赖的数据合作伙伴的属性来补充第一方配置文件，以改善您的数据基础，获得对客户群的全新见解，并提升受众优化。
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 9737508bd8435f4edf0e60a3559c1b4352ccb29f
 workflow-type: tm+mt
 source-wordcount: '1256'
 ht-degree: 80%
@@ -30,7 +30,7 @@ Adobe知道没有一种放之四海而皆准的方法，它允许与数据和身
 
 例如，当您需要使用人口统计和意图信号扩充客户记录时，请按照此用例中描述的步骤操作。
 
-## 先决条件和规划 {#prerequisites-and-planning}
+## 先决条件和规划
 
 当您考虑使用数据合作伙伴的属性来补充您自己的第一方配置文件时，您应该与数据合作伙伴讨论并解决有关数据扩充循环的以下详细信息：
 

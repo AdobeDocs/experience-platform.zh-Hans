@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: a66c4397a02da81e4b3304f3bc975f725f8f8d76
 workflow-type: tm+mt
-source-wordcount: '3765'
-ht-degree: 11%
+source-wordcount: '3797'
+ht-degree: 12%
 
 ---
 
@@ -142,7 +142,12 @@ ht-degree: 11%
 
 4. 选择 **[!UICONTROL 创建]** 以保存计划。
 
-### 导出增量文件 {#export-incremental-files}
+### 导出增量文件
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_something"
+>title="配置文件名"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 选择 **[!UICONTROL 导出增量文件]** 用于触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
 
@@ -167,7 +172,7 @@ ht-degree: 11%
 
 4. 选择 **[!UICONTROL 创建]** 以保存计划。
 
-### 配置文件名 {#file-names}
+### 配置文件名
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
