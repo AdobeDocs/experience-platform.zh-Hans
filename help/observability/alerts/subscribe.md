@@ -4,7 +4,7 @@ title: 订阅Adobe I/O事件通知
 description: 本文档提供了有关如何订阅Adobe Experience Platform服务的Adobe I/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向更多文档的链接，这些文档说明了如何解释每个适用的返回的事件数据 [!DNL Platform] 服务。
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: eccd53a8b2076fe23a65aa2e933a7cb871e97f72
+source-git-commit: 06ea57d41269e98ddd984c898f41c478ddefc618
 workflow-type: tm+mt
 source-wordcount: '768'
 ht-degree: 1%
@@ -41,7 +41,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->将从AdobeIO订阅中弃用数据摄取通知。 您应该改用 **源流量运行信息** I/O事件。
+>Adobe I/O中已弃用数据摄取通知事件。您应该改用 **源流量运行信息** I/O事件。
 
 创建新项目后，导航到该项目的概述屏幕。 从此处选择 **[!UICONTROL 添加事件]**.
 
