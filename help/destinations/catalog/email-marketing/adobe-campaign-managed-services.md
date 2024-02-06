@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 9757931f03f57b722c47955d83cb074629d9a883
 workflow-type: tm+mt
-source-wordcount: '1550'
+source-wordcount: '1589'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 1%
 Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [Campaign入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html)
 
 使用 Campaign 可以：
+
 * 通过可访问的单一客户视图推动个性化和参与，
 * 将电子邮件、移动设备、线上和线下渠道整合到客户历程中，
 * 自动投放有意义、及时的消息和优惠。
@@ -32,6 +33,7 @@ Adobe Campaign Managed Cloud Services提供了跨渠道客户体验设计平台�
 >* 对于每个区段，您最多可以添加20个字段到 [映射](#map) Adobe Campaign，
 >* Azure Blob Storage数据登陆区(DLZ)上的数据保留：7天，
 >* 激活频率至少为3小时。
+>* 此连接支持的最大文件名长度为255个字符。 当您 [配置导出的文件名](../../ui/activate-batch-profile-destinations.md#configure-file-names)，请确保文件名不超过255个字符。 超过最大文件名长度会导致激活错误。
 
 ## 用例 {#use-cases}
 
