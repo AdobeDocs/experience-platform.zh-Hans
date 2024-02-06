@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据建模的最佳实践
 description: 本文档介绍了Experience Data Model (XDM)架构以及用于构成要在Adobe Experience Platform中使用的架构的构建块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 8e13918abe9a63b186970b24b87bf85d1c73c3a8
 workflow-type: tm+mt
-source-wordcount: '3096'
+source-wordcount: '3245'
 ht-degree: 1%
 
 ---
@@ -231,13 +231,27 @@ Adobe应用程序字段组通过使用 `identityMap` 字段，这是一个系统
 
 ## 数据验证字段 {#data-validation-fields}
 
-为防止将错误数据摄取到Platform，建议您在创建架构时定义字段级验证标准。 要对特定字段设置约束，请从架构编辑器中选择该字段以打开 [!UICONTROL 字段属性] 侧栏。 请参阅相关文档 [特定类型的字段属性](../ui/fields/overview.md#type-specific-properties) 以获取可用字段的精确描述。
+将数据摄取到数据湖中时，仅对约束字段强制执行数据验证。 要在批量摄取期间验证特定字段，您必须在XDM架构中将字段标记为受约束。 为防止将错误数据摄取到Platform，建议在创建架构时定义字段级验证标准。
+
+>[!IMPORTANT]
+>
+>验证不适用于嵌套列。 如果字段格式位于数组列中，将不会验证数据。
+
+要对特定字段设置约束，请从架构编辑器中选择该字段以打开 **[!UICONTROL 字段属性]** 侧栏。 请参阅相关文档 [特定类型的字段属性](../ui/fields/overview.md#type-specific-properties) 以获取可用字段的精确描述。
 
 ![架构编辑器，其约束字段在 [!UICONTROL 字段属性] 侧栏。](../images/best-practices/data-validation-fields.png)
 
->[!TIP]
->
->以下是创建架构时数据建模的建议集合：<br><ul><li>**考虑主要身份**：对于Web SDK、Mobile SDK、Adobe Analytics和Adobe Journey Optimizer等Adobe产品， `identityMap` 字段通常用作主标识。 避免将其他字段指定为该架构的主标识。</li><li>**避免使用 `_id` 作为标识**：避免使用 `_id` 体验事件架构中作为标识的字段。 它用于记录唯一性，而不是用作身份。</li><li>**设置长度约束**：最佳实践是在标记为标识的字段上设置最小和最大长度。 这些限制有助于保持一致性和数据质量。</li><li>**为一致的值应用模式**：如果您的标识值遵循特定模式，则应使用 [!UICONTROL 图案] 设置为强制此约束。 此设置可以包括仅数字、大写或小写或特定字符组合等规则。 使用正则表达式匹配字符串中的模式。</li><li>**限制Analytics架构中的eVar**：通常，Analytics架构应仅将一个指定为身份的eVar。 如果要使用多个eVar作为标识，则应仔细检查数据结构是否可以优化。</li><li>**确保所选字段的唯一性**：与架构中的主标识相比，您选择的字段应该是唯一的。 如果不是，请不要将其标记为标识。 例如，如果多个客户可以提供相同的电子邮件地址，则该命名空间不是合适的身份。 此原则也适用于其他身份命名空间，如电话号码。</li></ul>
+### 维护数据完整性的提示 {#data-integrity-tips}
+
+以下是在创建架构时维护数据完整性的建议集合。
+
+* **考虑主要身份**：对于Web SDK、Mobile SDK、Adobe Analytics和Adobe Journey Optimizer等Adobe产品， `identityMap` 字段通常用作主标识。 避免将其他字段指定为该架构的主标识。
+* **避免使用 `_id` 作为标识**：避免使用 `_id` 体验事件架构中作为标识的字段。 它用于记录唯一性，而不是用作身份。
+* **设置长度约束**：最佳实践是在标记为标识的字段上设置最小和最大长度。 如果您尝试将自定义命名空间分配给身份字段，但不满足最小和最大长度约束，则会触发警告。 这些限制有助于保持一致性和数据质量。
+* **为一致的值应用模式**：如果您的标识值遵循特定模式，则应使用 **[!UICONTROL 图案]** 设置为强制此约束。 此设置可以包括仅数字、大写或小写或特定字符组合等规则。 使用正则表达式匹配字符串中的模式。
+* **在Analytics架构中限制eVar**：通常，Analytics架构应仅将一个指定为身份的eVar。 如果要使用多个eVar作为标识，则应仔细检查数据结构是否可以优化。
+* **确保所选字段的唯一性**：与架构中的主标识相比，您选择的字段应该是唯一的。 如果不是，请不要将其标记为标识。 例如，如果多个客户可以提供相同的电子邮件地址，则该命名空间不是合适的身份。 此原则也适用于其他身份命名空间，如电话号码。
+* **约束会触发自定义命名空间字段的警告**：设置约束，以便在使用自定义命名空间标记架构字段时触发警告，而不指定最小和最大长度。 警告是维护数据完整性的重要警告。 请参阅 [特定类型的字段属性](../ui/fields/overview.md#type-specific-properties) 有关如何对特定字段设置约束条件的文档。
 
 ## 后续步骤
 
