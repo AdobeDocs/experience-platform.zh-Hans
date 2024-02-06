@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7b694ad1b064279fcc0dd09bd1e8761e734e7556
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
-source-wordcount: '1551'
-ht-degree: 37%
+source-wordcount: '1653'
+ht-degree: 38%
 
 ---
 
@@ -26,6 +26,7 @@ Adobe Experience Platform中的新增功能：
 - [身份服务](#identity-service)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [实时客户配置文件](#profile)
+- [Segmentation Service](#segmentation)
 - [源](#sources)
 
 ## 用例行动手册 {#use-case-playbooks}
@@ -156,6 +157,21 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 {style="table-layout:auto"}
 
 要了解有关Real-time Customer Profile的更多信息，请参阅 [配置文件概述](../../profile/home.md)
+
+## Segmentation Service {#segmentation}
+
+[!DNL Segmentation Service] 通过描述在您的客户群中区分适销人群的标准，来定义特定的配置文件子集。区段可以基于记录数据（例如人口统计信息）或代表客户与您的品牌互动的时间序列事件。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 外部生成的受众上传 | 最大列数已增加到 **25**. |
+| 区段生成器评估 | 预计值和符合条件的用户档案现在显示在受众属性部分中。 有关此更改的详细信息，请阅读 [区段生成器UI指南](../../segmentation/ui/segment-builder.md). |
+
+{style="table-layout:auto"}
+
+有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 

@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 7ee39a39aecdfc0516f63e6a9c9a06c6c4b22996
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
 source-wordcount: '3933'
 ht-degree: 3%
@@ -331,7 +331,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->外部生成的受众 **必须** 为CSV格式，具有 **最大值** 列中，小于1 GB。
+>外部生成的受众 **必须** 为CSV格式，具有 **最大值** 25列，并且小于1 GB。
 
 选择要导入的CSV文件后，将显示此外部生成受众的示例数据列表。 确认样本数据正确后，选择 **[!UICONTROL 下一个]**.
 

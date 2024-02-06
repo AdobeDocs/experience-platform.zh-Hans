@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: b028bf86bb8596c6fc97829d6d27eec498c4ef11
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
-source-wordcount: '3426'
-ht-degree: 7%
+source-wordcount: '3562'
+ht-degree: 6%
 
 ---
 
@@ -255,9 +255,17 @@ ht-degree: 7%
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
-构建区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分估算了生成的区段定义的大小，这使您可以在构建受众本身之前根据需要调整区段定义。
+构建区段定义时， **[!UICONTROL 受众属性]** 工作区右侧的部分估算了生成的区段定义的大小，这使您可以在构建受众本身之前根据需要调整区段定义。
 
-此 **[!UICONTROL 区段属性]** 还可以在部分指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在组织定义的区段定义中标识您的区段定义，因此应具有描述性、简洁性和唯一性。
+**[!UICONTROL 合格的配置文件]** 指示 **实际** 符合区段定义规则的配置文件数。 此数字在区段评估作业运行后，每24小时更新一次。
+
+符合条件的配置文件的时间戳表示最近 **批次** 区段评估工作和 **非** 针对使用流分段或边缘分段评估的区段定义而显示。 如果编辑区段定义，则在运行下一个区段评估作业之前，符合条件的配置文件数将保持不变。
+
+**[!UICONTROL 估计的配置文件]** 表示 **近似** 基于以下项的配置文件数： **示例作业**. 添加新规则或条件并选择后，您可以查看此值的更新版本 **[!UICONTROL 刷新估计]**. 选择信息泡可提供错误阈值和最近示例作业时间。
+
+![符合条件的用户档案和预计的用户档案会在受众属性部分中突出显示。](../images/ui/segment-builder/audience-estimates.png)
+
+此 **[!UICONTROL 受众属性]** 还可以在部分指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在组织定义的区段定义中标识您的区段定义，因此应具有描述性、简洁性和唯一性。
 
 在继续构建区段定义时，您可以通过选择 **[!UICONTROL 查看配置文件]**.
 
