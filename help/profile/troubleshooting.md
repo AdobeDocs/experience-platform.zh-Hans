@@ -4,9 +4,9 @@ title: 实时客户资料故障排除指南
 type: Documentation
 description: 本文档提供有关实时客户个人资料的常见问题解答，以及有关使用Adobe Experience Platform处理个人资料数据时常见错误的疑难解答指南。
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
@@ -122,18 +122,6 @@ Real-time Customer Profile维护其自己的数据存储（称为“配置文件
 ```
 
 当尝试为配置文件数据创建删除请求时找不到有效的批次时，会发生此错误。 在重试之前，请检查您为启用配置文件的数据集输入了正确的ID。
-
-### 尚未创建投影目标
-
-```json
-{
-  "status":404,
-  "title":"The projection destination has not yet been created.",
-  "type":"http://ns.adobe.com/adobecloud/problem/missing-entity"
-}
-```
-
-此错误发生于 `destinationId` 提供于 `POST /config/projections` 请求无效。 在重试之前，请仔细检查您是否提供了有效的目标ID。 要创建新目标，请按照 [配置文件开发人员指南](./api/edge-projections.md#create-a-destination).
 
 ### 不支持的媒体类型
 

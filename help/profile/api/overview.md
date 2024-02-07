@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: Real-Time Customer Profile API指南
 description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '881'
 ht-degree: 1%
 
 ---
@@ -31,10 +31,6 @@ ht-degree: 1%
 每个计算属性都包含一个表达式（即“规则”），该表达式将评估传入的数据并将结果值存储在配置文件属性中。 这些计算可以帮助您轻松回答与生命周期购买价值、购买间隔时间或应用程序打开次数等相关的问题，而无需您在每次需要信息时手动执行复杂的计算。 然后，可以在配置文件中查看这些计算的属性值，将其用于创建受众，或通过多种不同的访问模式进行访问。
 
 您可以使用创建、查看、编辑和删除计算属性 `ca/attributes/` 端点。 要了解如何使用计算属性，请参阅 [计算属性概述](../computed-attributes/overview.md). 对于API操作，请访问 [计算属性API端点指南](../computed-attributes/api.md).
-
-## 边缘投影 {#edge-projections}
-
-Adobe Experience Platform通过在名为“边缘”的战略性服务器上轻松访问数据，实现了客户体验的实时个性化。 此 [!DNL Real-Time Customer Profile] API通过名为“投影”的组件提供处理边的端点。 这包括确定应该投影到每个边缘的数据的投影配置，以及定义投影路由位置的投影目的地。 有关使用Edge Projection的详细信息，请访问 [投影配置和目标端点指南](edge-projections.md).
 
 ## 实体([!DNL Profile] access) {#entities}
 

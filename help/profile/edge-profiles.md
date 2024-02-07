@@ -2,10 +2,10 @@
 title: 边缘配置文件
 description: 了解边缘配置文件以及相关术语、边缘配置文件的可用区域以及边缘配置文件的可用服务。
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '837'
-ht-degree: 1%
+source-wordcount: '795'
+ht-degree: 0%
 
 ---
 
@@ -30,11 +30,11 @@ ht-degree: 1%
 以下区域可与Edge一起使用：
 
 - VA6
-- OR2
+- 或2
 - IRL1
-- AUS3
+- 澳大利亚3
 - SGP3
-- JPN3
+- 日文3
 - IND1
 
 对于要登陆的用户档案，所有这些区域都是有效的选项。
@@ -61,7 +61,7 @@ Express Profile Service (XPS)将检索不同边缘上的配置文件。 此服�
 
 ## 后续步骤
 
-阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关边缘投影的详细信息，请阅读 [边缘投影端点指南](./api/edge-projections.md). 有关AdobeExperience Edge的更多信息，请阅读 [Edge概述](../edge/home.md).
+阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关AdobeExperience Edge的更多信息，请阅读 [Edge概述](../edge/home.md).
 
 ## 附录
 
@@ -77,6 +77,4 @@ Express Profile Service (XPS)将检索不同边缘上的配置文件。 此服�
 
 ### 数据过期如何与边缘用户档案一起使用？
 
-对于边缘用户档案，数据到期确定用户档案在删除之前在边缘上停留的时长。 数据到期为 **滚动**，这意味着每次在edge上访问用户档案时，数据过期时间都会重置。
-
-您可以通过将边缘配置文件添加到来添加其数据过期时间 [边缘投影](./api/edge-projections.md). 默认情况下，数据到期持续14天，但可以设置为最少1小时，最长90天。
+对于边缘用户档案，数据到期确定用户档案在删除之前在边缘上停留的时长。 数据到期为 **滚动**，这意味着每次在edge上访问用户档案时，数据过期时间都会重置。 默认情况下，数据过期时间为14天。

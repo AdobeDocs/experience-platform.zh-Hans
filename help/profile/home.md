@@ -2,9 +2,9 @@
 title: Real-time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 5dad03dd33855b225bb67391dbc51e5b31bf4d5e
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '1973'
+source-wordcount: '1821'
 ht-degree: 1%
 
 ---
@@ -104,10 +104,6 @@ Adobe Experience Platform [!DNL Segmentation Service] 生成为各个客户提�
 ### 流式摄取和流式分段
 
 实时输入可通过称为流式摄取的过程实现。 当配置文件和时序数据被摄取时， [!DNL Real-Time Customer Profile] 在与现有数据合并并更新合并视图之前，通过称为流式客户细分的持续过程，自动决定从受众中包含或排除这些数据。 因此，您可以即刻执行计算并做出决策，以便在客户与您的品牌互动时向客户交付增强的个性化体验。 在摄取数据时，还会对其进行验证，以确保数据被正确摄取，并符合数据集所基于的架构。 有关在摄取期间执行什么验证的更多信息，请从阅读 [数据摄取质量概述](../ingestion/quality/overview.md).
-
-## 边缘投影
-
-为了实时通过多个渠道为客户推动协调、一致和个性化的体验，需要随时提供正确的数据，并在发生更改时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现了数据的实时访问。 Edge是位于不同地理位置的服务器，用于存储数据并使应用程序能够方便地访问数据。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目的地定义数据将发送到的边缘，以及投影配置定义将在边缘上可用的特定信息。 要了解更多信息并开始使用预测，请使用 [!DNL Real-Time Customer Profile] API，请参阅 [边缘投影端点指南](api/edge-projections.md).
 
 ## 将数据引入 [!DNL Profile]
 
