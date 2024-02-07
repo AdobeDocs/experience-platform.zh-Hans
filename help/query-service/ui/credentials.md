@@ -6,8 +6,8 @@ description: Adobe Experience Platform查询服务提供了一个用户界面，
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
 source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
 workflow-type: tm+mt
-source-wordcount: '1517'
-ht-degree: 3%
+source-wordcount: '1504'
+ht-degree: 2%
 
 ---
 

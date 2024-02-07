@@ -6,7 +6,7 @@ description: 了解如何在Experience Platform用户界面中创建和编辑架
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 source-git-commit: 5e57df3fbc22baa1c7abbb02a003ad8663aad040
 workflow-type: tm+mt
-source-wordcount: '3670'
+source-wordcount: '3671'
 ht-degree: 2%
 
 ---
@@ -280,7 +280,7 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_enableforprofile"
 >title="为配置文件启用架构"
->abstract="在为配置文件启用一个架构时，从该架构创建的任何数据集都会参与实时客户配置文件，此配置文件合并来自不同源的数据以构建每个客户的完整视图。使用架构将数据提取到配置文件中后，无法将其禁用。有关详细信息，请参阅文档。"
+>abstract="在为配置文件启用一个架构时，从该架构创建的任何数据集都会参与实时客户配置文件，此配置文件合并来自不同源的数据以构建每个客户的完整视图。使用架构将数据提取到配置文件中后，无法将其禁用。有关更多信息，请参阅文档。"
 
 [Real-time Customer Profile](../../../profile/home.md) 合并来自不同来源的数据，以构建每个客户的完整视图。 如果您希望架构捕获的数据参与此过程，则必须启用架构以便用于 [!DNL Profile].
 

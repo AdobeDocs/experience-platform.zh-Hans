@@ -4,8 +4,8 @@ description: 了解如何在您的网站上异步部署Adobe Experience Platform
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '1079'
-ht-degree: 61%
+source-wordcount: '1045'
+ht-degree: 59%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 61%
 
 ### 异步部署
 
-您可以通过向 `<script>` 标记添加 `async` 属性来异步加载任何库。例如：
+您可以通过添加 `async` 归因于 `<script>` 标记之前。 例如：
 
 ```markup
 <script src="example.js" async></script>

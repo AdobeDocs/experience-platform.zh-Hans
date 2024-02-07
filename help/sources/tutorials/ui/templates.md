@@ -1,12 +1,12 @@
 ---
 description: 了解如何在Adobe Experience Platform UI中使用模板来加速B2B数据的数据摄取过程。
 title: 在 UI 中使用模板创建源数据流
-badge1: "Beta 版"
+badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
 workflow-type: tm+mt
-source-wordcount: '2259'
-ht-degree: 11%
+source-wordcount: '2241'
+ht-degree: 10%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 11%
 >
 >文档和功能可能会发生更改。
 
-Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括在将数据从来源引入到 Experience Platform 时可使用的自动生成的资源，如架构、数据集、身份、映射规则、标识命名空间和数据流。
+Adobe Experience Platform提供了预配置的模板，您可以使用这些模板加快数据摄取过程。 模板包括自动生成的资源，例如架构、数据集、身份、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时可以使用该资源。
 
 使用模板，您可以：
 

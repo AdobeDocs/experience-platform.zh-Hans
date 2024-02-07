@@ -4,7 +4,7 @@ description: 了解如何在UI中配置密钥，以对事件转发属性中使�
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
 source-git-commit: 592acdd45b1db5da95430b4e707cd9a2c18c1645
 workflow-type: tm+mt
-source-wordcount: '2458'
+source-wordcount: '2426'
 ht-degree: 3%
 
 ---

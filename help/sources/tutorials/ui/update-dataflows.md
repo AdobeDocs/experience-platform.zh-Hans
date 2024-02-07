@@ -80,7 +80,7 @@ ht-degree: 8%
 
 ![映射](../../images/tutorials/update-dataflows/mapping.png)
 
-### 计划
+### 正在计划
 
 此 [!UICONTROL 正在计划] 此时会显示步骤，允许您更新数据流的摄取计划并自动使用更新的映射摄取选定的源数据。
 
@@ -100,7 +100,7 @@ ht-degree: 8%
 
 ![计划弹出窗口](../../images/tutorials/update-dataflows/schedule-pop-up.png)
 
-### 请查看
+### 审核
 
 此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在更新数据流之前对其进行查看。
 

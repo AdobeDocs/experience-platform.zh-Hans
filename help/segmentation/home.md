@@ -5,7 +5,7 @@ description: 了解Adobe Experience Platform分段服务及其在Platform生态�
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
 source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1627'
 ht-degree: 14%
 
 ---
@@ -16,7 +16,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界�
 
 本文档概述了 [!DNL Segmentation Service] 以及它在Adobe Experience Platform中发挥的作用。
 
-## 快速入门 [!DNL Segmentation Service]
+## [!DNL Segmentation Service] 入门
 
 您应该了解本文档中使用的以下关键术语：
 
@@ -62,7 +62,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了一个用户界�
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
 >title="流式评估"
->abstract="流式分段是一个持续的数据选择过程，会更新区段以响应用户活动。"
+>abstract="流式分段是一个持续的数据选择过程，会更新受众以响应用户活动。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html?lang=zh-Hans" text="通过流式分段近乎实时地评估事件"
 
 Platform 目前支持三种受众评估方法：流式分段、批量分段和边缘分段。
