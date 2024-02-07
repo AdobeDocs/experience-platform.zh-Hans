@@ -2,9 +2,9 @@
 title: 使用流服务API创建SalesforceMarketing Cloud基本连接
 description: 了解如何使用流服务API根据Experience Platform验证您的SalesforceMarketing Cloud帐户。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 5bb95c2823ce7baa09cbc84c2f1ccf70a0796549
+source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '489'
 ht-degree: 4%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 4%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 应用程序的主机服务器。 这通常是您的子域。 **注意：** 输入时 `host` 值，您需要指定 `{subdomain}.rest.marketingcloudapis.com`. 例如，如果您的主机URL为 `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/`，则只需输入 `acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/` 作为主机值。 |
+| `host` | 应用程序的主机服务器。 这通常是您的子域。 **注意：** 输入时 `host` 值，您需要指定 `{subdomain}.rest.marketingcloudapis.com`. 例如，如果您的主机URL为 `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`，则必须输入 `acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/` 作为主机值。 |
 | `clientId` | 与您的关联的客户端ID [!DNL Salesforce Marketing Cloud] 应用程序。 |
 | `clientSecret` | 与您的关联的客户端密钥 [!DNL Salesforce Marketing Cloud] 应用程序。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Marketing Cloud] 为： `ea1c2a08-b722-11eb-8529-0242ac130003`. |
