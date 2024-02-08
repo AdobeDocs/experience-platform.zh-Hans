@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: ed2c9824d4c2f7bf8dd6a2f8431e93fe833c899c
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1560'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 2%
 | 搜索词 | 定义 |
 | --- | --- |
 | 标识 | 身份是实体特有的数据。 通常，这是一个现实世界中的对象，例如个人、硬件设备或Web浏览器（由Cookie表示）。 完全限定的标识由两个元素组成： **身份命名空间** 和 **标识值**. |
-| 标识命名空间 | 标识命名空间是给定标识的上下文。例如，命名空间 `Email` 可能对应于 **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能对应于 `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./features/namespaces.md) |
+| 标识命名空间 | 标识命名空间是给定标识的上下文。例如，命名空间 `Email` 可能与标识值对应： **朱利安<span>@acme.com**. 同样，命名空间 `Phone` 可能与标识值对应： `555-555-1234`. 欲知更多信息，请参阅 [身份命名空间概述](./features/namespaces.md). |
 | 标识值 | 身份值是一个字符串，它表示真实世界的实体，并通过命名空间在Identity Service中分类。 例如，标识值（字符串） **朱利安<span>@acme.com** 可以归类为 `Email` 命名空间。 |
 | 标识类型 | 身份类型是身份命名空间的组件。 身份类型指定是否在身份图中链接身份数据。 |
 | 链接 | 链接或链接是一种确定两个不同的身份表示同一实体的方法。 例如，“”之间的链接`Email` =朱利安<span>@acme.com”和“`Phone` = 555-555-1234”表示两个身份代表同一实体。 这表明，已与您的品牌交互的客户同时使用了julien的电子邮件地址<span>@acme.com和电话号码555-555-1234相同。 |
