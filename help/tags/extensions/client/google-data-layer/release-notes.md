@@ -1,15 +1,15 @@
 ---
 title: Google数据层扩展发行说明
-description: Adobe Experience Platform中的Google Data Layer标记扩展的最新发行说明。
+description: Adobe Experience Platform中的Google数据层标记扩展的最新发行说明。
 exl-id: 740b6e3a-d469-475d-9523-03b0b48b11c8
-source-git-commit: 0b9fa104777f21fc9bc893784ae3155d887a48d2
+source-git-commit: c1bad7d5414e62f4d77f7d5903f4b2bf4d9081f8
 workflow-type: tm+mt
-source-wordcount: '247'
-ht-degree: 1%
+source-wordcount: '265'
+ht-degree: 5%
 
 ---
 
-# Google Data Layer扩展发行说明
+# Google数据层扩展发行说明
 
 ## 版本 1.0.4
 
@@ -17,14 +17,14 @@ ht-degree: 1%
 
 ## 版本 1.0.6
 
-* 添加了将数据层重置为计算状态的操作。
+* 添加了将数据层重置为已计算状态的操作。
 * 修复了数据元素中阻止从已计算状态中提取值的错误。
 
 ## 版本 1.1.1
 
 由Beta测试反馈产生的显着增强功能和错误修复版本。
 
-* 修复了以下问题：在非数据层规则（例如Library Loaded）中使用的空Google数据层扩展数据元素返回数据层对象，而不是计算状态。
+* 修复了以下问题：在非数据层规则（例如Library Loaded）中使用的空Google数据层扩展数据元素返回了数据层对象，而不是计算状态。
 * 修复了以下问题：数据层计算状态不是在触发事件时从事件中的帮助程序传递，而是在规则执行时传递。
 * 向数据元素对话框添加一个切换开关，允许用户选择是否只返回来自事件的值。
 * 修复了规则事件侦听器无法正确捕获事件历史记录的问题。
@@ -35,5 +35,9 @@ ht-degree: 1%
 * 添加一个操作，以使用键值多字段对话框推送到数据层。
 * 修复了同步部署标记时阻止加载扩展的错误。
 * 修复了在某些情况下保存数据元素时导致错误的错误。
-* 将文档添加到事件对话框，其中说明了Tags事件对象的用法。
+* 将文档添加到事件对话框，以说明标记事件对象的用法。
 * 向事件对话框添加有关无限循环的警告。
+
+## 版本 1.2.2
+
+* 添加了对Google Analyticsgtag()事件的支持。
