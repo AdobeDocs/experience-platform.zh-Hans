@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: a0395c4d3514693d3200571496eff47768da52ba
+source-git-commit: 5bdfc5282e71d05ff0db39c32fc02c60fd8d1c34
 workflow-type: tm+mt
-source-wordcount: '2183'
+source-wordcount: '2383'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform助手当前正在Alpha中。 该功能和文档可能会发生更改。
 
-Adobe Experience Platform助手是一个UI功能，您可以使用它来导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
+助手是一种UI功能，可用于导航和了解Adobe Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
 
 您可以查询“助手”以获取以下信息：
 
@@ -26,7 +26,7 @@ Adobe Experience Platform助手是一个UI功能，您可以使用它来导航�
 * 组织中现有数据对象的状态和量度。
 * 用例示例和细微差别可更好地了解您的数据对象，包括属性、数据集、目标、架构、区段和源。
 
-本文档提供了有关如何访问和使用Assistant来提问并获得有关Experience Platform和Real-Time CDP概念的答案的信息。
+阅读以下指南，了解如何使用助手帮助导航和了解您的Experience Platform和Real-Time CDP工作流。
 
 >[!BEGINSHADEBOX]
 
@@ -55,85 +55,93 @@ Assistant通过查询数据库并将数据库中的数据转换为人工可读�
 
 >[!ENDSHADEBOX]
 
-## 用于在UI中Experience Platform的访问助手
+## Experience PlatformUI中的访问助手
 
-您可以从Experience PlatformUI中的标题导航访问助手。
+要启动助手，请选择 **[!UICONTROL “助手”图标]** 从Experience PlatformUI的顶部标题中。
 
-选择 **[!UICONTROL “助手”图标]** 从标题转到Launch Assistant面板。
+![Experience Platform主页，选中“助理”图标并打开“助理”界面。](./images/ai-assistant/ai-assistant.png)
 
-![已选中带有助理图标的Experience PlatformUI主页。](./images/ai-assistant/ai-assistant.png)
+此时会显示“助理”界面，为您提供开始使用的信息。 您可以使用下提供的选项 [!UICONTROL 开始使用的想法] 回答问题和命令，例如：
 
-<!-- +++Use immersive mode
+* [!UICONTROL 我的哪些区段已激活？]
+* [!UICONTROL 什么是架构？]
+* [!UICONTROL 告诉我一些Real-Time CDP的常见用例]
 
-To use [!DNL Immersive mode] select the focus icon in the header navigation of the Assistant.
+![“助理”的“入门想法”部分。](./images/ai-assistant/ideas-to-get-started.png)
 
-![select-immersive](./images/ai-assistant/select-immersive.png)
+要与Assistant交互，请使用输入框键入查询或命令。 您也可以使用(**`+`**)符号来使用自动完成功能和书签图标来访问您加入书签的查询和命令。
 
-A dedicated pop-up interface for Assistant appears at the center of your screen.
+![“助理”输入框突出显示。](./images/ai-assistant/interact.png)
 
-![immersive-mode](./images/ai-assistant/immersive-mode.png)
-
-+++
-
-From here, you can input your question in the text box and query Assistant for concepts regarding data or audiences. You can also ask questions about your data objects to better understand how you can use them for your respective use case.  -->
-
-### 示例用例：使用助理加快模式创建过程 {#example-use-case}
+## 用例示例：使用助理加快模式创建过程
 
 >[!NOTE]
 >
->以下示例工作流使用ExperienceEvent架构创建过程来说明在使用Experience PlatformUI时如何使用Assistant。
+>以下工作流是一个示例，它使用Experience Event架构创建过程来说明在使用Experience PlatformUI时如何使用Assistant。
 
-考虑要创建的用例 **设备交易事件架构**. 在ExperienceEvent架构创建过程中，您发现 `eventType` 字段。 此时，您可以离开工作流，并参阅上的文档 [架构组合的基础知识](../xdm/schema/composition.md)，或者您也可以使用助手即时获取问题的答案。
+考虑要创建的用例 **设备交易事件架构**. 在体验事件架构创建过程中，您遇到 `eventType` 字段。 “此时，您可以选择退出工作流并参阅 [架构组合的基础知识](../xdm/schema/composition.md) 文档，或者您可以使用Assistant通过Assistant推荐的文档链接检索问题答案和查找其他资源。”
 
 首先，在提供的文本框中输入您的问题。 在以下示例中，向助理提了一个问题：“**ExperienceEvent架构中的eventType字段是什么？**&quot;
 
-![带有以下问题的Experience Platform助理已准备进行查询：“什么是ExperienceEvent架构中的eventType字段？](./images/ai-assistant/question.png)
+![用于Experience Platform的助手，带有准备进行查询的以下问题：“什么是ExperienceEvent架构中的eventType字段？](./images/ai-assistant/question.png)
 
 然后，Assistant查询其知识库并计算答案。 几分钟后，助理会返回一个答案和相关建议，您可以将其用作跟进提示。
 
-给定的答案提供指向任何引用实体的超链接。 在以下示例中，选择 **[!UICONTROL 架构]** 查看引用的架构的列表，或者 **[!UICONTROL 区段]** 以查看引用的区段的列表。
-
 ![带有上一个查询答案的Experience Platform助手。](./images/ai-assistant/answer.png)
 
-Assistant允许您通过查看其源来验证答案。 提供了有关概念问题的文档链接，而数据使用问题可以通过演示如何计算答案的SQL查询进行验证。
+从“助手”收到响应后，您可以从多个选项中进行选择，以决定如何继续。
 
-![助理在返回答案后提供的选项。](./images/ai-assistant/options.png)
+### 保存查询 {#save-your-query}
 
-### 跟进问题 {#follow-up-question}
++++选择以查看如何保存查询的示例
 
-+++选择以查看后续问题的示例
+要保存查询，请选择问题旁边的书签图标。
 
-您可以通过提出跟进问题来进一步了解有关特定主题的更多信息。 在下一个示例中，将询问助理如何将eventType用于分段。
+![选定书签的屏幕截图。](./images/ai-assistant/save-your-query.png)
 
-![“Experience Platform助手”上显示的跟进问题和答案。](./images/ai-assistant/follow-up-question.png)
+要访问已保存的查询，请选择输入框下方的书签图标，然后选择要运行的查询。
 
-+++
-
-### 数据使用问题 {#data-usage-question}
-
-+++选择以查看数据使用问题的示例
-
-您还可以向助理询问有关数据使用的问题。 在查询数据使用情况时，您必须位于活动沙盒中，以便助手回答您的查询。
-
-对于涉及数据使用信息的响应， Assistant提供指向相关实体的链接。 此外，“助理”还会向您说明它如何计算其答案。
-
-![一个数据使用问题，询问用户有多少区段。](./images/ai-assistant/data-usage-question.png)
+![书签图标的屏幕截图和已保存查询的列表。](./images/ai-assistant/bookmarks.png)
 
 +++
 
-### 多圈 {#multi-turn}
+### 在沙盒中查看数据 {#view-data-in-your-sandbox}
 
-+++选择以查看多圈示例
++++选择以查看示例
 
-您可以使用“助理”的多轮功能在体验期间进行更自然的对话。 助理能够回答后续问题，因为上下文可以从以前的交互中推断出来。
+根据您的查询，Assistant会提供有关沙盒中数据的其他信息。 要查看查询响应如何应用于沙盒，请选择 **[!UICONTROL 在您的沙盒中].**
 
-在下面的示例中，要求助理列出组织中现有的区段，作为之前有关区段总数的查询的跟进。
+在此步骤中，Assistant可能会提供指向某些相关对象的UI页面的直接链接。 在以下示例中，助理提供了到 [!UICONTROL 架构] 和 [!UICONTROL 区段] UI页面。
 
-![](./images/ai-assistant/multi-turn-one.png)
+![“在您的沙盒中”选项的屏幕截图。](./images/ai-assistant/in-your-sandbox.png)
 
-接下来，助理将收到另一个跟进请求。 此时，助理将通过列出按其各自大小排序的现有区段来进行响应。
++++
 
-![](./images/ai-assistant/multi-turn-two.png)
+### 验证响应 {#verify-the-response}
+
++++选择以查看如何显示源的示例
+
+要查看引文并验证助理的响应，请选择 **[!UICONTROL 显示源]**. Assistant提供可证实其答复的文件的链接。 您还可以使用Assistant提供的查询 [!UICONTROL 相关建议] 以进一步浏览与原始查询相关的主题。
+
+![“显示源”屏幕截图。](./images/ai-assistant/show-sources.png)
+
++++
+
+### 数据使用和可视化 {#data-usage-and-visualization}
+
++++选择以查看数据使用问题和数据可视化图表的示例
+
+您可以向助手查询您的数据使用情况。 您必须在助手的活动沙盒中才能回答有关您组织中数据的数据使用问题。
+
+![跟进有关数据使用的问题。](./images/ai-assistant/data-usage-question.png)
+
+当出现数据使用问题提示时， Assistant还会提供有关如何计算答案的说明。 在以下示例中，Assistant概述了为显示具有1000多个用户档案的区段及其各自的激活状态而采取的步骤。
+
+![跟进有关区段的问题，以说明Assistant如何计算答案。](./images/ai-assistant/results-explained.png)
+
+此外，助理会呈现图表以显示您的数据。 您还可以为查询提供筛选器和修改，并可以指示Assistant根据您包括的筛选器呈现其调查结果。 例如，您可以要求“助手”按照区段的创建日期顺序显示区段计数趋势，删除总配置文件为零的区段，并在显示数据时使用月名称而不是整数。
+
+![阐述数据可视化的后续问题。](./images/ai-assistant/data-visualization.png)
 
 +++
 
@@ -143,13 +151,29 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 
 您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：区段、架构、数据集、源和目标。
 
-要使用自动完成，请输入加号(**`+`**)。 或者，也可以选择加号(**`+`**)。 然后，将显示一个窗口，其中包含沙盒中存在的推荐数据对象列表。
+您可以通过包含加号(**`+`**)。 作为替代方法，您还可以选择加号(**`+`**)，它位于文本输入框底部。 此时将显示一个窗口，其中包含来自沙盒的推荐数据对象列表。
 
-![](./images/ai-assistant/autocomplete-options.png)
+![自动完成示例](./images/ai-assistant/auto-complete-one.png)
 
 接下来，选择要查询的数据对象以完成问题，然后提交问题。
 
-![](./images/ai-assistant/autocomplete-question.png)
+![自动填写问题与答案的示例](./images/ai-assistant/auto-complete-two.png)
+
++++
+
+### 使用多圈 {#use-multi-turn}
+
++++选择以查看多圈示例
+
+您可以使用“助理”的多轮功能在体验期间进行更自然的对话。 助理能够回答后续问题。 该上下文可从较早的交互推断。
+
+在以下示例中，要求助理员提供当前组织的数据流总数。
+
+![多圈示例](./images/ai-assistant/multi-turn-one.png)
+
+接下来，助理将收到另一个跟进请求。 此时，助理将通过列出组织中当前存在的数据流进行响应。
+
+![带问答的多圈示例](./images/ai-assistant/multi-turn-two.png)
 
 +++
 
@@ -195,18 +219,6 @@ Assistant允许您通过查看其源来验证答案。 提供了有关概念问�
 | 对象查找 | 检索或访问Experience Platform对象或其属性。 | <ul><li>哪些数据集没有与其关联的任何架构</li><li>列出用于的属性 {SEGMENT_NAME}？</li><li>给我已启用配置文件但自创建后未修改的架构列表。</li><li>上周修改了哪些区段？</li><li>列出具有相同区段定义的区段及其创建日期。</li><li>哪些数据集启用了配置文件，并且还包括从每个数据集创建了多少区段。</li><li>哪些源帐户与数据集XYZ关联？</li><li>显示区段定义和修改日期 {SEGMENT_NAME}.</li></ul> |
 
 +++
-
-## 验证响应 {#verify-the-response}
-
-可以使用多种不同的方式验证助理返回响应。
-
-### 文档引用 {#citations}
-
-每次响应时，“助理”都会为您提供引文，您可以参考这些引文进行验证或获取更多信息。
-
-选择 **[!UICONTROL 显示源]** 以获取助手引用以计算其响应的文档的链接列表。 当您选择指向所引用文档的链接时，您将转到该特定页面的相关部分，并突出显示特定信息。
-
-![指向“助手”中显示的源的链接。](./images/ai-assistant/show-sources.png)
 
 ## 提供反馈 {#feedback}
 
