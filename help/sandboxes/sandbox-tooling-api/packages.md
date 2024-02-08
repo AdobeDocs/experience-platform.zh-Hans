@@ -2,9 +2,9 @@
 title: 沙盒工具包API端点
 description: 沙盒工具API中的/packages端点允许您以编程方式管理Adobe Experience Platform中的包。
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 8ff9c50b4999a49413f8c45274815225ba58361c
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1531'
 ht-degree: 6%
 
 ---
@@ -747,11 +747,11 @@ POST /packages/import
 
 **请求**
 
-以下请求使用检索包 {PACKAGE_ID} 已提供。 有效负载是替代的映射，如果存在项，则键为 `artifactId` 由包提供，并且替代项是值。 如果映射或有效负载为 **空**，则不执行替换。
+以下请求会检索要导入的包。 有效负载是替代的映射，如果存在项，则键为 `artifactId` 由包提供，并且替代项是值。 如果映射或有效负载为 **空**，则不执行替换。
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/import?targetSandbox=targetSandboxName \
+  https://platform.adobe.io/data/foundation/exim/packages/import/ \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -775,7 +775,6 @@ curl -X POST \
 
 | 属性 | 描述 | 类型 | 必需 |
 | --- | --- | --- | --- |
-| `id` | 程序包的ID。 | 字符串 | 是 |
 | `alternatives` | `alternatives` 表示源沙盒工件到现有目标沙盒工件的映射。 由于它们已经存在，导入作业会避免在Target沙盒中创建这些工件。 | 字符串 | 否 |
 
 **响应**
