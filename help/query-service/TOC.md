@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: fbb627787580c6a4ffd1deb0009105f1ba821b6f
+source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '315'
 ht-degree: 19%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 19%
    - [许可证使用](data-distiller/license-usage.md)
    - 派生数据集 {#derived-datasets}
       - [概述](data-distiller/derived-datasets/overview.md)
-      - [无缝SQL流](data-distiller/derived-datasets/seamless-sql-flow.md)
+      - [使用SQL创建派生数据集](data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
       - [创建基于十分位数的派生数据集](data-distiller/derived-datasets/decile-based-derived-attributes.md)
    - 扩展应用程序报表的可自定义分析 {#customizable-insights}
       - [概述](data-distiller/customizable-insights/overview.md)

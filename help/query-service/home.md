@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务概述
 description: 了解查询服务在Experience Platform中的角色。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: ad1827284b7070f73421d10c49e1e86e282839eb
+source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '860'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,16 @@ Adobe Experience Platform从各种来源摄取数据。 营销人员面临的一
 
 ## 使用查询服务 {#usage}
 
-要分析数据，可以使用查询服务用户界面和RESTful API，从中可以创建SQL查询。 通过用户界面，您可以编写和执行查询，查看先前执行的查询，以及访问由您组织内的用户保存的查询。 您可以像沙盒一样使用查询编辑器来测试查询，然后在更广泛的数据集上执行它们。 请参阅 [查询服务用户界面指南](ui/overview.md) 有关使用UI的更多信息。 RESTful API提供了类似体验。 您可以使用查询服务API以编程方式编写和执行查询，安排查询以供将来使用和重复，以及为要编写的查询创建模板。 有关使用查询服务API的更多信息，请参阅 [Query Service开发人员指南](api/getting-started.md).
+要分析数据，请使用Query Service用户界面或RESTful API创建并执行SQL查询。
+使用Query Service UI，您可以编写、执行和计划查询，查看先前执行的查询，以及访问由您组织内的用户保存的查询。 您还可以先测试查询，然后再使用查询编辑器在更广泛的数据集上执行它们。 请参阅 [查询服务UI指南](ui/overview.md) 有关UI功能的概述。
+
+RESTful API提供了类似体验。 您可以使用查询服务API以编程方式编写和执行查询，为要调整的查询创建和保存模板，或安排查询以自动执行。 请参阅 [Query Service开发人员指南](api/getting-started.md) 有关使用查询服务API的更多信息。
+
+要快速开始使用查询服务功能，建议您阅读以下文档：
+
+- [查询执行的一般指导](./best-practices/writing-queries.md)
+- [查询服务中的SQL语法](./sql/syntax.md)
+- [使用SQL创建派生数据集](./data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
 
 ## 查询服务和Experience Platform服务 {#experience-platform-services}
 
