@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
+source-git-commit: 4d662bc8ec8729654589c8675c5e598b94957ed7
 workflow-type: tm+mt
-source-wordcount: '1739'
+source-wordcount: '1838'
 ht-degree: 4%
 
 ---
@@ -52,6 +52,11 @@ ht-degree: 4%
   <tr>
     <td>Ultimate</td>
     <td>请参阅 <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a> 文档。</td>
+  </tr>
+  <tr>
+    <td>Customer Journey Analytics</td>
+    <td>全部</td>
+    <td> 通过源、Web SDK、Mobile SDK、Analytics Data Connector和Audience Manager摄取或收集数据后，在Experience PlatformUI中创建的配置文件和体验事件数据集。 在中阅读所需权限 <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/cja-access-control.html#product-admin-additional-permissions"> Customer Journey Analytics文档</a>.  <br> <b>关于可用性的说明：</b> 将数据集导出到云的功能处于版本的有限测试阶段，可能在您的环境中尚不可用。 当该功能正式发布时，将删除此说明。有关Customer Journey Analytics发布过程的信息，请参阅 <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/releases/releases.html"> Customer Journey Analytics功能发布</a>. </td>
   </tr>
   <tr>
     <td>数据Distiller</td>
