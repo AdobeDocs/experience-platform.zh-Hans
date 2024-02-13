@@ -14,12 +14,12 @@ ht-degree: 42%
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_actions"
 >title="热门操作"
->abstract="此小部件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此构件显示在选定时间范围内在 Experience Platform 中执行的最常见操作类型。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audits_privacyconsole_users"
 >title="热门用户"
->abstract="此小部件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
+>abstract="此构件显示在所选时间段内在 Experience Platform 中执行的操作最多的用户。要查看 Platform 中记录的操作的完整列表，请选择左侧导航中的&#x200B;**审计**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"

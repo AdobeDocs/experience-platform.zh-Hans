@@ -5,7 +5,7 @@ exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
 source-git-commit: c126e6179309ccfbedfbfe2609cfcfd1ea45f870
 workflow-type: tm+mt
 source-wordcount: '1354'
-ht-degree: 13%
+ht-degree: 18%
 
 ---
 
@@ -72,7 +72,7 @@ ht-degree: 13%
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**. Amazon S3目标支持两种身份验证方法：
 
 * 访问密钥和密钥身份验证
-* 承担角色身份验证
+* 担任的角色身份验证
 
 #### 访问密钥和密钥身份验证
 
@@ -85,16 +85,16 @@ ht-degree: 13%
 
   ![该图像显示了UI中格式正确的PGP密钥的示例。](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-#### 承担的角色 {#assumed-role-authentication}
+#### 担任的角色 {#assumed-role-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_assumed_role"
->title="承担角色身份验证"
->abstract="如果您不想与Adobe共享帐户密钥和密钥，请使用此身份验证类型。 相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。 粘贴您在AWS中为Adobe用户创建的角色的ARN。 模式类似于 `arn:aws:iam::800873819705:role/destinations-role-customer` "
+>title="担任的角色身份验证"
+>abstract="如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。Experience Platform 而是会使用基于角色的访问权限连接到您的 Amazon S3 位置。粘贴您在 AWS 中为 Adobe 用户所创建角色的 ARN。该模式类似于 `arn:aws:iam::800873819705:role/destinations-role-customer` "
 
 ![选择承担的角色身份验证时必填字段的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
 
-如果您不想与Adobe共享帐户密钥和密钥，请使用此身份验证类型。 相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。
+如果您不想与 Adobe 共享帐户密钥和私钥，请使用此身份验证类型。相反，Experience Platform会使用基于角色的访问连接到Amazon S3位置。
 
 为此，您需要在AWS控制台中创建假定用户，以便Adobe [权限必需权限](#required-s3-permission) 以写入您的Amazon S3存储段。 创建 **[!UICONTROL 受信任的实体]** 在AWS中使用Adobe帐户 **[!UICONTROL 670664943635]**. 欲了解更多信息，请参见 [有关创建角色的AWS文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
 
