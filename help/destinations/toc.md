@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: ed3d672c2f6c06259c341c87451d049d00a41268
+source-git-commit: 7ad013cb4359f2d65e78e30bc8472f62f4505b3a
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1196'
 ht-degree: 5%
 
 ---
@@ -107,6 +107,7 @@ ht-degree: 5%
       * [Decibel扩展](./catalog/analytics/decibel.md)
       * [Demandbase扩展](./catalog/analytics/demandbase.md)
       * [DialogTech扩展](./catalog/analytics/dialogtech.md)
+      * [Gainsight PX](./catalog/analytics/gainsight-px.md)
       * [Google全局站点标记扩展](./catalog/analytics/gtag-analytics.md)
       * [Google Universal Analytics扩展](./catalog/analytics/google-universal-analytics.md)
       * [JW Player Analytics (Beta)扩展](./catalog/analytics/jw-player-analytics.md)
