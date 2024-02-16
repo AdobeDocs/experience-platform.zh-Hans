@@ -2,9 +2,9 @@
 title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储区，以根据聚合数据快速返回结果。 本文档提供了查询服务加速查询端点的示例HTTP请求和响应。
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
+source-git-commit: ea2a1cddf299bec750875c4a9125cdd065f18d8b
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '560'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ POST /accelerated-queries
 以下请求将请求正文中的SQL查询提交到加速存储。
 
 ```shell
-curl -X POST https://platform.adobe.io/data/foundation/query/acceleated-queries
+curl -X POST https://platform.adobe.io/data/foundation/query/accelerated-queries
  -H 'Authorization: {ACCESS_TOKEN}'
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}'
@@ -60,7 +60,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/acceleated-queries
 此备用请求将请求正文中的模板ID提交到加速商店。 使用相应模板中的SQL来查询加速存储。
 
 ```shell
-curl -X POST https://platform.adobe.io/data/foundation/query/acceleated-queries
+curl -X POST https://platform.adobe.io/data/foundation/query/accelerated-queries
  -H 'Authorization: {ACCESS_TOKEN}'
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}'
