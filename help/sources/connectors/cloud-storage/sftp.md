@@ -1,44 +1,48 @@
 ---
-keywords: Experience Platform；主页；热门主题；SFTP；sftp
+keywords: Experience Platform；主页；热门主题；SFTP；SFTP
 solution: Experience Platform
 title: SFTP源连接器概述
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 6c22f8243269bb304b12a4e4978ed141ed092c67
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
 
 # SFTP连接器
 
-Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google Cloud Platform]、和 [!DNL Azure]，允许您从这些系统获取数据。
+>[!IMPORTANT]
+>
+>此 [!DNL SFTP] Adobe Experience Platform连接到的服务器必须能够支持分块，这意味着与单个文件的多个连接。 如果您的 [!DNL SFTP] 服务器不支持分块，则您可能会收到阻止文件摄取的错误。
 
-云存储源可以将您自己的数据引入 [!DNL Platform] 无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您通过批量从FTP或SFTP服务器引入数据。
+Adobe Experience Platform为云提供商(如AWS)提供本机连接， [!DNL Google Cloud Platform]、和 [!DNL Azure]，允许您从这些系统获取数据。
+
+云存储源可以将您自己的数据导入 [!DNL Platform] 无需下载、格式化或上传。 引入的数据可以格式化为XDM JSON、XDM Parquet或分隔。 该过程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许通过批量从FTP或SFTP服务器引入数据。
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面，以了解更多信息。
+在使用源连接器之前，必须将IP地址列表添加到允许列表中。 未能将特定于区域的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
 
 ## 文件和目录的命名约束
 
 以下是命名云存储文件或目录时必须考虑的约束列表。
 
 - 目录和文件组件名称不能超过255个字符。
-- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将被自动删除。
-- 以下保留URL字符必须正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
+- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将自动删除。
+- 必须对以下保留的URL字符进行正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
 - 不允许使用以下字符： `" \ / : | < > * ?`.
-- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，还不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)，以及两个点字符(...)。
+- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 
-## 为以下项设置Base64编码的OpenSSH私钥： [!DNL SFTP]
+## 设置Base64编码的OpenSSH私钥，用于 [!DNL SFTP]
 
-此 [!DNL SFTP] 源支持使用进行身份验证 [!DNL Base64] — 编码的OpenSSH私钥。 有关如何生成Base64编码的OpenSSH私钥并连接的信息，请参阅以下步骤 [!DNL SFTP] 到Platform。
+此 [!DNL SFTP] 源支持使用进行身份验证 [!DNL Base64]编码的OpenSSH私钥。 有关如何生成Base64编码的OpenSSH私钥并连接的信息，请参阅以下步骤 [!DNL SFTP] 到Platform。
 
 ### [!DNL Windows] 用户
 
-如果您使用 [!DNL Windows] 机器，打开 **开始** 菜单，然后选择 **设置**.
+如果您使用 [!DNL Windows] 计算机，打开 **开始** 菜单，然后选择 **设置**.
 
 ![设置](../../images/tutorials/create/sftp/settings.png)
 
@@ -50,7 +54,7 @@ Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google
 
 ![可选功能](../../images/tutorials/create/sftp/optional-features.png)
 
-将显示可选功能列表。 如果 **OpenSSH客户端** 已预安装在您的计算机上，则会包含在 **已安装功能** 列表在 **可选功能**.
+将显示可选功能列表。 如果 **OpenSSH客户端** 已预先安装在您的计算机上，则会将其包含在 **已安装功能** 列表在 **可选功能**.
 
 ![open-ssh](../../images/tutorials/create/sftp/open-ssh.png)
 
@@ -80,17 +84,17 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-接下来，在提供私钥的文件路径时运行以下命令，以在中对私钥进行编码 [!DNL Base64]：
+接下来，在提供私钥的文件路径的同时运行以下命令，以在中对您的私钥进行编码 [!DNL Base64]：
 
 ```shell
 C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\id_rsa" -Encoding byte)) > C:\Users\lucy\.ssh\id_rsa_base64
 ```
 
-以上命令保存 [!DNL Base64] — 编码的文件路径中的私钥。 然后，您可以使用该私钥进行身份验证 [!DNL SFTP] 并连接到Platform。
+以上命令保存 [!DNL Base64]指定的文件路径中的经过编码的私钥。 然后，您可以使用该私钥进行身份验证 [!DNL SFTP] 并连接到Platform。
 
 ### [!DNL Mac] 用户
 
-如果您使用 [!DNL Mac]，打开 **终端** 并运行以下命令来生成私钥(在这种情况下，私钥将保存在 `/Documents/id_rsa`)：
+如果您使用 [!DNL Mac]，打开 **终端** 并运行以下命令来生成私钥(在本例中，私钥将保存在 `/Documents/id_rsa`)：
 
 ```shell
 ssh-keygen -t rsa -m pem -f ~/Documents/id_rsa
@@ -115,7 +119,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-接下来，运行以下命令以编码私钥 [!DNL Base64]：
+接下来，运行以下命令对中的私钥进行编码 [!DNL Base64]：
 
 ```shell
 base64 ~/Documents/id_rsa > ~/Documents/id_rsa_base64
@@ -142,14 +146,14 @@ more ~/.ssh/authorized_keys
 
 >[!IMPORTANT]
 >
->用户需要在连接之前禁用SFTP服务器配置中的键盘交互式身份验证。 禁用设置将允许手动输入密码，而不是通过服务或程序输入。 请参阅 [Component Pro文档](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) 有关键盘交互式身份验证的更多信息。
+>用户需要在连接之前禁用SFTP服务器配置中的键盘交互式身份验证。 禁用设置将允许手动输入密码，而不是通过服务或程序输入。 请参阅 [Component Pro文档](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) 有关键盘交互式身份验证的详细信息。
 
 以下文档提供了有关如何将SFTP服务器连接到 [!DNL Platform] 使用API或用户界面：
 
 ### 使用API
 
 - [使用流服务API创建SFTP基本连接](../../tutorials/api/create/cloud-storage/sftp.md)
-- [使用流服务API探索云存储源的数据结构和内容](../../tutorials/api/explore/cloud-storage.md)
+- [使用流量服务API浏览云存储源的数据结构和内容](../../tutorials/api/explore/cloud-storage.md)
 - [使用流服务API为云存储源创建数据流](../../tutorials/api/collect/cloud-storage.md)
 
 ### 使用UI
