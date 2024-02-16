@@ -3,7 +3,7 @@ description: 了解如何在Adobe Experience Platform UI中使用模板来加速
 title: 在 UI 中使用模板创建源数据流
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
+source-git-commit: 4a9cae014a8eba20f93023913f3a73103b16d944
 workflow-type: tm+mt
 source-wordcount: '2241'
 ht-degree: 10%
@@ -51,7 +51,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >id="platform_sources_templates_accounttype"
 >title="选择业务类型"
 >abstract="为您的用例选择适当的业务类型。您的访问权限可能因 Real-Time Customer Data Platform 订阅帐户而异。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans" text="Real-Time CDP 概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP 概述"
 
 在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 并查看Experience Platform中可用的源目录。
 

@@ -6,16 +6,16 @@ exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
 source-git-commit: 665bbd1904e857336a4fb677230389d7977f6b60
 workflow-type: tm+mt
 source-wordcount: '354'
-ht-degree: 0%
+ht-degree: 9%
 
 ---
 
-# 时间约束重构 {#refactorization}
+# 时间限制重构 {#refactorization}
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_segmentBuilder_constraints"
->title="时间约束重构"
->abstract="为了阐明时间约束的使用方式，已移除规则级别和组级别的时间约束。 请将您的限制重写为画布级别或卡片级别的时间限制。"
+>title="时间限制重构"
+>abstract="已删除规则级别和组级别的时间限制以阐明时间限制的用法。请将您的限制重写为画布级别或信息卡级别的时间限制。"
 
 Adobe Experience Platform 2024年1月版对Adobe Experience Platform分段服务进行了更改，在可以定义时间限制的位置添加了新限制。 这些更改会影响使用区段生成器UI新建或编辑的区段。 本指南介绍如何缓解这些更改。
 
