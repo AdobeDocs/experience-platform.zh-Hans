@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 8a9cf0547720927018d728d7cecbf377a1282f6f
+source-git-commit: 345cd259cba2faa2b2b4bafd8ef9d2691d101fd1
 workflow-type: tm+mt
-source-wordcount: '1008'
-ht-degree: 11%
+source-wordcount: '1012'
+ht-degree: 10%
 
 ---
 
@@ -296,6 +296,7 @@ ht-degree: 11%
          - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
       - 数据合作伙伴 {#data-partner}
          - [Merkury企业标识解析](tutorials/ui/create/data-partners/merkury.md)
+         - [Acxiom潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
       - 电子商务 {#ecommerce}
          - [SAP商务](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
