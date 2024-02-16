@@ -2,9 +2,9 @@
 title: 报告包数据的Adobe Analytics Source Connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: ae88ce6f24db669577941b59fdaf18f43e32768f
+source-git-commit: 7812cfa44e1fcbe71d7b6231dc0b31c727c93a31
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1145'
 ht-degree: 2%
 
 ---
@@ -52,11 +52,11 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** 已启用) | &lt; 2分钟 |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **是** 已启用) | 长达30分钟 |
 | 数据湖的新数据 | &lt; 2.25小时 |
-| 向CJA新建数据，不使用 [拼接](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3.75小时 |
-| 通过拼合向CJA添加新数据 | &lt; 7小时 |
+| 无需以下操作即可进行Customer Journey Analytics的新数据 [拼接](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3.75小时 |
+| 要Customer Journey Analytics拼合的新数据 | &lt; 7小时 |
 | 少于100亿个事件的回填 | &lt; 4周 |
 
-有关CJA延迟的更多信息，请参阅： [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en).
+有关Customer Journey Analytics延迟的详细信息，请参阅： [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en).
 
 生产沙盒的Analytics回填默认为13个月。 对于非生产沙盒中的Analytics数据，回填将设置为三个月。 上表中提到的100亿个事件的限制严格与预期延迟有关。
 
