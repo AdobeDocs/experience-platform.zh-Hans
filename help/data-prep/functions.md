@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: f250d8e6e5368a785dcb154dbe0b611baed73a4c
+source-git-commit: 5525e81afe0945716c510ff7a0b06cc7e4d5ee6c
 workflow-type: tm+mt
-source-wordcount: '5459'
+source-wordcount: '5908'
 ht-degree: 2%
 
 ---
@@ -282,6 +282,27 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_version_major&#x200B;(USER_AGENT) | ua_agent_version_major&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
 | ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_agent_name&#x200B;(USER_AGENT) | ua_agent_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
 | ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_device_class&#x200B;(USER_AGENT) | ua_device_class&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 电话 |
+
+{style="table-layout:auto"}
+
+### Analytics函数 {#analytics}
+
+>[!NOTE]
+>
+>请向左/向右滚动以查看表格的全部内容。
+
+| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+| get_event_id | 从Analytics事件字符串中提取事件ID。 | <ul><li>EVENT_STRING： **必填** 逗号分隔的Analytics事件字符串。</li><li>EVENT_NAME： **必填** 要从中提取的事件名称和ID。</li></ul> | get_event_id(EVENT_STRING， EVENT_NAME) | get_event_id(&quot;event101=5：123456，scOpen&quot;， &quot;event101&quot;) | 123456 |
+| get_event_value | 从Analytics事件字符串中提取事件值。 如果未指定事件值，则返回1。 | <ul><li>EVENT_STRING： **必填** 逗号分隔的Analytics事件字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | get_event_value(EVENT_STRING， EVENT_NAME) | get_event_value(&quot;event101=5：123456，scOpen&quot;， &quot;event101&quot;) | 5 |
+| get_product_categories | 从Analytics产品字符串中提取产品类别。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | get_product_categories(PRODUCTS_STRING) | get_product_categories(&quot;；Example product 1；1；3.50，Example category 2；Example product 2；1；5.99&quot;) | [空，“示例category 2”] |
+| get_product_names | 从Analytics产品字符串中提取产品名称。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | get_product_names(PRODUCTS_STRING) | get_product_names(&quot;；Example product 1；1；3.50，Example category 2；Example product 2；1；5.99&quot;) | [&quot;Example product 1&quot;，&quot;Example product 2&quot;] |
+| get_product_quantities | 从Analytics产品字符串中提取数量。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | get_product_quantities(PRODUCTS_STRING) | get_product_quantities（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [“1”，空] |
+| get_product_prices | 从Analytics产品字符串中提取价格。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | get_product_prices(PRODUCTS_STRING) | get_product_prices（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [“3.50”，空] |
+| get_product_events | 从products字符串中提取命名事件作为对象数组。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | get_product_events(PRODUCTS_STRING， EVENT_NAME) | get_product_events（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event2&quot;） | [`{"id": "1","value", "5"}`、`{"id": "2","value", "1"}`] |
+| get_product_event_ids | 从products字符串中抽取命名事件的ID，以字符串数组形式表示。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | get_product_events_ids(PRODUCTS_STRING， EVENT_NAME) | get_product_event_ids（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event2&quot;） | [“1”、“2”] |
+| get_product_event_values | 从products字符串中提取命名事件的值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | get_product_events_values(PRODUCTS_STRING， EVENT_NAME) | get_product_event_values（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event1&quot;） | [“2.3”、“3”] |
+| get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>eVar名称： **必填** 要提取的eVar名称。</li></ul> | get_product_evars(PRODUCTS_STRING， EVENT_NAME) | get_product_evars(&quot;；示例产品；1；6.69；；eVar1=促销值&quot;， &quot;eVar1&quot;) | [“促销价值”] |
 
 {style="table-layout:auto"}
 
