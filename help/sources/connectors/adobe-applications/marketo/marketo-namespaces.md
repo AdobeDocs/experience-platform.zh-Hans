@@ -2,9 +2,9 @@
 title: B2B命名空间和架构
 description: 本文档概述了创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5e8bb04ca18159eab98b2f7f0bba8cb1488a1f26
 workflow-type: tm+mt
-source-wordcount: '1622'
+source-wordcount: '1620'
 ht-degree: 3%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 3%
 
 ## B2B命名空间
 
-身份命名空间是的组件 [[!DNL Identity Service]](../../../../identity-service/home.md) 用于区分身份的内容或类型。 完全限定的身份包括ID值和命名空间。 请参阅 [命名空间概述](../../../../identity-service/features/namespaces.md) 以了解更多信息。
+身份命名空间是的组件 [[!DNL Identity Service]](../../../../identity-service/home.md) 用于区分身份背景的内容。 完全限定的身份包括身份值和命名空间。 阅读 [命名空间概述](../../../../identity-service/features/namespaces.md) 以了解更多信息。
 
 B2B命名空间在实体的主标识中使用。
 
