@@ -4,9 +4,9 @@ description: 了解如何创建和使用帐户受众，以便在下游目标中�
 badgeLimitedAvailability: label="有限可用性" type="Caution"
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 1ff4cb004b7c2f474e2d64f4bcc239c7060f9439
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '1050'
 ht-degree: 0%
 
 ---
@@ -74,3 +74,101 @@ ht-degree: 0%
 ## 后续步骤 {#next-steps}
 
 阅读本指南后，您现在已更好地了解如何在Adobe Experience Platform中创建和使用帐户受众。 要了解如何在Platform中使用其他类型的受众，请阅读 [分段服务UI指南](./overview.md).
+
+## 附录 {#appendix}
+
+以下部分提供了有关帐户受众的其他信息。
+
+### 帐户分段验证 {#validation}
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_eventLookbackWindow"
+>title="最大回看窗口错误"
+>abstract="体验事件的最大回溯时段为30天。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_combinationMaxDepth"
+>title="最大嵌套容器深度错误"
+>abstract="嵌套容器的最大深度为 **5**. 这意味着您 **无法** 创建受众时具有5个以上的嵌套容器。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_combinationMaxBreadth"
+>title="最大规则数量错误"
+>abstract="单个容器中的规则最大数量为 **5**. 这意味着你 **无法** 创建受众时，单个容器中包含五个以上的规则。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_crossEntityMaxDepth"
+>title="最大跨实体金额错误"
+>abstract="单个受众中可以使用的最大交叉实体数为 **5**. 跨实体是指在受众内的不同实体之间进行更改的情况。 例如，从帐户转至人员转至营销列表。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_allowCustomEntity"
+>title="自定义实体错误"
+>abstract="自定义实体为 **非** 允许。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_b2bBuiltInEntities"
+>title="无效的B2B实体错误"
+>abstract="仅允许使用以下B2B实体： `_xdm.context.account`， `_xdm.content.opportunity`， `_xdm.context.profile`， `_xdm.context.experienceevent`， `_xdm.context.account-person`， `_xdm.classes.opportunity-person`， `_xdm.classes.marketing-list-member`， `_xdm.classes.marketing-list`， `_xdm.context.campaign-member`、和 `_xdm.classes.campaign`."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_rhsMaxOptions"
+>title="最大值错误"
+>abstract="单个字段可以检查的最大值数为 **50**."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_allowInSegmentByReference"
+>title="inSegment事件错误"
+>abstract="inSegment事件包括 **非** 允许。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_allowInSegmentByValue"
+>title="inSegment事件错误"
+>abstract="inSegment事件包括 **非** 允许。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_allowSequentialEvents"
+>title="顺序事件错误"
+>abstract="顺序事件包括 **非** 允许。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_allowMaps"
+>title="映射类型属性错误"
+>abstract="映射类型属性为 **非** 允许。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_maxNestedAggregationDepth"
+>title="最大嵌套实体深度错误"
+>abstract="嵌套数组的最大深度为 **5**."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_maxObjectNestingLevel"
+>title="最大嵌套对象数量错误"
+>abstract="允许的最大嵌套对象数为 **10**."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_account_constraint_generic"
+>title="约束违规"
+>abstract="受众违反了限制。 有关详细信息，请阅读链接的文档。"
+
+使用帐户受众时，受众 **必须** 遵守以下限制：
+
+>[!NOTE]
+>
+>以下列表显示了 **默认** 帐户受众的限制。 这些值 **五月** 根据组织管理员实施的设置进行更改。
+
+- 体验事件的最大回顾时间范围为 **30天**.
+- 嵌套容器的最大深度为 **5**.
+   - 这意味着您 **无法** 创建受众时具有5个以上的嵌套容器。
+- 单个容器中的规则最大数量为 **5**.
+   - 这意味着您的受众 **无法** 有五个以上的规则组成您的受众。
+- 可以使用的最大交叉实体数为 **5**.
+   - 跨实体是指在受众内的不同实体之间进行更改的情况。 例如，从帐户转至人员转至营销列表。
+- 自定义实体 **无法** 使用。
+- 单个字段可以检查的最大值数为 **50**.
+   - 例如，如果字段为“City Name”，则可以根据50个城市名称检查该值。
+- 帐户受众 **无法** 使用 `inSegment` 事件。
+- 帐户受众 **无法** 使用顺序事件。
+- 帐户受众 **无法** 使用映射。
+- 嵌套数组的最大深度为 **5**.
+- 嵌套对象的最大数量为 **10**.
