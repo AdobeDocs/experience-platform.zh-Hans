@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
+source-git-commit: ad3b739f300aa51f6f12c566ab49fafedb90be23
 workflow-type: tm+mt
-source-wordcount: '315'
+source-wordcount: '317'
 ht-degree: 19%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 19%
    - [列出用户的页面查看次数](use-cases/list-visitor-sessions.md)
    - [按访客的页面查看次数列出访客](use-cases/visitors-by-number-of-page-views.md)
    - [倾向分数](use-cases/propensity-score.md)
-   - [Lambda函数示例：检索类似记录](use-cases/retrieve-similar-records.md)
+   - [使用高阶函数检索类似记录](use-cases/retrieve-similar-records.md)
    - [从Analytics数据返回和使用促销变量](use-cases/merchandising-variables.md)
    - [SQLAlchemy](use-cases/sqlalchemy.md)
    - [查看访客的汇总报表](use-cases/roll-up-report-of-a-visitor.md)
@@ -106,6 +106,7 @@ ht-degree: 19%
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
    - [Adobe定义的函数](sql/adobe-defined-functions.md)
+   - [高阶函数](sql/higher-order-functions.md)
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
    - [准备的语句](sql/prepared-statements.md)

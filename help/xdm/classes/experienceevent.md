@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
+source-git-commit: f7d8cd295dd6aa11048c3cb0f9a54a3702b83473
 workflow-type: tm+mt
-source-wordcount: '2656'
+source-wordcount: '2672'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 1%
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值提供在 [附录部分](#eventType)，包括目标用例的描述。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType` 限制您只能对应用程序上的每次点击使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关更多信息，请参阅以下部分： [计算字段的最佳实践](#calculated). |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>此属性的某些建议值请参见 [附录部分](#producedBy). 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
 | `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 要正确使用此字段，请执行以下操作 [Real-time Customer Profile](../../profile/home.md)中，请勿尝试在数据操作中手动更新字段内容。<br /><br />请参阅中有关身份映射的部分 [模式组合基础](../schema/composition.md#identityMap) 以了解有关其用例的更多信息。 |
-| `timestamp`<br>**（必需）** | 事件发生时间的ISO 8601时间戳，格式如下 [RFC 3339第5.6节](https://datatracker.ietf.org/doc/html/rfc3339). 此时间戳必须发生在过去。 请参阅以下部分： [时间戳](#timestamps) 以获取有关使用此字段的最佳实践。 |
+| `timestamp`<br>**（必需）** | 事件发生时间的ISO 8601时间戳，格式如下 [RFC 3339第5.6节](https://datatracker.ietf.org/doc/html/rfc3339). 此时间戳 **必须** 发生于过去，但 **必须** 从1970年开始。 请参阅以下部分： [时间戳](#timestamps) 以获取有关使用此字段的最佳实践。 |
 
 {style="table-layout:auto"}
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 ### 时间戳 {#timestamps}
 
-根 `timestamp` 事件架构的字段可以 **仅限** 表示对事件本身的观察，并且必须发生在过去。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
+根 `timestamp` 事件架构的字段可以 **仅限** 表示对事件本身的观察，并且必须发生在过去。 但是，该事件 **必须** 从1970年开始。 如果分段用例需要使用将来可能发生的时间戳，则这些值必须限制在体验事件架构中的其他位置。
 
 例如，如果旅游和酒店业的某个企业正在建模航班预订事件，则班级级别 `timestamp` 字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应捕获在标准或自定义字段组提供的单独字段中。
 

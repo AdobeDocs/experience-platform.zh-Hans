@@ -4,10 +4,10 @@ title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件营销活动。 了解哪些ESP支持作为Experience Platform目标。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 4566d5241f287801569e0cfa5b86ea6210fd1638
 workflow-type: tm+mt
-source-wordcount: '374'
-ht-degree: 5%
+source-wordcount: '376'
+ht-degree: 3%
 
 ---
 
@@ -23,7 +23,8 @@ Adobe Experience Platform支持以下电子邮件营销目标：
 
 * [Adobe Campaign](adobe-campaign.md)
 * [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)
-* [Mailchimp 兴趣类别](mailchimp-interest-categories.md)
+* [Mailchimp兴趣类别](mailchimp-interest-categories.md)
+* [Mailchimp标记](mailchimp-tags.md)
 * [(API)OracleEloqua](oracle-eloqua-api.md)
 * [(API) [!DNL Salesforce Marketing Cloud]](salesforce-marketing-cloud-exact-target.md)
 * [（文件）OracleEloqua](oracle-eloqua.md)
@@ -45,7 +46,7 @@ Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-
 | 唯一标识符 | 统一架构中的XDM字段 |
 |----------------- | ---------------------------|
 | Email Address | `personalEmail.address` |
-| Phone | `mobilePhone.number` |
+| 电话 | `mobilePhone.number` |
 | 忠诚度计划ID | `Customer-defined XDM field` |
 
 {style="table-layout:auto"}
@@ -58,12 +59,12 @@ Adobe建议您从 [合并架构](../../../profile/home.md#profile-fragments-and-
 |------ | ---------|
 | 名字 | `person.name.firstName` |
 | 姓氏 | `person.name.lastName` |
-| Phone | `mobilePhone.number` |
+| 电话 | `mobilePhone.number` |
 | 地址城市 | `homeAddress.city` |
 | 地址状态 | `homeAddress.stateProvince` |
 | 地址邮政编码 | `homeAddress.postalCode` |
 | 生日 | `person.birthDayAndMonth` |
-| 区段会员资格 | `segmentMembership.status` |
+| 区段成员资格 | `segmentMembership.status` |
 
 {style="table-layout:auto"}
 

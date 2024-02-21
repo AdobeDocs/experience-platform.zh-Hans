@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 7ad013cb4359f2d65e78e30bc8472f62f4505b3a
+source-git-commit: c2e446ed89ef8a2c4496cd1d442d0204843dab2e
 workflow-type: tm+mt
-source-wordcount: '1196'
-ht-degree: 5%
+source-wordcount: '1202'
+ht-degree: 4%
 
 ---
 
@@ -139,6 +139,8 @@ ht-degree: 5%
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
+   * 电子商务目标 {#ecommerce}
+      * [SAP商务](./catalog/ecommerce/sap-commerce.md)
    * 电子邮件目标 {#email}
       * [Bizible扩展](./catalog/email/bizible.md)
       * [Marketo扩展](./catalog/email/marketo.md)
@@ -149,6 +151,7 @@ ht-degree: 5%
       * [Adobe Campaign连接](./catalog/email-marketing/adobe-campaign.md)
       * [Adobe Campaign Managed Cloud Services连接](./catalog/email-marketing/adobe-campaign-managed-services.md)
       * [Mailchimp兴趣类别](./catalog/email-marketing/mailchimp-interest-categories.md)
+      * [Mailchimp标记](./catalog/email-marketing/mailchimp-tags.md)
       * [(API)OracleEloqua连接](./catalog/email-marketing/oracle-eloqua-api.md)
       * [（文件）OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [oracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)

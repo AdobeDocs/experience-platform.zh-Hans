@@ -2,9 +2,9 @@
 title: 在UI中创建Adobe Analytics源连接
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据接入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: c38e25a939319fa3b3301af36482c8efe6c3dd5f
+source-git-commit: f177a8058f6533151978bfd7b8bba4845792f5ed
 workflow-type: tm+mt
-source-wordcount: '2695'
+source-wordcount: '2755'
 ht-degree: 4%
 
 ---
@@ -168,7 +168,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) -->
 
-### 筛选实时客户配置文件 {#filtering-for-profile}
+## 筛选实时客户配置文件 {#filtering-for-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_analytics_filtering"
@@ -196,7 +196,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 >[!ENDSHADEBOX]
 
-#### 行级筛选
+### 行级筛选
 
 >[!IMPORTANT]
 >
@@ -254,7 +254,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![exclude-examples](../../../../images/tutorials/create/analytics/exclude-examples.png)
 
-#### 列级筛选
+### 列级筛选
 
 选择 **[!UICONTROL 列筛选条件]** 以应用列级筛选。
 
@@ -267,6 +267,14 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 完成后，选择 **[!UICONTROL 下一个]**.
 
 ![列已选择](../../../../images/tutorials/create/analytics/columns-selected.png)
+
+### 筛选次要身份
+
+使用列筛选器从配置文件摄取中排除辅助身份。 要筛选次要身份，请选择 **[!UICONTROL 列筛选条件]** 然后选择 **[!UICONTROL _identities]**.
+
+仅当标识被标记为次要标识时，该过滤器才适用。 如果选择了身份，但某个事件到达时带有标记为主ID之一，则不会过滤掉这些身份。
+
+![次要身份](../../../../images/tutorials/create/analytics/secondary-identities.png)
 
 ### 提供数据流详细信息
 

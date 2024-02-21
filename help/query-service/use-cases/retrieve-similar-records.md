@@ -1,19 +1,21 @@
 ---
-title: Lambda函数示例 — 检索类似记录
+title: 使用高阶函数检索类似记录
 description: 了解如何基于相似性量度和相似性阈值，从一个或多个数据集识别和检索相似或相关记录。 此工作流可突出显示不同数据集之间的有意义的关系或重叠。
 exl-id: 4810326a-a613-4e6a-9593-123a14927214
-source-git-commit: 20624b916bcb3c17e39a402d9d9df87d0585d4b8
+source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
 workflow-type: tm+mt
-source-wordcount: '4011'
+source-wordcount: '4031'
 ht-degree: 3%
 
 ---
 
-# Lambda函数示例：检索类似记录
+# 使用高阶函数检索类似记录
 
-通过使用Data Distiller lambda函数从一个或多个数据集中标识和检索相似或相关记录，解决几个常见用例。 您可以使用此指南识别来自不同数据集的产品，这些产品在其特征或属性方面具有显着相似性。 本文档中的方法提供了解决方案：重复数据删除、记录链接、推荐系统、信息检索、文本分析等。
+使用Data Distiller高阶函数解决各种常见用例。 要识别一个或多个数据集的类似或相关记录并进行检索，请使用本指南中详述的过滤器、转换和缩减函数。 要了解如何使用高位函数处理复杂的数据类型，请参阅有关如何处理复杂数据类型的 [管理阵列和映射数据类型](../sql/higher-order-functions.md).
 
-文档描述了相似度连接的实现过程，然后使用Data Distiller lambda函数计算数据集之间的相似度，并根据选定的属性过滤它们。 为过程的每个步骤提供了SQL代码段和解释。 工作流使用Jaccard相似性度量实现相似性连接，并使用Data Distiller lambda函数进行标记化。 然后使用这些方法基于相似性度量从一个或多个数据集识别和检索相似或相关的记录。 该流程的关键部分包括： [使用lambda函数的标记化](#data-transformation)， [独特元素的交叉联接](#cross-join-unique-elements)， [Jaccard相似度计算](#compute-the-jaccard-similarity-measure)，和 [基于阈值的滤波](#similarity-threshold-filter).
+使用本指南可以识别来自不同数据集的产品，这些产品在其特征或属性方面具有显着相似性。 此方法为以下方面提供了解决方案：重复数据删除、记录链接、推荐系统、信息检索、文本分析等。
+
+该文档描述了相似度连接的实现过程，然后使用Data Distiller的高阶函数计算数据集之间的相似度并根据选定的属性过滤它们。 为过程的每个步骤提供了SQL代码段和解释。 工作流使用Jaccard相似性度量实现相似性连接，使用Data Distiller高阶函数进行标记化。 然后使用这些方法基于相似性度量从一个或多个数据集识别和检索相似或相关的记录。 该流程的关键部分包括： [使用高阶函数的标记化](#data-transformation)， [独特元素的交叉联接](#cross-join-unique-elements)， [Jaccard相似度计算](#compute-the-jaccard-similarity-measure)，和 [基于阈值的滤波](#similarity-threshold-filter).
 
 ## 先决条件
 
@@ -24,11 +26,11 @@ ht-degree: 3%
    - **阈值**：使用相似度阈值来确定两个记录何时被视为相似度足以包含在连接结果中。 相似度分数高于阈值的记录被视为匹配。
 - 此 **Jaccard相似性** index，或Jaccard similarity measurement，是一种用于衡量样本集相似性和多样性的统计量。 它定义为交集的大小除以样本集的并集的大小。 Jaccard相似性度量的范围从0到1。 Jaccard相似度为零表示集合之间没有相似性，Jaccard相似度为1表示集合相同。
   ![文氏图说明了雅卡相似性度量。](../images/use-cases/jaccard-similarity.png)
-- **Lambda函数** 在Data Distiller中，这些是匿名的内联函数，可以在SQL语句中定义和使用。 由于能够创建可作为数据传递的简洁即时函数，因此它们经常用于高阶函数。 Lambda函数通常用于高阶函数，如 `transform`， `filter`、和 `array_sort`. 在不需要定义完整函数的情况下，Lambda函数特别有用，并且可以在内联使用简短的一次性函数。
+- **高阶函数** 在Data Distiller中，它们是动态的内联工具，可直接在SQL语句中处理和转换数据。 这些通用函数省去了数据操作中的多个步骤，尤其是当 [处理复杂类型，如数组和映射](../sql/higher-order-functions.md). 通过提高查询效率和简化转换，高阶函数有助于在各种业务情景下更灵活地分析和更好地决策。
 
 ## 快速入门
 
-需要数据Distiller SKU才能对Adobe Experience Platform数据执行lambda函数。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+需要数据Distiller SKU才能对Adobe Experience Platform数据执行更高阶的功能。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
 
 ## 建立相似性 {#establish-similarity}
 
@@ -319,7 +321,7 @@ FROM
 
 +++
 
-### 确保设置令牌长度
+### 确保设置令牌长度 {#ensure-set-token-length}
 
 可以将其他条件添加到语句中，以确保生成的序列具有特定长度。 以下SQL语句通过使 `transform` 函数比较复杂。 语句使用 `filter` 函数范围 `transform` 以确保生成的序列长度为6个字符。 它通过将NULL值指定给这些职位来处理不可能出现的情况。
 
@@ -355,11 +357,11 @@ FROM
 
 +++
 
-## 使用Data Distiller lambda函数探索解决方案 {#lambda-function-solutions}
+## 使用Data Distiller高阶函数探索解决方案 {#higher-order-function-solutions}
 
-Lambda函数是强大的构造，允许您实现“编程”，如Data Distiller中的语法。 它们可用于对数组中的多个值迭代函数。
+高阶函数是功能强大的构造，允许您实现“编程”，如Data Distiller中的语法。 它们可用于对数组中的多个值迭代函数。
 
-在Data Distiller的环境中，lambda函数是创建n元格和迭代字符序列的理想方法。
+在数据Distiller的上下文中，高阶函数非常适合于创建n元组和字符序列迭代。
 
 此 `reduce` 函数，尤其是在生成的序列中使用 `transform`提供了获取累计值或汇总的方法，这些值或汇总在各种分析和计划流程中可能至关重要。
 
@@ -371,7 +373,7 @@ SELECT transform(
     x -> reduce(
         sequence(1, x),  
         0,  -- Initial accumulator value
-        (acc, y) -> acc + y  -- Lambda function to add numbers
+        (acc, y) -> acc + y  -- Higher-order function to add numbers
     )
 ) AS sum_result;
 ```
@@ -381,17 +383,17 @@ SELECT transform(
 - 第1行： `transform` 应用函数 `x -> reduce` 序列中生成的每个元素。
 - 第2行： `sequence(1, 5)` 生成从1到5的数字序列。
 - 第3行： `x -> reduce(sequence(1, x), 0, (acc, y) -> acc + y)` 对序列（从1到5）中的每个元素x执行缩减操作。
-   - 此 `reduce` 函数采用初始累加器值0，从1到当前值的序列 `x`和lambda函数 `(acc, y) -> acc + y` 以添加数字。
-   - Lambda函数 `acc + y` 通过将当前值相加来累加总和 `y` 到蓄电池 `acc`.
+   - 此 `reduce` 函数采用初始累加器值0，从1到当前值的序列 `x`和高阶函数 `(acc, y) -> acc + y` 以添加数字。
+   - 高阶函数 `acc + y` 通过将当前值相加来累加总和 `y` 到蓄电池 `acc`.
 - 第8行： `AS sum_result` 将结果列重命名为sum_result。
 
-总之，此lambda函数采用两个参数(`acc` 和 `y`)并定义要执行的操作，在本例中，为 `y` 到蓄电池 `acc`. 在还原过程中，对序列中的每个元素执行此lambda函数。
+总而言之，此高阶函数采用两个参数(`acc` 和 `y`)并定义要执行的操作，在本例中，为 `y` 到蓄电池 `acc`. 在缩减过程中，为序列中的每个元素执行此高阶函数。
 
 此语句的输出是单列(`sum_result`)，其中包含从1到5的数字的累积和。
 
-### Lambda函数的值 {#value-of-lambda-functions}
+### 高阶函数的值 {#value-of-higher-order-functions}
 
-本节将分析一个精简版的tri-gram SQL语句，以更好地了解Data Distiller中lambda函数的值，从而更有效地创建n个语法。
+本节将分析三元组SQL语句的精简版本，以更好地了解Data Distiller中高位函数的值，从而更有效地创建n元组。
 
 以下报表乃根据中国附 `ProductName` 中的列 `featurevector1` 表格。 它使用从生成的序列获得的位置，生成从表中的修改的产品名称派生的一组三个字符的子字符串。
 
@@ -407,11 +409,11 @@ FROM
 
 以下是对SQL语句的分析：
 
-- 第2行： `transform` 将lambda函数应用于序列中的每个整数。
+- 第2行： `transform` 将高次函数应用于序列中的每个整数。
 - 第3行： `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)` 从以下位置生成整数序列 `1` 修改后的产品名称长度减去2。
    - `length(lower(replace(ProductName, ' ', '')))` 计算 `ProductName` 使其变为小写并删除空格后。
    - `- 2` 从长度中减二以确保该序列为3个字符的子字符串生成有效的起始位置。 减去2可确保在每个起始位置之后有足够的字符来提取由3个字符组成的子字符串。 此处的子字符串函数的操作方式类似于lookahead运算符。
-- 第4行： `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` 是对每个整数进行操作的lambda函数 `i` 在生成的序列中。
+- 第4行： `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` 是一个针对每个整数运行的高阶函数 `i` 在生成的序列中。
    - 此 `substring(...)` 函数从 `ProductName` 列。
    - 在提取子字符串之前， `lower(replace(ProductName, ' ', ''))` 转换 `ProductName` 小写并删除空格以确保一致性。
 
@@ -707,6 +709,10 @@ WHERE jaccard_similarity>=0.4
 
 ### 后续步骤 {#next-steps}
 
-通过阅读本文档，您现在可以使用此逻辑来突出显示不同数据集之间有意义的关系或重叠。 从不同数据集中识别在特征或属性方面具有显着相似性的产品的能力在现实世界中有着众多应用。 此逻辑可用于产品匹配（将类似的产品分组或推荐给客户）、数据清理（提高数据质量）和购物篮分析（提供对客户行为、偏好和潜在交叉销售机会的洞察）等场景。
+通过阅读本文档，您现在可以使用此逻辑来突出显示不同数据集之间有意义的关系或重叠。 从不同数据集中识别具有显着相似性的产品特征或属性的能力在现实世界中有着众多应用。 此逻辑可用于以下场景：
+
+- 产品匹配：对客户分组或推荐类似产品。
+- 数据清理：提高数据质量。
+- 购物篮分析：分析客户行为、偏好和潜在的交叉销售机会。
 
 如果您尚未这样做，建议您阅读 [AI/ML功能管道概述](../data-distiller/ml-feature-pipelines/overview.md). 使用该概述了解Data Distiller和您的首选机器学习如何构建自定义数据模型，以支持带有Experience Platform数据的营销用例。
