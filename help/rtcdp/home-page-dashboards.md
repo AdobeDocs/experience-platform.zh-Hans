@@ -38,7 +38,7 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 >id="platform_home_metrics_totalProfiles"
 >title="配置文件总数"
 >abstract="您的组织在 Experience Platform 中拥有的配置文件的总数。此计数基于您组织的合并策略，并且不包括配置文件片段。每 24 小时更新一次配置文件数。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="请在文档中了解详情"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=zh-Hans#profile-count" text="请在文档中了解详情"
 
 量度仪表板可显示有关Experience Platform数据的最新信息。 仪表板分为两个部分：
 

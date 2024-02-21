@@ -5,8 +5,8 @@ description: 本文档提供了有关Adobe Experience Platform中基于属性的
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
 source-git-commit: 2b3c4a7aed804a1059708a698f3ba5edfb007926
 workflow-type: tm+mt
-source-wordcount: '1739'
-ht-degree: 21%
+source-wordcount: '1714'
+ht-degree: 18%
 
 ---
 
@@ -51,7 +51,7 @@ ht-degree: 21%
 
 [!UICONTROL 权限] 是Experience Cloud区域，管理员可以在其中定义用户角色和策略，以管理产品应用程序内功能和对象的权限。
 
-到 [!UICONTROL 权限]中，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限还允许您管理与特定角色关联的标签、沙盒和用户。]
+到 [!UICONTROL 权限]中，您可以创建和管理角色，并为这些角色分配所需的资源权限。 [!UICONTROL 权限] 还允许您管理与特定角色关联的标签、沙盒和用户。
 
 如果您没有管理员权限，请与系统管理员联系以获得访问权限。
 
@@ -67,25 +67,25 @@ ht-degree: 21%
 >id="platform_permissions_labels_about"
 >title="标签是什么？"
 >abstract="通过标签，可根据适用于数据的使用策略将数据集和字段分类。Platform 提供若干由 Adobe 定义的“核心”数据使用标签，这些标签涵盖适用于数据治理的多种常见限制。例如，通过 RHD（受监管的健康数据）等敏感的“S”标签，可将涉及受保护的健康信息 (PHI) 的数据分类。还可自行定义适合组织需求的自定义标签。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#understanding-data-usage-labels" text="数据使用标签概述"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#understanding-data-usage-labels" text="数据使用标签概述"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_labels_about_create"
 >title="创建新标签"
 >abstract="可自行创建自定义标签以适合组织需求。自定义标签可用于将数据治理和访问控制配置应用于您的数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html#manage-labels" text="管理自定义标签"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=zh-Hans#manage-labels" text="管理自定义标签"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about"
 >title="角色是什么？"
 >abstract="角色是将与您的 Platform 实例交互的用户的类型分类的方法，还是访问控制策略的构建块。一个角色具有一组给定的权限，可将您组织的成员分配给一个或多个角色，具体取决于他们需要的查看或写入访问权限的范围。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="管理角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans" text="管理角色"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="创建新角色"
 >abstract="可创建新角色以更好地将访问您的 Platform 实例的用户分类。例如，可为内部营销团队创建一个角色，并将 RHD 标签应用于该角色，使您的内部营销团队可访问受保护的健康信息 (PHI)。或者，还可为外部机构创建一个角色，并通过不将 RHD 标签应用于该角色而拒绝该角色访问 PHI 数据。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html#create-a-new-role" text="创建新角色"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=zh-Hans#create-a-new-role" text="创建新角色"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_details"
@@ -254,7 +254,7 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 
 您已完成将标签应用于角色、架构字段和区段。 分配给这些角色的外部机构无法查看这些标签及其在架构、数据集和配置文件视图中的值。 在使用区段生成器时，也不允许在区段定义中使用这些字段。
 
-有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](./overview.md)。
+有关基于属性的访问控制的详细信息，请参见 [基于属性的访问控制概述](./overview.md).
 
 以下视频旨在支持您了解基于属性的访问控制，并概述如何配置角色、资源和策略。
 

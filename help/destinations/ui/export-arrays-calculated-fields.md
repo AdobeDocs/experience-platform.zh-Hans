@@ -6,8 +6,8 @@ badge: Beta 版
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
 source-git-commit: b6bdfef8b9ac5ef03ea726d668477b8629b70b6c
 workflow-type: tm+mt
-source-wordcount: '1497'
-ht-degree: 7%
+source-wordcount: '1481'
+ht-degree: 5%
 
 ---
 
@@ -17,8 +17,8 @@ ht-degree: 7%
 >id="platform_destinations_export_arrays_flat_files"
 >title="(Beta) 导出数组支持"
 >abstract="使用&#x200B;**添加计算字段**&#x200B;控件，将整型、字符串或布尔值的简单数组从 Experience Platform 导出到所需的云存储目标。其中适用一些限制。查看文档以了解大量示例和支持的函数。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="示例"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="已知限制"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html?lang=zh-Hans#examples" text="示例"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html?lang=zh-Hans#known-limitations" text="已知限制"
 
 >[!AVAILABILITY]
 >
