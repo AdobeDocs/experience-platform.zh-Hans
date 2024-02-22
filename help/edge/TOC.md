@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
+source-git-commit: 82eede9e59338e8438c361d58b476960b7faa5cb
 workflow-type: tm+mt
-source-wordcount: '184'
-ht-degree: 28%
+source-wordcount: '188'
+ht-degree: 23%
 
 ---
 
@@ -46,6 +46,7 @@ ht-degree: 28%
    * [呈现个性化内容](personalization/rendering-personalization-content.md)
    * [通过混合实施进行个性化](personalization/hybrid-personalization.md)
    * [管理闪烁](personalization/manage-flicker.md)
+
    * Adobe Target {#adobe-target}
       * [概述](personalization/adobe-target/target-overview.md)
       * [单页应用程序实施](personalization/adobe-target/spa-implementation.md)
@@ -54,13 +55,14 @@ ht-degree: 28%
       * [将at.js库与Web SDK进行比较](personalization/adobe-target/web-sdk-atjs-comparison.md)
       * Analytics for Target (A4T)日志记录 {#a4t}
          * [概述](personalization/adobe-target/analytics-logging/overview.md)
-         * [客户端 记录](personalization/adobe-target/analytics-logging/client-side.md)
+         * [客户端日志记录](personalization/adobe-target/analytics-logging/client-side.md)
          * [服务器端日志记录](personalization/adobe-target/analytics-logging/server-side.md)
-   * Offer Decisioning {#offer-decisioning}
+   * offer decisioning {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [概述](personalization/ajo/overview.md)
       * [单页应用程序实施](personalization/ajo/web-spa-implementation.md)
+      * [配置Web应用程序内消息传送](personalization/web-in-app-messaging.md)
 * 同意 {#consent}
    * [支持同意](consent/supporting-consent.md)
    * IAB透明度和同意框架2.0 {#iab-tcf}
