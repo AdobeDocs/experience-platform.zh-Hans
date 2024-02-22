@@ -3,16 +3,24 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: d5a22d4692226c865f6489c821366b4ce8bc2887
 workflow-type: tm+mt
-source-wordcount: '1791'
+source-wordcount: '1972'
 ht-degree: 1%
 
 ---
 
 # [!DNL Google Customer Match] 连接
 
-## 概述 {#overview}
+>[!IMPORTANT]
+>
+> Google将发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)， [客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)，和 [显示和视频360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) ，以支持 [数字市场法案](https://digital-markets-act.ec.europa.eu/index_en) (DMA)在欧盟([欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/))。 预计这些对同意要求的更改将从2024年3月6日起生效。
+><br/><br/>
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+><br/><br/>
+>已购买AdobePrivacy &amp; Security Shield并配置了 [同意政策](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 无需执行任何操作，即可过滤掉未经同意的用户档案。
+><br/><br/>
+>未购买AdobePrivacy &amp; Security Shield的客户必须使用 [区段定义](../../../segmentation/home.md#segment-definitions) 中的功能 [区段生成器](../../../segmentation/ui/segment-builder.md) 筛选未经同意的用户档案，以便能够继续使用现有的Real-Time CDP Google目标，而不会出现中断。
 
 [[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) 让您能够在Google自有资产和运营资产中，使用在线和离线数据联系客户并重新吸引客户，例如： [!DNL Search]， [!DNL Shopping]， [!DNL Gmail]、和 [!DNL YouTube].
 

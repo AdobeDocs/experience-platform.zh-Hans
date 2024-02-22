@@ -3,16 +3,25 @@ keywords: google广告管理器；google广告；doubleclick；DoubleClick AdX�
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: d5a22d4692226c865f6489c821366b4ce8bc2887
 workflow-type: tm+mt
-source-wordcount: '941'
-ht-degree: 5%
+source-wordcount: '1122'
+ht-degree: 4%
 
 ---
 
 # [!DNL Google Ad Manager] 连接
 
-## 概述 {#overview}
+>[!IMPORTANT]
+>
+> Google将发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)， [客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)，和 [显示和视频360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) ，以支持 [数字市场法案](https://digital-markets-act.ec.europa.eu/index_en) (DMA)在欧盟([欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/))。 预计这些对同意要求的更改将从2024年3月6日起生效。
+><br/><br/>
+>为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
+><br/><br/>
+>已购买AdobePrivacy &amp; Security Shield并配置了 [同意政策](../../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 无需执行任何操作，即可过滤掉未经同意的用户档案。
+><br/><br/>
+>未购买AdobePrivacy &amp; Security Shield的客户必须使用 [区段定义](../../../segmentation/home.md#segment-definitions) 中的功能 [区段生成器](../../../segmentation/ui/segment-builder.md) 筛选未经同意的用户档案，以便能够继续使用现有的Real-Time CDP Google目标，而不会出现中断。
+
 
 [!DNL Google Ad Manager]，以前称为 [!DNL DoubleClick for Publishers] (DFP)或 [!DNL DoubleClick AdX]是一个广告服务平台，来自 [!DNL Google] 这给了出版商管理其网站上通过视频和移动应用程序展示广告的方式。
 
