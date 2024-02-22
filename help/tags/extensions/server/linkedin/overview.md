@@ -3,9 +3,9 @@ title: Linkedin转化API事件转发扩展
 description: 通过这个Adobe Experience Platform事件转发扩展，您可以衡量Linkedin营销活动的效果。
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 411e7b77-081e-4139-ba34-04468e519ea5
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 0d6ade1a0b6c00a4f87395d476dd7e7915489ea5
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-您必须在 [!DNL LinkedIn] 营销活动广告帐户。 [!DNL Adobe] 建议在对话规则名称的开头包含“CAPI”，以将其与您可能已配置的其他转化规则类型区分开来。
+您必须 [创建转化规则](https://www.linkedin.com/help/lms/answer/a1657171) 在您的 [!DNL LinkedIn Campaign Manager] 帐户。 [!DNL Adobe] 建议在对话规则名称的开头包含“CAPI”，以将其与您可能已配置的其他转化规则类型区分开来。
 
 ### 创建密钥和数据元素
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 设置完所有数据元素后，您可以开始创建事件转发规则，以确定将事件发送到的时间和方式 [!DNL LinkedIn].
 
-创建新的事件转发 [规则](../../../ui/managing-resources/rules.md) 在事件转发属性中。 下 **[!UICONTROL 操作]**，添加新操作并将扩展设置为 **[!UICONTROL linkedIn]**. 接下来，选择 **[!UICONTROL 发送Web转换]** 对于 **[!UICONTROL 操作类型]**.
+创建新的事件转发 [规则](../../../ui/managing-resources/rules.md) 在事件转发属性中。 下 **[!UICONTROL 操作]**，添加新操作并将扩展设置为 **[!UICONTROL linkedIn]**. 接下来，选择 **[!UICONTROL 发送转换]** 对于 **[!UICONTROL 操作类型]**.
 
 ![Event Forwarding Property Rules视图，突出显示添加事件转发规则操作配置所需的字段。](../../../images/extensions/server/linkedin/linkedin-event-action.png)
 
@@ -62,11 +62,11 @@ ht-degree: 1%
 
 | 输入 | 描述 |
 | --- | --- |
-| [!UICONTROL 转化] | 在中创建的转化规则的ID [linkedIn营销活动管理器](https://www.linkedin.com/help/lms/answer/a1657171) 或通过 [!DNL LinkedIn Campaign Manager]. |
+| [!UICONTROL 转化] | 在中创建的转化规则的ID [linkedIn营销活动管理器](https://www.linkedin.com/help/lms/answer/a1657171). 选择转换规则以获取ID，然后从浏览器URL中复制该ID(例如， `/campaignmanager/accounts/508111232/conversions/15588877`)作为 `/conversions/<id>`. |
 | [!UICONTROL 转化时间] | 转化事件发生的每个时间戳（以毫秒为单位）。 <br><br> 注意：如果源以秒为单位记录转化时间戳，请在结尾插入000以将其转换为毫秒。 |
 | [!UICONTROL 货币] | ISO格式的货币代码。 |
 | [!UICONTROL 数量] | 以小数字符串表示的转换值（例如，“100.05”）。 |
-| [!UICONTROL 事件ID] | 广告商为指示每个事件而生成的唯一ID。 这是一个可选字段，用于删除重复项。 |
+| [!UICONTROL 事件ID] | 广告商为指示每个事件而生成的唯一ID。 这是一个可选字段，用于 [删除重复项](https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication?view=li-lms-2024-02). |
 
 {style="table-layout:auto"}
 
@@ -86,4 +86,6 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本指南介绍了如何将数据发送到 [!DNL LinkedIn] 使用 [!DNL LinkedIn Conversions API] 事件转发扩展。 有关中的事件转发功能的详细信息 [!DNL Adobe Experience Platform]，请参阅 [事件转发概述](../../../ui/event-forwarding/overview.md).
+本指南介绍了如何将数据发送到 [!DNL LinkedIn] 使用 [!DNL LinkedIn Conversions API] 事件转发扩展。 有关中的事件转发功能的详细信息 [!DNL Adobe Experience Platform]，阅读 [事件转发概述](../../../ui/event-forwarding/overview.md).
+
+有关如何使用Debugger和Event Forwarding Monitoring工具调试Experience Platform的详细信息，请参阅 [Adobe Experience Platform Debugger概述](../../../../debugger/home.md) 和 [监测事件转发中的活动](../../../ui/event-forwarding/monitoring.md).
