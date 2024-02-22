@@ -4,7 +4,7 @@ title: Real-time Customer Data Platform概述
 description: Adobe Real-time Customer Data Platform概述
 feature: Get Started
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: ab87434b753c1231f01cde85637081eb08fce356
+source-git-commit: f89665837b75dc4305073d675c4c05b04302c85e
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 0%
@@ -49,11 +49,11 @@ Real-Time CDP可连接到由众多合作伙伴组成的大型生态系统，更�
 * [Real-time Customer Data Platform （B2B版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform （B2P版本 — Prime和Ultimate包）](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 
-### Adobe Real-time Customer Data Platform — 企业对消费者(B2C)版
+### Adobe Real-time Customer Data Platform — 企业对消费者(B2C)版 {#rtcdp-b2c}
 
 Real-Time CDP Business-to-Consumer (B2C)是为B2C营销人员专门构建的，用于统一、管理和激活所有 *使用者数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧。
 
-### Adobe Real-time Customer Data Platform - Business-to-Business (B2B)版本
+### Adobe Real-time Customer Data Platform - Business-to-Business (B2B)版本 {#rtcdp-b2b}
 
 Real-Time CDP Business-to-Business (B2B)是为B2B营销人员专门构建的，用于统一、管理和激活所有 *商机和帐户数据* 跨系统和渠道，提供更加个性化的客户体验和完整的数据让您高枕无忧
 
@@ -61,7 +61,7 @@ Real-Time CDP B2B版本允许营销人员为人员和帐户创建完整的配置
 
 请参阅 [Real-Time CDP B2B版本概述](./b2b-overview.md) 以了解更全面的信息。
 
-### Adobe Real-time Customer Data Platform — 企业对个人(B2P)版本
+### Adobe Real-time Customer Data Platform — 企业对个人(B2P)版本 {#rtcdp-b2p}
 
 使用Real-Time CDP的企业对个人(B2P)版本，您可以统一、管理和激活您的 *B2C和B2B客户数据* 使用单个CDP跨所有业务线定位同一人，提供无缝体验和完全的数据让您高枕无忧。
 

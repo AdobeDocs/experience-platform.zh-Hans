@@ -2,12 +2,12 @@
 title: 将帐户受众激活到目标
 type: Tutorial
 description: 了解如何将帐户受众激活到目标
-badgeLimitedAvailability: label="有限可用性" type="Caution"
-badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B版本" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f07eb12b4625bce117e1fe524727c00b7188aa5e
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->将帐户受众激活到目标的功能仅在 [Real-time Customer Data Platform的B2B版本](../../rtcdp/b2b-overview.md). 此外，帐户受众功能当前正在 **有限可用性**. 请联系Adobe客户关怀或您的Adobe代表，请求访问此功能。
+>公司可以使用此功能将帐户受众激活到目标。 [企业对企业](/help/rtcdp/overview.md#rtcdp-b2b) 和 [企业对个人](/help/rtcdp/overview.md#rtcdp-b2b) Real-time Customer Data Platform各版。
 
 本文介绍了导出所需的工作流 [帐户受众](/help/segmentation/ui/account-audiences.md) 从Adobe Experience Platform到您的首选目标。
 
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 ## 重要标头和已知限制 {#important-callouts-known-limitations}
 
-请注意以下重要说明和已知限制，了解如何限量发布激活帐户受众的功能。
+请注意激活帐户受众功能的正式发布中的以下重要说明和已知限制。
 
 ### 将帐户受众激活到时，映射步骤中所需的映射对 **[!UICONTROL （公司） LinkedIn匹配的受众]** 目标 {#required-mappings}
 

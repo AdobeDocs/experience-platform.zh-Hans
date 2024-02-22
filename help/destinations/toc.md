@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 767ebd1ef693f9484e11facc7e8b73d91f632956
+source-git-commit: 05ff789d71c693854fb84d1661c2bef8aba0bff8
 workflow-type: tm+mt
-source-wordcount: '1203'
+source-wordcount: '1201'
 ht-degree: 4%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 4%
       * [激活受众以边缘个性化目标](./ui/activate-edge-personalization-destinations.md)
       * [根据LiveRamp标识符将受众激活到策划的目标](./ui/activate-curated-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
-      * [（可用性有限）将帐户受众激活到目标](./ui/activate-account-audiences.md)
+      * [将帐户受众激活到目标](./ui/activate-account-audiences.md)
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
