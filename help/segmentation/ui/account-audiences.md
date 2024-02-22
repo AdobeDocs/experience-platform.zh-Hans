@@ -1,12 +1,12 @@
 ---
 title: 帐户受众
 description: 了解如何创建和使用帐户受众，以便在下游目标中定位帐户配置文件。
-badgeLimitedAvailability: label="有限可用性" type="Caution"
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 1ff4cb004b7c2f474e2d64f4bcc239c7060f9439
+source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->帐户受众仅在 [Real-time Customer Data Platform的B2B版本](../../rtcdp/b2b-overview.md). 此外，帐户受众功能当前正在 **有限可用性**. 请联系Adobe客户关怀或您的Adobe代表，请求访问此功能。
+>帐户受众仅在 [Real-time Customer Data Platform的B2B版本](../../rtcdp/overview.md#rtcdp-b2b) 和 [Real-time Customer Data Platform的B2P版本](../../rtcdp/overview.md#rtcdp-b2p).
 
 通过帐户分段，Adobe Experience Platform可让您从基于人员的受众到基于帐户的受众，全面轻松地体验营销分段。
 

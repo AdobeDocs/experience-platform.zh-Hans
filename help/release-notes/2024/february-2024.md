@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 2 月）
 description: Adobe Experience Platform 的 2024 年 2 月发行说明。
-source-git-commit: b41a69244c7eb1111759b2af5c1ae6a0fb90be32
+source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
 workflow-type: tm+mt
 source-wordcount: '1244'
 ht-degree: 21%
@@ -16,7 +16,6 @@ ht-degree: 21%
 
 - [警报](#alerts)
 - [数据收集](#data-collection)
-<!-- - [Data Prep](#data-prep) -->
 - [目标](#destinations)
 - [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation)
@@ -78,7 +77,7 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 激活一般可用的帐户受众 | 现在，公司普遍可以使用将帐户受众激活到某些目标的功能， [企业对企业](/help/rtcdp/overview.md#rtcdp-b2b) 和 [企业对个人](/help/rtcdp/overview.md#rtcdp-b2b) Real-time Customer Data Platform各版。 阅读有关的教程 [激活帐户受众](/help/destinations/ui/activate-account-audiences.md) 以获取完整的信息，包括支持的目标。 |
+| 激活一般可用的帐户受众 | 现在，公司普遍可以使用将帐户受众激活到某些目标的功能， [企业对企业](/help/rtcdp/overview.md#rtcdp-b2b) 和 [企业对个人](/help/rtcdp/overview.md#rtcdp-b2p) Real-time Customer Data Platform各版。 阅读有关的教程 [激活帐户受众](/help/destinations/ui/activate-account-audiences.md) 以获取完整的信息，包括支持的目标。 |
 | 适用于Google目标的Digital Markets Act同意执行工具 | Google将发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)， [客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)，和 [显示和视频360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) ，以支持 [数字市场法案](https://digital-markets-act.ec.europa.eu/index_en) (DMA)在欧盟([欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/))。 预计这些对同意要求的更改将从2024年3月6日起生效。 <br/><br/> 为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。<br/><br/>已购买AdobePrivacy &amp; Security Shield并配置了 [同意政策](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 无需执行任何操作，即可过滤掉未经同意的用户档案。<br/><br/>未购买AdobePrivacy &amp; Security Shield的客户必须使用 [区段定义](../../segmentation/home.md#segment-definitions) 中的功能 [区段生成器](../../segmentation/ui/segment-builder.md) 筛选未经同意的用户档案，以便能够继续使用现有的Real-Time CDP Google目标而不会中断。 |
 | [!BADGE 测试版]{type=Informational}对批处理目标的映射字段重新排序 | 现在，您可以通过拖放 [映射](../../destinations/ui/activate-batch-profile-destinations.md#mapping) 步骤。 UI中映射字段的顺序反映了导出CSV文件中列的顺序（从上到下），其中顶行是CSV文件中最左侧的列。 <br/><br/> 此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。 |
 | [!BADGE 测试版]{type=Informational}预先选择的批处理目标默认导出计划 | Experience Platform现在会自动为每个文件导出设置默认计划。 请参阅相关文档 [计划受众导出](../../destinations/ui/activate-batch-profile-destinations.md#scheduling) 了解如何修改默认计划。 <br/><br/> 此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。 |
