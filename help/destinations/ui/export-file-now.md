@@ -3,9 +3,9 @@ title: （测试版）使用Experience PlatformUI按需将文件导出到批处�
 type: Tutorial
 description: 了解如何使用Experience PlatformUI将按需文件导出到批处理目标。
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: 64833e29d062225bc774a14ae60b102b293bb5c4
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '722'
 ht-degree: 8%
 
 ---
@@ -48,13 +48,9 @@ ht-degree: 8%
 
    ![突出显示筛选的数据流的图像。](../assets/ui/activate-on-demand/filtered-dataflow.png)
 
-3. 选择 **[!UICONTROL 激活数据]** 选项卡，选择要按需导出文件的受众，然后选择 **[!UICONTROL 立即导出文件]** 控件，可触发一次性导出，该导出会将文件传送到批处理目标。
+3. 选择 **[!UICONTROL 激活数据]** 选项卡，选择要按需导出文件的受众，然后选择 **[!UICONTROL 立即导出文件]** 控制，以触发一次性导出，该导出会将每个选定受众的文件交付到您的批处理目标。
 
-   >[!IMPORTANT]
-   >
-   >目前，UI不支持选择多个受众来批量导出文件。 使用 [临时激活API](/help/destinations/api/ad-hoc-activation-api.md) 为了这个目的。
-
-   ![突出显示“立即导出文件”按钮的图像。](../assets/ui/activate-on-demand/activate-segment-on-demand.png)
+   ![突出显示“立即导出文件”按钮的图像。](../assets/ui/activate-on-demand/bulk-export-file-now.png)
 
 4. 选择 **[!UICONTROL 是]** 以确认并触发文件导出。
 

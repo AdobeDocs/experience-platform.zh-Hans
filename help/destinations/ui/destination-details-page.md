@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '1100'
 ht-degree: 1%
 
 ---
@@ -115,6 +115,32 @@ ht-degree: 1%
 
 ![激活数据视图流式目标](../assets/ui/details-page/activation-data-streaming.png)
 
+<!-- ### Remove multiple audiences from activation flows {#bulk-remove}
+
+To remove multiple audiences from existing activation flows, select the audiences and then select **[!UICONTROL Remove audiences]**.
+
+![Activation data screen highlighting the Remove audiences option.](../assets/ui/details-page/bulk-remove-audiences.png) -->
+
+### [!BADGE 测试版]{type=Informative}按需将多个文件导出到批处理目标 {#bulk-export}
+
 >[!NOTE]
 >
->有关浏览受众详细信息页面的详细信息，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+
+您可以 [按需导出多个文件](../ui/export-file-now.md) 从 **[!UICONTROL 激活数据]** 页面。 要实现此目的，请选择要按需导出文件的受众，然后选择 **[!UICONTROL 立即导出文件]** 控制，以触发一次性导出，该导出会将每个选定受众的文件交付到您的批处理目标。
+
+![突出显示“立即导出文件”按钮的图像。](../assets/ui/details-page/bulk-export-file-now.png)
+
+### [!BADGE 测试版]{type=Informational}编辑导出到批处理目标的多个受众的激活计划 {#bulk-edit-schedule}
+
+>[!NOTE]
+>
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+
+要同时编辑多个受众的现有激活计划，请选择所需的受众，然后选择 **[!UICONTROL 编辑计划]**. 有关如何定义或编辑导出计划的详细信息，请参阅 [计划受众导出](../ui/activate-batch-profile-destinations.md#scheduling) 部分。
+
+![激活数据屏幕突出显示用于编辑多个受众的激活计划的选项。](../assets/ui/details-page/bulk-edit-schedule.png)
+
+>[!NOTE]
+>
+有关浏览受众详细信息页面的详细信息，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).

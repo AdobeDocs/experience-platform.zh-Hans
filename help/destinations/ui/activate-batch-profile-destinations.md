@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a66c4397a02da81e4b3304f3bc975f725f8f8d76
+source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
 workflow-type: tm+mt
-source-wordcount: '3797'
-ht-degree: 12%
+source-wordcount: '3879'
+ht-degree: 11%
 
 ---
 
@@ -73,6 +73,10 @@ ht-degree: 12%
 >
 >选择源自 **[!UICONTROL 自定义上传]** 自动启用 [选择扩充属性](#select-enrichment-attributes) 步骤。
 
+>[!TIP]
+>
+>您可以从现有的激活流中删除受众 **[!UICONTROL 激活数据]** 页面。 请参阅 [专用文档](../ui/destination-details-page.md#bulk-remove) 以了解详细信息。
+
 ## 计划受众导出 {#scheduling}
 
 >[!CONTEXTUALHELP]
@@ -80,17 +84,21 @@ ht-degree: 12%
 >title="计划"
 >abstract="使用铅笔图标设置文件导出类型（完整文件或增量文件）和导出频率。"
 
-[!DNL Adobe Experience Platform] 将电子邮件营销和云存储目标的数据导出为 [不同的文件类型](#supported-file-formats-export). 在 **[!UICONTROL 正在计划]** 页面上，您可以为要导出的每个受众配置计划和文件名。 配置时间表是强制性的，但配置文件名是可选的。
+[!DNL Adobe Experience Platform] 将电子邮件营销和云存储目标的数据导出为 [不同的文件类型](#supported-file-formats-export). 在 **[!UICONTROL 正在计划]** 页面上，您可以为要导出的每个受众配置计划和文件名。
+
+Experience Platform会自动为每次文件导出设置默认计划。 您可以根据需要修改默认计划，方法是选择每个计划旁边的铅笔图标，并定义自定义计划。
+
+![编辑计划步骤中突出显示的计划控制。](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
+
+>[!TIP]
+>
+>您可以从以下位置编辑现有激活流的受众激活计划： **[!UICONTROL 激活数据]** 页面。 请参阅相关文档 [批量编辑激活计划](../ui/destination-details-page.md#bulk-edit-schedule) 以了解详细信息。
 
 >[!IMPORTANT]
 >
 >[!DNL Adobe Experience Platform] 自动以每个文件500万条记录（行）拆分导出文件。 每一行表示一个配置文件。
 >
 >拆分文件名后附加一个数字，指示文件是较大导出的一部分，例如： `filename.csv`， `filename_2.csv`， `filename_3.csv`.
-
-选择 **[!UICONTROL 创建计划]** 与要发送到目标的受众对应的控件。
-
-![创建在“计划”步骤中突出显示的计划控制。](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### 导出全部文件 {#export-full-files}
 
@@ -247,6 +255,14 @@ ht-degree: 12%
 1. 您选择导出的字段现在会显示在映射视图中，并在导出的文件中显示编辑后的标题。
 
    ![显示可导出到目标的配置文件属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
+
+1. [!BADGE Beta]{type=Informative}
+
+   >[!NOTE]
+   >
+   >此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+
+   ![显示通过拖放重新排序的映射字段的录制。](../assets/ui/activate-batch-profile-destinations/reorder-fields.gif)
 
 1. （可选）您可以将导出的字段选择为 [必需键](#mandatory-keys) 或 [重复数据删除键](#deduplication-keys).
 
