@@ -3,9 +3,9 @@ keywords: analytics目标；analytics目标
 title: Analytics目标概述
 description: Analytics目标跟踪访客与网站内容之间的交互情况，并收集数据以了解受众的行为。 这些平台为您最重要的访客提供了关于参与和转化的独特见解。
 exl-id: d7a2351b-c2ce-4776-a2b7-f8bb5e73b45b
-source-git-commit: 7ad013cb4359f2d65e78e30bc8472f62f4505b3a
+source-git-commit: 767ebd1ef693f9484e11facc7e8b73d91f632956
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '176'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ Analytics目标跟踪访客与网站内容之间的交互情况，并收集数�
 * [Decibel扩展](decibel.md)
 * [Demandbase扩展](demandbase.md)
 * [Dialogtech扩展](dialogtech.md)
-* [Gainsight PX](gainsight-px.md)
+* [Gainsight PX连接](gainsight-px.md)
 * [Google全局站点标记Analytics扩展](gtag-analytics.md)
 * [Google Universal Analytics扩展](google-universal-analytics.md)
 * [JW Player Analytics (Beta)扩展](jw-player-analytics.md)
