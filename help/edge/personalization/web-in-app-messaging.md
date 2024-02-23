@@ -1,7 +1,7 @@
 ---
 title: 在Web SDK中配置Web应用程序内消息传送支持
 description: 了解如何配置Web SDK标记扩展以支持Web应用程序内消息传递。
-source-git-commit: 82eede9e59338e8438c361d58b476960b7faa5cb
+source-git-commit: a020f880be2606024c6a986dc468d70a2fbdc30f
 workflow-type: tm+mt
 source-wordcount: '967'
 ht-degree: 0%
