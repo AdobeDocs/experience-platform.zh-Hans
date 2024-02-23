@@ -27,7 +27,7 @@ Experience Platform允许您订阅各种Platform活动的基于事件的警报�
 **新增或更新功能**
 | 功能 | 描述 | | — | — | | “警报历史记录”选项卡 | 作为Experience Platform管理员，您可以使用管理警报订阅者功能将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件组列表。 欲了解更多信息，请参见 [警报UI文档](../../observability/alerts/ui.md) 有关“历史记录”选项卡的详细信息。 |
 
-{style="table-layout:auto"}
+
 
 要了解有关警报的更多信息，请阅读 [[!DNL Observability Insights] 概述](../../observability/home.md).
 
