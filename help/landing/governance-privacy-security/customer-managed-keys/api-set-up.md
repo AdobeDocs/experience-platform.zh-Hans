@@ -2,10 +2,10 @@
 title: 使用API设置和配置客户管理的密钥
 description: 了解如何使用您的Azure租户设置您的CMK应用并将您的加密密钥ID发送到Adobe Experience Platform。
 exl-id: c9a1888e-421f-4bb4-b4c7-968fb1d61746
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
 workflow-type: tm+mt
-source-wordcount: '1012'
-ht-degree: 2%
+source-wordcount: '1002'
+ht-degree: 1%
 
 ---
 
@@ -78,6 +78,10 @@ curl -X GET \
 
 下一个屏幕提示您为此分配选择一个角色。 选择 **[!DNL Key Vault Crypto Service Encryption User]** 选择之前 **[!DNL Next]** 以继续。
 
+>[!NOTE]
+>
+>如果您拥有 [!DNL Managed-HSM Key Vault] 层，则必须选择 **[!DNL Managed HSM Crypto Service Encryption User]** 用户角色。
+
 ![Microsoft Azure功能板具有 [!DNL Key Vault Crypto Service Encryption User] 突出显示。](../../images/governance-privacy-security/customer-managed-keys/select-role.png)
 
 在下一个屏幕上，选择 **[!DNL Select members]** 以在右边栏中打开对话框。 使用搜索栏查找CMK应用程序的服务主体，并从列表中选择它。 完成后，选择 **[!DNL Save]**.
@@ -133,7 +137,7 @@ curl -X POST \
 | --- | --- |
 | `name` | 配置的名称。 请确保您记住此值，因为需要在以下位置检查配置状态： [后续步骤](#check-status). 值区分大小写。 |
 | `type` | 配置类型。 必须设置为 `BYOK_CONFIG`. |
-| `imsOrgId` | 您的组织 ID。此ID的值必须与 `x-gw-ims-org-id` 标题。 |
+| `imsOrgId` | 您的组织ID。 此ID的值必须与 `x-gw-ims-org-id` 标题。 |
 | `configData` | 此属性包含有关配置的以下详细信息：<ul><li>`providerType`：必须设置为 `AZURE_KEYVAULT`.</li><li>`keyVaultKeyIdentifier`：您复制的密钥保管库URI [更早](#send-to-adobe).</li></ul> |
 
 +++

@@ -2,10 +2,10 @@
 title: 使用Platform UI设置和配置客户管理的密钥
 description: 了解如何使用您的Azure租户设置您的CMK应用并将您的加密密钥ID发送到Adobe Experience Platform。
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
 workflow-type: tm+mt
-source-wordcount: '1097'
-ht-degree: 1%
+source-wordcount: '1090'
+ht-degree: 0%
 
 ---
 
@@ -61,6 +61,10 @@ ht-degree: 1%
 ![此 [!DNL Microsoft Azure] 仪表板 [!DNL Add] 和 [!DNL Add role assignment] 突出显示。](../../images/governance-privacy-security/customer-managed-keys/add-role-assignment.png)
 
 下一个屏幕提示您为此分配选择一个角色。 选择 **[!DNL Key Vault Crypto Service Encryption User]** 选择之前 **[!DNL Next]** 以继续。
+
+>[!NOTE]
+>
+>如果您拥有 [!DNL Managed-HSM Key Vault] 层，则必须选择 **[!DNL Managed HSM Crypto Service Encryption User]** 用户角色。
 
 ![此 [!DNL Microsoft Azure] 仪表板，带有 [!DNL Key Vault Crypto Service Encryption User] 突出显示。](../../images/governance-privacy-security/customer-managed-keys/select-role.png)
 
