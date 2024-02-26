@@ -3,9 +3,9 @@ title: Experience Cloud 受众
 description: 了解如何将Real-time Customer Data Platform中的受众共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 188398e3483541ca482f5c1cfdce307160ada2da
 workflow-type: tm+mt
-source-wordcount: '1678'
+source-wordcount: '1703'
 ht-degree: 2%
 
 ---
@@ -95,6 +95,7 @@ ht-degree: 2%
 * 目前，支持单个Experience Cloud受众目标。 尝试配置第二个目标连接会导致错误。
 * 连接到目标时，您可以看到一个选项 [启用数据流警报](../../ui/alerts.md). 虽然在UI中可见，但 **当前不支持启用警报选项**.
 * **受众回填支持**：首次导出到Audience Manager或其他Experience Cloud解决方案时，包含了受众的历史群体。 的用户 [旧版受众共享集成](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam) 正在配置此目标的用户应会预期大约六小时的回填差异。
+* 受众源自 [受众构成](../../../segmentation/ui/audience-composition.md) 不直接支持。 要将复合受众激活到此目标，您必须通过创建受众定义 [区段生成器](../../../segmentation/ui/segment-builder.md) 基于复合受众，并激活新创建的受众。
 
 ### 激活受众时的延迟 {#audience-activation-latency}
 
@@ -199,4 +200,4 @@ Audience Manager中的受众和特征须遵循 [基于角色的访问控制](htt
 
 从Real-Time CDP导出的受众将分配给Audience Manager中名为的特定数据源 **[!UICONTROL Experience Platform区段]**.
 
-要仅允许某些用户访问受众，您可以将访问控制应用于属于数据源的受众。 在Audience Manager中为这些受众和从Real-Time CDP区段创建的特征设置新的访问控制权限。
+要仅允许特定用户访问受众，请使用 [基于角色的访问控制](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html) 配置用户对从Real-Time CDP受众创建的受众和特征的访问权限。
