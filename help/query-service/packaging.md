@@ -2,9 +2,9 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 1eeed32779318c58b75edef29c92786201fddf6a
+source-git-commit: 2bea95d855d24aa9d5763ab541ec282f0d8d1d56
 workflow-type: tm+mt
-source-wordcount: '932'
+source-wordcount: '1004'
 ht-degree: 2%
 
 ---
@@ -33,13 +33,13 @@ ht-degree: 2%
 | 支持的用例 | <ul><li>探索&#x200B;</li><li>数据发现&#x200B;</li><li>数据验证</li><li>试验</li></ul> | <ul><li>清洁</li><li>Shaping</li><li>操作</li><li>丰富</li></ul> |
 | 支持的语义 | <ul><li>选择查询</li></ul> | <ul><li>CTA和ITAS查询</li></ul> |
 | 最长执行时间 | 10 分钟 | 24 小时 |
-| 许可证量度 | **查询用户并发**： <ul><li>1个并发用户(Real-Time CDP、Adobe Journey Optimizer)&#x200B;</li><li>5个并发用户(Customer Journey Analytics)&#x200B;</li></ul> **查询并发**： <ul><li>1个并发运行查询(所有应用程序&#x200B;)</li></ul> **附加的ad hoc query users pack附加组件** 可购买以增加您授权的临时查询权限。 <ul><li>每包5个以上并发用户</li><li>每包+1个额外的并发运行查询</li></ul> | **计算小时数**： <ul><li>变量（根据您的应用程序权利设定范围）</li></ul> **计算小时数** 是测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 |
+| 许可证量度 | **查询用户并发**： <ul><li>1个并发用户(Real-Time CDP、Adobe Journey Optimizer)&#x200B;</li><li>5个并发用户(Customer Journey Analytics)&#x200B;</li></ul> **查询并发**： <ul><li>1个并发运行查询(所有应用程序&#x200B;)</li></ul> **附加的ad hoc query users pack附加组件** 可购买以增加您授权的临时查询权限。 <ul><li>每包5个以上并发用户</li><li>每包+1个额外的并发运行查询</li></ul> | **计算小时数**： <ul><li>变量（根据您的应用程序权利设定范围）</li></ul> **计算小时数** 是测量在执行批量查询时，查询服务引擎读取、处理数据并将其写回数据湖所花费的时间。 <br>使用Data Distiller SKU，您还可以获得附加用户和查询并发，这可用于执行临时查询。  数据Distiller SKU包括：<br><ul><li>另外5个并发用户</li><li>+1个额外的并发运行查询</li></ul> |
 | 加快查询和报告使用 | 否 | 是 — 通过并发加速查询，您可以从加速存储中读取数据，并在功能板中显示。 还提供了用于在加速存储中存储报告模型和数据集的专用权限。 |
 | 数据湖存储容量 | 您的总存储权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的存储权利，以便在七天数据到期日期之后保留数据Distiller用例的原始数据集和派生数据集。<br>您的数据湖存储容量以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
 | 允许数据导出 | 您的总导出权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的导出授权，以允许导出使用数据Distiller创建的派生数据集。<br>您每年允许的数据导出以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
 | 查询执行界面 | <ul><li>查询服务UI</li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li></ul> | <ul><li>查询服务UI </li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li><li>REST API</li></ul> |
 | 通过返回的查询结果 | 客户端用户界面 | 存储在数据湖中的派生数据集 |
-| 结果限制 | <ul><li>查询服务UI - 100行</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。</li><li>第三方客户端（行数没有上限）</li><li>[!DNL PostgresSQL] 客户端（行数没有上限）</li><li>REST API（行数没有上限）</li></ul> |
+| 结果限制 | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。<br>注意：CTAS和ITAS查询仅生成成功消息，因为查询输出存储在派生数据集中。</li><li>第三方客户端（行数没有上限）</li><li>[!DNL PostgresSQL] 客户端（行数没有上限）</li><li>REST API（行数没有上限）</li></ul> |
 | 读取数据集容量 | 是 | 是 |
 | 写入数据集容量 | 否 | 是 |
 | 计划产能 | 否 | 是 |
