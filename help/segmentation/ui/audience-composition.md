@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: e8f838c3cf8988f6028901df76ed040e7f08cb98
+source-git-commit: 10079216cbfa5ace68127d1529d47e83f4448049
 workflow-type: tm+mt
 source-wordcount: '1844'
 ht-degree: 0%
@@ -222,7 +222,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 此外，您还可以通过启用 **[!UICONTROL 添加配置文件限制]** 切换。 启用此切换后，您可以设置 **[!UICONTROL 包含的配置文件]** 字段。
 
-![添加配置文件限制切换开关会突出显示，用于限制返回的受众数量。](../images/ui/audience-composition/add-profile-limit.png)
+![添加配置文件限制切换开关会突出显示，用于限制返回的配置文件的数量。](../images/ui/audience-composition/add-profile-limit.png)
 
 ## [!UICONTROL Split] {#split-block}
 
