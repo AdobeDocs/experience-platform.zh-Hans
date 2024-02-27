@@ -2,7 +2,7 @@
 title: 智能重新参与Luma示例
 description: 智能重新参与用例的示例视频。
 feature: Use Cases
-source-git-commit: eaa71bb93a08e8f0a9afe7f6b05929dae93cb670
+source-git-commit: ffa049f1650e9592bda934822cce8565db40c013
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 1%
