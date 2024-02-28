@@ -2,9 +2,9 @@
 title: 元转换API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: e7d63ff86cdc1718129d0a8e4861b6a8c4631f75
+source-git-commit: f7fdfbf9afcecb255668d5d6393b87918114b067
 workflow-type: tm+mt
-source-wordcount: '2565'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 此 [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/) 允许您将服务器端营销数据连接到 [!DNL Meta] 技术，以优化广告定位、降低每次操作的成本并衡量结果。 事件链接到 [[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/) ID和的处理方式与客户端事件类似。
 
 使用 [!DNL Meta Conversions API] 扩展上，您可以利用API在 [事件转发](../../../ui/event-forwarding/overview.md) 将数据发送到的规则 [!DNL Meta] 来自Adobe Experience Platform Edge Network。 本文档介绍如何安装扩展并在事件转发中使用其功能 [规则](../../../ui/managing-resources/rules.md).
+
+## 演示
+
+以下视频旨在支持您了解 [!DNL Meta Conversions API].
+
+>[!VIDEO](https://unlockmarketingdata.com/video-meta-conversions-api)
 
 ## 先决条件
 
