@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 5bdfc5282e71d05ff0db39c32fc02c60fd8d1c34
+source-git-commit: aba148f4155ff5403e89039a9c59acd4d450539e
 workflow-type: tm+mt
-source-wordcount: '2383'
+source-wordcount: '2369'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 * 有关如何执行与数据和受众相关的任务的指南。
 * 组织中现有数据对象的状态和量度。
-* 用例示例和细微差别可更好地了解您的数据对象，包括属性、数据集、目标、架构、区段和源。
+* 用例示例和细微差别以更好地了解您的数据对象，包括属性、数据流、数据集、目标、架构、区段和源。
 
 阅读以下指南，了解如何使用助手帮助导航和了解您的Experience Platform和Real-Time CDP工作流。
 
@@ -131,17 +131,25 @@ Assistant通过查询数据库并将数据库中的数据转换为人工可读�
 
 +++选择以查看数据使用问题和数据可视化图表的示例
 
-您可以向助手查询您的数据使用情况。 您必须在助手的活动沙盒中才能回答有关您组织中数据的数据使用问题。
+要使Assistant响应有关您组织内数据使用情况的查询，您必须位于活动沙盒中。
+
+在以下示例中，为助理提供了以下查询： **“向我显示具有超过1000个配置文件的区段定义并包括激活状态。”** 然后，助理会使用图表进行响应，该图表可视化您的区段和配置文件数据。
 
 ![跟进有关数据使用的问题。](./images/ai-assistant/data-usage-question.png)
 
-当出现数据使用问题提示时， Assistant还会提供有关如何计算答案的说明。 在以下示例中，Assistant概述了为显示具有1000多个用户档案的区段及其各自的激活状态而采取的步骤。
+您可以将鼠标悬停在单个栏上以查看特定数据。 您还可以选择展开图标以查看图表的大图。
+
+![阐述数据可视化的后续问题。](./images/ai-assistant/data-visualization.png)
+
+此时将显示可视化图表的展开视图。 您可以使用扩展模式进一步检查数据，当返回具有大量列的可视化图表时，扩展模式特别有用。
+
+![扩展图表。](./images/ai-assistant/chart-expanded.png)
+
+当出现数据使用问题提示时， Assistant将说明它如何计算答案。 在以下示例中，Assistant概述了为显示具有1000多个用户档案的区段定义及其各自的激活状态而采取的步骤。
 
 ![跟进有关区段的问题，以说明Assistant如何计算答案。](./images/ai-assistant/results-explained.png)
 
-此外，助理会呈现图表以显示您的数据。 您还可以为查询提供筛选器和修改，并可以指示Assistant根据您包括的筛选器呈现其调查结果。 例如，您可以要求“助手”按照区段的创建日期顺序显示区段计数趋势，删除总配置文件为零的区段，并在显示数据时使用月名称而不是整数。
-
-![阐述数据可视化的后续问题。](./images/ai-assistant/data-visualization.png)
+您还可以为查询提供筛选器和修改，并可以指示Assistant根据您包括的筛选器呈现其调查结果。 例如，您可以要求“助手”按其创建日期的顺序显示计数区段定义的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月份名称而不是整数。
 
 +++
 
@@ -177,27 +185,18 @@ Assistant通过查询数据库并将数据库中的数据转换为人工可读�
 
 +++
 
-## 范围 {#scope}
-
-助理可以回答有关Real-Time CDP和Experience Platform概念的问题，以及特定于您用户帐户的数据使用问题。 助理还可以根据您所在的UI页面推断上下文。 它可以识别：
-
-* 您正在使用的用户帐户。
-* 您所属的组织。
-* 您在屏幕上查看的页面。
-* 您在屏幕上查看的资源（包括类型和ID）。
-* 鉴于您正在处理特定Experience Platform或Real-Time CDP工作流，因此助理可以推断您的意图。
-
-### 文档 {#documentation}
+## 文档 {#documentation}
 
 目前，文档索引涵盖Adobe Experience Platform(Real-Time CDP和Audiences)。 索引会定期更新。
 
 文档检索模型是根据Experience Platform(Real-Time CDP和Audiences)进行培训的。 Adobe Experience Platform范围之外的问题，例如，关于Adobe Target和Creative Cloud套件等其他Adobe产品的问题，无法回答。
 
-### 数据使用 {#data-usage}
+## 数据使用 {#data-usage}
 
 您还可以向Assistant询问有关以下域中的数据使用情况的问题：
 
 * 属性
+* 数据流
 * 数据集
 * 目标 _（有关帐户的问题和有关数据流的某些问题此时无法回答。）_
 * 架构 _（有关字段组的问题目前无法回答。）_
