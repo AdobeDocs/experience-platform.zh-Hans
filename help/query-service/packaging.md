@@ -2,9 +2,9 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 2bea95d855d24aa9d5763ab541ec282f0d8d1d56
+source-git-commit: 0f55a836321e974b3f29d2285c38cc8461636f39
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '963'
 ht-degree: 2%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 2%
 | 允许数据导出 | 您的总导出权利取决于您的基于平台的应用程序许可证。 例如，Real-Time CDP、AJO、CJA等。 | 是 — 提供了额外的导出授权，以允许导出使用数据Distiller创建的派生数据集。<br>您每年允许的数据导出以TB为单位，具体取决于您购买的计算小时数。 请查看产品描述以了解更多详细信息。 |
 | 查询执行界面 | <ul><li>查询服务UI</li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li></ul> | <ul><li>查询服务UI </li><li>第三方客户端用户界面</li><li>[!DNL PostgresSQL] 客户端用户界面</li><li>REST API</li></ul> |
 | 通过返回的查询结果 | 客户端用户界面 | 存储在数据湖中的派生数据集 |
-| 结果限制 | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。<br>注意：CTAS和ITAS查询仅生成成功消息，因为查询输出存储在派生数据集中。</li><li>第三方客户端（行数没有上限）</li><li>[!DNL PostgresSQL] 客户端（行数没有上限）</li><li>REST API（行数没有上限）</li></ul> |
+| 结果限制 | <ul><li>查询服务UI — 输出行数可以是 [配置了UI设置](./ui/user-guide.md#result-count) 到50-500行。</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | CTAS和ITAS查询仅生成成功消息，因为查询输出存储在派生数据集中。 |
 | 读取数据集容量 | 是 | 是 |
 | 写入数据集容量 | 否 | 是 |
 | 计划产能 | 否 | 是 |
