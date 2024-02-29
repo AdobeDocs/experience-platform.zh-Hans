@@ -2,11 +2,12 @@
 solution: Experience Platform
 title: 使用流式分段近乎实时地评估事件
 description: 本文档包含有关如何将流式分段与Adobe Experience Platform分段服务API一起使用的示例。
+role: Developer
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 23504dd0909488e2ee63bf356fba4c7f0f7320dc
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1956'
-ht-degree: 7%
+source-wordcount: '1962'
+ht-degree: 4%
 
 ---
 
@@ -32,25 +33,25 @@ ht-degree: 7%
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个源的汇总数据，实时提供统一的用户配置文件。
 - [[!DNL Segmentation]](../home.md)：提供使用区段定义和其他外部源从创建受众的功能 [!DNL Real-Time Customer Profile] 数据。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
 以下部分提供成功调用时需要了解的其他信息 [!DNL Platform] API。
 
 ### 正在读取示例 API 调用
 
-本开发人员指南提供了示例API调用，以演示如何格式化您的请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
+本开发人员指南提供了示例API调用，以演示如何格式化您的请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标头的值
 
-为调用 [!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
+- x-api-key： `{API_KEY}`
+- x-gw-ims-org-id： `{ORG_ID}`
 
 中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 所有请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -351,7 +352,7 @@ curl -X POST \
 | `properties` | **（必需）** 包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **(在以下情况下需要： `type` 等于 `batch_segmentation`)** 使用 `["*"]` 确保包括所有区段定义。 |
 | `schedule` | **（必需）** 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)表示作业每天在1触发:00:00 UTC. 欲知更多信息，请参见 [cron表达式格式](./schedules.md#appendix) 在文档中查看分段内的计划。 |
-| `state` | *（可选）* 包含计划状态的字符串。 可用值： `active` 和 `inactive`. 默认值为 `inactive`。组织只能创建一个计划。 本教程稍后会介绍更新计划的步骤。 |
+| `state` | *（可选）* 包含计划状态的字符串。 可用值： `active` 和 `inactive`. 默认值为 `inactive`. 组织只能创建一个计划。 本教程稍后会介绍更新计划的步骤。 |
 
 **响应**
 

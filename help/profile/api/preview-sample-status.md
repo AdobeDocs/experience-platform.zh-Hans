@@ -2,8 +2,9 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API；预览；示例
 title: 预览示例状态（配置文件预览） API端点
 description: 实时客户个人资料API的预览示例状态端点允许您预览个人资料数据的最新成功示例，按数据集和身份列出个人资料分发，并生成显示数据集重叠、身份重叠和未拼接个人资料的报告。
+role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '2906'
 ht-degree: 1%

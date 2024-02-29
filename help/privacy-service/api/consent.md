@@ -3,17 +3,18 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 同意API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的客户同意请求。
+role: Developer
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '245'
 ht-degree: 1%
 
 ---
 
 # 同意端点
 
-某些法规要求在收集其个人数据之前获得客户的明确同意。 此 `/consent` 中的端点 [!DNL Privacy Service] API允许您处理客户同意请求并将它们集成到您的隐私工作流中。
+某些法规要求客户明确同意才能收集其个人数据。 此 `/consent` 中的端点 [!DNL Privacy Service] API允许您处理客户同意请求并将它们集成到隐私工作流中。
 
 在使用本指南之前，请参阅 [快速入门](./getting-started.md) 指南，以了解有关以下示例API调用中提供的所需身份验证标头的信息。
 
@@ -61,7 +62,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `optOutOfSale` | 当设置为true时，表示提供的用户位于 `entities` 希望选择退出出售或共享其个人数据。 |
-| `entities` | 一个对象数组，指明同意请求应用于的用户。 每个对象都包含 `namespace` 和数组 `values` 将单个用户与该命名空间进行匹配。 |
+| `entities` | 一个对象数组，指明同意请求应用于的用户。 每个对象包含 `namespace` 和数组 `values` 将单个用户与该命名空间进行匹配。 |
 | `nameSpace` | 中的每个对象 `entities` 数组必须包含一个 [标准身份命名空间](./appendix.md#standard-namespaces) 由Privacy ServiceAPI识别。 |
 | `values` | 每个用户的值数组，对应于提供的 `nameSpace`. |
 
@@ -69,8 +70,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->有关如何确定要将哪些客户标识值发送到的更多信息 [!DNL Privacy Service]，请参阅指南，网址为 [提供身份数据](../identity-data.md).
+>有关如何确定要将哪些客户标识值发送到的详细信息 [!DNL Privacy Service]，请参阅指南，网址为 [提供身份数据](../identity-data.md).
 
 **响应**
 
-成功的响应返回HTTP状态202 （已接受），没有任何有效负载，表示请求已被接受 [!DNL Privacy Service] 并正在进行处理。
+成功的响应返回HTTP状态202（已接受），没有任何有效负载，指示请求已被接受 [!DNL Privacy Service] 并正在进行处理。

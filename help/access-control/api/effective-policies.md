@@ -1,10 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；有效策略；访问控制api
+keywords: Experience Platform；主页；热门主题；有效策略；访问控制API
 solution: Experience Platform
 title: 有效策略API端点
 description: 了解如何使用Adobe Experience Platform的访问控制API查看有效的访问策略。
+role: Developer
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 1%
@@ -17,7 +18,7 @@ ht-degree: 1%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-要查看当前用户的有效访问控制策略，请向发出POST请求 `/acl/effective-policies` 中的端点 [!DNL Access Control] API。 您要在请求有效载荷中检索的权限和资源类型必须以数组的形式提供。 下面的示例API调用中说明了这一点。
+要查看当前用户的有效访问控制策略，请向以下用户发出POST请求： `/acl/effective-policies` 中的端点 [!DNL Access Control] API。 您想要检索的权限和资源类型必须在请求有效载荷中以数组的形式提供。 下面的API调用示例对此进行了说明。
 
 **API格式**
 
@@ -27,7 +28,7 @@ POST /acl/effective-policies
 
 **请求**
 
-以下请求可检索有关“[!UICONTROL 管理数据集]”对“ ”的权限和访问权限[!UICONTROL 架构]当前用户的&#39;&#39;资源类型。
+以下请求检索有关“[!UICONTROL 管理数据集]”权限和对“”的访问权限[!UICONTROL 架构]当前用户的&#39;&#39;资源类型。
 
 ```shell
 curl -X POST \
@@ -45,11 +46,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->有关可在有效负载数组中提供的权限和资源类型的完整列表，请参阅 [接受的权限和资源类型](#accepted-permissions-and-resource-types).
+>有关有效负载数组中可提供的权限和资源类型的完整列表，请参阅 [接受的权限和资源类型](#accepted-permissions-and-resource-types).
 
 **响应**
 
-成功的响应会返回有关请求中提供的权限和资源类型的信息。 响应包括当前用户对请求中指定的资源类型具有的活动权限。 如果请求有效负载中包含的任何权限对当前用户有效，则API会返回带有星号(`*`)，以指示权限处于活动状态。 请求中提供的任何非用户活动权限将在响应有效载荷中忽略。
+成功的响应会返回有关请求中提供的权限和资源类型的信息。 响应包括当前用户对请求中指定的资源类型的活动权限。 如果请求有效负载中包含的任何权限对当前用户有效，则API会返回带有星号(`*`)，以指示权限处于活动状态。 请求中提供的任何非用户活动的权限将在响应有效负荷中忽略。
 
 ```json
 {
@@ -78,7 +79,7 @@ curl -X POST \
 
 以下是可包含在对的POST请求的有效负载中的权限和资源类型列表 `/acl/active-permissions` 端点。
 
-**Permissions**
+**权限**
 
 ```plaintext
 permissions/activate-destinations

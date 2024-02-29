@@ -3,10 +3,11 @@ audience: user
 user-guide-title: 数据流指南
 user-guide-description: 了解数据流以及如何在不同服务间配置它们。
 feature: Dataflows
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '62'
-ht-degree: 25%
+source-wordcount: '57'
+ht-degree: 24%
 
 ---
 
@@ -17,7 +18,7 @@ ht-degree: 25%
 - API指南 {#api}
    - [监测数据流](./api/monitor.md)
    - [排序和过滤API响应](./api/sort-and-filter.md)
-- UI 指南 {#ui}
+- UI指南 {#ui}
    - [监测源中的数据流](./ui/monitor-sources.md)
    - [监视身份中的数据流](./ui/monitor-identities.md)
    - [监测配置文件中的数据流](./ui/monitor-profiles.md)

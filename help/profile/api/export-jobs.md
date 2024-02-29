@@ -3,10 +3,11 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 配置文件导出作业API端点
 type: Documentation
 description: Real-Time Customer Profile通过将来自多个来源的数据（包括属性数据和行为数据）整合在一起，使您能够在Adobe Experience Platform中构建单个客户视图。 然后，可将用户档案数据导出到数据集以供进一步处理。
+role: Developer
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1512'
 ht-degree: 2%
 
 ---

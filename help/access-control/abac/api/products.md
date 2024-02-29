@@ -3,10 +3,11 @@ keywords: Experience Platform；主页；热门主题；API；基于属性的访
 solution: Experience Platform
 title: 产品API端点
 description: 基于属性的访问控制API中的/products端点允许您以编程方式管理Adobe Experience Platform中的产品。
+role: Developer
 exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '513'
 ht-degree: 3%
 
 ---
@@ -17,15 +18,15 @@ ht-degree: 3%
 >
 >如果传递的是用户令牌，则该令牌的用户必须具有所请求组织的“组织管理员”角色。
 
-此 `/products` 基于属性的访问控制API中的端点允许您以编程方式管理产品以及与组织中产品关联的权限类别和权限集。
+此 `/products` 基于属性的访问控制API中的端点允许您以编程方式管理产品以及与组织中的产品关联的权限类别和权限集。
 
 ## 快速入门
 
-本指南中使用的API端点是基于属性的访问控制API的一部分。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点属于基于属性的访问控制API。 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索授权产品的列表 {#list}
 
-您可以通过向以下网站发出GET请求，检索授权产品的列表： `/products` 端点。
+您可以通过向以下网站发出GET请求来检索授权产品的列表： `/products` 端点。
 
 **API格式**
 
@@ -35,7 +36,7 @@ GET /products/
 
 **请求**
 
-以下请求可检索属于您组织的授权产品的列表。
+以下请求会检索属于您组织的授权产品的列表。
 
 ```shell
 curl -X GET \
@@ -69,7 +70,7 @@ curl -X GET \
 
 ## 按产品ID查找权限类别
 
-您可以通过对以下地址发出GET请求，查找给定产品的权限类别： `/products/{PRODUCT_ID}/categories` 指定产品ID时的端点。
+您可以通过对以下网站发出GET请求，查找给定产品的权限类别： `/products/{PRODUCT_ID}/categories` 指定产品ID时的端点。
 
 **API格式**
 
@@ -241,4 +242,4 @@ curl -X GET \
 | `category` | 可用的权限类别。 |
 | `permissions` | 权限包括查看和/或使用Platform功能的功能，例如创建沙盒、定义架构和管理数据集。 |
 | `permissions.resource` | 主体可以或无法访问的资源或对象。 资源可以是文件、应用程序、服务器甚至API。 |
-| `permissions.actions` | 允许主体对查询到的资源执行的操作。 可能的值包括： `view`， `read`， `create`， `edit`、和 `delete` |
+| `permissions.actions` | 允许主体对查询的资源执行的操作。 可能的值包括： `view`， `read`， `create`， `edit`、和 `delete` |

@@ -1,10 +1,11 @@
 ---
 title: 使用数据卫生API删除记录
 description: 了解如何在Adobe Experience Platform中以编程方式更正或删除客户存储的个人数据。
+role: Developer
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 5%

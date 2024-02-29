@@ -1,11 +1,12 @@
 ---
 title: 数据卫生API指南
 description: 了解如何在Adobe Experience Platform中以编程方式更正或删除客户存储的个人数据。
+role: Developer
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '445'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
@@ -35,7 +36,7 @@ ht-degree: 5%
 
 本文档提供了一个示例API调用，用于演示如何格式化请求。 有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/api-guide.md#sample-api) 《Experience PlatformAPI快速入门指南》中的。
 
-## 数据集过期时间
+## 数据集到期
 
 数据集到期是一种时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定在未来的某个时间删除该数据集。 请参阅 [数据集到期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
 

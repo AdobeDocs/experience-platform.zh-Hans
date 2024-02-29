@@ -3,29 +3,30 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 标签API端点
 description: 了解如何使用策略服务API管理Experience Platform中的数据使用标签。
+role: Developer
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '504'
 ht-degree: 3%
 
 ---
 
 # 标签端点
 
-数据使用标签允许您根据可能应用于数据的使用策略来分类数据。 此 `/labels` 中的端点 [!DNL Policy Service API] 允许您以编程方式管理体验应用程序中的数据使用标签。
+数据使用标签允许您根据可能应用于数据的使用策略将数据分类。 此 `/labels` 中的端点 [!DNL Policy Service API] 允许您以编程方式管理体验应用程序中的数据使用标签。
 
 >[!NOTE]
 >
->此 `/labels` 端点仅用于检索、创建和更新数据使用标签。 有关如何使用API调用向数据集和字段添加标签的步骤，请参阅指南，了解有关 [管理数据集标签](../labels/dataset-api.md).
+>此 `/labels` 端点仅用于检索、创建和更新数据使用标签。 有关如何使用API调用向数据集和字段添加标签的步骤，请参阅上的指南 [管理数据集标签](../labels/dataset-api.md).
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 检索标签列表 {#list}
 
-您可以列出所有 `core` 或 `custom` 标签(通过向以下用户发出GET请求) `/labels/core` 或 `/labels/custom`，则不会显示任何内容。
+您可以列出所有 `core` 或 `custom` 向以下对象发出GET请求以粘贴标签 `/labels/core` 或 `/labels/custom`、ID名称和ID名称等。
 
 **API格式**
 
@@ -49,7 +50,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回从系统中检索到的自定义标签列表。 由于上述范例请求是向 `/labels/custom`，则下面的响应仅显示自定义标签。
+成功的响应将返回从系统中检索到的自定义标签列表。 由于上述示例请求是向 `/labels/custom`，则下面的响应仅显示自定义标签。
 
 ```json
 {
@@ -107,7 +108,7 @@ curl -X GET \
 
 ## 查找标签 {#look-up}
 
-您可以通过包含特定标签的 `name` GET请求路径中的属性 [!DNL Policy Service] API。
+您可以通过包含特定标签的 `name` 属性位于GET请求的路径中 [!DNL Policy Service] API。
 
 **API格式**
 
@@ -171,11 +172,11 @@ PUT /labels/custom/{LABEL_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LABEL_NAME}` | 此 `name` 自定义标签的属性。 如果不存在具有此名称的自定义标签，则将创建新标签。 如果存在，则将更新该标签。 |
+| `{LABEL_NAME}` | 此 `name` 自定义标签的属性。 如果不存在具有此名称的自定义标签，则会创建新标签。 如果存在，则将更新该标签。 |
 
 **请求**
 
-以下请求创建一个新标签， `L3`，用于描述包含与客户所选支付计划相关的信息的数据。
+以下请求将创建一个新标签， `L3`，用于描述包含与客户所选支付计划相关的信息的数据。
 
 ```shell
 curl -X PUT \
@@ -201,7 +202,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应将返回自定义标签的详细信息，如果更新了现有标签，则返回HTTP代码为200 （确定）；如果创建了新标签，则返回201 （创建）。
+成功的响应会返回自定义标签的详细信息，如果更新了现有标签，则返回HTTP代码为200 （确定）；如果创建了新标签，则返回201 （创建）。
 
 ```json
 {
@@ -227,4 +228,4 @@ curl -X PUT \
 
 ## 后续步骤
 
-本指南涵盖了 `/labels` 策略服务API中的端点。 有关如何将标签应用于数据集和字段的步骤，请参阅 [数据集标签API指南](../labels/dataset-api.md).
+本指南介绍如何使用 `/labels` 策略服务API中的端点。 有关如何将标签应用于数据集和字段的步骤，请参阅 [数据集标签API指南](../labels/dataset-api.md).

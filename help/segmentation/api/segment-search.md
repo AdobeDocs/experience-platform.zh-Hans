@@ -1,10 +1,11 @@
 ---
 title: 区段搜索API端点
 description: 在Adobe Experience Platform分段服务API中，分段搜索用于搜索各种数据源中包含的字段并近乎实时地返回它们。 本指南提供的信息可帮助您更好地了解区段搜索，包括用于使用API执行基本操作的示例API调用。
+role: Developer
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1189'
 ht-degree: 2%
 
 ---

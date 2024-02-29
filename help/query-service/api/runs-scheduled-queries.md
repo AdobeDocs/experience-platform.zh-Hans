@@ -3,10 +3,11 @@ keywords: Experience Platform；主页；热门主题；查询服务；运行计
 solution: Experience Platform
 title: 计划的查询运行API端点
 description: 以下部分介绍了您可以使用查询服务API对运行计划查询进行的各种API调用。
+role: Developer
 exl-id: 1e69b467-460a-41ea-900c-00348c3c923c
-source-git-commit: e9639cb90a561adc59388ac77984edaf90f4bfdd
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '782'
 ht-degree: 2%
 
 ---

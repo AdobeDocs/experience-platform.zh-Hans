@@ -1,29 +1,30 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API
-title: 实体（配置文件访问） API端点
+title: 实体（配置文件访问）API端点
 type: Documentation
 description: 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户配置文件数据。 本指南概述如何使用配置文件API访问实体（通常称为“配置文件”）。
+role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1734'
 ht-degree: 1%
 
 ---
 
 # 实体端点（配置文件访问）
 
-Adobe Experience Platform允许您访问 [!DNL Real-Time Customer Profile] 数据使用RESTful API或用户界面。 本指南概述了如何使用API访问实体（更常见的是“用户档案”）。 有关使用访问用户档案的详细信息 [!DNL Platform] UI，请参阅 [配置文件用户指南](../ui/user-guide.md).
+通过Adobe Experience Platform，您可以访问 [!DNL Real-Time Customer Profile] 数据使用RESTful API或用户界面。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用访问用户档案的详细信息 [!DNL Platform] UI，请参阅 [配置文件用户指南](../ui/user-guide.md).
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
+本指南中使用的API端点是 [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [快速入门指南](getting-started.md) 有关相关文档的链接、阅读本文档中的示例API调用的指南，以及有关成功调用任何组件所需的所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 按身份访问配置文件数据
 
-您可以访问 [!DNL Profile] 实体提出有关GET `/access/entities` 端点并提供实体的标识作为一系列查询参数。 此身份包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
+您可以访问 [!DNL Profile] 实体的GET要求 `/access/entities` 端点并提供实体的标识作为一系列查询参数。 此身份包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
-请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 部分。
+请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 一节。
 
 **API格式**
 
@@ -115,11 +116,11 @@ curl -X GET \
 
 >[!NOTE]
 >
->如果相关图形链接超过50个标识，则此服务将返回HTTP状态422和消息“相关标识过多”。 如果收到此错误，请考虑添加更多查询参数以缩小搜索范围。
+>如果相关图形链接超过50个身份，此服务将返回HTTP状态422和消息“相关身份过多”。 如果收到此错误，请考虑添加更多查询参数以缩小搜索范围。
 
 ## 按身份列表访问配置文件数据
 
-您可以通过向以下网站发出POST请求，按身份访问多个配置文件实体： `/access/entities` 端点并在有效负载中提供身份。 这些标识包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
+您可以通过向以下网站发出POST请求，按身份访问多个配置文件实体： `/access/entities` 端点，并在有效负载中提供身份。 这些身份包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
 **API格式**
 
@@ -129,7 +130,7 @@ POST /access/entities
 
 **请求**
 
-以下请求按身份列表检索多个客户的名称和电子邮件地址：
+以下请求按标识列表检索多个客户的名称和电子邮件地址：
 
 ```shell
 curl -X POST \
@@ -185,8 +186,8 @@ curl -X POST \
 | `identities` | ***（必需）*** 一个数组，其中包含您要访问的实体的标识列表。 |
 | `identities.entityId` | 您希望访问的实体的ID。 |
 | `identities.entityIdNS.code` | 您希望访问的实体ID的命名空间。 |
-| `timeFilter.startTime` | 时间范围过滤器的开始时间，包括。 应为毫秒粒度。 如果未指定，则默认为可用时间的开始。 |
-| `timeFilter.endTime` | 时间范围过滤器的结束时间，已排除。 应为毫秒粒度。 如果未指定，则默认为可用时间的结束。 |
+| `timeFilter.startTime` | 时间范围过滤器的开始时间，包括。 应为毫秒粒度。 如果未指定，则默认值为可用时间的开始。 |
+| `timeFilter.endTime` | 时间范围过滤器的结束时间，已排除。 应为毫秒粒度。 如果未指定，则默认值为可用时间的结束。 |
 | `limit` | 要返回的记录数。 仅适用于返回的体验事件数。 默认值：1,000。 |
 | `orderby` | 按时间戳检索的体验事件的排序顺序，写为 `(+/-)timestamp` 默认为 `+timestamp`. |
 | `withCA` | 用于启用计算属性进行查找的功能标志。 默认值： false。 |
@@ -333,9 +334,9 @@ curl -X POST \
 
 ## 按身份访问用户档案的时间系列事件
 
-您可以通过向以下网站发出时间序列请求，以按照与时间序列事件关联的配置文件实体的身份访问GET事件： `/access/entities` 端点。 此身份包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
+您可以通过向以下地址发出GET请求，按相关配置文件实体的身份访问时间序列事件： `/access/entities` 端点。 此身份包含ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
-请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 部分。
+请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 一节。
 
 **API格式**
 
@@ -358,11 +359,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回在请求查询参数中指定的时序事件和相关字段的分页列表。
+成功的响应将返回在请求查询参数中指定的时间序列事件和相关字段的分页列表。
 
 >[!NOTE]
 >
->该请求指定了一个限制(`limit=1`)，因此， `count` 在下面的响应中为1，只返回一个实体。
+>该请求指定了一个限制(`limit=1`)，因此， `count` 在下面的响应中为1，并且只返回一个实体。
 
 ```json
 {
@@ -413,11 +414,11 @@ curl -X GET \
 
 ### 访问结果的后续页面
 
-检索时序事件时，结果将分页。 如果有后续结果页，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` 属性提供用于检索下一页的请求URI。 GET要检索结果，请另外向 `/access/entities` 端点，但您必须确保替换 `/entities` 具有所提供URI的值。
+检索时序事件时，结果将分页。 如果存在后续结果页面，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` 属性提供用于检索下一页的请求URI。 GET要检索结果，请向 `/access/entities` 端点，但您必须确保替换 `/entities` 具有所提供URI的值。
 
 >[!NOTE]
 >
->确保不要不小心重复 `/entities/` 在请求路径中。 它只应出现一次，例如， `/access/entities?start=...`
+>确保不要不小心重复 `/entities/` 在请求路径中。 它只应出现一次，如， `/access/entities?start=...`
 
 **API格式**
 
@@ -444,7 +445,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回结果的下一页。 此响应没有后续的结果页面，如的空字符串值所示 `_page.next` 和 `_links.next.href`.
+成功的响应将返回结果的下一页。 此响应没有后续结果页面，如的空字符串值所示 `_page.next` 和 `_links.next.href`.
 
 ```json
 {
@@ -495,7 +496,7 @@ curl -X GET \
 
 ## 按身份访问多个配置文件的时间序列事件
 
-您可以通过向以下用户档案发出POST请求，从多个关联用户档案访问时间序列事件： `/access/entities` 端点并在有效负载中提供配置文件身份。 这些标识分别包含一个ID值(`entityId`)和身份命名空间(`entityIdNS`)。
+您可以通过向以下对象发出POST请求，从多个关联配置文件访问时间序列事件： `/access/entities` 端点，并在有效负载中提供配置文件身份。 这些身份各自包含一个ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
 **API格式**
 
@@ -505,7 +506,7 @@ POST /access/entities
 
 **请求**
 
-以下请求可检索与配置文件身份列表关联的时间系列事件的用户ID、本地时间和国家/地区代码：
+以下请求可检索与用户档案身份列表关联的时间系列事件的用户ID、本地时间和国家/地区代码：
 
 ```shell
 curl -X POST \
@@ -549,8 +550,8 @@ curl -X POST \
 | `schema.name` | **（必需）** 要检索的实体的XDM架构 |
 | `relatedSchema.name` | 如果 `schema.name` 是 `_xdm.context.experienceevent` 此值必须指定与时间序列事件相关的配置文件实体的架构。 |
 | `identities` | **（必需）** 从中检索关联时间序列事件的配置文件数组列表。 数组中的每个条目均通过以下两种方式之一进行设置：1)使用由ID值和命名空间组成的完全限定的标识，或者2)提供XID。 |
-| `fields` | 隔离返回到指定字段集的数据。 使用此选项可筛选检索到的数据中包含的架构字段。 示例： personalEmail，person.name，person.gender |
-| `mergePolicyId` | 标识用来管理返回数据的合并策略。 如果未在服务调用中指定架构，则将使用贵组织的该架构的默认值。 如果未配置默认合并策略，则默认设置是无配置文件合并和身份拼接。 |
+| `fields` | 隔离返回到指定字段集的数据。 使用此选项可筛选在检索的数据中包含的架构字段。 示例： personalEmail，person.name，person.gender |
+| `mergePolicyId` | 标识用于管理返回数据的合并策略。 如果未在服务调用中指定架构，则将使用贵组织对该架构的默认值。 如果尚未配置默认合并策略，则默认设置是无配置文件合并和无身份拼接。 |
 | `orderby` | 按时间戳检索的体验事件的排序顺序，写为 `(+/-)timestamp` 默认为 `+timestamp`. |
 | `timeFilter.startTime` | 指定过滤时间序列对象的开始时间（以毫秒为单位）。 |
 | `timeFilter.endTime` | 指定过滤时间序列对象的结束时间（以毫秒为单位）。 |
@@ -559,7 +560,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回与请求中指定的多个配置文件关联的时间系列事件分页列表。
+成功的响应将返回与请求中指定的多个配置文件关联的时间系列事件的分页列表。
 
 ```json
 {
@@ -767,19 +768,19 @@ curl -X POST \
 }`
 ```
 
-在此示例响应中，列出的第一个配置文件(&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;)提供的值为 `_links.next.payload`，这意味着此用户档案还有额外的结果页面。 请参阅以下部分，了解 [访问其他结果](#access-additional-results) 以获取有关如何访问这些附加结果的详细信息。
+在此示例响应中，列出的第一个配置文件(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)提供的值为 `_links.next.payload`，这意味着此用户档案还有额外的结果页面。 请参阅以下部分： [访问其他结果](#access-additional-results) 以获取有关如何访问这些附加结果的详细信息。
 
 ### 访问其他结果 {#access-additional-results}
 
-在检索时序事件时，可能会返回许多结果，因此结果通常会分页。 如果某个特定用户档案有后续的结果页，则 `_links.next.payload` 该配置文件的值将包含一个有效负载对象。
+检索时间序列事件时，可能会返回许多结果，因此结果通常会分页。 如果某个特定用户档案有后续的结果页面，则 `_links.next.payload` 该配置文件的值将包含一个有效负荷对象。
 
-POST在请求正文中使用此有效负载，您可以对 `access/entities` 端点以检索该配置文件的后续时间序列数据页。
+POST在请求正文中使用此有效负载，您可以对 `access/entities` 端点以检索该配置文件的后续时间序列数据页面。
 
 ## 访问多个架构实体中的时间序列事件
 
-您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定已定义了两个架构之间的关系。 有关关系描述符的更多信息，请阅读 [!DNL Schema Registry] API开发人员指南 [描述符端点指南](../../xdm/api/descriptors.md).
+您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定已在两个架构之间定义了关系。 有关关系描述符的更多信息，请阅读 [!DNL Schema Registry] API开发人员指南 [描述符端点指南](../../xdm/api/descriptors.md).
 
-您可以在请求路径中包含查询参数，以指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 部分。
+您可以在请求路径中包含查询参数，以指定要访问的数据。 您可以包含多个参数，以&amp;分隔。 中提供了有效参数的完整列表 [查询参数](#query-parameters) 一节。
 
 **API格式**
 
@@ -789,7 +790,7 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求检索包含先前建立的关系描述符的实体，以访问不同架构中的信息。
+以下请求检索包含先前建立的关系描述符的实体，以访问不同架构的信息。
 
 ```shell
 curl -X GET \
@@ -802,7 +803,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回与多个实体关联的时间序列事件的分页列表。
+成功的响应将返回与多个实体关联的时间系列事件的分页列表。
 
 ```json
 {
@@ -883,7 +884,7 @@ curl -X GET \
 
 ### 访问结果的后续页面
 
-检索时序事件时，结果将分页。 如果有后续结果页，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` GET属性提供一个请求URI，通过向 `access/entities` 端点。
+检索时序事件时，结果将分页。 如果存在后续结果页面，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` GET属性提供一个请求URI，用于通过对 `access/entities` 端点。
 
 ## 后续步骤
 
@@ -895,21 +896,21 @@ curl -X GET \
 
 ### 查询参数 {#query-parameters}
 
-路径中使用以下参数来GET对 `/access/entities` 端点。 它们用于标识您希望访问的配置文件实体，并筛选响应中返回的数据。 必填参数标有标签，其余参数为可选参数。
+在路径中使用以下参数来GET对的请求 `/access/entities` 端点。 它们用于标识要访问的配置文件实体，并筛选响应中返回的数据。 必填参数标有标签，其余参数为可选参数。
 
 | 参数 | 描述 | 示例 |
 |---|---|---|
 | `schema.name` | **（必需）** 要检索的实体的XDM架构 | `schema.name=_xdm.context.experienceevent` |
 | `relatedSchema.name` | 如果 `schema.name` 为“_xdm.context.experienceevent”，该值必须指定与时间序列事件相关的配置文件实体的架构。 | `relatedSchema.name=_xdm.context.profile` |
-| `entityId` | **（必需）** 实体的ID。 如果此参数的值不是XID，则还必须提供标识命名空间参数(请参阅 `entityIdNS` （如下所示）。 | `entityId=janedoe@example.com` |
-| `entityIdNS` | 如果 `entityId` 未作为XID提供，此字段必须指定身份命名空间。 | `entityIdNE=email` |
-| `relatedEntityId` | 如果 `schema.name` 为“_xdm.context.experienceevent”，此值必须指定相关配置文件实体的身份命名空间。 该值遵循的规则与相同 `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `entityId` | **（必需）** 实体的ID。 如果此参数的值不是XID，则还必须提供标识命名空间参数(请参阅 `entityIdNS` 下)。 | `entityId=janedoe@example.com` |
+| `entityIdNS` | 如果 `entityId` 不作为XID提供，此字段必须指定身份命名空间。 | `entityIdNE=email` |
+| `relatedEntityId` | 如果 `schema.name` 为“_xdm.context.experienceevent”，该值必须指定相关配置文件实体的身份命名空间。 此值遵循与相同的规则 `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | 如果 `schema.name` 为“_xdm.context.experienceevent”，该值必须为中指定的实体指定身份命名空间 `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | 筛选响应中返回的数据。 使用此选项可指定要包含在检索的数据中的架构字段值。 对于多个字段，请使用逗号分隔值，且中间不应有空格 | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | 标识用来管理返回数据的合并策略。 如果未在调用中指定架构，则将使用您组织对该架构的默认值。 如果未配置默认合并策略，则默认设置是无配置文件合并和身份拼接。 | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | 标识用于管理返回数据的合并策略。 如果未在调用中指定架构，则将使用您组织对该架构的默认值。 如果尚未配置默认合并策略，则默认设置是无配置文件合并和无身份拼接。 | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | 按时间戳检索的体验事件的排序顺序，写为 `(+/-)timestamp` 默认为 `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | 指定过滤时间序列对象的开始时间（以毫秒为单位）。 | `startTime=1539838505` |
 | `endTime` | 指定过滤时间序列对象的结束时间（以毫秒为单位）。 | `endTime=1539838510` |
 | `limit` | 指定要返回的最大对象数的数值。 默认值：1000 | `limit=100` |
-| `property` | 按属性值筛选。 支持以下求值器：=、！=， &lt;， &lt;=， >， >=。 只能与体验事件一起使用，最多支持三个属性。 | `property=webPageDetails.isHomepage=true&property=localTime<="2020-07-20"` |
+| `property` | 按属性值筛选。 支持以下计算器： =、！=， &lt;， &lt;=， >， >=。 只能与体验事件一起使用，最多支持三个属性。 | `property=webPageDetails.isHomepage=true&property=localTime<="2020-07-20"` |
 | `withCA` | 用于启用计算属性进行查找的功能标志。 默认值： false | `withCA=true` |

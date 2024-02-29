@@ -3,10 +3,11 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 合并策略API端点
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段整合在一起并组合它们，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是Platform用于确定数据优先顺序的规则以及将合并哪些数据以创建统一视图。
+role: Developer
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '2467'
+source-wordcount: '2465'
 ht-degree: 1%
 
 ---

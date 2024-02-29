@@ -3,8 +3,9 @@ keywords: Experience Platform；主页；热门主题；API；基于属性的访
 solution: Experience Platform
 title: 角色API端点
 description: 基于属性的访问控制API中的/roles端点允许您以编程方式管理Adobe Experience Platform中的角色。
+role: Developer
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 01574f37593c707f092a8b4aa03d3d67e8c20780
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 4%

@@ -4,7 +4,8 @@ user-guide-title: Adobe Experience Platform Privacy Service 帮助
 breadcrumb-title: Privacy Service 指南
 user-guide-description: 管理客户数据请求以遵守 GDPR 和 CCPA 等隐私保护相关的法律法规。
 feature: Privacy
-source-git-commit: 7f2f1f9669d4f750baf6992ed5686fb622e2bb65
+role: User,Admin
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 100%

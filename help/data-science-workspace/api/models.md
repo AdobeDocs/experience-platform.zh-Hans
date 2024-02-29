@@ -1,10 +1,11 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；模型；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；模型；Sensei机器学习API
 solution: Experience Platform
 title: 模型API端点
 description: 模型是机器学习方法的一个实例，它使用历史数据和配置进行培训以针对业务用例进行解析。
+role: Developer
 exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 4%
@@ -17,7 +18,7 @@ ht-degree: 4%
 
 ## 检索模型列表
 
-通过执行对/models的单个GET请求，可以检索属于所有“模型”的“模型”详细信息列表。 默认情况下，此列表将根据最早创建的模型对其自身排序，并将结果限制为25。 您可以选择通过指定某些查询参数来筛选结果。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
+通过执行对/models的单个GET请求，可以检索属于所有“模型”的“模型”详细信息列表。 默认情况下，此列表将从最早创建的模型对其自身排序，并将结果限制为25。 您可以选择通过指定某些查询参数来筛选结果。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -93,7 +94,7 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 对应于模型的ID。 |
-| `modelArtifactUri` | 指示模型存储位置的URI。 URI以 `name` 模型的值。 |
+| `modelArtifactUri` | 指示存储模型位置的URI。 URI以 `name` 模型的值。 |
 | `experimentId` | 有效的试验ID。 |
 | `experimentRunId` | 有效的试验运行ID。 |
 
@@ -115,7 +116,7 @@ GET /models/?property=experimentRunID=={EXPERIMENT_RUN_ID}
 
 **请求**
 
-以下请求包含一个查询，并检索共享相同experimentRunID ({EXPERIMENT_RUN_ID})的已训练模型的列表。
+以下请求包含一个查询，并检索共享相同experimentRunID ({EXPERIMENT_RUN_ID})。
 
 ```shell
 curl -X GET \
@@ -128,7 +129,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回包含模型详细信息的有效负载，包括模型唯一标识符(`id`)。
+成功的响应将返回包含模型详细信息的有效负载，包括模型的唯一标识符(`id`)。
 
 ```json
 {
@@ -157,13 +158,13 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 对应于模型的ID。 |
-| `modelArtifactUri` | 指示模型存储位置的URI。 URI以 `name` 模型的值。 |
+| `modelArtifactUri` | 指示存储模型位置的URI。 URI以 `name` 模型的值。 |
 | `experimentId` | 有效的试验ID。 |
 | `experimentRunId` | 有效的试验运行ID。 |
 
 ## 注册预生成的模型 {#register-a-model}
 
-您可以通过向以下网站发出POST请求来注册预生成的模型： `/models` 端点。 要注册您的型号，请 `modelArtifact` 文件和 `model` 属性值需要包含在请求正文中。
+您可以通过向以下网站发出POST请求来注册预生成的模型： `/models` 端点。 为了注册您的型号，请 `modelArtifact` 文件和 `model` 属性值需要包含在请求正文中。
 
 **API格式**
 
@@ -191,12 +192,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `modelArtifact` | 要包括的完整“模型”工件的位置。 |
-| `model` | 需要创建的模型对象的表单数据。 |
+| `modelArtifact` | 要包括的完整模型工件的位置。 |
+| `model` | 需要创建的Model对象的表单数据。 |
 
 **响应**
 
-成功响应将返回包含模型详细信息的有效负载，包括模型唯一标识符(`id`)。
+成功的响应将返回包含模型详细信息的有效负载，包括模型的唯一标识符(`id`)。
 
 ```json
 {
@@ -213,7 +214,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 对应于模型的ID。 |
-| `modelArtifactUri` | 指示模型存储位置的URI。 URI以 `id` 模型的值。 |
+| `modelArtifactUri` | 指示存储模型位置的URI。 URI以 `id` 模型的值。 |
 
 ## 按ID更新模型
 
@@ -221,7 +222,7 @@ curl -X POST \
 
 >[!TIP]
 >
->为了确保此PUT请求成功，建议您首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
+>为了确保此PUT请求成功，建议您首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 **API格式**
 
@@ -280,7 +281,7 @@ curl -X PUT \
 
 ## 按ID删除模型
 
-您可以通过执行请求(请求路径中包含DELETE模型的ID)来删除单个模型。
+您可以通过执行请求(DELETE路径中包含目标模型的ID)来删除单个模型。
 
 **API格式**
 
@@ -305,7 +306,7 @@ curl -X DELETE \
 
 **响应**
 
-成功响应将返回一个包含200状态的有效负载，以确认删除模型。
+成功响应会返回一个包含200状态的有效负载，以确认删除模型。
 
 ```json
 {
@@ -317,7 +318,7 @@ curl -X DELETE \
 
 ## 为模型创建新的转码 {#create-transcoded-model}
 
-转码是将一种编码直接转换为另一种编码的数字转换。 要创建新的模型转码，请提供 `{MODEL_ID}` 和 `targetFormat` 您希望新输出位于中。
+转码是将一种编码直接转换为另一种编码的数字转换。 通过提供 `{MODEL_ID}` 和 `targetFormat` 您希望新输出位于中。
 
 **API格式**
 
@@ -354,7 +355,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回一个有效负载，该有效负载包含包含代码转换信息的JSON对象。 这包括转码唯一标识符(`id`)，用于 [检索特定的转码模型](#retrieve-transcoded-model).
+成功的响应会返回一个有效负载，该有效负载包含带有转码信息的JSON对象。 这包括转码唯一标识符(`id`)，用于 [检索特定的转码模型](#retrieve-transcoded-model).
 
 ```json
 {
@@ -372,7 +373,7 @@ curl -X POST \
 
 ## 检索模型的转码列表 {#retrieve-transcoded-model-list}
 
-您可以通过使用以下各项执行GET请求，检索已在模型上执行的转码列表： `{MODEL_ID}`.
+通过执行GET请求，您可以检索已在模型上执行的转码列表。 `{MODEL_ID}`.
 
 **API格式**
 
@@ -397,7 +398,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个有效负载，其中包含一个json对象，以及在该模型上执行的每个转码列表。 每个转码模型都会收到一个唯一标识符(`id`)。
+成功的响应会返回一个有效负载，该有效负载包含一个json对象，以及在该模型上执行的每个转码列表。 每个转码模型都会收到一个唯一标识符(`id`)。
 
 ```json
 {
@@ -432,7 +433,7 @@ curl -X GET \
 
 ## 检索特定的转码模型 {#retrieve-transcoded-model}
 
-您可以通过以下方式执行GET请求，检索特定的转码模型： `{MODEL_ID}` 以及转码模型的id。
+您可以通过以下方式执行GET请求，检索特定的转码模型： `{MODEL_ID}` 以及转码模型的ID。
 
 **API格式**
 

@@ -2,26 +2,27 @@
 keywords: Experience Platform；主页；热门主题；沙盒开发人员指南
 solution: Experience Platform
 title: 沙盒管理API端点
-description: 沙盒API中的/sandboxes端点允许您以编程方式管理Adobe Experience Platform中的沙盒。
+description: 沙盒API中的/sandboxes端点允许您在Adobe Experience Platform中以编程方式管理沙盒。
+role: Developer
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1474'
 ht-degree: 3%
 
 ---
 
 # 沙盒管理端点
 
-Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 此 `/sandboxes` 中的端点 [!DNL Sandbox] API允许您以编程方式管理Platform中的沙箱。
+Adobe Experience Platform中的沙盒提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验以及进行自定义配置。 此 `/sandboxes` 中的端点 [!DNL Sandbox] API允许您在Platform中以编程方式管理沙箱。
 
 ## 快速入门
 
-本指南中使用的API端点是 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+本指南中使用的API端点是 [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). 在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 检索沙盒列表 {#list}
 
-您可以向以下网站发出GET请求，列出属于您组织（处于活动状态或其他状态）的所有沙箱： `/sandboxes` 端点。
+您可以向以下网站发出GET请求，列出属于贵组织的所有沙箱（处于活动状态或其他状态）： `/sandboxes` 端点。
 
 **API格式**
 
@@ -31,7 +32,7 @@ GET /sandboxes?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 请参阅以下部分： [查询参数](./appendix.md#query) 了解更多信息。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 请参阅以下部分 [查询参数](./appendix.md#query) 以了解更多信息。 |
 
 **请求**
 
@@ -46,7 +47,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回属于您组织的沙盒列表，包括详细信息，例如 `name`， `title`， `state`、和 `type`.
+成功的响应将返回属于您组织的沙盒列表，包括详细信息，例如 `name`， `title`， `state`、和 `type`.
 
 ```json
 {
@@ -129,10 +130,10 @@ curl -X GET \
 | --- | --- |
 | `name` | 沙盒的名称。 此属性用于API调用中的查找目的。 |
 | `title` | 沙盒的显示名称。 |
-| `state` | 沙盒的当前处理状态。 沙盒的状态可以是以下任一状态： <br/><ul><li>`creating`：沙盒已创建，但系统仍在对其进行配置。</li><li>`active`：沙盒已创建并处于活动状态。</li><li>`failed`：由于错误，沙盒无法由系统配置并被禁用。</li><li>`deleted`：已手动禁用沙盒。</li></ul> |
+| `state` | 沙盒的当前处理状态。 沙盒的状态可以是以下任一状态： <br/><ul><li>`creating`：沙盒已创建，但仍由系统配置。</li><li>`active`：沙盒已创建并处于活动状态。</li><li>`failed`：由于错误，沙盒无法由系统配置并被禁用。</li><li>`deleted`：已手动禁用沙盒。</li></ul> |
 | `type` | 沙盒类型。 当前支持的沙盒类型包括 `development` 和 `production`. |
 | `isDefault` | 布尔属性，指示此沙盒是否为组织的默认生产沙盒。 |
-| `eTag` | 沙盒的特定版本的标识符。 用于版本控制和缓存效率，该值会在每次对沙盒进行更改时更新。 |
+| `eTag` | 沙盒的特定版本的标识符。 用于版本控制和缓存效率，每次对沙盒进行更改时都会更新此值。 |
 
 ## 查找沙盒 {#lookup}
 
@@ -150,7 +151,7 @@ GET /sandboxes/{SANDBOX_NAME}
 
 **请求**
 
-以下请求可检索名为“dev-2”的沙盒。
+以下请求检索名为“dev-2”的沙盒。
 
 ```shell
 curl -X GET \
@@ -184,22 +185,22 @@ curl -X GET \
 | --- | --- |
 | `name` | 沙盒的名称。 此属性用于API调用中的查找目的。 |
 | `title` | 沙盒的显示名称。 |
-| `state` | 沙盒的当前处理状态。 沙盒的状态可以是以下任一状态： <ul><li>**创建**：沙盒已创建，但系统仍在对其进行配置。</li><li>**活动**：沙盒已创建并处于活动状态。</li><li>**失败**：由于错误，沙盒无法由系统配置并被禁用。</li><li>**已删除**：已手动禁用沙盒。</li></ul> |
+| `state` | 沙盒的当前处理状态。 沙盒的状态可以是以下任一状态： <ul><li>**创建**：沙盒已创建，但仍由系统配置。</li><li>**活动**：沙盒已创建并处于活动状态。</li><li>**失败**：由于错误，沙盒无法由系统配置并被禁用。</li><li>**已删除**：已手动禁用沙盒。</li></ul> |
 | `type` | 沙盒类型。 当前支持的沙盒类型包括： `development` 和 `production`. |
 | `isDefault` | 布尔属性，指示此沙盒是否为组织的默认沙盒。 通常，这是生产沙盒。 |
-| `eTag` | 沙盒的特定版本的标识符。 用于版本控制和缓存效率，该值会在每次对沙盒进行更改时更新。 |
+| `eTag` | 沙盒的特定版本的标识符。 用于版本控制和缓存效率，每次对沙盒进行更改时都会更新此值。 |
 
 ## 创建沙盒 {#create}
 
 >[!NOTE]
 >
->创建新沙盒时，您必须首先将该新沙盒添加到您的产品配置文件中 [Adobe Admin Console](https://adminconsole.adobe.com/) 才能开始使用新沙盒。 请参阅相关文档 [管理产品配置文件的权限](../../access-control/ui/permissions.md) 有关如何将沙盒预配到产品配置文件的信息。
+>创建新沙盒时，您必须首先将该新沙盒添加到您的产品配置文件中 [Adobe Admin Console](https://adminconsole.adobe.com/) 才能开始使用新沙盒。 请参阅相关文档 [管理产品配置文件的权限](../../access-control/ui/permissions.md) 有关如何向产品配置文件配置沙盒的信息。
 
-您可以通过对以下项发出POST请求，创建新的开发或生产沙盒： `/sandboxes` 端点。
+您可以通过向以下网站发出POST请求来创建新的开发或生产沙盒： `/sandboxes` 端点。
 
 ### 创建开发沙盒
 
-要创建开发沙盒，您必须提供 `type` 具有值的属性 `development` 请求有效负载中的。
+要创建开发沙盒，您必须提供 `type` 属性值为的属性 `development` 请求有效负载中的。
 
 **API格式**
 
@@ -233,7 +234,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的沙盒的详细信息，显示其 `state` 是“创建”。
+成功响应会返回新创建的沙盒的详细信息，表明其 `state` 是“创建”。
 
 ```json
 {
@@ -247,11 +248,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->沙盒大约需要30秒由系统配置，之后它们需要 `state` 将变为“活动”或“失败”。
+>系统配置沙盒大约需要30秒，之后它们的 `state` 将变为“活动”或“失败”。
 
 ### 创建生产沙盒
 
-要创建生产沙盒，您必须提供 `type` 具有值的属性 `production` 请求有效负载中的。
+要创建生产沙盒，您必须提供 `type` 属性值为的属性 `production` 请求有效负载中的。
 
 **API格式**
 
@@ -286,7 +287,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的沙盒的详细信息，显示其 `state` 是“创建”。
+成功响应会返回新创建的沙盒的详细信息，表明其 `state` 是“创建”。
 
 ```json
 {
@@ -300,11 +301,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->沙盒大约需要30秒由系统配置，之后它们需要 `state` 将变为“活动”或“失败”。
+>系统配置沙盒大约需要30秒，之后它们的 `state` 将变为“活动”或“失败”。
 
 ## 更新沙盒 {#put}
 
-您可以通过发出包含沙盒的PATCH请求来更新沙盒中的一个或多个字段 `name` 以及要在请求有效负载中更新的属性中查找。
+您可以通过发出包含沙盒的PATCH请求来更新沙盒中的一个或多个字段 `name` 以及要在请求有效负载中更新的属性中跟踪的数据。
 
 >[!NOTE]
 >
@@ -363,11 +364,11 @@ PUT /sandboxes/{SANDBOX_NAME}
 | 参数 | 描述 |
 | --- | --- |
 | `{SANDBOX_NAME}` | 此 `name` 要重置的沙盒的属性。 |
-| `validationOnly` | 一个可选参数，允许您对沙盒重置操作执行预检检查，而无需提出实际请求。 将此参数设置为 `validationOnly=true` 检查您即将重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
+| `validationOnly` | 一个可选参数，允许您对沙盒重置操作执行预检而不发出实际请求。 将此参数设置为 `validationOnly=true` 检查您即将重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
 
 **请求**
 
-以下请求会重置名为“acme-dev”的沙盒。
+以下请求重置名为“acme-dev”的沙盒。
 
 ```shell
 curl -X PUT \
@@ -383,7 +384,7 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `action` | 必须在请求有效负载中使用此参数的值“reset”来提供以重置沙盒。 |
+| `action` | 必须在请求有效负载中提供值为“reset”的此参数，才能重置沙盒。 |
 
 **响应**
 
@@ -391,7 +392,7 @@ curl -X PUT \
 >
 >沙盒重置后，系统配置沙盒大约需要30秒。
 
-成功响应将返回更新后的沙盒的详细信息，表明其 `state` 是“重置”。
+成功响应会返回已更新沙盒的详细信息，表明其 `state` 是“重置”。
 
 ```json
 {
@@ -404,7 +405,7 @@ curl -X PUT \
 }
 ```
 
-如果Adobe Analytics也在使用其中托管的身份图形来执行，则无法重置默认的生产沙盒和任何用户创建的生产沙盒 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能，或者如果Adobe Audience Manager也在使用其中托管的身份图来 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) 功能。
+如果Adobe Analytics也在使用其中托管的身份图形来执行，则无法重置默认的生产沙盒和任何用户创建的生产沙盒 [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) 功能，或者Adobe Audience Manager也在使用其中托管的身份图用于 [基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) 功能。
 
 以下是可阻止沙盒重置的可能异常列表：
 
@@ -431,7 +432,7 @@ curl -X PUT \
 }
 ```
 
-您可以继续重置用于双向区段共享的生产沙盒 [!DNL Audience Manager] 或 [!DNL Audience Core Service] 通过添加 `ignoreWarnings` 参数到您的请求。
+您可以继续重置用于与进行双向区段共享的生产沙盒 [!DNL Audience Manager] 或 [!DNL Audience Core Service] 通过添加 `ignoreWarnings` 参数到您的请求。
 
 **API格式**
 
@@ -462,7 +463,7 @@ curl -X PUT \
 
 **响应**
 
-成功响应将返回更新后的沙盒的详细信息，表明其 `state` 是“重置”。
+成功响应会返回已更新沙盒的详细信息，表明其 `state` 是“重置”。
 
 ```json
 {
@@ -481,11 +482,11 @@ curl -X PUT \
 >
 >无法删除默认的生产沙盒。
 
-您可以通过发出DELETE请求来删除沙盒，请求中包含沙盒的 `name` 在请求路径中。
+您可以通过发出包含沙盒的DELETE请求来删除沙盒 `name` 在请求路径中。
 
 >[!NOTE]
 >
->发出此API调用将更新沙盒的 `status` 属性将重命名为“deleted”并取消激活它。 删除沙盒后，GET请求仍可以检索沙盒的详细信息。
+>进行此API调用将更新沙盒的 `status` 属性将重命名为“deleted”并停用它。 删除沙盒后，GET请求仍可以检索沙盒的详细信息。
 
 **API格式**
 
@@ -495,9 +496,9 @@ DELETE /sandboxes/{SANDBOX_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SANDBOX_NAME}` | 此 `name` 要删除的沙盒的ID。 |
-| `validationOnly` | 一个可选参数，允许您对沙盒删除操作执行预检检查，而无需提出实际请求。 将此参数设置为 `validationOnly=true` 检查您即将重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
-| `ignoreWarnings` | 一个可选参数，允许您跳过验证检查并强制删除用户创建的生产沙盒，该沙盒用于与进行双向区段共享 [!DNL Audience Manager] 或 [!DNL Audience Core Service]. 此参数无法应用于默认的生产沙盒。 |
+| `{SANDBOX_NAME}` | 此 `name` 要删除的沙盒的。 |
+| `validationOnly` | 一个可选参数，允许您对沙盒删除操作进行预检而不发出实际请求。 将此参数设置为 `validationOnly=true` 检查您即将重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
+| `ignoreWarnings` | 一个可选参数，允许您跳过验证检查并强制删除用户创建用于与进行双向区段共享的生产沙盒 [!DNL Audience Manager] 或 [!DNL Audience Core Service]. 此参数无法应用于默认的生产沙盒。 |
 
 **请求**
 
@@ -513,7 +514,7 @@ curl -X DELETE \
 
 **响应**
 
-成功响应将返回沙盒的更新详细信息，显示其 `state` 为“已删除”。
+成功的响应将返回沙盒的更新详细信息，显示其 `state` 为“已删除”。
 
 ```json
 {

@@ -3,10 +3,11 @@ keywords: Experience Platform；主页；热门主题；查询服务；查询服
 solution: Experience Platform
 title: 计划端点
 description: 以下部分介绍了您可以使用查询服务API对计划查询进行的各种API调用。
+role: Developer
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 958d5c322ff26f7372f8ab694a70ac491cbff56c
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1212'
+source-wordcount: '1214'
 ht-degree: 2%
 
 ---

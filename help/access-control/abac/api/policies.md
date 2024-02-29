@@ -3,8 +3,9 @@ keywords: Experience Platform；主页；热门主题；API；基于属性的访
 solution: Experience Platform
 title: 访问控制策略API端点
 description: 基于属性的访问控制API中的/policies端点允许您以编程方式管理Adobe Experience Platform中的策略。
+role: Developer
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 01574f37593c707f092a8b4aa03d3d67e8c20780
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1433'
 ht-degree: 2%

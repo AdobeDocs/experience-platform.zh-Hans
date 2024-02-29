@@ -1,11 +1,12 @@
 ---
 title: 验证并访问 Privacy Service API
 description: 在文档中了解如何对Privacy ServiceAPI进行身份验证以及如何解释示例API调用。
+role: Developer
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '862'
-ht-degree: 7%
+source-wordcount: '851'
+ht-degree: 5%
 
 ---
 
@@ -72,7 +73,7 @@ ht-degree: 7%
 将API添加到项目后， **[!UICONTROL PRIVACY SERVICEAPI]** 项目页面显示所有Privacy ServiceAPI调用所需的以下凭据：
 
 * `{API_KEY}` ([!UICONTROL 客户端ID])
-* `{ORG_ID}` ([!UICONTROL 组织 ID])
+* `{ORG_ID}` ([!UICONTROL 组织ID])
 
 ![在开发人员控制台中添加API后的集成信息。](/help/privacy-service/images/api/getting-started/api-integration-information.png)
 

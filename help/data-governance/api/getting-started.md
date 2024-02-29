@@ -3,11 +3,12 @@ keywords: Experience Platform；主页；热门主题；DULE；dule
 solution: Experience Platform
 title: 策略服务API快速入门
 description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档介绍了在尝试调用策略服务API之前需要了解的核心概念。
+role: Developer
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '442'
-ht-degree: 16%
+source-wordcount: '439'
+ht-degree: 8%
 
 ---
 
@@ -20,13 +21,13 @@ ht-degree: 16%
 使用开发人员指南需要对各种 [!DNL Experience Platform] 使用数据管理功能涉及的服务。 开始使用之前 [!DNL Policy Service API]，请查看以下服务的文档：
 
 * [数据管理](../home.md)：用于执行操作的框架 [!DNL Experience Platform] 强制实施数据使用合规性。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：[!DNL Experience Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Experience Platform] 组织客户体验数据。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 * [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ## 正在读取示例 API 调用
 
-此 [!DNL Policy Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
+此 [!DNL Policy Service] API文档提供了示例API调用，以演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ## 必需的标头
 

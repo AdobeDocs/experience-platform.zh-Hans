@@ -3,7 +3,8 @@ audience: user
 user-guide-title: 实时客户配置文件指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: Profiles
-source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
+role: User
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '129'
 ht-degree: 25%

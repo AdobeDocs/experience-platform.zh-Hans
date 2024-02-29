@@ -3,8 +3,9 @@ keywords: Experience Platform；主页；热门主题；列出可用沙盒；列
 solution: Experience Platform
 title: 可用沙盒API端点
 description: 您可以通过对可用沙盒端点发出GET请求来列出当前用户可用的沙盒。
+role: Developer
 exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
-source-git-commit: 130f3a9b65befc1cc8cf400b8ca8ca4d6e7f71e4
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 2%

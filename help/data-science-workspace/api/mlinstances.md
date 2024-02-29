@@ -3,23 +3,24 @@ keywords: Experience Platform；开发人员指南；端点；Data Science Works
 solution: Experience Platform
 title: MLInstances API端点
 description: MLInstance是现有引擎与定义任何训练参数、评分参数或硬件资源配置的适当配置集的配对。
+role: Developer
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '619'
-ht-degree: 4%
+ht-degree: 3%
 
 ---
 
 # MLInstances端点
 
-MLInstance是现有 [引擎](./engines.md) 包含一组适当的配置，可定义任何训练参数、评分参数或硬件资源配置。
+MLInstance是现有 [引擎](./engines.md) ，用于定义任何训练参数、评分参数或硬件资源配置。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
-您可以创建MLInstance，方法是在提供包含有效引擎ID的请求有效负载时执行POST请求(`{ENGINE_ID}`)和一组适当的默认配置。
+您可以创建MLInstance，方法是在提供包含有效引擎ID的POST有效负载的同时执行请求请求(`{ENGINE_ID}`)和一组适当的默认配置。
 
-如果引擎ID引用PySpark或Spark引擎，则您能够配置计算资源的数量，例如核心数量或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行训练和评分。 请参阅附录中关于 [PySpark和Spark资源配置](./appendix.md#resource-config) 和 [Python CPU和GPU配置](./appendix.md#cpu-gpu-config) 了解更多信息。
+如果引擎ID引用PySpark或Spark引擎，则您能够配置计算资源的数量，例如核心数量或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行训练和评分。 请参阅附录中有关 [PySpark和Spark资源配置](./appendix.md#resource-config) 和 [Python CPU和GPU配置](./appendix.md#cpu-gpu-config) 以了解更多信息。
 
 **API格式**
 
@@ -75,14 +76,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 所需的MLInstance名称。 与此MLInstance对应的模型将继承此值，以作为模型的名称显示在UI中。 |
-| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，以作为模型的描述显示在UI中。 此属性是必需的。如果不希望提供描述，请将其值设置为空字符串。 |
+| `name` | MLInstance所需的名称。 与此MLInstance对应的模型将继承此值，以作为模型的名称显示在UI中。 |
+| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，以作为模型的描述显示在UI中。 此属性是必需的。 如果您不想提供描述，请将其值设置为空字符串。 |
 | `engineId` | 现有引擎的ID。 |
-| `tasks` | 训练、评分或功能管道的一组配置。 |
+| `tasks` | 用于训练、评分或功能管道的一组配置。 |
 
 **响应**
 
-成功响应将返回一个有效负载，其中包含新创建的MLInstance的详细信息，包括其唯一标识符(`id`)。
+成功的响应会返回包含新创建的MLInstance的详细信息的有效负载，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -127,7 +128,7 @@ curl -X POST \
 }
 ```
 
-## 检索MLInstances列表
+## 检索MLIstances列表
 
 您可以通过执行单个GET请求来检索MLInstances列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
 
@@ -157,7 +158,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回MLInstances列表及其详细信息。
+成功的响应将返回MLInstances列表及其详细信息。
 
 ```json
 {
@@ -222,7 +223,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回MLInstance的详细信息。
+成功的响应将返回MLInstance的详细信息。
 
 ```json
 {
@@ -270,13 +271,13 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以更新现有MLInstance，方法是通过PUT请求（请求路径中包含Target MLInstance的ID）覆盖其属性，并提供包含已更新属性的JSON有效负载。
+您可以更新现有的MLInstance，方法是通过PUT请求（请求路径中包含Target MLInstance的ID）覆盖其属性，并提供包含已更新属性的JSON有效负载。
 
 >[!TIP]
 >
->为了确保此PUT请求成功，建议您首先执行GET请求 [按ID检索MLInstance](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLInstance](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
-以下示例API调用最初具有这些属性时，将更新MLInstance的训练和评分参数：
+以下示例API调用将在最初具有这些属性时更新MLInstance的训练和评分参数：
 
 ```json
 {
@@ -365,7 +366,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回包含MLInstance更新详细信息的有效负载。
+成功的响应将返回包含MLInstance更新详细信息的有效负载。
 
 ```json
 {
@@ -439,7 +440,7 @@ curl -X DELETE \
 
 ## 删除MLInstance
 
-通过执行DELETE请求（请求路径中包含MLInstance的ID），可以删除单个MLInstance。
+通过执行DELETE请求（该请求路径中包含Target MLInstance的ID），可以删除单个MLInstance。
 
 **API格式**
 

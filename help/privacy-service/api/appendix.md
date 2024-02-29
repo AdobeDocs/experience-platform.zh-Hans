@@ -3,11 +3,12 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Privacy ServiceAPI指南附录
 description: 本文档包含有关使用Privacy ServiceAPI的其他信息。
+role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: b0b49badd46601571be59afba84fad874ca1b368
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '476'
-ht-degree: 6%
+ht-degree: 5%
 
 ---
 
@@ -24,13 +25,13 @@ ht-degree: 6%
 | 标识类型 | `namespace` | `namespaceId` |
 | --- | --- | --- |
 | 电子邮件 | `Email` | `6` |
-| Phone | `Phone` | `7` |
+| 电话 | `Phone` | `7` |
 | ADOBE ADVERTISING CLOUD ID | `AdCloud` | `411` |
 | ADOBE AUDIENCE MANAGER UUID | `CORE` | `0` |
 | Adobe Experience Cloud ID | `ECID` | `4` |
 | ADOBE TARGET ID | `TNTID` | `9` |
 | [!DNL Apple] 广告商的ID | `IDFA` | `20915` |
-| [!DNL Google] 广告 ID | `GAID` | `20914` |
+| [!DNL Google] 广告ID | `GAID` | `20914` |
 | [!DNL Windows] AID | `WAID` | `8` |
 
 {style="table-layout:auto"}

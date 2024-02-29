@@ -2,9 +2,10 @@
 keywords: Experience Platform；主页；热门主题；查询服务；API指南；连接参数；查询服务；
 solution: Experience Platform
 title: 连接参数API端点
-description: 您可以通过向/connection_parameters端点发出GET请求来检索连接参数，以便使用交互式服务。
+description: 通过向/connection_parameters端点发出GET请求，可以检索用于使用交互式服务的连接参数。
+role: Developer
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 1%
@@ -15,11 +16,11 @@ ht-degree: 1%
 
 ## 示例API调用
 
-以下部分将指导您完成可以使用发起的API调用 [!DNL Query Service] API。 该调用包括常规API格式、显示所需标头的示例请求和示例响应。
+以下部分将指导您使用 [!DNL Query Service] API。 该调用包括常规API格式、显示所需标头的示例请求以及示例响应。
 
 ### 请求连接参数
 
-您可以通过向以下网站发出GET请求来检索连接参数： `/connection_parameters` 端点。 有关使用连接参数通过交互式服务进行连接的客户端的更多信息，请阅读以下文档： [查询服务客户端](../clients/overview.md).
+您可以通过向以下网站发出GET请求来检索连接参数 `/connection_parameters` 端点。 有关使用连接参数通过交互式服务进行连接的客户端的更多信息，请阅读以下文档： [查询服务客户端](../clients/overview.md).
 
 **API格式**
 

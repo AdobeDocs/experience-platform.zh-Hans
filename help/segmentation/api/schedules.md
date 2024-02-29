@@ -2,11 +2,12 @@
 solution: Experience Platform
 title: 计划API端点
 description: 计划是一种可用于每天自动运行一次批处理分段作业的工具。
+role: Developer
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1996'
-ht-degree: 4%
+source-wordcount: '2040'
+ht-degree: 3%
 
 ---
 
@@ -136,12 +137,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 
 | 属性 | 描述 |
 | -------- | ------------ |
-| `name` | **必需.** 作为字符串的计划名称。 |
-| `type` | **必需.** 字符串形式的作业类型。 支持的两种类型是“batch_segmentation”和“export”。 |
-| `properties` | **必需.** 包含与计划相关的其他属性的对象。 |
+| `name` | **必需。** 作为字符串的计划名称。 |
+| `type` | **必需。** 字符串形式的作业类型。 支持的两种类型是“batch_segmentation”和“export”。 |
+| `properties` | **必需。** 包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **在以下情况下需要 `type` 等于“batch_segmentation”。** 使用 `["*"]` 确保包括所有区段。 |
-| `schedule` | *可选.* 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron时间表的详细信息，请阅读 [cron表达式格式](#appendix). 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 <br><br>如果未提供此字符串，则将自动生成系统生成的计划。 |
-| `state` | *可选.* 包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
+| `schedule` | *可选。* 包含作业计划的字符串。 作业只能被安排每天运行一次，这意味着您不能将作业安排在24小时期间运行多次。 有关cron时间表的详细信息，请阅读 [cron表达式格式](#appendix). 在此示例中，“0 0 1 * *”表示此计划将在每天凌晨1:00运行。 <br><br>如果未提供此字符串，则将自动生成系统生成的计划。 |
+| `state` | *可选。* 包含计划状态的字符串。 支持的两种状态分别为“活动”和“不活动”。 默认情况下，状态设置为“不活动”。 |
 
 **响应**
 

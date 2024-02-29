@@ -1,10 +1,11 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实验；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实验；Sensei机器学习API
 solution: Experience Platform
 title: 试验API端点
-description: 模型开发和培训在试验级别进行，试验包括MLInstance、培训运行和评分运行。
+description: 模型开发和训练在试验级别进行，试验包括MLInstance、训练运行和评分运行。
+role: Developer
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 4%
@@ -13,11 +14,11 @@ ht-degree: 4%
 
 # 试验端点
 
-模型开发和培训在试验级别进行，试验包括MLInstance、培训运行和评分运行。
+模型开发和训练在试验级别进行，试验包括MLInstance、训练运行和评分运行。
 
 ## 创建试验 {#create-an-experiment}
 
-您可以通过在请求有效负载中提供名称和有效的MLInstance ID时执行POST请求来创建试验。
+您可以通过在请求有效载荷中提供一个名称和有效的MLInstance ID的同时执行POST请求来创建试验。
 
 >[!NOTE]
 >
@@ -52,7 +53,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回一个有效负载，其中包含新创建的试验的详细信息，包括其唯一标识符(`id`)。
+成功的响应会返回一个有效负载，其中包含新创建试验的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -68,9 +69,9 @@ curl -X POST \
 }
 ```
 
-## 创建和执行训练或评分运行 {#experiment-training-scoring}
+## 创建并执行训练或评分运行 {#experiment-training-scoring}
 
-可通过执行POST请求并提供有效的试验ID并指定运行任务来创建训练或评分运行。 仅当试验已经存在且成功的训练运行时，才能创建评分运行。 成功创建训练运行将初始化模型训练过程，成功完成该过程将生成经过训练的模型。 生成经过训练的模型将替换任何以前已有的模型，以便试验在任何给定时间只能使用单个经过训练的模型。
+您可以通过执行POST请求并提供有效的试验ID并指定运行任务来创建训练或评分运行。 仅当试验已经存在并成功的训练运行时，才能创建评分运行。 成功创建训练运行将初始化模型训练过程，成功完成过程将生成经过训练的模型。 生成经过训练的模型将替换任何以前存在的模型，以便试验在任何给定时间只能利用单个经过训练的模型。
 
 **API格式**
 
@@ -99,11 +100,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `{TASK}` | 指定运行的任务。 将此值设置为 `train` 用于培训， `score` 用于评分，或 `featurePipeline` 用于功能管道。 |
+| `{TASK}` | 指定运行的任务。 将此值设置为 `train` 用于培训， `score` 以进行评分，或 `featurePipeline` 用于功能管道。 |
 
 **响应**
 
-成功响应将返回一个有效负载，其中包含新创建的运行的详细信息（包括继承的默认训练或评分参数），以及运行的唯一ID (`{RUN_ID}`)。
+成功的响应会返回一个有效负载，其中包含新创建的运行的详细信息，包括继承的默认训练或评分参数，以及运行的唯一ID (`{RUN_ID}`)。
 
 ```json
 {
@@ -159,7 +160,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
+成功响应会返回共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
 
 ```json
 {
@@ -223,7 +224,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回一个包含所请求试验详细信息的有效负载。
+成功的响应将返回包含所请求试验详细信息的有效负载。
 
 ```json
 {
@@ -239,13 +240,13 @@ curl -X GET \
 }
 ```
 
-## 检索试验运行的列表
+## 检索试验运行列表
 
-通过执行单个GET请求并提供有效的试验ID，可检索属于特定试验的训练或评分运行的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参见 [用于资源检索的查询参数](./appendix.md#query).
+您可以通过执行单个GET请求并提供有效的试验ID，检索属于特定试验的训练或评分运行列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参阅 [用于资源检索的查询参数](./appendix.md#query).
 
 >[!NOTE]
 >
->组合多个查询参数时，必须使用&amp;符号分隔。
+>组合多个查询参数时，必须用&amp;号分隔。
 
 **API格式**
 
@@ -263,7 +264,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 
 **请求**
 
-以下请求包含一个查询，并检索属于某个试验的训练运行列表。
+以下请求包含一个查询并检索属于某个试验的训练运行列表。
 
 ```shell
 curl -X GET \
@@ -306,9 +307,9 @@ curl -X GET \
 
 >[!TIP]
 >
->为了确保此PUT请求成功，建议您首先执行GET请求 [按ID检索试验](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索试验](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
-以下示例API调用最初具有这些属性时会更新实验的名称：
+以下示例API调用在最初具有这些属性时会更新试验的名称：
 
 ```json
 {

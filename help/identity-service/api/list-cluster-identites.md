@@ -2,18 +2,19 @@
 keywords: Experience Platform；主页；热门主题；列表身份；列表群集
 solution: Experience Platform
 title: 列出群集中的所有标识
-description: 在身份图表中关联的身份（无论命名空间如何）被视为该身份图表中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
+description: 在身份图表中关联的身份（无论是否具有命名空间）被视为该身份图表中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
+role: Developer
 exl-id: 0fb9eac9-2dc2-4881-8598-02b3053d0b31
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '365'
 ht-degree: 1%
 
 ---
 
 # 列出群集中的所有身份
 
-在身份图表中关联的身份（无论命名空间如何）被视为该身份图表中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
+在身份图表中关联的身份（无论是否具有命名空间）被视为该身份图表中同一“集群”的一部分。 以下选项提供了访问所有群集成员的方法。
 
 ## 获取单个标识的关联标识
 
@@ -22,7 +23,7 @@ ht-degree: 1%
 您可以使用可选的 `graph-type` 指示从中获取集群的身份图的参数。 选项包括：
 
 - 无 — 不执行身份拼接。
-- 专用图 — 根据专用身份图执行身份拼合。 如果否 `graph-type` ，这是默认设置。
+- 专用图 — 根据专用身份图执行身份拼接。 如果否 `graph-type` （这是默认设置）。
 
 **API格式**
 
@@ -54,7 +55,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID提供身份(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -67,11 +68,11 @@ curl -X GET \
 
 ## 获取多个标识的关联标识
 
-使用 `POST` 作为批等效项 `GET` 上述方法用于返回多个身份群集中的身份。
+使用 `POST` 作为批次等效项 `GET` 上述方法用于返回多个身份群集中的身份。
 
 >[!NOTE]
 >
->请求应指示不超过1000个标识。 请求超过1000个标识将导致400个状态代码。
+>请求应指示不超过1000个身份。 请求超过1000个标识将导致400个状态代码。
 
 **API格式**
 
@@ -85,7 +86,7 @@ POST https://platform-{REGION}.adobe.io/data/core/identity/clusters/members
 
 **存根请求**
 
-使用情况 `x-uis-cst-ctx: stub` 标头将返回一个存根响应。 这是一个临时解决方案，可在服务完成时促进早期集成开发进度。 当不再需要时，该选项将被弃用。
+使用 `x-uis-cst-ctx: stub` 标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
 
 ```shell
 curl -X POST \
@@ -143,7 +144,7 @@ curl -X POST \
 
 **响应**
 
-**“已截断”响应**
+**“已存根”响应**
 
 ```json
 {
@@ -237,8 +238,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->无论请求的XID是否属于同一群集，或者是否有一个或多个群集关联，响应中始终为请求中提供的每个XID都有一个条目。
+>对于请求中提供的每个XID，响应将始终有一个对应的条目，而不管请求的XID是否属于同一集群，或者是否有一个或多个集群根本没有关联。
 
 ## 后续步骤
 
-继续下一教程，了解 [列出标识的群集历史记录](./list-cluster-history.md)
+继续下一教程以 [列出标识的群集历史记录](./list-cluster-history.md)

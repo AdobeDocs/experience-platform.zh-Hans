@@ -1,10 +1,11 @@
 ---
 title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
+role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: a954059155857e6dde7884cf413561cd5214d9bb
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1714'
+source-wordcount: '1726'
 ht-degree: 2%
 
 ---

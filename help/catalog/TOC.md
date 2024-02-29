@@ -3,10 +3,11 @@ audience: user
 user-guide-title: 目录和数据集指南
 user-guide-description: 探索数据湖中的数据谱系、元数据、文件描述、目录和数据集，并详细了解目录服务系统。
 feature: Catalog
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '119'
-ht-degree: 36%
+source-wordcount: '112'
+ht-degree: 33%
 
 ---
 

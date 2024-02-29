@@ -2,20 +2,21 @@
 keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；mlservices；sensei机器学习api
 solution: Experience Platform
 title: MLServices API端点
-description: MLService是一个已发布的经过训练的模型，使您的组织能够访问和重用之前开发的模型。 MLServices的一个主要功能是按计划自动执行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的评分运行可确保始终如一地生成新见解。
+description: MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
+role: Developer
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '887'
 ht-degree: 2%
 
 ---
 
 # MLServices端点
 
-MLService是一个已发布的经过训练的模型，使您的组织能够访问和重用之前开发的模型。 MLServices的一个主要功能是按计划自动执行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的评分运行可确保始终如一地生成新见解。
+MLService是一个已发布的经过训练的模型，使您的组织能够访问和重复使用以前开发的模型。 MLServices的主要功能是能够按计划自动进行训练和评分。 计划的训练运行有助于保持模型的效率和准确性，而计划的得分运行可以确保始终如一地生成新见解。
 
-自动训练和评分计划通过开始时间戳、结束时间戳和频率来定义，频率表示为 [cron表达式](https://en.wikipedia.org/wiki/Cron). 可以在以下情况下定义计划 [创建MLService](#create-an-mlservice) 或应用者 [更新现有MLService](#update-an-mlservice).
+自动训练和评分计划具有开始时间戳、结束时间戳和以表示的频率。 [cron表达式](https://en.wikipedia.org/wiki/Cron). 可以在以下情况下定义计划 [创建MLService](#create-an-mlservice) 或应用者 [更新现有MLService](#update-an-mlservice).
 
 ## 创建MLService {#create-an-mlservice}
 
@@ -59,24 +60,24 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 所需的MLService名称。 与此MLService对应的服务将继承此值，作为服务的名称显示在服务库UI中。 |
+| `name` | 所需的MLService名称。 与此MLService对应的服务将继承此值，以作为服务的名称显示在服务库UI中。 |
 | `description` | MLService的可选描述。 与此MLService对应的服务将继承此值，以作为服务的描述显示在服务库UI中。 |
 | `mlInstanceId` | 有效的MLInstance ID。 |
-| `trainingDataSetId` | 如果提供，训练数据集ID将覆盖MLInstance的默认数据集ID。 如果用于创建MLService的MLInstance未定义训练数据集，则必须提供相应的训练数据集ID。 |
-| `trainingExperimentId` | 您可以选择提供的试验ID。 如果未提供此值，则创建MLService也将使用MLInstance的默认配置创建一个新的试验。 |
+| `trainingDataSetId` | 培训数据集ID，如果提供，将覆盖MLInstance的默认数据集ID。 如果用于创建MLService的MLInstance未定义训练数据集，则必须提供相应的训练数据集ID。 |
+| `trainingExperimentId` | 您可以选择提供的试验ID。 如果未提供此值，则创建MLService也将使用MLInstance的默认配置创建新的试验。 |
 | `trainingExperimentRunId` | 您可以选择提供的训练运行ID。 如果未提供此值，则创建MLService也将使用MLInstance的默认训练参数创建和执行训练运行。 |
 | `trainingSchedule` | 自动训练运行的时间表。 如果定义了此属性，则MLService将自动按计划执行训练运行。 |
-| `trainingSchedule.startTime` | 计划培训运行开始的时间戳。 |
+| `trainingSchedule.startTime` | 计划训练运行将开始的时间戳。 |
 | `trainingSchedule.endTime` | 计划培训运行将结束的时间戳。 |
 | `trainingSchedule.cron` | 定义自动训练运行频率的cron表达式。 |
 | `scoringSchedule` | 自动评分运行的时间表。 如果定义了此属性，则MLService将自动按计划执行评分运行。 |
-| `scoringSchedule.startTime` | 计划评分运行开始的时间戳。 |
+| `scoringSchedule.startTime` | 开始计划评分运行的时间戳。 |
 | `scoringSchedule.endTime` | 计划评分运行结束的时间戳。 |
 | `scoringSchedule.cron` | 定义自动评分运行频率的cron表达式。 |
 
 **响应**
 
-成功响应将返回一个有效负载，其中包含新创建的MLService的详细信息，包括其唯一标识符(`id`)，用于训练的试验ID (`trainingExperimentId`)，用于评分的试验ID (`scoringExperimentId`)，并且输入训练数据集ID (`trainingDataSetId`)。
+成功的响应会返回包含新创建的MLService的详细信息的有效负载，包括其唯一标识符(`id`)，用于培训的试验ID (`trainingExperimentId`)，用于评分的试验ID (`scoringExperimentId`)，以及输入训练数据集ID (`trainingDataSetId`)。
 
 ```json
 {
@@ -124,7 +125,7 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 **请求**
 
-以下请求包含一个查询，并检索共享同一MLInstance ID的MLServices列表(`{MLINSTANCE_ID}`)。
+以下请求包含一个查询，并检索共享同一MLInstance ID (`{MLINSTANCE_ID}`)。
 
 ```shell
 curl -X GET \
@@ -137,7 +138,7 @@ curl -X GET \
 
 **响应**
 
-成功响应将返回MLServices的列表及其详细信息，包括其MLService ID (`{MLSERVICE_ID}`)，用于训练的试验ID (`{TRAINING_ID}`)，用于评分的试验ID (`{SCORING_ID}`)，并且输入训练数据集ID (`{DATASET_ID}`)。
+成功的响应将返回MLServices列表及其详细信息，包括其MLService ID (`{MLSERVICE_ID}`)，用于培训的试验ID (`{TRAINING_ID}`)，用于评分的试验ID (`{SCORING_ID}`)，以及输入训练数据集ID (`{DATASET_ID}`)。
 
 ```json
 {
@@ -210,11 +211,11 @@ curl -X GET \
 
 ## 更新MLService {#update-an-mlservice}
 
-您可以更新现有MLService，方法是通过PUT请求（请求路径中包含目标MLService的ID）覆盖其属性，并提供包含已更新属性的JSON有效负载。
+您可以更新现有的MLService，方法是通过PUT请求（请求路径中包含目标MLService的ID）覆盖其属性，并提供包含已更新属性的JSON有效负载。
 
 >[!TIP]
 >
->为了确保此PUT请求成功，建议您首先执行GET请求 [按ID检索MLService](#retrieve-a-specific-mlservice). 然后，修改并更新返回的JSON对象，并将修改后的JSON对象的整个内容应用为PUT请求的有效负载。
+>为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLService](#retrieve-a-specific-mlservice). 然后，修改并更新返回的JSON对象，并将修改后的整个JSON对象应用作PUT请求的有效负载。
 
 **API格式**
 
@@ -287,7 +288,7 @@ curl -X PUT \
 
 ## 删除MLService
 
-通过执行DELETE请求（请求路径中包含目标MLService的ID），可以删除单个MLService。
+通过执行DELETE路径中包含目标MLService ID的请求，可以删除单个MLService。
 
 **API格式**
 

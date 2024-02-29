@@ -2,11 +2,12 @@
 solution: Experience Platform
 title: 区段导出作业API端点
 description: 导出作业是异步流程，用于将受众区段成员保留到数据集。 您可以使用Adobe Experience Platform Segmentation Service API中的/export/jobs端点，它允许您以编程方式检索、创建和取消导出作业。
+role: Developer
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1617'
-ht-degree: 2%
+source-wordcount: '1615'
+ht-degree: 1%
 
 ---
 

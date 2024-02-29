@@ -2,8 +2,9 @@
 solution: Experience Platform
 title: 区段定义API端点
 description: Adobe Experience Platform分段服务API中的区段定义端点允许您以编程方式管理组织的区段定义。
+role: Developer
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: d47ec6fca05191f532b5a2e94f1943c4337258ed
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1228'
 ht-degree: 3%

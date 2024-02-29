@@ -1,8 +1,9 @@
 ---
 title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储区，以根据聚合数据快速返回结果。 本文档提供了查询服务加速查询端点的示例HTTP请求和响应。
+role: Developer
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: ea2a1cddf299bec750875c4a9125cdd065f18d8b
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 1%

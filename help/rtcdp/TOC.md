@@ -4,7 +4,8 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: eaa71bb93a08e8f0a9afe7f6b05929dae93cb670
+role: Admin
+source-git-commit: 267857cfdcc75310c7e490fdbae3494ecd5a8fb7
 workflow-type: tm+mt
 source-wordcount: '293'
 ht-degree: 70%

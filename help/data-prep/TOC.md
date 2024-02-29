@@ -3,10 +3,11 @@ audience: user
 user-guide-title: 数据准备指南
 user-guide-description: 今天就准备您的数据以将其引入 Adobe Experience Platform，并了解数据准备如何帮助您映射、转换和验证数据。
 feature: Data Prep
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '64'
-ht-degree: 65%
+source-wordcount: '61'
+ht-degree: 59%
 
 ---
 

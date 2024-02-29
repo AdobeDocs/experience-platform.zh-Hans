@@ -4,8 +4,9 @@ solution: Data Collection
 user-guide-title: Edge Network Server API 文档
 breadcrumb-title: Edge Network Server API 文档
 user-guide-description: 通过 Experience Cloud 或 Experience Platform Edge 服务，使用边缘网络服务器 API 收集数据、创建个性化、广告和营销用例。
-feature: Data Collection
-source-git-commit: f7b6154166ccd7989c563115e99717937cfe9a5d
+feature: Server API
+role: Developer
+source-git-commit: 49adc892e19a4e781272db35d35616bf3c50b985
 workflow-type: tm+mt
 source-wordcount: '76'
 ht-degree: 60%

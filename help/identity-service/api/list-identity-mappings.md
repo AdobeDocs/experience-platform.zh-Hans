@@ -1,12 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；身份；身份
 solution: Experience Platform
-title: 列表身份映射
+title: 列出身份映射
 description: 映射是群集中指定命名空间的所有标识的集合。
+role: Developer
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '278'
 ht-degree: 1%
 
 ---
@@ -17,7 +18,7 @@ ht-degree: 1%
 
 ## 获取单个标识的标识映射
 
-给定一个身份，从请求中由该身份表示的命名空间检索所有相关身份。
+给定一个身份，从与请求中该身份所代表的命名空间相同的命名空间中检索所有相关身份。
 
 **API格式**
 
@@ -49,7 +50,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID提供身份(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -62,11 +63,11 @@ curl -X GET \
 
 ### 获取多个标识的标识映射
 
-使用 `POST` 方法作为批次等效的 `GET` 上述方法可检索多个身份的映射。
+使用 `POST` 方法作为批次等效的 `GET` 上述方法检索多个身份的映射。
 
 >[!NOTE]
 >
->请求应指示不超过1000个标识。 请求超过1000个标识将导致400个状态代码。
+>请求应指示不超过1000个身份。 请求超过1000个标识将导致400个状态代码。
 
 **API格式**
 
@@ -85,7 +86,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 }
 ```
 
-选项2：提供身份列表作为复合ID，其中每个身份按命名空间ID命名ID值和命名空间。 此示例演示了在覆盖缺省值时使用此方法 `graph-type` “专用图”的。
+选项2：提供身份列表作为复合ID，其中每个身份均按命名空间ID命名ID值和命名空间。 此示例演示在覆盖缺省值时使用此方法 `graph-type` “专用图”的URL名称。
 
 ```shell
 {
@@ -144,7 +145,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-如果提供的输入找不到相关身份，则 `HTTP 204` 返回响应代码时没有内容。
+如果未找到具有所提供的输入的相关标识，则 `HTTP 204` 返回响应代码时没有内容。
 
 **响应**
 
@@ -182,9 +183,9 @@ curl -X POST \
 }
 ```
 
-- `lastAssociationTime`：上次将输入身份与此身份关联的时间戳。
-- `regions`：提供 `regionId` 和 `lastAssociationTime` 在哪里发现了身份。
+- `lastAssociationTime`：输入身份上次与此身份关联的时间戳。
+- `regions`：提供 `regionId` 和 `lastAssociationTime` 身份被发现的地方。
 
 ## 后续步骤
 
-继续下一教程，了解 [列出可用的命名空间](./list-namespaces.md).
+继续下一教程以 [列出可用的命名空间](./list-namespaces.md).

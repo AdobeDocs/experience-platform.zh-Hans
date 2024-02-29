@@ -1,24 +1,25 @@
 ---
-keywords: Experience Platform；主页；热门主题；身份；群集历史记录
+keywords: Experience Platform；主页；热门主题；身份；集群历史记录
 solution: Experience Platform
 title: 获取标识的群集历史记录
-description: 身份可以在各种设备图运行的过程中移动群集。 Identity Service提供给定标识随时间变化的群集关联的可见性。
+description: 身份可以在各种设备图运行的过程中移动群集。 Identity Service提供一段时间内给定标识的群集关联的可见性。
+role: Developer
 exl-id: e52edb15-e3d6-4085-83d5-212bbd952632
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '345'
 ht-degree: 1%
 
 ---
 
 # 获取标识的群集历史记录
 
-身份可以在各种设备图运行的过程中移动群集。 [!DNL Identity Service] 提供给定身份随时间变化的群集关联的可见性。
+身份可以在各种设备图运行的过程中移动群集。 [!DNL Identity Service] 提供一段时间内给定标识的群集关联的可见性。
 
-使用可选 `graph-type` 指示从中获取群集的输出类型的参数。 选项包括：
+使用可选 `graph-type` 指示从中获取集群的输出类型的参数。 选项包括：
 
 - `None`  — 不执行身份拼接。
-- `Private Graph`  — 根据专用身份图执行身份拼合。 如果否 `graph-type` ，这是默认设置。
+- `Private Graph`  — 根据专用身份图执行身份拼接。 如果否 `graph-type` （这是默认设置）。
 
 ## 获取单个标识的群集历史记录
 
@@ -52,7 +53,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3：以XID提供身份(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
+选项3：以XID形式提供身份(`xid`)。 有关如何获取身份的XID的更多信息，请参阅本文档中涵盖的部分 [获取标识的XID](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -69,7 +70,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->请求应指示不超过1000个标识。 请求超过1000个标识将导致400个状态代码。
+>请求应指示不超过1000个身份。 请求超过1000个标识将导致400个状态代码。
 
 **API格式**
 
@@ -79,7 +80,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **请求正文**
 
-选项1：提供要检索其群集成员的XID列表。
+选项1：提供要检索集群成员的XID列表。
 
 ```shell
 {
@@ -88,7 +89,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 }
 ```
 
-选项2：提供身份列表作为复合ID，其中每个身份按命名空间代码命名ID值和命名空间。
+选项2：提供身份列表作为复合ID，其中每个身份均按命名空间代码命名ID值和命名空间。
 
 ```shell
 {
@@ -108,7 +109,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **存根请求**
 
-使用情况 `x-uis-cst-ctx: stub` 标头将返回一个存根响应。 这是一个临时解决方案，可在服务完成时促进早期集成开发进度。 当不再需要时，该选项将被弃用。
+使用 `x-uis-cst-ctx: stub` 标头将返回存根响应。 这是一个临时解决方案，可在服务完成时帮助早期集成开发进度。 当不再需要时，此选项将被弃用。
 
 ```shell
 curl -X POST \
@@ -213,8 +214,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->无论请求的XID是否属于同一群集，或者是否有一个或多个群集关联，响应中始终为请求中提供的每个XID都有一个条目。
+>对于请求中提供的每个XID，响应将始终有一个对应的条目，而不管请求的XID是否属于同一集群，或者是否有一个或多个集群根本没有关联。
 
 ## 后续步骤
 
-继续下一教程，了解 [列表身份映射](./list-identity-mappings.md)
+继续下一教程以 [列表身份映射](./list-identity-mappings.md)
