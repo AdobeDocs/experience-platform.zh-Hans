@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 30152a95a46db06948620b881092fb21df734f9d
+source-git-commit: 1e61b2258f943a09cba30aa1c0bc1c6647b9fd16
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '773'
 ht-degree: 36%
 
 ---
@@ -53,6 +53,7 @@ ht-degree: 36%
    * [部署JavaScript标记以管理客户同意](./ui/client-side/consent.md)
    * [内容安全策略(CSP)支持](./ui/client-side/content-security-policy.md)
    * [子资源完整性(SRI)支持](./ui/client-side/sri.md)
+   * [传输层安全性](./ui/client-side/transport-layer-security.md)
 * 事件转发 {#event-forwarding}
    * [概述](./ui/event-forwarding/overview.md)
    * [快速入门](./ui/event-forwarding/getting-started.md)
