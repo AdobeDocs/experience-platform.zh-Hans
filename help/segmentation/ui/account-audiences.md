@@ -4,9 +4,9 @@ description: 了解如何创建和使用帐户受众，以便在下游目标中�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: 7d630c3673304060ad26375955602440a495f354
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1130'
 ht-degree: 0%
 
 ---
@@ -41,19 +41,29 @@ ht-degree: 0%
 
 此视图列出有关受众的信息，包括名称、配置文件计数、来源、生命周期状态、创建日期和上次更新日期。
 
+您还可以使用搜索和筛选功能快速搜索和排序特定帐户受众。 有关此功能的更多信息，请参阅 [分段UI指南](./overview.md#manage-audiences).
+
 ## 创建受众 {#create}
+
+>[!NOTE]
+>
+>使用以下项目评估帐户受众 **批次** 和进行分段，并将每24小时进行一次评估。
 
 要创建帐户受众，请选择 **[!UICONTROL 创建受众]** 在 [!UICONTROL 浏览] 页面。
 
 ![此 [!UICONTROL 创建受众] 按钮在帐户受众浏览页面上突出显示。](../images/ui/account-audiences/select-create-audience.png)
 
-此时将显示“区段生成器”。 帐户属性显示在左侧导航栏中。
+此时将显示“区段生成器”。 帐户属性和受众将显示在左侧导航栏中。 在 [!UICONTROL 属性] 选项卡，您可以同时添加平台创建和自定义属性。
 
-![此时将显示“区段生成器”。 请注意，仅显示属性。](../images/ui/account-audiences/segment-builder.png)
+![此时将显示“区段生成器”。 请注意，仅显示属性和受众。](../images/ui/account-audiences/segment-builder.png)
 
 在创建帐户受众时，请注意，事件列在 **[!UICONTROL 人员]**，而不是作为自己的选项卡，因为这些属性与人员相关联。
 
 ![查找事件的位置，位于 [!UICONTROL 人员] 文件夹时，将高亮显示。](../images/ui/account-audiences/attributes.png)
+
+在 [!UICONTROL 受众] 选项卡，您可以在创建自己的帐户受众时，添加先前创建的基于人员的受众以构建的。
+
+![区段生成器中的受众选项卡会突出显示。](../images/ui/account-audiences/audiences.png)
 
 有关使用区段生成器的更多信息，请参阅 [区段生成器UI指南](./segment-builder.md).
 
