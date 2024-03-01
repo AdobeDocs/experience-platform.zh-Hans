@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform术语表
 description: Experience Platform 中的重要术语的词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
 workflow-type: tm+mt
-source-wordcount: '7979'
+source-wordcount: '7996'
 ht-degree: 0%
 
 ---
@@ -344,6 +344,8 @@ ht-degree: 0%
 **合并方法**：使用Platform UI定义合并策略时，合并方法会指定在冲突发生时数据片段的优先顺序。 在使用实时客户个人资料API定义合并策略时，使用以下方式确定合并方法 `attributeMerge` 对象。
 
 **合并策略**：合并策略是Experience Platform用来确定如何合并来自多个来源的客户数据片段以创建单个配置文件的规则。 当发生数据冲突时，合并策略会确定哪些数据应优先包含在配置文件中。
+
+**MHMDAa**：和 [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) 增强了消费者对其健康数据的隐私权。 它规定健康数据的披露、消费者同意和删除权利，并禁止未经授权销售健康数据。 此外，该法还规定，在保健设施周围使用地理围栏是非法的。
 
 **Mixin**：请参阅架构字段组。
 

@@ -5,9 +5,9 @@ title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 0ffc9648fbc6e6aa3c43a7125f25a98452e8af9a
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1857'
 ht-degree: 1%
 
 ---
@@ -26,25 +26,34 @@ ht-degree: 1%
 
 **API格式**
 
-此请求格式使用 `regulation` 上的查询参数 `/jobs` 端点，因此它以问号(`?`)，如下所示。 响应采用分页方式，允许您使用其他查询参数(`page` 和 `size`)以筛选响应。 可以使用与号(`&`)。
+此请求格式使用 `regulation` 上的查询参数 `/jobs` 端点，因此它以问号(`?`)，如下所示。 在列出资源时，Privacy ServiceAPI最多返回1000个作业并分页响应。 使用其他查询参数(`page`， `size`和日期过滤器)以筛选响应。 可以使用与号(`&`)。
+
+>[!TIP]
+>
+>使用其他查询参数进一步筛选特定查询的结果。 例如，您可以了解在给定时间段内提交了多少隐私作业，以及使用 `status`， `fromDate`、和 `toDate` 查询参数。
 
 ```http
 GET /jobs?regulation={REGULATION}
 GET /jobs?regulation={REGULATION}&page={PAGE}
 GET /jobs?regulation={REGULATION}&size={SIZE}
 GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
+GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={STATUS}
 ```
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关更多详细信息，请参阅 [受支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关更多详细信息，请参阅 [受支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
-| `{SIZE}` | 每页上显示的结果数。 默认为 `1` 最大值为 `100`. 超过最大值会导致API返回400代码错误。 |
+| `{SIZE}` | 每页上显示的结果数。 默认为 `100` 最大值为 `1000`. 超过最大值会导致API返回400代码错误。 |
+| `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
+| `{toDate}` | 此参数将结果限制为指定日期之前处理的结果。 从发出请求之日起，系统回顾时间可达45天。 但是，范围不能超过30天。<br>它接受YYYY-MM-DD格式。 您提供的日期将解释为以格林威治标准时间(GMT)表示的终止日期。<br>如果您不提供此参数(以及 `fromDate`)，默认行为会返回过去七天中返回数据的作业。 如果您使用 `toDate`，您还必须使用 `fromDate` 查询参数。 如果不同时使用这两个参数，调用将返回400错误。 |
+| `{fromDate}` | 此参数将结果限制为指定日期后处理的结果。 从发出请求之日起，系统回顾时间可达45天。 但是，范围不能超过30天。<br>它接受YYYY-MM-DD格式。 您提供的日期将解释为以格林威治标准时间(GMT)表示的请求来源日期。<br>如果您不提供此参数(以及 `toDate`)，默认行为会返回过去七天中返回数据的作业。 如果您使用 `fromDate`，您还必须使用 `toDate` 查询参数。 如果不同时使用这两个参数，调用将返回400错误。 |
+| `{filterDate}` | 此参数将结果限制为指定日期处理的结果。 它接受YYYY-MM-DD格式。 系统可以回顾过去45天。 |
 
 {style="table-layout:auto"}
 
 <!-- Not released yet:
-<li>`pdpd_vnm`</li>
+<li>`pdpd_vnm`</li> 
  -->
 
 **请求**

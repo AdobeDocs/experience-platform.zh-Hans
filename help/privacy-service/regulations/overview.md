@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 隐私法规概述
 description: 本文档概述了Adobe Experience Cloud支持的各种隐私法规。
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 0%
 | GDPR（欧盟） | 此 [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) 为欧洲经济区(EEA)成员引入了几项新的数据隐私权，包括访问权和被遗忘权。 这些权限意味着在EEA中居住且企业已收集其个人数据的任何人均可随时请求访问或删除其数据。<br><br>英国（英国脱欧后）有自己的监管版本 — UK-GDPR，它为其公民提供了与EEA版本相同的权利。 |
 | HIPAA（美利坚合众国） | 此 [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html) 是美国联邦制定的法律，旨在提高医疗效率，改善健康保险的可携带性，并保护病人和健康计划成员的隐私。 根据HIPAA，个人有权访问和修改其信息，并获得其医疗记录或健康信息的副本。 覆盖的实体和覆盖的实体的业务联系人必须遵守HIPAA规定。 |
 | LGPD （巴西） | 此 [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) 旨在规范巴西境内所有个人或自然人的个人数据处理方式。 LGPD赋予巴西公民访问和删除其个人数据的权利，知晓其个人数据是否被出售或披露（包括披露给谁）的权利，以及选择不将其数据出售给第三方的权利。 |
+| 姆姆达（华盛顿州） | 此 [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) 增强了消费者对其健康数据的隐私权。 它规定健康数据的披露、消费者同意和删除权利，并禁止未经授权销售健康数据。 此外，该法还规定，在保健设施周围使用地理围栏是非法的。 |
 | 新西兰 [!DNL Privacy Act] | 此 [新西兰 [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) 控制各机构如何收集、使用、披露、储存和获取新西兰公民和组织的个人信息。 2020年，最新版本的法案对这些隐私法进行了重大更新。 最新情况包括新犯罪、增加罚款、强制通知数据泄露，以及增加隐私专员的权力。 |
 | PDPA （泰国） | 此 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 引入该法是为了保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧盟GDPR的启发，该法规授予泰国公民请求访问或删除其存储的个人数据的权利。 |
 | UCPA （犹他州） | 此 [[!DNL Utah Consumer Privacy Act]](https://le.utah.gov/~2022/bills/static/SB0227.html) 创建消费者了解企业收集哪些个人数据、企业如何使用其个人数据以及企业是否出售其个人数据的权利。 消费者可以要求企业删除或停止出售其个人数据。 |
