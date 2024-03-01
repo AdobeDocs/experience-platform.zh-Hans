@@ -7,7 +7,7 @@ exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
 source-git-commit: 7d630c3673304060ad26375955602440a495f354
 workflow-type: tm+mt
 source-wordcount: '1130'
-ht-degree: 0%
+ht-degree: 27%
 
 ---
 
@@ -93,73 +93,73 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_eventLookbackWindow"
->title="最大回看窗口错误"
->abstract="体验事件的最大回溯时段为30天。"
+>title="最长回溯时段错误"
+>abstract="体验事件的最长回溯时段为 30 天。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_combinationMaxDepth"
 >title="最大嵌套容器深度错误"
->abstract="嵌套容器的最大深度为 **5**. 这意味着您 **无法** 创建受众时具有5个以上的嵌套容器。"
+>abstract="最大嵌套容器深度为 **5**。这意味着在创建受众时，您&#x200B;**无法**&#x200B;拥有五个以上的嵌套容器。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_combinationMaxBreadth"
 >title="最大规则数量错误"
->abstract="单个容器中的规则最大数量为 **5**. 这意味着你 **无法** 创建受众时，单个容器中包含五个以上的规则。"
+>abstract="单个容器内的最大规则数为 **5**。这意味着在创建受众时，您&#x200B;**无法**&#x200B;在单个容器中拥有五个以上的规则。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_crossEntityMaxDepth"
->title="最大跨实体金额错误"
->abstract="单个受众中可以使用的最大交叉实体数为 **5**. 跨实体是指在受众内的不同实体之间进行更改的情况。 例如，从帐户转至人员转至营销列表。"
+>title="最大跨实体数量错误"
+>abstract="单个受众中可使用的跨实体的最大数量为 **5**。跨实体是指您在受众内的不同实体之间进行切换。例如，从帐户到人员再到营销列表。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_allowCustomEntity"
 >title="自定义实体错误"
->abstract="自定义实体为 **非** 允许。"
+>abstract="**不**&#x200B;允许使用自定义实体。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_b2bBuiltInEntities"
->title="无效的B2B实体错误"
->abstract="仅允许使用以下B2B实体： `_xdm.context.account`， `_xdm.content.opportunity`， `_xdm.context.profile`， `_xdm.context.experienceevent`， `_xdm.context.account-person`， `_xdm.classes.opportunity-person`， `_xdm.classes.marketing-list-member`， `_xdm.classes.marketing-list`， `_xdm.context.campaign-member`、和 `_xdm.classes.campaign`."
+>title="无效 B2B 实体错误"
+>abstract="仅允许使用以下 B2B 实体：`_xdm.context.account`、`_xdm.content.opportunity`、`_xdm.context.profile`、`_xdm.context.experienceevent`、`_xdm.context.account-person`、`_xdm.classes.opportunity-person`、`_xdm.classes.marketing-list-member`、`_xdm.classes.marketing-list`、`_xdm.context.campaign-member` 和 `_xdm.classes.campaign`。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_rhsMaxOptions"
 >title="最大值错误"
->abstract="单个字段可以检查的最大值数为 **50**."
+>abstract="可在单个字段中检查的值的最大数量为 **50**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_allowInSegmentByReference"
->title="inSegment事件错误"
->abstract="inSegment事件包括 **非** 允许。"
+>title="inSegment 事件错误"
+>abstract="**不**&#x200B;允许使用 inSegment 事件。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_allowInSegmentByValue"
->title="inSegment事件错误"
->abstract="inSegment事件包括 **非** 允许。"
+>title="inSegment 事件错误"
+>abstract="**不**&#x200B;允许使用 inSegment 事件。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_allowSequentialEvents"
->title="顺序事件错误"
->abstract="顺序事件包括 **非** 允许。"
+>title="连续事件错误"
+>abstract="**不**&#x200B;允许使用连续事件。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_allowMaps"
->title="映射类型属性错误"
->abstract="映射类型属性为 **非** 允许。"
+>title="Map-type 属性错误"
+>abstract="**不**&#x200B;允许使用 Map-type 属性。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_maxNestedAggregationDepth"
 >title="最大嵌套实体深度错误"
->abstract="嵌套数组的最大深度为 **5**."
+>abstract="最大嵌套数组深度为 **5**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_maxObjectNestingLevel"
 >title="最大嵌套对象数量错误"
->abstract="允许的最大嵌套对象数为 **10**."
+>abstract="允许的最大嵌套对象数量为 **10**。"
 
 >[!CONTEXTUALHELP]
 >id="platform_audiences_account_constraint_generic"
 >title="约束违规"
->abstract="受众违反了限制。 有关详细信息，请阅读链接的文档。"
+>abstract="受众违反了约束。请参阅链接的文档以了解更多详细信息。"
 
 使用帐户受众时，受众 **必须** 遵守以下限制：
 
@@ -169,16 +169,16 @@ ht-degree: 0%
 
 - 体验事件的最大回顾时间范围为 **30天**.
 - 嵌套容器的最大深度为 **5**.
-   - 这意味着您 **无法** 创建受众时具有5个以上的嵌套容器。
+   - 这意味着在创建受众时，您&#x200B;**无法**&#x200B;拥有五个以上的嵌套容器。
 - 单个容器中的规则最大数量为 **5**.
    - 这意味着您的受众 **无法** 有五个以上的规则组成您的受众。
 - 可以使用的最大交叉实体数为 **5**.
-   - 跨实体是指在受众内的不同实体之间进行更改的情况。 例如，从帐户转至人员转至营销列表。
+   - 跨实体是指您在受众内的不同实体之间进行切换。例如，从帐户到人员再到营销列表。
 - 自定义实体 **无法** 使用。
-- 单个字段可以检查的最大值数为 **50**.
+- 可在单个字段中检查的值的最大数量为 **50**。
    - 例如，如果字段为“City Name”，则可以根据50个城市名称检查该值。
 - 帐户受众 **无法** 使用 `inSegment` 事件。
 - 帐户受众 **无法** 使用顺序事件。
 - 帐户受众 **无法** 使用映射。
-- 嵌套数组的最大深度为 **5**.
+- 最大嵌套数组深度为 **5**。
 - 嵌套对象的最大数量为 **10**.
