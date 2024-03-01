@@ -3,10 +3,10 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
 workflow-type: tm+mt
-source-wordcount: '1634'
-ht-degree: 3%
+source-wordcount: '1673'
+ht-degree: 2%
 
 ---
 
@@ -48,6 +48,15 @@ ht-degree: 3%
 为确保将所有配置文件都发送到您的目标，您必须使用新配置创建新受众，然后将其激活到您的目标。
 
 +++
+
+### 从目标中删除受众时，是否有任何发送到目标的信号指示该受众已删除？
+
++++回答
+
+不需要，目标系统的Experience Platform目标和客户实例之间没有依赖关系。 在接收方，目标系统将看到的唯一指示是它停止接收该受众数据。
+
++++
+
 <!--
 ## [!DNL Experience Cloud Audiences] {#eca-faq}
 
@@ -136,7 +145,7 @@ See the table below for a feature comparison between the Experience Cloud Audien
 +++回答是。 Experience Platform中的Facebook目标与Facebook中的广告帐户的比率是1:1。 您可以为公司中的每个Facebook广告帐户创建单独的Facebook目标。 请遵循 [目标连接教程](/help/destinations/ui/connect-destination.md) 并为Platform UI中的每个新Facebook目标连接到单独的Facebook帐户。 您可以连接到的Facebook广告帐户数量没有限制。
 +++
 
-## Google 目标客户匹配功能 {#google-customer-match}
+## Google客户匹配 {#google-customer-match}
 
 ### 将受众导出到Google Customer Match时，为什么在Google界面中的受众名称末尾附加了额外的数字？
 

@@ -5,10 +5,10 @@ description: 了解如何将帐户受众激活到目标
 badgeB2B: label="B2B版本" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P版本" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
 workflow-type: tm+mt
-source-wordcount: '810'
-ht-degree: 0%
+source-wordcount: '834'
+ht-degree: 1%
 
 ---
 
@@ -25,6 +25,12 @@ ht-degree: 0%
 转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 使用 **[!UICONTROL 数据类型]** 筛选并选择 **[!UICONTROL 帐户]** 查看支持激活帐户受众的目标。 目前，导出帐户受众仅适用于某些云存储目标([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md)， [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md)， [Azure Blob存储](/help/destinations/catalog/cloud-storage/azure-blob.md)， [数据登陆区](/help/destinations/catalog/cloud-storage/data-landing-zone.md)、和 [SFTP](/help/destinations/catalog/cloud-storage/sftp.md))和 [（公司） LinkedIn匹配的受众](/help/destinations/catalog/social/linkedin.md) 目标。
 
 ![支持帐户受众的目标。](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
+
+## 视频概述
+
+请观看以下视频，大致了解如何创建和激活帐户受众，以及激活帐户受众时支持的用例。
+
+>[!VIDEO](https://video.tv.adobe.com/v/338252/?learn=on)
 
 ## 先决条件 {#prerequisites}
 

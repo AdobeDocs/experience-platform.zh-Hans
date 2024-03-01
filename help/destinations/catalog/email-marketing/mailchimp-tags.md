@@ -1,7 +1,8 @@
 ---
 title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
-source-git-commit: b32d619b78502e38e98a410bd14379992543c63c
+last-substantial-update: 2024-02-20T00:00:00Z
+source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 2%
