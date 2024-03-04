@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 73785443a9d07dfde3ef1060f7886dfed484925b
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1209'
 ht-degree: 4%
 
 ---
@@ -247,6 +247,7 @@ ht-degree: 4%
          * [使用自定义文件格式选项和自定义文件名配置来配置Azure Data Lake存储目标](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
          * [使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [使用预定义的文件格式选项和自定义文件名配置来配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
+         * [配置基于文件的目标以导出目标受众](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
    * 目标创作API参考 {#authoring-api}
       * [Destination SDK（目标创作） API参考](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * 目标服务器操作 {#server-operations}
