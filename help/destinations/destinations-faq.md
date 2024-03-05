@@ -3,7 +3,7 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题解答
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1673'
 ht-degree: 2%
@@ -185,11 +185,11 @@ See the table below for a feature comparison between the Experience Cloud Audien
 
 ### 是否需要使用Experience PlatformWeb SDK将受众和属性发送到Adobe Target？
 
-+++回答否， [Web SDK](../edge/home.md) 无需将受众激活到 [Adobe Target](catalog/personalization/adobe-target-connection.md).
++++回答否， [Web SDK](../web-sdk/home.md) 无需将受众激活到 [Adobe Target](catalog/personalization/adobe-target-connection.md).
 
 但是，如果 [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) 代替Web SDK，仅支持下一会话个性化。
 
-对象 [同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md) 用例，您必须使用 [Web SDK](../edge/home.md) 或 [边缘网络服务器API](../server-api/overview.md). 请参阅相关文档 [将受众激活到Edge目标](ui/activate-edge-personalization-destinations.md) 以了解更多实施详细信息。
+对象 [同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md) 用例，您必须使用 [Web SDK](../web-sdk/home.md) 或 [边缘网络服务器API](../server-api/overview.md). 请参阅相关文档 [将受众激活到Edge目标](ui/activate-edge-personalization-destinations.md) 以了解更多实施详细信息。
 +++
 
 ### 我可以从Real-time Customer Data Platform发送到Adobe Target或自定义个性化目标的属性数量是否存在限制？
@@ -208,7 +208,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### 在Experience Platform中创建受众后，需要多长时间才能将该受众用于Edge分段用例？
 
-+++应答受众定义将传播到 [边缘网络](../edge/home.md) 最多一小时内。 但是，如果在这第一个小时内激活了受众，则可能会错过一些符合受众条件的访客。
++++应答受众定义将传播到 [边缘网络](../web-sdk/home.md) 最多一小时内。 但是，如果在这第一个小时内激活了受众，则可能会错过一些符合受众条件的访客。
 +++
 
 ### 在Adobe Target中，我可以在哪里查看激活的属性？

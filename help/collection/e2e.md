@@ -2,9 +2,9 @@
 title: 数据收集端到端概述
 description: 有关如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案的高级别概述。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2621'
+source-wordcount: '2616'
 ht-degree: 0%
 
 ---
@@ -113,8 +113,8 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 >
 >此部分使用数据收集UI来配置Web SDK标记扩展，但您也可以使用原始代码来安装和配置该扩展。 有关更多信息，请参阅以下指南：
 >
->* [安装SDK](../edge/fundamentals/installing-the-sdk.md)
->* [配置SDK](../edge/fundamentals/configuring-the-sdk.md)
+>* [安装SDK](/help/web-sdk/install/overview.md)
+>* [配置SDK](/help/web-sdk/commands/configure/overview.md)
 >
 >另请注意，即使您只想使用事件转发，您仍然必须按照相关说明安装和配置SDK，然后才能在配置事件转发 [后续步骤](#event-forwarding).
 
@@ -141,7 +141,7 @@ Adobe Experience Platform收集您的数据并将这些数据传输到其他Adob
 
 此时将显示SDK的配置页面。 大多数必需值都会自动填充默认值，您可以根据需要选择更改这些默认值。
 
-![配置 Web SDK](./images/e2e/configure-sdk.png)
+![配置Web SDK](./images/e2e/configure-sdk.png)
 
 但是，在安装SDK之前，您必须选择一个数据流，以便它知道要将您的数据发送到何处。 下 **[!UICONTROL 数据流]**，使用下拉菜单选择您在上配置的数据流 [更早的步骤](#datastream). 设置数据流后，选择 **[!UICONTROL 保存]** 以将SDK安装到资产。
 

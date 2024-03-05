@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 客户属性源连接器概述
 description: 了解如何使用API或用户界面将客户属性连接到Adobe Experience Platform
 exl-id: 63765ecd-ddb5-4992-a3de-d53f054bfb28
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '380'
 ht-degree: 7%
 
 ---
@@ -31,7 +31,7 @@ Experience Platform提供对摄取的支持 [!DNL Customer Attributes] 将数据
 
 对象 [!DNL Customer Attributes] 要绑定到其他的数据 [!DNL Profile] 数据集、其数据和身份必须能够与Experience CloudID匹配。
 
-您可以建立 `CORE` namespace，方法为使用设置访客的Experience CloudID [Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html)， [移动SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)，或 [Experience CloudID服务API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=zh-Hans).
+您可以建立 `CORE` namespace，方法为使用设置访客的Experience CloudID [Web SDK](/help/web-sdk/identity/overview.md)， [移动SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)，或 [Experience CloudID服务API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=zh-Hans).
 
 此 [!DNL Customer Attributes] 文件不会进一步填充任何其他身份关系。 例如，如果 [!DNL Customer Attributes] 源数据集包含 **电子邮件** 和 **忠诚度ID** 字段中，则这些字段必须标记为架构中的标识字段，才能被处理到 [!DNL Identity Service].
 

@@ -3,9 +3,9 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发，通过此功能，无需更改您的标记实施，即可使用 Platform Edge Network 执行任务。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 2005238d2e06ed91fd4b0835be38a4b7b8ecf3b4
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1064'
 ht-degree: 7%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 >
 >有关事件转发如何适应Platform中数据收集生态系统的信息，请参阅 [数据收集概述](../../../collection/home.md).
 
-与Adobe Experience Platform结合使用的事件转发 [Web SDK](../../../edge/home.md) 和 [移动SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) 具有以下优势：
+与Adobe Experience Platform结合使用的事件转发 [Web SDK](/help/web-sdk/home.md) 和 [移动SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) 具有以下优势：
 
 **性能**：
 
@@ -38,7 +38,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 * 缩短加载网页所需的时间以提高网站性能。
 * 减少提供体验和将数据发送到许多目标所需的客户端技术的数量。
 
-**数据管理**:
+**数据治理**：
 
 * 增加透明度和控制跨所有资产将哪些数据发送到何处。
 

@@ -3,7 +3,7 @@ title: 未经身份验证的访客的异地重定向
 description: 了解如何使用潜在客户ID重新定位未经身份验证的用户，以创建可用于创建未经身份验证的用户受众的计算属性。
 feature: Use Cases, Customer Acquisition
 exl-id: cffa3873-d713-445a-a3e1-1edf1aa8eebb
-source-git-commit: 0ef76fd950ef2e82e390cb39e2cd984004a140f2
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1462'
 ht-degree: 1%
@@ -39,7 +39,7 @@ ht-degree: 1%
 - [受众](../../segmentation/home.md)
 - [计算属性](../../profile/computed-attributes/overview.md)
 - [目标](../../destinations/home.md)
-- [Web SDK](../../edge/home.md)
+- [Web SDK](../../web-sdk/home.md)
 
 ## 将合作伙伴数据导入Real-Time CDP {#get-data-in}
 

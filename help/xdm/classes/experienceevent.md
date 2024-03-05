@@ -4,7 +4,7 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f7d8cd295dd6aa11048c3cb0f9a54a3702b83473
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '2672'
 ht-degree: 1%
@@ -24,7 +24,7 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `_id`<br>**（必需）** | 体验事件类 `_id` 字段唯一标识提取到Adobe Experience Platform中的各个事件。 此字段用于跟踪单个事件的唯一性，防止数据重复，并在下游服务中查找该事件。<br><br>在检测到重复事件的情况下，Platform应用程序和服务可能会以不同的方式处理重复事件。 例如，如果配置文件服务中的重复事件具有相同的 `_id` 配置文件存储中已存在。<br><br>在某些情况下， `_id` 可以是 [通用唯一标识符(UUID)](https://datatracker.ietf.org/doc/html/rfc4122) 或 [全局唯一标识符(GUID)](https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果您要从源连接流式传输数据或直接从Parquet文件中摄取，则应通过连接特定字段组合以使其成为唯一事件来生成此值。 可连接的事件示例包括主ID、时间戳、事件类型等。 拼接值必须为 `uri-reference` 带格式的字符串，这意味着必须删除任何冒号字符。 之后，应该使用SHA-256或您选择的其他算法对拼接值进行哈希处理。<br><br>区分以下内容很重要 **此字段不表示与个人相关的身份**&#x200B;而不是数据记录本身。 与人员相关的身份数据应委派到 [标识字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
-| `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，这表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
+| `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) 要摄取数据，这表示导致创建记录的摄取批次的ID。 此字段在数据摄取时由系统自动填充。 不支持在Web SDK实施的上下文之外使用此字段。 |
 | `eventType` | 一个字符串，它指示事件的类型或类别。 如果要区分同一架构和数据集中的不同事件类型（例如，将产品查看事件与零售公司的添加到购物车事件区分开来），则可以使用此字段。<br><br>此属性的标准值提供在 [附录部分](#eventType)，包括目标用例的描述。 此字段是可扩展的枚举，这意味着您还可以使用自己的事件类型字符串对正在跟踪的事件进行分类。<br><br>`eventType` 限制您只能对应用程序上的每次点击使用单个事件，因此您必须使用计算字段让系统知道哪个事件最重要。 有关更多信息，请参阅以下部分： [计算字段的最佳实践](#calculated). |
 | `producedBy` | 描述事件生成者或来源的字符串值。 如果需要，可以使用此字段过滤掉某些事件生成器，以用于分段目的。<br><br>此属性的某些建议值请参见 [附录部分](#producedBy). 此字段是可扩展的枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
 | `identityMap` | 一个映射字段，其中包含事件应用于的个人的一组命名空间标识。 此字段在摄取身份数据时由系统自动更新。 要正确使用此字段，请执行以下操作 [Real-time Customer Profile](../../profile/home.md)中，请勿尝试在数据操作中手动更新字段内容。<br /><br />请参阅中有关身份映射的部分 [模式组合基础](../schema/composition.md#identityMap) 以了解有关其用例的更多信息。 |

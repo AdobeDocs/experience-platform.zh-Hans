@@ -1,7 +1,7 @@
 ---
 title: Experience Platform中的事件重复处理
 description: 了解Adobe Experience Platform如何处理事件重复
-source-git-commit: 89cdb0832009bcee31b4339f021bc5a0ce254752
+source-git-commit: bc3ae849bd7fd8a9f50ba98528adc43d7282df90
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform是一个高度分布式的系统，旨在最大限度地提高可靠性，同时扩展到不断增加的数据量。
 
-对于实时数据收集， [体验事件](../xdm/classes/experienceevent.md) 是通过 [边缘网络](../edge/home.md#edge-network)，来自客户端源，如 [Web SDK](../edge/home.md) 或 [移动SDK](https://developer.adobe.com/client-sdks/home/)，并传送到Experience Platform处理和存储层。 这些层构成解决方案，例如Experience Platform、 [Real-Time CDP](../rtcdp/home.md)， [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)、和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
+对于实时数据收集， [体验事件](../xdm/classes/experienceevent.md) 是通过 [边缘网络](../web-sdk/home.md#edge-network)，来自客户端源，如 [Web SDK](../web-sdk/home.md) 或 [移动SDK](https://developer.adobe.com/client-sdks/home/)，并传送到Experience Platform处理和存储层。 这些层构成解决方案，例如Experience Platform、 [Real-Time CDP](../rtcdp/home.md)， [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=zh-Hans)、和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
 
 为了最大程度地减少Experience Event丢失，客户端SDK和内部Experience Platform交付服务需要确认事件已成功收集。
 

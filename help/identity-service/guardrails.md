@@ -3,7 +3,7 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 1576405e6f1d674a75446f887c2912c4480d0e28
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1526'
 ht-degree: 0%
@@ -101,7 +101,7 @@ Adobe如果您的生产沙盒包含：
 如果您希望保留针对CRM ID的已验证事件，那么建议您将主ID从ECID更改为CRM ID。 有关如何实施此更改的步骤，请阅读以下文档：
 
 * [为Experience Platform标签配置身份映射](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
-* [Experience PlatformWeb SDK中的身份数据](../edge/identity/overview.md#using-identitymap)
+* [Experience PlatformWeb SDK中的身份数据](../web-sdk/identity/overview.md#using-identitymap)
 
 ### 示例场景
 

@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 同意和偏好设置架构字段组
 description: 了解同意和偏好设置架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '933'
 ht-degree: 0%
@@ -185,7 +185,7 @@ ht-degree: 0%
 
 ## 处理同意和偏好设置更改
 
-当客户在您的网站上更改其同意或偏好设置时，应使用收集这些更改并立即实施 [Adobe Experience Platform Web SDK](../../../edge/consent/supporting-consent.md). 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
+当客户在您的网站上更改其同意或偏好设置时，应使用收集这些更改并立即实施 [Adobe Experience Platform Web SDK](/help/web-sdk/consent/supporting-consent.md). 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
 
 ## 后续步骤
 

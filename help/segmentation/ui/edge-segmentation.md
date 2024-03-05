@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 边缘分段UI指南
 description: 了解如何使用边缘分段在边缘即时评估Platform中的区段定义，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: d3c0e5ed596661f11191bbcd8d51c888bbd4c1d2
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '958'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >现在，边缘分段已普遍适用于所有Platform用户。 如果您在测试版中创建了边缘区段定义，则这些区段定义将继续有效。
 
-边缘分段是一种在Adobe Experience Platform中即时评估区段的能力 [在边缘](../../edge/home.md)，启用同一页面和下一页面个性化用例。
+边缘分段是一种在Adobe Experience Platform中即时评估区段的能力 [在边缘](../../web-sdk/home.md)，启用同一页面和下一页面个性化用例。
 
 >[!IMPORTANT]
 >

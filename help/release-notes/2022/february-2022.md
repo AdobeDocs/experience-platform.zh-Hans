@@ -2,16 +2,16 @@
 title: Adobe Experience Platform 发行说明（2022 年 2 月）
 description: Adobe Experience Platform 的 2022 年 2 月发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1017'
-ht-degree: 27%
+source-wordcount: '1014'
+ht-degree: 16%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 3 月 7 日**
+**发行日期： 2022年3月7日**
 
 >[!NOTE]
 >
@@ -33,13 +33,13 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它，您可以查
 
 | 功能 | 描述 |
 | --- | --- |
-| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>最近激活的区段（按目标）. 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势. 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>未映射的区段（按标识）. 此构件列出了前五个未映射的区段，它们按给定目标和标识的标识计数以降序顺序排名。</li><li>映射的区段（按标识）. 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>普通受众. 此构件提供跨页面顶部选择的目标帐户和构件下拉列表中选择的目标激活的前五个区段的列表。</li></ul> 有关可用标准构件的更多信息，请参见 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#standard-widgets). |
+| 新的标准目标构件 | 以下标准构件允许您可视化与目标相关的不同量度。<ul><li>目标最近激活的区段。 此构件根据所选目标以降序显示最近激活的前五个区段。</li><li>受众规模趋势。 此构件描述一段时间内映射到目标帐户的区段配置文件计数之间的关系。</li><li>按身份列出的未映射区段。 此构件列出给定目标和身份按身份数降序排列的前五个未映射区段。</li><li>按身份映射的区段。 此构件列出了前五个映射区段。 区段会根据它们各自的源ID计数（与从构件的下拉菜单中选择的目标ID相匹配）从高到低排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段列表，以及在小组件下拉列表中选定的目标区段的列表。</li></ul> 有关可用标准构件的更多信息，请参见 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#standard-widgets). |
 
 有关的详细信息 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
 ## 数据收集 {#data-collection}
 
- Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience Platform Edge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
 
 **新增功能**
 
@@ -47,7 +47,7 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它，您可以查
 | --- | --- |
 | 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 将服务添加到数据流时，只有您有权访问的服务才会包含在选项列表中。 请参阅指南，网址为 [配置数据流](../../datastreams/overview.md) 以了解更多信息。 |
 | 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将您的数据映射到服务器端的Experience Data Model (XDM)。 请参阅以下部分 [为数据收集准备数据](../../datastreams/data-prep.md) 数据流指南以了解更多信息。 |
-| 第一方设备Id | 在使用Adobe Experience Platform Web SDK收集客户数据时，您现在可以将自己的设备ID发送到Platform Edge Network，这提供了有关第三方Cookie生命周期的最近浏览器限制的解决方法。 请参阅指南，网址为 [第一方设备Id](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
+| 第一方设备Id | 在使用Adobe Experience Platform Web SDK收集客户数据时，您现在可以将自己的设备ID发送到Platform Edge Network，这提供了有关第三方Cookie生命周期的最近浏览器限制的解决方法。 请参阅指南，网址为 [第一方设备Id](../../web-sdk/identity/first-party-device-ids.md) 以了解更多信息。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 

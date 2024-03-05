@@ -3,7 +3,7 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: ea0f53339d8549152a54267d537b04326f9164df
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '3772'
 ht-degree: 49%
@@ -147,7 +147,7 @@ ht-degree: 49%
 
 #### 客户数字交易架构
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的受众功能。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的受众功能。
 
 客户数字交易模式由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 
@@ -244,7 +244,7 @@ ht-degree: 49%
 >
 >如果您使用的是 [[!DNL Adobe Analytics Source Connector]](/help/sources/connectors/adobe-applications/analytics.md)，则这是一个可选的实施。
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此架构与客户数字交易架构类似，不同之处在于它适用于以下情况： [Web SDK](/help/edge/home.md) 不是数据收集的选项；因此，当您使用 [!DNL Adobe Analytics Source Connector] 将您的在线数据发送到 [!DNL Adobe Experience Platform] 作为主数据流或辅助数据流。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此架构与客户数字交易架构类似，不同之处在于它适用于以下情况： [Web SDK](/help/web-sdk/home.md) 不是数据收集的选项；因此，当您使用 [!DNL Adobe Analytics Source Connector] 将您的在线数据发送到 [!DNL Adobe Experience Platform] 作为主数据流或辅助数据流。
 
 此 [!DNL Adobe] Web连接器架构由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 

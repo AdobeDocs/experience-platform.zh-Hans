@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: db6a0b45d600d16b24f7f749e414dfd0998fbf5e
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1242'
+source-wordcount: '1241'
 ht-degree: 0%
 
 ---
@@ -265,7 +265,7 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 * 仅当向发送部分行更新时，才应使用流更新插入方法 [!DNL Real-Time Customer Profile]. 部分行更新为 **非** 被数据湖使用。
 * 流更新插入方法不支持更新、替换和删除身份。 如果不存在新标识，则会创建新标识。 因此， `identity` 必须始终将操作设置为创建。 如果标识已存在，则该操作是无操作。
-* 流更新插入方法当前不支持 [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=zh-Hans) 和 [Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/).
+* 流更新插入方法当前不支持 [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) 和 [Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/).
 
 ## 后续步骤
 

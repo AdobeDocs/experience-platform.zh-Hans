@@ -2,7 +2,7 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 1%
@@ -17,7 +17,7 @@ Edge Network Server API可以投放和渲染在Adobe Target中创建的个性化
 
 >[!IMPORTANT]
 >
->通过创建的个性化体验 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 服务器API不完全支持。 服务器API可以 **retrieve** 由VEC创建的活动，但服务器API无法 **渲染** VEC创建的活动。 如果要呈现由VEC创建的活动，请实施 [混合个性化](../edge/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network服务器API。
+>通过创建的个性化体验 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 服务器API不完全支持。 服务器API可以 **retrieve** 由VEC创建的活动，但服务器API无法 **渲染** VEC创建的活动。 如果要呈现由VEC创建的活动，请实施 [混合个性化](../web-sdk/personalization/hybrid-personalization.md) 使用Web SDK和Edge Network服务器API。
 
 ## 配置数据流 {#configure-your-datastream}
 

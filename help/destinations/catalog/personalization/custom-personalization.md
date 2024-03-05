@@ -3,9 +3,9 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '906'
 ht-degree: 9%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 9%
 
 ## 先决条件 {#prerequisites}
 
-此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/). 您必须使用这些SDK之一才能使用此目标。
+此集成由 [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) 或 [Adobe Experience Platform移动SDK](https://developer.adobe.com/client-sdks/documentation/). 您必须使用这些SDK之一才能使用此目标。
 
 >[!IMPORTANT]
 >
@@ -120,7 +120,7 @@ ht-degree: 9%
 ]
 ```
 
-如果您没有使用 [标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [处理来自事件的响应](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) 功能以查看导出的数据。
+如果您没有使用 [标记](/help/tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [命令响应](/help/web-sdk/commands/command-responses.md) 以查看导出的数据。
 
 可以解析来自Adobe Experience Platform的JSON响应，以查找您与Adobe Experience Platform集成的应用程序的相应集成别名。 受众ID可以作为定位参数传递到应用程序的代码中。 以下是目标响应特有的内容示例。
 

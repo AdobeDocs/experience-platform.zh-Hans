@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
 source-wordcount: '1242'
 ht-degree: 21%
@@ -28,7 +28,7 @@ Experience Platform允许您订阅各种Platform活动的基于事件的警报�
 **新增或更新功能**
 | 功能 | 描述 | | — | — | | “警报历史记录”选项卡 | 作为Experience Platform管理员，您可以使用管理警报订阅者功能将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件组列表。 欲了解更多信息，请参见 [警报UI文档](../../observability/alerts/ui.md) 有关“历史记录”选项卡的详细信息。 |
 
-
+{style="table-layout:auto"}
 
 要了解有关警报的更多信息，请阅读 [[!DNL Observability Insights] 概述](../../observability/home.md).
 
@@ -40,7 +40,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| [Web SDK中的Web应用程序内消息传送支持](../../edge/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK现在支持Adobe Journey Optimizer促销活动的Web应用程序内消息传递配置。 |
+| [Web SDK中的Web应用程序内消息传送支持](../../web-sdk/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK现在支持Adobe Journey Optimizer促销活动的Web应用程序内消息传递配置。 |
 
 {style="table-layout:auto"}
 

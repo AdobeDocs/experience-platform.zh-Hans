@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 description: 了解如何在Adobe Experience Platform中集成Adobe Experience Platform Web SDK以处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1311'
 ht-degree: 1%
 
 ---
@@ -24,15 +24,15 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 本指南遵循在UI中使用标记扩展来设置SDK的工作流。 如果您不想使用扩展，并且希望直接在您的网站上嵌入SDK的独立版本，请参阅以下文档而不是本指南：
 
-* [配置数据流](../../../datastreams/overview.md)
-* [安装SDK](../../../edge/fundamentals/installing-the-sdk.md)
-* [为同意命令配置SDK](../../../edge/consent/supporting-consent.md)
+* [配置数据流](/help/datastreams/overview.md)
+* [安装SDK](/help/web-sdk/install/overview.md)
+* [为同意命令配置SDK](/help/web-sdk/commands/configure/defaultconsent.md)
 
 本指南中的安装步骤需要您实际了解标记扩展及其在Web应用程序中的安装方式。 有关更多信息，请参阅以下文档：
 
-* [标记概述](../../../tags/home.md)
-* [快速入门指南](../../../tags/quick-start/quick-start.md)
-* [发布概述](../../../tags/ui/publishing/overview.md)
+* [标记概述](/help/tags/home.md)
+* [快速入门指南](/help/tags/quick-start/quick-start.md)
+* [发布概述](/help/tags/ui/publishing/overview.md)
 
 ## 设置数据流
 
@@ -110,14 +110,7 @@ Adobe Experience Platform Web SDK允许您检索同意管理平台(CMP)生成的
 
 ### `setConsent` 语法
 
->[!NOTE]
->
->有关Platform SDK命令的常用语法的介绍，请参阅上的文档 [正在执行命令](../../../edge/fundamentals/executing-commands.md).
-
-此 `setConsent` 命令需要两个参数：
-
-1. 指示命令类型的字符串(在本例中， `"setConsent"`)
-1. 包含单个数组类型属性的有效负荷对象： `consent`. 此 `consent` 数组必须包含至少一个为Adobe标准提供必需同意字段的对象。
+此 [`setConsent`](/help/web-sdk/commands/setconsent.md) 命令需要包含单个数组类型属性的有效负载对象： `consent`. 此 `consent` 数组必须包含至少一个为Adobe标准提供必需同意字段的对象。
 
 以下示例显示了Adobe标准所需的同意字段 `setConsent` 调用：
 
@@ -139,7 +132,7 @@ alloy("setConsent", {
         }
       },
       metadata: {
-        time: "2020-10-12T15:52:25+00:00"
+        time: "YYYY-10-12T15:52:25+00:00"
       }
     }
   }]
@@ -200,7 +193,7 @@ var setConsent = function () {
 
 ## 处理SDK响应
 
-全部 [!DNL Platform SDK] 命令返回promise ，指示调用是成功还是失败。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 请参阅以下部分 [处理成功或失败](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) 有关特定示例，请参阅执行SDK命令指南。
+全部 [!DNL Platform SDK] 命令返回promise ，指示调用是成功还是失败。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 请参阅 [命令响应](/help/web-sdk/commands/command-responses.md) 以了解更多信息。
 
 一旦您成功完成 `setConsent` 通过调用SDK，您可以使用平台UI中的配置文件查看器，验证数据是否登陆配置文件存储中。 请参阅以下部分 [按身份浏览配置文件](../../../profile/ui/user-guide.md#browse-identity) 以了解更多信息。
 

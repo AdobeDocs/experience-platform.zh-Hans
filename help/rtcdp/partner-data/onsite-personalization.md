@@ -3,7 +3,7 @@ title: 使用合作伙伴辅助的访客识别功能，为未知访客提供个�
 description: 了解如何使用合作伙伴辅助的访客识别为访客营造个性化的现场体验。
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '2673'
 ht-degree: 90%
@@ -47,7 +47,7 @@ ht-degree: 90%
 要成功实施此用例，您必须使用 Real-Time Customer Data Platform 和其他 Experience Cloud 解决方案的多个区域。确保您拥有所有这些区域所需的[基于属性的访问控制权限](/help/access-control/abac/overview.md)，或让系统管理员授予您这些必要的权限。
 
 * 数据收集
-   * [Adobe Experience Platform Web SDK](/help/edge/home.md)
+   * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)
    * [标记](/help/tags/home.md)
    * [数据流](/help/datastreams/overview.md)
 * Real-Time CDP 中的数据管理

@@ -2,9 +2,9 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: dea75b92847320284e1dc1b939f3ae11a12077a8
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
-source-wordcount: '1580'
+source-wordcount: '1552'
 ht-degree: 6%
 
 ---
@@ -84,7 +84,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 * **[!UICONTROL 使用第三方Cookie]**：启用此选项后，Web SDK会尝试将用户标识符存储在第三方Cookie中。 如果成功，则在用户跨多个域导航时将用户标识为单个用户，而不是在每个域上将用户标识为单独的用户。 如果启用此选项，则当浏览器不支持第三方Cookie或用户已配置为不允许第三方Cookie时，SDK仍可能无法将用户标识符存储在第三方Cookie中。 在这种情况下，SDK仅将标识符存储在第一方域中。
 
   >[!IMPORTANT]
-  >>第三方Cookie与 [第一方设备Id](../../../../edge/identity/first-party-device-ids.md) Web SDK中的功能。
+  >>第三方Cookie与 [第一方设备Id](../../../../web-sdk/identity/first-party-device-ids.md) Web SDK中的功能。
 您可以使用第一方设备ID，也可以使用第三方Cookie，但不能同时使用这两项功能。
   >
 ## 配置个性化设置 {#personalization}
@@ -113,9 +113,9 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ![该图像显示了标记UI中Web SDK标记扩展的数据收集设置](assets/web-sdk-ext-collection.png)
 
-* **[!UICONTROL 回调函数]**：扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=zh-Hans) 在图书馆里。 此函数允许您在将事件发送到Edge Network之前对其进行全局修改。 可以找到有关如何使用此函数的更多详细信息 [此处](../../../../edge/fundamentals/tracking-events.md#modifying-events-globally).
+* **[!UICONTROL 回调函数]**：扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](/help/web-sdk/commands/configure/onbeforeeventsend.md) 在图书馆里。 此函数允许您在将事件发送到Edge Network之前对其进行全局修改。
 * **[!UICONTROL 启用点击数据收集]**：Web SDK可以自动为您收集链接点击信息。 默认情况下，此功能处于启用状态，但使用此选项可禁用该功能。 如果链接包含中列出的下载表达式之一，则也会将其标记为下载链接 [!UICONTROL 下载链接限定符] 文本框。 Adobe为您提供一些默认的下载链接限定符。 您可以根据需要编辑它们。
-* **[!UICONTROL 自动收集的上下文数据]**：默认情况下，Web SDK会收集有关设备、Web、环境和位置上下文的特定上下文数据。 如果您想查看Adobe收集的信息列表，可以找到该列表 [此处](../../../../edge/data-collection/automatic-information.md). 如果不希望收集此数据，或只希望收集某些类别的数据，请选择 **[!UICONTROL 特定上下文信息]** 并选择要收集的数据。
+* **[!UICONTROL 自动收集的上下文数据]**：默认情况下，Web SDK会收集有关设备、Web、环境和位置上下文的特定上下文数据。 如果不希望收集此数据，或只希望收集某些类别的数据，请选择 **[!UICONTROL 特定上下文信息]** 并选择要收集的数据。 请参阅 [`context`](/help/web-sdk/commands/configure/context.md) 以了解更多信息。
 
 ## 配置数据流覆盖 {#datastream-overrides}
 
@@ -125,10 +125,10 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 数据流配置覆盖是一个两步过程：
 
-1. 首先，您必须在[数据流配置页面](../../../../datastreams/configure.md)中定义数据流配置覆盖。
+1. 首先，您必须在[数据流配置页面](/help/datastreams/configure.md)中定义数据流配置覆盖。
 2. 然后，您必须通过Web SDK命令或Web SDK标记扩展将覆盖发送到Edge Network。
 
-查看数据流 [配置覆盖文档](../../../../datastreams/overrides.md) 以获取有关如何覆盖数据流配置的详细说明。
+查看数据流 [配置覆盖文档](/help/datastreams/overrides.md) 以获取有关如何覆盖数据流配置的详细说明。
 
 作为通过Web SDK命令传递覆盖的替代方法，您可以在下面显示的标记扩展屏幕中配置覆盖。
 
@@ -136,10 +136,10 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 >
 必须为每个环境配置数据流覆盖。 开发、暂存和生产环境都具有单独的覆盖。 您可以使用以下屏幕中显示的专用选项复制它们之间的设置。
 
-![该图像在Web SDK标记扩展页面中显示数据流配置覆盖。](assets/datastream-overrides.png)
+![此图像显示了使用Web SDK标记扩展页面进行数据流配置覆盖。](assets/datastream-overrides.png)
 
 ## 配置高级设置
 
 使用 **[!UICONTROL 边缘基本路径]** 字段。 这不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。
 
-![此图像显示Web SDK标记扩展页面中的高级设置。](assets/advanced-settings.png)
+![此图像显示了使用Web SDK标记扩展页面的高级设置。](assets/advanced-settings.png)

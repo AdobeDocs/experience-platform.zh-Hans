@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务概述
 description: 了解Adobe Experience Platform分段服务及其在Platform生态系统中发挥的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '1627'
 ht-degree: 14%
@@ -92,7 +92,7 @@ Platform 目前支持三种受众评估方法：流式分段、批量分段和�
 >abstract="边缘分段能够在 Edge Network 上即时评估 Platform 中的区段，从而实现同一页和下一页个性化用例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html?lang=zh-Hans" text="边缘分段 UI 指南"
 
-边缘分段是一种在Platform中即时评估区段的能力 [在Edge Network](../edge/home.md)，启用同一页面和下一页面个性化用例。
+边缘分段是一种在Platform中即时评估区段的能力 [在Edge Network](../web-sdk/home.md)，启用同一页面和下一页面个性化用例。
 
 要了解有关边缘分段的更多信息，请阅读 [API文档](./api/edge-segmentation.md) 或 [UI文档](./ui/edge-segmentation.md).
 

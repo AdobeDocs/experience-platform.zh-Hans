@@ -7,10 +7,10 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1303'
-ht-degree: 5%
+source-wordcount: '1267'
+ht-degree: 4%
 
 ---
 
@@ -83,7 +83,7 @@ ht-degree: 5%
 
 下一步， [创建数据元素](../../../ui/managing-resources/data-elements.md#create-a-data-element) 使用 [!UICONTROL 核心] 扩展和 [!UICONTROL 密码] 要引用 `Mailchimp API Key` 你刚刚创建的密码。 输入 `Mailchimp Token` 作为数据元素名称。
 
-### 安装和配置 扩展
+### 安装和配置扩展
 
 在同一事件转发属性中，选择 **[!UICONTROL 扩展]，** 则 **[!UICONTROL 目录]** 以显示可用于安装的扩展。 在此处，搜索Mailchimp扩展并选择 **[!UICONTROL 安装]**.
 
@@ -105,7 +105,7 @@ ht-degree: 5%
 
 在中使用此扩展时 [规则](../../../ui/managing-resources/rules.md)，则扩展会通过每个事件向Mailchimp发送多个数据值。 对于典型实施，您可以配置 [Adobe Experience Platform Web SDK扩展](../../client/web-sdk/overview.md) 以将该数据发送至 [!DNL Platform Edge Network] 以供扩展在事件转发属性中使用。
 
-此扩展所需的数据可以作为XDM数据或非XDM数据从Web SDK发送。 请参阅文档以了解有关 [发送XDM数据](../../../../edge/fundamentals/tracking-events.md#sending-non-xdm-data).
+此扩展所需的数据可以作为XDM数据从Web SDK发送(使用 [`xdm`](/help/web-sdk/commands/sendevent/xdm.md) 对象)或非XDM数据(使用 [`data`](/help/web-sdk/commands/sendevent/data.md) 对象)。
 
 例如，如果客户购买产品或注册了您网站上的事件，则您可以使用此扩展通过Mailchimp发送确认电子邮件。 将所需信息从Web SDK发送到Edge Network后，该扩展将通过Mailchimp触发电子邮件。
 

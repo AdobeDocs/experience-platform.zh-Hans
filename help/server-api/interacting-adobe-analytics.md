@@ -2,9 +2,9 @@
 title: 与Adobe Analytics交互
 description: 了解如何使用Edge Network服务器API与Adobe Analytics交互。
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '180'
 ht-degree: 1%
 
 ---
@@ -13,9 +13,7 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-Adobe Analytics数据收集通过将XDM数据转换为Adobe Analytics可以理解的格式来工作。 多个XDM字段包括 [自动映射](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) 到Analytics变量。
-
-您还可以 [手动映射XDM值](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) 到旧版Analytics变量。
+Adobe Analytics数据收集通过将XDM数据转换为Adobe Analytics可以理解的格式来工作。 多个XDM字段包括 [自动映射](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html?lang=zh-Hans) 到Analytics变量。 您还可以手动将XDM值映射到旧版Analytics变量。
 
 要使Adobe Analytics能够接收来自服务器API的数据，您需要 [配置数据流](../datastreams/overview.md#adobe-analytics-settings) 要在数据流配置页面中输入报表包ID，将事件转发到Adobe Analytics。
 

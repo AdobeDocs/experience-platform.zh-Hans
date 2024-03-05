@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identity服务概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: ed2c9824d4c2f7bf8dd6a2f8431e93fe833c899c
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 2%
@@ -109,7 +109,7 @@ Identity Service在Experience Platform中扮演着至关重要的角色。 其�
 
 * [架构](../xdm/home.md)：在给定的架构中，标记为身份的架构字段允许构建身份图。
 * [数据集](../catalog/datasets/overview.md)：当启用了数据集以摄取到Real-time Customer Profile中时，如果数据集至少有两个标记为身份的字段，则会从数据集生成身份图。
-* [Web SDK](../edge/home.md)：Web SDK将体验事件发送到Adobe Experience Platform，当事件中存在两个或多个身份时，Identity Service会生成一个图形。
+* [Web SDK](../web-sdk/home.md)：Web SDK将体验事件发送到Adobe Experience Platform，当事件中存在两个或多个身份时，Identity Service会生成一个图形。
 * [Real-time Customer Profile](../profile/home.md)：在合并给定用户档案的属性和事件之前，Real-time Customer Profile可以引用身份图。 有关详细信息，请阅读上的指南 [了解Identity Service与Real-Time Customer Profile之间的关系](./identity-and-profile.md).
 * [目标](../destinations/home.md)：目标可以根据身份命名空间将配置文件信息发送到其他系统，如经过哈希处理的电子邮件。
 * [区段匹配](../segmentation/ui/segment-match/overview.md)：区段匹配可匹配两个不同沙盒中的两个配置文件，这两个沙盒具有相同的身份命名空间和身份值。

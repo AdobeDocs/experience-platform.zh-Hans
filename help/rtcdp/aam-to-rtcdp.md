@@ -2,10 +2,10 @@
 title: 从 Audience Manager 演进到 Real-Time CDP
 description: 在规划从 Audience Manager 迁移到 Real-Time CDP 之前了解注意事项。
 exl-id: 83ab9a5d-9abc-4072-b449-e2a9ecd48639
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '528'
-ht-degree: 84%
+source-wordcount: '498'
+ht-degree: 88%
 
 ---
 
@@ -33,7 +33,7 @@ Adobe 建议将区段分为以下几类：
 
 ## 2. 通过 [!UICONTROL Audience Manager 源连接器]发送哪些区段至关重要？
 
-根据其评估标准，应通过 Audience Manager 源连接器发送没有数据依赖关系、没有目标或激活方面的困难并可稍后通过 [Adobe Experience Platform Web SDK](/help/edge/web-sdk-faq.md) 等 Real-Time CDP 数据收藏集创建其分段规则的区段。
+根据其评估标准，应通过 Audience Manager 源连接器发送没有数据依赖关系、没有目标或激活方面的困难并可稍后通过 [Adobe Experience Platform Web SDK](/help/web-sdk/faq.md) 等 Real-Time CDP 数据收藏集创建其分段规则的区段。
 
 ## 3. 您是否将使用 [!UICONTROL Experience Cloud 受众]目标将数据带回 Audience Manager？
 

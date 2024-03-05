@@ -6,10 +6,10 @@ seo-description: Experience Platform Debugger Summary Screen
 seo-title: Summary Tab
 uuid: 46b17eaa-b611-43cf-8c6a-67b2e9b9d940
 exl-id: 91234125-15c4-4111-9ee4-f3af093a3c4d
-source-git-commit: f94bba7eb4763230dae6794eb70a75f53a853c53
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '909'
-ht-degree: 74%
+source-wordcount: '711'
+ht-degree: 85%
 
 ---
 
@@ -81,15 +81,15 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
   </tr> 
   <tr> 
    <td colname="col1"> <p>版本 </p> </td> 
-   <td colname="col2"> <p>Turbine 的版本</a> </p> </td> 
+   <td colname="col2"> <p>Turbine的版本</a> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>内部版本发布日期 </p> </td> 
-   <td colname="col2"> <p>标记 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> 库</a> 生成日期 </p> </td> 
+   <td colname="col2"> <p>标记 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> 库</a> 内部版本日期 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>环境 </p> </td> 
-   <td colname="col2"> <p>此 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" format="https" scope="external"> 环境</a> 由标记库使用 </p> </td> 
+   <td colname="col2"> <p>此 <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=zh-Hans" format="https" scope="external"> 环境</a> 由标记库使用 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>扩展 </p> </td> 
@@ -104,7 +104,7 @@ Experience Platform Debugger 将显示每个解决方案的以下信息：
  <tbody> 
   <tr> 
    <td colname="col1"> <p>库版本 </p> </td> 
-   <td colname="col2"> <p>Adobe Experience Platform Web SDK <a href="https://experienceleague.adobe.com/docs/experience-platform/edge/extension/web-sdk-ext-release-notes.html" format="html" scope="external">库版本</a>的编号 </p> </td> 
+   <td colname="col2"> <p>Adobe Experience Platform Web SDK <a href="https://experienceleague.adobe.com/docs/experience-platform/web-sdk/extension/web-sdk-ext-release-notes.html" format="html" scope="external">库版本</a>的编号 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>命名空间</p> </td> 

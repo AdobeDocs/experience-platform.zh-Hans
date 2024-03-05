@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Platform中的IAB TCF 2.0支持
 description: 了解如何配置数据操作和架构，以在将Adobe Experience Platform中的区段激活到目标时传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 43b3b79a4d24fd92c7afbf9ca9c83b0cbf80e2c2
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2520'
+source-wordcount: '2492'
 ht-degree: 0%
 
 ---
@@ -37,14 +37,14 @@ Adobe Experience Platform是 [IAB TCF 2.0供应商列表](https://iabeurope.eu/v
 
 本指南还要求您实际了解以下Platform服务：
 
-* [体验数据模型(XDM)](../../../../xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
-* [Adobe Experience Platform Identity服务](../../../../identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的根本挑战。
-* [Real-time Customer Profile](../../../../profile/home.md)：用途 [!DNL Identity Service] 从数据集实时创建详细的客户配置文件。 [!DNL Real-Time Customer Profile] 从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
-* [Adobe Experience Platform Web SDK](../../../../edge/home.md)：客户端JavaScript库，允许您将各种Platform服务集成到面向客户的网站上。
-   * [SDK同意命令](../../../../edge/consent/supporting-consent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
-* [Adobe Experience Platform Segmentation Service](../../../../segmentation/home.md)：用于除 [!DNL Real-Time Customer Profile] 数据归入个人组，这些个人组具有相似的特征，并对营销策略的响应类似。
+* [体验数据模型(XDM)](/help/xdm/home.md)：Experience Platform用于组织客户体验数据的标准化框架。
+* [Adobe Experience Platform Identity服务](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的根本挑战。
+* [Real-time Customer Profile](/help/profile/home.md)：用途 [!DNL Identity Service] 从数据集实时创建详细的客户配置文件。 [!DNL Real-Time Customer Profile] 从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
+* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，允许您将各种Platform服务集成到面向客户的网站上。
+   * [SDK同意命令](/help/web-sdk/consent/supporting-consent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
+* [Adobe Experience Platform Segmentation Service](/help/segmentation/home.md)：用于除 [!DNL Real-Time Customer Profile] 数据归入个人组，这些个人组具有相似的特征，并对营销策略的响应类似。
 
-除了上面列出的Platform服务外，您还应熟悉 [目标](../../../../data-governance/home.md) 以及它们在平台生态系统中的作用。
+除了上面列出的Platform服务外，您还应熟悉 [目标](/help/data-governance/home.md) 以及它们在平台生态系统中的作用。
 
 ## 客户同意流程摘要 {#summary}
 
@@ -102,7 +102,7 @@ Adobe Audience Manager与Platform共享的任何区段(通过 [!DNL Audience Man
 
 创建 [!DNL Profile]启用用于收集同意数据的数据集，您必须确保将合并策略配置为始终在客户配置文件中包含TCF同意字段。 这涉及设置数据集优先级，以使您的同意数据集优先于其他潜在冲突的数据集。
 
-有关如何使用合并策略的更多信息，请参阅 [合并策略概述](../../../../profile/merge-policies/overview.md). 在设置合并策略时，必须确保区段包含 [XDM隐私架构字段组](./dataset.md#privacy-field-group)，如数据集准备指南中所述。
+有关如何使用合并策略的更多信息，请参阅 [合并策略概述](/help/profile/merge-policies/overview.md). 在设置合并策略时，必须确保区段包含 [XDM隐私架构字段组](./dataset.md#privacy-field-group)，如数据集准备指南中所述。
 
 ## 集成Experience PlatformWeb SDK以收集客户同意数据 {#sdk}
 
@@ -118,15 +118,15 @@ Adobe Audience Manager与Platform共享的任何区段(通过 [!DNL Audience Man
 
 ### 创建数据流
 
-为了使SDK将数据发送到Experience Platform，您必须首先为Platform创建数据流。 有关如何创建数据流的特定步骤，请参见 [SDK文档](../../../../datastreams/overview.md).
+为了使SDK将数据发送到Experience Platform，您必须首先为Platform创建数据流。 有关如何创建数据流的特定步骤，请参见 [SDK文档](/help/datastreams/overview.md).
 
 为数据流提供唯一名称后，选择旁边的切换按钮 **[!UICONTROL Adobe Experience Platform]**. 接下来，使用以下值完成表单的其余部分：
 
 | 数据流字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙盒] | 平台的名称 [沙盒](../../../../sandboxes/home.md) 包含设置数据流所需的流连接和数据集。 |
-| [!UICONTROL 流式进气道] | Experience Platform的有效流连接。 请参阅上的教程 [创建流连接](../../../../ingestion/tutorials/create-streaming-connection-ui.md) 如果您没有现有的流入口。 |
-| [!UICONTROL 事件数据集] | 选择 [!DNL XDM ExperienceEvent] 在中创建的数据集 [上一步](#datasets). 如果您包含 [[!UICONTROL IAB TCF 2.0同意] 字段组](../../../../xdm/field-groups/event/iab.md) 在此数据集的架构中，您可以使用 [`sendEvent`](#sendEvent) 命令，将数据存储在此数据集中。 请记住，此数据集中存储的同意值为 **非** 在自动实施工作流中使用。 |
+| [!UICONTROL 沙盒] | 平台的名称 [沙盒](/help/sandboxes/home.md) 包含设置数据流所需的流连接和数据集。 |
+| [!UICONTROL 流式进气道] | Experience Platform的有效流连接。 请参阅上的教程 [创建流连接](/help/ingestion/tutorials/create-streaming-connection-ui.md) 如果您没有现有的流入口。 |
+| [!UICONTROL 事件数据集] | 选择 [!DNL XDM ExperienceEvent] 在中创建的数据集 [上一步](#datasets). 如果您包含 [[!UICONTROL IAB TCF 2.0同意] 字段组](/help/xdm/field-groups/event/iab.md) 在此数据集的架构中，您可以使用 [`sendEvent`](#sendEvent) 命令，将数据存储在此数据集中。 请记住，此数据集中存储的同意值为 **非** 在自动实施工作流中使用。 |
 | [!UICONTROL 配置文件数据集] | 选择 [!DNL XDM Individual Profile] 在中创建的数据集 [上一步](#datasets). 使用响应CMP同意更改挂接时 [`setConsent`](#setConsent) 命令，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，在自动实施工作流期间，将遵循此数据集中存储的同意值。 |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
@@ -137,13 +137,9 @@ Adobe Audience Manager与Platform共享的任何区段(通过 [!DNL Audience Man
 
 创建上一部分所述的数据流后，您可以开始使用SDK命令将同意数据发送到Platform。 以下部分提供了如何在不同的场景中使用每个SDK命令的示例。
 
->[!NOTE]
->
->有关所有Platform SDK命令的通用语法的介绍，请参阅上的文档 [正在执行命令](../../../../edge/fundamentals/executing-commands.md).
-
 #### 使用CMP同意更改挂接 {#setConsent}
 
-许多CMP提供开箱即用的挂接，用于侦听同意更改事件。 在这些事件发生时，您可以使用 `setConsent` 命令以更新客户的同意数据。
+许多CMP提供开箱即用的挂接，用于侦听同意更改事件。 在这些事件发生时，您可以使用 [`setConsent`](/help/web-sdk/commands/setconsent.md) 命令以更新客户的同意数据。
 
 此 `setConsent` 命令需要两个参数：
 
@@ -226,7 +222,7 @@ alloy("sendEvent", {
 
 ### 处理SDK响应
 
-全部 [!DNL Platform SDK] 命令返回promise ，指示调用是成功还是失败。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 请参阅以下部分 [处理成功或失败](../../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) 有关特定示例，请参阅执行SDK命令指南。
+许多Web SDK命令会返回指示调用是成功还是失败的promise。 然后，您可以将这些响应用于其他逻辑，例如向客户显示确认消息。 请参阅 [命令响应](/help/web-sdk/commands/command-responses.md) 以了解更多信息。
 
 ## 导出区段 {#export}
 

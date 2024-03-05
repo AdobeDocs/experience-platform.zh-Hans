@@ -2,10 +2,10 @@
 title: 配置数据流覆盖
 description: 了解如何在数据流 UI 中配置数据流覆盖并通过 Web SDK 激活它们。
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 11feeae0409822f0b1ccba2df263f0be466d54e3
+source-git-commit: 90493d179e620604337bda96cb3b7f5401ca4a81
 workflow-type: tm+mt
-source-wordcount: '1303'
-ht-degree: 67%
+source-wordcount: '1180'
+ht-degree: 61%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 67%
 
 >[!IMPORTANT]
 >
->数据流覆盖仅支持 [Web SDK](../edge/home.md) 和 [移动SDK](https://developer.adobe.com/client-sdks/home/) 集成。 [服务器API](../server-api/overview.md) 集成当前不支持数据流覆盖。
+>数据流覆盖仅支持 [Web SDK](../web-sdk/home.md) 和 [移动SDK](https://developer.adobe.com/client-sdks/home/) 集成。 [服务器API](../server-api/overview.md) 集成当前不支持数据流覆盖。
 ><br>
 >在需要将不同的数据发送到不同的数据流时应使用数据流覆盖。请勿对个性化用例或同意数据使用数据流覆盖。
 
@@ -116,110 +116,155 @@ ht-degree: 67%
 
 ## 通过 Web SDK 将覆盖发送到 Edge Network {#send-overrides-web-sdk}
 
->[!NOTE]
->
->作为通过 Web SDK 命令发送配置覆盖的替代方法，您可以将配置覆盖添加到 Web SDK [标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md)。
+在数据收集UI中配置数据流覆盖后，您可以通过Web SDK或移动SDK将覆盖发送到Edge Network。
 
-在数据收集 UI 中[配置数据流覆盖](#configure-overrides)后，您现在可以通过 Web SDK 将覆盖发送到 Edge Network。
+* **Web SDK**：请参阅 [数据流配置覆盖](../web-sdk/commands/datastream-overrides.md#library) 有关标记扩展说明和JavaScript库代码示例。
+* **移动SDK**：请参阅下文。
 
-如果您使用的是Web SDK，请通过 `edgeConfigOverrides` 命令是激活数据流配置覆盖的第二步，也是最后一步。
+### 通过移动SDK覆盖数据流ID {#id-override-mobile}
 
-数据流配置覆盖通过 `edgeConfigOverrides` Web SDK 命令发送到 Edge Network。此命令创建数据流覆盖，并将其传递给 [!DNL Edge Network] 在下一个命令中。 如果您使用 `configure` 命令，则会为每个请求传递覆盖。
+以下示例显示了数据流ID覆盖在Mobile SDK集成中可能显示的内容。 选择下面的选项卡以查看 [!DNL iOS] 和 [!DNL Android] 示例。
 
-此 `edgeConfigOverrides` 命令创建数据流覆盖，这些覆盖将传递给 [!DNL Edge Network] 在下一个命令中。
+>[!BEGINTABS]
 
-当使用 `configure` 命令发送配置覆盖时，它包含在以下 Web SDK 命令中。
+>[!TAB iOS (Swift)]
 
-* [sendEvent](../edge/fundamentals/tracking-events.md)
-* [setConsent](../edge/consent/iab-tcf/overview.md)
-* [getIdentity](../edge/identity/overview.md)
-* [appendIdentityToUrl](../edge/identity/id-sharing.md#cross-domain-sharing)
-* [configure](../edge/fundamentals/configuring-the-sdk.md)
+此示例显示数据流ID覆盖在Mobile SDK中会是什么样子 [!DNL iOS] 集成。
 
-全局指定的选项可由各个命令上的配置选项覆盖。
+```swift
+// Create Experience event from dictionary
+var xdmData: [String: Any] = [
+  "eventType": "SampleXDMEvent",
+  "sample": "data",
+]
+let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamIdOverride: "SampleDatastreamId")
 
-### 通过Web SDK发送配置覆盖 `sendEvent` 命令 {#send-event}
-
-以下示例显示 `sendEvent` 命令中的配置覆盖的情况。
-
-```js {line-numbers="true" highlight="5-25"}
-alloy("sendEvent", {
-  xdm: {
-    /* ... */
-  },
-  edgeConfigOverrides: {
-    datastreamId: "{DATASTREAM_ID}"
-    com_adobe_experience_platform: {
-      datasets: {
-        event: {
-          datasetId: "SampleEventDatasetIdOverride"
-        }
-      }
-    },
-    com_adobe_analytics: {
-      reportSuites: [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-        ]
-    },
-    com_adobe_identity: {
-      idSyncContainerId: "1234567"
-    },
-    com_adobe_target: {
-      propertyToken: "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  }
-});
+Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
+  // Handle the Edge Network response
+}
 ```
 
-| 参数 | 描述 |
-|---|---|
-| `edgeConfigOverrides.datastreamId` | 使用此参数可允许单个请求转到与 `configure`命令定义的数据流不同的数据流。 |
+>[!TAB Android™ (Kotlin)]
 
-### 通过Web SDK发送配置覆盖 `configure` 命令 {#send-configure}
+此示例显示数据流ID覆盖在Mobile SDK中会是什么样子 [!DNL Android] 集成。
 
-以下示例显示 `configure` 命令中的配置覆盖的情况。
+```kotlin
+// Create experience event from Map
+val xdmData = mutableMapOf < String, Any > ()
+xdmData["eventType"] = "SampleXDMEvent"
+xdmData["sample"] = "data"
 
-```js {line-numbers="true" highlight="8-30"}
-alloy("configure", {
-  defaultConsent: "in",
-  edgeDomain: "etc",
-  edgeBasePath: "ee",
-  datastreamId: "{DATASTREAM_ID}",
-  orgId: "org",
-  debugEnabled: true,
-  edgeConfigOverrides: {
-    "com_adobe_experience_platform": {
-      "datasets": {
-        "event": {
-          datasetId: "SampleProfileDatasetIdOverride"
-        }
-      }
-    },
-    "com_adobe_analytics": {
-      "reportSuites": [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
+val experienceEvent = ExperienceEvent.Builder()
+    .setXdmSchema(xdmData)
+    .setDatastreamIdOverride("SampleDatastreamId")
+    .build()
+
+Edge.sendEvent(experienceEvent) {
+    // Handle the Edge Network response
+}
+```
+
+>[!ENDTABS]
+
+### 通过Mobile SDK覆盖数据流配置 {#config-override-mobile}
+
+以下示例显示了数据流配置覆盖在Mobile SDK集成上可能显示的内容。 选择下面的选项卡以查看 [!DNL iOS] 和 [!DNL Android] 示例。
+
+>[!BEGINTABS]
+
+>[!TAB iOS (Swift)]
+
+此示例显示数据流配置覆盖在Mobile SDK中看起来是什么样子 [!DNL iOS] 集成。
+
+```swift
+// Create Experience event from dictionary
+var xdmData: [String: Any] = [
+  "eventType": "SampleXDMEvent",
+  "sample": "data",
+]
+
+let configOverrides: [String: Any] = [
+  "com_adobe_experience_platform": [
+    "datasets": [
+      "event": [
+        "datasetId": "SampleEventDatasetIdOverride"
       ]
-    },
-    "com_adobe_identity": {
-      "idSyncContainerId": "1234567"
-    },
-    "com_adobe_target": {
-      "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  },
-  onBeforeEventSend: function() { /* … */ });
-};
+    ]
+  ],
+  "com_adobe_analytics": [
+  "reportSuites": [
+        "MyFirstOverrideReportSuite",
+          "MySecondOverrideReportSuite",
+          "MyThirdOverrideReportSuite"
+      ]
+  ],
+  "com_adobe_identity": [
+    "idSyncContainerId": "1234567"
+  ],
+  "com_adobe_target": [
+    "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
+ ],
+]
+
+let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamConfigOverride: configOverrides)
+
+Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
+  // Handle the Edge Network response
+}
 ```
 
-## 通过Mobile SDK将覆盖发送到Edge Network {#send-overrides-mobile-sdk}
+>[!TAB Android (Kotlin)]
 
-之后 [配置数据流覆盖](#configure-overrides) 在数据收集UI中，您现在可以通过Mobile SDK将覆盖发送到Edge Network。
+此示例显示数据流配置覆盖在Mobile SDK中看起来是什么样子 [!DNL Android] 集成。
 
-要了解如何将覆盖发送到Edge Network，请参阅 [有关使用sendEvent发送覆盖的指南](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) 或 [使用规则发送覆盖的指南](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
+```kotlin
+// Create experience event from Map
+val xdmData = mutableMapOf < String, Any > ()
+xdmData["eventType"] = "SampleXDMEvent"
+xdmData["sample"] = "data"
+
+val configOverrides = mapOf(
+    "com_adobe_experience_platform"
+    to mapOf(
+        "datasets"
+        to mapOf(
+            "event"
+            to mapOf("datasetId"
+                to "SampleEventDatasetIdOverride")
+        )
+    ),
+    "com_adobe_analytics"
+    to mapOf(
+        "reportSuites"
+        to listOf(
+            "MyFirstOverrideReportSuite",
+            "MySecondOverrideReportSuite",
+            "MyThirdOverrideReportSuite"
+        )
+    ),
+    "com_adobe_identity"
+    to mapOf(
+        "idSyncContainerId"
+        to "1234567"
+    ),
+    "com_adobe_target"
+    to mapOf(
+        "propertyToken"
+        to "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
+    )
+)
+
+val experienceEvent = ExperienceEvent.Builder()
+    .setXdmSchema(xdmData)
+    .setDatastreamConfigOverride(configOverrides)
+    .build()
+
+Edge.sendEvent(experienceEvent) {
+    // Handle the Edge Network response
+}
+```
+
+>[!ENDTABS]
 
 ## 负载示例 {#payload-example}
 

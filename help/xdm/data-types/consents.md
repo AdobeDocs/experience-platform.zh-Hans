@@ -3,10 +3,10 @@ keywords: Experience Platform；配置文件；实时客户配置文件；疑难
 title: 同意和偏好设置数据类型
 description: 隐私同意、个性化和营销偏好设置数据类型旨在支持从您的数据操作中收集由同意管理平台(CMP)和其他源生成的客户权限和偏好设置。
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 70ea0aa74f1874ea2772dd0d961c98d2ac1137e8
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2294'
-ht-degree: 1%
+source-wordcount: '2278'
+ht-degree: 0%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 本文档要求您对XDM以及在中使用架构有一定的了解 [!DNL Experience Platform]. 请在继续之前查看以下文档：
 
-* [XDM 系统概述](https://www.adobe.com/go/xdm-home-en)
+* [XDM系统概述](https://www.adobe.com/go/xdm-home-en)
 * [模式组合基础](https://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## 数据类型结构 {#structure}
@@ -267,7 +267,7 @@ ht-degree: 1%
 
 ## 处理同意和偏好设置更改
 
-当客户在您的网站上更改其同意或偏好设置时，应使用收集这些更改并立即实施 [Adobe Experience Platform Web SDK](../../edge/consent/supporting-consent.md). 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
+当客户在您的网站上更改其同意或偏好设置时，应使用收集这些更改并立即实施 [Adobe Experience Platform Web SDK](/help/web-sdk/consent/supporting-consent.md). 如果客户选择退出数据收集，则必须立即停止所有数据收集。 如果客户选择退出个性化，则他们访问的下一个页面上应该不会显示个性化。
 
 ## 附录 {#appendix}
 

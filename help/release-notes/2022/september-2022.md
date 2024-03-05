@@ -2,16 +2,16 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: Adobe Experience Platform 2022年9月版发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2938'
-ht-degree: 24%
+source-wordcount: '2762'
+ht-degree: 23%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 9 月 28 日**
+**发行日期： 2022年9月28日**
 
 Adobe Experience Platform中的新增功能：
 
@@ -42,7 +42,7 @@ Adobe Experience Platform 中现有功能的更新：
 | 功能 | 描述 |
 | --- | --- |
 | 基于属性的访问控制 | 基于属性的访问控制允许您使用定义组织或数据使用范围的标签来标记Experience Data Model (XDM)架构字段和区段。 同时，管理员可以使用用户和角色管理界面定义涵盖XDM架构字段和区段的访问策略，以便更好地管理授予用户或用户组（内部、外部或第三方用户）的访问权限。 欲了解更多信息，请参见 [基于属性的访问控制概述](../../access-control/abac/overview.md). |
-| 权限 | 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过权限，您可以创建和管理角色、为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定Platform资源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。欲了解更多信息，请参见 [权限UI指南](../../access-control/abac/ui/browse.md). |
+| 权限 | 权限是Experience Cloud的区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过权限，您可以创建和管理角色、为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定Platform资源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。 欲了解更多信息，请参见 [权限UI指南](../../access-control/abac/ui/browse.md). |
 
 有关基于属性的访问控制的详细信息，请参阅[基于属性的访问控制概述](../../access-control/abac/overview.md)。有关基于属性的访问控制工作流程的综合指南，请阅读[基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md)。
 
@@ -110,8 +110,8 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | Platform UI中的左侧导航集成 | 之前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可以通过Experience Platform的左侧导航在类别下使用 **[!UICONTROL 数据收集]**. 当在Platform中使用数据收集功能时，无需在UI之间进行切换。 |
 | 标记中的用户归因和事件转发 | 当列表可用时 [!UICONTROL 属性] 在标记和事件转发中，现在每个列出的属性都会显示其上次更新时间以及进行更新的用户。 |
 | [[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) 用于事件转发 | 您现在可以将数据发送到 [!DNL Snapchat Conversions API] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 有关如何验证和使用API的更多信息，请参阅 [[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html). |
-| [[!DNL User-Agent Client Hints] 在Web SDK中](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK现在支持 [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但采用更保护隐私的方式。 |
-| [Web SDK逐页迁移](../../edge/home.md#migrating-to-web-sdk) | 您现在可以从其他Experience Cloud库迁移现有Web资产，例如 [!DNL at.js]，一次显示一个页面。 这支持采用分阶段的方法进行Web SDK迁移，而无需一次性迁移所有页面。 |
+| [Web SDK中的用户代理客户端提示](/help/web-sdk/use-cases/client-hints.md) | Web SDK现在支持 [用户代理客户端提示](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但采用更保护隐私的方式。 |
+| [Web SDK逐页迁移](../../web-sdk/home.md#migrating-to-web-sdk) | 您现在可以从其他Experience Cloud库迁移现有Web资产，例如 [!DNL at.js]，一次显示一个页面。 这支持采用分阶段的方法进行Web SDK迁移，而无需一次性迁移所有页面。 |
 | [[!DNL Adobe Journey Optimizer] 支持数据流](../../datastreams/overview.md#aep) | 适用于数据流的Adobe Experience Platform服务现在支持 [!DNL Adobe Journey Optimizer]. 此选项允许您在中使用基于Web和应用程序的入站渠道 [!DNL Adobe Journey Optimizer]. |
 
 {style="table-layout:auto"}
@@ -126,11 +126,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 目标 SDK | Destination SDK现在为合作伙伴和客户创建批量（或基于文件）生产目标或专用目标提供全面支持。 有关详细信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](../../destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[测试您的基于文件的目标](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
+| Destination SDK | Destination SDK现在为合作伙伴和客户创建批量（或基于文件）生产目标或专用目标提供全面支持。 有关详细信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](../../destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[测试您的基于文件的目标](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
 
 {style="table-layout:auto"}
 
-**新增或更新目标**
+**新的或更新目标**
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -139,7 +139,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 {style="table-layout:auto"}
 
-**新增或更新文档**
+**新文档或更新文档**
 
 | 文档 | 描述 |
 | ----------- | ----------- |
@@ -204,7 +204,7 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | --- | --- |
 | 支持数据集删除 | 现在，Identity Service在通过请求时支持数据集删除 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、UI或数据卫生。 阅读指南： [在UI中删除数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 以了解更多信息。 |
 
-要了解有关身份服务的更多信息，请阅读[身份服务概述](../../identity-service/home.md).
+要了解有关Identity Service的更多信息，请阅读 [Identity服务概述](../../identity-service/home.md).
 
 ## 查询服务 {#query-service}
 

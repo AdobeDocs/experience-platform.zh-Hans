@@ -2,10 +2,10 @@
 title: 为数据收集准备数据
 description: 了解在为 Adobe Experience Platform Web 和 Mobile SDK 配置数据流时，如何将数据映射到 Experience Data Model (XDM) 事件架构。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1192'
-ht-degree: 59%
+source-wordcount: '1183'
+ht-degree: 60%
 
 ---
 
@@ -30,9 +30,9 @@ ht-degree: 59%
 
 ## 通过WebSDK将现有数据层发送到Edge Network {#send-datalayer-via-websdk}
 
-现有的数据层必须使用 `data` 的选项 `sendEvent` 命令，如 [Web SDK文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#sending-non-xdm-data).
+现有的数据层必须使用 [`data`](/help/web-sdk/commands/sendevent/data.md) 中的对象 `sendEvent` 命令。
 
-如果您使用的是标记，则必须使用 **[!UICONTROL 数据]** 字段 **[!UICONTROL 发送事件]** 操作类型，如 [Web SDK标记扩展文档](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/client/web-sdk/action-types.html).
+如果您使用的是标记，则必须使用 **[!UICONTROL 数据]** 字段 **[!UICONTROL 发送事件]** 操作类型，如 [Web SDK标记扩展文档](/help/tags/extensions/client/web-sdk/action-types.md).
 
 本指南的其余部分将重点介绍在WebSDK发送数据层后，如何将其映射到XDM标准。
 

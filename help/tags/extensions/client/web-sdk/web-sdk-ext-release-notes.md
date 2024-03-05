@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: fb2cf23f4762eec4bcab1126bdfb1aaa4144e777
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '1990'
+source-wordcount: '1983'
 ht-degree: 32%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 32%
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](/help/web-sdk/release-notes.md).
 
 ## 版本2.21.4 - 2024年1月10日
 
@@ -81,7 +81,7 @@ ht-degree: 32%
 **新增功能**
 
 * 包含Adobe Experience Platform Web SDK版本2.16.0。
-* 添加了对的支持 [数据流配置覆盖](../../../../datastreams/overrides.md).
+* 添加了对的支持 [数据流配置覆盖](/help/datastreams/overrides.md).
 * 将弃用通知添加到 `datasetId` 上的选项 `sendEvent` 命令。
 
 
@@ -98,7 +98,7 @@ ht-degree: 32%
 **新增功能**
 
 * (Beta)已添加 **[!UICONTROL 更新变量]** 操作和 **[!UICONTROL 变量]** 数据元素。
-* 已添加以下项的配置： [`onBeforeLinkClickSend`](../../../../edge/fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) 回调函数。
+* 已添加以下项的配置： [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) 回调函数。
 
 **修复和改进功能**
 
@@ -176,7 +176,7 @@ ht-degree: 32%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.7.0。
 
-* Send Event Complete事件中提供了来自Edge Network的其他信息，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。 有关更多信息，请参阅 [跟踪事件。](../../../../edge/fundamentals/tracking-events.md)
+* Send Event Complete事件中提供了来自Edge Network的其他信息，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
 
 ## 版本2.7.3 - 2021年9月7日
 
@@ -223,10 +223,10 @@ ht-degree: 32%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
-* 已添加 [&quot;document unloading&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#using-the-sendbeacon-api) 用于发送事件操作UI的复选框。
-* 添加了 `out` 选项条件 [配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) 在收到同意之前丢弃所有事件(现有 `pending` 选项对事件进行排队，并在收到同意后发送它们)。
+* 已添加 [“文档卸载”](/help/web-sdk/commands/sendevent/documentunloading.md) 用于发送事件操作UI的复选框。
+* 添加了 `out` 选项条件 [配置默认同意](/help/web-sdk/commands/configure/defaultconsent.md) 在收到同意之前丢弃所有事件(现有 `pending` 选项对事件进行排队，并在收到同意后发送它们)。
 * 向默认同意字段添加了工具提示。
-* 添加了对的支持 [Adobe的Consent 2.0标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).
+* 添加了对使用时的Adobe Consent 2.0标准的支持 [`setConsent`](/help/web-sdk/commands/setconsent.md) 命令。
 * 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
 * 修复了在查看XDM对象数据元素时浏览器开发人员控制台上显示的跨源错误（不会影响扩展的操作）。
 
@@ -251,7 +251,7 @@ ht-degree: 32%
 ## 版本2.1.0 - 2020年8月5日
 
 * 重大变更：移除了 `syncIdentity` 操作，取而代之，在 `sendEvent` 操作中支持传递这些 ID。请在升级扩展之前，通过这项操作来禁用任何现有规则。
-* 更新至 Alloy v. 2.1.0（[发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)）
+* 更新至 Alloy v. 2.1.0（[发行说明](/help/web-sdk/release-notes.md)）
 * 在 `setConsent` 操作中支持 IAB 2.0 Consent Standard。
 * 在 `sendEvent` 操作中支持覆盖数据集 ID。
 * 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。

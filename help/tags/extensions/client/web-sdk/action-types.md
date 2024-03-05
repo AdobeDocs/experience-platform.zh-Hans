@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '741'
 ht-degree: 2%
 
 ---
@@ -23,15 +23,15 @@ ht-degree: 2%
 
 根据您的实施， Send Event操作类型中还有一些其他字段也可能很有用。 请注意，这些字段都是可选的。
 
-- **类型：** 此字段允许您指定将记录在XDM架构中的事件类型。 请参阅 [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#using-the-sendbeacon-api) 以了解有关默认事件类型的更多信息。
-- **数据：** 可使用此字段发送不匹配XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 有关示例，请查看我们的 [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans).<!--- **Merge ID:** If you would like to specify a merge ID for your event, you can do so in this field. Please note that the solutions downstream are not able to merge your event data at this time. -->
+- **类型：** 此字段允许您指定将记录在XDM架构中的事件类型。 请参阅 [`type`](/help/web-sdk/commands/sendevent/type.md) 在 `sendEvent` 命令以了解更多信息。
+- **数据：** 可使用此字段发送不匹配XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 请参阅 [`data`](/help/web-sdk/commands/sendevent/data.md) 在 `sendEvent` 命令以了解更多信息。<!--- **Merge ID:** If you would like to specify a merge ID for your event, you can do so in this field. Please note that the solutions downstream are not able to merge your event data at this time. -->
 - **数据集ID：** 如果您需要将数据发送到您在数据流中指定的数据集以外的其他数据集，则可以在此处指定该数据集ID。
 - **文档将卸载：** 如果您想确保事件可到达服务器，即使用户离开页面，请检查 **[!UICONTROL 文档将卸载]** 复选框。 这允许事件访问服务器，但响应将被忽略。
-- **呈现可视化个性化决策：** 如果您想在页面上呈现个性化内容，请选中 **[!UICONTROL 呈现可视化个性化决策]** 复选框。 如有必要，您还可以指定决策范围和/或曲面。 请参阅 [个性化文档](../../../../edge/personalization/rendering-personalization-content.md#automatically-rendering-content) 以了解有关呈现个性化内容的更多信息。
+- **呈现可视化个性化决策：** 如果您想在页面上呈现个性化内容，请选中 **[!UICONTROL 呈现可视化个性化决策]** 复选框。 如有必要，您还可以指定决策范围和/或曲面。 请参阅 [个性化文档](/help/web-sdk/personalization/rendering-personalization-content.md#automatically-rendering-content) 以了解有关呈现个性化内容的更多信息。
 
 ## 设置同意 {#set-consent}
 
-收到用户的同意后，必须使用“设置同意”操作类型将此同意告知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。请参阅 [支持客户同意首选项](../../../../edge/consent/supporting-consent.md). 使用Adobe版本2.0时，仅支持数据元素值。 您将需要创建一个解析为同意对象的数据元素。
+收到用户的同意后，必须使用“设置同意”操作类型将此同意告知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。请参阅 [支持客户同意首选项](/help/web-sdk/consent/supporting-consent.md). 使用Adobe版本2.0时，仅支持数据元素值。 您将需要创建一个解析为同意对象的数据元素。
 
 在此操作中，还会向您提供一个可选字段，用于包含标识映射，以便在收到同意后可以同步标识。 将同意配置为“Pending”或“Out”时，同步很有用，因为同意调用可能是第一个要触发的调用。
 
