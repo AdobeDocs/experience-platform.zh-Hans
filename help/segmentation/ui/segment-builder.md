@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
+source-git-commit: a16f4e8d97a3ab195bd48803980b257c9ec3bfe1
 workflow-type: tm+mt
-source-wordcount: '3562'
+source-wordcount: '3629'
 ht-degree: 6%
 
 ---
@@ -282,6 +282,8 @@ ht-degree: 6%
 您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想了解此区段定义适用的评估类型，可以选择浏览图标 ![带放大镜的文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png) 查看可用区段定义评估方法的列表。
 
 此 [!UICONTROL 评估方法合格性] 弹出窗口出现。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 如需了解每种评估方法的要求详情，请参阅 [流式分段](./streaming-segmentation.md#query-types) 或 [边缘分割](./edge-segmentation.md#query-types) 概述。
+
+完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从“边缘”或“流”更改为“批处理”，您将会 **非** 能够将其改回Edge或流式传输。 对评估方法的更改将 **仅限** 选择后生效 **[!UICONTROL 保存]** 在弹出框内。 取消对话框将 **维护** 原始的评估方法。
 
 ![此时会出现评估方法资格弹出窗口。 这会显示哪些评估方法适用于段定义，哪些方法不适用于段定义。](../images/ui/segment-builder/select-evaluation-method.png)
 
