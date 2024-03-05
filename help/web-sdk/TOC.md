@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 567ba2c43c2dcea401911cf25ae7a6be259acb81
+source-git-commit: 6e78383b232a7b604514a4db85884372ef11d3a8
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '222'
 ht-degree: 22%
 
 ---
@@ -93,6 +93,7 @@ ht-degree: 22%
       * [集成而不使用标记](consent/iab-tcf/without-tags.md)
 
 * 用例 {#use-cases}
+   * [概述](use-cases/overview.md)
    * [使用Web SDK将数据发送到Adobe Analytics](use-cases/adobe-analytics.md)
    * [用户代理客户端提示](use-cases/client-hints.md)
    * [收集商业数据](use-cases/collect-commerce-data.md)
