@@ -4,7 +4,8 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
-source-git-commit: f0d437743b33818c27de94eb522227bb950e60cb
+role: Developer
+source-git-commit: 091aee1a5bb81d86925cbcde7c2ae3b354a3aebe
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 15%
