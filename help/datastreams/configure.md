@@ -2,10 +2,10 @@
 title: 创建和配置数据流
 description: 了解如何将客户端 Web SDK 集成与其他 Adobe 产品和第三方目标连接起来。
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e82da728c86225ccb089ca5a2506d7c24f18b8f8
 workflow-type: tm+mt
-source-wordcount: '2700'
-ht-degree: 55%
+source-wordcount: '2737'
+ht-degree: 54%
 
 ---
 
@@ -101,7 +101,7 @@ ht-degree: 55%
 | [!UICONTROL 第三方 ID 同步容器 ID] | 要用于第三方 ID 同步的容器的数字 ID。 |
 | [!UICONTROL 容器 ID 覆盖] | 在此部分中，您可以定义其他第三方ID同步容器ID，以将其用于覆盖默认ID。 |
 | [!UICONTROL 访问类型] | 为数据流定义 Edge Network 接受的身份验证类型。 <ul><li>**[!UICONTROL 混合身份验证]**：选择此选项时，Edge Network 接受经过身份验证和未经身份验证的请求。当您计划使用 Web SDK 或 [Mobile SDK](https://developer.adobe.com/client-sdks/home/) 与[服务器 API](../server-api/overview.md)，请选择此选项。 </li><li>**[!UICONTROL 仅经过身份验证]**：选择此选项时，Edge Network 仅接受经过身份验证的请求。当您计划仅使用服务器 API 并希望防止 Edge Network 处理任何未经身份验证的请求时，请选择此选项。</li></ul> |
-| [!UICONTROL Media Analytics] | Experience Platform支持通过Media SDK或Media Edge API处理Edge Network集成的流跟踪数据。 从了解Media Analytics [文档](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html). |
+| [!UICONTROL Media Analytics] | Experience Platform支持通过Media SDK或Media Edge API处理Edge Network集成的流跟踪数据。 从了解Media Analytics [文档](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=zh-Hans). |
 
 从该位置，如果您要为 Experience Platform 配置数据流，请按照[为数据收集准备数据](./data-prep.md)教程操作，在返回本指南之前将您的数据映射到 Platform 事件架构。否则，请选择&#x200B;**[!UICONTROL 保存]**&#x200B;并继续下一部分。
 
@@ -142,6 +142,7 @@ ht-degree: 55%
 | 设置 | 描述 |
 | --- | --- |
 | [!UICONTROL 报表包 ID] | **（必需）**&#x200B;要将数据发送到的 Analytics 报表包的 ID。可以在 Adobe Analytics UI 中的[!UICONTROL 管理员] > [!UICONTROL 报表包]下找到此 ID。如果指定了多个报表包，则数据将复制到每个报表包。 |
+| [!UICONTROL 访客ID命名空间] | （可选）要用于Adobe Analytics的命名空间 [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html?lang=zh-Hans). 当您发送一个具有为此命名空间指定的值的事件时，它将自动用作 `visitorID` 在Analytics中。 |
 | [!UICONTROL 报表包覆盖] | 在此部分中，您可以添加其他报表包 ID，它们可用于覆盖默认报表包 ID。 |
 
 ### Adobe Audience Manager 设置 {#audience-manager}
@@ -173,7 +174,7 @@ ht-degree: 55%
 |---| --- |
 | [!UICONTROL 事件数据集] | **（必需）**&#x200B;选择客户事件数据将流式传输到的 Platform 数据集。此架构必须使用 [XDM ExperienceEvent 类](../xdm/classes/experienceevent.md)。要添加其他数据集，请选择&#x200B;**[!UICONTROL 添加事件数据集]**。 |
 | [!UICONTROL 配置文件数据集] | 选择客户属性数据将发送到的 Platform 数据集。此架构必须使用 [XDM 单个配置文件类](../xdm/classes/individual-profile.md)。 |
-| [!UICONTROL Offer Decisioning] | 为Web SDK实施启用Offer decisioning。 请参阅指南，网址为 [在Web SDK中使用Offer decisioning](../web-sdk/personalization/offer-decisioning/offer-decisioning-overview.md) 以了解更多实施详细信息。<br><br>有关 Offer Decisioning 功能的更多信息，请参阅 [Adobe Journey Optimizer 文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/get-started-decision/starting-offer-decisioning.html)。 |
+| [!UICONTROL Offer Decisioning] | 为Web SDK实施启用Offer decisioning。 请参阅指南，网址为 [在Web SDK中使用Offer decisioning](../web-sdk/personalization/offer-decisioning/offer-decisioning-overview.md) 以了解更多实施详细信息。<br><br>有关 Offer Decisioning 功能的更多信息，请参阅 [Adobe Journey Optimizer 文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/get-started-decision/starting-offer-decisioning.html?lang=zh-Hans)。 |
 | [!UICONTROL 边缘分段] | 启用 [边缘分割](../segmentation/ui/edge-segmentation.md) 用于此数据流。 当 SDK 通过支持边缘分段的数据流发送数据时，相关配置文件的任何更新的分段成员资格将在响应中发送回。<br><br>对于[下一页个性化用例](../destinations/ui/activate-edge-personalization-destinations.md)，此选项可与[!UICONTROL 个性化目标]结合使用。 |
 | [!UICONTROL 个性化目标] | 如果在选中[!UICONTROL 边缘分段]复选框后启用此选项，将允许数据流连接到个性化目标，例如[自定义个性化](../destinations/catalog/personalization/custom-personalization.md)。<br><br>有关[配置个性化目标](../destinations/ui/activate-edge-personalization-destinations.md)的具体步骤，请参阅目标文档。 |
 | [!UICONTROL Adobe Journey Optimizer] | 启用 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) 用于此数据流。 <br><br> 启用此选项将允许数据流从 [!DNL Adobe Journey Optimizer] 中基于 Web 和应用程序的入站营销活动返回个性化内容。此选项要求[!UICONTROL 边缘分段]处于活动状态。如果 [!UICONTROL 边缘分段] 未选中，此选项将灰显。 |
