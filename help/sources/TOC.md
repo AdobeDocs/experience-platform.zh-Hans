@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 5e31c127344aeb1a9d3d19b98c43d1502a4af623
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1021'
 ht-degree: 10%
 
 ---
@@ -92,7 +92,8 @@ ht-degree: 10%
       - [Snowflake流连接器](connectors/databases/snowflake-streaming.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [teradata优势连接器](connectors/databases/teradata-vantage.md)
-   - 数据合作伙伴 {#data-partner}
+   - 数据和身份合作伙伴 {#data-partner}
+      - [Acxiom潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
       - [Merkury企业标识解析](connectors/data-partners/merkury.md)
    - 电子商务 {#ecommerce}
       - [SAP商务](connectors/ecommerce/sap-commerce.md)
@@ -101,6 +102,7 @@ ht-degree: 10%
    - 本地系统 {#local-system}
       - [本地文件上传连接器](connectors/local-system/local-file-upload.md)
    - 营销自动化 {#marketing-automation}
+      - [钎焊电流](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
@@ -295,7 +297,7 @@ ht-degree: 10%
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
-      - 数据合作伙伴 {#data-partner}
+      - 数据和身份合作伙伴 {#data-partner}
          - [Merkury企业标识解析](tutorials/ui/create/data-partners/merkury.md)
          - [Acxiom潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
       - 电子商务 {#ecommerce}
@@ -305,7 +307,7 @@ ht-degree: 10%
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 营销自动化 {#marketing-automation}
-         - [布拉泽](tutorials/ui/create/marketing-automation/braze.md)
+         - [钎焊电流](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)

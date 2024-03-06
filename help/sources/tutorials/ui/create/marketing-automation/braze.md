@@ -3,18 +3,18 @@ title: 在UI中为Braze数据创建数据流
 description: 了解如何使用Adobe Experience Platform UI为您的Braze帐户创建数据流。
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta 版
-source-git-commit: 632cff3ee4ca82d391e9a1df0cb38d903e8a5428
+source-git-commit: bfcea2a30a0ecadcafaddf7660eef90952dcade6
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '689'
 ht-degree: 1%
 
 ---
 
-# 创建 [!DNL Braze] UI中的源连接
+# 创建 [!DNL Braze Currents] UI中的源连接
 
 >[!NOTE]
 >
->此 [!DNL Braze] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+>此 [!DNL Braze Currents] 源为测试版。 请阅读 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 [!DNL Braze] 支持消费者和品牌之间以客户为中心的实时互动。 [!DNL Braze Currents] 是来自Braze平台的参与事件的实时数据流，是最强大但最精细的导出 [!DNL Braze] 平台。
 
@@ -44,7 +44,7 @@ ht-degree: 1%
 
 在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在 *营销自动化* 类别，选择 **[!UICONTROL 布拉泽]**，然后选择 **[!UICONTROL 添加数据]**.
+在 *营销自动化* 类别，选择 **[!UICONTROL 钎焊电流]**，然后选择 **[!UICONTROL 添加数据]**.
 
 ![已选中“钎焊电流”源的Experience PlatformUI上的源目录。](../../../../images/tutorials/create/braze/catalog.png)
 
@@ -67,16 +67,16 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-创建连接后，必须收集以下凭据值，随后将在钎焊仪表板中提供这些凭据值以将数据发送到 [!DNL Platform]. 欲知更多信息，请参阅 [!DNL Braze] [导航到洋流的指南](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
+创建连接后，必须收集以下凭据值，随后将在钎焊仪表板中提供这些凭据值，以将数据发送到Experience Platform。 欲知更多信息，请参阅 [!DNL Braze] [导航到洋流的指南](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
 
 | 字段 | 描述 |
-| ---------- | ----------- |
-| `Client ID` | 与您的关联的客户端ID [!DNL Platform] 源。 |
-| `Client Secret` | 与您的关联的客户端密钥 [!DNL Platform] 源。 |
-| `Tenant ID` | 与您的关联的租户ID [!DNL Platform] 源。 |
-| `Sandbox Name` | 与您的关联的沙盒 [!DNL Platform] 源。 |
-| `Dataflow ID` | 与关联的数据流ID [!DNL Platform] 源。 |
-| `Streaming Endpoint` | 与您的关联的流端点 [!DNL Platform] 源。 请注意，Braze会自动将其转换为批处理流端点。 |
+| --- | --- |
+| 客户端ID | 与您的Experience Platform源关联的客户端ID。 |
+| 客户端密码 | 与您的Experience Platform源关联的客户端密钥。 |
+| 租户ID | 与您的Experience Platform源关联的租户ID。 |
+| 沙盒名称 | 与您的Experience Platform源关联的沙盒。 |
+| 数据流ID | 与您的Experience Platform源关联的数据流ID。 |
+| 流端点 | 与您的Experience Platform源关联的流端点。 **注意**： [!DNL Braze] 自动将其转换为批处理流端点。 |
 
 ### 配置 [!DNL Braze Currents] 以将数据流式传输到数据源
 
