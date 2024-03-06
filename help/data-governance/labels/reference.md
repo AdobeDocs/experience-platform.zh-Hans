@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据使用标签术语表
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: c55ad6c592be95b01cf7fe0b39635b478bc98be6
+source-git-commit: 6f3f08203242843ce703de5e4546a537dff82270
 workflow-type: tm+mt
-source-wordcount: '2250'
-ht-degree: 3%
+source-wordcount: '2254'
+ht-degree: 1%
 
 ---
 
