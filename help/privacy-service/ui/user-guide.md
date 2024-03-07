@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
+source-git-commit: 93d9e5965e0f5556ff2b584c8b66bd7a7be15d23
 workflow-type: tm+mt
-source-wordcount: '1458'
-ht-degree: 14%
+source-wordcount: '1511'
+ht-degree: 13%
 
 ---
 
@@ -143,6 +143,8 @@ ht-degree: 14%
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
 选择 **[!UICONTROL 作业类型]** 请求（“删除”或“访问”）以及列表中的一个或多个可用产品。
+
+Privacy Service支持两种针对个人数据的作业请求： [!UICONTROL 访问] （读取）和/或 [!UICONTROL 删除]. 您可以提交请求，以接收产品中保存的与查询主题相关的所有信息，也可以请求删除与查询主题相关的所有信息。
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 

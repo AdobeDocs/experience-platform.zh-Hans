@@ -5,7 +5,7 @@ title: 使用UI创建和编辑数据类型
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
+source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
 workflow-type: tm+mt
 source-wordcount: '1384'
 ht-degree: 6%
@@ -29,7 +29,7 @@ Adobe Experience Platform提供了许多标准数据类型，可用于涵盖各�
 
 本教程介绍了在Platform用户界面中创建和编辑自定义数据类型的步骤。
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [模式组合基础](../../schema/composition.md) 了解数据类型对XDM架构的贡献情况。
 
@@ -105,7 +105,7 @@ Restaurant数据类型需要一个字符串字段来表示餐厅的名称。 因
 
 完成向数据类型添加字段后，选择 **[!UICONTROL 保存]** 以保存更改并将数据类型添加到 [!DNL Schema Library].
 
-## 将数据类型添加到架构
+## 将数据类型添加到架构 {#add-data-type}
 
 创建数据类型后，即可开始在架构中使用它。 由于XDM架构由一个类以及零个或多个字段组组成，因此数据类型提供的字段无法直接添加到架构中。 相反，它们必须包含在类或字段组中。
 
@@ -123,7 +123,7 @@ Restaurant数据类型需要一个字符串字段来表示餐厅的名称。 因
 
 ![](../../images/ui/resources/data-types/converted.png)
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 本指南介绍了如何使用Platform UI创建和编辑数据类型。 欲知关于 [!UICONTROL 架构] 工作区，请参见 [[!UICONTROL 架构] 工作区概述](../overview.md).
 

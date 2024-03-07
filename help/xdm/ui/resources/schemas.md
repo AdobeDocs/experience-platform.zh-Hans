@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 5e57df3fbc22baa1c7abbb02a003ad8663aad040
+source-git-commit: 021cd2f2127dee1618335585da01ea1c5a5e9696
 workflow-type: tm+mt
 source-wordcount: '3671'
 ht-degree: 2%
@@ -21,7 +21,7 @@ ht-degree: 2%
 >
 >要全面了解架构创建过程，请随同阅读 [架构创建教程](../../tutorials/create-schema-ui.md) 以创建完整的示例架构并熟悉 [!DNL Schema Editor].
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [模式组合基础](../../schema/composition.md) 有关如何构建架构的概述。
 
@@ -227,7 +227,7 @@ ht-degree: 2%
 
 新字段将添加到画布中，并在 [租户ID](../../api/getting-started.md#know-your-tenant_id) 以避免与标准XDM字段冲突。 与新字段关联的字段组也会显示在 **[!UICONTROL 字段组]** 在左边栏中。
 
-![租户ID](../../images/ui/resources/schemas/tenantId.png)
+![租户 ID](../../images/ui/resources/schemas/tenantId.png)
 
 >[!NOTE]
 >
@@ -350,7 +350,7 @@ ht-degree: 2%
 
 确认类更改后，画布将重置，并且所有合成进度都将丢失。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 本文档介绍了在Platform UI中创建和编辑架构的基础知识。 强烈建议您查阅 [架构创建教程](../../tutorials/create-schema-ui.md) 用于在UI中构建完整模式的全面工作流程，包括为独特用例创建自定义字段组和数据类型。
 

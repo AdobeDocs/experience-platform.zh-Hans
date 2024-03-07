@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 640d3ca0d3c227306436f2e653ef66fdc8ebd31c
+source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
 workflow-type: tm+mt
 source-wordcount: '1458'
 ht-degree: 5%
@@ -24,13 +24,13 @@ Adobe提供了多个标准（“核心”）Experience Data Model (XDM)类，包
 
 本文档概述了如何在Experience PlatformUI中创建、编辑和管理自定义类。
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 本指南要求您对XDM系统有一定的了解。 请参阅 [XDM概述](../../home.md) 介绍XDM在Experience Platform生态系统中的作用，以及 [模式组合基础](../../schema/composition.md) 以了解类如何对XDM架构做出贡献。
 
 虽然本指南并非必需，但建议您也按照以下内容阅读本教程： [在UI中组合架构](../../tutorials/create-schema-ui.md) 以熟悉架构编辑器的各种功能。
 
-## 快速入门
+## 快速入门 {#getting-started}
 
 在Platform UI中，选择 **[!UICONTROL 架构]** 在左侧导航中打开 [!UICONTROL 架构] 工作区，然后选择 **[!UICONTROL 类]** 选项卡。 此时将显示可用类的列表。
 
@@ -121,7 +121,7 @@ An **[!UICONTROL 无标题的字段]** 占位符显示在画布中，右边栏�
 在保存架构之前，您可以在初始创建过程中随时更改架构的类。 但是，应谨慎执行此操作，因为字段组仅与某些类兼容。 更改类会重置画布和您已添加的任何字段。
 请参阅指南，网址为 [创建和编辑模式](./schemas.md#change-class) 以了解更多信息。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 本文档介绍了如何使用Platform UI创建和编辑类。 欲知关于 [!UICONTROL 架构] 工作区，请参见 [[!UICONTROL 架构] 工作区概述](../overview.md).
 
