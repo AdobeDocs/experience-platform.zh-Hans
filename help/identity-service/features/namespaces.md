@@ -2,9 +2,9 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 576b17842ee1c5722332ba49e26b037537ec96ed
+source-git-commit: 6ae3626c2e0f7e58968b5582ca1895bd03ab1c32
 workflow-type: tm+mt
-source-wordcount: '1863'
+source-wordcount: '1920'
 ht-degree: 12%
 
 ---
@@ -134,6 +134,10 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 根据您的组织数据和用例，您可能需要自定义命名空间。 可以使用创建自定义命名空间 [[!DNL Identity Service]](../api/create-custom-namespace.md) API或通过UI。
 
 要创建自定义命名空间，请选择 **[!UICONTROL 创建身份命名空间]**.
+
+>[!TIP]
+>
+>集成身份是用于与其他系统连接的命名空间。 它们不用于身份解析，也不用于拼接身份。 选择 **[!UICONTROL 查看集成身份]** 更新列表并包含集成身份。 但是，默认情况下，集成身份是隐藏的，因为它们仅供查看，您不需要配置它们。
 
 ![身份工作区中的“创建身份命名空间”按钮。](../images/namespace/create-identity-namespace.png)
 
