@@ -3,9 +3,9 @@ title: 核心事件转发扩展概述
 description: 了解Adobe Experience Platform中的核心事件转发扩展。
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: 2ba02f94ff20281953d74b3213033e5f0a7fa111
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1715'
 ht-degree: 91%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 91%
 
 ### 自定义代码
 
-指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件转发支持ES6。
+指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件转发支持ES13。
 
 1. 选择 **[!UICONTROL 打开编辑器]**.
 1. 键入自定义代码。
@@ -155,7 +155,7 @@ module.exports = (context) => {
 
 ### 自定义代码
 
-提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件转发支持ES6。
+提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件转发支持ES13。
 
 1. 命名操作代码。
 1. 选择 **[!UICONTROL 打开编辑器]**.
@@ -183,7 +183,7 @@ arc.ruleStash.core.productCategory
 
 ### 自定义代码
 
-通过选择，可以将自定义JavaScript输入到用户界面中  **[!UICONTROL 打开编辑器]** 并将代码插入编辑器窗口。
+通过选择将自定义JavaScript输入到用户界面中  **[!UICONTROL 打开编辑器]** 并将代码插入编辑器窗口。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值用作数据元素值。如果不包含返回语句，或返回的值为 `null` 或 `undefined`，则数据元素的默认值反映为 `null` 或 `undefined`。
 
