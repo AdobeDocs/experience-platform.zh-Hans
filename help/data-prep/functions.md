@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 51a4c8e0c667e8f9319e61476a6b709324101dad
+source-git-commit: c7d6ef441f97cbc318bb2dd5c2f1daa08a6db197
 workflow-type: tm+mt
-source-wordcount: '5459'
+source-wordcount: '5794'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | 连接给定的字符串。 | <ul><li>STRING：将连接的字符串。</li></ul> | concat(STRING_1， STRING_2) | concat（“嗨，”，“那里”，“！”） | `"Hi, there!"` |
 | 分解 | 根据正则表达式拆分字符串并返回部分的数组。 可以选择包含正则表达式以拆分字符串。 默认情况下，拆分解析为“，”。 以下分隔符 **需要** 逃跑的 `\`： `+, ?, ^, \|, ., [, (, {, ), *, $, \` 如果包含多个字符作为分隔符，则分隔符将被视为多字符分隔符。 | <ul><li>字符串： **必填** 需要拆分的字符串。</li><li>正则表达式： *可选* 可用于拆分字符串的正则表达式。</li></ul> | explode(STRING， REGEX) | explode（“嗨，那里！”，“ ”） | `["Hi,", "there"]` |
@@ -68,7 +68,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 正则表达式函数
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | 根据正则表达式从输入字符串中提取组。 | <ul><li>字符串： **必填** 从中提取组的字符串。</li><li>正则表达式： **必填** 您希望组匹配的正则表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259，E259B_009,1_1&quot;&#x200B;， &quot;([^，]+)，[^，]*，([^，]+)”) | [“E259，E259B_009,1_1”、“E259”、“1_1”] |
 | matches_regex | 检查字符串是否与输入的正则表达式匹配。 | <ul><li>字符串： **必填** 正在检查的字符串与正则表达式匹配。</li><li>正则表达式： **必填** 要与之进行比较的正则表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259，E259B_009,1_1&quot;， &quot;([^，]+)，[^，]*，([^，]+)”) | true |
@@ -81,7 +81,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | sha1 | 接受输入并使用安全哈希算法1 (SHA-1)生成哈希值。 | <ul><li>输入： **必填** 要散列的纯文本。</li><li>字符集： *可选* 字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1（输入，字符集） | sha1（“我的文本”，“UTF-8”） | c3599c11e47719df18a24&#x200B;48690840c5dfcce3c80 |
 | sha256 | 采用输入并使用安全哈希算法256 (SHA-256)生成哈希值。 | <ul><li>输入： **必填** 要散列的纯文本。</li><li>字符集： *可选* 字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256（输入，字符集） | sha256（“我的文本”，“UTF-8”） | 7330d2b39ca35eaf4cb95fc846c21&#x200B;ee6a39af698154a83a586ee270a0d372104 |
@@ -97,7 +97,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | get_url_protocol | 从给定URL返回协议。 如果输入无效，则返回空值。 | <ul><li>URL： **必填** 需要从中提取协议的URL。</li></ul> | get_url_protocol&#x200B;(URL) | get_url_protocol(&quot;https://platform&#x200B;.adobe.com/home&quot;) | https |
 | get_url_host | 返回给定URL的主机。 如果输入无效，则返回空值。 | <ul><li>URL： **必填** 需要从中提取主机的URL。</li></ul> | get_url_host&#x200B;(URL) | get_url_host&#x200B;(&quot;https://platform&#x200B;.adobe.com/home&quot;) | platform.adobe.com |
@@ -115,7 +115,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。 欲知关于 `date` 函数的中日期部分 [数据格式处理指南](./data-handling.md#dates).
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | 检索当前时间。 | | now() | now() | `2021-10-26T10:10:24Z` |
 | 时间戳 | 检索当前Unix时间。 | | timestamp() | timestamp() | 1571850624571 |
@@ -138,7 +138,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | is_empty | 检查对象是否为空。 | <ul><li>输入： **必填** 您正在尝试检查的对象是空的。</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | false |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必填** 密钥和数组对的分组。</li></ul> | arrays_to_object(INPUT) | `arrays_to_objects('sku', explode("id1\|id2", '\\\|'), 'price', [22.5,14.35])` | ```[{ "sku": "id1", "price": 22.5 }, { "sku": "id2", "price": 14.35 }]``` |
@@ -165,7 +165,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 合并 | 返回给定数组中的第一个非空对象。 | <ul><li>输入： **必填** 要查找的第一个非null对象的数组。</li></ul> | coalesce（输入） | coalesce(null， null， null， first， null， second) | &quot;first&quot; |
 | 第一 | 检索给定数组的第一个元素。 | <ul><li>输入： **必填** 要查找的第一个元素的数组。</li></ul> | 第一（输入） | first(“1”、“2”、“3”) | &quot;1&quot; |
@@ -185,7 +185,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | array_to_map | 此函数将对象数组和键作为输入，并返回键字段的映射，其中值为键，数组元素为值。 | <ul><li>输入： **必填** 要查找的第一个非空对象的对象数组。</li><li>键：  **必填** 键必须是对象数组中的字段名称，并且对象必须是值。</li></ul> | array_to_map(对象[] 输入，键) | 阅读 [附录](#object_to_map) 以获取一个代码示例。 |
 | object_to_map | 此函数将对象作为参数并返回键值对的映射。 | <ul><li>输入： **必填** 要查找的第一个非空对象的对象数组。</li></ul> | object_to_map(OBJECT_INPUT) | &quot;object_to_map(address)，输入为&quot; + &quot;address： {line1 ： \&quot;345 park ave\&quot;，line2： \&quot;bldg 2\&quot;，City ： \&quot;san jose\&quot;，State ： \&quot;CA\&quot;，type： \&quot;office\&quot;}&quot; | 返回具有给定字段名称和值对的映射，如果输入为null，则返回null。 例如：`"{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"` |
@@ -199,7 +199,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 解码 | 给定键值以及作为数组扁平化的键值对列表，如果找到键，此函数将返回值，如果数组中存在，则返回默认值。 | <ul><li>键： **必填** 要匹配的键。</li><li>OPTIONS： **必填** 键/值对的平面化数组。 或者，也可以在末尾放置默认值。</li></ul> | decode(KEY， OPTIONS) | decode(stateCode， &quot;ca&quot;， &quot;California&quot;， &quot;pa&quot;， &quot;Pennsylvania&quot;， &quot;N/A&quot;) | 如果给定的stateCode为“ca”，则为“California”。<br>如果给定的stateCode为“pa”，则为“Pennsylvania”。<br>如果stateCode与以下内容不匹配，“不适用”。 |
 | iif | 计算给定的布尔表达式并根据结果返回指定的值。 | <ul><li>表达式： **必填** 正在计算的布尔表达式。</li><li>真值： **必填** 表达式计算结果为true时返回的值。</li><li>FALSE_VALUE： **必填** 表达式计算结果为false时返回的值。</li></ul> | iif（表达式， TRUE_VALUE， FALSE_VALUE） | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;)， &quot;True&quot;， &quot;False&quot;) | &quot;True&quot; |
@@ -212,7 +212,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS： **必填** 可以相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3， 1， 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS： **必填** 可以相互比较的一个或多个对象。</li></ul> | 最大(OPTIONS) | max(3， 1， 4) | 4 |
@@ -225,7 +225,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | to_bigint | 将字符串转换为大整数。 | <ul><li>字符串： **必填** 要转换为BigInteger的字符串。</li></ul> | to_bigint(STRING) | to_bigint&#x200B;(&quot;1000000.34&quot;) | 1000000.34 |
 | to_decimal | 将字符串转换为双精度类型。 | <ul><li>字符串： **必填** 要转换为Double的字符串。</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
@@ -240,7 +240,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | 将给定字符串中的JSON内容反序列化。 | <ul><li>字符串： **必填** 要反序列化的JSON字符串。</li></ul> | json_to_object&#x200B;(STRING) | &#x200B; json_to_object({&quot;info&quot;：{&quot;firstName&quot;：&quot;John&quot;，&quot;lastName&quot;： &quot;Doe&quot;}}) | 表示JSON的对象。 |
 
@@ -252,7 +252,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | 生成伪随机ID。 | | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 | `fpid_to_ecid ` | 此函数接受FPID字符串并将其转换为ECID，以便在Adobe Experience Platform和Adobe Experience Cloud应用程序中使用。 | <ul><li>字符串： **必填** 要转换为ECID的FPID字符串。</li></ul> | `fpid_to_ecid(STRING)` | `fpid_to_ecid("4ed70bee-b654-420a-a3fd-b58b6b65e991")` | `"28880788470263023831040523038280731744"` |
@@ -272,7 +272,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >
 >请向左/向右滚动以查看表格的全部内容。
 
-| 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name&#x200B;(&quot;Mozilla/5.0(iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46（KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
 | ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT： **必填** 用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major&#x200B;s(&quot;Mozilla/5.0 (iPhone；CPU iPhone OS 5_1_1，如Mac OS X)AppleWebKit/534.46 （KHTML，如Gecko）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
@@ -285,24 +285,24 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style="table-layout:auto"}
 
-<!-- ### Analytics functions {#analytics}
+### Analytics函数 {#analytics}
 
 >[!NOTE]
 >
->Please scroll left/right to view the full contents of the table.
+>您只能使用以下Analytics函数进行流式摄取。
 
-| Function | Description | Parameters | Syntax | Expression | Sample output |
+| 功能 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| aa_get_event_id | Extracts the event ID from an Analytics event string. | <ul><li>EVENT_STRING: **Required** The comma-separated Analytics event string.</li><li>EVENT_NAME: **Required** The event name to extract and ID from.</li></ul> | aa_get_event_id(EVENT_STRING, EVENT_NAME) | aa_get_event_id("event101=5:123456,scOpen", "event101") | 123456 |
-| aa_get_event_value | Extracts the event value from an Analytics event string. If the event value is not specified 1 is returned. | <ul><li>EVENT_STRING: **Required** The comma-separated Analytics event string.</li><li>EVENT_NAME: **Required** The event name to extract a value from.</li></ul> | aa_get_event_value(EVENT_STRING, EVENT_NAME) | aa_get_event_value("event101=5:123456,scOpen", "event101") | 5 |
-| aa_get_product_categories | Extracts the product category from an Analytics products string. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li></ul> | aa_get_product_categories(PRODUCTS_STRING) | aa_get_product_categories(";Example product 1;1;3.50,Example category 2;Example product 2;1;5.99") | [null,"Example category 2"] |
-| aa_get_product_names | Extracts the product name from an Analytics products string. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li></ul> | aa_get_product_names(PRODUCTS_STRING) | aa_get_product_names(";Example product 1;1;3.50,Example category 2;Example product 2;1;5.99") | ["Example product 1","Example product 2"] |
-| aa_get_product_quantities | Extracts the quantities from an Analytics products string. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li></ul> | aa_get_product_quantities(PRODUCTS_STRING) | aa_get_product_quantities(";Example product 1;1;3.50,Example category 2;Example product 2") | ["1", null] |
-| aa_get_product_prices | Extracts the price from an Analytics products string. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li></ul> | aa_get_product_prices(PRODUCTS_STRING) | aa_get_product_prices(";Example product 1;1;3.50,Example category 2;Example product 2") | ["3.50", null] |
-| aa_get_product_event_values | Extracts values for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_values(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_values(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event1") | ["2.3", "3"] |
-| aa_get_product_evars | Extracts the evar values for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVAR_NAME: **Required** The eVar name to extract.</li></ul> | aa_get_product_evars(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_evars(";Example product;1;6.69;;eVar1=Merchandising value", "eVar1") | ["Merchandising value"] |
+| aa_get_event_id | 从Analytics事件字符串中提取事件ID。 | <ul><li>EVENT_STRING： **必填** 逗号分隔的Analytics事件字符串。</li><li>EVENT_NAME： **必填** 要从中提取的事件名称和ID。</li></ul> | aa_get_event_id(EVENT_STRING， EVENT_NAME) | aa_get_event_id(&quot;event101=5：123456，scOpen&quot;， &quot;event101&quot;) | 123456 |
+| aa_get_event_value | 从Analytics事件字符串中提取事件值。 如果未指定事件值，则返回1。 | <ul><li>EVENT_STRING： **必填** 逗号分隔的Analytics事件字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | aa_get_event_value(EVENT_STRING， EVENT_NAME) | aa_get_event_value(&quot;event101=5：123456，scOpen&quot;， &quot;event101&quot;) | 5 |
+| aa_get_product_categories | 从Analytics产品字符串中提取产品类别。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | aa_get_product_categories(PRODUCTS_STRING) | aa_get_product_categories(&quot;；Example product 1；1；3.50，Example category 2；Example product 2；1；5.99&quot;) | [空，“示例category 2”] |
+| aa_get_product_names | 从Analytics产品字符串中提取产品名称。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | aa_get_product_names(PRODUCTS_STRING) | aa_get_product_names(&quot;；Example product 1；1；3.50，Example category 2；Example product 2；1；5.99&quot;) | [&quot;Example product 1&quot;，&quot;Example product 2&quot;] |
+| aa_get_product_quantities | 从Analytics产品字符串中提取数量。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | aa_get_product_quantities(PRODUCTS_STRING) | aa_get_product_quantities（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [“1”，空] |
+| aa_get_product_prices | 从Analytics产品字符串中提取价格。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li></ul> | aa_get_product_prices(PRODUCTS_STRING) | aa_get_product_prices（&quot;；示例产品1；1；3.50，示例类别2；示例产品2&quot;） | [“3.50”，空] |
+| aa_get_product_event_values | 从products字符串中提取命名事件的值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>EVENT_NAME： **必填** 从中提取值的事件名称。</li></ul> | aa_get_product_event_values(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_event_values（&quot;；示例产品1；1；4.20；event1=2.3\|event2=5:1，；示例产品2；1；4.20；event1=3\|event2=2:2&quot;， &quot;event1&quot;） | [“2.3”、“3”] |
+| aa_get_product_evars | 从products字符串中抽取命名事件的evar值作为字符串数组。 | <ul><li>PRODUCTS_STRING： **必填** Analytics产品字符串。</li><li>eVar名称： **必填** 要提取的eVar名称。</li></ul> | aa_get_product_evars(PRODUCTS_STRING， EVENT_NAME) | aa_get_product_evars(&quot;；示例产品；1；6.69；；eVar1=促销值&quot;， &quot;eVar1&quot;) | [“促销价值”] |
 
-{style="table-layout:auto"} -->
+{style="table-layout:auto"}
 
 <!-- | aa_get_product_events | Extracts a named event from the products string as an array of objects. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_events(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_events(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
 | aa_get_product_event_ids | Extracts the IDs for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_ids(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_ids(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | ["1", "2"] | -->
