@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: a16f4e8d97a3ab195bd48803980b257c9ec3bfe1
+source-git-commit: 6a17febf845d2b9566e49423fc68491315b2d4d7
 workflow-type: tm+mt
-source-wordcount: '3629'
+source-wordcount: '3633'
 ht-degree: 6%
 
 ---
@@ -103,7 +103,7 @@ ht-degree: 6%
 >
 >对于在Platform中创建的受众，仅限具有 **相同** 将显示合并策略。
 
-此 **[!UICONTROL 受众]** 选项卡列出了从外部源(如Adobe Audience Manager)导入的所有受众，以及在其中创建的受众 [!DNL Experience Platform].
+此 **[!UICONTROL 受众]** 选项卡列出了从外部源(如Adobe Audience Manager或Customer Journey Analytics)导入的所有受众，以及在其中创建的受众 [!DNL Experience Platform].
 
 在 **[!UICONTROL 受众]** 选项卡，可以将所有可用的源作为文件夹组查看。 选择文件夹时，可以看到可用的子文件夹和受众。 此外，您还可以选择文件夹图标（如最右侧的图像中所示）以查看文件夹结构（复选标记表示您当前所在的文件夹），并通过在树中选择文件夹名称轻松地在文件夹之间向后导航。
 
