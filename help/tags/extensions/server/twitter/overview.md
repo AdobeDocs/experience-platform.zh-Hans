@@ -4,9 +4,9 @@ title: twitter事件转发扩展
 description: 此Adobe Experience Platform事件转发扩展允许您根据业务需求将事件摄取到Twitter中。
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1048'
 ht-degree: 3%
 
 ---
@@ -91,13 +91,13 @@ ht-degree: 3%
 | --- | --- | --- | --- |
 | [!UICONTROL [!DNL Twitter] 点击ID] | [!DNL Twitter] 点进URL中解析的点击ID。 | 26l6412g5p4iyj65a2oic2ayg2 | 如果未添加其他标识符，则此为必填字段。 |
 | [!UICONTROL 电子邮件] | 使用SHA256进行哈希处理的电子邮件地址。 文本必须为小写，并且必须在进行哈希处理之前删除任何尾随或前导空格。 | eventforwarding@example.com | 如果未添加其他标识符，则此为必填字段。 |
-| [!UICONTROL Phone] | 电话用作匹配转化事件的标识符。 电话号码必须为E164格式[+][国家/地区代码][区号][local phone number] 进行哈希处理之前。 | +911234567875 | 如果未添加其他标识符，则此为必填字段。 |
+| [!UICONTROL 电话] | 电话用作匹配转化事件的标识符。 电话号码必须为E164格式[+][国家/地区代码][区号][local phone number] 进行哈希处理之前。 | +911234567875 | 如果未添加其他标识符，则此为必填字段。 |
 
 **[!UICONTROL 转化数据]**
 
 | 字段名称 | 描述 | 示例 | 必需 |
 | --- | --- | --- | --- |
-| [!UICONTROL 转化时间] | ISO 8601或yyyy-MM-dd&#39;T&#39;HH中的字符串形式的日期时间:mm:SSSZ格式。 | 2022-02-18T01:14:00.603赫 | 是 |
+| [!UICONTROL 转化时间] | ISO 8601或中的字符串形式的日期时间 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 | 2022-02-18T01:14:00.603赫 | 是 |
 | [!UICONTROL 事件ID] | 特定事件的以36为底的ID。 此ID应该与ID中包含的预配置事件匹配。 [!DNL Twitter] 广告帐户。 这称为事件管理器中相应事件的ID。 | o87ne或tw-o8z6j-o87ne (tw-pixel_id-event-id) | 是 |
 | [!UICONTROL 项目数] | 在事件中购买的项目数。 该值必须为大于0的正数。 | 4 | 否 |
 | [!UICONTROL 货币] | 在事件中购买项目的货币。 这以ISO-4217表示，如果未提供，则默认为USD。 | 美元 | 否 |

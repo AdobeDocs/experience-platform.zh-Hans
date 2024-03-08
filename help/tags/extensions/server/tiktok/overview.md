@@ -2,9 +2,10 @@
 title: AdobeTikTok web events API扩展集成
 description: 通过这个Adobe Experience Platform Web事件API，您可以直接与TikTok共享网站交互。
 last-substantial-update: 2023-09-26T00:00:00Z
-source-git-commit: d8b7006ade1dc82fdd79b7ed744c021bc304bca7
+exl-id: 14b8e498-8ed5-4330-b1fa-43fd1687c201
+source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
 workflow-type: tm+mt
-source-wordcount: '1126'
+source-wordcount: '1105'
 ht-degree: 3%
 
 ---
@@ -64,7 +65,7 @@ Web事件和参数包含有关事件的常规信息。 支持的标准事件包�
 | 输入 | 描述 |
 | --- | --- |
 | 活动名称 | 事件的名称。 这些操作具有由创建的预定义名称 [!DNL TikTok] 和是必填字段。 请参阅 [[!DNL TikTok] 营销API](https://business-api.tiktok.com/portal/docs?id=1741601162187777) 文档，以了解有关受支持事件的更多信息。 |
-| 事件时间 | ISO 8601或yyyy-MM-dd&#39;T&#39;HH中的字符串形式的日期时间:mm:SSSZ格式。 这是必填字段。 |
+| 事件时间 | ISO 8601或中的字符串形式的日期时间 `yyyy-MM-dd'T'HH:mm:ss:SSSZ` 格式。 这是必填字段。 |
 | 事件ID | 广告商为指示每个事件而生成的唯一ID。 这是一个可选字段，用于删除重复项。 |
 
 {style="table-layout:auto"}
@@ -77,10 +78,10 @@ Web事件和参数包含有关事件的常规信息。 支持的标准事件包�
 
 | 输入 | 描述 |
 | --- | --- |
-| IP地址 | 浏览器的非哈希公共IP地址。 支持IPv4和IPv6地址。 IPv6地址的完整和压缩形式均可识别。 |
+| IP 地址 | 浏览器的非哈希公共IP地址。 支持IPv4和IPv6地址。 IPv6地址的完整和压缩形式均可识别。 |
 | 用户代理 | 来自用户设备的非哈希用户代理。 |
 | 电子邮件 | 与转化事件关联的联系人的电子邮件地址。 |
-| Phone | 电话号码必须为E164格式[+][国家/地区代码][区号][local phone number] 进行哈希处理之前。 |
+| 电话 | 电话号码必须为E164格式[+][国家/地区代码][区号][local phone number] 进行哈希处理之前。 |
 | Cookie ID | 如果您使用的是Pixel SDK，将自动在 `_ttp` Cookie（如果已启用Cookie）。 此 `_ttp` 可以提取值并将其用于此字段。 |
 | 外部ID | 任何唯一标识符，例如用户ID、外部Cookie ID等，都必须使用SHA256进行哈希处理。 |
 | TikTok点击ID | 此 `ttclid` 每次选择广告时，都会将其添加到登陆页面的URL [!DNL TikTok]. |

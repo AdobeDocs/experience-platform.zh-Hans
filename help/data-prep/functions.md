@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据准备映射函数
 description: 本文档介绍了与数据准备一起使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: c7d6ef441f97cbc318bb2dd5c2f1daa08a6db197
+source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
 workflow-type: tm+mt
-source-wordcount: '5794'
+source-wordcount: '5789'
 ht-degree: 2%
 
 ---
@@ -119,8 +119,8 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | 检索当前时间。 | | now() | now() | `2021-10-26T10:10:24Z` |
 | 时间戳 | 检索当前Unix时间。 | | timestamp() | timestamp() | 1571850624571 |
-| 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必填** 要格式化的输入日期，作为ZonedDateTime对象。</li><li>格式： **必填** 您希望将日期更改为的格式。</li></ul> | format（日期，格式） | format(2019-10-23T11:24:00+00:00， &quot;yyyy-MM-dd HH:mm:ss&quot;) | `2019-10-23 11:24:35` |
-| dformat | 根据指定的格式将时间戳转换为日期字符串。 | <ul><li>时间戳： **必填** 要设置格式的时间戳。 这是以毫秒为单位编写的。</li><li>格式： **必填** 您希望时间戳变为的格式。</li></ul> | dformat(TIMESTAMP， FORMAT) | dformat(1571829875000， &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX”) | `2019-10-23T11:24:35.000Z` |
+| 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必填** 要格式化的输入日期，作为ZonedDateTime对象。</li><li>格式： **必填** 您希望将日期更改为的格式。</li></ul> | format（日期，格式） | format(2019-10-23T11:24:00+00:00， ”`yyyy-MM-dd HH:mm:ss`&quot;) | `2019-10-23 11:24:35` |
+| dformat | 根据指定的格式将时间戳转换为日期字符串。 | <ul><li>时间戳： **必填** 要设置格式的时间戳。 这是以毫秒为单位编写的。</li><li>格式： **必填** 您希望时间戳变为的格式。</li></ul> | dformat(TIMESTAMP， FORMAT) | dformat(1571829875000， &quot;`yyyy-MM-dd'T'HH:mm:ss.SSSX`&quot;) | `2019-10-23T11:24:35.000Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必填** 表示日期的字符串。</li><li>格式： **必填** 表示源日期格式的字符串。**注意：** 这可以 **非** 表示要将日期字符串转换成的格式。 </li><li>DEFAULT_DATE： **必填** 如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE， FORMAT， DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;， now()) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必填** 表示日期的字符串。</li><li>格式： **必填** 表示源日期格式的字符串。**注意：** 这可以 **非** 表示要将日期字符串转换成的格式。 </li></ul> | 日期（日期，格式） | date(&quot;2019-10-23 11:24&quot;， &quot;yyyy-MM-dd HH：mm&quot;) | `2019-10-23T11:24:00Z` |
 | 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必填** 表示日期的字符串。</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | “2019-10-23T11:24:00Z” |
