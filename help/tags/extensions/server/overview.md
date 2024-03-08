@@ -2,10 +2,10 @@
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: af3353000e5545e6d2dc729d6f0bb91a00683b04
+source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
 workflow-type: tm+mt
-source-wordcount: '189'
-ht-degree: 20%
+source-wordcount: '166'
+ht-degree: 19%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 20%
 * [[!DNL AWS]](./aws/overview.md)
 * [[!DNL Braze]](./braze/overview.md)
 * [Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)*
-* [适用于Google Analytics4的Cloud Connector](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)*
+<!-- * [Cloud Connector for Google Analytics 4](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html)* -->
 * [核心](./core/overview.md)
 * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads增强型转化](./google-ads-enhanced-conversions/overview.md)

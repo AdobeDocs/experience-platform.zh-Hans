@@ -2,10 +2,10 @@
 title: 标记扩展参考
 description: 在Adobe Experience Platform中查找有关标记扩展的文档。
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
 workflow-type: tm+mt
-source-wordcount: '714'
-ht-degree: 10%
+source-wordcount: '469'
+ht-degree: 9%
 
 ---
 
@@ -37,7 +37,7 @@ ht-degree: 10%
 * [Adobe 客户端数据层](./client-data-layer/overview.md)
 * [AdobeContextHub](./contexthub/overview.md)
 * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)*
-* [Adobe Experience Cloud ID 服务](./id-service/overview.md)
+* [Adobe Experience Cloud ID服务](./id-service/overview.md)
 * [Adobe Experience Platform演示](./platform-demo/overview.md)
 * [Adobe Experience Platform Web SDK](./web-sdk/overview.md)
 * [Adobe Experience Manager资产分析](./asset-insights/overview.md)
@@ -58,7 +58,7 @@ ht-degree: 10%
 * [Awin转换标记](https://exchange.adobe.com/apps/ec/103240)*
 * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)*
 * [Bing Ads通用事件跟踪](https://exchange.adobe.com/apps/ec/100154)*
-* [Branch](https://exchange.adobe.com/apps/ec/101382)*
+* [分支](https://exchange.adobe.com/apps/ec/101382)*
 * [[!DNL BrightCove] 视频跟踪](./brightcove/overview.md)
 * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)*
 * [渠道源标识符](https://exchange.adobe.com/apps/ec/101412)*
@@ -77,7 +77,7 @@ ht-degree: 10%
 * [分贝](https://exchange.adobe.com/apps/ec/100913)*
 * [Demandbase](https://exchange.adobe.com/apps/ec/101605)*
 * [差分隐私](https://exchange.adobe.com/apps/ec/104535)*
-* [Dynamic Media 查看器](https://exchange.adobe.com/apps/ec/103048)*
+* [Dynamic Media查看器](https://exchange.adobe.com/apps/ec/103048)*
 * [EDDL帮助程序](https://exchange.adobe.com/apps/ec/107691)*
 * [Flashtalking OneTag](https://exchange.adobe.com/apps/ec/101392)*
 * [ForeSee](https://exchange.adobe.com/apps/ec/100164)*
@@ -106,7 +106,7 @@ ht-degree: 10%
 * [SDI调查](https://exchange.adobe.com/apps/ec/102991)*
 * [SDI工具包](https://exchange.adobe.com/apps/ec/101460)*
 * [SessionCam](https://exchange.adobe.com/apps/ec/100517)*
-* [SPA查看更改事件](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html)
+<!-- * [SPA View Change Event](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105867.html) -->
 * [存储扳手](https://exchange.adobe.com/apps/ec/102990)*
 * [按循环水平线划分的标记](https://exchange.adobe.com/apps/ec/106092)*
 * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)*
