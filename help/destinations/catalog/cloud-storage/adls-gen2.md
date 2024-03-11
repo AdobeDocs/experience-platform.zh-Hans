@@ -3,9 +3,9 @@ title: Azure Data Lake Storage Gen2连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '954'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,18 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
-## 先决条件 {#prerequisites}
+## 导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+
+## 导出数据的文件格式 {#file-format}
+
+导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+
+导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
 
 ## 连接到目标 {#connect}
 
@@ -103,13 +114,6 @@ ht-degree: 2%
 ### 映射属性和身份 {#map}
 
 在 **[!UICONTROL 映射]** 步骤，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 在激活批次目标UI教程中。
-
-## 导出数据集 {#export-datasets}
-
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
-
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
 
 ## 验证数据导出是否成功 {#exported-data}
 

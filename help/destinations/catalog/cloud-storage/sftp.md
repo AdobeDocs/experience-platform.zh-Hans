@@ -2,9 +2,9 @@
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，定期从Adobe Experience Platform导出分隔的数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1091'
 ht-degree: 8%
 
 ---
@@ -56,6 +56,19 @@ ht-degree: 8%
 {style="table-layout:auto"}
 
 ![目标目录中突出显示的基于配置文件的SFTP导出类型。](../../assets/catalog/cloud-storage/sftp/catalog.png)
+
+## 导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+
+## 导出数据的文件格式 {#file-format}
+
+导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+
+导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
 
 ## 连接到目标 {#connect}
 
@@ -129,17 +142,10 @@ ht-degree: 8%
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## 导出数据集 {#export-datasets}
+## 验证数据导出是否成功 {#exported-data}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
-
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
-
-## 导出的数据 {#exported-data}
-
-对象 [!DNL SFTP] 目标，平台创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在audience activation教程中。
+要验证数据是否已成功导出，请检查您的SFTP存储，并确保导出的文件包含预期的配置文件人口。
 
 ## IP地址允许列表 {#ip-address-allow-list}
 
-请参阅 [列入允许列表 SFTP目标的IP地址](ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
+请参阅 [IP地址允许列表](ip-address-allow-list.md) 文章(如果需要将AdobeIP添加到允许列表)。

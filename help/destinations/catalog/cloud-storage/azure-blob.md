@@ -2,9 +2,9 @@
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1089'
 ht-degree: 7%
 
 ---
@@ -62,11 +62,18 @@ ht-degree: 7%
 
 {style="table-layout:auto"}
 
-## 支持的文件格式 {#file-formats}
+## 导出数据集 {#export-datasets}
 
-[!DNL Experience Platform] 支持以下要导出的文件格式 [!DNL Azure Blob]：
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
 
-* 逗号分隔值(CSV)：对导出数据文件的支持当前仅限于逗号分隔值。
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+
+## 导出数据的文件格式 {#file-format}
+
+导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+
+导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
 
 ## 连接到目标 {#connect}
 
@@ -123,13 +130,6 @@ ht-degree: 7%
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## 导出数据集 {#export-datasets}
+## 验证数据导出是否成功 {#exported-data}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
-
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
-
-## 导出的数据 {#exported-data}
-
-对象 [!DNL Azure Blob Storage] 目标， [!DNL Platform] 创建 `.csv` 文件存储位置。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在audience activation教程中。
+要验证数据是否已成功导出，请检查 [!DNL Azure Blob] 存储并确保导出的文件包含预期的配置文件人口。

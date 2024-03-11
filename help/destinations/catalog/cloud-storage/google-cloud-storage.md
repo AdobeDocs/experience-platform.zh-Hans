@@ -3,9 +3,9 @@ title: Google Cloud Storage连接
 description: 了解如何连接到Google Cloud Storage并激活受众或导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1105'
+source-wordcount: '1199'
 ht-degree: 2%
 
 ---
@@ -42,6 +42,19 @@ ht-degree: 2%
 | 导出频率 | **[!UICONTROL 批次]** | 批量目标以三、六、八、十二或二十四小时的增量将文件导出到下游平台。 详细了解 [批处理基于文件的目标](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
+
+## 导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+
+## 导出数据的文件格式 {#file-format}
+
+导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+
+导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
 
 ## 用于连接您的计算机的先决条件设置 [!DNL Google Cloud Storage] 帐户 {#prerequisites}
 
@@ -119,13 +132,10 @@ ht-degree: 2%
 
 在 **[!UICONTROL 映射]** 步骤，您可以为配置文件选择要导出的属性和标识字段。 您还可以选择将导出文件中的标头更改为所需的任何友好名称。 有关详细信息，请查看 [映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) 在激活批次目标UI教程中。
 
-## 导出数据集 {#export-datasets}
-
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
-
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
-
 ## 验证数据导出是否成功 {#exported-data}
 
 要验证数据是否已成功导出，请检查 [!DNL Google Cloud Storage] 存储桶并确保导出的文件包含预期的用户档案人口。
+
+## IP地址允许列表 {#ip-address-allow-list}
+
+请参阅 [IP地址允许列表](ip-address-allow-list.md) 文章(如果需要将AdobeIP添加到允许列表)。

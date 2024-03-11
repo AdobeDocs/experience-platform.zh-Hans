@@ -2,10 +2,10 @@
 title: Amazon S3连接
 description: 创建到Amazon Web Services (AWS) S3存储的实时出站连接，定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c126e6179309ccfbedfbfe2609cfcfd1ea45f870
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1354'
-ht-degree: 18%
+source-wordcount: '1440'
+ht-degree: 17%
 
 ---
 
@@ -53,6 +53,19 @@ ht-degree: 18%
 {style="table-layout:auto"}
 
 ![UU中突出显示的基于配置文件的Amazon S3导出类型。](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
+
+## 导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+
+* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
+* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+
+## 导出数据的文件格式 {#file-format}
+
+导出时 *受众数据*，平台创建 `.csv`， `parquet`，或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [支持的导出文件格式](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) 部分。
+
+导出时 *数据集*，平台创建 `.parquet` 或 `.json` 文件存储位置。 有关这些文件的详细信息，请参见 [验证数据集导出是否成功](../../ui/export-datasets.md#verify) 导出数据集教程中的部分。
 
 ## 连接到目标 {#connect}
 
@@ -169,13 +182,10 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-## 导出数据集 {#export-datasets}
+## 验证数据导出是否成功 {#exported-data}
 
-此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读教程：
+要验证数据是否已成功导出，请检查 [!DNL Amazon S3] 存储并确保导出的文件包含预期的配置文件人口。
 
-* 操作方法 [使用Platform用户界面导出](/help/destinations/ui/export-datasets.md).
-* 操作方法 [使用流服务API以编程方式导出数据集](/help/destinations/api/export-datasets.md).
+## IP地址允许列表 {#ip-address-allow-list}
 
-## 导出的数据 {#exported-data}
-
-对象 [!DNL Amazon S3] 目标， [!DNL Platform] 在提供的存储位置创建一个数据文件。 有关这些文件的详细信息，请参见 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 在audience activation教程中。
+请参阅 [IP地址允许列表](ip-address-allow-list.md) 文章(如果需要将AdobeIP添加到允许列表)。
