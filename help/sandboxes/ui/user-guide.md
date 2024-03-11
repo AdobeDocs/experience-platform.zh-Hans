@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒UI指南
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙盒相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 70bbfd4e2971367c9b7b88bd4bc7985d9e6fbb1e
+source-git-commit: 0db23e475d6546ebb886a56d5915d023ea215125
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '929'
 ht-degree: 5%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->创建新沙盒时，您必须首先将该新沙盒添加到您的产品配置文件中 [Adobe Admin Console](https://adminconsole.adobe.com/) 才能开始使用新沙盒。 请参阅相关文档 [管理产品配置文件的权限](../../access-control/ui/permissions.md) 有关如何向产品配置文件配置沙盒的信息。
+>创建新沙盒需要您将其添加到中的角色 [[!UICONTROL 权限]](../../access-control/abac/ui/permissions.md) 才能开始使用。 要了解如何为角色配置沙盒，请参阅 [管理角色的沙盒](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role) 文档。
 
 请观看以下视频，快速概述如何在Experience Platform中使用沙盒。
 
