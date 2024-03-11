@@ -2,12 +2,13 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '2279'
+source-wordcount: '2268'
 ht-degree: 2%
 
 ---
+
 
 # 常见问题解答
 
@@ -15,16 +16,15 @@ ht-degree: 2%
 
 ## 什么是Adobe Experience Platform Web SDK？
 
-Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户与Experience Cloud中的各种服务进行交互。
+Adobe Experience Platform Web SDK是一个客户端JavaScript库，通过它，可与Adobe Experience Cloud中的各种服务进行交互。
 
-它会以与解决方案无关的方式(XDM)将数据发送到Adobe Experience Platform Edge Network，然后会将数据映射到解决方案特定的格式和目标，并实时发送。
+Web SDK以与解决方案无关的方式(XDM)将数据发送到Experience Platform边缘网络，然后边缘网络将数据映射到解决方案特定的格式和目标并实时发送。
 
-**更多信息**
-[Adobe Summit演示](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html)
+请观看以下视频，以了解有关Web SDK的更多信息： [再次满足Alloy.js要求，不再为eVar或Mbox添加标记](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html).
 
 ## Adobe Experience Platform Web SDK与以前的解决方案有何不同？
 
-### Adobe Experience Platform SDK之前
+### Experience PlatformWeb SDK之前
 
 目前，您必须根据每个解决方案来部署不同的JavaScript库。
 
@@ -44,9 +44,9 @@ Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adob
 
 此外，当前也不存在将数据直接发送到Adobe Experience Platform的JavaScript库。
 
-### 使用Adobe Experience Platform Web SDK
+### 使用Experience PlatformWeb SDK
 
-新的Web SDK可将以下解决方案的数据发送到单一目标(Adobe Experience Platform Edge Network)，并解决上述最常见的解决方案使用案例。
+新的Web SDK可将以下解决方案的数据发送到单一目标(Experience Platform边缘网络)，并解决上述最常见的解决方案使用案例。
 
 * Adobe Analytics
 * Adobe Audience Manager
@@ -54,9 +54,9 @@ Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adob
 * 访客 ID
 * Adobe Experience Platform
 
-其他解决方案将在今年晚些时候陆续推出。
+其他解决方案也将随之而来。
 
-Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experience Platform。 此数据位于XDM中，并映射到服务器端解决方案架构。
+Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experience Platform。 此数据采用XDM格式，并映射到服务器端解决方案架构。
 
 ## 此新Web SDK有何价值？
 
@@ -65,7 +65,7 @@ Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experien
 **简单性：** XDM、Web SDK、标记、Edge Network、Adobe Experience Cloud解决方案和Adobe Experience Platform的组合创建了一个易于理解和易于遵循的数据收集故事。
 
 * **XDM：** 用于将数据发送到Adobe的与解决方案无关的架构。 不再为evar或mbox添加标记。
-* **Adobe Experience Platform Web SDK：** 使向Adobe Experience Platform Edge Network发送和接收数据更轻松。
+* **Web SDK：** 使向Adobe Experience Platform Edge Network发送和接收数据更轻松。
 * **标记：** 简化网站上Web SDK（以及任何其他JavaScript标记）的部署和配置。
 * **边缘网络：** 轻松地将数据以所需的格式路由到Adobe Experience Platform和解决方案。
 * **Adobe Experience Platform和Adobe解决方案：** 实现他们的价值主张。
@@ -76,9 +76,9 @@ Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experien
 
 **实现价值的时间：** Adobe已尽力（并将继续）让您尽可能轻松地通过标记部署Web SDK并将客户端数据映射到XDM。 完成该工作后，可在服务器端打开或关闭所有其他Adobe解决方案和Adobe Experience Platform服务。 例如，如果您将此用于Adobe Analytics并且要打开Target或Experience Platform，则只需在数据流配置上切换开关，并阐明这些用例即可。
 
-## 什么是Alloy
+## 什么是 [!DNL alloy.js]？
 
-Alloy是Adobe Experience Platform Web SDK的代码名称。 它用在SDK的源代码和文件名中，尽管Adobe Experience Platform Web SDK是正式名称。
+[!DNL alloy.js] 是Web SDK JavaScript库的名称。 它在SDK源代码和文件名中引用。
 
 ## 客户是否需要购买Adobe Experience Platform才能使用 [!DNL Web SDK]？
 
@@ -88,24 +88,27 @@ Alloy是Adobe Experience Platform Web SDK的代码名称。 它用在SDK的源�
 
 ## 哪些人应该使用Web SDK？
 
-Adobe Experience Platform Web SDK专为以下人员开发：
+Adobe Experience Platform Web SDK专为以下客户开发：
 
 * Adobe Experience Platform用户
    * 如果您需要直接从设备向Adobe Experience Platform发送数据，官方建议使用此方式。
-   * Adobe知道，如果客户已经拥有Adobe Analytics，则使用Adobe Analytics连接器会更快，但这不是数据收集的长期策略。
+   * Adobe知道，如果您已经拥有Adobe Analytics，则使用Adobe Analytics连接器会更快，但这不是数据收集的长期策略。
 
 * Adobe Experience Cloud解决方案客户
    * 新的Adobe Analytics、Adobe Audience Manager和Adobe Target客户应该从新的Web SDK开始，而不是使用旧版库。
    * 现有客户如果想要获得尽可能优化的实施，应使用新的Web SDK。
 
+## 如何访问Web SDK？
 
-## 如何获取开始使用Adobe Experience Platform Web SDK的访问权限？
+Web SDK当前可供一般公众使用，并且可用于将数据发送到Adobe Experience Cloud产品。 在不久的将来，将会推出将数据发送到第三方解决方案的功能。
 
-Web SDK当前可供一般公众使用，并且可用于将数据发送到Adobe Experience Cloud产品。 在不久的将来，将会推出将数据发送到第三方解决方案的功能。 SDK免费，并由Adobe免费托管。 如果需要，您可以免费下载它并将其托管在您自己的服务器上。 Platform Web SDK需要访问数据流配置和Adobe Experience Platform XDM架构生成器，以便Adobe的服务器能够正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的Adobe客户团队以开始申请流程。
+SDK免费，并由Adobe免费托管。 如果需要，您可以免费下载它并将其托管在您自己的服务器上。
+
+Web SDK需要访问 [数据流配置](../datastreams/overview.md) 和Experience Platform [XDM架构生成器](../xdm/tutorials/create-schema-ui.md)，以便Adobe的服务器能够正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的Adobe客户团队以开始申请流程。
 
 ## Web SDK当前支持哪些用例？
 
-Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处当前支持的用例列表。](https://github.com/adobe/alloy/projects/5)
+Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处当前支持的用例列表。](https://github.com/orgs/adobe/projects/18/views/1?filterQuery=)
 
 ## 当前客户是否必须重新标记其网站？
 
@@ -117,7 +120,7 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处
 
 换言之，如果您决定将Adobe Experience Platform Web SDK用于非解决方案用例，则可以使用以下内容标记网站 `alloy.js` 然后继续前进，好像它是一个新的解决方案。 如果您要将其用于Adobe Analytics、Target、Audience Manager或应用程序用例，则可能需要删除页面上的任何旧版代码。
 
-## 我可以在开始使用Alloy时迁移ECID，以便我的网站访客不会开始显示为新访客吗？
+## 我可以在开始使用Web SDK时迁移ECID，以便我的网站访客不会开始显示为新访客吗？
 
 是，Adobe Experience Platform Web SDK提供了身份迁移功能。 请按照 [Platform Web SDK身份文档](/help/web-sdk/identity/overview.md#id-migration) 以了解更多详细信息。
 

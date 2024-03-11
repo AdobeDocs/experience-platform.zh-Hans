@@ -1,13 +1,13 @@
 ---
 title: 使用标记扩展安装Web SDK
 description: 使用Adobe Experience Cloud数据收集引用Web SDK库。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: ba8348c9-f642-4230-9f7f-4496d4154d83
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
-
 
 # 使用标记扩展安装Web SDK
 
@@ -23,6 +23,8 @@ Adobe提供了一个专用的标记扩展来实施和配置Web SDK。 此实施�
 1. 导航到 **[!UICONTROL 扩展]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 1. 找到并安装 **[!UICONTROL Adobe Experience Platform Web SDK]** 扩展。
 1. 为每个环境选择适当的沙盒和数据流，然后单击 **[!UICONTROL 保存]**.
+
+请参阅有关如何执行操作的文档 [配置Web SDK标记扩展](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) 以了解更多信息。
 
 ## 将标记代码发布到开发
 

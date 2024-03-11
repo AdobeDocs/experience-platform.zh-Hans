@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: cf6df4d005486aa297dcced7c8811f87f5e988c2
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1725'
 ht-degree: 1%
 
 ---
@@ -213,8 +213,8 @@ ht-degree: 1%
 
 ## 版本2.2.0 - 2020年10月
 
-* 错误修复：选择加入对象在以下情况下阻止Alloy进行调用： `idMigrationEnabled` 是 `true`.
-* 错误修复：使Alloy知道应返回个性化选件的请求，以防止出现闪烁问题。
+* 错误修复：选择加入对象在以下情况下阻止Web SDK进行调用： `idMigrationEnabled` 是 `true`.
+* 错误修复：使Web SDK知道应返回个性化选件的请求，以防止出现闪烁问题。
 
 ## 版本2.1.0 - 2020年8月
 
@@ -222,5 +222,5 @@ ht-degree: 1%
 * 支持IAB 2.0 Consent Standard。
 * 支持在中传递其他ID `setConsent` 命令。
 * 支持覆盖 `datasetId` 在 `sendEvent` 命令。
-* 支持合金显示器([了解更多](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
+* 支持监控挂接([了解更多](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
 * 通过 `environment: browser` 在实施详细信息上下文数据中。

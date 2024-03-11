@@ -1,17 +1,17 @@
 ---
 title: 使用JavaScript库安装Web SDK
 description: 使用独立的CDN文件引用Web SDK库。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: bacfe938-4326-48f6-a321-bd16970e77eb
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '211'
 ht-degree: 0%
 
 ---
 
-
 # 使用JavaScript库安装Web SDK
 
-安装Web SDK的一个选项是引用CDN上托管的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
+安装Web SDK的替代方法 [使用标记扩展](extension.md) 是引用托管在CDN上的JavaScript库。 您可以直接引用库，也可以下载该库并将其托管在您自己的基础架构中。 它提供缩小的和完整的格式。
 
 可以使用以下URL结构访问Web SDK库：
 

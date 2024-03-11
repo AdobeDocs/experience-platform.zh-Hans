@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web软件开发工具包(SDK)概述
 description: 了解如何使用Adobe Experience Platform Web SDK将Platform功能集成到您的网站。
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '796'
 ht-degree: 1%
 
 ---
@@ -16,20 +16,26 @@ ht-degree: 1%
 >
 >2024年4月底，Adobe Experience Platform Web SDK将停止对所有版本的Internet Explorer提供支持。
 
-Adobe Experience Platform Web软件开发工具包(SDK)是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe Experience Platform Edge Network与其服务进行交互。 Adobe提供了两种实施Web SDK的方法：
+Adobe Experience Platform Web软件开发工具包(SDK)是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe Experience Platform Edge Network与其服务进行交互。
 
-* 使用进行手动实施 `alloy.js` JavaScript库 本用户指南提供了关于此实施方法的文档。
-* 此 [Web SDK标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). 请参阅 [使用Web SDK实施Adobe Experience Cloud教程](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 以了解更多信息。
+Adobe提供了两种实施Web SDK的方法：
+
+* 此 [Web SDK标记扩展](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). 请参阅教程，了解如何 [利用Web SDK实施Adobe Experience Cloud](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=zh-Hans) 以了解更多信息。
+* 使用Web SDK JavaScript库进行手动实施。
+
+本用户指南包含有关通过Web SDK JavaScript库和标记扩展（如果适用）与Experience Cloud解决方案交互的说明。
 
 ## Experience Platform边缘网络 {#edge-network}
 
-Experience PlatformWeb SDK是组成Adobe Experience Platform Edge Network的一系列工具的一部分。 Edge Network包含以下组件：
+Experience PlatformWeb SDK是组成Adobe Experience Platform Edge Network的一系列工具的一部分。
 
-* **[Experience PlatformWeb SDK](#overview)：** JavaScript SDK和标记扩展可显着简化Adobe技术的部署。
-* **[Experience Platform移动SDK](https://developer.adobe.com/client-sdks/home/)：** v5 Mobile SDK的扩展，允许客户使用新的部署方法
-* **[Experience Platform边缘网络服务器API](../server-api/overview.md)：** 可用于各种数据收集、个性化、广告和营销用例的API。 服务器API可用于服务器、IoT设备、机顶盒和其他各种设备。
+Edge Network包含以下组件：
 
-Edge Network是一个框架，用于在所有可寻址通道中进行低延迟数据收集、可插拔计算和快速数据激活。 它为每个渠道（JavaScript、移动设备、服务器端）提供单个整合SDK，将数据发送到公共Adobe域(`adobedc.net`)，接收返回的单个有效负载以进行数据和体验交付。
+* **[Experience PlatformWeb SDK](#overview)：** 帮助您简化Adobe技术部署的JavaScript库和标记扩展。
+* **[Experience Platform移动SDK](https://developer.adobe.com/client-sdks/home/)：** v5 Mobile SDK的扩展，允许您使用新的部署方法。
+* **[边缘网络服务器API](../server-api/overview.md)：** 可用于各种数据收集、个性化、广告和营销用例的服务器端API。 服务器API可用于服务器、IoT设备、机顶盒和其他各种设备。
+
+Edge Network是一个框架，用于在所有可寻址通道中进行低延迟数据收集、可插拔计算和快速数据激活。 它为每个渠道（Web、移动设备、服务器端）提供单个整合SDK，将数据发送到公共Adobe域(`adobedc.net`)，接收返回的单个有效负载以进行数据和体验交付。
 
 在服务器端，统一的边缘网关和通用平台服务框架有助于将新功能轻松部署到此实时计算环境中。 此架构：
 
@@ -40,11 +46,11 @@ Edge Network是一个框架，用于在所有可寻址通道中进行低延迟�
 * 提高创新速度
 * 为Adobe客户创造持续的竞争优势
 
-通过单个整合的边缘系统，客户可将其跨所有渠道的广告、营销或个性化营销活动作为集成体验进行管理。 它还允许Adobe以更低的总体拥有成本为客户提供服务。 Edge System旨在容纳大多数类型的数据，允许您映射自己的数据模型以供多个Experience Cloud产品摄取。
+通过单个整合的边缘系统，您可以将所有渠道中的广告、营销或个性化营销活动作为集成体验进行管理。 它还允许Adobe以更低的总体拥有成本为客户提供服务。 Edge System旨在容纳大多数类型的数据，允许您映射自己的数据模型以供多个Experience Cloud产品摄取。
 
 ## 视频概述 {#video}
 
-以下视频概述了Adobe Experience Platform [!DNL Web SDK] 和Adobe Experience Platform [!DNL Edge Network].
+观看以下视频，大致了解Adobe Experience Platform [!DNL Web SDK] 和 [!DNL Edge Network].
 
 >[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
