@@ -4,9 +4,9 @@ title: Real-time Customer Data Platform概述
 description: Adobe Real-time Customer Data Platform概述
 feature: Get Started
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: f89665837b75dc4305073d675c4c05b04302c85e
+source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -79,3 +79,7 @@ Real-Time CDP B2B版本允许营销人员为人员和帐户创建完整的配置
 * [如何构建受众](segmentation/segmentation-overview.md)
 * [如何将受众激活到目标](destinations/overview.md)
 * [如何定义和执行数据治理策略](privacy/data-governance-overview.md)
+
+## 术语表
+
+使用 [**术语表**](/help/landing/glossary.md) 用于查看Real-Time CDP和Adobe Experience Platform术语的页面。

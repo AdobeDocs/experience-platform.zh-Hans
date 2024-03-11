@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: af37aca17f4b365b52215b8c886e733f00c4a4e8
+source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '282'
 ht-degree: 24%
 
 ---
@@ -44,9 +44,10 @@ ht-degree: 24%
    * [概述](application-services.md)
    * [Adobe Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
-   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
+   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html?lang=zh-Hans)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans)
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
    * [平台与Experience Cloud的集成（视频）](video/experience-cloud-integrations.md)
 * 治理、隐私和安全 {#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
@@ -73,7 +74,7 @@ ht-degree: 24%
       * [使用用户界面设置CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
 * 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
-   * [许可证使用情况仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
+   * [许可证用量仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
    * [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
    * [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
    * [Real-Time CDP护栏](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
