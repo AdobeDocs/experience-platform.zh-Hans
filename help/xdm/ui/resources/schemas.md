@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 021cd2f2127dee1618335585da01ea1c5a5e9696
+source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
 workflow-type: tm+mt
-source-wordcount: '3671'
+source-wordcount: '3732'
 ht-degree: 2%
 
 ---
@@ -126,6 +126,12 @@ ht-degree: 2%
 此 [!DNL Schema Editor] 此时会重新显示，画布中会显示字段组提供的字段。
 
 ![此 [!DNL Schema Editor] 并显示模式示例。](../../images/ui/resources/schemas/field-groups-added.png)
+
+>[!NOTE]
+>
+>在架构编辑器中，标准(Adobe生成的)类和字段组用挂锁图标(![挂锁图标。](../../images/ui/explore/padlock-icon.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>
+>![突出显示挂锁图标的架构编辑器](../../images/ui/explore/schema-editor-padlock-icon.png)
 
 将字段组添加到架构后，您可以选择执行以下操作 [删除现有字段](#remove-fields) 或 [添加新自定义字段](#add-fields) 根据您的需要，将这些用户组添加到。
 

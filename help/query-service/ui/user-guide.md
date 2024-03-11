@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 29a33dd5823ac425cc567e948a5def948aedb44e
+source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
 workflow-type: tm+mt
-source-wordcount: '2576'
+source-wordcount: '2647'
 ht-degree: 2%
 
 ---
@@ -255,6 +255,10 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，根据您选择的结果显示50到500行结果 [结果计数](#result-count). 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从中的查询结果生成数据集的说明 [!DNL Query Editor].
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
+
+## 用例 {#use-cases}
+
+查询服务为跨行业和业务场景的各种用例提供解决方案。 这些实际示例展示了服务在满足各种需求方面的灵活性和影响。 至 [了解查询服务如何为您的特定业务需求带来价值](../use-cases/overview.md)中，了解用例文档的完整集合。 了解如何使用查询服务提供洞察信息和解决方案，以增强运营效率和业务成功。
 
 ## 运行查询 [!DNL Query Service] 教程视频 {#query-tutorial-video}
 

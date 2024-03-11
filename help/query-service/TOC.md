@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '320'
 ht-degree: 19%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 19%
       - [将数据导出到ML环境](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML数据管道扩充端到端工作流](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - 用例 {#use-cases}
+   - [支持的用例](use-cases/overview.md)
    - [已放弃的浏览](use-cases/abandoned-browse.md)
    - [归因分析](use-cases/attribution-analysis.md)
    - [机器人筛选](use-cases/bot-filtering.md)

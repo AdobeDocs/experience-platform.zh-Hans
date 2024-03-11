@@ -5,9 +5,9 @@ title: 浏览UI中的架构资源
 description: 了解如何在Experience Platform用户界面中探索现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1078'
 ht-degree: 0%
 
 ---
@@ -53,6 +53,14 @@ ht-degree: 0%
 默认情况下，包含子属性的所有对象类型字段在首次出现在画布中时会折叠。 要显示任何字段的子属性，请选择其名称旁边的图标。
 
 ![](../images/ui/explore/field-expand.png)
+
+### 标准类和字段组指示器 {#standard-class-and-field-group-indicator}
+
+在架构编辑器中，标准(Adobe生成的)类和字段组用挂锁图标(![挂锁图标。](../images/ui/explore/padlock-icon.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+
+![突出显示挂锁图标的架构编辑器](../images/ui/explore/schema-editor-padlock-icon.png)
+
+请参阅 [将自定义字段添加到标准字段组](./resources/schemas.md) 指导文档。 不能编辑标准类。
 
 ### 系统生成的字段 {#system-fields}
 

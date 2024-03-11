@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: ff49189d6f3331db5b7853be36afe0bb6176916f
+source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
 workflow-type: tm+mt
-source-wordcount: '4632'
+source-wordcount: '4695'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 
 本教程需要对架构创建所涉及的Adobe Experience Platform各个方面有一定的了解。 在开始本教程之前，请查看文档以了解以下概念：
 
-* [[!DNL Experience Data Model (XDM)]](../home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
    * [模式组合基础](../schema/composition.md)：XDM架构及其构建块的概述，包括类、架构字段组、数据类型和单个字段。
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 
@@ -116,6 +116,12 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 此时将重新显示架构画布。 此 **[!UICONTROL 字段组]** 部分现列出&quot;[!UICONTROL 人口统计详细信息]”和 **[!UICONTROL 结构]** 部分包含字段组贡献的字段。 您可以在下面选择字段组的名称： **[!UICONTROL 字段组]** 部分，以突出显示它在画布中提供的特定字段。
 
 ![突出显示了“人口统计详细信息”字段组的架构编辑器。](../images/tutorials/create-schema/demographic-details-structure.png)
+
+>[!NOTE]
+>
+>在架构编辑器中，标准(Adobe生成的)类和字段组用挂锁图标(![挂锁图标。](../images/ui/explore/padlock-icon.png)的问题。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+>
+>![突出显示挂锁图标的架构编辑器](../images/ui/explore/padlock-icon-highlight.png)
 
 此字段组在顶级名称下提供多个字段 `person` 数据类型&#39;&#39;[!UICONTROL 人员]“。 这一组字段描述有关个人的信息，包括姓名、出生日期和性别。
 
@@ -229,7 +235,7 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 
 | 约束 | 描述 |
 | --- | --- |
-| [!UICONTROL 必需] | 指示字段是进行数据摄取所必需的。 摄取后，任何上传到基于此架构、不包含此字段的数据集的数据都将失败。 |
+| [!UICONTROL 必填] | 指示字段是进行数据摄取所必需的。 摄取后，任何上传到基于此架构、不包含此字段的数据集的数据都将失败。 |
 | [!UICONTROL 数组] | 指示字段包含值的数组，每个值均具有指定的数据类型。 例如，在数据类型为&quot;的字段上使用此约束[!UICONTROL 字符串]”指定该字段将包含字符串数组。 |
 | [!UICONTROL 枚举和建议值] | 枚举表示此字段必须包含可能值的枚举列表中的值之一。 或者，您也可以使用此选项仅提供字符串字段的建议值列表，而不将该字段限制为这些值。 |
 | [!UICONTROL 标识] | 指示此字段是标识字段。 提供了有关身份字段的更多信息 [在本教程的后面部分介绍](#identity-field). |
