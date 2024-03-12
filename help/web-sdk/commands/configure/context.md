@@ -1,9 +1,10 @@
 ---
 title: 上下文
 description: 自动收集设备、环境或位置数据。
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 911cabec-2afb-4216-b413-80533f826b0e
+source-git-commit: dc2a2ecf7b602d2fcfd3b6c93cecdb6f3368a3f9
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '900'
 ht-degree: 5%
 
 ---
@@ -59,8 +60,34 @@ ht-degree: 5%
 | --- | --- | --- | --- |
 | 本地时间 | 用于最终用户的本地时间戳（以简化的扩展形式表示） [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) 格式。 | `xdm.placeContext.localTime` | `YYYY-08-07T15:47:17.129-07:00` |
 | 本地时区偏移 | 用户从GMT偏移的分钟数。 | `xdm.placeContext.localTimezoneOffset` | `360` |
+| 国家/地区代码 | 最终用户的国家/地区代码。 | `xdm.placeContext.geo.countryCode` | `US` |
+| 省/市/自治区 | 最终用户的省/市/自治区代码。 | `xdm.placeContext.geo.stateProvince` | `CA` |
+| 纬度 | 最终用户位置的纬度。 | `xdm.placeContext.geo._schema.latitude` | `37.3307447` |
+| 经度 | 最终用户位置的经度。 | `xdm.placeContext.geo._schema.longitude` | `-121.8945965` |
 
 {style="table-layout:auto"}
+
+
+### 时间戳
+
+此 `timestamp` 关键字收集有关事件时间戳的信息。 无法删除此上下文部分。
+
+| 维度 | 描述 | XDM 路径 | 示例值 |
+| --- | --- | --- | --- |
+| 事件的时间戳 | 用于最终用户的UTC时间戳（以简化的扩展格式表示） [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) 格式。 | `xdm.timestamp` | `2019-08-07T22:47:17.129Z` |
+
+{style="table-layout:auto"}
+
+### 实施详细信息
+
+此 `implementationDetails` 关键字收集有关用于收集事件的SDK版本的信息。
+
+| 维度 | 描述 | XDM 路径 | 示例值 |
+| --- | --- | --- | --- |
+| 名称 | 软件开发工具包(SDK)标识符。 此字段使用URI来改进由不同软件库提供的标识符之间的唯一性。 | `xdm.implementationDetails.name` | 使用独立库时，值为 `https://ns.adobe.com/experience/alloy`. 当库用作标记扩展的一部分时，值为 `https://ns.adobe.com/experience/alloy+reactor`. |
+| 版本 | 软件开发工具包(SDK)版本。 | `xdm.implementationDetails.version` | 使用独立库时，该值为库版本。 当库用作标记扩展的一部分时，值为库版本和用联接的标记扩展版本 `+`. 例如，如果库版本为 `2.1.0` 标记扩展版本为 `2.1.3`，则值将为 `2.1.0+2.1.3`. |
+| 环境 | 收集数据的环境。 此参数始终设置为 `browser`. | `xdm.implementationDetails.environment` | `browser` |
+
 
 ### 高熵客户端提示
 
