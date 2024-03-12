@@ -2,12 +2,13 @@
 title: Web SDK中的第一方设备ID
 description: 了解如何为Adobe Experience Platform Web SDK配置第一方设备ID (FPID)。
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 9f10d48357b7fb28dc54375a4d077d0a1961a746
 workflow-type: tm+mt
-source-wordcount: '1734'
+source-wordcount: '1990'
 ht-degree: 0%
 
 ---
+
 
 # Web SDK中的第一方设备ID
 
@@ -47,6 +48,28 @@ FPID使用第一方Cookie跟踪访客。 使用使用DNS的服务器设置第一
 Platform Edge Network仅接受符合 [UUIDv4格式](https://datatracker.ietf.org/doc/html/rfc4122). 将拒绝不采用UUIDv4格式的设备ID。
 
 生成UUID几乎总是会生成唯一的随机ID，而发生冲突的概率可以忽略不计。 无法使用IP地址或任何其他个人身份信息(PII)为UUIDv4设定种子。 UUID无处不在，几乎每种编程语言都可以找到库来生成它们。
+
+## 在数据流UI中设置第一方ID Cookie {#setting-cookie-datastreams}
+
+您可以在数据流UI中指定Cookie名称，其中 [!DNL FPID] 可以驻留，而不必读取Cookie值并在标识映射中包含FPID。
+
+>[!IMPORTANT]
+>
+>此功能要求您拥有 [第一方数据收集](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) 已启用。
+
+请参阅 [数据流文档](../../datastreams/configure.md) 有关如何配置数据流的详细信息。
+
+配置数据流时，启用 **[!UICONTROL 第一方ID Cookie]** 选项。 此设置会告知Edge Network在查找第一方设备ID时引用指定的Cookie，而不是在 [标识映射](#identityMap).
+
+请参阅相关文档 [第一方Cookie](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=zh-Hans) 以了解有关如何使用Adobe Experience Cloud的更多详细信息。
+
+![显示数据流配置的Platform UI图像突出显示第一方ID Cookie设置](../assets/first-party-id-datastreams.png)
+
+在启用此设置时，必须提供需要存储ID的Cookie的名称。
+
+使用第一方ID时，无法执行第三方ID同步。 第三方ID同步依赖于 [!DNL Visitor ID] 服务和 `UUID` 由该服务生成。 使用第一方ID功能时，无需使用即可生成ECID [!DNL Visitor ID] 服务，这使得第三方ID无法同步。
+
+当您使用第一方ID时，由于Audience Manager合作伙伴ID同步主要基于，因此不支持针对合作伙伴平台中的Audience Manager激活功能 `UUIDs` 或 `DIDs`. 从第一方ID派生的ECID未链接到 `UUID`，使其不可寻址。
 
 ## 使用您自己的服务器设置Cookie
 
