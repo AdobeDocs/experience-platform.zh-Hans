@@ -2,7 +2,7 @@
 title: 在Web SDK中配置页面顶部和底部事件
 description: 本文介绍了如何在Web SDK中使用页面顶部和底部事件。
 exl-id: 43c6d53a-6bf9-45f8-b001-d148adaff829
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+source-git-commit: 4d0895c6ad38523f5527c9630931c3c0b8ef83c0
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 1%
@@ -222,4 +222,4 @@ alloy("sendEvent", {
 
 ## GitHub示例 {#github-sample}
 
-在以下位置找到的样本： [此地址](https://github.com/adobe/alloy-samples/tree/main/top-and-bottom) 演示如何使用Experience Platform和Web SDK在页面顶部请求个性化，并在底部发送分析量度。 您可以下载示例并在本地运行它以了解页面顶部和底部事件的工作原理。
+在以下位置找到的样本： [此地址](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) 演示如何使用Experience Platform和Web SDK在页面顶部请求个性化，并在底部发送分析量度。 您可以下载示例并在本地运行它以了解页面顶部和底部事件的工作原理。
