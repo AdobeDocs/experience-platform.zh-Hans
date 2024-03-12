@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 1 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: aa33f7006b1a3abf7d19ffe3e0d5e5ee39fe9a5d
 workflow-type: tm+mt
 source-wordcount: '1242'
-ht-degree: 21%
+ht-degree: 22%
 
 ---
 
@@ -25,10 +25,11 @@ ht-degree: 21%
 ## 警报 {#alerts}
 
 Experience Platform允许您订阅各种Platform活动的基于事件的警报。 您可以通过订阅不同的警报规则 [!UICONTROL 警报] 选项卡中，并且可以选择在UI本身中或通过电子邮件通知接收警报消息。
-**新增或更新功能**
 
-| 功能 | 描述 | 
-| --- | --- | 
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
 | “警报历史记录”选项卡 | 作为Experience Platform管理员，您可以使用管理警报订阅者功能将警报分配给Adobe用户ID、外部电子邮件地址或电子邮件组列表。 欲了解更多信息，请参见 [警报UI文档](../../observability/alerts/ui.md) 有关“历史记录”选项卡的详细信息。 |
 
 {style="table-layout:auto"}
