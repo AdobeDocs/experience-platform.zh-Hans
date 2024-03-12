@@ -1,14 +1,23 @@
 ---
 title: thirdPartyCookiesEnabled
 description: 允许使用第三方Cookie来识别访客。
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: f241a9ae-a892-46a5-b0dd-5ac72a44d4ac
+source-git-commit: bc48f45bd6b9b7f7cc446ae84d712376292718d2
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '278'
 ht-degree: 0%
 
 ---
 
+
 # `thirdPartyCookiesEnabled`
+
+>[!IMPORTANT]
+>
+>Google [已宣布](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) 计划在2024年下半年停止支持第三方Chrome Cookie。 因此，任何主要浏览器将不再支持第三方Cookie。
+>
+>实施此更改后，Adobe将停止对 `demdex` Web SDK当前支持的Cookie。
+
 
 此 `thirdPartyCookiesEnabled` 属性是一个布尔值，用于确定Web SDK是否会在第三方上下文中设置Cookie。 如果要识别组织拥有的子域或域之间的访客，则启用此选项非常有用。 但是，许多现代浏览器会限制第三方Cookie的设置和过期。
 
