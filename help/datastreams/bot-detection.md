@@ -4,9 +4,9 @@ description: 了解如何为数据流配置机器人检测，以区分人类和�
 hide: true
 hidefromtoc: true
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 7757cd869607bf25bff1e9861732cf4b80b38966
 workflow-type: tm+mt
-source-wordcount: '1320'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -36,6 +36,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >机器人检测不会丢弃任何机器人请求。 它仅通过机器人评分更新XDM架构，并将事件转发到 [数据流服务](configure.md) 您已配置哪个。
+>
+>Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用它自己的 [机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) 且不使用Edge Network设置的分数。 两种服务使用相同的 [IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
 
 机器人检测规则在创建后可能需要15分钟才能在边缘网络中传播。
 
