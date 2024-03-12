@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中的Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: edef000bfe6c4de69a037e2ad6871759c1404580
+source-git-commit: a062305e3ed0eb4d127f93ff37efe15e41eaa601
 workflow-type: tm+mt
-source-wordcount: '794'
-ht-degree: 19%
+source-wordcount: '834'
+ht-degree: 17%
 
 ---
 
@@ -14,6 +14,11 @@ ht-degree: 19%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## v0.20.3（2024年1月23日）
+
+- 更新以支持 `at.js` 2.11.4
+- 修复了阻止将无效地理数据发送到交付API的错误。
 
 ## v0.20.2（2023年11月29日）
 
@@ -55,7 +60,7 @@ ht-degree: 19%
 ## v0.18.0（2022年6月1日）
 
 - 更新以支持 `at.js` v2.9.0
-- 添加了对用户代理客户端提示的支持。
+- 添加了用户代理客户端提示支持。
 
 ## v0.17.1（2022年1月28日）
 
@@ -142,7 +147,7 @@ ht-degree: 19%
 - 在 adobe.target.getOffer API 中添加了 Target 全局 Mbox 支持
 - 修复了参数和页面加载参数无法正确处理的问题
 
-## v0.12.0（2019 年 10 月 10 日）
+## v0.12.0（2019年10月10日）
 
 - 已更新 `at.js` 到v2.2。
 - 改进了Experience CloudID库(ECID) v4.4与之间集成的性能 `at.js` 2.2.
