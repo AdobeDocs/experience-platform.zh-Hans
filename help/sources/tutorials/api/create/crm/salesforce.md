@@ -5,9 +5,9 @@ title: 使用流服务API创建Salesforce基本连接
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce帐户。
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 57cdcbd5018e7f57261f09c6bddf5e2a8dcfd0d5
+source-git-commit: 27ad8812137502d0a636345852f0cae5d01c7b23
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '511'
 ht-degree: 4%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 4%
 | `username` | 的用户名 [!DNL Salesforce] 用户帐户。 |
 | `password` | 的密码 [!DNL Salesforce] 用户帐户。 |
 | `securityToken` | 的安全令牌 [!DNL Salesforce] 用户帐户。 |
-| `apiVersion` | （可选） REST API版本的 [!DNL Salesforce] 您正在使用的实例。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+| `apiVersion` | 可选) REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0` 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce] 为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 有关入门的更多信息，请访问 [此Salesforce文档](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
