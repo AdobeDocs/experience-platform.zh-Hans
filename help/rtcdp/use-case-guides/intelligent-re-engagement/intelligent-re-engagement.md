@@ -3,10 +3,10 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 151695e348764a25f2b2e986dcbdc1970a67ad47
 workflow-type: tm+mt
 source-wordcount: '3772'
-ht-degree: 49%
+ht-degree: 48%
 
 ---
 
@@ -60,7 +60,7 @@ ht-degree: 49%
 弃用的产品浏览场景定位在网站和移动设备应用程序上弃用的产品浏览。 当已查看但未购买产品或未将产品添加到购物车时，会触发此场景。 在此示例中，如果过去24小时内没有列表添加，则会在三天后触发品牌互动。<p>![客户智能弃用产品浏览场景高级别可视化概述。](../intelligent-re-engagement/images/re-engagement-journey.png "客户智能弃用产品浏览场景高级别可视化概述。"){width="1920" zoomable="yes"}</p>
 
 1. 您可以创建架构和数据集，然后启用 [!UICONTROL 个人资料].
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致历程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您从配置文件列表中构建重点受众，以检查&#x200B;**客户**&#x200B;是否在过去三天内参与了活动。
 5. 您在中创建放弃的产品浏览历程 [!DNL Adobe Journey Optimizer].
@@ -72,7 +72,7 @@ ht-degree: 49%
 “放弃的购物车”方案适用于以下情况：产品已放入购物车，但尚未在网站和移动设备应用程序上购买。 此外，付费媒体活动可以使用此方法启动和停止。<p>![客户放弃的购物车场景高级别视觉概览。](../intelligent-re-engagement/images/abandoned-cart-journey.png "客户放弃的购物车场景高级别视觉概览。"){width="1920" zoomable="yes"}</p>
 
 1. 您可以创建架构和数据集，为启用 [!UICONTROL 个人资料].
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致历程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您从配置文件列表中建立重点受众，以检查&#x200B;**客户**&#x200B;是否已将商品放入购物车，但尚未完成购买。**[!UICONTROL 添加到购物车]**&#x200B;事件会启动一个等待 30 分钟的计时器，然后检查购买情况。如果没有购买，那么该&#x200B;**客户**&#x200B;会被添加到&#x200B;**[!UICONTROL 放弃的购物车]**&#x200B;受众中。
 5. 您在 [!DNL Adobe Journey Optimizer] 中创建一个放弃的购物车之历程。
@@ -84,7 +84,7 @@ ht-degree: 49%
 订单确认方案侧重于通过网站和移动设备应用程序进行的产品购买。<p>![客户订单确认方案高级别可视化概述。](../intelligent-re-engagement/images/order-confirmation-journey.png "客户订单确认方案高级别可视化概述。"){width="1920" zoomable="yes"}</p>
 
 1. 您可以创建架构和数据集，然后启用 [!UICONTROL 个人资料].
-2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
+2. 您可以通过Web SDK、Mobile SDK或API将数据摄取到Experience Platform中。 也可以使用Analytics Source Connector，但可能会导致历程延迟。
 3. 您可以摄取其他启用配置文件的数据，该数据可以通过身份图链接到经过身份验证的Web和移动应用程序访客。
 4. 您在 [!DNL Adobe Journey Optimizer] 中创建一个确认历程。
 5. [!DNL Adobe Journey Optimizer] 会使用首选渠道发送订购确认消息。
