@@ -2,9 +2,9 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来交付和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: ddffe9bf30741b457f7de1099b50ac1624fca927
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '664'
 ht-degree: 1%
 
 ---
@@ -287,3 +287,9 @@ Edge Network将返回类似于下面的响应。
 | `items[].data.id` | 建议优惠的ID。 | `"id": "282484"` |
 | `items[].data.format` | 与建议选件关联的内容的格式。 | `"format: "application/json` |
 | `items[].data.content` | 与建议选件关联的内容。 这将用于个性化调用应用程序的内容。 | `"content": "<CONTENT CONFIGURED IN TARGET>"` |
+
+## 服务器端个性化示例应用程序 {#sample}
+
+示例应用程序位于 [此URL](https://github.com/adobe/alloy-samples/tree/main/target/personalization-server-side) 演示使用Adobe Experience Platform从Adobe Target获取个性化内容。 网页会根据返回的个性化内容而发生更改。
+
+此示例可以 _非_ 依赖客户端库，例如 [!DNL Web SDK] 以获取个性化内容。 而是使用Adobe Experience Platform API来获取个性化内容。 然后，该实现基于返回的个性化内容生成HTML服务器端。
