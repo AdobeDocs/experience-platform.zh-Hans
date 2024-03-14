@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: bf7e2e08d54f113c6e2cc5060f51725555c2c049
+source-git-commit: c05bdceb5092278f6fefb2cb286bf25d97716cf7
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1529'
 ht-degree: 1%
 
 ---
@@ -141,7 +141,8 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 
 Experience Platform支持从第三方数据库引入数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Acxiom Prospecting Data Import]](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE 批次]{type=Informative}
 
 ### 电子商务 {#ecommerce}
@@ -162,7 +163,7 @@ Experience Platform支持从本地系统中摄取数据。 有关特定源连接
 
 Experience Platform为从第三方营销自动化系统中引入数据提供支持。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Braze]](tutorials/ui/create/marketing-automation/braze.md) [!BADGE 流]{type=Positive}
+- [[!DNL Braze]](connectors/marketing-automation/braze.md) [!BADGE 流]{type=Positive}
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE 流]{type=Positive}
 - [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) [!BADGE 流]{type=Positive}
 - [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) [!BADGE 批次]{type=Informative}

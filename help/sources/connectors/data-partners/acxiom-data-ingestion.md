@@ -1,34 +1,29 @@
 ---
-title: Acxiom潜在客户数据导入
-description: 了解如何使用UI将Acxiom潜在客户数据连接到Adobe Experience Platform和Adobe Real-time Customer Data Platform。
+title: Acxiom数据摄取
+description: 了解如何摄取 [!DNL Acxiom] 将数据添加到Real-time Customer Data Platform，丰富第一方用户档案，改进受众并在各个营销渠道中激活。
 badge: Beta 版
-exl-id: 6df674d9-c14b-42ea-a287-5377484e567d
 source-git-commit: 9419da451616ca7f087ecea7aa66a6c10a474fb3
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '473'
 ht-degree: 1%
 
 ---
 
-# [!DNL Acxiom Prospecting Data Import]
+# [!DNL Acxiom Data Ingestion]
 
 >[!NOTE]
 >
 >此 [!DNL Acxiom Prospecting Data Import] 源为测试版。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
-Adobe Experience Platform支持从数据合作伙伴应用程序中摄取数据。 对数据和身份合作伙伴的支持包括 [!DNL Acxiom Prospecting Data Import].
+使用 [!DNL Acxiom Data Ingestion] 要摄取的源 [!DNL Acxiom] 将数据导入Real-time Customer Data Platform并丰富第一方配置文件。 然后，您可以使用 [!DNL Acxiom] — 扩充了第一方用户档案，以改进受众并在营销渠道之间激活。
 
-[!DNL Acxiom]的“为Adobe Real-time Customer Data Platform导入潜在客户数据”是一个尽可能提供最高效的潜在客户受众的过程。 [!DNL Acxiom] 通过安全导出获取Real-Time CDP第一方数据，并通过屡获殊荣的卫生和身份解析系统运行该数据。 生成可用作禁止列表的数据文件。 然后，将此数据文件与 [!DNL Acxiom Global] 数据库，这样可以定制潜在客户列表以进行导入。
+![acxiom-data-ingestion-workflow](../../images/tutorials/create/acxiom-data-enhancement-import/acxiom-data-ingestion.png)
 
-您可以使用 [!DNL Acxiom] 源以检索和映射响应 [!DNL Acxiom] 目标客户服务使用 [!DNL Amazon S3] 作为落脚点。
+请阅读下面的文档，了解如何设置 [!DNL Acxiom Data Ingestion] 源帐户。
 
-![acxiom-propositing-workflow](../../images/tutorials/create/acxiom-prospect-suppression-data-sourcing/acxiom-prospecting.png)
+## 先决条件 {#prerequisites}
 
-请阅读下面的文档，了解如何设置 [!DNL Acxiom Prospecting Data Import] 源帐户。
-
-## 先决条件
-
-要在Experience Platform时访问存储段，您需要为以下凭据提供有效值：
+为了连接 [!DNL Acxiom Data Ingestion] 要Experience Platform的帐户，必须提供以下身份验证凭据的值：
 
 | 凭据 | 描述 |
 | --- | --- |
@@ -43,9 +38,9 @@ Adobe Experience Platform支持从数据合作伙伴应用程序中摄取数据�
 
 ### 配置Experience Platform权限
 
-您必须同时拥有两者 **[!UICONTROL 查看源]** 和 **[!UICONTROL 管理源]** 为您的帐户启用的权限以连接 [!DNL Acxiom Prospecting Data Import] 帐户到Experience Platform。 请联系您的产品管理员以获取必要的权限。 欲知更多信息，请参阅 [访问控制UI指南](../../../access-control/abac/ui/permissions.md).
+您必须同时拥有两者 **[!UICONTROL 查看源]** 和 **[!UICONTROL 管理源]** 为您的帐户启用的权限以连接 [!DNL Acxiom Data Ingestion] 帐户到Experience Platform。 请联系您的产品管理员以获取必要的权限。 欲知更多信息，请参阅 [访问控制UI指南](../../../access-control/ui/overview.md).
 
-## 文件和目录的命名约束
+### 文件和目录的命名约束
 
 在命名云存储文件或目录时，必须考虑以下列出的限制：
 
@@ -58,4 +53,4 @@ Adobe Experience Platform支持从数据合作伙伴应用程序中摄取数据�
 
 ## 后续步骤
 
-通过阅读本文档，您已完成从获取数据所需的先决条件设置 [!DNL Acxiom] 帐户到Experience Platform。 您现在可以继续阅读以下指南： [连接 [!DNL Acxiom Prospecting Data Import] 使用用户界面Experience Platform](../../tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md).
+通过阅读本文档，您已完成从获取数据所需的先决条件设置 [!DNL Acxiom] 帐户到Experience Platform。 您现在可以继续阅读以下指南： [连接 [!DNL Acxiom Data Ingestion] 使用用户界面Experience Platform](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).
