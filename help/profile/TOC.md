@@ -4,10 +4,10 @@ user-guide-title: 实时客户配置文件指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: Profiles
 role: User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '129'
-ht-degree: 25%
+ht-degree: 24%
 
 ---
 
@@ -53,4 +53,4 @@ ht-degree: 25%
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile] 疑难解答指南](troubleshooting.md)
 * [配置文件API参考](https://www.adobe.com/go/profile-apis-en)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

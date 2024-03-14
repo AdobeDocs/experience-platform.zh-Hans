@@ -5,7 +5,7 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
 role: Admin
-source-git-commit: 472852b383f117281fd235ad39dedba401df7679
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '293'
 ht-degree: 70%
@@ -85,5 +85,5 @@ ht-degree: 70%
    * 个性化、洞察和参与 {#personalization-insights-engagement}
       * [以智能的方式重新吸引您的客户](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [智能地重新吸引客户：Luma示例](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
-* [Experience Platform 发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Experience Platform 发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary_cn)

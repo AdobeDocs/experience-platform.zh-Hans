@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
 role: User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '183'
-ht-degree: 37%
+ht-degree: 36%
 
 ---
 
@@ -73,4 +73,4 @@ ht-degree: 37%
    - [强制区段遵守数据使用规定](tutorials/governance.md)
 - [常见问题解答](./faq.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -5,7 +5,7 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 5db7e1a88373dcc5dd266f6c082985f4055a1b0f
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '1215'
 ht-degree: 4%
@@ -296,4 +296,4 @@ ht-degree: 4%
       * [文档自助服务模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题解答](./destinations-faq.md)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

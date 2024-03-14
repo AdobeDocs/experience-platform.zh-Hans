@@ -5,10 +5,10 @@ breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '124'
-ht-degree: 29%
+ht-degree: 28%
 
 ---
 
@@ -43,4 +43,4 @@ ht-degree: 29%
    - [示例场景](./identity-graph-linking-rules/example-scenarios.md)
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -5,10 +5,10 @@ breadcrumb-title: 访问控制指南
 user-guide-description: 在 Adobe Admin Console 中使用产品配置文件管理用户权限。了解如何将用户分配给产品和沙盒。
 feature: Access Control
 role: Admin
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '117'
-ht-degree: 49%
+ht-degree: 48%
 
 ---
 
@@ -46,4 +46,4 @@ ht-degree: 49%
    * [查看有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -5,10 +5,10 @@ breadcrumb-title: Data Governance 指南
 user-guide-description: 通过使用标签、营销操作和治理策略，施加数据使用限制。
 feature: Data Governance
 role: User,Developer,Admin
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '90'
-ht-degree: 42%
+ht-degree: 41%
 
 ---
 
@@ -38,4 +38,4 @@ ht-degree: 42%
    * [营销活动](api/marketing-actions.md)
    * [评估](api/evaluation.md)
 * [API 参考](https://www.adobe.io/experience-platform-apis/references/policy-service/)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

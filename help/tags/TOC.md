@@ -6,7 +6,7 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 36%
@@ -321,5 +321,5 @@ ht-degree: 36%
 * [常见问题解答](./faq.md)
 * [术语更新](./term-updates.md)
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 

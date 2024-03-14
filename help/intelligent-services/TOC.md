@@ -5,10 +5,10 @@ user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 使用智能 AI 服务从您的营销活动数据生成分数、发掘见解和创建区段。
 role: User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '136'
-ht-degree: 32%
+ht-degree: 31%
 
 ---
 
@@ -55,4 +55,4 @@ ht-degree: 32%
       - [客户管理的密钥](customer-ai/cai-data-governance/customer-managed-keys.md)
       - [数据管理](customer-ai/cai-data-governance/data-governance.md)
       - [治理策略](customer-ai/cai-data-governance/governance-policies.md)
-- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

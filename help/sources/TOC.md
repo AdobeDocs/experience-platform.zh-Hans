@@ -5,7 +5,7 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: c05bdceb5092278f6fefb2cb286bf25d97716cf7
+source-git-commit: 780d1ad0886d474d2584050ab763259ba8fb8a83
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 10%
@@ -386,4 +386,4 @@ ht-degree: 10%
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

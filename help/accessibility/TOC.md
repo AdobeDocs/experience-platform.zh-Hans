@@ -2,10 +2,10 @@
 audience: user
 user-guide-title: Adobe Experience Platform 辅助功能
 user-guide-description: 了解 Experience Platform 如何致力于为各种身体状况的人士提供无障碍和具有包容性的功能。
-source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
-source-wordcount: '50'
-ht-degree: 66%
+source-wordcount: '41'
+ht-degree: 63%
 
 ---
 
@@ -17,4 +17,4 @@ ht-degree: 66%
 * [Platform的自定义辅助功能](custom.md)
 * [Platform文档](https://experienceleague.adobe.com/docs/experience-platform.html)
 * [平台概述](https://www.adobe.com/go/platform-overview-en)
-* [Platform发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

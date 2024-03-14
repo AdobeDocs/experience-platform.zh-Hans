@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '282'
-ht-degree: 24%
+ht-degree: 23%
 
 ---
 
@@ -81,4 +81,4 @@ ht-degree: 24%
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
-* [发行说明](https://www.adobe.com/go/platform-release-notes_cn)
+* [发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
