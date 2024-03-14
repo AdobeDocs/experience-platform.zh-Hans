@@ -3,10 +3,10 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 151695e348764a25f2b2e986dcbdc1970a67ad47
+source-git-commit: 6991bad03b298373a0d55258dacc60ea8d797fd8
 workflow-type: tm+mt
-source-wordcount: '3772'
-ht-degree: 48%
+source-wordcount: '3894'
+ht-degree: 49%
 
 ---
 
@@ -147,7 +147,7 @@ ht-degree: 48%
 
 #### 客户数字交易架构
 
-此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析和增强的受众功能。
+此架构用于构建和引用构成您的客户活动的事件数据，这些活动发生在您的网站或关联的数字平台上。 此数据通常摄取到 [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) 并且是引用各种浏览和转化事件所必需的，这些事件用于触发历程、详细的在线客户分析、增强的受众功能和个性化消息传递。
 
 客户数字交易模式由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 
@@ -178,6 +178,25 @@ ht-degree: 48%
 
 +++
 
++++商务详细信息（字段组）
+
+此 [商业详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
+
+| 字段 | 描述 |
+| --- | --- |
+| `commerce.cart.cartID` | 购物车的 ID。 |
+| `commerce.order.orderType` | 描述产品订购类型的对象。 |
+| `commerce.order.payments.paymentAmount` | 描述产品订购付款金额的对象。 |
+| `commerce.order.payments.paymentType` | 描述产品订购付款类型的对象。 |
+| `commerce.order.payments.transactionID` | 对象产品订单交易 ID。 |
+| `commerce.order.purchaseID` | 对象产品订单购买 ID。 |
+| `productListItems.name` | 代表客户选择的产品的项目名称列表。 |
+| `productListItems.priceTotal` | 代表客户选择的产品的项目列表的总价。 |
+| `productListItems.product` | 所选择的产品。 |
+| `productListItems.quantity` | 代表客户选择的产品的项目列表的数量。 |
+
++++
+
 +++外部源系统审计详细信息（字段组）
 
 外部来源系统审计属性是一种标准体验数据模型 (XDM) 数据类型，用于捕获有关外部来源系统的审核详细信息。
@@ -186,7 +205,7 @@ ht-degree: 48%
 
 #### 客户离线交易架构
 
-此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。该数据通常会从 POS（或类似系统）摄入 [!DNL Adobe Experience Platform]，并且通常会通过 API 连接流式传输到 Platform。其目的在于引用各种离线转化事件，这些事件用于触发历程、深度在线和离线客户分析以及增强受众功能。
+此架构用于构建和引用构成您的网站之外的平台上发生的客户活动的事件数据。该数据通常会从 POS（或类似系统）摄入 [!DNL Adobe Experience Platform]，并且通常会通过 API 连接流式传输到 Platform。其目的是引用各种离线转化事件，用于触发历程、深度在线和离线客户分析、增强受众功能和个性化消息传递。
 
 客户离线交易架构由 [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) 类。
 
@@ -346,7 +365,7 @@ ht-degree: 48%
 设置此受众时需要以下字段和条件：
 
 * `eventType: commerce.productViews`
-* 和 `THEN` （顺序事件）排除 `eventType: commerce.productListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
+* 和 `THEN` （顺序事件）排除 `eventType: commerce.productListAdds` 和 `application.launch` 和 `web.webpagedetails.pageViews` 和 `commerce.purchases` （包括在线和离线）
    * `Timestamp: > 3 days after productView`
 * `Timestamp: > 4 days`
 
@@ -359,7 +378,7 @@ ht-degree: 48%
 设置此受众时需要以下字段和条件：
 
 * `eventType: commerce.productViews`
-* 和 `THEN` （顺序事件）包括 `eventType: commerce.productListAdds` 或 `application.launch` 或 `web.webpagedetails.pageViews` 或 `commerce.purchases` （包括在线和离线）
+* 和 `THEN` （顺序事件）包括 `eventType: commerce.productListAdds` 或者 `application.launch` 或者 `web.webpagedetails.pageViews` 或者 `commerce.purchases` （包括在线和离线）
    * `Timestamp: > 3 days after productView`
 * `Timestamp: > 4 days`
 +++
@@ -370,7 +389,7 @@ ht-degree: 48%
 
 设置此受众时需要以下字段和条件：
 
-* `eventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `eventType: commerce.productListAdds OR application.launch OR web.webpagedetails.pageViews OR commerce.purchases`
    * `Timestamp: in last 1 day` （流）
 
 +++
@@ -381,7 +400,7 @@ ht-degree: 48%
 
 设置此受众时需要以下字段和条件：
 
-* `EventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `EventType: commerce.productListAdds OR application.launch OR web.webpagedetails.pageViews OR commerce.purchases`
    * `Timestamp: in last 3 days` （批次）
 
 +++
@@ -395,7 +414,7 @@ ht-degree: 48%
 设置此受众时需要以下字段和条件：
 
 * `eventType: commerce.productListAdds`
-   * `Timestamp: >= 1 days before now and <= 4 days before now `
+   * `Timestamp: >= 1 days before now AND <= 4 days before now `
 * `eventType: commerce.purchases`
    * `Timestamp: <= 4 days before now`
 * `eventType: commerce.productListRemovals`
