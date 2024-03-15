@@ -4,24 +4,24 @@ solution: Experience Platform
 title: 自动策略实施
 description: 本文档介绍了在将受众激活到Experience Platform中的目标时，如何自动实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
+source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
 workflow-type: tm+mt
-source-wordcount: '1899'
+source-wordcount: '2012'
 ht-degree: 0%
 
 ---
 
 # 自动策略实施
 
+数据使用标签和策略可供所有Adobe Experience Platform用户使用。 定义数据使用策略并应用数据使用标签，以确保准确处理任何敏感、可识别或合同数据。 这些措施有助于强制实施您组织的数据治理规则，以便确定如何访问、处理、存储和共享数据。
+
+为了帮助保护您的组织免受潜在风险和责任的影响，在将受众激活到目标时，Platform会在发生任何违规时自动实施使用策略。
+
 >[!IMPORTANT]
 >
->自动策略实施仅适用于已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**.
+>同意策略和自动同意策略实施仅适用于已购买的组织 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**.
 
-在标记数据并定义数据使用策略后，您可以强制实施符合策略的数据使用。 将受众激活到目标时，Adobe Experience Platform会在发生任何违规时自动实施使用策略。
-
->[!NOTE]
->
->本文档重点介绍数据治理和同意政策的实施。 有关访问控制策略的信息，请参阅有关以下内容的文档： [基于属性的访问控制](../../access-control/abac/overview.md).
+本文档重点介绍数据治理和同意政策的实施。 有关访问控制策略的信息，请参阅有关以下内容的文档： [基于属性的访问控制](../../access-control/abac/overview.md).
 
 ## 先决条件
 
@@ -94,27 +94,31 @@ ht-degree: 0%
 
 在弹出框的左列中选择策略违规以显示该违规的详细信息。
 
-![](../images/enforcement/violation-policy-select.png)
+![一个对话框，指示发生了策略冲突，并突出显示策略名称。](../images/enforcement/violation-policy-select.png)
 
 违规消息提供了所违反策略的摘要，包括配置策略以检查的条件、触发违规的特定操作以及问题的可能解决方法列表。
 
-![](../images/enforcement/violation-summary.png)
+![带有突出显示的违规摘要的策略违规对话框。](../images/enforcement/violation-summary.png)
 
 数据族图显示在违规摘要下方，允许您可视化与策略违规相关的数据集、合并策略、受众和目标。 当前更改的图元在图形中加亮，指示流中的哪个点导致发生违规。 您可以在图形内选择实体名称，以打开相关实体的详细信息页面。
 
-![](../images/enforcement/data-lineage.png)
+![突出显示数据族谱图的策略违规对话框。](../images/enforcement/data-lineage.png)
 
 您也可以使用 **[!UICONTROL 筛选]** 图标(![](../images/enforcement/filter.png))，以按类别筛选显示的实体。 必须至少选择两个类别才能显示数据。
 
-![](../images/enforcement/lineage-filter.png)
+![突出显示数据谱系过滤器和下拉菜单的策略违规对话框。](../images/enforcement/lineage-filter.png)
 
 选择 **[!UICONTROL 列表视图]** 将数据谱系显示为列表。 要切换回可视图形，请选择 **[!UICONTROL 路径查看]**.
 
-![](../images/enforcement/list-view.png)
+![突出显示数据沿袭路径视图的策略违规对话框。](../images/enforcement/list-view.png)
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
-如果您拥有 [创建的同意政策](../policies/user-guide.md#consent-policy) 并且将受众激活到目标，您可以了解同意策略如何影响激活中包含的用户档案百分比。
+将受众激活到目标时，您可以了解 [同意政策](../policies/user-guide.md#consent-policy) 会影响激活中包含的不同百分比的用户档案。
+
+>[!NOTE]
+>
+>同意策略仅适用于已购买AdobeHealthcare Shield或AdobePrivacy &amp; Security Shield的组织。
 
 #### 付费媒体的同意策略增强 {#consent-policy-enhancement}
 

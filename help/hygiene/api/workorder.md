@@ -3,7 +3,7 @@ title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
 workflow-type: tm+mt
 source-wordcount: '1281'
 ht-degree: 1%
@@ -126,9 +126,9 @@ curl -X POST \
 
 {style="table-layout:auto"}
 
-## 检索记录删除的状态(#lookup)
+## 检索记录删除的状态 {#lookup}
 
-之后 [创建记录删除请求](#create)，您可以使用GET请求检查其状态。
+在您之后 [创建记录删除请求](#create)，您可以使用GET请求检查其状态。
 
 **API格式**
 
