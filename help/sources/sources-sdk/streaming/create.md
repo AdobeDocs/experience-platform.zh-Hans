@@ -1,12 +1,10 @@
 ---
-title: 使用流服务API为流SDK创建新的连接规范
-description: 以下文档提供了有关如何使用Flow Service API创建连接规范以及通过自助服务源集成新源的步骤。
-hide: true
-hidefromtoc: true
+title: 使用流服务API为Streaming SDK创建新的连接规范
+description: 以下文档提供了有关如何使用Flow Service API创建连接规范以及通过自助式源集成新源的步骤。
 exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '736'
 ht-degree: 1%
 
 ---
@@ -15,15 +13,15 @@ ht-degree: 1%
 
 连接规范表示源的结构。 它包含有关源身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源属性的信息。 此 `/connectionSpecs` 中的端点 [!DNL Flow Service] API允许您以编程方式管理组织内的连接规范。
 
-以下文档提供了有关如何使用创建连接规范的步骤 [!DNL Flow Service] API并通过自助服务源(Streaming SDK)集成新源。
+以下文档提供了有关如何使用创建连接规范的步骤 [!DNL Flow Service] API并通过自助源(Streaming SDK)集成新源。
 
 ## 快速入门
 
-在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
+在继续之前，请查看 [快速入门指南](./getting-started.md) 有关相关文档的链接、阅读本文档中示例API调用的指南，以及有关成功调用任何Experience PlatformAPI所需的所需标头的重要信息。
 
 ## 收集工件
 
-要使用自助式源创建新的流源，您必须首先与Adobe协调，请求专用Git存储库，并与Adobe对齐有关源的标签、描述、类别和图标的详细信息。
+要使用自助源创建新的流源，您必须首先协调Adobe、请求专用Git存储库，并与Adobe提供有关源的标签、描述、类别和图标的详细信息保持一致。
 
 提供后，您必须构建私有Git存储库，如下所示：
 
@@ -38,12 +36,12 @@ ht-degree: 1%
 
 | 工件（文件名） | 描述 | 示例 |
 | --- | --- | --- |
-| {your_source} | 源的名称。 此文件夹应包含您的专用Git存储库中与您的源相关的所有工件。 | `medallia` |
-| {your_source}-category.txt | 源所属的类别，格式为文本文件。 **注释**：如果您认为您的信息源不符合以上任何类别，请联系您的Adobe代表进行讨论。 | `medallia-category.txt` 在文件中，请指定源的类别，例如： `streaming`. |
-| {your_source}-description.txt | 源的简短描述。 | [!DNL Medallia] 是营销自动化源，可用于提供 [!DNL Medallia] Experience Platform数据。 |
-| {your_source}-icon.svg | 用于在Experience Platform源目录中表示源的图像。 此图标必须是SVG文件。 |
-| {your_source}-label.txt | 您源的名称，它应显示在Experience Platform源目录中。 | 梅达利亚 |
-| {your_source}-connectionSpec.json | 包含源连接规范的JSON文件。 此文件最初不是必需的，因为您将在完成本指南时填充连接规范。 | `medallia-connectionSpec.json` |
+| {your_source} | 源的名称。 此文件夹应包含与您的源相关的所有工件，位于您的专用Git存储库中。 | `medallia` |
+| {your_source}-category.txt | 源所属的类别，格式为文本文件。 **注意**：如果您认为您的信息源不符合以上任何类别，请联系您的Adobe代表进行讨论。 | `medallia-category.txt` 在文件中，请指定源的类别，如： `streaming`. |
+| {your_source}-description.txt | 源的简要说明。 | [!DNL Medallia] 是营销自动化源，可用于将 [!DNL Medallia] 要Experience Platform的数据。 |
+| {your_source}-icon.svg | 用于在Experience Platform源目录中表示您的源的图像。 此图标必须是SVG文件。 |
+| {your_source}-label.txt | 应显示在Experience Platform源目录中的源名称。 | 梅达利亚 |
+| {your_source}-connectionSpec.json | 包含源连接规范的JSON文件。 最初不需要此文件，因为您将在完成本指南时填充连接规范。 | `medallia-connectionSpec.json` |
 
 {style="table-layout:auto"}
 
@@ -51,9 +49,9 @@ ht-degree: 1%
 >
 >在连接规范的测试期间，您可以使用 `text` 在连接规范中。
 
-将必要的文件添加到专用Git存储库后，您必须创建一个拉取请求(PR)供Adobe审查。 您的PR获得批准并合并后，您将会获得一个ID，该ID可用于连接规范，以引用源的标签、描述和图标。
+将必要的文件添加到专用Git存储库后，您必须创建一个拉取请求(PR)以供Adobe审查。 您的PR获得批准并合并后，将为您提供一个可用于连接规范的ID，以引用源的标签、描述和图标。
 
-接下来，按照下面列出的步骤配置连接规范。 有关可添加到源的不同功能（如高级计划、自定义架构或不同分页类型）的其他指导，请查看以下方面的指南： [配置源规范](../config/sourcespec.md).
+接下来，按照下面列出的步骤配置您的连接规范。 有关可添加到源的不同功能（如高级计划、自定义架构或不同分页类型）的其他指导，请查看以下方面的指南： [配置源规范](../config/sourcespec.md).
 
 ## 复制连接规范模板
 
@@ -141,7 +139,7 @@ ht-degree: 1%
 * [配置源规范](../config/sourcespec.md)
 * [配置浏览规范](../config/explorespec.md)
 
-更新了规范信息后，您可以通过向以下网站发出POST请求来提交新的连接规范： `/connectionSpecs` 的端点 [!DNL Flow Service] API。
+更新您的规范信息后，您可以通过向以下POST请求提交新的连接规范： `/connectionSpecs` 的端点 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -233,7 +231,7 @@ curl -X POST \
 
 **响应**
 
-成功响应将返回新创建的连接规范，包括其唯一的 `id`.
+成功的响应会返回新创建的连接规范，包括其唯一的 `id`.
 
 ```json
 {
@@ -318,6 +316,6 @@ curl -X POST \
 
 ## 后续步骤
 
-现在您已经创建了新的连接规范，则必须将其对应的连接规范ID添加到现有流规范中。 请参阅上的教程 [更新流程规范](./update-flow-specs.md) 了解更多信息。
+现在您已经创建了新的连接规范，则必须将其对应的连接规范ID添加到现有流规范中。 请参阅上的教程 [更新流规范](./update-flow-specs.md) 以了解更多信息。
 
-要对您创建的连接规范进行修改，请参阅以下教程： [更新连接规范](./update-connection-specs.md).
+要修改您创建的连接规范，请参阅上的教程 [更新连接规范](./update-connection-specs.md).

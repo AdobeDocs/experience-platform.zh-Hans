@@ -1,10 +1,8 @@
 ---
 title: 使用流服务API更新流SDK的连接规范
-description: 以下文档提供了有关如何使用Flow Service API for Self-Serve Sources (Streaming SDK)制定连接规范的步骤。
-hide: true
-hidefromtoc: true
+description: 以下文档提供了有关如何使用适用于自助源的流服务API (Streaming SDK)制定连接规范的步骤。
 exl-id: 89f96ae1-81d0-47a3-9e21-7dae810ee823
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 2%
@@ -23,7 +21,7 @@ PUT /connectionSpecs/{CONNECTION_SPEC_ID}
 
 **请求**
 
-以下请求为上一个教程中创建的流连接规范添加了描述。
+以下请求会为上一个教程中创建的流连接规范添加说明。
 
 ```shell
 PUT -X GET \
@@ -107,7 +105,7 @@ PUT -X GET \
 
 **响应**
 
-成功的调用会返回更新的连接规范详细信息，包括其更新的名称。
+成功的调用将返回更新的连接规范详细信息，包括其更新的名称。
 
 ```json
 {

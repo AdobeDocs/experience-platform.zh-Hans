@@ -1,13 +1,11 @@
 ---
 title: 适用于流SDK UI的文档自助服务模板
 description: 了解如何使用UI将流数据从源引入Adobe Experience Platform。
-hide: true
-hidefromtoc: true
 exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
-source-wordcount: '1198'
-ht-degree: 1%
+source-wordcount: '1186'
+ht-degree: 0%
 
 ---
 
@@ -101,7 +99,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 ![源工作流的映射步骤。](../assets/streaming/mapping.png)
 
-## 请查看
+## 审核
 
 此 **[!UICONTROL 审核]** 此时会显示步骤，允许您在创建新数据流之前对其进行查看。 详细信息分为以下类别：
 
