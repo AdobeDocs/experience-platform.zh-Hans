@@ -3,9 +3,9 @@ title: Acxiom潜在客户抑制
 description: 将您的第一方受众导出到Acxiom目标，以允许Acxiom抑制已知或转换的客户。 然后，使用Acxiom源连接器从Acxiom中摄取并激活潜在客户列表，并删除已知或转换的客户。
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta 版
-source-git-commit: c881f8375bc0eccb8e64666a888735c03018421c
+source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1466'
 ht-degree: 2%
 
 ---
@@ -102,7 +102,7 @@ Acxiom的服务将搜索文件、检索该文件并将其与其他选择标准�
 
 ### 现有帐户
 
-已使用Acxiom Prospect-Suppression卡定义的帐户将显示在列表弹出窗口中，选择时提供有关帐户的详细信息。  当您导航到 **目标** > **帐户**；
+已使用 [!DNL Acxiom Prospect Suppression] 目标显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 从UI查看示例，当您导航到 **[!UICONTROL 目标]** > **[!UICONTROL 帐户]**：
 
 ![现有帐户](../../assets/catalog/data-partner/acxiom/image-destination-account.png)
 
@@ -145,14 +145,14 @@ Acxiom的服务将搜索文件、检索该文件并将其与其他选择标准�
 
 | 目标字段 | 源描述 |
 |--------------|-------------------------------------------------------------|
-| name | Experience Platform中的person.name.fullName值。 |
-| firstName | Experience Platform中的person.name.firstName值。 |
-| 姓氏 | Experience Platform中的person.name.lastName值。 |
-| address1 | Experience Platform中的mailingAddress.street1值。 |
-| address2 | Experience Platform中的mailingAddress.street2值。 |
-| city | Experience Platform中的mailingAddress.city值。 |
-| state | Experience Platform中的mailingAddress.state值。 |
-| zip | Experience Platform中的mailingAddress.postalCode值。 |
+| name | 此 `person.name.fullName` Experience Platform值。 |
+| firstName | 此 `person.name.firstName` Experience Platform值。 |
+| 姓氏 | 此 `person.name.lastName` Experience Platform值。 |
+| address1 | 此 `mailingAddress.street1` Experience Platform值。 |
+| address2 | 此 `mailingAddress.street2` Experience Platform值。 |
+| city | 此 `mailingAddress.city` Experience Platform值。 |
+| state | 此 `mailingAddress.state` Experience Platform值。 |
+| zip | 此 `mailingAddress.postalCode` Experience Platform值。 |
 
 {style="table-layout:auto"}
 

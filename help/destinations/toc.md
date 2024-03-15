@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1218'
 ht-degree: 4%
 
 ---
@@ -142,6 +142,7 @@ ht-degree: 4%
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
    * 数据和身份合作伙伴 {#data-partner}
       * [Acxiom潜在客户抑制](./catalog/data-partner/acxiom-prospect-suppression.md)
+      * [Acxiom数据增强](./catalog/data-partner/acxiom-data-enhancement.md)
    * 电子商务目标 {#ecommerce}
       * [SAP商务](./catalog/ecommerce/sap-commerce.md)
    * 电子邮件目标 {#email}

@@ -1,12 +1,12 @@
 ---
 title: Acxiom数据增强
-description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道进行扩充和使用。
+description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道扩充和使用。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta 版
-source-git-commit: 6f272ce0ad619f835920ab9d25d0946d7709d7cb
+source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
 workflow-type: tm+mt
-source-wordcount: '1312'
-ht-degree: 3%
+source-wordcount: '1346'
+ht-degree: 2%
 
 ---
 
@@ -18,30 +18,29 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-使用Acxiom数据增强连接器向Adobe配置文件提供额外的描述性数据，以用于分析、分段和定位应用程序。 凭借数百个可用元素，用户可以更好地细分和建模数据，从而更准确地定位和预测建模。
+使用 [!DNL Acxiom Data Enhancement] 连接器，为您的客户配置文件提供其他描述性数据，用于分析、分段和定位应用程序。 利用数百个可用元素，可更好地细分和建模数据，从而实现更准确的定位和预测建模。
 
 ![将第一方数据导出到Acxiom，然后将扩充数据导入回Real-Time CDP的营销图](/help/destinations/assets/catalog/data-partner/acxiom/marketing-workflow-data-enhancement.png)
 
-本教程提供了创建 [!DNL Acxiom Data Enhancement] 目标连接和数据流(使用Adobe Experience Platform用户界面)。  此连接器用于向使用Amazon S3作为放置点的Acxiom增强服务传送数据。
+本教程提供了创建 [!DNL Acxiom Data Enhancement] 目标连接和数据流(使用Adobe Experience Platform用户界面)。 此连接器用于向使用Amazon S3作为放置点的Acxiom增强服务传送数据。
 
 ![已选择Acxiom目标的目标目录。](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-catalog.png)
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应当如何以及何时使用Acxiom数据增强目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解您应该如何以及何时使用 [!DNL Acxiom Data Enhancement] 目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
 ### 增强客户数据 {#enhance-customer-data}
 
-营销专业人士应使用此连接器，通过将选定的描述性元素附加到其Adobe配置文件中，并使用这些元素更好地定位营销活动，以提高其外联策略的效率。
+营销专业人士应使用此连接器，通过将选定的描述性元素附加到客户配置文件中，并使用这些元素更好地定位活动，以提高其外联策略的效率。
 
 例如，作为营销人员，您可能希望通过用其他数据丰富现有受众的用户档案，从而加深对现有受众的了解。 这样做将改进分段和定位策略，从而提高营销活动的个性化和转化。
 
 用例通过目标和源连接器的组合执行。
 
-
 首先，您可以导出现有客户记录以使用此目标连接器进行扩充。 Acxiom的服务将搜索文件、检索文件、使用Acxiom的数据扩充文件并生成文件。
 
-然后，客户将使用相应的Acxiom数据摄取源卡将水合的客户配置文件摄取回Adobe Real-Time CDP。
+然后，客户将使用相应的 [Acxiom数据摄取](/help/sources/connectors/data-partners/acxiom-data-ingestion.md) 源卡，用于将水合的客户配置文件提取回Adobe Real-Time CDP。
 
 ## 先决条件 {#prerequisites}
 
@@ -79,6 +78,8 @@ ht-degree: 3%
 >
 >要连接到目标，您需要 **[!UICONTROL 查看目标]** 和 **[!UICONTROL 管理和激活数据集目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在目标配置工作流中，填写下面两个部分中列出的字段。
+
 ### 验证目标 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
@@ -99,7 +100,7 @@ ht-degree: 3%
 
 ### 现有帐户
 
-已使用Acxiom数据增强卡定义的帐户将显示在列表弹出窗口中，选择时，将提供该帐户的详细信息。  当您导航到 **目标** > **帐户**；
+已使用 [!DNL Acxiom Data Enhancement] 目标显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 从UI查看示例，当您导航到 **[!UICONTROL 目标]** > **[!UICONTROL 帐户]**；
 
 ![现有帐户](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-account.png)
 
@@ -144,14 +145,14 @@ ht-degree: 3%
 
 | 目标字段 | 源描述 |
 |--------------|-------------------------------------------------------------|
-| name | Experience Platform中的person.name.fullName值。 |
-| firstName | Experience Platform中的person.name.firstName值。 |
-| 姓氏 | Experience Platform中的person.name.lastName值。 |
-| address1 | Experience Platform中的mailingAddress.street1值。 |
-| address2 | Experience Platform中的mailingAddress.street2值。 |
-| city | Experience Platform中的mailingAddress.city值。 |
-| state | Experience Platform中的mailingAddress.state值。 |
-| zip | Experience Platform中的mailingAddress.postalCode值。 |
+| name | 此 `person.name.fullName` Experience Platform值。 |
+| firstName | 此 `person.name.firstName` Experience Platform值。 |
+| 姓氏 | 此 `person.name.lastName` Experience Platform值。 |
+| address1 | 此 `mailingAddress.street1` Experience Platform值。 |
+| address2 | 此 `mailingAddress.street2` Experience Platform值。 |
+| city | 此 `mailingAddress.city` Experience Platform值。 |
+| state | 此 `mailingAddress.state` Experience Platform值。 |
+| zip | 此 `mailingAddress.postalCode` Experience Platform值。 |
 
 >[!NOTE]
 >
