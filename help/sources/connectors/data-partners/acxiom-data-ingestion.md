@@ -2,7 +2,7 @@
 title: Acxiom数据摄取
 description: 了解如何摄取 [!DNL Acxiom] 将数据添加到Real-time Customer Data Platform，丰富第一方用户档案，改进受众并在各个营销渠道中激活。
 badge: Beta 版
-source-git-commit: 9419da451616ca7f087ecea7aa66a6c10a474fb3
+source-git-commit: d841975249262fa5908a408e4c27c5f76b92d96e
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 1%
@@ -54,3 +54,4 @@ ht-degree: 1%
 ## 后续步骤
 
 通过阅读本文档，您已完成从获取数据所需的先决条件设置 [!DNL Acxiom] 帐户到Experience Platform。 您现在可以继续阅读以下指南： [连接 [!DNL Acxiom Data Ingestion] 使用用户界面Experience Platform](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).
+
