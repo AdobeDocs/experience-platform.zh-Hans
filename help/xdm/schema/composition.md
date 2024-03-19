@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
+source-git-commit: 1b3d20610a48fc48c84dc4901d7b09db4bb8fa1f
 workflow-type: tm+mt
-source-wordcount: '4229'
+source-wordcount: '4236'
 ht-degree: 6%
 
 ---
@@ -261,7 +261,7 @@ Experience Platform提供了许多常见数据类型，作为 [!DNL Schema Regis
 
 >[!NOTE]
 >
->“映射”字段类型允许键值对数据，包括单个键的多个值。 映射可以在标准XDM类和字段组中找到，但您也可以使用架构注册表API定义自定义映射。 请参阅上的教程 [定义自定义字段](../tutorials/custom-fields-api.md#custom-maps) 以了解更多信息。
+>“映射”字段类型允许键值对数据，包括单个键的多个值。 映射可以在标准XDM类和字段组中找到，但您也可以定义自定义映射。 请参阅上的API教程 [定义自定义映射字段](../tutorials/custom-fields-api.md#custom-maps) 或上的指南 [在UI中定义映射字段](../ui/fields/map.md) 以了解更多信息。
 
 ## 组合示例 {#composition-example}
 

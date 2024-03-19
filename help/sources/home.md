@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 源连接器概述
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: c05bdceb5092278f6fefb2cb286bf25d97716cf7
+source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1530'
 ht-degree: 1%
 
 ---
@@ -181,6 +181,7 @@ Experience Platform支持从第三方支付系统中提取数据。 有关特定
 
 - [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE 批次]{type=Informative}
 - [[!DNL Square]](connectors/payments/square.md) [!BADGE 批次]{type=Informative}
+- [[!DNL Stripe]](connectors/payments/stripe.md) [!BADGE 批次]{type=Informative}
 
 ### 流 {#streaming}
 

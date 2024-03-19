@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
+source-git-commit: 0e8147a9e4589747b212ce1dd0f0bc215f3bab4c
 workflow-type: tm+mt
-source-wordcount: '3933'
+source-wordcount: '4018'
 ht-degree: 3%
 
 ---
@@ -212,6 +212,18 @@ ht-degree: 3%
 | [!UICONTROL 修改日期] | 可让您根据受众的上次修改日期进行筛选。 您可以选择上次修改受众时要过滤的日期范围。 |
 
 ![浏览受众页面上会显示并突出显示可用的筛选器。](../images/ui/overview/filter-audiences.png)
+
+**批量操作** {#bulk-actions}
+
+此外，您最多可以选择25个不同的受众，并对这些受众执行各种操作。 这些操作包括 [移动到文件夹](#folders)， [编辑或应用标记](#tags)， [应用访问标签](../../access-control/abac/ui/labels.md)、和 [删除](#browse).
+
+![批量操作的可用选项会突出显示。](../images/ui/overview/bulk-actions.png)
+
+将批量操作应用于这些受众时，将会满足以下条件：
+
+- 您 **可以** 从不同页面中选择受众。
+- 您 **无法** 删除正在目标激活中使用的受众。
+- 如果选择过滤器，则所选受众 **将** 重置。
 
 ### 受众详细信息 {#audience-details}
 

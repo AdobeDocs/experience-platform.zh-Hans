@@ -1,10 +1,8 @@
 ---
 title: 从贵机构接收支付数据 [!DNL Stripe] 帐户以Experience Platform使用API
 description: 了解如何使用流服务API将支付数据从您的Stripe帐户摄取到Experience Platform
-hide: true
-hidefromtoc: true
 badge: Beta 版
-source-git-commit: b5e791882ddb7cb8c87c15d4812470b3bbc9a72e
+source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
 workflow-type: tm+mt
 source-wordcount: '1998'
 ht-degree: 1%

@@ -5,7 +5,7 @@ badgeBeta: label="Beta 版" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c80535cbb5dda55f1cf145f9f40bbcd40c78e63e
 workflow-type: tm+mt
 source-wordcount: '710'
 ht-degree: 1%
@@ -47,7 +47,6 @@ Experience Platform支持从流式传输数据 [!DNL Snowflake] 数据库。
 | `role` | （可选）可以为给定连接的用户提供自定义角色。 如果未提供，则此值默认为 `public`. |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Snowflake] 是 `51ae16c2-bdad-42fd-9fce-8d5dfddaf140`. |
 
-有关身份验证的详细信息，请参阅此 [[!DNL Snowflake] 文档](<https://docs.snowflake.com/en/user-guide/key-pair-auth.html>).
 
 ### 配置角色设置 {#configure-role-settings}
 
@@ -83,3 +82,4 @@ Experience Platform支持从流式传输数据 [!DNL Snowflake] 数据库。
 以下教程提供了有关如何连接 [!DNL Snowflake] 要使用APIExperience Platform的流源：
 
 * [从流式传输数据 [!DNL Snowflake] 要使用流服务APIExperience Platform的数据库](../../tutorials/api/create/databases/snowflake-streaming.md)
+* [从流式传输数据 [!DNL Snowflake] 要在Experience Platform用户界面中使用源工作区进行Experience Platform的数据库](../../tutorials/ui/create/databases/snowflake-streaming.md)

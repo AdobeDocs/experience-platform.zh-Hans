@@ -5,10 +5,10 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 概括性地探索 Experience Platform 中的体验数据模型 (XDM) 系统，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: a3b23c67847765692144459939afec23fd15c2a5
 workflow-type: tm+mt
-source-wordcount: '589'
-ht-degree: 15%
+source-wordcount: '590'
+ht-degree: 18%
 
 ---
 
@@ -43,13 +43,13 @@ ht-degree: 15%
    * [区段定义](./classes/segment-definition.md)
    * B2B类 {#b2b}
       * [XDM业务帐户](./classes/b2b/business-account.md)
-      * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
+      * [XDM 业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM商业营销活动](./classes/b2b/business-campaign.md)
-      * [XDM商业营销活动成员](./classes/b2b/business-campaign-members.md)
+      * [XDM 商业营销活动成员](./classes/b2b/business-campaign-members.md)
       * [XDM商业机会](./classes/b2b/business-opportunity.md)
-      * [XDM业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
+      * [XDM 业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
       * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
-      * [XDM商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
+      * [XDM 商业营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 字段组 {#field-groups}
    * XDM个人资料 {#profile}
       * [同意和偏好设置](./field-groups/profile/consents.md)
@@ -186,12 +186,13 @@ ht-degree: 15%
       * [数据类型](./ui/resources/data-types.md)
    * 定义字段 {#fields}
       * [概述](./ui/fields/overview.md)
-      * [必填字段](./ui/fields/required.md)
-      * [对象字段](./ui/fields/object.md)
       * [数组字段](./ui/fields/array.md)
       * [枚举字段](./ui/fields/enum.md)
       * [标识字段](./ui/fields/identity.md)
+      * [地图](./ui/fields/map.md)
+      * [对象字段](./ui/fields/object.md)
       * [关系字段](./ui/fields/relationship.md)
+      * [必填字段](./ui/fields/required.md)
    * [基于字段的工作流](./ui/field-based-workflows.md)
    * [生成示例XDM数据](./ui/sample.md)
    * [导出XDM架构](./ui/export.md)

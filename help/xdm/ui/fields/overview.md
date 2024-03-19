@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在用户界面中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 765079f084dce316d321fbac5aee9e387373ba00
+source-git-commit: 89519918aa830dc09365fa80449099229dc475d5
 workflow-type: tm+mt
-source-wordcount: '1505'
-ht-degree: 4%
+source-wordcount: '1734'
+ht-degree: 1%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 4%
 
 一旦拥有 [!DNL Schema Editor] 打开，画布中会显示用于添加字段的控件。 这些控件显示在架构的名称旁边，以及在所选类或字段组下定义的任何对象类型字段旁边。
 
-![](../../images/ui/fields/overview/select-resource.png)
+![突出显示添加图标的架构编辑器。](../../images/ui/fields/overview/select-resource.png)
 
 >[!WARNING]
 >
@@ -35,7 +35,7 @@ ht-degree: 4%
 
 要向资源添加新字段，请选择 **加(+)** 图标（位于画布中的架构名称旁边），或位于要定义其下的字段的对象类型字段旁边。
 
-![](../../images/ui/fields/overview/plus-icon.png)
+![架构编辑器中，添加图标突出显示。](../../images/ui/fields/overview/plus-icon.png)
 
 根据您是将字段直接添加到架构还是其组成类和字段组，添加字段所需的步骤会有所不同。 本文档的其余部分侧重于如何配置字段的属性，而不管该字段在架构中的显示位置如何。 有关可向架构添加字段的不同方式的更多信息，请参阅架构UI指南中的以下部分：
 
@@ -46,7 +46,7 @@ ht-degree: 4%
 
 选择 **加(+)** 图标，一个 **[!UICONTROL 无标题的字段]** 占位符显示在画布中。
 
-![](../../images/ui/fields/overview/new-field.png)
+![架构编辑器中，高亮显示了一个新的无标题字段。](../../images/ui/fields/overview/new-field.png)
 
 在右边栏中，在 **[!UICONTROL 字段属性]**，您可以配置新字段的详细信息。 每个字段都需要以下信息：
 
@@ -54,11 +54,13 @@ ht-degree: 4%
 | --- | --- |
 | [!UICONTROL 字段名称] | 字段的唯一描述性名称。 请注意，保存架构后，无法更改字段名称。 此值用于标识和引用代码和其他下游应用程序中的字段<br><br>理想情况下，名称应以camelCase编写。 它可包含字母数字、短划线或下划线字符，但它 **可能不会** 从下划线开始。<ul><li>**正确**： `fieldName`</li><li>**可接受：** `field_name2`， `Field-Name`， `field-name_3`</li><li>**不正确**： `_fieldName`</li></ul> |
 | [!UICONTROL 显示名称] | 字段的显示名称。 该名称将用于表示架构编辑器画布中的字段。 可使用将字段名称更改为显示名称 [显示名称切换](../resources/schemas.md#display-name-toggle). |
-| [!UICONTROL 类型] | 字段将包含的数据类型。 从该下拉菜单中，您可以选择以下任一项 [标准标量类型](../../schema/field-constraints.md) 受XDM或多字段之一支持 [数据类型](../resources/data-types.md) 之前在中定义的 [!DNL Schema Registry].<br><br>您还可以选择 **[!UICONTROL 高级类型搜索]** 搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
+| [!UICONTROL 类型] | 字段将包含的数据类型。 从该下拉菜单中，您可以选择以下任一项 [标准标量类型](../../schema/field-constraints.md) 受XDM或多字段之一支持 [数据类型](../resources/data-types.md) 之前在中定义的 [!DNL Schema Registry].<br>注意：如果选择“映射”数据类型，则 [!UICONTROL 映射值类型] 属性出现。<br><br>您还可以选择 **[!UICONTROL 高级类型搜索]** 搜索和筛选现有数据类型，并更轻松地找到所需类型。 |
+| [!UICONTROL 映射值类型] | 如果选择，则必须填写此值 [!UICONTROL 地图] 作为字段的数据类型。 映射的可用值包括 [!UICONTROL 字符串] 和 [!UICONTROL 整数]. 从可用选项的下拉列表中选择一个值。<br>要了解有关 [特定类型的字段属性](#type-specific-properties)，请参阅定义字段概述。 |
 
 {style="table-layout:auto"}
 
-您还可以提供易于用户阅读的可选内容 **[!UICONTROL 描述]** 到字段以提供有关字段预期用例的更多上下文。
+您还可以选择为每个字段提供说明和注释。 使用 **[!UICONTROL 描述]** 字段，用于添加上下文并描述映射数据类型的功能。 这有助于提高实施的可维护性和可读性。 您还可以添加注释以补充初始描述。 这应该提供更细粒度和更具体的信息，以帮助开发人员在代码库的上下文中有效理解、维护和利用映射。 |
+
 
 >[!NOTE]
 >
@@ -68,11 +70,11 @@ ht-degree: 4%
 
 配置完字段后，选择 **[!UICONTROL 应用]**.
 
-![](../../images/ui/fields/overview/field-details.png)
+![此 [!UICONTROL 字段属性] 架构编辑器的部分会突出显示。](../../images/ui/fields/overview/field-details.png)
 
 画布将更新以显示新添加的字段，该字段位于为您唯一租户ID命名的一个对象中(显示为 `_tenantId` （如下例所示）。 添加到架构的所有自定义字段都会自动放置在此命名空间中，以防止与Adobe提供的类和字段组中的其他字段冲突。 现在，右边栏会列出字段的路径及其其他属性。
 
-![](../../images/ui/fields/overview/field-added.png)
+![架构图中的新字段及其在 [!UICONTROL 字段属性] 部分会突出显示。](../../images/ui/fields/overview/field-added.png)
 
 您可以继续按照上述步骤向架构添加更多字段。 保存架构后，如果对其进行了任何更改，也会保存其基类和字段组。
 
@@ -86,8 +88,9 @@ ht-degree: 4%
 
 | 字段属性 | 兼容类型 | 描述 |
 | --- | --- | --- |
+| [!UICONTROL 映射值类型] | [!UICONTROL 地图] | 此 [!UICONTROL 映射值类型] 属性仅当您从以下位置选择映射值时，才会显示在UI中： [!UICONTROL 类型] 下拉菜单选项。 您可以在String和Integer值类型之间为Map选择。<br>![模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。](../../images/ui/fields/overview/map-type.png "模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。"){width="100" zoomable="yes"}<br>注意：任何通过API创建的映射数据类型（不是String或Integer类型）将显示为&#39;[!UICONTROL 复杂]&#39;数据类型。 无法创建&#39;[!UICONTROL 复杂]’数据类型。 |
 | [!UICONTROL 默认值] | [!UICONTROL 字符串]， [!UICONTROL 多次]， [!UICONTROL 长]， [!UICONTROL 整数]， [!UICONTROL 短]， [!UICONTROL 字节]， [!UICONTROL 布尔型] | 如果在摄取期间没有提供其他值，则分配给此字段的默认值。 此值必须符合字段的选定类型。<br><br>默认值在摄取时不会保存在数据集中，因为它们可能会随着时间的推移而更改。 从数据集中读取数据时，下游平台服务和应用程序会推断架构中设置的默认值。 例如，在使用查询服务查询数据时，如果属性的值为NULL，但缺省值设置为 `5` 在架构级别，查询服务应返回 `5` 而不是NULL。 请注意，此行为当前在所有AEP服务中并不一致。 |
-| [!UICONTROL 模式] | [!UICONTROL 字符串] | A [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) 此字段的值必须符合以便在摄取期间被接受。 |
+| [!UICONTROL 图案] | [!UICONTROL 字符串] | A [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) 此字段的值必须符合以便在摄取期间被接受。 |
 | [!UICONTROL 格式] | [!UICONTROL 字符串] | 从预定义的字符串格式列表中选取值必须符合的格式。 可用的格式包括： <ul><li>[[!UICONTROL 日期时间]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主机名]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL 最小长度] | [!UICONTROL 字符串] | 字符串必须包含的最小字符数才能在摄取期间接受该值。 |
 | [!UICONTROL 最大长度] | [!UICONTROL 字符串] | 字符串必须包含的最大字符数才能在摄取期间接受该值。 |
@@ -104,7 +107,8 @@ ht-degree: 4%
 
 要了解有关这些特殊类型的更多信息，请参阅以下文档：
 
-* [[!UICONTROL 必需]](./required.md)
+* [地图](./map.md)
+* [[!UICONTROL 必填]](./required.md)
 * [[!UICONTROL 数组]](./array.md)
 * [[!UICONTROL 枚举]](./enum.md)
 * [[!UICONTROL 标识]](./identity.md) （仅适用于字符串字段）

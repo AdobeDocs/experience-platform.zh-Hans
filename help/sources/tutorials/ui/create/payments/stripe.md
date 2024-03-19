@@ -1,10 +1,8 @@
 ---
 title: 使用用户界面从Stripe帐户摄取支付数据以Experience Platform。
 description: 了解如何使用用户界面将支付数据从您的Stripe账户摄取到Experience Platform。
-hide: true
-hidefromtoc: true
 badge: Beta 版
-source-git-commit: b5e791882ddb7cb8c87c15d4812470b3bbc9a72e
+source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
 workflow-type: tm+mt
 source-wordcount: '1636'
 ht-degree: 3%

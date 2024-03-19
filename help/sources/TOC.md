@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: f10716ea10c4e3962cb2d4be70c34ca048d3a869
+source-git-commit: 0d85f37ee2da4857205819a3a4dea3f25eaad26e
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1033'
 ht-degree: 10%
 
 ---
@@ -299,6 +299,7 @@ ht-degree: 10%
          - [凤凰城](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
+         - [Snowflake流](tutorials/ui/create/databases/snowflake-streaming.md)
          - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
       - 数据和身份合作伙伴 {#data-partner}
          - [Acxiom数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
