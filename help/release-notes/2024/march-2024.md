@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
-source-git-commit: 53424842fb93315ed71f4245f04141bccfb2a8ac
+source-git-commit: 709bb15f75bfee5380b779d595b3487080cbb97a
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 33%
+source-wordcount: '1063'
+ht-degree: 32%
 
 ---
 
@@ -28,6 +28,10 @@ ht-degree: 33%
 ## 目录服务 {#catalog-service}
 
 目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但Catalog包含这些文件和目录的元数据和描述，以用于查找和监控目的。
+
+>[!NOTE]
+>
+>我们了解并正在努力修复显示问题，该问题导致在表中的图像旁边呈现不必要的语法。
 
 | 功能 | 描述 |
 | --- | --- |
