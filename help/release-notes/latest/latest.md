@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7c913d0cbab0f4f9d2b7b5a476076b0c87795a0d
+source-git-commit: 33952028a4323b2292cdd313da290a5dd079c93f
 workflow-type: tm+mt
-source-wordcount: '1175'
-ht-degree: 33%
+source-wordcount: '1209'
+ht-degree: 32%
 
 ---
 
@@ -82,6 +82,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | [(Beta) Acxiom数据增强连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器可将第一方配置文件从Real-Time CDP激活到Acxiom，以便跨营销渠道扩充和使用该配置文件。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。 |
 | [(Beta) Acxiom潜在客户抑制连接](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | 新增 | 将您的第一方受众导出到Acxiom目标，以允许Acxiom抑制已知或转换的客户。 然后，使用 [Acxiom潜在客户数据导入](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) 源连接器，用于从Acxiom中摄取和激活潜在客户列表，并删除您的已知或转换的客户。 |
 | [Amazon Ads连接](../../destinations/catalog/advertising/amazon-ads.md) | 更新 | 将数据导出到Amazon广告目标时，您现在可以将数据路由到Amazon DSP或AmazonMarketing Cloud（新）。 |
+| [LiveRamp载入连接](../../destinations/catalog/advertising/liveramp-onboarding.md) | 更新 | LiveRamp载入目标现在支持向欧洲和澳大利亚投放 [!DNL LiveRamp] [!DNL SFTP] 实例。 最大导出文件大小也增加到了1000万行（以前是500万行）。 |
 
 {style="table-layout:auto"}
 

@@ -3,9 +3,9 @@ title: LiveRamp — 载入连接
 description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: a235f9a66ea15fc5e72dd6ed03e4a6a384fd30a4
 workflow-type: tm+mt
-source-wordcount: '1759'
+source-wordcount: '1941'
 ht-degree: 3%
 
 ---
@@ -70,6 +70,9 @@ ht-degree: 3%
 
 ![显示如何使用带有密码的SFTP向目标进行身份验证的示例屏幕截图](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-password.png)
 
+* **[!UICONTROL 端口]**：用于您的服务器的端口 [!DNL LiveRamp - Onboarding] 存储位置。  使用与您所在地理位置对应的端口，如下所述：
+   * **[!UICONTROL 无]**：使用端口 `22`
+   * **[!UICONTROL AU]**：使用端口 `2222`
 * **[!UICONTROL 用户名]**：您的用户名 [!DNL LiveRamp - Onboarding] 存储位置。
 * **[!UICONTROL 密码]**：您的密码 [!DNL LiveRamp - Onboarding] 存储位置。
 * **[!UICONTROL PGP/GPG加密密钥]**：（可选）您可以附加RSA格式公钥以向导出的文件添加加密。 查看下图中的加密密钥格式正确示例。
@@ -80,6 +83,8 @@ ht-degree: 3%
 
 ![显示如何使用SSH密钥向目标进行身份验证的示例屏幕截图](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-ssh.png)
 
+* **[!UICONTROL 端口]**：用于您的服务器的端口 [!DNL LiveRamp - Onboarding] 存储位置。  使用与您所在地理位置对应的端口，如下所述：
+   * **[!UICONTROL 欧盟]**：使用端口 `4222`
 * **[!UICONTROL 用户名]**：您的用户名 [!DNL LiveRamp - Onboarding] 存储位置。
 * **[!UICONTROL SSH密钥]**：私有 [!DNL SSH] 用于登录到 [!DNL LiveRamp - Onboarding] 存储位置。 私钥必须设置为 [!DNL Base64] — 编码字符串，且不能受密码保护。
 
@@ -99,10 +104,11 @@ ht-degree: 3%
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![平台UI屏幕截图，其中显示如何填写目标的详细信息](../../assets/catalog/advertising/liveramp-onboarding/liveramp-connection-details.png)
+![平台UI屏幕截图，其中显示如何填写目标的详细信息](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
 
 * **[!UICONTROL 名称]**：将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**：可帮助您将来识别此目标的描述。
+* **[!UICONTROL 区域]**：LiveRamp SFTP存储实例的地理区域。
 * **[!UICONTROL 文件夹路径]**：的路径 [!DNL LiveRamp] `uploads` 将托管导出文件的子文件夹。 此 `uploads` 前缀会自动添加到文件夹路径中。 [!DNL LiveRamp] 建议为Adobe Real-Time CDP中的投放创建一个专用的子文件夹，以将文件与其他任何现有的馈送分开，并确保所有自动操作平稳运行。
    * 例如，如果要将文件导出到 `uploads/my_export_folder`，键入 `my_export_folder` 在 **[!UICONTROL 文件夹路径]** 字段。
 * **[!UICONTROL 压缩格式]**：选择Experience Platform应用于导出文件的压缩类型。 可用选项包括 **[!UICONTROL GZIP]** 或 **[!UICONTROL 无]**.
@@ -179,6 +185,8 @@ Luma_LiveRamp_52137231-4a99-442d-804c-39a09ddd005d_20230330_153857.csv
 
 您的数据将导出到 [!DNL LiveRamp - Onboarding] 您配置的存储位置，如CSV文件。
 
+导出的文件最大行数为1000万。 如果所选受众超过1000万行，则Experience Platform每次投放生成多个文件。 如果您希望超出单个文件限制，请联系贵机构的 [!DNL LiveRamp] 让代表为您配置批量摄取。
+
 将文件导出到 [!DNL LiveRamp - Onboarding] 目标，平台为每个目标生成一个CSV文件 [合并策略Id](../../../profile/merge-policies/overview.md).
 
 例如，我们来考虑以下受众：
@@ -238,3 +246,18 @@ abc101@testemailabc.com,active,active,
 ## 其他资源 {#additional-resources}
 
 有关如何配置 [!DNL LiveRamp - Onboarding] 存储，请参见 [官方文档](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html).
+
+## Changelog {#changelog}
+
+此部分捕获此目标连接器的功能和重要文档更新。
+
++++ 查看更改日志
+
+| 发行月份 | 更新类型 | 描述 |
+|---|---|---|
+| 2024 年 3 月 | 功能和文档更新 | <ul><li>增加了对向欧洲和澳大利亚交付的支持 [!DNL LiveRamp] [!DNL SFTP] 实例。</li><li>更新了描述新支持区域的特定配置的文档。</li><li>将文件的最大文件大小增加到1000万行（以前是500万行）。</li><li>更新了文档以反映增加的文件大小。</li></ul> |
+| 2023 年 7 月 | 初始版本 | 发布了初始目标版本和文档。 |
+
+{style="table-layout:auto"}
+
++++
