@@ -2,9 +2,9 @@
 title: 身份命名空间概述
 description: 了解Identity Service中的身份命名空间。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 6ae3626c2e0f7e58968b5582ca1895bd03ab1c32
+source-git-commit: 59ac3d8b7fee0327396c990ef309ca3a4f292a77
 workflow-type: tm+mt
-source-wordcount: '1920'
+source-wordcount: '1862'
 ht-degree: 12%
 
 ---
@@ -102,13 +102,11 @@ Experience Platform提供了多个可用于所有组织的身份命名空间。 
 | Adobe Analytics（旧版ID） | 表示Adobe Analytics的命名空间。 请参阅以下文档： [Adobe Analytics命名空间](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces) 以了解更多信息。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 请参阅以下文档： [基于兴趣的广告](https://support.apple.com/en-us/HT202074) 以了解更多信息。 |
 | Apple推送通知服务 | 表示使用Apple推送通知服务收集的标识的命名空间。 请参阅以下文档： [Apple推送通知服务](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) 以了解更多信息。 |
-| 核心 | 表示Adobe Audience Manager的命名空间。 此命名空间还可以通过其旧版名称“Adobe AudienceManager”进行引用。 请参阅以下文档： [AUDIENCE MANAGERID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html#aam-ids) 以了解更多信息。 |
 | ECID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](./ecid.md) 以了解更多信息。 |
 | 电子邮件 | 表示电子邮件地址的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 请参阅以下文档： [SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) 以了解更多信息。 |
 | Firebase云消息 | 一个命名空间，它表示使用Google Firebase Cloud Messaging为推送通知收集的身份。 请参阅以下文档： [Google Firebase云消息](https://firebase.google.com/docs/cloud-messaging) 以了解更多信息。 |
 | Google Ad ID (GAID) | 表示Google广告ID的命名空间。 请参阅以下文档： [Google广告ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) 以了解更多信息。 |
-| Google点击ID | 表示Google点击ID的命名空间。 请参阅以下文档： [Google Ads中的点击跟踪](https://developers.google.com/adwords/api/docs/guides/click-tracking) 以了解更多信息。 |
 | 电话 | 表示电话号码的命名空间。 此类命名空间通常与单个人员关联，因此可用于跨不同渠道识别该人员。 |
 | 电话(E.164) | 表示需要以E.164格式进行哈希处理的原始电话号码的命名空间。 E.164格式包含一个加号(`+`)、国际国家/地区呼叫代码、本地区号和电话号码。 例如：`(+)(country code)(area code)(phone number)`。 |
 | 电话(SHA256) | 一个命名空间，它表示需要使用SHA256进行哈希处理的电话号码。 必须删除符号、字母和任何前导零。 您还必须添加国家/地区呼叫代码作为前缀。 |
