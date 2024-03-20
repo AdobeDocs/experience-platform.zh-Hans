@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
-source-git-commit: 709bb15f75bfee5380b779d595b3487080cbb97a
+source-git-commit: 7c913d0cbab0f4f9d2b7b5a476076b0c87795a0d
 workflow-type: tm+mt
-source-wordcount: '1063'
-ht-degree: 32%
+source-wordcount: '1177'
+ht-degree: 33%
 
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 32%
 对Experience Platform中现有功能的更新：
 
 - [目录服务](#catalog-service)
+- [数据收集](#data-collection)
 - [数据准备](#data-prep)
 - [目标](#destinations)
 - [Experience Data Model (XDM)](#xdm)
@@ -40,6 +41,20 @@ ht-degree: 32%
 {style="table-layout:auto"}
 
 有关目录服务的详细信息，请参阅[目录服务概述](../../catalog/home.md)。
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+
+**新增功能**
+
+| 类型 | 功能 | 描述 |
+| --- | --- | --- |
+| 扩展 | [!DNL Merkury] 标记扩展 | 此 [[!DNL Merkury] 标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag) 为匿名网站访客提供行业领先的匹配率， [!DNL Merkury] 标识。 品牌可以利用 [!DNL Merkury] 标记和Adobe，以提供实时的个性化网站体验。 此外， [!DNL Merkury] tag支持第一方数字数据以及连接的在线和离线客户档案的增长。 |
+
+{style="table-layout:auto"}
+
+要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
 
 ## 数据准备 {#data-prep}
 
