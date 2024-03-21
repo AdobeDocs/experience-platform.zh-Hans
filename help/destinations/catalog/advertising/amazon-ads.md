@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。 Amazon Ads与Adobe Experience Platform的集成提供了与Amazon Ads产品(包括Amazon DSP (ADSP))的统包集成。 通过使用Adobe Experience Platform中的Amazon广告目标，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 24f7463f7005f77f8d93e7cb2c04efc0fb4e3a0b
+source-git-commit: ba768b3148d57e9df12a34f0324c086a17a6d45a
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 [!DNL Amazon Ads] 提供一系列选项，帮助您向注册销售商、供应商、图书供应商、Kindle Direct Publishing (KDP)作者、应用程序开发人员和/或代理商实现广告目标。
 
-此 [!DNL Amazon Ads] 与Adobe Experience Platform的集成提供了到 [!DNL Amazon Ads] 产品，包括Amazon DSP (ADSP)和Amazon Marketing Cloud (AMC)。
+此 [!DNL Amazon Ads] 与Adobe Experience Platform的集成提供了到 [!DNL Amazon Ads] 产品，包括Amazon DSP (ADSP)和AmazonMarketing Cloud(AMC)。
 
 使用 [!DNL Amazon Ads] 目标：在Adobe Experience Platform中，用户能够定义广告商受众，以便在Amazon DSP中进行定位和激活。  此外，用户还可以将其数据上传到 [!DNL Amazon Marketing Cloud] 要按受众了解广告商提供的维度、Amazon区段中的会员资格或AMC中可用的其他信号等效果。 将广告商受众上传到AMC后，用户可以使用 [!DNL Amazon Marketing Cloud] 要使用中的Amazon信号修改、增强或附加到受众成员，请执行以下操作 [!DNL Amazon Marketing Cloud].
 
@@ -171,7 +171,7 @@ AMC将来自Amazon自有资产和运营资产的独特信号整合在一起，�
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2024 年 2 月 | 功能和文档更新 | 添加了用于导出受众的选项，以便 [!DNL Amazon Marketing Cloud] (AMC)。 |
+| 2024 年 3 月 | 功能和文档更新 | 添加了用于导出受众的选项，以便 [!DNL Amazon Marketing Cloud] (AMC)。 |
 | 2023 年 5 月 | 功能和文档更新 | <ul><li>在中增加了对广告商区域选择的支持 [目标连接工作流](#destination-details).</li><li>更新了文档以反映添加了“广告商区域”选择。 有关选择正确的广告商区域的详细信息，请参阅 [Amazon文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
 | 2023 年 3 月 | 初始版本 | 发布了初始目标版本和文档。 |
 
