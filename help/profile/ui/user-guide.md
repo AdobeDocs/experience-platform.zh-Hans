@@ -3,10 +3,10 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: 8cf3771145e09aa8b59a5d569f4f3a7c4820811d
 workflow-type: tm+mt
-source-wordcount: '2008'
-ht-degree: 1%
+source-wordcount: '2103'
+ht-degree: 0%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 * [[!DNL Real-Time Customer Profile] 概述](../home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 * [[!DNL Identity Service]](../../identity-service/home.md)：启用 [!DNL Real-Time Customer Profile] 通过在不同的数据源被摄取时桥接身份 [!DNL Platform].
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。
 
 ## [!UICONTROL 概述]
 
@@ -144,6 +144,12 @@ ht-degree: 1%
 
 ![“属性”选项卡会突出显示。 此时会显示配置文件属性。](../images/user-guide/attributes.png)
 
+要查看Edge上可用的属性，请选择 **[!UICONTROL Edge]** 在数据位置选择器上。
+
+![属性选项卡中的数据位置选择器会突出显示。](../images/user-guide/attributes-select.png)
+
+欲知边缘用户档案的更多信息，请阅读 [边缘配置文件文档](../edge-profiles.md).
+
 ### “事件”选项卡
 
 此 **[!UICONTROL 活动]** 选项卡包含来自与客户关联的100个最新ExperienceEvents的数据。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 选择 **[!UICONTROL 查看全部]** 对于任何单个事件，都会在事件过程中提供额外的字段和值捕获。
@@ -158,7 +164,11 @@ ht-degree: 1%
 
 有关Experience Platform分段的更多信息，请参阅 [AdobeExperience Platform分段服务文档](../../segmentation/home.md).
 
-![受众成员资格选项卡会突出显示。 此时会显示用户档案的受众成员资格详细信息。](../images/user-guide/segment-membership.png)
+![受众成员资格选项卡会突出显示。 此时会显示用户档案的受众成员资格详细信息。](../images/user-guide/audience-membership.png)
+
+要查看Edge上可用用户档案的受众成员资格，请选择 **[!UICONTROL Edge]** 在数据位置选择器中。 有关边缘分段的更多信息，请参阅 [边缘分段指南](../../segmentation/ui/edge-segmentation.md).
+
+![受众成员资格选项卡中的数据位置选择器会突出显示。](../images/user-guide/audience-membership-select.png)
 
 ## 合并策略
 
