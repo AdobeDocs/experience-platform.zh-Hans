@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: df24799e4644a98941b707bb216a4ad434f5ebf9
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1707'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform的访问控制是通过 **[!UICONTROL 权限]** 在 [A
 
 - 在许可Adobe Experience Platform或使用Experience Platform的应用程序/应用程序服务后，会向在许可期间指定的管理员发送一封电子邮件。
 - 管理员登录到 [Adobe Admin Console](#adobe-admin-console) 并选择 **Adobe Experience Platform** 从概述页面上的产品列表中。
-- 要授予对Experience Platform的访问权限，管理员需要将用户添加到默认产品配置文件： `AEP-Default-All-Users`.
+- 要授予对Experience Platform的访问权限，建议管理员将用户添加到默认产品配置文件： `AEP-Default-All-Users`.
 - 在“Experience Platform权限”中，管理员可以创建新角色，或编辑任何现有角色的权限和用户。
 - 创建或编辑角色时，管理员使用将用户添加到角色 **[!UICONTROL 用户]** 选项卡，并向这些用户授予权限(例如”[!UICONTROL 读取数据集]”或“[!UICONTROL 管理架构]“)，方法是编辑角色的权限。 同样，管理员可以使用相同的编辑选项为沙盒分配访问权限。
 - 当用户登录Experience Platform用户界面时，他们对各种Experience Platform功能的访问权限由上一步中授予的权限驱动。 例如，如果用户没有 [!UICONTROL 查看数据集] 权限， **[!UICONTROL 数据集]** 该用户看不到侧菜单中的选项卡。
