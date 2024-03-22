@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒概述
 description: 沙盒是单个Experience Platform实例中的虚拟分区，允许与数字体验应用程序的开发过程无缝集成。
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 06f1b64d5c4dfa6e0ca1f6da171ece8e9db9e693
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '991'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Experience Platform实例支持多个生产和开发沙盒，每个沙盒维护�
 总之，沙盒具有以下优势：
 
 * **应用程序生命周期管理**：创建单独的虚拟环境以开发和改进数字体验应用程序。
-* **项目和品牌管理**：允许在同一组织中并行运行多个项目，同时提供隔离和访问控制。 未来版本将支持在多个区域进行部署。
+* **项目和品牌管理**：允许在同一组织中并行运行多个项目，同时提供隔离和访问控制。
 * **灵活的发展生态系统**：以无缝、可扩展且经济高效的方式提供沙盒，用于探索、支持和演示目的。
 
 ## 沙盒访问控制
