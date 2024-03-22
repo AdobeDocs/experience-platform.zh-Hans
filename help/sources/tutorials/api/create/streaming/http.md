@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用HTTP API源通过流服务API为原始数据和XDM数据创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: fe2e93b9595d9df9a088d627d696b559f259e80d
+source-git-commit: afe632181295cc1460b3489d9b0306ef9342abfe
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1658'
 ht-degree: 3%
 
 ---
@@ -456,9 +456,6 @@ curl -X POST \
 }
 ```
 
-| 属性 | 描述 |
-| --- | --- |
-
 ## 创建数据流
 
 创建源和目标连接后，您现在可以创建数据流。 数据流负责从源中计划和收集数据。 您可以通过对以下对象执行POST请求来创建数据流 `/flows` 端点。
@@ -579,16 +576,16 @@ POST /collection/{INLET_URL}
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{INLET_URL}` | 您的流端点URL。 您可以通过向以下网站发出GET请求来检索此URL `/connections` 端点提供基本连接ID。 |
-| `{FLOW_ID}` | HTTP API流数据流的ID。 |
+| `{FLOW_ID}` | HTTP API流数据流的ID。 XDM和RAW数据都需要此ID。 |
 
 **请求**
 
 >[!BEGINTABS]
 
->[!TAB XDM]
+>[!TAB 发送XDM数据]
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
   -H 'Content-Type: application/json' \
   -d '{
         "header": {
@@ -625,10 +622,36 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
       }'
 ```
 
->[!TAB 原始数据]
+>[!TAB 将具有流ID的原始数据作为HTTP标头发送]
+
+在发送原始数据时，您可以将流ID指定为查询参数或HTTP标头的一部分。 以下示例将流ID指定为HTTP标头。
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
+  -H 'Content-Type: application/json' 
+  -H 'x-adobe-flow-id=f2ae0194-8bd8-4a40-a4d9-f07bdc3e6ce2' \
+  -d '{
+      "name": "Johnson Smith",
+      "location": {
+          "city": "Seattle",
+          "country": "United State of America",
+          "address": "3692 Main Street"
+      },
+      "gender": "Male",
+      "birthday": {
+          "year": 1984,
+          "month": 6,
+          "day": 9
+      }
+  }'
+```
+
+>[!TAB 将具有流ID的原始数据作为查询参数发送]
+
+在发送原始数据时，您可以将流ID指定为查询参数或HTTP标头。 以下示例将流ID指定为查询参数。
+
+```shell
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=f2ae0194-8bd8-4a40-a4d9-f07bdc3e6ce2 \
   -H 'Content-Type: application/json' \
   -d '{
       "name": "Johnson Smith",
