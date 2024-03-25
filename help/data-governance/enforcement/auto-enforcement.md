@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 自动策略实施
 description: 本文档介绍了在将受众激活到Experience Platform中的目标时，如何自动实施数据使用策略。
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
+source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
 workflow-type: tm+mt
-source-wordcount: '2012'
+source-wordcount: '2109'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 如果尝试激活受众时发生策略冲突(或 [对已激活的受众进行编辑](#policy-enforcement-for-activated-audiences))操作被阻止，并且出现弹出窗口，指示已违反一个或多个策略。 一旦触发违规， **[!UICONTROL 保存]** 在更新相应的组件以符合数据使用策略之前，将为要修改的实体禁用按钮。
 
-在弹出框的左列中选择策略违规以显示该违规的详细信息。
+选择一个策略名称以显示该违规的详细信息。
 
 ![一个对话框，指示发生了策略冲突，并突出显示策略名称。](../images/enforcement/violation-policy-select.png)
 
@@ -104,13 +104,21 @@ ht-degree: 0%
 
 ![突出显示数据族谱图的策略违规对话框。](../images/enforcement/data-lineage.png)
 
-您也可以使用 **[!UICONTROL 筛选]** 图标(![](../images/enforcement/filter.png))，以按类别筛选显示的实体。 必须至少选择两个类别才能显示数据。
+您也可以使用 **[!UICONTROL 筛选]** 图标(![过滤器图标。](../images/enforcement/filter.png))，以按类别筛选显示的实体。 必须至少选择两个类别才能显示数据。
 
 ![突出显示数据谱系过滤器和下拉菜单的策略违规对话框。](../images/enforcement/lineage-filter.png)
 
 选择 **[!UICONTROL 列表视图]** 将数据谱系显示为列表。 要切换回可视图形，请选择 **[!UICONTROL 路径查看]**.
 
 ![突出显示数据沿袭路径视图的策略违规对话框。](../images/enforcement/list-view.png)
+
+#### 已成功应用标签 {#labels-successfully-applied}
+
+如果在为架构字段添加标签之前创建数据使用策略，则一旦将标签应用于架构，您可能会遇到治理策略违规对话框。 在这种情况下，您可以成功地为部分架构添加标签。 此 [!UICONTROL 已成功应用标签] 选项卡指示已成功应用哪些标签，因为该字段没有策略限制。
+
+使用数据族图了解在将标签添加到架构字段之前需要执行哪些其他配置更改。
+
+![策略违规对话框 [!UICONTROL 已成功应用标签] 制表符突出显示。](../images/enforcement/labels-successfully-applied.png)
 
 ### 同意策略评估 {#consent-policy-evaluation}
 
