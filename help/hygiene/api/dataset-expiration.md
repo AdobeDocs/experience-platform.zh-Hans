@@ -3,7 +3,7 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 0d59f159e12ad83900e157a3ce5ab79a2f08d0c1
+source-git-commit: 04d49282d60b2e886a6d2dae281b98b60e6ce9b3
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 2%
@@ -489,3 +489,4 @@ curl -X GET \
 | `updatedDate` / `updatedToDate` / `updatedFromDate` | 点赞 `createdDate` / `createdFromDate` / `createdToDate`，但与数据集到期的更新时间（而不是创建时间）匹配。<br><br>每次编辑时都会考虑更新过期，包括创建、取消或执行过期的时间。 | `updatedDate=2022-01-01` |
 
 {style="table-layout:auto"}
+
