@@ -3,9 +3,9 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 0d59f159e12ad83900e157a3ce5ab79a2f08d0c1
 workflow-type: tm+mt
-source-wordcount: '1726'
+source-wordcount: '2083'
 ht-degree: 2%
 
 ---
@@ -130,8 +130,6 @@ curl -X GET \
 
 成功的响应将返回数据集到期的详细信息。
 
-<!-- Is there a different response from making a GET request to either '/ttl/{DATASET_ID}?include=history' or '/ttl/{TTL_ID}'? If so please can you provide the response for both (or just the ttl endpoint itf it differs from teh example) -->
-
 ```json
 {
     "ttlId": "SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f",
@@ -186,29 +184,105 @@ curl -X GET \
 }
 ```
 
-## 创建或更新数据集过期 {#create-or-update}
+## 创建数据集过期 {#create}
 
-通过PUT请求创建或更新数据集的到期日期。 PUT请求使用 `datasetId` 或 `ttlId`.
+要确保在指定的时间段后从系统中删除数据，请以ISO 8601格式提供数据集ID以及过期日期和时间，从而安排特定数据集的过期时间。
+
+要创建数据集过期，请执行如下所示的POST请求，并在有效负载中提供下面提到的值。
 
 **API格式**
 
 ```http
-PUT /ttl/{DATASET_ID}
-PUT /ttl/{TTL_ID}
+POST /ttl
 ```
-
-| 参数 | 描述 |
-| --- | --- |
-| `{DATASET_ID}` | 要为其计划到期的数据集的ID。 |
-| `{TTL_ID}` | 数据集过期的ID。 |
 
 **请求**
 
-以下请求计划了一个数据集 `5b020a27e7040801dedbf46e` ，以在2022年底（格林尼治标准时间）删除。 如果未找到数据集的现有过期时间，则会创建新的过期时间。 如果数据集已有待处理过期，则会使用新的更新该过期 `expiry` 值。
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/hygiene/ttl \
+  -H `Authorization: Bearer {ACCESS_TOKEN}`
+  -H `x-gw-ims-org-id: {ORG_ID}`
+  -H `x-api-key: {API_KEY}`
+  -H `Accept: application/json`
+  -d {
+      "datasetId": "5b020a27e7040801dedbf46e",
+      "expiry": "2030-12-31T23:59:59Z"
+      "displayName": "Delete Acme Data before 2025",
+      "description": "The Acme information in this dataset is licensed for our use through the end of 2024."
+      }
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `datasetId` | **必填** 要为其计划到期的目标数据集的ID。 |
+| `expiry` | **必填** ISO 8601格式的日期和时间。 如果字符串没有明确的时区偏移，则假定时区为UTC。 系统内的数据寿命根据提供的失效值设置。<br>注意：<ul><li>如果数据集已存在数据集过期，请求将失败。</li><li>此日期和时间必须至少为 **未来24小时**.</li></ul> |
+| `displayName` | 数据集过期请求的可选显示名称。 |
+| `description` | 到期请求的可选描述。 |
+
+**响应**
+
+如果不存在预先存在的数据集过期，则成功的响应会返回HTTP 201（已创建）状态以及数据集过期的新状态。
+
+```json
+{
+  "ttlId":       "SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f",
+  "datasetId":   "5b020a27e7040801dedbf46e",
+  "datasetName": "Acme licensed data",
+  "sandboxName": "prod",
+  "imsOrg":      "{ORG_ID}",
+  "status":      "pending",
+  "expiry":      "2030-12-31T23:59:59Z",
+  "updatedAt":   "2021-08-19T11:14:16Z",
+  "updatedBy":   "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e",
+  "displayName": "Delete Acme Data before 2031",
+  "description": "The Acme information in this dataset is licensed for our use through the end of 2030."
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `ttlId` | 数据集过期的ID。 |
+| `datasetId` | 此到期应用于的数据集的ID。 |
+| `datasetName` | 此过期应用于的数据集的显示名称。 |
+| `sandboxName` | 目标数据集所在的沙盒的名称。 |
+| `imsOrg` | 您组织的ID。 |
+| `status` | 数据集到期的当前状态。 |
+| `expiry` | 计划删除数据集的日期和时间。 |
+| `updatedAt` | 上次更新过期时间的时间戳。 |
+| `updatedBy` | 上次更新过期时间的用户。 |
+| `displayName` | 到期请求的显示名称。 |
+| `description` | 到期请求的描述。 |
+
+如果数据集已存在数据集过期，则出现400（错误请求）HTTP状态。 如果不存在此类数据集过期（或您无权访问），则失败的响应将返回404 （未找到）HTTP状态。
+
+## 更新数据集过期 {#update}
+
+要更新数据集的到期日期，请使用PUT请求和 `ttlId`. 您可以更新 `displayName`， `description`，和/或 `expiry` 信息。
+
+>[!NOTE]
+>
+>如果更改过期日期和时间，则以后必须至少为24小时。 这种强制的延迟为您提供了取消或重新计划到期日的机会，并可避免任何意外的数据丢失。
+
+**API格式**
+
+```http
+PUT /ttl/{TTL_ID}
+```
+
+<!-- We should be avoiding usage of TTL, Can I change that to {EXPIRY_ID} or {EXPIRATION_ID} instead? -->
+
+| 参数 | 描述 |
+| --- | --- |
+| `{TTL_ID}` | 要更改的数据集过期的ID。 |
+
+**请求**
+
+以下请求会重新计划数据集过期 `SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` 将在2024年底（格林尼治标准时间）发生。 如果发现现有数据集过期，则会使用新的更新该过期 `expiry` 值。
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/core/hygiene/ttl/5b020a27e7040801dedbf46e \
+  https://platform.adobe.io/data/core/hygiene/ttl/SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -223,7 +297,7 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `expiry` | ISO 8601格式的日期和时间。 如果字符串没有明确的时区偏移，则假定时区为UTC。 系统内的数据寿命根据提供的失效值设置。 同一数据集的任何以前过期时间戳将由您提供的新过期值替换。 |
+| `expiry` | **必填** ISO 8601格式的日期和时间。 如果字符串没有明确的时区偏移，则假定时区为UTC。 系统内的数据寿命根据提供的失效值设置。 同一数据集的任何以前过期时间戳将由您提供的新过期值替换。 此日期和时间必须至少为 **未来24小时**. |
 | `displayName` | 到期请求的显示名称。 |
 | `description` | 到期请求的可选描述。 |
 
@@ -231,7 +305,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回数据集到期的详细信息，如果更新了预先存在的到期，则返回HTTP状态200 （正常），如果不存在预先存在的到期，则返回201 （创建）。
+如果更新了预先存在的过期时间，则成功响应将返回数据集过期的新状态和HTTP状态200 （正常）。
 
 ```json
 {
@@ -258,6 +332,8 @@ curl -X PUT \
 | `updatedBy` | 上次更新过期时间的用户。 |
 
 {style="table-layout:auto"}
+
+如果不存在此类数据集过期，则失败的响应会返回404 （未找到）HTTP状态。
 
 ## 取消数据集过期 {#delete}
 
