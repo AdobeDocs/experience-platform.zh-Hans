@@ -2,14 +2,19 @@
 title: 记录您的源(Streaming SDK)
 description: 在Adobe Experience Platform中启用新源之前的最后一步是记录新源。
 exl-id: 65ca7a4d-3e02-4f54-bf07-ea2c92b8dbf1
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
 
 # 记录您的源(Streaming SDK)
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 在Adobe Experience Platform中实时设置新源之前的最后一步是记录新源。
 

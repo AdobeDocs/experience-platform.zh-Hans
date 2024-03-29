@@ -2,14 +2,19 @@
 title: 使用流服务API更新流SDK的流规范
 description: 以下文档提供了有关如何使用适用于自助源的流服务API (Streaming SDK)检索和更新流规范的步骤。
 exl-id: cc9dab7a-08fa-4c6c-bbac-cb658a6376fb
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '403'
-ht-degree: 1%
+source-wordcount: '423'
+ht-degree: 2%
 
 ---
 
 # 使用更新流规范 [!DNL Flow Service] API
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 生成新的连接规范ID后，必须将此ID添加到流规范中，才能创建数据流。
 

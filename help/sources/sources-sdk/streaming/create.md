@@ -2,14 +2,19 @@
 title: 使用流服务API为Streaming SDK创建新的连接规范
 description: 以下文档提供了有关如何使用Flow Service API创建连接规范以及通过自助式源集成新源的步骤。
 exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '756'
 ht-degree: 1%
 
 ---
 
 # 使用创建新的连接规范 [!DNL Flow Service] API
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 连接规范表示源的结构。 它包含有关源身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源属性的信息。 此 `/connectionSpecs` 中的端点 [!DNL Flow Service] API允许您以编程方式管理组织内的连接规范。
 

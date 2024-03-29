@@ -2,14 +2,19 @@
 title: 使用流服务API更新流SDK的连接规范
 description: 以下文档提供了有关如何使用适用于自助源的流服务API (Streaming SDK)制定连接规范的步骤。
 exl-id: 89f96ae1-81d0-47a3-9e21-7dae810ee823
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '143'
-ht-degree: 2%
+source-wordcount: '163'
+ht-degree: 3%
 
 ---
 
 # 使用流服务API更新连接规范
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 可以通过PUT操作更新连接规范的属性。 通过PUT请求更新连接规范时，正文必须包括在POST请求中创建新连接规范时所需的所有字段。
 

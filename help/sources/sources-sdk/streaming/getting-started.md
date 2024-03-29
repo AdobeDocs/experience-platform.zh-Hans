@@ -2,14 +2,19 @@
 title: 自助源快速入门(Streaming SDK)
 description: 本文档介绍了在尝试使用自助源(Streaming SDK)创建新源之前需要了解的先决条件信息。
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '543'
 ht-degree: 12%
 
 ---
 
 # 自助源快速入门(Streaming SDK)
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 自助式源（流SDK）允许您集成自己的源，以将流数据引入Adobe Experience Platform。 本文档介绍了在尝试调用 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 

@@ -2,14 +2,19 @@
 title: 测试并提交源
 description: 以下文档提供了有关如何使用Flow Service API测试和验证新源，以及通过自助源(Streaming SDK)集成新源的步骤。
 exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta 版
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '1245'
+source-wordcount: '1265'
 ht-degree: 0%
 
 ---
 
 # 测试并提交源
+
+>[!NOTE]
+>
+>自助源流SDK处于测试阶段。 请阅读 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
 
 使用自助源(Streaming SDK)将新源集成到Adobe Experience Platform的最后一步是测试和提交新源。 完成连接规范并更新流规范后，您可以通过API或UI开始测试源的功能。 成功后，您可以联系Adobe代表以提交新的源。
 
