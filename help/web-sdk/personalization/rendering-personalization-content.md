@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK呈现个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions；sendEvent；decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 6841a6f777d18845ce36e3503fbdb9698ece84bb
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '947'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个
 
 此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同页和下一页个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/activate-edge-personalization-destinations.md).
 
-在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 以及Adobe Journey Optimizer的 [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) SDK可以自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
+在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 以及Adobe Journey Optimizer的 [Web Campaign UI](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) SDK可以自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)， Adobe Journey Optimizer的 [基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) 或Offer decisioning无法由SDK自动呈现。 相反，您必须使用SDK请求此内容，然后自行手动渲染内容。
 
 ## 自动呈现内容 {#automatic}
 
@@ -299,7 +299,7 @@ SDK为以下人员提供工具 [管理闪烁](../personalization/manage-flicker.
 
 ## 在单页应用程序中渲染建议而不增加量度 {#applypropositions}
 
-此 `applyPropositions` 命令允许您从呈现或执行建议数组 [!DNL Target] 单页应用程序，而不增加 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报告准确性。
+此 `applyPropositions` 命令允许您从呈现或执行建议数组 [!DNL Target] 或Adobe Journey Optimizer集成到单页应用程序中，而不增加 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报告准确性。
 
 >[!IMPORTANT]
 >
@@ -338,7 +338,7 @@ alloy("applyPropositions", {
 
 ### 用例2：没有选择器的渲染建议
 
-此用例适用于使用创作的活动选件 [!DNL Target Form-based Experience Composer].
+此用例适用于使用创作的体验 [!DNL Target Form-based Experience Composer] 或Adobe Journey Optimizer的 [基于代码的体验渠道](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
 
 您必须在以下位置提供选择器、操作和范围： `applyPropositions` 呼叫。
 
@@ -372,16 +372,31 @@ alloy("sendEvent", {
         var renderedPropositions = applyPropositionsResult.propositions;
 
         // Send the display notifications via sendEvent command
-        alloy("sendEvent", {
-            "xdm": {
-                "eventType": "decisioning.propositionDisplay",
-                "_experience": {
-                    "decisioning": {
-                        "propositions": renderedPropositions
-                    }
-                }
-            }
-        });
+        function sendDisplayEvent(proposition) {
+            const {
+                id,
+                scope,
+                scopeDetails = {}
+            } = proposition;
+
+            alloy("sendEvent", {
+                xdm: {
+                    eventType: "decisioning.propositionDisplay",
+                    _experience: {
+                        decisioning: {
+                            propositions: [{
+                                id: id,
+                                scope: scope,
+                                scopeDetails: scopeDetails,
+                            }, ],
+                            propositionEventType: {
+                                display: 1
+                            },
+                        },
+                    },
+                },
+            });
+        }
     });
 });
 ```

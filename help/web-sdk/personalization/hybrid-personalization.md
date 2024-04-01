@@ -3,9 +3,9 @@ title: 使用Web SDK和边缘网络服务器API的混合个性化
 description: 本文演示了如何将Web SDK与服务器API结合使用，在Web资产上部署混合个性化。
 keywords: 个性化；混合；服务器API；服务器端；混合实现；
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '861'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 混合个性化描述使用检索服务器端个性化内容的过程。 [边缘网络服务器API](../../server-api/overview.md)，并在客户端呈现，使用 [Web SDK](../home.md).
 
-您可以将混合个性化与Adobe Target或Offer Decisioning等个性化解决方案一起使用，其区别在于 [!UICONTROL 服务器API] 有效负荷。
+您可以将混合个性化与Adobe Target、Adobe Journey Optimizer或Offer Decisioning等个性化解决方案一起使用，不同之处在于 [!UICONTROL 服务器API] 有效负荷。
 
 ## 先决条件 {#prerequisites}
 
@@ -39,9 +39,9 @@ ht-degree: 2%
 1. 服务器API将个性化内容返回到应用程序服务器。
 1. 应用程序服务器向客户端浏览器返回HTML响应，其中包含 [身份和集群Cookie](#cookies).
 1. 在客户端页面上， [!DNL Web SDK] `applyResponse` 调用命令，传入的标头和正文 [!UICONTROL 服务器API] 上一步的响应。
-1. 此 [!DNL Web SDK] 渲染页面加载 [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 自动选件，因为 `renderDecisions` 标志设置为 `true`.
-1. 基于表单 [!DNL JSON] 选件通过以下方式手动应用 `applyPersonalization` 方法，更新 [!DNL DOM] 基于个性化选件。
-1. 对于基于表单的活动，必须手动发送显示事件，以指示何时显示选件。 这可以通过以下方式实现 `sendEvent` 命令。
+1. 此 [!DNL Web SDK] 渲染Target [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 由于Offers和Journey Optimizer Web渠道项目具有 `renderDecisions` 标志设置为 `true`.
+1. Target基于表单 [!DNL HTML]/[!DNL JSON] 选件和基于Journey Optimizer代码的体验可通过以下方式手动应用： `applyProposition` 方法，更新 [!DNL DOM] 基于建议中的个性化内容。
+1. 对于Target基于表单 [!DNL HTML]/[!DNL JSON] 基于选件和代码的Journey Optimizer体验中，“显示”事件必须手动发送，以指示何时已显示返回的内容。 这可以通过以下方式实现 `sendEvent` 命令。
 
 ## Cookie {#cookies}
 
