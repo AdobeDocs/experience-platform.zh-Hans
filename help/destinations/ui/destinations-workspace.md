@@ -3,10 +3,10 @@ keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录
 title: 目标工作区
 description: 目标工作区包括五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 以下各节对这些要求进行了说明。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: dad07add8c5f9cc98a187c2e2222a51611dbd1a2
 workflow-type: tm+mt
-source-wordcount: '1217'
-ht-degree: 2%
+source-wordcount: '1231'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ![目标仪表板概述选项卡。](../../dashboards/images/destinations/dashboard-overview.png)
 
-## [!UICONTROL Catalog] {#catalog}
+## [!UICONTROL 目录] {#catalog}
 
 此 **[!UICONTROL 目录]** 选项卡显示中可用的所有目标列表 [!DNL Platform]，可将数据发送至。
 
@@ -110,7 +110,7 @@ ht-degree: 2%
 | [!UICONTROL 已创建] | 创建到目标的激活流的日期和UTC时间。 选择向上/向下箭头符号，按最新先或最旧先对激活流进行排序。 |
 | [!UICONTROL 状态] | `Enabled` 或 `Disabled`. 指示是否正在将数据激活到此目标。 |
 
-单击目标行可在右边栏中显示有关目标的更多信息。
+单击目标行可在右边栏中显示有关目标的更多信息，例如目标ID、描述、激活的受众数量等。
 
 ![单击目标行](../assets/ui/workspace/click-destination-row.png)
 
@@ -120,8 +120,8 @@ ht-degree: 2%
 
 此 **[!UICONTROL 系统视图]** 选项卡以图形方式呈现您在Adobe Experience Platform中设置的激活流程。
 
-![Data-flows1](../assets/ui/workspace/data-flows1.png)
+![数据流1](../assets/ui/workspace/data-flows1.png)
 
 选择页面上显示的任何目标，然后单击 **[!UICONTROL 查看数据流]** 查看有关您为每个目标设置的所有连接的信息。
 
-![Data-flows2](../assets/ui/workspace/data-flows2.png)
+![数据流2](../assets/ui/workspace/data-flows2.png)
