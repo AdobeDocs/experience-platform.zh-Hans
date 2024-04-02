@@ -5,10 +5,10 @@ title: Privacy ServiceAPI指南附录
 description: 本文档包含有关使用Privacy ServiceAPI的其他信息。
 role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 644e85fe5c9b1a37f69c75755713e929736c2e89
 workflow-type: tm+mt
-source-wordcount: '476'
-ht-degree: 5%
+source-wordcount: '496'
+ht-degree: 6%
 
 ---
 
@@ -62,18 +62,24 @@ ht-degree: 5%
 
 下表概述了在中指定Adobe产品的接受值 `include` 作业创建请求的属性。
 
+>[!NOTE]
+>
+>产品列表的值不区分大小写。 建议使用驼峰式大小写，但不强制使用。
+
 | 产品 | 在中使用的值 `include` 属性 |
 | --- | --- |
 | Adobe Advertising Cloud | `adCloud` |
 | Adobe Analytics | `analytics` |
-| Adobe Audience Manager | `AudienceManager` |
+| Adobe Audience Manager | `audienceManager` |
 | Adobe Campaign | `campaign` |
 | Adobe Experience Platform（数据湖） | `aepDataLake` |
 | Adobe Experience Platform （实时客户资料） | `profileService` |
 | Adobe Pass 身份验证 | `primetimeAuthentication` |
 | Adobe Target | `target` |
 | 客户属性(CRS) | `CRS` |
+| 客户历程管理 | `cjm` |
 | 身份服务 | `identity` |
 | Marketo Engage | `marketo` |
+| Marketo Measure | `marketomeasure` |
 
 {style="table-layout:auto"}
