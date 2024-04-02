@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 0e8147a9e4589747b212ce1dd0f0bc215f3bab4c
+source-git-commit: dc899a4aa64b6e734322020e4c10aee687c6d8c5
 workflow-type: tm+mt
-source-wordcount: '4018'
+source-wordcount: '4014'
 ht-degree: 3%
 
 ---
@@ -78,7 +78,7 @@ ht-degree: 3%
 | [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 与其他Platform用户共享您的受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
 | [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| [!UICONTROL Copy] | 受众构成、自定义上传、分段服务 | 复制所选受众。 |
+| [!UICONTROL Copy] | Segmentation Service | 复制所选受众。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL 存档] | 自定义上传 | 存档所选受众。 |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
