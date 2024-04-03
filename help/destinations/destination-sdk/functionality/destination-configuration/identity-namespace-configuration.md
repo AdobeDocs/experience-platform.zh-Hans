@@ -2,9 +2,9 @@
 description: 了解如何为使用Destination SDK构建的目标配置支持的目标身份。
 title: 身份命名空间配置
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 20fb966c4cc8a2b09ea64da3e688688b34a0b5d1
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '892'
 ht-degree: 4%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 4%
 
 Experience Platform使用身份命名空间来描述特定身份的类型。 例如，名为的身份命名空间 `Email` 标识如下值 `name@email.com` 作为电子邮件地址。
 
-通过Destination SDK创建目标时，除了 [配置合作伙伴架构](schema-configuration.md) 用户可以将配置文件属性和身份映射到，您还可以定义目标平台支持的身份命名空间。
+此外，在通过Destination SDK创建实时（流）目标时， [配置合作伙伴架构](schema-configuration.md) 用户可以将配置文件属性和身份映射到，您还必须定义目标平台支持的身份命名空间。 例如，如果目标平台接受经过哈希处理的电子邮件，并且 [!DNL IDFA]，则必须将这两个标识定义为 [本文档中详述](#supported-parameters).
 
-在执行此操作时，用户除了可以选择目标配置文件属性之外，还可以选择目标身份。
+将受众激活到流目标时，用户除了映射目标配置文件属性之外，还必须映射目标身份。 否则，受众将不会激活到目标平台。
+
+通过Destination SDK创建基于文件的目标时，身份命名空间的配置是可选的。
 
 要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/features/namespaces.md).
 
@@ -44,8 +46,8 @@ Experience Platform使用身份命名空间来描述特定身份的类型。 例
 
 | 集成类型 | 支持功能 |
 |---|---|
-| 实时（流）集成 | 是 |
-| 基于文件（批处理）的集成 | 是 |
+| 实时（流）集成 | 是（必需） |
+| 基于文件（批处理）的集成 | 是（可选） |
 
 ## 支持的参数 {#supported-parameters}
 
