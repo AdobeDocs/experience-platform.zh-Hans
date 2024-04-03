@@ -1,0 +1,30 @@
+---
+title: QoE（体验质量）数据详细信息收集数据类型
+description: 了解QoE（体验质量）数据详细信息数据收集类型体验数据模型(XDM)数据类型。
+source-git-commit: e1c94635b691c68de6154d19e974bfdf2e250923
+workflow-type: tm+mt
+source-wordcount: '240'
+ht-degree: 5%
+
+---
+
+# QoE（体验质量）数据详细信息收集数据类型
+
+[!UICONTROL QoE数据详细信息] “收集”是一种标准的体验数据模型(XDM)数据类型，它提供了与媒体播放期间的体验质量(QoE)相关的详细量度。 使用 [!UICONTROL QoE数据详细信息] 用于捕获比特率信息、帧率、缓冲事件、丢帧等详细信息的收集数据类型。 媒体收集字段会捕获数据并将其发送到其他Adobe服务以供进一步处理。 此数据类型支持播放质量分析，从而可以深入了解流性能、用户体验以及播放会话期间遇到的潜在问题。
+
++++选择以显示QoE数据详细信息数据类型。
+![QoE（体验质量）数据详细信息收集数据类型的图表。](../images/data-types/qoe-data-details-collection.png)
++++
+
+>[!NOTE]
+>
+>每个显示名称都包含一个链接，指向有关其音频和视频参数的更多信息。 链接的页面包含有关Adobe收集的视频广告数据、实现值、网络参数、报表和重要注意事项的详细信息。
+
+| 显示名称 | 属性 | 数据类型 | 必需 | 描述 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-----------|-----------|---------------------------------------------------------------------------------------|
+| [[!UICONTROL 比特率]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#average-bitrate) | `bitrate` | 整数 | 否 | 比特率值（以kbps为单位）。 |
+| [[!UICONTROL 丢帧]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#dropped-frames) | `droppedFrames` | 整数 | 否 | 播放期间丢帧的总数。 |
+| [[!UICONTROL 每秒帧数]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#frames-per-second) | `framesPerSecond` | 整数 | 否 | 当前流帧速率（以每秒帧数为单位）。 |
+| [[!UICONTROL 开始时间]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/quality-parameters.html#time-to-start-1) | `timeToStart` | 整数 | 否 | 视频加载与开始之间的持续时间（以秒为单位）。 |
+
+{style="table-layout:auto"}
