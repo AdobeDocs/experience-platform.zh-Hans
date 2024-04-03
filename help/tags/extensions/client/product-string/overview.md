@@ -2,10 +2,10 @@
 title: Adobe Analytics Product String扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics Product String标记扩展。
 exl-id: a49feb4e-f166-41d2-9f85-639f6ff8bb8f
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 36ca1e63c043baa776f27b627cdbe493b2ced674
 workflow-type: tm+mt
-source-wordcount: '525'
-ht-degree: 89%
+source-wordcount: '516'
+ht-degree: 90%
 
 ---
 
@@ -89,7 +89,7 @@ digitalData.transaction.item.productInfo.productName
 
 此操作必须伴随“Adobe Analytics - Set Variables”操作（用于设置相应的成功事件）和“Adobe Analytics - Send Beacon”操作。正确的操作顺序如下所示。
 
-![标准字段](./images/screenshot-price-type.png)
+![标准字段](./images/screenshot-action-type.png)
 
 ### 要求
 
