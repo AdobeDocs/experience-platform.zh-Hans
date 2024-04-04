@@ -4,10 +4,10 @@ title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 9966385968540701f66acbb70c0810906650b7e1
 workflow-type: tm+mt
-source-wordcount: '940'
-ht-degree: 12%
+source-wordcount: '1066'
+ht-degree: 6%
 
 ---
 
@@ -23,25 +23,25 @@ ht-degree: 12%
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md)：根据来自多个来源的汇总数据提供统一的实时使用者个人资料。
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md)：允许您使用区段定义或其他外部源从实时客户档案数据构建受众。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：[!DNL Platform] 用于组织客户体验数据的标准化框架。为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 
 以下部分提供成功调用 [!DNL Platform] API。
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关示例 API 调用的文档中使用的惯例信息，请参阅 [ 故障排除指南中的](../../landing/troubleshooting.md#how-do-i-format-an-api-request)如何读取示例 API 调用[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。还提供了在 API 响应中返回的示例 JSON。有关文档中用于示例API调用的惯例的信息，请参阅 [如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标头的值
 
-为调用 [!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
+- x-api-key： `{API_KEY}`
+- x-gw-ims-org-id： `{ORG_ID}`
 
 中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 所有请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -72,7 +72,12 @@ ht-degree: 12%
 
 ### 如何生成估算
 
-数据样本用于评估区段定义并估计符合条件的用户档案的数量。 每天早上（上午12点到凌晨2点，即UTC时间7-9点）将新数据加载到内存中，并使用当天的示例数据来估计所有分段查询。 因此，新增的任何字段或收集的任何额外数据都将反映在第二天的估计数中。
+启用实时客户资料的数据被摄取到Platform后，将存储在资料数据存储中。 当将记录摄取到配置文件存储中增加或减少总配置文件计数超过5%时，将触发取样作业以更新计数。 如果配置文件数的变化不超过5%，则取样作业将每周自动运行。
+
+触发示例的方式取决于所使用的摄取类型：
+
+- 对于流数据工作流，会每小时进行一次检查，以确定是否满足了5%的增加或减少阈值。 如果达到此阈值，则会自动触发示例作业以更新计数。
+- 对于批量摄取，在成功将批次摄取到配置文件存储区后15分钟内，如果满足5%的增加或减少阈值，则会运行作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
 
 样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本量：
 
