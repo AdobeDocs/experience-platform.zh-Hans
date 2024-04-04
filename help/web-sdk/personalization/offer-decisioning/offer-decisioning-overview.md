@@ -3,9 +3,9 @@ title: 在Platform Web SDK中使用Offer Decisioning
 description: Adobe Experience Platform Web SDK可以投放和呈现Offer Decisioning托管的个性化优惠。 您可以使用Offer decisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning；决策；Web SDK；Platform Web SDK；个性化优惠；投放优惠；优惠投放；优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 0449718b1f536055d3dca27dfed1346c066e0325
+source-git-commit: 22477c11a977059849d9b47871a5c2aef1da4b24
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '818'
 ht-degree: 3%
 
 ---
@@ -27,8 +27,6 @@ Adobe Experience Platform [!DNL Web SDK] 可以投放和呈现在Offer decisioni
 ## 术语
 
 在使用Offer decisioning时，请务必了解以下术语。 欲了解更多信息和查看更多术语，请访问 [offer decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
-
-* **容器：** 容器是一种隔离机制，用于隔离不同的关注点。 容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
 * **决策范围：** 对于Offer decisioning，决策范围是JSON的Base64编码字符串，其中包含希望offer decisioning服务用来建议优惠的活动和版面ID。
 
