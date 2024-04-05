@@ -2,7 +2,7 @@
 title: 查询服务打包
 description: 以下文档概述了可用于查询服务的功能和产品的打包，并着重说明了临时查询和批量查询之间的差异。
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 58d961e26874bf5be421fc24cf6c9d7e8855d64b
+source-git-commit: 1e18a60478e2755f49d37d4d3bf4bd3ca6dbf23b
 workflow-type: tm+mt
 source-wordcount: '980'
 ht-degree: 2%
@@ -85,3 +85,4 @@ Experience Platform的访问控制是通过 [Adobe Admin Console](https://adminc
 ## 后续步骤
 
 通过阅读本文档，您应该更好地了解查询服务中可用的不同打包类型和查询执行功能。 要了解有关查询服务的更多信息（如著名的行业用例），请参阅 [用例文档](./use-cases/abandoned-browse.md). 欲知更多一般信息，请访问 [查询服务概述](./home.md).
+
