@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 流分段UI指南
 description: Adobe Experience Platform上的流式分段允许您近乎实时地执行分段，同时专注于数据丰富度。 借助流式分段，现在可在数据进入Platform时进行区段鉴别，从而无需安排和运行分段作业。 借助此功能，现在可以在将数据传递到Platform时评估大多数区段规则，这意味着区段成员资格将保持最新，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 23504dd0909488e2ee63bf356fba4c7f0f7320dc
+source-git-commit: 88f2c8723ef16ff5601dc7e45a9f77b25f45acfd
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1529'
 ht-degree: 0%
 
 ---
@@ -119,3 +119,7 @@ ht-degree: 0%
 ### 区段定义需要多久才能可用？
 
 区段定义最多需要一小时才能可用。
+
+### 流式传输的数据是否有任何限制？
+
+为了将流式处理的数据用于流式分段，在 **必须** 是流式传输的事件之间的间距。 如果在同一秒内有太多事件流入网络，Platform会将这些事件视为机器人生成的数据，因此它们将被丢弃。 作为最佳实践，您应该 **至少** 事件数据之间的间隔为五秒钟，以确保数据得到正确使用。

@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: b129efacb077af0148a743e43ec23f9f8b8d7d3e
+source-git-commit: 81e1ce90b1778bb29c770e1468461949a1ea468c
 workflow-type: tm+mt
-source-wordcount: '3122'
+source-wordcount: '3189'
 ht-degree: 1%
 
 ---
@@ -269,3 +269,10 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 如果您使用个人资料查找来检索新创建的个人资料并查看其受众成员资格，则它将显示为成员 **两者** 受众A和受众B，尽管这两个受众的定义相互矛盾。 运行每日批次分段评估作业后，将更新受众成员资格以反映配置文件数据的此更新状态。
 
 如果您需要更高的实时受众分辨率，请使用流分段或边缘分段。
+
+### 流式数据在批量分段工作流中可用需要多长时间？
+
+在批量分段工作流中可以使用流数据最多可能需要三个小时。
+
+例如，如果批处理分段作业在晚上9点运行，则它一定包含流式摄取的数据 **直到** 下午6点。 流式处理下午6点后但晚上9点之前摄取的摄取数据 **五月** 包括。
+

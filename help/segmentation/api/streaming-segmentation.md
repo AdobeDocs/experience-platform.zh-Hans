@@ -4,9 +4,9 @@ title: 使用流式分段近乎实时地评估事件
 description: 本文档包含有关如何将流式分段与Adobe Experience Platform分段服务API一起使用的示例。
 role: Developer
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 2afd0ff97478938f4101e5a4b583e56a760840a2
 workflow-type: tm+mt
-source-wordcount: '1962'
+source-wordcount: '2038'
 ht-degree: 4%
 
 ---
@@ -454,3 +454,7 @@ curl -X POST \
 ### 区段定义需要多久才能可用？
 
 区段定义最多需要一小时才能可用。
+
+### 流式传输的数据是否有任何限制？
+
+为了将流式处理的数据用于流式分段，在 **必须** 是流式传输的事件之间的间距。 如果在同一秒内有太多事件流入网络，Platform会将这些事件视为机器人生成的数据，因此它们将被丢弃。 作为最佳实践，您应该 **至少** 事件数据之间的间隔为五秒钟，以确保数据得到正确使用。
