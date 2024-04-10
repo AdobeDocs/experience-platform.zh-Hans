@@ -2,14 +2,18 @@
 title: 在UI中创建Google Ads源连接
 description: 了解如何使用Google UI创建Adobe Experience Platform Ads源连接。
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
+source-git-commit: ce3dabe4ab08a41e581b97b74b3abad352e3267c
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
 
 # 在UI中创建Google Ads源连接
+
+>[!WARNING]
+>
+>此 [!DNL Google Ads] 源暂时不可用。 Adobe正在努力解决此源的问题。
 
 >[!NOTE]
 >
