@@ -2,9 +2,9 @@
 title: Real-Time CDP产品文档
 description: 了解如何使用Adobe Real-Time CDP。
 solution: Real-Time Customer Data Platform
-product: Real-Time Customer Data Platform
+product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
+source-git-commit: 882852b186779c29c5d2b46a56b73809b8611dd6
 workflow-type: tm+mt
 source-wordcount: '1090'
 ht-degree: 4%
