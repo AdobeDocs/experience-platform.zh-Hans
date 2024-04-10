@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在Privacy ServiceUI中管理隐私作业
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监视隐私请求。
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 93d9e5965e0f5556ff2b584c8b66bd7a7be15d23
+source-git-commit: 8ba06a5d572310e2822a5b3c9f82ff0721540f69
 workflow-type: tm+mt
-source-wordcount: '1511'
-ht-degree: 13%
+source-wordcount: '1722'
+ht-degree: 12%
 
 ---
 
@@ -90,17 +90,25 @@ ht-degree: 13%
 >
 >将过滤器应用于作业请求构件后，您可以通过选择 **X** 在过滤药丸上。 然后，作业请求返回到默认跟踪列表。
 
-### 作业请求
+### 作业请求 {#job-requests}
 
-工作请求小组件列出了组织中所有可用的工作请求，包括请求类型、当前状态、截止日期和请求者电子邮件等详细信息。
+此 [!UICONTROL 作业请求] 工作区列出有关组织中最近作业请求的详细信息。 详细信息包括请求类型、当前状态、截止日期、请求者电子邮件等。 一次加载100条记录集。 默认情况下，当向下滚动浏览时，最近创建的作业将显示在顶部，并加载更多记录集。
 
 >[!NOTE]
 >
 >以前创建的作业的数据只能在完成日期后的30天内访问。
 
-您可以通过在“作业请求”标题下方的搜索栏中输入关键字来筛选列表。 列表会在您键入时自动进行筛选，并显示包含与您的搜索词匹配的值的请求。 您也可以使用 **[!UICONTROL 申请时间]** 下拉菜单，用于为列出的作业选择时间范围。
+您可以通过以下方式在搜索栏中输入关键字来筛选列表 [!UICONTROL 作业请求] 标题。 列表会在您键入时自动进行筛选，并显示包含与您的搜索词匹配的值的请求。 搜索字段执行“快速”搜索，将隐私作业ID与UI中当前渲染/加载的作业相匹配。 它并非全面搜索您提交的所有作业。 而是应用于加载结果的过滤器。 使用Privacy ServiceAPI可以 [根据特定法规、日期范围或单个作业返回作业](../api/privacy-jobs.md#list).
 
-![作业请求搜索选项](../images/user-guide/job-search.png)
+>[!TIP]
+>
+>要将过去30天的记录加载到UI中，必须向下滚动表并加载更多记录批次。
+
+![突出显示搜索字段的Privacy Console作业请求部分。](../images/user-guide/job-search.png)
+
+或者，使用搜索按钮执行跨特定日期范围的隐私作业查询。 此操作返回贵组织在给定时间范围内提交的所有隐私作业。 选择 **[!UICONTROL 申请时间]** 下拉菜单选择查询的开始日期和完成日期。 可用的选项包括 [!UICONTROL 今天]， [!UICONTROL 最近7天]， [!UICONTROL 最近2周]， [!UICONTROL 最近30天]，或 [!UICONTROL 自定义]. 当与一起使用时 [!UICONTROL 申请时间] 选项，则搜索功能仅显示所选日期范围之间提交的作业请求。
+
+![带有搜索字段、已请求下拉菜单和已突出显示搜索按钮的作业请求部分。](../images/user-guide/requested-on-dropdown-menu.png)
 
 要查看特定作业请求的详细信息，请从列表中选择该请求的作业ID以打开 **[!UICONTROL 作业详细信息]** 页面。
 
