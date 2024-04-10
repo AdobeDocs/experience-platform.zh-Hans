@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: b1f2d85f5a1cf6bb38344c87496488a919800029
+source-git-commit: f38f528c421c7cbf7116cc0ee323e8e7dcde6292
 workflow-type: tm+mt
-source-wordcount: '2604'
+source-wordcount: '2730'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ AI助手是一种UI功能，可用于导航和了解Adobe Experience Platform和
 
 * 有关如何执行与数据和受众相关的任务的指南。
 * 组织中现有数据对象的状态和量度。
-* 用例示例和细微差别以更好地了解您的数据对象，包括属性、数据流、数据集、目标、架构、区段和源。
+* 用例示例和细微差别以更好地了解您的数据对象，包括属性、受众、数据流、数据集、目标、架构和源。
 
 阅读以下指南，了解如何使用AI Assistant帮助导航和了解您的Experience Platform和Real-Time CDP工作流。
 
@@ -51,7 +51,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 * **使用问题**：使用问题与组织内的数据对象有关。 使用问题的一些示例包括：
    * 我有多少个数据集？
    * 有多少架构属性从未使用过？
-   * 已激活哪些区段？
+   * 已激活哪些受众？
 
 >[!ENDSHADEBOX]
 
@@ -59,13 +59,14 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 可以使用AI助手实现以下目标：
 
-| 目标 | 描述 |
-| --- | --- |
-| 学习Experience Platform和Real-Time CDP概念 | 您可以询问AI Assistant的概念问题，以便您自己了解Experience Platform和Real-Time CDP。 您还可以使用AI Assistant来了解您不熟悉的对象和行为。 |
-| 确保沙盒中的数据干净 | 您可以使用AI Assistant识别任何重复项或未使用的对象，以便有效地保持沙盒的干净。 |
-| 编排价值分析 | 您可以使用AI Assistant识别最常用的对象并评估任何绩效指标或找到最有价值的数据。 |
-| 了解影响分析 | 您可以使用AI Assistant识别某些工作流中使用的对象，以便评估任何更改的影响。 |
-| 监控您的数据 | 您可以使用AI Assistant监视任何数据流、引入或评估作业，以便查看任何差异或报告进度。 |
+| 目标 | 描述 | 示例 |
+| --- | --- | --- |
+| 学习概念和持续工作流 | <ul><li>作为新手，您可以使用AI Assistant学习Real-Time CDP和Adobe Journey Optimizer概念，并熟悉不熟悉的产品和功能。</li><li>作为经验丰富的用户，您可以使用AI Assistant解决可能阻止工作流的边缘案例。 | <ul><li>如何在历程分析中设置功能板？</li><li>告诉我Real-Time CDP的一些用例。</li></ul> |
+| 故障排除 | 使用AI Assistant了解如何调试工作流中可能遇到的基本错误。 | <ul><li>为什么会出现此错误 {ERROR_MESSAGE} 是刻薄吗？</li><li>为何无法删除名为“Luma：电子邮件受众”的受众？</li></ul> |
+| 沙盒卫生 | 使用AI Assistant识别任何重复或未使用的对象，以便您能够有效地维护沙盒。 | <ul><li>能否向我显示类似的受众？</li><li>是否有任何没有关联数据集的架构？</li></ul> |
+| 价值分析 | 使用AI Assistant识别您最常用的数据对象，评估任何绩效指标或找到最有价值的数据对象。 | <ul><li>我们的“Luma：电子邮件受众”区段定义中有多少个配置文件？</li><li>何时将受众激活到“Experience Cloud受众”目标？</li></ul> |
+| 搜索 | 使用AI Assistant查找支持的Experience Platform对象，如受众、数据集、目标、架构和源。 | <ul><li>在名称中列出包含“Luma”的受众（在上季度创建）。</li><li>“Luma：自定义操作”XDM架构中有哪些属性？</li></ul> |
+| 影响分析 | 使用AI Assistant识别某些工作流中使用的数据对象，以便您能够评估任何更改的影响。 | <ul><li>使用哪些受众 `homeAddress.city` 在“Luma：PersonProfiles”架构中？</li><li>哪些数据集是 `consents.marketing.push.val` 配置文件属性存储在中？</li></ul> |
 
 ## 在Experience PlatformUI中访问AI助手
 
@@ -75,7 +76,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 此时将显示AI Assistant界面，它立即为您提供开始使用的信息。 您可以使用下提供的选项 [!UICONTROL 开始使用的想法] 回答问题和命令，例如：
 
-* [!UICONTROL 我的哪些区段已激活？]
+* [!UICONTROL 激活了我的哪些受众？]
 * [!UICONTROL 什么是架构？]
 * [!UICONTROL 告诉我一些Real-Time CDP的常见用例]
 
@@ -145,7 +146,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 要让AI Assistant响应有关您组织内数据使用情况的查询，您必须位于活动沙盒中。
 
-在以下示例中，AI助手随以下查询一起提供： **“向我显示具有超过1000个配置文件的区段定义并包括激活状态。”** 然后，AI Assistant会使用图表进行响应，该图表可视化您的区段和配置文件数据。
+在以下示例中，AI助手随以下查询一起提供： **“向我显示包含超过1000个配置文件的区段定义，并包含激活状态。”** 然后，AI Assistant会使用图表进行响应，该图表可视化您的区段和配置文件数据。
 
 ![跟进有关数据使用的问题。](./images/ai-assistant/data-usage-question.png)
 
@@ -159,9 +160,9 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 当出现数据使用问题提示时，AI Assistant会提供它如何计算答案的说明。 在以下示例中，AI Assistant概述了为显示具有1000多个用户档案的区段定义及其各自的激活状态而采取的步骤。
 
-![跟进有关区段的问题，该问题说明AI Assistant如何计算答案。](./images/ai-assistant/results-explained.png)
+![跟进有关区段定义的问题，该问题说明AI Assistant如何计算答案。](./images/ai-assistant/results-explained.png)
 
-您还可以为查询提供筛选器和修改，并且可以指示AI Assistant根据您包括的筛选器呈现其结果。 例如，您可以要求AI Assistant按区段定义的创建日期顺序显示区段定义的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
+您还可以为查询提供筛选器和修改，并且可以指示AI Assistant根据您包括的筛选器呈现其结果。 例如，您可以要求AI助手按其创建日期的顺序显示计数区段定义的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
 
 +++
 
@@ -169,7 +170,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 +++选择以查看自动完成的示例
 
-您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：区段、架构、数据集、源和目标。
+您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：受众、架构、数据集、源和目标。
 
 您可以通过包含加号(**`+`**)。 作为替代方法，您还可以选择加号(**`+`**)，它位于文本输入框底部。 此时将显示一个窗口，其中包含来自沙盒的推荐数据对象列表。
 
@@ -208,16 +209,16 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 您还可以向AI Assistant询问有关您在以下域中的数据使用情况的问题：
 
 * 属性
+* 受众
 * 数据流
 * 数据集
 * 目标 _（有关帐户的问题和有关数据流的某些问题此时无法回答。）_
 * 架构 _（有关字段组的问题目前无法回答。）_
-* 区段
 * 源 _（有关帐户的问题目前无法回答。）_
 
-对于使用数据查询，答案可能不会反映UI的当前状态。 支持这些问题的数据每24小时更新一次。 例如，用户白天在Real-Time CDP中所做的更改会在晚上与数据存储同步，然后早上就可供用户提问了。 您可能需要将问题的格式设置为：“标题为的区段是什么时候 {TITLE} 创建时间？” 而不是“什么时候 {TITLE} 是否创建了区段？”
+对于使用数据查询，答案可能不会反映UI的当前状态。 支持这些问题的数据每24小时更新一次。 例如，用户白天在Real-Time CDP中所做的更改会在晚上与数据存储同步，然后早上就可供用户提问了。 您可能需要将问题的格式设置为：“标题为的受众是什么时候 {TITLE} 创建时间？” 而不是“什么时候 {TITLE} 是否创建了受众？”
 
-您需要登录沙盒以查询与对象（如架构、数据集、属性、目标和区段）相关的特定数据。
+您需要登录沙盒以查询与对象（如受众、架构、数据集、属性和目标）相关的特定数据。
 
 ### 示例数据使用问题 {#example-data-usage-questions}
 
@@ -225,9 +226,9 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 | 问题类型 | 描述 | 示例 |
 | --- | --- | --- | 
-| 数据族系 | 跨其他Experience Platform对象跟踪一个或多个对象的使用情况 | <ul><li>使用哪些数据集 {SCHEMA_NAME} 纲要？</li><li>使用相同架构摄取了多少数据集？</li><li>激活的区段中使用了哪些数据集？</li><li>列出具有激活区段中所用属性的架构。</li><li>显示激活的目标区段 {DESTINATION_ACCOUNT_NAME} 和超过1000个配置文件。</li><li>显示激活的区段中使用的属性，这些区段在2023年1月之后已修改。</li><li>通过什么摄取的数据集 {SOURCE_NAME}？</li><li>哪些数据流关联 {DATAFLOW_NAME}</li><li>列出与激活的区段相关且在过去1年中创建的架构。</li></ul> |
-| 分发和聚合 | 有关Experience Platform对象使用情况的基于摘要的问题 | <ul><li>已激活区段的百分比是多少？</li><li>区段中使用了多少字段？</li><li>哪些区段激活到的目标数量最多？</li><li>列出重复的区段。</li><li>向我显示激活到的区段 {DESTINATION_ACCOUNT_NAME} 并按配置文件大小对其进行排名。</li><li>尚未激活但具有100个以上配置文件的区段的百分比是多少。 给我看看他们的名字。</li><li>列出将数据摄取到我的数据集中的3个源连接器。</li><li>根据激活区段中的出现情况，列出其中使用的前5个属性。</li></ul> |
-| 对象查找 | 检索或访问Experience Platform对象或其属性。 | <ul><li>哪些数据集没有与其关联的任何架构</li><li>列出用于的属性 {SEGMENT_NAME}？</li><li>给我已启用配置文件但自创建后未修改的架构列表。</li><li>上周修改了哪些区段？</li><li>列出具有相同区段定义的区段及其创建日期。</li><li>哪些数据集启用了配置文件，并且还包括从每个数据集创建了多少区段。</li><li>哪些源帐户与数据集XYZ关联？</li><li>显示区段定义和修改日期 {SEGMENT_NAME}.</li></ul> |
+| 数据族系 | 跨其他Experience Platform对象跟踪一个或多个对象的使用情况 | <ul><li>使用哪些数据集 {SCHEMA_NAME} 纲要？</li><li>使用相同架构摄取了多少数据集？</li><li>激活的受众中使用了哪些数据集？</li><li>列出具有在激活受众中使用的属性的架构。</li><li>显示激活到的受众 {DESTINATION_ACCOUNT_NAME} 和超过1000个配置文件。</li><li>显示激活的受众中使用的属性，这些受众在2023年1月之后已修改。</li><li>通过什么摄取的数据集 {SOURCE_NAME}？</li><li>哪些数据流关联 {DATAFLOW_NAME}</li><li>列出与已激活受众相关且在过去1年创建的架构。</li></ul> |
+| 分发和聚合 | 有关Experience Platform对象使用情况的基于摘要的问题 | <ul><li>激活的受众的百分比是多少？</li><li>区段中使用了多少字段？</li><li>哪些受众激活到的目标数量最多？</li><li>列出重复的受众。</li><li>显示激活到的受众 {DESTINATION_ACCOUNT_NAME} 并按配置文件大小对其进行排名。</li><li>尚未激活但具有100个以上配置文件的受众的百分比是多少。 给我看看他们的名字。</li><li>列出将数据摄取到我的数据集中的3个源连接器。</li><li>根据活跃受众的发生次数，列出其中使用的前5个属性。</li></ul> |
+| 对象查找 | 检索或访问Experience Platform对象或其属性。 | <ul><li>哪些数据集没有与其关联的任何架构</li><li>列出用于的属性 {AUDIENCE_NAME}？</li><li>给我已启用配置文件但自创建后未修改的架构列表。</li><li>上周修改了哪些受众？</li><li>列出具有相同区段定义的受众及其创建日期。</li><li>哪些数据集启用了配置文件，并且还包括从每个数据集创建了多少受众。</li><li>哪些源帐户与数据集XYZ关联？</li><li>显示区段定义和修改日期 {AUDIENCE_NAME}.</li></ul> |
 
 +++
 
@@ -276,56 +277,6 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 ### 警告和限制 {#caveats-and-limitations}
 
 以下部分概述了使用AI助手时要考虑的当前注意事项和限制。
-<!-- 
-#### Conversational experience
-
-You must consider several nuances regarding the conversational experience when querying the AI Assistant.
-
->[!NOTE]
->
->These limitations are temporary and are being improved upon throughout the course of the alpha.
-
->[!BEGINTABS]
-
->[!TAB Unable to infer context from prior discussion]
-
-The AI Assistant currently cannot reference prior discussions as context for a given question. See the table below for examples:
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of them?"</li></ul>| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of **segments**?"</li></ul> | The AI Assistant cannot infer what "them" means. |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you elaborate more?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Explain what a segment is in depth"</li></ul> | The AI Assistant cannot intelligently reference documentation based on "more". |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of one?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of a segment?"</li></ul> | The AI Assistant cannot infer what you want an example of.|
-| <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "How does it compare to a streaming segment?"</li></ul> | <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "Can you compare a streaming segment to a batch segment?"</li></ul> | The AI Assistant cannot infer what "it" is referring to and thus cannot compare the streaming segment. |
-| <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of them use Facebook as a destination?"</li></ul> | <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of the segments that I have are using Facebook as a destination?"</li></ul> | The AI Assistant is cannot infer what "them" is referring to. |
-
-{style="table-layout:auto"}
-
->[!TAB Unable to infer context from a page]
-
-When asking the AI Assistant about a particular element of the Experience Platform UI page that you are on, you must clearly define the specific element within your question. 
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| "What does this do?" | "What does {PAGE_NAME} do? | The AI Assistant cannot infer what "this" is referring to. You must provide the specific page element that you are querying about. |
-| "Why won't it save?" | "Why can't I save a new sandbox called {NAME}?" | The AI Assistant cannot infer what "it" is referring to and cannot know that you are having issues with an entity. |
-
-{style="table-layout:auto"}
-
-Furthermore, the AI Assistant can only answer questions regarding error messages, given that the error is documented in Experience League.
-
->[!TAB Ambiguity]
-
-You must phrase your questions clearly and scope them within a product, application, or domain, as the AI Assistant currently cannot disambiguate questions.
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| "How do I create a filter? | How do I create a filter in Profile Query Language? | You must specify the feature that which you are filtering for because a variety of Experience Platform features support filtering. |
-| "How do I get started? | How do I get started using destinations? | You must provide clarity on your goals and use case because overly broad concepts may result in generic or unnecessarily specific answers. |
-
-{style="table-layout:auto"}
-
->[!ENDTABS] -->
 
 #### 限时闲聊
 
@@ -356,6 +307,6 @@ AI助手可能会对其功能产生不准确的印象。 它可能会错误地�
 
 | 错误的问题 | 好问题 | 注释 |
 | --- | --- | --- |
-| 我最大的细分市场是什么？ | 我最大的细分市场是什么？ 使用数据。 | 明确告知AI助手，您希望答案基于数据。 |
-| 我最大的细分市场是什么？ | 列出我最大的区段。 | 在某些情况下，“什么……”问题可能会被误认为基于文档的问题。 使用诸如“list”之类的命令更能说明您在上下文中对数据提出疑问。 |
-| 我有多少个数据集？ | 计算我的数据集。 | 最初的问题适用于区段，但可能不适用于数据集。 |
+| 我最大的受众是什么？ | 我最大的受众是什么？ 使用数据。 | 明确告知AI助手，您希望答案基于数据。 |
+| 我最大的受众是什么？ | 列出我最大的受众。 | 在某些情况下，“什么……”问题可能会被误认为基于文档的问题。 使用诸如“list”之类的命令更能说明您在上下文中对数据提出疑问。 |
+| 我有多少个数据集？ | 计算我的数据集。 | 最初的问题适用于受众，但可能不适用于数据集。 |
