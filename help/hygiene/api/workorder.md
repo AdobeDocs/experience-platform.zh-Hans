@@ -3,10 +3,11 @@ title: 工单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理标识的删除任务。
 badgeBeta: label="Beta 版" type="Informative"
 role: Developer
+badge: Beta 版
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 59585ce832b10dfc28474e498c9308453da86d0c
+source-git-commit: 2259bf70e1503cf468f72a73345592ace0f58f63
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 1%
 
 ---

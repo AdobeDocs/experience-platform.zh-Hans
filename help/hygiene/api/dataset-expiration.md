@@ -3,9 +3,9 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 04d49282d60b2e886a6d2dae281b98b60e6ce9b3
+source-git-commit: 0c6e6d23be42b53eaf1fca365745e6502197c329
 workflow-type: tm+mt
-source-wordcount: '2083'
+source-wordcount: '2141'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集到期后，可以通过设置新到期来重新打开数据集。
 
-开始删除数据集后，其到期作业将标记为 `executing`，并且不能进一步更改。 数据集本身最多可以恢复7天，但只能通过Adobe服务请求启动的手动流程进行恢复。 在请求执行时，数据湖、Identity Service和Real-time Customer Profile开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，到期时间将标记为 `executed`.
+开始删除数据集后，其到期作业将标记为 `executing`，并且不能进一步更改。 数据集本身最多可以恢复7天，但只能通过Adobe服务请求启动的手动流程进行恢复。 在请求执行时，数据湖、Identity Service和Real-time Customer Profile开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，到期时间将标记为 `completed`.
 
 >[!WARNING]
 >
@@ -56,7 +56,7 @@ GET /ttl?{QUERY_PARAMETERS}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl?updatedToDate=2021-08-01&author=LIKE%Jane Doe%25 \
+  https://platform.adobe.io/data/core/hygiene/ttl?updatedToDate=2021-08-01&author=LIKE%20%25Jane%20Doe%25 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -66,6 +66,10 @@ curl -X GET \
 **响应**
 
 成功的响应将列出生成的数据集过期日期。 以下示例的空间已被截断。
+
+>[!IMPORTANT]
+>
+>此 `ttlId` 在回应中亦称为 `{DATASET_EXPIRATION_ID}`. 它们都引用数据集到期的唯一标识符。
 
 ```json
 {
@@ -90,26 +94,30 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `totalRecords` | 与列表调用的参数匹配的数据集过期计数。 |
-| `ttlDetails` | 包含返回的数据集过期的详细信息。 有关数据集到期属性的更多详细信息，请参阅响应部分，以发出 [查找调用](#lookup). |
+| `total_count` | 与列表调用的参数匹配的数据集过期计数。 |
+| `results` | 包含返回的数据集过期的详细信息。 有关数据集到期属性的更多详细信息，请参阅响应部分，以发出 [查找调用](#lookup). |
 
 {style="table-layout:auto"}
 
 ## 查找数据集过期 {#lookup}
 
-GET要查找数据集到期情况，请使用 `datasetId` 或 `ttlId`.
+GET要查找数据集到期情况，请使用 `{DATASET_ID}` 或 `{DATASET_EXPIRATION_ID}`.
+
+>[!IMPORTANT]
+>
+>此 `{DATASET_EXPIRATION_ID}` 称为 `ttlId` 作为回应。 它们都引用数据集到期的唯一标识符。
 
 **API格式**
 
 ```http
 GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{TTL_ID}
+GET /ttl/{DATASET_EXPIRATION_ID}
 ```
 
 | 参数 | 描述 |
 | --- | --- |
 | `{DATASET_ID}` | 要查找其过期时间的数据集的ID。 |
-| `{TTL_ID}` | 数据集过期的ID。 |
+| `{DATASET_EXPIRATION_ID}` | 数据集过期的ID。 |
 
 {style="table-layout:auto"}
 
@@ -222,7 +230,7 @@ curl -X POST \
 
 **响应**
 
-如果不存在预先存在的数据集过期，则成功的响应会返回HTTP 201（已创建）状态以及数据集过期的新状态。
+成功的响应会返回HTTP 201（已创建）状态和数据集过期的新状态。
 
 ```json
 {
@@ -254,7 +262,7 @@ curl -X POST \
 | `displayName` | 到期请求的显示名称。 |
 | `description` | 到期请求的描述。 |
 
-如果数据集已存在数据集过期，则出现400（错误请求）HTTP状态。 如果不存在此类数据集过期（或您无权访问），则失败的响应将返回404 （未找到）HTTP状态。
+如果数据集已存在数据集过期，则出现400（错误请求）HTTP状态。 如果不存在此类数据集过期（或您无权访问数据集），则失败的响应将返回404 （未找到）HTTP状态。
 
 ## 更新数据集过期 {#update}
 
@@ -267,14 +275,12 @@ curl -X POST \
 **API格式**
 
 ```http
-PUT /ttl/{TTL_ID}
+PUT /ttl/{DATASET_EXPIRATION_ID}
 ```
-
-<!-- We should be avoiding usage of TTL, Can I change that to {EXPIRY_ID} or {EXPIRATION_ID} instead? -->
 
 | 参数 | 描述 |
 | --- | --- |
-| `{TTL_ID}` | 要更改的数据集过期的ID。 |
+| `{DATASET_EXPIRATION_ID}` | 要更改的数据集过期的ID。 注意：这称为 `ttlId` 作为回应。 |
 
 **请求**
 
@@ -297,7 +303,7 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `expiry` | **必填** ISO 8601格式的日期和时间。 如果字符串没有明确的时区偏移，则假定时区为UTC。 系统内的数据寿命根据提供的失效值设置。 同一数据集的任何以前过期时间戳将由您提供的新过期值替换。 此日期和时间必须至少为 **未来24小时**. |
+| `expiry` | **必填** ISO 8601格式的日期和时间。 如果字符串没有明确的时区偏移，则假定时区为UTC。 系统内的数据寿命根据提供的失效值设置。 同一数据集的任何以前到期时间戳将由您提供的新到期值替换。 此日期和时间必须至少为 **未来24小时**. |
 | `displayName` | 到期请求的显示名称。 |
 | `description` | 到期请求的可选描述。 |
 
@@ -374,19 +380,19 @@ curl -X DELETE \
 
 ## 检索数据集的到期状态历史记录 {#retrieve-expiration-history}
 
-您可以使用查询参数查找特定数据集的到期状态历史记录 `include=history` 在查找请求中。 结果包括关于创建数据集过期、已应用的任何更新及其取消或执行（如果适用）的信息。 您也可以使用 `ttlId` 数据集过期时间。
+要查找特定数据集的到期状态历史记录，请使用 `{DATASET_ID}` 和 `include=history` 查询参数中的值。 结果包括关于创建数据集过期、已应用的任何更新及其取消或执行（如果适用）的信息。 您也可以使用 `{DATASET_EXPIRATION_ID}` 以检索数据集到期状态历史记录。
 
 **API格式**
 
 ```http
 GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{TTL_ID}
+GET /ttl/{DATASET_EXPIRATION_ID}?include=history
 ```
 
 | 参数 | 描述 |
 | --- | --- |
 | `{DATASET_ID}` | 要查找其过期历史记录的数据集的ID。 |
-| `{TTL_ID}` | 数据集过期的ID。 |
+| `{DATASET_EXPIRATION_ID}` | 数据集过期的ID。 注意：这称为 `ttlId` 作为回应。 |
 
 {style="table-layout:auto"}
 
