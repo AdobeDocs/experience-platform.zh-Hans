@@ -4,9 +4,9 @@ title: Attribute-Based Access Control端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: c89ae9befa3befbffab9d6468f3c207ab8e7b74f
 workflow-type: tm+mt
-source-wordcount: '1714'
+source-wordcount: '1736'
 ht-degree: 18%
 
 ---
@@ -132,6 +132,10 @@ ht-degree: 18%
 >将标签添加到字段时，该标签将应用于该字段的父资源（类或字段组）。 如果父类或字段组被其他架构使用，则这些架构将继承相同的标签。
 
 ## 将标签应用于区段
+
+>[!NOTE]
+>
+>同样，如果您希望对使用已标记属性的任何区段应用相同的访问限制，则必须对此类区段进行标记。
 
 完成为架构字段设置标签之后，您现在可以开始为区段设置标签。
 
