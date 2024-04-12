@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
 workflow-type: tm+mt
-source-wordcount: '2257'
+source-wordcount: '2263'
 ht-degree: 26%
 
 ---
@@ -70,7 +70,7 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
 | 数据流 | 设备查找支持 | 在配置数据流时，您现在可以选择要收集的设备查找信息的级别。 设备查找信息包括有关用于与页面交互的设备、硬件、操作系统和浏览器的数据。 <br>  无法收集设备查找信息以及用户代理和客户端提示。 选择收集设备信息将禁用用户代理和客户端提示的收集，反之亦然。 所有设备查找信息都存储在 `xdm:device` 字段组。 从文档了解有关 [配置数据流](../../datastreams/configure.md#geolocation-device-lookup). |
-| 扩展 | [!DNL TikTok] Web事件API扩展 | 此 [[!DNL TikTok] Web事件API](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) 通过扩展，您可以利用在Adobe Experience Platform Edge Network中捕获的数据并将其发送至 [!DNL TikTok] 以服务器端事件的形式使用 [!DNL TikTok] Web事件API。 |
+| 扩展 | [!DNL TikTok] Web事件API扩展 | 此 [[!DNL TikTok] Web事件API](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) 通过扩展，您可以利用在Adobe Experience PlatformEdge Network中捕获的数据并将其发送至 [!DNL TikTok] 以服务器端事件的形式使用 [!DNL TikTok] Web事件API。 |
 
 {style="table-layout:auto"}
 
@@ -98,7 +98,7 @@ Experience Platform提供了一套数据卫生功能，允许您通过以编程�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
+| [!BADGE 测试版]{type=Informative}记录删除（限量发布） | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
 | 数据集到期 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 请参阅 [数据集过期文档](../../hygiene/ui/dataset-expiration.md) 以了解更多信息。 |
 
 {style="table-layout:auto"}

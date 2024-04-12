@@ -2,10 +2,10 @@
 title: 高级数据生命周期管理概述
 description: 高级数据生命周期管理允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
+source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
 workflow-type: tm+mt
-source-wordcount: '589'
-ht-degree: 1%
+source-wordcount: '583'
+ht-degree: 2%
 
 ---
 

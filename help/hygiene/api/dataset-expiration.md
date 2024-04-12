@@ -3,9 +3,9 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 0c6e6d23be42b53eaf1fca365745e6502197c329
+source-git-commit: 20d616463469a4d78fe0e7b6be0ec76b293789d6
 workflow-type: tm+mt
-source-wordcount: '2141'
+source-wordcount: '2166'
 ht-degree: 2%
 
 ---
@@ -197,6 +197,10 @@ curl -X GET \
 要确保在指定的时间段后从系统中删除数据，请以ISO 8601格式提供数据集ID以及过期日期和时间，从而安排特定数据集的过期时间。
 
 要创建数据集过期，请执行如下所示的POST请求，并在有效负载中提供下面提到的值。
+
+>[!NOTE]
+>
+>如果您收到404错误，请确保请求没有其他正斜杠。 尾随斜杠可能会导致POST请求失败。
 
 **API格式**
 
