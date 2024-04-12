@@ -5,9 +5,9 @@ description: 此样板场景提供一个示例，其中配置您实施的 Adobe 
 feature: Get Started, Use Cases, B2B
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1151'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 Real-time Customer Data Platform B2B版本扩展了现有的Real-Time CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B版本提供的其他好处。 其中包括：
 
 - 将来自不同孤立数据源的个人和帐户数据整合在一起，生成一个全面的视图，从而更好地了解客户并更准确地进行分段。 请参阅相关文档 [创建XDM架构关系](./schemas/b2b.md) 用于各种B2B源，以了解更多信息。
-- 根据相关实体的属性对受众进行分段。 这包括客户、机会、营销活动和营销列表。 区段不再仅限于人员属性和体验事件。 请参阅 [B2B分段文档](./segmentation/b2b.md) 有关创建特定于B2B的受众的更多示例。
+- 根据相关实体的属性对受众进行分段。 这包括客户、机会、营销活动和营销列表。 受众不再仅限于人员属性和体验事件。 请参阅 [B2B分段文档](./segmentation/b2b.md) 有关创建特定于B2B的受众的更多示例。
 - 本地支持与多个帐户相关的一个人的用例。
 
 ## 用例
@@ -50,9 +50,9 @@ Bodea是一家科技公司，它推出了一款新产品，希望同时通过电
 
 这使得Bodea的营销团队无法利用这一新机会有效地定位这些公司的特定业务联系人。
 
-迄今为止，汤森德在所有账户上累计花了100多万美元购买博迪亚的产品。 但是，使用旧系统创建的区段不包括汤森德的任何人，除非在单个销售系统中花费的总额超过100万美元。 这是因为收入数据被存储在不同销售系统下的帐户中。
+迄今为止，汤森德在所有账户上累计花了100多万美元购买博迪亚的产品。 但是，使用旧系统创建的受众不会包括汤森德的任何人，除非在单个销售系统中花费的总额超过100万美元。 这是因为收入数据被存储在不同销售系统下的帐户中。
 
-由于汤森百货的开支分散于不同的销售体系，且每家分店的总开支不超过100万，因此该分部找不到任何能进入Marketo 1或Marketo 2的客户。
+由于汤森的支出分散在不同的销售系统中，单个销售系统的总支出不超过100万，因此区段定义中找不到任何符合Marketo 1或Marketo 2资格的人员。
 
 ### Real-Time CDP B2B版本如何解决此问题
 
@@ -77,10 +77,10 @@ CRM1中的B2B数据（人员、帐户、机会和活动）已同步到Marketo 1�
 | 机会1 ， 20万美元 |
 | 机会2 ， 90万美元 |
 
-- 使用此聚合数据为各种营销计划创建唯一区段。 在此示例中，区段查找满足以下条件的所有人员：
+- 使用此聚合数据为各种营销计划创建独特受众。 在此示例中，区段定义查找满足以下条件的所有人员：
 
    - （在所有客户中）具有超过100万美元的关联机会
-   - AND
+   - 并且
    - 上个月访问过产品页面
 
 - 创建受众，使其成为Bodea新营销活动的最有效接收者。 在此示例中，RT-CDP、B2B版本将帮助营销人员识别 `p2@townsend.com` 作为此营销活动的正确目标。

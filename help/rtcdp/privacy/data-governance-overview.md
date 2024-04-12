@@ -4,9 +4,9 @@ title: 数据治理概述
 description: 数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和策略。
 feature: Get Started, Data Governance
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '689'
 ht-degree: 3%
 
 ---
@@ -37,7 +37,7 @@ Real-Time CDP构建于Adobe Experience Platform之上，因此大多数数据管
 >
 >有关营销操作及其在数据使用策略中的使用的更多信息，请参阅 [数据使用策略概述](../../data-governance/policies/overview.md) 在 [!DNL Experience Platform] 文档。
 
-通过在目标上定义营销操作，您可以确保发送到这些目标的任何用户档案或区段都符合数据使用策略。 因此，您应根据组织对激活实施策略限制的需要，向目标添加适当的营销操作。
+通过在目标上定义营销操作，您可以确保发送到这些目标的任何用户档案或受众都符合数据使用策略。 因此，您应根据组织对激活实施策略限制的需要，向目标添加适当的营销操作。
 
 只有在首次设置目标时才能选择营销操作。 根据您使用的目标类型，配置营销操作的机会将显示在设置工作流的不同位置。 请参阅 [目标文档](../destinations/overview.md) 以了解有关如何配置特定目标的步骤。
 
@@ -49,7 +49,7 @@ Adobe Experience Platform为常见的客户体验用例提供了几个核心策�
 
 ## 强制数据使用合规性 {#enforce}
 
-标记数据并定义使用策略后，您可以强制实施符合策略的数据使用。 在Real-Time CDP中将受众区段激活到目标时，数据管理会在发生任何违规时自动强制实施使用策略。
+标记数据并定义使用策略后，您可以强制实施符合策略的数据使用。 在Real-Time CDP中将受众激活到目标时，数据管理会在发生任何违规时自动强制实施使用策略。
 
 查看文档 [自动策略执行](../../data-governance/enforcement/auto-enforcement.md) 以了解更多信息。
 

@@ -6,7 +6,7 @@ description: Adobe Experience Platform 使用与传统关系数据模型不同�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: f6cfe2de5f2f485cbd42c83b539fb458b505d260
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '1794'
 ht-degree: 2%
@@ -102,7 +102,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 ## 分段护栏
 
-本节中概述的护栏是指组织可以在Experience Platform中创建的区段的数量和性质，以及映射和激活区段到目标。
+此部分中概述的护栏是指组织可以在Experience Platform中创建的受众的数量和性质，以及映射和激活受众到目标。
 
 >[!NOTE]
 >
@@ -134,7 +134,7 @@ Real-time Customer Data Platform B2B Edition允许您以实时客户配置文件
 
 #### Dimension实体
 
-虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建区段。 此集成称为 [多实体分割](../segmentation/multi-entity-segmentation.md).
+虽然维护用户档案数据的用户档案数据存储不是关系存储，但用户档案允许与小型维度实体集成，以便以简化且直观的方式创建受众。 此集成称为 [多实体分割](../segmentation/multi-entity-segmentation.md).
 
 您的组织还可以定义XDM类来描述个人以外的其他内容，如商店、产品或资产。 此等非[!DNL XDM Individual Profile] 架构称为“维度实体”（也称为“查找实体”），不包含时间序列数据。 表示维度实体的架构通过使用 [架构关系](../xdm/tutorials/relationship-ui.md).
 

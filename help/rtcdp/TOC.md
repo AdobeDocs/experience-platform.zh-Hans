@@ -3,12 +3,12 @@ product: adobe experience platform
 solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
-user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
+user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建受众，并将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
 workflow-type: tm+mt
-source-wordcount: '293'
-ht-degree: 70%
+source-wordcount: '294'
+ht-degree: 59%
 
 ---
 
@@ -33,6 +33,11 @@ ht-degree: 70%
    * [帐户配置文件 UI 指南](accounts/account-profile-ui-guide.md)
 * 管理 {#admin}
    * [管理概述](administration/admin-overview.md)
+* 受众和分段 {#segmentation}
+   * [分段概述](segmentation/segmentation-overview.md)
+   * [区段生成器指南](segmentation/segment-builder-guide.md)
+   * [Real-Time CDP B2B 版本中的分段](segmentation/b2b.md)
+   * [客户人工智能](segmentation/customer-ai.md)
 * 数据集 {#datasets}
    * [数据集](datasets/dataset.md)
    * [Platform 上的数据质量](datasets/data-quality.md)
@@ -66,11 +71,6 @@ ht-degree: 70%
 * 架构 {#schemas}
    * [架构概述](schemas/overview.md)
    * [Real-Time CDP B2B 版本中的架构](schemas/b2b.md)
-* 区段{#segmentation}
-   * [分段概述](segmentation/segmentation-overview.md)
-   * [区段生成器指南](segmentation/segment-builder-guide.md)
-   * [Real-Time CDP B2B 版本中的分段](segmentation/b2b.md)
-   * [客户人工智能](segmentation/customer-ai.md)
 * 源 {#sources}
    * [源概述](sources/sources-overview.md)
    * [Real-Time CDP B2B 版本中的源](sources/b2b.md)

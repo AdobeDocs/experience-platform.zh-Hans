@@ -1,17 +1,17 @@
 ---
 keywords: 分段；分段rtcdp；实时客户数据平台分段
 title: Real-time Customer Data Platform中的分段服务
-description: Adobe实时客户数据平台构建于Adobe Experience Platform之上，并利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
+description: Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，并利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
 feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '543'
 ht-degree: 4%
 
 ---
 
-# [!DNL Segmentation Service] in [!DNL Real-Time Customer Data Platform]
+# [!DNL Real-Time Customer Data Platform]中的 [!DNL Segmentation Service]
 
 [!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)允许您从多个来源引入数据，以便为客户带来协调一致的体验。 可以使用实现相关的个性化营销活动 [!DNL Segmentation Service]，Adobe Experience Platform的一部分。
 
@@ -19,11 +19,11 @@ Real-Time CDP构建于Adobe Experience Platform之上，并利用众多 [!DNL Ex
 
 ## 区段
 
-分段是定义由配置文件存储中的配置文件子集共享的特定属性或行为的过程，以区分可营销的人员组和您的客户群。 例如，在名为“您是否忘记购买运动鞋？”的电子邮件促销活动中，您可能希望受众包含在最近30天内搜索跑鞋但未完成购买的所有用户。 通过使用不同的区段，您可以专注于各种受众，从而提供更加定制的营销体验。
+分段是定义由配置文件存储中的配置文件子集共享的特定属性或行为的过程，以区分可营销的人员组和您的客户群。 例如，在名为“您是否忘记购买运动鞋？”的电子邮件促销活动中，您可能希望受众包含在最近30天内搜索跑鞋但未完成购买的所有用户。 通过使用不同的区段定义，您可以专注于各种受众，从而提供更加定制的营销体验。
 
 ## [!DNL Segment Builder]
 
-[!DNL Platform] 允许您轻松地创建和访问区段，并使用不同的构建块来进一步表示区段的特征。 有关如何使用区段生成器的更多信息，请参阅 [区段生成器指南](./segment-builder-guide.md).
+[!DNL Platform] 允许您轻松创建和访问区段定义，并使用不同的构建块来进一步描述受众的特性。 有关如何使用区段生成器的更多信息，请参阅 [区段生成器指南](./segment-builder-guide.md).
 
 ## 客户人工智能
 
@@ -36,7 +36,7 @@ Real-time Customer Data Platform附带的Customer AI为您提供了在个人层�
 * 为您的公司独特的用例和数据提供可自定义的选项。
 * 利用客户倾向分数（如流失率和转化率）增强Real-time Customer Profile。
 * 通过倾向分数的影响因素增强客户用户档案。
-* 根据影响因素和倾向分数创建客户区段。
+* 根据影响因素和倾向分数创建客户受众。
 
 客户人工智能位于 **[!UICONTROL 服务]** 选项卡在 **[!UICONTROL Adobe服务]**.
 
@@ -44,7 +44,7 @@ Real-time Customer Data Platform附带的Customer AI为您提供了在个人层�
 
 ### Customer AI入门
 
-要开始使用Customer AI，您需要遵循 [数据准备教程](../../intelligent-services/data-preparation.md) 并根据用例配置输入架构。 接下来，您需要 [配置客户人工智能实例](../../intelligent-services/customer-ai/user-guide/configure.md). 配置实例后，将生成一个模型，您可以在其中执行以下操作 [查看您的见解和得分](../../intelligent-services/customer-ai/user-guide/discover-insights.md). 使用从模型生成的数据，可为数据驱动激活创建区段。
+要开始使用Customer AI，您需要遵循 [数据准备教程](../../intelligent-services/data-preparation.md) 并根据用例配置输入架构。 接下来，您需要 [配置客户人工智能实例](../../intelligent-services/customer-ai/user-guide/configure.md). 配置实例后，将生成一个模型，您可以在其中执行以下操作 [查看您的见解和得分](../../intelligent-services/customer-ai/user-guide/discover-insights.md). 使用从模型生成的数据，您可以为数据驱动激活创建受众。
 
 要了解有关客户人工智能的更多信息，请首先访问 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 此外，以下视频展示了客户人工智能如何通过基于人工智能的倾向性丰富客户档案，并支持客户分段和定位工作。
 

@@ -5,10 +5,10 @@ description: 有关Experience PlatformReal-Time CDP B2B中相关帐户功能的�
 feature: Get Started, Profiles, B2B
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '441'
-ht-degree: 6%
+source-wordcount: '435'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 6%
 
 B2B企业通常将其客户信息存储在多个系统中，每个系统仅包含同一真实世界商业实体的部分甚至冲突数据。 这就带来了巨大的挑战，难以准确了解客户的状况，从而降低了其B2B营销和销售工作的效率和有效性。
 
-| ID | 名称 | 网站 | 行业 | State | Phone | 具有包含金额的未结机会> `$1 million` |
+| ID | 名称 | 网站 | 行业 | State | 电话 | 具有包含金额的未结机会> `$1 million` |
 |---|---|---|---|---|---|---|
 | 1 | Acme | acme.com | 软件 | CA | (408)536-6000 |   |
 | 2 | Acme | acm.com | 软件 | CA | 4085366000 | x |
@@ -32,7 +32,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 ![显示Experience PlatformUI中相关帐户的屏幕。](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
-使用此功能可在Experience PlatformUI中查看帐户配置文件的相关帐户配置文件，然后将相关帐户包含在区段定义中，以扩大您的影响范围或在区段中应用更广泛的标准。
+使用此功能可在Experience PlatformUI中查看帐户配置文件的相关帐户配置文件，然后将相关帐户包含在区段定义中，以扩大您的影响范围或在受众中应用更广泛的标准。
 
 ## 启用相关的帐户服务 {#enable}
 

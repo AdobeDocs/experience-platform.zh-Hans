@@ -6,9 +6,9 @@ description: 使用此情景作为示例，来设置您的Adobe Real-time Custom
 feature: Get Started, B2B
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1174'
 ht-degree: 0%
 
 ---
@@ -76,33 +76,33 @@ Marketo Engage源连接器提供自动映射功能，使将所有数据字段映
 
 Bodea营销人员检查所有字段组是否都已正确映射，并通过初始化数据流来继续源设置过程。 通过创建数据流以引入Marketo数据，传入数据可供下游平台服务使用。 在初始摄取过程中，数据会作为批次Experience Platform。 之后，后续摄取的数据将流式传输到配置文件中，进行实时更新。
 
-## 创建区段以评估数据
+## 创建受众以评估数据
 
 接下来，根据源数据中相关实体的特定属性，为Bodea的新电子邮件营销活动创建受众。 在Platform UI中，Bodea营销人员会首先选择 **[!UICONTROL 区段]** 在左侧导航中，然后 **[!UICONTROL 创建区段]**.
 
-在本例中，该区段查找所有在销售部门工作并与至少有一个未完成销售机会的任何客户相关的人员。 此区段需要XDM个人资料类、XDM商业帐户类和XDM商业机会类之间的链接。
+在本例中，受众会查找所有在销售部门工作并与至少有一个未完成销售机会的任何客户相关的人员。 此受众需要XDM个人资料类、XDM商业帐户类和XDM商业机会类之间的链接。
 
 ![用例区段](./assets/b2b-tutorial/use-case-segment.png)
 
 >[!NOTE]
 > 
->有关如何创建区段以评估数据的说明，请参阅 [区段生成器UI指南](../segmentation/ui/segment-builder.md). 有关更具体的B2B分段用例，请参阅 [Real-Time CDP B2B版本的分段概述](./segmentation/b2b.md).
+>有关如何创建受众以评估数据的说明，请参阅 [区段生成器UI指南](../segmentation/ui/segment-builder.md). 有关更具体的B2B分段用例，请参阅 [Real-Time CDP B2B版本的分段概述](./segmentation/b2b.md).
 
 区段生成器允许您根据实时客户档案数据创建适销受众，并根据您定义的属性、事件和现有受众的组合查看潜在受众的估计值。
 
 ## 将评估的数据激活到目标
 
-成功创建区段后，中会提供摘要 [!UICONTROL 详细信息] 部分。 由于当前没有为该区段激活任何目标，因此Bodea营销人员需要将受众导出到可在其中进行访问和操作的数据集。
+成功创建受众后，中会提供摘要 [!UICONTROL 详细信息] 部分。 由于当前没有为区段定义激活目标，因此Bodea营销人员需要将受众导出到可在其中进行访问和操作的数据集。
 
 在 [!UICONTROL 区段] Platform UI的工作区，Bodea营销人员会选择 **[!UICONTROL 激活到目标]**.
 
-![将区段激活到目标](./assets/b2b-tutorial/activate-to-destination.png)
+![将受众激活到目标](./assets/b2b-tutorial/activate-to-destination.png)
 
 >[!NOTE]
 > 
->请参阅上的教程 [将区段激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) 以了解如何完成此任务的完整步骤。
+>请参阅上的教程 [将受众激活到目标](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) 以了解如何完成此任务的完整步骤。
 
-Bodea营销人员会将区段激活到Marketo目标，这让他们能够以静态列表的形式将区段数据从Platform推送到Marketo Engage。 请参阅 [Marketo目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) 以了解更多信息。
+Bodea营销人员可将受众激活到Marketo目标，从而允许他们将受众数据从Platform以静态列表的形式推送到Marketo Engage。 请参阅 [Marketo目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) 以了解更多信息。
 
 ## 后续步骤
 

@@ -1,11 +1,11 @@
 ---
 title: 从 Audience Manager 演进到 Real-Time CDP
-description: 在规划从 Audience Manager 迁移到 Real-Time CDP 之前了解注意事项。
+description: 了解在计划从Audience Manager迁移到Adobe Real-Time CDP之前的注意事项。
 exl-id: 83ab9a5d-9abc-4072-b449-e2a9ecd48639
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '498'
-ht-degree: 88%
+source-wordcount: '499'
+ht-degree: 86%
 
 ---
 

@@ -4,9 +4,9 @@ description: Adobe Real-time Customer Data Platform B2B版本中目标的角色�
 feature: Destinations
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Real-Time CDP B2B版本完全支持的Experience Platform目标包括Google Cust
 
 要了解目标如何适合您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#activate-your-evaluated-data-to-a-destination).
 
-Adobe Real-time Customer Data Platform B2B版本允许您通过Marketo Engage目标连接器导出B2B数据。 通过使用Marketo Engage目标，您可以将在Adobe Experience Platform中创建的区段推送到Marketo，这些区段将在其中显示为静态列表。
+Adobe Real-time Customer Data Platform B2B版本允许您通过Marketo Engage目标连接器导出B2B数据。 通过使用Marketo Engage目标，您可以将在Adobe Experience Platform中创建的受众推送到Marketo，这些受众将在其中显示为静态列表。
 
 以下文档提供了有关使用Marketo Engage目标导出数据的更多信息：
 

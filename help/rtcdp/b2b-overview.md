@@ -5,9 +5,9 @@ description: Real-Time Customer Data Platform B2B 版本帐户概述
 feature: Get Started, B2B
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '1093'
+source-wordcount: '1050'
 ht-degree: 4%
 
 ---
@@ -86,6 +86,6 @@ Google Customer Match、Facebook、LinkedIn、Marketo Engage、Amazon S3、Googl
 * [如何摄取数据](./sources/b2b.md)
 * [如何访问用户档案](./profile/profile-overview.md)
 * [Real-time Customer Data Platform B2B版本中的架构](./schemas/b2b.md)
-* [如何生成区段](./segmentation/b2b.md)
-* [如何将区段激活到目标](./destinations/b2b.md)
+* [如何构建受众](./segmentation/b2b.md)
+* [如何将受众激活到目标](./destinations/b2b.md)
 * [如何定义和执行数据治理策略](./privacy/data-governance-overview.md)

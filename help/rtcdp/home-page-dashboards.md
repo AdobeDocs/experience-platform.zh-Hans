@@ -1,13 +1,13 @@
 ---
 keywords: 指标概述； rtcdp指标概述
 title: Real-time Customer Data Platform主页和功能板
-description: Adobe Experience Platform 的仪表板、主页和首次用户体验
+description: 了解各种功能板、主页和Adobe Real-Time CDP的首次用户体验。
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: d052f307d91890f89d6cb3f18525fe395c116f95
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '915'
-ht-degree: 6%
+source-wordcount: '919'
+ht-degree: 5%
 
 ---
 
@@ -28,7 +28,7 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 * **将数据摄取到Platform**：此构件会将您定向到源目录。 使用源目录选择源并摄取数据以Experience Platform。 选择 **[配置源]** 导航到源目录。 欲知更多信息，请参阅 [源概述](../sources/home.md).
 * **模型数据结构**：此构件将引导您查看架构概述。 使用架构概述浏览现有架构或创建描述数据结构的Blueprint。 选择 **[!UICONTROL 创建架构]** 导航到架构创建界面。 欲知更多信息，请参阅 [架构概述](../xdm/home.md).
 * **构建受众**：此构件会将您定向到UI中的区段生成器。 使用区段生成器可与配置文件数据元素交互并定义区段定义的标准。 选择 **[!UICONTROL 创建受众]** 导航到区段生成器。 欲知更多信息，请参阅 [分段服务概述](../segmentation/home.md).
-* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将区段发送到该目标。 选择 **[!UICONTROL 设置目标]** 导航到目标目录。 欲知更多信息，请参阅 [目标概述](../destinations/home.md).
+* **将数据发送到目标**：此构件会将您定向到目标目录。 使用目标目录选择一个目标，然后您可以连接到该目标并将受众发送到该目标。 选择 **[!UICONTROL 设置目标]** 导航到目标目录。 欲知更多信息，请参阅 [目标概述](../destinations/home.md).
 
 ![显示入门小组件的Platform UI主页](assets/platform-home/getting-started-widget.png)
 
@@ -44,7 +44,7 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 
 ### 排行榜
 
-排行榜显示贵组织中当前的架构、数据集、用户档案和区段总数及其最近更新日期。
+排行榜显示贵组织中当前的总架构、数据集、用户档案和受众数及其最近更新日期。
 
 ![Platform UI主页中的“排行榜”部分。](assets/platform-home/leaderboard.png)
 
@@ -55,13 +55,13 @@ Real-Time CDP主页包括一个快速入门小组件，允许您快速访问多�
 
 ### 最近项目
 
-“最近项目”列出组织中最近的更改。 在以下示例中，最近的更改与数据集、源、区段和目标有关。
+“最近项目”列出组织中最近的更改。 在以下示例中，最近的更改与数据集、源、受众和目标有关。
 
 ![Platform UI主页中的“最近项目”部分。](assets/platform-home/recent-items.png)
 
 * **最近数据集**：和 **[!UICONTROL 最近数据集]** 信息卡显示了在组织内创建的五个最新数据集。 此列表会在创建新数据集时更新。 选择一个数据集以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取数据集列表。 从该位置，您可以选择特定源以了解详细信息。 有关数据集的更多信息，请参见 [数据集概述](../catalog/datasets/overview.md).
 * **最近的源**：和 **[!UICONTROL 最近的源]** 量度卡显示组织中最近创建的五个源。 此列表会在创建新源时更新。 选择源以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 获取源列表。 从该位置，您可以选择特定源以了解详细信息。 有关源的详细信息，请参阅 [源概述](../sources/home.md).
-* **最近的区段**：和 **[!UICONTROL 最近的区段]** 量度卡显示组织中最近创建的五个区段。 此列表会在创建新区段时更新。 选择区段以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取区段的列表。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md).
+* **最新受众**：和 **[!UICONTROL 最新受众]** 量度卡显示组织中最近创建的五个受众。 此列表会在创建新受众时更新。 选择受众以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取受众列表。 有关受众的详细信息，请参阅 [分段服务概述](../segmentation/home.md).
 * **最近的目标**：和 **[!UICONTROL 最近的目标]** 量度卡显示组织内创建的五个最新目标。 此列表会在创建新目标时更新。 选择一个目标以查看该项目的详细信息，或选择 **[!UICONTROL 查看全部]** 以获取目标列表。 欲知更多信息，请参阅 [目标概述](../destinations/home.md).
 
 ## 资源

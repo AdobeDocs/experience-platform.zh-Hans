@@ -4,10 +4,10 @@ title: Real-time Customer Data Platform快速入门
 description: 在设置您实施的 Adobe Real-Time Customer Data Platform 时请使用此样板场景作为示例。
 feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '2333'
-ht-degree: 2%
+source-wordcount: '2325'
+ht-degree: 1%
 
 ---
 
@@ -55,7 +55,7 @@ ht-degree: 2%
 1. 使用 [多个数据源](#using-multiple-data-sources).
 1. [配置数据源](#configuring-a-data-source).
 1. [收集数据](#bringing-the-data-together-for-a-specific-customer) 适用于特定客户。
-1. 设置 [区段](#segments).
+1. 设置 [受众](#audiences).
 1. 设置 [目标](#destinations).
 1. [跨设备拼合配置文件](#cross-device-identity-stitching).
 1. [分析配置文件](#analyzing-the-profile).
@@ -158,7 +158,7 @@ Luma团队将所有行为和客户数据放在一个位置。
 
    例如，选择 **[!UICONTROL 联系人]**. 联系人数据的预览会自动加载，以便您可以确保一切按预期显示。
 
-   AdobeExperience Platform通过将标准字段自动映射到 [!DNL Experience Data Model] (XDM)配置文件架构。
+   Real-Time CDP通过将标准字段自动映射到 [!DNL Experience Data Model] (XDM)配置文件架构。
 
 1. 查看字段映射。
 
@@ -181,13 +181,15 @@ Luma具有许多内部策略，这些策略限制使用某些类型收集的信�
 
 应用数据使用标签后，Luma便可以使用数据管理来创建数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作类型的规则。 当试图在Real-Time CDP中执行构成策略违规的操作时，将阻止该操作，并发出警报以显示违反的策略及其原因。
 
+此外，Real-Time CDP
+
 ## 将特定客户的数据汇集在一起
 
 在此场景中，搜索Sarah Rose的用户档案。 她的个人资料随即出现，上面有她用来登录的电子邮件。
 
 <!-- ![image](assets/luma-find-profile.png) -->
 
-Luma拥有的关于Sarah显示的所有配置文件信息。 这包括她的个人信息，如地址和电话号码、通信偏好设置以及她符合条件的区段。
+Luma拥有的关于Sarah显示的所有配置文件信息。 这包括她的个人信息，如地址和电话号码、通信偏好以及她有资格的受众。
 
 | 类别 | 描述 |
 |---|---|
@@ -198,9 +200,9 @@ Real-Time CDP配置文件将Luma营销团队的工作流程从几周缩短到几
 
 营销团队可以使用此增强功能， [!DNL Real-Time Customer Profile] 更好地个性化Sarah的体验，并提高她对Luma的品牌忠诚度。
 
-## 区段
+## 受众
 
-借助强大的Adobe Experience Platform分段功能，营销人员可以基于在中捕获的数据，组合属性、事件和现有区段 [!DNL Real-Time Customer Profile].
+借助强大的Adobe Experience Platform分段功能，营销人员可以基于在中捕获的数据，组合属性、事件和现有受众。 [!DNL Real-Time Customer Profile].
 
 <!-- ![image](assets/luma-segments.png) -->
 
@@ -210,9 +212,9 @@ Luma数据科学团队围绕购买倾向创建了模型。 其中一种模型反
 
 <!-- ![image](assets/luma-gift.png) -->
 
-### 定义区段
+### 定义受众
 
-修改或创建一个区段，以表示似乎正在购买礼品的购物车放弃者：
+使用受众工作区中的各种可视构成或基于代码的表达式编辑器选项，来修改或创建代表似乎正在购买礼品的购物车放弃者的受众：
 
 ```sql
 Profile: Category != Preferred Category 
@@ -231,11 +233,11 @@ Loyalty member
 
 ## 目标
 
-添加“礼品赠送购物车放弃者”区段后，您可以大致查看有多少人属于此区段。 您可以对其执行操作，并使其可用于跨渠道个性化。
+当您添加“赠品购物车放弃者”受众时，您可以大致查看有多少人属于该受众。 您可以对其执行操作，并使其可用于跨渠道个性化。
 
 选择 **[!UICONTROL 发送到目标]**.
 
-在Real-Time CDP中，Luma可以无缝地对其受众区段进行个性化操作。\
+在Real-Time CDP中，Luma可无缝地针对其受众进行个性化操作。\
 在这里，我们看到可供Luma将此目标发送至Adobe和非Adobe解决方案的所有目标：
 
 ![image](assets/luma-dest.png)
@@ -252,7 +254,7 @@ Loyalty member
 
 ### 计划目标
 
-您还可以安排在特定时间开始或结束区段。 该区段将在计划的日期在配置的平台中发布并自动更新。
+您还可以安排在特定时间开始或结束受众导出。 受众将在计划的日期在配置的平台中发布并自动更新。
 
 >[!NOTE]
 >
@@ -266,17 +268,21 @@ Loyalty member
 
 ### 实施目标的数据使用策略
 
-Adobe Experience Platform包括隐私和安全控制，用于确定某个区段是否可用于激活到特定目标。 激活的启用或限制取决于创建目标时分配给目标的营销目的以及贵组织定义的数据使用策略。
+Adobe Experience Platform包括隐私和安全控制，用于确定受众是否可用于激活到特定目标。 激活的启用或限制取决于创建目标时分配给目标的营销目的以及贵组织定义的数据使用策略。
 
 如果您的活动违反策略，则会出现警告。 此警告包含数据历程信息，可帮助您确定违反策略的原因以及解决违规的方法。
 
 有了这些控制项， [!DNL Experience Platform] 帮助Luma负责任地遵守法规和市场。 这些控制非常灵活，可以修改以满足Luma安全和治理团队的要求，使他们能够放心地满足区域和组织管理已知和未知客户数据的要求。
 
-### 数据流画布
+<!--
 
-保存后，可视化数据流画布会显示从统一配置文件映射到您选择的三个目标的区段。
+### Data flow canvas
+
+When you save, a visual data flow canvas shows the segment mapped from the unified profile to the three destinations you selected.
 
 ![image](assets/luma-flow.png)
+
+-->
 
 ## 跨设备身份拼接
 
@@ -297,8 +303,8 @@ Sarah在其移动设备上浏览社交媒体网站，并看到Luma广告。 这�
 
 ## 分析用户档案
 
-Luma营销人员使用Adobe Experience Platform查看Real-Time CDP仪表板上的礼品馈送区段。 他们看到这一计划随着时间推移而取得的成果，并看到它还在不断增长。 客户对优惠做出了响应并投入了更多资金。
+Luma营销人员使用Adobe Experience Platform查看Real-Time CDP功能板上的礼品馈送受众。 他们看到这一计划随着时间推移而取得的成果，并看到它还在不断增长。 客户对优惠做出了响应并投入了更多资金。
 
-通过这些洞察，营销人员能够对此信号采取行动，其背后的推动力是将此数据在CDP中可用并将像Sarah这样的客户附加到区段。
+通过这些洞察，营销人员能够对此信号采取行动，其背后的推动力是将此数据存储在CDP中并将像Sarah这样的客户附加到受众。
 
 Luma使用此CDP数据来提高忠诚度和客户满意度。
