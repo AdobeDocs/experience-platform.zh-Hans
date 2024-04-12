@@ -5,9 +5,9 @@ title: 在UI中使用支付源创建数据流
 type: Tutorial
 description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了有关如何使用Platform UI为支付来源创建数据流的步骤。
 exl-id: 7355435b-c038-4310-b04a-8ac6b6723b9b
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1429'
+source-wordcount: '1449'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有带支付源的经过身份验证的帐户。 有关在UI中创建不同支付来源帐户的教程列表，请参阅 [源概述](../../../home.md#payments).
+>* 要创建数据流，您必须已拥有带支付源的经过身份验证的帐户。 有关在UI中创建不同支付来源帐户的教程列表，请参阅 [源概述](../../../home.md#payments).
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

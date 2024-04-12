@@ -5,9 +5,9 @@ title: 使用流服务API为营销自动化源创建数据流
 type: Tutorial
 description: 本教程介绍了从营销自动化系统中检索数据以及使用源连接器和API将数据引入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1349'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有有效的具有营销自动化源的基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#marketing-automation) 有关可创建基本连接的营销自动化源的列表。
+>* 要创建数据流，您必须已具有有效的具有营销自动化源的基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#marketing-automation) 有关可创建基本连接的营销自动化源的列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

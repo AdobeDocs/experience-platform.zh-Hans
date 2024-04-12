@@ -5,9 +5,9 @@ title: 使用流服务API为广告源创建数据流
 type: Tutorial
 description: 本教程涵盖以下步骤：从第三方广告应用程序检索数据，以及使用源连接器和流服务API将数据提取到Platform。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1347'
+source-wordcount: '1340'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ Adobe Experience Platform本教程涵盖从第三方广告应用程序检索数�
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有包含广告源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#advertising) 有关可创建基本连接的广告源的列表。
+>* 要创建数据流，您必须已具有包含广告源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#advertising) 有关可创建基本连接的广告源的列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

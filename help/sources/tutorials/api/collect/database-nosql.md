@@ -5,9 +5,9 @@ title: 使用流服务API为数据库源创建数据流
 type: Tutorial
 description: 本教程介绍了以下步骤：从数据库检索数据，以及使用源连接器和API将数据提取到Platform中。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1408'
+source-wordcount: '1416'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#database) 用于创建基本连接的数据库源的列表。
+>* 要创建数据流，您必须已经具有带数据库源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#database) 用于创建基本连接的数据库源的列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 唯一支持的时间戳 [[!DNL Snowflake] 源](../../../connectors/databases/snowflake.md) 是带有UTC时间的TIMESTAMP_NTZ。
 
 ## 快速入门
 

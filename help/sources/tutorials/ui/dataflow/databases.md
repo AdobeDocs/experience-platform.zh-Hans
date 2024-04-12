@@ -5,9 +5,9 @@ title: 在UI中使用数据库源创建数据流
 type: Tutorial
 description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了有关如何使用Platform UI为数据库源创建数据流的步骤。
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1441'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有具有数据库源的经过身份验证的帐户。 有关在UI中创建不同数据库源帐户的教程列表，请参阅 [源概述](../../../home.md#database).
+>* 要创建数据流，您必须已拥有具有数据库源的经过身份验证的帐户。 有关在UI中创建不同数据库源帐户的教程列表，请参阅 [源概述](../../../home.md#database).
+>
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。 唯一支持的时间戳 [[!DNL Snowflake] 源](../../../connectors/databases/snowflake.md) 是带有UTC时间的TIMESTAMP_NTZ。
 
 ## 快速入门
 

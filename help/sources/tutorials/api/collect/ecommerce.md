@@ -5,9 +5,9 @@ title: 使用流服务API为电子商务来源创建数据流
 type: Tutorial
 description: 本教程涵盖了从第三方电子商务系统检索数据以及使用源连接器和API将数据提取到Platform中的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1304'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有包含电子商务源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#ecommerce) 有关可创建基本连接的电子商务源的列表。
+>* 要创建数据流，您必须已具有包含电子商务源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#ecommerce) 有关可创建基本连接的电子商务源的列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

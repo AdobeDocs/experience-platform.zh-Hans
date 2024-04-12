@@ -5,9 +5,9 @@ title: 在UI中使用同意和偏好设置源创建数据流
 type: Tutorial
 description: 数据流是一种计划任务，用于在源中检索数据并将其摄取到Platform数据集。 本教程提供了有关如何使用Platform UI为同意和偏好设置源创建数据流的步骤。
 exl-id: 340b5945-baa1-4f79-88fa-2572606f6083
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1469'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有经过身份验证的帐户， [!DNL OneTrust Integration] 源。 请参阅上的教程 [创建 [!DNL OneTrust Integration] UI中的源连接](../../ui/create/consent-and-preferences/onetrust.md) 以了解更多信息。
+>* 要创建数据流，您必须已具有经过身份验证的帐户， [!DNL OneTrust Integration] 源。 请参阅上的教程 [创建 [!DNL OneTrust Integration] UI中的源连接](../../ui/create/consent-and-preferences/onetrust.md) 以了解更多信息。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

@@ -5,9 +5,9 @@ title: 使用流服务API为支付来源创建数据流
 type: Tutorial
 description: 本教程涵盖以下步骤：从支付应用程序中检索数据，以及使用源连接器和API将数据提取到Platform。
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1363'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有带支付源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#payments) 用于创建基本连接的支付来源列表。
+>* 要创建数据流，您必须已具有带支付源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#payments) 用于创建基本连接的支付来源列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

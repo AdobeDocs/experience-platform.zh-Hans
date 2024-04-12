@@ -5,9 +5,9 @@ title: 使用流服务API为客户成功源创建数据流
 type: Tutorial
 description: 本教程涵盖以下步骤：从客户成功系统中检索数据，以及使用源连接器和API将数据提取到Platform。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1264'
+source-wordcount: '1257'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,8 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有包含客户成功源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#customer-success) 有关可创建基本连接的客户成功源列表。
+>* 要创建数据流，您必须已经具有包含客户成功源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#customer-success) 有关可创建基本连接的客户成功源列表。
+>* 要使Experience Platform摄取数据，必须将所有基于表的批处理源的时区配置为UTC时区。
 
 ## 快速入门
 

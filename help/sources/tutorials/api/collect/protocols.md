@@ -5,9 +5,9 @@ title: 使用流服务API为协议源创建数据流
 type: Tutorial
 description: 本教程涵盖从协议应用程序检索数据以及使用源连接器和API将数据提取到Platform中的步骤。
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1314'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已具有包含协议源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#protocols) 以获取可创建基本连接的协议源列表。
+>* 要创建数据流，您必须已具有包含协议源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#protocols) 以获取可创建基本连接的协议源列表。
 
 ## 快速入门
 
