@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 81e1ce90b1778bb29c770e1468461949a1ea468c
+source-git-commit: f9235763746e12bd62f19094372dcff41cb41d65
 workflow-type: tm+mt
-source-wordcount: '3189'
+source-wordcount: '3161'
 ht-degree: 1%
 
 ---
@@ -86,7 +86,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 我是否可以删除外部生成的受众？
 
-此时，您只能停用外部生成的受众。 在此状态下，用户档案 **将** 保持活动状态以用于下游应用程序。 后续版本中将添加对删除外部生成的受众的支持。
+是！可以在受众门户中删除外部生成的受众。
 
 ### 如果我意外上传了外部生成的受众，该怎么办？
 
