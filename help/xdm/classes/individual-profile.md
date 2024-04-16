@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM个人配置文件类
 description: 了解XDM Individual Profile类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ce937f1335283382189fa40f65aa268735c02715
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,7 @@ ht-degree: 0%
 
 用户档案的范围可以从匿名行为信号（如浏览器Cookie），到包含姓名、出生日期、位置和电子邮件地址等详细信息的高度识别用户档案。 随着个人资料的增长，它将成为包含个人信息、身份、联系人详细信息和个人通信偏好设置的强大存储库。 有关此类在平台生态系统中使用的更多高级信息，请参阅 [XDM概述](../home.md#data-behaviors).
 
-此 [!DNL XDM Individual Profile] 类本身提供了几个系统生成的值，摄取数据时会自动填充这些值，而所有其他字段都必须通过使用进行添加 [兼容的架构字段组](#field-groups)：
-
-![](../images/classes/individual-profile.png)
+![XDM Individual Profile类的架构图。](../images/classes/individual-profile.png)
 
 | 属性 | 描述 |
 | --- | --- |
