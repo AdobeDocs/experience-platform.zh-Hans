@@ -4,9 +4,9 @@ title: 使用API的边缘分段
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform分段服务API一起使用的示例。
 role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1207'
 ht-degree: 1%
 
 ---
@@ -64,6 +64,7 @@ ht-degree: 1%
 
 - 区段定义包括单个事件和 `inSegment` 事件。
    - 然而，倘分部包含在 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用边缘分段。
+- 区段定义使用“忽略年份”作为其时间限制的一部分。
 
 ## 检索为边缘分段启用的所有区段
 
@@ -279,6 +280,6 @@ curl -X POST \
 
 以下部分列出了有关边缘分段的常见问题解答：
 
-### 区段在Edge Network上可用需要多长时间？
+### 区段需要多久才能在Edge Network上可用？
 
 在Edge Network上提供一个区段最多需要一小时。

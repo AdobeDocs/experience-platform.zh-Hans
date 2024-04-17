@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 流分段UI指南
 description: Adobe Experience Platform上的流式分段允许您近乎实时地执行分段，同时专注于数据丰富度。 借助流式分段，现在可在数据进入Platform时进行区段鉴别，从而无需安排和运行分段作业。 借助此功能，现在可以在将数据传递到Platform时评估大多数区段规则，这意味着区段成员资格将保持最新，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 88f2c8723ef16ff5601dc7e45a9f77b25f45acfd
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1541'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,7 @@ ht-degree: 0%
 - 区段定义包括多个实体（多实体查询）。
 - 区段定义包括单个事件和 `inSegment` 事件。
    - 然而，倘分部定义包含于 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用流式客户细分。
+- 区段定义使用“忽略年份”作为其时间限制的一部分。
 
 请注意，在进行流式分段时适用以下准则：
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 边缘分段UI指南
 description: 了解如何使用边缘分段在边缘即时评估Platform中的区段定义，启用同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ ht-degree: 0%
 
 - 区段定义包括单个事件和 `inSegment` 事件。
    - 然而，倘分部定义包含于 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用边缘分段。
+- 区段定义使用“忽略年份”作为其时间限制的一部分。
 
 ## 后续步骤
 
@@ -64,6 +65,6 @@ ht-degree: 0%
 
 以下部分列出了有关边缘分段的常见问题解答：
 
-### 在Edge Network上提供区段定义需要多长时间？
+### 区段定义需要多久才能在Edge Network上可用？
 
-在Edge Network上提供区段定义最多需要一小时。
+区段定义在Edge Network上可用最多需要一小时。

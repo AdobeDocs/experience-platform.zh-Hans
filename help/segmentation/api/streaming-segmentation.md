@@ -4,9 +4,9 @@ title: 使用流式分段近乎实时地评估事件
 description: 本文档包含有关如何将流式分段与Adobe Experience Platform分段服务API一起使用的示例。
 role: Developer
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 2afd0ff97478938f4101e5a4b583e56a760840a2
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '2038'
+source-wordcount: '2050'
 ht-degree: 4%
 
 ---
@@ -87,6 +87,7 @@ ht-degree: 4%
 - 区段定义包括多个实体（多实体查询）。
 - 区段定义包括单个事件和 `inSegment` 事件。
    - 然而，倘分部包含在 `inSegment` 事件仅用于配置文件，区段定义 **将** 启用流式客户细分。
+- 区段定义使用“忽略年份”作为其时间限制的一部分。
 
 请注意，在进行流式分段时适用以下准则：
 

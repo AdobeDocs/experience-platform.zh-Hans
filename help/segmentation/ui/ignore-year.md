@@ -2,13 +2,13 @@
 solution: Experience Platform
 title: 忽略年度时间约束更新
 description: 了解如何解决忽略年份时间限制的问题。
-source-git-commit: d0bd7990f0d77cd5f8d30da735b89c188e13c780
+exl-id: 44bb8817-e32d-4806-ad4e-b1840313e768
+source-git-commit: 006950092f69d378b064c795b117166343e5d8f2
 workflow-type: tm+mt
-source-wordcount: '208'
-ht-degree: 9%
+source-wordcount: '246'
+ht-degree: 8%
 
 ---
-
 
 # 忽略年份时间限制更新 {#ignore-year}
 
@@ -16,6 +16,10 @@ ht-degree: 9%
 >id="platform_audiences_segmentBuilder_ignoreYear"
 >title="忽略年份更新"
 >abstract="忽略年份时间限制已更新。请重新保存您的受众。"
+
+>[!IMPORTANT]
+>
+>在使用评估的区段定义中，您只能使用“忽略年份”时间限制 **批量分段**. 将“忽略年份”时间限制添加到区段定义将生成受众 **不合格** 用于流或边缘分段。
 
 Adobe Experience Platform 2024年2月版对Adobe Experience Platform分段服务进行了更改，解决了受众创建和评估中“忽略年份”选项的问题。
 
