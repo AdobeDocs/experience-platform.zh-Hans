@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
+source-git-commit: 002a57d1d5cfb2e7bdbd9b587e77ca4487a28f65
 workflow-type: tm+mt
 source-wordcount: '2268'
 ht-degree: 2%
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 Adobe Experience Platform Web SDK是一个客户端JavaScript库，通过它，可与Adobe Experience Cloud中的各种服务进行交互。
 
-Web SDK以与解决方案无关的方式(XDM)将数据发送到Experience Platform边缘网络，然后边缘网络将数据映射到解决方案特定的格式和目标并实时发送。
+Web SDK会以与解决方案无关的方式(XDM)将数据发送到Experience PlatformEdge Network，之后再将数据映射到解决方案特定的格式和目标并实时发送。
 
 请观看以下视频，以了解有关Web SDK的更多信息： [再次满足Alloy.js要求，不再为eVar或Mbox添加标记](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html).
 
@@ -46,7 +46,7 @@ Web SDK以与解决方案无关的方式(XDM)将数据发送到Experience Platfo
 
 ### 使用Experience PlatformWeb SDK
 
-新的Web SDK可将以下解决方案的数据发送到单一目标(Experience Platform边缘网络)，并解决上述最常见的解决方案使用案例。
+新的Web SDK可将以下解决方案的数据发送到单一目标(Experience PlatformEdge Network)，并解决上述最常见的解决方案使用案例。
 
 * Adobe Analytics
 * Adobe Audience Manager
@@ -65,9 +65,9 @@ Adobe Experience Platform Web SDK也可以将数据直接发送到Adobe Experien
 **简单性：** XDM、Web SDK、标记、Edge Network、Adobe Experience Cloud解决方案和Adobe Experience Platform的组合创建了一个易于理解和易于遵循的数据收集故事。
 
 * **XDM：** 用于将数据发送到Adobe的与解决方案无关的架构。 不再为evar或mbox添加标记。
-* **Web SDK：** 使向Adobe Experience Platform Edge Network发送和接收数据更轻松。
+* **Web SDK：** 使向Adobe Experience PlatformEdge Network发送和接收数据更容易。
 * **标记：** 简化网站上Web SDK（以及任何其他JavaScript标记）的部署和配置。
-* **边缘网络：** 轻松地将数据以所需的格式路由到Adobe Experience Platform和解决方案。
+* **Edge Network：** 轻松地将数据以所需的格式路由到Adobe Experience Platform和解决方案。
 * **Adobe Experience Platform和Adobe解决方案：** 实现他们的价值主张。
 
 **控制：** 由于所有数据都使用单个连接的数据流，因此您可以逻辑地跟踪和控制数据在其进出应用程序的历程中的每一毫秒所呈现出的外观。
@@ -114,7 +114,7 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处
 
 这依具体情况而定。Adobe Experience Platform Web SDK可以采用两种不同的样式进行部署。 未来的迁移文档将提供更多详细信息。
 
-* **只是另一个标记：** 如果网站已标记了解决方案，并且您无法重新标记，但希望将数据发送到Adobe Experience Platform Edge Network以了解Experience Platform用例或即将推出的事件转发功能（请参阅下文），则可以添加 `alloy.js` 标记到站点中，它的工作方式为“只是另一个标记”。
+* **只是另一个标记：** 如果网站已标记为提供解决方案，并且您无法重新标记，但希望将数据发送到Adobe Experience PlatformEdge Network以供Experience Platform用例或即将推出的事件转发功能使用（请参阅下文），则可以添加 `alloy.js` 标记到站点中，它的工作方式为“只是另一个标记”。
 
 * **唯一一个标记：** 如果要将Web SDK用于Experience Cloud解决方案，则必须将其用于 _所有_ 页面上的解决方案中。 例如，如果您的网站已为Adobe Analytics进行了标记，并且您想要将其用于Target，则以后需要将其用于这两个网站，并用于任何其他网站。
 
@@ -146,7 +146,7 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处
 
 ## 什么是事件转发？
 
-如果您使用我们的SDK并将XDM发送到Edge Network，则这些新增功能事件转发允许您安装新的服务器端扩展，并将该数据映射到我们的边缘网络中的任何内容，并将其发送到任何位置。 可将其视为“数据收集即服务”。 这将收取费用，并将作为Adobe Experience Platform的一部分捆绑提供。
+如果您使用我们的SDK并将XDM发送到Edge Network，则这些新功能事件转发允许您安装新的服务器端扩展，并将该数据映射到我们的边缘网络中的任何内容，并将其发送到任何位置。 可将其视为“数据收集即服务”。 这将收取费用，并将作为Adobe Experience Platform的一部分捆绑提供。
 
 ## 什么是CNAME或第一方域，它为什么重要？
 
@@ -159,16 +159,16 @@ Web SDK正在快速演变。 正在处理更多用例。 您可以找到 [此处
 | **名称** | **maxAge** | **友好年龄** | **描述** |
 |---|---|---|---|
 | **kndct_orgid_identity** | 34128000 | 395 天 | 身份Cookie会存储ECID以及与ECID相关的其他信息。 |
-| **kndctr_orgid_consent_check** | 7200 | 2 小时 | 此Cookie存储用户对网站的同意首选项。 |
-| **kndctr_orgid_consent** | 15552000 | 180 天 | 此基于会话的Cookie指示服务器查找同意首选项服务器端。 |
-| **kndctr_orgid_cluster** | 1800 | 30 分钟 | 此Cookie存储为当前用户的请求提供服务的边缘网络区域。 URL路径中使用区域，以便Edge Network能够将请求路由到正确的区域。 此Cookie的生命周期为30分钟，因此，如果用户使用不同的IP地址连接，则请求可以路由到最近的区域。 |
+| **kndctr_orgid_consent_check** | 7200 | 2 小时 | 此基于会话的Cookie指示服务器查找同意首选项服务器端。 |
+| **kndctr_orgid_consent** | 15552000 | 180 天 | 此Cookie存储用户对网站的同意首选项。 |
+| **kndctr_orgid_cluster** | 1800 | 30 分钟 | 此Cookie存储为当前Edge Network提供请求的请求区域。 URL路径中使用区域，以便Edge Network能够将请求路由到正确的区域。 此Cookie的生命周期为30分钟，因此，如果用户使用不同的IP地址连接，则请求可以路由到最近的区域。 |
 | **mbox** | 63072000 | 2 年 | 当Target迁移设置设为true时，将显示此Cookie。 这将允许Target [mbox Cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) 将由Web SDK设置。 |
 | **mboxEdgeCluster** | 1800 | 30 分钟 | 当Target迁移设置设为true时，将显示此Cookie。 此Cookie允许Web SDK将正确的边缘群集传递给at.js，以便在用户浏览网站时，Target配置文件可以保持同步。 |
 | **AMCV_###@AdobeOrg** | 34128000 | 395 天 | 只有在Adobe Experience Platform Web SDK上启用了ID迁移后，此Cookie才会显示。 在网站的某些部分仍在使用visitor.js的情况下，当过渡到Web SDK时，此Cookie会有所帮助。 请参阅 [`idMigrationEnabled`](/help/web-sdk/commands/configure/idmigrationenabled.md) 以了解更多信息。 |
 
-使用Web SDK时，边缘网络设置上述一个或多个Cookie。 边缘网络使用设置所有Cookie `secure` 和 `sameSite="none"` 属性。
+使用Web SDK时，Edge Network会设置上述一个或多个Cookie。 Edge Network使用设置所有Cookie `secure` 和 `sameSite="none"` 属性。
 
-如果您的网站上当前同时存在安全部分和不安全部分，这可能会干扰用户识别。 当用户从网站的安全区域导航到非安全区域时，边缘网络生成新的 `ECID` 请求。
+如果您的网站上当前同时存在安全部分和不安全部分，这可能会干扰用户识别。 当用户从网站的安全区段导航到非安全区段时，Edge Network生成新的 `ECID` 请求。
 
 ## Adobe Experience Platform Web SDK支持哪些浏览器？
 
