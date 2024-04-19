@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: aee82356f1f519398f381e161be14789532561f1
+source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
 workflow-type: tm+mt
-source-wordcount: '2932'
+source-wordcount: '2943'
 ht-degree: 3%
 
 ---
@@ -273,9 +273,9 @@ ht-degree: 3%
 
 ## 删除启用配置文件的数据集
 
-如果为配置文件启用了某个数据集，则通过UI删除该数据集将会从数据湖、身份服务以及Platform中的配置文件存储中删除它。
+如果为配置文件启用了某个数据集，则通过UI删除该数据集会将其从数据湖、身份服务以及配置文件存储中与该数据集关联的任何配置文件数据中删除。
 
-您可以从中删除数据集 [!DNL Profile] 使用实时客户个人资料API仅存储（将数据保留在数据湖中）。 欲了解更多信息，请参见 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
+您可以从以下位置删除与数据集关联的配置文件数据 [!DNL Profile] 使用实时客户个人资料API存储（将数据保留在数据湖中）。 欲了解更多信息，请参见 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
 
 ## 监测数据摄取
 

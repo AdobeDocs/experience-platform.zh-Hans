@@ -4,9 +4,9 @@ title: Real-Time Customer Profile API指南
 description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '883'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 ## 配置文件系统作业 {#profile-system-jobs}
 
-已摄取到的启用配置文件的数据 [!DNL Platform] 存储在 [!DNL Data Lake] 以及 [!DNL Real-Time Customer Profile] 数据存储。 有时可能有必要从以下位置删除数据集或批次： [!DNL Profile] 存储以删除您不再需要或添加错误的数据。 这需要使用API创建 [!DNL Profile System Job]，也称为“[!DNL delete request]“”，可根据需要修改、监视或删除这些变量。 要了解如何使用删除请求，请执行以下操作 `/system/jobs` 中的端点 [!DNL Real-Time Customer Profile] API，请按照 [配置文件系统作业端点指南](profile-system-jobs.md).
+已摄取到的启用配置文件的数据 [!DNL Platform] 存储在 [!DNL Data Lake] 以及 [!DNL Real-Time Customer Profile] 数据存储。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用API创建 [!DNL Profile System Job]，也称为“[!DNL delete request]“”，可根据需要修改、监视或删除这些变量。 要了解如何使用删除请求，请执行以下操作 `/system/jobs` 中的端点 [!DNL Real-Time Customer Profile] API，请按照 [配置文件系统作业端点指南](profile-system-jobs.md).
 
 ## 更新用户档案属性 {#update-profile}
 

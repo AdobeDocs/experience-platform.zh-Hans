@@ -5,16 +5,16 @@ type: Documentation
 description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以便删除不再需要或添加错误的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 42c83c7449a14eec5b91f82811bce4234e47cb51
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1327'
 ht-degree: 2%
 
 ---
 
 # 配置文件系统作业端点（删除请求）
 
-Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 数据被引入 [!DNL Platform] 存储在 [!DNL Data Lake]，并且如果为配置文件启用了数据集，则该数据将存储在 [!DNL Real-Time Customer Profile] 数据存储区。 有时候，可能有必要从配置文件存储中删除数据集或批次，以删除不再需要或添加错误的数据。 这需要使用 [!DNL Real-Time Customer Profile] 用于创建应用程序的API [!DNL Profile] 系统作业，或 `delete request`，如有必要，还可以修改、监视或移除这些组件。
+Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 数据被引入 [!DNL Platform] 存储在 [!DNL Data Lake]，并且如果为配置文件启用了数据集，则该数据将存储在 [!DNL Real-Time Customer Profile] 数据存储区。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用 [!DNL Real-Time Customer Profile] 用于创建应用程序的API [!DNL Profile] 系统作业，或 `delete request`，如有必要，还可以修改、监视或移除这些组件。
 
 >[!NOTE]
 >
@@ -102,9 +102,9 @@ curl -X GET \
 
 新删除请求是通过向发出的POST请求来启动的 `/systems/jobs` 端点，其中在请求正文中提供要删除的数据集或批次的ID。
 
-### 删除数据集
+### 删除数据集和关联的配置文件数据
 
-要从配置文件存储中删除数据集，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform] 允许您同时基于记录和时间序列架构删除数据集。
+要从配置文件存储中删除数据集及与该数据集关联的所有配置文件数据，数据集ID必须包含在POST请求正文中。 此操作将删除给定数据集的所有数据。 [!DNL Experience Platform] 允许您同时基于记录和时间序列架构删除数据集。
 
 **API格式**
 
