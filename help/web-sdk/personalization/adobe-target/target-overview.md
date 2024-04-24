@@ -2,9 +2,9 @@
 title: 将Adobe Target与Web SDK结合使用进行个性化
 description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 0b662b4c1801a6d6f6fc2c6ade92d259b821ab23
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1173'
 ht-degree: 5%
 
 ---
@@ -35,17 +35,18 @@ ht-degree: 5%
 
 下图可帮助您了解的工作流 [!DNL Target] 和 [!DNL Web SDK] edge decisioning.
 
-![使用Platform Web SDK的Adobe Target Edge Decisioning示意图](./assets/target-platform-web-sdk.png)
+![使用Platform Web SDK的Adobe Target Edge Decisioning示意图](assets/target-platform-web-sdk-new.png)
 
 | 调用 | 详细信息 |
 | --- | --- |
-| 1 | 设备加载 [!DNL Web SDK]. 此 [!DNL Web SDK] 使用XDM数据、数据流环境ID、传入参数和客户ID（可选）向边缘网络发送请求。 页面（或容器）已预先隐藏。 |
-| 2 | 边缘网络将请求发送到边缘服务，以使用访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）扩充其内容。 |
-| 3 | 边缘网络将扩充的个性化请求发送至 [!DNL Target] 使用访客ID和传入的参数进行Edge。 |
+| 1 | 设备加载 [!DNL Web SDK]. 此 [!DNL Web SDK] 向Edge Network发送请求，其中包含XDM数据、数据流环境ID、传入的参数和客户ID（可选）。 页面（或容器）已预先隐藏。 |
+| 2 | Edge Network将请求发送到边缘服务，以使用访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）对其进行扩充。 |
+| 3 | Edge Network将扩充个性化请求发送至 [!DNL Target] 使用访客ID和传入的参数进行Edge。 |
 | 4 | 配置文件脚本先执行，然后注入到 [!DNL Target] 配置文件存储。 配置文件存储从获取区段 [!UICONTROL 受众库] (例如，从共享区段 [!DNL Adobe Analytics]， [!DNL Adobe Audience Manager]， [!DNL Adobe Experience Platform])。 |
-| 5 | 根据URL请求参数和配置文件数据， [!DNL Target] 确定可为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target] 然后将它发回到edge network。 |
-| 6 | a.边缘网络将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>的问题。Edge Network发送访客ID和Cookie中的其他值，例如同意、会话ID、身份、Cookie检查和个性化。 |
-| 7 | 边缘网络转发 [!UICONTROL 目标分析] (A4T)的详细信息（活动、体验和转化元数据） [!DNL Analytics] 边缘。 |
+| 5 | 根据URL请求参数和配置文件数据， [!DNL Target] 确定可为访客显示的当前页面视图和未来预取视图的活动和体验。 [!DNL Target] 然后将它发送回Edge Network。 |
+| 6 | a.Edge Network将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.作为用户操作在单页应用程序(SPA)中显示的视图的个性化内容将缓存，这样便可在触发视图时即时应用而无需额外的服务器调用。 <br>c.Edge Network发送访客ID和Cookie中的其他值，如同意、会话ID、身份、Cookie检查和个性化。 |
+| 7 | Web SDK将通知从设备发送到Edge Network。 |
+| 8 | Edge Network转发 [!UICONTROL 目标分析] (A4T)的详细信息（活动、体验和转化元数据） [!DNL Analytics] 边缘。 |
 
 ## 正在启用 [!DNL Adobe Target]
 
