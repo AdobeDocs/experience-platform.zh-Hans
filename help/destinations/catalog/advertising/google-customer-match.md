@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google Customer Match连接
 description: Google Customer Match允许您使用在线和离线数据，通过Google自有资产和运营资产(如Search、Shopping、Gmail和YouTube)与客户联系并重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 7d43abd507b5cee2b5c5d90af253d3e9290013a2
+source-git-commit: 0db22ba2993012357cf65daaeffb5676193fba23
 workflow-type: tm+mt
-source-wordcount: '1972'
+source-wordcount: '1969'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Google将发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)， [客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)，和 [显示和视频360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) ，以支持 [数字市场法案](https://digital-markets-act.ec.europa.eu/index_en) (DMA)在欧盟([欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/))。 预计这些对同意要求的更改将从2024年3月6日起生效。
+> Google将发布对 [Google Ads API](https://developers.google.com/google-ads/api/docs/start)， [客户匹配](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)，和 [显示和视频360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) ，以支持 [数字市场法案](https://digital-markets-act.ec.europa.eu/index_en) (DMA)在欧盟([欧盟用户同意政策](https://www.google.com/about/company/user-consent-policy/))。 自2024年3月6日起，将开始实施对同意要求的这些更改。
 ><br/>
 >为了遵循欧盟用户同意政策并继续为欧洲经济区(EEA)中的用户创建受众列表，广告商和合作伙伴必须确保他们在上传受众数据时获得最终用户同意。 作为Google合作伙伴，Adobe会为您提供在欧洲的DMA中遵守这些同意要求的必要工具。
 ><br/>
