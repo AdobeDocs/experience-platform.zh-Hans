@@ -1,11 +1,11 @@
 ---
 title: 交互式数据收集
-description: 了解Adobe Experience Platform Edge Network服务器API如何执行交互式数据收集。
+description: 了解Adobe Experience PlatformEdge Network服务器API如何执行交互式数据收集。
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: f8434746c4a023ec895d23a59e04fca4baecfc36
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 6%
+source-wordcount: '179'
+ht-degree: 5%
 
 ---
 
@@ -13,7 +13,11 @@ ht-degree: 6%
 
 ## 概述 {#overview}
 
-交互式数据收集端点接收单个事件，并在客户端期望Adobe Experience Platform Edge Network服务器返回响应时使用。 这些端点还可以在执行数据收集时从其他Edge Network服务返回内容。
+交互式数据收集端点接收单个事件，并在客户端期望Adobe Experience PlatformEdge Network服务器返回响应时使用。 这些端点还可以在执行数据收集时从其他Edge Network服务返回内容。
+
+>[!IMPORTANT]
+>
+>此 `/interact` 端点主要设计为Experience PlatformSDK使用。 此端点可能会发生额外的更改，其行为可能会发生演变，恕不另行通知。 例如，将来可能会向响应有效负载添加新项目。
 
 服务器响应包括一个或多个 `Handle` 对象，如下所示。
 
