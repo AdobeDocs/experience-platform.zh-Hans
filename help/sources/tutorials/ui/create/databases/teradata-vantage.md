@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；Teradata优势
 title: 在UI中创建Teradata优势源连接
 description: 了解如何使用Adobe Experience Platform UI创建TeradataVantage源连接。
 exl-id: 3fdb09fa-128a-477b-9144-d4ef3ed18ea6
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 625a7959f48a0b16c3228d4555e046b5f67c51b7
 workflow-type: tm+mt
-source-wordcount: '394'
+source-wordcount: '413'
 ht-degree: 1%
 
 ---
 
-# (Beta)创建 [!DNL Teradata Vantage] UI中的源连接
-
->[!NOTE]
->
-> 此 [!DNL Teradata Vantage] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+# 创建 [!DNL Teradata Vantage] UI中的源连接
 
 本教程提供了用于创建 [!DNL Teradata Vantage] 源连接器，使用Adobe Experience Platform用户界面。
 
@@ -37,13 +33,15 @@ ht-degree: 1%
 
 ## 连接您的 [!DNL Teradata Vantage] 帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕中显示多种来源，您可以使用这些来源创建帐户。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
+在 [!UICONTROL 数据库] 类别，选择 **[!UICONTROL teradata优势]** 然后选择 **[!UICONTROL 设置]**.
 
-在 [!UICONTROL 数据库] 类别，选择 **[!UICONTROL teradata优势]** 然后选择 **[!UICONTROL 添加数据]**.
+>[!TIP]
+>
+>源目录中的源显示 **[!UICONTROL 设置]** 选项。 经过身份验证的帐户存在后，此选项将更改为 **[!UICONTROL 添加数据]**.
 
-![](../../../../images/tutorials/create/teradata/catalog.png)
+![已选择Teradata优势源的源目录。](../../../../images/tutorials/create/teradata/catalog.png)
 
 此 **[!UICONTROL 连接到Teradata Vantage]** 页面。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -51,13 +49,13 @@ ht-degree: 1%
 
 要连接现有帐户，请选择 [!DNL Teradata Vantage] 要连接的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-![](../../../../images/tutorials/create/teradata/existing.png)
+![源工作区中的现有帐户页面。](../../../../images/tutorials/create/teradata/existing.png)
 
 ### 新帐户
 
 如果您正在使用新凭据，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供名称、可选描述以及 [!DNL Teradata Vantage] 凭据。 完成后，选择 **[!UICONTROL 连接]** 然后等待一段时间以建立新连接。
 
-![](../../../../images/tutorials/create/teradata/new.png)
+![源工作区中的新帐户创建界面。](../../../../images/tutorials/create/teradata/new.png)
 
 ## 后续步骤
 

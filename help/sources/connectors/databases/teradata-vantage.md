@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；teradata；teradata优�
 title: teradata优势源连接器概述
 description: 了解如何使用API或用户界面将TeradataVantage连接到Adobe Experience Platform。
 exl-id: f498a704-437a-4fc6-b50d-b6a1ce7ab264
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 625a7959f48a0b16c3228d4555e046b5f67c51b7
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '238'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Teradata Vantage] 源
-
->[!NOTE]
->
->此 [!DNL Teradata Vantage] 源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+# [!DNL Teradata Vantage] 源
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 

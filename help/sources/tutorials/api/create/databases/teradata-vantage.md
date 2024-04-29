@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；Teradata优势
 title: 使用流服务API创建TeradataVantage基本连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Teradata Vantage。
 exl-id: 88707dca-3c7a-43c7-9d71-473ad9715fc6
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 625a7959f48a0b16c3228d4555e046b5f67c51b7
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '450'
 ht-degree: 4%
 
 ---
 
-# (Beta)创建 [!DNL Teradata Vantage] 基本连接使用 [!DNL Flow Service] API
-
->[!NOTE]
->
->此 [!DNL Teradata Vantage] 源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标记源代码的更多信息。
+# 创建 [!DNL Teradata Vantage] 基本连接使用 [!DNL Flow Service] API
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
