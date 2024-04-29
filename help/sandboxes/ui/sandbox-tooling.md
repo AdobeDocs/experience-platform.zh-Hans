@@ -70,8 +70,8 @@ ht-degree: 8%
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_remove_object"
->title="删除对象"
->abstract="要从包中删除某个对象，请选择要删除的行，然后使用在选择后出现的删除选项。注意，无法从已发布的包中删除对象。"
+>title="移除对象"
+>abstract="要从包中移除某个对象，请选择要移除的行，然后使用在选择后出现的删除选项。注意，无法从已发布的包中移除对象。"
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_package_expiry"
