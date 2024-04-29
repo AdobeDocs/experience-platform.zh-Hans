@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据登陆区；数据
 title: 使用UI将数据登陆区连接到Platform
 description: 了解如何使用Platform用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: 9cffd508c1bff7ce133f84ca686c414e997343b8
+source-git-commit: 9372e6f961015c989bfcb0d1e2b0129da965c522
 workflow-type: tm+mt
-source-wordcount: '672'
+source-wordcount: '747'
 ht-degree: 0%
 
 ---
@@ -60,23 +60,41 @@ ht-degree: 0%
 
 有关如何为云存储源创建数据流的分步指南，请参阅上的教程 [创建云存储数据流以将数据引入平台](../../dataflow/batch/cloud-storage.md).
 
-## 检索并刷新 [!DNL Data Landing Zone] 凭据
+## 检索您的 [!DNL Data Landing Zone] 凭据
 
-[!DNL Data Landing Zone] 是随Adobe Experience Platform Sources许可证提供的开箱即用源。 [!DNL Data Landing Zone] 使用基于SAS URI和SAS令牌的身份验证。 您可以从以下位置检索和刷新您的身份验证凭据： [!UICONTROL 源目录] 页面。
+[!DNL Data Landing Zone] 是您的Adobe Experience Platform源许可证随附的源。 [!DNL Data Landing Zone] 使用基于SAS URI和SAS令牌的身份验证。 您可以从以下位置检索您的身份验证凭据 [!UICONTROL 源目录] 页面。
 
-在 [!UICONTROL 源目录]，位于 [!UICONTROL 云存储] 类别中，选择省略号(**...**)中的 **[!UICONTROL 数据登陆区]** 卡片。 从出现的下拉菜单中，选择 **[!UICONTROL 查看凭据]**.
+要检索您的凭据，请选择 **[!UICONTROL 数据登陆区]** 信息卡，然后从显示的右边栏复制您的凭据。
 
-![数据登陆区域的视图选项列表。](../../../../images/tutorials/create/dlz/options.png)
+![数据登陆区域的视图选项列表。](../../../../images/tutorials/create/dlz/view-credentials.png)
 
 此时会出现一个弹出窗口，显示容器名称、SAS令牌、存储帐户名称、SAS URI和到期日期。
 
-选择 **[!UICONTROL 刷新凭据]** 留出几秒时间，以便处理您更新的凭据。
+## 刷新您的 [!DNL Data Landing Zone] 凭据
 
->[!TIP]
->
->您的 [!DNL Data Landing Zone] 凭据设置为在90天后自动过期，您必须使用新凭据重新连接到 [!DNL Data Landing Zone] 过期后。 您的Platform中的数据流不受凭据过期的影响，并且您仍然可以使用新凭据继续使用新的和现有的数据流。
+您的 [!DNL Data Landing Zone] 凭据设置为在90天后自动过期，您必须使用新凭据重新连接到 [!DNL Data Landing Zone] 过期后。 您的Experience Platform数据流不受凭据过期的影响，您仍然可以使用新凭据继续使用新的和现有数据流。
 
-![与给定数据登陆区帐户关联的凭据。](../../../../images/tutorials/create/dlz/view-credentials.png)
+您可以通过两种方式刷新 [!DNL Data Landing Zone] 凭据：
+
+>[!BEGINTABS]
+
+>[!TAB 使用源卡]
+
+要从源目录页面刷新凭据，请选择省略号(**`...`**) [!DNL Data Landing Zone] 信息卡，然后选择 **[!UICONTROL 刷新凭据]**.
+
+![使用源卡刷新凭据。](../../../../images/tutorials/create/dlz/refresh-with-card.png)
+
+此时会出现一个弹出窗口，提示您进行确认，然后才能继续。 准备就绪后，选择 **[!UICONTROL 刷新凭据]**.
+
+![刷新身份证明确认窗口。](../../../../images/tutorials/create/dlz/confirm.png)
+
+>[!TAB 使用右边栏]
+
+要使用右边栏刷新凭据，请选择 **[!UICONTROL 数据登陆区]** 源卡片，然后选择 **[!UICONTROL 更多操作]**. 接下来，选择 **[!UICONTROL 刷新凭据]** 然后使用显示的弹出窗口进行确认。
+
+![使用右边栏刷新凭据。](../../../../images/tutorials/create/dlz/refresh-with-right-rail.png)
+
+>[!ENDTABS]
 
 ## 后续步骤
 
