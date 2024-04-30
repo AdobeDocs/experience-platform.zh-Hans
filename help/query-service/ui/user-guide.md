@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: ce937f1335283382189fa40f65aa268735c02715
+source-git-commit: 02ecc6bd2ff85d2d837ffe25b090fd65043779a9
 workflow-type: tm+mt
-source-wordcount: '2661'
+source-wordcount: '2794'
 ht-degree: 2%
 
 ---
@@ -88,6 +88,16 @@ ht-degree: 2%
 [!UICONTROL 运行选定的查询] 图标。 默认情况下，此图标处于禁用状态，直到您在编辑器中选择查询语法。
 
 ![具有的查询编辑器 [!UICONTROL 运行选定的查询] 图标高亮显示。](../images/ui/query-editor/run-selected-query.png)
+
+### 取消查询编辑器会话 {#cancel-query}
+
+通过取消长时间运行的查询来控制查询执行并提高生产效率。 此操作在查询运行时清除查询编辑器。 请注意，查询将继续在后台执行。 如果它是CTAS查询，仍会生成输出数据集。 要在编辑器中取消运行并继续编写SQL语句，请选择 **[!UICONTROL 取消查询]** 执行查询之后。
+
+![使用的查询编辑器 [!UICONTROL 取消查询] 突出显示。](../images/ui/query-editor/cancel-query-run.png)
+
+将显示确认对话框。 选择 **[!UICONTROL 确认]** 以取消查询运行。
+
+![取消查询确认对话框突出显示“确认”。](../images/ui/query-editor/cancel-query-confirmation-dialog.png)
 
 ### 结果计数 {#result-count}
 
@@ -219,7 +229,11 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 可以从“查询编辑器”安排已另存为模板的查询。 计划查询允许您以自定义节奏自动运行查询。 您可以根据频率、日期和时间安排查询，还可以在必要时为结果选择输出数据集。 也可以通过UI禁用或删除查询计划。
 
-在查询编辑器中设置计划。 使用查询编辑器时，您只能向已创建、保存和运行的查询添加计划。 同样的限制不适用于 [!DNL Query Service] API：
+在查询编辑器中设置计划。 使用查询编辑器时，您只能向已创建、保存和运行的查询添加计划。 同样的限制不适用于 [!DNL Query Service] API。
+
+>[!NOTE]
+>
+>连续十次运行失败的已计划查询将自动置于 [!UICONTROL 已隔离] 状态。 具有此状态的查询需要您的干预，然后才能进行任何进一步的执行。 请参阅 [隔离的查询](./monitor-queries.md#quarantined-queries) 文档，以了解更多详细信息。
 
 请参阅查询计划文档，了解如何 [在UI中创建查询计划](./query-schedules.md). 或者，要了解如何使用API添加计划，请参阅 [计划查询端点指南](../api/scheduled-queries.md).
 

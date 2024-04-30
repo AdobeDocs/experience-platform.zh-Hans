@@ -2,9 +2,9 @@
 title: 监视计划的查询
 description: 了解如何通过查询服务UI监控查询。
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 7e0259f8807e96118dbcd1085d8b3b3186fc8317
+source-git-commit: e63e3344dd530fc9111f29948f2dfbd4daedf28c
 workflow-type: tm+mt
-source-wordcount: '1818'
+source-wordcount: '2030'
 ht-degree: 0%
 
 ---
@@ -32,12 +32,12 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 | **[!UICONTROL 名称]** | 名称字段是模板名称或SQL查询的前几个字符。 使用查询编辑器通过UI创建的任何查询都会在开始时命名。 如果查询是通过API创建的，则其名称将成为用于创建查询的初始SQL的片段。 要查看与查询关联的所有运行的列表，请从中选择一项 [!UICONTROL 名称] 列。 欲了解更多信息，请参见 [查询运行计划详细信息](#query-runs) 部分。 |
 | **[!UICONTROL 模板]** | 查询的模板名称。 选择模板名称以导航到查询编辑器。 为方便起见，查询模板会显示在查询编辑器中。 如果没有模板名称，该行将标有连字符，并且无法重定向到查询编辑器以查看查询。 |
 | **[!UICONTROL SQL]** | SQL查询的片段。 |
-| **[!UICONTROL 运行频率]** | 查询设置为运行的节奏。 可用的值包括 `Run once` 和 `Scheduled`. 可以根据查询的运行频率对其进行筛选。 |
+| **[!UICONTROL 运行频率]** | 查询设置为运行的节奏。 可用的值包括 `Run once` 和 `Scheduled`. |
 | **[!UICONTROL 创建者]** | 创建查询的用户的名称。 |
 | **[!UICONTROL 已创建]** | 创建查询时的时间戳（UTC格式）。 |
 | **[!UICONTROL 上次运行时间戳]** | 运行查询时的最新时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
 | **[!UICONTROL 上次运行状态]** | 最近查询执行的状态。 状态值为： `Success`， `Failed`， `In progress`、和 `No runs`. |
-| **[!UICONTROL 计划状态]** | 计划查询的当前状态。 有五个潜在值， [!UICONTROL 正在注册]， [!UICONTROL 活动]， [!UICONTROL 不活动]， [!UICONTROL 已删除]和连字符。 <ul><li>连字符表示计划查询是单次、非循环查询。</li><li>此 [!UICONTROL 正在注册] 状态表示系统仍在为查询创建新的计划。 请注意，您不能在注册时禁用或删除计划查询。</li><li>此 [!UICONTROL 活动] 状态表示计划查询具有 **尚未通过** 完成日期和时间。</li><li>此 [!UICONTROL 不活动] 状态表示计划查询具有 **已通过** 完成日期和时间。</li><li>此 [!UICONTROL 已删除] 状态表示查询计划已删除。</li></ul> |
+| **[!UICONTROL 计划状态]** | 计划查询的当前状态。 有六个潜在值， [!UICONTROL 正在注册]， [!UICONTROL 活动]， [!UICONTROL 不活动]， [!UICONTROL 已删除]、连字符和 [!UICONTROL 已隔离].<ul><li>此 **[!UICONTROL 正在注册]** 状态表示系统仍在为查询创建新的计划。 请注意，您不能在注册时禁用或删除计划查询。</li><li>此 **[!UICONTROL 活动]** 状态表示计划查询具有 **尚未通过** 完成日期和时间。</li><li>此 **[!UICONTROL 不活动]** 状态表示计划查询具有 **已通过** 完成日期和时间，或已被用户标记为处于不活动状态。</li><li>此 **[!UICONTROL 已删除]** 状态表示查询计划已删除。</li><li>连字符表示计划查询是单次、非循环查询。</li><li>此 **[!UICONTROL 已隔离]** 状态表示查询连续十次运行失败，需要您的干预才能执行任何进一步的执行。</li></ul> |
 
 >[!TIP]
 >
@@ -63,15 +63,19 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ## 使用内联操作管理计划查询 {#inline-actions}
 
-此 [!UICONTROL 计划的查询] 查看提供了各种内联操作，以便从一个位置管理所有计划的查询。 每行中都会显示内联操作，并带有省略号。 选择要管理的计划查询的省略号，以在弹出菜单中查看可用选项。 可用的选项包括 [[!UICONTROL 禁用计划]](#disable) 或 [!UICONTROL 启用计划]， [[!UICONTROL 删除计划]](#delete)、和 [[!UICONTROL 订阅]](#alert-subscription) 以查询警报。
+此 [!UICONTROL 计划的查询] 查看提供了各种内联操作，以便从一个位置管理所有计划的查询。 每行中都会显示内联操作，并带有省略号。 选择要管理的计划查询的省略号，以在弹出菜单中查看可用选项。 可用的选项包括 [[!UICONTROL 禁用计划]](#disable) 或 [!UICONTROL 启用计划]， [[!UICONTROL 删除计划]](#delete)， [[!UICONTROL 订阅]](#alert-subscription) 查询警报，以及 [启用或 [!UICONTROL 禁用隔离]](#quarantined-queries).
 
-![内联操作省略号和弹出菜单突出显示的“计划查询”选项卡。](../images/ui/monitor-queries/disable-inline.png)
+![内联操作省略号和弹出菜单突出显示的“计划查询”选项卡。](../images/ui/monitor-queries/inline-actions.png)
 
 ### 禁用或启用计划查询 {#disable}
 
 要禁用计划查询，请选择要管理的计划查询的省略号，然后选择 **[!UICONTROL 禁用计划]** 从弹出菜单中的选项中进行选择。 将显示一个对话框以确认您的操作。 选择 **[!UICONTROL 禁用]** 以确认设置。
 
 禁用计划查询后，可通过同一进程启用计划。 选择省略号，然后选择 **[!UICONTROL 启用计划]** 从可用选项删除。
+
+>[!NOTE]
+>
+>如果查询已被隔离，则应在启用其计划之前查看模板的SQL。 如果模板查询仍有问题，这可以防止计算小时数的浪费。
 
 ### 删除计划查询 {#delete}
 
@@ -91,6 +95,10 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 
 ![警报订阅对话框。](../images/ui/monitor-queries/alert-subscription-dialog.png)
 
+>[!NOTE]
+>
+>要收到查询运行被隔离的通知，您必须首先在中注册计划的查询运行 [隔离功能](#quarantined-queries).
+
 请参阅 [警报订阅API文档](../api/alert-subscriptions.md) 以了解更多信息。
 
 ### 查看查询详细信息 {#query-details}
@@ -98,6 +106,16 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 选择信息图标(![信息图标。](../images/ui/monitor-queries/information-icon.png))，以查看查询的详细信息面板。 详细信息面板包含查询的所有相关信息，但不包括计划查询表中包含的事实信息。 其他信息包括查询ID、上次修改日期、查询的SQL、计划ID和当前设置的计划。
 
 ![计划查询选项卡，其信息图标和详细信息面板突出显示。](../images/ui/monitor-queries/details-panel.png)
+
+### 隔离的查询 {#quarantined-queries}
+
+注册隔离功能后，任何连续十次运行失败的计划查询都会自动放入 [!UICONTROL 已隔离] 状态。 具有此状态的查询将变为非活动状态，并且不会按其计划的节奏执行。 然后，您需要进行干预，然后才能执行任何进一步的执行。 这样可以保护系统资源，因为您必须先查看和更正SQL问题，然后才能进一步执行。
+
+要为隔离功能启用计划查询，请选择省略号(`...`)后跟 [!UICONTROL 启用隔离] 从出现的下拉菜单中。
+
+![内联操作下拉菜单中突出显示了带有省略号和启用隔离的计划查询选项卡。](../images/ui/monitor-queries/inline-enable.png)
+
+在计划创建过程中，还可以在隔离功能中注册查询。 请参阅 [查询计划文档](./query-schedules.md#quarantine) 以了解更多信息。
 
 ## 筛选查询 {#filter}
 
@@ -128,7 +146,7 @@ Adobe Experience Platform通过UI提高了所有查询作业状态的可见性�
 | **[!UICONTROL 查询运行Id]** | 每日执行的查询运行ID。 选择 **[!UICONTROL 查询运行Id]** 导航到 [!UICONTROL 查询运行概述]. |
 | **[!UICONTROL 查询运行开始]** | 执行查询的时间戳。 时间戳采用UTC格式。 |
 | **[!UICONTROL 查询运行完成]** | 查询完成时的时间戳。 时间戳采用UTC格式。 |
-| **[!UICONTROL 状态]** | 最近查询执行的状态。 三个状态值包括： `successful` `failed` 或 `in progress`. |
+| **[!UICONTROL 状态]** | 最近查询执行的状态。 状态值为： `Success`， `Failed`， `In progress`，或 `Quarantined`. |
 | **[!UICONTROL 数据集]** | 执行中涉及的数据集。 |
 
 欲知正在计划的查询详情，请参阅 [!UICONTROL 属性] 面板。 此面板包括初始查询ID、客户端类型、模板名称、查询SQL和计划的节奏。
