@@ -1,10 +1,8 @@
 ---
 title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
-hide: true
-hidefromtoc: true
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: c7853855ade1867cf33ea935a8a776080be2e5ab
+source-git-commit: ff95e5e105f7b3e1213eab90456b9fa9000918d3
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 0%
