@@ -2,10 +2,10 @@
 description: 了解如何在Experience PlatformUI中创建输入字段，这些字段允许您的用户指定与如何连接数据并将其导出到目标相关的各种信息。
 title: 客户数据字段
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 6366686e3b3f656d200aa245fc148f00e623713c
 workflow-type: tm+mt
-source-wordcount: '1580'
-ht-degree: 4%
+source-wordcount: '1742'
+ht-degree: 1%
 
 ---
 
@@ -51,7 +51,7 @@ ht-degree: 4%
 
 在创建自己的客户数据字段时，您可以使用下表中描述的参数来配置其行为。
 
-| 参数 | 类型 | 必填/可选 | 描述 |
+| 参数 | 类型 | 必需/可选 | 描述 |
 |---------|----------|------|---|
 | `name` | 字符串 | 必需 | 为您即将介绍的自定义字段提供一个名称。 此名称在Platform UI中不可见，除非 `title` 字段为空或缺失。 |
 | `type` | 字符串 | 必需 | 指示您即将引入的自定义字段的类型。 接受的值： <ul><li>`string`</li><li>`object`</li><li>`integer`</li></ul> |
@@ -62,7 +62,7 @@ ht-degree: 4%
 | `enum` | 字符串 | 可选 | 将自定义字段呈现为下拉菜单，并列出用户可用的选项。 |
 | `default` | 字符串 | 可选 | 从定义默认值 `enum` 列表。 |
 | `hidden` | 布尔值 | 可选 | 指示客户数据字段是否显示在UI中。 |
-| `unique` | 布尔值 | 可选 | 当您需要创建客户数据字段，且该字段的值在用户组织设置的所有目标数据流中必须是唯一的，请使用此参数。 例如，**[!UICONTROL 自定义个性化]**&#x200B;中的[集成别名](../../../catalog/personalization/custom-personalization.md)字段必须是唯一的，这意味着到该目标的两个单独的数据流不能具有相同的该字段值。 |
+| `unique` | 布尔值 | 可选 | 当您需要创建客户数据字段，且该字段的值在用户组织设置的所有目标数据流中必须是唯一的，请使用此参数。 例如， **[!UICONTROL 集成别名]** 中的字段 [自定义个性化](../../../catalog/personalization/custom-personalization.md) 目标必须唯一，这意味着流向此目标的两个单独数据流不能具有此字段的相同值。 |
 | `readOnly` | 布尔值 | 可选 | 指示客户是否可以更改字段值。 |
 
 {style="table-layout:auto"}
@@ -261,7 +261,7 @@ ht-degree: 4%
 
 要创建动态下拉选择器，您必须配置两个组件：
 
-**步骤 1.** [创建目标服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-dropdown-servers) 带有 `responseFields` 动态API调用的模板，如下所示。
+**步骤1.** [创建目标服务器](../../authoring-api/destination-server/create-destination-server.md#dynamic-dropdown-servers) 带有 `responseFields` 动态API调用的模板，如下所示。
 
 ```json
 {
@@ -309,7 +309,7 @@ ht-degree: 4%
 }
 ```
 
-**步骤 2.** 使用 `dynamicEnum` 对象，如下所示。 在以下示例中， `User` 下拉列表是使用动态服务器检索的。
+**步骤2.** 使用 `dynamicEnum` 对象，如下所示。 在以下示例中， `User` 下拉列表是使用动态服务器检索的。
 
 
 ```json {line-numbers="true" highlight="13-21"}
@@ -340,6 +340,56 @@ ht-degree: 4%
 
 设置 `destinationServerId` 参数，指定您在步骤1中创建的目标服务器的ID。 您可以在的响应中看到目标服务器ID。 [检索目标服务器配置](../../authoring-api/destination-server/retrieve-destination-server.md) API调用。
 
+## 创建嵌套式客户数据字段 {#nested-fields}
+
+您可以为复杂的集成模式创建嵌套式客户数据字段。 这允许您为客户链接一系列选择。
+
+例如，您可以添加嵌套的客户数据字段，以要求客户选择与您目标的集成类型，然后紧接着进行其他选择。 第二个选择是集成类型中的嵌套字段。
+
+要添加嵌套字段，请使用 `properties` 参数，如下所示。 在下面的配置示例中，您可以在 **您的目标 — 集成特定的设置** 客户数据字段。
+
+>[!TIP]
+>
+>从2024年4月版本开始，您可以设置 `isRequired` 嵌套字段上的参数。 例如，在下面的配置代码片段中，前两个嵌套字段被标记为必填字段（高亮显示的第xxx行），客户无法继续操作，除非他们为该字段选择值。 有关中必填字段的更多信息，请参阅 [支持的参数](#supported-parameters) 部分。
+
+```json {line-numbers="true" highlight="10,19"}
+    {
+      "name": "yourdestination",
+      "title": "Yourdestination - Integration Specific Settings",
+      "type": "object",
+      "properties": [
+        {
+          "name": "agreement",
+          "title": "Advertiser data destination terms agreement. Enter I AGREE.",
+          "type": "string",
+          "isRequired": true,
+          "pattern": "I AGREE",
+          "readOnly": false,
+          "hidden": false
+        },
+        {
+          "name": "account-name",
+          "title": "Account name",
+          "type": "string",
+          "isRequired": true,
+          "readOnly": false,
+          "hidden": false
+        },
+        {
+          "name": "email",
+          "title": "Email address",
+          "type": "string",
+          "isRequired": false,
+          "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
+          "readOnly": false,
+          "hidden": false
+        }
+      ],
+      "isRequired": false,
+      "readOnly": false,
+      "hidden": false,
+```
+
 ## 创建条件客户数据字段 {#conditional-options}
 
 您可以创建条件客户数据字段，这些字段仅在用户选择特定选项时才会显示在激活工作流中。
@@ -358,7 +408,7 @@ ht-degree: 4%
 }
 ```
 
-在更广泛的背景下，您可以看到 `conditional` 以下目标配置中使用的字段，以及 `fileType` 字符串和 `csvOptions` 在其中定义它的对象。
+在更广泛的背景下，您可以看到 `conditional` 以下目标配置中使用的字段，以及 `fileType` 字符串和 `csvOptions` 在其中定义它的对象。 条件字段在 `properties` 参数。
 
 ```json {line-numbers="true" highlight="3-15, 21-25"}
 "customerDataFields":[
