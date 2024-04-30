@@ -3,10 +3,10 @@ title: 使用流服务API创建Azure事件中心源连接
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
 workflow-type: tm+mt
-source-wordcount: '1005'
-ht-degree: 3%
+source-wordcount: '1473'
+ht-degree: 2%
 
 ---
 
@@ -51,6 +51,29 @@ ht-degree: 3%
 | `namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
 | `eventHubName` | 您的名称 [!DNL Event Hubs] 源。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 此 [!DNL Event Hubs] 连接规范ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+
+有关共享访问签名(SAS)身份验证的详细信息 [!DNL Event Hubs]，阅读 [[!DNL Azure] 使用SAS指南](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+
+>[!TAB 事件中心Azure Active Directory身份验证]
+
+| 凭据 | 描述 |
+| --- | --- |
+| `tenantId` | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| `clientId` | 分配给您应用程序的应用程序ID。 您可以从以下位置检索此ID [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| `clientSecretValue` | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从以下位置检索您的客户端密钥： [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| `namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
+
+有关的详细信息 [!DNL Azure Active Directory]，阅读 [关于使用Microsoft Entra ID的Azure指南](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!TAB 事件中心范围的Azure Active Directory身份验证]
+
+| 凭据 | 描述 |
+| --- | --- |
+| `tenantId` | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| `clientId` | 分配给您应用程序的应用程序ID。 您可以从以下位置检索此ID [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| `clientSecretValue` | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从以下位置检索您的客户端密钥： [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| `namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
+| `eventHubName` | 您的名称 [!DNL Event Hubs] 源。 |
 
 >[!ENDTABS]
 
@@ -171,6 +194,120 @@ curl -X POST \
 | `auth.params.sasKey` | 生成的共享访问签名。 |
 | `auth.params.namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 |
 | `params.eventHubName` | 您的名称 [!DNL Event Hubs] 源。 |
+| `connectionSpec.id` | 此 [!DNL Event Hubs] 连接规范ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+
++++
+
++++响应
+
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此连接ID。
+
+```json
+{
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
++++
+
+>[!TAB 事件中心Azure Active Directory身份验证]
+
+POST要使用Azure Active Directory身份验证创建帐户，请向 `/connections` 端点，同时为提供值 `tenantId`， `clientId`，`clientSecretValue`、和 `namespace`.
+
++++请求
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Event Hub Azure Active Directory Auth",
+          "params": {
+              "tenantId": "{TENANT_ID}",
+              "clientId": "{CLIENT_ID}",
+              "clientSecretValue": "{CLIENT_SECRET_VALUE}",
+              "namespace": "{NAMESPACE}" 
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `auth.params.tenantId` | 应用程序的租户ID。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| `auth.params.clientId` | 您组织的客户端ID。 |
+| `auth.params.clientSecretValue` | 您组织的客户端密钥值。 |
+| `auth.params.namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 |
+| `connectionSpec.id` | 此 [!DNL Event Hubs] 连接规范ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+
++++
+
++++响应
+
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步创建源连接时需要此连接ID。
+
+```json
+{
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
++++
+
+>[!TAB 事件中心范围的Azure Active Directory身份验证]
+
+POST要使用Azure Active Directory身份验证创建帐户，请向 `/connections` 端点，同时为提供值 `tenantId`， `clientId`，`clientSecretValue`， `namespace`、和 `eventHubName`.
+
++++请求
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Event Hub Scoped Azure Active Directory Auth",
+          "params": {
+              "tenantId": "{TENANT_ID}",
+              "clientId": "{CLIENT_ID}",
+              "clientSecretValue": "{CLIENT_SECRET_VALUE}",
+              "namespace": "{NAMESPACE}",
+              "eventHubName": "{EVENT_HUB_NAME}" 
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `auth.params.tenantId` | 应用程序的租户ID。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| `auth.params.clientId` | 您组织的客户端ID。 |
+| `auth.params.clientSecretValue` | 您组织的客户端密钥值。 |
+| `auth.params.namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 |
+| `auth.params.eventHubName` | 您的名称 [!DNL Event Hubs] 源。 |
 | `connectionSpec.id` | 此 [!DNL Event Hubs] 连接规范ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++

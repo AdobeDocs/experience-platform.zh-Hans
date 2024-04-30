@@ -3,9 +3,9 @@ title: 在UI中创建Azure事件中心源连接
 description: 了解如何使用Adobe Experience Platform UI创建Azure事件中心源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: 1680cc4e1d5c1576767053a74e560bc2eb8c24cb
+source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '1094'
 ht-degree: 1%
 
 ---
@@ -52,9 +52,32 @@ ht-degree: 1%
 | 命名空间 | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
 | 事件中心名称 | 您的名称 [!DNL Event Hubs] 源。 |
 
->[!ENDTABS]
+有关共享访问签名(SAS)身份验证的详细信息 [!DNL Event Hubs]，阅读 [[!DNL Azure] 使用SAS指南](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
-有关这些值的更多信息，请参阅 [此事件中心文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+>[!TAB 事件中心Azure Active Directory身份验证]
+
+| 凭据 | 描述 |
+| --- | --- |
+| 租户ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| 客户端ID | 分配给您应用程序的应用程序ID。 您可以从以下位置检索此ID [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| 客户端密钥值 | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从以下位置检索您的客户端密钥： [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| 命名空间 | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
+
+有关的详细信息 [!DNL Azure Active Directory]，阅读 [关于使用Microsoft Entra ID的Azure指南](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!TAB 事件中心范围的Azure Active Directory身份验证]
+
+| 凭据 | 描述 |
+| --- | --- |
+| 租户ID | 要从中请求权限的租户ID。 可以将您的租户ID格式化为GUID或友好名称。 **注意**：租户ID在中称为“目录ID” [!DNL Microsoft Azure] 界面。 |
+| 客户端ID | 分配给您应用程序的应用程序ID。 您可以从以下位置检索此ID [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| 客户端密钥值 | 与客户端ID一起用于对应用程序进行身份验证的客户端密码。 您可以从以下位置检索您的客户端密钥： [!DNL Microsoft Entra ID] 门户，您可在其中注册 [!DNL Azure Active Directory]. |
+| 命名空间 | 的命名空间 [!DNL Event Hubs] 您正在访问。 An [!DNL Event Hubs] namespace提供了一个唯一的范围容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
+| 事件中心名称 | 您的名称 [!DNL Event Hubs] 源。 |
+
+有关的详细信息 [!DNL Azure Active Directory]，阅读 [关于使用Microsoft Entra ID的Azure指南](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!ENDTABS]
 
 收集所需的凭据后，您可以按照以下步骤链接您的 [!DNL Event Hubs] 帐户到Experience Platform。
 
@@ -90,7 +113,7 @@ ht-degree: 1%
 
 >[!TAB 标准身份验证]
 
-创建 [!DNL Event Hubs] 使用标准身份验证的帐户，选择 **[!UICONTROL 标准身份验证]** 然后为提供值 [!UICONTROL SAS密钥名称]， [!UICONTROL SAS键]、和 [!UICONTROL 命名空间].
+创建 [!DNL Event Hubs] 使用标准身份验证的帐户，使用 [!UICONTROL 帐户身份验证] 下拉菜单，然后选择 **[!UICONTROL 标准身份验证]**. 接下来，为提供以下各项的值： [!UICONTROL SAS密钥名称]， [!UICONTROL SAS键]、和 [!UICONTROL 命名空间].
 
 输入身份验证凭据后，选择 **[!UICONTROL 连接到源]**.
 
@@ -98,11 +121,23 @@ ht-degree: 1%
 
 >[!TAB SAS身份验证]
 
-创建 [!DNL Event Hubs] 使用SAS身份验证的帐户，选择 **[!UICONTROL SAS身份验证]** 然后为提供值 [!UICONTROL SAS密钥名称]， [!UICONTROL SAS键]， [!UICONTROL 命名空间]、和 [!UICONTROL 事件中心名称].
+创建 [!DNL Event Hubs] 使用SAS身份验证的帐户，使用 [!UICONTROL 帐户身份验证] 下拉菜单，然后选择 **[!UICONTROL SAS身份验证]**. 接下来，为提供以下各项的值： [!UICONTROL SAS密钥名称]， [!UICONTROL SAS键]， [!UICONTROL 命名空间]、和 [!UICONTROL 事件中心名称].
 
 输入身份验证凭据后，选择 **[!UICONTROL 连接到源]**.
 
 ![Azure事件中心的SAS身份验证接口。](../../../../images/tutorials/create/eventhub/sas.png)
+
+>[!TAB 事件中心Azure Active Directory身份验证]
+
+创建 [!DNL Event Hubs] 具有事件中心Azure Active Directory身份验证的帐户，使用 [!UICONTROL 帐户身份验证] 下拉菜单，然后选择 **[!UICONTROL 事件中心Azure Active Directory]**. 接下来，为提供以下各项的值： [!UICONTROL 租户ID]， [!UICONTROL 客户端ID]， [!UICONTROL 客户端密钥值]、和 [!UICONTROL 命名空间].
+
+![Azure事件中心Azure Active Directory身份验证](../../../../images/tutorials/create/eventhub/active-directory.png)
+
+>[!TAB 事件中心范围的Azure Active Directory身份验证]
+
+创建 [!DNL Event Hubs] 具有事件中心范围的Azure Active Directory身份验证的帐户，使用 [!UICONTROL 帐户身份验证] 下拉菜单，然后选择 **[!UICONTROL 事件中心范围的Azure Active Directory]**. 接下来，为提供以下各项的值： [!UICONTROL 租户ID]， [!UICONTROL 客户端ID]， [!UICONTROL 客户端密钥值]， [!UICONTROL 命名空间]、和 [!UICONTROL 事件中心名称].
+
+![Azure事件中心范围的Azure活动目录身份验证](../../../../images/tutorials/create/eventhub/scoped.png)
 
 >[!ENDTABS]
 
