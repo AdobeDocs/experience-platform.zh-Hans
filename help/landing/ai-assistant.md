@@ -5,7 +5,7 @@ badge: Beta 版
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 2bf445144789a05e8a789994d30b884be7a8843d
+source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
 workflow-type: tm+mt
 source-wordcount: '2730'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Adobe Experience Platform的AI助手当前处于Beta测试阶段。 该功能和文档可能会发生更改。
+>Adobe Experience Platform的AI助手当前处于Beta测试阶段。 该功能和文档可能会发生更改。
 
 AI助手是一种UI功能，可用于导航和了解Adobe Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
 

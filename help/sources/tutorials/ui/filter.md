@@ -1,8 +1,10 @@
 ---
 title: 在UI中过滤源对象
 description: 了解如何在Experience PlatformUI中导航浏览源对象，例如帐户和数据流。
-last-substantial-update: 2024-04-30T00:00:00Z
-source-git-commit: 244f0734cf19694b15ecd10cfa76fb96d07b9489
+hide: true
+hidefromtoc: true
+exl-id: 59c200cc-1be7-45a8-9d7a-55e6f11dbcf2
+source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
 workflow-type: tm+mt
 source-wordcount: '1476'
 ht-degree: 1%
