@@ -1,11 +1,11 @@
 ---
 title: 标记概述
-description: Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式，让客户可以部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
+description: Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 81f25e74931354003d89a57adedb578ddfe00704
+source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
 workflow-type: tm+mt
-source-wordcount: '562'
-ht-degree: 78%
+source-wordcount: '588'
+ht-degree: 65%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 78%
 >
 >Adobe Experience Platform Launch已更名为Adobe Experience Platform中的一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
 
-Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式，让客户可以部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
+Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理功能。标记为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标记。
 
 标记可让任何人构建并维护自己的集成，称为 *扩展*. [!DNL Adobe Experience Cloud] 客户可在应用商店中获取这些扩展，从而可以快速安装、配置和部署自己的标记。
 
@@ -28,6 +28,10 @@ Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理�
 * 通过使用规则生成器将数据和营销技术集成在一起，交付令人兴奋的体验。
 
 ## 主要功能 {#key-features}
+
+使用右侧面板中的产品帮助中的，了解有关标记的更多信息并查看其他可用资源。
+
+![数据收集UI中的标记属性。](./images/ui/tags-overview/tags-properties.png)
 
 ### 扩展 {#extensions}
 
@@ -70,7 +74,7 @@ Adobe Experience Platform 中的标记是 Adobe 推出的新一代标记管理�
 
 * 标记与Reactor API交互。
 * 部署可通过 API 自动进行。
-* 将  API 与您自己的内部系统集成。
+* 将API与您自己的内部系统集成。
 * 如果需要，您可以构建自己的用户界面。
 
 ### 轻便的模块化容器标记 {#modular-tag}
