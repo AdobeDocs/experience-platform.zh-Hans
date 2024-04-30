@@ -2,10 +2,10 @@
 title: 沙盒工具
 description: 在沙盒之间无缝导出和导入沙盒配置。
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 888608bdf3ccdfc56edd41c164640e258a4c5dd7
+source-git-commit: 1a474fa0947cb930bad95f94c1901fffb7e23e7b
 workflow-type: tm+mt
-source-wordcount: '1961'
-ht-degree: 8%
+source-wordcount: '2241'
+ht-degree: 7%
 
 ---
 
@@ -165,6 +165,52 @@ ht-degree: 8%
 
 ![此 [!UICONTROL 程序包对象和依赖项] 页面显示包中包含的资产列表，突出显示 [!UICONTROL 完成].](../images/ui/sandbox-tooling/finish-object-dependencies.png)
 
+## 导出和导入整个沙盒
+
+>[!NOTE]
+>
+>完全沙盒导出/导入仅支持实时客户数据平台对象。 历程对象将不包括在内。
+
+### 导出整个沙盒 {#export-entire-sandbox}
+
+要导出整个沙盒，请导航到 [!UICONTROL 沙盒] **[!UICONTROL 包]** 选项卡并选择 **[!UICONTROL 创建包]**.
+
+![此 [!UICONTROL 沙盒] **[!UICONTROL 包]** 选项卡突出显示 [!UICONTROL 创建包].](../images/ui/sandbox-tooling/create-sandbox-package.png)
+
+选择 **[!UICONTROL 整个沙盒]** 对于 [!UICONTROL 程序包类型] 在 [!UICONTROL 创建包] 对话框。 提供 [!UICONTROL 包名称] ，然后选择 **[!UICONTROL 沙盒]** 从下拉菜单中查找。 最后，选择 **[!UICONTROL 创建]** 以确认您的输入。
+
+![此 [!UICONTROL 创建包] 显示已完成字段和突出显示的对话框 [!UICONTROL 创建].](../images/ui/sandbox-tooling/create-package-dialog.png)
+
+已成功创建包，请选择 **[!UICONTROL Publish]** 以发布包。
+
+![突出显示新发布的包的沙盒包列表。](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
+
+您将返回 **[!UICONTROL 包]** 选项卡 [!UICONTROL 沙盒] 环境，您可以在其中查看新发布的包。
+
+### 导入整个沙盒包 {#import-entire-sandbox-package}
+
+>[!NOTE]
+>
+>所有对象将作为新对象导入到目标沙盒中。 最佳实践是将完整的沙盒包导入空沙盒中。
+
+要将资源包导入目标沙盒，请导航到 [!UICONTROL 沙盒] **[!UICONTROL 浏览]** 选项卡，然后选择沙盒名称旁边的加号(+)选项。
+
+![沙箱 **[!UICONTROL 浏览]** 选项卡中突出显示了导入包选择。](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
+
+使用下拉菜单，使用选择完整的沙盒 **[!UICONTROL 包名称]** 下拉菜单。 添加 **[!UICONTROL 作业名称]**，将用于未来监控和可选 **[!UICONTROL 作业描述]**，然后选择 **[!UICONTROL 下一个]**.
+
+![导入详细信息页面显示 [!UICONTROL 包名称] 下拉菜单选择](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+
+>[!NOTE]
+>
+>您必须对包中包含的所有对象具有完全权限。 如果您没有权限，导入操作将失败并显示错误消息。
+
+您被带到 [!UICONTROL 程序包对象和依赖项] 页面，您可以在此页面中查看已导入和已排除对象的对象数和从属关系数。 从此处选择 **[!UICONTROL 导入]** 以完成资源包导入。
+
+![此 [!UICONTROL 程序包对象和依赖项] 页面显示不受支持的对象类型的内联消息，突出显示 [!UICONTROL 导入].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+
+留出一段时间以完成导入。 完成时间会因包中的对象数而异。 您可以从以下位置监控导入作业： [!UICONTROL 沙盒] **[!UICONTROL 作业]** 选项卡。
+
 <!--
 ## Export and import an entire sandbox 
 
@@ -207,37 +253,37 @@ You are taken to the [!UICONTROL Package object and dependencies] page where you
  ![The [!UICONTROL Package object and dependencies] page shows the inline message of object types not supported, highlighting [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
 -->
 
-## 监视导入作业并查看导入对象详细信息
+## 监控导入详细信息 {#view-import-details}
 
-要查看导入的对象和导入的详细信息，请导航至 [!UICONTROL 沙盒] **[!UICONTROL 导入]** 选项卡并从列表中选择包。 或者，使用搜索栏搜索包。
+要查看导入的详细信息，请导航至 [!UICONTROL 沙盒] **[!UICONTROL 作业]** 选项卡并从列表中选择包。 或者，使用搜索栏搜索包。
 
-![沙箱 [!UICONTROL 导入] 选项卡高亮显示导入资源包选项。](../images/ui/sandbox-tooling/imports-tab.png)
+![沙箱 [!UICONTROL 作业] 选项卡高亮显示导入资源包选项。](../images/ui/sandbox-tooling/imports-tab.png)
 
-### 查看导入的对象 {#view-imported-objects}
+<!--### View imported objects {#view-imported-objects}
 
-在 **[!UICONTROL 导入]** 选项卡 [!UICONTROL 沙盒] 环境，选择 **[!UICONTROL 查看导入的对象]** 从右侧详细信息窗格中。
+On the **[!UICONTROL Jobs]** tab in the [!UICONTROL Sandboxes] environment, select **[!UICONTROL View imported objects]** from the right details pane.
 
-选择 **[!UICONTROL 查看导入的对象]** 从右侧详细信息窗格中的 **[!UICONTROL 导入]** 选项卡 [!UICONTROL 沙盒] 环境。
+Select **[!UICONTROL View imported objects]** from the right details pane on the **[!UICONTROL Jobs]** tab in the [!UICONTROL Sandboxes] environment.
 
-![沙箱 [!UICONTROL 导入] 选项卡高亮显示 [!UICONTROL 查看导入的对象] 在右窗格中选择。](../images/ui/sandbox-tooling/view-imported-objects.png)
+![The sandboxes [!UICONTROL Imports] tab highlights the [!UICONTROL View imported objects] selection in the right pane.](../images/ui/sandbox-tooling/view-imported-objects.png)
 
-使用箭头可展开对象以查看已导入到文件包中的字段的完整列表。
+Use the arrows to expand objects to view the full list of fields that have been imported into the package.
 
-![沙箱 [!UICONTROL 导入的对象] 显示导入到资源包中的对象列表。](../images/ui/sandbox-tooling/expand-imported-objects.png)
+![The sandboxes [!UICONTROL Imported objects] showing a list of objects imported into the package.](../images/ui/sandbox-tooling/expand-imported-objects.png)-->
 
-### 查看导入详细信息 {#view-import-details}
-
-选择 **[!UICONTROL 查看导入详细信息]** 从右侧详细信息窗格中的 **[!UICONTROL 导入]** 选项卡。
+选择 **[!UICONTROL 查看导入摘要]** 从右侧详细信息窗格中的 **[!UICONTROL 作业]** 选项卡。
 
 ![沙箱 [!UICONTROL 导入] 选项卡高亮显示 [!UICONTROL 查看导入详细信息] 在右窗格中选择。](../images/ui/sandbox-tooling/view-import-details.png)
 
-此 **[!UICONTROL 导入详细信息]** 对话框显示导入的详细细分。
-
-![此 [!UICONTROL 导入详细信息] 显示导入详细划分的对话框。](../images/ui/sandbox-tooling/import-details.png)
+此 **[!UICONTROL 导入摘要]** 对话框会显示导入的划分以及进度百分比。
 
 >[!NOTE]
 >
->导入完成后，您将在Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
+>您可以通过导航到特定的清单页面来查看对象列表。
+
+![此 [!UICONTROL 导入详细信息] 显示导入详细划分的对话框。](../images/ui/sandbox-tooling/import-details.png)
+
+导入完成后，将在Platform UI中收到通知。 您可以通过警报图标访问这些通知。 如果作业不成功，您可以在此处导航到疑难解答。
 
 ## 视频教程
 
