@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: dc899a4aa64b6e734322020e4c10aee687c6d8c5
+source-git-commit: c1a2d55cb99a1f66698289751a967f8c5f80a7bf
 workflow-type: tm+mt
-source-wordcount: '4014'
+source-wordcount: '4105'
 ht-degree: 3%
 
 ---
@@ -80,7 +80,8 @@ ht-degree: 3%
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
 | [!UICONTROL Copy] | Segmentation Service | 复制所选受众。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
-| [!UICONTROL 存档] | 自定义上传 | 存档所选受众。 |
+| [!UICONTROL Publish] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
+| [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
 
@@ -102,9 +103,9 @@ ht-degree: 3%
 
 ![更新频率摘要按钮突出显示。](../images/ui/overview/browse-audience-update-frequency-summary.png)
 
-此时将显示饼图，其中按更新频率显示了受众的细分。 图表在中间显示受众总数。 如果将鼠标悬停在受众的不同部分上，则会显示属于每种更新频率类型的受众数量。
+此时将显示饼图，其中按更新频率显示了受众的细分。 图表在中间显示受众总数，在底部显示每日批量评估时间（UTC时区）。 如果将鼠标悬停在受众的不同部分上，则会显示属于每种更新频率类型的受众数量。
 
-![将显示更新频率饼图。](../images/ui/overview/update-frequency-chart.png)
+![更新频率饼图会突出显示，同时还会显示批处理分段评估时间。](../images/ui/overview/update-frequency-chart.png)
 
 ### 自定义 {#customize}
 
@@ -115,7 +116,7 @@ ht-degree: 3%
 | [!UICONTROL 名称] | 受众的名称。 |
 | [!UICONTROL 配置文件计数] | 符合受众条件的配置文件总数。 |
 | [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括分段服务、自定义上传、受众组合和Audience Manager。 |
-| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Published`、和 `Archived`. |
+| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`， `Published`、和 `Archived`. 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同的生命周期状态，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-status). |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括 [!UICONTROL 批次]， [!UICONTROL 流]， [!UICONTROL Edge]、和 [!UICONTROL 未计划]. |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
 | [!UICONTROL 已创建] | 创建受众的日期和时间（UTC时区）。 |
@@ -205,7 +206,7 @@ ht-degree: 3%
 | ------ | ----------- |
 | [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可用选项包括分段服务、自定义上传、受众组合和Audience Manager。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择 **[!UICONTROL 具有任何标记]** 和 **[!UICONTROL 具有所有标记]**. 时间 **[!UICONTROL 具有任何标记]** 选中，则过滤的受众将包括 **任意** 已添加的标记的URL编号。 时间 **[!UICONTROL 具有所有标记]** ，则过滤的受众必须包括 **所有** 已添加的标记的URL编号。 |
-| [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括 [!UICONTROL 活动]， [!UICONTROL 已存档]， [!UICONTROL 已删除]， [!UICONTROL 草稿]， [!UICONTROL 不活动]、和 [!UICONTROL 已发布]. |
+| [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括 [!UICONTROL 已删除]， [!UICONTROL 草稿]， [!UICONTROL 不活动]、和 [!UICONTROL 已发布]. |
 | [!UICONTROL 更新频率] | 可让您根据受众的更新频率进行过滤。 可用选项包括 [!UICONTROL 已计划]， [!UICONTROL 连续]、和 [!UICONTROL 按需]. |
 | [!UICONTROL 创建者] | 允许您根据创建受众的人员进行筛选。 |
 | [!UICONTROL 创建日期] | 可让您根据受众的创建日期进行筛选。 您可以选择创建受众时要过滤的日期范围。 |
@@ -408,7 +409,7 @@ ht-degree: 3%
 | 字段 | 描述 |
 | ----- | ----------- | 
 | [!UICONTROL 名称] | 受众的名称。 |
-| [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Published`、和 `Archived`. |
+| [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`， `Published`、和 `Archived`. |
 | [!UICONTROL 已创建] | 创建受众的时间和日期。 |
 | [!UICONTROL 创建者] | 创建受众的人员姓名。 |
 | [!UICONTROL 已更新] | 上次更新受众的时间和日期。 |
