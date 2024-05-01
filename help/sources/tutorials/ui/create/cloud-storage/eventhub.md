@@ -3,9 +3,9 @@ title: 在UI中创建Azure事件中心源连接
 description: 了解如何使用Adobe Experience Platform UI创建Azure事件中心源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
+source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1096'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 >
 >此 [!DNL Azure Event Hubs] 源目录中的源可供已购买Real-time Customer Data Platform Ultimate的用户使用。
 
-本教程提供了创建 [!DNL Azure Event Hubs] 使用Adobe Experience Platform用户界面创建的帐户。
+阅读本教程以了解如何创建 [!DNL Azure Event Hubs] 使用Adobe Experience Platform用户界面创建的帐户。
 
 ## 快速入门
 

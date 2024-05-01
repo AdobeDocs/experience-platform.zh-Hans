@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据登陆区；数据登陆区
 title: 使用UI将数据登陆区连接到Platform
 description: 了解如何使用Platform用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: 9372e6f961015c989bfcb0d1e2b0129da965c522
+source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
 workflow-type: tm+mt
-source-wordcount: '747'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
