@@ -1,17 +1,17 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 的 2024 年 3 月发行说明。
+description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d698bf0b8b0dbdb85909008bb3b60efb0575accc
+source-git-commit: 4ec4335d19695e8d6e26390358356dedd048594e
 workflow-type: tm+mt
-source-wordcount: '1189'
-ht-degree: 33%
+source-wordcount: '1849'
+ht-degree: 17%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期： 2024年3月19日**
+**发行日期： 2024年4月30日**
 
 >[!TIP]
 >
@@ -19,117 +19,168 @@ ht-degree: 33%
 
 对Experience Platform中现有功能的更新：
 
-- [目录服务](#catalog-service)
+- [仪表板](#dashboards)
 - [数据收集](#data-collection)
-- [数据准备](#data-prep)
 - [目标](#destinations)
-- [Experience Data Model (XDM)](#xdm)
+- [身份服务](#identity-service)
+- [监控](#monitoring)
+- [查询服务](#query-service)
+- [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
-## 目录服务 {#catalog-service}
+## 仪表板 {#dashboards}
 
-目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但Catalog包含这些文件和目录的元数据和描述，以用于查找和监控目的。
-
-| 功能 | 描述 |
-| --- | --- |
-| 更多操作 | 为了使操作更灵活并帮助您管理数据，您现在可以使用详细信息视图中的“更多操作”功能来对数据集执行其他任务。 您可以从所选数据集的详细信息页面中删除该数据集或启用它以用于实时客户个人资料。<br>**注意：** 如果为配置文件摄取启用数据集，则该数据集的架构必须与实时客户配置文件兼容。<br>![具有的数据集工作区 [!UICONTROL ...更多] 下拉菜单突出显示。](../2024/assets/march/more-actions.png "突出显示更多下拉菜单的数据集工作区。"){width="100" zoomable="yes"}。<br>阅读 [数据集用户指南](../../catalog/datasets/user-guide.md) 文档，以了解其他信息。 |
-
-{style="table-layout:auto"}
-
-有关目录服务的详细信息，请参阅[目录服务概述](../../catalog/home.md)。
-
-## 数据准备 {#data-prep}
-
-通过数据准备，数据工程师可从 Experience Data Model (XDM) 映射数据并将数据映射到它、转换和验证数据。
+Adobe Experience Platform提供了多个功能板，您可通过这些功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
 
 **新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Adobe Analytics的新映射器函数 | 现在，您可以使用以下函数从Adobe Analytics中提取事件数据： <ul><li>`aa_get_event_id`</li><li>`aa_get_event_value`</li><li>`aa_get_product_categories`</li><li>`aa_get_product_names`</li><li>`aa_get_product_quantities`</li><li>`aa_get_product_prices`</li><li>`aa_get_product_event_values`</li><li>`aa_get_product_evars`</li></ul> 有关这些功能的详细信息，请参阅 [数据准备函数指南](../../data-prep/functions.md#analytics-functions) |
+| Real-time Customer Data Platform B2B见解 | 探索预配置的Real-Time CDP B2B数据洞察客户与商机，帮助您了解数据并告知业务决策。 您还可以使用Real-Time CDP B2B数据模型构建自己的见解，以实现数据的可视化、探索并在功能板中保存自定义可视化。 |
 
-{style="table-layout:auto"}
+{style=“table-layout:auto”}
 
-有关数据准备的详细信息，请阅读 [数据准备概述](../../data-prep/home.md).
+有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
 ## 数据收集 {#data-collection}
 
-Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Experience PlatformEdge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
 
-**新增功能**
+**新增功能或更新后的功能**
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 扩展 | [!DNL Merkury] 标记扩展 | 此 [[!DNL Merkury] 标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag) 为匿名网站访客提供行业领先的匹配率， [!DNL Merkury] 标识。 品牌可以利用 [!DNL Merkury] 标记和Adobe，以提供实时的个性化网站体验。 此外， [!DNL Merkury] tag支持第一方数字数据以及连接的在线和离线客户档案的增长。 |
+| 见解 | [!DNL Acxiom] 匿名访客分析 | 了解您的网站访客来自何处 [!DNL Acxiom's] 访客分析。 通过利用地域IP查找技术，我们可查明匿名浏览器的位置。 标识后，在我们组织的数据库中快速搜索即可产生其他见解，并将其发送回浏览器。 对于内容创建者而言，这意味着这是一个绝佳的机会，可以定制其内容以匹配这些数据点，为访客提供更加个性化和引人入胜的体验，即使他们一开始是陌生人。 |
+| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 源自非人类实体（如自动化程序、网页抓取程序、蜘蛛程序、脚本扫描程序）的流量，可能使识别来自人类访客的事件变得更加困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。 <br>机器人检测允许您识别由生成的事件 [Web SDK](../../web-sdk/home.md)， [移动SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Server API]](../../server-api/overview.md) 由已知的蜘蛛和机器人生成。 通过为数据流配置机器人检测，您可以识别要分类为机器人事件的特定IP地址、IP范围和请求标头。 <br> 识别机器人流量可以为您提供对网站或移动应用程序上的用户活动的更准确测量。 |
+| Mobile SDK | 主要版本发布 | Mobile SDK的新主要版本已针对以下平台发布： iOS Mobile Core 5.x和兼容的iOS扩展、Android Mobile Core 3.x和兼容的Android扩展、React Native Core 6.x和兼容的React本机扩展、Flutter Core 4.x和兼容的Flutter扩展。 这些版本提供了多项新增功能和增强功能，包括支持适用于Jetpack撰写的Android SDK、支持基于Adobe Journey Optimizer代码的体验，以及正式提供了适用于Flutter的Adobe Journey Optimizer消息传送扩展。 有关更详细的发行说明，请参阅 [Mobile SDK发行说明](https://developer.adobe.com/client-sdks/home/release-notes/). |
+| Mobile SDK | 隐私 | 由于Apple的策略更新，从2024年5月1日开始，开发人员必须实施新的隐私功能才能提交到App Store。 所有使用Mobile SDK的Adobe客户，如果他们希望在5月1日后获得App Store批准，则需要升级到SDK版本5.x。 |
+| Roku SDK | Roku SDK | Roku SDK的第一个主要版本已发布，支持适用于平台Edge Network的流媒体。 |
+| 标记和事件转发 | 产品内指南 | Experience Platform [标记](../../tags/home.md) 和 [事件转发](../../tags/ui/event-forwarding/overview.md) 提供一系列新的体验，帮助您快速入门，并快速实现价值。 这些体验包括新的载入屏幕、产品内教程和工具提示。 <br>![突出显示产品内指南的事件转发。](../2024/assets/april/event-forwarding.png "模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。"){width="100" zoomable="yes"}<br> |
+| Web SDK | 简化了Audience Manager客户的Web SDK采用过程 | 多项Web SDK更新现在可以简化Web SDK的使用，而无需使用适用于Experience Cloud解决方案(如Audience Manager、Analytics和Target)的Experience Data Model (XDM)。 请参阅以下指南以了解有关Audience ManagerWeb SDK采用率的更多信息： <ul><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">将用于Audience Manager的数据收集库从Audience Manager标记扩展更新为Web SDK标记扩展</li><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">将您的用于Audience Manager的数据收集库从AppMeasurementJavaScript库更新到Web SDK JavaScript库</li></ul> |
 
 {style="table-layout:auto"}
 
-要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
+<!--| Web SDK | [Streaming Media Collection support in Web SDK](../../web-sdk/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](../../web-sdk/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/en/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
+
+要了解有关数据集合的更多信息，请阅读 [数据收集概述](../../collection/home.md).
 
 ## 目标 {#destinations}
 
 [!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
 
-**新的和更新的目标** {#new-updated-destinations}
+**新增或更新的功能**{#destinations-new-updated-functionality}
 
-| 目标 | 类型 | 描述 |
-| ----------- | --------- | ----------- |
-| [(Beta) Acxiom数据增强连接](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | 新增 | 使用此连接器可将第一方配置文件从Real-Time CDP激活到Acxiom，以便跨营销渠道扩充和使用该配置文件。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。 |
-| [(Beta) Acxiom潜在客户抑制连接](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | 新增 | 将您的第一方受众导出到Acxiom目标，以允许Acxiom抑制已知或转换的客户。 然后，使用 [Acxiom潜在客户数据导入](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) 源连接器，用于从Acxiom中摄取和激活潜在客户列表，并删除您的已知或转换的客户。 |
-| [Amazon Ads连接](../../destinations/catalog/advertising/amazon-ads.md) | 更新 | 将数据导出到Amazon广告目标时，您现在可以将数据路由到Amazon DSP或AmazonMarketing Cloud（新）。 |
-| [LiveRamp载入连接](../../destinations/catalog/advertising/liveramp-onboarding.md) | 更新 | LiveRamp载入目标现在支持向欧洲和澳大利亚投放 [!DNL LiveRamp] [!DNL SFTP] 实例。 最大导出文件大小也增加到了1000万行（以前是500万行）。 |
+| 功能 | 描述 |
+| ----------- | ----------- |
+| `isRequired` 参数现在可用于Destination SDK中的嵌套客户数据字段 | 在Destination SDK中配置目标时，您现在可以 [根据需要设置嵌套的客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields). 这样，设置目标的用户便无法继续其激活流程，除非为该字段选择值。 |
+| 使用Web SDK设置Adobe Target目标时，边缘分段不再是强制要求 | 以前，在配置 [Adobe Target目标](/help/destinations/catalog/personalization/adobe-target-connection.md) 使用Web SDK时，必须为个性化和边缘分段启用数据流。 要求为边缘分段启用数据流 [现已删除](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream). 请注意，在将Adobe Target与Real-Time CDP结合使用时，此集成模式仅允许您从一部分个性化用例中受益。 详细了解 [按集成类型启用的用例](/help/destinations/catalog/personalization/adobe-target-connection.md#parameters). |
+| [!BADGE 测试版]{type=Informative}从激活流中删除多个受众和数据集 | 您现在可以选择并从目标激活流中删除多个受众和数据集。 请参阅 [目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove) 和 [数据集导出](../../destinations/ui/export-datasets.md) 文档，以了解更多详细信息。 |
 
 {style="table-layout:auto"}
-
-<!--
-
-**New or updated functionality** {#destinations-new-updated-functionality}
-
--->
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
 
-## Experience Data Model (XDM) {#xdm}
+## 身份服务 {#identity-service}
 
-XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提供通用结构和定义（架构）。通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供见解。您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+使用Adobe Experience Platform Identity Service跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而全面了解客户及其行为。
 
-**新增功能**
+**更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Experience PlatformUI映射数据类型支持 | 通过在Platform UI中定义映射字段，进一步自定义您的Experience Data Model (XDM)数据结构。 现在，您可以在架构编辑器中创建映射字段以建模灵活的数据结构或有效地存储键值对。 定义新字段时，从类型下拉列表中选择“映射”，以配置子字段并将它们分配给字段组。 支持的映射值类型为字符串和整数。<br>![模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。](../2024/assets/march/maps.png "模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。"){width="100" zoomable="yes"}<br> 学习如何 [在UI中定义映射字段](../../xdm/ui/fields/map.md)，请参阅UI指南。 |
+| 弃用 `/orgs/{ORG}/` API中的端点 | 中的以下端点 [[!DNL Identity Service] API](https://developer.adobe.com/experience-platform-apis/references/identity-service/) 已弃用：<ul><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities`</li><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities/{ID}`</li></ul> 您可以使用 `/idnamespace/identities` 和 `/idnamespace/identities/{ID}` 端点完成相同的任务，并检索组织中的所有命名空间或组织中的特定命名空间。 |
 
 {style="table-layout:auto"}
 
-有关 Platform 中 XDM 的详细信息，请查看 [XDM 系统概述](../../xdm/home.md)。
+有关Identity Service的详细信息，请阅读 [Identity服务概述](../../identity-service/home.md).
+
+## 监控 {#monitoring}
+
+使用Experience PlatformUI中的监视仪表板可监视来自源、身份服务、实时客户个人资料、受众和目标的数据的历程。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 监控仪表板扩展 | 您现在可以根据业务用例对不同数据类型使用监控仪表板。 使用监视仪表板可监视源、受众和目标中人员、帐户和潜在客户数据类型活动。 |
+
+{style="table-layout:auto"}
+
+有关详细信息，请阅读上的指南 [使用监视仪表板](../../dataflows/ui/monitor.md).
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集： [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+
+**更新的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 查询隔离 | 自动隔离失败的查询执行，以防止中断并维护一致的性能。 |
+| 取消查询 | 通过取消长时间运行的查询来控制查询执行并提高生产效率。 |
+| 计划的查询警报 | 在计划查询时通过主动通知及时了解最新信息，确保高效及时的任务管理。 您可以在创建查询或使用现有计划查询的内联操作时订阅警报。 |
+| 改进了计划的查询导航 | 可在查询模板和计划运行之间轻松导航，以提高工作效率。 |
+| 扩展查询输出 | 可在控制台中访问多达500行查询结果，以便更深入地分析您的数据。 |
+| 旧版查询编辑器失效 | 自2024年4月30日起，增强型查询编辑器已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。 |
+
+{style=“table-layout:auto”}
+
+有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
+
+## 沙盒 {#sandboxes}
+
+Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。 为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [沙盒工具](../../sandboxes/ui/sandbox-tooling.md) | 使用沙盒工具执行以下操作 [导出](../../sandboxes/ui/sandbox-tooling.md#export-entire-sandbox) 将所有支持的对象类型放入完整的沙盒包中，然后 [导入](../../sandboxes/ui/sandbox-tooling.md#import-entire-sandbox) 跨各种沙盒的包以复制对象配置。 |
+
+{style="table-layout:auto"}
+
+有关沙箱的详细信息，请阅读 [沙盒概述](../../sandboxes/home.md).
 
 ## Segmentation Service {#segmentation}
 
 [!DNL Segmentation Service] 允许您对存储在 [!DNL Experience Platform] 中的与个人（例如客户、潜在客户、用户或组织）相关的数据划分到受众区段中。您可以通过区段定义或其他源从 [!DNL Real-Time Customer Profile] 数据创建受众。这些受众在 [!DNL Platform] 上集中配置和维护，并且可以通过任何 Adobe 解决方案轻松访问。
 
-**新增功能**
+**更新了功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 批量操作 | 受众库现在支持批量操作。 通过使用批量操作，您可以快速选择多个受众以将它们移动到文件夹、应用标记、应用访问标签或删除。 <br> ![受众UI工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众UI工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的详细信息，请参阅 [分段服务UI指南](../../segmentation/ui/overview.md#bulk-actions). |
+| 受众生命周期状态 | 受众生命周期状态已得到简化，以简化生命周期管理。 要了解有关这些生命周期状态的更多信息，请阅读 [Segmentation Service常见问题](../../segmentation/faq.md#lifecycle-states). |
 
 {style="table-layout:auto"}
 
-要了解有关分段服务的更多信息，请阅读 [分段服务概述](../../segmentation/home.md).
+有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
 
 ## 源 {#sources}
 
 Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
-**新的和更新的源**
+在Experience Platform中使用源从Adobe应用程序或第三方数据源中摄取数据。
 
-| 功能 | 类型 | 描述 |
-| --- | --- | --- |
-| [!BADGE 测试版]{type=Informational} [!DNL Acxiom Data Ingestion] | 新增 | 使用 [[!DNL Acxiom Data Ingestion] 源](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) 摄取 [!DNL Acxiom] 将数据导入Real-time Customer Data Platform并丰富第一方配置文件。 然后，您可以使用 [!DNL Acxiom] — 扩充了第一方用户档案，以改进受众并在营销渠道之间激活。 <br> ![Acxiom数据摄取源。](../2024/assets/march/acxiom-data-ingestion.png "新的Acxiom数据摄取源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Acxiom Data Ingestion] 概述](../../sources/connectors/data-partners/acxiom-data-ingestion.md) 以获取有关如何开始的信息。 |
-| [!BADGE 测试版]{type=Informational} [!DNL Stripe] | 新增 | 使用 [[!DNL Stripe] 源](../../sources/connectors/payments/stripe.md) 将客户在购买流程中捕获的数据摄取到Experience Platform中。 摄取数据后，您即可使用此数据创建个性化优惠并解锁更丰富的业务洞察。 <br> ![Stripe源。](../2024/assets/march/stripe.png "新Stripe源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Stripe] 概述](../../sources/connectors/payments/stripe.md) 以获取有关如何开始的信息。 |
-| 的UI支持 [!DNL Snowflake Streaming] | 新增 | 您现在可以使用 [[!DNL Snowflake Streaming] 源](../../sources/tutorials/ui/create/databases/snowflake-streaming.md) 在Experience PlatformUI中，用于从 [!DNL Snowflake] 数据库。 <br> ![Snowflake流源。](../2024/assets/march/snowflake-streaming.png "新的Snowflake条纹源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md) 以获取有关如何开始的信息。 |
+**新源**
+
+| 新源 | 描述 |
+| --- | --- |
+| [!BADGE 测试版]{type=Informational} [!DNL PathFactory] | 使用 [[!DNL PathFactory] 源](../../sources/tutorials/ui/create/marketing-automation/pathfactory.md) 要集成您的访客、会话和页面查看数据，请执行以下操作 [!DNL PathFactory] Experience Platform。 阅读 [[!DNL PathFactory] 概述](../../sources/connectors/marketing-automation/pathfactory.md) 以获取有关如何开始的信息。 |
+| [!DNL Teradata Vantage] | 使用 [[!DNL Teradata Vantage] 源](../../sources/tutorials/ui/create/databases/teradata-vantage.md) 将数据从混合多云环境摄取到Experience Platform。 阅读 [[!DNL Teradata Vantage] 概述](../../sources/connectors/databases/teradata-vantage.md) 以获取有关如何开始的信息。 |
 
 {style="table-layout:auto"}
+
+**新增功能和更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 更新了VA7中允许列表的IP地址 | 以下IP地址已添加到要添加到VA7（北美洲）允许列表中的IP地址列表： <ul><li>`20.98.198.224/29`</li><li>`20.119.28.57/32`</li><li>`20.232.89.104/29`</li><li>`20.98.195.172/32`</li><li>`172.210.218.144/28`</li></ul> 有关要添加到允许列表的IP地址的完整列表，请阅读 [IP地址允许列表文档](../../sources/ip-address-allow-list.md). |
+| 支持新的身份验证类型 [!DNL Azure Event Hubs] 源 | 您现在可以连接 [!DNL Event Hubs] 使用以下任一方式Experience Platform的源 [!DNL Azure Active Directory Authentication] 或 [!DNL Scoped Azure Active Directory Authentication]. 阅读指南： [连接 [!DNL Event Hubs] 至Experience Platform](../../sources/tutorials/ui/create/cloud-storage/eventhub.md) 以了解更多信息。 |
+| 更新至 [!DNL Data Landing Zone] 凭据检索 | 现在，您可以在源工作区中使用右边栏来检索 [!DNL Data Landing Zone] 凭据。 您现在还可以使用右边栏刷新凭据。 阅读 [[!DNL Data Landing Zone] UI指南](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md) 以了解更多信息。 |
+
+{style="table-layout:auto"}
+
+<!--| Enhanced filtering and navigation in the sources UI workspace | Use the enhanced filtering, search, and inline action tools in the sources UI workspace to streamline your workflow. <ul><li>Use filtering and search capabilities to navigate your way through sources accounts and dataflows in your organization.</li><li>Use inline actions to modify configuration settings applied to your dataflows and improve organizational workflows. You can use inline actions to apply tags, set up alerts, or create ingestion jobs on demand.</li></ul> For more information, read the guide on [filtering sources objects in the UI](../../sources/tutorials/ui/filter.md).|-->
 
 欲知关于来源的更多信息，请阅读 [源概述](../../sources/home.md).

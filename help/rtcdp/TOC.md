@@ -5,7 +5,7 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户配置文件、从这些配置文件创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
+source-git-commit: b35f584d13fb241c06b4045b525d84775ef8317c
 workflow-type: tm+mt
 source-wordcount: '294'
 ht-degree: 69%
@@ -82,7 +82,7 @@ ht-degree: 69%
       * [未经身份验证的用户异地重定向](./partner-data/offsite-retargeting.md)
    * 配置文件扩充 {#profile-enrichment}
       * [用合作伙伴提供的属性补充第一方配置文件](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
-   * 个性化、洞察和参与 {#personalization-insights-engagement}
+   * 个性化的洞察和参与 {#personalization-insights-engagement}
       * [以智能的方式重新吸引您的客户](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [智能地重新吸引客户：Luma示例](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
 * [Experience Platform 发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

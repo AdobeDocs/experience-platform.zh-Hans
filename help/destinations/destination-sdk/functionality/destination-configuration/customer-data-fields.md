@@ -2,7 +2,7 @@
 description: 了解如何在Experience PlatformUI中创建输入字段，这些字段允许您的用户指定与如何连接数据并将其导出到目标相关的各种信息。
 title: 客户数据字段
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: 6366686e3b3f656d200aa245fc148f00e623713c
+source-git-commit: b35f584d13fb241c06b4045b525d84775ef8317c
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 1%
@@ -352,7 +352,7 @@ ht-degree: 1%
 >
 >从2024年4月版本开始，您可以设置 `isRequired` 嵌套字段上的参数。 例如，在下面的配置代码片段中，前两个嵌套字段被标记为必填字段（高亮显示的第xxx行），客户无法继续操作，除非他们为该字段选择值。 有关中必填字段的更多信息，请参阅 [支持的参数](#supported-parameters) 部分。
 
-```json {line-numbers="true" highlight="10,19"}
+```json {line-numbers="true" highlight="11,20"}
     {
       "name": "yourdestination",
       "title": "Yourdestination - Integration Specific Settings",
