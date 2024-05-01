@@ -3,9 +3,9 @@ title: 激活受众以边缘个性化目标
 description: 了解如何为同一页面和下一页面个性化用例将受众从Adobe Experience Platform激活到边缘个性化目标。
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: c113d9615a276af67714f38b8325e69737b23964
 workflow-type: tm+mt
-source-wordcount: '1922'
+source-wordcount: '1957'
 ht-degree: 2%
 
 ---
@@ -47,7 +47,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 ## 用例 {#use-cases}
 
-使用Adobe个性化解决方案，如Adobe Target或您自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如内部CMS），以通过提供更深入的客户个性化体验 [自定义个性化](../catalog/personalization/custom-personalization.md) 目标。 所有这些功能都可以同时利用Experience Platform边缘网络数据收集和分段功能。
+使用Adobe个性化解决方案，如Adobe Target或您自己的个性化合作伙伴平台(例如， [!DNL Optimizely]， [!DNL Pega])，以及专有系统（例如内部CMS），以通过提供更深入的客户个性化体验 [自定义个性化](../catalog/personalization/custom-personalization.md) 目标。 所有这些功能的同时还可利用Experience PlatformEdge Network数据收集和分段功能。
 
 下面介绍的使用案例包括网站个性化和有针对性的网站广告。
 
@@ -78,6 +78,10 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 设置个性化目标的第一步是为Experience PlatformWeb SDK配置数据流。 可在数据收集UI中完成此操作。
 
 配置数据流时，在 **[!UICONTROL Adobe Experience Platform]** 确保两者 **[!UICONTROL 边缘分段]** 和 **[!UICONTROL 个性化目标]** 已选中。
+
+>[!TIP]
+>
+>从2024年4月版本开始，出现以下情况时，您无需选中Edge Segmentation复选框 [配置与Adobe Target的连接](/help/destinations/catalog/personalization/adobe-target-connection.md). 在本例中， [下一会话个性化](#next-session) 是唯一可用的个性化用例。
 
 ![突出显示边缘分段和个性化目标的数据流配置！](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
@@ -146,7 +150,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 自定义个性化]** 目标要求您使用 [边缘网络服务器API](../../server-api/overview.md) 在为基于属性的个性化配置目标时。 所有服务器API调用必须在 [已验证的上下文](../../server-api/authentication.md).
+>配置文件属性可能包含敏感数据。 为了保护此数据， **[!UICONTROL 自定义个性化]** 目标要求您使用 [Edge Network服务器API](../../server-api/overview.md) 在为基于属性的个性化配置目标时。 所有服务器API调用必须在 [已验证的上下文](../../server-api/authentication.md).
 >
 ><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
 >

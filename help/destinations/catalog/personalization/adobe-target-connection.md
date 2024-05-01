@@ -3,10 +3,10 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 92238ee94149b3cb4293d726d08dc4927e2dedb5
+source-git-commit: c113d9615a276af67714f38b8325e69737b23964
 workflow-type: tm+mt
-source-wordcount: '1182'
-ht-degree: 14%
+source-wordcount: '1303'
+ht-degree: 13%
 
 ---
 
@@ -16,7 +16,8 @@ ht-degree: 14%
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2024 年 1 月 | 功能和文档更新。 | 您现在可以为默认的生产沙盒和其他非默认沙盒将受众和配置文件属性共享到Adobe Target连接。 |
+| 2024 年 4 月 | 功能和文档更新 | 使用数据流ID连接到Target目标时，您现在可以 *不需要* 必须为边缘分段启用数据流。 这意味着Target目标将与批处理受众和流式受众配合使用，但您可以完成的用例有所不同。 在中查看表 [连接参数](#parameters) 部分以了解更多信息。 |
+| 2024 年 1 月 | 功能和文档更新 | 您现在可以为默认的生产沙盒和其他非默认沙盒将受众和配置文件属性共享到Adobe Target连接。 |
 | 2023 年 6 月 | 功能和文档更新 | 自2023年6月起，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅[连接参数](#parameters)部分，了解详细信息。另外，请参阅有关在 Adobe Target 中[配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans)的教程，了解更多有关工作区的信息。 |
 | 2023 年 5 月 | 功能和文档更新 | 截至2023年5月， **[!UICONTROL Adobe Target]** 连接支持 [基于属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes) 面向所有客户。 |
 
@@ -111,11 +112,11 @@ Adobe Experience Platform会自动连接到贵公司的Adobe Target实例。 无
   >
   >每个Adobe Target目标连接的数据流ID都是唯一的。 如果需要将相同的受众映射到多个数据流，您必须 [创建新的目标连接](../../ui/connect-destination.md) ，然后查看 [audience activation流程](#activate).
 
-   * **[!UICONTROL 无]**：如果您需要配置Adobe Target个性化，但无法实施，请选择此选项 [Experience PlatformWeb SDK](/help/web-sdk/home.md). 使用此选项时，从Experience Platform导出到Target的受众仅支持下一会话个性化，并且禁用边缘分段。 有关更多信息，请参阅下表。
+   * **[!UICONTROL 无]**：如果您需要配置Adobe Target个性化，但无法实施，请选择此选项 [Experience PlatformWeb SDK](/help/web-sdk/home.md). 使用此选项时，从Experience Platform导出到Target的受众仅支持下一会话个性化，并且禁用边缘分段。 请参阅下表，比较每种实施类型的可用用例。
 
-  | Adobe Target实施（不带Web SDK） | Web SDK实施 |
-  |---|---|
-  | <ul><li>数据流不是必需的。 Adobe Target可以通过以下方式部署： [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)， [服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation)，或 [混合](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation) 实施方法。</li><li>[边缘分段](../../../segmentation/ui/edge-segmentation.md) 不受支持。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md) 不受支持。</li><li>您可以将受众和配置文件属性共享到Adobe Target连接的 *默认的生产沙盒* 和非默认沙盒。</li><li>要在不使用数据流ID的情况下配置下一会话个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html).</li></ul> | <ul><li>需要将Adobe Target和Experience Platform配置为服务的数据流。</li><li>边缘分段按预期工作。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md) 受支持。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
+  | Adobe Target实施 *不含* Web SDK | Adobe Target实施 *替换为* Web SDK | Adobe Target实施 *替换为* Web SDK *和* 关闭边缘分段 |
+  |---|---|---|
+  | <ul><li>数据流不是必需的。 Adobe Target可以通过以下方式部署： [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)， [服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation)，或 [混合](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation) 实施方法。</li><li>[边缘分段](../../../segmentation/ui/edge-segmentation.md) 不受支持。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md) 不受支持。</li><li>您可以将受众和配置文件属性共享到Adobe Target连接的 *默认的生产沙盒* 和非默认沙盒。</li><li>要在不使用数据流ID的情况下配置下一会话个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html).</li></ul> | <ul><li>需要将Adobe Target和Experience Platform配置为服务的数据流。</li><li>边缘分段按预期工作。</li><li>[同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md#use-cases) 受支持。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> | <ul><li>需要将Adobe Target和Experience Platform配置为服务的数据流。</li><li>时间 [配置数据流](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)，请勿选择 **边缘分段** 复选框。</li><li>[下一会话个性化](../../ui/activate-edge-personalization-destinations.md#next-session) 受支持。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
 
 * **工作区**：选择Adobe Target [工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans) 将共享到的受众。 可为每个 Adobe Target 连接选择一个工作区。激活后，在遵循适用的同时，受众将被路由到选定的工作区 [Experience Platform数据使用标签](../../../data-governance/labels/overview.md).
 
