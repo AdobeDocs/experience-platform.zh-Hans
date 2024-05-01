@@ -1,7 +1,8 @@
 ---
 title: 查看分析SQL
 description: 查看您的配置文件、受众、目标和自定义见解背后的SQL，并通过查询编辑器按需执行查询。
-source-git-commit: be90cf38970a54431f48799bf506fb0a20ec0166
+exl-id: fd728926-c113-4593-92b1-916a02d09d41
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 0%
@@ -58,4 +59,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-阅读本文档后，您现在了解如何在标准功能板或用户定义的功能板中访问SQL以获得任何见解。 如果您尚未这样做，建议您阅读 [Real-time Customer Data Platform分析数据模型文档](./cdp-insights-data-model.md). 该文档包含有关根据您的营销和KPI需求为Real-Time CDP报表自定义SQL模板的见解。
+阅读本文档后，您现在了解如何在标准功能板或用户定义的功能板中访问SQL以获得任何见解。 如果您尚未这样做，建议您阅读 [Real-time Customer Data Platform分析数据模型文档](./data-models/cdp-insights-data-model-b2c.md). 该文档包含有关根据您的营销和KPI需求为Real-Time CDP报表自定义SQL模板的见解。

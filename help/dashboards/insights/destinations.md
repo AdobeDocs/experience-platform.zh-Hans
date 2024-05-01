@@ -1,9 +1,10 @@
 ---
 title: 目标分析
 description: 发现支持目标分析的SQL，并使用这些查询生成自定义分析，以进一步探索从Adobe Experience Platform激活数据的问题。
-source-git-commit: 3d5dd6300952409e2dddb32eb11547fb43a5feac
+exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
+source-git-commit: d4baf6cfaa772e5d46cef470fb35818c7af868b1
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1139'
 ht-degree: 2%
 
 ---
@@ -14,8 +15,7 @@ ht-degree: 2%
 
 通过访问支持这些分析的SQL来了解您的目标分析，然后生成您自己的分析以进一步探索如何将数据从Adobe Experience Platform激活到您的目标平台。 通过使用现有的Real-Time CDP数据模型SQL作为灵感，根据独特的业务需求创建查询，将原始数据转换为新的可操作洞察。
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI.  -->
+请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
 
 以下见解全部可供您用作 [目标仪表板](../guides/destinations.md) 或自定义 [用户定义的仪表板](../user-defined-dashboards.md). 请参阅 [自定义概述](../customize/overview.md) 有关如何自定义功能板的说明，或者 [创建和编辑新构件](../customize/custom-widgets.md) 在小组件库和 [用户定义的仪表板](../user-defined-dashboards.md#create-widget).
 
@@ -511,13 +511,6 @@ See the [Unmapped audiences by identity widget documentation](../guides/destinat
 
 通过阅读本文档，您现在了解了生成仪表板分析的SQL以及此分析可以解决哪些常见问题。 您现在可以编辑和迭代这些SQL查询以生成您自己的见解。
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI. -->
+请参阅 [查看SQL文档](../view-sql.md) 有关如何直接通过Platform UI调整您的分析的SQL的详细信息。
 
-您还可以阅读并了解为生成分析的SQL [配置文件](./profiles.md) 和 [受众](./audiences.md) 功能板。
-
-<!-- 
-SQL MISSING FROM WIKI:
-Unmapped audiences by identity
-Mapped audiences by identity 
--->
+您还可以阅读并了解为生成分析的SQL [配置文件](./profiles.md)， [帐户配置文件](./account-profiles.md) 和 [受众](./audiences.md) 功能板。

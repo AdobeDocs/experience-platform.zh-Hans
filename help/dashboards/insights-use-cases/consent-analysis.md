@@ -2,7 +2,7 @@
 title: 同意分析和跟踪
 description: 了解如何构建同意分析仪表板，以跟踪用户同意随时间变化的趋势。
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '1909'
 ht-degree: 0%
@@ -143,7 +143,7 @@ Adobe已创建各种见解，这些见解自动在Profiles、Audiences和Destina
 >在保存仪表板之前，您现在可以调整小部件的大小或将其移动到所需的大小和位置。
 
 
-下图演示了已完成的构件的显示方式以及其他潜在的自定义分析。 有关可创建的构件类型的更多详细信息，请参阅 [数据模型文档](../cdp-insights-data-model.md).
+下图演示了已完成的构件的显示方式以及其他潜在的自定义分析。 有关可创建的构件类型的更多详细信息，请参阅 [数据模型文档](../data-models/cdp-insights-data-model-b2c.md).
 
 <!-- The diagram shows straight lines due to a lack of data, however in your environment the trends will reflect the actual changes over time. -->
 

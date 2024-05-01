@@ -5,10 +5,10 @@ breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
 role: Developer,User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 8daa1c190f4c868fc12a46c66f6970704c8de8fa
 workflow-type: tm+mt
-source-wordcount: '90'
-ht-degree: 33%
+source-wordcount: '106'
+ht-degree: 29%
 
 ---
 
@@ -30,6 +30,7 @@ ht-degree: 33%
    * [配置文件](insights/profiles.md)
    * [受众](insights/audiences.md)
    * [目标](insights/destinations.md)
+   * [帐户配置文件](insights/account-profiles.md)
 * 自定义仪表板 {#customize}
    * [自定义概述](customize/overview.md)
    * [修改仪表板](customize/modify.md)
@@ -39,9 +40,11 @@ ht-degree: 33%
    * [编辑架构](customize/edit-schema.md)
 * 分析用例 {#insights-use-cases}
    * [同意分析](insights-use-cases/consent-analysis.md)
+* 可用的数据模型 {#data-models}
+   * [Real-time Customer Data Platform Insights数据模型B2B版本](data-models/cdp-insights-data-model-b2b.md)
+   * [Real-time Customer Data Platform Insights数据模型B2C版本](data-models/cdp-insights-data-model-b2c.md)
 * 应用程序集成 {#integrations}
    * [Power BI](integrations/power-bi.md)
 * [查询功能板数据集](query.md)
-* [Real-time Customer Data Platform分析数据模型](cdp-insights-data-model.md)
 * [查看分析SQL](view-sql.md)
 * [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

@@ -4,10 +4,10 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务在Experience Platform中探索和处理为配置文件、受众和目标仪表板提供支持的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: e808af41b0df7603ce6f44464d1e6e883d3f6208
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
-source-wordcount: '946'
-ht-degree: 0%
+source-wordcount: '944'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform通过Experience PlatformUI中提供的功能板，可提供有关贵组织配置文件、受众和目标数据的重要信息。 然后，您可以使用Adobe Experience Platform [!DNL Query Service] 探索、验证和处理原始数据集，以便为数据湖中的这些功能板供电。
 
-## 快速入门 [!DNL Query Service]
+## [!DNL Query Service] 入门
 
 Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标准SQL在Data Lake中查询数据，从其数据中获得见解。 [!DNL Query Service] 提供了一个用户界面和API，可用于连接数据湖中的任何数据集，并将查询结果捕获为新数据集，以用于报表、机器学习或将其摄取到Real-time Customer Profile中。
 
@@ -86,7 +86,7 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过使用标
 
 CDP分析数据模型功能会公开支持各种个人资料、目标和分段构件的分析的SQL。 您可以自定义这些SQl查询模板，以便为营销和KPI用例创建CDP报告。
 
-CDP报告可提供有关您的配置文件数据及其与受众和目标的关系的见解。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档。 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
+CDP报告可提供有关您的配置文件数据及其与受众和目标的关系的见解。 有关如何执行操作的详细信息，请参阅CDP分析数据模型文档。 [将CDP分析数据模型应用于您的特定KPI用例](./data-models/cdp-insights-data-model-b2c.md).
 
 ## 示例查询
 

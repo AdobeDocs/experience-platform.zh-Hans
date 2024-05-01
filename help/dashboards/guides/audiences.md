@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；配置文件；受众；受众；分段；用户界面；UI；自定义；受众仪表板；仪表板
-title: 受众功能板指南
+title: 受众功能板
 description: Adobe Experience Platform提供了一个功能板，通过它可查看有关贵组织已创建受众的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
+source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
 workflow-type: tm+mt
-source-wordcount: '3133'
+source-wordcount: '3132'
 ht-degree: 9%
 
 ---

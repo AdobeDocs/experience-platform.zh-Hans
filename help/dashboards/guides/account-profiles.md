@@ -1,10 +1,10 @@
 ---
-title: 帐户配置文件仪表板指南
+title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 79966442f5333363216da17342092a71335a14f0
+source-git-commit: b7875128592b17044b068d8064de082bf00a8309
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1715'
 ht-degree: 0%
 
 ---
@@ -13,15 +13,15 @@ ht-degree: 0%
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功能板，您可以查看有关帐户配置文件的重要信息，在每日快照期间捕获了这些信息。 本指南概述如何访问和使用 [!UICONTROL 帐户配置文件] 功能板，并提供有关功能板中显示的可视化的更多信息。
 
-欲知帐户资料用户界面中所有功能的概述，请访问 [帐户配置文件UI指南](../../rtcdp/accounts/account-profile-ui-guide.md).
+本文档概述了 [!UICONTROL 帐户配置文件] 功能板，并详细描述可用的标准见解。 请参阅 [[!UICONTROL 帐户配置文件] UI指南](../../rtcdp/accounts/account-profile-ui-guide.md) 以了解有关其可用功能的完整详细信息。
 
 ## 快速入门
 
-您必须有权使用 [Adobe Real-time Customer Data Platform B2B版本](../../rtcdp/b2b-overview.md) 以访问B2B [!UICONTROL 帐户配置文件] 仪表板。
+您必须有权使用 [Adobe Real-time Customer Data Platform B2B版本](../../rtcdp/b2b-overview.md) 访问B2B [!UICONTROL 帐户配置文件] 仪表板。
 
-## 帐户配置文件数据
+## 帐户配置文件数据 {#data}
 
-此 [!UICONTROL 帐户配置文件] 功能板可显示来自营销渠道中的多个来源以及贵组织当前用于存储客户帐户信息的各种系统的统一帐户信息的快照。
+此 [!UICONTROL 帐户配置文件] 仪表板显示统一帐户信息的快照。 此帐户信息来自您的营销渠道中的多个来源，以及贵组织当前用于存储客户帐户信息的各种系统。
 
 快照中的配置文件数据显示的数据与拍摄快照的特定时间点完全相同。 换句话说，快照不是数据的近似值或样本，而 [!UICONTROL 帐户配置文件] 仪表板不会实时更新。
 
@@ -29,17 +29,33 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 >
 >自拍摄快照以来对数据所做的任何更改或更新都不会反映在功能板中，直到拍摄下一个快照为止。
 
-## 浏览 [!UICONTROL 帐户配置文件] 仪表板
+## 浏览 [!UICONTROL 帐户配置文件] 仪表板 {#explore}
 
 要导航至 [!UICONTROL 帐户配置文件] 在Platform UI中，选择 **[!UICONTROL 配置文件]** 下 [!UICONTROL 帐户] （在左侧导航面板中）。
 
 ![左侧导航中带有帐户配置文件的Platform UI突出显示，并显示“概述”选项卡。](../images/account-profiles/account-profiles-dashboard.png)
 
-从 [!UICONTROL 帐户配置文件] 仪表板您可以 [浏览引入到您组织中的帐户配置文件](#browse-account-profiles)，或 [使用小组件一目了然地查看您的帐户配置文件数据的全部](#standard-widgets) 以可视化数据的各个方面。
+从 [!UICONTROL 帐户配置文件] 仪表板，您可以 [浏览引入到您组织中的帐户配置文件](#browse-account-profiles)，或 [使用小组件一目了然地查看您的帐户配置文件数据的全部](#standard-widgets).
+
+### 日期过滤器 {#date-filter}
+
+此 [!UICONTROL 概述] 选项卡由若干小组件组成，这些小组件提供只读量度，以传达有关您的帐户配置文件的重要信息。 选择日历图标或日期以更改小组件的全局日期过滤器。
+
+>[!IMPORTANT]
+>
+>您在下拉日历中选择的日期范围会影响除两个预测评分构件([分布](#predictive-scoring-distribution) 和 [主要影响因素](#predictive-scoring-top-influential-factors))。
+
+![突出显示日期选择器和过滤器图标的帐户配置文件概述选项卡。](../images/account-profiles/date-filter.png)
+
+### 配置潜在客户到帐户的匹配服务 {#lead-to-account-matching-service}
+
+选择 **[!UICONTROL 设置]** 从配置潜在客户到帐户的匹配服务 [!UICONTROL 帐户设置] 对话框。 有关如何配置潜在客户与帐户匹配的完整详细信息，请参阅 [UI指南](../../rtcdp/accounts/account-profile-ui-guide.md#configure-lead-to-account-matching). 要了解有关潜在客户与帐户匹配的更多信息，请参阅 [导致Real-Time CDP B2B文档中的帐户匹配](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
+
+![突出显示设置的帐户配置文件仪表板。](../images/account-profiles/settings.png)
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
-此 [!UICONTROL 浏览] 选项卡允许您搜索和查看使用来自连接的企业源的帐户ID或通过直接输入源详细信息摄取到您组织中的只读帐户配置文件。 从此处，您可以看到属于帐户配置文件的重要信息，包括其名称、行业、收入和受众等。
+从 [!UICONTROL 浏览] 选项卡，您可以搜索和查看引入到组织中的只读帐户配置文件。 使用连接的企业源中的帐户ID或直接输入源详细信息。 从该工作区中，您可以查看属于帐户配置文件的重要信息，包括其名称、行业、收入和受众等。
 
 选择 [!UICONTROL 配置文件ID] 结果显示在 [!UICONTROL 浏览] 选项卡以打开 [!UICONTROL 详细信息] 帐户配置文件的选项卡。
 
@@ -47,42 +63,79 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 显示在上的帐户配置文件信息 [!UICONTROL 详细信息] 选项卡已从多个配置文件片段合并在一起，以形成单个帐户的单个视图。 请参阅相关文档 [在Adobe Real-time Customer Data Platform中浏览帐户配置文件](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 详细了解Platform UI中的帐户个人资料查看功能。
 
-## 此 [!UICONTROL 帐户配置文件] [!UICONTROL 概述] {#overview}
-
-此 [!UICONTROL 概述] 选项卡由若干小组件组成，这些小组件提供只读量度，以传达有关您的帐户配置文件的重要信息。 选择 **[!UICONTROL 修改仪表板]** 更改 [!UICONTROL 概述] 通过移动和调整小组件大小来制表。
-
-![突出显示修改功能板的帐户配置文件概述选项卡。](../images/account-profiles/modify-dashboard.png)
-
-请参阅文档，网址为 [修改仪表板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 了解更多信息。
-
 ## 标准构件 {#standard-widgets}
 
 Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
-* [按行业划分的总账户数](#total-accounts-by-industry)
 * [已添加帐户配置文件](#account-profiles-added)
+* [按行业划分的客户](#accounts-by-industry)
+* [按类型列出的帐户](#accounts-by-type)
+* [已添加机会](#opportunities-added)
+* [按人员角色列出的机会](#opportunities-by-person-role)
+* [按收入列出的机会](#opportunities-by-revenue)
+* [按状态和阶段列出的机会](#opportunities-by-status-&-stage)
+* [赢得的机会](#opportunities-won)
 * [预测评分分布](#predictive-scoring-distribution)
 * [预测得分主要影响因素](#predictive-scoring-top-influential-factors)
-
-### 按行业划分的总账户数 {#total-accounts-by-industry}
-
-此构件显示单个指标中的帐户总数，并使用圆环图说明构成总数的行业中计数的比例大小。 键值为构成圆环图的不同行业提供颜色编码信息。
-
-当光标悬停在圆环图的相应部分上时，会在对话框中显示不同行业的各个计数。
-
-![按行业构件划分的总帐户数。](../images/account-profiles/total-accounts-by-industry-widget.png)
+* [按行业划分的总账户数](#total-accounts-by-industry)
 
 ### 已添加帐户配置文件 {#account-profiles-added}
 
-此构件使用颜色编码的条形图来说明在给定时间段内添加到帐户的用户档案计数，以及构成这些添加的用户档案的不同行业比例。 各行业采用颜色编码，一个键为构成条形图的各个行业提供颜色编码信息。 从小组件下拉菜单中选择分析时段。 条形图可以在30天、90天和12个月的时段内可视化。
+此 [!UICONTROL 已添加帐户配置文件] 构件使用折线图显示一段时间内每天添加的帐户配置文件数。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的帐户配置文件。 结果可用于推断添加的帐户配置文件数量的趋势。
+
+![帐户配置文件已添加构件。](../images/account-profiles/account-profiles-added.png)
+
+### 按行业划分的客户 {#accounts-by-industry}
+
+此 [!UICONTROL 按行业划分的客户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成这一总额的不同行业的相对构成。 颜色编码的密钥提供所有包含行业的细目。 当光标悬停在圆环图的相应部分上时，会在对话框中显示每个行业的各个计数。
+
+![按行业划分的帐户小组件。](../images/account-profiles/accounts-by-industry.png)
+
+### 按类型列出的帐户 {#accounts-by-type}
+
+此 [!UICONTROL 按类型列出的帐户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成此总额的不同帐户类型的相对构成。 颜色编码的密钥提供所有包含的帐户类型的细分。 当光标悬停在圆环图的相应部分上时，每种类型的帐户分别显示在一个对话框中。
+
+![按类型划分的帐户小组件。](../images/account-profiles/accounts-by-type.png)
+
+### 已添加机会 {#opportunities-added}
+
+此 [!UICONTROL 已添加机会] 构件使用线形图显示一段时间内每天添加的业务机会数量。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的机会。 结果可用于推断所添加机会数的趋势。
+
+<!-- Link to date filter documentation from Annamalai -->
+
+![机会添加了构件。](../images/account-profiles/opportunities-added.png)
+
+### 按人员角色列出的机会 {#opportunities-by-person-role}
+
+此 [!UICONTROL 按人员角色列出的机会] 小组件在圆环图中显示在单个量度中的机会总数。 圆环图说明了构成此机会总数的角色的相对构成。 颜色编码的密钥提供包含的所有角色的细分。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
 
 >[!NOTE]
 >
->由于用户档案只会添加到帐户中，而不会被删除，因此在一段时间内添加的用户档案可能达到的最低数量为零。
+>此 [!UICONTROL 未找到数据] 或 [!UICONTROL 无法加载] 当您的架构中未使用“Opportunity-Person”桥表时，会导致错误。 如果您的分析显示其中一个错误，请检查您的合并架构并确保“Opportunity-Person”字段组正在摄取数据。
 
-![帐户配置文件已添加构件。](../images/account-profiles/accounts-profiles-added-widget.png)
+![按人员列出的机会角色小组件。](../images/account-profiles/opportunities-by-person-role.png)
+
+### 按收入列出的机会 {#opportunities-by-revenue}
+
+此 [!UICONTROL 按收入列出的机会] 构件使用条形图来说明您的机会所产生的总预计收入额。 该构件最多支持六个机会。
+
+要查看包含opportunity的特定收入总计的对话框，请使用光标悬停在各个栏上。
+
+![按收入列出的机会构件。](../images/account-profiles/opportunities-by-revenue.png)
+
+### 按状态和阶段列出的机会 {#opportunities-by-status-&-stage}
+
+此构件使用条形图来说明在营销/销售漏斗的所有阶段打开或关闭的机会数量。 构件使用颜色来区分机会的阶段。 颜色编码的键表示机会的可用阶段。
+
+![按状态和阶段划分的机会构件。](../images/account-profiles/opportunities-by-status-&-stage.png)
+
+### 赢得的机会 {#opportunities-won}
+
+此 [!UICONTROL 赢得的机会] 小组件在圆环图中显示已在单个指标中成功完成的机会总数。 圆环图说明了获胜或未获胜机会的相对构成。 颜色编码密钥用于区分成功和未成功的机会。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
+
+![机会赢得了widget。](../images/account-profiles/opportunities-won.png)
 
 ### 预测评分分布 {#predictive-scoring-distribution}
 
@@ -94,6 +147,10 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 利用小组件中的下拉菜单，可选择帐户评分模型。
 
+>[!NOTE]
+>
+>全局日期范围过滤器不适用于预测评分见解。 预测评分构件根据在下拉列表中选定的帐户评分模型分析数据。
+
 ![预测评分分布构件。](../images/account-profiles/predictive-scoring-distribution.png)
 
 ### 预测得分主要影响因素 {#predictive-scoring-top-influential-factors}
@@ -104,8 +161,20 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 利用小组件中的下拉菜单，可选择帐户评分模型。
 
+>[!NOTE]
+>
+>全局日期范围过滤器不适用于预测评分见解。 预测评分构件根据在下拉列表中选定的帐户评分模型分析数据。
+
 ![预测得分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
+
+### 按行业划分的总账户数 {#total-accounts-by-industry}
+
+此构件显示单个指标中的帐户总数，并使用圆环图说明构成总数的行业中计数的比例大小。 键值为构成圆环图的不同行业提供颜色编码信息。
+
+当光标悬停在圆环图的相应部分上时，会在对话框中显示不同行业的各个计数。
+
+![按行业构件划分的总帐户数。](../images/account-profiles/total-accounts-by-industry-widget.png)
 
 ## 后续步骤
 
-现在，通过阅读本文档，您应该知道如何找到 [!UICONTROL 帐户配置文件] 仪表板。 您还应该了解可用构件中显示的量度。 要了解有关在Experience PlatformUI中使用作为B2B数据一部分的帐户配置文件的更多信息，请参阅 [帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md) 适用于Adobe Real-Time CDP的B2B版本。
+现在，通过阅读本文档，您应该知道如何找到 [!UICONTROL 帐户配置文件] 并了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中使用作为B2B数据一部分的帐户配置文件的更多信息，请参阅 [帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md) 适用于Adobe Real-Time CDP的B2B版本。

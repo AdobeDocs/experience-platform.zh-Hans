@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年9月
 description: Adobe Experience Platform 2022年9月版发行说明。
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '2762'
 ht-degree: 23%
@@ -94,7 +94,7 @@ Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查
 | --- | --- |
 | 使用中标签 | 在构件库中查看时，使用中标签可轻松识别仪表板中现有构件的存在。 这样可轻松避免重复，不过您仍然可以根据需要多次添加同一构件。 |
 | 用户定义的仪表板 | 用户定义的功能板允许您构建和管理自定义功能板，从而帮助加快分析并自定义可视化图表。 通过用户定义的仪表板，您可以创建、添加和编辑定制构件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 了解更多信息。 |
-| 客户数据平台见解数据模型 | 客户数据平台(CDP)分析数据模型功能可公开支持各种用户档案、目标和分段构件分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 阅读 [CDP Insights数据模型功能指南](../../dashboards/cdp-insights-data-model.md) 了解更多信息。 |
+| 客户数据平台见解数据模型 | 客户数据平台(CDP)分析数据模型功能可公开支持各种用户档案、目标和分段构件分析的数据模型和SQL。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报表。 这些见解随后可用作用户定义的功能板的自定义构件。 阅读 [CDP Insights数据模型功能指南](../../dashboards/data-models/cdp-insights-data-model-b2c.md) 了解更多信息。 |
 | 受众重叠报表构件 | 此构件可用于两者 [!UICONTROL 配置文件] 和 [!UICONTROL 区段] 功能板。 此报表为您选择的区段提供了一个按最高或最低重叠百分比排名的有序受众列表。 从 [!UICONTROL 配置文件] 仪表板您可以按合并策略从所有可用区段中过滤和查看受众重叠。 此 [!UICONTROL 区段] 利用功能板，可按特定区段过滤受众重叠。<br>使用此分析构建新的、高性能区段，并避免将相同的受众发送到不同的目标。 此报表还有助于识别隐藏的洞察信息，以改进分段或找到要追求的独特用户档案。 阅读相应的 [用户档案](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [区段](../../dashboards/guides/audiences.md#audience-overlap-report) 构件指南，以了解更多信息。 |
 
 有关的详细信息 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).

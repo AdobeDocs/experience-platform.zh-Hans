@@ -2,7 +2,7 @@
 title: 跟踪数据信号以生成客户存留期值
 description: 本指南提供了有关如何将Data Distiller和用户定义的功能板与Real-time Customer Data Platform结合使用来衡量和可视化客户存留期值的端到端演示。
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -56,7 +56,7 @@ ht-degree: 0%
 * 创建维度表以扩展您的报表分析模型。
 * 查询您的扩展加速商店报告见解数据模型
 
-请参阅Real-time Customer Data Platform分析数据模型文档以了解如何 [自定义您的SQL查询模板，为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/cdp-insights-data-model.md).
+请参阅Real-time Customer Data Platform分析数据模型文档以了解如何 [自定义您的SQL查询模板，为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/data-models/cdp-insights-data-model-b2c.md).
 
 确保设置定期刷新自定义数据模型的计划。 这可确保根据需要将数据作为摄取管道的一部分返回，并填充用户定义的仪表板。 请参阅 [计划查询指南](../ui/query-schedules.md#create-schedule) 学习如何设置计划。
 

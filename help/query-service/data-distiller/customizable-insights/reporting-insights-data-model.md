@@ -2,7 +2,7 @@
 title: 查询Accelerated Store报告分析指南
 description: 了解如何通过查询服务构建报表见解数据模型，以便与加速的商店数据和用户定义的仪表板一起使用。
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '1034'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Query accelerated store允许您减少从数据中获得关键见解所需的时间和处理能力。 通常，会定期（例如，每小时或每天）处理数据，其中会创建和报告聚合视图。 对源自汇总数据的这些报表的分析会产生旨在改善业务绩效的见解。 query accelerated store提供缓存服务、并发、交互式体验和无状态API。 但是，它假定已针对聚合查询而非原始数据查询对数据进行预处理和优化。
 
-查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档以了解如何 [自定义您的SQL查询模板，为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../../dashboards/cdp-insights-data-model.md).
+查询加速存储允许您构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档以了解如何 [自定义您的SQL查询模板，为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../../dashboards/data-models/cdp-insights-data-model-b2c.md).
 
 Adobe Experience Platform的Real-Time CDP数据模型提供了有关用户档案、受众和目标的洞察，并启用了Real-Time CDP洞察功能板。 本文档将指导您完成创建报表见解数据模型的过程，并且还会指导您根据需要扩展Real-Time CDP数据模型。
 
