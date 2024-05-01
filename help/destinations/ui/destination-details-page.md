@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
+source-git-commit: 9d3b6409013edc38ef41dd2a184ccbdcf7ab9edd
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1154'
 ht-degree: 1%
 
 ---
@@ -115,11 +115,15 @@ ht-degree: 1%
 
 ![激活数据视图流式目标](../assets/ui/details-page/activation-data-streaming.png)
 
-<!-- ### Remove multiple audiences from activation flows {#bulk-remove}
+### [!BADGE 测试版]{type=Informational}从激活流中删除多个受众 {#bulk-remove}
 
-To remove multiple audiences from existing activation flows, select the audiences and then select **[!UICONTROL Remove audiences]**.
+>[!NOTE]
+>
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
-![Activation data screen highlighting the Remove audiences option.](../assets/ui/details-page/bulk-remove-audiences.png) -->
+要从现有激活流中删除多个受众，请选择受众，然后选择 **[!UICONTROL 删除受众]**.
+
+![激活数据屏幕高亮显示删除受众选项。](../assets/ui/details-page/bulk-remove-audiences.png)
 
 ### [!BADGE 测试版]{type=Informative}按需将多个文件导出到批处理目标 {#bulk-export}
 

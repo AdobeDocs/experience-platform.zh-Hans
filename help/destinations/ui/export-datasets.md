@@ -3,9 +3,9 @@ title: 将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到您首选的云存储位置。
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 5d9384f57765126709f6bfcc005334ba4120595a
+source-git-commit: 9d3b6409013edc38ef41dd2a184ccbdcf7ab9edd
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1891'
 ht-degree: 4%
 
 ---
@@ -211,15 +211,13 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
    ![可用数据集导航选项在激活数据列中突出显示。](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-1. 此 **[!UICONTROL 激活数据]** 此时将显示目标页。 选择要删除的数据集，然后选择 **[!UICONTROL 移除数据集]** 在右边栏中触发“数据集移除确认”对话框。
+1. [!BADGE 测试版] 此 **[!UICONTROL 激活数据]** 此时将显示目标页。 使用数据集列表左侧的复选框选择要删除的数据集，然后选择 **[!UICONTROL 删除数据集]** 在右边栏中触发“删除数据集”确认对话框。
 
-   ![在右边栏中显示删除数据集控件的删除数据集对话框。](../assets/ui/export-datasets/remove-dataset-control.png)
+   >[!NOTE]
+   >
+此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
-<!-- USE THIS FOR BULK REMOVE RELEASE
-
-1. The **[!UICONTROL Activation data]** page for the destination appears. Use the checkboxes on the left side of the dataset list to select the datasets which you want to remove, then select **[!UICONTROL Remove datasets]** in the right rail to trigger the remove dataset confirmation dialog. 
-
-    ![Remove dataset dialog showing the Remove dataset control in the right rail.](../assets/ui/export-datasets/bulk-remove-datasets.png) -->
+   ![在右边栏中显示删除数据集控件的删除数据集对话框。](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
 1. 在确认对话框中，选择 **[!UICONTROL 移除]** 以立即从到目标的导出中删除数据集。
 
