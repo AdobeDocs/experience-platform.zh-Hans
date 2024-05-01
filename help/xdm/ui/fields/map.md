@@ -2,9 +2,9 @@
 title: 在UI中定义映射字段
 description: 了解如何在Experience Platform用户界面中定义映射字段。
 exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
-source-git-commit: 57a0381401c6084513ce7413b66dec56044b4492
+source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform允许您完全自定义自定义Experience Data Model (XDM)类、架构字段组和数据类型的结构。
 
-您还可以在架构编辑器中定义映射字段，以建模灵活的动态数据结构或存储键值对的集合。 地图数据结构允许高效而快速地查找、插入和删除基于唯一标识符组织和访问信息的位置。
+您还可以在架构编辑器中定义映射字段，以建模灵活的动态数据结构或存储键值对的集合。
 
 在Platform用户界面(UI)中定义新字段时，使用 **[!UICONTROL 类型]** 下拉并选择&quot;**[!UICONTROL 地图]**”从列表中删除。
 
@@ -34,6 +34,8 @@ XDM对此数据类型的使用施加以下限制：
 * 映射类型必须属于类型 `object`.
 * 映射类型不能定义属性（换句话说，它们定义“空”对象）。
 * 映射类型必须包括 `additionalProperties.type` 描述可以放置在映射中的值的字段，也可 `string` 或 `integer`.
+* 多实体分段只能基于映射键而不是值定义。
+* 帐户受众不支持映射。
 
 确保仅在绝对必要时使用映射类型字段，因为它们存在以下性能缺陷：
 
