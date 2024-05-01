@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2024 年 4 月）
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 4ec4335d19695e8d6e26390358356dedd048594e
+source-git-commit: fea62a2aa3c7d175afbfa808f392c3a93a0d31a0
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1843'
 ht-degree: 17%
 
 ---
@@ -51,7 +51,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 | 类型 | 功能 | 描述 |
 | --- | --- | --- |
-| 见解 | [!DNL Acxiom] 匿名访客分析 | 了解您的网站访客来自何处 [!DNL Acxiom's] 访客分析。 通过利用地域IP查找技术，我们可查明匿名浏览器的位置。 标识后，在我们组织的数据库中快速搜索即可产生其他见解，并将其发送回浏览器。 对于内容创建者而言，这意味着这是一个绝佳的机会，可以定制其内容以匹配这些数据点，为访客提供更加个性化和引人入胜的体验，即使他们一开始是陌生人。 |
+| 扩展 | [!DNL Acxiom Anonymous Visitor Insights] 标记扩展 | 了解您的网站访客来自何处 [!DNL Acxiom's Visitor Insights]. 通过利用地域IP查找技术， Acxiom可以查明匿名浏览器的位置。 识别之后，在他们的组织数据库中进行搜索会生成其他洞察，并会发送回浏览器。 内容创建者因此可以定制其内容以匹配这些数据点，为访客提供更加个性化和引人入胜的体验，即使他们一开始是陌生人。 |
 | 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 源自非人类实体（如自动化程序、网页抓取程序、蜘蛛程序、脚本扫描程序）的流量，可能使识别来自人类访客的事件变得更加困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。 <br>机器人检测允许您识别由生成的事件 [Web SDK](../../web-sdk/home.md)， [移动SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Server API]](../../server-api/overview.md) 由已知的蜘蛛和机器人生成。 通过为数据流配置机器人检测，您可以识别要分类为机器人事件的特定IP地址、IP范围和请求标头。 <br> 识别机器人流量可以为您提供对网站或移动应用程序上的用户活动的更准确测量。 |
 | Mobile SDK | 主要版本发布 | Mobile SDK的新主要版本已针对以下平台发布： iOS Mobile Core 5.x和兼容的iOS扩展、Android Mobile Core 3.x和兼容的Android扩展、React Native Core 6.x和兼容的React本机扩展、Flutter Core 4.x和兼容的Flutter扩展。 这些版本提供了多项新增功能和增强功能，包括支持适用于Jetpack撰写的Android SDK、支持基于Adobe Journey Optimizer代码的体验，以及正式提供了适用于Flutter的Adobe Journey Optimizer消息传送扩展。 有关更详细的发行说明，请参阅 [Mobile SDK发行说明](https://developer.adobe.com/client-sdks/home/release-notes/). |
 | Mobile SDK | 隐私 | 由于Apple的策略更新，从2024年5月1日开始，开发人员必须实施新的隐私功能才能提交到App Store。 所有使用Mobile SDK的Adobe客户，如果他们希望在5月1日后获得App Store批准，则需要升级到SDK版本5.x。 |
