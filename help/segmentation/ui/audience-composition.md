@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 10079216cbfa5ace68127d1529d47e83f4448049
+source-git-commit: d22f8b4a39cb76dab4c976d8ea883d5170ee34e4
 workflow-type: tm+mt
-source-wordcount: '1844'
+source-wordcount: '1889'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >请注意 **仅限** 将显示使用默认合并策略定义的受众。
+>
+>此外，仅 **已发布** 可以使用使用区段生成器创建的受众。 使用受众组合创建的受众和外部生成的受众包括 **非** 可用。
 
 此时将显示受众列表。 选择要包含的受众，然后 **[!UICONTROL 添加]** 以将其附加到受众块。
 
@@ -101,6 +103,10 @@ ht-degree: 0%
 如果按受众排除，则可以通过选择选择要排除的受众 **[!UICONTROL 添加受众]**.
 
 ![此 [!UICONTROL 添加受众] 按钮中选择，以选择要排除的受众。](../images/ui/audience-composition/add-excluded-audience.png)
+
+>[!IMPORTANT]
+>
+>仅 **已发布** 可以使用使用区段生成器创建的受众。 使用受众组合创建的受众和外部生成的受众包括 **非** 可用。
 
 此时将显示受众列表。 选择 **[!UICONTROL 添加]** 以将要排除的受众添加到排除块。
 
