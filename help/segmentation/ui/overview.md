@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c1a2d55cb99a1f66698289751a967f8c5f80a7bf
+source-git-commit: 795b76465c59fc375542b92cdd3deefce8c000ca
 workflow-type: tm+mt
-source-wordcount: '4105'
+source-wordcount: '4274'
 ht-degree: 3%
 
 ---
@@ -82,12 +82,8 @@ ht-degree: 3%
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Publish] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
 | [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
-| [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 |
+| [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 在下游目标中使用或属于其他受众依赖对象的受众 **无法** 将被删除。 有关删除受众的更多信息，请阅读 [分段常见问题解答](../faq.md#lifecycle-states). |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
-
->[!NOTE]
->
-> 您会 **非** 能够删除在目标激活中使用的受众。
 
 页面顶部提供了以下选项：将所有受众添加到计划、导入受众、创建新受众以及查看更新频率的细分。
 
@@ -356,6 +352,15 @@ ht-degree: 3%
 
 ![此 [!UICONTROL 受众详细信息] 页面。](../images/ui/overview/import-audience-audience-details.png)
 
+您还可以选择向外部生成的受众添加一些其他详细信息，包括为其提供ID、定义其合并策略或编辑其列数据类型。
+
+>[!NOTE]
+>
+>如果您使用自定义外部受众ID，则必须遵守以下准则：
+>
+> - It **必须** 以字母（a-z或A-Z）、下划线(_)或美元符号($)开头。
+> - 所有后续字符都可以是字母数字(a-z、A-Z、0-9)、下划线(_)或美元符号($)。
+
 填写受众详细信息后，选择 **[!UICONTROL 下一个]**.
 
 ![此 [!UICONTROL 下一个] 按钮会高亮显示 [!UICONTROL 受众详细信息] 页面。](../images/ui/overview/import-audience-filled-details.png)
@@ -397,6 +402,14 @@ ht-degree: 3%
 ![在受众构成中为您的组织创建的受众列表。](../images/ui/overview/compositions.png)
 
 默认情况下，此视图会列出有关受众的信息，包括名称、状态、创建日期、创建者、上次更新日期和上次更新者。
+
+每个受众旁边都有一个省略号图标。 选择此选项将显示受众可用的快速操作列表。
+
+| 操作 | 描述 |
+| ------ | ----------- |
+| 复制 | 复制所选受众。 |
+| 管理访问权限 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
+| Delete | 删除所选受众。 在下游目标中使用或属于其他受众依赖对象的受众 **无法** 将被删除。 有关删除受众的更多信息，请阅读 [分段常见问题解答](../faq.md#lifecycle-states). |
 
 您可以选择 ![自定义表](../images/ui/overview/customize-table.png) 图标以更改显示的字段。
 

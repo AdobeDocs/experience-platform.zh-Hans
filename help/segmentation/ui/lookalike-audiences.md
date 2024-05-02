@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: fe2bb709a7ee56323492fed381c447e6a79fd5f8
+source-git-commit: 36fffcddb09444dd6e010a4b5afeec6bf0b5c3bf
 workflow-type: tm+mt
-source-wordcount: '2212'
+source-wordcount: '2193'
 ht-degree: 9%
 
 ---
@@ -197,7 +197,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 标准“C9”标签可用于标记不应用于数据科学的数据，并且可以通过启用标准“限制数据科学”策略来强制实施这些数据。 您还可以创建其他策略来限制使用其他标签的数据，包括敏感标签，以阻止用于数据科学。 有关管理数据使用策略的更多信息，请参阅 [数据使用策略UI指南](../../data-governance/policies/user-guide.md). 有关管理数据使用标签的更多信息，请阅读 [数据使用标签UI指南](../../data-governance/labels/user-guide.md).
 
-默认情况下，相似受众的建模过程将排除 **任意** 字段、数据集或受众，它们基于贵组织启用的隐私政策。 如果基本受众没有合同标签，则建模过程将排除 **任意** 字段、数据集或受众，它们基于贵组织启用的隐私政策。
+默认情况下，如果基本受众没有合同标签，则将排除相似受众的建模过程 **任意** 字段、数据集或受众，它们基于贵组织启用的隐私政策。
 
 ## 后续步骤
 
