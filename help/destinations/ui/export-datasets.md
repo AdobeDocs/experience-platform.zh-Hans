@@ -215,7 +215,7 @@ Experience Platform会在您指定的存储位置创建一个文件夹结构，�
 
    >[!NOTE]
    >
-此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
+   >此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
    ![在右边栏中显示删除数据集控件的删除数据集对话框。](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
