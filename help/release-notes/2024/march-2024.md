@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: d698bf0b8b0dbdb85909008bb3b60efb0575accc
+source-git-commit: 708bb791ad85b6ee8f3671ffc574e4f27fdddd0a
 workflow-type: tm+mt
 source-wordcount: '1191'
 ht-degree: 33%
@@ -39,20 +39,6 @@ ht-degree: 33%
 
 有关目录服务的详细信息，请参阅[目录服务概述](../../catalog/home.md)。
 
-## 数据收集 {#data-collection}
-
-Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
-
-**新增功能**
-
-| 类型 | 功能 | 描述 |
-| --- | --- | --- |
-| 扩展 | [!DNL Merkury] 标记扩展 | 此 [[!DNL Merkury] 标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag) 为匿名网站访客提供行业领先的匹配率， [!DNL Merkury] 标识。 品牌可以利用 [!DNL Merkury] 标记和Adobe，以提供实时的个性化网站体验。 此外， [!DNL Merkury] tag支持第一方数字数据以及连接的在线和离线客户档案的增长。 |
-
-{style="table-layout:auto"}
-
-要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
-
 ## 数据准备 {#data-prep}
 
 通过数据准备，数据工程师可从 Experience Data Model (XDM) 映射数据并将数据映射到它、转换和验证数据。
@@ -66,6 +52,20 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 {style="table-layout:auto"}
 
 有关数据准备的详细信息，请阅读 [数据准备概述](../../data-prep/home.md).
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+
+**新增功能**
+
+| 类型 | 功能 | 描述 |
+| --- | --- | --- |
+| 扩展 | [!DNL Merkury] 标记扩展 | 此 [[!DNL Merkury] 标记扩展](https://exchange.adobe.com/apps/ec/600027/merkury-tag) 为匿名网站访客提供行业领先的匹配率， [!DNL Merkury] 标识。 品牌可以利用 [!DNL Merkury] 标记和Adobe，以提供实时的个性化网站体验。 此外， [!DNL Merkury] tag支持第一方数字数据以及连接的在线和离线客户档案的增长。 |
+
+{style="table-layout:auto"}
+
+要了解有关数据收集的更多信息，请阅读 [数据收集概述](../../tags/home.md).
 
 ## 目标 {#destinations}
 
