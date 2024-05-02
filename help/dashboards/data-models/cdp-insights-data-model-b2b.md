@@ -3,9 +3,10 @@ title: Real-time Customer Data Platform Insights数据模型B2B版本
 description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型（B2B版本）结合使用，以自定义您自己的营销和KPI用例的Real-Time CDP报表。
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: 52f67037756af97bac97908d4736a3cbafce6844
+exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '475'
 ht-degree: 0%
 
 ---
@@ -49,15 +50,15 @@ Real-Time CDP B2B报表为您的帐户配置文件数据以及帐户与机会之
 
 ![帐户配置文件模型的实体关系图。](../images/data-models/account-profile-model.png)
 
-#### 按行业划分的帐户用例 {#accounts-by-industry}
+#### 按行业用例划分的新客户 {#accounts-by-industry}
 
-用于的逻辑 [!UICONTROL 按行业列出的帐户] insight会根据帐户用户档案的数量以及彼此的相对大小返回排名前五的行业。 请参阅 [[!UICONTROL 按行业列出的帐户] 构件文档](../guides/account-profiles.md#accounts-by-industry) 以了解更多信息。
+用于的逻辑 [!UICONTROL 按行业划分的新客户] insight会根据帐户用户档案的数量以及彼此的相对大小返回排名前五的行业。 请参阅 [[!UICONTROL 按行业列出的帐户] 构件文档](../guides/account-profiles.md#accounts-by-industry) 以了解更多信息。
 
 >[!TIP]
 >
 >您可以自定义此SQL查询，以返回比前五个行业多或少的数据。
 
-生成 [!UICONTROL 按行业列出的帐户] 可在下方的可折叠部分中看到洞察。
+生成 [!UICONTROL 按行业划分的新客户] 可在下方的可折叠部分中看到洞察。
 
 +++SQL查询
 
@@ -94,11 +95,11 @@ LIMIT 5000;
 
 +++
 
-#### 按类型划分的帐户用例 {#accounts-by-type}
+#### 新帐户（按类型）用例 {#accounts-by-type}
 
-用于的逻辑 [!UICONTROL 按类型列出的帐户] insight会返回按帐户类型划分的数值细目。 此洞察力有助于指导业务策略和运营，包括资源分配或营销策略。 请参阅 [[!UICONTROL 按类型列出的帐户] 构件文档](../guides/account-profiles.md#accounts-by-type) 以了解更多信息。
+用于的逻辑 [!UICONTROL 按类型的新帐户] insight会返回按帐户类型划分的数值细目。 此洞察力有助于指导业务策略和运营，包括资源分配或营销策略。 请参阅 [[!UICONTROL 按类型的新帐户] 构件文档](../guides/account-profiles.md#accounts-by-type) 以了解更多信息。
 
-生成 [!UICONTROL 按类型列出的帐户] 可在下方的可折叠部分中看到洞察。
+生成 [!UICONTROL 按类型的新帐户] 可在下方的可折叠部分中看到洞察。
 
 +++SQL查询
 

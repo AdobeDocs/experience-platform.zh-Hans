@@ -2,9 +2,9 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: b7875128592b17044b068d8064de082bf00a8309
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '1715'
+source-wordcount: '1800'
 ht-degree: 0%
 
 ---
@@ -67,16 +67,20 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各种指标。
 
+>[!IMPORTANT]
+>
+>如果不提供日期过滤器，则分析的默认行为是分析从去年到今天添加的数据。
+
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
 * [已添加帐户配置文件](#account-profiles-added)
-* [按行业划分的客户](#accounts-by-industry)
-* [按类型列出的帐户](#accounts-by-type)
+* [按行业划分的新客户](#accounts-by-industry)
+* [按类型的新帐户](#accounts-by-type)
 * [已添加机会](#opportunities-added)
-* [按人员角色列出的机会](#opportunities-by-person-role)
-* [按收入列出的机会](#opportunities-by-revenue)
-* [按状态和阶段列出的机会](#opportunities-by-status-&-stage)
-* [赢得的机会](#opportunities-won)
+* [按人员角色显示的新机会](#opportunities-by-person-role)
+* [按收入显示的新机会](#opportunities-by-revenue)
+* [按状态和阶段显示的新机会](#opportunities-by-status-&-stage)
+* [赢得新机会](#opportunities-won)
 * [预测评分分布](#predictive-scoring-distribution)
 * [预测得分主要影响因素](#predictive-scoring-top-influential-factors)
 * [按行业划分的总账户数](#total-accounts-by-industry)
@@ -87,17 +91,17 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ![帐户配置文件已添加构件。](../images/account-profiles/account-profiles-added.png)
 
-### 按行业划分的客户 {#accounts-by-industry}
+### 按行业划分的新客户 {#accounts-by-industry}
 
-此 [!UICONTROL 按行业划分的客户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成这一总额的不同行业的相对构成。 颜色编码的密钥提供所有包含行业的细目。 当光标悬停在圆环图的相应部分上时，会在对话框中显示每个行业的各个计数。
+此 [!UICONTROL 按行业划分的新客户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成这一总额的不同行业的相对构成。 颜色编码的密钥提供所有包含行业的细目。 当光标悬停在圆环图的相应部分上时，会在对话框中显示每个行业的各个计数。
 
-![按行业划分的帐户小组件。](../images/account-profiles/accounts-by-industry.png)
+![按行业划分的新帐户。](../images/account-profiles/new-accounts-by-industry.png)
 
-### 按类型列出的帐户 {#accounts-by-type}
+### 按类型的新帐户 {#accounts-by-type}
 
-此 [!UICONTROL 按类型列出的帐户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成此总额的不同帐户类型的相对构成。 颜色编码的密钥提供所有包含的帐户类型的细分。 当光标悬停在圆环图的相应部分上时，每种类型的帐户分别显示在一个对话框中。
+此 [!UICONTROL 按类型的新帐户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成此总额的不同帐户类型的相对构成。 颜色编码的密钥提供所有包含的帐户类型的细分。 当光标悬停在圆环图的相应部分上时，每种类型的帐户分别显示在一个对话框中。
 
-![按类型划分的帐户小组件。](../images/account-profiles/accounts-by-type.png)
+![按类型划分的新帐户。](../images/account-profiles/new-accounts-by-type.png)
 
 ### 已添加机会 {#opportunities-added}
 
@@ -107,35 +111,35 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ![机会添加了构件。](../images/account-profiles/opportunities-added.png)
 
-### 按人员角色列出的机会 {#opportunities-by-person-role}
+### 按人员角色显示的新机会 {#opportunities-by-person-role}
 
-此 [!UICONTROL 按人员角色列出的机会] 小组件在圆环图中显示在单个量度中的机会总数。 圆环图说明了构成此机会总数的角色的相对构成。 颜色编码的密钥提供包含的所有角色的细分。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
+此 [!UICONTROL 按人员角色显示的新机会] 小组件在圆环图中显示在单个量度中的机会总数。 圆环图说明了构成此机会总数的角色的相对构成。 颜色编码的密钥提供包含的所有角色的细分。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
 
 >[!NOTE]
 >
 >此 [!UICONTROL 未找到数据] 或 [!UICONTROL 无法加载] 当您的架构中未使用“Opportunity-Person”桥表时，会导致错误。 如果您的分析显示其中一个错误，请检查您的合并架构并确保“Opportunity-Person”字段组正在摄取数据。
 
-![按人员列出的机会角色小组件。](../images/account-profiles/opportunities-by-person-role.png)
+![按人员列出的新机会角色小组件。](../images/account-profiles/new-opportunities-by-person-role.png)
 
-### 按收入列出的机会 {#opportunities-by-revenue}
+### 按收入显示的新机会 {#opportunities-by-revenue}
 
-此 [!UICONTROL 按收入列出的机会] 构件使用条形图来说明您的机会所产生的总预计收入额。 该构件最多支持六个机会。
+此 [!UICONTROL 按收入显示的新机会] 构件使用条形图来说明您的机会所产生的总预计收入额。 该构件最多支持六个机会。
 
 要查看包含opportunity的特定收入总计的对话框，请使用光标悬停在各个栏上。
 
-![按收入列出的机会构件。](../images/account-profiles/opportunities-by-revenue.png)
+![按收入显示的新机会widget.](../images/account-profiles/new-opportunities-by-revenue.png)
 
-### 按状态和阶段列出的机会 {#opportunities-by-status-&-stage}
+### 按状态和阶段显示的新机会 {#opportunities-by-status-&-stage}
 
 此构件使用条形图来说明在营销/销售漏斗的所有阶段打开或关闭的机会数量。 构件使用颜色来区分机会的阶段。 颜色编码的键表示机会的可用阶段。
 
-![按状态和阶段划分的机会构件。](../images/account-profiles/opportunities-by-status-&-stage.png)
+![按状态和暂存构件显示的新机会。](../images/account-profiles/new-opportunities-by-status-&-stage.png)
 
-### 赢得的机会 {#opportunities-won}
+### 赢得新机会 {#opportunities-won}
 
-此 [!UICONTROL 赢得的机会] 小组件在圆环图中显示已在单个指标中成功完成的机会总数。 圆环图说明了获胜或未获胜机会的相对构成。 颜色编码密钥用于区分成功和未成功的机会。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
+此 [!UICONTROL 赢得新机会] 小组件在圆环图中显示已在单个指标中成功完成的机会总数。 圆环图说明了获胜或未获胜机会的相对构成。 颜色编码密钥用于区分成功和未成功的机会。 当光标悬停在圆环图的相应部分上时，将在对话框中显示每个角色的单个计数。
 
-![机会赢得了widget。](../images/account-profiles/opportunities-won.png)
+![“新机遇”赢得了Widget。](../images/account-profiles/new-opportunities-won.png)
 
 ### 预测评分分布 {#predictive-scoring-distribution}
 
@@ -170,6 +174,10 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 ### 按行业划分的总账户数 {#total-accounts-by-industry}
 
 此构件显示单个指标中的帐户总数，并使用圆环图说明构成总数的行业中计数的比例大小。 键值为构成圆环图的不同行业提供颜色编码信息。
+
+>[!NOTE]
+>
+>此分析显示的信息取决于您指定的日期范围。 如果不提供日期过滤器，则洞察的默认行为会分析从前一年到今天添加的数据。
 
 当光标悬停在圆环图的相应部分上时，会在对话框中显示不同行业的各个计数。
 

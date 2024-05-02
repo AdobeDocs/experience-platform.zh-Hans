@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 常见问题
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括：导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 006b693c71cd45408bccb7c051f367f140260370
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '4450'
-ht-degree: 1%
+source-wordcount: '4425'
+ht-degree: 0%
 
 ---
 
@@ -125,7 +125,7 @@ SELECT * FROM customers LIMIT 0;
 +++回答
 [Adobe客户支持电话号码的完整列表](https://helpx.adobe.com/ca/contact/phone.html) 可在Adobe帮助页面上找到。 或者，可通过完成以下步骤在线查找帮助：
 
-- 导航到 [https://www.adobe.com/](https://www.adobe.com/cn/) 在您的Web浏览器中。
+- 导航到 [https://www.adobe.com/](https://www.adobe.com/cn) 在您的Web浏览器中。
 - 在顶部导航栏的右侧，选择 **[!UICONTROL 登录]**.
 
 ![突出显示登录的Adobe网站。](./images/troubleshooting/adobe-sign-in.png)
@@ -277,7 +277,7 @@ SELECT count(1) FROM myTableName
 
 您还应该查看文档以获得有关如何执行的指导 [UI中的计划查询](./ui/user-guide.md#scheduled-queries) 和至 [API](./api/scheduled-queries.md).
 
-请注意，在使用时 [!DNL Query Editor] 您只能向已创建、保存和运行的查询添加计划。 这不适用于 [!DNL Query Service] API。
+请注意，在使用时 [!DNL Query Editor] 您只能将计划添加到已创建和保存的查询中。 这不适用于 [!DNL Query Service] API。
 +++
 
 ### “已达到会话限制”错误是什么意思？

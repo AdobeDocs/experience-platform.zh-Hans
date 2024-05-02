@@ -4,14 +4,18 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 02ecc6bd2ff85d2d837ffe25b090fd65043779a9
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '2794'
+source-wordcount: '2825'
 ht-degree: 2%
 
 ---
 
 # [!DNL Query Editor] UI指南
+
+>[!NOTE]
+>
+>截至2024年4月30日 [增强的查询编辑器](#enhanced-editor-toggle) 已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。
 
 [!DNL Query Editor] 是Adobe Experience Platform提供的交互式工具 [!DNL Query Service]，允许您在中编写、验证和运行客户体验数据查询 [!DNL Experience Platform] 用户界面。 [!DNL Query Editor] 支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充以下位置的数据集： [!DNL Experience Platform].
 
@@ -229,7 +233,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 可以从“查询编辑器”安排已另存为模板的查询。 计划查询允许您以自定义节奏自动运行查询。 您可以根据频率、日期和时间安排查询，还可以在必要时为结果选择输出数据集。 也可以通过UI禁用或删除查询计划。
 
-在查询编辑器中设置计划。 使用查询编辑器时，您只能向已创建、保存和运行的查询添加计划。 同样的限制不适用于 [!DNL Query Service] API。
+在查询编辑器中设置计划。 使用查询编辑器时，您只能将计划添加到已创建和保存的查询中。 同样的限制不适用于 [!DNL Query Service] API。
 
 >[!NOTE]
 >

@@ -3,9 +3,10 @@ title: 帐户配置文件分析
 description: 发现支持您的帐户配置文件分析的SQL，并使用这些查询生成自定义分析，从而进一步探索您的客户及其消费者体验。
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: b7875128592b17044b068d8064de082bf00a8309
+exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '549'
 ht-degree: 0%
 
 ---
@@ -46,7 +47,7 @@ ORDER BY date_key limit 5000;
 
 +++
 
-## 按行业划分的客户 {#accounts-by-industry}
+## 按行业划分的新客户 {#accounts-by-industry}
 
 通过此洞察回答的问题：
 
@@ -82,7 +83,7 @@ ORDER BY total_accounts DESC limit 5000;
 
 +++
 
-## 按类型列出的帐户 {#accounts-by-type}
+## 按类型的新帐户 {#accounts-by-type}
 
 通过此洞察回答的问题：
 
@@ -128,7 +129,7 @@ LIMIT  5000;
 
 +++
 
-## 按人员角色列出的机会 {#opportunities-by-person-role}
+## 按人员角色显示的新机会 {#opportunities-by-person-role}
 
 通过此洞察回答的问题：
 
@@ -150,7 +151,7 @@ LIMIT  5000;
 
 +++
 
-## 按收入列出的机会 {#opportunities-by-revenue}
+## 按收入显示的新机会 {#opportunities-by-revenue}
 
 通过此洞察回答的问题：
 
@@ -190,7 +191,7 @@ ORDER BY total_expected_revenue DESC limit 5000;
 
 +++
 
-## 按状态和阶段列出的机会 {#opportunities-by-status-and-stage}
+## 按状态和阶段显示的新机会 {#opportunities-by-status-and-stage}
 
 通过此洞察回答的问题：
 
@@ -223,7 +224,7 @@ FROM   opportunities_by_isclosed limit 5000;
 
 +++
 
-## 赢得的机会 {#opportunities-won}
+## 赢得新机会 {#opportunities-won}
 
 通过此洞察回答的问题：
 
