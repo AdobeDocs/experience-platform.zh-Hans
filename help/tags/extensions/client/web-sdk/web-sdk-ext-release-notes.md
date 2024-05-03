@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: ea3df4f05850547c75358fb15bf7a1e6a1d19dbf
 workflow-type: tm+mt
-source-wordcount: '1983'
+source-wordcount: '2024'
 ht-degree: 32%
 
 ---
@@ -13,6 +13,15 @@ ht-degree: 32%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](/help/web-sdk/release-notes.md).
+
+## 版本2.22.0 - 2024年5月3日
+
+**新增功能**
+
+* 扩展变量数据元素以支持数据对象。
+* 更新变量操作现在支持修改传递的Adobe Analytics、Adobe Audience Manager和Adobe Target数据。
+
+包含Adobe Experience Platform Web SDK的版本2.19.2。
 
 ## 版本2.21.4 - 2024年1月10日
 
@@ -176,7 +185,7 @@ ht-degree: 32%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.7.0。
 
-* Send Event Complete事件中提供了来自Edge Network的其他信息，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
+* “发送事件完成”事件中提供了来自Edge Network的其他信息，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
 
 ## 版本2.7.3 - 2021年9月7日
 
