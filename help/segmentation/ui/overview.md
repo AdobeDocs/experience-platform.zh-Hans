@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 795b76465c59fc375542b92cdd3deefce8c000ca
+source-git-commit: bc501b96a9ec6b723f4598d048b399fef82d54b2
 workflow-type: tm+mt
 source-wordcount: '4274'
 ht-degree: 3%
@@ -23,7 +23,7 @@ ht-degree: 3%
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md)：通过桥接被摄取到的不同数据源中的身份来创建客户用户档案 [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)：用于实现此目标的标准化框架 [!DNL Platform] 组织客户体验数据。 为了更好地利用分段，请确保您的数据被作为配置文件和事件摄取，并根据 [数据建模的最佳实践](../../xdm/schema/best-practices.md).
 
-您还应该了解本文档中使用的两个关键术语并了解它们之间的差异：
+您还应该了解本文档中使用的三个关键术语并了解它们之间的差异：
 
 - **受众**：一组具有相似行为和/或特征的人。 此人员集合可以由Adobe Experience Platform使用区段定义或受众合成（平台生成的受众）生成，也可以由外部源(例如自定义上传（外部生成的受众）)生成。
 - **区段定义**：Adobe Experience Platform用于描述目标受众关键特征或行为的规则。
