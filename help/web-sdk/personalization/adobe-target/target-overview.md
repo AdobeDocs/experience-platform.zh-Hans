@@ -2,10 +2,10 @@
 title: 将Adobe Target与Web SDK结合使用进行个性化
 description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 0b662b4c1801a6d6f6fc2c6ade92d259b821ab23
+source-git-commit: a34204eb58ed935831d26caf062ebb486039669f
 workflow-type: tm+mt
-source-wordcount: '1173'
-ht-degree: 5%
+source-wordcount: '1354'
+ht-degree: 4%
 
 ---
 
@@ -184,6 +184,58 @@ alloy("sendEvent",
 | `data` | 对象 | 发送到的任意键/值对 [!DNL Target] 目标类下的解决方案。 |
 
 典型 [!DNL Web SDK] 使用此命令的代码如下所示：
+
+**延迟保存配置文件或实体参数，直到内容显示给最终用户**
+
+要在显示内容之前延迟在配置文件中记录属性，请设置 `data.adobe.target._save=false` 在您的请求中。
+
+例如，您的网站包含三个决策范围，分别对应于网站上的三个类别链接（“男性”、“女性”和“儿童”），并且您希望跟踪用户最终访问的类别。 发送这些请求时使用 `__save` 标志设置为 `false` 以避免在请求内容时保留类别。 对内容进行可视化后，发送相应的有效负载(包括 `eventToken` 和 `stateToken`)，以记录对应的属性。
+
+<!--Save profile or entity attributes by default with:
+
+```js
+alloy ( "sendEvent" , {
+  renderDecisions : true,
+  data : {
+    __adobe : {
+      target : {
+        "__save" : true // Optional. __save=true is the default 
+        "profile.gender" : "female",
+        "profile.age" : 30,
+        "entity.name" : "T-shirt",
+        "entity.id" : "1234",
+      }
+    }
+  }
+} ) ; 
+```
+-->
+
+以下示例发送trackEvent样式消息，执行配置文件脚本，保存属性，并立即记录事件。
+
+```js
+alloy ( "sendEvent" , {
+  renderDecisions : true,
+  data : {
+    __adobe : {
+      target : {
+        "profile.gender" : "female",
+        "profile.age" : 30,
+        "entity.name" : "T-shirt" ,
+        "entity.id" : "1234" ,
+        "track": {
+          "scopes": [ "mbox1", "mbox2"],
+          "type": "display|click|..."
+        }
+      }
+    }
+  }
+} ) ;
+```
+
+>[!NOTE]
+>
+>如果 `__save` 省略了指令，保存配置文件和实体属性会立即执行，就像请求已执行一样，即使请求的其余部分是个性化的预获取。 此 `__save` 指令仅与配置文件和实体属性相关。 如果存在跟踪对象，则 `__save` 指令被忽略。 数据会立即保存并记录通知。
 
 **`sendEvent`包含配置文件数据**
 
