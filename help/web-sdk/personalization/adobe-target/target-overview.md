@@ -2,9 +2,9 @@
 title: 将Adobe Target与Web SDK结合使用进行个性化
 description: 了解如何使用Adobe Target通过Experience PlatformWeb SDK呈现个性化内容
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: a34204eb58ed935831d26caf062ebb486039669f
+source-git-commit: 69406293dce5fdfc832adff801f1991626dafae0
 workflow-type: tm+mt
-source-wordcount: '1354'
+source-wordcount: '1345'
 ht-degree: 4%
 
 ---
@@ -183,7 +183,7 @@ alloy("sendEvent",
 | `xdm` | 对象 | 在Web SDK中作为体验事件登陆的XDM格式的数据 |
 | `data` | 对象 | 发送到的任意键/值对 [!DNL Target] 目标类下的解决方案。 |
 
-典型 [!DNL Web SDK] 使用此命令的代码如下所示：
+<!--Typical [!DNL Web SDK] code using this command looks like the following:-->
 
 **延迟保存配置文件或实体参数，直到内容显示给最终用户**
 
