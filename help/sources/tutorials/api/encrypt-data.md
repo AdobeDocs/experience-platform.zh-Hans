@@ -2,16 +2,16 @@
 title: 加密的数据摄取
 description: 了解如何使用API通过云存储批处理源摄取加密文件。
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: a92a3d4ce16e50d9eec97448e677ca603931fa44
+source-git-commit: adb48b898c85561efb2d96b714ed98a0e3e4ea9b
 workflow-type: tm+mt
-source-wordcount: '1473'
+source-wordcount: '1736'
 ht-degree: 2%
 
 ---
 
 # 加密的数据摄取
 
-Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文件。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform中。 目前，支持的不对称加密机制有PGP和GPG。
+您可以使用云存储批处理源将加密的数据文件摄取到Adobe Experience Platform。 通过加密的数据摄取，您可以利用非对称加密机制将批量数据安全地传输到Experience Platform中。 目前，支持的不对称加密机制有PGP和GPG。
 
 加密数据摄取过程如下：
 
@@ -27,7 +27,7 @@ Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文
 
 本文档提供了有关如何生成加密密钥对以加密数据的步骤，以及如何使用云存储源将加密的数据摄取到Experience Platform的步骤。
 
-## 快速入门
+## 快速入门 {#get-started}
 
 本教程要求您实际了解Adobe Experience Platform的以下组件：
 
@@ -39,9 +39,9 @@ Adobe Experience Platform允许您通过cloud storage批处理源摄取加密文
 
 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-### 加密文件支持的文件扩展名
+### 加密文件支持的文件扩展名 {#supported-file-extensions-for-encrypted-files}
 
-加密文件支持的文件扩展名列表如下：
+加密文件支持的文件扩展名列表为：
 
 * .csv
 * .tsv
@@ -74,6 +74,8 @@ POST /data/foundation/connectors/encryption/keys
 
 **请求**
 
++++查看示例请求
+
 以下请求使用PGP加密算法生成加密密钥对。
 
 ```shell
@@ -97,7 +99,11 @@ curl -X POST \
 | `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型包括 `PGP` 和 `GPG`. |
 | `params.passPhrase` | 密码短语为加密密钥提供了额外的保护层。 创建后，Experience Platform将该密码短语存储在与公钥不同的安全电子仓库中。 您必须提供非空字符串作为密码短语。 |
 
++++
+
 **响应**
+
++++查看示例响应
 
 成功的响应将返回Base64编码的公共密钥、公共密钥ID以及密钥的过期时间。 到期时间自动设置为生成密钥日期后的180天。 到期时间当前不可配置。
 
@@ -115,9 +121,93 @@ curl -X POST \
 | `publicKeyId` | 公钥ID用于创建数据流并将加密的云存储数据摄取到Experience Platform。 |
 | `expiryTime` | 到期时间定义加密密钥对的到期日期。 此日期自动设置为密钥生成日期后的180天，并以unix时间戳格式显示。 |
 
-+++（可选）为签名数据创建签名验证密钥对
++++
 
-### 创建客户管理的密钥对
+### 检索加密密钥 {#retrieve-encryption-keys}
+
+GET要检索贵公司的所有加密密钥，请向 `/encryption/keys` endpoit=nt.
+
+**API格式**
+
+```http
+GET /data/foundation/connectors/encryption/keys
+```
+
+**请求**
+
++++查看示例请求
+
+以下请求将检索您组织中的所有加密密钥。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**响应**
+
++++查看示例响应
+
+成功的响应将返回您的加密算法、公共密钥、公共密钥ID以及相应的密钥到期时间。
+
+```json
+{
+    "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "publicKey": "{PUBLIC_KEY}",
+    "expiryTime": "{EXPIRY_TIME}"
+}
+```
+
++++
+
+### 按ID检索加密密钥 {#retrieve-encryption-keys-by-id}
+
+GET要检索一组特定的加密密钥，请向 `/encryption/keys` 端点，并提供您的公钥ID作为标头参数。
+
+**API格式**
+
+```http
+GET /data/foundation/connectors/encryption/keys/{PUBLIC_KEY_ID}
+```
+
+**请求**
+
++++查看示例请求
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**响应**
+
++++查看示例响应
+
+成功的响应将返回您的加密算法、公共密钥、公共密钥ID以及相应的密钥到期时间。
+
+```json
+{
+    "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "publicKey": "{PUBLIC_KEY}",
+    "expiryTime": "{EXPIRY_TIME}"
+}
+```
+
++++
+
+### 创建客户管理的密钥对 {#create-customer-managed-key-pair}
 
 您可以选择创建签名验证密钥对，以对您的加密数据进行签名和摄取。
 
@@ -134,6 +224,8 @@ POST /data/foundation/connectors/encryption/customer-keys
 ```
 
 **请求**
+
++++查看示例请求
 
 ```shell
 curl -X POST \
@@ -154,7 +246,11 @@ curl -X POST \
 | `encryptionAlgorithm` | 正在使用的加密算法类型。 支持的加密类型包括 `PGP` 和 `GPG`. |
 | `publicKey` | 对应于客户管理的用于签署您的加密密钥的公共密钥。 此密钥必须为Base64编码。 |
 
++++
+
 **响应**
+
++++查看示例响应
 
 ```json
 {    
@@ -196,7 +292,7 @@ curl -X POST \
 >* [公钥ID](#create-encryption-key-pair)
 >* [源连接ID](../api/collect/cloud-storage.md#source)
 >* [目标连接ID](../api/collect/cloud-storage.md#target)
->* [映射 ID](../api/collect/cloud-storage.md#mapping)
+>* [映射Id](../api/collect/cloud-storage.md#mapping)
 
 POST要创建数据流，请向 `/flows` 的端点 [!DNL Flow Service] API。 要摄取加密数据，您必须添加 `encryption` 部分至 `transformations` 属性并包括 `publicKeyId` 之前步骤中创建的标记。
 
@@ -206,11 +302,13 @@ POST要创建数据流，请向 `/flows` 的端点 [!DNL Flow Service] API。 �
 POST /flows
 ```
 
-**请求**
-
 >[!BEGINTABS]
 
 >[!TAB 为加密的数据引入创建数据流]
+
+**请求**
+
++++查看示例请求
 
 以下请求会创建数据流以摄取云存储源的加密数据。
 
@@ -268,8 +366,28 @@ curl -X POST \
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`， `minute`， `hour`， `day`，或 `week`. |
 | `scheduleParams.interval` | 间隔指定两次连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，不需要间隔 `once` 并且应大于或等于 `15` 其他频率值。 |
 
++++
+
+**响应**
+
++++查看示例响应
+
+成功的响应会返回ID (`id`)。
+
+```json
+{
+    "id": "dbc5c132-bc2a-4625-85c1-32bc2a262558",
+    "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
+}
+```
+
++++
 
 >[!TAB 创建数据流以摄取加密和签名数据]
+
+**请求**
+
++++查看示例请求
 
 ```shell
 curl -X POST \
@@ -318,9 +436,11 @@ curl -X POST \
 | --- | --- |
 | `params.signVerificationKeyId` | 签名验证密钥ID与与Experience Platform共享Base64编码公钥后检索到的公钥ID相同。 |
 
->[!ENDTABS]
++++
 
 **响应**
+
++++查看示例响应
 
 成功的响应会返回ID (`id`)。
 
@@ -331,10 +451,92 @@ curl -X POST \
 }
 ```
 
++++
 
->[!BEGINSHADEBOX]
+>[!ENDTABS]
 
-**定期摄取的限制**
+### 删除加密密钥 {#delete-encryption-keys}
+
+DELETE要删除您的加密密钥，请向 `/encryption/keys` 端点，并提供您的公钥ID作为标头参数。
+
+**API格式**
+
+```http
+DELETE /data/foundation/connectors/encryption/keys/{PUBLIC_KEY_ID}
+```
+
+**请求**
+
++++查看示例请求
+
+```shell
+curl -X DELETE \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**响应**
+
+成功的响应返回HTTP状态204（无内容）和一个空白正文。
+
+### 验证加密密钥 {#validate-encryption-keys}
+
+GET要验证您的加密密钥，请向 `/encryption/keys/validate/` 端点，并提供要验证为标头参数的公钥ID。
+
+```http
+GET /data/foundation/connectors/encryption/keys/validate/{PUBLIC_KEY_ID}
+```
+
+**请求**
+
++++查看示例请求
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/validate/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**响应**
+
+成功的响应会返回确认ID有效或无效的消息。
+
+>[!BEGINTABS]
+
+>[!TAB 有效]
+
+有效的公钥ID返回状态 `Active` 以及您的公钥ID。
+
+```json
+{
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "status": "Active"
+}
+```
+
+>[!TAB 无效]
+
+无效的公钥ID返回状态 `Expired` 以及您的公钥ID。
+
+```json
+{
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "status": "Expired"
+}
+```
+
+>[!ENDTABS]
+
+
+## 定期摄取的限制 {#restrictions-on-recurring-ingestion}
 
 加密的数据摄取不支持在源中摄取循环或多级别文件夹。 所有加密文件必须包含在单个文件夹中。 不支持在单个源路径中包含多个文件夹的通配符。
 
@@ -356,14 +558,13 @@ curl -X POST \
 * ACME客户
    * File1.csv.gpg
    * File2.json.gpg
-   * Subfolder1
+   * 子文件夹1
       * File3.csv.gpg
       * File4.json.gpg
       * File5.csv.gpg
 * ACME忠诚度
    * File6.csv.gpg
 
->[!ENDSHADEBOX]
 
 ## 后续步骤
 
