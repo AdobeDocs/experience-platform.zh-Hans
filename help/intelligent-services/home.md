@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 智能服务概述
 description: 智能服务可让营销分析师和从业人员在客户体验用例中利用人工智能和机器学习的功能。 借助此功能，营销分析人员可以使用业务级配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
-source-git-commit: edc812c2725f92d71af30a3107de067f85ca1235
+source-git-commit: d6a4b149b911cd6e7dbbd6c1289fce64be76b506
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 # 智能服务概述 {#intelligent-services-overview}
 
 >[!CONTEXTUALHELP]
->id="platform_intelligent-services_home"
+>id="platform_intelligentservices_home"
 >title="智能服务概述"
 >abstract=""
 

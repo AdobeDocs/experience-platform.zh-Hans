@@ -5,7 +5,7 @@ title: 在数据科学工作区UI中发布模型即服务
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace允许您发布经过培训和评估的模型即服务，从而使贵组织内的用户无需创建自己的模型即可对数据进行评分。
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
-source-git-commit: 74dd4cb786cb96c04d15005fe869ff861093edc3
+source-git-commit: d6a4b149b911cd6e7dbbd6c1289fce64be76b506
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 # 在数据科学工作区UI中发布模型作为服务 {#publish-a-model-as-a-service}
 
 >[!CONTEXTUALHELP]
->id="platform_intelligent-services_publishmodel"
+>id="platform_intelligentservices_publishmodel"
 >title="将模型发布为服务"
 >abstract=""
 
