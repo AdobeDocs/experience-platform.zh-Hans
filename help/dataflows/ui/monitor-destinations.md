@@ -7,7 +7,7 @@ exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
 source-git-commit: 93430a9ba5911bf8dc901ec3f82f06a6b25b8dc4
 workflow-type: tm+mt
 source-wordcount: '3337'
-ht-degree: 6%
+ht-degree: 10%
 
 ---
 
@@ -50,7 +50,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的用于生成唯一身份的量度。 若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
@@ -60,7 +60,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
 >title="已激活的标识"
->abstract="成功激活到所选目标的配置文件标识的计数。此量度包括从导出的受众中创建、更新和移除的身份。"
+>abstract="成功激活到所选目标的配置文件标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
@@ -78,7 +78,7 @@ ht-degree: 6%
 
 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括从导出的受众中创建、更新和移除的身份。
+- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
 - **[!UICONTROL 排除的身份]**：基于缺少属性和同意违规而跳过了激活的配置文件身份总数。
 - **[!UICONTROL 身份失败]**：由于错误未激活到目标的配置文件身份总数。
 
@@ -91,7 +91,7 @@ ht-degree: 6%
    - 对象 **[!UICONTROL 已完成]** 在运行时，处理时间量度始终显示一个小时。
    - 对于仍在以下状态的数据流运行： **[!UICONTROL 正在处理]** 状态，捕获所有量度的窗口将保持打开状态超过一小时，以便处理与数据流运行对应的所有量度。 例如，上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，在处理窗口关闭且数据流运行状态更新为 **已完成**，显示的处理时间将更改为1小时。
 - **[!UICONTROL 已接收配置文件]**：数据流中接收的配置文件总数。
-- **[!UICONTROL 已激活身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括从导出的受众中创建、更新和移除的身份。
+- **[!UICONTROL 已激活身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意违规从激活中排除的配置文件身份总数。
 - **[!UICONTROL 身份失败]** 由于错误而未激活到目标的配置文件身份总数。
 - **[!UICONTROL 激活率]**：已成功激活或跳过的接收标识的百分比。 以下公式演示如何计算此值：
@@ -113,7 +113,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的用于生成唯一身份的量度。 若要了解更多信息，请查看量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。若要了解更多信息，请查看量度定义指南。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
@@ -124,7 +124,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
 >title="已激活的标识"
->abstract="成功激活到所选目标的配置文件标识的计数。此量度包括从导出的受众中创建、更新和移除的身份。"
+>abstract="成功激活到所选目标的配置文件标识的计数。此量度包括创建、更新和从导出的受众中移除的标识。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_batch"
@@ -133,7 +133,7 @@ ht-degree: 6%
 
 对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 系统会显示各个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括从导出的受众中创建、更新和移除的身份。
+- **[!UICONTROL 已激活身份]**：已成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意冲突，从选定目标的激活中排除的个人配置文件身份计数。
 
 ![数据流针对批处理目标运行视图。](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
@@ -144,7 +144,7 @@ ht-degree: 6%
 - **[!UICONTROL 受众]**：与每个数据流运行关联的受众的名称。
 - **[!UICONTROL 处理时间]**：处理数据流运行所用的时间。
 - **[!UICONTROL 已接收配置文件]**：数据流中接收的配置文件总数。 该值每 60 分钟更新一次。
-- **[!UICONTROL 已激活身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括从导出的受众中创建、更新和移除的身份。
+- **[!UICONTROL 已激活身份]**：作为数据流运行的一部分成功激活到所选目标的配置文件身份总数。 此量度包括创建、更新和从导出的受众中移除的标识。
 - **[!UICONTROL 排除的身份]**：根据缺少属性和同意违规从激活中排除的配置文件身份总数。
 - **[!UICONTROL 状态]**：表示数据流所处的状态。 这可以是以下三种状态之一： [!UICONTROL 成功]， [!UICONTROL 失败]、和 [!UICONTROL 正在处理]. [!UICONTROL 成功] 表示数据流处于活动状态并根据其提供的计划导出数据。 [!UICONTROL 失败] 表示数据激活因错误而暂停。 [!UICONTROL 正在处理] 表示数据流尚未处于活动状态，通常会在创建新数据流时遇到。
 
@@ -176,7 +176,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="激活"
->abstract="目标激活视图包含有关受众激活状态的信息以及从实时客户配置文件中获取的用于生成唯一身份的量度。"
+>abstract="目标激活视图包含有关受众激活状态的信息，以及从实时客户配置文件中获取的量度，以生成唯一标识。"
 
 要访问 [!UICONTROL 监控] 仪表板，选择 **[!UICONTROL 监控]** (![监视图标](../assets/ui/monitor-destinations/monitoring-icon.png))图标。 一旦在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 目标]. 此 [!UICONTROL 监控] 仪表板包含有关目标运行作业的量度和信息。
 
