@@ -5,15 +5,15 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: 61b20f2a618ed4305351b2fe6ff771a45d759de1
+source-git-commit: bb95e0aa8ee92aee5a2f126d85e78308e652a061
 workflow-type: tm+mt
-source-wordcount: '318'
-ht-degree: 19%
+source-wordcount: '321'
+ht-degree: 21%
 
 ---
 
 
-# Adobe Experience Platform查询服务 {#query}
+# Adobe Experience Platform 查询服务 {#query}
 
 - [查询服务概述](home.md)
 - [查询服务打包](packaging.md)
@@ -29,6 +29,7 @@ ht-degree: 19%
       - [创建基于十分位数的派生数据集](data-distiller/derived-datasets/decile-based-derived-attributes.md)
    - 扩展应用程序报表的可自定义分析 {#customizable-insights}
       - [概述](data-distiller/customizable-insights/overview.md)
+      - [Query pro模式](data-distiller/customizable-insights/query-pro-mode.md)
       - [发送加速查询](data-distiller/customizable-insights/send-accelerated-queries.md)
       - [报表见解数据模型指南](data-distiller/customizable-insights/reporting-insights-data-model.md)
    - AI/ML功能管道 {#ml-feature-pipelines}

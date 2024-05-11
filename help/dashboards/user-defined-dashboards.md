@@ -1,17 +1,18 @@
 ---
-title: 用户定义的仪表板
+title: 自定义仪表板
 description: 了解如何构建和管理自定义仪表板，以便在其中创建、添加和编辑定制构件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
+source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
 workflow-type: tm+mt
-source-wordcount: '1608'
-ht-degree: 4%
+source-wordcount: '1624'
+ht-degree: 2%
 
 ---
 
-# 用户定义的仪表板
+# 自定义仪表板
 
-Adobe Experience Platform功能板可帮助您通过用户定义的功能来加速分析并自定义可视化图表。 通过此功能，您可以构建和管理自定义功能板，其中您可以创建、添加和编辑定制的小部件，以可视化与您的组织相关的关键量度。
+使用Adobe Experience Platform功能板，可通过功能板加速分析并自定义可视化图表。 使用此功能可构建和管理自定义仪表板，您可以在其中创建、添加和编辑定制构件，以可视化与您的组织相关的关键量度。
+
 
 <!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
@@ -25,15 +26,18 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 ![左侧导航中带有功能板的功能板清单和“创建功能板”突出显示。](./images/user-defined-dashboards/create-dashboard.png)
 
-在添加自定义功能板之前，功能板清单为空，并显示“未找到功能板”。 消息。 创建后，您的所有用户定义的功能板都会在功能板清单中列出。
+在添加自定义功能板之前，功能板清单为空，并显示“未找到功能板”。 消息。 创建后，您的所有功能板都会在功能板清单中列出。
 
->[!NOTE]
+<!-- >[!NOTE]
 >
->要编辑现有功能板，请从库存列表中选择功能板名称，后跟铅笔图标(![铅笔图标。](./images/user-defined-dashboards/edit-icon.png))
+>To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](./images/user-defined-dashboards/edit-icon.png))
+>![A custom inventory listed in the dashboard inventory.](./images/user-defined-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
 
 此 [!UICONTROL 创建功能板] 出现对话框。 为要创建的构件集合输入一个便于用户使用的描述性名称，然后选择 **[!UICONTROL 保存]**.
 
 ![创建功能板对话框。](./images/user-defined-dashboards/create-dashboard-dialog.png)
+
+购买了Data Distiller SKU的用户可以选择使用自定义SQL查询创建其见解。 请参阅 [可自定义的洞察创建指南](./data-distiller/customizable-insights/overview.md) 以获取有关此工作流的说明。
 
 新创建的空白仪表板会在视图的左上角显示您选择的名称。
 
@@ -42,13 +46,13 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
 >title="最大构件数"
->abstract="用户定义的仪表板支持最多 10 个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
+>abstract="功能板服务支持多达10个构件。 将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
 
 从新仪表板视图中，选择 **[!UICONTROL 添加新构件]** 以开始构件创建过程。
 
 >[!IMPORTANT]
 >
->用户定义的仪表板支持最多 10 个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。
+>每个仪表板最多支持10个小组件。 将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。
 
 ![突出显示带有添加新小部件的新空仪表板。](./images/user-defined-dashboards/add-new-widget.png)
 
@@ -150,21 +154,25 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 为了确保Adobe Real-time Customer Data Platform分析功能板的每个查询都有足够的资源来高效执行，API会通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理4个并发查询，因此可以在任意给定时间使用4个并发查询插槽。 查询基于并发插槽放入队列中，然后在队列中等待，直到有足够的并发插槽可用。
 
-### 复制构件
+### 编辑、复制或删除构件 {#duplicate}
 
-创建构件后，您可以复制整个构件并自定义其属性以创建唯一构件，而无需从头开始。 要复制构件，请首先导航到功能板清单。 然后，从清单列表中选择仪表板名称。 此时会显示您的自定义仪表板。
+创建构件后，您可以从自定义仪表板中编辑、复制或删除整个构件。
 
-![突出显示了包含功能板和自定义功能板名称的平台UI。](./images/user-defined-dashboards/dashbaord-inventory.png)
+>[!TIP]
+>
+>要在任何现有的自定义功能板之间切换，请在左侧导航栏中选择“功能板” ，然后从清单列表中选择该功能板名称。
 
 选择铅笔图标(![铅笔图标。](./images/user-defined-dashboards/edit-icon.png))，以进入编辑模式。
 
 ![突出显示铅笔图标的自定义仪表板。](./images/user-defined-dashboards/edit-mode.png)
 
-接下来，选择要复制的构件右上角的省略号，然后选择 **[!UICONTROL 复制]** 从可用选项列表中。
+接下来，选择要编辑、复制或删除的构件右上角的省略号。 从下拉菜单中选择相应的操作。
 
-![用户定义的仪表板中的构件，其中突出显示了椭圆形和重复构件。](./images/user-defined-dashboards/duplicate.png)
+![自定义仪表板中的一个构件，其中突出显示了省略号和重复构件。](./images/user-defined-dashboards/duplicate.png)
 
-用户定义的功能板中会显示一个重复的小部件。 选择新构件的省略号，然后 **[!UICONTROL 编辑]**，以自定义您的新构件。
+>[!NOTE]
+>
+>利用复制功能，您可以自定义洞察的属性以创建唯一的构件，而无需从头开始。 如果复制构件，该构件会显示在您的自定义仪表板中。 然后，可选择新构件的省略号，然后 **[!UICONTROL 编辑]**，以自定义您的洞察。
 
 ## 后续步骤和其他资源
 
@@ -172,6 +180,6 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 发现预配置的可用量度和可视化图表 [用户档案](./guides/profiles.md#standard-widgets)， [区段](./guides/audiences.md#standard-widgets)、和 [目标](./guides/destinations.md#standard-widgets) 仪表板，请参阅其各自文档中的标准构件列表。
 
-要加深您对Experience Platform中用户定义的功能板的了解，请观看以下视频：
+要加深您对Experience Platform中功能板的了解，请观看以下视频：
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

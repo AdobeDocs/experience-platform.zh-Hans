@@ -5,10 +5,10 @@ breadcrumb-title: 仪表板指南
 user-guide-description: 了解如何在 Experience Platform 中通过可自定义的仪表板将数据可视化。
 feature: Dashboards
 role: Developer,User
-source-git-commit: 8daa1c190f4c868fc12a46c66f6970704c8de8fa
+source-git-commit: 3ebd17eced73424135fc93a90f05d758912eb7d0
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 29%
+source-wordcount: '132'
+ht-degree: 28%
 
 ---
 
@@ -18,8 +18,19 @@ ht-degree: 29%
 * [功能板概述](home.md)
 * [仪表板访问权限](permissions.md)
 * [功能板库存](inventory.md)
-* [用户定义的仪表板](user-defined-dashboards.md)
+* [仪表板](user-defined-dashboards.md)
 * [下载功能板以PDF](download.md)
+* 数据Distiller {#data-distiller}
+   * [概述](data-distiller/overview.md)
+   * 扩展应用程序报表的可自定义分析 {#customizable-insights}
+      * [概述](data-distiller/customizable-insights/overview.md)
+      * [查询专业模式（SQL图表创建）](data-distiller/customizable-insights/query-pro-mode.md)
+      * 过滤器 {#filters}
+         * [日期过滤器](data-distiller/customizable-insights/filters/date-filter.md)
+         * [全局筛选器](data-distiller/customizable-insights/filters/global-filter.md)
+      * [查看更多](data-distiller/customizable-insights/view-more.md)
+      * [查看SQL](data-distiller/customizable-insights/view-sql.md)
+      * [下载为 CSV 格式](data-distiller/customizable-insights/download-csv.md)
 * 可用仪表板 {#guides}
    * [配置文件](guides/profiles.md)
    * [帐户配置文件](guides/account-profiles.md)

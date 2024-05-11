@@ -1,9 +1,10 @@
 ---
 title: 可自定义的分析
 description: 了解用例、基本功能和使用Data Distiller开发可自定义的分析功能板的所需步骤。 了解Data Distiller中的可自定义分析功能如何增强透明度并获得不同维度（如用户档案、受众、营销活动、历程、权利和同意）的操作分析。
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
+source-git-commit: bb95e0aa8ee92aee5a2f126d85e78308e652a061
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -11,6 +12,8 @@ ht-degree: 0%
 # 可自定义的分析
 
 利用Data Distiller的可自定义见解，创建定制的报表数据模型以提取更深入的见解、优化策略并调整分析以满足特定业务需求。 使用可自定义的分析功能可跨维度（例如，用户档案、受众、营销活动、历程、权利和同意）增强透明度并从Adobe Experience Platform数据获得运营分析。 此功能提供了多功能、自适应解决方案，可定制贵组织的报表数据模型以符合您的特定业务需求。
+
+至 [可视化您的可自定义见解](../../../dashboards/data-distiller/overview.md) 您可以使用 [查询专业模式](../../../dashboards/data-distiller/customizable-insights/query-pro-mode.md) 使用自定义SQL查询执行复杂的分析，并将您的数据转换为易于解释的图表。 使用Query Pro模式在功能板上创建定制的分析见解和可视化图表，并将您的分析下载为CSV文件以满足技术和非技术受众的需求。
 
 本文档介绍了使用数据Distiller开发可自定义的分析功能板的用例、基本功能和所需步骤。
 
