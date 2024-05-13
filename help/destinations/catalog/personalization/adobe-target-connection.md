@@ -3,10 +3,10 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: c113d9615a276af67714f38b8325e69737b23964
+source-git-commit: e9777960f347e32ff6288227ef95cec9cc4c55e7
 workflow-type: tm+mt
-source-wordcount: '1303'
-ht-degree: 13%
+source-wordcount: '1459'
+ht-degree: 11%
 
 ---
 
@@ -139,6 +139,16 @@ Adobe Experience Platform会自动连接到贵公司的Adobe Target实例。 无
 >要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
 
 读取 [激活受众以边缘个性化目标](../../ui/activate-edge-personalization-destinations.md) 有关将受众激活到此目标的说明。
+
+## 从Target目标删除受众 {#remove}
+
+如果某个受众已在Adobe Target中使用，则需要执行一些额外的步骤，才能将其从现有Adobe Target连接中删除 [活动](https://experienceleague.adobe.com/en/docs/target/using/activities/activities). 尝试从Adobe Target连接中删除受众时，如果Adobe Target活动使用受众，则会导致错误。
+
+![Platform UI图像显示，由于尝试删除Target活动使用的受众而导致错误。](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
+
+要在活动中使用该受众时从Target目标中删除受众，您必须首先从使用该受众的Target活动中删除该受众，或完全删除该活动。 然后，您可以从Target连接中删除受众。
+
+如果活动中未使用受众，请转到 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** > **[!UICONTROL 选择目标数据流]** > **[!UICONTROL 激活数据]**，选择要删除的受众，然后选择 **[!UICONTROL 删除受众]**.
 
 ## 导出的数据 {#exported-data}
 
