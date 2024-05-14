@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 44fac57a30295b476910c0b37314eaebba175157
+source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '599'
 ht-degree: 5%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 5%
 
 ## XDM对象 {#xdm-object}
 
-使用XDM对象数据元素可更轻松地将数据格式化为XDM。 首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。选择架构后，您会看到架构的结构，可以轻松地在其中填写。
+使用XDM对象数据元素可更轻松地将数据格式化为XDM。 首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙盒和架构。选择架构后，您会看到架构的结构，可以轻松地在其中填写。
 
 ![显示XDM对象结构的UI图像。](assets/XDM-object.png)
 
@@ -52,11 +52,14 @@ ht-degree: 5%
 
 ## Variable {#variable}
 
-创建XDM对象的另一种方法是使用 **[!UICONTROL 变量]** 数据元素。 而XDM对象数据元素是在被引用时创建的，例如 `sendEvent` 命令， **[!UICONTROL 变量]** 数据元素可通过以下方式更新： [!UICONTROL 更新变量] 操作。 要使用数据元素，请选择正确的Adobe Experience Platform沙盒和架构。
+您可以使用创建有效负荷对象 **[!UICONTROL 变量]** 数据元素。 两者 [!UICONTROL XDM] 和 [!UICONTROL 数据] 对象受支持。
 
-![显示“创建数据元素”屏幕的UI图像。](assets/variable-data-element.png)
+* 当您选择时 [!UICONTROL XDM]，选择所需的 [!UICONTROL 沙盒] 和 [!UICONTROL 架构].
+* 当您选择时 [!UICONTROL 数据]中，选择所需的解决方案。 可用的解决方案包括 [!UICONTROL Adobe Analytics] 和 [!UICONTROL Adobe Target].
 
-创建此数据元素后，您可以使用 [更新变量](./action-types.md#update-variable) 操作以修改数据元素。 然后，在发送事件操作中，将变量数据元素用于XDM选项。
+![显示数据元素选项的标记UI的图像。](assets/variable-data-element.png)
+
+创建此数据元素后，您可以使用 [更新变量](./action-types.md#update-variable) 操作来修改它。 准备就绪后，您可以将此数据元素包含在 [发送事件](./action-types.md#send-event) 将数据发送到数据流的操作。
 
 ## 后续步骤 {#next-steps}
 

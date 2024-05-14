@@ -1,9 +1,10 @@
 ---
 title: xdm
-description: 发送到Adobe的架构对齐对象。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+description: 了解如何通过XDM模式对齐对象向Adobe发送数据。
+exl-id: 1d8ef191-aed6-4c8b-a1fd-614bd8ed73da
+source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '248'
 ht-degree: 0%
 
 ---
@@ -14,11 +15,11 @@ ht-degree: 0%
 
 Adobe Experience Platform使用架构，以一致且可重用的方式描述数据结构。 通过在各个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
-此字段的最大限制为32 KB。
+此对象的最大限制为32 KB。
 
 ## 使用Web SDK扩展配置XDM对象
 
-设置 **[!UICONTROL XDM]** 标记规则操作中的字段。 此 [XDM对象](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) 提供了一个直观的界面以将其他数据元素映射到它们各自的XDM字段。
+设置 **[!UICONTROL XDM]** 标记规则操作中的对象。 此 [XDM对象](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) 提供了一个直观的界面以将其他数据元素映射到它们各自的XDM字段。
 
 1. 登录 [experience.adobe.com](https://experience.adobe.com) 使用您的Adobe ID凭据。
 1. 导航到 **[!UICONTROL 数据收集]** > **[!UICONTROL 标记]**.
@@ -39,7 +40,7 @@ alloy("sendEvent", {
 });
 ```
 
-以下示例使用 [商务详细信息架构字段组](/help/xdm/field-groups/event/commerce-details.md)：
+以下示例使用 [Commerce详细信息架构字段组](/help/xdm/field-groups/event/commerce-details.md)：
 
 ```javascript
 alloy("sendEvent",{
