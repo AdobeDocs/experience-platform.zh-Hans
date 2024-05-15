@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将客户端连接到查询服务
 description: 本文档介绍如何从各种桌面客户端应用程序连接到查询服务，以及如何验证这些连接。
 exl-id: 2ba20179-5adb-4259-a120-231a40e78054
-source-git-commit: 778c65c6310ed4a627be0fd3ae076784cfc8495b
+source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '269'
 ht-degree: 0%
 
 ---
@@ -29,3 +29,7 @@ ht-degree: 0%
 - [[!DNL PSQL]](./psql.md)
 - [[!DNL RStudio]](./rstudio.md)
 - [[!DNL Tableau]](./tableau.md)
+
+>[!IMPORTANT]
+>
+>作为Power BI和Tableau用户，您可以从“查询服务凭据”选项卡将Customer Journey Analytics连接到BI工具。 有关如何执行操作的说明，请参阅凭据文档 [将您的BI工具连接到Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).

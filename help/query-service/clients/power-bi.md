@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 将Power BI连接到查询服务
 description: 本文档介绍了将Power BI连接到Adobe Experience Platform查询服务的步骤。
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
 workflow-type: tm+mt
-source-wordcount: '1067'
-ht-degree: 1%
+source-wordcount: '1073'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南要求您已经有权访问 [!DNL Power BI] 并熟悉如何导航其界面。 下载 [!DNL Power BI] 桌面版或有关详细信息，请参见 [官方 [!DNL Power BI] 文档](https://docs.microsoft.com/zh-cn/power-bi/).
+本指南要求您已经有权访问 [!DNL Power BI] 并熟悉如何导航其界面。 下载 [!DNL Power BI] 桌面版或有关详细信息，请参见 [官方 [!DNL Power BI] 文档](https://docs.microsoft.com/en-us/power-bi/).
 
 >[!IMPORTANT]
 >
@@ -42,6 +42,10 @@ ht-degree: 1%
 此 [!DNL PostgreSQL] 此时将显示“数据库”对话框，请求服务器和数据库的值。 有关如何执行操作的附加说明 [从Power Query桌面连接到PostgreSQL数据库](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop) 详情请见官方网站 [!DNL PowerBI] 文档。
 
 这些必需的值获取自您的Adobe Experience Platform凭据。 要查找凭据，请登录Platform UI并选择 **[!UICONTROL 查询]** 从左侧导航中，后面是 **[!UICONTROL 凭据]**. 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md).
+
+>[!IMPORTANT]
+>
+>作为Power BI或Tableau用户，您可以从“查询服务凭据”选项卡将Customer Journey Analytics连接到BI工具。 有关如何执行操作的说明，请参阅凭据文档 [将您的BI工具连接到Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).
 
 ![突出显示了“凭据”选项卡和“过期凭据”的“Experience Platform查询”工作区。](../images/clients/power-bi/query-service-credentials-page.png)
 

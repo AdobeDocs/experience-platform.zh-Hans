@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 查询服务凭据指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
+source-git-commit: ba4ff2715d4e3eb71377542ab2361b967cd3ac11
 workflow-type: tm+mt
-source-wordcount: '1504'
-ht-degree: 2%
+source-wordcount: '1807'
+ht-degree: 1%
 
 ---
 
@@ -47,6 +47,28 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >![“Admin Console设置”选项卡，其中突出显示“隐私和安全性”、“身份验证设置”和“最长会话寿命”。](../images/ui/credentials/max-session-life.png)
 >
 >有关以下内容的更多信息，请参阅Adobe帮助 [高级设置](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) 管理控制台提供的。
+
+### 连接到查询会话中的Customer Journey Analytics数据 {#connect-to-customer-journey-analytics}
+
+使用带有Power BI或Tableau的Customer Journey AnalyticsBI扩展来访问您的Customer Journey Analytics [数据视图](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) 使用SQL。 通过将查询服务与BI扩展集成，您可以直接在查询服务会话中访问数据视图。 此集成简化了使用查询服务作为其PostgreSQL接口的BI工具的功能。 此功能消除了BI工具中重复数据视图的需要，确保跨平台的一致报告，并简化了Customer Journey Analytics数据与BI平台中其他源的集成。
+
+请参阅文档以了解如何 [将查询服务连接到各种桌面客户端应用程序](../clients/overview.md) 例如 [Power BI](../clients/power-bi.md) 或 [表格](../clients/tableau.md)
+
+>[!IMPORTANT]
+>
+>需要Customer Journey Analytics工作区项目和数据视图才能使用此功能。
+
+要在Power BI或Tableau中访问Customer Journey Analytics数据，请选择 [!UICONTROL 数据库] 下拉菜单，然后选择 `prod:cja` 从可用选项删除。 接下来，复制您的 [!DNL Postgres] 在Power BI或Tableau配置中使用的身份证明参数（主机、端口、数据库、用户名等）。
+
+![突出显示数据库下拉列表的“查询服务凭据”选项卡。](../images/ui/credentials/database-dropdown.png)
+
+>[!NOTE]
+>
+>当您连接Power BI或Tableau以Customer Journey Analytics时，会使用查询服务“并发会话”权利。 如果需要其他会话和查询，可以购买额外的临时查询用户包附加组件以获取五个额外的并发会话和一个额外的并发查询。
+
+您还可以直接从Query Editor或Postgres CLI访问Customer Journey Analytics数据。 为此，请参考 `cja` 数据库。 请参阅查询编辑器 [查询创作指南](./user-guide.md#query-authoring) 有关如何写入、执行和保存查询的详细信息。
+
+请参阅 [BI扩展指南](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) 有关使用SQL访问Customer Journey Analytics数据视图的完整说明。
 
 ## 未过期的凭据 {#non-expiring-credentials}
 
