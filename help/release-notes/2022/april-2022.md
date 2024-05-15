@@ -2,16 +2,16 @@
 title: Adobe Experience Platform 发行说明（2022 年 4 月）
 description: Adobe Experience Platform 的 2022 年 4 月发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
+source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
 workflow-type: tm+mt
-source-wordcount: '2904'
-ht-degree: 18%
+source-wordcount: '2670'
+ht-degree: 19%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 4 月 27 日**
+**发行日期： 2022年4月27日**
 
 Adobe Experience Platform 中现有功能的更新：
 
@@ -69,7 +69,7 @@ Platform提供了多个功能板，您可以通过该功能板查看有关贵组
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 区段仪表板 | 您现在可以使用监控仪表板监控区段的数据流。 要了解更多信息，请阅读指南，网址为 [在UI中监控区段](../../dataflows/ui/monitor-segments.md) |
+| 区段仪表板 | 您现在可以使用监控仪表板监控区段的数据流。 要了解更多信息，请阅读指南，网址为 [在UI中监控区段](../../dataflows/ui/monitor-audiences.md) |
 
 有关数据流的更多常规信息，请参阅 [数据流概述](../../dataflows/home.md). 要了解有关区段的更多信息，请参阅 [分段概述](../../segmentation/home.md).
 
@@ -138,7 +138,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 字段组 | [[!UICONTROL 同意政策评估结果映射]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResults.schema.json) | 捕获个人的同意策略评估结果。 |
 | 字段组 | [[!UICONTROL 站点搜索]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | 捕获与网站搜索相关的信息，如搜索查询、筛选和排序。 |
 | 字段组 | [[!UICONTROL 合并潜在客户]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/merge-leads.schema.json) | 捕获合并两个或多个潜在客户的事件的详细信息。 |
-| 字段组 | [[!UICONTROL 已发送电子邮件]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | 捕获向收件人发送电子邮件的事件的详细信息。 |
+| 字段组 | [[!UICONTROL 电子邮件已发送]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | 捕获向收件人发送电子邮件的事件的详细信息。 |
 | 字段组 | [[!UICONTROL 拼接字段]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-stitching.schema.json) | 捕获通过事件的身份拼接过程计算的值。 |
 | 字段组 | [[!UICONTROL 审核的辅助收件人详细信息]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/secondary-recipient-detail.schema.json) | 为审核捕获辅助收件人详细信息的Adobe Journey Optimizer字段组。 |
 | 字段组 | [[!UICONTROL XDM业务帐户人员关系详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户 — 人员关系相关的详细信息。 |
@@ -163,7 +163,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | 数据类型 | [[!UICONTROL Commerce]](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json) | 已添加多个与购物车相关的字段。 |
 | 数据类型 | [[!UICONTROL 产品列表项目]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | 为所选选项和折扣金额添加了新字段。 |
 | 扩展（智能服务） | [[!UICONTROL 智能服务JourneyAI发送时间优化]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/intelligentServices/profile-journeyai-sendtimeoptimization.schema.json) | 针对发送时间分数优化存储格式。 |
-| 扩展(Workfront) | [[!UICONTROL Workfront 变更事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 多个字段已替换为 `workfront:customData` 用于自定义表单字段的字段。 |
+| 扩展(Workfront) | [[!UICONTROL Workfront更改事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 多个字段已替换为 `workfront:customData` 用于自定义表单字段的字段。 |
 | 扩展(Workfront) | [[!UICONTROL 工作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/task.schema.json) | 添加了一些字段。 |
 | 扩展(Workfront) | [[!UICONTROL 工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobject.schema.json) | 父对象类型和自定义表单字段的新字段。 |
 

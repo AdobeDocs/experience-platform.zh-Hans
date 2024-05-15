@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: bc501b96a9ec6b723f4598d048b399fef82d54b2
+source-git-commit: 5182ee22ae7952f74c29969c0d484397a2850a4c
 workflow-type: tm+mt
 source-wordcount: '4274'
 ht-degree: 3%
@@ -112,7 +112,7 @@ ht-degree: 3%
 | [!UICONTROL 名称] | 受众的名称。 |
 | [!UICONTROL 配置文件计数] | 符合受众条件的配置文件总数。 |
 | [!UICONTROL Origin] | 受众的来源。 它指明了受众的来源。 可能的值包括分段服务、自定义上传、受众组合和Audience Manager。 |
-| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`， `Published`、和 `Archived`. 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同的生命周期状态，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-status). |
+| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`、和 `Published`. 有关生命周期状态的更多信息，包括不同状态的含义以及如何将受众移动到不同的生命周期状态，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-status). |
 | [!UICONTROL 更新频率] | 一个值，表示受众数据的更新频率。 此字段的可能值包括 [!UICONTROL 批次]， [!UICONTROL 流]， [!UICONTROL Edge]、和 [!UICONTROL 未计划]. |
 | [!UICONTROL 上次更新者] | 上次更新受众的人员姓名。 |
 | [!UICONTROL 已创建] | 创建受众的日期和时间（UTC时区）。 |
@@ -422,7 +422,7 @@ ht-degree: 3%
 | 字段 | 描述 |
 | ----- | ----------- | 
 | [!UICONTROL 名称] | 受众的名称。 |
-| [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`， `Published`、和 `Archived`. |
+| [!UICONTROL 状态] | 受众的状态。 此字段的可能值包括 `Draft`， `Inactive`、和 `Published`. |
 | [!UICONTROL 已创建] | 创建受众的时间和日期。 |
 | [!UICONTROL 创建者] | 创建受众的人员姓名。 |
 | [!UICONTROL 已更新] | 上次更新受众的时间和日期。 |

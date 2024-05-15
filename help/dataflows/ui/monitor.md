@@ -1,7 +1,8 @@
 ---
 title: 监视功能板概述
 description: 了解如何使用Adobe Experience Platform UI中的监视仪表板
-source-git-commit: 21c69ff834dbd0e32831c5c9071e4255fd8258e1
+exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
+source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 1%
@@ -100,7 +101,7 @@ ht-degree: 1%
 
 >[!TAB 受众]
 
-选择 **[!UICONTROL 受众]** 要查看受众和分段作业的量度，请执行以下操作： 阅读指南： [监控受众数据](monitor-segments.md) 以了解更多信息。
+选择 **[!UICONTROL 受众]** 要查看受众和分段作业的量度，请执行以下操作： 阅读指南： [监控受众数据](monitor-audiences.md) 以了解更多信息。
 
 ![Ui中的监视仪表板，已选择受众信息卡。](../assets/ui/monitor-overview/audiences.png)
 
@@ -135,5 +136,5 @@ ht-degree: 1%
 * [监控源数据](monitor-sources.md).
 * [监视身份数据](monitor-identities.md).
 * [监测配置文件数据](monitor-profiles.md).
-* [监测受众数据](monitor-segments.md).
+* [监测受众数据](monitor-audiences.md).
 * [监视目标数据](monitor-destinations.md).

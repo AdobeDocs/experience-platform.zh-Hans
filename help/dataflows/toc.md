@@ -4,7 +4,7 @@ user-guide-title: 数据流指南
 user-guide-description: 了解数据流以及如何在不同服务间配置它们。
 feature: Dataflows
 role: Developer
-source-git-commit: 21c69ff834dbd0e32831c5c9071e4255fd8258e1
+source-git-commit: 8d7bb7058df67526710936e330c69e524d18b709
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 23%
@@ -23,7 +23,7 @@ ht-degree: 23%
    - [监测源中的数据流](./ui/monitor-sources.md)
    - [监视身份中的数据流](./ui/monitor-identities.md)
    - [监测配置文件中的数据流](./ui/monitor-profiles.md)
-   - [监测区段中的数据流](./ui/monitor-segments.md)
+   - [监测受众中的数据流](./ui/monitor-audiences.md)
    - [监测目标中的数据流](./ui/monitor-destinations.md)
    - B2B监控 {#b2b}
       - [监控配置文件扩充作业](./ui/b2b/monitor-profile-enrichment.md)
