@@ -5,9 +5,9 @@ description: 通过使用帐户配置文件，Adobe Real-time Customer Data Plat
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: bbcc056e416e2c1a8b6fd1a411c0fba4c0ff8dbb
 workflow-type: tm+mt
-source-wordcount: '1636'
+source-wordcount: '1664'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ![显示小组件的“概述”选项卡](images/b2b-account-profile-overview.png)
 
-请参阅有关以下内容的文档 [[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md) 仪表板以了解详情。
+请参阅有关以下内容的文档 [[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md) 仪表板以了解详情。 请参阅相关文档 [Real-time Customer Data Platform Insights数据模型B2B版本](../../dashboards/data-models/cdp-insights-data-model-b2b.md) 有关如何使用您的分析数据模型为仪表板创建自定义图表的更多信息。
 
 ## 配置潜在客户与帐户匹配 {#configure-lead-to-account-matching}
 
