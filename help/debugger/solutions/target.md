@@ -2,10 +2,10 @@
 title: 使用Adobe Experience Platform Debugger测试Adobe Target实施
 description: 了解如何使用Adobe Experience Platform Debugger测试和调试通过Adobe Target启用的网站。
 exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: bc6069f2cfa4459860fe98588b293ffeed7fb1f1
 workflow-type: tm+mt
-source-wordcount: '1209'
-ht-degree: 5%
+source-wordcount: '1035'
+ht-degree: 2%
 
 ---
 
@@ -69,7 +69,7 @@ Adobe Experience Platform Debugger提供了一套有用的工具，可用于测�
 | [!DNL clientCode] | 贵组织帐户的标识符，由Target识别。 |
 | [!DNL requestType] | 用于请求的API。 如果使用at.js 1.x，则值为 `/json`. 如果使用at.js 2.x，则值为 `delivery`. |
 | [!DNL Audience Manager Blob] | 提供有关称为“blob”的加密Audience Manager元数据的信息。 |
-| [!DNL Audience Location Hint] | 数据收集区域 ID。这是用于标识特定 ID 服务数据中心的地理位置的数字标识符。有关详细信息，请参阅有关的Audience Manager文档 [DCS区域ID、位置和主机名](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html?lang=zh-Hans) 以及上的Experience CloudIdentity Service指南 [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html#reference-a761030ff06c4439946bb56febf42d4c). |
+| [!DNL Audience Location Hint] | 数据收集区域 ID。这是用于标识特定ID服务数据中心的地理位置的数字标识符。 有关详细信息，请参阅有关的Audience Manager文档 [DCS区域ID、位置和主机名](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html?lang=zh-Hans) 以及上的Experience CloudIdentity Service指南 [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html#reference-a761030ff06c4439946bb56febf42d4c). |
 | [!DNL Browser Height] | 浏览器高度（像素）。 |
 | [!DNL Browser Time Offset] | 浏览器与其时区关联的时间偏移。 |
 | [!DNL Browser Width] | 浏览器宽度（像素）。 |
@@ -109,7 +109,7 @@ Adobe Experience Platform Debugger提供了一套有用的工具，可用于测�
 | 调试工具 | 描述 |
 | --- | --- |
 | [!DNL Target Console Logging] | 启用后，允许您在浏览器的控制台选项卡中访问at.js日志。 此功能也可以通过添加 `mboxDebug` 查询参数（具有任何值）。 |
-| [!DNL Target Diable] | 启用后，页面上的所有Target功能都将禁用。 这可用于确定特定于Target的选件是否是导致页面上出现问题的原因。 |
+| [!DNL Target Disable] | 启用后，页面上的所有Target功能都将禁用。 这可用于确定特定于Target的选件是否是导致页面上出现问题的原因。 |
 | [!DNL Target Trace] | **注意**：您必须登录才能启用此功能。<br><br>启用后，跟踪令牌将随每次请求一起发送，并在每次响应中返回跟踪对象。 `at.js` 解析响应 `window.__targetTraces`. 每个跟踪对象包含的信息与[[!DNL Network Requests] tab]中选定的路径，添加了以下内容：<ul><li>配置文件快照，允许您查看请求之前和请求之后的属性。</li><li>匹配项和不匹配项 [活动](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html)，显示当前配置文件符合或不符合特定活动资格的原因。<ul><li>这有助于确定在给定时间配置文件符合哪些受众资格及其原因。</li><li>Target文档包含有关不同活动类型的更多信息</li></ul></li></ul> |
 
 {style="table-layout:auto"}
