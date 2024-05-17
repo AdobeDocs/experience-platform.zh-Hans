@@ -3,9 +3,9 @@ title: 将at.js与Experience PlatformWeb SDK进行比较
 description: 了解at.js功能与Experience PlatformWeb SDK的比较
 keywords: target；adobe target；activity.id；experience.id；renderDecisions；decisionScopes；预隐藏代码片段；vec；基于表单的体验编辑器；xdm；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+source-git-commit: ca1574f3f95840fce246fb4ed8845583fa0ff093
 workflow-type: tm+mt
-source-wordcount: '2136'
+source-wordcount: '2175'
 ht-degree: 5%
 
 ---
@@ -608,6 +608,27 @@ alloy("sendEvent", {
 
 [了解详情](../rendering-personalization-content.md#manually-rendering-content)
 
+**示例3 — 跟踪执行操作后触发的事件**
+
+此示例跟踪在执行特定操作（如单击按钮）后触发的事件。
+您可以通过 `__adobe.target` 数据对象。
+
+```js
+//replicates an at.js trackEvent call
+alloy("sendEvent", {
+    "type": "decisioning.propositionDisplay",
+    "xdm": {
+        "_experience": {
+            "decisioning": {
+                "propositions": [{
+                    "scope": "sumbitButtonClick" // Or any mbox/location name you want to use in Adobe Target
+                }]
+            }
+        }
+    }
+});
+```
+
 ## 如何在单页应用程序中触发视图更改
 
 ### 使用at.js
@@ -893,7 +914,7 @@ alloy("sendEvent", {
 
 ![显示Analytics设置的数据流UI。](assets/analytics-enabled-datastream-config.png)
 
-启用服务器端Analytics日志记录后，需要与Analytics共享A4T有效负载，以便Analytics报表显示正确的展示次数并在边缘网络级别共享转化，这样客户就无需执行任何附加处理。
+启用服务器端Analytics日志记录后，A4T有效负载需要与Analytics共享，以便Analytics报表显示正确的展示次数并在Edge Network级别共享转化，这样客户就无需执行任何附加处理。
 
 下面是启用服务器端Analytics日志记录时数据如何流入我们的系统：
 
