@@ -5,9 +5,9 @@ title: 使用流服务API创建Salesforce Service云源连接
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Salesforce Service Cloud。
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: 5d28db34edd377269e8710b1741098a08616ae5f
+source-git-commit: 1f13b5fcad683b4c0ede96654e35d6f0c64d9eb7
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '498'
 ht-degree: 4%
 
 ---
@@ -32,12 +32,13 @@ ht-degree: 4%
 为了 [!DNL Flow Service] 以连接 [!DNL Salesforce Service Cloud]中，您必须提供以下连接属性的值：
 
 | 凭据 | 描述 |
-| ---------- | ----------- |
+| --- | ---|
+| `environmentUrl` | 的URL [!DNL Salesforce] 源实例。 |
 | `username` | 您的用户名 [!DNL Salesforce Service Cloud] 用户帐户。 |
 | `password` | 您的密码 [!DNL Salesforce Service Cloud] 帐户。 |
 | `securityToken` | 您的安全令牌 [!DNL Salesforce Service Cloud] 帐户。 |
 | `apiVersion` | （可选） REST API版本的 [!DNL Salesforce Service Cloud] 您正在使用的实例。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Service Cloud] 为： `b66ab34-8619-49cb-96d1-39b37ede86ea`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Service Cloud] 为： `cb66ab34-8619-49cb-96d1-39b37ede86ea`. |
 
 有关入门的更多信息，请参阅 [此Salesforce Service Cloud文档](https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm).
 
@@ -75,24 +76,26 @@ curl -X POST \
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "username": "{USERNAME}",
+              "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+              "username": "acme-salesforce-service-cloud",
               "password": "{PASSWORD}",
               "securityToken": "{SECURITY_TOKEN}"
           }
       },
       "connectionSpec": {
-          "id": "b66ab34-8619-49cb-96d1-39b37ede86ea",
+          "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
           "version": "1.0"
       }
   }'
 ```
 
 | 参数 | 描述 |
-| --------- | ----------- |
+| ---| --- |
+| `auth.params.environmentUrl` | 的URL [!DNL Salesforce Service Cloud] 实例。 |
 | `auth.params.username` | 与您的关联的用户名 [!DNL Salesforce Service Cloud] 帐户。 |
 | `auth.params.password` | 与您的关联的密码 [!DNL Salesforce Service Cloud] 帐户。 |
 | `auth.params.securityToken` | 与您的关联的安全令牌 [!DNL Salesforce Service Cloud] 帐户。 |
-| `connectionSpec.id` | 此 [!DNL Salesforce Service Cloud] 连接规范ID： `b66ab34-8619-49cb-96d1-39b37ede86ea` |
+| `connectionSpec.id` | 此 [!DNL Salesforce Service Cloud] 连接规范ID： `cb66ab34-8619-49cb-96d1-39b37ede86ea` |
 
 **响应**
 

@@ -1,14 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；Salesforce；Salesforce
-solution: Experience Platform
 title: 使用流服务API创建Salesforce基本连接
-type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce帐户。
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 27ad8812137502d0a636345852f0cae5d01c7b23
+source-git-commit: 8d62cf4ca0071e84baa9399e0a25f7ebfb096c1a
 workflow-type: tm+mt
-source-wordcount: '511'
-ht-degree: 4%
+source-wordcount: '785'
+ht-degree: 3%
 
 ---
 
@@ -29,18 +26,40 @@ ht-degree: 4%
 
 ### 收集所需的凭据
 
-为了 [!DNL Flow Service] 以连接到 [!DNL Salesforce]中，您必须提供以下连接属性的值：
+此 [!DNL Salesforce] 源支持基本身份验证和OAuth2客户端凭据。
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+连接您的 [!DNL Salesforce] 帐户至 [!DNL Flow Service] 使用基本身份验证，提供以下凭据的值：
 
 | 凭据 | 描述 |
-| ---------- | ----------- |
+| --- | --- |
 | `environmentUrl` | 的URL [!DNL Salesforce] 源实例。 |
 | `username` | 的用户名 [!DNL Salesforce] 用户帐户。 |
 | `password` | 的密码 [!DNL Salesforce] 用户帐户。 |
 | `securityToken` | 的安全令牌 [!DNL Salesforce] 用户帐户。 |
-| `apiVersion` | 可选) REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0` 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+| `apiVersion` | 可选) REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0`. 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce] 为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 有关入门的更多信息，请访问 [此Salesforce文档](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
+
+>[!TAB OAuth 2客户端凭据]
+
+连接您的 [!DNL Salesforce] 帐户至 [!DNL Flow Service] 使用OAuth 2客户端凭据，提供以下凭据的值：
+
+| 凭据 | 描述 |
+| --- | --- |
+| `environmentUrl` | 的URL [!DNL Salesforce] 源实例。 |
+| `clientId` | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
+| `clientSecret` | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
+| `apiVersion` | 的REST API版本 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0`. 如果此字段留空，则Experience Platform将自动使用最新可用版本。 此值对于OAuth2客户端凭据身份验证是必需的。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce] 为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+有关将OAuth用于 [!DNL Salesforce]，阅读 [[!DNL Salesforce] OAuth授权流指南](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+
+>[!ENDTABS]
 
 ### 使用平台API
 
@@ -60,7 +79,11 @@ POST /connections
 
 **请求**
 
-以下请求为创建基本连接 [!DNL Salesforce]：
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+以下请求为创建基本连接 [!DNL Salesforce] 使用基本身份验证：
 
 ```shell
 curl -X POST \
@@ -71,14 +94,15 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Salesforce Connection",
-      "description": "Connection for Salesforce account",
+      "name": "ACME Salesforce account",
+      "description": "Salesforce account using basic authentication",
       "auth": {
           "specName": "Basic Authentication",
-          "params": {****
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "securityToken": "{SECURITY_TOKEN}"
+          "params":
+              "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+              "username": "acme-salesforce",
+              "password": "xxxx",
+              "securityToken": "xxxx"
           }
       },
       "connectionSpec": {
@@ -89,11 +113,53 @@ curl -X POST \
 ```
 
 | 属性 | 描述 |
-| -------- | ----------- |
+| --- | --- |
+| `auth.params.environmentUrl` | 的URL [!DNL Salesforce] 实例。 |
 | `auth.params.username` | 与您的关联的用户名 [!DNL Salesforce] 帐户。 |
 | `auth.params.password` | 与您的关联的密码 [!DNL Salesforce] 帐户。 |
 | `auth.params.securityToken` | 与您的关联的安全令牌 [!DNL Salesforce] 帐户。 |
 | `connectionSpec.id` | 此 [!DNL Salesforce] 连接规范ID： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+>[!TAB OAuth 2客户端凭据]
+
+以下请求为创建基本连接 [!DNL Salesforce] 使用OAuth 2客户端凭据：
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "ACME Salesforce account",
+      "description": "Salesforce account using OAuth 2",
+      "auth": {
+          "specName": "OAuth2 Client Credential",
+          "params":
+            "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+            "clientId": "xxxx",
+            "clientSecret": "xxxx",
+            "apiVersion": "60.0"
+        }
+      },
+      "connectionSpec": {
+          "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `auth.params.environmentUrl` | 的URL [!DNL Salesforce] 实例。 |
+| `auth.params.clientId` | 与您的关联的客户端ID [!DNL Salesforce] 帐户。 |
+| `auth.params.clientSecret` | 与您的关联的客户端密钥 [!DNL Salesforce] 帐户。 |
+| `auth.params.apiVersion` | 的REST API版本 [!DNL Salesforce] 您正在使用的实例。 |
+| `connectionSpec.id` | 此 [!DNL Salesforce] 连接规范ID： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+>[!ENDTABS]
 
 **响应**
 
