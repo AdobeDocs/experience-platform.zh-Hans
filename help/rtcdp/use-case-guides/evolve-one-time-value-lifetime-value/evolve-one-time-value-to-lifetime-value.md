@@ -3,7 +3,7 @@ title: 将一次性客户价值提升至存留期价值
 description: 了解如何根据特定客户的属性、行为和过去购买情况创建个性化促销活动，以提供最佳的补充性产品或服务。
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: 2f1008791a35f33a0379cba14b90334aebf83187
+source-git-commit: 8cd0da12784d8fac3f0ce9afeb881d7a3916795f
 workflow-type: tm+mt
 source-wordcount: '3179'
 ht-degree: 27%
@@ -27,7 +27,7 @@ ht-degree: 27%
 * 创建受众
 * 创建历程以在Adobe Journey Optimizer中定位这些受众，并在Real-Time CDP中激活它们。
 
-![逐步将一次性值改进为生命周期值高级可视化概述。](../evolve-one-time-value-lifetime-value/images/diagram-business-use-case.png){width="500" zoomable="yes"}
+![逐步将一次性值改进为生命周期值高级可视化概述。](../evolve-one-time-value-lifetime-value/images/diagram-business-use-case.png){zoomable="yes"}
 
 ## 先决条件和规划 {#prerequisites-and-planning}
 
@@ -54,7 +54,7 @@ ht-degree: 27%
 
 以下是Real-Time CDP和Journey Optimizer各个组件的高级架构视图。 此图显示了数据如何流经两个Experience Platform应用程序，从数据收集到通过历程或营销活动激活到目标的点，以实现本页中描述的使用案例。
 
-![架构高级可视化概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/architecture-diagram.png){width="600" zoomable="yes"}
+![架构高级可视化概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/architecture-diagram.png){zoomable="yes"}
 
 ## 如何实现该用例：高级概述 {#achieve-the-use-case-high-level}
 
@@ -70,7 +70,7 @@ ht-degree: 27%
 
 >[!BEGINSHADEBOX]
 
-![逐步将一次性值改进为生命周期值高级可视化概述。](../evolve-one-time-value-lifetime-value/images/step-by-step.png){width="600" zoomable="yes"}
+![逐步将一次性值改进为生命周期值高级可视化概述。](../evolve-one-time-value-lifetime-value/images/step-by-step.png){zoomable="yes"}
 
 1. 您可以创建架构和数据集，然后将它们标记为 [!UICONTROL 个人资料].
 2. 通过Web SDK、Mobile Edge SDK或API收集数据并集成到Experience Platform中。 也可以使用分析数据连接器，但可能会导致历程延迟。
@@ -304,7 +304,7 @@ ht-degree: 27%
 
 具体而言，您必须在用例的不同步骤中创建和使用两个受众，如下图所示。
 
-![突出显示的受众。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/audiences-highlighted-in-diagram.png){width="600" zoomable="yes"}
+![突出显示的受众。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/audiences-highlighted-in-diagram.png){zoomable="yes"}
 
 >[!BEGINTABS]
 
@@ -351,7 +351,7 @@ ht-degree: 27%
 * 生命周期历程，包括您发送给高价值、低频率客户的消息
 * 响应您的呼叫并购买订阅的用户的订单确认历程。
 
-![突出显示的历程。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/journeys-highlighted-in-diagram.png){width="600" zoomable="yes"}
+![突出显示的历程。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/journeys-highlighted-in-diagram.png){zoomable="yes"}
 
 下面列出的是每个历程分支所需的精确数据。
 
@@ -361,7 +361,7 @@ ht-degree: 27%
 
 存留期历程面向过去30天内未定位的高价值和低频率客户的受众。 系统向这些客户显示一条消息，如果7天后仍未购买，您可以将非购买者包含在受众中，您可以向其显示付费媒体广告。 如果确实有购买行为，则可以在订单确认历程中设置购买者，详细内容见单独的选项卡。
 
-![生命周期历程高级可视化概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/lifetime-journey.png "一次性价值到生命周期历程高级可视化概述。"){width="600" zoomable="yes"}
+![生命周期历程高级可视化概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/lifetime-journey.png "一次性价值到生命周期历程高级可视化概述。"){zoomable="yes"}
 
 +++详细的历程逻辑
 
@@ -383,7 +383,7 @@ ht-degree: 27%
 
 订单确认历程侧重于是通过网站还是通过移动设备应用程序进行购买。 例如，在客户成功完成购买（例如与贵公司的订购）后，您可以在订单确认历程中设置它们。
 
-![客户订购确认历程高级视觉概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/order-confirmation-journey.png "客户订购确认历程高级视觉概述。"){width="600" zoomable="yes"}
+![客户订购确认历程高级视觉概述。](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/order-confirmation-journey.png "客户订购确认历程高级视觉概述。"){zoomable="yes"}
 
 +++历程逻辑
 
