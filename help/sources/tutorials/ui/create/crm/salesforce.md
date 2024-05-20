@@ -2,10 +2,10 @@
 title: 使用Experience Platform用户界面连接Salesforce帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将您的CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: a5ecd4ab1c543805870b846cfe0fccc5474333d4
+source-git-commit: c543590ef1806e5259da2ffb6833cd030d573ca7
 workflow-type: tm+mt
-source-wordcount: '542'
-ht-degree: 0%
+source-wordcount: '737'
+ht-degree: 1%
 
 ---
 
@@ -26,17 +26,38 @@ ht-degree: 0%
 
 ### 收集所需的凭据 {#gather-required-credentials}
 
-为了验证您的 [!DNL Salesforce] Experience Platform account with account时，必须提供对应于以下内容的值 [!DNL Salesforce] 凭据：
+此 [!DNL Salesforce] 源支持基本身份验证和OAuth2客户端凭据。
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+必须提供以下凭据的值才能连接 [!DNL Salesforce] 使用基本身份验证的帐户。
 
 | 凭据 | 描述 |
 | --- | --- |
-| `environmentUrl` | 的URL [!DNL Salesforce] 源实例。 |
-| `username` | 的用户名 [!DNL Salesforce] 用户帐户。 |
-| `password` | 的密码 [!DNL Salesforce] 用户帐户。 |
-| `securityToken` | 的安全令牌 [!DNL Salesforce] 用户帐户。 |
-| `apiVersion` | （可选） REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0` 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+| 环境URL | 的URL [!DNL Salesforce] 源实例。 |
+| 用户名 | 的用户名 [!DNL Salesforce] 用户帐户。 |
+| 密码 | 的密码 [!DNL Salesforce] 用户帐户。 |
+| 安全令牌 | 的安全令牌 [!DNL Salesforce] 用户帐户。 |
+| API版本 | （可选） REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0` 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 
 有关身份验证的详细信息，请参阅 [此 [!DNL Salesforce] 身份验证指南](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
+
+>[!TAB OAuth2客户端凭据]
+
+必须提供以下凭据的值才能连接 [!DNL Salesforce] 使用OAuth2客户端凭据的帐户。
+
+| 凭据 | 描述 |
+| --- | --- |
+| 环境URL | 的URL [!DNL Salesforce] 源实例。 |
+| 客户端ID | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同支持您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
+| 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同支持您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
+| API版本 | （可选） REST API版本的 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0` 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+
+有关将OAuth用于 [!DNL Salesforce]，阅读 [[!DNL Salesforce] OAuth授权流指南](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+
+>[!ENDTABS]
 
 收集所需的凭据后，您可以按照以下步骤连接您的 [!DNL Salesforce] 帐户到Experience Platform。
 

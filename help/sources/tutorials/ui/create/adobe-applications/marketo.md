@@ -2,10 +2,10 @@
 title: 在UI中创建Marketo Engage源连接和数据流
 description: 本教程提供了在UI中创建Marketo Engage源连接和数据流以将B2B数据引入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 744098777141c61ac27fe6f150c05469d5705dee
 workflow-type: tm+mt
-source-wordcount: '1675'
-ht-degree: 1%
+source-wordcount: '1831'
+ht-degree: 2%
 
 ---
 
@@ -31,10 +31,10 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-要访问 [!DNL Marketo] 帐户，您必须提供以下值：
+要访问 [!DNL Marketo] account on account(Experience Platform帐户)，您必须提供以下值：
 
 | 凭据 | 描述 |
-| ---------- | ----------- |
+| ---- | ---- |
 | `munchkinId` | Munchkin ID是特定用户档案的唯一标识符， [!DNL Marketo] 实例。 |
 | `clientId` | 您的唯一客户端ID [!DNL Marketo] 实例。 |
 | `clientSecret` | 您的唯一客户端密钥 [!DNL Marketo] 实例。 |
@@ -45,27 +45,37 @@ ht-degree: 1%
 
 ## 连接您的 [!DNL Marketo] 帐户
 
-在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 此 [!UICONTROL 目录] 屏幕显示了多种来源，您可以使用这些来源创建帐户。
+在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索栏查找要使用的特定源。
+在 *Adobe应用程序* 类别，选择 **[!UICONTROL Marketo Engage]**，然后选择 **[!UICONTROL 添加数据]**.
 
-在 [!UICONTROL Adobe应用程序] 类别，选择 **[!UICONTROL Marketo Engage]**. 然后，选择 **[!UICONTROL 添加数据]** 以新建 [!DNL Marketo] 数据流。
+>[!TIP]
+>
+>源目录中的源显示 **[!UICONTROL 设置]** 选项。 经过身份验证的帐户存在后，此选项将更改为 **[!UICONTROL 添加数据]**.
 
-![目录](../../../../images/tutorials/create/marketo/catalog.png)
+![已选择Marketo Engage源的源目录。](../../../../images/tutorials/create/marketo/catalog.png)
 
 此 **[!UICONTROL 连接Marketo Engage帐户]** 页面。 在此页面上，您可以使用新帐户或访问现有帐户。
 
-### 现有帐户
+>[!BEGINTABS]
 
-要使用现有帐户创建数据流，请选择 **[!UICONTROL 现有帐户]** 然后选择 [!DNL Marketo] 要使用的帐户。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+>[!TAB 创建新帐户]
 
-![现有](../../../../images/tutorials/create/marketo/existing.png)
+要创建新帐户，请选择 **[!UICONTROL 新帐户]** 并提供名称、可选描述和您的凭据。
 
-### 新帐户
+完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
 
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在出现的输入表单上，提供帐户名称、可选描述以及 [!DNL Marketo] 身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后等待一段时间以建立新连接。
+![用于验证新Marketo帐户的新帐户界面。](../../../../images/tutorials/create/marketo/new.png)
 
-![新建](../../../../images/tutorials/create/marketo/new.png)
+>[!TAB 使用现有帐户]
+
+要使用现有帐户，请选择 **[!UICONTROL 现有帐户]** 然后从现有帐户目录中选择要使用的帐户。
+
+选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+
+![现有的帐户界面，您可以在其中选择现有的Marketo帐户。](../../../../images/tutorials/create/marketo/existing.png)
+
+>[!ENDTABS]
 
 ## 选择数据集
 
@@ -77,59 +87,65 @@ ht-degree: 1%
 >
 >为了简单起见，以下教程使用 [!UICONTROL 机会] 例如，下面列出的步骤适用于10项中的任意一项 [!DNL Marketo] 数据集。
 
-选择要首先摄取的数据集，然后选择 **[!UICONTROL 下一个]**.
+选择要摄取的数据集。 这将更新界面以显示数据集的预览。 完成后，选择 **[!UICONTROL 下一个]**.
 
-![select-data](../../../../images/tutorials/create/marketo/select-data.png)
+![预览界面](../../../../images/tutorials/create/marketo/preview.png)
 
-## 提供数据流详细信息 {#provide-dataflow-details}
+## 提供数据集和数据流详细信息 {#provide-dataset-and-dataflow-details}
 
-此 [!UICONTROL 数据流详细信息] 页面允许您选择是使用现有数据集还是新数据集。 在此过程中，您还可以配置以下项目的设置 [!UICONTROL 配置文件数据集]， [!UICONTROL 错误诊断]， [!UICONTROL 部分摄取]、和 [!UICONTROL 警报].
+接下来，您必须提供有关数据集和数据流的信息。
 
-![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-details.png)
+### 数据集详细信息 {#dataset-details}
+
+数据集是用于数据集合的存储和管理结构，通常是表格，其中包含架构（列）和字段（行）。成功引入Experience Platform的数据将作为数据集存储在数据湖中。 在此步骤中，您可以创建新数据集或使用现有数据集。
 
 >[!BEGINTABS]
 
->[!TAB 使用现有数据集]
-
-要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用检索现有数据集 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动现有数据集的列表来进行更改。 选择数据集后，为数据流提供名称和描述。
-
-![existing-dataset](../../../../images/tutorials/create/marketo/existing-dataset.png)
-
 >[!TAB 使用新数据集]
 
-要摄取到新数据集中，请选择 **[!UICONTROL 新数据集]** 然后提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动查看现有架构的列表来进行更改。 选择架构后，为数据流提供名称和描述。
+要使用新数据集，请选择 **[!UICONTROL 新数据集]** 然后为数据集提供名称和可选描述。 您还必须选择数据集所遵循的体验数据模型(XDM)架构。
 
-![new-dataset](../../../../images/tutorials/create/marketo/new-dataset.png)
+![新的数据集选择界面。](../../../../images/tutorials/create/marketo/new-dataset.png)
+
+>[!TAB 使用现有数据集]
+
+如果您已经有一个现有数据集，请选择 **[!UICONTROL 现有数据集]** 然后使用 **[!UICONTROL 高级搜索]** 选项可查看贵组织中所有数据集的窗口，包括其各自的详细信息，如是否启用它们以摄取到Real-time Customer Profile。
+
+![现有数据集选择界面。](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
 >[!ENDTABS]
 
-### 启用 [!DNL Profile] 和错误诊断
-
-接下来，选择 **[!UICONTROL 配置文件数据集]** 切换以启用您的数据集 [!DNL Profile]. 这允许您创建实体的属性和行为的整体视图。 来自所有客户的数据 [!DNL Profile]启用的数据集将包含在 [!DNL Profile] 在保存数据流时，将应用更改。
-
-[!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，摄取到手动定义的特定阈值为止。 请参阅 [部分批次摄取概述](../../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
+### 数据流配置 {#dataflow-configurations}
 
 >[!IMPORTANT]
 >
 >此 [!DNL Marketo] 源使用批量摄取来摄取所有历史记录，并使用流式摄取进行实时更新。 这允许源在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 最大，以防止数据流失败。
 
-![配置文件和错误](../../../../images/tutorials/create/marketo/profile-and-errors.png)
+如果您的数据集启用了实时客户资料，那么在此步骤中，您可以切换 **[!UICONTROL 配置文件数据集]** 为配置文件摄取启用数据。 您还可以使用此步骤来启用 **[!UICONTROL 错误诊断]** 和 **[!UICONTROL 部分摄取]**.
 
-### 启用警报
+* **[!UICONTROL 错误诊断]**：选择 **[!UICONTROL 错误诊断]** 指示源生成错误诊断，以便以后在监视数据集活动和数据流状态时可以参考这些诊断。
+* **[!UICONTROL 部分摄取]**： [部分批次摄取](../../../../../ingestion/batch-ingestion/partial.md) 能够摄取包含错误的数据，最大程度达到特定可配置阈值。 此功能允许您成功地将所有准确的数据提取到Experience Platform中，同时所有不正确的数据将单独进行批处理并显示有关其无效原因的信息。
 
-您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅以下内容中的指南： [使用UI订阅源警报](../../alerts.md).
+在此步骤中，您可以启用 **[!UICONTROL 示例数据流]** 以限制数据摄取，并避免摄取所有历史数据（包括人员身份）时产生的额外成本。
 
-完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+>[!BEGINSHADEBOX]
 
-![警报](../../../../images/tutorials/create/marketo/alerts.png)
+**使用示例数据流的快速指南**
 
-### 摄取公司数据时跳过无人认领的帐户
+示例数据流是可为设置的配置 [!DNL Marketo] 数据流以限制您的摄取率，然后尝试Experience Platform功能而不必摄取大量数据。
 
-在创建数据流以从公司数据集中摄取数据时，您可以配置 [!UICONTROL 排除无人认领的帐户] 要从摄取中排除或包含无人认领的帐户，请执行以下操作：
+* 启用示例数据流，通过在回填作业期间摄取最多10万条记录（从最大的记录ID）或最多10天的活动，来限制历史数据。
+* 为所有B2B实体使用示例数据流配置时，您必须考虑可能缺少某些相关记录，因为未摄取源数据的整个历史记录。
+
+>[!ENDSHADEBOX]
+
+![数据流详细信息页面的数据流配置部分。](../../../../images/tutorials/create/marketo/dataflow-configurations.png)
+
+此外，如果您从公司数据集中摄取数据，则可以启用 **[!UICONTROL 排除无人认领的帐户]** 从引入中排除无人认领的帐户。
 
 当个人填写表格时， [!DNL Marketo] 根据不包含其他数据的公司名称创建虚拟帐户记录。 对于新数据流，默认情况下会启用排除无人认领帐户的切换功能。 对于现有数据流，您可以启用或禁用该功能，所做的更改将应用于新摄取的数据，而不应用于现有数据。
 
-![无人认领的帐户](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
+![排除无人认领的帐户](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
 
 ## 映射您的 [!DNL Marketo] 数据集源字段到目标XDM字段
 
@@ -150,7 +166,7 @@ ht-degree: 1%
 
 根据需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以派生计算值或计算值。 有关使用映射界面的完整步骤，请参见 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
-![映射](../../../../images/tutorials/create/marketo/mapping.png)
+![Marketo数据的映射接口。](../../../../images/tutorials/create/marketo/mapping.png)
 
 映射集准备就绪后，选择 **[!UICONTROL 下一个]** 并留出片刻时间创建新数据流。
 
@@ -163,7 +179,7 @@ ht-degree: 1%
 
 查看数据流后，选择 **[!UICONTROL 保存并摄取]** 留出一段时间来创建数据流。
 
-![审核](../../../../images/tutorials/create/marketo/review.png)
+![查看页面，您可以在其中确认数据流的详细信息后再引入。](../../../../images/tutorials/create/marketo/review.png)
 
 ## 监测数据流
 
@@ -179,10 +195,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过学习本教程，您已成功地创建了要引入的数据流 [!DNL Marketo] 数据。 传入数据现在可供下游平台服务使用，例如 [!DNL Real-Time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
-
-* [[!DNL Real-Time Customer Profile] 概述](/help/profile/home.md)
-* [[!DNL Data Science Workspace] 概述](/help/data-science-workspace/home.md)
+通过学习本教程，您已成功创建了一个数据流以从摄取B2B数据 [!DNL Marketo Engage] 要Experience Platform的源。
 
 ## 附录 {#appendix}
 
