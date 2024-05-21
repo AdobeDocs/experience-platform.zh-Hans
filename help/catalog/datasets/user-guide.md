@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
+source-git-commit: ed0a259c72832e4fb219855e2a2fc49b3381b85d
 workflow-type: tm+mt
-source-wordcount: '2943'
+source-wordcount: '3080'
 ht-degree: 3%
 
 ---
@@ -74,9 +74,66 @@ ht-degree: 3%
 
 ## 内联数据集操作 {#inline-actions}
 
-数据集UI现在为每个可用数据集提供一组内联操作。 选择要管理的数据集的省略号(...)可在弹出菜单中查看可用选项。 可用的操作包括： [[!UICONTROL 预览数据集]](#preview)， [[!UICONTROL 管理数据和访问标签]](#manage-and-enforce-data-governance)， [[!UICONTROL 启用统一配置文件]](#enable-profile)， [[!UICONTROL 管理标记]](#add-tags)， [[!UICONTROL 移至文件夹]](#move-to-folders)、和 [[!UICONTROL 删除]](#delete). 有关这些可用操作的更多信息，请参阅其各自部分。
+数据集UI现在为每个可用数据集提供一组内联操作。 选择要管理的数据集的省略号(...)可在弹出菜单中查看可用选项。 可用的操作包括：
 
-### 添加数据集标记 {#add-tags}
+* [[!UICONTROL 预览数据集]](#preview)，
+* [[!UICONTROL 管理数据和访问标签]](#manage-and-enforce-data-governance)
+* [[!UICONTROL 启用统一配置文件]](#enable-profile)
+* [[!UICONTROL 管理标记]](#manage-tags)
+* [[!UICONTROL 移至文件夹]](#move-to-folders)
+* [[!UICONTROL 删除]](#delete).
+
+有关这些可用操作的更多信息，请参阅其各自部分。 要了解如何同时管理大量数据集，请参阅 [批量操作](#bulk-actions) 部分。
+
+### 预览数据集 {#preview}
+
+您可以通过的两个内联选项预览数据集示例数据 [!UICONTROL 浏览] 选项卡以及 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 选项卡，选择要预览的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 预览数据集]** 从可用选项列表中。 如果数据集为空，则预览链接将被停用，并改为表示预览不可用。
+
+![数据集工作区的浏览选项卡，其中为所选数据集突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
+
+这将打开预览窗口，其中数据集的架构的分层视图显示在右侧。
+
+![此时将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
+
+或者，从 **[!UICONTROL 数据集活动]** 屏幕，选择 **[!UICONTROL 预览数据集]** 在屏幕的右上角附近，可预览最多100行数据。
+
+![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
+
+要获得更可靠的数据访问方法， [!DNL Experience Platform] 提供下游服务，例如 [!DNL Query Service] 和 [!DNL JupyterLab] 以探索和分析数据。 有关详细信息，请参阅以下文档：
+
+* [查询服务概述](../../query-service/home.md)
+* [JupyterLab用户指南](../../data-science-workspace/jupyterlab/overview.md)
+
+### 在数据集上管理和强制执行数据治理 {#manage-and-enforce-data-governance}
+
+您可以通过选择的数据集的内联选项，来管理数据集的数据治理标签 [!UICONTROL 浏览] 选项卡。 选择要管理的数据集名称旁边的省略号(...)，然后选择 **[!UICONTROL 管理数据和访问标签]** 下拉菜单中。
+
+通过在架构级别应用数据使用标签，您可以根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅 [数据管理概述](../../data-governance/home.md) 要了解有关标签的更多信息，或参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) 有关如何将标签应用于架构以便传播到数据集的说明。
+
+## 为实时客户个人资料启用数据集 {#enable-profile}
+
+每个数据集都能够使用其摄取的数据扩充客户用户档案。 为此，数据集所遵循的架构必须兼容才能在中使用 [!DNL Real-Time Customer Profile]. 兼容的架构满足以下要求：
+
+* 架构至少有一个指定为标识属性的属性。
+* 架构具有定义为主标识的标识属性。
+
+有关启用架构的详细信息 [!DNL Profile]，请参见 [架构编辑器用户指南](../../xdm/tutorials/create-schema-ui.md).
+
+您可以通过的两个内联选项为配置文件启用数据集 [!UICONTROL 浏览] 选项卡以及 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 选项卡 [!UICONTROL 数据集] 在工作区中，选择要为配置文件启用的数据集的省略号。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 启用统一配置文件]** 从可用选项列表中。
+
+![数据集工作区的浏览选项卡，突出显示省略号和启用统一配置文件。](../images/datasets/user-guide/enable-for-profile.png)
+
+或者，从数据集的 **[!UICONTROL 数据集活动]** 屏幕上，选择 **[!UICONTROL 个人资料]** 在中切换 **[!UICONTROL 属性]** 列。 启用后，还将使用摄取到数据集的数据来填充客户配置文件。
+
+>[!NOTE]
+>
+>如果数据集已包含数据，并且随后启用了 [!DNL Profile]，则现有数据不会自动由使用 [!DNL Profile]. 为启用数据集后 [!DNL Profile]，建议您重新摄取任何现有数据，以使其贡献客户个人资料。
+
+![配置文件切换在数据集详细信息页面中突出显示。](../images/datasets/user-guide/enable-dataset-profiles.png)
+
+也可通过此条件筛选为配置文件启用的数据集。 请参阅有关如何执行操作的部分 [启用筛选配置文件的数据集](#filter-profile-enabled-datasets) 以了解更多信息。
+
+### 管理数据集标记 {#manage-tags}
 
 添加自定义创建的标记以组织数据集并改进搜索、筛选和排序功能。 从 [!UICONTROL 浏览] 选项卡 [!UICONTROL 数据集] 在工作区中，选择要管理的数据集的省略号，然后选择 **[!UICONTROL 管理标记]** 下拉菜单中。
 
@@ -91,6 +148,52 @@ ht-degree: 3%
 将标记添加到数据集后，可以根据相应的标记过滤数据集。 请参阅有关如何执行操作的部分 [按标记过滤数据集](#enable-profile) 以了解更多信息。
 
 有关如何对业务对象进行分类以便于发现和分类的更多信息，请参阅 [管理元数据分类](../../administrative-tags/ui/managing-tags.md). 本指南详细介绍具有适当权限的用户如何在Platform UI中创建预定义标记、为标记分配类别以及执行标记和标记类别的所有相关CRUD操作。
+
+### 移至文件夹 {#move-to-folders}
+
+您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后选 **[!UICONTROL 移至文件夹]** 下拉菜单中。
+
+![此 [!UICONTROL 数据集] 仪表板，带有椭圆和 [!UICONTROL 移至文件夹] 突出显示。](../images/datasets/user-guide/move-to-folder.png)
+
+此 [!UICONTROL 移动] 此时将显示数据集到文件夹对话框。 选择要将受众移动到的文件夹，然后选择 **[!UICONTROL 移动]**. 弹出通知会告知您已成功移动数据集。
+
+![此 [!UICONTROL 移动] 数据集对话框 [!UICONTROL 移动] 突出显示。](../images/datasets/user-guide/move-dialog.png)
+
+>[!TIP]
+>
+>您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标(![创建文件夹图标。](../images/datasets/user-guide/create-folder-icon.png))。
+>
+>![此 [!UICONTROL 移动] 突出显示创建文件夹图标的数据集对话框。](/help/catalog/images/datasets/user-guide/create-folder.png)
+
+数据集位于文件夹中后，您可以选择仅显示属于特定文件夹的数据集。 要打开文件夹结构，请选择显示文件夹图标(![显示文件夹图标](../images/datasets/user-guide/show-folders-icon.png))。 接下来，选择您选择的文件夹以查看所有关联的数据集。
+
+![此 [!UICONTROL 数据集] 功能板中显示了数据集文件夹结构，突出显示了“显示文件夹”图标和选定的文件夹。](../images/datasets/user-guide/folder-structure.png)
+
+### 删除数据集 {#delete}
+
+您可以从中任一数据集内联操作删除数据集 [!UICONTROL 浏览] 选项卡或的右上角 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 视图，选择要删除的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 删除]** 下拉菜单中。
+
+![针对所选数据集，使用省略号和“删除”选项突出显示的数据集工作区的浏览选项卡。](../images/datasets/user-guide/inline-delete-dataset.png)
+
+将显示确认对话框。 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认。
+
+或者，选择 **[!UICONTROL 删除数据集]** 从 **[!UICONTROL 数据集活动]** 屏幕。
+
+>[!NOTE]
+>
+>Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或 [!DNL Offer Decisioning])无法删除。
+
+![“删除数据集”按钮会在数据集详细信息页面中突出显示。](../images/datasets/user-guide/delete-dataset.png)
+
+将出现一个确认框。 选择 **[!UICONTROL 删除]** 以确认删除数据集。
+
+![将显示删除的确认模式，并突出显示删除按钮。](../images/datasets/user-guide/confirm-delete.png)
+
+### 删除启用配置文件的数据集
+
+如果为配置文件启用了某个数据集，则通过UI删除该数据集会将其从数据湖、身份服务以及配置文件存储中与该数据集关联的任何配置文件数据中删除。
+
+您可以从以下位置删除与数据集关联的配置文件数据 [!DNL Profile] 使用实时客户个人资料API存储（将数据保留在数据湖中）。 欲了解更多信息，请参见 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
 
 ## 搜索和筛选数据集 {#search-and-filter}
 
@@ -132,30 +235,24 @@ ht-degree: 3%
 
 您可以根据定义数据集结构的架构筛选数据集。 选择下拉图标或将架构名称输入文本字段。 此时将显示一个潜在匹配项列表。 从列表中选择相应的架构。
 
+## 批量操作 {#bulk-actions}
+
+使用批量操作提高操作效率，并对大量数据集同时执行多项操作。 您可以通过批量操作(例如 [移至文件夹](#move-to-folders)， [编辑标记](#manage-tags)、和 [删除](#delete) 数据集。
+
+要一次处理多个数据集，请选中每行带有复选框的单个数据集，或选中带有列标题的整个页面。 选中后，将出现批量操作栏。
+
+![在数据集浏览选项卡中选择了大量数据集，并突出显示批量操作栏。](../images/datasets/user-guide/bulk-actions.png)
+
+对数据集应用批量操作时，将应用以下条件：
+
+* 您可以从UI的不同页面选择数据集。
+* 如果选择筛选器，则选定的数据集将重置。
+
 ## 按创建日期排序数据集 {#sort}
 
 中的数据集 [!UICONTROL 浏览] 选项卡可以按升序或降序日期排序。 选择 [!UICONTROL 已创建] 或 [!UICONTROL 上次更新时间] 列标题在升序和降序之间切换。 选中后，列将通过列标题侧的向上或向下箭头指示此信息。
 
 ![数据集工作区的“浏览”选项卡，其中高亮显示了“已创建”和“上次更新”列。](../images/datasets/user-guide/ascending-descending-columns.png)
-
-## 预览数据集 {#preview}
-
-您可以通过的两个内联选项预览数据集示例数据 [!UICONTROL 浏览] 选项卡以及 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 选项卡，选择要预览的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 预览数据集]** 从可用选项列表中。 如果数据集为空，则预览链接将被停用，并改为表示预览不可用。
-
-![数据集工作区的浏览选项卡，其中为所选数据集突出显示了省略号和预览数据集选项。](../images/datasets/user-guide/preview-dataset-option.png)
-
-这将打开预览窗口，其中数据集的架构的分层视图显示在右侧。
-
-![此时将显示数据集预览对话框，其中包含有关数据集的结构信息以及示例值。](../images/datasets/user-guide/preview-dataset.png)
-
-或者，从 **[!UICONTROL 数据集活动]** 屏幕，选择 **[!UICONTROL 预览数据集]** 在屏幕的右上角附近，可预览最多100行数据。
-
-![预览数据集按钮突出显示。](../images/datasets/user-guide/select-preview.png)
-
-要获得更可靠的数据访问方法， [!DNL Experience Platform] 提供下游服务，例如 [!DNL Query Service] 和 [!DNL JupyterLab] 以探索和分析数据。 有关详细信息，请参阅以下文档：
-
-* [查询服务概述](../../query-service/home.md)
-* [JupyterLab用户指南](../../data-science-workspace/jupyterlab/overview.md)
 
 ## 创建数据集 {#create}
 
@@ -201,81 +298,6 @@ ht-degree: 3%
 >CSV列名称必须以字母数字字符开头，并且只能包含字母、数字和下划线。
 
 ![此时将显示“添加数据”屏幕。 您可以为数据集上传CSV文件的位置会突出显示。](../images/datasets/user-guide/add-csv-data.png)
-
-## 为实时客户个人资料启用数据集 {#enable-profile}
-
-每个数据集都能够使用其摄取的数据扩充客户用户档案。 为此，数据集所遵循的架构必须兼容才能在中使用 [!DNL Real-Time Customer Profile]. 兼容的架构满足以下要求：
-
-* 架构至少有一个指定为标识属性的属性。
-* 架构具有定义为主标识的标识属性。
-
-有关启用架构的详细信息 [!DNL Profile]，请参见 [架构编辑器用户指南](../../xdm/tutorials/create-schema-ui.md).
-
-您可以通过的两个内联选项为配置文件启用数据集 [!UICONTROL 浏览] 选项卡以及 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 选项卡 [!UICONTROL 数据集] 在工作区中，选择要为配置文件启用的数据集的省略号。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 启用统一配置文件]** 从可用选项列表中。
-
-![数据集工作区的浏览选项卡，突出显示省略号和启用统一配置文件。](../images/datasets/user-guide/enable-for-profile.png)
-
-或者，从数据集的 **[!UICONTROL 数据集活动]** 屏幕上，选择 **[!UICONTROL 个人资料]** 在中切换 **[!UICONTROL 属性]** 列。 启用后，还将使用摄取到数据集的数据来填充客户配置文件。
-
->[!NOTE]
->
->如果数据集已包含数据，并且随后启用了 [!DNL Profile]，则现有数据不会自动由使用 [!DNL Profile]. 为启用数据集后 [!DNL Profile]，建议您重新摄取任何现有数据，以使其贡献客户个人资料。
-
-![配置文件切换在数据集详细信息页面中突出显示。](../images/datasets/user-guide/enable-dataset-profiles.png)
-
-也可通过此条件筛选为配置文件启用的数据集。 请参阅有关如何执行操作的部分 [启用筛选配置文件的数据集](#filter-profile-enabled-datasets) 以了解更多信息。
-
-## 在数据集上管理和强制执行数据治理 {#manage-and-enforce-data-governance}
-
-您可以通过选择的数据集的内联选项，来管理数据集的数据治理标签 [!UICONTROL 浏览] 选项卡。 选择要管理的数据集名称旁边的省略号(...)，然后选择 **[!UICONTROL 管理数据和访问标签]** 下拉菜单中。
-
-通过在架构级别应用数据使用标签，您可以根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅 [数据管理概述](../../data-governance/home.md) 要了解有关标签的更多信息，或参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) 有关如何将标签应用于架构以便传播到数据集的说明。
-
-## 移至文件夹 {#move-to-folders}
-
-您可以将数据集放在文件夹中，以便更好地管理数据集。 要将数据集移动到文件夹中，请选择要管理的数据集名称旁边的省略号(...)，然后选 **[!UICONTROL 移至文件夹]** 下拉菜单中。
-
-![此 [!UICONTROL 数据集] 仪表板，带有椭圆和 [!UICONTROL 移至文件夹] 突出显示。](../images/datasets/user-guide/move-to-folder.png)
-
-此 [!UICONTROL 移动] 此时将显示数据集到文件夹对话框。 选择要将受众移动到的文件夹，然后选择 **[!UICONTROL 移动]**. 弹出通知会告知您已成功移动数据集。
-
-![此 [!UICONTROL 移动] 数据集对话框 [!UICONTROL 移动] 突出显示。](../images/datasets/user-guide/move-dialog.png)
-
->[!TIP]
->
->您还可以直接从“移动数据集”对话框创建文件夹。 要创建文件夹，请选择创建文件夹图标(![创建文件夹图标。](../images/datasets/user-guide/create-folder-icon.png))。
->
->![此 [!UICONTROL 移动] 突出显示创建文件夹图标的数据集对话框。](/help/catalog/images/datasets/user-guide/create-folder.png)
-
-数据集位于文件夹中后，您可以选择仅显示属于特定文件夹的数据集。 要打开文件夹结构，请选择显示文件夹图标(![显示文件夹图标](../images/datasets/user-guide/show-folders-icon.png))。 接下来，选择您选择的文件夹以查看所有关联的数据集。
-
-![此 [!UICONTROL 数据集] 功能板中显示了数据集文件夹结构，突出显示了“显示文件夹”图标和选定的文件夹。](../images/datasets/user-guide/folder-structure.png)
-
-## 删除数据集 {#delete}
-
-您可以从中任一数据集内联操作删除数据集 [!UICONTROL 浏览] 选项卡或的右上角 [!UICONTROL 数据集活动] 视图。 从 [!UICONTROL 浏览] 视图，选择要删除的数据集名称旁边的省略号(...)。 出现一个选项菜单列表。 接下来，选择 **[!UICONTROL 删除]** 下拉菜单中。
-
-![针对所选数据集，使用省略号和“删除”选项突出显示的数据集工作区的浏览选项卡。](../images/datasets/user-guide/inline-delete-dataset.png)
-
-将显示确认对话框。 选择&#x200B;**[!UICONTROL 删除]**&#x200B;以确认。
-
-或者，选择 **[!UICONTROL 删除数据集]** 从 **[!UICONTROL 数据集活动]** 屏幕。
-
->[!NOTE]
->
->Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或 [!DNL Offer Decisioning])无法删除。
-
-![“删除数据集”按钮会在数据集详细信息页面中突出显示。](../images/datasets/user-guide/delete-dataset.png)
-
-将出现一个确认框。 选择 **[!UICONTROL 删除]** 以确认删除数据集。
-
-![将显示删除的确认模式，并突出显示删除按钮。](../images/datasets/user-guide/confirm-delete.png)
-
-## 删除启用配置文件的数据集
-
-如果为配置文件启用了某个数据集，则通过UI删除该数据集会将其从数据湖、身份服务以及配置文件存储中与该数据集关联的任何配置文件数据中删除。
-
-您可以从以下位置删除与数据集关联的配置文件数据 [!DNL Profile] 使用实时客户个人资料API存储（将数据保留在数据湖中）。 欲了解更多信息，请参见 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
 
 ## 监测数据摄取
 
