@@ -2,16 +2,20 @@
 title: XDM单个潜在客户配置文件类
 description: 了解Experience Data Model (XDM)中的XDM Individual Prospect Profile类。
 exl-id: 10fd9d16-4123-4ad4-971f-b715231ee6a9
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f4ddcf14de7a5cec42b5ebc521203cfdd1498a9f
 workflow-type: tm+mt
-source-wordcount: '356'
-ht-degree: 3%
+source-wordcount: '390'
+ht-degree: 5%
 
 ---
 
 # [!UICONTROL XDM单个潜在客户配置文件] 类
 
 在Experience Data Model (XDM)中， [!UICONTROL XDM单个潜在客户配置文件] class捕获典型从数据合作伙伴处获得的目标客户配置文件，用于漏斗顶级的客户获取用例。
+
+>[!NOTE]
+>
+>要将XDM单个潜在客户配置文件中的字段设置为身份，您必须首先创建至少一个合作伙伴ID命名空间。 阅读[标识类型部分](../../identity-service/features/namespaces.md)，了解有关合作伙伴 ID 命名空间的更多信息。
 
 ![XDM潜在客户类的架构图。](../images/classes/individual-prospect-profile.png)
 

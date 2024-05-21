@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 描述符API端点
 description: 架构注册API中的/descriptors端点允许您以编程方式管理体验应用程序中的XDM描述符。
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 786801975dbde52b5d81a407618ef3b574a6afa3
+source-git-commit: 44355aa2ddf03b20aca64c6675414b73682bc2b5
 workflow-type: tm+mt
-source-wordcount: '1905'
+source-wordcount: '1919'
 ht-degree: 1%
 
 ---
@@ -288,6 +288,10 @@ curl -X DELETE \
 以下部分提供了有关在中使用描述符的其他信息 [!DNL Schema Registry] API。
 
 ### 定义描述符 {#defining-descriptors}
+
+>[!NOTE]
+>
+>可应用于架构的描述符的最大数量为4000。
 
 以下部分概述了可用的描述符类型，包括用于定义每种类型的描述符的必填字段。
 
