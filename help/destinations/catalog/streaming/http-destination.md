@@ -4,10 +4,10 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行任何其他您可能需要的操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: e9ed96a15d6bba16165c67e53467b7f51a866014
 workflow-type: tm+mt
-source-wordcount: '2483'
-ht-degree: 8%
+source-wordcount: '2639'
+ht-degree: 0%
 
 ---
 
@@ -33,10 +33,10 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 ---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -62,6 +62,20 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 >[!TIP]
 >
 > 您还可以使用 [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) 以设置集成并将Experience Platform配置文件数据发送到HTTP端点。
+
+## mTLS协议支持和证书 {#mtls-protocol-support}
+
+您可以使用 [!DNL Mutual Transport Layer Security] ([!DNL mTLS])以确保到HTTP API目标连接的出站连接中的增强安全性。
+
+[!DNL mTLS] 是一种用于相互身份验证的端到端安全方法，可确保共享信息的双方在共享数据之前都是声明的身份。 [!DNL mTLS] 包括额外的步骤，与 [!DNL TLS]，其中服务器还会请求客户端的证书，并在其末尾验证它。
+
+如果您要使用 [!DNL mTLS] 替换为 [!DNL HTTP API] 目标，您输入到 [目标详细信息](#destination-details) 页面必须具有 [!DNL TLS] 仅禁用协议 [!DNL mTLS] 已启用。 如果 [!DNL TLS] 1.2协议在端点上仍处于启用状态，不会发送用于客户端身份验证的证书。 这意味着要使用 [!DNL mTLS] 与您的 [!DNL HTTP API] 目标，您的“接收”服务器端点必须为 [!DNL mTLS]-only启用连接端点。
+
+### 下载证书 {#certificate}
+
+如果您想检查 [!DNL Common Name] (CN)和 [!DNL Subject Alternative Names] (SAN)要执行其他第三方验证，您可以下载以下证书：
+
+* [HTTP API mTLS公共证书](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
 
 ## IP地址允许列表 {#ip-address-allowlist}
 
@@ -107,7 +121,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_clientcredentialstype"
 >title="客户端凭据类型"
->abstract="选择&#x200B;**编码的正文形式**&#x200B;以在请求正文中包含客户端 ID 和客户端密码，或选择&#x200B;**基本授权**&#x200B;以在授权标头中包含客户端 ID 和客户端密码。查看文档中的示例。"
+>abstract="选择 **正文表单已编码** 在请求正文中包含客户端ID和客户端密码，或者 **基本授权** 在授权标头中包含客户端ID和客户端密码。 查看文档中的示例。"
 
 #### 持有者令牌身份验证 {#bearer-token-authentication}
 
@@ -155,27 +169,27 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_headers"
 >title="标头"
->abstract="按照以下格式输入要包含在目标调用中的任何自定义标头：`header1:value1,header2:value2,...headerN:valueN`"
+>abstract="输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
->title="HTTP 端点"
->abstract="要将配置文件数据发送到的 HTTP 端点的 URL。"
+>title="HTTP端点"
+>abstract="要将配置文件数据发送到的HTTP端点的URL。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
 >title="包括区段名称"
->abstract="如果您希望数据导出包括正在导出的受众的名称，请进行切换。在选中此选项后查看数据导出示例的文档。"
+>abstract="如果希望数据导出包含所导出受众的名称，请进行切换。 查看选中此选项的数据导出示例文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="包括区段时间戳"
->abstract="如果您希望数据导出包括受众创建时间和更新时间的 Unix 时间戳，以及受众映射到用于激活的目标时的 Unix 时间戳，请进行切换。在选中此选项后查看数据导出示例的文档。"
+>abstract="如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，请进行切换。 查看选中此选项的数据导出示例文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
 >title="查询参数"
->abstract="（可选）您可以将查询参数添加到 HTTP 端点 URL。格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。"
+>abstract="或者，您也可以向HTTP端点URL添加查询参数。 将您使用的查询参数设置为如下格式： `parameter1=value&parameter2=value`."
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -185,7 +199,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 描述]**：输入可帮助您将来识别此目标的描述。
 * **[!UICONTROL 标题]**：输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`.
 * **[!UICONTROL HTTP端点]**：要将配置文件数据发送到的HTTP端点的URL。
-* **[!UICONTROL 查询参数]**：或者，您也可以将查询参数添加到HTTP端点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
+* **[!UICONTROL 查询参数]**：或者，您也可以将查询参数添加到HTTP端点URL。 将您使用的查询参数设置为如下格式： `parameter1=value&parameter2=value`.
 * **[!UICONTROL 包括区段名称]**：如果您希望数据导出包含所导出受众的名称，请进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 * **[!UICONTROL 包括区段时间戳]**：如果您希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，则可以进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 
@@ -195,12 +209,12 @@ curl --location --request POST 'https://some-api.com/token' \
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 激活此目标的受众 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
 >* 要激活数据，您需要 **[!UICONTROL 查看目标]**， **[!UICONTROL 激活目标]**， **[!UICONTROL 查看配置文件]**、和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或与产品管理员联系以获取所需的权限。
->* [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 当前在导出到HTTP API目标时不支持。 [了解更多信息](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
+>* [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 当前在导出到HTTP API目标时不支持。 [了解详情](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation)。
 
 请参阅 [将受众数据激活到流式配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众激活到此目标的说明。
 
