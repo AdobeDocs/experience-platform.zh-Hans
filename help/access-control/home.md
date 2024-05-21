@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: df24799e4644a98941b707bb216a4ad434f5ebf9
+source-git-commit: 16313e2109152329a427be9f13fcbd6382353797
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1718'
 ht-degree: 1%
 
 ---
@@ -100,6 +100,7 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Profile Management] | [!UICONTROL 查看区段] | 对可用区段的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 管理合并策略] | 有权读取、创建、编辑和删除合并策略。 |
 | [!DNL Profile Management] | [!UICONTROL 查看合并策略] | 对可用合并策略的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 导入受众] | 有权读取、创建、编辑和删除导入的受众。 |
 | [!DNL Profile Management] | [!UICONTROL 导出区段的受众] | 能够将评估的受众区段导出到数据集。 |
 | [!DNL Profile Management] | [!UICONTROL 评估受众的区段] | 能够通过评估区段定义为受众生成配置文件。 |
 | [!DNL Profile Management] | [!UICONTROL 查看B2B AI] | 对所有B2B AI/ML服务的设置和配置的只读访问权限。 |
