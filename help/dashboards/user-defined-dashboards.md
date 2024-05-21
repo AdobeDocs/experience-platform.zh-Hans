@@ -5,7 +5,7 @@ exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
 source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
 workflow-type: tm+mt
 source-wordcount: '1624'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -46,7 +46,7 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
 >title="最大构件数"
->abstract="功能板服务支持多达10个构件。 将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
+>abstract="仪表板服务最多支持十个构件。将 10 个构件添加到仪表板后，[!UICONTROL 添加新构件]选项将被禁用并显示为灰色。"
 
 从新仪表板视图中，选择 **[!UICONTROL 添加新构件]** 以开始构件创建过程。
 

@@ -6,7 +6,7 @@ exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
 source-git-commit: 716c14f29be24d084111864053e3e4ae884003f0
 workflow-type: tm+mt
 source-wordcount: '1862'
-ht-degree: 2%
+ht-degree: 5%
 
 ---
 
@@ -28,12 +28,12 @@ ht-degree: 2%
    - [导出作业](../../segmentation/api/export-jobs.md)：导出作业是用于使受众成员保留到数据集的异步进程。
 - [沙盒](../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-## 监控受众功能板 {#monitoring-audiences-dashboard}
+## 监控受众仪表板 {#monitoring-audiences-dashboard}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segments"
 >title="受众"
->abstract="受众视图包含有关贵组织所有受众的信息，以及有关其激活和评估作业的更多信息。"
+>abstract="受众视图包含有关您的组织的所有受众的信息，以及有关其激活和评估作业的更多信息。"
 
 要访问 **[!UICONTROL 受众]** 仪表板，选择 **[!UICONTROL 监控]** 在左侧导航中。 一旦在 **[!UICONTROL 监控]** 页面上，选择 **[!UICONTROL 受众]** 卡片。
 
