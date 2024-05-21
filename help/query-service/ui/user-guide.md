@@ -4,83 +4,76 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 5189e8bbe4cd93c4e1f355f09da9667f5eb5708d
 workflow-type: tm+mt
-source-wordcount: '2825'
-ht-degree: 2%
+source-wordcount: '2432'
+ht-degree: 0%
 
 ---
 
-# [!DNL Query Editor] UI指南
+# 查询编辑器UI指南
 
 >[!NOTE]
 >
->截至2024年4月30日 [增强的查询编辑器](#enhanced-editor-toggle) 已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。
+>旧版编辑器已于2024年5月30日弃用。 它不再可供使用。 您现在可以使用 [增强的查询编辑器](#enhanced-editor-toggle) 编写、验证和运行查询
 
-[!DNL Query Editor] 是Adobe Experience Platform提供的交互式工具 [!DNL Query Service]，允许您在中编写、验证和运行客户体验数据查询 [!DNL Experience Platform] 用户界面。 [!DNL Query Editor] 支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充以下位置的数据集： [!DNL Experience Platform].
+查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在中编写、验证和运行客户体验数据查询。 [!DNL Experience Platform] 用户界面。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充以下位置的数据集： [!DNL Experience Platform].
 
-有关概念和功能的更多信息 [!DNL Query Service]，请参见 [查询服务概述](../home.md). 要了解有关如何导航查询服务用户界面的更多信息，请访问 [!DNL Platform]，请参见 [查询服务UI概述](./overview.md).
-
->[!NOTE]
->
->旧版的查询编辑器不提供某些查询服务功能。 除非另有说明，否则本文档中使用的屏幕截图都是使用查询编辑器的增强版本拍摄的。 请参阅 [增强型查询编辑器](#enhanced-editor-toggle) 以了解更多详细信息。
+有关Query Service概念和功能的更多信息，请参见 [查询服务概述](../home.md). 要了解有关如何导航查询服务用户界面的更多信息，请访问 [!DNL Platform]，请参见 [查询服务UI概述](./overview.md).
 
 ## 快速入门 {#getting-started}
 
-[!DNL Query Editor] 通过连接到 [!DNL Query Service]和查询仅在此连接处于活动状态时运行。
+查询编辑器通过连接到查询服务来提供灵活的查询执行，并且查询仅在此连接处于活动状态时运行。
 
-## 访问 [!DNL Query Editor] {#accessing-query-editor}
+## 访问查询编辑器 {#accessing-query-editor}
 
-在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开 [!DNL Query Service] 工作区。 接下来，要开始编写查询，请选择 **[!UICONTROL 创建查询]** 在屏幕的右上角。 此链接可从 [!DNL Query Service] 工作区。
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 查询]** 在左侧导航菜单中打开查询服务工作区。 接下来，要开始编写查询，请选择 **[!UICONTROL 创建查询]** 在屏幕的右上角。 此链接可从查询服务工作区中的任何页面使用。
 
 ![突出显示了“创建查询”的查询工作区概述选项卡。](../images/ui/query-editor/create-query.png)
 
-### 正在连接到 [!DNL Query Service] {#connecting-to-query-service}
+### 正在连接到查询服务 {#connecting-to-query-service}
 
 查询编辑器需要几秒钟才能初始化，并在打开时连接到查询服务。 控制台将告诉您连接时间，如下所示。 如果在编辑器连接之前尝试运行查询，则会延迟执行，直到连接完成。
 
 ![初次连接时查询编辑器的控制台输出。](../images/ui/query-editor/connect.png)
 
-### 如何从运行查询 [!DNL Query Editor] {#run-a-query}
+### 如何从查询编辑器运行查询 {#run-a-query}
 
-查询执行自 [!DNL Query Editor] 以交互方式运行，这意味着如果您关闭浏览器或离开浏览器，查询将被取消。 对于通过查询输出生成数据集的查询，也是如此。
+从查询编辑器执行的查询以交互方式运行，这意味着如果关闭浏览器或离开浏览器，查询将被取消。 对于通过查询输出生成数据集的查询，也是如此。
 
-查询编辑器的增强版允许您在查询编辑器中编写多个查询并按顺序执行所有查询。 请参阅以下部分 [执行多个顺序查询](#execute-multiple-sequential-queries) 以了解更多信息。
+## 使用增强型查询编辑器创作查询 {#query-authoring}
 
-## 查询创作，使用 [!DNL Query Editor] {#query-authoring}
-
-使用 [!DNL Query Editor]，您可以编写、执行和保存客户体验数据查询。 执行或保存的所有查询 [!DNL Query Editor] 可供您组织中的所有用户使用，他们有权访问 [!DNL Query Service].
-
->[!IMPORTANT]
+>[!NOTE]
 >
->在2024年4月30日，增强型查询编辑器将成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。
+>旧版编辑器已于2024年5月30日弃用。 它不再可供使用。 您现在可以使用增强型查询编辑器来编写、验证和运行查询。
 
-## 增强的查询编辑器切换开关 {#enhanced-editor-toggle}
+使用查询编辑器，您可以编写、执行和保存客户体验数据的查询。 在查询编辑器中执行或保存的所有查询都可供贵组织中有权访问查询服务的所有用户使用。
 
->[!CONTEXTUALHELP]
->id="platform_queryService_queryEditor_enhancedEditorToggle"
->title="增强了编辑器切换"
->abstract="可在查询编辑器的旧版本与增强版本之间切换。尽管增强版本更好地支持辅助功能和多主题，但默认情况下仍启用旧版本。要详细了解这些更改，请参阅文档。"
+### 设置 {#settings}
 
-通过UI切换，您可以在查询编辑器的旧版本和增强版本之间切换。 尽管增强版本更好地支持辅助功能和多主题，但默认情况下仍启用旧版本。启用增强版本以访问查询编辑器设置。
-
-![突出显示具有增强型查询编辑器切换的查询编辑器。](../images/ui/query-editor/enhanced-query-editor-toggle.png)
-
-激活切换开关可将编辑器切换到浅色主题，并改善语法的清晰度。 查询编辑器输入字段上方还会显示一个设置图标，该图标包含自动完成切换功能。 从设置图标中，您可以启用深色主题或禁用/启用自动完成。
+查询编辑器输入字段上方的设置图标包括用于启用/禁用深色主题或禁用/启用自动完成的选项。
 
 >[!TIP]
 >
->使用增强型查询编辑器，您可以 [!UICONTROL 禁用语法自动完成] 在创作查询时不会失去进度。 通常，如果在编辑时禁用自动完成功能，则对查询所做的所有更改都将丢失。
+>您可以 [!UICONTROL 禁用语法自动完成] 在创作查询时不会失去进度。
 
 要启用深色或浅色主题，请选择设置图标(![设置图标。](../images/ui/query-editor/settings-icon.png))，然后显示下拉菜单中的选项。
 
 ![突出显示带有设置图标和启用深色主题下拉菜单选项的查询编辑器。](../images/ui/query-editor/query-editor-settings.png)
 
+#### 自动完成 {#auto-complete}
+
+查询编辑器会在您编写查询时，自动为查询建议潜在的SQL关键字以及表或列详细信息。 默认情况下，自动完成功能处于启用状态，可以随时从查询编辑器设置中禁用或启用该功能。
+
+自动完成配置设置针对每个用户，并在该用户的连续登录中被记住。 禁用此功能会阻止处理多个元数据命令，并提供通常有利于作者在编辑查询时提高速度的建议。
+
+<!-- Currently editing the auto complete setting info. -->
+
+
+
 ### 执行多个顺序查询 {#execute-multiple-sequential-queries}
 
-查询编辑器的增强版允许您在查询编辑器中编写多个查询并按顺序执行所有查询。
-
-按顺序执行多个查询，每个查询都会生成日志条目。 但是，查询编辑器控制台中只显示第一个查询的结果。 如果需要排除问题或确认已执行的查询，请查看查询日志。 请参阅 [查询日志文档](./query-logs.md) 以了解更多信息。
+使用增强型查询编辑器编写多个查询并按顺序执行所有查询。 按顺序执行多个查询，每个查询都会生成日志条目。 但是，查询编辑器控制台中只显示第一个查询的结果。 如果需要排除问题或确认已执行的查询，请查看查询日志。 请参阅 [查询日志文档](./query-logs.md) 以了解更多信息。
 
 >[!NOTE]
 > 
@@ -117,7 +110,7 @@ ht-degree: 2%
 
 为了最大限度地缩短开发时间，建议您开发对返回行数具有限制的查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询是否生成预期输出后，删除限制并使用运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。
 
-## 在中编写工具 [!DNL Query Editor] {#writing-tools}
+## 在查询编辑器中编写工具 {#writing-tools}
 
 - **自动语法突出显示：** 使读取和组织SQL更容易。
 
@@ -147,55 +140,11 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ![The Query Editor with [!UICONTROL Undo text] and the SQL statements highlighted.](../images/ui/query-editor/undo-text.png) -->
 
-### 复制SQL {#copy-sql}
+### 复制 SQL {#copy-sql}
 
 选择复制图标以将SQL从查询编辑器复制到剪贴板。 此复制功能可用于查询模板和查询编辑器中新创建的查询。
 
 ![查询工作区中有一个示例查询模板，该模板中高亮显示了复制图标。](../images/ui/query-editor/copy-sql.png)
-
-### 自动完成UI配置切换 {#auto-complete}
-
-此 [!DNL Query Editor] 在编写查询时，自动为查询建议可能的SQL关键字以及表或列详细信息。 默认情况下，自动完成功能处于启用状态，通过选择 [!UICONTROL 语法自动完成] 切换到“查询编辑器”的右上方。
-
-自动完成配置设置针对每个用户，并在该用户的连续登录中被记住。
-
->[!NOTE]
->
->语法自动完成切换开关仅适用于旧版本的查询编辑器。
-
-![突出显示具有语法自动完成切换的查询编辑器。](../images/ui/query-editor/auto-complete-toggle.png)
-
-禁用此功能会阻止处理多个元数据命令，并提供通常有利于作者在编辑查询时提高速度的建议。
-
-使用切换启用自动完成功能时，在短暂暂停后即可获得有关表和列名称以及SQL关键字的建议建议。 控制台中查询编辑器下方的成功消息指示该功能处于活动状态。
-
-如果禁用自动完成功能，则需要刷新页面才能使功能生效。 禁用时，将显示一个确认对话框，其中包含三个选项 [!UICONTROL 语法自动完成] 切换：
-
-- [!UICONTROL 取消]
-- [!UICONTROL 保存更改并刷新]
-- [!UICONTROL 刷新而不保存更改]
-
->[!IMPORTANT]
->
->如果您在禁用此功能时正在编写或编辑查询，则必须在刷新页面之前保存对查询所做的任何更改，否则您的所有进度都将丢失。
-
-![用于禁用自动完成功能的确认对话框。](../images/ui/query-editor/confirmation-dialog.png)
-
-要禁用自动完成功能，请选择相应的确认选项。
-
-### 错误检测 {#error-detection}
-
-[!DNL Query Editor] 在编写查询时自动验证该查询，提供通用SQL验证和特定执行验证。 如果查询下方出现红色下划线（如下图所示），则表示查询中存在错误。
-
-<!-- ... Image below needs updating couldn't replicate the effect -->
-
-![查询编辑器输入以红色下划线显示SQL以指示错误。](../images/ui/query-editor/syntax-error-highlight.png)
-
-检测到错误时，您可以通过将鼠标悬停在SQL代码上来查看特定错误消息。
-
-<!-- ... Image below needs updating couldn't replicate the effect -->
-
-![带有错误消息的对话框。](../images/ui/query-editor/linting-error.png)
 
 ### 查询详细信息 {#query-details}
 
@@ -221,7 +170,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 保存查询 {#saving-queries}
 
-此 [!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理它。 要保存查询，请选择 **[!UICONTROL 保存]** 在的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用为查询提供一个名称 **[!UICONTROL 查询详细信息]** 面板。
+查询编辑器提供保存功能，允许您保存查询并稍后处理。 要保存查询，请选择 **[!UICONTROL 保存]** 位于查询编辑器的右上角。 在保存查询之前，必须使用为查询提供一个名称 **[!UICONTROL 查询详细信息]** 面板。
 
 >[!NOTE]
 >
@@ -233,7 +182,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 可以从“查询编辑器”安排已另存为模板的查询。 计划查询允许您以自定义节奏自动运行查询。 您可以根据频率、日期和时间安排查询，还可以在必要时为结果选择输出数据集。 也可以通过UI禁用或删除查询计划。
 
-在查询编辑器中设置计划。 使用查询编辑器时，您只能将计划添加到已创建和保存的查询中。 同样的限制不适用于 [!DNL Query Service] API。
+在查询编辑器中设置计划。 使用查询编辑器时，您只能将计划添加到已创建和保存的查询中。 该限制不适用于查询服务API。
 
 >[!NOTE]
 >
@@ -246,21 +195,21 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 如何查找以前的查询 {#previous-queries}
 
-从执行的所有查询 [!DNL Query Editor] 将在日志表中捕获。 您可以使用中的搜索功能 **[!UICONTROL 日志]** 选项卡查找查询执行。 已保存的查询列在 **[!UICONTROL 模板]** 选项卡。
+从“查询编辑器”执行的所有查询都在“日志”表中捕获。 您可以使用中的搜索功能 **[!UICONTROL 日志]** 选项卡查找查询执行。 已保存的查询列在 **[!UICONTROL 模板]** 选项卡。
 
 如果计划了查询，则 [!UICONTROL 计划的查询] 选项卡提高了这些查询作业在UI中的可见性。 请参阅 [查询监控文档](./monitor-queries.md) 以了解更多信息。
 
 >[!NOTE]
 >
->日志不会保存未执行的查询。 为了让查询在中可用 [!DNL Query Service]，它必须运行或保存在中 [!DNL Query Editor].
+>日志不会保存未执行的查询。 为了使查询在查询服务中可用，必须在查询编辑器中运行或保存查询。
 
 ## 使用查询编辑器执行查询 {#executing-queries}
 
-在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL或从以下位置加载以前的查询： **[!UICONTROL 日志]** 或 **[!UICONTROL 模板]** 选项卡，然后选择 **播放**. 查询执行的状态显示在 **[!UICONTROL 控制台]** 选项卡，并且输出数据显示在 **[!UICONTROL 结果]** 选项卡。
+要在查询编辑器中运行查询，您可以在编辑器中输入SQL或从以下位置加载上一个查询： **[!UICONTROL 日志]** 或 **[!UICONTROL 模板]** 选项卡，然后选择 **播放**. 查询执行的状态显示在 **[!UICONTROL 控制台]** 选项卡，并且输出数据显示在 **[!UICONTROL 结果]** 选项卡。
 
 ### 控制台 {#console}
 
-控制台提供有关以下项目的状态和操作的信息： [!DNL Query Service]. 控制台显示与的连接状态 [!DNL Query Service]、正在执行的查询操作，以及由此查询生成的任何错误消息。
+控制台提供有关查询服务的状态和操作的信息。 控制台显示与查询服务的连接状态、正在执行的查询操作以及这些查询产生的任何错误消息。
 
 ![查询编辑器控制台的控制台选项卡。](../images/ui/query-editor/console.png)
 
@@ -270,7 +219,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 ### 查询结果 {#query-results}
 
-查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，根据您选择的结果显示50到500行结果 [结果计数](#result-count). 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从中的查询结果生成数据集的说明 [!DNL Query Editor].
+查询完成后，结果将显示在 **[!UICONTROL 结果]** 选项卡，在 **[!UICONTROL 控制台]** 选项卡。 此视图显示查询的表格输出，根据您选择的结果显示50到500行结果 [结果计数](#result-count). 此视图允许您验证查询是否生成预期的输出。 要使用您的查询生成数据集，请删除对返回行的限制，然后运行查询 `CREATE TABLE tablename AS SELECT` 以使用输出生成数据集。 请参阅 [生成数据集教程](./create-datasets.md) 有关如何从查询编辑器中的查询结果生成数据集的说明。
 
 ![查询编辑器控制台的“结果”选项卡显示查询运行的结果。](../images/ui/query-editor/query-results.png)
 
@@ -278,12 +227,18 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 
 查询服务为跨行业和业务场景的各种用例提供解决方案。 这些实际示例展示了服务在满足各种需求方面的灵活性和影响。 至 [了解查询服务如何为您的特定业务需求带来价值](../use-cases/overview.md)中，了解用例文档的完整集合。 了解如何使用查询服务提供洞察信息和解决方案，以增强运营效率和业务成功。
 
-## 运行查询 [!DNL Query Service] 教程视频 {#query-tutorial-video}
+<!-- This video is from 2019. The logic is sounds but the workflow is too outdated. -->
+
+## 使用查询服务运行查询教程视频 {#query-tutorial-video}
 
 以下视频介绍了如何在Adobe Experience Platform界面和PSQL客户端中运行查询。 此视频还演示了如何在XDM对象中使用单个属性、Adobe定义的函数，以及如何使用CREATE TABLE AS SELECT (CTAS)查询。
+
+>[!NOTE]
+>
+>视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 后续步骤
 
-现在您知道了中提供了哪些功能 [!DNL Query Editor] 以及如何导航应用程序，您可以直接在中开始创作自己的查询 [!DNL Platform]. 有关在中针对数据集运行SQL查询的详细信息 [!DNL Data Lake]，请参阅指南，网址为 [正在运行查询](../best-practices/writing-queries.md).
+现在您已经知道查询编辑器中提供了哪些功能以及如何导航应用程序，您可以开始直接在中创作自己的查询 [!DNL Platform]. 有关在中针对数据集运行SQL查询的详细信息 [!DNL Data Lake]，请参阅指南，网址为 [正在运行查询](../best-practices/writing-queries.md).

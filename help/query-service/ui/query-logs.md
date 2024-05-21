@@ -2,9 +2,9 @@
 title: 查询日志
 description: 每次执行查询时都会自动生成查询日志，可以通过UI帮助进行疑难解答。 本文档概述了如何使用及导航UI的“查询服务日志”部分。
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 445738f78f44ab8eb1632dbda82c4dd69dbebefd
+source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Adobe Experience Platform维护通过API和UI发生的所有查询事件的日�
 
 日志文件由任何查询事件自动生成，并包含所使用的SQL、查询状态、所用时间和上次运行时间等信息。 您可以使用查询日志数据作为功能强大的工具，来排查查询效率低下或存在问题的情况。 更全面的日志信息作为审核日志功能的一部分保留，并且可在以下位置找到： [审核日志文档](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## 检查查询日志
+## 检查查询日志 {#check-query-logs}
 
 要检查查询日志，请选择 [!UICONTROL 查询] 导航到查询服务工作区，然后选择 [!UICONTROL 日志] 从可用选项删除。
+
+>[!NOTE]
+>
+>默认情况下，系统查询和仪表板查询都被排除。 请参阅 [过滤器](#filter-logs) 有关如何根据您的设置优化显示的日志的信息，请参阅部分。
 
 ![带有查询和日志的Platform UI突出显示。](../images/ui/query-log/logs.png)
 
@@ -77,11 +81,12 @@ A [每个日志表列的说明](./overview.md#log) 可以在查询服务概述�
 
 ![查询日志工作区，其中显示并突出显示筛选选项。](../images/ui/query-log/log-filter-settings.png)
 
-下表证明了每个过滤器的说明。
+下表提供了每个过滤器的说明。
 
-| 过滤器 | 描述 |
+| 筛选器 | 描述 |
 | ------ | ----------- |
 | [!UICONTROL 排除仪表板查询] | 此复选框默认处于启用状态，它不包括用于生成分析的查询生成的日志。 这些查询是系统生成的，模糊了用户生成的日志的记录，而这些日志是监控、管理和故障排除所必需的。 要查看系统生成的日志，请取消选中复选框。 |
+| [!UICONTROL 排除系统查询] | 此复选框默认处于启用状态，它不包括系统生成的日志。 系统生成的查询通常包括后台任务或维护操作，可能与用户监控、管理或故障排除目的无关。 如果需要检查系统生成的日志，请取消选中此复选框以将其包含在日志视图中。 |
 | [!UICONTROL 开始日期] | 要筛选在特定时间段内创建的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 开始日期] 部分。 |
 | [!UICONTROL 完成日期] | 要筛选在特定时间段内完成的查询的日志，请设置 [!UICONTROL 开始] 和 [!UICONTROL 结束] 中的日期 [!UICONTROL 完成日期] 部分。 |
 | [!UICONTROL 状态] | 要根据以下条件筛选日志 [!UICONTROL 状态] 在查询中，选择相应的单选按钮。 可用的选项包括 [!UICONTROL 已提交]， [!UICONTROL 进行中]， [!UICONTROL 成功]、和 [!UICONTROL 失败]. 您一次只能基于一个状态条件筛选日志。 |
