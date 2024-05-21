@@ -3,9 +3,9 @@ title: 在UI中创建Google PubSub源连接
 description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: 563ad16304894cab1ee1ead06f63a5b3f65c4ec2
+source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1098'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,8 @@ ht-degree: 1%
 
 ### 收集所需的凭据
 
-为了连接 [!DNL PubSub] 对于Platform，必须为以下凭据提供有效值：
+您必须提供下面列出的连接属性的值才能连接 [!DNL PubSub] 帐户到Experience Platform。 有关身份验证和先决条件设置的详细信息，请参阅 [[!DNL PubSub source] 概述](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
+
 
 >[!BEGINTABS]
 
@@ -37,7 +38,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 项目 ID | 验证时需要项目ID [!DNL PubSub]. |
+| 项目编号 | 验证时需要项目ID [!DNL PubSub]. |
 | 凭据 | 身份验证所需的凭据 [!DNL PubSub]. 您必须确保从凭据中删除空格后放入完整的JSON文件。 |
 
 >[!TAB 主题和基于订阅的身份验证]
