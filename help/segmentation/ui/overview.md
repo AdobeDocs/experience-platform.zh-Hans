@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 5182ee22ae7952f74c29969c0d484397a2850a4c
+source-git-commit: 4c1f29e61ee716a9655bc389bbe08b386ddd643b
 workflow-type: tm+mt
-source-wordcount: '4274'
-ht-degree: 3%
+source-wordcount: '4334'
+ht-degree: 2%
 
 ---
 
@@ -85,7 +85,11 @@ ht-degree: 3%
 | [!UICONTROL 删除] | 受众构成、自定义上传、分段服务 | 删除所选受众。 在下游目标中使用或属于其他受众依赖对象的受众 **无法** 将被删除。 有关删除受众的更多信息，请阅读 [分段常见问题解答](../faq.md#lifecycle-states). |
 | [!UICONTROL 添加到包] | 受众构成、自定义上传、分段服务 | 在沙盒之间移动受众。 有关此功能的详细信息，请阅读 [沙盒工具指南](../../sandboxes/ui/sandbox-tooling.md). |
 
-页面顶部提供了以下选项：将所有受众添加到计划、导入受众、创建新受众以及查看更新频率的细分。
+>[!IMPORTANT]
+>
+>在删除受众之前，请确保受众是 **非** 在基于帐户的受众中用作组件或在Adobe Journey Optimizer中使用。
+
+页面顶部提供了一些选项，用于将所有受众添加到计划、导入受众、创建新受众以及查看受众评估摘要。
 
 切换 **[!UICONTROL 计划所有受众]** 将启用计划分段。 有关计划分段的更多信息，请参阅 [本用户指南的计划分段部分](#scheduled-segmentation).
 
@@ -95,13 +99,13 @@ ht-degree: 3%
 
 ![受众浏览页面上的顶部导航栏会突出显示。 此栏包含一个用于创建受众的按钮和一个用于导入受众的按钮。](../images/ui/overview/browse-audiences-top.png)
 
-您可以选择 **[!UICONTROL 更新频率摘要]** 显示显示更新频率的饼图。
+您可以选择 **[!UICONTROL 评估摘要]** 显示一个饼图，其中显示了受众评估的摘要。
 
-![更新频率摘要按钮突出显示。](../images/ui/overview/browse-audience-update-frequency-summary.png)
+![将突出显示“Evaluation summary（评估摘要）”按钮。](../images/ui/overview/browse-audience-evaluation-summary.png)
 
-此时将显示饼图，其中按更新频率显示了受众的细分。 图表在中间显示受众总数，在底部显示每日批量评估时间（UTC时区）。 如果将鼠标悬停在受众的不同部分上，则会显示属于每种更新频率类型的受众数量。
+此时将显示饼图，其中按受众评估显示了受众的细分。 图表在中间显示受众总数，在底部显示每日批量评估时间（UTC时区）。 如果将鼠标悬停在受众的不同部分上，则会显示属于每种更新频率类型的受众数量。
 
-![更新频率饼图会突出显示，同时还会显示批处理分段评估时间。](../images/ui/overview/update-frequency-chart.png)
+![突出显示受众评估饼图，并显示批量分段评估时间。](../images/ui/overview/evaluation-summary.png)
 
 ### 自定义 {#customize}
 
@@ -203,7 +207,7 @@ ht-degree: 3%
 | [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可用选项包括分段服务、自定义上传、受众组合和Audience Manager。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择 **[!UICONTROL 具有任何标记]** 和 **[!UICONTROL 具有所有标记]**. 时间 **[!UICONTROL 具有任何标记]** 选中，则过滤的受众将包括 **任意** 已添加的标记的URL编号。 时间 **[!UICONTROL 具有所有标记]** ，则过滤的受众必须包括 **所有** 已添加的标记的URL编号。 |
 | [!UICONTROL 生命周期状态] | 可让您根据受众的生命周期状态进行过滤。 可用选项包括 [!UICONTROL 已删除]， [!UICONTROL 草稿]， [!UICONTROL 不活动]、和 [!UICONTROL 已发布]. |
-| [!UICONTROL 更新频率] | 可让您根据受众的更新频率进行过滤。 可用选项包括 [!UICONTROL 已计划]， [!UICONTROL 连续]、和 [!UICONTROL 按需]. |
+| [!UICONTROL 更新频率] | 可让您根据受众的更新频率（评估方法）进行过滤。 可用选项包括 [!UICONTROL 已计划]， [!UICONTROL 连续]、和 [!UICONTROL 按需]. |
 | [!UICONTROL 创建者] | 允许您根据创建受众的人员进行筛选。 |
 | [!UICONTROL 创建日期] | 可让您根据受众的创建日期进行筛选。 您可以选择创建受众时要过滤的日期范围。 |
 | [!UICONTROL 修改日期] | 可让您根据受众的上次修改日期进行筛选。 您可以选择上次修改受众时要过滤的日期范围。 |
@@ -329,6 +333,10 @@ ht-degree: 3%
 ![此时将显示“区段生成器”工作区。](../images/ui/overview/segment-builder.png)
 
 ### 导入受众 {#import-audience}
+
+>[!IMPORTANT]
+>
+>要导入外部生成的受众，您可以 **必须** 具有以下权限： [!UICONTROL 查看区段]， [!UICONTROL 管理区段]、和 [!UICONTROL 导入受众]. 有关这些权限的详细信息，请参阅 [访问控制概述](../../access-control/home.md#permissions).
 
 您可以选择 **[!UICONTROL 导入受众]** 导入外部生成的受众。
 
