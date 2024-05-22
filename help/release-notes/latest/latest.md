@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明（2024 年 5 月）
 description: Adobe Experience Platform 的 2024 年 5 月发行说明。
-source-git-commit: 85acffec03986cf56aeba6b8973ac1edf56a9cd6
+source-git-commit: 58de22b51bc721ec584b11e3f87c0ee210c0add5
 workflow-type: tm+mt
-source-wordcount: '1546'
-ht-degree: 20%
+source-wordcount: '1596'
+ht-degree: 19%
 
 ---
 
@@ -71,9 +71,9 @@ Adobe Experience Platform 数据治理是一系列策略和技术，用于管理
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 重新排序批处理目标的映射字段 | 现在，您可以通过拖放 [映射步骤](../../destinations/ui/activate-batch-profile-destinations.md#mapping). UI中映射字段的顺序反映了导出CSV文件中列的顺序（从上到下），其中顶行是CSV文件中最左侧的列。 |
+| 重新排序批处理目标的映射字段 | 现在，您可以通过拖放 [映射步骤](../../destinations/ui/activate-batch-profile-destinations.md#mapping). UI中映射字段的顺序反映了导出CSV文件中列的顺序（从上到下），其中顶行是CSV文件中最左侧的列。 <br> ![有关如何对映射重新排序的视图。](../2024/assets/may/reorder-mappings.gif "有关如何对映射重新排序的视图。"){width="100" zoomable="yes"} |
 | 预先为批处理目标选择的默认导出计划 | Experience Platform现在会自动为每个文件导出设置默认计划。 请参阅相关文档 [计划受众导出](../../destinations/ui/activate-batch-profile-destinations.md#scheduling) 了解如何修改默认计划。 |
-| 编辑批量目标的多个受众激活计划 | 您现在可以从以下网站编辑多个受众的激活计划： [目标详细信息页面](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). |
+| 编辑批量目标的多个受众激活计划 | 您现在可以从编辑导出到批处理（基于文件）目标的多个受众的激活计划 **[!UICONTROL 激活数据]** 选项卡 [目标详细信息页面](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). <br> ![查看如何选择多个受众并编辑文件导出计划。](../2024/assets/may/bulk-edit-schedule.gif "查看如何选择多个受众并编辑文件导出计划。"){width="100" zoomable="yes"} |
 | 根据需要将多个受众导出到批处理目标 | 您现在可以通过，选择多个受众并将其导出到批处理目标 [按需导出文件](../../destinations/ui/export-file-now.md) 功能。 |
 
 {style="table-layout:auto"}
