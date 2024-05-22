@@ -5,9 +5,9 @@ badge: Beta 版
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 6beaefb23f4deb382b7844fcf58efbd72b1da2ec
+source-git-commit: 65714e2b18dc787abe074e8448aa1d640c867338
 workflow-type: tm+mt
-source-wordcount: '3122'
+source-wordcount: '3042'
 ht-degree: 0%
 
 ---
@@ -80,13 +80,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 * [!UICONTROL 什么是架构？]
 * [!UICONTROL 告诉我一些Real-Time CDP的常见用例]
 
-![AI Assistant的“开始使用的想法”部分。](./images/ai-assistant/ideas-to-get-started.png)
-
-要与AI Assistant交互，请使用输入框键入查询或命令。 您也可以使用(**`+`**)符号来使用自动完成功能和书签图标来访问您加入书签的查询和命令。
-
-![AI Assistant输入框突出显示。](./images/ai-assistant/interact.png)
-
-## 用例示例：使用AI Assistant加快模式创建过程
+## AI助手UI指南
 
 >[!NOTE]
 >
@@ -104,97 +98,137 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 从AI助手收到响应后，您可以从多个选项中进行选择，以确定如何继续。
 
-### 保存查询 {#save-your-query}
+### AI Assistant功能 {#features}
 
-+++选择以查看如何保存查询的示例
+此部分概述在Experience Platform工作流中可以使用的AI Assistant的各种功能。
 
-要保存查询，请选择问题旁边的书签图标。
+<!-- 
+### Save your query {#save-your-query}
 
-![选定书签的屏幕截图。](./images/ai-assistant/save-your-query.png)
++++Select to view an example of how to save a query
 
-要访问已保存的查询，请选择输入框下方的书签图标，然后选择要运行的查询。
+To save your query, select the bookmark icon beside your question.
 
-![书签图标的屏幕截图和已保存查询的列表。](./images/ai-assistant/bookmarks.png)
+![Screenshot of a selected bookmark.](./images/ai-assistant/save-your-query.png)
 
-+++
+To access your saved queries, select the bookmark icon below the input box, then select the query you would like to run.
+
+![Screenshot of bookmark icon and a list of saved queries.](./images/ai-assistant/bookmarks.png)
+
++++ -->
 
 ### 在沙盒中查看数据 {#view-data-in-your-sandbox}
 
+根据您的查询，AI Assistant会提供有关沙盒中数据的其他信息。 要查看查询响应如何应用于您的特定沙盒，请选择 **[!UICONTROL 在您的沙盒中].**
+
+在查看与沙盒相关的数据时，AI Assistant可能会提供显示查询数据的特定UI页面的直接链接。
+
 +++选择以查看示例
 
-根据您的查询，AI Assistant会提供有关沙盒中数据的其他信息。 要查看查询响应如何应用于沙盒，请选择 **[!UICONTROL 在您的沙盒中].**
+在此示例中，AI Assistant返回有关沙盒中现有XDM架构的其他信息，包括它们的总计数和五个最常用的字段。
 
-在此步骤中，AI助手可以提供指向某些相关对象的UI页面的直接链接。 在以下示例中，AI Assistant提供到 [!UICONTROL 架构] 和 [!UICONTROL 区段] UI页面。
-
-![“在您的沙盒中”选项的屏幕截图。](./images/ai-assistant/in-your-sandbox.png)
+![将打开“在沙盒中”下拉窗口，显示有关架构的其他信息。](./images/ai-assistant/in-your-sandbox.png)
 
 +++
 
-### 验证响应 {#verify-the-response}
+### 查看引文 {#view-citations}
+
+您可以通过查看每个答案中可用的引文来验证AI助手返回给您的响应。
 
 +++选择以查看如何显示源的示例
 
-要查看引文并验证AI助理的响应，请选择 **[!UICONTROL 显示源]**. AI Assistant提供可证实其响应的文档的链接。 您还可以使用AI Assistant在下提供的查询 [!UICONTROL 相关建议] 以进一步浏览与原始查询相关的主题。
+要查看引文并验证AI助理的响应，请选择 **[!UICONTROL 显示源]**.
 
-![“显示源”屏幕截图。](./images/ai-assistant/show-sources.png)
+![已选择“显示源”的AI助手响应。](./images/ai-assistant/show-sources.png)
+
+AI Assistant会更新界面，并为您提供可证实初始响应的文档的链接。 此外，启用引用后，AI Assistant将更新响应以包含脚注，以指示引用所提供文档的答案的特定部分。
+
+![AI Assistant提供的概念问题引文的下拉菜单。](./images/ai-assistant/citations.png)
+
+您还可以使用AI Assistant在下提供的查询 **[!UICONTROL 相关建议]** 以进一步浏览与原始查询相关的主题。
+
+![AI助手提供的查询列表作为相关建议。](./images/ai-assistant/related-suggestions.png)
 
 +++
 
 ### 使用情况数据和可视化图表 {#usage-data-and-visualization}
 
+您必须在活动的沙盒中，以便AI Assistant能够充分响应有关您的使用情况数据的问题。
+
 +++选择以查看使用数据问题和数据可视化的示例
 
-要让AI Assistant响应有关您组织内使用情况数据的查询，您必须位于活动沙盒中。
+在下面的示例中，AI助手被询问以下查询： **“向我显示使用Amazon S3源创建的数据流”**， AI助手随后会使用一个表进行响应，该表列出了您的数据流及其对应的ID。 要查看整个数据表，请选择右上角的展开图标。
 
-在以下示例中，AI助手随以下查询一起提供： **“向我显示包含超过1000个配置文件的区段定义，并包含激活状态。”** 然后，AI Assistant会使用图表进行响应，该图表可视化您的区段和配置文件数据。
+![跟进有关使用情况数据的问题。](./images/ai-assistant/usage-data-question.png)
 
-![跟进有关使用情况数据的问题。](./images/ai-assistant/data-usage-question.png)
+此时将显示表的展开视图，其中会根据查询参数为您提供更加全面的数据流列表。
 
-您可以将鼠标悬停在单个栏上以查看特定数据。 您还可以选择展开图标以查看图表的大图。
+![展开表的视图。](./images/ai-assistant/table.png)
 
-![阐述数据可视化的后续问题。](./images/ai-assistant/data-visualization.png)
+当收到使用数据问题提示时，AI Assistant会提供它如何计算答案的说明。 在以下示例中，AI Assistant概述了为识别使用创建的数据流而采取的步骤。 [!DNL Amazon S3] 源。
 
-此时将显示可视化图表的展开视图。 您可以使用扩展模式进一步检查数据，当返回具有大量列的可视化图表时，扩展模式特别有用。
+![跟进有关区段定义的问题，该问题说明AI Assistant如何计算答案。](./images/ai-assistant/answer-explained.png)
 
-![扩展图表。](./images/ai-assistant/chart-expanded.png)
-
-当收到使用数据问题提示时，AI Assistant会提供它如何计算答案的说明。 在以下示例中，AI Assistant概述了为显示具有1000多个用户档案的区段定义及其各自的激活状态而采取的步骤。
-
-![跟进有关区段定义的问题，该问题说明AI Assistant如何计算答案。](./images/ai-assistant/results-explained.png)
-
-您还可以为查询提供筛选器和修改，并且可以指示AI Assistant根据您包括的筛选器呈现其结果。 例如，您可以要求AI助手按其创建日期的顺序显示计数区段定义的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
+您还可以为查询提供筛选器和修改，并且可以指示AI Assistant根据您包括的筛选器呈现其结果。 例如，您可以要求AI Assistant按区段定义的创建日期顺序显示区段定义计数的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
 
 +++
 
 ### 使用自动完成 {#use-auto-complete}
 
-+++选择以查看自动完成的示例
-
 您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：受众、架构、数据集、源和目标。
+
++++选择以查看自动完成的示例
 
 您可以通过包含加号(**`+`**)。 作为替代方法，您还可以选择加号(**`+`**)，它位于文本输入框底部。 此时将显示一个窗口，其中包含来自沙盒的推荐数据对象列表。
 
-![自动完成示例](./images/ai-assistant/auto-complete-one.png)
-
-接下来，选择要查询的数据对象以完成问题，然后提交问题。
-
-![自动填写问题与答案的示例](./images/ai-assistant/auto-complete-two.png)
+![自动完成示例](./images/ai-assistant/autocomplete.png)
 
 +++
 
 ### 使用多圈 {#use-multi-turn}
 
-+++选择以查看多圈示例
-
 您可以使用AI助手的多轮功能在体验期间进行更自然的对话。 给定情况下，AI助手能够回答后续问题。 该上下文可从较早的交互推断。
 
-在下面的示例中，AI助理需要了解当前组织的数据流总数。
++++选择以查看多圈示例
 
-![多圈示例](./images/ai-assistant/multi-turn-one.png)
+在下面的示例中，首先要求AI助手提供数据流的总数，然后要求列出最近的10个数据流。
 
-接下来，AI助手会收到另一个跟进请求。 这次，AI Assistant通过列出组织中当前存在的数据流进行响应。
+![多圈示例](./images/ai-assistant/multi-turn.png)
 
-![带问答的多圈示例](./images/ai-assistant/multi-turn-two.png)
++++
+
+## 提供反馈 {#feedback}
+
+您可以使用应答中提供的选项针对AI助手体验提供反馈。
+
+要提供反馈，请在从AI助手收到响应后选择向上拇指、向下拇指或标记，然后在提供的文本框中输入反馈。
+
+![AI助手中的反馈选项。](./images/ai-assistant/provide-feedback.png)
+
+
++++选择以查看更多示例
+
+>[!BEGINTABS]
+
+>[!TAB 竖起大拇指]
+
+选择竖起大拇指图标可就您在AI助手方面的体验提出反馈。
+
+![正反馈窗口。](./images/ai-assistant/thumbs-up.png)
+
+>[!TAB 拇指朝下]
+
+选择向下拇指图标，根据您使用AI助手时的经验提供可改进内容的反馈。 在此步骤中，您还可以提供关于您的体验的特定注释。 评论中提供的反馈每天进行审核。
+
+![负反馈窗口。](./images/ai-assistant/thumbs-down.png)
+
+>[!TAB 标志]
+
+选择标志图标以提供关于您使用AI助手体验的进一步报告。
+
+![报告结果窗口。](./images/ai-assistant/flag.png)
+
+>[!ENDTABS]
 
 +++
 
@@ -261,44 +295,6 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 {style="table-layout:auto"}
 
-## 提供反馈 {#feedback}
-
->[!BEGINSHADEBOX]
-
-**已请求您的反馈**
-
-在此Alpha阶段，邀请您就您从AI助手收到的响应提供反馈。 所有回复和提交的反馈都经过审查，以继续改进人工智能助理的经验。
-
-要提供反馈，请在从AI助手收到响应后选择竖起或竖下大拇指，然后在提供的文本框中输入反馈。 接下来，选择 **[!UICONTROL 提交反馈]** 以提交。
-
->[!ENDSHADEBOX]
-
-+++提供反馈
-
->[!BEGINTABS]
-
->[!TAB 竖起大拇指]
-
-选择竖起大拇指图标可就您在AI助手方面的体验提出反馈。
-
-![正反馈窗口。](./images/ai-assistant/thumbs-up.png)
-
->[!TAB 拇指朝下]
-
-选择向下拇指图标，根据您使用AI助手时的经验提供可改进内容的反馈。 在此步骤中，您还可以提供关于您的体验的特定注释。 评论中提供的反馈每天进行审核。
-
-![负反馈窗口。](./images/ai-assistant/thumbs-down.png)
-
->[!TAB 标志]
-
-选择标志图标以提供关于您使用AI助手体验的进一步报告。
-
-![报告结果窗口。](./images/ai-assistant/flag.png)
-
->[!ENDTABS]
-
-+++
-
 ## 其他信息 {#additional-information}
 
 请参阅本节以了解有关AIExperience Platform助手的其他信息。
@@ -315,27 +311,32 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 AI助手可能会对其功能产生不准确的印象。 它可能会错误地回答以下类型的问题：
 
-| 示例问题 | 注意 |
+| 示例问题 | 注释 |
 | --- | --- |
 | “您能回答以下问题吗？ {ENTITY}？” | 只要AI助手能够在其索引中找到引用给定实体的单个页面，它就会响应“是”。 |
 | “你知道吗 **x** 语言？” | AI助手当前仅支持英语，但可能会回答“是”，因为基础模型能够支持它。 |
 | “你能……” | AI助手可能会回答“是”，即使它不能。 |
 
-### 提示 {#tips}
+## 常见问题解答 {#faq}
 
-以下部分概述了使用AI助手时应考虑的一些提示和解决方法。
+以下是有关AI Assistant的常见问题解答列表。
 
-#### 可能会用错误的信息源回答问题
+### AI助手的信息是实时提供的吗？
 
-在某些情况下，您对使用情况数据的疑问会得到基于文档的回答。 这是因为AI Assistant可能会将您的问题错误地路由到错误的信息源。 您可以通过以下方式防止出现这种情况：
+AI Assistant响应中显示的数据每天都会更新。 这意味着响应中的数据可能比您在Experience Platform用户界面上看到的响应数据晚24小时。
 
-* 改写您的问题以使用更多类似于SQL的语言
-* 显式调用要使用的信息源。
+### AI Assistant支持哪些Adobe应用程序？
 
-有关示例，请阅读下表：
+AI Assistant支持Adobe Experience Platform、Real-time Customer Data Platform和Adobe Journey Optimizer概念问题。 对于数据使用问题，AI Assistant当前仅支持Real-Time CDP数据对象。
 
-| 错误的问题 | 好问题 | 注释 |
-| --- | --- | --- |
-| 我最大的受众是什么？ | 我最大的受众是什么？ 使用数据。 | 明确告知AI助手，您希望答案基于数据。 |
-| 我最大的受众是什么？ | 列出我最大的受众。 | 在某些情况下，“什么……”问题可能会被误认为基于文档的问题。 使用诸如“list”之类的命令更能说明您在上下文中对数据提出疑问。 |
-| 我有多少个数据集？ | 计算我的数据集。 | 最初的问题适用于受众，但可能不适用于数据集。 |
+### AI Assistant具有哪些功能？
+
+AI Assistant可以解决Adobe概念查询，并且可以回答与Experience Platform对象使用相关的问题。 （例如，“激活了多少个受众？”）。
+
+### AI Assistant能否提供有关配置文件数据的信息？
+
+不会。AI Assistant无法访问配置文件级别的数据。
+
+### 我的个人信息是否会用于AI助理的培训数据中？
+
+AI助手不使用个人信息进行培训。 请勿向AI助手提供您本人或其他任何参与方的个人信息（包括您的姓名或联系信息）。
