@@ -1,113 +1,67 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform 的 2024 年 4 月发行说明。
+title: Adobe Experience Platform 发行说明（2024 年 5 月）
+description: Adobe Experience Platform 的 2024 年 5 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 2bdac588114236c6f314217112b9afa805c1f58c
 workflow-type: tm+mt
-source-wordcount: '1895'
+source-wordcount: '1337'
 ht-degree: 17%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期： 2024年4月30日**
+**发行日期： 2024年5月21日**
 
 >[!TIP]
 >
->使用 [Adobe Experience Platform术语表](/help/landing/glossary.md) 以熟悉Real-time Customer Data Platform和Adobe Experience Platform中使用的术语。 如果找不到要查找的特定术语，请使用页面上的反馈选项来请求将新术语添加到术语表中。
+>此 [Experience PlatformAPI文档](https://developer.adobe.com/experience-platform-apis/) 现在为交互式。 直接从文档页面浏览API端点，以立即获得反馈并加快技术实施。 [了解更多](#interactive-api-documentation) 关于新功能。
 
 对Experience Platform中现有功能的更新：
 
+- [目录服务](#catalog-service)
 - [仪表板](#dashboards)
-- [数据收集](#data-collection)
-- [目标](#destinations)
-- [身份服务](#identity-service)
-- [监控](#monitoring)
+- [数据治理](#governance)
 - [查询服务](#query-service)
-- [沙盒](#sandboxes)
 - [Segmentation Service](#segmentation)
 - [源](#sources)
 
+Adobe Experience Platform中的其他更新：
+
+- [文档更新](#documentation-updates)
+
+## 目录服务 {#catalog-service}
+
+目录服务是 Adobe Experience Platform 中记录数据位置和沿袭的系统。虽然摄取到Experience Platform中的所有数据都作为文件和目录存储在数据湖中，但Catalog包含这些文件和目录的元数据和描述，以用于查找和监控目的。
+
+**新增功能或更新后的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 批量操作 | 数据集清单现在支持批量操作。 通过批量操作简化数据管理流程，并确保有效管理数据集。 使用批量操作对大量数据集同时执行多个操作以节省时间。  批量操作包括 [移至文件夹](../../catalog/datasets/user-guide.md#move-to-folders)， [编辑标记](../../catalog/datasets/user-guide.md#manage-tags)、和 [删除](../../catalog/datasets/user-guide.md#delete) 数据集。 <br> ![数据集UI工作区中的批量操作。](../2024/assets/may/bulk-actions.png "数据集UI工作区中的批量操作。"){width="100" zoomable="yes"} <br> 有关此功能的详细信息，请参阅 [数据集UI指南](../../catalog/datasets/user-guide.md#bulk-actions). |
+
+{style=“table-layout:auto”}
+
 ## 仪表板 {#dashboards}
 
-Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
+Adobe Experience Platform提供了多个功能板，您可通过这些功能板查看有关贵组织数据的重要见解，如在每日快照期间捕获的数据。
 
-**新增功能或更新后的功能**
+**新增或更新功能**
+| 功能 | 描述 | | — | — | | 扩展应用程序报表的可自定义分析 | 无缝 [将SQL分析的输出转换为可理解、业务友好的可视化格式](../../dashboards/data-distiller/customizable-insights/overview.md). 使用自定义SQL查询从各种结构化数据集进行精确的数据操作和创建动态图表。 您可以使用query pro模式执行复杂的SQL分析，然后通过自定义仪表板上的图表与非技术用户共享此分析或将它们导出为CSV文件。 |
 
-| 功能 | 描述 |
-| --- | --- |
-| Real-time Customer Data Platform B2B见解 | 浏览预配置的 [关于客户和机会的Real-Time CDP B2B数据见解](../../dashboards/insights/account-profiles.md) 帮助您了解数据并告知业务决策。 您还可以 [使用Real-Time CDP B2B数据模型构建您自己的见解](../../dashboards/data-models/cdp-insights-data-model-b2c.md) 用于可视化和浏览您的数据，并将您的自定义可视化保存在仪表板中。 |
+{style=“table-layout:auto”}
 
-{style="table-layout:auto"}
+## 数据治理 {#governance}
 
-有关仪表板的详细信息，包括如何授予访问权限和创建自定义构件，请首先阅读[仪表板概述](../../dashboards/home.md)。
+Adobe Experience Platform 数据治理是一系列策略和技术，用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策。它在以下方面发挥着关键作用 [!DNL Experience Platform] 在各个级别，包括编目、数据谱系、数据使用标签、数据访问策略和对营销活动数据的访问控制。
 
-## 数据收集 {#data-collection}
-
-Adobe Experience Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Experience PlatformEdge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
-
-**新增功能或更新后的功能**
-
-| 类型 | 功能 | 描述 |
-| --- | --- | --- |
-| 扩展 | [!DNL Acxiom Anonymous Visitor Insights] 标记扩展 | 了解您的网站访客来自何处 [!DNL Acxiom's Visitor Insights]. 通过利用地域IP查找技术， Acxiom可以查明匿名浏览器的位置。 识别之后，在他们的组织数据库中进行搜索会生成其他洞察，并会发送回浏览器。 内容创建者因此可以定制其内容以匹配这些数据点，为访客提供更加个性化和引人入胜的体验，即使他们一开始是陌生人。 |
-| 数据流 | [Edge Network 机器人检测](../../datastreams/bot-detection.md) | 源自非人类实体（如自动化程序、网页抓取程序、蜘蛛程序、脚本扫描程序）的流量，可能使识别来自人类访客的事件变得更加困难。 此类流量可能会对重要的业务量度产生负面影响，从而导致不正确的流量报表。 <br>机器人检测允许您识别由生成的事件 [Web SDK](../../web-sdk/home.md)， [移动SDK](https://developer.adobe.com/client-sdks/home/) 和 [[!DNL Server API]](../../server-api/overview.md) 由已知的蜘蛛和机器人生成。 通过为数据流配置机器人检测，您可以识别要分类为机器人事件的特定IP地址、IP范围和请求标头。 <br> 识别机器人流量可以为您提供对网站或移动应用程序上的用户活动的更准确测量。 |
-| Mobile SDK | 主要版本发布 | Mobile SDK的新主要版本已针对以下平台发布： iOS Mobile Core 5.x和兼容的iOS扩展、Android Mobile Core 3.x和兼容的Android扩展、React Native Core 6.x和兼容的React本机扩展、Flutter Core 4.x和兼容的Flutter扩展。 这些版本提供了多项新增功能和增强功能，包括支持适用于Jetpack撰写的Android SDK、支持基于Adobe Journey Optimizer代码的体验，以及正式提供了适用于Flutter的Adobe Journey Optimizer消息传送扩展。 有关更详细的发行说明，请参阅 [Mobile SDK发行说明](https://developer.adobe.com/client-sdks/home/release-notes/). |
-| Mobile SDK | 隐私 | 由于Apple的策略更新，从2024年5月1日开始，开发人员必须实施新的隐私功能才能提交到App Store。 所有使用Mobile SDK的Adobe客户，如果他们希望在5月1日后获得App Store批准，则需要升级到SDK版本5.x。 |
-| Roku SDK | Roku SDK | Roku SDK的第一个主要版本已发布，支持适用于平台Edge Network的流媒体。 |
-| 标记和事件转发 | 产品内指南 | Experience Platform [标记](../../tags/home.md) 和 [事件转发](../../tags/ui/event-forwarding/overview.md) 提供一系列新的体验，帮助您快速入门，并快速实现价值。 这些体验包括新的载入屏幕、产品内教程和工具提示。 <br>![突出显示产品内指南的事件转发。](../2024/assets/april/event-forwarding.png "模式编辑器，其中高亮显示了“Type”和“Map”值类型字段。"){width="100" zoomable="yes"}<br> |
-| Web SDK | 简化了Audience Manager客户的Web SDK采用过程 | 多项Web SDK更新现在可以简化Web SDK的使用，而无需使用适用于Experience Cloud解决方案(如Audience Manager、Analytics和Target)的Experience Data Model (XDM)。 请参阅以下指南以了解有关Audience ManagerWeb SDK采用率的更多信息： <ul><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">将用于Audience Manager的数据收集库从Audience Manager标记扩展更新为Web SDK标记扩展</li><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">将您的用于Audience Manager的数据收集库从AppMeasurementJavaScript库更新到Web SDK JavaScript库</li></ul> |
-
-{style="table-layout:auto"}
-
-<!--| Web SDK | [Streaming Media Collection support in Web SDK](../../web-sdk/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](../../web-sdk/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/en/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
-
-要了解有关数据集合的更多信息，请阅读 [数据收集概述](../../collection/home.md).
-
-## 目标 {#destinations}
-
-[!DNL Destinations] 是预先构建的与目标平台的集成，可实现从 Adobe Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例。
-
-**新增或更新的功能**{#destinations-new-updated-functionality}
-
-| 功能 | 描述 |
-| ----------- | ----------- |
-| `isRequired` 参数现在可用于Destination SDK中的嵌套客户数据字段 | 在Destination SDK中配置目标时，您现在可以 [根据需要设置嵌套的客户数据字段](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields). 这样，设置目标的用户便无法继续其激活流程，除非为该字段选择值。 |
-| 使用Web SDK设置Adobe Target目标时，边缘分段不再是强制要求 | 以前，在配置 [Adobe Target目标](/help/destinations/catalog/personalization/adobe-target-connection.md) 使用Web SDK时，必须为个性化和边缘分段启用数据流。 要求为边缘分段启用数据流 [现已删除](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream). 请注意，在将Adobe Target与Real-Time CDP结合使用时，此集成模式仅允许您从一部分个性化用例中受益。 详细了解 [按集成类型启用的用例](/help/destinations/catalog/personalization/adobe-target-connection.md#parameters). |
-| [!BADGE 测试版]{type=Informative}从激活流中删除多个受众和数据集 | 您现在可以选择并从目标激活流中删除多个受众和数据集。 请参阅 [目标详细信息](../../destinations/ui/destination-details-page.md#bulk-remove) 和 [数据集导出](../../destinations/ui/export-datasets.md) 文档，以了解更多详细信息。 |
-
-{style="table-layout:auto"}
-
-有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
-
-## 身份服务 {#identity-service}
-
-使用Adobe Experience Platform Identity Service跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而全面了解客户及其行为。
-
-**更新的功能**
+**新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 弃用 `/orgs/{ORG}/` API中的端点 | 中的以下端点 [[!DNL Identity Service] API](https://developer.adobe.com/experience-platform-apis/references/identity-service/) 已弃用：<ul><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities`</li><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities/{ID}`</li></ul> 您可以使用 `/idnamespace/identities` 和 `/idnamespace/identities/{ID}` 端点完成相同的任务，并检索组织中的所有命名空间或组织中的特定命名空间。 |
+| mTLS支持HTTP API目标和Adobe Journey Optimizer自定义操作 | 通过增强的共同传输层安全性(mTLS)协议的安全措施建立客户信任。 此 [Experience PlatformHTTP API目标](../../destinations/catalog/streaming/http-destination.md#mtls-protocol-support) 和 [Adobe Journey Optimizer自定义操作](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions) 现在向配置的端点发送数据时支持mTLS协议。 您的自定义操作或HTTP API目标中无需额外配置即可激活mTLS；当检测到启用了mTLS的端点时，此过程会自动发生。 您可以 [在此处下载Adobe Journey Optimizer公共证书](../../landing/governance-privacy-security/encryption.md#download-certificates) 和 [此处为目标服务公共证书](../../landing/governance-privacy-security/encryption.md#download-certificates).<br>请参阅 [Experience Platform数据加密文档](../../landing/governance-privacy-security/encryption.md#mtls-protocol-support) 有关将数据导出到第三方系统时网络连接协议的更多信息。 |
 
-{style="table-layout:auto"}
-
-有关Identity Service的详细信息，请阅读 [Identity服务概述](../../identity-service/home.md).
-
-## 监控 {#monitoring}
-
-使用Experience PlatformUI中的监视仪表板可监视来自源、身份服务、实时客户个人资料、受众和目标的数据的历程。
-
-**更新的功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 监控仪表板扩展 | 您现在可以根据业务用例对不同数据类型使用监控仪表板。 使用监视仪表板可监视源、受众和目标中人员、帐户和潜在客户数据类型活动。 |
-
-{style="table-layout:auto"}
-
-有关详细信息，请阅读上的指南 [使用监视仪表板](../../dataflows/ui/monitor.md).
+{style=“table-layout:auto”}
 
 ## 查询服务 {#query-service}
 
@@ -117,30 +71,12 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 
 | 功能 | 描述 |
 | --- | --- |
-| 查询隔离 | 自动隔离失败的查询执行，以防止中断并维护一致的性能。 请参阅 [查询隔离](../../query-service/ui/query-schedules.md#quarantine) 文档，以了解更多信息。 |
-| 取消查询 | 通过取消长时间运行的查询来控制查询执行并提高工作效率。请参阅 [取消查询](../../query-service/ui/user-guide.md#cancel-query) 文档，以了解更多信息。 |
-| 计划的查询警报 | 在计划查询时通过主动通知及时了解最新信息，确保高效及时的任务管理。 您可以 [创建查询时订阅警报](../../query-service/ui/query-schedules.md#alerts-for-query-status) 或使用现有计划查询的内联操作。 请参阅 [订阅具有内联操作的警报](../../query-service/ui/monitor-queries.md#alert-subscription) 文档，以了解更多信息。 |
-| 改进了计划的查询导航 | 可在查询模板和计划运行之间轻松导航，以提高工作效率。 请参阅相关文档 [查看计划的查询运行](../../query-service/ui/query-schedules.md#scheduled-query-runs) 以了解更多信息。 |
-| 扩展查询输出 | 可在控制台中访问多达500行查询结果，以更深入地分析您的数据。请参见 [结果计数](../../query-service/ui/user-guide.md#result-count) 文档，以了解更多信息。 |
-| 旧版查询编辑器失效 | 自2024年4月30日起，增强型查询编辑器已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。 请参阅 [查询编辑器用户指南](../../query-service/ui/user-guide.md) 以了解更多信息。 |
+| 已弃用旧版编辑器 | 旧版编辑器已被弃用，无法再访问。 在其位置，您可以使用 [查询编辑器的增强功能](../../query-service/ui/user-guide.md#query-authoring) 编写、验证和运行查询。 |
+| 查询运行延迟 | 通过设置查询运行延迟警报，控制计算时间。 您可以选择在特定时间段后查询状态未更改时接收警报。 只需在Platform UI中设置所需的延迟时间，即可随时了解您的查询进度。 要了解如何在UI中设置此警报，请参阅 [查询计划文档](../../query-service/ui/query-schedules.md#alerts-for-query-status) 或 [内联查询操作指南](../../query-service/ui/monitor-queries.md#query-run-delay). |
+| 简化的查询日志清单 | 现在，您可以使用改进的故障排除效率和任务监控 [简化的查询日志UI](../../query-service/ui/query-logs.md#filter-logs)： <ul><li> Platform UI现在默认从日志选项卡中排除所有“系统查询”。 </li><li> 通过取消选中来查看系统查询 **排除系统查询**. </li></ul> <br> ![查询UI工作区中的“日志”选项卡。](../2024/assets/may/query-log.png "查询UI工作区中的“日志”选项卡。"){width="100" zoomable="yes"} <br> 使用简化的查询日志UI获得更集中的视图，帮助您快速识别和分析相关日志。 |
+| 数据库选择器 | 使用新的数据库选择器下拉菜单可以 [方便地从Power BI或Tableau访问Customer Journey Analytics数据视图](../../query-service/ui/credentials.md#connect-to-customer-journey-analytics). 您现在可以直接从Platform UI中选择所需的数据库，以便更加无缝地集成BI工具。 <br> ![查询UI工作区中的“凭据”选项卡。](../2024/assets/may/database-selector.png "查询UI工作区中的“凭据”选项卡。"){width="100" zoomable="yes"} <br> |
 
-{style="table-layout:auto"}
-
-有关查询服务的详细信息，请参阅[查询服务概述](../../query-service/home.md)。
-
-## 沙盒 {#sandboxes}
-
-Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。 为了满足此需求，Experience Platform提供了可将单个Platform实例划分为多个单独的虚拟环境的沙箱，以帮助开发和改进数字体验应用程序。
-
-**新增功能或更新后的功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| [沙盒工具](../../sandboxes/ui/sandbox-tooling.md) | 使用沙盒工具执行以下操作 [导出](../../sandboxes/ui/sandbox-tooling.md#export-entire-sandbox) 将所有支持的对象类型放入完整的沙盒包中，然后 [导入](../../sandboxes/ui/sandbox-tooling.md#import-entire-sandbox) 跨各种沙盒的包以复制对象配置。 |
-
-{style="table-layout:auto"}
-
-有关沙箱的详细信息，请阅读 [沙盒概述](../../sandboxes/home.md).
+{style=“table-layout:auto”}
 
 ## Segmentation Service {#segmentation}
 
@@ -149,12 +85,10 @@ Adobe Experience Platform旨在丰富全球范围内的数字体验应用程序�
 **更新了功能**
 
 | 功能 | 描述 |
-| ------- | ----------- |
-| 受众生命周期状态 | 受众生命周期状态已得到简化，以简化生命周期管理。 要了解有关这些生命周期状态的更多信息，请阅读 [Segmentation Service常见问题](../../segmentation/faq.md#lifecycle-states). |
+| --- | --- |
+| 导入外部生成的受众 | 现在，导入外部生成的受众需要“导入受众”权限。 要了解有关权限的更多信息，请阅读 [权限UI指南](../../access-control/home.md#permissions). |
 
-{style="table-layout:auto"}
-
-有关 [!DNL Segmentation Service] 的详细信息，请查看[分段概述](../../segmentation/home.md)。
+{style=“table-layout:auto”}
 
 ## 源 {#sources}
 
@@ -162,25 +96,40 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 在Experience Platform中使用源从Adobe应用程序或第三方数据源中摄取数据。
 
-**新源**
-
-| 新源 | 描述 |
-| --- | --- |
-| [!BADGE 测试版]{type=Informational} [!DNL PathFactory] | 使用 [[!DNL PathFactory] 源](../../sources/tutorials/ui/create/marketing-automation/pathfactory.md) 要集成您的访客、会话和页面查看数据，请执行以下操作 [!DNL PathFactory] Experience Platform。 阅读 [[!DNL PathFactory] 概述](../../sources/connectors/marketing-automation/pathfactory.md) 以获取有关如何开始的信息。 |
-| [!DNL Teradata Vantage] | 使用 [[!DNL Teradata Vantage] 源](../../sources/tutorials/ui/create/databases/teradata-vantage.md) 将数据从混合多云环境摄取到Experience Platform。 阅读 [[!DNL Teradata Vantage] 概述](../../sources/connectors/databases/teradata-vantage.md) 以获取有关如何开始的信息。 |
-
-{style="table-layout:auto"}
-
-**新增功能和更新功能**
+**新增功能或更新后的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 更新了VA7中允许列表的IP地址 | 以下IP地址已添加到要添加到VA7（北美洲）允许列表中的IP地址列表： <ul><li>`20.98.198.224/29`</li><li>`20.119.28.57/32`</li><li>`20.232.89.104/29`</li><li>`20.98.195.172/32`</li><li>`172.210.218.144/28`</li></ul> 有关要添加到允许列表的IP地址的完整列表，请阅读 [IP地址允许列表文档](../../sources/ip-address-allow-list.md). |
-| 支持新的身份验证类型 [!DNL Azure Event Hubs] 源 | 您现在可以连接 [!DNL Event Hubs] 使用以下任一方式Experience Platform的源 [!DNL Azure Active Directory Authentication] 或 [!DNL Scoped Azure Active Directory Authentication]. 阅读指南： [连接 [!DNL Event Hubs] 至Experience Platform](../../sources/tutorials/ui/create/cloud-storage/eventhub.md) 以了解更多信息。 |
-| 更新至 [!DNL Data Landing Zone] 凭据检索 | 现在，您可以在源工作区中使用右边栏来检索 [!DNL Data Landing Zone] 凭据。 您现在还可以使用右边栏刷新凭据。 阅读 [[!DNL Data Landing Zone] UI指南](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md) 以了解更多信息。 |
+| 的OAuth2客户端凭据身份验证 [!DNL Salesforce] 源 | 您现在可以使用OAuth2客户端凭据来验证您的 [!DNL Salesforce] Experience Platform帐户。 阅读 [!DNL Salesforce] 源 [API指南](../../sources/tutorials/api/create/crm/salesforce.md) 和 [UI指南](../../sources/tutorials/ui/create/crm/salesforce.md) 以了解更多信息。 |
+| 支持以下项的示例数据流 [!DNL Marketo Engage] 源 | 此 [!DNL Marketo Engage] 源现在支持示例数据流。 启用示例数据流配置以限制您的摄取率，然后尝试使用Experience Platform功能而无需摄取大量数据。 有关详细信息，请阅读上的指南 [创建数据流 [!DNL Marketo Engage] 在UI中](../../sources/tutorials/ui/create/adobe-applications/marketo.md). |
+| IP地址允许列表更新 | 根据您的位置，必须向允许列表添加一组新的IP地址，才能成功使用流源。 有关新IP地址的完整列表，请阅读 [IP地址允许列表指南](../../sources/ip-address-allow-list.md). |
 
-{style="table-layout:auto"}
+{style=“table-layout:auto”}
 
-<!--| Enhanced filtering and navigation in the sources UI workspace | Use the enhanced filtering, search, and inline action tools in the sources UI workspace to streamline your workflow. <ul><li>Use filtering and search capabilities to navigate your way through sources accounts and dataflows in your organization.</li><li>Use inline actions to modify configuration settings applied to your dataflows and improve organizational workflows. You can use inline actions to apply tags, set up alerts, or create ingestion jobs on demand.</li></ul> For more information, read the guide on [filtering sources objects in the UI](../../sources/tutorials/ui/filter.md).|-->
+**新文档或更新文档**
+
+| 更新文档 | 描述 |
+| --- | --- |
+| 的文档更新 [!DNL Google PubSub] | 此 [!DNL Google PubSub] 更新了源文档，提供了完整的先决条件指南。 使用新的先决条件部分了解如何创建服务帐户、在主题或订阅级别授予权限，以及设置配置以优化您的使用 [!DNL Google PubSub] 源。 阅读 [[!DNL Google PubSub] 概述](../../sources/connectors/cloud-storage/google-pubsub.md) 以了解更多信息。 |
+
+{style=“table-layout:auto”}
 
 欲知关于来源的更多信息，请阅读 [源概述](../../sources/home.md).
+
+## 文档更新 {#documentation-updates}
+
+### 交互式Experience PlatformAPI文档 {#interactive-api-documentation}
+
+此 [Experience PlatformAPI文档](https://developer.adobe.com/experience-platform-apis/) 现在为交互式。 现在，所有API引用页面都具有 **试试看** 可用于直接在文档网站页面上测试API调用的功能。 [获取所需的身份验证凭据](/help/landing/api-authentication.md) 并开始使用功能来浏览API端点。
+
+使用此新功能来探索对API端点的请求和响应，以立即获得反馈并加快您的技术实施。 例如，访问 [标识服务API](https://developer.adobe.com/experience-platform-apis/references/identity-service/) 或 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) 端点以探索新的 **试试看** 功能。
+
+![屏幕录制，显示直接从文档网站进行的API调用。](../2024/assets/may/api-playground-demo.gif)
+
+>[!CAUTION]
+>
+>请注意，通过在文档页面上使用交互式API功能，您将对端点进行真正的API调用。 在试用生产沙盒时，请牢记这一点。
+
+### 个性化的洞察和参与 {#personalized-insights-engagement}
+
+适用于的新的端到端用例文档页面 [将一次性值发展为生命周期值](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md) 现已上线。 阅读此文档，了解如何使用Real-Time CDP和Adobe Journey Optimizer将偶尔访问您的Web资产的用户转化为忠诚客户。
