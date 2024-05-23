@@ -1,7 +1,8 @@
 ---
 title: applyResponse
 description: 使用来自Edge Network的响应初始化Web SDK。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 0653b8f7-33f0-43a1-97f5-59a51270f660
+source-git-commit: 74725546163f0807d3188aff5b5ffda9b8d6350b
 workflow-type: tm+mt
 source-wordcount: '308'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # `applyResponse`
 
-此 `applyResponse` 命令允许您根据来自Edge Network的响应执行各种操作。 它通常用于混合部署，其中服务器会对Edge Network进行初始调用。 此命令从该调用中获取响应并在浏览器中初始化Web SDK。
+此 `applyResponse` 命令允许您根据Edge Network的响应执行各种操作。 它通常用于混合部署，其中服务器会对Edge Network进行初始调用。 此命令从该调用中获取响应并在浏览器中初始化Web SDK。
 
 ## 使用Web SDK标记扩展应用响应
 
@@ -31,11 +32,11 @@ ht-degree: 0%
 
 * **`renderDecisions`**：一个布尔值，强制Web SDK呈现任何符合自动呈现条件的个性化内容。 与 [`renderDecisions`](sendevent/renderdecisions.md) 在 [`sendEvent`](sendevent/overview.md) 命令。
 * **`responseHeaders`**：字符串标头名称到字符串标头值的映射。
-* **`responseBody`**：必填。 从服务器调用到Edge Network的JSON响应主体。
+* **`responseBody`**：必填。 来自对Edge Network的服务器调用的JSON响应主体。
 * **`personalization.sendDisplayEvent`**：一个布尔值，它的操作与 [`personalization.sendDisplayEvent`](sendevent/personalization.md) 在 `sendEvent` 命令。
 
 ```js
-allow("applyResponse",{
+alloy("applyResponse",{
   "renderDecisions": true,
   "responseHeaders": {},
   "responseBody": {},
@@ -51,4 +52,4 @@ allow("applyResponse",{
 
 * **`propositions`**：Edge Network返回的一组建议。 自动呈现的建议包含标志 `renderAttempted` 设置为 `true`.
 * **`inferences`**：推理对象数组，其中包含有关此用户的机器学习信息。
-* **`destinations`**：边缘网络返回的目标对象数组。
+* **`destinations`**：Edge Network返回的目标对象数组。
