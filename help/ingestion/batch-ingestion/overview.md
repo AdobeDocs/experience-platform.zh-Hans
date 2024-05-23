@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 批量摄取API概述
 description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 9d3a8aac120119ce0361685f9cb8d3bfc28dc7fd
+source-git-commit: 6cd4bff07d042401d4ebc90d6fc2e70a1f8a7cb0
 workflow-type: tm+mt
 source-wordcount: '1388'
-ht-degree: 6%
+ht-degree: 4%
 
 ---
 
@@ -56,18 +56,18 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 
 在摄取数据时有一定的灵活性 — 如果类型与目标架构中的类型不匹配，数据将转换为表达的目标类型。 如果失败，它将使批处理失败 `TypeCompatibilityException`.
 
-例如，JSON和CSV均不具有 `date` 或 `date-time` 类型。 因此，这些值将使用 [ISO 8061格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html) (“2018-07-10T15”:05:59.000-08:00”)或以毫秒(1531263959000)为单位的Unix时间，并在摄取时转换为目标XDM类型。
+例如，JSON和CSV均不具有 `date` 或 `date-time` 类型。 因此，这些值将使用 [ISO 8601格式字符串](https://www.iso.org/iso-8601-date-and-time-format.html) (“2018-07-10T15”:05:59.000-08:00”)或以毫秒(1531263959000)为单位的Unix时间，并在摄取时转换为目标XDM类型。
 
 下表显示了摄取数据时支持的转化。
 
-| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | 日期时间 | 对象 | 地图 |
+| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 两次 | 日期 | 日期时间 | 对象 | 地图 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 字符串 | X | X | X | X | X | X | X | X |   |   |
 | 字节 | X | X | X | X | X | X |   |   |   |   |
 | 短 | X | X | X | X | X | X |   |   |   |   |
 | 整数 | X | X | X | X | X | X |   |   |   |   |
 | 长 | X | X | X | X | X | X | X | X |   |   |
-| 双精度 | X | X | X | X | X | X |   |   |   |   |
+| 两次 | X | X | X | X | X | X |   |   |   |   |
 | 日期 |   |   |   |   |   |   | X |   |   |   |
 | 日期时间 |   |   |   |   |   |   |   | X |   |   |
 | 对象 |   |   |   |   |   |   |   |   | X | X |
@@ -77,7 +77,7 @@ Adobe Experience Platform批量摄取API允许您将数据作为批处理文件�
 >
 >无法将布尔值和数组转换为其他类型。
 
-## 使用 API
+## 使用API
 
 此 [!DNL Data Ingestion] API允许您将数据作为批量（由要作为单个单元摄取的一个或多个文件组成的数据单元）摄取到 [!DNL Experience Platform] 在三个基本步骤中：
 
@@ -412,7 +412,7 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | 活动 | 已成功提升该批次，可用于下游使用。 此状态可与“Success”互换使用。 |
 | 已删除 | 批次的数据已完全删除。 |
 | 失败 | 因配置错误和/或数据错误导致的终端状态。 失败批次的数据将 **非** 出现。 此状态可与“失败”互换使用。 |
-| 不活动 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
+| 不活跃 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
 | 已加载 | 批次的数据已完成，批次已准备好进行升级。 |
 | 正在加载 | 该批次的数据正在上传，该批次当前为 **非** 准备提升。 |
 | 正在重试 | 正在处理此批次的数据。 但是，由于系统或临时错误，批次失败 — 因此，将重试此批次。 |
