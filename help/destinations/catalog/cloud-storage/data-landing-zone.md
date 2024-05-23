@@ -3,9 +3,9 @@ title: 数据登陆区目标
 description: 了解如何连接到数据登陆区以激活受众和导出数据集。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
+source-git-commit: cb37eda87b8fcc0d0284db7a0bab8d48eab5aae6
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1585'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-[!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。您有权访问一个 [!DNL Data Landing Zone] 容器，并且所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序服务的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
+[!DNL Data Landing Zone] 是 Adobe Experience Platform 提供的一个 [!DNL Azure Blob] 存储接口，它准许您访问安全、基于云的文件存储设施以将文件导出到 Platform 之外。您有权访问一个 [!DNL Data Landing Zone] 容器，并且所有容器的总数据量以您的Platform产品和服务许可证提供的总数据为限。 Platform及其应用程序的所有客户，例如 [!DNL Customer Journey Analytics]， [!DNL Journey Orchestration]， [!DNL Intelligent Services]、和 [!DNL Real-Time Customer Data Platform] 已配置一个 [!DNL Data Landing Zone] 每个沙盒的容器。 您可以通过读取文件并将文件写入容器 [!DNL Azure Storage Explorer] 或命令行界面。
 
 [!DNL Data Landing Zone] 支持基于SAS的身份验证，其数据受标准保护 [!DNL Azure Blob] 存放安全机制处于静止状态并在传输中。 基于SAS的身份验证允许您安全地访问 [!DNL Data Landing Zone] 通过公共Internet连接的容器。 您无需更改网络即可访问 [!DNL Data Landing Zone] 容器，这意味着您无需为网络配置任何允许列表或跨区域设置。
 
@@ -34,10 +34,10 @@ Platform对上传到的所有文件实施严格的七天生存时间(TTL) [!DNL 
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 ---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -204,7 +204,7 @@ curl -X POST \
 
 要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
-### 验证目标 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
 确保已将 [!DNL Data Landing Zone] 容器至 [!DNL Azure Storage Explorer] 如 [先决条件](#prerequisites) 部分。 因为 [!DNL Data Landing Zone] 是Adobe配置的存储，您无需在Experience PlatformUI中执行任何进一步的步骤即可向目标进行身份验证。
 
@@ -230,7 +230,7 @@ curl -X POST \
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 激活此目标的受众 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
@@ -239,7 +239,7 @@ curl -X POST \
 
 请参阅 [将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-### 正在计划
+### 计划中
 
 在 **[!UICONTROL 正在计划]** 步骤，您可以 [设置导出计划](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 您的 [!DNL Data Landing Zone] 目标位置，您还可以 [配置导出文件的名称](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
 

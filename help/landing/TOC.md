@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
-user-guide-description: 通过指南、文档和教程了解 Experience Platform 如何让实时地为客户投放个性化体验成为可能。
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+user-guide-description: 了解Experience Platform如何借助指南、文档和教程实时为客户提供个性化体验。
+source-git-commit: cb37eda87b8fcc0d0284db7a0bab8d48eab5aae6
 workflow-type: tm+mt
-source-wordcount: '282'
-ht-degree: 23%
+source-wordcount: '281'
+ht-degree: 14%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 23%
 
 * [平台概述](home.md)
 * [平台概述（视频）](video/platform-overview.md)
-* [Platform教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
+* [Platform教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [由Platform提供支持的客户体验（视频）](video/customer-experience.md)
 * [由Platform提供支持的客户体验的幕后（视频）](video/customer-experience-bts.md)
 * 快速入门{#getting-started}
@@ -30,7 +30,7 @@ ht-degree: 23%
    * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
    * [自我识别调查](self-identification.md)
-   * [AI助手](ai-assistant.md)
+   * [AI 助手](ai-assistant.md)
 * EXPERIENCE PLATFORMAPI {#platform-apis}
    * [Platform API快速入门](api-guide.md)
    * [验证和访问平台API](api-authentication.md)
@@ -40,7 +40,7 @@ ht-degree: 23%
 * Platform文档 {#documentation}
    * [概述](documentation/overview.md)
    * [语言支持](documentation/language-support.md)
-* 基于Platform构建的应用程序服务 {#ecosystem}
+* 基于平台构建的应用程序 {#ecosystem}
    * [概述](application-services.md)
    * [Adobe Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
@@ -74,7 +74,7 @@ ht-degree: 23%
       * [使用用户界面设置CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
 * 许可证使用和防护 {#license}
    * [数据管理许可证权利最佳实践](./license-usage-and-guardrails/data-management-best-practices.md)
-   * [许可证用量仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
+   * [许可证使用情况仪表板](./license-usage-and-guardrails/license-usage-dashboard.md)
    * [Adobe Journey Optimizer护栏](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
    * [Customer Journey Analytics护栏](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
    * [Real-Time CDP护栏](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
