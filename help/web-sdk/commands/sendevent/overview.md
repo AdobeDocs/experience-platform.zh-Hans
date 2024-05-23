@@ -1,13 +1,13 @@
 ---
 title: sendEvent
-description: 将数据发送到Adobe Experience Platform Edge Network。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+description: 将数据发送到Adobe Experience PlatformEdge Network。
+exl-id: 83de368d-78d4-4e28-aadd-afaea1ca091d
+source-git-commit: 9ea7b678f5cfa19c7fd1e3ba6633cdeed4084b18
 workflow-type: tm+mt
 source-wordcount: '257'
 ht-degree: 0%
 
 ---
-
 
 # `sendEvent`
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 ```js
 alloy("sendEvent", {
   "data": dataObject,
-  "documentUnloading": true,
+  "documentUnloading": false,
   "edgeConfigOverrides": { "datastreamId": "0dada9f4-fa94-4c9c-8aaf-fdbac6c56287" },
   "renderDecisions": true,
   "type": "commerce.purchases",
@@ -46,4 +46,4 @@ alloy("sendEvent", {
 
 * **`propositions`**：Edge Network返回的一组建议。 自动呈现的建议包含标志 `renderAttempted` 设置为 `true`.
 * **`inferences`**：推理对象数组，其中包含有关此用户的机器学习信息。
-* **`destinations`**：边缘网络返回的目标对象数组。
+* **`destinations`**：Edge Network返回的目标对象数组。

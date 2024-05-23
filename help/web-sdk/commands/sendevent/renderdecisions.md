@@ -1,9 +1,10 @@
 ---
 title: renderDecisions
 description: 呈现符合自动呈现条件的个性化内容。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 6f7a3531-c2b6-4e90-a7ad-9f0fe4dc39e9
+source-git-commit: f12d222e81a39a26bd71ab4bede05aa992889605
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '181'
 ht-degree: 0%
 
 ---
@@ -28,6 +29,10 @@ ht-degree: 0%
 ## 使用Web SDK JavaScript库呈现个性化内容
 
 设置 `renderDecisions` 布尔值 `sendEvent` 命令。 如果忽略，则此属性默认为 `false`. 将此属性设置为 `true` （如果要自动渲染个性化内容）。
+
+>[!IMPORTANT]
+>
+>此 `renderDecisions` 属性与 [`documentUnloading`](documentunloading.md) 属性。 您不应将两个属性都设置为 `true` 同时。
 
 ```js
 alloy("sendEvent", {

@@ -1,16 +1,17 @@
 ---
 title: 文档卸载
 description: 使用JavaScript sendBeacon API将数据发送到Adobe。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 7683c0c4-ae2e-46ec-8471-628a10e17afc
+source-git-commit: f12d222e81a39a26bd71ab4bede05aa992889605
 workflow-type: tm+mt
-source-wordcount: '253'
-ht-degree: 2%
+source-wordcount: '268'
+ht-degree: 0%
 
 ---
 
 # `documentUnloading`
 
-此 `documentUnloading` 属性允许您使用JavaScript [`sendBeacon`](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon) 将数据发送到Adobe的方法。 如果典型请求花费的时间过长，浏览器可以取消该请求。 您可以告诉Web SDK使用 `sendBeacon` 这样当您离开页面后，请求就会在后台运行。 启用此属性有助于防止卸载时浏览器取消数据请求。
+此 `documentUnloading` 属性允许您使用JavaScript [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) 将数据发送到Adobe的方法。 如果典型请求花费的时间过长，浏览器可以取消该请求。 您可以告诉Web SDK使用 `sendBeacon` 这样当您离开页面后，请求就会在后台运行。 启用此属性有助于防止卸载时浏览器取消数据请求。
 
 一些浏览器对可以发送的数据量施加了64 KB的限制 `sendBeacon` 一次性。 如果浏览器因有效负载过大而拒绝事件，则Web SDK将回退以使用其常规传输方法。
 
@@ -29,7 +30,11 @@ ht-degree: 2%
 
 ## 使用Web SDK JavaScript库配置文档卸载
 
-设置 `documentUnloading` 布尔值 `sendEvent` 命令。 其默认值为 `false`。将此属性设置为 `true` 如果您要使用 `sendBeacon` 将数据发送到Adobe的方法。
+设置 `documentUnloading` 布尔值 `sendEvent` 命令。 其默认值为 `false`. 将此属性设置为 `true` 如果您要使用 `sendBeacon` 将数据发送到Adobe的方法。
+
+>[!IMPORTANT]
+>
+>此 `documentUnloading` 属性与 [`renderDecisions`](renderdecisions.md) 属性。 您不应将两个属性都设置为 `true` 同时。
 
 ```js
 alloy("sendEvent", {
