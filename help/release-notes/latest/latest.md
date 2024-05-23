@@ -47,7 +47,10 @@ Adobe Experience Platform中的其他更新：
 Adobe Experience Platform 提供多个仪表板，通过这些仪表板，可查看在每天保存快照期间捕获的关于您组织的数据的重要见解。
 
 **新增或更新功能**
-| 功能 | 描述 | | — | — | | 扩展应用程序报表的可自定义分析 | 无缝 [将SQL分析的输出转换为可理解、业务友好的可视化格式](../../dashboards/data-distiller/customizable-insights/overview.md). 使用自定义SQL查询从各种结构化数据集进行精确的数据操作和创建动态图表。 您可以使用query pro模式执行复杂的SQL分析，然后通过自定义仪表板上的图表与非技术用户共享此分析或将它们导出为CSV文件。 |
+
+| 功能 | 描述 |
+| --- | --- |
+| 扩展应用程序报表的可自定义分析 | 无缝 [将SQL分析的输出转换为可理解、业务友好的可视化格式](../../dashboards/data-distiller/customizable-insights/overview.md). 使用自定义SQL查询从各种结构化数据集进行精确的数据操作和创建动态图表。 您可以使用query pro模式执行复杂的SQL分析，然后通过自定义仪表板上的图表与非技术用户共享此分析或将它们导出为CSV文件。 |
 
 {style="table-layout:auto"}
 
