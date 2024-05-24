@@ -2,10 +2,10 @@
 title: (Beta) [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 0db22ba2993012357cf65daaeffb5676193fba23
+source-git-commit: 153b827d385b4a3f86a2432bf533ec543f12ea4e
 workflow-type: tm+mt
-source-wordcount: '1208'
-ht-degree: 4%
+source-wordcount: '1206'
+ht-degree: 0%
 
 ---
 
@@ -51,10 +51,10 @@ ht-degree: 4%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 ---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -91,7 +91,7 @@ ht-degree: 4%
 
 要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在目标配置工作流中，填写下面两个部分中列出的字段。
 
-### 验证目标 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
 要向目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
@@ -104,8 +104,8 @@ ht-degree: 4%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
->title="将受众 ID 附加到受众名称"
->abstract="选择此选项可让 Google Ad Manager 360 中的受众名称包含来自 Experience Platform 的受众 ID，如下所示：`Audience Name (Audience ID)`"
+>title="将受众ID附加到受众名称"
+>abstract="选择此选项可让此目标中的受众名称包含Experience Platform中的受众ID，如下所示： `Audience Name (Audience ID)`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -125,7 +125,7 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 激活此目标的受众 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 

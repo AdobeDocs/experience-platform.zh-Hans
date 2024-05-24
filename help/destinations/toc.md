@@ -1,14 +1,14 @@
 ---
 audience: user
 user-guide-title: 目标指南
-user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
+user-guide-description: 为跨渠道营销活动、电子邮件营销活动、定向广告等激活已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+source-git-commit: e872d8f8a0c73fe3375e538260d23da1f145621c
 workflow-type: tm+mt
-source-wordcount: '1218'
-ht-degree: 4%
+source-wordcount: '1224'
+ht-degree: 3%
 
 ---
 
@@ -48,7 +48,7 @@ ht-degree: 4%
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
-      * [(Beta) 使用计算字段导出平面模式文件中的数组](/help/destinations/ui/export-arrays-calculated-fields.md)
+      * [（Beta版）使用计算字段导出平面架构文件中的阵列](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
@@ -83,6 +83,7 @@ ht-degree: 4%
       * [Google Ad Manager连接](./catalog/advertising/google-ad-manager.md)
       * [(Beta) Google Ad Manager 360连接](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match连接](./catalog/advertising/google-customer-match.md)
+      * [(Beta) Google Customer Match + DV360连接](./catalog/advertising/google-customer-match-dv360.md)
       * [Google显示和视频360连接](./catalog/advertising/google-dv360.md)
       * [Google gtag扩展](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
@@ -128,7 +129,7 @@ ht-degree: 4%
       * [Azure Data Lake Storage Gen2](./catalog/cloud-storage/adls-gen2.md)
       * [Azure事件中心连接](./catalog/cloud-storage/azure-event-hubs.md)
       * [数据登陆区](./catalog/cloud-storage/data-landing-zone.md)
-      * [Google云存储](./catalog/cloud-storage/google-cloud-storage.md)
+      * [Google 云存储](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
       * [列入允许列表基于文件的云存储目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 客户关系管理(CRM)目标 {#crm}
@@ -144,7 +145,7 @@ ht-degree: 4%
       * [Acxiom潜在客户抑制](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Acxiom数据增强](./catalog/data-partner/acxiom-data-enhancement.md)
    * 电子商务目标 {#ecommerce}
-      * [SAP商务](./catalog/ecommerce/sap-commerce.md)
+      * [SAP COMMERCE](./catalog/ecommerce/sap-commerce.md)
    * 电子邮件目标 {#email}
       * [Bizible扩展](./catalog/email/bizible.md)
       * [Marketo扩展](./catalog/email/marketo.md)
@@ -297,4 +298,4 @@ ht-degree: 4%
       * [文档自助服务模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题解答](./destinations-faq.md)
-* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
