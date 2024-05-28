@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以在Experience Platform中填充数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 5189e8bbe4cd93c4e1f355f09da9667f5eb5708d
+source-git-commit: 45eab8f894819eea36465ea0b8f3f3dd8f91fbe0
 workflow-type: tm+mt
 source-wordcount: '2432'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->旧版编辑器已于2024年5月30日弃用。 它不再可供使用。 您现在可以使用 [增强的查询编辑器](#enhanced-editor-toggle) 编写、验证和运行查询
+>旧版编辑器已于2024年5月24日弃用。 它不再可供使用。 您现在可以使用 [增强的查询编辑器](#enhanced-editor-toggle) 编写、验证和运行查询
 
 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在中编写、验证和运行客户体验数据查询。 [!DNL Experience Platform] 用户界面。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发，以及运行非交互式查询以填充以下位置的数据集： [!DNL Experience Platform].
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->旧版编辑器已于2024年5月30日弃用。 它不再可供使用。 您现在可以使用增强型查询编辑器来编写、验证和运行查询。
+>旧版编辑器已于2024年5月24日弃用。 它不再可供使用。 您现在可以使用增强型查询编辑器来编写、验证和运行查询。
 
 使用查询编辑器，您可以编写、执行和保存客户体验数据的查询。 在查询编辑器中执行或保存的所有查询都可供贵组织中有权访问查询服务的所有用户使用。
 

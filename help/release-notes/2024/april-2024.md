@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 的 2024 年 4 月发行说明。
-source-git-commit: 2bddb4963ba0bd10485efe0351d854c01c9a5a3a
+source-git-commit: 45eab8f894819eea36465ea0b8f3f3dd8f91fbe0
 workflow-type: tm+mt
 source-wordcount: '1895'
 ht-degree: 17%
@@ -121,7 +121,7 @@ Adobe Experience Platform提供了一套技术，可让您收集客户端客户�
 | 计划的查询警报 | 在计划查询时通过主动通知及时了解最新信息，确保高效及时的任务管理。 您可以 [创建查询时订阅警报](../../query-service/ui/query-schedules.md#alerts-for-query-status) 或使用现有计划查询的内联操作。 请参阅 [订阅具有内联操作的警报](../../query-service/ui/monitor-queries.md#alert-subscription) 文档，以了解更多信息。 |
 | 改进了计划的查询导航 | 可在查询模板和计划运行之间轻松导航，以提高工作效率。 请参阅相关文档 [查看计划的查询运行](../../query-service/ui/query-schedules.md#scheduled-query-runs) 以了解更多信息。 |
 | 扩展查询输出 | 可在控制台中访问多达500行查询结果，以更深入地分析您的数据。请参见 [结果计数](../../query-service/ui/user-guide.md#result-count) 文档，以了解更多信息。 |
-| 旧版查询编辑器失效 | 自2024年4月30日起，增强型查询编辑器已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月30日弃用，并且不再可用。 请参阅 [查询编辑器用户指南](../../query-service/ui/user-guide.md) 以了解更多信息。 |
+| 旧版查询编辑器失效 | 自2024年4月30日起，增强型查询编辑器已成为所有用户的默认编辑器。 旧版编辑器将于2024年5月24日弃用，并且不再可用。 请参阅 [查询编辑器用户指南](../../query-service/ui/user-guide.md) 以了解更多信息。 |
 
 {style="table-layout:auto"}
 

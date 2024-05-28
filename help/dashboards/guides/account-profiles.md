@@ -2,10 +2,10 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
 workflow-type: tm+mt
-source-wordcount: '1800'
-ht-degree: 0%
+source-wordcount: '1675'
+ht-degree: 1%
 
 ---
 
@@ -73,19 +73,18 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
-* [已添加帐户配置文件](#account-profiles-added)
+* [已添加的帐户配置文件](#account-profiles-added)
 * [按行业划分的新客户](#accounts-by-industry)
 * [按类型的新帐户](#accounts-by-type)
-* [已添加机会](#opportunities-added)
 * [按人员角色显示的新机会](#opportunities-by-person-role)
 * [按收入显示的新机会](#opportunities-by-revenue)
 * [按状态和阶段显示的新机会](#opportunities-by-status-&-stage)
 * [赢得新机会](#opportunities-won)
+* [新增机会](#opportunities-added)
 * [预测评分分布](#predictive-scoring-distribution)
 * [预测得分主要影响因素](#predictive-scoring-top-influential-factors)
-* [按行业划分的总账户数](#total-accounts-by-industry)
 
-### 已添加帐户配置文件 {#account-profiles-added}
+### 已添加的帐户配置文件 {#account-profiles-added}
 
 此 [!UICONTROL 已添加帐户配置文件] 构件使用折线图显示一段时间内每天添加的帐户配置文件数。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的帐户配置文件。 结果可用于推断添加的帐户配置文件数量的趋势。
 
@@ -102,14 +101,6 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 此 [!UICONTROL 按类型的新帐户] 小组件显示圆环图中单个量度的帐户总数。 圆环图说明了构成此总额的不同帐户类型的相对构成。 颜色编码的密钥提供所有包含的帐户类型的细分。 当光标悬停在圆环图的相应部分上时，每种类型的帐户分别显示在一个对话框中。
 
 ![按类型划分的新帐户。](../images/account-profiles/new-accounts-by-type.png)
-
-### 已添加机会 {#opportunities-added}
-
-此 [!UICONTROL 已添加机会] 构件使用线形图显示一段时间内每天添加的业务机会数量。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的机会。 结果可用于推断所添加机会数的趋势。
-
-<!-- Link to date filter documentation from Annamalai -->
-
-![机会添加了构件。](../images/account-profiles/opportunities-added.png)
 
 ### 按人员角色显示的新机会 {#opportunities-by-person-role}
 
@@ -141,6 +132,14 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ![“新机遇”赢得了Widget。](../images/account-profiles/new-opportunities-won.png)
 
+### 新增机会 {#opportunities-added}
+
+此 [!UICONTROL 已添加机会] 构件使用线形图显示一段时间内每天添加的业务机会数量。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的机会。 结果可用于推断所添加机会数的趋势。
+
+<!-- Link to date filter documentation from Annamalai -->
+
+![机会添加了构件。](../images/account-profiles/opportunities-added.png)
+
 ### 预测评分分布 {#predictive-scoring-distribution}
 
 此 [!UICONTROL 预测评分分布] widget显示所有客户档案的分数分布，以帮助您一眼就了解销售渠道的运行状况。 评分数据通过圆环图和柱状图传递。
@@ -170,18 +169,6 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 >全局日期范围过滤器不适用于预测评分见解。 预测评分构件根据在下拉列表中选定的帐户评分模型分析数据。
 
 ![预测得分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
-
-### 按行业划分的总账户数 {#total-accounts-by-industry}
-
-此构件显示单个指标中的帐户总数，并使用圆环图说明构成总数的行业中计数的比例大小。 键值为构成圆环图的不同行业提供颜色编码信息。
-
->[!NOTE]
->
->此分析显示的信息取决于您指定的日期范围。 如果不提供日期过滤器，则洞察的默认行为会分析从前一年到今天添加的数据。
-
-当光标悬停在圆环图的相应部分上时，会在对话框中显示不同行业的各个计数。
-
-![按行业构件划分的总帐户数。](../images/account-profiles/total-accounts-by-industry-widget.png)
 
 ## 后续步骤
 
