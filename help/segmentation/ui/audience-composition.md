@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Audiences UI指南
 description: Adobe Experience Platform UI中的受众组合提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了一些直观的控件，可用于为贵组织构建和编辑受众。
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: d22f8b4a39cb76dab4c976d8ea883d5170ee34e4
+source-git-commit: 3852fc4eca8ea4b6b3fdcfb6aaa54315d83038b4
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1913'
 ht-degree: 0%
 
 ---
@@ -68,8 +68,8 @@ ht-degree: 0%
 
 | 合并类型 | 描述 |
 | ---------- | ----------- |
-| [!UICONTROL Union] | 受众将合并为一个受众。 此操作等同于OR操作。 |
-| [!UICONTROL 交集] | 受众将仅与中共享的受众合并 **所有** 正在添加它们。 此操作等同于AND操作。 |
+| [!UICONTROL 并集] | 受众将合并为一个受众。 此操作等同于OR操作。 |
+| [!UICONTROL 交叉] | 受众将仅与中共享的受众合并 **所有** 正在添加它们。 此操作等同于AND操作。 |
 | [!UICONTROL 排除重叠] | 受众将仅与中共享的受众合并 **一个，但不是全部** 正在添加它们。 这相当于XOR操作。 |
 
 ### [!UICONTROL 生成规则] {#build-rule}
@@ -232,7 +232,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 ## [!UICONTROL Split] {#split-block}
 
-此 **[!UICONTROL Split]** 块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。
+此 **[!UICONTROL Split]** 块类型允许您将新受众拆分为各种子受众。 您可以按百分比或属性拆分此受众。 将受众拆分为子受众时，此拆分为 **永久**. 这意味着每次评估时，用户档案都位于同一子受众中。
 
 添加 **[!UICONTROL Split]** 块，选择 **+** 图标，后接 **[!UICONTROL Split]**.
 
