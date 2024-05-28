@@ -2,10 +2,10 @@
 title: 使用Experience Platform用户界面连接Salesforce帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将您的CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 8d62cf4ca0071e84baa9399e0a25f7ebfb096c1a
+source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
 workflow-type: tm+mt
 source-wordcount: '829'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 环境URL | 的URL [!DNL Salesforce] 源实例。 |
+| 环境 URL | 的URL [!DNL Salesforce] 源实例。 |
 | 用户名 | 的用户名 [!DNL Salesforce] 用户帐户。 |
 | 密码 | 的密码 [!DNL Salesforce] 用户帐户。 |
 | 安全令牌 | 的安全令牌 [!DNL Salesforce] 用户帐户。 |
@@ -50,8 +50,8 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 环境URL | 的URL [!DNL Salesforce] 源实例。 |
-| 客户端ID | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
+| 环境 URL | 的URL [!DNL Salesforce] 源实例。 |
+| 客户端 ID | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
 | 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce]. |
 | API版本 | 的REST API版本 [!DNL Salesforce] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0`. 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 
@@ -65,7 +65,7 @@ ht-degree: 1%
 
 在Platform UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在 *CRM* 类别，选择 **[!DNL Salesforce]**，然后选择 **[!UICONTROL 添加数据]**.
+选择 **[!DNL Salesforce]** 在 *[!UICONTROL CRM]* 类别，然后选择 **[!UICONTROL 添加数据]**.
 
 >[!TIP]
 >
@@ -95,7 +95,7 @@ ht-degree: 1%
 
 对于基本身份验证，选择 **[!UICONTROL 基本身份验证]** 然后提供以下凭证的值：
 
-* 环境URL
+* 环境 URL
 * 用户名
 * 密码
 * API版本（可选）
@@ -108,8 +108,8 @@ ht-degree: 1%
 
 对于OAuth 2客户端凭据，选择 **[!UICONTROL OAuth2客户端凭据]** 然后提供以下凭证的值：
 
-* 环境URL
-* 客户端ID
+* 环境 URL
+* 客户端 ID
 * 客户端密码
 * API版本
 

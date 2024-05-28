@@ -1,14 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；Salesforce Service Cloud；Salesforce Service Cloud
-solution: Experience Platform
 title: 使用流服务API创建Salesforce Service云源连接
-type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Salesforce Service Cloud。
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: 1f13b5fcad683b4c0ede96654e35d6f0c64d9eb7
+source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
 workflow-type: tm+mt
-source-wordcount: '498'
-ht-degree: 4%
+source-wordcount: '777'
+ht-degree: 3%
 
 ---
 
@@ -16,31 +13,53 @@ ht-degree: 4%
 
 基本连接表示源和Adobe Experience Platform之间的已验证连接。
 
-本教程将指导您完成创建基本连接的步骤。 [!DNL Salesforce Service Cloud] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+阅读本教程，了解如何为创建基本连接 [!DNL Salesforce Service Cloud] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对 Adobe Experience Platform 的以下组件有一定了解：
 
-* [源](../../../../home.md)： [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用以下内容构建、标记和增强传入数据： [!DNL Platform] 服务。
-* [沙盒](../../../../../sandboxes/home.md)： [!DNL Experience Platform] 提供对单个文件夹进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md)：Experience Platform允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙盒](../../../../../sandboxes/home.md)：Experience Platform提供对单个进行分区的虚拟沙盒 [!DNL Platform] 将实例安装到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 以下部分提供成功连接时需要了解的其他信息 [!DNL Salesforce Service Cloud] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-为了 [!DNL Flow Service] 以连接 [!DNL Salesforce Service Cloud]中，您必须提供以下连接属性的值：
+此 [!DNL Salesforce Service Cloud] 源支持基本身份验证和OAuth2客户端凭据。
+
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+连接您的 [!DNL Salesforce Service Cloud] 帐户至 [!DNL Flow Service] 使用基本身份验证，提供以下凭据的值：
 
 | 凭据 | 描述 |
-| --- | ---|
-| `environmentUrl` | 的URL [!DNL Salesforce] 源实例。 |
-| `username` | 您的用户名 [!DNL Salesforce Service Cloud] 用户帐户。 |
-| `password` | 您的密码 [!DNL Salesforce Service Cloud] 帐户。 |
-| `securityToken` | 您的安全令牌 [!DNL Salesforce Service Cloud] 帐户。 |
-| `apiVersion` | （可选） REST API版本的 [!DNL Salesforce Service Cloud] 您正在使用的实例。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Service Cloud] 为： `cb66ab34-8619-49cb-96d1-39b37ede86ea`. |
+| --- | --- |
+| `environmentUrl` | 的URL [!DNL Salesforce Service Cloud] 源实例。 |
+| `username` | 的用户名 [!DNL Salesforce Service Cloud] 用户帐户。 |
+| `password` | 的密码 [!DNL Salesforce Service Cloud] 用户帐户。 |
+| `securityToken` | 的安全令牌 [!DNL Salesforce Service Cloud] 用户帐户。 |
+| `apiVersion` | （可选） REST API版本的 [!DNL Salesforce Service Cloud] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0`. 如果此字段留空，Experience Platform将自动使用最新可用版本。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Service Cloud] 为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
-有关入门的更多信息，请参阅 [此Salesforce Service Cloud文档](https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm).
+有关入门的更多信息，请访问 [此Salesforce文档](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
+
+>[!TAB OAuth 2客户端凭据]
+
+连接您的 [!DNL Salesforce Service Cloud] 帐户至 [!DNL Flow Service] 使用OAuth 2客户端凭据，提供以下凭据的值：
+
+| 凭据 | 描述 |
+| --- | --- |
+| `environmentUrl` | 的URL [!DNL Salesforce Service Cloud] 源实例。 |
+| `clientId` | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce Service Cloud]. |
+| `clientSecret` | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同允许您的应用程序代表您的帐户运行，方法是将您的应用程序标识到 [!DNL Salesforce Service Cloud]. |
+| `apiVersion` | 的REST API版本 [!DNL Salesforce Service Cloud] 您正在使用的实例。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本 `52`，则必须输入值，如下所示 `52.0`. 如果此字段留空，Experience Platform将自动使用最新可用版本。 此值对于OAuth2客户端凭据身份验证是必需的。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 的连接规范ID [!DNL Salesforce Service Cloud] 为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+有关将OAuth用于 [!DNL Salesforce Service Cloud]，阅读 [[!DNL Salesforce Service Cloud] OAuth授权流指南](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+
+>[!ENDTABS]
 
 ### 使用平台API
 
@@ -60,7 +79,11 @@ POST /connections
 
 **请求**
 
-以下请求为创建基本连接 [!DNL Salesforce Service Cloud]：
+>[!BEGINTABS]
+
+>[!TAB 基本身份验证]
+
+以下请求为创建基本连接 [!DNL Salesforce Service Cloud] 使用基本身份验证：
 
 ```shell
 curl -X POST \
@@ -71,16 +94,16 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Base connection for salesforce service cloud",
-      "description": "Base connection for salesforce service cloud",
+      "name": "Salesforce Service Cloud account for ACME data (basic auth)",
+      "description": "Salesforce Service Cloud account for ACME data (basic auth)",
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
-              "username": "acme-salesforce-service-cloud",
-              "password": "{PASSWORD}",
-              "securityToken": "{SECURITY_TOKEN}"
-          }
+            "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+            "username": "acme-salesforce-service-cloud",
+            "password": "xxxx",
+            "securityToken": "xxxx"
+        }
       },
       "connectionSpec": {
           "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
@@ -97,9 +120,50 @@ curl -X POST \
 | `auth.params.securityToken` | 与您的关联的安全令牌 [!DNL Salesforce Service Cloud] 帐户。 |
 | `connectionSpec.id` | 此 [!DNL Salesforce Service Cloud] 连接规范ID： `cb66ab34-8619-49cb-96d1-39b37ede86ea` |
 
+>[!TAB OAuth2客户端凭据]
+
+以下请求为创建基本连接 [!DNL Salesforce Service Cloud] 使用OAuth 2客户端凭据：
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Salesforce Service Cloud account for ACME data (OAuth2)",
+      "description": "Salesforce Service Cloud account for ACME data (OAuth2)",
+      "auth": {
+          "specName": "OAuth2 Client Credential",
+          "params":
+            "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+            "clientId": "xxxx",
+            "clientSecret": "xxxx",
+            "apiVersion": "60.0"
+        }
+      },
+      "connectionSpec": {
+          "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
+          "version": "1.0"
+      }
+  }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `auth.params.environmentUrl` | 的URL [!DNL Salesforce Service Cloud] 实例。 |
+| `auth.params.clientId` | 与您的关联的客户端ID [!DNL Salesforce Service Cloud] 帐户。 |
+| `auth.params.clientSecret` | 与您的关联的客户端密钥 [!DNL Salesforce Service Cloud] 帐户。 |
+| `auth.params.apiVersion` | 的REST API版本 [!DNL Salesforce Service Cloud] 您正在使用的实例。 |
+| `connectionSpec.id` | 此 [!DNL Salesforce Service Cloud] 连接规范ID： `cb66ab34-8619-49cb-96d1-39b37ede86ea`. |
+
+>[!ENDTABS]
+
 **响应**
 
-成功响应将返回新创建的连接，包括其唯一标识符(`id`)。 在下一步中探索您的CRM系统时需要此ID。
+成功的响应将返回您新创建的基本连接及其唯一ID。
 
 ```json
 {
