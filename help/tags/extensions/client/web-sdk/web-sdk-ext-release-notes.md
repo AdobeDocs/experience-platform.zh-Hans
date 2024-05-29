@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: ea3df4f05850547c75358fb15bf7a1e6a1d19dbf
+source-git-commit: 2e1ea70496b8e379d5a9be0f2f321b21da86cf4d
 workflow-type: tm+mt
-source-wordcount: '2024'
-ht-degree: 32%
+source-wordcount: '2096'
+ht-degree: 31%
 
 ---
 
@@ -13,6 +13,21 @@ ht-degree: 32%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](/help/web-sdk/release-notes.md).
+
+## 2.23.1版 — 2024年5月28日
+
+**新增功能**
+
+* 添加了对 [`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media) 扩展配置中的组件。
+* 添加了 [`Send Media Event`](action-types.md#send-media-event) 操作 [!DNL Streaming Media Collection] 功能。
+* 添加了 [`Media: Quality of Experience`](data-element-types.md#quality-experience) 的数据元素 [!DNL Streaming Media Collection] 功能。
+
+包含Adobe Experience Platform Web SDK版本2.20.0。
+
+**修复和改进功能**
+
+* 修复了在中搜索数据元素时发生的错误 [更新变量](action-types.md#update-variable) 操作。
+* 已删除 [!UICONTROL 媒体] 建议在中使用的事件类型中的事件类型 `sendEvent` 操作。
 
 ## 版本2.22.0 - 2024年5月3日
 

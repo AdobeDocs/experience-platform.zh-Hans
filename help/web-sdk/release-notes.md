@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform Web SDK 发行说明
-description: Adobe Experience Platform Web SDK 最新发行说明。
+description: Adobe Experience Platform Web SDK最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK；Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: bc48f45bd6b9b7f7cc446ae84d712376292718d2
+source-git-commit: 060f6bb0ff6f57a84698a27bd9f640c0178e5b51
 workflow-type: tm+mt
-source-wordcount: '1777'
+source-wordcount: '1811'
 ht-degree: 1%
 
 ---
@@ -21,6 +21,16 @@ ht-degree: 1%
 >Google [已宣布](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) 计划在2024年下半年停止支持第三方Chrome Cookie。 因此，任何主要浏览器将不再支持第三方Cookie。
 >
 >实施此更改后，Adobe将停止对 `demdex` Web SDK当前支持的Cookie。
+
+## 2.20.0版 — 2024年5月21日
+
+**新增功能**
+
+* 添加了对的支持 [流媒体收集](../web-sdk/commands/configure/streamingmedia.md).
+
+**修复和改进功能**
+
+* 修复了在选择禁用同意时，导致默认内容被预隐藏代码片段隐藏的错误。
 
 ## 版本2.19.2 - 2024年1月10日
 
@@ -92,7 +102,7 @@ ht-degree: 1%
 **修复和改进功能**
 
 * 修复了Adobe Target VEC自定义代码操作的一个问题，该问题导致代码被插入到的替代位置而不是 [!DNL at.js].
-* 修复了在某些边缘情况下，对边缘网络的请求未正确设置“referer”标头的问题。
+* 修复了在某些边缘情况下，对Edge Network的请求未正确设置“referer”标头的问题。
 * 修复了以下问题 [用户代理客户端提示](/help/web-sdk/use-cases/client-hints.md) 属性可能设置为不正确的类型。
 * 修复了以下问题 `placeContext.localTime` 不匹配架构。
 
@@ -107,7 +117,7 @@ ht-degree: 1%
 
 * 添加了对的支持 [分页完整迁移](home.md#migrating-to-web-sdk). 现在，当访客在at.js和Web SDK页面之间移动时，将保留Adobe Target配置文件。
 * 添加了对的可配置支持 [高熵用户代理客户端提示](/help/web-sdk/use-cases/client-hints.md).
-* 添加了对 [`applyResponse`](/help/web-sdk/commands/applyresponse.md) 命令。 这支持通过以下方式实现混合个性化 [边缘网络服务器API](../server-api/overview.md).
+* 添加了对 [`applyResponse`](/help/web-sdk/commands/applyresponse.md) 命令。 这支持通过以下方式实现混合个性化 [Edge Network服务器API](../server-api/overview.md).
 * QA模式链接现在可以在多个页面中使用。
 
 **修复和改进功能**
@@ -120,7 +130,7 @@ ht-degree: 1%
 
 ## 版本2.12.0 - 2022年6月29日
 
-* 更改对Edge Network的请求以使用 `cluster` URL中包含的Cookie位置提示。 这可确保会话期间更改其位置（例如，通过VPN或带着移动设备开车等）的用户点击同一边缘并具有相同的个性化配置文件。
+* 将请求更改为Edge Network以使用 `cluster` URL中包含的Cookie位置提示。 这可确保会话期间更改其位置（例如，通过VPN或带着移动设备开车等）的用户点击同一边缘并具有相同的个性化配置文件。
 * 在getLibraryInfo命令响应中字符串化已配置的函数。
 
 ## 版本2.11.0 - 2022年6月13日
@@ -152,7 +162,7 @@ ht-degree: 1%
 * 优化了单页应用程序的查看 — 更改事件。 现在，在呈现个性化体验时，显示通知包含在查看 — 更改事件中。
 * 删除了控制台警告（若否） `eventType` 存在。
 * 修复了以下问题 `propositions` 资产仅从 `sendEvent` 命令来指示何时从缓存中请求或检索体验。 此 `propositions` 属性现在将始终定义为数组。
-* 修复了从Edge Network返回错误时，未显示隐藏容器的问题。
+* 修复了从Edge Network返回错误时未显示隐藏容器的问题。
 * 修复了Adobe Target中未计算interact事件的问题。 通过将视图名称添加到XDM的web.webPageDetails.viewName中修复了此问题。
 * 修复控制台消息中损坏的文档链接。
 
@@ -164,7 +174,7 @@ ht-degree: 1%
 
 ## 版本2.7.0 - 2021年10月26日
 
-* 在返回值中公开来自Edge Network的其他信息 `sendEvent`，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
+* 在来自的返回值中公开来自Edge Network的其他信息 `sendEvent`，包括 `inferences` 和 `destinations`. 这些属性的格式可能会随这些功能当前作为Beta测试版的一部分推出而更改。
 
 ## 版本2.6.4 - 2021年9月7日
 
@@ -202,10 +212,10 @@ ht-degree: 1%
 * 此 [`getIdentity`](/help/web-sdk/commands/getidentity.md) 现在，命令会在标识旁返回边缘区域ID。
 * 从服务器收到的警告和错误已得到改进，并以更合适的方式进行处理。
 * 为添加了对Adobe的Consent 2.0标准的支持 [`setConsent`](/help/web-sdk/commands/setconsent.md) 命令。
-* 同意首选项在收到后将进行哈希处理并存储在本地存储中，以实现CMP、Platform Web SDK和Platform Edge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您致电 `setConsent` 每次加载页面时。
+* 同意首选项在收到后将进行哈希处理并存储在本地存储中，以实现CMP、Platform Web SDK和PlatformEdge Network之间的优化集成。 如果您正在收集同意首选项，我们现在鼓励您致电 `setConsent` 每次加载页面时。
 * 两个 [监测挂钩](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)， `onCommandResolved` 和 `onCommandRejected`，已添加。
 * 错误修复：当用户导航到新的单页应用程序视图、返回原始视图，并单击符合转化条件的元素时，个性化交互通知事件将包含有关相同活动的重复信息。
-* 错误修复：如果SDK发送的第一个事件已 `documentUnloading` 设置为 `true`， [`sendBeacon`](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon) 将用于发送事件，从而导致有关未建立标识的错误。
+* 错误修复：如果SDK发送的第一个事件已 `documentUnloading` 设置为 `true`， [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) 将用于发送事件，从而导致有关未建立标识的错误。
 
 ## 版本2.3.0 - 2020年11月
 
