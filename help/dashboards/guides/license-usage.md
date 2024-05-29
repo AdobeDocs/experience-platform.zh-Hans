@@ -4,26 +4,26 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: b277de0bd7b65f8e3828c7ab0b4e00644eeddde5
 workflow-type: tm+mt
-source-wordcount: '2107'
-ht-degree: 8%
+source-wordcount: '2069'
+ht-degree: 1%
 
 ---
 
-# 许可证用量仪表板 {#license-usage-dashboard}
+# 许可证使用情况仪表板 {#license-usage-dashboard}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
->title="许可证用量仪表板"
->abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
+>title="许可证使用情况仪表板"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
->title="许可证用量仪表板"
->abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。<br><br>每月末更新一次用量预测，其中预测您未来六个月的用量。要减少用量，请为沙盒和数据集配置数据集或假名配置文件数据到期。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="数据集到期"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据到期"
+>title="许可证使用情况仪表板"
+>abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="数据集过期时间"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据过期"
 
 您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 
@@ -57,7 +57,7 @@ ht-degree: 8%
 
 此仪表板以表格式显示您的所有许可Adobe Experience Platform产品，包括加载项。 该表提供了有关所有可用配置文件中许可证使用情况的关键信息。
 
-| 列名称 | 描述 |
+| 列名 | 描述 |
 |---|---|
 | **[!UICONTROL 产品]** | 由您的组织许可的Adobe解决方案。 |
 | **[!UICONTROL 主要指标]** | 用于在内跟踪该产品的主要量度。 |
@@ -79,7 +79,7 @@ ht-degree: 8%
 
 在摘要选项卡上，该表包括 [!UICONTROL 量度] 列。 这些易于用户识别的描述指示用于该类型沙盒的所有量度。
 
-### 选择沙盒 {#select-sandbox}
+### 选择一个沙盒 {#select-sandbox}
 
 要更改生产和开发沙盒类型之间的视图，请选择 [!UICONTROL 生产沙盒] 或 [!UICONTROL 开发沙盒]. 沙盒名称旁边的单选按钮表示所选的沙盒类型。
 
@@ -103,7 +103,7 @@ ht-degree: 8%
 
 从该视图中，您可以选择 ![检查图标。](../images/license-usage/inspect-icon.png) 在沙盒名称旁边，可查看该量度的可视化图表。 此时将打开一个对话框，其中包含该量度的可视化图表。
 
-### 可视化图表 {#visualizations}
+### 可视化 {#visualizations}
 
 每个可视化小组件包括以下方面：
 
@@ -154,7 +154,7 @@ ht-degree: 8%
 
 这些指标的可用性和每个指标的特定定义因贵组织购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品描述文档：
 
-| 许可 | 产品描述 |
+| 许可证 | 产品描述 |
 |---|---|
 | <ul><li>Adobe Experience Platform：OD LITE</li><li>Adobe Experience Platform：OD STANDARD</li><li>Adobe Experience Platform：OD粗</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
 | <ul><li>Adobe Experience Platform：OD</li></ul> | [Experience Platform、应用程序服务和智能服务](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
