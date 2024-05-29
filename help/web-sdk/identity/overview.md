@@ -2,9 +2,9 @@
 title: Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Platform Web SDK检索和管理Adobe Experience Cloud ID (ECID)。
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 6b58d72628b58b75a950892e7c16d397e3c107e2
 workflow-type: tm+mt
-source-wordcount: '1339'
+source-wordcount: '1481'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Adobe Experience Platform Web SDK使用 [Adobe Experience Cloud ID (ECID)](../..
 
 Platform Web SDK通过使用Cookie分配和跟踪ECID，以及使用多种可用方法来配置这些Cookie的生成方式。
 
-当新用户访问您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备识别Cookie。 对于首次访问的访客，在来自Adobe Experience Platform Edge Network的第一次响应中会生成并返回ECID。 对于回访访客，将从以下位置检索ECID： `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie并添加到Edge Network的有效负载中。
+当新用户访问您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备识别Cookie。 对于首次访问的访客，会在首次从Adobe Experience PlatformEdge Network响应中生成并返回ECID。 对于回访访客，将从以下位置检索ECID： `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie并由Edge Network添加到有效负载中。
 
 设置包含ECID的Cookie后，Web SDK生成的每个后续请求都将在 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie。
 
-使用Cookie进行设备识别时，可通过两个选项与边缘网络进行交互：
+使用Cookie进行设备识别时，可通过两个选项与Edge Network交互：
 
 1. 将数据直接发送到Edge Network域 `adobedc.net`. 此方法称为 [第三方数据收集](#third-party).
 1. 在您自己的域上创建一个指向 `adobedc.net`. 此方法称为 [第一方数据收集](#first-party).
@@ -56,9 +56,36 @@ Platform Web SDK通过使用Cookie分配和跟踪ECID，以及使用多种可用
 
 如上所述，要考虑Cookie生命周期的影响，您可以选择设置和管理自己的设备标识符。 请参阅指南，网址为 [第一方设备Id](./first-party-device-ids.md) 以了解更多信息。
 
-## 检索当前用户的ECID和区域
+## 检索当前用户的ECID和区域 {#retrieve-ecid}
 
-要检索当前访客的唯一ECID，请使用 `getIdentity` 命令。 对于尚无ECID的首次访客，此命令会生成一个新的ECID。 `getIdentity` 还会返回访客的区域ID。
+根据您的用例，您可以通过两种方式访问 [!DNL ECID]：
+
+* [检索 [!DNL ECID] 通过为数据收集准备数据](#retrieve-ecid-data-prep)：这是您应该使用的推荐方法。
+* [检索 [!DNL ECID] 通过 `getIdentity()` 命令](#retrieve-ecid-getidentity)：仅在需要 [!DNL ECID] 客户端信息。
+
+### 检索 [!DNL ECID] 通过为数据收集准备数据 {#retrieve-ecid-data-prep}
+
+使用 [为数据收集准备数据](../../datastreams/data-prep.md) 以映射 [!DNL ECID] 到 [!DNL XDM] 字段。 这是访问 [!DNL ECID].
+
+为此，请将源字段设置为以下路径：
+
+```js
+xdm.identityMap.ECID[0].id
+```
+
+然后，将目标字段设置为字段属于类型的XDM路径 `string`.
+
+![](../../tags/extensions/client/web-sdk/assets/access-ecid-data-prep.png)
+
+
+### 检索 [!DNL ECID] 通过 `getIdentity()` 命令 {#retrieve-ecid-getidentity}
+
+
+>[!IMPORTANT]
+>
+>您应仅通过 `getIdentity()` 命令(如果需要 [!DNL ECID] 在客户端。 如果只想将ECID映射到XDM字段，请使用 [为数据收集准备数据](#retrieve-ecid-data-prep) 而是。
+
+要检索当前访客的唯一ECID，请使用 `getIdentity` 命令。 对于首次访问且没有 [!DNL ECID] 然而，此命令会生成一个 [!DNL ECID]. `getIdentity` 还会返回访客的区域ID。
 
 >[!NOTE]
 >
@@ -118,7 +145,7 @@ alloy("sendEvent", {
 | `authenticationState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值包括 `ambiguous`， `authenticated`、和 `loggedOut`. |
 | `primary` | 布尔值 | 确定是否应当将此标识用作配置文件中的主片段。 默认情况下，会将ECID设置为用户的主要标识符。 如果忽略，此值将默认为 `false`. |
 
-使用 `identityMap` 标识设备或用户的字段得到与使用相同的结果 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=zh-Hans) 方法来自 [!DNL ID Service API]. 请参阅 [ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html) 以了解更多详细信息。
+使用 `identityMap` 标识设备或用户的字段得到与使用相同的结果 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) 方法来自 [!DNL ID Service API]. 请参阅 [ID服务API文档](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html) 以了解更多详细信息。
 
 ## 从访客API迁移到ECID
 
