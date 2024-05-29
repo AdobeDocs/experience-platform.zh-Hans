@@ -3,7 +3,7 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 804f87563abf36a1aa203cb675a687dd262231a7
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2108'
 ht-degree: 0%
@@ -30,7 +30,7 @@ ht-degree: 0%
 >
 >如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则 [!UICONTROL 配置文件] 仪表板不可见。 相反， [!UICONTROL 概述] 选项卡显示链接和文档，以帮助您开始使用Real-Time Customer Profile。
 
-### 个人资料仪表板 {#profile-dashboard}
+### 配置文件仪表板 {#profile-dashboard}
 
 配置文件仪表板概述了与组织配置文件数据相关的关键量度。
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## [!UICONTROL 浏览] 选项卡量度
 
-选择 **[!UICONTROL 浏览]** 选项卡，显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡使用合并策略或标识浏览配置文件存储，如本指南下一节中所述。
+选择 **[!UICONTROL 浏览]** 选项卡，显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡使用合并策略或标识浏览配置文件存储区，如本指南下一节中所述。
 
 在的右侧 **[!UICONTROL 浏览]** 选项卡是 [配置文件计数](#profile-count) 以及列表 [按命名空间列出的配置文件](#profiles-by-namespace).
 

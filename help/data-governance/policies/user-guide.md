@@ -4,19 +4,19 @@ solution: Experience Platform
 title: 在UI中管理数据使用策略
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在Experience Platform用户界面的“策略”工作区中执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: ed9ab1f2a4b4466841b3bedef48a6e0a07ec3d10
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '1788'
-ht-degree: 18%
+source-wordcount: '1768'
+ht-degree: 1%
 
 ---
 
-# 在 UI 中管理数据使用策略 {#user-guide}
+# 在UI中管理数据使用策略 {#user-guide}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_description"
->title="在您的配置文件数据中集成并强制客户同意"
->abstract="<h2>描述</h2><p>通过 Platform，可将从客户收集的同意数据集成到其各自的配置文件中。然后可设置同意策略以确定能否在对于特定目标激活的区段中包括这些数据。</p>"
+>title="在您的配置文件数据中集成并强制执行客户同意"
+>abstract="<h2>描述</h2><p>Platform允许您将从客户那里收集的同意数据集成到他们各自的配置文件中。 然后，您可以设置同意策略以确定此数据是否可以包含在激活到特定目标的区段中。</p>"
 
 本文档介绍如何使用 **[!UICONTROL 策略]** Adobe Experience Platform UI中的工作区，用于创建和管理数据使用策略。
 
@@ -104,7 +104,7 @@ ht-degree: 18%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="说明"
->abstract="<ul><li>确保您通过 OneTrust 源连接器或用于同意的标准 XDM 架构将首选项数据引入到您的联合架构中。</li><li>在左侧导航中选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a>，然后选择<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#create-governance-policy">创建策略</a>。</li><li>在<b>如果</b>部分下面，描述将触发策略检查的条件或操作。</li><li>在<b>则</b>部分下面，输入必须存在才能在触发该策略的操作中包括配置文件的同意属性。</li><li>选择<b>保存</b>以创建该策略。要启用该策略，请选择右边栏中的<b>状态</b>切换开关。</li><li>Experience Platform 在您对于目标激活区段时自动执行您启用的同意策略，并提供有关每项策略如何影响您的受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 Experience League 上关于<a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy">创建同意策略</a>的指南。</li></ul>"
+>abstract="<ul><li>确保通过OneTrust源连接器或标准XDM架构将首选项数据摄取到合并架构中以征求同意。</li><li>选择 <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=zh-Hans">策略</a> 在左侧导航中，然后选择 <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">创建策略</a>.</li><li>在 <b>如果</b> 部分，描述将触发策略检查的条件或操作。</li><li>在 <b>则</b> 部分，输入要包含在触发策略的操作中的用户档案必须存在的同意属性。</li><li>选择 <b>保存</b> 以创建策略。 要启用策略，请选择 <b>状态</b> 在右边栏中切换。</li><li>在将区段激活到目标时，Experience Platform会自动强制实施已启用的同意策略，并提供了有关每个策略如何影响受众规模的详细信息。</li><li>有关此功能的更多帮助，请参阅 <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=zh-Hans#consent-policy">创建同意政策</a> Experience League时。</li></ul>"
 
 >[!IMPORTANT]
 >
@@ -125,8 +125,8 @@ ht-degree: 18%
 
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentif"
->title="“如果”条件"
->abstract="首先定义会触发策略检查的条件。条件可以包括正在采取的某些营销行动、存在的某些数据治理标签，或两者的组合。"
+>title="If 条件"
+>abstract="首先定义将触发策略检查的条件。 条件可能包括正在执行的某些营销操作、存在某些数据管理标签或两者的组合。"
 
 在 **[!UICONTROL 如果]** 部分中，选择应触发此策略的营销操作和/或数据使用标签。 选择 **[!UICONTROL 查看全部]** 和 **[!UICONTROL 选择标签]** ，分别查看可用营销操作和标签的完整列表。
 
@@ -142,16 +142,16 @@ ht-degree: 18%
 
 >[!CONTEXTUALHELP]
 >id="platform_governance_policies_consentthen"
->title="“则”条件"
->abstract="定义“如果”条件后，使用“则”部分从联合架构中选择至少一个同意属性。这是必须存在的属性，以便配置文件包含在此策略所控制的操作中。"
+>title="Then 条件"
+>abstract="定义“If”条件后，使用“Then”部分从合并架构中选择至少一个同意属性。 要使配置文件包含在受此策略控制的操作中，必须存在此属性。"
 
-在 **[!UICONTROL 则]** 部分，从合并模式中选择至少一个同意属性。 这是必须存在的属性，以便配置文件包含在此策略所控制的操作中。您可以从列表中选择提供的选项之一，或选择 **[!UICONTROL 查看全部]** 以直接从合并架构中选择属性。
+在 **[!UICONTROL 则]** 部分，从合并模式中选择至少一个同意属性。 要使配置文件包含在受此策略控制的操作中，必须存在此属性。 您可以从列表中选择提供的选项之一，或选择 **[!UICONTROL 查看全部]** 以直接从合并架构中选择属性。
 
 选择同意属性时，请选择要此策略检查的属性的值。
 
 ![](../images/policies/select-schema-field.png)
 
-选择至少一个同意属性后， **[!UICONTROL 策略属性]** 面板更新可显示此策略下允许的预估配置文件数，包括占配置文件存储总数的百分比。 此估计会在您调整策略配置时自动更新。
+选择至少一个同意属性后， **[!UICONTROL 策略属性]** 面板更新以显示此策略允许的预估配置文件数，包括配置文件存储总数的百分比。 此估计会在您调整策略配置时自动更新。
 
 ![](../images/policies/audience-preview.png)
 

@@ -3,10 +3,10 @@ title: 智能重新参与
 description: 在关键转化时刻提供引人注目的互联体验，以智能的方式重新吸引不常光顾的客户。
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 6991bad03b298373a0d55258dacc60ea8d797fd8
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3894'
-ht-degree: 49%
+ht-degree: 47%
 
 ---
 
@@ -180,7 +180,7 @@ ht-degree: 49%
 
 +++商务详细信息（字段组）
 
-此 [商业详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
+此 [Commerce详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
 
 | 字段 | 描述 |
 | --- | --- |
@@ -223,7 +223,7 @@ ht-degree: 49%
 
 +++商务详细信息（字段组）
 
-此 [商业详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
+此 [Commerce详细信息](/help/xdm/field-groups/event/commerce-details.md) 字段组用于描述商业数据，例如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
 
 | 字段 | 描述 |
 | --- | --- |
@@ -446,7 +446,7 @@ ht-degree: 49%
 
 +++活动
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+事件允许您统一触发历程，向流入历程的个人实时发送消息。 欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * 事件 1：产品查看次数
    * 架构：客户数字交易
@@ -571,7 +571,7 @@ ht-degree: 49%
 
 +++活动
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+事件允许您统一触发历程，向流入历程的个人实时发送消息。 欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * 事件 2：加入购物车
    * 架构：客户数字交易
@@ -704,7 +704,7 @@ ht-degree: 49%
 
 +++活动
 
-事件允许您统一触发历程，向流入历程的个人实时发送消息。欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+事件允许您统一触发历程，向流入历程的个人实时发送消息。 欲知事件的详情，请参阅 [一般事件指南](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * 事件 4：在线购买
    * 架构：客户数字交易

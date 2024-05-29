@@ -3,12 +3,12 @@ keywords: Experience Platform；快速入门；客户人工智能；热门主题
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Customer AI入门
-description: 本指南提供了示例 API 调用来演示如何格式化请求。这些包括路径、必需的标头和格式正确的请求负载。
+description: 本指南提供了示例 API 调用来演示如何格式化请求。这些资源包括路径、必需的标头和格式正确的请求负载。
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '572'
-ht-degree: 11%
+source-wordcount: '570'
+ht-degree: 8%
 
 ---
 
@@ -32,12 +32,12 @@ ht-degree: 11%
 下载客户人工智能得分是通过API调用的组合完成的。 要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
 - 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
+- x-api-key： `{API_KEY}`
+- x-gw-ims-org-id： `{ORG_ID}`
 
 Experience Platform中的所有资源都被隔离到特定的虚拟沙盒中。 所有对Platform API的请求都需要一个标头，用于指定将在其中执行操作的沙盒的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >

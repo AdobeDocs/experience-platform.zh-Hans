@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 0%
@@ -130,7 +130,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
 | --- | --- | 
 | `create` | 默认操作。 这将为生成XDM实体创建方法 [!DNL Real-Time Customer Profile]. |
 | `merge` | 这将为生成XDM实体更新方法 [!DNL Real-Time Customer Profile]. |
-| `delete` | 这将为生成XDM实体删除方法 [!DNL Real-Time Customer Profile] 并从以下位置永久删除数据 [!DNL Profile Store]. |
+| `delete` | 这将为生成XDM实体删除方法 [!DNL Real-Time Customer Profile] 并从以下位置永久删除数据 [!DNL Profile store]. |
 
 支持以下操作 [!DNL Identity Service]：
 

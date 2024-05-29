@@ -1,12 +1,12 @@
 ---
 title: 在不依赖第三方Cookie的情况下吸引和赢取新客户
-description: 了解如何不依赖第三方 Cookie，而是通过潜在客户发掘用例吸引和获得新客户。
+description: 了解如何通过潜在用例吸引和赢取新客户，而无需依赖第三方Cookie。
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2074'
-ht-degree: 87%
+ht-degree: 85%
 
 ---
 
@@ -110,7 +110,7 @@ Adobe Real-time Customer Data Platform可帮助品牌商安全地将其支持的
 
 ![XDM 单个潜在客户配置文件类的预配置的字段。](/help/rtcdp/assets/partner-data/prospecting/preconfigured-fields-individual-prospect-class.png)
 
-接下来，您必须选择之前创建的 partnerID 标识作为架构的主要标识。配置文件记录必须带有主要标识符。需要执行此步骤以确保潜在客户数据可加载到配置文件存储中，并且可用于分段和激活。
+接下来，您必须选择之前创建的 partnerID 标识作为架构的主要标识。配置文件记录必须带有主要标识符。此步骤是确保能够将潜在客户数据加载到配置文件存储中并使其可用于分段和激活所必需的。
 
 >[!AVAILABILITY]
 >

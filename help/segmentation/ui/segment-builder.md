@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6a17febf845d2b9566e49423fc68491315b2d4d7
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3633'
-ht-degree: 6%
+ht-degree: 0%
 
 ---
 
@@ -20,12 +20,12 @@ ht-degree: 6%
 
 ![此时会显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
-## 区段定义构建块 {#building-blocks}
+## 区段定义构建基块 {#building-blocks}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
->abstract="构成区段定义的三种字段类型是属性、事件和受众。属性允许您使用属于 XDM 个人配置文件类的配置文件属性，事件允许您基于使用 XDM ExperienceEvent 数据元素发生的操作或事件创建受众，受众允许您使用从外部源导入的受众。"
+>abstract="构成区段定义的三种字段类型是属性、事件和受众。 通过属性，您可以使用属于XDM Individual Profile类的Profile属性；通过事件，可根据使用XDM ExperienceEvent数据元素发生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
@@ -73,14 +73,14 @@ ht-degree: 6%
 
 | 字段 | 报表包架构A | 报表包架构B |
 | ----- | --------------------- | --------------------- |
-| eVar1 | 反向链接域 | 已登录Y/N |
-| eVar2 | 页面名称 | 成员忠诚度ID |
-| eVar3 | URL | 页面名称 |
-| eVar4 | 搜索词 | 产品名称 |
+| EVAR1 | 反向链接域 | 已登录Y/N |
+| EVAR2 | 页面名称 | 成员忠诚度ID |
+| EVAR3 | URL | 页面名称 |
+| EVAR4 | 搜索词 | 产品名称 |
 | event1 | 点击次数 | Page Views |
 | event2 | Page Views | 购物车加货 |
-| event3 | 购物车加货 | 结账 |
-| event4 | 购买 | 购买 |
+| event3 | 购物车加货 | 结账次数 |
+| event4 | 购买次数 | 购买次数 |
 
 在这种情况下，您可以使用以下架构映射两个报表包：
 
@@ -92,10 +92,10 @@ ht-degree: 6%
 
 映射报表包后，您可以在配置文件相关的工作流程和分段中使用这些新映射的字段。
 
-| 场景 | 合并架构体验 | 分段通用变量 | 分段映射变量 |
+| 方案 | 合并架构体验 | 分段通用变量 | 分段映射变量 |
 | -------- | ----------------------- | ----------------------------- | ---------------------------- |
 | 单个报表包 | 通用变量中包含友好名称描述符。 <br><br>**示例：** 页面名称(eVar2) | <ul><li>通用变量中包含的友好名称描述符</li><li>查询使用来自特定数据集的数据，因为它是唯一的数据集</li></ul> | 查询可以使用Adobe Analytics数据和潜在的其他源。 |
-| 多个报告包 | 泛型变量中未包含任何友好名称描述符。 <br><br>**示例：** EVAR2 | <ul><li>任何具有多个描述符的字段均以通用形式显示。 这意味着UI中不会显示友好名称。</li><li>查询可以使用包含eVar的任何数据集中的数据，这可能会导致混合或不正确的结果。</li></ul> | 查询使用来自多个数据集的正确组合结果。 |
+| 多个报表包 | 泛型变量中未包含任何友好名称描述符。 <br><br>**示例：** EVAR2 | <ul><li>任何具有多个描述符的字段均以通用形式显示。 这意味着UI中不会显示友好名称。</li><li>查询可以使用包含eVar的任何数据集中的数据，这可能会导致混合或不正确的结果。</li></ul> | 查询使用来自多个数据集的正确组合结果。 |
 
 ### 受众
 
@@ -232,7 +232,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="合并策略"
->abstract="合并策略可以合并不同的数据集，以形成您的配置文件。Platform 已提供默认合并策略，您也可以在配置文件中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
+>abstract="合并策略允许合并不同的数据集以形成您的配置文件。 Platform提供了默认合并策略，或者，您可以在配置文件中创建新的默认合并策略。 为此受众选择与您的营销目的相匹配的合并策略。"
 
 [!DNL Experience Platform] 使您能够将来自多个来源的数据整合在一起，并将它们组合在一起，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是指 [!DNL Platform] 使用确定数据的优先级以及将合并哪些数据以创建配置文件。
 
@@ -247,13 +247,13 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
 >title="区段定义属性"
->abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格配置文件的数量与配置文件总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
+>abstract="区段定义属性部分估算生成的区段定义的大小，并显示符合条件的配置文件数与配置文件总数的对比。 这样，您就可以在构建受众本身之前，根据需要调整区段定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
->title="刷新估计值"
->abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>title="刷新估计"
+>abstract="您可以刷新区段定义的估计值，以立即预览有多少配置文件将符合建议的区段定义。 通过使用当天样本数据的样本量生成受众估计。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="预计和预览受众"
 
 构建区段定义时， **[!UICONTROL 受众属性]** 工作区右侧的部分估算了生成的区段定义的大小，这使您可以在构建受众本身之前根据需要调整区段定义。
 
@@ -273,7 +273,7 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->通过使用当天样本数据的样本量生成受众估计。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2000万个以上的实体，使用总实体的5%。
+>通过使用当天样本数据的样本量生成受众估计。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万之间的实体，使用100万个实体；而对于2000多万个实体，使用总实体的5%。
 >
 >此外，此估计基于上次运行配置文件示例作业的时间。 这意味着，如果您使用相对日期函数，例如“今天”或“本周”，则估计值将基于最后一个配置文件示例作业运行时间进行计算。 例如，如果今天是1月24日，而最后一个配置文件示例作业在1月22日运行，则“Yesterday”相对日期函数将基于1月21日，而不是1月23日。
 >

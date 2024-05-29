@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障排除；API；统一配置文件；统一配置文件；配置文件；rtcp；启用配置文件；启用配置文件
 title: Real-Time Customer Profile API指南
-description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用 API 执行关键操作。
+description: 实时客户个人资料API允许开发人员浏览和使用个人资料数据，包括查看个人资料、创建和更新合并策略、导出或示例个人资料数据，以及删除不再需要或添加错误的个人资料数据。 参阅本指南，了解如何使用API执行关键操作。
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '883'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -49,7 +49,7 @@ ht-degree: 1%
 
 ## 预览示例状态([!DNL Profile] 预览) {#profile-preview}
 
-当数据被摄取到Platform中时，将运行示例作业以更新用户档案计数和其他实时客户档案数据相关量度。 可以使用查看此示例作业的结果 `/previewsamplestatus` 端点，实时客户资料API的一部分。 此端点还可用于同时按数据集和身份命名空间列出配置文件分发，以及生成多个报告，以了解贵组织的配置文件存储的组成。  要开始使用 `/profilepreviewstatus` 端点，请参阅 [预览示例状态终结点指南](preview-sample-status.md).
+当数据被摄取到Platform中时，将运行示例作业以更新用户档案计数和其他实时客户档案数据相关量度。 可以使用查看此示例作业的结果 `/previewsamplestatus` 端点，实时客户资料API的一部分。 此端点还可用于同时按数据集和身份命名空间列出配置文件分发，以及生成多个报告，以了解您组织的配置文件存储的组成。  要开始使用 `/profilepreviewstatus` 端点，请参阅 [预览示例状态终结点指南](preview-sample-status.md).
 
 ## 配置文件系统作业 {#profile-system-jobs}
 

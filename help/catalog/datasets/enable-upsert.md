@@ -4,7 +4,7 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程向您展示如何使用Adobe Experience Platform API启用具有“更新插入”功能的数据集，以更新实时客户个人资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 6%

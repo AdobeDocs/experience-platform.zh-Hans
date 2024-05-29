@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 假名配置文件数据过期
 description: 本文档提供有关在Adobe Experience Platform中为假名配置文件配置数据过期的一般指导。
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 63ea5f112a304259cbf2aee1cc8e4ae01f002a17
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1004'
 ht-degree: 0%

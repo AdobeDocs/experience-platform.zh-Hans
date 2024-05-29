@@ -4,10 +4,10 @@ solution: Experience Platform
 title: XDM ExperienceEvent类
 description: 了解XDM ExperienceEvent类和事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2672'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -69,7 +69,7 @@ Adobe提供了多个标准字段组用于 [!DNL XDM ExperienceEvent] 类。 以�
 * [[!UICONTROL 营销活动详细信息]](../field-groups/event/campaign-marketing-details.md)
 * [[!UICONTROL 信息卡操作]](../field-groups/event/card-actions.md)
 * [[!UICONTROL 渠道详细信息]](../field-groups/event/channel-details.md)
-* [[!UICONTROL 商业详细信息]](../field-groups/event/commerce-details.md)
+* [[!UICONTROL Commerce详细信息]](../field-groups/event/commerce-details.md)
 * [[!UICONTROL 存款明细]](../field-groups/event/deposit-details.md)
 * [[!UICONTROL 设备以旧换新详细信息]](../field-groups/event/device-trade-in-details.md)
 * [[!UICONTROL 餐饮预订]](../field-groups/event/dining-reservation.md)
@@ -164,7 +164,7 @@ Adobe提供了多个标准字段组用于 [!DNL XDM ExperienceEvent] 类。 以�
 | `media.sessionComplete` | 此事件跟踪 `sessionComplete` 事件已发生。 此事件标记媒体播放会话的结尾。 |
 | `media.sessionEnd` | 此事件跟踪 `sessionEnd` 事件已发生。 此事件表示媒体会话结束。 此结论可能涉及关闭媒体播放器或停止播放。 |
 | `media.sessionStart` | 此事件跟踪 `sessionStart` 事件已发生。 此事件标记媒体播放会话的开始。 当用户开始播放媒体文件时触发。 |
-| `media.statesUpdate` | 此事件跟踪 `statesUpdate` 事件已发生。 播放器状态跟踪功能可以附加到音频或视频流。标准状态为：fullscreen、mute、closedCaptioning、pictureInPicture 和 inFocus。 |
+| `media.statesUpdate` | 此事件跟踪 `statesUpdate` 事件已发生。 播放器状态跟踪功能可以附加到音频或视频流。 标准状态为：fullscreen、mute、closedCaptioning、pictureInPicture和inFocus。 |
 | `opportunityEvent.addToOpportunity` | 此事件跟踪人员添加到商机的时间。 |
 | `opportunityEvent.opportunityUpdated` | 此事件跟踪销售机会的更新时间。 |
 | `opportunityEvent.removeFromOpportunity` | 此事件跟踪人员从机会中删除的时间。 |

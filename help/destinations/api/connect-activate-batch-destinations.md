@@ -5,7 +5,7 @@ title: 使用流服务API连接到批处理目标并激活数据
 description: 分步说明如何使用流服务API在Experience Platform中创建批量云存储或电子邮件营销目标并激活数据
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3411'
 ht-degree: 2%
@@ -173,7 +173,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供到Experience Platform的基本连接的名称 [!DNL Profile Store]. |
+| `name` | 提供到Experience Platform的基本连接的名称 [!DNL Profile store]. |
 | `description` | 或者，您可以为基本连接提供描述。 |
 | `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
@@ -207,7 +207,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-            "name": "Connecting to Profile Store",
+            "name": "Connecting to Profile store",
             "description": "Optional",
             "connectionSpec": {
                 "id": "{CONNECTION_SPEC_ID}",
@@ -224,7 +224,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供源与Experience Platform连接的名称 [!DNL Profile Store]. |
+| `name` | 提供源与Experience Platform连接的名称 [!DNL Profile store]. |
 | `description` | 或者，您可以为源连接提供描述。 |
 | `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | 使用您在上一步中获取的基本连接ID。 |
@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **响应**
 
-成功的响应将返回唯一标识符(`id`)作为新创建的源连接 [!DNL Profile Store]. 这表示您已成功连接到 [!DNL Experience Platform] 数据。 将此值存储为后续步骤中所需的值。
+成功的响应将返回唯一标识符(`id`)作为新创建的源连接 [!DNL Profile store]. 这表示您已成功连接到 [!DNL Experience Platform] 数据。 将此值存储为后续步骤中所需的值。
 
 ```json
 {

@@ -2,7 +2,7 @@
 title: 边缘配置文件
 description: 了解边缘配置文件以及相关术语、边缘配置文件的可用区域以及边缘配置文件的可用服务。
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: 804f87563abf36a1aa203cb675a687dd262231a7
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '656'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Express Profile Service (XPS)将检索不同边缘上的配置文件。 此服�
 
 ## 后续步骤
 
-阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关AdobeExperience Edge的更多信息，请阅读 [边缘网络概述](../web-sdk/home.md#edge-network).
+阅读本指南后，您应该对边缘配置文件有基本的了解，包括有关边缘配置文件的可用区域和服务的信息。 有关AdobeExperience Edge的更多信息，请阅读 [Edge Network概述](../web-sdk/home.md#edge-network).
 
 ## 附录
 
@@ -73,4 +73,4 @@ Express Profile Service (XPS)将检索不同边缘上的配置文件。 此服�
 
 ### 边缘配置文件上存储哪些数据？
 
-Edge配置文件存储配置文件属性、配置文件ID以及限定的受众ID。 默认情况下，数据过期时间为14天。
+Edge Profile存储配置文件属性、配置文件ID以及限定的受众ID。 默认情况下，数据过期时间为14天。

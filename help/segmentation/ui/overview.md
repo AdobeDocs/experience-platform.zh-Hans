@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 分段服务UI指南
 description: 了解如何在Adobe Experience Platform UI中创建和管理受众和区段定义。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 4c1f29e61ee716a9655bc389bbe08b386ddd643b
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '4334'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
 
@@ -50,17 +50,17 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_churncolumnname"
 >title="流失率"
->abstract="流失率表示与上次运行区段作业时相比，受众内正在更改的配置文件的百分比。"
+>abstract="流失率表示与上次运行区段作业时相比，受众中发生更改的用户档案的百分比。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_evaluationmethodcolumnname"
 >title="评估方法"
->abstract="受众的评估方法包括批量评估、流式评估和边缘评估。"
+>abstract="受众的评估方法包括批处理、流和边缘。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_addallsegmentstoschedule"
 >title="将所有受众添加到计划"
->abstract="启用以将使用批次处理分段评估的所有受众包括在每日计划更新中。禁用此项可从计划更新中删除所有受众。"
+>abstract="允许在每日计划更新中包括使用批次分段评估的所有受众。 禁用可从计划更新中删除所有受众。"
 
 选择 **[!UICONTROL 浏览]** 选项卡，查看贵组织的所有受众的列表。 此视图列出有关受众的信息，包括配置文件计数、来源、创建日期、上次修改日期、标记和细分。
 
@@ -78,7 +78,7 @@ ht-degree: 2%
 | [!UICONTROL 与合作伙伴共享] | 受众构成、自定义上传、分段服务 | 与其他Platform用户共享您的受众。 有关此功能的详细信息，请阅读 [区段匹配概述](./segment-match/overview.md). |
 | [!UICONTROL 管理标记] | 受众构成、自定义上传、分段服务 | 管理属于受众的用户定义标记。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
 | [!UICONTROL 移至文件夹] | 受众构成、自定义上传、分段服务 | 管理受众属于哪个文件夹。 有关此功能的更多信息，请阅读以下部分： [过滤和标记](#manage-audiences). |
-| [!UICONTROL Copy] | Segmentation Service | 复制所选受众。 |
+| [!UICONTROL 复制] | Segmentation Service | 复制所选受众。 |
 | [!UICONTROL 应用访问标签] | 受众构成、自定义上传、分段服务 | 管理属于受众的访问标签。 有关访问标签的详细信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Publish] | 自定义上传、分段服务 | 发布选定的受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
 | [!UICONTROL 停用] | 自定义上传、分段服务 | 停用所选受众。 有关生命周期状态管理的更多信息，请参阅 [分段常见问题解答的生命周期状态部分](../faq.md#lifecycle-states). |
@@ -202,7 +202,7 @@ ht-degree: 2%
 
 此时将显示可用筛选器列表。
 
-| 过滤器 | 描述 |
+| 筛选器 | 描述 |
 | ------ | ----------- |
 | [!UICONTROL Origin] | 允许您根据受众的来源进行筛选。 可用选项包括分段服务、自定义上传、受众组合和Audience Manager。 |
 | [!UICONTROL 具有任何标记] | 允许您按标记过滤。 您可以选择 **[!UICONTROL 具有任何标记]** 和 **[!UICONTROL 具有所有标记]**. 时间 **[!UICONTROL 具有任何标记]** 选中，则过滤的受众将包括 **任意** 已添加的标记的URL编号。 时间 **[!UICONTROL 具有所有标记]** ，则过滤的受众必须包括 **所有** 已添加的标记的URL编号。 |
@@ -226,7 +226,7 @@ ht-degree: 2%
 - 您 **无法** 删除正在目标激活中使用的受众。
 - 如果选择过滤器，则所选受众 **将** 重置。
 
-### 受众详细信息 {#audience-details}
+### 受众详情 {#audience-details}
 
 要查看有关特定受众的更多详细信息，请在 **[!UICONTROL 浏览]** 选项卡。
 
@@ -278,7 +278,7 @@ ht-degree: 2%
 
 此 **[!UICONTROL 受众总数]** 部分显示符合受众条件的配置文件总数。
 
-通过使用当天样本数据的样本量生成预估。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万个之间的实体，使用100万个实体；而对于2000万个以上的实体，使用总实体的5%。 有关生成预计值的更多信息，请参阅 [估计值生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 受众创建教程的内容。
+通过使用当天样本数据的样本量生成预估。 如果您的配置文件存储中的实体少于100万，则使用完整数据集；对于100万到2,000万之间的实体，使用100万个实体；而对于2000多万个实体，使用总实体的5%。 有关生成预计值的更多信息，请参阅 [估计值生成部分](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 受众创建教程的内容。
 
 **激活的目标** {#activated-destinations}
 
@@ -294,13 +294,13 @@ ht-degree: 2%
 
 数据采样的触发方式取决于摄取方法。
 
-对于批量摄取，每十五分钟自动扫描一次配置文件存储区，以查看自上次采样作业运行以来是否成功摄取新批次。 如果是这种情况，随后扫描配置文件存储以查看记录数量是否至少有5%的变化。 如果满足这些条件，则会触发新的取样作业。
+对于批量摄取，每十五分钟自动扫描一次配置文件存储区，以查看自上次采样作业运行以来是否成功摄取了新批次。 如果是这种情况，随后将扫描配置文件存储区，以查看记录数量是否至少有5%的变化。 如果满足这些条件，则会触发新的取样作业。
 
-对于流式摄取，每小时自动扫描一次配置文件存储以确定记录数量是否至少有5%的更改。 如果满足此条件，则会触发新的取样作业。
+对于流式摄取，每小时自动扫描一次配置文件存储区，以查看记录数量是否至少有5%的更改。 如果满足此条件，则会触发新的取样作业。
 
-扫描的样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本量：
+扫描的样本大小取决于配置文件存储区中的实体总数。 下表显示了这些样本量：
 
-| 配置文件存储中的实体 | 样本量 |
+| 配置文件存储中的实体 | 样本大小 |
 | ------------------------- | ----------- |
 | 少于100万 | 完整数据集 |
 | 100万到2000万 | 100万 |
@@ -403,7 +403,7 @@ ht-degree: 2%
 
 ![在受众浏览页面上，切换到“计划所有受众”会突出显示。](../images/ui/overview/browse-audiences-scheduled.png)
 
-## 合成 {#compositions}
+## 构成 {#compositions}
 
 选择 **[!UICONTROL 合成]** 选项卡，查看通过受众构成为您的组织生成的所有受众的列表。
 

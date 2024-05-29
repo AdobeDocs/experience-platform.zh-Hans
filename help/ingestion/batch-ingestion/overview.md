@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 批量摄取API概述
 description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 6cd4bff07d042401d4ebc90d6fc2e70a1f8a7cb0
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1388'
 ht-degree: 4%
@@ -146,7 +146,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!NOTE]
 >
->批量摄取可用于以增量方式更新配置文件存储区中的数据。 有关更多信息，请参阅以下部分： [更新批次](#patch-a-batch) 在 [批量摄取开发人员指南](api-overview.md).
+>批量摄取可用于以增量方式更新用户档案存储中的数据。 有关更多信息，请参阅以下部分： [更新批次](#patch-a-batch) 在 [批量摄取开发人员指南](api-overview.md).
 
 >[!INFO]
 >

@@ -3,7 +3,7 @@ title: 将一次性客户价值提升至存留期价值
 description: 了解如何根据特定客户的属性、行为和过去购买情况创建个性化促销活动，以提供最佳的补充性产品或服务。
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: 8cd0da12784d8fac3f0ce9afeb881d7a3916795f
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3179'
 ht-degree: 27%
@@ -17,7 +17,7 @@ ht-degree: 27%
 >* 本页介绍Real-Time CDP和Adobe Journey Optimizer的示例实施，以实现所述的用例。 使用页面上提供的数字、资格标准和其他字段作为指南，而不是规范性数字。
 >* 要完成此用例，您需要获得Real-Time CDP和Adobe Journey Optimizer的许可。 有关更多信息，请参阅 [先决条件和规划部分](#prerequisites-and-planning) 再看下文。
 
-实施一次性客户价值对存留期价值用例以提高品牌参与度和品牌忠诚度。 利用Experience Platform的强大功能并通过以下方式增强来构建在多渠道或历程上连接的客户体验 [Real-Time CDP](/help/rtcdp/home.md) 和 [Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/ajo-home).
+实施一次性客户价值对存留期价值用例以提高品牌参与度和品牌忠诚度。 利用Experience Platform的强大功能并通过以下方式增强来构建在多渠道或历程上连接的客户体验 [Real-Time CDP](/help/rtcdp/home.md) 和 [Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/ajo-home).
 
 您定位的角色是最近三个月内购买过一些产品的罕见访客。
 
@@ -33,7 +33,7 @@ ht-degree: 27%
 
 考虑到您已在内部定义了提高品牌忠诚度的业务目标和目的。 这可以转换为执行用例以提高客户参与度和忠诚度。
 
-要实现此目的，所需的技术包括两个Experience Platform应用程序 [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=zh-Hans) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans). 下面列出了您在实施用例时将使用的两个应用程序中的各种功能和UI元素。
+要实现此目的，所需的技术包括两个Experience Platform应用程序 [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html) 和 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=zh-Hans). 下面列出了您在实施用例时将使用的两个应用程序中的各种功能和UI元素。
 
 >[!TIP]
 >

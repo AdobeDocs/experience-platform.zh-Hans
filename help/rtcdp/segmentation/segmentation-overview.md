@@ -4,14 +4,14 @@ title: Real-time Customer Data Platform中的分段服务
 description: Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，并利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
 feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '543'
-ht-degree: 4%
+ht-degree: 0%
 
 ---
 
-# [!DNL Real-Time Customer Data Platform]中的 [!DNL Segmentation Service]
+# [!DNL Segmentation Service] 在 [!DNL Real-Time Customer Data Platform]
 
 [!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)允许您从多个来源引入数据，以便为客户带来协调一致的体验。 可以使用实现相关的个性化营销活动 [!DNL Segmentation Service]，Adobe Experience Platform的一部分。
 
@@ -29,7 +29,7 @@ Real-Time CDP构建于Adobe Experience Platform之上，并利用众多 [!DNL Ex
 
 Real-time Customer Data Platform附带的Customer AI为您提供了在个人层面生成客户预测并提供解释的能力。
 
-在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。此外，您还可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息传递来个性化客户体验。 客户人工智能可以协助：
+在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。 此外，您还可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息传递来个性化客户体验。 客户人工智能可以协助：
 
 * 提供高准确度的客户倾向模型，以实现更强的分段和定位。
 * 了解特定客户行为背后的影响因素和可能性。

@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 数据集UI指南
 description: 了解如何在Adobe Experience Platform用户界面中使用数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: ed0a259c72832e4fb219855e2a2fc49b3381b85d
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3080'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_datasets_negative_numbers"
 >title="数据集活动中的负数"
->abstract="摄取的记录中的负数表示用户已删除选定时间范围内的某些批次。"
+>abstract="摄取记录中的负数表示用户删除了选定时间范围内的某些批次。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_datasets_browse_daysRemaining"
->title="数据集到期"
->abstract="此列指示目标数据集在自动到期之前剩余的天数。"
+>title="数据集过期"
+>abstract="此列指示目标数据集在自动过期前剩余的天数。"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航栏中打开 **[!UICONTROL 数据集]** 仪表板。 仪表板列出您组织的所有可用数据集。 会显示每个列出数据集的详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 
@@ -102,7 +102,7 @@ ht-degree: 3%
 要获得更可靠的数据访问方法， [!DNL Experience Platform] 提供下游服务，例如 [!DNL Query Service] 和 [!DNL JupyterLab] 以探索和分析数据。 有关详细信息，请参阅以下文档：
 
 * [查询服务概述](../../query-service/home.md)
-* [JupyterLab用户指南](../../data-science-workspace/jupyterlab/overview.md)
+* [JupyterLab 用户指南](../../data-science-workspace/jupyterlab/overview.md)
 
 ### 在数据集上管理和强制执行数据治理 {#manage-and-enforce-data-governance}
 
@@ -263,7 +263,7 @@ ht-degree: 3%
 在下一个屏幕中，您将看到用于创建新数据集的以下两个选项：
 
 * [从架构创建数据集](#schema)
-* [从CSV文件创建数据集](#csv)
+* [从 CSV 文件创建数据集](#csv)
 
 ### 使用现有架构创建数据集 {#schema}
 
@@ -313,7 +313,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->如果已为配置文件启用并处理了摄取的数据，则删除批次不会从配置文件存储区中删除该数据。
+>如果已为配置文件启用并处理了摄取的数据，则删除批次不会从配置文件存储中删除该数据。
 
 ![数据集详细信息页面上会突出显示删除批次按钮。](../images/datasets/user-guide/delete-batch.png)
 

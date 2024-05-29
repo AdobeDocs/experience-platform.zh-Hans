@@ -5,7 +5,7 @@ type: Documentation
 description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以便删除不再需要或添加错误的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 42c83c7449a14eec5b91f82811bce4234e47cb51
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1327'
 ht-degree: 2%
@@ -305,4 +305,4 @@ curl -X POST \
 
 ## 后续步骤
 
-现在您已经知道了从中删除数据集和批次所涉及的步骤 [!DNL Profile Store] 范围 [!DNL Experience Platform]，您可以安全地删除错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。
+现在您已经知道了从中删除数据集和批次所涉及的步骤 [!DNL Profile store] 范围 [!DNL Experience Platform]，您可以安全地删除错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。

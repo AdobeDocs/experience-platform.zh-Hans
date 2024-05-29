@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 体验事件过期时间
 description: 本文档提供了有关为Adobe Experience Platform数据集中的单个Experience事件配置过期时间的常规指南。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '855'
 ht-degree: 0%
 
 ---

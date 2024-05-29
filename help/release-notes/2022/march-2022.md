@@ -2,16 +2,16 @@
 title: Adobe Experience Platform 发行说明（2022 年 3 月）
 description: Adobe Experience Platform 的 2022 年 3 月发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '1176'
-ht-degree: 18%
+source-wordcount: '1172'
+ht-degree: 11%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 3 月 30 日**
+**发行日期： 2022年3月30日**
 
 Adobe Experience Platform中的新增功能：
 
@@ -77,15 +77,15 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它可以查看有
 
 ### 配置文件仪表板
 
-配置文件仪表板显示贵组织在Experience Platform的配置文件存储区中拥有的属性（记录）数据的快照。
+配置文件仪表板显示贵组织在Experience Platform中的配置文件存储区中拥有的属性（记录）数据的快照。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
 | 未分段的配置文件小组件 | 构件提供未附加到任何区段的所有用户档案的总数。 生成的数字与上一个快照时是准确的，表示在您的组织内激活配置文件的机会。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
-| 未分段配置文件趋势构件 | 此小部件为给定时间段内未附加到任何区段的配置文件数量提供了一个折线图说明。可以在30天、90天和12个月的时段内可视化趋势。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
-| 未分段的配置文件（按身份构件） | 此小部件按其唯一标识符对未分段配置文件的总数进行分类。数据以条形图显示。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+| 未分段配置文件趋势构件 | 此小组件提供了一个折线图说明，其中列出了在给定时间段内未附加到任何区段的用户档案数量。 可以在30天、90天和12个月的时段内可视化趋势。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+| 未分段的配置文件（按身份构件） | 此构件按唯一标识符对未分段配置文件总数进行分类。 数据以条形图显示。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
 | 单一身份配置文件小组件 | 此构件提供贵组织仅有一种类型的ID类型用于创建其身份的配置文件的计数，即电子邮件或ECID。 请参阅 [配置文件标准构件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
 
 {style="table-layout:auto"}
@@ -94,13 +94,13 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它可以查看有
 
 ### 目标仪表板
 
-目标仪表板显示贵组织在Experience Platform中启用的目标快照。
+目标仪表板显示贵组织在 Experience Platform 中启用的目标快照。
 
 **更新的功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 目标计数构件 | 构件提供可在系统中激活和交付受众的可用端点总数。 此数目包含活动目标数和非活动目标数。请参阅 [目标标准构件文档](../../dashboards/guides/destinations.md#standard-widgets) 以了解更多信息。 |
+| 目标计数构件 | 构件提供可在系统中激活和交付受众的可用端点总数。 此数字包括活动目标和不活动目标。 请参阅 [目标标准构件文档](../../dashboards/guides/destinations.md#standard-widgets) 以了解更多信息。 |
 
 {style="table-layout:auto"}
 
@@ -108,14 +108,14 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过它可以查看有
 
 ## 数据收集 {#data-collection}
 
- Platform 提供一套技术，通过这些技术，可收集客户端客户体验数据，并将它发送到 Adobe Experience Platform Edge Network，从中可充实、转换数据和将数据分发到 Adobe 或非 Adobe 目标。
+Platform提供了一套技术，可让您收集客户端客户体验数据并将该数据发送到Adobe Experience PlatformEdge Network，可在其中丰富和转换数据，并将其分发到Adobe或非Adobe目标。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
 | 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅以下部分 [配置数据流](../../datastreams/overview.md#create) 有关更多信息，请参阅数据流UI指南。 |
-| [边缘网络服务器 API](../../server-api/overview.md) | 服务器API允许客户使用新的、经过身份验证的端点与Experience Platform边缘网络进行交互，以支持各种数据收集、个性化、广告和营销用例。 |
+| [Edge Network服务器API](../../server-api/overview.md) | 服务器API允许客户使用新的经过身份验证的端点与Experience PlatformEdge Network交互，以支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 

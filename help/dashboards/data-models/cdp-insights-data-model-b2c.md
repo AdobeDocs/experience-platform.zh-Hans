@@ -4,7 +4,7 @@ description: 了解如何将SQL查询与Real-time Customer Data Platform分析�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 0%
@@ -98,7 +98,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 #### 按身份用例列出的配置文件 {#profiles-by-identity}
 
-此 [!UICONTROL 按身份列出的配置文件] 构件显示配置文件存储中所有合并配置文件的身份细分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](../guides/profiles.md#profiles-by-identity) 以了解更多信息。
+此 [!UICONTROL 按身份列出的配置文件] 构件显示您的配置文件存储中所有合并配置文件的身份细分。 请参阅 [[!UICONTROL 按身份列出的配置文件] 构件文档](../guides/profiles.md#profiles-by-identity) 以了解更多信息。
 
 生成 [!UICONTROL 按身份列出的配置文件] 可以在下面的可折叠部分中看到构件。
 

@@ -4,9 +4,9 @@ description: 了解如何向数据集添加客户时间戳排序，以确保用�
 badgePrivateBeta: label="私人测试版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c5789b872be49c3bd4a1ca61a2d44392ebd4a746
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '406'
 ht-degree: 0%
 
 ---
@@ -14,26 +14,27 @@ ht-degree: 0%
 
 # 客户时间戳排序
 
-在Adobe Experience Platform中，在通过流式摄取摄取引入数据到配置文件存储区时，无法自动保证数据顺序。 通过客户时间戳订购，您可以保证最新消息（根据提供的客户时间戳）将保留在配置文件存储中。 因此，这可以使您的配置文件数据保持一致，并使您的配置文件数据与源系统保持同步。
+在Adobe Experience Platform中，在通过流式摄取摄取引入数据到配置文件存储区时，无法自动保证数据顺序。 通过客户时间戳订购，您可以保证最新消息（根据提供的客户时间戳）将保留在配置文件存储中。 所有过时的消息随后将被丢弃，并且 **非** 可用于使用个人资料数据（如分段和目标）的下游服务。 因此，这可以使您的配置文件数据保持一致，并使您的配置文件数据与源系统保持同步。
 
-要启用客户时间戳订购，您需要使用 `lastUpdatedDate` 中的字段 [外部源系统审计属性数据类型](../xdm/data-types/external-source-system-audit-attributes.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
+要启用客户时间戳排序，请使用 `extSourceSystemAudit.lastUpdatedDate` 中的字段 [外部源系统审计属性数据类型](../xdm/data-types/external-source-system-audit-attributes.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
 
 ## 约束
 
 在此专用测试版中，使用客户时间戳订购时存在以下限制：
 
-- 您只能将客户时间戳排序与 **配置文件属性** 引入于 **流式摄取**.
+- 您只能将客户时间戳排序与 **配置文件属性** 引入于 **流式摄取** 配置文件存储区中的。
+   - 有 **否** 订购为数据湖或Identity服务中的数据提供的保证。
 - 您只能在以下位置使用客户时间戳排序： **非生产** 沙箱。
 - 您只能将客户时间戳排序应用于 **5** 每个沙盒的数据集。
-- 此 `lastUpdatedDate` 字段必须在 [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) 格式。
-- 已摄取的所有数据行 **必须** 包含 `lastUpdatedDate` 字段。 如果此字段缺失或格式不正确，摄取将失败。
+- 您 **无法** 使用流式更新插入在启用了客户时间戳排序的数据集中发送部分行更新。
+- 此 `extSourceSystemAudit.lastUpdatedDate` 字段 **必须** 在 [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) 格式。 使用ISO 8601格式时， **必须** 格式为的完整日期时间 `yyyy-MM-ddTHH:mm:ss.sssZ` (例如， `2028-11-13T15:06:49.001Z`)。
+- 已摄取的所有数据行 **必须** 包含 `extSourceSystemAudit.lastUpdatedDate` 字段作为顶级字段组。 这意味着该字段 **必须** 未嵌套在XDM架构中。 如果此字段缺失或格式不正确，则格式错误的记录将 **非** ，并将发送相应的错误消息。
 - 为客户时间戳排序启用的任何数据集 **必须** 是一个新数据集，没有以前摄取的任何数据。
-- 对于任何给定的配置文件片段，仅限包含更近的行 `lastUpdatedDate` 将被摄取。 如果行不包含更近的 `lastUpdatedDate`，则会丢弃该行。
+- 对于任何给定的配置文件片段，仅限包含更近的行 `extSourceSystemAudit.lastUpdatedDate` 将被摄取。 如果行不包含更近的 `extSourceSystemAudit.lastUpdatedDate`，则会丢弃该行。
 
 ## 推荐
 
 在实施客户时间戳订购时，请牢记以下注意事项：
 
-- 您负责同步所有内部系统上的时钟，将数据发送到配置文件存储区。
+- 您负责同步所有内部系统的时钟，将数据发送到配置文件存储区。
 - 在ISO 8061格式的时间戳中，您的精度应该为毫秒级。
-- 配合使用数据准备和客户时间戳订购可以 **强烈建议**，它会创建所有已摄取行的副本及其时间戳，以便在出现问题时更好地调试。

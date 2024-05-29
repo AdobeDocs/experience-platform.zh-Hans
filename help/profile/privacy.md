@@ -5,7 +5,7 @@ title: 实时客户配置文件中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会处理客户访问、选择退出销售或删除其个人数据的请求，如大量隐私法规所述。 本文档介绍了与处理实时客户个人资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1743'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 >请注意，隐私请求在法规要求内异步处理，完成所需时间可能会有所不同。 如果更改 [!DNL Profile] 数据当请求仍在处理时，并不保证这些传入记录也将在该请求中处理。 只有请求隐私作业时保存在数据湖或配置文件存储中的配置文件才会被删除。 如果您在删除作业期间摄取与删除请求的主题相关的配置文件数据，则无法保证所有配置文件片段都会被删除。
 >您有责任在删除请求时了解Platform或Profile Service中的任何传入数据，因为该数据将插入到您的记录存储中。 您必须谨慎接收已被删除或正在删除的数据。
 
-### 使用 API
+### 使用API
 
 在API中创建作业请求时，中提供的任何ID `userIDs` 必须使用特定的 `namespace` 和 `type`. 有效的 [身份命名空间](#namespaces) 识别者 [!DNL Identity Service] 必须提供 `namespace` 值，而 `type` 必须是 `standard` 或 `unregistered` （分别用于标准和自定义命名空间）。
 
@@ -198,12 +198,12 @@ curl -X POST \
 
 根据您是否还包含Identity Service (`identity`)和数据湖(`aepDataLake`)作为产品，适用于您的隐私配置文件请求(`ProfileService`)，则与用户档案相关的不同数据集将在不同的时间从系统中删除：
 
-| 包含的产品 | 效果 |
+| 包含的产品 | 效应 |
 | --- | --- |
 | `ProfileService` 仅限 | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。 与用户档案关联的数据也保留在数据湖中。 |
 | `ProfileService` 和 `identity` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。 与用户档案关联的数据将保留在数据湖中。 |
 | `ProfileService` 和 `aepDataLake` | 用户档案会在Platform发送确认信息确认收到删除请求后立即删除。 但是，个人资料的身份图仍然会保留，并且个人资料有可能在摄取具有相同身份的新数据时进行重构。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
-| `ProfileService`、`identity` 和 `aepDataLake` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
+| `ProfileService`， `identity`、和 `aepDataLake` | 用户档案及其关联的身份图会在Platform发送确认收到删除请求后立即删除。<br><br>当Data Lake产品响应请求被接收并且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将从数据湖中完全删除。 |
 
 请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
 

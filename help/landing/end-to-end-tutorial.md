@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；CJA；Journey Analytics�
 title: Adobe Experience Platform端到端示例工作流
 description: 从较高层面了解Adobe Experience Platform的基本端到端工作流程。
 exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1832'
 ht-degree: 1%
