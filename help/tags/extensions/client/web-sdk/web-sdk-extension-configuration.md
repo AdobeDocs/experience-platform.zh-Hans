@@ -2,16 +2,16 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: 1d1bb754769defd122faaa2160e06671bf02c974
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1734'
 ht-degree: 6%
 
 ---
 
 # 配置Web SDK标记扩展
 
-此 [!DNL Web SDK] 标记扩展通过Experience PlatformEdge Network从Web资产向Adobe Experience Cloud发送数据。
+此 [!DNL Web SDK] 标记扩展会通过Experience PlatformEdge Network从Web资产向Adobe Experience Cloud发送数据。
 
 该扩展允许您将数据流式传输到Platform、同步身份、处理客户同意信号并自动收集上下文数据。
 
@@ -47,7 +47,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 此部分允许您为三个可用环境（生产、暂存和开发）中的每一个选择应使用的数据流。
 
-当请求发送至Edge Network时，将使用数据流ID来引用服务器端配置。 您无需在网站上更改代码即可更新配置。
+向Edge Network发送请求时，将使用数据流ID来引用服务器端配置。 您无需在网站上更改代码即可更新配置。
 
 请参阅指南，网址为 [数据流](../../../../datastreams/overview.md) 了解如何配置数据流。
 
@@ -117,6 +117,21 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 * **[!UICONTROL 启用点击数据收集]**：Web SDK可以自动为您收集链接点击信息。 默认情况下，此功能处于启用状态，但使用此选项可禁用该功能。 如果链接包含中列出的下载表达式之一，则也会将其标记为下载链接 [!UICONTROL 下载链接限定符] 文本框。 Adobe为您提供一些默认的下载链接限定符。 您可以根据需要编辑它们。
 * **[!UICONTROL 自动收集的上下文数据]**：默认情况下，Web SDK会收集有关设备、Web、环境和位置上下文的特定上下文数据。 如果不希望收集此数据，或只希望收集某些类别的数据，请选择 **[!UICONTROL 特定上下文信息]** 并选择要收集的数据。 请参阅 [`context`](/help/web-sdk/commands/configure/context.md) 以了解更多信息。
 
+## 配置媒体收集设置 {#media-collection}
+
+媒体收集功能可帮助您收集与网站上的媒体会话相关的数据。
+
+收集的数据可以包括有关媒体回放、暂停、完成和其他相关事件的信息。 收集之后，您可以将此数据发送到Adobe Experience Platform和/或Adobe Analytics以生成报表。 此功能为跟踪和了解您网站上的媒体消费行为提供了全面的解决方案。
+
+![此图像显示了标记UI中Web SDK标记扩展的媒体收集设置](assets/media-collection.png)
+
+
+* **[!UICONTROL 渠道]**：发生媒体收集的渠道的名称。 示例：`Video channel`。
+* **[!UICONTROL 播放器名称]**：媒体播放器的名称。
+* **[!UICONTROL 应用程序版本]**：媒体播放器应用程序的版本。
+* **[!UICONTROL 主ping间隔]**：主内容Ping的频率（以秒为单位）。 默认值为 `10`。值可以介于 `10` 到 `50` 秒。  如果未指定值，则在使用 [自动跟踪的会话](../../../../web-sdk/commands/createmediasession.md#automatic).
+* **[!UICONTROL 广告Ping间隔]**：广告内容的Ping频率（以秒为单位）。 默认值为 `10`。值可以介于 `1` 到 `10` 秒。 如果未指定值，则在使用 [自动跟踪的会话](../../../../web-sdk/commands/createmediasession.md#automatic)
+
 ## 配置数据流覆盖 {#datastream-overrides}
 
 数据流覆盖允许您为数据流定义其他配置，这些配置通过 Web SDK 传递到 Edge Network。
@@ -140,6 +155,6 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ## 配置高级设置
 
-使用 **[!UICONTROL 边缘基本路径]** 字段。 这不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。
+使用 **[!UICONTROL 边缘基本路径]** Edge Network字段。 这不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。
 
 ![此图像显示了使用Web SDK标记扩展页面的高级设置。](assets/advanced-settings.png)

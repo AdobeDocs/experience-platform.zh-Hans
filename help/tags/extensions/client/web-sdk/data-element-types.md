@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
+source-git-commit: fbca8a47c500e89d82cf636e8cb639f2bb59c2e6
 workflow-type: tm+mt
-source-wordcount: '599'
+source-wordcount: '653'
 ht-degree: 5%
 
 ---
@@ -60,6 +60,12 @@ ht-degree: 5%
 ![显示数据元素选项的标记UI的图像。](assets/variable-data-element.png)
 
 创建此数据元素后，您可以使用 [更新变量](./action-types.md#update-variable) 操作来修改它。 准备就绪后，您可以将此数据元素包含在 [发送事件](./action-types.md#send-event) 将数据发送到数据流的操作。
+
+## 媒体：体验质量 {#quality-experience}
+
+A **[!UICONTROL 体验质量]** 在向Adobe Experience Platform发送流媒体事件时，数据元素很有用。 您可以在创建媒体会话时添加此元素，以下媒体事件将包含更新的体验质量数据。
+
+![显示“创建体验质量数据元素”屏幕的UI图像。](assets/qoe-data-element.png)
 
 ## 后续步骤 {#next-steps}
 

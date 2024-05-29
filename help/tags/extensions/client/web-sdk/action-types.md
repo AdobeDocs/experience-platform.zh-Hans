@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 377be6d97e6da9b4aaacfa23a188131bd38e66f4
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 2%
+source-wordcount: '1036'
+ht-degree: 1%
 
 ---
 
@@ -48,6 +48,33 @@ ht-degree: 2%
 ![](assets/update-variable-set-property.png)
 
 更新变量操作中的编辑器与XDM对象数据元素中的编辑器之间存在一些差异。 首先，更新变量操作具有一个标记为“xdm”的根级别项。 如果单击此项目，则可以指定要用于设置整个对象的数据元素。 其次，更新变量操作包含复选框，用于清除xdm对象中的数据。 单击左侧的其中一个属性，然后选中右侧的复选框以清除值。 这将在设置变量上的任何值之前清除当前值。
+
+## 发送媒体事件 {#send-media-event}
+
+向Adobe Experience Platform和/或Adobe Analytics发送媒体事件。 当您跟踪网站上的媒体事件时，此操作很有用。 选择一个实例（如果有多个实例）。 该操作需要 `playerId` 表示跟踪的媒体会话的唯一标识符。 它还需要 **[!UICONTROL 体验质量]** 和 `playhead` 启动媒体会话时的数据元素。
+
+![显示发送媒体事件屏幕的Platform UI图像。](assets/send-media-event.png)
+
+此 **[!UICONTROL 发送媒体事件]** 操作类型支持以下属性：
+
+- **[!UICONTROL 实例]**：正在使用的Web SDK实例。
+- **[!UICONTROL 媒体事件类型]**：所跟踪的媒体事件的类型。
+- **[!UICONTROL 播放器ID]**：媒体会话的唯一标识符。
+- **[!UICONTROL 播放头]**：媒体播放的当前位置（以秒为单位）。
+- **[!UICONTROL 媒体会话详细信息]**：发送媒体开始事件时，应指定所需的媒体会话详细信息。
+- **[!UICONTROL 章节详细信息]**：在此部分中，您可以在发送章节开始媒体事件时指定章节详细信息。
+- **[!UICONTROL 广告详细信息]**：发送 `AdBreakStart` 事件，必须指定所需的广告详细信息。
+- **[!UICONTROL 广告Pod详细信息]**：有关发送广告面板的详细信息 `AdStart` 事件。
+- **[!UICONTROL 错误详细信息]**：有关正在跟踪的播放错误的详细信息。
+- **[!UICONTROL 状态更新详细信息]**：正在更新的播放器状态。
+- **[!UICONTROL 自定义元数据]**：有关正在跟踪的媒体事件的自定义元数据。
+- **[!UICONTROL 体验质量]**：所跟踪的体验数据的媒体质量。
+
+## 获取Media Analytics跟踪器 {#get-media-analytics-tracker}
+
+此操作用于获取旧版Media Analytics API。 配置操作并提供对象名称时，旧版Media Analytics API将导出到该窗口对象。 如果未提供，则将其导出到 `window.Media` 与当前Media JS库一样。
+
+![Platform UI图像显示了获取Media Analytics跟踪器操作类型。](assets/get-media-analytics-tracker.png)
 
 ## 后续步骤 {#next-steps}
 
