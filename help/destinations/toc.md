@@ -5,9 +5,9 @@ user-guide-description: 为跨渠道营销活动、电子邮件营销活动、�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: e872d8f8a0c73fe3375e538260d23da1f145621c
+source-git-commit: a6bc9c5d2b4ec9032c70dcf625075e5d3e0442cc
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1223'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
    * [使用流服务API将数据激活到基于文件的目标](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [连接到流目标并使用流服务API激活数据](./api/streaming-destinations.md)
    * [连接到基于文件的电子邮件营销目标，并使用流服务API激活数据](./api/connect-activate-batch-destinations.md)
-   * [（测试版）通过临时激活API将受众激活到批量目标](./api/ad-hoc-activation-api.md)
+   * [通过临时激活API将受众激活到批处理目标](./api/ad-hoc-activation-api.md)
    * [编辑目标](./api/edit-destination.md)
    * [更新目标数据流](./api/update-destination-dataflows.md)
    * [删除目标帐户](./api/delete-destination-account.md)
