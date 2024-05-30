@@ -1,7 +1,7 @@
 ---
-title: media收藏集
+title: 流媒体
 description: 配置Web SDK以收集与您Web资产上的媒体使用情况相关的数据。
-source-git-commit: 1d1bb754769defd122faaa2160e06671bf02c974
+source-git-commit: c0cb244221215f78f9ef13d8a54a8799ab15df6c
 workflow-type: tm+mt
 source-wordcount: '381'
 ht-degree: 6%
