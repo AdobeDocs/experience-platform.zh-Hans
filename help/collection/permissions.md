@@ -2,10 +2,10 @@
 title: Experience Platform中数据收集的权限管理
 description: 有关如何在Adobe Experience Platform中管理权限和控制对数据收集功能的访问权限的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 60590a77859320891717244eec58b556935354b5
 workflow-type: tm+mt
-source-wordcount: '1285'
-ht-degree: 28%
+source-wordcount: '1338'
+ht-degree: 25%
 
 ---
 
@@ -35,7 +35,7 @@ Adobe Experience Platform下的权限包括访问数据流、身份、架构和�
 | 数据建模 | 管理架构 | 授予查看、创建和编辑的能力 [体验数据模型(XDM)架构](../xdm/home.md). |
 | 数据建模 | 查看架构 | 授予对架构的只读访问权限。 |
 | Identity Management | 管理身份命名空间 | 授予查看、创建和编辑的能力 [身份命名空间](../identity-service/features/namespaces.md). |
-| Identity Management | 查看标识命名空间 | 授予对身份命名空间的只读访问权限。 |
+| Identity Management | 查看身份命名空间 | 授予对身份命名空间的只读访问权限。 |
 | 数据收集 | 管理数据流 | 授予查看、创建和编辑的能力 [数据流](../datastreams/overview.md). |
 | 数据收集 | 查看数据流 | 授予对数据流的只读访问权限。 |
 
@@ -51,7 +51,7 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 | 平台 | 移动设备 | 授予对的访问权限 [移动资产](../tags/ui/administration/companies-and-properties.md) 与其他资产权利结合使用时。 |
 | 平台 | Edge | 授予对的访问权限 [事件转发边缘属性](../tags/ui/event-forwarding/getting-started.md) 与其他资产权利结合使用时。 |
 | 属性 | （不适用） | 根据已在您的组织下创建的属性，您可以在Admin Console中通过此类权限类别控制对每个属性的访问权限。<br><br>用户分配的资产权限仅适用于他们通过此权限类别被授予访问权限的属性。 |
-| 资产权限 | 批准 | 允许将库生成批准为的一部分 [发布流](../tags/ui/publishing/publishing-flow.md). |
+| 资产权限 | 审批 | 允许将库生成批准为的一部分 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 开发 | 允许将库内部版本开发为 [发布流](../tags/ui/publishing/publishing-flow.md). |
 | 资产权限 | 编辑属性 | 允许编辑用户有权访问的属性的基本配置。 |
 | 资产权限 | 管理环境 | 授予管理 [环境](../tags/ui/publishing/environments.md) 对于用户有权访问的属性。 |
@@ -78,7 +78,15 @@ Adobe Experience Platform数据收集下的权限可控制对标记和事件转�
 
 ### 在Adobe Experience Platform下管理权限 {#manage-platform}
 
-从 **[!UICONTROL 权限]** Adobe Experience Platform区域，选择要编辑的角色。
+>[!NOTE]
+>
+>要管理角色的权限，您需要管理员权限。 如果您没有管理员权限，请联系您的系统管理员。
+
+Experience Cloud **[!UICONTROL 权限]** 部分允许您定义用户角色和策略，以管理对产品应用程序中功能和对象的访问。
+
+到 [!UICONTROL 权限]中，您可以创建和管理角色，并为这些角色分配所需的资源权限。
+
+![Adobe Experience Cloud高亮显示权限产品。](./images/permissions/permissions-product.png)
 
 要访问数据收集功能，您必须启用 **[!UICONTROL 沙盒]**， **[!UICONTROL 数据建模]**， **[!UICONTROL Identity Management]**、和 **[!UICONTROL 数据收集]** 类别。
 
