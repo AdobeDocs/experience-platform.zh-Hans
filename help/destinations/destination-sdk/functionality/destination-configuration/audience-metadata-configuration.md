@@ -2,7 +2,7 @@
 description: 了解如何为使用Destination SDK构建的目标配置受众元数据设置。
 title: 受众元数据配置
 exl-id: ae71df4f-b753-4084-835f-03559b4986cb
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 20cb2dbfbfc8e73c765073818c8e7e561d4e6629
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 3%
@@ -57,7 +57,7 @@ Destination SDK提供了一些工具，可用于以编程方式创建、更新�
 | `mapExperiencePlatformSegmentName` | 布尔值 | 指示是否 [[!UICONTROL 映射Id]](../../../ui/activate-segment-streaming-destinations.md#scheduling) 目标激活工作流中的值应为Experience Platform受众名称。 |
 | `mapExperiencePlatformSegmentId` | 布尔值 | 指示是否 [[!UICONTROL 映射Id]](../../../ui/activate-segment-streaming-destinations.md#scheduling) 目标激活工作流中的值应为Experience Platform的受众ID。 |
 | `mapUserInput` | 布尔值 | 启用或禁用以下内容的用户输入： [[!UICONTROL 映射Id]](../../../ui/activate-segment-streaming-destinations.md#scheduling) 值。 如果设置为 `true`， `audienceTemplateId` 不能存在。 |
-| `audienceTemplateId` | 布尔值 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于您的目标。 |
+| `audienceTemplateId` | 字符串 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于您的目标。 |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 description: 了解如何构建API调用以通过Adobe Experience Platform Destination SDK创建目标配置。
 title: 创建目标配置
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 20cb2dbfbfc8e73c765073818c8e7e561d4e6629
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 3%
@@ -217,7 +217,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `segmentMappingConfig.mapUserInput` | 布尔值 | 控制用户是否输入目标激活工作流中的受众映射ID。 |
 | `segmentMappingConfig.mapExperiencePlatformSegmentId` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform受众ID。 |
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | 布尔值 | 控制目标激活工作流中的受众映射ID是否为Experience Platform受众名称。 |
-| `segmentMappingConfig.audienceTemplateId` | 布尔值 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于此目标。 |
+| `segmentMappingConfig.audienceTemplateId` | 字符串 | 此 `instanceId` 的 [受众元数据模板](../../metadata-api/create-audience-template.md) 用于此目标。 |
 | `schemaConfig.profileFields` | 数组 | 添加预定义时 `profileFields` 如上面的配置所示，用户可以选择将Experience Platform属性映射到目标端的预定义属性。 |
 | `schemaConfig.profileRequired` | 布尔值 | 使用 `true` 如果用户应能够将配置文件属性从Experience Platform映射到目标端的自定义属性，如上面的示例配置所示。 |
 | `schemaConfig.segmentRequired` | 布尔值 | 始终使用 `segmentRequired:true`. |
