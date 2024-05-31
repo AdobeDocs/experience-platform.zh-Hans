@@ -4,7 +4,7 @@ description: 了解如何向数据集添加客户时间戳排序，以确保用�
 badgePrivateBeta: label="私人测试版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: f73b7ac38c681ec5161e2b5e7075f31946a6563e
+source-git-commit: dffbdafc3f063906c8c8fb648ace59b2f1aedab8
 workflow-type: tm+mt
 source-wordcount: '410'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，默认情况下，当通过流式摄取摄取引入数据到配置文件存储区时，无法保证数据顺序。 通过客户时间戳订购，您可以保证最新消息（根据提供的客户时间戳）将保留在配置文件存储中。 所有过时的消息随后将被丢弃，并且 **非** 可用于使用个人资料数据（如分段和目标）的下游服务。 因此，这可以使您的配置文件数据保持一致，并使您的配置文件数据与源系统保持同步。
 
-要启用客户时间戳排序，请使用 `extSourceSystemAudit.lastUpdatedDate` 中的字段 [外部源系统审计属性数据类型](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/shared/external-source-system-audit-details.schema.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
+要启用客户时间戳排序，请使用 `extSourceSystemAudit.lastUpdatedDate` 中的字段 [外部源系统审计属性字段组](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
 
 ## 约束
 
