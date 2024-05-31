@@ -4,9 +4,9 @@ description: 了解如何向数据集添加客户时间戳排序，以确保用�
 badgePrivateBeta: label="私人测试版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: f73b7ac38c681ec5161e2b5e7075f31946a6563e
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # 客户时间戳排序
 
-在Adobe Experience Platform中，在通过流式摄取摄取引入数据到配置文件存储区时，无法自动保证数据顺序。 通过客户时间戳订购，您可以保证最新消息（根据提供的客户时间戳）将保留在配置文件存储中。 所有过时的消息随后将被丢弃，并且 **非** 可用于使用个人资料数据（如分段和目标）的下游服务。 因此，这可以使您的配置文件数据保持一致，并使您的配置文件数据与源系统保持同步。
+在Adobe Experience Platform中，默认情况下，当通过流式摄取摄取引入数据到配置文件存储区时，无法保证数据顺序。 通过客户时间戳订购，您可以保证最新消息（根据提供的客户时间戳）将保留在配置文件存储中。 所有过时的消息随后将被丢弃，并且 **非** 可用于使用个人资料数据（如分段和目标）的下游服务。 因此，这可以使您的配置文件数据保持一致，并使您的配置文件数据与源系统保持同步。
 
-要启用客户时间戳排序，请使用 `extSourceSystemAudit.lastUpdatedDate` 中的字段 [外部源系统审计属性数据类型](../xdm/data-types/external-source-system-audit-attributes.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
+要启用客户时间戳排序，请使用 `extSourceSystemAudit.lastUpdatedDate` 中的字段 [外部源系统审计属性数据类型](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/shared/external-source-system-audit-details.schema.md) 并提供沙盒和数据集信息，与您的Adobe技术客户经理或Adobe客户关怀团队联系。
 
 ## 约束
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 - 此 `extSourceSystemAudit.lastUpdatedDate` 字段 **必须** 在 [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) 格式。 使用ISO 8601格式时， **必须** 格式为的完整日期时间 `yyyy-MM-ddTHH:mm:ss.sssZ` (例如， `2028-11-13T15:06:49.001Z`)。
 - 已摄取的所有数据行 **必须** 包含 `extSourceSystemAudit.lastUpdatedDate` 字段作为顶级字段组。 这意味着该字段 **必须** 未嵌套在XDM架构中。 如果此字段缺失或格式不正确，则格式错误的记录将 **非** ，并将发送相应的错误消息。
 - 为客户时间戳排序启用的任何数据集 **必须** 是一个新数据集，没有以前摄取的任何数据。
-- 对于任何给定的配置文件片段，仅限包含更近的行 `extSourceSystemAudit.lastUpdatedDate` 将被摄取。 如果行不包含更近的 `extSourceSystemAudit.lastUpdatedDate`，则会丢弃该行。
+- 对于任何给定的配置文件片段，仅限包含更近的行 `extSourceSystemAudit.lastUpdatedDate` 将被摄取。 包含 `extSourceSystemAudit.lastUpdatedDate` 大于或等于此年龄的用户将被丢弃。
 
 ## 推荐
 
