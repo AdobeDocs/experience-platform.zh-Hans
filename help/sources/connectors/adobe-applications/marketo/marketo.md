@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Marketo Engage连接器
 description: 本文档提供了Marketo Engage源连接器的概述，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 50b97ebb8496636a0fccd64d57d7829b1342f87c
+source-git-commit: 0c695e11e7d7c14ef7e047cd007668e1099bf127
 workflow-type: tm+mt
-source-wordcount: '678'
-ht-degree: 5%
+source-wordcount: '683'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 5%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)中摄取数据。
 
-[[!DNL Marketo Engage]](https://www.marketo.com/software/) 是一个完整的解决方案，面向希望通过参与复杂购买历程的每个阶段来转变客户体验的潜在客户管理人员和 B2B 营销人员。
+[[!DNL Marketo Engage]](https://www.marketo.com/software/) 是一个完整的解决方案，面向希望通过参与复杂购买历程的每个阶段来转变客户体验的潜在客户管理人员和B2B营销人员。
 
 使用 [!DNL Marketo Engage] 源连接器，您可以从中获取B2B数据 [!DNL Marketo Engage] 到平台，并使用与平台连接的应用程序使这些数据保持最新。
 
@@ -54,7 +54,7 @@ XDM是一个公开记录的规范，它提供了通用结构和定义，允许�
 有关以下字段之间的映射规则的详细信息，请参阅以下内容： [!DNL Marketo Engage] 数据集和平台：
 
 * [活动](../mapping/marketo.md#activities)
-* [项目](../mapping/marketo.md#programs)
+* [程序](../mapping/marketo.md#programs)
 * [计划成员资格](../mapping/marketo.md#program-memberships)
 * [公司](../mapping/marketo.md#companies)
 * [静态列表](../mapping/marketo.md#static-lists)
@@ -70,8 +70,8 @@ XDM是一个公开记录的规范，它提供了通用结构和定义，允许�
 
 | 目标 | 预期延迟 |
 | ----------- | ---------------- |
-| [!DNL Real-Time Customer Profile] | &lt; 10 分钟 |
-| 数据湖 | &lt; 60 分钟 |
+| [!DNL Real-Time Customer Profile] | &lt; 10分钟 |
+| 数据湖 | &lt; 60分钟 |
 
 >[!NOTE]
 >
@@ -83,6 +83,7 @@ XDM是一个公开记录的规范，它提供了通用结构和定义，允许�
 
 * 有关如何连接 [!DNL Marketo Engage] 将数据发送到Platform，请阅读上的教程 [创建 [!DNL Marketo Engage] UI中的源连接](../../../tutorials/ui/create/adobe-applications/marketo.md).
    * 有关如何设置架构和摄取自定义活动数据的信息，请阅读上的教程 [创建源连接和数据流 [!DNL Marketo Engage] 自定义活动数据](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
+   * 有关如何从迁移ECID映射的信息 [!DNL Person] 数据集到 [!DNL Activity] 数据集，请阅读 [ECID映射迁移指南](./migration.md).
 * 有关用于的B2B命名空间和架构的基础设置的信息 [!DNL Marketo Engage]，请阅读相关文档 [B2B命名空间和架构](./marketo-namespaces.md).
 * 有关查找 [!DNL Marketo Engage] munchkin ID并生成您的凭据，请阅读 [[!DNL Marketo Engage] 身份验证指南](./marketo-auth.md).
 * 有关适用于以下对象的特定映射规则的信息 [!DNL Marketo Engage] 数据集，请阅读相关的文档 [[!DNL Marketo Engage] 字段映射](../mapping/marketo.md).

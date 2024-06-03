@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform 源连接器帮助
+user-guide-title: Adobe Experience Platform源连接器帮助
 breadcrumb-title: 源连接器指南
-user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
+user-guide-description: 从各种来源摄取数据。 了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 58239a1d2db7be48cedd4467cb2f94913e387031
+source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
 workflow-type: tm+mt
-source-wordcount: '1039'
-ht-degree: 10%
+source-wordcount: '1043'
+ht-degree: 23%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 10%
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
          - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B命名空间和架构](connectors/adobe-applications/marketo/marketo-namespaces.md)
+         - [ECID映射迁移指南](connectors/adobe-applications/marketo/migration.md)
    - 广告 {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
       - [pinterest Ads](connectors/advertising/pinterest-ads.md)
@@ -55,19 +56,19 @@ ht-degree: 10%
       - [FTP连接器](connectors/cloud-storage/ftp.md)
       - [Google云存储连接器](connectors/cloud-storage/google-cloud-storage.md)
       - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
-      - [oracle对象存储](connectors/cloud-storage/oracle-object-storage.md)
+      - [Oracle 对象存储](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - 同意和偏好设置 {#consent}
-      - [OneTrust集成](connectors/consent-and-preferences/onetrust.md)
+      - [OneTrust 集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
-      - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
       - [SugarCRM连接器](connectors/crm/sugarcrm.md)
       - [Veeva CRM连接器](connectors/crm/veeva.md)
       - [Zoho CRM连接器](connectors/crm/zoho.md)
    - 客户成功 {#customer-success}
-      - [oracle服务云](connectors/customer-success/oracle-service-cloud.md)
+      - [Oracle 服务云](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
       - [Zendesk连接器](connectors/customer-success/zendesk.md)
@@ -93,9 +94,9 @@ ht-degree: 10%
       - [Snowflake连接器](connectors/databases/snowflake.md)
       - [teradata优势连接器](connectors/databases/teradata-vantage.md)
    - 数据和身份合作伙伴 {#data-partner}
-      - [Acxiom数据摄取](connectors/data-partners/acxiom-data-ingestion.md)
-      - [Acxiom潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
-      - [Merkury企业标识解析](connectors/data-partners/merkury.md)
+      - [Acxiom 数据摄取](connectors/data-partners/acxiom-data-ingestion.md)
+      - [Acxiom 潜在客户数据导入](connectors/data-partners/acxiom-prospecting-data-import.md)
+      - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
    - 电子商务 {#ecommerce}
       - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
       - [Shopify](connectors/ecommerce/shopify.md)
@@ -103,7 +104,7 @@ ht-degree: 10%
    - 本地系统 {#local-system}
       - [本地文件上传连接器](connectors/local-system/local-file-upload.md)
    - 营销自动化 {#marketing-automation}
-      - [钎焊电流](connectors/marketing-automation/braze.md)
+      - [Braze Currents](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
       - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
@@ -111,8 +112,8 @@ ht-degree: 10%
       - [oracleEloqua连接器](connectors/marketing-automation/oracle-eloqua.md)
       - [oracleNetSuite](connectors/marketing-automation/oracle-netsuite.md)
       - [Responsys连接器Oracle](connectors/marketing-automation/oracle-responsys.md)
-      - [路径工厂](connectors/marketing-automation/pathfactory.md)
-      - [SalesforceMarketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
+      - [PathFactory](connectors/marketing-automation/pathfactory.md)
+      - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - 支付 {#payments}
       - [PayPal连接器](connectors/payments/paypal.md)
       - [方形连接器](connectors/payments/square.md)
@@ -136,16 +137,16 @@ ht-degree: 10%
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
          - [Azure Blob](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2](tutorials/api/create/cloud-storage/adls-gen2.md)
-         - [Azure事件中心](tutorials/api/create/cloud-storage/eventhub.md)
-         - [Azure文件存储](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [Azure 事件中心](tutorials/api/create/cloud-storage/eventhub.md)
+         - [Azure 文件存储](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [数据登陆区](tutorials/api/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
-         - [Google云存储](tutorials/api/create/cloud-storage/google.md)
+         - [Google 云存储](tutorials/api/create/cloud-storage/google.md)
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
-         - [oracle对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
+         - [Oracle 对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
       - 同意和偏好设置 {#consent}
-         - [OneTrust集成](tutorials/api/create/consent-and-preferences/onetrust.md)
+         - [OneTrust 集成](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
@@ -154,7 +155,7 @@ ht-degree: 10%
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
       - 客户成功 {#customer-success}
-         - [oracle服务云](tutorials/api/create/customer-success/oracle-service-cloud.md)
+         - [Oracle 服务云](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/api/create/customer-success/zendesk.md)
@@ -162,9 +163,9 @@ ht-degree: 10%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
-         - [AzureData Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [azure synapse分析](tutorials/api/create/databases/synapse-analytics.md)
-         - [Azure表存储](tutorials/api/create/databases/ats.md)
+         - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure 数据表存储](tutorials/api/create/databases/ats.md)
          - [Couchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum](tutorials/api/create/databases/greenplum.md)
@@ -172,12 +173,12 @@ ht-degree: 10%
          - [IBM DB2](tutorials/api/create/databases/ibm-db2.md)
          - [MariaDB](tutorials/api/create/databases/mariadb.md)
          - [MySQL](tutorials/api/create/databases/mysql.md)
-         - [Oracle](tutorials/api/create/databases/oracle.md)
+         - [oracle](tutorials/api/create/databases/oracle.md)
          - [凤凰城](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
-         - [Snowflake流](tutorials/api/create/databases/snowflake-streaming.md)
+         - [Snowflake 流式处理](tutorials/api/create/databases/snowflake-streaming.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
-         - [teradata优势](tutorials/api/create/databases/teradata-vantage.md)
+         - [Teradata Vantage](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - 电子商务 {#ecommerce}
          - [SAP COMMERCE](tutorials/api/create/ecommerce/sap-commerce.md)
@@ -189,19 +190,19 @@ ht-degree: 10%
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
          - [MailChimp营销活动](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp成员](tutorials/api/create/marketing-automation/mailchimp-members.md)
-         - [oracleEloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
+         - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
          - [oracleNetSuite活动](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
          - [oracleNetSuite实体](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
-         - [oracleResponsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
-         - [路径工厂](tutorials/api/create/marketing-automation/pathfactory.md)
-         - [SalesforceMarketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
+         - [Oracle Responsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
+         - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
+         - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
-         - [正方形](tutorials/api/create/payments/square.md)
+         - [方形](tutorials/api/create/payments/square.md)
          - [Stripe](tutorials/api/create/payments/stripe.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
-         - [通用REST API](tutorials/api/create/protocols/generic-rest.md)
+         - [常规 REST API](tutorials/api/create/protocols/generic-rest.md)
       - 流 {#streaming}
          - [HTTP API](tutorials/api/create/streaming/http.md)
    - 浏览数据 {#explore}
@@ -259,17 +260,17 @@ ht-degree: 10%
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure Data Lake Storage Gen2](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
-         - [Azure事件中心](tutorials/ui/create/cloud-storage/eventhub.md)
-         - [Azure文件存储](tutorials/ui/create/cloud-storage/azure-file-storage.md)
+         - [Azure 事件中心](tutorials/ui/create/cloud-storage/eventhub.md)
+         - [Azure 文件存储](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [数据登陆区](tutorials/ui/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
-         - [Google云存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [Google 云存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
          - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
-         - [oracle对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
+         - [Oracle 对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - 同意和偏好设置 {#consent}
-         - [OneTrust集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
+         - [OneTrust 集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
@@ -278,7 +279,7 @@ ht-degree: 10%
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
       - 客户成功 {#customer-success}
-         - [oracle服务云](tutorials/ui/create/customer-success/oracle-service-cloud.md)
+         - [Oracle 服务云](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
          - [Zendesk](tutorials/ui/create/customer-success/zendesk.md)
@@ -286,27 +287,27 @@ ht-degree: 10%
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
-         - [AzureData Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [azure synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
-         - [Azure表存储](tutorials/ui/create/databases/ats.md)
+         - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure 数据表存储](tutorials/ui/create/databases/ats.md)
          - [Couchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
          - [GreenPlum](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/ui/create/databases/ibm-db2.md)
          - [MariaDB](tutorials/ui/create/databases/mariadb.md)
-         - [Microsoft SQL Server](tutorials/ui/create/databases/sql-server.md)
+         - [Microsoft SQL 服务器](tutorials/ui/create/databases/sql-server.md)
          - [MySQL](tutorials/ui/create/databases/mysql.md)
-         - [Oracle](tutorials/ui/create/databases/oracle.md)
+         - [oracle](tutorials/ui/create/databases/oracle.md)
          - [凤凰城](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
-         - [Snowflake流](tutorials/ui/create/databases/snowflake-streaming.md)
-         - [teradata优势](tutorials/ui/create/databases/teradata-vantage.md)
+         - [Snowflake 流式处理](tutorials/ui/create/databases/snowflake-streaming.md)
+         - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
       - 数据和身份合作伙伴 {#data-partner}
-         - [Acxiom数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
-         - [Acxiom潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
-         - [Merkury企业标识解析](tutorials/ui/create/data-partners/merkury.md)
+         - [Acxiom 数据摄取](tutorials/ui/create/data-partners/acxiom-data-ingestion.md)
+         - [Acxiom 潜在客户数据导入](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
+         - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
       - 电子商务 {#ecommerce}
          - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
@@ -314,21 +315,21 @@ ht-degree: 10%
       - 本地系统 {#local-system}
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 营销自动化 {#marketing-automation}
-         - [钎焊电流](tutorials/ui/create/marketing-automation/braze.md)
+         - [Braze Currents](tutorials/ui/create/marketing-automation/braze.md)
          - [查特利奥](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
-         - [Mailchimp营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
-         - [Mailchimp会员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
-         - [oracleEloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
+         - [Mailchimp 营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
+         - [Mailchimp 会员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
+         - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
          - [oracleNetSuite活动](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
          - [oracleNetSuite实体](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
-         - [oracleResponsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
-         - [路径工厂](tutorials/ui/create/marketing-automation/pathfactory.md)
-         - [SalesforceMarketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
+         - [Oracle Responsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
+         - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
+         - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
-         - [正方形](tutorials/ui/create/payments/square.md)
+         - [方形](tutorials/ui/create/payments/square.md)
          - [Stripe](tutorials/ui/create/payments/stripe.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
@@ -347,7 +348,7 @@ ht-degree: 10%
       - [营销自动化连接数据流](tutorials/ui/dataflow/marketing-automation.md)
       - [支付连接数据流](tutorials/ui/dataflow/payments.md)
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
-   - [在 UI 中使用模板创建源数据流](tutorials/ui/templates.md)
+   - [在UI中使用模板创建源数据流](tutorials/ui/templates.md)
    - [筛选源对象](tutorials/ui/filter.md)
    - [按需引入](tutorials/ui/on-demand-ingestion.md)
    - [监测批量数据流](tutorials/ui/monitor.md)
@@ -356,7 +357,7 @@ ht-degree: 10%
    - [更新数据流](tutorials/ui/update-dataflows.md)
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
-   - [订阅源提醒](tutorials/ui/alerts.md)
+   - [订阅源警报](tutorials/ui/alerts.md)
    - [将数据流另存为草稿](tutorials/ui/draft.md)
 - 自助式源（批处理SDK） {#sdk}
    - [概述](sources-sdk/overview.md)
@@ -394,4 +395,4 @@ ht-degree: 10%
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题解答](./troubleshooting.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 映射Marketo Engage源的字段
 description: 下表包含Marketo数据集中的字段与其对应的XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
+source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
 workflow-type: tm+mt
-source-wordcount: '889'
-ht-degree: 4%
+source-wordcount: '890'
+ht-degree: 2%
 
 ---
 
@@ -23,7 +23,11 @@ ht-degree: 4%
 
 此 [!DNL Marketo] 源现在支持其他标准活动。 要使用标准活动，您必须使用 [模式自动生成实用程序](../marketo/marketo-namespaces.md) 因为如果您创建 `activities` 在不更新架构的数据流中，映射模板将失败，因为新的目标字段将不存在于架构中。 如果选择不更新架构，您仍然可以创建新数据流并消除任何错误。 但是，任何新字段或更新字段都不会引入Platform。
 
-请参阅相关文档 [XDM体验事件类](../../../../xdm/classes/experienceevent.md) 有关XDM类和XDM字段组的更多信息。
+请阅读相关文档 [XDM体验事件类](../../../../xdm/classes/experienceevent.md) 有关XDM类和XDM字段组的更多信息。
+
+>[!NOTE]
+>
+>此 `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` 源字段是一个计算字段，必须使用添加 **[!UICONTROL 添加计算字段]** Experience Platform选项。 阅读有关的教程 [添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 以了解更多信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -31,7 +35,7 @@ ht-degree: 4%
 | `"Marketo"` | `personKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `personKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `personID` | `personKey.sourceID` |
-| `concat(personID,"@${MUNCHKIN_ID}.Marketo")` | `personKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(personID,"@${MUNCHKIN_ID}.Marketo")` | `personKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `eventType` | `eventType` |
 | `producedBy` | `producedBy` |
 | `timestamp` | `timestamp` |
@@ -127,10 +131,11 @@ ht-degree: 4%
 | `directMarketing.emailSent.testVariantID` | `directMarketing.emailSent.testVariantID` |
 | `directMarketing.emailSent.testVariantName` | `directMarketing.emailSent.testVariantName` |
 | `directMarketing.emailSent.automationRunID` | `directMarketing.emailSent.automationRunID` |
+| `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` | `identityMap` | 这是计算字段。 |
 
 {style="table-layout:auto"}
 
-## 项目 {#programs}
+## 程序 {#programs}
 
 阅读 [XDM商业营销活动概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的详细信息。 有关XDM字段组的更多信息，请参阅 [“商业营销活动详细信息”架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 指南。
 
@@ -139,7 +144,7 @@ ht-degree: 4%
 | `"Marketo"` | `campaignKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `campaignKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `campaignKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(sfdcId != null && sfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdcId, "sourceKey", concat(sfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | 此  `extSourceSystemAudit.externalKey` 是辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `name` | `campaignName` |
 | `description` | `campaignDescription` |
@@ -170,7 +175,7 @@ ht-degree: 4%
 | `"Marketo"` | `campaignMemberKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `campaignMemberKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `campaignMemberKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignMemberKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignMemberKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(programId != null && programId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", programId, "sourceKey", concat(programId,"@${MUNCHKIN_ID}.Marketo")), null)` | `campaignKey` | 关系 |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | 关系 |
 | `iif(acquiredByCampaignID != null && acquiredByCampaignID != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", acquiredByCampaignID, "sourceKey", concat(acquiredByCampaignID,"@${MUNCHKIN_ID}.Marketo")), null)` | `acquiredByCampaignKey` |
@@ -203,7 +208,7 @@ ht-degree: 4%
 | `"Marketo"` | `accountKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `concat(id, ".mkto_org")` | `accountKey.sourceID` |
-| `concat(id, ".mkto_org@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id, ".mkto_org@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | <ul><li>`iif(mktoCdpExternalId != null && mktoCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", mktoCdpExternalId, "sourceKey", concat(mktoCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(msftCdpExternalId != null && msftCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", msftCdpExternalId, "sourceKey", concat(msftCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | 此 `extSourceSystemAudit.externalKey` 是辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -235,7 +240,7 @@ ht-degree: 4%
 | `"Marketo"` | `marketingListKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `marketingListKey.sourceInstanceID` | `"${MUNCHKIN_ID}"` 将作为Explore API的一部分替换。 |
 | `id` | `marketingListKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `marketingListKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `marketingListKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `name` | `marketingListName` |
 | `description` | `marketingListDescription` |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
@@ -253,7 +258,7 @@ ht-degree: 4%
 | `"Marketo"` | `marketingListMemberKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `marketingListMemberKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `staticListMemberID` | `marketingListMemberKey.sourceID` |
-| `concat(staticListMemberID,"@${MUNCHKIN_ID}.Marketo")` | `marketingListMemberKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(staticListMemberID,"@${MUNCHKIN_ID}.Marketo")` | `marketingListMemberKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(staticListID != null && staticListID != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", staticListID, "sourceKey", concat(staticListID,"@${MUNCHKIN_ID}.Marketo")), null)` | `marketingListKey` | 关系 |
 | `iif(personID != null && personID != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", personID, "sourceKey", concat(personID,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | 关系 |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
@@ -274,7 +279,7 @@ ht-degree: 4%
 | `"Marketo"` | `accountKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `concat(id, ".mkto_acct")` | `accountKey.sourceID` |
-| `concat(id, ".mkto_acct@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id, ".mkto_acct@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | 此 `extSourceSystemAudit.externalKey` 是辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -302,7 +307,7 @@ ht-degree: 4%
 | `"Marketo"` | `opportunityKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `opportunityKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(externalOpportunityId != null && externalOpportunityId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", externalOpportunityId, "sourceKey", concat(externalOpportunityId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey.sourceKey` | 辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `iif(mktoCdpAccountOrgId != null && mktoCdpAccountOrgId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(mktoCdpAccountOrgId, ".mkto_org"), "sourceKey", concat(mktoCdpAccountOrgId, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `accountKey` | 关系 |
 | `description` | `opportunityDescription` |
@@ -339,7 +344,7 @@ ht-degree: 4%
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityPersonKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `opportunityPersonKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将作为Explore API的一部分替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将作为Explore API的一部分替换。 |
 | `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | 此 `extSourceSystemAudit.externalKey` 是辅助标识。 以下项的值 `{CRM_ORG_ID}` 和 `{CRM_TYPE}` 将被自动替换。 |
 | `iif(mktoCdpOpptyId != null && mktoCdpOpptyId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpOpptyId, "sourceKey", concat(mktoCdpOpptyId,"@${MUNCHKIN_ID}.Marketo")), null)` | `opportunityKey` | 关系 |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | 关系 |
@@ -360,7 +365,7 @@ ht-degree: 4%
 | `"Marketo"` | `b2b.personKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `id` | `b2b.personKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `b2b.personKey.sourceKey` | 主要标识. 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `b2b.personKey.sourceKey` | 主要身份。 的值 `"${MUNCHKIN_ID}"` 将被自动替换。 |
 | `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | 如果取消订阅的是 `true` (例如，值= `1`)，然后设置 `consents.marketing.email.val` 作为(`n`)。 如果取消订阅的是 `false` (例如，值= `0`)，然后设置 `consents.marketing.email.val` 作为 `null`. |
 | `iif(unsubscribedReason != null && unsubscribedReason != "", substr(unsubscribedReason, 0, 100), null)` | `consents.marketing.email.reason` |
 | `iif(contactCompany != null && contactCompany != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(contactCompany, ".mkto_org"), "sourceKey", concat(contactCompany, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `b2b.accountKey` |
@@ -402,16 +407,11 @@ ht-degree: 4%
 | `iif(id != null && id != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", id, "sourceKey", concat(id,"@${MUNCHKIN_ID}.Marketo")), null)` | `personComponents.sourcePersonKey` |
 | `email` | `personComponents.workEmail.address` |
 | `email` | `workEmail.address` |
-| `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | 这是计算字段。 |
 | `marketoIsDeleted` | `isDeleted` |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | 这是计算字段。 |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | 这是计算字段。 |
 
 {style="table-layout:auto"}
-
->[!NOTE]
->
->此 `to_object('ECID',arrays_to_objects('id',explode(ecids)))` 源字段是一个计算字段，必须使用添加 [!UICONTROL 添加计算字段] 选项。 请参阅上的教程 [添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 以了解更多信息。
 
 ## 后续步骤
 
