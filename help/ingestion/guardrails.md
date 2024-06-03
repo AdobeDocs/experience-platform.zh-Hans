@@ -3,14 +3,18 @@ keywords: Experience Platform；故障诊断；护栏；指南；
 title: 数据引入的护栏
 description: 了解Adobe Experience Platform中的数据摄取防护。
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 9d3a8aac120119ce0361685f9cb8d3bfc28dc7fd
+source-git-commit: cdc5bb01ef6de8134c6ad4ef6601a748571bf86f
 workflow-type: tm+mt
-source-wordcount: '579'
-ht-degree: 1%
+source-wordcount: '646'
+ht-degree: 0%
 
 ---
 
 # 数据引入的护栏
+
+>[!IMPORTANT]
+>
+>批量摄取和流式摄取的护栏在组织级别而非沙盒级别计算。 这意味着每个沙盒的数据使用情况绑定到与整个组织对应的许可证使用情况权利总数。 此外，开发沙盒中的数据使用限制为总配置文件的10%。 有关许可证使用授权的更多信息，请阅读 [数据管理最佳实践指南](../landing/license-usage-and-guardrails/data-management-best-practices.md).
 
 护栏是阈值，可为数据和系统使用、性能优化以及避免Adobe Experience Platform中的错误或意外结果提供指导。 护栏可指您对与许可权利相关的数据和处理的使用或使用。
 

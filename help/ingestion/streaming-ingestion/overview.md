@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 流式摄取概述
 description: Adobe Experience Platform的流式摄取为用户提供了一种实时将数据从客户端和服务器端设备发送到Experience Platform的方法。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: c6cff4d30815d3f7bfb61d1672a5d0228a0da60d
+source-git-commit: d6424e2a9afc046f4bff329797954fd43939a819
 workflow-type: tm+mt
-source-wordcount: '357'
+source-wordcount: '424'
 ht-degree: 1%
 
 ---
 
-# 流式摄取概述
+# 流摄取概述
 
 Adobe Experience Platform的流式摄取为用户提供了一种从客户端和服务器端设备将数据发送到的方法 [!DNL Experience Platform] 实时。
 
@@ -35,7 +35,11 @@ Adobe Experience Platform允许您通过生成 [!DNL Real-Time Customer Profile]
 
 有关启用数据集的更多信息 [!DNL Profile] 和 [!DNL Identity Service]，请阅读 [配置数据集指南](../../profile/tutorials/dataset-configuration.md).
 
-## 流式摄取的预期滞后时间是多少？ [!DNL Platform]？
+## 在Experience Platform上流式摄取的预期滞后时间是多少？
+
+>[!IMPORTANT]
+>
+>流式摄取的护栏在组织级别而非沙盒级别计算。 这意味着每个沙盒的数据使用情况绑定到与整个组织对应的许可证使用情况权利总数。 此外，开发沙盒中的数据使用限制为总配置文件的10%。 有关许可证使用授权的更多信息，请阅读 [数据管理最佳实践指南](../../landing/license-usage-and-guardrails/data-management-best-practices.md).
 
 | 目标 | 预期延迟 |
 | --------- | ---------------- |
