@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 2e1ea70496b8e379d5a9be0f2f321b21da86cf4d
+source-git-commit: e96477882beceb6e370d53df3cc65e8dfb28745f
 workflow-type: tm+mt
-source-wordcount: '2096'
-ht-degree: 31%
+source-wordcount: '2158'
+ht-degree: 30%
 
 ---
 
@@ -13,6 +13,17 @@ ht-degree: 31%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [Platform Web SDK发行说明](/help/web-sdk/release-notes.md).
+
+## 版本2.23.2 - 2024年6月3日
+
+**修复和改进功能**
+
+* 修复了在定义配置覆盖时修改扩展配置时发生的错误。
+* 允许为媒体收集Ping间隔设置空值。
+* 修复了在修改更新变量操作时发生的错误。
+* 允许重置配置覆盖中的ID同步容器。
+
+包含Adobe Experience Platform Web SDK版本2.20.0。
 
 ## 2.23.1版 — 2024年5月28日
 
