@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；UI；UI；XDM；XDM系�
 solution: Experience Platform
 title: 使用架构编辑器创建架构
 type: Tutorial
-description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
+description: 本教程介绍了在Experience Platform中使用架构编辑器创建架构的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c8c8e8b8571c215cb470dd5bdb9e9172d564f9d8
 workflow-type: tm+mt
-source-wordcount: '4695'
+source-wordcount: '4813'
 ht-degree: 0%
 
 ---
@@ -353,11 +353,36 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 
 ## 更多操作 {#more}
 
-在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构，或者删除架构（如果尚未为实时客户配置文件启用）或者具有关联的数据集。 选择 [!UICONTROL 更多] ，以显示包含快速操作的下拉菜单。
-
-复制JSON结构功能允许您查看在仍在构建架构和数据管道时样本有效负载的外观。 对于模式中存在复杂的对象映射结构（如标识映射）的情况，此变量特别有用。
+在架构编辑器中，您还可以执行快速操作以复制架构的JSON结构或删除架构。 选择 [!UICONTROL 更多] ，以显示包含快速操作的下拉菜单。
 
 ![架构编辑器中，突出显示了“更多”按钮，并显示了下拉选项。](../images/tutorials/create-schema/more-actions.png)
+
+### 删除架构 {#delete-a-schema}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenabledwithdatasets"
+>title="无法删除架构"
+>abstract="无法删除架构，因为它已为配置文件启用，并且具有关联的数据集。"
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenablednodatasets"
+>title="无法删除架构"
+>abstract="无法删除该架构，因为它已为配置文件启用。"
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_withdatasetsnotprofileenabled"
+>title="无法删除架构"
+>abstract="无法删除该架构，因为它具有关联的数据集。"
+
+可以使用在UI中从架构编辑器删除架构 [!UICONTROL 更多] 操作以及中的架构详细信息 [!UICONTROL 浏览] 选项卡。 在某些情况下，无法删除架构。 如果符合以下条件，则无法删除架构：
+
+* 已为配置文件启用架构。
+* 架构已为配置文件启用，并具有关联的数据集。
+* 架构具有关联的数据集，但未为配置文件启用。
+
+### 复制 JSON 结构 {#copy-json-structure}
+
+选择 **[!UICONTROL 复制JSON结构]** 要为架构库中的任何架构生成导出有效负载。 此操作会将JSON结构复制到剪贴板。 然后，您可以使用导出的JSON将架构和任何相关资源导入其他沙盒或组织。 这使得在不同环境之间共享和重用架构变得简单而高效。
 
 ## 后续步骤和其他资源
 

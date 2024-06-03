@@ -2,7 +2,7 @@
 title: Adobe Analytics ExperienceEvent完整扩展架构字段组
 description: 了解Adobe Analytics ExperienceEvent完整扩展架构字段组。
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 5eb15a7dfff7e6d8ba815ae4f89142ba50166620
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 5%
@@ -37,7 +37,7 @@ ht-degree: 5%
 
 ## `customDimensions` {#custom-dimensions}
 
-`customDimensions` 捕获自定义 [维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html?lang=zh-Hans) Analytics跟踪的流量。
+`customDimensions` 捕获自定义 [维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/overview.html) Analytics跟踪的流量。
 
 ![customDimension字段](../../images/field-groups/analytics-full-extension/customDimensions.png)
 
@@ -72,12 +72,12 @@ ht-degree: 5%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `browserIDStr` | 字符串 | 用于所用浏览器的Adobe Analytics标识符(又称为 [浏览器类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html?lang=zh-Hans))。 |
-| `operatingSystemIDStr` | 字符串 | 用于所使用操作系统的Adobe Analytics标识符(又称为 [操作系统类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html?lang=zh-Hans))。 |
+| `browserIDStr` | 字符串 | 用于所用浏览器的Adobe Analytics标识符(又称为 [浏览器类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html))。 |
+| `operatingSystemIDStr` | 字符串 | 用于所使用操作系统的Adobe Analytics标识符(又称为 [操作系统类型维度](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html))。 |
 
 ## 自定义事件字段 {#events}
 
-Analytics扩展字段组提供了十个最多可捕获100个的对象字段 [自定义事件量度](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html?lang=zh-Hans) 每个字段组，共1000个。
+Analytics扩展字段组提供了十个最多可捕获100个的对象字段 [自定义事件量度](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) 每个字段组，共1000个。
 
 每个顶级事件对象包含其各自范围内的单个事件对象。 例如， `event101to200` 包含作为键值的事件 `event101` 到 `event200`.
 

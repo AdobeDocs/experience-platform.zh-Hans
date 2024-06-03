@@ -4,14 +4,19 @@ title: 在UI中导出XDM架构
 description: 了解如何在Adobe Experience Platform用户界面中将现有架构导出到其他沙盒或组织。
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: d25042e80ca5f655a50deac6a65ce9168225d6e6
+source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
 
-# 在UI中导出XDM架构
+# 在UI中导出XDM架构 {#export-xdm-schemas-in-the-UI}
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_copyjsonstructure"
+>title="复制 JSON 结构"
+>abstract="通过将JSON结构复制到剪贴板，为您选择的架构生成导出有效负载。 使用此功能可导出架构库中任何架构的详细信息。 然后，可使用此导出的JSON将架构和任何相关资源导入其他沙盒或组织。 这使得在不同环境之间共享和重用架构变得简单而高效。"
 
 架构库中的所有资源都包含在组织内的特定沙盒中。 在某些情况下，您可能希望在沙盒和组织之间共享Experience Data Model (XDM)资源。
 
@@ -40,6 +45,8 @@ ht-degree: 0%
 ![包含架构行和架构的架构工作区 [!UICONTROL 复制到JSON] 突出显示。](../images/ui/export/copy-json.png)
 
 这会将JSON有效负载复制到剪贴板，该剪贴板是基于架构结构生成的。 对于&quot;[!DNL Loyalty Members]”架构如上所示，会生成以下JSON：
+
++++选择以展开示例JSON有效负载
 
 ```json
 [
@@ -203,6 +210,8 @@ ht-degree: 0%
 ]
 ```
 
++++
+
 通过选择还可以复制有效负载 [!UICONTROL 更多] 架构编辑器的右上角。 下拉菜单提供两个选项： [!UICONTROL 复制JSON结构] 和 [!UICONTROL 删除架构].
 
 >[!NOTE]
@@ -215,7 +224,7 @@ ht-degree: 0%
 
 请注意，您组织的租户ID的每个实例均显示为 `<XDM_TENANTID_PLACEHOLDER>` 在有效负荷中。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中导入架构的位置。
 
-## 使用API导入资源
+## 使用API导入资源 {#import-resource-with-api}
 
 在复制了架构的导出JSON后，您可以将其用作POST请求的有效负载到 `/rpc/import` 架构注册表API中的端点。 请参阅 [导入端点指南](../api/import.md) 有关如何配置调用以将架构发送到所需组织和沙盒的详细信息。
 

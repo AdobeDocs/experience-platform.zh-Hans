@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑架构的基础知识。
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
 workflow-type: tm+mt
 source-wordcount: '3732'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
-# 在 UI 中创建和编辑架构
+# 在 UI 中创建和编辑架构 {#create-edit-schemas-in-ui}
 
 本指南概述了如何在Adobe Experience Platform UI中为您的组织创建、编辑和管理Experience Data Model (XDM)架构。
 
@@ -233,7 +233,7 @@ ht-degree: 2%
 
 新字段将添加到画布中，并在 [租户ID](../../api/getting-started.md#know-your-tenant_id) 以避免与标准XDM字段冲突。 与新字段关联的字段组也会显示在 **[!UICONTROL 字段组]** 在左边栏中。
 
-![租户 ID](../../images/ui/resources/schemas/tenantId.png)
+![租户ID](../../images/ui/resources/schemas/tenantId.png)
 
 >[!NOTE]
 >
@@ -281,12 +281,12 @@ ht-degree: 2%
 
 ![添加到标准对象的字段](../../images/ui/resources/schemas/added-to-standard-object.png)
 
-## 为实时客户配置文件启用架构 {#profile}
+## 为Real-time Customer Profile启用架构 {#profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_enableforprofile"
 >title="为配置文件启用架构"
->abstract="在为配置文件启用一个架构时，从该架构创建的任何数据集都会参与实时客户配置文件，此配置文件合并来自不同源的数据以构建每个客户的完整视图。使用架构将数据提取到配置文件中后，无法将其禁用。有关更多信息，请参阅文档。"
+>abstract="为配置文件启用某个架构后，从该架构创建的任何数据集都将参与Real-time Customer Profile，后者将合并来自不同源的数据，以构建每个客户的完整视图。 一旦使用架构将数据摄取到配置文件中，就无法禁用它。 有关更多信息，请参阅文档。"
 
 [Real-time Customer Profile](../../../profile/home.md) 合并来自不同来源的数据，以构建每个客户的完整视图。 如果您希望架构捕获的数据参与此过程，则必须启用架构以便用于 [!DNL Profile].
 
