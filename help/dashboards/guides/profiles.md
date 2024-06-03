@@ -87,7 +87,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 预配置的配置文件详细信息小组件如下所示：
 
-#### 客户配置文件 {#customer-profile}
+#### 客户轮廓 {#customer-profile}
 
 此 [!UICONTROL 客户配置文件] 小组件显示与配置文件关联的用户的名字和姓氏，以及他们的 [!UICONTROL 配置文件ID]. 用户档案ID是与身份类型关联的自动生成的标识符，表示用户档案。 要了解有关身份和身份命名空间的更多信息，请参阅 [身份概述](../../rtcdp/profile/identities-overview.md).
 
@@ -280,7 +280,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilecount"
->title="配置文件计数"
+>title="轮廓计数"
 >abstract="此构件显示拍摄快照时配置文件存储中合并的配置文件总数。 数字取决于应用于配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数]** 小组件显示拍摄快照时配置文件存储中合并的配置文件总数。 此数字是所选合并策略应用于您的配置文件数据的结果，用于将配置文件片段合并在一起，为每个片段形成一个单独的配置文件。
@@ -305,7 +305,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilescountchange"
->title="配置文件计数变化"
+>title="轮廓计数变化"
 >abstract="此构件显示合并的配置文件总数 **已添加** 到配置文件存储区。 数字取决于应用于配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数更改]** 构件显示自上次快照以来添加到配置文件存储区的合并配置文件数。 此数字是所选合并策略应用于您的配置文件数据的结果，用于将配置文件片段合并在一起，为每个片段形成一个单独的配置文件。 您可以使用下拉选择器查看过去30天、90天或12个月内添加的用户档案数。
@@ -320,7 +320,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesaddedtrend"
->title="配置文件计数变化趋势"
+>title="轮廓计数变化趋势"
 >abstract="此构件显示过去30天、90天或12个月每日添加到配置文件存储区的合并配置文件数。 该数字还取决于应用于配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数变化趋势]** 构件显示过去30天、90天或12个月每日添加到配置文件存储区的合并配置文件总数。 此数字在每天拍摄快照时都会更新，因此，如果您要将配置文件摄取到Platform，则在拍摄下一个快照之前不会反映配置文件数。 添加的配置文件计数是选定的合并策略应用于您的配置文件数据的结果，这样可以将配置文件片段合并在一起，形成每个人的单个配置文件。
@@ -349,7 +349,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesbyidentity"
->title="按标识列出的配置文件"
+>title="按标识列出的轮廓"
 >abstract="此构件按身份显示配置文件存储中所有合并配置文件的细分。"
 
 此 **[!UICONTROL 按身份列出的配置文件]** 构件显示您的配置文件存储中所有合并配置文件的身份细分。 按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
@@ -387,7 +387,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_singleidentityprofiles"
->title="单一标识配置文件"
+>title="单一标识轮廓"
 >abstract="此构件提供贵组织仅有一种类型创建其身份的ID类型的配置文件的计数。 此ID类型可以是电子邮件或ECID。"
 
 此 [!UICONTROL 单一身份配置文件] 小组件提供贵组织只有一种类型的ID类型来创建其身份的配置文件的计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
@@ -406,7 +406,7 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofiles"
->title="未分段的配置文件"
+>title="未客户细分的轮廓"
 >abstract="此构件提供未附加到任何受众的所有配置文件总数，表示在您的组织内激活配置文件的机会。"
 
 此 [!UICONTROL 未分段的配置文件] 构件提供未附加到任何受众的所有用户档案的总数。 生成的数字与上一个快照时是准确的，表示在您的组织内激活配置文件的机会。 它还表示有机会删除未提供适当ROI的用户档案。
