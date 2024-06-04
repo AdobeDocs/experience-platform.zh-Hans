@@ -4,10 +4,10 @@ solution: Experience Platform
 title: XDM系统概述
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验数据模型(XDM)由Adobe驱动，它致力于标准化客户体验数据并定义用于客户体验管理的架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
+source-git-commit: 48caa318f0e951979db4fd2c94624a73311422d6
 workflow-type: tm+mt
-source-wordcount: '2117'
-ht-degree: 4%
+source-wordcount: '2101'
+ht-degree: 0%
 
 ---
 
@@ -23,7 +23,7 @@ XDM是一个基础框架，它允许Adobe Experience Cloud由Experience Platform
 
 ## XDM架构 {#xdm-schemas}
 
-Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
+Experience Platform使用架构以一致且可重用的方式描述数据结构。 通过在系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
 在将数据引入Platform之前，必须组合模式以描述数据的结构并对每个字段中可以包含的数据类型提供约束。 架构由一个基类以及零个或多个架构字段组组成。
 
@@ -48,12 +48,12 @@ Experience Platform提供了一个用户界面和RESTful API，从中可以查�
 * [XDM UI指南](./ui/overview.md)
 * [架构注册表API指南](./api/overview.md)
 
-## XDM 系统中的数据行为 {#data-behaviors}
+## XDM系统中的数据行为 {#data-behaviors}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_behavior"
 >title="数据行为"
->abstract="Experience Platform 中使用的数据分为三种行为类型：记录、时间序列和临时。记录架构提供有关主体属性的信息，时间序列架构在执行操作时捕获系统的快照。临时架构捕获在仅供单个数据集使用的命名空间中的字段。有关 Platform 中的数据行为的更多信息，请参阅文档。"
+>abstract="用于Experience Platform的数据分为三种行为类型：记录、时间序列和临时。 记录架构提供有关主体属性的信息，而时序架构则捕获执行操作时的系统快照。 临时架构会捕获仅供单个数据集使用的命名空间字段。 有关Platform中数据行为的更多信息，请参阅文档。"
 
 用于Experience Platform的数据分为三种行为类型：
 
@@ -118,10 +118,6 @@ Experience Platform与架构无关，这意味着任何符合XDM标准的架构�
 Real-Time Customer Profile为有针对性的个性化体验管理提供了一个集中式客户配置文件。 每个用户档案都包含跨所有系统聚合的数据，并包含涉及用户档案主体的事件的带时间戳的可操作帐户。 这些事件可能发生在您用于Experience Platform的任何系统中。
 
 Real-time Customer Profile使用基于以下项的架构格式数据 [!UICONTROL XDM个人资料] 和 [!UICONTROL XDM ExperienceEvent] 类，并根据这些数据响应查询。
-
->[!NOTE]
->
->Real-time Customer Profile可以 **非** 支持基于 [!UICONTROL XDM ExperienceEvent] 类。
 
 该系统维护每个客户个人资料的实例，将数据合并在一起，形成个人的“单一真实来源”。 这种统一的数据使用所谓的“联合架构”（有时称为“联合视图”）表示。 合并架构将实施相同类的所有架构的字段聚合到单个架构中。 使用UI或API构成架构时，您可以启用架构以用于Real-time Customer Profile，并将其标记以包含在合并中。 然后，标记的架构将参与馈送到用户档案的架构定义。
 
