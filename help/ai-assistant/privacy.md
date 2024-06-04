@@ -1,9 +1,10 @@
 ---
 title: AI助手中的隐私、安全和管理
 description: 了解AI Assistant的隐私、安全和治理实践。
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 371e065d-c2dd-4233-b78e-a42757fce853
+source-git-commit: 1762fcbcc730ccb08340a71383c90404c3fea614
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -17,7 +18,6 @@ Adobe Experience Platform中的AI助手以隐私、安全和治理为原则。
 * 目前，AI助手没有使用任何个人数据，即使用于培训目的也是如此。
 * AI助手不知道消费者数据。
 * 所有现有 [访问控制](../access-control/home.md) AI助手将遵循策略。
-   * 对象支持对象级访问控制。 即将支持属性的对象级访问控制。
    * 任何基于属性的新访问控制策略在最多24小时后反映在AI助手中*
 * 必须向您授予显式权限才能与AI助手交互。
    * 您可以使用为Experience Platform和Journey Optimizer设置不同的权限 [权限UI](../access-control/abac/ui/permissions.md) 你可以使用 [Admin Console](../access-control/ui/browse.md) 以为Customer Journey Analytics分配权限。
