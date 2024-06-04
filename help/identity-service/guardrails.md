@@ -3,16 +3,20 @@ keywords: Experience Platform；身份；身份服务；故障排除；护栏；
 title: Identity服务的护栏
 description: 本文档提供了有关Identity Service数据的使用和速率限制的信息，以帮助您优化身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '1526'
-ht-degree: 0%
+source-wordcount: '1549'
+ht-degree: 1%
 
 ---
 
 # 护栏 [!DNL Identity Service] 数据
 
 本文档提供了有关以下各项的使用和速率限制的信息： [!DNL Identity Service] 数据，以帮助您优化身份图的使用。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
+
+>[!IMPORTANT]
+>
+>检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
 
 ## 快速入门
 
@@ -63,7 +67,7 @@ ht-degree: 0%
 删除优先级如下：
 
 1. Cookie ID
-2. 设备ID
+2. 设备 ID
 3. 跨设备ID、电子邮件和电话
 
 ### 删除规则#2基于存储在身份上的时间戳

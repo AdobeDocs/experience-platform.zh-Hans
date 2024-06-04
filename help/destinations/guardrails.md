@@ -6,14 +6,18 @@ product: experience platform
 type: Documentation
 description: 了解有关数据激活默认使用量和速率限制的更多信息。
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: c425d1016bed80113b879a683114861d839b79eb
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '1662'
-ht-degree: 1%
+source-wordcount: '1685'
+ht-degree: 2%
 
 ---
 
 # 数据激活的护栏
+
+>[!IMPORTANT]
+>
+>检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
 
 本页提供有关激活行为的默认使用量和速率限制。 查看以下护栏时，系统假定您已正确设置 [已连接到目标](/help/destinations/ui/connect-destination.md).
 

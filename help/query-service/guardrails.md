@@ -3,18 +3,21 @@ keywords: Experience Platform；查询；查询服务；故障排除；护栏；
 title: 查询服务的护栏
 description: 本文档提供有关查询服务数据使用限制的信息，以帮助您优化查询使用。
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '1177'
-ht-degree: 1%
+source-wordcount: '1181'
+ht-degree: 2%
 
 ---
 
 # 查询服务的护栏
 
 护栏是引导数据和系统使用、性能优化、避免Adobe Experience Platform中出现错误或意外结果的阈值。
-
 本文档提供了查询服务数据的默认使用限制，以帮助您在查询与您的许可权利相关的数据时优化系统性能。
+
+>[!IMPORTANT]
+>
+>检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
 
 ## 先决条件
 
@@ -73,7 +76,7 @@ ht-degree: 1%
 | 未计划批的并发查询服务用户 | <ul><li>在应用程序产品描述中指定。</li><li>+5（每购买一个额外的Ad hoc query用户附加组件包）</li></ul> | 系统强制的护栏 | 对于未计划的批处理查询（例如，在交互模式下的CTAS/ITAS查询），这将定义有多少用户可以同时为特定组织创建会话。 如果超过并发限制，用户将收到 `Session Limit Reached` 错误。 |
 | 计划批的并发查询服务用户 | 无用户限制 | 不适用 | 计划的批处理查询是异步作业，因此没有用户限制。 |
 | 批量数据处理所需的计算时间 | 如客户的Adobe Experience Platform Intelligence查询自定义SKU销售订单中所指定 | 性能护栏 | 这定义了客户每年在执行批处理查询以扫描、处理数据并将其写回数据湖时允许的计算时间范围。 |
-| 查询并发 | 受支持 | 不适用 | 计划的批处理查询是异步作业，因此支持并发查询。 |
+| 查询并发 | 支持 | 不适用 | 计划的批处理查询是异步作业，因此支持并发查询。 |
 | 客户端连接器和结果输出限制 | 客户端连接器<ul><li>查询UI（对行没有上限）</li><li>第三方客户端（行数没有上限）</li><li>[!DNL PostgresSQL] 客户端（行数没有上限）</li><li>REST API（行数没有上限）</li></ul> | 系统强制的护栏 | 可以使用以下方法使查询结果可用：<ul><li>可以存储为派生数据集</li><li>可以插入到现有的派生数据集中</li></ul>注：查询结果的记录计数没有上限。 |
 | 通过以下方式返回的结果 | 数据集 | 不适用 | 这会定义如何将结果提供给用户。 |
 

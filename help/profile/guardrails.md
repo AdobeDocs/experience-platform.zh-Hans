@@ -3,18 +3,22 @@ title: 实时客户个人资料数据和分段的默认护栏
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: 了解配置文件数据和分段的性能和系统强制护栏，以确保充分使用 Real-Time CDP 功能。
+description: 了解用于用户档案数据和分段的性能和系统强制执行的护栏，以确保最佳地使用Real-Time CDP功能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 0542e618dfb6e5571845387fed9eced4200179b6
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '2434'
-ht-degree: 2%
+source-wordcount: '2457'
+ht-degree: 1%
 
 ---
 
 # 默认护栏 [!DNL Real-Time Customer Profile] 数据和分段
 
 Adobe Experience Platform允许您以实时客户配置文件的形式，根据行为见解和客户属性提供个性化的跨渠道体验。 为了支持这种新的配置文件方法，Experience Platform使用与传统关系数据模型不同的高度非规范化混合数据模型。
+
+>[!IMPORTANT]
+>
+>检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
 
 本文档提供了默认的使用和速率限制，帮助您为配置文件数据建模以获得最佳系统性能。 查看以下护栏时，假定您已正确建模数据。 如果您对如何建立数据模型有疑问，请联系您的客户服务代表。
 
@@ -116,7 +120,7 @@ Adobe Experience Platform允许您以实时客户配置文件的形式，根据�
 | --------- | ----- | ---------- | ----------- |
 | 每个沙盒的受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个受众，前提是每个沙盒中的受众少于4000个。 其中包括批量、流和边缘受众。 尝试创建其他受众可能会影响系统性能。 详细了解 [创建受众](/help/segmentation/ui/segment-builder.md) 通过区段生成器。 |
 | 每个沙盒的Edge受众 | 150 | 性能护栏 | 只要每个沙盒中的边缘受众少于150个，组织就可以总共拥有150个以上的边缘受众。 尝试创建其他Edge受众可能会影响系统性能。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
-| 所有沙盒的边缘吞吐量 | 1500 RPS | 性能护栏 | 边缘分段支持峰值为每秒1500个进入Adobe Experience Platform Edge Network的入站事件。 集客事件进入Adobe Experience Platform Edge Network后，边缘分段最多可能需要350毫秒来处理该事件。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
+| 所有沙盒的边缘吞吐量 | 1500 RPS | 性能护栏 | 边缘分段支持峰值为每秒1500个进入Adobe Experience PlatformEdge Network的入站事件。 集客事件进入Adobe Experience PlatformEdge Network后，边缘分段最多可能需要350毫秒来处理该事件。 详细了解 [Edge受众](/help/segmentation/ui/edge-segmentation.md). |
 | 每个沙盒的流受众 | 500 | 性能护栏 | 一个组织总共可以有500多个流受众，前提是每个沙盒中的流受众少于500个。 其中包括流受众和Edge受众。 尝试创建其他流受众可能会影响系统性能。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
 | 流传输所有沙盒的吞吐量 | 1500 RPS | 性能护栏 | 流式分段支持每秒1500个入站事件的峰值。 流式分段最多可能需要5分钟才能使配置文件获得区段成员资格。 详细了解 [流受众](/help/segmentation/ui/streaming-segmentation.md). |
 | 每个沙盒的批量受众 | 4000 | 性能护栏 | 一个组织总共可以有4000多个批次受众，前提是每个沙盒中的批次受众少于4000个。 尝试创建其他批处理受众可能会影响系统性能。 |
@@ -164,7 +168,7 @@ Dimension实体提供查找数据，这有助于并简化多实体区段定义�
 
 ![显示配置文件图元由尺寸图元组成的信息图。](images/guardrails/profile-and-dimension-entities.png)
 
-### 配置文件片段
+### 轮廓片段
 
 在本文档中，有多个护栏称为“配置文件片段”。 在Experience Platform中，多个配置文件片段合并在一起，形成Real-time Customer Profile。 每个片段表示给定数据集中该ID的唯一主标识以及相应的记录或完整的事件数据集。 要了解有关配置文件片段的更多信息，请参阅 [配置文件概述](home.md#profile-fragments-vs-merged-profiles).
 

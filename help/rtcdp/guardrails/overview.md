@@ -3,9 +3,9 @@ title: Real-Time CDP护栏
 description: 了解Real-Time CDP各种服务和领域的数据保障。
 feature: Guardrails, Data Management, Data Ingestion, Data Export
 exl-id: 377499b4-5707-4d50-94e3-02f88ad5bf2c
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '392'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 1%
 # Real-Time CDP护栏
 
 护栏是阈值，可为数据和系统使用、性能优化以及避免Real-Time CDP中的错误或意外结果提供指导。 护栏可指您对与许可权利相关的数据和处理的使用或使用。
+
+>[!IMPORTANT]
+>
+>检查您的销售订单中的许可证权利以及相应的 [产品描述](https://helpx.adobe.com/legal/product-descriptions.html) 实际使用限制以及此护栏页面。
 
 从此处开始，访问下面的链接，了解Real-Time CDP各种服务和区域的所有防护：
 
