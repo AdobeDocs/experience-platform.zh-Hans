@@ -1,9 +1,7 @@
 ---
 title: Adobe Experience Platform的人工智能助手
 description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
-hide: true
-hidefromtoc: true
-source-git-commit: 723638fcd580c81a84ffe6bf38c197c62fabc1f3
+source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
 workflow-type: tm+mt
 source-wordcount: '1223'
 ht-degree: 0%

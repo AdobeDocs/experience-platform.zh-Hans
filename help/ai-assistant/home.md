@@ -1,11 +1,9 @@
 ---
 title: Adobe Experience Platform中的AI助手概述
 description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
-hide: true
-hidefromtoc: true
-source-git-commit: fe87a487079f5154f238b2d425cdd249a4724762
+source-git-commit: dd3a7d07c0c78d76c552affef892d5e5c0f0bfb5
 workflow-type: tm+mt
-source-wordcount: '2294'
+source-wordcount: '2371'
 ht-degree: 0%
 
 ---
@@ -72,6 +70,13 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 * 源 _（有关帐户的问题目前无法回答。）_
 
 对于操作分析问题，答案可能不会反映UI的当前状态。 支持这些问题的数据每24小时更新一次。 例如，用户白天在Real-Time CDP中所做的更改会在晚上与数据存储同步，然后早上就可供用户提问了。 您需要登录沙盒以查询与对象相关的特定数据。
+
+### 功能范围 {#feature-scope}
+
+目前，人工智能助理的范围如下：
+
+* [产品知识](./home.md#product-knowledge)：AI助手可以回答Experience Platform、Real-time Customer Data Platform和Adobe Journey Optimizer的产品知识问题。 您也可以深入探讨Customer Journey Analytics的产品知识主题，但只能通过Customer Journey AnalyticsUI进行探讨。
+* [运营见解](./home.md#operational-insights)：您可以向AI助手询问有关以下数据对象的操作见解的问题：属性、受众、数据流、数据集、目标、历程、架构和源。
 
 ## 功能访问 {#feature-access}
 
