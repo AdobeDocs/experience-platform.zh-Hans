@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: a1092e21940c5e4ba9b598bc51ba1243b57a0051
+source-git-commit: b51291e6c3663c6d6e6d416f0d2c37563c852155
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '679'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 
 >[!IMPORTANT]
 >
->在使用AI Assistant之前，您必须同意用户协议。 用户协议还包含公共测试版协议。 这样一来，您便可以在以Beta版容量推出其他AI Assistant功能时使用。
+>您必须同意 [用户协议](https://www.adobe.com/legal/licenses-terms/adobe-dx-gen-ai-user-guidelines.html) 才能使用AI助手。 用户协议还包含公共测试版协议。 这样一来，您便可以在以Beta版容量推出其他AI Assistant功能时使用。
 
 +++选择以查看用户协议界面
 
