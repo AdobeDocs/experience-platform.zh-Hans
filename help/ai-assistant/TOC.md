@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform中的AI助手指南
-user-guide-description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
+user-guide-description: 了解如何使用AI Assistant加快您的Adobe Experience Platform和Real-time Customer Data Platform工作流程。
 description: 本文档列出了Adobe Experience Platform中的AI助手目录。
 role: Admin,User,Developer,Leader
-source-git-commit: 9b8d2422d3b5e13b980002a21f02dbbb6de8c6c6
+source-git-commit: 228c4a8882503912634b515be55d1ed726be756c
 workflow-type: tm+mt
-source-wordcount: '74'
+source-wordcount: '65'
 ht-degree: 1%
 
 ---
