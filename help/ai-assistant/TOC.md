@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform中的AI助手指南
-user-guide-description: Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Adobe应用程序中的工作流程。 您可以使用AI Assistant更好地了解产品知识、排除问题或搜索信息并查找运营见解。
+user-guide-description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
 description: 本文档列出了Adobe Experience Platform中的AI助手目录。
 role: Admin,User,Developer,Leader
-source-git-commit: a1092e21940c5e4ba9b598bc51ba1243b57a0051
+source-git-commit: 9b8d2422d3b5e13b980002a21f02dbbb6de8c6c6
 workflow-type: tm+mt
-source-wordcount: '87'
+source-wordcount: '74'
 ht-degree: 1%
 
 ---
