@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制是通过Adobe Admin Console提供的。 此功能利用Admin Console中的产品配置文件，它将用户与权限和沙盒关联起来。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 16313e2109152329a427be9f13fcbd6382353797
+source-git-commit: 734a34e9acf80300c28ca14587198fb7eaf83c17
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1731'
 ht-degree: 1%
 
 ---
@@ -79,12 +79,24 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
+| [!DNL AI Assistant] | [!UICONTROL 启用AI助手] | 能够询问 [AI助手](../ai-assistant/access.md) 问题。 |
+| [!DNL AI Assistant] | [!UICONTROL 查看运营分析] | 获取对的响应的访问权限 [运营洞察](../ai-assistant/home.md##operational-insights) 查询。 |
 | [!DNL Alerts] | [!UICONTROL 查看警报历史记录] | 对警报历史记录的只读访问权限。 |
 | [!DNL Alerts] | [!UICONTROL 解决警报] | 有权读取、编辑和删除警报。 |
 | [!DNL Alerts] | [!UICONTROL 查看警报] | 警报的只读访问权限。 |
 | [!DNL Alerts] | [!UICONTROL 管理警报] | 有权读取、创建、编辑和删除警报历史记录。 |
 | [!DNL Computed Attributes] | [!UICONTROL 查看计算属性] | 对计算属性选项卡、库存和详细信息的只读访问权限。 |
 | [!DNL Computed Attributes] | [!UICONTROL 管理计算属性] | 有权读取、创建、删除草稿和停用计算属性。 |
+| [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况仪表板] | 查看许可证使用情况仪表板的只读访问权限。 |
+| [!DNL Dashboards] | [!UICONTROL 管理标准仪表板] | 添加数据仓库中尚未存在的自定义属性。 |
+| [!DNL Data Governance] | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
+| [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
+| [!DNL Data Governance] | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
+| [!DNL Data Governance] | [!UICONTROL 查看用户活动日志] | 查看录制的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) Platform活动的一部分。 |
+| [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
+| [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对中的可用源的只读访问权限 **[!UICONTROL 目录]** 选项卡和经过验证的源 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 读取、创建、编辑和发布的权限 [!DNL Segment Match] 动态消息。 |
 | [!DNL Data Lifecycle] | [!UICONTROL 查看数据生命周期] | 数据生命周期的只读访问。 |
 | [!DNL Data Lifecycle] | [!UICONTROL 管理数据生命周期] | 有权读取、创建、编辑和删除数据生命周期。 |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 有权读取、创建、编辑和删除架构和相关资源。 |
@@ -94,6 +106,16 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Data Management] | [!UICONTROL 管理数据集] | 有权读取、创建、编辑和删除数据集。 架构的只读访问权限。 |
 | [!DNL Data Management] | [!UICONTROL 查看数据集] | 对数据集和架构的只读访问权限。 |
 | [!DNL Data Management] | [!UICONTROL 数据监测] | 对监控数据集和流的只读访问权限。 |
+| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中读取、创建、编辑和删除数据的权限 [!DNL Data Science Workspace]. |
+| [!DNL Destinations] | [!UICONTROL 查看目标] | 只读访问权限，可查看中的可用目标 **[!UICONTROL 目录]** 选项卡和中的经过身份验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
+| [!DNL Destinations] | [!UICONTROL 管理目标] | 读取、创建和删除目标连接和目标帐户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
+| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用创作目标 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
+| [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
+| [!DNL Identity Management] | [!UICONTROL 查看身份命名空间] | 对身份命名空间的只读访问。 |
+| [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
 | [!DNL Profile Management] | [!UICONTROL 管理配置文件] | 有权读取、创建、编辑和删除用于客户配置文件的数据集。 对可用配置文件的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 查看配置文件] | 对可用配置文件的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 管理区段] | 有权读取、创建、编辑和删除区段。 |
@@ -107,31 +129,11 @@ Experience Platform附带两个预配置的默认角色。 下表概述了每个
 | [!DNL Profile Management] | [!UICONTROL 管理B2B AI] | 有权读取、创建、编辑和删除所有B2B AI/ML服务的设置和配置。 |
 | [!DNL Profile Management] | [!UICONTROL 查看B2B配置文件] | 对B2B实体配置文件（如Account、Opportunity等）、所有B2B AI/ML服务的设置和配置以及B2B仪表板小部件的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 管理B2B配置文件] | 有权读取、创建、编辑和删除B2B实体配置文件（如Account 、 Opportunity等）。 对所有B2B AI/ML服务和B2B仪表板小组件的设置和配置的只读访问权限。 |
-| [!DNL Identity Management] | [!UICONTROL 管理身份命名空间] | 读取、创建、编辑和删除身份命名空间的权限。 |
-| [!DNL Identity Management] | [!UICONTROL 查看身份命名空间] | 对身份命名空间的只读访问。 |
-| [!DNL Identity Management] | [!UICONTROL 查看身份图] | 对标识图的只读访问。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询] | 访问Platform数据的读取、创建、编辑和删除结构化SQL查询。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询服务集成] | 访问创建、更新和删除未过期的凭据以访问查询服务。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙盒] | 访问读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙盒具有只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
-| [!DNL Destinations] | [!UICONTROL 查看目标] | 只读访问权限，可查看中的可用目标 **[!UICONTROL 目录]** 选项卡和中的经过身份验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Destinations] | [!UICONTROL 管理目标] | 读取、创建和删除目标连接和目标帐户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 激活目标] | 允许用户将区段激活到现有目标。 在激活工作流中启用映射步骤。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 激活没有映射的区段] | 允许用户将区段激活到现有目标，而无需显示 [映射步骤](../destinations/ui/activate-batch-profile-destinations.md#mapping). 用户可以在激活工作流中添加和删除区段，但无法添加或删除映射的属性或标识。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能将数据激活到已创建的活动数据集。 此权限还需要 [!UICONTROL 查看目标] 要授予将数据激活到目标的用户的权限。 |
-| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用创作目标 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
-| [!DNL Data Ingestion] | [!UICONTROL 管理源] | 有权读取、创建、编辑和禁用源。 |
-| [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对中的可用源的只读访问权限 **[!UICONTROL 目录]** 选项卡和经过验证的源 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 创建、接受和拒绝合作伙伴握手以连接两个组织并启用 [!DNL Segment Match] 流。 |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 读取、创建、编辑和发布的权限 [!DNL Segment Match] 动态消息。 |
-| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中读取、创建、编辑和删除数据的权限 [!DNL Data Science Workspace]. |
-| 数据治理 | [!UICONTROL 管理使用标签] | 有权读取、创建和删除使用标签。 |
-| 数据治理 | [!UICONTROL 管理数据使用策略] | 有权读取、创建、编辑和删除数据使用策略。 |
-| 数据治理 | [!UICONTROL 查看数据使用策略] | 对属于您组织的数据使用策略的只读访问权限。 |
-| 数据治理 | [!UICONTROL 查看用户活动日志] | 查看录制的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) Platform活动的一部分。 |
-| [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况仪表板] | 查看许可证使用情况仪表板的只读访问权限。 |
-| [!DNL Dashboards] | [!UICONTROL 管理标准仪表板] | 添加数据仓库中尚未存在的自定义属性。 |
-| [!DNL Query Service] | [!UICONTROL 管理查询] | 访问Platform数据的读取、创建、编辑和删除结构化SQL查询。 |
-| [!DNL Query Service] | [!UICONTROL 管理查询服务集成] | 访问创建、更新和删除未过期的凭据以访问查询服务。 |
 
 ## 后续步骤
 
