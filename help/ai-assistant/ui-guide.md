@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform的人工智能助手
 description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
+source-git-commit: 1c228eb95075d4302ab6d3544fff8766087411bf
 workflow-type: tm+mt
-source-wordcount: '1223'
+source-wordcount: '1379'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 要启动AI助手，请选择 **[!UICONTROL AI助手图标]** 从Experience PlatformUI的顶部标题中。
 
-![Experience Platform主页，选中AI助手图标并打开AI助手界面。](./images/ai-assistant.png)
+![Experience Platform主页，选中AI助手图标并打开AI助手界面。](./images/ai-assistant-full-icon.png)
 
 此时将显示AI Assistant界面，它立即为您提供开始使用的信息。 您可以使用下提供的选项 [!UICONTROL 开始使用的想法] 回答问题和命令，例如：
 
@@ -86,9 +87,13 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 +++选择以查看操作分析问题的示例
 
-在下面的示例中，AI助手被询问以下查询： **“向我显示使用Amazon S3源创建的数据流”**， AI助手随后会使用一个表进行响应，该表列出了您的数据流及其对应的ID。 要查看整个数据表，请选择右上角的展开图标。
+在下面的示例中，AI助手被询问以下查询： **“向我显示使用Amazon S3源创建的数据流”**.
 
-![跟进有关运营见解的问题。](./images/usage-data-question.png)
+![有关运营见解的问题。](./images/op-insights-question.png)
+
+然后，AI Assistant会使用一个表进行响应，该表列出了您的数据流及其对应的ID。 要查看整个数据表，请选择右上角的展开图标。
+
+![操作见解答案](./images/op-insights-answer.png)
 
 此时将显示表的展开视图，其中会根据查询参数为您提供更加全面的数据流列表。
 
@@ -96,9 +101,13 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 当出现操作见解问题提示时，AI Assistant会提供有关如何计算答案的解释。 在以下示例中，AI Assistant概述了为识别使用创建的数据流而采取的步骤。 [!DNL Amazon S3] 源。
 
-![跟进有关区段定义的问题，该问题说明AI Assistant如何计算答案。](./images/answer-explained.png)
+![AI Assistant解释其计算答案的方式。](./images/answer-explained.png)
 
 您还可以提供筛选器和修改问题，并可以指示AI助手根据您包括的筛选器呈现其结果。 例如，您可以要求AI Assistant按区段定义的创建日期顺序显示区段定义计数的趋势，删除总配置文件为零的区段定义，并在显示数据时使用月名称而不是整数。
+
+**注意：** 操作见解答案目前为Beta版。 选择AI助手用户界面中的工具提示图标以查看测试版通知和文档的链接。
+
+![已选择AI助手工具提示图标。](./images/op-insights-beta-note.png)
 
 +++
 
@@ -122,7 +131,27 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 在下面的示例中，首先要求AI助手提供数据流的总数，然后要求列出最近的10个数据流。
 
-![多圈示例](./images/multi-turn.png)
+![多圈示例](./images/multiturn.png)
+
+要重置，请选择省略号(**`...`**)，然后选择 **[!UICONTROL 开始新对话]**. 这会告知AI助手，您打算更改主题，在对失败或引用不正确信息的查询进行故障诊断时尤其有用。
+
+![选择省略号，并选择开始新对话选项。](./images/reset.png)
+
++++
+
+### 使用可发现性 {#use-discoverability}
+
+您可以使用AI Assistant的可发现性功能查看AI Assistant支持的常规主体（分组为实体）列表。
+
++++选择以查看可发现性的示例
+
+要查看可发现性，请选择AI Assistant界面顶部标题上的灯泡图标。
+
+![AI Assistant可发现性功能。](./images/lightbulb.png)
+
+接下来，选择一个类别，然后从提供的列表中选择一个提示。 您可以使用此功能更好地了解AI助手可以回答的问题类型。 您还可以使用自由文本或将与您的沙盒相关的特定详细信息更新预先存在的提示。 [自动完成](#use-auto-complete).
+
+![AI助手在可发现性中提示。](./images/prompt.png)
 
 +++
 
@@ -133,8 +162,6 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 要提供反馈，请在从AI助手收到响应后选择向上拇指、向下拇指或标记，然后在提供的文本框中输入反馈。
 
 ![AI助手中的反馈选项。](./images/provide-feedback.png)
-
-要重置，请选择省略号(**`...`**)，然后选择 **[!UICONTROL 开始新对话]**. 这会告知AI助手，您打算更改主题，在对失败或引用不正确信息的查询进行故障诊断时尤其有用。
 
 +++选择以查看更多示例
 

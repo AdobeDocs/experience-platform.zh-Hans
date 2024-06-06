@@ -2,7 +2,7 @@
 title: Adobe Experience Platform中的AI助手概述
 description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: b51291e6c3663c6d6e6d416f0d2c37563c852155
+source-git-commit: 9ee39ee1f877fa13acdca8a1d8549cf4692b39aa
 workflow-type: tm+mt
 source-wordcount: '679'
 ht-degree: 1%
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Adobe应用程序中的工作流程。 您可以使用AI Assistant更好地了解产品知识、排除问题或搜索信息并查找运营见解。 AI Assistant支持Experience Platform、Real-time Customer Data Platform、Adobe Journey Optimizer和Customer Journey Analytics。
 
-![首次触发用户体验的AI Assistant界面。](./images/blank.png)
+![首次触发用户体验的AI Assistant界面。](./images/ai-assistant-full.png)
 
 >[!IMPORTANT]
 >
