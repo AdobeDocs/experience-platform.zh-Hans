@@ -2,9 +2,9 @@
 title: 元转换API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: f7fdfbf9afcecb255668d5d6393b87918114b067
+source-git-commit: 3cd937f49f27006e3cab60df1692d33138944ce2
 workflow-type: tm+mt
-source-wordcount: '2578'
+source-wordcount: '2583'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 此 [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/) 允许您将服务器端营销数据连接到 [!DNL Meta] 技术，以优化广告定位、降低每次操作的成本并衡量结果。 事件链接到 [[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/) ID和的处理方式与客户端事件类似。
 
-使用 [!DNL Meta Conversions API] 扩展上，您可以利用API在 [事件转发](../../../ui/event-forwarding/overview.md) 将数据发送到的规则 [!DNL Meta] 来自Adobe Experience Platform Edge Network。 本文档介绍如何安装扩展并在事件转发中使用其功能 [规则](../../../ui/managing-resources/rules.md).
+使用 [!DNL Meta Conversions API] 扩展上，您可以利用API在 [事件转发](../../../ui/event-forwarding/overview.md) 将数据发送到的规则 [!DNL Meta] 从Adobe Experience PlatformEdge Network访问。 本文档介绍如何安装扩展并在事件转发中使用其功能 [规则](../../../ui/managing-resources/rules.md).
 
 ## 演示
 
@@ -53,15 +53,15 @@ ht-degree: 0%
 
 扩展已安装，您现在可以在事件转发规则中使用该扩展的功能。
 
-## 与元业务扩展(MBE)集成 {#mbe}
+## 与Facebook和Instagram扩展集成 {#facebook}
 
-与元业务扩展(MBE)增强功能的集成允许您快速向元业务帐户进行身份验证。 然后，这会自动填充 [!UICONTROL 像素Id] 和元转化API [!UICONTROL 访问令牌]，更轻松地安装和配置元转化API。
+使用Facebook和Instagram扩展进行的集成允许您快速对元业务帐户进行身份验证。 然后，这会自动填充 [!UICONTROL 像素Id] 和元转化API [!UICONTROL 访问令牌]，更轻松地安装和配置元转化API。
 
-安装时，会出现在MBE中进行身份验证的对话框提示 [!UICONTROL 元转化API] 扩展。
+安装时，会出现在Facebook和Instagram中进行身份验证的对话框提示 [!UICONTROL 元转化API] 扩展。
 
 ![此 [!UICONTROL 元转化API扩展] 安装页面突出显示 [!UICONTROL 连接到元].](../../../images/extensions/server/meta/mbe-extension-install.png)
 
-在事件转发的快速启动工作流UI中，还会显示在MBE中进行身份验证的对话框提示。
+在Facebook和Instagram中进行身份验证的对话框提示也会显示在事件转发的快速启动工作流UI中。
 
 ![快速入门工作流UI高亮显示 [!UICONTROL 连接到元].](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
 
@@ -129,7 +129,7 @@ ht-degree: 0%
 
 快速入门功能可帮助您通过元转化API和元像素扩展轻松高效地完成设置。 此工具可自动执行在Adobe标签和事件转发中执行的多个步骤，从而显着缩短设置时间。
 
-此功能会在新自动生成的标记上自动安装和配置元转化API和元像素扩展，并使用必要的规则和数据元素来配置事件转发属性。 此外，它还会自动安装和配置Experience PlatformWeb SDK和数据流。 最后，快速启动功能会自动将库发布到开发环境中的指定URL中，从而支持通过事件转发和Experience Platform边缘网络实时进行客户端数据收集和服务器端事件转发。
+此功能会在新自动生成的标记上自动安装和配置元转化API和元像素扩展，并使用必要的规则和数据元素来配置事件转发属性。 此外，它还会自动安装和配置Experience PlatformWeb SDK和数据流。 最后，快速启动功能会将库自动发布到开发环境中的指定URL，从而支持通过事件转发和Experience PlatformEdge Network进行实时客户端数据收集和服务器端事件转发。
 
 以下视频介绍了快速入门功能。
 
@@ -190,7 +190,7 @@ ht-degree: 0%
 
 ![标记属性页面未显示任何事件](../../../images/extensions/server/meta/edit-rule.png)
 
-选择 [!UICONTROL 事件类型]. 在此示例中，我们已选择 [!UICONTROL 单击] 事件并将其配置为在 **.add-to-cart-button** 已选中。 选择&#x200B;**[!UICONTROL 保留更改]**。
+选择 [!UICONTROL 事件类型]. 在此示例中，我们已选择 [!UICONTROL 单击] 事件并将其配置为在 **.add-to-cart-button** 已选中。 选择 **[!UICONTROL 保留更改]**.
 
 ![显示点击事件的事件配置屏幕](../../../images/extensions/server/meta/event-configuration.png)
 
