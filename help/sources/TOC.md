@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从各种来源摄取数据。 了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
+source-git-commit: 485881d4cbba09ae89d26b3613907174c0f24cc3
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1046'
 ht-degree: 23%
 
 ---
@@ -350,6 +350,7 @@ ht-degree: 23%
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
    - [在UI中使用模板创建源数据流](tutorials/ui/templates.md)
    - [筛选源对象](tutorials/ui/filter.md)
+   - [摄取加密数据](tutorials/ui/encryped-ingestion.md)
    - [按需引入](tutorials/ui/on-demand-ingestion.md)
    - [监测批量数据流](tutorials/ui/monitor.md)
    - [监测流数据流](tutorials/ui/monitor-streaming.md)
