@@ -3,9 +3,9 @@ keywords: target个性化；目标；experience platform target目标；adobe ta
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在网站、移动应用程序等的所有入站客户互动中提供由AI支持的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: ddc15a36e83ebe059f3b4f81f3feccb2d3a4a4f0
+source-git-commit: e5c34ffb9b27ddad0c6523a7279fdf712c84f3ff
 workflow-type: tm+mt
-source-wordcount: '1531'
+source-wordcount: '1555'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 | 发行月份 | 更新类型 | 描述 |
 |---|---|---|
-| 2024 年 4 月 | 功能和文档更新 | 使用数据流ID连接到Target目标时，您现在可以 *不需要* 必须为边缘分段启用数据流。 这意味着Target目标将与批处理受众和流式受众配合使用，但您可以完成的用例有所不同。 在中查看表 [连接参数](#parameters) 部分以了解更多信息。 |
+| 2024 年 4 月 | 功能和文档更新 | 在连接到Target目标并使用数据流ID时，您现在可以 *不需要* 必须为边缘分段启用数据流。 这意味着Target目标将与批处理受众和流式受众配合使用，但您可以完成的用例有所不同。 在中查看表 [连接参数](#parameters) 部分以了解更多信息。 |
 | 2024 年 1 月 | 功能和文档更新 | 您现在可以为默认的生产沙盒和其他非默认沙盒将受众和配置文件属性共享到Adobe Target连接。 |
 | 2023 年 6 月 | 功能和文档更新 | 自2023年6月起，在配置新的Adobe Target目标连接时，您可以选择要将受众共享到的Adobe Target工作区。 请参阅[连接参数](#parameters)部分，了解详细信息。另外，请参阅有关在 Adobe Target 中[配置工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html)的教程，了解更多有关工作区的信息。 |
 | 2023 年 5 月 | 功能和文档更新 | 截至2023年5月， **[!UICONTROL Adobe Target]** 连接支持 [基于属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes) 面向所有客户。 |
@@ -62,9 +62,9 @@ Adobe Target是Adobe Experience Platform目标目录中的个性化连接。
 
 >[!IMPORTANT]
 >
->您激活到此目标的受众必须使用 [Active-on-Edge合并策略](../../../segmentation/ui/segment-builder.md#merge-policies). 此 [!DNL Active-On-Edge] 合并策略可确保不断评估受众 [在边缘](../../../segmentation/ui/edge-segmentation.md) 和可用于实时和下一页个性化用例。
-> 如果将使用不同合并策略的受众映射到边缘目标，则不会评估这些受众。
-> 请按照 [创建合并策略](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)，并确保启用 **[!UICONTROL Active-On-Edge合并策略]** 切换。
+>激活时 *同一页面和下一页面个性化用例的边缘受众*，受众 *必须* 使用 [主动边缘合并策略](../../../segmentation/ui/segment-builder.md#merge-policies). 此 [!DNL active-on-edge] 合并策略可确保不断评估受众 [在边缘](../../../segmentation/ui/edge-segmentation.md) 和可用于实时和下一页个性化用例。  阅读关于 [所有可用用例](#parameter)，具体取决于实施类型。
+>如果将使用其他合并策略的边缘受众映射到Adobe Target目标，则对于实时和下一页用例，不会评估这些受众。
+>请按照 [创建合并策略](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)，并确保启用 **[!UICONTROL Active-On-Edge合并策略]** 切换。
 
 
 | 受众来源 | 支持 | 描述 |
