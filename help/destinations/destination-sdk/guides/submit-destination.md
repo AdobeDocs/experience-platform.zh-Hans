@@ -2,9 +2,9 @@
 description: 本页提供了您需要提交以供审阅使用Destination SDK创作的生产化目标的所有信息。
 title: 提交供审查在Destination SDK中创作的产品化目的地
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 2c778f98815af87453e84f24ba8bf077774349a1
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1032'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,8 @@ ht-degree: 0%
 >* 如果Adobe团队要求您在初次提交后对配置进行任何更新，则您必须在进行更新后提交另一个目标发布请求。
 >
 >* 即使您的目标在Experience Platform目录中处于活动状态，但是如果您需要对配置进行任何更新，则必须提交新的目标发布请求，才能将更新反映在配置中。
+>
+>* 对于要更新的新目标和现有目标，审核时间线和所需对象是相同的。
 
 在将目标发布到之前 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，您必须向Adobe提供有关目标和所执行测试的特定信息，以确保用户在将数据激活到您的平台时享有最佳体验。
 
@@ -260,7 +262,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 目标目录包含每个目标卡的徽标。 在提交电子邮件中，加入带有目标徽标的图像。
 
 图像要求包括：
-* **格式**: `SVG`
+* **格式**： `SVG`
 * **大小**：小于2MB
 
 ## 下载示例电子邮件 {#download-sample-email}
