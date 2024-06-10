@@ -3,11 +3,10 @@ title: 内容API端点
 description: 了解如何使用Privacy ServiceAPI检索您的访问数据。
 role: Developer
 badgePrivateBeta: label="私人测试版" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: c527771e051d39032642afae33945a45e5183a5f
+exl-id: b3b7ea0f-957d-4e51-bf92-121e9ae795f5
+source-git-commit: e3a453ad166fe244b82bd1f90e669579fcf09d17
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -18,15 +17,13 @@ ht-degree: 0%
 >
 >此 `/content` 端点当前为测试版，您的组织可能尚未获得访问权限。 功能和文档可能会发生更改。
 
-<!-- Q) Should this be called 'access information' or 'customer content'? -->
-
-在检索“访问信息”（隐私主体可以合法请求访问的信息）时享有增强的安全性。 响应中提供的下载URL `/jobs/{JOB_ID}` GET请求现在指向Adobe服务端点。 然后，您可以向发出GET请求 `/jobs/:JOB_ID/content` 以JSON格式返回客户数据。 该接入方法实现了多层的认证和访问控制，增强了安全性。
+使用 `/content` 要安全检索的端点 *访问信息* （隐私主体可以合法请求访问的信息）为您的客户提供。 响应中提供的下载URL `/jobs/{JOB_ID}` GET请求指向Adobe服务端点。 然后，您可以向发出GET请求 `/jobs/:JOB_ID/content` 以JSON格式返回客户数据。 该接入方法实现了多层的认证和访问控制，增强了安全性。
 
 在使用本指南之前，请参阅 [快速入门指南](./getting-started.md) 有关以下示例API调用中提供的所需身份验证标头的信息。
 
 >[!TIP]
 >
->如果您当前不知道所需访问信息的作业ID，请调用 `/jobs`端点并使用其他查询参数来筛选结果。 有关可用查询参数的完整列表，请参阅 [隐私作业端点指南](./privacy-jobs.md).
+>如果您当前不知道所需访问信息的作业ID，请调用 `/jobs` 端点并使用其他查询参数来筛选结果。 有关可用查询参数的完整列表，请参阅 [隐私作业端点指南](./privacy-jobs.md).
 
 ## 检索隐私作业信息
 
@@ -81,7 +78,7 @@ curl -X GET \
         "processedDate":"04/12/2024 04:08 PM GMT",
         "productStatusResponse":{"status":"submitted"
         }}],
-    "downloadUrl":"https://platform-stage.adobe.io/data/core/privacy/jobs/dbe3a6a6-f8e6-11ee-a365-8d1d6df81cc5/content",
+    "downloadUrl":"https://platform.adobe.io/data/core/privacy/jobs/dbe3a6a6-f8e6-11ee-a365-8d1d6df81cc5/content",
     "regulation":"gdpr"
 }
 ```
@@ -144,10 +141,3 @@ curl -X GET \
 
 响应为zip文件(*.zip)。 虽然无法保证这一点，但通常以JSON格式返回信息。 提取的数据可以任何格式返回。
 
-<!-- ## Constraints {#constraints}
-
-During this private beta, the following constraints apply when using the `/content` endpoint:
-
-- The new `/content` download URL is only available in STAGE environments. It is not yet available in PROD environments
-- The `downloadUrl` should not be present in the JSON response unless the job has a `complete` status. Within the beta, the `downloadUrl` appears before a privacy job is complete.
-- The `downloadUrl` is also currently provided for `delete` jobs (which should never have a download URL). -->
