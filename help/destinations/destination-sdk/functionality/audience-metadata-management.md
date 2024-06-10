@@ -2,9 +2,9 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe将使用该模板来构建对目标的这些API调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 3660c3a342af07268d2ca2c907145df8237872a1
 workflow-type: tm+mt
-source-wordcount: '1037'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
@@ -523,7 +523,7 @@ ht-degree: 0%
 
 在中查找模板中所有参数的描述 [创建受众模板](../metadata-api/create-audience-template.md) API引用。
 
-## 受众元数据模板中使用的宏
+## 受众元数据模板中使用的宏 {#macros}
 
 为了在Experience Platform与API之间传递受众ID、访问令牌、错误消息等信息，受众模板包括您可以使用的宏。 请阅读下面本页三个配置示例中使用的宏的说明：
 
