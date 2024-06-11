@@ -3,10 +3,10 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f741e62b3340b743e465edf3f7a007580b3f61be
 workflow-type: tm+mt
-source-wordcount: '1121'
-ht-degree: 7%
+source-wordcount: '1164'
+ht-degree: 1%
 
 ---
 
@@ -62,6 +62,10 @@ ht-degree: 7%
 >[!IMPORTANT]
 >
 >此步骤仅适用于某些受众流目标。 如果您的目标没有 **[!UICONTROL 映射]** 步骤，跳至 [受众调度](#scheduling).
+>
+>将受众激活到流目标时，您还必须映射 *至少一个目标身份命名空间*，以及目标配置文件属性。 否则，受众将不会激活到目标平台。
+> ![显示强制标识命名空间映射的映射步骤图像。](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
+
 
 某些受众流目标要求您选择源属性或身份命名空间以映射为目标中的目标身份。
 
@@ -92,7 +96,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="应用转换"
->abstract="使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。"
+>abstract="选中此选项可在使用未经过哈希处理的源字段时，让Adobe Experience Platform在激活时自动对其进行哈希处理。"
 
 将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
@@ -103,7 +107,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_enddate"
 >title="结束日期"
->abstract="无法添加受众计划的结束日期。"
+>abstract="无法为受众计划添加结束日期。"
 
 默认情况下， **[!UICONTROL 受众计划]** 页面仅显示您在当前激活流中选择的新选定受众。
 
@@ -129,15 +133,15 @@ ht-degree: 7%
 
 1. 选择 **[!UICONTROL 下一个]** 以转到 [!UICONTROL 审核] 页面。
 
-## 审核 {#review}
+## 审查 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-segment-streaming-destinations/review.png)
 
-### 同意策略评估 {#consent-policy-evaluation}
+### 同意政策评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**，选择 **[!UICONTROL 查看适用的同意政策]** 查看应用了哪些同意策略以及激活中包含多少用户档案作为其结果。 阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

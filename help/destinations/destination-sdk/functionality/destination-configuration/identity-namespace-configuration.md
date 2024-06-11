@@ -2,10 +2,10 @@
 description: 了解如何为使用Destination SDK构建的目标配置支持的目标身份。
 title: 身份命名空间配置
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 20fb966c4cc8a2b09ea64da3e688688b34a0b5d1
+source-git-commit: 606685c1f0b607ca586e477cb9825ec551d537cc
 workflow-type: tm+mt
-source-wordcount: '892'
-ht-degree: 4%
+source-wordcount: '918'
+ht-degree: 1%
 
 ---
 
@@ -13,11 +13,15 @@ ht-degree: 4%
 
 Experience Platform使用身份命名空间来描述特定身份的类型。 例如，名为的身份命名空间 `Email` 标识如下值 `name@email.com` 作为电子邮件地址。
 
-此外，在通过Destination SDK创建实时（流）目标时， [配置合作伙伴架构](schema-configuration.md) 用户可以将配置文件属性和身份映射到，您还必须定义目标平台支持的身份命名空间。 例如，如果目标平台接受经过哈希处理的电子邮件，并且 [!DNL IDFA]，则必须将这两个标识定义为 [本文档中详述](#supported-parameters).
+根据您创建的目标类型（流或基于文件），请牢记以下身份命名空间要求：
 
-将受众激活到流目标时，用户除了映射目标配置文件属性之外，还必须映射目标身份。 否则，受众将不会激活到目标平台。
+* 此外，在通过Destination SDK创建实时（流）目标时， [配置合作伙伴架构](schema-configuration.md) 对于可将配置文件属性和身份映射到其中的用户，您还必须定义 *至少一个* 目标平台支持的身份命名空间。 例如，如果目标平台接受经过哈希处理的电子邮件，并且 [!DNL IDFA]，则必须将这两个标识定义为 [在本文档中详述](#supported-parameters).
 
-通过Destination SDK创建基于文件的目标时，身份命名空间的配置是可选的。
+  >[!IMPORTANT]
+  >
+  >将受众激活到流目标时，用户还必须映射 _至少一个目标身份_，以及目标配置文件属性。 否则，受众将不会激活到目标平台。
+
+* 通过Destination SDK创建基于文件的目标时，身份命名空间的配置为 _可选_.
 
 要详细了解Experience Platform中的身份命名空间，请参阅 [身份命名空间文档](../../../../identity-service/features/namespaces.md).
 
@@ -114,7 +118,7 @@ Experience Platform客户可以选择以哈希格式或纯文本格式将数据�
    }
 ```
 
-使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。
+选中此选项可在使用未经过哈希处理的源字段时，让Adobe Experience Platform在激活时自动对其进行哈希处理。
 
 将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
