@@ -1,21 +1,21 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Identity Service
-breadcrumb-title: Platform Identity Service 指南
-user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
+breadcrumb-title: Platform Identity Service指南
+user-guide-description: 跨设备和系统桥接客户身份以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 2afdfd54b420bcf59423ea64048d928422ea61c9
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 28%
+source-wordcount: '126'
+ht-degree: 18%
 
 ---
 
 
 # Adobe Experience Platform Identity Service {#identity}
 
-- [Identity服务概述](home.md)
+- [标识服务概述](home.md)
 - [Identity Service和实时客户资料](identity-and-profile.md)
 - 功能 {#features}
    - [标识命名空间](./features/namespaces.md)
@@ -40,7 +40,8 @@ ht-degree: 28%
 - [身份图链接规则] {#identity-graph-linking-rules}
    - [功能概述](./identity-graph-linking-rules/overview.md)
    - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
+   - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
    - [示例场景](./identity-graph-linking-rules/example-scenarios.md)
 - [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

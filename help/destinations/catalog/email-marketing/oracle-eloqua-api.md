@@ -3,10 +3,10 @@ title: (API)OracleEloqua连接
 description: 通过(API)OracleEloqua目标，您可以导出帐户数据，并在OracleEloqua中激活该数据，以满足您的业务需求。
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: cf7ad18fa3d8f074371a0f03e09e218d37be5e01
 workflow-type: tm+mt
-source-wordcount: '2042'
-ht-degree: 4%
+source-wordcount: '2033'
+ht-degree: 1%
 
 ---
 
@@ -92,12 +92,12 @@ ht-degree: 4%
 
 范围 **[!UICONTROL 目标]** > **[!UICONTROL 目录]** 搜索 [!DNL (API) Oracle Eloqua]. 或者，您可以将其定位到 **[!UICONTROL 电子邮件营销]** 类别。
 
-### 验证目标 {#authenticate}
+### 向目标进行身份验证 {#authenticate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_companyname_username"
 >title="公司名称\用户名"
->abstract="在此字段中填写您的公司名称和来自 Oracle Eloqua 的用户名，格式为 `{COMPANY_NAME}\{USERNAME}`"
+>abstract="在表格中用公司名称和用户名(来自OracleEloqua)填写此字段 `{COMPANY_NAME}\{USERNAME}`"
 
 填写下面的必填字段。 请参阅 [收集 [!DNL Oracle Eloqua] 凭据](#gather-credentials) 部分获取任何指导。
 * **[!UICONTROL 密码]**：您的密码 [!DNL Oracle Eloqua] 帐户。
@@ -113,8 +113,9 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_apioracleeloqua_pod"
 >title="Pod"
->abstract="要查找您的 Pod 编号，请登录到 Oracle Eloqua。成功登录后，记下浏览器中的 URL。 "
->additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle 知识库 - 找出您的 Pod 编号"
+>abstract="要查找您的pod编号，请登录OracleEloqua。 记下成功登录后浏览器中的URL。 "
+
+<!-- >additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge base - find out your Pod number" -->
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 ![显示目标详细信息的平台UI屏幕截图。](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
@@ -129,7 +130,7 @@ ht-degree: 4%
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 激活此目标的受众 {#activate}
+## 将受众激活到此目标 {#activate}
 
 >[!IMPORTANT]
 > 
