@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解Experience Platform如何借助指南、文档和教程实时为客户提供个性化体验。
-source-git-commit: cb37eda87b8fcc0d0284db7a0bab8d48eab5aae6
+source-git-commit: a926560f3c5f765090046313ec7a7431b5ce69c6
 workflow-type: tm+mt
-source-wordcount: '281'
-ht-degree: 14%
+source-wordcount: '279'
+ht-degree: 15%
 
 ---
 
@@ -30,7 +30,6 @@ ht-degree: 14%
    * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
    * [自我识别调查](self-identification.md)
-   * [AI 助手](ai-assistant.md)
 * EXPERIENCE PLATFORMAPI {#platform-apis}
    * [Platform API快速入门](api-guide.md)
    * [验证和访问平台API](api-authentication.md)
@@ -81,4 +80,4 @@ ht-degree: 14%
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
-* [发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

@@ -1,10 +1,11 @@
 ---
 title: AI助手的问题指南
 description: 请阅读本文档，了解在查询AI助手时可以使用的示例问题。
-source-git-commit: a1092e21940c5e4ba9b598bc51ba1243b57a0051
+exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
+source-git-commit: 26e27e7a62731fe43ef203741121b22226078b28
 workflow-type: tm+mt
-source-wordcount: '1224'
-ht-degree: 0%
+source-wordcount: '1206'
+ht-degree: 1%
 
 ---
 
@@ -33,20 +34,56 @@ ht-degree: 0%
 
 以下问题按数据对象分组，并分类为 [运营洞察](./home.md#operational-insights) 或 [产品知识](./home.md#product-knowledge).
 
-| 对象 | 描述 |
-| --- | --- |
-| 受众 — 运营分析 | <ul><li>哪些受众使用其他受众？</li><li>受众中用户档案数量的分布情况如何？</li><li>显示上次修改于以下日期之前的受众： {RELATIVE_DATE}.</li><li>哪些受众具有0个配置文件？</li><li>是 {USE_AUTOCOMPLETE_TO_FILL_AUDIENCE_NAME} 是否用于任何其他受众？</li></ul> |
-| 属性 — 运营分析 | <ul><li>哪些受众具有XDM属性 {ATTRIBUTE_PATH} 在他们的区段定义中？</li><li>任何受众中未使用多少XDM架构属性？</li><li>哪些架构具有XDM属性 {ATTRIBUTE_PATH} 在里面？</li><li>激活哪些XDM属性？</li><li>具有超过10个配置文件的受众中使用哪些XDM属性</li></ul> |
-| 数据流 — 运营见解 | <ul><li>哪些数据流参与 {DATASET_NAME} 数据集？</li><li>未使用哪些源数据流或者不再有数据进入？</li><li> |
-| 数据集 — 运营洞察 | <ul><li>使用相同架构摄取了多少数据集？</li><li>与哪个源连接器关联 {DATASET_NAME} 数据集></li><li>每个受众使用哪些数据集？</li><li>哪些架构未在任何数据集中使用？</li><li>我有多少个数据集？</li></ul> |
-| 目标 — 运营分析 | <ul><li>哪些目标处于活动状态？</li><li>哪些目标帐户激活了0个受众？</li><li> |
-| 历程 — 运营分析 | <ul><li>我有多少个历程？</li><li>已在哪些历程中创建 {RELATIVE_DATE} （例如，上周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？</li><li>显示在中修改的历程列表 {RELATIVE_DATE} （例如，上周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？</li><li>列出我的历程。</li><li>列出实时历程中使用的受众。</li></ul> |
-| 架构 — 运营见解 | <ul><li>哪些架构的字段对受众的贡献最大？</li><li>有多少个架构启用了配置文件？</li><li>列出上周修改的所有架构。</li><li>哪些架构未在任何数据集中使用？</li><li>列出上周创建的所有架构。</li></ul> |
-| 来源 — 运营分析 | <ul><li>哪些源处于活动状态？</li><li>哪个源连接器与数据集关联 {DATASET_NAME}？</li><li>哪个源连接器的关联帐户数最多？</li><li>显示数据流及其关联的源连接器。</li></ul> |
-| 有针对性的学习 — 产品知识(Real-Time CDP和Journey Optimizer) | <ul><li>AI Assistant可以帮助做什么？</li><li>哪些受众具有相似性？</li><li>用户组与角色有何关系？</li><li>什么时候应该使用数据类型而不是字段组？</li><li>标识与主键或外键之间有何区别？</li><li>如何计算配置文件丰富度？</li></ul> |
-| 故障排除 — 产品知识(Real-Time CDP和Journey Optimizer) | <ul><li>AI Assistant可以帮助做什么？</li><li>我能否在摄取数据后删除启用配置文件的架构？</li><li>为何无法删除受众？</li><li>评估受众和获得定位结果需要多长时间？</li></ul> |
-
-{style="table-layout:auto"}
+* **受众 — 运营分析**
+   * 哪些受众使用其他受众？
+   * 受众中用户档案数量的分布情况如何？
+   * 显示上次修改时间早于以下时间的受众： {RELATIVE_DATE}.
+   * 哪些受众具有0个配置文件？
+   * 是 {USE_AUTO_COMPLETE_TO_FILL_AUDIENCE_NAME} 是否用于任何其他受众？
+* **属性 — 运营分析**
+   * 哪些受众具有xdm属性 {ATTRIBUTE_PATH} 在他们的区段定义中？
+   * 任何受众中未使用多少XDM架构属性？
+   * 哪些架构具有xdm属性 {ATTRIBUTE_PATH} 在里面？
+   * 激活哪些XDM属性？
+   * 具有超过10个配置文件的受众中使用哪些XDM属性？
+* **数据流 — 运营见解**
+   * 哪些数据流参与 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} 数据集？
+   * 未使用哪些源数据流或者不再有数据进入？
+   * 列出我具有的源数据流。
+   * 为每个源连接器配置哪些数据流？
+* **数据集 — 运营洞察**
+   * 使用相同架构摄取了多少数据集？
+   * 与哪个源连接器关联 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} 数据集？
+   * 每个受众使用哪些数据集？
+   * 哪些架构未在任何数据集中使用？
+   * 我有多少个数据集？
+* **目标 — 运营分析**
+   * 哪些目标处于活动状态？
+   * 哪些目标帐户激活了0个受众？
+   * 每个目标激活了多少受众？
+   * 哪些目标的激活受众数量最多？
+* **历程 — 运营分析**
+   * 我有多少个历程？
+   * 已在哪些历程中创建 {RELATIVE_DATE} （例如，上一周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？
+   * 显示在中修改的历程列表 {RELATIVE_DATE} （例如，上一周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？
+   * 列出我的实时历程。
+   * 列出实时历程中使用的受众。
+* **来源 — 运营分析**
+   * 哪些源处于活动状态？
+   * 哪个源连接器与数据集关联 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}.
+   * 哪个源连接器的关联帐户数最多？
+   * 显示数据流及其关联的源连接器。
+* **有针对性的学习 — 产品知识(Real-Time CDP和Journey Optimizer)**
+   * 哪些受众具有相似性？
+   * 用户组与角色有何关系？
+   * 什么时候应该使用数据类型而不是字段组？
+   * 标识与主键或外键之间有何区别？
+   * 如何计算配置文件丰富度？
+* **故障排除 — 产品知识(Real-Time CDP和Journey Optimizer)**
+   * AI 助手能帮上什么忙？
+   * 能否在摄取数据后删除启用配置文件的架构？
+   * 为何无法删除受众？
+   * 评估受众和获得定位结果需要多长时间？
 
 ## 用短语表述您的问题 {#phrasing-your-questions}
 
