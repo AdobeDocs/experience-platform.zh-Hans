@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 源疑难解答
 description: 本文档提供了有关Adobe Experience Platform来源的常见问题解答。
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 583eb70235174825dd542b95463784638bdef235
 workflow-type: tm+mt
 source-wordcount: '748'
 ht-degree: 0%
@@ -13,15 +13,15 @@ ht-degree: 0%
 
 # 源疑难解答指南
 
-本文档提供了有关Adobe Experience Platform来源的常见问题解答。 有关其他方面的问题和疑难解答 [!DNL Platform] 服务，包括所有体验中的服务 [!DNL Platform] API，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
+本文档提供了有关Adobe Experience Platform来源的常见问题解答。 有关其他方面的问题和疑难解答 [!DNL Platform] 服务，包括所有服务所遇到的 [!DNL Platform] API，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
 
 ## 常见问题解答
 
 以下是有关源的常见问题解答列表。
 
-### 我是否需要更改网络安全设置才能启用源？
+### 我是否必须更改网络安全设置才能启用源？
 
-您可能需要允许列表某些IP地址才能启用源。 有关更多信息，请阅读有关特定源连接器的文档。
+您可能需要列入允许列表某些IP地址才能启用源。 有关详细信息，请阅读有关特定源连接器的文档。
 
 ### 源支持哪些身份验证类型？
 
@@ -40,14 +40,14 @@ ht-degree: 0%
 以下是必须考虑源中文件的约束列表。
 
 - 目录和文件组件名称不能超过255个字符。
-- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将被自动删除。
-- 以下保留URL字符必须正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
+- 目录和文件名不能以正斜杠(`/`)。 如果提供，它将自动删除。
+- 必须对以下保留的URL字符进行正确转义： `! ' ( ) ; @ & = + $ , % # [ ]`
 - 不允许使用以下字符： `" \ / : | < > * ?`.
-- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，还不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)，以及两个点字符(...)。
+- 不允许使用非法的URL路径字符。 代码点如下 `\uE000`虽然在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅 [RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9、PRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
 - 每批次的最大文件数为1500，最大批次大小为100 GB。
-- 每行属性或字段的最大数量为10,000。
-- 每个用户每分钟可以发送的最大批次数为138。
+- 每行的属性或字段的最大数量为10,000。
+- 每个用户每分钟可以发送的最大批次数为2000。
 
 ### 支持哪些数据类型？
 
@@ -59,19 +59,19 @@ ht-degree: 0%
 
 ### 如何在CSV、JSON和Parquet文件中格式化数组？
 
-JSON和Parquet文件本身支持数组。 对于平面结构（如CSV），不支持数组。 但是，可以使用数据准备函数（如分解和联接）将具有多个值的字符串拆分为数组。 有关这些数据准备功能的更多信息，请参阅 [数据准备函数指南](../data-prep/functions.md#string)
+JSON和Parquet文件本身支持数组。 对于平面结构（如CSV），不支持数组。 但是，可以使用数据准备函数（如分解和联接）将具有多个值的字符串拆分为数组。 有关这些数据准备功能的更多信息，请参见 [数据准备函数指南](../data-prep/functions.md#string)
 
 ### 哪些源支持部分摄取？
 
-所有批量摄取源都支持部分摄取。 但是，流式摄取源不支持部分摄取。
+所有批次摄取源都支持部分摄取。 但是，流式摄取源不支持部分摄取。
 
 ### 何时应使用部分摄取？
 
-如果这样做，应使用部分摄取 **非** 具有约束，例如将整个文件摄取到Platform。 或者，如果您不介意摄取可能包含错误的数据，则应该使用部分摄取。
+如果这样做，应使用部分摄取 **非** 具有限制，例如将整个文件摄取到Platform。 或者，如果您不介意摄取可能包含错误的数据，则应该使用部分摄取。
 
 ### 典型的部分摄取错误阈值是什么？
 
-对于部分摄取，没有“典型错误阈值”。 相反，此值可能因用例而异。 默认情况下，错误阈值设置为5%。
+对于部分摄取，没有“典型错误阈值”。 此值可能会因用例而异。 默认情况下，错误阈值设置为5%。
 
 ### 创建新数据流后，流运行状态需要多长时间才能更新？
 
