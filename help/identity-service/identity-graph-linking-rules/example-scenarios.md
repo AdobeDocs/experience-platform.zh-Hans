@@ -1,22 +1,20 @@
 ---
 title: 配置身份设置的示例方案
 description: 了解配置身份设置的示例场景。
-hide: true
-hidefromtoc: true
-badge: Alpha
+badge: Beta 版
 exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: f1779ee75c877649a69f9fa99f3872aea861beca
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '455'
 ht-degree: 1%
 
 ---
 
 # 配置身份图链接规则的示例场景
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->标识图链接规则当前处于Alpha状态。 该功能和文档可能会发生更改。
+>此功能尚不可用；标识图链接规则的测试版计划预计于7月在开发沙盒上开始。 有关参与标准的信息，请与您的Adobe客户团队联系。
 
 本文档概述了配置身份图形链接规则时可以考虑的示例场景。
 
