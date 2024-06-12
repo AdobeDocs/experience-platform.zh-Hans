@@ -2,9 +2,9 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
+source-git-commit: 8e05b0ae06250f8cd55b361a8176963e0dce8e92
 workflow-type: tm+mt
-source-wordcount: '1675'
+source-wordcount: '1763'
 ht-degree: 1%
 
 ---
@@ -73,7 +73,7 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 要了解有关每个可用标准构件的更多信息，请从以下列表中选择构件的名称：
 
-* [已添加的帐户配置文件](#account-profiles-added)
+* [已添加帐户轮廓](#account-profiles-added)
 * [按行业划分的新客户](#accounts-by-industry)
 * [按类型的新帐户](#accounts-by-type)
 * [按人员角色显示的新机会](#opportunities-by-person-role)
@@ -84,7 +84,7 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 * [预测评分分布](#predictive-scoring-distribution)
 * [预测得分主要影响因素](#predictive-scoring-top-influential-factors)
 
-### 已添加的帐户配置文件 {#account-profiles-added}
+### 已添加帐户轮廓 {#account-profiles-added}
 
 此 [!UICONTROL 已添加帐户配置文件] 构件使用折线图显示一段时间内每天添加的帐户配置文件数。 使用位于仪表板顶部的全局日期过滤器来确定分析时段。 如果未提供日期过滤器，则默认行为会列出为今天之前的一年添加的帐户配置文件。 结果可用于推断添加的帐户配置文件数量的趋势。
 
@@ -169,6 +169,14 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 >全局日期范围过滤器不适用于预测评分见解。 预测评分构件根据在下拉列表中选定的帐户评分模型分析数据。
 
 ![预测得分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
+
+### 无法加载数据错误 {#errors}
+
+如果显示构件 *[!UICONTROL 无法加载。 请重试。]* 这是因为没有可用于B2B实体的数据。 例如，以下显示的构件 [!UICONTROL 按人员角色显示的新机会]，显示消息“[!UICONTROL 无法加载。 请重试。]”因为该沙盒没有可用的opportunity数据。
+
+![无法加载分析错误。](../images/account-profiles/unable-to-load.png)
+
+要解决此问题，必须摄取B2B实体数据，例如 *机会人员* 数据，放入沙盒中。 48小时后，数据反映在小组件中。
 
 ## 后续步骤
 

@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 架构组合基础
 description: 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 1b3d20610a48fc48c84dc4901d7b09db4bb8fa1f
+source-git-commit: 42038ecfeecc774b3a57e05d961bbd80f3178c21
 workflow-type: tm+mt
-source-wordcount: '4236'
-ht-degree: 6%
+source-wordcount: '4293'
+ht-degree: 2%
 
 ---
 
-# 模式组合基础
+# 架构组合基础
 
 了解Experience Data Model (XDM)架构以及在Adobe Experience Platform中构建架构的构建块、原则和最佳实践。 有关XDM及其在中的使用方式的一般信息 [!DNL Platform]，请参见 [XDM系统概述](../home.md).
 
@@ -52,8 +52,8 @@ XDM架构非常适合以自包含格式存储大量复杂数据。 请参阅以�
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identities"
->title="架构内的标识"
->abstract="标识是架构中的关键字段，可用于识别主题，例如电子邮件地址或营销 ID。这些字段用于为每个人构建标识图并构建客户配置文件。有关架构中标识的更多信息，请参阅该文档。"
+>title="架构中的身份"
+>abstract="身份是架构中可用于识别主体的关键字段，如电子邮件地址或营销ID。 这些字段用于为每个人构建身份图并构建客户配置文件。 有关架构中标识的更多信息，请参阅文档。"
 
 架构用于将数据摄取到Experience Platform。 此数据可以跨多个服务使用，以创建单个实体的单个统一视图。 因此，在为客户身份设计架构时，重要的是要考虑哪些字段可用于识别主题，而不管数据可能来自何处。
 
@@ -170,7 +170,12 @@ Experience Platform使用组合方法，其中组合标准构建块以创建架�
 >[!CONTEXTUALHELP]
 >id="platform_schemas_class"
 >title="类"
->abstract="每个架构都基于一个类。这种类定义了架构的行为，以及基于该类的所有架构必须包含的公共属性。请参阅文档以了解有关类如何参与架构组合的更多信息。"
+>abstract="每个架构都基于一个类。 类定义架构的行为以及基于该类的所有架构必须包含的公共属性。 请参阅文档以了解有关如何将类包含在架构组合中的更多信息。"
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_class_industries"
+>title="行业类型"
+>abstract="如果您为业务选择相关的行业，则机器学习模型可以通过更准确地将源字段与符合行业标准的标准字段组映射来提供更好的数据组织。 这可确保根据行业特定需求定制数据集成，并产生更精确的相关数据洞察。"
 
 架构的合成从指定类开始。 类定义架构将包含的数据的行为方面（记录或时间序列）。 除此之外，类还描述了基于该类的所有架构所需包含的最少数量的公共属性，并提供了一种合并多个兼容数据集的方法。
 
@@ -189,12 +194,12 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 >[!CONTEXTUALHELP]
 >id="platform_schemas_fieldgroup"
 >title="字段组"
->abstract="字段组是可重用的组件，可让您使用其他属性扩展架构。大多数字段组仅与某些类兼容。您可以使用 Adobe 定义的标准字段组，也可以手动定义您自己的自定义字段组。请参阅文档以了解有关字段组如何参与架构组合的更多信息。"
+>abstract="字段组是可重复使用的组件，可用于使用其他属性扩展架构。 大多数字段组仅与某些类兼容。 您可以使用由Adobe定义的标准字段组，也可以手动定义自己的自定义字段组。 请参阅文档，详细了解字段组如何参与架构组合。"
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_fieldgroup_requiredFieldgroup"
 >title="必填字段组"
->abstract="您正在使用的源需要此字段组。因此，您无法从架构中删除它。"
+>abstract="您使用的源需要此字段组。 因此，无法从架构中删除它。"
 
 字段组是可重复使用的组件，它定义一个或多个用于实现特定功能（如个人详细信息、酒店首选项或地址）的字段。 字段组旨在作为实现兼容类的架构的一部分包含。
 
@@ -240,7 +245,7 @@ Experience Platform提供了许多常见数据类型，作为 [!DNL Schema Regis
 
 * 字符串
 * 整数
-* 双精度
+* 两次
 * 布尔值
 * 数组
 * 对象
@@ -275,7 +280,7 @@ Experience Platform提供了许多常见数据类型，作为 [!DNL Schema Regis
 
 ![包含四个架构和为其做出贡献的字段组的流程图。](../images/schema-composition/composition.png)
 
-### 并集 {#union}
+### 合并 {#union}
 
 虽然Experience Platform允许您为特定用例编写架构，它还允许您查看特定类类型的架构的“并集”。 上图显示了两个基于XDM ExperienceEvent类的架构和两个基于 [!DNL XDM Individual Profile] 类。 如下所示的并集聚合了共享相同类([!DNL XDM ExperienceEvent] 和 [!DNL XDM Individual Profile]、分别)。
 

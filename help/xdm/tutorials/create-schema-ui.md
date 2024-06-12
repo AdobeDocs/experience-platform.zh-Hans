@@ -5,7 +5,7 @@ title: 使用架构编辑器创建架构
 type: Tutorial
 description: 本教程介绍了在Experience Platform中使用架构编辑器创建架构的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: c8c8e8b8571c215cb470dd5bdb9e9172d564f9d8
+source-git-commit: df0912bcb7122152da127c4e6b625cff73f7fa72
 workflow-type: tm+mt
 source-wordcount: '4813'
 ht-degree: 0%
@@ -49,10 +49,6 @@ Adobe Experience Platform用户界面允许您创建和管理 [!DNL Experience D
 此 [!UICONTROL 创建架构] 此时会出现工作流。 接下来，为架构选择一个基类。 您可以在以下核心类之间进行选择： [!UICONTROL XDM个人资料] 和 [!UICONTROL XDM ExperienceEvent]，或 [!UICONTROL 其他] 如果这些课程不适合您的用途。 此 [!UICONTROL 其他] classes选项允许您 [创建新类](#create-new-class) 或者从其他预先存在的类中进行选择。
 
 请参阅 [XDM个人资料](../classes/individual-profile.md) 和 [XDM ExperienceEvent](../classes/experienceevent.md) 文档，以了解有关这些类的详细信息。 在本教程中，选择 **[!UICONTROL XDM个人资料]** 后接 **[!UICONTROL 下一个]**.
-
-
-
-<!--  -->
 
 <!-- You can  by selecting either **[!UICONTROL Individual Profile]**, **[!UICONTROL Experience Event]**, or **[!UICONTROL Other]**, followed by **[!UICONTROL Next]** to confirm your choice.  -->
 

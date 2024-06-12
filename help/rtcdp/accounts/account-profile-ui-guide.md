@@ -5,9 +5,9 @@ description: 通过使用帐户配置文件，Adobe Real-time Customer Data Plat
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: bbcc056e416e2c1a8b6fd1a411c0fba4c0ff8dbb
+source-git-commit: 96f29d5c64bb29125d8a63dd3ddb3bdedb5ebd52
 workflow-type: tm+mt
-source-wordcount: '1664'
+source-wordcount: '1680'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 选择 **[!UICONTROL 配置文件]** 下 [!UICONTROL 帐户] 在左侧导航中，查看帐户配置文件的概述。 在 [!UICONTROL 概述] 选项卡中，仪表板会显示一个图形或图表，其中显示单个入口点中的小组件。
 
-![显示小组件的“概述”选项卡](images/b2b-account-profile-overview.png)
+![帐户配置文件概述选项卡，左侧导航中的配置文件和概述突出显示。](images/b2b-account-profile-overview.png)
 
 请参阅有关以下内容的文档 [[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md) 仪表板以了解详情。 请参阅相关文档 [Real-time Customer Data Platform Insights数据模型B2B版本](../../dashboards/data-models/cdp-insights-data-model-b2b.md) 有关如何使用您的分析数据模型为仪表板创建自定义图表的更多信息。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 要配置潜在客户与帐户匹配，请选择 **[!UICONTROL 配置文件]** 下 [!UICONTROL 帐户] 在左侧导航中。 在 **[!UICONTROL 概述]** 选项卡，选择 **[!UICONTROL 设置]** 在右上角。
 
-![选择设置](images/b2b-configuring-accounts-profile.png)
+![突出显示设置的帐户配置文件概述选项卡。](images/b2b-configuring-accounts-profile.png)
 
 此 **[!UICONTROL 帐户设置]** 对话框打开。 从此处选择 **[!UICONTROL 启用商机帐户匹配]** 切换以启用该功能。 使用下拉菜单进行选择 **[!UICONTROL 每日]** 对于 **[!UICONTROL 匹配节奏]** 设置。 最后，选择相关的 **[!UICONTROL 匹配条件]** 选项后接 **[!UICONTROL 保存]** 以确认设置并返回至 **[!UICONTROL 帐户配置文件]** 屏幕。
 
