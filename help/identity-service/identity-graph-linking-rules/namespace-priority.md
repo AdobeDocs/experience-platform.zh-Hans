@@ -2,9 +2,10 @@
 title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 badge: Beta 版
-source-git-commit: 85da193f422a1708999fb59b7ea095f4447d6bdf
+exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
+source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
 workflow-type: tm+mt
-source-wordcount: '1464'
+source-wordcount: '1519'
 ht-degree: 1%
 
 ---
@@ -50,9 +51,9 @@ ht-degree: 1%
 
 处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRM ID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 一般而言， **较低的基数表示命名空间具有较高的值**.
 
-<!-- ## Step 2: Validate your namespace priority settings
+## 验证命名空间优先级设置
 
-Once you have an idea of how you will prioritize your namespaces, you can use the Graph Simulation tool to test out various graph collapse scenarios and ensure that your priority configurations are returning the expected graph results. For more information, read the guide on using the [Graph Simulation tool](./graph-simulation.md). -->
+了解如何设置命名空间的优先级后，您可以使用图形模拟工具来测试各种图形折叠方案，并确保优先级配置返回预期的图形结果。 有关详细信息，请阅读使用 [图形模拟工具](./graph-simulation.md).
 
 ## 配置命名空间优先级
 

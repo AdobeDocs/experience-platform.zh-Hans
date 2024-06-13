@@ -5,10 +5,10 @@ breadcrumb-title: Platform Identity Service指南
 user-guide-description: 跨设备和系统桥接客户身份以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: f04587fe325c1515545e4067845976aafc7d68ed
+source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
 workflow-type: tm+mt
-source-wordcount: '126'
-ht-degree: 18%
+source-wordcount: '129'
+ht-degree: 17%
 
 ---
 
@@ -27,6 +27,7 @@ ht-degree: 18%
       - [身份优化算法](./identity-graph-linking-rules/identity-optimization-algorithm.md)
       - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
       - [示例场景](./identity-graph-linking-rules/example-scenarios.md)
+      - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
    - [ECID概述](./features/ecid.md)
 - [实施指南](implementation.md)
 - [身份数据的护栏](guardrails.md)
