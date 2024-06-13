@@ -3,19 +3,24 @@ solution: Experience Platform
 title: Real-time Customer Data Platform和Adobe Journey Optimizer的可用用例行动手册。
 description: Real-time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。
 role: User
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
+source-git-commit: 6573fdede3bd25bac556531e45f8abefc576f857
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
-
 
 # 可用的用例行动手册
 
 请阅读本页，概览您可以在Real-time Customer Data Platform和Adobe Journey Optimizer中找到并使用的所有可用行动手册。
 
 ## Journey Optimizer中的用例行动手册 {#optimizer-playbooks}
+
+>[!CONTEXTUALHELP]
+>id="platform_playbooks_list"
+>title="可用的行动手册"
+>abstract="Real-time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。"
 
 | 剧本名称 | 描述 |
 | ------------- |  ----------- |
