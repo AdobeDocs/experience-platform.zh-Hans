@@ -2,9 +2,9 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: b41a60942460e22556714699975f9eb281d76335
+source-git-commit: 147dded9f5eb6c2e153a80fa80b18e9fe96a6faa
 workflow-type: tm+mt
-source-wordcount: '4060'
+source-wordcount: '4096'
 ht-degree: 0%
 
 ---
@@ -206,6 +206,10 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 此时，您 **必须** 手动检查受众是否在Adobe Journey Optimizer下游使用，因为当前不会自动检查此状态。
 
 此外，您 **必须** 手动检查受众是否用作基于帐户的受众的组件，因为当前也不会自动检查此状态。
+
+### 复制受众时会出现什么情况？ {#copy}
+
+当您复制受众时，新受众将处于草稿状态，并保留应用于原始受众的相同文件夹、标记和标签。
 
 ### 使用受众作为子受众是否会影响生命周期状态转换？
 
