@@ -6,10 +6,10 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 3c3863aa61a7bbdb2df585b842e55f2d7291c727
+source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 36%
+source-wordcount: '765'
+ht-degree: 35%
 
 ---
 
@@ -87,7 +87,7 @@ ht-degree: 36%
       * [通过Adobe Experience Platform Web SDK访问Adobe Analytics](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/client/audience-manager/overview.md)
-      * Adobe 客户端数据层{#client-data-layer}
+      * Adobe客户端数据层 {#client-data-layer}
          * [概述](./extensions/client/client-data-layer/overview.md)
          * [发行说明](./extensions/client/client-data-layer/release-notes.md)
       * AdobeContextHub {#contexthub}
@@ -251,6 +251,8 @@ ht-degree: 36%
          * [概述](./extensions/server/twitter/overview.md)
       * [!DNL Tiktok] Web事件API {#tiktok}
          * [概述](./extensions/server/tiktok/overview.md)
+      * [!DNL The Trade Desk] {#thetradedesk}
+         * [概述](./extensions/server/tradedesk/overview.md)
       * [!DNL Zendesk] 事件API {#zendesk}
          * [概述](./extensions/server/zendesk/overview.md)
 * 扩展开发 {#extension-dev}
@@ -322,5 +324,5 @@ ht-degree: 36%
 * [常见问题解答](./faq.md)
 * [术语更新](./term-updates.md)
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
-* [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+* [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
 
