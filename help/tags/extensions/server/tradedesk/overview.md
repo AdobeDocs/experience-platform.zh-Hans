@@ -3,18 +3,16 @@ title: 交易台实时转化API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Trade Desk Real-time Conversions API扩展。
 hide: true
 hidefromtoc: true
-source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
+source-git-commit: d9d185685106ac160dcbefc5e9567a85c8302a73
 workflow-type: tm+mt
-source-wordcount: '897'
-ht-degree: 1%
+source-wordcount: '930'
+ht-degree: 2%
 
 ---
 
 # [!DNL The Trade Desk Real-Time Conversions API] 扩展概述
 
-[[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) 允许您将事件发送到 [!DNL The Trade Desk] 以利用重定位和归因。
-
-您可以使用 [!DNL The Trade Desk Real-Time Conversions API] 将数据从Adobe Experience PlatformEdge Network发送到的扩展 [!DNL The Trade Desk] 通过在应用程序中使用API [事件转发](../../../ui/event-forwarding/overview.md) 规则。
+您可以使用 [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) 将数据从Adobe Experience PlatformEdge Network发送到的扩展 [!DNL The Trade Desk] 通过在应用程序中使用API [事件转发](../../../ui/event-forwarding/overview.md) 规则。
 
 使用 [!DNL The Trade Desk Real-Time Conversions API] 扩展上，您可以利用API在 [事件转发](../../../ui/event-forwarding/overview.md) 将数据发送到的规则 [!DNL The Trade Desk] 从Adobe Experience PlatformEdge Network访问。
 
@@ -79,7 +77,7 @@ ht-degree: 1%
 | 客户端IP | 客户端IPv4或IPv6 IP地址。 |
 | 广告 ID | 事件的唯一广告ID。 |
 | 广告 ID 类型 | 广告ID的类型，在AD ID属性中指定：TDID、IDFA、AAID、DAID、NAID、IDL、EUID或UID2。 |
-| 展示 | 36个字符的字符串（包括破折号），用作事件所归因的展示的唯一ID。 |
+| 印象 | 36个字符的字符串（包括破折号），用作事件所归因的展示的唯一ID。 |
 | 订单ID | 事件的关联订单标识符。 |
 | td1-td10 | 可用于提供其他转化元数据的十个按顺序编号的自定义动态属性。 |
 
@@ -91,7 +89,8 @@ ht-degree: 1%
 
 **[!UICONTROL 对象请求参数]**
 
-请阅读以下部分，了解JSON格式的请求参数，例如项目、隐私和数据处理。
+包含更多信息的JSON对象。 您可以选择使用一组经过缩减的键值输入或提供原始JSON。 此外，您还可以通过选择磁盘(![磁盘图标](../../../images/extensions/server/tradedesk/disk-icon.png))在右侧。
+
 
 ![此 [!DNL Object Request Parameters] 部分显示可用的字段。](../../../images/extensions/server/tradedesk/configure-object-request-params.png)
 
@@ -99,14 +98,14 @@ ht-degree: 1%
 
 **[!UICONTROL 配置覆盖]**
 
->注意
+>[!NOTE]
 >
 >此 [!UICONTROL 配置覆盖] 利用字段，可设置其他 [!DNL Advertiser ID] 和/或 [!DNL Merchant ID] 每条规矩。
 
 | 输入 | 描述 |
 | --- | --- |
-| 广告商ID | 您希望覆盖扩展配置中提供的广告商ID的广告商ID。 |
-| 商家ID | 您希望覆盖扩展配置中提供的商家ID的商家ID。 |
+| 广告商 ID | 与此事件关联的广告商的唯一标识符。 可以提供其他广告商ID以覆盖您在扩展配置中提供的ID。 |
+| 商家ID | 每个商家提供的唯一标识符 [!DNL The Trade Desk] 整个入职程序。 可以提供其他贸易商ID以覆盖您在扩展配置中提供的ID。 |
 
 ![此 [!DNL Configuration Overrides] 部分显示可用的字段。](../../../images/extensions/server/tradedesk/configure-overrides.png)
 
