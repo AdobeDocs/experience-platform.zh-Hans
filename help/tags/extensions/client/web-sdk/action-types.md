@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 377be6d97e6da9b4aaacfa23a188131bd38e66f4
+source-git-commit: e5fd8a53cfd612034d12a761ac4779ed930557d4
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1264'
 ht-degree: 1%
 
 ---
@@ -17,17 +17,33 @@ ht-degree: 1%
 
 本页介绍支持的操作类型。 [Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md).
 
+
+## 应用响应 {#apply-response}
+
+使用 **[!UICONTROL 应用响应]** Edge Network操作类型。 此操作类型通常用于混合部署，其中服务器对Edge Network进行初始调用，然后此操作类型从该调用中获取响应并在浏览器中初始化Web SDK。
+
+使用此操作类型可能会缩短混合个性化用例的客户端加载时间。
+
+![显示“应用响应”操作类型的Experience Platform用户界面的图像。](assets/apply-response.png)
+
+此操作类型支持以下配置选项：
+
+* **[!UICONTROL 实例]**：选择您正在使用的Web SDK实例。
+* **[!UICONTROL 响应标头]**：选择数据元素，该数据元素会返回一个对象，其中包含从Edge Network服务器调用返回的标头键和值。
+* **[!UICONTROL 响应正文]**：选择数据元素，该数据元素会返回包含Edge Network响应提供的JSON有效负载的对象。
+* **[!UICONTROL 呈现可视化个性化决策]**：启用此选项以自动呈现Edge Network提供的个性化内容，并预隐藏内容以防止闪烁。
+
 ## 发送事件 {#send-event}
 
 向Adobe发送事件 [!DNL Experience Platform] 以便Adobe Experience Platform可以收集您发送的数据并对该信息执行相应的操作。 选择一个实例（如果有多个实例）。 您要发送的任何数据均可发送 **[!UICONTROL XDM数据]** 字段。 使用符合XDM架构的JSON对象。 此对象可以在页面上创建，也可以通过 **[!UICONTROL 自定义代码]** **[!UICONTROL 数据元素]**.
 
 根据您的实施， Send Event操作类型中还有一些其他字段也可能很有用。 请注意，这些字段都是可选的。
 
-- **类型：** 此字段允许您指定将记录在XDM架构中的事件类型。 请参阅 [`type`](/help/web-sdk/commands/sendevent/type.md) 在 `sendEvent` 命令以了解更多信息。
-- **数据：** 可使用此字段发送不匹配XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 请参阅 [`data`](/help/web-sdk/commands/sendevent/data.md) 在 `sendEvent` 命令以了解更多信息。<!--- **Merge ID:** If you would like to specify a merge ID for your event, you can do so in this field. Please note that the solutions downstream are not able to merge your event data at this time. -->
-- **数据集ID：** 如果您需要将数据发送到您在数据流中指定的数据集以外的其他数据集，则可以在此处指定该数据集ID。
-- **文档将卸载：** 如果您想确保事件可到达服务器，即使用户离开页面，请检查 **[!UICONTROL 文档将卸载]** 复选框。 这允许事件访问服务器，但响应将被忽略。
-- **呈现可视化个性化决策：** 如果您想在页面上呈现个性化内容，请选中 **[!UICONTROL 呈现可视化个性化决策]** 复选框。 如有必要，您还可以指定决策范围和/或曲面。 请参阅 [个性化文档](/help/web-sdk/personalization/rendering-personalization-content.md#automatically-rendering-content) 以了解有关呈现个性化内容的更多信息。
+* **类型：** 此字段允许您指定将记录在XDM架构中的事件类型。 请参阅 [`type`](/help/web-sdk/commands/sendevent/type.md) 在 `sendEvent` 命令以了解更多信息。
+* **数据：** 可使用此字段发送不匹配XDM架构的数据。 如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 请参阅 [`data`](/help/web-sdk/commands/sendevent/data.md) 在 `sendEvent` 命令以了解更多信息。<!--- **Merge ID:** If you would like to specify a merge ID for your event, you can do so in this field. Please note that the solutions downstream are not able to merge your event data at this time. -->
+* **数据集ID：** 如果您需要将数据发送到您在数据流中指定的数据集以外的其他数据集，则可以在此处指定该数据集ID。
+* **文档将卸载：** 如果您想确保事件可到达服务器，即使用户离开页面，请检查 **[!UICONTROL 文档将卸载]** 复选框。 这允许事件访问服务器，但响应将被忽略。
+* **呈现可视化个性化决策：** 如果您想在页面上呈现个性化内容，请选中 **[!UICONTROL 呈现可视化个性化决策]** 复选框。 如有必要，您还可以指定决策范围和/或曲面。 请参阅 [个性化文档](/help/web-sdk/personalization/rendering-personalization-content.md#automatically-rendering-content) 以了解有关呈现个性化内容的更多信息。
 
 ## 设置同意 {#set-consent}
 
@@ -57,24 +73,28 @@ ht-degree: 1%
 
 此 **[!UICONTROL 发送媒体事件]** 操作类型支持以下属性：
 
-- **[!UICONTROL 实例]**：正在使用的Web SDK实例。
-- **[!UICONTROL 媒体事件类型]**：所跟踪的媒体事件的类型。
-- **[!UICONTROL 播放器ID]**：媒体会话的唯一标识符。
-- **[!UICONTROL 播放头]**：媒体播放的当前位置（以秒为单位）。
-- **[!UICONTROL 媒体会话详细信息]**：发送媒体开始事件时，应指定所需的媒体会话详细信息。
-- **[!UICONTROL 章节详细信息]**：在此部分中，您可以在发送章节开始媒体事件时指定章节详细信息。
-- **[!UICONTROL 广告详细信息]**：发送 `AdBreakStart` 事件，必须指定所需的广告详细信息。
-- **[!UICONTROL 广告Pod详细信息]**：有关发送广告面板的详细信息 `AdStart` 事件。
-- **[!UICONTROL 错误详细信息]**：有关正在跟踪的播放错误的详细信息。
-- **[!UICONTROL 状态更新详细信息]**：正在更新的播放器状态。
-- **[!UICONTROL 自定义元数据]**：有关正在跟踪的媒体事件的自定义元数据。
-- **[!UICONTROL 体验质量]**：所跟踪的体验数据的媒体质量。
+* **[!UICONTROL 实例]**：正在使用的Web SDK实例。
+* **[!UICONTROL 媒体事件类型]**：所跟踪的媒体事件的类型。
+* **[!UICONTROL 播放器ID]**：媒体会话的唯一标识符。
+* **[!UICONTROL 播放头]**：媒体播放的当前位置（以秒为单位）。
+* **[!UICONTROL 媒体会话详细信息]**：发送媒体开始事件时，应指定所需的媒体会话详细信息。
+* **[!UICONTROL 章节详细信息]**：在此部分中，您可以在发送章节开始媒体事件时指定章节详细信息。
+* **[!UICONTROL 广告详细信息]**：发送 `AdBreakStart` 事件，必须指定所需的广告详细信息。
+* **[!UICONTROL 广告Pod详细信息]**：有关发送广告面板的详细信息 `AdStart` 事件。
+* **[!UICONTROL 错误详细信息]**：有关正在跟踪的播放错误的详细信息。
+* **[!UICONTROL 状态更新详细信息]**：正在更新的播放器状态。
+* **[!UICONTROL 自定义元数据]**：有关正在跟踪的媒体事件的自定义元数据。
+* **[!UICONTROL 体验质量]**：所跟踪的体验数据的媒体质量。
 
 ## 获取Media Analytics跟踪器 {#get-media-analytics-tracker}
 
 此操作用于获取旧版Media Analytics API。 配置操作并提供对象名称时，旧版Media Analytics API将导出到该窗口对象。 如果未提供，则将其导出到 `window.Media` 与当前Media JS库一样。
 
 ![Platform UI图像显示了获取Media Analytics跟踪器操作类型。](assets/get-media-analytics-tracker.png)
+
+## 带标识的重定向 {#redirect-with-identity}
+
+使用此操作类型可将当前页面的标识共享到其他域。 此操作设计为与 **[!UICONTROL 单击]** 事件类型和值比较条件。 请参阅 [使用Web SDK扩展将身份附加到URL](../../../../web-sdk/commands/appendidentitytourl.md#extension) 有关如何使用此操作类型的详细信息。
 
 ## 后续步骤 {#next-steps}
 

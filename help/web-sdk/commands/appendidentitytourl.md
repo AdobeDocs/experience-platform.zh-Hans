@@ -1,7 +1,8 @@
 ---
 title: appendIdentityToUrl
 description: 在应用程序、Web和跨域之间更准确地交付个性化体验。
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 09dd03bd-66d8-4d53-bda8-84fc4caadea6
+source-git-commit: 153c5bae42c027c25a38a8b63070249d1b1a8f01
 workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 >
 >如果未提供同意，则此方法的URL将保持不变。 此命令会立即运行；它不会等待同意更新。
 
-## 使用Web SDK扩展将身份附加到URL
+## 使用Web SDK扩展将身份附加到URL {#extension}
 
 将身份附加到URL可作为Adobe Experience Platform数据收集标记界面中的规则中的操作执行。
 
