@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户个人资料UI指南
 description: Real-time Customer Profile可以为每位客户创建整体视图，结合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据。 本文档提供了在Adobe Experience Platform用户界面中与Real-time Customer Profile交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: e6c64ebbde0301c796a4d681d962f1edb3d79a12
 workflow-type: tm+mt
-source-wordcount: '2108'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 >
 >如果您的组织是初次使用Platform，但尚未创建活动配置文件数据集或合并策略，则 [!UICONTROL 配置文件] 仪表板不可见。 相反， [!UICONTROL 概述] 选项卡显示链接和文档，以帮助您开始使用Real-Time Customer Profile。
 
-### 配置文件仪表板 {#profile-dashboard}
+### 个人资料仪表板 {#profile-dashboard}
 
 配置文件仪表板概述了与组织配置文件数据相关的关键量度。
 
@@ -132,9 +132,13 @@ ht-degree: 0%
 
 显示的默认字段也可以在组织级别更改以显示首选用户档案属性。 要了解有关自定义这些字段的更多信息（包括添加和删除属性以及调整仪表板面板大小的分步说明），请阅读 [配置文件详细信息自定义指南](profile-customization.md).
 
-![“详细信息”选项卡会突出显示。 将显示配置文件详细信息。](../images/user-guide/profile-detail.png)
+![“详细信息”选项卡会突出显示。 将显示配置文件详细信息。](../images/user-guide/profile-detail-row-name.png)
 
-通过选择另一个可用选项卡，您可以查看与单个客户配置文件相关的附加信息。 这些选项卡包括属性、事件和受众成员资格选项卡，用于显示配置文件当前符合条件的受众。
+您还可以选择在查看属性名称作为其显示名称与字段路径名称之间进行切换。 要在这两种显示之间切换，请选择 **[!UICONTROL 显示显示名称]** 切换。
+
+![“显示显示名称”切换会加亮显示，显示名称显示在属性下。](../images/user-guide/profile-detail.png)
+
+要查看与单个客户配置文件相关的附加信息，请选择其它可用标签之一。 这些选项卡包括属性、事件和受众成员资格选项卡，用于显示配置文件当前符合条件的受众。
 
 ### “属性”选项卡
 
