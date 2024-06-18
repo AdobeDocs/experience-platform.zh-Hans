@@ -3,10 +3,10 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 305aa7f44cd64d9a0ae704fe9aa01d2d1c536ade
 workflow-type: tm+mt
-source-wordcount: '3633'
-ht-degree: 0%
+source-wordcount: '3743'
+ht-degree: 6%
 
 ---
 
@@ -20,12 +20,12 @@ ht-degree: 0%
 
 ![此时会显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
-## 区段定义构建基块 {#building-blocks}
+## 区段定义构建块 {#building-blocks}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
->abstract="构成区段定义的三种字段类型是属性、事件和受众。 通过属性，您可以使用属于XDM Individual Profile类的Profile属性；通过事件，可根据使用XDM ExperienceEvent数据元素发生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
+>abstract="构成区段定义的三种字段类型是属性、事件和受众。属性允许您使用属于 XDM 个人配置文件类的配置文件属性，事件允许您基于使用 XDM ExperienceEvent 数据元素发生的操作或事件创建受众，受众允许您使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
@@ -114,6 +114,14 @@ ht-degree: 0%
 您还可以使用搜索栏(利用 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 在 **[!UICONTROL 受众]** 选项卡，选择顶级文件夹将显示搜索栏，允许您在该文件夹中进行搜索。 只有在输入了整个单词后，搜索结果才会开始填充。 例如，查找名为的受众 `Online Shoppers`，开始在搜索栏中键入“Online”。 一旦“在线”一词被完整输入，包含“在线”一词的搜索结果就会出现。
 
 ## 规则生成器画布 {#rule-builder-canvas}
+
+>[!IMPORTANT]
+>
+>截至2024年6月版，“本月”和“今年”时间限制分别表示“月至今”和“年初至今”。 例如，如果您在7月18日创建受众，查找“本月生日的所有客户”，则受众将获取其生日从7月1日到7月31日的所有客户。 8月1日，此受众将获取其生日为8月1日至8月31日的所有客户。
+>
+>先前，“本月”和“今年”分别代表30天和365天，未能说明包含31天和闰年的月份。
+>
+>为了更新受众的逻辑，请重新保存之前创建的受众。
 
 区段定义是用于描述目标受众的关键特征或行为的规则集合。 这些规则是使用位于的中心的规则生成器画布创建的 [!DNL Segment Builder].
 
@@ -232,7 +240,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="合并策略"
->abstract="合并策略允许合并不同的数据集以形成您的配置文件。 Platform提供了默认合并策略，或者，您可以在配置文件中创建新的默认合并策略。 为此受众选择与您的营销目的相匹配的合并策略。"
+>abstract="合并策略可以合并不同的数据集，以形成您的配置文件。Platform 已提供默认合并策略，您也可以在配置文件中创建新的默认合并策略。为该受众选择与您的营销目的相匹配的合并策略。"
 
 [!DNL Experience Platform] 使您能够将来自多个来源的数据整合在一起，并将它们组合在一起，以便查看每个客户的完整视图。 在汇总此数据时，合并策略是指 [!DNL Platform] 使用确定数据的优先级以及将合并哪些数据以创建配置文件。
 
@@ -247,13 +255,13 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_segmentproperties"
 >title="区段定义属性"
->abstract="区段定义属性部分估算生成的区段定义的大小，并显示符合条件的配置文件数与配置文件总数的对比。 这样，您就可以在构建受众本身之前，根据需要调整区段定义。"
+>abstract="区段定义属性部分显示生成的区段定义的大小估计值，并显示合格配置文件的数量与配置文件总数的比较情况。这允许您在构建受众本身之前根据需要调整区段定义。"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
->title="刷新估计"
->abstract="您可以刷新区段定义的估计值，以立即预览有多少配置文件将符合建议的区段定义。 通过使用当天样本数据的样本量生成受众估计。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="预计和预览受众"
+>title="刷新估计值"
+>abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的配置文件数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
 
 构建区段定义时， **[!UICONTROL 受众属性]** 工作区右侧的部分估算了生成的区段定义的大小，这使您可以在构建受众本身之前根据需要调整区段定义。
 
