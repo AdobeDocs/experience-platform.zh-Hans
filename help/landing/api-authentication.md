@@ -4,17 +4,17 @@ title: 身份验证和访问Experience PlatformAPI
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: f598c6dabe9296044055d8e961cf5177a655f5fa
+source-git-commit: 2fb0da385baeb96d5665ecc25bf353c7516ef9f7
 workflow-type: tm+mt
-source-wordcount: '2204'
-ht-degree: 7%
+source-wordcount: '2149'
+ht-degree: 2%
 
 ---
 
 
 # 验证和访问 Experience Platform API
 
-此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。在本教程结束时，您将生成或收集了所有平台API调用中作为标头所需的以下凭据：
+此文档分步说明了如何获取Adobe Experience Platform开发人员帐户访问权限以调用Experience PlatformAPI。 在本教程结束时，您将生成或收集了所有平台API调用中作为标头所需的以下凭据：
 
 * `{ACCESS_TOKEN}`
 * `{API_KEY}`
@@ -50,7 +50,7 @@ ht-degree: 7%
 
 ### 获取开发人员访问权限 {#gain-developer-access}
 
-联系 [!DNL Admin Console] 管理员将您作为开发人员添加到Experience Platform产品配置文件中 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 文档，以了解关于如何 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/cn/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
+联系 [!DNL Admin Console] 管理员将您作为开发人员添加到Experience Platform产品配置文件中 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 文档，以了解关于如何 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
 
 一旦您被分配为开发人员，您就可以开始在中创建集成 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
@@ -88,15 +88,15 @@ ht-degree: 7%
 >
 >选择 **[!UICONTROL 查看文档]** 在单独的浏览器窗口中导航以完成 [Experience PlatformAPI参考文档](https://developer.adobe.com/experience-platform-apis/).
 
-### 选择OAuth服务器到服务器身份验证类型 {#select-oauth-server-to-server}
+### 选择 [!UICONTROL OAuth服务器到服务器] 身份验证类型 {#select-oauth-server-to-server}
 
-接下来，选择身份验证类型以生成访问令牌并访问Experience PlatformAPI。
+接下来，选择 [!UICONTROL OAuth服务器到服务器] 身份验证类型，用于生成访问令牌并访问Experience PlatformAPI。
 
 >[!IMPORTANT]
 >
->选择 **[!UICONTROL OAuth服务器到服务器]** 方法，因为这将是今后唯一支持的方法。 此 **[!UICONTROL 服务帐户(JWT)]** 方法已弃用。 虽然使用JWT身份验证方法的集成将继续工作到2025年1月1日，但Adobe强烈建议您在该日期之前将现有集成迁移到新的OAuth服务器到服务器方法。 在部分获取更多信息 [!BADGE 已弃用]{type=negative}[生成JSON Web令牌(JWT)](#jwt).
+>此 **[!UICONTROL OAuth服务器到服务器]** 方法是唯一支持向前迁移的令牌生成方法。 以前支持的 **[!UICONTROL 服务帐户(JWT)]** 方法已弃用，无法为新集成选择。 虽然使用JWT身份验证方法的现有集成将继续工作到2025年1月1日，但Adobe强烈建议您将现有集成迁移到新的 [!UICONTROL OAuth服务器到服务器] 方法。 在部分获取更多信息 [!BADGE 已弃用]{type=negative}[生成JSON Web令牌(JWT)](#jwt).
 
-![选择Experience PlatformAPI。](./images/api-authentication/oauth-authentication-method.png)
+![为Experience PlatformAPI选择OAuth服务器到服务器身份验证方法。](./images/api-authentication/oauth-authentication-method.png)
 
 ### 为您的集成选择产品配置文件 {#select-product-profiles}
 
@@ -126,7 +126,7 @@ Your integration's service account will gain access to granular features through
 ![在Developer Console中添加API后的集成信息。](./images/api-authentication/api-integration-information.png)
 
 * `{API_KEY}` ([!UICONTROL 客户端ID])
-* `{ORG_ID}` ([!UICONTROL 组织 ID])
+* `{ORG_ID}` ([!UICONTROL 组织ID])
 
 <!--
 
@@ -154,10 +154,10 @@ In addition to the above credentials, you also need the generated **[!UICONTROL 
 
 >[!WARNING]
 >
-已弃用用于生成访问令牌的JWT方法。 所有新的集成都必须使用 [OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server). Adobe 还建议您将现有集成迁移到 OAuth 方法。请阅读以下重要文档：
+已弃用用于生成访问令牌的JWT方法。 所有新的集成都必须使用 [OAuth服务器到服务器身份验证方法](#select-oauth-server-to-server). Adobe还要求您在2025年1月1日之前将现有集成迁移到OAuth方法，以便集成继续工作。 请阅读以下重要文档：
 > 
 * [应用程序从JWT到OAuth的迁移指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
-* [采用 OAuth 的新旧应用程序的实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+* [使用OAuth的新旧应用程序的实施指南](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
 * [使用OAuth服务器到服务器凭据方法的优势](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
 
 +++ 查看已弃用的信息
@@ -313,7 +313,7 @@ This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentica
 
 ### 将开发人员添加到产品配置文件 {#add-developers-to-product-profile}
 
-转至[[!DNL Admin Console]](https://adminconsole.adobe.com/)并使用您的 Adobe ID 登录。
+转到 [[!DNL Admin Console]](https://adminconsole.adobe.com/) 然后使用您的Adobe ID登录。
 
 选择 **[!UICONTROL 产品]**，然后选择 **[!UICONTROL Adobe Experience Platform]** 从产品列表中。
 
