@@ -4,9 +4,9 @@ title: 用例行动手册入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: fe87b8cdeaca5e4e852a8819534f4a5c4023ca52
+source-git-commit: dfb4549a09628f2fed947ddf76167db28354eb92
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '953'
 ht-degree: 15%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 15%
 
 # 快速入门
 
-了解如何为针对Real-time Customer Data Platform和Adobe Journey Optimizer设计的用例行动手册设置您的帐户。 三个主要配置步骤为：
+了解如何为用例行动手册设置您的帐户，这些行动手册专为未自动设置的Real-time Customer Data Platform和Adobe Journey Optimizer设计。 三个主要配置步骤为：
 
 * 创建沙盒
 * 配置用户权限
@@ -87,7 +87,7 @@ ht-degree: 15%
 
 ## 在Journey Optimizer中配置沙盒和渠道表面 {#configure-channel-surfaces}
 
-如果您的组织获得许可 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)，并且您正在寻求使用针对Journey Optimizer设计的行动手册，您需要在沙盒中配置渠道预设，这会定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
+如果您的组织获得许可 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)，并且您正在寻求使用针对Journey Optimizer设计的行动手册，您需要在沙盒中配置渠道预设，这会定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
 
 要在Journey Optimizer中创建行动手册的实例，您需要为电子邮件、推送和短信通知配置渠道平面。
 

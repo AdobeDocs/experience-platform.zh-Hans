@@ -1,85 +1,74 @@
 ---
 solution: Experience Platform
-title: 发现合适的战术手册
-description: 了解如何为您的用例找到合适的战术手册并启用战术手册。
+title: 探索行动手册
+description: 了解如何发现行动手册库并开始使用启发性的沙盒。
 role: User
-exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: ad3f746580f85e77cba390208d147b35b6854e10
 workflow-type: tm+mt
-source-wordcount: '752'
-ht-degree: 96%
+source-wordcount: '711'
+ht-degree: 2%
 
 ---
 
-# 发现合适的战术手册
+# 探索行动手册
 
-要使用战术手册，请导航至&#x200B;**[!UICONTROL 用例战术手册] > [!UICONTROL 战术手册]**。浏览并使用页面上的各种搜索和过滤选项来选择并开始使用特定的战术手册。
+所有Adobe Experience Platform客户均可免费获得用例行动手册。 要在Experience PlatformUI中访问用例行动手册的丰富图库，请选择 **[!UICONTROL 行动手册]** 从左侧导航栏中。
 
-## 搜索和过滤 {#search-and-filter}
+![用例剧本库。](/help/use-case-playbooks/assets/playbooks/discover/playbooks-gallery.png)
 
-使用页面上提供的搜索窗口和过滤器来查找适合您的用例的战术手册。
+![直接访问左侧导航栏中的用例行动手册。](/help/use-case-playbooks/assets/playbooks/discover/left-nav-playbooks.png)
 
-例如，您可以根据您想要瞄准的营销漏斗阶段（转化、参与或保留）来筛选可使用的战术手册。您还可以按您所在的行业或您有权访问的产品权利(Adobe Journey Optimizer或Real-Time CDP)筛选显示的行动手册。
+选择任意行动手册以转到详细信息页面，然后选择 **[!UICONTROL 前往鼓舞人心的沙盒]**. 此时将显示确认模式窗口。 选择 **确认** 转到启发性的沙盒，您可以在其中探索和试验不同的用例。
 
-![按营销漏斗、行业或产品过滤策略战术手册](/help/use-case-playbooks/assets/playbooks/ui-guide/filter-by-funnel-industry-product.gif)
+如果您没有创建沙盒的权限，请联系管理员以获取有关创建启发型沙盒的帮助。
 
-您还可以使用搜索功能来查找适合您的战术手册。请参阅下面的示例，了解如何找到可帮助您与可能已放弃购物车的用户互动的战术手册。
+>[!TIP]
+>
+>启发性的沙盒是Adobe Experience Platform中的开发沙盒，您可以在其中创建、测试和试验各种用例，然后再在实时生产环境中实施它们。
 
-![与可能已放弃购物车的用户互动。](/help/use-case-playbooks/assets/playbooks/ui-guide/engage-abandoned-cart.gif)
+![请转到励志沙盒。](/help/use-case-playbooks/assets/playbooks/discover/inspirational-sandbox.png)
 
-或者，您可以按计划用于接触客户的渠道过滤可用的战术手册，如下所示：
+如果您尚未设置任何启发性的沙箱，请选择 **[!UICONTROL 创建鼓舞人心的沙盒]**. 此时将显示一个模式窗口。 输入 **名称** 和 **标题** 在必填字段框中，然后选择 **创建**. 创建启发性的沙盒后，请确保 [定义权限](/help/access-control/home.md) 在导航回用例行动手册详细信息页面以创建实例之前。
 
-![按渠道筛选](/help/use-case-playbooks/assets/playbooks/ui-guide/channel-select-filter.gif)
+![创建一个富有启迪精神的沙盒。](/help/use-case-playbooks/assets/playbooks/discover/create-inspirational-sandbox.png)
 
-尝试使用过滤器和搜索选项，找到适合您的战术手册。
+![输入名称和标题以创建启发性的沙盒。](/help/use-case-playbooks/assets/playbooks/discover/create-inspirational-sandbox-modal.png)
 
-## 查看战术手册并生成资产 {#view-playbook-generate-assets}
+如果您从启发性的沙盒之外选择用例剧本，您将无法创建实例。 在详细信息页面上，选择 **转到励志沙盒** 转到现有的励志沙盒，然后选择 **[!UICONTROL 创建实例]**.
 
-在确定战术手册并创建它的实例之前，应对其进行检查，以确保它符合您的需求。为了帮助您更好地理解它们涵盖的用例，所有战术手册都包含下面列出的部分。当您准备好继续并生成资产时，请选择&#x200B;**[!UICONTROL 创建实例]**。
+如果您没有创建沙盒的权限，请联系管理员以获取有关创建启发型沙盒的帮助。
 
-### 思维导图 {#mindmap}
+![没有创建沙盒的权限。](/help/use-case-playbooks/assets/playbooks/discover/no-permissions-to-create-sandbox.png)
 
-使用战术手册中的思维导图部分来了解战术手册可以帮助您解决的工作流程的步骤。从用例中的目标角色的角度，可视化所有生成的对象帮助您实现用例的流程。
+如果您已达到已分配给您的沙盒数量限制，则会显示一条消息，要求您联系组织管理员以增加限制，或者停用或删除一些活动沙盒。 一旦调整了沙盒限制或减少了活动沙盒数，您就可以继续创建启发性的沙盒。
 
-思维导图首先定义用户历程中会接触到的人，并在每一步描述 Adobe 是否发出了某些内容（例如新消息或提醒），或者目标角色是否执行了触发下一条消息或事件的操作。
+![已达到沙盒限制。](/help/use-case-playbooks/assets/playbooks/discover/sandbox-limit-reached.png)
 
-![突出显示了战术手册思维导图。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
+请注意，在创建启发性的沙盒时，不会自动设置电子邮件、推送和短信通知的渠道界面。 请联系您的IT管理员以手动配置它们，否则实例创建可能会失败。
 
-### 概要 {#summary}
+![配置渠道预设。](/help/use-case-playbooks/assets/playbooks/discover/configure-channel-presets.png)
 
->[!CONTEXTUALHELP]
->id="platform_playbooks_assets"
->title="资产"
->abstract="这些是此战术手册生成的资源。创建战术手册的实例后，可在启发灵感的沙盒中查看资源，并根据需要将其提升到其他沙盒。"
+## 在Journey Optimizer中配置沙盒和渠道表面 {#configure-channel-surfaces}
 
-检查摘要部分，以了解从战术手册创建实例后会生成哪些资产。为每个战术手册生成的资产都是根据该战术手册支持的用例定制的。在下面获取有关摘要部分中所有项目的详细信息。
+如果您的组织获得许可 [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=zh-Hans)，并且您正在寻求使用针对Journey Optimizer设计的行动手册，您需要在沙盒中配置渠道预设，这会定义消息所需的技术参数。 [了解如何在 Adobe Journey Optimizer 中设置渠道界面。](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html)
 
-| 项目 | 描述 |
----------|----------|
-| **[!UICONTROL 目标受众]** | 描述您希望通过此用例战术手册接触到的角色。 |
-| **[!UICONTROL 营销渠道]** | 描述用于接触战术手册中目标角色的渠道。 |
-| **[!UICONTROL 技术资产]** | 创建战术手册实例后生成的技术资产列表。生成的资产因战术手册而异，具体取决于用例。一些战术手册可能会生成架构、区段和历程。其他可能会生成目标。有关如何使用和重用生成的资产的更多信息，请参阅有关创建和重用实例的指南中的[了解生成的资产](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets)部分。 |
+要在Journey Optimizer中创建行动手册的实例，您需要为电子邮件、推送和短信通知配置渠道平面。
 
-{style="table-layout:auto"}
+### 电子邮件渠道表面
 
-![突出显示战术手册摘要](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-summary.png)
+转到 `Channels` 在Journey Optimizer界面中。 为营销电子邮件和事务性消息配置单独的子域和IP池（如果尚未配置）。 这些是确保事务型消息（如订单确认电子邮件）传递给客户的最佳实践。 输入姓名、电子邮件地址和其他设置。 选择 **提交** 创建营销渠道界面。 请阅读相关文档 [如何设置电子邮件渠道界面](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html).
 
-### 实例 {#instances}
+### SMS渠道表面
 
-向下滚动到实例部分，以获取您或您的团队成员已创建的此战术手册的实例的概述。您可以使用各种控件对显示的实例进行排序和过滤，例如仅查看您创建的实例。您还可以查看有关每个实例的各种信息，如下所列。
+要创建SMS渠道表面，请首先创建SMS API凭据，然后选择首选供应商（例如Sinch）。 命名短信渠道表面（例如，短信营销），选择配置，然后输入发送者号码。 选择 **提交** ，以保存短信渠道界面。 请阅读相关文档 [如何设置短信渠道平面](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html?lang=zh-Hans#message-preset-sms).
 
-| 项目 | 描述 |
-|---------|----------|
-| **[!UICONTROL 名称]** | 基于战术手册的实例名称。您可以自定义实例的名称和描述。阅读有关[如何编辑实例元数据](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata)的部分，了解更多信息。 |
-| **[!UICONTROL 状态]** | 指示实例的状态。**[!UICONTROL 已提交]**&#x200B;实例可供使用。 |
-| **[!UICONTROL 已创建]** | 指示创建实例的时间。 |
-| **[!UICONTROL 创建者]** | 指示创建实例的人。 |
-| **[!UICONTROL 上次修改时间]** | 指示修改实例的时间。 |
+此外，为包含订单确认等事务性消息的行动手册配置渠道。
 
-{style="table-layout:auto"}
+### 推送渠道表面
 
-![战术手册实例突出显示。](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-instances.png)
+确认已在Experience Platform或数据收藏集界面中配置应用程序表面。 这就是应用程序表面在数据收集环境中的外观。
 
-## 接下来的步骤——创建一个战术手册实例。 {#next-steps-create-instance}
+## 后续步骤 {#next-steps}
 
-当您准备好继续使用战术手册并创建实例时，请选择&#x200B;**[!UICONTROL 创建实例]**，以继续执行战术手册，并生成技术资产。阅读有关[如何创建、共享和重用战术手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)的指南，了解更多信息。
+现在您已阅读本文档，您应该知道如何设置启发性的沙盒，并熟悉访问Platform中的用例行动手册的不同方式。 接下来，阅读如何 [查找](/help/use-case-playbooks/playbooks/find.md) 正确的剧本。
+
