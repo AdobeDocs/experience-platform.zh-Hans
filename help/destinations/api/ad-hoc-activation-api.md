@@ -5,10 +5,10 @@ title: 通过临时激活API将受众激活到批处理目标
 description: 本文说明了用于通过临时激活API激活受众的端到端工作流，包括在激活之前执行的分段作业。
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 6304dabb6125b7eddcac16bcbf8abcc36a4c9dc2
+source-git-commit: deecaf0af269b64af507126dba0523d2b16a5721
 workflow-type: tm+mt
-source-wordcount: '1550'
-ht-degree: 1%
+source-wordcount: '1612'
+ht-degree: 0%
 
 ---
 
@@ -71,12 +71,12 @@ Adobe Experience Platform每24小时运行一次计划的分段作业。 临时�
 要调用Platform API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有Experience PlatformAPI调用中的每个所需标头提供值，如下所示：
 
 * 授权：持有者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{ORG_ID}`
+* x-api-key： `{API_KEY}`
+* x-gw-ims-org-id： `{ORG_ID}`
 
 Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Platform API的请求中，您可以指定将执行操作的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -84,7 +84,7 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Pla
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* Content-Type: `application/json`
+* 内容类型： `application/json`
 
 ## 步骤3：在Platform UI中创建激活流程 {#activation-flow}
 
@@ -167,15 +167,19 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 | 属性 | 描述 |
 | -------- | ----------- |
 | <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要将受众激活到的目标实例的ID。 您可以通过导航到，从Platform UI获取这些ID **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** 选项卡，然后单击所需的目标行以在右边栏中显示目标ID。 欲知更多信息，请参阅 [目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse). |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到所选目标的受众的ID。 |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到所选目标的受众的ID。 您可以使用临时API导出平台生成的受众以及外部（自定义上传）受众。 激活外部受众时，请使用系统生成的ID而不是受众ID。 您可以在受众UI的受众摘要视图中找到系统生成的ID。 <br> ![不应选择的受众ID的视图。](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "不应选择的受众ID的视图。"){width="100" zoomable="yes"} <br> ![查看应使用的系统生成的受众ID。](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "查看应使用的系统生成的受众ID。"){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
-### 具有导出ID的请求（将弃用） {#request-deprecated}
+### 使用导出ID的请求 {#request-export-ids}
+
+<!--
 
 >[!IMPORTANT]
 >
->**已弃用的请求类型**. 此示例类型描述了API版本1的请求类型。 在临时激活API v2中，您不需要包含最新的受众导出作业ID。
+>**Deprecated request type**. This example type describes the request type for the API version 1. In the v2 of the ad-hoc activation API, you do not need to include the latest audience export job ID.
+
+-->
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adhocrun \
