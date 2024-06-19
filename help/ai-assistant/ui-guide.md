@@ -2,9 +2,9 @@
 title: Adobe Experience Platform的人工智能助手
 description: 了解如何使用AI Assistant导航和了解Experience Platform和Real-time Customer Data Platform概念以及有关您的对象的使用信息。
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 1c228eb95075d4302ab6d3544fff8766087411bf
+source-git-commit: 94245fe25828025b60ea57ddebede2b3ccf890eb
 workflow-type: tm+mt
-source-wordcount: '1379'
+source-wordcount: '1517'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # AI助手UI指南
 
 阅读本指南，了解如何在Adobe Experience Platform UI中使用AI助手。
+
+以下视频旨在支持您了解AI助手。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 ## 在Experience PlatformUI中访问AI助手
 
@@ -81,7 +85,7 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 +++
 
-### 运营见解 {#operational-insights}
+### 运营洞察 {#operational-insights}
 
 您必须在活动的沙盒中，以便AI Assistant能够充分响应有关您的操作见解的问题。
 
@@ -111,6 +115,22 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 
 +++
 
+### 验证运行分析响应 {#verify-responses}
+
+您可以使用AI Assistant提供的SQL查询验证与操作分析问题相关的每个响应。
+
++++选择以查看验证运营分析响应的示例
+
+在收到操作分析问题的答案后，选择 **[!UICONTROL 显示源]** 然后选择 **[!UICONTROL 查看源查询]**.
+
+![查看源查询](./images/view-source-query.png)
+
+当询问操作分析问题时，AI Assistant会提供一个SQL查询，您可以使用它来验证计算其答案所花费的过程。 此源查询仅用于验证目的，在查询服务上不受支持。
+
+![源查询示例](./images/source-query.png)
+
++++
+
 ### 使用自动完成 {#use-auto-complete}
 
 您可以使用自动完成函数接收沙盒中存在的数据对象列表。 自动完成推荐适用于以下域：受众、架构、数据集、源和目标。
@@ -132,6 +152,14 @@ AI Assistant会更新界面，并为您提供可证实初始响应的文档的�
 在下面的示例中，首先要求AI助手提供数据流的总数，然后要求列出最近的10个数据流。
 
 ![多圈示例](./images/multiturn.png)
+
++++
+
+### 开始新对话
+
+您可以通过重置和启动新对话来更改AI助手的主题。
+
++++选择以查看重置对话的示例
 
 要重置，请选择省略号(**`...`**)，然后选择 **[!UICONTROL 开始新对话]**. 这会告知AI助手，您打算更改主题，在对失败或引用不正确信息的查询进行故障诊断时尤其有用。
 

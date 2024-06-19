@@ -1,11 +1,11 @@
 ---
 title: Adobe Experience Platform中的AI助手概述
-description: 了解AI Assistant、其细微差别和用例，以及如何使用它来加快您与Adobe Experience Platform和Real-time Customer Data Platform的工作流。
+description: 了解 AI 助手、其细微差别和用例，以及如何使用它来通过 Adobe Experience Platform 和 Real-Time Customer Data Platform 加快工作流程。
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 9ee39ee1f877fa13acdca8a1d8549cf4692b39aa
+source-git-commit: e8939132c1508e1dfc4028e6c8ff23662d6c2b2b
 workflow-type: tm+mt
-source-wordcount: '679'
-ht-degree: 1%
+source-wordcount: '820'
+ht-degree: 6%
 
 ---
 
@@ -55,7 +55,7 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 {style="table-layout:auto"}
 
-### 运营见解 {#operational-insights}
+### 运营洞察 {#operational-insights}
 
 >[!IMPORTANT]
 >
@@ -69,14 +69,18 @@ AI Assistant通过查询数据库，然后将数据库中的数据转换为人�
 
 您可以在以下域中向AI Assistant询问有关您的操作见解的问题：
 
-* 属性
-* 受众
-* 数据流
-* 数据集
-* 目标 _（有关帐户的问题和有关数据流的某些问题此时无法回答。）_
-* 历程
-* 架构 _（有关字段组的问题目前无法回答。）_
-* 源 _（有关帐户的问题目前无法回答。）_
+| 域 | 支持的元数据 |
+| --- | --- |
+| 属性 | <ul><li>属性名称查找</li><li>属性 — 架构关系</li><li>属性 — 数据集关系</li><li>属性 — 受众关系</li><li>属性 — 目标关系</li><li>未使用的属性</li></ul> |
+| 受众 | <ul><li>受众人数</li><li>受众类型（流式传输或批处理）</li><li>创建/修改日期</li><li>激活状态</li><li>配置文件计数</li><li>复制受众</li><li>受众定义查找</li><li>受众 — 属性关系</li><li>受众 — 数据集关系</li><li>受众 — 目标关系</li><li>InSegment规则</li><li>名称查找</li><li>名称和ID查找 |
+| 数据流 | <ul><li>数据流计数</li><li>数据流状态</li><li>数据流 — 数据集关系</li><li>数据流 — 源关系</li></ul> |
+| 数据集 | <ul><li>数据集计数</li><li>配置文件启用状态</li><li>创建/修改日期</li><li>数据集 — 架构关系</li><li>数据集 — 受众关系</li><li>数据集 — 属性关系</li><li>数据集 — 数据流关系</li><li>名称查找 </li><li>名称和ID查找</li></ul> |
+| 目标 | <ul><li>已配置的目标计数</li><li>目标 — 受众关系</li><li>目标属性关系</li></ul> |
+| 历程 | <ul><li>计数</li><li>名称查找</li><li>名称和ID查找</li><li>历程状态</li><li>触发状态（受众与事件）</li><li>创建/修改日期</li><li>循环频率</li></ul> |
+| 架构 | <ul><li>架构计数</li><li>创建/修改日期</li><li>架构类类型</li><li>架构 — 属性关系</li><li>架构 — 数据集关系</li><li>架构 — 受众关系</li><li>配置文件启用状态</li><li>名称查找</li><li>名称和ID查找</li></ul> |
+| 源 | <ul><li>帐户计数</li><li>帐户状态</li><li>每个帐户的活动/不活动数据流</li><li>源连接器 — 数据流关系</li><li>源帐户 — 数据流关系</li></ul> |
+
+{style="table-layout:auto"}
 
 对于操作分析问题，答案可能不会反映UI的当前状态。 支持这些问题的数据每24小时更新一次。 例如，用户白天在Real-Time CDP中所做的更改会在晚上与数据存储同步，然后早上就可供用户提问了。 您需要登录沙盒以查询与对象相关的特定数据。
 
