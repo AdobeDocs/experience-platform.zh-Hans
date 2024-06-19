@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Platform发行说明2024年6月
 description: Adobe Experience Platform 的 2024 年 6 月发行说明。
-source-git-commit: 03a88554e8b7793d8e91bc867ce67a00f620b622
+exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+source-git-commit: e1b56c6150274748c35fedfc1e1b6bbbf66d1bfb
 workflow-type: tm+mt
-source-wordcount: '1144'
-ht-degree: 21%
+source-wordcount: '1195'
+ht-degree: 20%
 
 ---
 
@@ -71,6 +72,7 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 | ----------- | ----------- |
 | 增强了用于导出外部受众的临时导出API | 您现在可以使用临时导出API来导出外部（自定义上传）受众。 [了解更多](/help/destinations/api/ad-hoc-activation-api.md) . |
 | (Beta)在导出阵列支持的测试阶段还支持其他功能 | 以前，将受众激活到基于文件的目标并选择使用计算字段时，您只能使用通过数据准备提供的受众子集。 这一限制现已解除，在将受众导出到基于文件的目标时，客户可以访问数据准备提供的所有功能。 [了解详情](/help/destinations/ui/export-arrays-calculated-fields.md#supported-functions)。 |
+| 仅显示映射步骤中包含数据的字段 | 将配置文件属性映射到目标时，您现在可以在所有配置文件属性之间切换，或者仅切换包含数据的配置文件属性。 默认情况下，仅显示包含数据的字段。 请参阅激活指南，了解 [批次](../../destinations/ui/activate-batch-profile-destinations.md#mapping) 和 [流式](../../destinations/ui/activate-segment-streaming-destinations.md#mapping) 目标，以了解更多详细信息。 |
 
 {style="table-layout:auto"}
 
@@ -117,4 +119,3 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 - 获取全部列表 [可用的行动手册](/help/use-case-playbooks/playbooks/playbooks-list.md)，按产品分组(Real-Time CDP或Journey Optimizer)。
 - 了解内容 [权限](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) 是您使用行动手册及其创建的资源所必需的。
 - 了解 [数据感知功能](/help/use-case-playbooks/playbooks/data-awareness.md) 这允许您将生成的资源复制到其他沙盒环境。
-
