@@ -3,8 +3,7 @@ solution: Experience Platform
 title: 查找正确的剧本
 description: 了解如何为您的用例找到正确的行动手册启用行动手册。
 role: User
-exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: 4ca1a93d611f3790fda9b2ed77520e9b2a5c11ec
+source-git-commit: 82acd4fb1376d397e833f12430a3e6b1bd7309d1
 workflow-type: tm+mt
 source-wordcount: '752'
 ht-degree: 93%
