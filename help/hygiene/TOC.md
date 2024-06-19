@@ -5,10 +5,10 @@ breadcrumb-title: 高级数据生命周期管理指南
 user-guide-description: 在 Experience Platform 中删除个人记录并安排数据集到期，以供清理数据、去除匿名数据和最大程度缩减数据。
 feature: Data Hygiene
 role: User, Developer, Admin
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: 9885c0d75ac28cfd73179b63b3d54da9b0ccf967
 workflow-type: tm+mt
-source-wordcount: '65'
-ht-degree: 63%
+source-wordcount: '67'
+ht-degree: 64%
 
 ---
 
@@ -27,3 +27,4 @@ ht-degree: 63%
    * [记录删除](./api/jobs.md)
    * [(Beta)记录删除](./api/workorder.md)
    * [配额](./api/quota.md)
+* [最佳实践](./best-practices.md)
