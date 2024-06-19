@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2024年6月
 description: Adobe Experience Platform 的 2024 年 6 月发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e1b56c6150274748c35fedfc1e1b6bbbf66d1bfb
+source-git-commit: b9707c40beec3000456510a8a384a0af58d6d9fa
 workflow-type: tm+mt
-source-wordcount: '1195'
-ht-degree: 20%
+source-wordcount: '1357'
+ht-degree: 18%
 
 ---
 
@@ -23,6 +23,7 @@ Adobe Experience Platform中的新增功能：
 - [Experience Platform API 身份验证](#authentication-platform-apis)
 - [数据准备](#data-prep)
 - [目标](#destinations)
+- [身份服务](#identity-service)
 - [Privacy Service](#privacy)
 - [Segmentation Service](#segmentation)
 - [用例战术手册](#use-case-playbooks)
@@ -48,7 +49,7 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 
 虽然现有使用 JWT 身份验证方法的 API 集成将继续有效直至 2025 年 1 月 1 日，但 Adobe 强烈建议您在该日期之前将现有的集成迁移到新的 OAuth 服务器到服务器方法。阅读有关[从服务帐户 (JWT) 凭据迁移到 OAuth 服务器到服务器凭据](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)的指南。
 
-## 数据准备(#data-prep)
+## 数据准备 {#data-prep}
 
 使用数据准备来映射、转换和验证往来于Experience Data Model (XDM)的数据。
 
@@ -56,7 +57,7 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 
 | 功能 | 描述 |
 | --- | --- |
-| 保留关键字列表的添加 | 以下词已添加到数据准备保留关键字列表：<ul><li>`do`</li><li>`empty`</li><li>`function`</li><li>`size`</li></ul>。欲了解更多信息，请阅读 [数据准备函数指南](../../data-prep/functions.md). |
+| 保留关键字列表的添加 | 以下词已添加到数据准备保留关键字列表：<ul><li>`do`</li><li>`empty`</li><li>`function`</li><li>`size`</li></ul> 欲了解更多信息，请阅读 [数据准备函数指南](../../data-prep/functions.md). |
 
 {style="table-layout:auto"}
 
@@ -77,6 +78,20 @@ Adobe Experience Platform中的AI助手是一种对话体验，可用于加快Ad
 {style="table-layout:auto"}
 
 有关目标的更多一般信息，请参阅[目标概览](../../destinations/home.md)。
+
+## 身份服务 {#identity-service}
+
+使用Adobe Experience Platform Identity Service跨设备和系统桥接身份，允许您实时提供有影响力的个人数字体验，从而全面了解客户及其行为。
+
+**即将推出的功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!BADGE 测试版]{type=Informational}标识图链接规则 | Beta计划的参与者可以使用标识图链接规则来通过防止“共享设备”和其他图形折叠场景来确保系统中人员实体的表示方式。 为实现此目标，Beta版计划中的参与者将有权访问开发沙盒环境中的三项功能： <ul><li>图形模拟工具，用于了解图形算法的运行方式。</li><li>身份设置屏幕，用于配置唯一的命名空间和命名空间优先级。</li><li>用于深入了解所摄取图形的身份仪表板。</li></ul> 此外，Beta版计划还包括配置文件行为稳定性的改进。 欲知更多信息，请参阅 [身份图链接规则](../../identity-service/identity-graph-linking-rules/overview.md) 文档。 |
+
+{style="table-layout:auto"}
+
+有关Identity Service的详细信息，请阅读 [Identity服务概述](../../identity-service/home.md).
 
 ## [!DNL Privacy Service] {#privacy}
 
