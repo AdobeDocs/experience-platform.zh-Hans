@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK中的IAB TCF 2.0支持
 description: 了解如何使用Adobe Experience Platform Web SDK支持IAB TCF 2.0同意首选项
 keywords: 同意；setConsent；配置文件隐私字段组；体验事件隐私字段组；隐私字段组；IAB TCF 2.0；Real-Time CDP；
 exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
@@ -71,14 +71,14 @@ Real-Time CDP和Audience Manager的受众会跟踪客户当前的同意首选项
 
 Adobe Experience Platform Web SDK具有 `setConsent` 命令，可使用IAB TCF 2.0将客户的同意首选项传达给所有Adobe服务。如果您要与Real-Time CDP集成，这会更新客户的个人资料。 如果您要与Audience Manager集成，这会更新您的客户信息。 调用此参数还会设置一个包含“全有或全无”同意首选项的Cookie，用于控制是否允许发送未来的体验事件。 其目的是每当同意更改时，都会调用此操作。 在将来的页面加载中，将读取Edge Network同意Cookie以确定是否可以发送Experience事件，以及是否可以设置身份Cookie。
 
-与Audience Manager的IAB TCF 2.0集成类似，Edge Network在客户明确同意以下目的时提供同意：
+与Audience Manager的IAB TCF 2.0集成类似，当客户明确同意以下目的时，Edge Network也会表示同意：
 
 - **目的1：** 在设备上存储和/或访问信息
 - **目的十：** 开发和改进产品
 - **特殊目的1：** 确保安全性、防止欺诈和调试。 （根据IAB TCF法规，此规定始终征得同意）
 - **Adobe供应商权限：** 同意Adobe（供应商565）
 
-欲知关于 `setConsent` 命令，请阅读文档 [支持同意](../../consent/supporting-consent.md).
+欲知关于 `setConsent` 命令，请阅读上的专用Web SDK文档 [setConsent](../../../web-sdk/commands/setconsent.md).
 
 ### 向体验事件添加同意
 

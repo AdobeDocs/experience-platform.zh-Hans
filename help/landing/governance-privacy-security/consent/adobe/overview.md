@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform中的同意处理
 description: 了解如何使用Adobe2.0标准在Adobe Experience Platform中处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
 source-wordcount: '1557'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 * [Adobe Experience Platform Identity服务](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的根本挑战。
 * [Real-time Customer Profile](/help/profile/home.md)：用途 [!DNL Identity Service] 能够实时从数据集创建详细的客户配置文件。 Real-time Customer Profile从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
 * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，允许您将各种Platform服务集成到面向客户的网站上。
-   * [SDK同意命令](/help/web-sdk/consent/supporting-consent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
+   * [SDK同意命令](../../../../web-sdk/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
 * [Adobe Experience Platform Segmentation Service](/help/segmentation/home.md)：允许您将实时客户个人资料数据划分为若干个个人群组，这些个人群组具有相似的特征，并对营销策略的响应也类似。
 
 ## 同意处理流程摘要 {#summary}
@@ -51,7 +51,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 >
 >有关上述XDM同意字段结构的更多信息，请参阅 [[!UICONTROL 同意和偏好设置] 数据类型](/help/xdm/data-types/consents.md).
 
-配置系统后，Platform Web SDK会解释当前用户的数据收集同意值，以确定数据应发送到Adobe Experience Platform Edge Network、从客户端删除还是保留，直到数据收集权限设置为“是”或“否”。
+配置系统后，Platform Web SDK会解释当前用户的数据收集同意值，以确定数据应发送到Adobe Experience PlatformEdge Network、从客户端删除还是保留，直到数据收集权限设置为“是”或“否”。
 
 ## 确定如何在CMP中生成客户同意数据 {#consent-data}
 

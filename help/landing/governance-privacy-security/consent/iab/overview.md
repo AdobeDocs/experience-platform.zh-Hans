@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience Platform中的IAB TCF 2.0支持
 description: 了解如何配置数据操作和架构，以在将Adobe Experience Platform中的区段激活到目标时传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
 source-wordcount: '2492'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Adobe Experience Platform是 [IAB TCF 2.0供应商列表](https://iabeurope.eu/v
 * [Adobe Experience Platform Identity服务](/help/identity-service/home.md)：通过跨设备和系统桥接身份，解决了客户体验数据碎片化带来的根本挑战。
 * [Real-time Customer Profile](/help/profile/home.md)：用途 [!DNL Identity Service] 从数据集实时创建详细的客户配置文件。 [!DNL Real-Time Customer Profile] 从数据湖中提取数据，并将客户配置文件保留在其自己的单独数据存储中。
 * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md)：客户端JavaScript库，允许您将各种Platform服务集成到面向客户的网站上。
-   * [SDK同意命令](/help/web-sdk/consent/supporting-consent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
+   * [SDK同意命令](../../../../web-sdk/commands/setconsent.md)：本指南中显示的与同意相关的SDK命令的用例概述。
 * [Adobe Experience Platform Segmentation Service](/help/segmentation/home.md)：用于除 [!DNL Real-Time Customer Profile] 数据归入个人组，这些个人组具有相似的特征，并对营销策略的响应类似。
 
 除了上面列出的Platform服务外，您还应熟悉 [目标](/help/data-governance/home.md) 以及它们在平台生态系统中的作用。

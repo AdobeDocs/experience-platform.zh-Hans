@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的各种操作类型。
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: e5fd8a53cfd612034d12a761ac4779ed930557d4
+source-git-commit: fb9f7757d77b221c733bbed5124fa576a6b02ed2
 workflow-type: tm+mt
 source-wordcount: '1264'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ## 设置同意 {#set-consent}
 
-收到用户的同意后，必须使用“设置同意”操作类型将此同意告知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。请参阅 [支持客户同意首选项](/help/web-sdk/consent/supporting-consent.md). 使用Adobe版本2.0时，仅支持数据元素值。 您将需要创建一个解析为同意对象的数据元素。
+收到用户的同意后，必须使用“设置同意”操作类型将此同意告知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。请参阅 [支持客户同意首选项](../../../../web-sdk/commands/setconsent.md). 使用Adobe版本2.0时，仅支持数据元素值。 您将需要创建一个解析为同意对象的数据元素。
 
 在此操作中，还会向您提供一个可选字段，用于包含标识映射，以便在收到同意后可以同步标识。 将同意配置为“Pending”或“Out”时，同步很有用，因为同意调用可能是第一个要触发的调用。
 

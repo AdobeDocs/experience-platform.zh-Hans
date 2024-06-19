@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK集成IAB TCF 2.0支持
 description: 了解如何在不使用标记的情况下为您的网站设置IAB TCF 2.0支持。
 seo-description: Learn how to set up IAB TCF 2.0 consent with Adobe Experience Platform Web SDK
 exl-id: 14f1802a-0f8d-487f-ae17-5daaaab05162
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '615'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ window.__tcfapi('addEventListener', 2, function (tcData, success) {
 });
 ```
 
-此代码块监听 `useractioncomplete` 事件，然后设置同意，传递同意字符串和 `gdprApplies` 标志。 如果您有客户的自定义身份，请务必填写 `identityMap` 变量。 请参阅指南，网址为 [支持同意](../../consent/supporting-consent.md) 有关呼叫的更多信息 `setConsent`.
+此代码块监听 `useractioncomplete` 事件，然后设置同意，传递同意字符串和 `gdprApplies` 标志。 如果您有客户的自定义身份，请务必填写 `identityMap` 变量。 请参阅指南，网址为 [setConsent](../../../web-sdk/commands/setconsent.md) 以了解更多信息。
 
 ## 在sendEvent中包含同意信息
 
