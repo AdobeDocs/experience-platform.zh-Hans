@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 42f4d8d7a03173aec703cf9bc7cccafb21df0b69
+source-git-commit: 4b1d17afa3d9c7aac81ae869e2743a5def81cf83
 workflow-type: tm+mt
-source-wordcount: '4111'
+source-wordcount: '4256'
 ht-degree: 2%
 
 ---
@@ -104,20 +104,34 @@ GROUPING SETS ( grouping_element [, ...] )
 #### 示例
 
 ```sql
-SELECT * FROM Customers SNAPSHOT SINCE 123;
+SELECT * FROM table_to_be_queried SNAPSHOT SINCE start_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT AS OF 345;
+SELECT * FROM table_to_be_queried SNAPSHOT AS OF end_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN 123 AND 345;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN start_snapshot_id AND end_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN HEAD AND 123;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN HEAD AND start_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN 345 AND TAIL;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN end_snapshot_id AND TAIL;
 
-SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C 
+SELECT * FROM (SELECT id FROM table_to_be_queried BETWEEN start_snapshot_id AND end_snapshot_id) C 
 
-SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
+(SELECT * FROM table_to_be_queried SNAPSHOT SINCE start_snapshot_id) a
+  INNER JOIN 
+(SELECT * from table_to_be_joined SNAPSHOT AS OF your_chosen_snapshot_id) b 
+  ON a.id = b.id;
 ```
+
+下表说明了SNAPSHOT子句中每个语法选项的含义。
+
+| 语法 | 含义 |
+|-------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| `SINCE start_snapshot_id` | 从指定的快照ID （排除）开始读取数据。 |
+| `AS OF end_snapshot_id` | 以指定的快照ID（包括）读取数据。 |
+| `BETWEEN start_snapshot_id AND end_snapshot_id` | 读取指定的开始快照ID和结束快照ID之间的数据。 它不包括 `start_snapshot_id` 并且包括 `end_snapshot_id`. |
+| `BETWEEN HEAD AND start_snapshot_id` | 将数据从开头（第一个快照之前）读取到指定的启动快照ID（包括）。 注意，这仅返回以下位置的行： `start_snapshot_id`. |
+| `BETWEEN end_snapshot_id AND TAIL` | 在指定的之后读取数据 `end-snapshot_id` 到数据集的结尾（不包括快照ID）。 这意味着，如果 `end_snapshot_id` 是数据集中的最后一个快照，查询将返回零行，因为除了最后一个快照之外，没有任何快照。 |
+| `SINCE start_snapshot_id INNER JOIN table_to_be_joined AS OF your_chosen_snapshot_id ON table_to_be_queried.id = table_to_be_joined.id` | 从指定的快照ID开始读取数据 `table_to_be_queried` 并将其与来自以下位置的数据连接： `table_to_be_joined` 原样 `your_chosen_snapshot_id`. 该连接基于来自要连接的两个表的ID列的匹配ID。 |
 
 A `SNAPSHOT` 子句与表或表别名配合使用，但不在子查询或视图的顶部。 A `SNAPSHOT` 子句适用于任何位置 `SELECT` 可对表应用查询。
 
@@ -128,8 +142,6 @@ A `SNAPSHOT` 子句与表或表别名配合使用，但不在子查询或视图�
 >如果在两个快照ID之间进行查询，如果启动快照已过期且可选的回退行为标志(`resolve_fallback_snapshot_on_failure`)设置：
 >
 >- 如果设置了可选的回退行为标志，查询服务会选择最早可用的快照，将其设置为开始快照，并返回最早可用快照与指定结束快照之间的数据。 此数据为 **包含** 最早的可用快照的日志。
->
->- 如果未设置可选的回退行为标记，则会返回错误。
 
 ### WHERE子句
 
@@ -649,7 +661,7 @@ WHEN other THEN SELECT 'ERROR';
 END $$; 
 ```
 
-## 内嵌 {#inline}
+## 排队 {#inline}
 
 此 `inline` 函数将结构数组的元素分隔并生成表中的值。 它只能放置在 `SELECT` 列表或 `LATERAL VIEW`.
 
