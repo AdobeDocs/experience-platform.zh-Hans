@@ -4,9 +4,9 @@ title: Real-time Customer Data Platform和Adobe Journey Optimizer的可用用例
 description: Real-time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。
 role: User
 exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
-source-git-commit: 6573fdede3bd25bac556531e45f8abefc576f857
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
@@ -77,4 +77,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-现在您已了解可用的行动手册，请阅读 [探索指南](/help/use-case-playbooks/playbooks/discover.md) 以了解如何在用户界面中开始使用行动手册。
+现在您已了解可用的行动手册，请阅读此 [指南](/help/use-case-playbooks/playbooks/choose.md) 以了解如何开始使用行动手册，并在用户界面中选择适合您的行动手册。

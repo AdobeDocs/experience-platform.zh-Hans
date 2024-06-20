@@ -4,10 +4,10 @@ title: 用例战术手册概述
 description: 了解如何使用 Experience Platform 中的用例战术手册功能来使用各种营销用例
 role: Developer, User, Admin, Leader
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
-source-wordcount: '528'
-ht-degree: 31%
+source-wordcount: '533'
+ht-degree: 30%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 31%
 * **[用例战术手册概述](#overview)**
 * [开始使用所需的配置和权限](/help/use-case-playbooks/playbooks/get-started.md)
 * [可用的用例行动手册](/help/use-case-playbooks/playbooks/playbooks-list.md)
-* [发现合适的战术手册](/help/use-case-playbooks/playbooks/discover.md)
+* [从一系列行动手册中进行选择](/help/use-case-playbooks/playbooks/choose.md)
 * [创建、共享和重用战术手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [使用数据感知功能将行动手册生成的资产复制到其他环境](/help/use-case-playbooks/playbooks/data-awareness.md)
 * [故障排除和已知限制](troubleshooting.md)
@@ -54,7 +54,7 @@ ht-degree: 31%
 
 ## UI 指南  {#ui-guides}
 
-在您决定要使用的战术手册后，从 UI 中选择该战术手册，并开始使用。阅读上的用户界面指南 [如何发现正确的剧本](/help/use-case-playbooks/playbooks/discover.md) 对于您和 [如何创建、共享和重复使用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 有关如何创建实例并充分利用行动手册的完整信息。 要了解如何将各种资源从启发性的沙盒提升到其他开发沙盒，然后再提升到生产环境，请阅读上的文档 [数据感知](/help/use-case-playbooks/playbooks/data-awareness.md).
+在您决定要使用的战术手册后，从 UI 中选择该战术手册，并开始使用。阅读上的用户界面指南 [如何从所选内容中选择合适的剧本](/help/use-case-playbooks/playbooks/choose.md) 对于您和 [如何创建、共享和重复使用剧本实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 有关如何创建实例并充分利用行动手册的完整信息。 要了解如何将各种资源从启发性的沙盒提升到其他开发沙盒，然后再提升到生产环境，请阅读上的文档 [数据感知](/help/use-case-playbooks/playbooks/data-awareness.md).
 
 ## 故障排除和已知限制 {#trouble-shooting-known-limitations}
 

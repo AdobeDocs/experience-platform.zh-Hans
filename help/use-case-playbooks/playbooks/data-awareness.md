@@ -4,14 +4,14 @@ title: 用例行动手册中的数据意识概述
 description: 了解如何通过将最终启发型沙盒中生成的资源复制到其他沙盒来加快实现价值。
 role: Developer
 exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
 source-wordcount: '912'
 ht-degree: 0%
 
 ---
 
-# 将行动手册生成的资源发布到其他沙盒 {#publish-to-other-sandboxes}
+# 将Publish剧本生成的资源转给其他沙盒 {#publish-to-other-sandboxes}
 
 用例行动手册是营销模板，旨在为常见营销用例生成受众、架构或历程等资产。 您可以在启发性的沙盒中测试行动手册创建的资产，并在准备就绪后，将资产导入其他开发沙盒，以便进一步使用在这些沙盒中可用的数据进行测试。 对测试感到满意后，您可以将资产从开发沙盒移至生产沙盒。
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-在阅读本教程之前，请浏览 [可用的用例剧本模板](/help/use-case-playbooks/playbooks/discover.md#search-and-filter) 和 [创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 偏好的剧本。
+在阅读本教程之前，请浏览 [可用的用例剧本模板](/help/use-case-playbooks/playbooks/choose.md#search-and-filter) 和 [创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md) 偏好的剧本。
 
 创建实例会在启发型沙盒中生成一组资源，例如历程、区段、架构和消息。 请阅读并了解如何将这些资源复制到其他沙盒中。
 
@@ -29,11 +29,11 @@ ht-degree: 0%
 >
 > 您只能将包导入其他开发沙盒中。 完成所有必要的更改或更新后，您可以将资源或包从这些开发沙盒导入到生产环境中。 您无法直接从用例行动手册沙盒导入到生产环境。
 
-1. 要将启发性的沙盒中的对象导入另一个沙盒，请浏览到用例剧本的所需实例，然后选择 **[!UICONTROL 发布到其他沙盒]** 将对象导出为文件包。
+1. 要将启发性的沙盒中的对象导入另一个沙盒，请浏览到用例剧本的所需实例，然后选择 **[!UICONTROL 将Publish转移到其他沙盒]** 将对象导出为文件包。
 
    ![显示不同用例实例的GIF](/help/use-case-playbooks/assets/playbooks/data-awareness/browse-to-existing-instances-of-playbook.gif)
 
-2. 一旦您选择 **[!UICONTROL 发布到其他沙盒]** 按钮，此时将显示一个模式窗口。 填写名称和可选说明，然后选择 **[!UICONTROL 创建]**. 此步骤将生成的资源捆绑到一个包中，该包可以导入到其他沙盒中。
+2. 一旦您选择 **[!UICONTROL 将Publish转移到其他沙盒]** 按钮，此时将显示一个模式窗口。 填写名称和可选说明，然后选择 **[!UICONTROL 创建]**. 此步骤将生成的资源捆绑到一个包中，该包可以导入到其他沙盒中。
 
    ![用于创建资源包的模式](/help/use-case-playbooks/assets/playbooks/data-awareness/create-package-modal.png)
 

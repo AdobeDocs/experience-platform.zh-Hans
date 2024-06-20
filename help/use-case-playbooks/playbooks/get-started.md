@@ -4,7 +4,7 @@ title: 用例行动手册入门
 description: 了解如何开始使用用例战术手册功能。
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: dfb4549a09628f2fed947ddf76167db28354eb92
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
 source-wordcount: '953'
 ht-degree: 15%
@@ -113,4 +113,4 @@ ht-degree: 15%
 
 ## 后续步骤 {#next-steps}
 
-现在，您已执行本文档中的所有步骤，您应该已使用可在左侧导航栏中找到的用例行动手册创建了一个开发沙盒。 您现在还知道如何授予团队成员查看和管理行动手册以及生成资产所需的权限。 接下来，阅读如何 [了解正确的行动手册](/help/use-case-playbooks/playbooks/discover.md) 对于您和 [从中创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md).
+现在，您已执行本文档中的所有步骤，您应该已使用可在左侧导航栏中找到的用例行动手册创建了一个开发沙盒。 您现在还知道如何授予团队成员查看和管理行动手册以及生成资产所需的权限。 接下来，阅读如何 [选择正确的剧本](/help/use-case-playbooks/playbooks/choose.md) 对于您和 [从中创建实例](/help/use-case-playbooks/playbooks/create-share-reuse.md).
