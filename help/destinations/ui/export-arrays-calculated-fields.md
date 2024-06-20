@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何使用计算字段将平面架构文件中的阵列从Real-Time CDP导出到云存储目标。
 badge: Beta 版
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: b6bdfef8b9ac5ef03ea726d668477b8629b70b6c
+source-git-commit: 787aaef26fab5ca3acff8303f928efa299cafa93
 workflow-type: tm+mt
-source-wordcount: '1481'
+source-wordcount: '1477'
 ht-degree: 5%
 
 ---
@@ -31,9 +31,13 @@ ht-degree: 5%
 * [UI指南和概述](/help/data-prep/ui/mapping.md#calculated-fields)
 * [数据准备功能](/help/data-prep/functions.md)
 
+<!--
+
 >[!IMPORTANT]
 >
->并非上面列出的所有函数都受支持 *将字段导出到云存储目标时* 使用计算字段功能。 请参阅 [“支持的函数”部分](#supported-functions) 有关更多信息，请参阅下文。
+>Not all functions listed above are supported *when exporting fields to cloud storage destinations* using the calculated fields functionality. See the [supported functions section](#supported-functions) further below for more information.
+
+-->
 
 ## Platform中的数组和其他对象类型 {#arrays-strings-other-objects}
 
@@ -86,7 +90,9 @@ Experience Platform中的其他字段类型包括数组字段。 详细了解 [�
 
 ## 支持的函数 {#supported-functions}
 
-请注意，计算字段的测试版仅支持以下函数，并且目标支持数组：
+所有已记录的 [数据准备功能](/help/data-prep/functions.md) 将数据激活到基于文件的目标时支持。
+
+但是，请注意，当前仅为以下函数提供了广泛的用例描述和示例输出信息，并且这些函数仅在计算字段的Beta版本中以及目标数组支持中提供：
 
 * `join`
 * `coalesce`
