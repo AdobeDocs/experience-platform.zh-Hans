@@ -3,10 +3,10 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: f741e62b3340b743e465edf3f7a007580b3f61be
+source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
 workflow-type: tm+mt
-source-wordcount: '1164'
-ht-degree: 1%
+source-wordcount: '1188'
+ht-degree: 6%
 
 ---
 
@@ -79,7 +79,9 @@ ht-degree: 1%
 
 1. 在 **[!UICONTROL 选择源字段]** 页面，使用 **[!UICONTROL 选择属性]** 或 **[!UICONTROL 选择身份命名空间]** 用于在这两种可用源字段之间切换的选项。 从可用的 [!DNL XDM] 配置文件属性和身份命名空间，选择要映射到目标的配置文件属性和身份命名空间，然后选择 **[!UICONTROL 选择]**.
 
-   ![显示多个可用源字段的“选择源字段”页。](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
+   使用 **[!UICONTROL 仅显示包含数据的字段]** 切换以仅显示使用值填充的架构字段。 默认情况下，仅显示填充的架构字段。
+
+   ![显示多个可用源字段的“选择源字段”页。](../assets/ui/activate-segment-streaming-destinations/select-source-field-modal.png)
 
 1. 选择右侧的按钮 **[!UICONTROL 目标字段]** 进入。
 
@@ -96,7 +98,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="应用转换"
->abstract="选中此选项可在使用未经过哈希处理的源字段时，让Adobe Experience Platform在激活时自动对其进行哈希处理。"
+>abstract="使用未进行哈希处理的源字段时选中此选项，让 Adobe Experience Platform 在激活时自动对它们进行哈希处理。"
 
 将未经过哈希处理的源属性映射到目标期望进行哈希处理的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，检查 **应用转换** 用于使Adobe Experience Platform在激活时自动哈希源属性的选项。
 
@@ -107,7 +109,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_enddate"
 >title="结束日期"
->abstract="无法为受众计划添加结束日期。"
+>abstract="无法添加受众计划的结束日期。"
 
 默认情况下， **[!UICONTROL 受众计划]** 页面仅显示您在当前激活流中选择的新选定受众。
 
@@ -139,9 +141,9 @@ ht-degree: 1%
 
 ![审核步骤中的选择摘要。](../assets/ui/activate-segment-streaming-destinations/review.png)
 
-### 同意政策评估 {#consent-policy-evaluation}
+### 同意策略评估 {#consent-policy-evaluation}
 
-如果您的组织购买了 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**，选择 **[!UICONTROL 查看适用的同意政策]** 查看应用了哪些同意策略以及激活中包含多少用户档案作为其结果。 阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 

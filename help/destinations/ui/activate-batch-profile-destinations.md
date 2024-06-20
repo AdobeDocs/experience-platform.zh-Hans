@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
+source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
 workflow-type: tm+mt
-source-wordcount: '3937'
-ht-degree: 1%
+source-wordcount: '3961'
+ht-degree: 11%
 
 ---
 
@@ -105,18 +105,18 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择 **导出完整文件** 用于导出符合受众条件的所有用户档案的完整快照。 选择 **导出增量文件** 以仅导出自上次导出以来符合受众条件的配置文件。 <br> 第一个增量文件导出包含符合受众条件的所有用户档案，充当回填。 未来的增量文件仅包括自第一次增量文件导出以来符合受众条件的配置文件。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
+>abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有配置文件的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的配置文件。<br>第一个增量文件导出包括符合受众资格的所有配置文件，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的配置文件。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
->title="受众评估后激活"
->abstract="激活在每日分段作业完成后立即运行。 这可确保导出最新的用户档案。"
+>title="在受众评估后激活"
+>abstract="在每日分段作业完成后立即运行激活。这将确保导出最新的配置文件。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
 >title="计划的激活"
->abstract="激活在一天的固定时间运行。"
+>abstract="激活在一天中的固定时间运行。"
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出一个文件，其中包含选定受众的所有配置文件资格的完整快照。
 
@@ -155,7 +155,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_something"
 >title="配置文件名"
->abstract="对于基于文件的目标，将为每个受众生成一个唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 选择 **[!UICONTROL 导出增量文件]** 用于触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
 
@@ -185,7 +185,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
 >title="配置文件名"
->abstract="对于基于文件的目标，将为每个受众生成一个唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 对于大多数目标，默认文件名由目标名称、受众ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名，以区分不同的促销活动，或者将数据导出时间附加到文件。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
@@ -241,6 +241,8 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    > 
    >您可以使用搜索字段缩小选择范围，如下图所示。
 
+   使用 **[!UICONTROL 仅显示包含数据的字段]** 切换以仅显示使用值填充的架构字段。 默认情况下，仅显示填充的架构字段。
+
    ![显示可导出到目标的配置文件属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
 
 
@@ -270,12 +272,12 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 1. 要添加更多要导出的字段，请重复上述步骤。
 
-### 必需属性 {#mandatory-attributes}
+### 强制属性 {#mandatory-attributes}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
->title="关于必需属性"
->abstract="选择所有导出的配置文件应包括的XDM架构属性。没有必需键的配置文件将不会导出到目标。 若未选择强制键，则会导出所有符合条件的配置文件，而不管其属性如何。"
+>title="关于强制属性"
+>abstract="选择所有导出的配置文件应包含的 XDM 架构属性。不会将没有强制密钥的配置文件导出到目标。不选择强制密钥会导出所有合格的配置文件，而不管其属性如何。"
 
 必填属性是启用用户的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -285,12 +287,12 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
 建议其中一个属性为 [唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity) 从你的架构中。 有关强制属性的更多信息，请参阅 [电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity) 文档。
 
-### 重复数据删除键 {#deduplication-keys}
+### 内部重复数据删除键 {#deduplication-keys}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
->title="关于重复数据删除键"
->abstract="通过选择重复数据删除键来消除导出文件中同一配置文件的多个记录。选择一个命名空间或最多两个XDM架构属性作为重复数据删除键。未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
+>title="关于删除重复项键"
+>abstract="通过选择删除重复项键，消除导出文件中同一配置文件的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为删除重复项键。不选择删除重复项键可能会导致导出文件中出现重复的配置文件条目。"
 
 重复数据删除键是用户定义的主键，可确定用户希望为其配置文件进行重复数据删除的身份&#x200B;。
 
@@ -505,8 +507,8 @@ Adobe Experience Platform会使用架构中的四个推荐的常用属性预填�
 [!CONTEXTUALHELP]
 id="platform_destinations_activate_exclude_enrichment_attributes"
 title="排除扩充属性"
-abstract="启用此选项可将配置文件从选定的自定义上传受众导出到您的目标，同时排除其所有属性。"
-additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-enrichment-attributes" text="在文档中了解详情"
+abstract="启用此选项可将所选自定义上传受众的配置文件导出到您的目的地，同时排除其所有属性。"
+additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#select-enrichment-attributes" text="请在文档中了解详情"
 
 >[!IMPORTANT]
 >
@@ -539,14 +541,14 @@ additional-url="https://experienceleague.adobe.com/docs/experience-platform/dest
 
 ![审核步骤中显示的选择摘要。](../assets/ui/activate-batch-profile-destinations/review.png)
 
-### 同意政策评估 {#consent-policy-evaluation}
+### 同意策略评估 {#consent-policy-evaluation}
 
 [!CONTEXTUALHELP]
 id="platform_governance_policies_viewApplicableConsentPolicies"
-title="查看适用的同意政策"
-abstract="如果您的组织购买了 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**，选择 **[!UICONTROL 查看适用的同意政策]** 查看应用了哪些同意策略以及激活中包含多少用户档案作为其结果。 如果您的公司无权访问上述SKU，则会禁用此控件。"
+title="查看适用的同意策略"
+abstract="如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。如果您的公司无权访问上述 SKU，则此控件将被禁用。"
 
-如果您的组织购买了 **AdobeHealth Shield** 或 **Adobe隐私和安全防护板**，选择 **[!UICONTROL 查看适用的同意政策]** 查看应用了哪些同意策略以及激活中包含多少用户档案作为其结果。 阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
+如果您的组织购买了 **Adobe Healthcare Shield** 或 **Adobe Privacy &amp; Security Shield**，请选择&#x200B;**[!UICONTROL 查看适用的同意策略]**&#x200B;以查看应用了哪些同意策略以及作为其结果包含在激活中的配置文件数量。阅读关于 [同意政策评估](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) 以了解更多信息。
 
 ### 数据使用策略检查 {#data-usage-policy-checks}
 
