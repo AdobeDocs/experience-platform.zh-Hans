@@ -5,10 +5,10 @@ breadcrumb-title: Adobe Experience Platform 用例战术手册
 user-guide-description: 使用 Adobe Experience Platform 中的战术手册生成资产，并开始使用各种营销用例。
 feature: Playbooks
 role: User
-source-git-commit: df470839af2830e6b6e04462c42e062e62f006fc
+source-git-commit: 7f4ce404836bb9df4ff203db74c1bd17431c5b96
 workflow-type: tm+mt
-source-wordcount: '70'
-ht-degree: 71%
+source-wordcount: '73'
+ht-degree: 68%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 71%
 * 战术手册{#playbooks}
    * [概述](/help/use-case-playbooks/playbooks/overview.md)
    * [快速入门](/help/use-case-playbooks/playbooks/get-started.md)
-   * [探索行动手册](/help/use-case-playbooks/playbooks/navigate.md)
+   * [导航到用例行动手册](/help/use-case-playbooks/playbooks/navigate.md)
    * [可用的用例行动手册](/help/use-case-playbooks/playbooks/playbooks-list.md)
    * [从一系列行动手册中进行选择](/help/use-case-playbooks/playbooks/choose.md)
    * [创建、共享和重用战术手册实例](/help/use-case-playbooks/playbooks/create-share-reuse.md)
