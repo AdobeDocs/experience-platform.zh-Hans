@@ -7,7 +7,7 @@ exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
 source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
 source-wordcount: '776'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -15,12 +15,12 @@ ht-degree: 0%
 
 请阅读本页，概览您可以在Real-time Customer Data Platform和Adobe Journey Optimizer中找到并使用的所有可用行动手册。
 
-## Journey Optimizer中的用例行动手册 {#optimizer-playbooks}
+## Journey Optimizer 中的用例战术手册 {#optimizer-playbooks}
 
 >[!CONTEXTUALHELP]
 >id="platform_playbooks_list"
->title="可用的行动手册"
->abstract="Real-time Customer Data Platform和Adobe Journey Optimizer中的所有行动手册列表。"
+>title="可用的战术手册"
+>abstract="实时客户数据平台和 Adobe Journey Optimizer 中所有战术手册的列表。"
 
 | 剧本名称 | 描述 |
 | ------------- |  ----------- |
