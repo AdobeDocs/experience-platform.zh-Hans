@@ -2,7 +2,7 @@
 title: 帐户配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织的B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8e05b0ae06250f8cd55b361a8176963e0dce8e92
+source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
 workflow-type: tm+mt
 source-wordcount: '1763'
 ht-degree: 1%
@@ -170,7 +170,7 @@ Adobe提供了标准构件，可用于可视化与帐户配置文件相关的各
 
 ![预测得分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
 
-### 无法加载数据错误 {#errors}
+## 无法加载数据错误 {#errors}
 
 如果显示构件 *[!UICONTROL 无法加载。 请重试。]* 这是因为没有可用于B2B实体的数据。 例如，以下显示的构件 [!UICONTROL 按人员角色显示的新机会]，显示消息“[!UICONTROL 无法加载。 请重试。]”因为该沙盒没有可用的opportunity数据。
 

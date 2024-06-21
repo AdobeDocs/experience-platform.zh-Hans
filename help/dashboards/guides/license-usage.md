@@ -4,33 +4,26 @@ title: 许可证使用情况仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板可查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: b1fac3d523ebdf765bec038cde6a667d9af71243
+source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
 workflow-type: tm+mt
-source-wordcount: '2135'
-ht-degree: 1%
+source-wordcount: '2103'
+ht-degree: 7%
 
 ---
 
-# 许可证使用情况仪表板 {#license-usage-dashboard}
+# 许可证用量仪表板 {#license-usage-dashboard}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage"
->title="许可证使用情况仪表板"
->abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
+>title="许可证用量仪表板"
+>abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_licenseUsage_prediction"
->title="许可证使用情况仪表板"
->abstract="许可证使用情况仪表板可让您深入了解已购买的Adobe Experience Platform产品。 仪表板概述会显示您的产品的主要指标，包括您每个主要指标的使用情况以及您签约的许可金额。 详细信息工作区显示特定沙箱中每个产品的量度细分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="数据集过期时间"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据过期"
-
->[!CONTEXTUALHELP]
->id="platform_dashboards_licenseUsage_reduction"
->title="如何减少使用"
->abstract="为了减少使用，您可以为沙盒和数据集配置数据集或假名配置文件数据过期时间。"
->additional-url="https://experienceleague.adobe.com/zh-hans/docs/platform-learn/tutorials/data-hygiene/pseudonymous-profile-and-event-expiration" text="假名配置文件数据过期视频"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据过期文档"
+>title="许可证用量仪表板"
+>abstract="通过许可证用量仪表板，可了解已购买的 Adobe Experience Platform 产品。该仪表板概述显示产品的主要量度，包括您对每个主要量度的用量以及您的合同许可证数量。详细信息工作区显示特定沙盒中每个产品的量度细分。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html?lang=zh-Hans" text="数据集到期"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="假名配置文件数据到期"
 
 您可以通过Adobe Experience Platform查看有关贵组织许可证使用情况的重要信息 [!UICONTROL 许可证使用情况] 仪表板。 此处显示的信息是在Platform实例的每日快照期间捕获的。
 

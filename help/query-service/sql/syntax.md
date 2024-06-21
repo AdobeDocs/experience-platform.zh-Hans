@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 4b1d17afa3d9c7aac81ae869e2743a5def81cf83
+source-git-commit: d2cb7c3d1968a33300d480e63c4cb007df3cce7b
 workflow-type: tm+mt
-source-wordcount: '4256'
+source-wordcount: '4305'
 ht-degree: 2%
 
 ---
@@ -312,7 +312,9 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 | `RESTRICT` | 模式的默认值。 如果指定，则只有在指定时，架构才会丢弃 **非** 包含任意表。 |
 | `CASCADE` | 如果指定，将删除该架构以及该架构中存在的所有表。 |
 
-## 创建视图
+## 创建视图 {#create-view}
+
+SQL视图是基于SQL语句的结果集的虚拟表。 使用创建视图 `CREATE VIEW` 语句并为其命名。 然后，您可以使用该名称来引用回查询的结果。 这使得重复使用复杂的查询更加容易。
 
 以下语法定义 `CREATE VIEW` 查询数据集。 此数据集可以是ADLS或加速存储数据集。
 
