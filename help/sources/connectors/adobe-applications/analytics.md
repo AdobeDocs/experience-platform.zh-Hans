@@ -2,10 +2,10 @@
 title: 报告包数据的Adobe Analytics Source Connector
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 7812cfa44e1fcbe71d7b6231dc0b31c727c93a31
+source-git-commit: d56a37c5b1c5768b3f6811be9d30d45628fdabca
 workflow-type: tm+mt
-source-wordcount: '1145'
-ht-degree: 2%
+source-wordcount: '1189'
+ht-degree: 0%
 
 ---
 
@@ -47,7 +47,7 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 
 下表概述了Platform上Analytics数据的预期延迟。 滞后时间因客户配置、数据卷和使用者应用程序而异。 例如，如果Analytics实施配置了 `A4T` 管道的延迟将增加到5-10分钟。
 
-| Analytics 数据 | 预期延迟 |
+| Analytics数据 | 预期延迟 |
 | -------------- | ---------------- |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **非** 已启用) | &lt; 2分钟 |
 | 新数据到 [!DNL Real-Time Customer Profile] (A4T **是** 已启用) | 长达30分钟 |
@@ -89,13 +89,19 @@ XDM是一个公开记录的规范，为应用程序提供了通用结构和定�
 * `endUserIDs._experience.mcid.id`
 * `endUserIDs._experience.aacustomid.id`
 
-这些字段未标记为标识。相反，相同的身份将会复制到XDM的 `identityMap` 作为键值对：
+这些字段未标记为标识。 相反，相同的标识（如果存在于事件中）将被复制到XDM的 `identityMap` 作为键值对：
 
 * `{ "key": "AAID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
 
-在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，AAID可能基于ECID，原因在于 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，AAID将标记为事件的主标识。 绝不会将 AACUSTOMID 标记为事件的主要 ID。但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID将基于AACUSTOMID。
+将一个或多个身份复制到时 `identityMap`， `endUserIDs._experience.mcid.namespace.code` 在同一事件中设置：
+
+* 如果AAID存在， `endUserIDs._experience.aaid.namespace.code` 设置为“AAID”。
+* 如果ECID存在， `endUserIDs._experience.mcid.namespace.code` 设置为“ECID”。
+* 如果AACUSTOMID存在， `endUserIDs._experience.aacustomid.namespace.code` 设置为“AACUSTOMID”。
+
+在身份映射中，如果存在ECID，则将其标记为事件的主身份。 在这种情况下，AAID可能基于ECID，原因在于 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，AAID将标记为事件的主标识。 绝不会将AACUSTOMID标记为事件的主ID。 但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID将基于AACUSTOMID。
 
 >[!NOTE]
 >
