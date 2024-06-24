@@ -1,14 +1,14 @@
 ---
 audience: user
 user-guide-title: 目标指南
-user-guide-description: 为跨渠道营销活动、电子邮件营销活动、定向广告等激活已知和未知数据。
+user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: e0f4ee0ae0f14df43bfe36375d8fe8e9eac79369
+source-git-commit: 791d854599cf1476f1ebb9584198433c91765efa
 workflow-type: tm+mt
-source-wordcount: '1224'
-ht-degree: 3%
+source-wordcount: '1227'
+ht-degree: 6%
 
 ---
 
@@ -48,7 +48,7 @@ ht-degree: 3%
       * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
       * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
-      * [（Beta版）使用计算字段导出平面架构文件中的阵列](/help/destinations/ui/export-arrays-calculated-fields.md)
+      * [(Beta) 使用计算字段导出平面模式文件中的数组](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [删除目标帐户](./ui/delete-destination-account.md)
@@ -141,6 +141,7 @@ ht-degree: 3%
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
+      * [Zeta营销平台](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
    * 数据和身份合作伙伴 {#data-partner}
       * [Acxiom潜在客户抑制](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Acxiom数据增强](./catalog/data-partner/acxiom-data-enhancement.md)
