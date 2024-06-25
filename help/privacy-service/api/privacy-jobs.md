@@ -5,9 +5,9 @@ title: 隐私作业API端点
 description: 了解如何使用Privacy ServiceAPI管理Experience Cloud应用程序的隐私作业。
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 0ffc9648fbc6e6aa3c43a7125f25a98452e8af9a
+source-git-commit: e8e8a9267ddcf7ee9d1d199da8d157ed5f36d344
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1821'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关更多详细信息，请参阅 [受支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
+| `{REGULATION}` | 要查询的法规类型。 接受的值包括： <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`gdpr`  — 注意：这还用于与相关的请求 **ccpa** 法规。</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda_usa`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>有关更多详细信息，请参阅 [受支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 | `{PAGE}` | 要显示的数据页面，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认为 `100` 最大值为 `1000`. 超过最大值会导致API返回400代码错误。 |
 | `{status}` | 默认行为是包括所有状态。 如果指定状态类型，则请求将仅返回与该状态类型匹配的隐私作业。 接受的值包括： <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -165,7 +165,6 @@ curl -X POST \
     "include": ["Analytics", "AudienceManager","profileService"],
     "expandIds": false,
     "priority": "normal",
-    "analyticsDeleteMethod": "anonymize",
     "mergePolicyId": 124,
     "regulation": "ccpa"
 }'
@@ -178,7 +177,6 @@ curl -X POST \
 | `include` **（必需）** | 要包含在处理中的一系列Adobe产品。 如果此值缺失或为空，则将拒绝请求。 仅包括您的组织与之集成的产品。 请参阅以下部分 [接受的产品值](appendix.md) ，以了解更多信息。 |
 | `expandIDs` | 可选属性，设置为时 `true`，表示对应用程序中处理ID的优化(当前仅受支持 [!DNL Analytics])。 如果忽略，此值将默认为 `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，用于设置处理请求的优先级。 接受的值包括 `normal` 和 `low`. 如果 `priority` 将被忽略，默认行为为 `normal`. |
-| `analyticsDeleteMethod` | 一个可选属性，指定Adobe Analytics应如何处理个人数据。 此属性可接受两个可能的值： <ul><li>`anonymize`：给定用户ID集合引用的所有数据均采用匿名形式。 如果 `analyticsDeleteMethod` 将被忽略，这是默认行为。</li><li>`purge`：完全删除所有数据。</li></ul> |
 | `mergePolicyId` | 对实时客户个人资料发出隐私请求时(`profileService`)，您可以选择提供特定 [合并策略](../../profile/merge-policies/overview.md) 要用于ID拼接的区段。 通过指定合并策略，隐私请求可以在返回客户数据时包含受众信息。 每个请求只能指定一个合并策略。 如果未提供合并策略，则响应中不包含分段信息。 |
 | `regulation` **（必需）** | 隐私工作的法规。 接受以下值： <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>有关更多详细信息，请参阅 [受支持的法规](../regulations/overview.md) 有关上述值代表的隐私法规的更多信息。 |
 
