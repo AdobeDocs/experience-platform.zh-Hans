@@ -5,10 +5,10 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 60bd377c87fe301985193c50cbfc4b44b734dd78
+source-git-commit: c7eaea9c98dc51f75b5abafd8296eadb384d9ce2
 workflow-type: tm+mt
-source-wordcount: '1233'
-ht-degree: 6%
+source-wordcount: '1237'
+ht-degree: 5%
 
 ---
 
@@ -45,9 +45,9 @@ ht-degree: 6%
       * [根据LiveRamp标识符将受众激活到策划的目标](./ui/activate-curated-destinations.md)
       * [将目标受众激活到目标](./ui/activate-prospect-audiences.md)
       * [将帐户受众激活到目标](./ui/activate-account-audiences.md)
-      * [（测试版）使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
+      * [(Beta)使用Experience PlatformUI按需将文件导出到批处理目标](./ui/export-file-now.md)
       * [使用Experience PlatformUI导出数据集](./ui/export-datasets.md)
-      * [（测试版）使用新的测试版云存储目标中的最后资格取得时间XDM属性](./ui/activate-last-qualification-time.md)
+      * [(Beta)在新的Beta版云存储目标中使用上次资格授予时间XDM属性](./ui/activate-last-qualification-time.md)
       * [(Beta) 使用计算字段导出平面模式文件中的数组](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
@@ -65,8 +65,8 @@ ht-degree: 6%
       * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
-   * 广告目标{#advertising}
-      * [广告目标概述](./catalog/advertising/overview.md)
+   * Advertising目标{#advertising}
+      * [Advertising目标概述](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud连接](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud扩展](./catalog/advertising/adobe-advertising-cloud.md)
       * [(Beta) Amazon Ads连接](./catalog/advertising/amazon-ads.md)
@@ -83,12 +83,13 @@ ht-degree: 6%
       * [Google Ad Manager连接](./catalog/advertising/google-ad-manager.md)
       * [(Beta) Google Ad Manager 360连接](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match连接](./catalog/advertising/google-customer-match.md)
-      * [(Beta) Google Customer Match + DV360连接](./catalog/advertising/google-customer-match-dv360.md)
+      * [(Beta) Google客户匹配+ DV360连接](./catalog/advertising/google-customer-match-dv360.md)
       * [Google显示和视频360连接](./catalog/advertising/google-dv360.md)
       * [Google gtag扩展](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
+      * [Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
       * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
@@ -176,8 +177,8 @@ ht-degree: 6%
       * [钎焊连接](./catalog/mobile-engagement/braze.md)
       * [线路连接](./catalog/mobile-engagement/line.md)
       * [Moengage连接](./catalog/mobile-engagement/moengage.md)
-   * 个性化目标 {#personalization}
-      * [个性化目标概述](./catalog/personalization/overview.md)
+   * Personalization目标 {#personalization}
+      * [Personalization目标概述](./catalog/personalization/overview.md)
       * [（限量发布）受众分析](./catalog/personalization/audience-analysis.md)
       * [Adobe Commerce连接](./catalog/personalization/adobe-commerce.md)
       * [Adobe Target连接](./catalog/personalization/adobe-target-connection.md)
