@@ -6,9 +6,9 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
+source-git-commit: aca7597d524633e86d88cc3b40f292c8d1673839
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '769'
 ht-degree: 35%
 
 ---
@@ -142,7 +142,7 @@ ht-degree: 35%
          * [概述](./extensions/client/brightcove/overview.md)
          * [发行说明](./extensions/client/brightcove/release-notes.md)
       * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)
-      * [渠道源标识符](https://exchange.adobe.com/apps/ec/101412)
+      * [渠道Source标识符](https://exchange.adobe.com/apps/ec/101412)
       * [Cheetah体验](https://exchange.adobe.com/apps/ec/102759)
       * [Clicktale](https://exchange.adobe.com/apps/ec/100082)
       * 常用Analytics插件 {#plugins}
@@ -299,6 +299,7 @@ ht-degree: 35%
       * [规则](./api/endpoints/rules.md)
       * [规则组件](./api/endpoints/rule-components.md)
       * [扩展包](./api/endpoints/extension-packages.md)
+      * [扩展包使用授权](./api/endpoints/extension-package-usage-authorizations.md)
       * [扩展](./api/endpoints/extensions.md)
       * [库](./api/endpoints/libraries.md)
       * [内部版本](./api/endpoints/builds.md)
