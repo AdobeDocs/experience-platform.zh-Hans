@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: c7eaea9c98dc51f75b5abafd8296eadb384d9ce2
+source-git-commit: 82e9263293462a223b635e828b95cb2b098886c7
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1241'
 ht-degree: 5%
 
 ---
@@ -89,7 +89,8 @@ ht-degree: 5%
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [LiveRamp — 载入连接](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp — 分发连接](./catalog/advertising/liveramp-distribution.md)
-      * [Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
+      * [(Beta)菱镁矿批次](/help/destinations/catalog/advertising/magnite-batch.md)
+      * [(Beta) Magnite流实时连接](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
       * [pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [pinterest客户列表连接](./catalog/advertising/pinterest.md)
