@@ -1,14 +1,14 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Identity Service
-breadcrumb-title: Platform Identity Service指南
-user-guide-description: 跨设备和系统桥接客户身份以提供个性化的数字体验。
+breadcrumb-title: Platform Identity Service 指南
+user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
 role: Admin,Developer
-source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
+source-git-commit: 30e19f53bb29977cf4255cb2dba688d8bbbf6b2b
 workflow-type: tm+mt
-source-wordcount: '129'
-ht-degree: 17%
+source-wordcount: '137'
+ht-degree: 29%
 
 ---
 
@@ -28,6 +28,8 @@ ht-degree: 17%
       - [命名空间优先级](./identity-graph-linking-rules/namespace-priority.md)
       - [示例场景](./identity-graph-linking-rules/example-scenarios.md)
       - [图形模拟UI](./identity-graph-linking-rules/graph-simulation.md)
+      - [身份图链接规则配置指南](./identity-graph-linking-rules/configuration.md)
+      - [标识设置](./identity-graph-linking-rules/identity-settings-ui.md)
    - [ECID概述](./features/ecid.md)
 - [实施指南](implementation.md)
 - [身份数据的护栏](guardrails.md)
