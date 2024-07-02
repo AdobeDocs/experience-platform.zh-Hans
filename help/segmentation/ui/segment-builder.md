@@ -25,7 +25,8 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
->abstract="构成区段定义的三种字段类型是属性、事件和受众。属性允许您使用属于 XDM 个人配置文件类的配置文件属性，事件允许您基于使用 XDM ExperienceEvent 数据元素发生的操作或事件创建受众，受众允许您使用从外部源导入的受众。"
+>abstract="构成区段定义的三种字段类型是属性、事件和受众。事件和受众。通过属性，您可以使用属于 XDM Individual Profile 类的 Profile属性；通过事件，可根据使用
+XDM ExperienceEvent 数据元素生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
@@ -175,7 +176,7 @@ ht-degree: 6%
 
 或者，您也可以查看在中创建的规则的基于代码的版本 [!DNL Segment Builder]. 在规则生成器画布中创建规则后，您可以选择 **[!UICONTROL 代码视图]** 将区段定义视为PQL。
 
-![代码视图按钮高亮显示，这使您可以看到段定义为PQL。](../images/ui/segment-builder/code-view.png)
+![代码视图按钮会高亮显示，以便您能够看到作为PQL的区段定义。](../images/ui/segment-builder/code-view.png)
 
 代码视图提供了一个按钮，允许您复制要用于API调用的区段定义的值。 要获取最新版本的区段定义，请确保已保存对区段定义进行的最新更改。
 
@@ -291,7 +292,7 @@ ht-degree: 6%
 
 此 [!UICONTROL 评估方法合格性] 弹出窗口出现。 此弹出框显示可用的评估方法，即批处理、流和边缘。 弹出框显示哪些评估方法符合条件以及哪些方法不符合条件。 根据您在区段定义中使用的参数，它可能不符合某些评估方法的条件。 如需了解每种评估方法的要求详情，请参阅 [流式分段](./streaming-segmentation.md#query-types) 或 [边缘分割](./edge-segmentation.md#query-types) 概述。
 
-完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从“边缘”或“流”更改为“批处理”，您将会 **非** 能够将其改回Edge或流式传输。 对评估方法的更改将 **仅限** 选择后生效 **[!UICONTROL 保存]** 在弹出框内。 取消对话框将 **维护** 原始的评估方法。
+完成创建段定义后，您还可以更改段定义的评估方法。 如果将评估方法从Edge或流更改为批处理，您将 **非** 能够将其更改回Edge或流式传输。 对评估方法的更改将 **仅限** 选择后生效 **[!UICONTROL 保存]** 在弹出框内。 取消对话框将 **维护** 原始的评估方法。
 
 ![此时会出现评估方法资格弹出窗口。 这会显示哪些评估方法适用于段定义，哪些方法不适用于段定义。](../images/ui/segment-builder/select-evaluation-method.png)
 
