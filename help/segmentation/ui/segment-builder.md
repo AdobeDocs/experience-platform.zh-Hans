@@ -25,8 +25,7 @@ ht-degree: 6%
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_fields"
 >title="字段"
->abstract="构成区段定义的三种字段类型是属性、事件和受众。事件和受众。通过属性，您可以使用属于 XDM Individual Profile 类的 Profile属性；通过事件，可根据使用
-XDM ExperienceEvent 数据元素生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
+>abstract="构成区段定义的三种字段类型是属性、事件和受众。事件和受众。通过属性，您可以使用属于 XDM Individual Profile 类的 Profile属性；通过事件，可根据使用 XDM ExperienceEvent 数据元素生的操作或事件创建受众；而通过受众，可使用从外部源导入的受众。"
 
 区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件还可以用作新定义的组件。
 
