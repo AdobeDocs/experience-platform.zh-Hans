@@ -3,9 +3,9 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
+source-git-commit: f0f66146bc65a9c5a1bcfee21aba44546cda6900
 workflow-type: tm+mt
-source-wordcount: '3961'
+source-wordcount: '3975'
 ht-degree: 11%
 
 ---
@@ -131,7 +131,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    >[!NOTE]
    >
-   >此 **[!UICONTROL 区段评估后]** 以下所述的选项仅适用于部分Beta测试版客户。
+   >此 **[!UICONTROL 区段评估后]** 以下所述的选项仅适用于部分Beta客户。
 
    使用 **[!UICONTROL 区段评估后]** 一个选项，用于在每日Platform批处理分段作业完成后立即运行激活作业。 此选项可确保当激活作业运行时，将最新的配置文件导出到您的目标。
 
@@ -231,7 +231,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    ![添加在映射工作流中高亮显示的新字段控件。](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
-1. 选择右侧的箭头 **[!UICONTROL 源字段]** 进入。
+1. 选择右侧的箭头 **[!UICONTROL Source字段]** 进入。
 
    ![选择映射工作流中高亮显示的源字段控件。](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
 
@@ -432,7 +432,7 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 >
 > 例如，如果字段 `person.name.firstName` 具有与目标的营销操作冲突的特定数据使用标签，则会在审核步骤中向您显示数据使用策略违规。 有关更多信息，请参阅 [Adobe Experience Platform中的数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
-### [!BADGE 测试版]{type=Informative}通过计算字段导出数组 {#export-arrays-calculated-fields}
+### [!BADGE Beta]{type=Informative}通过计算字段导出数组 {#export-arrays-calculated-fields}
 
 部分测试版客户可以将阵列对象从Experience Platform导出到云存储目标。 详细了解 [导出数组和计算字段](/help/destinations/ui/export-arrays-calculated-fields.md) 并联系Adobe代表以获取该功能的访问权限。
 
@@ -442,13 +442,22 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 #### 无法通过映射工作流选择受众成员资格属性
 
-由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.status` 到您的文件导出。 相反，您需要手动粘贴值 `xdm: segmentMembership.status` “架构”字段中，如下所示。
+由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.seg_namespace.seg_id.status` 到您的文件导出。 相反，您需要手动粘贴值 `xdm: segmentMembership.seg_namespace.seg_id.status` “架构”字段中，如下所示。
 
 ![屏幕录制，其中显示了激活工作流映射步骤中的受众成员资格解决方法。](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
-文件导出将以下列方式有所不同，具体取决于是否 `segmentMembership.status` 已选中：
-* 如果 `segmentMembership.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
-* 如果 `segmentMembership.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照及其后的增量导出中的成员。
+
+>[!NOTE]
+>
+对于云存储目标，默认情况下会向映射中添加以下属性：
+>
+* `segmentMembership.seg_namespace.seg_id.status`
+* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
+
+文件导出将以下列方式有所不同，具体取决于是否 `segmentMembership.seg_namespace.seg_id.status` 已选中：
+
+* 如果 `segmentMembership.seg_namespace.seg_id.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
+* 如果 `segmentMembership.seg_namespace.seg_id.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照及其后的增量导出中的成员。
 
 详细了解 [基于文件的目标的配置文件导出行为](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations).
 
@@ -488,19 +497,19 @@ Adobe建议选择身份命名空间，如 [!DNL CRM ID] 或电子邮件地址作
 
 >[!NOTE]
 >
-Adobe Experience Platform会使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.status`.
+Adobe Experience Platform会使用架构中的四个推荐的常用属性预填充您的选择： `person.name.firstName`， `person.name.lastName`， `personalEmail.address`， `segmentMembership.seg_namespace.seg_id.status`.
 
 ![该图像显示了受众激活工作流映射步骤中预填充的推荐属性。](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
-由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.status` 到您的文件导出。 相反，您必须手动粘贴值 `xdm: segmentMembership.status` “架构”字段中，如下所示。
+由于已知限制，您当前无法使用 **[!UICONTROL 选择字段]** 要添加的窗口 `segmentMembership.seg_namespace.seg_id.status` 到您的文件导出。 相反，您必须手动粘贴值 `xdm: segmentMembership.seg_namespace.seg_id.status` “架构”字段中，如下所示。
 >
 ![屏幕录制，其中显示了激活工作流映射步骤中的受众成员资格解决方法。](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
-文件导出在以下方面有所不同，具体取决于是否 `segmentMembership.status` 已选中：
-* 如果 `segmentMembership.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
-* 如果 `segmentMembership.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照及其后的增量导出中的成员。
+文件导出在以下方面有所不同，具体取决于是否 `segmentMembership.seg_namespace.seg_id.status` 已选中：
+* 如果 `segmentMembership.seg_namespace.seg_id.status` 字段已选中，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 已过期]** 后续增量导出中的成员。
+* 如果 `segmentMembership.seg_namespace.seg_id.status` 未选择字段，导出的文件仅包括 **[!UICONTROL 活动]** 初始完整快照及其后的增量导出中的成员。
 
 ## 选择扩充属性 {#select-enrichment-attributes}
 
