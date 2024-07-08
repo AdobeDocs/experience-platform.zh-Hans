@@ -3,10 +3,10 @@ title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您在Adobe Experience Platform中以编程方式计划数据集过期时间。
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 20d616463469a4d78fe0e7b6be0ec76b293789d6
+source-git-commit: 4fb8313f8209b68acef1484fc873b9bd014492be
 workflow-type: tm+mt
-source-wordcount: '2166'
-ht-degree: 2%
+source-wordcount: '2217'
+ht-degree: 1%
 
 ---
 
@@ -27,6 +27,12 @@ ht-degree: 2%
 >[!WARNING]
 >
 >如果数据集设置为过期，则必须手动更改任何可能正在将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
+
+高级数据生命周期管理支持通过数据集过期端点执行数据集删除，并支持使用主要身份通过执行ID删除（行级数据） [工单端点](./workorder.md). 您还可以管理 [数据集过期时间](../ui/dataset-expiration.md) 和 [记录删除](../ui/record-delete.md) 通过Platform UI。 有关更多信息，请参阅链接的文档。
+
+>[!NOTE]
+>
+>数据生命周期不支持批量删除。
 
 ## 快速入门
 

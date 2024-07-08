@@ -2,10 +2,10 @@
 title: 自动化数据集过期时间
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
+source-git-commit: 2aba88ac657e73a12be14d2c3a67dd5714513c97
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 21%
+source-wordcount: '871'
+ht-degree: 18%
 
 ---
 
@@ -26,7 +26,13 @@ ht-degree: 21%
 
 >[!NOTE]
 >
->数据集到期当前不会从Adobe Experience Platform Edge Network删除数据。 但是，数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的15天服务许可协议与14天期限重叠，在这14天期限中，数据在被丢弃之前存在于边缘网络内。
+>数据集到期当前不会从Adobe Experience PlatformEdge Network中删除数据。 但是，在数据集设置为过期后，数据不可能保留在Edge Network中。 这是因为数据集过期的15天服务许可协议与Edge Network中存在数据的14天期限重叠，然后才被丢弃。
+
+高级数据生命周期管理支持通过以下方式删除数据集 [数据集到期端点](../api/dataset-expiration.md) 和ID删除（行级数据），使用主标识，通过 [工单端点](../api/workorder.md). 您还可以管理数据集过期和 [记录删除](./record-delete.md) 通过Platform UI。 有关更多信息，请参阅链接的文档。
+
+>[!NOTE]
+>
+>数据生命周期不支持批量删除。
 
 ## 计划数据集过期 {#schedule-dataset-expiration}
 
@@ -39,7 +45,7 @@ ht-degree: 21%
 
 >[!IMPORTANT]
 >
-Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics用户有20个挂起的计划数据集到期工作单。 Healthcare Shield和Privacy and Security Shield用户有50个挂起的计划数据集到期工作单。 这意味着您可以随时计划删除20或50个数据集。<br>例如，如果您计划了20个数据集过期时间，并且有一个数据集将于明天删除，则在删除该数据集之前，您无法再设置任何过期时间。
+>Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics用户有20个挂起的计划数据集到期工作单。 Healthcare Shield和Privacy and Security Shield用户有50个挂起的计划数据集到期工作单。 这意味着您可以随时计划删除20或50个数据集。<br>例如，如果您计划了20个数据集过期时间，并且有一个数据集将于明天删除，则在删除该数据集之前，您无法再设置任何过期时间。
 
 ![此 [!UICONTROL 数据生命周期] 工作区，使用 [!UICONTROL 创建请求] 突出显示。](../images/ui/ttl/create-request-button.png)
 
@@ -59,7 +65,7 @@ Real-Time CDP、Adobe Journey Optimizer和Customer Journey Analytics用户有20�
 
 >[!NOTE]
 >
-仅显示属于当前沙盒的数据集。
+>仅显示属于当前沙盒的数据集。
 
 ### 提交请求 {#submit-request}
 
@@ -73,7 +79,7 @@ A [!UICONTROL 确认请求] 出现对话框。 系统会要求您确认数据集
 
 >[!NOTE]
 >
-请参阅概述部分，了解有关 [时间线和透明度](../home.md#dataset-expiration-transparency) 以了解有关执行数据集过期后如何处理这些过期的详细信息。
+>请参阅概述部分，了解有关 [时间线和透明度](../home.md#dataset-expiration-transparency) 以了解有关执行数据集过期后如何处理这些过期的详细信息。
 
 ## 编辑或取消数据集过期 {#edit-or-cancel}
 

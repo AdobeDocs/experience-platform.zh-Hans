@@ -2,9 +2,9 @@
 title: 高级数据生命周期管理概述
 description: 高级数据生命周期管理允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: 1f82403d4f8f5639f6a9181a7ea98bd27af54904
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '636'
 ht-degree: 2%
 
 ---
@@ -23,6 +23,10 @@ Adobe Experience Platform提供了一套强大的工具来管理大型复杂的�
 >Record deletes are meant to be used for data cleansing, removing anonymous data, or data minimization. They are **not** to be used for data subject rights requests (compliance) as pertaining to privacy regulations like the General Data Protection Regulation (GDPR). For all compliance use cases, use [Adobe Experience Platform Privacy Service](../privacy-service/home.md) instead. -->
 
 这些活动可以使用执行 [[!UICONTROL 数据生命周期] UI工作区](#ui) 或 [数据卫生API](#api). 当数据生命周期作业执行时，系统会在流程的每个步骤提供透明度更新。 请参阅以下部分 [时间线和透明度](#timelines-and-transparency) 有关如何在系统中表示每种作业类型的详细信息。
+
+>[!NOTE]
+>
+>高级数据生命周期管理支持通过以下方式删除数据集 [数据集到期端点](./api/dataset-expiration.md) 和ID删除（行级数据），使用主标识，通过 [工单端点](./api/workorder.md). 您还可以管理 [数据集过期时间](./ui/dataset-expiration.md) 和 [记录删除](./ui/record-delete.md) 通过Platform UI。 有关更多信息，请参阅链接的文档。 请注意，数据生命周期不支持批量删除。
 
 ## [!UICONTROL 数据生命周期] UI工作区 {#ui}
 
