@@ -1,11 +1,9 @@
 ---
 title: Merkury企业标识目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise Identity目标连接。
-hide: true
-hidefromtoc: true
-source-git-commit: 66a0a085e696dbe13d0368da395f655c7ca01a97
+source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
 workflow-type: tm+mt
-source-wordcount: '1502'
+source-wordcount: '1469'
 ht-degree: 2%
 
 ---
@@ -15,33 +13,33 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->目标连接器和文档页面由Merkury团队创建和维护。 如有任何查询或更新请求，请联系您的Merkury客户代表。
+>目标连接器和文档页面由创建和维护 [!DNL Merkury] 团队。 如有任何查询或更新请求，请联系 [!DNL Merkury] 客户代表。
 
 ## 概述
 
-使用Merkury Enterprise Identity目标构建更准确、全面且富有洞察力的消费者用户档案。 通过改进的配置文件数据，营销人员可以更好地提供见解、区段和模型，从而更准确地定位和预测建模。
+使用 [!DNL Merkury Enterprise Identity] 构建更准确、全面和有洞察力的消费者个人资料的目标。 通过改进的配置文件数据，营销人员可以更好地提供见解、区段和模型，从而更准确地定位和预测建模。
 
 ![显示Merkury与Experience Platform之间的互连关系（包括引入和激活）的图表](../../assets/catalog/data-partners/merkury-identity/media/image1.png)
 
-按照此文档页面中的步骤操作，创建一个Merkury Identity目标连接，并激活受众，以便使用Adobe Experience Platform用户界面进行识别和扩充。
+按照本文档页面中的步骤创建 [!DNL Merkury Identity] 目标连接并激活受众，以使用Adobe Experience Platform用户界面进行识别和扩充。
 
 >[!NOTE]
 >
->如果您希望使用Merkury Connect帐户将受众激活到媒体目标，请改用我们的Merkury Connections目标。
+>如果您希望使用激活受众到媒体目标 [!DNL Merkury Connect] 帐户，使用 [!DNL Merkury Connections] 目标位置。
 
 ![Experience Platform目标目录中高亮显示的Merkury企业身份目标卡。](../../assets/catalog/data-partners/merkury-identity/media/image2.png)
 
 ## 用例
 
-Merkury Enterprise Identity Destination为以下Merkury功能提供了安全传输消费者PII的功能：
+此 [!DNL Merkury Enterprise Identity] 目标提供安全传输以下各项的消费者PII的功能 [!DNL Merkury] 功能：
 
-* **数据质量**：通过数据卫生和标准化提高消费者个人资料数据质量。 Merkury包含美国邮政卫生和移动识别，以支持最先进的直邮营销用例。
-* **身份解析**：通过Merkury个人和家庭ID生成准确、全面的客户单一视图。 Merkury ID提供了深度个人资料链接，由Merkury提供的涉及2.68亿以上的美国成人消费者身份的综合图表提供支持。
-* **扩充**：利用Merkury数据获得更好的见解和个性化。 Merkury数据包括10,000多种可用数据属性，这些属性涵盖人口统计、生活方式、财务、生活事件以及Merkury数据包中的购买数据。
+* **数据质量**：通过数据卫生和标准化提高消费者个人资料数据质量。 [!DNL Merkury] 包括美国邮政卫生和移动识别，以支持最先进的直邮营销用例。
+* **身份解析**：建立准确而全面的客户单一视图，信息来自 [!DNL Merkury] 个人和家庭身份证号码。 Merkury ID提供由支持的深层配置文件链接 [!DNL Merkury]2.68亿以上人口的美国成人消费者身份综合图表。
+* **扩充**：使用获得更好的见解和个性化 [!DNL Merkury Data]. [!DNL Merkury Data] 包括超过10,000个可用的数据属性，这些属性涵盖人口统计、生活方式、财务、生活事件，以及来自 [!DNL Merkury Data Suite].
 
 >[!NOTE]
 >
->这些用例通过目标和源连接器的组合执行。 客户将从导出其现有客户记录开始，以便使用此目标连接器进行扩充。 Merkury的服务将搜索文件、检索文件、使用Merkury的数据扩充文件并生成文件。 然后，客户将使用相应的Merkury Source连接器源卡将水合的客户配置文件摄取回Adobe Real-Time CDP。
+>这些用例通过目标和源连接器的组合执行。 客户将从导出其现有客户记录开始，以便使用此目标连接器进行扩充。 [!DNL Merkury]的服务将搜索文件、检索文件、扩充文件 [!DNL Merkury]的数据并生成文件。 然后，客户将使用相应的 [!DNL Merkury] Source连接器源卡，用于将水合的客户配置文件摄取回Adobe Real-Time CDP。
 
 ## 先决条件
 
@@ -54,7 +52,7 @@ Merkury Enterprise Identity Destination为以下Merkury功能提供了安全传�
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
 | phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
@@ -77,11 +75,9 @@ Merkury Enterprise Identity Destination为以下Merkury功能提供了安全传�
 ## 导出类型和频率
 
 有关目标导出类型和频率的信息，请参阅下表。
-
-|**Audience**|**Supported**|**Description origin**|            
-|---|---|---|      
-|Segmentation Service|✓|Audiences generated through the Experience Platform [[Segmentation Service]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).|
-Custom uploads|X|Audiences [[imported]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) into Experience Platform from CSV files.
+|**受众**|**支持**|**描述来源**|\
+|—|—|—|\
+✓ |分段服务||通过Experience Platform生成的受众 [[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).| 自定义上传|X|受众 [[已导入]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) 从CSV文件Experience Platform到。
 
 {style="table-layout:auto"}
 
@@ -124,7 +120,7 @@ Custom uploads|X|Audiences [[imported]](https://experienceleague.adobe.com/en/do
 
 >[!NOTE]
 >
->当选择CSV选项时，将会显示分隔符、引号字符、转义字符、空值、空值、压缩格式和包括清单文件选项，请咨询您的Merkury团队为您的帐户提供合适的设置。
+>当选择CSV选项、分隔符、引号字符、转义字符、空值、空值、压缩格式和包括清单文件选项时，请咨询您的Merkury团队，以获取适合您帐户的相应设置。
 
 ![csv选项图像](../../assets/catalog/data-partners/merkury-identity/media/image8.png)
 
@@ -145,20 +141,20 @@ Custom uploads|X|Audiences [[imported]](https://experienceleague.adobe.com/en/do
 
 >[!IMPORTANT]
 >
->* 要激活数据，您需要具有查看目标、激活目标、查看配置文件和查看区段访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
->* 要导出身份，您需要具有查看身份图形访问控制权限。
+>* 要激活数据，您需要 **查看目标**， **激活目标**， **查看配置文件**、和 **查看区段** 访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
+>* 要导出标识，您需要 **查看身份图** 访问控制权限。
 
 读取 [将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) 有关将受众激活到此目标的说明。
 
 ## 映射建议
 
-在Merkury端正确处理文件需要名称和地址元素。 虽然并非所有元素都是必需的，但尽可能多地提供将有助于成功匹配。
+正确处理上的文件 [!DNL Merkury] side需要名称和地址元素。 虽然并非所有元素都是必需的，但尽可能多地提供将有助于成功匹配。
 
-映射建议如下表所示，其中列出了Merkury处理使用且客户可以将配置文件属性映射到的目标端属性。 将这些元素视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
+下表提供了映射建议，列出了目标端由使用的属性。 [!DNL Merkury] 客户可以将配置文件属性映射到的处理。 将这些元素视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
 
-| 目标字段 | 源描述 |
+| 目标字段 | Source描述 |
 |---|---|
-| ID | 用于通过Merkury Enterprise身份解析源连接器将Merkury数据映射到Experience Platform的“身份”字段 |
+| ID | 用于映射的身份字段 [!DNL Merkury] 要Experience Platform的数据 [!DNL Merkury Enterprise Identity] Source连接器 |
 | Input_First_Name | 此 `person.name.firstName` Experience Platform值。 |
 | Input_Last_Name | 此 `person.name.lastName` Experience Platform值。 |
 | Input_Address_Line_1 | 此 `mailingAddress.street` Experience Platform值。 |
@@ -181,4 +177,4 @@ Custom uploads|X|Audiences [[imported]](https://experienceleague.adobe.com/en/do
 
 ## 后续步骤
 
-通过学习本教程，您已成功创建了一个数据流以将配置文件数据从Experience Platform导出到Merkury管理的S3位置。 接下来，您需要联系Merkury代表，提供帐户名称、文件名和存储段路径，以便能够设置处理。
+通过学习本教程，您已成功创建了一个数据流以将配置文件数据从Experience Platform导出到 [!DNL Merkury] 托管的S3位置。 接下来，您需要联系 [!DNL Merkury] 具有帐户名称、文件名和存储段路径的代表，以便可以设置处理。

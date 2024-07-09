@@ -1,39 +1,38 @@
 ---
 title: Merkury Enterprise连接目标
 description: 了解如何使用Adobe Experience Platform UI创建Merkury Enterprise连接目标连接。
-hide: true
-hidefromtoc: true
-source-git-commit: 66a0a085e696dbe13d0368da395f655c7ca01a97
+source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
 workflow-type: tm+mt
-source-wordcount: '1397'
+source-wordcount: '1375'
 ht-degree: 3%
 
 ---
+
 
 # Merkury Enterprise连接目标
 
 >[!NOTE]
 >
->目标连接器和文档页面由Merkury团队创建和维护。 如有任何查询或更新请求，请联系您的Merkury客户代表。
+>目标连接器和文档页面由创建和维护 [!DNL Merkury] 团队。 如有任何查询或更新请求，请联系 [!DNL Merkury] 客户代表。
 
 ## 概述
 
-使用Merkury Enterprise Connections目标将受众安全地交付给Merkury。 Merkury为营销人员提供了基于人员的受众与Merkury超过80个高级可寻址电视/电视、出版商和广告技术联系的轻松匹配和交付。 Merkury由一份涉及2.68亿以上的美国成人消费者身份综合图表提供支持。
+使用 [!DNL Merkury Enterprise Connections] 将受众安全地交付到的目标 [!DNL Merkury]. [!DNL Merkury] 为营销人员提供了基于人员的受众的轻松匹配和交付功能， [!DNL Merkury]的80多个高级可寻址电视/电视、出版商，以及广告技术连接。 [!DNL Merkury] 这项调查由2.68亿以上的美国成人消费者身份综合图表提供支持。
 
 ![显示Merkury与Experience Platform之间的互连关系（包括引入和激活）的图表](../../assets/catalog/data-partners/merkury-connections/media/image1.png)
 
-按照本文档页面中的步骤操作，使用Adobe Experience Platform用户界面创建Merkury连接目标连接并激活受众。
+按照本文档页面中的步骤创建 [!DNL Merkury Connections] 目标连接，并使用Adobe Experience Platform用户界面激活受众。
 
 >[!NOTE]
 >
->如果您希望使用Merkury Connect帐户将受众激活到媒体目标，请改用我们的Merkury Connections目标。
+>如果您希望使用激活受众到媒体目标 [!DNL Merkury Connect] 帐户，使用 [!DNL Merkury Connections] 目标位置。
 
 ![Experience Platform目标目录中高亮显示的Merkury Enterprise Connections目标卡。](../../assets/catalog/data-partners/merkury-connections/media/image2.png)
 
 ## 用例
 
-* **数字媒体激活**：轻松将您的受众配置文件匹配并交付给Merkury的50多个高级可寻址出版商和广告技术连接。
-* **提高效率**：增强您的无Cookie、可寻址媒体覆盖范围，提高定位效率和广告支出回报率(ROAS)。
+* **数字媒体激活**：轻松将受众配置文件匹配和交付到 [!DNL Merkury]拥有50多个高级可寻址出版商和广告技术连接。
+* **提高效率**：增强您的无Cookie、可寻址媒体覆盖范围，提高定位效率和Advertising支出回报率(ROAS)。
 
 ## 先决条件
 
@@ -46,7 +45,7 @@ ht-degree: 3%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
 | phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
@@ -57,7 +56,7 @@ ht-degree: 3%
 
 ## 支持的受众
 
-本节介绍可导出到此目标的受众类型。
+此部分介绍可将哪种类型的受众导出到此目标。
 
 | **受众** | **支持** | **描述来源** |
 |---|---|---|      
@@ -116,15 +115,15 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->当选择CSV选项时，将会显示分隔符、引号字符、转义字符、空值、空值、压缩格式和包括清单文件选项，请咨询您的Merkury团队为您的帐户提供合适的设置。
+>当选择CSV选项、分隔符、引号字符、转义字符、空值、空值、压缩格式和包括清单文件选项时，请咨询您的Merkury团队，以获取适合您帐户的相应设置。
 
 ![csv选项图像](../../assets/catalog/data-partners/merkury-connections/media/image8.png)
 
 ### 现有帐户
 
-已使用Merkury Enterprise连接目标定义的帐户将显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 从UI查看示例，当您导航到 **目标** > **帐户**；
+已使用Merkury Enterprise连接目标定义的帐户将显示在列表弹出窗口中。 选中后，您可以在右边栏中查看有关帐户的详细信息。 从UI查看示例，当您导航到 **目标** > **帐户**：
 
-![目标帐户页面中的目标帐户屏幕截图](../../assets/catalog/data-partners/merkury-connections/media/image5.png)
+![目标帐户页面中的目标帐户屏幕截图。](../../assets/catalog/data-partners/merkury-connections/media/image5.png)
 
 ## 启用警报
 
@@ -136,21 +135,21 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->* 要激活数据，您需要具有查看目标、激活目标、查看配置文件和查看区段访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
->* 要导出身份，您需要具有查看身份图形访问控制权限。
+>* 要激活数据，您需要 **查看目标**， **激活目标**， **查看配置文件**、和 **查看区段** 访问控制权限。 请阅读访问控制概述或联系您的产品管理员以获取所需权限。
+>* 要导出标识，您需要 **查看身份图** 访问控制权限。
 
 
 读取 [将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) 有关将受众激活到此目标的说明。
 
 ## 映射建议
 
-在Merkury端正确处理文件需要名称和地址元素。 虽然并非所有元素都是必需的，但尽可能多地提供将有助于成功匹配。
+正确处理上的文件 [!DNL Merkury] side需要名称和地址元素。 虽然并非所有元素都是必需的，但尽可能多地提供将有助于成功匹配。
 
-映射建议如下表所示，其中列出了Merkury处理使用且客户可以将配置文件属性映射到的目标端属性。 将这些元素视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
+下表提供了映射建议，列出了目标端由使用的属性。 [!DNL Merkury] 客户可以将配置文件属性映射到的处理。 将这些元素视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
 
-| 目标字段 | 源描述 |
+| 目标字段 | Source描述 |
 |---|---|
-| ID | 用于通过Merkury Enterprise身份解析源连接器将Merkury数据映射到Experience Platform的“身份”字段 |
+| ID | 用于映射的身份字段 [!DNL Merkury] 要Experience Platform的数据 [!DNL Merkury Enterprise Identity] Source连接器 |
 | Input_First_Name | 此 `person.name.firstName` Experience Platform值。 |
 | Input_Last_Name | 此 `person.name.lastName` Experience Platform值。 |
 | Input_Address_Line_1 | 此 `mailingAddress.street` Experience Platform值。 |
@@ -173,4 +172,4 @@ ht-degree: 3%
 
 ## 后续步骤
 
-通过学习本教程，您已成功创建了一个数据流以将配置文件数据从Experience Platform导出到Merkury管理的S3位置。 接下来，您需要联系Merkury代表，提供帐户名称、文件名和存储段路径，以便能够设置处理。
+通过学习本教程，您已成功创建了一个数据流以将配置文件数据从Experience Platform导出到 [!DNL Merkury] 托管的S3位置。 接下来，您需要联系 [!DNL Merkury] 具有帐户名称、文件名和存储段路径的代表，以便可以设置处理。
