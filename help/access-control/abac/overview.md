@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 900e0dc323e9055a92313788a4a191c615d0b8cd
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1866'
+source-wordcount: '1864'
 ht-degree: 14%
 
 ---
@@ -98,7 +98,7 @@ ht-degree: 14%
 >
 >总之，在使用目标和基于属性的访问控制时，请牢记以下含义：
 >
->* 您只能激活您在中有权访问和查看的区段 [区段浏览视图](/help/segmentation/ui/overview.md#browse) 和 [选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) 激活工作流的。
+>* 您只能激活您有权访问和查看的受众 [受众门户](/help/segmentation/ui/audience-portal.md#browse) 和 [选择区段步骤](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) 激活工作流的。
 >* 在 [激活工作流的映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)，则您只能查看和选择您具有访问权限的字段以进行激活。
 >* 如果您希望将其他区段激活到现有目标，而您无权访问映射为导出的所有字段，则会为您阻止激活工作流。
 

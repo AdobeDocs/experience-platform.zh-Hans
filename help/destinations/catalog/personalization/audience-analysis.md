@@ -1,11 +1,12 @@
 ---
 title: Audience Analysis目标
 description: 在Customer Journey Analytics中查看客户符合条件的受众。
-badgeLimitedAvailability: label="有限可用性" type="Informative"
-source-git-commit: 83b3d40e17f444555769020526bb723265a09eb9
+badgeLimitedAvailability: label="限量发布版" type="Informative"
+exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '801'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -31,7 +32,7 @@ Audience Analysis支持激活下表中描述的标识。 了解有关 [身份](/
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
 | phone_sha256 | 使用SHA256算法散列的电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 |
@@ -44,10 +45,10 @@ Audience Analysis支持激活下表中描述的标识。 了解有关 [身份](/
 
 使用此目标时，支持以下类型的受众：
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

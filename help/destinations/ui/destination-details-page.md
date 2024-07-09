@@ -3,7 +3,7 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1106'
 ht-degree: 0%
@@ -115,7 +115,7 @@ ht-degree: 0%
 
 ![激活数据视图流式目标](../assets/ui/details-page/activation-data-streaming.png)
 
-### [!BADGE 测试版]{type=Informational}从激活流中删除多个受众 {#bulk-remove}
+### [!BADGE Beta]{type=Informational}从激活流中删除多个受众 {#bulk-remove}
 
 >[!NOTE]
 >
@@ -139,4 +139,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-有关浏览受众详细信息页面的详细信息，请参阅 [分段UI概述](../../segmentation/ui/overview.md#segment-details).
+有关浏览受众详细信息页面的详细信息，请参阅 [受众门户概述](../../segmentation/ui/audience-portal.md#segment-details).

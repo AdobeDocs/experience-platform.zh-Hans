@@ -4,7 +4,7 @@ description: 了解如何创建和使用帐户受众，以便在下游目标中�
 badgeB2B: label="B2B版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P版本" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 7d630c3673304060ad26375955602440a495f354
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
 source-wordcount: '1130'
 ht-degree: 27%
@@ -41,7 +41,7 @@ ht-degree: 27%
 
 此视图列出有关受众的信息，包括名称、配置文件计数、来源、生命周期状态、创建日期和上次更新日期。
 
-您还可以使用搜索和筛选功能快速搜索和排序特定帐户受众。 有关此功能的更多信息，请参阅 [分段UI指南](./overview.md#manage-audiences).
+您还可以使用搜索和筛选功能快速搜索和排序特定帐户受众。 有关此功能的更多信息，请参阅 [受众门户概述](./audience-portal.md#manage-audiences).
 
 ## 创建受众 {#create}
 

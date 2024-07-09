@@ -3,7 +3,7 @@ title: LiveRamp — 载入连接
 description: 了解如何使用LiveRamp连接器将受众从Adobe Real-time Customer Data Platform载入LiveRamp Connect。
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: a235f9a66ea15fc5e72dd6ed03e4a6a384fd30a4
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1941'
 ht-degree: 3%
@@ -36,10 +36,10 @@ ht-degree: 3%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -127,7 +127,7 @@ ht-degree: 3%
 
 读取 [将受众数据激活到批量配置文件导出目标](/help/destinations/ui/activate-batch-profile-destinations.md) 有关将受众激活到此目标的说明。
 
-### 正在计划 {#scheduling}
+### 计划中 {#scheduling}
 
 在 [!UICONTROL 正在计划] 步骤，使用下面显示的设置为每个受众创建导出计划。
 
@@ -211,7 +211,7 @@ Platform会将两个CSV文件导出到 [!DNL LiveRamp - Onboarding]：
 * `Expired`：用户档案不再符合受众条件，而是以前符合条件。
 * `""`（空字符串）：个人资料从未符合受众条件。
 
-例如，导出的CSV文件包含一个 `email` 属性，两个源自Experience Platform的受众 [分段服务](../../../segmentation/home.md)，和一个 [已导入](../../../segmentation/ui/overview.md#importing-an-audience) 外部受众，可能如下所示：
+例如，导出的CSV文件包含一个 `email` 属性，两个源自Experience Platform的受众 [分段服务](../../../segmentation/home.md)，和一个 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 外部受众，可能如下所示：
 
 ```csv
 email,ups_aa2e3d98-974b-4f8b-9507-59f65b6442df,ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -223,7 +223,7 @@ abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
 
-在上例中， `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` 和 `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` 部分介绍源自Segmentation Service的受众，而 `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` 描述导入到Platform as a的受众 [自定义上传](../../../segmentation/ui/overview.md#importing-an-audience).
+在上例中， `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` 和 `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` 部分介绍源自Segmentation Service的受众，而 `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` 描述导入到Platform as a的受众 [自定义上传](../../../segmentation/ui/audience-portal.md#import-audience).
 
 因为Platform为每个生成一个CSV文件 [合并策略Id](../../../profile/merge-policies/overview.md)，它还会为每个合并策略ID生成单独的数据流运行。
 

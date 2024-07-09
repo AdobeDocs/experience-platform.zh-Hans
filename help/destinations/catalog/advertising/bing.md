@@ -1,9 +1,9 @@
 ---
 keywords: 广告；必应；
 title: Microsoft Bing连接
-description: 通过Microsoft Bing连接目标，您可以在整个Microsoft广告网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
+description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Advertising网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '687'
 ht-degree: 10%
@@ -30,7 +30,7 @@ ht-degree: 10%
 
 | 标识 | 描述 |
 |---|---|
-| 女佣 | Microsoft广告ID |
+| 女佣 | MICROSOFT ADVERTISING ID |
 
 {style="table-layout:auto"}
 
@@ -38,10 +38,10 @@ ht-degree: 10%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -62,7 +62,7 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 >
->如果您希望使用创建您的第一个目标 [!DNL Microsoft Bing] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Adobe Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Microsoft Bing] Audience Manager中的集成，即您设置的ID同步功能会转移到Platform。
+>如果您希望使用创建您的第一个目标 [!DNL Microsoft Bing] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 以往(使用Adobe Audience Manager或其他应用程序)在Experience CloudID服务中，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Microsoft Bing] Audience Manager中的集成，即您设置的ID同步功能会转移到Platform。
 
 配置目标时，必须提供以下信息：
 

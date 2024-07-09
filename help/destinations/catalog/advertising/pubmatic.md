@@ -2,13 +2,13 @@
 title: PubMatic Connect
 description: PubMatic通过提供面向未来的程序化数字营销供应链，最大程度地实现客户价值。 PubMatic Connect将平台技术和专用服务相结合，以增强库存和数据打包和事务处理的方式。
 last-substantial-update: 2023-12-14T00:00:00Z
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '923'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
-
 
 # PubMatic Connect目标 {#pubmatic-connect}
 
@@ -40,7 +40,7 @@ ht-degree: 3%
 
 | 目标身份 | 描述 | 注意事项 |
 | --------------- | ------ | --- |
-| GAID | Google广告ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
+| GAID | GOOGLE ADVERTISING ID | 当源身份是GAID命名空间时，选择GAID目标身份。 |
 | IDFA | 广告商的Apple ID | 当源身份是IDFA命名空间时，选择IDFA目标身份。 |
 | extern_id | 自定义用户标识 | 当源身份是自定义命名空间时，请选择此目标身份。 |
 
@@ -50,10 +50,10 @@ ht-degree: 3%
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 | --- | --------- | ------ |
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -95,7 +95,7 @@ ht-degree: 3%
 - **[!UICONTROL 数据合作伙伴ID]**：在中设置的数据合作伙伴ID [!DNL PubMatic] 帐户。
 - **[!UICONTROL 默认国家/地区代码]**：默认国家/地区代码，如果未在配置文件中提供，则应用于所有身份。
 - **[!UICONTROL 帐户ID]**：您的 [!DNL PubMatic Connect] 帐户ID。
-- **[!UICONTROL 帐户类型]**：您的帐户类型 [!DNL PubMatic] 平台帐户。 与您的 [!DNL PubMatic] 如果您有任何问题需要选择，请咨询客户经理。 可用的选项为：
+- **[!UICONTROL 帐户类型]**：您的帐户类型 [!DNL PubMatic] 平台帐户。 与您的 [!DNL PubMatic] 如果您有任何问题需要选择，请咨询客户经理。 可用的选项包括：
    - [!UICONTROL 发布者]
    - [!UICONTROL DEMAND_PARTNER]
    - [!UICONTROL 购买者]

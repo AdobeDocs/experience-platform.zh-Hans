@@ -3,7 +3,7 @@ keywords: google广告管理器；google广告；doubleclick；DoubleClick AdX�
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告投放平台，它使发布者能够通过视频和移动应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 0db22ba2993012357cf65daaeffb5676193fba23
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1119'
 ht-degree: 4%
@@ -44,8 +44,8 @@ ht-degree: 4%
 | IDFA | [!DNL Apple ID for Advertisers] |  |
 | AAM UUID | [Adobe Audience Manager [!DNL Unique User ID]](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html)，也称为 [!DNL Device ID]. 38位数的设备ID，Audience Manager与每台与其交互的设备相关联。 | Google使用 [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html) 定位加利福尼亚的用户，以及所有其他用户的Google Cookie ID。 |
 | [!DNL Google] Cookie ID | [!DNL Google] Cookie ID | [!DNL Google] 使用此ID定位加利福尼亚州以外的用户。 |
-| RIDA | 适用于广告的Roku ID。 此ID唯一标识Roku设备。 |  |
-| 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
+| RIDA | Advertising的Roku ID。 此ID唯一标识Roku设备。 |  |
+| 女佣 | Microsoft Advertising ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID唯一标识Amazon Fire电视。 |  |
 
 {style="table-layout:auto"}
@@ -54,10 +54,10 @@ ht-degree: 4%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ ht-degree: 4%
 
 ## 先决条件 {#prerequisites}
 
-如果您希望使用创建您的第一个目标 [!DNL Google Ad Manager] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去(使用Audience Manager或其他应用程序)的Experience CloudID服务中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Google] Audience Manager中的集成，即您设置的ID同步功能会转移到Platform。
+如果您希望使用创建您的第一个目标 [!DNL Google Ad Manager] 并且尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 以往(使用Audience Manager或其他应用程序)在Experience CloudID服务中，请联系Adobe Consulting或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Google] Audience Manager中的集成，即您设置的ID同步功能会转移到Platform。
 
 ### 允许列表 {#allow-listing}
 

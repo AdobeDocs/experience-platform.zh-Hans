@@ -1,15 +1,15 @@
 ---
-title: Audience Manager扩展激活
+title: Audience Manager 扩展激活
 description: 了解如何通过Audience Manager扩展的激活，将Audience Manager受众激活到社交和广告目标。
-source-git-commit: 5bc8d6c7173f221c2830a9b15c8ec6241e8bc59d
+exl-id: 1f209578-a688-40b8-8f13-dab0d4380b3b
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '473'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
-
-# Audience Manager扩展激活
+# Audience Manager 扩展激活
 
 Audience Manager扩展激活基于Adobe Experience Platform构建，可帮助现有 [Audience Manager](https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/aam-home) 用户将其受众激活到 [社交](../destinations/catalog/social/overview.md) 和 [广告](../destinations/catalog/advertising/overview.md) Real-Time CDP的目标平台，例如 [facebook](../destinations/catalog/social/facebook.md)， [Google Ads](../destinations/catalog/advertising/google-ads-destination.md)，等等。
 
@@ -21,8 +21,8 @@ Audience Manager扩展激活基于Adobe Experience Platform构建，可帮助现
 
 Audience Manager扩展激活使用Adobe Experience Platform中的概念和组件。 要更好地了解扩展的激活工作流程以及您将使用的组件，请确保您对以下概念有基本了解：
 
-* [受众](../segmentation/ui/overview.md)：受众是指一组具有相似行为和/或特征的人员。 此人员集合可以由Adobe Experience Platform使用区段定义或受众合成（平台生成的受众）生成，也可以由外部源(例如自定义上传（外部生成的受众）)生成。 在扩展激活中，您的Audience Manager区段（受众）导入为 [自定义上传](../segmentation/ui/overview.md#import-audience).
-* [源连接器](../sources/home.md)：源连接器（也称为源）可帮助Experience Platform用户轻松地从多个源摄取数据，并允许使用Experience Platform服务来构建、标记和增强数据。 数据可以从各种源摄取，如基于云的存储、第三方软件和CRM系统。
+* [受众](../segmentation/ui/overview.md)：受众是指一组具有相似行为和/或特征的人员。 此人员集合可以由Adobe Experience Platform使用区段定义或受众合成（平台生成的受众）生成，也可以由外部源(例如自定义上传（外部生成的受众）)生成。 在扩展激活中，您的Audience Manager区段（受众）导入为 [自定义上传](../segmentation/ui/audience-portal.md#import-audience).
+* [Source连接器](../sources/home.md)：Source连接器（也称为源）可帮助Experience Platform用户轻松地从多个源摄取数据，从而能够使用Experience Platform服务来构建、标记和增强数据。 数据可以从各种源摄取，如基于云的存储、第三方软件和CRM系统。
 * [目标连接器](../destinations/home.md)：目标描述从中激活和交付受众的任何端点，如Adobe应用程序、广告平台、云存储服务或营销服务。 [!DNL Expanded Activation] 支持将受众激活到 [广告](../destinations/catalog/advertising/overview.md) 和 [社交](../destinations/catalog/social/overview.md) 目标连接器。
 
 ## 先决条件 {#prerequisites}
@@ -43,4 +43,3 @@ Audience Manager扩展激活使用Adobe Experience Platform中的概念和组件
 ## 后续步骤 {#next-steps}
 
 现在，您已更好地了解了使用的用例和好处 [!DNL Expanded Activation]，开始 [配置帐户](administration.md) 然后 [激活您的受众](activate-audiences.md).
-

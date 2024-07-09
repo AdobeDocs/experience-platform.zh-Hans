@@ -4,10 +4,10 @@ title: 评估和访问区段结果
 type: Tutorial
 description: 阅读本教程，了解如何使用Adobe Experience Platform分段服务API评估区段定义并访问分段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1599'
-ht-degree: 2%
+source-wordcount: '1594'
+ht-degree: 1%
 
 ---
 
@@ -29,12 +29,12 @@ ht-degree: 2%
 本教程还要求您已完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功调用 [!DNL Platform] API。 完成身份验证教程会提供所有 [!DNL Experience Platform] API 调用中每个所需标头的值，如下所示：
 
 - 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
+- x-api-key： `{API_KEY}`
+- x-gw-ims-org-id： `{ORG_ID}`
 
 中的所有资源 [!DNL Experience Platform] 被隔离到特定的虚拟沙盒中。 请求 [!DNL Platform] API需要一个标头，该标头应指定将在其中执行操作的沙盒的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name： `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ ht-degree: 2%
 
 [计划的评估](#scheduled-evaluation) （也称为“计划分段”）允许您为在特定时间运行导出作业创建定期计划，而 [按需评估](#on-demand-evaluation) 涉及创建区段作业以立即构建受众。 下面概述了每种方法的步骤。
 
-如果您尚未完成 [使用分段API创建区段定义](./create-a-segment.md) 教程或创建区段定义，使用 [区段生成器](../ui/overview.md)，请先执行该操作，然后再继续学习本教程。
+如果您尚未完成 [使用分段API创建区段定义](./create-a-segment.md) 教程或创建区段定义，使用 [区段生成器](../ui/segment-builder.md)，请先执行该操作，然后再继续学习本教程。
 
 ## 计划的评估 {#scheduled-evaluation}
 

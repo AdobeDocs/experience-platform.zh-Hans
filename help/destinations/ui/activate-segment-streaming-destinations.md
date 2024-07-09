@@ -3,7 +3,7 @@ title: 将受众数据激活到流目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将现有受众映射到流目标来激活这些受众。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 6%
@@ -52,7 +52,7 @@ ht-degree: 6%
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
 * **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 以了解更多详细信息。
-* **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
+* **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/audience-portal.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
 ![在选择受众步骤中突出显示的多个受众。](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
@@ -73,7 +73,7 @@ ht-degree: 6%
 
    ![添加突出显示的新映射控件。](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
-1. 选择右侧的箭头 **[!UICONTROL 源字段]** 进入。
+1. 选择右侧的箭头 **[!UICONTROL Source字段]** 进入。
 
    ![选择高亮显示的源字段控件。](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
 

@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明（2024 年 3 月）
 description: Adobe Experience Platform 的 2024 年 3 月发行说明。
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: 708bb791ad85b6ee8f3671ffc574e4f27fdddd0a
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1190'
 ht-degree: 33%
 
 ---
@@ -112,7 +112,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 批量操作 | 受众库现在支持批量操作。 通过使用批量操作，您可以快速选择多个受众以将它们移动到文件夹、应用标记、应用访问标签或删除。 <br> ![受众UI工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众UI工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的详细信息，请参阅 [分段服务UI指南](../../segmentation/ui/overview.md#bulk-actions). |
+| 批量操作 | 受众库现在支持批量操作。 通过使用批量操作，您可以快速选择多个受众以将它们移动到文件夹、应用标记、应用访问标签或删除。 <br> ![受众UI工作区中的批量操作。](../2024/assets/march/bulk-actions.png "受众UI工作区中的批量操作。"){width="100" zoomable="yes"} <br>有关此功能的详细信息，请参阅 [受众门户概述](../../segmentation/ui/audience-portal.md#bulk-actions). |
 
 {style="table-layout:auto"}
 
@@ -126,8 +126,8 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 
 | 功能 | 类型 | 描述 |
 | --- | --- | --- |
-| [!BADGE 测试版]{type=Informational} [!DNL Acxiom Data Ingestion] | 新增 | 使用 [[!DNL Acxiom Data Ingestion] 源](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) 摄取 [!DNL Acxiom] 将数据导入Real-time Customer Data Platform并丰富第一方配置文件。 然后，您可以使用 [!DNL Acxiom] — 扩充了第一方用户档案，以改进受众并在营销渠道之间激活。 <br> ![Acxiom数据摄取源。](../2024/assets/march/acxiom-data-ingestion.png "新的Acxiom数据摄取源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Acxiom Data Ingestion] 概述](../../sources/connectors/data-partners/acxiom-data-ingestion.md) 以获取有关如何开始的信息。 |
-| [!BADGE 测试版]{type=Informational} [!DNL Stripe] | 新增 | 使用 [[!DNL Stripe] 源](../../sources/connectors/payments/stripe.md) 将客户在购买流程中捕获的数据摄取到Experience Platform中。 摄取数据后，您即可使用此数据创建个性化优惠并解锁更丰富的业务洞察。 <br> ![Stripe源。](../2024/assets/march/stripe.png "新Stripe源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Stripe] 概述](../../sources/connectors/payments/stripe.md) 以获取有关如何开始的信息。 |
+| [!BADGE Beta]{type=Informational} [!DNL Acxiom Data Ingestion] | 新增 | 使用 [[!DNL Acxiom Data Ingestion] 源](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) 摄取 [!DNL Acxiom] 将数据导入Real-time Customer Data Platform并丰富第一方配置文件。 然后，您可以使用 [!DNL Acxiom] — 扩充了第一方用户档案，以改进受众并在营销渠道之间激活。 <br> ![Acxiom数据摄取源。](../2024/assets/march/acxiom-data-ingestion.png "新的Acxiom数据摄取源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Acxiom Data Ingestion] 概述](../../sources/connectors/data-partners/acxiom-data-ingestion.md) 以获取有关如何开始的信息。 |
+| [!BADGE Beta]{type=Informational} [!DNL Stripe] | 新增 | 使用 [[!DNL Stripe] 源](../../sources/connectors/payments/stripe.md) 将客户在购买流程中捕获的数据摄取到Experience Platform中。 摄取数据后，您即可使用此数据创建个性化优惠并解锁更丰富的业务洞察。 <br> ![Stripe源。](../2024/assets/march/stripe.png "新Stripe源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Stripe] 概述](../../sources/connectors/payments/stripe.md) 以获取有关如何开始的信息。 |
 | 的UI支持 [!DNL Snowflake Streaming] | 新增 | 您现在可以使用 [[!DNL Snowflake Streaming] 源](../../sources/tutorials/ui/create/databases/snowflake-streaming.md) 在Experience PlatformUI中，用于从 [!DNL Snowflake] 数据库。 <br> ![Snowflake流源。](../2024/assets/march/snowflake-streaming.png "新的Snowflake条纹源。"){width="100" zoomable="yes"} <br> 阅读 [[!DNL Snowflake Streaming] 概述](../../sources/connectors/databases/snowflake-streaming.md) 以获取有关如何开始的信息。 |
 
 {style="table-layout:auto"}

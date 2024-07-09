@@ -3,10 +3,10 @@ title: 潜在客户受众
 description: 了解如何使用第三方信息创建和使用潜在客户受众来定位未知客户。
 type: Documentation
 exl-id: b48cc0cf-f1c4-46fe-bb1d-cad53a9439dc
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '399'
-ht-degree: 1%
+source-wordcount: '395'
+ht-degree: 2%
 
 ---
 
@@ -28,9 +28,9 @@ ht-degree: 1%
 
 您可以通过选择向此显示添加其他字段 ![过滤器属性图标](../images/ui/prospect-audience/filter-attribute.png). 这些附加字段包括更新频率和上次更新者。
 
-有关浏览页面的更多信息（包括所列出字段的详细信息），请参见 [分段UI指南的浏览部分](./overview.md#browse).
+有关浏览页面的更多信息（包括所列出字段的详细信息），请参见 [受众门户概述](./audience-portal.md#list).
 
-## 受众详细信息 {#details}
+## 受众详情 {#details}
 
 要查看有关特定目标客户受众的详细信息，请在 [!UICONTROL 浏览] 页面。
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 ![此时将显示目标客户受众详细信息页面。](../images/ui/prospect-audience/audience-details.png)
 
-有关受众详细信息页面的更多信息，请阅读 [分段UI指南的受众详细信息部分](./overview.md).
+有关受众详细信息页面的更多信息，请阅读 [受众门户概述的受众详细信息部分](./audience-portal.md#audience-details).
 
 ## 创建受众 {#create}
 

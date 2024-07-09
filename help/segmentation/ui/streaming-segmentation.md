@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 流分段UI指南
 description: Adobe Experience Platform上的流式分段允许您近乎实时地执行分段，同时专注于数据丰富度。 借助流式分段，现在可在数据进入Platform时进行区段鉴别，从而无需安排和运行分段作业。 借助此功能，现在可以在将数据传递到Platform时评估大多数区段规则，这意味着区段成员资格将保持最新，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '1541'
+source-wordcount: '1537'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->为了使流式分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参阅 [分段用户指南中的流式分段部分](./overview.md#scheduled-segmentation).
+>为了使流式分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参阅 [受众门户概述](./audience-portal.md#scheduled-segmentation).
 
 如果查询满足以下任何条件，则将自动使用流式分段进行评估：
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 >
 >如果区段定义从无状态变为实现，或者从退出变为实现，则认为该区段定义符合条件。 如果区段定义从实现到退出，则被视为不合格。
 >
->有关这些状态的更多信息，请参阅中的状态表 [分段概述](./overview.md#browse).
+>有关这些状态的更多信息，请参阅中的状态表 [受众门户概述](./audience-portal.md#customize).
 
 ![此时会突出显示随时间变化的配置文件信息卡，显示一段时间内配置文件的线形图。](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 

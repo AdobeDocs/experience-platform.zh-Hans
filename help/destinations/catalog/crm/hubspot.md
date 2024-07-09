@@ -3,10 +3,10 @@ title: HubSpot连接
 description: HubSpot目标允许您管理HubSpot帐户中的联系人记录。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1543'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -79,8 +79,8 @@ ht-degree: 2%
 此目标还支持激活下表所述的受众。
 
 | 受众类型 | 描述 |
----------|----------|
-| 自定义上传 | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+|---------|----------|
+| 自定义上传 | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

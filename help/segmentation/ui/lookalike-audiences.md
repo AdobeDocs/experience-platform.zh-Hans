@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 相似受众
 description: 了解如何使用相似受众在Adobe Experience Platform中定位新的高价值受众。
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: 36fffcddb09444dd6e010a4b5afeec6bf0b5c3bf
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '2193'
+source-wordcount: '2192'
 ht-degree: 9%
 
 ---
@@ -179,7 +179,7 @@ Y轴显示具有与x轴的匹配值相对应的相似性百分比的配置文件
 
 ![相似受众部分会突出显示。](../images/ui/lookalike-audiences/select-laa.png)
 
-此时会显示受众详细信息页面。 欲知本页详情，请阅读 [Segmentation Service UI指南的受众详细信息部分](./overview.md#audience-details).
+此时会显示受众详细信息页面。 欲知本页详情，请阅读 [受众门户概述的受众详细信息部分](./audience-portal.md#audience-details).
 
 ![此时会显示相似受众的详细信息。](../images/ui/lookalike-audiences/laa-details.png)
 

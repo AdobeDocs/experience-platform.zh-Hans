@@ -2,7 +2,8 @@
 title: Mailchimp标记
 description: 通过Mailchimp标记目标，可导出帐户数据并在Mailchimp中激活以与联系人接洽。
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 2%
@@ -85,10 +86,10 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -167,13 +168,13 @@ API密钥的示例如下 `0123456789abcdef0123456789abcde-us14`.
 1. 在 **[!UICONTROL 映射]** 步骤，选择 **[!UICONTROL 添加新映射]**. 您将在屏幕上看到一个新映射行。
 1. 在 **[!UICONTROL 选择源字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 并选择 `Email` 身份命名空间。
 
-   ![来自身份命名空间且源字段为“电子邮件”的Platform UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
+   ![Source字段作为来自身份命名空间的电子邮件的平台UI屏幕截图。](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
 
 1. 在 **[!UICONTROL 选择目标字段]** 窗口，选择 **[!UICONTROL 选择身份命名空间]** 并选择 `Email` 身份命名空间。
 
    ![Platform UI屏幕截图，其中Target字段为来自身份命名空间的电子邮件。](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
-   XDM配置文件架构与 [!DNL Mailchimp Tags] 将如下所示： | 源字段 | 目标字段 | 必需 | | — | — | — | |`IdentityMap: Email`|`Identity: Email`| 是 |
+   XDM配置文件架构与 [!DNL Mailchimp Tags] 将如下所示： | Source字段 | 目标字段 | 必需 | | — | — | — | |`IdentityMap: Email`|`Identity: Email`| 是 |
 
    下面显示了具有已完成映射的示例：
    ![显示字段映射的平台UI屏幕快照示例。](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)

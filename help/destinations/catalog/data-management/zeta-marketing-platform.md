@@ -3,7 +3,7 @@ title: Zeta营销平台
 description: Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有数据和AI），可帮助您更有效地获取、发展和留住客户。
 hide: true
 hidefromtoc: true
-source-git-commit: bf553371316d9d9cb368fc4d1be14196201ef680
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1352'
 ht-degree: 1%
@@ -62,9 +62,9 @@ Zeta Marketing Platform (ZMP)是一个基于云的系统，借助智能（专有
 此部分介绍可将哪种类型的受众导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | X | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | X | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

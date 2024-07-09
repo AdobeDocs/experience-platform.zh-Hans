@@ -3,7 +3,8 @@ title: Acxiom数据增强
 description: 使用此连接器可在Real-Time CDP中将第一方Adobe配置文件激活到Acxiom，以便跨营销渠道扩充和使用。 然后，您可以使用Acxiom源导入具有增强数据的用户档案，并在Real-Time CDP中使用这些用户档案。
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta 版
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1346'
 ht-degree: 2%
@@ -53,10 +54,10 @@ ht-degree: 2%
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 |-----------------------------|-----------|---------------------------------------------------------------------------------------------------------------------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | x | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | x | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -143,14 +144,14 @@ ht-degree: 2%
 
 下表列出了目标端的属性，这些属性由Acxiom处理使用，客户可将配置文件属性映射到这些属性。 将这些元素视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
 
-| 目标字段 | 源描述 |
+| 目标字段 | Source描述 |
 |--------------|-------------------------------------------------------------|
 | name | 此 `person.name.fullName` Experience Platform值。 |
 | firstName | 此 `person.name.firstName` Experience Platform值。 |
 | 姓氏 | 此 `person.name.lastName` Experience Platform值。 |
 | address1 | 此 `mailingAddress.street1` Experience Platform值。 |
 | address2 | 此 `mailingAddress.street2` Experience Platform值。 |
-| city | 此 `mailingAddress.city` Experience Platform值。 |
+| 城市 | 此 `mailingAddress.city` Experience Platform值。 |
 | state | 此 `mailingAddress.state` Experience Platform值。 |
 | zip | 此 `mailingAddress.postalCode` Experience Platform值。 |
 

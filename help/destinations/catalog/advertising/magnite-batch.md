@@ -4,7 +4,7 @@ description: 使用此目标可将AdobeCDP受众批量交付到Magnite流平台�
 badgeBeta: label="Beta 版" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: 0e6d95e2f68d97805af439d91b4a53230eaf773f
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 1%
@@ -77,7 +77,7 @@ Adobe Real-Time CDP受众可以通过两种方式交付到Magnite：流式平台
 | 受众来源 | 支持 | 描述 |
 |-----------------------------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

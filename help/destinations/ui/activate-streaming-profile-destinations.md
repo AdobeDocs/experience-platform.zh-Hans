@@ -4,10 +4,10 @@ type: Tutorial
 description: 了解如何通过将受众发送到基于个人资料的流目标来激活您在Adobe Experience Platform中的受众数据。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: 6b186030c66598cddcdfcf509b8863e10d4fd0a7
 workflow-type: tm+mt
-source-wordcount: '763'
-ht-degree: 0%
+source-wordcount: '764'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 本文适用于以下三个目标：
 
 * [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
-* [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [Azure 事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 * [HTTP API目标](/help/destinations/catalog/streaming/http-destination.md).
 
 ## 先决条件 {#prerequisites}
@@ -57,8 +57,8 @@ ht-degree: 0%
 
 您可以从多种类型的受众中进行选择，具体取决于其来源：
 
-* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [分段文档](../../segmentation/ui/overview.md) 以了解更多详细信息。
-* **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/overview.md#import-audience).
+* **[!UICONTROL 分段服务]**：分段服务在Experience Platform中生成的受众。 请参阅 [Audience Portal文档](../../segmentation/ui/audience-portal.md) 以了解更多详细信息。
+* **[!UICONTROL 自定义上传]**：在Experience Platform之外生成的受众，以CSV文件形式上传到Platform。 要了解有关外部受众的更多信息，请参阅关于以下内容的文档： [导入受众](../../segmentation/ui/audience-portal.md#import-audience).
 * 其他类型的受众，源自其他Adobe解决方案，例如 [!DNL Audience Manager].
 
 ![突出显示激活工作流选择受众步骤中复选框选择的图像。](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 1. 要添加更多字段，请重复步骤1至3，然后选择 **[!UICONTROL 下一个]**.
 
-## 审核 {#review}
+## 审查 {#review}
 
 在 **[!UICONTROL 审核]** 页面上，您可以看到选择的摘要。 选择 **[!UICONTROL 取消]** 来打破气流， **[!UICONTROL 返回]** 以修改设置，或者 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 

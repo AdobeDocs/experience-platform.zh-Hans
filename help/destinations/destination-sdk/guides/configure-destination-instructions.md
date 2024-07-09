@@ -2,7 +2,7 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 52be44ece950ee57a66a13ab7962907b2b7c0fb1
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '865'
 ht-degree: 0%
@@ -279,10 +279,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建区段，并将区段激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
-* [创建受众文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建受众文档页面](/help/segmentation/ui/audience-portal.md#create-audience)
 * [创建受众视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
-## 步骤7：发布目标 {#publish-destination}
+## 步骤7：Publish您的目标 {#publish-destination}
 
 >[!NOTE]
 >

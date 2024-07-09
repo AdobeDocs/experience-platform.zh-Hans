@@ -4,7 +4,7 @@ title: 使用分段服务API创建区段定义
 type: Tutorial
 description: 按照本教程了解如何使用Adobe Experience Platform分段服务API来开发、测试、预览和保存区段定义。
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: 9966385968540701f66acbb70c0810906650b7e1
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1066'
 ht-degree: 6%
@@ -15,7 +15,7 @@ ht-degree: 6%
 
 此文档提供了一个教程，介绍如何使用开发、测试、预览和保存区段定义。 [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
-有关如何使用用户界面构建区段定义的信息，请参阅 [区段生成器指南](../ui/overview.md).
+有关如何使用用户界面构建区段定义的信息，请参阅 [区段生成器指南](../ui/segment-builder.md).
 
 ## 快速入门
 
@@ -81,7 +81,7 @@ ht-degree: 6%
 
 样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本量：
 
-| 配置文件存储中的实体 | 样本量 |
+| 配置文件存储中的实体 | 样本大小 |
 | ------------------------- | ----------- |
 | 少于100万 | 完整数据集 |
 | 100万到2000万 | 100万 |

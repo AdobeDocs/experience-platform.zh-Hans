@@ -5,10 +5,10 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 使用 Adobe Experience Platform 生成的区段定义或外部来源，根据实时客户配置文件数据构建受众群体。
 feature: Segments
 role: User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 62a174e6f3b1bd1b0bc518ff7e5f236893e9e5d3
 workflow-type: tm+mt
-source-wordcount: '183'
-ht-degree: 36%
+source-wordcount: '185'
+ht-degree: 42%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 36%
    - [边缘分段](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
-   - [时间表](api/schedules.md)
+   - [计划](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
    - [区段作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
@@ -33,6 +33,7 @@ ht-degree: 36%
 - 分段UI {#ui}
    - [概述](ui/overview.md)
    - [受众仪表板](ui/audience-dashboard.md)
+   - [受众门户](ui/audience-portal.md)
    - [受众组合](ui/audience-composition.md)
    - [区段生成器](ui/segment-builder.md)
    - [帐户受众](ui/account-audiences.md)
@@ -48,7 +49,7 @@ ht-degree: 36%
       - [故障排除](ui/segment-match/troubleshooting.md)
 - [尊重同意](consents.md)
 - [多实体分段](multi-entity-segmentation.md)
-- 配置文件查询语言 {#pql}
+- Profile Query Language {#pql}
    - [概述](pql/overview.md)
    - [布尔函数](pql/boolean-functions.md)
    - [比较函数](pql/comparison-functions.md)
@@ -73,4 +74,4 @@ ht-degree: 36%
    - [强制区段遵守数据使用规定](tutorials/governance.md)
 - [常见问题解答](./faq.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
-- [Platform发行说明](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
+- [Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

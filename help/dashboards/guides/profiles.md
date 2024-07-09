@@ -4,10 +4,10 @@ title: 配置文件仪表板
 description: Adobe Experience Platform提供了一个功能板，通过该功能板，您可以查看有关贵组织的实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '4995'
-ht-degree: 0%
+source-wordcount: '4997'
+ht-degree: 9%
 
 ---
 
@@ -184,10 +184,10 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 为Adobe Experience Platform的所有新实例提供了默认构件加载，该构件会突出显示数据中最新的可用见解。 从一开始就在区段视图中预配置了以下构件。 有关构件用途和功能的完整详细信息见下文。
 
 * [[!UICONTROL 配置文件计数]](#profile-count)
-* [[!UICONTROL 配置文件计数更改]](#profile-count-change)
+* [[!UICONTROL 配置文件计数变化]](#profile-count-change)
 * [[!UICONTROL 配置文件计数变化趋势]](#profiles-count-change-trend)
-* [[!UICONTROL 按身份列出的配置文件]](#profiles-by-identity)
-* [[!UICONTROL 身份重叠]](#identity-overlap)
+* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 标识重叠]](#identity-overlap)
 
 >[!NOTE]
 >
@@ -195,17 +195,17 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ## Customer AI构件 {#customer-ai-profiles-widgets}
 
-Customer AI用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。 客户人工智能通过分析现有的消费者体验事件数据来预测 **流失或转化倾向分数**. 这些高精度的客户倾向模型允许进行更精确的分段和定位。 此 [得分分布](#customer-ai-distribution-of-scores) 和 [评分摘要](#customer-ai-scoring-summary) 分析会在您的受众中展示该划分。 它们会突出显示哪些用户档案具有高度/低度/中度的倾向性，以及它们在用户档案计数中的分布方式。
+Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。客户人工智能通过分析现有的消费者体验事件数据来预测 **流失或转化倾向分数**. 这些高精度的客户倾向模型允许进行更精确的分段和定位。 此 [得分分布](#customer-ai-distribution-of-scores) 和 [评分摘要](#customer-ai-scoring-summary) 分析会在您的受众中展示该划分。 它们会突出显示哪些用户档案具有高度/低度/中度的倾向性，以及它们在用户档案计数中的分布方式。
 
-* [[!UICONTROL 客户人工智能评分摘要]](#customer-ai-scoring-summary)
-* [[!UICONTROL 得分的客户人工智能分布]](#customer-ai-distribution-of-scores)
+* [[!UICONTROL 客户人工智能评分汇总]](#customer-ai-scoring-summary)
+* [[!UICONTROL 客户人工智能分数分布]](#customer-ai-distribution-of-scores)
 
-### [!UICONTROL 得分的客户人工智能分布] {#customer-ai-distribution-of-scores}
+### [!UICONTROL 客户人工智能分数分布] {#customer-ai-distribution-of-scores}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_distributionOfScores"
->title="得分分布"
->abstract="此构件按倾向分数以5%的增量显示用户档案总数的分布情况。 配置文件计数的分布由AI模型和所选的合并策略确定。 您可以从小组件标题下的下拉菜单中更改AI模型。"
+>title="分数分布"
+>abstract="该构件通过倾向打分（以 5% 的增量）功能显示配置文件总数的分布。配置文件计数的分布由 AI 模型和所选的合并策略决定。您可以从构件标题下的下拉菜单中更改 AI 模型。"
 
 此 [!UICONTROL 得分的客户人工智能分布] 构件按倾向分数对配置文件总数进行分类。 用户档案计数的分布由AI模型和选定的合并策略确定，然后以5%的增量进行可视化以指示其倾向。 沿Y轴提供用户档案计数，沿X轴提供倾向分数。
 
@@ -229,12 +229,12 @@ Customer AI用于生成自定义倾向分数，如个人档案大规模的流失
 
 有关客户人工智能的更多信息，请访问 [探索见解UI指南](../../intelligent-services/customer-ai/user-guide/discover-insights.md).
 
-### [!UICONTROL 客户人工智能评分摘要] {#customer-ai-scoring-summary}
+### [!UICONTROL 客户人工智能评分汇总] {#customer-ai-scoring-summary}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_scoringSummary"
->title="评分摘要"
->abstract="此构件显示已评分用户档案的总数，并将其分类为包含高、中和低倾向的分段。 圆环图说明了高、中和低倾向性总用户档案的比例组成。"
+>title="评分汇总"
+>abstract="该构件会显示经过评分的配置文件的总数，并将其分类为包含高、中、低倾向的存储桶。圆环图说明了高、中、低倾向的总体配置文件的比例构成。"
 
 此构件显示已评分的用户档案总数，并将它们分类为分别包含高、中和低倾向性的绿色、黄色和红色存储桶。 圆环图说明了高、中和低倾向性之间用户档案的比例组成。 用户档案符合75岁以上的高倾向性、25至74岁之间的中倾向性和24岁以下的低倾向性条件。 图例指示颜色代码和倾向性阈值。 当光标悬停在圆环图的相应部分上时，会在对话框中显示高、中和低倾向的配置文件计数。
 
@@ -260,16 +260,16 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 * [[!UICONTROL 配置文件计数]](#profile-count)
 * [[!UICONTROL 配置文件计数趋势]](#profile-count-trend)
-* [[!UICONTROL 配置文件计数更改]](#profile-count-change)
+* [[!UICONTROL 配置文件计数变化]](#profile-count-change)
 * [[!UICONTROL 配置文件计数变化趋势]](#profiles-count-change-trend)
 * [[!UICONTROL 按身份列出的配置文件计数变化趋势]](#profiles-count-change-trend-by-identity)
-* [[!UICONTROL 按身份列出的配置文件]](#profiles-by-identity)
-* [[!UICONTROL 身份重叠]](#identity-overlap)
-* [[!UICONTROL 单一身份配置文件]](#single-identity-profiles)
+* [[!UICONTROL 按标识列出的配置文件]](#profiles-by-identity)
+* [[!UICONTROL 标识重叠]](#identity-overlap)
+* [[!UICONTROL 单一标识配置文件]](#single-identity-profiles)
 * [[!UICONTROL 按身份列出的单一身份配置文件]](#single-identity-profiles-by-identity)
 * [[!UICONTROL 未分段的配置文件]](#unsegmented-profiles)
-* [[!UICONTROL 未分段配置文件变化趋势]](#unsegmented-profiles-change-trend)
-* [[!UICONTROL 按身份划分的未分段配置文件]](#unsegmented-profiles-by-identity)
+* [[!UICONTROL 未分段的配置文件变化趋势]](#unsegmented-profiles-change-trend)
+* [[!UICONTROL 按标识列出的未分段的配置文件]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL 受众]](#audiences)
 * [[!UICONTROL 映射到目标状态的受众]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL 受众规模]](#audiences-size)
@@ -280,8 +280,8 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilecount"
->title="轮廓计数"
->abstract="此构件显示拍摄快照时配置文件存储中合并的配置文件总数。 数字取决于应用于配置文件数据的所选合并策略。"
+>title="配置文件计数"
+>abstract="此构件显示在拍摄快照时配置文件存储中合并配置文件的总数。该数量取决于应用于您的配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数]** 小组件显示拍摄快照时配置文件存储中合并的配置文件总数。 此数字是所选合并策略应用于您的配置文件数据的结果，用于将配置文件片段合并在一起，为每个片段形成一个单独的配置文件。
 
@@ -301,12 +301,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![配置文件计数趋势构件。](../images/profiles/profile-count-trend.png)
 
-### [!UICONTROL 配置文件计数更改] {#profile-count-change}
+### [!UICONTROL 配置文件计数变化] {#profile-count-change}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilescountchange"
->title="轮廓计数变化"
->abstract="此构件显示合并的配置文件总数 **已添加** 到配置文件存储区。 数字取决于应用于配置文件数据的所选合并策略。"
+>title="配置文件计数变化"
+>abstract="此构件显示在上次拍摄快照时&#x200B;**添加到**&#x200B;配置文件存储的合并配置文件的总数。该数量取决于应用于您的配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数更改]** 构件显示自上次快照以来添加到配置文件存储区的合并配置文件数。 此数字是所选合并策略应用于您的配置文件数据的结果，用于将配置文件片段合并在一起，为每个片段形成一个单独的配置文件。 您可以使用下拉选择器查看过去30天、90天或12个月内添加的用户档案数。
 
@@ -320,8 +320,8 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesaddedtrend"
->title="轮廓计数变化趋势"
->abstract="此构件显示过去30天、90天或12个月每日添加到配置文件存储区的合并配置文件数。 该数字还取决于应用于配置文件数据的所选合并策略。"
+>title="配置文件计数变化趋势"
+>abstract="此构件显示在过去 30 天、90 天或 12 个月内每天添加到配置文件存储的合并配置文件的数量。该数量也取决于应用于您的配置文件数据的所选合并策略。"
 
 此 **[!UICONTROL 配置文件计数变化趋势]** 构件显示过去30天、90天或12个月每日添加到配置文件存储区的合并配置文件总数。 此数字在每天拍摄快照时都会更新，因此，如果您要将配置文件摄取到Platform，则在拍摄下一个快照之前不会反映配置文件数。 添加的配置文件计数是选定的合并策略应用于您的配置文件数据的结果，这样可以将配置文件片段合并在一起，形成每个人的单个配置文件。
 
@@ -345,12 +345,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![配置文件计数按身份小部件变化趋势。](../images/profiles/profiles-count-change-trend-by-identity.png)
 
-### [!UICONTROL 按身份列出的配置文件] {#profiles-by-identity}
+### [!UICONTROL 按标识列出的配置文件] {#profiles-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesbyidentity"
->title="按标识列出的轮廓"
->abstract="此构件按身份显示配置文件存储中所有合并配置文件的细分。"
+>title="按标识列出的配置文件"
+>abstract="此构件按标识显示您的配置文件存储中所有合并配置文件的明细。"
 
 此 **[!UICONTROL 按身份列出的配置文件]** 构件显示您的配置文件存储中所有合并配置文件的身份细分。 按身份划分的配置文件总数（也就是为每个命名空间显示的值相加）可能高于合并的配置文件总数，因为一个配置文件可能具有多个与其关联的命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个人客户关联。
 
@@ -366,12 +366,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 要了解有关身份的详细信息，请参阅 [Adobe Experience Platform Identity服务文档](../../identity-service/home.md).
 
-### [!UICONTROL 身份重叠] {#identity-overlap}
+### [!UICONTROL 标识重叠] {#identity-overlap}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_identityoverlap"
 >title="标识重叠"
->abstract="此构件使用维恩图显示配置文件存储中包含两个选定身份的配置文件的重叠。"
+>abstract="此构件使用维恩图显示您的配置文件存储中包含两个选定标识的配置文件的重叠。"
 
 此 **[!UICONTROL 身份重叠]** 构件使用维恩图或设置图显示配置文件存储中包含两个选定身份的配置文件的重叠。
 
@@ -383,12 +383,12 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 ![突出显示具有身份重叠小部件的配置文件仪表板概述。](../images/profiles/identity-overlap.png)
 
-### [!UICONTROL 单一身份配置文件] {#single-identity-profiles}
+### [!UICONTROL 单一标识配置文件] {#single-identity-profiles}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_singleidentityprofiles"
->title="单一标识轮廓"
->abstract="此构件提供贵组织仅有一种类型创建其身份的ID类型的配置文件的计数。 此ID类型可以是电子邮件或ECID。"
+>title="单一标识配置文件"
+>abstract="此构件提供您组织的只有一种类型的 ID 类型创建其标识的配置文件的计数。此 ID 类型可以是电子邮件或 ECID。"
 
 此 [!UICONTROL 单一身份配置文件] 小组件提供贵组织只有一种类型的ID类型来创建其身份的配置文件的计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最新快照中包含的数据生成的。
 
@@ -406,25 +406,25 @@ Adobe提供了多个标准构件，可用于可视化与配置文件数据相关
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofiles"
->title="未客户细分的轮廓"
->abstract="此构件提供未附加到任何受众的所有配置文件总数，表示在您的组织内激活配置文件的机会。"
+>title="未分段的配置文件"
+>abstract="此构件提供未附加到任何受众的所有配置文件的总数，并表示在整个组织中激活配置文件的机会。"
 
 此 [!UICONTROL 未分段的配置文件] 构件提供未附加到任何受众的所有用户档案的总数。 生成的数字与上一个快照时是准确的，表示在您的组织内激活配置文件的机会。 它还表示有机会删除未提供适当ROI的用户档案。
 
 ![未分段的配置文件小部件。](../images/profiles/unsegmented-profiles.png)
 
-### [!UICONTROL 未分段配置文件变化趋势] {#unsegmented-profiles-change-trend}
+### [!UICONTROL 未分段的配置文件变化趋势] {#unsegmented-profiles-change-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="未分段的配置文件趋势"
->abstract="此构件以线形图形式呈现给定时间段内未附加到任何受众的用户档案数量。 未附加到受众的用户档案趋势可以在30天、90天和12个月的时段内可视化。"
+>abstract="此构件为给定时间段内未附加到任何受众的配置文件数量提供了一个折线图说明。可以在 30 天、90 天和 12 个月的时间段内查看未附加到任何受众的配置文件的趋势。"
 
 此 [!UICONTROL 未分段配置文件变化趋势] 构件使用折线图说明自上次每日快照以来添加的、未附加到任何受众的用户档案数。 未附加到任何受众的用户档案的变化趋势可以在30天、90天和12个月的时段内可视化。 从小组件中的下拉菜单中选择时间段。 轮廓计数反映在y轴上，时间反映在x轴上。
 
 ![未分段配置文件会更改趋势构件。](../images/profiles/unsegmented-profiles-change-trend.png)
 
-### [!UICONTROL 按身份划分的未分段配置文件] {#unsegmented-profiles-by-identity}
+### [!UICONTROL 按标识列出的未分段的配置文件] {#unsegmented-profiles-by-identity}
 
 >[!NOTE]
 >
@@ -506,7 +506,7 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ![带有受众名称的受众大小小部件以及突出显示的查看所有受众文本。](../images/profiles/audiences-size-view-all-audiences.png)
 
-请参阅文档以了解有关 [[!UICONTROL 受众] [!UICONTROL  浏览] 选项卡](../../segmentation/ui/overview.md#browse).
+有关受众详细信息的更多信息，请参阅 [Audience Portal文档](../../segmentation/ui/audience-portal.md).
 
 ### [!UICONTROL 按合并策略列出的受众重叠] {#audience-overlap-by-merge-policy}
 

@@ -4,7 +4,7 @@ title: 激活概述
 type: Tutorial
 description: 了解如何将Adobe Experience Platform中的受众激活到各种类型的目标。
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 1%
@@ -52,7 +52,7 @@ Adobe Experience Platform支持各种目标。 受众激活工作流程因目标
 
 ### 从受众详细信息页面激活受众 {#activate-audience-details}
 
-您可以从受众详细信息页面将受众激活到目标。 请参阅 [受众详细信息](../../segmentation/ui/overview.md#audience-details) 以了解更多信息。
+您可以从受众详细信息页面将受众激活到目标。 请参阅 [受众详细信息](../../segmentation/ui/audience-portal.md#audience-details) 以了解更多信息。
 
 根据所选目标，请按照以下文章中所述的步骤完成激活工作流：
 

@@ -3,7 +3,7 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: （文件）OracleEloqua连接
 description: oracleEloqua是一个软件即服务(SaaS)平台，由Oracle提供，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和潜在客户拓展。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 2%
@@ -20,10 +20,10 @@ ht-degree: 2%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

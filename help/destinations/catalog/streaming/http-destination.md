@@ -4,10 +4,10 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行任何其他您可能需要的操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: e9ed96a15d6bba16165c67e53467b7f51a866014
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '2639'
-ht-degree: 0%
+ht-degree: 8%
 
 ---
 
@@ -34,9 +34,9 @@ HTTP端点可以是客户自己的系统或第三方解决方案。
 此部分介绍哪些类型的受众可以导出到此目标。
 
 | 受众来源 | 支持 | 描述 |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -121,7 +121,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_clientcredentialstype"
 >title="客户端凭据类型"
->abstract="选择 **正文表单已编码** 在请求正文中包含客户端ID和客户端密码，或者 **基本授权** 在授权标头中包含客户端ID和客户端密码。 查看文档中的示例。"
+>abstract="选择&#x200B;**编码的正文形式**&#x200B;以在请求正文中包含客户端 ID 和客户端密码，或选择&#x200B;**基本授权**&#x200B;以在授权标头中包含客户端 ID 和客户端密码。查看文档中的示例。"
 
 #### 持有者令牌身份验证 {#bearer-token-authentication}
 
@@ -169,27 +169,27 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_headers"
 >title="标头"
->abstract="输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`"
+>abstract="按照以下格式输入要包含在目标调用中的任何自定义标头：`header1:value1,header2:value2,...headerN:valueN`"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
->title="HTTP端点"
->abstract="要将配置文件数据发送到的HTTP端点的URL。"
+>title="HTTP 端点"
+>abstract="要将配置文件数据发送到的 HTTP 端点的 URL。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
 >title="包括区段名称"
->abstract="如果希望数据导出包含所导出受众的名称，请进行切换。 查看选中此选项的数据导出示例文档。"
+>abstract="如果您希望数据导出包括正在导出的受众的名称，请进行切换。在选中此选项后查看数据导出示例的文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="包括区段时间戳"
->abstract="如果希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，请进行切换。 查看选中此选项的数据导出示例文档。"
+>abstract="如果您希望数据导出包括受众创建时间和更新时间的 Unix 时间戳，以及受众映射到用于激活的目标时的 Unix 时间戳，请进行切换。在选中此选项后查看数据导出示例的文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
 >title="查询参数"
->abstract="或者，您也可以向HTTP端点URL添加查询参数。 将您使用的查询参数设置为如下格式： `parameter1=value&parameter2=value`."
+>abstract="（可选）您可以将查询参数添加到 HTTP 端点 URL。格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -199,7 +199,7 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 描述]**：输入可帮助您将来识别此目标的描述。
 * **[!UICONTROL 标题]**：输入要包含在目标调用中的任何自定义标头，格式如下： `header1:value1,header2:value2,...headerN:valueN`.
 * **[!UICONTROL HTTP端点]**：要将配置文件数据发送到的HTTP端点的URL。
-* **[!UICONTROL 查询参数]**：或者，您也可以将查询参数添加到HTTP端点URL。 将您使用的查询参数设置为如下格式： `parameter1=value&parameter2=value`.
+* **[!UICONTROL 查询参数]**：或者，您也可以将查询参数添加到HTTP端点URL。 格式化您使用的查询参数，如下所示：`parameter1=value&parameter2=value`。
 * **[!UICONTROL 包括区段名称]**：如果您希望数据导出包含所导出受众的名称，请进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 * **[!UICONTROL 包括区段时间戳]**：如果您希望数据导出包括创建和更新受众时的UNIX时间戳，以及将受众映射到目标以供激活时的UNIX时间戳，则可以进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 
@@ -209,7 +209,7 @@ curl --location --request POST 'https://some-api.com/token' \
 
 完成提供目标连接的详细信息后，选择 **[!UICONTROL 下一个]**.
 
-## 将受众激活到此目标 {#activate}
+## 激活此目标的受众 {#activate}
 
 >[!IMPORTANT]
 > 

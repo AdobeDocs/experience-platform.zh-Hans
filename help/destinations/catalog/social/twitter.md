@@ -2,7 +2,7 @@
 title: twitter自定义受众连接
 description: 在Twitter中定位现有关注者和客户，并通过激活在Adobe Experience Platform中构建的受众来创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '862'
 ht-degree: 5%
@@ -28,7 +28,7 @@ ht-degree: 5%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| device_id | IDFA/AdID/Android ID | Adobe Experience Platform支持Google广告ID (GAID)和广告商Apple ID (IDFA)。 请在中相应地映射源架构中的这些命名空间和/或属性 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 目标激活工作流的。 |
+| device_id | IDFA/AdID/Android ID | Adobe Experience Platform支持Google Advertising ID (GAID)和广告商Apple ID (IDFA)。 请在中相应地映射源架构中的这些命名空间和/或属性 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 目标激活工作流的。 |
 | 电子邮件 | 用户的电子邮件地址 | 请将纯文本电子邮件地址和SHA256散列电子邮件地址映射到此字段。 当源字段包含未哈希处理的属性时，请检查 **[!UICONTROL 应用转换]** 选项，拥有 [!DNL Platform] 在激活时自动散列数据。 如果您在上传到Adobe Experience Platform之前对客户电子邮件地址进行了哈希处理，请注意，必须使用SHA256对这些身份进行哈希处理，而不需使用Salt。 |
 
 {style="table-layout:auto"}
@@ -37,10 +37,10 @@ ht-degree: 5%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

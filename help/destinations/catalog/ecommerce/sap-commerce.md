@@ -2,10 +2,11 @@
 title: SAP Commerce连接
 description: 使用SAP Commerce目标连接器更新SAP帐户中的客户记录。
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: 9bb2cf5adcd48f9d111ba04b8c93129367dd12f8
+exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '2245'
-ht-degree: 2%
+source-wordcount: '2246'
+ht-degree: 3%
 
 ---
 
@@ -44,7 +45,7 @@ ht-degree: 2%
 #### 生成服务密钥 {#prerequisites-service-key}
 
 * 此 [!DNL SAP Commerce] 服务密钥允许您访问 [!DNL SAP Subscription Billing] 通过Experience Platform的API。 请参阅 [!DNL SAP Commerce] [使用客户端ID和客户端密钥创建服务密钥](https://help.sap.com/docs/CLOUD_TO_CASH_OD/1216e7b79c984675b0a6f0005e351c74/87c11a0f5dc3494eaf3baa355925c030.html#create-a-service-key-with-client-id-and-client-secret) 创建服务密钥。 [!DNL SAP Commerce] 要求您满足以下条件：
-   * 客户端ID
+   * 客户端 ID
    * 客户端密码
    * URL。 URL模式如下所示： `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. 此值稍后将用于获取 `Region` 和 `Endpoint`.
 
@@ -93,9 +94,9 @@ ht-degree: 2%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 客户端ID | 的值 `clientId` 服务密钥。 |
+| 客户端 ID | 的值 `clientId` 服务密钥。 |
 | 客户端密码 | 的值 `clientSecret` 服务密钥。 |
-| 端点 | 的值 `url` 在服务密钥中，它类似于 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
+| 终结点 | 的值 `url` 在服务密钥中，它类似于 `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
 | 区域 | 您的数据中心位置。 此区域出现在 `url` 且其值类似于 `eu10` 或 `us10`. 例如，如果 `url` 是 `https://eu10.revenue.cloud.sap/api` 您需要 `eu10`. |
 
 ## 护栏 {#guardrails}
@@ -118,10 +119,10 @@ ht-degree: 2%
 
 此目标还支持激活下表所述的受众。
 
-| 受众类型 | 描述 |
----------|----------|
+| 受众类型 | 支持 | 描述 |
+| ------------- | --------- | ----------- |
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

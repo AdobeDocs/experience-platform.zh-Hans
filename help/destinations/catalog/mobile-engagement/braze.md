@@ -3,7 +3,7 @@ keywords: 移动设备；炫耀；消息传送；
 title: 钎焊连接
 description: Braze是一个全面的客户参与平台，可为客户与他们所喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1125'
 ht-degree: 2%
@@ -48,10 +48,10 @@ ht-degree: 2%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -115,18 +115,18 @@ ht-degree: 2%
 
 ![钎焊目标添加映射](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
-在 [!UICONTROL 源字段] 部分，单击空字段旁边的箭头按钮。
+在 [!UICONTROL Source字段] 部分，单击空字段旁边的箭头按钮。
 
-![钎焊目标源映射](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
+![Braze目标Source映射](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
 在 [!UICONTROL 选择源字段] 窗口中，您可以选择以下两种类别的XDM字段：
 * [!UICONTROL 选择属性]：使用此选项将XDM架构中的特定字段映射到 [!DNL Braze] 属性。
 
-![钎焊目标映射源属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
+![钎焊目标映射Source属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
 * [!UICONTROL 选择身份命名空间]：使用此选项映射 [!DNL Platform] 将身份命名空间更改为 [!DNL Braze] 命名空间。
 
-![钎焊目标映射源命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
+![钎焊目标映射Source命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
 选择源字段，然后单击 **[!UICONTROL 选择]**.
 

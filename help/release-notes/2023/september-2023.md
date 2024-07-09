@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform 2023年9月版发行说明。
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '2263'
 ht-degree: 26%
@@ -98,7 +98,7 @@ Experience Platform提供了一套数据卫生功能，允许您通过以编程�
 
 | 功能 | 描述 |
 | --- | --- |
-| [!BADGE 测试版]{type=Informative}记录删除（限量发布） | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
+| [!BADGE Beta]{type=Informative}记录删除（限量发布） | 使用Adobe Experience Platform中的高级数据生命周期管理功能跨所有数据存储管理您的数据生命周期，以满足客户承诺和许可协议要求：自动数据集到期和记录删除。<br>借助自动数据集过期功能，您可以删除整个数据集，并设置要删除数据集的日期和时间。<br>通过记录删除，您可以通过定向各个消费者用户档案的主要身份来删除这些用户档案。 您可以通过UI或CSV/JSON文件上传分别提供主身份。 请参阅 [记录删除文档](../../hygiene/ui/record-delete.md) 了解更多信息 |
 | 数据集到期 | 通过自动数据集过期，最大程度地减少您的数据并控制您的许可协议。 通过删除整个数据集并设置要删除数据集的日期和时间来减少数据量。 请参阅 [数据集过期文档](../../hygiene/ui/dataset-expiration.md) 以了解更多信息。 |
 
 {style="table-layout:auto"}
@@ -134,7 +134,7 @@ Add these to release notes as they go out
 | 功能 | 描述 |
 | ----------- | ----------- |
 | Real-Time CDP中的数据导出 | 此 [数据集导出](../../destinations/ui/export-datasets.md) 功能现已正式发布。 请参阅 [您可以根据Experience Platform应用程序导出哪些数据集](../../destinations/ui/export-datasets.md#datasets-to-export) 您购买了，并查看 [导出数据集的护栏](/help/destinations/guardrails.md#dataset-exports). |
-| （测试版）支持导出数组类型对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关中功能的更多信息，请参阅 [文档](../../destinations/ui/export-arrays-calculated-fields.md). |
+| (Beta)支持导出数组类型的对象 | 将原始值（字符串、int或布尔值）的数组作为平面架构文件导出到云存储目标。 有关中功能的更多信息，请参阅 [文档](../../destinations/ui/export-arrays-calculated-fields.md). |
 | Destination SDK中的动态下拉列表选择器 | 通过Destination SDK创建目标时，您现在可以使用 [动态下拉列表选择器](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) 使用从API检索的值填充下拉选择器的字段。 |
 
 **修复和增强** {#destinations-fixes-and-enhancements}
@@ -176,7 +176,7 @@ XDM 是一种开源规范，可为导入 Adobe Experience Platform 的数据提�
 | --- | --- | --- |
 | 扩展 | [!UICONTROL AJO实体字段] | 此 [[!UICONTROL 多变体的标志]](https://github.com/adobe/xdm/pull/1774/files) 已添加至 [!UICONTROL AJO实体字段] 以确定变体是否为多变体。 |
 | 数据类型 | [!UICONTROL 产品列表项] | [[!UICONTROL 返回项目]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包含“退货授权信息”。 |
-| 数据类型 | 订购 | [[!UICONTROL 返回信息]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包括发放的RMA（退货授权）。 |
+| 数据类型 | 订单 | [[!UICONTROL 返回信息]](https://github.com/adobe/xdm/pull/1773/files) 添加了，以包括发放的RMA（退货授权）。 |
 
 {style="table-layout:auto"}
 
@@ -199,7 +199,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集： [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学工作区或将其摄取到实时客户档案中。
+查询服务允许您使用标准 SQL 查询 Adobe Experience Platform [!DNL Data Lake] 中的数据。您可以从以下位置连接任何数据集： [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、数据科学Workspace，或将其摄取到实时客户档案中。
 
 **更新的功能**
 
@@ -220,7 +220,7 @@ Adobe Experience Platform 身份服务通过跨设备和系统桥接身份，使
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 可自定义的列 | 您现在可以使用可缩放的列来自定义受众门户的布局。 有关此功能的详细信息，请阅读 [分段UI指南](../../segmentation/ui/overview.md#customize). |
+| 可自定义的列 | 您现在可以使用可缩放的列来自定义受众门户的布局。 有关此功能的详细信息，请阅读 [受众门户概述](../../segmentation/ui/audience-portal.md#customize). |
 | 更新频率细分 | 您现在可以查看组织中受众更新频率的细分。 有关此功能的详细信息，请阅读 [分段UI指南](../../segmentation/ui/overview.md#browse). |
 
 要了解有关分段服务的更多信息，请阅读 [分段服务概述](../../segmentation/home.md).

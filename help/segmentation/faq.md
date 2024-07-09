@@ -2,7 +2,7 @@
 title: 受众常见问题解答
 description: 了解有关受众的常见问题解答以及其他与分段相关的概念。
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 147dded9f5eb6c2e153a80fa80b18e9fe96a6faa
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '4096'
 ht-degree: 0%
@@ -239,11 +239,11 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 我可以创建的文件夹数量是否存在限制？
 
-不可以，您可以创建的文件夹数量没有限制。 有关文件夹的详细信息，请阅读 [受众库存部分](./ui/overview.md#folders) 分段服务UI概述的。
+不可以，您可以创建的文件夹数量没有限制。 有关文件夹的详细信息，请阅读 [受众库存部分](./ui/audience-portal.md#folders) 分段服务UI概述的。
 
 ### 可添加到受众的标记数量是否存在限制？
 
-不可以，可以向受众添加的标记数量没有限制。 有关标记的更多信息，请阅读 [受众库存部分](./ui/overview.md#tags) 分段服务UI概述的。
+不可以，可以向受众添加的标记数量没有限制。 有关标记的更多信息，请阅读 [受众库存部分](./ui/audience-portal.md#tags) 分段服务UI概述的。
 
 ### 我可以创建的标记数量是否存在限制？
 
@@ -251,7 +251,7 @@ Audience Portal和Audience Composition适用于所有Real-Time CDP Prime和Ultim
 
 ### 在父文件夹中按名称或标记搜索受众时，我是否还可以搜索相关的子文件夹？
 
-否，不支持此行为。 但是，您可以更改受众库存视图来查看 **所有受众**，然后在所有文件夹中搜索。 有关在受众清单中使用搜索的详细信息，请阅读 [搜索部分](./ui/overview.md#search) 分段服务UI概述的。
+否，不支持此行为。 但是，您可以更改受众库存视图来查看 **所有受众**，然后在所有文件夹中搜索。 有关在受众清单中使用搜索的详细信息，请阅读 [搜索部分](./ui/audience-portal.md#search) 分段服务UI概述的。
 
 ### 创建受众时，我能否自动将其分配到文件夹中？
 

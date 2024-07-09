@@ -3,7 +3,7 @@ keywords: 自定义个性化；目标；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 9%
@@ -23,7 +23,7 @@ ht-degree: 9%
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，您必须使用 [边缘网络服务器API](/help/server-api/overview.md) 配置 **[!UICONTROL 自定义个性化]** 基于属性的个性化的目标。 所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
+>配置文件属性可能包含敏感数据。 要保护此数据，您必须使用 [Edge Network服务器API](/help/server-api/overview.md) 配置 **[!UICONTROL 自定义Personalization]** 基于属性的个性化的目标。 所有服务器API调用必须在 [已验证的上下文](../../../server-api/authentication.md).
 >
 ><br>如果您已在使用Web SDK或Mobile SDK进行集成，则可以通过添加服务器端集成来通过服务器API检索属性。
 >
@@ -45,10 +45,10 @@ ht-degree: 9%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -156,11 +156,11 @@ alloy("sendEvent", {
   });
 ```
 
-### 的示例响应 [!UICONTROL 使用属性进行自定义个性化]
+### 的示例响应 [!UICONTROL 具有属性的自定义Personalization]
 
-使用时 **[!UICONTROL 使用属性进行自定义个性化]**，则API响应将与以下示例类似。
+使用时 **[!UICONTROL 具有属性的自定义Personalization]**，则API响应将与以下示例类似。
 
-两者之间的差异 **[!UICONTROL 使用属性进行自定义个性化]** 和 **[!UICONTROL 自定义个性化]** 是包含 `attributes` 部分。
+两者之间的差异 **[!UICONTROL 具有属性的自定义Personalization]** 和 **[!UICONTROL 自定义Personalization]** 是包含 `attributes` 部分。
 
 ```json
 [

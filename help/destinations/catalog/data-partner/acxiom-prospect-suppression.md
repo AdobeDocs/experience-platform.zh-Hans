@@ -1,9 +1,10 @@
 ---
-title: Acxiom潜在客户抑制
+title: Acxiom Prospect-Suppression
 description: 将您的第一方受众导出到Acxiom目标，以允许Acxiom抑制已知或转换的客户。 然后，使用Acxiom源连接器从Acxiom中摄取并激活潜在客户列表，并删除已知或转换的客户。
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta 版
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1466'
 ht-degree: 2%
@@ -55,10 +56,10 @@ Acxiom的服务将搜索文件、检索该文件并将其与其他选择标准�
 
 此部分介绍可将哪种类型的受众导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 |-----------------------------|-----------|---------------------------------------------------------------------------------------------------------------------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | x | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | x | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -143,14 +144,14 @@ Acxiom的服务将搜索文件、检索该文件并将其与其他选择标准�
 
 处理需要名称和地址元素，但并非所有元素都需要提供，请尽可能多地提供一些以帮助成功匹配。  下表列出了目标端的属性，这些属性由Acxiom处理使用，客户可将配置文件属性映射到这些属性。  这应被视为建议，因为并非所有元素都是必需的，并且源值将取决于帐户的需求。
 
-| 目标字段 | 源描述 |
+| 目标字段 | Source描述 |
 |--------------|-------------------------------------------------------------|
 | name | 此 `person.name.fullName` Experience Platform值。 |
 | firstName | 此 `person.name.firstName` Experience Platform值。 |
 | 姓氏 | 此 `person.name.lastName` Experience Platform值。 |
 | address1 | 此 `mailingAddress.street1` Experience Platform值。 |
 | address2 | 此 `mailingAddress.street2` Experience Platform值。 |
-| city | 此 `mailingAddress.city` Experience Platform值。 |
+| 城市 | 此 `mailingAddress.city` Experience Platform值。 |
 | state | 此 `mailingAddress.state` Experience Platform值。 |
 | zip | 此 `mailingAddress.postalCode` Experience Platform值。 |
 
@@ -164,7 +165,7 @@ Acxiom的服务将搜索文件、检索该文件并将其与其他选择标准�
 
 使用“复查”页可在提交之前查看数据流摘要
 
-![请查看](../../assets/catalog/data-partner/acxiom/image-destination-review.png)
+![审核](../../assets/catalog/data-partner/acxiom/image-destination-review.png)
 
 ## 验证数据导出 {#exported-data}
 

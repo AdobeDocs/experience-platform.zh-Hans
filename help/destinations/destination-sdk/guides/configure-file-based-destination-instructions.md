@@ -2,7 +2,7 @@
 description: 此页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 45ba0db386f065206f89ed30bfe7b0c1b44f6173
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '732'
 ht-degree: 0%
@@ -407,7 +407,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
    * [Amazon S3身份验证](../functionality/destination-configuration/customer-authentication.md#s3)
    * [Azure Blob](../functionality/destination-configuration/customer-authentication.md#blob)
    * [Azure数据湖存储](../functionality/destination-configuration/customer-authentication.md#adls)
-   * [Google云存储](../functionality/destination-configuration/customer-authentication.md#gcs)
+   * [Google 云存储](../functionality/destination-configuration/customer-authentication.md#gcs)
    * [使用SSH密钥进行SFTP身份验证](../functionality/destination-configuration/customer-authentication.md#sftp-ssh)
    * [使用密码的SFTP身份验证](../functionality/destination-configuration/customer-authentication.md#sftp-password)
 
@@ -420,10 +420,10 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建受众，并将受众激活到目标。 有关如何在Experience Platform中创建受众的说明，请参阅以下两个资源：
 
-* [创建受众 — 文档页面](/help/segmentation/ui/overview.md#create-segment)
+* [创建受众 — 文档页面](/help/segmentation/ui/audience-portal.md#create-audience)
 * [创建受众 — 视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
-## 步骤6：发布目标 {#publish-destination}
+## 步骤6：Publish您的目标 {#publish-destination}
 
 >[!NOTE]
 >

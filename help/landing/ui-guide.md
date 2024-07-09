@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience PlatformUI概述
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1795'
 ht-degree: 1%
@@ -75,7 +75,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ### 切换应用程序
 
-顶部导航右侧的下一个项目是 **应用程序切换器**，由 ![应用程序切换器](./images/user-guide/app-switcher-icon.png) 图标。 选择此图标后，您可以在组织有权访问的Adobe应用程序(如Experience Platform、Analytics、资源等)之间进行切换。
+顶部导航右侧的下一个项目是 **应用程序切换器**，由 ![应用程序切换器](./images/user-guide/app-switcher-icon.png) 图标。 选择此图标后，您可以在组织有权访问的Adobe应用程序(如Experience Platform、Analytics、Assets等)之间进行切换。
 
 ### 帮助
 
@@ -129,7 +129,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 此 **[!UICONTROL 配置文件]** 部分允许您浏览客户配置文件，查看配置文件量度，创建和管理合并策略，以及查看合并架构。 要了解有关使用 [!UICONTROL 配置文件] 部分，请阅读 [[!DNL Profile] 用户指南](../profile/ui/user-guide.md). 有关Real-time Customer Profile的更多信息，请参见 [Real-time Customer Profile概述](../profile/home.md).
 
-此 **[!UICONTROL 区段]** 部分允许您创建和管理区段定义。 要了解有关使用 [!UICONTROL 区段] 部分，请阅读 [分段用户指南](../segmentation/ui/overview.md). 欲知关于分段服务的更多信息，请参见 [分段服务概述](../segmentation/home.md).
+此 **[!UICONTROL 受众]** 部分允许您创建和管理区段定义。 要了解有关使用 [!UICONTROL 受众] 部分，请阅读 [分段用户指南](../segmentation/ui/overview.md). 欲知关于分段服务的更多信息，请参见 [分段服务概述](../segmentation/home.md).
 
 此 **[!UICONTROL 身份]** 部分允许您创建和管理身份命名空间。 欲知关于 [!UICONTROL 身份] 部分，包括有关身份命名空间以及如何在Platform UI中使用身份的信息，请参阅 [身份命名空间概述](../identity-service/features/namespaces.md).
 
@@ -141,7 +141,7 @@ Platform UI中的顶部导航栏显示您当前登录的组织，并提供几个
 
 ### [!UICONTROL 数据科学]
 
-此 **[!UICONTROL Notebooks]** 部分提供对JupyterLab的访问，它是一个交互式开发环境，允许您探索、分析和建模数据。 要了解有关使用笔记本部分的更多信息，请阅读 [JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md). 有关数据科学工作区的更多信息，请参阅 [数据科学工作区概述](../data-science-workspace/home.md)
+此 **[!UICONTROL Notebooks]** 部分提供对JupyterLab的访问，它是一个交互式开发环境，允许您探索、分析和建模数据。 要了解有关使用笔记本部分的更多信息，请阅读 [JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md). 有关数据科学Workspace的更多信息，请参阅 [数据科学Workspace概述](../data-science-workspace/home.md)
 
 此 **[!UICONTROL 模型]** 部分允许您使用机器学习和人工智能创建、开发、训练和调整模型以进行预测。 有关“模型”部分的更多信息，请参阅的教程 [训练和评估模型](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
 

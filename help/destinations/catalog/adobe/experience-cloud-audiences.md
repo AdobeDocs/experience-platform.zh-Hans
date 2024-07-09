@@ -3,7 +3,7 @@ title: Experience Cloud 受众
 description: 了解如何将Real-time Customer Data Platform中的受众共享到各种Experience Cloud应用程序。
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 188398e3483541ca482f5c1cfdce307160ada2da
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 使用此目标可将受众从Real-Time CDP激活到Audience Manager和Adobe Analytics。
 
-要将受众发送到Adobe Analytics，您需要Audience Manager许可证。 欲知更多详情，请参见 [Audience Analytics概述](https://experienceleague.adobe.com/docs/analytics/integration/audience-analytics/mc-audiences-aam.html?lang=zh-Hans).
+要将受众发送到Adobe Analytics，您需要Audience Manager许可证。 欲知更多详情，请参见 [Audience Analytics概述](https://experienceleague.adobe.com/docs/analytics/integration/audience-analytics/mc-audiences-aam.html?lang=en).
 
 要将受众发送到其他Adobe解决方案，请使用从Real-Time CDP到的直接连接 [Adobe Target](../personalization/adobe-target-connection.md)， [Adobe Advertising](../advertising/adobe-advertising-cloud-connection.md)， [Adobe Campaign](../email-marketing/adobe-campaign.md) 和 [Marketo Engage](../adobe/marketo-engage.md).
 
@@ -112,7 +112,7 @@ ht-degree: 2%
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
 | ECID | Experience Cloud ID | 表示ECID的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅以下文档： [ECID](/help/identity-service/features/ecid.md) 以了解更多信息。 |
-| GAID | Google广告ID | 可以将摄取到Real-Time CDP中以主要标识Google Advertising ID (GAID)的用户档案导出到此目标。 |
+| GAID | GOOGLE ADVERTISING ID | 提取到Real-Time CDP中以主要标识Google Advertising ID (GAID)的用户档案可导出到此目标。 |
 | IDFA | 广告商的Apple ID | 提取到Real-Time CDP的以广告商Apple ID (IDFA)为主要标识的用户档案可导出到此目标。 |
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | 摄取到Real-Time CDP并具有经过哈希处理的电子邮件地址的主要标识的用户档案，可导出到此目标。 |
 
@@ -122,10 +122,10 @@ ht-degree: 2%
 
 本节介绍可导出到此目标的受众类型。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+| ---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 

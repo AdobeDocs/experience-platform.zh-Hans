@@ -3,7 +3,7 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标记连接
 description: 将Adobe受众数据作为受众标记无缝传递到飞艇，以便在飞艇中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '970'
 ht-degree: 2%
@@ -40,10 +40,10 @@ ht-degree: 2%
 
 此部分介绍哪些类型的受众可以导出到此目标。
 
-| 受众来源 | 受支持 | 描述 |
----------|----------|----------|
+| 受众来源 | 支持 | 描述 |
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | ✓ | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | ✓ {\f13 } | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
@@ -132,7 +132,7 @@ AdobeExperience Platform中的受众概念类似于 [标记](https://docs.airshi
 
 ## 映射注意事项 {#mapping-considerations}
 
-[!DNL Airship] 标记可以在表示设备实例(如iPhone)的渠道上设置，也可以设置命名用户（将用户的所有设备映射到通用标识符，如客户ID）。 如果您的架构中将纯文本（未散列）电子邮件地址作为主要身份，请在 **[!UICONTROL 源属性]** 并将映射到 [!DNL Airship] 下右列的指定用户 **[!UICONTROL 目标身份]**，如下所示。
+[!DNL Airship] 标记可以在表示设备实例(如iPhone)的渠道上设置，也可以设置命名用户（将用户的所有设备映射到通用标识符，如客户ID）。 如果您的架构中将纯文本（未散列）电子邮件地址作为主要身份，请在 **[!UICONTROL Source属性]** 并将映射到 [!DNL Airship] 下右列的指定用户 **[!UICONTROL 目标身份]**，如下所示。
 
 ![指定用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 

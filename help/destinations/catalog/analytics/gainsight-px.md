@@ -2,13 +2,13 @@
 title: Gainsight PX连接
 description: 使用Gainsight PX目标将分段信息发送到Gainsight PX平台。
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+exl-id: 0ca0d34f-f866-4f59-80f8-60198fbb86be
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '890'
-ht-degree: 3%
+ht-degree: 2%
 
 ---
-
 
 # Gainsight PX连接 {#gainsight-px}
 
@@ -48,10 +48,10 @@ Gainsight PX支持激活下表中描述的标识。 了解有关 [身份](../../
 
 本节介绍可导出到此目标的受众类型。
 
-| 受众来源 | 受支持 | 描述 |
+| 受众来源 | 支持 | 描述 |
 |---|---|---|
 | [!DNL Segmentation Service] | ✓ {\f13 } | 通过Experience Platform生成的受众 [分段服务](../../../segmentation/home.md). |
-| 自定义上传 | X | 受众 [已导入](../../../segmentation/ui/overview.md#import-audience) 从CSV文件Experience Platform到。 |
+| 自定义上传 | X | 受众 [已导入](../../../segmentation/ui/audience-portal.md#import-audience) 从CSV文件Experience Platform到。 |
 
 {style="table-layout:auto"}
 
