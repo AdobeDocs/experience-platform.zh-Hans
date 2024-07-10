@@ -75,9 +75,11 @@ ht-degree: 2%
 ## 导出类型和频率
 
 有关目标导出类型和频率的信息，请参阅下表。
-|**受众**|**支持**|**描述来源**|\
-|—|—|—|\
-✓ |分段服务||通过Experience Platform生成的受众 [[分段服务]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).| 自定义上传|X|受众 [[已导入]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) 从CSV文件Experience Platform到。
+
+|**受众**|**支持**|**描述来源**|
+|---|---|---|
+|Segmentation Service|✓|Audiences generated through the Experience Platform [[Segmentation Service]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).|
+|Custom uploads|X|Audiences [[imported]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) into Experience Platform from CSV files.|
 
 {style="table-layout:auto"}
 
