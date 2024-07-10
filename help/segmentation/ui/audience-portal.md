@@ -1,9 +1,9 @@
 ---
 title: 受众门户概述
 description: 了解如何使用Audience Portal在Adobe Experience Platform中查看、管理和创建受众。
-source-git-commit: 6b186030c66598cddcdfcf509b8863e10d4fd0a7
+source-git-commit: 531bee643c14ad407a1207cca9093e210e5227a5
 workflow-type: tm+mt
-source-wordcount: '3646'
+source-wordcount: '3674'
 ht-degree: 3%
 
 ---
@@ -387,7 +387,7 @@ Audience Portal是Adobe Experience Platform中的一个中心枢纽，允许您�
 >
 >默认情况下，外部生成的受众的数据过期时间为30天。 如果以任何方式更新或修改受众，则会重置数据过期时间。
 >
->此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息， **必须** 在将数据激活到任何目标之前，请应用必需的数据使用标签。 有关应用数据使用标签的更多信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md).
+>此外，如果您的外部生成的受众包含敏感信息和/或医疗保健相关信息， **必须** 在将数据激活到任何目标之前，请应用必需的数据使用标签。 由于来自外部生成受众的变量存储在数据湖中而不是实时客户档案中，因此您应 **非** 在CSV文件中包含同意数据。 有关应用数据使用标签的更多信息，请阅读以下文档： [管理标签](../../access-control/abac/ui/labels.md).
 
 ## 后续步骤
 
