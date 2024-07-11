@@ -6,9 +6,9 @@ breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
 role: Developer
-source-git-commit: b8c38108e7481a5c4e94e4122e0093fa6f00b96c
+source-git-commit: 14f9c2240d1a650cc267bd997ea35d7923f71b2b
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '225'
 ht-degree: 22%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 22%
    * 配置 {#configure}
       * [概述](commands/configure/overview.md)
       * [clickCollectionEnabled](commands/configure/clickcollectionenabled.md)
+      * [clickCollection](commands/configure/clickcollection.md)
       * [上下文](commands/configure/context.md)
       * [debugEnabled](commands/configure/debugenabled.md)
       * [defaultconsent](commands/configure/defaultconsent.md)
@@ -56,12 +57,12 @@ ht-degree: 22%
    * [createMediaSession](commands/createmediasession.md)
    * [getIdentity](commands/getidentity.md)
    * [getLibraryInfo](commands/getlibraryinfo.md)
+   * [getMediaAnalyticsTracker](commands/getmediaanalyticstracker.md)
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
    * [sendMediaEvent](commands/sendmediaevent.md)
    * [配置数据流覆盖](commands/datastream-overrides.md)
    * [命令响应](commands/command-responses.md)
-   * [getMediaAnalyticsTracker](commands/getmediaanalyticstracker.md)
 
 * 标识 {#identity}
    * [概述](identity/overview.md)
@@ -71,7 +72,7 @@ ht-degree: 22%
 * 个性化 {#personalization}
    * [管理显示事件](personalization/display-events.md)
    * [呈现个性化内容](personalization/rendering-personalization-content.md)
-   * [通过混合实施进行个性化](personalization/hybrid-personalization.md)
+   * [通过混合实施的Personalization](personalization/hybrid-personalization.md)
    * [管理闪烁](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
       * [概述](personalization/adobe-target/target-overview.md)

@@ -2,10 +2,10 @@
 title: 配置Web SDK标记扩展
 description: 了解如何在标记UI中配置Experience PlatformWeb SDK标记扩展。
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 1d1bb754769defd122faaa2160e06671bf02c974
+source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
 workflow-type: tm+mt
-source-wordcount: '1734'
-ht-degree: 6%
+source-wordcount: '2012'
+ht-degree: 5%
 
 ---
 
@@ -41,7 +41,7 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 * **[!UICONTROL 名称]**：Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。 实例名称默认为 `alloy`. 但是，您可以将实例名称更改为任何有效的JavaScript对象名称。
 * **[!UICONTROL IMS组织ID]**：您希望在Adobe时向其发送数据的组织的ID。 大多数情况下，使用自动填充的默认值。 当页面上有多个实例时，使用您要向其发送数据的第二个组织的值填充此字段。
-* **[!UICONTROL 边缘域]**：扩展发送和接收数据的域。 Adobe建议对此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
+* **[!UICONTROL Edge域]**：扩展发送和接收数据的域。 Adobe建议对此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
 ## 配置数据流设置 {#datastreams}
 
@@ -111,11 +111,29 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ## 配置数据收集设置 {#data-collection}
 
-![该图像显示了标记UI中Web SDK标记扩展的数据收集设置](assets/web-sdk-ext-collection.png)
+管理数据收集配置设置。 JavaScript库中的类似设置可以使用以下设置 [`configure`](/help/web-sdk/commands/configure/overview.md) 命令。
 
-* **[!UICONTROL 回调函数]**：扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](/help/web-sdk/commands/configure/onbeforeeventsend.md) 在图书馆里。 此函数允许您在将事件发送到Edge Network之前对其进行全局修改。
-* **[!UICONTROL 启用点击数据收集]**：Web SDK可以自动为您收集链接点击信息。 默认情况下，此功能处于启用状态，但使用此选项可禁用该功能。 如果链接包含中列出的下载表达式之一，则也会将其标记为下载链接 [!UICONTROL 下载链接限定符] 文本框。 Adobe为您提供一些默认的下载链接限定符。 您可以根据需要编辑它们。
-* **[!UICONTROL 自动收集的上下文数据]**：默认情况下，Web SDK会收集有关设备、Web、环境和位置上下文的特定上下文数据。 如果不希望收集此数据，或只希望收集某些类别的数据，请选择 **[!UICONTROL 特定上下文信息]** 并选择要收集的数据。 请参阅 [`context`](/help/web-sdk/commands/configure/context.md) 以了解更多信息。
+![此图像显示了标记UI中Web SDK标记扩展的数据收集设置。](assets/web-sdk-ext-collection.png)
+
+* **[!UICONTROL 在事件发送回调前开启]**：用于评估和修改发送到Adobe的有效负载的回调函数。 使用 `content` 变量来修改有效负载。 此回调的标记等效于 [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) 在JavaScript库中。
+* **[!UICONTROL 收集内部链接点击次数]**：用于收集网站或资产内部链接跟踪数据的复选框。 启用此复选框后，将显示事件分组选项：
+   * **[!UICONTROL 无事件分组]**：链接跟踪数据会在单独的事件中发送到Adobe。 在单独事件中发送链接点击次数可能会增加发送到Adobe Experience Platform的数据在合同中的使用量。
+   * **[!UICONTROL 使用会话存储对事件进行分组]**：将链接跟踪数据存储在会话存储中，直到发生下一页事件。 在下一页上，存储的链接跟踪数据和页面查看数据同时发送到Adobe。 Adobe建议在跟踪内部链接时启用此设置。
+   * **[!UICONTROL 使用本地对象对事件进行分组]**：将链接跟踪数据存储在本地对象中，直到发生下一页面事件。 如果访客导航到新页面，则链接跟踪数据将丢失。 此设置在单页应用程序的上下文中最为有用。
+* **[!UICONTROL 收集外部链接点击次数]**：启用外部链接集合的复选框。
+* **[!UICONTROL 收集下载链接点击次数]**：用于启用下载链接集合的复选框。
+* **[!UICONTROL 下载链接限定符]**：将链接URL限定为下载链接的正则表达式。
+* **[!UICONTROL 筛选点击属性]**：一个回调函数，用于在集合之前评估和修改与点击相关的属性。 此函数在 [!UICONTROL 在事件发送回调前开启].
+* **上下文设置**：自动收集访客信息，这将为您填充特定XDM字段。 您可以选择 **[!UICONTROL 所有默认上下文信息]** 或 **[!UICONTROL 特定上下文信息]**. 此标记等同于 [`context`](/help/web-sdk/commands/configure/context.md) 在JavaScript库中。
+   * **[!UICONTROL Web]**：收集有关当前页面的信息。
+   * **[!UICONTROL 设备]**：收集有关用户设备的信息。
+   * **[!UICONTROL 环境]**：收集有关用户浏览器的信息。
+   * **[!UICONTROL 地标上下文]**：收集有关用户位置的信息。
+   * **[!UICONTROL 高熵用户代理提示]**：收集有关用户设备的更多详细信息。
+
+>[!TIP]
+>
+此 **[!UICONTROL 在链接前单击发送]** 字段是一个已弃用的回调，它仅对已配置它的属性可见。 此标记等同于 [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) 在JavaScript库中。 使用 **[!UICONTROL 筛选点击属性]** 回调以过滤或调整点击数据，或者使用 **[!UICONTROL 在事件发送回调前开启]** 过滤或调整发送到Adobe的整体有效负载。 如果两者 **[!UICONTROL 筛选点击属性]** 回调和 **[!UICONTROL 在链接前单击发送]** 已设置回调，只有 **[!UICONTROL 筛选点击属性]** 回调运行。
 
 ## 配置媒体收集设置 {#media-collection}
 
@@ -155,6 +173,6 @@ Web SDK标记扩展需要在上安装资产。 如果您尚未这样做，请参
 
 ## 配置高级设置
 
-使用 **[!UICONTROL 边缘基本路径]** Edge Network字段。 这不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。
+使用 **[!UICONTROL Edge基本路径]** Edge Network字段。 这不需要更新，但是如果您参与Beta或Alpha测试，Adobe可能会要求您更改此字段。
 
 ![此图像显示了使用Web SDK标记扩展页面的高级设置。](assets/advanced-settings.png)
