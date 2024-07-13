@@ -4,21 +4,34 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: a381760d3f19e04a70581d4adbb8095c92fb2e56
+source-git-commit: c99234cf3f5af9abe590c90fbdefc7d50c1539da
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '758'
 ht-degree: 5%
 
 ---
 
 # Adobe Experience Platform Debugger发行说明
 
+## 1.6.0版 — 2024年7月11日
+
+### 新增功能
+
+* 允许用户选择启用/禁用技术和个人数据收集。
+
+### 修复和改进功能
+
+* 修复了Firefox脚本注入和隐私策略链接。
+* 捕获缺失的Analytics请求。
+* 修复包含大量复杂控制台消息的页面的崩溃情况。
+* 将Adobe Experience Platform Debugger更新为清单v3扩展。
+
 ## 1.5.4版 — 2023年12月19日
 
 ### 修复和改进功能
 
 * 修复了设置未保留的问题。
-* 修复了在查看Analytics后处理的点击时导致Debugger崩溃的问题。
+* 修复了在查看Analytics Post处理的点击时导致Debugger崩溃的问题。
 
 ## 1.5.3版 — 2023年12月6日
 
@@ -47,7 +60,7 @@ ht-degree: 5%
 
 * 修复了Analytics事件将被忽略或重复的问题。
 * 修复了超出最大状态存储大小的问题。
-* 修复了边缘日志搜索无法过滤事件的问题。
+* 修复了Edge日志搜索无法过滤事件的问题。
 
 ## 1.5.0版 — 2023年10月19日
 
@@ -62,7 +75,7 @@ ht-degree: 5%
 * 修复了导致无法显示Target跟踪的问题。
 * 修复了“发送反馈”按钮。
 * 修复了Web SDK摘要(版本≥2.18.0)中缺少“数据流ID”的问题。
-* 修复了边缘日志不可搜索的问题。
+* 修复了Edge日志不可搜索的问题。
 * 添加了关于某些帐户类型的其他配置文件的说明。
 
 ## 版本1.4.1 - 2022年11月1日
@@ -100,7 +113,7 @@ ht-degree: 5%
 * 添加了关于链接以显示当前发行版本和说明。
 * 添加了用于查看Analytics请求的后处理点击的切换功能。 该切换在Analytics部分中可用。
 * 修复了在调试器之外关闭会话时的远程调试会话问题。
-* 修复了在Web SDK的“边缘事务”选项卡中显示的错误通知。
+* 修复了在Web SDK Edge的“交易”选项卡中显示的错误通知。
 * 修复了Adobe访问_satellite对象时出现的页面弃用警告。
 * 修复了在页面上找不到AppMeasurement实例的一些情况。
 * 修复了首次打开调试器窗口时发生的页面连接问题。
@@ -112,9 +125,9 @@ ht-degree: 5%
 
 ## 版本1.1.0 - 2021年10月5日
 
-* 远程调试可视化图表 — 在Adobe Experience Platform Web SDK > Edge Transactions部分将远程调试事件组织为可视化流程图。
+* 远程调试可视化 — 在“Adobe Experience Platform Web SDK”>“Edge事务”部分将远程调试事件组织为可视化流程图。
 * 启动新的远程调试会话时，要求页面上使用的Adobe Experience Platform Web SDK组织与登录的组织匹配。
-* 仅显示已连接选项卡的边缘事务。 目标跟踪日志仍在“日志”>“边缘”部分中可用。
+* 仅显示已连接选项卡的边缘事务。 Target跟踪日志仍在“日志”>“Edge”部分可用。
 * 允许为页面上的每个Adobe Experience Platform Web SDK实例覆盖单独的数据流ID配置。 “添加调试已启用”切换开关。
 * 修复了Adobe Target跟踪令牌未始终随Adobe Experience Platform Web SDK的远程调试会话一起发送的问题。
 
