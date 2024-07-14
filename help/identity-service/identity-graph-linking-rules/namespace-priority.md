@@ -3,10 +3,10 @@ title: 命名空间优先级
 description: 了解Identity Service中的命名空间优先级。
 badge: Beta 版
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
+source-git-commit: 5d19a22dc8d1b7f0151008d14b2f5bf89c85c638
 workflow-type: tm+mt
-source-wordcount: '1519'
-ht-degree: 1%
+source-wordcount: '1574'
+ht-degree: 2%
 
 ---
 
@@ -37,7 +37,7 @@ ht-degree: 1%
 >
 >* 分层图是指具有多级链接的标识图。 查看下图，了解具有三个图层的图形示例。
 
-![图表层图](../images/namespace-priority/graph-layers.png)
+![图形层的图表](../images/namespace-priority/graph-layers.png)
 
 ### 命名空间的语义含义
 
@@ -49,15 +49,15 @@ ht-degree: 1%
 
 人员命名空间与硬件设备（例如IDFA、GAID）相比相对不可变，而硬件设备与Web浏览器相比相对不可变。 基本上，您（人员）将始终是单一实体，可以拥有多个硬件设备（手机、笔记本电脑、平板电脑等），并且可以使用多个浏览器(Google Chrome、Safari、FireFox等)
 
-处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRM ID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 一般而言， **较低的基数表示命名空间具有较高的值**.
+处理此主题的另一种方法是通过基数。 对于给定的人员实体，将创建多少个身份？ 在大多数情况下，人员将拥有一个CRM ID、多个硬件设备标识符（IDFA/GAID重置不应经常发生）以及更多Cookie（可以想象，个人可以在任何给定时间浏览多个设备、使用无痕模式或重置Cookie）。 通常，**较低的基数表示命名空间具有较高值**。
 
 ## 验证命名空间优先级设置
 
-了解如何设置命名空间的优先级后，您可以使用图形模拟工具来测试各种图形折叠方案，并确保优先级配置返回预期的图形结果。 有关详细信息，请阅读使用 [图形模拟工具](./graph-simulation.md).
+了解如何设置命名空间的优先级后，您可以使用图形模拟工具来测试各种图形折叠方案，并确保优先级配置返回预期的图形结果。 有关详细信息，请阅读有关使用[图形模拟工具](./graph-simulation.md)的指南。
 
 ## 配置命名空间优先级
 
-可以使用配置命名空间优先级 [!UICONTROL 身份设置]. 在 [!UICONTROL 身份设置] 界面，您可以拖放命名空间以确定其相对重要性。
+可使用[!UICONTROL 身份设置]配置命名空间优先级。 在[!UICONTROL 身份设置]界面中，您可以拖放命名空间以确定其相对重要性。
 
 >[!IMPORTANT]
 >
@@ -65,28 +65,28 @@ ht-degree: 1%
 
 ## 命名空间优先级使用情况
 
-目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读上的指南 [Adobe Experience Platform和应用程序架构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+目前，命名空间优先级影响实时客户配置文件的系统行为。 下图说明了此概念。 有关详细信息，请阅读[Adobe Experience Platform和应用程序体系结构图](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications)的指南。
 
-![命名空间优先级应用程序作用域的图表](../images/namespace-priority/application-scope.png)
+![命名空间优先级应用程序作用域的关系图](../images/namespace-priority/application-scope.png)
 
 ### Identity Service：身份优化算法
 
-对于相对复杂的图形结构，命名空间优先级在确保在图形折叠场景发生时删除正确链接方面发挥重要作用。 欲知更多信息，请参阅 [[!DNL Identity Optimization Algorithm] 概述](../identity-graph-linking-rules/identity-optimization-algorithm.md).
+对于相对复杂的图形结构，命名空间优先级在确保在图形折叠场景发生时删除正确链接方面发挥重要作用。 有关详细信息，请参阅[标识优化算法概述](../identity-graph-linking-rules/identity-optimization-algorithm.md)。
 
 ### 实时客户个人资料：体验事件的主要身份确定
 
 * 对于体验事件，一旦您为给定沙盒配置了身份设置，主身份将由未来最高的命名空间优先级决定。
    * 这是因为体验事件在本质上是动态的。 身份映射可以包含三个或更多身份，命名空间优先级可确保最重要的命名空间与体验事件相关联。
-* 因此，需要配置以下配置 **将不再由实时客户档案使用**：
+* 因此，实时客户个人资料&#x200B;**将不再使用下列配置**：
    * WebSDK中数据元素类型的“主”复选框。
    * 在XDM体验事件类架构中标记为主要标识的任何字段。
    * Adobe Analytics源连接器（ECID或AAID）中的默认主标识设置。
-* 另一方面， **命名空间优先级不能确定配置文件记录的主要身份**.
-   * 对于配置文件记录，您可以使用Experience PlatformUI中的架构工作区来定义您的身份字段，包括主要身份。 阅读指南： [在UI中定义身份字段](../../xdm/ui/fields/identity.md) 以了解更多信息。
+* 另一方面，**命名空间优先级不能确定配置文件记录**&#x200B;的主要身份。
+   * 对于配置文件记录，您可以使用Experience PlatformUI中的架构工作区来定义您的身份字段，包括主要身份。 有关详细信息，请阅读[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的指南。
 
 >[!NOTE]
 >
->* 命名空间优先级为 **命名空间的属性**. 它是分配给命名空间以指示其相对重要性的数值。
+>* 命名空间优先级是&#x200B;**命名空间**&#x200B;的属性。 它是分配给命名空间以指示其相对重要性的数值。
 >
 >* 主要身份是存储配置文件片段的身份。 配置文件片段是存储有关特定用户的信息的数据记录：属性（通常通过CRM记录摄取）或事件（通常从体验事件或在线数据中摄取）。
 
@@ -102,7 +102,7 @@ ht-degree: 1%
 | IDFA | Apple硬件设备(iPhone、IPad等) | 2 |
 | GAID | Google硬件设备(Google Pixel、Pixelbook等) | 3 |
 | ECID | Web浏览器(Firefox、Safari、Google Chrome等) | 4 |
-| AAID | Web浏览器 | 5 |
+| AAID | Web 浏览器 | 5 |
 
 {style="table-layout:auto"}
 
@@ -120,7 +120,7 @@ ht-degree: 1%
 
 ### 分段服务：分段成员资格元数据存储
 
-![区段成员资格存储示意图](../images/namespace-priority/segment-membership-storage.png)
+![区段成员资格存储图表](../images/namespace-priority/segment-membership-storage.png)
 
 对于给定的合并用户档案，区段成员资格将根据具有最高优先级命名空间的身份进行存储。
 
@@ -141,22 +141,28 @@ ht-degree: 1%
 
 对于给定标识，数据卫生记录删除请求功能采用以下方式：
 
-* Real-time Customer Profile：删除指定为主要标识的任何配置文件片段。 **现在，将根据命名空间优先级确定配置文件上的主要身份。**
+* Real-time Customer Profile：删除指定为主要标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
 * 数据湖：删除将指定标识作为主标识的所有记录。
 
-欲知更多信息，请参阅 [高级生命周期管理概述](../../hygiene/home.md).
+有关详细信息，请阅读[高级生命周期管理概述](../../hygiene/home.md)。
+
+### 计算属性
+
+计算属性不使用命名空间优先级来计算值。 如果您使用计算属性，则必须确保将CRM ID指定为WebSDK的主要标识。 这一限制预计将在2024年8月解决。
+
+有关详细信息，请阅读[计算属性UI指南](../../profile/computed-attributes/ui.md)。
 
 ### 数据湖
 
-将数据摄取到数据湖将继续遵循在上配置的主标识设置 [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) 和架构。
+数据摄取到数据湖将继续遵循在[Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map)和架构上配置的主要身份设置。
 
 数据湖不会根据命名空间优先级确定主身份。 例如，即使在启用了命名空间优先级（例如，向新连接添加数据集）后，Adobe Customer Journey Analytics仍将继续使用身份映射中的值，因为Customer Journey Analytics会使用来自数据湖的数据。
 
 ### Experience Data Model (XDM)架构
 
-任何不是XDM体验事件的架构，如XDM个人资料，将继续遵循任何 [标记为标识的字段](../../xdm/ui/fields/identity.md).
+任何不是XDM体验事件的架构（如XDM个人资料）将继续遵循您标记为身份](../../xdm/ui/fields/identity.md)的任何[字段。
 
-有关XDM架构的更多信息，请阅读 [架构概述](../../xdm/home.md).
+有关XDM架构的更多信息，请阅读[架构概述](../../xdm/home.md)。
 
 ### 智能服务
 
@@ -167,13 +173,13 @@ ht-degree: 1%
 
 此配置导致仅使用已验证的事件计算得分。
 
-欲知更多信息，请阅读以下文档： [Attribution AI](../../intelligent-services/attribution-ai/overview.md) 和 [客户人工智能](../../intelligent-services/customer-ai/overview.md).
+有关详细信息，请阅读[Attribution AI](../../intelligent-services/attribution-ai/overview.md)和[客户人工智能](../../intelligent-services/customer-ai/overview.md)上的文档。
 
 ### Privacy Service
 
-[Privacy Service删除请求](../privacy.md) 函数中，为给定标识：
+对于给定标识，[Privacy Service删除请求](../privacy.md)将以下列方式运行：
 
-* Real-time Customer Profile：删除将指定标识值作为主标识的任何配置文件片段。 **现在，将根据命名空间优先级确定配置文件上的主要身份。**
+* Real-time Customer Profile：删除将指定标识值作为主标识的任何配置文件片段。 **现在将根据命名空间优先级确定配置文件上的主要身份。**
 * 数据湖：删除具有指定身份作为主身份或辅助身份的任何记录。
 
-欲知更多信息，请参阅 [Privacy服务概述](../../privacy-service/home.md).
+有关详细信息，请阅读[Privacy Service概述](../../privacy-service/home.md)。
