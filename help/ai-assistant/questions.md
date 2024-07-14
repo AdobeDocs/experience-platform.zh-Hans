@@ -2,9 +2,9 @@
 title: AI助手的问题指南
 description: 请阅读本文档，了解在查询AI助手时可以使用的示例问题。
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 26e27e7a62731fe43ef203741121b22226078b28
+source-git-commit: 6860e1dc03920feaf0dfa83d09c4fca8f85a2ac2
 workflow-type: tm+mt
-source-wordcount: '1206'
+source-wordcount: '1694'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 请阅读此文档，以了解在查询AI助手时可以使用的一组示例问题。
 
-您还可以通过本文档了解有关以下内容的提示 [如何用短语回答您的问题](#phrasing-your-questions) 以从AI Assistant获取最佳响应。
+您还可以使用此文档学习有关[如何对您的问题添加短语](#phrasing-your-questions)的提示，以便从AI助手获得最佳响应。
 
 ## 基于目标的问题 {#objectives-questions}
 
@@ -22,38 +22,38 @@ ht-degree: 1%
 | 目标 | 描述 | 示例 |
 | --- | --- | --- |
 | 学习概念和持续工作流 | <ul><li>作为新手，您可以使用AI Assistant学习Real-Time CDP和Adobe Journey Optimizer概念，并熟悉不熟悉的产品和功能。</li><li>作为经验丰富的用户，您可以使用AI Assistant解决可能阻止工作流的边缘案例。 | <ul><li>如何在历程分析中设置功能板？</li><li>告诉我Real-Time CDP的一些用例。</li></ul> |
-| 故障排除 | 使用AI Assistant了解如何调试工作流中可能遇到的基本错误。 | <ul><li>为什么会出现此错误 {ERROR_MESSAGE} 是刻薄吗？</li><li>为何无法删除名为“Luma：电子邮件受众”的受众？</li></ul> |
+| 故障排除 | 使用AI Assistant了解如何调试工作流中可能遇到的基本错误。 | <ul><li>此错误{ERROR_MESSAGE}是什么意思？</li><li>为何无法删除名为“Luma：电子邮件受众”的受众？</li></ul> |
 | 沙盒卫生 | 使用AI Assistant识别任何重复或未使用的对象，以便您能够有效地维护沙盒。 | <ul><li>能否向我显示类似的受众？</li><li>是否有任何没有关联数据集的架构？</li></ul> |
 | 价值分析 | 使用AI Assistant识别您最常用的数据对象，评估任何绩效指标或找到最有价值的数据对象。 | <ul><li>我们的“Luma：电子邮件受众”区段定义中有多少个配置文件？</li><li>何时将受众激活到“Experience Cloud受众”目标？</li></ul> |
 | 搜索 | 使用AI Assistant查找支持的Experience Platform对象，如受众、数据集、目标、架构和源。 | <ul><li>在名称中列出包含“Luma”的受众（在上季度创建）。</li><li>“Luma：自定义操作”XDM架构中有哪些属性？</li></ul> |
-| 影响分析 | 使用AI Assistant识别某些工作流中使用的数据对象，以便您能够评估任何更改的影响。 | <ul><li>使用哪些受众 `homeAddress.city` 在“Luma：PersonProfiles”架构中？</li><li>哪些数据集是 `consents.marketing.push.val` 配置文件属性存储在中？</li></ul> |
+| 影响分析 | 使用AI Assistant识别某些工作流中使用的数据对象，以便您能够评估任何更改的影响。 | <ul><li>哪些受众在“Luma： PersonProfiles”架构中使用`homeAddress.city`？</li><li>`consents.marketing.push.val`配置文件属性存储在哪些数据集中？</li></ul> |
 
 {style="table-layout:auto"}
 
 ## 按实体和产品知识问题列出的运营见解{#objects-questions}
 
-以下问题按数据对象分组，并分类为 [运营洞察](./home.md#operational-insights) 或 [产品知识](./home.md#product-knowledge).
+以下问题按数据对象分组，并被分类为[操作分析](./home.md#operational-insights)或[产品知识](./home.md#product-knowledge)。
 
 * **受众 — 运营分析**
    * 哪些受众使用其他受众？
    * 受众中用户档案数量的分布情况如何？
-   * 显示上次修改时间早于以下时间的受众： {RELATIVE_DATE}.
+   * 显示上次在{RELATIVE_DATE}之前修改的受众。
    * 哪些受众具有0个配置文件？
-   * 是 {USE_AUTO_COMPLETE_TO_FILL_AUDIENCE_NAME} 是否用于任何其他受众？
+   * {USE_AUTO_COMPLETE_TO_FILL_AUDIENCE_NAME}是否用于任何其他受众？
 * **属性 — 运营分析**
-   * 哪些受众具有xdm属性 {ATTRIBUTE_PATH} 在他们的区段定义中？
+   * 哪些受众的区段定义中具有xdm属性{ATTRIBUTE_PATH}？
    * 任何受众中未使用多少XDM架构属性？
-   * 哪些架构具有xdm属性 {ATTRIBUTE_PATH} 在里面？
+   * 哪些架构中具有xdm属性{ATTRIBUTE_PATH}？
    * 激活哪些XDM属性？
    * 具有超过10个配置文件的受众中使用哪些XDM属性？
-* **数据流 — 运营见解**
-   * 哪些数据流参与 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} 数据集？
+* **数据流 — 运营分析**
+   * 哪些数据流对{USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}数据集有贡献？
    * 未使用哪些源数据流或者不再有数据进入？
    * 列出我具有的源数据流。
    * 为每个源连接器配置哪些数据流？
-* **数据集 — 运营洞察**
+* **数据集 — 运营分析**
    * 使用相同架构摄取了多少数据集？
-   * 与哪个源连接器关联 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} 数据集？
+   * 哪个源连接器与{USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}数据集关联？
    * 每个受众使用哪些数据集？
    * 哪些架构未在任何数据集中使用？
    * 我有多少个数据集？
@@ -64,16 +64,16 @@ ht-degree: 1%
    * 哪些目标的激活受众数量最多？
 * **历程 — 运营分析**
    * 我有多少个历程？
-   * 已在哪些历程中创建 {RELATIVE_DATE} （例如，上一周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？
-   * 显示在中修改的历程列表 {RELATIVE_DATE} （例如，上一周）或 {RELATIVE_DATE} （例如，特定日期之前/之后/日期）？
+   * 已在{RELATIVE_DATE}（例如上一周）或{RELATIVE_DATE}（例如特定日期之前/之后/日期）创建哪些历程？
+   * 是否显示在{RELATIVE_DATE}（例如上周）或{RELATIVE_DATE}（例如特定日期之前/之后/日期）中修改的历程列表？
    * 列出我的实时历程。
    * 列出实时历程中使用的受众。
-* **来源 — 运营分析**
+* **源 — 运营分析**
    * 哪些源处于活动状态？
-   * 哪个源连接器与数据集关联 {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}.
+   * 哪个源连接器与数据集{USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}关联。
    * 哪个源连接器的关联帐户数最多？
    * 显示数据流及其关联的源连接器。
-* **有针对性的学习 — 产品知识(Real-Time CDP和Journey Optimizer)**
+* **定向学习 — 产品知识(Real-Time CDP和Journey Optimizer)**
    * 哪些受众具有相似性？
    * 用户组与角色有何关系？
    * 什么时候应该使用数据类型而不是字段组？
@@ -84,6 +84,30 @@ ht-degree: 1%
    * 能否在摄取数据后删除启用配置文件的架构？
    * 为何无法删除受众？
    * 评估受众和获得定位结果需要多长时间？
+
++++选择可查看建议提示的附加列表
+
+* 能否在摄取数据后删除启用配置文件的架构？
+* 用户组与角色有何关系？
+* 什么时候应该使用数据类型而不是字段组？&#39;
+* 身份与主键或外键之间有何区别？
+* 评估区段和获得定位结果需要多长时间？
+* 如何计算配置文件丰富度？&#39;
+* 告诉我一些Real-Time CDP的常见用例。
+* 为什么无法删除区段？
+* 为配置文件启用架构后，我可以进行什么类型的更改？
+* 为什么在AEP中无法访问仪表板？
+* 有多少段使用xdm属性{FIELD_PATH}
+* 我是否具有在其他区段中使用的任何区段？
+* {SCHEMA_NAME}架构中的哪些字段包含{STRING}？
+* 哪些受众的区段定义中具有xdm属性{FULL_ATTRIBUTE_PATH}？
+* 哪些架构中具有xdm属性{FULL_ATTRIBUTE_PATH}？
+* 未使用哪些源数据流或者不再有数据进入？
+* 列出我的实时历程。
+* 列出实时历程中使用的受众。
+* 哪些源处于活动状态？
+
++++
 
 ## 用短语表述您的问题 {#phrasing-your-questions}
 
@@ -99,7 +123,7 @@ ht-degree: 1%
 
 | Do | 示例 |
 | --- | --- |
-| <ul><li>指定要检索或分析的对象或信息。</li><li>尝试将数据对象名称放在引号中。 如果您只知道对象名称的一部分，则还可以在问题中指定该部分。</li><li>使用 [对象自动完成](./ui-guide.md#use-auto-complete) 以帮助AI Assistant更好地了解查询的上下文。</li></ul> | <ul><li>哪些数据集使用“Luma — 忠诚度”架构？</li><li>显示名称中包含“Luma”的激活区段。 按用户档案计数对其进行排名。</li></ul> |
+| <ul><li>指定要检索或分析的对象或信息。</li><li>尝试将数据对象名称放在引号中。 如果您只知道对象名称的一部分，则还可以在问题中指定该部分。</li><li>使用[对象自动完成](./ui-guide.md#use-auto-complete)以帮助AI Assistant更好地了解查询的上下文。</li></ul> | <ul><li>哪些数据集使用“Luma — 忠诚度”架构？</li><li>显示名称中包含“Luma”的激活区段。 按用户档案计数对其进行排名。</li></ul> |
 | <ul><li>避免歧义，使用清晰的语言</li><li>使用准确的术语以确保查询更清晰。</li><li>在询问有关Adobe Experience Platform的问题时，请尝试使用特定于Experience Platform的术语来提高响应的相关性。</li></ul> | <ul><li>“ACME受众”中有多少个人资料。</li><li>显示激活的受众中使用的前5个XDM属性。</li></ul> |
 | <ul><li>提供上下文或指定条件以筛选结果。</li><li>在问题中使用过滤条件限制响应中的数据量。</li></ul> | <ul><li>向我显示尚未激活且创建日期超过6个月且从未修改的受众。</li><li>向我显示激活到“ACME目标”并具有超过10000个配置文件的受众。</li></ul> |
 
@@ -115,6 +139,51 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
+## 不支持的问题的示例 {#unsupported-questions}
+
+以下是AI助手当前不支持的问题示例列表。
+
++++选择以查看不支持的问题的示例
+
+### 运营洞察
+
+* 此沙盒[中有多少配置文件满足特定条件，例如“生活在加利福尼亚”]？
+* 此配置文件{PROFILE_INFO/ATTRIBUTE_VALUE}包含哪些区段？
+* 数据集中有多少用户档案有电子邮件？
+* 哪个数据集构成此沙盒中的最大配置文件数？
+* 哪个数据集的记录数最多？
+* {RELATIVE_DATE}中删除了多少区段？
+* 我的哪个数据集大小最大？
+* 在{AUDIENCE_NAME}中向我提供配置文件。
+* 我的沙盒中的配置文件总数是多少
+* 有多少身份命名空间与受众{AUDIENCE_NAME}关联？
+* 向我显示今天评估的所有受众区段的报表
+* 有多少区段具有重叠的用户档案？
+* 正在加载到{DATASET_NAME}中的批次数量
+* 我有多少个活动选件？
+* 我有多少个活动的营销活动？
+* 我的数据源来自何处？
+* 最大的数据集或数据源是什么？
+* 我能否获取已创建这些架构的用户列表？
+
+### 故障排除
+
+* 为何此批次{BATCH_NAME/BATCH_ID}仍在处理中？
+* 为什么没有符合此受众{AUDIENCE_NAME}资格条件的受众？
+* 我看不到客户人工智能，为什么以及如何修复它？
+* 我看不到数据集预览，为什么以及如何修复它？
+* 为何无法删除{SEGMENT/DATASET/SCHEMA_NAME}？
+* 我有权访问查询服务吗？
+
+### 任务和自动化
+
+* 编写一个查询，从{DATASET_NAME}中给我一条记录。
+* 将示例API调用写入/schemas/{schemaId}/fields/{fieldPath}/values。
+* 为我设置源/目标。
+* 使用条件{USER_SPECIFIC_CRITERIA}为我创建受众。
+
++++
+
 ## 后续步骤
 
-通过阅读本文档，您现在了解了如何优化AI Assistant的问题。 有关如何在工作流中使用功能的信息，请阅读 [AI助手UI指南](ui-guide.md).
+通过阅读本文档，您现在了解了如何优化AI Assistant的问题。 有关如何在工作流期间使用该功能的信息，请阅读[AI助手UI指南](ui-guide.md)。
