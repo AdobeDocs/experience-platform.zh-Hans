@@ -3,9 +3,9 @@ keywords: 目标；目标；目标详细信息页面；目标详细信息页面
 title: 查看目标详细信息
 description: 单个目标的详细信息页面提供了目标详细信息的概览。 目标详细信息包括目标名称、ID、映射到目标的受众以及用于编辑激活以及启用和禁用数据流的控件。
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
+source-git-commit: de867c1747fcdb14d8eb72bd3432c177e680c4fa
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -18,25 +18,29 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->目标详细信息页面是 [!UICONTROL 目标] 中的工作区 [!DNL Platform] [!DNL UI]. 请参阅 [[!UICONTROL 目标] 工作区概述](./destinations-workspace.md) 以了解更多信息。
+>目标详细信息页面是[!DNL Platform] [!DNL UI]中[!UICONTROL 目标]工作区的一部分。 有关详细信息，请参阅[[!UICONTROL 目标]工作区概述](./destinations-workspace.md)。
 
 ## 查看目标详细信息 {#view-details}
 
-请按照以下步骤查看有关现有目标的更多详细信息。
+请按照以下步骤查看有关现有目标的更多详细信息。 您可以查找目标的目标ID、创建目标的用户、创建目标的时间以及其他信息。
 
-1. 登录到 [EXPERIENCE PLATFORMUI](https://platform.adobe.com/) 并选择 **[!UICONTROL 目标]** 左侧导航栏中。 选择 **[!UICONTROL 浏览]** 查看现有目标。
+1. 登录到[Experience PlatformUI](https://platform.adobe.com/)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看现有目标。
 
    ![浏览目标](../assets/ui/details-page/browse-destinations.png)
 
-1. 选择过滤器图标 ![筛选图标](../assets/ui/details-page/filter.png) 以启动“排序”面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
+1. 选择左上角的过滤器图标![过滤器图标](../assets/ui/details-page/filter.png)以启动排序面板。 排序面板提供所有目标的列表。 您可以从列表中选择多个目标，以查看与所选目标关联的数据流的过滤选择。
 
    ![筛选目标](../assets/ui/details-page/filter-destinations.png)
 
-1. 选择要查看的目标名称。
+1. 选择要显示其详细信息的目标行。 此时将显示一个右边栏，其中包含有关目标的信息，包括目标ID、创建目标连接的用户以及其他信息。
+
+   右边栏中的![目标ID](../assets/ui/details-page/right-rail-info-including-destination-id.png)
+
+1. 或者，您可以通过选择要查看的目标&#x200B;*的名称*&#x200B;来显示有关目标的其他信息。
 
    ![选择目标](../assets/ui/details-page/destination-select.png)
 
-1. 此时将显示目标的详细信息页面，并显示其可用的控件。
+1. 目标的详细信息页面将显示在右边栏中，并显示其可用的控件。
 
    ![目标详细信息](../assets/ui/details-page/destination-details.png)
 
@@ -50,36 +54,36 @@ ht-degree: 0%
 
 | 右边栏项目 | 描述 |
 | --- | --- |
-| [!UICONTROL 激活受众] | 选择此控件可编辑哪些受众已映射到目标、更新导出计划或添加和删除映射的属性和身份。 请参阅指南 [将受众数据激活到受众流目标](./activate-segment-streaming-destinations.md)， [将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)、和 [将受众数据激活到基于个人资料的流目标](./activate-streaming-profile-destinations.md) 以了解更多信息。 |
+| [!UICONTROL 激活受众] | 选择此控件可编辑哪些受众已映射到目标、更新导出计划或添加和删除映射的属性和身份。 有关详细信息，请参阅[将受众数据激活到受众流式目标](./activate-segment-streaming-destinations.md)、[将受众数据激活到基于个人资料的批量目标](./activate-batch-profile-destinations.md)和[将受众数据激活到基于个人资料的流式目标](./activate-streaming-profile-destinations.md)指南。 |
 | [!UICONTROL 删除] | 允许您删除此数据流并取消映射之前激活的受众（如果存在）。 |
 | [!UICONTROL 目标名称] | 可以编辑此字段以更新目标的名称。 |
 | [!UICONTROL 描述] | 可以编辑此字段以更新或向目标添加可选描述。 |
-| [!UICONTROL 目标] | 表示受众发送到的目标平台。 请参阅 [目标目录](../catalog/overview.md) 以了解更多信息。 |
+| [!UICONTROL 目标] | 表示受众发送到的目标平台。 有关详细信息，请参阅[目标目录](../catalog/overview.md)。 |
 | [!UICONTROL 状态] | 指示目标是启用还是禁用。 |
 | [!UICONTROL 营销活动] | 指示出于数据管理目的而应用于此目标的营销操作（用例）。 |
-| [!UICONTROL 类别] | 指示目标类型。 请参阅 [目标目录](../catalog/overview.md) 以了解更多信息。 |
-| [!UICONTROL 连接类型] | 指示将受众发送到目标所使用的表单。 可能的值包括 [!UICONTROL Cookie] 和 [!UICONTROL 基于配置文件]. |
-| [!UICONTROL 频率] | 指示受众发送到目标的频率。 可能的值包括 [!UICONTROL 流] 和 [!UICONTROL 批次]. |
-| [!UICONTROL 标识] | 表示目标接受的身份命名空间，例如 `GAID`， `IDFA`，或 `email`. 有关接受的身份命名空间的更多信息，请参见 [身份命名空间概述](../../identity-service/features/namespaces.md). |
+| [!UICONTROL 类别] | 指示目标类型。 有关详细信息，请参阅[目标目录](../catalog/overview.md)。 |
+| [!UICONTROL 连接类型] | 指示将受众发送到目标所使用的表单。 可能的值包括[!UICONTROL Cookie]和[!UICONTROL 基于配置文件的]。 |
+| [!UICONTROL 频率] | 指示受众发送到目标的频率。 可能的值包括[!UICONTROL 流]和[!UICONTROL 批次]。 |
+| [!UICONTROL 标识] | 表示目标接受的身份命名空间，如`GAID`、`IDFA`或`email`。 有关接受的身份命名空间的更多信息，请参阅[身份命名空间概述](../../identity-service/features/namespaces.md)。 |
 | [!UICONTROL 创建者] | 指示创建此目标的用户。 |
 | [!UICONTROL 已创建] | 指示创建此目标时的UTC日期时间。 |
 
 {style="table-layout:auto"}
 
-## [!UICONTROL 已启用]/[!UICONTROL 已禁用] 切换 {#enabled-disabled-toggle}
+## [!UICONTROL 已启用]/[!UICONTROL 已禁用]切换 {#enabled-disabled-toggle}
 
-您可以使用 **[!UICONTROL 已启用]/[!UICONTROL 已禁用]** 切换以开始和暂停所有到目标的数据导出。
+您可以使用&#x200B;**[!UICONTROL 已启用]/[!UICONTROL 已禁用]**&#x200B;切换开关来开始和暂停所有数据导出到目标。
 
 ![启用或禁用数据流切换](../assets/ui/details-page/enable-disable.png)
 
 ## [!UICONTROL 数据流运行] {#dataflow-runs}
 
-此 [!UICONTROL 数据流运行] 选项卡提供有关您的数据流运行的量度数据到批处理目标和流式目标。 请参阅 [监测数据流](monitor-dataflows.md) 以了解详细信息和量度定义。
+[!UICONTROL 数据流运行]选项卡提供有关数据流运行的量度数据到批处理目标和流式目标。 有关详细信息和量度定义，请参阅[监视器数据流](monitor-dataflows.md)。
 
 >[!NOTE]
 >
->* 当前Experience Platform中的所有目标都支持目标监视功能 *排除* 该 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)， [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 和 [Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md) 目标。
->* 对于 [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)， [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)、和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 目标、与排除、失败和激活的标识相关的量度会被估计。 较大量的激活数据会导致量度的准确性较高。
+>* Experience Platform *中除* [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)、[自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md)和[Experience Cloud受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)目标之外的所有目标当前都支持目标监视功能。
+>* 对于[Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)、[Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和[HTTP API](/help/destinations/catalog/streaming/http-destination.md)目标，估计了与排除、失败和激活的标识相关的指标。 较大量的激活数据会导致量度的准确性较高。
 
 ![数据流运行视图](../assets/ui/details-page/dataflow-runs.png)
 
@@ -89,54 +93,54 @@ ht-degree: 0%
 
 ### 流目标 {#streaming}
 
-而 **[!UICONTROL 处理持续时间]** 如下图所示，对于大多数流数据流运行而言，指示大约四个小时，任何数据流运行的实际处理时间都短得多。 如果Experience Platform需要重新尝试调用目标，数据流运行窗口会保持较长时间处于打开状态，同时还要确保它不会错过同一时间窗口的任何延迟送达数据。
+尽管为大多数流数据流运行指定的&#x200B;**[!UICONTROL 处理持续时间]**&#x200B;大约为四小时（如下图所示），但任何数据流运行的实际处理时间都短得多。 如果Experience Platform需要重新尝试调用目标，数据流运行窗口会保持较长时间处于打开状态，同时还要确保它不会错过同一时间窗口的任何延迟送达数据。
 
-![数据流运行页面的图像，其中为流目标突出显示了处理时间列。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
+![数据流运行页面的图像，该页面的“处理时间”列为流目标突出显示。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
 
-有关详细信息，请阅读关于 [数据流运行到流式目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) ，位于监控文档中。
+有关详细信息，请参阅监视文档中的[数据流运行到流式目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations)。
 
 ### 基于文件的目标 {#file-based}
 
-对于要运行到基于文件的目标的数据流， **[!UICONTROL 处理持续时间]** 取决于要导出的数据的大小和系统负载。 另请注意，数据流运行到基于文件的目标，将按受众细分。
+对于数据流运行到基于文件的目标，**[!UICONTROL 处理持续时间]**&#x200B;取决于要导出的数据的大小和系统加载。 另请注意，数据流运行到基于文件的目标，将按受众细分。
 
-![数据流运行页面的图像，其中为基于文件的目标突出显示了“处理时间”列。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
+![数据流运行页的图像，该页的“处理时间”列为基于文件的目标突出显示。](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
-有关详细信息，请阅读关于 [数据流运行到批处理（基于文件）目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) ，位于监控文档中。
+有关详细信息，请参阅监视文档中的[数据流运行到批处理（基于文件）目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations)。
 
 ## [!UICONTROL 激活数据] {#activation-data}
 
-此 [!UICONTROL 激活数据] 选项卡显示已映射到目标的受众列表，包括其开始日期和结束日期（如果适用），以及用于数据导出的其他相关信息，例如导出类型、时间表和频率。 要查看特定受众的详细信息，请从列表中选择其名称。
+[!UICONTROL 激活数据]选项卡显示已映射到目标的受众列表，包括其开始日期和结束日期（如果适用），以及数据导出的其他相关信息，如导出类型、计划和频率。 要查看特定受众的详细信息，请从列表中选择其名称。
 
 >[!TIP]
 >
->要查看和编辑有关映射到目标的属性和身份的详细信息，请选择 **[!UICONTROL 激活受众]** 在 [右边栏](#right-rail).
+>要查看和编辑有关映射到目标的属性和身份的详细信息，请在[右边栏](#right-rail)中选择&#x200B;**[!UICONTROL 激活受众]**。
 
 ![激活数据视图批次目标](../assets/ui/details-page/activation-data-batch.png)
 
-![激活数据视图流式目标](../assets/ui/details-page/activation-data-streaming.png)
+![激活数据视图流目标](../assets/ui/details-page/activation-data-streaming.png)
 
-### [!BADGE Beta]{type=Informational}从激活流中删除多个受众 {#bulk-remove}
+### [!BADGE Beta]{type=Informational}从激活流程中删除多个受众 {#bulk-remove}
 
 >[!NOTE]
 >
 此功能为测试版，仅向部分客户提供。 要请求访问此功能，请联系您的Adobe代表。
 
-要从现有激活流中删除多个受众，请选择受众，然后选择 **[!UICONTROL 删除受众]**.
+要从现有激活流中删除多个受众，请选择这些受众，然后选择&#x200B;**[!UICONTROL 删除受众]**。
 
-![激活数据屏幕高亮显示删除受众选项。](../assets/ui/details-page/bulk-remove-audiences.png)
+![激活数据屏幕突出显示“删除受众”选项。](../assets/ui/details-page/bulk-remove-audiences.png)
 
 ### 按需将多个文件导出到批处理目标 {#bulk-export}
 
-您可以 [按需导出多个文件](../ui/export-file-now.md) 从 **[!UICONTROL 激活数据]** 页面。 要实现此目的，请选择要按需导出文件的受众，然后选择 **[!UICONTROL 立即导出文件]** 控制，以触发一次性导出，该导出会将每个选定受众的文件交付到您的批处理目标。
+您可以从&#x200B;**[!UICONTROL 激活数据]**&#x200B;页面[按需导出多个文件](../ui/export-file-now.md)。 为此，请选择要按需导出文件的受众，然后选择&#x200B;**[!UICONTROL 立即导出文件]**&#x200B;控件以触发一次性导出，该导出会将每个选定受众的文件传送到批处理目标。
 
-![突出显示“立即导出文件”按钮的图像。](../assets/ui/details-page/bulk-export-file-now.png)
+![图像突出显示“立即导出文件”按钮。](../assets/ui/details-page/bulk-export-file-now.png)
 
 ### 编辑导出到批处理目标的多个受众的激活计划 {#bulk-edit-schedule}
 
-要同时编辑多个受众的现有激活计划，请选择所需的受众，然后选择 **[!UICONTROL 编辑计划]**. 有关如何定义或编辑导出计划的详细信息，请参阅 [计划受众导出](../ui/activate-batch-profile-destinations.md#scheduling) 部分。
+要同时编辑多个受众的现有激活计划，请选择所需的受众，然后选择&#x200B;**[!UICONTROL 编辑计划]**。 有关如何定义或编辑导出计划的详细信息，请阅读[计划受众导出](../ui/activate-batch-profile-destinations.md#scheduling)部分。
 
 ![激活数据屏幕突出显示用于编辑多个受众的激活计划的选项。](../assets/ui/details-page/bulk-edit-schedule.png)
 
 >[!NOTE]
 >
-有关浏览受众详细信息页面的详细信息，请参阅 [受众门户概述](../../segmentation/ui/audience-portal.md#segment-details).
+有关浏览受众详细信息页面的详细信息，请参阅[受众门户概述](../../segmentation/ui/audience-portal.md#segment-details)。
